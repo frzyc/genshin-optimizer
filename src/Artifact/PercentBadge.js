@@ -1,7 +1,7 @@
 import React from 'react';
 import { Badge, OverlayTrigger, Tooltip } from 'react-bootstrap';
 
-class PercentBadge extends React.Component {
+export default class PercentBadge extends React.Component {
   getBadgeColor = (percent) => {
     let badgeColor = "secondary";
     if (percent > 70) {
@@ -29,8 +29,4 @@ class PercentBadge extends React.Component {
       return (
         <Badge variant={badgeColor}>{this.props.children}</Badge>)
   }
-}
-
-export {
-  PercentBadge
 }

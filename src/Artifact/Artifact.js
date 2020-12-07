@@ -15,7 +15,7 @@ export default class Artifact {
       star5ArtifactsSets[state.selectedArtifactSetKey].pieces[state.slotKey] : "Piece Name";
   static getStatName = (key) => artifactStats[key].name;
 
-  static getStatUnit = (key) => artifactStats[key].unit ? artifactStats[key].unit : "";
+  static getStatUnit = (key) => (key && artifactStats[key] && artifactStats[key].unit) ? artifactStats[key].unit : "";
 
   static getMainStatValue = (state) =>
     (state.mainStatKey && state.numStars) ? `${mainStats[state.numStars][state.mainStatKey][state.level]}` : 0

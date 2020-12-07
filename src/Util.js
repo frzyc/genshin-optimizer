@@ -12,10 +12,18 @@ function getRandomIntInclusive(min, max) {
 function getRandomArbitrary(min, max) {
   return Math.random() * (max - min) + min;
 }
-
+const loadFromLocalStorage = (key) => {
+  let data = localStorage.getItem(key)
+  if (!data) return null
+  return JSON.parse(data)
+}
+const saveToLocalStorage = (key, obj) =>
+  localStorage.setItem(key, JSON.stringify(obj));
 export {
   getRandomInt,
   getRandomIntInclusive,
   getRandomArbitrary,
-  getRandomElementFromArray
+  getRandomElementFromArray,
+  loadFromLocalStorage,
+  saveToLocalStorage
 }

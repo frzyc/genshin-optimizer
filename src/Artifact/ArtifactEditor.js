@@ -11,8 +11,9 @@ import Container from 'react-bootstrap/Container'
 import DropdownButton from 'react-bootstrap/DropdownButton'
 import FormControl from 'react-bootstrap/FormControl'
 import Alert from 'react-bootstrap/Alert';
-import { PercentBadge } from './Components';
-import { getRandomElementFromArray, getRandomIntInclusive, getRandomArbitrary } from './Util';
+import PercentBadge from './PercentBadge';
+import { getRandomElementFromArray, getRandomIntInclusive, getRandomArbitrary } from '../Util';
+import { FloatFormControl, IntFormControl } from '../Components/CustomFormControl';
 
 export default class ArtifactEditor extends React.Component {
   constructor(props) {
@@ -119,11 +120,21 @@ export default class ArtifactEditor extends React.Component {
         readOnly
       />
     </InputGroup>
-  SubStatInput = (props) =>
-    <InputGroup>
+  SubStatInput = (props) => {
+    let percentStat = props.subStatKey && Artifact.getStatUnit(props.subStatKey) === "%";
+    let substatprops = {
+      placeholder: "Select a Substat.",
+      value: props.substatevalue ? props.substatevalue : "",
+      onValueChange: (val) => props.onValueChange && props.onValueChange(val, props.index),
+      disabled: !props.subStatKey
+    }
+    let subStatFormControl = percentStat ?
+      <FloatFormControl {...substatprops} />
+      : <IntFormControl {...substatprops} />
+    return <InputGroup>
       <DropdownButton
         title={props.subStatKey ? artifactStats[props.subStatKey].name : `Substat ${props.index + 1}`}
-        disabled={!props.remainingSubstats}
+        disabled={!props.remainingSubstats || props.remainingSubstats.length === 0}
         as={InputGroup.Prepend}
       >
         {props.remainingSubstats ? props.remainingSubstats.map((key) => {
@@ -134,10 +145,9 @@ export default class ArtifactEditor extends React.Component {
           </Dropdown.Item>)
         }) : <Dropdown.Item />}
       </DropdownButton>
-      <FormControl value={props.substatevalue ? props.substatevalue : ""}
-        placeholder="NaN" disabled={!props.subStatKey}
-        onChange={(e) => (props.onValueChange && props.onValueChange(e.target.value, props.index))} />
+      {subStatFormControl}
       <InputGroup.Append>
+        {percentStat && <InputGroup.Text>%</InputGroup.Text>}
         <InputGroup.Text>
           <PercentBadge
             tooltip={props.subStatValidation.msg}
@@ -148,6 +158,7 @@ export default class ArtifactEditor extends React.Component {
         </InputGroup.Text>
       </InputGroup.Append>
     </InputGroup>
+  }
 
   onSubStatSelected = (key, index) => {
     this.setState((state) => {
@@ -270,7 +281,10 @@ export default class ArtifactEditor extends React.Component {
         </Card.Body>
         <Card.Footer>
           <Button className="mr-3" onClick={() => {
-            this.props.addArtifact && this.props.addArtifact(this.state)
+            let saveArtifact = { ...this.state }
+            if (saveArtifact.artifactToEdit)
+              delete saveArtifact.artifactToEdit;
+            this.props.addArtifact && this.props.addArtifact(saveArtifact)
             this.setState(ArtifactEditor.getInitialState());
           }}>
             {this.props.artifactToEdit ? "Save Artifact" : "Add Artifact"}
