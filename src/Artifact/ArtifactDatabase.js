@@ -1,9 +1,8 @@
-import { loadFromLocalStorage, saveToLocalStorage } from "../Util";
+import { deepClone, loadFromLocalStorage, saveToLocalStorage } from "../Util";
 
 var artifactDatabase = {};
 var artifactIdList = [];
 var artIdIndex = 1;
-
 export default class ArtifactDatabase {
   //do not instantiate.
   constructor() {
@@ -11,16 +10,23 @@ export default class ArtifactDatabase {
       throw Error('A static class cannot be instantiated.');
     }
   }
-  static getIdList = () => loadFromLocalStorage("artifact_id_list"); 
-  static saveIdList = () => saveToLocalStorage("artifact_id_list", artifactIdList);
-  static getartifactIdList = () => artifactIdList;
+  static getIdListFromStorage = () => loadFromLocalStorage("artifact_id_list");
+  static saveIdListToStorage = () => saveToLocalStorage("artifact_id_list", artifactIdList);
+  static getArtifactDatabase = () => deepClone(artifactDatabase);
+  static getArtifactIdList = () => deepClone(artifactIdList);
   static populateDatebaseFromLocalStorage = () => {
-    artifactIdList = ArtifactDatabase.getIdList();
+    if (artifactIdList.length > 0) return;
+    artifactIdList = ArtifactDatabase.getIdListFromStorage();
     if (artifactIdList === null) artifactIdList = []
     for (const id of artifactIdList)
-      artifactDatabase[id] = loadFromLocalStorage(id);
+      if (!artifactDatabase[id])
+        artifactDatabase[id] = loadFromLocalStorage(id);
     artIdIndex = parseInt(localStorage.getItem("artifact_highest_id"));
     if (isNaN(artIdIndex)) artIdIndex = 0;
+  }
+  static getArtifact = (id) => artifactDatabase[id]
+  static removeArtifact = (art) => {
+    this.removeArtifactById(art.id);
   }
   static addArtifact = (art) => {
     //generate id using artIdIndex
@@ -29,26 +35,26 @@ export default class ArtifactDatabase {
     art.id = id;
     saveToLocalStorage(id, art);
     artifactDatabase[id] = art;
-    artifactIdList.push(id)
-    ArtifactDatabase.saveIdList()
+    this.updateCacheData();
     return id;
   }
   static updateArtifact = (art) => {
     let id = art.id;
     saveToLocalStorage(id, art);
     artifactDatabase[id] = art;
-  }
-  static getArtifact = (id) => artifactDatabase[id]
-  static removeArtifact = (art) => {
-    ArtifactDatabase.removeArtifactById(art.id);
+    this.updateCacheData();
   }
   static removeArtifactById = (artId) => {
     delete artifactDatabase[artId];
     localStorage.removeItem(artId);
-    let index = artifactIdList.indexOf(artId)
-    if (index !== -1) {
-      artifactIdList.splice(index, 1);
-      ArtifactDatabase.saveIdList();
-    }
+    this.updateCacheData();
+  }
+
+  static updateCacheData() {
+    this.updateIdList();
+  }
+  static updateIdList() {
+    artifactIdList = Object.keys(artifactDatabase)
+    this.saveIdListToStorage();
   }
 }

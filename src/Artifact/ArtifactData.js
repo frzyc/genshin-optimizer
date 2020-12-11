@@ -1,13 +1,13 @@
 
-const artifactStats = {
+const ArtifactStatsData = {
   hp: { name: "HP", key: "hp" },
   hp_: { name: "HP%", key: "hp_", unit: "%" },
   atk: { name: "ATK", key: "atk" },
   atk_: { name: "ATK%", key: "atk_", unit: "%" },
   def: { name: "DEF", key: "def" },
   def_: { name: "DEF%", key: "def_", unit: "%" },
-  phy_dmg: { name: "Physical DMG%", key: "phy_dmg", unit: "%" },
-  ele_dmg: { name: "Elemental DMG%", key: "ele_dmg", unit: "%" },
+  phy_dmg: { name: "Physical DMG Bonus", key: "phy_dmg", unit: "%" },
+  ele_dmg: { name: "Elemental DMG Bonus", key: "ele_dmg", unit: "%" },
   ele_mas: { name: "Elemental Mastery", key: "ele_mas" },
   ener_rech: { name: "Energy Recharge%", key: "ener_rech", unit: "%" },
   crit_rate: { name: "Crit Rate%", key: "crit_rate", unit: "%" },
@@ -15,7 +15,7 @@ const artifactStats = {
   heal_bonu: { name: "Healing Bonus%", key: "heal_bonu", unit: "%" },
 };
 
-const artifactSubStats = {
+const ArtifactSubStatsData = {
   hp: { 3: { low: 100, high: 143 }, 4: { low: 167, high: 239 }, 5: { low: 209, high: 299 } },
   hp_: { 3: { low: 2.5, high: 3.5 }, 4: { low: 3.3, high: 4.7 }, 5: { low: 4.1, high: 5.8 } },
   atk: { 3: { low: 7, high: 9 }, 4: { low: 11, high: 16 }, 5: { low: 14, high: 19 } },
@@ -28,14 +28,14 @@ const artifactSubStats = {
   crit_dmg: { 3: { low: 3.3, high: 4.7 }, 4: { low: 4.4, high: 6.2 }, 5: { low: 5.4, high: 7.8 } },
 }
 
-const artifactSlots = {
+const ArtifactSlotSData = {
   flower: { name: "Flower of Life", stats: ["hp"] },
   plume: { name: "Plume of Death", stats: ["atk"] },
   sands: { name: "Sands of Eon", stats: ["hp_", "def_", "atk_", "ele_mas", "ener_rech"] },
-  goblet: { name: "Goblet of Eonothem", stats: ["hp_", "def_", "atk_", "ele_mas", "ele_dmg", "phy_dmg"] },
+  goblet: { name: "Goblet of Eonothem", stats: ["hp_", "def_", "atk_", "ele_mas", "phy_dmg", "anemo_ele_dmg", "geo_ele_dmg", "electro_ele_dmg", "hydro_ele_dmg", "pyro_ele_dmg", "cryo_ele_dmg",] },
   circlet: { name: "Circlet of Logos", stats: ["hp_", "def_", "atk_", "ele_mas", "crit_rate", "crit_dmg", "heal_bonu"] },
 };
-const star5ArtifactsSets = {
+const ArtifactSetsData = {
   "Wanderer's Troupe": {
     name: "Wanderer's Troupe", rarity: [4, 5], pieces: {
       flower: "Troupe's Dawnlight",
@@ -43,6 +43,18 @@ const star5ArtifactsSets = {
       sands: "Concert's Final Hour",
       goblet: "Wanderer's String-Kettle",
       circlet: "Conductor's Top Hat"
+    },
+    sets: {
+      2: {
+        text: "Elemental Mastery +80",
+        stats: {
+          ele_mas: 80
+        }
+      },
+      4: {
+        text: "Increases Charged Attack DMG by 35% if the character uses a Catalyst or Bow.",
+        stats: {}
+      }
     }
   }, "Viridescent Venerer": {
     name: "Viridescent Venerer", rarity: [4, 5], pieces: {
@@ -51,6 +63,18 @@ const star5ArtifactsSets = {
       sands: "Viridescent Venerer's Determination",
       goblet: "Viridescent Venerer's Vessel",
       circlet: "Viridescent Venerer's Diadem"
+    },
+    sets: {
+      2: {
+        text: "Anemo DMG Bonus +15%",
+        stats: {
+          anemo_ele_dmg: 15
+        }
+      },
+      4: {
+        text: "Increases Swirl DMG by 60%. Decreases opponent's Elemental RES to the element infused in the Swirl by 40% for 10s.",
+        stats: {}
+      }
     }
   }, "Thundersoother": {
     name: "Thundersoother", rarity: [4, 5], pieces: {
@@ -59,6 +83,16 @@ const star5ArtifactsSets = {
       sands: "Hour of Soothing Thunder",
       goblet: "Thundersoother's Goblet",
       circlet: "Thundersoother's Diadem"
+    },
+    sets: {
+      2: {
+        text: "Electro RES increased by 40%",
+        stats: {}//TODO ele_res
+      },
+      4: {
+        text: "Increases DMG against enemies affected by Electro by 35%.",
+        stats: {}
+      }
     }
   }, "Thundering Fury": {
     name: "Thundering Fury", rarity: [4, 5], pieces: {
@@ -67,6 +101,16 @@ const star5ArtifactsSets = {
       sands: "Hourglass of Thunder",
       goblet: "Omen of Thunderstorm",
       circlet: "Thunder Summoner's Crown"
+    },
+    sets: {
+      2: {
+        text: "Electro DMG Bonus +15%",
+        stats: { electro_ele_dmg: 15 }
+      },
+      4: {
+        text: "Increases damage caused by Overloaded, Electro-Charged, and Superconduct DMG by 40%. Triggering such effects decreases Elemental Skill CD by 1s. Can only occur once every 0.8s.",
+        stats: {}
+      }
     }
   }, "Retracing Bolide": {
     name: "Retracing Bolide", rarity: [4, 5], pieces: {
@@ -75,6 +119,16 @@ const star5ArtifactsSets = {
       sands: "Summer Night's Moment",
       goblet: "Summer Night's Waterballoon",
       circlet: "Summer Night's Mask"
+    },
+    sets: {
+      2: {
+        text: "Increases the effectiveness of shields by 35%",
+        stats: {}//TODO shield 
+      },
+      4: {
+        text: "Gain an additional 40% Normal and Charged Attack DMG while under the protection of a shield.",
+        stats: {}
+      }
     }
   }, "Noblesse Oblige": {
     name: "Noblesse Oblige", rarity: [4, 5], pieces: {
@@ -83,6 +137,16 @@ const star5ArtifactsSets = {
       sands: "Royal Pocket Watch",
       goblet: "Royal Silver Urn",
       circlet: "Royal Masque"
+    },
+    sets: {
+      2: {
+        text: "Elemental Burst DMG +20%",
+        stats: {}
+      },
+      4: {
+        text: "Using an Elemental Burst increase all party members' ATK by 20% for 12s. This effect cannot stack.",
+        stats: {}
+      }
     }
   }, "Maiden Beloved": {
     name: "Maiden Beloved", rarity: [4, 5], pieces: {
@@ -91,6 +155,16 @@ const star5ArtifactsSets = {
       sands: "Maiden's Passing Youth",
       goblet: "Maiden's Fleeting Leisure",
       circlet: "Maiden's Fading Beauty"
+    },
+    sets: {
+      2: {
+        text: "Character Healing Effectiveness +15%",
+        stats: { heal_bonu: 15 }
+      },
+      4: {
+        text: "Using an Elemental Skill or Burst increases healing received by all party members by 20% for 10s.",
+        stats: {}
+      }
     }
   }, "Lavawalker": {
     name: "Lavawalker", rarity: [4, 5], pieces: {
@@ -99,6 +173,16 @@ const star5ArtifactsSets = {
       sands: "Lavawalker's Torment",
       goblet: "Lavawalker's Epiphany",
       circlet: "Lavawalker's Wisdom"
+    },
+    sets: {
+      2: {
+        text: "Pyro RES increased by 40%",
+        stats: {}//TODO ele_res
+      },
+      4: {
+        text: "Increases DMG against enemies that are Burning or affected by Pyro by 35%.",
+        stats: {}
+      }
     }
   }, "Gladiator's Finale": {
     name: "Gladiator's Finale", rarity: [4, 5], pieces: {
@@ -107,6 +191,16 @@ const star5ArtifactsSets = {
       sands: "Gladiator's Longing",
       goblet: "Gladiator's Intoxication",
       circlet: "Gladiator's Triumphus"
+    },
+    sets: {
+      2: {
+        text: "ATK +18%",
+        stats: { atk_: 18 }
+      },
+      4: {
+        text: "If the wielder of this artifact set uses a Sword, Claymore or Polearm, increases their Normal Attack DMG by 35%.",
+        stats: {}
+      }
     }
   }, "Crimson Witch of Flames": {
     name: "Crimson Witch of Flames", rarity: [4, 5], pieces: {
@@ -115,6 +209,16 @@ const star5ArtifactsSets = {
       sands: "Witch's End Time",
       goblet: "Witch's Heart Flames",
       circlet: "Witch's Scorching Hat"
+    },
+    sets: {
+      2: {
+        text: "Pyro DMG Bonus +15%",
+        stats: { pyro_ele_dmg: 15 }
+      },
+      4: {
+        text: "Increases Overloaded and Burning DMG by 40%. Increases Vaporize and Melt DMG by 15%. Using an Elemental Skill increases 2-Piece Set effects by 50% for 10s. Max 3 stacks.",
+        stats: {}
+      }
     }
   }, "Bloodstained Chivalry": {
     name: "Bloodstained Chivalry", rarity: [4, 5], pieces: {
@@ -123,6 +227,16 @@ const star5ArtifactsSets = {
       sands: "Bloodstained Final Hour",
       goblet: "Bloodstained Chevalier's Goblet",
       circlet: "Bloodstained Iron Mask"
+    },
+    sets: {
+      2: {
+        text: "Physical DMG +25%",
+        stats: { phy_dmg: 25 }
+      },
+      4: {
+        text: "After defeating an opponent, increases Charged Attack DMG by 50%, and reduces its Stamina cost to 0 for 10s.",
+        stats: {}
+      }
     }
   }, "Archaic Petra": {
     name: "Archaic Petra", rarity: [4, 5], pieces: {
@@ -131,25 +245,336 @@ const star5ArtifactsSets = {
       sands: "Sundial of Enduring Jade",
       goblet: "Goblet of Chiseled Crag",
       circlet: "Mask of Solitude Basalt"
+    },
+    sets: {
+      2: {
+        text: "	Gain a 15% Geo DMG Bonus",
+        stats: { geo_ele_dmg: 15 }
+      },
+      4: {
+        text: "Upon obtaining a crystal created through a Geo Elemental Reaction, all party members gain 35% RES to that particular element for 10s. Only one form of Elemental RES can be gained in this manner at any one time. Upon obtaining a crystal created through a Geo Elemental Reaction, all party members gain 35% RES to that particular element for 10s. Only one form of Elemental RES can be gained in this manner at any one time.",
+        stats: {}
+      }
     }
   },
-  // "":{
+  "Scholar": {
+    name: "Scholar", rarity: [3, 4], pieces: {
+      flower: "Scholar's Bookmark",
+      plume: "Scholar's Quill Pen",
+      sands: "Scholar's Clock",
+      goblet: "Scholar's Ink Cup",
+      circlet: "Scholar's Lens"
+    },
+    sets: {
+      2: {
+        text: "Energy Recharge +20%",
+        stats: { ener_rech: 20 }
+      },
+      4: {
+        text: "Gaining Energy gives 3 Energy to all party members who have a bow or a catalyst equipped. Can only occur once every 3s.",
+        stats: {}
+      }
+    }
+  },
+  "Gambler": {
+    name: "Gambler", rarity: [3, 4], pieces: {
+      flower: "Gambler's Brooch",
+      plume: "Gambler's Feathered Accessory",
+      sands: "Gambler's Pocket Watch",
+      goblet: "Gambler's Dice Cup",
+      circlet: "Gambler's Earrings"
+    },
+    sets: {
+      2: {
+        text: "Elemental Skill DMG increased by 20%",
+        stats: {}
+      },
+      4: {
+        text: "Defeating an enemy has 100% chance to remove Elemental Skill CD. Can only occur once every 15s.",
+        stats: {}
+      }
+    }
+  },
+  "Brave Heart": {
+    name: "Brave Heart", rarity: [3, 4], pieces: {
+      flower: "Medal of the Brave",
+      plume: "Prospect of the Brave",
+      sands: "Fortitude of the Brave",
+      goblet: "Outset of the Brave",
+      circlet: "Crown of the Brave"
+    },
+    sets: {
+      2: {
+        text: "2-piece Set Bonus: ATK +18%",
+        stats: { atk_: 18 }
+      },
+      4: {
+        text: "Increases DMG by 30% against enemies with more than 50% HP.",
+        stats: {}
+      }
+    }
+  },
+  "Tiny Miracle": {
+    name: "Tiny Miracle", rarity: [3, 4], pieces: {
+      flower: "Tiny Miracle's Flower",
+      plume: "Tiny Miracle's Feather",
+      sands: "Tiny Miracle's Hourglass",
+      goblet: "Tiny Miracle's Goblet",
+      circlet: "Tiny Miracle's Earrings"
+    },
+    sets: {
+      2: {
+        text: "All Elemental RES increased by 20%",
+        stats: {}
+      },
+      4: {
+        text: "Incoming elemental DMG increases corresponding Elemental RES by 30% for 10s. Can only occur once every 10s.",
+        stats: {}
+      }
+    }
+  },
+  "Defender's Will": {
+    name: "Defender's Will", rarity: [3, 4], pieces: {
+      flower: "Guardian's Flower",
+      plume: "Guardian's Sigil",
+      sands: "Guardian's Clock",
+      goblet: "Guardian's Vessel",
+      circlet: "Guardian's Band"
+    },
+    sets: {
+      2: {
+        text: "Base DEF +30%",
+        stats: { def_: 30 }
+      },
+      4: {
+        text: "Increases Elemental RES by 30% for each element present in the party.",
+        stats: {}
+      }
+    }
+  },
+  "Martial Artist": {
+    name: "Martial Artist", rarity: [3, 4], pieces: {
+      flower: "Martial Artist's Red Flower",
+      plume: "Martial Artist's Feathered Accessory",
+      sands: "Martial Artist's Water Hourglass",
+      goblet: "Martial Artist's Wine Cup",
+      circlet: "Martial Artist's Bandana"
+    },
+    sets: {
+      2: {
+        text: "Increases Normal Attack and Charged Attack DMG by 15%.",
+        stats: {}
+      },
+      4: {
+        text: "After using Elemental Skill, increases Normal Attack and Charged Attack DMG by 25% for 8s.",
+        stats: {}
+      }
+    }
+  },
+  "Resolution of Sojourner": {
+    name: "Resolution of Sojourner", rarity: [3, 4], pieces: {
+      flower: "Heart of Comradeship",
+      plume: "Feather of Homecoming",
+      sands: "Sundial of the Sojourner",
+      goblet: "Goblet of the Sojourner",
+      circlet: "Crown of Parting"
+    },
+    sets: {
+      2: {
+        text: "ATK +18%",
+        stats: { atk_: 18 }
+      },
+      4: {
+        text: "Increases Charged Attack CRIT Rate by 30%.",
+        stats: {}
+      }
+    }
+  },
+  "The Exile": {
+    name: "The Exile", rarity: [3, 4], pieces: {
+      flower: "Exile's Flower",
+      plume: "Exile's Feather",
+      sands: "Exile's Pocket Watch",
+      goblet: "Exile's Goblet",
+      circlet: "Exile's Circlet"
+    },
+    sets: {
+      2: {
+        text: "Energy Recharge +20%",
+        stats: { ener_rech: 20 }
+      },
+      4: {
+        text: "Using an Elemental Burst regenerates 2 Energy for other party members every 2s for 6s. This effect cannot stack.",
+        stats: {}
+      }
+    }
+  },
+  "Berserker": {
+    name: "Berserker", rarity: [3, 4], pieces: {
+      flower: "Berserker's Rose",
+      plume: "Berserker's Indigo Feather",
+      sands: "Berserker's Timepiece",
+      goblet: "Berserker's Bone Goblet",
+      circlet: "Berserker's Battle Mask"
+    },
+    sets: {
+      2: {
+        text: "CRIT Rate +12%",
+        stats: { crit_rate: 12 }
+      },
+      4: {
+        text: "When HP is below 70%, CRIT Rate increases by an additional 24%.",
+        stats: {}
+      }
+    }
+  },
+  "Instructor": {
+    name: "Instructor", rarity: [3, 4], pieces: {
+      flower: "Instructor's Brooch",
+      plume: "Instructor's Feathered Accessory",
+      sands: "Instructor's Pocket Watch",
+      goblet: "Instructor's Tea Cup",
+      circlet: "Instructor's Cap"
+    },
+    sets: {
+      2: {
+        text: "Increases Elemental Mastery by 80.",
+        stats: { ele_mas: 80 }
+      },
+      4: {
+        text: "After using Elemental Skill, increases all party members' Elemental Mastery by 120 for 8s.",
+        stats: {}
+      }
+    }
+  },
+  "Traveling Doctor": {
+    name: "Traveling Doctor", rarity: [3], pieces: {
+      flower: "Traveling Doctor's Medicine Pot",
+      plume: "Traveling Doctor's Handkerchief",
+      sands: "Traveling Doctor's Pocket Watch",
+      goblet: "Traveling Doctor's Silver Lotus",
+      circlet: "Traveling Doctor's Owl Feather"
+    },
+    sets: {
+      2: {
+        text: "Increases incoming healing by 20%.",
+        stats: {}
+      },
+      4: {
+        text: "Using Elemental Burst restores 20% HP.",
+        stats: {}
+      }
+    }
+  },
+  "Lucky Dog": {
+    name: "Lucky Dog", rarity: [3], pieces: {
+      flower: "Lucky Dog's Clover",
+      plume: "Lucky Dog's Eagle Feather",
+      sands: "Lucky Dog's Hourglass",
+      goblet: "Lucky Dog's Goblet",
+      circlet: "Lucky Dog's Silver Circlet"
+    },
+    sets: {
+      2: {
+        text: "DEF increased by 100.",
+        stats: { def: 100 }
+      },
+      4: {
+        text: "Picking up Mora restores 300 HP.",
+        stats: {}
+      }
+    }
+  },
+  "Adventurer": {
+    name: "Adventurer", rarity: [3], pieces: {
+      flower: "Adventurer's Flower",
+      plume: "Adventurer's Tail Feather",
+      sands: "Adventurer's Pocket Watch",
+      goblet: "Adventurer's Golden Goblet",
+      circlet: "Adventurer's Bandana"
+    },
+    sets: {
+      2: {
+        text: "Max HP increased by 1,000.",
+        stats: { hp: 1000 }
+      },
+      4: {
+        text: "Opening chest regenerates 30% Max HP over 5s.",
+        stats: {}
+      }
+    }
+  },
+  "Prayers of Wisdom": {
+    name: "Prayers of Wisdom", rarity: [3, 4], pieces: {
+      circlet: "Tiara of Thunder"
+    },
+    sets: {
+      1: {
+        text: "Affected by Electro for 40% less time.",
+        stats: {}
+      }
+    }
+  },
+  "Prayers of Springtime": {
+    name: "Prayers of Springtime", rarity: [3, 4], pieces: {
+      circlet: "Tiara of Frost"
+    },
+    sets: {
+      1: {
+        text: "Affected by Cryo for 40% less time.",
+        stats: {}
+      }
+    }
+  },
+  "Prayers of Illumination": {
+    name: "Prayers of Illumination", rarity: [3, 4], pieces: {
+      circlet: "Tiara of Flame"
+    },
+    sets: {
+      1: {
+        text: "Affected by Pyro for 40% less time.",
+        stats: {}
+      }
+    }
+  },
+  "Prayers of Destiny": {
+    name: "Prayers of Destiny", rarity: [3, 4], pieces: {
+      circlet: "Tiara of Torrents"
+    },
+    sets: {
+      1: {
+        text: "Affected by Hydro for 40% less time.",
+        stats: {}
+      }
+    }
+  },
+  // "": {
   //   name: "", rarity: [4, 5], pieces: {
   //     flower: "",
   //     plume: "",
   //     sands: "",
   //     goblet: "",
   //     circlet: ""
+  //   },
+  //   sets: {
+  //     2: {
+  //       text: "",
+  //       stats: {}
+  //     },
+  //     4: {
+  //       text: "",
+  //       stats: {}
+  //     }
   //   }
   // },
 }
-const stars = {
+const ArtifactStarsData = {
   3: { subsBaselow: 1, subBaseHigh: 2, numUpgradesOrUnlocks: 3 },
   4: { subsBaselow: 2, subBaseHigh: 3, numUpgradesOrUnlocks: 4 },
   5: { subsBaselow: 3, subBaseHigh: 4, numUpgradesOrUnlocks: 5 }
 };
 
-const mainStats = {
+const ArtifactMainStatsData = {
   3: {
     hp: [430, 552, 674, 796, 918, 1040, 1162, 1283, 1405, 1527, 1649, 1771, 1893],
     atk: [28, 36, 44, 52, 60, 68, 76, 84, 91, 99, 107, 115, 123],
@@ -193,12 +618,21 @@ const mainStats = {
     heal_bonu: [5.4, 6.9, 8.4, 10.0, 11.5, 13.0, 14.5, 16.1, 17.6, 19.1, 20.6, 22.2, 23.7, 25.2, 26.7, 28.3, 29.8, 31.3, 32.8, 34.4, 35.9],
   }
 }
-
+const ElementalData = {
+  anemo: { name: "Anemo" },
+  geo: { name: "Geo" },
+  electro: { name: "Electro" },
+  hydro: { name: "Hydro" },
+  pyro: { name: "Pyro" },
+  cryo: { name: "Cryo" },
+  dendro: { name: "Dendro" }
+}
 export {
-  artifactStats,
-  artifactSlots,
-  star5ArtifactsSets,
-  artifactSubStats,
-  stars,
-  mainStats
+  ArtifactStatsData,
+  ArtifactSlotSData,
+  ArtifactSetsData,
+  ArtifactSubStatsData,
+  ArtifactStarsData,
+  ArtifactMainStatsData,
+  ElementalData
 }

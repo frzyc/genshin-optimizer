@@ -1,4 +1,4 @@
-import { loadFromLocalStorage, saveToLocalStorage } from "../Util";
+import { deepClone, loadFromLocalStorage, saveToLocalStorage } from "../Util";
 
 var characterDatabase = {};
 var characterIdList = [];
@@ -11,14 +11,17 @@ export default class CharacterDatabase {
       throw Error('A static class cannot be instantiated.');
     }
   }
-  static getIdList = () => loadFromLocalStorage("character_id_list"); 
+  static getIdList = () => loadFromLocalStorage("character_id_list");
   static saveIdList = () => saveToLocalStorage("character_id_list", characterIdList);
-  static getCharacterIdList = () => characterIdList;
+  static getCharacterDatabase = () => deepClone(characterDatabase);
+  static getCharacterIdList = () => deepClone(characterIdList);
   static populateDatebaseFromLocalStorage = () => {
+    if (characterIdList.length > 0) return;
     characterIdList = CharacterDatabase.getIdList();
     if (characterIdList === null) characterIdList = []
     for (const id of characterIdList)
-      characterDatabase[id] = loadFromLocalStorage(id);
+      if (!characterDatabase[id])
+        characterDatabase[id] = loadFromLocalStorage(id);
     charIdIndex = parseInt(localStorage.getItem("character_highest_id"));
     if (isNaN(charIdIndex)) charIdIndex = 0;
   }

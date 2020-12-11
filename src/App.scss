@@ -12,8 +12,16 @@ $body-bg: $darkbg;
 // .card-header {
 //     background-color: $lightbg !important;
 // }
+html,
+body {
+    height: 100%;
+}
+#root {
+    min-height: 100%;
+    height: 100%;
+}
 $theme-colors: (
-    "darkcontent":$contentbg,
+    "darkcontent": $contentbg,
     "lightfont": $lightfontcolor,
     //gold
     "5star": #ffd700,
@@ -26,4 +34,7 @@ $theme-colors: (
     //grey
     "1star": #808080,
 );
+
 @import "node_modules/bootstrap/scss/bootstrap";
+@include list-group-item-variant("customdark", $contentbg, $lightfontcolor);
+@include list-group-item-variant("customdarker", theme-color-level("darkcontent", 2), $lightfontcolor);

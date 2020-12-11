@@ -1,37 +1,64 @@
-import { artifactStats, stars, mainStats, star5ArtifactsSets, artifactSubStats, artifactSlots } from './ArtifactData'
+import { ArtifactStatsData, ArtifactStarsData, ArtifactMainStatsData, ArtifactSetsData, ArtifactSubStatsData, ArtifactSlotSData, ElementalData } from './ArtifactData'
 
 export default class Artifact {
 
-  getArtifactSetName = () =>
-    Artifact.getArtifactSetName(this.state);
+  static getArtifactSetName = (key, defVal = "") =>
+    key ? ArtifactSetsData[key].name : defVal;
 
-  static getArtifactSetName = (state) =>
-    state.selectedArtifactSetKey ? star5ArtifactsSets[state.selectedArtifactSetKey].name : "Artifact Set";
+  static getArtifactSetsByMaxStarEntries = (star) =>
+    Object.entries(ArtifactSetsData).filter(([key, setobj]) => setobj.rarity[(setobj.rarity.length) - 1] === star)
+
   static getArtifactSlotName = (slotKey) =>
-    artifactSlots[slotKey] ? artifactSlots[slotKey].name : ""
+    ArtifactSlotSData[slotKey] ? ArtifactSlotSData[slotKey].name : ""
 
   static getArtifactPieceName = (state) =>
-    (state.selectedArtifactSetKey && state.slotKey && star5ArtifactsSets[state.selectedArtifactSetKey].pieces) ?
-      star5ArtifactsSets[state.selectedArtifactSetKey].pieces[state.slotKey] : "Piece Name";
-  static getStatName = (key) => artifactStats[key].name;
+    (state.setKey && state.slotKey && ArtifactSetsData[state.setKey].pieces) ?
+      ArtifactSetsData[state.setKey].pieces[state.slotKey] : "Piece Name";
+  static getStatName = (key, defVal = "") => {
+    if (key && ArtifactStatsData[key])
+      return ArtifactStatsData[key].name;
+    else if (key && key.includes("_ele_dmg")) {
+      let element = key.split("_ele_dmg")[0]
+      if (ElementalData[element])
+        return ElementalData[element].name + " DMG Bonus"
+    }
+    return defVal
+  }
 
-  static getStatUnit = (key) => (key && artifactStats[key] && artifactStats[key].unit) ? artifactStats[key].unit : "";
+  static getStatUnit = (key, defVal = "") => {
+    if (key && ArtifactStatsData[key] && ArtifactStatsData[key].unit)
+      return ArtifactStatsData[key].unit
+    else if (key.includes("_ele_dmg"))
+      return this.getStatUnit("ele_dmg")
+    else
+      return defVal
+  }
 
-  static getMainStatValue = (state) =>
-    (state.mainStatKey && state.numStars) ? `${mainStats[state.numStars][state.mainStatKey][state.level]}` : 0
+  static getMainStatValue = (key, numStars, level, defVal = 0) => {
+    if (key && numStars && ArtifactMainStatsData[numStars] && ArtifactMainStatsData[numStars][key] && ArtifactMainStatsData[numStars][key][level])
+      return ArtifactMainStatsData[numStars][key][level]
+    else {
+      if (key.includes("_ele_dmg")) {
+        let elementKey = "ele_dmg"
+        return this.getMainStatValue(elementKey, numStars, level, defVal)
+      }
+      return defVal
+    }
+  }
 
-  static totalPossibleRolls = (state) => stars[state.numStars] ?
-    (stars[state.numStars].subBaseHigh + stars[state.numStars].numUpgradesOrUnlocks) : 0;
+
+  static totalPossibleRolls = (state) => ArtifactStarsData[state.numStars] ?
+    (ArtifactStarsData[state.numStars].subBaseHigh + ArtifactStarsData[state.numStars].numUpgradesOrUnlocks) : 0;
 
   static rollsRemaining = (state) =>
-    Math.floor((state.numStars * 4 - state.level) / 4);
+    Math.ceil((state.numStars * 4 - state.level) / 4);
 
   static numberOfSubstatUnlocked = (state) =>
     state.substats.reduce((sum, cur) =>
       sum + (cur && cur.value ? 1 : 0), 0);
 
   static getRemainingSubstats = (state) =>
-    (state.slotKey ? Object.keys(artifactSubStats).filter((key) => {
+    (state.slotKey ? Object.keys(ArtifactSubStatsData).filter((key) => {
       //if mainstat has key, not valid
       if (state.mainStatKey === key) return false;
       //if any one of the substat has, not valid.
@@ -47,9 +74,9 @@ export default class Artifact {
     substateValidation.reduce((sum, cur) => sum + (cur.valid && cur.efficiency ? (cur.efficiency * cur.rolls) : 0), 0)
 
   static getStatHighRollVal = (subStatKey, numStars) => (subStatKey ?? numStars) ?
-    artifactSubStats[subStatKey][numStars].high : 0
+    ArtifactSubStatsData[subStatKey][numStars].high : 0
   static getStatLowRollVal = (subStatKey, numStars) => (subStatKey ?? numStars) ?
-    artifactSubStats[subStatKey][numStars].low : 0
+    ArtifactSubStatsData[subStatKey][numStars].low : 0
   static validateSubStat = (state, substat) => {
     if (!substat || !substat.value) return { valid: true }
     let value = parseFloat(substat.value);
@@ -58,7 +85,7 @@ export default class Artifact {
     let statLowRollVal = this.getStatLowRollVal(substat.key, state.numStars);
     const validateRolls = (rolls) => {
       if (rolls === 0) return { valid: false, msg: `Substat cannot be rolled 0 times.` };
-      let totalAllowableRolls = stars[state.numStars].numUpgradesOrUnlocks - (4 - stars[state.numStars].subBaseHigh) + 1;//+1 for its base roll
+      let totalAllowableRolls = ArtifactStarsData[state.numStars].numUpgradesOrUnlocks - (4 - ArtifactStarsData[state.numStars].subBaseHigh) + 1;//+1 for its base roll
       if (rolls > totalAllowableRolls) return { valid: false, msg: `Substat cannot be rolled more than ${totalAllowableRolls} times.` };
       let min = statLowRollVal * rolls;
       let max = statHighRollVal * rolls;

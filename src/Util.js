@@ -1,4 +1,4 @@
-const getRandomElementFromArray = (array) => array[Math.floor(Math.random()*array.length)];
+const getRandomElementFromArray = (array) => array[Math.floor(Math.random() * array.length)];
 function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
@@ -19,11 +19,14 @@ const loadFromLocalStorage = (key) => {
 }
 const saveToLocalStorage = (key, obj) =>
   localStorage.setItem(key, JSON.stringify(obj));
+const deepClone = (obj) =>
+  JSON.parse(JSON.stringify(obj))
 export {
   getRandomInt,
   getRandomIntInclusive,
   getRandomArbitrary,
   getRandomElementFromArray,
   loadFromLocalStorage,
-  saveToLocalStorage
+  saveToLocalStorage,
+  deepClone
 }
