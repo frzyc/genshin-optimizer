@@ -28,7 +28,7 @@ export default class Artifact {
   static getStatUnit = (key, defVal = "") => {
     if (key && ArtifactStatsData[key] && ArtifactStatsData[key].unit)
       return ArtifactStatsData[key].unit
-    else if (key.includes("_ele_dmg"))
+    else if (key && key.includes("_ele_dmg"))
       return this.getStatUnit("ele_dmg")
     else
       return defVal

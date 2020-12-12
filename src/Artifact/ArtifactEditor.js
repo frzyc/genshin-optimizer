@@ -1,16 +1,7 @@
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import { OverlayTrigger, Popover } from 'react-bootstrap';
-import Alert from 'react-bootstrap/Alert';
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-import Col from 'react-bootstrap/Col';
-import Dropdown from 'react-bootstrap/Dropdown';
-import DropdownButton from 'react-bootstrap/DropdownButton';
-import FormControl from 'react-bootstrap/FormControl';
-import InputGroup from 'react-bootstrap/InputGroup';
-import Row from 'react-bootstrap/Row';
+import { Alert, Button, Card, Col, Dropdown, DropdownButton, FormControl, InputGroup, OverlayTrigger, Popover, Row } from 'react-bootstrap';
 import { FloatFormControl, IntFormControl } from '../Components/CustomFormControl';
 import SlotIcon from '../Components/SlotIcon';
 import { getRandomArbitrary, getRandomElementFromArray, getRandomIntInclusive } from '../Util';
@@ -40,10 +31,10 @@ export default class ArtifactEditor extends React.Component {
     this.setState({ level: newlevel })
   }
 
-  ArtifactDropDown = () => {
+  ArtifactDropDown = (props) => {
     let dropdownitemsForStar = (star) =>
       Artifact.getArtifactSetsByMaxStarEntries(star).map(([key, setobj]) =>
-        <Dropdown.Item key={key}
+        (<Dropdown.Item key={key}
           onClick={() => this.setState(state => {
             let ret = { setKey: key, numStars: setobj.rarity[setobj.rarity.length - 1] }
             if (state.level > ret.numStars * 4) ret.level = ret.numStars * 4
@@ -51,8 +42,9 @@ export default class ArtifactEditor extends React.Component {
           })}
         >
           {setobj.name}
-        </Dropdown.Item >)
-    return <DropdownButton as={InputGroup.Prepend} title={Artifact.getArtifactSetName(this.state.setKey, "Artifact Set")}>
+        </Dropdown.Item >))
+
+    return (<DropdownButton as={InputGroup.Prepend} title={Artifact.getArtifactSetName(this.state.setKey, "Artifact Set")}>
       <Dropdown.ItemText>Max Rarity 🟊🟊🟊🟊🟊</Dropdown.ItemText>
       {dropdownitemsForStar(5)}
       <Dropdown.Divider />
@@ -61,11 +53,14 @@ export default class ArtifactEditor extends React.Component {
       <Dropdown.Divider />
       <Dropdown.ItemText>Max Rarity 🟊🟊🟊</Dropdown.ItemText>
       {dropdownitemsForStar(3)}
-    </DropdownButton>
+    </DropdownButton>)
   }
-  MainSelection = (props) =>
-    <InputGroup>
-      <this.ArtifactDropDown />
+  Test = () => <div>WTFFFFFF</div>
+  MainSelection = (props) => {
+
+    return (<InputGroup>
+      {/* Don't know why I can't do <this.ArtifactDropDown />, it has error in production: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. */}
+      {this.ArtifactDropDown()}
       <DropdownButton as={InputGroup.Prepend} title={this.state.numStars > 0 ? "🟊".repeat(this.state.numStars) : "Rarity"} disabled={!this.state.setKey}>
         {Object.keys(ArtifactStarsData).map((star, index) => {
           star = parseInt(star);
@@ -91,7 +86,8 @@ export default class ArtifactEditor extends React.Component {
         <Button onClick={() => this.setLevel(this.state.level + 1)} disabled={!this.state.setKey || this.state.level === (this.state.numStars * 4)}>+</Button>
         <Button onClick={() => this.setLevel(this.state.numStars * 4)} disabled={!this.state.setKey || this.state.level === (this.state.numStars * 4)}>{this.state.numStars * 4}</Button>
       </InputGroup.Append>
-    </InputGroup>
+    </InputGroup>)
+  }
   MainStatInputRow = () =>
     <InputGroup>
       <DropdownButton

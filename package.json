@@ -21,6 +21,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "testserver": "set PUBLIC_URL= && npm run build && node ./test-server.js",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
@@ -45,6 +46,7 @@
   },
   "devDependencies": {
     "express": "^4.17.1",
-    "gh-pages": "^3.1.0"
+    "gh-pages": "^3.1.0",
+    "worker-loader": "^3.0.6"
   }
 }

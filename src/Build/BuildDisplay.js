@@ -11,6 +11,8 @@ import { deepClone, loadFromLocalStorage, saveToLocalStorage } from '../Util';
 import artifactDisplaySortKey from './BuildStatData';
 import Artifact from '../Artifact/Artifact';
 import PercentBadge from '../Artifact/PercentBadge';
+// eslint-disable-next-line
+import Worker from "worker-loader!./BuildWorker.js";
 
 export default class BuildDisplay extends React.Component {
   constructor(props) {
@@ -111,8 +113,8 @@ export default class BuildDisplay extends React.Component {
       buildFilterKey: this.state.buildFilterKey, asending: this.state.asending
     }
 
-    let worker = new Worker('BuildWorker.js');
-
+    // let worker = new Worker('BuildWorker.js');
+let worker = new Worker();
     worker.onmessage = (e) =>
       this.setState({ builds: e.data, generatingBuilds: false })
     worker.postMessage(data)
@@ -302,7 +304,7 @@ export default class BuildDisplay extends React.Component {
         <Card.Body>
           <Row>
             <Col className="mb-3">
-              <this.BuildModalCharacterCard build={build} />
+              <BuildModalCharacterCard build={build} />
             </Col>
           </Row>
           <Row>
@@ -331,9 +333,11 @@ export default class BuildDisplay extends React.Component {
                             {Object.entries(build.artifactSetEffect).map(([setKey, effects]) =>
                               <Col key={setKey} xs={12} className="mb-3">
                                 <h6>{Artifact.getArtifactSetName(setKey)}</h6>
-                                {Object.entries(effects).map(([num, effect]) => {
-                                  return <span key="num"><Badge variant="success">{num}-Set</Badge> <span>{effect.text}</span></span>
-                                })}
+                                <Row>
+                                  {Object.entries(effects).map(([num, effect]) => {
+                                    return <Col key="num" xs={12}><Badge variant="success">{num}-Set</Badge> <span>{effect.text}</span></Col>
+                                  })}
+                                </Row>
                               </Col>
                             )}
                           </Row>
@@ -343,7 +347,7 @@ export default class BuildDisplay extends React.Component {
                   </Row>
                 </Col>
                 {Object.values(build.artifacts).map(art =>
-                  <Col sm={6} key={art.id} className="mb-3"> <this.ModalArtifactCard artifact={art} /></Col>)}
+                  <Col sm={6} key={art.id} className="mb-3"> <ModalArtifactCard artifact={art} /></Col>)}
               </Row>
             </Col>
           </Row>
@@ -364,96 +368,6 @@ export default class BuildDisplay extends React.Component {
         </Card.Footer>
       </Card>
     </Modal>) : null
-  }
-  BuildModalCharacterCard = (props) => {
-    let build = props.build;
-    return (<Card className="h-100" border="success" bg="darkcontent" text="lightfont">
-      <Card.Header>Character Stats</Card.Header>
-      <Card.Body>
-        <Row>
-          {Object.entries(artifactDisplaySortKey).map(([key, val]) => {
-            let name = val.name
-            let unit = val.unit ? val.unit : ""
-            if (key === "ele_dmg" || key === "ele_atk") {
-              let eleName = ElementalData[build.character.element].name
-              name = eleName + name
-              key === "ele_dmg" && (key = `${build.character.element}_${key}`)
-            }
-            let statsDisplay = (key in build.character) ?
-              <span>{name}: <span className="text-warning">{build.character[key]}{unit}</span> <span className="text-success">+ {(build.finalStats[key] - build.character[key]).toFixed(1)}{unit}</span></span> :
-              <span>{name}: <span className="text-warning">{build.finalStats[key]}{unit}</span></span>
-            return <Col className="text-nowrap" key={key} sm={6}>
-              <OverlayTrigger
-                placement="top"
-                overlay={
-                  <Popover>
-                    <Popover.Title as="h3">
-                      {(key in build.character) ?
-                        <span>{name}: {build.character[key]}{unit} <span className="text-success">+ {(build.finalStats[key] - build.character[key]).toFixed(1)}{unit}</span></span> :
-                        <span>{name}: {build.finalStats[key]}{unit}</span>
-                      }
-                    </Popover.Title>
-                    <Popover.Content>
-                      {key.includes("ele_dmg") ? artifactDisplaySortKey["ele_dmg"].explaination : artifactDisplaySortKey[key].explaination}
-                    </Popover.Content>
-                  </Popover>
-                }
-              >
-                {statsDisplay}
-              </OverlayTrigger>
-            </Col>
-          })}
-        </Row>
-      </Card.Body>
-    </Card>)
-  }
-  ModalArtifactCard = (props) => {
-    if (!props.artifact) return null;
-    let art = props.artifact;
-    let artifactValidation = Artifact.artifactValidation(art)
-    let location = (art.location && CharacterDatabase.getCharacter(art.location)) ? CharacterDatabase.getCharacter(art.location).name : "Inventory"
-    return (<Card className="h-100" border={`${art.numStars}star`} bg="darkcontent" text="lightfont">
-      <Card.Header className="pr-3">
-        <Row className="no-gutters">
-          <Col >
-            <h6><b>{`${Artifact.getArtifactPieceName(art)}`}</b></h6>
-            <div><FontAwesomeIcon icon={SlotIcon[art.slotKey]} className="fa-fw" />{` ${Artifact.getArtifactSlotName(art.slotKey)} +${art.level}`}</div>
-          </Col>
-        </Row>
-      </Card.Header>
-      <Card.Body className="d-flex flex-column">
-        <Card.Title>
-          <h6>{art.mainStatKey ? `${Artifact.getStatName(art.mainStatKey).split("%")[0]} ${Artifact.getMainStatValue(art.mainStatKey, art.numStars, art.level)}${Artifact.getStatUnit(art.mainStatKey)}` : null}</h6>
-        </Card.Title>
-        <Card.Subtitle>
-          <div>{Artifact.getArtifactSetName(art.setKey, "Artifact Set")}</div>
-          <div>{"🟊".repeat(art.numStars ? art.numStars : 0)}</div>
-
-        </Card.Subtitle>
-        <ul className="mb-0">
-          {art.substats ? art.substats.map((stat, i) =>
-            (stat && stat.value) ? (<li key={i}>{`${Artifact.getStatName(stat.key).split("%")[0]}+${stat.value}${Artifact.getStatUnit(stat.key)}`}</li>) : null
-          ) : null}
-        </ul>
-        <div className="mt-auto mb-n2">
-          <span className="mb-0 mr-1">Substat Eff.:</span>
-          <PercentBadge tooltip={artifactValidation.msg} valid={artifactValidation.valid} percent={artifactValidation.currentEfficiency}>
-            {(artifactValidation.currentEfficiency ? artifactValidation.currentEfficiency : 0).toFixed(2) + "%"}
-          </PercentBadge>
-          <span>{"<"}</span>
-          <PercentBadge tooltip={artifactValidation.msg} valid={artifactValidation.valid} percent={artifactValidation.maximumEfficiency}>
-            {(artifactValidation.maximumEfficiency ? artifactValidation.maximumEfficiency : 0).toFixed(2) + "%"}
-          </PercentBadge>
-        </div>
-      </Card.Body>
-      <Card.Footer className="pr-3">
-        <Row>
-          <Col>
-            <span>Location: {location}</span>
-          </Col>
-        </Row>
-      </Card.Footer>
-    </Card>)
   }
   ArtifactDisplay = (setToSlots) =>
     Object.entries(setToSlots).sort(([key1, slotarr1], [key2, slotarr2]) => slotarr2.length - slotarr1.length).map(([key, slotarr]) =>
@@ -522,4 +436,94 @@ export default class BuildDisplay extends React.Component {
       </Row>
     </Container>)
   }
+}
+const ModalArtifactCard = (props) => {
+  if (!props.artifact) return null;
+  let art = props.artifact;
+  let artifactValidation = Artifact.artifactValidation(art)
+  let location = (art.location && CharacterDatabase.getCharacter(art.location)) ? CharacterDatabase.getCharacter(art.location).name : "Inventory"
+  return (<Card className="h-100" border={`${art.numStars}star`} bg="darkcontent" text="lightfont">
+    <Card.Header className="pr-3">
+      <Row className="no-gutters">
+        <Col >
+          <h6><b>{`${Artifact.getArtifactPieceName(art)}`}</b></h6>
+          <div><FontAwesomeIcon icon={SlotIcon[art.slotKey]} className="fa-fw" />{` ${Artifact.getArtifactSlotName(art.slotKey)} +${art.level}`}</div>
+        </Col>
+      </Row>
+    </Card.Header>
+    <Card.Body className="d-flex flex-column">
+      <Card.Title>
+        <h6>{art.mainStatKey ? `${Artifact.getStatName(art.mainStatKey).split("%")[0]} ${Artifact.getMainStatValue(art.mainStatKey, art.numStars, art.level)}${Artifact.getStatUnit(art.mainStatKey)}` : null}</h6>
+      </Card.Title>
+      <Card.Subtitle>
+        <div>{Artifact.getArtifactSetName(art.setKey, "Artifact Set")}</div>
+        <div>{"🟊".repeat(art.numStars ? art.numStars : 0)}</div>
+
+      </Card.Subtitle>
+      <ul className="mb-0">
+        {art.substats ? art.substats.map((stat, i) =>
+          (stat && stat.value) ? (<li key={i}>{`${Artifact.getStatName(stat.key).split("%")[0]}+${stat.value}${Artifact.getStatUnit(stat.key)}`}</li>) : null
+        ) : null}
+      </ul>
+      <div className="mt-auto mb-n2">
+        <span className="mb-0 mr-1">Substat Eff.:</span>
+        <PercentBadge tooltip={artifactValidation.msg} valid={artifactValidation.valid} percent={artifactValidation.currentEfficiency}>
+          {(artifactValidation.currentEfficiency ? artifactValidation.currentEfficiency : 0).toFixed(2) + "%"}
+        </PercentBadge>
+        <span>{"<"}</span>
+        <PercentBadge tooltip={artifactValidation.msg} valid={artifactValidation.valid} percent={artifactValidation.maximumEfficiency}>
+          {(artifactValidation.maximumEfficiency ? artifactValidation.maximumEfficiency : 0).toFixed(2) + "%"}
+        </PercentBadge>
+      </div>
+    </Card.Body>
+    <Card.Footer className="pr-3">
+      <Row>
+        <Col>
+          <span>Location: {location}</span>
+        </Col>
+      </Row>
+    </Card.Footer>
+  </Card>)
+}
+const BuildModalCharacterCard = (props) => {
+  let build = props.build;
+  return (<Card className="h-100" border="success" bg="darkcontent" text="lightfont">
+    <Card.Header>Character Stats</Card.Header>
+    <Card.Body>
+      <Row>
+        {Object.entries(artifactDisplaySortKey).map(([key, val]) => {
+          let name = val.name
+          let unit = val.unit ? val.unit : ""
+          if (key === "ele_dmg" || key === "ele_atk") {
+            let eleName = ElementalData[build.character.element].name
+            name = eleName + name
+            key === "ele_dmg" && (key = `${build.character.element}_${key}`)
+          }
+          let statsDisplay = (key in build.character) ?
+            <span>{name}: <span className="text-warning">{build.character[key]}{unit}</span> <span className="text-success">+ {(build.finalStats[key] - build.character[key]).toFixed(1)}{unit}</span></span> :
+            <span>{name}: <span className="text-warning">{build.finalStats[key]}{unit}</span></span>
+          return <Col className="text-nowrap" key={key} xs={12} sm={6} lg={4}>
+            <OverlayTrigger
+              placement="top"
+              overlay={
+                <Popover>
+                  <Popover.Title as="h3">
+                    {(key in build.character) ?
+                      <span>{name}: {build.character[key]}{unit} <span className="text-success">+ {(build.finalStats[key] - build.character[key]).toFixed(1)}{unit}</span></span> :
+                      <span>{name}: {build.finalStats[key]}{unit}</span>
+                    }
+                  </Popover.Title>
+                  <Popover.Content>
+                    {key.includes("ele_dmg") ? artifactDisplaySortKey["ele_dmg"].explaination : artifactDisplaySortKey[key].explaination}
+                  </Popover.Content>
+                </Popover>
+              }
+            >
+              {statsDisplay}
+            </OverlayTrigger>
+          </Col>
+        })}
+      </Row>
+    </Card.Body>
+  </Card>)
 }

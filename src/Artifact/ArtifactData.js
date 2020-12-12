@@ -16,16 +16,16 @@ const ArtifactStatsData = {
 };
 
 const ArtifactSubStatsData = {
-  hp: { 3: { low: 100, high: 143 }, 4: { low: 167, high: 239 }, 5: { low: 209, high: 299 } },
-  hp_: { 3: { low: 2.5, high: 3.5 }, 4: { low: 3.3, high: 4.7 }, 5: { low: 4.1, high: 5.8 } },
-  atk: { 3: { low: 7, high: 9 }, 4: { low: 11, high: 16 }, 5: { low: 14, high: 19 } },
-  atk_: { 3: { low: 2.5, high: 3.5 }, 4: { low: 3.3, high: 4.7 }, 5: { low: 4.1, high: 5.8 } },
-  def: { 3: { low: 8, high: 11 }, 4: { low: 13, high: 19 }, 5: { low: 16, high: 23 } },
-  def_: { 3: { low: 3.1, high: 4.4 }, 4: { low: 4.1, high: 5.8 }, 5: { low: 5.1, high: 7.3 } },
-  ele_mas: { 3: { low: 10, high: 14 }, 4: { low: 13, high: 19 }, 5: { low: 16, high: 23 } },
-  ener_rech: { 3: { low: 2.7, high: 3.5 }, 4: { low: 4.1, high: 5.8 }, 5: { low: 4.5, high: 6.5 } },
-  crit_rate: { 3: { low: 1.6, high: 2.3 }, 4: { low: 2.2, high: 3.1 }, 5: { low: 2.7, high: 3.9 } },
-  crit_dmg: { 3: { low: 3.3, high: 4.7 }, 4: { low: 4.4, high: 6.2 }, 5: { low: 5.4, high: 7.8 } },
+  hp: { 2: { low: 50, high: 72 }, 3: { low: 100, high: 143 }, 4: { low: 167, high: 239 }, 5: { low: 209, high: 299 } },
+  hp_: { 2: { low: 1.6, high: 2.3 }, 3: { low: 2.5, high: 3.5 }, 4: { low: 3.3, high: 4.7 }, 5: { low: 4.1, high: 5.8 } },
+  atk: { 2: { low: 3, high: 4 }, 3: { low: 7, high: 9 }, 4: { low: 11, high: 16 }, 5: { low: 14, high: 19 } },
+  atk_: { 2: { low: 1.6, high: 2.3 }, 3: { low: 2.5, high: 3.5 }, 4: { low: 3.3, high: 4.7 }, 5: { low: 4.1, high: 5.8 } },
+  def: { 2: { low: 4, high: 6 }, 3: { low: 8, high: 11 }, 4: { low: 13, high: 19 }, 5: { low: 16, high: 23 } },
+  def_: { 2: { low: 2, high: 2.9 }, 3: { low: 3.1, high: 4.4 }, 4: { low: 4.1, high: 5.8 }, 5: { low: 5.1, high: 7.3 } },
+  ele_mas: { 2: { low: 7, high: 9 }, 3: { low: 10, high: 14 }, 4: { low: 13, high: 19 }, 5: { low: 16, high: 23 } },
+  ener_rech: { 2: { low: 1.8, high: 2.6 }, 3: { low: 2.7, high: 3.9 }, 4: { low: 3.6, high: 5.2 }, 5: { low: 4.5, high: 6.5 } },
+  crit_rate: { 2: { low: 1.1, high: 1.6 }, 3: { low: 1.6, high: 2.3 }, 4: { low: 2.2, high: 3.1 }, 5: { low: 2.7, high: 3.9 } },
+  crit_dmg: { 2: { low: 2.2, high: 3.1 }, 3: { low: 3.3, high: 4.7 }, 4: { low: 4.4, high: 6.2 }, 5: { low: 5.4, high: 7.8 } },
 }
 
 const ArtifactSlotSData = {
@@ -35,6 +35,7 @@ const ArtifactSlotSData = {
   goblet: { name: "Goblet of Eonothem", stats: ["hp_", "def_", "atk_", "ele_mas", "phy_dmg", "anemo_ele_dmg", "geo_ele_dmg", "electro_ele_dmg", "hydro_ele_dmg", "pyro_ele_dmg", "cryo_ele_dmg",] },
   circlet: { name: "Circlet of Logos", stats: ["hp_", "def_", "atk_", "ele_mas", "crit_rate", "crit_dmg", "heal_bonu"] },
 };
+const CharacterSpecializedStatKey = ["hp_", "atk_", "def_", "ele_mas", "ener_rech", "heal_bonu", "crit_rate", "crit_dmg", "phy_dmg", "anemo_ele_dmg", "geo_ele_dmg", "electro_ele_dmg", "hydro_ele_dmg", "pyro_ele_dmg", "cryo_ele_dmg"]
 const ArtifactSetsData = {
   "Wanderer's Troupe": {
     name: "Wanderer's Troupe", rarity: [4, 5], pieces: {
@@ -634,5 +635,6 @@ export {
   ArtifactSubStatsData,
   ArtifactStarsData,
   ArtifactMainStatsData,
-  ElementalData
+  ElementalData,
+  CharacterSpecializedStatKey
 }

@@ -31,6 +31,10 @@ export default class CharacterCard extends React.Component {
       <span>{char.weaponStatKey ? (Artifact.getStatName(char.weaponStatKey).split("%")[0]) : ""}</span>
       <span className="float-right">{char.weaponStatVal + Artifact.getStatUnit(char.weaponStatKey)}</span>
     </li>)
+    let specialized = (<li>
+      <span>{(Artifact.getStatName(char.specialStatKey, "").split("%")[0])}</span>
+      <span className="float-right">{char.specialStatVal + Artifact.getStatUnit(char.specialStatKey)}</span>
+    </li>)
     return (<Card className="h-100" border={`${char.numStars}star`} bg="darkcontent" text="lightfont">
       <Card.Header className="pr-2">
         <Row className="no-gutters">
@@ -57,6 +61,8 @@ export default class CharacterCard extends React.Component {
         <ul>{weaponAtk}{weaponSub}</ul>
         <h5>Main Stats</h5>
         <ul>{mainEles} </ul>
+        <h5>Specialized Stat</h5>
+        <ul>{specialized}</ul>
         <h5>Advanced Stats</h5>
         <ul>{advEles}</ul>
       </Card.Body>

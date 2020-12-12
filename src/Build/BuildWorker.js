@@ -1,6 +1,3 @@
-// const { Build } = require("./Build");
-
-
 onmessage = async (e) => {
   let { split, artifactSetPerms, setFilters, character, ArtifactStatsData, ArtifactSlotSData, ArtifactMainStatsData, ArtifactSetsData, maxBuildsToShow, buildFilterKey, asending } = e.data;
 
@@ -77,15 +74,15 @@ const generateAllPossibleArtifactPerm = (splitArtifacts, setPerms, setFilters, A
 }
 const calculateCharacterFinalStat = (artStats, character) => {
   character.weaponStatKey && character.weaponStatVal && (artStats[character.weaponStatKey] += character.weaponStatVal)
-  let atk = Math.round(character.atk + character.atk * artStats.atk_ / 100 + artStats.atk)
+  let atk = +(character.atk + character.atk * artStats.atk_ / 100 + artStats.atk).toFixed(1)
   let phy_dmg = +(artStats.phy_dmg).toFixed(1);
   let ele_dmg = +(artStats[`${character.element}_ele_dmg`]).toFixed(1);
   let crit_rate = +(character.crit_rate + artStats.crit_rate).toFixed(1);
   let crit_dmg = +(character.crit_dmg + artStats.crit_dmg).toFixed(1)
   return {
-    hp: Math.round(character.hp + character.hp * artStats.hp_ / 100 + artStats.hp),
+    hp: +(character.hp + character.hp * artStats.hp_ / 100 + artStats.hp).toFixed(1),
     atk,
-    def: Math.round(character.def + character.def * artStats.def_ / 100 + artStats.def),
+    def: +(character.def + character.def * artStats.def_ / 100 + artStats.def).toFixed(1),
     ele_mas: +(character.ele_mas + artStats.ele_mas).toFixed(1),
     crit_rate,
     crit_dmg,
@@ -125,6 +122,9 @@ const calculateArtifactStats = (character, artifacts, artifactSetEffect, Artifac
       setEffect.stats && Object.entries(setEffect.stats).forEach(([key, statVal]) =>
         totalArtifactStats[key] = (totalArtifactStats[key] || 0) + statVal
       )))
+  //add specialized stat
+  if (character.specialStatKey)
+    totalArtifactStats[character.specialStatKey] = (totalArtifactStats[character.specialStatKey] || 0) + character.specialStatVal
   return totalArtifactStats
 }
 

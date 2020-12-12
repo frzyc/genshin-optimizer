@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Card, Col, Dropdown, DropdownButton, FormControl, InputGroup, Row } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSignature, faTint, faFistRaised, faShieldAlt, faMagic, faDice, faDiceD20, faFirstAid, faSync, faGavel } from '@fortawesome/free-solid-svg-icons'
-import { ArtifactStatsData, ElementalData } from '../Artifact/ArtifactData';
+import { ArtifactStatsData, CharacterSpecializedStatKey, ElementalData } from '../Artifact/ArtifactData';
 import Artifact from '../Artifact/Artifact';
 import { FloatFormControl, IntFormControl } from '../Components/CustomFormControl';
 import ElementalIcon from '../Components/ElementalIcon';
@@ -24,7 +24,9 @@ export default class CharacterEditor extends React.Component {
     ener_rech: 100,
     weapon_atk: 0,
     weaponStatKey: "",
-    weaponStatVal: 0
+    weaponStatVal: 0,
+    specialStatKey: "",
+    specialStatVal: 0,
   }
   static getInitialState = () => JSON.parse(JSON.stringify(CharacterEditor.initialState))
 
@@ -59,8 +61,8 @@ export default class CharacterEditor extends React.Component {
       this.setState(this.props.characterToEdit)
   }
   render() {
-    let percentWeaponStatSelect =
-      this.state.weaponStatKey ? Artifact.getStatUnit(this.state.weaponStatKey) === "%" : false;
+    let percentWeaponStatSelect = Artifact.getStatUnit(this.state.weaponStatKey) === "%";
+    let percentSpecialStatSlect = Artifact.getStatUnit(this.state.specialStatKey) === "%"
     let weaponprops = {
       placeholder: "Weapon 2nd Stat",
       value: this.state.weaponStatVal ? this.state.weaponStatVal : "",
@@ -70,6 +72,16 @@ export default class CharacterEditor extends React.Component {
     let weaponSubStatInput = percentWeaponStatSelect ?
       <FloatFormControl {...weaponprops} />
       : <IntFormControl {...weaponprops} />
+
+    let specialStatProps = {
+      placeholder: "Character Special Stat",
+      value: this.state.specialStatVal ? this.state.specialStatVal : "",
+      onValueChange: (val) => this.setState({ specialStatVal: val }),
+      disabled: !this.state.specialStatKey
+    }
+    let specialStatInput = percentSpecialStatSlect ?
+      <FloatFormControl {...specialStatProps} />
+      : <IntFormControl {...specialStatProps} />
 
     return (<Card bg="darkcontent" text="lightfont">
       <Card.Header>Character Editor</Card.Header>
@@ -107,7 +119,7 @@ export default class CharacterEditor extends React.Component {
           </DropdownButton>
         </InputGroup>
         <h5>Base Stats</h5>
-        <Row>
+        <Row className="mb-2">
           <Col lg={6} xs={12}>
             <this.StatInput
               name={<span><FontAwesomeIcon icon={faTint} className="mr-2" /> Base HP</span>}
@@ -143,6 +155,26 @@ export default class CharacterEditor extends React.Component {
               percent={false}
               onValueChange={(value) => this.setState({ ele_mas: value })}
             />
+          </Col>
+          <Col lg={6} xs={12}>
+            <InputGroup>
+              <DropdownButton
+                title={Artifact.getStatName(this.state.specialStatKey, "Specialized Stat")}
+                as={InputGroup.Prepend}
+              >
+                <Dropdown.ItemText>Select Specialized Stat </Dropdown.ItemText>
+                {CharacterSpecializedStatKey.map(key =>
+                  <Dropdown.Item key={key} onClick={() => {
+                    this.setState({ specialStatKey: key, specialStatVal: 0 })
+                  }} >
+                    {Artifact.getStatName(key)}
+                  </Dropdown.Item>)}
+              </DropdownButton>
+              {specialStatInput}
+              {percentSpecialStatSlect && (<InputGroup.Append>
+                <InputGroup.Text>%</InputGroup.Text>
+              </InputGroup.Append>)}
+            </InputGroup>
           </Col>
         </Row>
         <h5>Advanced Stats</h5>
@@ -198,7 +230,7 @@ export default class CharacterEditor extends React.Component {
           <Col lg={6} xs={12}>
             <InputGroup>
               <DropdownButton
-                title={this.state.weaponStatKey ? ArtifactStatsData[this.state.weaponStatKey].name : "Weapon Stat"}
+                title={Artifact.getStatName(this.state.weaponStatKey, "Weapon Stat")}
                 as={InputGroup.Prepend}
               >
                 <Dropdown.ItemText>Select a weapon secondary stat </Dropdown.ItemText>
