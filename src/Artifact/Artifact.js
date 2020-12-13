@@ -76,7 +76,7 @@ export default class Artifact {
   static getRolls(value, rollData, float = false) {
     let roll = null;
     let closeEnoughRoll = null;
-    let maxNumRoll = Math.floor(value / rollData[0])
+    let maxNumRoll = parseInt((value / rollData[0]).toFixed(0))
     if (!maxNumRoll) return null;
     let rollOption = (val, arr) => {
       if (roll) return;
