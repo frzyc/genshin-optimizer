@@ -159,7 +159,7 @@ export default class CharacterEditor extends React.Component {
           <Col lg={6} xs={12}>
             <InputGroup>
               <DropdownButton
-                title={Artifact.getStatName(this.state.specialStatKey, "Specialized Stat")}
+                title={Artifact.getStatNameWithPercent(this.state.specialStatKey, "Specialized Stat")}
                 as={InputGroup.Prepend}
               >
                 <Dropdown.ItemText>Select Specialized Stat </Dropdown.ItemText>
@@ -167,7 +167,7 @@ export default class CharacterEditor extends React.Component {
                   <Dropdown.Item key={key} onClick={() => {
                     this.setState({ specialStatKey: key, specialStatVal: 0 })
                   }} >
-                    {Artifact.getStatName(key)}
+                    {Artifact.getStatNameWithPercent(key)}
                   </Dropdown.Item>)}
               </DropdownButton>
               {specialStatInput}
@@ -230,7 +230,7 @@ export default class CharacterEditor extends React.Component {
           <Col lg={6} xs={12}>
             <InputGroup>
               <DropdownButton
-                title={Artifact.getStatName(this.state.weaponStatKey, "Weapon Stat")}
+                title={Artifact.getStatNameWithPercent(this.state.weaponStatKey, "Weapon Stat")}
                 as={InputGroup.Prepend}
               >
                 <Dropdown.ItemText>Select a weapon secondary stat </Dropdown.ItemText>

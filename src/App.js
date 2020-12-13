@@ -1,4 +1,4 @@
-import { faDiscord, faPatreon } from '@fortawesome/free-brands-svg-icons';
+import { faDiscord, faPatreon, faPaypal } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
@@ -26,7 +26,8 @@ function App() {
             <Nav.Link as={Link} to="/build">Builds</Nav.Link>
           </Nav>
           <Nav>
-            {process.env.NODE_ENV === "development" && <Nav.Link href={process.env.REACT_APP_PATREON_LINK} target="_blank" ><FontAwesomeIcon icon={faPatreon} className="fa-fw" /> Patreon</Nav.Link>}
+            <Nav.Link href={process.env.REACT_APP_PAYPAL_LINK} target="_blank" ><FontAwesomeIcon icon={faPaypal} className="fa-fw" /> PayPal</Nav.Link>
+            <Nav.Link href={process.env.REACT_APP_PATREON_LINK} target="_blank" ><FontAwesomeIcon icon={faPatreon} className="fa-fw" /> Patreon</Nav.Link>
             <Nav.Link href={process.env.REACT_APP_DISCORD_LINK} target="_blank" ><FontAwesomeIcon icon={faDiscord} className="fa-fw" /> Discord</Nav.Link>
           </Nav>
         </Navbar>
@@ -41,12 +42,12 @@ function App() {
 
       </div>
       <Nav id="footer" className="bg-dark">
-        <Row className="w-100 ml-0 mr-0 mb-2">
-          <Col>
-            <span className="text-light "> <small>Genshin Optimizer(Ver:{version}) is not affiliated with or endorsed by miHoYo. </small></span>
+        <Row className="w-100 ml-0 mr-0 mb-2 text-light d-flex justify-content-between">
+          <Col xs={"auto"}>
+            <span > <small>Genshin Optimizer is not affiliated with or endorsed by miHoYo. </small></span>
           </Col>
-          <Col>
-            <Nav.Link className="d-inline-block p-0 float-right" href={process.env.REACT_APP_PAYPAL_LINK} target="_blank" ><span className="text-light"><small > Want to help the developer? </small></span></Nav.Link>
+          <Col xs={"auto"}>
+            <span  ><small > Genshin Optimizer Ver:{version} </small></span>
           </Col>
         </Row>
       </Nav>

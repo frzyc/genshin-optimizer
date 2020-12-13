@@ -2,15 +2,16 @@ import { clampPercent, closeEnoughFloat, closeEnoughInt } from '../Util';
 import { ArtifactStatsData, ArtifactStarsData, ArtifactMainStatsData, ArtifactSetsData, ArtifactSubStatsData, ArtifactSlotSData, ElementalData } from './ArtifactData'
 
 export default class Artifact {
-
+  static isInvalidArtifact = (art) =>
+    !art || !art.setKey || !art.numStars || !art.slotKey || !art.mainStatKey
   static getArtifactSetName = (key, defVal = "") =>
     key ? ArtifactSetsData[key].name : defVal;
 
   static getArtifactSetsByMaxStarEntries = (star) =>
     Object.entries(ArtifactSetsData).filter(([key, setobj]) => setobj.rarity[(setobj.rarity.length) - 1] === star)
 
-  static getArtifactSlotName = (slotKey) =>
-    ArtifactSlotSData[slotKey] ? ArtifactSlotSData[slotKey].name : ""
+  static getArtifactSlotName = (slotKey, defVal = "") =>
+    ArtifactSlotSData[slotKey] ? ArtifactSlotSData[slotKey].name : defVal
 
   static getArtifactPieceName = (state) =>
     (state.setKey && state.slotKey && ArtifactSetsData[state.setKey].pieces) ?
@@ -24,6 +25,12 @@ export default class Artifact {
         return ElementalData[element].name + " DMG Bonus"
     }
     return defVal
+  }
+  static getStatNameWithPercent = (key, defVal = "") => {
+    let name = this.getStatName(key, defVal)
+    if (name !== defVal && (key === "hp_" || key === "atk_" || key === "def_"))
+      name += "%"
+    return name;
   }
 
   static getStatUnit = (key, defVal = "") => {
@@ -58,19 +65,7 @@ export default class Artifact {
     state.substats.reduce((sum, cur) =>
       sum + (cur && cur.value ? 1 : 0), 0);
 
-  static getRemainingSubstats = (state) =>
-    (state.slotKey ? Object.keys(ArtifactSubStatsData).filter((key) => {
-      //if mainstat has key, not valid
-      if (state.mainStatKey === key) return false;
-      //if any one of the substat has, not valid.
-      return !state.substats.some((substat, i) =>
-        (substat && substat.key ? (substat.key === key) : false)
-      )
-    }) : []);
-
-
-
-  static getSubstatRollData = (subStatKey, numStars) => (subStatKey ?? numStars) ?
+  static getSubstatRollData = (subStatKey, numStars) => (subStatKey && numStars) ?
     ArtifactSubStatsData[subStatKey][numStars] : []
 
   static getRolls(value, rollData, float = false) {
@@ -112,6 +107,7 @@ export default class Artifact {
     let value = parseFloat(substat.value);
     if (isNaN(value)) return { valid: false, msg: `Invalid Input` }
     let numStars = state.numStars
+    if (!numStars) return { valid: false, msg: `Artifact Stars not set.` }
     let isFloat = this.getStatUnit(substat.key) === "%"
     let rollData = this.getSubstatRollData(substat.key, numStars);
     let rolls = this.getRolls(value, rollData, isFloat)

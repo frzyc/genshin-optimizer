@@ -1,7 +1,7 @@
 {
   "homepage": "https://frzyc.github.io/genshin-optimizer/",
   "name": "genshin-optimizer",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
@@ -15,6 +15,7 @@
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
+    "tesseract.js": "^2.1.1",
     "web-vitals": "^0.2.4"
   },
   "scripts": {

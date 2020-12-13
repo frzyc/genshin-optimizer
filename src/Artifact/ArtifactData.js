@@ -1,18 +1,18 @@
 
 const ArtifactStatsData = {
   hp: { name: "HP", key: "hp" },
-  hp_: { name: "HP%", key: "hp_", unit: "%" },
+  hp_: { name: "HP", key: "hp_", unit: "%" },
   atk: { name: "ATK", key: "atk" },
-  atk_: { name: "ATK%", key: "atk_", unit: "%" },
+  atk_: { name: "ATK", key: "atk_", unit: "%" },
   def: { name: "DEF", key: "def" },
-  def_: { name: "DEF%", key: "def_", unit: "%" },
+  def_: { name: "DEF", key: "def_", unit: "%" },
   phy_dmg: { name: "Physical DMG Bonus", key: "phy_dmg", unit: "%" },
   ele_dmg: { name: "Elemental DMG Bonus", key: "ele_dmg", unit: "%" },
   ele_mas: { name: "Elemental Mastery", key: "ele_mas" },
-  ener_rech: { name: "Energy Recharge%", key: "ener_rech", unit: "%" },
-  crit_rate: { name: "Crit Rate%", key: "crit_rate", unit: "%" },
-  crit_dmg: { name: "Crit DMG%", key: "crit_dmg", unit: "%" },
-  heal_bonu: { name: "Healing Bonus%", key: "heal_bonu", unit: "%" },
+  ener_rech: { name: "Energy Recharge", key: "ener_rech", unit: "%" },
+  crit_rate: { name: "Crit Rate", key: "crit_rate", unit: "%" },
+  crit_dmg: { name: "Crit DMG", key: "crit_dmg", unit: "%" },
+  heal_bonu: { name: "Healing Bonus", key: "heal_bonu", unit: "%" },
 };
 
 const ArtifactSubStatsData = {

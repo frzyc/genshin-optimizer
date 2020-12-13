@@ -114,7 +114,7 @@ export default class BuildDisplay extends React.Component {
     }
 
     // let worker = new Worker('BuildWorker.js');
-let worker = new Worker();
+    let worker = new Worker();
     worker.onmessage = (e) =>
       this.setState({ builds: e.data, generatingBuilds: false })
     worker.postMessage(data)
@@ -165,7 +165,7 @@ let worker = new Worker();
                   {/* Artifact set */}
                   <DropdownButton as={ButtonGroup} title={setFilter.key ? ArtifactSetsData[setFilter.key].name : "Set (Optional)"} >
                     <Dropdown.Item onClick={() => this.changeSetFilterKey(index, "")}>
-                      No Artifact
+                      Unselect Artifact
                   </Dropdown.Item>
                     <Dropdown.ItemText>Max Rarity 🟊🟊🟊🟊🟊</Dropdown.ItemText>
                     {this.dropdownitemsForStar(5, index)}
@@ -203,7 +203,7 @@ let worker = new Worker();
             {BuildDisplay.artifactsSlotsToSelectMainStats.map((slotKey, index) =>
               (<div className="text-inline mb-1 d-flex justify-content-between" key={slotKey}>
                 <h6 className="d-inline mr-2">
-                  <FontAwesomeIcon icon={SlotIcon[slotKey]} className="mr-2 fa-fw" />
+                  {SlotIcon[slotKey] && <FontAwesomeIcon icon={SlotIcon[slotKey]} className="mr-2 fa-fw" />}
                   {ArtifactSlotSData[slotKey].name}
                 </h6>
                 <DropdownButton
@@ -289,17 +289,18 @@ let worker = new Worker();
   }
   BuildModal = (props) => {
     let build = props.build
-    return build ? (<Modal show={this.state.modalBuild !== null} onHide={() => this.setState({ modalBuild: null })} size="xl" variant="success" dialogAs={Container} className="pt-3 pb-3">
+    return build ? (<Modal show={this.state.modalBuild !== null} onHide={() => this.setState({ modalBuild: null })} size="xl" dialogAs={Container} className="pt-3 pb-3">
       <Card bg="darkcontent" text="lightfont" >
         <Card.Header>
-          <Row>
-            <Col><Card.Title><span>{build.character.name} Build</span></Card.Title></Col>
-            <Col xs="auto">
-              <Button variant="danger" onClick={() => this.setState({ modalBuild: null })}>
-                <FontAwesomeIcon icon={faTimes} /></Button>
-            </Col>
-          </Row>
-
+          <Card.Title>
+            <Row>
+              <Col><span>{build.character.name} Build</span></Col>
+              <Col xs="auto">
+                <Button variant="danger" onClick={() => this.setState({ modalBuild: null })}>
+                  <FontAwesomeIcon icon={faTimes} /></Button>
+              </Col>
+            </Row>
+          </Card.Title>
         </Card.Header>
         <Card.Body>
           <Row>
@@ -321,7 +322,7 @@ let worker = new Worker();
                               <h6>Base ATK {build.character.weapon_atk}</h6>
                             </Col>
                             <Col>
-                              {build.character.weaponStatKey && <h6>{Artifact.getStatName(build.character.weaponStatKey).split("%")[0]} {build.character.weaponStatVal}{Artifact.getStatUnit(build.character.weaponStatKey)}</h6>}
+                              {build.character.weaponStatKey && <h6>{Artifact.getStatName(build.character.weaponStatKey)} {build.character.weaponStatVal}{Artifact.getStatUnit(build.character.weaponStatKey)}</h6>}
                             </Col>
                           </Row>
                         </Card.Body>
@@ -372,7 +373,9 @@ let worker = new Worker();
   ArtifactDisplay = (setToSlots) =>
     Object.entries(setToSlots).sort(([key1, slotarr1], [key2, slotarr2]) => slotarr2.length - slotarr1.length).map(([key, slotarr]) =>
       <Badge key={key} variant="primary" className="mr-2">
-        {slotarr.map(slotKey => <FontAwesomeIcon icon={SlotIcon[slotKey]} key={slotKey} className="fa-fw" />)}{ArtifactSetsData[key].name}
+        {slotarr.map(slotKey =>
+          SlotIcon[slotKey] && <FontAwesomeIcon icon={SlotIcon[slotKey]} key={slotKey} className="fa-fw" />)}
+        {ArtifactSetsData[key].name}
       </Badge>
     )
 
@@ -447,13 +450,13 @@ const ModalArtifactCard = (props) => {
       <Row className="no-gutters">
         <Col >
           <h6><b>{`${Artifact.getArtifactPieceName(art)}`}</b></h6>
-          <div><FontAwesomeIcon icon={SlotIcon[art.slotKey]} className="fa-fw" />{` ${Artifact.getArtifactSlotName(art.slotKey)} +${art.level}`}</div>
+          <div>{SlotIcon[art.slotKey] && <FontAwesomeIcon icon={SlotIcon[art.slotKey]} className="fa-fw" />}{` ${Artifact.getArtifactSlotName(art.slotKey)} +${art.level}`}</div>
         </Col>
       </Row>
     </Card.Header>
     <Card.Body className="d-flex flex-column">
       <Card.Title>
-        <h6>{art.mainStatKey ? `${Artifact.getStatName(art.mainStatKey).split("%")[0]} ${Artifact.getMainStatValue(art.mainStatKey, art.numStars, art.level)}${Artifact.getStatUnit(art.mainStatKey)}` : null}</h6>
+        <h6>{art.mainStatKey ? `${Artifact.getStatName(art.mainStatKey)} ${Artifact.getMainStatValue(art.mainStatKey, art.numStars, art.level)}${Artifact.getStatUnit(art.mainStatKey)}` : null}</h6>
       </Card.Title>
       <Card.Subtitle>
         <div>{Artifact.getArtifactSetName(art.setKey, "Artifact Set")}</div>
@@ -461,9 +464,9 @@ const ModalArtifactCard = (props) => {
 
       </Card.Subtitle>
       <ul className="mb-0">
-        {art.substats ? art.substats.map((stat, i) =>
-          (stat && stat.value) ? (<li key={i}>{`${Artifact.getStatName(stat.key).split("%")[0]}+${stat.value}${Artifact.getStatUnit(stat.key)}`}</li>) : null
-        ) : null}
+        {art.substats && art.substats.map((stat, i) =>
+          (stat && stat.value) ? (<li key={i}>{`${Artifact.getStatName(stat.key)}+${(stat.value).toFixed(Artifact.getStatUnit(stat.key) === "%" ? 1 : 0)}${Artifact.getStatUnit(stat.key)}`}</li>) : null
+        )}
       </ul>
       <div className="mt-auto mb-n2">
         <span className="mb-0 mr-1">Substat Eff.:</span>
@@ -500,7 +503,7 @@ const BuildModalCharacterCard = (props) => {
             key === "ele_dmg" && (key = `${build.character.element}_${key}`)
           }
           let statsDisplay = (key in build.character) ?
-            <span>{name}: <span className="text-warning">{build.character[key]}{unit}</span> <span className="text-success">+ {(build.finalStats[key] - build.character[key]).toFixed(1)}{unit}</span></span> :
+            <span>{name}: <span className="text-warning">{build.character[key]}{unit}</span> <span className="text-success">+ {(build.finalStats[key] - build.character[key]).toFixed(unit === "%" ? 1 : 0)}{unit}</span></span> :
             <span>{name}: <span className="text-warning">{build.finalStats[key]}{unit}</span></span>
           return <Col className="text-nowrap" key={key} xs={12} sm={6} lg={4}>
             <OverlayTrigger

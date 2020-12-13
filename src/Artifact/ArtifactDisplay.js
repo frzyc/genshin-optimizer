@@ -39,6 +39,7 @@ export default class ArtifactDisplay extends React.Component {
       this.setState({ artToEdit: null }, this.forceUpdate)
     } else {
       let id = ArtifactDatabase.addArtifact(art)
+      if (id === null) return;// some error happened...
       //add the new artifact at the beginning
       this.setState((state) => ({ artIdList: [id, ...state.artIdList,] }), this.forceUpdate)
     }
@@ -67,12 +68,11 @@ export default class ArtifactDisplay extends React.Component {
       if (this.state.filterMainStatKey && this.state.filterMainStatKey !== art.mainStatKey) return false
       for (const filterKey of this.state.filterSubstates)
         if (filterKey && !art.substats.some(substat => substat.key === filterKey)) return false;
-
       return true
     })
     let MainStatDropDownItem = (props) =>
       (<Dropdown.Item key={props.statKey} onClick={() => this.setState({ filterMainStatKey: props.statKey })} >
-        {Artifact.getStatName(props.statKey)}
+        {Artifact.getStatNameWithPercent(props.statKey)}
       </Dropdown.Item>)
     let dropdownitemsForStar = (star) =>
       Artifact.getArtifactSetsByMaxStarEntries(star).map(([key, setobj]) =>
@@ -154,7 +154,7 @@ export default class ArtifactDisplay extends React.Component {
                         </Dropdown.Item>
                         {Object.keys(ArtifactSlotSData).map(key =>
                           <Dropdown.Item key={key} onClick={() => this.setState({ filterSlotKey: key })} >
-                            <FontAwesomeIcon icon={SlotIcon[key]} className="fa-fw mr-1" />
+                            {SlotIcon[key] && <FontAwesomeIcon icon={SlotIcon[key]} className="fa-fw mr-1" />}
                             {ArtifactSlotSData[key].name}
                           </Dropdown.Item>)}
                       </Dropdown.Menu>
@@ -163,7 +163,7 @@ export default class ArtifactDisplay extends React.Component {
                   <Col>
                     <Dropdown className="flex-grow-1">
                       <Dropdown.Toggle className="w-100">
-                        {Artifact.getStatName(this.state.filterMainStatKey, "Main Stat")}
+                        {Artifact.getStatNameWithPercent(this.state.filterMainStatKey, "Main Stat")}
                       </Dropdown.Toggle>
                       <Dropdown.Menu>
                         <Dropdown.Item onClick={() => this.setState({ filterMainStatKey: "" })}>Unselect</Dropdown.Item>
@@ -179,7 +179,7 @@ export default class ArtifactDisplay extends React.Component {
                 <Col key={index} xs={6} lg={3} className="mb-2">
                   <Dropdown >
                     <Dropdown.Toggle id="dropdown-basic" className="w-100">
-                      {Artifact.getStatName(substatKey, `Substat ${index + 1}`)}
+                      {Artifact.getStatNameWithPercent(substatKey, `Substat ${index + 1}`)}
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
                       <Dropdown.Item
@@ -196,7 +196,7 @@ export default class ArtifactDisplay extends React.Component {
                             filterSubstates[index] = key
                             this.setState({ filterSubstates })
                           }}
-                        >{Artifact.getStatName(key)}</Dropdown.Item>
+                        >{Artifact.getStatNameWithPercent(key)}</Dropdown.Item>
                       )}
                     </Dropdown.Menu>
                   </Dropdown>

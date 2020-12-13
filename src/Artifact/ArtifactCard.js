@@ -21,7 +21,7 @@ export default class ArtifactCard extends React.Component {
         <Row className="no-gutters">
           <Col >
             <h6><b>{`${Artifact.getArtifactPieceName(art)}`}</b></h6>
-            <div><FontAwesomeIcon icon={SlotIcon[art.slotKey]} className="fa-fw" />{` ${Artifact.getArtifactSlotName(art.slotKey)} +${art.level}`}</div>
+            <div>{art.slotKey && <FontAwesomeIcon icon={SlotIcon[art.slotKey]} className="fa-fw" />}{` ${Artifact.getArtifactSlotName(art.slotKey)} +${art.level}`}</div>
           </Col>
           <Col xs={"auto"}>
             <span className="float-right align-top ml-1">

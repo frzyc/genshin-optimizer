@@ -1,4 +1,5 @@
 import { deepClone, loadFromLocalStorage, saveToLocalStorage } from "../Util";
+import Artifact from "./Artifact";
 
 var artifactDatabase = {};
 var artifactIdList = [];
@@ -16,19 +17,23 @@ export default class ArtifactDatabase {
   static getArtifactIdList = () => deepClone(artifactIdList);
   static populateDatebaseFromLocalStorage = () => {
     if (artifactIdList.length > 0) return;
+    artIdIndex = parseInt(localStorage.getItem("artifact_highest_id"));
+    if (isNaN(artIdIndex)) artIdIndex = 0;
     artifactIdList = ArtifactDatabase.getIdListFromStorage();
     if (artifactIdList === null) artifactIdList = []
     for (const id of artifactIdList)
-      if (!artifactDatabase[id])
+      if (!artifactDatabase[id]) {
         artifactDatabase[id] = loadFromLocalStorage(id);
-    artIdIndex = parseInt(localStorage.getItem("artifact_highest_id"));
-    if (isNaN(artIdIndex)) artIdIndex = 0;
+        if (Artifact.isInvalidArtifact(artifactDatabase[id]))
+          this.removeArtifactById(id);
+      }
   }
   static getArtifact = (id) => artifactDatabase[id]
   static removeArtifact = (art) => {
     this.removeArtifactById(art.id);
   }
   static addArtifact = (art) => {
+    if (Artifact.isInvalidArtifact(art)) return;
     //generate id using artIdIndex
     let id = `artifact_${artIdIndex++}`
     localStorage.setItem("artifact_highest_id", artIdIndex)
@@ -39,6 +44,7 @@ export default class ArtifactDatabase {
     return id;
   }
   static updateArtifact = (art) => {
+    if (Artifact.isInvalidArtifact(art)) return;
     let id = art.id;
     saveToLocalStorage(id, art);
     artifactDatabase[id] = art;

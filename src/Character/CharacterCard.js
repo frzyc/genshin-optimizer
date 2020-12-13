@@ -16,7 +16,7 @@ export default class CharacterCard extends React.Component {
 
     const liElement = (key) =>
       (<li key={key}>
-        <span>{Artifact.getStatName(key).split("%")[0]}</span>
+        <span>{Artifact.getStatName(key)}</span>
         <span className="float-right">{char[key] + Artifact.getStatUnit(key)}</span>
       </li>)
     let mainArr = ["hp", "atk", "def", "ele_mas"]
@@ -28,11 +28,11 @@ export default class CharacterCard extends React.Component {
       <span className="float-right">{char.weapon_atk}</span>
     </li>)
     let weaponSub = (<li>
-      <span>{char.weaponStatKey ? (Artifact.getStatName(char.weaponStatKey).split("%")[0]) : ""}</span>
+      <span>{Artifact.getStatName(char.weaponStatKey)}</span>
       <span className="float-right">{char.weaponStatVal + Artifact.getStatUnit(char.weaponStatKey)}</span>
     </li>)
     let specialized = (<li>
-      <span>{(Artifact.getStatName(char.specialStatKey, "").split("%")[0])}</span>
+      <span>{Artifact.getStatName(char.specialStatKey)}</span>
       <span className="float-right">{char.specialStatVal + Artifact.getStatUnit(char.specialStatKey)}</span>
     </li>)
     return (<Card className="h-100" border={`${char.numStars}star`} bg="darkcontent" text="lightfont">
