@@ -204,16 +204,9 @@ export default class ArtifactEditor extends React.Component {
       numOfInitialSubStats = totRolls;
       numUpgradesOrUnlocks = 0;
     }
-    let RollStat = (subStatKey) => {
-      let lowRoll = Artifact.getStatLowRollVal(subStatKey, state.numStars);
-      let highRoll = Artifact.getStatHighRollVal(subStatKey, state.numStars);
-      let unit = Artifact.getStatUnit(subStatKey)
+    let RollStat = (subStatKey) =>
+      getRandomElementFromArray(Artifact.getSubstatRollData(subStatKey, state.numStars))
 
-      if (unit === "%")
-        return parseFloat(getRandomArbitrary(lowRoll, highRoll).toFixed(1));
-      else
-        return getRandomIntInclusive(lowRoll, highRoll);
-    }
     //set initial substat & value
     for (let i = 0; i < numOfInitialSubStats; i++) {
       let substat = state.substats[i]

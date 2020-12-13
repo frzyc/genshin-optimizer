@@ -9,8 +9,8 @@ const artifactDisplaySortKey = {
   ener_rech: { name: "Energy Recharge", unit: "%", explaination: (<span><b>Energy Recharge</b> is calculated as <strong>Energy Recharge = Character Energy Recharge Base + Energy Recharge Bonus</strong> where <b>Energy Recharge Bonus</b> is the sum of all values from weapons and artifacts. Every character has 100% base Energy Recharge.</span>) },
   phy_dmg: { name: "Physical DMG Bonus", unit: "%", explaination: (<span><b>Physical Damage Bonus</b> is the sum of all values from weapons and artifacts.</span>) },
   ele_dmg: { name: " DMG Bonus", unit: "%", explaination: (<span><b>Elemental Damage Bonus</b> is calculated as the sum of all values from weapons and artifacts. Note: only the corresponding Elemental damage Bonus to the character's element is applicable.</span>) },
-  phy_atk: {name: "Physical ATK Total", explaination: (<span><strong>Physical ATK Total = ATK * (1 + Physical Damage Bonus %) * (1 + Crit Rate) * (1 + Crit Dmg)</strong></span>)},
-  ele_atk: {name: " ATK Total", explaination: (<span><strong>Elemental ATK Total = ATK * (1 + Elemental Damage Bonus %) * (1 + Crit Rate) * (1 + Crit Dmg)</strong></span>)},
+  phy_atk: {name: "Physical ATK Total", explaination: (<span><strong>Physical ATK Total = ATK * (1 + Physical Damage Bonus %) * (1 + Crit Rate * (1 + Crit Dmg))</strong></span>)},
+  ele_atk: {name: " ATK Total", explaination: (<span><strong>Elemental ATK Total = ATK * (1 + Elemental Damage Bonus %) * (1 + Crit Rate * (1 + Crit Dmg))</strong></span>)},
 
 }
 

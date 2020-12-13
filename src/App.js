@@ -11,6 +11,7 @@ import './App.scss';
 import ArtifactDisplay from './Artifact/ArtifactDisplay';
 import BuildDisplay from './Build/BuildDisplay';
 import CharacterDisplay from './Character/CharacterDisplay';
+import { version } from "../package.json"
 
 function App() {
   return (
@@ -42,7 +43,9 @@ function App() {
       <Nav id="footer" className="bg-dark">
         <Row className="w-100 ml-0 mr-0 mb-2">
           <Col>
-            <span className="text-light"> <small>Genshin Optimizer is not affiliated with or endorsed by miHoYo. </small></span>
+            <span className="text-light "> <small>Genshin Optimizer(Ver:{version}) is not affiliated with or endorsed by miHoYo. </small></span>
+          </Col>
+          <Col>
             <Nav.Link className="d-inline-block p-0 float-right" href={process.env.REACT_APP_PAYPAL_LINK} target="_blank" ><span className="text-light"><small > Want to help the developer? </small></span></Nav.Link>
           </Col>
         </Row>

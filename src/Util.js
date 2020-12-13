@@ -21,6 +21,19 @@ const saveToLocalStorage = (key, obj) =>
   localStorage.setItem(key, JSON.stringify(obj));
 const deepClone = (obj) =>
   JSON.parse(JSON.stringify(obj))
+
+const closeEnoughFloat = (a, b) =>
+  Math.abs(a - b) < 0.1
+
+const closeEnoughInt = (a, b) =>
+  Math.abs(a - b) <= 1
+const clamp = (val, a, b) => {
+  if (val < a) return a;
+  if (val > b) return b;
+  return val
+}
+const clamp01 = (val) => clamp(val, 0, 1)
+const clampPercent = (val) => clamp(val, 0, 100)
 export {
   getRandomInt,
   getRandomIntInclusive,
@@ -28,5 +41,10 @@ export {
   getRandomElementFromArray,
   loadFromLocalStorage,
   saveToLocalStorage,
-  deepClone
+  deepClone,
+  closeEnoughFloat,
+  closeEnoughInt,
+  clamp,
+  clamp01,
+  clampPercent
 }

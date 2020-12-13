@@ -90,8 +90,8 @@ const calculateCharacterFinalStat = (artStats, character) => {
     ener_rech: +(character.ener_rech + artStats.ener_rech).toFixed(1),
     phy_dmg,
     [`${character.element}_ele_dmg`]: ele_dmg,
-    phy_atk: +(atk * (1 + phy_dmg / 100) * (1 + crit_rate / 100) * (1 + crit_dmg / 100)).toFixed(1),
-    ele_atk: +(atk * (1 + ele_dmg / 100) * (1 + crit_rate / 100) * (1 + crit_dmg / 100)).toFixed(1)
+    phy_atk: +(atk * (1 + phy_dmg / 100) * (1 + (crit_rate / 100) * (1 + crit_dmg / 100))).toFixed(1),
+    ele_atk: +(atk * (1 + ele_dmg / 100) * (1 + (crit_rate / 100) * (1 + crit_dmg / 100))).toFixed(1)
   }
 }
 const getArtifactSetEffects = (setToSlots, ArtifactSetsData) => {

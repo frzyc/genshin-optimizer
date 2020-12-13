@@ -63,14 +63,10 @@ export default class Build {
     Object.entries(splitArtifacts).forEach(([key, artArr]) => {
       let numArtsPerSet = {}
       artArr.forEach(art => {
-        if (setsInFilter.includes(art.setKey)) {
-          if (numArtsPerSet[art.setKey]) numArtsPerSet[art.setKey] += 1
-          else numArtsPerSet[art.setKey] = 1
-        } else {
-          let setKey = "Other"
-          if (numArtsPerSet[setKey]) numArtsPerSet[setKey] += 1
-          else numArtsPerSet[setKey] = 1
-        }
+        if (setsInFilter.includes(art.setKey))
+          numArtsPerSet[art.setKey] = (numArtsPerSet[art.setKey] || 0) + 1
+        else
+          numArtsPerSet["Other"] = (numArtsPerSet["Other"] || 0) + 1
       })
       splitNumArtsPerSet[key] = numArtsPerSet
     })
