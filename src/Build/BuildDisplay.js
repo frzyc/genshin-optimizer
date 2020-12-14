@@ -262,6 +262,7 @@ export default class BuildDisplay extends React.Component {
   }
   ArtifactDisplayItem = (props) => {
     let build = props.build
+    let character = props.character
     return (<div>
       {/* <this.BuildModal build={build} />  */}
       <ListGroup.Item
@@ -276,9 +277,9 @@ export default class BuildDisplay extends React.Component {
             let name = val.name
             let unit = val.unit ? val.unit : ""
             if (key === "ele_dmg" || key === "ele_atk") {
-              let eleName = ElementalData[build.character.element].name
+              let eleName = ElementalData[character.element].name
               name = eleName + name
-              key === "ele_dmg" && (key = `${build.character.element}_${key}`)
+              key === "ele_dmg" && (key = `${character.element}_${key}`)
             }
             return <Col className="text-nowrap" key={key} xs={12} sm={6} md={4} lg={3}>
               <span>{name}: <span className="text-warning">{build.finalStats[key]}{unit}</span></span>
@@ -290,12 +291,13 @@ export default class BuildDisplay extends React.Component {
   }
   BuildModal = (props) => {
     let build = props.build
+    let character = props.character
     return build ? (<Modal show={this.state.modalBuild !== null} onHide={() => this.setState({ modalBuild: null })} size="xl" dialogAs={Container} className="pt-3 pb-3">
       <Card bg="darkcontent" text="lightfont" >
         <Card.Header>
           <Card.Title>
             <Row>
-              <Col><span>{build.character.name} Build</span></Col>
+              <Col><span>{character.name} Build</span></Col>
               <Col xs="auto">
                 <Button variant="danger" onClick={() => this.setState({ modalBuild: null })}>
                   <FontAwesomeIcon icon={faTimes} /></Button>
@@ -306,7 +308,7 @@ export default class BuildDisplay extends React.Component {
         <Card.Body>
           <Row>
             <Col className="mb-3">
-              <BuildModalCharacterCard build={build} />
+              <BuildModalCharacterCard build={build} character={character} />
             </Col>
           </Row>
           <Row>
@@ -320,10 +322,10 @@ export default class BuildDisplay extends React.Component {
                         <Card.Body>
                           <Row>
                             <Col>
-                              <h6>Base ATK {build.character.weapon_atk}</h6>
+                              <h6>Base ATK {character.weapon_atk}</h6>
                             </Col>
                             <Col>
-                              {build.character.weaponStatKey && <h6>{Artifact.getStatName(build.character.weaponStatKey)} {build.character.weaponStatVal}{Artifact.getStatUnit(build.character.weaponStatKey)}</h6>}
+                              {character.weaponStatKey && <h6>{Artifact.getStatName(character.weaponStatKey)} {character.weaponStatVal}{Artifact.getStatUnit(character.weaponStatKey)}</h6>}
                             </Col>
                           </Row>
                         </Card.Body>
@@ -359,7 +361,7 @@ export default class BuildDisplay extends React.Component {
         <Card.Footer>
           <Row className="d-flex justify-content-between">
             <Col xs="auto">
-              <Button variant="primary" onClick={() => this.equipArtifacts(build)}>
+              <Button variant="primary" onClick={() => this.equipArtifacts(build, character)}>
                 <span>Equip Artifacts on Character</span>
               </Button>
             </Col>
@@ -382,19 +384,18 @@ export default class BuildDisplay extends React.Component {
       </Badge>
     )
 
-  equipArtifacts = (build) => {
-    let character = build.character;
-    let artifacts = build.artifacts;
+  equipArtifacts = (build, character) => {
+    let artifactIds = build.artifactIds;
     //move all the equipped artifacts to the inventory.
     if (character.equippedArtifacts)
       Object.values(character.equippedArtifacts).forEach(artid =>
         ArtifactDatabase.moveToNewLocation(artid, ""))
 
-    CharacterDatabase.equipArtifactBuild(character.id, artifacts);
+    CharacterDatabase.equipArtifactBuild(character.id, artifactIds);
 
     //move all the current build artifacts to the character.
-    Object.values(artifacts).forEach(art =>
-      ArtifactDatabase.moveToNewLocation(art.id, character.id))
+    Object.values(artifactIds).forEach(artid =>
+      ArtifactDatabase.moveToNewLocation(artid, character.id))
 
     this.forceUpdate();
   }
@@ -409,7 +410,7 @@ export default class BuildDisplay extends React.Component {
     let selectedCharacter = CharacterDatabase.getCharacter(this.state.selectedCharacterKey)
     let characterName = selectedCharacter ? selectedCharacter.name : "Character Name"
     return (<Container>
-      <this.BuildModal build={this.state.modalBuild} />
+      <this.BuildModal build={this.state.modalBuild} character={selectedCharacter} />
       <Row className="mt-2 mb-2">
         <Col>
           {/* Build Generator Editor */}
@@ -423,7 +424,7 @@ export default class BuildDisplay extends React.Component {
             {/* Build List */}
             <ListGroup>
               {this.state.builds.map((build, index) =>
-                (index < this.state.maxBuildsToShow) && <this.ArtifactDisplayItem build={build} index={index} key={Object.values(build.artifactIds).join("_")} />
+                (index < this.state.maxBuildsToShow) && <this.ArtifactDisplayItem build={build} character={selectedCharacter} index={index} key={Object.values(build.artifactIds).join("_")} />
               )}
             </ListGroup>
           </Card>
@@ -435,6 +436,7 @@ export default class BuildDisplay extends React.Component {
 
 const BuildModalCharacterCard = (props) => {
   let build = props.build;
+  let character = props.character;
   return (<Card className="h-100" border="success" bg="darkcontent" text="lightfont">
     <Card.Header>Character Stats</Card.Header>
     <Card.Body>
@@ -443,12 +445,12 @@ const BuildModalCharacterCard = (props) => {
           let name = val.name
           let unit = val.unit ? val.unit : ""
           if (key === "ele_dmg" || key === "ele_atk") {
-            let eleName = ElementalData[build.character.element].name
+            let eleName = ElementalData[character.element].name
             name = eleName + name
-            key === "ele_dmg" && (key = `${build.character.element}_${key}`)
+            key === "ele_dmg" && (key = `${character.element}_${key}`)
           }
-          let statsDisplay = (key in build.character) ?
-            <span>{name}: <span className="text-warning">{build.character[key]}{unit}</span> <span className="text-success">+ {(build.finalStats[key] - build.character[key]).toFixed(unit === "%" ? 1 : 0)}{unit}</span></span> :
+          let statsDisplay = (key in character) ?
+            <span>{name}: <span className="text-warning">{character[key]}{unit}</span> <span className="text-success">+ {(build.finalStats[key] - character[key]).toFixed(unit === "%" ? 1 : 0)}{unit}</span></span> :
             <span>{name}: <span className="text-warning">{build.finalStats[key]}{unit}</span></span>
           return <Col className="text-nowrap" key={key} xs={12} sm={6} lg={4}>
             <OverlayTrigger
@@ -456,8 +458,8 @@ const BuildModalCharacterCard = (props) => {
               overlay={
                 <Popover>
                   <Popover.Title as="h3">
-                    {(key in build.character) ?
-                      <span>{name}: {build.character[key]}{unit} <span className="text-success">+ {(build.finalStats[key] - build.character[key]).toFixed(1)}{unit}</span></span> :
+                    {(key in character) ?
+                      <span>{name}: {character[key]}{unit} <span className="text-success">+ {(build.finalStats[key] - character[key]).toFixed(1)}{unit}</span></span> :
                       <span>{name}: {build.finalStats[key]}{unit}</span>
                     }
                   </Popover.Title>

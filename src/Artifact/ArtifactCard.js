@@ -96,7 +96,7 @@ export default class ArtifactCard extends React.Component {
                 Inventory
               </Dropdown.Item>
               {Object.entries(CharacterDatabase.getCharacterDatabase()).map(([id, char]) =>
-                <Dropdown.Item onClick={() => this.equipOnChar(char)}>
+                <Dropdown.Item key={id} onClick={() => this.equipOnChar(char)}>
                   {char.name}
                 </Dropdown.Item>
               )}

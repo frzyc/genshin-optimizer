@@ -18,7 +18,6 @@ onmessage = async (e) => {
       artifactIds,
       totalArtifactStats,
       artifactSetEffect,
-      character,
       setToSlots,
       finalStats: calculateCharacterFinalStat(totalArtifactStats, character)
     }

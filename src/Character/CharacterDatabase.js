@@ -87,13 +87,12 @@ export default class CharacterDatabase {
     char.equippedArtifacts[slotKey] = "";
     this.updateCharacter(char)
   }
-  static equipArtifactBuild = (characterid, artifacts) => {
+  static equipArtifactBuild = (characterid, artifactIds) => {
     let character = this.getCharacter(characterid)
     if (!character) return;
-    let equippedArtifacts = {}
-    Object.entries(artifacts).forEach(([key, art]) =>
-      equippedArtifacts[key] = art.id)
-    character.equippedArtifacts = equippedArtifacts;
+    character.equippedArtifacts = {}
+    Object.entries(artifactIds).forEach(([key, artid]) =>
+      character.equippedArtifacts[key] = artid)
     CharacterDatabase.updateCharacter(character);
   }
 }
