@@ -238,7 +238,7 @@ export default class CharacterEditor extends React.Component {
                   <Dropdown.Item key={key} onClick={() => {
                     this.setState({ weaponStatKey: key, weaponStatVal: null })
                   }} >
-                    {value.name}
+                    {Artifact.getStatNameWithPercent(key)}
                   </Dropdown.Item>)}
               </DropdownButton>
               {weaponSubStatInput}
