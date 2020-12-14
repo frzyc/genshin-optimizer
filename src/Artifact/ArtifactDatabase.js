@@ -28,7 +28,7 @@ export default class ArtifactDatabase {
           this.removeArtifactById(id);
       }
   }
-  static getArtifact = (id) => artifactDatabase[id]
+  static getArtifact = (id) => id ? artifactDatabase[id] : null
   static removeArtifact = (art) => {
     this.removeArtifactById(art.id);
   }
@@ -38,6 +38,7 @@ export default class ArtifactDatabase {
     let id = `artifact_${artIdIndex++}`
     localStorage.setItem("artifact_highest_id", artIdIndex)
     art.id = id;
+    art = deepClone(art)
     saveToLocalStorage(id, art);
     artifactDatabase[id] = art;
     this.updateCacheData();
@@ -46,6 +47,7 @@ export default class ArtifactDatabase {
   static updateArtifact = (art) => {
     if (Artifact.isInvalidArtifact(art)) return;
     let id = art.id;
+    art = deepClone(art)
     saveToLocalStorage(id, art);
     artifactDatabase[id] = art;
     this.updateCacheData();
@@ -63,4 +65,20 @@ export default class ArtifactDatabase {
     artifactIdList = Object.keys(artifactDatabase)
     this.saveIdListToStorage();
   }
+  static moveToNewLocation = (artid, location) => {
+    if (!artid) return;
+    let art = this.getArtifact(artid)
+    if (!art || art.location === location) return;
+    art.location = location;
+    this.updateArtifact(art);
+  }
+  static swapLocations = (artA, artB) => {
+    let locA = artA.location
+    let locB = artB.location
+    this.moveToNewLocation(artA.id, locB)
+    this.moveToNewLocation(artB.id, locA)
+  }
+  static swapLocationsById = (artAid, artBid) =>
+    this.swapLocations(this.getArtifact(artAid), this.getArtifact(artBid))
+
 }

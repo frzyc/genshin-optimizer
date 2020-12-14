@@ -32,6 +32,9 @@ const clamp = (val, a, b) => {
   if (val > b) return b;
   return val
 }
+const getArrLastElement = (arr) => 
+  arr.length ? arr[arr.length - 1] : null
+
 const clamp01 = (val) => clamp(val, 0, 1)
 const clampPercent = (val) => clamp(val, 0, 100)
 export {
@@ -46,5 +49,6 @@ export {
   closeEnoughInt,
   clamp,
   clamp01,
-  clampPercent
+  clampPercent,
+  getArrLastElement
 }

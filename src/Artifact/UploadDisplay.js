@@ -5,7 +5,7 @@ import { Button, Card, Col, Container, Form, Modal, ProgressBar, Row } from 'rea
 import { createWorker } from 'tesseract.js';
 import scan_art_main from "../imgs/scan_art_main.png";
 import Snippet from "../imgs/snippet.png";
-import { ArtifactSetsData, ArtifactStatsData } from './ArtifactData';
+import { ArtifactSetsData, ArtifactSlotsData, ArtifactStatsData } from './ArtifactData';
 
 function UploadDisplay(props) {
   const [ocr, setOcr] = useState();
@@ -29,7 +29,7 @@ function UploadDisplay(props) {
     Object.entries(ArtifactStatsData).forEach(([key, entry]) => {
       let regex = null
       if (entry.unit === "%") regex = new RegExp(entry.name + "\\s*\\+\\s*(\\d*\\.\\d)%", "im");
-      else regex = new RegExp(entry.name + "\\s*\\+\\s*(\\d*)(?!\.)", "im");//use negative lookahead to avoid the period
+      else regex = new RegExp(entry.name + "\\s*\\+\\s*(\\d*)(?!.)", "im");//use negative lookahead to avoid the period
       let match = regex.exec(parsed)
       match && matches.push({ index: match.index, val: match[1], unit: entry.unit, key })
     })
@@ -40,10 +40,18 @@ function UploadDisplay(props) {
       props.setSubStat && props.setSubStat(i, match.key, value)
     })
     //parse for sets
-    let maparr = Object.entries(ArtifactSetsData)
-    for (const [key, setObj] of maparr)
-      if (parsed.includes(setObj.name) && props.setSetKey)
-        return props.setSetKey(key);
+    for (const [key, setObj] of Object.entries(ArtifactSetsData))
+      if (parsed.includes(setObj.name) && props.setSetKey) {
+        props.setSetKey(key);
+        break;
+      }
+
+    //parse for slot
+    for (const [key, slotObj] of Object.entries(ArtifactSlotsData))
+      if (parsed.includes(slotObj.name) && props.setSlotKey) {
+        props.setSlotKey(key);
+        break;
+      }
   }
   const worker = createWorker({
     logger: m => {
@@ -88,17 +96,16 @@ function UploadDisplay(props) {
         </Card.Header>
         <Card.Body>
           <Row>
-            <Col xs={12} md={6}>
+            <Col xs={8} md={4}>
               <img alt="snippet of the screen to take" src={Snippet} className="w-100 h-auto" />
             </Col>
-            <Col xs={12} md={6}>
+            <Col xs={12} md={8}>
 
               <p>Using screenshots can dramatically decrease the amount of time you manually input in stats on the Genshin Optimizer.</p>
               <h5>What to include in the screenshot.</h5>
               <p>
                 In Genshin Impact, Open your bag, and navigate to the artifacts tab. Select the artifact you want to scan with Genshin Optimizer.
                 To Take a screenshot, in Windows, the shortcut is <strong>Shift + WindowsKey + S</strong>.
-                Because parsing text from image requires very contrasting, clear text, we are only going to select the 4 substats, as well as the set effect in green below.
                 Once you selected the region, the image is automatically included in your clipboard.
               </p></Col>
           </Row>
@@ -154,10 +161,10 @@ function UploadDisplay(props) {
         </Col>
       </Row>
       <Row className="mb-1">
-        <Col xs={12} lg={5}>
+        <Col xs={8} lg={4}>
           {img}
         </Col>
-        {ocr && <Col xs={12} lg={7}>
+        {ocr && <Col xs={12} lg={8}>
           <p>Parsed Text:</p>
           <p>{ocr}</p>
         </Col>}

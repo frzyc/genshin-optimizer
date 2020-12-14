@@ -1,9 +1,9 @@
 onmessage = async (e) => {
-  let { split, artifactSetPerms, setFilters, character, ArtifactStatsData, ArtifactSlotSData, ArtifactMainStatsData, ArtifactSetsData, maxBuildsToShow, buildFilterKey, asending } = e.data;
+  let { split, artifactSetPerms, setFilters, character, ArtifactStatsData, ArtifactSlotsData, ArtifactMainStatsData, ArtifactSetsData, maxBuildsToShow, buildFilterKey, asending } = e.data;
 
   let t1 = performance.now()
   let builds = []
-  let artifactPerms = generateAllPossibleArtifactPerm(split, artifactSetPerms, setFilters, ArtifactSlotSData)
+  let artifactPerms = generateAllPossibleArtifactPerm(split, artifactSetPerms, setFilters, ArtifactSlotsData)
 
   builds = artifactPerms.map(artifacts => {
     let setToSlots = {};
@@ -13,9 +13,9 @@ onmessage = async (e) => {
     })
     let artifactSetEffect = getArtifactSetEffects(setToSlots, ArtifactSetsData)
     let totalArtifactStats = calculateArtifactStats(character, artifacts, artifactSetEffect, ArtifactStatsData, ArtifactMainStatsData)
-
+    let artifactIds = Object.fromEntries(Object.entries(artifacts).map(([key, val]) => [key, val.id]))
     return {
-      artifacts,
+      artifactIds,
       totalArtifactStats,
       artifactSetEffect,
       character,
@@ -30,7 +30,7 @@ onmessage = async (e) => {
   builds.splice(maxBuildsToShow)
   postMessage(builds)
 };
-const generateAllPossibleArtifactPerm = (splitArtifacts, setPerms, setFilters, ArtifactSlotSData) => {
+const generateAllPossibleArtifactPerm = (splitArtifacts, setPerms, setFilters, ArtifactSlotsData) => {
   let perm = [];
 
   let splitArtsPerSet = {}
@@ -50,7 +50,7 @@ const generateAllPossibleArtifactPerm = (splitArtifacts, setPerms, setFilters, A
     })
     splitArtsPerSet[key] = artsPerSet
   })
-  let slotKeys = Object.keys(ArtifactSlotSData);
+  let slotKeys = Object.keys(ArtifactSlotsData);
   //recursion function to loop through everything.
   let slotPerm = (index, setPerm, accu) => {
     if (index >= slotKeys.length) {

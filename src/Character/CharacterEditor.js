@@ -6,6 +6,7 @@ import { ArtifactStatsData, CharacterSpecializedStatKey, ElementalData } from '.
 import Artifact from '../Artifact/Artifact';
 import { FloatFormControl, IntFormControl } from '../Components/CustomFormControl';
 import ElementalIcon from '../Components/ElementalIcon';
+import CharacterDatabase from './CharacterDatabase';
 export default class CharacterEditor extends React.Component {
   constructor(props) {
     super(props)
@@ -250,7 +251,7 @@ export default class CharacterEditor extends React.Component {
         </Row>
       </Card.Body>
       <Card.Footer>
-        <Button className="mr-3" onClick={() => {
+        <Button className="mr-3" disabled={CharacterDatabase.isInvalid(this.state)} onClick={() => {
           this.props.addCharacter && this.props.addCharacter(this.state)
           this.setState(CharacterEditor.getInitialState());
         }}>

@@ -1,18 +1,18 @@
+import { faSortAmountDownAlt, faSortAmountUp, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Alert, Badge, Button, ButtonGroup, Card, Col, Container, Dropdown, DropdownButton, ListGroup, Modal, OverlayTrigger, Popover, Row } from 'react-bootstrap';
-import ArtifactDatabase from '../Artifact/ArtifactDatabase';
-import CharacterDatabase from '../Character/CharacterDatabase';
-import Build from './Build';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSortAmountDownAlt, faSortAmountUp, faTimes } from '@fortawesome/free-solid-svg-icons'
-import SlotIcon from '../Components/SlotIcon';
-import { ArtifactSetsData, ArtifactSlotSData, ArtifactStatsData, ArtifactMainStatsData, ElementalData } from '../Artifact/ArtifactData';
-import { deepClone, loadFromLocalStorage, saveToLocalStorage } from '../Util';
-import artifactDisplaySortKey from './BuildStatData';
-import Artifact from '../Artifact/Artifact';
-import PercentBadge from '../Artifact/PercentBadge';
 // eslint-disable-next-line
 import Worker from "worker-loader!./BuildWorker.js";
+import Artifact from '../Artifact/Artifact';
+import ArtifactCard from '../Artifact/ArtifactCard';
+import { ArtifactMainStatsData, ArtifactSetsData, ArtifactSlotsData, ArtifactStatsData, ElementalData } from '../Artifact/ArtifactData';
+import ArtifactDatabase from '../Artifact/ArtifactDatabase';
+import CharacterDatabase from '../Character/CharacterDatabase';
+import SlotIcon from '../Components/SlotIcon';
+import { deepClone, loadFromLocalStorage, saveToLocalStorage } from '../Util';
+import Build from './Build';
+import artifactDisplaySortKey from './BuildStatData';
 
 export default class BuildDisplay extends React.Component {
   constructor(props) {
@@ -50,6 +50,7 @@ export default class BuildDisplay extends React.Component {
   static maxBuildsToGenerateList = [50000, 10000, 5000, 1000, 500, 100]
   static getInitialState = () => JSON.parse(JSON.stringify(BuildDisplay.initialState))
   static artifactsSlotsToSelectMainStats = ["sands", "goblet", "circlet"]
+  forceUpdateBuildDisplay = () => this.forceUpdate()
   splitArtifacts = () => {
     if (!this.state.selectedCharacterKey) return {};
     let artifactDatabase = ArtifactDatabase.getArtifactDatabase();
@@ -109,7 +110,7 @@ export default class BuildDisplay extends React.Component {
     let character = CharacterDatabase.getCharacter(this.state.selectedCharacterKey)
     let data = {
       split, artifactSetPerms, setFilters: this.state.setFilters, character, ArtifactStatsData,
-      ArtifactSlotSData, ArtifactMainStatsData, ArtifactSetsData, maxBuildsToShow: this.state.maxBuildsToShow,
+      ArtifactSlotsData, ArtifactMainStatsData, ArtifactSetsData, maxBuildsToShow: this.state.maxBuildsToShow,
       buildFilterKey: this.state.buildFilterKey, asending: this.state.asending
     }
 
@@ -204,15 +205,15 @@ export default class BuildDisplay extends React.Component {
               (<div className="text-inline mb-1 d-flex justify-content-between" key={slotKey}>
                 <h6 className="d-inline mr-2">
                   {SlotIcon[slotKey] && <FontAwesomeIcon icon={SlotIcon[slotKey]} className="mr-2 fa-fw" />}
-                  {ArtifactSlotSData[slotKey].name}
+                  {ArtifactSlotsData[slotKey].name}
                 </h6>
                 <DropdownButton
-                  title={this.state.mainStat[index] ? Artifact.getStatName(this.state.mainStat[index]) : "Select a mainstat"}
+                  title={this.state.mainStat[index] ? Artifact.getStatNameWithPercent(this.state.mainStat[index]) : "Select a mainstat"}
                   className="d-inline">
                   <Dropdown.Item onClick={() => this.changeMainStat(index, "")} >No MainStat</Dropdown.Item>
-                  {ArtifactSlotSData[slotKey].stats.map(mainStatKey =>
+                  {ArtifactSlotsData[slotKey].stats.map(mainStatKey =>
                     <Dropdown.Item onClick={() => this.changeMainStat(index, mainStatKey)} key={mainStatKey}>
-                      {Artifact.getStatName(mainStatKey)}
+                      {Artifact.getStatNameWithPercent(mainStatKey)}
                     </Dropdown.Item>
                   )}
                 </DropdownButton>
@@ -347,8 +348,10 @@ export default class BuildDisplay extends React.Component {
                     </Col >
                   </Row>
                 </Col>
-                {Object.values(build.artifacts).map(art =>
-                  <Col sm={6} key={art.id} className="mb-3"> <ModalArtifactCard artifact={art} /></Col>)}
+                {Object.values(build.artifactIds).map(artid =>
+                  <Col sm={6} key={artid} className="mb-3">
+                    <ArtifactCard artifactData={ArtifactDatabase.getArtifact(artid)} forceUpdate={this.forceUpdateBuildDisplay} />
+                  </Col>)}
               </Row>
             </Col>
           </Row>
@@ -383,27 +386,16 @@ export default class BuildDisplay extends React.Component {
     let character = build.character;
     let artifacts = build.artifacts;
     //move all the equipped artifacts to the inventory.
-    if (character.equippedArtifacts) {
-      Object.values(character.equippedArtifacts).forEach(artid => {
-        let art = ArtifactDatabase.getArtifact(artid);
-        if (!art || art.location === "") return;
-        art.location = "";
-        ArtifactDatabase.updateArtifact(art);
-      })
-    }
+    if (character.equippedArtifacts)
+      Object.values(character.equippedArtifacts).forEach(artid =>
+        ArtifactDatabase.moveToNewLocation(artid, ""))
 
-    let equippedArtifacts = {}
-    Object.entries(artifacts).forEach(([key, art]) =>
-      equippedArtifacts[key] = art.id)
-    character.equippedArtifacts = equippedArtifacts;
-    CharacterDatabase.updateCharacter(character);
+    CharacterDatabase.equipArtifactBuild(character.id, artifacts);
 
     //move all the current build artifacts to the character.
-    Object.values(artifacts).forEach(art => {
-      if (art.location === character.id) return;
-      art.location = character.id;
-      ArtifactDatabase.updateArtifact(art);
-    })
+    Object.values(artifacts).forEach(art =>
+      ArtifactDatabase.moveToNewLocation(art.id, character.id))
+
     this.forceUpdate();
   }
   componentDidUpdate() {
@@ -431,7 +423,7 @@ export default class BuildDisplay extends React.Component {
             {/* Build List */}
             <ListGroup>
               {this.state.builds.map((build, index) =>
-                (index < this.state.maxBuildsToShow) && <this.ArtifactDisplayItem build={build} index={index} key={Object.values(build.artifacts).reduce((accu, art) => accu += art.id, "")} />
+                (index < this.state.maxBuildsToShow) && <this.ArtifactDisplayItem build={build} index={index} key={Object.values(build.artifactIds).join("_")} />
               )}
             </ListGroup>
           </Card>
@@ -440,54 +432,7 @@ export default class BuildDisplay extends React.Component {
     </Container>)
   }
 }
-const ModalArtifactCard = (props) => {
-  if (!props.artifact) return null;
-  let art = props.artifact;
-  let artifactValidation = Artifact.artifactValidation(art)
-  let location = (art.location && CharacterDatabase.getCharacter(art.location)) ? CharacterDatabase.getCharacter(art.location).name : "Inventory"
-  return (<Card className="h-100" border={`${art.numStars}star`} bg="darkcontent" text="lightfont">
-    <Card.Header className="pr-3">
-      <Row className="no-gutters">
-        <Col >
-          <h6><b>{`${Artifact.getArtifactPieceName(art)}`}</b></h6>
-          <div>{SlotIcon[art.slotKey] && <FontAwesomeIcon icon={SlotIcon[art.slotKey]} className="fa-fw" />}{` ${Artifact.getArtifactSlotName(art.slotKey)} +${art.level}`}</div>
-        </Col>
-      </Row>
-    </Card.Header>
-    <Card.Body className="d-flex flex-column">
-      <Card.Title>
-        <h6>{art.mainStatKey ? `${Artifact.getStatName(art.mainStatKey)} ${Artifact.getMainStatValue(art.mainStatKey, art.numStars, art.level)}${Artifact.getStatUnit(art.mainStatKey)}` : null}</h6>
-      </Card.Title>
-      <Card.Subtitle>
-        <div>{Artifact.getArtifactSetName(art.setKey, "Artifact Set")}</div>
-        <div>{"🟊".repeat(art.numStars ? art.numStars : 0)}</div>
 
-      </Card.Subtitle>
-      <ul className="mb-0">
-        {art.substats && art.substats.map((stat, i) =>
-          (stat && stat.value) ? (<li key={i}>{`${Artifact.getStatName(stat.key)}+${(stat.value).toFixed(Artifact.getStatUnit(stat.key) === "%" ? 1 : 0)}${Artifact.getStatUnit(stat.key)}`}</li>) : null
-        )}
-      </ul>
-      <div className="mt-auto mb-n2">
-        <span className="mb-0 mr-1">Substat Eff.:</span>
-        <PercentBadge tooltip={artifactValidation.msg} valid={artifactValidation.valid} percent={artifactValidation.currentEfficiency}>
-          {(artifactValidation.currentEfficiency ? artifactValidation.currentEfficiency : 0).toFixed(2) + "%"}
-        </PercentBadge>
-        <span>{"<"}</span>
-        <PercentBadge tooltip={artifactValidation.msg} valid={artifactValidation.valid} percent={artifactValidation.maximumEfficiency}>
-          {(artifactValidation.maximumEfficiency ? artifactValidation.maximumEfficiency : 0).toFixed(2) + "%"}
-        </PercentBadge>
-      </div>
-    </Card.Body>
-    <Card.Footer className="pr-3">
-      <Row>
-        <Col>
-          <span>Location: {location}</span>
-        </Col>
-      </Row>
-    </Card.Footer>
-  </Card>)
-}
 const BuildModalCharacterCard = (props) => {
   let build = props.build;
   return (<Card className="h-100" border="success" bg="darkcontent" text="lightfont">

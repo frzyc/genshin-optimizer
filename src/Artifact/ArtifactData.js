@@ -28,7 +28,7 @@ const ArtifactSubStatsData = {
   crit_dmg: { 2: [2.2, 2.6, 3.1], 3: [3.3, 3.7, 4.2, 4.7], 4: [4.4, 5, 5.6, 6.2], 5: [5.4, 6.2, 7, 7.8] },
 }
 
-const ArtifactSlotSData = {
+const ArtifactSlotsData = {
   flower: { name: "Flower of Life", stats: ["hp"] },
   plume: { name: "Plume of Death", stats: ["atk"] },
   sands: { name: "Sands of Eon", stats: ["hp_", "def_", "atk_", "ele_mas", "ener_rech"] },
@@ -630,7 +630,7 @@ const ElementalData = {
 }
 export {
   ArtifactStatsData,
-  ArtifactSlotSData,
+  ArtifactSlotsData,
   ArtifactSetsData,
   ArtifactSubStatsData,
   ArtifactStarsData,

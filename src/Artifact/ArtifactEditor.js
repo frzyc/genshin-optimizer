@@ -4,9 +4,9 @@ import React from 'react';
 import { Alert, Button, Card, Col, Dropdown, DropdownButton, FormControl, InputGroup, OverlayTrigger, Popover, Row } from 'react-bootstrap';
 import { FloatFormControl, IntFormControl } from '../Components/CustomFormControl';
 import SlotIcon from '../Components/SlotIcon';
-import { deepClone, getRandomElementFromArray, getRandomIntInclusive } from '../Util';
+import { deepClone, getArrLastElement, getRandomElementFromArray, getRandomIntInclusive } from '../Util';
 import Artifact from './Artifact';
-import { ArtifactSetsData, ArtifactSlotSData, ArtifactStarsData, ArtifactStatsData, ArtifactSubStatsData } from './ArtifactData';
+import { ArtifactSetsData, ArtifactSlotsData, ArtifactStarsData, ArtifactStatsData, ArtifactSubStatsData } from './ArtifactData';
 import PercentBadge from './PercentBadge';
 import UploadDisplay from './UploadDisplay';
 
@@ -24,13 +24,14 @@ export default class ArtifactEditor extends React.Component {
     substats: [{ key: "", value: 0 }, { key: "", value: 0 }, { key: "", value: 0 }, { key: "", value: 0 }],//{key:"",value:_}
   }
   static getInitialState = () => JSON.parse(JSON.stringify(ArtifactEditor.initialState))
-  setLevel(newlevel) {
+  setLevel = (newlevel) => this.setState(state => {
     newlevel = parseInt(newlevel)
     if (isNaN(newlevel)) newlevel = 0
     if (newlevel < 0) newlevel = 0;
-    if (newlevel > this.state.numStars * 4) newlevel = this.state.numStars * 4;
-    this.setState({ level: newlevel })
-  }
+    if (newlevel > state.numStars * 4) newlevel = state.numStars * 4;
+    return { level: newlevel }
+  })
+
   getRemainingSubstats = () =>
     Object.keys(ArtifactSubStatsData).filter((key) => {
       //if mainstat has key, not valid
@@ -47,28 +48,42 @@ export default class ArtifactEditor extends React.Component {
     this.props.addArtifact && this.props.addArtifact(saveArtifact)
     this.setState(ArtifactEditor.getInitialState());
   }
-  setSetKey = (setKey) => this.setState({ setKey })
-  setSubStat = (index, key = "", value = 0) => {
-    if (index >= 4) return;
-    let substats = deepClone(this.state.substats)
-    substats[index].key = key
-    substats[index].value = value
-    this.setState({ substats })
-  }
-  setMainStatKey = (mainStatKey) => {
-    this.state.substats.forEach((substat, index) =>
+  setSetKey = (setKey) => this.setState(state => {
+    let numStars = getArrLastElement(Artifact.getRarityArr(setKey))
+    let level = (!state.level || state.level > numStars * 4) ? numStars * 4 : state.level
+    return { setKey, numStars, level }
+  })
+  setSubStat = (index, key = "", value = 0) =>
+    index < 4 && this.setState(state => {
+      let substats = deepClone(state.substats)
+      substats[index].key = key
+      substats[index].value = value
+      return { substats }
+    })
+
+  setMainStatKey = (mainStatKey) => this.setState(state => {
+    state.substats.forEach((substat, index) =>
       substat.key && substat.key === mainStatKey && this.setSubStat(index))
-    this.setState({ mainStatKey })
-  }
+    return { mainStatKey }
+  })
+
+  setSlotKey = (slotKey) => this.setState(state => {
+    //find a mainstat that isnt taken,
+    let mainstats = ArtifactSlotsData[slotKey].stats;
+    for (const mainStatKey of mainstats)
+      if (!state.substats.some(substat => (substat && substat.key ? (substat.key === mainStatKey) : false)))
+        return { slotKey, mainStatKey }
+    //if not, then remove one of the substat.
+    let mainStatKey = mainstats[0]
+    this.setMainStatKey(mainStatKey)
+    return { slotKey }
+  })
+
   ArtifactDropDown = (props) => {
     let dropdownitemsForStar = (star) =>
       Artifact.getArtifactSetsByMaxStarEntries(star).map(([key, setobj]) =>
         (<Dropdown.Item key={key}
-          onClick={() => this.setState(state => {
-            let ret = { setKey: key, numStars: setobj.rarity[setobj.rarity.length - 1] }
-            if (state.level > ret.numStars * 4) ret.level = ret.numStars * 4
-            return ret
-          })}
+          onClick={() => this.setSetKey(key)}
         >
           {setobj.name}
         </Dropdown.Item >))
@@ -125,20 +140,10 @@ export default class ArtifactEditor extends React.Component {
         disabled={!this.state.setKey}
         as={InputGroup.Prepend}
       >
-        {this.state.setKey && Object.keys(ArtifactSetsData[this.state.setKey].pieces).map(key =>
-          <Dropdown.Item key={key} onClick={() => {
-            //find a mainstat that isnt taken,
-            let mainstats = ArtifactSlotSData[key].stats;
-            for (const mainStatKey of mainstats)
-              if (!this.state.substats.some(substat => (substat && substat.key ? (substat.key === mainStatKey) : false)))
-                return this.setState({ slotKey: key, mainStatKey })
-            //if not, then remove one of the substat.
-            let mainStatKey = mainstats[0]
-            this.setMainStatKey(mainStatKey)
-            this.setState({ slotKey: key })
-          }} >
-            {SlotIcon[key] && <FontAwesomeIcon icon={SlotIcon[key]} className="fa-fw mr-1" />}
-            {ArtifactSlotSData[key].name}
+        {this.state.setKey && Object.keys(ArtifactSetsData[this.state.setKey].pieces).map(slotKey =>
+          <Dropdown.Item key={slotKey} onClick={() => this.setSlotKey(slotKey)} >
+            {SlotIcon[slotKey] && <FontAwesomeIcon icon={SlotIcon[slotKey]} className="fa-fw mr-1" />}
+            {ArtifactSlotsData[slotKey].name}
           </Dropdown.Item>)}
       </DropdownButton>
       <FormControl
@@ -152,7 +157,7 @@ export default class ArtifactEditor extends React.Component {
         as={InputGroup.Prepend}
       >
         <Dropdown.ItemText>Select a Main Artifact Stat </Dropdown.ItemText>
-        {this.state.slotKey ? ArtifactSlotSData[this.state.slotKey].stats.map((mainStatKey) =>
+        {this.state.slotKey ? ArtifactSlotsData[this.state.slotKey].stats.map((mainStatKey) =>
           <Dropdown.Item key={mainStatKey} onClick={() => this.setMainStatKey(mainStatKey)} >
             {Artifact.getStatNameWithPercent(mainStatKey)}
           </Dropdown.Item>) : <Dropdown.Item />}
@@ -223,7 +228,7 @@ export default class ArtifactEditor extends React.Component {
     //choose piece
     state.slotKey = getRandomElementFromArray(Object.keys(ArtifactSetsData[state.setKey].pieces));
     //choose mainstat
-    state.mainStatKey = getRandomElementFromArray(ArtifactSlotSData[state.slotKey].stats);
+    state.mainStatKey = getRandomElementFromArray(ArtifactSlotsData[state.slotKey].stats);
 
     //choose initial substats from star
     let numOfInitialSubStats = getRandomIntInclusive(ArtifactStarsData[state.numStars].subsBaselow, ArtifactStarsData[state.numStars].subBaseHigh);
@@ -334,7 +339,7 @@ export default class ArtifactEditor extends React.Component {
           <Row>
             {/* Image OCR */}
             <Col xs={12} className="mb-2">
-              <UploadDisplay setSetKey={this.setSetKey} setSubStat={this.setSubStat} reset={reset => this.uploadDisplayReset = reset} />
+              <UploadDisplay setSetKey={this.setSetKey} setSubStat={this.setSubStat} setSlotKey={this.setSlotKey} reset={reset => this.uploadDisplayReset = reset} />
             </Col>
           </Row>
         </Card.Body>

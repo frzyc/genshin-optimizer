@@ -10,12 +10,38 @@ import { faTrashAlt, faEdit, faLock, faLockOpen } from '@fortawesome/free-solid-
 import SlotIcon from '../Components/SlotIcon';
 import ArtifactDatabase from './ArtifactDatabase';
 import CharacterDatabase from '../Character/CharacterDatabase';
+import { Dropdown, DropdownButton } from 'react-bootstrap';
 export default class ArtifactCard extends React.Component {
+  equipOnChar(char) {
+    let art = this.props.artifactData;
+    let slotKey = art.slotKey
+    let currentLocation = art.location;
+    let intendedLocation = char ? char.id : ""
+    let artifactToSwapWithid = CharacterDatabase.getArtifactIDFromSlot(intendedLocation, slotKey)
+    let artifactToSwapWith = ArtifactDatabase.getArtifact(artifactToSwapWithid)
+
+    //update artifact
+    if (artifactToSwapWith) ArtifactDatabase.swapLocations(art, artifactToSwapWith)
+    else ArtifactDatabase.moveToNewLocation(art.id, intendedLocation)
+
+    //update Character
+    if (intendedLocation)
+      CharacterDatabase.equipArtifact(intendedLocation, art)
+
+    if (currentLocation) {
+      if (artifactToSwapWith)
+        CharacterDatabase.equipArtifact(currentLocation, artifactToSwapWith)
+      else
+        CharacterDatabase.unequipArtifactOnSlot(currentLocation, slotKey)
+    }
+    this.props.forceUpdate && this.props.forceUpdate()
+  }
   render() {
     if (!this.props.artifactData) return null;
     let art = this.props.artifactData;
     let artifactValidation = Artifact.artifactValidation(art)
-    let location = (art.location && CharacterDatabase.getCharacter(art.location)) ? CharacterDatabase.getCharacter(art.location).name : "Inventory"
+    let locationChar = CharacterDatabase.getCharacter(art.location)
+    let location = locationChar ? locationChar.name : "Inventory"
     return (<Card className="h-100" border={`${art.numStars}star`} bg="darkcontent" text="lightfont">
       <Card.Header className="pr-3">
         <Row className="no-gutters">
@@ -25,14 +51,14 @@ export default class ArtifactCard extends React.Component {
           </Col>
           <Col xs={"auto"}>
             <span className="float-right align-top ml-1">
-              <Button variant="primary" size="sm" className="mr-1"
-                onClick={() => this.props.onEdit && this.props.onEdit()}>
+              {this.props.onEdit && <Button variant="primary" size="sm" className="mr-1"
+                onClick={() => this.props.onEdit()}>
                 <FontAwesomeIcon icon={faEdit} className="fa-fw" />
-              </Button>
-              <Button variant="danger" size="sm"
-                onClick={() => this.props.onDelete && this.props.onDelete()}>
+              </Button>}
+              {this.props.onDelete && <Button variant="danger" size="sm"
+                onClick={() => this.props.onDelete()}>
                 <FontAwesomeIcon icon={faTrashAlt} className="fa-fw" />
-              </Button>
+              </Button>}
             </span>
           </Col>
         </Row>
@@ -65,7 +91,16 @@ export default class ArtifactCard extends React.Component {
       <Card.Footer className="pr-3">
         <Row>
           <Col>
-            <span>Location: {location}</span>
+            <DropdownButton title={location}>
+              <Dropdown.Item onClick={() => this.equipOnChar()}>
+                Inventory
+              </Dropdown.Item>
+              {Object.entries(CharacterDatabase.getCharacterDatabase()).map(([id, char]) =>
+                <Dropdown.Item onClick={() => this.equipOnChar(char)}>
+                  {char.name}
+                </Dropdown.Item>
+              )}
+            </DropdownButton>
           </Col>
           <Col xs="auto">
             <Button size="sm"

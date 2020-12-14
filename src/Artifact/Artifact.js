@@ -1,5 +1,5 @@
 import { clampPercent, closeEnoughFloat, closeEnoughInt } from '../Util';
-import { ArtifactStatsData, ArtifactStarsData, ArtifactMainStatsData, ArtifactSetsData, ArtifactSubStatsData, ArtifactSlotSData, ElementalData } from './ArtifactData'
+import { ArtifactStatsData, ArtifactStarsData, ArtifactMainStatsData, ArtifactSetsData, ArtifactSubStatsData, ArtifactSlotsData, ElementalData } from './ArtifactData'
 
 export default class Artifact {
   static isInvalidArtifact = (art) =>
@@ -11,7 +11,7 @@ export default class Artifact {
     Object.entries(ArtifactSetsData).filter(([key, setobj]) => setobj.rarity[(setobj.rarity.length) - 1] === star)
 
   static getArtifactSlotName = (slotKey, defVal = "") =>
-    ArtifactSlotSData[slotKey] ? ArtifactSlotSData[slotKey].name : defVal
+    ArtifactSlotsData[slotKey] ? ArtifactSlotsData[slotKey].name : defVal
 
   static getArtifactPieceName = (state) =>
     (state.setKey && state.slotKey && ArtifactSetsData[state.setKey].pieces) ?
@@ -26,6 +26,8 @@ export default class Artifact {
     }
     return defVal
   }
+  static getRarityArr = (setKey) => ArtifactSetsData[setKey] ? ArtifactSetsData[setKey].rarity : []
+
   static getStatNameWithPercent = (key, defVal = "") => {
     let name = this.getStatName(key, defVal)
     if (name !== defVal && (key === "hp_" || key === "atk_" || key === "def_"))
@@ -94,7 +96,7 @@ export default class Artifact {
           }
         }
       }
-      rollData.forEach(roll => {
+      rollData.slice().reverse().forEach(roll => {
         rollOption(value, [...arr, roll])
       })
     }
@@ -135,7 +137,7 @@ export default class Artifact {
     let totalPossbleRolls = Artifact.totalPossibleRolls(state.numStars);
 
     if ((currentNumOfRolls + rollsRemaining) > totalPossbleRolls)
-      return { substateValidation, valid: false, msg: `Current number of substat rolles(${currentNumOfRolls}) + Rolls remaining from level up (${rollsRemaining}) is greater than the total possibel roll of this artifact (${totalPossbleRolls}) `, currentEfficiency, maximumEfficiency }
+      return { substateValidation, valid: false, msg: `Current number of substat rolles(${currentNumOfRolls}) + Rolls remaining from level up (${rollsRemaining}) is greater than the total possible roll of this artifact (${totalPossbleRolls}) `, currentEfficiency, maximumEfficiency }
 
     let totalCurrentEfficiency = substateValidation.reduce((sum, cur) => sum + (cur.valid && cur.rolls && cur.efficiency ? (cur.efficiency * cur.rolls.length) : 0), 0);
     currentEfficiency = clampPercent(totalCurrentEfficiency / totalPossbleRolls);

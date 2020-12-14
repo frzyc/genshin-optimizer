@@ -5,12 +5,13 @@ import { Card, Dropdown, InputGroup, ToggleButton, ToggleButtonGroup } from 'rea
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
+import CharacterDatabase from '../Character/CharacterDatabase';
 import { IntFormControl } from '../Components/CustomFormControl';
 import SlotIcon from '../Components/SlotIcon';
 import { deepClone } from '../Util';
 import Artifact from './Artifact';
 import ArtifactCard from './ArtifactCard';
-import { ArtifactSlotSData, ArtifactStarsData, ArtifactStatsData, ArtifactSubStatsData, ElementalData } from './ArtifactData';
+import { ArtifactSlotsData, ArtifactStarsData, ArtifactStatsData, ArtifactSubStatsData, ElementalData } from './ArtifactData';
 import ArtifactDatabase from './ArtifactDatabase';
 import ArtifactEditor from './ArtifactEditor';
 
@@ -18,6 +19,7 @@ export default class ArtifactDisplay extends React.Component {
   constructor(props) {
     super(props)
     ArtifactDatabase.populateDatebaseFromLocalStorage();
+    CharacterDatabase.populateDatebaseFromLocalStorage();
     this.state = {
       artIdList: [...ArtifactDatabase.getArtifactIdList()],
       artToEdit: null,
@@ -33,31 +35,35 @@ export default class ArtifactDisplay extends React.Component {
     filterMainStatKey: "",
     filterSubstates: ["", "", "", ""]
   }
-  addArtifact = (art) => {
-    if (this.state.artToEdit && this.state.artToEdit.id === art.id) {
+  forceUpdateArtifactDisplay = () => this.forceUpdate()
+
+  addArtifact = (art) => this.setState(state => {
+    if (state.artToEdit && state.artToEdit.id === art.id) {
       ArtifactDatabase.updateArtifact(art);
-      this.setState({ artToEdit: null }, this.forceUpdate)
+      return { artToEdit: null }
     } else {
       let id = ArtifactDatabase.addArtifact(art)
       if (id === null) return;// some error happened...
       //add the new artifact at the beginning
-      this.setState((state) => ({ artIdList: [id, ...state.artIdList,] }), this.forceUpdate)
+      return { artIdList: [id, ...state.artIdList,] }
     }
-  }
+  }, this.forceUpdate)
 
-  deleteArtifact = (id) => {
+  deleteArtifact = (id) => this.setState((state) => {
+    let art = ArtifactDatabase.getArtifact(id);
+    if (art && art.location)
+      CharacterDatabase.unequipArtifactOnSlot(art.location, art.slotKey);
     ArtifactDatabase.removeArtifactById(id)
-    this.setState((state) => {
-      let artIdList = [...state.artIdList]
-      artIdList.splice(artIdList.indexOf(id), 1)
-      return { artIdList }
-    });
-  }
+    let artIdList = [...state.artIdList]
+    artIdList.splice(artIdList.indexOf(id), 1)
+    return { artIdList }
+  });
+
   editArtifact = (id) =>
-    this.setState({ artToEdit: ArtifactDatabase.getArtifact(id) })
+    this.setState({ artToEdit: ArtifactDatabase.getArtifact(id) }, this.forceUpdate)
 
   cancelEditArtifact = () =>
-    this.setState({ artToEdit: null })
+    this.setState({ artToEdit: null }, this.forceUpdate)
 
   render() {
     let artifacts = this.state.artIdList.map(artid => ArtifactDatabase.getArtifact(artid)).filter((art) => {
@@ -146,16 +152,16 @@ export default class ArtifactDisplay extends React.Component {
                   <Col>
                     <Dropdown className="flex-grow-1">
                       <Dropdown.Toggle className="w-100">
-                        {this.state.filterSlotKey ? (<span><FontAwesomeIcon icon={SlotIcon[this.state.filterSlotKey]} className="fa-fw mr-1" />{ArtifactSlotSData[this.state.filterSlotKey].name}</span>) : "Slot"}
+                        {this.state.filterSlotKey ? (<span><FontAwesomeIcon icon={SlotIcon[this.state.filterSlotKey]} className="fa-fw mr-1" />{ArtifactSlotsData[this.state.filterSlotKey].name}</span>) : "Slot"}
                       </Dropdown.Toggle>
                       <Dropdown.Menu>
                         <Dropdown.Item onClick={() => this.setState({ filterSlotKey: "" })} >
                           Unselect
                         </Dropdown.Item>
-                        {Object.keys(ArtifactSlotSData).map(key =>
+                        {Object.keys(ArtifactSlotsData).map(key =>
                           <Dropdown.Item key={key} onClick={() => this.setState({ filterSlotKey: key })} >
                             {SlotIcon[key] && <FontAwesomeIcon icon={SlotIcon[key]} className="fa-fw mr-1" />}
-                            {ArtifactSlotSData[key].name}
+                            {ArtifactSlotsData[key].name}
                           </Dropdown.Item>)}
                       </Dropdown.Menu>
                     </Dropdown>
@@ -207,12 +213,13 @@ export default class ArtifactDisplay extends React.Component {
         </Card>
       </Col></Row>
       <Row className="mb-2 no-gutters">
-        {artifacts.map((art, index) =>
+        {artifacts.map(art =>
           <Col key={art.id} lg={4} md={6} className="mb-2 pl-1 pr-1">
             <ArtifactCard
               artifactData={art}
               onDelete={() => this.deleteArtifact(art.id)}
               onEdit={() => this.editArtifact(art.id)}
+              forceUpdate={this.forceUpdateArtifactDisplay}
             />
           </Col>
         )}
