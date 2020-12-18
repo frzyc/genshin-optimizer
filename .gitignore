@@ -24,3 +24,6 @@ yarn-error.log*
 
 .vscode
 .eslintcache
+
+# for personal use
+.notes

@@ -5,7 +5,9 @@ import { Button, Card, Col, Container, Form, Modal, ProgressBar, Row } from 'rea
 import { createWorker } from 'tesseract.js';
 import scan_art_main from "../imgs/scan_art_main.png";
 import Snippet from "../imgs/snippet.png";
-import { ArtifactSetsData, ArtifactSlotsData, ArtifactStatsData } from './ArtifactData';
+import Stat from '../Stat';
+import Artifact from './Artifact';
+import { ArtifactSetsData, ArtifactSlotsData } from './ArtifactData';
 
 function UploadDisplay(props) {
   const [ocr, setOcr] = useState();
@@ -26,12 +28,14 @@ function UploadDisplay(props) {
   const parseValues = (parsed) => {
     let matches = []
     //parse substats
-    Object.entries(ArtifactStatsData).forEach(([key, entry]) => {
+    Artifact.getSubStatKeys().forEach(key => {
       let regex = null
-      if (entry.unit === "%") regex = new RegExp(entry.name + "\\s*\\+\\s*(\\d*\\.\\d)%", "im");
-      else regex = new RegExp(entry.name + "\\s*\\+\\s*(\\d*)(?!.)", "im");//use negative lookahead to avoid the period
+      let unit = Stat.getStatUnit(key)
+      let name = Stat.getStatName(key)
+      if (unit === "%") regex = new RegExp(name + "\\s*\\+\\s*(\\d*\\.\\d)%", "im");
+      else regex = new RegExp(name + "\\s*\\+\\s*(\\d*)(?!.)", "im");//use negative lookahead to avoid the period
       let match = regex.exec(parsed)
-      match && matches.push({ index: match.index, val: match[1], unit: entry.unit, key })
+      match && matches.push({ index: match.index, val: match[1], unit, key })
     })
     matches.sort((a, b) => a.index - b.index)
     matches.forEach((match, i) => {

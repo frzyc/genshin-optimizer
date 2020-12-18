@@ -1,5 +1,4 @@
 import { deepClone, loadFromLocalStorage, saveToLocalStorage } from "../Util";
-import Artifact from "./Artifact";
 
 var artifactDatabase = {};
 var artifactIdList = [];
@@ -11,6 +10,8 @@ export default class ArtifactDatabase {
       throw Error('A static class cannot be instantiated.');
     }
   }
+  static isInvalid = (art) =>
+    !art || !art.setKey || !art.numStars || !art.slotKey || !art.mainStatKey
   static getIdListFromStorage = () => loadFromLocalStorage("artifact_id_list");
   static saveIdListToStorage = () => saveToLocalStorage("artifact_id_list", artifactIdList);
   static getArtifactDatabase = () => deepClone(artifactDatabase);
@@ -24,7 +25,7 @@ export default class ArtifactDatabase {
     for (const id of artifactIdList)
       if (!artifactDatabase[id]) {
         artifactDatabase[id] = loadFromLocalStorage(id);
-        if (Artifact.isInvalidArtifact(artifactDatabase[id]))
+        if (this.isInvalid(artifactDatabase[id]))
           this.removeArtifactById(id);
       }
   }
@@ -33,7 +34,7 @@ export default class ArtifactDatabase {
     this.removeArtifactById(art.id);
   }
   static addArtifact = (art) => {
-    if (Artifact.isInvalidArtifact(art)) return;
+    if (this.isInvalid(art)) return;
     //generate id using artIdIndex
     let id = `artifact_${artIdIndex++}`
     localStorage.setItem("artifact_highest_id", artIdIndex)
@@ -45,7 +46,7 @@ export default class ArtifactDatabase {
     return id;
   }
   static updateArtifact = (art) => {
-    if (Artifact.isInvalidArtifact(art)) return;
+    if (this.isInvalid(art)) return;
     let id = art.id;
     art = deepClone(art)
     saveToLocalStorage(id, art);

@@ -3,10 +3,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Alert, Button, Card, Col, Dropdown, DropdownButton, FormControl, InputGroup, OverlayTrigger, Popover, Row } from 'react-bootstrap';
 import { FloatFormControl, IntFormControl } from '../Components/CustomFormControl';
-import SlotIcon from '../Components/SlotIcon';
+import { Stars } from '../Components/StarDisplay';
+import Stat from '../Stat';
 import { deepClone, getArrLastElement, getRandomElementFromArray, getRandomIntInclusive } from '../Util';
 import Artifact from './Artifact';
-import { ArtifactSetsData, ArtifactSlotsData, ArtifactStarsData, ArtifactStatsData, ArtifactSubStatsData } from './ArtifactData';
+import { ArtifactSetsData, ArtifactSlotsData, ArtifactStarsData, ArtifactSubStatsData } from './ArtifactData';
+import ArtifactDatabase from './ArtifactDatabase';
 import PercentBadge from './PercentBadge';
 import UploadDisplay from './UploadDisplay';
 
@@ -23,7 +25,7 @@ export default class ArtifactEditor extends React.Component {
     mainStatKey: "",
     substats: [{ key: "", value: 0 }, { key: "", value: 0 }, { key: "", value: 0 }, { key: "", value: 0 }],//{key:"",value:_}
   }
-  static getInitialState = () => JSON.parse(JSON.stringify(ArtifactEditor.initialState))
+  static getInitialState = () => deepClone(ArtifactEditor.initialState)
   setLevel = (newlevel) => this.setState(state => {
     newlevel = parseInt(newlevel)
     if (isNaN(newlevel)) newlevel = 0
@@ -89,13 +91,13 @@ export default class ArtifactEditor extends React.Component {
         </Dropdown.Item >))
 
     return (<DropdownButton as={InputGroup.Prepend} title={Artifact.getArtifactSetName(this.state.setKey, "Artifact Set")}>
-      <Dropdown.ItemText>Max Rarity 🟊🟊🟊🟊🟊</Dropdown.ItemText>
+      <Dropdown.ItemText>Max Rarity <Stars stars={5} /></Dropdown.ItemText>
       {dropdownitemsForStar(5)}
       <Dropdown.Divider />
-      <Dropdown.ItemText>Max Rarity 🟊🟊🟊🟊</Dropdown.ItemText>
+      <Dropdown.ItemText>Max Rarity <Stars stars={4} /></Dropdown.ItemText>
       {dropdownitemsForStar(4)}
       <Dropdown.Divider />
-      <Dropdown.ItemText>Max Rarity 🟊🟊🟊</Dropdown.ItemText>
+      <Dropdown.ItemText>Max Rarity <Stars stars={3} /></Dropdown.ItemText>
       {dropdownitemsForStar(3)}
     </DropdownButton>)
   }
@@ -109,7 +111,7 @@ export default class ArtifactEditor extends React.Component {
           return <Dropdown.Item key={index} disabled={!this.state.setKey || !ArtifactSetsData[this.state.setKey].rarity.includes(star)} onClick={() => {
             this.setState({ numStars: star, level: 0 });
           }}>
-            {"🟊".repeat(star)}
+            {<Stars stars={star} />}
           </Dropdown.Item>
         })}
       </DropdownButton>
@@ -133,17 +135,13 @@ export default class ArtifactEditor extends React.Component {
   MainStatInputRow = () =>
     <InputGroup>
       <DropdownButton
-        title={(<span>
-          {this.state.slotKey && <FontAwesomeIcon icon={SlotIcon[this.state.slotKey]} className="fa-fw mr-1" />}
-          {Artifact.getArtifactSlotName(this.state.slotKey, "Slot")}
-        </span>)}
+        title={Artifact.getArtifactSlotNameWithIcon(this.state.slotKey, "Slot")}
         disabled={!this.state.setKey}
         as={InputGroup.Prepend}
       >
         {this.state.setKey && Object.keys(ArtifactSetsData[this.state.setKey].pieces).map(slotKey =>
           <Dropdown.Item key={slotKey} onClick={() => this.setSlotKey(slotKey)} >
-            {SlotIcon[slotKey] && <FontAwesomeIcon icon={SlotIcon[slotKey]} className="fa-fw mr-1" />}
-            {ArtifactSlotsData[slotKey].name}
+            {Artifact.getArtifactSlotNameWithIcon(slotKey, "Slot")}
           </Dropdown.Item>)}
       </DropdownButton>
       <FormControl
@@ -152,24 +150,24 @@ export default class ArtifactEditor extends React.Component {
         readOnly
       />
       <DropdownButton
-        title={Artifact.getStatNameWithPercent(this.state.mainStatKey, "Main Stat")}
+        title={Stat.getStatNameWithPercent(this.state.mainStatKey, "Main Stat")}
         disabled={!this.state.setKey || !this.state.slotKey}
         as={InputGroup.Prepend}
       >
         <Dropdown.ItemText>Select a Main Artifact Stat </Dropdown.ItemText>
         {this.state.slotKey ? ArtifactSlotsData[this.state.slotKey].stats.map((mainStatKey) =>
           <Dropdown.Item key={mainStatKey} onClick={() => this.setMainStatKey(mainStatKey)} >
-            {Artifact.getStatNameWithPercent(mainStatKey)}
+            {Stat.getStatNameWithPercent(mainStatKey)}
           </Dropdown.Item>) : <Dropdown.Item />}
       </DropdownButton>
       <FormControl
-        value={this.state.mainStatKey ? `${Artifact.getMainStatValue(this.state.mainStatKey, this.state.numStars, this.state.level)}${Artifact.getStatUnit(this.state.mainStatKey)}` : "Main Stat"}
+        value={this.state.mainStatKey ? `${Artifact.getMainStatValue(this.state.mainStatKey, this.state.numStars, this.state.level)}${Stat.getStatUnit(this.state.mainStatKey)}` : "Main Stat"}
         disabled
         readOnly
       />
     </InputGroup>
   SubStatInput = (props) => {
-    let percentStat = props.subStatKey && Artifact.getStatUnit(props.subStatKey) === "%";
+    let percentStat = props.subStatKey && Stat.getStatUnit(props.subStatKey) === "%";
     let substatprops = {
       placeholder: "Select a Substat.",
       value: props.substatevalue ? props.substatevalue : "",
@@ -181,13 +179,13 @@ export default class ArtifactEditor extends React.Component {
       : <IntFormControl {...substatprops} />
     return <InputGroup>
       <DropdownButton
-        title={props.subStatKey ? ArtifactStatsData[props.subStatKey].name : `Substat ${props.index + 1}`}
+        title={Stat.getStatName(props.subStatKey, `Substat ${props.index + 1}`)}
         disabled={!props.remainingSubstats || props.remainingSubstats.length === 0}
         as={InputGroup.Prepend}
       >
         {props.remainingSubstats ? props.remainingSubstats.map((key) =>
           <Dropdown.Item key={key} onClick={() => this.onSubStatSelected(key, props.index)} >
-            {Artifact.getStatNameWithPercent(key)}
+            {Stat.getStatNameWithPercent(key)}
           </Dropdown.Item>
         ) : <Dropdown.Item />}
       </DropdownButton>
@@ -344,7 +342,7 @@ export default class ArtifactEditor extends React.Component {
           </Row>
         </Card.Body>
         <Card.Footer>
-          <Button className="mr-3" onClick={this.saveArtifact} disabled={Artifact.isInvalidArtifact(this.state)}>
+          <Button className="mr-3" onClick={this.saveArtifact} disabled={ArtifactDatabase.isInvalid(this.state)}>
             {this.props.artifactToEdit ? "Save Artifact" : "Add Artifact"}
           </Button>
           <Button className="mr-3" variant="success"

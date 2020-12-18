@@ -8,10 +8,13 @@ import {
   Link, Route, Switch
 } from "react-router-dom";
 import './App.scss';
+import './Assets/Image.scss'
 import ArtifactDisplay from './Artifact/ArtifactDisplay';
 import BuildDisplay from './Build/BuildDisplay';
 import CharacterDisplay from './Character/CharacterDisplay';
 import { version } from "../package.json"
+import HomeDisplay from './Home/HomeDisplay';
+import FAQ from './FAQ/FAQDisplay';
 
 function App() {
   return (
@@ -24,6 +27,7 @@ function App() {
               Artifacts</Nav.Link>
             <Nav.Link as={Link} to="/character">Characters</Nav.Link>
             <Nav.Link as={Link} to="/build">Builds</Nav.Link>
+            <Nav.Link as={Link} to="/faq">FAQ</Nav.Link>
           </Nav>
           <Nav>
             <Nav.Link href={process.env.REACT_APP_PAYPAL_LINK} target="_blank" ><FontAwesomeIcon icon={faPaypal} className="fa-fw" /> PayPal</Nav.Link>
@@ -36,7 +40,8 @@ function App() {
           <Route path="/artifact" component={ArtifactDisplay} />
           <Route path="/character" component={CharacterDisplay} />
           <Route path="/build" component={BuildDisplay} />
-          <Route path="/" component={ArtifactDisplay} />
+          <Route path="/faq" component={FAQ} />
+          <Route path="/" component={HomeDisplay} />
           {/* <Route exact path="/" component={Home} /> */}
         </Switch>
 

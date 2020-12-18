@@ -1,4 +1,3 @@
-import ArtifactDatabase from "../Artifact/ArtifactDatabase";
 import { deepClone, loadFromLocalStorage, saveToLocalStorage } from "../Util";
 
 var characterDatabase = {};
@@ -12,7 +11,7 @@ export default class CharacterDatabase {
       throw Error('A static class cannot be instantiated.');
     }
   }
-  static isInvalid = (char) => !char || !char.name
+  static isInvalid = (char) => !char || !char.name || !char.characterKey || !char.levelKey
   static getIdListFromStorage = () => loadFromLocalStorage("character_id_list");
   static saveIdListToStorage = () => saveToLocalStorage("character_id_list", characterIdList);
   static getCharacterDatabase = () => deepClone(characterDatabase);
@@ -24,10 +23,14 @@ export default class CharacterDatabase {
     characterIdList = CharacterDatabase.getIdListFromStorage();
     if (characterIdList === null) characterIdList = []
     for (const id of characterIdList)
-      if (!characterDatabase[id])
+      if (!characterDatabase[id]) {
         characterDatabase[id] = loadFromLocalStorage(id);
+        if (this.isInvalid(characterDatabase[id]))
+          this.removeCharacterById(id);
+      }
   }
   static addCharacter = (char) => {
+    if (this.isInvalid(char)) return;
     //generate id using charIdIndex
     let id = `character_${charIdIndex++}`
     localStorage.setItem("character_highest_id", charIdIndex)
@@ -39,6 +42,7 @@ export default class CharacterDatabase {
     return id;
   }
   static updateCharacter = (char) => {
+    if (this.isInvalid(char)) return;
     let id = char.id;
     char = deepClone(char)
     saveToLocalStorage(id, char);
@@ -46,17 +50,10 @@ export default class CharacterDatabase {
     this.updateCacheData();
   }
   static getCharacter = (id) => id ? characterDatabase[id] : null
-  static removeCharacter = (char) => {
-    CharacterDatabase.removeCharacterById(char.id);
-  }
+
   static removeCharacterById = (id) => {
-    let character = this.getCharacter(id)
-    if (character.equippedArtifacts)
-      Object.values(character.equippedArtifacts).forEach(artid =>
-        ArtifactDatabase.moveToNewLocation(artid, ""))
     delete characterDatabase[id];
     localStorage.removeItem(id);
-
     this.updateCacheData();
   }
   static updateCacheData() {
@@ -87,8 +84,8 @@ export default class CharacterDatabase {
     char.equippedArtifacts[slotKey] = "";
     this.updateCharacter(char)
   }
-  static equipArtifactBuild = (characterid, artifactIds) => {
-    let character = this.getCharacter(characterid)
+  static equipArtifactBuild = (characterId, artifactIds) => {
+    let character = this.getCharacter(characterId)
     if (!character) return;
     character.equippedArtifacts = {}
     Object.entries(artifactIds).forEach(([key, artid]) =>

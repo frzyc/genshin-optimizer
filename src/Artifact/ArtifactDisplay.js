@@ -5,13 +5,15 @@ import { Card, Dropdown, InputGroup, ToggleButton, ToggleButtonGroup } from 'rea
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
+import { ElementalData } from '../Character/CharacterData';
 import CharacterDatabase from '../Character/CharacterDatabase';
 import { IntFormControl } from '../Components/CustomFormControl';
-import SlotIcon from '../Components/SlotIcon';
+import { Stars } from '../Components/StarDisplay';
+import Stat from '../Stat';
 import { deepClone } from '../Util';
 import Artifact from './Artifact';
 import ArtifactCard from './ArtifactCard';
-import { ArtifactSlotsData, ArtifactStarsData, ArtifactStatsData, ArtifactSubStatsData, ElementalData } from './ArtifactData';
+import { ArtifactStarsData, ArtifactSubStatsData } from './ArtifactData';
 import ArtifactDatabase from './ArtifactDatabase';
 import ArtifactEditor from './ArtifactEditor';
 
@@ -78,14 +80,14 @@ export default class ArtifactDisplay extends React.Component {
     })
     let MainStatDropDownItem = (props) =>
       (<Dropdown.Item key={props.statKey} onClick={() => this.setState({ filterMainStatKey: props.statKey })} >
-        {Artifact.getStatNameWithPercent(props.statKey)}
+        {Stat.getStatNameWithPercent(props.statKey)}
       </Dropdown.Item>)
     let dropdownitemsForStar = (star) =>
       Artifact.getArtifactSetsByMaxStarEntries(star).map(([key, setobj]) =>
         <Dropdown.Item key={key} onClick={() => this.setState({ filterArtSetKey: key })}>
           {setobj.name}
         </Dropdown.Item >)
-    return (<Container className="mt-3">
+    return (<Container className="mt-2">
       <Row className="mb-2 no-gutters"><Col>
         <ArtifactEditor
           artifactToEdit={this.state.artToEdit}
@@ -124,7 +126,7 @@ export default class ArtifactDisplay extends React.Component {
                   {Object.keys(ArtifactStarsData).map(star => {
                     star = parseInt(star)
                     let selected = this.state.filterStars.includes(star)
-                    return <ToggleButton key={star} value={star}><FontAwesomeIcon icon={selected ? faCheckSquare : faSquare} /> {"🟊".repeat(star)}</ToggleButton>
+                    return <ToggleButton key={star} value={star}><FontAwesomeIcon icon={selected ? faCheckSquare : faSquare} /> <Stars stars={star} /></ToggleButton>
                   })}
                 </ToggleButtonGroup>
               </Col>
@@ -152,16 +154,15 @@ export default class ArtifactDisplay extends React.Component {
                   <Col>
                     <Dropdown className="flex-grow-1">
                       <Dropdown.Toggle className="w-100">
-                        {this.state.filterSlotKey ? (<span><FontAwesomeIcon icon={SlotIcon[this.state.filterSlotKey]} className="fa-fw mr-1" />{ArtifactSlotsData[this.state.filterSlotKey].name}</span>) : "Slot"}
+                        {Artifact.getArtifactSlotNameWithIcon(this.state.filterSlotKey, "Slot")}
                       </Dropdown.Toggle>
                       <Dropdown.Menu>
                         <Dropdown.Item onClick={() => this.setState({ filterSlotKey: "" })} >
                           Unselect
                         </Dropdown.Item>
-                        {Object.keys(ArtifactSlotsData).map(key =>
+                        {Artifact.getArtifactSlotKeys().map(key =>
                           <Dropdown.Item key={key} onClick={() => this.setState({ filterSlotKey: key })} >
-                            {SlotIcon[key] && <FontAwesomeIcon icon={SlotIcon[key]} className="fa-fw mr-1" />}
-                            {ArtifactSlotsData[key].name}
+                            {Artifact.getArtifactSlotNameWithIcon(key)}
                           </Dropdown.Item>)}
                       </Dropdown.Menu>
                     </Dropdown>
@@ -169,11 +170,11 @@ export default class ArtifactDisplay extends React.Component {
                   <Col>
                     <Dropdown className="flex-grow-1">
                       <Dropdown.Toggle className="w-100">
-                        {Artifact.getStatNameWithPercent(this.state.filterMainStatKey, "Main Stat")}
+                        {Stat.getStatNameWithPercent(this.state.filterMainStatKey, "Main Stat")}
                       </Dropdown.Toggle>
                       <Dropdown.Menu>
                         <Dropdown.Item onClick={() => this.setState({ filterMainStatKey: "" })}>Unselect</Dropdown.Item>
-                        {Object.keys(ArtifactStatsData).filter(key => key !== "ele_dmg").map((statKey) => <MainStatDropDownItem key={statKey} statKey={statKey} />)}
+                        {Artifact.getMainStatKeys().filter(key => key !== "ele_dmg").map((statKey) => <MainStatDropDownItem key={statKey} statKey={statKey} />)}
                         {Object.keys(ElementalData).map((ele) => <MainStatDropDownItem key={ele} statKey={`${ele}_ele_dmg`} />)}
                       </Dropdown.Menu>
                     </Dropdown>
@@ -185,7 +186,7 @@ export default class ArtifactDisplay extends React.Component {
                 <Col key={index} xs={6} lg={3} className="mb-2">
                   <Dropdown >
                     <Dropdown.Toggle id="dropdown-basic" className="w-100">
-                      {Artifact.getStatNameWithPercent(substatKey, `Substat ${index + 1}`)}
+                      {Stat.getStatNameWithPercent(substatKey, `Substat ${index + 1}`)}
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
                       <Dropdown.Item
@@ -202,7 +203,7 @@ export default class ArtifactDisplay extends React.Component {
                             filterSubstates[index] = key
                             this.setState({ filterSubstates })
                           }}
-                        >{Artifact.getStatNameWithPercent(key)}</Dropdown.Item>
+                        >{Stat.getStatNameWithPercent(key)}</Dropdown.Item>
                       )}
                     </Dropdown.Menu>
                   </Dropdown>
@@ -216,7 +217,7 @@ export default class ArtifactDisplay extends React.Component {
         {artifacts.map(art =>
           <Col key={art.id} lg={4} md={6} className="mb-2 pl-1 pr-1">
             <ArtifactCard
-              artifactData={art}
+              artifactId={art.id}
               onDelete={() => this.deleteArtifact(art.id)}
               onEdit={() => this.editArtifact(art.id)}
               forceUpdate={this.forceUpdateArtifactDisplay}

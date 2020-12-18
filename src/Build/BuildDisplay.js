@@ -1,18 +1,18 @@
-import { faSortAmountDownAlt, faSortAmountUp, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faSortAmountDownAlt, faSortAmountUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import { Alert, Badge, Button, ButtonGroup, Card, Col, Container, Dropdown, DropdownButton, ListGroup, Modal, OverlayTrigger, Popover, Row } from 'react-bootstrap';
+import { Alert, Badge, Button, ButtonGroup, Card, Col, Container, Dropdown, DropdownButton, ListGroup, Modal, Row } from 'react-bootstrap';
 // eslint-disable-next-line
 import Worker from "worker-loader!./BuildWorker.js";
 import Artifact from '../Artifact/Artifact';
-import ArtifactCard from '../Artifact/ArtifactCard';
-import { ArtifactMainStatsData, ArtifactSetsData, ArtifactSlotsData, ArtifactStatsData, ElementalData } from '../Artifact/ArtifactData';
+import { ArtifactSetsData, ArtifactSlotsData } from '../Artifact/ArtifactData';
 import ArtifactDatabase from '../Artifact/ArtifactDatabase';
+import Character from '../Character/Character';
 import CharacterDatabase from '../Character/CharacterDatabase';
-import SlotIcon from '../Components/SlotIcon';
+import CharacterDisplayCard from '../Character/CharacterDisplayCard';
+import Stat from '../Stat';
 import { deepClone, loadFromLocalStorage, saveToLocalStorage } from '../Util';
 import Build from './Build';
-import artifactDisplaySortKey from './BuildStatData';
 
 export default class BuildDisplay extends React.Component {
   constructor(props) {
@@ -20,13 +20,13 @@ export default class BuildDisplay extends React.Component {
     CharacterDatabase.populateDatebaseFromLocalStorage();
     ArtifactDatabase.populateDatebaseFromLocalStorage();
     this.state = BuildDisplay.getInitialState();
-    if (props.location.selectedCharacterKey) {
+    if (props.location.selectedCharacterId) {
       this.state = BuildDisplay.getInitialState();
-      props.location.selectedCharacterKey && (this.state.selectedCharacterKey = props.location.selectedCharacterKey)
+      props.location.selectedCharacterId && (this.state.selectedCharacterId = props.location.selectedCharacterId)
     } else {
       let savedState = loadFromLocalStorage("BuildsDisplay.state")
       if (savedState) {
-        let character = CharacterDatabase.getCharacter(savedState.selectedCharacterKey)
+        let character = CharacterDatabase.getCharacter(savedState.selectedCharacterId)
         if (savedState && character) this.state = savedState
       }
     }
@@ -34,7 +34,7 @@ export default class BuildDisplay extends React.Component {
   static initialState = {
     builds: [],
     generatingBuilds: false,
-    selectedCharacterKey: "",
+    selectedCharacterId: "",
     sandsMainKey: "",
     gobletMainKey: "",
     circletMainkey: "",
@@ -51,13 +51,16 @@ export default class BuildDisplay extends React.Component {
   static getInitialState = () => JSON.parse(JSON.stringify(BuildDisplay.initialState))
   static artifactsSlotsToSelectMainStats = ["sands", "goblet", "circlet"]
   forceUpdateBuildDisplay = () => this.forceUpdate()
+
+  statsDisplayKeys = () => ["hp", "atk", "def", "ele_mas", "crit_rate", "crit_dmg", "heal_bonu", "ener_rech", "phy_dmg", "ele_dmg", "phy_atk", "ele_atk",]
+
   splitArtifacts = () => {
-    if (!this.state.selectedCharacterKey) return {};
+    if (!this.state.selectedCharacterId) return {};
     let artifactDatabase = ArtifactDatabase.getArtifactDatabase();
     //do not use artifacts that are locked.
     Object.entries(artifactDatabase).forEach(([key, val]) => {
       if (val.lock) delete artifactDatabase[key]
-      if (this.state.selectedCharacterKey && val.location && val.location !== this.state.selectedCharacterKey)
+      if (this.state.selectedCharacterId && val.location && val.location !== this.state.selectedCharacterId)
         delete artifactDatabase[key]
     })
     if (this.state.setFilters.every(filter => filter.key)) {
@@ -107,14 +110,13 @@ export default class BuildDisplay extends React.Component {
 
   generateBuilds = (split, artifactSetPerms) => {
     this.setState({ generatingBuilds: true, builds: [] })
-    let character = CharacterDatabase.getCharacter(this.state.selectedCharacterKey)
+    let character = CharacterDatabase.getCharacter(this.state.selectedCharacterId)
     let data = {
-      split, artifactSetPerms, setFilters: this.state.setFilters, character, ArtifactStatsData,
-      ArtifactSlotsData, ArtifactMainStatsData, ArtifactSetsData, maxBuildsToShow: this.state.maxBuildsToShow,
+      split, artifactSetPerms, setFilters: this.state.setFilters, character,
+      maxBuildsToShow: this.state.maxBuildsToShow,
       buildFilterKey: this.state.buildFilterKey, asending: this.state.asending
     }
 
-    // let worker = new Worker('BuildWorker.js');
     let worker = new Worker();
     worker.onmessage = (e) =>
       this.setState({ builds: e.data, generatingBuilds: false })
@@ -123,7 +125,7 @@ export default class BuildDisplay extends React.Component {
 
   BuildGeneratorEditorCard = (props) => {
     let charlist = CharacterDatabase.getCharacterDatabase();
-    let selectedCharacter = CharacterDatabase.getCharacter(this.state.selectedCharacterKey)
+    let selectedCharacter = CharacterDatabase.getCharacter(this.state.selectedCharacterId)
     let characterName = selectedCharacter ? selectedCharacter.name : "Character Name"
     let artsAccounted = this.state.setFilters.reduce((accu, cur) => cur.key ? accu + cur.num : accu, 0)
     let split = this.splitArtifacts();
@@ -134,12 +136,6 @@ export default class BuildDisplay extends React.Component {
       : (totBuildNumber > this.state.maxBuildsToGenerate ?
         <Alert variant="danger" className="mb-0"><span>Current configuration will generate <b>{totBuildNumber}</b> builds for <b>{characterName}</b>. Please restrict artifact configuration to reduce builds to less than {this.state.maxBuildsToGenerate}, or your browser might crash.</span></Alert> :
         <Alert variant="success" className="mb-0"><span>Current configuration will generate <b>{totBuildNumber}</b> builds for <b>{characterName}</b>.</span></Alert>)
-    let sortName = artifactDisplaySortKey[this.state.buildFilterKey] ? artifactDisplaySortKey[this.state.buildFilterKey].name : ""
-    if (this.state.buildFilterKey === "ele_atk" && selectedCharacter)
-      sortName = `${ElementalData[selectedCharacter.element].name} ${artifactDisplaySortKey.ele_atk.name}`
-    if (!sortName && selectedCharacter && this.state.buildFilterKey.includes("ele_dmg"))
-      sortName = `${ElementalData[selectedCharacter.element].name} ${artifactDisplaySortKey.ele_dmg.name}`
-
     return <Card bg="darkcontent" text="lightfont">
       <Card.Header>Build Generator</Card.Header>
       <Card.Body>
@@ -147,13 +143,13 @@ export default class BuildDisplay extends React.Component {
           <Col>
             {/* Character picker */}
             <div className="mb-2">
-              <DropdownButton title={this.state.selectedCharacterKey ? characterName : "Select Character"}>
-                <Dropdown.Item onClick={() => this.setState({ selectedCharacterKey: "" })}>
+              <DropdownButton title={this.state.selectedCharacterId ? characterName : "Select Character"}>
+                <Dropdown.Item onClick={() => this.setState({ selectedCharacterId: "" })}>
                   No Character
               </Dropdown.Item>
                 {Object.values(charlist).map((char, i) =>
                   <Dropdown.Item key={char.name + i}
-                    onClick={() => this.setState({ selectedCharacterKey: char.id })}
+                    onClick={() => this.setState({ selectedCharacterId: char.id })}
                   >
                     {char.name}
                   </Dropdown.Item>)}
@@ -204,16 +200,15 @@ export default class BuildDisplay extends React.Component {
             {BuildDisplay.artifactsSlotsToSelectMainStats.map((slotKey, index) =>
               (<div className="text-inline mb-1 d-flex justify-content-between" key={slotKey}>
                 <h6 className="d-inline mr-2">
-                  {SlotIcon[slotKey] && <FontAwesomeIcon icon={SlotIcon[slotKey]} className="mr-2 fa-fw" />}
-                  {ArtifactSlotsData[slotKey].name}
+                  {Artifact.getArtifactSlotNameWithIcon(slotKey)}
                 </h6>
                 <DropdownButton
-                  title={this.state.mainStat[index] ? Artifact.getStatNameWithPercent(this.state.mainStat[index]) : "Select a mainstat"}
+                  title={this.state.mainStat[index] ? Stat.getStatNameWithPercent(this.state.mainStat[index]) : "Select a mainstat"}
                   className="d-inline">
                   <Dropdown.Item onClick={() => this.changeMainStat(index, "")} >No MainStat</Dropdown.Item>
                   {ArtifactSlotsData[slotKey].stats.map(mainStatKey =>
                     <Dropdown.Item onClick={() => this.changeMainStat(index, mainStatKey)} key={mainStatKey}>
-                      {Artifact.getStatNameWithPercent(mainStatKey)}
+                      {Stat.getStatNameWithPercent(mainStatKey)}
                     </Dropdown.Item>
                   )}
                 </DropdownButton>
@@ -224,8 +219,8 @@ export default class BuildDisplay extends React.Component {
           <Col xs="auto" >
             <Button
               className="h-100"
-              disabled={!this.state.selectedCharacterKey || totBuildNumber > this.state.maxBuildsToGenerate || this.state.generatingBuilds}
-              variant={(this.state.selectedCharacterKey && totBuildNumber <= this.state.maxBuildsToGenerate) ? "success" : "danger"}
+              disabled={!this.state.selectedCharacterId || totBuildNumber > this.state.maxBuildsToGenerate || this.state.generatingBuilds}
+              variant={(this.state.selectedCharacterId && totBuildNumber <= this.state.maxBuildsToGenerate) ? "success" : "danger"}
               onClick={() => setTimeout(() => {
                 this.generateBuilds(split, artifactSetPerms)
               }, 0)}
@@ -234,17 +229,12 @@ export default class BuildDisplay extends React.Component {
           <Col xs="auto">
             {/* Dropdown to select sorting value */}
             <ButtonGroup>
-              <DropdownButton disabled={!this.state.selectedCharacterKey} title={`Sort by ${sortName}`} as={ButtonGroup}>
-                {this.state.selectedCharacterKey && Object.entries(artifactDisplaySortKey).map(([key, val]) => {
-                  let name = val.name
-                  let character = CharacterDatabase.getCharacter(this.state.selectedCharacterKey)
-                  if (key === "ele_dmg" || key === "ele_atk") {
-                    let eleName = ElementalData[character.element].name
-                    name = eleName + name
-                    key === "ele_dmg" && (key = `${character.element}_${key}`)
-                  }
+              <DropdownButton disabled={!this.state.selectedCharacterId} title={`Sort by ${Stat.getStatNameWithPercent(this.state.buildFilterKey)}`} as={ButtonGroup}>
+                {this.state.selectedCharacterId && this.statsDisplayKeys().map(key => {
+                  if (key === "ele_dmg" || key === "ele_atk")
+                    key = `${Character.getElementalKey(selectedCharacter.characterKey)}_${key}`
                   return <Dropdown.Item key={key} onClick={() => this.setState({ buildFilterKey: key })}>
-                    {name}
+                    {Stat.getStatNameWithPercent(key)}
                   </Dropdown.Item>
                 })}
               </DropdownButton>
@@ -255,34 +245,32 @@ export default class BuildDisplay extends React.Component {
           </Col>
         </Row>
         <Row>
-          <Col>{this.state.selectedCharacterKey && buildAlert}</Col>
+          <Col>{this.state.selectedCharacterId && buildAlert}</Col>
         </Row>
       </Card.Body>
     </Card>
   }
   ArtifactDisplayItem = (props) => {
-    let build = props.build
-    let character = props.character
+    let { build, character } = props
     return (<div>
-      {/* <this.BuildModal build={build} />  */}
       <ListGroup.Item
         variant={props.index % 2 ? "customdark" : "customdarker"} className="text-white" action
         onClick={() => this.setState({ modalBuild: build })}
       >
         <Row>
-          <Col>{this.ArtifactDisplay(build.setToSlots)}</Col>
+          <Col>{Object.entries(build.setToSlots).sort(([key1, slotarr1], [key2, slotarr2]) => slotarr2.length - slotarr1.length).map(([key, slotarr]) =>
+            <Badge key={key} variant="primary" className="mr-2">
+              {slotarr.map(slotKey => Artifact.getArtifactSlotIcon(slotKey))} {Artifact.getArtifactSetName(key)}
+            </Badge>
+          )}</Col>
         </Row>
         <Row>
-          {Object.entries(artifactDisplaySortKey).map(([key, val]) => {
-            let name = val.name
-            let unit = val.unit ? val.unit : ""
-            if (key === "ele_dmg" || key === "ele_atk") {
-              let eleName = ElementalData[character.element].name
-              name = eleName + name
-              key === "ele_dmg" && (key = `${character.element}_${key}`)
-            }
+          {this.statsDisplayKeys().map(key => {
+            if (key === "ele_dmg" || key === "ele_atk")
+              key = `${Character.getElementalKey(character.characterKey)}_${key}`
+            let unit = Stat.getStatUnit(key)
             return <Col className="text-nowrap" key={key} xs={12} sm={6} md={4} lg={3}>
-              <span>{name}: <span className="text-warning">{build.finalStats[key]}{unit}</span></span>
+              <span>{Stat.getStatName(key)}: <span className="text-warning">{build.finalStats[key]?.toFixed(unit === "%" ? 1 : 0)}{unit}</span></span>
             </Col>
           })}
         </Row>
@@ -290,115 +278,12 @@ export default class BuildDisplay extends React.Component {
     </div>)
   }
   BuildModal = (props) => {
-    let build = props.build
-    let character = props.character
+    let { build, character } = props
     return build ? (<Modal show={this.state.modalBuild !== null} onHide={() => this.setState({ modalBuild: null })} size="xl" dialogAs={Container} className="pt-3 pb-3">
-      <Card bg="darkcontent" text="lightfont" >
-        <Card.Header>
-          <Card.Title>
-            <Row>
-              <Col><span>{character.name} Build</span></Col>
-              <Col xs="auto">
-                <Button variant="danger" onClick={() => this.setState({ modalBuild: null })}>
-                  <FontAwesomeIcon icon={faTimes} /></Button>
-              </Col>
-            </Row>
-          </Card.Title>
-        </Card.Header>
-        <Card.Body>
-          <Row>
-            <Col className="mb-3">
-              <BuildModalCharacterCard build={build} character={character} />
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <Row>
-                <Col sm={6} className="mb-3">
-                  <Row className="h-100">
-                    <Col xs={12} className="d-flex flex-column">
-                      <Card className="flex-grow-1 mb-2" border="light" bg="darkcontent" text="lightfont">
-                        <Card.Header>Weapon</Card.Header>
-                        <Card.Body>
-                          <Row>
-                            <Col>
-                              <h6>Base ATK {character.weapon_atk}</h6>
-                            </Col>
-                            <Col>
-                              {character.weaponStatKey && <h6>{Artifact.getStatName(character.weaponStatKey)} {character.weaponStatVal}{Artifact.getStatUnit(character.weaponStatKey)}</h6>}
-                            </Col>
-                          </Row>
-                        </Card.Body>
-                      </Card>
-                      <Card className="flex-grow-1" border="light" bg="darkcontent" text="lightfont">
-                        <Card.Header>Artifact Set Effects</Card.Header>
-                        <Card.Body>
-                          <Row>
-                            {Object.entries(build.artifactSetEffect).map(([setKey, effects]) =>
-                              <Col key={setKey} xs={12} className="mb-3">
-                                <h6>{Artifact.getArtifactSetName(setKey)}</h6>
-                                <Row>
-                                  {Object.entries(effects).map(([num, effect]) => {
-                                    return <Col key="num" xs={12}><Badge variant="success">{num}-Set</Badge> <span>{effect.text}</span></Col>
-                                  })}
-                                </Row>
-                              </Col>
-                            )}
-                          </Row>
-                        </Card.Body>
-                      </Card>
-                    </Col >
-                  </Row>
-                </Col>
-                {Object.values(build.artifactIds).map(artid =>
-                  <Col sm={6} key={artid} className="mb-3">
-                    <ArtifactCard artifactData={ArtifactDatabase.getArtifact(artid)} forceUpdate={this.forceUpdateBuildDisplay} />
-                  </Col>)}
-              </Row>
-            </Col>
-          </Row>
-        </Card.Body>
-        <Card.Footer>
-          <Row className="d-flex justify-content-between">
-            <Col xs="auto">
-              <Button variant="primary" onClick={() => this.equipArtifacts(build, character)}>
-                <span>Equip Artifacts on Character</span>
-              </Button>
-            </Col>
-            <Col xs="auto">
-              <Button variant="danger" onClick={() => this.setState({ modalBuild: null })}>
-                <span>Close</span>
-              </Button>
-            </Col>
-          </Row>
-        </Card.Footer>
-      </Card>
+      <CharacterDisplayCard characterToEdit={character} newBuild={build} onClose={() => this.setState({ modalBuild: null })} forceUpdate={this.forceUpdateBuildDisplay} />
     </Modal>) : null
   }
-  ArtifactDisplay = (setToSlots) =>
-    Object.entries(setToSlots).sort(([key1, slotarr1], [key2, slotarr2]) => slotarr2.length - slotarr1.length).map(([key, slotarr]) =>
-      <Badge key={key} variant="primary" className="mr-2">
-        {slotarr.map(slotKey =>
-          SlotIcon[slotKey] && <FontAwesomeIcon icon={SlotIcon[slotKey]} key={slotKey} className="fa-fw" />)}
-        {ArtifactSetsData[key].name}
-      </Badge>
-    )
 
-  equipArtifacts = (build, character) => {
-    let artifactIds = build.artifactIds;
-    //move all the equipped artifacts to the inventory.
-    if (character.equippedArtifacts)
-      Object.values(character.equippedArtifacts).forEach(artid =>
-        ArtifactDatabase.moveToNewLocation(artid, ""))
-
-    CharacterDatabase.equipArtifactBuild(character.id, artifactIds);
-
-    //move all the current build artifacts to the character.
-    Object.values(artifactIds).forEach(artid =>
-      ArtifactDatabase.moveToNewLocation(artid, character.id))
-
-    this.forceUpdate();
-  }
   componentDidUpdate() {
     let state = deepClone(this.state)
     state.builds = [];
@@ -407,7 +292,7 @@ export default class BuildDisplay extends React.Component {
     saveToLocalStorage("BuildsDisplay.state", state)
   }
   render() {
-    let selectedCharacter = CharacterDatabase.getCharacter(this.state.selectedCharacterKey)
+    let selectedCharacter = CharacterDatabase.getCharacter(this.state.selectedCharacterId)
     let characterName = selectedCharacter ? selectedCharacter.name : "Character Name"
     return (<Container>
       <this.BuildModal build={this.state.modalBuild} character={selectedCharacter} />
@@ -420,7 +305,7 @@ export default class BuildDisplay extends React.Component {
       <Row className="mb-2">
         <Col>
           <Card bg="darkcontent" text="lightfont">
-            <Card.Header>{this.state.selectedCharacterKey ? `Showing first ${this.state.builds.length} Builds generated for ${characterName}` : "Select a character to generate builds."}</Card.Header>
+            <Card.Header>{this.state.selectedCharacterId ? `Showing ${this.state.builds.length} Builds generated for ${characterName}` : "Select a character to generate builds."}</Card.Header>
             {/* Build List */}
             <ListGroup>
               {this.state.builds.map((build, index) =>
@@ -432,48 +317,4 @@ export default class BuildDisplay extends React.Component {
       </Row>
     </Container>)
   }
-}
-
-const BuildModalCharacterCard = (props) => {
-  let build = props.build;
-  let character = props.character;
-  return (<Card className="h-100" border="success" bg="darkcontent" text="lightfont">
-    <Card.Header>Character Stats</Card.Header>
-    <Card.Body>
-      <Row>
-        {Object.entries(artifactDisplaySortKey).map(([key, val]) => {
-          let name = val.name
-          let unit = val.unit ? val.unit : ""
-          if (key === "ele_dmg" || key === "ele_atk") {
-            let eleName = ElementalData[character.element].name
-            name = eleName + name
-            key === "ele_dmg" && (key = `${character.element}_${key}`)
-          }
-          let statsDisplay = (key in character) ?
-            <span>{name}: <span className="text-warning">{character[key]}{unit}</span> <span className="text-success">+ {(build.finalStats[key] - character[key]).toFixed(unit === "%" ? 1 : 0)}{unit}</span></span> :
-            <span>{name}: <span className="text-warning">{build.finalStats[key]}{unit}</span></span>
-          return <Col className="text-nowrap" key={key} xs={12} sm={6} lg={4}>
-            <OverlayTrigger
-              placement="top"
-              overlay={
-                <Popover>
-                  <Popover.Title as="h3">
-                    {(key in character) ?
-                      <span>{name}: {character[key]}{unit} <span className="text-success">+ {(build.finalStats[key] - character[key]).toFixed(1)}{unit}</span></span> :
-                      <span>{name}: {build.finalStats[key]}{unit}</span>
-                    }
-                  </Popover.Title>
-                  <Popover.Content>
-                    {key.includes("ele_dmg") ? artifactDisplaySortKey["ele_dmg"].explaination : artifactDisplaySortKey[key].explaination}
-                  </Popover.Content>
-                </Popover>
-              }
-            >
-              {statsDisplay}
-            </OverlayTrigger>
-          </Col>
-        })}
-      </Row>
-    </Card.Body>
-  </Card>)
 }

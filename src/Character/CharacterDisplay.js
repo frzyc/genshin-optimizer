@@ -1,59 +1,72 @@
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Button, Card, Col, Container, Row } from 'react-bootstrap';
+import Character from './Character';
 import CharacterCard from './CharacterCard';
 import CharacterDatabase from './CharacterDatabase';
-import CharacterEditor from './CharacterEditor';
+import CharacterDisplayCard from './CharacterDisplayCard';
+
 export default class CharacterDisplay extends React.Component {
   constructor(props) {
     super(props)
     CharacterDatabase.populateDatebaseFromLocalStorage();
     this.state = {
-      charIdList: [...CharacterDatabase.getCharacterIdList()],
-      charToEdit: null
-    }
-  }
-  addCharacter = (art) => {
-    if (this.state.charToEdit && this.state.charToEdit.id === art.id) {
-      CharacterDatabase.updateCharacter(art);
-      this.setState({ charToEdit: null }, this.forceUpdate)
-    } else {
-      let id = CharacterDatabase.addCharacter(art)
-      //add the new Character at the beginning
-      this.setState((state) => ({ charIdList: [...state.charIdList, id] }))
+      charToEdit: null,
+      showEditor: false,
     }
   }
 
-  deleteCharacter = (index) => {
-    CharacterDatabase.removeCharacterById(this.state.charIdList[index])
-    this.setState((state) => {
-      let charIdList = [...state.charIdList]
-      charIdList.splice(index, 1)
-      return { charIdList }
-    });
+  deleteCharacter = (id) => {
+    Character.removeCharacter(id)
+    this.forceUpdate()
   }
-  editCharacter = (index) =>
-    this.setState({ charToEdit: CharacterDatabase.getCharacter(this.state.charIdList[index]) })
+
+  editCharacter = (id) =>
+    this.setState({ charToEdit: CharacterDatabase.getCharacter(id), showEditor: true },
+      () => this.scrollRef.current.scrollIntoView({ behavior: "smooth" }))
 
   cancelEditCharacter = () =>
-    this.setState({ charToEdit: null })
+    this.setState({ charToEdit: null, showEditor: false })
 
+  componentDidMount() {
+    this.scrollRef = React.createRef()
+  }
   render() {
-    return (<Container>
-      <Row className="mb-2 no-gutters"><Col>
-        <CharacterEditor
+    let charIdList = CharacterDatabase.getCharacterIdList()
+    return (<Container ref={this.scrollRef}>
+      {/* editor/character detail display */}
+      {this.state.showEditor ? <Row className="mt-2"><Col>
+        <CharacterDisplayCard editable
           characterToEdit={this.state.charToEdit}
-          addCharacter={this.addCharacter}
-          cancelEdit={this.cancelEditCharacter}
+          onClose={this.cancelEditCharacter}
+          footer={<Button variant="danger" onClick={this.cancelEditCharacter}>Close</Button>}
         />
-      </Col></Row>
+      </Col></Row> : null}
 
-      <Row className="mb-2">
-        {this.state.charIdList.map((id, index) =>
+      <Row className="mt-2">
+        {this.state.showEditor ? null : <Col lg={4} md={6} className="mb-2">
+          <Card className="h-100" bg="darkcontent" text="lightfont">
+            <Card.Header className="pr-2">
+              <span>Add New Character</span>
+            </Card.Header>
+            <Card.Body className="d-flex flex-column justify-content-center">
+              <Row className="d-flex flex-row justify-content-center">
+                <Col xs="auto">
+                  <Button onClick={this.editCharacter}>
+                    <h1><FontAwesomeIcon icon={faPlus} className="fa-fw" /></h1>
+                  </Button>
+                </Col>
+              </Row>
+            </Card.Body>
+          </Card>
+        </Col>}
+        {charIdList.map(id =>
           <Col key={id} lg={4} md={6} className="mb-2">
             <CharacterCard
               characterData={CharacterDatabase.getCharacter(id)}
-              onDelete={() => this.deleteCharacter(index)}
-              onEdit={() => this.editCharacter(index)}
+              onDelete={() => this.deleteCharacter(id)}
+              onEdit={() => this.editCharacter(id)}
             />
           </Col>
         )}

@@ -28,7 +28,6 @@ export default class Build {
     //recursion function to loop through everything.
     let slotPerm = (index, accu) => {
       if (index >= slotKeys.length) {
-        //todo validate accu against filter
         let numArtsPerSet = {}
         Object.values(accu).forEach(setKey => {
           if (numArtsPerSet[setKey]) numArtsPerSet[setKey] += 1
