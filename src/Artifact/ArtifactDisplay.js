@@ -9,6 +9,7 @@ import { ElementalData } from '../Character/CharacterData';
 import CharacterDatabase from '../Character/CharacterDatabase';
 import { IntFormControl } from '../Components/CustomFormControl';
 import { Stars } from '../Components/StarDisplay';
+import { DatabaseInitAndVerify } from '../DatabaseUtil';
 import Stat from '../Stat';
 import { deepClone } from '../Util';
 import Artifact from './Artifact';
@@ -20,8 +21,7 @@ import ArtifactEditor from './ArtifactEditor';
 export default class ArtifactDisplay extends React.Component {
   constructor(props) {
     super(props)
-    ArtifactDatabase.populateDatebaseFromLocalStorage();
-    CharacterDatabase.populateDatebaseFromLocalStorage();
+    DatabaseInitAndVerify();
     this.state = {
       artIdList: [...ArtifactDatabase.getArtifactIdList()],
       artToEdit: null,

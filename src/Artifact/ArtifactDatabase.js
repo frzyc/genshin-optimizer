@@ -17,17 +17,24 @@ export default class ArtifactDatabase {
   static getArtifactDatabase = () => deepClone(artifactDatabase);
   static getArtifactIdList = () => deepClone(artifactIdList);
   static populateDatebaseFromLocalStorage = () => {
-    if (artifactIdList.length > 0) return;
+    if (artifactIdList.length > 0) return false;
     artIdIndex = parseInt(localStorage.getItem("artifact_highest_id"));
     if (isNaN(artIdIndex)) artIdIndex = 0;
     artifactIdList = ArtifactDatabase.getIdListFromStorage();
     if (artifactIdList === null) artifactIdList = []
-    for (const id of artifactIdList)
+    for (const id of artifactIdList) {
       if (!artifactDatabase[id]) {
-        artifactDatabase[id] = loadFromLocalStorage(id);
-        if (this.isInvalid(artifactDatabase[id]))
+        let art = loadFromLocalStorage(id)
+        if (!art) break;
+        if (this.isInvalid(art)) {
           this.removeArtifactById(id);
+          break;
+        }
+        artifactDatabase[id] = art;
       }
+    }
+    this.updateIdList();
+    return true
   }
   static getArtifact = (id) => id ? artifactDatabase[id] : null
   static removeArtifact = (art) => {

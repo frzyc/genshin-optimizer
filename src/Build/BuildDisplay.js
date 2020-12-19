@@ -10,6 +10,7 @@ import ArtifactDatabase from '../Artifact/ArtifactDatabase';
 import Character from '../Character/Character';
 import CharacterDatabase from '../Character/CharacterDatabase';
 import CharacterDisplayCard from '../Character/CharacterDisplayCard';
+import { DatabaseInitAndVerify } from '../DatabaseUtil';
 import Stat from '../Stat';
 import { deepClone, loadFromLocalStorage, saveToLocalStorage } from '../Util';
 import Build from './Build';
@@ -17,8 +18,7 @@ import Build from './Build';
 export default class BuildDisplay extends React.Component {
   constructor(props) {
     super(props)
-    CharacterDatabase.populateDatebaseFromLocalStorage();
-    ArtifactDatabase.populateDatebaseFromLocalStorage();
+    DatabaseInitAndVerify();
     this.state = BuildDisplay.getInitialState();
     if (props.location.selectedCharacterId) {
       this.state = BuildDisplay.getInitialState();
@@ -144,12 +144,12 @@ export default class BuildDisplay extends React.Component {
             {/* Character picker */}
             <div className="mb-2">
               <DropdownButton title={this.state.selectedCharacterId ? characterName : "Select Character"}>
-                <Dropdown.Item onClick={() => this.setState({ selectedCharacterId: "" })}>
+                <Dropdown.Item onClick={() => this.setState({ selectedCharacterId: "", builds: [] })}>
                   No Character
               </Dropdown.Item>
                 {Object.values(charlist).map((char, i) =>
                   <Dropdown.Item key={char.name + i}
-                    onClick={() => this.setState({ selectedCharacterId: char.id })}
+                    onClick={() => this.setState({ selectedCharacterId: char.id, builds: [] })}
                   >
                     {char.name}
                   </Dropdown.Item>)}

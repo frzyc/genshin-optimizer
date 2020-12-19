@@ -17,17 +17,28 @@ export default class CharacterDatabase {
   static getCharacterDatabase = () => deepClone(characterDatabase);
   static getCharacterIdList = () => deepClone(characterIdList);
   static populateDatebaseFromLocalStorage = () => {
-    if (characterIdList.length > 0) return;
+    if (characterIdList.length > 0) return false;
     charIdIndex = parseInt(localStorage.getItem("character_highest_id"));
     if (isNaN(charIdIndex)) charIdIndex = 0;
     characterIdList = CharacterDatabase.getIdListFromStorage();
     if (characterIdList === null) characterIdList = []
-    for (const id of characterIdList)
+    for (const id of characterIdList) {
       if (!characterDatabase[id]) {
-        characterDatabase[id] = loadFromLocalStorage(id);
-        if (this.isInvalid(characterDatabase[id]))
+        let character = loadFromLocalStorage(id);
+        if (!character) break;
+        if (this.isInvalid(character)) {
           this.removeCharacterById(id);
+          break;
+        }
+        if (!character.equippedArtifacts) {
+          character.equippedArtifacts = {}
+          saveToLocalStorage(id, character)
+        }
+        characterDatabase[id] = character;
       }
+    }
+    this.updateIdList();
+    return true
   }
   static addCharacter = (char) => {
     if (this.isInvalid(char)) return;

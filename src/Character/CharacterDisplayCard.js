@@ -5,8 +5,10 @@ import { Badge, ButtonGroup, Dropdown, DropdownButton, FormControl, Image, Input
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
+import DropdownToggle from 'react-bootstrap/esm/DropdownToggle';
 import Row from 'react-bootstrap/Row';
 import ArtifactDatabase from '../Artifact/ArtifactDatabase';
+import { DatabaseInitAndVerify } from '../DatabaseUtil';
 import { deepClone, getRandomElementFromArray } from '../Util';
 import Character from './Character';
 import CharacterDatabase from './CharacterDatabase';
@@ -14,11 +16,27 @@ import CharacterArtifactPane from './CharacterDisplay/CharacterArtifactPane';
 import CharacterOverviewPane from './CharacterDisplay/CharacterOverviewPane';
 import CharacterTalentPane from './CharacterDisplay/CharacterTalentPane';
 
+const CustomMenu = React.forwardRef(
+  ({ children, style, className, 'aria-labelledby': labeledBy }, ref) => {
+    return (
+      <div
+        ref={ref}
+        style={{ style, minWidth: "25rem" }}
+        className={className}
+        aria-labelledby={labeledBy}
+      >
+        <Row>
+          {React.Children.toArray(children).map(child => <Col xs={6}>{child}</Col>)}
+        </Row>
+      </div>
+    );
+  },
+);
+
 export default class CharacterDisplayCard extends React.Component {
   constructor(props) {
     super(props)
-    CharacterDatabase.populateDatebaseFromLocalStorage()
-    ArtifactDatabase.populateDatebaseFromLocalStorage()
+    DatabaseInitAndVerify();
     if (props.characterToEdit)
       this.state = props.characterToEdit
     else
@@ -116,15 +134,20 @@ export default class CharacterDisplayCard extends React.Component {
           <Col xs={"auto"}>
             {/* character selecter/display */}
             {editable ? <ButtonGroup>
-              <DropdownButton as={ButtonGroup} title={HeaderIconDisplay}>
-                {Character.getAllCharacterKeys().map(charKey =>
-                  <Dropdown.Item key={charKey} onClick={() => this.setCharacterKey(charKey)}>
-                    <span >
-                      <Image src={Character.getThumb(charKey)} className="thumb-small my-n1" roundedCircle />
-                      <h6 className="d-inline">{Character.getName(charKey)} </h6>
-                    </span>
-                  </Dropdown.Item>)}
-              </DropdownButton>
+              <Dropdown>
+                <DropdownToggle as={Button}>
+                  {HeaderIconDisplay}
+                </DropdownToggle>
+                <Dropdown.Menu as={CustomMenu}>
+                  {Character.getAllCharacterKeys().map(charKey =>
+                    <Dropdown.Item key={charKey} onClick={() => this.setCharacterKey(charKey)}>
+                      <span >
+                        <Image src={Character.getThumb(charKey)} className="thumb-small my-n1" roundedCircle />
+                        <h6 className="d-inline">{Character.getName(charKey)} </h6>
+                      </span>
+                    </Dropdown.Item>)}
+                </Dropdown.Menu>
+              </Dropdown>
               <DropdownButton as={ButtonGroup} title={
                 <h6 className="d-inline">{Character.getlevelNames(levelKey)} </h6>
               }>

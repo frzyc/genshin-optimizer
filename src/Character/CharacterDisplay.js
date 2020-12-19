@@ -2,6 +2,7 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Button, Card, Col, Container, Row } from 'react-bootstrap';
+import { DatabaseInitAndVerify } from '../DatabaseUtil';
 import Character from './Character';
 import CharacterCard from './CharacterCard';
 import CharacterDatabase from './CharacterDatabase';
@@ -10,7 +11,7 @@ import CharacterDisplayCard from './CharacterDisplayCard';
 export default class CharacterDisplay extends React.Component {
   constructor(props) {
     super(props)
-    CharacterDatabase.populateDatebaseFromLocalStorage();
+    DatabaseInitAndVerify();
     this.state = {
       charToEdit: null,
       showEditor: false,
