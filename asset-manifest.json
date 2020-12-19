@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/genshin-optimizer/static/css/main.1189147d.chunk.css",
-    "main.js": "/genshin-optimizer/static/js/main.1b389d5b.chunk.js",
-    "main.js.map": "/genshin-optimizer/static/js/main.1b389d5b.chunk.js.map",
+    "main.js": "/genshin-optimizer/static/js/main.ab5d53c0.chunk.js",
+    "main.js.map": "/genshin-optimizer/static/js/main.ab5d53c0.chunk.js.map",
     "runtime-main.js": "/genshin-optimizer/static/js/runtime-main.96ab3762.js",
     "runtime-main.js.map": "/genshin-optimizer/static/js/runtime-main.96ab3762.js.map",
-    "static/js/2.67a67674.chunk.js": "/genshin-optimizer/static/js/2.67a67674.chunk.js",
-    "static/js/2.67a67674.chunk.js.map": "/genshin-optimizer/static/js/2.67a67674.chunk.js.map",
+    "static/js/2.46d28083.chunk.js": "/genshin-optimizer/static/js/2.46d28083.chunk.js",
+    "static/js/2.46d28083.chunk.js.map": "/genshin-optimizer/static/js/2.46d28083.chunk.js.map",
     "static/js/3.1b8b5423.chunk.js": "/genshin-optimizer/static/js/3.1b8b5423.chunk.js",
     "static/js/3.1b8b5423.chunk.js.map": "/genshin-optimizer/static/js/3.1b8b5423.chunk.js.map",
     "index.html": "/genshin-optimizer/index.html",
     "static/css/main.1189147d.chunk.css.map": "/genshin-optimizer/static/css/main.1189147d.chunk.css.map",
-    "static/js/2.67a67674.chunk.js.LICENSE.txt": "/genshin-optimizer/static/js/2.67a67674.chunk.js.LICENSE.txt",
-    "static/js/BuildWorker.cc3832c8.worker.js": "/genshin-optimizer/static/js/BuildWorker.cc3832c8.worker.js",
-    "static/js/BuildWorker.cc3832c8.worker.js.LICENSE.txt": "/genshin-optimizer/static/js/BuildWorker.cc3832c8.worker.js.LICENSE.txt",
-    "static/js/BuildWorker.cc3832c8.worker.js.map": "/genshin-optimizer/static/js/BuildWorker.cc3832c8.worker.js.map",
+    "static/js/2.46d28083.chunk.js.LICENSE.txt": "/genshin-optimizer/static/js/2.46d28083.chunk.js.LICENSE.txt",
+    "static/js/BuildWorker.1ffd5b2b.worker.js": "/genshin-optimizer/static/js/BuildWorker.1ffd5b2b.worker.js",
+    "static/js/BuildWorker.1ffd5b2b.worker.js.LICENSE.txt": "/genshin-optimizer/static/js/BuildWorker.1ffd5b2b.worker.js.LICENSE.txt",
+    "static/js/BuildWorker.1ffd5b2b.worker.js.map": "/genshin-optimizer/static/js/BuildWorker.1ffd5b2b.worker.js.map",
     "static/media/Character_Amber_Card.d17ffc29.jpg": "/genshin-optimizer/static/media/Character_Amber_Card.d17ffc29.jpg",
     "static/media/Character_Barbara_Card.7acacdaa.jpg": "/genshin-optimizer/static/media/Character_Barbara_Card.7acacdaa.jpg",
     "static/media/Character_Beidou_Card.fe206e42.jpg": "/genshin-optimizer/static/media/Character_Beidou_Card.fe206e42.jpg",
@@ -333,8 +333,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.96ab3762.js",
-    "static/js/2.67a67674.chunk.js",
+    "static/js/2.46d28083.chunk.js",
     "static/css/main.1189147d.chunk.css",
-    "static/js/main.1b389d5b.chunk.js"
+    "static/js/main.ab5d53c0.chunk.js"
   ]
 }
