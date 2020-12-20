@@ -15,6 +15,7 @@ import CharacterDisplay from './Character/CharacterDisplay';
 import { version } from "../package.json"
 import HomeDisplay from './Home/HomeDisplay';
 import FAQ from './FAQ/FAQDisplay';
+import ReactGA from 'react-ga';
 
 function App() {
   return (
@@ -30,9 +31,21 @@ function App() {
             <Nav.Link as={Link} to="/faq">FAQ</Nav.Link>
           </Nav>
           <Nav>
-            <Nav.Link href={process.env.REACT_APP_PAYPAL_LINK} target="_blank" ><FontAwesomeIcon icon={faPaypal} className="fa-fw" /> PayPal</Nav.Link>
-            <Nav.Link href={process.env.REACT_APP_PATREON_LINK} target="_blank" ><FontAwesomeIcon icon={faPatreon} className="fa-fw" /> Patreon</Nav.Link>
-            <Nav.Link href={process.env.REACT_APP_DISCORD_LINK} target="_blank" ><FontAwesomeIcon icon={faDiscord} className="fa-fw" /> Discord</Nav.Link>
+            <ReactGA.OutboundLink eventLabel="paypal" target="_blank">
+              <Nav.Link href={process.env.REACT_APP_PAYPAL_LINK} target="_blank" >
+                <span><FontAwesomeIcon icon={faPaypal} className="fa-fw" /> PayPal</span>
+              </Nav.Link>
+            </ReactGA.OutboundLink>
+            <ReactGA.OutboundLink eventLabel="patreon" target="_blank">
+              <Nav.Link href={process.env.REACT_APP_PATREON_LINK} target="_blank" >
+                <span><FontAwesomeIcon icon={faPatreon} className="fa-fw" /> Patreon</span>
+              </Nav.Link>
+            </ReactGA.OutboundLink>
+            <ReactGA.OutboundLink eventLabel="discord" target="_blank">
+              <Nav.Link href={process.env.REACT_APP_DISCORD_LINK} target="_blank" >
+                <span><FontAwesomeIcon icon={faDiscord} className="fa-fw" /> Discord</span>
+              </Nav.Link>
+            </ReactGA.OutboundLink>
           </Nav>
         </Navbar>
 

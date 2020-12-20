@@ -5,18 +5,19 @@ import { Card, Dropdown, InputGroup, ToggleButton, ToggleButtonGroup } from 'rea
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import { ElementalData } from '../Character/CharacterData';
+import Character from '../Character/Character';
 import CharacterDatabase from '../Character/CharacterDatabase';
 import { IntFormControl } from '../Components/CustomFormControl';
 import { Stars } from '../Components/StarDisplay';
+import { ArtifactStarsData, ArtifactSubStatsData } from '../Data/ArtifactData';
 import { DatabaseInitAndVerify } from '../DatabaseUtil';
 import Stat from '../Stat';
 import { deepClone } from '../Util';
 import Artifact from './Artifact';
 import ArtifactCard from './ArtifactCard';
-import { ArtifactStarsData, ArtifactSubStatsData } from './ArtifactData';
 import ArtifactDatabase from './ArtifactDatabase';
 import ArtifactEditor from './ArtifactEditor';
+import ReactGA from 'react-ga';
 
 export default class ArtifactDisplay extends React.Component {
   constructor(props) {
@@ -27,6 +28,7 @@ export default class ArtifactDisplay extends React.Component {
       artToEdit: null,
     }
     this.state = { ...this.state, ...ArtifactDisplay.initialFilter }
+    ReactGA.pageview('/artifact')
   }
   static initialFilter = {
     filterArtSetKey: "",
@@ -175,7 +177,7 @@ export default class ArtifactDisplay extends React.Component {
                       <Dropdown.Menu>
                         <Dropdown.Item onClick={() => this.setState({ filterMainStatKey: "" })}>Unselect</Dropdown.Item>
                         {Artifact.getMainStatKeys().filter(key => key !== "ele_dmg").map((statKey) => <MainStatDropDownItem key={statKey} statKey={statKey} />)}
-                        {Object.keys(ElementalData).map((ele) => <MainStatDropDownItem key={ele} statKey={`${ele}_ele_dmg`} />)}
+                        {Character.getElementalKeys().map((ele) => <MainStatDropDownItem key={ele} statKey={`${ele}_ele_dmg`} />)}
                       </Dropdown.Menu>
                     </Dropdown>
                   </Col>

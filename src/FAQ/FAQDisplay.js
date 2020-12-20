@@ -1,6 +1,8 @@
 import { Card, Col, Container, Row } from "react-bootstrap";
+import ReactGA from 'react-ga';
 
 export default function FAQ(props) {
+  ReactGA.pageview('/faq')
   return <Container>
     <Card bg="darkcontent" text="lightfont" className="mt-2">
       <Card.Header>Frequently Asked Questions</Card.Header>

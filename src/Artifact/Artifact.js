@@ -1,10 +1,10 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { ElementalData } from '../Character/CharacterData';
+import Character from '../Character/Character';
 import CharacterDatabase from '../Character/CharacterDatabase';
 import SlotIcon from '../Components/SlotIcon';
+import { ArtifactMainSlotKeys, ArtifactMainStatsData, ArtifactSetsData, ArtifactSlotsData, ArtifactStarsData, ArtifactSubStatsData } from '../Data/ArtifactData';
 import Stat from '../Stat';
 import { clampPercent, closeEnoughFloat, closeEnoughInt } from '../Util';
-import { ArtifactMainSlotKeys, ArtifactStarsData, ArtifactMainStatsData, ArtifactSetsData, ArtifactSubStatsData, ArtifactSlotsData } from './ArtifactData'
 import ArtifactDatabase from './ArtifactDatabase';
 
 export default class Artifact {
@@ -44,7 +44,7 @@ export default class Artifact {
   static getRarityArr = (setKey) => ArtifactSetsData[setKey] ? ArtifactSetsData[setKey].rarity : []
 
   //MAIN STATS
-  static getMainStatKeys = () => [...ArtifactMainSlotKeys, ...Object.keys(ElementalData).map((ele) => `${ele}_ele_dmg`)]
+  static getMainStatKeys = () => [...ArtifactMainSlotKeys, ...Character.getElementalKeys().map((ele) => `${ele}_ele_dmg`)]
   static getMainStatValue = (key, numStars, level, defVal = 0) => {
     if (key && numStars && ArtifactMainStatsData[numStars] && ArtifactMainStatsData[numStars][key] && ArtifactMainStatsData[numStars][key][level])
       return ArtifactMainStatsData[numStars][key][level]

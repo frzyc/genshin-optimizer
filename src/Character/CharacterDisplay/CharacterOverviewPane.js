@@ -7,9 +7,9 @@ import Assets from "../../Assets/Assets"
 import { FloatFormControl, IntFormControl } from "../../Components/CustomFormControl"
 import { Stars } from "../../Components/StarDisplay"
 import StatIcon from "../../Components/StatIcon"
+import { CharacterSpecializedStatKey } from "../../Data/CharacterData"
 import Stat from "../../Stat"
 import Character from "../Character"
-import { CharacterSpecializedStatKey, ElementalData } from "../CharacterData"
 import StatInput from "../StatInput"
 export default function CharacterOverviewPane(props) {
   let { character: { characterKey, constellation }, editable, setOverridelevel, setConstellation } = props
@@ -140,7 +140,7 @@ function MainStatsCard(props) {
   const statKeys = ["hp", "atk", "def", "ele_mas", "crit_rate", "crit_dmg", "ener_rech", "heal_bonu"]
   const otherStatKeys = ["stam", "inc_heal", "pow_shield", "red_cd", "phy_dmg", "phy_res"]
 
-  Object.keys(ElementalData).forEach(ele => {
+  Character.getElementalKeys().forEach(ele => {
     otherStatKeys.push(`${ele}_ele_dmg`)
     otherStatKeys.push(`${ele}_ele_res`)
   })

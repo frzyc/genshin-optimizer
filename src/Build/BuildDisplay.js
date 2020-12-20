@@ -5,7 +5,7 @@ import { Alert, Badge, Button, ButtonGroup, Card, Col, Container, Dropdown, Drop
 // eslint-disable-next-line
 import Worker from "worker-loader!./BuildWorker.js";
 import Artifact from '../Artifact/Artifact';
-import { ArtifactSetsData, ArtifactSlotsData } from '../Artifact/ArtifactData';
+import { ArtifactSetsData, ArtifactSlotsData } from '../Data/ArtifactData';
 import ArtifactDatabase from '../Artifact/ArtifactDatabase';
 import Character from '../Character/Character';
 import CharacterDatabase from '../Character/CharacterDatabase';
@@ -14,6 +14,7 @@ import { DatabaseInitAndVerify } from '../DatabaseUtil';
 import Stat from '../Stat';
 import { deepClone, loadFromLocalStorage, saveToLocalStorage } from '../Util';
 import Build from './Build';
+import ReactGA from 'react-ga';
 
 export default class BuildDisplay extends React.Component {
   constructor(props) {
@@ -30,6 +31,7 @@ export default class BuildDisplay extends React.Component {
         if (savedState && character) this.state = savedState
       }
     }
+    ReactGA.pageview('/build')
   }
   static initialState = {
     builds: [],
@@ -118,8 +120,16 @@ export default class BuildDisplay extends React.Component {
     }
 
     let worker = new Worker();
-    worker.onmessage = (e) =>
-      this.setState({ builds: e.data, generatingBuilds: false })
+    worker.onmessage = (e) => {
+      ReactGA.timing({
+        category: "Build Generation",
+        variable: "timing",
+        value: e.data.timing,
+        label: Build.calculateTotalBuildNumber(split, artifactSetPerms, this.state.setFilters)
+      })
+      this.setState({ builds: e.data.builds, generatingBuilds: false })
+    }
+
     worker.postMessage(data)
   }
 

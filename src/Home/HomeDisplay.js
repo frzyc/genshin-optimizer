@@ -2,8 +2,10 @@ import art_editor from './art_editor.png'
 import character_editor from './character_editor.png'
 import build_generator from './build_generator.png'
 import { Badge, Card, Col, Container, Image, Row } from "react-bootstrap";
+import ReactGA from 'react-ga';
 
 export default function HomeDisplay(props) {
+  ReactGA.pageview('/home')
   return <Container className="mt-2">
     <Row><Col>
       <Card bg="darkcontent" text="lightfont">

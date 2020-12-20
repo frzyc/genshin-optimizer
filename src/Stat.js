@@ -1,4 +1,4 @@
-import { ElementalData } from "./Character/CharacterData";
+import { ElementalData } from "./Data/CharacterData";
 
 export default class Stat {
   //do not instantiate.

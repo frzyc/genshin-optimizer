@@ -6,7 +6,6 @@ import ArtifactCard from '../../Artifact/ArtifactCard';
 import StatIcon from '../../Components/StatIcon';
 import Stat from "../../Stat";
 import Character from "../Character";
-import { ElementalData } from '../CharacterData';
 
 function CharacterArtifactPane(props) {
   let [showOther, setShowOther] = useState(false)
@@ -20,7 +19,7 @@ function CharacterArtifactPane(props) {
   statKeys.push(`${eleKey}_ele_atk`)
 
   const otherStatKeys = ["stam", "inc_heal", "pow_shield", "red_cd", "phy_dmg", "phy_res"]
-  Object.keys(ElementalData).forEach(ele => {
+  Character.getElementalKeys().forEach(ele => {
     otherStatKeys.push(`${ele}_ele_dmg`)
     otherStatKeys.push(`${ele}_ele_res`)
   })

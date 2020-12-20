@@ -1,8 +1,7 @@
-import { ArtifactSetsData, ArtifactSlotsData } from "../Artifact/ArtifactData";
+import Artifact from "../Artifact/Artifact";
+import { ArtifactSetsData, ArtifactSlotsData } from "../Data/ArtifactData";
 
 export default class Build {
-  static test = (input) =>
-    input * 2
 
   //works with id indexed object for database.
   static splitArtifactsBySlot(databaseObj) {
@@ -24,7 +23,7 @@ export default class Build {
     if (useOther) sets.push("Other");
 
     let perm = [];
-    let slotKeys = Object.keys(ArtifactSlotsData);
+    let slotKeys = Artifact.getArtifactSlotKeys();
     //recursion function to loop through everything.
     let slotPerm = (index, accu) => {
       if (index >= slotKeys.length) {

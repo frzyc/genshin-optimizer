@@ -3,11 +3,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
 import { Button, Card, Col, Container, Form, Modal, ProgressBar, Row } from 'react-bootstrap';
 import { createWorker } from 'tesseract.js';
+import { ArtifactSetsData, ArtifactSlotsData } from '../Data/ArtifactData';
 import scan_art_main from "../imgs/scan_art_main.png";
 import Snippet from "../imgs/snippet.png";
 import Stat from '../Stat';
 import Artifact from './Artifact';
-import { ArtifactSetsData, ArtifactSlotsData } from './ArtifactData';
+import ReactGA from 'react-ga';
 
 const whiteColor = { r: 250, g: 250, b: 250 } //#FFFFFF
 const subStatColor = { r: 80, g: 90, b: 105 } //#495366
@@ -210,7 +211,10 @@ function UploadDisplay(props) {
             <Col>
               <h5>Parse Substats by Uploading Image</h5>
             </Col>
-            <Col xs="auto"><Button variant="info" onClick={() => setModalShow(true)}>Show me How!</Button></Col>
+            <Col xs="auto"><Button variant="info" onClick={() => {
+              setModalShow(true)
+              ReactGA.modalview('/artifact/how-to-upload')
+            }}>Show me How!</Button></Col>
           </Row>
         </Col>
       </Row>

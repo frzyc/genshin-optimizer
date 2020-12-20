@@ -7,6 +7,7 @@ import Character from './Character';
 import CharacterCard from './CharacterCard';
 import CharacterDatabase from './CharacterDatabase';
 import CharacterDisplayCard from './CharacterDisplayCard';
+import ReactGA from 'react-ga';
 
 export default class CharacterDisplay extends React.Component {
   constructor(props) {
@@ -16,6 +17,7 @@ export default class CharacterDisplay extends React.Component {
       charToEdit: null,
       showEditor: false,
     }
+    ReactGA.pageview('/character')
   }
 
   deleteCharacter = (id) => {

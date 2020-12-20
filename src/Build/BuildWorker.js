@@ -1,4 +1,5 @@
-import { ArtifactSlotsData } from "../Artifact/ArtifactData";
+
+import Artifact from "../Artifact/Artifact";
 import Character from "../Character/Character";
 
 onmessage = async (e) => {
@@ -7,11 +8,10 @@ onmessage = async (e) => {
   let artifactPerms = generateAllPossibleArtifactPerm(split, artifactSetPerms, setFilters)
   let builds = artifactPerms.map(artifacts => Character.calculateBuildWithObjs(character, artifacts));
   let t2 = performance.now()
-  console.log("generateBuilds took", t2 - t1, "ms")
   builds.sort((a, b) =>
     asending ? (a.finalStats[buildFilterKey] - b.finalStats[buildFilterKey]) : (b.finalStats[buildFilterKey] - a.finalStats[buildFilterKey]))
   builds.splice(maxBuildsToShow)
-  postMessage(builds)
+  postMessage({ builds, timing: t2 - t1 })
 };
 const generateAllPossibleArtifactPerm = (splitArtifacts, setPerms, setFilters) => {
   let perm = [];
@@ -33,7 +33,7 @@ const generateAllPossibleArtifactPerm = (splitArtifacts, setPerms, setFilters) =
     })
     splitArtsPerSet[key] = artsPerSet
   })
-  let slotKeys = Object.keys(ArtifactSlotsData);
+  let slotKeys = Artifact.getArtifactSlotKeys();
   //recursion function to loop through everything.
   let slotPerm = (index, setPerm, accu) => {
     if (index >= slotKeys.length) {

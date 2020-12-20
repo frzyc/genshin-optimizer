@@ -1,7 +1,7 @@
 import Artifact from "../Artifact/Artifact";
 import ArtifactDatabase from "../Artifact/ArtifactDatabase";
 import Assets from "../Assets/Assets";
-import { LevelsData, CharacterData, characterStatBase, ElementalData } from "./CharacterData";
+import { LevelsData, CharacterData, characterStatBase, ElementalData } from "../Data/CharacterData";
 import CharacterDatabase from "./CharacterDatabase";
 
 export default class Character {
@@ -27,6 +27,7 @@ export default class Character {
   static getName = (charKey, defVal = "") => (this.getCDataObj(charKey)?.name || defVal)
   static getStar = (charKey, defVal = 0) => (this.getCDataObj(charKey)?.star || defVal)
   static getElementalKey = (charKey, defVal = "") => (this.getCDataObj(charKey)?.elementKey || defVal)
+  static getElementalKeys = () => Object.keys(ElementalData)
   static getWeaponTypeKey = (charKey, defVal = "") => (this.getCDataObj(charKey)?.weaponTypeKey || defVal)
   static getConstellationName = (charKey, defVal = "") => (this.getCDataObj(charKey)?.constellationName || defVal)
   static getTitles = (charKey, defVal = []) => (this.getCDataObj(charKey)?.titles || defVal)
