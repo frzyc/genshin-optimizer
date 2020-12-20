@@ -1,4 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { ElementalData } from '../Character/CharacterData';
 import CharacterDatabase from '../Character/CharacterDatabase';
 import SlotIcon from '../Components/SlotIcon';
 import Stat from '../Stat';
@@ -43,7 +44,7 @@ export default class Artifact {
   static getRarityArr = (setKey) => ArtifactSetsData[setKey] ? ArtifactSetsData[setKey].rarity : []
 
   //MAIN STATS
-  static getMainStatKeys = () => ArtifactMainSlotKeys
+  static getMainStatKeys = () => [...ArtifactMainSlotKeys, ...Object.keys(ElementalData).map((ele) => `${ele}_ele_dmg`)]
   static getMainStatValue = (key, numStars, level, defVal = 0) => {
     if (key && numStars && ArtifactMainStatsData[numStars] && ArtifactMainStatsData[numStars][key] && ArtifactMainStatsData[numStars][key][level])
       return ArtifactMainStatsData[numStars][key][level]

@@ -67,10 +67,12 @@ const StatData = {
   inc_heal: { name: "Incoming Healing Bonus", unit: "%" },
   pow_shield: { name: "Powerful Shield", unit: "%" },
   red_cd: { name: "Reduce CD", unit: "%" },
+  //helper stats
   norm_atk_dmg: { name: "Normal Attack DMG", unit: "%" },
   char_atk_dmg: { name: "Charged Attack DMG", unit: "%" },
   skill_dmg: { name: "Elemental Skill DMG", unit: "%" },
   burst_dmg: { name: "Elemental Burst DMG", unit: "%" },
+  crit_multi: { name: "Crit Multiplier" }
 };
 
 export {

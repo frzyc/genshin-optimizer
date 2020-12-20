@@ -9,81 +9,129 @@ import Stat from '../Stat';
 import Artifact from './Artifact';
 import { ArtifactSetsData, ArtifactSlotsData } from './ArtifactData';
 
+const whiteColor = { r: 250, g: 250, b: 250 } //#FFFFFF
+const subStatColor = { r: 80, g: 90, b: 105 } //#495366
+const setNameColor = { r: 92, g: 178, b: 86 } //#5CB256
+const starColor = { r: 255, g: 204, b: 50 } //#FFCC32
+
 function UploadDisplay(props) {
-  const [ocr, setOcr] = useState();
   const [fileName, setFileName] = useState("Click here to Upload Artifact Screenshot File");
   const [image, setImage] = useState('');
-  const [progress, setProgress] = useState(0);
-  const [progVariant, setProgVariant] = useState("")
+
+  const [scanning, setScanning] = useState(false)
+  const [otherProgress, setOtherProgress] = useState(0);
+  const [otherProgVariant, setOtherProgVariant] = useState("")
+  const [substatProgress, setSubstatProgress] = useState(0);
+  const [substatProgVariant, setSubstatProgVariant] = useState("")
+  const [artSetProgress, setArtSetProgress] = useState(0);
+  const [artSetProgVariant, setArtSetProgVariant] = useState("")
+  const [mainStatProgress, setMainStatProgress] = useState(0);
+  const [mainStatProgVariant, setMainStatProgVariant] = useState("")
+
   const [modalShow, setModalShow] = useState(false)
 
   const reset = () => {
-    setOcr("")
     setFileName("Click here to Upload Artifact Screenshot File")
     setImage("")
-    setProgress(0)
-    setProgVariant("")
     setModalShow(false)
-  }
-  const parseValues = (parsed) => {
-    let matches = []
-    //parse substats
-    Artifact.getSubStatKeys().forEach(key => {
-      let regex = null
-      let unit = Stat.getStatUnit(key)
-      let name = Stat.getStatName(key)
-      if (unit === "%") regex = new RegExp(name + "\\s*\\+\\s*(\\d*\\.\\d)%", "im");
-      else regex = new RegExp(name + "\\s*\\+\\s*(\\d*)(?!.)", "im");//use negative lookahead to avoid the period
-      let match = regex.exec(parsed)
-      match && matches.push({ index: match.index, val: match[1], unit, key })
-    })
-    matches.sort((a, b) => a.index - b.index)
-    matches.forEach((match, i) => {
-      if (i >= 4) return;//this shouldn't happen, just in case
-      let value = match.unit === "%" ? parseFloat(match.val) : parseInt(match.val)
-      props.setSubStat && props.setSubStat(i, match.key, value)
-    })
-    //parse for sets
-    for (const [key, setObj] of Object.entries(ArtifactSetsData))
-      if (parsed.includes(setObj.name) && props.setSetKey) {
-        props.setSetKey(key);
-        break;
-      }
+    setScanning(false)
 
-    //parse for slot
-    for (const [key, slotObj] of Object.entries(ArtifactSlotsData))
-      if (parsed.includes(slotObj.name) && props.setSlotKey) {
-        props.setSlotKey(key);
-        break;
-      }
+    setOtherProgress(0);
+    setOtherProgVariant("")
+    setSubstatProgress(0);
+    setSubstatProgVariant("")
+    setArtSetProgress(0);
+    setArtSetProgVariant("")
+    setMainStatProgress(0);
+    setMainStatProgVariant("")
   }
-  const worker = createWorker({
-    logger: m => {
-      m.status === "loading tesseract core" && setProgVariant("danger");
-      m.status.includes("loading language traineddata") && setProgVariant("warning");
-      m.status.includes("initializing api") && setProgVariant("info");
-      m.status === "recognizing text" && setProgVariant("success");
-      setProgress(m.progress);
-    },
-  });
-  const doOCR = async (image) => {
-    await worker.load();
-    await worker.loadLanguage('eng');
-    await worker.initialize('eng');
-    const { data: { text } } = await worker.recognize(image);
-    setOcr(text);
-    parseValues(text);
-  };
 
-  let uploadedFile = (file) => {
+  const ocrImage = async (image, sProgress, sProgvariant) => {
+    let tworker = createWorker({
+      logger: m => {
+        m.status === "loading tesseract core" && sProgvariant("danger");
+        m.status.includes("loading language traineddata") && sProgvariant("warning");
+        m.status.includes("initializing api") && sProgvariant("info");
+        m.status === "recognizing text" && sProgvariant("success");
+        sProgress(m.progress);
+      },
+    });
+    await tworker.load();
+    await tworker.loadLanguage('eng');
+    await tworker.initialize('eng');
+    const { data: { text } } = await tworker.recognize(image);
+    return text
+  }
+
+  const uploadedFile = async (file) => {
+
     if (!file) return
-    let reader = new FileReader();
-    reader.onloadend = () =>
-      setImage(reader.result)
-    reader.readAsDataURL(file)
-    doOCR(file)
+    setScanning(true)
     setFileName(file.name)
+    const urlFile = await fileToURL(file)
+
+    setImage(urlFile)
+    const imageDataObj = await urlToImageData(urlFile)
+
+    let numStars = starScanning(imageDataObj.data, imageDataObj.width, imageDataObj.height)
+    let awaits = [
+      // other
+      ocrImage(imageDataToURL(processImageWithFilter(imageDataObj, whiteColor)), setOtherProgress, setOtherProgVariant),
+      // substat
+      ocrImage(imageDataToURL(processImageWithFilter(imageDataObj, subStatColor, 15)), setSubstatProgress, setSubstatProgVariant),
+      // artifact set
+      ocrImage(imageDataToURL(processImageWithFilter(imageDataObj, setNameColor)), setArtSetProgress, setArtSetProgVariant),
+      // main stat
+      ocrImage(imageDataToURL(processImageWithBandPassFilter(imageDataObj, { r: 150, g: 150, b: 160 }, { r: 215, g: 200, b: 220 })), setMainStatProgress, setMainStatProgVariant)
+    ]
+
+    let [whiteparsed, substatOCRText, setOCRText, mainStatOCRText] = await Promise.all(awaits)
+
+    let setKey = parseSetKey(setOCRText)
+    let slotKey = parseSlotKey(whiteparsed)
+    let substats = parseSubstat(substatOCRText)
+    let level = parseLevel(whiteparsed)
+    let mainStatKey = parseMainStatKey(mainStatOCRText)
+    let { mainStatValue, unit = "" } = parseMainStatvalue(whiteparsed)
+
+    //so far the main stat value is used to distinguish main stats between % and flat
+    if (unit === "%" && (mainStatKey === "hp" || mainStatKey === "def" || mainStatKey === "atk"))
+      mainStatKey += "_"
+
+    if (setKey && numStars)
+      if (!Artifact.getRarityArr(setKey).includes(numStars))
+        numStars = 0;
+
+    if (numStars && !isNaN(level)) {
+      if (level > numStars * 4)
+        level = NaN
+    }
+
+    //if main stat isnt parsed, then we try to guess it
+    if (slotKey && !mainStatKey) {
+      let stats = ArtifactSlotsData[slotKey].stats
+      if (stats.length === 1) mainStatKey = stats[0]
+      else {
+        stats = stats.filter(stat => {
+          if (mainStatValue && unit !== Stat.getStatUnit(stat)) return false
+          if (substats && substats.some(substat => substat.key === stat)) return false
+          if (mainStatValue && numStars && level && Artifact.getMainStatValue(stat, numStars, level) !== mainStatValue) return false
+          return true
+        });
+        if (stats.length > 0) mainStatKey = stats[0]
+      }
+    }
+
+    let state = {}
+    if (!isNaN(level)) state.level = level
+    if (setKey) state.setKey = setKey
+    if (slotKey) state.slotKey = slotKey
+    if (substats) state.substats = substats
+    if (numStars) state.numStars = numStars
+    if (mainStatKey) state.mainStatKey = mainStatKey
+    props.setState?.(state)
   }
+
   let explainationModal =
     (<Modal show={modalShow} onHide={() => setModalShow(false)} size="xl" variant="success" dialogAs={Container} className="pt-3 pb-3">
       <Card bg="darkcontent" text="lightfont" >
@@ -126,7 +174,7 @@ function UploadDisplay(props) {
             <Col xs={12}>
               <h5>Finishing the Artifact</h5>
               <p>
-                Unfortunately, there isn't a reliable way to parse the <i>number of stars</i>, <i>the main stat</i>, and the <i>level</i> of the artifact right now. So you will have to manually put them in.
+                Unfortunately, computer vision is not 100%. There will always be cases where something is not scanned properly. You should always double check the scanned artifact values!
                 Once the artifact has been filled, Click on <strong>Add Artifact</strong> to finish editing the artifact.
               </p>
               <img alt="main screen after importing stats" src={scan_art_main} className="w-75 h-auto" />
@@ -149,7 +197,10 @@ function UploadDisplay(props) {
       window.removeEventListener('paste', pasteFunc)
   })
   let img = image ? <img src={image} className="w-100 h-auto" alt="Screenshot to parse for artifact values" /> : <span>Please Select an Image</span>
-  let progPercent = (progress * 100).toFixed(2)
+  let artSetProgPercent = (artSetProgress * 100).toFixed(1)
+  let mainstatProgPercent = (mainStatProgress * 100).toFixed(1)
+  let substatProgPercent = (substatProgress * 100).toFixed(1)
+  let otherProgPercent = (otherProgress * 100).toFixed(1)
   return (<Row>
     {explainationModal}
     <Col>
@@ -161,17 +212,22 @@ function UploadDisplay(props) {
             </Col>
             <Col xs="auto"><Button variant="info" onClick={() => setModalShow(true)}>Show me How!</Button></Col>
           </Row>
-          {progVariant ? <ProgressBar variant={progVariant} now={progPercent} label={`${progPercent}%`} /> : null}
         </Col>
       </Row>
       <Row className="mb-1">
         <Col xs={8} lg={4}>
           {img}
         </Col>
-        {ocr && <Col xs={12} lg={8}>
-          <p>Parsed Text:</p>
-          <p>{ocr}</p>
-        </Col>}
+        {scanning ? <Col xs={12} lg={8}>
+          <h6>{`Scan${artSetProgPercent < 100 ? "ning" : "ned"} Artifact Set`}</h6>
+          <ProgressBar variant={artSetProgVariant} now={artSetProgPercent} label={`${artSetProgPercent}%`} className="mb-3" />
+          <h6>{`Scan${mainstatProgPercent < 100 ? "ning" : "ned"} Artifact Main Stat`}</h6>
+          <ProgressBar variant={mainStatProgVariant} now={mainstatProgPercent} label={`${mainstatProgPercent}%`} className="mb-3" />
+          <h6>{`Scan${substatProgPercent < 100 ? "ning" : "ned"} Artifact Substat`}</h6>
+          <ProgressBar variant={substatProgVariant} now={substatProgPercent} label={`${substatProgPercent}%`} className="mb-3" />
+          <h6>{`Scan${otherProgPercent < 100 ? "ning" : "ned"} Other`}</h6>
+          <ProgressBar variant={otherProgVariant} now={otherProgPercent} label={`${otherProgPercent}%`} className="mb-3" />
+        </Col> : null}
       </Row>
       <Row className="mb-4">
         <Col>
@@ -194,3 +250,187 @@ function UploadDisplay(props) {
   </Row>)
 }
 export default UploadDisplay;
+
+function fileToURL(file) {
+  return new Promise(resolve => {
+    let reader = new FileReader();
+    reader.onloadend = () => {
+      resolve(reader.result);
+    }
+    reader.readAsDataURL(file)
+  })
+}
+function urlToImageData(urlFile) {
+  return new Promise(resolve => {
+    let img = new Image();
+    img.onload = () =>
+      resolve(getImageData(img))
+    img.src = urlFile
+  })
+}
+
+function getImageData(image) {
+  const tempCanvas = document.createElement('canvas'),
+    tempCtx = tempCanvas.getContext('2d');
+  tempCanvas.width = image.width;
+  tempCanvas.height = image.height;
+  tempCtx.drawImage(image, 0, 0, image.width, image.height);
+  const imageDataObj = tempCtx.getImageData(0, 0, image.width, image.height);
+  return imageDataObj;
+}
+
+function imageDataToURL(imageDataObj) {
+  // create off-screen canvas element
+  let canvas = document.createElement('canvas'),
+    ctx = canvas.getContext('2d');
+
+  canvas.width = imageDataObj.width;
+  canvas.height = imageDataObj.height;
+
+  // create imageData object
+  let idata = ctx.createImageData(imageDataObj.width, imageDataObj.height);
+
+  // set our buffer as source
+  idata.data.set(imageDataObj.data);
+
+  // update canvas with new data
+  ctx.putImageData(idata, 0, 0);
+
+  let dataUri = canvas.toDataURL(); // produces a PNG file
+
+  return dataUri
+}
+
+function starScanning(pixels, width, height) {
+  let d = pixels;
+  let lastRowNum = 0;
+  let rowsWithNumber = 0;
+  for (let y = 0; y < height; y++) {
+    let star = 0;
+    let onStar = false;
+    for (let x = 0; x < width; x++) {
+      let i = (y * width + x) * 4
+      let r = d[i];
+      let g = d[i + 1];
+      let b = d[i + 2];
+      if (colorCloseEnough({ r, g, b }, starColor)) {
+        if (!onStar) {
+          onStar = true
+          star++
+        }
+      } else {
+        onStar = false
+      }
+    }
+    if (lastRowNum !== star) {
+      lastRowNum = star
+      rowsWithNumber = 1;
+    } else if (lastRowNum) {
+      rowsWithNumber++
+      if (rowsWithNumber >= 20) return lastRowNum
+    }
+  }
+  return 0;
+}
+function processImageWithFilter(pixelData, color, threshold = 5) {
+  let d = Uint8ClampedArray.from(pixelData.data)
+  for (let i = 0; i < d.length; i += 4) {
+    let outputWhite = true;
+    let r = d[i];
+    let g = d[i + 1];
+    let b = d[i + 2];
+    let pixelColor = { r, g, b }
+    if (colorCloseEnough(pixelColor, color, threshold))
+      outputWhite = false
+    d[i] = d[i + 1] = d[i + 2] = outputWhite ? 255 : 0
+  }
+  return new ImageData(d, pixelData.width, pixelData.height)
+}
+
+function processImageWithBandPassFilter(pixelData, color1, color2) {
+  let d = Uint8ClampedArray.from(pixelData.data)
+  //this also cuts away the bottom half of the picture...
+  let halfInd = Math.floor(pixelData.width * (pixelData.height / 2) * 4)
+  for (let i = 0; i < d.length; i += 4) {
+    let outputWhite = true;
+    let r = d[i];
+    let g = d[i + 1];
+    let b = d[i + 2];
+    if (i < halfInd && r > color1.r && r < color2.r &&
+      g > color1.g && g < color2.g &&
+      b > color1.b && b < color2.b)
+      outputWhite = false
+    d[i] = d[i + 1] = d[i + 2] = outputWhite ? 255 : 0
+  }
+  return new ImageData(d, pixelData.width, pixelData.height)
+}
+
+
+function colorCloseEnough(color1, color2, threshold = 5) {
+  const intCloseEnough = (a, b) => (Math.abs(a - b) <= threshold)
+  if (intCloseEnough(color1.r, color2.r) &&
+    intCloseEnough(color1.g, color2.g) &&
+    intCloseEnough(color1.b, color2.b)) {
+    return true
+  }
+  return false
+}
+
+function parseSubstat(text) {
+  let matches = []
+  //parse substats
+  Artifact.getSubStatKeys().forEach(key => {
+    let regex = null
+    let unit = Stat.getStatUnit(key)
+    let name = Stat.getStatName(key)
+    if (unit === "%") regex = new RegExp(name + "\\s*\\+\\s*(\\d+\\.\\d)%", "im");
+    else regex = new RegExp(name + "\\s*\\+\\s*(\\d+,\\d+|\\d+)($|\\s)", "im");
+    let match = regex.exec(text)
+    match && matches.push({ index: match.index, value: match[1], unit, key })
+  })
+  matches.sort((a, b) => a.index - b.index)
+  matches.forEach((match, i) => {
+    if (i >= 4) return;//this shouldn't happen, just in case
+    match.value = match.unit === "%" ? parseFloat(match.value) : parseInt(match.value)
+    // props.setSubStat && props.setSubStat(i, match.key, value)
+  })
+  let substats = []
+  for (let i = 0; i < 4; i++) {
+    if (matches[i]) substats.push({ key: matches[i].key, value: matches[i].value })
+    else substats.push({ key: "", value: 0 })
+  }
+  return substats
+}
+function parseMainStatKey(text) {
+  for (const key of Artifact.getMainStatKeys())
+    if (text.toLowerCase().includes(Stat.getStatName(key).toLowerCase()))
+      return key
+}
+function parseSetKey(text) {
+  //parse for sets
+  for (const [key, setObj] of Object.entries(ArtifactSetsData))
+    if (text.toLowerCase().includes(setObj.name.toLowerCase()))
+      return key//props.setSetKey(key);
+}
+function parseSlotKey(text) {
+  //parse for slot
+  for (const [key, slotObj] of Object.entries(ArtifactSlotsData))
+    if (text.toLowerCase().includes(slotObj.name.toLowerCase()))
+      return key;//props.setSlotKey(key);
+}
+function parseLevel(text) {
+  let regex = /\+(\d{1,2})/
+  let match = regex.exec(text)
+  if (match) return parseInt(match[1])
+  return NaN
+}
+function parseMainStatvalue(text) {
+  let preText = text.split('+')[0]
+  let regex = /(\d+\.\d+)%/
+  let match = regex.exec(preText)
+  if (match) return { mainStatValue: parseFloat(match[1]), unit: "%" }
+  regex = /(\d+,\d+|\d{2,3})/
+  match = regex.exec(preText)
+  if (match) return { mainStatValue: parseInt(match[1]) }
+  return { mainStatValue: NaN }
+}

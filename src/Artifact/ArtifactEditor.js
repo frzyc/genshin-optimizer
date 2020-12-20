@@ -337,7 +337,7 @@ export default class ArtifactEditor extends React.Component {
           <Row>
             {/* Image OCR */}
             <Col xs={12} className="mb-2">
-              <UploadDisplay setSetKey={this.setSetKey} setSubStat={this.setSubStat} setSlotKey={this.setSlotKey} reset={reset => this.uploadDisplayReset = reset} />
+              <UploadDisplay setState={state => this.setState(state)} reset={reset => this.uploadDisplayReset = reset} />
             </Col>
           </Row>
         </Card.Body>
