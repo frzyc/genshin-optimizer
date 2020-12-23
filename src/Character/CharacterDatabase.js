@@ -1,7 +1,6 @@
 import { deepClone, loadFromLocalStorage, saveToLocalStorage } from "../Util";
-
+var initiated = false
 var characterDatabase = {};
-var characterIdList = [];
 var charIdIndex = 1;
 
 export default class CharacterDatabase {
@@ -12,23 +11,19 @@ export default class CharacterDatabase {
     }
   }
   static isInvalid = (char) => !char || !char.name || !char.characterKey || !char.levelKey
-  static getIdListFromStorage = () => loadFromLocalStorage("character_id_list");
-  static saveIdListToStorage = () => saveToLocalStorage("character_id_list", characterIdList);
   static getCharacterDatabase = () => deepClone(characterDatabase);
-  static getCharacterIdList = () => deepClone(characterIdList);
+  static getCharacterIdList = () => Object.keys(characterDatabase);
   static populateDatebaseFromLocalStorage = () => {
-    if (characterIdList.length > 0) return false;
+    if (initiated) return;
     charIdIndex = parseInt(localStorage.getItem("character_highest_id"));
     if (isNaN(charIdIndex)) charIdIndex = 0;
-    characterIdList = CharacterDatabase.getIdListFromStorage();
-    if (characterIdList === null) characterIdList = []
-    for (const id of characterIdList) {
+    Object.keys(localStorage).filter(key => key.includes("character_")).forEach(id => {
       if (!characterDatabase[id]) {
         let character = loadFromLocalStorage(id);
-        if (!character) break;
+        if (!character) return;
         if (this.isInvalid(character)) {
           this.removeCharacterById(id);
-          break;
+          return;
         }
         if (!character.equippedArtifacts) {
           character.equippedArtifacts = {}
@@ -36,8 +31,8 @@ export default class CharacterDatabase {
         }
         characterDatabase[id] = character;
       }
-    }
-    this.updateIdList();
+    })
+    initiated = true
     return true
   }
   static addCharacter = (char) => {
@@ -46,33 +41,23 @@ export default class CharacterDatabase {
     let id = `character_${charIdIndex++}`
     localStorage.setItem("character_highest_id", charIdIndex)
     char.id = id;
-    char = deepClone(char)
-    saveToLocalStorage(id, char);
-    characterDatabase[id] = char;
-    this.updateCacheData();
+    let dchar = deepClone(char)
+    saveToLocalStorage(id, dchar);
+    characterDatabase[id] = dchar;
     return id;
   }
   static updateCharacter = (char) => {
     if (this.isInvalid(char)) return;
     let id = char.id;
-    char = deepClone(char)
-    saveToLocalStorage(id, char);
-    characterDatabase[id] = char;
-    this.updateCacheData();
+    let dchar = deepClone(char)
+    saveToLocalStorage(id, dchar);
+    characterDatabase[id] = dchar;
   }
   static getCharacter = (id) => id ? characterDatabase[id] : null
 
   static removeCharacterById = (id) => {
     delete characterDatabase[id];
     localStorage.removeItem(id);
-    this.updateCacheData();
-  }
-  static updateCacheData() {
-    this.updateIdList();
-  }
-  static updateIdList() {
-    characterIdList = Object.keys(characterDatabase)
-    this.saveIdListToStorage();
   }
   static getArtifactIDFromSlot = (charid, slotKey) => {
     if (!charid || !slotKey) return null;

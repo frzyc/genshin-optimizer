@@ -1,4 +1,5 @@
 import characters from './Characters/Characters'
+import weapons from './Weapons/Weapons'
 
 import anemo from './Element_Anemo.png'
 import cryo from './Element_Cryo.png'
@@ -16,7 +17,8 @@ import sword from './Weapon-class-sword-icon.png'
 
 let Assets = {
   characters,
+  weapons,
   elements: { anemo, cryo, dendro, electro, geo, hydro, pyro },
-  weapons: { bow, catalyst, claymore, polearm, sword }
+  weaponTypes: { bow, catalyst, claymore, polearm, sword }
 };
 export default Assets;

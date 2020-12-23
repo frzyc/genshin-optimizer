@@ -8,17 +8,22 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { Link } from 'react-router-dom';
 import Artifact from '../Artifact/Artifact';
+import ArtifactDatabase from '../Artifact/ArtifactDatabase';
 import Assets from '../Assets/Assets';
 import { Stars } from '../Components/StarDisplay';
 import Stat from '../Stat';
+import Weapon from '../Weapon/Weapon';
 import Character from './Character';
+import CharacterDatabase from './CharacterDatabase';
 export default function CharacterCard(props) {
   if (!props.characterData) return null;
-  let { characterData: { id, characterKey, name, equippedArtifacts, weapon_atk, weaponStatKey, weaponStatVal, constellation } } = props
+  let { characterData: { id, characterKey, name, equippedArtifacts, weapon, constellation } } = props
   let { characterData } = props
   let elementKey = Character.getElementalKey(characterKey)
   let weaponTypeKey = Character.getWeaponTypeKey(characterKey)
-  let build = Character.calculateBuild(id, equippedArtifacts)
+  let character = CharacterDatabase.getCharacter(id)
+  let artifacts = Object.fromEntries(Object.entries(equippedArtifacts).map(([key, artid]) => [key, ArtifactDatabase.getArtifact(artid)]))
+  let build = Character.calculateBuildWithObjs(character, artifacts, Weapon.createWeaponBundle(character))
   let { artifactSetEffect } = build
   const statIcon = {
     hp: faTint,
@@ -29,6 +34,12 @@ export default function CharacterCard(props) {
     crit_dmg: faDiceD20,
     ener_rech: faSync,
   }
+  let weaponName = Weapon.getWeaponName(weapon.key)
+  let weaponMainVal = Weapon.getWeaponMainStatValWithOverride(characterData?.weapon)
+  let weaponSubKey = Weapon.getWeaponSubStatKey(weapon.key)
+  let weaponSubVal = Weapon.getWeaponSubStatValWithOverride(characterData?.weapon)
+  let weaponLevelName = Weapon.getLevelName(weapon.levelKey)
+  let weaponPassiveName = Weapon.getWeaponPassiveName(weapon.key)
   return (<Card className="h-100" bg="darkcontent" text="lightfont">
     <Card.Header className="pr-2">
       <Row className="no-gutters">
@@ -55,15 +66,15 @@ export default function CharacterCard(props) {
           <Image src={Character.getThumb(characterKey)} className="h-100 w-auto my-n1" rounded />
         </Col>
         <Col>
-          <h4>{Character.getName(characterKey)} <Image src={Assets.elements[elementKey]} className="inline-icon" /> <Image src={Assets.weapons?.[weaponTypeKey]} className="inline-icon" /></h4>
+          <h4>{Character.getName(characterKey)} <Image src={Assets.elements[elementKey]} className="inline-icon" /> <Image src={Assets.weaponTypes?.[weaponTypeKey]} className="inline-icon" /></h4>
           <h6><Stars stars={Character.getStar(characterKey)} colored /></h6>
           <span>{`Lvl. ${Character.getLevelWithOverride(characterData)} C${constellation}`}</span>
         </Col>
       </Row>
-      <Row>
+      <Row className="mb-2">
         <Col>
-          {weapon_atk ? <h6>Weapon Base ATK: {weapon_atk}</h6> : null}
-          {weaponStatVal ? <span>SubStat: {Stat.getStatName(weaponStatKey)} {weaponStatVal}{Stat.getStatUnit(weaponStatKey)}</span> : null}
+          <h6 className="mb-0">{weaponName}{weaponPassiveName && `(${weapon.refineIndex + 1})`} {weaponLevelName}</h6>
+          <span>ATK: {weaponMainVal}  {weaponPassiveName && <span>{Stat.getStatName(weaponSubKey)}: {weaponSubVal}{Stat.getStatUnit(weaponSubKey)}</span>}</span>
         </Col>
       </Row>
       <Row>
@@ -71,7 +82,7 @@ export default function CharacterCard(props) {
           {Object.entries(artifactSetEffect).map(([key, obj]) => {
             let artifactSetName = Artifact.getArtifactSetName(key)
             let highestNum = Math.max(...Object.keys(obj))
-            return <span>{artifactSetName}({highestNum})</span>
+            return <span key={key}>{artifactSetName}({highestNum})</span>
           })}
         </Col>
       </Row>
@@ -83,7 +94,7 @@ export default function CharacterCard(props) {
           return <Col xs={12} key={statKey}>
             <h6 className="d-inline">{statIcon[statKey] && <FontAwesomeIcon icon={statIcon[statKey]} className="fa-fw" />} {Stat.getStatName(statKey)}</h6>
             <span className={`float-right`}>
-              {statVal?.toFixed(unit === "%" ? 1 : 0) + unit}
+              {statVal?.toFixed(Stat.fixedUnit(statKey)) + unit}
             </span>
           </Col>
         })}

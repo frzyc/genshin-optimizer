@@ -11,6 +11,7 @@ import ArtifactDatabase from './ArtifactDatabase';
 import CharacterDatabase from '../Character/CharacterDatabase';
 import { Dropdown, DropdownButton, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import Stat from '../Stat';
+import { Stars } from '../Components/StarDisplay';
 export default class ArtifactCard extends React.Component {
   //the props is to update the artifacts in the list in the parent, which will update here.
   equipOnChar(charId) {
@@ -46,12 +47,11 @@ export default class ArtifactCard extends React.Component {
       </Card.Header>
       <Card.Body className="d-flex flex-column">
         <Card.Title>
-          <h6>{art.mainStatKey ? `${Stat.getStatName(art.mainStatKey).split("%")[0]} ${Artifact.getMainStatValue(art.mainStatKey, art.numStars, art.level)}${Stat.getStatUnit(art.mainStatKey)}` : null}</h6>
+          <div>{Artifact.getArtifactSetName(art.setKey, "Artifact Set")}</div>
+          <small className="text-halfsize"><Stars stars={art.numStars}/></small>
         </Card.Title>
         <Card.Subtitle>
-          <div>{Artifact.getArtifactSetName(art.setKey, "Artifact Set")}</div>
-          <div>{"🟊".repeat(art.numStars ? art.numStars : 0)}</div>
-
+          <b>{art.mainStatKey ? `${Stat.getStatName(art.mainStatKey).split("%")[0]} ${Artifact.getMainStatValue(art.mainStatKey, art.numStars, art.level)}${Stat.getStatUnit(art.mainStatKey)}` : null}</b>
         </Card.Subtitle>
         <ul className="mb-0">
           {art.substats ? art.substats.map((stat, i) =>

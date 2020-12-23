@@ -8,6 +8,12 @@ export default function FAQ(props) {
       <Card.Header>Frequently Asked Questions</Card.Header>
       <Card.Body>
         <Row>
+          <Col xs={12}>
+            <h6>What is substat efficiency?</h6>
+            <p>Substat efficiency is a measurement of how high a substat is rolled, as a percentage between the lowest roll and highest roll. Say if a stat can roll 10 ~ 20, then 10 would be 0% efficiency, 20 would be 100%, 15 would be 50%, and so on...
+            </p>
+            <p>Substat efficiency does not take into effect what type of substat it is measuring against, so ATK% would NOT be weighted more vs. flat ATK.</p>
+          </Col>
           <Col>
             <h6>How are all the stats calculated? </h6>
             <p>

@@ -1,7 +1,6 @@
 import { deepClone, loadFromLocalStorage, saveToLocalStorage } from "../Util";
-
+var initiated = false
 var artifactDatabase = {};
-var artifactIdList = [];
 var artIdIndex = 1;
 export default class ArtifactDatabase {
   //do not instantiate.
@@ -12,28 +11,24 @@ export default class ArtifactDatabase {
   }
   static isInvalid = (art) =>
     !art || !art.setKey || !art.numStars || !art.slotKey || !art.mainStatKey
-  static getIdListFromStorage = () => loadFromLocalStorage("artifact_id_list");
-  static saveIdListToStorage = () => saveToLocalStorage("artifact_id_list", artifactIdList);
   static getArtifactDatabase = () => deepClone(artifactDatabase);
-  static getArtifactIdList = () => deepClone(artifactIdList);
+  static getArtifactIdList = () => Object.keys(artifactDatabase);
   static populateDatebaseFromLocalStorage = () => {
-    if (artifactIdList.length > 0) return false;
+    if (initiated) return;
     artIdIndex = parseInt(localStorage.getItem("artifact_highest_id"));
     if (isNaN(artIdIndex)) artIdIndex = 0;
-    artifactIdList = ArtifactDatabase.getIdListFromStorage();
-    if (artifactIdList === null) artifactIdList = []
-    for (const id of artifactIdList) {
+    Object.keys(localStorage).filter(key => key.includes("artifact_")).forEach(id => {
       if (!artifactDatabase[id]) {
         let art = loadFromLocalStorage(id)
-        if (!art) break;
+        if (!art) return;
         if (this.isInvalid(art)) {
           this.removeArtifactById(id);
-          break;
+          return;
         }
         artifactDatabase[id] = art;
       }
-    }
-    this.updateIdList();
+    })
+    initiated = true
     return true
   }
   static getArtifact = (id) => id ? artifactDatabase[id] : null
@@ -46,33 +41,23 @@ export default class ArtifactDatabase {
     let id = `artifact_${artIdIndex++}`
     localStorage.setItem("artifact_highest_id", artIdIndex)
     art.id = id;
-    art = deepClone(art)
-    saveToLocalStorage(id, art);
-    artifactDatabase[id] = art;
-    this.updateCacheData();
+    let dart = deepClone(art)
+    saveToLocalStorage(id, dart);
+    artifactDatabase[id] = dart;
     return id;
   }
   static updateArtifact = (art) => {
     if (this.isInvalid(art)) return;
     let id = art.id;
-    art = deepClone(art)
-    saveToLocalStorage(id, art);
-    artifactDatabase[id] = art;
-    this.updateCacheData();
+    let dart = deepClone(art)
+    saveToLocalStorage(id, dart);
+    artifactDatabase[id] = dart;
   }
   static removeArtifactById = (artId) => {
     delete artifactDatabase[artId];
     localStorage.removeItem(artId);
-    this.updateCacheData();
   }
 
-  static updateCacheData() {
-    this.updateIdList();
-  }
-  static updateIdList() {
-    artifactIdList = Object.keys(artifactDatabase)
-    this.saveIdListToStorage();
-  }
   static moveToNewLocation = (artid, location) => {
     if (!artid) return;
     let art = this.getArtifact(artid)

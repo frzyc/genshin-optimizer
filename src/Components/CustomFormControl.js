@@ -14,7 +14,7 @@ class FloatFormControl extends React.Component {
     value = parseFloat(value)
     if (!isNaN(value)) this.setState({ periodEnd: periodEnd })
     value = value ? value : 0
-    this.props.onValueChange && this.props.onValueChange(value);
+    this.props.onValueChange?.(value);
   }
   render = () => {
     let props = { ...this.props }
@@ -30,7 +30,7 @@ class IntFormControl extends React.Component {
     let value = e.target.value;
     value = parseInt(value)
     value = value ? value : 0
-    this.props.onValueChange && this.props.onValueChange(value);
+    this.props.onValueChange?.(value);
   }
   render = () => {
     let props = { ...this.props }

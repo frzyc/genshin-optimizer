@@ -9,7 +9,7 @@ import Character from "../Character";
 
 function CharacterArtifactPane(props) {
   let [showOther, setShowOther] = useState(false)
-  let { character: { characterKey, weapon_atk, weaponStatKey, weaponStatVal, compareAgainstEquipped }, equippedBuild, newBuild, editable, forceUpdate } = props
+  let { character: { characterKey, compareAgainstEquipped }, equippedBuild, newBuild, editable, forceUpdate } = props
   let { character } = props
   //choose which one to display stats for
   let build = newBuild ? newBuild : equippedBuild
@@ -32,8 +32,8 @@ function CharacterArtifactPane(props) {
     return <Col xs={12} md={6} lg={4} key={statKey}>
       <h6 className="d-inline">{StatIcon[statKey] ? <FontAwesomeIcon icon={StatIcon[statKey]} className="fa-fw" /> : null} {Stat.getStatName(statKey)}</h6>
       <span className={`float-right ${(editable && Character.hasOverride(character, statKey)) ? "text-warning" : ""}`}>
-        {statVal?.toFixed(unit === "%" ? 1 : 0) + unit}
-        {buildDiff ? <span className="text-success"> + {buildDiff?.toFixed(unit === "%" ? 1 : 0) + unit}</span> : null}
+        {statVal?.toFixed(Stat.fixedUnit(statKey)) + unit}
+        {buildDiff ? <span className={buildDiff > 0 ? "text-success" : "text-danger"}> {buildDiff > 0 && "+"}{buildDiff?.toFixed(Stat.fixedUnit(statKey)) + unit}</span> : null}
       </span>
     </Col>
   }
@@ -45,8 +45,8 @@ function CharacterArtifactPane(props) {
     return <Col xs={12} md={6} lg={4} key={statKey}>
       <h6 className="d-inline">{StatIcon[statKey] ? <FontAwesomeIcon icon={StatIcon[statKey]} className="fa-fw" /> : null} {Stat.getStatName(statKey)}</h6>
       <span className={`float-right ${(editable && Character.hasOverride(character, statKey)) ? "text-warning" : ""}`}>
-        {statVal?.toFixed(unit === "%" ? 1 : 0) + unit}
-        {buildDiff ? <span className={buildDiff > 0 ? "text-success" : "text-danger"}> ({buildDiff > 0 ? "+" : ""}{buildDiff?.toFixed(unit === "%" ? 1 : 0) + unit})</span> : null}
+        {statVal?.toFixed(Stat.fixedUnit(statKey)) + unit}
+        {buildDiff ? <span className={buildDiff > 0 ? "text-success" : "text-danger"}> ({buildDiff > 0 ? "+" : ""}{buildDiff?.toFixed(Stat.fixedUnit(statKey)) + unit})</span> : null}
       </span>
     </Col>
   }
@@ -95,29 +95,16 @@ function CharacterArtifactPane(props) {
           <Col sm={6} className="mb-3">
             <Row className="h-100">
               <Col xs={12} className="d-flex flex-column">
-                <Card className="flex-grow-1 mb-2" bg="lightcontent" text="lightfont">
-                  <Card.Header>Weapon</Card.Header>
-                  <Card.Body>
-                    <Row>
-                      <Col>
-                        <h6>Base ATK {weapon_atk}</h6>
-                      </Col>
-                      <Col>
-                        {weaponStatKey && <h6>{Stat.getStatName(weaponStatKey)} {weaponStatVal}{Stat.getStatUnit(weaponStatKey)}</h6>}
-                      </Col>
-                    </Row>
-                  </Card.Body>
-                </Card>
                 <Card className="flex-grow-1" bg="lightcontent" text="lightfont">
                   <Card.Header>Artifact Set Effects</Card.Header>
                   <Card.Body>
                     <Row>
                       {Object.entries(build.artifactSetEffect).map(([setKey, effects]) =>
                         <Col key={setKey} xs={12} className="mb-3">
-                          <h6>{Artifact.getArtifactSetName(setKey)}</h6>
+                          <h5>{Artifact.getArtifactSetName(setKey)}</h5>
                           <Row>
                             {Object.entries(effects).map(([num, effect]) => {
-                              return <Col key={num} xs={12}><Badge variant="success">{num}-Set</Badge> <span>{effect.text}</span></Col>
+                              return <Col key={num} xs={12}><h6><Badge variant="success">{num}-Set</Badge> <span>{effect.text}</span></h6></Col>
                             })}
                           </Row>
                         </Col>

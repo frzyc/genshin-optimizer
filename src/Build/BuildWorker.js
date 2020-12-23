@@ -1,12 +1,12 @@
-
+//WARNING: any imports from here cannot be loading react code...
 import Artifact from "../Artifact/Artifact";
 import Character from "../Character/Character";
 
 onmessage = async (e) => {
-  let { split, artifactSetPerms, setFilters, character, maxBuildsToShow, buildFilterKey, asending } = e.data;
+  let { split, artifactSetPerms, setFilters, character, weaponStats, maxBuildsToShow, buildFilterKey, asending } = e.data;
   let t1 = performance.now()
   let artifactPerms = generateAllPossibleArtifactPerm(split, artifactSetPerms, setFilters)
-  let builds = artifactPerms.map(artifacts => Character.calculateBuildWithObjs(character, artifacts));
+  let builds = artifactPerms.map(artifacts => Character.calculateBuildWithObjs(character, artifacts, weaponStats));
   let t2 = performance.now()
   builds.sort((a, b) =>
     asending ? (a.finalStats[buildFilterKey] - b.finalStats[buildFilterKey]) : (b.finalStats[buildFilterKey] - a.finalStats[buildFilterKey]))

@@ -27,9 +27,9 @@ const closeEnoughFloat = (a, b) =>
 
 const closeEnoughInt = (a, b) =>
   Math.abs(a - b) <= 1
-const clamp = (val, a, b) => {
-  if (val < a) return a;
-  if (val > b) return b;
+const clamp = (val, low, high) => {
+  if (val < low) return low;
+  if (val > high) return high;
   return val
 }
 const getArrLastElement = (arr) => 

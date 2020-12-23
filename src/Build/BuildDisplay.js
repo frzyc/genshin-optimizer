@@ -15,6 +15,7 @@ import Stat from '../Stat';
 import { deepClone, loadFromLocalStorage, saveToLocalStorage } from '../Util';
 import Build from './Build';
 import ReactGA from 'react-ga';
+import Weapon from '../Weapon/Weapon';
 
 export default class BuildDisplay extends React.Component {
   constructor(props) {
@@ -114,9 +115,11 @@ export default class BuildDisplay extends React.Component {
     this.setState({ generatingBuilds: true, builds: [] })
     let character = CharacterDatabase.getCharacter(this.state.selectedCharacterId)
     let data = {
-      split, artifactSetPerms, setFilters: this.state.setFilters, character,
+      split, artifactSetPerms, character, weaponStats: Weapon.createWeaponBundle(character),
+      setFilters: this.state.setFilters,
       maxBuildsToShow: this.state.maxBuildsToShow,
-      buildFilterKey: this.state.buildFilterKey, asending: this.state.asending
+      buildFilterKey: this.state.buildFilterKey, asending: this.state.asending,
+
     }
 
     let worker = new Worker();
@@ -280,7 +283,7 @@ export default class BuildDisplay extends React.Component {
               key = `${Character.getElementalKey(character.characterKey)}_${key}`
             let unit = Stat.getStatUnit(key)
             return <Col className="text-nowrap" key={key} xs={12} sm={6} md={4} lg={3}>
-              <span>{Stat.getStatName(key)}: <span className="text-warning">{build.finalStats[key]?.toFixed(unit === "%" ? 1 : 0)}{unit}</span></span>
+              <span>{Stat.getStatName(key)}: <span className="text-warning">{build.finalStats[key]?.toFixed(Stat.fixedUnit(key))}{unit}</span></span>
             </Col>
           })}
         </Row>

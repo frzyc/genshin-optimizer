@@ -40,6 +40,11 @@ export default class Stat {
     else
       return defVal
   }
+  static fixedUnit = (key) => {
+    if (key === "crit_multi") return 3
+    let unit = Stat.getStatUnit(key)
+    return unit === "%" ? 1 : 0
+  }
   static getAllStatKey = () =>
     [...Object.keys(StatData).filter(key => key !== "ele_dmg" || key !== "ele_res"),
     ...Object.keys(ElementalData).map(ele => `${ele}_ele_dmg`),
@@ -70,9 +75,15 @@ const StatData = {
   //helper stats
   norm_atk_dmg: { name: "Normal Attack DMG", unit: "%" },
   char_atk_dmg: { name: "Charged Attack DMG", unit: "%" },
-  skill_dmg: { name: "Elemental Skill DMG", unit: "%" },
-  burst_dmg: { name: "Elemental Burst DMG", unit: "%" },
-  crit_multi: { name: "Crit Multiplier" }
+  skill_dmg: { name: "Ele. Skill DMG", unit: "%" },
+  burst_dmg: { name: "Ele. Burst DMG", unit: "%" },
+  skill_crit_rate: { name: "Ele. Skill CRIT Rate", unit: "%" },
+  burst_crit_rate: { name: "Ele. Burst CRIT Rate", unit: "%" },
+  crit_multi: { name: "Crit Multiplier" },
+  dmg: { name: "All DMG", unit: "%" },//general all damage increase
+  move_spd: { name: "Movement SPD", unit: "%" },
+  atk_spd: { name: "ATK SPD", unit: "%" },
+  weakspot_dmg: { name: "Weakspot DMG", unit: "%" }
 };
 
 export {

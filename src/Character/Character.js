@@ -94,12 +94,18 @@ export default class Character {
   }
 
   //GENERAL
-  static calculateCharacterFinalStat = (totalBonusStats, character) => {
-    if (character.weaponStatKey && character.weaponStatVal)
-      totalBonusStats[character.weaponStatKey] += character.weaponStatVal
+  static calculateCharacterFinalStat = (totalBonusStats, character, weapon) => {
+    //add weapon substats
+    if (weapon.subKey) totalBonusStats[weapon.subKey] = (totalBonusStats[weapon.subKey] || 0) + weapon.subVal
+    //Add any weapon bonus Stats
+    if (weapon.bonusStats) Object.entries(weapon.bonusStats).forEach(([key, val]) =>
+      totalBonusStats[key] = (totalBonusStats[key] || 0) + val)
+    //Add weapon conditional
+    if (weapon.conditionalStats) Object.entries(weapon.conditionalStats).forEach(([key, val]) =>
+      totalBonusStats[key] = (totalBonusStats[key] || 0) + val)
     const flatAndPercentStat = (flatStatKey, percentStatkey) => {
       let base = this.getStatValueWithOverride(character, flatStatKey)
-      if (flatStatKey === "atk") base += character.weapon_atk
+      if (flatStatKey === "atk") base += weapon.mainAtkValue
       let percent = (totalBonusStats?.[percentStatkey] || 0)
       let flat = (totalBonusStats?.[flatStatKey] || 0)
       return base * (1 + percent / 100) + flat
@@ -122,14 +128,8 @@ export default class Character {
     finalStat[`${eleKey}_ele_atk`] = finalStat.atk * (1 + finalStat[`${eleKey}_ele_dmg`] / 100) * crit_multi
     return finalStat
   }
-  static calculateBuild = (characterId, artifactIds) => {
-    let character = CharacterDatabase.getCharacter(characterId);
-    if (!character) return
-    let artifacts = Object.fromEntries(Object.entries(artifactIds).map(([key, artid]) => [key, ArtifactDatabase.getArtifact(artid)]))
-    return this.calculateBuildWithObjs(character, artifacts)
-  }
   //buildworker doesn't have access to the database, so we need to feed in the objs
-  static calculateBuildWithObjs = (character, artifacts) => {
+  static calculateBuildWithObjs = (character, artifacts, weaponStats) => {
     if (!character) return
     let setToSlots = Artifact.setToSlots(artifacts)
     let artifactSetEffect = Artifact.getArtifactSetEffects(setToSlots)
@@ -147,7 +147,7 @@ export default class Character {
       totalArtifactStats: totalBonusStats,
       artifactSetEffect,
       setToSlots,
-      finalStats: Character.calculateCharacterFinalStat(totalBonusStats, character)
+      finalStats: Character.calculateCharacterFinalStat(totalBonusStats, character, weaponStats)
     }
   }
 }

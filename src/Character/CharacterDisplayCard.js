@@ -8,6 +8,7 @@ import Col from 'react-bootstrap/Col';
 import DropdownToggle from 'react-bootstrap/esm/DropdownToggle';
 import Row from 'react-bootstrap/Row';
 import ArtifactDatabase from '../Artifact/ArtifactDatabase';
+import { WeaponLevelKeys } from '../Data/WeaponData';
 import { DatabaseInitAndVerify } from '../DatabaseUtil';
 import { deepClone, getRandomElementFromArray } from '../Util';
 import Character from './Character';
@@ -15,6 +16,7 @@ import CharacterDatabase from './CharacterDatabase';
 import CharacterArtifactPane from './CharacterDisplay/CharacterArtifactPane';
 import CharacterOverviewPane from './CharacterDisplay/CharacterOverviewPane';
 import CharacterTalentPane from './CharacterDisplay/CharacterTalentPane';
+import Weapon from '../Weapon/Weapon'
 
 const CustomMenu = React.forwardRef(
   ({ children, style, className, 'aria-labelledby': labeledBy }, ref) => {
@@ -50,17 +52,30 @@ export default class CharacterDisplayCard extends React.Component {
     overrideLevel: 0,
     equippedArtifacts: {},
     baseStatOverrides: {},//overriding the baseStat
-    weapon_atk: 0,
-    weaponStatKey: "",
-    weaponStatVal: 0,
+    weapon: {
+      key: "",
+      levelKey: WeaponLevelKeys[0],
+      refineIndex: 0,
+      overrideMainVal: 0,
+      overrideSubVal: 0,
+      conditionalNum: 0,
+    },
     constellation: 0,
     compareAgainstEquipped: false//note: needs to be deleted when saving
   }
+  static getIntialWeapon = (characterKey) => {
+    let weapon = deepClone(this.initialState.weapon)
+    weapon.key = Object.keys(Weapon.getWeaponsOfType(Character.getWeaponTypeKey(characterKey)))[0]
+    return weapon
+  }
+
   static getInitialState = () => {
     let state = deepClone(CharacterDisplayCard.initialState)
     //set a random character key
     state.characterKey = getRandomElementFromArray(Character.getAllCharacterKeys())
     state.name = getRandomElementFromArray(Character.getTitles(state.characterKey))
+    //pick the first weaponType. Should be the 1* weapon, if I organize the db correctly.
+    state.weapon = this.getIntialWeapon(state.characterKey);
     return state
   }
   forceUpdateComponent = () => {
@@ -69,9 +84,9 @@ export default class CharacterDisplayCard extends React.Component {
     }
     this.props.forceUpdate ? this.props.forceUpdate() : this.forceUpdate();
   }
-
+  setSetState = (val) => this.setState(val)
   setCharacterKey = (characterKey) =>
-    this.setState({ characterKey, name: getRandomElementFromArray(Character.getTitles(characterKey)) })
+    this.setState({ characterKey, name: getRandomElementFromArray(Character.getTitles(characterKey)), weapon: CharacterDisplayCard.getIntialWeapon(characterKey) })
   setLevelKey = (levelKey) =>
     this.setState({ levelKey, baseStatOverrides: {} })
 
@@ -93,9 +108,6 @@ export default class CharacterDisplayCard extends React.Component {
     else return { overrideLevel: level }
   })
 
-  setWeaponAtk = (weapon_atk) => this.setState({ weapon_atk })
-  setWeaponStateKey = (weaponStatKey) => this.setState({ weaponStatKey })
-  setWeaponStatVal = (weaponStatVal) => this.setState({ weaponStatVal })
   setConstellation = (constellation) => this.setState({ constellation })
 
   componentDidUpdate() {
@@ -118,10 +130,10 @@ export default class CharacterDisplayCard extends React.Component {
     let character = this.state
     let { characterKey, equippedArtifacts, levelKey, compareAgainstEquipped } = this.state
     let equippedArtifactsObjs = Object.fromEntries(Object.entries(equippedArtifacts).map(([key, artid]) => [key, ArtifactDatabase.getArtifact(artid)]))
-    let equippedBuild = Character.calculateBuildWithObjs(this.state, equippedArtifactsObjs)
+    let equippedBuild = Character.calculateBuildWithObjs(this.state, equippedArtifactsObjs, Weapon.createWeaponBundle(this.state))
     //TODO refresh the values? don't think the character will change... this will be here if it does somehow(by adding conditional buffs and stuff)
     // if (newBuild) { 
-    //   newBuild = Character.calculateBuild(id, newBuild.artifactIds)
+    //   newBuild = Character.calculateBuild
     // }
     let HeaderIconDisplay = <span >
       <Image src={Character.getThumb(characterKey)} className="thumb-small my-n1 ml-n2" roundedCircle />
@@ -213,11 +225,9 @@ export default class CharacterDisplayCard extends React.Component {
           <Tab.Content>
             <Tab.Pane eventKey="character">
               <CharacterOverviewPane
+                setState={this.setSetState}
                 setOverride={this.setOverride}
                 setOverridelevel={this.setOverridelevel}
-                setWeaponAtk={this.setWeaponAtk}
-                setWeaponStateKey={this.setWeaponStateKey}
-                setWeaponStatVal={this.setWeaponStatVal}
                 setConstellation={this.setConstellation}
                 {...{ character, editable, equippedBuild, newBuild }}
               />
