@@ -47,7 +47,7 @@ export default class ArtifactEditor extends React.Component {
     let saveArtifact = deepClone(this.state)
     if (saveArtifact.artifactToEdit)
       delete saveArtifact.artifactToEdit;
-    this.props.addArtifact && this.props.addArtifact(saveArtifact)
+    this.props.addArtifact?.(saveArtifact)
     this.setState(ArtifactEditor.getInitialState());
   }
   setSetKey = (setKey) => this.setState(state => {

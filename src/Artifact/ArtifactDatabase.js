@@ -15,8 +15,6 @@ export default class ArtifactDatabase {
   static getArtifactIdList = () => Object.keys(artifactDatabase);
   static populateDatebaseFromLocalStorage = () => {
     if (initiated) return;
-    artIdIndex = parseInt(localStorage.getItem("artifact_highest_id"));
-    if (isNaN(artIdIndex)) artIdIndex = 0;
     Object.keys(localStorage).filter(key => key.includes("artifact_")).forEach(id => {
       if (!artifactDatabase[id]) {
         let art = loadFromLocalStorage(id)
@@ -36,12 +34,13 @@ export default class ArtifactDatabase {
     this.removeArtifactById(art.id);
   }
   static addArtifact = (art) => {
-    if (this.isInvalid(art)) return;
+    if (this.isInvalid(art)) return null;
     //generate id using artIdIndex
     let id = `artifact_${artIdIndex++}`
-    localStorage.setItem("artifact_highest_id", artIdIndex)
-    art.id = id;
+    while (localStorage.getItem(id) !== null) 
+      id = `artifact_${artIdIndex++}`
     let dart = deepClone(art)
+    dart.id = id;
     saveToLocalStorage(id, dart);
     artifactDatabase[id] = dart;
     return id;

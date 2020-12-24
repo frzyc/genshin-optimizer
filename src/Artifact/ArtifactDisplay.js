@@ -41,17 +41,17 @@ export default class ArtifactDisplay extends React.Component {
   }
   forceUpdateArtifactDisplay = () => this.forceUpdate()
 
-  addArtifact = (art) => this.setState(state => {
-    if (state.artToEdit && state.artToEdit.id === art.id) {
+  addArtifact = (art) => {
+    if (this.state.artToEdit && this.state.artToEdit.id === art.id) {
       ArtifactDatabase.updateArtifact(art);
-      return { artToEdit: null }
+      this.setState({ artToEdit: null })
     } else {
       let id = ArtifactDatabase.addArtifact(art)
       if (id === null) return;// some error happened...
       //add the new artifact at the beginning
-      return { artIdList: [id, ...state.artIdList,] }
+      this.setState(state => ({ artIdList: [id, ...state.artIdList,] }))
     }
-  }, this.forceUpdate)
+  }
 
   deleteArtifact = (id) => this.setState((state) => {
     let art = ArtifactDatabase.getArtifact(id);

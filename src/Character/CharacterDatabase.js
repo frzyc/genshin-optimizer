@@ -15,8 +15,6 @@ export default class CharacterDatabase {
   static getCharacterIdList = () => Object.keys(characterDatabase);
   static populateDatebaseFromLocalStorage = () => {
     if (initiated) return;
-    charIdIndex = parseInt(localStorage.getItem("character_highest_id"));
-    if (isNaN(charIdIndex)) charIdIndex = 0;
     Object.keys(localStorage).filter(key => key.includes("character_")).forEach(id => {
       if (!characterDatabase[id]) {
         let character = loadFromLocalStorage(id);
@@ -39,9 +37,10 @@ export default class CharacterDatabase {
     if (this.isInvalid(char)) return;
     //generate id using charIdIndex
     let id = `character_${charIdIndex++}`
-    localStorage.setItem("character_highest_id", charIdIndex)
-    char.id = id;
+    while (localStorage.getItem(id) !== null)
+      id = `character_${charIdIndex++}`
     let dchar = deepClone(char)
+    dchar.id = id;
     saveToLocalStorage(id, dchar);
     characterDatabase[id] = dchar;
     return id;
