@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/genshin-optimizer/static/css/main.70fcd4be.chunk.css",
-    "main.js": "/genshin-optimizer/static/js/main.bec932a1.chunk.js",
-    "main.js.map": "/genshin-optimizer/static/js/main.bec932a1.chunk.js.map",
+    "main.js": "/genshin-optimizer/static/js/main.d74f04dc.chunk.js",
+    "main.js.map": "/genshin-optimizer/static/js/main.d74f04dc.chunk.js.map",
     "runtime-main.js": "/genshin-optimizer/static/js/runtime-main.9a0be2f2.js",
     "runtime-main.js.map": "/genshin-optimizer/static/js/runtime-main.9a0be2f2.js.map",
     "static/js/2.5edf75c6.chunk.js": "/genshin-optimizer/static/js/2.5edf75c6.chunk.js",
@@ -12,9 +12,9 @@
     "index.html": "/genshin-optimizer/index.html",
     "static/css/main.70fcd4be.chunk.css.map": "/genshin-optimizer/static/css/main.70fcd4be.chunk.css.map",
     "static/js/2.5edf75c6.chunk.js.LICENSE.txt": "/genshin-optimizer/static/js/2.5edf75c6.chunk.js.LICENSE.txt",
-    "static/js/BuildWorker.453b1a75.worker.js": "/genshin-optimizer/static/js/BuildWorker.453b1a75.worker.js",
-    "static/js/BuildWorker.453b1a75.worker.js.LICENSE.txt": "/genshin-optimizer/static/js/BuildWorker.453b1a75.worker.js.LICENSE.txt",
-    "static/js/BuildWorker.453b1a75.worker.js.map": "/genshin-optimizer/static/js/BuildWorker.453b1a75.worker.js.map",
+    "static/js/BuildWorker.7fe9a451.worker.js": "/genshin-optimizer/static/js/BuildWorker.7fe9a451.worker.js",
+    "static/js/BuildWorker.7fe9a451.worker.js.LICENSE.txt": "/genshin-optimizer/static/js/BuildWorker.7fe9a451.worker.js.LICENSE.txt",
+    "static/js/BuildWorker.7fe9a451.worker.js.map": "/genshin-optimizer/static/js/BuildWorker.7fe9a451.worker.js.map",
     "static/media/Character_Amber_Card.d17ffc29.jpg": "/genshin-optimizer/static/media/Character_Amber_Card.d17ffc29.jpg",
     "static/media/Character_Barbara_Card.7acacdaa.jpg": "/genshin-optimizer/static/media/Character_Barbara_Card.7acacdaa.jpg",
     "static/media/Character_Beidou_Card.fe206e42.jpg": "/genshin-optimizer/static/media/Character_Beidou_Card.fe206e42.jpg",
@@ -348,6 +348,7 @@
     "static/media/Weapon_Dull_Blade.f5de06e8.png": "/genshin-optimizer/static/media/Weapon_Dull_Blade.f5de06e8.png",
     "static/media/Weapon_Ebony_Bow.f89cc3cc.png": "/genshin-optimizer/static/media/Weapon_Ebony_Bow.f89cc3cc.png",
     "static/media/Weapon_Emerald_Orb.4008f986.png": "/genshin-optimizer/static/media/Weapon_Emerald_Orb.4008f986.png",
+    "static/media/Weapon_Eye_of_Perception.907a0288.png": "/genshin-optimizer/static/media/Weapon_Eye_of_Perception.907a0288.png",
     "static/media/Weapon_Favonius_Codex.6e201cfa.png": "/genshin-optimizer/static/media/Weapon_Favonius_Codex.6e201cfa.png",
     "static/media/Weapon_Favonius_Greatsword.bfd288be.png": "/genshin-optimizer/static/media/Weapon_Favonius_Greatsword.bfd288be.png",
     "static/media/Weapon_Favonius_Lance.693335d4.png": "/genshin-optimizer/static/media/Weapon_Favonius_Lance.693335d4.png",
@@ -439,6 +440,6 @@
     "static/js/runtime-main.9a0be2f2.js",
     "static/js/2.5edf75c6.chunk.js",
     "static/css/main.70fcd4be.chunk.css",
-    "static/js/main.bec932a1.chunk.js"
+    "static/js/main.d74f04dc.chunk.js"
   ]
 }
