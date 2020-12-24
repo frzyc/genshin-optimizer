@@ -495,11 +495,11 @@ const ArtifactSetsData = {
   },
   "Traveling Doctor": {
     name: "Traveling Doctor", rarity: [3], pieces: {
-      flower: "Traveling Doctor's Medicine Pot",
-      plume: "Traveling Doctor's Handkerchief",
+      flower: "Traveling Doctor's Silver Lotus",
+      plume: "Traveling Doctor's Owl Feather",
       sands: "Traveling Doctor's Pocket Watch",
-      goblet: "Traveling Doctor's Silver Lotus",
-      circlet: "Traveling Doctor's Owl Feather"
+      goblet: "Traveling Doctor's Medicine Pot",
+      circlet: "Traveling Doctor's Handkerchief Crown"
     },
     sets: {
       2: {

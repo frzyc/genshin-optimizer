@@ -15,6 +15,7 @@ import SacrificialFragments from './Weapon_Sacrificial_Fragments.png'
 import SolarPearl from './Weapon_Solar_Pearl.png'
 import TheWidsith from './Weapon_The_Widsith.png'
 import WineAndSong from './Weapon_Wine_and_Song.png'
+import EyeOfPerception from './Weapon_Eye_of_Perception.png'
 import Frostbearer from './Weapon_Frostbearer.png'
 import LostPrayerToTheSacredWinds from './Weapon_Lost_Prayer_to_the_Sacred_Winds.png'
 import SkywardAtlas from './Weapon_Skyward_Atlas.png'
@@ -37,6 +38,7 @@ const catalysts = {
   SolarPearl,
   TheWidsith,
   WineAndSong,
+  EyeOfPerception,
   Frostbearer,
   LostPrayerToTheSacredWinds,
   SkywardAtlas,

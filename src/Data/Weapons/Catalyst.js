@@ -15,6 +15,7 @@ import SacrificialFragments from './Catalyst/SacrificialFragments'
 import SolarPearl from './Catalyst/SolarPearl'
 import TheWidsith from './Catalyst/TheWidsith'
 import WineAndSong from './Catalyst/WineAndSong'
+import EyeOfPerception from './Catalyst/EyeOfPerception'
 import Frostbearer from './Catalyst/Frostbearer'
 import LostPrayerToTheSacredWinds from './Catalyst/LostPrayerToTheSacredWinds'
 import SkywardAtlas from './Catalyst/SkywardAtlas'
@@ -37,6 +38,7 @@ const catalyst = {
   SolarPearl,
   TheWidsith,
   WineAndSong,
+  EyeOfPerception,
   Frostbearer,
   LostPrayerToTheSacredWinds,
   SkywardAtlas,
