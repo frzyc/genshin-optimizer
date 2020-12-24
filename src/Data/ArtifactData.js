@@ -74,7 +74,43 @@ const ArtifactSlotsData = {
   circlet: { name: "Circlet of Logos", stats: ["hp_", "def_", "atk_", "ele_mas", "crit_rate", "crit_dmg", "heal_bonu"] },
 };
 const ArtifactSetsData = {
-  "Wanderer's Troupe": {
+  "HeartOfDepth": {
+    name: "Heart of Depth", rarity: [4, 5], pieces: {
+      flower: "Gilded Corsage",
+      plume: "Gust of Nostalgia",
+      sands: "Copper Compass",
+      goblet: "Goblet of Thundering Deep",
+      circlet: "Wine-Stained Tricorne"
+    },
+    sets: {
+      2: {
+        text: "Hydro DMG Bonus +15%",
+        stats: { hydro_ele_dmg: 15 }
+      },
+      4: {
+        text: "After using Elemental Skill, increases Normal Attack and Charged Attack DMG by 30% for 15s",
+        stats: {}
+      }
+    }
+  }, "BlizzardStrayer": {
+    name: "Blizzard Strayer", rarity: [4, 5], pieces: {
+      flower: "Snowswept Memory",
+      plume: "Icebreaker's Resolve",
+      sands: "Frozen Homeland's Demise",
+      goblet: "Frost-Weaved Dignity",
+      circlet: "Broken Rime's Echo"
+    },
+    sets: {
+      2: {
+        text: "Cryo DMG Bonus +15%",
+        stats: { cryo_ele_dmg: 15 }
+      },
+      4: {
+        text: "When a character attacks an enemy affected by Cryo, their CRIT Rate is increased by 20%. If the enemy is Frozen, CRIT Rate is increased by an additional 20%",
+        stats: {}
+      }
+    }
+  }, "Wanderer's Troupe": {
     name: "Wanderer's Troupe", rarity: [4, 5], pieces: {
       flower: "Troupe's Dawnlight",
       plume: "Bard's Arrow Feather",
