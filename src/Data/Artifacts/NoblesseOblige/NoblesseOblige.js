@@ -1,0 +1,33 @@
+import flower from './Item_Royal_Flora.png'
+import plume from './Item_Royal_Plume.png'
+import sands from './Item_Royal_Pocket_Watch.png'
+import goblet from './Item_Royal_Silver_Urn.png'
+import circlet from './Item_Royal_Masque.png'
+let artifact = {
+  name: "Noblesse Oblige", rarity: [4, 5], 
+  pieces: {
+    flower: "Royal Flora",
+    plume: "Royal Plume",
+    sands: "Royal Pocket Watch",
+    goblet: "Royal Silver Urn",
+    circlet: "Royal Masque"
+  },
+  icons: {
+    flower,
+    plume,
+    sands,
+    goblet,
+    circlet
+  },
+  sets: {
+    2: {
+      text: "Elemental Burst DMG +20%",
+      stats: { burst_dmg: 20 }
+    },
+    4: {
+      text: "Using an Elemental Burst increase all party members' ATK by 20% for 12s. This effect cannot stack.",
+      stats: {}
+    }
+  }
+}
+export default artifact

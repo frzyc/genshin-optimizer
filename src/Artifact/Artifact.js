@@ -17,14 +17,12 @@ export default class Artifact {
   }
 
   //SETS
-  static getArtifactSetName = (key, defVal = "") =>
-    key ? ArtifactSetsData[key].name : defVal;
+  static getArtifactSetName = (key, defVal = "") => ArtifactSetsData?.[key]?.name || defVal;
   static getArtifactSetsByMaxStarEntries = (star) =>
     Object.entries(ArtifactSetsData).filter(([key, setobj]) => setobj.rarity[(setobj.rarity.length) - 1] === star)
-  static getArtifactPieceName = (state) =>
-    (state.setKey && state.slotKey && ArtifactSetsData[state.setKey].pieces) ?
-      ArtifactSetsData[state.setKey].pieces[state.slotKey] : "Piece Name";
-
+  static getArtifactPieceName = (setKey, slotKey, defVal = "") => ArtifactSetsData?.[setKey]?.pieces?.[slotKey] || defVal;
+  static getArtifactPieceIcon = (setKey, slotKey, defVal = null) => ArtifactSetsData?.[setKey]?.icons?.[slotKey] || defVal;
+  static getArtifactSetEffectsObj = (setKey, defVal = null) => ArtifactSetsData?.[setKey]?.sets || defVal
   //SLOT
   static getArtifactSlotKeys = () => Object.keys(ArtifactSlotsData)
   static getArtifactSlotName = (slotKey, defVal = "") =>
@@ -80,7 +78,7 @@ export default class Artifact {
         if (arr.length > maxNumRoll) return;
         let sum = arr.reduce((accu, v) => accu + v, 0)
         if (float) {
-          if (sum - val > 0.1) return
+          if (sum - val >= 0.101) return
           if (closeEnoughFloat(sum, val)) {
             roll = arr;
             return;
@@ -155,14 +153,14 @@ export default class Artifact {
         Object.entries(ArtifactSetsData[setKey].sets).forEach(([num, value]) => {
           if (parseInt(num) <= numArts) {
             !artifactSetEffect[setKey] && (artifactSetEffect[setKey] = {})
-            artifactSetEffect[setKey][num] = value;
+            artifactSetEffect[setKey][num] = deepClone(value);
           }
         })
       }
     })
     return artifactSetEffect
   }
-  static getArtifactSetEffectsObj = (conditionals) => {
+  static getAllArtifactSetEffectsObj = (conditionals) => {
     let ArtifactSetEffectsObj = {};
     Object.entries(ArtifactSetsData).forEach(([key, setObj]) => {
       let setEffect = {}

@@ -23,7 +23,7 @@ const deepClone = (obj) =>
   JSON.parse(JSON.stringify(obj))
 
 const closeEnoughFloat = (a, b) =>
-  Math.abs(a - b) < 0.1
+  Math.abs(a - b) <= 0.101
 
 const closeEnoughInt = (a, b) =>
   Math.abs(a - b) <= 1
@@ -32,7 +32,7 @@ const clamp = (val, low, high) => {
   if (val > high) return high;
   return val
 }
-const getArrLastElement = (arr) => 
+const getArrLastElement = (arr) =>
   arr.length ? arr[arr.length - 1] : null
 
 const clamp01 = (val) => clamp(val, 0, 1)

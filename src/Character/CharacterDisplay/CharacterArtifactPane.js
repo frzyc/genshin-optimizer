@@ -92,7 +92,7 @@ function CharacterArtifactPane(props) {
     <Row>
       <Col>
         <Row>
-          <Col sm={6} className="mb-3">
+          <Col sm={6} lg={4} className="mb-3">
             <Row className="h-100">
               <Col xs={12} className="d-flex flex-column">
                 <Card className="flex-grow-1" bg="lightcontent" text="lightfont">
@@ -116,7 +116,7 @@ function CharacterArtifactPane(props) {
             </Row>
           </Col>
           {Object.values(build.artifactIds).map(artid =>
-            artid ? <Col sm={6} key={artid} className="mb-3 testname">
+            artid ? <Col sm={6} lg={4} key={artid} className="mb-3 testname">
               <ArtifactCard artifactId={artid} forceUpdate={forceUpdate} />
             </Col> : null
           )}

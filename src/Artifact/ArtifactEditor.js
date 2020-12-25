@@ -84,11 +84,11 @@ export default class ArtifactEditor extends React.Component {
   ArtifactDropDown = (props) => {
     let dropdownitemsForStar = (star) =>
       Artifact.getArtifactSetsByMaxStarEntries(star).map(([key, setobj]) =>
-        (<Dropdown.Item key={key}
-          onClick={() => this.setSetKey(key)}
-        >
-          {setobj.name}
-        </Dropdown.Item >))
+      (<Dropdown.Item key={key}
+        onClick={() => this.setSetKey(key)}
+      >
+        {setobj.name}
+      </Dropdown.Item >))
 
     return (<DropdownButton as={InputGroup.Prepend} title={Artifact.getArtifactSetName(this.state.setKey, "Artifact Set")}>
       <Dropdown.ItemText>Max Rarity <Stars stars={5} /></Dropdown.ItemText>
@@ -145,7 +145,7 @@ export default class ArtifactEditor extends React.Component {
           </Dropdown.Item>)}
       </DropdownButton>
       <FormControl
-        value={Artifact.getArtifactPieceName(this.state)}
+        value={Artifact.getArtifactPieceName(this.state.setKey, this.state.slotKey, "Unknown Piece Name")}
         disabled
         readOnly
       />

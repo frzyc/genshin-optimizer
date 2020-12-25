@@ -64,11 +64,17 @@ export default class ArtifactDisplay extends React.Component {
   });
 
   editArtifact = (id) =>
-    this.setState({ artToEdit: ArtifactDatabase.getArtifact(id) }, this.forceUpdate)
+    this.setState({ artToEdit: ArtifactDatabase.getArtifact(id) }, () => {
+      this.scrollRef.current.scrollIntoView({ behavior: "smooth" })
+      this.forceUpdate()
+    })
 
   cancelEditArtifact = () =>
     this.setState({ artToEdit: null }, this.forceUpdate)
 
+  componentDidMount() {
+    this.scrollRef = React.createRef()
+  }
   render() {
     let artifacts = this.state.artIdList.map(artid => ArtifactDatabase.getArtifact(artid)).filter((art) => {
       if (this.state.filterArtSetKey && this.state.filterArtSetKey !== art.setKey) return false;
@@ -81,15 +87,15 @@ export default class ArtifactDisplay extends React.Component {
       return true
     })
     let MainStatDropDownItem = (props) =>
-      (<Dropdown.Item key={props.statKey} onClick={() => this.setState({ filterMainStatKey: props.statKey })} >
-        {Stat.getStatNameWithPercent(props.statKey)}
-      </Dropdown.Item>)
+    (<Dropdown.Item key={props.statKey} onClick={() => this.setState({ filterMainStatKey: props.statKey })} >
+      {Stat.getStatNameWithPercent(props.statKey)}
+    </Dropdown.Item>)
     let dropdownitemsForStar = (star) =>
       Artifact.getArtifactSetsByMaxStarEntries(star).map(([key, setobj]) =>
         <Dropdown.Item key={key} onClick={() => this.setState({ filterArtSetKey: key })}>
           {setobj.name}
         </Dropdown.Item >)
-    return (<Container className="mt-2">
+    return (<Container className="mt-2" ref={this.scrollRef}>
       <Row className="mb-2 no-gutters"><Col>
         <ArtifactEditor
           artifactToEdit={this.state.artToEdit}

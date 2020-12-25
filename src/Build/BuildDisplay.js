@@ -118,7 +118,7 @@ export default class BuildDisplay extends React.Component {
     let weaponStats = Weapon.createWeaponBundle(character)
     let initialStats = Character.calculateCharacterWithWeaponStats(character, weaponStats)
 
-    let artifactSetEffects = Artifact.getArtifactSetEffectsObj()
+    let artifactSetEffects = Artifact.getAllArtifactSetEffectsObj()
     let splitArtifacts = deepClone(split)
     //add mainStatVal to each artifact, TODO add main stat assuming fully leveled up
     Object.values(splitArtifacts).forEach(artArr => {
@@ -185,7 +185,7 @@ export default class BuildDisplay extends React.Component {
               <div className="mb-2" key={index}>
                 <ButtonGroup>
                   {/* Artifact set */}
-                  <DropdownButton as={ButtonGroup} title={setFilter.key ? ArtifactSetsData[setFilter.key].name : "Set (Optional)"} >
+                  <DropdownButton as={ButtonGroup} title={Artifact.getArtifactSetName(setFilter.key, "Set (Optional)")} >
                     <Dropdown.Item onClick={() => this.changeSetFilterKey(index, "")}>
                       Unselect Artifact
                   </Dropdown.Item>
@@ -202,7 +202,7 @@ export default class BuildDisplay extends React.Component {
                   <DropdownButton as={ButtonGroup} title={`${setFilter.num}-set`}
                     disabled={!setFilter.key || artsAccounted >= 5}
                   >
-                    {setFilter.key && Object.keys(ArtifactSetsData[setFilter.key].sets).map(num => {
+                    {setFilter.key && Artifact.getArtifactSetEffectsObj(setFilter.key) && Object.keys(Artifact.getArtifactSetEffectsObj(setFilter.key)).map(num => {
                       let artsAccountedOther = this.state.setFilters.reduce((accu, cur) => (cur.key && cur.key !== setFilter.key) ? accu + cur.num : accu, 0)
                       return (parseInt(num) + artsAccountedOther <= 5) &&
                         (<Dropdown.Item key={num}
