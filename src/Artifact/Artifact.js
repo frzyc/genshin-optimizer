@@ -4,7 +4,8 @@ import CharacterDatabase from '../Character/CharacterDatabase';
 import SlotIcon from '../Components/SlotIcon';
 import { ArtifactMainSlotKeys, ArtifactMainStatsData, ArtifactSetsData, ArtifactSlotsData, ArtifactStarsData, ArtifactSubStatsData } from '../Data/ArtifactData';
 import Stat from '../Stat';
-import { clampPercent, closeEnoughFloat, closeEnoughInt } from '../Util';
+import { clampPercent, closeEnoughFloat, closeEnoughInt, deepClone } from '../Util';
+import ArtifactBase from './ArtifactBase';
 import ArtifactDatabase from './ArtifactDatabase';
 
 export default class Artifact {
@@ -145,15 +146,7 @@ export default class Artifact {
     return { valid: true, substateValidation, currentNumOfRolls, rollsRemaining, totalPossbleUpgrade: totalPossbleRolls, currentEfficiency, maximumEfficiency }
   }
 
-  static setToSlots = (artifacts) => {
-    let setToSlots = {};
-    Object.entries(artifacts).forEach(([key, art]) => {
-      if (!art) return
-      if (setToSlots[art.setKey]) setToSlots[art.setKey].push(key)
-      else setToSlots[art.setKey] = [key]
-    })
-    return setToSlots //{setKey:[slotKey...]}
-  }
+  static setToSlots = ArtifactBase.setToSlots;
   static getArtifactSetEffects = (setToSlots) => {
     let artifactSetEffect = {}
     Object.entries(setToSlots).forEach(([setKey, arr]) => {
@@ -169,21 +162,23 @@ export default class Artifact {
     })
     return artifactSetEffect
   }
-  static calculateArtifactStats = (artifacts, artifactSetEffect) => {
-    //the initial onject, with all the values set to 0.
-    let initialObj = Object.fromEntries(Stat.getAllStatKey().map(key => [key, 0]))
-    let totalArtifactStats = Object.values(artifacts).reduce((accu, art) => {
-      if (!art) return accu
-      accu[art.mainStatKey] = (accu[art.mainStatKey] || 0) + Artifact.getMainStatValue(art.mainStatKey, art.numStars, art.level);
-      art.substats.forEach((substat) => substat && substat.key && (accu[substat.key] = (accu[substat.key] || 0) + substat.value))
-      return accu
-    }, initialObj)
-    Object.values(artifactSetEffect).forEach(setEffects =>
-      Object.values(setEffects).forEach(setEffect =>
-        setEffect.stats && Object.entries(setEffect.stats).forEach(([key, statVal]) =>
-          totalArtifactStats[key] = (totalArtifactStats[key] || 0) + statVal
-        )))
-    return totalArtifactStats
+  static getArtifactSetEffectsObj = (conditionals) => {
+    let ArtifactSetEffectsObj = {};
+    Object.entries(ArtifactSetsData).forEach(([key, setObj]) => {
+      let setEffect = {}
+      let hasSetEffect = false
+      if (setObj.sets)
+        Object.entries(setObj.sets).forEach(([setNumKey, setEffectObj]) => {
+          //TODO conditionals
+          if (setEffectObj.stats && Object.keys(setEffectObj.stats).length > 0) {
+            setEffect[setNumKey] = deepClone(setEffectObj.stats)
+            hasSetEffect = true
+          }
+        })
+      if (hasSetEffect)
+        ArtifactSetEffectsObj[key] = setEffect;
+    })
+    return ArtifactSetEffectsObj
   }
 
   //database manipulation

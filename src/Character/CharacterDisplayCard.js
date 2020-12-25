@@ -130,11 +130,7 @@ export default class CharacterDisplayCard extends React.Component {
     let character = this.state
     let { characterKey, equippedArtifacts, levelKey, compareAgainstEquipped } = this.state
     let equippedArtifactsObjs = Object.fromEntries(Object.entries(equippedArtifacts).map(([key, artid]) => [key, ArtifactDatabase.getArtifact(artid)]))
-    let equippedBuild = Character.calculateBuildWithObjs(this.state, equippedArtifactsObjs, Weapon.createWeaponBundle(this.state))
-    //TODO refresh the values? don't think the character will change... this will be here if it does somehow(by adding conditional buffs and stuff)
-    // if (newBuild) { 
-    //   newBuild = Character.calculateBuild
-    // }
+    let equippedBuild = Character.calculateBuild(this.state, equippedArtifactsObjs)
     let HeaderIconDisplay = <span >
       <Image src={Character.getThumb(characterKey)} className="thumb-small my-n1 ml-n2" roundedCircle />
       <h6 className="d-inline"> {Character.getName(characterKey)} </h6>

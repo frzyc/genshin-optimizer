@@ -23,7 +23,7 @@ export default function CharacterCard(props) {
   let weaponTypeKey = Character.getWeaponTypeKey(characterKey)
   let character = CharacterDatabase.getCharacter(id)
   let artifacts = Object.fromEntries(Object.entries(equippedArtifacts).map(([key, artid]) => [key, ArtifactDatabase.getArtifact(artid)]))
-  let build = Character.calculateBuildWithObjs(character, artifacts, Weapon.createWeaponBundle(character))
+  let build = Character.calculateBuild(character, artifacts)
   let { artifactSetEffect } = build
   const statIcon = {
     hp: faTint,

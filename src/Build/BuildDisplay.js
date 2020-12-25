@@ -113,13 +113,23 @@ export default class BuildDisplay extends React.Component {
 
   generateBuilds = (split, artifactSetPerms) => {
     this.setState({ generatingBuilds: true, builds: [] })
+    let { setFilters, asending, buildFilterKey, maxBuildsToShow } = this.state
     let character = CharacterDatabase.getCharacter(this.state.selectedCharacterId)
-    let data = {
-      split, artifactSetPerms, character, weaponStats: Weapon.createWeaponBundle(character),
-      setFilters: this.state.setFilters,
-      maxBuildsToShow: this.state.maxBuildsToShow,
-      buildFilterKey: this.state.buildFilterKey, asending: this.state.asending,
+    let weaponStats = Weapon.createWeaponBundle(character)
+    let initialStats = Character.calculateCharacterWithWeaponStats(character, weaponStats)
 
+    let artifactSetEffects = Artifact.getArtifactSetEffectsObj()
+    let splitArtifacts = deepClone(split)
+    //add mainStatVal to each artifact, TODO add main stat assuming fully leveled up
+    Object.values(splitArtifacts).forEach(artArr => {
+      artArr.forEach(art => {
+        art.mainStatVal = Artifact.getMainStatValue(art.mainStatKey, art.numStars, art.level);
+      })
+    })
+    //create an obj with app the artifact set effects to pass to buildworker.
+    let data = {
+      splitArtifacts, artifactSetPerms, initialStats, artifactSetEffects,
+      setFilters, maxBuildsToShow, buildFilterKey, asending,
     }
 
     let worker = new Worker();
@@ -130,7 +140,9 @@ export default class BuildDisplay extends React.Component {
         value: e.data.timing,
         label: Build.calculateTotalBuildNumber(split, artifactSetPerms, this.state.setFilters)
       })
-      this.setState({ builds: e.data.builds, generatingBuilds: false })
+      let builds = e.data.builds.map(obj =>
+        Character.calculateBuildWithObjs(initialStats, obj.artifacts))
+      this.setState({ builds, generatingBuilds: false })
     }
 
     worker.postMessage(data)
@@ -211,21 +223,21 @@ export default class BuildDisplay extends React.Component {
           <Col>
             <h5>Artifact Main Stat (Optional)</h5>
             {BuildDisplay.artifactsSlotsToSelectMainStats.map((slotKey, index) =>
-              (<div className="text-inline mb-1 d-flex justify-content-between" key={slotKey}>
-                <h6 className="d-inline mr-2">
-                  {Artifact.getArtifactSlotNameWithIcon(slotKey)}
-                </h6>
-                <DropdownButton
-                  title={this.state.mainStat[index] ? Stat.getStatNameWithPercent(this.state.mainStat[index]) : "Select a mainstat"}
-                  className="d-inline">
-                  <Dropdown.Item onClick={() => this.changeMainStat(index, "")} >No MainStat</Dropdown.Item>
-                  {ArtifactSlotsData[slotKey].stats.map(mainStatKey =>
-                    <Dropdown.Item onClick={() => this.changeMainStat(index, mainStatKey)} key={mainStatKey}>
-                      {Stat.getStatNameWithPercent(mainStatKey)}
-                    </Dropdown.Item>
-                  )}
-                </DropdownButton>
-              </div>))}
+            (<div className="text-inline mb-1 d-flex justify-content-between" key={slotKey}>
+              <h6 className="d-inline mr-2">
+                {Artifact.getArtifactSlotNameWithIcon(slotKey)}
+              </h6>
+              <DropdownButton
+                title={this.state.mainStat[index] ? Stat.getStatNameWithPercent(this.state.mainStat[index]) : "Select a mainstat"}
+                className="d-inline">
+                <Dropdown.Item onClick={() => this.changeMainStat(index, "")} >No MainStat</Dropdown.Item>
+                {ArtifactSlotsData[slotKey].stats.map(mainStatKey =>
+                  <Dropdown.Item onClick={() => this.changeMainStat(index, mainStatKey)} key={mainStatKey}>
+                    {Stat.getStatNameWithPercent(mainStatKey)}
+                  </Dropdown.Item>
+                )}
+              </DropdownButton>
+            </div>))}
           </Col>
         </Row>
         <Row className="d-flex justify-content-between mb-2">

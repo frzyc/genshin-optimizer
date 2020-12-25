@@ -1,7 +1,10 @@
 import Artifact from "../Artifact/Artifact";
 import ArtifactDatabase from "../Artifact/ArtifactDatabase";
 import Assets from "../Assets/Assets";
-import { LevelsData, CharacterData, characterStatBase, ElementalData } from "../Data/CharacterData";
+import { CharacterData, characterStatBase, ElementalData, LevelsData } from "../Data/CharacterData";
+import Stat from "../Stat";
+import { deepClone } from "../Util";
+import Weapon from "../Weapon/Weapon";
 import CharacterDatabase from "./CharacterDatabase";
 
 export default class Character {
@@ -93,61 +96,83 @@ export default class Character {
     CharacterDatabase.removeCharacterById(characterId)
   }
 
-  //GENERAL
-  static calculateCharacterFinalStat = (totalBonusStats, character, weapon) => {
-    //add weapon substats
-    if (weapon.subKey) totalBonusStats[weapon.subKey] = (totalBonusStats[weapon.subKey] || 0) + weapon.subVal
-    //Add any weapon bonus Stats
-    if (weapon.bonusStats) Object.entries(weapon.bonusStats).forEach(([key, val]) =>
-      totalBonusStats[key] = (totalBonusStats[key] || 0) + val)
-    //Add weapon conditional
-    if (weapon.conditionalStats) Object.entries(weapon.conditionalStats).forEach(([key, val]) =>
-      totalBonusStats[key] = (totalBonusStats[key] || 0) + val)
-    const flatAndPercentStat = (flatStatKey, percentStatkey) => {
-      let base = this.getStatValueWithOverride(character, flatStatKey)
-      if (flatStatKey === "atk") base += weapon.mainAtkValue
-      let percent = (totalBonusStats?.[percentStatkey] || 0)
-      let flat = (totalBonusStats?.[flatStatKey] || 0)
-      return base * (1 + percent / 100) + flat
-    }
-    const flatStat = (statKey) => {
-      let base = this.getStatValueWithOverride(character, statKey)
-      let flat = (totalBonusStats?.[statKey] || 0)
-      return base + flat
-    }
-    let finalStat = Object.fromEntries(Object.entries(totalBonusStats).map(([key, val]) => {
-      if (key === "hp_" || key === "def_" || key === "atk_") return null;
-      if (key === "hp" || key === "def" || key === "atk")
-        return [key, flatAndPercentStat(key, key + "_")]
-      return [key, flatStat(key)]
-    }).filter(v => v))
-    let eleKey = this.getElementalKey(character.characterKey)
-    let crit_multi = (1 + (finalStat.crit_rate / 100) * (1 + finalStat.crit_dmg / 100))
-    finalStat.crit_multi = crit_multi
-    finalStat.phy_atk = finalStat.atk * (1 + finalStat.phy_dmg / 100) * crit_multi
-    finalStat[`${eleKey}_ele_atk`] = finalStat.atk * (1 + finalStat[`${eleKey}_ele_dmg`] / 100) * crit_multi
-    return finalStat
+  static calculateBuild = (character, artifacts) => {
+    let weaponStats = Weapon.createWeaponBundle(character)
+    let initialStats = Character.calculateCharacterWithWeaponStats(character, weaponStats)
+    return this.calculateBuildWithObjs(initialStats, artifacts)
   }
   //buildworker doesn't have access to the database, so we need to feed in the objs
-  static calculateBuildWithObjs = (character, artifacts, weaponStats) => {
-    if (!character) return
+  static calculateBuildWithObjs = (charAndWeapon, artifacts) => {
     let setToSlots = Artifact.setToSlots(artifacts)
     let artifactSetEffect = Artifact.getArtifactSetEffects(setToSlots)
-    let totalBonusStats = Artifact.calculateArtifactStats(artifacts, artifactSetEffect)
+
+    let stats = deepClone(charAndWeapon)
+    //add artifact and artifactsets
+    Object.values(artifacts).forEach(art => {
+      if (!art) return
+      //main stats
+      stats[art.mainStatKey] = (stats[art.mainStatKey] || 0) + Artifact.getMainStatValue(art.mainStatKey, art.numStars, art.level)
+      //substats
+      art.substats.forEach((substat) =>
+        substat && substat.key && (stats[substat.key] = (stats[substat.key] || 0) + substat.value))
+    })
+    //setEffects
+    Object.values(artifactSetEffect).forEach(setEffects =>
+      Object.values(setEffects).forEach(setEffect =>
+        setEffect.stats && Object.entries(setEffect.stats).forEach(([key, statVal]) =>
+          stats[key] = (stats[key] || 0) + statVal)))
+
+    let arrKey = ["hp", "def", "atk"]
+    arrKey.forEach(key => {
+      let base = stats[`base_${key}`] || 0
+      let percent = stats[key + '_'] || 0
+      let flat = stats[key] || 0
+      stats[key] = base * (1 + percent / 100) + flat
+
+    })
+    stats.crit_multi = (1 + (stats.crit_rate / 100) * (1 + stats.crit_dmg / 100))
+
+    stats.phy_atk = stats.atk * (1 + stats.phy_dmg / 100) * stats.crit_multi
+    this.getElementalKeys().forEach(eleKey => {
+      stats[`${eleKey}_ele_atk`] = stats.atk * (1 + stats[`${eleKey}_ele_dmg`] / 100) * stats.crit_multi
+    })
+
+    return {
+      artifactIds: Object.fromEntries(Object.entries(artifacts).map(([key, val]) => [key, val?.id])),
+      artifactSetEffect,
+      setToSlots,
+      finalStats: stats
+    }
+  }
+  static calculateCharacterWithWeaponStats = (character, weaponStats) => {
+    let statKeys = Stat.getAllStatKey()
+    let initialStats = Object.fromEntries(statKeys.map(key => {
+      if (key === "hp" || key === "def" || key === "atk")
+        return ["base_" + key, this.getStatValueWithOverride(character, key)]
+      else
+        return [key, this.getStatValueWithOverride(character, key)]
+    }))
 
     //add specialized stat
     let specialStatKey = Character.getStatValueWithOverride(character, "specializedStatKey")
     if (specialStatKey) {
       let specializedStatVal = Character.getStatValueWithOverride(character, "specializedStatVal")
-      totalBonusStats[specialStatKey] = (totalBonusStats[specialStatKey] || 0) + specializedStatVal
+      initialStats[specialStatKey] = (initialStats[specialStatKey] || 0) + specializedStatVal
     }
-    let artifactIds = Object.fromEntries(Object.entries(artifacts).map(([key, val]) => [key, val?.id]))
-    return {
-      artifactIds,
-      totalArtifactStats: totalBonusStats,
-      artifactSetEffect,
-      setToSlots,
-      finalStats: Character.calculateCharacterFinalStat(totalBonusStats, character, weaponStats)
-    }
+
+    //add weapon base to initialStats
+    initialStats.base_atk += weaponStats.mainAtkValue
+    //add subStat
+    if (weaponStats.subKey)
+      initialStats[weaponStats.subKey] = (initialStats[weaponStats.subKey] || 0) + weaponStats.subVal
+
+    //add passive/conditional
+    if (weaponStats.bonusStats) Object.entries(weaponStats.bonusStats).forEach(([key, val]) =>
+      initialStats[key] = (initialStats[key] || 0) + val)
+    //Add weapon conditional
+    if (weaponStats.conditionalStats) Object.entries(weaponStats.conditionalStats).forEach(([key, val]) =>
+      initialStats[key] = (initialStats[key] || 0) + val)
+    return initialStats
   }
+
 }
