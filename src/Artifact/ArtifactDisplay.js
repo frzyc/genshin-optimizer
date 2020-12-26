@@ -22,12 +22,11 @@ import ReactGA from 'react-ga';
 export default class ArtifactDisplay extends React.Component {
   constructor(props) {
     super(props)
-    DatabaseInitAndVerify();
     this.state = {
-      artIdList: [...ArtifactDatabase.getArtifactIdList()],
+      artIdList: [],
       artToEdit: null,
+      ...ArtifactDisplay.initialFilter
     }
-    this.state = { ...this.state, ...ArtifactDisplay.initialFilter }
     ReactGA.pageview('/artifact')
   }
   static initialFilter = {
@@ -74,6 +73,8 @@ export default class ArtifactDisplay extends React.Component {
 
   componentDidMount() {
     this.scrollRef = React.createRef()
+    DatabaseInitAndVerify();
+    this.setState({ artIdList: ArtifactDatabase.getArtifactIdList() })
   }
   render() {
     let artifacts = this.state.artIdList.map(artid => ArtifactDatabase.getArtifact(artid)).filter((art) => {

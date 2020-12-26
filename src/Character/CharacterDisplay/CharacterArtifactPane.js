@@ -14,15 +14,16 @@ function CharacterArtifactPane(props) {
   //choose which one to display stats for
   let build = newBuild ? newBuild : equippedBuild
   let eleKey = Character.getElementalKey(characterKey)
-  const statKeys = ["hp", "atk", "def", "ele_mas", "crit_rate", "crit_dmg", "ener_rech", "heal_bonu", "phy_dmg", "phy_atk",]
+  const statKeys = ["hp", "atk", "def", "ele_mas", "crit_rate", "crit_dmg", "crit_multi", "ener_rech", "heal_bonu", "phy_dmg", "phy_atk",]
   statKeys.push(`${eleKey}_ele_dmg`)
   statKeys.push(`${eleKey}_ele_atk`)
 
-  const otherStatKeys = ["stam", "inc_heal", "pow_shield", "red_cd", "phy_dmg", "phy_res"]
+  let otherStatKeys = ["inc_heal", "pow_shield", "red_cd", "phy_dmg", "phy_res", "norm_atk_dmg", "char_atk_dmg", "skill_dmg", "burst_dmg"]
   Character.getElementalKeys().forEach(ele => {
     otherStatKeys.push(`${ele}_ele_dmg`)
     otherStatKeys.push(`${ele}_ele_res`)
   })
+  otherStatKeys = otherStatKeys.filter(key => !statKeys.includes(key))
 
   const displayStats = (statKey) => {
     let statVal = Character.getStatValueWithOverride(character, statKey)
@@ -93,27 +94,23 @@ function CharacterArtifactPane(props) {
       <Col>
         <Row>
           <Col sm={6} lg={4} className="mb-3">
-            <Row className="h-100">
-              <Col xs={12} className="d-flex flex-column">
-                <Card className="flex-grow-1" bg="lightcontent" text="lightfont">
-                  <Card.Header>Artifact Set Effects</Card.Header>
-                  <Card.Body>
-                    <Row>
-                      {Object.entries(build.artifactSetEffect).map(([setKey, effects]) =>
-                        <Col key={setKey} xs={12} className="mb-3">
-                          <h5>{Artifact.getArtifactSetName(setKey)}</h5>
-                          <Row>
-                            {Object.entries(effects).map(([num, effect]) => {
-                              return <Col key={num} xs={12}><h6><Badge variant="success">{num}-Set</Badge> <span>{effect.text}</span></h6></Col>
-                            })}
-                          </Row>
-                        </Col>
-                      )}
-                    </Row>
-                  </Card.Body>
-                </Card>
-              </Col >
-            </Row>
+            <Card className="h-100 d-flex flex-column" bg="lightcontent" text="lightfont">
+              <Card.Header>Artifact Set Effects</Card.Header>
+              <Card.Body className="flex-grow-1">
+                <Row>
+                  {Object.entries(build.artifactSetEffect).map(([setKey, effects]) =>
+                    <Col key={setKey} xs={12} className="mb-3">
+                      <h5>{Artifact.getArtifactSetName(setKey)}</h5>
+                      <Row>
+                        {Object.entries(effects).map(([num, effect]) => {
+                          return <Col key={num} xs={12}><h6><Badge variant="success">{num}-Set</Badge> <span>{effect.text}</span></h6></Col>
+                        })}
+                      </Row>
+                    </Col>
+                  )}
+                </Row>
+              </Card.Body>
+            </Card>
           </Col>
           {Object.values(build.artifactIds).map(artid =>
             artid ? <Col sm={6} lg={4} key={artid} className="mb-3 testname">
