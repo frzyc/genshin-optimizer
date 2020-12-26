@@ -5,7 +5,7 @@ const weapon = {
   weaponType: "bow",
   rarity: 5,
   passiveName: "Strong-Willed",
-  passiveDescription: (refineIndex) => `Increases Normal Attack and Aimed Shot DMG by ${refinementVals[refineIndex]}%. Increases DMG from arrows shot by a further ${refinementDmgVals[refineIndex]}% for every 0.1s that the arrow is in flight, up to 0.5s.`,
+  passiveDescription: (refineIndex) => `Increases Normal Attack and Charged Attack DMG by ${refinementVals[refineIndex]}%. Normal and Charged Attack DMG from arrows shot by a further ${refinementDmgVals[refineIndex]}% for every 0.1s that the arrow is in flight, up to 0.5s.`,
   description: "An extremely ancient bow that has retained its power despite its original master being long gone. It draws power from everyone and everything in the world, and the further away you are from that which your heart desires the more",
   baseStats: {
     main: [46, 62, 82, 102, 122, 153, 173, 194, 214, 235, 266, 287, 308, 340, 361, 382, 414, 435, 457, 488, 510, 532, 563, 586, 608],
@@ -21,7 +21,8 @@ const weapon = {
     sourceKey: "AmosBow",
     maxStack: 5,
     stats: (refineIndex) => ({
-      dmg: refinementVals[refineIndex]
+      norm_atk_dmg: refinementDmgVals[refineIndex],
+      char_atk_dmg: refinementDmgVals[refineIndex]
     })
   }
 }

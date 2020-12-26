@@ -1,6 +1,6 @@
 const refinementVals = [8, 10, 12, 14, 16]
 const weapon = {
-  name: "Prototype Grudge",
+  name: "Prototype Starglitter",
   weaponType: "polearm",
   rarity: 4,
   passiveName: "Magic Affinity",

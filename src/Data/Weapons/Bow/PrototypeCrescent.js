@@ -4,7 +4,7 @@ const weapon = {
   weaponType: "bow",
   rarity: 4,
   passiveName: "Unreturning",
-  passiveDescription: (refineIndex) => `Aimed Shot hits on weak points increase Movement SPD by 10% and ATK by ${refinementVals[refineIndex]}% for 10s.`,
+  passiveDescription: (refineIndex) => `Charged Attack hits on weak points increase Movement SPD by 10% and ATK by ${refinementVals[refineIndex]}% for 10s.`,
   description: "A prototype longbow discovered in the Blackcliff Forge. The arrow fired from this bow glimmers like a ray of moonlight.",
   baseStats: {
     main: [42, 56, 74, 91, 109, 135, 152, 170, 187, 205, 231, 248, 266, 292, 309, 327, 353, 370, 388, 414, 431, 449, 475, 492, 510],

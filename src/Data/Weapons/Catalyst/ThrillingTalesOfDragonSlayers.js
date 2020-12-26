@@ -3,7 +3,7 @@ const weapon = {
   name: "Thrilling Tales of Dragon Slayers",
   weaponType: "catalyst",
   rarity: 3,
-  passiveName: "Legacy",
+  passiveName: "Heritage",
   passiveDescription: (refineIndex) => `When switching characters, the new character taking the field has their ATK increased by ${refinementVals[refineIndex]}% for 10s. This effect can only occur once every 20s.`,
   description: "A fictional story of a band of five heroes who go off on a dragon hunt. It is poorly written and structurally incoherent. Its value lies in the many lessons that can be learned from failure.",
   baseStats: {

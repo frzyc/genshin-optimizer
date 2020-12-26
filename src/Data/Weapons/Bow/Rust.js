@@ -4,7 +4,7 @@ const weapon = {
   weaponType: "bow",
   rarity: 4,
   passiveName: "Rapid Firing",
-  passiveDescription: (refineIndex) => `Increases Normal Attack DMG by ${refinementVals[refineIndex]}% but decreases Aimed Shot DMG by 10%.`,
+  passiveDescription: (refineIndex) => `Increases Normal Attack DMG by ${refinementVals[refineIndex]}% but decreases Charged Attack DMG by 10%.`,
   description: "A completely rusted iron greatbow. The average person would lack the strength to even lift it, let alone fire it.",
   baseStats: {
     main: [42, 56, 74, 91, 109, 135, 152, 170, 187, 205, 231, 248, 266, 292, 309, 327, 353, 370, 388, 414, 431, 449, 475, 492, 510],

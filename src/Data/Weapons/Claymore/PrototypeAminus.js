@@ -2,7 +2,7 @@ import WeaponPercent from "../../../Components/WeaponPercent"
 
 const refinementVals = [240, 300, 360, 420, 480]
 const weapon = {
-  name: "Prototype Aminus",
+  name: "Prototype Archaic",
   weaponType: "claymore",
   rarity: 4,
   passiveName: "Crush",

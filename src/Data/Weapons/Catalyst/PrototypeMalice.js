@@ -2,11 +2,11 @@ import WeaponPercent from "../../../Components/WeaponPercent"
 
 const refinementVals = [4, 4.5, 5, 5.5, 6]
 const weapon = {
-  name: "Prototype Malice",
+  name: "Prototype Amber",
   weaponType: "catalyst",
   rarity: 4,
   passiveName: "Gilding",
-  passiveDescription: (refineIndex, charFinalStats) => <span>Using an Elemental Burst regenerates {refinementVals[refineIndex]} Energy every 2s for 6s. Additionally, all party members will regenerate {refinementVals[refineIndex]}% HP{WeaponPercent(refinementVals[refineIndex], charFinalStats.hp)} every 2s for this duration.</span>,//${refinementVals[refineIndex]}
+  passiveDescription: (refineIndex, charFinalStats) => <span>Using an Elemental Burst regenerates {refinementVals[refineIndex]} Energy every 2s for 6s. All party members will regenerate {refinementVals[refineIndex]}% HP{WeaponPercent(refinementVals[refineIndex], charFinalStats.hp)} every 2s for this duration.</span>,//${refinementVals[refineIndex]}
   description: "A dully gilded catalyst secretly guarded in the Blackcliff Forge. It seems to glow with the very light from the sky.",
   baseStats: {
     main: [42, 56, 74, 91, 109, 135, 152, 170, 187, 205, 231, 248, 266, 292, 309, 327, 353, 370, 388, 414, 431, 449, 475, 492, 510],
