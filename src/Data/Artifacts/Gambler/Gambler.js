@@ -26,7 +26,14 @@ let artifact = {
     },
     4: {
       text: "Defeating an enemy has 100% chance to remove Elemental Skill CD. Can only occur once every 15s.",
-      stats: {}
+      conditional: {
+        type: "artifact",
+        sourceKey: "Gambler_4",
+        maxStack: 1,
+        stats: {
+          skill_cd_red: 100,
+        }
+      }
     }
   }
 }

@@ -26,7 +26,15 @@ let artifact = {//Ocean Conqueror
     },
     4: {
       text: "After using Elemental Skill, increases Normal Attack and Charged Attack DMG by 30% for 15s",
-      stats: {}
+      conditional: {
+        type: "artifact",
+        sourceKey: "HeartOfDepth_4",
+        maxStack: 1,
+        stats: {
+          norm_atk_dmg: 30,
+          char_atk_dmg: 30
+        }
+      }
     }
   }
 }

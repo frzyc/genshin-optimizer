@@ -26,7 +26,14 @@ let artifact = {
     },
     4: {
       text: "Increases DMG against enemies affected by Electro by 35%.",
-      stats: {}
+      conditional: {
+        type: "artifact",
+        sourceKey: "Thundersoother_4",
+        maxStack: 1,
+        stats: {
+          dmg: 35,
+        }
+      }
     }
   }
 }

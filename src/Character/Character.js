@@ -3,7 +3,7 @@ import ArtifactDatabase from "../Artifact/ArtifactDatabase";
 import Assets from "../Assets/Assets";
 import { CharacterData, characterStatBase, ElementalData, LevelsData } from "../Data/CharacterData";
 import Stat from "../Stat";
-import { deepClone } from "../Util";
+import { deepClone } from "../Util/Util";
 import Weapon from "../Weapon/Weapon";
 import CharacterDatabase from "./CharacterDatabase";
 
@@ -96,15 +96,16 @@ export default class Character {
     CharacterDatabase.removeCharacterById(characterId)
   }
 
-  static calculateBuild = (character, artifacts) => {
+  static calculateBuild = (character) => {
+    let artifacts = Object.fromEntries(Object.entries(character.equippedArtifacts).map(([key, artid]) => [key, ArtifactDatabase.getArtifact(artid)]))
     let weaponStats = Weapon.createWeaponBundle(character)
     let initialStats = Character.calculateCharacterWithWeaponStats(character, weaponStats)
-    return this.calculateBuildWithObjs(initialStats, artifacts)
+    return this.calculateBuildWithObjs(character.artifactConditionals, initialStats, artifacts)
   }
-  //buildworker doesn't have access to the database, so we need to feed in the objs
-  static calculateBuildWithObjs = (charAndWeapon, artifacts) => {
+
+  static calculateBuildWithObjs = (artifactConditionals, charAndWeapon, artifacts) => {
     let setToSlots = Artifact.setToSlots(artifacts)
-    let artifactSetEffect = Artifact.getArtifactSetEffects(setToSlots)
+    let artifactSetEffectsStats = Artifact.getArtifactSetEffectsStats(setToSlots)
 
     let stats = deepClone(charAndWeapon)
     //add artifact and artifactsets
@@ -117,10 +118,12 @@ export default class Character {
         substat && substat.key && (stats[substat.key] = (stats[substat.key] || 0) + substat.value))
     })
     //setEffects
-    Object.values(artifactSetEffect).forEach(setEffects =>
-      Object.values(setEffects).forEach(setEffect =>
-        setEffect.stats && Object.entries(setEffect.stats).forEach(([key, statVal]) =>
-          stats[key] = (stats[key] || 0) + statVal)))
+    artifactSetEffectsStats.forEach(stat => stats[stat.key] = (stats[stat.key] || 0) + stat.statVal)
+    //setEffects conditionals
+    artifactConditionals && artifactConditionals.forEach(conditional => {
+      let condStats = Artifact.getArtifactConditionalStats(conditional.setKey, conditional.setNumKey, conditional.conditionalNum)
+      if (condStats) Object.entries(condStats).forEach(([statKey, val]) => stats[statKey] = (stats[statKey] || 0) + val)
+    })
 
     let arrKey = ["hp", "def", "atk"]
     arrKey.forEach(key => {
@@ -139,9 +142,9 @@ export default class Character {
 
     return {
       artifactIds: Object.fromEntries(Object.entries(artifacts).map(([key, val]) => [key, val?.id])),
-      artifactSetEffect,
       setToSlots,
-      finalStats: stats
+      finalStats: stats,
+      artifactConditionals
     }
   }
   static calculateCharacterWithWeaponStats = (character, weaponStats) => {

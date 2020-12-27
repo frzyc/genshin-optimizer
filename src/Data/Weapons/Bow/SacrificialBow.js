@@ -12,5 +12,13 @@ const weapon = {
     subStatKey: "ener_rech",
     sub: [6.7, 7.7, 9.1, 10.4, 11.8, 11.8, 13.1, 14.5, 15.8, 17.2, 17.2, 18.5, 19.9, 19.9, 21.2, 22.6, 22.6, 23.9, 25.2, 25.2, 26.6, 27.9, 27.9, 29.3, 30.6],
   },
+  conditional: {
+    type: "weapon",
+    sourceKey: "SacrificialBow",
+    maxStack: 1,
+    stats: () => ({
+      red_cd: 100
+    })
+  }
 }
 export default weapon

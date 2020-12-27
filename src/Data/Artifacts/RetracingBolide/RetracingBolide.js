@@ -26,7 +26,15 @@ let artifact = {
     },
     4: {
       text: "Gain an additional 40% Normal and Charged Attack DMG while under the protection of a shield.",
-      stats: {}
+      conditional: {
+        type: "artifact",
+        sourceKey: "RetracingBolide_4",
+        maxStack: 1,
+        stats: {
+          norm_atk_dmg: 40,
+          char_atk_dmg: 40
+        }
+      }
     }
   }
 }

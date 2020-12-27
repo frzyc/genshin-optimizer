@@ -26,7 +26,14 @@ let artifact = {
     },
     4: {
       text: "Increases DMG against enemies that are Burning or affected by Pyro by 35%.",
-      stats: {}
+      conditional: {
+        type: "artifact",
+        sourceKey: "Lavawalker_4",
+        maxStack: 1,
+        stats: {
+          dmg: 35,
+        }
+      }
     }
   }
 }

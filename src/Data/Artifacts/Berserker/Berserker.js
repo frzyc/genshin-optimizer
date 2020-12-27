@@ -4,7 +4,7 @@ import sands from './Item_Berserker\'s_Timepiece.png'
 import goblet from './Item_Berserker\'s_Bone_Goblet.png'
 import circlet from './Item_Berserker\'s_Battle_Mask.png'
 let artifact = {
-  name: "Berserker", rarity: [3, 4], 
+  name: "Berserker", rarity: [3, 4],
   pieces: {
     flower: "Berserker's Rose",
     plume: "Berserker's Indigo Feather",
@@ -26,7 +26,14 @@ let artifact = {
     },
     4: {
       text: "When HP is below 70%, CRIT Rate increases by an additional 24%.",
-      stats: {}
+      conditional: {
+        type: "artifact",
+        sourceKey: "Berserker_4",
+        maxStack: 1,
+        stats: {
+          crit_rate: 24,
+        }
+      }
     }
   }
 }

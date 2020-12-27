@@ -26,7 +26,23 @@ let artifact = {//Icebreaker
     },
     4: {
       text: "When a character attacks an enemy affected by Cryo, their CRIT Rate is increased by 20%. If the enemy is Frozen, CRIT Rate is increased by an additional 20%",
-      stats: {}
+      conditional: [{
+        type: "artifact",
+        sourceKey: "BlizzardStrayer_4",
+        condition: "Enemy affected by Cryo",
+        maxStack: 1,
+        stats: {
+          crit_rate: 20,
+        }
+      }, {
+        type: "artifact",
+        sourceKey: "BlizzardStrayer_4",
+        condition: "Frozen Enemy",
+        maxStack: 1,
+        stats: {
+          crit_rate: 40,
+        }
+      }]
     }
   }
 }

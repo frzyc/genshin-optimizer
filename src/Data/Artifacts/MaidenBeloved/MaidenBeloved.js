@@ -26,7 +26,14 @@ let artifact = {
     },
     4: {
       text: "Using an Elemental Skill or Burst increases healing received by all party members by 20% for 10s.",
-      stats: {}
+      conditional: {
+        type: "artifact",
+        sourceKey: "MaidenBeloved_4",
+        maxStack: 1,
+        stats: {
+          inc_heal: 20,//TODO party conditional
+        }
+      }
     }
   }
 }

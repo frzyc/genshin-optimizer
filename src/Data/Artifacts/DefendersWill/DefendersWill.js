@@ -26,7 +26,57 @@ let artifact = {
     },
     4: {
       text: "Increases Elemental RES by 30% for each element present in the party.",
-      stats: {}
+      conditional: [//TODO all party conditional
+        {
+          type: "artifact",
+          condition: "Anemo",
+          sourceKey: "DefendersWill_4",
+          maxStack: 1,
+          stats: {
+            aneme_ele_res: 30
+          }
+        }, {
+          type: "artifact",
+          condition: "Geo",
+          sourceKey: "DefendersWill_4",
+          maxStack: 1,
+          stats: {
+            geo_ele_res: 30
+          }
+        }, {
+          type: "artifact",
+          condition: "Electro",
+          sourceKey: "DefendersWill_4",
+          maxStack: 1,
+          stats: {
+            electro_ele_res: 30
+          }
+        }, {
+          type: "artifact",
+          condition: "Hydro",
+          sourceKey: "DefendersWill_4",
+          maxStack: 1,
+          stats: {
+            hydro_ele_res: 30
+          }
+        }, {
+          type: "artifact",
+          condition: "pyro",
+          sourceKey: "DefendersWill_4",
+          maxStack: 1,
+          stats: {
+            pyro_ele_res: 30
+          }
+        }, {
+          type: "artifact",
+          condition: "Cryo",
+          sourceKey: "DefendersWill_4",
+          maxStack: 1,
+          stats: {
+            cryo_ele_res: 30
+          }
+        },
+      ]
     }
   }
 }

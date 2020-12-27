@@ -26,7 +26,14 @@ let artifact = {
     },
     4: {
       text: "Increases DMG by 30% against enemies with more than 50% HP.",
-      stats: {}
+      conditional: {
+        type: "artifact",
+        sourceKey: "BraveHeart_4",
+        maxStack: 1,
+        stats: {
+          dmg: 30,
+        }
+      }
     }
   }
 }

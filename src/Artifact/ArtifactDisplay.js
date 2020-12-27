@@ -12,12 +12,12 @@ import { Stars } from '../Components/StarDisplay';
 import { ArtifactStarsData, ArtifactSubStatsData } from '../Data/ArtifactData';
 import { DatabaseInitAndVerify } from '../DatabaseUtil';
 import Stat from '../Stat';
-import { deepClone } from '../Util';
 import Artifact from './Artifact';
 import ArtifactCard from './ArtifactCard';
 import ArtifactDatabase from './ArtifactDatabase';
 import ArtifactEditor from './ArtifactEditor';
 import ReactGA from 'react-ga';
+import { deepClone } from '../Util/Util';
 
 export default class ArtifactDisplay extends React.Component {
   constructor(props) {

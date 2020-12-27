@@ -7,16 +7,15 @@ import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import DropdownToggle from 'react-bootstrap/esm/DropdownToggle';
 import Row from 'react-bootstrap/Row';
-import ArtifactDatabase from '../Artifact/ArtifactDatabase';
 import { WeaponLevelKeys } from '../Data/WeaponData';
 import { DatabaseInitAndVerify } from '../DatabaseUtil';
-import { deepClone, getRandomElementFromArray } from '../Util';
+import { deepClone, getRandomElementFromArray } from '../Util/Util';
+import Weapon from '../Weapon/Weapon';
 import Character from './Character';
 import CharacterDatabase from './CharacterDatabase';
 import CharacterArtifactPane from './CharacterDisplay/CharacterArtifactPane';
 import CharacterOverviewPane from './CharacterDisplay/CharacterOverviewPane';
 import CharacterTalentPane from './CharacterDisplay/CharacterTalentPane';
-import Weapon from '../Weapon/Weapon'
 
 const CustomMenu = React.forwardRef(
   ({ children, style, className, 'aria-labelledby': labeledBy }, ref) => {
@@ -51,6 +50,7 @@ export default class CharacterDisplayCard extends React.Component {
     levelKey: "L1",//combination of level and ascension
     overrideLevel: 0,
     equippedArtifacts: {},
+    artifactConditionals: [],
     baseStatOverrides: {},//overriding the baseStat
     weapon: {
       key: "",
@@ -128,9 +128,8 @@ export default class CharacterDisplayCard extends React.Component {
   render() {
     let { footer, newBuild, editable } = this.props
     let character = this.state
-    let { characterKey, equippedArtifacts, levelKey, compareAgainstEquipped } = this.state
-    let equippedArtifactsObjs = Object.fromEntries(Object.entries(equippedArtifacts).map(([key, artid]) => [key, ArtifactDatabase.getArtifact(artid)]))
-    let equippedBuild = Character.calculateBuild(this.state, equippedArtifactsObjs)
+    let { characterKey, levelKey, compareAgainstEquipped } = this.state
+    let equippedBuild = Character.calculateBuild(this.state)
     let HeaderIconDisplay = <span >
       <Image src={Character.getThumb(characterKey)} className="thumb-small my-n1 ml-n2" roundedCircle />
       <h6 className="d-inline"> {Character.getName(characterKey)} </h6>
@@ -229,7 +228,7 @@ export default class CharacterDisplayCard extends React.Component {
               />
             </Tab.Pane>
             <Tab.Pane eventKey="artifacts" >
-              <CharacterArtifactPane {...{ character, equippedBuild, editable }} />
+              <CharacterArtifactPane {...{ character, equippedBuild, editable }} setState={this.setSetState} />
             </Tab.Pane>
             {newBuild ? <Tab.Pane eventKey="newartifacts" >
               <CharacterArtifactPane {...{ character, newBuild, equippedBuild, editable, forceUpdate: this.forceUpdateComponent }} />

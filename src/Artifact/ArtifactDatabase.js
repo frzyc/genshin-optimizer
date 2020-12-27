@@ -1,4 +1,4 @@
-import { deepClone, loadFromLocalStorage, saveToLocalStorage } from "../Util";
+import { deepClone, loadFromLocalStorage, saveToLocalStorage } from "../Util/Util";
 var initiated = false
 var artifactDatabase = {};
 var artIdIndex = 1;

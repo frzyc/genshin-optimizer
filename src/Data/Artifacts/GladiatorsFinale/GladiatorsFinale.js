@@ -26,7 +26,14 @@ let artifact = {
     },
     4: {
       text: "If the wielder of this artifact set uses a Sword, Claymore or Polearm, increases their Normal Attack DMG by 35%.",
-      stats: {}
+      conditional: {
+        type: "artifact",
+        sourceKey: "GladiatorsFinale_4",
+        maxStack: 1,
+        stats: {
+          norm_atk_dmg: 35
+        }
+      }
     }
   }
 }

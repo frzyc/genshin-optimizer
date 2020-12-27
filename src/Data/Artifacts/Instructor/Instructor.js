@@ -26,7 +26,14 @@ let artifact = {
     },
     4: {
       text: "After using Elemental Skill, increases all party members' Elemental Mastery by 120 for 8s.",
-      stats: {}
+      conditional: {
+        type: "artifact",
+        sourceKey: "Instructor_4",
+        maxStack: 1,
+        stats: {
+          ele_mas: 120,//TODO all party conditional
+        }
+      }
     }
   }
 }

@@ -1,5 +1,5 @@
 import { WeaponData, LevelNameData, WeaponLevelKeys, WeaponTypeData } from '../Data/WeaponData.js'
-import { clamp } from '../Util.js';
+import { clamp } from '../Util/Util.js';
 export default class Weapon {
   //do not instantiate.
   constructor() { if (this instanceof Weapon) throw Error('A static class cannot be instantiated.'); }
@@ -34,7 +34,7 @@ export default class Weapon {
     if (Array.isArray(conditional)) {
       //multiple conditionals
       let selectedConditionalNum = conditionalNum
-      let selectedConditional
+      let selectedConditional = null
       for (const curConditional of conditional) {
         if (selectedConditionalNum > curConditional.maxStack) selectedConditionalNum -= curConditional.maxStack
         else {

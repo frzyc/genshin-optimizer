@@ -26,7 +26,6 @@ let artifact = {
     },
     4: {
       text: "Using an Elemental Burst regenerates 2 Energy for other party members every 2s for 6s. This effect cannot stack.",
-      stats: {}
     }
   }
 }

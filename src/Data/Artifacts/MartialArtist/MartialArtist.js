@@ -29,7 +29,15 @@ let artifact = {
     },
     4: {
       text: "After using Elemental Skill, increases Normal Attack and Charged Attack DMG by 25% for 8s.",
-      stats: {}
+      conditional: {
+        type: "artifact",
+        sourceKey: "MartialArtist_4",
+        maxStack: 1,
+        stats: {
+          norm_atk_dmg: 25,
+          char_atk_dmg: 25
+        }
+      }
     }
   }
 }

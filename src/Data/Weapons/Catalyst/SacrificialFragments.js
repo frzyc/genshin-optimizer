@@ -12,5 +12,13 @@ const weapon = {
     subStatKey: "ele_mas",
     sub: [48, 56, 65, 75, 85, 85, 95, 104, 114, 124, 124, 133, 143, 143, 153, 162, 162, 172, 182, 182, 191, 201, 201, 211, 221],
   },
+  conditional: {
+    type: "weapon",
+    sourceKey: "SacrificialFragments",
+    maxStack: 1,
+    stats: () => ({
+      red_cd: 100
+    })
+  }
 }
 export default weapon

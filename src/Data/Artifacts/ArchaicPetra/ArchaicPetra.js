@@ -25,8 +25,40 @@ let artifact = {
       stats: { geo_ele_dmg: 15 }
     },
     4: {
-      text: "Upon obtaining a crystal created through a Geo Elemental Reaction, all party members gain 35% RES to that particular element for 10s. Only one form of Elemental RES can be gained in this manner at any one time. Upon obtaining a crystal created through a Geo Elemental Reaction, all party members gain 35% RES to that particular element for 10s. Only one form of Elemental RES can be gained in this manner at any one time.",
-      stats: {}
+      text: "Upon obtaining an Elemental Shard created through a Crystallize Reaction, all party members gain 35% DMG to that particular element for 10s. Only one form of Elemental DMG can be gained in this manner at any one time.",
+      conditional: [{//TODO all party conditional
+        type: "artifact",
+        condition:"Pyro",
+        sourceKey: "ArchaicPetra_4",
+        maxStack: 1,
+        stats: {
+          pyro_ele_dmg: 35,
+        }
+      },{
+        type: "artifact",
+        condition:"Electro",
+        sourceKey: "ArchaicPetra_4",
+        maxStack: 1,
+        stats: {
+          electro_ele_dmg: 35,
+        }
+      },{
+        type: "artifact",
+        condition:"Hydro",
+        sourceKey: "ArchaicPetra_4",
+        maxStack: 1,
+        stats: {
+          hydro_ele_dmg: 35,
+        }
+      },{
+        type: "artifact",
+        condition:"Cryo",
+        sourceKey: "ArchaicPetra_4",
+        maxStack: 1,
+        stats: {
+          cryo_ele_dmg: 35,
+        }
+      }]
     }
   }
 }

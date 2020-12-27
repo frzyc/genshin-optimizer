@@ -1,11 +1,12 @@
-import { faCheckSquare, faEdit, faGavel, faQuoteLeft, faSave, faSquare } from "@fortawesome/free-solid-svg-icons"
+import { faEdit, faGavel, faQuoteLeft, faSave } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import React, { useState } from "react"
-import { Badge, Button, Card, Col, Dropdown, DropdownButton, Image, InputGroup, OverlayTrigger, Row, Tooltip } from "react-bootstrap"
+import { Button, Card, Col, Dropdown, DropdownButton, Image, InputGroup, OverlayTrigger, Row, Tooltip } from "react-bootstrap"
 import Assets from "../../Assets/Assets"
+import ConditionalSelector from "../../Components/ConditionalSelector"
 import { FloatFormControl, IntFormControl } from "../../Components/CustomFormControl"
 import { Stars } from "../../Components/StarDisplay"
-import StatIcon from "../../Components/StatIcon"
+import StatIcon, { StatIconEle } from "../../Components/StatIcon"
 import { CharacterSpecializedStatKey } from "../../Data/CharacterData"
 import { LevelNameData } from "../../Data/WeaponData"
 import Stat from "../../Stat"
@@ -105,68 +106,14 @@ function WeaponStatsEditorCard(props) {
   let weaponPassiveName = Weapon.getWeaponPassiveName(weapon.key)
   let weaponBonusStats = Weapon.getWeaponBonusStat(weapon.key, weapon.refineIndex)
   let conditionalStats = Weapon.getWeaponConditionalStat(weapon.key, weapon.refineIndex, weapon.conditionalNum)
-  let conditionalEle = (() => {
-    let conditional = Weapon.getWeaponConditional(weapon.key)
-    if (!conditional) return <h6>{weaponPassiveName}</h6>
-    let conditionalNum = weapon.conditionalNum;
-    if (Array.isArray(conditional)) {
-      let selectedConditionalNum = conditionalNum
-      let selectedConditional
-      for (const curConditional of conditional) {
-        if (selectedConditionalNum > curConditional.maxStack) selectedConditionalNum -= curConditional.maxStack
-        else {
-          selectedConditional = curConditional;
-          break;
-        }
-      }
-      if (!selectedConditional) selectedConditionalNum = 0
-      //TODO multi conditional
-      let text = selectedConditionalNum === 0 ? "Not Active" :
-        (selectedConditional.condition + (selectedConditional.maxStack > 1 ? (`: ${selectedConditionalNum} stack${selectedConditionalNum > 1 ? "s" : ""}`) : ""))
-      let badge = <Badge variant={selectedConditionalNum === 0 ? "secondary" : "success"}>{text}</Badge>
-      let count = 0;
-      return <Dropdown>
-        <Dropdown.Toggle size="sm">
-          <h6 className="mb-0 d-inline">{weaponPassiveName} {badge}</h6>
-        </Dropdown.Toggle>
-        <Dropdown.Menu>
-          <Dropdown.Item onClick={() => setStateWeapon("conditionalNum", 0)}>
-            <span>Not Active</span>
-          </Dropdown.Item>
-          {conditional.map(condial =>
-            <React.Fragment key={condial.condition}>{[...Array(condial.maxStack).keys()].map(v => v + 1).map(stack => {
-              let tempcount = ++count
-              return <Dropdown.Item key={tempcount} onClick={() => setStateWeapon("conditionalNum", tempcount)}>
-                {condial.condition}{selectedConditional.maxStack > 1 ? `: ${stack} stack${stack > 1 ? "s" : ""}` : ""}
-              </Dropdown.Item>
-            })}</React.Fragment>
-          )}
-        </Dropdown.Menu>
-      </Dropdown>
-    } else if (conditional.maxStack > 1) {
-      //stacking conditional
-      let badge = <Badge variant={conditionalNum === 0 ? "secondary" : "success"}>{conditionalNum > 0 ? `${conditionalNum} stack${conditionalNum > 1 ? "s" : ""}` : "Not Active"}</Badge>
-      return <Dropdown>
-        <Dropdown.Toggle size="sm">
-          <h6 className="mb-0 d-inline">{weaponPassiveName} {badge}</h6>
-        </Dropdown.Toggle>
-        <Dropdown.Menu>
-          <Dropdown.Item onClick={() => setStateWeapon("conditionalNum", 0)}>
-            <span>Not Active</span>
-          </Dropdown.Item>
-          {[...Array(conditional.maxStack).keys()].map(v => v + 1).map(stack =>
-            <Dropdown.Item key={stack} onClick={() => setStateWeapon("conditionalNum", stack)}>
-              {`${stack} stack${stack > 1 ? "s" : ""}`}
-            </Dropdown.Item>)}
-        </Dropdown.Menu>
-      </Dropdown>
-    } else if (conditional.maxStack === 1) {
-      //single boolean conditional
-      return <Button size="sm" onClick={() => setStateWeapon("conditionalNum", conditionalNum ? 0 : 1)} >
-        <h6 className="mb-0"><FontAwesomeIcon icon={conditionalNum ? faCheckSquare : faSquare} /> {weaponPassiveName}</h6>
-      </Button>
-    }
-  })()
+  let conditional = Weapon.getWeaponConditional(weapon.key)
+  let conditionalNum = weapon.conditionalNum;
+  let conditionalEle = <ConditionalSelector
+    conditional={conditional}
+    conditionalNum={conditionalNum}
+    setConditional={(cnum) => setStateWeapon("conditionalNum", cnum)}
+    defEle={<h6 className="d-inline mb-0">{weaponPassiveName}</h6>}
+  />
 
   return <Card bg="lightcontent" text="lightfont" className="mb-2">
     <Card.Header>
@@ -240,7 +187,7 @@ function WeaponStatsEditorCard(props) {
             </Col>
             {subStatKey && <Col xs={12} className="mb-2">
               <StatInput
-                name={<span>{StatIcon[subStatKey] ? <FontAwesomeIcon icon={StatIcon[subStatKey]} className="mr-2" /> : null}{Stat.getStatName(subStatKey)}</span>}
+                name={<span><span className="mr-2">{StatIconEle(subStatKey)}</span>{Stat.getStatName(subStatKey)}</span>}
                 placeholder="Weapon Substat"
                 value={weaponDisplaySubVal}
                 percent={Stat.getStatUnit(subStatKey) === "%"}
@@ -321,7 +268,7 @@ function MainStatsCard(props) {
     let unit = Stat.getStatUnit(statKey)
     let buildDiff = (build?.finalStats?.[statKey] || 0) - statVal
     return <Col xs={12} lg={6} key={statKey}>
-      <h6 className="d-inline">{StatIcon[statKey] ? <FontAwesomeIcon icon={StatIcon[statKey]} className="fa-fw" /> : null} {Stat.getStatName(statKey)}</h6>
+      <h6 className="d-inline">{StatIconEle(statKey)} {Stat.getStatName(statKey)}</h6>
       <span className={`float-right ${(editable && Character.hasOverride(character, statKey)) ? "text-warning" : ""}`}>
         {statVal?.toFixed(Stat.fixedUnit(statKey)) + unit}
         {buildDiff ? <span className={buildDiff > 0 ? "text-success" : "text-danger"}> {buildDiff > 0 && "+"}{buildDiff?.toFixed(Stat.fixedUnit(statKey)) + unit}</span> : null}
@@ -334,7 +281,7 @@ function MainStatsCard(props) {
     let buildDiff = (newBuild?.finalStats?.[statKey] || 0) - (equippedBuild?.finalStats?.[statKey] || 0)
 
     return <Col xs={12} lg={6} key={statKey}>
-      <h6 className="d-inline">{StatIcon[statKey] ? <FontAwesomeIcon icon={StatIcon[statKey]} className="fa-fw" /> : null} {Stat.getStatName(statKey)}</h6>
+      <h6 className="d-inline">{StatIconEle(statKey)} {Stat.getStatName(statKey)}</h6>
       <span className={`float-right ${(editable && Character.hasOverride(character, statKey)) ? "text-warning" : ""}`}>
         {statVal?.toFixed(Stat.fixedUnit(statKey)) + unit}
         {buildDiff ? <span className={buildDiff > 0 ? "text-success" : "text-danger"}> ({buildDiff > 0 && "+"}{buildDiff?.toFixed(Stat.fixedUnit(statKey)) + unit})</span> : null}

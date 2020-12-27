@@ -67,7 +67,8 @@ export default class CharacterDisplay extends React.Component {
         {charIdList.map(id =>
           <Col key={id} lg={4} md={6} className="mb-2">
             <CharacterCard
-              characterData={CharacterDatabase.getCharacter(id)}
+              cardClassName="h-100"
+              characterId={id}
               onDelete={() => this.deleteCharacter(id)}
               onEdit={() => this.editCharacter(id)}
             />

@@ -1,48 +1,40 @@
-import { faDice, faDiceD20, faEdit, faFistRaised, faMagic, faShieldAlt, faSync, faTint, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import { Image } from 'react-bootstrap';
+import { Badge, Image } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { Link } from 'react-router-dom';
 import Artifact from '../Artifact/Artifact';
-import ArtifactDatabase from '../Artifact/ArtifactDatabase';
 import Assets from '../Assets/Assets';
 import { Stars } from '../Components/StarDisplay';
+import { StatIconEle } from '../Components/StatIcon';
 import Stat from '../Stat';
 import Weapon from '../Weapon/Weapon';
 import Character from './Character';
 import CharacterDatabase from './CharacterDatabase';
 export default function CharacterCard(props) {
-  if (!props.characterData) return null;
-  let { characterData: { id, characterKey, name, equippedArtifacts, weapon, constellation } } = props
-  let { characterData } = props
+  let { characterId } = props
+  let character = CharacterDatabase.getCharacter(characterId)
+  if (!character) return null;
+  let build = Character.calculateBuild(character)
+  let { setToSlots } = build
+
+  let { characterKey, name, weapon, constellation } = character
   let elementKey = Character.getElementalKey(characterKey)
   let weaponTypeKey = Character.getWeaponTypeKey(characterKey)
-  let character = CharacterDatabase.getCharacter(id)
-  let artifacts = Object.fromEntries(Object.entries(equippedArtifacts).map(([key, artid]) => [key, ArtifactDatabase.getArtifact(artid)]))
-  let build = Character.calculateBuild(character, artifacts)
-  let { artifactSetEffect } = build
-  const statIcon = {
-    hp: faTint,
-    atk: faFistRaised,
-    def: faShieldAlt,
-    ele_mas: faMagic,
-    crit_rate: faDice,
-    crit_dmg: faDiceD20,
-    ener_rech: faSync,
-  }
   let weaponName = Weapon.getWeaponName(weapon.key)
-  let weaponMainVal = Weapon.getWeaponMainStatValWithOverride(characterData?.weapon)
+  let weaponMainVal = Weapon.getWeaponMainStatValWithOverride(weapon)
   let weaponSubKey = Weapon.getWeaponSubStatKey(weapon.key)
-  let weaponSubVal = Weapon.getWeaponSubStatValWithOverride(characterData?.weapon)
+  let weaponSubVal = Weapon.getWeaponSubStatValWithOverride(weapon)
   let weaponLevelName = Weapon.getLevelName(weapon.levelKey)
   let weaponPassiveName = Weapon.getWeaponPassiveName(weapon.key)
-  return (<Card className="h-100" bg="darkcontent" text="lightfont">
+  const statkeys = ["hp", "atk", "def", "ele_mas", "crit_rate", "crit_dmg", "ener_rech",]
+  return (<Card className={props.cardClassName} bg={props.bg ? props.bg : "darkcontent"} text="lightfont">
     <Card.Header className="pr-2">
-      <Row className="no-gutters">
+      {props.header ? props.header : <Row className="no-gutters">
         <Col >
           <h6><b>{name}</b></h6>
         </Col>
@@ -58,7 +50,7 @@ export default function CharacterCard(props) {
             </Button>
           </span>
         </Col>
-      </Row>
+      </Row>}
     </Card.Header>
     <Card.Body>
       <Row>
@@ -68,7 +60,7 @@ export default function CharacterCard(props) {
         <Col>
           <h4>{Character.getName(characterKey)} <Image src={Assets.elements[elementKey]} className="inline-icon" /> <Image src={Assets.weaponTypes?.[weaponTypeKey]} className="inline-icon" /></h4>
           <h6><Stars stars={Character.getStar(characterKey)} colored /></h6>
-          <span>{`Lvl. ${Character.getLevelWithOverride(characterData)} C${constellation}`}</span>
+          <span>{`Lvl. ${Character.getLevelWithOverride(character)} C${constellation}`}</span>
         </Col>
       </Row>
       <Row className="mb-2">
@@ -79,20 +71,19 @@ export default function CharacterCard(props) {
       </Row>
       <Row>
         <Col>
-          {Object.entries(artifactSetEffect).map(([key, obj]) => {
+          {Object.entries(Artifact.getArtifactSetEffects(setToSlots)).map(([key, arr]) => {
             let artifactSetName = Artifact.getArtifactSetName(key)
-            let highestNum = Math.max(...Object.keys(obj))
-            return <span key={key}>{artifactSetName}({highestNum})</span>
+            let highestNum = Math.max(...arr)
+            return <h5 key={key}><Badge variant="secondary">{artifactSetName} <Badge variant="success">{highestNum}</Badge></Badge></h5>
           })}
         </Col>
       </Row>
       <Row>
-        {Object.keys(statIcon).map(statKey => {
-          // let statVal = Character.getStatValueWithOverride(characterData, statKey)
+        {statkeys.map(statKey => {
           let unit = Stat.getStatUnit(statKey)
           let statVal = build.finalStats[statKey]
           return <Col xs={12} key={statKey}>
-            <h6 className="d-inline">{statIcon[statKey] && <FontAwesomeIcon icon={statIcon[statKey]} className="fa-fw" />} {Stat.getStatName(statKey)}</h6>
+            <h6 className="d-inline">{StatIconEle(statKey)} {Stat.getStatName(statKey)}</h6>
             <span className={`float-right`}>
               {statVal?.toFixed(Stat.fixedUnit(statKey)) + unit}
             </span>
@@ -100,13 +91,13 @@ export default function CharacterCard(props) {
         })}
       </Row>
     </Card.Body>
-    <Card.Footer>
+    {props.footer && <Card.Footer>
       <Button as={Link} to={{
         pathname: "/build",
-        selectedCharacterId: props.characterData.id
+        selectedCharacterId: characterId
       }}>
         Generate Builds
         </Button>
-    </Card.Footer>
+    </Card.Footer>}
   </Card>)
 }

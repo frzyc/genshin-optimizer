@@ -25,7 +25,7 @@ let artifact = {
     },
     4: {
       text: "Increases Swirl DMG by 60%. Decreases opponent's Elemental RES to the element infused in the Swirl by 40% for 10s.",
-      stats: {}
+      stats: { swirl_dmg: 60 }//TODO enemy resistance
     }
   }
 }

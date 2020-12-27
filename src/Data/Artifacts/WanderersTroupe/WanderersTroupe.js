@@ -28,7 +28,14 @@ let artifact = {
     },
     4: {
       text: "Increases Charged Attack DMG by 35% if the character uses a Catalyst or Bow.",
-      stats: {}
+      conditional: {
+        type: "artifact",
+        sourceKey: "WanderersTroupe_4",
+        maxStack: 1,
+        stats: {
+          char_atk_dmg: 35,
+        }
+      }
     }
   }
 }

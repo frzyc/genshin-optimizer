@@ -33,7 +33,57 @@ let artifact = {
     },
     4: {
       text: "Incoming elemental DMG increases corresponding Elemental RES by 30% for 10s. Can only occur once every 10s.",
-      stats: {}
+      conditional: [
+        {
+          type: "artifact",
+          condition: "Anemo",
+          sourceKey: "TinyMiracle_4",
+          maxStack: 1,
+          stats: {
+            anemo_ele_res: 30
+          }
+        }, {
+          type: "artifact",
+          condition: "Geo",
+          sourceKey: "TinyMiracle_4",
+          maxStack: 1,
+          stats: {
+            geo_ele_res: 30
+          }
+        }, {
+          type: "artifact",
+          condition: "Electro",
+          sourceKey: "TinyMiracle_4",
+          maxStack: 1,
+          stats: {
+            electro_ele_res: 30
+          }
+        }, {
+          type: "artifact",
+          condition: "Hydro",
+          sourceKey: "TinyMiracle_4",
+          maxStack: 1,
+          stats: {
+            hydro_ele_res: 30
+          }
+        }, {
+          type: "artifact",
+          condition: "pyro",
+          sourceKey: "TinyMiracle_4",
+          maxStack: 1,
+          stats: {
+            pyro_ele_res: 30
+          }
+        }, {
+          type: "artifact",
+          condition: "Cryo",
+          sourceKey: "TinyMiracle_4",
+          maxStack: 1,
+          stats: {
+            cryo_ele_res: 30
+          }
+        },
+      ]
     }
   }
 }

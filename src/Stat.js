@@ -72,18 +72,33 @@ const StatData = {
   inc_heal: { name: "Incoming Healing Bonus", unit: "%" },
   pow_shield: { name: "Powerful Shield", unit: "%" },
   red_cd: { name: "Reduce CD", unit: "%" },
-  //helper stats
+  //auto
   norm_atk_dmg: { name: "Normal Attack DMG", unit: "%" },
   char_atk_dmg: { name: "Charged Attack DMG", unit: "%" },
+  norm_atk_crit_rate: { name: "Nomral Attack CRIT Rate", unit: "%" },
+  char_atk_crit_rate: { name: "Charged Attack CRIT Rate", unit: "%" },
+  //skill
   skill_dmg: { name: "Ele. Skill DMG", unit: "%" },
   burst_dmg: { name: "Ele. Burst DMG", unit: "%" },
   skill_crit_rate: { name: "Ele. Skill CRIT Rate", unit: "%" },
   burst_crit_rate: { name: "Ele. Burst CRIT Rate", unit: "%" },
+  skill_cd_red: { name: "Ele. Skill CD Red.", unit: "%" },
+  burst_cd_red: { name: "Ele. Burst CD Red.", unit: "%" },
+
   crit_multi: { name: "Crit Multiplier" },
   dmg: { name: "All DMG", unit: "%" },//general all damage increase
   move_spd: { name: "Movement SPD", unit: "%" },
   atk_spd: { name: "ATK SPD", unit: "%" },
-  weakspot_dmg: { name: "Weakspot DMG", unit: "%" }
+  weakspot_dmg: { name: "Weakspot DMG", unit: "%" },
+  stamina_dec: { name: "Stamina Consmption Dec.", unit: "%" },
+  //elemental
+  overloaded_dmg: { name: "Overloaded DMG", unit: "%" },
+  electro_charged_dmg: { name: "Electro-Charged DMG", unit: "%" },
+  superconduct_dmg: { name: "Superconduct DMG", unit: "%" },
+  burning_dmg: { name: "Overloaded DMG", unit: "%" },
+  vaporize_dmg: { name: "Vaporize DMG", unit: "%" },
+  melt_dmg: { name: "Melt DMG", unit: "%" },
+  swirl_dmg:{ name: "Swirl DMG", unit: "%" },
 };
 
 export {

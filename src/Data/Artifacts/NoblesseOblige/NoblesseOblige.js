@@ -26,7 +26,14 @@ let artifact = {
     },
     4: {
       text: "Using an Elemental Burst increase all party members' ATK by 20% for 12s. This effect cannot stack.",
-      stats: {}
+      conditional: {//TODO party conditional
+        type: "artifact",
+        sourceKey: "NoblesseOblige_4",
+        maxStack: 1,
+        stats: {
+          atk_: 20,
+        }
+      }
     }
   }
 }

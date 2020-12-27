@@ -2,20 +2,23 @@ import { faSortAmountDownAlt, faSortAmountUp } from '@fortawesome/free-solid-svg
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Alert, Badge, Button, ButtonGroup, Card, Col, Container, Dropdown, DropdownButton, ListGroup, Modal, Row } from 'react-bootstrap';
+import ReactGA from 'react-ga';
 // eslint-disable-next-line
 import Worker from "worker-loader!./BuildWorker.js";
 import Artifact from '../Artifact/Artifact';
-import { ArtifactSetsData, ArtifactSlotsData } from '../Data/ArtifactData';
 import ArtifactDatabase from '../Artifact/ArtifactDatabase';
 import Character from '../Character/Character';
+import CharacterCard from '../Character/CharacterCard';
 import CharacterDatabase from '../Character/CharacterDatabase';
 import CharacterDisplayCard from '../Character/CharacterDisplayCard';
+import ConditionalSelector from '../Components/ConditionalSelector';
+import { ArtifactSlotsData } from '../Data/ArtifactData';
 import { DatabaseInitAndVerify } from '../DatabaseUtil';
 import Stat from '../Stat';
-import { deepClone, loadFromLocalStorage, saveToLocalStorage } from '../Util';
-import Build from './Build';
-import ReactGA from 'react-ga';
+import ArtifactConditionals from '../Util/ArtifactConditionals';
+import { deepClone, loadFromLocalStorage, saveToLocalStorage } from '../Util/Util';
 import Weapon from '../Weapon/Weapon';
+import Build from './Build';
 
 export default class BuildDisplay extends React.Component {
   constructor(props) {
@@ -42,6 +45,7 @@ export default class BuildDisplay extends React.Component {
     gobletMainKey: "",
     circletMainkey: "",
     setFilters: [{ key: "", num: 0 }, { key: "", num: 0 }, { key: "", num: 0 }],
+    artifactConditionals: [],//{ setKey: "", setNumKey: "", conditionalNum: 0 }
     mainStat: ["", "", ""],
     buildFilterKey: "atk",
     asending: false,
@@ -87,25 +91,28 @@ export default class BuildDisplay extends React.Component {
       return { mainStat }
     })
   }
-  changeSetFilterKey = (index, newkey, setsNumArr) => {
-    if (this.state.setFilters[index].key === newkey) return
-    this.setState((state) => {
-      let setFilters = deepClone(state.setFilters);
-      let num = 0
-      if (setsNumArr && setsNumArr[0])
-        num = parseInt(setsNumArr[0])
-      setFilters[index] = { key: newkey, num }
-      return { setFilters }
-    })
-  }
+  changeSetFilterKey = (index, newkey, setsNumArr) => this.setState(state => {
+    let oldKey = state.setFilters[index].key
+    if (oldKey === newkey) return
+    //remove conditionals with that key
+    let artifactConditionals = state.artifactConditionals ? state.artifactConditionals.filter(artifactCond => artifactCond.setKey !== oldKey) : []
+    let setFilters = state.setFilters;
+    let num = 0
+    //automatically select the 1st element from setsNumArr
+    if (setsNumArr && setsNumArr[0])
+      num = parseInt(setsNumArr[0])
+    setFilters[index] = { key: newkey, num }
+    return { setFilters, artifactConditionals }
+  })
+
   dropdownitemsForStar = (star, index) =>
-    Artifact.getArtifactSetsByMaxStarEntries(star).map(([key, setobj]) => {
-      if (this.state.setFilters.some(filter => filter.key === key)) return false;
-      let setsNumArr = Object.keys(ArtifactSetsData[key].sets)
+    Artifact.getArtifactSetsByMaxStarEntries(star).map(([setKey, setobj]) => {
+      if (this.state.setFilters.some(filter => filter.key === setKey)) return false;
+      let setsNumArr = Object.keys(Artifact.getArtifactSets(setKey))
       let artsAccountedOther = this.state.setFilters.reduce((accu, cur, ind) => (cur.key && ind !== index) ? accu + cur.num : accu, 0)
       if (setsNumArr.every(num => parseInt(num) + artsAccountedOther > 5)) return false;
-      return (<Dropdown.Item key={key}
-        onClick={() => this.changeSetFilterKey(index, key, setsNumArr)}
+      return (<Dropdown.Item key={setKey}
+        onClick={() => this.changeSetFilterKey(index, setKey, setsNumArr)}
       >
         {setobj.name}
       </Dropdown.Item>)
@@ -113,12 +120,12 @@ export default class BuildDisplay extends React.Component {
 
   generateBuilds = (split, artifactSetPerms) => {
     this.setState({ generatingBuilds: true, builds: [] })
-    let { setFilters, asending, buildFilterKey, maxBuildsToShow } = this.state
+    let { setFilters, asending, buildFilterKey, maxBuildsToShow, artifactConditionals } = this.state
     let character = CharacterDatabase.getCharacter(this.state.selectedCharacterId)
     let weaponStats = Weapon.createWeaponBundle(character)
     let initialStats = Character.calculateCharacterWithWeaponStats(character, weaponStats)
 
-    let artifactSetEffects = Artifact.getAllArtifactSetEffectsObj()
+    let artifactSetEffects = Artifact.getAllArtifactSetEffectsObj(artifactConditionals)
     let splitArtifacts = deepClone(split)
     //add mainStatVal to each artifact, TODO add main stat assuming fully leveled up
     Object.values(splitArtifacts).forEach(artArr => {
@@ -141,7 +148,7 @@ export default class BuildDisplay extends React.Component {
         label: Build.calculateTotalBuildNumber(split, artifactSetPerms, this.state.setFilters)
       })
       let builds = e.data.builds.map(obj =>
-        Character.calculateBuildWithObjs(initialStats, obj.artifacts))
+        Character.calculateBuildWithObjs(artifactConditionals, initialStats, obj.artifacts))
       this.setState({ builds, generatingBuilds: false })
     }
 
@@ -161,86 +168,133 @@ export default class BuildDisplay extends React.Component {
       : (totBuildNumber > this.state.maxBuildsToGenerate ?
         <Alert variant="danger" className="mb-0"><span>Current configuration will generate <b>{totBuildNumber}</b> builds for <b>{characterName}</b>. Please restrict artifact configuration to reduce builds to less than {this.state.maxBuildsToGenerate}, or your browser might crash.</span></Alert> :
         <Alert variant="success" className="mb-0"><span>Current configuration will generate <b>{totBuildNumber}</b> builds for <b>{characterName}</b>.</span></Alert>)
+    let characterDropDown = <DropdownButton title={this.state.selectedCharacterId ? characterName : "Select Character"}>
+      <Dropdown.Item onClick={() => this.setState({ selectedCharacterId: "", builds: [] })}>No Character</Dropdown.Item>
+      {Object.values(charlist).map((char, i) =>
+        <Dropdown.Item key={char.name + i}
+          onClick={() => this.setState({ selectedCharacterId: char.id, builds: [] })}
+        >
+          {char.name}
+        </Dropdown.Item>)}
+    </DropdownButton>
     return <Card bg="darkcontent" text="lightfont">
       <Card.Header>Build Generator</Card.Header>
       <Card.Body>
-        <Row>
-          <Col>
-            {/* Character picker */}
-            <div className="mb-2">
-              <DropdownButton title={this.state.selectedCharacterId ? characterName : "Select Character"}>
-                <Dropdown.Item onClick={() => this.setState({ selectedCharacterId: "", builds: [] })}>
-                  No Character
-              </Dropdown.Item>
-                {Object.values(charlist).map((char, i) =>
-                  <Dropdown.Item key={char.name + i}
-                    onClick={() => this.setState({ selectedCharacterId: char.id, builds: [] })}
-                  >
-                    {char.name}
-                  </Dropdown.Item>)}
-              </DropdownButton>
-            </div>
+        <Row >
+          <Col xs={12} lg={6} className="mb-2">
+            {/* character selection */}
+            {this.state.selectedCharacterId ? <CharacterCard header={characterDropDown} characterId={this.state.selectedCharacterId} bg={"lightcontent"} footer={false} cardClassName="mb-2" /> :
+              <Card bg="lightcontent" text="lightfont" className="mb-2">
+                <Card.Header>
+                  {characterDropDown}
+                </Card.Header>
+              </Card>}
+            {/* main stat selector */}
+            <Card bg="lightcontent" text="lightfont">
+              <Card.Header>Artifact Main Stat (Optional)</Card.Header>
+              <Card.Body>
+                {BuildDisplay.artifactsSlotsToSelectMainStats.map((slotKey, index) =>
+                (<div className="text-inline mb-1 d-flex justify-content-between" key={slotKey}>
+                  <h6 className="d-inline mr-2">
+                    {Artifact.getArtifactSlotNameWithIcon(slotKey)}
+                  </h6>
+                  <DropdownButton
+                    title={this.state.mainStat[index] ? Stat.getStatNameWithPercent(this.state.mainStat[index]) : "Select a mainstat"}
+                    className="d-inline">
+                    <Dropdown.Item onClick={() => this.changeMainStat(index, "")} >No MainStat</Dropdown.Item>
+                    {ArtifactSlotsData[slotKey].stats.map(mainStatKey =>
+                      <Dropdown.Item onClick={() => this.changeMainStat(index, mainStatKey)} key={mainStatKey}>
+                        {Stat.getStatNameWithPercent(mainStatKey)}
+                      </Dropdown.Item>
+                    )}
+                  </DropdownButton>
+                </div>))}
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col xs={12} lg={6} className="mb-2"><Row>
             {/* Artifact set picker */}
-            {this.state.setFilters.map((setFilter, index) =>
-              <div className="mb-2" key={index}>
-                <ButtonGroup>
-                  {/* Artifact set */}
-                  <DropdownButton as={ButtonGroup} title={Artifact.getArtifactSetName(setFilter.key, "Set (Optional)")} >
-                    <Dropdown.Item onClick={() => this.changeSetFilterKey(index, "")}>
-                      Unselect Artifact
+            {this.state.setFilters.map((setFilter, index) => {
+              let { key: setKey, num } = setFilter
+              let { artifactConditionals } = this.state
+              return (<Col className="mb-2" key={index} xs={12}>
+                <Card className="h-100" bg="lightcontent" text="lightfont">
+                  <Card.Header>
+                    <ButtonGroup>
+                      {/* Artifact set */}
+                      <DropdownButton as={ButtonGroup} title={Artifact.getArtifactSetName(setFilter.key, "Set (Optional)")} >
+                        <Dropdown.Item onClick={() => this.changeSetFilterKey(index, "")}>
+                          Unselect Artifact
                   </Dropdown.Item>
-                    <Dropdown.ItemText>Max Rarity 🟊🟊🟊🟊🟊</Dropdown.ItemText>
-                    {this.dropdownitemsForStar(5, index)}
-                    <Dropdown.Divider />
-                    <Dropdown.ItemText>Max Rarity 🟊🟊🟊🟊</Dropdown.ItemText>
-                    {this.dropdownitemsForStar(4, index)}
-                    <Dropdown.Divider />
-                    <Dropdown.ItemText>Max Rarity 🟊🟊🟊</Dropdown.ItemText>
-                    {this.dropdownitemsForStar(3, index)}
-                  </DropdownButton>
-                  {/* set number */}
-                  <DropdownButton as={ButtonGroup} title={`${setFilter.num}-set`}
-                    disabled={!setFilter.key || artsAccounted >= 5}
-                  >
-                    {setFilter.key && Artifact.getArtifactSetEffectsObj(setFilter.key) && Object.keys(Artifact.getArtifactSetEffectsObj(setFilter.key)).map(num => {
-                      let artsAccountedOther = this.state.setFilters.reduce((accu, cur) => (cur.key && cur.key !== setFilter.key) ? accu + cur.num : accu, 0)
-                      return (parseInt(num) + artsAccountedOther <= 5) &&
-                        (<Dropdown.Item key={num}
-                          onClick={() => this.setState((state) => {
-                            let setFilters = deepClone(state.setFilters);
-                            setFilters[index].num = parseInt(num)
-                            return { setFilters }
-                          })}
-                        >
-                          {`${num}-set`}
-                        </Dropdown.Item>)
+                        <Dropdown.ItemText>Max Rarity 🟊🟊🟊🟊🟊</Dropdown.ItemText>
+                        {this.dropdownitemsForStar(5, index)}
+                        <Dropdown.Divider />
+                        <Dropdown.ItemText>Max Rarity 🟊🟊🟊🟊</Dropdown.ItemText>
+                        {this.dropdownitemsForStar(4, index)}
+                        <Dropdown.Divider />
+                        <Dropdown.ItemText>Max Rarity 🟊🟊🟊</Dropdown.ItemText>
+                        {this.dropdownitemsForStar(3, index)}
+                      </DropdownButton>
+                      {/* set number */}
+                      <DropdownButton as={ButtonGroup} title={`${setFilter.num}-set`}
+                        disabled={!setFilter.key || artsAccounted >= 5}
+                      >
+                        {setFilter.key && Artifact.getArtifactSetEffectsObj(setFilter.key) && Object.keys(Artifact.getArtifactSetEffectsObj(setFilter.key)).map(num => {
+                          let artsAccountedOther = this.state.setFilters.reduce((accu, cur) => (cur.key && cur.key !== setFilter.key) ? accu + cur.num : accu, 0)
+                          return (parseInt(num) + artsAccountedOther <= 5) &&
+                            (<Dropdown.Item key={num}
+                              onClick={() => this.setState((state) => {
+                                let setFilters = deepClone(state.setFilters);
+                                setFilters[index].num = parseInt(num)
+                                return { setFilters }
+                              })}
+                            >
+                              {`${num}-set`}
+                            </Dropdown.Item>)
+                        })}
+                      </DropdownButton>
+                    </ButtonGroup>
+                  </Card.Header>
+                  {setFilter.key ? <Card.Body><Row>
+                    {Object.keys(Artifact.getArtifactSets(setKey)).filter(setNkey => parseInt(setNkey) <= num).map(setNumKey => {
+                      let setStats = Artifact.getArtifactSetNumStats(setKey, setNumKey)
+                      let conditionalNum = 0;
+                      let conditional = Artifact.getArtifactSetEffectConditional(setKey, setNumKey)
+                      if (conditional) {
+                        conditionalNum = ArtifactConditionals.getConditionalNum(artifactConditionals, setKey, setNumKey)
+                        let conditionalStats = Artifact.getArtifactConditionalStats(setKey, setNumKey, conditionalNum)
+                        if (conditionalStats) {
+                          if (!setStats) setStats = {}
+                          Object.entries(conditionalStats).forEach(([statKey, val]) =>
+                            setStats[statKey] = (setStats[statKey] || 0) + val)
+                        }
+                      }
+                      let setStateArtifactConditional = (conditionalNum) => this.setState(state =>
+                        ({ artifactConditionals: ArtifactConditionals.setConditional(state.artifactConditionals, setKey, setNumKey, conditionalNum) }))
+                      let conditionalElement = <ConditionalSelector
+                        conditional={conditional}
+                        conditionalNum={conditionalNum}
+                        setConditional={setStateArtifactConditional}
+                        defEle={<Badge variant="success">{setNumKey}-Set</Badge>}
+                      />
+                      return <Col key={setNumKey} xs={12} className="mb-3">
+                        <h6>{conditionalElement} {Artifact.getArtifactSetEffectText(setKey, setNumKey)}</h6>
+                        {setStats ? <Row>
+                          {Object.entries(setStats).map(([statKey, val]) =>
+                            <Col xs={12} key={statKey}>{Stat.getStatName(statKey)}: {val}{Stat.getStatUnit(statKey)}</Col>)}
+                        </Row> : null}
+                      </Col>
                     })}
-                  </DropdownButton>
-                </ButtonGroup>
-              </div>
-            )}
-          </Col>
-          <Col>
-            <h5>Artifact Main Stat (Optional)</h5>
-            {BuildDisplay.artifactsSlotsToSelectMainStats.map((slotKey, index) =>
-            (<div className="text-inline mb-1 d-flex justify-content-between" key={slotKey}>
-              <h6 className="d-inline mr-2">
-                {Artifact.getArtifactSlotNameWithIcon(slotKey)}
-              </h6>
-              <DropdownButton
-                title={this.state.mainStat[index] ? Stat.getStatNameWithPercent(this.state.mainStat[index]) : "Select a mainstat"}
-                className="d-inline">
-                <Dropdown.Item onClick={() => this.changeMainStat(index, "")} >No MainStat</Dropdown.Item>
-                {ArtifactSlotsData[slotKey].stats.map(mainStatKey =>
-                  <Dropdown.Item onClick={() => this.changeMainStat(index, mainStatKey)} key={mainStatKey}>
-                    {Stat.getStatNameWithPercent(mainStatKey)}
-                  </Dropdown.Item>
-                )}
-              </DropdownButton>
-            </div>))}
-          </Col>
+                  </Row></Card.Body> : null}
+                </Card>
+              </Col>)
+            })}
+          </Row></Col>
         </Row>
-        <Row className="d-flex justify-content-between mb-2">
+        <Row className="mb-2">
+          <Col>{this.state.selectedCharacterId && buildAlert}</Col>
+        </Row>
+        <Row className="d-flex justify-content-between">
           <Col xs="auto" >
             <Button
               className="h-100"
@@ -268,9 +322,6 @@ export default class BuildDisplay extends React.Component {
               </Button>
             </ButtonGroup>
           </Col>
-        </Row>
-        <Row>
-          <Col>{this.state.selectedCharacterId && buildAlert}</Col>
         </Row>
       </Card.Body>
     </Card>

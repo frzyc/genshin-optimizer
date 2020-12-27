@@ -4,7 +4,8 @@ import CharacterDatabase from '../Character/CharacterDatabase';
 import SlotIcon from '../Components/SlotIcon';
 import { ArtifactMainSlotKeys, ArtifactMainStatsData, ArtifactSetsData, ArtifactSlotsData, ArtifactStarsData, ArtifactSubStatsData } from '../Data/ArtifactData';
 import Stat from '../Stat';
-import { clampPercent, closeEnoughFloat, closeEnoughInt, deepClone } from '../Util';
+import ArtifactConditionals from '../Util/ArtifactConditionals';
+import { clamp, clampPercent, closeEnoughFloat, closeEnoughInt, deepClone } from '../Util/Util';
 import ArtifactBase from './ArtifactBase';
 import ArtifactDatabase from './ArtifactDatabase';
 
@@ -145,36 +146,96 @@ export default class Artifact {
   }
 
   static setToSlots = ArtifactBase.setToSlots;
+
+  static getArtifactSets = (setKey, defVal = null) =>
+    ArtifactSetsData?.[setKey]?.sets || defVal
+  static getArtifactSetNumStats = (setKey, setNumKey, defVal = null) =>
+    this.getArtifactSets(setKey)?.[setNumKey]?.stats || defVal
+
+  static getArtifactConditionalStats = (setKey, setNumKey, conditionalNum, defVal = null) => {
+    if (!conditionalNum) return defVal
+    let conditional = ArtifactSetsData[setKey].sets[setNumKey].conditional
+    if (!conditional) return defVal
+    if (Array.isArray(conditional)) {
+      //multiconditional
+      let selectedConditionalNum = conditionalNum
+      let selectedConditional = null
+      for (const curConditional of conditional) {
+        if (selectedConditionalNum > curConditional.maxStack) selectedConditionalNum -= curConditional.maxStack
+        else {
+          selectedConditional = curConditional;
+          break;
+        }
+      }
+      if (!selectedConditional) return defVal
+      let stacks = clamp(selectedConditionalNum, 1, selectedConditional.maxStack)
+      return Object.fromEntries(Object.entries(selectedConditional.stats).map(([key, val]) => [key, val * stacks]))
+    } else if (conditional.maxStack > 1) {
+      //condtional with stacks
+      let stacks = clamp(conditionalNum, 1, conditional.maxStack)
+      return Object.fromEntries(Object.entries(conditional.stats).map(([key, val]) => [key, val * stacks]))
+    } else if (conditional.maxStack === 1)
+      //boolean conditional
+      return conditional.stats
+    return defVal
+  }
+  static getArtifactSetEffectsStats = (setToSlots) => {
+    let artifactSetEffect = []
+    Object.entries(setToSlots).forEach(([setKey, artArr]) =>
+      ArtifactSetsData?.[setKey]?.sets && Object.entries(ArtifactSetsData[setKey].sets).forEach(([setNumKey, value]) =>
+        parseInt(setNumKey) <= artArr.length && value.stats && Object.keys(value.stats).length &&
+        Object.entries(value.stats).forEach(([key, statVal]) =>
+          artifactSetEffect.push({ key, statVal }))))
+    return artifactSetEffect
+  }
   static getArtifactSetEffects = (setToSlots) => {
     let artifactSetEffect = {}
-    Object.entries(setToSlots).forEach(([setKey, arr]) => {
-      let numArts = arr.length;
-      if (ArtifactSetsData[setKey] && ArtifactSetsData[setKey].sets) {
-        Object.entries(ArtifactSetsData[setKey].sets).forEach(([num, value]) => {
-          if (parseInt(num) <= numArts) {
-            !artifactSetEffect[setKey] && (artifactSetEffect[setKey] = {})
-            artifactSetEffect[setKey][num] = deepClone(value);
-          }
-        })
+    Object.entries(setToSlots).forEach(([setKey, artArr]) => {
+      if (ArtifactSetsData?.[setKey]?.sets) {
+        let setNumKeys = Object.keys(ArtifactSetsData[setKey].sets).filter(setNumKey => parseInt(setNumKey) <= artArr.length)
+        if (setNumKeys.length)
+          artifactSetEffect[setKey] = setNumKeys
       }
     })
     return artifactSetEffect
   }
-  static getAllArtifactSetEffectsObj = (conditionals) => {
+
+  static getArtifactSetEffectText = (setKey, setNumKey, charFinalStats, defVal = "") => {
+    let setEffectText = ArtifactSetsData?.[setKey]?.sets?.[setNumKey]?.text
+    if (!setEffectText) return defVal
+    if (typeof setEffectText === "string")
+      return setEffectText
+    else if (typeof setEffectText === "function")
+      return setEffectText(charFinalStats || {})
+    return defVal
+  }
+  static getArtifactSetEffectConditional = (setKey, setNumKey, defVal = null) =>
+    ArtifactSetsData?.[setKey]?.sets?.[setNumKey]?.conditional || defVal
+
+  static getAllArtifactSetEffectsObj = (artifactConditionals) => {
     let ArtifactSetEffectsObj = {};
-    Object.entries(ArtifactSetsData).forEach(([key, setObj]) => {
+    Object.entries(ArtifactSetsData).forEach(([setKey, setObj]) => {
       let setEffect = {}
       let hasSetEffect = false
       if (setObj.sets)
         Object.entries(setObj.sets).forEach(([setNumKey, setEffectObj]) => {
-          //TODO conditionals
           if (setEffectObj.stats && Object.keys(setEffectObj.stats).length > 0) {
             setEffect[setNumKey] = deepClone(setEffectObj.stats)
             hasSetEffect = true
           }
+          if (setEffectObj.conditional) {
+            let conditionalNum = ArtifactConditionals.getConditionalNum(artifactConditionals, setKey, setNumKey)
+            if (conditionalNum) {
+              let condStats = this.getArtifactConditionalStats(setKey, setNumKey, conditionalNum)
+              if (condStats) {
+                setEffect[setNumKey] = deepClone(condStats)
+                hasSetEffect = true
+              }
+            }
+          }
         })
       if (hasSetEffect)
-        ArtifactSetEffectsObj[key] = setEffect;
+        ArtifactSetEffectsObj[setKey] = setEffect;
     })
     return ArtifactSetEffectsObj
   }

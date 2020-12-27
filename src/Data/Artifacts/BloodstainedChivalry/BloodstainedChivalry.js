@@ -4,7 +4,7 @@ import sands from './Item_Bloodstained_Final_Hour.png'
 import goblet from './Item_Bloodstained_Chevalier\'s_Goblet.png'
 import circlet from './Item_Bloodstained_Iron_Mask.png'
 let artifact = {
-  name: "Bloodstained Chivalry", rarity: [4, 5], 
+  name: "Bloodstained Chivalry", rarity: [4, 5],
   pieces: {
     flower: "Bloodstained Flower of Iron",
     plume: "Bloodstained Black Plume",
@@ -26,7 +26,15 @@ let artifact = {
     },
     4: {
       text: "After defeating an opponent, increases Charged Attack DMG by 50%, and reduces its Stamina cost to 0 for 10s.",
-      stats: {}
+      conditional: {
+        type: "artifact",
+        sourceKey: "BloodstainedChivalry_4",
+        maxStack: 1,
+        stats: {
+          char_atk_dmg: 50,
+          stamina_dec: 100,
+        }
+      }
     }
   }
 }

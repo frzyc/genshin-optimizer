@@ -26,6 +26,8 @@ function App() {
       <div id="content" className="flex-grow-1">
         <Navbar bg="dark" variant="dark" expand="md">
           <Navbar.Brand as={Link} to="/">Genshin Optimizer</Navbar.Brand>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
             <Nav.Link as={Link} to="/artifact">
               Artifacts</Nav.Link>
@@ -50,6 +52,7 @@ function App() {
               </Nav.Link>
             </ReactGA.OutboundLink>
           </Nav>
+            </Navbar.Collapse>
         </Navbar>
           <Suspense fallback={<Container>
             <Card bg="darkcontent" text="lightfont" className="mt-2">

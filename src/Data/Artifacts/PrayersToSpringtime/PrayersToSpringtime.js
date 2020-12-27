@@ -10,7 +10,7 @@ let artifact = {
   sets: {
     1: {
       text: "Affected by Cryo for 40% less time.",
-      stats: {}
+      stats: {}//TODO element affect reduction stat
     }
   }
 }

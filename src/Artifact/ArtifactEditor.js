@@ -6,7 +6,7 @@ import { FloatFormControl, IntFormControl } from '../Components/CustomFormContro
 import { Stars } from '../Components/StarDisplay';
 import { ArtifactSetsData, ArtifactSlotsData, ArtifactStarsData, ArtifactSubStatsData } from '../Data/ArtifactData';
 import Stat from '../Stat';
-import { deepClone, getArrLastElement, getRandomElementFromArray, getRandomIntInclusive } from '../Util';
+import { deepClone, getArrLastElement, getRandomElementFromArray, getRandomIntInclusive } from '../Util/Util';
 import Artifact from './Artifact';
 import ArtifactDatabase from './ArtifactDatabase';
 import PercentBadge from './PercentBadge';
@@ -298,12 +298,12 @@ export default class ArtifactEditor extends React.Component {
                   </PercentBadge>
                 </span>
                 <OverlayTrigger
-                  placement="left"
+                  placement="bottom"
                   overlay={
                     <Popover >
                       <Popover.Title as="h5">Substat Efficiency</Popover.Title>
                       <Popover.Content>
-                        <span>Every time 4 artifact upgrades, you get a substat roll. The <strong>substat efficiency</strong> calculates as a percentage how high the substat rolled. The <strong>Maximum Substat Efficiency</strong> of an artifact calculates the efficiency if the remaining upgrades rolled maximum.</span>
+                        <span>Every 4 artifact upgrades, you get a substat roll. The <strong>substat efficiency</strong> calculates as a percentage how high the substat rolled. The <strong>Maximum Substat Efficiency</strong> of an artifact calculates the efficiency if the remaining upgrades rolled maximum.</span>
                       </Popover.Content>
                     </Popover>
                   }

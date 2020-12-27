@@ -26,7 +26,6 @@ let artifact = {
     },
     4: {
       text: "Picking up Mora restores 300 HP.",
-      stats: {}
     }
   }
 }

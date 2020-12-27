@@ -1,18 +1,20 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
 import { Accordion, Badge, Button, Card, Col, Row } from 'react-bootstrap';
 import Artifact from '../../Artifact/Artifact';
 import ArtifactCard from '../../Artifact/ArtifactCard';
-import StatIcon from '../../Components/StatIcon';
+import ConditionalSelector from '../../Components/ConditionalSelector';
+import { StatIconEle } from '../../Components/StatIcon';
 import Stat from "../../Stat";
+import ArtifactConditionals from '../../Util/ArtifactConditionals';
 import Character from "../Character";
 
 function CharacterArtifactPane(props) {
   let [showOther, setShowOther] = useState(false)
-  let { character: { characterKey, compareAgainstEquipped }, equippedBuild, newBuild, editable, forceUpdate } = props
+  let { character: { characterKey, compareAgainstEquipped, artifactConditionals }, equippedBuild, newBuild, editable, forceUpdate, setState } = props
   let { character } = props
   //choose which one to display stats for
   let build = newBuild ? newBuild : equippedBuild
+  if (newBuild) artifactConditionals = newBuild.artifactConditionals
   let eleKey = Character.getElementalKey(characterKey)
   const statKeys = ["hp", "atk", "def", "ele_mas", "crit_rate", "crit_dmg", "crit_multi", "ener_rech", "heal_bonu", "phy_dmg", "phy_atk",]
   statKeys.push(`${eleKey}_ele_dmg`)
@@ -31,7 +33,7 @@ function CharacterArtifactPane(props) {
     let buildDiff = (build?.finalStats?.[statKey] || 0) - statVal
 
     return <Col xs={12} md={6} lg={4} key={statKey}>
-      <h6 className="d-inline">{StatIcon[statKey] ? <FontAwesomeIcon icon={StatIcon[statKey]} className="fa-fw" /> : null} {Stat.getStatName(statKey)}</h6>
+      <h6 className="d-inline">{StatIconEle(statKey)} {Stat.getStatName(statKey)}</h6>
       <span className={`float-right ${(editable && Character.hasOverride(character, statKey)) ? "text-warning" : ""}`}>
         {statVal?.toFixed(Stat.fixedUnit(statKey)) + unit}
         {buildDiff ? <span className={buildDiff > 0 ? "text-success" : "text-danger"}> {buildDiff > 0 && "+"}{buildDiff?.toFixed(Stat.fixedUnit(statKey)) + unit}</span> : null}
@@ -44,13 +46,15 @@ function CharacterArtifactPane(props) {
     let buildDiff = (newBuild?.finalStats?.[statKey] || 0) - (equippedBuild?.finalStats?.[statKey] || 0)
 
     return <Col xs={12} md={6} lg={4} key={statKey}>
-      <h6 className="d-inline">{StatIcon[statKey] ? <FontAwesomeIcon icon={StatIcon[statKey]} className="fa-fw" /> : null} {Stat.getStatName(statKey)}</h6>
+      <h6 className="d-inline">{StatIconEle(statKey)} {Stat.getStatName(statKey)}</h6>
       <span className={`float-right ${(editable && Character.hasOverride(character, statKey)) ? "text-warning" : ""}`}>
         {statVal?.toFixed(Stat.fixedUnit(statKey)) + unit}
         {buildDiff ? <span className={buildDiff > 0 ? "text-success" : "text-danger"}> ({buildDiff > 0 ? "+" : ""}{buildDiff?.toFixed(Stat.fixedUnit(statKey)) + unit})</span> : null}
       </span>
     </Col>
   }
+  const setStateArtifactConditional = (setKey, setNumKey, conditionalNum) => setState(state =>
+    ({ artifactConditionals: ArtifactConditionals.setConditional(state.artifactConditionals, setKey, setNumKey, conditionalNum) }))
 
   return <>
     <Row>
@@ -98,12 +102,37 @@ function CharacterArtifactPane(props) {
               <Card.Header>Artifact Set Effects</Card.Header>
               <Card.Body className="flex-grow-1">
                 <Row>
-                  {Object.entries(build.artifactSetEffect).map(([setKey, effects]) =>
+                  {Object.entries(Artifact.getArtifactSetEffects(build.setToSlots)).map(([setKey, setNumKeyArr]) =>
                     <Col key={setKey} xs={12} className="mb-3">
                       <h5>{Artifact.getArtifactSetName(setKey)}</h5>
                       <Row>
-                        {Object.entries(effects).map(([num, effect]) => {
-                          return <Col key={num} xs={12}><h6><Badge variant="success">{num}-Set</Badge> <span>{effect.text}</span></h6></Col>
+                        {setNumKeyArr.map(setNumKey => {
+                          let setStats = Artifact.getArtifactSetNumStats(setKey, setNumKey)
+                          let conditionalNum = 0;
+                          let conditional = Artifact.getArtifactSetEffectConditional(setKey, setNumKey)
+                          if (conditional) {
+                            conditionalNum = ArtifactConditionals.getConditionalNum(artifactConditionals, setKey, setNumKey)
+                            let conditionalStats = Artifact.getArtifactConditionalStats(setKey, setNumKey, conditionalNum)
+                            if (conditionalStats) {
+                              if (!setStats) setStats = {}
+                              Object.entries(conditionalStats).forEach(([statKey, val]) =>
+                                setStats[statKey] = (setStats[statKey] || 0) + val)
+                            }
+                          }
+                          let conditionalElement = <ConditionalSelector
+                            disabled={newBuild ? true : false}
+                            conditional={conditional}
+                            conditionalNum={conditionalNum}
+                            setConditional={(cnum) => setStateArtifactConditional(setKey, setNumKey, cnum)}
+                            defEle={<Badge variant="success">{setNumKey}-Set</Badge>}
+                          />
+                          return <Col key={setNumKey} xs={12} className="mb-3">
+                            <h6>{conditionalElement} {Artifact.getArtifactSetEffectText(setKey, setNumKey, build.finalStats)}</h6>
+                            {setStats ? <Row>
+                              {Object.entries(setStats).map(([statKey, val]) =>
+                                <Col xs={12} key={statKey}>{Stat.getStatName(statKey)}: {val}{Stat.getStatUnit(statKey)}</Col>)}
+                            </Row> : null}
+                          </Col>
                         })}
                       </Row>
                     </Col>
