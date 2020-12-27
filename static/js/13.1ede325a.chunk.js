@@ -1,0 +1,2 @@
+(this["webpackJsonpgenshin-optimizer"]=this["webpackJsonpgenshin-optimizer"]||[]).push([[13],{205:function(e,t,a){"use strict";a.r(t),a.d(t,"default",(function(){return s}));var r=a(2),i=a(55),n=a(86),c=a(129),o=a(104);function s(e){Object(o.a)();var t=n.a.getCharacter(n.a.getCharacterIdList()[0]);return console.log("loaded from db",t),Object(r.jsx)(i.a,{children:Object(r.jsx)(c.a,{editable:!0,characterToEdit:t})})}}}]);
+//# sourceMappingURL=13.1ede325a.chunk.js.map
