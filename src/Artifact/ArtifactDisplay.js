@@ -25,7 +25,8 @@ export default class ArtifactDisplay extends React.Component {
     this.state = {
       artIdList: [],
       artToEdit: null,
-      ...ArtifactDisplay.initialFilter
+      ...deepClone(ArtifactDisplay.initialFilter),
+      maxNumArtifactsToDisplay: 50
     }
     ReactGA.pageview('/artifact')
   }
@@ -77,6 +78,7 @@ export default class ArtifactDisplay extends React.Component {
     this.setState({ artIdList: ArtifactDatabase.getArtifactIdList() })
   }
   render() {
+    let totalArtNum = this.state.artIdList?.length || 0
     let artifacts = this.state.artIdList.map(artid => ArtifactDatabase.getArtifact(artid)).filter((art) => {
       if (this.state.filterArtSetKey && this.state.filterArtSetKey !== art.setKey) return false;
       if (!this.state.filterStars.includes(art.numStars)) return false;
@@ -96,6 +98,7 @@ export default class ArtifactDisplay extends React.Component {
         <Dropdown.Item key={key} onClick={() => this.setState({ filterArtSetKey: key })}>
           {setobj.name}
         </Dropdown.Item >)
+    let displayingText = `Showing ${artifacts.length > this.state.maxNumArtifactsToDisplay ? this.state.maxNumArtifactsToDisplay : artifacts.length} out of ${totalArtNum} Artifacts`
     return (<Container className="mt-2" ref={this.scrollRef}>
       <Row className="mb-2 no-gutters"><Col>
         <ArtifactEditor
@@ -106,7 +109,7 @@ export default class ArtifactDisplay extends React.Component {
       </Col></Row>
       <Row className="mb-2"><Col>
         <Card bg="darkcontent" text="lightfont">
-          <Card.Header>Artifact Filter</Card.Header>
+          <Card.Header><span>Artifact Filter</span> <span className="float-right">{displayingText}</span></Card.Header>
           <Card.Body>
             <Row>
               {/* Artifact set filter */}
@@ -222,16 +225,16 @@ export default class ArtifactDisplay extends React.Component {
           </Card.Body>
         </Card>
       </Col></Row>
-      <Row className="mb-2 no-gutters">
-        {artifacts.map(art =>
-          <Col key={art.id} lg={4} md={6} className="mb-2 pl-1 pr-1">
+      <Row className="mb-2">
+        {artifacts.map((art, i) =>
+          i < this.state.maxNumArtifactsToDisplay ? <Col key={art.id} lg={4} md={6} className="mb-2">
             <ArtifactCard
               artifactId={art.id}
               onDelete={() => this.deleteArtifact(art.id)}
               onEdit={() => this.editArtifact(art.id)}
               forceUpdate={this.forceUpdateArtifactDisplay}
             />
-          </Col>
+          </Col> : null
         )}
       </Row>
     </Container >)

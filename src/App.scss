@@ -24,6 +24,10 @@ body {
 .text-halfsize {
   font-size: 50%;
 }
+
+//default gutter size of 30px is wayyyyyyy too big
+$grid-gutter-width: 10px !default;
+
 $theme-colors: (
   "lightcontent": $lightbg,
   "darkcontent": $contentbg,
@@ -39,6 +43,12 @@ $theme-colors: (
   "2star": #008000,
   //grey
   "1star": #808080,
+  "1roll":#A3A7A9,//163, 167, 169
+  "2roll":#6FA376,//111, 163, 118
+  "3roll":#8EEA83,//142, 234, 131
+  "4roll":#31E09D,//49, 224, 157
+  "5roll":#27BBE4,//39, 187, 228
+  "6roll":#DE79F0,//222, 121, 240
 );
 
 @import "node_modules/bootstrap/scss/bootstrap";

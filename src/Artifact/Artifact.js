@@ -122,27 +122,27 @@ export default class Artifact {
   }
 
   //ARTIFACT IN GENERAL
-  static artifactValidation(state, substateValidation) {
+  static artifactValidation(state) {
     let currentEfficiency = 0, maximumEfficiency = 0;
-    if (!substateValidation) substateValidation = state.substats.map(substat => Artifact.validateSubStat(state, substat));
-    for (const substat of substateValidation)
+    let subStatValidations = state.substats.map(substat => Artifact.validateSubStat(state, substat));
+    for (const substat of subStatValidations)
       if (!substat.valid)
-        return { substateValidation, valid: false, msg: "One of the substat is invalid.", currentEfficiency, maximumEfficiency }
+        return { subStatValidations, valid: false, msg: "One of the substat is invalid.", currentEfficiency, maximumEfficiency }
 
     //if a substat has >=2 rolls, when not all of them have been unlocked//if a substat has >=2 rolls, when not all of them have been unlocked
-    if (substateValidation.some((substat) => substat.rolls && substat.rolls.length > 1) && substateValidation.some((substat) => !substat.rolls))
-      return { substateValidation, valid: false, msg: "One of the substat have >1 rolls, but not all substats are unlocked.", currentEfficiency, maximumEfficiency }
-    let currentNumOfRolls = substateValidation.reduce((sum, cur) => sum + (cur.valid && cur.rolls ? cur.rolls.length : 0), 0);
+    if (subStatValidations.some(substat => substat?.rolls?.length > 1) && subStatValidations.some((substat) => !substat.rolls))
+      return { subStatValidations, valid: false, msg: "One of the substat have >1 rolls, but not all substats are unlocked.", currentEfficiency, maximumEfficiency }
+    let currentNumOfRolls = subStatValidations.reduce((sum, cur) => sum + (cur.valid && cur.rolls ? cur.rolls.length : 0), 0);
     let rollsRemaining = Artifact.rollsRemaining(state.level, state.numStars);
     let totalPossbleRolls = Artifact.totalPossibleRolls(state.numStars);
 
     if ((currentNumOfRolls + rollsRemaining) > totalPossbleRolls)
-      return { substateValidation, valid: false, msg: `Current number of substat rolles(${currentNumOfRolls}) + Rolls remaining from level up (${rollsRemaining}) is greater than the total possible roll of this artifact (${totalPossbleRolls}) `, currentEfficiency, maximumEfficiency }
+      return { subStatValidations, valid: false, msg: `Current number of substat rolles(${currentNumOfRolls}) + Rolls remaining from level up (${rollsRemaining}) is greater than the total possible roll of this artifact (${totalPossbleRolls}) `, currentEfficiency, maximumEfficiency }
 
-    let totalCurrentEfficiency = substateValidation.reduce((sum, cur) => sum + (cur.valid && cur.rolls && cur.efficiency ? (cur.efficiency * cur.rolls.length) : 0), 0);
+    let totalCurrentEfficiency = subStatValidations.reduce((sum, cur) => sum + (cur.valid && cur.rolls && cur.efficiency ? (cur.efficiency * cur.rolls.length) : 0), 0);
     currentEfficiency = clampPercent(totalCurrentEfficiency / totalPossbleRolls);
     maximumEfficiency = clampPercent((totalCurrentEfficiency + rollsRemaining * 100) / totalPossbleRolls);
-    return { valid: true, substateValidation, currentNumOfRolls, rollsRemaining, totalPossbleUpgrade: totalPossbleRolls, currentEfficiency, maximumEfficiency }
+    return { valid: true, subStatValidations, currentNumOfRolls, rollsRemaining, totalPossbleUpgrade: totalPossbleRolls, currentEfficiency, maximumEfficiency }
   }
 
   static setToSlots = ArtifactBase.setToSlots;
@@ -150,7 +150,7 @@ export default class Artifact {
   static getArtifactSets = (setKey, defVal = null) =>
     ArtifactSetsData?.[setKey]?.sets || defVal
   static getArtifactSetNumStats = (setKey, setNumKey, defVal = null) =>
-    this.getArtifactSets(setKey)?.[setNumKey]?.stats || defVal
+    deepClone(this.getArtifactSets(setKey)?.[setNumKey]?.stats || defVal)
 
   static getArtifactConditionalStats = (setKey, setNumKey, conditionalNum, defVal = null) => {
     if (!conditionalNum) return defVal
@@ -176,7 +176,7 @@ export default class Artifact {
       return Object.fromEntries(Object.entries(conditional.stats).map(([key, val]) => [key, val * stacks]))
     } else if (conditional.maxStack === 1)
       //boolean conditional
-      return conditional.stats
+      return deepClone(conditional.stats)
     return defVal
   }
   static getArtifactSetEffectsStats = (setToSlots) => {

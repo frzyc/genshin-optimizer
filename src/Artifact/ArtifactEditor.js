@@ -1,7 +1,7 @@
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import { Alert, Button, Card, Col, Dropdown, DropdownButton, FormControl, InputGroup, OverlayTrigger, Popover, Row } from 'react-bootstrap';
+import { Alert, Badge, Button, Card, Col, Dropdown, DropdownButton, FormControl, InputGroup, OverlayTrigger, Popover, Row } from 'react-bootstrap';
 import { FloatFormControl, IntFormControl } from '../Components/CustomFormControl';
 import { Stars } from '../Components/StarDisplay';
 import { ArtifactSetsData, ArtifactSlotsData, ArtifactStarsData, ArtifactSubStatsData } from '../Data/ArtifactData';
@@ -35,12 +35,11 @@ export default class ArtifactEditor extends React.Component {
   })
 
   getRemainingSubstats = () =>
-    Object.keys(ArtifactSubStatsData).filter((key) => {
+    Object.keys(ArtifactSubStatsData).filter(key => {
       //if mainstat has key, not valid
       if (this.state.mainStatKey === key) return false;
       //if any one of the substat has, not valid.
-      return !this.state.substats.some((substat, i) =>
-        (substat && substat.key ? (substat.key === key) : false))
+      return !this.state.substats.some(substat => substat?.key === key)
     });
   saveArtifact = () => {
     this.uploadDisplayReset()
@@ -55,13 +54,13 @@ export default class ArtifactEditor extends React.Component {
     let level = (!state.level || state.level > numStars * 4) ? numStars * 4 : state.level
     return { setKey, numStars, level }
   })
-  setSubStat = (index, key = "", value = 0) =>
-    index < 4 && this.setState(state => {
-      let substats = deepClone(state.substats)
-      substats[index].key = key
-      substats[index].value = value
-      return { substats }
-    })
+  setSubStat = (index, key = "", value = 0) => this.setState(state => {
+    if (index >= 4) return
+    let substats = state.substats
+    substats[index].key = key
+    substats[index].value = value
+    return { substats }
+  })
 
   setMainStatKey = (mainStatKey) => this.setState(state => {
     state.substats.forEach((substat, index) =>
@@ -90,83 +89,105 @@ export default class ArtifactEditor extends React.Component {
         {setobj.name}
       </Dropdown.Item >))
 
-    return (<DropdownButton as={InputGroup.Prepend} title={Artifact.getArtifactSetName(this.state.setKey, "Artifact Set")}>
-      <Dropdown.ItemText>Max Rarity <Stars stars={5} /></Dropdown.ItemText>
-      {dropdownitemsForStar(5)}
-      <Dropdown.Divider />
-      <Dropdown.ItemText>Max Rarity <Stars stars={4} /></Dropdown.ItemText>
-      {dropdownitemsForStar(4)}
-      <Dropdown.Divider />
-      <Dropdown.ItemText>Max Rarity <Stars stars={3} /></Dropdown.ItemText>
-      {dropdownitemsForStar(3)}
-    </DropdownButton>)
+    return (<Dropdown as={InputGroup.Prepend} className="flex-grow-1">
+      <Dropdown.Toggle className="w-100">
+        {Artifact.getArtifactSetName(this.state.setKey, "Artifact Set")}
+      </Dropdown.Toggle>
+      <Dropdown.Menu>
+        <Dropdown.ItemText>Max Rarity <Stars stars={5} /></Dropdown.ItemText>
+        {dropdownitemsForStar(5)}
+        <Dropdown.Divider />
+        <Dropdown.ItemText>Max Rarity <Stars stars={4} /></Dropdown.ItemText>
+        {dropdownitemsForStar(4)}
+        <Dropdown.Divider />
+        <Dropdown.ItemText>Max Rarity <Stars stars={3} /></Dropdown.ItemText>
+        {dropdownitemsForStar(3)}
+      </Dropdown.Menu>
+    </Dropdown>)
   }
   MainSelection = (props) =>
-    <InputGroup>
-      {/* Don't know why I can't do <this.ArtifactDropDown />, it has error in production: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. */}
-      {this.ArtifactDropDown()}
-      <DropdownButton as={InputGroup.Prepend} title={this.state.numStars > 0 ? "🟊".repeat(this.state.numStars) : "Rarity"} disabled={!this.state.setKey}>
-        {Object.keys(ArtifactStarsData).map((star, index) => {
-          star = parseInt(star);
-          return <Dropdown.Item key={index} disabled={!this.state.setKey || !ArtifactSetsData[this.state.setKey].rarity.includes(star)} onClick={() => {
-            this.setState({ numStars: star, level: 0 });
-          }}>
-            {<Stars stars={star} />}
-          </Dropdown.Item>
-        })}
-      </DropdownButton>
-      <InputGroup.Prepend>
-        <InputGroup.Text>Level</InputGroup.Text>
-      </InputGroup.Prepend>
-      <FormControl
-        value={this.state.level}
-        disabled={!this.state.setKey}
-        placeholder={`0~${this.state.numStars * 4}`}
-        onChange={(e => this.setLevel(e.target.value))}
-      />
-      <InputGroup.Append>
-        <Button onClick={() => this.setLevel(0)} disabled={!this.state.setKey || this.state.level === 0}>0</Button>
-        <Button onClick={() => this.setLevel(this.state.level - 1)} disabled={!this.state.setKey || this.state.level === 0}>-</Button>
-        <Button onClick={() => this.setLevel(this.state.level + 1)} disabled={!this.state.setKey || this.state.level === (this.state.numStars * 4)}>+</Button>
-        <Button onClick={() => this.setLevel(this.state.numStars * 4)} disabled={!this.state.setKey || this.state.level === (this.state.numStars * 4)}>{this.state.numStars * 4}</Button>
-      </InputGroup.Append>
-    </InputGroup>
-
+    <Row>
+      <Col xs={12} lg={6} className="mb-2">
+        <InputGroup className="w-100 d-flex">
+          {/* Don't know why I can't do <this.ArtifactDropDown />, it has error in production: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. */}
+          {this.ArtifactDropDown()}
+          <DropdownButton as={InputGroup.Append} title={this.state.numStars > 0 ? "🟊".repeat(this.state.numStars) : "Rarity"} disabled={!this.state.setKey}>
+            {Object.keys(ArtifactStarsData).map((star, index) => {
+              star = parseInt(star);
+              return <Dropdown.Item key={index} disabled={!this.state.setKey || !ArtifactSetsData[this.state.setKey].rarity.includes(star)} onClick={() => {
+                this.setState({ numStars: star, level: 0 });
+              }}>
+                {<Stars stars={star} />}
+              </Dropdown.Item>
+            })}
+          </DropdownButton>
+        </InputGroup>
+      </Col>
+      <Col xs={12} lg={6} className="mb-2">
+        <InputGroup>
+          <InputGroup.Prepend>
+            <InputGroup.Text>Level</InputGroup.Text>
+          </InputGroup.Prepend>
+          <FormControl
+            value={this.state.level}
+            disabled={!this.state.setKey}
+            placeholder={`0~${this.state.numStars * 4}`}
+            onChange={(e => this.setLevel(e.target.value))}
+          />
+          <InputGroup.Append>
+            <Button onClick={() => this.setLevel(0)} disabled={!this.state.setKey || this.state.level === 0}>0</Button>
+            <Button onClick={() => this.setLevel(this.state.level - 1)} disabled={!this.state.setKey || this.state.level === 0}>-</Button>
+            <Button onClick={() => this.setLevel(this.state.level + 1)} disabled={!this.state.setKey || this.state.level === (this.state.numStars * 4)}>+</Button>
+            <Button onClick={() => this.setLevel(this.state.numStars * 4)} disabled={!this.state.setKey || this.state.level === (this.state.numStars * 4)}>{this.state.numStars * 4}</Button>
+          </InputGroup.Append>
+        </InputGroup>
+      </Col>
+    </Row>
   MainStatInputRow = () =>
-    <InputGroup>
-      <DropdownButton
-        title={Artifact.getArtifactSlotNameWithIcon(this.state.slotKey, "Slot")}
-        disabled={!this.state.setKey}
-        as={InputGroup.Prepend}
-      >
-        {this.state.setKey && Object.keys(ArtifactSetsData[this.state.setKey].pieces).map(slotKey =>
-          <Dropdown.Item key={slotKey} onClick={() => this.setSlotKey(slotKey)} >
-            {Artifact.getArtifactSlotNameWithIcon(slotKey, "Slot")}
-          </Dropdown.Item>)}
-      </DropdownButton>
-      <FormControl
-        value={Artifact.getArtifactPieceName(this.state.setKey, this.state.slotKey, "Unknown Piece Name")}
-        disabled
-        readOnly
-      />
-      <DropdownButton
-        title={Stat.getStatNameWithPercent(this.state.mainStatKey, "Main Stat")}
-        disabled={!this.state.setKey || !this.state.slotKey}
-        as={InputGroup.Prepend}
-      >
-        <Dropdown.ItemText>Select a Main Artifact Stat </Dropdown.ItemText>
-        {this.state.slotKey ? ArtifactSlotsData[this.state.slotKey].stats.map((mainStatKey) =>
-          <Dropdown.Item key={mainStatKey} onClick={() => this.setMainStatKey(mainStatKey)} >
-            {Stat.getStatNameWithPercent(mainStatKey)}
-          </Dropdown.Item>) : <Dropdown.Item />}
-      </DropdownButton>
-      <FormControl
-        value={this.state.mainStatKey ? `${Artifact.getMainStatValue(this.state.mainStatKey, this.state.numStars, this.state.level)}${Stat.getStatUnit(this.state.mainStatKey)}` : "Main Stat"}
-        disabled
-        readOnly
-      />
-    </InputGroup>
+    <Row>
+      <Col xs={12} lg={6} className="mb-2">
+        <InputGroup>
+          <DropdownButton
+            title={Artifact.getArtifactSlotNameWithIcon(this.state.slotKey, "Slot")}
+            disabled={!this.state.setKey}
+            as={InputGroup.Prepend}
+          >
+            {this.state.setKey && Object.keys(ArtifactSetsData[this.state.setKey].pieces).map(slotKey =>
+              <Dropdown.Item key={slotKey} onClick={() => this.setSlotKey(slotKey)} >
+                {Artifact.getArtifactSlotNameWithIcon(slotKey, "Slot")}
+              </Dropdown.Item>)}
+          </DropdownButton>
+          <FormControl
+            value={Artifact.getArtifactPieceName(this.state.setKey, this.state.slotKey, "Unknown Piece Name")}
+            disabled
+            readOnly
+          />
+        </InputGroup>
+      </Col>
+      <Col xs={12} lg={6} className="mb-2">
+        <InputGroup>
+          <DropdownButton
+            title={Stat.getStatNameWithPercent(this.state.mainStatKey, "Main Stat")}
+            disabled={!this.state.setKey || !this.state.slotKey}
+            as={InputGroup.Prepend}
+          >
+            <Dropdown.ItemText>Select a Main Artifact Stat </Dropdown.ItemText>
+            {this.state.slotKey ? ArtifactSlotsData[this.state.slotKey].stats.map((mainStatKey) =>
+              <Dropdown.Item key={mainStatKey} onClick={() => this.setMainStatKey(mainStatKey)} >
+                {Stat.getStatNameWithPercent(mainStatKey)}
+              </Dropdown.Item>) : <Dropdown.Item />}
+          </DropdownButton>
+          <FormControl
+            value={this.state.mainStatKey ? `${Artifact.getMainStatValue(this.state.mainStatKey, this.state.numStars, this.state.level)}${Stat.getStatUnit(this.state.mainStatKey)}` : "Main Stat"}
+            disabled
+            readOnly
+          />
+        </InputGroup>
+      </Col>
+    </Row>
+
   SubStatInput = (props) => {
+    let { subStatValidation, numStars, subStatKey } = props
     let percentStat = props.subStatKey && Stat.getStatUnit(props.subStatKey) === "%";
     let substatprops = {
       placeholder: "Select a Substat.",
@@ -177,31 +198,49 @@ export default class ArtifactEditor extends React.Component {
     let subStatFormControl = percentStat ?
       <FloatFormControl {...substatprops} />
       : <IntFormControl {...substatprops} />
-    return <InputGroup>
-      <DropdownButton
-        title={Stat.getStatName(props.subStatKey, `Substat ${props.index + 1}`)}
-        disabled={!props.remainingSubstats || props.remainingSubstats.length === 0}
-        as={InputGroup.Prepend}
-      >
-        {props.remainingSubstats ? props.remainingSubstats.map((key) =>
-          <Dropdown.Item key={key} onClick={() => this.onSubStatSelected(key, props.index)} >
-            {Stat.getStatNameWithPercent(key)}
-          </Dropdown.Item>
-        ) : <Dropdown.Item />}
-      </DropdownButton>
-      {subStatFormControl}
-      <InputGroup.Append>
-        {percentStat && <InputGroup.Text>%</InputGroup.Text>}
-        <InputGroup.Text>
-          <PercentBadge
-            tooltip={props.subStatValidation.msg}
-            valid={props.subStatValidation.valid || !props.subStatKey}
-            percent={props.subStatValidation.efficiency}>
-            {props.subStatKey ? (props.subStatValidation.valid ? `${(props.subStatValidation.efficiency ? props.subStatValidation.efficiency : 0).toFixed(2)}%` : "ERR") : "No Stat"}
-          </PercentBadge>
-        </InputGroup.Text>
-      </InputGroup.Append>
-    </InputGroup>
+    let rollData = Artifact.getSubstatRollData(subStatKey, numStars)
+    let rolls = subStatValidation?.rolls || []
+    let rollNum = rolls?.length || 0
+    let rollBadge = <Badge variant={rollNum === 0 ? "secondary" : `${rollNum}roll`} className="text-darkcontent">
+      {rollNum ? rollNum : "No"} Roll{(rollNum > 1 || rollNum === 0) && "s"}
+    </Badge>
+    let rollArr = rolls.map((val, i) => {
+      let ind = rollData.indexOf(val)
+      let displayNum = 6 - (rollData.length - ind - 1)
+      return <span key={i} className={`mr-2 text-${displayNum}roll`}>{val}</span>
+    })
+    let rollDataDisplay = rollData.length ? <span className="float-right"><small>Possible Rolls:</small> {rollData.map((v, i, arr) => {
+      let displayNum = 6 - (arr.length - i - 1)
+      return <span key={i} className={`text-${displayNum}roll mr-1`}>{v}</span>
+    })}</span> : null
+    return <Card bg="lightcontent" text="lightfont">
+      <InputGroup>
+        <DropdownButton
+          title={Stat.getStatName(props.subStatKey, `Substat ${props.index + 1}`)}
+          disabled={!props.remainingSubstats || props.remainingSubstats.length === 0}
+          as={InputGroup.Prepend}
+        >
+          {props.remainingSubstats ? props.remainingSubstats.map((key) =>
+            <Dropdown.Item key={key} onClick={() => this.onSubStatSelected(key, props.index)} >
+              {Stat.getStatNameWithPercent(key)}
+            </Dropdown.Item>
+          ) : <Dropdown.Item />}
+        </DropdownButton>
+        {subStatFormControl}
+        <InputGroup.Append>
+          {percentStat && <InputGroup.Text>%</InputGroup.Text>}
+          <InputGroup.Text>
+            <PercentBadge
+              valid={subStatValidation.valid || !props.subStatKey}
+              percent={subStatValidation.efficiency}>
+              {props.subStatKey ? (subStatValidation.valid ? `${(subStatValidation.efficiency ? subStatValidation.efficiency : 0).toFixed(2)}%` : "ERR") : "No Stat"}
+            </PercentBadge>
+          </InputGroup.Text>
+        </InputGroup.Append>
+      </InputGroup>
+      {subStatValidation.valid ? <label className="w-100 mb-0 p-1">{rollBadge} {rollArr}{rollDataDisplay}</label> :
+        <label className="w-100 mb-0 p-1"><Badge variant="danger">ERR</Badge> {subStatValidation.msg}</label>}
+    </Card>
   }
   onSubStatSelected = (key, index) => {
     this.setState((state) => {
@@ -245,10 +284,12 @@ export default class ArtifactEditor extends React.Component {
     let RollStat = (subStatKey) =>
       getRandomElementFromArray(Artifact.getSubstatRollData(subStatKey, state.numStars))
 
+    let remainingSubstats = this.getRemainingSubstats()
     //set initial substat & value
     for (let i = 0; i < numOfInitialSubStats; i++) {
       let substat = state.substats[i]
-      substat.key = getRandomElementFromArray(this.getRemainingSubstats())
+      substat.key = getRandomElementFromArray(remainingSubstats)
+      remainingSubstats = remainingSubstats.filter(key => key !== substat.key)
       substat.value = RollStat(substat.key)
     }
 
@@ -256,6 +297,9 @@ export default class ArtifactEditor extends React.Component {
     for (let i = 0; i < numUpgradesOrUnlocks; i++) {
       let substat = getRandomElementFromArray(state.substats)
       substat.value += RollStat(substat.key)
+      //make sure there is no rounding numbers
+      if (!Number.isInteger(substat.value)) substat.value = parseFloat(substat.value.toFixed(1))
+
     }
     this.setState(state)
   }
@@ -265,8 +309,8 @@ export default class ArtifactEditor extends React.Component {
   }
   render() {
     let remainingSubstats = this.getRemainingSubstats();
-    let substatValidations = this.state.substats.map(substat => Artifact.validateSubStat(this.state, substat));
-    let artifactValidation = Artifact.artifactValidation(this.state, substatValidations)
+    let artifactValidation = Artifact.artifactValidation(this.state)
+    let { subStatValidations } = artifactValidation
     return (
       <Card bg="darkcontent" text="lightfont">
         <Card.Header>
@@ -275,7 +319,7 @@ export default class ArtifactEditor extends React.Component {
         <Card.Body>
           <Row className="mb-2">
             {/* set, rarity, level selection */}
-            <Col xs={12} className="mb-2"><this.MainSelection /></Col>
+            <Col xs={12}><this.MainSelection /></Col>
             {/* slot, main stat selection */}
             <Col xs={12}><this.MainStatInputRow /></Col>
           </Row>
@@ -283,7 +327,7 @@ export default class ArtifactEditor extends React.Component {
           <Row>
             <Col>
               <h5 className="mr-auto">Substats</h5>
-              <span>
+              <span className="mb-2">
                 <span className="mr-3">
                   <span>Current Substat Efficiency </span>
                   <PercentBadge tooltip={artifactValidation.msg} valid={artifactValidation.valid} percent={artifactValidation.currentEfficiency}>
@@ -323,7 +367,7 @@ export default class ArtifactEditor extends React.Component {
                   subStatKey={substat ? substat.key : null}
                   substatevalue={substat ? substat.value : null}
                   index={index}
-                  subStatValidation={substatValidations[index]}
+                  subStatValidation={subStatValidations[index]}
                 />
               </Col>
             )}

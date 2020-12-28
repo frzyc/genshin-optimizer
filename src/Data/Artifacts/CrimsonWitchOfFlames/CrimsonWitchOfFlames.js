@@ -37,7 +37,7 @@ let artifact = {
         sourceKey: "CrimsonWitchOfFlames_4",
         maxStack: 3,
         stats: {
-          pyro_ele_dmg: 15
+          pyro_ele_dmg: 7.5
         }
       }
     }

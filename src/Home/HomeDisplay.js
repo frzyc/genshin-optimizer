@@ -20,7 +20,9 @@ export default function HomeDisplay(props) {
                 Artifacts are heavily RNG-based elements that directly contributes to how effective your characters are in the game.
                 This tool seek to alleviate some of the complexity associated with artifact efficiency, along with which artifact to choose on your character to maximize your stats.
               </p>
-              <p></p>
+              <p>
+                However, this tool can do so much more. It will allow calculations of all conditional stats from artifacts, weapons, teams buffs, and calculate how those stats will affect your character in REAL TIME.
+              </p>
             </Col>
           </Row>
           <Row className="mb-2">
@@ -30,9 +32,9 @@ export default function HomeDisplay(props) {
               <ul>
                 <li>Full featured Artifact editor.</li>
                 <li>Add Artifacts by scanning a screenshot.</li>
-                <li>Calculate substat efficiency, use a single number to determine whether to keep or trash an artifact!</li>
                 <li>Automatically calculate the exact rolled value of each artifact.</li>
-                <li>Equip/unequip/swap artifacts between your characters, to try out different builds.</li>
+                <li>Calculate substat efficiency, using the roll calculations. Use a single number to determine whether to keep or trash an artifact!</li>
+                <li>Equip/unequip/swap artifacts between your characters, try out different builds.</li>
               </ul>
             </Col>
           </Row>
@@ -44,6 +46,9 @@ export default function HomeDisplay(props) {
                 <li>Automatically populate character stats at every milestone level/ascension.</li>
                 <li>Fully editable stats for customization.</li>
                 <li>Calculate current stats based on weapon/artifacts.</li>
+                <li>Fully featured weapon, with milestone level/ascension stats</li>
+                <li>Apply conditional passives, e.g. Whiteblind's ATK&DEF stacking bonus, to your character stats.</li>
+                <li>Apply conditional passives from Artifacts sets as well!</li>
                 <li><Badge variant="warning">Under Construction</Badge> Talent damage calculations.</li>
                 <li><Badge variant="warning">Under Construction</Badge> Update character stats/talents based on constellation.</li>
               </ul>
@@ -60,6 +65,7 @@ export default function HomeDisplay(props) {
                 <li>Sort the generated builds by a specific stat for maximization.</li>
                 <li>Generator will not pick up artifacts already equipped on a differnt character.</li>
                 <li>Compare generated artifact build against artifact currently on character.</li>
+                <li>Use conditional stats from artifact sets, e.g. Gladitator's 4-set normal attack DMG Bonus, as part of the build calculations.</li>
               </ul>
             </Col>
           </Row>

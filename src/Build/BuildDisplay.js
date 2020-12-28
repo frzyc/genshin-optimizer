@@ -223,9 +223,7 @@ export default class BuildDisplay extends React.Component {
                     <ButtonGroup>
                       {/* Artifact set */}
                       <DropdownButton as={ButtonGroup} title={Artifact.getArtifactSetName(setFilter.key, "Set (Optional)")} >
-                        <Dropdown.Item onClick={() => this.changeSetFilterKey(index, "")}>
-                          Unselect Artifact
-                  </Dropdown.Item>
+                        <Dropdown.Item onClick={() => this.changeSetFilterKey(index, "")}>Unselect Artifact</Dropdown.Item>
                         <Dropdown.ItemText>Max Rarity 🟊🟊🟊🟊🟊</Dropdown.ItemText>
                         {this.dropdownitemsForStar(5, index)}
                         <Dropdown.Divider />
@@ -277,7 +275,7 @@ export default class BuildDisplay extends React.Component {
                         setConditional={setStateArtifactConditional}
                         defEle={<Badge variant="success">{setNumKey}-Set</Badge>}
                       />
-                      return <Col key={setNumKey} xs={12} className="mb-3">
+                      return <Col key={setNumKey} xs={12} className="mb-2">
                         <h6>{conditionalElement} {Artifact.getArtifactSetEffectText(setKey, setNumKey)}</h6>
                         {setStats ? <Row>
                           {Object.entries(setStats).map(([statKey, val]) =>

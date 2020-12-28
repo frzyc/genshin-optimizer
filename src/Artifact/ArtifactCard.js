@@ -1,7 +1,7 @@
 import { faEdit, faLock, faLockOpen, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import { ButtonGroup, Dropdown, Image, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import { Badge, ButtonGroup, Dropdown, Image, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
@@ -44,17 +44,27 @@ export default class ArtifactCard extends React.Component {
         <Card.Subtitle>
           <b>{art.mainStatKey ? `${Stat.getStatName(art.mainStatKey).split("%")[0]} ${Artifact.getMainStatValue(art.mainStatKey, art.numStars, art.level)}${Stat.getStatUnit(art.mainStatKey)}` : null}</b>
         </Card.Subtitle>
-        <ul className="mb-0">
-          {art.substats ? art.substats.map((stat, i) =>
-            (stat && stat.value) ? (<li key={i}>{`${Stat.getStatName(stat.key).split("%")[0]}+${Stat.getStatUnit(stat.key) ? stat.value.toFixed(1) : stat.value}${Stat.getStatUnit(stat.key)}`}</li>) : null
+        <Row className="mb-0">
+          {art.substats ? art.substats.map((stat, i) => {
+            if (!stat || !stat.value) return null
+            let subStatValidation = artifactValidation.subStatValidations[i]
+            let numRolls = subStatValidation?.rolls?.length || 0
+            let efficiency = subStatValidation?.efficiency || 0
+            let effOpacity = 0.3 + efficiency * 0.7
+            return (<Col key={i} xs={12}>
+              <Badge variant={artifactValidation.valid ? `${numRolls}roll` : "danger"} className="text-darkcontent"><b>{artifactValidation.valid ? numRolls : "?"}</b></Badge>{" "}
+              <span className={`text-${numRolls}roll`}>{`${Stat.getStatName(stat.key).split("%")[0]}+${Stat.getStatUnit(stat.key) ? stat.value.toFixed(1) : stat.value}${Stat.getStatUnit(stat.key)}`}</span>
+              <span className="float-right" style={{ opacity: effOpacity }}>{efficiency.toFixed(1)}%</span>
+            </Col>)
+          }
           ) : null}
-        </ul>
+        </Row>
         <div className="mt-auto mb-n2">
           <span className="mb-0 mr-1">Substat Eff.:</span>
           <PercentBadge tooltip={artifactValidation.msg} valid={artifactValidation.valid} percent={artifactValidation.currentEfficiency}>
             {(artifactValidation.currentEfficiency ? artifactValidation.currentEfficiency : 0).toFixed(2) + "%"}
           </PercentBadge>
-          <span>{"<"}</span>
+          <b>{" < "}</b>
           <PercentBadge tooltip={artifactValidation.msg} valid={artifactValidation.valid} percent={artifactValidation.maximumEfficiency}>
             {(artifactValidation.maximumEfficiency ? artifactValidation.maximumEfficiency : 0).toFixed(2) + "%"}
           </PercentBadge>

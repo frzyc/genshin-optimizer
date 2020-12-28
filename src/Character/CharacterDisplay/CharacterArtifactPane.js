@@ -58,7 +58,7 @@ function CharacterArtifactPane(props) {
 
   return <>
     <Row>
-      <Col className="mb-3">
+      <Col className="mb-2">
         <Accordion>
           <Card className="h-100" bg="lightcontent" text="lightfont">
             <Card.Header>
@@ -97,13 +97,13 @@ function CharacterArtifactPane(props) {
     <Row>
       <Col>
         <Row>
-          <Col sm={6} lg={4} className="mb-3">
+          <Col sm={6} lg={4} className="mb-2">
             <Card className="h-100 d-flex flex-column" bg="lightcontent" text="lightfont">
               <Card.Header>Artifact Set Effects</Card.Header>
               <Card.Body className="flex-grow-1">
                 <Row>
                   {Object.entries(Artifact.getArtifactSetEffects(build.setToSlots)).map(([setKey, setNumKeyArr]) =>
-                    <Col key={setKey} xs={12} className="mb-3">
+                    <Col key={setKey} xs={12} className="mb-2">
                       <h5>{Artifact.getArtifactSetName(setKey)}</h5>
                       <Row>
                         {setNumKeyArr.map(setNumKey => {
@@ -126,7 +126,7 @@ function CharacterArtifactPane(props) {
                             setConditional={(cnum) => setStateArtifactConditional(setKey, setNumKey, cnum)}
                             defEle={<Badge variant="success">{setNumKey}-Set</Badge>}
                           />
-                          return <Col key={setNumKey} xs={12} className="mb-3">
+                          return <Col key={setNumKey} xs={12} className="mb-2">
                             <h6>{conditionalElement} {Artifact.getArtifactSetEffectText(setKey, setNumKey, build.finalStats)}</h6>
                             {setStats ? <Row>
                               {Object.entries(setStats).map(([statKey, val]) =>
@@ -142,7 +142,7 @@ function CharacterArtifactPane(props) {
             </Card>
           </Col>
           {Object.values(build.artifactIds).map(artid =>
-            artid ? <Col sm={6} lg={4} key={artid} className="mb-3 testname">
+            artid ? <Col sm={6} lg={4} key={artid} className="mb-2">
               <ArtifactCard artifactId={artid} forceUpdate={forceUpdate} />
             </Col> : null
           )}
