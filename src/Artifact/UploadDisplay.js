@@ -9,6 +9,7 @@ import Snippet from "../imgs/snippet.png";
 import Stat from '../Stat';
 import Artifact from './Artifact';
 import ReactGA from 'react-ga';
+import { clamp } from '../Util/Util';
 
 const starColor = { r: 255, g: 204, b: 50 } //#FFCC32
 
@@ -73,16 +74,16 @@ function UploadDisplay(props) {
     setImage(urlFile)
     const imageDataObj = await urlToImageData(urlFile)
 
-    let numStars = starScanning(imageDataObj.data, imageDataObj.width, imageDataObj.height)
+    let numStars = clamp(starScanning(imageDataObj.data, imageDataObj.width, imageDataObj.height, 5), 3, 5)
     let awaits = [
       // other is for slotkey and mainStatValue and level
-      ocrImage(imageDataToURL(processImageWithBandPassFilter(imageDataObj, { r: 140, g: 140, b: 140 }, { r: 255, g: 255, b: 255 })), setOtherProgress, setOtherProgVariant),
+      ocrImage(imageDataToURL(processImageWithBandPassFilter(imageDataObj, { r: 140, g: 140, b: 140 }, { r: 255, g: 255, b: 255 }, { region: "top", mode: "bw" })), setOtherProgress, setOtherProgVariant),
       // substats
-      ocrImage(imageDataToURL(processImageWithBandPassFilter(imageDataObj, { r: 65, g: 75, b: 90 }, { r: 160, g: 160, b: 160 }, "bot")), setSubstatProgress, setSubstatProgVariant),
+      ocrImage(imageDataToURL(processImageWithBandPassFilter(imageDataObj, { r: 65, g: 75, b: 90 }, { r: 160, g: 160, b: 160 }, { region: "bot" })), setSubstatProgress, setSubstatProgVariant),
       // artifact set
-      ocrImage(imageDataToURL(processImageWithBandPassFilter(imageDataObj, { r: 90, g: 160, b: 80 }, { r: 200, g: 255, b: 200 }, "bot")), setArtSetProgress, setArtSetProgVariant),
+      ocrImage(imageDataToURL(processImageWithBandPassFilter(imageDataObj, { r: 90, g: 160, b: 80 }, { r: 200, g: 255, b: 200 }, { region: "bot", mode: "bw" })), setArtSetProgress, setArtSetProgVariant),
       // main stat
-      ocrImage(imageDataToURL(processImageWithBandPassFilter(imageDataObj, { r: 120, g: 120, b: 120 }, { r: 215, g: 200, b: 220 }, "top")), setMainStatProgress, setMainStatProgVariant)
+      ocrImage(imageDataToURL(processImageWithBandPassFilter(imageDataObj, { r: 120, g: 120, b: 120 }, { r: 215, g: 200, b: 220 }, { region: "top", mode: "bw" })), setMainStatProgress, setMainStatProgVariant)
     ]
 
     let [whiteparsed, substatOCRText, setOCRText, mainStatOCRText] = await Promise.all(awaits)
@@ -90,10 +91,9 @@ function UploadDisplay(props) {
     let setKey = parseSetKey(setOCRText)
     let slotKey = parseSlotKey(whiteparsed)
     let substats = parseSubstat(substatOCRText)
-    let level = NaN//parseLevel(whiteparsed) looks like the level isnt consistently parsed.
+    let level = NaN//looks like the level isnt consistently parsed. 
     let mainStatKey = parseMainStatKey(mainStatOCRText)
     let { mainStatValue, unit = "" } = parseMainStatvalue(whiteparsed)
-
     //the main stat value is used to distinguish main stats between % and flat
     if (unit === "%" && (mainStatKey === "hp" || mainStatKey === "def" || mainStatKey === "atk"))
       mainStatKey += "_"
@@ -101,11 +101,6 @@ function UploadDisplay(props) {
     if (setKey && numStars)
       if (!Artifact.getRarityArr(setKey).includes(numStars))
         numStars = 0;
-
-    if (numStars && !isNaN(level)) {
-      if (level > numStars * 4)
-        level = NaN
-    }
 
     //if main stat isnt parsed, then we try to guess it
     if (slotKey && !mainStatKey) {
@@ -149,6 +144,14 @@ function UploadDisplay(props) {
           }
         }
     }
+
+    //check level validity against numStars
+    if (numStars && !isNaN(level))
+      if (level > numStars * 4)
+        level = NaN
+
+    //if the level is not parsed at all after all the prevous steps, default it to the highest level of the star value
+    if (isNaN(level)) level = numStars * 4
 
     let state = {}
     if (!isNaN(level)) state.level = level
@@ -332,7 +335,7 @@ function imageDataToURL(imageDataObj) {
   return dataUri
 }
 
-function starScanning(pixels, width, height) {
+function starScanning(pixels, width, height, defVal = 0) {
   let d = pixels;
   let lastRowNum = 0;
   let rowsWithNumber = 0;
@@ -361,7 +364,7 @@ function starScanning(pixels, width, height) {
       if (rowsWithNumber >= 10) return lastRowNum
     }
   }
-  return 0;
+  return defVal
 }
 // function processImageWithFilter(pixelData, color, region, threshold = 5) {
 //   let d = Uint8ClampedArray.from(pixelData.data)
@@ -378,24 +381,39 @@ function starScanning(pixels, width, height) {
 //   }
 //   return new ImageData(d, pixelData.width, pixelData.height)
 // }
-function processImageWithBandPassFilter(pixelData, color1, color2, region) {
+function processImageWithBandPassFilter(pixelData, color1, color2, options) {
+  //region - "top","bot","all" default all
+  //mode - "bw","color","invert" default color
+  let { region, mode } = options
+  if (!region) region = "all"
   let d = Uint8ClampedArray.from(pixelData.data)
   let halfInd = Math.floor(pixelData.width * (pixelData.height / 2) * 4)
+  let top = region === "top"
+  let bot = region === "bot"
+  let all = region === "all"
+  let bw = mode === "bw"
+  let invert = mode === "invert"
   for (let i = 0; i < d.length; i += 4) {
-    let outputWhite = true;
     let r = d[i];
     let g = d[i + 1];
     let b = d[i + 2];
-    if (((region === "top" && i < halfInd) || (region === "bot" && i > halfInd) || !region) &&
+    if ((all || (top && i < halfInd) || (bot && i > halfInd)) &&
       r >= color1.r && r <= color2.r &&
       g >= color1.g && g <= color2.g &&
-      b >= color1.b && b <= color2.b)
-      outputWhite = false
-    d[i] = d[i + 1] = d[i + 2] = outputWhite ? 255 : 0
+      b >= color1.b && b <= color2.b) {
+      if (bw) d[i] = d[i + 1] = d[i + 2] = 0
+      else if (invert) {
+        d[i] = 255 - r
+        d[i + 1] = 255 - g
+        d[i + 2] = 255 - b
+      }
+      //else orignal color
+    } else {
+      d[i] = d[i + 1] = d[i + 2] = 255
+    }
   }
   return new ImageData(d, pixelData.width, pixelData.height)
 }
-
 
 function colorCloseEnough(color1, color2, threshold = 5) {
   const intCloseEnough = (a, b) => (Math.abs(a - b) <= threshold)
@@ -450,7 +468,7 @@ function parseSetKey(recognition, defVal = "") {
   //parse for sets
   for (const text of texts)
     for (const [key, setObj] of Object.entries(ArtifactSetsData))
-      if (text.toLowerCase().includes(setObj.name.toLowerCase()))
+      if (text.toLowerCase().replace(/\W/g, '').includes(setObj.name.toLowerCase().replace(/\W/g, '')))
         return key//props.setSetKey(key);
 }
 function parseSlotKey(recognition, defVal = "") {
@@ -459,7 +477,7 @@ function parseSlotKey(recognition, defVal = "") {
   //parse for slot
   for (const text of texts)
     for (const [key, slotObj] of Object.entries(ArtifactSlotsData))
-      if (text.toLowerCase().includes(slotObj.name.toLowerCase()))
+      if (text.toLowerCase().replace(/\W/g, '').includes(slotObj.name.toLowerCase().replace(/\W/g, '')))
         return key;//props.setSlotKey(key);
 }
 // function parseLevel(text) {
