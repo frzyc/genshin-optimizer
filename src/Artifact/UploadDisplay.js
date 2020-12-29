@@ -3,16 +3,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
 import { Button, Card, Col, Container, Form, Modal, ProgressBar, Row } from 'react-bootstrap';
 import { createWorker } from 'tesseract.js';
-import { ArtifactSetsData, ArtifactSlotsData } from '../Data/ArtifactData';
+import { ArtifactMainStatsData, ArtifactSetsData, ArtifactSlotsData } from '../Data/ArtifactData';
 import scan_art_main from "../imgs/scan_art_main.png";
 import Snippet from "../imgs/snippet.png";
 import Stat from '../Stat';
 import Artifact from './Artifact';
 import ReactGA from 'react-ga';
 
-const whiteColor = { r: 250, g: 250, b: 250 } //#FFFFFF
-const subStatColor = { r: 80, g: 90, b: 105 } //#495366
-const setNameColor = { r: 92, g: 178, b: 86 } //#5CB256
 const starColor = { r: 255, g: 204, b: 50 } //#FFCC32
 
 function UploadDisplay(props) {
@@ -56,12 +53,14 @@ function UploadDisplay(props) {
         m.status === "recognizing text" && sProgvariant("success");
         sProgress(m.progress);
       },
+      errorHandler: err => console.error(err)
     });
     await tworker.load();
     await tworker.loadLanguage('eng');
     await tworker.initialize('eng');
-    const { data: { text } } = await tworker.recognize(image);
-    return text
+    let rec = await tworker.recognize(image);
+    await tworker.terminate();
+    return rec
   }
 
   const uploadedFile = async (file) => {
@@ -76,14 +75,14 @@ function UploadDisplay(props) {
 
     let numStars = starScanning(imageDataObj.data, imageDataObj.width, imageDataObj.height)
     let awaits = [
-      // other
-      ocrImage(imageDataToURL(processImageWithFilter(imageDataObj, whiteColor)), setOtherProgress, setOtherProgVariant),
-      // substat
-      ocrImage(imageDataToURL(processImageWithFilter(imageDataObj, subStatColor, 15)), setSubstatProgress, setSubstatProgVariant),
+      // other is for slotkey and mainStatValue and level
+      ocrImage(imageDataToURL(processImageWithBandPassFilter(imageDataObj, { r: 140, g: 140, b: 140 }, { r: 255, g: 255, b: 255 })), setOtherProgress, setOtherProgVariant),
+      // substats
+      ocrImage(imageDataToURL(processImageWithBandPassFilter(imageDataObj, { r: 65, g: 75, b: 90 }, { r: 160, g: 160, b: 160 }, "bot")), setSubstatProgress, setSubstatProgVariant),
       // artifact set
-      ocrImage(imageDataToURL(processImageWithFilter(imageDataObj, setNameColor)), setArtSetProgress, setArtSetProgVariant),
+      ocrImage(imageDataToURL(processImageWithBandPassFilter(imageDataObj, { r: 90, g: 160, b: 80 }, { r: 200, g: 255, b: 200 }, "bot")), setArtSetProgress, setArtSetProgVariant),
       // main stat
-      ocrImage(imageDataToURL(processImageWithBandPassFilter(imageDataObj, { r: 150, g: 150, b: 160 }, { r: 215, g: 200, b: 220 })), setMainStatProgress, setMainStatProgVariant)
+      ocrImage(imageDataToURL(processImageWithBandPassFilter(imageDataObj, { r: 120, g: 120, b: 120 }, { r: 215, g: 200, b: 220 }, "top")), setMainStatProgress, setMainStatProgVariant)
     ]
 
     let [whiteparsed, substatOCRText, setOCRText, mainStatOCRText] = await Promise.all(awaits)
@@ -91,11 +90,11 @@ function UploadDisplay(props) {
     let setKey = parseSetKey(setOCRText)
     let slotKey = parseSlotKey(whiteparsed)
     let substats = parseSubstat(substatOCRText)
-    let level = parseLevel(whiteparsed)
+    let level = NaN//parseLevel(whiteparsed) looks like the level isnt consistently parsed.
     let mainStatKey = parseMainStatKey(mainStatOCRText)
     let { mainStatValue, unit = "" } = parseMainStatvalue(whiteparsed)
 
-    //so far the main stat value is used to distinguish main stats between % and flat
+    //the main stat value is used to distinguish main stats between % and flat
     if (unit === "%" && (mainStatKey === "hp" || mainStatKey === "def" || mainStatKey === "atk"))
       mainStatKey += "_"
 
@@ -121,6 +120,34 @@ function UploadDisplay(props) {
         });
         if (stats.length > 0) mainStatKey = stats[0]
       }
+    }
+    let guessLevel = (nStars, mainSKey, mainSVal) => {
+      //if level isn't parsed, then we try to guess it
+      let valArr = ArtifactMainStatsData?.[nStars]?.[mainSKey.includes("ele_dmg") ? "ele_dmg" : mainSKey]
+      if (valArr) {
+        let isFloat = Stat.getStatUnit(mainSKey) === "%"
+        let testLevel = valArr.findIndex(val => isFloat ? (Math.abs(mainSVal - val) < 0.1) : (mainSVal === val))
+        if (testLevel !== -1) {
+          level = testLevel
+          return true
+        }
+      }
+      return false
+    }
+    //guess level when we have all the stats
+    if (isNaN(level) && numStars && mainStatKey && mainStatValue)
+      guessLevel(numStars, mainStatKey, mainStatValue)
+
+    //try to guess the level when we only have mainStatKey and mainStatValue
+    if (isNaN(level) && mainStatKey && mainStatValue) {
+      let stars = setKey ? Artifact.getRarityArr(setKey) : Object.keys(ArtifactMainStatsData).reverse()//reverse so we check 5* first
+      for (const nStar of stars)
+        if (guessLevel(nStar, mainStatKey, mainStatValue)) {
+          if (!setKey || Artifact.getRarityArr(setKey).includes(nStar)) {
+            numStars = nStar
+            break;
+          }
+        }
     }
 
     let state = {}
@@ -254,10 +281,10 @@ function UploadDisplay(props) {
   </Row>)
 }
 export default UploadDisplay;
-
+let reader = new FileReader()
 function fileToURL(file) {
   return new Promise(resolve => {
-    let reader = new FileReader();
+    // let reader = new FileReader();
     reader.onloadend = () => {
       resolve(reader.result);
     }
@@ -331,38 +358,38 @@ function starScanning(pixels, width, height) {
       rowsWithNumber = 1;
     } else if (lastRowNum) {
       rowsWithNumber++
-      if (rowsWithNumber >= 20) return lastRowNum
+      if (rowsWithNumber >= 10) return lastRowNum
     }
   }
   return 0;
 }
-function processImageWithFilter(pixelData, color, threshold = 5) {
+// function processImageWithFilter(pixelData, color, region, threshold = 5) {
+//   let d = Uint8ClampedArray.from(pixelData.data)
+//   let halfInd = Math.floor(pixelData.width * (pixelData.height / 2) * 4)
+//   for (let i = 0; i < d.length; i += 4) {
+//     let outputWhite = true;
+//     let r = d[i];
+//     let g = d[i + 1];
+//     let b = d[i + 2];
+//     let pixelColor = { r, g, b }
+//     if (((region === "top" && i < halfInd) || (region === "bot" && i > halfInd) || !region) && colorCloseEnough(pixelColor, color, threshold))
+//       outputWhite = false
+//     d[i] = d[i + 1] = d[i + 2] = outputWhite ? 255 : 0
+//   }
+//   return new ImageData(d, pixelData.width, pixelData.height)
+// }
+function processImageWithBandPassFilter(pixelData, color1, color2, region) {
   let d = Uint8ClampedArray.from(pixelData.data)
-  for (let i = 0; i < d.length; i += 4) {
-    let outputWhite = true;
-    let r = d[i];
-    let g = d[i + 1];
-    let b = d[i + 2];
-    let pixelColor = { r, g, b }
-    if (colorCloseEnough(pixelColor, color, threshold))
-      outputWhite = false
-    d[i] = d[i + 1] = d[i + 2] = outputWhite ? 255 : 0
-  }
-  return new ImageData(d, pixelData.width, pixelData.height)
-}
-
-function processImageWithBandPassFilter(pixelData, color1, color2) {
-  let d = Uint8ClampedArray.from(pixelData.data)
-  //this also cuts away the bottom half of the picture...
   let halfInd = Math.floor(pixelData.width * (pixelData.height / 2) * 4)
   for (let i = 0; i < d.length; i += 4) {
     let outputWhite = true;
     let r = d[i];
     let g = d[i + 1];
     let b = d[i + 2];
-    if (i < halfInd && r > color1.r && r < color2.r &&
-      g > color1.g && g < color2.g &&
-      b > color1.b && b < color2.b)
+    if (((region === "top" && i < halfInd) || (region === "bot" && i > halfInd) || !region) &&
+      r >= color1.r && r <= color2.r &&
+      g >= color1.g && g <= color2.g &&
+      b >= color1.b && b <= color2.b)
       outputWhite = false
     d[i] = d[i + 1] = d[i + 2] = outputWhite ? 255 : 0
   }
@@ -380,19 +407,22 @@ function colorCloseEnough(color1, color2, threshold = 5) {
   return false
 }
 
-function parseSubstat(text) {
+function parseSubstat(recognition, defVal = null) {
+  let texts = recognition?.data?.lines?.map(line => line.text)
+  if (!texts) return defVal
   let matches = []
-  //parse substats
-  Artifact.getSubStatKeys().forEach(key => {
-    let regex = null
-    let unit = Stat.getStatUnit(key)
-    let name = Stat.getStatName(key)
-    if (unit === "%") regex = new RegExp(name + "\\s*\\+\\s*(\\d+\\.\\d)%", "im");
-    else regex = new RegExp(name + "\\s*\\+\\s*(\\d+,\\d+|\\d+)($|\\s)", "im");
-    let match = regex.exec(text)
-    match && matches.push({ index: match.index, value: match[1], unit, key })
-  })
-  matches.sort((a, b) => a.index - b.index)
+  for (const text of texts) {
+    //parse substats
+    Artifact.getSubStatKeys().forEach(key => {
+      let regex = null
+      let unit = Stat.getStatUnit(key)
+      let name = Stat.getStatName(key)
+      if (unit === "%") regex = new RegExp(name + "\\s*\\+\\s*(\\d+\\.\\d)%", "im");
+      else regex = new RegExp(name + "\\s*\\+\\s*(\\d+,\\d+|\\d+)($|\\s)", "im");
+      let match = regex.exec(text)
+      match && matches.push({ value: match[1], unit, key })
+    })
+  }
   matches.forEach((match, i) => {
     if (i >= 4) return;//this shouldn't happen, just in case
     match.value = match.unit === "%" ? parseFloat(match.value) : parseInt(match.value)
@@ -405,36 +435,49 @@ function parseSubstat(text) {
   }
   return substats
 }
-function parseMainStatKey(text) {
-  for (const key of Artifact.getMainStatKeys())
-    if (text.toLowerCase().includes(Stat.getStatName(key).toLowerCase()))
-      return key
+function parseMainStatKey(recognition, defVal = "") {
+  let texts = recognition?.data?.lines?.map(line => line.text)
+  if (!texts) return defVal
+  for (const text of texts)
+    for (const key of Artifact.getMainStatKeys())
+      if (text.toLowerCase().includes(Stat.getStatName(key).toLowerCase()))
+        return key
+  return defVal
 }
-function parseSetKey(text) {
+function parseSetKey(recognition, defVal = "") {
+  let texts = recognition?.data?.lines?.map(line => line.text)
+  if (!texts) return defVal
   //parse for sets
-  for (const [key, setObj] of Object.entries(ArtifactSetsData))
-    if (text.toLowerCase().includes(setObj.name.toLowerCase()))
-      return key//props.setSetKey(key);
+  for (const text of texts)
+    for (const [key, setObj] of Object.entries(ArtifactSetsData))
+      if (text.toLowerCase().includes(setObj.name.toLowerCase()))
+        return key//props.setSetKey(key);
 }
-function parseSlotKey(text) {
+function parseSlotKey(recognition, defVal = "") {
+  let texts = recognition?.data?.lines?.map(line => line.text)
+  if (!texts) return defVal
   //parse for slot
-  for (const [key, slotObj] of Object.entries(ArtifactSlotsData))
-    if (text.toLowerCase().includes(slotObj.name.toLowerCase()))
-      return key;//props.setSlotKey(key);
+  for (const text of texts)
+    for (const [key, slotObj] of Object.entries(ArtifactSlotsData))
+      if (text.toLowerCase().includes(slotObj.name.toLowerCase()))
+        return key;//props.setSlotKey(key);
 }
-function parseLevel(text) {
-  let regex = /\+(\d{1,2})/
-  let match = regex.exec(text)
-  if (match) return parseInt(match[1])
-  return NaN
-}
-function parseMainStatvalue(text) {
-  let preText = text.split('+')[0]
-  let regex = /(\d+\.\d+)%/
-  let match = regex.exec(preText)
-  if (match) return { mainStatValue: parseFloat(match[1]), unit: "%" }
-  regex = /(\d+,\d+|\d{2,3})/
-  match = regex.exec(preText)
-  if (match) return { mainStatValue: parseInt(match[1]) }
-  return { mainStatValue: NaN }
+// function parseLevel(text) {
+//   let regex = /\+(\d{1,2})/
+//   let match = regex.exec(text)
+//   if (match) return parseInt(match[1])
+//   return NaN
+// }
+function parseMainStatvalue(recognition, defVal = { mainStatValue: NaN }) {
+  let texts = recognition?.data?.lines?.map(line => line.text)
+  if (!texts) return defVal
+  for (const text of texts) {
+    let regex = /(\d+\.\d)%/
+    let match = regex.exec(text)
+    if (match) return { mainStatValue: parseFloat(match[1]), unit: "%" }
+    regex = /(\d+,\d{3}|\d{2,3})/
+    match = regex.exec(text)
+    if (match) return { mainStatValue: parseInt(match[1].replace(/,/g, "")) }
+  }
+  return defVal
 }
