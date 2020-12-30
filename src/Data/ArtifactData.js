@@ -1,7 +1,9 @@
 import artifacts from './Artifacts/Artifacts'
+import ElementalData from './ElementalData';
 const ArtifactMainSlotKeys = [
-  "hp", "hp_", "atk", "atk_", "def", "def_", "phy_dmg", "ele_dmg", "ele_mas", "ener_rech", "crit_rate", "crit_dmg", "heal_bonu"
+  "hp", "hp_", "atk", "atk_", "def", "def_", "phy_dmg", "ele_mas", "ener_rech", "crit_rate", "crit_dmg", "heal_bonu"
 ]
+Object.keys(ElementalData).forEach(key => ArtifactMainSlotKeys.push(`${key}_ele_dmg`))
 
 const ArtifactStarsData = {
   // 1: { subsBaselow: 0, subBaseHigh: 0, numUpgradesOrUnlocks: 1 },

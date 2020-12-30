@@ -1,8 +1,9 @@
 import Artifact from "../Artifact/Artifact";
 import ArtifactDatabase from "../Artifact/ArtifactDatabase";
 import Assets from "../Assets/Assets";
-import { CharacterData, characterStatBase, ElementalData, LevelsData } from "../Data/CharacterData";
-import Stat from "../Stat";
+import { CharacterData, characterStatBase, LevelsData } from "../Data/CharacterData";
+import ElementalData from "../Data/ElementalData";
+import { AttachLazyFormulas } from "../Stat";
 import { deepClone } from "../Util/Util";
 import Weapon from "../Weapon/Weapon";
 import CharacterDatabase from "./CharacterDatabase";
@@ -54,6 +55,12 @@ export default class Character {
   static hasOverride = (character, statKey) => character && character.baseStatOverrides ? (statKey in character.baseStatOverrides) : false;
 
   static getStatValueWithOverride = (character, statKey, defVal = 0) => {
+    if (statKey === "atk") {
+      //get weapon atk as part of the base atk.
+      let weaponatk = Weapon.getWeaponMainStatValWithOverride(character?.weapon)
+      if (this.hasOverride(character, statKey)) return weaponatk + character?.baseStatOverrides?.[statKey]
+      else return weaponatk + this.getBaseStatValue(character.characterKey, character.levelKey, statKey, defVal)
+    }
     if (this.hasOverride(character, statKey)) return character?.baseStatOverrides?.[statKey]
     else return this.getBaseStatValue(character.characterKey, character.levelKey, statKey, defVal)
   }
@@ -98,8 +105,7 @@ export default class Character {
 
   static calculateBuild = (character) => {
     let artifacts = Object.fromEntries(Object.entries(character.equippedArtifacts).map(([key, artid]) => [key, ArtifactDatabase.getArtifact(artid)]))
-    let weaponStats = Weapon.createWeaponBundle(character)
-    let initialStats = Character.calculateCharacterWithWeaponStats(character, weaponStats)
+    let initialStats = Character.calculateCharacterWithWeaponStats(character)
     return this.calculateBuildWithObjs(character.artifactConditionals, initialStats, artifacts)
   }
 
@@ -124,22 +130,7 @@ export default class Character {
       let condStats = Artifact.getArtifactConditionalStats(conditional.setKey, conditional.setNumKey, conditional.conditionalNum)
       if (condStats) Object.entries(condStats).forEach(([statKey, val]) => stats[statKey] = (stats[statKey] || 0) + val)
     })
-
-    let arrKey = ["hp", "def", "atk"]
-    arrKey.forEach(key => {
-      let base = stats[`base_${key}`] || 0
-      let percent = stats[key + '_'] || 0
-      let flat = stats[key] || 0
-      stats[key] = base * (1 + percent / 100) + flat
-
-    })
-    stats.crit_multi = (1 + (stats.crit_rate / 100) * (1 + stats.crit_dmg / 100))
-
-    stats.phy_atk = stats.atk * (1 + stats.phy_dmg / 100) * stats.crit_multi
-    this.getElementalKeys().forEach(eleKey => {
-      stats[`${eleKey}_ele_atk`] = stats.atk * (1 + stats[`${eleKey}_ele_dmg`] / 100) * stats.crit_multi
-    })
-
+    AttachLazyFormulas(stats)
     return {
       artifactIds: Object.fromEntries(Object.entries(artifacts).map(([key, val]) => [key, val?.id])),
       setToSlots,
@@ -147,14 +138,17 @@ export default class Character {
       artifactConditionals
     }
   }
-  static calculateCharacterWithWeaponStats = (character, weaponStats) => {
-    let statKeys = Stat.getAllStatKey()
+  static calculateCharacterWithWeaponStats = (character) => {
+    let statKeys = ["hp", "atk", "def", ...Object.keys(characterStatBase)]
     let initialStats = Object.fromEntries(statKeys.map(key => {
       if (key === "hp" || key === "def" || key === "atk")
         return ["base_" + key, this.getStatValueWithOverride(character, key)]
       else
         return [key, this.getStatValueWithOverride(character, key)]
     }))
+
+    //add element
+    initialStats.char_ele_key = this.getElementalKey(character.characterKey)
 
     //add specialized stat
     let specialStatKey = Character.getStatValueWithOverride(character, "specializedStatKey")
@@ -163,12 +157,10 @@ export default class Character {
       initialStats[specialStatKey] = (initialStats[specialStatKey] || 0) + specializedStatVal
     }
 
-    //add weapon base to initialStats
-    initialStats.base_atk += weaponStats.mainAtkValue
+    let weaponStats = Weapon.createWeaponBundle(character)
     //add subStat
     if (weaponStats.subKey)
       initialStats[weaponStats.subKey] = (initialStats[weaponStats.subKey] || 0) + weaponStats.subVal
-
     //add passive/conditional
     if (weaponStats.bonusStats) Object.entries(weaponStats.bonusStats).forEach(([key, val]) =>
       initialStats[key] = (initialStats[key] || 0) + val)

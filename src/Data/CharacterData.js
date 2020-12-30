@@ -74,18 +74,6 @@ const LevelsData = {
   }
 
 }
-const ElementalData = {
-  anemo: { name: "Anemo" },
-  geo: { name: "Geo" },
-  electro: { name: "Electro" },
-  hydro: { name: "Hydro" },
-  pyro: { name: "Pyro" },
-  cryo: { name: "Cryo" },
-  dendro: { name: "Dendro" }
-}
-const weaponType = {
-  claymore: "Claymore"
-}
 const characterStatBase = {
   crit_rate: 5,
   crit_dmg: 50,
@@ -743,8 +731,6 @@ const CharacterData = {
 }
 export {
   LevelsData,
-  ElementalData,
-  weaponType,
   characterStatBase,
   CharacterData,
   CharacterSpecializedStatKey

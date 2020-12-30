@@ -5,19 +5,18 @@ import { Card, Dropdown, InputGroup, ToggleButton, ToggleButtonGroup } from 'rea
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import Character from '../Character/Character';
+import ReactGA from 'react-ga';
 import CharacterDatabase from '../Character/CharacterDatabase';
 import { IntFormControl } from '../Components/CustomFormControl';
 import { Stars } from '../Components/StarDisplay';
 import { ArtifactStarsData, ArtifactSubStatsData } from '../Data/ArtifactData';
 import { DatabaseInitAndVerify } from '../DatabaseUtil';
 import Stat from '../Stat';
+import { deepClone } from '../Util/Util';
 import Artifact from './Artifact';
 import ArtifactCard from './ArtifactCard';
 import ArtifactDatabase from './ArtifactDatabase';
 import ArtifactEditor from './ArtifactEditor';
-import ReactGA from 'react-ga';
-import { deepClone } from '../Util/Util';
 
 export default class ArtifactDisplay extends React.Component {
   constructor(props) {
@@ -186,8 +185,7 @@ export default class ArtifactDisplay extends React.Component {
                       </Dropdown.Toggle>
                       <Dropdown.Menu>
                         <Dropdown.Item onClick={() => this.setState({ filterMainStatKey: "" })}>Unselect</Dropdown.Item>
-                        {Artifact.getMainStatKeys().filter(key => key !== "ele_dmg").map((statKey) => <MainStatDropDownItem key={statKey} statKey={statKey} />)}
-                        {Character.getElementalKeys().map((ele) => <MainStatDropDownItem key={ele} statKey={`${ele}_ele_dmg`} />)}
+                        {Artifact.getMainStatKeys().map((statKey) => <MainStatDropDownItem key={statKey} statKey={statKey} />)}
                       </Dropdown.Menu>
                     </Dropdown>
                   </Col>

@@ -55,7 +55,6 @@ export default class Weapon {
     return defVal
   }
   static createWeaponBundle = (character) => ({
-    mainAtkValue: this.getWeaponMainStatValWithOverride(character?.weapon),
     subKey: this.getWeaponSubStatKey(character?.weapon?.key),
     subVal: this.getWeaponSubStatValWithOverride(character?.weapon),
     bonusStats: this.getWeaponBonusStat(character?.weapon?.key, character?.weapon?.refineIndex),

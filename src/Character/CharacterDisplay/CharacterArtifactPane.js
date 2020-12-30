@@ -16,9 +16,9 @@ function CharacterArtifactPane(props) {
   let build = newBuild ? newBuild : equippedBuild
   if (newBuild) artifactConditionals = newBuild.artifactConditionals
   let eleKey = Character.getElementalKey(characterKey)
-  const statKeys = ["hp", "atk", "def", "ele_mas", "crit_rate", "crit_dmg", "crit_multi", "ener_rech", "heal_bonu", "phy_dmg", "phy_atk",]
+  const statKeys = ["hp", "atk", "def", "ele_mas", "crit_rate", "crit_dmg", "crit_multi", "ener_rech", "heal_bonu", "phy_dmg", "phy_avg_dmg",]
   statKeys.push(`${eleKey}_ele_dmg`)
-  statKeys.push(`${eleKey}_ele_atk`)
+  statKeys.push(`${eleKey}_ele_avg_dmg`)
 
   let otherStatKeys = ["inc_heal", "pow_shield", "red_cd", "phy_dmg", "phy_res", "norm_atk_dmg", "char_atk_dmg", "skill_dmg", "burst_dmg"]
   Character.getElementalKeys().forEach(ele => {
@@ -32,7 +32,7 @@ function CharacterArtifactPane(props) {
     let unit = Stat.getStatUnit(statKey)
     let buildDiff = (build?.finalStats?.[statKey] || 0) - statVal
 
-    return <Col xs={12} md={6} lg={4} key={statKey}>
+    return <Col xs={12} md={6} xl={4} key={statKey}>
       <h6 className="d-inline">{StatIconEle(statKey)} {Stat.getStatName(statKey)}</h6>
       <span className={`float-right ${(editable && Character.hasOverride(character, statKey)) ? "text-warning" : ""}`}>
         {statVal?.toFixed(Stat.fixedUnit(statKey)) + unit}
@@ -45,7 +45,7 @@ function CharacterArtifactPane(props) {
     let unit = Stat.getStatUnit(statKey)
     let buildDiff = (newBuild?.finalStats?.[statKey] || 0) - (equippedBuild?.finalStats?.[statKey] || 0)
 
-    return <Col xs={12} md={6} lg={4} key={statKey}>
+    return <Col xs={12} md={6} xl={4} key={statKey}>
       <h6 className="d-inline">{StatIconEle(statKey)} {Stat.getStatName(statKey)}</h6>
       <span className={`float-right ${(editable && Character.hasOverride(character, statKey)) ? "text-warning" : ""}`}>
         {statVal?.toFixed(Stat.fixedUnit(statKey)) + unit}

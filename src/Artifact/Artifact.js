@@ -1,5 +1,4 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Character from '../Character/Character';
 import CharacterDatabase from '../Character/CharacterDatabase';
 import SlotIcon from '../Components/SlotIcon';
 import { ArtifactMainSlotKeys, ArtifactMainStatsData, ArtifactSetsData, ArtifactSlotsData, ArtifactStarsData, ArtifactSubStatsData } from '../Data/ArtifactData';
@@ -44,17 +43,13 @@ export default class Artifact {
   static getRarityArr = (setKey) => ArtifactSetsData[setKey] ? ArtifactSetsData[setKey].rarity : []
 
   //MAIN STATS
-  static getMainStatKeys = () => [...ArtifactMainSlotKeys, ...Character.getElementalKeys().map((ele) => `${ele}_ele_dmg`)]
+  static getMainStatKeys = () => ArtifactMainSlotKeys
   static getMainStatValue = (key, numStars, level, defVal = 0) => {
-    if (key && numStars && ArtifactMainStatsData[numStars] && ArtifactMainStatsData[numStars][key] && ArtifactMainStatsData[numStars][key][level])
-      return ArtifactMainStatsData[numStars][key][level]
-    else {
-      if (key && key.includes("_ele_dmg")) {
-        let elementKey = "ele_dmg"
-        return this.getMainStatValue(elementKey, numStars, level, defVal)
-      }
-      return defVal
-    }
+    let main = ArtifactMainStatsData[numStars]?.[key]?.[level]
+    if (main) return main
+    else if (key?.includes("_ele_dmg")) //because in the database its still stored as ele_dmg
+      return this.getMainStatValue("ele_dmg", numStars, level, defVal)
+    return defVal
   }
 
   //SUBSTATS

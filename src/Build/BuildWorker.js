@@ -1,12 +1,13 @@
+import '../WorkerHack'
 import ArtifactBase from "../Artifact/ArtifactBase";
+import { AttachLazyFormulas } from "../Stat";
 
-//WARNING: any imports from here cannot be loading react code...
 onmessage = async (e) => {
-  let { splitArtifacts, artifactSetPerms, setFilters, initialStats, artifactSetEffects, maxBuildsToShow, buildFilterKey, asending } = e.data;
+  let { splitArtifacts, artifactSetPerms, setFilters, initialStats, artifactSetEffects, maxBuildsToShow, buildFilterKey, asending, depdendencyStatKeys } = e.data;
   let t1 = performance.now()
   let artifactPerms = generateAllPossibleArtifactPerm(splitArtifacts, artifactSetPerms, setFilters)
   let builds = artifactPerms.map(artifacts =>
-    ({ builFilterVal: calculateFinalStat(buildFilterKey, initialStats, artifacts, artifactSetEffects), artifacts }));
+    ({ builFilterVal: calculateFinalStat(buildFilterKey, initialStats, artifacts, artifactSetEffects, depdendencyStatKeys), artifacts }));
   let t2 = performance.now()
   builds.sort((a, b) => asending ? (a.builFilterVal - b.builFilterVal) : (b.builFilterVal - a.builFilterVal))
   builds.splice(maxBuildsToShow)
@@ -53,58 +54,25 @@ const generateAllPossibleArtifactPerm = (splitArtifacts, setPerms, setFilters) =
   return perm
 }
 
-//this is for build generation, where only a specific stat is concerned.
-const calculateFinalStat = (key, charAndWeapon, artifacts, artifactSetEffects) => {
-  let stats = charAndWeapon
+function calculateFinalStat(key, charAndWeapon, artifacts, artifactSetEffects, depdendencyStatKeys) {
+  let stats = JSON.parse(JSON.stringify(charAndWeapon))
   let setToSlots = ArtifactBase.setToSlots(artifacts)
 
-  const getArtifactSetEffects = (setToSlots) => {
-    let artifactSetEffect = {}
-    Object.entries(setToSlots).forEach(([setKey, arr]) => {
-      let numArts = arr.length;
-      if (artifactSetEffects[setKey]) {
-        Object.entries(artifactSetEffects[setKey]).forEach(([num, value]) => {
-          if (parseInt(num) <= numArts) {
-            !artifactSetEffect[setKey] && (artifactSetEffect[setKey] = {})
-            artifactSetEffect[setKey][num] = value;
-          }
-        })
-      }
-    })
-    return artifactSetEffect
-  }
-  let artifactSetEffect = getArtifactSetEffects(setToSlots)
-  const AddArtifactStats = (statKey) => {
-    let val = 0;
-    Object.values(artifacts).forEach(art => {
-      if (!art) return
-      if (art.mainStatKey === statKey)
-        val += (art.mainStatVal || 0)
-      art.substats.forEach((substat) =>
-        substat && substat.key && substat.key === statKey && (val += substat.value))
-    })
-    Object.values(artifactSetEffect).forEach(setEffects =>
-      Object.values(setEffects).forEach(setEffect =>
-        setEffect.stats && Object.entries(setEffect.stats).forEach(([key, statVal]) =>
-          key === statKey && (val += statVal))))
-    return (stats[statKey] || 0) + val
-  }
+  //addArtifact stats
+  Object.values(artifacts).forEach(art => {
+    if (!art) return
+    stats[art.mainStatKey] = (stats[art.mainStatKey] || 0) + art.mainStatVal
+    art.substats.forEach((substat) =>
+      substat?.key && (stats[substat.key] = (stats[substat.key] || 0) + substat.value))
+  })
 
-  if (key === "hp" || key === "def" || key === "atk") {
-    let base = stats[`base_${key}`] || 0
-    let percent = AddArtifactStats(key + "_")
-    let flat = AddArtifactStats(key)
-    return base * (1 + percent / 100) + flat
-  } else if (key === "crit_multi") {
-    let crit_rate = AddArtifactStats("crit_rate")
-    let crit_dmg = AddArtifactStats("crit_dmg")
-    return (1 + (crit_rate / 100) * (1 + crit_dmg / 100))
-  } else if (key === "phy_atk" || key.includes("_ele_atk")) {
-    let atk = calculateFinalStat("atk", charAndWeapon, artifacts, artifactSetEffects)
-    let crit_multi = calculateFinalStat("crit_multi", charAndWeapon, artifacts, artifactSetEffects)
-    let val_dmg_key = key === "phy_atk" ? "phy_dmg" : (key.split("_ele_atk")[0] + "_ele_dmg")
-    let val_dmg = AddArtifactStats(val_dmg_key)
-    return atk * (1 + val_dmg / 100) * crit_multi
-  } else
-    return AddArtifactStats(key)
+  //add setEffects
+  Object.entries(setToSlots).forEach(([setKey, arr]) =>
+    artifactSetEffects[setKey] && Object.entries(artifactSetEffects[setKey]).forEach(([num, value]) =>
+      parseInt(num) <= arr.length && Object.entries(value).forEach(([statKey, val]) =>
+        stats[statKey] = (stats[statKey] || 0) + val)))
+
+  //attach the formulas
+  AttachLazyFormulas(stats, depdendencyStatKeys)
+  return stats[key]
 }

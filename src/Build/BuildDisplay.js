@@ -14,10 +14,9 @@ import CharacterDisplayCard from '../Character/CharacterDisplayCard';
 import ConditionalSelector from '../Components/ConditionalSelector';
 import { ArtifactSlotsData } from '../Data/ArtifactData';
 import { DatabaseInitAndVerify } from '../DatabaseUtil';
-import Stat from '../Stat';
+import Stat, { DependencyStatKeys } from '../Stat';
 import ArtifactConditionals from '../Util/ArtifactConditionals';
 import { deepClone, loadFromLocalStorage, saveToLocalStorage } from '../Util/Util';
-import Weapon from '../Weapon/Weapon';
 import Build from './Build';
 
 export default class BuildDisplay extends React.Component {
@@ -59,7 +58,7 @@ export default class BuildDisplay extends React.Component {
   static artifactsSlotsToSelectMainStats = ["sands", "goblet", "circlet"]
   forceUpdateBuildDisplay = () => this.forceUpdate()
 
-  statsDisplayKeys = () => ["hp", "atk", "def", "ele_mas", "crit_rate", "crit_dmg", "heal_bonu", "ener_rech", "phy_dmg", "ele_dmg", "phy_atk", "ele_atk",]
+  statsDisplayKeys = () => ["hp", "atk", "def", "ele_mas", "crit_rate", "crit_dmg", "heal_bonu", "ener_rech", "phy_dmg", "ele_dmg", "phy_avg_dmg", "ele_avg_dmg",]
 
   splitArtifacts = () => {
     if (!this.state.selectedCharacterId) return {};
@@ -122,8 +121,7 @@ export default class BuildDisplay extends React.Component {
     this.setState({ generatingBuilds: true, builds: [] })
     let { setFilters, asending, buildFilterKey, maxBuildsToShow, artifactConditionals } = this.state
     let character = CharacterDatabase.getCharacter(this.state.selectedCharacterId)
-    let weaponStats = Weapon.createWeaponBundle(character)
-    let initialStats = Character.calculateCharacterWithWeaponStats(character, weaponStats)
+    let initialStats = Character.calculateCharacterWithWeaponStats(character)
 
     let artifactSetEffects = Artifact.getAllArtifactSetEffectsObj(artifactConditionals)
     let splitArtifacts = deepClone(split)
@@ -133,14 +131,17 @@ export default class BuildDisplay extends React.Component {
         art.mainStatVal = Artifact.getMainStatValue(art.mainStatKey, art.numStars, art.level);
       })
     })
+    //generate the key dependencies for the formula
+    let depdendencyStatKeys = DependencyStatKeys(buildFilterKey)
+
     //create an obj with app the artifact set effects to pass to buildworker.
     let data = {
-      splitArtifacts, artifactSetPerms, initialStats, artifactSetEffects,
+      splitArtifacts, artifactSetPerms, initialStats, artifactSetEffects, depdendencyStatKeys,
       setFilters, maxBuildsToShow, buildFilterKey, asending,
     }
-
-    let worker = new Worker();
-    worker.onmessage = (e) => {
+    if (this.worker) this.worker.terminate()
+    this.worker = new Worker();
+    this.worker.onmessage = (e) => {
       ReactGA.timing({
         category: "Build Generation",
         variable: "timing",
@@ -150,9 +151,12 @@ export default class BuildDisplay extends React.Component {
       let builds = e.data.builds.map(obj =>
         Character.calculateBuildWithObjs(artifactConditionals, initialStats, obj.artifacts))
       this.setState({ builds, generatingBuilds: false })
+      // worker.terminate()
+      this.worker.terminate()
+      delete this.worker
     }
 
-    worker.postMessage(data)
+    this.worker.postMessage(data)
   }
 
   BuildGeneratorEditorCard = (props) => {
@@ -308,7 +312,7 @@ export default class BuildDisplay extends React.Component {
             <ButtonGroup>
               <DropdownButton disabled={!this.state.selectedCharacterId} title={`Sort by ${Stat.getStatNameWithPercent(this.state.buildFilterKey)}`} as={ButtonGroup}>
                 {this.state.selectedCharacterId && this.statsDisplayKeys().map(key => {
-                  if (key === "ele_dmg" || key === "ele_atk")
+                  if (key === "ele_dmg" || key === "ele_avg_dmg")//add character specific ele_dmg and ele_avg_dmg
                     key = `${Character.getElementalKey(selectedCharacter.characterKey)}_${key}`
                   return <Dropdown.Item key={key} onClick={() => this.setState({ buildFilterKey: key })}>
                     {Stat.getStatNameWithPercent(key)}
@@ -340,7 +344,7 @@ export default class BuildDisplay extends React.Component {
         </Row>
         <Row>
           {this.statsDisplayKeys().map(key => {
-            if (key === "ele_dmg" || key === "ele_atk")
+            if (key === "ele_dmg" || key === "ele_avg_dmg")//add character specific ele_dmg and ele_avg_dmg
               key = `${Character.getElementalKey(character.characterKey)}_${key}`
             let unit = Stat.getStatUnit(key)
             return <Col className="text-nowrap" key={key} xs={12} sm={6} md={4} lg={3}>
@@ -364,6 +368,10 @@ export default class BuildDisplay extends React.Component {
     delete state.generatingBuilds
     delete state.modalBuild
     saveToLocalStorage("BuildsDisplay.state", state)
+  }
+  componentWillUnmount() {
+    this.worker?.terminate()
+    delete this.worker
   }
   render() {
     let selectedCharacter = CharacterDatabase.getCharacter(this.state.selectedCharacterId)

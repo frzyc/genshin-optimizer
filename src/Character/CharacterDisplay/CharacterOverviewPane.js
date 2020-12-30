@@ -242,7 +242,7 @@ function MainStatsCard(props) {
     otherStatKeys.push(`${ele}_ele_dmg`)
     otherStatKeys.push(`${ele}_ele_res`)
   })
-  const miscStatkeys = ["norm_atk_dmg", "char_atk_dmg", "skill_dmg", "burst_dmg", "skill_crit_rate", "burst_crit_rate", "crit_multi", "dmg", "move_spd", "atk_spd", "weakspot_dmg"]
+  const miscStatkeys = ["phy_avg_dmg", "norm_atk_dmg", "char_atk_dmg", "skill_dmg", "burst_dmg", "skill_crit_rate", "burst_crit_rate", "crit_multi", "dmg", "move_spd", "atk_spd", "weakspot_dmg"]
 
   let { editable, character, setOverride, equippedBuild, newBuild } = props
   let { character: { compareAgainstEquipped } } = props
