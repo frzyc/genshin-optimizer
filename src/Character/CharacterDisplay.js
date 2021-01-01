@@ -56,7 +56,7 @@ export default class CharacterDisplay extends React.Component {
             <Card.Body className="d-flex flex-column justify-content-center">
               <Row className="d-flex flex-row justify-content-center">
                 <Col xs="auto">
-                  <Button onClick={this.editCharacter}>
+                  <Button onClick={() => this.editCharacter("")}>
                     <h1><FontAwesomeIcon icon={faPlus} className="fa-fw" /></h1>
                   </Button>
                 </Col>
