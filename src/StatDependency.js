@@ -4,11 +4,11 @@ import { AttachLazyFormulas, Formulas, StatData } from "./Stat"
 const formulaKeyDependency = {}
 const getDependency = (key) => {
   let testObj = {}
-  let depdendency = []
+  let dependency = []
   Object.keys(StatData).filter(k => k !== key).forEach(k => {
     Object.defineProperty(testObj, k, {
       get: () => {
-        depdendency.push(k)
+        dependency.push(k)
         Object.defineProperty(testObj, k, { get: () => 0 })
         return 0
       },
@@ -16,9 +16,9 @@ const getDependency = (key) => {
     })
   })
   AttachLazyFormulas(testObj)
-  // eslint-disable-next-line
-  let _ = testObj[key] //use the getter to generate the dependency
-  formulaKeyDependency[key] = depdendency
+  //use the getter to generate the dependency
+  if (typeof testObj[key] === "number")
+    formulaKeyDependency[key] = dependency
 }
 Object.keys(Formulas).forEach(key => getDependency(key))
 
