@@ -99,7 +99,7 @@ const StatData = {
 })
 
 //formulas for calculating
-const formulas = {
+const Formulas = {
   char_ele_key: () => 'anemo', //default value
   hp: (s) => s.base_hp * (1 + s.hp_ / 100) + s.hp_flat,
   //ATK
@@ -124,34 +124,12 @@ const eleFormulas = {
 }
 Object.entries(eleFormulas).forEach(([key, func]) =>
   Object.keys(ElementalData).forEach(eleKey =>
-    Object.defineProperty(formulas, `${eleKey}_${key}`, {
+    Object.defineProperty(Formulas, `${eleKey}_${key}`, {
       configurable: true,
       enumerable: true,
       writable: true,
       value: (obj) => (func)(obj, eleKey),
     })))
-
-//generate a statKey dependency, to reduce build generation calculation on a single stat.
-const formulaKeyDependency = {} //TODO move dependency out of here, since it gets run every time we generate a build by importing Stat in the BuildWorker
-const getDependency = (key) => {
-  let testObj = {}
-  let depdendency = []
-  Object.keys(StatData).filter(k => k !== key).forEach(k => {
-    Object.defineProperty(testObj, k, {
-      get: () => {
-        depdendency.push(k)
-        Object.defineProperty(testObj, k, { get: () => 0 })
-        return 0
-      },
-      configurable: true
-    })
-  })
-  AttachLazyFormulas(testObj)
-  // eslint-disable-next-line
-  let _ = testObj[key] //use the getter to generate the dependency
-  formulaKeyDependency[key] = depdendency
-}
-Object.keys(formulas).forEach(key => getDependency(key))
 
 //the keyfilters are used by build generator to reduce the amount of calculations required
 function AttachLazyFormulas(obj, keyFilters) {
@@ -161,11 +139,11 @@ function AttachLazyFormulas(obj, keyFilters) {
       Object.getOwnPropertyDescriptor(obj, key));
     delete obj[key];
   })
-  let formulaKeys = keyFilters?.[0] || Object.keys(formulas)
+  let formulaKeys = keyFilters?.[0] || Object.keys(Formulas)
   formulaKeys.forEach(key => {
     !obj.hasOwnProperty(key) && Object.defineProperty(obj, key, {
-      get: keyFilters ? () => formulas[key](obj) : function () {
-        let val = formulas[key](obj)
+      get: keyFilters ? () => Formulas[key](obj) : function () {
+        let val = Formulas[key](obj)
         Object.defineProperty(this, key, { value: val })
         return val
       },
@@ -176,16 +154,9 @@ function AttachLazyFormulas(obj, keyFilters) {
   //assign zeros to the other stats that are not part of the calculations
   statKeys.forEach(key => !obj.hasOwnProperty(key) && (obj[key] = 0))
 }
-function DependencyStatKeys(key) {
-  let dependencies = formulaKeyDependency[key] || []
-  formulaKeyDependency[key]?.forEach(k => dependencies.push(...(formulaKeyDependency[k] || [])))
-  dependencies = [...new Set(dependencies)]
-  let formulaKeys = Object.keys(formulas).filter(k => k === key || dependencies.includes(k))
-  let statkeys = Object.keys(StatData).filter(k => k === key || dependencies.includes(k))
-  return [formulaKeys, statkeys]
-}
+
 export {
+  Formulas,
   StatData,
-  DependencyStatKeys,
   AttachLazyFormulas,
 }

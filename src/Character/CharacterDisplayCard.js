@@ -38,8 +38,8 @@ export default class CharacterDisplayCard extends React.Component {
   constructor(props) {
     super(props)
     DatabaseInitAndVerify();
-    if (props.characterToEdit)
-      this.state = props.characterToEdit
+    if (props.characterId)
+      this.state = CharacterDatabase.getCharacter(props.characterId)
     else
       this.state = CharacterDisplayCard.getInitialState()
   }
@@ -116,8 +116,8 @@ export default class CharacterDisplayCard extends React.Component {
   setConstellation = (constellation) => this.setState({ constellation })
 
   componentDidUpdate() {
-    if (this.props.characterToEdit && this.state.id !== this.props.characterToEdit.id)
-      this.setState(this.props.characterToEdit)
+    if (this.props.characterId && this.state.id !== this.props.characterId)
+      this.setState(CharacterDatabase.getCharacter(this.props.characterId))
     if (this.props.editable) {
       //save this.state as character to character db.
       let state = deepClone(this.state)

@@ -14,7 +14,8 @@ import CharacterDisplayCard from '../Character/CharacterDisplayCard';
 import ConditionalSelector from '../Components/ConditionalSelector';
 import { ArtifactSlotsData } from '../Data/ArtifactData';
 import { DatabaseInitAndVerify } from '../DatabaseUtil';
-import Stat, { DependencyStatKeys } from '../Stat';
+import Stat from '../Stat';
+import { DependencyStatKeys } from '../StatDependency';
 import ArtifactConditionals from '../Util/ArtifactConditionals';
 import { deepClone, loadFromLocalStorage, saveToLocalStorage } from '../Util/Util';
 import Build from './Build';
@@ -173,7 +174,7 @@ export default class BuildDisplay extends React.Component {
         <Alert variant="danger" className="mb-0"><span>Current configuration will generate <b>{totBuildNumber}</b> builds for <b>{characterName}</b>. Please restrict artifact configuration to reduce builds to less than {this.state.maxBuildsToGenerate}, or your browser might crash.</span></Alert> :
         <Alert variant="success" className="mb-0"><span>Current configuration will generate <b>{totBuildNumber}</b> builds for <b>{characterName}</b>.</span></Alert>)
     let characterDropDown = <DropdownButton title={this.state.selectedCharacterId ? characterName : "Select Character"}>
-      <Dropdown.Item onClick={() => this.setState({ selectedCharacterId: "", builds: [] })}>No Character</Dropdown.Item>
+      <Dropdown.Item onClick={() => this.setState({ selectedCharacterId: "", builds: [], buildFilterKey: "atk" })}>No Character</Dropdown.Item>
       {Object.values(charlist).map((char, i) =>
         <Dropdown.Item key={char.name + i}
           onClick={() => this.setState({ selectedCharacterId: char.id, builds: [] })}
@@ -358,7 +359,7 @@ export default class BuildDisplay extends React.Component {
   BuildModal = (props) => {
     let { build, character } = props
     return build ? (<Modal show={this.state.modalBuild !== null} onHide={() => this.setState({ modalBuild: null })} size="xl" dialogAs={Container} className="pt-3 pb-3">
-      <CharacterDisplayCard characterToEdit={character} newBuild={build} onClose={() => this.setState({ modalBuild: null })} forceUpdate={this.forceUpdateBuildDisplay} />
+      <CharacterDisplayCard characterId={character.id} newBuild={build} onClose={() => this.setState({ modalBuild: null })} forceUpdate={this.forceUpdateBuildDisplay} />
     </Modal>) : null
   }
 

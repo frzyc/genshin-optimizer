@@ -14,7 +14,7 @@ export default class CharacterDisplay extends React.Component {
     super(props)
     DatabaseInitAndVerify();
     this.state = {
-      charToEdit: null,
+      charIdToEdit: "",
       showEditor: false,
     }
     ReactGA.pageview('/character')
@@ -26,11 +26,11 @@ export default class CharacterDisplay extends React.Component {
   }
 
   editCharacter = (id) =>
-    this.setState({ charToEdit: CharacterDatabase.getCharacter(id), showEditor: true },
+    this.setState({ charIdToEdit: id, showEditor: true },
       () => this.scrollRef.current.scrollIntoView({ behavior: "smooth" }))
 
   cancelEditCharacter = () =>
-    this.setState({ charToEdit: null, showEditor: false })
+    this.setState({ charIdToEdit: null, showEditor: false })
 
   componentDidMount() {
     this.scrollRef = React.createRef()
@@ -41,7 +41,7 @@ export default class CharacterDisplay extends React.Component {
       {/* editor/character detail display */}
       {this.state.showEditor ? <Row className="mt-2"><Col>
         <CharacterDisplayCard editable
-          characterToEdit={this.state.charToEdit}
+          characterId={this.state.charIdToEdit}
           onClose={this.cancelEditCharacter}
           footer={<Button variant="danger" onClick={this.cancelEditCharacter}>Close</Button>}
         />

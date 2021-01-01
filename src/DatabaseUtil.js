@@ -1,8 +1,5 @@
-import ArtifactDatabase from "./Artifact/ArtifactDatabase"
-import Character from "./Character/Character";
-import CharacterDatabase from "./Character/CharacterDatabase"
-import { WeaponLevelKeys } from "./Data/WeaponData";
-import Weapon from "./Weapon/Weapon";
+import ArtifactDatabase from "./Artifact/ArtifactDatabase";
+import CharacterDatabase from "./Character/CharacterDatabase";
 
 function DatabaseInitAndVerify() {
   //remove the old error/prone id lists, if it still exists
@@ -67,17 +64,6 @@ function DatabaseInitAndVerify() {
       if (!valid)
         char.equippedArtifacts = equippedArtifacts
 
-      //weapon stuff was added later, some people might not have a default weapon.
-      if (!char.weapon || !char.weapon.key || !char.weapon.levelKey || !char.weapon.refineIndex) {
-        valid = false
-        char.weapon = {
-          key: Object.keys(Weapon.getWeaponsOfType(Character.getWeaponTypeKey(char.characterKey)))[0],
-          levelKey: WeaponLevelKeys[0],
-          refineIndex: 0,
-          overrideMainVal: char.weapon_atk || 0,//use old override values
-          overrideSubVal: char.weaponStatVal || 0,//use old override values, might not be the right type of substats...
-        }
-      }
       if (!valid) {
         CharacterDatabase.updateCharacter(char)
       }
@@ -86,4 +72,4 @@ function DatabaseInitAndVerify() {
 }
 export {
   DatabaseInitAndVerify
-}
+};
