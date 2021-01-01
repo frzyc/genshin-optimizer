@@ -67,17 +67,16 @@ let char = {
     auto: {
       name: "Yunlai Swordsmanship",
       img: normal,
-      normal: {
-        text: <span>Perform up to 5 rapid strikes. <small><i>Note: the 4th attack hits twice.</i></small></span>,
+      document: [{
+        text: <span><strong>Normal Attack</strong> Perform up to 5 rapid strikes. <small><i>Note: the 4th attack hits twice.</i></small></span>,
         fields: hitPercent.map((percentArr, i) =>
         ({
           text: `${i + (i < 4 ? 1 : 0)}-Hit DMG`,
           basicVal: (tlvl) => percentArr[tlvl] + "%",
           finalVal: (tlvl, stats) => (percentArr[tlvl] / 100) * stats.norm_atk_avg_dmg
         }))
-      },
-      charged: {
-        text: <span>Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.</span>,
+      }, {
+        text: <span><strong>Charged Attack</strong> Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.</span>,
         fields: [{
           text: `1-Hit DMG`,
           basicVal: (tlvl) => charged_1[tlvl] + "%",
@@ -90,9 +89,8 @@ let char = {
           text: `Stamina Cost`,
           value: `25`,
         }]
-      },
-      plunge: {
-        text: <span>Plunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.</span>,
+      }, {
+        text: <span><strong>Plunging Attack</strong> Plunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.</span>,
         fields: [{
           text: `Plunge DMG`,
           basicVal: (tlvl) => plunge_dmg[tlvl] + "%",
@@ -106,116 +104,125 @@ let char = {
           basicVal: (tlvl) => plunge_dmg_high[tlvl] + "%",
           finalVal: (tlvl, stats) => (plunge_dmg_high[tlvl] / 100) * stats.phy_avg_dmg
         }]
-      }
+      }],
     },
     skill: {
       name: "Stellar Restoration",
       img: skill,
-      text: <span>
-        <p className="mb-2">
-          Hurls a Lightning Stiletto that annihilates her enemies like the swift thunder. When the Stiletto hits its target, it deals <span className="text-electro">Electro DMG</span> to enemies in a small AoE, and places a Stiletto Mark on the spot hit.
+      document: [{
+        text: <span>
+          <p className="mb-2">
+            Hurls a Lightning Stiletto that annihilates her enemies like the swift thunder. When the Stiletto hits its target, it deals <span className="text-electro">Electro DMG</span> to enemies in a small AoE, and places a Stiletto Mark on the spot hit.
         </p>
-        <p className="mb-2">
-          <strong>Hold:</strong> Hold to adjust the direction in which the Stiletto shall be thrown. Stilettos thrown by the Hold attack mode can be suspended in mid-air, allowing Keqing to jump to them when using Stellar Restoration a second time.
+          <p className="mb-2">
+            <strong>Hold:</strong> Hold to adjust the direction in which the Stiletto shall be thrown. Stilettos thrown by the Hold attack mode can be suspended in mid-air, allowing Keqing to jump to them when using Stellar Restoration a second time.
         </p>
-        <p className="mb-2">
-          <strong>Lightning Stiletto:</strong> If Keqing uses Stellar Restoration again or uses a Charged Attack while its duration lasts, it will clear the Stiletto Mark and produce different effects:
+          <p className="mb-2">
+            <strong>Lightning Stiletto:</strong> If Keqing uses Stellar Restoration again or uses a Charged Attack while its duration lasts, it will clear the Stiletto Mark and produce different effects:
         </p>
-        <ul>
-          <li>If she uses Stellar Restoration again, she will blink to the location of the Mark and unleash one slashing attack that deals <span className="text-electro">AoE Electro DMG</span>. When blinking to a Stiletto that was thrown from a Holding attack, Keqing can leap across obstructing terrain.</li>
-          <li>If Keqing uses a Charged Attack, she will ignite a series of thundering cuts at the Mark's location, dealing <span className="text-electro">AoE Electro DMG</span>.</li>
-        </ul>
-      </span>,
-      fields: [{
-        text: "Lightning Stiletto DMG",
-        basicVal: (tlvl) => stellar.stilleto_dmg[tlvl] + "%",
-        finalVal: (tlvl, s) => (stellar.stilleto_dmg[tlvl] / 100) * s.skill_avg_dmg,
-      }, {
-        text: "Slashing DMG",
-        basicVal: (tlvl) => stellar.slashing_dmg[tlvl] + "%",
-        finalVal: (tlvl, s) => (stellar.slashing_dmg[tlvl] / 100) * s.skill_avg_dmg,
-      }, {
-        text: "Thunderclap Slash DMG",
-        basicVal: (tlvl) => stellar.thunderclasp_slash_dmg[tlvl] + "% × 2",
-        finalVal: (tlvl, s) => ((stellar.thunderclasp_slash_dmg[tlvl] * 2) / 100) * s.skill_avg_dmg,
-      }, {
-        text: "CD",
-        value: "7.5s",
-      }]
+          <ul>
+            <li>If she uses Stellar Restoration again, she will blink to the location of the Mark and unleash one slashing attack that deals <span className="text-electro">AoE Electro DMG</span>. When blinking to a Stiletto that was thrown from a Holding attack, Keqing can leap across obstructing terrain.</li>
+            <li>If Keqing uses a Charged Attack, she will ignite a series of thundering cuts at the Mark's location, dealing <span className="text-electro">AoE Electro DMG</span>.</li>
+          </ul>
+        </span>,
+        fields: [{
+          text: "Lightning Stiletto DMG",
+          basicVal: (tlvl) => stellar.stilleto_dmg[tlvl] + "%",
+          finalVal: (tlvl, s) => (stellar.stilleto_dmg[tlvl] / 100) * s.skill_avg_dmg,
+        }, {
+          text: "Slashing DMG",
+          basicVal: (tlvl) => stellar.slashing_dmg[tlvl] + "%",
+          finalVal: (tlvl, s) => (stellar.slashing_dmg[tlvl] / 100) * s.skill_avg_dmg,
+        }, {
+          text: "Thunderclap Slash DMG",
+          basicVal: (tlvl) => stellar.thunderclasp_slash_dmg[tlvl] + "% × 2",
+          finalVal: (tlvl, s) => ((stellar.thunderclasp_slash_dmg[tlvl] * 2) / 100) * s.skill_avg_dmg,
+        }, {
+          text: "CD",
+          value: "7.5s",
+        }]
+      }],
     },
     burst: {
       name: "Starward Sword",
       img: burst,
-      text: <span>
-        <p className="mb-2">
-          Keqing unleashes the power of lightning, dealing <span className="text-electro">Electro DMG</span> in an AoE.
+      document: [{
+        text: <span>
+          <p className="mb-2">
+            Keqing unleashes the power of lightning, dealing <span className="text-electro">Electro DMG</span> in an AoE.
         </p>
-        <p className="mb-2">
-          She then blends into the shadow of her blade, striking a series of thunderclap-blows to nearby enemies simultaneously that deal multiple instances of <span className="text-electro">Electro DMG</span>. The final attack deals massive <span className="text-electro">AoE Electro DMG</span>.
+          <p className="mb-2">
+            She then blends into the shadow of her blade, striking a series of thunderclap-blows to nearby enemies simultaneously that deal multiple instances of <span className="text-electro">Electro DMG</span>. The final attack deals massive <span className="text-electro">AoE Electro DMG</span>.
         </p>
-      </span>,
-      fields: [{
-        text: "Skill DMG",
-        basicVal: (tlvl) => starwardSword.skill_dmg[tlvl] + "%",
-        finalVal: (tlvl, s) => (starwardSword.skill_dmg[tlvl] / 100) * s.burst_avg_dmg,
-      }, {
-        text: "Consecutive Slash DMG",
-        basicVal: (tlvl) => starwardSword.consec_slash_dmg[tlvl] + "% × 8",
-        finalVal: (tlvl, s) => ((starwardSword.consec_slash_dmg[tlvl] * 8) / 100) * s.burst_avg_dmg,
-      }, {
-        text: "Last Attack DMG",
-        basicVal: (tlvl) => starwardSword.last_dmg[tlvl] + "%",
-        finalVal: (tlvl, s) => (starwardSword.last_dmg[tlvl] / 100) * s.burst_avg_dmg,
-      }, {
-        text: "CD",
-        value: "15s",
-      }, {
-        text: "Energy Cost",
-        value: 60,
-      }]
+        </span>,
+        fields: [{
+          text: "Skill DMG",
+          basicVal: (tlvl) => starwardSword.skill_dmg[tlvl] + "%",
+          finalVal: (tlvl, s) => (starwardSword.skill_dmg[tlvl] / 100) * s.burst_avg_dmg,
+        }, {
+          text: "Consecutive Slash DMG",
+          basicVal: (tlvl) => starwardSword.consec_slash_dmg[tlvl] + "% × 8",
+          finalVal: (tlvl, s) => ((starwardSword.consec_slash_dmg[tlvl] * 8) / 100) * s.burst_avg_dmg,
+        }, {
+          text: "Last Attack DMG",
+          basicVal: (tlvl) => starwardSword.last_dmg[tlvl] + "%",
+          finalVal: (tlvl, s) => (starwardSword.last_dmg[tlvl] / 100) * s.burst_avg_dmg,
+        }, {
+          text: "CD",
+          value: "15s",
+        }, {
+          text: "Energy Cost",
+          value: 60,
+        }]
+      }],
     },
     passive1: {
       name: "Thundering Penance",
       img: passive1,
-      text: <span>After recasting <b>Stellar Restoration</b> while a Lightning Stiletto is present, Keqing's weapon gains an <span className="text-electro">Electro Infusion</span> for 5s.</span>
+      document: [{ text: <span>After recasting <b>Stellar Restoration</b> while a Lightning Stiletto is present, Keqing's weapon gains an <span className="text-electro">Electro Infusion</span> for 5s.</span> }],
     },
     passive2: {
       name: "Aristocratic Dignity",
       img: passive2,
-      text: <span>When casting <b>Starward Sword</b>, Keqing's CRIT Rate is increased by 15%, and her Energy Recharge is increased by 15%. This effect lasts for 8s.</span>
+      document: [{ text: <span>When casting <b>Starward Sword</b>, Keqing's CRIT Rate is increased by 15%, and her Energy Recharge is increased by 15%. This effect lasts for 8s.</span> }],
     },
     passive3: {
       name: "Land's Overseer",
       img: passive3,
-      text: <span>When dispatched on an expedition in <b>Liyue</b>, time consumed is reduced by 25%.</span>
+      document: [{ text: <span>When dispatched on an expedition in <b>Liyue</b>, time consumed is reduced by 25%.</span> }],
+    },
+    constellation1: {
+      name: "Thundering Might",
+      img: c1,
+      document: [{ text: (s) => <span>Recasting <b>Stellar Restoration</b> while a Lightning Stiletto is present causes Keqing to deal 50% of her ATK{WeaponPercent(50, s.atk)} as <span className="text-electro">AoE Electro DMG</span> at the start point and terminus of her Blink.</span> }],
+    },
+    constellation2: {
+      name: "Keen Extraction",
+      img: c2,
+      document: [{ text: <span>When Keqing's Normal and Charged Attacks hit enemies affected by <span className="text-electro">Electro</span>, they have a 50% chance of producing an Elemental Particle. This effect can only occur once every 5s.</span> }],
+    },
+    constellation3: {
+      name: "Foreseen Reformation",
+      img: c3,
+      document: [{ text: <span>Increases the level of <b>Starward Sword</b> by 3.</span> }],
+    },
+    constellation4: {
+      name: "Attunement",
+      img: c4,
+      document: [{ text: <span>For 10s after Keqing triggers an <span className="text-electro">Electro-related Elemental Reaction</span>, her ATK is increased by 25%.</span> }],
+      //TODO conditional stat
+    },
+    constellation5: {
+      name: "Beckoning Stars",
+      img: c5,
+      document: [{ text: <span>Increases the level of <b>Stellar Restoration</b> by 3.</span> }],
+    },
+    constellation6: {
+      name: "Tenacious Star",
+      img: c6,
+      document: [{ text: <span>When initiating a Normal Attack, a Charged Attack, Elemental Skill or Elemental Burst, Keqing gains a 6% <span className="text-electro">Electro DMG Bonus</span> for 8s. Effects triggered by Normal Attacks, Charged Attacks, Elemental Skills, and Elemental Bursts are considered independent entities.</span> }],
+      //TODO conditional stat
     },
   },
-  constellation: [{
-    name: "Thundering Might",
-    img: c1,
-    text: (s) => <span>Recasting <b>Stellar Restoration</b> while a Lightning Stiletto is present causes Keqing to deal 50% of her ATK{WeaponPercent(50, s.atk)} as <span className="text-electro">AoE Electro DMG</span> at the start point and terminus of her Blink.</span>
-  }, {
-    name: "Keen Extraction",
-    img: c2,
-    text: <span>When Keqing's Normal and Charged Attacks hit enemies affected by <span className="text-electro">Electro</span>, they have a 50% chance of producing an Elemental Particle. This effect can only occur once every 5s.</span>
-  }, {
-    name: "Foreseen Reformation",
-    img: c3,
-    text: <span>Increases the level of <b>Starward Sword</b> by 3.</span>
-  }, {
-    name: "Attunement",
-    img: c4,
-    text: <span>For 10s after Keqing triggers an <span className="text-electro">Electro-related Elemental Reaction</span>, her ATK is increased by 25%.</span>
-    //TODO conditional stat
-  }, {
-    name: "Beckoning Stars",
-    img: c5,
-    text: <span>Increases the level of <b>Stellar Restoration</b> by 3.</span>
-  }, {
-    name: "Tenacious Star",
-    img: c6,
-    text: <span>When initiating a Normal Attack, a Charged Attack, Elemental Skill or Elemental Burst, Keqing gains a 6% <span className="text-electro">Electro DMG Bonus</span> for 8s. Effects triggered by Normal Attacks, Charged Attacks, Elemental Skills, and Elemental Bursts are considered independent entities.</span>
-    //TODO conditional stat
-  }],
 };
 export default char;

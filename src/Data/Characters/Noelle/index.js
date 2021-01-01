@@ -66,17 +66,16 @@ let char = {
     auto: {
       name: "Favonius Bladework - Maid",
       img: normal,
-      normal: {
-        text: "Performs up to 4 consecutive slashes.",
+      document: [{
+        text: <span><strong>Normal Attack</strong> Performs up to 4 consecutive slashes.</span>,
         fields: hitPercent.map((percentArr, i) =>
         ({
           text: `${i + 1}-Hit DMG`,
           basicVal: (tlvl) => percentArr[tlvl] + "%",
           finalVal: (tlvl, stats) => (percentArr[tlvl] / 100) * stats.norm_atk_avg_dmg
         }))
-      },
-      charged: {
-        text: "Drains Stamina over time to perform continuous swirling attack on all nearby enemies. At the end of the sequence, performs an additional powerful slash",
+      }, {
+        text: <span><strong>Charged Attack</strong> Drains Stamina over time to perform continuous swirling attack on all nearby enemies. At the end of the sequence, performs an additional powerful slash</span>,
         fields: [{
           text: `Spinning DMG`,
           basicVal: (tlvl) => charged_atk_spinnning[tlvl] + "%",
@@ -92,9 +91,8 @@ let char = {
           text: `Max Duration`,
           value: `5s`,
         }]
-      },
-      plunge: {
-        text: "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+      }, {
+        text: <span><strong>Plunging Attack</strong> Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.</span>,
         fields: [{
           text: `Plunge DMG`,
           basicVal: (tlvl) => plunge_dmg[tlvl] + "%",
@@ -108,129 +106,142 @@ let char = {
           basicVal: (tlvl) => plunge_dmg_high[tlvl] + "%",
           finalVal: (tlvl, stats) => (plunge_dmg_high[tlvl] / 100) * stats.phy_avg_dmg
         }]
-      }
+      },],
     },
     skill: {
       name: "Breastplate",
       img: skill,
-      text: <span>
-        Summons protective stone armor, dealing <span className="text-geo">Geo DMG</span> to surrounding enemies and creating a shield. The shield's DMG Absorption scales based on Noelle's DEF.
-        The shield has the following properties:
-        <ul>
-          <li>When Noelle's Normal and Charged Attacks hit a target, they have a certain chance to regenerate HP for all characters.</li>
-          <li>Possesses 250% Absorption Efficiency against <span className="text-geo">Geo DMG</span></li>
-        </ul>
-        The amount of HP healed when regeneration is triggered scales based on Noelle's DEF.
-      </span>,
-      fields: [{
-        text: "Skill DMG",
-        basicVal: (tlvl) => breastplateStats.skill_dmg[tlvl] + "% DEF",
-        //basically the calculation for skill_avg_dmg, except using def as the base instead of atk
-        finalVal: (tlvl, s) => (breastplateStats.skill_dmg[tlvl] / 100) * s.def * (1 + (s.crit_rate + s.skill_crit_rate) / 100) * (1 + s.crit_dmg / 100) * (1 + s[`${s.char_ele_key}_ele_dmg`] / 100) * (1 + s.skill_dmg / 100) * (1 + s.dmg / 100),
-      }, {
-        text: "DMG Absorption",
-        basicVal: (tlvl) => breastplateStats.shield_def[tlvl] + "% DEF + " + breastplateStats.shield_flat[tlvl],
-        finalVal: (tlvl, s) => (breastplateStats.shield_def[tlvl] / 100) * s.def + breastplateStats.shield_flat[tlvl],
-      }, {
-        text: "Healing",
-        basicVal: (tlvl) => breastplateStats.heal_def[tlvl] + "% DEF + " + breastplateStats.heal_flat[tlvl],
-        finalVal: (tlvl, s) => (breastplateStats.heal_def[tlvl] / 100) * s.def + breastplateStats.heal_flat[tlvl],
-      }, (c) => ({
-        text: "Trigger Chance",
-        value: (tlvl) => <span>{breastplateStats.heal_trigger[tlvl]}%{c >= 1 ? <span> (100% while <b>Sweeping Time</b> and <b>Breastplate</b> are both in effect)</span> : ""}</span>,
-      }), {
-        text: "Duration",
-        value: "12s",
-      }, (c, a) => ({
-        text: "CD",
-        value: "24s" + (a > 4 ? " -1s Every 4 hits" : ""),
-      })]
+      document: [{
+        text: <span>
+          Summons protective stone armor, dealing <span className="text-geo">Geo DMG</span> to surrounding enemies and creating a shield. The shield's DMG Absorption scales based on Noelle's DEF.
+          The shield has the following properties:
+          <ul>
+            <li>When Noelle's Normal and Charged Attacks hit a target, they have a certain chance to regenerate HP for all characters.</li>
+            <li>Possesses 250% Absorption Efficiency against <span className="text-geo">Geo DMG</span></li>
+          </ul>
+          The amount of HP healed when regeneration is triggered scales based on Noelle's DEF.
+        </span>,
+        fields: [{
+          text: "Skill DMG",
+          basicVal: (tlvl) => breastplateStats.skill_dmg[tlvl] + "% DEF",
+          //basically the calculation for skill_avg_dmg, except using def as the base instead of atk
+          finalVal: (tlvl, s) => (breastplateStats.skill_dmg[tlvl] / 100) * s.def * (1 + (s.crit_rate + s.skill_crit_rate) / 100) * (1 + s.crit_dmg / 100) * (1 + s[`${s.char_ele_key}_ele_dmg`] / 100) * (1 + s.skill_dmg / 100) * (1 + s.dmg / 100),
+        }, {
+          text: "DMG Absorption",
+          basicVal: (tlvl) => breastplateStats.shield_def[tlvl] + "% DEF + " + breastplateStats.shield_flat[tlvl],
+          finalVal: (tlvl, s) => (breastplateStats.shield_def[tlvl] / 100) * s.def + breastplateStats.shield_flat[tlvl],
+        }, {
+          text: "Healing",
+          basicVal: (tlvl) => breastplateStats.heal_def[tlvl] + "% DEF + " + breastplateStats.heal_flat[tlvl],
+          finalVal: (tlvl, s) => (breastplateStats.heal_def[tlvl] / 100) * s.def + breastplateStats.heal_flat[tlvl],
+        }, (c) => ({
+          text: "Trigger Chance",
+          value: (tlvl) => <span>{breastplateStats.heal_trigger[tlvl]}%{c >= 1 ? <span> (100% while <b>Sweeping Time</b> and <b>Breastplate</b> are both in effect)</span> : ""}</span>,
+        }), {
+          text: "Duration",
+          value: "12s",
+        }, (c, a) => ({
+          text: "CD",
+          value: "24s" + (a > 4 ? " -1s Every 4 hits" : ""),
+        })],
+      }],
     },
     burst: {
       name: "Sweeping Time",
       img: burst,
-      text: <span>
-        Gathering the strength of stone around her weapon, Noelle strikes the enemies surrounding her within a large AoE, dealing <span className="text-geo">Geo DMG</span>.
+      document: [{
+        text: <span>
+          Gathering the strength of stone around her weapon, Noelle strikes the enemies surrounding her within a large AoE, dealing <span className="text-geo">Geo DMG</span>.
         Afterwards, Noelle gains the following effects:
         <ul>
-          <li>Larger attack AoE</li>
-          <li>Converts attack DMG to <span className="text-geo">Geo DMG</span></li>
-          <li>Increased ATK that scales based on her DEF.</li>
-        </ul>
-      </span>,
-      fields: [{
-        text: "Burst DMG",
-        basicVal: (tlvl) => sweepingTimeStats.burst_dmg[tlvl] + "%",
-        finalVal: (tlvl, s) => (sweepingTimeStats.burst_dmg[tlvl] / 100) * s.burst_avg_dmg,
-      }, {
-        text: "Skill DMG",
-        basicVal: (tlvl) => sweepingTimeStats.skill_dmg[tlvl] + "%",
-        finalVal: (tlvl, s) => (sweepingTimeStats.skill_dmg[tlvl] / 100) * s.burst_avg_dmg,
-      }, (c) => ({
-        text: "ATK Bonus",
-        basicVal: (tlvl) => `${sweepingTimeStats.atk_bonu[tlvl]}%${c >= 6 ? " +50%" : ""} DEF`,
-        finalVal: (tlvl, s) => ((sweepingTimeStats.atk_bonu[tlvl] + (c >= 6 ? 50 : 0)) / 100) * s.def,
-      }), (c) => ({
-        text: "Duration",
-        value: "15s" + (c >= 6 ? " +1s per kill, up to 10s" : ""),
-      }), {
-        text: "CD",
-        value: "15s",
-      }, {
-        text: "Energy Cost",
-        value: 60,
-      }]
+            <li>Larger attack AoE</li>
+            <li>Converts attack DMG to <span className="text-geo">Geo DMG</span></li>
+            <li>Increased ATK that scales based on her DEF.</li>
+          </ul>
+        </span>,
+        fields: [{
+          text: "Burst DMG",
+          basicVal: (tlvl) => sweepingTimeStats.burst_dmg[tlvl] + "%",
+          finalVal: (tlvl, s) => (sweepingTimeStats.burst_dmg[tlvl] / 100) * s.burst_avg_dmg,
+        }, {
+          text: "Skill DMG",
+          basicVal: (tlvl) => sweepingTimeStats.skill_dmg[tlvl] + "%",
+          finalVal: (tlvl, s) => (sweepingTimeStats.skill_dmg[tlvl] / 100) * s.burst_avg_dmg,
+        }, (c) => ({
+          text: "ATK Bonus",
+          basicVal: (tlvl) => `${sweepingTimeStats.atk_bonu[tlvl]}%${c >= 6 ? " +50%" : ""} DEF`,
+          finalVal: (tlvl, s) => ((sweepingTimeStats.atk_bonu[tlvl] + (c >= 6 ? 50 : 0)) / 100) * s.def,
+        }), (c) => ({
+          text: "Duration",
+          value: "15s" + (c >= 6 ? " +1s per kill, up to 10s" : ""),
+        }), {
+          text: "CD",
+          value: "15s",
+        }, {
+          text: "Energy Cost",
+          value: 60,
+        }]
+      }],
       //TODO conditional. sweeping time is special because it needs to apply the + atk after def is calculated....
     },
     passive1: {
       name: "Devotion",
       img: passive1,
-      text: (stats) => <span>
-        When Noelle is in the party but not on the field, this ability triggers automatically when your active character's HP falls below 30%:
-        Creates a shield for your active character that lasts for 20s and absorbs DMG equal to 400% of Noelle's DEF{WeaponPercent(400, stats.def, 0)}. This effect can only occur once every 60s.
-      </span>
+      document: [{
+        text: (stats) => <span>
+          When Noelle is in the party but not on the field, this ability triggers automatically when your active character's HP falls below 30%:
+          Creates a shield for your active character that lasts for 20s and absorbs DMG equal to 400% of Noelle's DEF{WeaponPercent(400, stats.def, 0)}. This effect can only occur once every 60s.
+        </span>
+      }],
     },
     passive2: {
       name: "Nice and Clean",
       img: passive2,
-      text: <span>
-        Every 4 Normal or Charged Attack hits will decrease the CD of <b>Breastplate</b> by 1s.
-        Hitting multiple enemies with a single attack is only counted as 1 hit.
-      </span>
+      document: [{
+        text: <span>
+          Every 4 Normal or Charged Attack hits will decrease the CD of <b>Breastplate</b> by 1s.
+          Hitting multiple enemies with a single attack is only counted as 1 hit.
+        </span>
+      }],
     },
     passive3: {
       name: "Maid's Knighthood",
       img: passive3,
-      text: <span>
-        When a Perfect Cooking is achieved on a DEF-boosting dish, Noelle has a 12% chance to obtain double the product.
-      </span>
+      document: [{
+        text: <span>When a Perfect Cooking is achieved on a DEF-boosting dish, Noelle has a 12% chance to obtain double the product.</span>
+      }]
     },
-  },
-  constellation: [{
-    name: "I Got Your Back",
-    img: c1,
-    text: <span>While <b>Sweeping Time</b> and <b>Breastplate</b> are both in effect, attacks hits have a 100% chance to trigger <b>Breastplate</b>'s healing effects.</span>
-  }, {
-    name: "Combat Maid",
-    img: c2,
-    text: <span>Decreases Noelle's Stamina Consumption of <b>Charged Attacks</b> by 20% and increases <b>Charged Attack</b> DMG by 15%.</span>
-    //TODO stats constellation
-  }, {
-    name: "Invulnerable Maid",
-    img: c3,
-    text: "Increases Breastplate's skill level by 3. Max level is 15"
-  }, {
-    name: "To Be Cleaned",
-    img: c4,
-    text: (stats) => <span>When <b>Breastplate</b> ends or shatters, it deals 400% of ATK{WeaponPercent(400, stats.atk)} as <span className="text-geo">Geo DMG</span> to surrounding enemies.</span>
-  }, {
-    name: "Favonius Sweeper Master",
-    img: c5,
-    text: "Increases Sweeping Time's skill level by 3. Max level is 15."
-  }, {
-    name: "Must Be Spotless",
-    img: c6,
-    text: (stats) => <span><b>Sweeping Time</b> increases ATK by an additional 50% of Noelle's DEF{WeaponPercent(20, stats.def)}. For the skill's duration, adds 1s duration time per opponent defeated, up to 10s.</span>
-  }],
+    constellation1: {
+      name: "I Got Your Back",
+      img: c1,
+      document: [{ text: <span>While <b>Sweeping Time</b> and <b>Breastplate</b> are both in effect, attacks hits have a 100% chance to trigger <b>Breastplate</b>'s healing effects.</span> }]
+    },
+    constellation2: {
+      name: "Combat Maid",
+      img: c2,
+      document: [{ text: <span>Decreases Noelle's Stamina Consumption of <b>Charged Attacks</b> by 20% and increases <b>Charged Attack</b> DMG by 15%.</span> }]
+      //TODO stats constellation
+    },
+    constellation3: {
+      name: "Invulnerable Maid",
+      img: c3,
+      document: [{ text: <span>Increases <b>Breastplate</b>'s skill level by 3. Max level is 15</span> }]
+    },
+    constellation4: {
+      name: "To Be Cleaned",
+      img: c4,
+      document: [{ text: (stats) => <span>When <b>Breastplate</b> ends or shatters, it deals 400% of ATK{WeaponPercent(400, stats.atk)} as <span className="text-geo">Geo DMG</span> to surrounding enemies.</span> }]
+    },
+    constellation5: {
+      name: "Favonius Sweeper Master",
+      img: c5,
+      document: [{ text: <span>Increases <b>Sweeping Time</b>'s skill level by 3. Max level is 15.</span> }]
+    },
+    constellation6: {
+      name: "Must Be Spotless",
+      img: c6,
+      document: [{ text: (stats) => <span><b>Sweeping Time</b> increases ATK by an additional 50% of Noelle's DEF{WeaponPercent(20, stats.def)}. For the skill's duration, adds 1s duration time per opponent defeated, up to 10s.</span> }]
+    }
+  }
 };
 export default char;

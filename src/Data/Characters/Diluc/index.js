@@ -12,37 +12,33 @@ import burst from './Talent_Dawn.png'
 import passive1 from './Talent_Relentless.png'
 import passive2 from './Talent_Blessing_of_Phoenix.png'
 import passive3 from './Talent_Tradition_of_the_Dawn_Knight.png'
-//import WeaponPercent from '../../../Components/WeaponPercent'
 
 //AUTO
 const hitPercent = [
-  [],
-  [],
-  [],
-  [],
+  [89.7, 97, 104.3, 114.73, 122.03, 130.38, 141.85, 153.32, 164.79, 177.31, 191.65, 208.52, 225.38, 242.25, 260.65],
+  [87.63, 94.77, 101.9, 112.09, 119.22, 127.38, 138.58, 149.79, 161, 173.23, 187.24, 203.72, 220.2, 236.67, 254.65],
+  [98.81, 106.86, 114.9, 126.39, 134.43, 143.63, 156.26, 168.9, 181.54, 195.33, 211.13, 229.71, 248.29, 266.87, 287.14],
+  [133.99, 144.89, 155.8, 171.38, 182.29, 194.75, 211.89, 229.03, 246.16, 264.86, 286.28, 311.48, 336.67, 361.86, 389.34],
 ]
 
-const charged_atk_spinnning = []
-const charged_atk_final = []
-const plunge_dmg = []
-const plunge_dng_low = []
-const plunge_dmg_high = []
+const charged_atk_spinnning = [68.8, 74.4, 80, 88, 93.6, 100, 108.8, 117.6, 126.4, 136, 147, 159.94, 172.87, 185.81, 199.92]
+const charged_atk_final = [124.7, 134.85, 145, 159.5, 169.65, 181.25, 197.2, 213.15, 229.1, 246.5, 266.44, 289.88, 313.33, 336.78, 362.36]
+const plunge_dmg = [89.51, 96.79, 104.08, 114.48, 121.77, 130.1, 141.54, 152.99, 164.44, 176.93, 189.42, 201.91, 214.4, 226.89, 239.37]
+const plunge_dng_low = [178.97, 193.54, 208.11, 228.92, 243.49, 260.13, 283.03, 305.92, 328.81, 353.78, 378.76, 403.73, 428.7, 453.68, 478.65]
+const plunge_dmg_high = [223.55, 241.74, 259.94, 285.93, 304.13, 324.92, 353.52, 382.11, 410.7, 441.89, 473.09, 504.28, 535.47, 566.66, 597.86]
 
 //SKILL
-const breastplateStats = {
-  skill_dmg: [],
-  shield_def: [],
-  shield_flat: [],
-  heal_def: [],
-  heal_flat: [],
-  heal_trigger: [],
+const searing = {
+  hit1: [94.4, 101.48, 108.56, 118, 125.08, 132.16, 141.6, 151.04, 160.48, 169.92, 179.36, 188.8, 200.6, 212.4, 224.2],
+  hit2: [97.6, 104.92, 112.24, 122, 129.32, 136.64, 146.4, 156.16, 165.92, 175.68, 185.44, 195.2, 207.4, 219.6, 231.8],
+  hit3: [128.8, 138.46, 148.12, 161, 170.66, 180.32, 193.2, 206.08, 218.96, 231.84, 244.72, 257.6, 273.7, 289.8, 305.9],
 }
 
 //BURST
-const sweepingTimeStats = {
-  burst_dmg: [],
-  skill_dmg: [],
-  atk_bonu: [],
+const dawn = {
+  slashing: [204, 219.3, 234.6, 255, 270.3, 285.6, 306, 326.4, 346.8, 367.2, 387.6, 408, 433.5, 459, 484.5],
+  dot: [60, 64.5, 69, 75, 79.5, 84, 90, 96, 102, 108, 114, 120, 127.5, 135, 142.5],
+  explosion: [204, 219.3, 234.6, 255, 270.3, 285.6, 306, 326.4, 346.8, 367.2, 387.6, 408, 433.5, 459, 484.5],
 }
 
 let char = {
@@ -68,17 +64,16 @@ let char = {
     auto: {
       name: "TEMPLATE",
       img: normal,
-      normal: {
-        text: <span>TEMPLATE</span>,
+      document: [{
+        text: <span><strong>Normal Attack</strong> Perform up to 4 consecutive strikes.</span>,
         fields: hitPercent.map((percentArr, i) =>
         ({
           text: `${i + 1}-Hit DMG`,
           basicVal: (tlvl) => percentArr[tlvl] + "%",
           finalVal: (tlvl, stats) => (percentArr[tlvl] / 100) * stats.norm_atk_avg_dmg
         }))
-      },
-      charged: {
-        text: <span>TEMPLATE</span>,
+      }, {
+        text: <span><strong>Charged Attack</strong> Drains Stamina over time to perform continuous slashes. At the end of the sequence, perform a more powerful slash.</span>,
         fields: [{
           text: `Spinning DMG`,
           basicVal: (tlvl) => charged_atk_spinnning[tlvl] + "%",
@@ -87,16 +82,15 @@ let char = {
           text: `Spinning Final DMG`,
           basicVal: (tlvl) => charged_atk_final[tlvl] + "%",
           finalVal: (tlvl, stats) => (charged_atk_final[tlvl] / 100) * stats.char_atk_avg_dmg
-        }, {
+        }, (c, a) => ({
           text: `Stamina Cost`,
-          value: `40/s`,
-        }, {
+          value: "40/s" + (a >= 1 ? " - 20/s" : ""),
+        }), (c, a) => ({
           text: `Max Duration`,
-          value: `5s`,
-        }]
-      },
-      plunge: {
-        text: <span>TEMPLATE</span>,
+          value: "5s" + (a >= 1 ? " + 3s" : ""),
+        })]
+      }, {
+        text: <span><strong>Plunging Attack</strong> Plunges from mid-air to strike the ground, damaging enemies along the path and dealing AoE DMG upon impact.</span>,
         fields: [{
           text: `Plunge DMG`,
           basicVal: (tlvl) => plunge_dmg[tlvl] + "%",
@@ -110,99 +104,142 @@ let char = {
           basicVal: (tlvl) => plunge_dmg_high[tlvl] + "%",
           finalVal: (tlvl, stats) => (plunge_dmg_high[tlvl] / 100) * stats.phy_avg_dmg
         }]
-      }
+      }],
     },
     skill: {
-      name: "TEMPLATE",
+      name: "Searing Onslaught",
       img: skill,
-      text: <span>TEMPLATE</span>,
-      fields: [{
-        text: "TEMPLATE",
-        basicVal: (tlvl) => breastplateStats.skill_dmg[tlvl] + "%",
-        finalVal: (tlvl, s) => (breastplateStats.skill_dmg[tlvl] / 100) * s.skill_avg_dmg,
-      }, {
-        text: "TEMPLATE",
-        basicVal: (tlvl) => breastplateStats.shield_def[tlvl] + "% DEF + " + breastplateStats.shield_flat[tlvl],
-        finalVal: (tlvl, s) => (breastplateStats.shield_def[tlvl] / 100) * s.def + breastplateStats.shield_flat[tlvl],
-      }, {
-        text: "TEMPLATE",
-        basicVal: (tlvl) => breastplateStats.heal_def[tlvl] + "% DEF + " + breastplateStats.heal_flat[tlvl],
-        finalVal: (tlvl, s) => (breastplateStats.heal_def[tlvl] / 100) * s.def + breastplateStats.heal_flat[tlvl],
-      }, {
-        text: "CD",
-        value: "12s",
-      }, {
-        text: "TEMPLATE",
-        value: (tlvl, s, c, a) => "24s" + a > 4 ? " -1s Every 4 hits" : "",
-      }]
+      document: [{
+        text: <span>
+          Performs a forward slash that deals <span className="text-pyro">Pyro DMG</span>.
+          This skill can be used 3 times consecutively. Enters CD if not cast again within a short period (5s).
+        </span>,
+        fields: [{
+          text: "1-Hit DMG",
+          basicVal: (tlvl) => searing.hit1[tlvl] + "%",
+          finalVal: (tlvl, s) => (searing.hit1[tlvl] / 100) * s.skill_avg_dmg,
+        }, {
+          text: "2-Hit DMG",
+          basicVal: (tlvl) => searing.hit2[tlvl] + "%",
+          finalVal: (tlvl, s) => (searing.hit2[tlvl] / 100) * s.skill_avg_dmg,
+        }, {
+          text: "3-Hit DMG",
+          basicVal: (tlvl) => searing.hit3[tlvl] + "%",
+          finalVal: (tlvl, s) => (searing.hit3[tlvl] / 100) * s.skill_avg_dmg,
+        }, (c) => {
+          if (c < 4) return null
+          return {
+            text: "2-Hit DMG(Boosted)",
+            basicVal: (tlvl) => searing.hit2[tlvl] + "% + 40%",
+            finalVal: (tlvl, s) => ((searing.hit2[tlvl] + 40) / 100) * s.skill_avg_dmg,
+          }
+        }, (c) => {
+          if (c < 4) return null
+          return {
+            text: "3-Hit DMG(Boosted)",
+            basicVal: (tlvl) => searing.hit3[tlvl] + "% + 40%",
+            finalVal: (tlvl, s) => ((searing.hit3[tlvl] + 40) / 100) * s.skill_avg_dmg,
+          }
+        }, {
+          text: "CD",
+          value: "12s",
+        }]
+      }],
     },
     burst: {
-      name: "TEMPLATE",
+      name: "Dawn",
       img: burst,
-      text: <span>TEMPLATE</span>,
-      fields: [{
-        text: "TEMPLATE",
-        basicVal: (tlvl) => sweepingTimeStats.burst_dmg[tlvl] + "%",
-        finalVal: (tlvl, s) => (sweepingTimeStats.burst_dmg[tlvl] / 100) * s.burst_avg_dmg,
-      }, {
-        text: "TEMPLATE",
-        basicVal: (tlvl) => sweepingTimeStats.skill_dmg[tlvl] + "%",
-        finalVal: (tlvl, s) => (sweepingTimeStats.skill_dmg[tlvl] / 100) * s.burst_avg_dmg,
-      }, {
-        text: "TEMPLATE",
-        basicVal: (tlvl, s, constellation) => `${sweepingTimeStats.atk_bonu[tlvl]}%${constellation >= 6 ? " +50%" : ""} DEF`,
-        finalVal: (tlvl, s, constellation) => ((sweepingTimeStats.atk_bonu[tlvl] + (constellation >= 6 ? 50 : 0)) / 100) * s.def,
-      }, {
-        text: "TEMPLATE",
-        value: (tlvl, s, constellation) => "15s" + (constellation >= 6 ? " +1s per kill, up to 10s" : ""),
-      }, {
-        text: "CD",
-        value: "15s",
-      }, {
-        text: "Energy Cost",
-        value: 60,
-      }]
+      document: [{
+        text: <span>
+          Releases intense flames to knock nearby opponents back, dealing <span className="text-pyro">Pyro DMG</span>. The flames then converge into the weapon, summoning a Phoenix that flies forward and deals massive <span className="text-pyro">Pyro DMG</span> to all opponents in its path. The Phoenix explodes upon reaching its destination, causing a large amount of <span className="text-pyro">AoE Pyro DMG</span>.
+          The searing flames that run down his blade cause it to be infused with <span className="text-pyro">Pyro</span>.
+        </span>,
+        fields: [{
+          text: "Slashing DMG",
+          basicVal: (tlvl) => dawn.slashing[tlvl] + "%",
+          finalVal: (tlvl, s) => (dawn.slashing[tlvl] / 100) * s.burst_avg_dmg,
+        }, {
+          text: "DoT",
+          basicVal: (tlvl) => dawn.dot[tlvl] + "%",
+          finalVal: (tlvl, s) => (dawn.dot[tlvl] / 100) * s.burst_avg_dmg,
+        }, {
+          text: "Explosion DMG",
+          basicVal: (tlvl) => dawn.explosion[tlvl] + "%",
+          finalVal: (tlvl, s) => (dawn.explosion[tlvl] / 100) * s.burst_avg_dmg,
+        }, {
+          text: "CD",
+          value: "12s",
+        }, (c, a) => ({
+          text: "Infusion Duration",
+          value: "8s" + (a > 4 ? " + 4s" : ""),
+        }), {
+          text: "Energy Cost",
+          value: 40,
+        }]
+      }],
     },
     passive1: {
-      name: "TEMPLATE",
+      name: "Relentless",
       img: passive1,
-      text: <span>TEMPLATE</span>
+      document: [{ text: <span>Diluc's <b>Charged Attack</b> Stamina Cost is decreased by 50%, and its duration is increased by 3s.</span> }],
     },
     passive2: {
-      name: "TEMPLATE",
+      name: "Blessing of Phoenix",
       img: passive2,
-      text: <span>TEMPLATE</span>
+      document: [{ text: <span>The <span className="text-pyro">Pyro Enchantment</span> provided by <b>Dawn</b> lasts for 4s longer. Additionally. Diluc gains 20% <span className="text-pyro">Pyro DMG Bonus</span> during the duration of this effect.</span> }],
+      //TODO conditional stat
     },
     passive3: {
-      name: "TEMPLATE",
+      name: "Tradition of the Dawn Knight",
       img: passive3,
-      text: <span>TEMPLATE</span>
+      document: [{ text: <span>Refunds 15% of the ores used when crafting Claymore-type weapons.</span> }],
     },
+    constellation1: {
+      name: "Conviction",
+      img: c1,
+      document: [{ text: <span>	Diluc deals 15% more DMG to enemies whose HP is above 50%.</span> }],
+      //TODO conditional stat
+    },
+    constellation2: {
+      name: "Searing Ember",
+      img: c2,
+      document: [{
+        text: <span>
+          When Diluc takes DMG, his ATK increases by 10%, and his ATK SPD increases by 5%. Last for 10s.
+          This effect can stack up to 3 times and can only occur once every 1.5s.
+      </span>
+      }],
+      //TODO conditional stat
+    },
+    constellation3: {
+      name: "Fire and Steel",
+      img: c3,
+      document: [{ text: <span>Increases <b>Searing Onslaught</b>'s skill level by 3. Maximum upgrade level is 15.</span> }],
+    },
+    constellation4: {
+      name: "Flowing Flame",
+      img: c4,
+      document: [{
+        text: <span>Casting <b>Searing Onslaught</b> in sequence greatly increases damage dealt.
+        Within 2s of using Searing Onslaught, casting the next Searing Onslaught in the combo deals 40% additional DMG. This effect lasts for the next 2s.</span>
+      }],
+    },
+    constellation5: {
+      name: "Phoenix, Harbinger of Dawn",
+      img: c5,
+      document: [{ text: <span>Increases <b>Dawn</b>'s skill level by 3. Maximum upgrade level is 15.</span> }],
+    },
+    constellation6: {
+      name: "Flaming Sword, Nemesis of Dark",
+      img: c6,
+      document: [{
+        text: <span>
+          After casting <b>Searing Onslaught</b>, the next 2 Normal Attacks within the next 6s will have their DMG and ATK SPD increased by 30%.
+          Additionally, <b>Searing Onslaught</b> will not interrupt the Normal Attack combo.
+        </span>
+      }],
+      //TODO conditional stat
+    }
   },
-  constellation: [{
-    name: "TEMPLATE",
-    img: c1,
-    text: <span>TEMPLATE</span>
-  }, {
-    name: "TEMPLATE",
-    img: c2,
-    text: <span>TEMPLATE</span>
-  }, {
-    name: "TEMPLATE",
-    img: c3,
-    text: <span>TEMPLATE</span>
-  }, {
-    name: "TEMPLATE",
-    img: c4,
-    text: <span>TEMPLATE</span>
-  }, {
-    name: "TEMPLATE",
-    img: c5,
-    text: <span>TEMPLATE</span>
-  }, {
-    name: "TEMPLATE",
-    img: c6,
-    text: <span>TEMPLATE</span>
-  }],
 };
 export default char;

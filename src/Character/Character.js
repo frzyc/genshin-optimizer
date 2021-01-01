@@ -55,12 +55,8 @@ export default class Character {
   //talents
   static getTalentName = (charKey, talentKey, defVal = "") => this.getCDataObj(charKey)?.talent?.[talentKey]?.name || defVal
   //only really work with skill/burst/passives since auto is handled differently
-  static getTalentText = (charKey, talentKey, defVal = "") => this.getCDataObj(charKey)?.talent?.[talentKey]?.text || defVal
+  static getTalentDocument = (charKey, talentKey, defVal = []) => this.getCDataObj(charKey)?.talent?.[talentKey]?.document || defVal
   static getTalentFields = (charKey, talentKey, defVal = []) => this.getCDataObj(charKey)?.talent?.[talentKey]?.fields || defVal
-  //constellations
-  static getConstellationName = (charKey, constIndex, defVal = "") => this.getCDataObj(charKey)?.constellation?.[constIndex]?.name || defVal
-  static getConstellationText = (charKey, constIndex, defVal = "") => this.getCDataObj(charKey)?.constellation?.[constIndex]?.text || defVal
-  static getConstellationFields = (charKey, constIndex, defVal = []) => this.getCDataObj(charKey)?.constellation?.[constIndex]?.fields || defVal
   //CHARCTER OBJ
   static hasOverride = (character, statKey) => character && character.baseStatOverrides ? (statKey in character.baseStatOverrides) : false;
 

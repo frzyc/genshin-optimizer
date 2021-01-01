@@ -9,70 +9,49 @@ export default function CharacterTalentPane(props) {
   let { character: { characterKey, levelKey, compareAgainstEquipped, constellation, talentLevelKeys = {} }, equippedBuild, newBuild, editable, setState } = props
   //choose which one to display stats for
   let build = newBuild ? newBuild : equippedBuild
-  let charDataObj = Character.getCDataObj(characterKey)
-  let talent = charDataObj?.talent
   let { autoLevelKey = 0, skillLevelKey = 0, burstLevelKey = 0 } = talentLevelKeys
   let ascension = Character.getAscension(levelKey)
-  let autoList = [["normal", "Normal Attack"], ["charged", "Charged Attack"], ["plunge", "Plunging Attack"]]
 
-  let skillBurstList = [["skill", "Elemental Skill", "skillLevelKey", skillLevelKey], ["burst", "Elemental Burst", "burstLevelKey", burstLevelKey]]
+  let skillBurstList = [["auto", "Normal/Charged Attack", "autoLevelKey", autoLevelKey], ["skill", "Elemental Skill", "skillLevelKey", skillLevelKey], ["burst", "Elemental Burst", "burstLevelKey", burstLevelKey]]
   let setTalentLevel = (talentKey, talentlevel) => setState(state => {
     let talentLevelKeys = state.talentLevelKeys || {}
     talentLevelKeys[talentKey] = talentlevel
     return { talentLevelKeys }
   })
   let passivesList = [["passive1", "Unlocked at Ascension 1", 1], ["passive2", "Unlocked at Ascension 4", 4], ["passive3", "Unlocked by Default", 0]]
+
+  let fieldProps = { constellation, ascension, compareAgainstEquipped, equippedBuild }
   return <>
     <Row>
-      <Col xs={12} md={6} lg={4} className="mb-2">
-        <SkillDisplayCard imgSrc={Character.getTalentImg(characterKey, "auto")} title={Character.getTalentName(characterKey, "auto")} subtitle={"Normal/Charged Attack"} talentLvlKey={autoLevelKey} setTalentLevel={editable ? ((l) => setTalentLevel("autoLevelKey", l)) : null}>
-          {autoList.map(([autoKey, autoText], index) => {
-            let { text, fields } = talent?.auto?.[autoKey] || { text: "", fields: [] }
-            return <Row key={autoKey} className={(index < autoList.length - 1) ? "mb-2" : ""}>
-              <Col xs={12}>
-                <strong>{autoText}: </strong><span>{text}</span>
-                <ListGroup className="text-white ml-n2 mr-n2">
-                  {fields.map((field, i) => <FieldDisplay key={i} field={field} build={build} constellation={constellation} ascension={ascension} index={i} talentLvlKey={autoLevelKey} compareAgainstEquipped={compareAgainstEquipped} equippedBuild={equippedBuild} />)}
-                </ListGroup>
-              </Col>
-            </Row>
-          })}
-        </SkillDisplayCard>
-      </Col>
       {skillBurstList.map(([tKey, tText, talentKey, talentLvlKey]) => {
-        let talentText = Character.getTalentText(characterKey, tKey)
-        if (typeof talentText === "function")
-          talentText = talentText(build.finalStats)
         let levelBoost = tKey === "skill" ? (constellation >= 3 ? 3 : 0) :
           tKey === "burst" && constellation >= 5 ? 3 : 0
         return <Col key={tKey} xs={12} md={6} lg={4} className="mb-2">
-          <SkillDisplayCard imgSrc={Character.getTalentImg(characterKey, tKey)} title={Character.getTalentName(characterKey, tKey)} subtitle={tText} talentLvlKey={talentLvlKey} levelBoost={levelBoost} setTalentLevel={editable ? ((l) => setTalentLevel(talentKey, l)) : null} >
-            <Row><Col xs={12}>
-              <span>{Character.getTalentText(characterKey, tKey)}</span>
-              <ListGroup className="text-white ml-n2 mr-n2">
-                {Character.getTalentFields(characterKey, tKey).map((field, i) => <FieldDisplay key={i} field={field} build={build} constellation={constellation} ascension={ascension} index={i} talentLvlKey={talentLvlKey} levelBoost={levelBoost} compareAgainstEquipped={compareAgainstEquipped} equippedBuild={equippedBuild} />)}
-              </ListGroup>
-            </Col></Row>
-          </SkillDisplayCard>
+          <SkillDisplayCard imgSrc={Character.getTalentImg(characterKey, tKey)}
+            title={Character.getTalentName(characterKey, tKey)}
+            subtitle={tText}
+            talentLvlKey={talentLvlKey}
+            levelBoost={levelBoost}
+            setTalentLevel={editable ? ((l) => setTalentLevel(talentKey, l)) : null}
+            build={build}
+            document={Character.getTalentDocument(characterKey, tKey)}
+            fieldProps={fieldProps}
+          />
         </Col>
       })}
     </Row>
     <Row>
       {/* passives */}
       {passivesList.map(([tKey, tText, asc]) => {
-        let talentText = Character.getTalentText(characterKey, tKey)
         let enabled = ascension >= asc
-        if (typeof talentText === "function")
-          talentText = talentText(build.finalStats)
         return <Col key={tKey} style={{ opacity: enabled ? 1 : 0.5 }} xs={12} md={4} className="mb-2">
-          <SkillDisplayCard imgSrc={Character.getTalentImg(characterKey, tKey)} title={Character.getTalentName(characterKey, tKey)} subtitle={tText} >
-            <Row><Col xs={12}>
-              <span>{talentText}</span>
-              <ListGroup className="text-white ml-n2 mr-n2">
-                {Character.getTalentFields(characterKey, tKey).map((field, i) => <FieldDisplay key={i} field={field} build={build} constellation={constellation} ascension={ascension} index={i} />)}
-              </ListGroup>
-            </Col></Row>
-          </SkillDisplayCard>
+          <SkillDisplayCard imgSrc={Character.getTalentImg(characterKey, tKey)}
+            title={Character.getTalentName(characterKey, tKey)}
+            subtitle={tText}
+            build={build}
+            document={Character.getTalentDocument(characterKey, tKey)}
+            fieldProps={fieldProps}
+          />
         </Col>
       })}
     </Row>
@@ -83,17 +62,17 @@ export default function CharacterTalentPane(props) {
     </Row>
     <Row>
       {[...Array(6).keys()].map(i => {
-        let constellationText = Character.getConstellationText(characterKey, i)
-        if (typeof constellationText === "function")
-          constellationText = constellationText(build.finalStats)
-        return <Col key={i} xs={12} md={4} className="mb-2" style={{ cursor: editable ? "pointer" : "default", opacity: constellation > i ? 1 : 0.5 }} onClick={editable ? (() => setState({ constellation: (i + 1) === constellation ? i : i + 1 })) : null}  >
-          <SkillDisplayCard imgSrc={Character.getConstellationImg(characterKey, i)} title={Character.getConstellationName(characterKey, i)} subtitle={`Contellation Lv. ${i + 1}`} >
-            <Row><Col xs={12}><span>{constellationText}</span>
-              <ListGroup className="text-white ml-n2 mr-n2">
-                {Character.getConstellationFields(characterKey, i).map((field, i) => <FieldDisplay key={i} field={field} build={build} constellation={constellation} ascension={ascension} index={i} />)}
-              </ListGroup>
-            </Col></Row>
-          </SkillDisplayCard>
+        let tKey = `constellation${i + 1}`
+        return <Col key={i} xs={12} md={4} className="mb-2"
+          style={{ cursor: editable ? "pointer" : "default", opacity: constellation > i ? 1 : 0.5 }}
+          onClick={editable ? (() => setState({ constellation: (i + 1) === constellation ? i : i + 1 })) : null}  >
+          <SkillDisplayCard imgSrc={Character.getTalentImg(characterKey, tKey)}
+            title={Character.getTalentName(characterKey, tKey)}
+            subtitle={`Contellation Lv. ${i + 1}`}
+            build={build}
+            document={Character.getTalentDocument(characterKey, tKey)}
+            fieldProps={fieldProps}
+          />
         </Col>
       })}
     </Row>
@@ -101,18 +80,20 @@ export default function CharacterTalentPane(props) {
 }
 
 function SkillDisplayCard(props) {
-  let { imgSrc, title, subtitle, children, talentLvlKey = undefined, setTalentLevel = null, levelBoost = 0 } = props
+  let { imgSrc, title, subtitle, talentLvlKey = undefined, setTalentLevel = null, levelBoost = 0, build = {}, document = [], fieldProps = {} } = props
   let header = null
+  if (typeof talentLvlKey === "number")
+    talentLvlKey = clamp(talentLvlKey + levelBoost, 0, 14)
   if (setTalentLevel) {
     header = <Card.Header>
-      <DropdownButton title={`Talent Lv. ${clamp(talentLvlKey + 1 + levelBoost, 1, 15)}`}>
+      <DropdownButton title={`Talent Lv. ${talentLvlKey + 1}`}>
         {[...Array(15).keys()].map(i =>
           i >= levelBoost && <Dropdown.Item key={i} onClick={() => setTalentLevel(i - levelBoost)}>Talent Lv. {i + 1}</Dropdown.Item>)}
       </DropdownButton>
     </Card.Header>
   } else if (typeof talentLvlKey === "number") {
     header = <Card.Header>
-      {`Talent Level: ${clamp(talentLvlKey + 1 + levelBoost, 1, 15)}`}
+      {`Talent Level: ${talentLvlKey + 1}`}
     </Card.Header>
   }
   return <Card bg="lightcontent" text="lightfont" className="h-100">
@@ -127,14 +108,23 @@ function SkillDisplayCard(props) {
           <Card.Subtitle>{subtitle}</Card.Subtitle>
         </Col>
       </Row>
-      {children}
+      {document.map((section, i) => {
+        let talentText = section.text
+        if (typeof talentText === "function")
+          talentText = talentText(build.finalStats)
+        let fields = section.fields || []
+        return <Row className="mt-2" key={"section" + i}><Col xs={12}>
+          <span>{talentText}</span>
+          {fields.length > 0 && <ListGroup className="text-white ml-n2 mr-n2">
+            {fields.map((field, i) => <FieldDisplay key={i} index={i} {...{ ...fieldProps, field, build, talentLvlKey }} />)}
+          </ListGroup>}
+        </Col></Row>
+      })}
     </Card.Body>
   </Card>
 }
 function FieldDisplay(props) {
-  let { field, index, talentLvlKey = 0, build, constellation, ascension, equippedBuild, compareAgainstEquipped, levelBoost = 0 } = props
-
-  talentLvlKey = clamp(talentLvlKey + levelBoost, 0, 14)
+  let { field, index, talentLvlKey = 0, build, constellation, ascension, equippedBuild, compareAgainstEquipped } = props
 
   if (typeof field === "function")
     field = field(constellation, ascension)

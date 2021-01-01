@@ -67,17 +67,16 @@ let char = {
     auto: {
       name: "Oceanborne",
       img: normal,
-      normal: {
-        text: <span>Perform up to 5 successive strikes.</span>,
+      document: [{
+        text: <span><strong>Normal Attack</strong> Perform up to 5 successive strikes.</span>,
         fields: hitPercent.map((percentArr, i) =>
         ({
           text: `${i + 1}-Hit DMG`,
           basicVal: (tlvl) => percentArr[tlvl] + "%",
           finalVal: (tlvl, stats) => (percentArr[tlvl] / 100) * stats.norm_atk_avg_dmg
         }))
-      },
-      charged: {
-        text: <span>Drains Stamina over time to perform continuous slashes. At end of the sequence, perform a more powerful slash.</span>,
+      }, {
+        text: <span><strong>Charged Attack</strong> Drains Stamina over time to perform continuous slashes. At end of the sequence, perform a more powerful slash.</span>,
         fields: [{
           text: `Spinning DMG`,
           basicVal: (tlvl) => charged_atk_spinnning[tlvl] + "%",
@@ -93,9 +92,8 @@ let char = {
           text: `Max Duration`,
           value: `5s`,
         }]
-      },
-      plunge: {
-        text: <span>Plunges from mid-air to strike the ground, damaging opponents along the path and dealing AoE DMG upon impact.</span>,
+      }, {
+        text: <span><strong>Plunging Attack</strong> Plunges from mid-air to strike the ground, damaging opponents along the path and dealing AoE DMG upon impact.</span>,
         fields: [{
           text: `Plunge DMG`,
           basicVal: (tlvl) => plunge_dmg[tlvl] + "%",
@@ -109,126 +107,139 @@ let char = {
           basicVal: (tlvl) => plunge_dmg_high[tlvl] + "%",
           finalVal: (tlvl, stats) => (plunge_dmg_high[tlvl] / 100) * stats.phy_avg_dmg
         }]
-      }
+      }],
     },
     skill: {
       name: "Tidecaller",
       img: skill,
-      text: <span>
-        <p className="mb-2">Nothing to worry about. Should anyone raise a hand against her or her men, she will avenge it ten-fold with sword and thunder.</p>
-        <p className="mb-2"><strong>Press:</strong> Accumulating the power of lightning, Beidou swings her blade forward fiercely, dealing <span className="text-electro">Electro DMG</span>.</p>
-        <p className="mb-2">
-          <strong>Hold:</strong> Lifts her weapon up as a shield. Max DMG absorbed scales off Beidou's Max HP.
+      document: [{
+        text: <span>
+          <p className="mb-2">Nothing to worry about. Should anyone raise a hand against her or her men, she will avenge it ten-fold with sword and thunder.</p>
+          <p className="mb-2"><strong>Press:</strong> Accumulating the power of lightning, Beidou swings her blade forward fiercely, dealing <span className="text-electro">Electro DMG</span>.</p>
+          <p className="mb-2">
+            <strong>Hold:</strong> Lifts her weapon up as a shield. Max DMG absorbed scales off Beidou's Max HP.
           Attacks using the energy stored within the greatsword upon release or once this ability's duration expires, dealing <span className="text-electro">Electro DMG</span>. DMG dealt scales with the number of times beidou is attacked in the skill's duration. The greatest DMG Bonus will be attained once this effect is triggered twice.
           The shield possesses the following properties:
           <ul className="mb-1">
-            <li>Has 250% <span className="text-electro">Electro DMG</span> Absorption Efficiency.</li>
-            <li>Applies the <span className="text-electro">Electro element</span> to Beidou upon activation.</li>
-          </ul>
+              <li>Has 250% <span className="text-electro">Electro DMG</span> Absorption Efficiency.</li>
+              <li>Applies the <span className="text-electro">Electro element</span> to Beidou upon activation.</li>
+            </ul>
         Generate 2 elemental particles when it hit at least 1 target, or 4 when hit with energy stored.
         </p>
-      </span>,
-      fields: [{
-        text: "Shield DMG Absorption",
-        basicVal: (tlvl) => tideCaller.hp[tlvl] + "% Max HP + " + tideCaller.flat[tlvl],
-        finalVal: (tlvl, s) => (tideCaller.hp[tlvl] / 100) * s.hp + tideCaller.flat[tlvl],
-      }, {
-        text: "Base DMG",
-        basicVal: (tlvl) => tideCaller.base_dmg[tlvl] + "%",
-        finalVal: (tlvl, s) => (tideCaller.base_dmg[tlvl] / 100) * s.skill_avg_dmg,
-      }, {
-        text: "DMG Bonus on Hit Taken",
-        basicVal: (tlvl) => tideCaller.dmg_bonus_on_hit[tlvl] + "%",
-        finalVal: (tlvl, s) => (tideCaller.dmg_bonus_on_hit[tlvl] / 100) * s.skill_avg_dmg,
-      }, {
-        text: "CD",
-        value: "7.5s",
-      }]
+        </span>,
+        fields: [{
+          text: "Shield DMG Absorption",
+          basicVal: (tlvl) => tideCaller.hp[tlvl] + "% Max HP + " + tideCaller.flat[tlvl],
+          finalVal: (tlvl, s) => (tideCaller.hp[tlvl] / 100) * s.hp + tideCaller.flat[tlvl],
+        }, {
+          text: "Base DMG",
+          basicVal: (tlvl) => tideCaller.base_dmg[tlvl] + "%",
+          finalVal: (tlvl, s) => (tideCaller.base_dmg[tlvl] / 100) * s.skill_avg_dmg,
+        }, {
+          text: "DMG Bonus on Hit Taken",
+          basicVal: (tlvl) => tideCaller.dmg_bonus_on_hit[tlvl] + "%",
+          finalVal: (tlvl, s) => (tideCaller.dmg_bonus_on_hit[tlvl] / 100) * s.skill_avg_dmg,
+        }, {
+          text: "CD",
+          value: "7.5s",
+        }]
+      }],
     },
     burst: {
       name: "Stormbreaker",
       img: burst,
-      text: <span>
-        <p>Recalling her slaying of the great beast Haishan, Beidou calls upon that monstrous strength and the lightning to create a Thunderbeast's Targe around herself, dealing <span className="text-electro">Electro DMG</span> to nearby enemies.</p>
-        <h6>Thunderbeast's Targe:</h6>
-        <ul className="mb-1">
-          <li>When Normal and Charged Attacks hit, they create a lightning discharge that can jump between enemies, dealing <span className="text-electro">Electro DMG</span>.</li>
-          <li>Increases the character's resistance to interruption, and decreases DMG taken.</li>
-          <li>Triggers a maximum of 1 lightning discharge per second.</li>
-        </ul>
-      </span>,
-      fields: [{
-        text: "Skill DMG",
-        basicVal: (tlvl) => stormbreaker.skill_dmg[tlvl] + "%",
-        finalVal: (tlvl, s) => (stormbreaker.skill_dmg[tlvl] / 100) * s.burst_avg_dmg,
-      }, {
-        text: "Lightning DMG",
-        basicVal: (tlvl) => stormbreaker.lightning_dmg[tlvl] + "%",
-        finalVal: (tlvl, s) => (stormbreaker.lightning_dmg[tlvl] / 100) * s.burst_avg_dmg,
-      }, {
-        text: "DMG Reduction",
-        value: (tlvl) => stormbreaker.dmg_red[tlvl] + "%",
-      }, {
-        text: "Duration",
-        value: "20s",
-      }, {
-        text: "CD",
-        value: "15s",
-      }, {
-        text: "Energy Cost",
-        value: 60,
-      }]
+      document: [{
+        text: <span>
+          <p>Recalling her slaying of the great beast Haishan, Beidou calls upon that monstrous strength and the lightning to create a Thunderbeast's Targe around herself, dealing <span className="text-electro">Electro DMG</span> to nearby enemies.</p>
+          <h6>Thunderbeast's Targe:</h6>
+          <ul className="mb-1">
+            <li>When Normal and Charged Attacks hit, they create a lightning discharge that can jump between enemies, dealing <span className="text-electro">Electro DMG</span>.</li>
+            <li>Increases the character's resistance to interruption, and decreases DMG taken.</li>
+            <li>Triggers a maximum of 1 lightning discharge per second.</li>
+          </ul>
+        </span>,
+        fields: [{
+          text: "Skill DMG",
+          basicVal: (tlvl) => stormbreaker.skill_dmg[tlvl] + "%",
+          finalVal: (tlvl, s) => (stormbreaker.skill_dmg[tlvl] / 100) * s.burst_avg_dmg,
+        }, {
+          text: "Lightning DMG",
+          basicVal: (tlvl) => stormbreaker.lightning_dmg[tlvl] + "%",
+          finalVal: (tlvl, s) => (stormbreaker.lightning_dmg[tlvl] / 100) * s.burst_avg_dmg,
+        }, {
+          text: "DMG Reduction",
+          value: (tlvl) => stormbreaker.dmg_red[tlvl] + "%",
+        }, {
+          text: "Duration",
+          value: "20s",
+        }, {
+          text: "CD",
+          value: "15s",
+        }, {
+          text: "Energy Cost",
+          value: 60,
+        }]
+      }],
     },
     passive1: {
       name: "Retribution",
       img: passive1,
-      text: <span>Counterattacking with <b>Tidecaller</b> at the precise moment when the character is hit grants the maximum DMG Bonus.</span>
+      document: [{ text: <span>Counterattacking with <b>Tidecaller</b> at the precise moment when the character is hit grants the maximum DMG Bonus.</span> }],
     },
     passive2: {
       name: "Lightning Storm",
       img: passive2,
-      text: <span>
-        Gain the following effects for 10s after unleashing <b>Tidecaller</b> with its maximum DMG Bonus:
-        <ul className="mb-0">
-          <li>DMG dealt by Normal and Charged Attacks is increased by 15%. ATK SPD of Normal and Charged Attacks is increased by 15%.</li>
-          <li>Greatly reduced delay before unleashing Charged Attacks.</li>
-        </ul>
-      </span>
+      document: [{
+        text: <span>
+          Gain the following effects for 10s after unleashing <b>Tidecaller</b> with its maximum DMG Bonus:
+          <ul className="mb-0">
+            <li>DMG dealt by Normal and Charged Attacks is increased by 15%. ATK SPD of Normal and Charged Attacks is increased by 15%.</li>
+            <li>Greatly reduced delay before unleashing Charged Attacks.</li>
+          </ul>
+        </span>
+      }],
       //TODO conditional
     },
     passive3: {
       name: "Conqueror of Tides",
       img: passive3,
-      text: <span>
-        Decreases swimming Stamina consumption of your characters in the party by 20%.
-        Not stackable with Passive Talents that provide the exact same effects.
-      </span>
+      document: [{
+        text: <span>
+          Decreases swimming Stamina consumption of your characters in the party by 20%.
+          Not stackable with Passive Talents that provide the exact same effects.
+        </span>
+      }],
+    },
+    constellation1: {
+      name: "Sea Beast's Scourge",
+      img: c1,
+      document: [{ text: (s) => <span>When <b>Stormbreaker</b> is used: Creates a shield that absorbs up to 16% of Beidou's Max HP{WeaponPercent(16, s.hp)} for 15s. This shield absorbs <span className="text-electro">Electro DMG</span> 250% more effectively.</span> }],
+    },
+    constellation2: {
+      name: "Upon the Turbulent Sea, the Thunder Arises",
+      img: c2,
+      document: [{ text: <span><b>Stormbreaker</b>'s arc lightning can jump to 2 additional targets.</span> }],
+    },
+    constellation3: {
+      name: "Summoner of Storm",
+      img: c3,
+      document: [{ text: <span>Increases the level of <b>Tidecaller</b> by 3. Maximum upgrade level is 15.</span> }],
+    },
+    constellation4: {
+      name: "Stunning Revenge",
+      img: c4,
+      document: [{ text: <span>Within 10s of taking DMG, Beidou's Normal Attacks gain 20% additional <span className="text-electro">Electro DMG</span>.</span> }],
+    },
+    constellation5: {
+      name: "Crimson Tidewalker",
+      img: c5,
+      document: [{ text: <span>Increases the level of <b>Stormbreaker</b> by 3. Maximum upgrade level is 15.</span> }],
+    },
+    constellation6: {
+      name: "Bane of the Evil",
+      img: c6,
+      document: [{ text: <span>During the duration of <b>Stormbreaker</b>, the <span className="text-electro">Electro RES</span> of surrounding enemies is decreased by 15%.</span> }],
     },
   },
-  constellation: [{
-    name: "Sea Beast's Scourge",
-    img: c1,
-    text: (s) => <span>When <b>Stormbreaker</b> is used: Creates a shield that absorbs up to 16% of Beidou's Max HP{WeaponPercent(16, s.hp)} for 15s. This shield absorbs <span className="text-electro">Electro DMG</span> 250% more effectively.</span>
-  }, {
-    name: "Upon the Turbulent Sea, the Thunder Arises",
-    img: c2,
-    text: <span><b>Stormbreaker</b>'s arc lightning can jump to 2 additional targets.</span>
-  }, {
-    name: "Summoner of Storm",
-    img: c3,
-    text: <span>Increases the level of <b>Tidecaller</b> by 3. Maximum upgrade level is 15.</span>
-  }, {
-    name: "Stunning Revenge",
-    img: c4,
-    text: <span>Within 10s of taking DMG, Beidou's Normal Attacks gain 20% additional <span className="text-electro">Electro DMG</span>.</span>
-  }, {
-    name: "Crimson Tidewalker",
-    img: c5,
-    text: <span>Increases the level of <b>Stormbreaker</b> by 3. Maximum upgrade level is 15.</span>
-  }, {
-    name: "Bane of the Evil",
-    img: c6,
-    text: <span>During the duration of <b>Stormbreaker</b>, the <span className="text-electro">Electro RES</span> of surrounding enemies is decreased by 15%.</span>
-  }],
 };
 export default char;

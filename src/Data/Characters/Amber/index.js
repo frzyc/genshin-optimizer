@@ -61,17 +61,16 @@ let char = {
     auto: {
       name: "Sharpshooter",
       img: normal,
-      normal: {
-        text: "Perform up to 5 consecutive shots with a bow.",
+      document: [{
+        text: <span><strong>Normal Attack</strong> Perform up to 5 consecutive shots with a bow.</span>,
         fields: hitPercent.map((percentArr, i) =>
         ({
           text: `${i + 1}-Hit DMG`,
           basicVal: (tlvl) => percentArr[tlvl] + "%",
           finalVal: (tlvl, stats) => (percentArr[tlvl] / 100) * stats.norm_atk_avg_dmg
         }))
-      },
-      charged: {
-        text: <span>Perform a more precise Aimed Shot with increased DMG. While aiming, flames will accumulate on the arrowhead. A fully charged flaming arrow will deal <span className="text-pyro">Pyro DMG</span>.</span>,
+      }, {
+        text: <span><strong>Charged Attack</strong> Perform a more precise Aimed Shot with increased DMG. While aiming, flames will accumulate on the arrowhead. A fully charged flaming arrow will deal <span className="text-pyro">Pyro DMG</span>.</span>,
         fields: [{
           text: `Aimed Shot DMG`,
           basicVal: (tlvl) => aimedShot[tlvl] + "%",
@@ -87,9 +86,8 @@ let char = {
           text: `Max Duration`,
           value: `5s`,
         }]
-      },
-      plunge: {
-        text: "Fires off a shower of arrows in mid-air before falling an striking the ground, dealing AoE DMG upon impact.",
+      }, {
+        text: <span><strong>Plunging Attack</strong> Fires off a shower of arrows in mid-air before falling an striking the ground, dealing AoE DMG upon impact.</span>,
         fields: [{
           text: `Plunge DMG`,
           basicVal: (tlvl) => plunge_dmg[tlvl] + "%",
@@ -103,125 +101,136 @@ let char = {
           basicVal: (tlvl) => plunge_dmg_high[tlvl] + "%",
           finalVal: (tlvl, stats) => (plunge_dmg_high[tlvl] / 100) * stats.phy_avg_dmg
         }]
-      }
+      }],
     },
     skill: {
       name: "Explosive Puppet",
       img: skill,
-      text: <span>
-        The ever-reliable Baron Bunny takes the stage.
+      document: [{
+        text: <span>
+          The ever-reliable Baron Bunny takes the stage.
         <h6>Baron Bunny:</h6>
-        <ul>
-          <li>Continuously taunts the enemy, drawing their fire.</li>
-          <li>Baron Bunny's HP scales with Amber's Max HP.</li>
-          <li>When destroyed or when its timer expires, Baron Bunny explodes, dealing AoE <span className="text-pyro">Pyro DMG</span>.</li>
-          <li>Generate 4 elemental particles when it hit at least 1 target.</li>
-        </ul>
-        <div><strong>Hold:</strong> Adjusts the throwing direction of Baron Bunny. The longer the button is held, the further the throw.</div>
-      </span>,
-      fields: [{
-        text: "Inherited HP",
-        basicVal: (tlvl) => explosivePuppet.hp[tlvl] + "%",
-        finalVal: (tlvl, s) => (explosivePuppet.hp[tlvl] / 100) * s.hp,
-      }, {
-        text: "Explosion DMG",
-        basicVal: (tlvl) => explosivePuppet.dmg[tlvl] + "%",
-        finalVal: (tlvl, s) => (explosivePuppet.dmg[tlvl] / 100) * s.skill_avg_dmg,
-      }, (c) => c >= 2 ? {
-        text: "Manual Detonation DMG",
-        basicVal: (tlvl) => explosivePuppet.dmg[tlvl] + "% + 200%",
-        finalVal: (tlvl, s) => ((explosivePuppet.dmg[tlvl] + 200) / 100) * s.skill_avg_dmg,
-      } : null, (c) => c >= 4 ? {
-        text: "Charges",
-        value: 2,
-      } : null, (c) => ({
-        text: "CD",
-        value: "15s" + (c >= 4 ? " -20%" : ""),
-      })]
+          <ul>
+            <li>Continuously taunts the enemy, drawing their fire.</li>
+            <li>Baron Bunny's HP scales with Amber's Max HP.</li>
+            <li>When destroyed or when its timer expires, Baron Bunny explodes, dealing AoE <span className="text-pyro">Pyro DMG</span>.</li>
+            <li>Generate 4 elemental particles when it hit at least 1 target.</li>
+          </ul>
+          <div><strong>Hold:</strong> Adjusts the throwing direction of Baron Bunny. The longer the button is held, the further the throw.</div>
+        </span>,
+        fields: [{
+          text: "Inherited HP",
+          basicVal: (tlvl) => explosivePuppet.hp[tlvl] + "%",
+          finalVal: (tlvl, s) => (explosivePuppet.hp[tlvl] / 100) * s.hp,
+        }, {
+          text: "Explosion DMG",
+          basicVal: (tlvl) => explosivePuppet.dmg[tlvl] + "%",
+          finalVal: (tlvl, s) => (explosivePuppet.dmg[tlvl] / 100) * s.skill_avg_dmg,
+        }, (c) => c >= 2 ? {
+          text: "Manual Detonation DMG",
+          basicVal: (tlvl) => explosivePuppet.dmg[tlvl] + "% + 200%",
+          finalVal: (tlvl, s) => ((explosivePuppet.dmg[tlvl] + 200) / 100) * s.skill_avg_dmg,
+        } : null, (c) => c >= 4 ? {
+          text: "Charges",
+          value: 2,
+        } : null, (c) => ({
+          text: "CD",
+          value: "15s" + (c >= 4 ? " -20%" : ""),
+        })]
+      }],
     },
     burst: {
       name: "Fiery Rain",
       img: burst,
-      text: <span>
-        Fires off a shower of arrows, dealing continuous <span className="text-pyro">AoE Pyro DMG</span>.
+      document: [{
+        text: <span>
+          Fires off a shower of arrows, dealing continuous <span className="text-pyro">AoE Pyro DMG</span>.
       </span>,
-      fields: [{
-        text: "Fiery Rain DMG Per Wave",
-        basicVal: (tlvl) => fieryRain.dmg_perwave[tlvl] + "%",
-        finalVal: (tlvl, s) => (fieryRain.dmg_perwave[tlvl] / 100) * s.burst_avg_dmg,
-      }, {
-        text: "Total Fiery Rain DMG",
-        basicVal: (tlvl) => fieryRain.total_dmg[tlvl] + "%",
-        finalVal: (tlvl, s) => (fieryRain.total_dmg[tlvl] / 100) * s.burst_avg_dmg,
-      }, {
-        text: "Duration",
-        value: "2s",
-      }, {
-        text: "CD",
-        value: "12s",
-      }, {
-        text: "Energy Cost",
-        value: 40,
-      }]
+        fields: [{
+          text: "Fiery Rain DMG Per Wave",
+          basicVal: (tlvl) => fieryRain.dmg_perwave[tlvl] + "%",
+          finalVal: (tlvl, s) => (fieryRain.dmg_perwave[tlvl] / 100) * s.burst_avg_dmg,
+        }, {
+          text: "Total Fiery Rain DMG",
+          basicVal: (tlvl) => fieryRain.total_dmg[tlvl] + "%",
+          finalVal: (tlvl, s) => (fieryRain.total_dmg[tlvl] / 100) * s.burst_avg_dmg,
+        }, {
+          text: "Duration",
+          value: "2s",
+        }, {
+          text: "CD",
+          value: "12s",
+        }, {
+          text: "Energy Cost",
+          value: 40,
+        }]
+      }],
     },
     passive1: {
       name: "Every Arrow Finds Its Target",
       img: passive1,
-      text: (stats) => <span>
-        Increases the CRIT Rate of Fiery Rain by 10% and widens its AoE by 30%.
-      </span>,
+      document: [{ text: () => <span>Increases the CRIT Rate of Fiery Rain by 10% and widens its AoE by 30%.</span> }],
       //TODO stats
     },
     passive2: {
       name: "Precise Shot",
       img: passive2,
-      text: <span>
-        Aimed Shot hits on weak spots increase ATK by 15% for 10s.
-      </span>
+      document: [{ text: <span>Aimed Shot hits on weak spots increase ATK by 15% for 10s.</span> }],
       //TODO conditional
     },
     passive3: {
       name: "Gliding Champion",
       img: passive3,
-      text: <span>
-        Decreases gliding Stamina consumption for your own party members by 20%.
-        Not stackable with Passive Talents that provide the exact same effects.
+      document: [{
+        text: <span>
+          Decreases gliding Stamina consumption for your own party members by 20%.
+          Not stackable with Passive Talents that provide the exact same effects.
       </span>
+      }],
       //TODO stats? stamine consumption for gliding...
     },
+    constellation1: {
+      name: "One Arrow to Rule Them All",
+      img: c1,
+      document: [{
+        text: <span>
+          Fires 2 arrows per <b>Aimed Shot</b>. The second arrow deals 20% of the first arrow's DMG.
+        The second arrow is fired 10 degrees vertically below actual aiming, has separate critical, and also makes the primary shot travel further before it starts dropping down.
+      </span>
+      }],
+    },
+    constellation2: {
+      name: "Bunny Triggered",
+      img: c2,
+      document: [{
+        text: <span>
+          Baron Bunny, new and improved! Hitting <b>Baron Bunny</b>'s foot with a fully-charged <b>Aimed Shot</b> manually detonates it.
+          Explosion via manual detonation deals 200% additional DMG.
+        </span>
+      }]
+    },
+    constellation3: {
+      name: "It Burns!",
+      img: c3,
+      document: [{ text: <span>Increases the level of <b>Fiery Rain</b> by 3. Maximum upgrade level is 15.</span> }]
+    },
+    constellation4: {
+      name: "It's Not Just Any Doll...",
+      img: c4,
+      document: [{ text: <span>Decreases <b>Explosive Puppet</b>'s CD by 20%. Adds 1 additional charge.</span> }]
+    },
+    constellation5: {
+      name: "It's Baron Bunny!",
+      img: c5,
+      document: [{ text: <span>Increases the level of <b>Explosive Puppet</b> by 3. Maximum upgrade level is 15.</span> }]
+    },
+    constellation6: {
+      name: "Wildfire",
+      img: c6,
+      document: [{ text: <span><b>Fiery Rain</b> increases the entire party's Movement SPD by 15% and ATK by 15% for 10s.</span> }]
+      //TODO conditional and party buff
+    },
   },
-  constellation: [{
-    name: "One Arrow to Rule Them All",
-    img: c1,
-    text: <span>
-      Fires 2 arrows per <b>Aimed Shot</b>. The second arrow deals 20% of the first arrow's DMG.
-      The second arrow is fired 10 degrees vertically below actual aiming, has separate critical, and also makes the primary shot travel further before it starts dropping down.
-    </span>
-  }, {
-    name: "Bunny Triggered",
-    img: c2,
-    text: <span>
-      Baron Bunny, new and improved! Hitting <b>Baron Bunny</b>'s foot with a fully-charged <b>Aimed Shot</b> manually detonates it.
-      Explosion via manual detonation deals 200% additional DMG.
-    </span>
-  }, {
-    name: "It Burns!",
-    img: c3,
-    text: <span>Increases the level of <b>Fiery Rain</b> by 3. Maximum upgrade level is 15.</span>
-  }, {
-    name: "It's Not Just Any Doll...",
-    img: c4,
-    text: <span>Decreases <b>Explosive Puppet</b>'s CD by 20%. Adds 1 additional charge.</span>
-  }, {
-    name: "It's Baron Bunny!",
-    img: c5,
-    text: <span>Increases the level of <b>Explosive Puppet</b> by 3. Maximum upgrade level is 15.</span>
-  }, {
-    name: "Wildfire",
-    img: c6,
-    text: <span><b>Fiery Rain</b> increases the entire party's Movement SPD by 15% and ATK by 15% for 10s.</span>
-    //TODO conditional and party buff
-  }],
 };
 
 export default char;
