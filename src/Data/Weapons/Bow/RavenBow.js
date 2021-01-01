@@ -4,7 +4,7 @@ const weapon = {
   weaponType: "bow",
   rarity: 3,
   passiveName: "Bane of Flame and Water",
-  passiveDescription: (refineIndex) => `Increases DMG against opponents affected by Hydro or Pyro by ${refinementVals[refineIndex]}%.`,
+  passiveDescription: (refineIndex) => <span>Increases DMG against opponents affected by <span className="text-hydro">Hydro</span> or <span className="text-pyro">Pyro</span> by {refinementVals[refineIndex]}%.</span>,
   description: "Ravens are known to be the ferrymen of the dead. This bow's limb is decorated with raven feathers, which forebode the imminent death of its target.",
   baseStats: {
     main: [40, 53, 69, 86, 102, 121, 138, 154, 171, 187, 207, 223, 239, 259, 275, 292, 311, 327, 344, 363, 380, 396, 415, 432, 448],

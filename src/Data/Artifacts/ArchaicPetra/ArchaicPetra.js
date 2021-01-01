@@ -21,38 +21,38 @@ let artifact = {
   },
   sets: {
     2: {
-      text: "	Gain a 15% Geo DMG Bonus",
+      text: <span>Gain a 15% <span className="text-geo">Geo DMG Bonus</span></span>,
       stats: { geo_ele_dmg: 15 }
     },
     4: {
       text: "Upon obtaining an Elemental Shard created through a Crystallize Reaction, all party members gain 35% DMG to that particular element for 10s. Only one form of Elemental DMG can be gained in this manner at any one time.",
       conditional: [{//TODO all party conditional
         type: "artifact",
-        condition:"Pyro",
+        condition: "Pyro",
         sourceKey: "ArchaicPetra_4",
         maxStack: 1,
         stats: {
           pyro_ele_dmg: 35,
         }
-      },{
+      }, {
         type: "artifact",
-        condition:"Electro",
+        condition: "Electro",
         sourceKey: "ArchaicPetra_4",
         maxStack: 1,
         stats: {
           electro_ele_dmg: 35,
         }
-      },{
+      }, {
         type: "artifact",
-        condition:"Hydro",
+        condition: "Hydro",
         sourceKey: "ArchaicPetra_4",
         maxStack: 1,
         stats: {
           hydro_ele_dmg: 35,
         }
-      },{
+      }, {
         type: "artifact",
-        condition:"Cryo",
+        condition: "Cryo",
         sourceKey: "ArchaicPetra_4",
         maxStack: 1,
         stats: {

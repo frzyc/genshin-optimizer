@@ -1,6 +1,5 @@
 import Artifact from "../Artifact/Artifact";
 import ArtifactDatabase from "../Artifact/ArtifactDatabase";
-import Assets from "../Assets/Assets";
 import { CharacterData, characterStatBase, LevelsData } from "../Data/CharacterData";
 import ElementalData from "../Data/ElementalData";
 import { AttachLazyFormulas } from "../Stat";
@@ -24,7 +23,7 @@ export default class Character {
     return defVal
   }
 
-  static getCDataObj = (charKey) => charKey ? CharacterData[charKey] : null;
+  static getCDataObj = (charKey) => CharacterData[charKey];
   static getElementalName = (elementalKey, defVal = "") => (ElementalData?.[elementalKey]?.name || defVal)
   static getAllCharacterKeys = () => Object.keys(CharacterData)
 
@@ -48,9 +47,20 @@ export default class Character {
   static getSpecializedStatKey = (charKey) => this.getSpecializedStat(charKey)?.key;
   static getSpeicalizedStatVal = (charKey, levelKey) => this.getSpecializedStat(charKey)?.value?.[this.getIndexFromlevelkey(levelKey)]
   //ASSETS
-  static getThumb = (charKey) => Assets.characters[charKey] ? Assets.characters[charKey].thumb : null
-  static getCard = (charKey) => Assets.characters[charKey] ? Assets.characters[charKey].card : null
+  static getThumb = (charKey, defVal = null) => this.getCDataObj(charKey).thumbImg || defVal
+  static getCard = (charKey, defVal = null) => this.getCDataObj(charKey).cardImg || defVal
+  static getTalentImg = (charKey, talentKey, defVal = null) => this.getCDataObj(charKey)?.talent?.[talentKey]?.img || defVal
+  static getConstellationImg = (charKey, constIndex, defVal = null) => this.getCDataObj(charKey)?.constellation?.[constIndex].img || defVal
 
+  //talents
+  static getTalentName = (charKey, talentKey, defVal = "") => this.getCDataObj(charKey)?.talent?.[talentKey]?.name || defVal
+  //only really work with skill/burst/passives since auto is handled differently
+  static getTalentText = (charKey, talentKey, defVal = "") => this.getCDataObj(charKey)?.talent?.[talentKey]?.text || defVal
+  static getTalentFields = (charKey, talentKey, defVal = []) => this.getCDataObj(charKey)?.talent?.[talentKey]?.fields || defVal
+  //constellations
+  static getConstellationName = (charKey, constIndex, defVal = "") => this.getCDataObj(charKey)?.constellation?.[constIndex]?.name || defVal
+  static getConstellationText = (charKey, constIndex, defVal = "") => this.getCDataObj(charKey)?.constellation?.[constIndex]?.text || defVal
+  static getConstellationFields = (charKey, constIndex, defVal = []) => this.getCDataObj(charKey)?.constellation?.[constIndex]?.fields || defVal
   //CHARCTER OBJ
   static hasOverride = (character, statKey) => character && character.baseStatOverrides ? (statKey in character.baseStatOverrides) : false;
 
@@ -156,6 +166,10 @@ export default class Character {
       let specializedStatVal = Character.getStatValueWithOverride(character, "specializedStatVal")
       initialStats[specialStatKey] = (initialStats[specialStatKey] || 0) + specializedStatVal
     }
+
+    //TODO character skill Stats/Conditionals
+    //TODO character passive Stats/Conditionals
+    //TODO character constellation Stats/Conditionals
 
     let weaponStats = Weapon.createWeaponBundle(character)
     //add subStat

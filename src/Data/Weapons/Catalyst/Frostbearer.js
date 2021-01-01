@@ -8,7 +8,7 @@ const weapon = {
   weaponType: "catalyst",
   rarity: 4,
   passiveName: "Frost Burial",
-  passiveDescription: (refineIndex, charFinalStats) => <span>Hitting an opponent with Normal and Charged Attacks has a {refinementChanceVals[refineIndex]}% chance of forming and dropping an Everfrost Icicle above them, dealing {refinementDmgVals[refineIndex]}% AoE ATK DMG{WeaponPercent(refinementDmgVals[refineIndex], charFinalStats.atk)}. Opponents affected by Cryo are dealt {refinementDmgCryoVals[refineIndex]}% ATK DMG{WeaponPercent(refinementDmgCryoVals[refineIndex], charFinalStats.atk)}. Can only occur once every 10s.</span>,//${refinementVals[refineIndex]}
+  passiveDescription: (refineIndex, charFinalStats) => <span>Hitting an opponent with Normal and Charged Attacks has a {refinementChanceVals[refineIndex]}% chance of forming and dropping an Everfrost Icicle above them, dealing {refinementDmgVals[refineIndex]}% AoE ATK DMG{WeaponPercent(refinementDmgVals[refineIndex], charFinalStats.atk)}. Opponents affected by <span className="text-cryo">Cryo</span> are dealt {refinementDmgCryoVals[refineIndex]}% ATK DMG{WeaponPercent(refinementDmgCryoVals[refineIndex], charFinalStats.atk)}. Can only occur once every 10s.</span>,
   description: "A fruit that possesses a strange frosty will. A faint sense of agony emanates from it.",
   baseStats: {
     main: [42, 56, 74, 91, 109, 135, 152, 170, 187, 205, 231, 248, 266, 292, 309, 327, 353, 370, 388, 414, 431, 449, 475, 492, 510],

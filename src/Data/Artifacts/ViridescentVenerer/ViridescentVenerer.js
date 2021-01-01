@@ -20,7 +20,7 @@ let artifact = {
   },
   sets: {
     2: {
-      text: "Anemo DMG Bonus +15%",
+      text: <span><span className="text-anemo">Anemo DMG Bonus</span> +15%</span>,
       stats: { anemo_ele_dmg: 15 }
     },
     4: {

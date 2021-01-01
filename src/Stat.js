@@ -132,7 +132,7 @@ Object.entries(eleFormulas).forEach(([key, func]) =>
     })))
 
 //generate a statKey dependency, to reduce build generation calculation on a single stat.
-const formulaKeyDependency = {}
+const formulaKeyDependency = {} //TODO move dependency out of here, since it gets run every time we generate a build by importing Stat in the BuildWorker
 const getDependency = (key) => {
   let testObj = {}
   let depdendency = []

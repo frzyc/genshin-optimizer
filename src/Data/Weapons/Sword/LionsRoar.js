@@ -4,7 +4,7 @@ const weapon = {
   weaponType: "sword",
   rarity: 4,
   passiveName: "Bane of Fire and Thunder",
-  passiveDescription: (refineIndex) => `Increases DMG against opponents affected by Pyro or Electro by ${refinementVals[refineIndex]}%.`,
+  passiveDescription: (refineIndex) => <span>Increases DMG against opponents affected by <span className="text-pyro">Pyro</span> or <span className="text-electro">Electro</span> by {refinementVals[refineIndex]}%.</span>,
   description: "A sharp blade with extravagant carvings that somehow does not compromise on durability and sharpness. It roars like a lion as it cuts through the air.",
   baseStats: {
     main: [42, 56, 74, 91, 109, 135, 152, 170, 187, 205, 231, 248, 266, 292, 309, 327, 353, 370, 388, 414, 431, 449, 475, 492, 510],

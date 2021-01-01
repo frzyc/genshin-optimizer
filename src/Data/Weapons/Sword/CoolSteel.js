@@ -4,8 +4,8 @@ const weapon = {
   weaponType: "sword",
   rarity: 3,
   passiveName: "Bane of Water and Ice",
-  passiveDescription: (refineIndex) => `Increases DMG against opponents affected by Hydro or Cryo by ${refinementVals[refineIndex]}%.`,
-  description: "A reliable steel-forged weapon that serves as a testament to the great adventures of its old master.",
+  passiveDescription: (refineIndex) => <span>Increases DMG against opponents affected by <span className="text-hydro">Hydro</span> or <span className="text-cryo">Cryo</span> by {refinementVals[refineIndex]}%.`,
+  description: "A reliable steel-forged weapon that serves as a testament to the great adventures of its old master.</span>,
   baseStats: {
     main: [39, 50, 65, 79, 94, 113, 127, 141, 155, 169, 189, 202, 216, 236, 249, 263, 282, 296, 309, 329, 342, 355, 375, 388, 401],
     subStatKey: "atk_",

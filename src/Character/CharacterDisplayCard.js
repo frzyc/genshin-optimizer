@@ -27,7 +27,7 @@ const CustomMenu = React.forwardRef(
         aria-labelledby={labeledBy}
       >
         <Row>
-          {React.Children.toArray(children).map(child => <Col xs={6}>{child}</Col>)}
+          {React.Children.toArray(children).map((child, i) => <Col key={i} xs={6}>{child}</Col>)}
         </Row>
       </div>
     );
@@ -59,6 +59,11 @@ export default class CharacterDisplayCard extends React.Component {
       overrideMainVal: 0,
       overrideSubVal: 0,
       conditionalNum: 0,
+    },
+    talentLevelKeys: {
+      autoLevelKey: 0,
+      skillLevelKey: 0,
+      burstLevelKey: 0,
     },
     constellation: 0,
     compareAgainstEquipped: false//note: needs to be deleted when saving
@@ -211,7 +216,7 @@ export default class CharacterDisplayCard extends React.Component {
               <Nav.Link eventKey="artifacts">{newBuild ? "Current Artifacts" : "Artifacts"}</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link eventKey="talent" disabled={process.env.NODE_ENV !== "development"}>Talents <Badge variant="warning">WIP</Badge></Nav.Link>
+              <Nav.Link eventKey="talent" disabled={process.env.NODE_ENV !== "development" && (Character.getCDataObj(characterKey)?.talent?.skill?.name || "TEMPLATE") === "TEMPLATE"}>Talents {(Character.getCDataObj(characterKey)?.talent?.skill?.name || "TEMPLATE") === "TEMPLATE" && <Badge variant="warning">WIP</Badge>}</Nav.Link>
             </Nav.Item>
             <Nav.Item>
               <Nav.Link eventKey="team" disabled>Team <Badge variant="warning">WIP</Badge></Nav.Link>
@@ -234,7 +239,7 @@ export default class CharacterDisplayCard extends React.Component {
               <CharacterArtifactPane {...{ character, newBuild, equippedBuild, editable, forceUpdate: this.forceUpdateComponent }} />
             </Tab.Pane> : null}
             <Tab.Pane eventKey="talent">
-              <CharacterTalentPane {...{ character, newBuild, equippedBuild, editable }} />
+              <CharacterTalentPane {...{ character, newBuild, equippedBuild, editable }} setState={this.setSetState} />
             </Tab.Pane>
           </Tab.Content>
         </Tab.Container>

@@ -21,11 +21,11 @@ let artifact = {
   },
   sets: {
     2: {
-      text: "Electro RES increased by 40%",
-      stats: { electro_ele_Res: 40 }
+      text: <span><span className="text-electro">Electro RES</span> increased by 40%</span>,
+      stats: { electro_ele_res: 40 }
     },
     4: {
-      text: "Increases DMG against enemies affected by Electro by 35%.",
+      text: <span>Increases DMG against enemies affected by <span className="text-electro">Electro</span> by 35%.</span>,
       conditional: {
         type: "artifact",
         sourceKey: "Thundersoother_4",

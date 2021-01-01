@@ -21,7 +21,7 @@ let artifact = {
   },
   sets: {
     2: {
-      text: "Pyro DMG Bonus +15%",
+      text: <span><span className="text-pyro">Pyro DMG Bonus</span> +15%</span>,
       stats: { pyro_ele_dmg: 15 }
     },
     4: {

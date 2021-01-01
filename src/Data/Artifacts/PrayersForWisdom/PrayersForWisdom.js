@@ -9,7 +9,7 @@ let artifact = {
   },
   sets: {
     1: {
-      text: "Affected by Electro for 40% less time.",
+      text: <span>Affected by <span className="text-electro">Electro</span> for 40% less time.</span>,
       stats: {}//TODO element affect reduction stat
     }
   }

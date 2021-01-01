@@ -8,7 +8,7 @@ const weapon = {
   weaponType: "polearm",
   rarity: 4,
   passiveName: "Frost Burial",
-  passiveDescription: (refineIndex, charFinalStats) => <span>Hitting an opponent with Normal and Charged Attacks has a {refinementVals[refineIndex]}% chance of forming and dropping an Everfrost Icicle above them, dealing {refinementRawDmgVals[refineIndex]}% AoE ATK DMG{WeaponPercent(refinementRawDmgVals[refineIndex], charFinalStats.atk)}. Opponents affected by Cryo are dealt {refinementRawDmgCryoVals[refineIndex]}% ATK DMG{WeaponPercent(refinementRawDmgCryoVals[refineIndex], charFinalStats.atk)}. Can only occur once every 10s.</span>,
+  passiveDescription: (refineIndex, charFinalStats) => <span>Hitting an opponent with Normal and Charged Attacks has a {refinementVals[refineIndex]}% chance of forming and dropping an Everfrost Icicle above them, dealing {refinementRawDmgVals[refineIndex]}% AoE ATK DMG{WeaponPercent(refinementRawDmgVals[refineIndex], charFinalStats.atk)}. Opponents affected by <span className="text-cryo">Cryo</span> are dealt {refinementRawDmgCryoVals[refineIndex]}% ATK DMG{WeaponPercent(refinementRawDmgCryoVals[refineIndex], charFinalStats.atk)}. Can only occur once every 10s.</span>,
   description: "A spear created from the fang of a dragon. It is oddly warm to the touch.",
   baseStats: {
     main: [41, 54, 69, 84, 99, 125, 140, 155, 169, 184, 210, 224, 238, 264, 278, 293, 319, 333, 347, 373, 387, 401, 427, 440, 454],

@@ -198,10 +198,10 @@ export default class Artifact {
   static getArtifactSetEffectText = (setKey, setNumKey, charFinalStats, defVal = "") => {
     let setEffectText = ArtifactSetsData?.[setKey]?.sets?.[setNumKey]?.text
     if (!setEffectText) return defVal
-    if (typeof setEffectText === "string")
-      return setEffectText
-    else if (typeof setEffectText === "function")
+    if (typeof setEffectText === "function")
       return setEffectText(charFinalStats || {})
+    else if (setEffectText)
+      return setEffectText
     return defVal
   }
   static getArtifactSetEffectConditional = (setKey, setNumKey, defVal = null) =>

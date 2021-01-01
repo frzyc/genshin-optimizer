@@ -65,9 +65,9 @@ export default function CharacterOverviewPane(props) {
                 <Col xs={12}><h5>{Character.getConstellationName(characterKey)}</h5></Col>
                 <Col>
                   <Row className="px-2">
-                    {Assets.characters?.[characterKey]?.constellation?.map((con, i) =>
+                    {[...Array(6).keys()].map(i =>
                       <Col xs={4} className="p-1" key={i}>
-                        <Image src={con} className={`w-100 h-auto ${constellation > i ? "" : "overlay-dark"}`}
+                        <Image src={Character.getConstellationImg(characterKey, i)} className={`w-100 h-auto ${constellation > i ? "" : "overlay-dark"}`}
                           style={{ cursor: "pointer" }} roundedCircle onClick={editable ? (() =>
                             setConstellation((i + 1) === constellation ? i : i + 1)) : null} />
                       </Col>)}

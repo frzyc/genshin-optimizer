@@ -4,7 +4,7 @@ import sands from './Item_Copper_Compass.png'
 import goblet from './Item_Goblet_of_Thundering_Deep.png'
 import circlet from './Item_Wine-Stained_Tricorne.png'
 let artifact = {//Ocean Conqueror
-  name: "Heart of Depth", rarity: [4, 5], 
+  name: "Heart of Depth", rarity: [4, 5],
   pieces: {
     flower: "Gilded Corsage",
     plume: "Gust of Nostalgia",
@@ -21,7 +21,7 @@ let artifact = {//Ocean Conqueror
   },
   sets: {
     2: {
-      text: "Hydro DMG Bonus +15%",
+      text: <span><span className="text-hydro">Hydro DMG Bonus</span> +15%</span>,
       stats: { hydro_ele_dmg: 15 }
     },
     4: {

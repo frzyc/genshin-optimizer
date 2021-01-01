@@ -21,11 +21,11 @@ let artifact = {
   },
   sets: {
     2: {
-      text: "Pyro RES increased by 40%",
+      text: <span><span className="text-pyro">Pyro RES</span> increased by 40%</span>,
       stats: { pyro_ele_res: 40 }
     },
     4: {
-      text: "Increases DMG against enemies that are Burning or affected by Pyro by 35%.",
+      text: <span>Increases DMG against enemies that are Burning or affected by <span className="text-pyro">Pyro</span> by 35%.</span>,
       conditional: {
         type: "artifact",
         sourceKey: "Lavawalker_4",
