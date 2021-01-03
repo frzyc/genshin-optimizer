@@ -51,7 +51,7 @@ export default class Character {
   static getThumb = (charKey, defVal = null) => this.getCDataObj(charKey).thumbImg || defVal
   static getCard = (charKey, defVal = null) => this.getCDataObj(charKey).cardImg || defVal
   static getTalentImg = (charKey, talentKey, defVal = null) => this.getCDataObj(charKey)?.talent?.[talentKey]?.img || defVal
-  static getConstellationImg = (charKey, constIndex, defVal = null) => this.getCDataObj(charKey)?.talent?.[`constellation${constIndex + 1}`].img || defVal
+  static getConstellationImg = (charKey, constIndex, defVal = null) => this.getCDataObj(charKey)?.talent?.[`constellation${constIndex + 1}`]?.img || defVal
 
   //talents
   static getTalentName = (charKey, talentKey, defVal = "") => this.getCDataObj(charKey)?.talent?.[talentKey]?.name || defVal
