@@ -234,7 +234,7 @@ export default class CharacterDisplayCard extends React.Component {
               />
             </Tab.Pane>
             <Tab.Pane eventKey="artifacts" >
-              <CharacterArtifactPane {...{ character, equippedBuild, editable }} setState={this.setSetState} />
+              <CharacterArtifactPane {...{ character, equippedBuild, editable, forceUpdate: this.forceUpdateComponent }} setState={this.setSetState} />
             </Tab.Pane>
             {newBuild ? <Tab.Pane eventKey="newartifacts" >
               <CharacterArtifactPane {...{ character, newBuild, equippedBuild, editable, forceUpdate: this.forceUpdateComponent }} />

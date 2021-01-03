@@ -41,18 +41,18 @@ export default function CharacterCard(props) {
         <Col xs={"auto"}>
           <span className="float-right align-top ml-1">
             <Button variant="primary" size="sm" className="mr-1"
-              onClick={() => props?.onEdit()}>
+              onClick={() => props?.onEdit?.()}>
               <FontAwesomeIcon icon={faEdit} />
             </Button>
             <Button variant="danger" size="sm"
-              onClick={() => props?.onDelete()}>
+              onClick={() => props?.onDelete?.()}>
               <FontAwesomeIcon icon={faTrashAlt} />
             </Button>
           </span>
         </Col>
       </Row>}
     </Card.Header>
-    <Card.Body>
+    <Card.Body onClick={props.onEdit ? () => props?.onEdit?.() : null} style={{ cursor: props.onEdit ? "pointer" : "default" }}>
       <Row>
         <Col xs="auto" className="pr-0">
           <Image src={Character.getThumb(characterKey)} className="h-100 w-auto my-n1" rounded />
