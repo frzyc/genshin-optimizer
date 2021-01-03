@@ -191,10 +191,15 @@ let char = {
           value: 40,
         }]
       }],
-      stats: (c, a) => (a >= 4) ? ({
-        pyro_ele_dmg: 20,
-      }) : null,
-
+      conditional: (tlvl, c, a) => a >= 4 ? ({
+        type: "character",
+        condition: "Blessing of Phoenix",
+        sourceKey: "diluc",
+        maxStack: 1,
+        stats: {
+          pyro_ele_dmg: 20,
+        },
+      }) : null
     },
     passive1: {
       name: "Relentless",
