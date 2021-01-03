@@ -109,15 +109,17 @@ export default class Character {
   //CHARCTER OBJ
   static hasOverride = (character, statKey) => character && character.baseStatOverrides ? (statKey in character.baseStatOverrides) : false;
 
+  static getStatValueWithOverrideRaw = (character, statKey, defVal = 0) => {
+    if (this.hasOverride(character, statKey)) return character?.baseStatOverrides?.[statKey]
+    else return this.getBaseStatValue(character.characterKey, character.levelKey, statKey, defVal)
+  }
   static getStatValueWithOverride = (character, statKey, defVal = 0) => {
     if (statKey === "atk") {
       //get weapon atk as part of the base atk.
       let weaponatk = Weapon.getWeaponMainStatValWithOverride(character?.weapon)
-      if (this.hasOverride(character, statKey)) return weaponatk + character?.baseStatOverrides?.[statKey]
-      else return weaponatk + this.getBaseStatValue(character.characterKey, character.levelKey, statKey, defVal)
+      return weaponatk + this.getStatValueWithOverrideRaw(character, statKey, defVal)
     }
-    if (this.hasOverride(character, statKey)) return character?.baseStatOverrides?.[statKey]
-    else return this.getBaseStatValue(character.characterKey, character.levelKey, statKey, defVal)
+    return this.getStatValueWithOverrideRaw(character, statKey, defVal)
   }
   static getLevelWithOverride = (character, defVal = 0) => {
     if (character.overrideLevel) return character.overrideLevel;

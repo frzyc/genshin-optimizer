@@ -390,7 +390,7 @@ function StatOverrideInput(props) {
     className="mb-2"
     name={<span>{icon && <FontAwesomeIcon icon={icon} className="fa-fw" />} {Stat.getStatName(statKey)}</span>}
     placeholder={`Base ${Stat.getStatName(statKey)}`}
-    value={Character.getStatValueWithOverride(props.character, statKey)}
+    value={Character.getStatValueWithOverrideRaw(props.character, statKey)}
     percent={false}
     onValueChange={(value) => setOverride(statKey, value)}
     defaultValue={Character.getBaseStatValue(characterKey, levelKey, statKey)}

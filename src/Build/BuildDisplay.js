@@ -41,9 +41,6 @@ export default class BuildDisplay extends React.Component {
     builds: [],
     generatingBuilds: false,
     selectedCharacterId: "",
-    sandsMainKey: "",
-    gobletMainKey: "",
-    circletMainkey: "",
     setFilters: [{ key: "", num: 0 }, { key: "", num: 0 }, { key: "", num: 0 }],
     artifactConditionals: [],//{ setKey: "", setNumKey: "", conditionalNum: 0 }
     mainStat: ["", "", ""],
@@ -258,8 +255,8 @@ export default class BuildDisplay extends React.Component {
                       </DropdownButton>
                     </ButtonGroup>
                   </Card.Header>
-                  {setFilter.key ? <Card.Body><Row>
-                    {Object.keys(Artifact.getArtifactSets(setKey)).filter(setNkey => parseInt(setNkey) <= num).map(setNumKey => {
+                  {setKey ? <Card.Body><Row>
+                    {Object.keys(Artifact.getArtifactSets(setKey, {})).filter(setNkey => parseInt(setNkey) <= num).map(setNumKey => {
                       let setStats = Artifact.getArtifactSetNumStats(setKey, setNumKey)
                       let conditionalNum = 0;
                       let conditional = Artifact.getArtifactSetEffectConditional(setKey, setNumKey)
