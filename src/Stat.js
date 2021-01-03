@@ -108,20 +108,39 @@ const Formulas = {
   atk: (s) => s.base_atk * (1 + s.atk_ / 100) + s.atk_flat,
   //DEF
   def: (s) => s.base_def * (1 + s.def_ / 100) + s.def_flat,
-  //PHYSICAL
-  phy_avg_dmg: (s) => s.atk * s.crit_multi * (1 + s.phy_dmg / 100) * (1 + s.dmg / 100),
+  //PHYSICAL, used mainly for plunge dmg
+  phy_avg_dmg: (s) => s.atk * s.crit_multi * (1 + s.phy_dmg + s.dmg / 100),
 
-  //auto
-  norm_atk_avg_dmg: (s) => s.atk * (1 + ((s.crit_rate + s.norm_atk_crit_rate) / 100) * s.crit_dmg / 100) * (1 + s.phy_dmg / 100) * (1 + s.norm_atk_dmg / 100) * (1 + s.dmg / 100),
-  char_atk_avg_dmg: (s) => s.atk * (1 + ((s.crit_rate + s.char_atk_crit_rate) / 100) * s.crit_dmg / 100) * (1 + s.phy_dmg / 100) * (1 + s.char_atk_dmg / 100) * (1 + s.dmg / 100),
-  //skill
-  skill_avg_dmg: (s) => s.atk * (1 + ((s.crit_rate + s.skill_crit_rate) / 100) * s.crit_dmg / 100) * (1 + s[`${s.char_ele_key}_ele_dmg`] / 100) * (1 + s.skill_dmg / 100) * (1 + s.dmg / 100),
-  burst_avg_dmg: (s) => s.atk * (1 + ((s.crit_rate + s.burst_crit_rate) / 100) * s.crit_dmg / 100) * (1 + s[`${s.char_ele_key}_ele_dmg`] / 100) * (1 + s.burst_dmg / 100) * (1 + s.dmg / 100),
+  //NORMAL
+  norm_atk_avg_dmg: (s) => s.atk * s.normal_atk_crit_multi + s.norm_atk_bonus_dmg,
+  normal_atk_crit_multi: (s) => (1 + ((s.crit_rate + s.norm_atk_crit_rate) / 100) * s.crit_dmg / 100),
+  norm_atk_bonus_dmg: (s) => (1 + (s.phy_dmg + s.norm_atk_dmg + s.dmg) / 100),
+
+  //CHARGED
+  char_atk_avg_dmg: (s) => s.atk * s.char_atk_crit_multi * s.char_atk_bonus_dmg,
+  char_atk_crit_multi: (s) => (1 + ((s.crit_rate + s.char_atk_crit_rate) / 100) * s.crit_dmg / 100),
+  char_atk_bonus_dmg: (s) => (1 + (s.phy_dmg + s.char_atk_dmg + s.dmg) / 100),
+
 
   crit_multi: (s) => (1 + (s.crit_rate / 100) * (s.crit_dmg / 100)),
+
+  skill_crit_multi: (s) => (1 + ((s.crit_rate + s.skill_crit_rate) / 100) * s.crit_dmg / 100),
+  burst_crit_multi: (s) => (1 + ((s.crit_rate + s.burst_crit_rate) / 100) * s.crit_dmg / 100),
 }
+//The formulas here will generate formulas for every element, for example pyro_skill_avg_dmg from skill_avg_dmg
 const eleFormulas = {
-  //ELEMENTAL
+  norm_atk_avg_dmg: (s, ele) => s.atk * s.normal_atk_crit_multi + s[`${ele}_norm_atk_bonus_dmg`],
+  norm_atk_bonus_dmg: (s, ele) => (1 + (s[`${ele}_ele_dmg`] + s.norm_atk_dmg + s.dmg) / 100),
+
+  char_atk_avg_dmg: (s, ele) => s.atk * s.char_atk_crit_multi + s[`${ele}_char_atk_bonus_dmg`],
+  char_atk_bonus_dmg: (s, ele) => (1 + (s[`${ele}_ele_dmg`] + s.char_atk_dmg + s.dmg) / 100),
+
+  skill_avg_dmg: (s, ele) => s.atk * s.skill_crit_multi * s[`${ele}_skill_bonus_dmg`],
+  skill_bonus_dmg: (s, ele) => (1 + (s[`${ele}_ele_dmg`] + s.skill_dmg + s.dmg) / 100),
+
+  burst_avg_dmg: (s, ele) => s.atk * s.burst_crit_multi * s[`${ele}_burst_bonus_dmg`],
+  burst_bonus_dmg: (s, ele) => (1 + (s[`${ele}_ele_dmg`] + s.burst_dmg + s.dmg) / 100),
+
   ele_avg_dmg: (s, ele) => s.atk * s.crit_multi * (1 + s[`${ele}_ele_dmg`] / 100) * (1 + s.dmg / 100),
 }
 Object.entries(eleFormulas).forEach(([key, func]) =>

@@ -68,35 +68,32 @@ let char = {
         ({
           text: `${i + 1}-Hit DMG`,
           basicVal: (tlvl) => percentArr[tlvl] + "%",
-          finalVal: (tlvl, stats) => (percentArr[tlvl] / 100) * stats.norm_atk_avg_dmg
+          finalVal: (tlvl, stats) => (percentArr[tlvl] / 100) * stats.hydro_norm_atk_avg_dmg
         }))
       }, {
         text: <span><strong>Charged Attack</strong> Consumes a certain amount of Stamina to deal <span className="text-hydro">AoE Hydro DMG</span> after a short casting time.</span>,
         fields: [{
-          text: `Spinning DMG`,
+          text: `Charged Attack DMG`,
           basicVal: (tlvl) => charged_atk_dmg[tlvl] + "%",
-          finalVal: (tlvl, stats) => (charged_atk_dmg[tlvl] / 100) * stats.char_atk_avg_dmg
+          finalVal: (tlvl, stats) => (charged_atk_dmg[tlvl] / 100) * stats.hydro_char_atk_avg_dmg
         }, {
           text: `Stamina Cost`,
-          value: `40/s`,
-        }, {
-          text: `Max Duration`,
-          value: `5s`,
+          value: `50`,
         }]
       }, {
         text: <span><strong>Plunging Attack</strong> Gathering the might of Hydro, Barbara plunges towards the ground from mid-air, damaging all enemies in her path. Deals <span className="text-hydro">AoE Hydro DMG</span> upon impact with the ground.</span>,
         fields: [{
           text: `Plunge DMG`,
           basicVal: (tlvl) => plunge_dmg[tlvl] + "%",
-          finalVal: (tlvl, stats) => (plunge_dmg[tlvl] / 100) * stats.phy_avg_dmg
+          finalVal: (tlvl, stats) => (plunge_dmg[tlvl] / 100) * stats.hydro_ele_avg_dmg
         }, {
           text: `Low Plunge DMG`,
           basicVal: (tlvl) => plunge_dng_low[tlvl] + "%",
-          finalVal: (tlvl, stats) => (plunge_dng_low[tlvl] / 100) * stats.phy_avg_dmg
+          finalVal: (tlvl, stats) => (plunge_dng_low[tlvl] / 100) * stats.hydro_ele_avg_dmg
         }, {
           text: `High Plunge DMG`,
           basicVal: (tlvl) => plunge_dmg_high[tlvl] + "%",
-          finalVal: (tlvl, stats) => (plunge_dmg_high[tlvl] / 100) * stats.phy_avg_dmg
+          finalVal: (tlvl, stats) => (plunge_dmg_high[tlvl] / 100) * stats.hydro_ele_avg_dmg
         }]
       }],
     },
@@ -125,7 +122,7 @@ let char = {
         }, {
           text: "Droplet DMG",
           basicVal: (tlvl) => letShowStats.droplet_dmg[tlvl] + "%",
-          finalVal: (tlvl, s) => (letShowStats.droplet_dmg[tlvl] / 100) * s.skill_avg_dmg,
+          finalVal: (tlvl, s) => (letShowStats.droplet_dmg[tlvl] / 100) * s.hydro_skill_avg_dmg,
         }, (c, a) => ({
           text: "Duration",
           value: "15s" + (a >= 4 ? " +1s when your active character gains an Elemental Orb/Particle, up to 5s" : ""),

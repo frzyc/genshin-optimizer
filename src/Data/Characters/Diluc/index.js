@@ -117,28 +117,28 @@ let char = {
         fields: [{
           text: "1-Hit DMG",
           basicVal: (tlvl) => searing.hit1[tlvl] + "%",
-          finalVal: (tlvl, s) => (searing.hit1[tlvl] / 100) * s.skill_avg_dmg,
+          finalVal: (tlvl, s) => (searing.hit1[tlvl] / 100) * s.pyro_skill_avg_dmg,
         }, {
           text: "2-Hit DMG",
           basicVal: (tlvl) => searing.hit2[tlvl] + "%",
-          finalVal: (tlvl, s) => (searing.hit2[tlvl] / 100) * s.skill_avg_dmg,
+          finalVal: (tlvl, s) => (searing.hit2[tlvl] / 100) * s.pyro_skill_avg_dmg,
         }, {
           text: "3-Hit DMG",
           basicVal: (tlvl) => searing.hit3[tlvl] + "%",
-          finalVal: (tlvl, s) => (searing.hit3[tlvl] / 100) * s.skill_avg_dmg,
+          finalVal: (tlvl, s) => (searing.hit3[tlvl] / 100) * s.pyro_skill_avg_dmg,
         }, (c) => {
           if (c < 4) return null
           return {
             text: "2-Hit DMG(Boosted)",
             basicVal: (tlvl) => searing.hit2[tlvl] + "% + 40%",
-            finalVal: (tlvl, s) => ((searing.hit2[tlvl] + 40) / 100) * s.skill_avg_dmg,
+            finalVal: (tlvl, s) => ((searing.hit2[tlvl] + 40) / 100) * s.pyro_skill_avg_dmg,
           }
         }, (c) => {
           if (c < 4) return null
           return {
             text: "3-Hit DMG(Boosted)",
             basicVal: (tlvl) => searing.hit3[tlvl] + "% + 40%",
-            finalVal: (tlvl, s) => ((searing.hit3[tlvl] + 40) / 100) * s.skill_avg_dmg,
+            finalVal: (tlvl, s) => ((searing.hit3[tlvl] + 40) / 100) * s.pyro_skill_avg_dmg,
           }
         }, {
           text: "CD",
@@ -171,15 +171,15 @@ let char = {
         fields: [{
           text: "Slashing DMG",
           basicVal: (tlvl) => dawn.slashing[tlvl] + "%",
-          finalVal: (tlvl, s) => (dawn.slashing[tlvl] / 100) * s.burst_avg_dmg,
+          finalVal: (tlvl, s) => (dawn.slashing[tlvl] / 100) * s.pyro_burst_avg_dmg,
         }, {
           text: "DoT",
           basicVal: (tlvl) => dawn.dot[tlvl] + "%",
-          finalVal: (tlvl, s) => (dawn.dot[tlvl] / 100) * s.burst_avg_dmg,
+          finalVal: (tlvl, s) => (dawn.dot[tlvl] / 100) * s.pyro_burst_avg_dmg,
         }, {
           text: "Explosion DMG",
           basicVal: (tlvl) => dawn.explosion[tlvl] + "%",
-          finalVal: (tlvl, s) => (dawn.explosion[tlvl] / 100) * s.burst_avg_dmg,
+          finalVal: (tlvl, s) => (dawn.explosion[tlvl] / 100) * s.pyro_burst_avg_dmg,
         }, {
           text: "CD",
           value: "12s",

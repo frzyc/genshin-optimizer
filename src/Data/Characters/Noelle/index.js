@@ -125,7 +125,7 @@ let char = {
           text: "Skill DMG",
           basicVal: (tlvl) => breastplateStats.skill_dmg[tlvl] + "% DEF",
           //basically the calculation for skill_avg_dmg, except using def as the base instead of atk
-          finalVal: (tlvl, s) => (breastplateStats.skill_dmg[tlvl] / 100) * s.def * (1 + ((s.crit_rate + s.skill_crit_rate) / 100) * s.crit_dmg / 100) * (1 + s[`${s.char_ele_key}_ele_dmg`] / 100) * (1 + s.skill_dmg / 100) * (1 + s.dmg / 100),
+          finalVal: (tlvl, s) => (breastplateStats.skill_dmg[tlvl] / 100) * s.def * s.skill_crit_multi * s.geo_skill_bonus_dmg,
         }, {
           text: "DMG Absorption",
           basicVal: (tlvl) => breastplateStats.shield_def[tlvl] + "% DEF + " + breastplateStats.shield_flat[tlvl],
@@ -162,11 +162,11 @@ let char = {
         fields: [{
           text: "Burst DMG",
           basicVal: (tlvl) => sweepingTimeStats.burst_dmg[tlvl] + "%",
-          finalVal: (tlvl, s) => (sweepingTimeStats.burst_dmg[tlvl] / 100) * s.burst_avg_dmg,
+          finalVal: (tlvl, s) => (sweepingTimeStats.burst_dmg[tlvl] / 100) * s.geo_burst_avg_dmg,
         }, {
           text: "Skill DMG",
           basicVal: (tlvl) => sweepingTimeStats.skill_dmg[tlvl] + "%",
-          finalVal: (tlvl, s) => (sweepingTimeStats.skill_dmg[tlvl] / 100) * s.burst_avg_dmg,
+          finalVal: (tlvl, s) => (sweepingTimeStats.skill_dmg[tlvl] / 100) * s.geo_burst_avg_dmg,
         }, (c) => ({
           text: "ATK Bonus",
           basicVal: (tlvl) => `${sweepingTimeStats.atk_bonu[tlvl]}%${c >= 6 ? " +50%" : ""} DEF`,

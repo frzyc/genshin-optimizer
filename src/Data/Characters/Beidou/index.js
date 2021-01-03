@@ -134,11 +134,11 @@ let char = {
         }, {
           text: "Base DMG",
           basicVal: (tlvl) => tideCaller.base_dmg[tlvl] + "%",
-          finalVal: (tlvl, s) => (tideCaller.base_dmg[tlvl] / 100) * s.skill_avg_dmg,
+          finalVal: (tlvl, s) => (tideCaller.base_dmg[tlvl] / 100) * s.electro_skill_avg_dmg,
         }, {
           text: "DMG Bonus on Hit Taken",
           basicVal: (tlvl) => tideCaller.dmg_bonus_on_hit[tlvl] + "%",
-          finalVal: (tlvl, s) => (tideCaller.dmg_bonus_on_hit[tlvl] / 100) * s.skill_avg_dmg,
+          finalVal: (tlvl, s) => (tideCaller.dmg_bonus_on_hit[tlvl] / 100) * s.electro_skill_avg_dmg,
         }, {
           text: "CD",
           value: "7.5s",
@@ -178,11 +178,11 @@ let char = {
         fields: [{
           text: "Skill DMG",
           basicVal: (tlvl) => stormbreaker.skill_dmg[tlvl] + "%",
-          finalVal: (tlvl, s) => (stormbreaker.skill_dmg[tlvl] / 100) * s.burst_avg_dmg,
+          finalVal: (tlvl, s) => (stormbreaker.skill_dmg[tlvl] / 100) * s.electro_burst_avg_dmg,
         }, {
           text: "Lightning DMG",
           basicVal: (tlvl) => stormbreaker.lightning_dmg[tlvl] + "%",
-          finalVal: (tlvl, s) => (stormbreaker.lightning_dmg[tlvl] / 100) * s.burst_avg_dmg,
+          finalVal: (tlvl, s) => (stormbreaker.lightning_dmg[tlvl] / 100) * s.electro_burst_avg_dmg,
         }, {
           text: "DMG Reduction",
           value: (tlvl) => stormbreaker.dmg_red[tlvl] + "%",

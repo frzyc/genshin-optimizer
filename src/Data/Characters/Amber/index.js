@@ -125,11 +125,11 @@ let char = {
         }, {
           text: "Explosion DMG",
           basicVal: (tlvl) => explosivePuppet.dmg[tlvl] + "%",
-          finalVal: (tlvl, s) => (explosivePuppet.dmg[tlvl] / 100) * s.skill_avg_dmg,
+          finalVal: (tlvl, s) => (explosivePuppet.dmg[tlvl] / 100) * s.pyro_skill_avg_dmg,
         }, (c) => c >= 2 ? {
           text: "Manual Detonation DMG",
           basicVal: (tlvl) => explosivePuppet.dmg[tlvl] + "% + 200%",
-          finalVal: (tlvl, s) => ((explosivePuppet.dmg[tlvl] + 200) / 100) * s.skill_avg_dmg,
+          finalVal: (tlvl, s) => ((explosivePuppet.dmg[tlvl] + 200) / 100) * s.pyro_skill_avg_dmg,
         } : null, (c) => c >= 4 ? {
           text: "Charges",
           value: 2,
@@ -149,11 +149,11 @@ let char = {
         fields: [(c, a) => ({
           text: "DMG Per Wave",
           basicVal: (tlvl) => fieryRain.dmg_perwave[tlvl] + "%",
-          finalVal: (tlvl, s) => (fieryRain.dmg_perwave[tlvl] / 100) * s.atk * (1 + ((s.crit_rate + s.burst_crit_rate + (a >= 1 ? 10 : 0)) / 100) * s.crit_dmg / 100) * (1 + s[`${s.char_ele_key}_ele_dmg`] / 100) * (1 + s.burst_dmg / 100) * (1 + s.dmg / 100),
+          finalVal: (tlvl, s) => (fieryRain.dmg_perwave[tlvl] / 100) * s.pyro_burst_avg_dmg,
         }), (c, a) => ({
           text: "Rain DMG",
           basicVal: (tlvl) => fieryRain.total_dmg[tlvl] + "%",
-          finalVal: (tlvl, s) => (fieryRain.total_dmg[tlvl] / 100) * s.atk * (1 + ((s.crit_rate + s.burst_crit_rate + (a >= 1 ? 10 : 0)) / 100) * s.crit_dmg / 100) * (1 + s[`${s.char_ele_key}_ele_dmg`] / 100) * (1 + s.burst_dmg / 100) * (1 + s.dmg / 100),
+          finalVal: (tlvl, s) => (fieryRain.total_dmg[tlvl] / 100) * s.pyro_burst_avg_dmg,
         }), (c, a) => {
           if (a < 1) return null
           return {
@@ -177,6 +177,9 @@ let char = {
           value: 40,
         }]
       }],
+      stats: (c, a) => a >= 1 ? ({
+        burst_crit_rate: 10
+      }) : null,
       conditional: (tlvl, c) => c >= 6 ? ({
         type: "character",
         condition: "Wildfire",

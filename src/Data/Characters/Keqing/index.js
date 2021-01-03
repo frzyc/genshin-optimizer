@@ -128,15 +128,15 @@ let char = {
         fields: [{
           text: "Lightning Stiletto DMG",
           basicVal: (tlvl) => stellar.stilleto_dmg[tlvl] + "%",
-          finalVal: (tlvl, s) => (stellar.stilleto_dmg[tlvl] / 100) * s.skill_avg_dmg,
+          finalVal: (tlvl, s) => (stellar.stilleto_dmg[tlvl] / 100) * s.electro_skill_avg_dmg,
         }, {
           text: "Slashing DMG",
           basicVal: (tlvl) => stellar.slashing_dmg[tlvl] + "%",
-          finalVal: (tlvl, s) => (stellar.slashing_dmg[tlvl] / 100) * s.skill_avg_dmg,
+          finalVal: (tlvl, s) => (stellar.slashing_dmg[tlvl] / 100) * s.electro_skill_avg_dmg,
         }, {
           text: "Thunderclap Slash DMG",
           basicVal: (tlvl) => stellar.thunderclasp_slash_dmg[tlvl] + "% × 2",
-          finalVal: (tlvl, s) => ((stellar.thunderclasp_slash_dmg[tlvl] * 2) / 100) * s.skill_avg_dmg,
+          finalVal: (tlvl, s) => ((stellar.thunderclasp_slash_dmg[tlvl] * 2) / 100) * s.electro_skill_avg_dmg,
         }, {
           text: "CD",
           value: "7.5s",
@@ -158,15 +158,15 @@ let char = {
         fields: [{
           text: "Skill DMG",
           basicVal: (tlvl) => starwardSword.skill_dmg[tlvl] + "%",
-          finalVal: (tlvl, s) => (starwardSword.skill_dmg[tlvl] / 100) * s.burst_avg_dmg,
+          finalVal: (tlvl, s) => (starwardSword.skill_dmg[tlvl] / 100) * s.electro_burst_avg_dmg,
         }, {
           text: "Consecutive Slash DMG",
           basicVal: (tlvl) => starwardSword.consec_slash_dmg[tlvl] + "% × 8",
-          finalVal: (tlvl, s) => ((starwardSword.consec_slash_dmg[tlvl] * 8) / 100) * s.burst_avg_dmg,
+          finalVal: (tlvl, s) => ((starwardSword.consec_slash_dmg[tlvl] * 8) / 100) * s.electro_burst_avg_dmg,
         }, {
           text: "Last Attack DMG",
           basicVal: (tlvl) => starwardSword.last_dmg[tlvl] + "%",
-          finalVal: (tlvl, s) => (starwardSword.last_dmg[tlvl] / 100) * s.burst_avg_dmg,
+          finalVal: (tlvl, s) => (starwardSword.last_dmg[tlvl] / 100) * s.electro_burst_avg_dmg,
         }, {
           text: "CD",
           value: "15s",
