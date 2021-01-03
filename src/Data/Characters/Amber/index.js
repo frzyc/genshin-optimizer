@@ -149,11 +149,11 @@ let char = {
         fields: [(c, a) => ({
           text: "DMG Per Wave",
           basicVal: (tlvl) => fieryRain.dmg_perwave[tlvl] + "%",
-          finalVal: (tlvl, s) => (fieryRain.dmg_perwave[tlvl] / 100) * s.atk * (1 + (s.crit_rate + s.burst_crit_rate + (a >= 1 ? 10 : 0)) / 100) * (1 + s.crit_dmg / 100) * (1 + s[`${s.char_ele_key}_ele_dmg`] / 100) * (1 + s.burst_dmg / 100) * (1 + s.dmg / 100),
+          finalVal: (tlvl, s) => (fieryRain.dmg_perwave[tlvl] / 100) * s.atk * (1 + ((s.crit_rate + s.burst_crit_rate + (a >= 1 ? 10 : 0)) / 100) * s.crit_dmg / 100) * (1 + s[`${s.char_ele_key}_ele_dmg`] / 100) * (1 + s.burst_dmg / 100) * (1 + s.dmg / 100),
         }), (c, a) => ({
           text: "Rain DMG",
           basicVal: (tlvl) => fieryRain.total_dmg[tlvl] + "%",
-          finalVal: (tlvl, s) => (fieryRain.total_dmg[tlvl] / 100) * s.atk * (1 + (s.crit_rate + s.burst_crit_rate + (a >= 1 ? 10 : 0)) / 100) * (1 + s.crit_dmg / 100) * (1 + s[`${s.char_ele_key}_ele_dmg`] / 100) * (1 + s.burst_dmg / 100) * (1 + s.dmg / 100),
+          finalVal: (tlvl, s) => (fieryRain.total_dmg[tlvl] / 100) * s.atk * (1 + ((s.crit_rate + s.burst_crit_rate + (a >= 1 ? 10 : 0)) / 100) * s.crit_dmg / 100) * (1 + s[`${s.char_ele_key}_ele_dmg`] / 100) * (1 + s.burst_dmg / 100) * (1 + s.dmg / 100),
         }), (c, a) => {
           if (a < 1) return null
           return {

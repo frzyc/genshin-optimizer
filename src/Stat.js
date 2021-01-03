@@ -112,13 +112,13 @@ const Formulas = {
   phy_avg_dmg: (s) => s.atk * s.crit_multi * (1 + s.phy_dmg / 100) * (1 + s.dmg / 100),
 
   //auto
-  norm_atk_avg_dmg: (s) => s.atk * (1 + (s.crit_rate + s.norm_atk_crit_rate) / 100) * (1 + s.crit_dmg / 100) * (1 + s.phy_dmg / 100) * (1 + s.norm_atk_dmg / 100) * (1 + s.dmg / 100),
-  char_atk_avg_dmg: (s) => s.atk * (1 + (s.crit_rate + s.char_atk_crit_rate) / 100) * (1 + s.crit_dmg / 100) * (1 + s.phy_dmg / 100) * (1 + s.char_atk_dmg / 100) * (1 + s.dmg / 100),
+  norm_atk_avg_dmg: (s) => s.atk * (1 + ((s.crit_rate + s.norm_atk_crit_rate) / 100) * s.crit_dmg / 100) * (1 + s.phy_dmg / 100) * (1 + s.norm_atk_dmg / 100) * (1 + s.dmg / 100),
+  char_atk_avg_dmg: (s) => s.atk * (1 + ((s.crit_rate + s.char_atk_crit_rate) / 100) * s.crit_dmg / 100) * (1 + s.phy_dmg / 100) * (1 + s.char_atk_dmg / 100) * (1 + s.dmg / 100),
   //skill
-  skill_avg_dmg: (s) => s.atk * (1 + (s.crit_rate + s.skill_crit_rate) / 100) * (1 + s.crit_dmg / 100) * (1 + s[`${s.char_ele_key}_ele_dmg`] / 100) * (1 + s.skill_dmg / 100) * (1 + s.dmg / 100),
-  burst_avg_dmg: (s) => s.atk * (1 + (s.crit_rate + s.burst_crit_rate) / 100) * (1 + s.crit_dmg / 100) * (1 + s[`${s.char_ele_key}_ele_dmg`] / 100) * (1 + s.burst_dmg / 100) * (1 + s.dmg / 100),
+  skill_avg_dmg: (s) => s.atk * (1 + ((s.crit_rate + s.skill_crit_rate) / 100) * s.crit_dmg / 100) * (1 + s[`${s.char_ele_key}_ele_dmg`] / 100) * (1 + s.skill_dmg / 100) * (1 + s.dmg / 100),
+  burst_avg_dmg: (s) => s.atk * (1 + ((s.crit_rate + s.burst_crit_rate) / 100) * s.crit_dmg / 100) * (1 + s[`${s.char_ele_key}_ele_dmg`] / 100) * (1 + s.burst_dmg / 100) * (1 + s.dmg / 100),
 
-  crit_multi: (s) => (1 + (s.crit_rate / 100) * (1 + s.crit_dmg / 100)),
+  crit_multi: (s) => (1 + (s.crit_rate / 100) * (s.crit_dmg / 100)),
 }
 const eleFormulas = {
   //ELEMENTAL

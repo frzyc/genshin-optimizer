@@ -125,7 +125,7 @@ let char = {
           text: "Skill DMG",
           basicVal: (tlvl) => breastplateStats.skill_dmg[tlvl] + "% DEF",
           //basically the calculation for skill_avg_dmg, except using def as the base instead of atk
-          finalVal: (tlvl, s) => (breastplateStats.skill_dmg[tlvl] / 100) * s.def * (1 + (s.crit_rate + s.skill_crit_rate) / 100) * (1 + s.crit_dmg / 100) * (1 + s[`${s.char_ele_key}_ele_dmg`] / 100) * (1 + s.skill_dmg / 100) * (1 + s.dmg / 100),
+          finalVal: (tlvl, s) => (breastplateStats.skill_dmg[tlvl] / 100) * s.def * (1 + ((s.crit_rate + s.skill_crit_rate) / 100) * s.crit_dmg / 100) * (1 + s[`${s.char_ele_key}_ele_dmg`] / 100) * (1 + s.skill_dmg / 100) * (1 + s.dmg / 100),
         }, {
           text: "DMG Absorption",
           basicVal: (tlvl) => breastplateStats.shield_def[tlvl] + "% DEF + " + breastplateStats.shield_flat[tlvl],

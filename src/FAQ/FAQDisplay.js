@@ -41,10 +41,10 @@ export default function FAQ(props) {
               <li><b>Elemental Damage Bonus</b> is calculated as the sum of all values from weapons and artifacts. Only the corresponding Elemental damage Bonus to the character's element is applicable.</li>
             </p>
             <p>
-              <li><strong className="text-success">Physical Average ATK = ATK * (1 + Physical Damage Bonus %) * (1 + Crit Rate * (1 + Crit Dmg))</strong></li>
+              <li><strong className="text-success">Physical Average ATK = ATK * (1 + Physical Damage Bonus %) * (1 + Crit Rate * Crit Dmg)</strong></li>
             </p>
             <p>
-              <li><strong className="text-success">Elemental Average ATK = ATK * (1 + Elemental Damage Bonus %) * (1 + Crit Rate * (1 + Crit Dmg))</strong></li>
+              <li><strong className="text-success">Elemental Average ATK = ATK * (1 + Elemental Damage Bonus %) * (1 + Crit Rate * Crit Dmg)</strong></li>
             </p>
           </Col>
         </Row>
