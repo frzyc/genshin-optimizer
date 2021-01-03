@@ -65,6 +65,7 @@ export default class CharacterDisplayCard extends React.Component {
       skill: 0,
       burst: 0,
     },
+    autoInfused: false,
     talentConditionals: [],
     constellation: 0,
     compareAgainstEquipped: false//note: needs to be deleted when saving

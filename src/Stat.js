@@ -112,7 +112,7 @@ const Formulas = {
   phy_avg_dmg: (s) => s.atk * s.crit_multi * (1 + s.phy_dmg + s.dmg / 100),
 
   //NORMAL
-  norm_atk_avg_dmg: (s) => s.atk * s.normal_atk_crit_multi + s.norm_atk_bonus_dmg,
+  norm_atk_avg_dmg: (s) => s.atk * s.normal_atk_crit_multi * s.norm_atk_bonus_dmg,
   normal_atk_crit_multi: (s) => (1 + ((s.crit_rate + s.norm_atk_crit_rate) / 100) * s.crit_dmg / 100),
   norm_atk_bonus_dmg: (s) => (1 + (s.phy_dmg + s.norm_atk_dmg + s.dmg) / 100),
 
@@ -129,10 +129,10 @@ const Formulas = {
 }
 //The formulas here will generate formulas for every element, for example pyro_skill_avg_dmg from skill_avg_dmg
 const eleFormulas = {
-  norm_atk_avg_dmg: (s, ele) => s.atk * s.normal_atk_crit_multi + s[`${ele}_norm_atk_bonus_dmg`],
+  norm_atk_avg_dmg: (s, ele) => s.atk * s.normal_atk_crit_multi * s[`${ele}_norm_atk_bonus_dmg`],
   norm_atk_bonus_dmg: (s, ele) => (1 + (s[`${ele}_ele_dmg`] + s.norm_atk_dmg + s.dmg) / 100),
 
-  char_atk_avg_dmg: (s, ele) => s.atk * s.char_atk_crit_multi + s[`${ele}_char_atk_bonus_dmg`],
+  char_atk_avg_dmg: (s, ele) => s.atk * s.char_atk_crit_multi * s[`${ele}_char_atk_bonus_dmg`],
   char_atk_bonus_dmg: (s, ele) => (1 + (s[`${ele}_ele_dmg`] + s.char_atk_dmg + s.dmg) / 100),
 
   skill_avg_dmg: (s, ele) => s.atk * s.skill_crit_multi * s[`${ele}_skill_bonus_dmg`],

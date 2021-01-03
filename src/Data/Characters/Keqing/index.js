@@ -67,24 +67,25 @@ let char = {
     auto: {
       name: "Yunlai Swordsmanship",
       img: normal,
+      infusable: true,
       document: [{
         text: <span><strong>Normal Attack</strong> Perform up to 5 rapid strikes. <small><i>Note: the 4th attack hits twice.</i></small></span>,
         fields: hitPercent.map((percentArr, i) =>
         ({
           text: `${i + (i < 4 ? 1 : 0)}-Hit DMG`,
           basicVal: (tlvl) => percentArr[tlvl] + "%",
-          finalVal: (tlvl, stats) => (percentArr[tlvl] / 100) * stats.norm_atk_avg_dmg
+          finalVal: (tlvl, stats, i) => (percentArr[tlvl] / 100) * (i ? stats.electro_norm_atk_avg_dmg : stats.norm_atk_avg_dmg)
         }))
       }, {
         text: <span><strong>Charged Attack</strong> Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.</span>,
         fields: [{
           text: `1-Hit DMG`,
           basicVal: (tlvl) => charged_1[tlvl] + "%",
-          finalVal: (tlvl, stats) => (charged_1[tlvl] / 100) * stats.char_atk_avg_dmg
+          finalVal: (tlvl, stats, i) => (charged_1[tlvl] / 100) * (i ? stats.electro_char_atk_avg_dmg : stats.char_atk_avg_dmg)
         }, {
           text: `2-Hit DMG`,
           basicVal: (tlvl) => charged_2[tlvl] + "%",
-          finalVal: (tlvl, stats) => (charged_2[tlvl] / 100) * stats.char_atk_avg_dmg
+          finalVal: (tlvl, stats, i) => (charged_2[tlvl] / 100) * (i ? stats.electro_char_atk_avg_dmg : stats.char_atk_avg_dmg)
         }, {
           text: `Stamina Cost`,
           value: `25`,
@@ -94,15 +95,15 @@ let char = {
         fields: [{
           text: `Plunge DMG`,
           basicVal: (tlvl) => plunge_dmg[tlvl] + "%",
-          finalVal: (tlvl, stats) => (plunge_dmg[tlvl] / 100) * stats.phy_avg_dmg
+          finalVal: (tlvl, stats, i) => (plunge_dmg[tlvl] / 100) * (i ? stats.electro_ele_avg_dmg : stats.phy_avg_dmg)
         }, {
           text: `Low Plunge DMG`,
           basicVal: (tlvl) => plunge_dng_low[tlvl] + "%",
-          finalVal: (tlvl, stats) => (plunge_dng_low[tlvl] / 100) * stats.phy_avg_dmg
+          finalVal: (tlvl, stats, i) => (plunge_dng_low[tlvl] / 100) * (i ? stats.electro_ele_avg_dmg : stats.phy_avg_dmg)
         }, {
           text: `High Plunge DMG`,
           basicVal: (tlvl) => plunge_dmg_high[tlvl] + "%",
-          finalVal: (tlvl, stats) => (plunge_dmg_high[tlvl] / 100) * stats.phy_avg_dmg
+          finalVal: (tlvl, stats, i) => (plunge_dmg_high[tlvl] / 100) * (i ? stats.electro_ele_avg_dmg : stats.phy_avg_dmg)
         }]
       }],
     },

@@ -66,24 +66,25 @@ let char = {
     auto: {
       name: "Favonius Bladework - Maid",
       img: normal,
+      infusable: true,
       document: [{
         text: <span><strong>Normal Attack</strong> Performs up to 4 consecutive slashes.</span>,
         fields: hitPercent.map((percentArr, i) =>
         ({
           text: `${i + 1}-Hit DMG`,
           basicVal: (tlvl) => percentArr[tlvl] + "%",
-          finalVal: (tlvl, stats) => (percentArr[tlvl] / 100) * stats.norm_atk_avg_dmg
+          finalVal: (tlvl, stats, i) => (percentArr[tlvl] / 100) * (i ? stats.geo_norm_atk_avg_dmg : stats.norm_atk_avg_dmg)
         }))
       }, {
         text: <span><strong>Charged Attack</strong> Drains Stamina over time to perform continuous swirling attack on all nearby enemies. At the end of the sequence, performs an additional powerful slash</span>,
         fields: [{
           text: `Spinning DMG`,
           basicVal: (tlvl) => charged_atk_spinnning[tlvl] + "%",
-          finalVal: (tlvl, stats) => (charged_atk_spinnning[tlvl] / 100) * stats.char_atk_avg_dmg
+          finalVal: (tlvl, stats, i) => (charged_atk_spinnning[tlvl] / 100) * (i ? stats.geo_char_atk_avg_dmg : stats.char_atk_avg_dmg)
         }, {
           text: `Spinning Final DMG`,
           basicVal: (tlvl) => charged_atk_final[tlvl] + "%",
-          finalVal: (tlvl, stats) => (charged_atk_final[tlvl] / 100) * stats.char_atk_avg_dmg
+          finalVal: (tlvl, stats, i) => (charged_atk_final[tlvl] / 100) * (i ? stats.geo_char_atk_avg_dmg : stats.char_atk_avg_dmg)
         }, {
           text: `Stamina Cost`,
           value: `40/s`,
@@ -96,15 +97,15 @@ let char = {
         fields: [{
           text: `Plunge DMG`,
           basicVal: (tlvl) => plunge_dmg[tlvl] + "%",
-          finalVal: (tlvl, stats) => (plunge_dmg[tlvl] / 100) * stats.phy_avg_dmg
+          finalVal: (tlvl, stats, i) => (plunge_dmg[tlvl] / 100) * (i ? stats.geo_ele_avg_dmg : stats.phy_avg_dmg)
         }, {
           text: `Low Plunge DMG`,
           basicVal: (tlvl) => plunge_dng_low[tlvl] + "%",
-          finalVal: (tlvl, stats) => (plunge_dng_low[tlvl] / 100) * stats.phy_avg_dmg
+          finalVal: (tlvl, stats, i) => (plunge_dng_low[tlvl] / 100) * (i ? stats.geo_ele_avg_dmg : stats.phy_avg_dmg)
         }, {
           text: `High Plunge DMG`,
           basicVal: (tlvl) => plunge_dmg_high[tlvl] + "%",
-          finalVal: (tlvl, stats) => (plunge_dmg_high[tlvl] / 100) * stats.phy_avg_dmg
+          finalVal: (tlvl, stats, i) => (plunge_dmg_high[tlvl] / 100) * (i ? stats.geo_ele_avg_dmg : stats.phy_avg_dmg)
         }]
       },],
     },

@@ -1,7 +1,7 @@
 import { faQuestionCircle } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import React from 'react'
-import { Card, Col, Dropdown, DropdownButton, Image, ListGroup, OverlayTrigger, Row, Tooltip } from "react-bootstrap"
+import { Button, Card, Col, Dropdown, DropdownButton, Image, ListGroup, OverlayTrigger, Row, Tooltip } from "react-bootstrap"
 import ConditionalSelector from "../../Components/ConditionalSelector"
 import Stat from "../../Stat"
 import ConditionalsUtil from "../../Util/ConditionalsUtil"
@@ -67,9 +67,20 @@ export default function CharacterTalentPane(props) {
 }
 
 function SkillDisplayCard(props) {
-  let { character, character: { characterKey }, talentKey, subtitle, constellation, ascension, compareAgainstEquipped, equippedBuild, build = {}, editable, setState, onClickTitle = null } = props
+  let { character, character: { characterKey, autoInfused = false }, talentKey, subtitle, constellation, ascension, compareAgainstEquipped, equippedBuild, build = {}, editable, setState, onClickTitle = null } = props
   let header = null
   let { talentLvlKey = undefined, levelBoost = 0 } = Character.getTalentLevelKey(character, talentKey, true)
+  let infuseBtn = null
+  if (talentKey === "auto" && Character.isAutoInfusable(characterKey)) {
+    let eleKey = Character.getElementalKey(characterKey)
+    infuseBtn = <Col xs="auto">
+      <Button variant={autoInfused ? eleKey : "secondary"} className="text-white" disabled={!editable} onClick={editable && (() => setState(state => ({ autoInfused: !state.autoInfused })))} size={editable ? null : "sm"}>
+        {autoInfused ?
+          <span>Infused with <b>{Character.getElementalName(eleKey)}</b></span>
+          : "Not Infused"}
+      </Button>
+    </Col>
+  }
   if (typeof talentLvlKey === "number") {
     if (editable) {
       let setTalentLevel = (tKey, tLvl) => setState(state => {
@@ -78,14 +89,26 @@ function SkillDisplayCard(props) {
         return { talentLevelKeys }
       })
       header = <Card.Header>
-        <DropdownButton title={`Talent Lv. ${talentLvlKey + 1}`}>
-          {[...Array(15).keys()].map(i =>
-            i >= levelBoost && <Dropdown.Item key={i} onClick={() => setTalentLevel(talentKey, i - levelBoost)}>Talent Lv. {i + 1}</Dropdown.Item>)}
-        </DropdownButton>
+        <Row>
+          <Col xs="auto">
+            <DropdownButton title={`Talent Lv. ${talentLvlKey + 1}`}>
+              {[...Array(15).keys()].map(i =>
+                i >= levelBoost && <Dropdown.Item key={i} onClick={() => setTalentLevel(talentKey, i - levelBoost)}>Talent Lv. {i + 1}</Dropdown.Item>)}
+            </DropdownButton>
+          </Col>
+          {infuseBtn}
+        </Row>
       </Card.Header>
     } else {
       header = <Card.Header>
-        {`Talent Level: ${talentLvlKey + 1}`}
+        <Row>
+          <Col xs="auto">
+            {`Talent Level: ${talentLvlKey + 1}`}
+          </Col>
+          <Col xs="auto">
+            {infuseBtn}
+          </Col>
+        </Row>
       </Card.Header>
     }
   }
@@ -164,7 +187,7 @@ function SkillDisplayCard(props) {
         return <Row className="mt-2" key={"section" + i}><Col xs={12}>
           <span>{talentText}</span>
           {fields.length > 0 && <ListGroup className="text-white ml-n2 mr-n2">
-            {fields.map((field, i) => <FieldDisplay key={i} index={i} {...{ field, build, talentLvlKey, constellation, ascension, compareAgainstEquipped, equippedBuild }} />)}
+            {fields.map((field, i) => <FieldDisplay key={i} index={i} {...{ field, build, talentLvlKey, constellation, ascension, compareAgainstEquipped, equippedBuild, autoInfused }} />)}
           </ListGroup>}
         </Col></Row>
       })}
@@ -174,7 +197,7 @@ function SkillDisplayCard(props) {
   </Card>
 }
 function FieldDisplay(props) {
-  let { field, index, talentLvlKey = 0, build, constellation, ascension, equippedBuild, compareAgainstEquipped } = props
+  let { field, index, talentLvlKey = 0, build, constellation, ascension, equippedBuild, compareAgainstEquipped, autoInfused } = props
 
   if (typeof field === "function")
     field = field(constellation, ascension)
@@ -186,7 +209,7 @@ function FieldDisplay(props) {
 
   let fieldBasic = field.basicVal
   if (typeof fieldBasic === "function")
-    fieldBasic = fieldBasic?.(talentLvlKey, build.finalStats)
+    fieldBasic = fieldBasic?.(talentLvlKey, build.finalStats, autoInfused)
   if (fieldBasic)
     fieldBasic = <OverlayTrigger
       placement="top"
@@ -197,7 +220,7 @@ function FieldDisplay(props) {
 
   let fieldVal = field.value ? field.value : field.finalVal
   if (typeof fieldVal === "function") {
-    fieldVal = fieldVal?.(talentLvlKey, build.finalStats)
+    fieldVal = fieldVal?.(talentLvlKey, build.finalStats, autoInfused)
   }
   if (typeof fieldVal === "number")
     fieldVal = Math.round(fieldVal)

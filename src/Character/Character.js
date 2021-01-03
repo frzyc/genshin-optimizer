@@ -103,6 +103,8 @@ export default class Character {
     if (!conditionalNum) return defVal
     return this.getTalentConditional(charKey, talentKey, talentLvlKey, constellation, ascension)?.fields || defVal
   }
+  static isAutoInfusable = (charKey, defVal = false) => this.getCDataObj(charKey)?.talent?.auto?.infusable || defVal
+
 
   //CHARCTER OBJ
   static hasOverride = (character, statKey) => character && character.baseStatOverrides ? (statKey in character.baseStatOverrides) : false;
