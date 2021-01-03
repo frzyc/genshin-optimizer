@@ -5,7 +5,7 @@ import ArtifactCard from '../../Artifact/ArtifactCard';
 import ConditionalSelector from '../../Components/ConditionalSelector';
 import { StatIconEle } from '../../Components/StatIcon';
 import Stat from "../../Stat";
-import ArtifactConditionals from '../../Util/ArtifactConditionals';
+import ConditionalsUtil from '../../Util/ConditionalsUtil';
 import Character from "../Character";
 
 function CharacterArtifactPane(props) {
@@ -53,8 +53,8 @@ function CharacterArtifactPane(props) {
       </span>
     </Col>
   }
-  const setStateArtifactConditional = (setKey, setNumKey, conditionalNum) => setState(state =>
-    ({ artifactConditionals: ArtifactConditionals.setConditional(state.artifactConditionals, setKey, setNumKey, conditionalNum) }))
+  const setStateArtifactConditional = (setKey, setNumKey, conditionalNum) => setState?.(state =>
+    ({ artifactConditionals: ConditionalsUtil.setConditional(state.artifactConditionals, { srcKey: setKey, srcKey2: setNumKey }, conditionalNum) }))
 
   return <>
     <Row>
@@ -111,7 +111,7 @@ function CharacterArtifactPane(props) {
                           let conditionalNum = 0;
                           let conditional = Artifact.getArtifactSetEffectConditional(setKey, setNumKey)
                           if (conditional) {
-                            conditionalNum = ArtifactConditionals.getConditionalNum(artifactConditionals, setKey, setNumKey)
+                            conditionalNum = ConditionalsUtil.getConditionalNum(artifactConditionals, { srcKey: setKey, srcKey2: setNumKey })
                             let conditionalStats = Artifact.getArtifactConditionalStats(setKey, setNumKey, conditionalNum)
                             if (conditionalStats) {
                               if (!setStats) setStats = {}

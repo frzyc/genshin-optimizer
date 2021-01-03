@@ -1,4 +1,4 @@
-import { AttachLazyFormulas, Formulas, StatData } from "./Stat"
+import { AttachLazyFormulas, Formulas, OverrideFormulas, StatData } from "./Stat"
 
 //generate a statKey dependency, to reduce build generation calculation on a single stat.
 const formulaKeyDependency = {}
@@ -22,13 +22,19 @@ const getDependency = (key) => {
 }
 Object.keys(Formulas).forEach(key => getDependency(key))
 
-function DependencyStatKeys(key) {
+function DependencyStatKeys(key, formulaOverrides = []) {
   let dependencies = formulaKeyDependency[key] || []
   formulaKeyDependency[key]?.forEach(k => dependencies.push(...(formulaKeyDependency[k] || [])))
+  //add any formula override dependencies
+  formulaOverrides.forEach(formulaOverride => {
+    let { key, dependency = [] } = OverrideFormulas[formulaOverride.key] || {}
+    if (!dependencies.includes(key)) return
+    dependencies.push(...dependency)
+  })
   dependencies = [...new Set(dependencies)]
   let formulaKeys = Object.keys(Formulas).filter(k => k === key || dependencies.includes(k))
   let statkeys = Object.keys(StatData).filter(k => k === key || dependencies.includes(k))
-  return [formulaKeys, statkeys]
+  return { formulaKeys, statkeys }
 }
 export {
   DependencyStatKeys,

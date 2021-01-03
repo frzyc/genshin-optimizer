@@ -1,5 +1,5 @@
-import { WeaponData, LevelNameData, WeaponLevelKeys, WeaponTypeData } from '../Data/WeaponData.js'
-import { clamp } from '../Util/Util.js';
+import { LevelNameData, WeaponData, WeaponLevelKeys, WeaponTypeData } from '../Data/WeaponData.js';
+import ConditionalsUtil from '../Util/ConditionalsUtil.js';
 export default class Weapon {
   //do not instantiate.
   constructor() { if (this instanceof Weapon) throw Error('A static class cannot be instantiated.'); }
@@ -31,28 +31,9 @@ export default class Weapon {
   static getWeaponConditionalStat = (weaponKey, refineIndex, conditionalNum, defVal = null) => {
     let conditional = this.getWeaponConditional(weaponKey)
     if (!conditional || !conditionalNum) return defVal
-    if (Array.isArray(conditional)) {
-      //multiple conditionals
-      let selectedConditionalNum = conditionalNum
-      let selectedConditional = null
-      for (const curConditional of conditional) {
-        if (selectedConditionalNum > curConditional.maxStack) selectedConditionalNum -= curConditional.maxStack
-        else {
-          selectedConditional = curConditional;
-          break;
-        }
-      }
-      if (!selectedConditional) return defVal
-      let stacks = clamp(selectedConditionalNum, 1, selectedConditional.maxStack)
-      return Object.fromEntries(Object.entries(selectedConditional.stats(refineIndex)).map(([key, val]) => [key, val * stacks]))
-    } else if (conditional.maxStack > 1) {
-      //condtional with stacks
-      let stacks = clamp(conditionalNum, 1, conditional.maxStack)
-      return Object.fromEntries(Object.entries(conditional.stats(refineIndex)).map(([key, val]) => [key, val * stacks]))
-    } else if (conditional.maxStack === 1)
-      //boolean conditional
-      return conditional.stats(refineIndex)
-    return defVal
+    let [stats, stacks] = ConditionalsUtil.getConditionalStats(conditional, conditionalNum)
+    if (!stacks) return defVal
+    return Object.fromEntries(Object.entries(stats(refineIndex)).map(([key, val]) => [key, val * stacks]))
   }
   static createWeaponBundle = (character) => ({
     subKey: this.getWeaponSubStatKey(character?.weapon?.key),

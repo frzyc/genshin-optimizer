@@ -61,10 +61,11 @@ export default class CharacterDisplayCard extends React.Component {
       conditionalNum: 0,
     },
     talentLevelKeys: {
-      autoLevelKey: 0,
-      skillLevelKey: 0,
-      burstLevelKey: 0,
+      auto: 0,
+      skill: 0,
+      burst: 0,
     },
+    talentConditionals: [],
     constellation: 0,
     compareAgainstEquipped: false//note: needs to be deleted when saving
   }

@@ -145,6 +145,20 @@ let char = {
           value: "12s",
         }]
       }],
+      conditional: (tlvl, c, a) => c >= 6 ? ({
+        type: "character",
+        condition: "Flaming Sword, Nemesis of Dark",
+        sourceKey: "diluc",
+        maxStack: 1,
+        stats: {
+          norm_atk_dmg: 30,
+          atk_spd: 30,
+        },
+        fields: [{
+          text: "Next 2 Normal Attack within",
+          value: "6s",
+        }]
+      }) : null
     },
     burst: {
       name: "Dawn",
@@ -177,6 +191,10 @@ let char = {
           value: 40,
         }]
       }],
+      stats: (c, a) => (a >= 4) ? ({
+        pyro_ele_dmg: 20,
+      }) : null,
+
     },
     passive1: {
       name: "Relentless",
@@ -187,7 +205,6 @@ let char = {
       name: "Blessing of Phoenix",
       img: passive2,
       document: [{ text: <span>The <span className="text-pyro">Pyro Enchantment</span> provided by <b>Dawn</b> lasts for 4s longer. Additionally. Diluc gains 20% <span className="text-pyro">Pyro DMG Bonus</span> during the duration of this effect.</span> }],
-      //TODO conditional stat
     },
     passive3: {
       name: "Tradition of the Dawn Knight",
@@ -198,7 +215,15 @@ let char = {
       name: "Conviction",
       img: c1,
       document: [{ text: <span>	Diluc deals 15% more DMG to enemies whose HP is above 50%.</span> }],
-      //TODO conditional stat
+      conditional: (tlvl, c, a) => c >= 1 ? ({
+        type: "character",
+        condition: "Enemies with >50% HP",
+        sourceKey: "diluc",
+        maxStack: 1,
+        stats: {
+          dmg: 15,
+        },
+      }) : null
     },
     constellation2: {
       name: "Searing Ember",
@@ -209,7 +234,20 @@ let char = {
           This effect can stack up to 3 times and can only occur once every 1.5s.
       </span>
       }],
-      //TODO conditional stat
+      conditional: (tlvl, c, a) => c >= 2 ? ({
+        type: "character",
+        condition: "Take DMG",
+        sourceKey: "diluc",
+        maxStack: 3,
+        stats: {
+          atk_: 10,
+          atk_spd: 5
+        },
+        fields: [{
+          text: "Duration",
+          value: "10s",
+        }]
+      }) : null
     },
     constellation3: {
       name: "Fire and Steel",
@@ -238,7 +276,6 @@ let char = {
           Additionally, <b>Searing Onslaught</b> will not interrupt the Normal Attack combo.
         </span>
       }],
-      //TODO conditional stat
     }
   },
 };

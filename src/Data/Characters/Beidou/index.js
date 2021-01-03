@@ -144,6 +144,23 @@ let char = {
           value: "7.5s",
         }]
       }],
+      conditional: (tlvl, c, a) => a >= 4 ? ({
+        type: "character",
+        condition: "Lightning Storm",
+        sourceKey: "beidou",
+        maxStack: 1,
+        stats: {
+          norm_atk_dmg: 15,
+          char_atk_dmg: 15,
+          atk_spd: 15,
+        },
+        fields: [{
+          text: "Duration",
+          value: "10s",
+        }, {
+          text: "Reduced delay before Charged Attacks",
+        }]
+      }) : null
     },
     burst: {
       name: "Stormbreaker",
@@ -198,7 +215,6 @@ let char = {
           </ul>
         </span>
       }],
-      //TODO conditional
     },
     passive3: {
       name: "Conqueror of Tides",
@@ -228,7 +244,7 @@ let char = {
     constellation4: {
       name: "Stunning Revenge",
       img: c4,
-      document: [{ text: <span>Within 10s of taking DMG, Beidou's Normal Attacks gain 20% additional <span className="text-electro">Electro DMG</span>.</span> }],
+      document: [{ text: (s) => <span>Within 10s of taking DMG, Beidou's Normal Attacks gain 20% additional <span className="text-electro">Electro DMG</span>{WeaponPercent(20, s.atk)}.</span> }],
     },
     constellation5: {
       name: "Crimson Tidewalker",
@@ -239,6 +255,7 @@ let char = {
       name: "Bane of the Evil",
       img: c6,
       document: [{ text: <span>During the duration of <b>Stormbreaker</b>, the <span className="text-electro">Electro RES</span> of surrounding enemies is decreased by 15%.</span> }],
+      //TODO enemy res reduction
     },
   },
 };

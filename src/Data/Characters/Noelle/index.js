@@ -182,7 +182,24 @@ let char = {
           value: 60,
         }]
       }],
-      //TODO conditional. sweeping time is special because it needs to apply the + atk after def is calculated....
+      conditional: (tlvl, c) => ({
+        type: "character",
+        condition: "Sweeping Time",
+        sourceKey: "noelle",
+        maxStack: 1,
+        stats: {
+          formulaOverrides: [{
+            key: "noelle_burst_atk",
+            options: {
+              value: sweepingTimeStats.atk_bonu[tlvl] + (c >= 6 ? 50 : 0)
+            }
+          }],
+        },
+
+        fields: [{
+          text: "Convert DEF to ATK as above",
+        }]
+      })
     },
     passive1: {
       name: "Devotion",
@@ -219,8 +236,11 @@ let char = {
     constellation2: {
       name: "Combat Maid",
       img: c2,
-      document: [{ text: <span>Decreases Noelle's Stamina Consumption of <b>Charged Attacks</b> by 20% and increases <b>Charged Attack</b> DMG by 15%.</span> }]
-      //TODO stats constellation
+      document: [{ text: <span>Decreases Noelle's Stamina Consumption of <b>Charged Attacks</b> by 20% and increases <b>Charged Attack</b> DMG by 15%.</span> }],
+      stats: {
+        char_atk_dmg: 15,
+        stamina_charged_dec: 20,
+      }
     },
     constellation3: {
       name: "Invulnerable Maid",

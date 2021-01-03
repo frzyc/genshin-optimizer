@@ -16,7 +16,7 @@ import { ArtifactSlotsData } from '../Data/ArtifactData';
 import { DatabaseInitAndVerify } from '../DatabaseUtil';
 import Stat from '../Stat';
 import { DependencyStatKeys } from '../StatDependency';
-import ArtifactConditionals from '../Util/ArtifactConditionals';
+import ConditionalsUtil from '../Util/ConditionalsUtil';
 import { deepClone, loadFromLocalStorage, saveToLocalStorage } from '../Util/Util';
 import Build from './Build';
 
@@ -59,7 +59,7 @@ export default class BuildDisplay extends React.Component {
   static artifactsSlotsToSelectMainStats = ["sands", "goblet", "circlet"]
   forceUpdateBuildDisplay = () => this.forceUpdate()
 
-  statsDisplayKeys = () => ["hp", "atk", "def", "ele_mas", "crit_rate", "crit_dmg", "heal_bonu", "ener_rech", "phy_dmg", "ele_dmg", "phy_avg_dmg", "ele_avg_dmg",]
+  statsDisplayKeys = () => ["hp", "atk", "def", "ele_mas", "crit_rate", "crit_dmg", "heal_bonu", "ener_rech", "phy_dmg", "ele_dmg", "phy_avg_dmg", "ele_avg_dmg", "norm_atk_avg_dmg", "char_atk_avg_dmg", "skill_avg_dmg", "burst_avg_dmg"]
 
   splitArtifacts = () => {
     if (!this.state.selectedCharacterId) return {};
@@ -95,7 +95,7 @@ export default class BuildDisplay extends React.Component {
     let oldKey = state.setFilters[index].key
     if (oldKey === newkey) return
     //remove conditionals with that key
-    let artifactConditionals = state.artifactConditionals ? state.artifactConditionals.filter(artifactCond => artifactCond.setKey !== oldKey) : []
+    let artifactConditionals = state.artifactConditionals?.filter?.(artifactCond => artifactCond.srcKey !== oldKey) || []
     let setFilters = state.setFilters;
     let num = 0
     //automatically select the 1st element from setsNumArr
@@ -133,7 +133,7 @@ export default class BuildDisplay extends React.Component {
       })
     })
     //generate the key dependencies for the formula
-    let depdendencyStatKeys = DependencyStatKeys(buildFilterKey)
+    let depdendencyStatKeys = DependencyStatKeys(buildFilterKey, initialStats.formulaOverrides)
 
     //create an obj with app the artifact set effects to pass to buildworker.
     let data = {
@@ -177,7 +177,7 @@ export default class BuildDisplay extends React.Component {
       <Dropdown.Item onClick={() => this.setState({ selectedCharacterId: "", builds: [], buildFilterKey: "atk" })}>No Character</Dropdown.Item>
       {Object.values(charlist).map((char, i) =>
         <Dropdown.Item key={char.name + i}
-          onClick={() => this.setState({ selectedCharacterId: char.id, builds: [] })}
+          onClick={() => this.setState({ selectedCharacterId: char.id, builds: [], buildFilterKey: "atk" })}
         >
           {char.name}
         </Dropdown.Item>)}
@@ -264,7 +264,7 @@ export default class BuildDisplay extends React.Component {
                       let conditionalNum = 0;
                       let conditional = Artifact.getArtifactSetEffectConditional(setKey, setNumKey)
                       if (conditional) {
-                        conditionalNum = ArtifactConditionals.getConditionalNum(artifactConditionals, setKey, setNumKey)
+                        conditionalNum = ConditionalsUtil.getConditionalNum(artifactConditionals, { srcKey: setKey, srcKey2: setNumKey })
                         let conditionalStats = Artifact.getArtifactConditionalStats(setKey, setNumKey, conditionalNum)
                         if (conditionalStats) {
                           if (!setStats) setStats = {}
@@ -273,7 +273,7 @@ export default class BuildDisplay extends React.Component {
                         }
                       }
                       let setStateArtifactConditional = (conditionalNum) => this.setState(state =>
-                        ({ artifactConditionals: ArtifactConditionals.setConditional(state.artifactConditionals, setKey, setNumKey, conditionalNum) }))
+                        ({ artifactConditionals: ConditionalsUtil.setConditional(state.artifactConditionals, { srcKey: setKey, srcKey2: setNumKey }, conditionalNum) }))
                       let conditionalElement = <ConditionalSelector
                         conditional={conditional}
                         conditionalNum={conditionalNum}

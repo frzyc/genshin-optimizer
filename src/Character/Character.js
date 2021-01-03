@@ -3,7 +3,8 @@ import ArtifactDatabase from "../Artifact/ArtifactDatabase";
 import { CharacterData, characterStatBase, LevelsData } from "../Data/CharacterData";
 import ElementalData from "../Data/ElementalData";
 import { AttachLazyFormulas } from "../Stat";
-import { deepClone } from "../Util/Util";
+import ConditionalsUtil from "../Util/ConditionalsUtil";
+import { clamp, deepClone } from "../Util/Util";
 import Weapon from "../Weapon/Weapon";
 import CharacterDatabase from "./CharacterDatabase";
 
@@ -54,9 +55,55 @@ export default class Character {
 
   //talents
   static getTalentName = (charKey, talentKey, defVal = "") => this.getCDataObj(charKey)?.talent?.[talentKey]?.name || defVal
-  //only really work with skill/burst/passives since auto is handled differently
+  static getTalentLevelBoost = (character, talentKey) => {
+    let { constellation } = character
+    return talentKey === "skill" ? (constellation >= 3 ? 3 : 0) :
+      talentKey === "burst" && constellation >= 5 ? 3 : 0
+  }
+  static getTalentLevelKey = (character, talentKey, withBoost = false) => {
+    if (talentKey === "auto" || talentKey === "skill" || talentKey === "burst") {
+      let talentLvlKey = character?.talentLevelKeys?.[talentKey] || 0;
+      let levelBoost = this.getTalentLevelBoost(character, talentKey)
+      talentLvlKey = clamp(talentLvlKey + levelBoost, 0, 14)
+      return withBoost ? { talentLvlKey, levelBoost } : talentLvlKey
+    } else return withBoost ? {} : null
+  }
   static getTalentDocument = (charKey, talentKey, defVal = []) => this.getCDataObj(charKey)?.talent?.[talentKey]?.document || defVal
   static getTalentFields = (charKey, talentKey, defVal = []) => this.getCDataObj(charKey)?.talent?.[talentKey]?.fields || defVal
+  static getTalentStats = (charKey, talentKey, constellation, ascension, defVal = null) => {
+    let stats = this.getCDataObj(charKey)?.talent?.[talentKey]?.stats
+    if (typeof stats === "function")
+      return stats(constellation, ascension)
+    return stats || defVal
+  }
+  static getTalentStatsAll = (charKey, constellation, ascension) => {
+    let talents = this.getCDataObj(charKey)?.talent
+    let statsArr = []
+    Object.keys(talents).forEach(talentKey => {
+      let stats = this.getTalentStats(charKey, talentKey, constellation, ascension)
+      if (stats) statsArr.push(stats)
+    })
+    return statsArr
+  }
+  static getTalentConditional = (charKey, talentKey, talentLvlKey, constellation, ascension, defVal = null) => {
+    let cond = this.getCDataObj(charKey)?.talent?.[talentKey]?.conditional
+    if (typeof cond === "function")
+      return cond(talentLvlKey, constellation, ascension)
+    return cond || defVal
+  }
+  static getTalentConditionalStats = (charKey, talentKey, talentLvlKey, constellation, ascension, conditionalNum, defVal = null) => {
+    if (!conditionalNum) return defVal
+    let conditional = this.getTalentConditional(charKey, talentKey, talentLvlKey, constellation, ascension)
+    if (!conditional || !conditional.stats) return defVal
+    let [stats, stacks] = ConditionalsUtil.getConditionalStats(conditional, conditionalNum)
+    if (!stacks) return defVal
+    return Object.fromEntries(Object.entries(stats).map(([key, val]) => key === "formulaOverrides" ? [key, val] : [key, val * stacks]))
+  }
+  static getTalentConditionalFields = (charKey, talentKey, talentLvlKey, constellation, ascension, conditionalNum, defVal = []) => {
+    if (!conditionalNum) return defVal
+    return this.getTalentConditional(charKey, talentKey, talentLvlKey, constellation, ascension)?.fields || defVal
+  }
+
   //CHARCTER OBJ
   static hasOverride = (character, statKey) => character && character.baseStatOverrides ? (statKey in character.baseStatOverrides) : false;
 
@@ -133,7 +180,8 @@ export default class Character {
     artifactSetEffectsStats.forEach(stat => stats[stat.key] = (stats[stat.key] || 0) + stat.statVal)
     //setEffects conditionals
     artifactConditionals && artifactConditionals.forEach(conditional => {
-      let condStats = Artifact.getArtifactConditionalStats(conditional.setKey, conditional.setNumKey, conditional.conditionalNum)
+      let { srcKey: setKey, srcKey2: setNumKey } = conditional
+      let condStats = Artifact.getArtifactConditionalStats(setKey, setNumKey, conditional.conditionalNum)
       if (condStats) Object.entries(condStats).forEach(([statKey, val]) => stats[statKey] = (stats[statKey] || 0) + val)
     })
     AttachLazyFormulas(stats)
@@ -163,20 +211,36 @@ export default class Character {
       initialStats[specialStatKey] = (initialStats[specialStatKey] || 0) + specializedStatVal
     }
 
-    //TODO character skill Stats/Conditionals
-    //TODO character passive Stats/Conditionals
-    //TODO character constellation Stats/Conditionals
+    let addStatsObj = stats => stats && Object.entries(stats).forEach(([key, val]) => {
+      if (key === "formulaOverrides") {
+        initialStats.formulaOverrides = [...(initialStats.formulaOverrides || []), ...val]
+        return
+      }
+
+      if (key === "hp" || key === "def" || key === "atk")
+        key = "base_" + key
+      initialStats[key] = (initialStats[key] || 0) + val
+    })
+
+    let { characterKey, levelKey, constellation, talentConditionals = [] } = character
+    let ascension = Character.getAscension(levelKey)
+    //add stats from talentconditionals
+    talentConditionals.forEach(cond => {
+      let talentKey = cond.srcKey
+      let talentLvlKey = Character.getTalentLevelKey(character, talentKey)
+      addStatsObj(Character.getTalentConditionalStats(characterKey, talentKey, talentLvlKey, constellation, ascension, cond.conditionalNum, {}))
+    })
+
+    //add stats from all talents
+    let allTalentStats = Character.getTalentStatsAll(characterKey, constellation, ascension)
+    allTalentStats.forEach(addStatsObj)
 
     let weaponStats = Weapon.createWeaponBundle(character)
-    //add subStat
+    //add weapon stats
     if (weaponStats.subKey)
       initialStats[weaponStats.subKey] = (initialStats[weaponStats.subKey] || 0) + weaponStats.subVal
-    //add passive/conditional
-    if (weaponStats.bonusStats) Object.entries(weaponStats.bonusStats).forEach(([key, val]) =>
-      initialStats[key] = (initialStats[key] || 0) + val)
-    //Add weapon conditional
-    if (weaponStats.conditionalStats) Object.entries(weaponStats.conditionalStats).forEach(([key, val]) =>
-      initialStats[key] = (initialStats[key] || 0) + val)
+    if (weaponStats.bonusStats) addStatsObj(weaponStats.bonusStats)
+    if (weaponStats.conditionalStats) addStatsObj(weaponStats.conditionalStats)
     return initialStats
   }
 

@@ -3,8 +3,8 @@ import CharacterDatabase from '../Character/CharacterDatabase';
 import SlotIcon from '../Components/SlotIcon';
 import { ArtifactMainSlotKeys, ArtifactMainStatsData, ArtifactSetsData, ArtifactSlotsData, ArtifactStarsData, ArtifactSubStatsData } from '../Data/ArtifactData';
 import Stat from '../Stat';
-import ArtifactConditionals from '../Util/ArtifactConditionals';
-import { clamp, clampPercent, closeEnoughFloat, closeEnoughInt, deepClone } from '../Util/Util';
+import ConditionalsUtil from '../Util/ConditionalsUtil';
+import { clampPercent, closeEnoughFloat, closeEnoughInt, deepClone } from '../Util/Util';
 import ArtifactBase from './ArtifactBase';
 import ArtifactDatabase from './ArtifactDatabase';
 
@@ -149,30 +149,11 @@ export default class Artifact {
 
   static getArtifactConditionalStats = (setKey, setNumKey, conditionalNum, defVal = null) => {
     if (!conditionalNum) return defVal
-    let conditional = ArtifactSetsData[setKey].sets[setNumKey].conditional
+    let conditional = this.getArtifactSetEffectConditional(setKey, setNumKey)
     if (!conditional) return defVal
-    if (Array.isArray(conditional)) {
-      //multiconditional
-      let selectedConditionalNum = conditionalNum
-      let selectedConditional = null
-      for (const curConditional of conditional) {
-        if (selectedConditionalNum > curConditional.maxStack) selectedConditionalNum -= curConditional.maxStack
-        else {
-          selectedConditional = curConditional;
-          break;
-        }
-      }
-      if (!selectedConditional) return defVal
-      let stacks = clamp(selectedConditionalNum, 1, selectedConditional.maxStack)
-      return Object.fromEntries(Object.entries(selectedConditional.stats).map(([key, val]) => [key, val * stacks]))
-    } else if (conditional.maxStack > 1) {
-      //condtional with stacks
-      let stacks = clamp(conditionalNum, 1, conditional.maxStack)
-      return Object.fromEntries(Object.entries(conditional.stats).map(([key, val]) => [key, val * stacks]))
-    } else if (conditional.maxStack === 1)
-      //boolean conditional
-      return deepClone(conditional.stats)
-    return defVal
+    let [stats, stacks] = ConditionalsUtil.getConditionalStats(conditional, conditionalNum)
+    if (!stacks) return defVal
+    return Object.fromEntries(Object.entries(stats).map(([key, val]) => [key, val * stacks]))
   }
   static getArtifactSetEffectsStats = (setToSlots) => {
     let artifactSetEffect = []
@@ -219,7 +200,7 @@ export default class Artifact {
             hasSetEffect = true
           }
           if (setEffectObj.conditional) {
-            let conditionalNum = ArtifactConditionals.getConditionalNum(artifactConditionals, setKey, setNumKey)
+            let conditionalNum = ConditionalsUtil.getConditionalNum(artifactConditionals, { srcKey: setKey, srcKey2: setNumKey })
             if (conditionalNum) {
               let condStats = this.getArtifactConditionalStats(setKey, setNumKey, conditionalNum)
               if (condStats) {

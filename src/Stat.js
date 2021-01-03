@@ -77,7 +77,9 @@ const StatData = {
   move_spd: { name: "Movement SPD", unit: "%" },
   atk_spd: { name: "ATK SPD", unit: "%" },
   weakspot_dmg: { name: "Weakspot DMG", unit: "%" },
-  stamina_dec: { name: "Stamina Consmption Dec.", unit: "%" },
+  stamina_dec: { name: "Stamina Consumption Dec.", unit: "%" },
+  stamina_gliding_dec: { name: "Gliding Stamina Consumption Dec.", unit: "%" },
+  stamina_charged_dec: { name: "Charged Attack Stamina Consumption Dec.", unit: "%" },
   //elemental
   overloaded_dmg: { name: "Overloaded DMG", unit: "%" },
   electro_charged_dmg: { name: "Electro-Charged DMG", unit: "%" },
@@ -131,18 +133,42 @@ Object.entries(eleFormulas).forEach(([key, func]) =>
       value: (obj) => (func)(obj, eleKey),
     })))
 
+const OverrideFormulas = {
+  noelle_burst_atk: {
+    key: "atk",
+    formula: (options) => (s) => s.base_atk * (1 + s.atk_ / 100) + s.atk_flat + s.def * (options.value / 100),
+    dependency: ["base_atk", "atk_", "atk_flat", "base_def", "def_", "def_flat"]
+  }
+}
+
 //the keyfilters are used by build generator to reduce the amount of calculations required
-function AttachLazyFormulas(obj, keyFilters) {
+function AttachLazyFormulas(obj, options = {}) {
+  let { formulaKeys = Object.keys(Formulas), statKeys = Object.keys(StatData) } = options;
+  let { formulaOverrides = [] } = obj;
   //need to rename the hp,atk,def keys, because they will be the final stat
   ["hp", "atk", "def"].forEach(key => {
     obj.hasOwnProperty(key) && Object.defineProperty(obj, `${key}_flat`,
       Object.getOwnPropertyDescriptor(obj, key));
     delete obj[key];
   })
-  let formulaKeys = keyFilters?.[0] || Object.keys(Formulas)
+  formulaOverrides.forEach(formulaOverride => {
+    let { key: overrideFormulaKey, options } = formulaOverride
+    let { key, formula } = OverrideFormulas[overrideFormulaKey] || {}
+    if (!formulaKeys.includes(key)) return
+    formula = formula(options)
+    Object.defineProperty(obj, key, {
+      get: options.formulaKeys ? () => formula(obj) : function () {
+        let val = formula(obj)
+        Object.defineProperty(this, key, { value: val })
+        return val
+      },
+      configurable: true
+    })
+  })
+
   formulaKeys.forEach(key => {
     !obj.hasOwnProperty(key) && Object.defineProperty(obj, key, {
-      get: keyFilters ? () => Formulas[key](obj) : function () {
+      get: options.formulaKeys ? () => Formulas[key](obj) : function () {
         let val = Formulas[key](obj)
         Object.defineProperty(this, key, { value: val })
         return val
@@ -150,13 +176,13 @@ function AttachLazyFormulas(obj, keyFilters) {
       configurable: true
     })
   })
-  let statKeys = keyFilters?.[1] || Object.keys(StatData)
   //assign zeros to the other stats that are not part of the calculations
   statKeys.forEach(key => !obj.hasOwnProperty(key) && (obj[key] = 0))
 }
 
 export {
   Formulas,
+  OverrideFormulas,
   StatData,
   AttachLazyFormulas,
 }

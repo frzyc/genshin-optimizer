@@ -26,8 +26,8 @@ export default function ConditionalSelector(props) {
       (selectedConditional.condition + (selectedConditional.maxStack > 1 ? (`: ${selectedConditionalNum} stack${selectedConditionalNum > 1 ? "s" : ""}`) : ""))
     let badge = <Badge variant={selectedConditionalNum === 0 ? "secondary" : "success"}>{text}</Badge>
     let count = 0;
-    return <Dropdown disabled={disabled}>
-      <Dropdown.Toggle size="sm">
+    return <Dropdown>
+      <Dropdown.Toggle size="sm" disabled={disabled}>
         <h6 className="mb-0 d-inline">{defEle} {badge}</h6>
       </Dropdown.Toggle>
       <Dropdown.Menu>
@@ -47,8 +47,8 @@ export default function ConditionalSelector(props) {
   } else if (conditional.maxStack > 1) {
     //stacking conditional
     let badge = <Badge variant={conditionalNum === 0 ? "secondary" : "success"}>{conditionalNum > 0 ? `${conditionalNum} stack${conditionalNum > 1 ? "s" : ""}` : "Not Active"}</Badge>
-    return <Dropdown disabled={disabled}>
-      <Dropdown.Toggle size="sm">
+    return <Dropdown>
+      <Dropdown.Toggle size="sm" disabled={disabled}>
         <h6 className="mb-0 d-inline">{defEle} {badge}</h6>
       </Dropdown.Toggle>
       <Dropdown.Menu>

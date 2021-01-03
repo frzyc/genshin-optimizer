@@ -146,14 +146,26 @@ let char = {
         text: <span>
           Fires off a shower of arrows, dealing continuous <span className="text-pyro">AoE Pyro DMG</span>.
       </span>,
-        fields: [{
-          text: "Fiery Rain DMG Per Wave",
+        fields: [(c, a) => ({
+          text: "DMG Per Wave",
           basicVal: (tlvl) => fieryRain.dmg_perwave[tlvl] + "%",
-          finalVal: (tlvl, s) => (fieryRain.dmg_perwave[tlvl] / 100) * s.burst_avg_dmg,
-        }, {
-          text: "Total Fiery Rain DMG",
+          finalVal: (tlvl, s) => (fieryRain.dmg_perwave[tlvl] / 100) * s.atk * (1 + (s.crit_rate + s.burst_crit_rate + (a >= 1 ? 10 : 0)) / 100) * (1 + s.crit_dmg / 100) * (1 + s[`${s.char_ele_key}_ele_dmg`] / 100) * (1 + s.burst_dmg / 100) * (1 + s.dmg / 100),
+        }), (c, a) => ({
+          text: "Rain DMG",
           basicVal: (tlvl) => fieryRain.total_dmg[tlvl] + "%",
-          finalVal: (tlvl, s) => (fieryRain.total_dmg[tlvl] / 100) * s.burst_avg_dmg,
+          finalVal: (tlvl, s) => (fieryRain.total_dmg[tlvl] / 100) * s.atk * (1 + (s.crit_rate + s.burst_crit_rate + (a >= 1 ? 10 : 0)) / 100) * (1 + s.crit_dmg / 100) * (1 + s[`${s.char_ele_key}_ele_dmg`] / 100) * (1 + s.burst_dmg / 100) * (1 + s.dmg / 100),
+        }), (c, a) => {
+          if (a < 1) return null
+          return {
+            text: "CRIT Rate Bonus",
+            value: "10%"
+          }
+        }, (c, a) => {
+          if (a < 1) return null
+          return {
+            text: "AoE Range Bonus",
+            value: "30%"
+          }
         }, {
           text: "Duration",
           value: "2s",
@@ -165,18 +177,43 @@ let char = {
           value: 40,
         }]
       }],
+      conditional: (tlvl, c) => c >= 6 ? ({
+        type: "character",
+        condition: "Wildfire",
+        sourceKey: "amber",
+        maxStack: 1,
+        stats: {
+          atk_: 15,
+          move_spd: 15
+        },
+        fields: [{
+          text: "Duration",
+          value: "10s",
+        }]
+      }) : null
     },
     passive1: {
       name: "Every Arrow Finds Its Target",
       img: passive1,
-      document: [{ text: () => <span>Increases the CRIT Rate of Fiery Rain by 10% and widens its AoE by 30%.</span> }],
-      //TODO stats
+      document: [{ text: () => <span>Increases the CRIT Rate of <b>Fiery Rain</b> by 10% and widens its AoE by 30%.</span> }],
     },
     passive2: {
       name: "Precise Shot",
       img: passive2,
       document: [{ text: <span>Aimed Shot hits on weak spots increase ATK by 15% for 10s.</span> }],
-      //TODO conditional
+      conditional: (tlvl, c, a) => a >= 4 ? ({
+        type: "character",
+        condition: "Precise Shot",
+        sourceKey: "amber",
+        maxStack: 1,
+        stats: {
+          atk_: 15,
+        },
+        fields: [{
+          text: "Duration",
+          value: "10s",
+        }]
+      }) : null
     },
     passive3: {
       name: "Gliding Champion",
@@ -187,7 +224,9 @@ let char = {
           Not stackable with Passive Talents that provide the exact same effects.
       </span>
       }],
-      //TODO stats? stamine consumption for gliding...
+      stats: {
+        stamina_gliding_dec: 20,
+      }
     },
     constellation1: {
       name: "One Arrow to Rule Them All",
@@ -228,7 +267,7 @@ let char = {
       name: "Wildfire",
       img: c6,
       document: [{ text: <span><b>Fiery Rain</b> increases the entire party's Movement SPD by 15% and ATK by 15% for 10s.</span> }]
-      //TODO conditional and party buff
+      //TODO party buff
     },
   },
 };

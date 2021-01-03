@@ -64,6 +64,14 @@ function DatabaseInitAndVerify() {
       if (!valid)
         char.equippedArtifacts = equippedArtifacts
 
+      //conditional format was refactored. this makes sure there is no error when using old DB.
+      if (char.artifactConditionals) char.artifactConditionals = char.artifactConditionals.filter(cond => {
+        if (!cond.srcKey || !cond.srcKey2) {
+          valid = false
+          return false
+        }
+        return true
+      })
       if (!valid) {
         CharacterDatabase.updateCharacter(char)
       }

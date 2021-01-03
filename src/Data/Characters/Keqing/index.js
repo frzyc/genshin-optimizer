@@ -175,6 +175,20 @@ let char = {
           value: 60,
         }]
       }],
+      conditional: (tlvl, c, a) => a >= 4 ? ({
+        type: "character",
+        condition: "Aristocratic Dignity",
+        sourceKey: "keqing",
+        maxStack: 1,
+        stats: {
+          crit_rate: 15,
+          ener_rech: 15,
+        },
+        fields: [{
+          text: "Duration",
+          value: "8s",
+        }]
+      }) : null
     },
     passive1: {
       name: "Thundering Penance",
@@ -210,7 +224,19 @@ let char = {
       name: "Attunement",
       img: c4,
       document: [{ text: <span>For 10s after Keqing triggers an <span className="text-electro">Electro-related Elemental Reaction</span>, her ATK is increased by 25%.</span> }],
-      //TODO conditional stat
+      conditional: (tlvl, c, a) => c >= 4 ? ({
+        type: "character",
+        condition: "Trigger an Electro-related Elemental Reaction",
+        sourceKey: "keqing",
+        maxStack: 1,
+        stats: {
+          atk_: 25,
+        },
+        fields: [{
+          text: "Duration",
+          value: "10s",
+        }]
+      }) : null
     },
     constellation5: {
       name: "Beckoning Stars",
@@ -221,7 +247,19 @@ let char = {
       name: "Tenacious Star",
       img: c6,
       document: [{ text: <span>When initiating a Normal Attack, a Charged Attack, Elemental Skill or Elemental Burst, Keqing gains a 6% <span className="text-electro">Electro DMG Bonus</span> for 8s. Effects triggered by Normal Attacks, Charged Attacks, Elemental Skills, and Elemental Bursts are considered independent entities.</span> }],
-      //TODO conditional stat
+      conditional: (tlvl, c, a) => c >= 6 ? ({
+        type: "character",
+        condition: "Initiating Normal/Charged Attack, Skill or Burst",
+        sourceKey: "keqing",
+        maxStack: 1,
+        stats: {
+          electro_ele_dmg: 6,
+        },
+        fields: [{
+          text: "Duration",
+          value: "8s",
+        }]
+      }) : null
     },
   },
 };

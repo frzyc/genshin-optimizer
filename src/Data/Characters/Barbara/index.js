@@ -134,6 +134,16 @@ let char = {
           value: "32s" + (c >= 2 ? " -15%" : ""),
         })]
       }],
+      //TODO party conditional
+      conditional: (tlvl, c, a) => a >= 1 ? ({
+        type: "character",
+        condition: "Glorious Season",
+        sourceKey: "barbara",
+        maxStack: 1,
+        stats: {
+          stamina_dec: 12,
+        }
+      }) : null
     },
     burst: {
       name: "Shining Miracle",
@@ -157,7 +167,6 @@ let char = {
       name: "Glorious Season",
       img: passive1,
       document: [{ text: <span>The Stamina Consumption of characters within <b>Let the Show Begin</b>'s Melody Loop is reduced by 12%.</span> }],
-      //TODO party conditional
     },
     passive2: {
       name: "Encore",
