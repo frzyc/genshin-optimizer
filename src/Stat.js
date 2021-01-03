@@ -109,7 +109,7 @@ const Formulas = {
   //DEF
   def: (s) => s.base_def * (1 + s.def_ / 100) + s.def_flat,
   //PHYSICAL, used mainly for plunge dmg
-  phy_avg_dmg: (s) => s.atk * s.crit_multi * (1 + s.phy_dmg + s.dmg / 100),
+  phy_avg_dmg: (s) => s.atk * s.crit_multi * (1 + (s.phy_dmg + s.dmg) / 100),
 
   //NORMAL
   norm_atk_avg_dmg: (s) => s.atk * s.normal_atk_crit_multi * s.norm_atk_bonus_dmg,
