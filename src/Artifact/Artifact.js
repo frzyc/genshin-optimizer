@@ -66,7 +66,7 @@ export default class Artifact {
   static getRolls(value, rollData, float = false) {
     let roll = null;
     let closeEnoughRoll = null;
-    let maxNumRoll = parseInt((value / rollData[0]).toFixed(0))
+    let maxNumRoll = Math.round(value / rollData[0])
     if (!maxNumRoll) return null;
     let rollOption = (val, arr) => {
       if (roll) return;
@@ -84,7 +84,7 @@ export default class Artifact {
           if (sum === val) {
             roll = arr;
             return
-          } else if (closeEnoughInt(sum, val)) {
+          } else if (closeEnoughInt(sum, val) && !closeEnoughRoll) {
             closeEnoughRoll = arr;
           }
         }
@@ -108,7 +108,7 @@ export default class Artifact {
     let rolls = this.getRolls(value, rollData, isFloat)
 
     if (!rolls || rolls.length === 0) return { valid: false, msg: `Substat cannot be rolled 0 times.` };
-    let totalAllowableRolls = ArtifactStarsData[numStars].numUpgradesOrUnlocks - (4 - ArtifactStarsData[numStars].subBaseHigh) + 1;//+1 for its base roll
+    let totalAllowableRolls = ArtifactStarsData[numStars]?.numUpgradesOrUnlocks - (4 - ArtifactStarsData[numStars]?.subBaseHigh) + 1;//+1 for its base roll
     if (rolls.length > totalAllowableRolls) return { valid: false, msg: `Substat cannot be rolled more than ${totalAllowableRolls} times.` };
 
     let min = rollData[0] * rolls.length;

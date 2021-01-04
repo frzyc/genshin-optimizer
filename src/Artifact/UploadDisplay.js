@@ -150,6 +150,9 @@ function UploadDisplay(props) {
       if (level > numStars * 4)
         level = NaN
 
+    //check if the final star values are valid
+    numStars = clamp(numStars, 3, 5)
+
     //if the level is not parsed at all after all the prevous steps, default it to the highest level of the star value
     if (isNaN(level)) level = numStars * 4
 
