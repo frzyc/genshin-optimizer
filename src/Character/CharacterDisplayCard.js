@@ -192,7 +192,7 @@ export default class CharacterDisplayCard extends React.Component {
           {newBuild ? <Col xs="auto">
             <ButtonGroup>
               <Button variant="success" disabled={!compareAgainstEquipped} onClick={() => this.setState({ compareAgainstEquipped: false })}>
-                <small>Show New artiact Stats</small>
+                <small>Show New artifact Stats</small>
               </Button>
               <Button variant="info" disabled={compareAgainstEquipped} onClick={() => this.setState({ compareAgainstEquipped: true })}>
                 <small>Compare against equipped artifact</small>

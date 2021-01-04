@@ -85,23 +85,29 @@ export default class Character {
     })
     return statsArr
   }
-  static getTalentConditional = (charKey, talentKey, talentLvlKey, constellation, ascension, defVal = null) => {
-    let cond = this.getCDataObj(charKey)?.talent?.[talentKey]?.conditional
-    if (typeof cond === "function")
-      return cond(talentLvlKey, constellation, ascension)
+  static getTalentConditional = (charKey, talentKey, conditionalKey, talentLvlKey, constellation, ascension, defVal = null) => {
+    let doc = this.getTalentDocument(charKey, talentKey)
+    let cond = null
+    for (const section of doc) {
+      let tempCond = section.conditional
+      if (typeof tempCond === "function")
+        tempCond = tempCond(talentLvlKey, constellation, ascension)
+      if (tempCond?.conditionalKey === conditionalKey) {
+        cond = tempCond
+        break;
+      }
+    }
     return cond || defVal
   }
-  static getTalentConditionalStats = (charKey, talentKey, talentLvlKey, constellation, ascension, conditionalNum, defVal = null) => {
-    if (!conditionalNum) return defVal
-    let conditional = this.getTalentConditional(charKey, talentKey, talentLvlKey, constellation, ascension)
-    if (!conditional || !conditional.stats) return defVal
+  static getTalentConditionalStats = (conditional, conditionalNum, defVal = null) => {
+    if (!conditionalNum || !conditional || !conditional.stats) return defVal
     let [stats, stacks] = ConditionalsUtil.getConditionalStats(conditional, conditionalNum)
     if (!stacks) return defVal
     return Object.fromEntries(Object.entries(stats).map(([key, val]) => key === "formulaOverrides" ? [key, val] : [key, val * stacks]))
   }
-  static getTalentConditionalFields = (charKey, talentKey, talentLvlKey, constellation, ascension, conditionalNum, defVal = []) => {
+  static getTalentConditionalFields = (conditional, conditionalNum, defVal = []) => {
     if (!conditionalNum) return defVal
-    return this.getTalentConditional(charKey, talentKey, talentLvlKey, constellation, ascension)?.fields || defVal
+    return conditional?.fields || defVal
   }
   static isAutoInfusable = (charKey, defVal = false) => this.getCDataObj(charKey)?.talent?.auto?.infusable || defVal
 
@@ -230,9 +236,10 @@ export default class Character {
     let ascension = Character.getAscension(levelKey)
     //add stats from talentconditionals
     talentConditionals.forEach(cond => {
-      let talentKey = cond.srcKey
+      let { srcKey: talentKey, srcKey2: conditionalKey, conditionalNum } = cond
       let talentLvlKey = Character.getTalentLevelKey(character, talentKey)
-      addStatsObj(Character.getTalentConditionalStats(characterKey, talentKey, talentLvlKey, constellation, ascension, cond.conditionalNum, {}))
+      let conditional = Character.getTalentConditional(characterKey, talentKey, conditionalKey, talentLvlKey, constellation, ascension)
+      addStatsObj(Character.getTalentConditionalStats(conditional, conditionalNum, {}))
     })
 
     //add stats from all talents

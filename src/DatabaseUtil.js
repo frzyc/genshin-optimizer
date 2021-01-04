@@ -1,4 +1,5 @@
 import ArtifactDatabase from "./Artifact/ArtifactDatabase";
+import Character from "./Character/Character";
 import CharacterDatabase from "./Character/CharacterDatabase";
 
 function DatabaseInitAndVerify() {
@@ -51,10 +52,10 @@ function DatabaseInitAndVerify() {
     })
 
     let chars = CharacterDatabase.getCharacterDatabase();
-    Object.values(chars).forEach(char => {
+    Object.values(chars).forEach(character => {
       let valid = true;
       //verify character database equipment validity
-      let equippedArtifacts = Object.fromEntries(Object.entries(char.equippedArtifacts).map(([slotKey, artid]) => {
+      let equippedArtifacts = Object.fromEntries(Object.entries(character.equippedArtifacts).map(([slotKey, artid]) => {
         if (!ArtifactDatabase.getArtifact(artid)) {
           valid = false
           return [slotKey, undefined]
@@ -62,18 +63,33 @@ function DatabaseInitAndVerify() {
         return [slotKey, artid]
       }))
       if (!valid)
-        char.equippedArtifacts = equippedArtifacts
+        character.equippedArtifacts = equippedArtifacts
 
       //conditional format was refactored. this makes sure there is no error when using old DB.
-      if (char.artifactConditionals) char.artifactConditionals = char.artifactConditionals.filter(cond => {
+      if (character.artifactConditionals) character.artifactConditionals = character.artifactConditionals.filter(cond => {
         if (!cond.srcKey || !cond.srcKey2) {
           valid = false
           return false
         }
         return true
       })
+
+      //check for invalid conditionals from previous iterations where srcKey2 was not used.
+      let { characterKey, levelKey, constellation, talentConditionals = [] } = character
+      let ascension = Character.getAscension(levelKey)
+      character.talentConditionals = talentConditionals.filter(cond => {
+        let { srcKey: talentKey, srcKey2: conditionalKey } = cond
+        let talentLvlKey = Character.getTalentLevelKey(character, talentKey)
+        let conditional = Character.getTalentConditional(characterKey, talentKey, conditionalKey, talentLvlKey, constellation, ascension)
+        if (!conditional) {
+          valid = false
+          return false
+        }
+        return true
+      })
+
       if (!valid) {
-        CharacterDatabase.updateCharacter(char)
+        CharacterDatabase.updateCharacter(character)
       }
     })
   }

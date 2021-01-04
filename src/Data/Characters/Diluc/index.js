@@ -71,18 +71,18 @@ let char = {
         ({
           text: `${i + 1}-Hit DMG`,
           basicVal: (tlvl) => percentArr[tlvl] + "%",
-          finalVal: (tlvl, stats, i) => (percentArr[tlvl] / 100) * (i ? stats.pyro_norm_atk_avg_dmg : stats.norm_atk_avg_dmg)
+          finalVal: (tlvl, stats, c) => (percentArr[tlvl] / 100) * (c.autoInfused ? stats.pyro_norm_atk_avg_dmg : stats.norm_atk_avg_dmg)
         }))
       }, {
         text: <span><strong>Charged Attack</strong> Drains Stamina over time to perform continuous slashes. At the end of the sequence, perform a more powerful slash.</span>,
         fields: [{
           text: `Spinning DMG`,
           basicVal: (tlvl) => charged_atk_spinnning[tlvl] + "%",
-          finalVal: (tlvl, stats, i) => (charged_atk_spinnning[tlvl] / 100) * (i ? stats.pyro_char_atk_avg_dmg : stats.char_atk_avg_dmg)
+          finalVal: (tlvl, stats, c) => (charged_atk_spinnning[tlvl] / 100) * (c.autoInfused ? stats.pyro_char_atk_avg_dmg : stats.char_atk_avg_dmg)
         }, {
           text: `Spinning Final DMG`,
           basicVal: (tlvl) => charged_atk_final[tlvl] + "%",
-          finalVal: (tlvl, stats, i) => (charged_atk_final[tlvl] / 100) * (i ? stats.pyro_char_atk_avg_dmg : stats.char_atk_avg_dmg)
+          finalVal: (tlvl, stats, c) => (charged_atk_final[tlvl] / 100) * (c.autoInfused ? stats.pyro_char_atk_avg_dmg : stats.char_atk_avg_dmg)
         }, (c, a) => ({
           text: `Stamina Cost`,
           value: "40/s" + (a >= 1 ? " - 20/s" : ""),
@@ -95,15 +95,15 @@ let char = {
         fields: [{
           text: `Plunge DMG`,
           basicVal: (tlvl) => plunge_dmg[tlvl] + "%",
-          finalVal: (tlvl, stats, i) => (plunge_dmg[tlvl] / 100) * (i ? stats.pyro_ele_avg_dmg : stats.phy_avg_dmg)
+          finalVal: (tlvl, stats, c) => (plunge_dmg[tlvl] / 100) * (c.autoInfused ? stats.pyro_ele_avg_dmg : stats.phy_avg_dmg)
         }, {
           text: `Low Plunge DMG`,
           basicVal: (tlvl) => plunge_dng_low[tlvl] + "%",
-          finalVal: (tlvl, stats, i) => (plunge_dng_low[tlvl] / 100) * (i ? stats.pyro_ele_avg_dmg : stats.phy_avg_dmg)
+          finalVal: (tlvl, stats, c) => (plunge_dng_low[tlvl] / 100) * (c.autoInfused ? stats.pyro_ele_avg_dmg : stats.phy_avg_dmg)
         }, {
           text: `High Plunge DMG`,
           basicVal: (tlvl) => plunge_dmg_high[tlvl] + "%",
-          finalVal: (tlvl, stats, i) => (plunge_dmg_high[tlvl] / 100) * (i ? stats.pyro_ele_avg_dmg : stats.phy_avg_dmg)
+          finalVal: (tlvl, stats, c) => (plunge_dmg_high[tlvl] / 100) * (c.autoInfused ? stats.pyro_ele_avg_dmg : stats.phy_avg_dmg)
         }]
       }],
     },
@@ -145,21 +145,23 @@ let char = {
           text: "CD",
           value: "12s",
         }]
+      }, {
+        conditional: (tlvl, c, a) => c >= 6 && {
+          type: "character",
+          conditionalKey: "FlamingSwordNemesisOfDark",
+          condition: "Flaming Sword, Nemesis of Dark",
+          sourceKey: "diluc",
+          maxStack: 1,
+          stats: {
+            norm_atk_dmg: 30,
+            atk_spd: 30,
+          },
+          fields: [{
+            text: "Next 2 Normal Attack within",
+            value: "6s",
+          }]
+        }
       }],
-      conditional: (tlvl, c, a) => c >= 6 ? ({
-        type: "character",
-        condition: "Flaming Sword, Nemesis of Dark",
-        sourceKey: "diluc",
-        maxStack: 1,
-        stats: {
-          norm_atk_dmg: 30,
-          atk_spd: 30,
-        },
-        fields: [{
-          text: "Next 2 Normal Attack within",
-          value: "6s",
-        }]
-      }) : null
     },
     burst: {
       name: "Dawn",
@@ -191,16 +193,18 @@ let char = {
           text: "Energy Cost",
           value: 40,
         }]
+      }, {
+        conditional: (tlvl, c, a) => a >= 4 && {
+          type: "character",
+          conditionalKey: "BlessingOfPhoenix",
+          condition: "Blessing of Phoenix",
+          sourceKey: "diluc",
+          maxStack: 1,
+          stats: {
+            pyro_ele_dmg: 20,
+          },
+        }
       }],
-      conditional: (tlvl, c, a) => a >= 4 ? ({
-        type: "character",
-        condition: "Blessing of Phoenix",
-        sourceKey: "diluc",
-        maxStack: 1,
-        stats: {
-          pyro_ele_dmg: 20,
-        },
-      }) : null
     },
     passive1: {
       name: "Relentless",
@@ -220,16 +224,18 @@ let char = {
     constellation1: {
       name: "Conviction",
       img: c1,
-      document: [{ text: <span>	Diluc deals 15% more DMG to enemies whose HP is above 50%.</span> }],
-      conditional: (tlvl, c, a) => c >= 1 ? ({
-        type: "character",
-        condition: "Enemies with >50% HP",
-        sourceKey: "diluc",
-        maxStack: 1,
-        stats: {
-          dmg: 15,
-        },
-      }) : null
+      document: [{ text: <span>	Diluc deals 15% more DMG to enemies whose HP is above 50%.</span> }, {
+        conditional: (tlvl, c, a) => c >= 1 && {
+          type: "character",
+          conditionalKey: "Enemy50",
+          condition: "Enemies with >50% HP",
+          sourceKey: "diluc",
+          maxStack: 1,
+          stats: {
+            dmg: 15,
+          },
+        }
+      }],
     },
     constellation2: {
       name: "Searing Ember",
@@ -239,21 +245,23 @@ let char = {
           When Diluc takes DMG, his ATK increases by 10%, and his ATK SPD increases by 5%. Last for 10s.
           This effect can stack up to 3 times and can only occur once every 1.5s.
       </span>
+      }, {
+        conditional: (tlvl, c, a) => c >= 2 && {
+          type: "character",
+          conditionalKey: "TakeDMG",
+          condition: "Take DMG",
+          sourceKey: "diluc",
+          maxStack: 3,
+          stats: {
+            atk_: 10,
+            atk_spd: 5
+          },
+          fields: [{
+            text: "Duration",
+            value: "10s",
+          }]
+        }
       }],
-      conditional: (tlvl, c, a) => c >= 2 ? ({
-        type: "character",
-        condition: "Take DMG",
-        sourceKey: "diluc",
-        maxStack: 3,
-        stats: {
-          atk_: 10,
-          atk_spd: 5
-        },
-        fields: [{
-          text: "Duration",
-          value: "10s",
-        }]
-      }) : null
     },
     constellation3: {
       name: "Fire and Steel",

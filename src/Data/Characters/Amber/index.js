@@ -175,25 +175,27 @@ let char = {
         }, {
           text: "Energy Cost",
           value: 40,
-        }]
+        },]
+      }, {
+        conditional: (tlvl, c) => c >= 6 && {
+          type: "character",
+          conditionalKey: "WildFire",
+          condition: "Wildfire",
+          sourceKey: "amber",
+          maxStack: 1,
+          stats: {
+            atk_: 15,
+            move_spd: 15
+          },
+          fields: [{
+            text: "Duration",
+            value: "10s",
+          }]
+        }
       }],
       stats: (c, a) => a >= 1 ? ({
         burst_crit_rate: 10
       }) : null,
-      conditional: (tlvl, c) => c >= 6 ? ({
-        type: "character",
-        condition: "Wildfire",
-        sourceKey: "amber",
-        maxStack: 1,
-        stats: {
-          atk_: 15,
-          move_spd: 15
-        },
-        fields: [{
-          text: "Duration",
-          value: "10s",
-        }]
-      }) : null
     },
     passive1: {
       name: "Every Arrow Finds Its Target",
@@ -203,20 +205,22 @@ let char = {
     passive2: {
       name: "Precise Shot",
       img: passive2,
-      document: [{ text: <span>Aimed Shot hits on weak spots increase ATK by 15% for 10s.</span> }],
-      conditional: (tlvl, c, a) => a >= 4 ? ({
-        type: "character",
-        condition: "Precise Shot",
-        sourceKey: "amber",
-        maxStack: 1,
-        stats: {
-          atk_: 15,
-        },
-        fields: [{
-          text: "Duration",
-          value: "10s",
-        }]
-      }) : null
+      document: [{ text: <span>Aimed Shot hits on weak spots increase ATK by 15% for 10s.</span> }, {
+        conditional: (tlvl, c, a) => a >= 4 && {
+          type: "character",
+          conditionalKey: "PreciseShot",
+          condition: "Precise Shot",
+          sourceKey: "amber",
+          maxStack: 1,
+          stats: {
+            atk_: 15,
+          },
+          fields: [{
+            text: "Duration",
+            value: "10s",
+          }]
+        }
+      }],
     },
     passive3: {
       name: "Gliding Champion",

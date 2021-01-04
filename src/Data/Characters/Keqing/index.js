@@ -74,18 +74,18 @@ let char = {
         ({
           text: `${i + (i < 4 ? 1 : 0)}-Hit DMG`,
           basicVal: (tlvl) => percentArr[tlvl] + "%",
-          finalVal: (tlvl, stats, i) => (percentArr[tlvl] / 100) * (i ? stats.electro_norm_atk_avg_dmg : stats.norm_atk_avg_dmg)
+          finalVal: (tlvl, stats, c) => (percentArr[tlvl] / 100) * (c.autoInfused ? stats.electro_norm_atk_avg_dmg : stats.norm_atk_avg_dmg)
         }))
       }, {
         text: <span><strong>Charged Attack</strong> Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.</span>,
         fields: [{
           text: `1-Hit DMG`,
           basicVal: (tlvl) => charged_1[tlvl] + "%",
-          finalVal: (tlvl, stats, i) => (charged_1[tlvl] / 100) * (i ? stats.electro_char_atk_avg_dmg : stats.char_atk_avg_dmg)
+          finalVal: (tlvl, stats, c) => (charged_1[tlvl] / 100) * (c.autoInfused ? stats.electro_char_atk_avg_dmg : stats.char_atk_avg_dmg)
         }, {
           text: `2-Hit DMG`,
           basicVal: (tlvl) => charged_2[tlvl] + "%",
-          finalVal: (tlvl, stats, i) => (charged_2[tlvl] / 100) * (i ? stats.electro_char_atk_avg_dmg : stats.char_atk_avg_dmg)
+          finalVal: (tlvl, stats, c) => (charged_2[tlvl] / 100) * (c.autoInfused ? stats.electro_char_atk_avg_dmg : stats.char_atk_avg_dmg)
         }, {
           text: `Stamina Cost`,
           value: `25`,
@@ -95,15 +95,15 @@ let char = {
         fields: [{
           text: `Plunge DMG`,
           basicVal: (tlvl) => plunge_dmg[tlvl] + "%",
-          finalVal: (tlvl, stats, i) => (plunge_dmg[tlvl] / 100) * (i ? stats.electro_ele_avg_dmg : stats.phy_avg_dmg)
+          finalVal: (tlvl, stats, c) => (plunge_dmg[tlvl] / 100) * (c.autoInfused ? stats.electro_ele_avg_dmg : stats.phy_avg_dmg)
         }, {
           text: `Low Plunge DMG`,
           basicVal: (tlvl) => plunge_dng_low[tlvl] + "%",
-          finalVal: (tlvl, stats, i) => (plunge_dng_low[tlvl] / 100) * (i ? stats.electro_ele_avg_dmg : stats.phy_avg_dmg)
+          finalVal: (tlvl, stats, c) => (plunge_dng_low[tlvl] / 100) * (c.autoInfused ? stats.electro_ele_avg_dmg : stats.phy_avg_dmg)
         }, {
           text: `High Plunge DMG`,
           basicVal: (tlvl) => plunge_dmg_high[tlvl] + "%",
-          finalVal: (tlvl, stats, i) => (plunge_dmg_high[tlvl] / 100) * (i ? stats.electro_ele_avg_dmg : stats.phy_avg_dmg)
+          finalVal: (tlvl, stats, c) => (plunge_dmg_high[tlvl] / 100) * (c.autoInfused ? stats.electro_ele_avg_dmg : stats.phy_avg_dmg)
         }]
       }],
     },
@@ -175,21 +175,23 @@ let char = {
           text: "Energy Cost",
           value: 60,
         }]
+      }, {
+        conditional: (tlvl, c, a) => a >= 4 && {
+          type: "character",
+          conditionalKey: "AristocraticDignity",
+          condition: "Aristocratic Dignity",
+          sourceKey: "keqing",
+          maxStack: 1,
+          stats: {
+            crit_rate: 15,
+            ener_rech: 15,
+          },
+          fields: [{
+            text: "Duration",
+            value: "8s",
+          }]
+        }
       }],
-      conditional: (tlvl, c, a) => a >= 4 ? ({
-        type: "character",
-        condition: "Aristocratic Dignity",
-        sourceKey: "keqing",
-        maxStack: 1,
-        stats: {
-          crit_rate: 15,
-          ener_rech: 15,
-        },
-        fields: [{
-          text: "Duration",
-          value: "8s",
-        }]
-      }) : null
     },
     passive1: {
       name: "Thundering Penance",
@@ -224,20 +226,22 @@ let char = {
     constellation4: {
       name: "Attunement",
       img: c4,
-      document: [{ text: <span>For 10s after Keqing triggers an <span className="text-electro">Electro-related Elemental Reaction</span>, her ATK is increased by 25%.</span> }],
-      conditional: (tlvl, c, a) => c >= 4 ? ({
-        type: "character",
-        condition: "Trigger an Electro-related Elemental Reaction",
-        sourceKey: "keqing",
-        maxStack: 1,
-        stats: {
-          atk_: 25,
-        },
-        fields: [{
-          text: "Duration",
-          value: "10s",
-        }]
-      }) : null
+      document: [{ text: <span>For 10s after Keqing triggers an <span className="text-electro">Electro-related Elemental Reaction</span>, her ATK is increased by 25%.</span> }, {
+        conditional: (tlvl, c, a) => c >= 4 && {
+          type: "character",
+          conditionalKey: "Trigger",
+          condition: "Trigger an Electro-related Elemental Reaction",
+          sourceKey: "keqing",
+          maxStack: 1,
+          stats: {
+            atk_: 25,
+          },
+          fields: [{
+            text: "Duration",
+            value: "10s",
+          }]
+        }
+      }],
     },
     constellation5: {
       name: "Beckoning Stars",
@@ -247,20 +251,22 @@ let char = {
     constellation6: {
       name: "Tenacious Star",
       img: c6,
-      document: [{ text: <span>When initiating a Normal Attack, a Charged Attack, Elemental Skill or Elemental Burst, Keqing gains a 6% <span className="text-electro">Electro DMG Bonus</span> for 8s. Effects triggered by Normal Attacks, Charged Attacks, Elemental Skills, and Elemental Bursts are considered independent entities.</span> }],
-      conditional: (tlvl, c, a) => c >= 6 ? ({
-        type: "character",
-        condition: "Initiating Normal/Charged Attack, Skill or Burst",
-        sourceKey: "keqing",
-        maxStack: 1,
-        stats: {
-          electro_ele_dmg: 6,
-        },
-        fields: [{
-          text: "Duration",
-          value: "8s",
-        }]
-      }) : null
+      document: [{ text: <span>When initiating a Normal Attack, a Charged Attack, Elemental Skill or Elemental Burst, Keqing gains a 6% <span className="text-electro">Electro DMG Bonus</span> for 8s. Effects triggered by Normal Attacks, Charged Attacks, Elemental Skills, and Elemental Bursts are considered independent entities.</span> }, {
+        conditional: (tlvl, c, a) => c >= 6 && {
+          type: "character",
+          conditionalKey: "Initating",
+          condition: "Initiating Normal/Charged Attack, Skill or Burst",
+          sourceKey: "keqing",
+          maxStack: 1,
+          stats: {
+            electro_ele_dmg: 6,
+          },
+          fields: [{
+            text: "Duration",
+            value: "8s",
+          }]
+        }
+      }],
     },
   },
 };

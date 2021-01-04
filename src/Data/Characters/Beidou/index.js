@@ -67,25 +67,24 @@ let char = {
     auto: {
       name: "Oceanborne",
       img: normal,
-      infusable: true,
       document: [{
         text: <span><strong>Normal Attack</strong> Perform up to 5 successive strikes.</span>,
         fields: hitPercent.map((percentArr, i) =>
         ({
           text: `${i + 1}-Hit DMG`,
           basicVal: (tlvl) => percentArr[tlvl] + "%",
-          finalVal: (tlvl, stats, i) => (percentArr[tlvl] / 100) * (i ? stats.electro_norm_atk_avg_dmg : stats.norm_atk_avg_dmg)
+          finalVal: (tlvl, stats) => (percentArr[tlvl] / 100) * stats.norm_atk_avg_dmg
         }))
       }, {
         text: <span><strong>Charged Attack</strong> Drains Stamina over time to perform continuous slashes. At end of the sequence, perform a more powerful slash.</span>,
         fields: [{
           text: `Spinning DMG`,
           basicVal: (tlvl) => charged_atk_spinnning[tlvl] + "%",
-          finalVal: (tlvl, stats, i) => (charged_atk_spinnning[tlvl] / 100) * (i ? stats.electro_char_atk_avg_dmg : stats.char_atk_avg_dmg)
+          finalVal: (tlvl, stats) => (charged_atk_spinnning[tlvl] / 100) * stats.char_atk_avg_dmg
         }, {
           text: `Spinning Final DMG`,
           basicVal: (tlvl) => charged_atk_final[tlvl] + "%",
-          finalVal: (tlvl, stats, i) => (charged_atk_final[tlvl] / 100) * (i ? stats.electro_char_atk_avg_dmg : stats.char_atk_avg_dmg)
+          finalVal: (tlvl, stats) => (charged_atk_final[tlvl] / 100) * stats.char_atk_avg_dmg
         }, {
           text: `Stamina Cost`,
           value: `40/s`,
@@ -98,15 +97,15 @@ let char = {
         fields: [{
           text: `Plunge DMG`,
           basicVal: (tlvl) => plunge_dmg[tlvl] + "%",
-          finalVal: (tlvl, stats, i) => (plunge_dmg[tlvl] / 100) * (i ? stats.electro_ele_avg_dmg : stats.phy_avg_dmg)
+          finalVal: (tlvl, stats) => (plunge_dmg[tlvl] / 100) * stats.phy_avg_dmg
         }, {
           text: `Low Plunge DMG`,
           basicVal: (tlvl) => plunge_dng_low[tlvl] + "%",
-          finalVal: (tlvl, stats, i) => (plunge_dng_low[tlvl] / 100) * (i ? stats.electro_ele_avg_dmg : stats.phy_avg_dmg)
+          finalVal: (tlvl, stats) => (plunge_dng_low[tlvl] / 100) * stats.phy_avg_dmg
         }, {
           text: `High Plunge DMG`,
           basicVal: (tlvl) => plunge_dmg_high[tlvl] + "%",
-          finalVal: (tlvl, stats, i) => (plunge_dmg_high[tlvl] / 100) * (i ? stats.electro_ele_avg_dmg : stats.phy_avg_dmg)
+          finalVal: (tlvl, stats) => (plunge_dmg_high[tlvl] / 100) * stats.phy_avg_dmg
         }]
       }],
     },
@@ -144,24 +143,26 @@ let char = {
           text: "CD",
           value: "7.5s",
         }]
+      }, {
+        conditional: (tlvl, c, a) => a >= 4 && {
+          type: "character",
+          conditionalKey: "LightningStorm",
+          condition: "Lightning Storm",
+          sourceKey: "beidou",
+          maxStack: 1,
+          stats: {
+            norm_atk_dmg: 15,
+            char_atk_dmg: 15,
+            atk_spd: 15,
+          },
+          fields: [{
+            text: "Duration",
+            value: "10s",
+          }, {
+            text: "Reduced delay before Charged Attacks",
+          }]
+        }
       }],
-      conditional: (tlvl, c, a) => a >= 4 ? ({
-        type: "character",
-        condition: "Lightning Storm",
-        sourceKey: "beidou",
-        maxStack: 1,
-        stats: {
-          norm_atk_dmg: 15,
-          char_atk_dmg: 15,
-          atk_spd: 15,
-        },
-        fields: [{
-          text: "Duration",
-          value: "10s",
-        }, {
-          text: "Reduced delay before Charged Attacks",
-        }]
-      }) : null
     },
     burst: {
       name: "Stormbreaker",

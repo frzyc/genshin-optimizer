@@ -130,17 +130,31 @@ let char = {
           text: "CD",
           value: "32s" + (c >= 2 ? " -15%" : ""),
         })]
-      }],
-      //TODO party conditional
-      conditional: (tlvl, c, a) => a >= 1 ? ({
-        type: "character",
-        condition: "Glorious Season",
-        sourceKey: "barbara",
-        maxStack: 1,
-        stats: {
-          stamina_dec: 12,
+      }, {
+        //TODO party conditional
+        conditional: (tlvl, c, a) => a >= 1 && {
+          type: "character",
+          conditionalKey: "GloriousSeason",
+          condition: "Glorious Season",
+          sourceKey: "barbara",
+          maxStack: 1,
+          stats: {
+            stamina_dec: 12,
+          }
         }
-      }) : null
+      }, {
+        conditional: (tlvl, c, a) => c >= 2 && {
+          type: "character",
+          conditionalKey: "VitalityBurst",
+          condition: "Vitality Burst",
+          sourceKey: "barbara",
+          maxStack: 1,
+          stats: {
+            hydro_ele_dmg: 15,
+          }
+        }
+      }],
+
     },
     burst: {
       name: "Shining Miracle",
@@ -153,10 +167,10 @@ let char = {
           finalVal: (tlvl, s) => (shiningMiracle.hp[tlvl] / 100) * s.hp + shiningMiracle.flat[tlvl],
         }, {
           text: "CD",
-          value: "15s",
+          value: "20s",
         }, {
           text: "Energy Cost",
-          value: 60,
+          value: 80,
         }]
       }],
     },
