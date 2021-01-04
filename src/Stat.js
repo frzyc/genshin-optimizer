@@ -16,9 +16,10 @@ export default class Stat {
     return name;
   }
   static getStatUnit = (key, defVal = "") =>
-    StatData[key]?.unit || defVal
+    StatData[key]?.unit === "multi" ? defVal : (StatData[key]?.unit || defVal)
+
   static fixedUnit = (key) => {
-    if (key === "crit_multi") return 3
+    if (StatData[key]?.unit === "multi") return 3
     let unit = Stat.getStatUnit(key)
     return unit === "%" ? 1 : 0
   }
@@ -60,6 +61,10 @@ const StatData = {
   char_atk_dmg: { name: "Charged Attack DMG", unit: "%" },
   norm_atk_crit_rate: { name: "Nomral Attack CRIT Rate", unit: "%" },
   char_atk_crit_rate: { name: "Charged Attack CRIT Rate", unit: "%" },
+  normal_atk_crit_multi: { name: "Normal Attack Crit Multiplier", unit: "multi" },
+  char_atk_crit_multi: { name: "Charged Attack Crit Multiplier", unit: "multi" },
+  norm_atk_bonus_dmg: { name: "Normal Attack Bonus DMG Muitiplier", unit: "multi" },
+  char_atk_bonus_dmg: { name: "Charged Attack Bonus DMG Muitiplier", unit: "multi" },
   norm_atk_avg_dmg: { name: "Normal Attack Avg. DMG" },
   char_atk_avg_dmg: { name: "Charged Attack Avg. DMG" },
   //skill
@@ -67,12 +72,16 @@ const StatData = {
   burst_dmg: { name: "Ele. Burst DMG", unit: "%" },
   skill_crit_rate: { name: "Ele. Skill CRIT Rate", unit: "%" },
   burst_crit_rate: { name: "Ele. Burst CRIT Rate", unit: "%" },
+  skill_crit_multi: { name: "Ele. Skill Crit Multiplier", unit: "multi" },
+  burst_crit_multi: { name: "Ele. Burst Crit Multiplier", unit: "multi" },
+  skill_bonus_dmg: { name: "Ele. Skill Bonus DMG Muitiplier", unit: "multi" },
+  burst_bonus_dmg: { name: "Ele. Burst Bonus DMG Muitiplier", unit: "multi" },
   skill_cd_red: { name: "Ele. Skill CD Red.", unit: "%" },
   burst_cd_red: { name: "Ele. Burst CD Red.", unit: "%" },
   skill_avg_dmg: { name: "Ele. SKill Avg. DMG" },
   burst_avg_dmg: { name: "Ele. Burst Avg. DMG" },
 
-  crit_multi: { name: "Crit Multiplier" },
+  crit_multi: { name: "Crit Multiplier", unit: "multi" },
   dmg: { name: "All DMG", unit: "%" },//general all damage increase
   move_spd: { name: "Movement SPD", unit: "%" },
   atk_spd: { name: "ATK SPD", unit: "%" },
@@ -89,16 +98,6 @@ const StatData = {
   melt_dmg: { name: "Melt DMG", unit: "%" },
   swirl_dmg: { name: "Swirl DMG", unit: "%" },
 };
-//add Elemental entries to replace ele_dmg, ele_res,ele_avg_dmg
-["ele_dmg", "ele_res", "ele_avg_dmg"].forEach(key => {
-  let obj = StatData[key]
-  Object.entries(ElementalData).forEach(([eleKey, val]) => {
-    let ele_key = `${eleKey}_${key}`
-    StatData[ele_key] = deepClone(obj)
-    StatData[ele_key].name = `${ElementalData[eleKey].name} ${obj.name}`
-  })
-  delete StatData[key]
-})
 
 //formulas for calculating
 const Formulas = {
@@ -141,8 +140,21 @@ const eleFormulas = {
   burst_avg_dmg: (s, ele) => s.atk * s.burst_crit_multi * s[`${ele}_burst_bonus_dmg`],
   burst_bonus_dmg: (s, ele) => (1 + (s[`${ele}_ele_dmg`] + s.burst_dmg + s.dmg) / 100),
 
-  ele_avg_dmg: (s, ele) => s.atk * s.crit_multi * (1 + s[`${ele}_ele_dmg`] / 100) * (1 + s.dmg / 100),
-}
+  ele_avg_dmg: (s, ele) => s.atk * s.crit_multi * (1 + s[`${ele}_ele_dmg`] / 100) * (1 + s.dmg / 100),//TODO is this used anywhere?
+};
+
+//add Elemental entries to stats. we use the keys from eleFormulas before it gets expanded to elementals
+["ele_dmg", "ele_res", ...Object.keys(eleFormulas)].forEach(key => {
+  let obj = StatData[key]
+  Object.keys(ElementalData).forEach(eleKey => {
+    let ele_key = `${eleKey}_${key}`
+    StatData[ele_key] = deepClone(obj)
+    StatData[ele_key].name = `${ElementalData[eleKey].name} ${obj.name}`
+  })
+  // delete StatData[key]
+})
+
+//expant the eleFormulas to elementals
 Object.entries(eleFormulas).forEach(([key, func]) =>
   Object.keys(ElementalData).forEach(eleKey =>
     Object.defineProperty(Formulas, `${eleKey}_${key}`, {

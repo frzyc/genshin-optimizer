@@ -109,6 +109,7 @@ export default class Character {
     if (!conditionalNum) return defVal
     return conditional?.fields || defVal
   }
+  static isAutoElemental = (charKey, defVal = false) => this.getWeaponTypeKey(charKey) === "catalyst" || defVal
   static isAutoInfusable = (charKey, defVal = false) => this.getCDataObj(charKey)?.talent?.auto?.infusable || defVal
 
 

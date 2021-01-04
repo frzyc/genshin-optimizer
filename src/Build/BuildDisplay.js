@@ -56,7 +56,20 @@ export default class BuildDisplay extends React.Component {
   static artifactsSlotsToSelectMainStats = ["sands", "goblet", "circlet"]
   forceUpdateBuildDisplay = () => this.forceUpdate()
 
-  statsDisplayKeys = () => ["hp", "atk", "def", "ele_mas", "crit_rate", "crit_dmg", "heal_bonu", "ener_rech", "phy_dmg", "ele_dmg", "phy_avg_dmg", "ele_avg_dmg", "norm_atk_avg_dmg", "char_atk_avg_dmg", "skill_avg_dmg", "burst_avg_dmg"]
+  statsDisplayKeys = (characterKey) => {
+    let keys = ["hp", "atk", "def", "ele_mas", "crit_rate", "crit_dmg", "heal_bonu", "ener_rech", "ele_dmg", "skill_avg_dmg", "burst_avg_dmg"]
+    let eleKey = Character.getElementalKey(characterKey)
+    let isAutoElemental = Character.isAutoElemental(characterKey)
+    let isAutoInfusable = Character.isAutoInfusable(characterKey)
+    //we need to figure out if the character has: normal phy auto, elemental auto, infusable auto(both normal and phy)
+    if (isAutoElemental || isAutoInfusable) //add elemental auto + charged
+      keys.push(`${eleKey}_norm_atk_avg_dmg`, `${eleKey}_char_atk_avg_dmg`)
+
+    if (!isAutoElemental) //add phy auto + charged + physical 
+      keys.push("norm_atk_avg_dmg", "char_atk_avg_dmg", "phy_dmg", "phy_avg_dmg")
+
+    return keys.map(key => (["ele_dmg", "skill_avg_dmg", "burst_avg_dmg"].includes(key)) ? `${eleKey}_${key}` : key)
+  }
 
   splitArtifacts = () => {
     if (!this.state.selectedCharacterId) return {};
@@ -158,6 +171,7 @@ export default class BuildDisplay extends React.Component {
   }
 
   BuildGeneratorEditorCard = (props) => {
+    let { statsDisplayKeys } = props
     let charlist = CharacterDatabase.getCharacterDatabase();
     let selectedCharacter = CharacterDatabase.getCharacter(this.state.selectedCharacterId)
     let characterName = selectedCharacter ? selectedCharacter.name : "Character Name"
@@ -309,13 +323,11 @@ export default class BuildDisplay extends React.Component {
             {/* Dropdown to select sorting value */}
             <ButtonGroup>
               <DropdownButton disabled={!this.state.selectedCharacterId} title={`Sort by ${Stat.getStatNameWithPercent(this.state.buildFilterKey)}`} as={ButtonGroup}>
-                {this.state.selectedCharacterId && this.statsDisplayKeys().map(key => {
-                  if (key === "ele_dmg" || key === "ele_avg_dmg")//add character specific ele_dmg and ele_avg_dmg
-                    key = `${Character.getElementalKey(selectedCharacter.characterKey)}_${key}`
-                  return <Dropdown.Item key={key} onClick={() => this.setState({ buildFilterKey: key })}>
+                {this.state.selectedCharacterId && statsDisplayKeys.map(key =>
+                  <Dropdown.Item key={key} onClick={() => this.setState({ buildFilterKey: key })}>
                     {Stat.getStatNameWithPercent(key)}
                   </Dropdown.Item>
-                })}
+                )}
               </DropdownButton>
               <Button onClick={() => this.setState(state => ({ asending: !state.asending }))}>
                 <FontAwesomeIcon icon={this.state.asending ? faSortAmountDownAlt : faSortAmountUp} className="fa-fw" />
@@ -327,7 +339,7 @@ export default class BuildDisplay extends React.Component {
     </Card>
   }
   ArtifactDisplayItem = (props) => {
-    let { build, character } = props
+    let { build, statsDisplayKeys } = props
     return (<div>
       <ListGroup.Item
         variant={props.index % 2 ? "customdark" : "customdarker"} className="text-white" action
@@ -341,14 +353,11 @@ export default class BuildDisplay extends React.Component {
           )}</Col>
         </Row>
         <Row>
-          {this.statsDisplayKeys().map(key => {
-            if (key === "ele_dmg" || key === "ele_avg_dmg")//add character specific ele_dmg and ele_avg_dmg
-              key = `${Character.getElementalKey(character.characterKey)}_${key}`
-            let unit = Stat.getStatUnit(key)
-            return <Col className="text-nowrap" key={key} xs={12} sm={6} md={4} lg={3}>
-              <span>{Stat.getStatName(key)}: <span className="text-warning">{build.finalStats[key]?.toFixed(Stat.fixedUnit(key))}{unit}</span></span>
+          {statsDisplayKeys.map(key =>
+            <Col className="text-nowrap" key={key} xs={12} sm={6} md={4} lg={3}>
+              <span>{Stat.getStatName(key)}: <span className="text-warning">{build.finalStats[key]?.toFixed(Stat.fixedUnit(key))}{Stat.getStatUnit(key)}</span></span>
             </Col>
-          })}
+          )}
         </Row>
       </ListGroup.Item>
     </div>)
@@ -373,13 +382,17 @@ export default class BuildDisplay extends React.Component {
   }
   render() {
     let selectedCharacter = CharacterDatabase.getCharacter(this.state.selectedCharacterId)
-    let characterName = selectedCharacter ? selectedCharacter.name : "Character Name"
+    let characterKey = selectedCharacter?.characterKey
+    let characterName = Character.getName(characterKey, "Character Name")
+    let statsDisplayKeys = []
+    if (characterKey)
+      statsDisplayKeys = this.statsDisplayKeys(characterKey)
     return (<Container>
       <this.BuildModal build={this.state.modalBuild} character={selectedCharacter} />
       <Row className="mt-2 mb-2">
         <Col>
           {/* Build Generator Editor */}
-          <this.BuildGeneratorEditorCard />
+          <this.BuildGeneratorEditorCard statsDisplayKeys={statsDisplayKeys} />
         </Col>
       </Row>
       <Row className="mb-2">
@@ -389,7 +402,7 @@ export default class BuildDisplay extends React.Component {
             {/* Build List */}
             <ListGroup>
               {this.state.builds.map((build, index) =>
-                (index < this.state.maxBuildsToShow) && <this.ArtifactDisplayItem build={build} character={selectedCharacter} index={index} key={Object.values(build.artifactIds).join("_")} />
+                (index < this.state.maxBuildsToShow) && <this.ArtifactDisplayItem build={build} character={selectedCharacter} index={index} key={Object.values(build.artifactIds).join("_")} statsDisplayKeys={statsDisplayKeys} />
               )}
             </ListGroup>
           </Card>
