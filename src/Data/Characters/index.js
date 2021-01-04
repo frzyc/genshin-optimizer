@@ -1,3 +1,4 @@
+import albedo from './Albedo'
 import amber from './Amber'
 import barbara from './Barbara'
 import beidou from './Beidou'
@@ -26,6 +27,7 @@ import xingqiu from './Xingqiu'
 import xinyan from './Xinyan'
 import zhongli from './Zhongli'
 let characters = {
+  albedo,
   amber,
   barbara,
   beidou,
