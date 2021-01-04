@@ -75,6 +75,14 @@ let char = {
           basicVal: (tlvl) => percentArr[tlvl] + "%",
           finalVal: (tlvl, stats) => (percentArr[tlvl] / 100) * stats.norm_atk_avg_dmg
         }))
+      }, (c, a) => c >= 4 && {
+        text: <span><strong>Stunning Revenge:</strong> Within 10s of taking DMG, Beidou's Normal Attacks gain 20% additional <span className="text-electro">Electro DMG</span>.</span>,
+        fields: hitPercent.map((percentArr, i) =>
+        ({
+          text: `${i + 1}-Hit Additional Electro DMG`,
+          basicVal: (tlvl) => (percentArr[tlvl] * 0.2)?.toFixed(2) + "%",
+          finalVal: (tlvl, stats) => (percentArr[tlvl] * 0.2 / 100) * stats.electro_norm_atk_avg_dmg
+        }))
       }, {
         text: <span><strong>Charged Attack</strong> Drains Stamina over time to perform continuous slashes. At end of the sequence, perform a more powerful slash.</span>,
         fields: [{
@@ -231,7 +239,7 @@ let char = {
     constellation1: {
       name: "Sea Beast's Scourge",
       img: c1,
-      document: [{ text: (s) => <span>When <b>Stormbreaker</b> is used: Creates a shield that absorbs up to 16% of Beidou's Max HP{WeaponPercent(16, s.hp)} for 15s. This shield absorbs <span className="text-electro">Electro DMG</span> 250% more effectively.</span> }],
+      document: [{ text: (tlvl, s) => <span>When <b>Stormbreaker</b> is used: Creates a shield that absorbs up to 16% of Beidou's Max HP{WeaponPercent(16, s.hp)} for 15s. This shield absorbs <span className="text-electro">Electro DMG</span> 250% more effectively.</span> }],
     },
     constellation2: {
       name: "Upon the Turbulent Sea, the Thunder Arises",
@@ -246,7 +254,7 @@ let char = {
     constellation4: {
       name: "Stunning Revenge",
       img: c4,
-      document: [{ text: (s) => <span>Within 10s of taking DMG, Beidou's Normal Attacks gain 20% additional <span className="text-electro">Electro DMG</span>{WeaponPercent(20, s.atk)}.</span> }],
+      document: [{ text: <span>Within 10s of taking DMG, Beidou's Normal Attacks gain 20% additional <span className="text-electro">Electro DMG</span>.</span> }],
     },
     constellation5: {
       name: "Crimson Tidewalker",

@@ -62,7 +62,7 @@ let char = {
   },
   talent: {
     auto: {
-      name: "TEMPLATE",
+      name: "Tempered Sword",
       img: normal,
       infusable: true,
       document: [{

@@ -100,14 +100,15 @@ export default class Character {
     return cond || defVal
   }
   static getTalentConditionalStats = (conditional, conditionalNum, defVal = null) => {
-    if (!conditionalNum || !conditional || !conditional.stats) return defVal
-    let [stats, stacks] = ConditionalsUtil.getConditionalStats(conditional, conditionalNum)
+    if (!conditionalNum || !conditional) return defVal
+    let [stats = {}, stacks] = ConditionalsUtil.getConditionalProp(conditional, "stats", conditionalNum)
     if (!stacks) return defVal
     return Object.fromEntries(Object.entries(stats).map(([key, val]) => key === "formulaOverrides" ? [key, val] : [key, val * stacks]))
   }
   static getTalentConditionalFields = (conditional, conditionalNum, defVal = []) => {
-    if (!conditionalNum) return defVal
-    return conditional?.fields || defVal
+    if (!conditionalNum || !conditional) return defVal
+    let fields = ConditionalsUtil.getConditionalProp(conditional, "fields", conditionalNum)[0]
+    return fields || defVal
   }
   static isAutoElemental = (charKey, defVal = false) => this.getWeaponTypeKey(charKey) === "catalyst" || defVal
   static isAutoInfusable = (charKey, defVal = false) => this.getCDataObj(charKey)?.talent?.auto?.infusable || defVal

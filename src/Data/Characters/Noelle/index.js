@@ -207,7 +207,7 @@ let char = {
       name: "Devotion",
       img: passive1,
       document: [{
-        text: (stats) => <span>
+        text: (tlvl, stats) => <span>
           When Noelle is in the party but not on the field, this ability triggers automatically when your active character's HP falls below 30%:
           Creates a shield for your active character that lasts for 20s and absorbs DMG equal to 400% of Noelle's DEF{WeaponPercent(400, stats.def, 0)}. This effect can only occur once every 60s.
         </span>
@@ -252,7 +252,7 @@ let char = {
     constellation4: {
       name: "To Be Cleaned",
       img: c4,
-      document: [{ text: (stats) => <span>When <b>Breastplate</b> ends or shatters, it deals 400% of ATK{WeaponPercent(400, stats.atk)} as <span className="text-geo">Geo DMG</span> to surrounding enemies.</span> }]
+      document: [{ text: (tlvl, stats) => <span>When <b>Breastplate</b> ends or shatters, it deals 400% of ATK{WeaponPercent(400, stats.atk)} as <span className="text-geo">Geo DMG</span> to surrounding enemies.</span> }]
     },
     constellation5: {
       name: "Favonius Sweeper Master",
@@ -262,7 +262,7 @@ let char = {
     constellation6: {
       name: "Must Be Spotless",
       img: c6,
-      document: [{ text: (stats) => <span><b>Sweeping Time</b> increases ATK by an additional 50% of Noelle's DEF{WeaponPercent(20, stats.def)}. For the skill's duration, adds 1s duration time per opponent defeated, up to 10s.</span> }]
+      document: [{ text: (tlvl, stats) => <span><b>Sweeping Time</b> increases ATK by an additional 50% of Noelle's DEF{WeaponPercent(20, stats.def)}. For the skill's duration, adds 1s duration time per opponent defeated, up to 10s.</span> }]
     }
   }
 };

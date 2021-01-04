@@ -151,7 +151,7 @@ export default class Artifact {
     if (!conditionalNum) return defVal
     let conditional = this.getArtifactSetEffectConditional(setKey, setNumKey)
     if (!conditional) return defVal
-    let [stats, stacks] = ConditionalsUtil.getConditionalStats(conditional, conditionalNum)
+    let [stats, stacks] = ConditionalsUtil.getConditionalProp(conditional, "stats", conditionalNum)
     if (!stacks) return defVal
     return Object.fromEntries(Object.entries(stats).map(([key, val]) => [key, val * stacks]))
   }

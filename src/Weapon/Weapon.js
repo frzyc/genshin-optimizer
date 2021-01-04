@@ -31,7 +31,7 @@ export default class Weapon {
   static getWeaponConditionalStat = (weaponKey, refineIndex, conditionalNum, defVal = null) => {
     let conditional = this.getWeaponConditional(weaponKey)
     if (!conditional || !conditionalNum) return defVal
-    let [stats, stacks] = ConditionalsUtil.getConditionalStats(conditional, conditionalNum)
+    let [stats, stacks] = ConditionalsUtil.getConditionalProp(conditional, "stats", conditionalNum)
     if (!stacks) return defVal
     return Object.fromEntries(Object.entries(stats(refineIndex)).map(([key, val]) => [key, val * stacks]))
   }

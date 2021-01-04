@@ -145,9 +145,13 @@ function SkillDisplayCard(props) {
         </Col>
       </Row>
       {Character.getTalentDocument(characterKey, talentKey).map((section, i) => {
+        if (typeof section === "function")
+          section = section(constellation, ascension)
+        if (!section) return null
+
         let talentText = section.text
         if (typeof talentText === "function")
-          talentText = talentText(build.finalStats)
+          talentText = talentText(talentLvlKey, build.finalStats, character)
         let fields = section.fields || []
 
         let conditional = section.conditional;
@@ -162,7 +166,7 @@ function SkillDisplayCard(props) {
             conditionalStats = Character.getTalentConditionalStats(conditional, conditionalNum, {})
             //filter out formulaOverrides from rendering
             conditionalStats = Object.fromEntries(Object.entries(conditionalStats).filter(([key, _]) => key !== "formulaOverrides"))
-            conditionalFields = Character.getTalentConditionalFields(conditional, conditionalNum)
+            conditionalFields = Character.getTalentConditionalFields(conditional, conditionalNum, [])
           }
           let setConditional = (conditionalNum) => setState(state =>
             ({ talentConditionals: ConditionalsUtil.setConditional(state.talentConditionals, { srcKey: talentKey, srcKey2: conditional.conditionalKey }, conditionalNum) }))
@@ -184,7 +188,7 @@ function SkillDisplayCard(props) {
                     </div>
                   </ListGroup.Item>
                 )}
-                {conditionalFields.map((condField, i) => <FieldDisplay key={i + (conditionalStats?.length || 0)} index={i + (conditionalStats?.length || 0)} {...{ condField, ...props }} />)}
+                {conditionalFields.map((condField, i) => <FieldDisplay key={i + (conditionalStats?.length || 0)} index={i + (conditionalStats?.length || 0)} {...{ field: condField, talentLvlKey, ascension, ...otherProps }} />)}
               </ListGroup>
             </Card>
           </Col></Row>
@@ -210,7 +214,7 @@ function FieldDisplay(props) {
 
   let fieldText = field.text
   if (typeof fieldText === "function")
-    fieldText = fieldText?.(build.finalStats)
+    fieldText = fieldText?.(talentLvlKey, build.finalStats, character)
 
   let fieldBasic = field.basicVal
   if (typeof fieldBasic === "function")

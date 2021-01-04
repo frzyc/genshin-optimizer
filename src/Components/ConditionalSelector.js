@@ -23,7 +23,7 @@ export default function ConditionalSelector(props) {
 
     //multi conditional
     let text = selectedConditionalNum === 0 ? "Not Active" :
-      (selectedConditional.condition + (selectedConditional.maxStack > 1 ? (`: ${selectedConditionalNum} stack${selectedConditionalNum > 1 ? "s" : ""}`) : ""))
+      (<span>{selectedConditional.condition} {(selectedConditional.maxStack > 1 ? (`: ${selectedConditionalNum} stack${selectedConditionalNum > 1 ? "s" : ""}`) : "")}</span>)
     let badge = <Badge variant={selectedConditionalNum === 0 ? "secondary" : "success"}>{text}</Badge>
     let count = 0;
     return <Dropdown>
@@ -34,8 +34,8 @@ export default function ConditionalSelector(props) {
         <Dropdown.Item onClick={() => setConditional(0)}>
           <span>Not Active</span>
         </Dropdown.Item>
-        {conditional.map(condial =>
-          <React.Fragment key={condial.condition}>{[...Array(condial.maxStack).keys()].map(v => v + 1).map(stack => {
+        {conditional.map((condial, i) =>
+          <React.Fragment key={i}>{[...Array(condial.maxStack).keys()].map(v => v + 1).map(stack => {
             let tempcount = ++count
             return <Dropdown.Item key={tempcount} onClick={() => setConditional(tempcount)}>
               {condial.condition}{selectedConditional.maxStack > 1 ? `: ${stack} stack${stack > 1 ? "s" : ""}` : ""}

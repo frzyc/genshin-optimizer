@@ -24,7 +24,7 @@ export default class ConditionalsUtil {
     }
     return conditionals
   }
-  static getConditionalStats(conditional, conditionalNum, defVal = [{}, 0]) {
+  static getConditionalProp(conditional, fieldName, conditionalNum, defVal = [{}, 0]) {
     if (Array.isArray(conditional)) {
       //multiconditional
       let selectedConditionalNum = conditionalNum
@@ -38,11 +38,11 @@ export default class ConditionalsUtil {
       }
       if (!selectedConditional) return defVal
       let stacks = clamp(selectedConditionalNum, 1, selectedConditional.maxStack)
-      return [selectedConditional.stats, stacks]
+      return [selectedConditional[fieldName], stacks]
     } else {
       //condtional with stacks
       let stacks = clamp(conditionalNum, 1, conditional.maxStack)
-      return [conditional.stats, stacks]
+      return [conditional[fieldName], stacks]
     }
   }
 }

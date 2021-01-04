@@ -80,11 +80,9 @@ let char = {
           basicVal: (tlvl) => fullAimedShot[tlvl] + "%",
           finalVal: (tlvl, stats) => (fullAimedShot[tlvl] / 100) * stats.char_atk_avg_dmg
         }, {
-          text: `Stamina Cost`,
-          value: `40/s`,
-        }, {
-          text: `Max Duration`,
-          value: `5s`,
+          text: <span>Fully-Charged Aimed Shot DMG (<span className="text-pyro">Pyro</span>)</span>,
+          basicVal: (tlvl) => fullAimedShot[tlvl] + "%",
+          finalVal: (tlvl, stats) => (fullAimedShot[tlvl] / 100) * stats.pyro_char_atk_avg_dmg
         }]
       }, {
         text: <span><strong>Plunging Attack</strong> Fires off a shower of arrows in mid-air before falling an striking the ground, dealing AoE DMG upon impact.</span>,
@@ -200,7 +198,7 @@ let char = {
     passive1: {
       name: "Every Arrow Finds Its Target",
       img: passive1,
-      document: [{ text: () => <span>Increases the CRIT Rate of <b>Fiery Rain</b> by 10% and widens its AoE by 30%.</span> }],
+      document: [{ text: <span>Increases the CRIT Rate of <b>Fiery Rain</b> by 10% and widens its AoE by 30%.</span> }],
     },
     passive2: {
       name: "Precise Shot",

@@ -12,38 +12,34 @@ import burst from './Talent_Wind\'s_Grand_Ode.png'
 import passive1 from './Talent_Embrace_of_Winds.png'
 import passive2 from './Talent_Stormeye.png'
 import passive3 from './Talent_Windrider.png'
-//import WeaponPercent from '../../../Components/WeaponPercent'
+import ElementalData from '../../ElementalData'
 
 //AUTO
 
 const hitPercent = [
-  [],
-  [],
-  [],
-  [],
+  [20.38, 22.04, 23.7, 26.07, 27.73, 29.63, 32.23, 34.84, 37.45, 40.29, 43.55, 47.38, 51.21, 55.05, 59.23],//1
+  [44.38, 47.99, 51.6, 56.76, 60.37, 64.5, 70.18, 75.85, 81.53, 87.72, 94.82, 103.16, 111.5, 119.85, 128.95],//2
+  [52.37, 56.64, 60.9, 66.99, 71.25, 76.13, 82.82, 89.52, 96.22, 103.53, 111.9, 121.75, 131.6, 141.45, 152.19],//3
+  [26.06, 28.18, 30.3, 33.33, 35.45, 37.87, 41.21, 44.54, 47.87, 51.51, 55.68, 60.58, 65.48, 70.37, 75.72],//4
+  [50.65, 54.78, 58.9, 64.79, 68.91, 73.63, 80.1, 86.58, 93.06, 100.13, 108.23, 117.75, 127.28, 136.8, 147.19],//5
+  [70.95, 76.73, 82.5, 90.75, 96.53, 103.13, 112.2, 121.28, 130.35, 140.25, 151.59, 164.93, 178.27, 191.61, 206.17],//6
 ]
 
-const charged_atk_spinnning = []
-const charged_atk_final = []
-const plunge_dmg = []
-const plunge_dng_low = []
-const plunge_dmg_high = []
+const aimed = [43.86, 47.43, 51, 56.1, 59.67, 63.75, 69.36, 74.97, 80.58, 86.7, 93.71, 101.96, 110.21, 118.45, 127.45]
+const aimed_full = [124, 133.3, 142.6, 155, 164.3, 173.6, 186, 198.4, 210.8, 223.2, 236.1, 252.96, 269.82, 286.69, 303.55]
+const plunge_dmg = [56.83, 61.45, 66.08, 72.69, 77.31, 82.6, 89.87, 97.14, 104.41, 112.34, 120.27, 128.2, 136.12, 144.05, 151.98]
+const plunge_dng_low = [113.63, 122.88, 132.13, 145.35, 154.59, 165.17, 179.7, 194.23, 208.77, 224.62, 240.48, 256.34, 272.19, 288.05, 303.9]
+const plunge_dmg_high = [141.93, 153.49, 165.04, 181.54, 193.1, 206.3, 224.45, 242.61, 260.76, 280.57, 300.37, 320.18, 339.98, 359.79, 379.59]
 
 //SKILL
-const breastplateStats = {
-  skill_dmg: [],
-  shield_def: [],
-  shield_flat: [],
-  heal_def: [],
-  heal_flat: [],
-  heal_trigger: [],
+const sonnet = {
+  press_dmg: [276, 296.7, 317.4, 345, 365.7, 386.4, 414, 441.6, 469.2, 496.8, 524.4, 552, 586.5, 621, 655.5],
+  hold_dmg: [380, 408.5, 437, 475, 503.5, 532, 570, 608, 646, 684, 722, 760, 807.5, 855, 902.5],
 }
 
 //BURST
-const sweepingTimeStats = {
-  burst_dmg: [],
-  skill_dmg: [],
-  atk_bonu: [],
+const ode = {
+  dot: [37.6, 40.42, 43.24, 47, 49.82, 52.64, 56.4, 60.16, 63.92, 67.68, 71.44, 75.2, 79.9, 84.6, 89.3],
 }
 
 let char = {
@@ -67,37 +63,45 @@ let char = {
   },
   talent: {
     auto: {
-      name: "TEMPLATE",
+      name: "Divine Marksmanship",
       img: normal,
-      normal: {
-        text: <span>TEMPLATE</span>,
+      infusable: false,
+      document: [{
+        text: <span><strong>Normal Attack</strong> Perform up to 6 consecutive shots with a bow. <small><i>Note: the 1st and 4th attack hits twice.</i></small></span>,
         fields: hitPercent.map((percentArr, i) =>
         ({
           text: `${i + 1}-Hit DMG`,
-          basicVal: (tlvl) => percentArr[tlvl] + "%",
-          finalVal: (tlvl, stats) => (percentArr[tlvl] / 100) * stats.norm_atk_avg_dmg
+          basicVal: (tlvl) => percentArr[tlvl] + "%" + ((i === 0 || i === 3) ? " × 2" : ""),
+          finalVal: (tlvl, stats) => (percentArr[tlvl] / 100) * stats.norm_atk_avg_dmg * ((i === 0 || i === 3) ? 2 : 1)
         }))
-      },
-      charged: {
-        text: <span>TEMPLATE</span>,
+      }, {
+        text: <span><strong>Charged Attack</strong> Perform a more precise Aimed Shot with increased DMG. While aiming, favorable winds will accumulate on the arrowhead. A fully charged wind arrow will deal <span className="text-anemo">Anemo DMG</span>.</span>,
         fields: [{
-          text: `Spinning DMG`,
-          basicVal: (tlvl) => charged_atk_spinnning[tlvl] + "%",
-          finalVal: (tlvl, stats) => (charged_atk_spinnning[tlvl] / 100) * stats.char_atk_avg_dmg
+          text: `Aimed Shot DMG`,
+          basicVal: (tlvl) => aimed[tlvl] + "%",
+          finalVal: (tlvl, stats) => (aimed[tlvl] / 100) * stats.char_atk_avg_dmg
         }, {
-          text: `Spinning Final DMG`,
-          basicVal: (tlvl) => charged_atk_final[tlvl] + "%",
-          finalVal: (tlvl, stats) => (charged_atk_final[tlvl] / 100) * stats.char_atk_avg_dmg
+          text: `Fully-Charged Aimed Shot DMG`,
+          basicVal: (tlvl) => aimed_full[tlvl] + "%",
+          finalVal: (tlvl, stats) => (aimed_full[tlvl] / 100) * stats.char_atk_avg_dmg
         }, {
-          text: `Stamina Cost`,
-          value: `40/s`,
+          text: <span>Fully-Charged Aimed Shot DMG (<span className="text-anemo">Anemo</span>)</span>,
+          basicVal: (tlvl) => aimed_full[tlvl] + "%",
+          finalVal: (tlvl, stats) => (aimed_full[tlvl] / 100) * stats.anemo_char_atk_avg_dmg
+        },]
+      }, (c) => c >= 1 && {
+        text: <span><strong>Splitting Gales: </strong> Fires 2 additional split arrows per Aimed Shot</span>,
+        fields: [{
+          text: `Additional Aimed Shot DMG`,
+          basicVal: (tlvl) => (aimed[tlvl] * 0.33)?.toFixed(2) + "%",
+          finalVal: (tlvl, stats) => (aimed[tlvl] * 0.33 / 100) * stats.char_atk_avg_dmg
         }, {
-          text: `Max Duration`,
-          value: `5s`,
+          text: `Additional Full-Charged Aimed Shot DMG`,
+          basicVal: (tlvl) => (aimed_full[tlvl] * 0.33)?.toFixed(2) + "%",
+          finalVal: (tlvl, stats) => (aimed_full[tlvl] * 0.33 / 100) * stats.char_atk_avg_dmg
         }]
-      },
-      plunge: {
-        text: <span>TEMPLATE</span>,
+      }, {
+        text: <span><strong>Plunging Attack</strong> Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.</span>,
         fields: [{
           text: `Plunge DMG`,
           basicVal: (tlvl) => plunge_dmg[tlvl] + "%",
@@ -111,99 +115,173 @@ let char = {
           basicVal: (tlvl) => plunge_dmg_high[tlvl] + "%",
           finalVal: (tlvl, stats) => (plunge_dmg_high[tlvl] / 100) * stats.phy_avg_dmg
         }]
-      }
+      }],
     },
     skill: {
-      name: "TEMPLATE",
+      name: "Skyward Sonnet",
       img: skill,
-      text: <span>TEMPLATE</span>,
-      fields: [{
-        text: "TEMPLATE",
-        basicVal: (tlvl) => breastplateStats.skill_dmg[tlvl] + "%",
-        finalVal: (tlvl, s) => (breastplateStats.skill_dmg[tlvl] / 100) * s.skill_avg_dmg,
-      }, {
-        text: "TEMPLATE",
-        basicVal: (tlvl) => breastplateStats.shield_def[tlvl] + "% DEF + " + breastplateStats.shield_flat[tlvl],
-        finalVal: (tlvl, s) => (breastplateStats.shield_def[tlvl] / 100) * s.def + breastplateStats.shield_flat[tlvl],
-      }, {
-        text: "TEMPLATE",
-        basicVal: (tlvl) => breastplateStats.heal_def[tlvl] + "% DEF + " + breastplateStats.heal_flat[tlvl],
-        finalVal: (tlvl, s) => (breastplateStats.heal_def[tlvl] / 100) * s.def + breastplateStats.heal_flat[tlvl],
-      }, {
-        text: "CD",
-        value: "12s",
-      }, {
-        text: "TEMPLATE",
-        value: (tlvl, s, c, a) => "24s" + a > 4 ? " -1s Every 4 hits" : "",
-      }]
+      document: [{
+        text: <span>
+          <p className="mb-2">
+            O wind upon which all hymns and songs fly, bear these earth-walkers up into the sky!
+          </p>
+          <p className="mb-2">
+            <strong>Press:</strong> Summons a Wind Domain at the opponent's location, dealing AoE Anemo DMG and launching opponents into the air.
+          </p>
+          <p className="mb-2">
+            <strong>Hold:</strong> Summons an even larger Wind Domain with Venti as the epicenter, dealing AoE Anemo DMG and launching affected opponents into the air. After unleashing the Hold version of this ability, Venti rides the wind into the air.
+            Opponents hit by Skyward Sonnet will fall to the ground slowly.
+            Generate 3/4 elemental particles for press/hold when it hit at least 1 target.
+          </p>
+        </span>,
+        fields: [{
+          text: "Press DMG",
+          basicVal: (tlvl) => sonnet.press_dmg[tlvl] + "%",
+          finalVal: (tlvl, s) => (sonnet.press_dmg[tlvl] / 100) * s.anemo_skill_avg_dmg,
+        }, {
+          text: "Press CD",
+          value: "6s",
+        }, {
+          text: "Hold DMG",
+          basicVal: (tlvl) => sonnet.hold_dmg[tlvl] + "%",
+          finalVal: (tlvl, s) => (sonnet.hold_dmg[tlvl] / 100) * s.anemo_skill_avg_dmg,
+        }, {
+          text: "Hold CD",
+          value: "15s",
+        }, (c, a) => a >= 1 && {
+          text: "Upcurrent Duration",
+          value: "20s",
+        }, (c, a) => c >= 2 && {
+          text: <span>Enemy <span className="text-anemo">Anemo RES</span> Decrease</span>,
+          value: "12%",
+        }, (c, a) => c >= 2 && {
+          text: <span>Launched Enemy <span className="text-anemo">Anemo RES</span> Decrease</span>,
+          value: "24%",
+        }, (c, a) => c >= 2 && {
+          text: <span>Launched Enemy Physical RES Decrease</span>,
+          value: "12%",
+        }]
+      }],
     },
     burst: {
-      name: "TEMPLATE",
+      name: "Wind's Grand Ode",
       img: burst,
-      text: <span>TEMPLATE</span>,
-      fields: [{
-        text: "TEMPLATE",
-        basicVal: (tlvl) => sweepingTimeStats.burst_dmg[tlvl] + "%",
-        finalVal: (tlvl, s) => (sweepingTimeStats.burst_dmg[tlvl] / 100) * s.burst_avg_dmg,
-      }, {
-        text: "TEMPLATE",
-        basicVal: (tlvl) => sweepingTimeStats.skill_dmg[tlvl] + "%",
-        finalVal: (tlvl, s) => (sweepingTimeStats.skill_dmg[tlvl] / 100) * s.burst_avg_dmg,
-      }, {
-        text: "TEMPLATE",
-        basicVal: (tlvl, s, constellation) => `${sweepingTimeStats.atk_bonu[tlvl]}%${constellation >= 6 ? " +50%" : ""} DEF`,
-        finalVal: (tlvl, s, constellation) => ((sweepingTimeStats.atk_bonu[tlvl] + (constellation >= 6 ? 50 : 0)) / 100) * s.def,
-      }, {
-        text: "TEMPLATE",
-        value: (tlvl, s, constellation) => "15s" + (constellation >= 6 ? " +1s per kill, up to 10s" : ""),
-      }, {
-        text: "CD",
-        value: "15s",
-      }, {
-        text: "Energy Cost",
-        value: 60,
-      }]
+      document: [{
+        text: <span>
+          <p className="mb-2">
+            Fires off an arrow made of countless coalesced winds, creating a huge Stormeye that sucks in objects and opponents along its path, dealing 18 times <span className="text-anemo">Anemo DMG</span> in 8 seconds.
+          </p>
+          <p className="mb-2">
+            <strong>Elemental Absorption:</strong> If the Stormeye comes into contact with <span className="text-hydro">Hydro</span>/<span className="text-pyro">Pyro</span>/<span className="text-cryo">Cryo</span>/<span className="text-electro">Electro</span> elements, it will deal 50% additional elemental DMG of that type. Elemental Absorption may only occur once per use.
+          </p>
+        </span>,
+        fields: [{
+          text: "DoT",
+          basicVal: (tlvl) => ode.dot[tlvl] + "%",
+          finalVal: (tlvl, s) => (ode.dot[tlvl] / 100) * s.anemo_burst_avg_dmg,
+        }, {
+          text: "Duration",
+          value: "8s",
+        }, {
+          text: "CD",
+          value: "15s",
+        }, {
+          text: "Energy Cost",
+          value: 60,
+        }, (c, a) => a >= 4 && {
+          text: <span>Regen 15 Energy to Venti after effect ends.</span>,
+        }, (c, a) => c >= 6 && {
+          text: <span>Enemy <span className="text-anemo">Anemo RES</span> decrease</span>,
+          value: "20%"
+        }],
+        conditional: (["hydro", "pyro", "cryo", "electro"]).map(eleKey => ({
+          type: "character",
+          conditionalKey: "Absorption",
+          condition: <span><span className={`text-${eleKey}`}><b>{ElementalData[eleKey].name}</b></span> Absorption</span>,
+          sourceKey: "venti",
+          maxStack: 1,
+          fields: [{
+            text: "Dot",
+            basicVal: (tlvl) => (ode.dot[tlvl] / 2)?.toFixed(2) + "%",
+            finalVal: (tlvl, s) => (ode.dot[tlvl] / 2 / 100) * s[`${eleKey}_burst_avg_dmg`],
+          }, (c, a) => a >= 4 && {
+            text: <span>Regen 15 Energy to all <span className={`text-${eleKey}`}>{ElementalData[eleKey].name}</span> characters.</span>,
+          }, (c, a) => c >= 6 && {
+            text: <span>Enemy <span className={`text-${eleKey}`}>{ElementalData[eleKey].name} RES</span> decrease</span>,
+            value: "20%"
+          }]
+        }))
+      }],
     },
     passive1: {
-      name: "TEMPLATE",
+      name: "Embrace of Winds",
       img: passive1,
-      text: <span>TEMPLATE</span>
+      document: [{ text: <span>Holding <b>Skyward Sonnet</b> creates an upcurrent that lasts for 20s.</span> }],
     },
     passive2: {
-      name: "TEMPLATE",
+      name: "Stormeye",
       img: passive2,
-      text: <span>TEMPLATE</span>
+      document: [{ text: <span>Regenerates 15 Energy for Venti after the effects of <b>Wind's Grand Ode</b> end. If an Elemental Absorption occurred, this also restores 15 Energy to all characters of that corresponding element.</span> }],
     },
     passive3: {
-      name: "TEMPLATE",
+      name: "Windrider",
       img: passive3,
-      text: <span>TEMPLATE</span>
+      document: [{
+        text: <span>
+          Decreases gliding Stamina consumption for your own party members by 20%.
+          Not stackable with Passive Talents that provide the exact same effects.
+      </span>
+      }],
+      stats: {
+        stamina_gliding_dec: 20,
+      }
     },
+    constellation1: {
+      name: "Splitting Gales",
+      img: c1,
+      document: [{ text: <span>Fires 2 additional split arrows per Aimed Shot, each dealing 33% of the original arrow's DMG.</span> }],
+    },
+    constellation2: {
+      name: "Breeze of Reminiscence",
+      img: c2,
+      document: [{ text: <span>Skyward Sonnet decreases enemy <span className="text-anemo">Anemo RES</span> by 12% for 10s. Enemies launched by Skyward Sonnet suffer an additional 12% <span className="text-anemo">Anemo RES</span> and Physical RES penalty when airborne.</span> }],
+    },
+    constellation3: {
+      name: "Ode to Thousand Winds",
+      img: c3,
+      document: [{ text: <span>Increases the level of <b>Wind's Grand Ode</b> by 3. Maximum upgrade level is 15.</span> }],
+    },
+    constellation4: {
+      name: "Hurricane of Freedom",
+      img: c4,
+      document: [{
+        text: <span>When Venti picks up an Elemental Orb or Particle, he receives a 25% Anemo DMG Bonus for 10s.</span>,
+        conditional: (tlvl, c, a) => c >= 4 && {
+          type: "character",
+          conditionalKey: "HurricaneOfFreedom",
+          condition: "Hurricane of Freedom",
+          sourceKey: "venti",
+          maxStack: 1,
+          stats: {
+            anemo_ele_dmg: 15,
+          },
+          fields: [{
+            text: "Duration",
+            value: "10s",
+          }]
+        }
+      }],
+    },
+    constellation5: {
+      name: "Concerto dal Cielo",
+      img: c5,
+      document: [{ text: <span>Increases the level of <b>Skyward Sonnet</b> by 3. Maximum upgrade level is 15.</span> }],
+    },
+    constellation6: {
+      name: "Storm of Defiance",
+      img: c6,
+      document: [{ text: <span>Targets who take DMG from Wind's Grand Ode have their <span className="text-anemo">Anemo RES</span> decreased by 20%. If an Elemental Absorption occurred, then their RES towards the corresponding Element is also decreased by 20%.</span> }],
+    }
   },
-  constellation: [{
-    name: "TEMPLATE",
-    img: c1,
-    text: <span>TEMPLATE</span>
-  }, {
-    name: "TEMPLATE",
-    img: c2,
-    text: <span>TEMPLATE</span>
-  }, {
-    name: "TEMPLATE",
-    img: c3,
-    text: <span>TEMPLATE</span>
-  }, {
-    name: "TEMPLATE",
-    img: c4,
-    text: <span>TEMPLATE</span>
-  }, {
-    name: "TEMPLATE",
-    img: c5,
-    text: <span>TEMPLATE</span>
-  }, {
-    name: "TEMPLATE",
-    img: c6,
-    text: <span>TEMPLATE</span>
-  }],
 };
 export default char;

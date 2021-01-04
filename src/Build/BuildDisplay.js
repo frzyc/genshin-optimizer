@@ -64,7 +64,8 @@ export default class BuildDisplay extends React.Component {
     //we need to figure out if the character has: normal phy auto, elemental auto, infusable auto(both normal and phy)
     if (isAutoElemental || isAutoInfusable) //add elemental auto + charged
       keys.push(`${eleKey}_norm_atk_avg_dmg`, `${eleKey}_char_atk_avg_dmg`)
-
+    else if (Character.getWeaponTypeKey(characterKey) === "bow")//bow charged atk does elemental dmg on charge
+      keys.push(`${eleKey}_char_atk_avg_dmg`)
     if (!isAutoElemental) //add phy auto + charged + physical 
       keys.push("norm_atk_avg_dmg", "char_atk_avg_dmg", "phy_dmg", "phy_avg_dmg")
 
