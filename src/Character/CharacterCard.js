@@ -16,7 +16,7 @@ import Weapon from '../Weapon/Weapon';
 import Character from './Character';
 import CharacterDatabase from './CharacterDatabase';
 export default function CharacterCard(props) {
-  let { characterId } = props
+  let { characterId, onEdit, onDelete } = props
   let character = CharacterDatabase.getCharacter(characterId)
   if (!character) return null;
   let build = Character.calculateBuild(character)
@@ -34,25 +34,25 @@ export default function CharacterCard(props) {
   const statkeys = ["hp", "atk", "def", "ele_mas", "crit_rate", "crit_dmg", "ener_rech",]
   return (<Card className={props.cardClassName} bg={props.bg ? props.bg : "darkcontent"} text="lightfont">
     <Card.Header className="pr-2">
-      {props.header ? props.header : <Row className="no-gutters">
+      <Row className="no-gutters">
         <Col >
-          <h6><b>{name}</b></h6>
+          {props.header ? props.header : <h6><b>{name}</b></h6>}
         </Col>
         <Col xs={"auto"}>
           <span className="float-right align-top ml-1">
-            <Button variant="primary" size="sm" className="mr-1"
-              onClick={() => props?.onEdit?.()}>
+            {props.onEdit && <Button variant="primary" size="sm" className="mr-1"
+              onClick={onEdit}>
               <FontAwesomeIcon icon={faEdit} />
-            </Button>
-            <Button variant="danger" size="sm"
-              onClick={() => props?.onDelete?.()}>
+            </Button>}
+            {props.onDelete && <Button variant="danger" size="sm"
+              onClick={onDelete}>
               <FontAwesomeIcon icon={faTrashAlt} />
-            </Button>
+            </Button>}
           </span>
         </Col>
-      </Row>}
+      </Row>
     </Card.Header>
-    <Card.Body onClick={props.onEdit ? () => props?.onEdit?.() : null} style={{ cursor: props.onEdit ? "pointer" : "default" }}>
+    <Card.Body onClick={onEdit} style={{ cursor: onEdit ? "pointer" : "default" }}>
       <Row>
         <Col xs="auto" className="pr-0">
           <Image src={Character.getThumb(characterKey)} className="h-100 w-auto my-n1" rounded />

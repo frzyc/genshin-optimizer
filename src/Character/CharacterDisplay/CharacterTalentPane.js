@@ -57,7 +57,7 @@ export default function CharacterTalentPane(props) {
             {...skillDisplayProps}
             talentKey={tKey}
             subtitle={`Contellation Lv. ${i + 1}`}
-            onClickTitle={editable ? (() => setState({ constellation: (i + 1) === constellation ? i : i + 1 })) : null}
+            onClickTitle={editable ? (() => setState({ constellation: (i + 1) === constellation ? i : i + 1 })) : undefined}
           />
         </Col>
       })}
@@ -75,7 +75,7 @@ function SkillDisplayCard(props) {
   if (talentKey === "auto" && Character.isAutoInfusable(characterKey)) {
     let eleKey = Character.getElementalKey(characterKey)
     infuseBtn = <Col xs="auto">
-      <Button variant={autoInfused ? eleKey : "secondary"} className="text-white" disabled={!editable} onClick={editable && (() => setState(state => ({ autoInfused: !state.autoInfused })))} size={editable ? null : "sm"}>
+      <Button variant={autoInfused ? eleKey : "secondary"} className="text-white" disabled={!editable} onClick={editable ? (() => setState(state => ({ autoInfused: !state.autoInfused }))) : undefined} size={editable ? null : "sm"}>
         {autoInfused ?
           <span>Infused with <b>{Character.getElementalName(eleKey)}</b></span>
           : "Not Infused"}

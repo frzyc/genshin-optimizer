@@ -133,7 +133,7 @@ export default class CharacterDisplayCard extends React.Component {
     }
   }
   render() {
-    let { footer, newBuild, editable } = this.props
+    let { footer, newBuild, editable, onClose } = this.props
     let character = this.state
     let { characterKey, levelKey, compareAgainstEquipped } = this.state
     let equippedBuild = Character.calculateBuild(this.state)
@@ -200,7 +200,7 @@ export default class CharacterDisplayCard extends React.Component {
             </ButtonGroup>
           </Col> : null}
           <Col xs="auto" >
-            <Button variant="danger" onClick={this.props?.onClose}>
+            <Button variant="danger" onClick={onClose}>
               <FontAwesomeIcon icon={faTimes} /></Button>
           </Col>
         </Row>
