@@ -267,6 +267,7 @@ let char = {
       name: "Fire and Steel",
       img: c3,
       document: [{ text: <span>Increases <b>Searing Onslaught</b>'s skill level by 3. Maximum upgrade level is 15.</span> }],
+      talentBoost: { skill: 3 }
     },
     constellation4: {
       name: "Flowing Flame",
@@ -280,6 +281,7 @@ let char = {
       name: "Phoenix, Harbinger of Dawn",
       img: c5,
       document: [{ text: <span>Increases <b>Dawn</b>'s skill level by 3. Maximum upgrade level is 15.</span> }],
+      talentBoost: { burst: 3 }
     },
     constellation6: {
       name: "Flaming Sword, Nemesis of Dark",

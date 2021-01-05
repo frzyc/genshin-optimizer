@@ -203,6 +203,7 @@ let char = {
       name: "Star of Tomorrow",
       img: c3,
       document: [{ text: <span>Increases the level of <b>Shining Miracle</b> by 3. Maximum upgrade level is 15.</span> }],
+      talentBoost: { burst: 3 }
     },
     constellation4: {
       name: "Attentiveness be My Power",
@@ -213,6 +214,7 @@ let char = {
       name: "The Purest Companionship",
       img: c5,
       document: [{ text: <span>Increases the level of <b>Let the Show Begin</b> by 3. Maximum upgrade level is 15.</span> }],
+      talentBoost: { skill: 3 }
     },
     constellation6: {
       name: "Dedicating Everything to You",

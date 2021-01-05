@@ -250,6 +250,7 @@ let char = {
       name: "Ode to Thousand Winds",
       img: c3,
       document: [{ text: <span>Increases the level of <b>Wind's Grand Ode</b> by 3. Maximum upgrade level is 15.</span> }],
+      talentBoost: { burst: 3 }
     },
     constellation4: {
       name: "Hurricane of Freedom",
@@ -276,6 +277,7 @@ let char = {
       name: "Concerto dal Cielo",
       img: c5,
       document: [{ text: <span>Increases the level of <b>Skyward Sonnet</b> by 3. Maximum upgrade level is 15.</span> }],
+      talentBoost: { skill: 3 }
     },
     constellation6: {
       name: "Storm of Defiance",

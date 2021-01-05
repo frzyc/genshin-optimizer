@@ -247,7 +247,8 @@ let char = {
     constellation3: {
       name: "Invulnerable Maid",
       img: c3,
-      document: [{ text: <span>Increases <b>Breastplate</b>'s skill level by 3. Max level is 15</span> }]
+      document: [{ text: <span>Increases <b>Breastplate</b>'s skill level by 3. Max level is 15</span> }],
+      talentBoost: { skill: 3 }
     },
     constellation4: {
       name: "To Be Cleaned",
@@ -257,7 +258,8 @@ let char = {
     constellation5: {
       name: "Favonius Sweeper Master",
       img: c5,
-      document: [{ text: <span>Increases <b>Sweeping Time</b>'s skill level by 3. Max level is 15.</span> }]
+      document: [{ text: <span>Increases <b>Sweeping Time</b>'s skill level by 3. Max level is 15.</span> }],
+      talentBoost: { burst: 3 }
     },
     constellation6: {
       name: "Must Be Spotless",

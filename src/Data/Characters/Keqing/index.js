@@ -221,7 +221,8 @@ let char = {
     constellation3: {
       name: "Foreseen Reformation",
       img: c3,
-      document: [{ text: <span>Increases the level of <b>Starward Sword</b> by 3.</span> }],
+      document: [{ text: <span>Increases the level of <b>Starward Sword</b> by 3. Maximum upgrade level is 15.</span> }],
+      talentBoost: { burst: 3 }
     },
     constellation4: {
       name: "Attunement",
@@ -246,7 +247,8 @@ let char = {
     constellation5: {
       name: "Beckoning Stars",
       img: c5,
-      document: [{ text: <span>Increases the level of <b>Stellar Restoration</b> by 3.</span> }],
+      document: [{ text: <span>Increases the level of <b>Stellar Restoration</b> by 3. Maximum upgrade level is 15.</span> }],
+      talentBoost: { skill: 3 }
     },
     constellation6: {
       name: "Tenacious Star",

@@ -256,7 +256,8 @@ let char = {
     constellation3: {
       name: "It Burns!",
       img: c3,
-      document: [{ text: <span>Increases the level of <b>Fiery Rain</b> by 3. Maximum upgrade level is 15.</span> }]
+      document: [{ text: <span>Increases the level of <b>Fiery Rain</b> by 3. Maximum upgrade level is 15.</span> }],
+      talentBoost: { burst: 3 }
     },
     constellation4: {
       name: "It's Not Just Any Doll...",
@@ -266,7 +267,8 @@ let char = {
     constellation5: {
       name: "It's Baron Bunny!",
       img: c5,
-      document: [{ text: <span>Increases the level of <b>Explosive Puppet</b> by 3. Maximum upgrade level is 15.</span> }]
+      document: [{ text: <span>Increases the level of <b>Explosive Puppet</b> by 3. Maximum upgrade level is 15.</span> }],
+      talentBoost: { skill: 3 }
     },
     constellation6: {
       name: "Wildfire",

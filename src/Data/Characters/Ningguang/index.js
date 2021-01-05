@@ -16,34 +16,23 @@ import passive3 from './Talent_Trove_of_Marvelous_Treasures.png'
 
 //AUTO
 
-const hitPercent = [
-  [],
-  [],
-  [],
-  [],
-]
+const hitPercent = [28, 30.1, 32.2, 35, 37.1, 39.2, 42, 44.8, 47.6, 50.4, 53.31, 57.12, 60.93, 64.74, 68.54]
 
-const charged_atk_spinnning = []
-const charged_atk_final = []
-const plunge_dmg = []
-const plunge_dng_low = []
-const plunge_dmg_high = []
+const charged_atk_dmg = [174.08, 187.14, 200.19, 217.6, 230.66, 243.71, 261.12, 278.53, 295.94, 313.34, 331.45, 355.12, 378.8, 402.47, 426.15]
+const charged_per_jade = [49.6, 53.32, 57.04, 62, 65.72, 69.44, 74.4, 79.36, 84.32, 89.28, 94.44, 101.18, 107.93, 114.68, 121.42]
+const plunge_dmg = [56.83, 61.45, 66.08, 72.69, 77.31, 82.6, 89.87, 97.14, 104.41, 112.34, 120.27, 128.2, 136.12, 144.05, 151.98]
+const plunge_dng_low = [113.63, 122.88, 132.13, 145.35, 154.59, 165.17, 179.7, 194.23, 208.77, 224.62, 240.48, 256.34, 272.19, 288.05, 303.9]
+const plunge_dmg_high = [141.93, 153.49, 165.04, 181.54, 193.1, 206.3, 224.45, 242.61, 260.76, 280.57, 300.37, 320.18, 339.98, 359.79, 379.59]
 
 //SKILL
-const breastplateStats = {
-  skill_dmg: [],
-  shield_def: [],
-  shield_flat: [],
-  heal_def: [],
-  heal_flat: [],
-  heal_trigger: [],
+const jadeScreen = {
+  inheri_hp: [50.1, 53.1, 56.1, 60, 63, 66, 69.9, 73.8, 77.7, 81.6, 85.5, 89.4, 93.3, 97.2, 101.1],
+  skill_dmg: [230.4, 247.68, 264.96, 288, 305.28, 322.56, 345.6, 368.64, 391.68, 414.72, 437.76, 460.8, 489.6, 518.4, 547.2],
 }
 
 //BURST
-const sweepingTimeStats = {
-  burst_dmg: [],
-  skill_dmg: [],
-  atk_bonu: [],
+const starShatter = {
+  dmg_per_gem: [86.96, 93.48, 100, 108.7, 115.22, 121.74, 130.44, 139.14, 147.83, 156.53, 165.22, 173.92, 184.79, 195.66, 206.53],
 }
 
 let char = {
@@ -67,143 +56,174 @@ let char = {
   },
   talent: {
     auto: {
-      name: "TEMPLATE",
+      name: "Sparkling Scatter",
       img: normal,
-      normal: {
-        text: <span>TEMPLATE</span>,
-        fields: hitPercent.map((percentArr, i) =>
-        ({
-          text: `${i + 1}-Hit DMG`,
-          basicVal: (tlvl) => percentArr[tlvl] + "%",
-          finalVal: (tlvl, stats) => (percentArr[tlvl] / 100) * stats.norm_atk_avg_dmg
-        }))
-      },
-      charged: {
-        text: <span>TEMPLATE</span>,
+      infusable: false,
+      document: [(c, a) => ({
+        text: <span><strong>Normal Attack</strong> Shoots gems that deal <span className="text-geo">{c >= 1 ? "AoE " : ""}Geo DMG</span>. Upon hit, this grants Ningguang 1 Star Jade.</span>,
         fields: [{
-          text: `Spinning DMG`,
-          basicVal: (tlvl) => charged_atk_spinnning[tlvl] + "%",
-          finalVal: (tlvl, stats) => (charged_atk_spinnning[tlvl] / 100) * stats.char_atk_avg_dmg
-        }, {
-          text: `Spinning Final DMG`,
-          basicVal: (tlvl) => charged_atk_final[tlvl] + "%",
-          finalVal: (tlvl, stats) => (charged_atk_final[tlvl] / 100) * stats.char_atk_avg_dmg
-        }, {
-          text: `Stamina Cost`,
-          value: `40/s`,
-        }, {
-          text: `Max Duration`,
-          value: `5s`,
+          text: `Normal Attack DMG`,
+          basicVal: (tlvl) => hitPercent[tlvl] + "%",
+          finalVal: (tlvl, stats) => (hitPercent[tlvl] / 100) * stats.geo_norm_atk_avg_dmg
         }]
-      },
-      plunge: {
-        text: <span>TEMPLATE</span>,
+      }), {
+        text: <span><strong>Charged Attack</strong> Consumes a certain amount of stamina to fire off a giant gem that deals <span className="text-geo">Geo DMG</span>. If Ningguang has any Star Jades, unleashing a Charged Attack will cause the Star Jades to be fired at the enemy as well, dealing additional DMG.</span>,
+        fields: [{
+          text: `Charged Attack DMG`,
+          basicVal: (tlvl) => charged_atk_dmg[tlvl] + "%",
+          finalVal: (tlvl, stats) => (charged_atk_dmg[tlvl] / 100) * stats.geo_char_atk_avg_dmg
+        }, {
+          text: `DMG per Star Jade`,
+          basicVal: (tlvl) => charged_per_jade[tlvl] + "%",
+          finalVal: (tlvl, stats) => (charged_per_jade[tlvl] / 100) * stats.geo_char_atk_avg_dmg
+        }, (c, a) => ({
+          text: `Stamina Cost`,
+          value: <span>50{(a >= 1 ? <span>; With <b>Star Jade</b>: 0</span> : "")}</span>,
+        })]
+      }, {
+        text: <span><strong>Plunging Attack</strong>TEMPLATE</span>,
         fields: [{
           text: `Plunge DMG`,
           basicVal: (tlvl) => plunge_dmg[tlvl] + "%",
-          finalVal: (tlvl, stats) => (plunge_dmg[tlvl] / 100) * stats.phy_avg_dmg
+          finalVal: (tlvl, stats) => (plunge_dmg[tlvl] / 100) * stats.geo_ele_avg_dmg
         }, {
           text: `Low Plunge DMG`,
           basicVal: (tlvl) => plunge_dng_low[tlvl] + "%",
-          finalVal: (tlvl, stats) => (plunge_dng_low[tlvl] / 100) * stats.phy_avg_dmg
+          finalVal: (tlvl, stats) => (plunge_dng_low[tlvl] / 100) * stats.geo_ele_avg_dmg
         }, {
           text: `High Plunge DMG`,
           basicVal: (tlvl) => plunge_dmg_high[tlvl] + "%",
-          finalVal: (tlvl, stats) => (plunge_dmg_high[tlvl] / 100) * stats.phy_avg_dmg
+          finalVal: (tlvl, stats) => (plunge_dmg_high[tlvl] / 100) * stats.geo_ele_avg_dmg
         }]
-      }
+      }],
     },
     skill: {
-      name: "TEMPLATE",
+      name: "Jade Screen",
       img: skill,
-      text: <span>TEMPLATE</span>,
-      fields: [{
-        text: "TEMPLATE",
-        basicVal: (tlvl) => breastplateStats.skill_dmg[tlvl] + "%",
-        finalVal: (tlvl, s) => (breastplateStats.skill_dmg[tlvl] / 100) * s.skill_avg_dmg,
-      }, {
-        text: "TEMPLATE",
-        basicVal: (tlvl) => breastplateStats.shield_def[tlvl] + "% DEF + " + breastplateStats.shield_flat[tlvl],
-        finalVal: (tlvl, s) => (breastplateStats.shield_def[tlvl] / 100) * s.def + breastplateStats.shield_flat[tlvl],
-      }, {
-        text: "TEMPLATE",
-        basicVal: (tlvl) => breastplateStats.heal_def[tlvl] + "% DEF + " + breastplateStats.heal_flat[tlvl],
-        finalVal: (tlvl, s) => (breastplateStats.heal_def[tlvl] / 100) * s.def + breastplateStats.heal_flat[tlvl],
-      }, {
-        text: "CD",
-        value: "12s",
-      }, {
-        text: "TEMPLATE",
-        value: (tlvl, s, c, a) => "24s" + a > 4 ? " -1s Every 4 hits" : "",
-      }]
+      document: [{
+        text: <span>
+          <p className="mb-2">
+            Ningguang creates a Jade Screen out of gold, obsidian and her great opulence, dealing <span className="text-geo">AoE Geo DMG</span>.
+          </p>
+          <h6>Jade Screen</h6>
+          <ul className="mb-1">
+            <li>Blocks opponents' projectiles.</li>
+            <li>Endurance scales based on Ningguang's Max HP.</li>
+          </ul>
+          <p>
+            Jade Screen is considered a <span className="text-geo">Geo Construct</span> and can be used to block certain attacks, but cannot be climbed. Only one Jade Screen may exist at a time.
+            Generates 3 elemental particles when it hits at least 1 target.
+          </p>
+        </span>,
+        fields: [{
+          text: "Inherited HP",
+          basicVal: (tlvl) => jadeScreen.inheri_hp[tlvl] + "%",
+          finalVal: (tlvl, s) => (jadeScreen.inheri_hp[tlvl] / 100) * s.hp,
+        }, {
+          text: "Skill DMG",
+          basicVal: (tlvl) => jadeScreen.skill_dmg[tlvl] + "%",
+          finalVal: (tlvl, s) => (jadeScreen.skill_dmg[tlvl] / 100) * s.geo_skill_avg_dmg,
+        }, {
+          text: "CD",
+          value: "12s",
+        }, (c, a) => c >= 2 && {
+          text: "Resets CD on shatter, every 6s",
+        }, (c, a) => c >= 4 && {
+          text: "Elemental DMG Reduc.",
+          value: "10%",
+        }, (c, a) => c >= 4 && {
+          text: "Elemental DMG Reduc. Range",
+          value: "10m",
+        }]
+      }],
     },
     burst: {
-      name: "TEMPLATE",
+      name: "Starshatter",
       img: burst,
-      text: <span>TEMPLATE</span>,
-      fields: [{
-        text: "TEMPLATE",
-        basicVal: (tlvl) => sweepingTimeStats.burst_dmg[tlvl] + "%",
-        finalVal: (tlvl, s) => (sweepingTimeStats.burst_dmg[tlvl] / 100) * s.burst_avg_dmg,
-      }, {
-        text: "TEMPLATE",
-        basicVal: (tlvl) => sweepingTimeStats.skill_dmg[tlvl] + "%",
-        finalVal: (tlvl, s) => (sweepingTimeStats.skill_dmg[tlvl] / 100) * s.burst_avg_dmg,
-      }, {
-        text: "TEMPLATE",
-        basicVal: (tlvl, s, constellation) => `${sweepingTimeStats.atk_bonu[tlvl]}%${constellation >= 6 ? " +50%" : ""} DEF`,
-        finalVal: (tlvl, s, constellation) => ((sweepingTimeStats.atk_bonu[tlvl] + (constellation >= 6 ? 50 : 0)) / 100) * s.def,
-      }, {
-        text: "TEMPLATE",
-        value: (tlvl, s, constellation) => "15s" + (constellation >= 6 ? " +1s per kill, up to 10s" : ""),
-      }, {
-        text: "CD",
-        value: "15s",
-      }, {
-        text: "Energy Cost",
-        value: 60,
-      }]
+      document: [{
+        text: <span>
+          Gathering a great number of gems, Ningguang scatters them all at once, sending homing projectiles at her opponents that deal massive <span className="text-geo">Geo DMG</span>.
+          If Starshatter is cast when a <b>Jade Screen</b> is nearby, the Jade Screen will fire additional gem projectiles at the same time.
+        </span>,
+        fields: [{
+          text: "DMG Per Gem",
+          basicVal: (tlvl) => starShatter.dmg_per_gem[tlvl] + "%",
+          finalVal: (tlvl, s) => (starShatter.dmg_per_gem[tlvl] / 100) * s.geo_burst_avg_dmg,
+        }, {
+          text: "CD",
+          value: "12s",
+        }, {
+          text: "Energy Cost",
+          value: 40,
+        }, (c, a) => c >= 6 && {
+          text: "Star Jade gained",
+          value: "7",
+        }]
+      }],
     },
     passive1: {
-      name: "TEMPLATE",
+      name: "Backup Plan",
       img: passive1,
-      text: <span>TEMPLATE</span>
+      document: [{ text: <span>When Ningguang is in possession of <b>Star Jades</b>, her <b>Charged Attack</b> does not consume Stamina.</span> }],
     },
     passive2: {
-      name: "TEMPLATE",
+      name: "Strategic Reserve",
       img: passive2,
-      text: <span>TEMPLATE</span>
+      document: [{
+        text: <span>A character that passes through the <b>Jade Screen</b> will gain a 12% <span className="text-geo">Geo DMG Bonus</span> for 10s.</span>,
+        conditional: (tlvl, c, a) => a >= 4 && {
+          type: "character",
+          conditionalKey: "StrategicReserve",
+          condition: "Strategic Reserve",
+          sourceKey: "ningguang",
+          maxStack: 1,
+          stats: {
+            geo_ele_dmg: 12
+          },
+          fields: [{
+            text: "Duration",
+            value: "10s",
+          }]
+        }
+      }],
     },
     passive3: {
-      name: "TEMPLATE",
+      name: "Trove of Marvelous Treasures",
       img: passive3,
-      text: <span>TEMPLATE</span>
+      document: [{ text: <span>Displays the location of nearby ore veins (Iron Ore, White Iron Ore, Crystal Ore, Magical Crystal Ore, and Starsilver) on the mini-map.</span> }],
     },
+    constellation1: {
+      name: "Piercing Fragments",
+      img: c1,
+      document: [{ text: <span>When a <b>Normal Attack</b> hits, it deals AoE DMG.</span> }],
+    },
+    constellation2: {
+      name: "Shock Effect",
+      img: c2,
+      document: [{ text: <span>	When <b>Jade Screen</b> is shattered, its CD will reset. This effect can only take place every 6 seconds.</span> }],
+    },
+    constellation3: {
+      name: "Majesty be the Array of Stars",
+      img: c3,
+      document: [{ text: <span>	Increases Starshatter's skill level by 3. Max level is 15.</span> }],
+      talentBoost: { burst: 3 }
+    },
+    constellation4: {
+      name: "Exquisite be the Jade, Outshining All Beneath",
+      img: c4,
+      document: [{ text: <span>Allies within a 10m radius of the Jade Screen take 10% less Elemental DMG.</span> }],
+    },
+    constellation5: {
+      name: "Invincible be the Jade Screen",
+      img: c5,
+      document: [{ text: <span>Increases <b>Jade Screen</b>'s skill level by 3. Max level is 15.</span> }],
+      talentBoost: { skill: 3 }
+    },
+    constellation6: {
+      name: "Grandeur be the Seven Stars",
+      img: c6,
+      document: [{ text: <span>When Starshatter is used, Ningguang gains 7 Star Jades.</span> }],
+    }
   },
-  constellation: [{
-    name: "TEMPLATE",
-    img: c1,
-    text: <span>TEMPLATE</span>
-  }, {
-    name: "TEMPLATE",
-    img: c2,
-    text: <span>TEMPLATE</span>
-  }, {
-    name: "TEMPLATE",
-    img: c3,
-    text: <span>TEMPLATE</span>
-  }, {
-    name: "TEMPLATE",
-    img: c4,
-    text: <span>TEMPLATE</span>
-  }, {
-    name: "TEMPLATE",
-    img: c5,
-    text: <span>TEMPLATE</span>
-  }, {
-    name: "TEMPLATE",
-    img: c6,
-    text: <span>TEMPLATE</span>
-  }],
 };
 export default char;

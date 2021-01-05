@@ -70,7 +70,7 @@ function SkillDisplayCard(props) {
   let { onClickTitle = null, ...otherProps } = props
   let build = newBuild ? newBuild : equippedBuild
   let header = null
-  let { talentLvlKey = undefined, levelBoost = 0 } = Character.getTalentLevelKey(character, talentKey, true)
+  let { talentLvlKey = undefined, levelBoost = 0 } = Character.getTalentLevelKey(character, talentKey, constellation, true)
   let infuseBtn = null
   if (talentKey === "auto" && Character.isAutoInfusable(characterKey)) {
     let eleKey = Character.getElementalKey(characterKey)

@@ -250,6 +250,7 @@ let char = {
       name: "Summoner of Storm",
       img: c3,
       document: [{ text: <span>Increases the level of <b>Tidecaller</b> by 3. Maximum upgrade level is 15.</span> }],
+      talentBoost: { skill: 3 }
     },
     constellation4: {
       name: "Stunning Revenge",
@@ -260,6 +261,7 @@ let char = {
       name: "Crimson Tidewalker",
       img: c5,
       document: [{ text: <span>Increases the level of <b>Stormbreaker</b> by 3. Maximum upgrade level is 15.</span> }],
+      talentBoost: { burst: 3 }
     },
     constellation6: {
       name: "Bane of the Evil",

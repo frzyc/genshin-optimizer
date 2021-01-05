@@ -39,21 +39,15 @@ function App() {
                 {process.env.NODE_ENV === "development" && <Nav.Link as={Link} to="/test">TEST</Nav.Link>}
               </Nav>
               <Nav>
-                <ReactGA.OutboundLink eventLabel="paypal" target="_blank">
-                  <Nav.Link href={process.env.REACT_APP_PAYPAL_LINK} target="_blank" >
+                <Nav.Link href={process.env.REACT_APP_PAYPAL_LINK} target="_blank" onClick={() => ReactGA.outboundLink({ label: "patreon" }, () => { })}>
                     <span><FontAwesomeIcon icon={faPaypal} className="fa-fw" /> PayPal</span>
                   </Nav.Link>
-                </ReactGA.OutboundLink>
-                <ReactGA.OutboundLink eventLabel="patreon" target="_blank">
-                  <Nav.Link href={process.env.REACT_APP_PATREON_LINK} target="_blank" >
+                <Nav.Link href={process.env.REACT_APP_PATREON_LINK} target="_blank" onClick={() => ReactGA.outboundLink({ label: "patreon" }, () => { })}>
                     <span><FontAwesomeIcon icon={faPatreon} className="fa-fw" /> Patreon</span>
                   </Nav.Link>
-                </ReactGA.OutboundLink>
-                <ReactGA.OutboundLink eventLabel="discord" target="_blank">
-                  <Nav.Link href={process.env.REACT_APP_DISCORD_LINK} target="_blank" >
+                <Nav.Link href={process.env.REACT_APP_DISCORD_LINK} target="_blank" onClick={() => ReactGA.outboundLink({ label: "discord" }, () => { })}>
                     <span><FontAwesomeIcon icon={faDiscord} className="fa-fw" /> Discord</span>
                   </Nav.Link>
-                </ReactGA.OutboundLink>
               </Nav>
             </Navbar.Collapse>
           </Navbar>

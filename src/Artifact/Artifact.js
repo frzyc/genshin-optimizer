@@ -65,7 +65,6 @@ export default class Artifact {
     ArtifactSubStatsData[subStatKey][numStars] : []
   static getRolls(value, rollData, float = false) {
     let roll = null;
-    let closeEnoughRoll = null;
     let maxNumRoll = Math.round(value / rollData[0])
     if (!maxNumRoll) return null;
     let rollOption = (val, arr) => {
@@ -81,11 +80,9 @@ export default class Artifact {
           }
         } else {
           if (sum - val > 1) return
-          if (sum === val) {
+          if (closeEnoughInt(sum, val)) {
             roll = arr;
             return
-          } else if (closeEnoughInt(sum, val) && !closeEnoughRoll) {
-            closeEnoughRoll = arr;
           }
         }
       }
@@ -94,7 +91,6 @@ export default class Artifact {
       })
     }
     rollOption(value, [])
-    if (!roll && closeEnoughRoll) roll = closeEnoughRoll;
     return roll;
   }
   static validateSubStat(state, substat) {

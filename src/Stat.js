@@ -47,7 +47,7 @@ const StatData = {
   ele_dmg: { name: "DMG Bonus", unit: "%" },//will expact to "Anemo DMG Bonus" DONT CHANGE needed for screenshot parsing
   ele_res: { name: "DMG RES", unit: "%" },//will expact to "Anemo DMG RES"
   ele_mas: { name: "Elemental Mastery", },
-  ele_avg_dmg: { name: "Elemental Avg. DMG" },
+  ele_avg_dmg: { name: "DMG" },//only used to calculate plunge attacks, since it involves no bonuses other than elemental
   ener_rech: { name: "Energy Recharge", unit: "%" },
   crit_rate: { name: "Crit Rate", unit: "%" },
   crit_dmg: { name: "Crit DMG", unit: "%" },
@@ -140,7 +140,8 @@ const eleFormulas = {
   burst_avg_dmg: (s, ele) => s.atk * s.burst_crit_multi * s[`${ele}_burst_bonus_dmg`],
   burst_bonus_dmg: (s, ele) => (1 + (s[`${ele}_ele_dmg`] + s.burst_dmg + s.dmg) / 100),
 
-  ele_avg_dmg: (s, ele) => s.atk * s.crit_multi * (1 + s[`${ele}_ele_dmg`] / 100) * (1 + s.dmg / 100),//TODO is this used anywhere?
+  //used for plunge attack for catalyst/infused plunge users
+  ele_avg_dmg: (s, ele) => s.atk * s.crit_multi * (1 + s[`${ele}_ele_dmg`] / 100) * (1 + s.dmg / 100),
 };
 
 //add Elemental entries to stats. we use the keys from eleFormulas before it gets expanded to elementals

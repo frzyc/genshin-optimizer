@@ -55,15 +55,22 @@ export default class Character {
 
   //talents
   static getTalentName = (charKey, talentKey, defVal = "") => this.getCDataObj(charKey)?.talent?.[talentKey]?.name || defVal
-  static getTalentLevelBoost = (character, talentKey) => {
-    let { constellation } = character
-    return talentKey === "skill" ? (constellation >= 3 ? 3 : 0) :
-      talentKey === "burst" && constellation >= 5 ? 3 : 0
+
+  static getTalentLevelBoost = (characterKey, talentKey, constellation, defVal = 0) => {
+    //so far we only get level boost from constellations, so only burst and skills.
+    if (talentKey !== "burst" && talentKey !== "skill") return defVal
+    let talents = this.getCDataObj(characterKey)?.talent || {}
+    for (let i = 1; i <= constellation; i++) {
+      let talentBoost = talents[`constellation${i}`]?.talentBoost || {};
+      let boostEntry = Object.entries(talentBoost).find(([key, val]) => key === talentKey)
+      if (boostEntry) return boostEntry[1]
+    }
+    return defVal
   }
-  static getTalentLevelKey = (character, talentKey, withBoost = false) => {
+  static getTalentLevelKey = (character, talentKey, constellation, withBoost = false) => {
     if (talentKey === "auto" || talentKey === "skill" || talentKey === "burst") {
       let talentLvlKey = character?.talentLevelKeys?.[talentKey] || 0;
-      let levelBoost = this.getTalentLevelBoost(character, talentKey)
+      let levelBoost = this.getTalentLevelBoost(character?.characterKey, talentKey, constellation)
       talentLvlKey = clamp(talentLvlKey + levelBoost, 0, 14)
       return withBoost ? { talentLvlKey, levelBoost } : talentLvlKey
     } else return withBoost ? {} : null

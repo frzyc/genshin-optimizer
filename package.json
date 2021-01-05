@@ -1,13 +1,16 @@
 {
   "homepage": "https://frzyc.github.io/genshin-optimizer/",
   "name": "genshin-optimizer",
-  "version": "3.2.4",
+  "version": "3.3.0",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
     "@fortawesome/free-brands-svg-icons": "^5.15.1",
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "@fortawesome/react-fontawesome": "^0.1.13",
+    "@testing-library/jest-dom": "^5.11.8",
+    "@testing-library/react": "^11.2.2",
+    "@testing-library/user-event": "^12.6.0",
     "bootstrap": "^4.5.3",
     "node-sass": "^4.14.1",
     "react": "^17.0.1",
