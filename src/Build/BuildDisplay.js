@@ -57,17 +57,26 @@ export default class BuildDisplay extends React.Component {
   forceUpdateBuildDisplay = () => this.forceUpdate()
 
   statsDisplayKeys = (characterKey) => {
-    let keys = ["hp", "atk", "def", "ele_mas", "crit_rate", "crit_dmg", "heal_bonu", "ener_rech", "ele_dmg", "skill_avg_dmg", "burst_avg_dmg"]
+    let keys = ["hp", "atk", "def", "ele_mas", "crit_rate", "crit_dmg", "heal_bonu", "ener_rech", "ele_dmg"]
     let eleKey = Character.getElementalKey(characterKey)
+    //we need to figure out if the character has: normal phy auto, elemental auto, infusable auto(both normal and phy)
     let isAutoElemental = Character.isAutoElemental(characterKey)
     let isAutoInfusable = Character.isAutoInfusable(characterKey)
-    //we need to figure out if the character has: normal phy auto, elemental auto, infusable auto(both normal and phy)
+
+    if (!isAutoElemental)
+      keys.push("phy_dmg")
+
+
+    if (!isAutoElemental) //add phy auto + charged + physical 
+      keys.push("norm_atk_avg_dmg", "char_atk_avg_dmg")
+
     if (isAutoElemental || isAutoInfusable) //add elemental auto + charged
       keys.push(`${eleKey}_norm_atk_avg_dmg`, `${eleKey}_char_atk_avg_dmg`)
     else if (Character.getWeaponTypeKey(characterKey) === "bow")//bow charged atk does elemental dmg on charge
       keys.push(`${eleKey}_char_atk_avg_dmg`)
-    if (!isAutoElemental) //add phy auto + charged + physical 
-      keys.push("norm_atk_avg_dmg", "char_atk_avg_dmg", "phy_dmg", "phy_avg_dmg")
+
+    //show skill/burst at the end
+    keys.push("skill_avg_dmg", "burst_avg_dmg")
 
     return keys.map(key => (["ele_dmg", "skill_avg_dmg", "burst_avg_dmg"].includes(key)) ? `${eleKey}_${key}` : key)
   }

@@ -65,8 +65,8 @@ const StatData = {
   char_atk_crit_multi: { name: "Charged Attack Crit Multiplier", unit: "multi" },
   norm_atk_bonus_dmg: { name: "Normal Attack Bonus DMG Muitiplier", unit: "multi" },
   char_atk_bonus_dmg: { name: "Charged Attack Bonus DMG Muitiplier", unit: "multi" },
-  norm_atk_avg_dmg: { name: "Normal Attack Avg. DMG" },
-  char_atk_avg_dmg: { name: "Charged Attack Avg. DMG" },
+  norm_atk_avg_dmg: { name: "Normal Attack DMG" },
+  char_atk_avg_dmg: { name: "Charged Attack DMG" },
   //skill
   skill_dmg: { name: "Ele. Skill DMG", unit: "%" },
   burst_dmg: { name: "Ele. Burst DMG", unit: "%" },
@@ -78,8 +78,8 @@ const StatData = {
   burst_bonus_dmg: { name: "Ele. Burst Bonus DMG Muitiplier", unit: "multi" },
   skill_cd_red: { name: "Ele. Skill CD Red.", unit: "%" },
   burst_cd_red: { name: "Ele. Burst CD Red.", unit: "%" },
-  skill_avg_dmg: { name: "Ele. SKill Avg. DMG" },
-  burst_avg_dmg: { name: "Ele. Burst Avg. DMG" },
+  skill_avg_dmg: { name: "Ele. Skill DMG" },
+  burst_avg_dmg: { name: "Ele. Burst DMG" },
 
   crit_multi: { name: "Crit Multiplier", unit: "multi" },
   dmg: { name: "All DMG", unit: "%" },//general all damage increase
