@@ -44,8 +44,8 @@ const StatData = {
   phy_dmg: { name: "Physical DMG Bonus", unit: "%" },
   phy_res: { name: "Physical RES", unit: "%" },
   phy_avg_dmg: { name: "Physical Avg. DMG" },
-  ele_dmg: { name: "Elemental DMG Bonus", unit: "%" },
-  ele_res: { name: "Elemental DMG RES", unit: "%" },
+  ele_dmg: { name: "DMG Bonus", unit: "%" },//will expact to "Anemo DMG Bonus"
+  ele_res: { name: "DMG RES", unit: "%" },//will expact to "Anemo DMG RES"
   ele_mas: { name: "Elemental Mastery", },
   ele_avg_dmg: { name: "Elemental Avg. DMG" },
   ener_rech: { name: "Energy Recharge", unit: "%" },

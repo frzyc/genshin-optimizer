@@ -228,9 +228,6 @@ export default class Character {
         initialStats.formulaOverrides = [...(initialStats.formulaOverrides || []), ...val]
         return
       }
-
-      if (key === "hp" || key === "def" || key === "atk")
-        key = "base_" + key
       initialStats[key] = (initialStats[key] || 0) + val
     })
 
@@ -253,7 +250,13 @@ export default class Character {
     if (weaponStats.subKey)
       initialStats[weaponStats.subKey] = (initialStats[weaponStats.subKey] || 0) + weaponStats.subVal
     if (weaponStats.bonusStats) addStatsObj(weaponStats.bonusStats)
-    if (weaponStats.conditionalStats) addStatsObj(weaponStats.conditionalStats)
+    if (weaponStats.conditionalStats) addStatsObj(weaponStats.conditionalStats);
+
+    //convert the final values to flat
+    ["hp", "def", "atk"].forEach(statKey => {
+      initialStats[`${statKey}_flat`] = initialStats[statKeys] || 0
+      delete initialStats[statKeys]
+    })
     return initialStats
   }
 
