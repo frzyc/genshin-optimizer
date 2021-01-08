@@ -37,6 +37,11 @@ const getArrLastElement = (arr) =>
 
 const clamp01 = (val) => clamp(val, 0, 1)
 const clampPercent = (val) => clamp(val, 0, 100)
+
+//use to pretty print timestamps, or anything really.
+function strPadLeft(string, pad, length) {
+  return (new Array(length + 1).join(pad) + string).slice(-length);
+}
 export {
   getRandomInt,
   getRandomIntInclusive,
@@ -50,5 +55,6 @@ export {
   clamp,
   clamp01,
   clampPercent,
-  getArrLastElement
+  getArrLastElement,
+  strPadLeft
 }

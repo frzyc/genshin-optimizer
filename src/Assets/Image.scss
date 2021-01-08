@@ -1,15 +1,15 @@
-.thumb-small {
+img.thumb-small {
   width: 40px;
   height: auto;
 }
-.thumb-mid {
+img.thumb-mid {
   width: 60px;
   height: auto;
 }
-.inline-icon{
+img.inline-icon{
   display: inline-block;
-  width: 1em;
-  height: auto;
+  height: 1em;
+  width: auto;
 }
 .overlay-dark {
   filter: brightness(50%);

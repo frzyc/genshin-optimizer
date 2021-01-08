@@ -19,6 +19,7 @@ const ArtifactDisplay = lazy(() => import('./Artifact/ArtifactDisplay'))
 const CharacterDisplay = lazy(() => import('./Character/CharacterDisplay'))
 const BuildDisplay = lazy(() => import('./Build/BuildDisplay'))
 const FAQ = lazy(() => import('./FAQ/FAQDisplay'))
+const Planner = lazy(() => import('./Planner/PlannerDisplay'))
 const TestDisplay = lazy(() => import('./TestPage/TestDisplay'))
 
 function App() {
@@ -36,18 +37,19 @@ function App() {
                 <Nav.Link as={Link} to="/character">Characters</Nav.Link>
                 <Nav.Link as={Link} to="/build">Builds</Nav.Link>
                 <Nav.Link as={Link} to="/faq">FAQ</Nav.Link>
+                <Nav.Link as={Link} to="/tools">Tools</Nav.Link>
                 {process.env.NODE_ENV === "development" && <Nav.Link as={Link} to="/test">TEST</Nav.Link>}
               </Nav>
               <Nav>
                 <Nav.Link href={process.env.REACT_APP_PAYPAL_LINK} target="_blank" onClick={() => ReactGA.outboundLink({ label: "patreon" }, () => { })}>
-                    <span><FontAwesomeIcon icon={faPaypal} className="fa-fw" /> PayPal</span>
-                  </Nav.Link>
+                  <span><FontAwesomeIcon icon={faPaypal} className="fa-fw" /> PayPal</span>
+                </Nav.Link>
                 <Nav.Link href={process.env.REACT_APP_PATREON_LINK} target="_blank" onClick={() => ReactGA.outboundLink({ label: "patreon" }, () => { })}>
-                    <span><FontAwesomeIcon icon={faPatreon} className="fa-fw" /> Patreon</span>
-                  </Nav.Link>
+                  <span><FontAwesomeIcon icon={faPatreon} className="fa-fw" /> Patreon</span>
+                </Nav.Link>
                 <Nav.Link href={process.env.REACT_APP_DISCORD_LINK} target="_blank" onClick={() => ReactGA.outboundLink({ label: "discord" }, () => { })}>
-                    <span><FontAwesomeIcon icon={faDiscord} className="fa-fw" /> Discord</span>
-                  </Nav.Link>
+                  <span><FontAwesomeIcon icon={faDiscord} className="fa-fw" /> Discord</span>
+                </Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Navbar>
@@ -62,6 +64,7 @@ function App() {
               <Route path="/character" component={CharacterDisplay} />
               <Route path="/build" component={BuildDisplay} />
               <Route path="/faq" component={FAQ} />
+              <Route path="/tools" component={Planner} />
               {process.env.NODE_ENV === "development" && <Route path="/test" component={TestDisplay} />}
               <Route path="/" component={Home} />
               {/* <Route exact path="/" component={Home} /> */}

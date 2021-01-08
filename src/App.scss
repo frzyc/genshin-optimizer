@@ -25,6 +25,29 @@ body {
   font-size: 50%;
 }
 
+/* Chrome, Safari, Edge, Opera */
+input.hide-appearance::-webkit-outer-spin-button,
+input.hide-appearance::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number].hide-appearance {
+  -moz-appearance: textfield;
+}
+
+input.invisible-input{
+  outline-color: initial;
+  background-image: initial;
+  background-color: transparent;
+  cursor:pointer;
+  outline: 0;
+  margin: 0;
+  -ms-appearance: none;
+  border:none;
+}
+
 //default gutter size of 30px is wayyyyyyy too big
 $grid-gutter-width: 10px !default;
 
