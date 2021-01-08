@@ -32,6 +32,16 @@ class ResinCounter extends React.Component {
         date: new Date().getTime(),
       }
     }
+    let { resin, date } = this.state
+    //catch up date.
+    if (resin < RESIN_MAX && (Date.now() - date) > RESIN_RECH_MS) {
+      let resinToMax = RESIN_MAX - resin
+      let resinSinceLastDate = Math.min(Math.floor((Date.now() - date) / (RESIN_RECH_MS)), resinToMax)
+      resin += resinSinceLastDate
+      date += resinSinceLastDate * RESIN_RECH_MS
+      this.state.resin = resin
+      this.state.date = date
+    }
   }
   setResin = (resin) => this.setState(state => {
     resin = parseInt(resin) || 0
@@ -49,9 +59,9 @@ class ResinCounter extends React.Component {
     return newState
   });
   componentDidMount() {
-    let { resin } = this.state
+    let { resin, date } = this.state
     if (resin < RESIN_MAX) {
-      let nextResinDateNum = this.state.date + RESIN_RECH_MS;
+      let nextResinDateNum = date + RESIN_RECH_MS;
       let nextDelta = nextResinDateNum - new Date();
       this.resinIncrement = setTimeout(() => {
         this.setResin(this.state.resin + 1)
