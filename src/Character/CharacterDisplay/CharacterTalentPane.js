@@ -210,6 +210,7 @@ export default function CharacterTalentPane(props) {
   </>
 }
 
+const talentLimits = [1, 1, 2, 4, 6, 8, 10]
 function SkillDisplayCard(props) {
   let { character, character: { characterKey, constellation, autoInfused = false }, talentKey, subtitle, ascension, equippedBuild, newBuild, editable, setState } = props
   let { onClickTitle = null, ...otherProps } = props
@@ -238,8 +239,8 @@ function SkillDisplayCard(props) {
         <Row>
           <Col xs="auto">
             <DropdownButton title={`Talent Lv. ${talentLvlKey + 1}`}>
-              {[...Array(15).keys()].map(i =>
-                i >= levelBoost && <Dropdown.Item key={i} onClick={() => setTalentLevel(talentKey, i - levelBoost)}>Talent Lv. {i + 1}</Dropdown.Item>)}
+              {[...Array(talentLimits[ascension]).keys()].map(i =>
+                <Dropdown.Item key={i} onClick={() => setTalentLevel(talentKey, i)}>Talent Lv. {i + levelBoost + 1}</Dropdown.Item>)}
             </DropdownButton>
           </Col>
           {infuseBtn}
