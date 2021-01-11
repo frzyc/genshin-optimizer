@@ -1,4 +1,4 @@
-import WeaponPercent from "../../../Components/WeaponPercent"
+import DisplayPercent from "../../../Components/DisplayPercent"
 
 const refinementVals = [1, 1.25, 1.5, 1.75, 2]
 const weapon = {
@@ -6,7 +6,7 @@ const weapon = {
   weaponType: "sword",
   rarity: 3,
   passiveName: "Journey",
-  passiveDescription: (refineIndex, charFinalStats) => <span>Each Elemental Orb or Particle collected restores {refinementVals[refineIndex]}% HP{WeaponPercent(refinementVals[refineIndex], charFinalStats.hp)}.</span>,
+  passiveDescription: (refineIndex, charFinalStats) => <span>Each Elemental Orb or Particle collected restores {refinementVals[refineIndex]}% HP{DisplayPercent(refinementVals[refineIndex], charFinalStats, "hp_final")}.</span>,
   description: "A handy steel sword which contains scissors, a magnifying glass, tinder, and other useful items in its sheath.",
   baseStats: {
     main: [40, 53, 69, 86, 102, 121, 138, 154, 171, 187, 207, 223, 239, 259, 275, 292, 311, 327, 344, 363, 380, 396, 415, 432, 448],

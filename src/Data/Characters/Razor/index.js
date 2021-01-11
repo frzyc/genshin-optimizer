@@ -12,7 +12,7 @@ import burst from './Talent_Lightning_Fang.png'
 import passive1 from './Talent_Awakening.png'
 import passive2 from './Talent_Hunger.png'
 import passive3 from './Talent_Wolvensprint.png'
-//import WeaponPercent from '../../../Components/WeaponPercent'
+//import DisplayPercent from '../../../Components/DisplayPercent'
 
 //AUTO
 
@@ -26,7 +26,7 @@ const hitPercent = [
 const charged_atk_spinnning = []
 const charged_atk_final = []
 const plunge_dmg = []
-const plunge_dng_low = []
+const plunge_dmg_low = []
 const plunge_dmg_high = []
 
 //SKILL
@@ -57,12 +57,12 @@ let char = {
   constellationName: "Lupus Minor",
   titles: ["Legend of Wolvendom", "Wolf Boy"],
   baseStat: {
-    hp: [1003, 2577, 3326, 4982, 5514, 6343, 7052, 7881, 8413, 9241, 9773, 10602, 11134, 11962],
-    atk: [20, 50, 65, 97, 108, 124, 138, 154, 164, 180, 191, 207, 217, 234],
-    def: [63, 162, 209, 313, 346, 398, 443, 495, 528, 580, 613, 665, 699, 751]
+    hp_base: [1003, 2577, 3326, 4982, 5514, 6343, 7052, 7881, 8413, 9241, 9773, 10602, 11134, 11962],
+    atk_base: [20, 50, 65, 97, 108, 124, 138, 154, 164, 180, 191, 207, 217, 234],
+    def_base: [63, 162, 209, 313, 346, 398, 443, 495, 528, 580, 613, 665, 699, 751]
   },
   specializeStat: {
-    key: "phy_dmg",
+    key: "phy_dmg_bonus",
     value: [0, 0, 0, 0, 7.5, 7.5, 15, 15, 15, 15, 22.5, 22.5, 30, 30]
   },
   talent: {
@@ -101,15 +101,15 @@ let char = {
         fields: [{
           text: `Plunge DMG`,
           basicVal: (tlvl) => plunge_dmg[tlvl] + "%",
-          finalVal: (tlvl, stats) => (plunge_dmg[tlvl] / 100) * stats.phy_avg_dmg
+          finalVal: (tlvl, stats) => (plunge_dmg[tlvl] / 100) * stats.plunge_avg_dmg
         }, {
           text: `Low Plunge DMG`,
-          basicVal: (tlvl) => plunge_dng_low[tlvl] + "%",
-          finalVal: (tlvl, stats) => (plunge_dng_low[tlvl] / 100) * stats.phy_avg_dmg
+          basicVal: (tlvl) => plunge_dmg_low[tlvl] + "%",
+          finalVal: (tlvl, stats) => (plunge_dmg_low[tlvl] / 100) * stats.plunge_avg_dmg
         }, {
           text: `High Plunge DMG`,
           basicVal: (tlvl) => plunge_dmg_high[tlvl] + "%",
-          finalVal: (tlvl, stats) => (plunge_dmg_high[tlvl] / 100) * stats.phy_avg_dmg
+          finalVal: (tlvl, stats) => (plunge_dmg_high[tlvl] / 100) * stats.plunge_avg_dmg
         }]
       }
     },

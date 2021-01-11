@@ -26,9 +26,9 @@ export default class ArtifactCard extends React.Component {
     let location = locationChar ? locationChar.name : "Inventory"
     return (<Card className="h-100" border={`${art.numStars}star`} bg="lightcontent" text="lightfont">
       <Card.Header className="p-0">
-        <Row className="no-gutters">
-          <Col xs={2} md={3} className="pl-1">
-            <Image src={Artifact.getArtifactPieceIcon(art.setKey, art.slotKey)} className="w-100 h-auto" />
+        <Row>
+          <Col xs={2} md={3}>
+            <Image src={Artifact.getArtifactPieceIcon(art.setKey, art.slotKey)} className={`w-100 h-auto grad-${art.numStars}star m-1`} thumbnail />
           </Col>
           <Col className="pt-3">
             <h6><b>{`${Artifact.getArtifactPieceName(art.setKey, art.slotKey, "Unknown Piece Name")}`}</b></h6>
@@ -36,14 +36,14 @@ export default class ArtifactCard extends React.Component {
           </Col>
         </Row>
       </Card.Header>
-      <Card.Body className="d-flex flex-column">
+      <Card.Body className="d-flex flex-column py-2">
         <Card.Title>
           <div>{Artifact.getArtifactSetName(art.setKey, "Artifact Set")}</div>
           <small className="text-halfsize"><Stars stars={art.numStars} /></small>
         </Card.Title>
-        <Card.Subtitle>
-          <b>{art.mainStatKey ? `${Stat.getStatName(art.mainStatKey).split("%")[0]} ${Artifact.getMainStatValue(art.mainStatKey, art.numStars, art.level)}${Stat.getStatUnit(art.mainStatKey)}` : null}</b>
-        </Card.Subtitle>
+        <h5 className="mb-1">
+          <b>{Stat.getStatName(art.mainStatKey)} {Artifact.getMainStatValue(art.mainStatKey, art.numStars, art.level, "")}{Stat.getStatUnit(art.mainStatKey)}</b>
+        </h5>
         <Row className="mb-0">
           {art.substats ? art.substats.map((stat, i) => {
             if (!stat || !stat.value) return null
@@ -51,15 +51,16 @@ export default class ArtifactCard extends React.Component {
             let numRolls = subStatValidation?.rolls?.length || 0
             let efficiency = subStatValidation?.efficiency || 0
             let effOpacity = 0.3 + efficiency * 0.7
+            let statName = Stat.getStatName(stat.key)
             return (<Col key={i} xs={12}>
               <Badge variant={artifactValidation.valid ? `${numRolls}roll` : "danger"} className="text-darkcontent"><b>{artifactValidation.valid ? numRolls : "?"}</b></Badge>{" "}
-              <span className={`text-${numRolls}roll`}>{`${Stat.getStatName(stat.key).split("%")[0]}+${Stat.getStatUnit(stat.key) ? stat.value.toFixed(1) : stat.value}${Stat.getStatUnit(stat.key)}`}</span>
+              <span className={`text-${numRolls}roll`}>{statName}{`+${Stat.getStatUnit(stat.key) ? stat.value.toFixed(1) : stat.value}${Stat.getStatUnit(stat.key)}`}</span>
               <span className="float-right" style={{ opacity: effOpacity }}>{efficiency.toFixed(1)}%</span>
             </Col>)
           }
           ) : null}
         </Row>
-        <div className="mt-auto mb-n2">
+        <div className="mt-auto">
           <span className="mb-0 mr-1">Substat Eff.:</span>
           <PercentBadge tooltip={artifactValidation.msg} valid={artifactValidation.valid} percent={artifactValidation.currentEfficiency}>
             {(artifactValidation.currentEfficiency ? artifactValidation.currentEfficiency : 0).toFixed(2) + "%"}

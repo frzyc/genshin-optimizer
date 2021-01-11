@@ -1,14 +1,18 @@
-import { faQuestionCircle } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import React from 'react'
-import { Button, Card, Col, Dropdown, DropdownButton, Image, ListGroup, OverlayTrigger, Row, Tooltip } from "react-bootstrap"
-import ConditionalSelector from "../../Components/ConditionalSelector"
-import Stat from "../../Stat"
-import ConditionalsUtil from "../../Util/ConditionalsUtil"
-import Character from "../Character"
+import { faCheckSquare, faQuestionCircle, faSquare, faWindowMaximize, faWindowMinimize } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useContext } from 'react';
+import { Accordion, AccordionContext, Button, Card, Col, Dropdown, DropdownButton, Image, ListGroup, OverlayTrigger, Row, ToggleButton, ToggleButtonGroup, Tooltip } from "react-bootstrap";
+import { useAccordionToggle } from 'react-bootstrap/AccordionToggle';
+import ConditionalSelector from "../../Components/ConditionalSelector";
+import Stat, { FormulaText, OverrideFormulas } from "../../Stat";
+import { GetDependencyStats } from "../../StatDependency";
+import ConditionalsUtil from "../../Util/ConditionalsUtil";
+import Character from "../Character";
+import StatInput from "../StatInput";
 
 export default function CharacterTalentPane(props) {
-  let { character: { levelKey, constellation }, editable, setState } = props
+  let { character, character: { characterKey, levelKey, constellation, dmgMode }, editable, setState, setOverride, newBuild, equippedBuild } = props
+  let build = newBuild ? newBuild : equippedBuild
   //choose which one to display stats for
   let ascension = Character.getAscension(levelKey)
 
@@ -17,7 +21,148 @@ export default function CharacterTalentPane(props) {
   let passivesList = [["passive1", "Unlocked at Ascension 1", 1], ["passive2", "Unlocked at Ascension 4", 4], ["passive3", "Unlocked by Default", 0]]
 
   let skillDisplayProps = { ...props, ascension }
+  const ContextAwareToggle = ({ eventKey, callback }) => {
+    const currentEventKey = useContext(AccordionContext);
+    const decoratedOnClick = useAccordionToggle(
+      eventKey,
+      () => callback && callback(eventKey),
+    );
+    const expanded = currentEventKey === eventKey;
+    return (
+      <Button
+        // style={{ backgroundColor: isCurrentEventKey ? 'pink' : 'lavender' }}
+        onClick={decoratedOnClick}
+      >
+        <FontAwesomeIcon icon={expanded ? faWindowMinimize : faWindowMaximize} className={`fa-fw ${expanded ? "fa-rotate-180" : ""}`} />
+        <span> </span>{expanded ? "Retract" : "Expand"}
+      </Button>
+    );
+  }
+  const statsDisplayKeys = () => {
+    let keys = ["hp_final", "atk_final", "def_final"]
+    //we need to figure out if the character has: normal phy auto, elemental auto, infusable auto(both normal and phy)
+    let isAutoElemental = Character.isAutoElemental(characterKey)
+    let isAutoInfusable = Character.isAutoInfusable(characterKey)
+    let autoKeys = ["norm_atk", "char_atk", "plunge"];
+    let talKeys = ["ele", "skill", "burst"];
+    if (!isAutoElemental)  //add physical variants of the formulas
+      autoKeys.forEach(key => keys.push(Character.getTalentStatKey(key, character)))
+    if (isAutoElemental || (isAutoInfusable && character.autoInfused))
+      autoKeys.forEach(key => keys.push(Character.getTalentStatKey(key, character, true)))
+    else if (Character.getWeaponTypeKey(characterKey) === "bow")//bow charged atk does elemental dmg on charge
+      keys.push(Character.getTalentStatKey("char_atk", character, true))
+    //add talents/skills
+    talKeys.forEach(key => keys.push(Character.getTalentStatKey(key, character)))
+    //search for dependency, and flatten, isolate unique keys
+    keys = [...new Set(keys.map(key => GetDependencyStats(key, build.finalStats?.formulaOverrides)).flat())]
+    //return keys that are part of the formula text, in the order in which they appear.
+    return Object.keys(FormulaText).filter(key => keys.includes(key))
+  }
   return <>
+    <Row><Col xs={12} className="mb-2">
+      <Accordion>
+        <Card bg="lightcontent" text="lightfont" className="mb-2">
+          <Card.Header>
+            <Row>
+              <Col>
+                <span className="d-block">Damage Calculation Options</span>
+                <small>Expand below to edit enemy details.</small>
+              </Col>
+              <Col xs="auto">
+                <ToggleButtonGroup type="radio" value={dmgMode} name="dmgOptions" onChange={(dmgMode) => setState({ dmgMode })}>
+                  <ToggleButton value="avg_dmg">Avg. DMG</ToggleButton>
+                  <ToggleButton value="dmg">Normal Hit, No Crit</ToggleButton>
+                  <ToggleButton value="crit_dmg">Crit Hit DMG</ToggleButton>
+                </ToggleButtonGroup>
+              </Col>
+              <Col xs="auto">
+                <ContextAwareToggle as={Button} eventKey="1" />
+              </Col>
+            </Row>
+          </Card.Header>
+          <Accordion.Collapse eventKey="1">
+            <Card.Body>
+              <Row className="mb-2"><Col>
+                <Button variant="warning" >
+                  <a href="https://genshin-impact.fandom.com/wiki/Damage#Base_Enemy_Resistances" target="_blank" rel="noreferrer">
+                    To get the specific resistance values of enemies, please visit the wiki.
+                  </a>
+                </Button >
+              </Col></Row>
+              <Row>
+                <Col xs={12} xl={6} className="mb-2">
+                  <StatInput
+                    name={<b>Enemy Level</b>}
+                    value={Character.getStatValueWithOverride(character, "enemy_level")}
+                    placeholder={Stat.getStatNameRaw("enemy_level")}
+                    defaultValue={Character.getBaseStatValue(character, "enemy_level")}
+                    onValueChange={(val) => setOverride("enemy_level", val)}
+                  />
+                </Col>
+                {["physical", ...Character.getElementalKeys()].map(eleKey => {
+                  let statKey = eleKey === "physical" ? "enemy_phy_res" : `${eleKey}_enemy_ele_res`
+                  let immunityStatKey = eleKey === "physical" ? "enemy_phy_immunity" : `${eleKey}_enemy_ele_immunity`
+                  let elementImmunity = Character.getStatValueWithOverride(character, immunityStatKey)
+                  return <Col xs={12} xl={6} key={eleKey} className="mb-2">
+                    <StatInput
+                      prependEle={<Button variant={eleKey} onClick={() => setOverride(immunityStatKey, !elementImmunity)} className="text-darkcontent">
+                        <FontAwesomeIcon icon={elementImmunity ? faCheckSquare : faSquare} className="fa-fw" /> Immunity
+                        </Button>}
+                      name={<b>{Stat.getStatNameRaw(statKey)}</b>}
+                      value={Character.getStatValueWithOverride(character, statKey)}
+                      placeholder={Stat.getStatNameRaw(statKey)}
+                      defaultValue={Character.getBaseStatValue(character, statKey)}
+                      onValueChange={(val) => setOverride(statKey, val)}
+                      disabled={elementImmunity}
+                    />
+                  </Col>
+                })}
+              </Row>
+            </Card.Body>
+          </Accordion.Collapse>
+        </Card>
+
+        <Card bg="lightcontent" text="lightfont">
+          <Card.Header>
+            <Row>
+              <Col>
+                <span className="d-block">Damage Calculation Formulas</span>
+                <small>Expand below to see calculation details.</small>
+              </Col>
+              <Col xs="auto">
+                <ContextAwareToggle as={Button} eventKey="2" />
+              </Col>
+            </Row>
+          </Card.Header>
+          <Accordion.Collapse eventKey="2">
+            <Card.Body>
+              <Row>
+                {statsDisplayKeys().map(key => {
+                  let formulaOverrides = (build.finalStats.formulaOverrides || [])
+                  let formula = null
+                  for (const formulaOverride of formulaOverrides)
+                    if (OverrideFormulas[formulaOverride?.key]?.key === key) {
+                      formula = Stat.printOverrideFormula(build.finalStats, formulaOverride.key, formulaOverride.options, false)
+                      break;
+                    }
+                  formula = formula || Stat.printFormula(key, build.finalStats, false)
+                  return <Col key={key} xs={12} className="mb-2">
+                    <Card bg="darkcontent" text="lightfont">
+                      <Card.Header className="p-2">
+                        {Stat.printStat(key, build.finalStats)}
+                      </Card.Header>
+                      <Card.Body className="p-2">
+                        <small>{formula}</small>
+                      </Card.Body>
+                    </Card>
+                  </Col>
+                })}
+              </Row>
+            </Card.Body>
+          </Accordion.Collapse>
+        </Card>
+      </Accordion>
+    </Col></Row>
     <Row>
       {/* auto, skill, burst */}
       {skillBurstList.map(([tKey, tText]) =>

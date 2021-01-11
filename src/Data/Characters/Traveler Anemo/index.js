@@ -11,7 +11,7 @@ import skill from './Talent_Palm_Vortex.png'
 import burst from './Talent_Gust_Surge.png'
 import passive1 from './Talent_Slitting_Wind.png'
 import passive2 from './Talent_Second_Wind.png'
-//import WeaponPercent from '../../../Components/WeaponPercent'
+//import DisplayPercent from '../../../Components/DisplayPercent'
 
 //AUTO
 
@@ -25,7 +25,7 @@ const hitPercent = [
 const charged_atk_spinnning = []
 const charged_atk_final = []
 const plunge_dmg = []
-const plunge_dng_low = []
+const plunge_dmg_low = []
 const plunge_dmg_high = []
 
 //SKILL
@@ -56,9 +56,9 @@ let char = {
   constellationName: "Viatrix",//female const
   titles: ["Outlander", "Honorary Knight"],
   baseStat: {
-    hp: [912, 2342, 3024, 4529, 5013, 5766, 6411, 7164, 7648, 8401, 8885, 9638, 10122, 10875],
-    atk: [18, 46, 60, 88, 98, 112, 126, 140, 149, 164, 174, 188, 198, 213],
-    def: [57, 147, 190, 284, 315, 362, 405, 450, 480, 527, 558, 605, 635, 682]
+    hp_base: [912, 2342, 3024, 4529, 5013, 5766, 6411, 7164, 7648, 8401, 8885, 9638, 10122, 10875],
+    atk_base: [18, 46, 60, 88, 98, 112, 126, 140, 149, 164, 174, 188, 198, 213],
+    def_base: [57, 147, 190, 284, 315, 362, 405, 450, 480, 527, 558, 605, 635, 682]
   },
   specializeStat: {
     key: "atk_",
@@ -100,15 +100,15 @@ let char = {
         fields: [{
           text: `Plunge DMG`,
           basicVal: (tlvl) => plunge_dmg[tlvl] + "%",
-          finalVal: (tlvl, stats) => (plunge_dmg[tlvl] / 100) * stats.phy_avg_dmg
+          finalVal: (tlvl, stats) => (plunge_dmg[tlvl] / 100) * stats.plunge_avg_dmg
         }, {
           text: `Low Plunge DMG`,
-          basicVal: (tlvl) => plunge_dng_low[tlvl] + "%",
-          finalVal: (tlvl, stats) => (plunge_dng_low[tlvl] / 100) * stats.phy_avg_dmg
+          basicVal: (tlvl) => plunge_dmg_low[tlvl] + "%",
+          finalVal: (tlvl, stats) => (plunge_dmg_low[tlvl] / 100) * stats.plunge_avg_dmg
         }, {
           text: `High Plunge DMG`,
           basicVal: (tlvl) => plunge_dmg_high[tlvl] + "%",
-          finalVal: (tlvl, stats) => (plunge_dmg_high[tlvl] / 100) * stats.phy_avg_dmg
+          finalVal: (tlvl, stats) => (plunge_dmg_high[tlvl] / 100) * stats.plunge_avg_dmg
         }]
       }
     },

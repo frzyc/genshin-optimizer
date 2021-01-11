@@ -1,4 +1,4 @@
-import { faEdit, faGavel, faQuoteLeft, faSave } from "@fortawesome/free-solid-svg-icons"
+import { faEdit, faGavel, faQuoteLeft, faSave, faUndo } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import React, { useState } from "react"
 import { Button, Card, Col, Dropdown, DropdownButton, Image, InputGroup, OverlayTrigger, Row, Tooltip } from "react-bootstrap"
@@ -6,21 +6,23 @@ import Assets from "../../Assets/Assets"
 import ConditionalSelector from "../../Components/ConditionalSelector"
 import { FloatFormControl, IntFormControl } from "../../Components/CustomFormControl"
 import { Stars } from "../../Components/StarDisplay"
-import StatIcon, { StatIconEle } from "../../Components/StatIcon"
+import { DisplayNewBuildDiff, DisplayStats } from "../../Components/StatDisplay"
+import { StatIconEle } from "../../Components/StatIcon"
 import { CharacterSpecializedStatKey } from "../../Data/CharacterData"
 import { LevelNameData } from "../../Data/WeaponData"
 import Stat from "../../Stat"
+import { clamp } from "../../Util/Util"
 import Weapon from "../../Weapon/Weapon"
 import Character from "../Character"
 import StatInput from "../StatInput"
 export default function CharacterOverviewPane(props) {
-  let { character: { characterKey, constellation }, editable, setOverridelevel, setConstellation } = props
+  let { character, character: { characterKey, constellation }, editable, setOverride, setConstellation } = props
   let [editLevel, setEditLevel] = useState(false)
   let elementKey = Character.getElementalKey(characterKey)
   let weaponTypeKey = Character.getWeaponTypeKey(characterKey)
-  let level = Character.getLevelWithOverride(props.character)
+  let level = Character.getStatValueWithOverride(character, "char_level")
   return <Row>
-    <Col xs={12} lg={3} >
+    <Col xs={12} md={3} >
       {/* Image card with star and name and level */}
       <Card bg="lightcontent" text="lightfont" className="mb-2">
         <Card.Img src={Character.getCard(characterKey)} className="w-100 h-auto" />
@@ -36,11 +38,16 @@ export default function CharacterOverviewPane(props) {
                   <InputGroup.Prepend>
                     <InputGroup.Text>Lvl.</InputGroup.Text>
                   </InputGroup.Prepend>
-                  <IntFormControl onValueChange={setOverridelevel} value={level} />
+                  <IntFormControl onValueChange={(val) => setOverride("char_level", clamp(val, 1, 90))} value={level} />
+                  <InputGroup.Append>
+                    <Button>
+                      <FontAwesomeIcon icon={faUndo} size="sm" onClick={() => setOverride("char_level", Character.getLevel(character.levelKey))} />
+                    </Button>
+                  </InputGroup.Append>
                   <InputGroup.Append>
                     <OverlayTrigger
                       placement="bottom"
-                      overlay={<Tooltip>Changes the display level. Cosmetic only.</Tooltip>}
+                      overlay={<Tooltip>Override the level value for calculations. Does not change Stats.</Tooltip>}
                     >
                       <Button variant="danger" onClick={() => setEditLevel(!editLevel)} size="sm">
                         <span><FontAwesomeIcon icon={faSave} /></span>
@@ -79,16 +86,16 @@ export default function CharacterOverviewPane(props) {
         </Card.Body>
       </Card>
     </Col>
-    <Col xs={12} lg={9} >
+    <Col xs={12} md={9} >
       <WeaponStatsEditorCard {...props} />
-      <MainStatsCard {...props} />
+      <MainStatsCards {...props} />
     </Col>
   </Row >
 }
 function WeaponStatsEditorCard(props) {
   let [editing, SetEditing] = useState(false)
   let [showDescription, setShowDescription] = useState(false)
-  let { character: { characterKey, weapon }, editable, setState, equippedBuild, newBuild } = props
+  let { character, character: { characterKey, weapon }, editable, setState, equippedBuild, newBuild } = props
 
   //choose which one to display stats for
   let build = newBuild ? newBuild : equippedBuild
@@ -112,7 +119,7 @@ function WeaponStatsEditorCard(props) {
     conditional={conditional}
     conditionalNum={conditionalNum}
     setConditional={(cnum) => setStateWeapon("conditionalNum", cnum)}
-    defEle={<h6 className="d-inline mb-0">{weaponPassiveName}</h6>}
+    defEle={<span>{weaponPassiveName}</span>}
   />
 
   return <Card bg="lightcontent" text="lightfont" className="mb-2">
@@ -136,7 +143,7 @@ function WeaponStatsEditorCard(props) {
     <Card.Body>
       <Row className="mb-2">
         <Col xs={12} md={3}>
-          <Image src={Assets.weapons[weapon.key]} className="w-100 h-auto" thumbnail />
+          <Image src={Assets.weapons[weapon.key]} className={`w-100 h-auto grad-${Weapon.getWeaponRarity(weapon.key)}star`} thumbnail />
         </Col>
         {editing ? <Col>
           <Row>
@@ -206,7 +213,7 @@ function WeaponStatsEditorCard(props) {
               <Col>{conditionalEle}</Col>
             </Row>
 
-            <p>{weaponPassiveName && Weapon.getWeaponPassiveDescription(weapon.key, weapon.refineIndex, build.finalStats)}</p>
+            <p>{weaponPassiveName && Weapon.getWeaponPassiveDescription(weapon.key, weapon.refineIndex, build.finalStats, character)}</p>
             <Row>
               <Col xs={12} md={6}>
                 <h5>ATK: {weaponDisplayMainVal}</h5>
@@ -231,23 +238,26 @@ function WeaponStatsEditorCard(props) {
   </Card>
 }
 
-function MainStatsCard(props) {
+function MainStatsCards(props) {
+  let { editable, character, character: { compareAgainstEquipped }, setOverride, equippedBuild, newBuild } = props
+  //choose which one to display stats for
+  let build = newBuild ? newBuild : equippedBuild
+
   let [editing, SetEditing] = useState(false)
   let [editingOther, SetEditingOther] = useState(false)
 
-  const statKeys = ["hp", "atk", "def", "ele_mas", "crit_rate", "crit_dmg", "ener_rech", "heal_bonu"]
-  const otherStatKeys = ["stam", "inc_heal", "pow_shield", "red_cd", "phy_dmg", "phy_res"]
+  let additionalKeys = ["ele_mas", "crit_rate", "crit_dmg", "ener_rech", "heal_bonu"]
+  const displayStatKeys = ["hp_final", "atk_final", "def_final"]
+  displayStatKeys.push(...additionalKeys)
+  const editStatKeys = ["hp_base", "hp", "hp_", "atk_base", "atk", "atk_", "def_base", "def", "def_"]
+  editStatKeys.push(...additionalKeys)
+  const otherStatKeys = ["stam", "inc_heal", "pow_shield", "red_cd", "phy_dmg_bonus", "phy_res"]
 
   Character.getElementalKeys().forEach(ele => {
-    otherStatKeys.push(`${ele}_ele_dmg`)
+    otherStatKeys.push(`${ele}_ele_dmg_bonus`)
     otherStatKeys.push(`${ele}_ele_res`)
   })
-  const miscStatkeys = ["phy_avg_dmg", "norm_atk_dmg", "char_atk_dmg", "skill_dmg", "burst_dmg", "skill_crit_rate", "burst_crit_rate", "crit_multi", "dmg", "move_spd", "atk_spd", "weakspot_dmg"]
-
-  let { editable, character, setOverride, equippedBuild, newBuild } = props
-  let { character: { compareAgainstEquipped } } = props
-  //choose which one to display stats for
-  let build = newBuild ? newBuild : equippedBuild
+  const miscStatkeys = ["norm_atk_dmg_bonus", "char_atk_dmg_bonus", "skill_dmg_bonus", "burst_dmg_bonus", "skill_crit_rate", "burst_crit_rate", "dmg", "move_spd", "atk_spd", "weakspot_dmg"]
 
   let specializedStatKey = Character.getStatValueWithOverride(character, "specializedStatKey")
   let specializedStatVal = Character.getStatValueWithOverride(character, "specializedStatVal");
@@ -263,31 +273,8 @@ function MainStatsCard(props) {
     <FloatFormControl {...specialStatProps} />
     : <IntFormControl {...specialStatProps} />
 
-  const displayStats = (statKey) => {
-    let statVal = Character.getStatValueWithOverride(character, statKey)
-    let unit = Stat.getStatUnit(statKey)
-    let buildDiff = (build?.finalStats?.[statKey] || 0) - statVal
-    return <Col xs={12} lg={6} key={statKey}>
-      <h6 className="d-inline">{StatIconEle(statKey)} {Stat.getStatName(statKey)}</h6>
-      <span className={`float-right ${(editable && Character.hasOverride(character, statKey)) ? "text-warning" : ""}`}>
-        {statVal?.toFixed(Stat.fixedUnit(statKey)) + unit}
-        {buildDiff ? <span className={buildDiff > 0 ? "text-success" : "text-danger"}> {buildDiff > 0 && "+"}{buildDiff?.toFixed(Stat.fixedUnit(statKey)) + unit}</span> : null}
-      </span>
-    </Col>
-  }
-  const displayNewBuildDiff = (statKey) => {
-    let statVal = (equippedBuild?.finalStats?.[statKey] || Character.getStatValueWithOverride(character, statKey))
-    let unit = Stat.getStatUnit(statKey)
-    let buildDiff = (newBuild?.finalStats?.[statKey] || 0) - (equippedBuild?.finalStats?.[statKey] || 0)
-
-    return <Col xs={12} lg={6} key={statKey}>
-      <h6 className="d-inline">{StatIconEle(statKey)} {Stat.getStatName(statKey)}</h6>
-      <span className={`float-right ${(editable && Character.hasOverride(character, statKey)) ? "text-warning" : ""}`}>
-        {statVal?.toFixed(Stat.fixedUnit(statKey)) + unit}
-        {buildDiff ? <span className={buildDiff > 0 ? "text-success" : "text-danger"}> ({buildDiff > 0 && "+"}{buildDiff?.toFixed(Stat.fixedUnit(statKey)) + unit})</span> : null}
-      </span>
-    </Col>
-  }
+  let displayStatProps = { character, build, editable }
+  let displayNewBuildProps = { character, equippedBuild, newBuild, editable }
   return <>
     <Card bg="lightcontent" text="lightfont" className="mb-2">
       <Card.Header>
@@ -305,8 +292,18 @@ function MainStatsCard(props) {
       {editing ?
         <Card.Body>
           <Row className="mb-2">
-            {statKeys.map(statKey =>
-              <Col lg={6} xs={12} key={statKey}><StatOverrideInput {...props} {...{ statKey, icon: StatIcon[statKey] }} /></Col>)}
+            {editStatKeys.map(statKey =>
+              <Col lg={6} xs={12} key={statKey}>
+                <StatInput
+                  className="mb-2"
+                  name={<span>{StatIconEle(statKey)} {Stat.getStatNamePretty(statKey)}</span>}
+                  placeholder={`Base ${Stat.getStatName(statKey)}`}
+                  value={Character.getStatValueWithOverride(character, statKey)}
+                  percent={Stat.getStatUnit(statKey) === "%"}
+                  onValueChange={(value) => setOverride(statKey, value)}
+                  defaultValue={Character.getBaseStatValue(character, statKey)}
+                />
+              </Col>)}
 
             <Col lg={6} xs={12}>
               <InputGroup>
@@ -330,7 +327,9 @@ function MainStatsCard(props) {
         </Card.Body> :
         <Card.Body>
           <Row className="mb-2">
-            {(newBuild && compareAgainstEquipped) ? statKeys.map(displayNewBuildDiff) : statKeys.map(displayStats)}
+            {(newBuild && compareAgainstEquipped) ?
+              displayStatKeys.map(statKey => <DisplayNewBuildDiff xs={12} lg={6} key={statKey} {...{ ...displayNewBuildProps, statKey }} />) :
+              displayStatKeys.map(statKey => <DisplayStats xs={12} lg={6} key={statKey} {...{ ...displayStatProps, statKey }} />)}
             {specializedStatVal ? <Col lg={6} xs={12}>
               <span><b>Specialized:</b> <span className={Character.hasOverride(character, "specializedStatKey") ? "text-warning" : ""}>{Stat.getStatName(specializedStatKey)}</span></span>
               <span className={`float-right ${Character.hasOverride(character, "specializedStatVal") ? "text-warning" : ""}`}>{`${specializedStatVal}${specializedStatUnit}`}</span>
@@ -356,12 +355,24 @@ function MainStatsCard(props) {
         <Card.Body>
           <Row className="mb-2">
             {otherStatKeys.map(statKey =>
-              <Col lg={6} xs={12} key={statKey}><StatOverrideInput {...props} {...{ statKey, icon: StatIcon[statKey] }} /></Col>)}
+              <Col lg={6} xs={12} key={statKey}>
+                <StatInput
+                  className="mb-2"
+                  name={<span>{StatIconEle(statKey)} {Stat.getStatName(statKey)}</span>}
+                  placeholder={`Base ${Stat.getStatNameRaw(statKey)}`}
+                  value={Character.getStatValueWithOverride(character, statKey)}
+                  percent={Stat.getStatUnit(statKey) === "%"}
+                  onValueChange={(value) => setOverride(statKey, value)}
+                  defaultValue={Character.getBaseStatValue(character, statKey)}
+                />
+              </Col>)}
           </Row>
         </Card.Body> :
         <Card.Body>
           <Row className="mb-2">
-            {(newBuild && compareAgainstEquipped) ? otherStatKeys.map(displayNewBuildDiff) : otherStatKeys.map(displayStats)}
+            {(newBuild && compareAgainstEquipped) ?
+              otherStatKeys.map(statKey => <DisplayNewBuildDiff xs={12} lg={6} key={statKey} {...{ ...displayNewBuildProps, statKey }} />) :
+              otherStatKeys.map(statKey => <DisplayStats xs={12} lg={6} key={statKey} {...{ ...displayStatProps, statKey }} />)}
           </Row>
         </Card.Body>
       }
@@ -376,23 +387,11 @@ function MainStatsCard(props) {
       </Card.Header>
       <Card.Body>
         <Row className="mb-2">
-          {(newBuild && compareAgainstEquipped) ? miscStatkeys.map(displayNewBuildDiff) : miscStatkeys.map(displayStats)}
+          {(newBuild && compareAgainstEquipped) ?
+            miscStatkeys.map(statKey => <DisplayNewBuildDiff xs={12} lg={6} key={statKey} {...{ ...displayNewBuildProps, statKey }} />) :
+            miscStatkeys.map(statKey => <DisplayStats xs={12} lg={6} key={statKey} {...{ ...displayStatProps, statKey }} />)}
         </Row>
       </Card.Body>
     </Card>
   </>
-}
-
-
-function StatOverrideInput(props) {
-  let { character: { characterKey, levelKey }, statKey, icon, setOverride } = props
-  return <StatInput
-    className="mb-2"
-    name={<span>{icon && <FontAwesomeIcon icon={icon} className="fa-fw" />} {Stat.getStatName(statKey)}</span>}
-    placeholder={`Base ${Stat.getStatName(statKey)}`}
-    value={Character.getStatValueWithOverrideRaw(props.character, statKey)}
-    percent={false}
-    onValueChange={(value) => setOverride(statKey, value)}
-    defaultValue={Character.getBaseStatValue(characterKey, levelKey, statKey)}
-  />
 }

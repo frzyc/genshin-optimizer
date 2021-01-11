@@ -12,7 +12,7 @@ import burst from './Talent_Havoc_Obliteration.png'
 import passive1 from './Talent_Never_Ending.png'
 import passive2 from './Talent_Sword_of_Torrents.png'
 import passive3 from './Talent_Master_of_Weaponry.png'
-//import WeaponPercent from '../../../Components/WeaponPercent'
+//import DisplayPercent from '../../../Components/DisplayPercent'
 
 //AUTO
 
@@ -26,7 +26,7 @@ const hitPercent = [
 const charged_atk_spinnning = []
 const charged_atk_final = []
 const plunge_dmg = []
-const plunge_dng_low = []
+const plunge_dmg_low = []
 const plunge_dmg_high = []
 
 //SKILL
@@ -57,12 +57,12 @@ let char = {
   constellationName: "Monoceros Caeli",
   titles: ["Childe", "11th of the Eleven Fatui Harbingers"],
   baseStat: {
-    hp: [1020, 2646, 3521, 5268, 5889, 6776, 7604, 8500, 9121, 10025, 10647, 11561, 12182, 13103],
-    atk: [23, 61, 81, 121, 135, 156, 175, 195, 210, 231, 245, 266, 280, 301],
-    def: [63, 165, 219, 328, 366, 421, 473, 528, 567, 623, 662, 719, 757, 815]
+    hp_base: [1020, 2646, 3521, 5268, 5889, 6776, 7604, 8500, 9121, 10025, 10647, 11561, 12182, 13103],
+    atk_base: [23, 61, 81, 121, 135, 156, 175, 195, 210, 231, 245, 266, 280, 301],
+    def_base: [63, 165, 219, 328, 366, 421, 473, 528, 567, 623, 662, 719, 757, 815]
   },
   specializeStat: {
-    key: "hydro_ele_dmg",
+    key: "hydro_ele_dmg_bonus",
     value: [0, 0, 0, 0, 7.2, 7.2, 14.4, 14.4, 14.4, 14.4, 21.6, 21.6, 28.8, 28.8]
   },
   talent: {
@@ -101,15 +101,15 @@ let char = {
         fields: [{
           text: `Plunge DMG`,
           basicVal: (tlvl) => plunge_dmg[tlvl] + "%",
-          finalVal: (tlvl, stats) => (plunge_dmg[tlvl] / 100) * stats.phy_avg_dmg
+          finalVal: (tlvl, stats) => (plunge_dmg[tlvl] / 100) * stats.plunge_avg_dmg
         }, {
           text: `Low Plunge DMG`,
-          basicVal: (tlvl) => plunge_dng_low[tlvl] + "%",
-          finalVal: (tlvl, stats) => (plunge_dng_low[tlvl] / 100) * stats.phy_avg_dmg
+          basicVal: (tlvl) => plunge_dmg_low[tlvl] + "%",
+          finalVal: (tlvl, stats) => (plunge_dmg_low[tlvl] / 100) * stats.plunge_avg_dmg
         }, {
           text: `High Plunge DMG`,
           basicVal: (tlvl) => plunge_dmg_high[tlvl] + "%",
-          finalVal: (tlvl, stats) => (plunge_dmg_high[tlvl] / 100) * stats.phy_avg_dmg
+          finalVal: (tlvl, stats) => (plunge_dmg_high[tlvl] / 100) * stats.plunge_avg_dmg
         }]
       }
     },

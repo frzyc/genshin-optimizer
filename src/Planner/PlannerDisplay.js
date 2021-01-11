@@ -1,8 +1,9 @@
 import { faClock } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState, useEffect } from 'react';
-import { Alert, Button, ButtonGroup, Card, Col, Container, Dropdown, DropdownButton, Form, Image, InputGroup, Row } from "react-bootstrap";
+import { Alert, Button, ButtonGroup, Card, Col, Container, Dropdown, DropdownButton, Image, InputGroup, Row } from "react-bootstrap";
 import Assets from '../Assets/Assets';
+import { IntFormControl } from '../Components/CustomFormControl';
 import { timeString } from '../Util/TimeUtil';
 import { clamp, deepClone, loadFromLocalStorage, saveToLocalStorage } from "../Util/Util";
 
@@ -308,9 +309,9 @@ function EXPCalc(props) {
             <InputGroup.Prepend>
               <InputGroup.Text>Current Level</InputGroup.Text>
             </InputGroup.Prepend>
-            <Form.Control type="number" className="hide-appearance"
+            <IntFormControl
               value={level}
-              onChange={(e) => setLevel(clamp(parseInt(e.target.value), 1, 90))}
+              onValueChange={(val) => setLevel(clamp(val, 0, 90))}
             />
           </InputGroup>
         </Col>
@@ -319,9 +320,9 @@ function EXPCalc(props) {
             <InputGroup.Prepend>
               <InputGroup.Text>Current EXP.</InputGroup.Text>
             </InputGroup.Prepend>
-            <Form.Control type="number" className="hide-appearance"
+            <IntFormControl
               value={curExp}
-              onChange={(e) => setCurExp(clamp(parseInt(e.target.value), 0, (levelExp[level] || 1) - 1))}
+              onValueChange={(val) => setCurExp(clamp(val, 0, (levelExp[level] || 1) - 1))}
             />
             <InputGroup.Append>
               <InputGroup.Text>/{levelExp[level] || 0}</InputGroup.Text>
@@ -350,9 +351,9 @@ function EXPCalc(props) {
             <InputGroup.Prepend>
               <InputGroup.Text>Current Mora</InputGroup.Text>
             </InputGroup.Prepend>
-            <Form.Control type="number" className="hide-appearance"
+            <IntFormControl
               value={mora}
-              onChange={(e) => setMora(Math.max(parseInt(e.target.value), 0))}
+              onValueChange={(val) => setMora(Math.max(val, 0))}
             />
           </InputGroup>
         </Col>
@@ -412,9 +413,9 @@ function BookDisplay(props) {
             <InputGroup.Prepend>
               <InputGroup.Text >Amount</InputGroup.Text >
             </InputGroup.Prepend>
-            <Form.Control type="number" className="hide-appearance"
-              value={value.toString()}
-              onChange={(e) => setValue(Math.max(parseInt(e.target.value), 0))}
+            <IntFormControl
+              value={value}
+              onValueChange={(val) => setValue(Math.max(val, 0))}
             />
           </InputGroup>
           <div className="mt-2"><span>Required: </span><span className="float-right text-right"><b className={required ? "text-success" : ""}>{required}</b></span></div>

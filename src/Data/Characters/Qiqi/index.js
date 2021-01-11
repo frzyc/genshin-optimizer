@@ -12,7 +12,7 @@ import burst from './Talent_Adeptus_Art_-_Preserver_of_Fortune.png'
 import passive1 from './Talent_Life-Prolonging_Methods.png'
 import passive2 from './Talent_A_Glimpse_into_Arcanum.png'
 import passive3 from './Talent_Former_Life_Memories.png'
-//import WeaponPercent from '../../../Components/WeaponPercent'
+//import DisplayPercent from '../../../Components/DisplayPercent'
 
 //AUTO
 
@@ -26,7 +26,7 @@ const hitPercent = [
 const charged_atk_spinnning = []
 const charged_atk_final = []
 const plunge_dmg = []
-const plunge_dng_low = []
+const plunge_dmg_low = []
 const plunge_dmg_high = []
 
 //SKILL
@@ -57,9 +57,9 @@ let char = {
   constellationName: "Pristina Nola",
   titles: ["Pharmacist", "Icy Resurrection"],
   baseStat: {
-    hp: [963, 2498, 3323, 4973, 5559, 6396, 7178, 8023, 8610, 9463, 10050, 10912, 11499, 12368],
-    atk: [22, 58, 77, 115, 129, 149, 167, 186, 200, 220, 233, 253, 267, 287],
-    def: [72, 186, 248, 371, 415, 477, 535, 598, 642, 706, 749, 814, 857, 922]
+    hp_base: [963, 2498, 3323, 4973, 5559, 6396, 7178, 8023, 8610, 9463, 10050, 10912, 11499, 12368],
+    atk_base: [22, 58, 77, 115, 129, 149, 167, 186, 200, 220, 233, 253, 267, 287],
+    def_base: [72, 186, 248, 371, 415, 477, 535, 598, 642, 706, 749, 814, 857, 922]
   },
   specializeStat: {
     key: "heal_bonu",
@@ -101,15 +101,15 @@ let char = {
         fields: [{
           text: `Plunge DMG`,
           basicVal: (tlvl) => plunge_dmg[tlvl] + "%",
-          finalVal: (tlvl, stats) => (plunge_dmg[tlvl] / 100) * stats.phy_avg_dmg
+          finalVal: (tlvl, stats) => (plunge_dmg[tlvl] / 100) * stats.plunge_avg_dmg
         }, {
           text: `Low Plunge DMG`,
-          basicVal: (tlvl) => plunge_dng_low[tlvl] + "%",
-          finalVal: (tlvl, stats) => (plunge_dng_low[tlvl] / 100) * stats.phy_avg_dmg
+          basicVal: (tlvl) => plunge_dmg_low[tlvl] + "%",
+          finalVal: (tlvl, stats) => (plunge_dmg_low[tlvl] / 100) * stats.plunge_avg_dmg
         }, {
           text: `High Plunge DMG`,
           basicVal: (tlvl) => plunge_dmg_high[tlvl] + "%",
-          finalVal: (tlvl, stats) => (plunge_dmg_high[tlvl] / 100) * stats.phy_avg_dmg
+          finalVal: (tlvl, stats) => (plunge_dmg_high[tlvl] / 100) * stats.plunge_avg_dmg
         }]
       }
     },

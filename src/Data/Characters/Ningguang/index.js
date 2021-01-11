@@ -12,7 +12,9 @@ import burst from './Talent_Starshatter.png'
 import passive1 from './Talent_Backup_Plan.png'
 import passive2 from './Talent_Strategic_Reserve.png'
 import passive3 from './Talent_Trove_of_Marvelous_Treasures.png'
-//import WeaponPercent from '../../../Components/WeaponPercent'
+import Stat from '../../../Stat'
+import Character from '../../../Character/Character'
+//import DisplayPercent from '../../../Components/DisplayPercent'
 
 //AUTO
 
@@ -21,7 +23,7 @@ const hitPercent = [28, 30.1, 32.2, 35, 37.1, 39.2, 42, 44.8, 47.6, 50.4, 53.31,
 const charged_atk_dmg = [174.08, 187.14, 200.19, 217.6, 230.66, 243.71, 261.12, 278.53, 295.94, 313.34, 331.45, 355.12, 378.8, 402.47, 426.15]
 const charged_per_jade = [49.6, 53.32, 57.04, 62, 65.72, 69.44, 74.4, 79.36, 84.32, 89.28, 94.44, 101.18, 107.93, 114.68, 121.42]
 const plunge_dmg = [56.83, 61.45, 66.08, 72.69, 77.31, 82.6, 89.87, 97.14, 104.41, 112.34, 120.27, 128.2, 136.12, 144.05, 151.98]
-const plunge_dng_low = [113.63, 122.88, 132.13, 145.35, 154.59, 165.17, 179.7, 194.23, 208.77, 224.62, 240.48, 256.34, 272.19, 288.05, 303.9]
+const plunge_dmg_low = [113.63, 122.88, 132.13, 145.35, 154.59, 165.17, 179.7, 194.23, 208.77, 224.62, 240.48, 256.34, 272.19, 288.05, 303.9]
 const plunge_dmg_high = [141.93, 153.49, 165.04, 181.54, 193.1, 206.3, 224.45, 242.61, 260.76, 280.57, 300.37, 320.18, 339.98, 359.79, 379.59]
 
 //SKILL
@@ -46,12 +48,12 @@ let char = {
   constellationName: "Opus Aequilibrium",
   titles: ["Eclipsing Star", "Lady of the Jade Chamber", "Tianquan of the Liyue Qixing"],
   baseStat: {
-    hp: [821, 2108, 2721, 4076, 4512, 5189, 5770, 6448, 6884, 7561, 7996, 8674, 9110, 9787],
-    atk: [18, 46, 59, 89, 98, 113, 125, 140, 150, 164, 174, 188, 198, 212],
-    def: [48, 123, 159, 239, 264, 304, 338, 378, 403, 443, 468, 508, 533, 573]
+    hp_base: [821, 2108, 2721, 4076, 4512, 5189, 5770, 6448, 6884, 7561, 7996, 8674, 9110, 9787],
+    atk_base: [18, 46, 59, 89, 98, 113, 125, 140, 150, 164, 174, 188, 198, 212],
+    def_base: [48, 123, 159, 239, 264, 304, 338, 378, 403, 443, 468, 508, 533, 573]
   },
   specializeStat: {
-    key: "geo_ele_dmg",
+    key: "geo_ele_dmg_bonus",
     value: [0, 0, 0, 0, 6, 6, 12, 12, 12, 12, 18, 18, 24, 24]
   },
   talent: {
@@ -63,19 +65,19 @@ let char = {
         text: <span><strong>Normal Attack</strong> Shoots gems that deal <span className="text-geo">{c >= 1 ? "AoE " : ""}Geo DMG</span>. Upon hit, this grants Ningguang 1 Star Jade.</span>,
         fields: [{
           text: `Normal Attack DMG`,
-          basicVal: (tlvl) => hitPercent[tlvl] + "%",
-          finalVal: (tlvl, stats) => (hitPercent[tlvl] / 100) * stats.geo_norm_atk_avg_dmg
+          basicVal: (tlvl, stats, c) => <span>{hitPercent[tlvl]}% {Stat.printStat(Character.getTalentStatKey("norm_atk", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (hitPercent[tlvl] / 100) * stats[Character.getTalentStatKey("norm_atk", c)]
         }]
       }), {
         text: <span><strong>Charged Attack</strong> Consumes a certain amount of stamina to fire off a giant gem that deals <span className="text-geo">Geo DMG</span>. If Ningguang has any Star Jades, unleashing a Charged Attack will cause the Star Jades to be fired at the enemy as well, dealing additional DMG.</span>,
         fields: [{
           text: `Charged Attack DMG`,
-          basicVal: (tlvl) => charged_atk_dmg[tlvl] + "%",
-          finalVal: (tlvl, stats) => (charged_atk_dmg[tlvl] / 100) * stats.geo_char_atk_avg_dmg
+          basicVal: (tlvl, stats, c) => <span>{charged_atk_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("char_atk", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (charged_atk_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("char_atk", c)]
         }, {
           text: `DMG per Star Jade`,
-          basicVal: (tlvl) => charged_per_jade[tlvl] + "%",
-          finalVal: (tlvl, stats) => (charged_per_jade[tlvl] / 100) * stats.geo_char_atk_avg_dmg
+          basicVal: (tlvl, stats, c) => <span>{charged_per_jade[tlvl]}% {Stat.printStat(Character.getTalentStatKey("char_atk", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (charged_per_jade[tlvl] / 100) * stats[Character.getTalentStatKey("char_atk", c)]
         }, (c, a) => ({
           text: `Stamina Cost`,
           value: <span>50{(a >= 1 ? <span>; With <b>Star Jade</b>: 0</span> : "")}</span>,
@@ -84,16 +86,16 @@ let char = {
         text: <span><strong>Plunging Attack</strong>TEMPLATE</span>,
         fields: [{
           text: `Plunge DMG`,
-          basicVal: (tlvl) => plunge_dmg[tlvl] + "%",
-          finalVal: (tlvl, stats) => (plunge_dmg[tlvl] / 100) * stats.geo_ele_avg_dmg
+          basicVal: (tlvl, stats, c) => <span>{plunge_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunge", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (plunge_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("plunge", c)]
         }, {
           text: `Low Plunge DMG`,
-          basicVal: (tlvl) => plunge_dng_low[tlvl] + "%",
-          finalVal: (tlvl, stats) => (plunge_dng_low[tlvl] / 100) * stats.geo_ele_avg_dmg
+          basicVal: (tlvl, stats, c) => <span>{plunge_dmg_low[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunge", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (plunge_dmg_low[tlvl] / 100) * stats[Character.getTalentStatKey("plunge", c)]
         }, {
           text: `High Plunge DMG`,
-          basicVal: (tlvl) => plunge_dmg_high[tlvl] + "%",
-          finalVal: (tlvl, stats) => (plunge_dmg_high[tlvl] / 100) * stats.geo_ele_avg_dmg
+          basicVal: (tlvl, stats, c) => <span>{plunge_dmg_high[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunge", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (plunge_dmg_high[tlvl] / 100) * stats[Character.getTalentStatKey("plunge", c)]
         }]
       }],
     },
@@ -117,12 +119,12 @@ let char = {
         </span>,
         fields: [{
           text: "Inherited HP",
-          basicVal: (tlvl) => jadeScreen.inheri_hp[tlvl] + "%",
-          finalVal: (tlvl, s) => (jadeScreen.inheri_hp[tlvl] / 100) * s.hp,
+          basicVal: (tlvl, stats, c) => <span>{jadeScreen.inheri_hp[tlvl]}% {Stat.printStat("hp_final", stats)}</span>,
+          finalVal: (tlvl, stats, c) => (jadeScreen.inheri_hp[tlvl] / 100) * stats.hp_final,
         }, {
           text: "Skill DMG",
-          basicVal: (tlvl) => jadeScreen.skill_dmg[tlvl] + "%",
-          finalVal: (tlvl, s) => (jadeScreen.skill_dmg[tlvl] / 100) * s.geo_skill_avg_dmg,
+          basicVal: (tlvl, stats, c) => <span>{jadeScreen.skill_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("skill", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (jadeScreen.skill_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("skill", c)],
         }, {
           text: "CD",
           value: "12s",
@@ -147,8 +149,8 @@ let char = {
         </span>,
         fields: [{
           text: "DMG Per Gem",
-          basicVal: (tlvl) => starShatter.dmg_per_gem[tlvl] + "%",
-          finalVal: (tlvl, s) => (starShatter.dmg_per_gem[tlvl] / 100) * s.geo_burst_avg_dmg,
+          basicVal: (tlvl, stats, c) => <span>{starShatter.dmg_per_gem[tlvl]}% {Stat.printStat(Character.getTalentStatKey("burst", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (starShatter.dmg_per_gem[tlvl] / 100) * stats[Character.getTalentStatKey("burst", c)],
         }, {
           text: "CD",
           value: "12s",
@@ -178,7 +180,7 @@ let char = {
           sourceKey: "ningguang",
           maxStack: 1,
           stats: {
-            geo_ele_dmg: 12
+            geo_ele_dmg_bonus: 12
           },
           fields: [{
             text: "Duration",

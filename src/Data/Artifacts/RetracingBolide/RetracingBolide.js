@@ -31,8 +31,8 @@ let artifact = {
         sourceKey: "RetracingBolide_4",
         maxStack: 1,
         stats: {
-          norm_atk_dmg: 40,
-          char_atk_dmg: 40
+          norm_atk_dmg_bonus: 40,
+          char_atk_dmg_bonus: 40
         }
       }
     }

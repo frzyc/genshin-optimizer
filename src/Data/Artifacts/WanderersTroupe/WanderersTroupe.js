@@ -33,7 +33,7 @@ let artifact = {
         sourceKey: "WanderersTroupe_4",
         maxStack: 1,
         stats: {
-          char_atk_dmg: 35,
+          char_atk_dmg_bonus: 35,
         }
       }
     }

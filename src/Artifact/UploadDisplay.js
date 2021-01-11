@@ -118,7 +118,7 @@ function UploadDisplay(props) {
     }
     let guessLevel = (nStars, mainSKey, mainSVal) => {
       //if level isn't parsed, then we try to guess it
-      let valArr = ArtifactMainStatsData?.[nStars]?.[mainSKey.includes("ele_dmg") ? "ele_dmg" : mainSKey]
+      let valArr = ArtifactMainStatsData?.[nStars]?.[mainSKey.includes("ele_dmg_bonus") ? "ele_dmg_bonus" : mainSKey]
       if (valArr) {
         let isFloat = Stat.getStatUnit(mainSKey) === "%"
         let testLevel = valArr.findIndex(val => isFloat ? (Math.abs(mainSVal - val) < 0.1) : (mainSVal === val))
@@ -437,7 +437,7 @@ function parseSubstat(recognition, defVal = null) {
     Artifact.getSubStatKeys().forEach(key => {
       let regex = null
       let unit = Stat.getStatUnit(key)
-      let name = Stat.getStatName(key)
+      let name = Stat.getStatNameRaw(key)
       if (unit === "%") regex = new RegExp(name + "\\s*\\+\\s*(\\d+\\.\\d)%", "im");
       else regex = new RegExp(name + "\\s*\\+\\s*(\\d+,\\d+|\\d+)($|\\s)", "im");
       let match = regex.exec(text)
@@ -461,7 +461,7 @@ function parseMainStatKey(recognition, defVal = "") {
   if (!texts) return defVal
   for (const text of texts)
     for (const key of Artifact.getMainStatKeys())
-      if (text.toLowerCase().includes(Stat.getStatName(key).toLowerCase()))
+      if (text.toLowerCase().includes(Stat.getStatNameRaw(key).toLowerCase()))
         return key
   return defVal
 }

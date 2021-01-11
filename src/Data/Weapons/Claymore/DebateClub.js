@@ -1,4 +1,5 @@
-import WeaponPercent from "../../../Components/WeaponPercent"
+import Character from "../../../Character/Character"
+import DisplayPercent from "../../../Components/DisplayPercent"
 
 const refinementVals = [60, 75, 90, 105, 120]
 const weapon = {
@@ -6,7 +7,7 @@ const weapon = {
   weaponType: "claymore",
   rarity: 3,
   passiveName: "Blunt Conclusion",
-  passiveDescription: (refineIndex, charFinalStats) => <span>After using an Elemental Skill, Normal or Charged Attacks, on hit, deal an additional {refinementVals[refineIndex]}% ATK DMG{WeaponPercent(refinementVals[refineIndex], charFinalStats.atk)} in a small area. Effect lasts 15s. DMG can only occur once every 3s.</span>,
+  passiveDescription: (refineIndex, charFinalStats, c) => <span>After using an Elemental Skill, Normal or Charged Attacks, on hit, deal an additional {refinementVals[refineIndex]}% ATK DMG{DisplayPercent(refinementVals[refineIndex], charFinalStats, Character.getTalentStatKey("phy", c))} in a small area. Effect lasts 15s. DMG can only occur once every 3s.</span>,
   description: "A handy club made of fine steel. The most persuasive line of reasoning in any debater's arsenal.",
   baseStats: {
     main: [39, 50, 65, 79, 94, 113, 127, 141, 155, 169, 189, 202, 216, 236, 249, 263, 282, 296, 309, 329, 342, 355, 375, 388, 401],

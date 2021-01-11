@@ -3,6 +3,7 @@ import plume from './Item_Viridescent_Arrow_Feather.png'
 import sands from './Item_Viridescent_Venerer\'s_Determination.png'
 import goblet from './Item_Viridescent_Venerer\'s_Vessel.png'
 import circlet from './Item_Viridescent_Venerer\'s_Diadem.png'
+import ElementalData from '../../ElementalData'
 let artifact = {
   name: "Viridescent Venerer", rarity: [4, 5], pieces: {
     flower: "In Remembrance of Viridescent Fields",
@@ -21,11 +22,20 @@ let artifact = {
   sets: {
     2: {
       text: <span><span className="text-anemo">Anemo DMG Bonus</span> +15%</span>,
-      stats: { anemo_ele_dmg: 15 }
+      stats: { anemo_ele_dmg_bonus: 15 }
     },
     4: {
       text: "Increases Swirl DMG by 60%. Decreases opponent's Elemental RES to the element infused in the Swirl by 40% for 10s.",
-      stats: { swirl_dmg: 60 }//TODO enemy resistance
+      stats: { swirl_dmg: 60 },
+      conditional: Object.entries(ElementalData).filter(([key]) => key !== "anemo" && key !== "geo").map(([key, { name }]) => ({
+        type: "artifact",
+        condition: <span>Swirl <span className={`text-${key}`}>{name}</span></span>,
+        sourceKey: "ViridescentVenerer_4",
+        maxStack: 1,
+        stats: {
+          [`${key}_enemy_ele_res`]: -40,
+        }
+      }))//TODO this is most likely a team effect.
     }
   }
 }

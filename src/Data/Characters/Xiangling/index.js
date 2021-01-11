@@ -12,7 +12,7 @@ import burst from './Talent_Pyronado.png'
 import passive1 from './Talent_Crossfire.png'
 import passive2 from './Talent_Beware,_It\'s_Super_Hot.png'
 import passive3 from './Talent_Chef_de_Cuisine.png'
-//import WeaponPercent from '../../../Components/WeaponPercent'
+//import DisplayPercent from '../../../Components/DisplayPercent'
 
 //AUTO
 
@@ -26,7 +26,7 @@ const hitPercent = [
 const charged_atk_spinnning = []
 const charged_atk_final = []
 const plunge_dmg = []
-const plunge_dng_low = []
+const plunge_dmg_low = []
 const plunge_dmg_high = []
 
 //SKILL
@@ -57,9 +57,9 @@ let char = {
   constellationName: "Trulla",
   titles: ["Exquisite Delicacy", "Chef de Cuisine"],
   baseStat: {
-    hp: [912, 2342, 3024, 4529, 5013, 5766, 6411, 7164, 7648, 8401, 8885, 9638, 10122, 10875],
-    atk: [19, 49, 63, 94, 104, 119, 133, 149, 159, 174, 184, 200, 210, 225],
-    def: [56, 144, 186, 279, 308, 355, 394, 441, 470, 517, 546, 593, 623, 669]
+    hp_base: [912, 2342, 3024, 4529, 5013, 5766, 6411, 7164, 7648, 8401, 8885, 9638, 10122, 10875],
+    atk_base: [19, 49, 63, 94, 104, 119, 133, 149, 159, 174, 184, 200, 210, 225],
+    def_base: [56, 144, 186, 279, 308, 355, 394, 441, 470, 517, 546, 593, 623, 669]
   },
   specializeStat: {
     key: "ele_mas",
@@ -101,15 +101,15 @@ let char = {
         fields: [{
           text: `Plunge DMG`,
           basicVal: (tlvl) => plunge_dmg[tlvl] + "%",
-          finalVal: (tlvl, stats) => (plunge_dmg[tlvl] / 100) * stats.phy_avg_dmg
+          finalVal: (tlvl, stats) => (plunge_dmg[tlvl] / 100) * stats.plunge_avg_dmg
         }, {
           text: `Low Plunge DMG`,
-          basicVal: (tlvl) => plunge_dng_low[tlvl] + "%",
-          finalVal: (tlvl, stats) => (plunge_dng_low[tlvl] / 100) * stats.phy_avg_dmg
+          basicVal: (tlvl) => plunge_dmg_low[tlvl] + "%",
+          finalVal: (tlvl, stats) => (plunge_dmg_low[tlvl] / 100) * stats.plunge_avg_dmg
         }, {
           text: `High Plunge DMG`,
           basicVal: (tlvl) => plunge_dmg_high[tlvl] + "%",
-          finalVal: (tlvl, stats) => (plunge_dmg_high[tlvl] / 100) * stats.phy_avg_dmg
+          finalVal: (tlvl, stats) => (plunge_dmg_high[tlvl] / 100) * stats.plunge_avg_dmg
         }]
       }
     },

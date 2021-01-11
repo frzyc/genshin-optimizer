@@ -12,7 +12,7 @@ import burst from './Talent_Guhua_Sword_-_Raincutter.png'
 import passive1 from './Talent_Hydropathic.png'
 import passive2 from './Talent_Blades_Amidst_Raindrops.png'
 import passive3 from './Talent_Flash_of_Genius.png'
-//import WeaponPercent from '../../../Components/WeaponPercent'
+//import DisplayPercent from '../../../Components/DisplayPercent'
 
 //AUTO
 
@@ -26,7 +26,7 @@ const hitPercent = [
 const charged_atk_spinnning = []
 const charged_atk_final = []
 const plunge_dmg = []
-const plunge_dng_low = []
+const plunge_dmg_low = []
 const plunge_dmg_high = []
 
 //SKILL
@@ -57,9 +57,9 @@ let char = {
   constellationName: "Fabulae Textile",
   titles: ["Juvenile Galant", "Guhua Guru of Feiyun Fame", "Guhua Geek"],
   baseStat: {
-    hp: [857, 2202, 2842, 4257, 4712, 5420, 6027, 6735, 7190, 7897, 8352, 9060, 9515, 10222],
-    atk: [17, 43, 56, 84, 93, 107, 119, 133, 142, 156, 165, 179, 188, 202],
-    def: [64, 163, 211, 316, 349, 402, 447, 499, 533, 585, 619, 671, 705, 758]
+    hp_base: [857, 2202, 2842, 4257, 4712, 5420, 6027, 6735, 7190, 7897, 8352, 9060, 9515, 10222],
+    atk_base: [17, 43, 56, 84, 93, 107, 119, 133, 142, 156, 165, 179, 188, 202],
+    def_base: [64, 163, 211, 316, 349, 402, 447, 499, 533, 585, 619, 671, 705, 758]
   },
   specializeStat: {
     key: "atk_",
@@ -101,15 +101,15 @@ let char = {
         fields: [{
           text: `Plunge DMG`,
           basicVal: (tlvl) => plunge_dmg[tlvl] + "%",
-          finalVal: (tlvl, stats) => (plunge_dmg[tlvl] / 100) * stats.phy_avg_dmg
+          finalVal: (tlvl, stats) => (plunge_dmg[tlvl] / 100) * stats.plunge_avg_dmg
         }, {
           text: `Low Plunge DMG`,
-          basicVal: (tlvl) => plunge_dng_low[tlvl] + "%",
-          finalVal: (tlvl, stats) => (plunge_dng_low[tlvl] / 100) * stats.phy_avg_dmg
+          basicVal: (tlvl) => plunge_dmg_low[tlvl] + "%",
+          finalVal: (tlvl, stats) => (plunge_dmg_low[tlvl] / 100) * stats.plunge_avg_dmg
         }, {
           text: `High Plunge DMG`,
           basicVal: (tlvl) => plunge_dmg_high[tlvl] + "%",
-          finalVal: (tlvl, stats) => (plunge_dmg_high[tlvl] / 100) * stats.phy_avg_dmg
+          finalVal: (tlvl, stats) => (plunge_dmg_high[tlvl] / 100) * stats.plunge_avg_dmg
         }]
       }
     },

@@ -3,7 +3,7 @@ import { Accordion, Badge, Button, Card, Col, Row } from 'react-bootstrap';
 import Artifact from '../../Artifact/Artifact';
 import ArtifactCard from '../../Artifact/ArtifactCard';
 import ConditionalSelector from '../../Components/ConditionalSelector';
-import { StatIconEle } from '../../Components/StatIcon';
+import { DisplayNewBuildDiff, DisplayStats } from '../../Components/StatDisplay';
 import Stat from "../../Stat";
 import ConditionalsUtil from '../../Util/ConditionalsUtil';
 import Character from "../Character";
@@ -16,46 +16,21 @@ function CharacterArtifactPane(props) {
   let build = newBuild ? newBuild : equippedBuild
   if (newBuild) artifactConditionals = newBuild.artifactConditionals
   let eleKey = Character.getElementalKey(characterKey)
-  const statKeys = ["hp", "atk", "def", "ele_mas", "crit_rate", "crit_dmg", "crit_multi", "ener_rech", "heal_bonu", "phy_dmg", "phy_avg_dmg",]
-  statKeys.push(`${eleKey}_ele_dmg`)
-  statKeys.push(`${eleKey}_ele_avg_dmg`)
+  //TODO pick stats dynamically like in Build Display
+  const statKeys = ["hp_final", "atk_final", "def_final", "ele_mas", "crit_rate", "crit_dmg", "ener_rech", "heal_bonu", "phy_dmg_bonus"]
+  statKeys.push(`${eleKey}_ele_dmg_bonus`)
 
-  let otherStatKeys = ["inc_heal", "pow_shield", "red_cd", "phy_dmg", "phy_res", "norm_atk_dmg", "char_atk_dmg", "skill_dmg", "burst_dmg"]
+  let otherStatKeys = ["inc_heal", "pow_shield", "red_cd", "phy_dmg_bonus", "phy_res", "norm_atk_dmg_bonus", "char_atk_dmg_bonus", "skill_dmg_bonus", "burst_dmg_bonus"]
   Character.getElementalKeys().forEach(ele => {
-    otherStatKeys.push(`${ele}_ele_dmg`)
+    otherStatKeys.push(`${ele}_ele_dmg_bonus`)
     otherStatKeys.push(`${ele}_ele_res`)
   })
   otherStatKeys = otherStatKeys.filter(key => !statKeys.includes(key))
+  let displayStatProps = { character, build, editable }
+  let displayNewBuildProps = { character, equippedBuild, newBuild, editable }
 
-  const displayStats = (statKey) => {
-    let statVal = Character.getStatValueWithOverride(character, statKey)
-    let unit = Stat.getStatUnit(statKey)
-    let buildDiff = (build?.finalStats?.[statKey] || 0) - statVal
-
-    return <Col xs={12} md={6} xl={4} key={statKey}>
-      <h6 className="d-inline">{StatIconEle(statKey)} {Stat.getStatName(statKey)}</h6>
-      <span className={`float-right ${(editable && Character.hasOverride(character, statKey)) ? "text-warning" : ""}`}>
-        {statVal?.toFixed(Stat.fixedUnit(statKey)) + unit}
-        {buildDiff ? <span className={buildDiff > 0 ? "text-success" : "text-danger"}> {buildDiff > 0 && "+"}{buildDiff?.toFixed(Stat.fixedUnit(statKey)) + unit}</span> : null}
-      </span>
-    </Col>
-  }
-  const displayNewBuildDiff = (statKey) => {
-    let statVal = (equippedBuild?.finalStats?.[statKey] || Character.getStatValueWithOverride(character, statKey))
-    let unit = Stat.getStatUnit(statKey)
-    let buildDiff = (newBuild?.finalStats?.[statKey] || 0) - (equippedBuild?.finalStats?.[statKey] || 0)
-
-    return <Col xs={12} md={6} xl={4} key={statKey}>
-      <h6 className="d-inline">{StatIconEle(statKey)} {Stat.getStatName(statKey)}</h6>
-      <span className={`float-right ${(editable && Character.hasOverride(character, statKey)) ? "text-warning" : ""}`}>
-        {statVal?.toFixed(Stat.fixedUnit(statKey)) + unit}
-        {buildDiff ? <span className={buildDiff > 0 ? "text-success" : "text-danger"}> ({buildDiff > 0 ? "+" : ""}{buildDiff?.toFixed(Stat.fixedUnit(statKey)) + unit})</span> : null}
-      </span>
-    </Col>
-  }
   const setStateArtifactConditional = (setKey, setNumKey, conditionalNum) => setState?.(state =>
     ({ artifactConditionals: ConditionalsUtil.setConditional(state.artifactConditionals, { srcKey: setKey, srcKey2: setNumKey }, conditionalNum) }))
-
   return <>
     <Row>
       <Col className="mb-2">
@@ -75,11 +50,15 @@ function CharacterArtifactPane(props) {
             </Card.Header>
             <Card.Body>
               <Row>
-                {(newBuild && compareAgainstEquipped) ? statKeys.map(displayNewBuildDiff) : statKeys.map(displayStats)}
+                {(newBuild && compareAgainstEquipped) ?
+                  statKeys.map(statKey => <DisplayNewBuildDiff xs={12} md={6} xl={4} key={statKey} {...{ ...displayNewBuildProps, statKey }} />) :
+                  statKeys.map(statKey => <DisplayStats xs={12} md={6} xl={4} key={statKey} {...{ ...displayStatProps, statKey }} />)}
               </Row>
               <Accordion.Collapse eventKey="showOtherStats">
                 <Row>
-                  {(newBuild && compareAgainstEquipped) ? otherStatKeys.map(displayNewBuildDiff) : otherStatKeys.map(displayStats)}
+                  {(newBuild && compareAgainstEquipped) ?
+                    otherStatKeys.map(statKey => <DisplayNewBuildDiff xs={12} md={6} xl={4} key={statKey} {...{ ...displayNewBuildProps, statKey }} />) :
+                    otherStatKeys.map(statKey => <DisplayStats xs={12} md={6} xl={4} key={statKey} {...{ ...displayStatProps, statKey }} />)}
                 </Row>
               </Accordion.Collapse>
 

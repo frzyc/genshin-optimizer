@@ -1,4 +1,5 @@
-import WeaponPercent from "../../../Components/WeaponPercent"
+import Character from "../../../Character/Character"
+import DisplayPercent from "../../../Components/DisplayPercent"
 
 const refinementVals = [160, 200, 240, 280, 320]
 const weapon = {
@@ -6,7 +7,7 @@ const weapon = {
   weaponType: "polearm",
   rarity: 3,
   passiveName: "Heavy",
-  passiveDescription: (refineIndex, charFinalStats) => <span>Normal Attacks deal an additional {refinementVals[refineIndex]}% ATK{WeaponPercent(refinementVals[refineIndex], charFinalStats.atk)} as DMG. Can only occur once every 10s.</span>,
+  passiveDescription: (refineIndex, charFinalStats, c) => <span>Normal Attacks deal an additional {refinementVals[refineIndex]}% ATK{DisplayPercent(refinementVals[refineIndex], charFinalStats, Character.getTalentStatKey("phy", c))} as DMG. Can only occur once every 10s.</span>,
   description: "A polearm with an axe blade mounted on top that can deal quite a lot of damage. It's favored by the Millelith officers.",
   baseStats: {
     main: [40, 53, 69, 86, 102, 121, 138, 154, 171, 187, 207, 223, 239, 259, 275, 292, 311, 327, 344, 363, 380, 396, 415, 432, 448],

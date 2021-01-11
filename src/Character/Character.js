@@ -15,17 +15,21 @@ export default class Character {
       throw Error('A static class cannot be instantiated.');
   }
 
-  static getBaseStatValue = (charKey, levelKey, statKey, defVal = 0) => {
-    if (statKey === "specializedStatKey") return this.getSpecializedStatKey(charKey);
-    if (statKey === "specializedStatVal") return this.getSpeicalizedStatVal(charKey, levelKey)
+  static getBaseStatValue = (character, statKey, defVal = 0) => {
+    let { characterKey, levelKey } = character
+    if (statKey === "specializedStatKey") return this.getSpecializedStatKey(characterKey);
+    if (statKey === "specializedStatVal") return this.getSpeicalizedStatVal(characterKey, levelKey)
+    if (statKey === "atk_weapon") return Weapon.getWeaponMainStatValWithOverride(character?.weapon)
+    if (statKey === "char_level" || statKey === "enemy_level") return this.getLevel(levelKey)
+    if (statKey === "enemy_phy_res" || statKey.includes("enemy_ele_res")) return 10
     if (statKey in characterStatBase) return characterStatBase[statKey]
-    let characterObj = this.getCDataObj(charKey)
+    let characterObj = this.getCDataObj(characterKey)
     if (characterObj && statKey in characterObj.baseStat) return characterObj.baseStat[statKey][this.getIndexFromlevelkey(levelKey)]
     return defVal
   }
 
   static getCDataObj = (charKey) => CharacterData[charKey];
-  static getElementalName = (elementalKey, defVal = "") => (ElementalData?.[elementalKey]?.name || defVal)
+  static getElementalName = (elementalKey, defVal = "") => elementalKey === "physical" ? "Physical" : (ElementalData?.[elementalKey]?.name || defVal)
   static getAllCharacterKeys = () => Object.keys(CharacterData)
 
   static getName = (charKey, defVal = "") => (this.getCDataObj(charKey)?.name || defVal)
@@ -40,7 +44,7 @@ export default class Character {
   static getlevelKeys = () => Object.keys(LevelsData)
   static getlevelNames = (levelKey, defVal = "") => (LevelsData?.[levelKey]?.name || defVal)
   static getIndexFromlevelkey = (levelKey) => this.getlevelKeys().indexOf(levelKey);
-  static getLevel = (levelKey, defVal = 0) => (LevelsData?.[levelKey]?.level || defVal)
+  static getLevel = (levelKey, defVal = 1) => (LevelsData?.[levelKey]?.level || defVal)
   static getAscension = (levelKey, defVal = 0) => (LevelsData?.[levelKey]?.asend || defVal)
 
   //SPECIALIZED STAT
@@ -119,26 +123,24 @@ export default class Character {
   }
   static isAutoElemental = (charKey, defVal = false) => this.getWeaponTypeKey(charKey) === "catalyst" || defVal
   static isAutoInfusable = (charKey, defVal = false) => this.getCDataObj(charKey)?.talent?.auto?.infusable || defVal
-
+  static getTalentStatKey = (skillKey, character, elemental = false) => {
+    let { dmgMode = "", autoInfused = false, characterKey } = character
+    if (!elemental) elemental = this.isAutoElemental(characterKey)
+    if (!elemental) elemental = autoInfused && (Character.getCDataObj(characterKey)?.talent?.auto?.infusable || false)
+    let eleKey = ""
+    if (skillKey === "ele" || skillKey === "burst" || skillKey === "skill" || elemental)
+      eleKey = this.getElementalKey(characterKey)
+    if (eleKey) eleKey = eleKey + "_"
+    //{pyro_}{burst}_{avg_dmg}
+    return `${eleKey}${skillKey}_${dmgMode}`
+  }
 
   //CHARCTER OBJ
   static hasOverride = (character, statKey) => character && character.baseStatOverrides ? (statKey in character.baseStatOverrides) : false;
 
-  static getStatValueWithOverrideRaw = (character, statKey, defVal = 0) => {
-    if (this.hasOverride(character, statKey)) return character?.baseStatOverrides?.[statKey]
-    else return this.getBaseStatValue(character.characterKey, character.levelKey, statKey, defVal)
-  }
   static getStatValueWithOverride = (character, statKey, defVal = 0) => {
-    if (statKey === "atk") {
-      //get weapon atk as part of the base atk.
-      let weaponatk = Weapon.getWeaponMainStatValWithOverride(character?.weapon)
-      return weaponatk + this.getStatValueWithOverrideRaw(character, statKey, defVal)
-    }
-    return this.getStatValueWithOverrideRaw(character, statKey, defVal)
-  }
-  static getLevelWithOverride = (character, defVal = 0) => {
-    if (character.overrideLevel) return character.overrideLevel;
-    else return this.getLevel(character.levelKey, defVal);
+    if (this.hasOverride(character, statKey)) return character?.baseStatOverrides?.[statKey]
+    else return this.getBaseStatValue(character, statKey, defVal)
   }
 
   //equipment, with consideration on swapping equipped.
@@ -212,16 +214,22 @@ export default class Character {
     }
   }
   static calculateCharacterWithWeaponStats = (character) => {
-    let statKeys = ["hp", "atk", "def", ...Object.keys(characterStatBase)]
-    let initialStats = Object.fromEntries(statKeys.map(key => {
-      if (key === "hp" || key === "def" || key === "atk")
-        return ["base_" + key, this.getStatValueWithOverride(character, key)]
-      else
-        return [key, this.getStatValueWithOverride(character, key)]
-    }))
-
+    let statKeys = ["hp_base", "atk_base", "def_base", "atk_weapon", "char_level", "enemy_level", "enemy_phy_res", "enemy_phy_immunity", ...Object.keys(characterStatBase)]
+    let initialStats = Object.fromEntries(statKeys.map(key => [key, this.getStatValueWithOverride(character, key)]))
     //add element
-    initialStats.char_ele_key = this.getElementalKey(character.characterKey)
+    initialStats.char_ele_key = this.getElementalKey(character.characterKey);
+
+    //enemy stuff
+    Character.getElementalKeys().forEach(eleKey => {
+      let statKey = `${eleKey}_enemy_ele_res`
+      initialStats[statKey] = this.getStatValueWithOverride(character, statKey);
+      statKey = `${eleKey}_enemy_ele_immunity`
+      initialStats[statKey] = this.getStatValueWithOverride(character, statKey);
+    })
+
+    //all the rest of the overrides
+    let overrides = character?.baseStatOverrides || {}
+    Object.entries(overrides).forEach(([statKey, val]) => !initialStats.hasOwnProperty(statKey) && (initialStats[statKey] = val))
 
     //add specialized stat
     let specialStatKey = Character.getStatValueWithOverride(character, "specializedStatKey")
@@ -252,18 +260,18 @@ export default class Character {
     let allTalentStats = Character.getTalentStatsAll(characterKey, constellation, ascension)
     allTalentStats.forEach(addStatsObj)
 
-    let weaponStats = Weapon.createWeaponBundle(character)
     //add weapon stats
+    let weaponStats = {
+      subKey: Weapon.getWeaponSubStatKey(character?.weapon?.key),
+      subVal: Weapon.getWeaponSubStatValWithOverride(character?.weapon),
+      bonusStats: Weapon.getWeaponBonusStat(character?.weapon?.key, character?.weapon?.refineIndex),
+      conditionalStats: Weapon.getWeaponConditionalStat(character?.weapon?.key, character?.weapon?.refineIndex, character?.weapon?.conditionalNum)
+    }
     if (weaponStats.subKey)
       initialStats[weaponStats.subKey] = (initialStats[weaponStats.subKey] || 0) + weaponStats.subVal
     if (weaponStats.bonusStats) addStatsObj(weaponStats.bonusStats)
     if (weaponStats.conditionalStats) addStatsObj(weaponStats.conditionalStats);
 
-    //convert the final values to flat
-    ["hp", "def", "atk"].forEach(statKey => {
-      initialStats[`${statKey}_flat`] = initialStats[statKeys] || 0
-      delete initialStats[statKeys]
-    })
     return initialStats
   }
 

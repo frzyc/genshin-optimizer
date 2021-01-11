@@ -1,4 +1,5 @@
-import WeaponPercent from "../../../Components/WeaponPercent"
+import Character from "../../../Character/Character"
+import DisplayPercent from "../../../Components/DisplayPercent"
 
 const refinementVals = [12, 15, 18, 21, 24]
 const weapon = {
@@ -6,7 +7,7 @@ const weapon = {
   weaponType: "sword",
   rarity: 4,
   passiveName: "Chord",
-  passiveDescription: (refineIndex, charFinalStats) => <span>Normal or Charged Attacks grant a Harmonic on hits. Gaining 5 Harmonics triggers the power of music and deals {refinementVals[refineIndex]}% ATK DMG{WeaponPercent(refinementVals[refineIndex], charFinalStats.atk)} to surrounding opponents. Harmonics last up to 30s, and a maximum of 1 can be gained every 0.5s.</span>,
+  passiveDescription: (refineIndex, charFinalStats, c) => <span>Normal or Charged Attacks grant a Harmonic on hits. Gaining 5 Harmonics triggers the power of music and deals {refinementVals[refineIndex]}% ATK DMG{DisplayPercent(refinementVals[refineIndex], charFinalStats, Character.getTalentStatKey("phy", c))} to surrounding opponents. Harmonics last up to 30s, and a maximum of 1 can be gained every 0.5s.</span>,
   description: "Beneath its rusty exterior is a lavishly decorated thin blade. It swings as swiftly as the wind.",
   baseStats: {
     main: [42, 56, 74, 91, 109, 135, 152, 170, 187, 205, 231, 248, 266, 292, 309, 327, 353, 370, 388, 414, 431, 449, 475, 492, 510],

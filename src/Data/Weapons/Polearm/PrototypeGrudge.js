@@ -16,8 +16,8 @@ const weapon = {
     sourceKey: "PrototypeGrudge",
     maxStack: 2,
     stats: (refineIndex) => ({
-      norm_atk_dmg: refinementVals[refineIndex],
-      char_atk_dmg: refinementVals[refineIndex]
+      norm_atk_dmg_bonus: refinementVals[refineIndex],
+      char_atk_dmg_bonus: refinementVals[refineIndex]
     })
   }
 }

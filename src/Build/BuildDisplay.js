@@ -44,7 +44,7 @@ export default class BuildDisplay extends React.Component {
     setFilters: [{ key: "", num: 0 }, { key: "", num: 0 }, { key: "", num: 0 }],
     artifactConditionals: [],//{ setKey: "", setNumKey: "", conditionalNum: 0 }
     mainStat: ["", "", ""],
-    buildFilterKey: "atk",
+    buildFilterKey: "atk_final",
     asending: false,
     modalBuild: null,
     editCharacter: false,
@@ -58,15 +58,14 @@ export default class BuildDisplay extends React.Component {
   forceUpdateBuildDisplay = () => this.forceUpdate()
 
   statsDisplayKeys = (characterKey) => {
-    let keys = ["hp", "atk", "def", "ele_mas", "crit_rate", "crit_dmg", "heal_bonu", "ener_rech", "ele_dmg"]
+    let keys = ["hp_final", "atk_final", "def_final", "ele_mas", "crit_rate", "crit_dmg", "heal_bonu", "ener_rech", "ele_dmg_bonus"]
     let eleKey = Character.getElementalKey(characterKey)
     //we need to figure out if the character has: normal phy auto, elemental auto, infusable auto(both normal and phy)
     let isAutoElemental = Character.isAutoElemental(characterKey)
     let isAutoInfusable = Character.isAutoInfusable(characterKey)
 
     if (!isAutoElemental)
-      keys.push("phy_dmg")
-
+      keys.push("phy_dmg_bonus")
 
     if (!isAutoElemental) //add phy auto + charged + physical 
       keys.push("norm_atk_avg_dmg", "char_atk_avg_dmg")
@@ -79,7 +78,7 @@ export default class BuildDisplay extends React.Component {
     //show skill/burst at the end
     keys.push("skill_avg_dmg", "burst_avg_dmg")
 
-    return keys.map(key => (["ele_dmg", "skill_avg_dmg", "burst_avg_dmg"].includes(key)) ? `${eleKey}_${key}` : key)
+    return keys.map(key => (["ele_dmg_bonus", "skill_avg_dmg", "burst_avg_dmg"].includes(key)) ? `${eleKey}_${key}` : key)
   }
 
   splitArtifacts = () => {
@@ -203,10 +202,10 @@ export default class BuildDisplay extends React.Component {
         <Alert variant="danger" className="mb-0"><span>Current configuration will generate <b>{totBuildNumber}</b> builds for <b>{characterName}</b>. Please restrict artifact configuration to reduce builds to less than {this.state.maxBuildsToGenerate}, or your browser might crash.</span></Alert> :
         <Alert variant="success" className="mb-0"><span>Current configuration {totBuildNumber <= this.state.maxBuildsToShow ? "generated" : "will generate"} <b>{totBuildNumber}</b> builds for <b>{characterName}</b>.</span></Alert>)
     let characterDropDown = <DropdownButton title={selectedCharacterId ? characterName : "Select Character"}>
-      <Dropdown.Item onClick={() => this.setState({ selectedCharacterId: "", builds: [], buildFilterKey: "atk" })}>No Character</Dropdown.Item>
+      <Dropdown.Item onClick={() => this.setState({ selectedCharacterId: "", builds: [], buildFilterKey: "atk_final" })}>No Character</Dropdown.Item>
       {Object.values(charlist).map((char, i) =>
         <Dropdown.Item key={char.name + i}
-          onClick={() => this.setState({ selectedCharacterId: char.id, builds: [], buildFilterKey: "atk" })}
+          onClick={() => this.setState({ selectedCharacterId: char.id, builds: [], buildFilterKey: "atk_final" })}
         >
           {char.name}
         </Dropdown.Item>)}
@@ -339,7 +338,7 @@ export default class BuildDisplay extends React.Component {
           <Col xs="auto">
             {/* Dropdown to select sorting value */}
             <ButtonGroup>
-              <DropdownButton disabled={!selectedCharacterId} title={`Sort by ${Stat.getStatNameWithPercent(this.state.buildFilterKey)}`} as={ButtonGroup}>
+              <DropdownButton disabled={!selectedCharacterId} title={<span>Sort by <b>{Stat.getStatNameWithPercent(this.state.buildFilterKey)}</b></span>} as={ButtonGroup}>
                 {selectedCharacterId && statsDisplayKeys.map(key =>
                   <Dropdown.Item key={key} onClick={() => this.setState({ buildFilterKey: key }, this.autoGenerateBuilds)}>
                     {Stat.getStatNameWithPercent(key)}
@@ -371,7 +370,7 @@ export default class BuildDisplay extends React.Component {
         </Row>
         <Row>
           {statsDisplayKeys.map(key =>
-            <Col className="text-nowrap" key={key} xs={12} sm={6} md={4} lg={3}>
+            <Col className="text-nowrap" key={key} xs={12} sm={6} lg={4}>
               <span>{Stat.getStatName(key)}: <span className="text-warning">{build.finalStats[key]?.toFixed(Stat.fixedUnit(key))}{Stat.getStatUnit(key)}</span></span>
             </Col>
           )}

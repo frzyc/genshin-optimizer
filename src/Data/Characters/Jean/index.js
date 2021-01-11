@@ -12,7 +12,7 @@ import burst from './Talent_Dandelion_Breeze.png'
 import passive1 from './Talent_Wind_Companion.png'
 import passive2 from './Talent_Let_the_Wind_Lead.png'
 import passive3 from './Talent_Guiding_Breeze.png'
-//import WeaponPercent from '../../../Components/WeaponPercent'
+//import DisplayPercent from '../../../Components/DisplayPercent'
 
 //AUTO
 const hitPercent = [
@@ -25,7 +25,7 @@ const hitPercent = [
 const charged_atk_spinnning = []
 const charged_atk_final = []
 const plunge_dmg = []
-const plunge_dng_low = []
+const plunge_dmg_low = []
 const plunge_dmg_high = []
 
 //SKILL
@@ -56,9 +56,9 @@ let char = {
   constellationName: "Leo Minor",
   titles: ["Acting Grand Master", "Dandelion Knight", "Lionfang Knight"],
   baseStat: {
-    hp: [1144, 2967, 3948, 5908, 6605, 7599, 8528, 9533, 10230, 11243, 11940, 12965, 13662, 14695],
-    atk: [19, 48, 64, 96, 108, 124, 139, 155, 166, 183, 194, 211, 222, 239],
-    def: [60, 155, 206, 309, 345, 397, 446, 499, 535, 588, 624, 678, 715, 769]
+    hp_base: [1144, 2967, 3948, 5908, 6605, 7599, 8528, 9533, 10230, 11243, 11940, 12965, 13662, 14695],
+    atk_base: [19, 48, 64, 96, 108, 124, 139, 155, 166, 183, 194, 211, 222, 239],
+    def_base: [60, 155, 206, 309, 345, 397, 446, 499, 535, 588, 624, 678, 715, 769]
   },
   specializeStat: {
     key: "heal_bonu",
@@ -100,15 +100,15 @@ let char = {
         fields: [{
           text: `Plunge DMG`,
           basicVal: (tlvl) => plunge_dmg[tlvl] + "%",
-          finalVal: (tlvl, stats) => (plunge_dmg[tlvl] / 100) * stats.phy_avg_dmg
+          finalVal: (tlvl, stats) => (plunge_dmg[tlvl] / 100) * stats.plunge_avg_dmg
         }, {
           text: `Low Plunge DMG`,
-          basicVal: (tlvl) => plunge_dng_low[tlvl] + "%",
-          finalVal: (tlvl, stats) => (plunge_dng_low[tlvl] / 100) * stats.phy_avg_dmg
+          basicVal: (tlvl) => plunge_dmg_low[tlvl] + "%",
+          finalVal: (tlvl, stats) => (plunge_dmg_low[tlvl] / 100) * stats.plunge_avg_dmg
         }, {
           text: `High Plunge DMG`,
           basicVal: (tlvl) => plunge_dmg_high[tlvl] + "%",
-          finalVal: (tlvl, stats) => (plunge_dmg_high[tlvl] / 100) * stats.phy_avg_dmg
+          finalVal: (tlvl, stats) => (plunge_dmg_high[tlvl] / 100) * stats.plunge_avg_dmg
         }]
       }
     },

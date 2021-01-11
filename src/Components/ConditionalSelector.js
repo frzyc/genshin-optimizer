@@ -1,7 +1,9 @@
 import { faCheckSquare, faSquare } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import { Badge, Button, Dropdown } from 'react-bootstrap';
+import Badge from 'react-bootstrap/Badge'
+import Button from 'react-bootstrap/Button'
+import Dropdown from 'react-bootstrap/Dropdown'
 
 export default function ConditionalSelector(props) {
   let { conditional, conditionalNum, setConditional, defEle, disabled } = props

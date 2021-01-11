@@ -12,7 +12,9 @@ import burst from './Talent_Stormbreaker.png'
 import passive1 from './Talent_Retribution.png'
 import passive2 from './Talent_Lightning_Storm.png'
 import passive3 from './Talent_Conqueror_of_Tides.png'
-import WeaponPercent from '../../../Components/WeaponPercent'
+import DisplayPercent from '../../../Components/DisplayPercent'
+import Stat from '../../../Stat'
+import Character from '../../../Character/Character'
 
 //AUTO
 const hitPercent = [
@@ -26,7 +28,7 @@ const hitPercent = [
 const charged_atk_spinnning = [56.24, 60.82, 65.4, 71.94, 76.52, 81.75, 88.94, 96.14, 103.33, 111.18, 120.17, 130.75, 141.32, 151.9, 163.43]
 const charged_atk_final = [101.82, 110.11, 118.4, 130.24, 138.53, 148, 161.02, 174.05, 187.07, 201.28, 217.56, 236.71, 255.85, 275, 295.88]
 const plunge_dmg = [74.59, 80.66, 86.73, 95.4, 101.47, 108.41, 117.95, 127.49, 137.03, 147.44, 157.85, 168.26, 178.66, 189.07, 199.48]
-const plunge_dng_low = [149.14, 161.28, 173.42, 190.77, 202.91, 216.78, 235.86, 254.93, 274.01, 294.82, 315.63, 336.44, 357.25, 378.06, 398.87]
+const plunge_dmg_low = [149.14, 161.28, 173.42, 190.77, 202.91, 216.78, 235.86, 254.93, 274.01, 294.82, 315.63, 336.44, 357.25, 378.06, 398.87]
 const plunge_dmg_high = [186.29, 201.45, 216.62, 238.28, 253.44, 270.77, 294.6, 318.42, 342.25, 368.25, 394.24, 420.23, 446.23, 472.22, 498.21]
 
 //SKILL
@@ -55,12 +57,12 @@ let char = {
   constellationName: "Victor Mare",
   titles: ["Uncrowned Lord of Ocean", "Queen of the Crux Fleet"],
   baseStat: {
-    hp: [1094, 2811, 3628, 5435, 6015, 6919, 7694, 8597, 9178, 10081, 10662, 11565, 12146, 13050],
-    atk: [19, 49, 63, 94, 104, 119, 133, 148, 158, 174, 184, 200, 210, 225],
-    def: [54, 140, 180, 270, 299, 344, 382, 427, 456, 501, 530, 575, 603, 648]
+    hp_base: [1094, 2811, 3628, 5435, 6015, 6919, 7694, 8597, 9178, 10081, 10662, 11565, 12146, 13050],
+    atk_base: [19, 49, 63, 94, 104, 119, 133, 148, 158, 174, 184, 200, 210, 225],
+    def_base: [54, 140, 180, 270, 299, 344, 382, 427, 456, 501, 530, 575, 603, 648]
   },
   specializeStat: {
-    key: "electro_ele_dmg",
+    key: "electro_ele_dmg_bonus",
     value: [0, 0, 0, 0, 6, 6, 12, 12, 12, 12, 18, 18, 24, 24]
   },
   talent: {
@@ -72,27 +74,27 @@ let char = {
         fields: hitPercent.map((percentArr, i) =>
         ({
           text: `${i + 1}-Hit DMG`,
-          basicVal: (tlvl) => percentArr[tlvl] + "%",
-          finalVal: (tlvl, stats) => (percentArr[tlvl] / 100) * stats.norm_atk_avg_dmg
+          basicVal: (tlvl, stats, c) => <span>{percentArr[tlvl]}% {Stat.printStat(Character.getTalentStatKey("norm_atk", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (percentArr[tlvl] / 100) * stats[Character.getTalentStatKey("norm_atk", c)]
         }))
       }, (c, a) => c >= 4 && {
         text: <span><strong>Stunning Revenge:</strong> Within 10s of taking DMG, Beidou's Normal Attacks gain 20% additional <span className="text-electro">Electro DMG</span>.</span>,
         fields: hitPercent.map((percentArr, i) =>
         ({
           text: `${i + 1}-Hit Additional Electro DMG`,
-          basicVal: (tlvl) => (percentArr[tlvl] * 0.2)?.toFixed(2) + "%",
-          finalVal: (tlvl, stats) => (percentArr[tlvl] * 0.2 / 100) * stats.electro_norm_atk_avg_dmg
+          basicVal: (tlvl, stats, c) => <span>{(percentArr[tlvl] * 0.2)?.toFixed(2)}% {Stat.printStat(Character.getTalentStatKey("norm_atk", c, true), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (percentArr[tlvl] * 0.2 / 100) * stats[Character.getTalentStatKey("norm_atk", c, true)]
         }))
       }, {
         text: <span><strong>Charged Attack</strong> Drains Stamina over time to perform continuous slashes. At end of the sequence, perform a more powerful slash.</span>,
         fields: [{
           text: `Spinning DMG`,
-          basicVal: (tlvl) => charged_atk_spinnning[tlvl] + "%",
-          finalVal: (tlvl, stats) => (charged_atk_spinnning[tlvl] / 100) * stats.char_atk_avg_dmg
+          basicVal: (tlvl, stats, c) => <span>{charged_atk_spinnning[tlvl]}% {Stat.printStat(Character.getTalentStatKey("char_atk", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (charged_atk_spinnning[tlvl] / 100) * stats[Character.getTalentStatKey("char_atk", c)]
         }, {
           text: `Spinning Final DMG`,
-          basicVal: (tlvl) => charged_atk_final[tlvl] + "%",
-          finalVal: (tlvl, stats) => (charged_atk_final[tlvl] / 100) * stats.char_atk_avg_dmg
+          basicVal: (tlvl, stats, c) => <span>{charged_atk_final[tlvl]}% {Stat.printStat(Character.getTalentStatKey("char_atk", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (charged_atk_final[tlvl] / 100) * stats[Character.getTalentStatKey("char_atk", c)]
         }, {
           text: `Stamina Cost`,
           value: `40/s`,
@@ -104,16 +106,16 @@ let char = {
         text: <span><strong>Plunging Attack</strong> Plunges from mid-air to strike the ground, damaging opponents along the path and dealing AoE DMG upon impact.</span>,
         fields: [{
           text: `Plunge DMG`,
-          basicVal: (tlvl) => plunge_dmg[tlvl] + "%",
-          finalVal: (tlvl, stats) => (plunge_dmg[tlvl] / 100) * stats.phy_avg_dmg
+          basicVal: (tlvl, stats, c) => <span>{plunge_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunge", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (plunge_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("plunge", c)]
         }, {
           text: `Low Plunge DMG`,
-          basicVal: (tlvl) => plunge_dng_low[tlvl] + "%",
-          finalVal: (tlvl, stats) => (plunge_dng_low[tlvl] / 100) * stats.phy_avg_dmg
+          basicVal: (tlvl, stats, c) => <span>{plunge_dmg_low[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunge", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (plunge_dmg_low[tlvl] / 100) * stats[Character.getTalentStatKey("plunge", c)]
         }, {
           text: `High Plunge DMG`,
-          basicVal: (tlvl) => plunge_dmg_high[tlvl] + "%",
-          finalVal: (tlvl, stats) => (plunge_dmg_high[tlvl] / 100) * stats.phy_avg_dmg
+          basicVal: (tlvl, stats, c) => <span>{plunge_dmg_high[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunge", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (plunge_dmg_high[tlvl] / 100) * stats[Character.getTalentStatKey("plunge", c)]
         }]
       }],
     },
@@ -128,25 +130,27 @@ let char = {
             <strong>Hold:</strong> Lifts her weapon up as a shield. Max DMG absorbed scales off Beidou's Max HP.
           Attacks using the energy stored within the greatsword upon release or once this ability's duration expires, dealing <span className="text-electro">Electro DMG</span>. DMG dealt scales with the number of times beidou is attacked in the skill's duration. The greatest DMG Bonus will be attained once this effect is triggered twice.
           The shield possesses the following properties:
+          </p>
           <ul className="mb-1">
-              <li>Has 250% <span className="text-electro">Electro DMG</span> Absorption Efficiency.</li>
-              <li>Applies the <span className="text-electro">Electro element</span> to Beidou upon activation.</li>
-            </ul>
-        Generate 2 elemental particles when it hit at least 1 target, or 4 when hit with energy stored.
-        </p>
+            <li>Has 250% <span className="text-electro">Electro DMG</span> Absorption Efficiency.</li>
+            <li>Applies the <span className="text-electro">Electro element</span> to Beidou upon activation.</li>
+          </ul>
+          <p className="mb-2">
+            Generate 2 elemental particles when it hit at least 1 target, or 4 when hit with energy stored.
+          </p>
         </span>,
         fields: [{
           text: "Shield DMG Absorption",
-          basicVal: (tlvl) => tideCaller.hp[tlvl] + "% Max HP + " + tideCaller.flat[tlvl],
-          finalVal: (tlvl, s) => (tideCaller.hp[tlvl] / 100) * s.hp + tideCaller.flat[tlvl],
+          basicVal: (tlvl, stats, c) => <span>{tideCaller.hp[tlvl]}% {Stat.printStat("hp_final", stats)} + {tideCaller.flat[tlvl]}</span>,
+          finalVal: (tlvl, stats, c) => (tideCaller.hp[tlvl] / 100) * stats.hp_final + tideCaller.flat[tlvl],
         }, {
           text: "Base DMG",
-          basicVal: (tlvl) => tideCaller.base_dmg[tlvl] + "%",
-          finalVal: (tlvl, s) => (tideCaller.base_dmg[tlvl] / 100) * s.electro_skill_avg_dmg,
+          basicVal: (tlvl, stats, c) => <span>{tideCaller.base_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("skill", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (tideCaller.base_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("skill", c)],
         }, {
           text: "DMG Bonus on Hit Taken",
-          basicVal: (tlvl) => tideCaller.dmg_bonus_on_hit[tlvl] + "%",
-          finalVal: (tlvl, s) => (tideCaller.dmg_bonus_on_hit[tlvl] / 100) * s.electro_skill_avg_dmg,
+          basicVal: (tlvl, stats, c) => <span>{tideCaller.dmg_bonus_on_hit[tlvl]}% {Stat.printStat(Character.getTalentStatKey("skill", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (tideCaller.dmg_bonus_on_hit[tlvl] / 100) * stats[Character.getTalentStatKey("skill", c)],
         }, {
           text: "CD",
           value: "7.5s",
@@ -159,8 +163,8 @@ let char = {
           sourceKey: "beidou",
           maxStack: 1,
           stats: {
-            norm_atk_dmg: 15,
-            char_atk_dmg: 15,
+            norm_atk_dmg_bonus: 15,
+            char_atk_dmg_bonus: 15,
             atk_spd: 15,
           },
           fields: [{
@@ -187,15 +191,15 @@ let char = {
         </span>,
         fields: [{
           text: "Skill DMG",
-          basicVal: (tlvl) => stormbreaker.skill_dmg[tlvl] + "%",
-          finalVal: (tlvl, s) => (stormbreaker.skill_dmg[tlvl] / 100) * s.electro_burst_avg_dmg,
+          basicVal: (tlvl, stats, c) => <span>{stormbreaker.skill_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("burst", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (stormbreaker.skill_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("burst", c)],
         }, {
           text: "Lightning DMG",
-          basicVal: (tlvl) => stormbreaker.lightning_dmg[tlvl] + "%",
-          finalVal: (tlvl, s) => (stormbreaker.lightning_dmg[tlvl] / 100) * s.electro_burst_avg_dmg,
+          basicVal: (tlvl, stats, c) => <span>{stormbreaker.lightning_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("burst", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (stormbreaker.lightning_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("burst", c)],
         }, {
           text: "DMG Reduction",
-          value: (tlvl) => stormbreaker.dmg_red[tlvl] + "%",
+          value: (tlvl, stats, c) => stormbreaker.dmg_red[tlvl] + "%",
         }, {
           text: "Duration",
           value: "20s",
@@ -205,7 +209,17 @@ let char = {
         }, {
           text: "Energy Cost",
           value: 60,
-        }]
+        }],
+        conditional: (tlvl, c, a) => c >= 6 && {
+          type: "character",
+          conditionalKey: "BaneEvil",
+          condition: "Bane of the Evil",
+          sourceKey: "beidou",
+          maxStack: 1,
+          stats: {
+            electro_enemy_ele_res: -15,
+          }
+        }
       }],
     },
     passive1: {
@@ -239,7 +253,7 @@ let char = {
     constellation1: {
       name: "Sea Beast's Scourge",
       img: c1,
-      document: [{ text: (tlvl, s) => <span>When <b>Stormbreaker</b> is used: Creates a shield that absorbs up to 16% of Beidou's Max HP{WeaponPercent(16, s.hp)} for 15s. This shield absorbs <span className="text-electro">Electro DMG</span> 250% more effectively.</span> }],
+      document: [{ text: (tlvl, s) => <span>When <b>Stormbreaker</b> is used: Creates a shield that absorbs up to 16% of Beidou's Max HP{DisplayPercent(16, s, "hp_final")} for 15s. This shield absorbs <span className="text-electro">Electro DMG</span> 250% more effectively.</span> }],
     },
     constellation2: {
       name: "Upon the Turbulent Sea, the Thunder Arises",
@@ -267,7 +281,6 @@ let char = {
       name: "Bane of the Evil",
       img: c6,
       document: [{ text: <span>During the duration of <b>Stormbreaker</b>, the <span className="text-electro">Electro RES</span> of surrounding enemies is decreased by 15%.</span> }],
-      //TODO enemy res reduction
     },
   },
 };

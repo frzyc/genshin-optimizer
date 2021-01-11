@@ -24,8 +24,8 @@ const weapon = {
     stats: (refineIndex) => ({
       move_spd: refinementMoveSpdVals[refineIndex],
       atk_spd: refinementatkSpdVals[refineIndex],
-      norm_atk_dmg: refinementautoVals[refineIndex],
-      char_atk_dmg: refinementautoVals[refineIndex],
+      norm_atk_dmg_bonus: refinementautoVals[refineIndex],
+      char_atk_dmg_bonus: refinementautoVals[refineIndex],
     })
   }
 }

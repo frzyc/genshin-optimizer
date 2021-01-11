@@ -13,7 +13,7 @@ import sprint from './Talent_Illusory_Torrent.png'
 import passive1 from './Talent_Come_\'n\'_Get_Me,_Hag.png'
 import passive2 from './Talent_Waterborne_Destiny.png'
 import passive3 from './Talent_Principium_of_Astrology.png'
-//import WeaponPercent from '../../../Components/WeaponPercent'
+//import DisplayPercent from '../../../Components/DisplayPercent'
 
 //AUTO
 
@@ -27,7 +27,7 @@ const hitPercent = [
 const charged_atk_spinnning = []
 const charged_atk_final = []
 const plunge_dmg = []
-const plunge_dng_low = []
+const plunge_dmg_low = []
 const plunge_dmg_high = []
 
 //SKILL
@@ -58,9 +58,9 @@ let char = {
   constellationName: "Astrolabos",
   titles: ["Astral Reflection", "Enigmatic Astrologer"],
   baseStat: {
-    hp: [810, 2102, 2797, 4185, 4678, 5383, 6041, 6752, 7246, 7964, 8458, 9184, 9677, 10409],
-    atk: [22, 58, 77, 115, 129, 148, 167, 186, 200, 220, 233, 253, 267, 287],
-    def: [51, 132, 176, 263, 294, 338, 379, 424, 455, 500, 531, 576, 607, 653]
+    hp_base: [810, 2102, 2797, 4185, 4678, 5383, 6041, 6752, 7246, 7964, 8458, 9184, 9677, 10409],
+    atk_base: [22, 58, 77, 115, 129, 148, 167, 186, 200, 220, 233, 253, 267, 287],
+    def_base: [51, 132, 176, 263, 294, 338, 379, 424, 455, 500, 531, 576, 607, 653]
   },
   specializeStat: {
     key: "ener_rech",
@@ -107,15 +107,15 @@ let char = {
         fields: [{
           text: `Plunge DMG`,
           basicVal: (tlvl) => plunge_dmg[tlvl] + "%",
-          finalVal: (tlvl, stats) => (plunge_dmg[tlvl] / 100) * stats.phy_avg_dmg
+          finalVal: (tlvl, stats) => (plunge_dmg[tlvl] / 100) * stats.plunge_avg_dmg
         }, {
           text: `Low Plunge DMG`,
-          basicVal: (tlvl) => plunge_dng_low[tlvl] + "%",
-          finalVal: (tlvl, stats) => (plunge_dng_low[tlvl] / 100) * stats.phy_avg_dmg
+          basicVal: (tlvl) => plunge_dmg_low[tlvl] + "%",
+          finalVal: (tlvl, stats) => (plunge_dmg_low[tlvl] / 100) * stats.plunge_avg_dmg
         }, {
           text: `High Plunge DMG`,
           basicVal: (tlvl) => plunge_dmg_high[tlvl] + "%",
-          finalVal: (tlvl, stats) => (plunge_dmg_high[tlvl] / 100) * stats.phy_avg_dmg
+          finalVal: (tlvl, stats) => (plunge_dmg_high[tlvl] / 100) * stats.plunge_avg_dmg
         }]
       }
     },

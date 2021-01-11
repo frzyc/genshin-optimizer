@@ -8,7 +8,7 @@ const weapon = {
   description: "A spear forged from the rocks of the Guyun Stone Forest. Its hardness knows no equal.",
   baseStats: {
     main: [42, NaN, NaN, NaN, 109, 135, NaN, NaN, NaN, 205, 231, NaN, 266, 292, NaN, 327, 353, NaN, 388, 414, NaN, 449, 475, NaN, 510],
-    subStatKey: "phy_dmg",
+    subStatKey: "phy_dmg_bonus",
     sub: [9, NaN, NaN, NaN, 15.9, 15.9, NaN, NaN, NaN, 23.2, 23.2, NaN, 26.8, 26.8, NaN, 30.4, 30.4, NaN, 34.1, 34.1, NaN, 37.7, 37.7, NaN, 41.3],
   },
   conditional: {
@@ -16,7 +16,7 @@ const weapon = {
     sourceKey: "LithicSpear",
     maxStack: 1,
     stats: (refineIndex) => ({
-      char_atk_dmg: refinementVals[refineIndex]
+      char_atk_dmg_bonus: refinementVals[refineIndex]
     })
   }
 }

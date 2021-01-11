@@ -1,31 +1,32 @@
 import art_editor from './art_editor.png'
 import character_editor from './character_editor.png'
 import build_generator from './build_generator.png'
+import talent_screen from './talent_scr.png'
+import tools from './tools.png'
 import { Badge, Card, Col, Container, Image, Row } from "react-bootstrap";
 import ReactGA from 'react-ga';
 
 export default function HomeDisplay(props) {
   ReactGA.pageview('/home')
-  return <Container className="mt-2">
+  return <Container className="my-2">
     <Row><Col>
       <Card bg="darkcontent" text="lightfont">
         <Card.Header>Welcome to Genshin Optimizer!</Card.Header>
         <Card.Body>
-          <Row className="mb-2">
-            <Col>
-              <h5>What is Genshin Optimizer?</h5>
-              <p>
-                Genshin Optimizer is a tool for the action-rpg gacha game <a href="https://genshin.mihoyo.com/" target="_blank" rel="noreferrer"><strong>Genshin Impact</strong></a>.
-                It is intended to help you with dealing with the more complex aspect of the game: Artifacts.
-                Artifacts are heavily RNG-based elements that directly contributes to how effective your characters are in the game.
-                This tool seek to alleviate some of the complexity associated with artifact efficiency, along with which artifact to choose on your character to maximize your stats.
-              </p>
-              <p>
-                However, this tool can do so much more. It will allow calculations of all conditional stats from artifacts, weapons, teams buffs, and calculate how those stats will affect your character in REAL TIME.
-              </p>
-            </Col>
-          </Row>
-          <Row className="mb-2">
+          <Card bg="lightcontent" text="lightfont" className="mb-2"><Card.Body><Row ><Col>
+            <h5>What is Genshin Optimizer?</h5>
+            <p>
+              Genshin Optimizer is a tool for the action-rpg gacha game <a href="https://genshin.mihoyo.com/" target="_blank" rel="noreferrer"><strong>Genshin Impact</strong></a>.
+              It is intended to help you with dealing with the more complex aspect of the game: Artifacts.
+              Artifacts are heavily RNG-based elements that directly contributes to how effective your characters are in the game.
+              This tool seek to alleviate some of the complexity associated with artifact efficiency, along with which artifact to choose on your character to maximize your stats.
+            </p>
+            <p>
+              However, this tool can do so much more. It will allow calculations of all conditional stats from artifacts, weapons, teams buffs, and calculate how those stats will affect your character in REAL TIME.
+            </p>
+          </Col></Row></Card.Body></Card>
+
+          <Card bg="lightcontent" text="lightfont" className="mb-2"><Card.Body><Row>
             <Col xs={12} md={4}><Image src={art_editor} className="w-100 h-auto" rounded /></Col>
             <Col>
               <h5>Artifact Editor</h5>
@@ -37,8 +38,9 @@ export default function HomeDisplay(props) {
                 <li>Equip/unequip/swap artifacts between your characters, try out different builds.</li>
               </ul>
             </Col>
-          </Row>
-          <Row className="mb-2">
+          </Row></Card.Body></Card>
+
+          <Card bg="lightcontent" text="lightfont" className="mb-2"><Card.Body><Row>
             <Col>
               <h5>Character Editor</h5>
               <ul>
@@ -49,14 +51,30 @@ export default function HomeDisplay(props) {
                 <li>Fully featured weapon, with milestone level/ascension stats</li>
                 <li>Apply conditional passives, e.g. Whiteblind's ATK&DEF stacking bonus, to your character stats.</li>
                 <li>Apply conditional passives from Artifacts sets as well!</li>
-                <li><Badge variant="warning">Under Construction</Badge> Talent damage calculations.</li>
-                <li><Badge variant="warning">Under Construction</Badge> Update character stats/talents based on constellation.</li>
+                <li>Under Construction Talent damage calculations.</li>
+                <li>Under Construction Update character stats/talents based on constellation.</li>
               </ul>
             </Col>
             <Col xs={12} md={4}><Image src={character_editor} className="w-100 h-auto" rounded /></Col>
-          </Row>
-          <Row className="mb-2">
-            <Col xs={12} md={4}><Image src={build_generator} className="w-100 h-auto" rounded /></Col>
+          </Row></Card.Body></Card>
+
+          <Card bg="lightcontent" text="lightfont" className="mb-2"><Card.Body><Row>
+            <Col xs={12} md={4}><Image src={talent_screen} className="w-100 h-auto" rounded /></Col>
+            <Col>
+              <h5>Character Damage Calculations</h5>
+              <ul>
+                <li>All the details for Every <Badge variant="warning">WIP</Badge> character's talents.</li>
+                <li>All numbers should reflect real in game damage.</li>
+                <li>Conditional stats and modifications from every Constellation accounted for.</li>
+                <li>Shows calculations for all the numbers, along with formulas. I show my work.</li>
+                <li>Enemy editor with level/ resistance fields to customize damage calcualtions.</li>
+                <li>Account for elemental infusion for normal/charged/plunging attacks.</li>
+                <li>Real time damage calculations.</li>
+              </ul>
+            </Col>
+          </Row></Card.Body></Card>
+
+          <Card bg="lightcontent" text="lightfont" className="mb-2"><Card.Body><Row>
             <Col>
               <h5>Build Generator</h5>
               <ul>
@@ -68,14 +86,31 @@ export default function HomeDisplay(props) {
                 <li>Use conditional stats from artifact sets, e.g. Gladitator's 4-set normal attack DMG Bonus, as part of the build calculations.</li>
               </ul>
             </Col>
-          </Row>
-          <Row>
+            <Col xs={12} md={4}><Image src={build_generator} className="w-100 h-auto" rounded /></Col>
+          </Row></Card.Body></Card>
+
+          <Card bg="lightcontent" text="lightfont" className="mb-2"><Card.Body><Row>
+            <Col xs={12} md={4}><Image src={tools} className="w-100 h-auto" rounded /></Col>
+            <Col>
+              <h5>Tools and Doodads</h5>
+              <ul>
+                <li>Server time, with countdown to reset.</li>
+                <li>Resin Counter.</li>
+                <li>Experience Calculator, to optimize EXP. books usage.</li>
+                <li><Badge variant="warning">Under Construction</Badge> Resource Coverter, for all those pesky x3 tiered resources.</li>
+                <li><Badge variant="warning">Under Construction</Badge> To-Do list: a dynamic to-do list to tell you what to grind for every day</li>
+              </ul>
+            </Col>
+          </Row></Card.Body></Card>
+
+          <Card bg="lightcontent" text="lightfont" className="mb-2"><Card.Body><Row>
             <Col xs={12} md={6}>
               <h5>What's for the future?</h5>
               <ul>
                 <li>Domain name & server, hosted using funds from donations</li>
                 <li>Login, to access your data from any device(will need a server backend)</li>
-                <li>To-Do list: a dynamic to-do list to tell you what to grind for every day</li>
+                <li>Damage calculations against specific enemies</li>
+                <li>Food buffs, team buffs, Elemental interaction calculations.</li>
                 <li>Artifact Analytics, graphs to show your artifact data.</li>
               </ul>
               <p>For more, and to check on what is being worked on, join our <a href={process.env.REACT_APP_DISCORD_LINK} target="_blank" rel="noreferrer">discord.</a></p>
@@ -90,7 +125,8 @@ export default function HomeDisplay(props) {
                 If you want to fiancially support the developer, please either donate via <a href={process.env.REACT_APP_PAYPAL_LINK} target="_blank" rel="noreferrer">Paypal</a> or <a href={process.env.REACT_APP_PATREON_LINK} target="_blank" rel="noreferrer">Patreon</a>.
               </p>
             </Col>
-          </Row>
+          </Row></Card.Body></Card>
+
         </Card.Body>
       </Card>
     </Col></Row>

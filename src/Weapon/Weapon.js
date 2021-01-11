@@ -10,7 +10,7 @@ export default class Weapon {
   static getWeaponName = (weaponKey, defVal = "") => (WeaponData[weaponKey]?.name || defVal)
   static getWeaponRarity = (weaponKey, defVal = 0) => (WeaponData[weaponKey]?.rarity || defVal)
   static getWeaponPassiveName = (weaponKey, defVal = "") => (WeaponData[weaponKey]?.passiveName || defVal)
-  static getWeaponPassiveDescription = (weaponKey, refineIndex, charFinalStats, defVal = "") => (WeaponData[weaponKey]?.passiveDescription?.(refineIndex, charFinalStats) || defVal)
+  static getWeaponPassiveDescription = (weaponKey, refineIndex, charFinalStats, character, defVal = "") => (WeaponData[weaponKey]?.passiveDescription?.(refineIndex, charFinalStats, character) || defVal)
   static getWeaponDescription = (weaponKey, defVal = "") => (WeaponData[weaponKey]?.description || defVal)
   static getWeaponConditional = (weaponKey, defVal = null) => (WeaponData[weaponKey]?.conditional || defVal)
 
@@ -35,11 +35,4 @@ export default class Weapon {
     if (!stacks) return defVal
     return Object.fromEntries(Object.entries(stats(refineIndex)).map(([key, val]) => [key, val * stacks]))
   }
-  static createWeaponBundle = (character) => ({
-    subKey: this.getWeaponSubStatKey(character?.weapon?.key),
-    subVal: this.getWeaponSubStatValWithOverride(character?.weapon),
-    bonusStats: this.getWeaponBonusStat(character?.weapon?.key, character?.weapon?.refineIndex),
-    conditionalStats: this.getWeaponConditionalStat(character?.weapon?.key, character?.weapon?.refineIndex, character?.weapon?.conditionalNum)
-  })
-
 }

@@ -5,6 +5,12 @@ $lightbg: #2a364d;
 $darkfontcolor: #778da9;
 $lightfontcolor: #e0e1dd;
 
+$star5Color: #ffd700;
+$star4Color: #6a0dad;
+$star3Color: #4287f5;
+$star2Color: #008000;
+$star1Color: #808080;
+
 // $card-bg: $contentbg;
 $body-bg: $darkbg;
 // $body-color: $lightfontcolor;
@@ -25,6 +31,11 @@ body {
   font-size: 50%;
 }
 
+//make the default 200px bigger
+.tooltip-inner {
+  max-width: 300px !important;
+}
+
 /* Chrome, Safari, Edge, Opera */
 input.hide-appearance::-webkit-outer-spin-button,
 input.hide-appearance::-webkit-inner-spin-button {
@@ -33,19 +44,35 @@ input.hide-appearance::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type=number].hide-appearance {
+input[type="number"].hide-appearance {
   -moz-appearance: textfield;
 }
 
-input.invisible-input{
+input.invisible-input {
   outline-color: initial;
   background-image: initial;
   background-color: transparent;
-  cursor:pointer;
+  cursor: pointer;
   outline: 0;
   margin: 0;
   -ms-appearance: none;
-  border:none;
+  border: none;
+}
+
+.grad-1star {
+  background-image: linear-gradient(to bottom right, #4f5864, #838f99);
+}
+.grad-2star {
+  background-image: linear-gradient(to bottom right, #48575c, #5e966c);
+}
+.grad-3star {
+  background-image: linear-gradient(to bottom right, #515474, #499fb3);
+}
+.grad-4star {
+  background-image: linear-gradient(to bottom right, #595482, #b886ca);
+}
+.grad-5star {
+  background-image: linear-gradient(to bottom right, #695453, #e6ac54);
 }
 
 //default gutter size of 30px is wayyyyyyy too big
@@ -57,29 +84,34 @@ $theme-colors: (
   "darkercontent": $darkbg,
   "lightfont": $lightfontcolor,
   //gold
-  "5star": #ffd700,
+  "5star": $star5Color,
   //purple
-  "4star": #6a0dad,
+  "4star": $star4Color,
   //light blue
-  "3star": #4287f5,
+  "3star": $star3Color,
   //green
-  "2star": #008000,
+  "2star": $star2Color,
   //grey
-  "1star": #808080,
-  "1roll":#A3A7A9,//163, 167, 169
-  "2roll":#6FA376,//111, 163, 118
-  "3roll":#8EEA83,//142, 234, 131
-  "4roll":#31E09D,//49, 224, 157
-  "5roll":#27BBE4,//39, 187, 228
-  "6roll":#DE79F0,//222, 121, 240
-
-  "geo":#f8ba4e,
-  "pyro":#bf2818,
-  "hydro":#2f63d4,
-  "cryo":#77a2c5,
-  "electro":#b25dcd,
-  "anemo":#61dbbb,
-
+  "1star": $star1Color,
+  "1roll": #a3a7a9,
+  //163, 167, 169
+  "2roll": #6fa376,
+  //111, 163, 118
+  "3roll": #8eea83,
+  //142, 234, 131
+  "4roll": #31e09d,
+  //49, 224, 157
+  "5roll": #27bbe4,
+  //39, 187, 228
+  "6roll": #de79f0,
+  //222, 121, 240
+  "geo": #f8ba4e,
+  "pyro": #bf2818,
+  "hydro": #2f63d4,
+  "cryo": #77a2e6,
+  "electro": #b25dcd,
+  "anemo": #61dbbb,
+  "physical": #969696,
 );
 
 @import "node_modules/bootstrap/scss/bootstrap";

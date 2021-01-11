@@ -12,7 +12,7 @@ import burst from './Talent_Riff_Revolution.png'
 import passive1 from './Talent__The_Show_Goes_On,_Even_Without_an_Audience..._.png'
 import passive2 from './Talent__...Now_That\'s_Rock_\'N\'_Roll_.png'
 import passive3 from './Talent_A_Rad_Recipe.png'
-//import WeaponPercent from '../../../Components/WeaponPercent'
+//import DisplayPercent from '../../../Components/DisplayPercent'
 
 //AUTO
 
@@ -26,7 +26,7 @@ const hitPercent = [
 const charged_atk_spinnning = []
 const charged_atk_final = []
 const plunge_dmg = []
-const plunge_dng_low = []
+const plunge_dmg_low = []
 const plunge_dmg_high = []
 
 //SKILL
@@ -57,9 +57,9 @@ let char = {
   constellationName: "Fila Ignium",
   titles: ["Blazing Riff", "Rock 'n' Roll Musician"],
   baseStat: {
-    hp: [939, 2413, 3114, 4665, 5163, 5939, 6604, 7379, 7878, 8653, 9151, 9927, 10425, 11201],
-    atk: [21, 54, 69, 103, 115, 132, 147, 164, 175, 192, 203, 220, 231, 249],
-    def: [67, 172, 222, 333, 368, 423, 471, 526, 562, 617, 652, 708, 743, 799]
+    hp_base: [939, 2413, 3114, 4665, 5163, 5939, 6604, 7379, 7878, 8653, 9151, 9927, 10425, 11201],
+    atk_base: [21, 54, 69, 103, 115, 132, 147, 164, 175, 192, 203, 220, 231, 249],
+    def_base: [67, 172, 222, 333, 368, 423, 471, 526, 562, 617, 652, 708, 743, 799]
   },
   specializeStat: {
     key: "atk_",
@@ -101,15 +101,15 @@ let char = {
         fields: [{
           text: `Plunge DMG`,
           basicVal: (tlvl) => plunge_dmg[tlvl] + "%",
-          finalVal: (tlvl, stats) => (plunge_dmg[tlvl] / 100) * stats.phy_avg_dmg
+          finalVal: (tlvl, stats) => (plunge_dmg[tlvl] / 100) * stats.plunge_avg_dmg
         }, {
           text: `Low Plunge DMG`,
-          basicVal: (tlvl) => plunge_dng_low[tlvl] + "%",
-          finalVal: (tlvl, stats) => (plunge_dng_low[tlvl] / 100) * stats.phy_avg_dmg
+          basicVal: (tlvl) => plunge_dmg_low[tlvl] + "%",
+          finalVal: (tlvl, stats) => (plunge_dmg_low[tlvl] / 100) * stats.plunge_avg_dmg
         }, {
           text: `High Plunge DMG`,
           basicVal: (tlvl) => plunge_dmg_high[tlvl] + "%",
-          finalVal: (tlvl, stats) => (plunge_dmg_high[tlvl] / 100) * stats.phy_avg_dmg
+          finalVal: (tlvl, stats) => (plunge_dmg_high[tlvl] / 100) * stats.plunge_avg_dmg
         }]
       }
     },

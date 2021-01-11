@@ -1,4 +1,4 @@
-import WeaponPercent from "../../../Components/WeaponPercent"
+import DisplayPercent from "../../../Components/DisplayPercent"
 
 const refinementVals = [12, 15, 18, 21, 24]
 const refinementShieldVals = [20, 23, 26, 29, 32]
@@ -7,7 +7,7 @@ const weapon = {
   weaponType: "claymore",
   rarity: 4,
   passiveName: "Rebellious Guardian",
-  passiveDescription: (refineIndex, charFinalStats) => <span>Taking DMG generates a shield which absorbs DMG up to {refinementShieldVals[refineIndex]}% of Max HP{WeaponPercent(refinementShieldVals[refineIndex], charFinalStats.hp)}. This shield lasts for 10s or until broken, and can only be triggered once every 45s. While protected by the shield, the character gains {refinementVals[refineIndex]}% increased DMG.</span>,
+  passiveDescription: (refineIndex, charFinalStats) => <span>Taking DMG generates a shield which absorbs DMG up to {refinementShieldVals[refineIndex]}% of Max HP{DisplayPercent(refinementShieldVals[refineIndex], charFinalStats, "hp_final")}. This shield lasts for 10s or until broken, and can only be triggered once every 45s. While protected by the shield, the character gains {refinementVals[refineIndex]}% increased DMG.</span>,
   description: "A heavy greatsword. A clock is embedded within it, though its internal mechanisms have long been damaged.",
   baseStats: {
     main: [42, 56, 74, 91, 109, 135, 152, 170, 187, 205, 231, 248, 266, 292, 309, 327, 353, 370, 388, 414, 431, 449, 475, 492, 510],

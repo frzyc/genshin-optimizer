@@ -3,7 +3,7 @@ import plume from './Item_Traveling_Doctor\'s_Owl_Feather.png'
 import sands from './Item_Traveling_Doctor\'s_Pocket_Watch.png'
 import goblet from './Item_Traveling_Doctor\'s_Medicine_Pot.png'
 import circlet from './Item_Traveling_Doctor\'s_Handkerchief.png'
-import WeaponPercent from '../../../Components/WeaponPercent'
+import DisplayPercent from '../../../Components/DisplayPercent'
 let artifact = {
   name: "Traveling Doctor", rarity: [3],
   pieces: {
@@ -26,7 +26,7 @@ let artifact = {
       stats: { inc_heal: 20 }
     },
     4: {
-      text: (charFinalStats) => <span>Using Elemental Burst restores 20% HP{WeaponPercent(20, charFinalStats.hp)}.</span>,
+      text: (charFinalStats) => <span>Using Elemental Burst restores 20% HP{DisplayPercent(20, charFinalStats, "hp_final")}.</span>,
     }
   }
 }

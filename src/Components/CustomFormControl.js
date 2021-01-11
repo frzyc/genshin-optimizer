@@ -1,45 +1,39 @@
-import React from 'react'
-import { FormControl } from 'react-bootstrap'
+import React, { useState } from 'react'
+import FormControl from 'react-bootstrap/FormControl'
 
-class FloatFormControl extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      periodEnd: false,
-    }
-  }
-  validateInput = (e) => {
-    let value = e.target.value;
-    let periodEnd = value[value.length - 1] === ".";
-    value = parseFloat(value)
-    if (!isNaN(value)) this.setState({ periodEnd: periodEnd })
-    value = value ? value : 0
-    this.props.onValueChange?.(value);
-  }
-  render = () => {
-    let props = { ...this.props }
-    props.value = this.props.value ? (this.props.value + (this.state.periodEnd ? "." : "")) : "";
-    delete props.onValueChange
-    return <FormControl {...props}
-      onChange={(e) => this.validateInput(e)}
-    />
-  }
+const FloatFormControl = ({ placeholder, value, onValueChange, disabled }) => {
+  let [focus, setFocus] = useState(false)
+  return <FormControl type="number" className="hide-appearance"
+    placeholder={placeholder}
+    value={!value && focus ? "" : value?.toString?.() || value}
+    disabled={disabled}
+    onChange={(e) => {
+      let value = e.target.value;
+      value = parseFloat(value) || 0
+      onValueChange?.(value);
+    }}
+    onFocus={() => setFocus(true)}
+    onBlur={() => setFocus(false)}
+  />
 }
-class IntFormControl extends React.Component {
-  validateInput = (e) => {
-    let value = e.target.value;
-    value = parseInt(value)
-    value = value ? value : 0
-    this.props.onValueChange?.(value);
-  }
-  render = () => {
-    let props = { ...this.props }
-    delete props.onValueChange
-    return <FormControl {...props}
-      onChange={(e) => this.validateInput(e)}
-    />
-  }
+
+
+const IntFormControl = ({ placeholder, value, onValueChange, disabled }) => {
+  let [focus, setFocus] = useState(false)
+  return <FormControl type="number" className="hide-appearance"
+    placeholder={placeholder}
+    value={!value && focus ? "" : value?.toString?.() || value}
+    disabled={disabled}
+    onChange={(e) => {
+      let value = e.target.value;
+      value = parseInt(value) || 0
+      onValueChange?.(value);
+    }}
+    onFocus={() => setFocus(true)}
+    onBlur={() => setFocus(false)}
+  />
 }
+
 export {
   FloatFormControl,
   IntFormControl

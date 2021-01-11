@@ -17,8 +17,8 @@ const weapon = {
     sourceKey: "SolarPearl",
     maxStack: 1,
     stats: (refineIndex) => ({
-      skill_dmg: refinementVals[refineIndex],
-      burst_dmg: refinementVals[refineIndex],
+      skill_dmg_bonus: refinementVals[refineIndex],
+      burst_dmg_bonus: refinementVals[refineIndex],
     })
   }, {
     type: "weapon",
@@ -26,7 +26,7 @@ const weapon = {
     sourceKey: "SolarPearl",
     maxStack: 1,
     stats: (refineIndex) => ({
-      norm_atk_dmg: refinementVals[refineIndex]
+      norm_atk_dmg_bonus: refinementVals[refineIndex]
     })
   }, {
     type: "weapon",
@@ -34,9 +34,9 @@ const weapon = {
     sourceKey: "SolarPearl",
     maxStack: 1,
     stats: (refineIndex) => ({
-      skill_dmg: refinementVals[refineIndex],
-      burst_dmg: refinementVals[refineIndex],
-      norm_atk_dmg: refinementVals[refineIndex]
+      skill_dmg_bonus: refinementVals[refineIndex],
+      burst_dmg_bonus: refinementVals[refineIndex],
+      norm_atk_dmg_bonus: refinementVals[refineIndex]
     })
   }]
 }

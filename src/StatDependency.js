@@ -23,8 +23,7 @@ const getDependency = (key) => {
 Object.keys(Formulas).forEach(key => getDependency(key))
 
 function DependencyStatKeys(key, formulaOverrides = []) {
-  let dependencies = formulaKeyDependency[key] || []
-  formulaKeyDependency[key]?.forEach(k => dependencies.push(...(formulaKeyDependency[k] || [])))
+  let dependencies = GetDependencyStats(key, formulaOverrides) || []
   //add any formula override dependencies
   formulaOverrides.forEach(formulaOverride => {
     let { key, dependency = [] } = OverrideFormulas[formulaOverride.key] || {}
@@ -36,6 +35,20 @@ function DependencyStatKeys(key, formulaOverrides = []) {
   let statkeys = Object.keys(StatData).filter(k => k === key || dependencies.includes(k))
   return { formulaKeys, statkeys }
 }
+function GetDependencyStats(key, formulaOverrides = []) {
+  let dependencies = [key]
+  let keyDependencies = null
+  for (const formulaOverride of formulaOverrides)
+    if (OverrideFormulas[formulaOverride?.key]?.key === key)
+      keyDependencies = OverrideFormulas[formulaOverride?.key]?.dependency
+  keyDependencies = keyDependencies || formulaKeyDependency[key]
+  keyDependencies?.forEach(k => {
+    let subdependencies = GetDependencyStats(k, formulaOverrides)
+    dependencies.push(...subdependencies)
+  })
+  return dependencies
+}
 export {
   DependencyStatKeys,
+  GetDependencyStats,
 }

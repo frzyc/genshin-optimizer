@@ -47,6 +47,16 @@ function DatabaseInitAndVerify() {
         art.setKey = keyMapping[art.setKey]
         valid = false
       }
+      //key names were changed. convert old DB
+      if (art?.mainStatKey?.endsWith?.("ele_dmg")) {
+        art.mainStatKey = art.mainStatKey.replace("ele_dmg", "ele_dmg_bonus")
+        valid = false
+      }
+      //key names were changed. convert old DB
+      if (art?.mainStatKey === "phy_dmg") {
+        art.mainStatKey = "phy_dmg_bonus"
+        valid = false
+      }
       if (!valid)
         ArtifactDatabase.updateArtifact(art)
     })
@@ -88,6 +98,11 @@ function DatabaseInitAndVerify() {
         return true
       })
 
+      //check for dmgMode
+      if (!character.dmgMode) {
+        character.dmgMode = "dmg"
+        valid = false
+      }
       if (!valid) {
         CharacterDatabase.updateCharacter(character)
       }

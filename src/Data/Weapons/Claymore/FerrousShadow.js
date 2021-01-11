@@ -17,7 +17,7 @@ const weapon = {
     sourceKey: "FerrousShadow",
     maxStack: 1,
     stats: (refineIndex) => ({
-      char_atk_dmg: refinementVals[refineIndex]
+      char_atk_dmg_bonus: refinementVals[refineIndex]
     })
   }
 }

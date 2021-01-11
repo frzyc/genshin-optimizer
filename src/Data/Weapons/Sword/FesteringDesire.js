@@ -13,7 +13,7 @@ const weapon = {
     sub: [10, 11.6, 13.6, 15.7, 17.7, 17.7, 19.7, 21.7, 23.7, 25.8, 25.8, 27.8, 29.8, 29.8, 31.8, 33.8, 33.8, 35.9, 37.9, 37.9, 39.9, 41.9, 41.9, 43.9, 45.9],
   },
   stats: (refineIndex) => ({
-    skill_dmg: refinementVals[refineIndex],
+    skill_dmg_bonus: refinementVals[refineIndex],
     skill_crit_rate: refinementVals2[refineIndex]
   })
 }

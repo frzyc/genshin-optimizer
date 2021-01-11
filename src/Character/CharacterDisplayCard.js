@@ -48,7 +48,7 @@ export default class CharacterDisplayCard extends React.Component {
     name: "",
     characterKey: "",//the game character this is based off
     levelKey: "L1",//combination of level and ascension
-    overrideLevel: 0,
+    dmgMode: "dmg",
     equippedArtifacts: {},
     artifactConditionals: [],
     baseStatOverrides: {},//overriding the baseStat
@@ -95,11 +95,11 @@ export default class CharacterDisplayCard extends React.Component {
   setCharacterKey = (characterKey) =>
     this.setState({ characterKey, name: getRandomElementFromArray(Character.getTitles(characterKey)), weapon: CharacterDisplayCard.getIntialWeapon(characterKey) })
   setLevelKey = (levelKey) =>
-    this.setState({ levelKey, baseStatOverrides: {} })
+    this.setState({ levelKey })
 
   setOverride = (statKey, value) => this.setState(state => {
-    let baseStatOverrides = deepClone(state.baseStatOverrides)
-    let baseStatVal = Character.getBaseStatValue(this.state.characterKey, this.state.levelKey, statKey)
+    let baseStatOverrides = state.baseStatOverrides
+    let baseStatVal = Character.getBaseStatValue(this.state, statKey)
     if (baseStatVal === value) {
       delete baseStatOverrides[statKey]
       return { baseStatOverrides }
@@ -107,12 +107,6 @@ export default class CharacterDisplayCard extends React.Component {
       baseStatOverrides[statKey] = value
       return { baseStatOverrides }
     }
-  })
-  setOverridelevel = (level) => this.setState(state => {
-    let baseLevel = Character.getLevel(state.levelKey)
-    if (level === baseLevel)
-      return { overrideLevel: 0 }
-    else return { overrideLevel: level }
   })
 
   setConstellation = (constellation) => this.setState({ constellation })
@@ -156,8 +150,8 @@ export default class CharacterDisplayCard extends React.Component {
                   {Character.getAllCharacterKeys().map(charKey =>
                     <Dropdown.Item key={charKey} onClick={() => this.setCharacterKey(charKey)}>
                       <span >
-                        <Image src={Character.getThumb(charKey)} className="thumb-small my-n1" roundedCircle />
-                        <h6 className="d-inline">{Character.getName(charKey)} </h6>
+                        <Image src={Character.getThumb(charKey)} className={`thumb-small p-0 m-n1 grad-${Character.getStar(charKey)}star`} thumbnail />
+                        <h6 className="d-inline ml-2">{Character.getName(charKey)} </h6>
                       </span>
                     </Dropdown.Item>)}
                 </Dropdown.Menu>
@@ -173,7 +167,7 @@ export default class CharacterDisplayCard extends React.Component {
                     <h6 >{Character.getlevelNames(lvlKey)} </h6>
                   </Dropdown.Item>)}
               </DropdownButton>
-            </ButtonGroup> : <span>{HeaderIconDisplay} Lvl. {Character.getLevelWithOverride(this.state)}</span>}
+            </ButtonGroup> : <span>{HeaderIconDisplay} Lvl. {Character.getStatValueWithOverride(this.state, "char_level")}</span>}
           </Col>
           {/* Name editor/display */}
           <Col className="pl-0 pr-0">
@@ -229,7 +223,6 @@ export default class CharacterDisplayCard extends React.Component {
               <CharacterOverviewPane
                 setState={this.setSetState}
                 setOverride={this.setOverride}
-                setOverridelevel={this.setOverridelevel}
                 setConstellation={this.setConstellation}
                 {...{ character, editable, equippedBuild, newBuild }}
               />
@@ -241,7 +234,7 @@ export default class CharacterDisplayCard extends React.Component {
               <CharacterArtifactPane {...{ character, newBuild, equippedBuild, editable, forceUpdate: this.forceUpdateComponent }} />
             </Tab.Pane> : null}
             <Tab.Pane eventKey="talent">
-              <CharacterTalentPane {...{ character, newBuild, equippedBuild, editable }} setState={this.setSetState} />
+              <CharacterTalentPane {...{ character, newBuild, equippedBuild, editable }} setState={this.setSetState} setOverride={this.setOverride} />
             </Tab.Pane>
           </Tab.Content>
         </Tab.Container>

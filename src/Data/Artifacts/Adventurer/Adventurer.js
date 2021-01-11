@@ -3,7 +3,7 @@ import plume from './Item_Adventurer\'s_Tail_Feather.png'
 import sands from './Item_Adventurer\'s_Pocket_Watch.png'
 import goblet from './Item_Adventurer\'s_Golden_Goblet.png'
 import circlet from './Item_Adventurer\'s_Bandana.png'
-import WeaponPercent from '../../../Components/WeaponPercent'
+import DisplayPercent from '../../../Components/DisplayPercent'
 let artifact = {
   name: "Adventurer", rarity: [3],
   pieces: {
@@ -26,7 +26,7 @@ let artifact = {
       stats: { hp: 1000 }
     },
     4: {
-      text: (charFinalStats)=><span>Opening chest regenerates 30% Max HP{WeaponPercent(30, charFinalStats.hp)} over 5s.</span>,
+      text: (charFinalStats) => <span>Opening chest regenerates 30% Max HP{DisplayPercent(30, charFinalStats, "hp_final")} over 5s.</span>,
     }
   }
 }

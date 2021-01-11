@@ -47,8 +47,8 @@ export default class Artifact {
   static getMainStatValue = (key, numStars, level, defVal = 0) => {
     let main = ArtifactMainStatsData[numStars]?.[key]?.[level]
     if (main) return main
-    else if (key?.includes("_ele_dmg")) //because in the database its still stored as ele_dmg
-      return this.getMainStatValue("ele_dmg", numStars, level, defVal)
+    else if (key?.includes("_ele_dmg_bonus")) //because in the database its still stored as ele_dmg_bonus
+      return this.getMainStatValue("ele_dmg_bonus", numStars, level, defVal)
     return defVal
   }
 
@@ -176,7 +176,7 @@ export default class Artifact {
     let setEffectText = ArtifactSetsData?.[setKey]?.sets?.[setNumKey]?.text
     if (!setEffectText) return defVal
     if (typeof setEffectText === "function")
-      return setEffectText(charFinalStats || {})
+      return setEffectText(charFinalStats)
     else if (setEffectText)
       return setEffectText
     return defVal

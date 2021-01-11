@@ -22,7 +22,7 @@ let artifact = {//Icebreaker
   sets: {
     2: {
       text: <span><span className="text-cryo">Cryo DMG Bonus</span> +15%</span>,
-      stats: { cryo_ele_dmg: 15 }
+      stats: { cryo_ele_dmg_bonus: 15 }
     },
     4: {
       text: <span>When a character attacks an enemy affected by <span className="text-cryo">Cryo</span>, their CRIT Rate is increased by 20%. If the enemy is Frozen, CRIT Rate is increased by an additional 20%</span>,

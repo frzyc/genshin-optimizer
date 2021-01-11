@@ -22,7 +22,7 @@ let artifact = {
   sets: {
     2: {
       text: "Elemental Skill DMG increased by 20%",
-      stats: { skill_dmg: 20 }
+      stats: { skill_dmg_bonus: 20 }
     },
     4: {
       text: "Defeating an enemy has 100% chance to remove Elemental Skill CD. Can only occur once every 15s.",

@@ -12,7 +12,9 @@ import burst from './Talent_Starward_Sword.png'
 import passive1 from './Talent_Thundering_Penance.png'
 import passive2 from './Talent_Aristocratic_Dignity.png'
 import passive3 from './Talent_Land\'s_Overseer.png'
-import WeaponPercent from '../../../Components/WeaponPercent'
+import DisplayPercent from '../../../Components/DisplayPercent'
+import Character from '../../../Character/Character'
+import Stat from '../../../Stat'
 
 //AUTO
 const hitPercent = [
@@ -27,7 +29,7 @@ const hitPercent = [
 const charged_1 = [76.8, 83.05, 89.3, 98.23, 104.48, 111.63, 121.45, 131.27, 141.09, 151.81, 162.53, 173.24, 183.96, 194.67, 205.39]
 const charged_2 = [86, 93, 100, 110, 117, 125, 136, 147, 158, 170, 182, 194, 206, 218, 230]
 const plunge_dmg = [63.93, 69.14, 74.34, 81.77, 86.98, 92.93, 101.1, 109.28, 117.46, 126.38, 135.3, 144.22, 153.14, 162.06, 170.98]
-const plunge_dng_low = [127.84, 138.24, 148.65, 163.51, 173.92, 185.81, 202.16, 218.51, 234.86, 252.7, 270.54, 288.38, 306.22, 324.05, 341.89]
+const plunge_dmg_low = [127.84, 138.24, 148.65, 163.51, 173.92, 185.81, 202.16, 218.51, 234.86, 252.7, 270.54, 288.38, 306.22, 324.05, 341.89]
 const plunge_dmg_high = [159.68, 172.67, 185.67, 204.24, 217.23, 232.09, 252.51, 272.93, 293.36, 315.64, 337.92, 360.2, 382.48, 404.76, 427.04]
 
 //SKILL
@@ -55,9 +57,9 @@ let char = {
   constellationName: "Trulla Cementarii",
   titles: ["Driving Thunder", "Yuheng of the Liyue Qixing"],
   baseStat: {
-    hp: [1020, 2646, 3521, 5268, 5889, 6776, 7604, 8500, 9121, 10025, 10647, 11561, 12182, 13103],
-    atk: [25, 65, 87, 130, 145, 167, 187, 209, 225, 247, 262, 285, 300, 323],
-    def: [62, 161, 215, 321, 359, 413, 464, 519, 556, 612, 649, 705, 743, 799]
+    hp_base: [1020, 2646, 3521, 5268, 5889, 6776, 7604, 8500, 9121, 10025, 10647, 11561, 12182, 13103],
+    atk_base: [25, 65, 87, 130, 145, 167, 187, 209, 225, 247, 262, 285, 300, 323],
+    def_base: [62, 161, 215, 321, 359, 413, 464, 519, 556, 612, 649, 705, 743, 799]
   },
   specializeStat: {
     key: "crit_dmg",
@@ -73,19 +75,19 @@ let char = {
         fields: hitPercent.map((percentArr, i) =>
         ({
           text: `${i + (i < 4 ? 1 : 0)}-Hit DMG`,
-          basicVal: (tlvl) => percentArr[tlvl] + "%",
-          finalVal: (tlvl, stats, c) => (percentArr[tlvl] / 100) * (c.autoInfused ? stats.electro_norm_atk_avg_dmg : stats.norm_atk_avg_dmg)
+          basicVal: (tlvl, stats, c) => <span>{percentArr[tlvl]}% {Stat.printStat(Character.getTalentStatKey("norm_atk", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (percentArr[tlvl] / 100) * stats[Character.getTalentStatKey("norm_atk", c)]
         }))
       }, {
         text: <span><strong>Charged Attack</strong> Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.</span>,
         fields: [{
           text: `1-Hit DMG`,
-          basicVal: (tlvl) => charged_1[tlvl] + "%",
-          finalVal: (tlvl, stats, c) => (charged_1[tlvl] / 100) * (c.autoInfused ? stats.electro_char_atk_avg_dmg : stats.char_atk_avg_dmg)
+          basicVal: (tlvl, stats, c) => <span>{charged_1[tlvl]}% {Stat.printStat(Character.getTalentStatKey("char_atk", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (charged_1[tlvl] / 100) * stats[Character.getTalentStatKey("char_atk", c)]
         }, {
           text: `2-Hit DMG`,
-          basicVal: (tlvl) => charged_2[tlvl] + "%",
-          finalVal: (tlvl, stats, c) => (charged_2[tlvl] / 100) * (c.autoInfused ? stats.electro_char_atk_avg_dmg : stats.char_atk_avg_dmg)
+          basicVal: (tlvl, stats, c) => <span>{charged_2[tlvl]}% {Stat.printStat(Character.getTalentStatKey("char_atk", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (charged_2[tlvl] / 100) * stats[Character.getTalentStatKey("char_atk", c)]
         }, {
           text: `Stamina Cost`,
           value: `25`,
@@ -94,16 +96,16 @@ let char = {
         text: <span><strong>Plunging Attack</strong> Plunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.</span>,
         fields: [{
           text: `Plunge DMG`,
-          basicVal: (tlvl) => plunge_dmg[tlvl] + "%",
-          finalVal: (tlvl, stats, c) => (plunge_dmg[tlvl] / 100) * (c.autoInfused ? stats.electro_ele_avg_dmg : stats.phy_avg_dmg)
+          basicVal: (tlvl, stats, c) => <span>{plunge_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunge", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (plunge_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("plunge", c)]
         }, {
           text: `Low Plunge DMG`,
-          basicVal: (tlvl) => plunge_dng_low[tlvl] + "%",
-          finalVal: (tlvl, stats, c) => (plunge_dng_low[tlvl] / 100) * (c.autoInfused ? stats.electro_ele_avg_dmg : stats.phy_avg_dmg)
+          basicVal: (tlvl, stats, c) => <span>{plunge_dmg_low[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunge", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (plunge_dmg_low[tlvl] / 100) * stats[Character.getTalentStatKey("plunge", c)]
         }, {
           text: `High Plunge DMG`,
-          basicVal: (tlvl) => plunge_dmg_high[tlvl] + "%",
-          finalVal: (tlvl, stats, c) => (plunge_dmg_high[tlvl] / 100) * (c.autoInfused ? stats.electro_ele_avg_dmg : stats.phy_avg_dmg)
+          basicVal: (tlvl, stats, c) => <span>{plunge_dmg_high[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunge", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (plunge_dmg_high[tlvl] / 100) * stats[Character.getTalentStatKey("plunge", c)]
         }]
       }],
     },
@@ -128,16 +130,16 @@ let char = {
         </span>,
         fields: [{
           text: "Lightning Stiletto DMG",
-          basicVal: (tlvl) => stellar.stilleto_dmg[tlvl] + "%",
-          finalVal: (tlvl, s) => (stellar.stilleto_dmg[tlvl] / 100) * s.electro_skill_avg_dmg,
+          basicVal: (tlvl, stats, c) => <span>{stellar.stilleto_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("skill", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (stellar.stilleto_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("skill", c)],
         }, {
           text: "Slashing DMG",
-          basicVal: (tlvl) => stellar.slashing_dmg[tlvl] + "%",
-          finalVal: (tlvl, s) => (stellar.slashing_dmg[tlvl] / 100) * s.electro_skill_avg_dmg,
+          basicVal: (tlvl, stats, c) => <span>{stellar.slashing_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("skill", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (stellar.slashing_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("skill", c)],
         }, {
           text: "Thunderclap Slash DMG",
-          basicVal: (tlvl) => stellar.thunderclasp_slash_dmg[tlvl] + "% × 2",
-          finalVal: (tlvl, s) => ((stellar.thunderclasp_slash_dmg[tlvl] * 2) / 100) * s.electro_skill_avg_dmg,
+          basicVal: (tlvl, stats, c) => <span>{stellar.slashing_dmg[tlvl]}% × 2 {Stat.printStat(Character.getTalentStatKey("skill", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => ((stellar.slashing_dmg[tlvl] * 2) / 100) * stats[Character.getTalentStatKey("skill", c)],
         }, {
           text: "CD",
           value: "7.5s",
@@ -158,16 +160,16 @@ let char = {
         </span>,
         fields: [{
           text: "Skill DMG",
-          basicVal: (tlvl) => starwardSword.skill_dmg[tlvl] + "%",
-          finalVal: (tlvl, s) => (starwardSword.skill_dmg[tlvl] / 100) * s.electro_burst_avg_dmg,
+          basicVal: (tlvl, stats, c) => <span>{starwardSword.skill_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("burst", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (starwardSword.skill_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("burst", c)],
         }, {
           text: "Consecutive Slash DMG",
-          basicVal: (tlvl) => starwardSword.consec_slash_dmg[tlvl] + "% × 8",
-          finalVal: (tlvl, s) => ((starwardSword.consec_slash_dmg[tlvl] * 8) / 100) * s.electro_burst_avg_dmg,
+          basicVal: (tlvl, stats, c) => <span>{starwardSword.consec_slash_dmg[tlvl]}% × 8 {Stat.printStat(Character.getTalentStatKey("burst", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => ((starwardSword.consec_slash_dmg[tlvl] * 8) / 100) * stats[Character.getTalentStatKey("burst", c)],
         }, {
           text: "Last Attack DMG",
-          basicVal: (tlvl) => starwardSword.last_dmg[tlvl] + "%",
-          finalVal: (tlvl, s) => (starwardSword.last_dmg[tlvl] / 100) * s.electro_burst_avg_dmg,
+          basicVal: (tlvl, stats, c) => <span>{starwardSword.last_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("burst", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (starwardSword.last_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("burst", c)],
         }, {
           text: "CD",
           value: "15s",
@@ -211,7 +213,7 @@ let char = {
     constellation1: {
       name: "Thundering Might",
       img: c1,
-      document: [{ text: (tlvl, s) => <span>Recasting <b>Stellar Restoration</b> while a Lightning Stiletto is present causes Keqing to deal 50% of her ATK{WeaponPercent(50, s.atk)} as <span className="text-electro">AoE Electro DMG</span> at the start point and terminus of her Blink.</span> }],
+      document: [{ text: (tlvl, s, c) => <span>Recasting <b>Stellar Restoration</b> while a Lightning Stiletto is present causes Keqing to deal 50% of her ATK{DisplayPercent(50, s, Character.getTalentStatKey("ele", c))} as <span className="text-electro">AoE Electro DMG</span> at the start point and terminus of her Blink.</span> }],
     },
     constellation2: {
       name: "Keen Extraction",
@@ -261,7 +263,7 @@ let char = {
           sourceKey: "keqing",
           maxStack: 1,
           stats: {
-            electro_ele_dmg: 6,
+            electro_ele_dmg_bonus: 6,
           },
           fields: [{
             text: "Duration",

@@ -21,7 +21,7 @@ let artifact = {
   sets: {
     2: {
       text: <span><span className="text-electro">Electro DMG Bonus</span> +15%</span>,
-      stats: { electro_ele_dmg: 15 }
+      stats: { electro_ele_dmg_bonus: 15 }
     },
     4: {
       text: "Increases damage caused by Overloaded, Electro-Charged, and Superconduct DMG by 40%. Triggering such effects decreases Elemental Skill CD by 1s. Can only occur once every 0.8s.",

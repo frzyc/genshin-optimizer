@@ -22,7 +22,7 @@ let artifact = {//Ocean Conqueror
   sets: {
     2: {
       text: <span><span className="text-hydro">Hydro DMG Bonus</span> +15%</span>,
-      stats: { hydro_ele_dmg: 15 }
+      stats: { hydro_ele_dmg_bonus: 15 }
     },
     4: {
       text: "After using Elemental Skill, increases Normal Attack and Charged Attack DMG by 30% for 15s",
@@ -31,8 +31,8 @@ let artifact = {//Ocean Conqueror
         sourceKey: "HeartOfDepth_4",
         maxStack: 1,
         stats: {
-          norm_atk_dmg: 30,
-          char_atk_dmg: 30
+          norm_atk_dmg_bonus: 30,
+          char_atk_dmg_bonus: 30
         }
       }
     }

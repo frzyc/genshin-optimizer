@@ -251,7 +251,7 @@ export default class ArtifactEditor extends React.Component {
   }
   onSubstatValueChange = (newStatValue, index) => {
     this.setState((state) => {
-      let substats = JSON.parse(JSON.stringify(state.substats));
+      let substats = state.substats;
       substats[index].value = newStatValue
       return { substats }
     });
