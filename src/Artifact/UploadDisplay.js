@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
 import { Button, Card, Col, Container, Form, Modal, ProgressBar, Row } from 'react-bootstrap';
 import { createWorker } from 'tesseract.js';
-import { ArtifactMainStatsData, ArtifactSetsData, ArtifactSlotsData } from '../Data/ArtifactData';
+import { ArtifactMainStatsData, ArtifactData, ArtifactSlotsData } from '../Data/ArtifactData';
 import scan_art_main from "../imgs/scan_art_main.png";
 import Snippet from "../imgs/snippet.png";
 import Stat from '../Stat';
@@ -470,7 +470,7 @@ function parseSetKey(recognition, defVal = "") {
   if (!texts) return defVal
   //parse for sets
   for (const text of texts)
-    for (const [key, setObj] of Object.entries(ArtifactSetsData))
+    for (const [key, setObj] of Object.entries(ArtifactData))
       if (text.toLowerCase().replace(/\W/g, '').includes(setObj.name.toLowerCase().replace(/\W/g, '')))
         return key//props.setSetKey(key);
 }

@@ -1,5 +1,5 @@
 import Artifact from "../Artifact/Artifact";
-import { ArtifactSetsData, ArtifactSlotsData } from "../Data/ArtifactData";
+import { ArtifactData, ArtifactSlotsData } from "../Data/ArtifactData";
 
 export default class Build {
 
@@ -45,7 +45,7 @@ export default class Build {
       let slotKey = slotKeys[index];
       sets.forEach(setKey => {
         //see if this set is valid at this piece slot. some artifacts dont have artifacts at specific slots.
-        if (setKey === "Other" || (ArtifactSetsData[setKey] && (ArtifactSetsData[setKey].pieces) && Object.keys(ArtifactSetsData[setKey].pieces).includes(slotKey))) {
+        if (setKey === "Other" || (Object.keys(ArtifactData[setKey]?.pieces || {}).includes(slotKey))) {
           accu[slotKey] = setKey;
           slotPerm(index + 1, { ...accu })
         }

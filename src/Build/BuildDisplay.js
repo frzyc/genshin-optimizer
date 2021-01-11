@@ -1,6 +1,6 @@
 import { faSortAmountDownAlt, faSortAmountUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
+import React, { lazy } from 'react';
 import { Alert, Badge, Button, ButtonGroup, Card, Col, Container, Dropdown, DropdownButton, ListGroup, Modal, Row } from 'react-bootstrap';
 import ReactGA from 'react-ga';
 // eslint-disable-next-line
@@ -10,7 +10,7 @@ import ArtifactDatabase from '../Artifact/ArtifactDatabase';
 import Character from '../Character/Character';
 import CharacterCard from '../Character/CharacterCard';
 import CharacterDatabase from '../Character/CharacterDatabase';
-import CharacterDisplayCard from '../Character/CharacterDisplayCard';
+
 import ConditionalSelector from '../Components/ConditionalSelector';
 import { ArtifactSlotsData } from '../Data/ArtifactData';
 import { DatabaseInitAndVerify } from '../DatabaseUtil';
@@ -18,7 +18,12 @@ import Stat from '../Stat';
 import { DependencyStatKeys } from '../StatDependency';
 import ConditionalsUtil from '../Util/ConditionalsUtil';
 import { deepClone, loadFromLocalStorage, saveToLocalStorage } from '../Util/Util';
+import Weapon from '../Weapon/Weapon';
 import Build from './Build';
+
+//lazy load the character display
+const CharacterDisplayCardPromise = import('../Character/CharacterDisplayCard');
+const CharacterDisplayCard = lazy(() => CharacterDisplayCardPromise)
 
 export default class BuildDisplay extends React.Component {
   constructor(props) {
@@ -383,17 +388,26 @@ export default class BuildDisplay extends React.Component {
     let { build, characterid } = props
     let { editCharacter } = this.state
     return <Modal show={Boolean(editCharacter || build)} onHide={this.closeModal} size="xl" dialogAs={Container} className="pt-3 pb-3">
-      <CharacterDisplayCard characterId={characterid} newBuild={build}
-        onClose={this.closeModal}
-        forceUpdate={this.forceUpdateBuildDisplay}
-        editable={editCharacter}
-        footer={<Button variant="danger" onClick={this.closeModal}>Close</Button>} />
+      <React.Suspense fallback={<span>Loading...</span>}>
+        <CharacterDisplayCard characterId={characterid} newBuild={build}
+          onClose={this.closeModal}
+          forceUpdate={this.forceUpdateBuildDisplay}
+          editable={editCharacter}
+          footer={<Button variant="danger" onClick={this.closeModal}>Close</Button>} />
+      </React.Suspense>
     </Modal>
   }
 
   componentDidMount() {
-    //try to generate a build at the beginning after mount.
-    this.autoGenerateBuilds()
+    Promise.all([
+      Character.getCharacterDataImport(),
+      Weapon.getWeaponDataImport(),
+      Artifact.getArtifactDataImport()
+    ]).then(() => {
+      this.forceUpdate()
+      //try to generate a build at the beginning after mount.
+      this.autoGenerateBuilds()
+    })
   }
   componentDidUpdate() {
     let state = deepClone(this.state)

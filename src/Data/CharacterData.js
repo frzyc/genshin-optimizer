@@ -1,4 +1,10 @@
-import characters from './Characters'
+let CharacterData = {}
+let CharacterDataImport = import('./Characters')
+CharacterDataImport.then(imp => {
+  CharacterData = imp.default
+  CharacterDataImport = null
+})
+// import characters from 
 const LevelsData = {
   "L1": {
     name: "Lv. 1",
@@ -86,6 +92,7 @@ const CharacterSpecializedStatKey = ["hp_", "atk_", "def_", "ele_mas", "ener_rec
 export {
   LevelsData,
   characterStatBase,
-  characters as CharacterData,
+  CharacterData,
+  CharacterDataImport,
   CharacterSpecializedStatKey
 }

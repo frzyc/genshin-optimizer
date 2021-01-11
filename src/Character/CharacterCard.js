@@ -1,6 +1,6 @@
 import { faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
+import React, { useEffect, useReducer } from 'react';
 import { Badge, Image } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
@@ -16,6 +16,14 @@ import Weapon from '../Weapon/Weapon';
 import Character from './Character';
 import CharacterDatabase from './CharacterDatabase';
 export default function CharacterCard(props) {
+  const [, forceUpdate] = useReducer(x => x + 1, 0);
+  useEffect(() => {
+    Promise.all([
+      Character.getCharacterDataImport(),
+      Weapon.getWeaponDataImport(),
+      Artifact.getArtifactDataImport(),
+    ]).then(() => forceUpdate())
+  }, [])
   let { characterId, onEdit, onDelete } = props
   let character = CharacterDatabase.getCharacter(characterId)
   if (!character) return null;

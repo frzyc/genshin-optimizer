@@ -7,6 +7,7 @@ import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import DropdownToggle from 'react-bootstrap/esm/DropdownToggle';
 import Row from 'react-bootstrap/Row';
+import Artifact from '../Artifact/Artifact';
 import { WeaponLevelKeys } from '../Data/WeaponData';
 import { DatabaseInitAndVerify } from '../DatabaseUtil';
 import { deepClone, getRandomElementFromArray } from '../Util/Util';
@@ -110,7 +111,13 @@ export default class CharacterDisplayCard extends React.Component {
   })
 
   setConstellation = (constellation) => this.setState({ constellation })
-
+  componentDidMount() {
+    Promise.all([
+      Character.getCharacterDataImport(),
+      Weapon.getWeaponDataImport(),
+      Artifact.getArtifactDataImport(),
+    ]).then(() => this.forceUpdate())
+  }
   componentDidUpdate() {
     if (this.props.characterId && this.state.id !== this.props.characterId)
       this.setState(CharacterDatabase.getCharacter(this.props.characterId))

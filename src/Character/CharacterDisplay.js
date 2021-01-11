@@ -1,13 +1,16 @@
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
+import React, { lazy } from 'react';
 import { Button, Card, Col, Container, Row } from 'react-bootstrap';
+import ReactGA from 'react-ga';
 import { DatabaseInitAndVerify } from '../DatabaseUtil';
 import Character from './Character';
 import CharacterCard from './CharacterCard';
 import CharacterDatabase from './CharacterDatabase';
-import CharacterDisplayCard from './CharacterDisplayCard';
-import ReactGA from 'react-ga';
+
+//lazy load the character display
+const CharacterDisplayCardPromise = import('../Character/CharacterDisplayCard');
+const CharacterDisplayCard = lazy(() => CharacterDisplayCardPromise)
 
 export default class CharacterDisplay extends React.Component {
   constructor(props) {
@@ -40,11 +43,13 @@ export default class CharacterDisplay extends React.Component {
     return (<Container ref={this.scrollRef}>
       {/* editor/character detail display */}
       {this.state.showEditor ? <Row className="mt-2"><Col>
-        <CharacterDisplayCard editable
-          characterId={this.state.charIdToEdit}
-          onClose={this.cancelEditCharacter}
-          footer={<Button variant="danger" onClick={this.cancelEditCharacter}>Close</Button>}
-        />
+        <React.Suspense fallback={<span>Loading...</span>}>
+          <CharacterDisplayCard editable
+            characterId={this.state.charIdToEdit}
+            onClose={this.cancelEditCharacter}
+            footer={<Button variant="danger" onClick={this.cancelEditCharacter}>Close</Button>}
+          />
+        </React.Suspense>
       </Col></Row> : null}
 
       <Row className="mt-2">

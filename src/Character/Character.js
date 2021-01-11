@@ -1,8 +1,8 @@
 import Artifact from "../Artifact/Artifact";
 import ArtifactDatabase from "../Artifact/ArtifactDatabase";
-import { CharacterData, characterStatBase, LevelsData } from "../Data/CharacterData";
+import { CharacterData, CharacterDataImport, characterStatBase, LevelsData } from "../Data/CharacterData";
 import ElementalData from "../Data/ElementalData";
-import { AttachLazyFormulas } from "../Stat";
+import { AttachLazyFormulas } from "../StatData";
 import ConditionalsUtil from "../Util/ConditionalsUtil";
 import { clamp, deepClone } from "../Util/Util";
 import Weapon from "../Weapon/Weapon";
@@ -10,11 +10,8 @@ import CharacterDatabase from "./CharacterDatabase";
 
 export default class Character {
   //do not instantiate.
-  constructor() {
-    if (this instanceof Character)
-      throw Error('A static class cannot be instantiated.');
-  }
-
+  constructor() { if (this instanceof Character) throw Error('A static class cannot be instantiated.'); }
+  static getCharacterDataImport = () => CharacterDataImport
   static getBaseStatValue = (character, statKey, defVal = 0) => {
     let { characterKey, levelKey } = character
     if (statKey === "specializedStatKey") return this.getSpecializedStatKey(characterKey);
@@ -52,8 +49,8 @@ export default class Character {
   static getSpecializedStatKey = (charKey) => this.getSpecializedStat(charKey)?.key;
   static getSpeicalizedStatVal = (charKey, levelKey) => this.getSpecializedStat(charKey)?.value?.[this.getIndexFromlevelkey(levelKey)]
   //ASSETS
-  static getThumb = (charKey, defVal = null) => this.getCDataObj(charKey).thumbImg || defVal
-  static getCard = (charKey, defVal = null) => this.getCDataObj(charKey).cardImg || defVal
+  static getThumb = (charKey, defVal = null) => this.getCDataObj(charKey)?.thumbImg || defVal
+  static getCard = (charKey, defVal = null) => this.getCDataObj(charKey)?.cardImg || defVal
   static getTalentImg = (charKey, talentKey, defVal = null) => this.getCDataObj(charKey)?.talent?.[talentKey]?.img || defVal
   static getConstellationImg = (charKey, constIndex, defVal = null) => this.getCDataObj(charKey)?.talent?.[`constellation${constIndex + 1}`]?.img || defVal
 
@@ -88,7 +85,7 @@ export default class Character {
     return stats || defVal
   }
   static getTalentStatsAll = (charKey, constellation, ascension) => {
-    let talents = this.getCDataObj(charKey)?.talent
+    let talents = this.getCDataObj(charKey)?.talent || {}
     let statsArr = []
     Object.keys(talents).forEach(talentKey => {
       let stats = this.getTalentStats(charKey, talentKey, constellation, ascension)

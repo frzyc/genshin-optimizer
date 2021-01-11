@@ -4,7 +4,7 @@ import React from 'react';
 import { Alert, Badge, Button, Card, Col, Dropdown, DropdownButton, FormControl, InputGroup, OverlayTrigger, Popover, Row } from 'react-bootstrap';
 import { FloatFormControl, IntFormControl } from '../Components/CustomFormControl';
 import { Stars } from '../Components/StarDisplay';
-import { ArtifactSetsData, ArtifactSlotsData, ArtifactStarsData, ArtifactSubStatsData } from '../Data/ArtifactData';
+import { ArtifactData, ArtifactSlotsData, ArtifactStarsData, ArtifactSubStatsData } from '../Data/ArtifactData';
 import Stat from '../Stat';
 import { deepClone, getArrLastElement, getRandomElementFromArray, getRandomIntInclusive } from '../Util/Util';
 import Artifact from './Artifact';
@@ -114,7 +114,7 @@ export default class ArtifactEditor extends React.Component {
           <DropdownButton as={InputGroup.Append} title={this.state.numStars > 0 ? "🟊".repeat(this.state.numStars) : "Rarity"} disabled={!this.state.setKey}>
             {Object.keys(ArtifactStarsData).map((star, index) => {
               star = parseInt(star);
-              return <Dropdown.Item key={index} disabled={!this.state.setKey || !ArtifactSetsData[this.state.setKey].rarity.includes(star)} onClick={() => {
+              return <Dropdown.Item key={index} disabled={!this.state.setKey || !ArtifactData[this.state.setKey].rarity.includes(star)} onClick={() => {
                 this.setState({ numStars: star, level: 0 });
               }}>
                 {<Stars stars={star} />}
@@ -152,7 +152,7 @@ export default class ArtifactEditor extends React.Component {
             disabled={!this.state.setKey}
             as={InputGroup.Prepend}
           >
-            {this.state.setKey && Object.keys(ArtifactSetsData[this.state.setKey].pieces).map(slotKey =>
+            {Object.keys(ArtifactData[this.state.setKey]?.pieces || []).map(slotKey =>
               <Dropdown.Item key={slotKey} onClick={() => this.setSlotKey(slotKey)} >
                 {Artifact.getArtifactSlotNameWithIcon(slotKey, "Slot")}
               </Dropdown.Item>)}
@@ -259,11 +259,11 @@ export default class ArtifactEditor extends React.Component {
   randomizeArtifact = () => {
     let state = ArtifactEditor.getInitialState();
     //randomly choose artifact set
-    state.setKey = getRandomElementFromArray(Object.keys(ArtifactSetsData));
+    state.setKey = getRandomElementFromArray(Object.keys(ArtifactData));
     //choose star
-    state.numStars = getRandomElementFromArray(ArtifactSetsData[state.setKey].rarity);
+    state.numStars = getRandomElementFromArray(ArtifactData[state.setKey].rarity);
     //choose piece
-    state.slotKey = getRandomElementFromArray(Object.keys(ArtifactSetsData[state.setKey].pieces));
+    state.slotKey = getRandomElementFromArray(Object.keys(ArtifactData[state.setKey].pieces));
     //choose mainstat
     state.mainStatKey = getRandomElementFromArray(ArtifactSlotsData[state.slotKey].stats);
 

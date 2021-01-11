@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import CharacterDatabase from '../Character/CharacterDatabase';
 import SlotIcon from '../Components/SlotIcon';
-import { ArtifactMainSlotKeys, ArtifactMainStatsData, ArtifactSetsData, ArtifactSlotsData, ArtifactStarsData, ArtifactSubStatsData } from '../Data/ArtifactData';
+import { ArtifactMainSlotKeys, ArtifactMainStatsData, ArtifactData, ArtifactSlotsData, ArtifactStarsData, ArtifactSubStatsData, ArtifactDataImport } from '../Data/ArtifactData';
 import Stat from '../Stat';
 import ConditionalsUtil from '../Util/ConditionalsUtil';
 import { clampPercent, closeEnoughFloat, closeEnoughInt, deepClone } from '../Util/Util';
@@ -10,19 +10,16 @@ import ArtifactDatabase from './ArtifactDatabase';
 
 export default class Artifact {
   //do not instantiate.
-  constructor() {
-    if (this instanceof Artifact) {
-      throw Error('A static class cannot be instantiated.');
-    }
-  }
+  constructor() { if (this instanceof Artifact) throw Error('A static class cannot be instantiated.'); }
 
   //SETS
-  static getArtifactSetName = (key, defVal = "") => ArtifactSetsData?.[key]?.name || defVal;
+  static getArtifactDataImport = () => ArtifactDataImport
+  static getArtifactSetName = (key, defVal = "") => ArtifactData?.[key]?.name || defVal;
   static getArtifactSetsByMaxStarEntries = (star) =>
-    Object.entries(ArtifactSetsData).filter(([key, setobj]) => setobj.rarity[(setobj.rarity.length) - 1] === star)
-  static getArtifactPieceName = (setKey, slotKey, defVal = "") => ArtifactSetsData?.[setKey]?.pieces?.[slotKey] || defVal;
-  static getArtifactPieceIcon = (setKey, slotKey, defVal = null) => ArtifactSetsData?.[setKey]?.icons?.[slotKey] || defVal;
-  static getArtifactSetEffectsObj = (setKey, defVal = null) => ArtifactSetsData?.[setKey]?.sets || defVal
+    Object.entries(ArtifactData).filter(([key, setobj]) => setobj.rarity[(setobj.rarity.length) - 1] === star)
+  static getArtifactPieceName = (setKey, slotKey, defVal = "") => ArtifactData?.[setKey]?.pieces?.[slotKey] || defVal;
+  static getArtifactPieceIcon = (setKey, slotKey, defVal = null) => ArtifactData?.[setKey]?.icons?.[slotKey] || defVal;
+  static getArtifactSetEffectsObj = (setKey, defVal = null) => ArtifactData?.[setKey]?.sets || defVal
   //SLOT
   static getArtifactSlotKeys = () => Object.keys(ArtifactSlotsData)
   static getArtifactSlotName = (slotKey, defVal = "") =>
@@ -40,7 +37,7 @@ export default class Artifact {
   }
 
   //STARS
-  static getRarityArr = (setKey) => ArtifactSetsData[setKey] ? ArtifactSetsData[setKey].rarity : []
+  static getRarityArr = (setKey) => ArtifactData[setKey] ? ArtifactData[setKey].rarity : []
 
   //MAIN STATS
   static getMainStatKeys = () => ArtifactMainSlotKeys
@@ -139,7 +136,7 @@ export default class Artifact {
   static setToSlots = ArtifactBase.setToSlots;
 
   static getArtifactSets = (setKey, defVal = null) =>
-    ArtifactSetsData?.[setKey]?.sets || defVal
+    ArtifactData?.[setKey]?.sets || defVal
   static getArtifactSetNumStats = (setKey, setNumKey, defVal = null) =>
     deepClone(this.getArtifactSets(setKey)?.[setNumKey]?.stats || defVal)
 
@@ -154,7 +151,7 @@ export default class Artifact {
   static getArtifactSetEffectsStats = (setToSlots) => {
     let artifactSetEffect = []
     Object.entries(setToSlots).forEach(([setKey, artArr]) =>
-      ArtifactSetsData?.[setKey]?.sets && Object.entries(ArtifactSetsData[setKey].sets).forEach(([setNumKey, value]) =>
+      ArtifactData?.[setKey]?.sets && Object.entries(ArtifactData[setKey].sets).forEach(([setNumKey, value]) =>
         parseInt(setNumKey) <= artArr.length && value.stats && Object.keys(value.stats).length &&
         Object.entries(value.stats).forEach(([key, statVal]) =>
           artifactSetEffect.push({ key, statVal }))))
@@ -163,8 +160,8 @@ export default class Artifact {
   static getArtifactSetEffects = (setToSlots) => {
     let artifactSetEffect = {}
     Object.entries(setToSlots).forEach(([setKey, artArr]) => {
-      if (ArtifactSetsData?.[setKey]?.sets) {
-        let setNumKeys = Object.keys(ArtifactSetsData[setKey].sets).filter(setNumKey => parseInt(setNumKey) <= artArr.length)
+      if (ArtifactData?.[setKey]?.sets) {
+        let setNumKeys = Object.keys(ArtifactData[setKey].sets).filter(setNumKey => parseInt(setNumKey) <= artArr.length)
         if (setNumKeys.length)
           artifactSetEffect[setKey] = setNumKeys
       }
@@ -173,7 +170,7 @@ export default class Artifact {
   }
 
   static getArtifactSetEffectText = (setKey, setNumKey, charFinalStats, defVal = "") => {
-    let setEffectText = ArtifactSetsData?.[setKey]?.sets?.[setNumKey]?.text
+    let setEffectText = ArtifactData?.[setKey]?.sets?.[setNumKey]?.text
     if (!setEffectText) return defVal
     if (typeof setEffectText === "function")
       return setEffectText(charFinalStats)
@@ -182,11 +179,11 @@ export default class Artifact {
     return defVal
   }
   static getArtifactSetEffectConditional = (setKey, setNumKey, defVal = null) =>
-    ArtifactSetsData?.[setKey]?.sets?.[setNumKey]?.conditional || defVal
+    ArtifactData?.[setKey]?.sets?.[setNumKey]?.conditional || defVal
 
   static getAllArtifactSetEffectsObj = (artifactConditionals) => {
     let ArtifactSetEffectsObj = {};
-    Object.entries(ArtifactSetsData).forEach(([setKey, setObj]) => {
+    Object.entries(ArtifactData).forEach(([setKey, setObj]) => {
       let setEffect = {}
       let hasSetEffect = false
       if (setObj.sets)

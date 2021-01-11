@@ -1,5 +1,10 @@
-import artifacts from './Artifacts/Artifacts'
 import ElementalData from './ElementalData';
+let ArtifactData = {}
+let ArtifactDataImport = import('./Artifacts')
+ArtifactDataImport.then(imp => {
+  ArtifactData = imp.default
+  ArtifactDataImport = null
+})
 const ArtifactMainSlotKeys = [
   "hp", "hp_", "atk", "atk_", "def", "def_", "ele_mas", "ener_rech", "crit_rate", "crit_dmg", "heal_bonu", "phy_dmg_bonus",
 ]
@@ -106,14 +111,13 @@ const ArtifactSlotsData = {
   goblet: { name: "Goblet of Eonothem", stats: ["hp_", "def_", "atk_", "ele_mas", "phy_dmg_bonus", "anemo_ele_dmg_bonus", "geo_ele_dmg_bonus", "electro_ele_dmg_bonus", "hydro_ele_dmg_bonus", "pyro_ele_dmg_bonus", "cryo_ele_dmg_bonus",] },
   circlet: { name: "Circlet of Logos", stats: ["hp_", "def_", "atk_", "ele_mas", "crit_rate", "crit_dmg", "heal_bonu"] },
 };
-const ArtifactSetsData = {
-  ...artifacts,
-}
+
 export {
   ArtifactMainSlotKeys,
   ArtifactSlotsData,
-  ArtifactSetsData,
+  ArtifactData,
+  ArtifactDataImport,
   ArtifactSubStatsData,
   ArtifactStarsData,
   ArtifactMainStatsData
-}
+};

@@ -1,4 +1,4 @@
-import { AttachLazyFormulas, Formulas, OverrideFormulas, StatData } from "./Stat"
+import { AttachLazyFormulas, Formulas, OverrideFormulas, StatData } from "./StatData"
 
 //generate a statKey dependency, to reduce build generation calculation on a single stat.
 const formulaKeyDependency = {}

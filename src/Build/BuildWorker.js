@@ -1,6 +1,6 @@
 import '../WorkerHack'
 import ArtifactBase from "../Artifact/ArtifactBase";
-import { AttachLazyFormulas } from "../Stat";
+import { AttachLazyFormulas } from "../StatData";
 
 onmessage = async (e) => {
   let { splitArtifacts, artifactSetPerms, setFilters, initialStats, artifactSetEffects, maxBuildsToShow, buildFilterKey, asending, depdendencyStatKeys } = e.data;

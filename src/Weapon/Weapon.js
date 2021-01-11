@@ -1,9 +1,10 @@
-import { LevelNameData, WeaponData, WeaponLevelKeys, WeaponTypeData } from '../Data/WeaponData.js';
+import { LevelNameData, WeaponData, WeaponDataImport, WeaponLevelKeys, WeaponTypeData } from '../Data/WeaponData.js';
 import ConditionalsUtil from '../Util/ConditionalsUtil.js';
 export default class Weapon {
   //do not instantiate.
   constructor() { if (this instanceof Weapon) throw Error('A static class cannot be instantiated.'); }
 
+  static getWeaponDataImport = () => WeaponDataImport
   static getLevelName = (levelKey, defVal = "") => (LevelNameData[levelKey] || defVal)
   static getLevelIndex = (levelKey) => WeaponLevelKeys.indexOf(levelKey)
 

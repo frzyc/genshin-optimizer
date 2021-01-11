@@ -75,6 +75,7 @@ export default class ArtifactDisplay extends React.Component {
     this.scrollRef = React.createRef()
     DatabaseInitAndVerify();
     this.setState({ artIdList: ArtifactDatabase.getArtifactIdList() })
+    Artifact.getArtifactDataImport()?.then(() => this.forceUpdate())
   }
   render() {
     let totalArtNum = this.state.artIdList?.length || 0
