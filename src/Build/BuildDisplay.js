@@ -1,4 +1,4 @@
-import { faSortAmountDownAlt, faSortAmountUp } from '@fortawesome/free-solid-svg-icons';
+import { faCheckSquare, faSortAmountDownAlt, faSortAmountUp, faSquare } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { lazy } from 'react';
 import { Alert, Badge, Button, ButtonGroup, Card, Col, Container, Dropdown, DropdownButton, ListGroup, Modal, Row } from 'react-bootstrap';
@@ -10,7 +10,6 @@ import ArtifactDatabase from '../Artifact/ArtifactDatabase';
 import Character from '../Character/Character';
 import CharacterCard from '../Character/CharacterCard';
 import CharacterDatabase from '../Character/CharacterDatabase';
-
 import ConditionalSelector from '../Components/ConditionalSelector';
 import { ArtifactSlotsData } from '../Data/ArtifactData';
 import { DatabaseInitAndVerify } from '../DatabaseUtil';
@@ -50,6 +49,7 @@ export default class BuildDisplay extends React.Component {
     artifactConditionals: [],//{ setKey: "", setNumKey: "", conditionalNum: 0 }
     mainStat: ["", "", ""],
     buildFilterKey: "atk_final",
+    artifactsAssumeFull: false,
     asending: false,
     modalBuild: null,
     editCharacter: false,
@@ -124,16 +124,17 @@ export default class BuildDisplay extends React.Component {
     let { split, artifactSetPerms, totBuildNumber } = this
     if (!totBuildNumber) return this.setState({ builds: [] })
     this.setState({ generatingBuilds: true })
-    let { setFilters, asending, buildFilterKey, maxBuildsToShow, artifactConditionals } = this.state
+    let { setFilters, asending, buildFilterKey, maxBuildsToShow, artifactConditionals, artifactsAssumeFull } = this.state
     let character = CharacterDatabase.getCharacter(this.state.selectedCharacterId)
     let initialStats = Character.calculateCharacterWithWeaponStats(character)
+    initialStats.artifactsAssumeFull = artifactsAssumeFull
 
     let artifactSetEffects = Artifact.getAllArtifactSetEffectsObj(artifactConditionals)
     let splitArtifacts = deepClone(split)
-    //add mainStatVal to each artifact, TODO add main stat assuming fully leveled up
+    //add mainStatVal to each artifact
     Object.values(splitArtifacts).forEach(artArr => {
       artArr.forEach(art => {
-        art.mainStatVal = Artifact.getMainStatValue(art.mainStatKey, art.numStars, art.level);
+        art.mainStatVal = Artifact.getMainStatValue(art.mainStatKey, art.numStars, artifactsAssumeFull ? art.numStars * 4 : art.level);
       })
     })
     //generate the key dependencies for the formula
@@ -165,7 +166,7 @@ export default class BuildDisplay extends React.Component {
   }
 
   BuildGeneratorEditorCard = (props) => {
-    let { setFilters, selectedCharacterId } = this.state
+    let { setFilters, selectedCharacterId, artifactsAssumeFull } = this.state
     let { statsDisplayKeys } = props
     let charlist = CharacterDatabase.getCharacterDatabase();
     let selectedCharacter = CharacterDatabase.getCharacter(selectedCharacterId)
@@ -191,6 +192,7 @@ export default class BuildDisplay extends React.Component {
           {char.name}
         </Dropdown.Item>)}
     </DropdownButton>
+    const toggleArtifactsAssumeFull = () => this.setState(state => ({ artifactsAssumeFull: !state.artifactsAssumeFull }), this.autoGenerateBuilds)
     return <Card bg="darkcontent" text="lightfont">
       <Card.Header>Build Generator</Card.Header>
       <Card.Body>
@@ -206,7 +208,10 @@ export default class BuildDisplay extends React.Component {
               </Card>}
             {/* main stat selector */}
             <Card bg="lightcontent" text="lightfont">
-              <Card.Header>Artifact Main Stat (Optional)</Card.Header>
+              <Card.Header>
+                <span>Artifact Main Stat</span>
+                <Button className="float-right text-right" variant={artifactsAssumeFull ? "orange" : "primary"} onClick={toggleArtifactsAssumeFull}><FontAwesomeIcon icon={artifactsAssumeFull ? faCheckSquare : faSquare} className="fa-fw" /> Assume Fully Leveled</Button>
+              </Card.Header>
               <Card.Body>
                 {BuildDisplay.artifactsSlotsToSelectMainStats.map((slotKey, index) =>
                 (<div className="text-inline mb-1 d-flex justify-content-between" key={slotKey}>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Accordion, Badge, Button, Card, Col, Row } from 'react-bootstrap';
+import { Accordion, Alert, Badge, Button, Card, Col, Row } from 'react-bootstrap';
 import Artifact from '../../Artifact/Artifact';
 import ArtifactCard from '../../Artifact/ArtifactCard';
 import ConditionalSelector from '../../Components/ConditionalSelector';
@@ -9,12 +9,11 @@ import { GetDependencyStats } from '../../StatDependency';
 import ConditionalsUtil from '../../Util/ConditionalsUtil';
 import Character from "../Character";
 
-function CharacterArtifactPane(props) {
+function CharacterArtifactPane({ character, character: { characterKey, compareAgainstEquipped, artifactConditionals }, equippedBuild, newBuild, editable, forceUpdate, setState }) {
   let [showOther, setShowOther] = useState(false)
-  let { character: { characterKey, compareAgainstEquipped, artifactConditionals }, equippedBuild, newBuild, editable, forceUpdate, setState } = props
-  let { character } = props
   //choose which one to display stats for
   let build = newBuild ? newBuild : equippedBuild
+  let artifactsAssumeFull = newBuild ? newBuild.finalStats?.artifactsAssumeFull : character.artifactsAssumeFull
   if (newBuild) artifactConditionals = newBuild.artifactConditionals
   const statKeys = Character.getDisplayStatKeys(characterKey)
 
@@ -65,10 +64,11 @@ function CharacterArtifactPane(props) {
               </Accordion.Collapse>
             </Card.Body>
             {newBuild ? <Card.Footer>
-              <Button size="sm" onClick={() => {
+              <Button onClick={() => {
                 Character.equipArtifacts(character.id, newBuild.artifactIds)
                 forceUpdate?.()
               }}>Equip All artifacts to current character</Button>
+              {artifactsAssumeFull && <Alert className="float-right text-right mb-0 py-2" variant="orange" ><b>Assume Main Stats are Fully Leveled</b></Alert>}
             </Card.Footer> : null}
           </Card>
         </Accordion>
@@ -123,7 +123,7 @@ function CharacterArtifactPane(props) {
           </Col>
           {Object.values(build.artifactIds).map(artid =>
             artid ? <Col sm={6} lg={4} key={artid} className="mb-2">
-              <ArtifactCard artifactId={artid} forceUpdate={forceUpdate} />
+              <ArtifactCard artifactId={artid} forceUpdate={forceUpdate} assumeFull={artifactsAssumeFull} />
             </Col> : null
           )}
         </Row>

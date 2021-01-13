@@ -205,16 +205,16 @@ export default class Character {
     return this.calculateBuildWithObjs(character.artifactConditionals, initialStats, artifacts)
   }
 
-  static calculateBuildWithObjs = (artifactConditionals, charAndWeapon, artifacts) => {
+  static calculateBuildWithObjs = (artifactConditionals, initialStats, artifacts) => {
     let setToSlots = Artifact.setToSlots(artifacts)
     let artifactSetEffectsStats = Artifact.getArtifactSetEffectsStats(setToSlots)
 
-    let stats = deepClone(charAndWeapon)
+    let stats = deepClone(initialStats)
     //add artifact and artifactsets
     Object.values(artifacts).forEach(art => {
       if (!art) return
       //main stats
-      stats[art.mainStatKey] = (stats[art.mainStatKey] || 0) + Artifact.getMainStatValue(art.mainStatKey, art.numStars, art.level)
+      stats[art.mainStatKey] = (stats[art.mainStatKey] || 0) + Artifact.getMainStatValue(art.mainStatKey, art.numStars, stats.artifactsAssumeFull ? art.numStars * 4 : art.level)
       //substats
       art.substats.forEach((substat) =>
         substat && substat.key && (stats[substat.key] = (stats[substat.key] || 0) + substat.value))
