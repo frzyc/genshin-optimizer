@@ -6,6 +6,7 @@ import Assets from '../Assets/Assets';
 import { IntFormControl } from '../Components/CustomFormControl';
 import { timeString } from '../Util/TimeUtil';
 import { clamp, deepClone, loadFromLocalStorage, saveToLocalStorage } from "../Util/Util";
+import ReactGA from 'react-ga';
 
 const SECOND_MS = 1000
 const MINUTE_MS = 60 * SECOND_MS
@@ -43,6 +44,7 @@ class ResinCounter extends React.Component {
       this.state.resin = resin
       this.state.date = date
     }
+    ReactGA.pageview('/tools')
   }
   setResin = (resin) => this.setState(state => {
     resin = parseInt(resin) || 0

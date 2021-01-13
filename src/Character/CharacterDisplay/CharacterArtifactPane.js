@@ -4,7 +4,8 @@ import Artifact from '../../Artifact/Artifact';
 import ArtifactCard from '../../Artifact/ArtifactCard';
 import ConditionalSelector from '../../Components/ConditionalSelector';
 import { DisplayNewBuildDiff, DisplayStats } from '../../Components/StatDisplay';
-import Stat from "../../Stat";
+import Stat, { FormulaText } from "../../Stat";
+import { GetDependencyStats } from '../../StatDependency';
 import ConditionalsUtil from '../../Util/ConditionalsUtil';
 import Character from "../Character";
 
@@ -15,22 +16,15 @@ function CharacterArtifactPane(props) {
   //choose which one to display stats for
   let build = newBuild ? newBuild : equippedBuild
   if (newBuild) artifactConditionals = newBuild.artifactConditionals
-  let eleKey = Character.getElementalKey(characterKey)
-  //TODO pick stats dynamically like in Build Display
-  const statKeys = ["hp_final", "atk_final", "def_final", "ele_mas", "crit_rate", "crit_dmg", "ener_rech", "heal_bonu", "phy_dmg_bonus"]
-  statKeys.push(`${eleKey}_ele_dmg_bonus`)
+  const statKeys = Character.getDisplayStatKeys(characterKey)
 
-  let otherStatKeys = ["inc_heal", "pow_shield", "red_cd", "phy_dmg_bonus", "phy_res", "norm_atk_dmg_bonus", "char_atk_dmg_bonus", "skill_dmg_bonus", "burst_dmg_bonus"]
-  Character.getElementalKeys().forEach(ele => {
-    otherStatKeys.push(`${ele}_ele_dmg_bonus`)
-    otherStatKeys.push(`${ele}_ele_res`)
-  })
-  otherStatKeys = otherStatKeys.filter(key => !statKeys.includes(key))
   let displayStatProps = { character, build, editable }
   let displayNewBuildProps = { character, equippedBuild, newBuild, editable }
 
   const setStateArtifactConditional = (setKey, setNumKey, conditionalNum) => setState?.(state =>
     ({ artifactConditionals: ConditionalsUtil.setConditional(state.artifactConditionals, { srcKey: setKey, srcKey2: setNumKey }, conditionalNum) }))
+  const formulaDependencyKeys = [...new Set(statKeys.map(key => GetDependencyStats(key, build.finalStats?.formulaOverrides)).flat())]
+  const formulaKeys = Object.keys(FormulaText).filter(key => formulaDependencyKeys.includes(key))
   return <>
     <Row>
       <Col className="mb-2">
@@ -43,7 +37,7 @@ function CharacterArtifactPane(props) {
                 </Col>
                 <Col xs="auto">
                   <Accordion.Toggle as={Button} variant="info" eventKey="showOtherStats" onClick={() => setShowOther(!showOther)} size="sm">
-                    {`${showOther ? "Hide" : "Show"} Other Stats`}
+                    {`${showOther ? "Hide" : "Show"} Calculations`}
                   </Accordion.Toggle>
                 </Col>
               </Row>
@@ -56,12 +50,19 @@ function CharacterArtifactPane(props) {
               </Row>
               <Accordion.Collapse eventKey="showOtherStats">
                 <Row>
-                  {(newBuild && compareAgainstEquipped) ?
-                    otherStatKeys.map(statKey => <DisplayNewBuildDiff xs={12} md={6} xl={4} key={statKey} {...{ ...displayNewBuildProps, statKey }} />) :
-                    otherStatKeys.map(statKey => <DisplayStats xs={12} md={6} xl={4} key={statKey} {...{ ...displayStatProps, statKey }} />)}
+                  {formulaKeys.map(key => <Col key={key} xs={12} className="mt-2">
+                    <Card bg="darkcontent" text="lightfont">
+                      <Card.Header className="p-2">
+                        {Stat.printStat(key, build.finalStats)}
+                      </Card.Header>
+                      <Card.Body className="p-2">
+                        <small>{Stat.printFormula(key, build.finalStats, build.finalStats.formulaOverrides, false)}</small>
+                      </Card.Body>
+                    </Card>
+                  </Col>
+                  )}
                 </Row>
               </Accordion.Collapse>
-
             </Card.Body>
             {newBuild ? <Card.Footer>
               <Button size="sm" onClick={() => {

@@ -5,7 +5,6 @@ import { Accordion, AccordionContext, Button, Card, Col, Dropdown, DropdownButto
 import { useAccordionToggle } from 'react-bootstrap/AccordionToggle';
 import ConditionalSelector from "../../Components/ConditionalSelector";
 import Stat, { FormulaText } from "../../Stat";
-import { OverrideFormulas } from "../../StatData";
 import { GetDependencyStats } from "../../StatDependency";
 import ConditionalsUtil from "../../Util/ConditionalsUtil";
 import Character from "../Character";
@@ -138,26 +137,17 @@ export default function CharacterTalentPane(props) {
           <Accordion.Collapse eventKey="2">
             <Card.Body>
               <Row>
-                {statsDisplayKeys().map(key => {
-                  let formulaOverrides = (build.finalStats.formulaOverrides || [])
-                  let formula = null
-                  for (const formulaOverride of formulaOverrides)
-                    if (OverrideFormulas[formulaOverride?.key]?.key === key) {
-                      formula = Stat.printOverrideFormula(build.finalStats, formulaOverride.key, formulaOverride.options, false)
-                      break;
-                    }
-                  formula = formula || Stat.printFormula(key, build.finalStats, false)
-                  return <Col key={key} xs={12} className="mb-2">
-                    <Card bg="darkcontent" text="lightfont">
-                      <Card.Header className="p-2">
-                        {Stat.printStat(key, build.finalStats)}
-                      </Card.Header>
-                      <Card.Body className="p-2">
-                        <small>{formula}</small>
-                      </Card.Body>
-                    </Card>
-                  </Col>
-                })}
+                {statsDisplayKeys().map(key => <Col key={key} xs={12} className="mb-2">
+                  <Card bg="darkcontent" text="lightfont">
+                    <Card.Header className="p-2">
+                      {Stat.printStat(key, build.finalStats)}
+                    </Card.Header>
+                    <Card.Body className="p-2">
+                      <small>{Stat.printFormula(key, build.finalStats, build.finalStats.formulaOverrides, false)}</small>
+                    </Card.Body>
+                  </Card>
+                </Col>
+                )}
               </Row>
             </Card.Body>
           </Accordion.Collapse>

@@ -1,5 +1,5 @@
 import ElementalData from "./Data/ElementalData";
-import { Formulas, StatData } from "./StatData";
+import { Formulas, OverrideFormulas, StatData } from "./StatData";
 
 export default class Stat {
   //do not instantiate.
@@ -32,9 +32,13 @@ export default class Stat {
   static printStat = (statKey, stats) =>
     f({ stats, expand: false }, statKey)
 
-  static printFormula = (statKey, stats, expand = true) =>
-    FormulaText?.[statKey] && typeof FormulaText?.[statKey] === "function" &&
-    (<span>{FormulaText[statKey]({ stats, expand })}</span>)
+  static printFormula = (statKey, stats, formulaOverrides = [], expand = true) => {
+    for (const formulaOverride of formulaOverrides)
+      if (OverrideFormulas[formulaOverride?.key]?.key === statKey)
+        return Stat.printOverrideFormula(stats, formulaOverride.key, formulaOverride.options, false)
+    return FormulaText?.[statKey] && typeof FormulaText?.[statKey] === "function" &&
+      (<span>{FormulaText[statKey]({ stats, expand })}</span>)
+  }
 
   static printOverrideFormula = (stats, overrideKey, options, expand = true) =>
     OverrideFormulasText?.[overrideKey] && typeof OverrideFormulasText?.[overrideKey].formulaText === "function" &&

@@ -118,8 +118,6 @@ export default class Character {
     let fields = ConditionalsUtil.getConditionalProp(conditional, "fields", conditionalNum)[0]
     return fields || defVal
   }
-  static isAutoElemental = (charKey, defVal = false) => this.getWeaponTypeKey(charKey) === "catalyst" || defVal
-  static isAutoInfusable = (charKey, defVal = false) => this.getCDataObj(charKey)?.talent?.auto?.infusable || defVal
   static getTalentStatKey = (skillKey, character, elemental = false) => {
     let { dmgMode = "", autoInfused = false, characterKey } = character
     if (!elemental) elemental = this.isAutoElemental(characterKey)
@@ -132,7 +130,34 @@ export default class Character {
     return `${eleKey}${skillKey}_${dmgMode}`
   }
 
-  //CHARCTER OBJ
+  static isAutoElemental = (charKey, defVal = false) => this.getWeaponTypeKey(charKey) === "catalyst" || defVal
+  static isAutoInfusable = (charKey, defVal = false) => this.getCDataObj(charKey)?.talent?.auto?.infusable || defVal
+
+  static getDisplayStatKeys = (characterKey, defVal = []) => {
+    if (!characterKey) return defVal
+    let keys = ["hp_final", "atk_final", "def_final", "ele_mas", "crit_rate", "crit_dmg", "heal_bonu", "ener_rech", "ele_dmg_bonus"]
+    let eleKey = Character.getElementalKey(characterKey)
+    //we need to figure out if the character has: normal phy auto, elemental auto, infusable auto(both normal and phy)
+    let isAutoElemental = Character.isAutoElemental(characterKey)
+    let isAutoInfusable = Character.isAutoInfusable(characterKey)
+
+    if (!isAutoElemental)
+      keys.push("phy_dmg_bonus")
+
+    if (!isAutoElemental) //add phy auto + charged + physical 
+      keys.push("norm_atk_avg_dmg", "char_atk_avg_dmg")
+
+    if (isAutoElemental || isAutoInfusable) //add elemental auto + charged
+      keys.push(`${eleKey}_norm_atk_avg_dmg`, `${eleKey}_char_atk_avg_dmg`)
+    else if (Character.getWeaponTypeKey(characterKey) === "bow")//bow charged atk does elemental dmg on charge
+      keys.push(`${eleKey}_char_atk_avg_dmg`)
+
+    //show skill/burst at the end
+    keys.push("skill_avg_dmg", "burst_avg_dmg")
+
+    return keys.map(key => (["ele_dmg_bonus", "skill_avg_dmg", "burst_avg_dmg"].includes(key)) ? `${eleKey}_${key}` : key)
+  }
+
   static hasOverride = (character, statKey) => character && character.baseStatOverrides ? (statKey in character.baseStatOverrides) : false;
 
   static getStatValueWithOverride = (character, statKey, defVal = 0) => {

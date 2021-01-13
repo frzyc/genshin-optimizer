@@ -62,30 +62,6 @@ export default class BuildDisplay extends React.Component {
   static artifactsSlotsToSelectMainStats = ["sands", "goblet", "circlet"]
   forceUpdateBuildDisplay = () => this.forceUpdate()
 
-  statsDisplayKeys = (characterKey) => {
-    let keys = ["hp_final", "atk_final", "def_final", "ele_mas", "crit_rate", "crit_dmg", "heal_bonu", "ener_rech", "ele_dmg_bonus"]
-    let eleKey = Character.getElementalKey(characterKey)
-    //we need to figure out if the character has: normal phy auto, elemental auto, infusable auto(both normal and phy)
-    let isAutoElemental = Character.isAutoElemental(characterKey)
-    let isAutoInfusable = Character.isAutoInfusable(characterKey)
-
-    if (!isAutoElemental)
-      keys.push("phy_dmg_bonus")
-
-    if (!isAutoElemental) //add phy auto + charged + physical 
-      keys.push("norm_atk_avg_dmg", "char_atk_avg_dmg")
-
-    if (isAutoElemental || isAutoInfusable) //add elemental auto + charged
-      keys.push(`${eleKey}_norm_atk_avg_dmg`, `${eleKey}_char_atk_avg_dmg`)
-    else if (Character.getWeaponTypeKey(characterKey) === "bow")//bow charged atk does elemental dmg on charge
-      keys.push(`${eleKey}_char_atk_avg_dmg`)
-
-    //show skill/burst at the end
-    keys.push("skill_avg_dmg", "burst_avg_dmg")
-
-    return keys.map(key => (["ele_dmg_bonus", "skill_avg_dmg", "burst_avg_dmg"].includes(key)) ? `${eleKey}_${key}` : key)
-  }
-
   splitArtifacts = () => {
     if (!this.state.selectedCharacterId) return {};
     let artifactDatabase = ArtifactDatabase.getArtifactDatabase();
@@ -387,7 +363,7 @@ export default class BuildDisplay extends React.Component {
   BuildModal = (props) => {
     let { build, characterid } = props
     let { editCharacter } = this.state
-    return <Modal show={Boolean(editCharacter || build)} onHide={this.closeModal} size="xl" dialogAs={Container} className="pt-3 pb-3">
+    return <Modal show={Boolean(editCharacter || build)} onHide={this.closeModal} size="xl" contentClassName="bg-transparent">
       <React.Suspense fallback={<span>Loading...</span>}>
         <CharacterDisplayCard characterId={characterid} newBuild={build}
           onClose={this.closeModal}
@@ -426,9 +402,7 @@ export default class BuildDisplay extends React.Component {
     let selectedCharacter = CharacterDatabase.getCharacter(selectedCharacterId)
     let characterKey = selectedCharacter?.characterKey
     let characterName = Character.getName(characterKey, "Character Name")
-    let statsDisplayKeys = []
-    if (characterKey)
-      statsDisplayKeys = this.statsDisplayKeys(characterKey)
+    let statsDisplayKeys = Character.getDisplayStatKeys(characterKey)
     return (<Container>
       <this.BuildModal build={modalBuild} characterid={selectedCharacterId} />
       <Row className="mt-2 mb-2">

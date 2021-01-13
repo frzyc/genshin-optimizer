@@ -1,15 +1,15 @@
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
-import { Button, Card, Col, Container, Form, Modal, ProgressBar, Row } from 'react-bootstrap';
+import { Button, Card, Col, Form, Modal, ProgressBar, Row } from 'react-bootstrap';
+import ReactGA from 'react-ga';
 import { createWorker } from 'tesseract.js';
-import { ArtifactMainStatsData, ArtifactData, ArtifactSlotsData } from '../Data/ArtifactData';
+import { ArtifactData, ArtifactMainStatsData, ArtifactSlotsData } from '../Data/ArtifactData';
 import scan_art_main from "../imgs/scan_art_main.png";
 import Snippet from "../imgs/snippet.png";
 import Stat from '../Stat';
-import Artifact from './Artifact';
-import ReactGA from 'react-ga';
 import { clamp } from '../Util/Util';
+import Artifact from './Artifact';
 
 const starColor = { r: 255, g: 204, b: 50 } //#FFCC32
 
@@ -167,7 +167,7 @@ function UploadDisplay(props) {
   }
 
   let explainationModal =
-    (<Modal show={modalShow} onHide={() => setModalShow(false)} size="xl" variant="success" dialogAs={Container} className="pt-3 pb-3">
+    (<Modal show={modalShow} onHide={() => setModalShow(false)} size="xl" variant="success" contentClassName="bg-transparent">
       <Card bg="darkcontent" text="lightfont" >
         <Card.Header>
           <Card.Title>
