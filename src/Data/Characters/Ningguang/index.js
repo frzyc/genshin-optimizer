@@ -66,18 +66,21 @@ let char = {
         fields: [{
           text: `Normal Attack DMG`,
           basicVal: (tlvl, stats, c) => <span>{hitPercent[tlvl]}% {Stat.printStat(Character.getTalentStatKey("norm_atk", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (hitPercent[tlvl] / 100) * stats[Character.getTalentStatKey("norm_atk", c)]
+          finalVal: (tlvl, stats, c) => (hitPercent[tlvl] / 100) * stats[Character.getTalentStatKey("norm_atk", c)],
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("norm_atk", c),
         }]
       }), {
         text: <span><strong>Charged Attack</strong> Consumes a certain amount of stamina to fire off a giant gem that deals <span className="text-geo">Geo DMG</span>. If Ningguang has any Star Jades, unleashing a Charged Attack will cause the Star Jades to be fired at the enemy as well, dealing additional DMG.</span>,
         fields: [{
           text: `Charged Attack DMG`,
           basicVal: (tlvl, stats, c) => <span>{charged_atk_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("char_atk", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (charged_atk_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("char_atk", c)]
+          finalVal: (tlvl, stats, c) => (charged_atk_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("char_atk", c)],
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("char_atk", c),
         }, {
           text: `DMG per Star Jade`,
           basicVal: (tlvl, stats, c) => <span>{charged_per_jade[tlvl]}% {Stat.printStat(Character.getTalentStatKey("char_atk", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (charged_per_jade[tlvl] / 100) * stats[Character.getTalentStatKey("char_atk", c)]
+          finalVal: (tlvl, stats, c) => (charged_per_jade[tlvl] / 100) * stats[Character.getTalentStatKey("char_atk", c)],
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("char_atk", c),
         }, (c, a) => ({
           text: `Stamina Cost`,
           value: <span>50{(a >= 1 ? <span>; With <b>Star Jade</b>: 0</span> : "")}</span>,
@@ -87,15 +90,18 @@ let char = {
         fields: [{
           text: `Plunge DMG`,
           basicVal: (tlvl, stats, c) => <span>{plunge_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunge", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (plunge_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("plunge", c)]
+          finalVal: (tlvl, stats, c) => (plunge_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("plunge", c)],
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunge", c),
         }, {
           text: `Low Plunge DMG`,
           basicVal: (tlvl, stats, c) => <span>{plunge_dmg_low[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunge", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (plunge_dmg_low[tlvl] / 100) * stats[Character.getTalentStatKey("plunge", c)]
+          finalVal: (tlvl, stats, c) => (plunge_dmg_low[tlvl] / 100) * stats[Character.getTalentStatKey("plunge", c)],
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunge", c),
         }, {
           text: `High Plunge DMG`,
           basicVal: (tlvl, stats, c) => <span>{plunge_dmg_high[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunge", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (plunge_dmg_high[tlvl] / 100) * stats[Character.getTalentStatKey("plunge", c)]
+          finalVal: (tlvl, stats, c) => (plunge_dmg_high[tlvl] / 100) * stats[Character.getTalentStatKey("plunge", c)],
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunge", c),
         }]
       }],
     },
@@ -125,6 +131,7 @@ let char = {
           text: "Skill DMG",
           basicVal: (tlvl, stats, c) => <span>{jadeScreen.skill_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("skill", c), stats)}</span>,
           finalVal: (tlvl, stats, c) => (jadeScreen.skill_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("skill", c)],
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("skill", c),
         }, {
           text: "CD",
           value: "12s",
@@ -151,6 +158,7 @@ let char = {
           text: "DMG Per Gem",
           basicVal: (tlvl, stats, c) => <span>{starShatter.dmg_per_gem[tlvl]}% {Stat.printStat(Character.getTalentStatKey("burst", c), stats)}</span>,
           finalVal: (tlvl, stats, c) => (starShatter.dmg_per_gem[tlvl] / 100) * stats[Character.getTalentStatKey("burst", c)],
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("burst", c),
         }, {
           text: "CD",
           value: "12s",

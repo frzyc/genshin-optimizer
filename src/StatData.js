@@ -90,14 +90,15 @@ const StatData = {
   stamina_dec: { name: "Stamina Consumption Dec.", unit: "%" },
   stamina_gliding_dec: { name: "Gliding Stamina Consumption Dec.", unit: "%" },
   stamina_charged_dec: { name: "Charged Attack Stamina Consumption Dec.", unit: "%" },
-  //elemental
-  overloaded_dmg: { name: "Overloaded DMG", unit: "%" },
-  electro_charged_dmg: { name: "Electro-Charged DMG", unit: "%" },
-  superconduct_dmg: { name: "Superconduct DMG", unit: "%" },
-  burning_dmg: { name: "Overloaded DMG", unit: "%" },
-  vaporize_dmg: { name: "Vaporize DMG", unit: "%" },
-  melt_dmg: { name: "Melt DMG", unit: "%" },
-  swirl_dmg: { name: "Swirl DMG", unit: "%" },
+
+  //elemental interaction
+  melt_dmg_bonus: { name: "Melt DMG Bonus", unit: "%", variant: "melt" },
+  vaporize_dmg_bonus: { name: "Vaporize DMG Bonus", unit: "%", variant: "vaporize" },
+
+  ele_mas_multi_x: { name: "Elementry Mastry Multiplier X", unit: "multi" },
+  ele_mas_multi_y: { name: "Elementry Mastry Multiplier Y", unit: "multi" },
+  ele_mas_multi_z: { name: "Elementry Mastry Multiplier Z", unit: "multi" },
+  trans_reaction_base_multi: { name: "Transformation Reaction Base Multiplier", unit: "multi" },
 
   //character stuff
   char_ele_key: { name: "Character Element Key", default: "anemo" },
@@ -118,6 +119,26 @@ function resMultiplier(res) {
   if (res < 0) return 1 - res / 2
   else if (res >= 0.75) return 1 / (res * 4 + 1)
   return 1 - res
+}
+const ElementToReactionKeys = {
+  anemo: ["swirl_dmg"],
+  geo: ["crystalize_dmg", "shatter_dmg"],
+  electro: ["overloaded_dmg", "electrocharged_dmg", "superconduct_dmg"],
+  hydro: ["electrocharged_dmg", "shatter_dmg"],//"hydro_vaporize_multi",
+  pyro: ["overloaded_dmg"],// "burning_dmg","pyro_vaporize_multi", "pyro_melt_multi", 
+  cryo: ["shatter_dmg", "superconduct_dmg"],//"cryo_melt_multi", 
+  // dendro: { name: "Dendro" }
+}
+const ReactionMatrix = {
+  overloaded: [37.4371542286, -4.3991155718, 0.9268181504, -0.0314790536, 0.0005189440, -0.0000027646],
+  superconduct: [7.4972486411, -0.4750909512, 0.1836799174, -0.0064237710, 0.0001110078, -0.0000006038],
+  electrocharged: [20.8340255487, -1.6987232790, 0.4742385201, -0.0162160738, 0.0002746679, -0.0000014798],
+  shattered: [31.2160750111, -3.7397755267, 0.7174530144, -0.0239673351, 0.0003895953, -0.0000020555],
+  swirl: [13.5157684329, -1.7733381829, 0.3097567417, -0.0103922088, 0.0001679502, -0.0000008854],
+  crystalize: [83.06561, -4.42541, 0.5568372, -0.01637168, 0.0002253889, -0.000001088197]
+}
+function ampliBase(ele_mas) {
+  return 1 + 0.189266831 * ele_mas * Math.exp(-0.000505 * ele_mas) / 100
 }
 //formulas for calculating
 const Formulas = {
@@ -160,7 +181,34 @@ const Formulas = {
   burst_crit_multi: (s) => (1 + (clamp(s.crit_rate + s.burst_crit_rate, 0, 100) / 100) * s.crit_dmg / 100),
 
   enemy_level_multi: (s) => (100 + s.char_level) / (100 + s.enemy_level + 100 + s.char_level),
-  enemy_phy_res_multi: (s) => s.enemy_phy_immunity ? 0 : resMultiplier(s.enemy_phy_res)
+  enemy_phy_res_multi: (s) => s.enemy_phy_immunity ? 0 : resMultiplier(s.enemy_phy_res),
+
+  //Elemental Reactions
+  overloaded_dmg: (s) => (1 + s.overloaded_dmg_bonus / 100) * s.ele_mas_multi_y * s.overloaded_multi * s.pyro_enemy_ele_res_multi,
+  overloaded_multi: (s) => ReactionMatrix.overloaded.reduce((accu, val, i) => accu + val * Math.pow(s.char_level, i), 0),
+  electrocharged_dmg: (s) => (1 + s.electrocharged_dmg_bonus / 100) * s.ele_mas_multi_y * s.electrocharged_multi * s.electro_enemy_ele_res_multi,
+  electrocharged_multi: (s) => ReactionMatrix.electrocharged.reduce((accu, val, i) => accu + val * Math.pow(s.char_level, i), 0),
+  superconduct_dmg: (s) => (1 + s.superconduct_dmg_bonus / 100) * s.ele_mas_multi_y * s.superconduct_multi * s.cryo_enemy_ele_res_multi,
+  superconduct_multi: (s) => ReactionMatrix.superconduct.reduce((accu, val, i) => accu + val * Math.pow(s.char_level, i), 0),
+
+  // burning_dmg: (s) => "NO_FORMULA",//(1 + s.burning_dmg_bonus / 100)
+  swirl_dmg: (s) => (1 + s.swirl_dmg_bonus / 100) * s.ele_mas_multi_y * s.swirl_multi * s.anemo_enemy_ele_res_multi,
+  swirl_multi: (s) => ReactionMatrix.swirl.reduce((accu, val, i) => accu + val * Math.pow(s.char_level, i), 0),
+  shatter_dmg: (s) => (1 + s.shatter_dmg_bonus / 100) * s.ele_mas_multi_y * s.shatter_multi * s.enemy_phy_res_multi,
+  shatter_multi: (s) => ReactionMatrix.shattered.reduce((accu, val, i) => accu + val * Math.pow(s.char_level, i), 0),
+  crystalize_dmg: (s) => (1 + s.crystalize_dmg_bonus / 100) * s.ele_mas_multi_z * s.crystalize_multi,
+  crystalize_multi: (s) => ReactionMatrix.crystalize.reduce((accu, val, i) => accu + val * Math.pow(s.char_level, i), 0),
+
+  pyro_vaporize_multi: (s) => (1 + s.vaporize_dmg_bonus / 100) * s.ele_mas_multi_x * 1.5 * s.trans_reaction_base_multi,
+  hydro_vaporize_multi: (s) => (1 + s.vaporize_dmg_bonus / 100) * s.ele_mas_multi_x * 2 * s.trans_reaction_base_multi,
+
+  pyro_melt_multi: (s) => (1 + s.melt_dmg_bonus / 100) * s.ele_mas_multi_x * 1.5 * s.trans_reaction_base_multi,
+  cryo_melt_multi: (s) => (1 + s.melt_dmg_bonus / 100) * s.ele_mas_multi_x * 2 * s.trans_reaction_base_multi,
+  trans_reaction_base_multi: (s) => ampliBase(s.ele_mas),
+
+  ele_mas_multi_x: (s) => (1 + (25 / 9 * s.ele_mas / (1401 + s.ele_mas))),
+  ele_mas_multi_y: (s) => (1 + (60 / 9 * s.ele_mas / (1401 + s.ele_mas))),
+  ele_mas_multi_z: (s) => (1 + (40 / 9 * s.ele_mas / (1401 + s.ele_mas))),
 }
 
 //The formulas here will generate formulas for every element, for example pyro_skill_avg_dmg from skill_avg_dmg
@@ -197,14 +245,42 @@ const eleFormulas = {
 
   enemy_ele_res_multi: (s, ele) => s[`${ele}_enemy_ele_immunity`] ? 0 : resMultiplier(s[`${ele}_enemy_ele_res`]),
 };
-//add html text to physical related stuff with html elements.
+//nontransformation reactions  
+[["overloaded", "Overloaded"], ["electrocharged", "Electro-Charged"], ["superconduct", "Superconduct"], ["burning", "Burning"], ["swirl", "Swirl"], ["shatter", "Shattered"], ["crystalize", "Crystalize"]].forEach(([reactionKey, reactionName]) =>
+  [["dmg", "DMG"], ["dmg_bonus", "DMG Bonus", { unit: "%" }], ["multi", "Multiplier", { unit: "multi" }]].forEach(([dmgKey, dmgName, props = {}]) => {
+    StatData[`${reactionKey}_${dmgKey}`] = {
+      name: `${reactionName} ${dmgName}`,
+      variant: reactionKey,
+      ...props
+    };
+  }));
+
+//add variant to physical related stats.
 [
   "phy_dmg_bonus", "phy_res", "enemy_phy_res", "enemy_phy_immunity", "phy_dmg", "phy_crit_dmg", "phy_avg_dmg", "phy_bonus_multi",
   ...Object.keys(StatData).filter(key => ["norm_atk", "char_atk", "plunge"].some(str => key.includes(str))),
 ].forEach(key => {
-  StatData[key].html = <span className="text-physical text-nowrap">{StatData[key].name}</span>
   StatData[key].variant = "physical"
 });
+
+//Add Vaporize and Melt stats
+[["pyro_vaporize", "Vaporize(Pyro)", "vaporize", "pyro"], ["hydro_vaporize", "Vaporize(Hydro)", "vaporize", "hydro"], ["pyro_melt", "Melt(Pyro)", "melt", "pyro"], ["cryo_melt", "Melt(Cryo)", "melt", "cryo"]].forEach(([reactionKey, reactionName, variant, baseEle]) => {
+  [["multi", "Multiplier", { unit: "multi" }]].forEach(([dmgKey, dmgName, props = {}]) => {
+    StatData[`${reactionKey}_${dmgKey}`] = {
+      name: `${reactionName} ${dmgName}`,
+      variant,
+      ...props
+    };
+  });
+  [["norm_atk", "Nomal Attack"], ["char_atk", "Charged Attack"], ["plunge", "Plunging Attack"], ["skill", "Ele. Skill"], ["burst", "Ele. Burst"], ["ele", "Elemental"]].forEach(([atkType, atkTypeName]) =>
+    [["dmg", "DMG"], ["avg_dmg", "Avg. DMG"], ["crit_dmg", "CRIT Hit DMG"]].forEach(([dmgMode, dmgModeName]) => {
+      let reactionDMGKey = `${reactionKey}_${atkType}_${dmgMode}`
+      StatData[reactionDMGKey] = { name: `${reactionName} ${atkTypeName} ${dmgModeName}`, variant }
+      let baseDmg = `${baseEle}_${atkType}_${dmgMode}`
+      Formulas[reactionDMGKey] = (s) => s[`${reactionKey}_multi`] * s[baseDmg]
+    }));
+});
+
 //add Elemental entries to stats. we use the keys from eleFormulas before it gets expanded to elementals
 ["ele_dmg_bonus", "ele_res", "enemy_ele_res", "enemy_ele_immunity", ...Object.keys(eleFormulas)].forEach(key => {
   let obj = StatData[key]
@@ -219,7 +295,6 @@ const eleFormulas = {
       StatData[ele_key].name = `Enemy ${ElementalData[eleKey].name} Immunity`
     else
       StatData[ele_key].name = `${ElementalData[eleKey].name} ${obj.name}`
-    StatData[ele_key].html = <span className={`text-${eleKey} text-nowrap`}>{StatData[ele_key].name}</span>
     StatData[ele_key].variant = eleKey
   })
   // delete StatData[key]
@@ -280,5 +355,7 @@ export {
   Formulas,
   OverrideFormulas,
   StatData,
+  ElementToReactionKeys,
+  ReactionMatrix,
   AttachLazyFormulas,
 }

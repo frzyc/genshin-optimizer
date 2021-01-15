@@ -75,18 +75,21 @@ let char = {
         ({
           text: `${i + 1}-Hit DMG`,
           basicVal: (tlvl, stats, c) => <span>{percentArr[tlvl]}% {Stat.printStat(Character.getTalentStatKey("norm_atk", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (percentArr[tlvl] / 100) * stats[Character.getTalentStatKey("norm_atk", c)]
+          finalVal: (tlvl, stats, c) => (percentArr[tlvl] / 100) * stats[Character.getTalentStatKey("norm_atk", c)],
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("norm_atk", c),
         }))
       }, {
         text: <span><strong>Charged Attack</strong> Drains Stamina over time to perform continuous swirling attack on all nearby enemies. At the end of the sequence, performs an additional powerful slash</span>,
         fields: [{
           text: `Spinning DMG`,
           basicVal: (tlvl, stats, c) => <span>{charged_atk_spinnning[tlvl]}% {Stat.printStat(Character.getTalentStatKey("char_atk", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (charged_atk_spinnning[tlvl] / 100) * stats[Character.getTalentStatKey("char_atk", c)]
+          finalVal: (tlvl, stats, c) => (charged_atk_spinnning[tlvl] / 100) * stats[Character.getTalentStatKey("char_atk", c)],
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("char_atk", c),
         }, {
           text: `Spinning Final DMG`,
           basicVal: (tlvl, stats, c) => <span>{charged_atk_final[tlvl]}% {Stat.printStat(Character.getTalentStatKey("char_atk", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (charged_atk_final[tlvl] / 100) * stats[Character.getTalentStatKey("char_atk", c)]
+          finalVal: (tlvl, stats, c) => (charged_atk_final[tlvl] / 100) * stats[Character.getTalentStatKey("char_atk", c)],
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("char_atk", c),
         }, {
           text: `Stamina Cost`,
           value: `40/s`,
@@ -99,15 +102,18 @@ let char = {
         fields: [{
           text: `Plunge DMG`,
           basicVal: (tlvl, stats, c) => <span>{plunge_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunge", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (plunge_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("plunge", c)]
+          finalVal: (tlvl, stats, c) => (plunge_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("plunge", c)],
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunge", c),
         }, {
           text: `Low Plunge DMG`,
           basicVal: (tlvl, stats, c) => <span>{plunge_dmg_low[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunge", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (plunge_dmg_low[tlvl] / 100) * stats[Character.getTalentStatKey("plunge", c)]
+          finalVal: (tlvl, stats, c) => (plunge_dmg_low[tlvl] / 100) * stats[Character.getTalentStatKey("plunge", c)],
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunge", c),
         }, {
           text: `High Plunge DMG`,
           basicVal: (tlvl, stats, c) => <span>{plunge_dmg_high[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunge", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (plunge_dmg_high[tlvl] / 100) * stats[Character.getTalentStatKey("plunge", c)]
+          finalVal: (tlvl, stats, c) => (plunge_dmg_high[tlvl] / 100) * stats[Character.getTalentStatKey("plunge", c)],
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunge", c),
         }]
       },],
     },
@@ -128,6 +134,7 @@ let char = {
           text: "Skill DMG",
           basicVal: (tlvl, stats, c) => <span>{breastplateStats.skill_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("skill", c), stats)} * {Stat.printStat("def_final", stats)} / {Stat.printStat("atk_final", stats)}</span>,
           finalVal: (tlvl, stats, c) => (breastplateStats.skill_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("skill", c)] * stats.def_final / stats.atk_final,
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("skill", c),
         }, {
           text: "Shield DMG Absorption",
           basicVal: (tlvl, stats, c) => <span>{breastplateStats.shield_def[tlvl]}% {Stat.printStat("def_final", stats)} + {breastplateStats.shield_flat[tlvl]}</span>,
@@ -165,10 +172,12 @@ let char = {
           text: "Burst DMG",
           basicVal: (tlvl, stats, c) => <span>{sweepingTimeStats.burst_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("burst", c), stats)}</span>,
           finalVal: (tlvl, stats, c) => (sweepingTimeStats.burst_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("burst", c)],
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("burst", c),
         }, {
           text: "Skill DMG",
           basicVal: (tlvl, stats, c) => <span>{sweepingTimeStats.skill_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("burst", c), stats)}</span>,
           finalVal: (tlvl, stats, c) => (sweepingTimeStats.skill_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("burst", c)],
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("burst", c),
         }, (c) => ({
           text: "ATK Bonus",
           basicVal: (tlvl, stats) => <span>{sweepingTimeStats.atk_bonu[tlvl]}% {c >= 6 ? "+50% " : ""}{Stat.printStat("def_final", stats)}</span>,

@@ -2,7 +2,7 @@ import Artifact from "../Artifact/Artifact";
 import ArtifactDatabase from "../Artifact/ArtifactDatabase";
 import { CharacterData, CharacterDataImport, characterStatBase, LevelsData } from "../Data/CharacterData";
 import ElementalData from "../Data/ElementalData";
-import { AttachLazyFormulas } from "../StatData";
+import { AttachLazyFormulas, ElementToReactionKeys } from "../StatData";
 import ConditionalsUtil from "../Util/ConditionalsUtil";
 import { clamp, deepClone } from "../Util/Util";
 import Weapon from "../Weapon/Weapon";
@@ -119,15 +119,28 @@ export default class Character {
     return fields || defVal
   }
   static getTalentStatKey = (skillKey, character, elemental = false) => {
-    let { dmgMode = "", autoInfused = false, characterKey } = character
-    if (!elemental) elemental = this.isAutoElemental(characterKey)
-    if (!elemental) elemental = autoInfused && (Character.getCDataObj(characterKey)?.talent?.auto?.infusable || false)
+    let { dmgMode = "", autoInfused = false, characterKey, reactionMode = null } = character
+    let charEleKey = this.getElementalKey(characterKey)
+    if (!elemental) elemental = this.isAutoElemental(characterKey) || (autoInfused && (Character.getCDataObj(characterKey)?.talent?.auto?.infusable || false))
     let eleKey = ""
     if (skillKey === "ele" || skillKey === "burst" || skillKey === "skill" || elemental)
-      eleKey = this.getElementalKey(characterKey)
-    if (eleKey) eleKey = eleKey + "_"
+      eleKey = (reactionMode ? reactionMode : charEleKey) + "_"
     //{pyro_}{burst}_{avg_dmg}
     return `${eleKey}${skillKey}_${dmgMode}`
+  }
+  static getTalentStatKeyVariant = (skillKey, character, elemental = false) => {
+    let { autoInfused = false, characterKey, reactionMode = null } = character
+    let charEleKey = this.getElementalKey(characterKey)
+    //reactionMode can be one of pyro_vaporize, pyro_melt, hydro_vaporize,cryo_melt
+    if (["pyro_vaporize", "hydro_vaporize"].includes(reactionMode))
+      reactionMode = "vaporize"
+    else if (["pyro_melt", "cryo_melt"].includes(reactionMode))
+      reactionMode = "melt"
+    if (!elemental) elemental = this.isAutoElemental(characterKey) || (autoInfused && (Character.getCDataObj(characterKey)?.talent?.auto?.infusable || false))
+    let eleKey = "physical"
+    if (skillKey === "ele" || skillKey === "burst" || skillKey === "skill" || elemental)
+      eleKey = (reactionMode ? reactionMode : charEleKey)
+    return eleKey
   }
 
   static isAutoElemental = (charKey, defVal = false) => this.getWeaponTypeKey(charKey) === "catalyst" || defVal
@@ -135,30 +148,51 @@ export default class Character {
 
   static getDisplayStatKeys = (characterKey, defVal = []) => {
     if (!characterKey) return defVal
-    let keys = ["hp_final", "atk_final", "def_final", "ele_mas", "crit_rate", "crit_dmg", "heal_bonu", "ener_rech", "ele_dmg_bonus"]
     let eleKey = Character.getElementalKey(characterKey)
+    if (!eleKey) return defVal //usually means the character has not been lazy loaded yet
+    let keys = ["hp_final", "atk_final", "def_final", "ele_mas", "crit_rate", "crit_dmg", "heal_bonu", "ener_rech", `${eleKey}_ele_dmg_bonus`]
     //we need to figure out if the character has: normal phy auto, elemental auto, infusable auto(both normal and phy)
     let isAutoElemental = Character.isAutoElemental(characterKey)
     let isAutoInfusable = Character.isAutoInfusable(characterKey)
-
+    let atkKeys = []
     if (!isAutoElemental)
-      keys.push("phy_dmg_bonus")
+      atkKeys.push("phy_dmg_bonus")
 
     if (!isAutoElemental) //add phy auto + charged + physical 
-      keys.push("norm_atk_avg_dmg", "char_atk_avg_dmg")
+      atkKeys.push("norm_atk_avg_dmg", "char_atk_avg_dmg")
 
     if (isAutoElemental || isAutoInfusable) //add elemental auto + charged
-      keys.push(`${eleKey}_norm_atk_avg_dmg`, `${eleKey}_char_atk_avg_dmg`)
-    else if (Character.getWeaponTypeKey(characterKey) === "bow")//bow charged atk does elemental dmg on charge
-      keys.push(`${eleKey}_char_atk_avg_dmg`)
+      atkKeys.push(`${eleKey}_norm_atk_avg_dmg`, `${eleKey}_char_atk_avg_dmg`)
+    else if (Character.getWeaponTypeKey(characterKey) === "bow") {//bow charged atk does elemental dmg on charge
+      atkKeys.push(`${eleKey}_char_atk_avg_dmg`)
+    }
+    //show skill/burst 
+    atkKeys.push(`${eleKey}_skill_avg_dmg`, `${eleKey}_burst_avg_dmg`)
+    keys.push(...atkKeys)
+    if (eleKey === "pyro") {
+      keys.push(...atkKeys.filter(key => key.startsWith(`${eleKey}_`)).map(key => key.replace(`${eleKey}_`, `${eleKey}_vaporize_`)))
+      keys.push(...atkKeys.filter(key => key.startsWith(`${eleKey}_`)).map(key => key.replace(`${eleKey}_`, `${eleKey}_melt_`)))
+    } else if (eleKey === "cryo")
+      keys.push(...atkKeys.filter(key => key.startsWith(`${eleKey}_`)).map(key => key.replace(`${eleKey}_`, `${eleKey}_melt_`)))
+    else if (eleKey === "hydro")
+      keys.push(...atkKeys.filter(key => key.startsWith(`${eleKey}_`)).map(key => key.replace(`${eleKey}_`, `${eleKey}_vaporize_`)))
 
-    //show skill/burst at the end
-    keys.push("skill_avg_dmg", "burst_avg_dmg")
-
-    return keys.map(key => (["ele_dmg_bonus", "skill_avg_dmg", "burst_avg_dmg"].includes(key)) ? `${eleKey}_${key}` : key)
+    //show elemental interactions
+    keys.push(...ElementToReactionKeys[eleKey])
+    let weaponTypeKey = this.getWeaponTypeKey(characterKey)
+    if (weaponTypeKey === "claymore") keys.push("shatter_dmg")
+    return keys
   }
 
-  static hasOverride = (character, statKey) => character && character.baseStatOverrides ? (statKey in character.baseStatOverrides) : false;
+  static hasOverride = (character, statKey) => {
+    if (statKey === "hp_final")
+      return Character.hasOverride(character, "hp") || Character.hasOverride(character, "hp_") || Character.hasOverride(character, "hp_base") || false
+    else if (statKey === "def_final")
+      return Character.hasOverride(character, "def") || Character.hasOverride(character, "def_") || Character.hasOverride(character, "def_base") || false
+    else if (statKey === "atk_final")
+      return Character.hasOverride(character, "atk") || Character.hasOverride(character, "atk_") || Character.hasOverride(character, "atk_base") || false
+    return character && character.baseStatOverrides ? (statKey in character.baseStatOverrides) : false;
+  }
 
   static getStatValueWithOverride = (character, statKey, defVal = 0) => {
     if (this.hasOverride(character, statKey)) return character?.baseStatOverrides?.[statKey]

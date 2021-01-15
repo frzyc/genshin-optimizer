@@ -27,10 +27,10 @@ let artifact = {
     4: {
       text: "Increases Overloaded and Burning DMG by 40%. Increases Vaporize and Melt DMG by 15%. Using an Elemental Skill increases 2-Piece Set effects by 50% for 10s. Max 3 stacks.",
       stats: {
-        overloaded_dmg: 40,
-        burning_dmg: 40,
-        vaporize_dmg: 15,
-        melt_dmg: 15,
+        overloaded_dmg_bonus: 40,
+        burning_dmg_bonus: 40,
+        vaporize_dmg_bonus: 15,
+        melt_dmg_bonus: 15,
       },
       conditional: {
         type: "artifact",

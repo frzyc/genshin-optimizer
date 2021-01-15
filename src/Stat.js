@@ -1,5 +1,5 @@
 import ElementalData from "./Data/ElementalData";
-import { Formulas, OverrideFormulas, StatData } from "./StatData";
+import { ReactionMatrix, Formulas, OverrideFormulas, StatData } from "./StatData";
 
 export default class Stat {
   //do not instantiate.
@@ -8,9 +8,9 @@ export default class Stat {
       throw Error('A static class cannot be instantiated.');
   }
   static getStatName = (key, defVal = "") =>
-    (StatData[key]?.html || StatData[key]?.name) || defVal
+    (htmlStatsData[key] || StatData[key]?.name) || defVal
   static getStatNamePretty = (key, defVal = "") =>
-    (StatData[key]?.html || StatData[key]?.pretty || StatData[key]?.name) || defVal
+    (htmlStatsData[key] || StatData[key]?.pretty || StatData[key]?.name) || defVal
   static getStatNameRaw = (key, defVal = "") =>
     StatData[key]?.name || defVal
   static getStatNameWithPercent = (key, defVal = "") => {
@@ -44,15 +44,18 @@ export default class Stat {
     OverrideFormulasText?.[overrideKey] && typeof OverrideFormulasText?.[overrideKey].formulaText === "function" &&
     (<span>{OverrideFormulasText[overrideKey].formulaText(options)({ stats, expand })}</span>)
 }
+//generate html tags based on tagged variants of the statData
+const htmlStatsData = Object.fromEntries(Object.entries(StatData).filter(([key, obj]) => obj.variant).map(([key, obj]) => [key, (<span className={`text-${obj.variant} text-nowrap`}>{obj.name}</span>)]))
 
 function f(options, statKey) {
   let { stats, expand = true } = options
+  if (!stats) return
   if (expand && FormulaText?.[statKey])
     return <span>( {FormulaText[statKey](options)} )</span>
   let statName = Stat.getStatNamePretty(statKey)
   let statUnit = Stat.getStatUnit(statKey)
   let fixedUnit = Stat.fixedUnit(statKey)
-  let value = stats[statKey]?.toFixed?.(fixedUnit) || stats[statKey]
+  let value = stats?.[statKey]?.toFixed?.(fixedUnit) || stats?.[statKey]
   return <span className="text-nowrap"><b>{statName}</b> <span className="text-info">{value}{statUnit}</span></span>
 }
 
@@ -106,7 +109,51 @@ const FormulaText = {
     else if (res >= 0.75) return <span> 1 / ( {f(o, "enemy_phy_res")} * 4 + 1)</span>
     return <span> 1 - {f(o, "enemy_phy_res")} </span>
   },
+
+  //Elemental Reactions
+  overloaded_dmg: (o) => <span>( 1 + {f(o, "overloaded_dmg_bonus")} ) * {f(o, "ele_mas_multi_y")} * {f(o, "overloaded_multi")} * {f(o, "pyro_enemy_ele_res_multi")}</span>,
+  overloaded_multi: (o) => ReactionMatrix.overloaded.map((val, i) => reactionMatrixElementRenderer(o, val, i)),
+  electrocharged_dmg: (o) => <span>( 1 + {f(o, "electrocharged_dmg_bonus")} ) * {f(o, "ele_mas_multi_y")} * {f(o, "electrocharged_multi")} * {f(o, "electro_enemy_ele_res_multi")}</span>,
+  electrocharged_multi: (o) => ReactionMatrix.electrocharged.map((val, i) => reactionMatrixElementRenderer(o, val, i)),
+  superconduct_dmg: (o) => <span>( 1 + {f(o, "superconduct_dmg_bonus")} ) * {f(o, "ele_mas_multi_y")} * {f(o, "superconduct_multi")} * {f(o, "cryo_enemy_ele_res_multi")}</span>,
+  superconduct_multi: (o) => ReactionMatrix.superconduct.map((val, i) => reactionMatrixElementRenderer(o, val, i)),
+  // burning_dmg:
+  swirl_dmg: (o) => <span>( 1 + {f(o, "swirl_dmg_bonus")} ) * {f(o, "ele_mas_multi_y")} * {f(o, "swirl_multi")} * {f(o, "anemo_enemy_ele_res_multi")}</span>,
+  swirl_multi: (o) => ReactionMatrix.swirl.map((val, i) => reactionMatrixElementRenderer(o, val, i)),
+  shatter_dmg: (o) => <span>( 1 + {f(o, "shatter_dmg_bonus")} ) * {f(o, "ele_mas_multi_y")} * {f(o, "shatter_multi")} * {f(o, "enemy_phy_res_multi")}</span>,
+  shatter_multi: (o) => ReactionMatrix.shattered.map((val, i) => reactionMatrixElementRenderer(o, val, i)),
+  crystalize_dmg: (o) => <span>( 1 + {f(o, "crystalize_dmg_bonus")} ) * {f(o, "ele_mas_multi_z")} * {f(o, "crystalize_multi")}</span>,
+  crystalize_multi: (o) => ReactionMatrix.crystalize.map((val, i) => reactionMatrixElementRenderer(o, val, i)),
+
+  pyro_vaporize_multi: (o) => <span>( 1 + {f(o, "vaporize_dmg_bonus")} ) * {f(o, "ele_mas_multi_x")} * 1.5 * {f(o, "trans_reaction_base_multi")}</span>,
+  hydro_vaporize_multi: (o) => <span>( 1 + {f(o, "vaporize_dmg_bonus")} ) * {f(o, "ele_mas_multi_x")} * 2 * {f(o, "trans_reaction_base_multi")}</span>,
+
+  pyro_melt_multi: (o) => <span>( 1 + {f(o, "melt_dmg_bonus")} ) * {f(o, "ele_mas_multi_x")} * 1.5 * {f(o, "trans_reaction_base_multi")}</span>,
+  cryo_melt_multi: (o) => <span>( 1 + {f(o, "melt_dmg_bonus")} ) * {f(o, "ele_mas_multi_x")} * 2 * {f(o, "trans_reaction_base_multi")}</span>,
+  trans_reaction_base_multi: (o) => <span>1 + 0.189266831 * {f(0, "ele_mas")} * exp^(-0.000505 * {f(0, "ele_mas")}) / 100 </span>,
+
+  ele_mas_multi_x: (o) => <span> 1 + (25 / 9 * {f(o, "ele_mas")} / (1401 + {f(o, "ele_mas")} ))</span>,
+  ele_mas_multi_y: (o) => <span> 1 + (60 / 9 * {f(o, "ele_mas")} / (1401 + {f(o, "ele_mas")} ))</span>,
+  ele_mas_multi_z: (o) => <span> 1 + (40 / 9 * {f(o, "ele_mas")} / (1401 + {f(o, "ele_mas")} ))</span>,
 }
+function reactionMatrixElementRenderer(o, val, i) {
+  let sign = val < 0 ? " - " : " + ";
+  let disVal = Math.abs(val)
+  let powerText = ""
+  if (i > 1) powerText = <span> * ( {f(o, "char_level")} )^{i}</span>
+  if (i === 1) powerText = <span> * {f(o, "char_level")}</span>
+  return <span key={i}>{sign}{disVal}{powerText}</span>
+}
+
+//Add Vaporize and Melt stats
+[["pyro_vaporize", "pyro"], ["hydro_vaporize", "hydro"], ["pyro_melt", "pyro"], ["cryo_melt", "cryo"]].forEach(([reactionKey, baseEle]) => {
+  [["norm_atk", "Nomal Attack"], ["char_atk", "Charged Attack"], ["plunge", "Plunging Attack"], ["skill", "Ele. Skill"], ["burst", "Ele. Burst"], ["ele", "Elemental"]].forEach(([atkType, atkTypeName]) =>
+    ["dmg", "avg_dmg", "crit_dmg"].forEach(dmgMode => {
+      let reactionDMGKey = `${reactionKey}_${atkType}_${dmgMode}`
+      let baseDmg = `${baseEle}_${atkType}_${dmgMode}`
+      FormulaText[reactionDMGKey] = (o) => <span>{f(o, `${reactionKey}_multi`)} * {f(o, baseDmg)}</span>
+    }));
+});
 const eleFormulaText = {
   norm_atk_dmg: (o, ele) => <span>{f(o, `atk_final`)} * {f(o, `${ele}_norm_atk_bonus_multi`)} * {f(o, `enemy_level_multi`)} * {f(o, `${ele}_enemy_phy_res_multi`)}</span>,
   norm_atk_crit_dmg: (o, ele) => <span>{f(o, `${ele}_norm_atk_dmg`)} * {f(o, `crit_dmg_multi`)}</span>,

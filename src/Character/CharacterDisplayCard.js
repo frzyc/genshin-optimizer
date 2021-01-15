@@ -50,6 +50,7 @@ export default class CharacterDisplayCard extends React.Component {
     characterKey: "",//the game character this is based off
     levelKey: "L1",//combination of level and ascension
     dmgMode: "dmg",
+    reactionMode: null,
     equippedArtifacts: {},
     artifactConditionals: [],
     baseStatOverrides: {},//overriding the baseStat
@@ -94,7 +95,7 @@ export default class CharacterDisplayCard extends React.Component {
   }
   setSetState = (val) => this.setState(val)
   setCharacterKey = (characterKey) =>
-    this.setState({ characterKey, name: getRandomElementFromArray(Character.getTitles(characterKey)), weapon: CharacterDisplayCard.getIntialWeapon(characterKey) })
+    this.setState({ characterKey, name: getRandomElementFromArray(Character.getTitles(characterKey)), weapon: CharacterDisplayCard.getIntialWeapon(characterKey), reactionMode: null, autoInfused: false })
   setLevelKey = (levelKey) =>
     this.setState({ levelKey })
 

@@ -26,9 +26,9 @@ let artifact = {
     4: {
       text: "Increases damage caused by Overloaded, Electro-Charged, and Superconduct DMG by 40%. Triggering such effects decreases Elemental Skill CD by 1s. Can only occur once every 0.8s.",
       stats: {
-        overloaded_dmg: 40,
-        electro_charged_dmg: 40,
-        superconduct_dmg: 40
+        overloaded_dmg_bonus: 40,
+        electrocharged_dmg_bonus: 40,
+        superconduct_dmg_bonus: 40
       }
     }
   }

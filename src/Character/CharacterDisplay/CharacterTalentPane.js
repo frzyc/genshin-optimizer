@@ -3,8 +3,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useContext } from 'react';
 import { Accordion, AccordionContext, Button, Card, Col, Dropdown, DropdownButton, Image, ListGroup, OverlayTrigger, Row, ToggleButton, ToggleButtonGroup, Tooltip } from "react-bootstrap";
 import { useAccordionToggle } from 'react-bootstrap/AccordionToggle';
+import Assets from "../../Assets/Assets";
 import ConditionalSelector from "../../Components/ConditionalSelector";
 import Stat, { FormulaText } from "../../Stat";
+import { ElementToReactionKeys } from "../../StatData";
 import { GetDependencyStats } from "../../StatDependency";
 import ConditionalsUtil from "../../Util/ConditionalsUtil";
 import Character from "../Character";
@@ -154,6 +156,7 @@ export default function CharacterTalentPane(props) {
         </Card>
       </Accordion>
     </Col></Row>
+    <Row><Col><ReactionDisplay {...props} /></Col></Row>
     <Row>
       {/* auto, skill, burst */}
       {skillBurstList.map(([tKey, tText]) =>
@@ -199,6 +202,120 @@ export default function CharacterTalentPane(props) {
       })}
     </Row>
   </>
+}
+const ReactionComponents = {
+  superconduct_dmg: SuperConductCard,
+  electrocharged_dmg: ElectroChargedCard,
+  overloaded_dmg: OverloadedCard,
+  swirl_dmg: SwirlCard,
+  shatter_dmg: ShatteredCard,
+  crystalize_dmg: CrystalizeCard,
+}
+function ReactionDisplay({ character: { characterKey, reactionMode = "none" }, newBuild, equippedBuild, setState }) {
+  let build = newBuild ? newBuild : equippedBuild
+  let charEleKey = Character.getElementalKey(characterKey)
+  let eleInterArr = [...(ElementToReactionKeys[charEleKey] || [])]
+  if (!eleInterArr.includes("shatter_dmg") && Character.getWeaponTypeKey(characterKey) === "claymore") eleInterArr.push("shatter_dmg")
+  return <Card bg="lightcontent" text="lightfont" className="mb-2">
+    <Card.Body>
+      <Row>
+        <Col ><Row className="mb-n2">
+          {eleInterArr.map(key => {
+            let Ele = ReactionComponents[key]
+            if (!Ele) return null
+            let val = build?.finalStats?.[key]
+            val = val?.toFixed?.(Stat.fixedUnit(key)) || val
+            return <Col xs="auto" className="mb-2" key={key}><Ele value={val} /></Col>
+          })}
+        </Row></Col>
+        <Col xs="auto">
+          {["pyro", "hydro", "cryo"].includes(charEleKey) && <ToggleButtonGroup
+            type="radio" name="reactionMode" defaultValue={reactionMode} onChange={(val) => setState({ reactionMode: val === "none" ? null : val })}>
+            <ToggleButton className="p-3" value={"none"}> <h6>No Elemental</h6> <h6>Interactions</h6></ToggleButton >
+            {charEleKey === "pyro" && <ToggleButton className="p-3" value={"pyro_vaporize"}>
+              <h6 className="text-vaporize">Vaporize(Pyro)</h6>
+              <h2 className="text-vaporize mb-0">
+                <Image src={Assets.elements.hydro} className="inline-icon" />+<Image src={Assets.elements.pyro} className="inline-icon" />
+              </h2>
+            </ToggleButton >}
+            {charEleKey === "pyro" && <ToggleButton className="p-3" value={"pyro_melt"}>
+              <h6 className="text-melt">Melt(Pyro)</h6>
+              <h2 className="text-melt mb-0">
+                <Image src={Assets.elements.cryo} className="inline-icon" />+<Image src={Assets.elements.pyro} className="inline-icon" />
+              </h2>
+            </ToggleButton >}
+            {charEleKey === "hydro" && <ToggleButton className="p-3" value={"hydro_vaporize"}>
+              <h6 className="text-vaporize">Melt(Pyro)</h6>
+              <h2 className="text-vaporize mb-0">
+                <Image src={Assets.elements.pyro} className="inline-icon" />+<Image src={Assets.elements.hydro} className="inline-icon" />
+              </h2>
+            </ToggleButton >}
+            {charEleKey === "cryo" && <ToggleButton className="p-3" value={"cryo_melt"}>
+              <h6 className="text-melt">Melt(Pyro)</h6>
+              <h2 className="text-melt mb-0">
+                <Image src={Assets.elements.pyro} className="inline-icon" />+<Image src={Assets.elements.cryo} className="inline-icon" />
+              </h2>
+            </ToggleButton >}
+          </ToggleButtonGroup>}
+        </Col>
+      </Row>
+
+    </Card.Body>
+  </Card>
+}
+function SuperConductCard({ value }) {
+  return <Card bg="darkcontent" text="lightfont"><Card.Body className="p-3">
+    <h6>{Stat.getStatName("superconduct_dmg")}</h6>
+    <h2 className="text-superconduct mb-0">
+      <Image src={Assets.elements.electro} className="inline-icon" />+<Image src={Assets.elements.cryo} className="inline-icon" /> {value}
+    </h2>
+  </Card.Body></Card>
+}
+function ElectroChargedCard({ value }) {
+  return <Card bg="darkcontent" text="lightfont"><Card.Body className="p-3">
+    <h6>{Stat.getStatName("electrocharged_dmg")}</h6>
+    <h2 className="text-electrocharged mb-0">
+      <Image src={Assets.elements.electro} className="inline-icon" />+<Image src={Assets.elements.hydro} className="inline-icon" /> {value}
+    </h2>
+  </Card.Body></Card>
+}
+function OverloadedCard({ value }) {
+  return <Card bg="darkcontent" text="lightfont"><Card.Body className="p-3">
+    <h6>{Stat.getStatName("overloaded_dmg")}</h6>
+    <h2 className="text-overloaded mb-0">
+      <Image src={Assets.elements.electro} className="inline-icon" />+<Image src={Assets.elements.pyro} className="inline-icon" /> {value}
+    </h2>
+  </Card.Body></Card>
+}
+function SwirlCard({ value }) {
+  return <Card bg="darkcontent" text="lightfont"><Card.Body className="p-3">
+    <h6>{Stat.getStatName("swirl_dmg")}</h6>
+    <h2 className="text-swirl mb-0">
+      <Image src={Assets.elements.electro} className="inline-icon" />/<Image src={Assets.elements.hydro} className="inline-icon" />/<Image src={Assets.elements.pyro} className="inline-icon" />/<Image src={Assets.elements.cryo} className="inline-icon" />+<Image src={Assets.elements.anemo} className="inline-icon" /> {value}
+    </h2>
+  </Card.Body></Card>
+}
+function ShatteredCard({ value }) {
+  let information = <OverlayTrigger
+    placement="top"
+    overlay={<Tooltip>Claymores, Plunging Attacks and <span className="text-geo">Geo DMG</span></Tooltip>}
+  >
+    <FontAwesomeIcon icon={faQuestionCircle} className="ml-2" style={{ cursor: "help" }} />
+  </OverlayTrigger>
+  return <Card bg="darkcontent" text="lightfont"><Card.Body className="p-3">
+    <h6>{Stat.getStatName("shatter_dmg")}</h6>
+    <h2 className="text-shatter mb-0">
+      <Image src={Assets.elements.hydro} className="inline-icon" />+<Image src={Assets.elements.cryo} className="inline-icon" />+ <small className="text-physical">Heavy Attack{information} </small> {value}
+    </h2>
+  </Card.Body></Card>
+}
+function CrystalizeCard({ value }) {
+  return <Card bg="darkcontent" text="lightfont"><Card.Body className="p-3">
+    <h6>{Stat.getStatName("crystalize_dmg")}</h6>
+    <h2 className="text-crystalize mb-0">
+      <Image src={Assets.elements.electro} className="inline-icon" />/<Image src={Assets.elements.hydro} className="inline-icon" />/<Image src={Assets.elements.pyro} className="inline-icon" />/<Image src={Assets.elements.cryo} className="inline-icon" />+<Image src={Assets.elements.geo} className="inline-icon" /> {value}
+    </h2>
+  </Card.Body></Card>
 }
 
 const talentLimits = [1, 1, 2, 4, 6, 8, 10]
@@ -353,6 +470,10 @@ function FieldDisplay(props) {
   if (typeof fieldText === "function")
     fieldText = fieldText?.(talentLvlKey, build.finalStats, character)
 
+  let fieldVariant = field.variant || ""
+  if (typeof fieldVariant === "function")
+    fieldVariant = fieldVariant?.(talentLvlKey, build.finalStats, character)
+
   let fieldBasic = field.basicVal
   if (typeof fieldBasic === "function")
     fieldBasic = fieldBasic?.(talentLvlKey, build.finalStats, character)
@@ -383,7 +504,7 @@ function FieldDisplay(props) {
   return <ListGroup.Item variant={index % 2 ? "customdark" : "customdarker"} className="p-2">
     <div>
       <span><b>{fieldText}</b>{fieldBasic}</span>
-      <span className="float-right text-right">{fieldVal}</span>
+      <span className={`float-right text-right text-${fieldVariant}`} >{fieldVal}</span>
     </div>
   </ListGroup.Item>
 }
