@@ -202,8 +202,8 @@ const Formulas = {
   pyro_vaporize_multi: (s) => (1 + s.vaporize_dmg_bonus / 100) * s.ele_mas_multi_x * 1.5 * s.trans_reaction_base_multi,
   hydro_vaporize_multi: (s) => (1 + s.vaporize_dmg_bonus / 100) * s.ele_mas_multi_x * 2 * s.trans_reaction_base_multi,
 
-  pyro_melt_multi: (s) => (1 + s.melt_dmg_bonus / 100) * s.ele_mas_multi_x * 1.5 * s.trans_reaction_base_multi,
-  cryo_melt_multi: (s) => (1 + s.melt_dmg_bonus / 100) * s.ele_mas_multi_x * 2 * s.trans_reaction_base_multi,
+  pyro_melt_multi: (s) => (1 + s.melt_dmg_bonus / 100) * s.ele_mas_multi_x * 2 * s.trans_reaction_base_multi,
+  cryo_melt_multi: (s) => (1 + s.melt_dmg_bonus / 100) * s.ele_mas_multi_x * 1.5 * s.trans_reaction_base_multi,
   trans_reaction_base_multi: (s) => ampliBase(s.ele_mas),
 
   ele_mas_multi_x: (s) => (1 + (25 / 9 * s.ele_mas / (1401 + s.ele_mas))),

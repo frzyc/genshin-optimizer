@@ -128,8 +128,8 @@ const FormulaText = {
   pyro_vaporize_multi: (o) => <span>( 1 + {f(o, "vaporize_dmg_bonus")} ) * {f(o, "ele_mas_multi_x")} * 1.5 * {f(o, "trans_reaction_base_multi")}</span>,
   hydro_vaporize_multi: (o) => <span>( 1 + {f(o, "vaporize_dmg_bonus")} ) * {f(o, "ele_mas_multi_x")} * 2 * {f(o, "trans_reaction_base_multi")}</span>,
 
-  pyro_melt_multi: (o) => <span>( 1 + {f(o, "melt_dmg_bonus")} ) * {f(o, "ele_mas_multi_x")} * 1.5 * {f(o, "trans_reaction_base_multi")}</span>,
-  cryo_melt_multi: (o) => <span>( 1 + {f(o, "melt_dmg_bonus")} ) * {f(o, "ele_mas_multi_x")} * 2 * {f(o, "trans_reaction_base_multi")}</span>,
+  pyro_melt_multi: (o) => <span>( 1 + {f(o, "melt_dmg_bonus")} ) * {f(o, "ele_mas_multi_x")} * 2 * {f(o, "trans_reaction_base_multi")}</span>,
+  cryo_melt_multi: (o) => <span>( 1 + {f(o, "melt_dmg_bonus")} ) * {f(o, "ele_mas_multi_x")} * 1.5 * {f(o, "trans_reaction_base_multi")}</span>,
   trans_reaction_base_multi: (o) => <span>1 + 0.189266831 * {f(0, "ele_mas")} * exp^(-0.000505 * {f(0, "ele_mas")}) / 100 </span>,
 
   ele_mas_multi_x: (o) => <span> 1 + (25 / 9 * {f(o, "ele_mas")} / (1401 + {f(o, "ele_mas")} ))</span>,
