@@ -27,7 +27,7 @@ const weapon = {
     sourceKey: "TheWidsith",
     maxStack: 1,
     stats: (refineIndex) => ({
-      dmg: refinementEleDmgVals[refineIndex]
+      all_dmg_bonus: refinementEleDmgVals[refineIndex]
     })
   }, {
     type: "weapon",

@@ -450,7 +450,7 @@ function SkillDisplayCard(props) {
         return <Row className="mt-2" key={"section" + i}><Col xs={12}>
           <span>{talentText}</span>
           {fields.length > 0 && <ListGroup className="text-white ml-n2 mr-n2">
-            {fields.map((field, i) => <FieldDisplay key={i} index={i} {...{ field, talentLvlKey, ascension, ...otherProps }} />)}
+            {fields?.map?.((field, i) => <FieldDisplay key={i} index={i} {...{ field, talentLvlKey, ascension, ...otherProps }} />)}
           </ListGroup>}
           {conditionalEle}
         </Col></Row>

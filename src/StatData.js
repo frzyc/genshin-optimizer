@@ -83,7 +83,7 @@ const StatData = {
 
   crit_dmg_multi: { name: "Crit Hit Multiplier", unit: "multi" },
   crit_multi: { name: "Crit Multiplier", unit: "multi" },
-  dmg: { name: "All DMG", unit: "%" },//general all damage increase
+  all_dmg_bonus: { name: "All DMG Bonus", unit: "%" },//general all damage increase
   move_spd: { name: "Movement SPD", unit: "%" },
   atk_spd: { name: "ATK SPD", unit: "%" },
   weakspot_dmg: { name: "Weakspot DMG", unit: "%" },
@@ -154,14 +154,14 @@ const Formulas = {
   norm_atk_crit_dmg: (s) => s.norm_atk_dmg * s.crit_dmg_multi,
   norm_atk_avg_dmg: (s) => s.norm_atk_dmg * s.norm_atk_crit_multi,
   norm_atk_crit_multi: (s) => (1 + (clamp(s.crit_rate + s.norm_atk_crit_rate, 0, 100) / 100) * s.crit_dmg / 100),
-  norm_atk_bonus_multi: (s) => (1 + (s.phy_dmg_bonus + s.norm_atk_dmg_bonus + s.dmg) / 100),
+  norm_atk_bonus_multi: (s) => (1 + (s.phy_dmg_bonus + s.norm_atk_dmg_bonus + s.all_dmg_bonus) / 100),
 
   //CHARGED
   char_atk_dmg: (s) => s.atk_final * s.char_atk_bonus_multi * s.enemy_level_multi * s.enemy_phy_res_multi,
   char_atk_crit_dmg: (s) => s.char_atk_dmg * s.crit_dmg_multi,
   char_atk_avg_dmg: (s) => s.char_atk_dmg * s.char_atk_crit_multi,
   char_atk_crit_multi: (s) => (1 + (clamp(s.crit_rate + s.char_atk_crit_rate, 0, 100) / 100) * s.crit_dmg / 100),
-  char_atk_bonus_multi: (s) => (1 + (s.phy_dmg_bonus + s.char_atk_dmg_bonus + s.dmg) / 100),
+  char_atk_bonus_multi: (s) => (1 + (s.phy_dmg_bonus + s.char_atk_dmg_bonus + s.all_dmg_bonus) / 100),
 
   //PLUNGE
   plunge_dmg: (s) => s.phy_dmg,
@@ -172,7 +172,7 @@ const Formulas = {
   phy_dmg: (s) => s.atk_final * s.phy_bonus_multi * s.enemy_level_multi * s.enemy_phy_res_multi,
   phy_crit_dmg: (s) => s.phy_dmg * s.crit_dmg_multi,
   phy_avg_dmg: (s) => s.phy_dmg * s.crit_multi,
-  phy_bonus_multi: (s) => (1 + (s.phy_dmg_bonus + s.dmg) / 100),
+  phy_bonus_multi: (s) => (1 + (s.phy_dmg_bonus + s.all_dmg_bonus) / 100),
 
   crit_dmg_multi: (s) => (1 + s.crit_dmg / 100),
   crit_multi: (s) => (1 + (clamp(s.crit_rate, 0, 100) / 100) * (s.crit_dmg / 100)),
@@ -216,12 +216,12 @@ const eleFormulas = {
   norm_atk_dmg: (s, ele) => s.atk_final * s[`${ele}_norm_atk_bonus_multi`] * s.enemy_level_multi * s[`${ele}_enemy_ele_res_multi`],
   norm_atk_crit_dmg: (s, ele) => s[`${ele}_norm_atk_dmg`] * s.crit_dmg_multi,
   norm_atk_avg_dmg: (s, ele) => s[`${ele}_norm_atk_dmg`] * s.norm_atk_crit_multi,
-  norm_atk_bonus_multi: (s, ele) => (1 + (s[`${ele}_ele_dmg_bonus`] + s.norm_atk_dmg_bonus + s.dmg) / 100),
+  norm_atk_bonus_multi: (s, ele) => (1 + (s[`${ele}_ele_dmg_bonus`] + s.norm_atk_dmg_bonus + s.all_dmg_bonus) / 100),
 
   char_atk_dmg: (s, ele) => s.atk_final * s[`${ele}_char_atk_bonus_multi`] * s.enemy_level_multi * s[`${ele}_enemy_ele_res_multi`],
   char_atk_crit_dmg: (s, ele) => s[`${ele}_char_atk_dmg`] * s.crit_dmg_multi,
   char_atk_avg_dmg: (s, ele) => s[`${ele}_char_atk_dmg`] * s.char_atk_crit_multi,
-  char_atk_bonus_multi: (s, ele) => (1 + (s[`${ele}_ele_dmg_bonus`] + s.char_atk_dmg_bonus + s.dmg) / 100),
+  char_atk_bonus_multi: (s, ele) => (1 + (s[`${ele}_ele_dmg_bonus`] + s.char_atk_dmg_bonus + s.all_dmg_bonus) / 100),
 
   plunge_dmg: (s, ele) => s[`${ele}_ele_dmg`],
   plunge_crit_dmg: (s, ele) => s[`${ele}_ele_crit_dmg`],
@@ -231,17 +231,17 @@ const eleFormulas = {
   ele_dmg: (s, ele) => s.atk_final * s[`${ele}_ele_bonus_multi`] * s.enemy_level_multi * s[`${ele}_enemy_ele_res_multi`],
   ele_crit_dmg: (s, ele) => s[`${ele}_ele_dmg`] * s.crit_dmg_multi,
   ele_avg_dmg: (s, ele) => s[`${ele}_ele_dmg`] * s.crit_multi,
-  ele_bonus_multi: (s, ele) => (1 + (s[`${ele}_ele_dmg_bonus`] + s.dmg) / 100),
+  ele_bonus_multi: (s, ele) => (1 + (s[`${ele}_ele_dmg_bonus`] + s.all_dmg_bonus) / 100),
 
   skill_dmg: (s, ele) => s.atk_final * s[`${ele}_skill_bonus_multi`] * s.enemy_level_multi * s[`${ele}_enemy_ele_res_multi`],
   skill_crit_dmg: (s, ele) => s[`${ele}_skill_dmg`] * s.crit_dmg_multi,
   skill_avg_dmg: (s, ele) => s[`${ele}_skill_dmg`] * s.skill_crit_multi,
-  skill_bonus_multi: (s, ele) => (1 + (s[`${ele}_ele_dmg_bonus`] + s.skill_dmg_bonus + s.dmg) / 100),
+  skill_bonus_multi: (s, ele) => (1 + (s[`${ele}_ele_dmg_bonus`] + s.skill_dmg_bonus + s.all_dmg_bonus) / 100),
 
   burst_dmg: (s, ele) => s.atk_final * s[`${ele}_burst_bonus_multi`] * s.enemy_level_multi * s[`${ele}_enemy_ele_res_multi`],
   burst_crit_dmg: (s, ele) => s[`${ele}_burst_dmg`] * s.crit_dmg_multi,
   burst_avg_dmg: (s, ele) => s[`${ele}_burst_dmg`] * s.burst_crit_multi,
-  burst_bonus_multi: (s, ele) => (1 + (s[`${ele}_ele_dmg_bonus`] + s.burst_dmg_bonus + s.dmg) / 100),
+  burst_bonus_multi: (s, ele) => (1 + (s[`${ele}_ele_dmg_bonus`] + s.burst_dmg_bonus + s.all_dmg_bonus) / 100),
 
   enemy_ele_res_multi: (s, ele) => s[`${ele}_enemy_ele_immunity`] ? 0 : resMultiplier(s[`${ele}_enemy_ele_res`]),
 };

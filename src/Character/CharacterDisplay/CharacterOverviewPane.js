@@ -257,7 +257,7 @@ function MainStatsCards(props) {
     otherStatKeys.push(`${ele}_ele_dmg_bonus`)
     otherStatKeys.push(`${ele}_ele_res`)
   })
-  const miscStatkeys = ["norm_atk_dmg_bonus", "char_atk_dmg_bonus", "skill_dmg_bonus", "burst_dmg_bonus", "skill_crit_rate", "burst_crit_rate", "dmg", "move_spd", "atk_spd", "weakspot_dmg"]
+  const miscStatkeys = ["norm_atk_dmg_bonus", "char_atk_dmg_bonus", "skill_dmg_bonus", "burst_dmg_bonus", "skill_crit_rate", "burst_crit_rate", "all_dmg_bonus", "move_spd", "atk_spd", "weakspot_dmg"]
 
   let specializedStatKey = Character.getStatValueWithOverride(character, "specializedStatKey")
   let specializedStatVal = Character.getStatValueWithOverride(character, "specializedStatVal");

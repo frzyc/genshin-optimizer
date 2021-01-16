@@ -16,7 +16,7 @@ const weapon = {
     sub: [8, 9.3, 10.9, 12.5, 14.1, 14.1, 15.8, 17.4, 19, 20.6, 20.6, 22.2, 23.8, 23.8, 25.4, 27.1, 27.1, 28.7, 30.3, 30.3, 31.9, 33.5, 33.5, 35.1, 36.8],
   },
   stats: (refineIndex) => ({
-    dmg: refinementVals[refineIndex]
+    all_dmg_bonus: refinementVals[refineIndex]
   })
 }
 export default weapon

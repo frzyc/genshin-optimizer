@@ -248,7 +248,7 @@ let char = {
           sourceKey: "diluc",
           maxStack: 1,
           stats: {
-            dmg: 15,
+            all_dmg_bonus: 15,
           },
         }
       }],

@@ -17,7 +17,7 @@ const weapon = {
     sourceKey: "SerpentSpine",
     maxStack: 5,
     stats: (refineIndex) => ({
-      dmg: refinementVals[refineIndex]
+      all_dmg_bonus: refinementVals[refineIndex]
     })
   }
 }

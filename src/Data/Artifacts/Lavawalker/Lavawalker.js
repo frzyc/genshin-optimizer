@@ -31,7 +31,7 @@ let artifact = {
         sourceKey: "Lavawalker_4",
         maxStack: 1,
         stats: {
-          dmg: 35,
+          all_dmg_bonus: 35,
         }
       }
     }

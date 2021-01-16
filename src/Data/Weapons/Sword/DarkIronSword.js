@@ -16,7 +16,7 @@ const weapon = {
     sourceKey: "DarkIronSword",
     maxStack: 1,
     stats: (refineIndex) => ({
-      dmg: refinementVals[refineIndex]
+      all_dmg_bonus: refinementVals[refineIndex]
     })
   }
 }

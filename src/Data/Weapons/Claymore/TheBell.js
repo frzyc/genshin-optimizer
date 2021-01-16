@@ -19,7 +19,7 @@ const weapon = {
     sourceKey: "TheBell",
     maxStack: 1,
     stats: (refineIndex) => ({
-      dmg: refinementVals[refineIndex]
+      all_dmg_bonus: refinementVals[refineIndex]
     })
   }
 }

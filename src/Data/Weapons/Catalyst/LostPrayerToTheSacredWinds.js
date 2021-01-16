@@ -19,7 +19,7 @@ const weapon = {
     sourceKey: "LostPrayerToTheSacredWinds",
     maxStack: 4,
     stats: (refineIndex) => ({
-      dmg: refinementVals[refineIndex]
+      all_dmg_bonus: refinementVals[refineIndex]
     })
   }
 }

@@ -1,5 +1,4 @@
 import ArtifactDatabase from "./Artifact/ArtifactDatabase";
-import Character from "./Character/Character";
 import CharacterDatabase from "./Character/CharacterDatabase";
 
 function DatabaseInitAndVerify() {
@@ -78,20 +77,6 @@ function DatabaseInitAndVerify() {
       //conditional format was refactored. this makes sure there is no error when using old DB.
       if (character.artifactConditionals) character.artifactConditionals = character.artifactConditionals.filter(cond => {
         if (!cond.srcKey || !cond.srcKey2) {
-          valid = false
-          return false
-        }
-        return true
-      })
-
-      //check for invalid conditionals from previous iterations where srcKey2 was not used.
-      let { characterKey, levelKey, constellation, talentConditionals = [] } = character
-      let ascension = Character.getAscension(levelKey)
-      character.talentConditionals = talentConditionals.filter(cond => {
-        let { srcKey: talentKey, srcKey2: conditionalKey } = cond
-        let talentLvlKey = Character.getTalentLevelKey(character, talentKey)
-        let conditional = Character.getTalentConditional(characterKey, talentKey, conditionalKey, talentLvlKey, constellation, ascension)
-        if (!conditional) {
           valid = false
           return false
         }

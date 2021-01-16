@@ -12,14 +12,14 @@ const weapon = {
     sub: [6.8, 7.9, 9.3, 10.6, 12, 12, 13.4, 14.8, 16.1, 17.5, 17.5, 18.9, 20.3, 20.3, 21.6, 23, 23, 24.4, 25.7, 25.7, 27.1, 28.5, 28.5, 29.9, 31.2],
   },
   stats: () => ({
-    dmg: -10
+    all_dmg_bonus: -10
   }),
   conditional: {
     type: "weapon",
     sourceKey: "Slingshot",
     maxStack: 1,
     stats: (refineIndex) => ({
-      dmg: refinementVals[refineIndex] + 10//+10 to neutralize the -10
+      all_dmg_bonus: refinementVals[refineIndex] + 10//+10 to neutralize the -10
     })
   }
 }
