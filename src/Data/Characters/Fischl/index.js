@@ -219,7 +219,7 @@ let char = {
       img: c1,
       document: [{
         text: <span>Even when Oz is not present in combat, he can still watch over Fischl through the crow's eyes. When Fischl attacks an opponent, Oz fires a joint attack through the crow's eyes, dealing 22% of <span className="text-physical">ATK DMG</span>.</span>,
-        fields: [{
+        fields: [(con) => con >= 1 && {
           text: "Joint Attack DMG",
           basicVal: (tlvl, stats, c) => <span>22% {Stat.printStat(Character.getTalentStatKey("phy", c), stats)}</span>,
           finalVal: (_, stats, c) => (22 / 100) * stats[Character.getTalentStatKey("phy", c)],
