@@ -12,7 +12,8 @@ import burst from './Talent_Midnight_Phantasmagoria.png'
 import passive1 from './Talent_Stellar_Predator.png'
 import passive2 from './Talent_Lightning_Smite.png'
 import passive3 from './Talent_Mein_Hausgarten.png'
-//import DisplayPercent from '../../../Components/DisplayPercent'
+import Stat from '../../../Stat'
+import Character from '../../../Character/Character'
 
 //AUTO
 const hitPercent = [
@@ -30,20 +31,14 @@ const plunge_dmg_low = [113.63, 122.88, 132.13, 145.35, 154.59, 165.17, 179.7, 1
 const plunge_dmg_high = [141.93, 153.49, 165.04, 181.54, 193.1, 206.3, 224.45, 242.61, 260.76, 280.57, 300.37, 320.18, 339.98, 359.79, 379.59]
 
 //SKILL
-const breastplateStats = {
-  skill_dmg: [],
-  shield_def: [],
-  shield_flat: [],
-  heal_def: [],
-  heal_flat: [],
-  heal_trigger: [],
+const eleSkill = {
+  oz_dmg: [88.8, 95.46, 102.12, 111, 117.66, 124.32, 133.2, 142.08, 150.96, 159.84, 168.72, 177.6, 188.7, 199.8, 210.9],
+  skill_dmg: [115.44, 124.1, 132.76, 144.3, 152.96, 161.62, 173.16, 184.7, 196.25, 207.79, 219.34, 230.88, 245.31, 259.74, 274.17],
 }
 
 //BURST
-const sweepingTimeStats = {
-  burst_dmg: [],
-  skill_dmg: [],
-  atk_bonu: [],
+const eleBurst = {
+  burst_dmg: [208, 223.6, 239.2, 260, 275.6, 291.2, 312, 332.8, 353.6, 374.4, 395.2, 416, 442, 468, 494],
 }
 
 let char = {
@@ -75,144 +70,189 @@ let char = {
         fields: hitPercent.map((percentArr, i) =>
         ({
           text: `${i + 1}-Hit DMG`,
-          basicVal: (tlvl) => percentArr[tlvl] + "%",
-          finalVal: (tlvl, stats) => (percentArr[tlvl] / 100) * stats.norm_atk_avg_dmg
+          basicVal: (tlvl, stats, c) => <span>{percentArr[tlvl]}% {Stat.printStat(Character.getTalentStatKey("norm_atk", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (percentArr[tlvl] / 100) * stats[Character.getTalentStatKey("norm_atk", c)],
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("norm_atk", c),
         }))
       }, {
-        text: <span><strong>Charged Attack</strong> Perform a more precise Aimed Shot with increased DMG. While aiming, the dark lightning spirits of Immernachtreich shall heed the call of their Prinzessin and indwell the enchanted arrowhead. When fully indwelt, the Rachsüchtig Blitz shall deal immense <span className="text-electro">Electro DMG.</span></span>,
+        text: <span><strong>Charged Attack</strong> Perform a more precise Aimed Shot with increased DMG. While aiming, the dark lightning spirits of Immernachtreich shall heed the call of their Prinzessin and indwell the enchanted arrowhead. When fully indwelt, the Rachsüchtig Blitz shall deal immense <span className="text-electro">Electro DMG</span>.</span>,
         fields: [{
           text: `Spinning DMG`,
-          basicVal: (tlvl) => aimed[tlvl] + "%",
-          finalVal: (tlvl, stats) => (aimed[tlvl] / 100) * stats.char_atk_avg_dmg
+          basicVal: (tlvl, stats, c) => <span>{aimed[tlvl]}% {Stat.printStat(Character.getTalentStatKey("char_atk", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (aimed[tlvl] / 100) * stats[Character.getTalentStatKey("char_atk", c)],
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("char_atk", c),
         }, {
           text: `Spinning Final DMG`,
-          basicVal: (tlvl) => aimed_full[tlvl] + "%",
-          finalVal: (tlvl, stats) => (aimed_full[tlvl] / 100) * stats.char_atk_avg_dmg
+          basicVal: (tlvl, stats, c) => <span>{aimed_full[tlvl]}% {Stat.printStat(Character.getTalentStatKey("char_atk", c, true), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (aimed_full[tlvl] / 100) * stats[Character.getTalentStatKey("char_atk", c, true)],
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("char_atk", c, true),
         }, {
           text: `Stamina Cost`,
           value: `40/s`,
         }, {
           text: `Max Duration`,
           value: `5s`,
+        }, (c, a) => a >= 1 && {
+          text: <span>Full Aimed Shot on Oz <span className="text-electro">AoE</span></span>,
+          basicVal: (tlvl, stats, c) => <span>{aimed_full[tlvl]}% * 152.7% {Stat.printStat(Character.getTalentStatKey("char_atk", c, true), stats)}</span>,
+          finalVal: (tlvl, stats, c) => ((aimed_full[tlvl] + 152.7) / 100) * stats[Character.getTalentStatKey("char_atk", c, true)],
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("char_atk", c, true),
         }]
       }, {
-        text: <span><strong>Plunging Attack</strong>TEMPLATE</span>,
+        text: <span><strong>Plunging Attack</strong> Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.</span>,
         fields: [{
           text: `Plunge DMG`,
-          basicVal: (tlvl) => plunge_dmg[tlvl] + "%",
-          finalVal: (tlvl, stats) => (plunge_dmg[tlvl] / 100) * stats.plunge_avg_dmg
+          basicVal: (tlvl, stats, c) => <span>{plunge_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunge", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (plunge_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("plunge", c)],
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunge", c),
         }, {
           text: `Low Plunge DMG`,
-          basicVal: (tlvl) => plunge_dmg_low[tlvl] + "%",
-          finalVal: (tlvl, stats) => (plunge_dmg_low[tlvl] / 100) * stats.plunge_avg_dmg
+          basicVal: (tlvl, stats, c) => <span>{plunge_dmg_low[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunge", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (plunge_dmg_low[tlvl] / 100) * stats[Character.getTalentStatKey("plunge", c)],
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunge", c),
         }, {
           text: `High Plunge DMG`,
-          basicVal: (tlvl) => plunge_dmg_high[tlvl] + "%",
-          finalVal: (tlvl, stats) => (plunge_dmg_high[tlvl] / 100) * stats.plunge_avg_dmg
+          basicVal: (tlvl, stats, c) => <span>{plunge_dmg_high[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunge", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (plunge_dmg_high[tlvl] / 100) * stats[Character.getTalentStatKey("plunge", c)],
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunge", c),
         }]
       }],
     },
     skill: {
-      name: "TEMPLATE",
+      name: "Nightrider",
       img: skill,
       document: [{
-        text: <span>TEMPLATE</span>,
+        text: <span>
+          <p className="mb-2">Summons Oz. The night raven forged of darkness and lightning descends upon the land, dealing <span className="text-electro">Electro DMG</span> in a small AoE.</p>
+          <p className="mb-0">For the ability's duration, Oz will continuously attack nearby opponents with <span className="text-electro">Freikugel</span>.</p>
+          <p className="mb-0">Hold to adjust the location Oz will be summoned to.</p>
+          <p className="mb-0">Press again any time during the ability's duration to once again summon him to Fischl's side.</p>
+        </span>,
         fields: [{
-          text: "TEMPLATE",
-          basicVal: (tlvl) => breastplateStats.skill_dmg[tlvl] + "%",
-          finalVal: (tlvl, s) => (breastplateStats.skill_dmg[tlvl] / 100) * s.skill_avg_dmg,
-        }, {
-          text: "TEMPLATE",
-          basicVal: (tlvl) => breastplateStats.shield_def[tlvl] + "% DEF + " + breastplateStats.shield_flat[tlvl],
-          finalVal: (tlvl, s) => (breastplateStats.shield_def[tlvl] / 100) * s.def + breastplateStats.shield_flat[tlvl],
-        }, {
-          text: "TEMPLATE",
-          basicVal: (tlvl) => breastplateStats.heal_def[tlvl] + "% DEF + " + breastplateStats.heal_flat[tlvl],
-          finalVal: (tlvl, s) => (breastplateStats.heal_def[tlvl] / 100) * s.def + breastplateStats.heal_flat[tlvl],
-        }, {
+          text: "Oz's ATK DMG",
+          basicVal: (tlvl, stats, c) => <span>{eleSkill.oz_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("skill", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (eleSkill.oz_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("skill", c)],
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("skill", c),
+        }, (con, a) => ({
+          text: "Summoning DMG",
+          basicVal: (tlvl, stats, c) => <span>{eleSkill.skill_dmg[tlvl]}%{con >= 2 ? " + 200%" : ""} {Stat.printStat(Character.getTalentStatKey("skill", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => ((eleSkill.skill_dmg[tlvl] + (con >= 2 ? 200 : 0)) / 100) * stats[Character.getTalentStatKey("skill", c)],
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("skill", c),
+        }), (con, a) => con >= 6 && {
+          text: "Attack with Active Character",
+          basicVal: (tlvl, stats, c) => <span>30% {Stat.printStat(Character.getTalentStatKey("skill", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (30 / 100) * stats[Character.getTalentStatKey("skill", c)],
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("skill", c),
+        }, (c, a) => ({
+          text: "Duration",
+          value: c < 6 ? "10s" : "10s + 2s",
+        }), {
           text: "CD",
-          value: "12s",
-        }, {
-          text: "TEMPLATE",
-          value: (tlvl, s, c, a) => "24s" + a > 4 ? " -1s Every 4 hits" : "",
+          value: "25s",
+        }, (c, a) => c >= 2 && {
+          text: "AoE Increase",
+          value: "50%",
         }]
       }],
     },
     burst: {
-      name: "TEMPLATE",
+      name: "Midnight Phantasmagoria",
       img: burst,
       document: [{
-        text: <span>TEMPLATE</span>,
+        text: <span>
+          <p className="mb-2">Summons Oz to spread his twin wings of twilight and defend Fischl. Has the following properties during the ability's duration:</p>
+          <ul>
+            <li>Fischl takes on Oz's form, greatly increasing her Movement Speed.</li>
+            <li>Strikes nearby opponents with lightning, dealing <span className="text-electro">Electro DMG</span> to opponents she comes in contact with. Each opponent can only be struck once.</li>
+            <li>Once this ability's effects end, Oz will remain on the battlefield and attack his Prinzessin's foes. If Oz is already on the field, then this will reset the duration of his presence.</li>
+          </ul>
+        </span>,
         fields: [{
-          text: "TEMPLATE",
-          basicVal: (tlvl) => sweepingTimeStats.burst_dmg[tlvl] + "%",
-          finalVal: (tlvl, s) => (sweepingTimeStats.burst_dmg[tlvl] / 100) * s.burst_avg_dmg,
-        }, {
-          text: "TEMPLATE",
-          basicVal: (tlvl) => sweepingTimeStats.skill_dmg[tlvl] + "%",
-          finalVal: (tlvl, s) => (sweepingTimeStats.skill_dmg[tlvl] / 100) * s.burst_avg_dmg,
-        }, {
-          text: "TEMPLATE",
-          basicVal: (tlvl, s, constellation) => `${sweepingTimeStats.atk_bonu[tlvl]}%${constellation >= 6 ? " +50%" : ""} DEF`,
-          finalVal: (tlvl, s, constellation) => ((sweepingTimeStats.atk_bonu[tlvl] + (constellation >= 6 ? 50 : 0)) / 100) * s.def,
-        }, {
-          text: "TEMPLATE",
-          value: (tlvl, s, constellation) => "15s" + (constellation >= 6 ? " +1s per kill, up to 10s" : ""),
+          text: "Falling Thunder DMG",
+          basicVal: (tlvl, stats, c) => <span>{eleBurst.burst_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("burst", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (eleBurst.burst_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("burst", c)],
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("burst", c),
+        }, (con, a) => con >= 4 && {
+          text: "Additional AoE Damage",
+          basicVal: (tlvl, stats, c) => <span>222% {Stat.printStat(Character.getTalentStatKey("burst", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (222 / 100) * stats[Character.getTalentStatKey("burst", c)],
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("burst", c),
+        }, (con, a) => con >= 4 && {
+          text: "HP Recovered",
+          basicVal: (tlvl, stats, c) => <span>20% {Stat.printStat("hp_final", stats)}</span>,
+          finalVal: (tlvl, stats, c) => (20 / 100) * stats.hp_final,
+          variant: (tlvl, stats, c) => "success",
         }, {
           text: "CD",
           value: "15s",
         }, {
           text: "Energy Cost",
           value: 60,
-        }]
+        },]
       }],
     },
     passive1: {
-      name: "TEMPLATE",
+      name: "Stellar Predator",
       img: passive1,
-      document: [{ text: <span>TEMPLATE</span> }],
+      document: [{ text: <span>When Fischl hits <b>Oz</b> with a fully-charged <b>Aimed Shot</b>, Oz brings down Thundering Retribution, dealing <span className="text-electro">AoE Electro DMG</span> equal to 152.7% of the arrow's DMG.</span> }],
     },
     passive2: {
-      name: "TEMPLATE",
+      name: "Undone Be Thy Sinful Hex",
       img: passive2,
-      document: [{ text: <span>TEMPLATE</span> }],
+      document: [{
+        text: <span>If your active character triggers an <span className="text-electro">Electro-related Elemental Reaction</span> when Oz is on the field, the opponent shall be stricken with Thundering Retribution, dealing <span className="text-electro">Electro DMG</span> equal to 80% of Fischl's ATK.</span>,
+        fields: [(con, a) => a >= 4 && {
+          text: "Thundering Retribution",
+          basicVal: (tlvl, stats, c) => <span>80% {Stat.printStat(Character.getTalentStatKey("ele", c), stats)}</span>,
+          finalVal: (_, stats, c) => (80 / 100) * stats[Character.getTalentStatKey("ele", c)],
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("ele", c),
+        }]
+      }],
     },
     passive3: {
-      name: "TEMPLATE",
+      name: "Mein Hausgarten",
       img: passive3,
-      document: [{ text: <span>TEMPLATE</span> }],
+      document: [{ text: <span>When dispatched on an expedition in Mondstadt, the time consumed is reduced by 25%.</span> }],
     },
     constellation1: {
-      name: "TEMPLATE",
+      name: "Gaze of the Deep",
       img: c1,
-      document: [{ text: <span>TEMPLATE</span> }],
+      document: [{
+        text: <span>Even when Oz is not present in combat, he can still watch over Fischl through the crow's eyes. When Fischl attacks an opponent, Oz fires a joint attack through the crow's eyes, dealing 22% of <span className="text-physical">ATK DMG</span>.</span>,
+        fields: [{
+          text: "Joint Attack DMG",
+          basicVal: (tlvl, stats, c) => <span>22% {Stat.printStat(Character.getTalentStatKey("phy", c), stats)}</span>,
+          finalVal: (_, stats, c) => (22 / 100) * stats[Character.getTalentStatKey("phy", c)],
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("phy", c),
+        }]
+      }],
     },
     constellation2: {
-      name: "TEMPLATE",
+      name: "Devourer of All Sins",
       img: c2,
-      document: [{ text: <span>TEMPLATE</span> }],
+      document: [{ text: <span>When <b>Nightrider</b> is used, it deals an additional 200% ATK as DMG, and its AoE is increased by 50%.</span> }],
     },
     constellation3: {
-      name: "TEMPLATE",
+      name: "Wings of Nightmare",
       img: c3,
-      document: [{ text: <span>TEMPLATE</span> }],
-      talentBoost: { burst: 3 }
+      document: [{ text: <span>Increases <b>Nightrider</b>'s skill level by 3. Maximum upgrade level is 15.</span> }],
+      talentBoost: { skill: 3 }
     },
     constellation4: {
-      name: "TEMPLATE",
+      name: "Her Pilgrimage of Bleak",
       img: c4,
-      document: [{ text: <span>TEMPLATE</span> }],
+      document: [{ text: <span>When <b>Midnight Phantasmagoria</b> is used, deals 222% of ATK as <span className="text-electro">Electro DMG</span> to surrounding opponents. When the skill duration ends, Fischl recovers 20% of her HP.</span> }],
     },
     constellation5: {
-      name: "TEMPLATE",
+      name: "Against the Fleeing Light",
       img: c5,
-      document: [{ text: <span>TEMPLATE</span> }],
+      document: [{ text: <span>Increases <b>Midnight Phantasmagoria</b>'s skill level by 3. Maximum upgrade level is 15.</span> }],
       talentBoost: { burst: 3 }
     },
     constellation6: {
-      name: "TEMPLATE",
+      name: "Evernight Raven",
       img: c6,
-      document: [{ text: <span>TEMPLATE</span> }],
+      document: [{ text: <span>Increases the duration of Oz's summoning by 2s. Additionally, Oz attacks with your active character when present, dealing 30% of Fischl's ATK as <span className="text-electro">Electro DMG</span>.</span> }],
     }
   },
 };

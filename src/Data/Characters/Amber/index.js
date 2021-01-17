@@ -80,12 +80,7 @@ let char = {
           finalVal: (tlvl, stats, c) => (aimedShot[tlvl] / 100) * stats[Character.getTalentStatKey("char_atk", c)],
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("char_atk", c),
         }, {
-          text: `Fully-Charged Aimed Shot DMG`,
-          basicVal: (tlvl, stats, c) => <span>{fullAimedShot[tlvl]}% {Stat.printStat(Character.getTalentStatKey("char_atk", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (fullAimedShot[tlvl] / 100) * stats[Character.getTalentStatKey("char_atk", c)],
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("char_atk", c),
-        }, {
-          text: <span>Fully-Charged Aimed Shot DMG (<span className="text-pyro">Pyro</span>)</span>,
+          text: <span>Fully-Charged Aimed Shot DMG</span>,
           basicVal: (tlvl, stats, c) => <span>{fullAimedShot[tlvl]}% {Stat.getStatName(Character.getTalentStatKey("char_atk", c, true))}</span>,
           finalVal: (tlvl, stats, c) => (fullAimedShot[tlvl] / 100) * stats[Character.getTalentStatKey("char_atk", c, true)],
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("char_atk", c, true),

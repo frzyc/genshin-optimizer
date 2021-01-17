@@ -120,6 +120,7 @@ export default class Character {
   }
   static getTalentStatKey = (skillKey, character, elemental = false) => {
     let { dmgMode = "", autoInfused = false, characterKey, reactionMode = null } = character
+    if (skillKey === "phy") return `phy_${dmgMode}`
     let charEleKey = this.getElementalKey(characterKey)
     if (!elemental) elemental = this.isAutoElemental(characterKey) || (autoInfused && (Character.getCDataObj(characterKey)?.talent?.auto?.infusable || false))
     let eleKey = ""
@@ -129,6 +130,7 @@ export default class Character {
     return `${eleKey}${skillKey}_${dmgMode}`
   }
   static getTalentStatKeyVariant = (skillKey, character, elemental = false) => {
+    if (skillKey === "phy") return "physical"
     let { autoInfused = false, characterKey, reactionMode = null } = character
     let charEleKey = this.getElementalKey(characterKey)
     //reactionMode can be one of pyro_vaporize, pyro_melt, hydro_vaporize,cryo_melt

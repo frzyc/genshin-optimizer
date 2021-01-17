@@ -424,8 +424,8 @@ function SkillDisplayCard(props) {
           }
           let setConditional = (conditionalNum) => setState(state =>
             ({ talentConditionals: ConditionalsUtil.setConditional(state.talentConditionals, { srcKey: talentKey, srcKey2: conditional.conditionalKey }, conditionalNum) }))
-          conditionalEle = <Row><Col>
-            <Card bg="darkcontent" text="lightfont" className="mt-2 ml-n2 mr-n2">
+          conditionalEle = <Col xs={12}>
+            <Card bg="darkcontent" text="lightfont" className="mb-2">
               <Card.Header>
                 <ConditionalSelector disabled={!editable}
                   conditional={conditional}
@@ -445,15 +445,14 @@ function SkillDisplayCard(props) {
                 {conditionalFields.map((condField, i) => <FieldDisplay key={i + (conditionalStats?.length || 0)} index={i + (conditionalStats?.length || 0)} {...{ field: condField, talentLvlKey, ascension, ...otherProps }} />)}
               </ListGroup>
             </Card>
-          </Col></Row>
+          </Col>
         }
-        return <Row className="mt-2" key={"section" + i}><Col xs={12}>
-          <span>{talentText}</span>
-          {fields.length > 0 && <ListGroup className="text-white ml-n2 mr-n2">
+        return <Row className="mt-2 mb-n2" key={"section" + i}><Col xs={12}>
+          <div className="mb-2">{talentText}</div>
+          {fields.length > 0 && <ListGroup className="text-white mb-2">
             {fields?.map?.((field, i) => <FieldDisplay key={i} index={i} {...{ field, talentLvlKey, ascension, ...otherProps }} />)}
           </ListGroup>}
-          {conditionalEle}
-        </Col></Row>
+        </Col>{conditionalEle}</Row>
       })}
       {statsEle}
     </Card.Body>
