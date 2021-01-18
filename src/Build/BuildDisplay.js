@@ -11,7 +11,6 @@ import Character from '../Character/Character';
 import CharacterCard from '../Character/CharacterCard';
 import CharacterDatabase from '../Character/CharacterDatabase';
 import ConditionalSelector from '../Components/ConditionalSelector';
-import { ArtifactSlotsData } from '../Data/ArtifactData';
 import { DatabaseInitAndVerify } from '../DatabaseUtil';
 import Stat from '../Stat';
 import { DependencyStatKeys } from '../StatDependency';
@@ -79,7 +78,7 @@ export default class BuildDisplay extends React.Component {
           delete artifactDatabase[key]
       })
     }
-    let split = Build.splitArtifactsBySlot(artifactDatabase);
+    let split = Artifact.splitArtifactsBySlot(artifactDatabase);
     //filter the split slots on the mainstats selected.
     BuildDisplay.artifactsSlotsToSelectMainStats.forEach((slotKey, index) =>
       this.state.mainStat[index] && (split[slotKey] = split[slotKey].filter((art) => art.mainStatKey === this.state.mainStat[index])))
@@ -107,9 +106,9 @@ export default class BuildDisplay extends React.Component {
   }, this.autoGenerateBuilds)
 
   dropdownitemsForStar = (star, index) =>
-    Artifact.getArtifactSetsByMaxStarEntries(star).map(([setKey, setobj]) => {
+    Artifact.getSetsByMaxStarEntries(star).map(([setKey, setobj]) => {
       if (this.state.setFilters.some(filter => filter.key === setKey)) return false;
-      let setsNumArr = Object.keys(Artifact.getArtifactSets(setKey))
+      let setsNumArr = Object.keys(Artifact.getSetEffectsObj(setKey))
       let artsAccountedOther = this.state.setFilters.reduce((accu, cur, ind) => (cur.key && ind !== index) ? accu + cur.num : accu, 0)
       if (setsNumArr.every(num => parseInt(num) + artsAccountedOther > 5)) return false;
       return (<Dropdown.Item key={setKey}
@@ -156,6 +155,7 @@ export default class BuildDisplay extends React.Component {
       })
       let builds = e.data.builds.map(obj =>
         Character.calculateBuildWithObjs(artifactConditionals, initialStats, obj.artifacts))
+      if (process.env.NODE_ENV === "development") console.log(builds.map(build => build?.finalStats?.[this.state.buildFilterKey]))
       this.setState({ builds, generatingBuilds: false })
       // worker.terminate()
       this.worker.terminate()
@@ -216,13 +216,13 @@ export default class BuildDisplay extends React.Component {
                 {BuildDisplay.artifactsSlotsToSelectMainStats.map((slotKey, index) =>
                 (<div className="text-inline mb-1 d-flex justify-content-between" key={slotKey}>
                   <h6 className="d-inline mr-2">
-                    {Artifact.getArtifactSlotNameWithIcon(slotKey)}
+                    {Artifact.getSlotNameWithIcon(slotKey)}
                   </h6>
                   <DropdownButton
                     title={this.state.mainStat[index] ? Stat.getStatNameWithPercent(this.state.mainStat[index]) : "Select a mainstat"}
                     className="d-inline">
                     <Dropdown.Item onClick={() => this.changeMainStat(index, "")} >No MainStat</Dropdown.Item>
-                    {ArtifactSlotsData[slotKey].stats.map(mainStatKey =>
+                    {Artifact.getSlotMainStatKeys(slotKey).map(mainStatKey =>
                       <Dropdown.Item onClick={() => this.changeMainStat(index, mainStatKey)} key={mainStatKey}>
                         {Stat.getStatNameWithPercent(mainStatKey)}
                       </Dropdown.Item>
@@ -242,7 +242,7 @@ export default class BuildDisplay extends React.Component {
                   <Card.Header>
                     <ButtonGroup>
                       {/* Artifact set */}
-                      <DropdownButton as={ButtonGroup} title={Artifact.getArtifactSetName(setFilter.key, "Set (Optional)")} >
+                      <DropdownButton as={ButtonGroup} title={Artifact.getSetName(setFilter.key, "Set (Optional)")} >
                         <Dropdown.Item onClick={() => this.changeSetFilterKey(index, "")}>Unselect Artifact</Dropdown.Item>
                         <Dropdown.ItemText>Max Rarity 🟊🟊🟊🟊🟊</Dropdown.ItemText>
                         {this.dropdownitemsForStar(5, index)}
@@ -257,7 +257,7 @@ export default class BuildDisplay extends React.Component {
                       <DropdownButton as={ButtonGroup} title={`${setFilter.num}-set`}
                         disabled={!setFilter.key || artsAccounted >= 5}
                       >
-                        {setFilter.key && Artifact.getArtifactSetEffectsObj(setFilter.key) && Object.keys(Artifact.getArtifactSetEffectsObj(setFilter.key)).map(num => {
+                        {Object.keys(Artifact.getSetEffectsObj(setFilter.key)).map(num => {
                           let artsAccountedOther = setFilters.reduce((accu, cur) => (cur.key && cur.key !== setFilter.key) ? accu + cur.num : accu, 0)
                           return (parseInt(num) + artsAccountedOther <= 5) &&
                             (<Dropdown.Item key={num}
@@ -274,18 +274,14 @@ export default class BuildDisplay extends React.Component {
                     </ButtonGroup>
                   </Card.Header>
                   {setKey ? <Card.Body><Row>
-                    {Object.keys(Artifact.getArtifactSets(setKey, {})).filter(setNkey => parseInt(setNkey) <= num).map(setNumKey => {
+                    {Object.keys(Artifact.getSetEffectsObj(setKey)).filter(setNkey => parseInt(setNkey) <= num).map(setNumKey => {
                       let setStats = Artifact.getArtifactSetNumStats(setKey, setNumKey)
                       let conditionalNum = 0;
-                      let conditional = Artifact.getArtifactSetEffectConditional(setKey, setNumKey)
+                      let conditional = Artifact.getSetEffectConditional(setKey, setNumKey)
                       if (conditional) {
                         conditionalNum = ConditionalsUtil.getConditionalNum(artifactConditionals, { srcKey: setKey, srcKey2: setNumKey })
-                        let conditionalStats = Artifact.getArtifactConditionalStats(setKey, setNumKey, conditionalNum)
-                        if (conditionalStats) {
-                          if (!setStats) setStats = {}
-                          Object.entries(conditionalStats).forEach(([statKey, val]) =>
-                            setStats[statKey] = (setStats[statKey] || 0) + val)
-                        }
+                        Object.entries(Artifact.getConditionalStats(setKey, setNumKey, conditionalNum)).forEach(([statKey, val]) =>
+                          setStats[statKey] = (setStats[statKey] || 0) + val)
                       }
                       let setStateArtifactConditional = (conditionalNum) => this.setState(state =>
                         ({ artifactConditionals: ConditionalsUtil.setConditional(state.artifactConditionals, { srcKey: setKey, srcKey2: setNumKey }, conditionalNum) }), this.autoGenerateBuilds)
@@ -296,7 +292,7 @@ export default class BuildDisplay extends React.Component {
                         defEle={<Badge variant="success">{setNumKey}-Set</Badge>}
                       />
                       return <Col key={setNumKey} xs={12} className="mb-2">
-                        <h6>{conditionalElement} {Artifact.getArtifactSetEffectText(setKey, setNumKey)}</h6>
+                        <h6>{conditionalElement} {Artifact.getSetEffectText(setKey, setNumKey)}</h6>
                         {setStats ? <Row>
                           {Object.entries(setStats).map(([statKey, val]) =>
                             <Col xs={12} key={statKey}>{Stat.getStatName(statKey)}: {val}{Stat.getStatUnit(statKey)}</Col>)}
@@ -350,7 +346,7 @@ export default class BuildDisplay extends React.Component {
         <Row>
           <Col>{Object.entries(build.setToSlots).sort(([key1, slotarr1], [key2, slotarr2]) => slotarr2.length - slotarr1.length).map(([key, slotarr]) =>
             <Badge key={key} variant="primary" className="mr-2">
-              {slotarr.map(slotKey => Artifact.getArtifactSlotIcon(slotKey))} {Artifact.getArtifactSetName(key)}
+              {slotarr.map(slotKey => Artifact.getSlotIcon(slotKey))} {Artifact.getSetName(key)}
             </Badge>
           )}</Col>
         </Row>
@@ -383,7 +379,7 @@ export default class BuildDisplay extends React.Component {
     Promise.all([
       Character.getCharacterDataImport(),
       Weapon.getWeaponDataImport(),
-      Artifact.getArtifactDataImport()
+      Artifact.getDataImport()
     ]).then(() => {
       this.forceUpdate()
       //try to generate a build at the beginning after mount.

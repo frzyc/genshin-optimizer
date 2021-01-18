@@ -19,7 +19,7 @@ let artifact = {
     goblet,
     circlet
   },
-  sets: {
+  setEffects: {
     2: {
       text: <span><span className="text-pyro">Pyro RES</span> increased by 40%</span>,
       stats: { pyro_ele_res: 40 }

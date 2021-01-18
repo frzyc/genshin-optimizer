@@ -1,7 +1,9 @@
+import TwinNephrite from './Weapon_Twin_Nephrite.png'
 const refinementVals = [12, 14, 16, 18, 20]
 const weapon = {
   name: "Twin Nephrite",
   weaponType: "catalyst",
+  img: TwinNephrite,
   rarity: 3,
   passiveName: "Guerilla Tactic",
   passiveDescription: (refineIndex) => `Defeating an enemy increases Movement SPD and ATK by ${refinementVals[refineIndex]}% for 15s.`,

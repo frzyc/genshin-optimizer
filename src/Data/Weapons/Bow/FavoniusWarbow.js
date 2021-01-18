@@ -1,8 +1,10 @@
+import FavoniusWarbow from './Weapon_Favonius_Warbow.png'
 const refinementVals = [60, 70, 80, 90, 100]
 const refinementCdVals = [12, 10.5, 9, 7.5, 6]
 const weapon = {
   name: "Favonius Warbow",
   weaponType: "bow",
+  img: FavoniusWarbow,
   rarity: 4,
   passiveName: "Windfall",
   passiveDescription: (refineIndex) => `CRIT hits have a ${refinementVals[refineIndex]}% chance to generate 1 Elemental Orb, which will regenerate 6 Energy for the character. Can only occur once every ${refinementCdVals[refineIndex]}.`,

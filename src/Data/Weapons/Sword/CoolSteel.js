@@ -1,7 +1,9 @@
+import CoolSteel from './Weapon_Cool_Steel.png'
 const refinementVals = [12, 15, 18, 21, 24]
 const weapon = {
   name: "Cool Steel",
   weaponType: "sword",
+  img: CoolSteel,
   rarity: 3,
   passiveName: "Bane of Water and Ice",
   passiveDescription: (refineIndex) => <span>Increases DMG against opponents affected by <span className="text-hydro">Hydro</span> or <span className="text-cryo">Cryo</span> by {refinementVals[refineIndex]}%.`,

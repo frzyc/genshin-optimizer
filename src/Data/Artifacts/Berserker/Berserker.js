@@ -19,7 +19,7 @@ let artifact = {
     goblet,
     circlet
   },
-  sets: {
+  setEffects: {
     2: {
       text: "CRIT Rate +12%",
       stats: { crit_rate: 12 }

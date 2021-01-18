@@ -1,7 +1,9 @@
+import PrototypeGrudge from './Weapon_Prototype_Grudge.png'
 const refinementVals = [8, 10, 12, 14, 16]
 const weapon = {
   name: "Prototype Starglitter",
   weaponType: "polearm",
+  img: PrototypeGrudge,
   rarity: 4,
   passiveName: "Magic Affinity",
   passiveDescription: (refineIndex) => `After using an Elemental Skill, increases Normal and Charged Attack DMG by ${refinementVals[refineIndex]}% for 12s. Max 2 stacks.`,

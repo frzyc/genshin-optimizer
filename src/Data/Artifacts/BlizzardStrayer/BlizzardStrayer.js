@@ -19,7 +19,7 @@ let artifact = {//Icebreaker
     goblet,
     circlet
   },
-  sets: {
+  setEffects: {
     2: {
       text: <span><span className="text-cryo">Cryo DMG Bonus</span> +15%</span>,
       stats: { cryo_ele_dmg_bonus: 15 }

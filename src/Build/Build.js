@@ -1,16 +1,6 @@
 import Artifact from "../Artifact/Artifact";
-import { ArtifactData, ArtifactSlotsData } from "../Data/ArtifactData";
 
 export default class Build {
-
-  //works with id indexed object for database.
-  static splitArtifactsBySlot(databaseObj) {
-    let ret = {}
-    for (let slot in ArtifactSlotsData)
-      ret[slot] = Object.values(databaseObj).filter(art => art.slotKey === slot)
-    return ret;
-
-  }
   /**
    * Calculate all the possible set configuration based on the filters.
    * [{Key:X,num:2},{key:Y,num:2},{key:"",num:0}]
@@ -23,7 +13,7 @@ export default class Build {
     if (useOther) sets.push("Other");
 
     let perm = [];
-    let slotKeys = Artifact.getArtifactSlotKeys();
+    let slotKeys = Artifact.getSlotKeys();
     //recursion function to loop through everything.
     let slotPerm = (index, accu) => {
       if (index >= slotKeys.length) {
@@ -45,7 +35,7 @@ export default class Build {
       let slotKey = slotKeys[index];
       sets.forEach(setKey => {
         //see if this set is valid at this piece slot. some artifacts dont have artifacts at specific slots.
-        if (setKey === "Other" || (Object.keys(ArtifactData[setKey]?.pieces || {}).includes(slotKey))) {
+        if (setKey === "Other" || (Object.keys(Artifact.getPieces(setKey)).includes(slotKey))) {
           accu[slotKey] = setKey;
           slotPerm(index + 1, { ...accu })
         }

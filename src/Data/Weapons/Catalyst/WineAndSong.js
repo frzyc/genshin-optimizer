@@ -1,8 +1,10 @@
+import WineAndSong from './Weapon_Wine_and_Song.png'
 const refinementAtkVals = [8, 10, 12, 14, 16]
 const refinementMoveVals = [3, 3.5, 4, 4.5, 5]
 const weapon = {
   name: "Wine and Song",
   weaponType: "catalyst",
+  img: WineAndSong,
   rarity: 4,
   passiveName: "Wind in the Square",
   passiveDescription: (refineIndex) => `For every character in the party who hails from Mondstadt, the character who equips this weapon gains ${refinementAtkVals[refineIndex]}% ATK increase and ${refinementMoveVals[refineIndex]}% Movement SPD increase.`,

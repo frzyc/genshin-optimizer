@@ -1,8 +1,10 @@
+import SacrificialSword from './Weapon_Sacrificial_Sword.png'
 const refinementVals = [40, 50, 60, 70, 80]
 const refinementcdVals = [30, 26, 22, 19, 16]
 const weapon = {
   name: "Sacrificial Sword",
   weaponType: "sword",
+  img: SacrificialSword,
   rarity: 4,
   passiveName: "Composed",
   passiveDescription: (refineIndex) => `After damaging an opponent with an Elemental Skill, the skill has a ${refinementVals[refineIndex]}% chance to end its own CD. Can only occur once every ${refinementcdVals[refineIndex]}s.`,

@@ -1,3 +1,4 @@
+import AquilaFavonia from './Weapon_Aquila_Favonia.png'
 import Character from "../../../Character/Character"
 import DisplayPercent from "../../../Components/DisplayPercent"
 
@@ -7,6 +8,7 @@ const refinementDmgVals = [200, 230, 260, 290, 320]
 const weapon = {
   name: "Aquila Favonia",
   weaponType: "sword",
+  img: AquilaFavonia,
   rarity: 5,
   passiveName: "Falcon's Defiance",
   passiveDescription: (refineIndex, charFinalStats, c) => <span>ATK is increased by {refinementVals[refineIndex]}%. Triggers on taking DMG: the soul of the Falcon of the West awakens, holding the banner of resistance aloft, regenerating HP equal to {refinementRegenVals[refineIndex]}% of ATK{DisplayPercent(refinementRegenVals[refineIndex], charFinalStats, "atk_final")} and dealing {refinementDmgVals[refineIndex]}% of ATK{DisplayPercent(refinementDmgVals[refineIndex], charFinalStats, Character.getTalentStatKey("phy", c))} as DMG to surrounding opponents. This effect can only occur once every 15s.</span>,

@@ -1,7 +1,9 @@
+import IronSting from './Weapon_Iron_Sting.png'
 const refinementVals = [6, 7.5, 9, 10.5, 12]
 const weapon = {
   name: "Iron Sting",
   weaponType: "sword",
+  img: IronSting,
   rarity: 4,
   passiveName: "Infusion Stinger",
   passiveDescription: (refineIndex) => `Dealing Elemental DMG increases all DMG by ${refinementVals[refineIndex]}% for 6s. Max 2 stacks. Can occur once every 1s.`,

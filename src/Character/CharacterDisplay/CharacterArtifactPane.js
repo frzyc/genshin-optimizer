@@ -82,22 +82,18 @@ function CharacterArtifactPane({ character, character: { characterKey, compareAg
               <Card.Header>Artifact Set Effects</Card.Header>
               <Card.Body className="flex-grow-1">
                 <Row>
-                  {Object.entries(Artifact.getArtifactSetEffects(build.setToSlots)).map(([setKey, setNumKeyArr]) =>
+                  {Object.entries(Artifact.getSetEffects(build.setToSlots)).map(([setKey, setNumKeyArr]) =>
                     <Col key={setKey} xs={12} className="mb-2">
-                      <h5>{Artifact.getArtifactSetName(setKey)}</h5>
+                      <h5>{Artifact.getSetName(setKey)}</h5>
                       <Row>
                         {setNumKeyArr.map(setNumKey => {
                           let setStats = Artifact.getArtifactSetNumStats(setKey, setNumKey)
                           let conditionalNum = 0;
-                          let conditional = Artifact.getArtifactSetEffectConditional(setKey, setNumKey)
+                          let conditional = Artifact.getSetEffectConditional(setKey, setNumKey)
                           if (conditional) {
                             conditionalNum = ConditionalsUtil.getConditionalNum(artifactConditionals, { srcKey: setKey, srcKey2: setNumKey })
-                            let conditionalStats = Artifact.getArtifactConditionalStats(setKey, setNumKey, conditionalNum)
-                            if (conditionalStats) {
-                              if (!setStats) setStats = {}
-                              Object.entries(conditionalStats).forEach(([statKey, val]) =>
-                                setStats[statKey] = (setStats[statKey] || 0) + val)
-                            }
+                            Object.entries(Artifact.getConditionalStats(setKey, setNumKey, conditionalNum)).forEach(([statKey, val]) =>
+                              setStats[statKey] = (setStats[statKey] || 0) + val)
                           }
                           let conditionalElement = <ConditionalSelector
                             disabled={newBuild ? true : false}
@@ -107,7 +103,7 @@ function CharacterArtifactPane({ character, character: { characterKey, compareAg
                             defEle={<Badge variant="success">{setNumKey}-Set</Badge>}
                           />
                           return <Col key={setNumKey} xs={12} className="mb-2">
-                            <h6>{conditionalElement} {Artifact.getArtifactSetEffectText(setKey, setNumKey, build.finalStats)}</h6>
+                            <h6>{conditionalElement} {Artifact.getSetEffectText(setKey, setNumKey, build.finalStats)}</h6>
                             {setStats ? <Row>
                               {Object.entries(setStats).map(([statKey, val]) =>
                                 <Col xs={12} key={statKey}>{Stat.getStatName(statKey)}: {val}{Stat.getStatUnit(statKey)}</Col>)}

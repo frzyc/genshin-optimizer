@@ -19,7 +19,7 @@ let artifact = {
     goblet,
     circlet
   },
-  sets: {
+  setEffects: {
     2: {
       text: "Energy Recharge +20%",
       stats: { ener_rech: 20 }

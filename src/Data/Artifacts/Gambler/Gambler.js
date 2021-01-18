@@ -19,7 +19,7 @@ let artifact = {
     goblet,
     circlet
   },
-  sets: {
+  setEffects: {
     2: {
       text: "Elemental Skill DMG increased by 20%",
       stats: { skill_dmg_bonus: 20 }

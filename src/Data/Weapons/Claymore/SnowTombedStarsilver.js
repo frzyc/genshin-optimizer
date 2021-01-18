@@ -1,3 +1,4 @@
+import SnowTombedStarsilver from './Weapon_Snow-Tombed_Starsilver.png'
 import Character from "../../../Character/Character"
 import DisplayPercent from "../../../Components/DisplayPercent"
 
@@ -7,6 +8,7 @@ const refinementDmgBonusVals = [200, 240, 280, 320, 360]
 const weapon = {
   name: "Snow-Tombed Starsilver",
   weaponType: "claymore",
+  img: SnowTombedStarsilver,
   rarity: 4,
   passiveName: "Frost Burial",
   passiveDescription: (refineIndex, charFinalStats, c) => <span>Hitting an opponent with Normal and Charged Attacks has a {refinementVals[refineIndex]}% chance of forming and dropping an Everfrost Icicle above them, dealing {refinementDmgVals[refineIndex]}% AoE ATK DMG{DisplayPercent(refinementDmgVals[refineIndex], charFinalStats, Character.getTalentStatKey("phy", c))}. Opponents affected by <span className="text-cryo">Cryo</span> are dealt {refinementDmgBonusVals[refineIndex]}% ATK DMG{DisplayPercent(refinementDmgBonusVals[refineIndex], charFinalStats, Character.getTalentStatKey("phy", c))}. Can only occur once every 10s.</span>,

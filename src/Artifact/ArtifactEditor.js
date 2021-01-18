@@ -4,7 +4,6 @@ import React from 'react';
 import { Alert, Badge, Button, Card, Col, Dropdown, DropdownButton, FormControl, InputGroup, OverlayTrigger, Popover, Row } from 'react-bootstrap';
 import { FloatFormControl, IntFormControl } from '../Components/CustomFormControl';
 import { Stars } from '../Components/StarDisplay';
-import { ArtifactData, ArtifactSlotsData, ArtifactStarsData, ArtifactSubStatsData } from '../Data/ArtifactData';
 import Stat from '../Stat';
 import { deepClone, getArrLastElement, getRandomElementFromArray, getRandomIntInclusive } from '../Util/Util';
 import Artifact from './Artifact';
@@ -35,7 +34,7 @@ export default class ArtifactEditor extends React.Component {
   })
 
   getRemainingSubstats = () =>
-    Object.keys(ArtifactSubStatsData).filter(key => {
+    Artifact.getSubStatKeys().filter(key => {
       //if mainstat has key, not valid
       if (this.state.mainStatKey === key) return false;
       //if any one of the substat has, not valid.
@@ -70,7 +69,7 @@ export default class ArtifactEditor extends React.Component {
 
   setSlotKey = (slotKey) => this.setState(state => {
     //find a mainstat that isnt taken,
-    let mainstats = ArtifactSlotsData[slotKey].stats;
+    let mainstats = Artifact.getSlotMainStatKeys(slotKey);
     for (const mainStatKey of mainstats)
       if (!state.substats.some(substat => (substat && substat.key ? (substat.key === mainStatKey) : false)))
         return { slotKey, mainStatKey }
@@ -82,7 +81,7 @@ export default class ArtifactEditor extends React.Component {
 
   ArtifactDropDown = (props) => {
     let dropdownitemsForStar = (star) =>
-      Artifact.getArtifactSetsByMaxStarEntries(star).map(([key, setobj]) =>
+      Artifact.getSetsByMaxStarEntries(star).map(([key, setobj]) =>
       (<Dropdown.Item key={key}
         onClick={() => this.setSetKey(key)}
       >
@@ -91,7 +90,7 @@ export default class ArtifactEditor extends React.Component {
 
     return (<Dropdown as={InputGroup.Prepend} className="flex-grow-1">
       <Dropdown.Toggle className="w-100">
-        {Artifact.getArtifactSetName(this.state.setKey, "Artifact Set")}
+        {Artifact.getSetName(this.state.setKey, "Artifact Set")}
       </Dropdown.Toggle>
       <Dropdown.Menu>
         <Dropdown.ItemText>Max Rarity <Stars stars={5} /></Dropdown.ItemText>
@@ -112,11 +111,9 @@ export default class ArtifactEditor extends React.Component {
           {/* Don't know why I can't do <this.ArtifactDropDown />, it has error in production: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. */}
           {this.ArtifactDropDown()}
           <DropdownButton as={InputGroup.Append} title={this.state.numStars > 0 ? "🟊".repeat(this.state.numStars) : "Rarity"} disabled={!this.state.setKey}>
-            {Object.keys(ArtifactStarsData).map((star, index) => {
+            {Artifact.getStars().map((star, index) => {
               star = parseInt(star);
-              return <Dropdown.Item key={index} disabled={!this.state.setKey || !ArtifactData[this.state.setKey].rarity.includes(star)} onClick={() => {
-                this.setState({ numStars: star, level: 0 });
-              }}>
+              return <Dropdown.Item key={index} disabled={!Artifact.getRarityArr(this.state.setKey).includes(star)} onClick={() => this.setState({ numStars: star, level: 0 })}>
                 {<Stars stars={star} />}
               </Dropdown.Item>
             })}
@@ -148,17 +145,17 @@ export default class ArtifactEditor extends React.Component {
       <Col xs={12} lg={6} className="mb-2">
         <InputGroup>
           <DropdownButton
-            title={Artifact.getArtifactSlotNameWithIcon(this.state.slotKey, "Slot")}
+            title={Artifact.getSlotNameWithIcon(this.state.slotKey, "Slot")}
             disabled={!this.state.setKey}
             as={InputGroup.Prepend}
           >
-            {Object.keys(ArtifactData[this.state.setKey]?.pieces || []).map(slotKey =>
+            {Object.keys(Artifact.getPieces(this.state.setKey)).map(slotKey =>
               <Dropdown.Item key={slotKey} onClick={() => this.setSlotKey(slotKey)} >
-                {Artifact.getArtifactSlotNameWithIcon(slotKey, "Slot")}
+                {Artifact.getSlotNameWithIcon(slotKey, "Slot")}
               </Dropdown.Item>)}
           </DropdownButton>
           <FormControl
-            value={Artifact.getArtifactPieceName(this.state.setKey, this.state.slotKey, "Unknown Piece Name")}
+            value={Artifact.getPieceName(this.state.setKey, this.state.slotKey, "Unknown Piece Name")}
             disabled
             readOnly
           />
@@ -172,10 +169,10 @@ export default class ArtifactEditor extends React.Component {
             as={InputGroup.Prepend}
           >
             <Dropdown.ItemText>Select a Main Artifact Stat </Dropdown.ItemText>
-            {this.state.slotKey ? ArtifactSlotsData[this.state.slotKey].stats.map((mainStatKey) =>
+            {Artifact.getSlotMainStatKeys(this.state.slotKey).map((mainStatKey) =>
               <Dropdown.Item key={mainStatKey} onClick={() => this.setMainStatKey(mainStatKey)} >
                 {Stat.getStatNameWithPercent(mainStatKey)}
-              </Dropdown.Item>) : <Dropdown.Item />}
+              </Dropdown.Item>)}
           </DropdownButton>
           <FormControl
             value={this.state.mainStatKey ? `${Artifact.getMainStatValue(this.state.mainStatKey, this.state.numStars, this.state.level)}${Stat.getStatUnit(this.state.mainStatKey)}` : "Main Stat"}
@@ -259,16 +256,16 @@ export default class ArtifactEditor extends React.Component {
   randomizeArtifact = () => {
     let state = ArtifactEditor.getInitialState();
     //randomly choose artifact set
-    state.setKey = getRandomElementFromArray(Object.keys(ArtifactData));
+    state.setKey = getRandomElementFromArray(Artifact.getSetKeys());
     //choose star
-    state.numStars = getRandomElementFromArray(ArtifactData[state.setKey].rarity);
+    state.numStars = getRandomElementFromArray(Artifact.getRarityArr(state.setKey));
     //choose piece
-    state.slotKey = getRandomElementFromArray(Object.keys(ArtifactData[state.setKey].pieces));
+    state.slotKey = getRandomElementFromArray(Object.keys(Artifact.getPieces(state.setKey)));
     //choose mainstat
-    state.mainStatKey = getRandomElementFromArray(ArtifactSlotsData[state.slotKey].stats);
+    state.mainStatKey = getRandomElementFromArray(Artifact.getSlotMainStatKeys(state.slotKey));
 
     //choose initial substats from star
-    let numOfInitialSubStats = getRandomIntInclusive(ArtifactStarsData[state.numStars].subsBaselow, ArtifactStarsData[state.numStars].subBaseHigh);
+    let numOfInitialSubStats = getRandomIntInclusive(Artifact.getBaseSubRollNumLow(state.numStars), Artifact.getBaseSubRollNumHigh(state.numStars));
 
     //choose level
     state.level = getRandomIntInclusive(0, state.numStars * 4)

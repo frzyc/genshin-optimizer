@@ -1,7 +1,9 @@
+import AlleyHunter from './Weapon_Alley_Hunter.png'
 const refinementVals = [4, 5, 6, 7, 8]
 const weapon = {
   name: "Alley Hunter",
   weaponType: "bow",
+  img: AlleyHunter,
   rarity: 4,
   passiveName: "Urban Guerrilla",
   passiveDescription: (refineIndex) => `Every 4s a character is on the field, their ATK increases by ${refinementVals[refineIndex]}% and their CRIT DMG increases by ${refinementVals[refineIndex]}%. This effect has a maximum of 5 stacks and will not be reset if the character leaves the field, but will be cleared when the character takes DMG.`,

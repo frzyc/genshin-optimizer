@@ -19,7 +19,7 @@ let artifact = {
     goblet,
     circlet
   },
-  sets: {
+  setEffects: {
     2: {
       text: "Elemental Burst DMG +20%",
       stats: { burst_dmg_bonus: 20 }

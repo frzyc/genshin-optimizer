@@ -14,6 +14,7 @@ export default class Weapon {
   static getWeaponPassiveDescription = (weaponKey, refineIndex, charFinalStats, character, defVal = "") => (WeaponData[weaponKey]?.passiveDescription?.(refineIndex, charFinalStats, character) || defVal)
   static getWeaponDescription = (weaponKey, defVal = "") => (WeaponData[weaponKey]?.description || defVal)
   static getWeaponConditional = (weaponKey, defVal = null) => (WeaponData[weaponKey]?.conditional || defVal)
+  static getWeaponImg = (weaponKey, defVal = null) => WeaponData[weaponKey]?.img || defVal
 
   //base Stat
   static getWeaponMainStatVal = (weaponKey, levelKey, defVal = 0) => (WeaponData[weaponKey]?.baseStats?.main?.[this.getLevelIndex(levelKey)] || defVal)

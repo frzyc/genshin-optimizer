@@ -1,8 +1,10 @@
+import CompoundBow from './Weapon_Compound_Bow.png'
 const refinementVals = [4, 5, 6, 7, 8]
 const refinementSpdVals = [1.2, 1.5, 1.8, 2.1, 2.4]
 const weapon = {
   name: "Compound Bow",
   weaponType: "bow",
+  img: CompoundBow,
   rarity: 4,
   passiveName: "Infusion Arrow",
   passiveDescription: (refineIndex) => `Normal Attack and Charged Attack hits increase ATK by ${refinementVals[refineIndex]}% and Normal ATK SPD by ${refinementSpdVals[refineIndex]}% for 6s. Max 4 stacks. Can only occur once every 0.3s.`,

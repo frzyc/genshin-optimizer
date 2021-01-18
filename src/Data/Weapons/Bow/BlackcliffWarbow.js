@@ -1,7 +1,9 @@
+import BlackcliffWarbow from './Weapon_Blackcliff_Warbow.png'
 const refinementVals = [12, 15, 18, 21, 24]
 const weapon = {
   name: "Blackcliff Warbow",
   weaponType: "bow",
+  img: BlackcliffWarbow,
   rarity: 4,
   passiveName: "Press the Advantage",
   passiveDescription: (refineIndex) => `After defeating an opponent, ATK is increased by ${refinementVals[refineIndex]}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others.`,

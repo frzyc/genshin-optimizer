@@ -1,7 +1,9 @@
+import MemoryOfDust from './Weapon_Memory_of_Dust.png'
 const refinementVals = [4, 5, 6, 7, 8]
 const weapon = {
   name: "Memory of Dust",
   weaponType: "catalyst",
+  img: MemoryOfDust,
   rarity: 5,
   passiveName: "Golden Majesty",
   passiveDescription: (refineIndex) => `Increases Shield Strength by 20%. Scoring hits on opponents increases ATK by ${refinementVals[refineIndex]}% for 8s. Max 5 stacks. Can only occur once every 0.3s. While protected by a shield, this ATK increase effect is increased by 100%.`,

@@ -1,6 +1,8 @@
+import HuntersBow from './Weapon_Hunter\'s_Bow.png'
 const weapon = {
   name: "Hunter’s Bow",
   weaponType: "bow",
+  img: HuntersBow,
   rarity: 1,
   passiveName: "",
   passiveDescription: () => ``,

@@ -13,36 +13,80 @@ export default class Artifact {
   constructor() { if (this instanceof Artifact) throw Error('A static class cannot be instantiated.'); }
 
   //SETS
-  static getArtifactDataImport = () => ArtifactDataImport
-  static getArtifactSetName = (key, defVal = "") => ArtifactData?.[key]?.name || defVal;
-  static getArtifactSetsByMaxStarEntries = (star) =>
-    Object.entries(ArtifactData).filter(([key, setobj]) => setobj.rarity[(setobj.rarity.length) - 1] === star)
-  static getArtifactPieceName = (setKey, slotKey, defVal = "") => ArtifactData?.[setKey]?.pieces?.[slotKey] || defVal;
-  static getArtifactPieceIcon = (setKey, slotKey, defVal = null) => ArtifactData?.[setKey]?.icons?.[slotKey] || defVal;
-  static getArtifactSetEffectsObj = (setKey, defVal = null) => ArtifactData?.[setKey]?.sets || defVal
-  //SLOT
-  static getArtifactSlotKeys = () => Object.keys(ArtifactSlotsData)
-  static getArtifactSlotName = (slotKey, defVal = "") =>
-    ArtifactSlotsData[slotKey] ? ArtifactSlotsData[slotKey].name : defVal
-  static getArtifactSlotIcon = (slotKey, defVal = "") =>
-    (slotKey && SlotIcon[slotKey]) ? <FontAwesomeIcon icon={SlotIcon[slotKey]} key={slotKey} className="fa-fw" /> : defVal
+  static getDataImport = () => ArtifactDataImport
+  static getSetKeys = () => Object.keys(ArtifactData || {})
+  static getSetName = (key, defVal = "") => ArtifactData?.[key]?.name || defVal;
+  static getSetsByMaxStarEntries = (star) =>
+    Object.entries(ArtifactData || {}).filter(([, setobj]) => setobj.rarity[(setobj.rarity.length) - 1] === star)
+  static getPieces = (setKey, defVal = {}) => ArtifactData?.[setKey]?.pieces || defVal
+  static getPieceName = (setKey, slotKey, defVal = "") => this.getPieces(setKey)[slotKey] || defVal;
+  static getPieceIcon = (setKey, slotKey, defVal = null) => ArtifactData?.[setKey]?.icons?.[slotKey] || defVal;
 
-  static getArtifactSlotNameWithIcon = (slotKey, defVal = "") => {
+  //SETEFFECT
+  static getSetEffectsObj = (setKey, defVal = {}) => ArtifactData?.[setKey]?.setEffects || defVal
+  static getArtifactSetNumStats = (setKey, setNumKey, defVal = {}) =>
+    deepClone(this.getSetEffectsObj(setKey)?.[setNumKey]?.stats || defVal)
+  static getArtifactSetEffectsStats = (setToSlots) => {
+    let artifactSetEffect = []
+    Object.entries(setToSlots).forEach(([setKey, artArr]) =>
+      Object.entries(Artifact.getSetEffectsObj(setKey)).forEach(([setNumKey, value]) =>
+        parseInt(setNumKey) <= artArr.length && value.stats && Object.keys(value.stats).length &&
+        Object.entries(value.stats).forEach(([key, statVal]) =>
+          artifactSetEffect.push({ key, statVal }))))
+    return artifactSetEffect
+  }
+  static getSetEffects = (setToSlots) => {
+    let artifactSetEffect = {}
+    Object.entries(setToSlots).forEach(([setKey, artArr]) => {
+      let setNumKeys = Object.keys(this.getSetEffectsObj(setKey)).filter(setNumKey => parseInt(setNumKey) <= artArr.length)
+      if (setNumKeys.length)
+        artifactSetEffect[setKey] = setNumKeys
+    })
+    return artifactSetEffect
+  }
+
+  static getSetEffectText = (setKey, setNumKey, charFinalStats, defVal = "") => {
+    let setEffectText = this.getSetEffectsObj(setKey)?.[setNumKey]?.text
+    if (!setEffectText) return defVal
+    if (typeof setEffectText === "function")
+      return setEffectText(charFinalStats)
+    else if (setEffectText)
+      return setEffectText
+    return defVal
+  }
+  static getSetEffectConditional = (setKey, setNumKey, defVal = null) =>
+    this.getSetEffectsObj(setKey)?.[setNumKey]?.conditional || defVal
+
+  //SLOT
+  static getSlotKeys = () => Object.keys(ArtifactSlotsData || {})
+  static getSlotName = (slotKey, defVal = "") => ArtifactSlotsData?.[slotKey]?.name || defVal
+  static getSlotIcon = (slotKey, defVal = "") =>
+    (slotKey && SlotIcon[slotKey]) ? <FontAwesomeIcon icon={SlotIcon[slotKey]} key={slotKey} className="fa-fw" /> : defVal
+  static getSlotMainStatKeys = (slotKey, defVal = []) => ArtifactSlotsData?.[slotKey]?.stats || defVal
+
+  static getSlotNameWithIcon = (slotKey, defVal = "") => {
     if (!slotKey) return defVal;
-    let name = this.getArtifactSlotName(slotKey)
+    let name = this.getSlotName(slotKey)
     if (!name) return defVal;
-    let slotIcon = this.getArtifactSlotIcon(slotKey)
+    let slotIcon = this.getSlotIcon(slotKey)
     if (!slotIcon) return defVal;
     return (<span>{slotIcon} {name}</span>)
   }
+  static splitArtifactsBySlot = (databaseObj) =>
+    Object.fromEntries(this.getSlotKeys().map(slotKey =>
+      [slotKey, Object.values(databaseObj).filter(art => art.slotKey === slotKey)]))
 
   //STARS
-  static getRarityArr = (setKey) => ArtifactData[setKey] ? ArtifactData[setKey].rarity : []
+  static getStars = () => Object.keys(ArtifactStarsData || {})
+  static getRarityArr = (setKey, defVal = []) => ArtifactData?.[setKey]?.rarity || defVal
 
   //MAIN STATS
-  static getMainStatKeys = () => ArtifactMainSlotKeys
+  static getMainStatKeys = () => deepClone(ArtifactMainSlotKeys)
+  static getMainStatValues = (numStar, statKey, defVal = []) =>
+    ArtifactMainStatsData?.[numStar]?.[statKey] || defVal
+
   static getMainStatValue = (key, numStars, level, defVal = 0) => {
-    let main = ArtifactMainStatsData[numStars]?.[key]?.[level]
+    let main = this.getMainStatValues(numStars, key)[level]
     if (main) return main
     else if (key?.includes("_ele_dmg_bonus")) //because in the database its still stored as ele_dmg_bonus
       return this.getMainStatValue("ele_dmg_bonus", numStars, level, defVal)
@@ -50,7 +94,10 @@ export default class Artifact {
   }
 
   //SUBSTATS
-  static getSubStatKeys = () => Object.keys(ArtifactSubStatsData)
+  static getBaseSubRollNumLow = (numStars, defVal = 0) => ArtifactStarsData?.[numStars]?.subsBaselow || defVal
+  static getBaseSubRollNumHigh = (numStars, defVal = 0) => ArtifactStarsData?.[numStars]?.subBaseHigh || defVal
+  static getNumUpgradesOrUnlocks = (numStars, defVal = 0) => ArtifactStarsData?.[numStars]?.numUpgradesOrUnlocks || defVal
+  static getSubStatKeys = () => Object.keys(ArtifactSubStatsData || {})
   static totalPossibleRolls = (numStars) => ArtifactStarsData[numStars] ?
     (ArtifactStarsData[numStars].subBaseHigh + ArtifactStarsData[numStars].numUpgradesOrUnlocks) : 0;
   static rollsRemaining = (level, numStars) =>
@@ -135,59 +182,22 @@ export default class Artifact {
 
   static setToSlots = ArtifactBase.setToSlots;
 
-  static getArtifactSets = (setKey, defVal = null) =>
-    ArtifactData?.[setKey]?.sets || defVal
-  static getArtifactSetNumStats = (setKey, setNumKey, defVal = null) =>
-    deepClone(this.getArtifactSets(setKey)?.[setNumKey]?.stats || defVal)
-
-  static getArtifactConditionalStats = (setKey, setNumKey, conditionalNum, defVal = null) => {
+  static getConditionalStats = (setKey, setNumKey, conditionalNum, defVal = {}) => {
     if (!conditionalNum) return defVal
-    let conditional = this.getArtifactSetEffectConditional(setKey, setNumKey)
+    let conditional = this.getSetEffectConditional(setKey, setNumKey)
     if (!conditional) return defVal
     let [stats, stacks] = ConditionalsUtil.getConditionalProp(conditional, "stats", conditionalNum)
     if (!stacks) return defVal
     return Object.fromEntries(Object.entries(stats).map(([key, val]) => [key, val * stacks]))
   }
-  static getArtifactSetEffectsStats = (setToSlots) => {
-    let artifactSetEffect = []
-    Object.entries(setToSlots).forEach(([setKey, artArr]) =>
-      ArtifactData?.[setKey]?.sets && Object.entries(ArtifactData[setKey].sets).forEach(([setNumKey, value]) =>
-        parseInt(setNumKey) <= artArr.length && value.stats && Object.keys(value.stats).length &&
-        Object.entries(value.stats).forEach(([key, statVal]) =>
-          artifactSetEffect.push({ key, statVal }))))
-    return artifactSetEffect
-  }
-  static getArtifactSetEffects = (setToSlots) => {
-    let artifactSetEffect = {}
-    Object.entries(setToSlots).forEach(([setKey, artArr]) => {
-      if (ArtifactData?.[setKey]?.sets) {
-        let setNumKeys = Object.keys(ArtifactData[setKey].sets).filter(setNumKey => parseInt(setNumKey) <= artArr.length)
-        if (setNumKeys.length)
-          artifactSetEffect[setKey] = setNumKeys
-      }
-    })
-    return artifactSetEffect
-  }
-
-  static getArtifactSetEffectText = (setKey, setNumKey, charFinalStats, defVal = "") => {
-    let setEffectText = ArtifactData?.[setKey]?.sets?.[setNumKey]?.text
-    if (!setEffectText) return defVal
-    if (typeof setEffectText === "function")
-      return setEffectText(charFinalStats)
-    else if (setEffectText)
-      return setEffectText
-    return defVal
-  }
-  static getArtifactSetEffectConditional = (setKey, setNumKey, defVal = null) =>
-    ArtifactData?.[setKey]?.sets?.[setNumKey]?.conditional || defVal
 
   static getAllArtifactSetEffectsObj = (artifactConditionals) => {
     let ArtifactSetEffectsObj = {};
     Object.entries(ArtifactData).forEach(([setKey, setObj]) => {
       let setEffect = {}
       let hasSetEffect = false
-      if (setObj.sets)
-        Object.entries(setObj.sets).forEach(([setNumKey, setEffectObj]) => {
+      if (setObj.setEffects)
+        Object.entries(setObj.setEffects).forEach(([setNumKey, setEffectObj]) => {
           if (setEffectObj.stats && Object.keys(setEffectObj.stats).length > 0) {
             setEffect[setNumKey] = deepClone(setEffectObj.stats)
             hasSetEffect = true
@@ -195,8 +205,8 @@ export default class Artifact {
           if (setEffectObj.conditional) {
             let conditionalNum = ConditionalsUtil.getConditionalNum(artifactConditionals, { srcKey: setKey, srcKey2: setNumKey })
             if (conditionalNum) {
-              let condStats = this.getArtifactConditionalStats(setKey, setNumKey, conditionalNum)
-              if (condStats) {
+              let condStats = this.getConditionalStats(setKey, setNumKey, conditionalNum)
+              if (Object.keys(condStats) > 0) {
                 setEffect[setNumKey] = deepClone(condStats)
                 hasSetEffect = true
               }

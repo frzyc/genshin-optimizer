@@ -1,3 +1,4 @@
+import Halberd from './Weapon_Halberd.png'
 import Character from "../../../Character/Character"
 import DisplayPercent from "../../../Components/DisplayPercent"
 
@@ -5,6 +6,7 @@ const refinementVals = [160, 200, 240, 280, 320]
 const weapon = {
   name: "Halberd",
   weaponType: "polearm",
+  img: Halberd,
   rarity: 3,
   passiveName: "Heavy",
   passiveDescription: (refineIndex, charFinalStats, c) => <span>Normal Attacks deal an additional {refinementVals[refineIndex]}% ATK{DisplayPercent(refinementVals[refineIndex], charFinalStats, Character.getTalentStatKey("phy", c))} as DMG. Can only occur once every 10s.</span>,

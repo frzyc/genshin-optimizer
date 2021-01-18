@@ -9,7 +9,6 @@ import ReactGA from 'react-ga';
 import CharacterDatabase from '../Character/CharacterDatabase';
 import { IntFormControl } from '../Components/CustomFormControl';
 import { Stars } from '../Components/StarDisplay';
-import { ArtifactStarsData, ArtifactSubStatsData } from '../Data/ArtifactData';
 import { DatabaseInitAndVerify } from '../DatabaseUtil';
 import Stat from '../Stat';
 import { deepClone } from '../Util/Util';
@@ -75,7 +74,7 @@ export default class ArtifactDisplay extends React.Component {
     this.scrollRef = React.createRef()
     DatabaseInitAndVerify();
     this.setState({ artIdList: ArtifactDatabase.getArtifactIdList() })
-    Artifact.getArtifactDataImport()?.then(() => this.forceUpdate())
+    Artifact.getDataImport()?.then(() => this.forceUpdate())
   }
   render() {
     let totalArtNum = this.state.artIdList?.length || 0
@@ -94,7 +93,7 @@ export default class ArtifactDisplay extends React.Component {
       {Stat.getStatNameWithPercent(props.statKey)}
     </Dropdown.Item>)
     let dropdownitemsForStar = (star) =>
-      Artifact.getArtifactSetsByMaxStarEntries(star).map(([key, setobj]) =>
+      Artifact.getSetsByMaxStarEntries(star).map(([key, setobj]) =>
         <Dropdown.Item key={key} onClick={() => this.setState({ filterArtSetKey: key })}>
           {setobj.name}
         </Dropdown.Item >)
@@ -116,7 +115,7 @@ export default class ArtifactDisplay extends React.Component {
               <Col xs={12} lg={6} className="mb-2">
                 <Dropdown as={InputGroup.Prepend} className="flex-grow-1">
                   <Dropdown.Toggle className="w-100">
-                    {Artifact.getArtifactSetName(this.state.filterArtSetKey, "Artifact Set")}
+                    {Artifact.getSetName(this.state.filterArtSetKey, "Artifact Set")}
                   </Dropdown.Toggle>
                   <Dropdown.Menu>
                     <Dropdown.Item onClick={() => this.setState({ filterArtSetKey: "" })}>Unselect</Dropdown.Item>
@@ -135,7 +134,7 @@ export default class ArtifactDisplay extends React.Component {
               {/* Artifact stars filter */}
               <Col xs={12} lg={6} className="mb-2">
                 <ToggleButtonGroup className="w-100 d-flex" type="checkbox" as={InputGroup.Append} onChange={(e) => this.setState({ filterStars: e })} defaultValue={this.state.filterStars}>
-                  {Object.keys(ArtifactStarsData).map(star => {
+                  {Artifact.getStars().map(star => {
                     star = parseInt(star)
                     let selected = this.state.filterStars.includes(star)
                     return <ToggleButton key={star} value={star}><FontAwesomeIcon icon={selected ? faCheckSquare : faSquare} /> <Stars stars={star} /></ToggleButton>
@@ -166,15 +165,15 @@ export default class ArtifactDisplay extends React.Component {
                   <Col>
                     <Dropdown className="flex-grow-1">
                       <Dropdown.Toggle className="w-100">
-                        {Artifact.getArtifactSlotNameWithIcon(this.state.filterSlotKey, "Slot")}
+                        {Artifact.getSlotNameWithIcon(this.state.filterSlotKey, "Slot")}
                       </Dropdown.Toggle>
                       <Dropdown.Menu>
                         <Dropdown.Item onClick={() => this.setState({ filterSlotKey: "" })} >
                           Unselect
                         </Dropdown.Item>
-                        {Artifact.getArtifactSlotKeys().map(key =>
+                        {Artifact.getSlotKeys().map(key =>
                           <Dropdown.Item key={key} onClick={() => this.setState({ filterSlotKey: key })} >
-                            {Artifact.getArtifactSlotNameWithIcon(key)}
+                            {Artifact.getSlotNameWithIcon(key)}
                           </Dropdown.Item>)}
                       </Dropdown.Menu>
                     </Dropdown>
@@ -207,7 +206,7 @@ export default class ArtifactDisplay extends React.Component {
                           this.setState({ filterSubstates })
                         }}
                       >No Substat</Dropdown.Item>
-                      {Object.keys(ArtifactSubStatsData).filter(key => !this.state.filterSubstates.includes(key)).map(key =>
+                      {Artifact.getSubStatKeys().filter(key => !this.state.filterSubstates.includes(key)).map(key =>
                         <Dropdown.Item key={key}
                           onClick={() => {
                             let filterSubstates = deepClone(this.state.filterSubstates)

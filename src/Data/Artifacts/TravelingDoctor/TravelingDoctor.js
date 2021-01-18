@@ -20,7 +20,7 @@ let artifact = {
     goblet,
     circlet
   },
-  sets: {
+  setEffects: {
     2: {
       text: "Increases incoming healing by 20%.",
       stats: { inc_heal: 20 }

@@ -1,7 +1,9 @@
+import RoyalGrimoire from './Weapon_Royal_Grimoire.png'
 const refinementVals = [8, 10, 12, 14, 16]
 const weapon = {
   name: "Royal Grimoire",
   weaponType: "catalyst",
+  img: RoyalGrimoire,
   rarity: 4,
   passiveName: "Focus",
   passiveDescription: (refineIndex) => `Upon damaging an opponent, increases CRIT Rate by ${refinementVals[refineIndex]}%. Max 5 stacks. A CRIT hit removes all stacks.`,

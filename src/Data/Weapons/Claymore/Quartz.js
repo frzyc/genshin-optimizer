@@ -1,7 +1,9 @@
+import Quartz from './Weapon_Quartz.png'
 const refinementVals = [20, 25, 30, 35, 40]
 const weapon = {
   name: "Quartz",
   weaponType: "claymore",
+  img: Quartz,
   rarity: 3,
   passiveName: "Residual Heat",
   passiveDescription: (refineIndex) => <span>Upon causing an Overloaded, Melt, Burning, Vaporize, or a <span className="text-pyro">Pyro</span>-infused <span className="text-anemo">Swirl</span> reaction, ATK is increased by {refinementVals[refineIndex]}% for 12s.</span>,

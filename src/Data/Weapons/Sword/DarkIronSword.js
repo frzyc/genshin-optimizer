@@ -1,7 +1,9 @@
+import DarkIronSword from './Weapon_Dark_Iron_Sword.png'
 const refinementVals = [20, 25, 30, 35, 40]
 const weapon = {
   name: "Dark Iron Sword",
   weaponType: "sword",
+  img: DarkIronSword,
   rarity: 3,
   passiveName: "Elemental Mastery",
   passiveDescription: (refineIndex) => `Upon causing an Overloaded, Superconduct, Electro-Charged, or an Electro-infused Swirl reaction, ATK is increased by ${refinementVals[refineIndex]}% for 12s`,

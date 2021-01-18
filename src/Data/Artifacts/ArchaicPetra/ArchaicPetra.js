@@ -19,7 +19,7 @@ let artifact = {
     goblet,
     circlet
   },
-  sets: {
+  setEffects: {
     2: {
       text: <span>Gain a 15% <span className="text-geo">Geo DMG Bonus</span></span>,
       stats: { geo_ele_dmg_bonus: 15 }

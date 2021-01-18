@@ -1,7 +1,9 @@
+import Whiteblind from './Weapon_Whiteblind.png'
 const refinementVals = [6, 7.5, 9, 10.5, 12]
-const Whiteblind = {
+const weapon = {
   name: "Whiteblind",
   weaponType: "claymore",
+  img: Whiteblind,
   rarity: 4,
   passiveName: "Infusion Blade",
   passiveDescription: (refineIndex) => `On hit, Normal or Charged Attacks increase ATK and DEF by ${refinementVals[refineIndex]}% for 6s. Max 4 stacks. This effect can only occur once every 0.5s.`,
@@ -20,4 +22,4 @@ const Whiteblind = {
     })
   }
 }
-export default Whiteblind
+export default weapon

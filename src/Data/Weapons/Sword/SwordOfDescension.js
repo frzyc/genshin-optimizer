@@ -1,9 +1,11 @@
+import SwordOfDescension from './Weapon_Sword_of_Descension.png'
 import Character from "../../../Character/Character"
 import DisplayPercent from "../../../Components/DisplayPercent"
 
 const weapon = {
   name: "Sword of Descension",
   weaponType: "sword",
+  img: SwordOfDescension,
   rarity: 4,
   passiveName: "Descension",
   passiveDescription: (refineIndex, charFinalStats, c) => <span>Hitting opponents with Normal and Charged Attacks grants a 50% chance to deal 200% ATK as DMG{DisplayPercent(200, charFinalStats, Character.getTalentStatKey("phy", c))} in a small AoE. This effect can only occur once every 10s. Additionally, if the Traveler equips the Sword of Descension, their ATK is increased by 66.</span>,

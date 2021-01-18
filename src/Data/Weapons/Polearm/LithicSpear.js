@@ -1,7 +1,9 @@
+import LithicSpear from './Weapon_Lithic_Spear.png'
 const refinementVals = [20, 25, 30, 35, 40]
 const weapon = {
   name: "Lithic Spear",
   weaponType: "polearm",
+  img: LithicSpear,
   rarity: 4,
   passiveName: "Lithic Axiom - Subjugating Evil",
   passiveDescription: (refineIndex) => `Normal Attack hits have a 20% chance of causing the next Charged Attack performed in the following 10s to deal ${refinementVals[refineIndex]}% increased DMG.`,

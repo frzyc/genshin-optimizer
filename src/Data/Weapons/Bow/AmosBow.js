@@ -1,8 +1,10 @@
+import AmosBow from './Weapon_Amos\'_Bow.png'
 const refinementVals = [12, 15, 18, 21, 24]
 const refinementDmgVals = [8, 10, 12, 14, 16]
 const weapon = {
   name: "Amos’ Bow",
   weaponType: "bow",
+  img: AmosBow,
   rarity: 5,
   passiveName: "Strong-Willed",
   passiveDescription: (refineIndex) => `Increases Normal Attack and Charged Attack DMG by ${refinementVals[refineIndex]}%. Normal and Charged Attack DMG from arrows shot by a further ${refinementDmgVals[refineIndex]}% for every 0.1s that the arrow is in flight, up to 0.5s.`,

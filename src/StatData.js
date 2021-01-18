@@ -299,6 +299,7 @@ const eleFormulas = {
   })
   // delete StatData[key]
 })
+if (process.env.NODE_ENV === "development") console.log(StatData)
 
 //expand the eleFormulas to elementals
 Object.entries(eleFormulas).forEach(([key, func]) =>

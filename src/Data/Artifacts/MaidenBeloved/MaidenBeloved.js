@@ -19,7 +19,7 @@ let artifact = {
     goblet,
     circlet
   },
-  sets: {
+  setEffects: {
     2: {
       text: "Character Healing Effectiveness +15%",
       stats: { heal_bonu: 15 }

@@ -1,7 +1,9 @@
+import BlackcliffLongsword from './Weapon_Blackcliff_Longsword.png'
 const refinementVals = [12, 15, 18, 21, 24]
 const weapon = {
   name: "Blackcliff Longsword",
   weaponType: "sword",
+  img: BlackcliffLongsword,
   rarity: 4,
   passiveName: "Press the Advantage",
   passiveDescription: (refineIndex) => `After defeating an opponent, ATK is increased by ${refinementVals[refineIndex]}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others.`,

@@ -19,7 +19,7 @@ let artifact = {
     goblet,
     circlet
   },
-  sets: {
+  setEffects: {
     2: {
       text: <span><span className="text-physical">Physical DMG</span> +25%</span>,
       stats: { phy_dmg_bonus: 25 }

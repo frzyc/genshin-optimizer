@@ -182,7 +182,7 @@ export default class Character {
     //show elemental interactions
     keys.push(...ElementToReactionKeys[eleKey])
     let weaponTypeKey = this.getWeaponTypeKey(characterKey)
-    if (weaponTypeKey === "claymore") keys.push("shatter_dmg")
+    if (!keys.includes("shatter_dmg") && weaponTypeKey === "claymore") keys.push("shatter_dmg")
     return keys
   }
 
@@ -209,7 +209,7 @@ export default class Character {
     let artIdsNotOnCharacter = artifactIds
 
     //swap, by slot
-    Artifact.getArtifactSlotKeys().forEach(slotKey => {
+    Artifact.getSlotKeys().forEach(slotKey => {
       let artNotOnChar = ArtifactDatabase.getArtifact(artIdsNotOnCharacter?.[slotKey])
       if (artNotOnChar.location === characterId) return; //it is already equipped
       let artOnChar = ArtifactDatabase.getArtifact(artIdsOnCharacter?.[slotKey])
@@ -260,8 +260,8 @@ export default class Character {
     //setEffects conditionals
     artifactConditionals && artifactConditionals.forEach(conditional => {
       let { srcKey: setKey, srcKey2: setNumKey } = conditional
-      let condStats = Artifact.getArtifactConditionalStats(setKey, setNumKey, conditional.conditionalNum)
-      if (condStats) Object.entries(condStats).forEach(([statKey, val]) => stats[statKey] = (stats[statKey] || 0) + val)
+      Object.entries(Artifact.getConditionalStats(setKey, setNumKey, conditional.conditionalNum))
+        .forEach(([statKey, val]) => stats[statKey] = (stats[statKey] || 0) + val)
     })
     AttachLazyFormulas(stats)
     return {

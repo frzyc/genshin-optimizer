@@ -1,6 +1,8 @@
+import TheAlleyFlash from './Weapon_The_Alley_Flash.png'
 const weapon = {
   name: "The Alley Flash",
   weaponType: "sword",
+  img: TheAlleyFlash,
   rarity: 4,
   passiveName: "Itinerant Hero",
   passiveDescription: () => `Continuosly sprinting for at least 1s increases ATK by 28% for 6s. This effect cannot stack.`,

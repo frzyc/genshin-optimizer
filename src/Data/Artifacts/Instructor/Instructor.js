@@ -19,7 +19,7 @@ let artifact = {
     goblet,
     circlet
   },
-  sets: {
+  setEffects: {
     2: {
       text: "Increases Elemental Mastery by 80.",
       stats: { ele_mas: 80 }

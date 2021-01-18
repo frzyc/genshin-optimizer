@@ -21,6 +21,7 @@ const getDependency = (key) => {
     formulaKeyDependency[key] = dependency
 }
 Object.keys(Formulas).forEach(key => getDependency(key))
+if (process.env.NODE_ENV === "development") console.log(formulaKeyDependency)
 
 function DependencyStatKeys(key, formulaOverrides = []) {
   let dependencies = GetDependencyStats(key, formulaOverrides) || []

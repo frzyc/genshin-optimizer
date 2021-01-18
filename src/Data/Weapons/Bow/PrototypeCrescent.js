@@ -1,7 +1,9 @@
+import PrototypeCrescent from './Weapon_Prototype_Crescent.png'
 const refinementVals = [36, 45, 54, 63, 72]
 const weapon = {
   name: "Prototype Crescent",
   weaponType: "bow",
+  img: PrototypeCrescent,
   rarity: 4,
   passiveName: "Unreturning",
   passiveDescription: (refineIndex) => `Charged Attack hits on weak points increase Movement SPD by 10% and ATK by ${refinementVals[refineIndex]}% for 10s.`,

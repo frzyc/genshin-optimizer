@@ -19,7 +19,7 @@ let artifact = {
     goblet,
     circlet
   },
-  sets: {
+  setEffects: {
     2: {
       text: "Increases the effectiveness of shields by 35%",
       stats: { pow_shield: 35 }

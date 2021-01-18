@@ -21,7 +21,7 @@ export default function CharacterCard(props) {
     Promise.all([
       Character.getCharacterDataImport(),
       Weapon.getWeaponDataImport(),
-      Artifact.getArtifactDataImport(),
+      Artifact.getDataImport(),
     ]).then(() => forceUpdate())
   }, [])
   let { characterId, onEdit, onDelete } = props
@@ -79,8 +79,8 @@ export default function CharacterCard(props) {
       </Row>
       <Row>
         <Col>
-          {Object.entries(Artifact.getArtifactSetEffects(setToSlots)).map(([key, arr]) => {
-            let artifactSetName = Artifact.getArtifactSetName(key)
+          {Object.entries(Artifact.getSetEffects(setToSlots)).map(([key, arr]) => {
+            let artifactSetName = Artifact.getSetName(key)
             let highestNum = Math.max(...arr)
             return <h5 key={key}><Badge variant="secondary">{artifactSetName} <Badge variant="success">{highestNum}</Badge></Badge></h5>
           })}

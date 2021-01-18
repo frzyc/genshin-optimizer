@@ -1,7 +1,9 @@
+import Rainslasher from './Weapon_Rainslasher.png'
 const refinementVals = [20, 24, 28, 32, 36]
 const weapon = {
   name: "Rainslasher",
   weaponType: "claymore",
+  img: Rainslasher,
   rarity: 4,
   passiveName: "Bane of Storm and Tide",
   passiveDescription: (refineIndex) => `Increases DMG against opponents affected by Hydro or Electro by ${refinementVals[refineIndex]}%.`,

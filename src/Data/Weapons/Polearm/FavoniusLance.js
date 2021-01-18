@@ -1,8 +1,10 @@
+import FavoniusLance from './Weapon_Favonius_Lance.png'
 const refinementVals = [60, 70, 80, 90, 100]
 const refinementCdVals = [12, 10.5, 9, 7.5, 6]
 const weapon = {
   name: "Favonius Lance",
   weaponType: "polearm",
+  img: FavoniusLance,
   rarity: 4,
   passiveName: "Windfall",
   passiveDescription: (refineIndex) => `CRIT Hits have a ${refinementVals[refineIndex]}% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every ${refinementCdVals[refineIndex]}s.`,

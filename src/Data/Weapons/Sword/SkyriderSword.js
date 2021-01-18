@@ -1,7 +1,9 @@
+import SkyriderSword from './Weapon_Skyrider_Sword.png'
 const refinementVals = [12, 15, 18, 21, 24]
 const weapon = {
   name: "Skyrider Sword",
   weaponType: "sword",
+  img: SkyriderSword,
   rarity: 3,
   passiveName: "Determination",
   passiveDescription: (refineIndex) => `Using an Elemental Burst grants a ${refinementVals[refineIndex]}% increase in ATK and Movement SPD for 15s.`,

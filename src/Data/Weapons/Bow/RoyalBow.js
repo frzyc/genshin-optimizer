@@ -1,7 +1,9 @@
-const refinementVals = [8,10,12,14,16]
+import RoyalBow from './Weapon_Royal_Bow.png'
+const refinementVals = [8, 10, 12, 14, 16]
 const weapon = {
   name: "Royal Bow",
   weaponType: "bow",
+  img: RoyalBow,
   rarity: 4,
   passiveName: "Focus",
   passiveDescription: (refineIndex) => `Upon damaging an opponent, increases CRIT Rate by ${refinementVals[refineIndex]}%. Max 5 stacks. A CRIT hit removes all stacks.`,

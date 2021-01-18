@@ -1,7 +1,9 @@
+import HarbingerOfDawn from './Weapon_Harbinger_of_Dawn.png'
 const refinementVals = [14, 17.5, 21, 24.5, 28]
 const weapon = {
   name: "Harbinger of Dawn",
   weaponType: "sword",
+  img: HarbingerOfDawn,
   rarity: 3,
   passiveName: "Vigorous",
   passiveDescription: (refineIndex) => `When HP is above 90%, increases CRIT Rate by ${refinementVals[refineIndex]}%.`,

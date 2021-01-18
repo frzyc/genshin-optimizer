@@ -1,8 +1,10 @@
+import SerpentSpine from './Weapon_Serpent_Spine.png'
 const refinementVals = [6, 7, 8, 9, 10]
 const refinementTakeDmgVals = [3, 2.7, 2.4, 2.2, 2]
 const weapon = {
   name: "Serpent Spine",
   weaponType: "claymore",
+  img: SerpentSpine,
   rarity: 4,
   passiveName: "Wavesplitter",
   passiveDescription: (refineIndex) => `Every 4s a character is on the field, they will deal ${refinementVals[refineIndex]}% more DMG and take ${refinementTakeDmgVals[refineIndex]}% more DMG. This effect has a maximum of 5 stacks and will not be reset if the character leaves the field, but will be reduced by 1 stack when the character takes DMG.`,

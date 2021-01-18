@@ -1,8 +1,10 @@
+import LithicBlade from './Weapon_Lithic_Blade.png'
 const refinementCritVals = [2, 3, 4, 6, 6]
 const refinementAtkVals = [6, 7, 8, 9, 10]
 const weapon = {
   name: "Lithic Blade",
   weaponType: "claymore",
+  img: LithicBlade,
   rarity: 4,
   passiveName: "Lithic Axiom - Unity",
   passiveDescription: (refineIndex) => `For every character in the party who hails from Liyue, the character who equips this weapon gains ${refinementAtkVals[refineIndex]}% ATK increase and ${refinementCritVals[refineIndex]}% CRIT Rate increase.`,

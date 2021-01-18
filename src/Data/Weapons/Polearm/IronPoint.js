@@ -1,6 +1,8 @@
+import IronPoint from './Weapon_Iron_Point.png'
 const weapon = {
   name: "Iron Point",
   weaponType: "polearm",
+  img: IronPoint,
   rarity: 2,
   passiveName: "",
   passiveDescription: () => ``,

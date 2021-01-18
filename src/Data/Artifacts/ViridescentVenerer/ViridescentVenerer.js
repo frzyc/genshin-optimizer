@@ -19,7 +19,7 @@ let artifact = {
     goblet,
     circlet
   },
-  sets: {
+  setEffects: {
     2: {
       text: <span><span className="text-anemo">Anemo DMG Bonus</span> +15%</span>,
       stats: { anemo_ele_dmg_bonus: 15 }

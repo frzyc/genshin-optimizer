@@ -1,7 +1,9 @@
+import RoyalLongsword from './Weapon_Royal_Longsword.png'
 const refinementVals = [8, 10, 12, 14, 16]
 const weapon = {
   name: "Royal Longsword",
   weaponType: "sword",
+  img: RoyalLongsword,
   rarity: 4,
   passiveName: "Focus",
   passiveDescription: (refineIndex) => `Upon damaging an opponent, increases CRIT Rate by ${refinementVals[refineIndex]}%. Max 5 stacks. A CRIT Hit removes all stacks.`,

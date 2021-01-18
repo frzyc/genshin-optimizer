@@ -143,7 +143,7 @@ function WeaponStatsEditorCard(props) {
     <Card.Body>
       <Row className="mb-2">
         <Col xs={12} md={3}>
-          <Image src={Assets.weapons[weapon.key]} className={`w-100 h-auto grad-${Weapon.getWeaponRarity(weapon.key)}star`} thumbnail />
+          <Image src={Weapon.getWeaponImg(weapon.key)} className={`w-100 h-auto grad-${Weapon.getWeaponRarity(weapon.key)}star`} thumbnail />
         </Col>
         {editing ? <Col>
           <Row>

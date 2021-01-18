@@ -1,10 +1,11 @@
 import Character from "../../../Character/Character"
 import DisplayPercent from "../../../Components/DisplayPercent"
-
+import CrescentPike from './Weapon_Crescent_Pike.png'
 const refinementVals = [20, 25, 30, 35, 40]
 const weapon = {
   name: "Crescent Pike",
   weaponType: "polearm",
+  img: CrescentPike,
   rarity: 4,
   passiveName: "Infusion Needle",
   passiveDescription: (refineIndex, charFinalStats, c) => <span>After picking up an Elemental Orb/Particle, Normal and Charged Attacks deal an additional {refinementVals[refineIndex]}% ATK DMG{DisplayPercent(refinementVals[refineIndex], charFinalStats, Character.getTalentStatKey("phy", c))} for 5s.</span>,

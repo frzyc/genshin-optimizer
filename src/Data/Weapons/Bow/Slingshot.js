@@ -1,7 +1,9 @@
+import Slingshot from './Weapon_Slingshot.png'
 const refinementVals = [36, 42, 48, 54, 60]
 const weapon = {
   name: "Slingshot",
   weaponType: "bow",
+  img: Slingshot,
   rarity: 3,
   passiveName: "Slingshot",
   passiveDescription: (refineIndex) => `If a Normal or Charged Attack hits a target within 0.3s of being fired, increases DMG by ${refinementVals[refineIndex]}%. Otherwise, decreases DMG by 10%.`,

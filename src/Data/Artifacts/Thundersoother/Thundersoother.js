@@ -19,7 +19,7 @@ let artifact = {
     goblet,
     circlet
   },
-  sets: {
+  setEffects: {
     2: {
       text: <span><span className="text-electro">Electro RES</span> increased by 40%</span>,
       stats: { electro_ele_res: 40 }

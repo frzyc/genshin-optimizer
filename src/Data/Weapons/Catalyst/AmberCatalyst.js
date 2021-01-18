@@ -1,7 +1,9 @@
+import AmberCatalyst from './Weapon_Amber_Catalyst.png'
 const refinementVals = [6, 7.5, 9, 10.5, 12]
 const weapon = {
   name: "Amber Catalyst",
   weaponType: "catalyst",
+  img: AmberCatalyst,
   rarity: 3,
   passiveName: "Elemental Mastery",
   passiveDescription: (refineIndex) => `Normal Attack hits increase all Elemental DMG by ${refinementVals[refineIndex]}% for 6s. Max 2 stacks.`,

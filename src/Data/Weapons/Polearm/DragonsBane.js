@@ -1,7 +1,9 @@
+import DragonsBane from './Weapon_Dragon\'s_Bane.png'
 const refinementVals = [20, 24, 28, 32, 36]
 const weapon = {
   name: "Dragon’s Bane",
   weaponType: "polearm",
+  img: DragonsBane,
   rarity: 4,
   passiveName: "Bane of Flame and Water",
   passiveDescription: (refineIndex) => <span>Increases DMG against opponents affected by <span className="text-hydro">Hydro</span> or <span className="text-pyro">Pyro</span> by {refinementVals[refineIndex]}%.</span>,

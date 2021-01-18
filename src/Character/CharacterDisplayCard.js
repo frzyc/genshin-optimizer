@@ -116,7 +116,7 @@ export default class CharacterDisplayCard extends React.Component {
     Promise.all([
       Character.getCharacterDataImport(),
       Weapon.getWeaponDataImport(),
-      Artifact.getArtifactDataImport(),
+      Artifact.getDataImport(),
     ]).then(() => this.forceUpdate())
   }
   componentDidUpdate() {
@@ -208,7 +208,7 @@ export default class CharacterDisplayCard extends React.Component {
         </Row>
       </Card.Header>
       <Card.Body>
-        <Tab.Container defaultActiveKey={newBuild ? "newartifacts" : "character"}>
+        <Tab.Container defaultActiveKey={newBuild ? "newartifacts" : "character"} mountOnEnter={true} unmountOnExit={true}>
           <Nav variant="pills" className="mb-2 ml-2">
             <Nav.Item >
               <Nav.Link eventKey="character">Character</Nav.Link>

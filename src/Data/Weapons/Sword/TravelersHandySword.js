@@ -1,9 +1,10 @@
 import DisplayPercent from "../../../Components/DisplayPercent"
-
+import TravelersHandySword from './Weapon_Traveler\'s_Handy_Sword.png'
 const refinementVals = [1, 1.25, 1.5, 1.75, 2]
 const weapon = {
   name: "Traveler’s Handy Sword",
   weaponType: "sword",
+  img: TravelersHandySword,
   rarity: 3,
   passiveName: "Journey",
   passiveDescription: (refineIndex, charFinalStats) => <span>Each Elemental Orb or Particle collected restores {refinementVals[refineIndex]}% HP{DisplayPercent(refinementVals[refineIndex], charFinalStats, "hp_final")}.</span>,

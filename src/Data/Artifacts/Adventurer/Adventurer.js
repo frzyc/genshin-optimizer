@@ -20,7 +20,7 @@ let artifact = {
     goblet,
     circlet
   },
-  sets: {
+  setEffects: {
     2: {
       text: "Max HP increased by 1,000.",
       stats: { hp: 1000 }

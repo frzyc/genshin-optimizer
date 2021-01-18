@@ -19,7 +19,7 @@ let artifact = {//Ocean Conqueror
     goblet,
     circlet
   },
-  sets: {
+  setEffects: {
     2: {
       text: <span><span className="text-hydro">Hydro DMG Bonus</span> +15%</span>,
       stats: { hydro_ele_dmg_bonus: 15 }

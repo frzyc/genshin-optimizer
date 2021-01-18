@@ -1,8 +1,10 @@
+import FavoniusCodex from './Weapon_Favonius_Codex.png'
 const refinementVals = [60, 70, 80, 90, 100]
 const refinementCdVals = [12, 10.5, 9, 7.5, 6]
 const weapon = {
   name: "Favonius Codex",
   weaponType: "catalyst",
+  img: FavoniusCodex,
   rarity: 4,
   passiveName: "Critical Charge",
   passiveDescription: (refineIndex) => `CRIT hits have a ${refinementVals[refineIndex]}% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every ${refinementCdVals[refineIndex]}s.`,

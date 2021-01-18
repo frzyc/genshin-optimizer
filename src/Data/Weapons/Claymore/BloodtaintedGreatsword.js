@@ -1,7 +1,9 @@
+import BloodtaintedGreatsword from './Weapon_Bloodtainted_Greatsword.png'
 const refinementVals = [12, 15, 18, 21, 24]
 const weapon = {
   name: "Bloodtainted Greatsword",
   weaponType: "claymore",
+  img: BloodtaintedGreatsword,
   rarity: 3,
   passiveName: "Bane of Fire and Thunder",
   passiveDescription: (refineIndex) => <span>Increases DMG dealt against opponents affected by <span className="text-pyro">Pyro</span> or <span className="text-electro">Electro</span> by {refinementVals[refineIndex]}%.</span>,

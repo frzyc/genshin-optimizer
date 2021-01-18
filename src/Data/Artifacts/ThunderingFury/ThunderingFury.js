@@ -18,7 +18,7 @@ let artifact = {
     goblet,
     circlet
   },
-  sets: {
+  setEffects: {
     2: {
       text: <span><span className="text-electro">Electro DMG Bonus</span> +15%</span>,
       stats: { electro_ele_dmg_bonus: 15 }

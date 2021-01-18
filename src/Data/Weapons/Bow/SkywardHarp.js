@@ -1,3 +1,4 @@
+import SkywardHarp from './Weapon_Skyward_Harp.png'
 import Character from "../../../Character/Character"
 import DisplayPercent from "../../../Components/DisplayPercent"
 
@@ -6,6 +7,7 @@ const refinementChangeVals = [60, 70, 80, 90, 100]
 const weapon = {
   name: "Skyward Harp",
   weaponType: "bow",
+  img: SkywardHarp,
   rarity: 5,
   passiveName: "Echoing Ballad",
   passiveDescription: (refineIndex, charFinalStats, c) => <span>Increases CRIT DMG by {refinementVals[refineIndex]}%. Hits have a {refinementChangeVals[refineIndex]}% chance to inflict a small AoE attack, dealing 125% <span className="text-physical">Physical ATK DMG</span>{DisplayPercent(125, charFinalStats, Character.getTalentStatKey("phy", c))}. Can only occur once every 4s.</span>,//$

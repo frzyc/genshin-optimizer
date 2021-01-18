@@ -1,8 +1,10 @@
+import FerrousShadow from './Weapon_Ferrous_Shadow.png'
 const refinementHpVals = [70, 75, 80, 85, 90]
 const refinementVals = [30, 35, 40, 45, 50]
 const weapon = {
   name: "Ferrous Shadow",
   weaponType: "claymore",
+  img: FerrousShadow,
   rarity: 3,
   passiveName: "Unbending",
   passiveDescription: (refineIndex) => `When HP falls below ${refinementHpVals[refineIndex]}%, increases Charged Attack DMG by ${refinementVals[refineIndex]}% and Charged Attacks become harder to interrupt.`,

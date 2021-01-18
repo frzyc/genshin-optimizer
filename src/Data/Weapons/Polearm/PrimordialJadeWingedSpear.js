@@ -1,8 +1,10 @@
+import PrimordialJadeWingedSpear from './Weapon_Primordial_Jade_Winged-Spear.png'
 const refinementVals = [3.2, 3.9, 4.6, 5.3, 6]
 const refinementDmgVals = [12, 15, 18, 21, 24]
 const weapon = {
   name: "Primordial Jade Winged-Spear",
   weaponType: "polearm",
+  img: PrimordialJadeWingedSpear,
   rarity: 5,
   passiveName: "Eagle Spear of Justice",
   passiveDescription: (refineIndex) => `On hit, increases ATK by ${refinementVals[refineIndex]}% for 6s. Max 7 stacks. This effect can only occur once every 0.3s. While in possession of the maximum possible stacks, DMG dealt is increased by ${refinementDmgVals[refineIndex]}%.`,

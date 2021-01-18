@@ -1,7 +1,9 @@
+import RavenBow from './Weapon_Raven_Bow.png'
 const refinementVals = [12, 15, 18, 21, 24]
 const weapon = {
   name: "Raven Bow",
   weaponType: "bow",
+  img: RavenBow,
   rarity: 3,
   passiveName: "Bane of Flame and Water",
   passiveDescription: (refineIndex) => <span>Increases DMG against opponents affected by <span className="text-hydro">Hydro</span> or <span className="text-pyro">Pyro</span> by {refinementVals[refineIndex]}%.</span>,

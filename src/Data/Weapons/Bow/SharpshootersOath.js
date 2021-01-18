@@ -1,7 +1,9 @@
+import SharpshootersOath from './Weapon_Sharpshooter\'s_Oath.png'
 const refinementVals = [24, 30, 36, 42, 48]
 const weapon = {
   name: "Sharpshooter’s Oath",
   weaponType: "bow",
+  img: SharpshootersOath,
   rarity: 3,
   passiveName: "Precise",
   passiveDescription: (refineIndex) => `Increases DMG against weak spots by ${refinementVals[refineIndex]}%.`,

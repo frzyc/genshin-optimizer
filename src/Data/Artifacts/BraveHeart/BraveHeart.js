@@ -19,7 +19,7 @@ let artifact = {
     goblet,
     circlet
   },
-  sets: {
+  setEffects: {
     2: {
       text: "2-piece Set Bonus: ATK +18%",
       stats: { atk_: 18 }

@@ -1,8 +1,10 @@
+import FesteringDesire from './Weapon_Festering_Desire.png'
 const refinementVals = [16, 20, 24, 28, 32]
 const refinementVals2 = [6, 7.5, 9, 10.5, 12]
 const weapon = {
   name: "Festering Desire",
   weaponType: "sword",
+  img: FesteringDesire,
   rarity: 4,
   passiveName: "Undying Admiration",
   passiveDescription: (refineIndex) => `Increases Elemental Skill DMG by ${refinementVals[refineIndex]}% and Elemental Skill CRIT Rate by ${refinementVals2[refineIndex]}%.`,

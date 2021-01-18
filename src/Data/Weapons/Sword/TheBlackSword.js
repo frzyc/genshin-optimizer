@@ -1,3 +1,4 @@
+import TheBlackSword from './Weapon_The_Black_Sword.png'
 import DisplayPercent from "../../../Components/DisplayPercent"
 
 const refinementVals = [20, 25, 30, 35, 40]
@@ -5,6 +6,7 @@ const refinementRegenVals = [60, 70, 80, 90, 100]
 const weapon = {
   name: "The Black Sword",
   weaponType: "sword",
+  img: TheBlackSword,
   rarity: 4,
   passiveName: "Justice",
   passiveDescription: (refineIndex, charFinalStats) => <span>Increases DMG dealt by Normal and Charged Attacks by {refinementVals[refineIndex]}%. Additionally, regenerates {refinementRegenVals[refineIndex]}% of ATK{DisplayPercent(refinementRegenVals[refineIndex], charFinalStats, "atk_final")} as HP when Normal and Charged Attacks score a CRIT Hit. This effect can occur once every 5s.</span>,

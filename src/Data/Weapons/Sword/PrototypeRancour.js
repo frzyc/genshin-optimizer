@@ -1,7 +1,9 @@
+import PrototypeRancour from './Weapon_Prototype_Rancour.png'
 const refinementVals = [4, 5, 6, 7, 8]
 const weapon = {
   name: "Prototype Rancour",
   weaponType: "sword",
+  img: PrototypeRancour,
   rarity: 4,
   passiveName: "Smashed Stone",
   passiveDescription: (refineIndex) => `On hit, Normal or Charged Attacks increase ATK and DEF by ${refinementVals[refineIndex]}% for 6s. Max 4 stacks. This effect can only occur once every 0.3s.`,

@@ -1,7 +1,9 @@
+import BlackTassel from './Weapon_Black_Tassel.png'
 const refinementVals = [40, 50, 60, 70, 80]
 const weapon = {
   name: "Black Tassel",
   weaponType: "polearm",
+  img: BlackTassel,
   rarity: 3,
   passiveName: "Bane of the Soft",
   passiveDescription: (refineIndex) => `Increases DMG against slimes by ${refinementVals[refineIndex]}%.`,

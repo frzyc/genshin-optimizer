@@ -1,8 +1,10 @@
+import Deathmatch from './Weapon_Deathmatch.png'
 const refinementVals = [16, 20, 24, 28, 32]
 const refinementSoloVals = [24, 30, 36, 42, 48]
 const weapon = {
   name: "Deathmatch",
   weaponType: "polearm",
+  img: Deathmatch,
   rarity: 4,
   passiveName: "Gladiator",
   passiveDescription: (refineIndex) => `If there are at least 2 opponents nearby, ATK is increased by ${refinementVals[refineIndex]}% and DEF is increased by ${refinementVals[refineIndex]}%. If there are less than 2 opponents nearby, ATK is increased by ${refinementSoloVals[refineIndex]}%.`,

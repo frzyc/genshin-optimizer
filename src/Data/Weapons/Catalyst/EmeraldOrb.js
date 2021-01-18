@@ -1,7 +1,9 @@
+import EmeraldOrb from './Weapon_Emerald_Orb.png'
 const refinementVals = [20, 25, 30, 35, 40]
 const weapon = {
   name: "Emerald Orb",
   weaponType: "catalyst",
+  img: EmeraldOrb,
   rarity: 3,
   passiveName: "Rapids",
   passiveDescription: (refineIndex) => `Upon causing a Vaporize, Electro-Charged, Frozen, or a Hydro-infused Swirl reaction, increases ATK by ${refinementVals[refineIndex]}% for 12s.`,

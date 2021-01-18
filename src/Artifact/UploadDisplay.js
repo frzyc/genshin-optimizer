@@ -4,7 +4,6 @@ import React, { useEffect, useState } from 'react';
 import { Button, Card, Col, Form, Modal, ProgressBar, Row } from 'react-bootstrap';
 import ReactGA from 'react-ga';
 import { createWorker } from 'tesseract.js';
-import { ArtifactData, ArtifactMainStatsData, ArtifactSlotsData } from '../Data/ArtifactData';
 import scan_art_main from "../imgs/scan_art_main.png";
 import Snippet from "../imgs/snippet.png";
 import Stat from '../Stat';
@@ -13,7 +12,7 @@ import Artifact from './Artifact';
 
 const starColor = { r: 255, g: 204, b: 50 } //#FFCC32
 
-function UploadDisplay(props) {
+export default function UploadDisplay(props) {
   const [fileName, setFileName] = useState("Click here to Upload Artifact Screenshot File");
   const [image, setImage] = useState('');
 
@@ -45,7 +44,8 @@ function UploadDisplay(props) {
     setMainStatProgVariant("")
   }
 
-  const ocrImage = async (image, sProgress, sProgvariant) => {
+  const ocrImage = async (image, sProgress, sProgvariant, debug) => {
+    if (process.env.NODE_ENV === "development" && debug) setImage(image)
     let tworker = createWorker({
       logger: m => {
         m.status === "loading tesseract core" && sProgvariant("danger");
@@ -61,6 +61,7 @@ function UploadDisplay(props) {
     await tworker.initialize('eng');
     let rec = await tworker.recognize(image);
     await tworker.terminate();
+    if (process.env.NODE_ENV === "development" && debug) console.log(rec)
     return rec
   }
 
@@ -95,8 +96,11 @@ function UploadDisplay(props) {
     let mainStatKey = parseMainStatKey(mainStatOCRText)
     let { mainStatValue, unit = "" } = parseMainStatvalue(whiteparsed)
     //the main stat value is used to distinguish main stats between % and flat
-    if (unit === "%" && (mainStatKey === "hp" || mainStatKey === "def" || mainStatKey === "atk"))
-      mainStatKey += "_"
+    if (mainStatKey === "hp" || mainStatKey === "def" || mainStatKey === "atk")
+      if (unit === "%" || Artifact.getSlotMainStatKeys(slotKey).includes(`${mainStatKey}_`))
+        mainStatKey = `${mainStatKey}_`
+    if (slotKey && !Artifact.getSlotMainStatKeys(slotKey).includes(mainStatKey))
+      mainStatKey = ""
 
     if (setKey && numStars)
       if (!Artifact.getRarityArr(setKey).includes(numStars))
@@ -104,7 +108,7 @@ function UploadDisplay(props) {
 
     //if main stat isnt parsed, then we try to guess it
     if (slotKey && !mainStatKey) {
-      let stats = ArtifactSlotsData[slotKey].stats
+      let stats = Artifact.getSlotMainStatKeys(slotKey)
       if (stats.length === 1) mainStatKey = stats[0]
       else {
         stats = stats.filter(stat => {
@@ -118,10 +122,10 @@ function UploadDisplay(props) {
     }
     let guessLevel = (nStars, mainSKey, mainSVal) => {
       //if level isn't parsed, then we try to guess it
-      let valArr = ArtifactMainStatsData?.[nStars]?.[mainSKey.includes("ele_dmg_bonus") ? "ele_dmg_bonus" : mainSKey]
-      if (valArr) {
+      let mainStatValues = Artifact.getMainStatValues(nStars, mainSKey.includes("ele_dmg_bonus") ? "ele_dmg_bonus" : mainSKey)
+      if (mainStatValues.length > 0) {
         let isFloat = Stat.getStatUnit(mainSKey) === "%"
-        let testLevel = valArr.findIndex(val => isFloat ? (Math.abs(mainSVal - val) < 0.1) : (mainSVal === val))
+        let testLevel = mainStatValues.findIndex(val => isFloat ? (Math.abs(mainSVal - val) < 0.1) : (mainSVal === val))
         if (testLevel !== -1) {
           level = testLevel
           return true
@@ -135,7 +139,7 @@ function UploadDisplay(props) {
 
     //try to guess the level when we only have mainStatKey and mainStatValue
     if (isNaN(level) && mainStatKey && mainStatValue) {
-      let stars = setKey ? Artifact.getRarityArr(setKey) : Object.keys(ArtifactMainStatsData).reverse()//reverse so we check 5* first
+      let stars = setKey ? Artifact.getRarityArr(setKey) : Artifact.getStars().reverse()//reverse so we check 5* first
       for (const nStar of stars)
         if (guessLevel(nStar, mainStatKey, mainStatValue)) {
           if (!setKey || Artifact.getRarityArr(setKey).includes(nStar)) {
@@ -166,62 +170,6 @@ function UploadDisplay(props) {
     props.setState?.(state)
   }
 
-  let explainationModal =
-    (<Modal show={modalShow} onHide={() => setModalShow(false)} size="xl" variant="success" contentClassName="bg-transparent">
-      <Card bg="darkcontent" text="lightfont" >
-        <Card.Header>
-          <Card.Title>
-            <Row>
-              <Col><span>How do Upload Screenshots for parsing</span></Col>
-              <Col xs="auto">
-                <Button variant="danger" onClick={() => setModalShow(false)} >
-                  <FontAwesomeIcon icon={faTimes} /></Button>
-              </Col>
-            </Row>
-          </Card.Title>
-        </Card.Header>
-        <Card.Body>
-          <Row>
-            <Col xs={8} md={4}>
-              <img alt="snippet of the screen to take" src={Snippet} className="w-100 h-auto" />
-            </Col>
-            <Col xs={12} md={8}>
-
-              <p>Using screenshots can dramatically decrease the amount of time you manually input in stats on the Genshin Optimizer.</p>
-              <h5>What to include in the screenshot.</h5>
-              <p>
-                In Genshin Impact, Open your bag, and navigate to the artifacts tab. Select the artifact you want to scan with Genshin Optimizer.
-                To Take a screenshot, in Windows, the shortcut is <strong>Shift + WindowsKey + S</strong>.
-                Once you selected the region, the image is automatically included in your clipboard.
-              </p></Col>
-          </Row>
-
-          <Row>
-            <Col>
-              <h5>Adding Screenshot to Genshin Optimizer</h5>
-              <p>
-                At this point, you should have the artifact snippet either saved to your harddrive, or in your clipboard.
-                You can click on the box next to "Browse" to browse the file in your harddrive, or even easier, just press <strong>Ctrl + V</strong> to paste from your clipboard.
-                You should be able to see a Preview of your artifact snippet, and after waiting a few seconds, the artifact set and the substats will be filled in in the <b>Artifact Editor</b>.
-              </p>
-            </Col>
-            <Col xs={12}>
-              <h5>Finishing the Artifact</h5>
-              <p>
-                Unfortunately, computer vision is not 100%. There will always be cases where something is not scanned properly. You should always double check the scanned artifact values!
-                Once the artifact has been filled, Click on <strong>Add Artifact</strong> to finish editing the artifact.
-              </p>
-              <img alt="main screen after importing stats" src={scan_art_main} className="w-75 h-auto" />
-            </Col>
-          </Row>
-        </Card.Body>
-        <Card.Footer>
-          <Button variant="danger" onClick={() => setModalShow(false)}>
-            <span>Close</span>
-          </Button>
-        </Card.Footer>
-      </Card>
-    </Modal>)
   useEffect(() => {
     let pasteFunc = e =>
       uploadedFile(e.clipboardData.files[0])
@@ -230,13 +178,13 @@ function UploadDisplay(props) {
     return () =>
       window.removeEventListener('paste', pasteFunc)
   })
-  let img = image ? <img src={image} className="w-100 h-auto" alt="Screenshot to parse for artifact values" /> : <span>Please Select an Image</span>
+  let img = Boolean(image) && <img src={image} className="w-100 h-auto" alt="Screenshot to parse for artifact values" />
   let artSetProgPercent = (artSetProgress * 100).toFixed(1)
   let mainstatProgPercent = (mainStatProgress * 100).toFixed(1)
   let substatProgPercent = (substatProgress * 100).toFixed(1)
   let otherProgPercent = (otherProgress * 100).toFixed(1)
   return (<Row>
-    {explainationModal}
+    <ExplainationModal {...{ modalShow, setModalShow }} />
     <Col>
       <Row className="mb-1">
         <Col>
@@ -255,6 +203,7 @@ function UploadDisplay(props) {
         <Col xs={8} lg={4}>
           {img}
         </Col>
+        {Boolean(!image) && <Col>Please Select an Image, or paste a screenshot here (Ctrl+V)</Col>}
         {scanning ? <Col xs={12} lg={8}>
           <h6>{`Scan${artSetProgPercent < 100 ? "ning" : "ned"} Artifact Set`}</h6>
           <ProgressBar variant={artSetProgVariant} now={artSetProgPercent} label={`${artSetProgPercent}%`} className="mb-3" />
@@ -286,7 +235,66 @@ function UploadDisplay(props) {
     </Col>
   </Row>)
 }
-export default UploadDisplay;
+function ExplainationModal({ modalShow, setModalShow }) {
+  return <Modal show={modalShow} onHide={() => setModalShow(false)} size="xl" variant="success" contentClassName="bg-transparent">
+    <Card bg="darkcontent" text="lightfont" >
+      <Card.Header>
+        <Card.Title>
+          <Row>
+            <Col><span>How do Upload Screenshots for parsing</span></Col>
+            <Col xs="auto">
+              <Button variant="danger" onClick={() => setModalShow(false)} >
+                <FontAwesomeIcon icon={faTimes} /></Button>
+            </Col>
+          </Row>
+        </Card.Title>
+      </Card.Header>
+      <Card.Body>
+        <Row>
+          <Col xs={8} md={4}>
+            <img alt="snippet of the screen to take" src={Snippet} className="w-100 h-auto" />
+          </Col>
+          <Col xs={12} md={8}>
+
+            <p>Using screenshots can dramatically decrease the amount of time you manually input in stats on the Genshin Optimizer.</p>
+            <h5>What to include in the screenshot.</h5>
+            <p>
+              In Genshin Impact, Open your bag, and navigate to the artifacts tab. Select the artifact you want to scan with Genshin Optimizer.
+          To Take a screenshot, in Windows, the shortcut is <strong>Shift + WindowsKey + S</strong>.
+          Once you selected the region, the image is automatically included in your clipboard.
+        </p></Col>
+        </Row>
+
+        <Row>
+          <Col>
+            <h5>Adding Screenshot to Genshin Optimizer</h5>
+            <p>
+              At this point, you should have the artifact snippet either saved to your harddrive, or in your clipboard.
+          You can click on the box next to "Browse" to browse the file in your harddrive, or even easier, just press <strong>Ctrl + V</strong> to paste from your clipboard.
+          You should be able to see a Preview of your artifact snippet, and after waiting a few seconds, the artifact set and the substats will be filled in in the <b>Artifact Editor</b>.
+        </p>
+          </Col>
+          <Col xs={12}>
+            <h5>Finishing the Artifact</h5>
+            <p>
+              Unfortunately, computer vision is not 100%. There will always be cases where something is not scanned properly. You should always double check the scanned artifact values!
+          Once the artifact has been filled, Click on <strong>Add Artifact</strong> to finish editing the artifact.
+        </p>
+            <img alt="main screen after importing stats" src={scan_art_main} className="w-75 h-auto" />
+          </Col>
+        </Row>
+      </Card.Body>
+      <Card.Footer>
+        <Button variant="danger" onClick={() => setModalShow(false)}>
+          <span>Close</span>
+        </Button>
+      </Card.Footer>
+    </Card>
+  </Modal>
+}
+
+
+
 let reader = new FileReader()
 function fileToURL(file) {
   return new Promise(resolve => {
@@ -470,8 +478,8 @@ function parseSetKey(recognition, defVal = "") {
   if (!texts) return defVal
   //parse for sets
   for (const text of texts)
-    for (const [key, setObj] of Object.entries(ArtifactData))
-      if (text.toLowerCase().replace(/\W/g, '').includes(setObj.name.toLowerCase().replace(/\W/g, '')))
+    for (const key of Artifact.getSetKeys())
+      if (text.toLowerCase().replace(/\W/g, '').includes(Artifact.getSetName(key).toLowerCase().replace(/\W/g, '')))
         return key//props.setSetKey(key);
 }
 function parseSlotKey(recognition, defVal = "") {
@@ -479,8 +487,8 @@ function parseSlotKey(recognition, defVal = "") {
   if (!texts) return defVal
   //parse for slot
   for (const text of texts)
-    for (const [key, slotObj] of Object.entries(ArtifactSlotsData))
-      if (text.toLowerCase().replace(/\W/g, '').includes(slotObj.name.toLowerCase().replace(/\W/g, '')))
+    for (const key of Artifact.getSlotKeys())
+      if (text.toLowerCase().replace(/\W/g, '').includes(Artifact.getSlotName(key).toLowerCase().replace(/\W/g, '')))
         return key;//props.setSlotKey(key);
 }
 // function parseLevel(text) {

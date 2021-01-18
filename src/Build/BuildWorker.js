@@ -4,6 +4,7 @@ import { AttachLazyFormulas } from "../StatData";
 
 onmessage = async (e) => {
   let { splitArtifacts, artifactSetPerms, setFilters, initialStats, artifactSetEffects, maxBuildsToShow, buildFilterKey, asending, depdendencyStatKeys } = e.data;
+  if (process.env.NODE_ENV === "development") console.log(JSON.stringify(depdendencyStatKeys))
   let t1 = performance.now()
   let artifactPerms = generateAllPossibleArtifactPerm(splitArtifacts, artifactSetPerms, setFilters)
   let builds = artifactPerms.map(artifacts =>
@@ -11,6 +12,7 @@ onmessage = async (e) => {
   let t2 = performance.now()
   builds.sort((a, b) => asending ? (a.builFilterVal - b.builFilterVal) : (b.builFilterVal - a.builFilterVal))
   builds.splice(maxBuildsToShow)
+  if (process.env.NODE_ENV === "development") console.log(builds.map(b => b.builFilterVal))
   postMessage({ builds, timing: t2 - t1 })
 };
 const generateAllPossibleArtifactPerm = (splitArtifacts, setPerms, setFilters) => {

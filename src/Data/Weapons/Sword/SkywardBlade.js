@@ -1,3 +1,4 @@
+import SkywardBlade from './Weapon_Skyward_Blade.png'
 const refinementVals = [4, 5, 6, 7, 8]
 const refinementMoveSpdVals = [10, 10, 10, 10, 10]
 const refinementatkSpdVals = [10, 10, 10, 10, 10]
@@ -5,6 +6,7 @@ const refinementautoVals = [20, 25, 30, 35, 40]
 const weapon = {
   name: "Skyward Blade",
   weaponType: "sword",
+  img: SkywardBlade,
   rarity: 5,
   passiveName: "Sky-Piercing Fang",
   passiveDescription: (refineIndex) => `CRIT Rate increased by ${refinementVals[refineIndex]}%. Gains Skypiercing Might upon using an Elemental Burst: Increases Movement SPD by ${refinementMoveSpdVals[refineIndex]}%, increases ATK SPD by ${refinementatkSpdVals[refineIndex]}%, and increases the DMG of Normal and Charged Attack hits by ${refinementautoVals[refineIndex]}% for 12s.`,

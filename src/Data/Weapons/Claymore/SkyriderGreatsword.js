@@ -1,7 +1,9 @@
+import SkyriderGreatsword from './Weapon_Skyrider_Greatsword.png'
 const refinementVals = [6, 7, 8, 9, 10]
 const weapon = {
   name: "Skyrider Greatsword",
   weaponType: "claymore",
+  img: SkyriderGreatsword,
   rarity: 3,
   passiveName: "Courage",
   passiveDescription: (refineIndex) => `On hit, Normal or Charged Attacks increase ATK by ${refinementVals[refineIndex]}% for 6s. Max 4 stacks. Can occur once every 0.5s.`,

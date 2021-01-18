@@ -1,7 +1,9 @@
+import LionsRoar from './Weapon_Lion\'s_Roar.png'
 const refinementVals = [20, 24, 28, 32, 36]
 const weapon = {
   name: "Lion’s Roar",
   weaponType: "sword",
+  img: LionsRoar,
   rarity: 4,
   passiveName: "Bane of Fire and Thunder",
   passiveDescription: (refineIndex) => <span>Increases DMG against opponents affected by <span className="text-pyro">Pyro</span> or <span className="text-electro">Electro</span> by {refinementVals[refineIndex]}%.</span>,

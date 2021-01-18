@@ -1,5 +1,3 @@
-import weapons from './Weapons/Weapons'
-
 import anemo from './Element_Anemo.png'
 import cryo from './Element_Cryo.png'
 import dendro from './Element_Dendro.png'
@@ -23,7 +21,6 @@ import wit from './Item_Hero\'s_Wit.png'
 import experience from './Item_Adventurer\'s_Experience.png'
 
 let Assets = {
-  weapons,
   elements: { anemo, cryo, dendro, electro, geo, hydro, pyro },
   weaponTypes: { bow, catalyst, claymore, polearm, sword },
   resin: {

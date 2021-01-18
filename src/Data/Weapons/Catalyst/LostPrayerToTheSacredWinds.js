@@ -1,7 +1,9 @@
+import LostPrayerToTheSacredWinds from './Weapon_Lost_Prayer_to_the_Sacred_Winds.png'
 const refinementVals = [8, 10, 12, 14, 16]
 const weapon = {
   name: "Lost Prayer to the Sacred Winds",
   weaponType: "catalyst",
+  img: LostPrayerToTheSacredWinds,
   rarity: 5,
   passiveName: "Boundless Blessing",
   passiveDescription: (refineIndex) => `Increases Movement SPD by 10%. When in battle, gain an ${refinementVals[refineIndex]}% Elemental DMG Bonus every 4s. Max 4 stacks. Lasts until the character falls or leaves combat.`,

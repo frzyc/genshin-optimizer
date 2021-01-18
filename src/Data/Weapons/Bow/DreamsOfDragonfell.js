@@ -1,8 +1,10 @@
+import DreamsOfDragonfell from './dreams_of_dragonfell.png'
 const refinementVals = [20, 25, 30, 35, 40]
 const refinementAtkVals = [4, 5, 6, 7, 8]
 const weapon = {
   name: "Dreams of Dragonfell",
   weaponType: "bow",
+  img: DreamsOfDragonfell,
   rarity: 5,
   passiveName: "Golden Majesty",
   passiveDescription: (refineIndex) => `Increases Shield Strength by ${refinementVals[refineIndex]}%. Scoring hits on opponents increases ATK by ${refinementAtkVals[refineIndex]}% for 8s. Max 5 stacks. Can only occur once every 0.3s. While protected by a shield, this ATK increase effect is increased by 100%.`,

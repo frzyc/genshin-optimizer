@@ -1,7 +1,9 @@
+import MagicGuide from './Weapon_Magic_Guide.png'
 const refinementVals = [12, 15, 18, 21, 24]
 const weapon = {
   name: "Magic Guide",
   weaponType: "catalyst",
+  img: MagicGuide,
   rarity: 3,
   passiveName: "Bane of Storm and Tide",
   passiveDescription: (refineIndex) => `Increases DMG against enemies affected by Hydro or Electro by ${refinementVals[refineIndex]}%.`,

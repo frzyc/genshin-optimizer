@@ -19,7 +19,7 @@ let artifact = {
     goblet,
     circlet
   },
-  sets: {
+  setEffects: {
     2: {
       text: "Increases Normal Attack and Charged Attack DMG by 15%.",
       stats: {

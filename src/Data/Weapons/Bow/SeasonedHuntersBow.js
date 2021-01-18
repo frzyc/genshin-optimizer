@@ -1,6 +1,8 @@
+import SeasonedHuntersBow from './Weapon_Seasoned_Hunter\'s_Bow.png'
 const weapon = {
   name: "Seasoned Hunter’s Bow",
   weaponType: "bow",
+  img: SeasonedHuntersBow,
   rarity: 2,
   passiveName: "",
   passiveDescription: () => ``,

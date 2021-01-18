@@ -1,7 +1,9 @@
+import MappaMare from './Weapon_Mappa_Mare.png'
 const refinementVals = [8, 10, 12, 14, 16]
 const weapon = {
   name: "Mappa Mare",
   weaponType: "catalyst",
+  img: MappaMare,
   rarity: 4,
   passiveName: "Infusion Scroll",
   passiveDescription: (refineIndex) => `Triggering an Elemental reaction grants a ${refinementVals[refineIndex]}% Elemental DMG Bonus for 10s. Max 2 stacks.`,

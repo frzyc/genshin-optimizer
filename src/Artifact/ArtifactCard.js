@@ -30,17 +30,17 @@ export default function ArtifactCard({ artifactId, forceUpdate, onEdit, onDelete
     <Card.Header className="p-0">
       <Row>
         <Col xs={2} md={3}>
-          <Image src={Artifact.getArtifactPieceIcon(art.setKey, art.slotKey)} className={`w-100 h-auto grad-${art.numStars}star m-1`} thumbnail />
+          <Image src={Artifact.getPieceIcon(art.setKey, art.slotKey)} className={`w-100 h-auto grad-${art.numStars}star m-1`} thumbnail />
         </Col>
         <Col className="pt-3">
-          <h6><b>{`${Artifact.getArtifactPieceName(art.setKey, art.slotKey, "Unknown Piece Name")}`}</b></h6>
-          <div>{Artifact.getArtifactSlotNameWithIcon(art.slotKey)}{` +${art.level}`}</div>
+          <h6><b>{Artifact.getPieceName(art.setKey, art.slotKey, "Unknown Piece Name")}</b></h6>
+          <div>{Artifact.getSlotNameWithIcon(art.slotKey)}{` +${art.level}`}</div>
         </Col>
       </Row>
     </Card.Header>
     <Card.Body className="d-flex flex-column py-2">
       <Card.Title>
-        <div>{Artifact.getArtifactSetName(art.setKey, "Artifact Set")}</div>
+        <div>{Artifact.getSetName(art.setKey, "Artifact Set")}</div>
         <small className="text-halfsize"><Stars stars={art.numStars} /></small>
       </Card.Title>
       <h5 className="mb-1">

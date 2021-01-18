@@ -1,7 +1,9 @@
+import EbonyBow from './Weapon_Ebony_Bow.png'
 const refinementVals = [40, 50, 60, 70, 80]
 const weapon = {
   name: "Ebony Bow",
   weaponType: "bow",
+  img: EbonyBow,
   rarity: 3,
   passiveName: "Decimate",
   passiveDescription: (refineIndex) => `Increases DMG against mechanoid Ruin opponents by ${refinementVals[refineIndex]}%.`,

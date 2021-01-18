@@ -1,3 +1,4 @@
+import TheBell from './Weapon_The_Bell.png'
 import DisplayPercent from "../../../Components/DisplayPercent"
 
 const refinementVals = [12, 15, 18, 21, 24]
@@ -5,6 +6,7 @@ const refinementShieldVals = [20, 23, 26, 29, 32]
 const weapon = {
   name: "The Bell",
   weaponType: "claymore",
+  img: TheBell,
   rarity: 4,
   passiveName: "Rebellious Guardian",
   passiveDescription: (refineIndex, charFinalStats) => <span>Taking DMG generates a shield which absorbs DMG up to {refinementShieldVals[refineIndex]}% of Max HP{DisplayPercent(refinementShieldVals[refineIndex], charFinalStats, "hp_final")}. This shield lasts for 10s or until broken, and can only be triggered once every 45s. While protected by the shield, the character gains {refinementVals[refineIndex]}% increased DMG.</span>,

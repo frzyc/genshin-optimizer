@@ -1,12 +1,14 @@
+import OtherworldlyStory from './Weapon_Otherworldly_Story.png'
 import DisplayPercent from "../../../Components/DisplayPercent"
 
 const refinementVals = [1, 1.25, 1.5, 1.75, 2]
 const weapon = {
   name: "Otherworldly Story",
   weaponType: "catalyst",
+  img: OtherworldlyStory,
   rarity: 3,
   passiveName: "Energy Shower",
-  passiveDescription: (refineIndex, charFinalStats) => <span>Each Elemental Orb or Particle collected restores {refinementVals[refineIndex]}% HP{DisplayPercent(refinementVals[refineIndex], charFinalStats,"hp_final")}</span>,
+  passiveDescription: (refineIndex, charFinalStats) => <span>Each Elemental Orb or Particle collected restores {refinementVals[refineIndex]}% HP{DisplayPercent(refinementVals[refineIndex], charFinalStats, "hp_final")}</span>,
   description: "A cheap fantasy novel with no value whatsoever. Any claim that it possesses the power of catalysis is also pure fantasy.",
   baseStats: {
     main: [39, 50, 65, 79, 94, 113, 127, 141, 155, 169, 189, 202, 216, 236, 249, 263, 282, 296, 309, 329, 342, 355, 375, 388, 401],

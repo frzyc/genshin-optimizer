@@ -1,7 +1,9 @@
+import RoyalSpear from './Weapon_Royal_Spear.png'
 const refinementVals = [8, 10, 12, 14, 16]
 const weapon = {
   name: "Royal Spear",
   weaponType: "polearm",
+  img: RoyalSpear,
   rarity: 4,
   passiveName: "Focus",
   passiveDescription: (refineIndex) => `Upon damaging an opponent, increases CRIT Rate by ${refinementVals[refineIndex]}%. Max 5 stacks. A CRIT Hit removes all stacks.`,

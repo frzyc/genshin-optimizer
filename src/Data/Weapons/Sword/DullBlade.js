@@ -1,6 +1,8 @@
+import DullBlade from './Weapon_Dull_Blade.png'
 const weapon = {
   name: "Dull Blade",
   weaponType: "sword",
+  img: DullBlade,
   rarity: 1,
   passiveName: "",
   passiveDescription: () => "",

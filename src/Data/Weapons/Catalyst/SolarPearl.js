@@ -1,7 +1,9 @@
+import SolarPearl from './Weapon_Solar_Pearl.png'
 const refinementVals = [20, 25, 30, 35, 40]
 const weapon = {
   name: "Solar Pearl",
   weaponType: "catalyst",
+  img: SolarPearl,
   rarity: 4,
   passiveName: "Solar Shine",
   passiveDescription: (refineIndex) => `Normal Attack hits increase Elemental Skill and Elemental Burst DMG by ${refinementVals[refineIndex]}% for 6s. Likewise, Elemental Skill or Elemental Burst hits increase Normal Attack DMG by ${refinementVals[refineIndex]}% for 6s.`,
