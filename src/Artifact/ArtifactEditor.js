@@ -17,6 +17,8 @@ export default class ArtifactEditor extends React.Component {
     this.state = ArtifactEditor.getInitialState()
   }
   static initialState = {
+    id: null,
+    artifactIdToEdit: null,
     setKey: "",
     numStars: 0,
     level: 0,
@@ -43,8 +45,8 @@ export default class ArtifactEditor extends React.Component {
   saveArtifact = () => {
     this.uploadDisplayReset()
     let saveArtifact = deepClone(this.state)
-    if (saveArtifact.artifactToEdit)
-      delete saveArtifact.artifactToEdit;
+    if (saveArtifact.artifactIdToEdit)
+      delete saveArtifact.artifactIdToEdit;
     this.props.addArtifact?.(saveArtifact)
     this.setState(ArtifactEditor.getInitialState());
   }
@@ -301,8 +303,8 @@ export default class ArtifactEditor extends React.Component {
     this.setState(state)
   }
   componentDidUpdate = () => {
-    if (this.props.artifactToEdit && this.state.id !== this.props.artifactToEdit.id)
-      this.setState(this.props.artifactToEdit)
+    if (this.props.artifactIdToEdit && this.state.id !== this.props.artifactIdToEdit)
+      this.setState(ArtifactDatabase.getArtifact(this.props.artifactIdToEdit))
   }
   render() {
     let remainingSubstats = this.getRemainingSubstats();
@@ -384,7 +386,7 @@ export default class ArtifactEditor extends React.Component {
         </Card.Body>
         <Card.Footer>
           <Button className="mr-3" onClick={this.saveArtifact} disabled={ArtifactDatabase.isInvalid(this.state)}>
-            {this.props.artifactToEdit ? "Save Artifact" : "Add Artifact"}
+            {this.props.artifactIdToEdit ? "Save Artifact" : "Add Artifact"}
           </Button>
           <Button className="mr-3" variant="success"
             onClick={() => {

@@ -28,10 +28,9 @@ export default class BuildDisplay extends React.Component {
     super(props)
     DatabaseInitAndVerify();
     this.state = BuildDisplay.getInitialState();
-    if (props.location.selectedCharacterId) {
-      this.state = BuildDisplay.getInitialState();
-      props.location.selectedCharacterId && (this.state.selectedCharacterId = props.location.selectedCharacterId)
-    } else {
+    if (props.location.selectedCharacterId)
+      this.state.selectedCharacterId = props.location.selectedCharacterId
+    else {
       let savedState = loadFromLocalStorage("BuildsDisplay.state")
       if (savedState) {
         let character = CharacterDatabase.getCharacter(savedState.selectedCharacterId)

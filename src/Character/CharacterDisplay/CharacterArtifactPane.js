@@ -74,7 +74,7 @@ function CharacterArtifactPane({ character, character: { characterKey, compareAg
         </Accordion>
       </Col>
     </Row>
-    <Row>
+    <Row className="mb-n2">
       <Col>
         <Row>
           <Col sm={6} lg={4} className="mb-2">
@@ -117,9 +117,9 @@ function CharacterArtifactPane({ character, character: { characterKey, compareAg
               </Card.Body>
             </Card>
           </Col>
-          {Object.values(build.artifactIds).map(artid =>
-            artid ? <Col sm={6} lg={4} key={artid} className="mb-2">
-              <ArtifactCard artifactId={artid} forceUpdate={forceUpdate} assumeFull={artifactsAssumeFull} />
+          {Artifact.getSlotKeys().map(slotKey =>
+            build.artifactIds[slotKey] ? <Col sm={6} lg={4} key={build.artifactIds[slotKey]} className="mb-2">
+              <ArtifactCard artifactId={build.artifactIds[slotKey]} forceUpdate={forceUpdate} assumeFull={artifactsAssumeFull} />
             </Col> : null
           )}
         </Row>

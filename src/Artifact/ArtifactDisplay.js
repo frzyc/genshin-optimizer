@@ -1,7 +1,7 @@
-import { faCheckSquare, faSquare } from '@fortawesome/free-solid-svg-icons';
+import { faCheckSquare, faSortAmountDownAlt, faSortAmountUp, faSquare } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import { Card, Dropdown, InputGroup, ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
+import { Button, ButtonGroup, Card, Dropdown, InputGroup, ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -11,21 +11,32 @@ import { IntFormControl } from '../Components/CustomFormControl';
 import { Stars } from '../Components/StarDisplay';
 import { DatabaseInitAndVerify } from '../DatabaseUtil';
 import Stat from '../Stat';
-import { deepClone } from '../Util/Util';
+import { deepClone, loadFromLocalStorage, saveToLocalStorage } from '../Util/Util';
 import Artifact from './Artifact';
 import ArtifactCard from './ArtifactCard';
 import ArtifactDatabase from './ArtifactDatabase';
 import ArtifactEditor from './ArtifactEditor';
 
+const sortMap = {
+  quality: "Quality",
+  level: "Level",
+}
 export default class ArtifactDisplay extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      artIdList: [],
-      artToEdit: null,
+      artToEditId: null,
       ...deepClone(ArtifactDisplay.initialFilter),
       maxNumArtifactsToDisplay: 50
     }
+
+    if (props.location.artToEditId)
+      this.state.artToEditId = props.location.artToEditId
+    else {
+      let savedState = loadFromLocalStorage("ArtifactDisplay.state")
+      if (savedState) this.state = { ...this.state, ...savedState }
+    }
+
     ReactGA.pageview('/artifact')
   }
   static initialFilter = {
@@ -35,58 +46,82 @@ export default class ArtifactDisplay extends React.Component {
     filterLevelHigh: 20,
     filterSlotKey: "",
     filterMainStatKey: "",
-    filterSubstates: ["", "", "", ""]
+    filterSubstats: ["", "", "", ""],
+    filterLocation: "",
   }
   forceUpdateArtifactDisplay = () => this.forceUpdate()
 
   addArtifact = (art) => {
-    if (this.state.artToEdit && this.state.artToEdit.id === art.id) {
+    if (art.id) {
       ArtifactDatabase.updateArtifact(art);
-      this.setState({ artToEdit: null })
+      this.setState({ artToEditId: null })
     } else {
       let id = ArtifactDatabase.addArtifact(art)
       if (id === null) return;// some error happened...
-      //add the new artifact at the beginning
-      this.setState(state => ({ artIdList: [id, ...state.artIdList,] }))
+      this.forceUpdate()
     }
   }
 
-  deleteArtifact = (id) => this.setState((state) => {
+  deleteArtifact = (id) => {
     let art = ArtifactDatabase.getArtifact(id);
     if (art && art.location)
       CharacterDatabase.unequipArtifactOnSlot(art.location, art.slotKey);
     ArtifactDatabase.removeArtifactById(id)
-    let artIdList = [...state.artIdList]
-    artIdList.splice(artIdList.indexOf(id), 1)
-    return { artIdList }
-  });
+    this.forceUpdate()
+  };
 
   editArtifact = (id) =>
-    this.setState({ artToEdit: ArtifactDatabase.getArtifact(id) }, () => {
-      this.scrollRef.current.scrollIntoView({ behavior: "smooth" })
-      this.forceUpdate()
-    })
+    this.setState({ artToEditId: id }, () =>
+      this.scrollRef.current.scrollIntoView({ behavior: "smooth" }))
 
   cancelEditArtifact = () =>
-    this.setState({ artToEdit: null }, this.forceUpdate)
+    this.setState({ artToEditId: null })
+
+  componentDidUpdate() {
+    let state = deepClone(this.state)
+    saveToLocalStorage("ArtifactDisplay.state", state)
+  }
 
   componentDidMount() {
     this.scrollRef = React.createRef()
     DatabaseInitAndVerify();
-    this.setState({ artIdList: ArtifactDatabase.getArtifactIdList() })
+    this.forceUpdate()
     Artifact.getDataImport()?.then(() => this.forceUpdate())
   }
   render() {
-    let totalArtNum = this.state.artIdList?.length || 0
-    let artifacts = this.state.artIdList.map(artid => ArtifactDatabase.getArtifact(artid)).filter((art) => {
-      if (this.state.filterArtSetKey && this.state.filterArtSetKey !== art.setKey) return false;
-      if (!this.state.filterStars.includes(art.numStars)) return false;
-      if (art.level < this.state.filterLevelLow || art.level > this.state.filterLevelHigh) return false;
-      if (this.state.filterSlotKey && this.state.filterSlotKey !== art.slotKey) return false
-      if (this.state.filterMainStatKey && this.state.filterMainStatKey !== art.mainStatKey) return false
-      for (const filterKey of this.state.filterSubstates)
+    let { artToEditId, filterArtSetKey, filterSlotKey, filterMainStatKey, filterStars, filterLevelLow, filterLevelHigh, filterSubstats = this.initialFilter.filterSubstats, maxNumArtifactsToDisplay, filterLocation, sortType = Object.keys(sortMap)[0], asending = false } = this.state
+    let getArtifactIdList = ArtifactDatabase.getArtifactIdList()
+    let totalArtNum = getArtifactIdList?.length || 0
+    let artifacts = getArtifactIdList.map(artid => ArtifactDatabase.getArtifact(artid)).filter((art) => {
+      if (filterLocation) {
+        if (filterLocation === "Inventory" && art.location) return false;
+        else if (filterLocation !== "Inventory" && filterLocation !== art.location) return false;
+      }
+      if (filterArtSetKey && filterArtSetKey !== art.setKey) return false;
+      if (!filterStars.includes(art.numStars)) return false;
+      if (art.level < filterLevelLow || art.level > filterLevelHigh) return false;
+      if (filterSlotKey && filterSlotKey !== art.slotKey) return false
+      if (filterMainStatKey && filterMainStatKey !== art.mainStatKey) return false
+      for (const filterKey of filterSubstats)
         if (filterKey && !art.substats.some(substat => substat.key === filterKey)) return false;
       return true
+    }).sort((a, b) => {
+      let sortNum = 0
+      switch (sortType) {
+        case "quality":
+          sortNum = a.numStars - b.numStars
+          if (sortNum === 0)
+            sortNum = a.level - b.level
+          break;
+        case "level":
+          sortNum = a.level - b.level
+          if (sortNum === 0)
+            sortNum = a.numStars - b.numStars
+          break;
+        default:
+          break;
+      }
+      return sortNum * (asending ? 1 : -1)
     })
     let MainStatDropDownItem = (props) =>
     (<Dropdown.Item key={props.statKey} onClick={() => this.setState({ filterMainStatKey: props.statKey })} >
@@ -97,25 +132,25 @@ export default class ArtifactDisplay extends React.Component {
         <Dropdown.Item key={key} onClick={() => this.setState({ filterArtSetKey: key })}>
           {setobj.name}
         </Dropdown.Item >)
-    let displayingText = `Showing ${artifacts.length > this.state.maxNumArtifactsToDisplay ? this.state.maxNumArtifactsToDisplay : artifacts.length} out of ${totalArtNum} Artifacts`
+    let displayingText = `Showing ${artifacts.length > maxNumArtifactsToDisplay ? maxNumArtifactsToDisplay : artifacts.length} out of ${totalArtNum} Artifacts`
     return (<Container className="mt-2" ref={this.scrollRef}>
       <Row className="mb-2 no-gutters"><Col>
         <ArtifactEditor
-          artifactToEdit={this.state.artToEdit}
+          artifactIdToEdit={artToEditId}
           addArtifact={this.addArtifact}
           cancelEdit={this.cancelEditArtifact}
         />
       </Col></Row>
       <Row className="mb-2"><Col>
         <Card bg="darkcontent" text="lightfont">
-          <Card.Header><span>Artifact Filter</span> <span className="float-right">{displayingText}</span></Card.Header>
+          <Card.Header><span>Artifact Filter</span> <span className="float-right text-right">{displayingText}</span></Card.Header>
           <Card.Body>
-            <Row>
+            <Row className="mb-n2">
               {/* Artifact set filter */}
               <Col xs={12} lg={6} className="mb-2">
                 <Dropdown as={InputGroup.Prepend} className="flex-grow-1">
-                  <Dropdown.Toggle className="w-100">
-                    {Artifact.getSetName(this.state.filterArtSetKey, "Artifact Set")}
+                  <Dropdown.Toggle className="w-100" variant={filterArtSetKey ? "success" : "primary"}>
+                    {Artifact.getSetName(filterArtSetKey, "Artifact Set")}
                   </Dropdown.Toggle>
                   <Dropdown.Menu>
                     <Dropdown.Item onClick={() => this.setState({ filterArtSetKey: "" })}>Unselect</Dropdown.Item>
@@ -133,11 +168,11 @@ export default class ArtifactDisplay extends React.Component {
               </Col>
               {/* Artifact stars filter */}
               <Col xs={12} lg={6} className="mb-2">
-                <ToggleButtonGroup className="w-100 d-flex" type="checkbox" as={InputGroup.Append} onChange={(e) => this.setState({ filterStars: e })} defaultValue={this.state.filterStars}>
+                <ToggleButtonGroup className="w-100 d-flex" type="checkbox" as={InputGroup.Append} onChange={(e) => this.setState({ filterStars: e })} defaultValue={filterStars}>
                   {Artifact.getStars().map(star => {
                     star = parseInt(star)
-                    let selected = this.state.filterStars.includes(star)
-                    return <ToggleButton key={star} value={star}><FontAwesomeIcon icon={selected ? faCheckSquare : faSquare} /> <Stars stars={star} /></ToggleButton>
+                    let selected = filterStars.includes(star)
+                    return <ToggleButton key={star} value={star} variant={selected ? "success" : "primary"}><FontAwesomeIcon icon={selected ? faCheckSquare : faSquare} /> <Stars stars={star} /></ToggleButton>
                   })}
                 </ToggleButtonGroup>
               </Col>
@@ -145,87 +180,118 @@ export default class ArtifactDisplay extends React.Component {
               <Col xs={12} lg={6} className="mb-2">
                 <InputGroup>
                   <InputGroup.Prepend>
-                    <InputGroup.Text>Level Low/High (Inclusive)</InputGroup.Text>
+                    <InputGroup.Text><span>Level <span className={`text-${filterLevelLow > 0 ? "success" : ""}`}>Low</span>/<span className={`text-${filterLevelHigh < 20 ? "success" : ""}`}>High</span> (Inclusive)</span></InputGroup.Text>
                   </InputGroup.Prepend>
                   <IntFormControl
-                    value={this.state.filterLevelLow}
+                    value={filterLevelLow}
                     placeholder={`Lowest Level to Filter`}
-                    onValueChange={(val) => val >= 0 && val <= this.state.filterLevelHigh && this.setState({ filterLevelLow: val })}
+                    onValueChange={(val) => val >= 0 && val <= filterLevelHigh && this.setState({ filterLevelLow: val })}
                   />
                   <IntFormControl
-                    value={this.state.filterLevelHigh}
+                    value={filterLevelHigh}
                     placeholder={`Highest Level to Filter`}
-                    onValueChange={(val) => val >= 0 && val >= this.state.filterLevelLow && this.setState({ filterLevelHigh: val })}
+                    onValueChange={(val) => val <= 20 && val >= filterLevelLow && this.setState({ filterLevelHigh: val })}
                   />
                 </InputGroup>
               </Col>
-              {/* Artifact Slot & Main Stat filter */}
-              <Col xs={12} lg={6} className="mb-2">
-                <Row>
-                  <Col>
-                    <Dropdown className="flex-grow-1">
-                      <Dropdown.Toggle className="w-100">
-                        {Artifact.getSlotNameWithIcon(this.state.filterSlotKey, "Slot")}
-                      </Dropdown.Toggle>
-                      <Dropdown.Menu>
-                        <Dropdown.Item onClick={() => this.setState({ filterSlotKey: "" })} >
-                          Unselect
+              {/* Artifact Slot */}
+              <Col xs={6} lg={3} className="mb-2">
+                <Dropdown className="flex-grow-1">
+                  <Dropdown.Toggle className="w-100" variant={filterSlotKey ? "success" : "primary"}>
+                    {Artifact.getSlotNameWithIcon(filterSlotKey, "Slot")}
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu>
+                    <Dropdown.Item onClick={() => this.setState({ filterSlotKey: "" })} >
+                      Unselect
                         </Dropdown.Item>
-                        {Artifact.getSlotKeys().map(key =>
-                          <Dropdown.Item key={key} onClick={() => this.setState({ filterSlotKey: key })} >
-                            {Artifact.getSlotNameWithIcon(key)}
-                          </Dropdown.Item>)}
-                      </Dropdown.Menu>
-                    </Dropdown>
-                  </Col>
-                  <Col>
-                    <Dropdown className="flex-grow-1">
-                      <Dropdown.Toggle className="w-100">
-                        {Stat.getStatNameWithPercent(this.state.filterMainStatKey, "Main Stat")}
-                      </Dropdown.Toggle>
-                      <Dropdown.Menu>
-                        <Dropdown.Item onClick={() => this.setState({ filterMainStatKey: "" })}>Unselect</Dropdown.Item>
-                        {Artifact.getMainStatKeys().map((statKey) => <MainStatDropDownItem key={statKey} statKey={statKey} />)}
-                      </Dropdown.Menu>
-                    </Dropdown>
-                  </Col>
-                </Row>
+                    {Artifact.getSlotKeys().map(key =>
+                      <Dropdown.Item key={key} onClick={() => this.setState({ filterSlotKey: key })} >
+                        {Artifact.getSlotNameWithIcon(key)}
+                      </Dropdown.Item>)}
+                  </Dropdown.Menu>
+                </Dropdown>
+              </Col>
+              {/* Main Stat filter */}
+              <Col xs={6} lg={3} className="mb-2">
+                <Dropdown className="flex-grow-1">
+                  <Dropdown.Toggle className="w-100" variant={filterMainStatKey ? "success" : "primary"}>
+                    {Stat.getStatNameWithPercent(filterMainStatKey, "Main Stat")}
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu>
+                    <Dropdown.Item onClick={() => this.setState({ filterMainStatKey: "" })}>Unselect</Dropdown.Item>
+                    {Artifact.getMainStatKeys().map((statKey) => <MainStatDropDownItem key={statKey} statKey={statKey} />)}
+                  </Dropdown.Menu>
+                </Dropdown>
               </Col>
               {/* substat filter */}
-              {this.state.filterSubstates.map((substatKey, index) =>
+              {filterSubstats.map((substatKey, index) =>
                 <Col key={index} xs={6} lg={3} className="mb-2">
                   <Dropdown >
-                    <Dropdown.Toggle id="dropdown-basic" className="w-100">
+                    <Dropdown.Toggle id="dropdown-basic" className="w-100" variant={substatKey ? "success" : "primary"}>
                       {Stat.getStatNameWithPercent(substatKey, `Substat ${index + 1}`)}
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
                       <Dropdown.Item
-                        onClick={() => {
-                          let filterSubstates = deepClone(this.state.filterSubstates)
-                          filterSubstates[index] = ""
-                          this.setState({ filterSubstates })
-                        }}
+                        onClick={() =>
+                          this.setState(state => {
+                            let tempfilterSubstats = state.filterSubstats
+                            tempfilterSubstats[index] = ""
+                            return { filterSubstats: tempfilterSubstats }
+                          })}
                       >No Substat</Dropdown.Item>
-                      {Artifact.getSubStatKeys().filter(key => !this.state.filterSubstates.includes(key)).map(key =>
+                      {Artifact.getSubStatKeys().filter(key => !filterSubstats.includes(key)).map(key =>
                         <Dropdown.Item key={key}
-                          onClick={() => {
-                            let filterSubstates = deepClone(this.state.filterSubstates)
-                            filterSubstates[index] = key
-                            this.setState({ filterSubstates })
-                          }}
+                          onClick={() =>
+                            this.setState(state => {
+                              let tempfilterSubstats = state.filterSubstats
+                              tempfilterSubstats[index] = key
+                              return { filterSubstats: tempfilterSubstats }
+                            })}
                         >{Stat.getStatNameWithPercent(key)}</Dropdown.Item>
                       )}
                     </Dropdown.Menu>
                   </Dropdown>
                 </Col>
               )}
+              {/* location */}
+              <Col xs={12} lg={6} className="mb-2">
+                <Dropdown className="flex-grow-1">
+                  <Dropdown.Toggle className="w-100" variant={filterLocation ? "success" : "primary"}>
+                    <span>Location: {filterLocation === "Inventory" ? filterLocation : (CharacterDatabase.getCharacter(filterLocation)?.name || "Any")}</span>
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu>
+                    <Dropdown.Item onClick={() => this.setState({ filterLocation: "" })}>Unselect</Dropdown.Item>
+                    <Dropdown.Item onClick={() => this.setState({ filterLocation: "Inventory" })}>Inventory</Dropdown.Item>
+                    <Dropdown.Divider />
+                    {Object.entries(CharacterDatabase.getCharacterDatabase()).map(([charKey, char]) =>
+                      <Dropdown.Item key={charKey} onClick={() => this.setState({ filterLocation: charKey })}>{char?.name}</Dropdown.Item>)}
+                  </Dropdown.Menu>
+                </Dropdown>
+              </Col>
+              {/* Sort */}
+              <Col xs={12} lg={6} className="mb-2">
+                <ButtonGroup className="w-100 d-flex flex-row">
+                  <Dropdown as={ButtonGroup} className="flex-grow-1">
+                    <Dropdown.Toggle >
+                      <span>Sort By: {sortMap[sortType]}</span>
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                      {Object.entries(sortMap).map(([key, name]) =>
+                        <Dropdown.Item key={key} onClick={() => this.setState({ sortType: key })}>{name}</Dropdown.Item>)}
+                    </Dropdown.Menu>
+                  </Dropdown>
+                  <Button onClick={() => this.setState(state => ({ asending: !state.asending }))} className="flex-shrink-1">
+                    <FontAwesomeIcon icon={asending ? faSortAmountDownAlt : faSortAmountUp} className="fa-fw" />
+                  </Button>
+                </ButtonGroup>
+              </Col>
             </Row>
           </Card.Body>
         </Card>
       </Col></Row>
       <Row className="mb-2">
         {artifacts.map((art, i) =>
-          i < this.state.maxNumArtifactsToDisplay ? <Col key={art.id} lg={4} md={6} className="mb-2">
+          i < maxNumArtifactsToDisplay ? <Col key={art.id} lg={4} md={6} className="mb-2">
             <ArtifactCard
               artifactId={art.id}
               onDelete={() => this.deleteArtifact(art.id)}

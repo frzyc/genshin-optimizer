@@ -29,7 +29,7 @@ export default class ArtifactDatabase {
     initiated = true
     return true
   }
-  static getArtifact = (id) => id ? artifactDatabase[id] : null
+  static getArtifact = (id) => artifactDatabase[id] || null
   static removeArtifact = (art) => {
     this.removeArtifactById(art.id);
   }
@@ -37,7 +37,7 @@ export default class ArtifactDatabase {
     if (this.isInvalid(art)) return null;
     //generate id using artIdIndex
     let id = `artifact_${artIdIndex++}`
-    while (localStorage.getItem(id) !== null) 
+    while (localStorage.getItem(id) !== null)
       id = `artifact_${artIdIndex++}`
     let dart = deepClone(art)
     dart.id = id;
