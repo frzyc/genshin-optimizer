@@ -42,6 +42,22 @@ const clampPercent = (val) => clamp(val, 0, 100)
 function strPadLeft(string, pad, length) {
   return (new Array(length + 1).join(pad) + string).slice(-length);
 }
+
+//fuzzy compare strings. longer the distance, the higher the mismatch.
+function hammingDistance(str1, str2) {
+  var dist = 0;
+  str1 = str1.toLowerCase();
+  str2 = str2.toLowerCase();
+  for (var i = 0, j = Math.max(str1.length, str2.length); i < j; i++) {
+    let match = true
+    if (!str1[i] || !str2[i] || str1[i] !== str2[i])
+      match = false
+    if (str1[i - 1] === str2[i] || str1[i + 1] === str2[i])
+      match = true
+    if (!match) dist++
+  }
+  return dist;
+}
 export {
   getRandomInt,
   getRandomIntInclusive,
@@ -56,5 +72,6 @@ export {
   clamp01,
   clampPercent,
   getArrLastElement,
-  strPadLeft
+  strPadLeft,
+  hammingDistance
 }
