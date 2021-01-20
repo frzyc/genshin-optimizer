@@ -77,12 +77,12 @@ let char = {
       }, {
         text: <span><strong>Charged Attack</strong> Perform a more precise Aimed Shot with increased DMG. While aiming, the dark lightning spirits of Immernachtreich shall heed the call of their Prinzessin and indwell the enchanted arrowhead. When fully indwelt, the Rachsüchtig Blitz shall deal immense <span className="text-electro">Electro DMG</span>.</span>,
         fields: [{
-          text: `Spinning DMG`,
+          text: `Aimed Shot DMG`,
           basicVal: (tlvl, stats, c) => <span>{aimed[tlvl]}% {Stat.printStat(Character.getTalentStatKey("char_atk", c), stats)}</span>,
           finalVal: (tlvl, stats, c) => (aimed[tlvl] / 100) * stats[Character.getTalentStatKey("char_atk", c)],
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("char_atk", c),
         }, {
-          text: `Spinning Final DMG`,
+          text: `Fully-Charged Aimed Shot DMG`,
           basicVal: (tlvl, stats, c) => <span>{aimed_full[tlvl]}% {Stat.printStat(Character.getTalentStatKey("char_atk", c, true), stats)}</span>,
           finalVal: (tlvl, stats, c) => (aimed_full[tlvl] / 100) * stats[Character.getTalentStatKey("char_atk", c, true)],
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("char_atk", c, true),
@@ -95,7 +95,7 @@ let char = {
         }, (c, a) => a >= 1 && {
           text: <span>Full Aimed Shot on Oz <span className="text-electro">AoE</span></span>,
           basicVal: (tlvl, stats, c) => <span>{aimed_full[tlvl]}% * 152.7% {Stat.printStat(Character.getTalentStatKey("char_atk", c, true), stats)}</span>,
-          finalVal: (tlvl, stats, c) => ((aimed_full[tlvl] + 152.7) / 100) * stats[Character.getTalentStatKey("char_atk", c, true)],
+          finalVal: (tlvl, stats, c) => (aimed_full[tlvl] / 100) * (152.7 / 100) * stats[Character.getTalentStatKey("char_atk", c, true)],
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("char_atk", c, true),
         }]
       }, {
