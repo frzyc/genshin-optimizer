@@ -108,6 +108,7 @@ export default class ArtifactEditor extends React.Component {
         if (mainStatKey !== art.mainStatKey) return false
         if (art.level > level) return false;
         for (const artSubstat of art.substats) {
+          if (!artSubstat.key) continue
           let substat = substats.find(substat =>
             substat.key === artSubstat.key &&
             (substat.value > artSubstat.value || Artifact.subStatCloseEnough(substat.key, substat.value, artSubstat.value)))
@@ -121,6 +122,7 @@ export default class ArtifactEditor extends React.Component {
         let dupArtifacts = artifacts.filter(art => {
           if (art.level !== level) return false;
           for (const artSubstat of art.substats) {
+            if (!artSubstat.key) continue
             let substat = substats.find(substat =>
               substat.key === artSubstat.key && Artifact.subStatCloseEnough(substat.key, substat.value, artSubstat.value))
             if (!substat) return false
