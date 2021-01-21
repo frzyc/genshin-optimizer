@@ -48,15 +48,10 @@ export default class ArtifactEditor extends React.Component {
     let artToSave = deepClone(this.state)
     delete artToSave.artifactIdToEdit;
     if (typeof id === "string") artToSave.id = id
-    //calculate rolls & efficiency for caching
-    for (const substat of artToSave.substats) {
-      let { key, value } = substat
-      substat.rolls = Artifact.getSubstatRolls(key, value, artToSave.numStars)
-      substat.efficiency = Artifact.getSubstatEfficiency(key, artToSave.numStars, substat.rolls)
-    }
-    let { currentEfficiency, maximumEfficiency } = Artifact.getArtifactEfficiency(artToSave.substats, artToSave.numStars, artToSave.level)
-    artToSave.currentEfficiency = currentEfficiency
-    artToSave.maximumEfficiency = maximumEfficiency
+
+    if (!artToSave.maximumEfficiency) //calculate rolls & efficiency for caching
+      Artifact.substatsValidation(artToSave)
+
     this.props.addArtifact?.(artToSave)
     this.setState(ArtifactEditor.getInitialState());
   }
@@ -80,7 +75,7 @@ export default class ArtifactEditor extends React.Component {
 
   setMainStatKey = (mainStatKey) => this.setState(state => {
     state.substats.forEach((substat, index) =>
-      substat.key && substat.key === mainStatKey && this.setSubStat(index))
+      substat.key && substat.key === mainStatKey && (state.substats[index] = { key: "", value: 0 }))
     return { mainStatKey }
   })
 
@@ -184,46 +179,16 @@ export default class ArtifactEditor extends React.Component {
     }
     this.props.cancelEdit?.();
     this.setState(state)
-    state.substats.forEach((s, i) => this.setSubStat(i, s.key, s.value))
   }
   componentDidUpdate = (prevProps, prevState) => {
     if (this.props.artifactIdToEdit && prevProps.artifactIdToEdit !== this.props.artifactIdToEdit)
       this.setState(deepClone(ArtifactDatabase.getArtifact(this.props.artifactIdToEdit)))
   }
   render() {
-    let { id, setKey = "", numStars = 0, level = 0, slotKey = "", mainStatKey = "", substats = deepClone(ArtifactEditor.initialState.substats) } = this.state
+    let errMsgs = Artifact.substatsValidation(this.state)
+    let { id, setKey = "", numStars = 0, level = 0, slotKey = "", mainStatKey = "", substats = deepClone(ArtifactEditor.initialState.substats), currentEfficiency, maximumEfficiency } = this.state
     //calculate duplicate
     let { dupId, dup } = this.checkDuplicate()
-    //calculate rolls for substats
-    for (const substat of substats) {
-      let { key, value } = substat
-      substat.rolls = Artifact.getSubstatRolls(key, value, numStars)
-      substat.efficiency = Artifact.getSubstatEfficiency(key, numStars, substat.rolls)
-    }
-    let { currentEfficiency, maximumEfficiency } = Artifact.getArtifactEfficiency(substats, numStars, level)
-
-    //artifact validation logic
-    let errMsgs = []
-    for (const substat of substats)
-      if (!substat.rolls?.length && substat.key && substat.value)
-        errMsgs.push("One of the substat is invalid.")
-
-    //only show this error when all substats are "valid"
-    if (!errMsgs.length && substats.some(substat => substat.rolls?.length > 1) && substats.some((substat) => !substat.rolls?.length))
-      errMsgs.push("One of the substat have >1 rolls, but not all substats are unlocked.")
-
-    if (numStars) {
-      let currentNumOfRolls = substats.reduce((sum, cur) => sum + (cur.rolls?.length || 0), 0);
-      let leastNumRolls = Artifact.getBaseSubRollNumLow(numStars) + Math.floor(level / 4)
-      if (currentNumOfRolls < leastNumRolls)
-        errMsgs.push(`Artifact should have at least ${leastNumRolls} Rolls, it currently only have ${currentNumOfRolls} Rolls.`)
-      else {
-        let rollsRemaining = Artifact.rollsRemaining(level, numStars);
-        let totalPossbleRolls = Artifact.totalPossibleRolls(numStars);
-        if ((currentNumOfRolls + rollsRemaining) > totalPossbleRolls)
-          errMsgs.push(`Current number of substat rolles(${currentNumOfRolls}) + Rolls remaining from level up (${rollsRemaining}) is greater than the total possible roll of this artifact (${totalPossbleRolls}) `)
-      }
-    }
     return <Card bg="darkcontent" text="lightfont">
       <Card.Header>Artifact Editor</Card.Header>
       <Card.Body><Row className="mb-n2">
@@ -380,14 +345,14 @@ export default class ArtifactEditor extends React.Component {
         </Col>
         {/* Image OCR */}
         <Col xs={12} className="mb-2">
-          <UploadDisplay setState={state => this.setState(state)} reset={reset => this.uploadDisplayReset = reset} setSubStat={this.setSubStat} />
+          <UploadDisplay setState={state => this.setState(state)} reset={reset => this.uploadDisplayReset = reset} />
         </Col>
         {/* Duplicate/Updated/Edit UI */}
         {(dupId || id) && <Col xs={12} className="mb-2">
           <Row className="d-flex justify-content-around mb-n2">
             <Col lg={4} md={6} className="mb-2">
               <h6 className="text-center">Artifact Editor Preview</h6>
-              <div><ArtifactCard artifactObj={{ ...this.state, currentEfficiency, maximumEfficiency }} /></div>
+              <div><ArtifactCard artifactObj={this.state} /></div>
             </Col>
             <Col lg={4} md={6} className="mb-2">
               <h6 className="text-center">{dupId ? `Detected ${dup ? "Duplicate" : "Upgraded"} Artifact` : `Before Edit`}</h6>

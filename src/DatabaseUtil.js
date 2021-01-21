@@ -58,15 +58,7 @@ function DatabaseInitAndVerify() {
         valid = false
       }
       if (!art.maximumEfficiency) {
-        //calculate rolls & efficiency for caching
-        for (const substat of art.substats) {
-          let { key, value } = substat
-          substat.rolls = Artifact.getSubstatRolls(key, value, art.numStars)
-          substat.efficiency = Artifact.getSubstatEfficiency(key, art.numStars, substat.rolls)
-        }
-        let { currentEfficiency, maximumEfficiency } = Artifact.getArtifactEfficiency(art.substats, art.numStars, art.level)
-        art.currentEfficiency = currentEfficiency
-        art.maximumEfficiency = maximumEfficiency
+        Artifact.substatsValidation(art)
         valid = false
       }
       if (!valid)

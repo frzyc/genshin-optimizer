@@ -117,7 +117,7 @@ export default class Artifact {
     if (!numStars || !subStatKey || typeof subStatValue !== "number" || !subStatValue) return defVal
     let rollData = this.getSubstatRollData(subStatKey, numStars)
     if (!rollData.length) return defVal
-    if (rollData.includes(subStatValue)) return [subStatValue]
+    if (rollData.includes(subStatValue)) return [[subStatValue]]
     if (subStatValue > (rollData[rollData.length - 1] * (this.getNumUpgradesOrUnlocks(numStars) + 2)))//+2 instead of +1 to go over rounding
       return defVal
     let isFloat = Stat.getStatUnit(subStatKey) === "%"
@@ -126,26 +126,22 @@ export default class Artifact {
     let maxNumRoll = Math.round(subStatValue / rollData[0])
     if (!maxNumRoll) return defVal;
     const rollOption = (val, arr) => {
-      if (rolls.length) return;
       if (arr.length) {
         if (arr.length > maxNumRoll) return;
         let sum = arr.reduce((accu, v) => accu + v, 0)
         if (isFloat) {
           if (sum - val >= 0.101) return
-          if (closeEnoughFloat(sum, val)) {
-            rolls = arr;
-            return;
-          }
+          if (closeEnoughFloat(sum, val))
+            return rolls.push(arr);
         } else {
           if (sum - val > 1) return
-          if (closeEnoughInt(sum, val)) {
-            rolls = arr;
-            return
-          }
+          if (closeEnoughInt(sum, val))
+            return rolls.push(arr);
         }
       }
       rollData.slice().reverse().forEach(roll => {
-        rollOption(subStatValue, [...arr, roll])
+        if (!arr.length || arr[arr.length - 1] >= roll)
+          rollOption(subStatValue, [...arr, roll])
       })
     }
     rollOption(subStatValue, [])
@@ -161,6 +157,60 @@ export default class Artifact {
   }
 
   //ARTIFACT IN GENERAL
+  static substatsValidation(state) {
+    let { numStars = 0, level = 0, substats = [] } = state
+    //calculate rolls for substats
+    for (const substat of substats) {
+      let { key, value } = substat
+      let rollArr = Artifact.getSubstatRolls(key, value, numStars) || []
+      substat.rolls = rollArr[0] || []
+      if (rollArr.length > 1) substat.rollArr = rollArr
+      substat.efficiency = Artifact.getSubstatEfficiency(key, numStars, substat.rolls)
+    }
+    let { currentEfficiency, maximumEfficiency } = Artifact.getArtifactEfficiency(substats, numStars, level)
+    state.currentEfficiency = currentEfficiency
+    state.maximumEfficiency = maximumEfficiency
+    //artifact validation logic
+    let errMsgs = []
+    for (const substat of substats)
+      if (!substat.rolls?.length && substat.key && substat.value)
+        errMsgs.push("One of the substat is invalid.")
+
+    //only show this error when all substats are "valid"
+    if (!errMsgs.length && substats.some(substat => substat.rolls?.length > 1) && substats.some((substat) => !substat.rolls?.length))
+      errMsgs.push("One of the substat have >1 rolls, but not all substats are unlocked.")
+
+    if (numStars) {
+      let currentNumOfRolls = substats.reduce((sum, cur) => sum + (cur.rolls?.length || 0), 0);
+      let leastNumRolls = Artifact.getBaseSubRollNumLow(numStars) + Math.floor(level / 4)
+      if (currentNumOfRolls < leastNumRolls) {//there might be substats with more rolls
+        for (const substat of substats) {
+          let rollslen = substat.rolls?.length
+          if (!rollslen || !substat.rollArr) continue
+          let moreRolls = substat.rollArr.filter(rolls => rolls.length > rollslen)
+          if (moreRolls.length) {
+            substat.rolls = moreRolls[0]
+            moreRolls.length > 1 ? (substat.rollArr = moreRolls) : (delete substat.rollArr)
+            substat.efficiency = Artifact.getSubstatEfficiency(substat.key, numStars, substat.rolls)
+            let { currentEfficiency, maximumEfficiency } = Artifact.getArtifactEfficiency(substats, numStars, level)
+            state.currentEfficiency = currentEfficiency
+            state.maximumEfficiency = maximumEfficiency
+          }
+          currentNumOfRolls = substats.reduce((sum, cur) => sum + (cur.rolls?.length || 0), 0);
+          if (currentNumOfRolls >= leastNumRolls) break;
+        }
+      }
+      if (currentNumOfRolls < leastNumRolls)
+        errMsgs.push(`Artifact should have at least ${leastNumRolls} Rolls, it currently only have ${currentNumOfRolls} Rolls.`)
+      else {
+        let rollsRemaining = Artifact.rollsRemaining(level, numStars);
+        let totalPossbleRolls = Artifact.totalPossibleRolls(numStars);
+        if ((currentNumOfRolls + rollsRemaining) > totalPossbleRolls)
+          errMsgs.push(`Current number of substat rolles(${currentNumOfRolls}) + Rolls remaining from level up (${rollsRemaining}) is greater than the total possible roll of this artifact (${totalPossbleRolls}) `)
+      }
+    }
+    return errMsgs
+  }
   static getArtifactEfficiency(substats, numStars, level) {
     if (!numStars) return { currentEfficiency: 0, maximumEfficiency: 0 }
     let totalPossbleRolls = Artifact.totalPossibleRolls(numStars);

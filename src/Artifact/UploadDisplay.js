@@ -13,7 +13,7 @@ import Artifact from './Artifact';
 const starColor = { r: 255, g: 204, b: 50 } //#FFCC32
 
 export default function UploadDisplay(props) {
-  let { setState, reset, setSubStat } = props
+  let { setState, reset } = props
   const [fileName, setFileName] = useState("Click here to Upload Artifact Screenshot File");
   const [image, setImage] = useState('');
 
@@ -222,6 +222,7 @@ export default function UploadDisplay(props) {
     }
 
     if (substats) {
+      state.substats = substats
       let len = substats.reduce((accu, substat) => accu + (substat.key ? 1 : 0), 0)
       let low = Artifact.getBaseSubRollNumLow(numStars)
       if (numStars && len < low)
@@ -237,7 +238,6 @@ export default function UploadDisplay(props) {
     } else
       setMainStatText(<span className="text-danger">Could not detect main stat.</span>)
     setState?.(state)
-    if (substats) substats.forEach((subst, i) => setSubStat?.(i, subst.key, subst.value))
   }
 
   useEffect(() => {
