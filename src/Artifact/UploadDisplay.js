@@ -13,6 +13,7 @@ import Artifact from './Artifact';
 const starColor = { r: 255, g: 204, b: 50 } //#FFCC32
 
 export default function UploadDisplay(props) {
+  let { setState, reset, setSubStat } = props
   const [fileName, setFileName] = useState("Click here to Upload Artifact Screenshot File");
   const [image, setImage] = useState('');
 
@@ -41,7 +42,7 @@ export default function UploadDisplay(props) {
     setMainStatText("")
     setLevelText("")
   }
-  const reset = () => {
+  const resetState = () => {
     setFileName("Click here to Upload Artifact Screenshot File")
     setImage("")
     setModalShow(false)
@@ -55,7 +56,6 @@ export default function UploadDisplay(props) {
     setArtSetProgVariant("")
     resetText();
   }
-
 
   const ocrImage = async (image, sProgress, sProgvariant, debug) => {
     if (process.env.NODE_ENV === "development" && debug) setImage(image)
@@ -222,7 +222,6 @@ export default function UploadDisplay(props) {
     }
 
     if (substats) {
-      state.substats = substats
       let len = substats.reduce((accu, substat) => accu + (substat.key ? 1 : 0), 0)
       let low = Artifact.getBaseSubRollNumLow(numStars)
       if (numStars && len < low)
@@ -237,14 +236,15 @@ export default function UploadDisplay(props) {
       state.mainStatKey = mainStatKey
     } else
       setMainStatText(<span className="text-danger">Could not detect main stat.</span>)
-    props.setState?.(state)
+    setState?.(state)
+    if (substats) substats.forEach((subst, i) => setSubStat?.(i, subst.key, subst.value))
   }
 
   useEffect(() => {
     let pasteFunc = e =>
       uploadedFile(e.clipboardData.files[0])
     window.addEventListener('paste', pasteFunc);
-    props.reset(reset);
+    reset?.(resetState);
     return () =>
       window.removeEventListener('paste', pasteFunc)
   })
@@ -254,68 +254,56 @@ export default function UploadDisplay(props) {
   let otherProgPercent = (otherProgress * 100).toFixed(1)
   return (<Row>
     <ExplainationModal {...{ modalShow, setModalShow }} />
-    <Col>
-      <Row className="mb-1">
+    <Col xs={12} className="mb-2">
+      <Row>
         <Col>
-          <Row className="mb-1">
-            <Col>
-              <h5>Parse Substats by Uploading Image</h5>
-            </Col>
-            <Col xs="auto"><Button variant="info" onClick={() => {
-              setModalShow(true)
-              ReactGA.modalview('/artifact/how-to-upload')
-            }}>Show me How!</Button></Col>
-          </Row>
+          <h6 className="mb-0">Parse Substats by Uploading Image</h6>
         </Col>
-      </Row>
-      <Row className="mb-1">
-        <Col xs={8} lg={4}>
-          {img}
-        </Col>
-        {Boolean(!image) && <Col>Please Select an Image, or paste a screenshot here (Ctrl+V)</Col>}
-        {scanning ? <Col xs={12} lg={8}>
-          <div className="mb-2">
-            <h6 className="mb-0">{`Scan${artSetProgPercent < 100 ? "ning" : "ned"} Artifact Set`}</h6>
-            <ProgressBar variant={artSetProgVariant} now={artSetProgPercent} label={`${artSetProgPercent}%`} />
-          </div>
-          <div className="mb-2">
-            <h6 className="mb-0">{`Scan${substatProgPercent < 100 ? "ning" : "ned"} Artifact Substat`}</h6>
-            <ProgressBar variant={substatProgVariant} now={substatProgPercent} label={`${substatProgPercent}%`} />
-          </div>
-          <div className="mb-2">
-            <h6 className="mb-0">{`Scan${otherProgPercent < 100 ? "ning" : "ned"} Other`}</h6>
-            <ProgressBar variant={otherProgVariant} now={otherProgPercent} label={`${otherProgPercent}%`} />
-          </div>
-          <div className="mb-2">
-            <div>{starText}</div>
-            <div>{artSetText}</div>
-            <div>{slotText}</div>
-            <div>{mainStatValText}</div>
-            <div>{mainStatText}</div>
-            <div>{levelText}</div>
-            <div>{substatText}</div>
-          </div>
-        </Col> : null}
-      </Row>
-      <Row className="mb-4">
-        <Col>
-          <Form.Group as={Col}>
-            <Form.File
-              type="file"
-              className="custom-file-label"
-              id="inputGroupFile01"
-              label={fileName}
-              onChange={(e) => {
-                let file = e.target.files[0]
-                uploadedFile(file)
-              }}
-              custom
-            />
-          </Form.Group>
-        </Col>
+        <Col xs="auto"><Button variant="info" size="sm" onClick={() => {
+          setModalShow(true)
+          ReactGA.modalview('/artifact/how-to-upload')
+        }}>Show me How!</Button></Col>
       </Row>
     </Col>
-  </Row>)
+    <Col xs={8} lg={image ? 4 : 0}>{img}</Col>
+    <Col xs={12} lg={image ? 8 : 12}>
+      {scanning && <>
+        <div className="mb-2">
+          <h6 className="mb-0">{`Scan${artSetProgPercent < 100 ? "ning" : "ned"} Artifact Set`}</h6>
+          <ProgressBar variant={artSetProgVariant} now={artSetProgPercent} label={`${artSetProgPercent}%`} />
+        </div>
+        <div className="mb-2">
+          <h6 className="mb-0">{`Scan${substatProgPercent < 100 ? "ning" : "ned"} Artifact Substat`}</h6>
+          <ProgressBar variant={substatProgVariant} now={substatProgPercent} label={`${substatProgPercent}%`} />
+        </div>
+        <div className="mb-2">
+          <h6 className="mb-0">{`Scan${otherProgPercent < 100 ? "ning" : "ned"} Other`}</h6>
+          <ProgressBar variant={otherProgVariant} now={otherProgPercent} label={`${otherProgPercent}%`} />
+        </div>
+        <div className="mb-2">
+          <div>{starText}</div>
+          <div>{artSetText}</div>
+          <div>{slotText}</div>
+          <div>{mainStatValText}</div>
+          <div>{mainStatText}</div>
+          <div>{levelText}</div>
+          <div>{substatText}</div>
+        </div>
+      </>}
+      <Form.File
+        type="file"
+        className="mb-0"
+        id="inputGroupFile01"
+        label={fileName}
+        onChange={(e) => {
+          let file = e.target.files[0]
+          uploadedFile(file)
+        }}
+        custom={true}
+      />
+      {Boolean(!image) && <Form.Label className="mb-0">Please Select an Image, or paste a screenshot here (Ctrl+V)</Form.Label>}
+    </Col>
+  </Row >)
 }
 function ExplainationModal({ modalShow, setModalShow }) {
   return <Modal show={modalShow} onHide={() => setModalShow(false)} size="xl" variant="success" contentClassName="bg-transparent">
@@ -537,7 +525,6 @@ function parseSubstat(recognition, defVal = null) {
   matches.forEach((match, i) => {
     if (i >= 4) return;//this shouldn't happen, just in case
     match.value = match.unit === "%" ? parseFloat(match.value) : parseInt(match.value)
-    // props.setSubStat && props.setSubStat(i, match.key, value)
   })
   let substats = []
   for (let i = 0; i < 4; i++) {
@@ -566,7 +553,7 @@ function parseSetKey(recognition, defVal = "") {
   for (const text of texts)
     for (const key of Artifact.getSetKeys())
       if (hammingDistance(text.replace(/\W/g, ''), Artifact.getSetName(key).replace(/\W/g, '')) <= 2)
-        return key//props.setSetKey(key);
+        return key
 }
 function parseSlotKey(recognition, defVal = "") {
   let texts = recognition?.data?.lines?.map(line => line.text)
@@ -575,7 +562,7 @@ function parseSlotKey(recognition, defVal = "") {
   for (const text of texts)
     for (const key of Artifact.getSlotKeys())
       if (hammingDistance(text.replace(/\W/g, ''), Artifact.getSlotName(key).replace(/\W/g, '')) <= 2)
-        return key;//props.setSlotKey(key);
+        return key;
 }
 // function parseLevel(text) {
 //   let regex = /\+(\d{1,2})/

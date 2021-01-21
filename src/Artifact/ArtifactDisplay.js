@@ -20,6 +20,8 @@ import ArtifactEditor from './ArtifactEditor';
 const sortMap = {
   quality: "Quality",
   level: "Level",
+  efficiency: "Current Substat Eff.",
+  mefficiency: "Maximum Substat Eff."
 }
 export default class ArtifactDisplay extends React.Component {
   constructor(props) {
@@ -90,18 +92,18 @@ export default class ArtifactDisplay extends React.Component {
   }
   render() {
     let { artToEditId, filterArtSetKey, filterSlotKey, filterMainStatKey, filterStars, filterLevelLow, filterLevelHigh, filterSubstats = this.initialFilter.filterSubstats, maxNumArtifactsToDisplay, filterLocation, sortType = Object.keys(sortMap)[0], asending = false } = this.state
-    let getArtifactIdList = ArtifactDatabase.getArtifactIdList()
-    let totalArtNum = getArtifactIdList?.length || 0
-    let artifacts = getArtifactIdList.map(artid => ArtifactDatabase.getArtifact(artid)).filter((art) => {
+    let artifactDB = ArtifactDatabase.getArtifactDatabase() || {}
+    let totalArtNum = Object.keys(artifactDB)?.length || 0
+    let artifacts = Object.values(artifactDB).filter(art => {
       if (filterLocation) {
         if (filterLocation === "Inventory" && art.location) return false;
         else if (filterLocation !== "Inventory" && filterLocation !== art.location) return false;
       }
       if (filterArtSetKey && filterArtSetKey !== art.setKey) return false;
-      if (!filterStars.includes(art.numStars)) return false;
-      if (art.level < filterLevelLow || art.level > filterLevelHigh) return false;
       if (filterSlotKey && filterSlotKey !== art.slotKey) return false
       if (filterMainStatKey && filterMainStatKey !== art.mainStatKey) return false
+      if (art.level < filterLevelLow || art.level > filterLevelHigh) return false;
+      if (!filterStars.includes(art.numStars)) return false;
       for (const filterKey of filterSubstats)
         if (filterKey && !art.substats.some(substat => substat.key === filterKey)) return false;
       return true
@@ -118,21 +120,17 @@ export default class ArtifactDisplay extends React.Component {
           if (sortNum === 0)
             sortNum = a.numStars - b.numStars
           break;
+        case "efficiency":
+          sortNum = a.currentEfficiency - b.currentEfficiency
+          break;
+        case "mefficiency":
+          sortNum = a.maximumEfficiency - b.maximumEfficiency
+          break;
         default:
           break;
       }
       return sortNum * (asending ? 1 : -1)
     })
-    let MainStatDropDownItem = (props) =>
-    (<Dropdown.Item key={props.statKey} onClick={() => this.setState({ filterMainStatKey: props.statKey })} >
-      {Stat.getStatNameWithPercent(props.statKey)}
-    </Dropdown.Item>)
-    let dropdownitemsForStar = (star) =>
-      Artifact.getSetsByMaxStarEntries(star).map(([key, setobj]) =>
-        <Dropdown.Item key={key} onClick={() => this.setState({ filterArtSetKey: key })}>
-          {setobj.name}
-        </Dropdown.Item >)
-    let displayingText = `Showing ${artifacts.length > maxNumArtifactsToDisplay ? maxNumArtifactsToDisplay : artifacts.length} out of ${totalArtNum} Artifacts`
     return (<Container className="mt-2" ref={this.scrollRef}>
       <Row className="mb-2 no-gutters"><Col>
         <ArtifactEditor
@@ -143,7 +141,9 @@ export default class ArtifactDisplay extends React.Component {
       </Col></Row>
       <Row className="mb-2"><Col>
         <Card bg="darkcontent" text="lightfont">
-          <Card.Header><span>Artifact Filter</span> <span className="float-right text-right">{displayingText}</span></Card.Header>
+          <Card.Header><span>Artifact Filter</span> <span className="float-right text-right">
+            {`Showing ${artifacts.length > maxNumArtifactsToDisplay ? maxNumArtifactsToDisplay : artifacts.length} out of ${totalArtNum} Artifacts`}
+          </span></Card.Header>
           <Card.Body>
             <Row className="mb-n2">
               {/* Artifact set filter */}
@@ -154,15 +154,15 @@ export default class ArtifactDisplay extends React.Component {
                   </Dropdown.Toggle>
                   <Dropdown.Menu>
                     <Dropdown.Item onClick={() => this.setState({ filterArtSetKey: "" })}>Unselect</Dropdown.Item>
-                    <Dropdown.Divider />
-                    <Dropdown.ItemText>Max Rarity 🟊🟊🟊🟊🟊</Dropdown.ItemText>
-                    {dropdownitemsForStar(5)}
-                    <Dropdown.Divider />
-                    <Dropdown.ItemText>Max Rarity 🟊🟊🟊🟊</Dropdown.ItemText>
-                    {dropdownitemsForStar(4)}
-                    <Dropdown.Divider />
-                    <Dropdown.ItemText>Max Rarity 🟊🟊🟊</Dropdown.ItemText>
-                    {dropdownitemsForStar(3)}
+                    {[5, 4, 3].map(star =>
+                      <React.Fragment key={star}>
+                        <Dropdown.Divider />
+                        <Dropdown.ItemText>Max Rarity <Stars stars={star} /></Dropdown.ItemText>
+                        {Artifact.getSetsByMaxStarEntries(star).map(([key, setobj]) =>
+                          <Dropdown.Item key={key} onClick={() => this.setState({ filterArtSetKey: key })}>
+                            {setobj.name}
+                          </Dropdown.Item >)}
+                      </React.Fragment>)}
                   </Dropdown.Menu>
                 </Dropdown>
               </Col>
@@ -219,7 +219,9 @@ export default class ArtifactDisplay extends React.Component {
                   </Dropdown.Toggle>
                   <Dropdown.Menu>
                     <Dropdown.Item onClick={() => this.setState({ filterMainStatKey: "" })}>Unselect</Dropdown.Item>
-                    {Artifact.getMainStatKeys().map((statKey) => <MainStatDropDownItem key={statKey} statKey={statKey} />)}
+                    {Artifact.getMainStatKeys().map((statKey) => <Dropdown.Item key={statKey} onClick={() => this.setState({ filterMainStatKey: statKey })} >
+                      {Stat.getStatNameWithPercent(statKey)}
+                    </Dropdown.Item>)}
                   </Dropdown.Menu>
                 </Dropdown>
               </Col>
