@@ -186,7 +186,7 @@ export default class ArtifactEditor extends React.Component {
   }
   componentDidUpdate = (prevProps, prevState) => {
     if (this.props.artifactIdToEdit && prevProps.artifactIdToEdit !== this.props.artifactIdToEdit)
-      this.setState(ArtifactDatabase.getArtifact(this.props.artifactIdToEdit))
+      this.setState(deepClone(ArtifactDatabase.getArtifact(this.props.artifactIdToEdit)))
   }
   render() {
     let { id, setKey = "", numStars = 0, level = 0, slotKey = "", mainStatKey = "", substats = deepClone(ArtifactEditor.initialState.substats) } = this.state
@@ -385,7 +385,7 @@ export default class ArtifactEditor extends React.Component {
           <Row className="d-flex justify-content-around mb-n2">
             <Col lg={4} md={6} className="mb-2">
               <h6 className="text-center">Artifact Editor Preview</h6>
-              <div><ArtifactCard artifactObj={this.state} /></div>
+              <div><ArtifactCard artifactObj={{ ...this.state, currentEfficiency, maximumEfficiency }} /></div>
             </Col>
             <Col lg={4} md={6} className="mb-2">
               <h6 className="text-center">{dupId ? `Detected ${dup ? "Duplicate" : "Upgraded"} Artifact` : `Before Edit`}</h6>
