@@ -167,6 +167,13 @@ export default function CharacterTalentPane(props) {
             subtitle={tText}
           />
         </Col>)}
+      {Character.getTalent(characterKey, "sprint", false) && <Col xs={12} md={6} lg={4} className="mb-2">
+        <SkillDisplayCard
+          {...skillDisplayProps}
+          talentKey="sprint"
+          subtitle="Alternative Sprint"
+        />
+      </Col>}
     </Row>
     <Row>
       {/* passives */}
@@ -186,7 +193,7 @@ export default function CharacterTalentPane(props) {
         <h5 className="text-center">Constellation Lv. {constellation}</h5>
       </Col>
     </Row>
-    <Row>
+    <Row className="mb-n2">
       {/* constellations */}
       {[...Array(6).keys()].map(i => {
         let tKey = `constellation${i + 1}`
@@ -370,17 +377,18 @@ function SkillDisplayCard(props) {
   let statsEle = null
   let talentStats = Character.getTalentStats(characterKey, talentKey, constellation, ascension)
   if (talentStats) {
-    statsEle = <Row><Col>
+    let statList = Object.entries(talentStats).map(([statKey, statVal], index) =>
+      typeof statVal === "number" && <ListGroup.Item key={statKey} variant={index % 2 ? "customdark" : "customdarker"} className="p-2">
+        <div>
+          <span><b>{Stat.getStatName(statKey)}</b></span>
+          <span className="float-right text-right">{statVal}{Stat.getStatUnit(statKey)}</span>
+        </div>
+      </ListGroup.Item>
+    ).filter(e => Boolean(e))//filter because formulaoverrides cannot be displayed.
+    statsEle = Boolean(statList.length) && <Row><Col>
       <Card bg="darkcontent" text="lightfont" className="mt-2 ml-n2 mr-n2">
         <ListGroup className="text-white" variant="flush">
-          {Object.entries(talentStats).map(([statKey, statVal], index) =>
-            <ListGroup.Item key={statKey} variant={index % 2 ? "customdark" : "customdarker"} className="p-2">
-              <div>
-                <span><b>{Stat.getStatName(statKey)}</b></span>
-                <span className="float-right text-right">{statVal}{Stat.getStatUnit(statKey)}</span>
-              </div>
-            </ListGroup.Item>
-          )}
+          {statList}
         </ListGroup>
       </Card>
     </Col></Row>
@@ -485,25 +493,23 @@ function FieldDisplay(props) {
     </OverlayTrigger>
 
   let fieldVal = field.value ? field.value : field.finalVal
-  if (typeof fieldVal === "function") {
+  if (typeof fieldVal === "function")
     fieldVal = fieldVal?.(talentLvlKey, build.finalStats, character)
-  }
-  if (typeof fieldVal === "number")
-    fieldVal = Math.round(fieldVal)
-
+  let fixedVal = field.fixed || 0
   //compareAgainstEquipped
   if (compareAgainstEquipped && equippedBuild && typeof fieldVal === "number") {
     let fieldEquippedVal = field.value ? field.value : field.finalVal
+
     if (typeof fieldEquippedVal === "function")
-      fieldEquippedVal = parseInt(fieldEquippedVal?.(talentLvlKey, equippedBuild.finalStats, character)?.toFixed?.(0))
+      fieldEquippedVal = parseInt(fieldEquippedVal?.(talentLvlKey, equippedBuild.finalStats, character)?.toFixed?.(fixedVal))
     let diff = fieldVal - fieldEquippedVal
-    fieldVal = <span>{fieldEquippedVal}{diff ? <span className={diff > 0 ? "text-success" : "text-danger"}> ({diff > 0 ? "+" : ""}{diff})</span> : ""}</span>
+    fieldVal = <span>{fieldEquippedVal}{diff ? <span className={diff > 0 ? "text-success" : "text-danger"}> ({diff > 0 ? "+" : ""}{diff?.toFixed?.(fixedVal) || diff})</span> : ""}</span>
   }
 
   return <ListGroup.Item variant={index % 2 ? "customdark" : "customdarker"} className="p-2">
     <div>
       <span><b>{fieldText}</b>{fieldBasic}</span>
-      <span className={`float-right text-right text-${fieldVariant}`} >{fieldVal}</span>
+      <span className={`float-right text-right text-${fieldVariant}`} >{fieldVal?.toFixed?.(fixedVal) || fieldVal}</span>
     </div>
   </ListGroup.Item>
 }

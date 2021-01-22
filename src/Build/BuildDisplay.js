@@ -351,7 +351,7 @@ export default class BuildDisplay extends React.Component {
         </Row>
         <Row>
           {statsDisplayKeys.map(key =>
-            <Col className="text-nowrap" key={key} xs={12} sm={6} lg={4}>
+            <Col className="text-nowrap" key={key} xs={12} md={6} xl={4}>
               <span>{Stat.getStatName(key)}: <span className="text-warning">{build.finalStats[key]?.toFixed?.(Stat.fixedUnit(key)) || build.finalStats[key]}{Stat.getStatUnit(key)}</span></span>
             </Col>
           )}

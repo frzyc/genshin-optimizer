@@ -51,11 +51,12 @@ export default class Character {
   //ASSETS
   static getThumb = (charKey, defVal = null) => this.getCDataObj(charKey)?.thumbImg || defVal
   static getCard = (charKey, defVal = null) => this.getCDataObj(charKey)?.cardImg || defVal
-  static getTalentImg = (charKey, talentKey, defVal = null) => this.getCDataObj(charKey)?.talent?.[talentKey]?.img || defVal
+  static getTalentImg = (charKey, talentKey, defVal = null) => this.getTalent(charKey, talentKey)?.img || defVal
   static getConstellationImg = (charKey, constIndex, defVal = null) => this.getCDataObj(charKey)?.talent?.[`constellation${constIndex + 1}`]?.img || defVal
 
   //talents
-  static getTalentName = (charKey, talentKey, defVal = "") => this.getCDataObj(charKey)?.talent?.[talentKey]?.name || defVal
+  static getTalent = (charKey, talentKey, defVal = {}) => this.getCDataObj(charKey)?.talent?.[talentKey] || defVal
+  static getTalentName = (charKey, talentKey, defVal = "") => this.getTalent(charKey, talentKey)?.name || defVal
 
   static getTalentLevelBoost = (characterKey, talentKey, constellation, defVal = 0) => {
     //so far we only get level boost from constellations, so only burst and skills.
@@ -76,10 +77,10 @@ export default class Character {
       return withBoost ? { talentLvlKey, levelBoost } : talentLvlKey
     } else return withBoost ? {} : null
   }
-  static getTalentDocument = (charKey, talentKey, defVal = []) => this.getCDataObj(charKey)?.talent?.[talentKey]?.document || defVal
-  static getTalentFields = (charKey, talentKey, defVal = []) => this.getCDataObj(charKey)?.talent?.[talentKey]?.fields || defVal
+  static getTalentDocument = (charKey, talentKey, defVal = []) => this.getTalent(charKey, talentKey)?.document || defVal
+  static getTalentFields = (charKey, talentKey, defVal = []) => this.getTalent(charKey, talentKey)?.fields || defVal
   static getTalentStats = (charKey, talentKey, constellation, ascension, defVal = null) => {
-    let stats = this.getCDataObj(charKey)?.talent?.[talentKey]?.stats
+    let stats = this.getTalent(charKey, talentKey)?.stats
     if (typeof stats === "function")
       return stats(constellation, ascension)
     return stats || defVal

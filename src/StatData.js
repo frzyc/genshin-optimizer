@@ -316,6 +316,11 @@ const OverrideFormulas = {
     key: "atk_final",
     formula: (options) => (s) => (s.atk_base + s.atk_weapon) * (1 + s.atk_ / 100) + s.atk + s.def_final * (options.value / 100),
     dependency: ["atk_base", "atk_weapon", "atk_", "atk", "def_final", "def_base", "def_", "def"],
+  },
+  mona_passive2_hydro_ele_dmg_bonus: {
+    key: "hydro_ele_dmg_bonus",
+    formula: (options) => (s) => (options.oldval || 0) + s.ener_rech * 0.2,
+    dependency: ["ener_rech"],
   }
 }
 
@@ -324,10 +329,10 @@ function AttachLazyFormulas(obj, options = {}) {
   let { formulaKeys = Object.keys(Formulas), statKeys = Object.keys(StatData) } = options;
   let { formulaOverrides = [] } = obj;
   formulaOverrides.forEach(formulaOverride => {
-    let { key: overrideFormulaKey, options } = formulaOverride
+    let { key: overrideFormulaKey, options: overrideFormulaOptions } = formulaOverride
     let { key, formula } = OverrideFormulas[overrideFormulaKey] || {}
-    if (!formulaKeys.includes(key)) return
-    formula = formula(options)
+    if (!formulaKeys.includes(key) && !statKeys.includes(key)) return
+    formula = formula({ ...overrideFormulaOptions, oldval: obj[key] })
     Object.defineProperty(obj, key, {
       get: options.formulaKeys ? () => formula(obj) : function () {
         let val = formula(obj)
