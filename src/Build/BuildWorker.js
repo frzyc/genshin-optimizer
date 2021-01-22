@@ -3,16 +3,16 @@ import ArtifactBase from "../Artifact/ArtifactBase";
 import { AttachLazyFormulas } from "../StatData";
 
 onmessage = async (e) => {
-  let { splitArtifacts, artifactSetPerms, setFilters, initialStats, artifactSetEffects, maxBuildsToShow, buildFilterKey, asending, depdendencyStatKeys } = e.data;
-  if (process.env.NODE_ENV === "development") console.log(JSON.stringify(depdendencyStatKeys))
+  let { splitArtifacts, artifactSetPerms, setFilters, initialStats, artifactSetEffects, maxBuildsToShow, buildFilterKey, ascending, dependencyStatKeys } = e.data;
+  if (process.env.NODE_ENV === "development") console.log(JSON.stringify(dependencyStatKeys))
   let t1 = performance.now()
   let artifactPerms = generateAllPossibleArtifactPerm(splitArtifacts, artifactSetPerms, setFilters)
   let builds = artifactPerms.map(artifacts =>
-    ({ builFilterVal: calculateFinalStat(buildFilterKey, initialStats, artifacts, artifactSetEffects, depdendencyStatKeys), artifacts }));
+    ({ buildFilterVal: calculateFinalStat(buildFilterKey, initialStats, artifacts, artifactSetEffects, dependencyStatKeys), artifacts }));
   let t2 = performance.now()
-  builds.sort((a, b) => asending ? (a.builFilterVal - b.builFilterVal) : (b.builFilterVal - a.builFilterVal))
+  builds.sort((a, b) => ascending ? (a.buildFilterVal - b.buildFilterVal) : (b.buildFilterVal - a.buildFilterVal))
   builds.splice(maxBuildsToShow)
-  if (process.env.NODE_ENV === "development") console.log(builds.map(b => b.builFilterVal))
+  if (process.env.NODE_ENV === "development") console.log(builds.map(b => b.buildFilterVal))
   postMessage({ builds, timing: t2 - t1 })
 };
 const generateAllPossibleArtifactPerm = (splitArtifacts, setPerms, setFilters) => {
@@ -56,7 +56,7 @@ const generateAllPossibleArtifactPerm = (splitArtifacts, setPerms, setFilters) =
   return perm
 }
 
-function calculateFinalStat(key, charAndWeapon, artifacts, artifactSetEffects, depdendencyStatKeys) {
+function calculateFinalStat(key, charAndWeapon, artifacts, artifactSetEffects, dependencyStatKeys) {
   let stats = JSON.parse(JSON.stringify(charAndWeapon))
   let setToSlots = ArtifactBase.setToSlots(artifacts)
 
@@ -75,6 +75,6 @@ function calculateFinalStat(key, charAndWeapon, artifacts, artifactSetEffects, d
         stats[statKey] = (stats[statKey] || 0) + val)))
 
   //attach the formulas
-  AttachLazyFormulas(stats, depdendencyStatKeys)
+  AttachLazyFormulas(stats, dependencyStatKeys)
   return stats[key]
 }
