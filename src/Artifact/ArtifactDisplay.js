@@ -91,7 +91,7 @@ export default class ArtifactDisplay extends React.Component {
     Artifact.getDataImport()?.then(() => this.forceUpdate())
   }
   render() {
-    let { artToEditId, filterArtSetKey, filterSlotKey, filterMainStatKey, filterStars, filterLevelLow, filterLevelHigh, filterSubstats = this.initialFilter.filterSubstats, maxNumArtifactsToDisplay, filterLocation, sortType = Object.keys(sortMap)[0], asending = false } = this.state
+    let { artToEditId, filterArtSetKey, filterSlotKey, filterMainStatKey, filterStars, filterLevelLow, filterLevelHigh, filterSubstats = this.initialFilter.filterSubstats, maxNumArtifactsToDisplay, filterLocation, sortType = Object.keys(sortMap)[0], ascending = false } = this.state
     let artifactDB = ArtifactDatabase.getArtifactDatabase() || {}
     let totalArtNum = Object.keys(artifactDB)?.length || 0
     let artifacts = Object.values(artifactDB).filter(art => {
@@ -129,7 +129,7 @@ export default class ArtifactDisplay extends React.Component {
         default:
           break;
       }
-      return sortNum * (asending ? 1 : -1)
+      return sortNum * (ascending ? 1 : -1)
     })
     return (<Container className="mt-2" ref={this.scrollRef}>
       <Row className="mb-2 no-gutters"><Col>
@@ -282,8 +282,8 @@ export default class ArtifactDisplay extends React.Component {
                         <Dropdown.Item key={key} onClick={() => this.setState({ sortType: key })}>{name}</Dropdown.Item>)}
                     </Dropdown.Menu>
                   </Dropdown>
-                  <Button onClick={() => this.setState(state => ({ asending: !state.asending }))} className="flex-shrink-1">
-                    <FontAwesomeIcon icon={asending ? faSortAmountDownAlt : faSortAmountUp} className="fa-fw" />
+                  <Button onClick={() => this.setState(state => ({ ascending: !state.ascending }))} className="flex-shrink-1">
+                    <FontAwesomeIcon icon={ascending ? faSortAmountDownAlt : faSortAmountUp} className="fa-fw" />
                   </Button>
                 </ButtonGroup>
               </Col>

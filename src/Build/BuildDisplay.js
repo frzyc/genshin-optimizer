@@ -48,7 +48,7 @@ export default class BuildDisplay extends React.Component {
     mainStat: ["", "", ""],
     buildFilterKey: "atk_final",
     artifactsAssumeFull: false,
-    asending: false,
+    ascending: false,
     modalBuild: null,
     editCharacter: false,
     maxBuildsToShow: 100,
@@ -122,7 +122,7 @@ export default class BuildDisplay extends React.Component {
     let { split, artifactSetPerms, totBuildNumber } = this
     if (!totBuildNumber) return this.setState({ builds: [] })
     this.setState({ generatingBuilds: true })
-    let { setFilters, asending, buildFilterKey, maxBuildsToShow, artifactConditionals, artifactsAssumeFull } = this.state
+    let { setFilters, ascending, buildFilterKey, maxBuildsToShow, artifactConditionals, artifactsAssumeFull } = this.state
     let character = CharacterDatabase.getCharacter(this.state.selectedCharacterId)
     let initialStats = Character.calculateCharacterWithWeaponStats(character)
     initialStats.artifactsAssumeFull = artifactsAssumeFull
@@ -136,12 +136,12 @@ export default class BuildDisplay extends React.Component {
       })
     })
     //generate the key dependencies for the formula
-    let depdendencyStatKeys = DependencyStatKeys(buildFilterKey, initialStats.formulaOverrides)
+    let dependencyStatKeys = DependencyStatKeys(buildFilterKey, initialStats.formulaOverrides)
 
     //create an obj with app the artifact set effects to pass to buildworker.
     let data = {
-      splitArtifacts, artifactSetPerms, initialStats, artifactSetEffects, depdendencyStatKeys,
-      setFilters, maxBuildsToShow, buildFilterKey, asending,
+      splitArtifacts, artifactSetPerms, initialStats, artifactSetEffects, dependencyStatKeys,
+      setFilters, maxBuildsToShow, buildFilterKey, ascending,
     }
     if (this.worker) this.worker.terminate()
     this.worker = new Worker();
@@ -326,8 +326,8 @@ export default class BuildDisplay extends React.Component {
                   </Dropdown.Item>
                 )}
               </DropdownButton>
-              <Button onClick={() => this.setState(state => ({ asending: !state.asending }), this.autoGenerateBuilds)}>
-                <FontAwesomeIcon icon={this.state.asending ? faSortAmountDownAlt : faSortAmountUp} className="fa-fw" />
+              <Button onClick={() => this.setState(state => ({ ascending: !state.ascending }), this.autoGenerateBuilds)}>
+                <FontAwesomeIcon icon={this.state.ascending ? faSortAmountDownAlt : faSortAmountUp} className="fa-fw" />
               </Button>
             </ButtonGroup>
           </Col>
@@ -351,7 +351,7 @@ export default class BuildDisplay extends React.Component {
         </Row>
         <Row>
           {statsDisplayKeys.map(key =>
-            <Col className="text-nowrap" key={key} xs={12} sm={6} lg={4}>
+            <Col className="text-nowrap" key={key} xs={12} md={6} xl={4}>
               <span>{Stat.getStatName(key)}: <span className="text-warning">{build.finalStats[key]?.toFixed?.(Stat.fixedUnit(key)) || build.finalStats[key]}{Stat.getStatUnit(key)}</span></span>
             </Col>
           )}

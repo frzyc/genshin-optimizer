@@ -13,38 +13,35 @@ import sprint from './Talent_Illusory_Torrent.png'
 import passive1 from './Talent_Come_\'n\'_Get_Me,_Hag.png'
 import passive2 from './Talent_Waterborne_Destiny.png'
 import passive3 from './Talent_Principium_of_Astrology.png'
+import Stat from '../../../Stat'
+import Character from '../../../Character/Character'
 //import DisplayPercent from '../../../Components/DisplayPercent'
 
 //AUTO
 
 const hitPercent = [
-  [],
-  [],
-  [],
-  [],
+  [37.6, 40.42, 43.24, 47, 49.82, 52.64, 56.4, 60.16, 63.92, 67.68, 71.44, 75.2, 79.9, 84.6, 89.3],
+  [36, 38.7, 41.4, 45, 47.7, 50.4, 54, 57.6, 61.2, 64.8, 68.4, 72, 76.5, 81, 85.5],
+  [44.8, 48.16, 51.52, 56, 59.36, 62.72, 67.2, 71.68, 76.16, 80.64, 85.12, 89.6, 95.2, 100.8, 106.4],
+  [56.16, 60.37, 64.58, 70.2, 74.41, 78.62, 84.24, 89.86, 95.47, 101.09, 106.7, 112.32, 119.34, 126.36, 133.38],
 ]
 
-const charged_atk_spinnning = []
-const charged_atk_final = []
-const plunge_dmg = []
-const plunge_dmg_low = []
-const plunge_dmg_high = []
+const charged_atk = [149.72, 160.95, 172.18, 187.15, 198.38, 209.61, 224.58, 239.55, 254.52, 269.5, 285.07, 305.43, 325.79, 346.15, 366.51]
+const plunge_dmg = [56.83, 61.45, 66.08, 72.69, 77.31, 82.6, 89.87, 97.14, 104.41, 112.34, 120.27, 128.2, 136.12, 144.05, 151.98]
+const plunge_dmg_low = [113.63, 122.88, 132.13, 145.35, 154.59, 165.17, 179.7, 194.23, 208.77, 224.62, 240.48, 256.34, 272.19, 288.05, 303.9]
+const plunge_dmg_high = [141.93, 153.49, 165.04, 181.54, 193.1, 206.3, 224.45, 242.61, 260.76, 280.57, 300.37, 320.18, 339.98, 359.79, 379.59]
 
 //SKILL
-const breastplateStats = {
-  skill_dmg: [],
-  shield_def: [],
-  shield_flat: [],
-  heal_def: [],
-  heal_flat: [],
-  heal_trigger: [],
+const eleSkill = {
+  skill_dmg: [132.8, 142.76, 152.72, 166, 175.96, 185.92, 199.2, 212.48, 225.76, 239.04, 252.32, 265.6, 282.2, 298.8, 315.4],
+  dot: [32, 34.4, 36.8, 40, 42.4, 44.8, 48, 51.2, 54.4, 57.6, 60.8, 64, 68, 72, 76]
 }
 
 //BURST
-const sweepingTimeStats = {
-  burst_dmg: [],
-  skill_dmg: [],
-  atk_bonu: [],
+const eleBurst = {
+  bubble_explosion: [442.4, 475.58, 508.76, 553, 586.18, 619.36, 663.6, 707.84, 752.08, 796.32, 840.56, 884.8, 940.1, 995.4, 1050.7],
+  dmg_bonus: [42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 60, 60, 60, 60, 60],
+  omen_duration: [4, 4, 4, 4.5, 4.5, 4.5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
 }
 
 let char = {
@@ -66,150 +63,268 @@ let char = {
     key: "ener_rech",
     value: [0, 0, 0, 0, 8, 8, 16, 16, 16, 16, 24, 24, 32, 32]
   },
-
   talent: {
-    //TODO she has a speical sprint thing... where do i put it?
-    sprint: {
-      img: sprint
-    },
     auto: {
-      name: "TEMPLATE",
+      name: "Ripple of Fate",
       img: normal,
-      normal: {
-        text: <span>TEMPLATE</span>,
+      infusable: false,
+      document: [{
+        text: <span><strong>Normal Attack</strong> Perform up to 4 water splash attacks that deal <span className="text-hydro">Hydro DMG</span>.</span>,
         fields: hitPercent.map((percentArr, i) =>
         ({
           text: `${i + 1}-Hit DMG`,
-          basicVal: (tlvl) => percentArr[tlvl] + "%",
-          finalVal: (tlvl, stats) => (percentArr[tlvl] / 100) * stats.norm_atk_avg_dmg
+          basicVal: (tlvl, stats, c) => <span>{percentArr[tlvl]}% {Stat.printStat(Character.getTalentStatKey("norm_atk", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (percentArr[tlvl] / 100) * stats[Character.getTalentStatKey("norm_atk", c)],
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("norm_atk", c),
         }))
-      },
-      charged: {
-        text: <span>TEMPLATE</span>,
+      }, {
+        text: <span><strong>Charged Attack</strong> Consumes a certain amount of Stamina to deal <span className="text-hydro">AoE Hydro DMG</span> after a short casting time.</span>,
         fields: [{
-          text: `Spinning DMG`,
-          basicVal: (tlvl) => charged_atk_spinnning[tlvl] + "%",
-          finalVal: (tlvl, stats) => (charged_atk_spinnning[tlvl] / 100) * stats.char_atk_avg_dmg
-        }, {
-          text: `Spinning Final DMG`,
-          basicVal: (tlvl) => charged_atk_final[tlvl] + "%",
-          finalVal: (tlvl, stats) => (charged_atk_final[tlvl] / 100) * stats.char_atk_avg_dmg
+          text: `Charged Attack DMG`,
+          basicVal: (tlvl, stats, c) => <span>{charged_atk[tlvl]}% {Stat.printStat(Character.getTalentStatKey("char_atk", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (charged_atk[tlvl] / 100) * stats[Character.getTalentStatKey("char_atk", c)],
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("char_atk", c),
         }, {
           text: `Stamina Cost`,
-          value: `40/s`,
-        }, {
-          text: `Max Duration`,
-          value: `5s`,
+          value: 50,
         }]
-      },
-      plunge: {
-        text: <span>TEMPLATE</span>,
+      }, {
+        text: <span><strong>Plunging Attack</strong> Gathering the might of Hydro, Mona plunges towards the ground from mid-air, damaging all opponents in her path. Deals <span className="text-hydro">AoE Hydro DMG</span> upon impact with the ground.</span>,
         fields: [{
           text: `Plunge DMG`,
-          basicVal: (tlvl) => plunge_dmg[tlvl] + "%",
-          finalVal: (tlvl, stats) => (plunge_dmg[tlvl] / 100) * stats.plunge_avg_dmg
+          basicVal: (tlvl, stats, c) => <span>{plunge_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunge", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (plunge_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("plunge", c)],
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunge", c),
         }, {
           text: `Low Plunge DMG`,
-          basicVal: (tlvl) => plunge_dmg_low[tlvl] + "%",
-          finalVal: (tlvl, stats) => (plunge_dmg_low[tlvl] / 100) * stats.plunge_avg_dmg
+          basicVal: (tlvl, stats, c) => <span>{plunge_dmg_low[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunge", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (plunge_dmg_low[tlvl] / 100) * stats[Character.getTalentStatKey("plunge", c)],
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunge", c),
         }, {
           text: `High Plunge DMG`,
-          basicVal: (tlvl) => plunge_dmg_high[tlvl] + "%",
-          finalVal: (tlvl, stats) => (plunge_dmg_high[tlvl] / 100) * stats.plunge_avg_dmg
+          basicVal: (tlvl, stats, c) => <span>{plunge_dmg_high[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunge", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (plunge_dmg_high[tlvl] / 100) * stats[Character.getTalentStatKey("plunge", c)],
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunge", c),
         }]
-      }
+      }],
     },
     skill: {
-      name: "TEMPLATE",
+      name: "Mirror Reflection of Doom",
       img: skill,
-      text: <span>TEMPLATE</span>,
-      fields: [{
-        text: "TEMPLATE",
-        basicVal: (tlvl) => breastplateStats.skill_dmg[tlvl] + "%",
-        finalVal: (tlvl, s) => (breastplateStats.skill_dmg[tlvl] / 100) * s.skill_avg_dmg,
-      }, {
-        text: "TEMPLATE",
-        basicVal: (tlvl) => breastplateStats.shield_def[tlvl] + "% DEF + " + breastplateStats.shield_flat[tlvl],
-        finalVal: (tlvl, s) => (breastplateStats.shield_def[tlvl] / 100) * s.def + breastplateStats.shield_flat[tlvl],
-      }, {
-        text: "TEMPLATE",
-        basicVal: (tlvl) => breastplateStats.heal_def[tlvl] + "% DEF + " + breastplateStats.heal_flat[tlvl],
-        finalVal: (tlvl, s) => (breastplateStats.heal_def[tlvl] / 100) * s.def + breastplateStats.heal_flat[tlvl],
-      }, {
-        text: "CD",
-        value: "12s",
-      }, {
-        text: "TEMPLATE",
-        value: (tlvl, s, c, a) => "24s" + a > 4 ? " -1s Every 4 hits" : "",
-      }]
+      document: [{
+        text: <span>
+          <p className="mb-2">Creates an illusory Phantom of fate from coalesced waterspouts.</p>
+          <p className="mb-2">The <b>Phantom</b> has the following special properties:</p>
+          <ul className="mb-2">
+            <li>Continuously taunts nearby opponents, attracting their fire.</li>
+            <li>Each second, 4 times, deals <span className="text-hydro">AoE Hydro DMG</span>.</li>
+            <li>When its duration expires, the Phantom explodes, dealing <span className="text-hydro">AoE Hydro DMG</span>.</li>
+          </ul>
+          <p className="mb-2"><b>Hold:</b> Utilizes water currents to move backwards swiftly before conjuring a Phantom. Only one Phantom created by Mirror Reflection of Doom can exist at any time. When the Phantom explodes and hits at least one opponent, it generates 3 elemental particles.</p>
+        </span>,
+        fields: [{
+          text: "DoT",
+          basicVal: (tlvl, stats, c) => <span>{eleSkill.dot[tlvl]}% {Stat.printStat(Character.getTalentStatKey("skill", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (eleSkill.dot[tlvl] / 100) * stats[Character.getTalentStatKey("skill", c)],
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("skill", c),
+        }, {
+          text: "Explosion DMG",
+          basicVal: (tlvl, stats, c) => <span>{eleSkill.skill_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("skill", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (eleSkill.skill_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("skill", c)],
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("skill", c),
+        }, {
+          text: "CD",
+          value: "12s",
+        }]
+      }],
     },
     burst: {
-      name: "TEMPLATE",
+      name: "Stellaris Phantasm",
       img: burst,
-      text: <span>TEMPLATE</span>,
-      fields: [{
-        text: "TEMPLATE",
-        basicVal: (tlvl) => sweepingTimeStats.burst_dmg[tlvl] + "%",
-        finalVal: (tlvl, s) => (sweepingTimeStats.burst_dmg[tlvl] / 100) * s.burst_avg_dmg,
-      }, {
-        text: "TEMPLATE",
-        basicVal: (tlvl) => sweepingTimeStats.skill_dmg[tlvl] + "%",
-        finalVal: (tlvl, s) => (sweepingTimeStats.skill_dmg[tlvl] / 100) * s.burst_avg_dmg,
-      }, {
-        text: "TEMPLATE",
-        basicVal: (tlvl, s, constellation) => `${sweepingTimeStats.atk_bonu[tlvl]}%${constellation >= 6 ? " +50%" : ""} DEF`,
-        finalVal: (tlvl, s, constellation) => ((sweepingTimeStats.atk_bonu[tlvl] + (constellation >= 6 ? 50 : 0)) / 100) * s.def,
-      }, {
-        text: "TEMPLATE",
-        value: (tlvl, s, constellation) => "15s" + (constellation >= 6 ? " +1s per kill, up to 10s" : ""),
-      }, {
-        text: "CD",
-        value: "15s",
-      }, {
-        text: "Energy Cost",
-        value: 60,
-      }]
+      document: [{
+        text: <span>
+          <p className="mb-2">Mona summons the sparkling waves and creates a reflection of the starry sky, applying the Illusory Bubble status to the opponents in a large AoE.</p>
+          <p className="mb-2"><b>Illusory Bubble:</b> Traps opponents inside a pocket of destiny and also makes them <span className="text-hydro">Wet</span>. Renders weaker opponents immobile. When an opponent affected by Illusory Bubble sustains DMG, it has the following effects:</p>
+          <ul className="mb-2">
+            <li>Applies an <b>Omen</b> to the opponent, which gives a DMG Bonus, also increasing the DMG of the attack that causes it.</li>
+            <li>Removes the Illusory Bubble, dealing <span className="text-hydro">Hydro DMG</span> in the process.</li>
+          </ul>
+          <p className="mb-2"><b>Omen:</b> During its duration, increases DMG taken by opponents.</p>
+        </span>,
+        fields: [{
+          text: "Illusory Bubble Duration",
+          value: "8s",
+        }, {
+          text: "Illusory Bubble Explosion DMG",
+          basicVal: (tlvl, stats, c) => <span>{eleBurst.bubble_explosion[tlvl]}% {Stat.printStat(Character.getTalentStatKey("burst", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (eleBurst.bubble_explosion[tlvl] / 100) * stats[Character.getTalentStatKey("burst", c)],
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("burst", c),
+        }, {
+          text: "CD",
+          value: "15s",
+        }, {
+          text: "Energy Cost",
+          value: 60,
+        }],
+        conditional: (tlvl, c, a) => {
+          let c1 = c >= 1 ? {
+            electrocharged_dmg_bonus: 15,
+            vaporize_dmg_bonus: 15,
+            swirl_dmg_bonus: 15
+          } : {}
+          return {
+            type: "character",
+            conditionalKey: "StellarisPhantasm",
+            condition: "Stellaris Phantasm",
+            sourceKey: "mona",
+            maxStack: 1,
+            stats: {
+              all_dmg_bonus: eleBurst.dmg_bonus[tlvl],
+              ...c1,
+              //TODO frozen duration as a stat 
+            },
+            fields: [(c, a) => c >= 1 && {
+              text: <span><span className="text-cryo">Frozen</span> Duration Increase</span>,
+              value: "15%",
+              variant: "cryo",
+            }, {
+              text: "Omen Duration",
+              value: (tlvl, stats, c) => `${eleBurst.omen_duration[tlvl]}s`,
+            }]
+          }
+        },
+      }],
+    },
+    sprint: {
+      name: "Illusory Torrent",
+      img: sprint,
+      document: [{
+        text: <span>
+          <p className="mb-2">Mona cloaks herself within the water's flow, consuming stamina to move rapidly.</p>
+          <p className="mb-2">When under the effect of Illusory Torrent, Mona can move at high speed on water. Applies the <span className="text-hydro">Wet</span> status to nearby opponents when she reappears.</p>
+        </span>,
+        fields: [{
+          text: "Activation Stamina Consumption",
+          value: 10,
+        }, {
+          text: "Stamina Drain",
+          value: "15/s",
+        }]
+      }],
     },
     passive1: {
-      name: "TEMPLATE",
+      name: "Come 'n' Get Me, Hag!",
       img: passive1,
-      text: <span>TEMPLATE</span>
+      document: [{
+        text: <span>
+          <p className="mb-2">After she has used <b>Illusory Torrent</b> for 2s, if there are any opponents nearby, Mona will automatically create a Phantom.</p>
+          <p className="mb-2">A Phantom created in this manner lasts for 2s, and its explosion DMG is equal to 50% of <b>Mirror Reflection of Doom</b>.</p>
+        </span>,
+        fields: [(con, a) => a >= 1 && {
+          text: "Explosion DMG",
+          basicVal: (tlvl, stats, c) => <span>{eleSkill.skill_dmg[Character.getTalentLevelKey(c, "skill", con)]}% * 50% {Stat.printStat(Character.getTalentStatKey("skill", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (eleSkill.skill_dmg[Character.getTalentLevelKey(c, "skill", con)] / 200) * stats[Character.getTalentStatKey("skill", c)],
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("skill", c),
+        }, (c, a) => a >= 1 && {
+          text: "Phantom Duration",
+          value: "2s"
+        }]
+      }],
     },
     passive2: {
-      name: "TEMPLATE",
+      name: "Waterborne Destiny",
       img: passive2,
-      text: <span>TEMPLATE</span>
+      document: [{
+        text: <span>Increases Mona's <span className="text-hydro">Hydro DMG Bonus</span> by a degree equivalent to 20% of her Energy Recharge rate.</span>,
+        fields: [(c, a) => a >= 4 && {
+          text: <span><span className="text-hydro">Hydro DMG Bonus</span> Increase</span>,
+          basicVal: (tlvl, stats, c) => <span>20% * {Stat.printStat("ener_rech", stats)}</span>,
+          finalVal: (tlvl, stats, c) => 0.2 * stats.ener_rech,
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("ele", c),
+          fixed: 1,
+        }]
+      }],
+      stats: (c, a) => a >= 4 && {
+        formulaOverrides: [{
+          key: "mona_passive2_hydro_ele_dmg_bonus",
+        }],
+      }
     },
     passive3: {
-      name: "TEMPLATE",
+      name: "Principium of Astrology",
       img: passive3,
-      text: <span>TEMPLATE</span>
+      document: [{ text: <span>When Mona crafts Weapon Ascension Materials, she has a 25% chance to refund one count of one material out of all the crafting materials used.</span> }],
     },
+    constellation1: {
+      name: "Prophecy of Submersion",
+      img: c1,
+      document: [{
+        text: <span>
+          <p className="mb-2">The effects of <span className="text-hydro">Hydro-related Elemental Reactions</span> are enhanced for 8s after any of your characters in the party hit an opponent affected by an <b>Omen</b>:</p>
+          <ul className="mb-2">
+            <li><span className="text-electrocharged">Electro-Charged DMG</span> is increased by 15%.</li>
+            <li><span className="text-vaporize">Vaporize DMG</span> is increased by 15%.</li>
+            <li><span className="text-hydro">Hydro</span> <span className="text-swirl">Swirl DMG</span> is increased by 15%.</li>
+            <li>The duration for which enemies are <span className="text-cryo">Frozen</span> is increased by 15%.</li>
+          </ul>
+        </span>
+      }],
+    },
+    constellation2: {
+      name: "Lunar Chain",
+      img: c2,
+      document: [{ text: <span>When a <b>Normal Attack</b> hits, there is a 20% chance that it will be automatically followed by a <b>Charged Attack</b>. This effect can only occur once every 5s.</span> }],
+    },
+    constellation3: {
+      name: "Restless Revolution",
+      img: c3,
+      document: [{ text: <span>Increases the Level of <b>Stellaris Phantasm</b> by 3. Maximum upgrade level is 15.</span> }],
+      talentBoost: { burst: 3 }
+    },
+    constellation4: {
+      name: "Prophecy of Oblivion",
+      img: c4,
+      document: [{
+        text: <span>When any character in the party attacks an opponent affected by the Omen status effect, their CRIT Rate is increased by 15%.</span>,
+        conditional: (tlvl, c, a) => c >= 4 && {//TODO party conditional
+          type: "character",
+          conditionalKey: "ProphecyOfOblivion",
+          condition: "Prophecy of Oblivion",
+          sourceKey: "mona",
+          maxStack: 1,
+          stats: {
+            crit_rate: 15,
+          },
+        },
+      }],
+    },
+    constellation5: {
+      name: "Mockery of Fortuna",
+      img: c5,
+      document: [{ text: <span>Increase the Level of <b>Mirror Reflection of Doom</b> by 3. Maximum upgrade level is 15.</span> }],
+      talentBoost: { skill: 3 }
+    },
+    constellation6: {
+      name: "Rhetorics of Calamitas",
+      img: c6,
+      document: [{
+        text: <span>Upon entering <b>Illusory Torrent</b>, Mona gains a 60% increase to the DMG her next Charged Attack per second of movement. A maximum DMG Bonus of 180% can be achieved in this manner. The effect lasts for no more than 8s.</span>,
+        conditional: (tlvl, c, a) => c >= 6 && {
+          type: "character",
+          conditionalKey: "RhetoricsOfCalamitas",
+          condition: "Rhetorics of Calamitas",
+          sourceKey: "mona",
+          maxStack: 3,
+          stats: {
+            char_atk_dmg_bonus: 60,
+          },
+          fields: [{
+            text: "Duration",
+            value: "8s"
+          }]
+        },
+      }],
+    }
   },
-  constellation: [{
-    name: "TEMPLATE",
-    img: c1,
-    text: <span>TEMPLATE</span>
-  }, {
-    name: "TEMPLATE",
-    img: c2,
-    text: <span>TEMPLATE</span>
-  }, {
-    name: "TEMPLATE",
-    img: c3,
-    text: <span>TEMPLATE</span>
-  }, {
-    name: "TEMPLATE",
-    img: c4,
-    text: <span>TEMPLATE</span>
-  }, {
-    name: "TEMPLATE",
-    img: c5,
-    text: <span>TEMPLATE</span>
-  }, {
-    name: "TEMPLATE",
-    img: c6,
-    text: <span>TEMPLATE</span>
-  }],
 };
 export default char;
