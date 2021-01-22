@@ -13,7 +13,7 @@ import CharacterDatabase from '../Character/CharacterDatabase';
 import ConditionalSelector from '../Components/ConditionalSelector';
 import { DatabaseInitAndVerify } from '../DatabaseUtil';
 import Stat from '../Stat';
-import { DependencyStatKeys } from '../StatDependency';
+import { DependencyFormulaKeys } from '../StatDependency';
 import ConditionalsUtil from '../Util/ConditionalsUtil';
 import { deepClone, loadFromLocalStorage, saveToLocalStorage } from '../Util/Util';
 import Weapon from '../Weapon/Weapon';
@@ -136,11 +136,11 @@ export default class BuildDisplay extends React.Component {
       })
     })
     //generate the key dependencies for the formula
-    let dependencyStatKeys = DependencyStatKeys(buildFilterKey, initialStats.formulaOverrides)
+    let dependencyFormulaKeys = DependencyFormulaKeys(buildFilterKey, initialStats.formulaOverrides)
 
     //create an obj with app the artifact set effects to pass to buildworker.
     let data = {
-      splitArtifacts, artifactSetPerms, initialStats, artifactSetEffects, dependencyStatKeys,
+      splitArtifacts, artifactSetPerms, initialStats, artifactSetEffects, dependencyFormulaKeys,
       setFilters, maxBuildsToShow, buildFilterKey, ascending,
     }
     if (this.worker) this.worker.terminate()

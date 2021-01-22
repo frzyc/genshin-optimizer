@@ -357,6 +357,27 @@ function AttachLazyFormulas(obj, options = {}) {
   statKeys.forEach(key => !obj.hasOwnProperty(key) && (obj[key] = StatData[key].default || 0))
 }
 
+function PreprocessFormulas(formulaKeys, formulaOverrides) {
+  let result = [], overrides = {}
+
+  formulaOverrides.forEach(formulaOverride => {
+    let { key: overrideFormulaKey, options: overrideFormulaOptions } = formulaOverride
+    let { key, formula } = OverrideFormulas[overrideFormulaKey] || {}
+    overrides[key] = formula
+  })
+
+  let formulas = formulaKeys.map(key => {
+    if (key in overrides) return [key, overrides[key]]
+    return [key, Formulas[key]]
+  })
+
+  return stat => {
+    for (const [key, formula] of formulas) {
+      stat[key] = formula(stat)
+    }
+  }
+}
+
 export {
   Formulas,
   OverrideFormulas,
@@ -364,4 +385,5 @@ export {
   ElementToReactionKeys,
   ReactionMatrix,
   AttachLazyFormulas,
+  PreprocessFormulas,
 }
