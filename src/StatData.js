@@ -95,9 +95,9 @@ const StatData = {
   melt_dmg_bonus: { name: "Melt DMG Bonus", unit: "%", variant: "melt" },
   vaporize_dmg_bonus: { name: "Vaporize DMG Bonus", unit: "%", variant: "vaporize" },
 
-  ele_mas_multi_x: { name: "Elementry Mastry Multiplier X", unit: "multi" },
-  ele_mas_multi_y: { name: "Elementry Mastry Multiplier Y", unit: "multi" },
-  ele_mas_multi_z: { name: "Elementry Mastry Multiplier Z", unit: "multi" },
+  ele_mas_multi_x: { name: "Elementry Mastery Multiplier X", unit: "multi" },
+  ele_mas_multi_y: { name: "Elementry Mastery Multiplier Y", unit: "multi" },
+  ele_mas_multi_z: { name: "Elementry Mastery Multiplier Z", unit: "multi" },
   trans_reaction_base_multi: { name: "Transformation Reaction Base Multiplier", unit: "multi" },
 
   //character stuff

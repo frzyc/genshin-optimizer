@@ -50,6 +50,7 @@ export default class ArtifactDisplay extends React.Component {
     filterMainStatKey: "",
     filterSubstats: ["", "", "", ""],
     filterLocation: "",
+    ascending: false,
   }
   forceUpdateArtifactDisplay = () => this.forceUpdate()
 
