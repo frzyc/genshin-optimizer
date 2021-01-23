@@ -3,18 +3,20 @@ import ArtifactBase from "../Artifact/ArtifactBase";
 import { PreprocessFormulas } from "../StatData";
 
 onmessage = async (e) => {
-  let { splitArtifacts, artifactSetPerms, setFilters, initialStats, artifactSetEffects, maxBuildsToShow, ascending, dependencies } = e.data;
+  let { splitArtifacts, artifactSetPerms, setFilters, initialStats, artifactSetEffects, maxBuildsToShow, buildFilterKey, ascending, dependencies } = e.data;
   if (process.env.NODE_ENV === "development") console.log(dependencies)
   let t1 = performance.now()
+  let artifactPerms = generateAllPossibleArtifactPerm(splitArtifacts, artifactSetPerms, setFilters)
   let preprocessedFormulas = PreprocessFormulas(dependencies, initialStats.modifiers)
-  let builds = generateBuilds(splitArtifacts, artifactSetPerms, setFilters, artifactSetEffects, initialStats, preprocessedFormulas)
+  let builds = artifactPerms.map(artifacts =>
+    ({ buildFilterVal: calculateFinalStat(buildFilterKey, initialStats, artifacts, artifactSetEffects, preprocessedFormulas), artifacts }));
   let t2 = performance.now()
   builds.sort((a, b) => ascending ? (a.buildFilterVal - b.buildFilterVal) : (b.buildFilterVal - a.buildFilterVal))
   builds.splice(maxBuildsToShow)
   if (process.env.NODE_ENV === "development") console.log(builds.map(b => b.buildFilterVal))
   postMessage({ builds, timing: t2 - t1 })
 };
-const generateBuilds = (splitArtifacts, setPerms, setFilters, artifactSetEffects, initialStats, preprocessedFormulas) => {
+const generateAllPossibleArtifactPerm = (splitArtifacts, setPerms, setFilters) => {
   let perm = [];
 
   let splitArtsPerSet = {}
@@ -36,38 +38,45 @@ const generateBuilds = (splitArtifacts, setPerms, setFilters, artifactSetEffects
   })
   let slotKeys = ["flower", "plume", "sands", "goblet", "circlet"];
   //recursion function to loop through everything.
-  let slotPerm = (index, setPerm, setCount, accu, stats) => {
+  let slotPerm = (index, setPerm, accu) => {
     if (index >= slotKeys.length) {
-      perm.push({ buildFilterVal: preprocessedFormulas(stats), artifacts: { ...accu } })
+      perm.push(accu)
       return;
     }
     let slotKey = slotKeys[index];
     let setKey = setPerm[slotKey];
     if (splitArtsPerSet[slotKey][setKey]) {
-      splitArtsPerSet[slotKey][setKey].forEach(artifact => {
-        let newStats = { ...stats }
-        accumulate(slotKey, setKey, artifact, setCount, accu, newStats, artifactSetEffects)
-        slotPerm(index + 1, setPerm, setCount, accu, newStats)
-        setCount[setKey] -= 1
+      splitArtsPerSet[slotKey][setKey].forEach(element => {
+        accu[slotKey] = element;
+        slotPerm(index + 1, setPerm, { ...accu })
       });
     }
 
   }
-  setPerms.forEach(setPerm => slotPerm(0, setPerm, {}, {}, initialStats))
+  setPerms.forEach(setPerm => slotPerm(0, setPerm, {}))
   return perm
 }
 
-function accumulate(slotKey, setKey, art, setCount, accu, stats, artifactSetEffects) {
-  // Add artifact stats
-  stats[art.mainStatKey] = (stats[art.mainStatKey] || 0) + art.mainStatVal
-  art.substats.forEach((substat) =>
-    substat?.key && (stats[substat.key] = (stats[substat.key] || 0) + substat.value))
+function calculateFinalStat(key, charAndWeapon, artifacts, artifactSetEffects, preprocessedFormulas) {
+  let stats = JSON.parse(JSON.stringify(charAndWeapon))
+  let setToSlots = ArtifactBase.setToSlots(artifacts)
 
-  // Add set effects
-  let setEffect = artifactSetEffects[setKey]?.[setCount[setKey]]
-  setEffect && Object.entries(setEffect).forEach(([statKey, val]) =>
-    stats[statKey] = (stats[statKey] || 0) + val)
+  //addArtifact stats
+  Object.values(artifacts).forEach(art => {
+    if (!art) return
+    stats[art.mainStatKey] = (stats[art.mainStatKey] || 0) + art.mainStatVal
+    art.substats.forEach((substat) =>
+      substat?.key && (stats[substat.key] = (stats[substat.key] || 0) + substat.value))
+  })
 
-  accu[slotKey] = art
-  setCount[setKey] = (setCount[setKey] ?? 0) + 1
+  //add setEffects
+  Object.entries(setToSlots).forEach(([setKey, arr]) =>
+    artifactSetEffects[setKey] && Object.entries(artifactSetEffects[setKey]).forEach(([num, value]) =>
+      parseInt(num) <= arr.length && Object.entries(value).forEach(([statKey, val]) =>
+        stats[statKey] = (stats[statKey] || 0) + val)))
+
+  //attach the formulas
+  preprocessedFormulas(stats)
+
+  return stats[key]
 }
