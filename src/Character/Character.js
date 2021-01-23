@@ -2,11 +2,12 @@ import Artifact from "../Artifact/Artifact";
 import ArtifactDatabase from "../Artifact/ArtifactDatabase";
 import { CharacterData, CharacterDataImport, characterStatBase, LevelsData } from "../Data/CharacterData";
 import ElementalData from "../Data/ElementalData";
-import { AttachLazyFormulas, ElementToReactionKeys } from "../StatData";
+import { ElementToReactionKeys, PreprocessFormulas } from "../StatData";
 import ConditionalsUtil from "../Util/ConditionalsUtil";
 import { clamp, deepClone } from "../Util/Util";
 import Weapon from "../Weapon/Weapon";
 import CharacterDatabase from "./CharacterDatabase";
+import { GetDependencies } from "../StatDependency"
 
 export default class Character {
   //do not instantiate.
@@ -264,7 +265,9 @@ export default class Character {
       Object.entries(Artifact.getConditionalStats(setKey, setNumKey, conditional.conditionalNum))
         .forEach(([statKey, val]) => stats[statKey] = (stats[statKey] || 0) + val)
     })
-    AttachLazyFormulas(stats)
+
+    let dependencies = GetDependencies(stats)
+    PreprocessFormulas(dependencies)(stats)
     return {
       artifactIds: Object.fromEntries(Object.entries(artifacts).map(([key, val]) => [key, val?.id])),
       setToSlots,

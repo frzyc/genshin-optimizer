@@ -1,56 +1,46 @@
-import { AttachLazyFormulas, Formulas, OverrideFormulas, StatData } from "./StatData"
+import { Formulas, OverrideFormulas, StatData } from "./StatData"
 
 //generate a statKey dependency, to reduce build generation calculation on a single stat.
 const formulaKeyDependency = {}
-const getDependency = (key) => {
+const registerDependency = (name, operation) => {
   let testObj = {}
-  let dependency = []
-  Object.keys(StatData).filter(k => k !== key).forEach(k => {
+  let dependency = new Set()
+  Object.keys(StatData).forEach(k => {
     Object.defineProperty(testObj, k, {
       get: () => {
-        dependency.push(k)
-        Object.defineProperty(testObj, k, { get: () => 0 })
+        dependency.add(k)
         return 0
-      },
-      configurable: true
+      }
     })
   })
-  AttachLazyFormulas(testObj)
-  //use the getter to generate the dependency
-  if (typeof testObj[key] === "number")
-    formulaKeyDependency[key] = dependency
+  operation(testObj)
+  formulaKeyDependency[name] = [...dependency]
 }
-Object.keys(Formulas).forEach(key => getDependency(key))
+Object.keys(Formulas).forEach(key => registerDependency(key, s => Formulas[key](s)))
+Object.keys(OverrideFormulas).forEach(name => registerDependency(name, s => OverrideFormulas[name].formula(s)))
+
 if (process.env.NODE_ENV === "development") console.log(formulaKeyDependency)
 
-function DependencyFormulaKeys(key, formulaOverrides = []) {
-  let dependencies = GetDependencyStats(key, formulaOverrides) || []
-  let formulaKeys = [], included = new Set()
+function GetDependencies(initialStats, keys = Object.keys(Formulas)) {
+  let dependencies = new Set(), { formulaOverrides = [] } = initialStats
   let formulas = new Set([...Object.keys(formulaOverrides), ...Object.keys(Formulas)])
+  keys.forEach(key => InsertDependencies(key, formulaOverrides, dependencies))
+  return [...dependencies]
+}
+function InsertDependencies(key, formulaOverrides, dependencies) {
+  if (dependencies.has(key)) return
 
-  for (const key of dependencies.reverse()) {
-    if (included.has(key)) continue
-    included.add(key)
-    if (formulas.has(key))
-      formulaKeys.push(key)
+  formulaKeyDependency[key]?.forEach(k => InsertDependencies(k, formulaOverrides, dependencies))
+  dependencies.add(key)
+
+  for (const {key: name} of formulaOverrides) {
+    if (OverrideFormulas[name].key === key) {
+      formulaKeyDependency[name].forEach(k => InsertDependencies(k, formulaOverrides, dependencies))
+      dependencies.add(name)
+    }
   }
+}
 
-  return formulaKeys
-}
-function GetDependencyStats(key, formulaOverrides = []) {
-  let dependencies = [key]
-  let keyDependencies = null
-  for (const formulaOverride of formulaOverrides)
-    if (OverrideFormulas[formulaOverride?.key]?.key === key)
-      keyDependencies = OverrideFormulas[formulaOverride?.key]?.dependency
-  keyDependencies = keyDependencies || formulaKeyDependency[key]
-  keyDependencies?.forEach(k => {
-    let subdependencies = GetDependencyStats(k, formulaOverrides)
-    dependencies.push(...subdependencies)
-  })
-  return dependencies
-}
 export {
-  DependencyFormulaKeys,
-  GetDependencyStats,
+  GetDependencies,
 }

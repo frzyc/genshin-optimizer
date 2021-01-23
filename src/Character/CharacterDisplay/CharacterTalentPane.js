@@ -7,7 +7,7 @@ import Assets from "../../Assets/Assets";
 import ConditionalSelector from "../../Components/ConditionalSelector";
 import Stat, { FormulaText } from "../../Stat";
 import { ElementToReactionKeys } from "../../StatData";
-import { GetDependencyStats } from "../../StatDependency";
+import { GetDependencies } from "../../StatDependency";
 import ConditionalsUtil from "../../Util/ConditionalsUtil";
 import Character from "../Character";
 import StatInput from "../StatInput";
@@ -56,7 +56,7 @@ export default function CharacterTalentPane(props) {
     //add talents/skills
     talKeys.forEach(key => keys.push(Character.getTalentStatKey(key, character)))
     //search for dependency, and flatten, isolate unique keys
-    keys = [...new Set(keys.map(key => GetDependencyStats(key, build.finalStats?.formulaOverrides)).flat())]
+    keys = GetDependencies(build.finalStats, keys)
     //return keys that are part of the formula text, in the order in which they appear.
     return Object.keys(FormulaText).filter(key => keys.includes(key))
   }

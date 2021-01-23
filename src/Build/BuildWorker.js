@@ -3,11 +3,11 @@ import ArtifactBase from "../Artifact/ArtifactBase";
 import { PreprocessFormulas } from "../StatData";
 
 onmessage = async (e) => {
-  let { splitArtifacts, artifactSetPerms, setFilters, initialStats, artifactSetEffects, maxBuildsToShow, buildFilterKey, ascending, dependencyFormulaKeys } = e.data;
-  if (process.env.NODE_ENV === "development") console.log(JSON.stringify(dependencyFormulaKeys))
+  let { splitArtifacts, artifactSetPerms, setFilters, initialStats, artifactSetEffects, maxBuildsToShow, buildFilterKey, ascending, dependencies } = e.data;
+  if (process.env.NODE_ENV === "development") console.log(dependencies)
   let t1 = performance.now()
   let artifactPerms = generateAllPossibleArtifactPerm(splitArtifacts, artifactSetPerms, setFilters)
-  let preprocessedFormulas = PreprocessFormulas(dependencyFormulaKeys, initialStats.formulaOverrides || [])
+  let preprocessedFormulas = PreprocessFormulas(dependencies)
   let builds = artifactPerms.map(artifacts =>
     ({ buildFilterVal: calculateFinalStat(buildFilterKey, initialStats, artifacts, artifactSetEffects, preprocessedFormulas), artifacts }));
   let t2 = performance.now()
