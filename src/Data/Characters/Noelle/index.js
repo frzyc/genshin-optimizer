@@ -202,7 +202,7 @@ let char = {
           stats: {
             modifiers: {
               noelle_burst_atk: {
-                sweep_multiplier: sweepingTimeStats.atk_bonu[tlvl] + (c >= 6 ? 0.5 : 0)
+                sweep_multiplier: (sweepingTimeStats.atk_bonu[tlvl] + (c >= 6 ? 50 : 0)) / 100
               }
             },
           },
