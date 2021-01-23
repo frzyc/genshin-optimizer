@@ -5,7 +5,7 @@ import { Accordion, AccordionContext, Button, Card, Col, Dropdown, DropdownButto
 import { useAccordionToggle } from 'react-bootstrap/AccordionToggle';
 import Assets from "../../Assets/Assets";
 import ConditionalSelector from "../../Components/ConditionalSelector";
-import Stat, { FormulaText } from "../../Stat";
+import Stat from "../../Stat";
 import { ElementToReactionKeys } from "../../StatData";
 import { GetDependencies } from "../../StatDependency";
 import ConditionalsUtil from "../../Util/ConditionalsUtil";
@@ -55,10 +55,8 @@ export default function CharacterTalentPane(props) {
       keys.push(Character.getTalentStatKey("char_atk", character, true))
     //add talents/skills
     talKeys.forEach(key => keys.push(Character.getTalentStatKey(key, character)))
-    //search for dependency, and flatten, isolate unique keys
-    keys = GetDependencies(build.finalStats, keys)
-    //return keys that are part of the formula text, in the order in which they appear.
-    return Object.keys(FormulaText).filter(key => keys.includes(key))
+    //search for dependency
+    return GetDependencies(build.finalStats, keys).filter(key => Stat.hasPrintableFormula(key))
   }
   return <>
     <Row><Col xs={12} className="mb-2">

@@ -4,7 +4,7 @@ import Artifact from '../../Artifact/Artifact';
 import ArtifactCard from '../../Artifact/ArtifactCard';
 import ConditionalSelector from '../../Components/ConditionalSelector';
 import { DisplayNewBuildDiff, DisplayStats } from '../../Components/StatDisplay';
-import Stat, { FormulaText } from "../../Stat";
+import Stat from "../../Stat";
 import { GetDependencies } from '../../StatDependency';
 import ConditionalsUtil from '../../Util/ConditionalsUtil';
 import Character from "../Character";
@@ -22,8 +22,7 @@ function CharacterArtifactPane({ character, character: { characterKey, compareAg
 
   const setStateArtifactConditional = (setKey, setNumKey, conditionalNum) => setState?.(state =>
     ({ artifactConditionals: ConditionalsUtil.setConditional(state.artifactConditionals, { srcKey: setKey, srcKey2: setNumKey }, conditionalNum) }))
-  const formulaDependencyKeys = GetDependencies(build.finalStats, statKeys)
-  const formulaKeys = Object.keys(FormulaText).filter(key => formulaDependencyKeys.includes(key))
+  const formulaKeys = GetDependencies(build.finalStats, statKeys).filter(key => Stat.hasPrintableFormula(key))
   return <>
     <Row>
       <Col className="mb-2">
