@@ -6,8 +6,7 @@ onmessage = async (e) => {
   if (process.env.NODE_ENV === "development") console.log(dependencies)
   let t1 = performance.now()
 
-  let preprocessedFormulas = PreprocessFormulas(dependencies, initialStats.modifiers)
-
+  let finalizeStats = PreprocessFormulas(dependencies, initialStats.modifiers)
   let builds = [], threshold = -Infinity, splitArtsPerSet = {}
   let setsInFilter = setFilters.filter(filter => filter.key).map(filter => filter.key)
 
@@ -32,36 +31,46 @@ onmessage = async (e) => {
     splitArtsPerSet[key] = artsPerSet
   })
 
-  let slotKeys = ["flower", "plume", "sands", "goblet", "circlet"]
-  //recursion function to loop through everything.
-  let slotPerm = (index, setPerm, setCount, accu, stats) => {
-    if (index >= slotKeys.length) {
-      preprocessedFormulas(stats)
+  artifactSetPerms.forEach(setPerm =>
+    generateBuilds(setPerm, initialStats, splitArtsPerSet, artifactSetEffects, (accu, stats) => {
+      finalizeStats(stats)
       let buildFilterVal = ascending ? -stats[buildFilterKey] : stats[buildFilterKey]
       if (buildFilterVal >= threshold) {
-        builds.push({buildFilterVal, artifacts: { ...accu } })
+        builds.push({ buildFilterVal, artifacts: { ...accu } })
         if (builds.count >= 100000) {
           prune()
           threshold = builds[maxBuildsToShow - 1]
         }
       }
-      return;
-    }
-    let slotKey = slotKeys[index]
-    let setKey = setPerm[slotKey]
-    splitArtsPerSet[slotKey][setKey]?.forEach(artifact => {
-      let newStats = { ...stats }
-      accumulate(slotKey, artifact, setCount, accu, newStats, artifactSetEffects)
-      slotPerm(index + 1, setPerm, setCount, accu, newStats)
-      setCount[artifact.setKey] -= 1
-    });
-  }
-  artifactSetPerms.forEach(setPerm => slotPerm(0, setPerm, {}, {}, initialStats))
+    })
+  )
   prune()
 
   let t2 = performance.now()
   if (process.env.NODE_ENV === "development") console.log(builds.map(b => b.buildFilterVal))
   postMessage({ builds, timing: t2 - t1 })
+}
+
+function generateBuilds(setPerm, initialStats, splitArtsPerSet, artifactSetEffects, callback) {
+  let slotKeys = ["flower", "plume", "sands", "goblet", "circlet"]
+
+  function slotPerm(index, setCount, accu, stats) {
+    if (index >= slotKeys.length) {
+      callback(accu, stats)
+      return
+    }
+
+    let slotKey = slotKeys[index], setKey = setPerm[slotKey]
+    if (splitArtsPerSet[slotKey][setKey])
+      for (const artifact of splitArtsPerSet[slotKey][setKey]) {
+        let newStats = { ...stats }
+        accumulate(slotKey, artifact, setCount, accu, newStats, artifactSetEffects)
+        slotPerm(index + 1, setCount, accu, newStats)
+        setCount[artifact.setKey] -= 1
+      }
+  }
+
+  slotPerm(0, {}, {}, initialStats)
 }
 
 function accumulate(slotKey, art, setCount, accu, stats, artifactSetEffects) {
