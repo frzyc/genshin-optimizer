@@ -301,10 +301,8 @@ export default class Character {
     }
 
     let addStatsObj = stats => stats && Object.entries(stats).forEach(([key, val]) => {
-      if (key === "modifiers") {
-        initialStats.modifiers = {...(initialStats.modifiers || {}), ...val}
-        return
-      }
+      if (key === "modifiers")
+        return initialStats.modifiers = { ...(initialStats.modifiers || {}), ...val }
       initialStats[key] = (initialStats[key] || 0) + val
     })
 
@@ -313,7 +311,7 @@ export default class Character {
     //add stats from talentconditionals
     talentConditionals.forEach(cond => {
       let { srcKey: talentKey, srcKey2: conditionalKey, conditionalNum } = cond
-      let talentLvlKey = Character.getTalentLevelKey(character, talentKey)
+      let talentLvlKey = Character.getTalentLevelKey(character, talentKey, constellation)
       let conditional = Character.getTalentConditional(characterKey, talentKey, conditionalKey, talentLvlKey, constellation, ascension)
       addStatsObj(Character.getTalentConditionalStats(conditional, conditionalNum, {}))
     })
