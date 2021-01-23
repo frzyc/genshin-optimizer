@@ -32,8 +32,15 @@ export default class Stat {
   static printStat = (statKey, stats) =>
     f({ stats, expand: false }, statKey)
 
-  static hasPrintableFormula = (statKey) =>
-    Object.keys(FormulaText).includes(statKey) || Object.keys(ModifiersText).includes(statKey)
+  static getPrintableFormulaStatKeyList = (statList = []) => {
+    //remove keys that will be overriden by the modifier
+    for (const statKey of statList)
+      if (Object.keys(ModifiersText).includes(statKey))
+        statList = statList.filter(skey => skey !== Modifiers[statKey].key)
+    let formulaKeys = Object.keys(FormulaText)
+    let modifiersTextKeys = Object.keys(ModifiersText)
+    return statList.filter(statKey => formulaKeys.includes(statKey) || modifiersTextKeys.includes(statKey))
+  }
 
   static printFormula = (statKey, stats, modifiers = {}, expand = true) => {
     if (statKey in ModifiersText)

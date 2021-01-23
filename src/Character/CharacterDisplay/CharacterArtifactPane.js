@@ -22,7 +22,7 @@ function CharacterArtifactPane({ character, character: { characterKey, compareAg
 
   const setStateArtifactConditional = (setKey, setNumKey, conditionalNum) => setState?.(state =>
     ({ artifactConditionals: ConditionalsUtil.setConditional(state.artifactConditionals, { srcKey: setKey, srcKey2: setNumKey }, conditionalNum) }))
-  const formulaKeys = GetDependencies(build.finalStats, statKeys).filter(key => Stat.hasPrintableFormula(key))
+  const formulaKeys = Stat.getPrintableFormulaStatKeyList(GetDependencies(build.finalStats, statKeys))
   return <>
     <Row>
       <Col className="mb-2">

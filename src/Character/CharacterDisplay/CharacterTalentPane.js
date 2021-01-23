@@ -56,7 +56,7 @@ export default function CharacterTalentPane(props) {
     //add talents/skills
     talKeys.forEach(key => keys.push(Character.getTalentStatKey(key, character)))
     //search for dependency
-    return GetDependencies(build.finalStats, keys).filter(key => Stat.hasPrintableFormula(key))
+    return Stat.getPrintableFormulaStatKeyList(GetDependencies(build.finalStats, keys))
   }
   return <>
     <Row><Col xs={12} className="mb-2">
