@@ -1,26 +1,21 @@
 import '../WorkerHack'
-import ArtifactBase from "../Artifact/ArtifactBase";
 import { PreprocessFormulas } from "../StatData";
 
 onmessage = async (e) => {
   let { splitArtifacts, artifactSetPerms, setFilters, initialStats, artifactSetEffects, maxBuildsToShow, buildFilterKey, ascending, dependencies } = e.data;
   if (process.env.NODE_ENV === "development") console.log(dependencies)
   let t1 = performance.now()
-  let artifactPerms = generateAllPossibleArtifactPerm(splitArtifacts, artifactSetPerms, setFilters)
-  let preprocessedFormulas = PreprocessFormulas(dependencies, initialStats.modifiers)
-  let builds = artifactPerms.map(artifacts =>
-    ({ buildFilterVal: calculateFinalStat(buildFilterKey, initialStats, artifacts, artifactSetEffects, preprocessedFormulas), artifacts }));
-  let t2 = performance.now()
-  builds.sort((a, b) => ascending ? (a.buildFilterVal - b.buildFilterVal) : (b.buildFilterVal - a.buildFilterVal))
-  builds.splice(maxBuildsToShow)
-  if (process.env.NODE_ENV === "development") console.log(builds.map(b => b.buildFilterVal))
-  postMessage({ builds, timing: t2 - t1 })
-};
-const generateAllPossibleArtifactPerm = (splitArtifacts, setPerms, setFilters) => {
-  let perm = [];
 
-  let splitArtsPerSet = {}
+  let preprocessedFormulas = PreprocessFormulas(dependencies, initialStats.modifiers)
+
+  let builds = [], threshold = -Infinity, splitArtsPerSet = {}
   let setsInFilter = setFilters.filter(filter => filter.key).map(filter => filter.key)
+
+  let prune = () => {
+    builds.sort((a, b) => (b.buildFilterVal - a.buildFilterVal))
+    builds.splice(maxBuildsToShow)
+  }
+
   //count the number of arts in setfilter for each slot
   Object.entries(splitArtifacts).forEach(([key, artArr]) => {
     let artsPerSet = {}
@@ -36,47 +31,51 @@ const generateAllPossibleArtifactPerm = (splitArtifacts, setPerms, setFilters) =
     })
     splitArtsPerSet[key] = artsPerSet
   })
-  let slotKeys = ["flower", "plume", "sands", "goblet", "circlet"];
+
+  let slotKeys = ["flower", "plume", "sands", "goblet", "circlet"]
   //recursion function to loop through everything.
-  let slotPerm = (index, setPerm, accu) => {
+  let slotPerm = (index, setPerm, setCount, accu, stats) => {
     if (index >= slotKeys.length) {
-      perm.push(accu)
+      preprocessedFormulas(stats)
+      let buildFilterVal = ascending ? -stats[buildFilterKey] : stats[buildFilterKey]
+      if (buildFilterVal >= threshold) {
+        builds.push({buildFilterVal, artifacts: { ...accu } })
+        if (builds.count >= 100000) {
+          prune()
+          threshold = builds[maxBuildsToShow - 1]
+        }
+      }
       return;
     }
-    let slotKey = slotKeys[index];
-    let setKey = setPerm[slotKey];
-    if (splitArtsPerSet[slotKey][setKey]) {
-      splitArtsPerSet[slotKey][setKey].forEach(element => {
-        accu[slotKey] = element;
-        slotPerm(index + 1, setPerm, { ...accu })
-      });
-    }
-
+    let slotKey = slotKeys[index]
+    let setKey = setPerm[slotKey]
+    splitArtsPerSet[slotKey][setKey]?.forEach(artifact => {
+      let newStats = { ...stats }
+      accumulate(slotKey, artifact, setCount, accu, newStats, artifactSetEffects)
+      slotPerm(index + 1, setPerm, setCount, accu, newStats)
+      setCount[artifact.setKey] -= 1
+    });
   }
-  setPerms.forEach(setPerm => slotPerm(0, setPerm, {}))
-  return perm
+  artifactSetPerms.forEach(setPerm => slotPerm(0, setPerm, {}, {}, initialStats))
+  prune()
+
+  let t2 = performance.now()
+  if (process.env.NODE_ENV === "development") console.log(builds.map(b => b.buildFilterVal))
+  postMessage({ builds, timing: t2 - t1 })
 }
 
-function calculateFinalStat(key, charAndWeapon, artifacts, artifactSetEffects, preprocessedFormulas) {
-  let stats = JSON.parse(JSON.stringify(charAndWeapon))
-  let setToSlots = ArtifactBase.setToSlots(artifacts)
+function accumulate(slotKey, art, setCount, accu, stats, artifactSetEffects) {
+  let setKey = art.setKey
+  accu[slotKey] = art
+  setCount[setKey] = (setCount[setKey] ?? 0) + 1
 
-  //addArtifact stats
-  Object.values(artifacts).forEach(art => {
-    if (!art) return
-    stats[art.mainStatKey] = (stats[art.mainStatKey] || 0) + art.mainStatVal
-    art.substats.forEach((substat) =>
-      substat?.key && (stats[substat.key] = (stats[substat.key] || 0) + substat.value))
-  })
+  // Add artifact stats
+  stats[art.mainStatKey] = (stats[art.mainStatKey] || 0) + art.mainStatVal
+  art.substats.forEach((substat) =>
+    substat?.key && (stats[substat.key] = (stats[substat.key] || 0) + substat.value))
 
-  //add setEffects
-  Object.entries(setToSlots).forEach(([setKey, arr]) =>
-    artifactSetEffects[setKey] && Object.entries(artifactSetEffects[setKey]).forEach(([num, value]) =>
-      parseInt(num) <= arr.length && Object.entries(value).forEach(([statKey, val]) =>
-        stats[statKey] = (stats[statKey] || 0) + val)))
-
-  //attach the formulas
-  preprocessedFormulas(stats)
-
-  return stats[key]
+  // Add set effects
+  let setEffect = artifactSetEffects[setKey]?.[setCount[setKey]]
+  setEffect && Object.entries(setEffect).forEach(([statKey, val]) =>
+    stats[statKey] = (stats[statKey] || 0) + val)
 }
