@@ -2,11 +2,12 @@ import Artifact from "../Artifact/Artifact";
 import ArtifactDatabase from "../Artifact/ArtifactDatabase";
 import { CharacterData, CharacterDataImport, characterStatBase, LevelsData } from "../Data/CharacterData";
 import ElementalData from "../Data/ElementalData";
-import { AttachLazyFormulas, ElementToReactionKeys } from "../StatData";
+import { ElementToReactionKeys, PreprocessFormulas } from "../StatData";
 import ConditionalsUtil from "../Util/ConditionalsUtil";
 import { clamp, deepClone } from "../Util/Util";
 import Weapon from "../Weapon/Weapon";
 import CharacterDatabase from "./CharacterDatabase";
+import { GetDependencies } from "../StatDependency"
 
 export default class Character {
   //do not instantiate.
@@ -112,7 +113,7 @@ export default class Character {
     if (!conditionalNum || !conditional) return defVal
     let [stats = {}, stacks] = ConditionalsUtil.getConditionalProp(conditional, "stats", conditionalNum)
     if (!stacks) return defVal
-    return Object.fromEntries(Object.entries(stats).map(([key, val]) => key === "formulaOverrides" ? [key, val] : [key, val * stacks]))
+    return Object.fromEntries(Object.entries(stats).map(([key, val]) => key === "modifiers" ? [key, val] : [key, val * stacks]))
   }
   static getTalentConditionalFields = (conditional, conditionalNum, defVal = []) => {
     if (!conditionalNum || !conditional) return defVal
@@ -264,7 +265,9 @@ export default class Character {
       Object.entries(Artifact.getConditionalStats(setKey, setNumKey, conditional.conditionalNum))
         .forEach(([statKey, val]) => stats[statKey] = (stats[statKey] || 0) + val)
     })
-    AttachLazyFormulas(stats)
+
+    let dependencies = GetDependencies(stats)
+    PreprocessFormulas(dependencies, stats.modifiers)(stats)
     return {
       artifactIds: Object.fromEntries(Object.entries(artifacts).map(([key, val]) => [key, val?.id])),
       setToSlots,
@@ -298,8 +301,8 @@ export default class Character {
     }
 
     let addStatsObj = stats => stats && Object.entries(stats).forEach(([key, val]) => {
-      if (key === "formulaOverrides") {
-        initialStats.formulaOverrides = [...(initialStats.formulaOverrides || []), ...val]
+      if (key === "modifiers") {
+        initialStats.modifiers = {...(initialStats.modifiers || {}), ...val}
         return
       }
       initialStats[key] = (initialStats[key] || 0) + val

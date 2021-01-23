@@ -1,14 +1,15 @@
 import '../WorkerHack'
 import ArtifactBase from "../Artifact/ArtifactBase";
-import { AttachLazyFormulas } from "../StatData";
+import { PreprocessFormulas } from "../StatData";
 
 onmessage = async (e) => {
-  let { splitArtifacts, artifactSetPerms, setFilters, initialStats, artifactSetEffects, maxBuildsToShow, buildFilterKey, ascending, dependencyStatKeys } = e.data;
-  if (process.env.NODE_ENV === "development") console.log(JSON.stringify(dependencyStatKeys))
+  let { splitArtifacts, artifactSetPerms, setFilters, initialStats, artifactSetEffects, maxBuildsToShow, buildFilterKey, ascending, dependencies } = e.data;
+  if (process.env.NODE_ENV === "development") console.log(dependencies)
   let t1 = performance.now()
   let artifactPerms = generateAllPossibleArtifactPerm(splitArtifacts, artifactSetPerms, setFilters)
+  let preprocessedFormulas = PreprocessFormulas(dependencies, initialStats.modifiers)
   let builds = artifactPerms.map(artifacts =>
-    ({ buildFilterVal: calculateFinalStat(buildFilterKey, initialStats, artifacts, artifactSetEffects, dependencyStatKeys), artifacts }));
+    ({ buildFilterVal: calculateFinalStat(buildFilterKey, initialStats, artifacts, artifactSetEffects, preprocessedFormulas), artifacts }));
   let t2 = performance.now()
   builds.sort((a, b) => ascending ? (a.buildFilterVal - b.buildFilterVal) : (b.buildFilterVal - a.buildFilterVal))
   builds.splice(maxBuildsToShow)
@@ -56,7 +57,7 @@ const generateAllPossibleArtifactPerm = (splitArtifacts, setPerms, setFilters) =
   return perm
 }
 
-function calculateFinalStat(key, charAndWeapon, artifacts, artifactSetEffects, dependencyStatKeys) {
+function calculateFinalStat(key, charAndWeapon, artifacts, artifactSetEffects, preprocessedFormulas) {
   let stats = JSON.parse(JSON.stringify(charAndWeapon))
   let setToSlots = ArtifactBase.setToSlots(artifacts)
 
@@ -75,6 +76,7 @@ function calculateFinalStat(key, charAndWeapon, artifacts, artifactSetEffects, d
         stats[statKey] = (stats[statKey] || 0) + val)))
 
   //attach the formulas
-  AttachLazyFormulas(stats, dependencyStatKeys)
+  preprocessedFormulas(stats)
+
   return stats[key]
 }

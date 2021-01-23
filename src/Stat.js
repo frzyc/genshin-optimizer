@@ -1,5 +1,5 @@
 import ElementalData from "./Data/ElementalData";
-import { ReactionMatrix, Formulas, OverrideFormulas, StatData } from "./StatData";
+import { ReactionMatrix, Formulas, Modifiers, StatData } from "./StatData";
 
 export default class Stat {
   //do not instantiate.
@@ -32,17 +32,26 @@ export default class Stat {
   static printStat = (statKey, stats) =>
     f({ stats, expand: false }, statKey)
 
-  static printFormula = (statKey, stats, formulaOverrides = [], expand = true) => {
-    for (const formulaOverride of formulaOverrides)
-      if (OverrideFormulas[formulaOverride?.key]?.key === statKey)
-        return Stat.printOverrideFormula(stats, formulaOverride.key, formulaOverride.options, false)
+  static getPrintableFormulaStatKeyList = (statList = []) => {
+    //remove keys that will be overriden by the modifier
+    for (const statKey of statList)
+      if (Object.keys(ModifiersText).includes(statKey))
+        statList = statList.filter(skey => skey !== Modifiers[statKey].key)
+    let formulaKeys = Object.keys(FormulaText)
+    let modifiersTextKeys = Object.keys(ModifiersText)
+    return statList.filter(statKey => formulaKeys.includes(statKey) || modifiersTextKeys.includes(statKey))
+  }
+
+  static printFormula = (statKey, stats, modifiers = {}, expand = true) => {
+    if (statKey in ModifiersText)
+      return Stat.printModifier(stats, statKey, modifiers[statKey], false)
     return FormulaText?.[statKey] && typeof FormulaText?.[statKey] === "function" &&
       (<span>{FormulaText[statKey]({ stats, expand })}</span>)
   }
 
-  static printOverrideFormula = (stats, overrideKey, options, expand = true) =>
-    OverrideFormulasText?.[overrideKey] && typeof OverrideFormulasText?.[overrideKey].formulaText === "function" &&
-    (<span>{OverrideFormulasText[overrideKey].formulaText(options)({ stats, expand })}</span>)
+  static printModifier = (stats, overrideKey, options, expand = true) =>
+    typeof ModifiersText?.[overrideKey]?.formulaText === "function" &&
+    (<span>{ModifiersText[overrideKey].formulaText(options)({ stats, expand })}</span>)
 }
 //generate html tags based on tagged variants of the statData
 const htmlStatsData = Object.fromEntries(Object.entries(StatData).filter(([key, obj]) => obj.variant).map(([key, obj]) => [key, (<span className={`text-${obj.variant} text-nowrap`}>{obj.name}</span>)]))
@@ -50,6 +59,7 @@ const htmlStatsData = Object.fromEntries(Object.entries(StatData).filter(([key, 
 function f(options, statKey) {
   let { stats, expand = true } = options
   if (!stats) return
+  if (Modifiers[statKey]) statKey = Modifiers[statKey].key
   if (expand && FormulaText?.[statKey])
     return <span>( {FormulaText[statKey](options)} )</span>
   let statName = Stat.getStatNamePretty(statKey)
@@ -155,7 +165,7 @@ function reactionMatrixElementRenderer(o, val, i) {
     }));
 });
 const eleFormulaText = {
-  norm_atk_dmg: (o, ele) => <span>{f(o, `atk_final`)} * {f(o, `${ele}_norm_atk_bonus_multi`)} * {f(o, `enemy_level_multi`)} * {f(o, `${ele}_enemy_phy_res_multi`)}</span>,
+  norm_atk_dmg: (o, ele) => <span>{f(o, `atk_final`)} * {f(o, `${ele}_norm_atk_bonus_multi`)} * {f(o, `enemy_level_multi`)} * {f(o, `${ele}_enemy_ele_res_multi`)}</span>,
   norm_atk_crit_dmg: (o, ele) => <span>{f(o, `${ele}_norm_atk_dmg`)} * {f(o, `crit_dmg_multi`)}</span>,
   norm_atk_avg_dmg: (o, ele) => <span>{f(o, `${ele}_norm_atk_dmg`)} * {f(o, `norm_atk_crit_multi`)}</span>,
   norm_atk_bonus_multi: (o, ele) => <span>( 1 + {f(o, `${ele}_ele_dmg_bonus`)} + {f(o, `norm_atk_dmg_bonus`)} + {f(o, `all_dmg_bonus`)} )</span>,
@@ -170,7 +180,7 @@ const eleFormulaText = {
   plunge_avg_dmg: (o, ele) => <span>{f(o, `${ele}_ele_avg_dmg`)}</span>,
   plunge_bonus_multi: (o, ele) => <span>{f(o, `${ele}_ele_bonus_multi`)}</span>,
 
-  ele_dmg: (o, ele) => <span>{f(o, `atk_final`)} * {f(o, `${ele}_ele_bonus_multi`)} * {f(o, `enemy_level_multi`)} * {f(o, `${ele}_enemy_phy_res_multi`)}</span>,
+  ele_dmg: (o, ele) => <span>{f(o, `atk_final`)} * {f(o, `${ele}_ele_bonus_multi`)} * {f(o, `enemy_level_multi`)} * {f(o, `${ele}_enemy_ele_res_multi`)}</span>,
   ele_crit_dmg: (o, ele) => <span>{f(o, `${ele}_ele_dmg`)} * {f(o, `crit_dmg_multi`)}</span>,
   ele_avg_dmg: (o, ele) => <span>{f(o, `${ele}_ele_dmg`)} * {f(o, `crit_multi`)}</span>,
   ele_bonus_multi: (o, ele) => <span>( 1 + {f(o, `${ele}_ele_dmg_bonus`)} + {f(o, `all_dmg_bonus`)} )</span>,
@@ -205,9 +215,12 @@ Object.keys(ElementalData).forEach(eleKey =>
       value: (obj) => (func)(obj, eleKey),
     })))
 
-const OverrideFormulasText = {
+const ModifiersText = {
   noelle_burst_atk: {
-    formulaText: (options) => (o) => <span>( {f(o, "atk_base")} + {f(o, "atk_weapon")} ) * ( 1 + {f(o, "atk_")} ) + {f(o, "atk")} + {f(o, "def_final")} * {options.value}%</span>,
+    formulaText: (options) => (o) => <span>( {f(o, "atk_base")} + {f(o, "atk_weapon")} ) * ( 1 + {f(o, "atk_")} ) + {f(o, "atk")} + {f(o, "def_final")} * {options.sweep_multiplier * 100}%</span>,
+  },
+  mona_passive2_hydro_ele_dmg_bonus: {
+    formulaText: () => (o) => <span>{f(o, "hydro_ele_dmg_bonus")} + {f(o, "ener_rech")} * 20%</span>,
   }
 }
 
@@ -221,4 +234,5 @@ process.env.NODE_ENV === "development" && Object.keys(Formulas).forEach(key => {
 
 export {
   FormulaText,
+  ModifiersText,
 };

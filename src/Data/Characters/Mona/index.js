@@ -245,9 +245,9 @@ let char = {
         }]
       }],
       stats: (c, a) => a >= 4 && {
-        formulaOverrides: [{
-          key: "mona_passive2_hydro_ele_dmg_bonus",
-        }],
+        modifiers: {
+          mona_passive2_hydro_ele_dmg_bonus: null
+        },
       }
     },
     passive3: {

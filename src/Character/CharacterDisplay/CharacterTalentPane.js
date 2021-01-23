@@ -5,9 +5,9 @@ import { Accordion, AccordionContext, Button, Card, Col, Dropdown, DropdownButto
 import { useAccordionToggle } from 'react-bootstrap/AccordionToggle';
 import Assets from "../../Assets/Assets";
 import ConditionalSelector from "../../Components/ConditionalSelector";
-import Stat, { FormulaText } from "../../Stat";
+import Stat from "../../Stat";
 import { ElementToReactionKeys } from "../../StatData";
-import { GetDependencyStats } from "../../StatDependency";
+import { GetDependencies } from "../../StatDependency";
 import ConditionalsUtil from "../../Util/ConditionalsUtil";
 import Character from "../Character";
 import StatInput from "../StatInput";
@@ -55,10 +55,8 @@ export default function CharacterTalentPane(props) {
       keys.push(Character.getTalentStatKey("char_atk", character, true))
     //add talents/skills
     talKeys.forEach(key => keys.push(Character.getTalentStatKey(key, character)))
-    //search for dependency, and flatten, isolate unique keys
-    keys = [...new Set(keys.map(key => GetDependencyStats(key, build.finalStats?.formulaOverrides)).flat())]
-    //return keys that are part of the formula text, in the order in which they appear.
-    return Object.keys(FormulaText).filter(key => keys.includes(key))
+    //search for dependency
+    return Stat.getPrintableFormulaStatKeyList(GetDependencies(build.finalStats, keys))
   }
   return <>
     <Row><Col xs={12} className="mb-2">
@@ -145,7 +143,7 @@ export default function CharacterTalentPane(props) {
                       {Stat.printStat(key, build.finalStats)}
                     </Card.Header>
                     <Card.Body className="p-2">
-                      <small>{Stat.printFormula(key, build.finalStats, build.finalStats.formulaOverrides, false)}</small>
+                      <small>{Stat.printFormula(key, build.finalStats, build.finalStats.modifiers, false)}</small>
                     </Card.Body>
                   </Card>
                 </Col>
@@ -384,7 +382,7 @@ function SkillDisplayCard(props) {
           <span className="float-right text-right">{statVal}{Stat.getStatUnit(statKey)}</span>
         </div>
       </ListGroup.Item>
-    ).filter(e => Boolean(e))//filter because formulaoverrides cannot be displayed.
+    ).filter(e => Boolean(e))//filter because modifiers cannot be displayed.
     statsEle = Boolean(statList.length) && <Row><Col>
       <Card bg="darkcontent" text="lightfont" className="mt-2 ml-n2 mr-n2">
         <ListGroup className="text-white" variant="flush">
@@ -426,8 +424,8 @@ function SkillDisplayCard(props) {
           let conditionalFields = []
           if (conditionalNum) {
             conditionalStats = Character.getTalentConditionalStats(conditional, conditionalNum, {})
-            //filter out formulaOverrides from rendering
-            conditionalStats = Object.fromEntries(Object.entries(conditionalStats).filter(([key, _]) => key !== "formulaOverrides"))
+            //filter out modifiers from rendering
+            conditionalStats = Object.fromEntries(Object.entries(conditionalStats).filter(([key, _]) => key !== "modifiers"))
             conditionalFields = Character.getTalentConditionalFields(conditional, conditionalNum, [])
           }
           let setConditional = (conditionalNum) => setState(state =>

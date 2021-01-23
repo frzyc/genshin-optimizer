@@ -311,57 +311,35 @@ Object.entries(eleFormulas).forEach(([key, func]) =>
       value: (obj) => (func)(obj, eleKey),
     })))
 
-const OverrideFormulas = {
+const Modifiers = {
   noelle_burst_atk: {
     key: "atk_final",
-    formula: (options) => (s) => (s.atk_base + s.atk_weapon) * (1 + s.atk_ / 100) + s.atk + s.def_final * (options.value / 100),
-    dependency: ["atk_base", "atk_weapon", "atk_", "atk", "def_final", "def_base", "def_", "def"],
+    formula: (options) => (s) => s.atk_final + s.def_final * options.sweep_multiplier
   },
   mona_passive2_hydro_ele_dmg_bonus: {
     key: "hydro_ele_dmg_bonus",
-    formula: (options) => (s) => (options.oldval || 0) + s.ener_rech * 0.2,
-    dependency: ["ener_rech"],
+    formula: () => (s) => s.hydro_ele_dmg_bonus + s.ener_rech * 0.2
   }
 }
 
-//the keyfilters are used by build generator to reduce the amount of calculations required
-function AttachLazyFormulas(obj, options = {}) {
-  let { formulaKeys = Object.keys(Formulas), statKeys = Object.keys(StatData) } = options;
-  let { formulaOverrides = [] } = obj;
-  formulaOverrides.forEach(formulaOverride => {
-    let { key: overrideFormulaKey, options: overrideFormulaOptions } = formulaOverride
-    let { key, formula } = OverrideFormulas[overrideFormulaKey] || {}
-    if (!formulaKeys.includes(key) && !statKeys.includes(key)) return
-    formula = formula({ ...overrideFormulaOptions, oldval: obj[key] })
-    Object.defineProperty(obj, key, {
-      get: options.formulaKeys ? () => formula(obj) : function () {
-        let val = formula(obj)
-        Object.defineProperty(this, key, { value: val })
-        return val
-      },
-      configurable: true
-    })
+function PreprocessFormulas(formulaKeys, modifiers) {
+  let formulas = formulaKeys.map(key => {
+    if (key in Modifiers) return [Modifiers[key].key, Modifiers[key].formula(modifiers[key])]
+    if (key in Formulas) return [key, Formulas[key]]
+    let value = StatData[key]["default"] ?? 0
+    return [key, (s) => (s[key] ?? value)]
   })
 
-  formulaKeys.forEach(key => {
-    !obj.hasOwnProperty(key) && Object.defineProperty(obj, key, {
-      get: options.formulaKeys ? () => Formulas[key](obj) : function () {
-        let val = Formulas[key](obj)
-        Object.defineProperty(this, key, { value: val })
-        return val
-      },
-      configurable: true
-    })
+  return stat => formulas.forEach(([key, formula]) => {
+    stat[key] = formula(stat)
   })
-  //assign zeros or default values to the other stats that are not part of the calculations
-  statKeys.forEach(key => !obj.hasOwnProperty(key) && (obj[key] = StatData[key].default || 0))
 }
 
 export {
   Formulas,
-  OverrideFormulas,
+  Modifiers,
   StatData,
   ElementToReactionKeys,
   ReactionMatrix,
-  AttachLazyFormulas,
+  PreprocessFormulas,
 }
