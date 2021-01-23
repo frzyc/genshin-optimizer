@@ -55,7 +55,7 @@ function CharacterArtifactPane({ character, character: { characterKey, compareAg
                         {Stat.printStat(key, build.finalStats)}
                       </Card.Header>
                       <Card.Body className="p-2">
-                        <small>{Stat.printFormula(key, build.finalStats, build.finalStats.formulaOverrides, false)}</small>
+                        <small>{Stat.printFormula(key, build.finalStats, build.finalStats.modifiers, false)}</small>
                       </Card.Body>
                     </Card>
                   </Col>

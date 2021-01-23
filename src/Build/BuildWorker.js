@@ -7,7 +7,7 @@ onmessage = async (e) => {
   if (process.env.NODE_ENV === "development") console.log(dependencies)
   let t1 = performance.now()
   let artifactPerms = generateAllPossibleArtifactPerm(splitArtifacts, artifactSetPerms, setFilters)
-  let preprocessedFormulas = PreprocessFormulas(dependencies)
+  let preprocessedFormulas = PreprocessFormulas(dependencies, initialStats.modifiers)
   let builds = artifactPerms.map(artifacts =>
     ({ buildFilterVal: calculateFinalStat(buildFilterKey, initialStats, artifacts, artifactSetEffects, preprocessedFormulas), artifacts }));
   let t2 = performance.now()

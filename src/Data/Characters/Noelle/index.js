@@ -200,12 +200,11 @@ let char = {
           sourceKey: "noelle",
           maxStack: 1,
           stats: {
-            formulaOverrides: [{
-              key: "noelle_burst_atk",
-              options: {
-                value: sweepingTimeStats.atk_bonu[tlvl] + (c >= 6 ? 50 : 0)
+            modifiers: {
+              noelle_burst_atk: {
+                sweep_multiplier: sweepingTimeStats.atk_bonu[tlvl] + (c >= 6 ? 0.5 : 0)
               }
-            }],
+            },
           },
           fields: [{
             text: "Convert DEF to ATK as above",

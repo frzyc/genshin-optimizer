@@ -145,7 +145,7 @@ export default function CharacterTalentPane(props) {
                       {Stat.printStat(key, build.finalStats)}
                     </Card.Header>
                     <Card.Body className="p-2">
-                      <small>{Stat.printFormula(key, build.finalStats, build.finalStats.formulaOverrides, false)}</small>
+                      <small>{Stat.printFormula(key, build.finalStats, build.finalStats.modifiers, false)}</small>
                     </Card.Body>
                   </Card>
                 </Col>
@@ -384,7 +384,7 @@ function SkillDisplayCard(props) {
           <span className="float-right text-right">{statVal}{Stat.getStatUnit(statKey)}</span>
         </div>
       </ListGroup.Item>
-    ).filter(e => Boolean(e))//filter because formulaoverrides cannot be displayed.
+    ).filter(e => Boolean(e))//filter because modifiers cannot be displayed.
     statsEle = Boolean(statList.length) && <Row><Col>
       <Card bg="darkcontent" text="lightfont" className="mt-2 ml-n2 mr-n2">
         <ListGroup className="text-white" variant="flush">
@@ -426,8 +426,8 @@ function SkillDisplayCard(props) {
           let conditionalFields = []
           if (conditionalNum) {
             conditionalStats = Character.getTalentConditionalStats(conditional, conditionalNum, {})
-            //filter out formulaOverrides from rendering
-            conditionalStats = Object.fromEntries(Object.entries(conditionalStats).filter(([key, _]) => key !== "formulaOverrides"))
+            //filter out modifiers from rendering
+            conditionalStats = Object.fromEntries(Object.entries(conditionalStats).filter(([key, _]) => key !== "modifiers"))
             conditionalFields = Character.getTalentConditionalFields(conditional, conditionalNum, [])
           }
           let setConditional = (conditionalNum) => setState(state =>

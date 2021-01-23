@@ -311,20 +311,20 @@ Object.entries(eleFormulas).forEach(([key, func]) =>
       value: (obj) => (func)(obj, eleKey),
     })))
 
-const OverrideFormulas = {
+const Modifiers = {
   noelle_burst_atk: {
     key: "atk_final",
-    formula: (s) => (s.atk_base + s.atk_weapon) * (1 + s.atk_ / 100) + s.atk + s.def_final * (s.atk_final / 100),
+    formula: (options) => (s) => s.atk_final + s.def_final * options.sweep_multiplier
   },
   mona_passive2_hydro_ele_dmg_bonus: {
     key: "hydro_ele_dmg_bonus",
-    formula: (s) => (s.hydro_ele_dmg_bonus || 0) + s.ener_rech * 0.2,
+    formula: () => (s) => s.hydro_ele_dmg_bonus + s.ener_rech * 0.2
   }
 }
 
-function PreprocessFormulas(formulaKeys) {
+function PreprocessFormulas(formulaKeys, modifiers) {
   let formulas = formulaKeys.map(key => {
-    if (key in OverrideFormulas) return [OverrideFormulas[key].key, OverrideFormulas[key].formula]
+    if (key in Modifiers) return [Modifiers[key].key, Modifiers[key].formula(modifiers[key])]
     if (key in Formulas) return [key, Formulas[key]]
     let value = StatData[key]["default"] ?? 0
     return [key, (s) => (s[key] ?? value)]
@@ -337,7 +337,7 @@ function PreprocessFormulas(formulaKeys) {
 
 export {
   Formulas,
-  OverrideFormulas,
+  Modifiers,
   StatData,
   ElementToReactionKeys,
   ReactionMatrix,

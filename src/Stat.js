@@ -1,5 +1,5 @@
 import ElementalData from "./Data/ElementalData";
-import { ReactionMatrix, Formulas, OverrideFormulas, StatData } from "./StatData";
+import { ReactionMatrix, Formulas, Modifiers, StatData } from "./StatData";
 
 export default class Stat {
   //do not instantiate.
@@ -32,17 +32,17 @@ export default class Stat {
   static printStat = (statKey, stats) =>
     f({ stats, expand: false }, statKey)
 
-  static printFormula = (statKey, stats, formulaOverrides = [], expand = true) => {
-    for (const formulaOverride of formulaOverrides)
-      if (OverrideFormulas[formulaOverride?.key]?.key === statKey)
-        return Stat.printOverrideFormula(stats, formulaOverride.key, formulaOverride.options, false)
+  static printFormula = (statKey, stats, modifiers = [], expand = true) => {
+    for (const key in modifiers)
+      if (Modifiers[key]?.key === statKey)
+        return Stat.printModifier(stats, key, modifiers[key], false)
     return FormulaText?.[statKey] && typeof FormulaText?.[statKey] === "function" &&
       (<span>{FormulaText[statKey]({ stats, expand })}</span>)
   }
 
-  static printOverrideFormula = (stats, overrideKey, options, expand = true) =>
-    OverrideFormulasText?.[overrideKey] && typeof OverrideFormulasText?.[overrideKey].formulaText === "function" &&
-    (<span>{OverrideFormulasText[overrideKey].formulaText(options)({ stats, expand })}</span>)
+  static printModifier = (stats, overrideKey, options, expand = true) =>
+    ModifiersText?.[overrideKey] && typeof ModifiersText?.[overrideKey].formulaText === "function" &&
+    (<span>{ModifiersText[overrideKey].formulaText(options)({ stats, expand })}</span>)
 }
 //generate html tags based on tagged variants of the statData
 const htmlStatsData = Object.fromEntries(Object.entries(StatData).filter(([key, obj]) => obj.variant).map(([key, obj]) => [key, (<span className={`text-${obj.variant} text-nowrap`}>{obj.name}</span>)]))
@@ -205,7 +205,7 @@ Object.keys(ElementalData).forEach(eleKey =>
       value: (obj) => (func)(obj, eleKey),
     })))
 
-const OverrideFormulasText = {
+const ModifiersText = {
   noelle_burst_atk: {
     formulaText: (options) => (o) => <span>( {f(o, "atk_base")} + {f(o, "atk_weapon")} ) * ( 1 + {f(o, "atk_")} ) + {f(o, "atk")} + {f(o, "def_final")} * {options.value}%</span>,
   }
