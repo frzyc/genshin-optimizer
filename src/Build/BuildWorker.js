@@ -37,9 +37,9 @@ onmessage = async (e) => {
       let buildFilterVal = ascending ? -stats[buildFilterKey] : stats[buildFilterKey]
       if (buildFilterVal >= threshold) {
         builds.push({ buildFilterVal, artifacts: { ...accu } })
-        if (builds.count >= 100000) {
+        if (builds.length >= 1000) {
           prune()
-          threshold = builds[maxBuildsToShow - 1]
+          threshold = builds[builds.length - 1].buildFilterVal
         }
       }
     })
