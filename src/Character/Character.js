@@ -243,7 +243,7 @@ export default class Character {
     return this.calculateBuildWithObjs(character.artifactConditionals, initialStats, artifacts)
   }
 
-  static calculateBuildWithObjs = (artifactConditionals, initialStats, artifacts) => {
+  static calculateBuildWithObjs = (artifactConditionals = [], initialStats, artifacts) => {
     let setToSlots = Artifact.setToSlots(artifacts)
     let artifactSetEffectsStats = Artifact.getArtifactSetEffectsStats(setToSlots)
 
@@ -260,9 +260,9 @@ export default class Character {
     //setEffects
     artifactSetEffectsStats.forEach(stat => stats[stat.key] = (stats[stat.key] || 0) + stat.statVal)
     //setEffects conditionals
-    artifactConditionals && artifactConditionals.forEach(conditional => {
-      let { srcKey: setKey, srcKey2: setNumKey } = conditional
-      Object.entries(Artifact.getConditionalStats(setKey, setNumKey, conditional.conditionalNum))
+    artifactConditionals.forEach(({ srcKey: setKey, srcKey2: setNumKey, conditionalNum }) => {
+      if (!setToSlots[setKey] || setToSlots[setKey].length < parseInt(setNumKey)) return
+      Object.entries(Artifact.getConditionalStats(setKey, setNumKey, conditionalNum))
         .forEach(([statKey, val]) => stats[statKey] = (stats[statKey] || 0) + val)
     })
 

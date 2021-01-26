@@ -14,6 +14,8 @@ export default class ConditionalsUtil {
     if (!conditionalNum && index >= 0) {
       //setting conditionalNum to 0 deletes the element
       conditionals.splice(index, 1);
+    } else if (!conditionalNum && index < 0) { //nothing to change
+      return conditionals
     } else {
       let newCond = { srcKey, conditionalNum }
       if (srcKey2) newCond.srcKey2 = srcKey2

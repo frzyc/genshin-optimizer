@@ -13,6 +13,7 @@ export default class CharacterDatabase {
   static isInvalid = (char) => !char || !char.name || !char.characterKey || !char.levelKey
   static getCharacterDatabase = () => deepClone(characterDatabase);
   static getCharacterIdList = () => Object.keys(characterDatabase);
+  static getIdNameList = () => Object.entries(characterDatabase).map(([id, char]) => [id, char.name]);
   static populateDatebaseFromLocalStorage = () => {
     if (initiated) return;
     Object.keys(localStorage).filter(key => key.includes("character_")).forEach(id => {

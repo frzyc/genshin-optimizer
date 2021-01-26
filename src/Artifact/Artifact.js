@@ -232,30 +232,26 @@ export default class Artifact {
     return Object.fromEntries(Object.entries(stats).map(([key, val]) => [key, val * stacks]))
   }
 
-  static getAllArtifactSetEffectsObj = (artifactConditionals) => {
+  static getAllArtifactSetEffectsObj = (artifactConditionals = []) => {
     let ArtifactSetEffectsObj = {};
     Object.entries(ArtifactData).forEach(([setKey, setObj]) => {
       let setEffect = {}
-      let hasSetEffect = false
       if (setObj.setEffects)
         Object.entries(setObj.setEffects).forEach(([setNumKey, setEffectObj]) => {
-          if (setEffectObj.stats && Object.keys(setEffectObj.stats).length > 0) {
+          if (Object.keys(setEffectObj.stats || {}).length > 0)
             setEffect[setNumKey] = deepClone(setEffectObj.stats)
-            hasSetEffect = true
-          }
-          if (setEffectObj.conditional) {
-            let conditionalNum = ConditionalsUtil.getConditionalNum(artifactConditionals, { srcKey: setKey, srcKey2: setNumKey })
-            if (conditionalNum) {
-              let condStats = this.getConditionalStats(setKey, setNumKey, conditionalNum)
-              if (Object.keys(condStats) > 0) {
-                setEffect[setNumKey] = deepClone(condStats)
-                hasSetEffect = true
-              }
-            }
-          }
         })
-      if (hasSetEffect)
+      if (Object.keys(setEffect) > 0)
         ArtifactSetEffectsObj[setKey] = setEffect;
+    })
+    artifactConditionals.forEach(({ srcKey: setKey, srcKey2: setNumKey, conditionalNum }) => {
+      let condStats = this.getConditionalStats(setKey, setNumKey, conditionalNum)
+      if (Object.keys(condStats).length > 0) {
+        ArtifactSetEffectsObj[setKey] ?? (ArtifactSetEffectsObj[setKey] = {})
+        ArtifactSetEffectsObj[setKey][setNumKey] ?? (ArtifactSetEffectsObj[setKey][setNumKey] = {})
+        Object.entries(condStats).forEach(([statKey, value]) =>
+          ArtifactSetEffectsObj[setKey][setNumKey][statKey] = (ArtifactSetEffectsObj[setKey][setNumKey][statKey] || 0) + value)
+      }
     })
     return ArtifactSetEffectsObj
   }

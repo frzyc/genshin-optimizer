@@ -13,9 +13,16 @@ function timeString(ms) {
   let timeText = "Minutes"
   if (hours) timeText = "Hours"
   return `${hours ? `${hours}:` : ""}${strPadLeft(minutes, '0', 2)}:${strPadLeft(seconds, '0', 2)} ${timeText}`;
-
+}
+function timeStringMs(ms) {
+  //shows only in terms of hours/minutes. there are better calculations for days using Date functions.
+  let { hours, minutes, seconds, milliseconds } = msToUnits(ms, "hours")
+  let timeText = "Minutes"
+  if (hours) timeText = "Hours"
+  return `${hours ? `${hours}:` : ""}${strPadLeft(minutes, '0', 2)}:${strPadLeft(seconds, '0', 2)}.${strPadLeft(milliseconds, '0', 3)} ${timeText}`;
 }
 export {
   msToUnits,
-  timeString
+  timeString,
+  timeStringMs
 }

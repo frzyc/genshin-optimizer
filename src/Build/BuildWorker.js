@@ -31,6 +31,7 @@ onmessage = async (e) => {
     splitArtsPerSet[key] = artsPerSet
   })
 
+  let buildCount = 0;
   artifactSetPerms.forEach(setPerm =>
     generateBuilds(setPerm, initialStats, splitArtsPerSet, artifactSetEffects, (accu, stats) => {
       finalizeStats(stats)
@@ -42,11 +43,15 @@ onmessage = async (e) => {
           threshold = builds[builds.length - 1].buildFilterVal
         }
       }
+      buildCount++;
+      if (!(buildCount % 10000))
+        postMessage({ progress: buildCount, timing: performance.now() - t1 })
     })
   )
   prune()
-
+  
   let t2 = performance.now()
+  postMessage({ progress: buildCount, timing: t2 - t1 })
   if (process.env.NODE_ENV === "development") console.log(builds.map(b => b.buildFilterVal))
   postMessage({ builds, timing: t2 - t1 })
 }
