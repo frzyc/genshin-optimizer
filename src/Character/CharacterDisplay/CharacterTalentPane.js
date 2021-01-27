@@ -250,13 +250,13 @@ function ReactionDisplay({ character: { characterKey, reactionMode = "none" }, n
               </h4>
             </ToggleButton >}
             {charEleKey === "hydro" && <ToggleButton className="p-2" value={"hydro_vaporize"}>
-              <h5 className="text-vaporize">Melt(Pyro)</h5>
+              <h5 className="text-vaporize">Vaporize(Hydro)</h5>
               <h4 className="text-vaporize mb-0">
                 <Image src={Assets.elements.pyro} className="inline-icon" />+<Image src={Assets.elements.hydro} className="inline-icon" />
               </h4>
             </ToggleButton >}
             {charEleKey === "cryo" && <ToggleButton className="p-2" value={"cryo_melt"}>
-              <h5 className="text-melt">Melt(Pyro)</h5>
+              <h5 className="text-melt">Melt(Cryo)</h5>
               <h4 className="text-melt mb-0">
                 <Image src={Assets.elements.pyro} className="inline-icon" />+<Image src={Assets.elements.cryo} className="inline-icon" />
               </h4>
