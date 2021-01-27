@@ -135,12 +135,12 @@ const FormulaText = {
   crystalize_dmg: (o) => <span>( 1 + {f(o, "crystalize_dmg_bonus")} ) * {f(o, "ele_mas_multi_z")} * {f(o, "crystalize_multi")}</span>,
   crystalize_multi: (o) => ReactionMatrix.crystalize.map((val, i) => reactionMatrixElementRenderer(o, val, i)),
 
-  pyro_vaporize_multi: (o) => <span>( 1 + {f(o, "vaporize_dmg_bonus")} ) * {f(o, "ele_mas_multi_x")} * 1.5 * {f(o, "trans_reaction_base_multi")}</span>,
-  hydro_vaporize_multi: (o) => <span>( 1 + {f(o, "vaporize_dmg_bonus")} ) * {f(o, "ele_mas_multi_x")} * 2 * {f(o, "trans_reaction_base_multi")}</span>,
+  pyro_vaporize_multi: (o) => <span>( 1 + {f(o, "vaporize_dmg_bonus")} ) * {f(o, "ele_mas_multi_x")} * 1.5 * {f(o, "amp_reaction_base_multi")}</span>,
+  hydro_vaporize_multi: (o) => <span>( 1 + {f(o, "vaporize_dmg_bonus")} ) * {f(o, "ele_mas_multi_x")} * 2 * {f(o, "amp_reaction_base_multi")}</span>,
 
-  pyro_melt_multi: (o) => <span>( 1 + {f(o, "melt_dmg_bonus")} ) * {f(o, "ele_mas_multi_x")} * 2 * {f(o, "trans_reaction_base_multi")}</span>,
-  cryo_melt_multi: (o) => <span>( 1 + {f(o, "melt_dmg_bonus")} ) * {f(o, "ele_mas_multi_x")} * 1.5 * {f(o, "trans_reaction_base_multi")}</span>,
-  trans_reaction_base_multi: (o) => <span>1 + 0.189266831 * {f(0, "ele_mas")} * exp^(-0.000505 * {f(0, "ele_mas")}) / 100 </span>,
+  pyro_melt_multi: (o) => <span>( 1 + {f(o, "melt_dmg_bonus")} ) * {f(o, "ele_mas_multi_x")} * 2 * {f(o, "amp_reaction_base_multi")}</span>,
+  cryo_melt_multi: (o) => <span>( 1 + {f(o, "melt_dmg_bonus")} ) * {f(o, "ele_mas_multi_x")} * 1.5 * {f(o, "amp_reaction_base_multi")}</span>,
+  amp_reaction_base_multi: (o) => <span>1 + 0.189266831 * {f(o, "ele_mas")} * exp^(-0.000505 * {f(o, "ele_mas")}) / 100 </span>,
 
   ele_mas_multi_x: (o) => <span> 1 + (25 / 9 * {f(o, "ele_mas")} / (1401 + {f(o, "ele_mas")} ))</span>,
   ele_mas_multi_y: (o) => <span> 1 + (60 / 9 * {f(o, "ele_mas")} / (1401 + {f(o, "ele_mas")} ))</span>,
