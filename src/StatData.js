@@ -95,9 +95,9 @@ const StatData = {
   melt_dmg_bonus: { name: "Melt DMG Bonus", unit: "%", variant: "melt" },
   vaporize_dmg_bonus: { name: "Vaporize DMG Bonus", unit: "%", variant: "vaporize" },
 
-  ele_mas_multi_x: { name: "Elementry Mastery Multiplier X", unit: "multi" },
-  ele_mas_multi_y: { name: "Elementry Mastery Multiplier Y", unit: "multi" },
-  ele_mas_multi_z: { name: "Elementry Mastery Multiplier Z", unit: "multi" },
+  ele_mas_multi_x: { name: "Elemental Mastery Multiplier X", unit: "multi" },
+  ele_mas_multi_y: { name: "Elemental Mastery Multiplier Y", unit: "multi" },
+  ele_mas_multi_z: { name: "Elemental Mastery Multiplier Z", unit: "multi" },
   amp_reaction_base_multi: { name: "Amplifying Reaction Base Multiplier", unit: "multi" },
 
   //character stuff
@@ -199,11 +199,11 @@ const Formulas = {
   crystalize_dmg: (s) => (1 + s.crystalize_dmg_bonus / 100) * s.ele_mas_multi_z * s.crystalize_multi,
   crystalize_multi: (s) => ReactionMatrix.crystalize.reduce((accu, val, i) => accu + val * Math.pow(s.char_level, i), 0),
 
-  pyro_vaporize_multi: (s) => (1 + s.vaporize_dmg_bonus / 100) * s.ele_mas_multi_x * 1.5 * s.amp_reaction_base_multi,
-  hydro_vaporize_multi: (s) => (1 + s.vaporize_dmg_bonus / 100) * s.ele_mas_multi_x * 2 * s.amp_reaction_base_multi,
+  pyro_vaporize_multi: (s) => (1 + s.vaporize_dmg_bonus / 100) * 1.5 * s.amp_reaction_base_multi,
+  hydro_vaporize_multi: (s) => (1 + s.vaporize_dmg_bonus / 100) * 2 * s.amp_reaction_base_multi,
 
-  pyro_melt_multi: (s) => (1 + s.melt_dmg_bonus / 100) * s.ele_mas_multi_x * 2 * s.amp_reaction_base_multi,
-  cryo_melt_multi: (s) => (1 + s.melt_dmg_bonus / 100) * s.ele_mas_multi_x * 1.5 * s.amp_reaction_base_multi,
+  pyro_melt_multi: (s) => (1 + s.melt_dmg_bonus / 100) * 2 * s.amp_reaction_base_multi,
+  cryo_melt_multi: (s) => (1 + s.melt_dmg_bonus / 100) * 1.5 * s.amp_reaction_base_multi,
   amp_reaction_base_multi: (s) => ampliBase(s.ele_mas),
 
   ele_mas_multi_x: (s) => (1 + (25 / 9 * s.ele_mas / (1401 + s.ele_mas))),
