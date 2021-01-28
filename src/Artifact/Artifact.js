@@ -241,7 +241,7 @@ export default class Artifact {
           if (Object.keys(setEffectObj.stats || {}).length > 0)
             setEffect[setNumKey] = deepClone(setEffectObj.stats)
         })
-      if (Object.keys(setEffect) > 0)
+      if (Object.keys(setEffect).length > 0)
         ArtifactSetEffectsObj[setKey] = setEffect;
     })
     artifactConditionals.forEach(({ srcKey: setKey, srcKey2: setNumKey, conditionalNum }) => {
