@@ -14,9 +14,20 @@ function DatabaseInitAndVerify() {
     let arts = ArtifactDatabase.getArtifactDatabase();
     Object.values(arts).forEach(art => {
       let valid = true
-      if (art.location && !CharacterDatabase.getCharacter(art.location)) {
-        art.location = ""
-        valid = false
+      if (art.location) {
+        const locationChar = CharacterDatabase.getCharacter(art.location)
+        if (locationChar) {
+          let artInSlotId = CharacterDatabase.getArtifactIDFromSlot(art.location, art.slotKey)
+          if (!artInSlotId) {//character doesnt seem to show this artifact equipped...
+            CharacterDatabase.equipArtifact(art.location, art)
+          } else if (artInSlotId !== art.id) {//character has a different artifact equipped, invalidate this location
+            art.location = ""
+            valid = false
+          }
+        } else {
+          art.location = ""
+          valid = false
+        }
       }
       //the set keys were changed to camelcase, need to convert for old databases.
       let keyMapping = {
@@ -69,24 +80,24 @@ function DatabaseInitAndVerify() {
     Object.values(chars).forEach(character => {
       let valid = true;
       //verify character database equipment validity
-      let equippedArtifacts = Object.fromEntries(Object.entries(character.equippedArtifacts).map(([slotKey, artid]) => {
-        if (!ArtifactDatabase.getArtifact(artid)) {
+      Object.entries(character.equippedArtifacts).forEach(([slotKey, artid]) => {
+        const equippedArt = ArtifactDatabase.getArtifact(artid)
+        if (equippedArt && equippedArt.location !== character.id) //the artifact doesnt have the right location...
+          ArtifactDatabase.moveToNewLocation(artid, character.id)
+        if (!equippedArt) {
           valid = false
-          return [slotKey, undefined]
+          character.equippedArtifacts[slotKey] = ""
         }
-        return [slotKey, artid]
-      }))
-      if (!valid)
-        character.equippedArtifacts = equippedArtifacts
+      })
 
       //conditional format was refactored. this makes sure there is no error when using old DB.
-      if (character.artifactConditionals) character.artifactConditionals = character.artifactConditionals.filter(cond => {
+      character.artifactConditionals = character.artifactConditionals?.filter?.(cond => {
         if (!cond.srcKey || !cond.srcKey2) {
           valid = false
           return false
         }
         return true
-      })
+      }) ?? []
 
       //check for dmgMode
       if (!character.dmgMode) {

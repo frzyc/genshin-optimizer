@@ -101,7 +101,7 @@ export default function ArtifactCard({ artifactId, artifactObj, forceUpdate, onE
                   disabled={location}
                   style={location ? { pointerEvents: 'none' } : {}}
                   onClick={() => {
-                    lock = !lock
+                    art.lock = !lock
                     ArtifactDatabase.updateArtifact(art);
                     forceUpdate?.();
                   }}>
