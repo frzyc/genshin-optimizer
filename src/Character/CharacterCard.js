@@ -30,7 +30,7 @@ export default function CharacterCard(props) {
   let build = Character.calculateBuild(character)
   let { setToSlots } = build
 
-  let { characterKey, name, weapon, constellation } = character
+  let { characterKey, name, weapon = {}, constellation } = character
   let elementKey = Character.getElementalKey(characterKey)
   let weaponTypeKey = Character.getWeaponTypeKey(characterKey)
   let weaponName = Weapon.getWeaponName(weapon.key)

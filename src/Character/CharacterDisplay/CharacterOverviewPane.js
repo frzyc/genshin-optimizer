@@ -95,7 +95,7 @@ export default function CharacterOverviewPane(props) {
 function WeaponStatsEditorCard(props) {
   let [editing, SetEditing] = useState(false)
   let [showDescription, setShowDescription] = useState(false)
-  let { character, character: { characterKey, weapon }, editable, setState, equippedBuild, newBuild } = props
+  let { character, character: { characterKey, weapon = {} }, editable, setState, equippedBuild, newBuild } = props
 
   //choose which one to display stats for
   let build = newBuild ? newBuild : equippedBuild
