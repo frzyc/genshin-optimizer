@@ -40,7 +40,10 @@ export default class BuildDisplay extends React.Component {
 
     if (this.state.selectedCharacterId) {
       const character = CharacterDatabase.getCharacter(this.state.selectedCharacterId)
-      this.state = { ...this.state, ...(character?.buildSetting ?? {}) }
+      if (character)
+        this.state = { ...this.state, ...(character?.buildSetting ?? {}) }
+      else
+        this.state.selectedCharacterId = ""
     }
     ReactGA.pageview('/build')
   }
