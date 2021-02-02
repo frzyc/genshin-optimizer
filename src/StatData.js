@@ -319,7 +319,11 @@ const Modifiers = {
   mona_passive2_hydro_ele_dmg_bonus: {
     key: "hydro_ele_dmg_bonus",
     formula: () => (s) => s.hydro_ele_dmg_bonus + s.ener_rech * 0.2
-  }
+  },
+  bennett_burst_atk: {
+    key: "atk_final",
+    formula: (options) => (s) => s.atk_final + (s.atk_base + s.atk_weapon) * options.atk_multiplier
+  },
 }
 
 function PreprocessFormulas(formulaKeys, modifiers) {

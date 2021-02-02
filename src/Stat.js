@@ -221,7 +221,11 @@ const ModifiersText = {
   },
   mona_passive2_hydro_ele_dmg_bonus: {
     formulaText: () => (o) => <span>{f(o, "hydro_ele_dmg_bonus")} + {f(o, "ener_rech")} * 20%</span>,
-  }
+  },
+
+  bennett_burst_atk: {
+    formulaText: (options) => (o) => <span>( {f(o, "atk_base")} + {f(o, "atk_weapon")} ) * ( 1 + {f(o, "atk_")} ) + {f(o, "atk")} + ( {f(o, "atk_base")} + {f(o, "atk_weapon")} ) * {options.atk_multiplier * 100}%</span>,
+  },
 }
 
 //checks for development
