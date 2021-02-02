@@ -82,6 +82,7 @@ export default class ArtifactDisplay extends React.Component {
 
   componentDidUpdate() {
     let state = deepClone(this.state)
+    delete state.artToEditId
     saveToLocalStorage("ArtifactDisplay.state", state)
   }
 

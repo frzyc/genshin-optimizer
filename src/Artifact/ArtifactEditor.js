@@ -45,9 +45,15 @@ export default class ArtifactEditor extends React.Component {
     });
   saveArtifact = (id) => {
     this.uploadDisplayReset?.()
-    let artToSave = deepClone(this.state)
+    const artToSave = deepClone(this.state)
     delete artToSave.artifactIdToEdit;
-    if (typeof id === "string") artToSave.id = id
+    if (typeof id === "string") {
+      const art = ArtifactDatabase.getArtifact(id)
+      if (art) {
+        artToSave.id = art.id
+        artToSave.location = art.location
+      }
+    }
 
     if (!artToSave.maximumEfficiency) //calculate rolls & efficiency for caching
       Artifact.substatsValidation(artToSave)
