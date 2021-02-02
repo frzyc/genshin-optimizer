@@ -219,7 +219,7 @@ export default class ArtifactEditor extends React.Component {
               </Dropdown.Menu>
             </Dropdown>
             {/* rarity dropdown */}
-            <DropdownButton as={InputGroup.Append} title={numStars > 0 ? "🟊".repeat(numStars) : "Rarity"} disabled={!setKey}>
+            <DropdownButton as={InputGroup.Append} title={numStars > 0 ? <Stars stars={numStars} /> : "Rarity"} disabled={!setKey}>
               {Artifact.getStars().map((star, index) => {
                 star = parseInt(star);
                 return <Dropdown.Item key={index} disabled={!Artifact.getRarityArr(setKey).includes(star)} onClick={() => this.setState({ numStars: star, level: 0 })}>
