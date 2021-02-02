@@ -6,7 +6,9 @@ import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import ReactGA from 'react-ga';
+import Character from '../Character/Character';
 import CharacterDatabase from '../Character/CharacterDatabase';
+import { CharacterNameDisplay, CharacterSelectionDropdownList } from '../Components/CharacterSelection';
 import { IntFormControl } from '../Components/CustomFormControl';
 import { Stars } from '../Components/StarDisplay';
 import { DatabaseInitAndVerify } from '../DatabaseUtil';
@@ -26,6 +28,7 @@ const sortMap = {
 export default class ArtifactDisplay extends React.Component {
   constructor(props) {
     super(props)
+    DatabaseInitAndVerify();
     this.state = {
       artToEditId: null,
       ...deepClone(ArtifactDisplay.initialFilter),
@@ -88,14 +91,19 @@ export default class ArtifactDisplay extends React.Component {
 
   componentDidMount() {
     this.scrollRef = React.createRef()
-    DatabaseInitAndVerify();
-    this.forceUpdate()
-    Artifact.getDataImport()?.then(() => this.forceUpdate())
+    Promise.all([
+      Character.getCharacterDataImport(),
+      Artifact.getDataImport(),
+    ]).then(() => this.forceUpdate())
   }
   render() {
-    let { artToEditId, filterArtSetKey, filterSlotKey, filterMainStatKey, filterStars, filterLevelLow, filterLevelHigh, filterSubstats = this.initialFilter.filterSubstats, maxNumArtifactsToDisplay, filterLocation, sortType = Object.keys(sortMap)[0], ascending = false } = this.state
+    let { artToEditId, filterArtSetKey, filterSlotKey, filterMainStatKey, filterStars, filterLevelLow, filterLevelHigh, filterSubstats = this.initialFilter.filterSubstats, maxNumArtifactsToDisplay, filterLocation = "", sortType = Object.keys(sortMap)[0], ascending = false } = this.state
     let artifactDB = ArtifactDatabase.getArtifactDatabase() || {}
     let totalArtNum = Object.keys(artifactDB)?.length || 0
+    let locationDisplay
+    if (!filterLocation) locationDisplay = <span>Location: Any</span>
+    else if (filterLocation === "Inventory") locationDisplay = <span>Location: Inventory</span>
+    else locationDisplay = <CharacterNameDisplay id={filterLocation} flat />
     let artifacts = Object.values(artifactDB).filter(art => {
       if (filterLocation) {
         if (filterLocation === "Inventory" && art.location) return false;
@@ -261,14 +269,13 @@ export default class ArtifactDisplay extends React.Component {
               <Col xs={12} lg={6} className="mb-2">
                 <Dropdown className="flex-grow-1">
                   <Dropdown.Toggle className="w-100" variant={filterLocation ? "success" : "primary"}>
-                    <span>Location: {filterLocation === "Inventory" ? filterLocation : (CharacterDatabase.getCharacter(filterLocation)?.name || "Any")}</span>
+                    {locationDisplay}
                   </Dropdown.Toggle>
                   <Dropdown.Menu>
                     <Dropdown.Item onClick={() => this.setState({ filterLocation: "" })}>Unselect</Dropdown.Item>
                     <Dropdown.Item onClick={() => this.setState({ filterLocation: "Inventory" })}>Inventory</Dropdown.Item>
                     <Dropdown.Divider />
-                    {Object.entries(CharacterDatabase.getCharacterDatabase()).map(([charKey, char]) =>
-                      <Dropdown.Item key={charKey} onClick={() => this.setState({ filterLocation: charKey })}>{char?.name}</Dropdown.Item>)}
+                    <CharacterSelectionDropdownList onSelect={cid => this.setState({ filterLocation: cid })} />
                   </Dropdown.Menu>
                 </Dropdown>
               </Col>

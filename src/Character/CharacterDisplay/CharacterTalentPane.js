@@ -56,7 +56,7 @@ export default function CharacterTalentPane(props) {
     //add talents/skills
     talKeys.forEach(key => keys.push(Character.getTalentStatKey(key, character)))
     //show elemental interactions
-    keys.push(...ElementToReactionKeys[Character.getElementalKey(characterKey)])
+    keys.push(...(ElementToReactionKeys[Character.getElementalKey(characterKey)] || []))
     let weaponTypeKey = Character.getWeaponTypeKey(characterKey)
     if (!keys.includes("shatter_dmg") && weaponTypeKey === "claymore") keys.push("shatter_dmg")
 

@@ -11,7 +11,7 @@ import Image from 'react-bootstrap/Image';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Row from 'react-bootstrap/Row';
 import Tooltip from 'react-bootstrap/Tooltip';
-import CharacterDatabase from '../Character/CharacterDatabase';
+import { CharacterNameDisplay, CharacterSelectionDropdownList } from '../Components/CharacterSelection';
 import { Stars } from '../Components/StarDisplay';
 import Stat from '../Stat';
 import Artifact from './Artifact';
@@ -21,9 +21,7 @@ export default function ArtifactCard({ artifactId, artifactObj, forceUpdate, onE
   if (!artifactId && !artifactObj) return null;
   let art = artifactObj ? artifactObj : ArtifactDatabase.getArtifact(artifactId);
   if (!art) return null;
-  let { setKey, slotKey, numStars = 0, level = 0, mainStatKey, substats = [], location, lock, currentEfficiency = 0, maximumEfficiency = 0 } = art
-  let locationChar = CharacterDatabase.getCharacter(location)
-  let locationName = locationChar ? locationChar.name : "Inventory"
+  let { setKey, slotKey, numStars = 0, level = 0, mainStatKey, substats = [], location = "", lock, currentEfficiency = 0, maximumEfficiency = 0 } = art
   let mainStatLevel = assumeFull ? numStars * 4 : level
   let assFullColor = assumeFull && level !== numStars * 4
   let mainStatVal = <span className={assFullColor ? "text-orange" : ""}>{Artifact.getMainStatValue(mainStatKey, numStars, mainStatLevel, "")}{Stat.getStatUnit(mainStatKey)}</span>
@@ -82,16 +80,14 @@ export default function ArtifactCard({ artifactId, artifactObj, forceUpdate, onE
       <Row className="d-flex justify-content-between no-gutters">
         {forceUpdate ? <Col xs="auto">
           <Dropdown>
-            <Dropdown.Toggle size="sm">{locationName}</Dropdown.Toggle>
+            <Dropdown.Toggle size="sm" className="text-left"><CharacterNameDisplay id={location} /></Dropdown.Toggle>
             <Dropdown.Menu>
               <Dropdown.Item onClick={() => equipOnChar()}>Inventory</Dropdown.Item>
-              {Object.entries(CharacterDatabase.getCharacterDatabase()).map(([id, char]) =>
-                <Dropdown.Item key={id} onClick={() => equipOnChar(id)}>
-                  {char.name}
-                </Dropdown.Item>)}
+              <Dropdown.Divider />
+              <CharacterSelectionDropdownList onSelect={cid => equipOnChar(cid)} />
             </Dropdown.Menu>
           </Dropdown>
-        </Col> : <Col xs="auto"><span>Location: {locationName}</span></Col>}
+        </Col> : <Col xs="auto"><span><CharacterNameDisplay id={location} /></span></Col>}
         <Col xs="auto">
           <ButtonGroup>
             {forceUpdate ? <OverlayTrigger placement="top"

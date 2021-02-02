@@ -10,6 +10,7 @@ import ArtifactDatabase from '../Artifact/ArtifactDatabase';
 import Character from '../Character/Character';
 import CharacterCard from '../Character/CharacterCard';
 import CharacterDatabase from '../Character/CharacterDatabase';
+import { CharacterNameDisplay, CharacterSelectionDropdownList } from '../Components/CharacterSelection';
 import ConditionalSelector from '../Components/ConditionalSelector';
 import { Stars } from '../Components/StarDisplay';
 import { DatabaseInitAndVerify } from '../DatabaseUtil';
@@ -220,11 +221,10 @@ export default class BuildDisplay extends React.Component {
           <Alert variant="warning" className="mb-0"><span>Current configuration will generate <b>{totBuildNumber}</b> builds for <b>{characterName}</b>. This might take quite awhile to generate...</span></Alert> :
           <Alert variant="success" className="mb-0"><span>Current configuration {totBuildNumber <= this.state.maxBuildsToShow ? "generated" : "will generate"} <b>{totBuildNumber}</b> builds for <b>{characterName}</b>.</span></Alert>)
     }
-    let characterDropDown = <DropdownButton title={selectedCharacterId ? characterName : "Select Character"} disabled={generatingBuilds}>
+    let characterDropDown = <DropdownButton title={selectedCharacterId ? <CharacterNameDisplay id={selectedCharacterId} flat /> : "Select Character"} disabled={generatingBuilds}>
       <Dropdown.Item onClick={() => this.selectCharacter("")}>Unselect Character</Dropdown.Item>
       <Dropdown.Divider />
-      {CharacterDatabase.getIdNameList().map(([id, name]) =>
-        <Dropdown.Item key={id} onClick={() => this.selectCharacter(id)}>{name}</Dropdown.Item>)}
+      <CharacterSelectionDropdownList onSelect={cid => this.selectCharacter(cid)} />
     </DropdownButton>
     const toggleArtifactsAssumeFull = () => this.setState(state => ({ artifactsAssumeFull: !state.artifactsAssumeFull }), this.autoGenerateBuilds)
     return <Card bg="darkcontent" text="lightfont">
