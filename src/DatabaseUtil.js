@@ -24,6 +24,13 @@ function DatabaseInitAndVerify() {
         valid = false
       }
     }
+
+    //there was a bug that saved the numStars as strings. convert to number.
+    if (typeof art.numStars === "string") {
+      art.numStars = parseInt(art.numStars)
+      valid = false
+    }
+
     //the set keys were changed to camelcase, need to convert for old databases.
     let keyMapping = {
       "Wanderer's Troupe": "WanderersTroupe",

@@ -180,7 +180,6 @@ export default class ArtifactDisplay extends React.Component {
               <Col xs={12} lg={6} className="mb-2">
                 <ToggleButtonGroup className="w-100 d-flex" type="checkbox" as={InputGroup.Append} onChange={(e) => this.setState({ filterStars: e })} defaultValue={filterStars}>
                   {Artifact.getStars().map(star => {
-                    star = parseInt(star)
                     let selected = filterStars.includes(star)
                     return <ToggleButton key={star} value={star} variant={selected ? "success" : "primary"}><FontAwesomeIcon icon={selected ? faCheckSquare : faSquare} /> <Stars stars={star} /></ToggleButton>
                   })}

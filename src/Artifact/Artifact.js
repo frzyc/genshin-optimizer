@@ -77,7 +77,7 @@ export default class Artifact {
       [slotKey, Object.values(databaseObj).filter(art => art.slotKey === slotKey)]))
 
   //STARS
-  static getStars = () => Object.keys(ArtifactStarsData || {})
+  static getStars = () => Object.keys(ArtifactStarsData || {}).map(s => parseInt(s))
   static getRarityArr = (setKey, defVal = []) => ArtifactData?.[setKey]?.rarity || defVal
 
   //MAIN STATS
