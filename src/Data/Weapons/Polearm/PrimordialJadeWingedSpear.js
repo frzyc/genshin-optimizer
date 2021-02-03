@@ -28,7 +28,7 @@ const weapon = {
     sourceKey: "PrimordialJadeWingedSpear",
     maxStack: 1,
     stats: (refineIndex) => ({
-      atk_: refinementVals[refineIndex],
+      atk_: refinementVals[refineIndex] * 7,
       all_dmg_bonus: refinementDmgVals[refineIndex]
     })
   }]

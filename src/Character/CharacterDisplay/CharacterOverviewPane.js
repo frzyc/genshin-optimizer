@@ -225,10 +225,10 @@ function WeaponStatsEditorCard(props) {
             {<Row>
               {(conditionalStats || weaponBonusStats) && <Col xs={12}><h6 className="mb-0">Bonus Stats:</h6></Col>}
               {weaponBonusStats && Object.entries(weaponBonusStats).map(([key, val]) =>
-                <Col xs={12} md={6} key={"bonu" + key}>{Stat.getStatName(key)}: {val}{Stat.getStatUnit(key)}</Col>
+                <Col xs={12} md={6} key={"bonu" + key}>{Stat.getStatName(key)}: {val?.toFixed?.(1) ?? val}{Stat.getStatUnit(key)}</Col>
               )}
               {conditionalStats && Object.entries(conditionalStats).map(([key, val]) =>
-                <Col xs={12} md={6} key={"cond" + key}>{Stat.getStatName(key)}: {val}{Stat.getStatUnit(key)}</Col>
+                <Col xs={12} md={6} key={"cond" + key}>{Stat.getStatName(key)}: {val?.toFixed?.(1) ?? val}{Stat.getStatUnit(key)}</Col>
               )}
             </Row>}
           </Col>}
