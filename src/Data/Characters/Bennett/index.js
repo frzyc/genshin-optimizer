@@ -96,10 +96,7 @@ let char = {
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("char_atk", c),
         }, {
           text: `Stamina Cost`,
-          value: `40/s`,
-        }, {
-          text: `Max Duration`,
-          value: `5s`,
+          value: 20,
         }]
       }, {
         text: <span><strong>Plunging Attack</strong> Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.</span>,
@@ -264,8 +261,7 @@ let char = {
             ener_rech: 30,
           }
         }
-      }
-      ],
+      }],
     },
     constellation3: {
       name: "Unstoppable Fervor",

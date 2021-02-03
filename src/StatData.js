@@ -45,6 +45,7 @@ const StatData = {
   plunge_avg_dmg: { name: "Plunging Attack Avg. DMG" },
   norm_atk_dmg_bonus: { name: "Normal Attack DMG Bonus", unit: "%" },
   char_atk_dmg_bonus: { name: "Charged Attack DMG Bonus", unit: "%" },
+  plunge_atk_dmg_bonus: { name: "Plunging Attack DMG Bonus", unit: "%" },
   norm_atk_crit_rate: { name: "Nomral Attack CRIT Rate", unit: "%" },
   char_atk_crit_rate: { name: "Charged Attack CRIT Rate", unit: "%" },
   norm_atk_crit_multi: { name: "Normal Attack Crit Multiplier", unit: "multi" },
@@ -164,10 +165,10 @@ const Formulas = {
   char_atk_bonus_multi: (s) => (1 + (s.phy_dmg_bonus + s.char_atk_dmg_bonus + s.all_dmg_bonus) / 100),
 
   //PLUNGE
-  plunge_dmg: (s) => s.phy_dmg,
-  plunge_crit_dmg: (s) => s.phy_crit_dmg,
-  plunge_avg_dmg: (s) => s.phy_avg_dmg,
-  plunge_bonus_multi: (s) => s.phy_bonus_multi,
+  plunge_dmg: (s) => s.atk_final * s.plunge_bonus_multi * s.enemy_level_multi * s.enemy_phy_res_multi,
+  plunge_crit_dmg: (s) => s.plunge_dmg * s.crit_dmg_multi,
+  plunge_avg_dmg: (s) => s.plunge_dmg * s.crit_multi,
+  plunge_bonus_multi: (s) => (1 + (s.phy_dmg_bonus + s.plunge_atk_dmg_bonus + s.all_dmg_bonus) / 100),
 
   phy_dmg: (s) => s.atk_final * s.phy_bonus_multi * s.enemy_level_multi * s.enemy_phy_res_multi,
   phy_crit_dmg: (s) => s.phy_dmg * s.crit_dmg_multi,
@@ -223,10 +224,10 @@ const eleFormulas = {
   char_atk_avg_dmg: (s, ele) => s[`${ele}_char_atk_dmg`] * s.char_atk_crit_multi,
   char_atk_bonus_multi: (s, ele) => (1 + (s[`${ele}_ele_dmg_bonus`] + s.char_atk_dmg_bonus + s.all_dmg_bonus) / 100),
 
-  plunge_dmg: (s, ele) => s[`${ele}_ele_dmg`],
-  plunge_crit_dmg: (s, ele) => s[`${ele}_ele_crit_dmg`],
-  plunge_avg_dmg: (s, ele) => s[`${ele}_ele_avg_dmg`],
-  plunge_bonus_multi: (s, ele) => s[`${ele}_ele_bonus_multi`],
+  plunge_dmg: (s, ele) => s.atk_final * s[`${ele}_plunge_bonus_multi`] * s.enemy_level_multi * s[`${ele}_enemy_ele_res_multi`],
+  plunge_crit_dmg: (s, ele) => s[`${ele}_plunge_dmg`] * s.crit_dmg_multi,
+  plunge_avg_dmg: (s, ele) => s[`${ele}_plunge_dmg`] * s.crit_multi,
+  plunge_bonus_multi: (s, ele) => (1 + (s[`${ele}_ele_dmg_bonus`] + s.plunge_atk_dmg_bonus + s.all_dmg_bonus) / 100),
 
   ele_dmg: (s, ele) => s.atk_final * s[`${ele}_ele_bonus_multi`] * s.enemy_level_multi * s[`${ele}_enemy_ele_res_multi`],
   ele_crit_dmg: (s, ele) => s[`${ele}_ele_dmg`] * s.crit_dmg_multi,

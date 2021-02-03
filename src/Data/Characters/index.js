@@ -23,6 +23,7 @@ import tartaglia from './Tartaglia'
 import traveler_anemo from './Traveler Anemo'
 import traveler_geo from './Traveler Geo'
 import venti from './Venti'
+import xiao from './Xiao'
 import xiangling from './Xiangling'
 import xingqiu from './Xingqiu'
 import xinyan from './Xinyan'
@@ -53,6 +54,7 @@ let characters = {
   traveler_anemo,
   traveler_geo,
   venti,
+  xiao,
   xiangling,
   xingqiu,
   xinyan,

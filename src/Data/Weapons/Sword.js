@@ -10,6 +10,7 @@ import BlackcliffLongsword from './Sword/BlackcliffLongsword'
 import FavoniusSword from './Sword/FavoniusSword'
 import IronSting from './Sword/IronSting'
 import LionsRoar from './Sword/LionsRoar'
+import PrimordialJadeCutter from './Sword/PrimordialJadeCutter'
 import PrototypeRancour from './Sword/PrototypeRancour'
 import RoyalLongsword from './Sword/RoyalLongsword'
 import SacrificialSword from './Sword/SacrificialSword'
@@ -34,6 +35,7 @@ const sword = {
   FavoniusSword,
   IronSting,
   LionsRoar,
+  PrimordialJadeCutter,
   PrototypeRancour,
   RoyalLongsword,
   SacrificialSword,

@@ -92,10 +92,10 @@ const FormulaText = {
   char_atk_bonus_multi: (o) => <span>( 1 + {f(o, "phy_dmg_bonus")} + {f(o, "char_atk_dmg_bonus")} + {f(o, "all_dmg_bonus")} )</span>,
 
   //PLUNGE
-  plunge_dmg: (o) => <span>{f(o, "phy_dmg")}</span>,
-  plunge_crit_dmg: (o) => <span>{f(o, "phy_crit_dmg")}</span>,
-  plunge_avg_dmg: (o) => <span>{f(o, "phy_avg_dmg")}</span>,
-  plunge_bonus_multi: (o) => <span>{f(o, "phy_bonus_multi")}</span>,
+  plunge_dmg: (o) => <span>{f(o, "atk_final")} * {f(o, "plunge_bonus_multi")} * {f(o, "enemy_level_multi")} * {f(o, "enemy_phy_res_multi")}</span>,
+  plunge_crit_dmg: (o) => <span>{f(o, "plunge_dmg")} * {f(o, "crit_dmg_multi")}</span>,
+  plunge_avg_dmg: (o) => <span>{f(o, "plunge_dmg")} * {f(o, "crit_multi")}</span>,
+  plunge_bonus_multi: (o) => <span>( 1 + {f(o, "phy_dmg_bonus")} + {f(o, "plunge_atk_dmg_bonus")} + {f(o, "all_dmg_bonus")} )</span>,
 
   phy_dmg: (o) => <span>{f(o, "atk_final")} * {f(o, "phy_bonus_multi")} * {f(o, "enemy_level_multi")} * {f(o, "enemy_phy_res_multi")}</span>,
   phy_crit_dmg: (o) => <span>{f(o, "phy_dmg")} * {f(o, "crit_dmg_multi")}</span>,
@@ -175,10 +175,10 @@ const eleFormulaText = {
   char_atk_avg_dmg: (o, ele) => <span>{f(o, `${ele}_char_atk_dmg`)} * {f(o, `char_atk_crit_multi`)}</span>,
   char_atk_bonus_multi: (o, ele) => <span>( 1 + {f(o, `${ele}_ele_dmg_bonus`)} + {f(o, `char_atk_dmg_bonus`)} + {f(o, `all_dmg_bonus`)} )</span>,
 
-  plunge_dmg: (o, ele) => <span>{f(o, `${ele}_ele_dmg`)}</span>,
-  plunge_crit_dmg: (o, ele) => <span>{f(o, `${ele}_ele_crit_dmg`)}</span>,
-  plunge_avg_dmg: (o, ele) => <span>{f(o, `${ele}_ele_avg_dmg`)}</span>,
-  plunge_bonus_multi: (o, ele) => <span>{f(o, `${ele}_ele_bonus_multi`)}</span>,
+  plunge_dmg: (o, ele) => <span>{f(o, `atk_final`)} * {f(o, `${ele}_plunge_bonus_multi`)} * {f(o, `enemy_level_multi`)} * {f(o, `${ele}_enemy_ele_res_multi`)}</span>,
+  plunge_crit_dmg: (o, ele) => <span>{f(o, `${ele}_plunge_dmg`)} * {f(o, `crit_dmg_multi`)}</span>,
+  plunge_avg_dmg: (o, ele) => <span>{f(o, `${ele}_plunge_dmg`)} * {f(o, `crit_multi`)}</span>,
+  plunge_bonus_multi: (o, ele) => <span>( 1 + {f(o, `${ele}_ele_dmg_bonus`)} + {f(o, `plunge_atk_dmg_bonus`)} + {f(o, `all_dmg_bonus`)} )</span>,
 
   ele_dmg: (o, ele) => <span>{f(o, `atk_final`)} * {f(o, `${ele}_ele_bonus_multi`)} * {f(o, `enemy_level_multi`)} * {f(o, `${ele}_enemy_ele_res_multi`)}</span>,
   ele_crit_dmg: (o, ele) => <span>{f(o, `${ele}_ele_dmg`)} * {f(o, `crit_dmg_multi`)}</span>,
