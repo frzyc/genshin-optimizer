@@ -8,6 +8,7 @@ const StatData = {
   hp_: { name: "HP", unit: "%", pretty: "HP Percent" },
   hp_final: { name: "HP", pretty: "HP Final" },
   //ATK
+  atk_character_base: { name: "ATK", pretty: "ATK Character Base" },
   atk_base: { name: "ATK", pretty: "ATK Base" },//character atk + weapon atk
   atk: { name: "ATK", pretty: "ATK Flat" },
   atk_: { name: "ATK", unit: "%", pretty: "ATK Percent" },
@@ -146,7 +147,8 @@ const Formulas = {
   //HP
   hp_final: (s) => s.hp_base * (1 + s.hp_ / 100) + s.hp,
   //ATK
-  atk_final: (s) => (s.atk_base + s.atk_weapon) * (1 + s.atk_ / 100) + s.atk,
+  atk_base: (s) => s.atk_character_base + s.atk_weapon,
+  atk_final: (s) => s.atk_base * (1 + s.atk_ / 100) + s.atk,
   //DEF
   def_final: (s) => s.def_base * (1 + s.def_ / 100) + s.def,
 
@@ -312,37 +314,24 @@ Object.entries(eleFormulas).forEach(([key, func]) =>
       value: (obj) => (func)(obj, eleKey),
     })))
 
-const Modifiers = {
-  noelle_burst_atk: {
-    key: "atk_final",
-    formula: (options) => (s) => s.atk_final + s.def_final * options.sweep_multiplier
-  },
-  mona_passive2_hydro_ele_dmg_bonus: {
-    key: "hydro_ele_dmg_bonus",
-    formula: () => (s) => s.hydro_ele_dmg_bonus + s.ener_rech * 0.2
-  },
-  bennett_burst_atk: {
-    key: "atk_final",
-    formula: (options) => (s) => s.atk_final + (s.atk_base + s.atk_weapon) * options.atk_multiplier
-  },
-}
-
-function PreprocessFormulas(formulaKeys, modifiers) {
-  let formulas = formulaKeys.map(key => {
-    if (key in Modifiers) return [Modifiers[key].key, Modifiers[key].formula(modifiers[key])]
-    if (key in Formulas) return [key, Formulas[key]]
-    let value = StatData[key]["default"] ?? 0
-    return [key, (s) => (s[key] ?? value)]
+//assume all the dependency for the modifiers are part of the dependencyKeys as well
+function PreprocessFormulas(dependencyKeys, modifiers = {}) {
+  const preFormulas = dependencyKeys.map(key => {
+    if (modifiers[key]) {
+      const modifierFunc = (stat, initial) => Object.entries(modifiers[key]).reduce((accu, [mkey, multiplier]) =>
+        accu + stat[mkey] * multiplier, initial)
+      if (key in Formulas) return [key, (s) => modifierFunc(s, Formulas[key](s))]
+      return [key, (s) => modifierFunc(s, s[key] ?? StatData?.[key]?.default ?? 0)]
+    } else {
+      if (key in Formulas) return [key, Formulas[key]]
+      return [key, (s) => (s[key] ?? StatData?.[key]?.default ?? 0)]
+    }
   })
-
-  return stat => formulas.forEach(([key, formula]) => {
-    stat[key] = formula(stat)
-  })
+  return stat => preFormulas.forEach(([key, formula]) => stat[key] = formula(stat))
 }
 
 export {
   Formulas,
-  Modifiers,
   StatData,
   ElementToReactionKeys,
   ReactionMatrix,

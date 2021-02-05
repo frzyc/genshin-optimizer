@@ -56,7 +56,7 @@ let char = {
   titles: ["Astral Reflection", "Enigmatic Astrologer"],
   baseStat: {
     hp_base: [810, 2102, 2797, 4185, 4678, 5383, 6041, 6752, 7246, 7964, 8458, 9184, 9677, 10409],
-    atk_base: [22, 58, 77, 115, 129, 148, 167, 186, 200, 220, 233, 253, 267, 287],
+    atk_character_base: [22, 58, 77, 115, 129, 148, 167, 186, 200, 220, 233, 253, 267, 287],
     def_base: [51, 132, 176, 263, 294, 338, 379, 424, 455, 500, 531, 576, 607, 653]
   },
   specializeStat: {
@@ -234,20 +234,9 @@ let char = {
     passive2: {
       name: "Waterborne Destiny",
       img: passive2,
-      document: [{
-        text: <span>Increases Mona's <span className="text-hydro">Hydro DMG Bonus</span> by a degree equivalent to 20% of her Energy Recharge rate.</span>,
-        fields: [(c, a) => a >= 4 && {
-          text: <span><span className="text-hydro">Hydro DMG Bonus</span> Increase</span>,
-          basicVal: (tlvl, stats, c) => <span>20% * {Stat.printStat("ener_rech", stats)}</span>,
-          finalVal: (tlvl, stats, c) => 0.2 * stats.ener_rech,
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("ele", c),
-          fixed: 1,
-        }]
-      }],
+      document: [{ text: <span>Increases Mona's <span className="text-hydro">Hydro DMG Bonus</span> by a degree equivalent to 20% of her Energy Recharge rate.</span>, }],
       stats: (c, a) => a >= 4 && {
-        modifiers: {
-          mona_passive2_hydro_ele_dmg_bonus: null
-        },
+        modifiers: { hydro_ele_dmg_bonus: { ener_rech: 0.2 } },
       }
     },
     passive3: {

@@ -53,7 +53,7 @@ let char = {
   titles: ["Prinzessin der Verurteilung", "Sovereign of Immernachtreich", "Ruler of the Ashen Darkness"],
   baseStat: {
     hp_base: [770, 1979, 2555, 3827, 4236, 4872, 5418, 6054, 6463, 7099, 7508, 8144, 8553, 9189],
-    atk_base: [20, 53, 68, 102, 113, 130, 144, 161, 172, 189, 200, 216, 227, 244],
+    atk_character_base: [20, 53, 68, 102, 113, 130, 144, 161, 172, 189, 200, 216, 227, 244],
     def_base: [50, 128, 165, 247, 274, 315, 350, 391, 418, 459, 485, 526, 553, 594]
   },
   specializeStat: {

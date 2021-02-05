@@ -1,5 +1,5 @@
 import ElementalData from "./Data/ElementalData";
-import { ReactionMatrix, Formulas, Modifiers, StatData } from "./StatData";
+import { ReactionMatrix, Formulas, StatData } from "./StatData";
 
 export default class Stat {
   //do not instantiate.
@@ -32,26 +32,20 @@ export default class Stat {
   static printStat = (statKey, stats) =>
     f({ stats, expand: false }, statKey)
 
-  static getPrintableFormulaStatKeyList = (statList = []) => {
-    //remove keys that will be overriden by the modifier
-    for (const statKey of statList)
-      if (Object.keys(ModifiersText).includes(statKey))
-        statList = statList.filter(skey => skey !== Modifiers[statKey].key)
+  static getPrintableFormulaStatKeyList = (statList = [], modifiers = {}) => {
     let formulaKeys = Object.keys(FormulaText)
-    let modifiersTextKeys = Object.keys(ModifiersText)
-    return statList.filter(statKey => formulaKeys.includes(statKey) || modifiersTextKeys.includes(statKey))
+    let modifiersKeys = Object.keys(modifiers)
+    return statList.filter(statKey => formulaKeys.includes(statKey) || modifiersKeys.includes(statKey))
   }
 
   static printFormula = (statKey, stats, modifiers = {}, expand = true) => {
-    if (statKey in ModifiersText)
-      return Stat.printModifier(stats, statKey, modifiers[statKey], false)
-    return FormulaText?.[statKey] && typeof FormulaText?.[statKey] === "function" &&
-      (<span>{FormulaText[statKey]({ stats, expand })}</span>)
+    const modifierText = Object.entries(modifiers?.[statKey] ?? []).map(([mkey, multiplier]) =>
+      <span key={statKey + mkey} className="text-nowrap"> + {this.printStat(mkey, stats)} * {multiplier?.toFixed?.(3) ?? multiplier}</span>)
+    if (typeof FormulaText?.[statKey] === "function")
+      return <span>{FormulaText[statKey]({ stats, expand })}{modifierText}</span>
+    else
+      return <span>Basic Stats from artifacts/weapon{modifierText}</span>
   }
-
-  static printModifier = (stats, overrideKey, options, expand = true) =>
-    typeof ModifiersText?.[overrideKey]?.formulaText === "function" &&
-    (<span>{ModifiersText[overrideKey].formulaText(options)({ stats, expand })}</span>)
 }
 //generate html tags based on tagged variants of the statData
 const htmlStatsData = Object.fromEntries(Object.entries(StatData).filter(([key, obj]) => obj.variant).map(([key, obj]) => [key, (<span className={`text-${obj.variant} text-nowrap`}>{obj.name}</span>)]))
@@ -59,7 +53,6 @@ const htmlStatsData = Object.fromEntries(Object.entries(StatData).filter(([key, 
 function f(options, statKey) {
   let { stats, expand = true } = options
   if (!stats) return
-  if (Modifiers[statKey]) statKey = Modifiers[statKey].key
   if (expand && FormulaText?.[statKey])
     return <span>( {FormulaText[statKey](options)} )</span>
   let statName = Stat.getStatNamePretty(statKey)
@@ -73,7 +66,8 @@ const FormulaText = {
   //HP
   hp_final: (o) => <span>{f(o, "hp_base")} * ( 1 + {f(o, "hp_")} ) + {f(o, "hp")}</span>,
   //ATK
-  atk_final: (o) => <span>( {f(o, "atk_base")} + {f(o, "atk_weapon")} ) * ( 1 + {f(o, "atk_")} ) + {f(o, "atk")}</span>,
+  atk_base: (o) => <span>{f(o, "atk_character_base")} + {f(o, "atk_weapon")} </span>,
+  atk_final: (o) => <span>{f(o, "atk_base")} * ( 1 + {f(o, "atk_")} ) + {f(o, "atk")}</span>,
   //DEF
   def_final: (o) => <span>{f(o, "def_base")} * ( 1 + {f(o, "def_")} ) + {f(o, "def")}</span>,
 
@@ -215,19 +209,6 @@ Object.keys(ElementalData).forEach(eleKey =>
       value: (obj) => (func)(obj, eleKey),
     })))
 
-const ModifiersText = {
-  noelle_burst_atk: {
-    formulaText: (options) => (o) => <span>( {f(o, "atk_base")} + {f(o, "atk_weapon")} ) * ( 1 + {f(o, "atk_")} ) + {f(o, "atk")} + {f(o, "def_final")} * {options.sweep_multiplier * 100}%</span>,
-  },
-  mona_passive2_hydro_ele_dmg_bonus: {
-    formulaText: () => (o) => <span>{f(o, "hydro_ele_dmg_bonus")} + {f(o, "ener_rech")} * 20%</span>,
-  },
-
-  bennett_burst_atk: {
-    formulaText: (options) => (o) => <span>( {f(o, "atk_base")} + {f(o, "atk_weapon")} ) * ( 1 + {f(o, "atk_")} ) + {f(o, "atk")} + ( {f(o, "atk_base")} + {f(o, "atk_weapon")} ) * {options.atk_multiplier * 100}%</span>,
-  },
-}
-
 //checks for development
 process.env.NODE_ENV === "development" && Object.keys(Formulas).forEach(key => {
   if (!FormulaText[key]) console.error(`Formula "${key}" does not have a corresponding entry in FormulaText`)
@@ -238,5 +219,4 @@ process.env.NODE_ENV === "development" && Object.keys(Formulas).forEach(key => {
 
 export {
   FormulaText,
-  ModifiersText,
 };

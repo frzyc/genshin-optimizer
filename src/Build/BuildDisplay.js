@@ -157,7 +157,7 @@ export default class BuildDisplay extends React.Component {
       })
     })
     //generate the key dependencies for the formula
-    let dependencies = GetDependencies(initialStats, [buildFilterKey])
+    let dependencies = GetDependencies(initialStats?.modifiers, [buildFilterKey])
 
     //create an obj with app the artifact set effects to pass to buildworker.
     let data = {

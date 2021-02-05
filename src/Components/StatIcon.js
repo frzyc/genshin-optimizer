@@ -8,6 +8,7 @@ const StatIcon = {
   hp: faTint,
 
   atk_base: faFistRaised,
+  atk_character_base: faFistRaised,
   atk_final: faFistRaised,
   atk_: faFistRaised,
   atk: faFistRaised,

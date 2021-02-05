@@ -57,7 +57,7 @@ let char = {
   titles: ["Chivalric Blossom", "Maid of Favonius"],
   baseStat: {
     hp_base: [1012, 2600, 3356, 5027, 5564, 6400, 7117, 7953, 8490, 9325, 9862, 10698, 11235, 12071],
-    atk_base: [16, 41, 53, 80, 88, 101, 113, 126, 134, 148, 156, 169, 178, 191],
+    atk_character_base: [16, 41, 53, 80, 88, 101, 113, 126, 134, 148, 156, 169, 178, 191],
     def_base: [67, 172, 222, 333, 368, 423, 471, 526, 562, 617, 652, 708, 743, 799]
   },
   specializeStat: {
@@ -122,13 +122,13 @@ let char = {
       img: skill,
       document: [{
         text: <span>
-          Summons protective stone armor, dealing <span className="text-geo">Geo DMG</span> to surrounding enemies and creating a shield. The shield's DMG Absorption scales based on Noelle's DEF.
-          The shield has the following properties:
-          <ul>
+          <p className="mb-2">Summons protective stone armor, dealing <span className="text-geo">Geo DMG</span> to surrounding enemies and creating a shield. The shield's DMG Absorption scales based on Noelle's DEF.</p>
+          <p className="mb-2">The shield has the following properties:</p>
+          <ul className="mb-2">
             <li>When Noelle's Normal and Charged Attacks hit a target, they have a certain chance to regenerate HP for all characters.</li>
             <li>Possesses 250% Absorption Efficiency against <span className="text-geo">Geo DMG</span></li>
           </ul>
-          The amount of HP healed when regeneration is triggered scales based on Noelle's DEF.
+          <p className="mb-2">The amount of HP healed when regeneration is triggered scales based on Noelle's DEF.</p>
         </span>,
         fields: [{
           text: "Skill DMG",
@@ -160,9 +160,9 @@ let char = {
       img: burst,
       document: [{
         text: <span>
-          Gathering the strength of stone around her weapon, Noelle strikes the enemies surrounding her within a large AoE, dealing <span className="text-geo">Geo DMG</span>.
-        Afterwards, Noelle gains the following effects:
-        <ul>
+          <p className="mb-2">Gathering the strength of stone around her weapon, Noelle strikes the enemies surrounding her within a large AoE, dealing <span className="text-geo">Geo DMG</span>.</p>
+          <p className="mb-2">Afterwards, Noelle gains the following effects:</p>
+          <ul className="mb-2">
             <li>Larger attack AoE</li>
             <li>Converts attack DMG to <span className="text-geo">Geo DMG</span></li>
             <li>Increased ATK that scales based on her DEF.</li>
@@ -191,8 +191,7 @@ let char = {
         }, {
           text: "Energy Cost",
           value: 60,
-        }]
-      }, {
+        }],
         conditional: (tlvl, c) => ({
           type: "character",
           conditionalKey: "Sweeping",
@@ -200,15 +199,8 @@ let char = {
           sourceKey: "noelle",
           maxStack: 1,
           stats: {
-            modifiers: {
-              noelle_burst_atk: {
-                sweep_multiplier: (sweepingTimeStats.atk_bonu[tlvl] + (c >= 6 ? 50 : 0)) / 100
-              }
-            },
+            modifiers: { atk_final: { def_final: (sweepingTimeStats.atk_bonu[tlvl] + (c >= 6 ? 50 : 0)) / 100 } },
           },
-          fields: [{
-            text: "Convert DEF to ATK as above",
-          }]
         })
       }],
     },

@@ -92,6 +92,24 @@ export default function CharacterOverviewPane(props) {
     </Col>
   </Row >
 }
+function StatItem({ statKey, val }) {
+  if (!statKey) return null
+  return <Col xs={12} lg={6} className="px-3">
+    <span><b>{StatIconEle(statKey)} {Stat.getStatName(statKey)}</b></span>
+    <span className={`float-right text-right text-${Stat.getStatVariant(statKey)}`} >{val?.toFixed?.(Stat.fixedUnit(statKey)) || val}{Stat.getStatUnit(statKey)}</span>
+  </Col>
+}
+function WeaponStatsCard({ title, stats = {}, finalStats = {} }) {
+  if (Object.keys(stats ?? {}).length === 0) return null
+  return <Card bg="darkcontent" text="lightfont" className="mb-2">
+    <Card.Header className="py-2 px-3">{title}</Card.Header>
+    <Card.Body className="py-2 px-0"><Row>
+      {Object.entries(stats).map(([key, val]) => key === "modifiers" ? <React.Fragment key={key} >{Object.entries(val ?? {}).map(([mkey, modifier]) =>
+        <StatItem key={mkey} statKey={mkey} val={Object.entries(modifier ?? {}).reduce((accu, [mkey, multiplier]) => accu + finalStats[mkey] * multiplier, 0)} />)}</React.Fragment>
+        : <StatItem key={key} statKey={key} val={val} />)}
+    </Row></Card.Body>
+  </Card>
+}
 function WeaponStatsEditorCard(props) {
   let [editing, SetEditing] = useState(false)
   let [showDescription, setShowDescription] = useState(false)
@@ -111,8 +129,8 @@ function WeaponStatsEditorCard(props) {
   let weaponDisplayMainVal = weapon.overrideMainVal || Weapon.getWeaponMainStatVal(weapon.key, weapon.levelKey)
   let weaponDisplaySubVal = weapon.overrideSubVal || Weapon.getWeaponSubStatVal(weapon.key, weapon.levelKey)
   let weaponPassiveName = Weapon.getWeaponPassiveName(weapon.key)
-  let weaponBonusStats = Weapon.getWeaponBonusStat(weapon.key, weapon.refineIndex)
-  let conditionalStats = Weapon.getWeaponConditionalStat(weapon.key, weapon.refineIndex, weapon.conditionalNum)
+  let weaponBonusStats = Weapon.getWeaponBonusStat(weapon.key, weapon.refineIndex, undefined)
+  let conditionalStats = Weapon.getWeaponConditionalStat(weapon.key, weapon.refineIndex, weapon.conditionalNum, undefined)
   let conditional = Weapon.getWeaponConditional(weapon.key)
   let conditionalNum = weapon.conditionalNum;
   let conditionalEle = <ConditionalSelector
@@ -214,23 +232,9 @@ function WeaponStatsEditorCard(props) {
             </Row>
 
             <p>{weaponPassiveName && Weapon.getWeaponPassiveDescription(weapon.key, weapon.refineIndex, build.finalStats, character)}</p>
-            <Row>
-              <Col xs={12} md={6}>
-                <h5>ATK: {weaponDisplayMainVal}</h5>
-              </Col>
-              {subStatKey && <Col xs={12} md={6}>
-                <h5>{Stat.getStatName(subStatKey)}: {weaponDisplaySubVal}{Stat.getStatUnit(subStatKey)}</h5>
-              </Col>}
-            </Row>
-            {<Row>
-              {(conditionalStats || weaponBonusStats) && <Col xs={12}><h6 className="mb-0">Bonus Stats:</h6></Col>}
-              {weaponBonusStats && Object.entries(weaponBonusStats).map(([key, val]) =>
-                <Col xs={12} md={6} key={"bonu" + key}>{Stat.getStatName(key)}: {val?.toFixed?.(1) ?? val}{Stat.getStatUnit(key)}</Col>
-              )}
-              {conditionalStats && Object.entries(conditionalStats).map(([key, val]) =>
-                <Col xs={12} md={6} key={"cond" + key}>{Stat.getStatName(key)}: {val?.toFixed?.(1) ?? val}{Stat.getStatUnit(key)}</Col>
-              )}
-            </Row>}
+            <WeaponStatsCard title={"Main Stats"} stats={{ atk: weaponDisplayMainVal, [subStatKey]: weaponDisplaySubVal }} finalStats={build?.finalStats} />
+            <WeaponStatsCard title={"Bonus Stats"} stats={weaponBonusStats} finalStats={build?.finalStats} />
+            <WeaponStatsCard title={"Conditional Stats"} stats={conditionalStats} finalStats={build?.finalStats} />
           </Col>}
       </Row>
       {showDescription && <Row><Col><small>{Weapon.getWeaponDescription(weapon.key)}</small></Col></Row>}
@@ -249,7 +253,7 @@ function MainStatsCards(props) {
   let additionalKeys = ["ele_mas", "crit_rate", "crit_dmg", "ener_rech", "heal_bonu"]
   const displayStatKeys = ["hp_final", "atk_final", "def_final"]
   displayStatKeys.push(...additionalKeys)
-  const editStatKeys = ["hp_base", "hp", "hp_", "atk_base", "atk", "atk_", "def_base", "def", "def_"]
+  const editStatKeys = ["hp_base", "hp", "hp_", "atk_character_base", "atk", "atk_", "def_base", "def", "def_"]
   editStatKeys.push(...additionalKeys)
   const otherStatKeys = ["stam", "inc_heal", "pow_shield", "red_cd", "phy_dmg_bonus", "phy_res"]
 

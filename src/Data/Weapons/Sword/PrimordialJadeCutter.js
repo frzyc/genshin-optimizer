@@ -16,7 +16,8 @@ const weapon = {
     sub: [9.6, 11.2, 13.1, 15, 17, 17, 18.9, 20.8, 22.8, 24.7, 24.7, 26.7, 28.6, 28.6, 30.5, 32.5, 32.5, 34.4, 36.3, 36.3, 38.3, 40.2, 40.2, 42.2, 44.1],
   },
   stats: (refineIndex) => ({
-    hp_: refinementVals_hp[refineIndex]
+    hp_: refinementVals_hp[refineIndex],
+    modifiers: { atk_final: { hp_final: refinementVals_hp_Atk[refineIndex] / 100 } }
   })
 }
 export default weapon

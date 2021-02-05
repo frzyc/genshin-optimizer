@@ -61,7 +61,7 @@ export default function CharacterTalentPane(props) {
     if (!keys.includes("shatter_dmg") && weaponTypeKey === "claymore") keys.push("shatter_dmg")
 
     //search for dependency
-    return Stat.getPrintableFormulaStatKeyList(GetDependencies(build.finalStats, keys))
+    return Stat.getPrintableFormulaStatKeyList(GetDependencies(build?.finalStats?.modifiers, keys), build?.finalStats?.modifiers)
   }
   return <>
     <Row><Col xs={12} className="mb-2">
@@ -328,6 +328,21 @@ function CrystalizeCard({ value }) {
   </Card.Body></Card>
 }
 
+function modifiersToFields(modifiers, finalStats = {}) {
+  return Object.entries(modifiers).map(([mStatKey, modifier]) => ({
+    text: Stat.getStatName(mStatKey),
+    variant: Stat.getStatVariant(mStatKey),
+    value: Object.entries(modifier ?? {}).reduce((accu, [mkey, multiplier]) => accu + finalStats[mkey] * multiplier, 0),
+    basicVal: <span>{Object.entries(modifier ?? {}).map(([mkey, multiplier], i) => <span key={i} >{i !== 0 ? " + " : ""}{Stat.printStat(mkey, finalStats)} * {multiplier?.toFixed?.(3) ?? multiplier}</span>)}</span>,
+    fixed: Stat.fixedUnit(mStatKey)
+  }))
+}
+function statsToFields(stats, finalStats = {}) {
+  return Object.entries(stats).map(([statKey, statVal]) =>
+    statKey === "modifiers" ? modifiersToFields(statVal, finalStats) : { text: Stat.getStatName(statKey), variant: Stat.getStatVariant(statKey), value: statVal, fixed: Stat.fixedUnit(statKey) }
+  ).flat()
+}
+
 const talentLimits = [1, 1, 2, 4, 6, 8, 10]
 function SkillDisplayCard(props) {
   let { character, character: { characterKey, constellation, autoInfused = false }, talentKey, subtitle, ascension, equippedBuild, newBuild, editable, setState } = props
@@ -377,25 +392,15 @@ function SkillDisplayCard(props) {
       </Card.Header>
     }
   }
-  let statsEle = null
   let talentStats = Character.getTalentStats(characterKey, talentKey, constellation, ascension)
-  if (talentStats) {
-    let statList = Object.entries(talentStats).map(([statKey, statVal], index) =>
-      typeof statVal === "number" && <ListGroup.Item key={statKey} variant={index % 2 ? "customdark" : "customdarker"} className="p-2">
-        <div>
-          <span><b>{Stat.getStatName(statKey)}</b></span>
-          <span className="float-right text-right">{statVal}{Stat.getStatUnit(statKey)}</span>
-        </div>
-      </ListGroup.Item>
-    ).filter(e => Boolean(e))//filter because modifiers cannot be displayed.
-    statsEle = Boolean(statList.length) && <Row><Col>
-      <Card bg="darkcontent" text="lightfont" className="mt-2 ml-n2 mr-n2">
-        <ListGroup className="text-white" variant="flush">
-          {statList}
-        </ListGroup>
-      </Card>
-    </Col></Row>
-  }
+  const statsEle = talentStats && <Row><Col>
+    <Card bg="darkcontent" text="lightfont" className="mt-2 ml-n2 mr-n2">
+      <ListGroup className="text-white" variant="flush">
+        {statsToFields(talentStats, build?.finalStats).map((field, i) =>
+          <FieldDisplay key={i} index={i} {...{ field, talentLvlKey, ascension, ...otherProps }} />)}
+      </ListGroup>
+    </Card>
+  </Col></Row>
 
   return <Card bg="lightcontent" text="lightfont" className="h-100">
     {header}
@@ -425,13 +430,10 @@ function SkillDisplayCard(props) {
         let conditionalEle = null
         if (conditional) {
           let conditionalNum = ConditionalsUtil.getConditionalNum(character.talentConditionals, { srcKey: talentKey, srcKey2: conditional.conditionalKey })
-          let conditionalStats = {}
           let conditionalFields = []
           if (conditionalNum) {
-            conditionalStats = Character.getTalentConditionalStats(conditional, conditionalNum, {})
-            //filter out modifiers from rendering
-            conditionalStats = Object.fromEntries(Object.entries(conditionalStats).filter(([key, _]) => key !== "modifiers"))
-            conditionalFields = Character.getTalentConditionalFields(conditional, conditionalNum, [])
+            let conditionalStats = Character.getTalentConditionalStats(conditional, conditionalNum, {})
+            conditionalFields = [...Character.getTalentConditionalFields(conditional, conditionalNum, []), ...statsToFields(conditionalStats, build?.finalStats)]
           }
           let setConditional = (conditionalNum) => setState(state =>
             ({ talentConditionals: ConditionalsUtil.setConditional(state.talentConditionals, { srcKey: talentKey, srcKey2: conditional.conditionalKey }, conditionalNum) }))
@@ -445,15 +447,7 @@ function SkillDisplayCard(props) {
                   defEle={<span>{conditional.condition}</span>} />
               </Card.Header>
               <ListGroup className="text-white" variant="flush">
-                {Object.entries(conditionalStats).map(([statKey, statVal], index) =>
-                  <ListGroup.Item key={statKey} variant={index % 2 ? "customdark" : "customdarker"} className="p-2">
-                    <div>
-                      <span><b>{Stat.getStatName(statKey)}</b></span>
-                      <span className="float-right text-right">{statVal}{Stat.getStatUnit(statKey)}</span>
-                    </div>
-                  </ListGroup.Item>
-                )}
-                {conditionalFields.map((condField, i) => <FieldDisplay key={i + (conditionalStats?.length || 0)} index={i + (conditionalStats?.length || 0)} {...{ field: condField, talentLvlKey, ascension, ...otherProps }} />)}
+                {conditionalFields.map((condField, i) => <FieldDisplay key={i} index={i} {...{ field: condField, talentLvlKey, ascension, ...otherProps }} />)}
               </ListGroup>
             </Card>
           </Col>
@@ -469,8 +463,7 @@ function SkillDisplayCard(props) {
     </Card.Body>
   </Card>
 }
-function FieldDisplay(props) {
-  let { character, character: { compareAgainstEquipped, constellation }, field, index, talentLvlKey = 0, ascension, equippedBuild, newBuild } = props
+function FieldDisplay({ character, character: { compareAgainstEquipped, constellation }, field, index, talentLvlKey = 0, ascension, equippedBuild, newBuild }) {
   let build = newBuild ? newBuild : equippedBuild
   if (typeof field === "function")
     field = field(constellation, ascension)

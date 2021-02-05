@@ -61,7 +61,7 @@ let char = {
   titles: ["Trial by Fire", "Leader of Benny's Adventure Team"],
   baseStat: {
     hp_base: [1039, 2670, 3447, 5163, 5715, 6573, 7309, 8168, 8719, 9577, 10129, 10987, 11539, 12397],
-    atk_base: [16, 41, 53, 80, 88, 101, 113, 126, 134, 148, 156, 169, 178, 191],
+    atk_character_base: [16, 41, 53, 80, 88, 101, 113, 126, 134, 148, 156, 169, 178, 191],
     def_base: [65, 166, 214, 321, 356, 409, 455, 508, 542, 596, 630, 684, 718, 771]
   },
   specializeStat: {
@@ -195,8 +195,8 @@ let char = {
           variant: (tlvl, stats, c) => "success",
         }, (con, a) => ({
           text: "ATK Bonus Ratio",
-          basicVal: (tlvl, stats, c) => <span>{con < 1 ? eleBurst.atk_ratio[tlvl] : `(${eleBurst.atk_ratio[tlvl]} + 20)`}% ({Stat.printStat("atk_base", stats)} + {Stat.printStat("atk_weapon", stats)})</span>,
-          finalVal: (tlvl, stats, c) => ((con < 1 ? eleBurst.atk_ratio[tlvl] : eleBurst.atk_ratio[tlvl] + 20) / 100) * (stats.atk_base + stats.atk_weapon),
+          basicVal: (tlvl, stats, c) => <span>{con < 1 ? eleBurst.atk_ratio[tlvl] : `(${eleBurst.atk_ratio[tlvl]} + 20)`}% {Stat.printStat("atk_base", stats)}</span>,
+          finalVal: (tlvl, stats, c) => ((con < 1 ? eleBurst.atk_ratio[tlvl] : eleBurst.atk_ratio[tlvl] + 20) / 100) * stats.atk_base,
         }), {
           text: "Duration",
           value: "12s",
@@ -214,15 +214,8 @@ let char = {
           sourceKey: "bennett",
           maxStack: 1,
           stats: {
-            modifiers: {
-              bennett_burst_atk: {
-                atk_multiplier: (c < 1 ? eleBurst.atk_ratio[tlvl] : eleBurst.atk_ratio[tlvl] + 20) / 100
-              }
-            },
+            modifiers: { atk_final: { atk_base: (c < 1 ? eleBurst.atk_ratio[tlvl] : eleBurst.atk_ratio[tlvl] + 20) / 100, } },
           },
-          fields: [{
-            text: "Convert Base ATK to ATK as above",
-          }]
         })
       }],
     },

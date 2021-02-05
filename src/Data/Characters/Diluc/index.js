@@ -55,7 +55,7 @@ let char = {
   titles: ["The Dark Side of Dawn", "Darknight Hero", "The Uncrowned King of Mondstadt"],
   baseStat: {
     hp_base: [1011, 2621, 3488, 5219, 5834, 6712, 7533, 8421, 9036, 9932, 10547, 11453, 12068, 12981],
-    atk_base: [26, 68, 90, 135, 151, 173, 194, 217, 233, 256, 272, 295, 311, 335],
+    atk_character_base: [26, 68, 90, 135, 151, 173, 194, 217, 233, 256, 272, 295, 311, 335],
     def_base: [61, 158, 211, 315, 352, 405, 455, 509, 546, 600, 637, 692, 729, 784]
   },
   specializeStat: {

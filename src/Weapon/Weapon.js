@@ -20,7 +20,7 @@ export default class Weapon {
   static getWeaponMainStatVal = (weaponKey, levelKey, defVal = 0) => (WeaponData[weaponKey]?.baseStats?.main?.[this.getLevelIndex(levelKey)] || defVal)
   static getWeaponSubStatVal = (weaponKey, levelKey, defVal = 0) => (WeaponData[weaponKey]?.baseStats?.sub?.[this.getLevelIndex(levelKey)] || defVal)
   static getWeaponSubStatKey = (weaponKey, defVal = "") => (WeaponData[weaponKey]?.baseStats?.subStatKey || defVal)
-  static getWeaponBonusStat = (weaponKey, refineIndex) => WeaponData[weaponKey]?.stats?.(refineIndex)
+  static getWeaponBonusStat = (weaponKey, refineIndex, defVal = {}) => WeaponData[weaponKey]?.stats?.(refineIndex) ?? defVal
 
   static getWeaponsOfType = (weaponType) => Object.fromEntries(Object.entries(WeaponData).filter(([key, weaponObj]) => weaponObj.weaponType === weaponType))
   static getWeaponTypeName = (weaponType, defVal = "") => (WeaponTypeData[weaponType] || defVal)

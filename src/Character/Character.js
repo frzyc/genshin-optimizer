@@ -194,8 +194,8 @@ export default class Character {
     else if (statKey === "def_final")
       return Character.hasOverride(character, "def") || Character.hasOverride(character, "def_") || Character.hasOverride(character, "def_base") || false
     else if (statKey === "atk_final")
-      return Character.hasOverride(character, "atk") || Character.hasOverride(character, "atk_") || Character.hasOverride(character, "atk_base") || false
-    return character && character.baseStatOverrides ? (statKey in character.baseStatOverrides) : false;
+      return Character.hasOverride(character, "atk") || Character.hasOverride(character, "atk_") || Character.hasOverride(character, "atk_character_base") || false
+    return character?.baseStatOverrides ? (statKey in character.baseStatOverrides) : false;
   }
 
   static getStatValueWithOverride = (character, statKey, defVal = 0) => {
@@ -266,7 +266,7 @@ export default class Character {
         .forEach(([statKey, val]) => stats[statKey] = (stats[statKey] || 0) + val)
     })
 
-    let dependencies = GetDependencies(stats)
+    let dependencies = GetDependencies(stats?.modifiers)
     PreprocessFormulas(dependencies, stats.modifiers)(stats)
     return {
       artifactIds: Object.fromEntries(Object.entries(artifacts).map(([key, val]) => [key, val?.id])),
@@ -275,8 +275,19 @@ export default class Character {
       artifactConditionals
     }
   }
+  static mergeStats = (initialStats, stats) => stats && Object.entries(stats).forEach(([key, val]) => {
+    if (key === "modifiers") {
+      initialStats.modifiers = initialStats.modifiers ?? {}
+      for (const [statKey, modifier] of Object.entries(val)) {
+        initialStats.modifiers[statKey] = initialStats.modifiers[statKey] ?? {}
+        for (const [mkey, multiplier] of Object.entries(modifier))
+          initialStats.modifiers[statKey][mkey] = (initialStats.modifiers[statKey][mkey] ?? 0) + multiplier
+      }
+    } else initialStats[key] = (initialStats[key] ?? 0) + val
+  })
+
   static calculateCharacterWithWeaponStats = (character) => {
-    let statKeys = ["hp_base", "atk_base", "def_base", "atk_weapon", "char_level", "enemy_level", "enemy_phy_res", "enemy_phy_immunity", ...Object.keys(characterStatBase)]
+    let statKeys = ["hp_base", "atk_character_base", "def_base", "atk_weapon", "char_level", "enemy_level", "enemy_phy_res", "enemy_phy_immunity", ...Object.keys(characterStatBase)]
     let initialStats = Object.fromEntries(statKeys.map(key => [key, this.getStatValueWithOverride(character, key)]))
     //add element
     initialStats.char_ele_key = this.getElementalKey(character.characterKey);
@@ -291,20 +302,16 @@ export default class Character {
 
     //all the rest of the overrides
     let overrides = character?.baseStatOverrides || {}
-    Object.entries(overrides).forEach(([statKey, val]) => !initialStats.hasOwnProperty(statKey) && (initialStats[statKey] = val))
+    Object.entries(overrides).forEach(([statKey, val]) => {
+      if (statKey === "specializedStatKey" || statKey === "specializedStatVal") return
+      if (!initialStats.hasOwnProperty(statKey)) initialStats[statKey] = val
+    })
 
     //add specialized stat
+    let specializedStatVal = Character.getStatValueWithOverride(character, "specializedStatVal")
     let specialStatKey = Character.getStatValueWithOverride(character, "specializedStatKey")
-    if (specialStatKey) {
-      let specializedStatVal = Character.getStatValueWithOverride(character, "specializedStatVal")
-      initialStats[specialStatKey] = (initialStats[specialStatKey] || 0) + specializedStatVal
-    }
+    this.mergeStats(initialStats, { [specialStatKey]: specializedStatVal })
 
-    let addStatsObj = stats => stats && Object.entries(stats).forEach(([key, val]) => {
-      if (key === "modifiers")
-        return initialStats.modifiers = { ...(initialStats.modifiers || {}), ...val }
-      initialStats[key] = (initialStats[key] || 0) + val
-    })
 
     let { characterKey, levelKey, constellation, talentConditionals = [] } = character
     let ascension = Character.getAscension(levelKey)
@@ -313,24 +320,17 @@ export default class Character {
       let { srcKey: talentKey, srcKey2: conditionalKey, conditionalNum } = cond
       let talentLvlKey = Character.getTalentLevelKey(character, talentKey, constellation)
       let conditional = Character.getTalentConditional(characterKey, talentKey, conditionalKey, talentLvlKey, constellation, ascension)
-      addStatsObj(Character.getTalentConditionalStats(conditional, conditionalNum, {}))
+      this.mergeStats(initialStats, Character.getTalentConditionalStats(conditional, conditionalNum, {}))
     })
 
     //add stats from all talents
-    let allTalentStats = Character.getTalentStatsAll(characterKey, constellation, ascension)
-    allTalentStats.forEach(addStatsObj)
+    Character.getTalentStatsAll(characterKey, constellation, ascension).forEach(s => this.mergeStats(initialStats, s))
 
-    //add weapon stats
-    let weaponStats = {
-      subKey: Weapon.getWeaponSubStatKey(character?.weapon?.key),
-      subVal: Weapon.getWeaponSubStatValWithOverride(character?.weapon),
-      bonusStats: Weapon.getWeaponBonusStat(character?.weapon?.key, character?.weapon?.refineIndex),
-      conditionalStats: Weapon.getWeaponConditionalStat(character?.weapon?.key, character?.weapon?.refineIndex, character?.weapon?.conditionalNum)
-    }
-    if (weaponStats.subKey)
-      initialStats[weaponStats.subKey] = (initialStats[weaponStats.subKey] || 0) + weaponStats.subVal
-    if (weaponStats.bonusStats) addStatsObj(weaponStats.bonusStats)
-    if (weaponStats.conditionalStats) addStatsObj(weaponStats.conditionalStats);
+    //add stats from weapons
+    const weaponSubKey = Weapon.getWeaponSubStatKey(character?.weapon?.key)
+    if (weaponSubKey) this.mergeStats({ [weaponSubKey]: Weapon.getWeaponSubStatValWithOverride(character?.weapon) })
+    this.mergeStats(initialStats, Weapon.getWeaponBonusStat(character?.weapon?.key, character?.weapon?.refineIndex))
+    this.mergeStats(initialStats, Weapon.getWeaponConditionalStat(character?.weapon?.key, character?.weapon?.refineIndex, character?.weapon?.conditionalNum, {}));
 
     return initialStats
   }
