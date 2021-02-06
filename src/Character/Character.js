@@ -325,10 +325,10 @@ export default class Character {
 
     //add stats from all talents
     Character.getTalentStatsAll(characterKey, constellation, ascension).forEach(s => this.mergeStats(initialStats, s))
-
+    
     //add stats from weapons
     const weaponSubKey = Weapon.getWeaponSubStatKey(character?.weapon?.key)
-    if (weaponSubKey) this.mergeStats({ [weaponSubKey]: Weapon.getWeaponSubStatValWithOverride(character?.weapon) })
+    if (weaponSubKey) this.mergeStats(initialStats, { [weaponSubKey]: Weapon.getWeaponSubStatValWithOverride(character?.weapon) })
     this.mergeStats(initialStats, Weapon.getWeaponBonusStat(character?.weapon?.key, character?.weapon?.refineIndex))
     this.mergeStats(initialStats, Weapon.getWeaponConditionalStat(character?.weapon?.key, character?.weapon?.refineIndex, character?.weapon?.conditionalNum, {}));
 
