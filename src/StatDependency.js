@@ -1,13 +1,14 @@
 import { Formulas, StatData } from "./StatData"
 
 //generate a statKey dependency, to reduce build generation calculation on a single stat.
-const formulaKeyDependency = {}
-const GetFormulaDependency = (formula) => {
+function GetFormulaDependency(formula) {
   const dependency = new Set()
-  formula(new Proxy({}, { get: (target, prop, receiver) => dependency.add(prop) }))
+  formula(new Proxy({}, { get: (target, prop, receiver) => { dependency.add(prop) } }))
   return [...dependency]
 }
-Object.keys(Formulas).forEach(key => formulaKeyDependency[key] = GetFormulaDependency(s => Formulas[key](s)))
+const formulaKeyDependency = Object.freeze(Object.fromEntries(
+  Object.keys(Formulas).map(key => [key, GetFormulaDependency(Formulas[key])])
+))
 
 if (process.env.NODE_ENV === "development") {
   console.log(formulaKeyDependency)
