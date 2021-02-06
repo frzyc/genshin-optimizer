@@ -21,20 +21,17 @@ if (process.env.NODE_ENV === "development") {
 
 function GetDependencies(modifiers = {}, keys = Object.keys(Formulas)) {
   let dependencies = new Set()
-  Object.entries(modifiers).forEach(([key, modifier]) =>
-    keys.includes(key) && Object.keys(modifier).map(mkey => InsertDependencies(mkey, dependencies)))
-  keys.forEach(key => InsertDependencies(key, dependencies))
+  keys.forEach(key => InsertDependencies(key, modifiers, dependencies))
   return [...dependencies]
 }
-function InsertDependencies(key, dependencies = new Set()) {
+function InsertDependencies(key, modifiers, dependencies) {
   if (dependencies.has(key)) return
-  formulaKeyDependency[key]?.forEach(k => InsertDependencies(k, dependencies))
+  formulaKeyDependency[key]?.forEach(k => InsertDependencies(k, modifiers, dependencies))
+  Object.keys(modifiers[key] ?? {}).forEach(k => InsertDependencies(k, modifiers, dependencies))
   dependencies.add(key)
-  return dependencies
 }
 
 export {
   GetFormulaDependency,
   GetDependencies,
-  InsertDependencies
 }
