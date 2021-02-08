@@ -18,6 +18,14 @@ describe(`Testing Build`, () => {
       // flower - 3, plume - 3, sand - 2
       expect([...artifactSetPermutations(artifacts, filter)]).toHaveLength(3 * 3 * 2)
     })
+    test(`should passthrough with empty filter`, () => {
+      const artifacts = {
+        flower: [a[0], a[1], b[0], c[0], d[0]],
+        plume: [a[0], b[0], c[0]],
+        sand: [a[0], a[1], b[0]],
+      }
+      expect([...artifactSetPermutations(artifacts, [])]).toEqual([artifacts])
+    })
     test(`should exclude unsatisfied permutations`, () => {
       const artifacts = {
         flower: [a[0], b[0], c[0]],
