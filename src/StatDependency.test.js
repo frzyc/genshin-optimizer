@@ -2,6 +2,11 @@ import { GetDependencies, GetFormulaDependency } from "./StatDependency"
 import { Formulas } from "./StatData"
 
 expect.extend({
+  /**
+   * Test that the object respects the dependencies
+   * @param {statKey[]} received - The sorted list of stat keys
+   * @param {Object.<statKey, statKeys[]>} expected - The list of dependencies, all values must preceed its key to pass this test.
+   */
   toBeDependent(received, expected) {
     for (const pivot in expected) {
       const index = received.indexOf(pivot)
