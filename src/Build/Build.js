@@ -1,14 +1,16 @@
-/*
+/**
  * Generate all set of artifacts-by-slots based on the filters
- * Each entry is of the form { flower: [art1, art2, ...], plume: [art3, art4, ...] }
+ * @param {Object.<slotKey, artifact[]>} artifactsBySlot - list of artifacts, separated by slots
+ * @param {Object.<setKey, number>} setFilters - minimum number of artifacts in each set
+ *
  */
-export function* artifactSetPermutations(artifacts, setFilters) {
-  const setKeys = new Set(setFilters.map(i => i.key)), artifactsBySlot = {}
-  const slotKeys = Object.keys(artifacts)
+export function* artifactSetPermutations(artifactsBySlot, setFilters) {
+  const setKeys = new Set(setFilters.map(i => i.key)), filteredArtifactsBySlot = {}
+  const slotKeys = Object.keys(artifactsBySlot)
 
   for (const slotKey of slotKeys) {
     let artifactsBySet = {}
-    for (const artifact of artifacts[slotKey]) {
+    for (const artifact of artifactsBySlot[slotKey]) {
       if (setKeys.has(artifact.setKey)) {
         if (artifactsBySet[artifact.setKey]) artifactsBySet[artifact.setKey].push(artifact)
         else artifactsBySet[artifact.setKey] = [artifact]
@@ -17,7 +19,7 @@ export function* artifactSetPermutations(artifacts, setFilters) {
         else artifactsBySet[null] = [artifact]
       }
     }
-    artifactsBySlot[slotKey] = Object.freeze(artifactsBySet)
+    filteredArtifactsBySlot[slotKey] = Object.freeze(artifactsBySet)
   }
 
   const setCount = {}, accu = {}
@@ -32,7 +34,7 @@ export function* artifactSetPermutations(artifacts, setFilters) {
     }
 
     const slotKey = slotKeys[index]
-    let artifactsBySet = artifactsBySlot[slotKey]
+    let artifactsBySet = filteredArtifactsBySlot[slotKey]
     for (const setKey in artifactsBySet) {
       setCount[setKey] = (setCount[setKey] ?? 0) + 1
       accu[slotKey] = artifactsBySet[setKey]
@@ -44,10 +46,64 @@ export function* artifactSetPermutations(artifacts, setFilters) {
   yield* slotPerm(0)
 }
 
-export function calculateTotalBuildNumber(splitArtifacts, setFilters) {
-  return [...artifactSetPermutations(splitArtifacts, setFilters)].reduce((accu, artifactsBySlot) => {
+/**
+ * Compute number of all artifact permutations based on the filters
+ * @param {Object.<slotKey, artifact[]>} artifactsBySlot - list of artifacts, separated by slots
+ * @param {Object.<setKey, number>} setFilters - minimum number of artifacts in each set
+ */
+export function calculateTotalBuildNumber(artifactsBySlot, setFilters) {
+  return [...artifactSetPermutations(artifactsBySlot, setFilters)].reduce((accu, artifactsBySlot) => {
     return accu + Object.entries(artifactsBySlot).reduce((accu, artifacts) => {
       return accu * artifacts[1].length
     }, 1)
   }, 0)
+}
+
+/**
+ * @callback artifactCallback
+ * @param {Object.<artifactKey, artifact>} artifacts - the list of artifacts
+ * @param {stats} stats - the total stats for the artifacts
+ */
+
+/**
+ * Generate all artifact permutations and accumulate the stats
+ * @param {stats} initialStats - initial stats before any artifact is added
+ * @param {Object.<slotKey, artifact[]>} artifactsBySlot - list of artifacts, separated by slots
+ * @param {Object.<setKey, Object.<number, Object.<statKey, statValue>>>} artifactSetEffects - the list of the set effects
+ * @param {artifactCallback} callback - the functions called with each permutation
+ */
+export function artifactPermutations(initialStats, artifactsBySlot, artifactSetEffects, callback) {
+  const slotKeys = Object.keys(artifactsBySlot), setCount = {}, accu = {}
+  function slotPerm(index, stats) {
+    if (index >= slotKeys.length) {
+      callback(accu, stats)
+      return
+    }
+
+    let slotKey = slotKeys[index]
+    for (const artifact of artifactsBySlot[slotKey]) {
+      let newStats = { ...stats }
+      accumulate(slotKey, artifact, setCount, accu, newStats, artifactSetEffects)
+      slotPerm(index + 1, newStats)
+      setCount[artifact.setKey] -= 1
+    }
+  }
+
+  slotPerm(0, initialStats)
+}
+
+function accumulate(slotKey, art, setCount, accu, stats, artifactSetEffects) {
+  let setKey = art.setKey
+  accu[slotKey] = art
+  setCount[setKey] = (setCount[setKey] ?? 0) + 1
+
+  // Add artifact stats
+  stats[art.mainStatKey] = (stats[art.mainStatKey] || 0) + art.mainStatVal
+  art.substats.forEach((substat) =>
+    substat?.key && (stats[substat.key] = (stats[substat.key] || 0) + substat.value))
+
+  // Add set effects
+  let setEffect = artifactSetEffects[setKey]?.[setCount[setKey]]
+  setEffect && Object.entries(setEffect).forEach(([statKey, val]) =>
+    stats[statKey] = (stats[statKey] || 0) + val)
 }
