@@ -25,12 +25,6 @@ expect.extend({
   },
 })
 
-function checkDependencies(dependencies, pivot, expected) {
-  const index = dependencies.indexOf(pivot)
-  expect(index).not.toEqual(-1)
-  expect(dependencies.slice(0, index)).toEqual(expect.arrayContaining(expected))
-}
-
 describe('Testing StatDependency', () => {
   describe('GetFormulaDependency()', () => {
     test('should get dependencies from formula', () => {
