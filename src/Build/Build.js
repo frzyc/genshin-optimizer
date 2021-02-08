@@ -1,68 +1,53 @@
-import Artifact from "../Artifact/Artifact";
+/*
+ * Generate all set of artifacts-by-slots based on the filters
+ * Each entry is of the form { flower: [art1, art2, ...], plume: [art3, art4, ...] }
+ */
+export function* artifactSetPermutations(artifacts, setFilters) {
+  const setKeys = new Set(setFilters.map(i => i.key)), artifactsBySlot = {}
+  const slotKeys = Object.keys(artifacts)
 
-export default class Build {
-  /**
-   * Calculate all the possible set configuration based on the filters.
-   * [{Key:X,num:2},{key:Y,num:2},{key:"",num:0}]
-   * generates XXYYO,XYXYO,XXOYY..... combinations, where O means other. 
-   * @param {Object} setFilters From BuildDisplay
-   */
-  static generateAllPossibleArtifactSetPerm(setFilters) {
-    let sets = setFilters.filter(filter => filter.key).map(filter => filter.key);
-    let useOther = setFilters.reduce((accu, filter) => filter.key ? accu + filter.num : accu, 0) < 5;
-    if (useOther) sets.push("Other");
-
-    let perm = [];
-    let slotKeys = Artifact.getSlotKeys();
-    //recursion function to loop through everything.
-    let slotPerm = (index, accu) => {
-      if (index >= slotKeys.length) {
-        let numArtsPerSet = {}
-        Object.values(accu).forEach(setKey => {
-          if (numArtsPerSet[setKey]) numArtsPerSet[setKey] += 1
-          else numArtsPerSet[setKey] = 1
-        })
-        let valid = true
-        for (const setFilter of setFilters) {
-          if (setFilter.key && (!numArtsPerSet[setFilter.key] || numArtsPerSet[setFilter.key] < setFilter.num)) {
-            valid = false;
-            break;
-          }
-        }
-        if (valid) perm.push(accu)
-        return;
+  for (const slotKey of slotKeys) {
+    let artifactsBySet = {}
+    for (const artifact of artifacts[slotKey]) {
+      if (setKeys.has(artifact.setKey)) {
+        if (artifactsBySet[artifact.setKey]) artifactsBySet[artifact.setKey].push(artifact)
+        else artifactsBySet[artifact.setKey] = [artifact]
+      } else {
+        if (artifactsBySet[null]) artifactsBySet[null].push(artifact)
+        else artifactsBySet[null] = [artifact]
       }
-      let slotKey = slotKeys[index];
-      sets.forEach(setKey => {
-        //see if this set is valid at this piece slot. some artifacts dont have artifacts at specific slots.
-        if (setKey === "Other" || (Object.keys(Artifact.getPieces(setKey)).includes(slotKey))) {
-          accu[slotKey] = setKey;
-          slotPerm(index + 1, { ...accu })
-        }
-      });
     }
-    slotPerm(0, {});
-    return perm
+    artifactsBySlot[slotKey] = Object.freeze(artifactsBySet)
   }
-  static calculateTotalBuildNumber(splitArtifacts, setPerms, setFilters) {
-    let setsInFilter = setFilters.filter(filter => filter.key).map(filter => filter.key)
-    let splitNumArtsPerSet = {}
-    //count the number of arts in setfilter for each slot
-    Object.entries(splitArtifacts).forEach(([key, artArr]) => {
-      let numArtsPerSet = {}
-      artArr.forEach(art => {
-        if (setsInFilter.includes(art.setKey))
-          numArtsPerSet[art.setKey] = (numArtsPerSet[art.setKey] || 0) + 1
-        else
-          numArtsPerSet["Other"] = (numArtsPerSet["Other"] || 0) + 1
-      })
-      splitNumArtsPerSet[key] = numArtsPerSet
-    })
-    //calculate!
-    return setPerms.reduce((accu, setPerm) =>
-      accu + Object.entries(setPerm).reduce((permaccu, [key, setKey]) =>
-        (splitNumArtsPerSet[key] && splitNumArtsPerSet[key][setKey]) ? permaccu * splitNumArtsPerSet[key][setKey] : 0
-        , 1)
-      , 0)
+
+  const setCount = {}, accu = {}
+
+  function* slotPerm(index) {
+    if (index >= slotKeys.length) {
+      for (const { key, num } of setFilters)
+        if ((setCount[key] ?? 0) < num)
+          return
+      yield { ...accu }
+      return
+    }
+
+    const slotKey = slotKeys[index]
+    let artifactsBySet = artifactsBySlot[slotKey]
+    for (const setKey in artifactsBySet) {
+      setCount[setKey] = (setCount[setKey] ?? 0) + 1
+      accu[slotKey] = artifactsBySet[setKey]
+      yield* slotPerm(index + 1)
+      setCount[setKey] -= 1
+    }
   }
+
+  yield* slotPerm(0)
+}
+
+export function calculateTotalBuildNumber(splitArtifacts, setFilters) {
+  return [...artifactSetPermutations(splitArtifacts, setFilters)].reduce((accu, artifactsBySlot) => {
+    return accu + Object.entries(artifactsBySlot).reduce((accu, artifacts) => {
+      return accu * artifacts[1].length
+    }, 1)
+  }, 0)
 }
