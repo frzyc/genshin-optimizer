@@ -199,17 +199,19 @@ export default class BuildDisplay extends React.Component {
     this.split = this.splitArtifacts();
     this.totBuildNumber = calculateTotalBuildNumber(this.split, setFilters)
     let { totBuildNumber } = this
+    let totalBuildNumberString = totBuildNumber?.toLocaleString() ?? totBuildNumber
+    let generationProgressString = generationProgress?.toLocaleString() ?? generationProgress
     let buildAlert = null
     if (generatingBuilds) {
       let progPercent = generationProgress * 100 / totBuildNumber
       buildAlert = <Alert variant="success">
-        <span>Generating and testing <b>{generationProgress}/{totBuildNumber}</b> Build configurations against the criterias for <b>{characterName}</b></span>
+        <span>Generating and testing <b>{generationProgressString}/{totalBuildNumberString}</b> Build configurations against the criterias for <b>{characterName}</b></span>
         <h6>Time elapsed: {timeStringMs(generationDuration)}</h6>
         <ProgressBar now={progPercent} label={`${progPercent.toFixed(1)}%`} />
       </Alert>
     } else if (!generatingBuilds && generationProgress) {//done
       buildAlert = <Alert variant="success">
-        <span>Generated and tested <b>{totBuildNumber}</b> Build configurations against the criterias for <b>{characterName}</b></span>
+        <span>Generated and tested <b>{totalBuildNumberString}</b> Build configurations against the criterias for <b>{characterName}</b></span>
         <h6>Time elapsed: {timeStringMs(generationDuration)}</h6>
         <ProgressBar now={100} variant="success" label="100%" />
       </Alert>
@@ -217,8 +219,8 @@ export default class BuildDisplay extends React.Component {
       buildAlert = totBuildNumber === 0 ?
         <Alert variant="warning" className="mb-0"><span>Current configuration will not generate any builds for <b>{characterName}</b>. Please change your Artifact configurations, or add/unlock more Artifacts.</span></Alert>
         : (totBuildNumber > warningBuildNumber ?
-          <Alert variant="warning" className="mb-0"><span>Current configuration will generate <b>{totBuildNumber}</b> builds for <b>{characterName}</b>. This might take quite awhile to generate...</span></Alert> :
-          <Alert variant="success" className="mb-0"><span>Current configuration {totBuildNumber <= this.state.maxBuildsToShow ? "generated" : "will generate"} <b>{totBuildNumber}</b> builds for <b>{characterName}</b>.</span></Alert>)
+          <Alert variant="warning" className="mb-0"><span>Current configuration will generate <b>{totalBuildNumberString}</b> builds for <b>{characterName}</b>. This might take quite awhile to generate...</span></Alert> :
+          <Alert variant="success" className="mb-0"><span>Current configuration {totBuildNumber <= this.state.maxBuildsToShow ? "generated" : "will generate"} <b>{totalBuildNumberString}</b> builds for <b>{characterName}</b>.</span></Alert>)
     }
     let characterDropDown = <DropdownButton title={selectedCharacterId ? <CharacterNameDisplay id={selectedCharacterId} flat /> : "Select Character"} disabled={generatingBuilds}>
       <Dropdown.Item onClick={() => this.selectCharacter("")}>Unselect Character</Dropdown.Item>

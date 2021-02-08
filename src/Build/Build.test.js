@@ -39,7 +39,7 @@ describe(`Testing Build`, () => {
       result.toContainEqual({ flower: [a[0]], plume: [a[1]], sand: [a[2], a[0]] }) // AAA
       result.toContainEqual({ flower: [a[0]], plume: [a[1]], sand: [b[0]] }) // AAO
       result.toContainEqual({ flower: [a[0]], plume: [b[1]], sand: [a[2], a[0]] }) // AOA
-      result.toContainEqual({ flower: [b[0],  c[0]], plume: [a[1]], sand: [a[2], a[0]] }) // OAA
+      result.toContainEqual({ flower: [b[0], c[0]], plume: [a[1]], sand: [a[2], a[0]] }) // OAA
     })
     test(`should yield nothing on unsatisfiable filter`, () => {
       const artifacts = {
@@ -60,10 +60,10 @@ describe(`Testing Build`, () => {
         sand: [a[0], a[1], b[0]],
       }
       const filter = [{ key: "A", num: 0 }, { key: "B", num: 0 }]
-      expect(calculateTotalBuildNumber(artifacts, filter)).toEqual(5*3*3)
-      expect(calculateTotalBuildNumber(artifacts, [])).toEqual(5*3*3)
+      expect(calculateTotalBuildNumber(artifacts, filter)).toEqual(5 * 3 * 3)
+      expect(calculateTotalBuildNumber(artifacts, [])).toEqual(5 * 3 * 3)
       // COO, OCO, CCO
-      expect(calculateTotalBuildNumber(artifacts, [{ key: "C", num: 1 }])).toEqual(1*2*3 + 4*1*3 + 1*1*3)
+      expect(calculateTotalBuildNumber(artifacts, [{ key: "C", num: 1 }])).toEqual(1 * 2 * 3 + 4 * 1 * 3 + 1 * 1 * 3)
     })
   })
   describe(`artifactPermutations()`, () => {
@@ -74,9 +74,9 @@ describe(`Testing Build`, () => {
         sand: [a[0], a[1], b[0]],
       }
       const permutations = [], callback = (arg) => { permutations.push({ ...arg }) }
-      artifactPermutations({x: 0}, artifacts, {}, callback)
+      artifactPermutations({ x: 0 }, artifacts, {}, callback)
 
-      expect(permutations).toHaveLength(5*3*3)
+      expect(permutations).toHaveLength(5 * 3 * 3)
       for (const flower of artifacts.flower)
         for (const plume of artifacts.plume)
           for (const sand of artifacts.sand)
@@ -88,7 +88,7 @@ describe(`Testing Build`, () => {
         plume: [a[0], b[0]],
         sand: [a[0], a[1]],
       }
-      const permutations = [], callback = (arg, stat) => { permutations.push([{ ...arg }, {...stat}]) }
+      const permutations = [], callback = (arg, stat) => { permutations.push([{ ...arg }, { ...stat }]) }
       artifactPermutations({}, artifacts, {}, callback)
 
       expect(permutations).toContainEqual([{ flower: a[0], plume: b[0], sand: a[1] }, { x: 4 }])
@@ -100,22 +100,22 @@ describe(`Testing Build`, () => {
         sand: [a[0], a[1]],
         clock: [a[2], d[0]]
       }
-      const permutations = [], callback = (arg, stat) => { permutations.push([{ ...arg }, {...stat}]) }
-      artifactPermutations({}, artifacts, { "A": { 2: {x: 11}, 4: {y: 7} } }, callback)
+      const permutations = [], callback = (arg, stat) => { permutations.push([{ ...arg }, { ...stat }]) }
+      artifactPermutations({}, artifacts, { "A": { 2: { x: 11 }, 4: { y: 7 } } }, callback)
 
       expect(permutations).toContainEqual([{ flower: c[0], plume: b[0], sand: a[1], clock: d[0] }, { x: 6 }]) // no set
       expect(permutations).toContainEqual([{ flower: a[0], plume: b[0], sand: a[1], clock: a[2] }, { x: 7 + 11 }]) // set 2
       expect(permutations).toContainEqual([{ flower: a[0], plume: a[0], sand: a[0], clock: a[2] }, { x: 6 + 11, y: 7 }]) // set 4
     })
     test(`should include sub-stats and main-stats`, () => {
-      const a_ = { setKey: "A", mainStatKey: "other", mainStatVal: 2, substats: [ { key: "x", value: 1.2 } ] }
+      const a_ = { setKey: "A", mainStatKey: "other", mainStatVal: 2, substats: [{ key: "x", value: 1.2 }] }
       const artifacts = {
         flower: [a[0]],
         plume: [b[0]],
         sand: [a[0], a_, a[1]],
         clock: [a[2], d[0]]
       }
-      const permutations = [], callback = (arg, stat) => { permutations.push([{ ...arg }, {...stat}]) }
+      const permutations = [], callback = (arg, stat) => { permutations.push([{ ...arg }, { ...stat }]) }
       artifactPermutations({}, artifacts, [], callback)
 
       expect(permutations).toContainEqual([{ flower: a[0], plume: b[0], sand: a_, clock: d[0] }, { x: 4.2, other: 2 }])
@@ -124,8 +124,8 @@ describe(`Testing Build`, () => {
       const artifacts = {
         flower: [a[0]], plume: [b[0]], sand: [a[1]], clock: [d[0]]
       }
-      const permutations = [], callback = (arg, stat) => { permutations.push([{ ...arg }, {...stat}]) }
-      artifactPermutations({y: 2, x: 4}, artifacts, [], callback)
+      const permutations = [], callback = (arg, stat) => { permutations.push([{ ...arg }, { ...stat }]) }
+      artifactPermutations({ y: 2, x: 4 }, artifacts, [], callback)
 
       expect(permutations).toContainEqual([{ flower: a[0], plume: b[0], sand: a[1], clock: d[0] }, { x: 9, y: 2 }])
     })
