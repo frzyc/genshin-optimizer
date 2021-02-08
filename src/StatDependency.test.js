@@ -2,12 +2,17 @@ import { GetDependencies, GetFormulaDependency } from "./StatDependency"
 import { Formulas } from "./StatData"
 
 expect.extend({
+  /**
+    * Test that the object respects the dependencies
+    * @param {statKey[]} received - The sorted list of stat keys
+    * @param {Object.<statKey, statKeys[]>} expected - The list of dependencies, all values must preceed its key to pass this test.
+    */
   toBeDependent(received, expected) {
     for (const pivot in expected) {
       const index = received.indexOf(pivot)
       if (index === -1) return {
-          message: () => `expected ${this.utils.printReceived(received)} to contain ${this.utils.printExpected(pivot)}`,
-          pass: false,
+        message: () => `expected ${this.utils.printReceived(received)} to contain ${this.utils.printExpected(pivot)}`,
+        pass: false,
       }
       const prefix = new Set(received.slice(0, index))
       for (const item of expected[pivot]) {
@@ -25,12 +30,6 @@ expect.extend({
   },
 })
 
-function checkDependencies(dependencies, pivot, expected) {
-  const index = dependencies.indexOf(pivot)
-  expect(index).not.toEqual(-1)
-  expect(dependencies.slice(0, index)).toEqual(expect.arrayContaining(expected))
-}
-
 describe('Testing StatDependency', () => {
   describe('GetFormulaDependency()', () => {
     test('should get dependencies from formula', () => {
@@ -40,7 +39,7 @@ describe('Testing StatDependency', () => {
   })
   describe('GetDependencies()', () => {
     test('should get dependencies from database', () => {
-      expect(GetDependencies({}, ["def_final"])).toBeDependent({def_final: ["def_base", "def_", "def"]})
+      expect(GetDependencies({}, ["def_final"])).toBeDependent({ def_final: ["def_base", "def_", "def"] })
     })
     test('should recursively get dependencies from database', () => {
       const expected = expect(GetDependencies({}, ["phy_dmg"]))
@@ -54,7 +53,7 @@ describe('Testing StatDependency', () => {
       })
     })
     test('should add all dependencies from keys', () => {
-      const expected = expect(GetDependencies({}, [ "def_final", "ener_rech" ]))
+      const expected = expect(GetDependencies({}, ["def_final", "ener_rech"]))
       expected.toBeDependent({
         def_final: ["def_base", "def_", "def"],
         ener_rech: []
@@ -67,7 +66,7 @@ describe('Testing StatDependency', () => {
       const keys = ["ener_rech"]
       let modifiers = { ener_rech: { crit_rate: 10 } }
       //should add crit_rate to dependency
-      expect(GetDependencies(modifiers, keys)).toBeDependent({ener_rech: ["crit_rate"]})
+      expect(GetDependencies(modifiers, keys)).toBeDependent({ ener_rech: ["crit_rate"] })
       modifiers = { atk: { crit_rate: 10 } }
       //should not add crit_rate to dependency, since its not part of the original dependency
       expect(GetDependencies(modifiers, keys)).toEqual(expect.not.arrayContaining(["atk"]))

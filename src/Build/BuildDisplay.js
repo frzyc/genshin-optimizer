@@ -20,7 +20,7 @@ import ConditionalsUtil from '../Util/ConditionalsUtil';
 import { timeStringMs } from '../Util/TimeUtil';
 import { deepClone, loadFromLocalStorage, saveToLocalStorage } from '../Util/Util';
 import Weapon from '../Weapon/Weapon';
-import Build from './Build';
+import { calculateTotalBuildNumber } from './Build';
 
 //lazy load the character display
 const CharacterDisplayCardPromise = import('../Character/CharacterDisplayCard');
@@ -140,7 +140,7 @@ export default class BuildDisplay extends React.Component {
   }
 
   generateBuilds = () => {
-    let { split, artifactSetPerms, totBuildNumber } = this
+    let { split, totBuildNumber } = this
     if (!totBuildNumber) return this.setState({ builds: [] })
     this.setState({ generatingBuilds: true, builds: [], generationDuration: 0, generationProgress: 0 })
     let { setFilters, ascending, buildFilterKey, maxBuildsToShow, artifactConditionals, artifactsAssumeFull } = this.state
@@ -161,7 +161,7 @@ export default class BuildDisplay extends React.Component {
 
     //create an obj with app the artifact set effects to pass to buildworker.
     let data = {
-      splitArtifacts, artifactSetPerms, initialStats, artifactSetEffects, dependencies,
+      splitArtifacts, initialStats, artifactSetEffects, dependencies,
       setFilters, maxBuildsToShow, buildFilterKey, ascending,
     }
     if (this.worker) this.worker.terminate()
@@ -175,7 +175,7 @@ export default class BuildDisplay extends React.Component {
         category: "Build Generation",
         variable: "timing",
         value: e.data.timing,
-        label: Build.calculateTotalBuildNumber(split, artifactSetPerms, this.state.setFilters)
+        label: this.totBuildNumber
       })
       let builds = e.data.builds.map(obj =>
         Character.calculateBuildWithObjs(artifactConditionals, initialStats, obj.artifacts))
@@ -197,20 +197,21 @@ export default class BuildDisplay extends React.Component {
     let artsAccounted = setFilters.reduce((accu, cur) => cur.key ? accu + cur.num : accu, 0)
     //these variables are used for build generator.
     this.split = this.splitArtifacts();
-    this.artifactSetPerms = Build.generateAllPossibleArtifactSetPerm(setFilters)
-    this.totBuildNumber = Build.calculateTotalBuildNumber(this.split, this.artifactSetPerms, setFilters)
+    this.totBuildNumber = calculateTotalBuildNumber(this.split, setFilters)
     let { totBuildNumber } = this
+    let totalBuildNumberString = totBuildNumber?.toLocaleString() ?? totBuildNumber
+    let generationProgressString = generationProgress?.toLocaleString() ?? generationProgress
     let buildAlert = null
     if (generatingBuilds) {
       let progPercent = generationProgress * 100 / totBuildNumber
       buildAlert = <Alert variant="success">
-        <span>Generating and testing <b>{generationProgress}/{totBuildNumber}</b> Build configurations against the criterias for <b>{characterName}</b></span>
+        <span>Generating and testing <b>{generationProgressString}/{totalBuildNumberString}</b> Build configurations against the criterias for <b>{characterName}</b></span>
         <h6>Time elapsed: {timeStringMs(generationDuration)}</h6>
         <ProgressBar now={progPercent} label={`${progPercent.toFixed(1)}%`} />
       </Alert>
     } else if (!generatingBuilds && generationProgress) {//done
       buildAlert = <Alert variant="success">
-        <span>Generated and tested <b>{totBuildNumber}</b> Build configurations against the criterias for <b>{characterName}</b></span>
+        <span>Generated and tested <b>{totalBuildNumberString}</b> Build configurations against the criterias for <b>{characterName}</b></span>
         <h6>Time elapsed: {timeStringMs(generationDuration)}</h6>
         <ProgressBar now={100} variant="success" label="100%" />
       </Alert>
@@ -218,8 +219,8 @@ export default class BuildDisplay extends React.Component {
       buildAlert = totBuildNumber === 0 ?
         <Alert variant="warning" className="mb-0"><span>Current configuration will not generate any builds for <b>{characterName}</b>. Please change your Artifact configurations, or add/unlock more Artifacts.</span></Alert>
         : (totBuildNumber > warningBuildNumber ?
-          <Alert variant="warning" className="mb-0"><span>Current configuration will generate <b>{totBuildNumber}</b> builds for <b>{characterName}</b>. This might take quite awhile to generate...</span></Alert> :
-          <Alert variant="success" className="mb-0"><span>Current configuration {totBuildNumber <= this.state.maxBuildsToShow ? "generated" : "will generate"} <b>{totBuildNumber}</b> builds for <b>{characterName}</b>.</span></Alert>)
+          <Alert variant="warning" className="mb-0"><span>Current configuration will generate <b>{totalBuildNumberString}</b> builds for <b>{characterName}</b>. This might take quite awhile to generate...</span></Alert> :
+          <Alert variant="success" className="mb-0"><span>Current configuration {totBuildNumber <= this.state.maxBuildsToShow ? "generated" : "will generate"} <b>{totalBuildNumberString}</b> builds for <b>{characterName}</b>.</span></Alert>)
     }
     let characterDropDown = <DropdownButton title={selectedCharacterId ? <CharacterNameDisplay id={selectedCharacterId} flat /> : "Select Character"} disabled={generatingBuilds}>
       <Dropdown.Item onClick={() => this.selectCharacter("")}>Unselect Character</Dropdown.Item>
