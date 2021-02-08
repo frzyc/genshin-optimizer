@@ -1,10 +1,10 @@
 import { artifactSetPermutations, calculateTotalBuildNumber, artifactPermutations } from "./Build"
 
-const mock = (setKey, value) => { return { setKey, mainStatKey: "x", mainStatVal: value, substats: [] } }
-const a = [mock("A", 1), mock("A", 2), mock("A", 3)]
-const b = [mock("B", 1), mock("B", 1.5)]
-const c = [mock("C", 2)]
-const d = [mock("D", 1), mock("D", 2)]
+const dummyArtifact = (setKey, value) => { return { setKey, mainStatKey: "x", mainStatVal: value, substats: [] } }
+const a = [dummyArtifact("A", 1), dummyArtifact("A", 2), dummyArtifact("A", 3)]
+const b = [dummyArtifact("B", 1), dummyArtifact("B", 1.5)]
+const c = [dummyArtifact("C", 2)]
+const d = [dummyArtifact("D", 1), dummyArtifact("D", 2)]
 
 describe(`Testing Build`, () => {
   describe(`artifactSetPermutations()`, () => {
