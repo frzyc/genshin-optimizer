@@ -52,11 +52,9 @@ export function* artifactSetPermutations(artifactsBySlot, setFilters) {
  * @param {Object.<setKey, number>} setFilters - minimum number of artifacts in each set
  */
 export function calculateTotalBuildNumber(artifactsBySlot, setFilters) {
-  return [...artifactSetPermutations(artifactsBySlot, setFilters)].reduce((accu, artifactsBySlot) => {
-    return accu + Object.entries(artifactsBySlot).reduce((accu, artifacts) => {
-      return accu * artifacts[1].length
-    }, 1)
-  }, 0)
+  return [...artifactSetPermutations(artifactsBySlot, setFilters)].reduce((accu, artifactsBySlot) =>
+    accu + Object.entries(artifactsBySlot).reduce((accu, artifacts) => accu * artifacts[1].length, 1)
+  , 0)
 }
 
 /**

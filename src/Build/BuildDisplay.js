@@ -79,7 +79,8 @@ export default class BuildDisplay extends React.Component {
       return this.setState({ ...BuildDisplay.getInitialState(), selectedCharacterId: charid, ...(character?.buildSetting ?? {}) })
   }
   splitArtifacts = () => {
-    if (!this.state.selectedCharacterId) return {};
+    if (!this.state.selectedCharacterId) // Make sure we have all slotKeys
+      return Object.fromEntries(Artifact.getSlotKeys().map(slotKey => [slotKey, []]))
     let artifactDatabase = ArtifactDatabase.getArtifactDatabase();
     //do not use artifacts that are locked.
     if (!this.state.useLockedArts)
