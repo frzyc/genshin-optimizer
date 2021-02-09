@@ -20,7 +20,7 @@ if (process.env.NODE_ENV === "development") {
   )
 }
 
-function GetDependencies(modifiers = {}, keys = Object.keys(Formulas)) {
+function GetDependencies(modifiers = {}, keys = Object.keys(StatData)) {
   let dependencies = new Set()
   keys.forEach(key => InsertDependencies(key, modifiers, dependencies))
   return [...dependencies]
