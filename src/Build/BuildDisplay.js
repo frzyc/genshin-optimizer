@@ -85,18 +85,12 @@ export default class BuildDisplay extends React.Component {
     //do not use artifacts that are locked.
     if (!this.state.useLockedArts)
       Object.entries(artifactDatabase).forEach(([key, val]) => {
-        if (val.lock) delete artifactDatabase[key]
-        if (this.state.selectedCharacterId && val.location && val.location !== this.state.selectedCharacterId)
+        //if its equipped on the selected character, bypass the lock check
+        if (this.state.selectedCharacterId && val.location === this.state.selectedCharacterId) return
+        //if its locked, or equipped, remove from consideration
+        if (val.lock || val.location)
           delete artifactDatabase[key]
       })
-    if (this.state.setFilters.every(filter => filter.key)) {
-      let filterKeys = this.state.setFilters.map(filter => filter.key)
-      //filter database to only filtered artifacts, if all 3 sets are specified
-      Object.entries(artifactDatabase).forEach(([key, val]) => {
-        if (filterKeys.includes(val.setKey))
-          delete artifactDatabase[key]
-      })
-    }
     let split = Artifact.splitArtifactsBySlot(artifactDatabase);
     //filter the split slots on the mainstats selected.
     BuildDisplay.artifactsSlotsToSelectMainStats.forEach((slotKey, index) =>
