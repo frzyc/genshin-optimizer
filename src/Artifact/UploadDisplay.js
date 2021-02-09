@@ -90,7 +90,7 @@ export default function UploadDisplay(props) {
     const imageDataObj = await urlToImageData(urlFile)
 
     let numStars = clamp(starScanning(imageDataObj.data, imageDataObj.width, imageDataObj.height, 5), 3, 5)
-    setStarText(<span>Detected <span className="text-success">{numStars}</span> Stars.</span>)
+    let numStarsText = <span>Detected <span className="text-success">{numStars}</span> Stars.</span>
     let awaits = [
       // other is for slotkey and mainStatValue and level
       ocrImage(imageDataToURL(processImageWithBandPassFilter(imageDataObj, { r: 140, g: 140, b: 140 }, { r: 255, g: 255, b: 255 }, { region: "top", mode: "bw" })), setOtherProgress, setOtherProgVariant),
@@ -122,8 +122,10 @@ export default function UploadDisplay(props) {
     if (mainStatKey) setMainStatText(<span>Detected main stat: <span className="text-success">{Stat.getStatNameRaw(mainStatKey)}</span></span>)
 
     if (setKey && numStars)
-      if (!Artifact.getRarityArr(setKey).includes(numStars))
+      if (!Artifact.getRarityArr(setKey).includes(numStars)) {
         numStars = 0;
+        numStarsText = <span className="text-danger">Could not detect artifact rarity.</span>
+      }
 
     //if main stat isnt parsed, then we try to guess it
     if (slotKey && !mainStatKey) {
@@ -171,6 +173,7 @@ export default function UploadDisplay(props) {
         if (guessLevel(nStar, mainStatKey, mainStatValue)) {
           if (!setKey || Artifact.getRarityArr(setKey).includes(nStar)) {
             numStars = nStar
+            numStarsText = <span className="text-warning">Inferred <span className="text-success">{numStars}</span> Stars from Artifact Set.</span>
             break;
           }
         }
@@ -232,7 +235,10 @@ export default function UploadDisplay(props) {
     } else
       setSubstatText(<span className="text-danger">Could not detect any substats.</span>)
 
-    if (numStars) state.numStars = numStars
+    if (numStars) {
+      state.numStars = numStars
+      setStarText(numStarsText)
+    }
     if (mainStatKey) {
       state.mainStatKey = mainStatKey
     } else

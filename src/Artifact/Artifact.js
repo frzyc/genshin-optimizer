@@ -218,9 +218,9 @@ export default class Artifact {
     let totalPossbleRolls = Artifact.totalPossibleRolls(maxStar);
     let rollsRemaining = Artifact.rollsRemaining(level, numStars);
     let totalCurrentEfficiency = substats.reduce((sum, cur) => sum + (cur?.efficiency * cur?.rolls?.length || 0), 0);
-    let statKeys = substats.filter(({key}) => key).map(({key}) => key)
-    let maxPerRoll = 100 * Math.max(...(statKeys.length == 4 ? statKeys : Object.keys(ArtifactSubstatsMinMax)).map(
-      key => Artifact.getSubstatAllMax(key, numStars) /  Artifact.getSubstatAllMax(key)
+    let statKeys = substats.filter(({ key }) => key).map(({ key }) => key)
+    let maxPerRoll = 100 * Math.max(...(statKeys.length === 4 ? statKeys : Object.keys(ArtifactSubstatsMinMax)).map(
+      key => Artifact.getSubstatAllMax(key, numStars) / Artifact.getSubstatAllMax(key)
     ))
     let currentEfficiency = clampPercent(totalCurrentEfficiency / totalPossbleRolls);
     let maximumEfficiency = clampPercent((totalCurrentEfficiency + rollsRemaining * maxPerRoll) / totalPossbleRolls);

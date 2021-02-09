@@ -37,8 +37,6 @@ describe('Testing Artifact.js', () => {
         expect(Artifact.getSubstatEfficiency("", [-1])).toEqual(0)
         expect(Artifact.getSubstatEfficiency()).toEqual(0)
       })
-
     })
   })
-
 })
