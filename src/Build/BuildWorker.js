@@ -3,13 +3,12 @@ import { PreprocessFormulas } from "../StatData";
 import { artifactSetPermutations, artifactPermutations } from "./Build"
 
 onmessage = async (e) => {
-  let { splitArtifacts, artifactSetPerms, setFilters, initialStats, artifactSetEffects, maxBuildsToShow, buildFilterKey, ascending, dependencies } = e.data;
+  let { splitArtifacts, setFilters, initialStats, artifactSetEffects, maxBuildsToShow, buildFilterKey, ascending, dependencies } = e.data;
   if (process.env.NODE_ENV === "development") console.log(dependencies)
   let t1 = performance.now()
 
   let finalizeStats = PreprocessFormulas(dependencies, initialStats.modifiers)
-  let builds = [], threshold = -Infinity, splitArtsPerSet = {}
-  let setsInFilter = setFilters.filter(filter => filter.key).map(filter => filter.key)
+  let builds = [], threshold = -Infinity
 
   let prune = () => {
     builds.sort((a, b) => (b.buildFilterVal - a.buildFilterVal))
@@ -17,24 +16,25 @@ onmessage = async (e) => {
   }
 
   let buildCount = 0;
-  for (const artifactsBySlot of artifactSetPermutations(splitArtifacts, setFilters)) {
-    artifactPermutations(initialStats, artifactsBySlot, artifactSetEffects, (accu, stats) => {
-      finalizeStats(stats)
-      let buildFilterVal = ascending ? -stats[buildFilterKey] : stats[buildFilterKey]
-      if (buildFilterVal >= threshold) {
-        builds.push({ buildFilterVal, artifacts: { ...accu } })
-        if (builds.length >= 1000) {
-          prune()
-          threshold = builds[builds.length - 1].buildFilterVal
-        }
+  const callback = (accu, stats) => {
+    finalizeStats(stats)
+    let buildFilterVal = ascending ? -stats[buildFilterKey] : stats[buildFilterKey]
+    if (buildFilterVal >= threshold) {
+      builds.push({ buildFilterVal, artifacts: { ...accu } })
+      if (builds.length >= 1000) {
+        prune()
+        threshold = builds[builds.length - 1].buildFilterVal
       }
-      buildCount++;
-      if (!(buildCount % 10000))
-        postMessage({ progress: buildCount, timing: performance.now() - t1 })
-    })
+    }
+    buildCount++;
+    if (!(buildCount % 10000))
+      postMessage({ progress: buildCount, timing: performance.now() - t1 })
   }
+  for (const artifactsBySlot of artifactSetPermutations(splitArtifacts, setFilters)) 
+    artifactPermutations(initialStats, artifactsBySlot, artifactSetEffects, callback)
+
   prune()
-  
+
   let t2 = performance.now()
   postMessage({ progress: buildCount, timing: t2 - t1 })
   if (process.env.NODE_ENV === "development") console.log(builds.map(b => b.buildFilterVal))

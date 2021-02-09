@@ -15,7 +15,7 @@ export default class CharacterDatabase {
   static getCharacterIdList = () => Object.keys(characterDatabase);
   static getIdNameList = () => Object.entries(characterDatabase).map(([id, char]) => [id, char.name]);
   static populateDatebaseFromLocalStorage = () => {
-    if (initiated) return;
+    if (initiated && process.env.NODE_ENV !== "development") return false;
     Object.keys(localStorage).filter(key => key.includes("character_")).forEach(id => {
       if (!characterDatabase[id]) {
         let character = loadFromLocalStorage(id);

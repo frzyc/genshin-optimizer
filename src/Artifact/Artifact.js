@@ -1,12 +1,14 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import CharacterDatabase from '../Character/CharacterDatabase';
 import SlotIcon from '../Components/SlotIcon';
-import { ArtifactMainSlotKeys, ArtifactMainStatsData, ArtifactData, ArtifactSlotsData, ArtifactStarsData, ArtifactSubStatsData, ArtifactDataImport } from '../Data/ArtifactData';
+import { ArtifactMainSlotKeys, ArtifactMainStatsData, ArtifactData, ArtifactSlotsData, ArtifactStarsData, ArtifactSubStatsData, ArtifactDataImport, ArtifactSubstatsMinMax } from '../Data/ArtifactData';
 import Stat from '../Stat';
 import ConditionalsUtil from '../Util/ConditionalsUtil';
 import { clampPercent, closeEnoughFloat, closeEnoughInt, deepClone } from '../Util/Util';
 import ArtifactBase from './ArtifactBase';
 import ArtifactDatabase from './ArtifactDatabase';
+
+const maxStar = 5
 
 export default class Artifact {
   //do not instantiate.
@@ -97,6 +99,7 @@ export default class Artifact {
   static getBaseSubRollNumLow = (numStars, defVal = 0) => ArtifactStarsData?.[numStars]?.subsBaselow || defVal
   static getBaseSubRollNumHigh = (numStars, defVal = 0) => ArtifactStarsData?.[numStars]?.subBaseHigh || defVal
   static getNumUpgradesOrUnlocks = (numStars, defVal = 0) => ArtifactStarsData?.[numStars]?.numUpgradesOrUnlocks || defVal
+  static getSubstatAllMax = (statKey, numStars = maxStar, defVal = 0) => ArtifactSubstatsMinMax?.[statKey]?.max[numStars] ?? defVal
   static getSubStatKeys = () => Object.keys(ArtifactSubStatsData || {})
   static subStatCloseEnough = (key, value1, value2) => {
     if (Stat.getStatUnit(key) === "%")
@@ -147,13 +150,11 @@ export default class Artifact {
     rollOption(subStatValue, [])
     return rolls;
   }
-  static getSubstatEfficiency = (subStatKey, numStars, rolls) => {
-    let rollData = this.getSubstatRollData(subStatKey, numStars);
+  static getSubstatEfficiency = (subStatKey, rolls = []) => {
     let len = rolls.length
     let sum = rolls.reduce((a, c) => a + c, 0)
-    let min = rollData[0] * len;
-    let max = rollData[rollData.length - 1] * len;
-    return clampPercent(((sum - min) / (max - min)) * 100)
+    let max = this.getSubstatAllMax(subStatKey) * len
+    return max ? clampPercent((sum / max) * 100) : 0
   }
 
   //ARTIFACT IN GENERAL
@@ -165,7 +166,7 @@ export default class Artifact {
       let rollArr = Artifact.getSubstatRolls(key, value, numStars) || []
       substat.rolls = rollArr[0] || []
       if (rollArr.length > 1) substat.rollArr = rollArr
-      substat.efficiency = Artifact.getSubstatEfficiency(key, numStars, substat.rolls)
+      substat.efficiency = Artifact.getSubstatEfficiency(key, substat.rolls)
     }
     let { currentEfficiency, maximumEfficiency } = Artifact.getArtifactEfficiency(substats, numStars, level)
     state.currentEfficiency = currentEfficiency
@@ -191,7 +192,7 @@ export default class Artifact {
           if (moreRolls.length) {
             substat.rolls = moreRolls[0]
             moreRolls.length > 1 ? (substat.rollArr = moreRolls) : (delete substat.rollArr)
-            substat.efficiency = Artifact.getSubstatEfficiency(substat.key, numStars, substat.rolls)
+            substat.efficiency = Artifact.getSubstatEfficiency(substat.key, substat.rolls)
             let { currentEfficiency, maximumEfficiency } = Artifact.getArtifactEfficiency(substats, numStars, level)
             state.currentEfficiency = currentEfficiency
             state.maximumEfficiency = maximumEfficiency
@@ -213,11 +214,16 @@ export default class Artifact {
   }
   static getArtifactEfficiency(substats, numStars, level) {
     if (!numStars) return { currentEfficiency: 0, maximumEfficiency: 0 }
-    let totalPossbleRolls = Artifact.totalPossibleRolls(numStars);
+    // Relative to max star, so comparison between different * makes sense.
+    let totalPossbleRolls = Artifact.totalPossibleRolls(maxStar);
     let rollsRemaining = Artifact.rollsRemaining(level, numStars);
     let totalCurrentEfficiency = substats.reduce((sum, cur) => sum + (cur?.efficiency * cur?.rolls?.length || 0), 0);
+    let statKeys = substats.filter(({ key }) => key).map(({ key }) => key)
+    let maxPerRoll = 100 * Math.max(...(statKeys.length === 4 ? statKeys : Object.keys(ArtifactSubstatsMinMax)).map(
+      key => Artifact.getSubstatAllMax(key, numStars) / Artifact.getSubstatAllMax(key)
+    ))
     let currentEfficiency = clampPercent(totalCurrentEfficiency / totalPossbleRolls);
-    let maximumEfficiency = clampPercent((totalCurrentEfficiency + rollsRemaining * 100) / totalPossbleRolls);
+    let maximumEfficiency = clampPercent((totalCurrentEfficiency + rollsRemaining * maxPerRoll) / totalPossbleRolls);
     return { currentEfficiency, maximumEfficiency }
   }
 

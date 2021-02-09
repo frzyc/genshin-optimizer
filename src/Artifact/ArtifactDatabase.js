@@ -14,7 +14,7 @@ export default class ArtifactDatabase {
   static getArtifactDatabase = () => deepClone(artifactDatabase);
   static getArtifactIdList = () => Object.keys(artifactDatabase);
   static populateDatebaseFromLocalStorage = () => {
-    if (initiated) return;
+    if (initiated && process.env.NODE_ENV !== "development") return false;
     Object.keys(localStorage).filter(key => key.includes("artifact_")).forEach(id => {
       if (!artifactDatabase[id]) {
         let art = loadFromLocalStorage(id)
