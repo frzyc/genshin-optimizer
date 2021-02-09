@@ -106,7 +106,7 @@ const ArtifactSubStatsData = {
 }
 const ArtifactSubstatsMinMax = Object.fromEntries(Object.entries(ArtifactSubStatsData).map(([key, obj]) =>
   [key, {
-    max: getArrLastElement(getArrLastElement(Object.values(obj))),
+    max: Object.fromEntries(Object.keys(obj).map(key => [key, getArrLastElement(obj[key])])),
     min: Object.values(obj)[0][0],
   }]))
 

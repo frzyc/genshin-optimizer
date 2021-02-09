@@ -8,6 +8,8 @@ import { clampPercent, closeEnoughFloat, closeEnoughInt, deepClone } from '../Ut
 import ArtifactBase from './ArtifactBase';
 import ArtifactDatabase from './ArtifactDatabase';
 
+const maxStar = 5
+
 export default class Artifact {
   //do not instantiate.
   constructor() { if (this instanceof Artifact) throw Error('A static class cannot be instantiated.'); }
@@ -97,7 +99,7 @@ export default class Artifact {
   static getBaseSubRollNumLow = (numStars, defVal = 0) => ArtifactStarsData?.[numStars]?.subsBaselow || defVal
   static getBaseSubRollNumHigh = (numStars, defVal = 0) => ArtifactStarsData?.[numStars]?.subBaseHigh || defVal
   static getNumUpgradesOrUnlocks = (numStars, defVal = 0) => ArtifactStarsData?.[numStars]?.numUpgradesOrUnlocks || defVal
-  static getSubstatAllMax = (statKey, defVal = 0) => ArtifactSubstatsMinMax?.[statKey]?.max ?? defVal
+  static getSubstatAllMax = (statKey, numStars = maxStar, defVal = 0) => ArtifactSubstatsMinMax?.[statKey]?.max[numStars] ?? defVal
   static getSubStatKeys = () => Object.keys(ArtifactSubStatsData || {})
   static subStatCloseEnough = (key, value1, value2) => {
     if (Stat.getStatUnit(key) === "%")
@@ -212,11 +214,16 @@ export default class Artifact {
   }
   static getArtifactEfficiency(substats, numStars, level) {
     if (!numStars) return { currentEfficiency: 0, maximumEfficiency: 0 }
-    let totalPossbleRolls = Artifact.totalPossibleRolls(numStars);
+    // Relative to max star, so comparison between different * makes sense.
+    let totalPossbleRolls = Artifact.totalPossibleRolls(maxStar);
     let rollsRemaining = Artifact.rollsRemaining(level, numStars);
     let totalCurrentEfficiency = substats.reduce((sum, cur) => sum + (cur?.efficiency * cur?.rolls?.length || 0), 0);
+    let statKeys = substats.filter(({key}) => key).map(({key}) => key)
+    let maxPerRoll = 100 * Math.max(...(statKeys.length == 4 ? statKeys : Object.keys(ArtifactSubstatsMinMax)).map(
+      key => Artifact.getSubstatAllMax(key, numStars) /  Artifact.getSubstatAllMax(key)
+    ))
     let currentEfficiency = clampPercent(totalCurrentEfficiency / totalPossbleRolls);
-    let maximumEfficiency = clampPercent((totalCurrentEfficiency + rollsRemaining * 100) / totalPossbleRolls);
+    let maximumEfficiency = clampPercent((totalCurrentEfficiency + rollsRemaining * maxPerRoll) / totalPossbleRolls);
     return { currentEfficiency, maximumEfficiency }
   }
 
