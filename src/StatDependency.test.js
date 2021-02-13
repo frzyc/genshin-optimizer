@@ -1,5 +1,5 @@
 import { GetDependencies, GetFormulaDependency } from "./StatDependency"
-import { Formulas } from "./StatData"
+import { StatData } from "./StatData"
 
 expect.extend({
   /**
@@ -60,7 +60,7 @@ describe('Testing StatDependency', () => {
       })
     })
     test(`should add all formulas' dependencies by default`, () => {
-      expect(GetDependencies()).toEqual(expect.arrayContaining(Object.keys(Formulas)))
+      expect(GetDependencies()).toEqual(expect.arrayContaining(Object.keys(StatData)))
     })
     test('should add modifiers if keys exists', () => {
       const keys = ["ener_rech"]
