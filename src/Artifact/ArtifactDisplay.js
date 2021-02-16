@@ -9,7 +9,7 @@ import ReactGA from 'react-ga';
 import Character from '../Character/Character';
 import CharacterDatabase from '../Character/CharacterDatabase';
 import { CharacterNameDisplay, CharacterSelectionDropdownList } from '../Components/CharacterSelection';
-import { IntFormControl } from '../Components/CustomFormControl';
+import CustomFormControl from '../Components/CustomFormControl';
 import { Stars } from '../Components/StarDisplay';
 import { DatabaseInitAndVerify } from '../DatabaseUtil';
 import Stat from '../Stat';
@@ -191,14 +191,14 @@ export default class ArtifactDisplay extends React.Component {
                   <InputGroup.Prepend>
                     <InputGroup.Text><span>Level <span className={`text-${filterLevelLow > 0 ? "success" : ""}`}>Low</span>/<span className={`text-${filterLevelHigh < 20 ? "success" : ""}`}>High</span> (Inclusive)</span></InputGroup.Text>
                   </InputGroup.Prepend>
-                  <IntFormControl
+                  <CustomFormControl
                     value={filterLevelLow}
-                    placeholder={`Lowest Level to Filter`}
+                    placeholder={`Min Level`}
                     onValueChange={(val) => val >= 0 && val <= filterLevelHigh && this.setState({ filterLevelLow: val })}
                   />
-                  <IntFormControl
+                  <CustomFormControl
                     value={filterLevelHigh}
-                    placeholder={`Highest Level to Filter`}
+                    placeholder={`Max Level`}
                     onValueChange={(val) => val <= 20 && val >= filterLevelLow && this.setState({ filterLevelHigh: val })}
                   />
                 </InputGroup>

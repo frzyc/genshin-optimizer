@@ -1,12 +1,12 @@
 import { faClock } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Alert, Button, ButtonGroup, Card, Col, Container, Dropdown, DropdownButton, Image, InputGroup, Row } from "react-bootstrap";
+import ReactGA from 'react-ga';
 import Assets from '../Assets/Assets';
-import { IntFormControl } from '../Components/CustomFormControl';
+import CustomFormControl from '../Components/CustomFormControl';
 import { timeString } from '../Util/TimeUtil';
 import { clamp, deepClone, loadFromLocalStorage, saveToLocalStorage } from "../Util/Util";
-import ReactGA from 'react-ga';
 
 const SECOND_MS = 1000
 const MINUTE_MS = 60 * SECOND_MS
@@ -311,7 +311,7 @@ function EXPCalc(props) {
             <InputGroup.Prepend>
               <InputGroup.Text>Current Level</InputGroup.Text>
             </InputGroup.Prepend>
-            <IntFormControl
+            <CustomFormControl
               value={level}
               onValueChange={(val) => setLevel(clamp(val, 0, 90))}
             />
@@ -322,7 +322,7 @@ function EXPCalc(props) {
             <InputGroup.Prepend>
               <InputGroup.Text>Current EXP.</InputGroup.Text>
             </InputGroup.Prepend>
-            <IntFormControl
+            <CustomFormControl
               value={curExp}
               onValueChange={(val) => setCurExp(clamp(val, 0, (levelExp[level] || 1) - 1))}
             />
@@ -353,7 +353,7 @@ function EXPCalc(props) {
             <InputGroup.Prepend>
               <InputGroup.Text>Current Mora</InputGroup.Text>
             </InputGroup.Prepend>
-            <IntFormControl
+            <CustomFormControl
               value={mora}
               onValueChange={(val) => setMora(Math.max(val, 0))}
             />
@@ -415,7 +415,7 @@ function BookDisplay(props) {
             <InputGroup.Prepend>
               <InputGroup.Text >Amount</InputGroup.Text >
             </InputGroup.Prepend>
-            <IntFormControl
+            <CustomFormControl
               value={value}
               onValueChange={(val) => setValue(Math.max(val, 0))}
             />

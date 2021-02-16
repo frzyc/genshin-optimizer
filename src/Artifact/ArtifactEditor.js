@@ -2,7 +2,7 @@ import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Alert, Badge, Button, Card, Col, Dropdown, DropdownButton, FormControl, InputGroup, OverlayTrigger, Popover, Row } from 'react-bootstrap';
-import { FloatFormControl, IntFormControl } from '../Components/CustomFormControl';
+import CustomFormControl from '../Components/CustomFormControl';
 import { Stars } from '../Components/StarDisplay';
 import Stat from '../Stat';
 import { deepClone, getArrLastElement, getRandomElementFromArray, getRandomIntInclusive } from '../Util/Util';
@@ -380,13 +380,7 @@ export default class ArtifactEditor extends React.Component {
   }
 }
 function SubStatInput({ index, substat: { key, value, rolls, efficiency }, numStars, remainingSubstats = [], setSubStat }) {
-  let percentStat = Stat.getStatUnit(key) === "%";
-  let substatprops = {
-    placeholder: "Select a Substat.",
-    value: value || "",
-    onValueChange: (val) => setSubStat?.(index, key, val),
-    disabled: !key
-  }
+  const isPercentStat = Stat.getStatUnit(key) === "%"
   let error = ""
   if (!numStars && key && value) error = `Artifact Rarity not set.`;
   let rollData = Artifact.getSubstatRollData(key, numStars)
@@ -426,11 +420,15 @@ function SubStatInput({ index, substat: { key, value, rolls, efficiency }, numSt
           </Dropdown.Item>
         )}
       </DropdownButton>
-      {percentStat ?
-        <FloatFormControl {...substatprops} />
-        : <IntFormControl {...substatprops} />}
+      <CustomFormControl
+        float={isPercentStat}
+        placeholder="Select a Substat."
+        value={value || ""}
+        onValueChange={(val) => setSubStat?.(index, key, val)}
+        disabled={!key}
+      />
       <InputGroup.Append>
-        {percentStat && <InputGroup.Text>%</InputGroup.Text>}
+        {isPercentStat && <InputGroup.Text>%</InputGroup.Text>}
         <InputGroup.Text>
           <PercentBadge
             valid={!error || !key}

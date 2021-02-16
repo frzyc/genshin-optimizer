@@ -4,7 +4,7 @@ import React, { useState } from "react"
 import { Button, Card, Col, Dropdown, DropdownButton, Image, InputGroup, OverlayTrigger, Row, Tooltip } from "react-bootstrap"
 import Assets from "../../Assets/Assets"
 import ConditionalSelector from "../../Components/ConditionalSelector"
-import { FloatFormControl, IntFormControl } from "../../Components/CustomFormControl"
+import CustomFormControl from "../../Components/CustomFormControl"
 import { Stars } from "../../Components/StarDisplay"
 import { DisplayNewBuildDiff, DisplayStats } from "../../Components/StatDisplay"
 import { StatIconEle } from "../../Components/StatIcon"
@@ -38,7 +38,7 @@ export default function CharacterOverviewPane(props) {
                   <InputGroup.Prepend>
                     <InputGroup.Text>Lvl.</InputGroup.Text>
                   </InputGroup.Prepend>
-                  <IntFormControl onValueChange={(val) => setOverride("char_level", clamp(val, 1, 90))} value={level} />
+                  <CustomFormControl onValueChange={(val) => setOverride("char_level", clamp(val, 1, 90))} value={level} />
                   <InputGroup.Append>
                     <Button>
                       <FontAwesomeIcon icon={faUndo} size="sm" onClick={() => setOverride("char_level", Character.getLevel(character.levelKey))} />
@@ -267,15 +267,7 @@ function MainStatsCards(props) {
   let specializedStatVal = Character.getStatValueWithOverride(character, "specializedStatVal");
   let specializedStatUnit = Stat.getStatUnit(specializedStatKey)
 
-  let percentSpecialStatSlect = Stat.getStatUnit(specializedStatKey) === "%"
-  let specialStatProps = {
-    placeholder: "Character Special Stat",
-    value: Character.getStatValueWithOverride(character, "specializedStatVal"),
-    onValueChange: (value) => setOverride("specializedStatVal", value),
-  }
-  let specialStatInput = percentSpecialStatSlect ?
-    <FloatFormControl {...specialStatProps} />
-    : <IntFormControl {...specialStatProps} />
+  const isPercentSpecialStatSelect = Stat.getStatUnit(specializedStatKey) === "%"
 
   let displayStatProps = { character, build, editable }
   let displayNewBuildProps = { character, equippedBuild, newBuild, editable }
@@ -321,8 +313,11 @@ function MainStatsCards(props) {
                       {Stat.getStatNameWithPercent(key)}
                     </Dropdown.Item>)}
                 </DropdownButton>
-                {specialStatInput}
-                {percentSpecialStatSlect && (<InputGroup.Append>
+                <CustomFormControl float={isPercentSpecialStatSelect}
+                  placeholder="Character Special Stat"
+                  value={Character.getStatValueWithOverride(character, "specializedStatVal")}
+                  onValueChange={(value) => setOverride("specializedStatVal", value)} />
+                {isPercentSpecialStatSelect && (<InputGroup.Append>
                   <InputGroup.Text>%</InputGroup.Text>
                 </InputGroup.Append>)}
               </InputGroup>

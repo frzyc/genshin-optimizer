@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button"
 import InputGroup from "react-bootstrap/InputGroup"
 import OverlayTrigger from "react-bootstrap/OverlayTrigger"
 import Tooltip from "react-bootstrap/Tooltip"
-import { FloatFormControl, IntFormControl } from "../Components/CustomFormControl"
+import CustomFormControl from "../Components/CustomFormControl"
 
 const StatInput = ({ name, prependEle, value, placeholder, defaultValue, onValueChange, percent, disabled, ...restProps }) =>
   <InputGroup {...restProps}>
@@ -12,18 +12,13 @@ const StatInput = ({ name, prependEle, value, placeholder, defaultValue, onValue
     <InputGroup.Prepend>
       <InputGroup.Text>{name}</InputGroup.Text>
     </InputGroup.Prepend>
-    {percent ?
-      <FloatFormControl
-        placeholder={placeholder}
-        value={value}
-        onValueChange={onValueChange}
-        disabled={disabled}
-      /> : <IntFormControl
-        placeholder={placeholder}
-        value={value}
-        onValueChange={onValueChange}
-        disabled={disabled}
-      />}
+    <CustomFormControl
+      float={percent}
+      placeholder={placeholder}
+      value={value}
+      onValueChange={onValueChange}
+      disabled={disabled}
+    />
     {percent ? (<InputGroup.Append>
       <InputGroup.Text>%</InputGroup.Text>
     </InputGroup.Append>) : null}

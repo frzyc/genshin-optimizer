@@ -16,7 +16,7 @@ describe(`Testing Build`, () => {
       }
       const filter = [{ key: "A", num: 0 }, { key: "B", num: 0 }]
       // flower - 3, plume - 3, sand - 2
-      expect([...artifactSetPermutations(artifacts, filter)]).toHaveLength(3 * 3 * 2)
+      expect(artifactSetPermutations(artifacts, filter)).toHaveLength(3 * 3 * 2)
     })
     test(`should exclude sets if slots are missing`, () => {
       const artifacts = {
@@ -24,7 +24,7 @@ describe(`Testing Build`, () => {
         plume: [a[0], b[0], c[0]],
         sand: [a[0], a[1], b[0]],
       }
-      expect([...artifactSetPermutations(artifacts, [])]).toHaveLength(0)
+      expect(artifactSetPermutations(artifacts, [])).toHaveLength(0)
     })
     test(`should passthrough with empty filter`, () => {
       const artifacts = {
@@ -32,7 +32,7 @@ describe(`Testing Build`, () => {
         plume: [a[0], b[0], c[0]],
         sand: [a[0], a[1], b[0]],
       }
-      expect([...artifactSetPermutations(artifacts, [])]).toEqual([artifacts])
+      expect(artifactSetPermutations(artifacts, [])).toEqual([artifacts])
     })
     test(`should exclude unsatisfied permutations`, () => {
       const artifacts = {
@@ -40,7 +40,7 @@ describe(`Testing Build`, () => {
         plume: [a[1], b[1]],
         sand: [a[2], a[0], b[0]],
       }, filter = [{ key: "A", num: 2 }]
-      const result = expect([...artifactSetPermutations(artifacts, filter)])
+      const result = expect(artifactSetPermutations(artifacts, filter))
       result.toHaveLength(4)
 
       // Rewrite this if the items in each array, e.g. result[0].flower, is not expected to be stable.
@@ -57,7 +57,7 @@ describe(`Testing Build`, () => {
         clock: [c[0], d[0]],
       }
       const filter = [{ key: "A", num: 2 }, { key: "B", num: 2 }]
-      expect([...artifactSetPermutations(artifacts, filter)]).toHaveLength(0)
+      expect(artifactSetPermutations(artifacts, filter)).toHaveLength(0)
     })
   })
   describe(`calculateTotalBuildNumber()`, () => {

@@ -4,7 +4,7 @@
  * @param {Object.<setKey, number>} setFilters - minimum number of artifacts in each set
  *
  */
-export function* artifactSetPermutations(artifactsBySlot, setFilters) {
+export function artifactSetPermutations(artifactsBySlot, setFilters) {
   const setKeys = new Set(setFilters.map(i => i.key)), filteredArtifactsBySlot = {}
   const slotKeys = Object.keys(artifactsBySlot)
 
@@ -22,14 +22,14 @@ export function* artifactSetPermutations(artifactsBySlot, setFilters) {
     filteredArtifactsBySlot[slotKey] = Object.freeze(artifactsBySet)
   }
 
-  const setCount = {}, accu = {}
+  const setCount = {}, accu = {}, result = []
 
-  function* slotPerm(index) {
+  function slotPerm(index) {
     if (index >= slotKeys.length) {
       for (const { key, num } of setFilters)
         if ((setCount[key] ?? 0) < num)
           return
-      yield { ...accu }
+      result.push({ ...accu })
       return
     }
 
@@ -38,12 +38,13 @@ export function* artifactSetPermutations(artifactsBySlot, setFilters) {
     for (const setKey in artifactsBySet) {
       setCount[setKey] = (setCount[setKey] ?? 0) + 1
       accu[slotKey] = artifactsBySet[setKey]
-      yield* slotPerm(index + 1)
+      slotPerm(index + 1)
       setCount[setKey] -= 1
     }
   }
 
-  yield* slotPerm(0)
+  slotPerm(0)
+  return result
 }
 
 /**
@@ -52,7 +53,7 @@ export function* artifactSetPermutations(artifactsBySlot, setFilters) {
  * @param {Object.<setKey, number>} setFilters - minimum number of artifacts in each set
  */
 export function calculateTotalBuildNumber(artifactsBySlot, setFilters) {
-  return [...artifactSetPermutations(artifactsBySlot, setFilters)].reduce((accu, artifactsBySlot) =>
+  return artifactSetPermutations(artifactsBySlot, setFilters).reduce((accu, artifactsBySlot) =>
     accu + Object.entries(artifactsBySlot).reduce((accu, artifacts) => accu * artifacts[1].length, 1)
   , 0)
 }

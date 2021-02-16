@@ -1,7 +1,7 @@
-import { faCheckSquare, faSortAmountDownAlt, faSortAmountUp, faSquare, faTimes, faUndo } from '@fortawesome/free-solid-svg-icons';
+import { faCheckSquare, faSortAmountDownAlt, faSortAmountUp, faSquare, faTimes, faTrash, faUndo } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { lazy } from 'react';
-import { Alert, Badge, Button, ButtonGroup, Card, Col, Container, Dropdown, DropdownButton, Image, ListGroup, Modal, ProgressBar, Row } from 'react-bootstrap';
+import { Alert, Badge, Button, ButtonGroup, Card, Col, Container, Dropdown, DropdownButton, Image, InputGroup, ListGroup, Modal, ProgressBar, Row } from 'react-bootstrap';
 import ReactGA from 'react-ga';
 // eslint-disable-next-line
 import Worker from "worker-loader!./BuildWorker.js";
@@ -12,6 +12,7 @@ import CharacterCard from '../Character/CharacterCard';
 import CharacterDatabase from '../Character/CharacterDatabase';
 import { CharacterNameDisplay, CharacterSelectionDropdownList } from '../Components/CharacterSelection';
 import ConditionalSelector from '../Components/ConditionalSelector';
+import CustomFormControl from '../Components/CustomFormControl';
 import { Stars } from '../Components/StarDisplay';
 import { DatabaseInitAndVerify } from '../DatabaseUtil';
 import Stat from '../Stat';
@@ -53,6 +54,7 @@ export default class BuildDisplay extends React.Component {
     generatingBuilds: false,
     selectedCharacterId: "",
     setFilters: [{ key: "", num: 0 }, { key: "", num: 0 }, { key: "", num: 0 }],
+    statFilters: {},
     artifactConditionals: [],//{ setKey: "", setNumKey: "", conditionalNum: 0 }
     mainStat: ["", "", ""],
     buildFilterKey: "atk_final",
@@ -138,7 +140,7 @@ export default class BuildDisplay extends React.Component {
     let { split, totBuildNumber } = this
     if (!totBuildNumber) return this.setState({ builds: [] })
     this.setState({ generatingBuilds: true, builds: [], generationDuration: 0, generationProgress: 0 })
-    let { setFilters, ascending, buildFilterKey, maxBuildsToShow, artifactConditionals, artifactsAssumeFull } = this.state
+    let { setFilters, statFilters = {}, ascending, buildFilterKey, maxBuildsToShow, artifactConditionals, artifactsAssumeFull } = this.state
     let character = CharacterDatabase.getCharacter(this.state.selectedCharacterId)
     let initialStats = Character.calculateCharacterWithWeaponStats(character)
     initialStats.artifactsAssumeFull = artifactsAssumeFull
@@ -152,17 +154,19 @@ export default class BuildDisplay extends React.Component {
       })
     })
     //generate the key dependencies for the formula
-    let dependencies = GetDependencies(initialStats?.modifiers, [buildFilterKey])
+    const minFilters = Object.fromEntries(Object.entries(statFilters).map(([statKey, { min }]) => [statKey, min]).filter(([, min]) => typeof min === "number"))
+    const maxFilters = Object.fromEntries(Object.entries(statFilters).map(([statKey, { max }]) => [statKey, max]).filter(([, max]) => typeof max === "number"))
+    let dependencies = GetDependencies(initialStats?.modifiers, [buildFilterKey, ...Object.keys(minFilters), ...Object.keys(maxFilters)])
 
     //create an obj with app the artifact set effects to pass to buildworker.
     let data = {
       splitArtifacts, initialStats, artifactSetEffects, dependencies,
-      setFilters, maxBuildsToShow, buildFilterKey, ascending,
+      setFilters, minFilters, maxFilters, maxBuildsToShow, buildFilterKey, ascending,
     }
     if (this.worker) this.worker.terminate()
     this.worker = new Worker();
     this.worker.onmessage = (e) => {
-      if (e.data.progress) {
+      if (typeof e.data.progress === "number") {
         const { progress = 0, timing = 0 } = e.data
         return this.setState({ generationProgress: progress, generationDuration: timing })
       }
@@ -185,7 +189,7 @@ export default class BuildDisplay extends React.Component {
   }
 
   BuildGeneratorEditorCard = (props) => {
-    let { setFilters, selectedCharacterId, artifactsAssumeFull, artifactConditionals, useLockedArts, generatingBuilds, generationProgress, generationDuration } = this.state
+    let { setFilters, statFilters = {}, selectedCharacterId, artifactsAssumeFull, artifactConditionals, useLockedArts, generatingBuilds, generationProgress, generationDuration } = this.state
     let { statsDisplayKeys } = props
     let selectedCharacter = CharacterDatabase.getCharacter(selectedCharacterId)
     let characterName = selectedCharacter ? selectedCharacter.name : "Character Name"
@@ -345,6 +349,9 @@ export default class BuildDisplay extends React.Component {
                 </Button>
               </Card.Body></Card>
             </Col>
+            <Col className="mb-2" xs={12}>
+              <StatFilterCard statFilters={statFilters} statsDisplayKeys={statsDisplayKeys} setStatFilters={sFs => this.setState({ statFilters: sFs })} />
+            </Col>
           </Row></Col>
         </Row>
         <Row className="mb-2">
@@ -379,7 +386,7 @@ export default class BuildDisplay extends React.Component {
               <DropdownButton disabled={generatingBuilds || !selectedCharacterId} title={<span>Sort by <b>{Stat.getStatNameWithPercent(this.state.buildFilterKey)}</b></span>} as={ButtonGroup}>
                 {selectedCharacterId && statsDisplayKeys.map(key =>
                   <Dropdown.Item key={key} onClick={() => this.setState({ buildFilterKey: key }, this.autoGenerateBuilds)}>
-                    {Stat.getStatNameWithPercent(key)}
+                    {Stat.getStatNamePretty(key)}
                   </Dropdown.Item>
                 )}
               </DropdownButton>
@@ -529,8 +536,8 @@ export default class BuildDisplay extends React.Component {
     if (this.state.selectedCharacterId) {
       let character = CharacterDatabase.getCharacter(this.state.selectedCharacterId)
       if (!character) return
-      const { setFilters, artifactConditionals, mainStat, buildFilterKey, artifactsAssumeFull, useLockedArts, ascending } = deepClone(this.state)
-      character.buildSetting = { setFilters, artifactConditionals, mainStat, buildFilterKey, artifactsAssumeFull, useLockedArts, ascending }
+      const { setFilters, statFilters, artifactConditionals, mainStat, buildFilterKey, artifactsAssumeFull, useLockedArts, ascending } = deepClone(this.state)
+      character.buildSetting = { setFilters, statFilters, artifactConditionals, mainStat, buildFilterKey, artifactsAssumeFull, useLockedArts, ascending }
       CharacterDatabase.updateCharacter(character)
     }
   }
@@ -568,4 +575,60 @@ export default class BuildDisplay extends React.Component {
       </Row>
     </Container>)
   }
+}
+
+function StatFilterItem({ statKey, statKeys = [], min, max, close, setFilter }) {
+  const isFloat = Stat.getStatUnit(statKey) === "%"
+  const inputProps = {
+    disabled: !statKey,
+    allowEmpty: true,
+    float: isFloat,
+  }
+  const minInputProps = {
+    ...inputProps,
+    placeholder: "MIN",
+    value: min,
+    onValueChange: (s) => setFilter(statKey, s, max)
+  }
+  const maxInputProps = {
+    ...inputProps,
+    placeholder: "MAX",
+    value: max,
+    onValueChange: (s) => setFilter(statKey, min, s)
+  }
+  return <InputGroup className="mb-3">
+    <DropdownButton
+      as={InputGroup.Prepend}
+      title={Stat.getStatNamePretty(statKey, "New Stat")}
+      id="input-group-dropdown-1"
+    >
+      {statKeys.map(sKey => <Dropdown.Item key={sKey} onClick={() => { close?.(); setFilter(sKey, min, max) }}>{Stat.getStatNamePretty(sKey)}</Dropdown.Item>)}
+    </DropdownButton>
+    <CustomFormControl {...minInputProps} />
+    <CustomFormControl {...maxInputProps} />
+    {Boolean(close) && <InputGroup.Append>
+      <Button variant="danger" onClick={close}><FontAwesomeIcon icon={faTrash} /></Button>
+    </InputGroup.Append>}
+  </InputGroup>
+}
+
+function StatFilterCard({ statsDisplayKeys = [], statFilters = {}, setStatFilters }) {
+  const remainingKeys = statsDisplayKeys.filter(key => !Object.keys(statFilters).some(k => k === key))
+  const setFilter = (sKey, min, max) => setStatFilters({ ...statFilters, [sKey]: { min, max } })
+  return <Card bg="lightcontent" text="lightfont">
+    <Card.Header>Final Stat Filter</Card.Header>
+    <Card.Body>
+      <Row>
+        {Object.entries(statFilters).map(([statKey, { min, max }]) => {
+          return <Col xs={12} key={statKey} ><StatFilterItem statKey={statKey} statKeys={remainingKeys} setFilter={setFilter} min={min} max={max} close={() => {
+            delete statFilters[statKey]
+            setStatFilters({ ...statFilters })
+          }} /></Col>
+        })}
+        <Col xs={12}>
+          <StatFilterItem statKeys={remainingKeys} setFilter={setFilter} />
+        </Col>
+      </Row>
+    </Card.Body>
+  </Card>
 }
