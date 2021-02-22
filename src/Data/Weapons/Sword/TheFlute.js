@@ -2,7 +2,7 @@ import TheFlute from './Weapon_The_Flute.png'
 import Character from "../../../Character/Character"
 import DisplayPercent from "../../../Components/DisplayPercent"
 
-const refinementVals = [12, 15, 18, 21, 24]
+const refinementVals = [100, 125, 150, 175, 200]
 const weapon = {
   name: "The Flute",
   weaponType: "sword",
