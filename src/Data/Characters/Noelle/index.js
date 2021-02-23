@@ -126,7 +126,7 @@ let char = {
           <p className="mb-2">The shield has the following properties:</p>
           <ul className="mb-2">
             <li>When Noelle's Normal and Charged Attacks hit a target, they have a certain chance to regenerate HP for all characters.</li>
-            <li>Possesses 250% Absorption Efficiency against <span className="text-geo">Geo DMG</span></li>
+            <li>Possesses 150% DMG Absorption efficiency against all Elemental and <span className="text-physical">Physical DMG</span>.</li>
           </ul>
           <p className="mb-2">The amount of HP healed when regeneration is triggered scales based on Noelle's DEF.</p>
         </span>,
