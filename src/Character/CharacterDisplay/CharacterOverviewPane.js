@@ -192,8 +192,9 @@ function WeaponStatsEditorCard(props) {
             {weaponPassiveName && <Col lg="auto" xs={6} className="mb-2">
               <DropdownButton title={`Refinement ${weapon.refineIndex + 1}`} className="w-100">
                 <Dropdown.ItemText>
-                  <span>Select Weapon Refinment</span>
+                  <span>Select Weapon Refinement</span>
                 </Dropdown.ItemText>
+                <Dropdown.Divider />
                 {[...Array(5).keys()].map(key =>
                   <Dropdown.Item key={key} onClick={() => setStateWeapon("refineIndex", key)}>
                     {`Refinement ${key + 1}`}

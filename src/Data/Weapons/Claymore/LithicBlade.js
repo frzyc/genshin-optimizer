@@ -1,18 +1,18 @@
 import LithicBlade from './Weapon_Lithic_Blade.png'
-const refinementCritVals = [2, 3, 4, 6, 6]
-const refinementAtkVals = [6, 7, 8, 9, 10]
+const refinementCritVals = [3, 4, 5, 6, 7]
+const refinementAtkVals = [7, 8, 9, 10, 11]
 const weapon = {
   name: "Lithic Blade",
   weaponType: "claymore",
   img: LithicBlade,
   rarity: 4,
   passiveName: "Lithic Axiom - Unity",
-  passiveDescription: (refineIndex) => `For every character in the party who hails from Liyue, the character who equips this weapon gains ${refinementAtkVals[refineIndex]}% ATK increase and ${refinementCritVals[refineIndex]}% CRIT Rate increase.`,
+  passiveDescription: (refineIndex) => `For every character in the party who hails from Liyue, the character who equips this weapon gains ${refinementAtkVals[refineIndex]}% ATK increase and ${refinementCritVals[refineIndex]}% CRIT Rate increase. This effect stacks up to 4 times.`,
   description: "A greatsword carved and chiseled from the very bedrock of Liyue.",
   baseStats: {
-    main: [41, NaN, NaN, NaN, 99, 125, NaN, NaN, NaN, 184, 210, NaN, 238, 264, NaN, 293, 319, NaN, 347, 373, NaN, 401, 427, NaN, 454],
-    subStatKey: "crit_dmg",
-    sub: [16, NaN, NaN, NaN, 28.3, 28.3, NaN, NaN, NaN, 41.2, 41.2, NaN, 47.7, 47.7, NaN, 54.1, 54.1, NaN, 60.6, 60.6, NaN, NaN, NaN, NaN, NaN],
+    main: [42, 56, 74, 91, 109, 135, 152, 170, 187, 205, 231, 248, 266, 292, 309, 327, 353, 370, 388, 414, 431, 449, 475, 492, 510],
+    subStatKey: "atk_",
+    sub: [9, 10.5, 12.3, 14.1, 15.9, 15.9, 17.7, 19.5, 21.4, 23.2, 23.2, 25, 26.8, 26.8, 28.6, 30.4, 30.4, 32.3, 34.1, 34.1, 35.9, 37.7, 37.7, 39.5, 41.3],
   },
   conditional: {
     type: "weapon",

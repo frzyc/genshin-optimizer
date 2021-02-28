@@ -1,24 +1,26 @@
 import LithicSpear from './Weapon_Lithic_Spear.png'
-const refinementVals = [20, 25, 30, 35, 40]
+const refinementCritVals = [3, 4, 5, 6, 7]
+const refinementAtkVals = [7, 8, 9, 10, 11]
 const weapon = {
   name: "Lithic Spear",
   weaponType: "polearm",
   img: LithicSpear,
   rarity: 4,
-  passiveName: "Lithic Axiom - Subjugating Evil",
-  passiveDescription: (refineIndex) => `Normal Attack hits have a 20% chance of causing the next Charged Attack performed in the following 10s to deal ${refinementVals[refineIndex]}% increased DMG.`,
+  passiveName: "Lithic Axiom - Unity",
+  passiveDescription: (refineIndex) => `For every character in the party who hails from Liyue, the character who equips this weapon gains ${refinementAtkVals[refineIndex]}% ATK increase and ${refinementCritVals[refineIndex]}% CRIT Rate increase. This effect stacks up to 4 times.`,
   description: "A spear forged from the rocks of the Guyun Stone Forest. Its hardness knows no equal.",
   baseStats: {
-    main: [42, NaN, NaN, NaN, 109, 135, NaN, NaN, NaN, 205, 231, NaN, 266, 292, NaN, 327, 353, NaN, 388, 414, NaN, 449, 475, NaN, 510],
-    subStatKey: "phy_dmg_bonus",
-    sub: [9, NaN, NaN, NaN, 15.9, 15.9, NaN, NaN, NaN, 23.2, 23.2, NaN, 26.8, 26.8, NaN, 30.4, 30.4, NaN, 34.1, 34.1, NaN, 37.7, 37.7, NaN, 41.3],
+    main: [44, 59, 79, 99, 119, 144, 165, 185, 205, 226, 252, 273, 293, 319, 340, 361, 387, 408, 429, 455, 476, 497, 523, 544, 565],
+    subStatKey: "atk_",
+    sub: [6, 7, 8.2, 9.4, 10.6, 10.6, 11.8, 13, 14.2, 15.5, 15.5, 16.7, 17.9, 17.9, 19.1, 20.3, 20.3, 21.5, 22.7, 22.7, 23.9, 25.1, 25.1, 26.4, 27.6],
   },
   conditional: {
     type: "weapon",
     sourceKey: "LithicSpear",
-    maxStack: 1,
+    maxStack: 4,
     stats: (refineIndex) => ({
-      char_atk_dmg_bonus: refinementVals[refineIndex]
+      atk_: refinementAtkVals[refineIndex],
+      crit_rate: refinementCritVals[refineIndex]
     })
   }
 }
