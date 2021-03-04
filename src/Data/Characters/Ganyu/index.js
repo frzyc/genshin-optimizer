@@ -264,7 +264,7 @@ let char = {
           },
         }
       }, {
-        conditional: (tlvl, c, a) => a >= 4 && {
+        conditional: (tlvl, c, a) => c >= 4 && {
           type: "character",
           conditionalKey: "WestwardSojourn",
           condition: "Westward Sojourn",

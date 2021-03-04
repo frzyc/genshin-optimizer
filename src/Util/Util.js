@@ -58,6 +58,14 @@ function hammingDistance(str1, str2) {
   }
   return dist;
 }
+
+//multiplies every numberical value in the obj by a multiplier.
+function objMultiplication(obj, multi) {
+  Object.keys(obj).forEach(prop => {
+    if (typeof obj[prop] === "object") objMultiplication(obj[prop], multi)
+    if (typeof obj[prop] === "number") obj[prop] = obj[prop] * multi
+  })
+}
 export {
   getRandomInt,
   getRandomIntInclusive,
@@ -73,5 +81,6 @@ export {
   clampPercent,
   getArrLastElement,
   strPadLeft,
-  hammingDistance
+  hammingDistance,
+  objMultiplication
 }

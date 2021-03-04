@@ -8,6 +8,7 @@ import diluc from './Diluc'
 import diona from './Diona'
 import fischl from './Fischl'
 import ganyu from './Ganyu'
+import hutao from './Hu Tao'
 import jean from './Jean'
 import kaeya from './Kaeya'
 import keqing from './Keqing'
@@ -39,6 +40,7 @@ let characters = {
   diona,
   fischl,
   ganyu,
+  hutao,
   jean,
   kaeya,
   keqing,

@@ -1,5 +1,6 @@
 import { LevelNameData, WeaponData, WeaponDataImport, WeaponLevelKeys, WeaponTypeData } from '../Data/WeaponData.js';
 import ConditionalsUtil from '../Util/ConditionalsUtil.js';
+import { objMultiplication } from '../Util/Util.js';
 export default class Weapon {
   //do not instantiate.
   constructor() { if (this instanceof Weapon) throw Error('A static class cannot be instantiated.'); }
@@ -35,6 +36,8 @@ export default class Weapon {
     if (!conditional || !conditionalNum) return defVal
     let [stats, stacks] = ConditionalsUtil.getConditionalProp(conditional, "stats", conditionalNum)
     if (!stacks) return defVal
-    return Object.fromEntries(Object.entries(stats(refineIndex)).map(([key, val]) => [key, val * stacks]))
+    stats = stats(refineIndex)
+    if (stacks !== 1) objMultiplication(stats, stacks)
+    return stats
   }
 }

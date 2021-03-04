@@ -14,6 +14,7 @@ import RoyalSpear from './Polearm/RoyalSpear'
 import DragonspineSpear from './Polearm/DragonspineSpear'
 import VortexVanquisher from './Polearm/VortexVanquisher'
 import PrimordialJadeWingedSpear from './Polearm/PrimordialJadeWingedSpear'
+import StaffOfHoma from './Polearm/StaffOfHoma'
 import SkywardSpine from './Polearm/SkywardSpine'
 const polearm = {
   BeginnersProtector,
@@ -32,6 +33,7 @@ const polearm = {
   DragonspineSpear,
   VortexVanquisher,
   PrimordialJadeWingedSpear,
+  StaffOfHoma,
   SkywardSpine,
 }
 export default polearm

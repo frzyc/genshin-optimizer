@@ -63,7 +63,7 @@ export default function CharacterCard(props) {
     <Card.Body onClick={onEdit} style={{ cursor: onEdit ? "pointer" : "default" }}>
       <Row>
         <Col xs="auto" className="pr-0">
-          <Image src={Character.getThumb(characterKey)} className={`w-100 h-auto grad-${Character.getStar(characterKey)}star p-0`} thumbnail />
+          <Image src={Character.getThumb(characterKey)} className={`thumb-big grad-${Character.getStar(characterKey)}star p-0`} thumbnail />
         </Col>
         <Col>
           <h4>{Character.getName(characterKey)} <Image src={Assets.elements[elementKey]} className="inline-icon" /> <Image src={Assets.weaponTypes?.[weaponTypeKey]} className="inline-icon" /></h4>
