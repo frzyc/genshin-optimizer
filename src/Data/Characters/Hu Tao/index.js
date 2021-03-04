@@ -57,7 +57,7 @@ let char = {
   titles: ["Fragrance in Thaw", "77th-Generation Director of the Wangsheng Funeral Parlor", "Director Hu", "Liyue Harbor's \"Versemonger of the Darkest Alleys\""],
   baseStat: {
     hp_base: [1211, 3141, 4179, 6253, 6990, 8042, 9026, 10089, 10826, 11899, 12637, 13721, 14459, 15552],
-    atk_base: [8, 21, 29, 43, 48, 55, 62, 69, 74, 81, 86, 94, 99, 106],
+    atk_character_base: [8, 21, 29, 43, 48, 55, 62, 69, 74, 81, 86, 94, 99, 106],
     def_base: [68, 177, 235, 352, 394, 453, 508, 568, 610, 670, 712, 773, 815, 876]
   },
   specializeStat: {
