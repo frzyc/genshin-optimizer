@@ -1,4 +1,4 @@
-import { faCheckSquare, faSortAmountDownAlt, faSortAmountUp, faSquare } from '@fortawesome/free-solid-svg-icons';
+import { faCheckSquare, faSortAmountDownAlt, faSortAmountUp, faSquare, faUndo } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Button, ButtonGroup, Card, Dropdown, InputGroup, ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
@@ -55,6 +55,7 @@ export default class ArtifactDisplay extends React.Component {
     filterLocation: "",
     ascending: false,
   }
+  ressetFilters = () => this.setState(state => ({ ...state, ...deepClone(ArtifactDisplay.initialFilter) }))
   forceUpdateArtifactDisplay = () => this.forceUpdate()
 
   addArtifact = (art) => {
@@ -145,9 +146,11 @@ export default class ArtifactDisplay extends React.Component {
       </Col></Row>
       <Row className="mb-2"><Col>
         <Card bg="darkcontent" text="lightfont">
-          <Card.Header><span>Artifact Filter</span> <span className="float-right text-right">
-            {`Showing ${artifacts.length > maxNumArtifactsToDisplay ? maxNumArtifactsToDisplay : artifacts.length} out of ${totalArtNum} Artifacts`}
-          </span></Card.Header>
+          <Card.Header>
+            <span>Artifact Filter</span>
+            <Button size="sm" className="ml-2" variant="danger" onClick={this.ressetFilters} ><FontAwesomeIcon icon={faUndo} className="fa-fw" /> Reset</Button>
+            <span className="float-right text-right">Showing <b>{artifacts.length > maxNumArtifactsToDisplay ? maxNumArtifactsToDisplay : artifacts.length}</b> out of {totalArtNum} Artifacts</span>
+          </Card.Header>
           <Card.Body>
             <Row className="mb-n2">
               {/* Artifact set filter */}

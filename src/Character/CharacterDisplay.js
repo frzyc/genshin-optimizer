@@ -1,9 +1,12 @@
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { lazy } from 'react';
-import { Button, Card, Col, Container, Row, ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
+import { Button, Card, Col, Container, Image, Row, ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
 import ReactGA from 'react-ga';
+import Assets from '../Assets/Assets';
 import { DatabaseInitAndVerify } from '../DatabaseUtil';
+import { loadFromLocalStorage, saveToLocalStorage } from '../Util/Util';
+import Weapon from '../Weapon/Weapon';
 import Character from './Character';
 import CharacterCard from './CharacterCard';
 import CharacterDatabase from './CharacterDatabase';
@@ -27,8 +30,14 @@ export default class CharacterDisplay extends React.Component {
     this.state = {
       charIdToEdit: "",
       showEditor: false,
-      sortBy: Object.keys(toggle)[0]
+      sortBy: Object.keys(toggle)[0],
+      elementalFilter: Character.getElementalKeysWithoutPhysical(),
+      weaponFilter: Weapon.getWeaponTypeKeys(),
     }
+    const saved = loadFromLocalStorage("CharacterDisplay.state")
+    if (saved)
+      this.state = { ...this.state, ...saved }
+    console.log(this.state)
     ReactGA.pageview('/character')
   }
 
@@ -46,16 +55,27 @@ export default class CharacterDisplay extends React.Component {
 
   componentDidMount() {
     this.scrollRef = React.createRef()
+    Promise.all([
+      Character.getCharacterDataImport(),
+    ]).then(() => this.forceUpdate())
+  }
+  componentDidUpdate() {
+    saveToLocalStorage("CharacterDisplay.state", this.state)
   }
   render() {
-    const charKeyList = CharacterDatabase.getCharacterKeyList().sort((a, b) => {
-      if (this.state.sortBy === "name") {
+    const { showEditor, elementalFilter, weaponFilter, sortBy } = this.state
+    const charKeyList = CharacterDatabase.getCharacterKeyList().filter(cKey => {
+      if (!elementalFilter.includes(Character.getElementalKey(cKey))) return false
+      if (!weaponFilter.includes(Character.getWeaponTypeKey(cKey))) return false
+      return true
+    }).sort((a, b) => {
+      if (sortBy === "name") {
         if (a < b) return -1;
         if (a > b) return 1;
         // names must be equal
         return 0;
       }
-      if (this.state.sortBy === "level") {
+      if (sortBy === "level") {
         const diff = sortingFunc["level"](b) - sortingFunc["level"](a)
         if (diff) return diff
         return sortingFunc["rarity"](b) - sortingFunc["rarity"](a)
@@ -67,7 +87,7 @@ export default class CharacterDisplay extends React.Component {
     })
     return (<Container ref={this.scrollRef}>
       {/* editor/character detail display */}
-      {this.state.showEditor ? <Row className="mt-2"><Col>
+      {showEditor ? <Row className="mt-2"><Col>
         <React.Suspense fallback={<span>Loading...</span>}>
           <CharacterDisplayCard editable
             characterKey={this.state.charIdToEdit}
@@ -77,16 +97,32 @@ export default class CharacterDisplay extends React.Component {
         </React.Suspense>
       </Col></Row> : null}
       <Card bg="darkcontent" text="lightfont" className="mt-2">
-        <Card.Body className="p-2 text-right">
-          <span>Sort by: </span>
-          <ToggleButtonGroup type="radio" name="level" defaultValue={this.state.sortBy} size="sm" onChange={v => this.setState({ sortBy: v })}>
-            {Object.entries(toggle).map(([key, text]) =>
-              <ToggleButton key={key} value={key} variant={this.state.sortBy === key ? "success" : "primary"}>{text}</ToggleButton>)}
-          </ToggleButtonGroup>
+        <Card.Body className="p-2">
+          <Row>
+            <Col xs="auto">
+              <ToggleButtonGroup type="checkbox" defaultValue={elementalFilter} onChange={v => this.setState({ elementalFilter: v })}>
+                {Character.getElementalKeysWithoutPhysical().map(eleKey =>
+                  <ToggleButton key={eleKey} value={eleKey} variant={elementalFilter.includes(eleKey) ? "success" : "primary"} className="py-1 px-2"><h4 className="mb-0"><Image src={Assets.elements?.[eleKey]} className="inline-icon" /></h4></ToggleButton>)}
+              </ToggleButtonGroup>
+            </Col>
+            <Col>
+              <ToggleButtonGroup type="checkbox" defaultValue={weaponFilter} onChange={v => this.setState({ weaponFilter: v })}>
+                {Weapon.getWeaponTypeKeys().map(weaponType =>
+                  <ToggleButton key={weaponType} value={weaponType} variant={weaponFilter.includes(weaponType) ? "success" : "primary"} className="py-1 px-2"><h4 className="mb-0"><Image src={Assets.weaponTypes?.[weaponType]} className="inline-icon" /></h4></ToggleButton>)}
+              </ToggleButtonGroup>
+            </Col>
+            <Col xs="auto">
+              <span>Sort by: </span>
+              <ToggleButtonGroup type="radio" name="level" defaultValue={this.state.sortBy} onChange={v => this.setState({ sortBy: v })}>
+                {Object.entries(toggle).map(([key, text]) =>
+                  <ToggleButton key={key} value={key} variant={this.state.sortBy === key ? "success" : "primary"}>{text}</ToggleButton>)}
+              </ToggleButtonGroup>
+            </Col>
+          </Row>
         </Card.Body>
       </Card>
       <Row className="mt-2">
-        {this.state.showEditor ? null : <Col lg={4} md={6} className="mb-2">
+        {showEditor ? null : <Col lg={4} md={6} className="mb-2">
           <Card className="h-100" bg="darkcontent" text="lightfont">
             <Card.Header className="pr-2">
               <span>Add New Character</span>

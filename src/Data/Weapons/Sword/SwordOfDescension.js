@@ -8,7 +8,7 @@ const weapon = {
   img: SwordOfDescension,
   rarity: 4,
   passiveName: "Descension",
-  passiveDescription: (refineIndex, charFinalStats, c) => <span>Hitting opponents with Normal and Charged Attacks grants a 50% chance to deal 200% ATK as DMG{DisplayPercent(200, charFinalStats, Character.getTalentStatKey("phy", c))} in a small AoE. This effect can only occur once every 10s. Additionally, if the Traveler equips the Sword of Descension, their ATK is increased by 66.</span>,
+  passiveDescription: (refineIndex, charFinalStats, c) => <span>Hitting opponents with Normal and Charged Attacks grants a 50% chance to deal 200% ATK as DMG{DisplayPercent(200, charFinalStats, Character.getTalentStatKey("physical", c))} in a small AoE. This effect can only occur once every 10s. Additionally, if the Traveler equips the Sword of Descension, their ATK is increased by 66.</span>,
   description: "This sharp polearm can seemingly pierce through anything. When swung, one can almost see the rift it tears in the air.",
   baseStats: {
     main: [39, 50, 65, 79, 94, 120, 134, 148, 162, 176, 202, 215, 229, 255, 269, 282, 308, 322, 335, 361, 374, 388, 414, 427, 440],

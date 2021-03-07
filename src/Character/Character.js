@@ -34,6 +34,7 @@ export default class Character {
   static getStar = (charKey, defVal = 0) => (this.getCDataObj(charKey)?.star || defVal)
   static getElementalKey = (charKey, defVal = "") => (this.getCDataObj(charKey)?.elementKey || defVal)
   static getElementalKeys = () => Object.keys(ElementalData)
+  static getElementalKeysWithoutPhysical = () => this.getElementalKeys().filter(e => e !== "physical")
   static getWeaponTypeKey = (charKey, defVal = "") => (this.getCDataObj(charKey)?.weaponTypeKey || defVal)
   static getConstellationName = (charKey, defVal = "") => (this.getCDataObj(charKey)?.constellationName || defVal)
   static getTitles = (charKey, defVal = []) => (this.getCDataObj(charKey)?.titles || defVal)

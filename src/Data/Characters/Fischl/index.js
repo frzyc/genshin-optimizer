@@ -235,9 +235,9 @@ let char = {
         text: <span>Even when Oz is not present in combat, he can still watch over Fischl through the crow's eyes. When Fischl attacks an opponent, Oz fires a joint attack through the crow's eyes, dealing 22% of <span className="text-physical">ATK DMG</span>.</span>,
         fields: [(con) => con >= 1 && {
           text: "Joint Attack DMG",
-          basicVal: (tlvl, stats, c) => <span>22% {Stat.printStat(Character.getTalentStatKey("phy", c), stats)}</span>,
-          finalVal: (_, stats, c) => (22 / 100) * stats[Character.getTalentStatKey("phy", c)],
-          formula: (tlvl, _, c) => ({ [Character.getTalentStatKey("phy", c)]: 22 / 100 }),
+          basicVal: (tlvl, stats, c) => <span>22% {Stat.printStat(Character.getTalentStatKey("physical", c), stats)}</span>,
+          finalVal: (_, stats, c) => (22 / 100) * stats[Character.getTalentStatKey("physical", c)],
+          formula: (tlvl, _, c) => ({ [Character.getTalentStatKey("physical", c)]: 22 / 100 }),
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("phy", c),
         }]
       }],

@@ -8,7 +8,7 @@ const weapon = {
   img: PrototypeAminus,
   rarity: 4,
   passiveName: "Crush",
-  passiveDescription: (refineIndex, charFinalStats, c) => <span>On hit, Normal or Charged Attacks have a 50% chance to deal an additional {refinementVals[refineIndex]}% ATK DMG{DisplayPercent(refinementVals[refineIndex], charFinalStats, Character.getTalentStatKey("phy", c))} to opponents within a small AoE. Can only occur once every 15s.</span>,
+  passiveDescription: (refineIndex, charFinalStats, c) => <span>On hit, Normal or Charged Attacks have a 50% chance to deal an additional {refinementVals[refineIndex]}% ATK DMG{DisplayPercent(refinementVals[refineIndex], charFinalStats, Character.getTalentStatKey("physical", c))} to opponents within a small AoE. Can only occur once every 15s.</span>,
   description: "An ancient greatsword discovered in the Blackcliff Forge. It swings with such an immense force that one feels it could cut straight through reality itself.",
   baseStats: {
     main: [44, 59, 79, 99, 119, 144, 165, 185, 205, 226, 252, 273, 293, 319, 340, 361, 387, 408, 429, 455, 476, 497, 523, 544, 565],

@@ -25,6 +25,7 @@ export default class Weapon {
 
   static getWeaponsOfType = (weaponType) => Object.fromEntries(Object.entries(WeaponData).filter(([key, weaponObj]) => weaponObj.weaponType === weaponType))
   static getWeaponTypeName = (weaponType, defVal = "") => (WeaponTypeData[weaponType] || defVal)
+  static getWeaponTypeKeys = () => Object.keys(WeaponTypeData)
 
   static getWeaponMainStatValWithOverride = (weaponObj, defVal = 0) =>
     weaponObj?.overrideMainVal || this.getWeaponMainStatVal(weaponObj?.key, weaponObj?.levelKey, defVal);

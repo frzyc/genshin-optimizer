@@ -30,6 +30,9 @@ const CharacterDisplayCardPromise = import('../Character/CharacterDisplayCard');
 const CharacterDisplayCard = lazy(() => CharacterDisplayCardPromise)
 
 const warningBuildNumber = 10000000
+const maxBuildsToShowList = [50, 25, 10, 5]
+const maxBuildsToShowDefault = 25
+const autoBuildGenLimit = 100
 export default class BuildDisplay extends React.Component {
   constructor(props) {
     super(props)
@@ -49,6 +52,10 @@ export default class BuildDisplay extends React.Component {
       else
         this.state.characterKey = ""
     }
+    //this is a way to change this number in DB without setting a new DB version, since DatabaseUtil doesnt have access to these numbers.
+    if (this.state.maxBuildsToShow > maxBuildsToShowList[0])
+      this.state.maxBuildsToShow = maxBuildsToShowDefault
+
     ReactGA.pageview('/build')
   }
   static initialState = {
@@ -70,7 +77,7 @@ export default class BuildDisplay extends React.Component {
     generationProgress: 0,
     generationDuration: 0,//in ms
   }
-  static maxBuildsToShowList = [100, 50, 25, 5]
+
   static getInitialState = () => deepClone(BuildDisplay.initialState)
   static artifactsSlotsToSelectMainStats = ["sands", "goblet", "circlet"]
   forceUpdateBuildDisplay = () => this.forceUpdate()
@@ -133,7 +140,7 @@ export default class BuildDisplay extends React.Component {
       </Dropdown.Item>)
     })
   autoGenerateBuilds = () => {
-    if (typeof this.totBuildNumber === "number" && this.totBuildNumber <= this.state.maxBuildsToShow)
+    if (typeof this.totBuildNumber === "number" && this.totBuildNumber <= autoBuildGenLimit)
       this.generateBuilds()
     else if (this.state.builds.length) this.setState({ builds: [], generationProgress: 0, generationDuration: 0 })
   }
@@ -548,7 +555,16 @@ export default class BuildDisplay extends React.Component {
       <Row className="mb-2">
         <Col>
           <Card bg="darkcontent" text="lightfont">
-            <Card.Header>{characterKey ? `Showing ${builds.length} Builds generated for ${characterName}` : "Select a character to generate builds."}</Card.Header>
+            <Card.Header>
+              <Row>
+                <Col>{characterKey ? <span>Showing <b>{builds.length}</b> Builds generated for {characterName}</span> : <span>Select a character to generate builds.</span>}</Col>
+                <Col xs="auto">
+                  <DropdownButton title={<span>Max builds to show: <b>{maxBuildsToShow}</b></span>} size="sm">
+                    {maxBuildsToShowList.map(v => <Dropdown.Item key={v} onClick={() => this.setState({ maxBuildsToShow: v }, this.autoGenerateBuilds)}>{v}</Dropdown.Item>)}
+                  </DropdownButton>
+                </Col>
+              </Row>
+            </Card.Header>
             {/* Build List */}
             <ListGroup>
               {builds.map((build, index) =>
@@ -694,13 +710,11 @@ function ArtifactDisplayItem({ index, characterKey, build, statsDisplayKeys, set
       variant={index % 2 ? "customdark" : "customdarker"} className="text-white" action
       onClick={() => setState({ modalBuild: build })}
     >
-      <Row className="mb-2">
-        <Col>{Object.entries(build.setToSlots).sort(([key1, slotarr1], [key2, slotarr2]) => slotarr2.length - slotarr1.length).map(([key, slotarr]) =>
-          <Badge key={key} variant="primary" className="mr-2">
-            {slotarr.map(slotKey => Artifact.getSlotIcon(slotKey))} {Artifact.getSetName(key)}
-          </Badge>
-        )}</Col>
-      </Row>
+      <h5>{Object.entries(build.setToSlots).sort(([key1, slotarr1], [key2, slotarr2]) => slotarr2.length - slotarr1.length).map(([key, slotarr]) =>
+        <Badge key={key} variant="primary" className="mr-2">
+          {slotarr.map(slotKey => Artifact.getSlotIcon(slotKey))} {Artifact.getSetName(key)}
+        </Badge>
+      )}</h5>
       <StatDisplayComponent {...{ character: CharacterDatabase.get(characterKey), newBuild: build, statsDisplayKeys, cardbg: (index % 2 ? "lightcontent" : "darkcontent") }} />
     </ListGroup.Item>
   </div>)

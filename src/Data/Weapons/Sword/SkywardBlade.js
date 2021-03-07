@@ -11,7 +11,7 @@ const weapon = {
   img: SkywardBlade,
   rarity: 5,
   passiveName: "Sky-Piercing Fang",
-  passiveDescription: (refineIndex, charFinalStats, c) => <span>CRIT Rate increased by {refinementVals[refineIndex]}%. Gains <b>Skypiercing Might</b> upon using an Elemental Burst: Increases Movement SPD by {refinementMoveSpdVals[refineIndex]}%, increases ATK SPD by {refinementatkSpdVals[refineIndex]}%, and Normal and Charged hits deal additional DMG equal to {refinementautoVals[refineIndex]}% of ATK{DisplayPercent(refinementautoVals[refineIndex], charFinalStats, Character.getTalentStatKey("phy", c))}. Skypiercing Might lasts for 12s.</span>,
+  passiveDescription: (refineIndex, charFinalStats, c) => <span>CRIT Rate increased by {refinementVals[refineIndex]}%. Gains <b>Skypiercing Might</b> upon using an Elemental Burst: Increases Movement SPD by {refinementMoveSpdVals[refineIndex]}%, increases ATK SPD by {refinementatkSpdVals[refineIndex]}%, and Normal and Charged hits deal additional DMG equal to {refinementautoVals[refineIndex]}% of ATK{DisplayPercent(refinementautoVals[refineIndex], charFinalStats, Character.getTalentStatKey("physical", c))}. Skypiercing Might lasts for 12s.</span>,
   description: "The sword of a knight that symbolizes the restored honor of Dvalin. The blessings of the Anemo Archon rest on the fuller of the blade, imbuing the sword with the powers of the sky and the wind.",
   baseStats: {
     main: [46, 62, 82, 102, 122, 153, 173, 194, 214, 235, 266, 287, 308, 340, 361, 382, 414, 435, 457, 488, 510, 532, 563, 586, 608],
