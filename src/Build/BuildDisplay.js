@@ -643,6 +643,7 @@ function StatFilterItem({ statKey, statKeys = [], min, max, close, setFilter }) 
 
 function HitModeCard({ characterKey, forceUpdate }) {
   const character = CharacterDatabase.get(characterKey)
+  if (!character) return null
   const { hitMode } = character
   const setHitmode = v => {
     const char = CharacterDatabase.get(characterKey)
