@@ -216,10 +216,10 @@ let char = {
         text: <span>If your active character triggers an <span className="text-electro">Electro-related Elemental Reaction</span> when Oz is on the field, the opponent shall be stricken with Thundering Retribution, dealing <span className="text-electro">Electro DMG</span> equal to 80% of Fischl's ATK.</span>,
         fields: [(con, a) => a >= 4 && {
           text: "Thundering Retribution",
-          basicVal: (tlvl, stats, c) => <span>80% {Stat.printStat(Character.getTalentStatKey("ele", c), stats)}</span>,
-          finalVal: (_, stats, c) => (80 / 100) * stats[Character.getTalentStatKey("ele", c)],
-          formula: (tlvl, _, c) => ({ [Character.getTalentStatKey("ele", c)]: 80 / 100 }),
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("ele", c),
+          basicVal: (tlvl, stats, c) => <span>80% {Stat.printStat(Character.getTalentStatKey("elemental", c), stats)}</span>,
+          finalVal: (_, stats, c) => (80 / 100) * stats[Character.getTalentStatKey("elemental", c)],
+          formula: (tlvl, _, c) => ({ [Character.getTalentStatKey("elemental", c)]: 80 / 100 }),
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("elemental", c),
         }]
       }],
     },

@@ -237,7 +237,7 @@ let char = {
     constellation1: {
       name: "Thundering Might",
       img: c1,
-      document: [{ text: (tlvl, s, c) => <span>Recasting <b>Stellar Restoration</b> while a Lightning Stiletto is present causes Keqing to deal 50% of her ATK{DisplayPercent(50, s, Character.getTalentStatKey("ele", c))} as <span className="text-electro">AoE Electro DMG</span> at the start point and terminus of her Blink.</span> }],
+      document: [{ text: (tlvl, s, c) => <span>Recasting <b>Stellar Restoration</b> while a Lightning Stiletto is present causes Keqing to deal 50% of her ATK{DisplayPercent(50, s, Character.getTalentStatKey("elemental", c))} as <span className="text-electro">AoE Electro DMG</span> at the start point and terminus of her Blink.</span> }],
     },
     constellation2: {
       name: "Keen Extraction",

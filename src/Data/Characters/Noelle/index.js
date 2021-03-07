@@ -267,7 +267,7 @@ const char = {
     constellation4: {
       name: "To Be Cleaned",
       img: c4,
-      document: [{ text: (tlvl, stats, c) => <span>When <b>Breastplate</b> ends or shatters, it deals 400% of ATK{DisplayPercent(400, stats, Character.getTalentStatKey("ele", c))} as <span className="text-geo">Geo DMG</span> to surrounding enemies.</span> }]
+      document: [{ text: (tlvl, stats, c) => <span>When <b>Breastplate</b> ends or shatters, it deals 400% of ATK{DisplayPercent(400, stats, Character.getTalentStatKey("elemental", c))} as <span className="text-geo">Geo DMG</span> to surrounding enemies.</span> }]
     },
     constellation5: {
       name: "Favonius Sweeper Master",
