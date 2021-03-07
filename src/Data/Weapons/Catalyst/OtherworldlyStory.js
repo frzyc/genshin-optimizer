@@ -15,13 +15,5 @@ const weapon = {
     subStatKey: "enerRech_",
     sub: [8.5, 9.9, 11.6, 13.3, 15, 15, 16.7, 18.5, 20.2, 21.9, 21.9, 23.6, 25.3, 25.3, 27, 28.8, 28.8, 30.5, 32.2, 32.2, 33.9, 35.6, 35.6, 37.3, 39],
   },
-  conditional: {
-    type: "weapon",
-    sourceKey: "OtherworldlyStory",
-    maxStack: 1,
-    stats: (refineIndex) => ({
-      dmg_: refinementVals[refineIndex]
-    })
-  }
 }
 export default weapon
