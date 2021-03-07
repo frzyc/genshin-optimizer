@@ -22,7 +22,7 @@ let artifact = {
   setEffects: {
     2: {
       text: <span><span className="text-physical">Physical DMG</span> +25%</span>,
-      stats: { phy_dmg_bonus: 25 }
+      stats: { physical_dmg_: 25 }
     },
     4: {
       text: "After defeating an opponent, increases Charged Attack DMG by 50%, and reduces its Stamina cost to 0 for 10s.",
@@ -31,8 +31,8 @@ let artifact = {
         sourceKey: "BloodstainedChivalry_4",
         maxStack: 1,
         stats: {
-          char_atk_dmg_bonus: 50,
-          stamina_dec: 100,
+          charged_dmg_: 50,
+          staminaDec_: 100,
         }
       }
     }

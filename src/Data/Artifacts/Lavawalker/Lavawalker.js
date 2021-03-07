@@ -22,7 +22,7 @@ let artifact = {
   setEffects: {
     2: {
       text: <span><span className="text-pyro">Pyro RES</span> increased by 40%</span>,
-      stats: { pyro_ele_res: 40 }
+      stats: { pyro_res_: 40 }
     },
     4: {
       text: <span>Increases DMG against enemies that are Burning or affected by <span className="text-pyro">Pyro</span> by 35%.</span>,
@@ -31,7 +31,7 @@ let artifact = {
         sourceKey: "Lavawalker_4",
         maxStack: 1,
         stats: {
-          all_dmg_bonus: 35,
+          dmg_: 35,
         }
       }
     }

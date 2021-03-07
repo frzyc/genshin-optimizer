@@ -1,7 +1,7 @@
-import { faSignature, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import { Badge, ButtonGroup, Dropdown, DropdownButton, FormControl, Image, InputGroup, Nav, Tab } from 'react-bootstrap';
+import { Badge, ButtonGroup, Dropdown, DropdownButton, Image, Nav, Tab } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
@@ -10,7 +10,7 @@ import Row from 'react-bootstrap/Row';
 import Artifact from '../Artifact/Artifact';
 import { WeaponLevelKeys } from '../Data/WeaponData';
 import { DatabaseInitAndVerify } from '../DatabaseUtil';
-import { deepClone, getRandomElementFromArray } from '../Util/Util';
+import { deepClone } from '../Util/Util';
 import Weapon from '../Weapon/Weapon';
 import Character from './Character';
 import CharacterDatabase from './CharacterDatabase';
@@ -39,17 +39,18 @@ export default class CharacterDisplayCard extends React.Component {
   constructor(props) {
     super(props)
     DatabaseInitAndVerify();
-    if (props.characterId)
-      this.state = CharacterDatabase.getCharacter(props.characterId)
-    else
-      this.state = CharacterDisplayCard.getInitialState()
+    this.state = CharacterDisplayCard.getInitialState()
+    const { characterKey } = props
+    if (characterKey) {
+      const char = CharacterDatabase.get(characterKey) ?? { characterKey, weapon: CharacterDisplayCard.getIntialWeapon(characterKey) }
+      this.state = { ...this.state, ...char }
+    }
   }
 
   static initialState = {
-    name: "",
     characterKey: "",//the game character this is based off
     levelKey: "L1",//combination of level and ascension
-    dmgMode: "dmg",
+    hitMode: "hit",
     reactionMode: null,
     equippedArtifacts: {},
     artifactConditionals: [],
@@ -78,24 +79,22 @@ export default class CharacterDisplayCard extends React.Component {
     return weapon
   }
 
-  static getInitialState = () => {
-    let state = deepClone(CharacterDisplayCard.initialState)
-    //set a random character key
-    state.characterKey = getRandomElementFromArray(Character.getAllCharacterKeys())
-    state.name = getRandomElementFromArray(Character.getTitles(state.characterKey))
-    //pick the first weaponType. Should be the 1* weapon, if I organize the db correctly.
-    state.weapon = this.getIntialWeapon(state.characterKey);
-    return state
-  }
+  static getInitialState = () => deepClone(CharacterDisplayCard.initialState)
+  //UI will not update if the character is updated in DB. Components will have to call this to update this UI.
   forceUpdateComponent = () => {
-    if (this.state.id) {
-      this.setState(CharacterDatabase.getCharacter(this.state.id))
-    }
+    if (this.state.characterKey)
+      this.setState(CharacterDatabase.get(this.state.characterKey))
     this.props.forceUpdate ? this.props.forceUpdate() : this.forceUpdate();
   }
-  setSetState = (val) => this.setState(val)
-  setCharacterKey = (characterKey) =>
-    this.setState({ characterKey, name: getRandomElementFromArray(Character.getTitles(characterKey)), weapon: CharacterDisplayCard.getIntialWeapon(characterKey), reactionMode: null, autoInfused: false })
+  setCharacterKey = (characterKey) => {
+    this.props?.setCharacterKey?.(characterKey)
+    let state = CharacterDisplayCard.getInitialState()
+    let char = CharacterDatabase.get(characterKey)
+    if (char) state = { ...state, ...char }
+    else state = { ...state, characterKey, weapon: CharacterDisplayCard.getIntialWeapon(characterKey) }
+    this.setState(state)
+  }
+
   setLevelKey = (levelKey) =>
     this.setState({ levelKey })
 
@@ -119,19 +118,14 @@ export default class CharacterDisplayCard extends React.Component {
       Artifact.getDataImport(),
     ]).then(() => this.forceUpdate())
   }
-  componentDidUpdate() {
-    if (this.props.characterId && this.state.id !== this.props.characterId)
-      this.setState(CharacterDatabase.getCharacter(this.props.characterId))
-    if (this.props.editable) {
+  componentDidUpdate(prevProps) {
+    if (prevProps.characterKey !== this.props.characterKey)
+      this.setCharacterKey(this.props.characterKey)
+    if (this.props.editable && this.state.characterKey) {
       //save this.state as character to character db.
-      let state = deepClone(this.state)
+      const state = deepClone(this.state)
       delete state.compareAgainstEquipped
-      if (this.state.id) {
-        CharacterDatabase.updateCharacter(state)
-      } else {
-        let id = CharacterDatabase.addCharacter(state)
-        this.setState({ id })
-      }
+      CharacterDatabase.updateCharacter(state)
     }
   }
   render() {
@@ -139,18 +133,19 @@ export default class CharacterDisplayCard extends React.Component {
     let character = this.state
     let { characterKey, levelKey, compareAgainstEquipped } = this.state
     let equippedBuild = Character.calculateBuild(this.state)
-    let HeaderIconDisplay = <span >
+    let HeaderIconDisplay = characterKey ? <span >
       <Image src={Character.getThumb(characterKey)} className="thumb-small my-n1 ml-n2" roundedCircle />
       <h6 className="d-inline"> {Character.getName(characterKey)} </h6>
-    </span>
+    </span> : <span>Select a Character</span>
+    const commonPaneProps = { character, newBuild, equippedBuild: !newBuild || compareAgainstEquipped ? equippedBuild : undefined, editable, setState: u => this.setState(u), setOverride: this.setOverride, forceUpdate: this.forceUpdateComponent }
     // main CharacterDisplayCard
     return (<Card bg="darkcontent" text="lightfont" >
       <Card.Header>
         <Row>
-          <Col xs={"auto"}>
+          <Col xs={"auto"} className="mr-auto">
             {/* character selecter/display */}
             {editable ? <ButtonGroup>
-              <Dropdown>
+              <Dropdown as={ButtonGroup}>
                 <DropdownToggle as={Button}>
                   {HeaderIconDisplay}
                 </DropdownToggle>
@@ -164,7 +159,7 @@ export default class CharacterDisplayCard extends React.Component {
                     </Dropdown.Item>)}
                 </Dropdown.Menu>
               </Dropdown>
-              <DropdownButton as={ButtonGroup} title={
+              <DropdownButton as={ButtonGroup} disabled={!characterKey} title={
                 <h6 className="d-inline">{Character.getlevelNames(levelKey)} </h6>
               }>
                 <Dropdown.ItemText>
@@ -175,20 +170,7 @@ export default class CharacterDisplayCard extends React.Component {
                     <h6 >{Character.getlevelNames(lvlKey)} </h6>
                   </Dropdown.Item>)}
               </DropdownButton>
-            </ButtonGroup> : <span>{HeaderIconDisplay} Lvl. {Character.getStatValueWithOverride(this.state, "char_level")}</span>}
-          </Col>
-          {/* Name editor/display */}
-          <Col className="pl-0 pr-0">
-            {editable ? <InputGroup >
-              <InputGroup.Prepend>
-                <InputGroup.Text><FontAwesomeIcon icon={faSignature} /> Name</InputGroup.Text>
-              </InputGroup.Prepend>
-              <FormControl placeholder="Name"
-                value={this.state.name}
-                onChange={(e) => this.setState({ name: e.target.value })}
-              />
-            </InputGroup> :
-              <Card.Title className="mb-0 align-self-center"><span>{this.state.name}</span></Card.Title>}
+            </ButtonGroup> : <span>{HeaderIconDisplay} Lvl. {Character.getStatValueWithOverride(this.state, "characterLevel")}</span>}
           </Col>
           {/* Compare against new build toggle */}
           {newBuild ? <Col xs="auto">
@@ -207,7 +189,7 @@ export default class CharacterDisplayCard extends React.Component {
           </Col>
         </Row>
       </Card.Header>
-      <Card.Body>
+      {Boolean(characterKey) && <Card.Body>
         <Tab.Container defaultActiveKey={newBuild ? "newartifacts" : "character"} mountOnEnter={true} unmountOnExit={true}>
           <Nav variant="pills" className="mb-2 ml-2">
             <Nav.Item >
@@ -220,7 +202,7 @@ export default class CharacterDisplayCard extends React.Component {
               <Nav.Link eventKey="artifacts">{newBuild ? "Current Artifacts" : "Artifacts"}</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link eventKey="talent" disabled={process.env.NODE_ENV !== "development" && (Character.getCDataObj(characterKey)?.talent?.skill?.name || "TEMPLATE") === "TEMPLATE"}>Talents {(Character.getCDataObj(characterKey)?.talent?.skill?.name || "TEMPLATE") === "TEMPLATE" && <Badge variant="warning">WIP</Badge>}</Nav.Link>
+              <Nav.Link eventKey="talent" disabled={process.env.NODE_ENV !== "development" && !Character.hasTalentPage(characterKey)}>Talents {!Character.hasTalentPage(characterKey) && <Badge variant="warning">WIP</Badge>}</Nav.Link>
             </Nav.Item>
             <Nav.Item>
               <Nav.Link eventKey="team" disabled>Team <Badge variant="warning">WIP</Badge></Nav.Link>
@@ -229,24 +211,22 @@ export default class CharacterDisplayCard extends React.Component {
           <Tab.Content>
             <Tab.Pane eventKey="character">
               <CharacterOverviewPane
-                setState={this.setSetState}
-                setOverride={this.setOverride}
                 setConstellation={this.setConstellation}
-                {...{ character, editable, equippedBuild, newBuild }}
+                {...commonPaneProps}
               />
             </Tab.Pane>
             <Tab.Pane eventKey="artifacts" >
-              <CharacterArtifactPane {...{ character, equippedBuild, editable, forceUpdate: this.forceUpdateComponent }} setState={this.setSetState} />
+              <CharacterArtifactPane {...{ ...commonPaneProps, newBuild: undefined, equippedBuild, }} />
             </Tab.Pane>
             {newBuild ? <Tab.Pane eventKey="newartifacts" >
-              <CharacterArtifactPane {...{ character, newBuild, equippedBuild, editable, forceUpdate: this.forceUpdateComponent }} />
+              <CharacterArtifactPane {...commonPaneProps} />
             </Tab.Pane> : null}
             <Tab.Pane eventKey="talent">
-              <CharacterTalentPane {...{ character, newBuild, equippedBuild, editable }} setState={this.setSetState} setOverride={this.setOverride} />
+              <CharacterTalentPane {...commonPaneProps} />
             </Tab.Pane>
           </Tab.Content>
         </Tab.Container>
-      </Card.Body>
+      </Card.Body>}
       {footer && <Card.Footer>
         {footer}
       </Card.Footer>}

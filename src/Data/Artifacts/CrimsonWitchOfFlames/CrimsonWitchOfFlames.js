@@ -22,22 +22,22 @@ let artifact = {
   setEffects: {
     2: {
       text: <span><span className="text-pyro">Pyro DMG Bonus</span> +15%</span>,
-      stats: { pyro_ele_dmg_bonus: 15 }
+      stats: { pyro_dmg_: 15 }
     },
     4: {
       text: "Increases Overloaded and Burning DMG by 40%. Increases Vaporize and Melt DMG by 15%. Using an Elemental Skill increases 2-Piece Set effects by 50% for 10s. Max 3 stacks.",
       stats: {
-        overloaded_dmg_bonus: 40,
-        burning_dmg_bonus: 40,
-        vaporize_dmg_bonus: 15,
-        melt_dmg_bonus: 15,
+        overloaded_dmg_: 40,
+        burning_dmg_: 40,
+        vaporize_dmg_: 15,
+        melt_dmg_: 15,
       },
       conditional: {
         type: "artifact",
         sourceKey: "CrimsonWitchOfFlames_4",
         maxStack: 3,
         stats: {
-          pyro_ele_dmg_bonus: 7.5
+          pyro_dmg_: 7.5
         }
       }
     }

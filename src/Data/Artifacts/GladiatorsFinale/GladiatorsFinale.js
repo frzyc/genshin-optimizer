@@ -31,7 +31,7 @@ let artifact = {
         sourceKey: "GladiatorsFinale_4",
         maxStack: 1,
         stats: {
-          norm_atk_dmg_bonus: 35
+          normal_dmg_: 35
         }
       }
     }

@@ -8,7 +8,7 @@ import Row from 'react-bootstrap/Row';
 import ReactGA from 'react-ga';
 import Character from '../Character/Character';
 import CharacterDatabase from '../Character/CharacterDatabase';
-import { CharacterNameDisplay, CharacterSelectionDropdownList } from '../Components/CharacterSelection';
+import { CharacterSelectionDropdownList } from '../Components/CharacterSelection';
 import CustomFormControl from '../Components/CustomFormControl';
 import { Stars } from '../Components/StarDisplay';
 import { DatabaseInitAndVerify } from '../DatabaseUtil';
@@ -58,18 +58,12 @@ export default class ArtifactDisplay extends React.Component {
   forceUpdateArtifactDisplay = () => this.forceUpdate()
 
   addArtifact = (art) => {
-    if (art.id) {
-      ArtifactDatabase.updateArtifact(art);
-      this.setState({ artToEditId: null })
-    } else {
-      let id = ArtifactDatabase.addArtifact(art)
-      if (id === null) return;// some error happened...
-      this.forceUpdate()
-    }
+    ArtifactDatabase.updateArtifact(art);
+    this.setState({ artToEditId: null })
   }
 
   deleteArtifact = (id) => {
-    let art = ArtifactDatabase.getArtifact(id);
+    let art = ArtifactDatabase.get(id);
     if (art && art.location)
       CharacterDatabase.unequipArtifactOnSlot(art.location, art.slotKey);
     ArtifactDatabase.removeArtifactById(id)
@@ -103,7 +97,7 @@ export default class ArtifactDisplay extends React.Component {
     let locationDisplay
     if (!filterLocation) locationDisplay = <span>Location: Any</span>
     else if (filterLocation === "Inventory") locationDisplay = <span>Location: Inventory</span>
-    else locationDisplay = <CharacterNameDisplay id={filterLocation} flat />
+    else locationDisplay = <b>{Character.getName(filterLocation)}</b>
     let artifacts = Object.values(artifactDB).filter(art => {
       if (filterLocation) {
         if (filterLocation === "Inventory" && art.location) return false;

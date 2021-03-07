@@ -1,7 +1,7 @@
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { lazy } from 'react';
-import { Button, Card, Col, Container, Row } from 'react-bootstrap';
+import { Button, Card, Col, Container, Row, ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
 import ReactGA from 'react-ga';
 import { DatabaseInitAndVerify } from '../DatabaseUtil';
 import Character from './Character';
@@ -11,7 +11,15 @@ import CharacterDatabase from './CharacterDatabase';
 //lazy load the character display
 const CharacterDisplayCardPromise = import('../Character/CharacterDisplayCard');
 const CharacterDisplayCard = lazy(() => CharacterDisplayCardPromise)
-
+const toggle = {
+  level: "Level",
+  rarity: "Rarity",
+  name: "Name"
+}
+const sortingFunc = {
+  level: (ck) => Character.getLevel(CharacterDatabase.get(ck).levelKey),
+  rarity: (ck) => Character.getStar(ck)
+}
 export default class CharacterDisplay extends React.Component {
   constructor(props) {
     super(props)
@@ -19,12 +27,13 @@ export default class CharacterDisplay extends React.Component {
     this.state = {
       charIdToEdit: "",
       showEditor: false,
+      sortBy: Object.keys(toggle)[0]
     }
     ReactGA.pageview('/character')
   }
 
   deleteCharacter = (id) => {
-    Character.removeCharacter(id)
+    Character.remove(id)
     this.forceUpdate()
   }
 
@@ -39,19 +48,43 @@ export default class CharacterDisplay extends React.Component {
     this.scrollRef = React.createRef()
   }
   render() {
-    let charIdList = CharacterDatabase.getCharacterIdList()
+    const charKeyList = CharacterDatabase.getCharacterKeyList().sort((a, b) => {
+      if (this.state.sortBy === "name") {
+        if (a < b) return -1;
+        if (a > b) return 1;
+        // names must be equal
+        return 0;
+      }
+      if (this.state.sortBy === "level") {
+        const diff = sortingFunc["level"](b) - sortingFunc["level"](a)
+        if (diff) return diff
+        return sortingFunc["rarity"](b) - sortingFunc["rarity"](a)
+      } else {
+        const diff = sortingFunc["rarity"](b) - sortingFunc["rarity"](a)
+        if (diff) return diff
+        return sortingFunc["level"](b) - sortingFunc["level"](a)
+      }
+    })
     return (<Container ref={this.scrollRef}>
       {/* editor/character detail display */}
       {this.state.showEditor ? <Row className="mt-2"><Col>
         <React.Suspense fallback={<span>Loading...</span>}>
           <CharacterDisplayCard editable
-            characterId={this.state.charIdToEdit}
+            characterKey={this.state.charIdToEdit}
             onClose={this.cancelEditCharacter}
             footer={<Button variant="danger" onClick={this.cancelEditCharacter}>Close</Button>}
           />
         </React.Suspense>
       </Col></Row> : null}
-
+      <Card bg="darkcontent" text="lightfont" className="mt-2">
+        <Card.Body className="p-2 text-right">
+          <span>Sort by: </span>
+          <ToggleButtonGroup type="radio" name="level" defaultValue={this.state.sortBy} size="sm" onChange={v => this.setState({ sortBy: v })}>
+            {Object.entries(toggle).map(([key, text]) =>
+              <ToggleButton key={key} value={key} variant={this.state.sortBy === key ? "success" : "primary"}>{text}</ToggleButton>)}
+          </ToggleButtonGroup>
+        </Card.Body>
+      </Card>
       <Row className="mt-2">
         {this.state.showEditor ? null : <Col lg={4} md={6} className="mb-2">
           <Card className="h-100" bg="darkcontent" text="lightfont">
@@ -69,18 +102,17 @@ export default class CharacterDisplay extends React.Component {
             </Card.Body>
           </Card>
         </Col>}
-        {charIdList.map(id =>
-          <Col key={id} lg={4} md={6} className="mb-2">
+        {charKeyList.map(charKey =>
+          <Col key={charKey} lg={4} md={6} className="mb-2">
             <CharacterCard
               cardClassName="h-100"
-              characterId={id}
-              onDelete={() => this.deleteCharacter(id)}
-              onEdit={() => this.editCharacter(id)}
+              characterKey={charKey}
+              onDelete={() => this.deleteCharacter(charKey)}
+              onEdit={() => this.editCharacter(charKey)}
             />
           </Col>
         )}
       </Row>
     </Container>)
-
   }
 }

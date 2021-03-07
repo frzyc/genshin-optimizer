@@ -29,25 +29,19 @@ export default class ArtifactDatabase {
     initiated = true
     return true
   }
-  static getArtifact = (id) => artifactDatabase[id] || null
+  static get = (id) => artifactDatabase[id] ?? null
   static removeArtifact = (art) => {
     this.removeArtifactById(art.id);
-  }
-  static addArtifact = (art) => {
-    if (this.isInvalid(art)) return null;
-    //generate id using artIdIndex
-    let id = `artifact_${artIdIndex++}`
-    while (localStorage.getItem(id) !== null)
-      id = `artifact_${artIdIndex++}`
-    let dart = deepClone(art)
-    dart.id = id;
-    saveToLocalStorage(id, dart);
-    artifactDatabase[id] = dart;
-    return id;
   }
   static updateArtifact = (art) => {
     if (this.isInvalid(art)) return;
     let id = art.id;
+    if (!id) {//if does not have id, generate ID
+      do {
+        id = `artifact_${artIdIndex++}`
+      } while (localStorage.getItem(id) !== null)
+      art.id = id
+    }
     let dart = deepClone(art)
     saveToLocalStorage(id, dart);
     artifactDatabase[id] = dart;
@@ -59,7 +53,7 @@ export default class ArtifactDatabase {
 
   static moveToNewLocation = (artid, location) => {
     if (!artid) return;
-    let art = this.getArtifact(artid)
+    let art = this.get(artid)
     if (!art || art.location === location) return;
     art.location = location;
     this.updateArtifact(art);
@@ -71,6 +65,11 @@ export default class ArtifactDatabase {
     this.moveToNewLocation(artB.id, locA)
   }
   static swapLocationsById = (artAid, artBid) =>
-    this.swapLocations(this.getArtifact(artAid), this.getArtifact(artBid))
-
+    this.swapLocations(this.get(artAid), this.get(artBid))
+  //helper function for testing
+  static clearDatabase = () => {
+    artifactDatabase = {}
+    initiated = false
+    artIdIndex = 1
+  }
 }

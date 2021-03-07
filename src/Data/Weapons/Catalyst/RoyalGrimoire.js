@@ -18,7 +18,7 @@ const weapon = {
     sourceKey: "RoyalGrimoire",
     maxStack: 5,
     stats: (refineIndex) => ({
-      crit_Rate: refinementVals[refineIndex]
+      critRate_: refinementVals[refineIndex]
     })
   }
 }

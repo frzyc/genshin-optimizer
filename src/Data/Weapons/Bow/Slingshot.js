@@ -10,18 +10,18 @@ const weapon = {
   description: "A bow, despite the name. After countless experiments and improvements to the design, the creator of the ultimate Slingshot found himself to have made what was actually a bow.",
   baseStats: {
     main: [38, 48, 61, 73, 86, 105, 117, 129, 140, 151, 171, 182, 193, 212, 223, 234, 253, 264, 274, 294, 304, 314, 334, 344, 354],
-    subStatKey: "crit_rate",
+    subStatKey: "critRate_",
     sub: [6.8, 7.9, 9.3, 10.6, 12, 12, 13.4, 14.8, 16.1, 17.5, 17.5, 18.9, 20.3, 20.3, 21.6, 23, 23, 24.4, 25.7, 25.7, 27.1, 28.5, 28.5, 29.9, 31.2],
   },
   stats: () => ({
-    all_dmg_bonus: -10
+    dmg_: -10
   }),
   conditional: {
     type: "weapon",
     sourceKey: "Slingshot",
     maxStack: 1,
     stats: (refineIndex) => ({
-      all_dmg_bonus: refinementVals[refineIndex] + 10//+10 to neutralize the -10
+      dmg_: refinementVals[refineIndex] + 10//+10 to neutralize the -10
     })
   }
 }

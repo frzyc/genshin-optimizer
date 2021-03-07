@@ -1,4 +1,4 @@
-import { GetDependencies, GetFormulaDependency } from "./StatDependency"
+import { GetDependencies, GetFormulaDependency, reduceOptimizationTarget } from "./StatDependency"
 import { StatData } from "./StatData"
 
 expect.extend({
@@ -39,45 +39,44 @@ describe('Testing StatDependency', () => {
   })
   describe('GetDependencies()', () => {
     test('should get dependencies from database', () => {
-      expect(GetDependencies({}, ["def_final"])).toBeDependent({ def_final: ["def_base", "def_", "def"] })
+      expect(GetDependencies({}, ["finalDEF"])).toBeDependent({ finalDEF: ["characterDEF", "def_", "def"] })
     })
     test('should recursively get dependencies from database', () => {
-      const expected = expect(GetDependencies({}, ["phy_dmg"]))
+      const expected = expect(GetDependencies({}, ["physical_normal_hit"]))
       expected.toBeDependent({
-        phy_dmg: ["atk_final", "phy_bonus_multi", "enemy_level_multi", "enemy_phy_res_multi"],
-        atk_final: ["atk_base", "atk_", "atk"],
-        phy_bonus_multi: ["phy_dmg_bonus", "all_dmg_bonus"],
-        enemy_level_multi: ["char_level", "enemy_level"],
-        enemy_phy_res_multi: ["enemy_phy_immunity", "enemy_phy_res"],
-        atk_base: ["atk_character_base", "atk_weapon"],
+        physical_normal_hit: ["finalATK", "physical_dmg_", "normal_dmg_", "enemyLevel_multi", "physical_enemyRes_multi"],
+        finalATK: ["baseATK", "atk_", "atk"],
+        enemyLevel_multi: ["characterLevel", "enemyLevel"],
+        physical_enemyRes_multi: ["physical_enemyImmunity", "physical_enemyRes_"],
+        baseATK: ["characterATK", "weaponATK"],
       })
     })
     test('should add all dependencies from keys', () => {
-      const expected = expect(GetDependencies({}, ["def_final", "ener_rech"]))
+      const expected = expect(GetDependencies({}, ["finalDEF", "enerRech_"]))
       expected.toBeDependent({
-        def_final: ["def_base", "def_", "def"],
-        ener_rech: []
+        finalDEF: ["characterDEF", "def_", "def"],
+        enerRech_: []
       })
     })
     test(`should add all formulas' dependencies by default`, () => {
       expect(GetDependencies()).toEqual(expect.arrayContaining(Object.keys(StatData)))
     })
     test('should add modifiers if keys exists', () => {
-      const keys = ["ener_rech"]
-      let modifiers = { ener_rech: { crit_rate: 10 } }
-      //should add crit_rate to dependency
-      expect(GetDependencies(modifiers, keys)).toBeDependent({ ener_rech: ["crit_rate"] })
-      modifiers = { atk: { crit_rate: 10 } }
-      //should not add crit_rate to dependency, since its not part of the original dependency
+      const keys = ["enerRech_"]
+      let modifiers = { enerRech_: { critRate_: 10 } }
+      //should add critRate_ to dependency
+      expect(GetDependencies(modifiers, keys)).toBeDependent({ enerRech_: ["critRate_"] })
+      modifiers = { atk: { critRate_: 10 } }
+      //should not add critRate_ to dependency, since its not part of the original dependency
       expect(GetDependencies(modifiers, keys)).toEqual(expect.not.arrayContaining(["atk"]))
     })
     test('should respect modifiers for chained dependencies', () => {
-      const modifiers = { hp: { def: 10 }, def: { ener_rech: 0 }, atk_final: { hp: 10 } }
-      const expected = expect(GetDependencies(modifiers, ["atk_final"]))
+      const modifiers = { hp: { def: 10 }, def: { enerRech_: 0 }, finalATK: { hp: 10 } }
+      const expected = expect(GetDependencies(modifiers, ["finalATK"]))
       expected.toBeDependent({
-        atk_final: ["hp"],
+        finalATK: ["hp"],
         hp: ["def"],
-        def: ["ener_rech"],
+        def: ["enerRech_"],
       })
     })
     test('should contains unique dependencies', () => {
@@ -85,37 +84,35 @@ describe('Testing StatDependency', () => {
       expect([...new Set(received)]).toEqual(received)
     })
     test('should handle non-algebraic dependencies', () => {
-      expect(GetDependencies({}, ["norm_atk_crit_multi"])).toBeDependent({
-        norm_atk_crit_multi: ["crit_rate", "norm_atk_crit_rate", "crit_dmg"]
+      expect(GetDependencies({}, ["physical_enemyRes_multi"])).toBeDependent({
+        physical_enemyRes_multi: ["physical_enemyImmunity", "physical_enemyRes_"]
       })
-      expect(GetDependencies({}, ["char_atk_crit_multi"])).toBeDependent({
-        char_atk_crit_multi: ["crit_rate", "char_atk_crit_rate", "crit_dmg"]
-      })
-      expect(GetDependencies({}, ["crit_multi"])).toBeDependent({
-        crit_multi: ["crit_rate", "crit_dmg"]
-      })
-      expect(GetDependencies({}, ["skill_crit_multi"])).toBeDependent({
-        skill_crit_multi: ["crit_rate", "skill_crit_rate", "crit_dmg"]
-      })
-      expect(GetDependencies({}, ["burst_crit_multi"])).toBeDependent({
-        burst_crit_multi: ["crit_rate", "burst_crit_rate", "crit_dmg"]
-      })
-      expect(GetDependencies({}, ["enemy_phy_res_multi"])).toBeDependent({
-        enemy_phy_res_multi: ["enemy_phy_immunity", "enemy_phy_res"]
-      })
-      expect(GetDependencies({}, ["amp_reaction_base_multi"])).toBeDependent({
-        amp_reaction_base_multi: ["ele_mas"]
+      expect(GetDependencies({}, ["amplificative_dmg_"])).toBeDependent({
+        amplificative_dmg_: ["eleMas"]
       })
 
       const test_multi = (s) => {
-        expect(GetDependencies({}, [s])).toBeDependent(Object.fromEntries([[s, ["char_level"]]]))
+        expect(GetDependencies({}, [s])).toBeDependent(Object.fromEntries([[s, ["characterLevel"]]]))
       }
       test_multi("overloaded_multi")
       test_multi("electrocharged_multi")
       test_multi("superconduct_multi")
       test_multi("swirl_multi")
-      test_multi("shatter_multi")
+      test_multi("shattered_multi")
       test_multi("crystalize_multi")
     })
+  })
+})
+
+describe('reduceOptimizationTarget()', () => {
+  test('should reduce', () => {
+    const formula = { dmg: 0.6 }
+    expect(reduceOptimizationTarget(formula)).toBe("dmg")
+  })
+  test('should not reduce complex formulas', () => {
+    const formula = { dmg: { test: 0.6 } }
+    expect(reduceOptimizationTarget(formula)).toBe(formula)
+    const formula2 = { dmg: 0.6, test: 0.5 }
+    expect(reduceOptimizationTarget(formula2)).toBe(formula2)
   })
 })

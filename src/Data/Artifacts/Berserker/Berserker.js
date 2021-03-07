@@ -22,7 +22,7 @@ let artifact = {
   setEffects: {
     2: {
       text: "CRIT Rate +12%",
-      stats: { crit_rate: 12 }
+      stats: { critRate_: 12 }
     },
     4: {
       text: "When HP is below 70%, CRIT Rate increases by an additional 24%.",
@@ -31,7 +31,7 @@ let artifact = {
         sourceKey: "Berserker_4",
         maxStack: 1,
         stats: {
-          crit_rate: 24,
+          critRate_: 24,
         }
       }
     }

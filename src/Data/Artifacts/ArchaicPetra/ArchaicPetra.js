@@ -22,7 +22,7 @@ let artifact = {
   setEffects: {
     2: {
       text: <span>Gain a 15% <span className="text-geo">Geo DMG Bonus</span></span>,
-      stats: { geo_ele_dmg_bonus: 15 }
+      stats: { geo_dmg_: 15 }
     },
     4: {
       text: "Upon obtaining an Elemental Shard created through a Crystallize Reaction, all party members gain 35% DMG to that particular element for 10s. Only one form of Elemental DMG can be gained in this manner at any one time.",
@@ -32,7 +32,7 @@ let artifact = {
         sourceKey: "ArchaicPetra_4",
         maxStack: 1,
         stats: {
-          pyro_ele_dmg_bonus: 35,
+          pyro_dmg_: 35,
         }
       }, {
         type: "artifact",
@@ -40,7 +40,7 @@ let artifact = {
         sourceKey: "ArchaicPetra_4",
         maxStack: 1,
         stats: {
-          electro_ele_dmg_bonus: 35,
+          electro_dmg_: 35,
         }
       }, {
         type: "artifact",
@@ -48,7 +48,7 @@ let artifact = {
         sourceKey: "ArchaicPetra_4",
         maxStack: 1,
         stats: {
-          hydro_ele_dmg_bonus: 35,
+          hydro_dmg_: 35,
         }
       }, {
         type: "artifact",
@@ -56,7 +56,7 @@ let artifact = {
         sourceKey: "ArchaicPetra_4",
         maxStack: 1,
         stats: {
-          cryo_ele_dmg_bonus: 35,
+          cryo_dmg_: 35,
         }
       }]
     }

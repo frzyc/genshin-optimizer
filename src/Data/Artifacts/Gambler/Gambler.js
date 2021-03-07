@@ -22,7 +22,7 @@ let artifact = {
   setEffects: {
     2: {
       text: "Elemental Skill DMG increased by 20%",
-      stats: { skill_dmg_bonus: 20 }
+      stats: { skill_dmg_: 20 }
     },
     4: {
       text: "Defeating an enemy has 100% chance to remove Elemental Skill CD. Can only occur once every 15s.",
@@ -31,7 +31,7 @@ let artifact = {
         sourceKey: "Gambler_4",
         maxStack: 1,
         stats: {
-          skill_cd_red: 100,
+          skillCDRed_: 100,
         }
       }
     }

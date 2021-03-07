@@ -26,7 +26,7 @@ let artifact = {
       stats: { hp: 1000 }
     },
     4: {
-      text: (charFinalStats) => <span>Opening chest regenerates 30% Max HP{DisplayPercent(30, charFinalStats, "hp_final")} over 5s.</span>,
+      text: (charFinalStats) => <span>Opening chest regenerates 30% Max HP{DisplayPercent(30, charFinalStats, "finalHP")} over 5s.</span>,
     }
   }
 }

@@ -22,7 +22,7 @@ let artifact = {//Icebreaker
   setEffects: {
     2: {
       text: <span><span className="text-cryo">Cryo DMG Bonus</span> +15%</span>,
-      stats: { cryo_ele_dmg_bonus: 15 }
+      stats: { cryo_dmg_: 15 }
     },
     4: {
       text: <span>When a character attacks an enemy affected by <span className="text-cryo">Cryo</span>, their CRIT Rate is increased by 20%. If the enemy is Frozen, CRIT Rate is increased by an additional 20%</span>,
@@ -32,7 +32,7 @@ let artifact = {//Icebreaker
         condition: "Enemy affected by Cryo",
         maxStack: 1,
         stats: {
-          crit_rate: 20,
+          critRate_: 20,
         }
       }, {
         type: "artifact",
@@ -40,7 +40,7 @@ let artifact = {//Icebreaker
         condition: "Frozen Enemy",
         maxStack: 1,
         stats: {
-          crit_rate: 40,
+          critRate_: 40,
         }
       }]
     }

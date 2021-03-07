@@ -1,3 +1,6 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+
 //https://coolors.co/171738-2e1760-3423a6-7180b9-dff3e4
 $darkbg: #0c0c1d;
 $contentbg: #1b263b;
@@ -76,7 +79,7 @@ input.invisible-input {
 }
 
 //default gutter size of 30px is wayyyyyyy too big
-$grid-gutter-width: 10px !default;
+$grid-gutter-width: 10px;
 
 $theme-colors: (
   "lightcontent": $lightbg,
@@ -118,13 +121,21 @@ $theme-colors: (
   "overloaded": #ff7e9a,
   "superconduct": #b7b1ff,
   "electrocharged": #e299fd,
-  "shatter": #98fffd,
+  "shattered": #98fffd,
   "swirl": #66ffcb,
   "burning": #bf2818,
   "crystalize": #f8ba4e,
   "orange": #ff6600,
 );
 
-@import "node_modules/bootstrap/scss/bootstrap";
+//convert dropdown to dark
+$dropdown-bg: $dark;
+$dropdown-link-color: $light;
+$dropdown-header-color: $gray-100;
+
+//image color, make it darker
+$thumbnail-border-color: $gray-800;
+
+@import "~bootstrap/scss/bootstrap";
 @include list-group-item-variant("customdark", $contentbg, $lightfontcolor);
 @include list-group-item-variant("customdarker", theme-color-level("darkcontent", 2), $lightfontcolor);

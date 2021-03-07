@@ -15,7 +15,7 @@ import Stat from '../Stat';
 import Weapon from '../Weapon/Weapon';
 import Character from './Character';
 import CharacterDatabase from './CharacterDatabase';
-export default function CharacterCard(props) {
+export default function CharacterCard({ characterKey, onEdit, onDelete, cardClassName = "", bg = "", header, footer }) {
   const [, forceUpdate] = useReducer(x => x + 1, 0);
   useEffect(() => {
     Promise.all([
@@ -24,35 +24,35 @@ export default function CharacterCard(props) {
       Artifact.getDataImport(),
     ]).then(() => forceUpdate())
   }, [])
-  let { characterId, onEdit, onDelete } = props
-  let character = CharacterDatabase.getCharacter(characterId)
+  const character = CharacterDatabase.get(characterKey)
   if (!character) return null;
-  let build = Character.calculateBuild(character)
-  let { setToSlots } = build
+  const build = Character.calculateBuild(character)
+  const { setToSlots } = build
 
-  let { characterKey, name, weapon = {}, constellation } = character
-  let elementKey = Character.getElementalKey(characterKey)
-  let weaponTypeKey = Character.getWeaponTypeKey(characterKey)
-  let weaponName = Weapon.getWeaponName(weapon.key)
-  let weaponMainVal = Weapon.getWeaponMainStatValWithOverride(weapon)
-  let weaponSubKey = Weapon.getWeaponSubStatKey(weapon.key)
-  let weaponSubVal = Weapon.getWeaponSubStatValWithOverride(weapon)
-  let weaponLevelName = Weapon.getLevelName(weapon.levelKey)
-  let weaponPassiveName = Weapon.getWeaponPassiveName(weapon.key)
-  const statkeys = ["hp_final", "atk_final", "def_final", "ele_mas", "crit_rate", "crit_dmg", "ener_rech",]
-  return (<Card className={props.cardClassName} bg={props.bg ? props.bg : "darkcontent"} text="lightfont">
+  const { weapon = {}, constellation } = character
+  const name = Character.getName(characterKey)
+  const elementKey = Character.getElementalKey(characterKey)
+  const weaponTypeKey = Character.getWeaponTypeKey(characterKey)
+  const weaponName = Weapon.getWeaponName(weapon.key)
+  const weaponMainVal = Weapon.getWeaponMainStatValWithOverride(weapon)
+  const weaponSubKey = Weapon.getWeaponSubStatKey(weapon.key)
+  const weaponSubVal = Weapon.getWeaponSubStatValWithOverride(weapon)
+  const weaponLevelName = Weapon.getLevelName(weapon.levelKey)
+  const weaponPassiveName = Weapon.getWeaponPassiveName(weapon.key)
+  const statkeys = ["finalHP", "finalATK", "finalDEF", "eleMas", "critRate_", "critDMG_", "enerRech_",]
+  return (<Card className={cardClassName} bg={bg ? bg : "darkcontent"} text="lightfont">
     <Card.Header className="pr-2">
       <Row className="no-gutters">
         <Col >
-          {props.header ? props.header : <h6><b>{name}</b></h6>}
+          {header ? header : <h5><b>{name}</b></h5>}
         </Col>
         <Col xs={"auto"}>
           <span className="float-right align-top ml-1">
-            {props.onEdit && <Button variant="primary" size="sm" className="mr-1"
+            {onEdit && <Button variant="primary" size="sm" className="mr-1"
               onClick={onEdit}>
               <FontAwesomeIcon icon={faEdit} />
             </Button>}
-            {props.onDelete && <Button variant="danger" size="sm"
+            {onDelete && <Button variant="danger" size="sm"
               onClick={onDelete}>
               <FontAwesomeIcon icon={faTrashAlt} />
             </Button>}
@@ -66,9 +66,9 @@ export default function CharacterCard(props) {
           <Image src={Character.getThumb(characterKey)} className={`thumb-big grad-${Character.getStar(characterKey)}star p-0`} thumbnail />
         </Col>
         <Col>
-          <h4>{Character.getName(characterKey)} <Image src={Assets.elements[elementKey]} className="inline-icon" /> <Image src={Assets.weaponTypes?.[weaponTypeKey]} className="inline-icon" /></h4>
-          <h6><Stars stars={Character.getStar(characterKey)} colored /></h6>
-          <span>{`Lvl. ${Character.getStatValueWithOverride(character, "char_level")} C${constellation}`}</span>
+          <h3 className="mb-0">{`Lvl. ${Character.getStatValueWithOverride(character, "characterLevel")} C${constellation}`}</h3>
+          <h5 className="mb-0"><Stars stars={Character.getStar(characterKey)} colored /></h5>
+          <h2 className="mb-0"><Image src={Assets.elements[elementKey]} className="inline-icon" /> <Image src={Assets.weaponTypes?.[weaponTypeKey]} className="inline-icon" /></h2>
         </Col>
       </Row>
       <Row className="mb-2">
@@ -99,10 +99,10 @@ export default function CharacterCard(props) {
         })}
       </Row>
     </Card.Body>
-    {props.footer && <Card.Footer>
+    {footer && <Card.Footer>
       <Button as={Link} to={{
         pathname: "/build",
-        selectedCharacterId: characterId
+        characterKey
       }}>
         Generate Builds
         </Button>

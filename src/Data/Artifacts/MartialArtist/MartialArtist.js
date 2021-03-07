@@ -23,8 +23,8 @@ let artifact = {
     2: {
       text: "Increases Normal Attack and Charged Attack DMG by 15%.",
       stats: {
-        norm_atk_dmg_bonus: 15,
-        char_atk_dmg_bonus: 15
+        normal_dmg_: 15,
+        charged_dmg_: 15
       }
     },
     4: {
@@ -34,8 +34,8 @@ let artifact = {
         sourceKey: "MartialArtist_4",
         maxStack: 1,
         stats: {
-          norm_atk_dmg_bonus: 25,
-          char_atk_dmg_bonus: 25
+          normal_dmg_: 25,
+          charged_dmg_: 25
         }
       }
     }

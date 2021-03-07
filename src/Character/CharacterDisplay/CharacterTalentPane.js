@@ -1,21 +1,18 @@
-import { faCheckSquare, faQuestionCircle, faSquare, faWindowMaximize, faWindowMinimize } from "@fortawesome/free-solid-svg-icons";
+import { faQuestionCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useContext } from 'react';
-import { Accordion, AccordionContext, Button, Card, Col, Dropdown, DropdownButton, Image, ListGroup, OverlayTrigger, Row, ToggleButton, ToggleButtonGroup, Tooltip } from "react-bootstrap";
-import { useAccordionToggle } from 'react-bootstrap/AccordionToggle';
+import React from 'react';
+import { Button, Card, Col, Dropdown, DropdownButton, Image, ListGroup, OverlayTrigger, Row, Tooltip } from "react-bootstrap";
 import Assets from "../../Assets/Assets";
 import ConditionalSelector from "../../Components/ConditionalSelector";
 import Stat from "../../Stat";
 import { ElementToReactionKeys } from "../../StatData";
-import { GetDependencies } from "../../StatDependency";
 import ConditionalsUtil from "../../Util/ConditionalsUtil";
 import Character from "../Character";
-import StatInput from "../StatInput";
+import DamageOptionsAndCalculation from "./DamageOptionsAndCalculation";
 
 export default function CharacterTalentPane(props) {
-  let { character, character: { characterKey, levelKey, constellation, dmgMode }, editable, setState, setOverride, newBuild, equippedBuild } = props
-  let build = newBuild ? newBuild : equippedBuild
-  //choose which one to display stats for
+  let { character, character: { characterKey, levelKey, constellation }, editable, setState, setOverride, newBuild, equippedBuild } = props
+
   let ascension = Character.getAscension(levelKey)
 
   let skillBurstList = [["auto", "Normal/Charged Attack"], ["skill", "Elemental Skill"], ["burst", "Elemental Burst"]]
@@ -23,141 +20,10 @@ export default function CharacterTalentPane(props) {
   let passivesList = [["passive1", "Unlocked at Ascension 1", 1], ["passive2", "Unlocked at Ascension 4", 4], ["passive3", "Unlocked by Default", 0]]
 
   let skillDisplayProps = { ...props, ascension }
-  const ContextAwareToggle = ({ eventKey, callback }) => {
-    const currentEventKey = useContext(AccordionContext);
-    const decoratedOnClick = useAccordionToggle(
-      eventKey,
-      () => callback && callback(eventKey),
-    );
-    const expanded = currentEventKey === eventKey;
-    return (
-      <Button
-        // style={{ backgroundColor: isCurrentEventKey ? 'pink' : 'lavender' }}
-        onClick={decoratedOnClick}
-      >
-        <FontAwesomeIcon icon={expanded ? faWindowMinimize : faWindowMaximize} className={`fa-fw ${expanded ? "fa-rotate-180" : ""}`} />
-        <span> </span>{expanded ? "Retract" : "Expand"}
-      </Button>
-    );
-  }
-  const statsDisplayKeys = () => {
-    let keys = ["hp_final", "atk_final", "def_final"]
-    //we need to figure out if the character has: normal phy auto, elemental auto, infusable auto(both normal and phy)
-    let isAutoElemental = Character.isAutoElemental(characterKey)
-    let isAutoInfusable = Character.isAutoInfusable(characterKey)
-    let autoKeys = ["norm_atk", "char_atk", "plunge"];
-    let talKeys = ["ele", "skill", "burst"];
-    if (!isAutoElemental)  //add physical variants of the formulas
-      autoKeys.forEach(key => keys.push(Character.getTalentStatKey(key, character)))
-    if (isAutoElemental || (isAutoInfusable && character.autoInfused))
-      autoKeys.forEach(key => keys.push(Character.getTalentStatKey(key, character, true)))
-    else if (Character.getWeaponTypeKey(characterKey) === "bow")//bow charged atk does elemental dmg on charge
-      keys.push(Character.getTalentStatKey("char_atk", character, true))
-    //add talents/skills
-    talKeys.forEach(key => keys.push(Character.getTalentStatKey(key, character)))
-    //show elemental interactions
-    keys.push(...(ElementToReactionKeys[Character.getElementalKey(characterKey)] || []))
-    let weaponTypeKey = Character.getWeaponTypeKey(characterKey)
-    if (!keys.includes("shatter_dmg") && weaponTypeKey === "claymore") keys.push("shatter_dmg")
 
-    //search for dependency
-    return Stat.getPrintableFormulaStatKeyList(GetDependencies(build?.finalStats?.modifiers, keys), build?.finalStats?.modifiers)
-  }
   return <>
     <Row><Col xs={12} className="mb-2">
-      <Accordion>
-        <Card bg="lightcontent" text="lightfont" className="mb-2">
-          <Card.Header>
-            <Row>
-              <Col>
-                <span className="d-block">Damage Calculation Options</span>
-                <small>Expand below to edit enemy details.</small>
-              </Col>
-              <Col xs="auto">
-                <ToggleButtonGroup type="radio" value={dmgMode} name="dmgOptions" onChange={(dmgMode) => setState({ dmgMode })}>
-                  <ToggleButton value="avg_dmg">Avg. DMG</ToggleButton>
-                  <ToggleButton value="dmg">Normal Hit, No Crit</ToggleButton>
-                  <ToggleButton value="crit_dmg">Crit Hit DMG</ToggleButton>
-                </ToggleButtonGroup>
-              </Col>
-              <Col xs="auto">
-                <ContextAwareToggle as={Button} eventKey="1" />
-              </Col>
-            </Row>
-          </Card.Header>
-          <Accordion.Collapse eventKey="1">
-            <Card.Body>
-              <Row className="mb-2"><Col>
-                <Button variant="warning" >
-                  <a href="https://genshin-impact.fandom.com/wiki/Damage#Base_Enemy_Resistances" target="_blank" rel="noreferrer">
-                    To get the specific resistance values of enemies, please visit the wiki.
-                  </a>
-                </Button >
-              </Col></Row>
-              <Row>
-                <Col xs={12} xl={6} className="mb-2">
-                  <StatInput
-                    name={<b>Enemy Level</b>}
-                    value={Character.getStatValueWithOverride(character, "enemy_level")}
-                    placeholder={Stat.getStatNameRaw("enemy_level")}
-                    defaultValue={Character.getBaseStatValue(character, "enemy_level")}
-                    onValueChange={(val) => setOverride("enemy_level", val)}
-                  />
-                </Col>
-                {["physical", ...Character.getElementalKeys()].map(eleKey => {
-                  let statKey = eleKey === "physical" ? "enemy_phy_res" : `${eleKey}_enemy_ele_res`
-                  let immunityStatKey = eleKey === "physical" ? "enemy_phy_immunity" : `${eleKey}_enemy_ele_immunity`
-                  let elementImmunity = Character.getStatValueWithOverride(character, immunityStatKey)
-                  return <Col xs={12} xl={6} key={eleKey} className="mb-2">
-                    <StatInput
-                      prependEle={<Button variant={eleKey} onClick={() => setOverride(immunityStatKey, !elementImmunity)} className="text-darkcontent">
-                        <FontAwesomeIcon icon={elementImmunity ? faCheckSquare : faSquare} className="fa-fw" /> Immunity
-                        </Button>}
-                      name={<b>{Stat.getStatNameRaw(statKey)}</b>}
-                      value={Character.getStatValueWithOverride(character, statKey)}
-                      placeholder={Stat.getStatNameRaw(statKey)}
-                      defaultValue={Character.getBaseStatValue(character, statKey)}
-                      onValueChange={(val) => setOverride(statKey, val)}
-                      disabled={elementImmunity}
-                    />
-                  </Col>
-                })}
-              </Row>
-            </Card.Body>
-          </Accordion.Collapse>
-        </Card>
-
-        <Card bg="lightcontent" text="lightfont">
-          <Card.Header>
-            <Row>
-              <Col>
-                <span className="d-block">Damage Calculation Formulas</span>
-                <small>Expand below to see calculation details.</small>
-              </Col>
-              <Col xs="auto">
-                <ContextAwareToggle as={Button} eventKey="2" />
-              </Col>
-            </Row>
-          </Card.Header>
-          <Accordion.Collapse eventKey="2">
-            <Card.Body>
-              <Row>
-                {statsDisplayKeys().map(key => <Col key={key} xs={12} className="mb-2">
-                  <Card bg="darkcontent" text="lightfont">
-                    <Card.Header className="p-2">
-                      {Stat.printStat(key, build.finalStats)}
-                    </Card.Header>
-                    <Card.Body className="p-2">
-                      <small>{Stat.printFormula(key, build.finalStats, build.finalStats.modifiers, false)}</small>
-                    </Card.Body>
-                  </Card>
-                </Col>
-                )}
-              </Row>
-            </Card.Body>
-          </Accordion.Collapse>
-        </Card>
-      </Accordion>
+      <DamageOptionsAndCalculation {...{ character, setState, setOverride, newBuild, equippedBuild }} />
     </Col></Row>
     <Row><Col><ReactionDisplay {...props} /></Col></Row>
     <Row>
@@ -214,18 +80,18 @@ export default function CharacterTalentPane(props) {
   </>
 }
 const ReactionComponents = {
-  superconduct_dmg: SuperConductCard,
-  electrocharged_dmg: ElectroChargedCard,
-  overloaded_dmg: OverloadedCard,
-  swirl_dmg: SwirlCard,
-  shatter_dmg: ShatteredCard,
-  crystalize_dmg: CrystalizeCard,
+  superconduct_hit: SuperConductCard,
+  electrocharged_hit: ElectroChargedCard,
+  overloaded_hit: OverloadedCard,
+  swirl_hit: SwirlCard,
+  shattered_hit: ShatteredCard,
+  crystalize_hit: CrystalizeCard,
 }
 function ReactionDisplay({ character: { characterKey, reactionMode = "none" }, newBuild, equippedBuild, setState }) {
   let build = newBuild ? newBuild : equippedBuild
   let charEleKey = Character.getElementalKey(characterKey)
   let eleInterArr = [...(ElementToReactionKeys[charEleKey] || [])]
-  if (!eleInterArr.includes("shatter_dmg") && Character.getWeaponTypeKey(characterKey) === "claymore") eleInterArr.push("shatter_dmg")
+  if (!eleInterArr.includes("shattered_hit") && Character.getWeaponTypeKey(characterKey) === "claymore") eleInterArr.push("shattered_hit")
   return <Card bg="lightcontent" text="lightfont" className="mb-2">
     <Card.Body className="px-3 py-2">
       <Row>
@@ -238,36 +104,6 @@ function ReactionDisplay({ character: { characterKey, reactionMode = "none" }, n
             return <Col xs="auto" className="mb-2" key={key}><Ele value={val} /></Col>
           })}
         </Row></Col>
-        <Col xs="auto">
-          {["pyro", "hydro", "cryo"].includes(charEleKey) && <ToggleButtonGroup
-            type="radio" name="reactionMode" defaultValue={reactionMode} onChange={(val) => setState({ reactionMode: val === "none" ? null : val })}>
-            <ToggleButton className="p-2" value={"none"}> <h6>No Elemental</h6> <h6>Interactions</h6></ToggleButton >
-            {charEleKey === "pyro" && <ToggleButton className="p-2" value={"pyro_vaporize"}>
-              <h5 className="text-vaporize">Vaporize(Pyro)</h5>
-              <h4 className="text-vaporize mb-0">
-                <Image src={Assets.elements.hydro} className="inline-icon" />+<Image src={Assets.elements.pyro} className="inline-icon" />
-              </h4>
-            </ToggleButton >}
-            {charEleKey === "pyro" && <ToggleButton className="p-2" value={"pyro_melt"}>
-              <h5 className="text-melt">Melt(Pyro)</h5>
-              <h4 className="text-melt mb-0">
-                <Image src={Assets.elements.cryo} className="inline-icon" />+<Image src={Assets.elements.pyro} className="inline-icon" />
-              </h4>
-            </ToggleButton >}
-            {charEleKey === "hydro" && <ToggleButton className="p-2" value={"hydro_vaporize"}>
-              <h5 className="text-vaporize">Vaporize(Hydro)</h5>
-              <h4 className="text-vaporize mb-0">
-                <Image src={Assets.elements.pyro} className="inline-icon" />+<Image src={Assets.elements.hydro} className="inline-icon" />
-              </h4>
-            </ToggleButton >}
-            {charEleKey === "cryo" && <ToggleButton className="p-2" value={"cryo_melt"}>
-              <h5 className="text-melt">Melt(Cryo)</h5>
-              <h4 className="text-melt mb-0">
-                <Image src={Assets.elements.pyro} className="inline-icon" />+<Image src={Assets.elements.cryo} className="inline-icon" />
-              </h4>
-            </ToggleButton >}
-          </ToggleButtonGroup>}
-        </Col>
       </Row>
 
     </Card.Body>
@@ -275,56 +111,38 @@ function ReactionDisplay({ character: { characterKey, reactionMode = "none" }, n
 }
 function SuperConductCard({ value }) {
   return <Card bg="darkcontent" text="lightfont"><Card.Body className="p-2">
-    <h5>{Stat.getStatName("superconduct_dmg")}</h5>
-    <h4 className="text-superconduct mb-0">
-      <Image src={Assets.elements.electro} className="inline-icon" />+<Image src={Assets.elements.cryo} className="inline-icon" /> {value}
-    </h4>
+    <span className="text-superconduct">{Stat.getStatName("superconduct_hit")} <Image src={Assets.elements.electro} className="inline-icon" />+<Image src={Assets.elements.cryo} className="inline-icon" /> {value}</span>
   </Card.Body></Card>
 }
 function ElectroChargedCard({ value }) {
   return <Card bg="darkcontent" text="lightfont"><Card.Body className="p-2">
-    <h5>{Stat.getStatName("electrocharged_dmg")}</h5>
-    <h4 className="text-electrocharged mb-0">
-      <Image src={Assets.elements.electro} className="inline-icon" />+<Image src={Assets.elements.hydro} className="inline-icon" /> {value}
-    </h4>
+    <span className="text-electrocharged">{Stat.getStatName("electrocharged_hit")} <Image src={Assets.elements.electro} className="inline-icon" />+<Image src={Assets.elements.hydro} className="inline-icon" /> {value}</span>
   </Card.Body></Card>
 }
 function OverloadedCard({ value }) {
   return <Card bg="darkcontent" text="lightfont"><Card.Body className="p-2">
-    <h5>{Stat.getStatName("overloaded_dmg")}</h5>
-    <h4 className="text-overloaded mb-0">
-      <Image src={Assets.elements.electro} className="inline-icon" />+<Image src={Assets.elements.pyro} className="inline-icon" /> {value}
-    </h4>
+    <span className="text-overloaded">{Stat.getStatName("overloaded_hit")} <Image src={Assets.elements.electro} className="inline-icon" />+<Image src={Assets.elements.pyro} className="inline-icon" /> {value}</span>
   </Card.Body></Card>
 }
 function SwirlCard({ value }) {
   return <Card bg="darkcontent" text="lightfont"><Card.Body className="p-2">
-    <h5>{Stat.getStatName("swirl_dmg")}</h5>
-    <h4 className="text-swirl mb-0">
-      <Image src={Assets.elements.electro} className="inline-icon" />/<Image src={Assets.elements.hydro} className="inline-icon" />/<Image src={Assets.elements.pyro} className="inline-icon" />/<Image src={Assets.elements.cryo} className="inline-icon" />+<Image src={Assets.elements.anemo} className="inline-icon" /> {value}
-    </h4>
+    <span className="text-swirl">{Stat.getStatName("swirl_hit")} <Image src={Assets.elements.electro} className="inline-icon" />/<Image src={Assets.elements.hydro} className="inline-icon" />/<Image src={Assets.elements.pyro} className="inline-icon" />/<Image src={Assets.elements.cryo} className="inline-icon" />+<Image src={Assets.elements.anemo} className="inline-icon" /> {value}</span>
   </Card.Body></Card>
 }
 function ShatteredCard({ value }) {
-  let information = <OverlayTrigger
+  const information = <OverlayTrigger
     placement="top"
     overlay={<Tooltip>Claymores, Plunging Attacks and <span className="text-geo">Geo DMG</span></Tooltip>}
   >
     <FontAwesomeIcon icon={faQuestionCircle} className="ml-2" style={{ cursor: "help" }} />
   </OverlayTrigger>
   return <Card bg="darkcontent" text="lightfont"><Card.Body className="p-2">
-    <h5>{Stat.getStatName("shatter_dmg")}</h5>
-    <h4 className="text-shatter mb-0">
-      <Image src={Assets.elements.hydro} className="inline-icon" />+<Image src={Assets.elements.cryo} className="inline-icon" />+ <small className="text-physical">Heavy Attack{information} </small> {value}
-    </h4>
+    <span className="text-shattered">{Stat.getStatName("shattered_hit")} <Image src={Assets.elements.hydro} className="inline-icon" />+<Image src={Assets.elements.cryo} className="inline-icon" />+ <small className="text-physical">Heavy Attack{information} </small> {value}</span>
   </Card.Body></Card>
 }
 function CrystalizeCard({ value }) {
   return <Card bg="darkcontent" text="lightfont"><Card.Body className="p-2">
-    <h5>{Stat.getStatName("crystalize_dmg")}</h5>
-    <h4 className="text-crystalize mb-0">
-      <Image src={Assets.elements.electro} className="inline-icon" />/<Image src={Assets.elements.hydro} className="inline-icon" />/<Image src={Assets.elements.pyro} className="inline-icon" />/<Image src={Assets.elements.cryo} className="inline-icon" />+<Image src={Assets.elements.geo} className="inline-icon" /> {value}
-    </h4>
+    <span className="text-crystalize">{Stat.getStatName("crystalize_hit")} <Image src={Assets.elements.electro} className="inline-icon" />/<Image src={Assets.elements.hydro} className="inline-icon" />/<Image src={Assets.elements.pyro} className="inline-icon" />/<Image src={Assets.elements.cryo} className="inline-icon" />+<Image src={Assets.elements.geo} className="inline-icon" /> {value}</span>
   </Card.Body></Card>
 }
 
@@ -349,7 +167,7 @@ function SkillDisplayCard(props) {
   let { onClickTitle = null, ...otherProps } = props
   let build = newBuild ? newBuild : equippedBuild
   let header = null
-  let { talentLvlKey = undefined, levelBoost = 0 } = Character.getTalentLevelKey(character, talentKey, constellation, true)
+  let { talentLvlKey = undefined, levelBoost = 0 } = Character.getTalentLevelKey(character, talentKey, true)
   let infuseBtn = null
   if (talentKey === "auto" && Character.isAutoInfusable(characterKey)) {
     let eleKey = Character.getElementalKey(characterKey)

@@ -7,7 +7,7 @@ const weapon = {
   img: TravelersHandySword,
   rarity: 3,
   passiveName: "Journey",
-  passiveDescription: (refineIndex, charFinalStats) => <span>Each Elemental Orb or Particle collected restores {refinementVals[refineIndex]}% HP{DisplayPercent(refinementVals[refineIndex], charFinalStats, "hp_final")}.</span>,
+  passiveDescription: (refineIndex, charFinalStats) => <span>Each Elemental Orb or Particle collected restores {refinementVals[refineIndex]}% HP{DisplayPercent(refinementVals[refineIndex], charFinalStats, "finalHP")}.</span>,
   description: "A handy steel sword which contains scissors, a magnifying glass, tinder, and other useful items in its sheath.",
   baseStats: {
     main: [40, 53, 69, 86, 102, 121, 138, 154, 171, 187, 207, 223, 239, 259, 275, 292, 311, 327, 344, 363, 380, 396, 415, 432, 448],

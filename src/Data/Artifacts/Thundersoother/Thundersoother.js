@@ -22,7 +22,7 @@ let artifact = {
   setEffects: {
     2: {
       text: <span><span className="text-electro">Electro RES</span> increased by 40%</span>,
-      stats: { electro_ele_res: 40 }
+      stats: { electro_res_: 40 }
     },
     4: {
       text: <span>Increases DMG against enemies affected by <span className="text-electro">Electro</span> by 35%.</span>,
@@ -31,7 +31,7 @@ let artifact = {
         sourceKey: "Thundersoother_4",
         maxStack: 1,
         stats: {
-          all_dmg_bonus: 35,
+          dmg_: 35,
         }
       }
     }

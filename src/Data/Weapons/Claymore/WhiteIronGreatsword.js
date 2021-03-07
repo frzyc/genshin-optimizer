@@ -7,7 +7,7 @@ const weapon = {
   img: WhiteIronGreatsword,
   rarity: 3,
   passiveName: "Cull the Weak",
-  passiveDescription: (refineIndex, charFinalStats) => <span>Defeating an opponent restores {refinementVals[refineIndex]}% HP{DisplayPercent(refinementVals[refineIndex], charFinalStats, "hp_final")}.</span>,
+  passiveDescription: (refineIndex, charFinalStats) => <span>Defeating an opponent restores {refinementVals[refineIndex]}% HP{DisplayPercent(refinementVals[refineIndex], charFinalStats, "finalHP")}.</span>,
   description: "A claymore made from white iron. Lightweight without compromising on power. Effective even when wielded by one of average strength, it is extremely deadly in the hands of a physically stronger wielder.",
   baseStats: {
     main: [39, 50, 65, 79, 94, 113, 127, 141, 155, 169, 189, 202, 216, 236, 249, 263, 282, 296, 309, 329, 342, 355, 375, 388, 401],

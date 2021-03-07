@@ -1,5 +1,5 @@
-import ElementalData from "./Data/ElementalData";
-import { ReactionMatrix, Formulas, StatData } from "./StatData";
+import { Formulas, StatData } from "./StatData"
+import { ReactionMatrix, hitTypes, hitMoves, hitElements, transformativeReactions, amplifyingReactions } from "./StatConstants"
 
 export default class Stat {
   //do not instantiate.
@@ -34,8 +34,8 @@ export default class Stat {
 
   static getPrintableFormulaStatKeyList = (statList = [], modifiers = {}) => {
     let formulaKeys = Object.keys(FormulaText)
-    let modifiersKeys = Object.keys(modifiers)
-    return statList.filter(statKey => formulaKeys.includes(statKey) || modifiersKeys.includes(statKey))
+    let newModifiersKeys = Object.keys(modifiers).filter(x => !formulaKeys.includes(x))
+    return [...newModifiersKeys, ...formulaKeys].filter((key) => statList.includes(key))
   }
 
   static printFormula = (statKey, stats, modifiers = {}, expand = true) => {
@@ -62,152 +62,98 @@ function f(options, statKey) {
   return <span className="text-nowrap"><b>{statName}</b> <span className="text-info">{value}{statUnit}</span></span>
 }
 
-const FormulaText = {
-  //HP
-  hp_final: (o) => <span>{f(o, "hp_base")} * ( 1 + {f(o, "hp_")} ) + {f(o, "hp")}</span>,
-  //ATK
-  atk_base: (o) => <span>{f(o, "atk_character_base")} + {f(o, "atk_weapon")} </span>,
-  atk_final: (o) => <span>{f(o, "atk_base")} * ( 1 + {f(o, "atk_")} ) + {f(o, "atk")}</span>,
-  //DEF
-  def_final: (o) => <span>{f(o, "def_base")} * ( 1 + {f(o, "def_")} ) + {f(o, "def")}</span>,
-
-  //NORMAL
-  norm_atk_dmg: (o) => <span>{f(o, "atk_final")} * {f(o, "norm_atk_bonus_multi")} * {f(o, "enemy_level_multi")} * {f(o, "enemy_phy_res_multi")}</span>,
-  norm_atk_crit_dmg: (o) => <span>{f(o, "norm_atk_dmg")} * {f(o, "crit_dmg_multi")}</span>,
-  norm_atk_avg_dmg: (o) => <span>{f(o, "norm_atk_dmg")} * {f(o, "norm_atk_crit_multi")}</span>,
-  norm_atk_crit_multi: (o) => <span>( 1 + Min[( {f(o, "crit_rate")} + {f(o, "norm_atk_crit_rate")} ), 100%] * {f(o, "crit_dmg")} )</span>,
-  norm_atk_bonus_multi: (o) => <span>( 1 + {f(o, "phy_dmg_bonus")} + {f(o, "norm_atk_dmg_bonus")} + {f(o, "all_dmg_bonus")} )</span>,
-
-  //CHARGED
-  char_atk_dmg: (o) => <span>{f(o, "atk_final")} * {f(o, "char_atk_bonus_multi")} * {f(o, "enemy_level_multi")} * {f(o, "enemy_phy_res_multi")}</span>,
-  char_atk_crit_dmg: (o) => <span>{f(o, "char_atk_dmg")} * {f(o, "crit_dmg_multi")}</span>,
-  char_atk_avg_dmg: (o) => <span>{f(o, "char_atk_dmg")} * {f(o, "char_atk_crit_multi")}</span>,
-  char_atk_crit_multi: (o) => <span>( 1 + Min[( {f(o, "crit_rate")} + {f(o, "char_atk_crit_rate")} ), 100%] * {f(o, "crit_dmg")} )</span>,
-  char_atk_bonus_multi: (o) => <span>( 1 + {f(o, "phy_dmg_bonus")} + {f(o, "char_atk_dmg_bonus")} + {f(o, "all_dmg_bonus")} )</span>,
-
-  //PLUNGE
-  plunge_dmg: (o) => <span>{f(o, "atk_final")} * {f(o, "plunge_bonus_multi")} * {f(o, "enemy_level_multi")} * {f(o, "enemy_phy_res_multi")}</span>,
-  plunge_crit_dmg: (o) => <span>{f(o, "plunge_dmg")} * {f(o, "crit_dmg_multi")}</span>,
-  plunge_avg_dmg: (o) => <span>{f(o, "plunge_dmg")} * {f(o, "crit_multi")}</span>,
-  plunge_bonus_multi: (o) => <span>( 1 + {f(o, "phy_dmg_bonus")} + {f(o, "plunge_atk_dmg_bonus")} + {f(o, "all_dmg_bonus")} )</span>,
-
-  phy_dmg: (o) => <span>{f(o, "atk_final")} * {f(o, "phy_bonus_multi")} * {f(o, "enemy_level_multi")} * {f(o, "enemy_phy_res_multi")}</span>,
-  phy_crit_dmg: (o) => <span>{f(o, "phy_dmg")} * {f(o, "crit_dmg_multi")}</span>,
-  phy_avg_dmg: (o) => <span>{f(o, "phy_dmg")} * {f(o, "crit_multi")}</span>,
-  phy_bonus_multi: (o) => <span>( 1 + {f(o, "phy_dmg_bonus")} + {f(o, "all_dmg_bonus")} )</span>,
-
-  crit_dmg_multi: (o) => <span>( 1 + {f(o, "crit_dmg")} )</span>,
-  crit_multi: (o) => <span>( 1 + Min[ {f(o, "crit_rate")} , 100%] * {f(o, "crit_dmg")} )</span>,
-
-  skill_crit_multi: (o) => <span>( 1 + Min[( {f(o, "crit_rate")} + {f(o, "skill_crit_rate")} ), 100%] * {f(o, "crit_dmg")} )</span>,
-  burst_crit_multi: (o) => <span>( 1 + Min[( {f(o, "crit_rate")} + {f(o, "burst_crit_rate")} ), 100%] * {f(o, "crit_dmg")} )</span>,
-
-  enemy_level_multi: (o) => <span>( 100 + {f(o, "char_level")}) / ( 100 + {f(o, "enemy_level")} + 100 + {f(o, "char_level")})</span>,
-  // enemy_phy_res_multi: (s) => s.enemy_phy_immunity ? 0 : resMultiplier(s.enemy_phy_res)
-  enemy_phy_res_multi: (o) => {
-    let im = o.stats.enemy_phy_immunity
-    if (im)
-      return <span>0 due to immunity</span>
-    let res = (o.stats.enemy_phy_res || 0) / 100
-    if (res < 0) return <span> 1 - {f(o, "enemy_phy_res")} / 2</span>
-    else if (res >= 0.75) return <span> 1 / ( {f(o, "enemy_phy_res")} * 4 + 1)</span>
-    return <span> 1 - {f(o, "enemy_phy_res")} </span>
-  },
-
-  //Elemental Reactions
-  overloaded_dmg: (o) => <span>( 1 + {f(o, "overloaded_dmg_bonus")} ) * {f(o, "ele_mas_multi_y")} * {f(o, "overloaded_multi")} * {f(o, "pyro_enemy_ele_res_multi")}</span>,
-  overloaded_multi: (o) => ReactionMatrix.overloaded.map((val, i) => reactionMatrixElementRenderer(o, val, i)),
-  electrocharged_dmg: (o) => <span>( 1 + {f(o, "electrocharged_dmg_bonus")} ) * {f(o, "ele_mas_multi_y")} * {f(o, "electrocharged_multi")} * {f(o, "electro_enemy_ele_res_multi")}</span>,
-  electrocharged_multi: (o) => ReactionMatrix.electrocharged.map((val, i) => reactionMatrixElementRenderer(o, val, i)),
-  superconduct_dmg: (o) => <span>( 1 + {f(o, "superconduct_dmg_bonus")} ) * {f(o, "ele_mas_multi_y")} * {f(o, "superconduct_multi")} * {f(o, "cryo_enemy_ele_res_multi")}</span>,
-  superconduct_multi: (o) => ReactionMatrix.superconduct.map((val, i) => reactionMatrixElementRenderer(o, val, i)),
-  // burning_dmg:
-  swirl_dmg: (o) => <span>( 1 + {f(o, "swirl_dmg_bonus")} ) * {f(o, "ele_mas_multi_y")} * {f(o, "swirl_multi")} * {f(o, "anemo_enemy_ele_res_multi")}</span>,
-  swirl_multi: (o) => ReactionMatrix.swirl.map((val, i) => reactionMatrixElementRenderer(o, val, i)),
-  shatter_dmg: (o) => <span>( 1 + {f(o, "shatter_dmg_bonus")} ) * {f(o, "ele_mas_multi_y")} * {f(o, "shatter_multi")} * {f(o, "enemy_phy_res_multi")}</span>,
-  shatter_multi: (o) => ReactionMatrix.shattered.map((val, i) => reactionMatrixElementRenderer(o, val, i)),
-  crystalize_dmg: (o) => <span>( 1 + {f(o, "crystalize_dmg_bonus")} ) * {f(o, "ele_mas_multi_z")} * {f(o, "crystalize_multi")}</span>,
-  crystalize_multi: (o) => ReactionMatrix.crystalize.map((val, i) => reactionMatrixElementRenderer(o, val, i)),
-
-  pyro_vaporize_multi: (o) => <span>( 1 + {f(o, "vaporize_dmg_bonus")} )* 1.5 * {f(o, "amp_reaction_base_multi")}</span>,
-  hydro_vaporize_multi: (o) => <span>( 1 + {f(o, "vaporize_dmg_bonus")} )* 2 * {f(o, "amp_reaction_base_multi")}</span>,
-
-  pyro_melt_multi: (o) => <span>( 1 + {f(o, "melt_dmg_bonus")} ) * 2 * {f(o, "amp_reaction_base_multi")}</span>,
-  cryo_melt_multi: (o) => <span>( 1 + {f(o, "melt_dmg_bonus")} ) * 1.5 * {f(o, "amp_reaction_base_multi")}</span>,
-  amp_reaction_base_multi: (o) => <span>1 + 0.189266831 * {f(o, "ele_mas")} * exp^(-0.000505 * {f(o, "ele_mas")}) / 100 </span>,
-
-  ele_mas_multi_x: (o) => <span> 1 + (25 / 9 * {f(o, "ele_mas")} / (1401 + {f(o, "ele_mas")} ))</span>,
-  ele_mas_multi_y: (o) => <span> 1 + (60 / 9 * {f(o, "ele_mas")} / (1401 + {f(o, "ele_mas")} ))</span>,
-  ele_mas_multi_z: (o) => <span> 1 + (40 / 9 * {f(o, "ele_mas")} / (1401 + {f(o, "ele_mas")} ))</span>,
-}
 function reactionMatrixElementRenderer(o, val, i) {
   let sign = val < 0 ? " - " : " + ";
   let disVal = Math.abs(val)
   let powerText = ""
-  if (i > 1) powerText = <span> * ( {f(o, "char_level")} )^{i}</span>
-  if (i === 1) powerText = <span> * {f(o, "char_level")}</span>
+  if (i > 1) powerText = <span> * ( {f(o, "characterLevel")} )^{i}</span>
+  if (i === 1) powerText = <span> * {f(o, "characterLevel")}</span>
   return <span key={i}>{sign}{disVal}{powerText}</span>
 }
 
-//Add Vaporize and Melt stats
-[["pyro_vaporize", "pyro"], ["hydro_vaporize", "hydro"], ["pyro_melt", "pyro"], ["cryo_melt", "cryo"]].forEach(([reactionKey, baseEle]) => {
-  [["norm_atk", "Nomal Attack"], ["char_atk", "Charged Attack"], ["plunge", "Plunging Attack"], ["skill", "Ele. Skill"], ["burst", "Ele. Burst"], ["ele", "Elemental"]].forEach(([atkType, atkTypeName]) =>
-    ["dmg", "avg_dmg", "crit_dmg"].forEach(dmgMode => {
-      let reactionDMGKey = `${reactionKey}_${atkType}_${dmgMode}`
-      let baseDmg = `${baseEle}_${atkType}_${dmgMode}`
-      FormulaText[reactionDMGKey] = (o) => <span>{f(o, `${reactionKey}_multi`)} * {f(o, baseDmg)}</span>
-    }));
-});
-const eleFormulaText = {
-  norm_atk_dmg: (o, ele) => <span>{f(o, `atk_final`)} * {f(o, `${ele}_norm_atk_bonus_multi`)} * {f(o, `enemy_level_multi`)} * {f(o, `${ele}_enemy_ele_res_multi`)}</span>,
-  norm_atk_crit_dmg: (o, ele) => <span>{f(o, `${ele}_norm_atk_dmg`)} * {f(o, `crit_dmg_multi`)}</span>,
-  norm_atk_avg_dmg: (o, ele) => <span>{f(o, `${ele}_norm_atk_dmg`)} * {f(o, `norm_atk_crit_multi`)}</span>,
-  norm_atk_bonus_multi: (o, ele) => <span>( 1 + {f(o, `${ele}_ele_dmg_bonus`)} + {f(o, `norm_atk_dmg_bonus`)} + {f(o, `all_dmg_bonus`)} )</span>,
+// Base Formula
 
-  char_atk_dmg: (o, ele) => <span>{f(o, `atk_final`)} * {f(o, `${ele}_char_atk_bonus_multi`)} * {f(o, `enemy_level_multi`)} * {f(o, `${ele}_enemy_ele_res_multi`)}</span>,
-  char_atk_crit_dmg: (o, ele) => <span>{f(o, `${ele}_char_atk_dmg`)} * {f(o, `crit_dmg_multi`)}</span>,
-  char_atk_avg_dmg: (o, ele) => <span>{f(o, `${ele}_char_atk_dmg`)} * {f(o, `char_atk_crit_multi`)}</span>,
-  char_atk_bonus_multi: (o, ele) => <span>( 1 + {f(o, `${ele}_ele_dmg_bonus`)} + {f(o, `char_atk_dmg_bonus`)} + {f(o, `all_dmg_bonus`)} )</span>,
+const FormulaText = {
+  baseATK: (o) => <span>{f(o, "characterATK")} + {f(o, "weaponATK")} </span>,
+  finalATK: (o) => <span>{f(o, "baseATK")} * ( 1 + {f(o, "atk_")} ) + {f(o, "atk")}</span>,
+  finalHP: (o) => <span>{f(o, "characterHP")} * ( 1 + {f(o, "hp_")} ) + {f(o, "hp")}</span>,
+  finalDEF: (o) => <span>{f(o, "characterDEF")} * ( 1 + {f(o, "def_")} ) + {f(o, "def")}</span>,
 
-  plunge_dmg: (o, ele) => <span>{f(o, `atk_final`)} * {f(o, `${ele}_plunge_bonus_multi`)} * {f(o, `enemy_level_multi`)} * {f(o, `${ele}_enemy_ele_res_multi`)}</span>,
-  plunge_crit_dmg: (o, ele) => <span>{f(o, `${ele}_plunge_dmg`)} * {f(o, `crit_dmg_multi`)}</span>,
-  plunge_avg_dmg: (o, ele) => <span>{f(o, `${ele}_plunge_dmg`)} * {f(o, `crit_multi`)}</span>,
-  plunge_bonus_multi: (o, ele) => <span>( 1 + {f(o, `${ele}_ele_dmg_bonus`)} + {f(o, `plunge_atk_dmg_bonus`)} + {f(o, `all_dmg_bonus`)} )</span>,
+  heal_multi: (o) => <span>( 1 + {f(o, "heal_")} + {f(o, "incHeal_")} )</span>,
 
-  ele_dmg: (o, ele) => <span>{f(o, `atk_final`)} * {f(o, `${ele}_ele_bonus_multi`)} * {f(o, `enemy_level_multi`)} * {f(o, `${ele}_enemy_ele_res_multi`)}</span>,
-  ele_crit_dmg: (o, ele) => <span>{f(o, `${ele}_ele_dmg`)} * {f(o, `crit_dmg_multi`)}</span>,
-  ele_avg_dmg: (o, ele) => <span>{f(o, `${ele}_ele_dmg`)} * {f(o, `crit_multi`)}</span>,
-  ele_bonus_multi: (o, ele) => <span>( 1 + {f(o, `${ele}_ele_dmg_bonus`)} + {f(o, `all_dmg_bonus`)} )</span>,
-
-  skill_dmg: (o, ele) => <span>{f(o, `atk_final`)} * {f(o, `${ele}_skill_bonus_multi`)} * {f(o, `enemy_level_multi`)} * {f(o, `${ele}_enemy_ele_res_multi`)}</span>,
-  skill_crit_dmg: (o, ele) => <span>{f(o, `${ele}_skill_dmg`)} * {f(o, `crit_dmg_multi`)}</span>,
-  skill_avg_dmg: (o, ele) => <span>{f(o, `${ele}_skill_dmg`)} * {f(o, `skill_crit_multi`)}</span>,
-  skill_bonus_multi: (o, ele) => <span>( 1 + {f(o, `${ele}_ele_dmg_bonus`)} + {f(o, `skill_dmg_bonus`)} + {f(o, `all_dmg_bonus`)} )</span>,
-
-  burst_dmg: (o, ele) => <span>{f(o, `atk_final`)} * {f(o, `${ele}_burst_bonus_multi`)} * {f(o, `enemy_level_multi`)} * {f(o, `${ele}_enemy_ele_res_multi`)}</span>,
-  burst_crit_dmg: (o, ele) => <span>{f(o, `${ele}_burst_dmg`)} * {f(o, `crit_dmg_multi`)}</span>,
-  burst_avg_dmg: (o, ele) => <span>{f(o, `${ele}_burst_dmg`)} * {f(o, `burst_crit_multi`)}</span>,
-  burst_bonus_multi: (o, ele) => <span>( 1 + {f(o, `${ele}_ele_dmg_bonus`)} + {f(o, `burst_dmg_bonus`)} + {f(o, `all_dmg_bonus`)} )</span>,
-
-  enemy_ele_res_multi: (o, ele) => {
-    let im = o.stats[`${ele}_enemy_ele_immunity`]
-    if (im)
-      return <span>0 due to immunity</span>
-    let res = (o.stats[`${ele}_enemy_ele_res`] || 0) / 100
-    if (res < 0) return <span> 1 - {f(o, `${ele}_enemy_ele_res`)} / 2</span>
-    else if (res >= 0.75) return <span> 1 / ( {f(o, `${ele}_enemy_ele_res`)} * 4 + 1)</span>
-    return <span> 1 - {f(o, `${ele}_enemy_ele_res`)} </span>
-  },
+  enemyLevel_multi: (o) => <span>( 100 + {f(o, "characterLevel")} ) / ( 100 + {f(o, "enemyLevel")} + 100 + {f(o, "characterLevel")} )</span>,
 }
-//expand the eleFormulaText to elementals
-Object.keys(ElementalData).forEach(eleKey =>
-  Object.entries(eleFormulaText).forEach(([key, func]) =>
-    Object.defineProperty(FormulaText, `${eleKey}_${key}`, {
-      configurable: true,
-      enumerable: true,
-      writable: true,
-      value: (obj) => (func)(obj, eleKey),
-    })))
+
+// Enemy RES
+
+Object.entries(hitElements).forEach(([ele, { name: eleName }]) => {
+  FormulaText[`${ele}_enemyRes_multi`] = (o) => {
+    if (o.stats[`${ele}_enemyImmunity`])
+      return <span>0 (immune)</span>
+    let res = (o.stats[`${ele}_enemyRes_`] || 0) / 100
+    if (res < 0) return <span> 1 - {f(o, `${ele}_enemyRes_`)} / 2</span>
+    else if (res >= 0.75) return <span> 1 / ( {f(o, `${ele}_enemyRes_`)} * 4 + 1)</span>
+    return <span> 1 - {f(o, `${ele}_enemyRes_`)} </span>
+  }
+})
+
+// Crit Rate
+
+Object.entries(hitMoves).forEach(([move, moveName]) => {
+  FormulaText[`final_${move}_critRate_`] = (o) => <span>Min( {f(o, "critRate_")} + {f(o, `${move}_critRate_`)} , 100% )</span>
+})
+
+// Hit
+
+Object.entries(hitElements).forEach(([ele, { name: eleName }]) => {
+  FormulaText[`${ele}_elemental_hit_multi`] = (o) => <span>( 1 + {f(o, `dmg_`)} * {f(o, `${ele}_dmg_`)} ) * {f(o, `enemyLevel_multi`)} * {f(o, `${ele}_enemyRes_multi`)}</span>
+  FormulaText[`${ele}_elemental_hit`] = (o) => <span>{f(o, `finalATK`)} * {f(o, `${ele}_elemental_hit_multi`)}</span>
+  FormulaText[`${ele}_elemental_critHit_multi`] = (o) => <span>( 1 + {f(o, `critDMG_`)} ) * {f(o, `${ele}_elemental_hit_multi`)}</span>
+  FormulaText[`${ele}_elemental_critHit`] = (o) => <span>{f(o, `finalATK`)} * {f(o, `${ele}_elemental_critHit_multi`)}</span>
+  FormulaText[`${ele}_elemental_avgHit_multi`] = (o) => <span>( 1 + {f(o, `critDMG_`)} * {f(o, `critRate_`)} ) * {f(o, `${ele}_elemental_hit_multi`)}</span>
+  FormulaText[`${ele}_elemental_avgHit`] = (o) => <span>{f(o, `finalATK`)} * {f(o, `${ele}_elemental_avgHit_multi`)}</span>
+
+  Object.entries(hitMoves).forEach(([move, moveName]) => {
+    FormulaText[`${ele}_${move}_hit_multi`] = (o) => <span>( 1 + {f(o, `dmg_`)} + {f(o, `${ele}_dmg_`)} + {f(o, `${move}_dmg_`)} ) * {f(o, `enemyLevel_multi`)} * {f(o, `${ele}_enemyRes_multi`)}</span>
+    FormulaText[`${ele}_${move}_hit`] = (o) => <span>{f(o, `finalATK`)} * {f(o, `${ele}_${move}_hit_multi`)}</span>
+    FormulaText[`${ele}_${move}_critHit_multi`] = (o) => <span>( 1 + {f(o, `critDMG_`)} ) * {f(o, `${ele}_${move}_hit_multi`)}</span>
+    FormulaText[`${ele}_${move}_critHit`] = (o) => <span>{f(o, `finalATK`)} * {f(o, `${ele}_${move}_critHit_multi`)}</span>
+    FormulaText[`${ele}_${move}_avgHit_multi`] = (o) => <span>( 1 + {f(o, `critDMG_`)} * {f(o, `final_${move}_critRate_`)} ) * {f(o, `${ele}_${move}_hit_multi`)}</span>
+    FormulaText[`${ele}_${move}_avgHit`] = (o) => <span>{f(o, `finalATK`)} * {f(o, `${ele}_${move}_avgHit_multi`)}</span>
+  })
+})
+
+// Reaction
+
+Object.assign(FormulaText, {
+  amplificative_dmg_: (o) => <span>25 / 9 * {f(o, "eleMas")} / ( 1400 + {f(o, "eleMas")} ) * 100%</span>,
+})
+Object.entries(amplifyingReactions).forEach(([reaction, [name, variants]]) => {
+  Object.entries(variants).forEach(([ele, baseMulti]) => {
+    // Move them to the right position
+    FormulaText[`${ele}_${reaction}_multi`] = (o) => <span>{baseMulti} * ( 100% + {f(o, "amplificative_dmg_")} + {f(o, `${reaction}_dmg_`)} )</span>
+
+    Object.entries(hitTypes).forEach(([type, typeName]) => {
+      FormulaText[`${ele}_${reaction}_elemental_${type}`] = (o) => <span>{f(o, `${ele}_elemental_${type}`)} * {f(o, `${ele}_${reaction}_multi`)}</span>
+      Object.entries(hitMoves).forEach(([move, moveName]) => {
+        FormulaText[`${ele}_${reaction}_${move}_${type}`] = (o) => <span>{f(o, `${ele}_${move}_${type}`)} * {f(o, `${ele}_${reaction}_multi`)}</span>
+      })
+    })
+  })
+})
+
+Object.assign(FormulaText, {
+  transformative_dmg_: (o) => <span>60 / 9 * {f(o, "eleMas")} / ( 1400 + {f(o, "eleMas")} ) * 100%</span>,
+})
+Object.entries(transformativeReactions).forEach(([reaction, [reactionName, ele, baseMulti]]) => {
+  FormulaText[`${reaction}_multi`] = (o) => ReactionMatrix[reaction].map((val, i) => reactionMatrixElementRenderer(o, val, i))
+  FormulaText[`${reaction}_hit`] = (o) => <span>( 100% + {f(o, `transformative_dmg_`)} + {f(o, `${reaction}_dmg_`)} ) * {f(o, `${reaction}_multi`)} * {f(o, `${ele}_enemyRes_multi`)}</span>
+})
+Object.assign(FormulaText, {
+  crystalize_eleMas_: (o) => <span>40 / 9 * {f(o, "eleMas")} / ( 1400 + {f(o, "eleMas")} ) * 100%</span>,
+  crystalize_multi: (o) => ReactionMatrix["crystalize"].map((val, i) => reactionMatrixElementRenderer(o, val, i)),
+  crystalize_hit: (o) => <span>( 100% + {f(o, "crystalize_dmg_")} + {f(o, "crystalize_eleMas_")} ) * {f(o, "crystalize_multi")}</span>,
+})
 
 //checks for development
 process.env.NODE_ENV === "development" && Object.keys(Formulas).forEach(key => {
@@ -216,7 +162,3 @@ process.env.NODE_ENV === "development" && Object.keys(Formulas).forEach(key => {
 process.env.NODE_ENV === "development" && Object.keys(Formulas).forEach(key => {
   if (!StatData[key]) console.error(`Formula "${key}" does not have a corresponding entry in StatData`)
 })
-
-export {
-  FormulaText,
-};

@@ -66,6 +66,8 @@ function objMultiplication(obj, multi) {
     if (typeof obj[prop] === "number") obj[prop] = obj[prop] * multi
   })
 }
+// const getObjectKeysRecursive = (obj) => Object.values(obj).reduce((a, prop) => typeof prop === "object" ? [...a, ...getObjectKeysRecursive(prop)] : a, Object.keys(obj))
+const getObjectKeysRecursive = (obj) => typeof obj === "object" ? Object.values(obj).flatMap(getObjectKeysRecursive).concat(Object.keys(obj)) : (typeof obj === "string" ? [obj] : [])
 export {
   getRandomInt,
   getRandomIntInclusive,
@@ -82,5 +84,6 @@ export {
   getArrLastElement,
   strPadLeft,
   hammingDistance,
-  objMultiplication
+  objMultiplication,
+  getObjectKeysRecursive
 }

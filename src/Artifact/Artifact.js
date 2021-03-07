@@ -90,8 +90,8 @@ export default class Artifact {
   static getMainStatValue = (key, numStars, level, defVal = 0) => {
     let main = this.getMainStatValues(numStars, key)[level]
     if (main) return main
-    else if (key?.includes("_ele_dmg_bonus")) //because in the database its still stored as ele_dmg_bonus
-      return this.getMainStatValue("ele_dmg_bonus", numStars, level, defVal)
+    else if (key?.includes("_dmg_")) // because in the database its still stored as ele_dmg_
+      return this.getMainStatValue("ele_dmg_", numStars, level, defVal)
     return defVal
   }
 
@@ -114,8 +114,7 @@ export default class Artifact {
   static numberOfSubstatUnlocked = (state) =>
     state.substats.reduce((sum, cur) =>
       sum + (cur && cur.value ? 1 : 0), 0);
-  static getSubstatRollData = (subStatKey, numStars) => (subStatKey && numStars) ?
-    ArtifactSubStatsData[subStatKey][numStars] : []
+  static getSubstatRollData = (subStatKey, numStars) => ArtifactSubStatsData?.[subStatKey]?.[numStars] ?? []
   static getSubstatRolls = (subStatKey, subStatValue, numStars, defVal = []) => {
     if (!numStars || !subStatKey || typeof subStatValue !== "number" || !subStatValue) return defVal
     let rollData = this.getSubstatRollData(subStatKey, numStars)
@@ -263,15 +262,15 @@ export default class Artifact {
   }
 
   //database manipulation
-  static equipArtifactOnChar(artifactId, characterId) {
-    let art = ArtifactDatabase.getArtifact(artifactId);
+  static equipArtifactOnChar(artifactId, characterKey) {
+    let art = ArtifactDatabase.get(artifactId);
     if (!art) return;
     let currentLocation = art.location;
-    let intendedLocation = (characterId || "")
+    let intendedLocation = (characterKey || "")
     if (currentLocation === intendedLocation) return;
     let slotKey = art.slotKey
     let artifactToSwapWithid = CharacterDatabase.getArtifactIDFromSlot(intendedLocation, slotKey)
-    let artifactToSwapWith = ArtifactDatabase.getArtifact(artifactToSwapWithid)
+    let artifactToSwapWith = ArtifactDatabase.get(artifactToSwapWithid)
 
     //update artifact
     if (artifactToSwapWith) ArtifactDatabase.swapLocations(art, artifactToSwapWith)

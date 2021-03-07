@@ -18,7 +18,7 @@ const weapon = {
     sourceKey: "EbonyBow",
     maxStack: 1,
     stats: (refineIndex) => ({
-      all_dmg_bonus: refinementVals[refineIndex]
+      dmg_: refinementVals[refineIndex]
     })
   }
 }

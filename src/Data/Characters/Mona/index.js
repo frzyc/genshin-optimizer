@@ -27,9 +27,9 @@ const hitPercent = [
 ]
 
 const charged_atk = [149.72, 160.95, 172.18, 187.15, 198.38, 209.61, 224.58, 239.55, 254.52, 269.5, 285.07, 305.43, 325.79, 346.15, 366.51]
-const plunge_dmg = [56.83, 61.45, 66.08, 72.69, 77.31, 82.6, 89.87, 97.14, 104.41, 112.34, 120.27, 128.2, 136.12, 144.05, 151.98]
-const plunge_dmg_low = [113.63, 122.88, 132.13, 145.35, 154.59, 165.17, 179.7, 194.23, 208.77, 224.62, 240.48, 256.34, 272.19, 288.05, 303.9]
-const plunge_dmg_high = [141.93, 153.49, 165.04, 181.54, 193.1, 206.3, 224.45, 242.61, 260.76, 280.57, 300.37, 320.18, 339.98, 359.79, 379.59]
+const plunging_dmg = [56.83, 61.45, 66.08, 72.69, 77.31, 82.6, 89.87, 97.14, 104.41, 112.34, 120.27, 128.2, 136.12, 144.05, 151.98]
+const plunging_dmg_low = [113.63, 122.88, 132.13, 145.35, 154.59, 165.17, 179.7, 194.23, 208.77, 224.62, 240.48, 256.34, 272.19, 288.05, 303.9]
+const plunging_dmg_high = [141.93, 153.49, 165.04, 181.54, 193.1, 206.3, 224.45, 242.61, 260.76, 280.57, 300.37, 320.18, 339.98, 359.79, 379.59]
 
 //SKILL
 const eleSkill = {
@@ -40,7 +40,7 @@ const eleSkill = {
 //BURST
 const eleBurst = {
   bubble_explosion: [442.4, 475.58, 508.76, 553, 586.18, 619.36, 663.6, 707.84, 752.08, 796.32, 840.56, 884.8, 940.1, 995.4, 1050.7],
-  dmg_bonus: [42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 60, 60, 60, 60, 60],
+  dmg_: [42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 60, 60, 60, 60, 60],
   omen_duration: [4, 4, 4, 4.5, 4.5, 4.5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
 }
 
@@ -55,12 +55,12 @@ let char = {
   constellationName: "Astrolabos",
   titles: ["Astral Reflection", "Enigmatic Astrologer"],
   baseStat: {
-    hp_base: [810, 2102, 2797, 4185, 4678, 5383, 6041, 6752, 7246, 7964, 8458, 9184, 9677, 10409],
-    atk_character_base: [22, 58, 77, 115, 129, 148, 167, 186, 200, 220, 233, 253, 267, 287],
-    def_base: [51, 132, 176, 263, 294, 338, 379, 424, 455, 500, 531, 576, 607, 653]
+    characterHP: [810, 2102, 2797, 4185, 4678, 5383, 6041, 6752, 7246, 7964, 8458, 9184, 9677, 10409],
+    characterATK: [22, 58, 77, 115, 129, 148, 167, 186, 200, 220, 233, 253, 267, 287],
+    characterDEF: [51, 132, 176, 263, 294, 338, 379, 424, 455, 500, 531, 576, 607, 653]
   },
   specializeStat: {
-    key: "ener_rech",
+    key: "enerRech_",
     value: [0, 0, 0, 0, 8, 8, 16, 16, 16, 16, 24, 24, 32, 32]
   },
   talent: {
@@ -73,17 +73,19 @@ let char = {
         fields: hitPercent.map((percentArr, i) =>
         ({
           text: `${i + 1}-Hit DMG`,
-          basicVal: (tlvl, stats, c) => <span>{percentArr[tlvl]}% {Stat.printStat(Character.getTalentStatKey("norm_atk", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (percentArr[tlvl] / 100) * stats[Character.getTalentStatKey("norm_atk", c)],
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("norm_atk", c),
+          basicVal: (tlvl, stats, c) => <span>{percentArr[tlvl]}% {Stat.printStat(Character.getTalentStatKey("normal", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (percentArr[tlvl] / 100) * stats[Character.getTalentStatKey("normal", c)],
+          formula: (tlvl, _, c) => ({ [Character.getTalentStatKey("normal", c)]: percentArr[tlvl] / 100 }),
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("normal", c),
         }))
       }, {
         text: <span><strong>Charged Attack</strong> Consumes a certain amount of Stamina to deal <span className="text-hydro">AoE Hydro DMG</span> after a short casting time.</span>,
         fields: [{
           text: `Charged Attack DMG`,
-          basicVal: (tlvl, stats, c) => <span>{charged_atk[tlvl]}% {Stat.printStat(Character.getTalentStatKey("char_atk", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (charged_atk[tlvl] / 100) * stats[Character.getTalentStatKey("char_atk", c)],
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("char_atk", c),
+          basicVal: (tlvl, stats, c) => <span>{charged_atk[tlvl]}% {Stat.printStat(Character.getTalentStatKey("charged", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (charged_atk[tlvl] / 100) * stats[Character.getTalentStatKey("charged", c)],
+          formula: (tlvl, _, c) => ({ [Character.getTalentStatKey("charged", c)]: charged_atk[tlvl] / 100 }),
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("charged", c),
         }, {
           text: `Stamina Cost`,
           value: 50,
@@ -92,19 +94,22 @@ let char = {
         text: <span><strong>Plunging Attack</strong> Gathering the might of Hydro, Mona plunges towards the ground from mid-air, damaging all opponents in her path. Deals <span className="text-hydro">AoE Hydro DMG</span> upon impact with the ground.</span>,
         fields: [{
           text: `Plunge DMG`,
-          basicVal: (tlvl, stats, c) => <span>{plunge_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunge", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (plunge_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("plunge", c)],
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunge", c),
+          basicVal: (tlvl, stats, c) => <span>{plunging_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunging", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (plunging_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("plunging", c)],
+          formula: (tlvl, _, c) => ({ [Character.getTalentStatKey("plunging", c)]: plunging_dmg[tlvl] / 100 }),
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunging", c),
         }, {
           text: `Low Plunge DMG`,
-          basicVal: (tlvl, stats, c) => <span>{plunge_dmg_low[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunge", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (plunge_dmg_low[tlvl] / 100) * stats[Character.getTalentStatKey("plunge", c)],
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunge", c),
+          basicVal: (tlvl, stats, c) => <span>{plunging_dmg_low[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunging", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (plunging_dmg_low[tlvl] / 100) * stats[Character.getTalentStatKey("plunging", c)],
+          formula: (tlvl, _, c) => ({ [Character.getTalentStatKey("plunging", c)]: plunging_dmg_low[tlvl] / 100 }),
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunging", c),
         }, {
           text: `High Plunge DMG`,
-          basicVal: (tlvl, stats, c) => <span>{plunge_dmg_high[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunge", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (plunge_dmg_high[tlvl] / 100) * stats[Character.getTalentStatKey("plunge", c)],
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunge", c),
+          basicVal: (tlvl, stats, c) => <span>{plunging_dmg_high[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunging", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (plunging_dmg_high[tlvl] / 100) * stats[Character.getTalentStatKey("plunging", c)],
+          formula: (tlvl, _, c) => ({ [Character.getTalentStatKey("plunging", c)]: plunging_dmg_high[tlvl] / 100 }),
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunging", c),
         }]
       }],
     },
@@ -126,11 +131,13 @@ let char = {
           text: "DoT",
           basicVal: (tlvl, stats, c) => <span>{eleSkill.dot[tlvl]}% {Stat.printStat(Character.getTalentStatKey("skill", c), stats)}</span>,
           finalVal: (tlvl, stats, c) => (eleSkill.dot[tlvl] / 100) * stats[Character.getTalentStatKey("skill", c)],
+          formula: (tlvl, _, c) => ({ [Character.getTalentStatKey("skill", c)]: eleSkill.dot[tlvl] / 100 }),
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("skill", c),
         }, {
           text: "Explosion DMG",
           basicVal: (tlvl, stats, c) => <span>{eleSkill.skill_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("skill", c), stats)}</span>,
           finalVal: (tlvl, stats, c) => (eleSkill.skill_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("skill", c)],
+          formula: (tlvl, _, c) => ({ [Character.getTalentStatKey("skill", c)]: eleSkill.skill_dmg[tlvl] / 100 }),
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("skill", c),
         }, {
           text: "CD",
@@ -158,6 +165,7 @@ let char = {
           text: "Illusory Bubble Explosion DMG",
           basicVal: (tlvl, stats, c) => <span>{eleBurst.bubble_explosion[tlvl]}% {Stat.printStat(Character.getTalentStatKey("burst", c), stats)}</span>,
           finalVal: (tlvl, stats, c) => (eleBurst.bubble_explosion[tlvl] / 100) * stats[Character.getTalentStatKey("burst", c)],
+          formula: (tlvl, _, c) => ({ [Character.getTalentStatKey("burst", c)]: eleBurst.bubble_explosion[tlvl] / 100 }),
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("burst", c),
         }, {
           text: "CD",
@@ -168,9 +176,9 @@ let char = {
         }],
         conditional: (tlvl, c, a) => {
           let c1 = c >= 1 ? {
-            electrocharged_dmg_bonus: 15,
-            vaporize_dmg_bonus: 15,
-            swirl_dmg_bonus: 15
+            electrocharged_dmg_: 15,
+            vaporize_dmg_: 15,
+            swirl_dmg_: 15
           } : {}
           return {
             type: "character",
@@ -179,7 +187,7 @@ let char = {
             sourceKey: "mona",
             maxStack: 1,
             stats: {
-              all_dmg_bonus: eleBurst.dmg_bonus[tlvl],
+              dmg_: eleBurst.dmg_[tlvl],
               ...c1,
               //TODO frozen duration as a stat 
             },
@@ -222,8 +230,9 @@ let char = {
         </span>,
         fields: [(con, a) => a >= 1 && {
           text: "Explosion DMG",
-          basicVal: (tlvl, stats, c) => <span>{eleSkill.skill_dmg[Character.getTalentLevelKey(c, "skill", con)]}% * 50% {Stat.printStat(Character.getTalentStatKey("skill", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (eleSkill.skill_dmg[Character.getTalentLevelKey(c, "skill", con)] / 200) * stats[Character.getTalentStatKey("skill", c)],
+          basicVal: (tlvl, stats, c) => <span>{eleSkill.skill_dmg[Character.getTalentLevelKey(c, "skill")]}% * 50% {Stat.printStat(Character.getTalentStatKey("skill", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (eleSkill.skill_dmg[Character.getTalentLevelKey(c, "skill")] / 200) * stats[Character.getTalentStatKey("skill", c)],
+          formula: (tlvl, _, c) => ({ [Character.getTalentStatKey("skill", c)]: eleSkill.skill_dmg[Character.getTalentLevelKey(c, "skill")] / 200 }),
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("skill", c),
         }, (c, a) => a >= 1 && {
           text: "Phantom Duration",
@@ -236,7 +245,7 @@ let char = {
       img: passive2,
       document: [{ text: <span>Increases Mona's <span className="text-hydro">Hydro DMG Bonus</span> by a degree equivalent to 20% of her Energy Recharge rate.</span>, }],
       stats: (c, a) => a >= 4 && {
-        modifiers: { hydro_ele_dmg_bonus: { ener_rech: 0.2 } },
+        modifiers: { hydro_dmg_: { enerRech_: 0.2 } },
       }
     },
     passive3: {
@@ -282,7 +291,7 @@ let char = {
           sourceKey: "mona",
           maxStack: 1,
           stats: {
-            crit_rate: 15,
+            critRate_: 15,
           },
         },
       }],
@@ -305,7 +314,7 @@ let char = {
           sourceKey: "mona",
           maxStack: 3,
           stats: {
-            char_atk_dmg_bonus: 60,
+            charged_dmg_: 60,
           },
           fields: [{
             text: "Duration",

@@ -1,91 +1,67 @@
 import { deepClone, loadFromLocalStorage, saveToLocalStorage } from "../Util/Util";
 var initiated = false
 var characterDatabase = {};
-var charIdIndex = 1;
 
 export default class CharacterDatabase {
   //do not instantiate.
   constructor() {
-    if (this instanceof CharacterDatabase) {
-      throw Error('A static class cannot be instantiated.');
-    }
+    if (this instanceof CharacterDatabase) throw Error('A static class cannot be instantiated.');
   }
-  static isInvalid = (char) => !char || !char.name || !char.characterKey || !char.levelKey
+  static isInvalid = (char) => !char || !char.characterKey || !char.levelKey
   static getCharacterDatabase = () => deepClone(characterDatabase);
-  static getCharacterIdList = () => Object.keys(characterDatabase);
+  static getCharacterKeyList = () => Object.keys(characterDatabase);
   static getIdNameList = () => Object.entries(characterDatabase).map(([id, char]) => [id, char.name]);
   static populateDatebaseFromLocalStorage = () => {
     if (initiated && process.env.NODE_ENV !== "development") return false;
-    Object.keys(localStorage).filter(key => key.includes("character_")).forEach(id => {
-      if (!characterDatabase[id]) {
-        let character = loadFromLocalStorage(id);
+    Object.keys(localStorage).filter(key => key.startsWith("char_")).forEach(key => {
+      let [, characterKey] = key.split("char_")
+      if (!characterDatabase[characterKey]) {
+        let character = loadFromLocalStorage(key);
         if (!character) return;
-        if (this.isInvalid(character)) {
-          this.removeCharacterById(id);
-          return;
-        }
-        if (!character.equippedArtifacts) {
-          character.equippedArtifacts = {}
-          saveToLocalStorage(id, character)
-        }
-        characterDatabase[id] = character;
+        characterDatabase[characterKey] = character;
       }
     })
     initiated = true
     return true
   }
-  static addCharacter = (char) => {
-    if (this.isInvalid(char)) return;
-    //generate id using charIdIndex
-    let id = `character_${charIdIndex++}`
-    while (localStorage.getItem(id) !== null)
-      id = `character_${charIdIndex++}`
-    let dchar = deepClone(char)
-    dchar.id = id;
-    saveToLocalStorage(id, dchar);
-    characterDatabase[id] = dchar;
-    return id;
-  }
   static updateCharacter = (char) => {
     if (this.isInvalid(char)) return;
-    let id = char.id;
-    let dchar = deepClone(char)
-    saveToLocalStorage(id, dchar);
-    characterDatabase[id] = dchar;
+    const dchar = deepClone(char)
+    saveToLocalStorage(`char_${char.characterKey}`, dchar);
+    characterDatabase[char.characterKey] = dchar;
   }
-  static getCharacter = (id) => id ? characterDatabase[id] : null
+  static get = (characterKey) => characterDatabase?.[characterKey] ?? null
 
-  static removeCharacterById = (id) => {
-    delete characterDatabase[id];
-    localStorage.removeItem(id);
+  static remove = (characterKey) => {
+    delete characterDatabase[characterKey];
+    localStorage.removeItem(`char_${characterKey}`);
   }
-  static getArtifactIDFromSlot = (charid, slotKey) => {
-    if (!charid || !slotKey) return null;
-    let char = this.getCharacter(charid)
-    if (char.equippedArtifacts)
-      return char.equippedArtifacts[slotKey]
-  }
-  static equipArtifact = (charid, art) => {
-    let char = this.getCharacter(charid)
+  static getArtifactIDFromSlot = (characterKey, slotKey) =>
+    this.get(characterKey)?.equippedArtifacts?.[slotKey] ?? null
+
+  static equipArtifact = (characterKey, art) => {
+    const char = this.get(characterKey)
     if (!char || !art || !art.slotKey) return
-    if (!char.equippedArtifacts)
-      char.equippedArtifacts = {};
+    if (!char.equippedArtifacts) char.equippedArtifacts = {};
     char.equippedArtifacts[art.slotKey] = art.id;
     this.updateCharacter(char)
   }
-  static unequipArtifactOnSlot = (charid, slotKey) => {
-    let char = this.getCharacter(charid)
+  static unequipArtifactOnSlot = (characterKey, slotKey) => {
+    const char = this.get(characterKey)
     if (!char || !slotKey) return
-    if (!char.equippedArtifacts || !char.equippedArtifacts[slotKey]) return;
+    if (!char?.equippedArtifacts?.[slotKey]) return;
     char.equippedArtifacts[slotKey] = "";
     this.updateCharacter(char)
   }
-  static equipArtifactBuild = (characterId, artifactIds) => {
-    let character = this.getCharacter(characterId)
+  static equipArtifactBuild = (characterKey, artifactIds) => {
+    const character = this.get(characterKey)
     if (!character) return;
-    character.equippedArtifacts = {}
-    Object.entries(artifactIds).forEach(([key, artid]) =>
-      character.equippedArtifacts[key] = artid)
+    character.equippedArtifacts = artifactIds
     CharacterDatabase.updateCharacter(character);
+  }
+  //helper function for testing
+  static clearDatabase = () => {
+    characterDatabase = {}
+    initiated = false
   }
 }

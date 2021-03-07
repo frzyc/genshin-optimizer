@@ -2,27 +2,27 @@ import { faDice, faDiceD20, faFirstAid, faFistRaised, faMagic, faShieldAlt, faSy
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const StatIcon = {
-  hp_base: faTint,
-  hp_final: faTint,
+  characterHP: faTint,
+  finalHP: faTint,
   hp_: faTint,
   hp: faTint,
 
-  atk_base: faFistRaised,
-  atk_character_base: faFistRaised,
-  atk_final: faFistRaised,
+  baseATK: faFistRaised,
+  characterATK: faFistRaised,
+  finalATK: faFistRaised,
   atk_: faFistRaised,
   atk: faFistRaised,
 
-  def_base: faShieldAlt,
-  def_final: faShieldAlt,
+  characterDEF: faShieldAlt,
+  finalDEF: faShieldAlt,
   def_: faShieldAlt,
   def: faShieldAlt,
 
-  ele_mas: faMagic,
-  crit_rate: faDice,
-  crit_dmg: faDiceD20,
-  ener_rech: faSync,
-  heal_bonu: faFirstAid,
+  eleMas: faMagic,
+  critRate_: faDice,
+  critDMG_: faDiceD20,
+  enerRech_: faSync,
+  heal_: faFirstAid,
 }
 
 const StatIconEle = (statKey) =>

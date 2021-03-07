@@ -1,4 +1,5 @@
 const ElementalData = {
+  physical: { name: "Physical" },
   anemo: { name: "Anemo" },
   geo: { name: "Geo" },
   electro: { name: "Electro" },

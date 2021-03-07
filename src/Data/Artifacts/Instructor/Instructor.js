@@ -22,7 +22,7 @@ let artifact = {
   setEffects: {
     2: {
       text: "Increases Elemental Mastery by 80.",
-      stats: { ele_mas: 80 }
+      stats: { eleMas: 80 }
     },
     4: {
       text: "After using Elemental Skill, increases all party members' Elemental Mastery by 120 for 8s.",
@@ -31,7 +31,7 @@ let artifact = {
         sourceKey: "Instructor_4",
         maxStack: 1,
         stats: {
-          ele_mas: 120,//TODO all party conditional
+          eleMas: 120,//TODO all party conditional
         }
       }
     }

@@ -48,7 +48,7 @@ export default class ArtifactEditor extends React.Component {
     const artToSave = deepClone(this.state)
     delete artToSave.artifactIdToEdit;
     if (typeof id === "string") {
-      const art = ArtifactDatabase.getArtifact(id)
+      const art = ArtifactDatabase.get(id)
       if (art) {
         artToSave.id = art.id
         artToSave.location = art.location
@@ -188,7 +188,7 @@ export default class ArtifactEditor extends React.Component {
   }
   componentDidUpdate = (prevProps, prevState) => {
     if (this.props.artifactIdToEdit && prevProps.artifactIdToEdit !== this.props.artifactIdToEdit)
-      this.setState(deepClone(ArtifactDatabase.getArtifact(this.props.artifactIdToEdit)))
+      this.setState(deepClone(ArtifactDatabase.get(this.props.artifactIdToEdit)))
   }
   render() {
     let errMsgs = Artifact.substatsValidation(this.state)

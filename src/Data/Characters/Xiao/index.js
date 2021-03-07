@@ -28,9 +28,9 @@ const hitPercent = [
 ]
 
 const charged_atk_dmg = [121.09, 129.34, 137.6, 148.61, 156.86, 166.5, 178.88, 191.26, 203.65, 216.03, 228.42, 240.8, 253.18, 265.57, 277.95]
-const plunge_dmg = [81.83, 88.49, 95.16, 104.67, 111.33, 118.94, 129.41, 139.88, 150.35, 161.76, 173.18, 184.6, 196.02, 207.44, 218.86]
-const plunge_dmg_low = [163.63, 176.95, 190.27, 209.3, 222.62, 237.84, 258.77, 279.7, 300.63, 323.46, 346.29, 369.12, 391.96, 414.79, 437.62]
-const plunge_dmg_high = [204.39, 221.02, 237.66, 261.42, 278.06, 297.07, 323.21, 349.36, 375.5, 404.02, 432.54, 461.06, 489.57, 518.09, 546.61]
+const plunging_dmg = [81.83, 88.49, 95.16, 104.67, 111.33, 118.94, 129.41, 139.88, 150.35, 161.76, 173.18, 184.6, 196.02, 207.44, 218.86]
+const plunging_dmg_low = [163.63, 176.95, 190.27, 209.3, 222.62, 237.84, 258.77, 279.7, 300.63, 323.46, 346.29, 369.12, 391.96, 414.79, 437.62]
+const plunging_dmg_high = [204.39, 221.02, 237.66, 261.42, 278.06, 297.07, 323.21, 349.36, 375.5, 404.02, 432.54, 461.06, 489.57, 518.09, 546.61]
 
 //SKILL
 const eleSkill = {
@@ -54,12 +54,12 @@ let char = {
   constellationName: "Alatus Nemeseos",
   titles: ["Vigilant Yaksha", "Guardian Yaksha", "Nuo Dance of Evil Conquering", "Alatus, the Golden-Winged King", "Conqueror of Demons"],
   baseStat: {
-    hp_base: [991, 2572, 3422, 5120, 5724, 6586, 7391, 8262, 8866, 9744, 10348, 11236, 11840, 12736],
-    atk_character_base: [27, 71, 94, 140, 157, 181, 203, 227, 243, 267, 284, 308, 325, 349],
-    def_base: [62, 161, 215, 321, 359, 413, 464, 519, 556, 612, 649, 705, 743, 799]
+    characterHP: [991, 2572, 3422, 5120, 5724, 6586, 7391, 8262, 8866, 9744, 10348, 11236, 11840, 12736],
+    characterATK: [27, 71, 94, 140, 157, 181, 203, 227, 243, 267, 284, 308, 325, 349],
+    characterDEF: [62, 161, 215, 321, 359, 413, 464, 519, 556, 612, 649, 705, 743, 799]
   },
   specializeStat: {
-    key: "crit_rate",
+    key: "critRate_",
     value: [0, 0, 0, 0, 4.8, 4.8, 9.6, 9.6, 9.6, 9.6, 14.4, 14.4, 19.2, 19.2]
   },
 
@@ -73,17 +73,19 @@ let char = {
         fields: hitPercent.map((percentArr, i) =>
         ({
           text: `${i + 1}-Hit DMG`,
-          basicVal: (tlvl, stats, c) => <span>{percentArr[tlvl]}%{(i === 0 || i === 3) ? " × 2" : ""} {Stat.printStat(Character.getTalentStatKey("norm_atk", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (percentArr[tlvl] / 100) * ((i === 0 || i === 3) ? 2 : 1) * stats[Character.getTalentStatKey("norm_atk", c)],
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("norm_atk", c),
+          basicVal: (tlvl, stats, c) => <span>{percentArr[tlvl]}%{(i === 0 || i === 3) ? " × 2" : ""} {Stat.printStat(Character.getTalentStatKey("normal", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (percentArr[tlvl] / 100) * ((i === 0 || i === 3) ? 2 : 1) * stats[Character.getTalentStatKey("normal", c)],
+          formula: (tlvl, _, c) => ({ [Character.getTalentStatKey("normal", c)]: (percentArr[tlvl] / 100) * ((i === 0 || i === 3) ? 2 : 1) }),
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("normal", c),
         }))
       }, {
         text: <span><strong>Charged Attack</strong> Consumes a certain amount of Stamina to perform an upward thrust.</span>,
         fields: [{
           text: `Charged Attack DMG`,
-          basicVal: (tlvl, stats, c) => <span>{charged_atk_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("char_atk", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (charged_atk_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("char_atk", c)],
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("char_atk", c),
+          basicVal: (tlvl, stats, c) => <span>{charged_atk_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("charged", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (charged_atk_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("charged", c)],
+          formula: (tlvl, _, c) => ({ [Character.getTalentStatKey("charged", c)]: charged_atk_dmg[tlvl] / 100 }),
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("charged", c),
         }, {
           text: `Stamina Cost`,
           value: 25,
@@ -92,19 +94,22 @@ let char = {
         text: <span><strong>Plunging Attack</strong> Plunges from mid-air to strike the ground from below, damaging opponents along the path and dealing AoE DMG upon impact. Xiao does not take DMG from performing Plunging Attacks.</span>,
         fields: [{
           text: `Plunge DMG`,
-          basicVal: (tlvl, stats, c) => <span>{plunge_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunge", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (plunge_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("plunge", c)],
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunge", c),
+          basicVal: (tlvl, stats, c) => <span>{plunging_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunging", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (plunging_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("plunging", c)],
+          formula: (tlvl, _, c) => ({ [Character.getTalentStatKey("plunging", c)]: plunging_dmg[tlvl] / 100 }),
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunging", c),
         }, {
           text: `Low Plunge DMG`,
-          basicVal: (tlvl, stats, c) => <span>{plunge_dmg_low[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunge", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (plunge_dmg_low[tlvl] / 100) * stats[Character.getTalentStatKey("plunge", c)],
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunge", c),
+          basicVal: (tlvl, stats, c) => <span>{plunging_dmg_low[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunging", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (plunging_dmg_low[tlvl] / 100) * stats[Character.getTalentStatKey("plunging", c)],
+          formula: (tlvl, _, c) => ({ [Character.getTalentStatKey("plunging", c)]: plunging_dmg_low[tlvl] / 100 }),
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunging", c),
         }, {
           text: `High Plunge DMG`,
-          basicVal: (tlvl, stats, c) => <span>{plunge_dmg_high[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunge", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (plunge_dmg_high[tlvl] / 100) * stats[Character.getTalentStatKey("plunge", c)],
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunge", c),
+          basicVal: (tlvl, stats, c) => <span>{plunging_dmg_high[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunging", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (plunging_dmg_high[tlvl] / 100) * stats[Character.getTalentStatKey("plunging", c)],
+          formula: (tlvl, _, c) => ({ [Character.getTalentStatKey("plunging", c)]: plunging_dmg_high[tlvl] / 100 }),
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunging", c),
         }]
       }],
     },
@@ -120,6 +125,7 @@ let char = {
           text: "Skill DMG",
           basicVal: (tlvl, stats, c) => <span>{eleSkill.skill_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("skill", c), stats)}</span>,
           finalVal: (tlvl, stats, c) => (eleSkill.skill_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("skill", c)],
+          formula: (tlvl, _, c) => ({ [Character.getTalentStatKey("skill", c)]: eleSkill.skill_dmg[tlvl] / 100 }),
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("skill", c),
         }, {
           text: "CD",
@@ -164,9 +170,9 @@ let char = {
           sourceKey: "xiao",
           maxStack: 1,
           stats: {
-            norm_atk_dmg_bonus: eleBurst.atk_bonus[tlvl],
-            char_atk_dmg_bonus: eleBurst.atk_bonus[tlvl],
-            plunge_atk_dmg_bonus: eleBurst.atk_bonus[tlvl],
+            normal_dmg_: eleBurst.atk_bonus[tlvl],
+            charged_dmg_: eleBurst.atk_bonus[tlvl],
+            plunging_dmg_: eleBurst.atk_bonus[tlvl],
           }
         })
       }],
@@ -183,7 +189,7 @@ let char = {
           sourceKey: "xiao",
           maxStack: 5,
           stats: {
-            all_dmg_bonus: 5,
+            dmg_: 5,
           }
         }
       }],
@@ -200,7 +206,7 @@ let char = {
           sourceKey: "xiao",
           maxStack: 3,
           stats: {
-            skill_dmg_bonus: 15,
+            skill_dmg_: 15,
           }
         }
       }],
@@ -229,7 +235,7 @@ let char = {
           sourceKey: "xiao",
           maxStack: 1,
           stats: {
-            ener_rech: 25,
+            enerRech_: 25,
           }
         }
       }],
@@ -244,7 +250,7 @@ let char = {
       name: "Transcension: Extinction of Suffering",
       img: c4,
       document: [{
-        text: (tlvl, stats, c) => <span>When Xiao's HP falls below 50%{DisplayPercent(50, stats, "hp_final")}, he gains a 100% DEF Bonus.</span>,
+        text: (tlvl, stats, c) => <span>When Xiao's HP falls below 50%{DisplayPercent(50, stats, "finalHP")}, he gains a 100% DEF Bonus.</span>,
         conditional: (tlvl, c, a) => c >= 4 && {
           type: "character",
           conditionalKey: "ExtinctionofSuffering",

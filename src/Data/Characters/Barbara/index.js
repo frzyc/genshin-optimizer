@@ -24,9 +24,9 @@ const hitPercent = [
 ]
 
 const charged_atk_dmg = [166.24, 178.71, 191.18, 207.8, 220.27, 232.74, 249.36, 265.98, 282.61, 299.23, 316.52, 339.13, 361.74, 384.35, 406.96]
-const plunge_dmg = [56.83, 61.45, 66.08, 72.69, 77.31, 82.6, 89.87, 97.14, 104.41, 112.34, 120.27, 128.2, 136.12, 144.05, 151.98]
-const plunge_dmg_low = [113.63, 122.88, 132.13, 145.35, 154.59, 165.17, 179.7, 194.23, 208.77, 224.62, 240.48, 256.34, 272.19, 288.05, 303.9]
-const plunge_dmg_high = [141.93, 153.49, 165.04, 181.54, 193.1, 206.3, 224.45, 242.61, 260.76, 280.57, 300.37, 320.18, 339.98, 359.79, 379.59]
+const plunging_dmg = [56.83, 61.45, 66.08, 72.69, 77.31, 82.6, 89.87, 97.14, 104.41, 112.34, 120.27, 128.2, 136.12, 144.05, 151.98]
+const plunging_dmg_low = [113.63, 122.88, 132.13, 145.35, 154.59, 165.17, 179.7, 194.23, 208.77, 224.62, 240.48, 256.34, 272.19, 288.05, 303.9]
+const plunging_dmg_high = [141.93, 153.49, 165.04, 181.54, 193.1, 206.3, 224.45, 242.61, 260.76, 280.57, 300.37, 320.18, 339.98, 359.79, 379.59]
 
 //SKILL
 const letShowStats = {
@@ -52,9 +52,9 @@ let char = {
   constellationName: "Crater",
   titles: ["Shining Idol", "Deaconess"],
   baseStat: {
-    hp_base: [821, 2108, 2721, 4076, 4512, 5189, 5770, 6448, 6884, 7561, 7996, 8674, 9110, 9787],
-    atk_character_base: [13, 34, 44, 66, 73, 84, 94, 105, 112, 123, 130, 141, 148, 159],
-    def_base: [56, 144, 186, 279, 308, 355, 394, 441, 470, 517, 546, 593, 623, 669]
+    characterHP: [821, 2108, 2721, 4076, 4512, 5189, 5770, 6448, 6884, 7561, 7996, 8674, 9110, 9787],
+    characterATK: [13, 34, 44, 66, 73, 84, 94, 105, 112, 123, 130, 141, 148, 159],
+    characterDEF: [56, 144, 186, 279, 308, 355, 394, 441, 470, 517, 546, 593, 623, 669]
   },
   specializeStat: {
     key: "hp_",
@@ -69,17 +69,19 @@ let char = {
         fields: hitPercent.map((percentArr, i) =>
         ({
           text: `${i + 1}-Hit DMG`,
-          basicVal: (tlvl, stats, c) => <span>{percentArr[tlvl]}% {Stat.printStat(Character.getTalentStatKey("norm_atk", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (percentArr[tlvl] / 100) * stats[Character.getTalentStatKey("norm_atk", c)],
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("norm_atk", c),
+          basicVal: (tlvl, stats, c) => <span>{percentArr[tlvl]}% {Stat.printStat(Character.getTalentStatKey("normal", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (percentArr[tlvl] / 100) * stats[Character.getTalentStatKey("normal", c)],
+          formula: (tlvl, stats, c) => ({ [Character.getTalentStatKey("normal", c)]: percentArr[tlvl] / 100 }),
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("normal", c),
         }))
       }, {
         text: <span><strong>Charged Attack</strong> Consumes a certain amount of Stamina to deal <span className="text-hydro">AoE Hydro DMG</span> after a short casting time.</span>,
         fields: [{
           text: `Charged Attack DMG`,
-          basicVal: (tlvl, stats, c) => <span>{charged_atk_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("char_atk", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (charged_atk_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("char_atk", c)],
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("char_atk", c),
+          basicVal: (tlvl, stats, c) => <span>{charged_atk_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("charged", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (charged_atk_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("charged", c)],
+          formula: (tlvl, stats, c) => ({ [Character.getTalentStatKey("charged", c)]: charged_atk_dmg[tlvl] / 100 }),
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("charged", c),
         }, {
           text: `Stamina Cost`,
           value: `50`,
@@ -88,19 +90,22 @@ let char = {
         text: <span><strong>Plunging Attack</strong> Gathering the might of Hydro, Barbara plunges towards the ground from mid-air, damaging all enemies in her path. Deals <span className="text-hydro">AoE Hydro DMG</span> upon impact with the ground.</span>,
         fields: [{
           text: `Plunge DMG`,
-          basicVal: (tlvl, stats, c) => <span>{plunge_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunge", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (plunge_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("plunge", c)],
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunge", c),
+          basicVal: (tlvl, stats, c) => <span>{plunging_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunging", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (plunging_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("plunging", c)],
+          formula: (tlvl, stats, c) => ({ [Character.getTalentStatKey("plunging", c)]: plunging_dmg[tlvl] / 100 }),
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunging", c),
         }, {
           text: `Low Plunge DMG`,
-          basicVal: (tlvl, stats, c) => <span>{plunge_dmg_low[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunge", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (plunge_dmg_low[tlvl] / 100) * stats[Character.getTalentStatKey("plunge", c)],
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunge", c),
+          basicVal: (tlvl, stats, c) => <span>{plunging_dmg_low[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunging", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (plunging_dmg_low[tlvl] / 100) * stats[Character.getTalentStatKey("plunging", c)],
+          formula: (tlvl, stats, c) => ({ [Character.getTalentStatKey("plunging", c)]: plunging_dmg_low[tlvl] / 100 }),
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunging", c),
         }, {
           text: `High Plunge DMG`,
-          basicVal: (tlvl, stats, c) => <span>{plunge_dmg_high[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunge", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (plunge_dmg_high[tlvl] / 100) * stats[Character.getTalentStatKey("plunge", c)],
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunge", c),
+          basicVal: (tlvl, stats, c) => <span>{plunging_dmg_high[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunging", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (plunging_dmg_high[tlvl] / 100) * stats[Character.getTalentStatKey("plunging", c)],
+          formula: (tlvl, stats, c) => ({ [Character.getTalentStatKey("plunging", c)]: plunging_dmg_high[tlvl] / 100 }),
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunging", c),
         }]
       }],
     },
@@ -109,8 +114,8 @@ let char = {
       img: skill,
       document: [{
         text: <span>
-          Summons water droplets resembling musical notes that form a Melody Loop, dealing <span className="text-hydro">Hydro DMG</span> to surrounding enemies and afflicting them with the <span className="text-hydro">Wet</span> status.
-        <h6>Melody Loop:</h6>
+          <p className="mb-2">Summons water droplets resembling musical notes that form a Melody Loop, dealing <span className="text-hydro">Hydro DMG</span> to surrounding enemies and afflicting them with the <span className="text-hydro">Wet</span> status.</p>
+          <h6>Melody Loop:</h6>
           <ul className="mb-0">
             <li>Barbara's Normal Attacks heal your characters in the party and nearby allied characters for a certain amount of HP, which scales with Barbara's Max HP.</li>
             <li>Her Charged Attack generates 4 times the amount of healing.</li>
@@ -120,16 +125,21 @@ let char = {
         </span>,
         fields: [{
           text: "HP Regeneration Per Hit",
-          basicVal: (tlvl, stats, c) => <span>{letShowStats.hp[tlvl]}% {Stat.printStat("hp_final", stats)} + {letShowStats.hp_flat[tlvl]}</span>,
-          finalVal: (tlvl, stats, c) => (letShowStats.hp[tlvl] / 100) * stats.hp_final + letShowStats.hp_flat[tlvl],
+          basicVal: (tlvl, stats, c) => <span>( {letShowStats.hp[tlvl]}% {Stat.printStat("finalHP", stats)} + {letShowStats.hp_flat[tlvl]} ) * {Stat.printStat("heal_multi", stats)}</span>,
+          finalVal: (tlvl, stats, c) => ((letShowStats.hp[tlvl] / 100) * stats.finalHP + letShowStats.hp_flat[tlvl]) * stats.heal_multi,
+          formula: (tlvl) => ({ heal_multi: { finalHP: letShowStats.hp[tlvl] / 100, flat: letShowStats.hp_flat[tlvl] } }),
+          variant: "success"
         }, {
           text: "Continuous Regeneration",
-          basicVal: (tlvl, stats, c) => <span>{letShowStats.cont_hp[tlvl]}% {Stat.printStat("hp_final", stats)} + {letShowStats.cont_hp_flat[tlvl]}</span>,
-          finalVal: (tlvl, stats, c) => (letShowStats.cont_hp[tlvl] / 100) * stats.hp_final + letShowStats.cont_hp_flat[tlvl],
+          basicVal: (tlvl, stats, c) => <span>( {letShowStats.cont_hp[tlvl]}% {Stat.printStat("finalHP", stats)} + {letShowStats.cont_hp_flat[tlvl]} ) * {Stat.printStat("heal_multi", stats)}</span>,
+          finalVal: (tlvl, stats, c) => ((letShowStats.cont_hp[tlvl] / 100) * stats.finalHP + letShowStats.cont_hp_flat[tlvl]) * stats.heal_multi,
+          formula: (tlvl) => ({ heal_multi: { finalHP: letShowStats.cont_hp[tlvl] / 100, flat: letShowStats.cont_hp_flat[tlvl] } }),
+          variant: "success"
         }, {
           text: "Droplet DMG",
           basicVal: (tlvl, stats, c) => <span>{letShowStats.droplet_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("skill", c), stats)}</span>,
           finalVal: (tlvl, stats, c) => (letShowStats.droplet_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("skill", c)],
+          formula: (tlvl, stats, c) => ({ [Character.getTalentStatKey("skill", c)]: letShowStats.droplet_dmg[tlvl] / 100 }),
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("skill", c),
         }, (c, a) => ({
           text: "Duration",
@@ -147,7 +157,7 @@ let char = {
           sourceKey: "barbara",
           maxStack: 1,
           stats: {
-            stamina_dec: 12,
+            staminaDec_: 12,
           }
         }
       }, {
@@ -158,7 +168,7 @@ let char = {
           sourceKey: "barbara",
           maxStack: 1,
           stats: {
-            hydro_ele_dmg_bonus: 15,
+            hydro_dmg_: 15,
           }
         }
       }],
@@ -171,8 +181,8 @@ let char = {
         text: <span>Heals nearby allied characters and your characters in the party for a large amount of HP that scales with Barbara's Max HP.</span>,
         fields: [{
           text: "Regeneration",
-          basicVal: (tlvl, stats, c) => <span>{shiningMiracle.hp[tlvl]}% {Stat.printStat("hp_final", stats)} + {shiningMiracle.flat[tlvl]}</span>,
-          finalVal: (tlvl, stats, c) => (shiningMiracle.hp[tlvl] / 100) * stats.hp_final + shiningMiracle.flat[tlvl],
+          basicVal: (tlvl, stats, c) => <span>{shiningMiracle.hp[tlvl]}% {Stat.printStat("finalHP", stats)} + {shiningMiracle.flat[tlvl]}</span>,
+          finalVal: (tlvl, stats, c) => (shiningMiracle.hp[tlvl] / 100) * stats.finalHP + shiningMiracle.flat[tlvl],
         }, {
           text: "CD",
           value: "20s",

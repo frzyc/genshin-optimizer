@@ -22,18 +22,18 @@ let artifact = {
   setEffects: {
     2: {
       text: <span><span className="text-anemo">Anemo DMG Bonus</span> +15%</span>,
-      stats: { anemo_ele_dmg_bonus: 15 }
+      stats: { anemo_dmg_: 15 }
     },
     4: {
       text: "Increases Swirl DMG by 60%. Decreases opponent's Elemental RES to the element infused in the Swirl by 40% for 10s.",
-      stats: { swirl_dmg_bonus: 60 },
-      conditional: Object.entries(ElementalData).filter(([key]) => key !== "anemo" && key !== "geo").map(([key, { name }]) => ({
+      stats: { swirl_dmg_: 60 },
+      conditional: Object.entries(ElementalData).filter(([key]) => key !== "anemo" && key !== "geo" && key !== "physical").map(([key, { name }]) => ({
         type: "artifact",
         condition: <span>Swirl <span className={`text-${key}`}>{name}</span></span>,
         sourceKey: "ViridescentVenerer_4",
         maxStack: 1,
         stats: {
-          [`${key}_enemy_ele_res`]: -40,
+          [`${key}_enemyRes_`]: -40,
         }
       }))//TODO this is most likely a team effect.
     }

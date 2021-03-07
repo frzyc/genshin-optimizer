@@ -22,7 +22,7 @@ let artifact = {
   setEffects: {
     2: {
       text: "Increases the effectiveness of shields by 35%",
-      stats: { pow_shield: 35 }
+      stats: { powShield_: 35 }
     },
     4: {
       text: "Gain an additional 40% Normal and Charged Attack DMG while under the protection of a shield.",
@@ -31,8 +31,8 @@ let artifact = {
         sourceKey: "RetracingBolide_4",
         maxStack: 1,
         stats: {
-          norm_atk_dmg_bonus: 40,
-          char_atk_dmg_bonus: 40
+          normal_dmg_: 40,
+          charged_dmg_: 40
         }
       }
     }

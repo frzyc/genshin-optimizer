@@ -7,7 +7,7 @@ const weapon = {
   img: RecurveBow,
   rarity: 3,
   passiveName: "Cull the Weak",
-  passiveDescription: (refineIndex, charFinalStats) => <span>Defeating an opponent restores {refinementVals[refineIndex]}% HP{DisplayPercent(refinementVals[refineIndex], charFinalStats, "hp_final")}.</span>,
+  passiveDescription: (refineIndex, charFinalStats) => <span>Defeating an opponent restores {refinementVals[refineIndex]}% HP{DisplayPercent(refinementVals[refineIndex], charFinalStats, "finalHP")}.</span>,
   description: "It is said that this bow can shoot down eagles in flight, but ultimately how true that is depends on the skill of the archer.",
   baseStats: {
     main: [38, 48, 61, 73, 86, 105, 117, 129, 140, 151, 171, 182, 193, 212, 223, 234, 253, 264, 274, 294, 304, 314, 334, 344, 354],

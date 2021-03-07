@@ -22,7 +22,7 @@ let artifact = {
   setEffects: {
     2: {
       text: "Energy Recharge +20%",
-      stats: { ener_rech: 20 }
+      stats: { enerRech_: 20 }
     },
     4: {
       text: "Gaining Elemental Particles or Orbs gives 3 Energy to all party members who have a bow or a catalyst equipped. Can only occur once every 3s.",

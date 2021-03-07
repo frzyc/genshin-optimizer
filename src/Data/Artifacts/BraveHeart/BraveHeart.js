@@ -31,7 +31,7 @@ let artifact = {
         sourceKey: "BraveHeart_4",
         maxStack: 1,
         stats: {
-          all_dmg_bonus: 30,
+          dmg_: 30,
         }
       }
     }

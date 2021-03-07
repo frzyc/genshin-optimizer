@@ -1,76 +1,43 @@
-import React, { useState } from 'react';
-import { Accordion, Alert, Badge, Button, Card, Col, Row } from 'react-bootstrap';
+import React from 'react';
+import { Alert, Badge, Button, Card, Col, Row } from 'react-bootstrap';
 import Artifact from '../../Artifact/Artifact';
 import ArtifactCard from '../../Artifact/ArtifactCard';
 import ConditionalSelector from '../../Components/ConditionalSelector';
-import { DisplayNewBuildDiff, DisplayStats } from '../../Components/StatDisplay';
 import Stat from "../../Stat";
-import { GetDependencies } from '../../StatDependency';
 import ConditionalsUtil from '../../Util/ConditionalsUtil';
 import Character from "../Character";
+import DamageOptionsAndCalculation from './DamageOptionsAndCalculation';
+import StatDisplayComponent from './StatDisplayComponent';
 
-function CharacterArtifactPane({ character, character: { characterKey, compareAgainstEquipped, artifactConditionals }, equippedBuild, newBuild, editable, forceUpdate, setState }) {
-  let [showOther, setShowOther] = useState(false)
+function CharacterArtifactPane({ character, character: { characterKey, artifactConditionals }, equippedBuild, newBuild, editable, forceUpdate, setState, setOverride }) {
   //choose which one to display stats for
   let build = newBuild ? newBuild : equippedBuild
   let artifactsAssumeFull = newBuild ? newBuild.finalStats?.artifactsAssumeFull : character.artifactsAssumeFull
   if (newBuild) artifactConditionals = newBuild.artifactConditionals
   const statKeys = Character.getDisplayStatKeys(characterKey)
-
-  let displayStatProps = { character, build, editable }
-  let displayNewBuildProps = { character, equippedBuild, newBuild, editable }
-
   const setStateArtifactConditional = (setKey, setNumKey, conditionalNum) => setState?.(state =>
     ({ artifactConditionals: ConditionalsUtil.setConditional(state.artifactConditionals, { srcKey: setKey, srcKey2: setNumKey }, conditionalNum) }))
-  const formulaKeys = Stat.getPrintableFormulaStatKeyList(GetDependencies(build?.finalStats?.modifiers, statKeys), build?.finalStats?.modifiers)
   return <>
+    {Character.hasTalentPage(characterKey) && <Row><Col xs={12} className="mb-2">
+      <DamageOptionsAndCalculation {...{ character, setState, setOverride, newBuild, equippedBuild }} />
+    </Col></Row>}
     <Row>
       <Col className="mb-2">
-        <Accordion>
-          <Card className="h-100" bg="lightcontent" text="lightfont">
-            <Card.Header>
-              <Row>
-                <Col>
-                  <span>Character Stats</span>
-                </Col>
-                <Col xs="auto">
-                  <Accordion.Toggle as={Button} variant="info" eventKey="showOtherStats" onClick={() => setShowOther(!showOther)} size="sm">
-                    {`${showOther ? "Hide" : "Show"} Calculations`}
-                  </Accordion.Toggle>
-                </Col>
-              </Row>
-            </Card.Header>
-            <Card.Body>
-              <Row>
-                {(newBuild && compareAgainstEquipped) ?
-                  statKeys.map(statKey => <DisplayNewBuildDiff xs={12} md={6} xl={4} key={statKey} {...{ ...displayNewBuildProps, statKey }} />) :
-                  statKeys.map(statKey => <DisplayStats xs={12} md={6} xl={4} key={statKey} {...{ ...displayStatProps, statKey }} />)}
-              </Row>
-              <Accordion.Collapse eventKey="showOtherStats">
-                <Row>
-                  {formulaKeys.map(key => <Col key={key} xs={12} className="mt-2">
-                    <Card bg="darkcontent" text="lightfont">
-                      <Card.Header className="p-2">
-                        {Stat.printStat(key, build.finalStats)}
-                      </Card.Header>
-                      <Card.Body className="p-2">
-                        <small>{Stat.printFormula(key, build.finalStats, build.finalStats.modifiers, false)}</small>
-                      </Card.Body>
-                    </Card>
-                  </Col>
-                  )}
-                </Row>
-              </Accordion.Collapse>
-            </Card.Body>
-            {newBuild ? <Card.Footer>
-              <Button onClick={() => {
-                Character.equipArtifacts(character.id, newBuild.artifactIds)
-                forceUpdate?.()
-              }}>Equip All artifacts to current character</Button>
-              {artifactsAssumeFull && <Alert className="float-right text-right mb-0 py-2" variant="orange" ><b>Assume Main Stats are Fully Leveled</b></Alert>}
-            </Card.Footer> : null}
-          </Card>
-        </Accordion>
+        <Card className="h-100" bg="lightcontent" text="lightfont">
+          <Card.Header>
+            <span>Character Stats</span>
+          </Card.Header>
+          <Card.Body>
+            <StatDisplayComponent {...{ character, equippedBuild, newBuild, statsDisplayKeys: statKeys, build, forceUpdate, setState, setOverride, editable }} />
+          </Card.Body>
+          {newBuild ? <Card.Footer>
+            <Button onClick={() => {
+              Character.equipArtifacts(characterKey, newBuild.artifactIds)
+              forceUpdate?.()
+            }}>Equip All artifacts to current character</Button>
+            {artifactsAssumeFull && <Alert className="float-right text-right mb-0 py-2" variant="orange" ><b>Assume Main Stats are Fully Leveled</b></Alert>}
+          </Card.Footer> : null}
+        </Card>
       </Col>
     </Row>
     <Row className="mb-n2">

@@ -23,10 +23,10 @@ let artifact = {
   setEffects: {
     2: {
       text: "Increases incoming healing by 20%.",
-      stats: { inc_heal: 20 }
+      stats: { incHeal_: 20 }
     },
     4: {
-      text: (charFinalStats) => <span>Using Elemental Burst restores 20% HP{DisplayPercent(20, charFinalStats, "hp_final")}.</span>,
+      text: (charFinalStats) => <span>Using Elemental Burst restores 20% HP{DisplayPercent(20, charFinalStats, "finalHP")}.</span>,
     }
   }
 }

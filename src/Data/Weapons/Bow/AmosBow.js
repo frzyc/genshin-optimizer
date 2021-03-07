@@ -15,16 +15,16 @@ const weapon = {
     sub: [10.8, 12.5, 14.7, 16.9, 19.1, 19.1, 21.3, 23.4, 25.6, 27.8, 27.8, 30, 32.2, 32.2, 34.4, 36.5, 36.5, 38.7, 40.9, 40.9, 43.1, 45.3, 45.3, 47.4, 49.6],
   },
   stats: (refineIndex) => ({
-    norm_atk_dmg_bonus: refinementVals[refineIndex],
-    char_atk_dmg_bonus: refinementVals[refineIndex]
+    normal_dmg_: refinementVals[refineIndex],
+    charged_dmg_: refinementVals[refineIndex]
   }),
   conditional: {
     type: "weapon",
     sourceKey: "AmosBow",
     maxStack: 5,
     stats: (refineIndex) => ({
-      norm_atk_dmg_bonus: refinementDmgVals[refineIndex],
-      char_atk_dmg_bonus: refinementDmgVals[refineIndex]
+      normal_dmg_: refinementDmgVals[refineIndex],
+      charged_dmg_: refinementDmgVals[refineIndex]
     })
   }
 }

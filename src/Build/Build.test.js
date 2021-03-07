@@ -97,7 +97,7 @@ describe(`Testing Build`, () => {
         sand: [a[0], a[1]],
       }
       const permutations = [], callback = (arg, stat) => { permutations.push([{ ...arg }, { ...stat }]) }
-      artifactPermutations({}, artifacts, {}, callback)
+      artifactPermutations({ x: 0 }, artifacts, {}, callback)
 
       expect(permutations).toContainEqual([{ flower: a[0], plume: b[0], sand: a[1] }, { x: 4 }])
     })
@@ -109,10 +109,10 @@ describe(`Testing Build`, () => {
         clock: [a[2], d[0]]
       }
       const permutations = [], callback = (arg, stat) => { permutations.push([{ ...arg }, { ...stat }]) }
-      artifactPermutations({}, artifacts, { "A": { 2: { x: 11 }, 4: { y: 7 } } }, callback)
+      artifactPermutations({ x: 0, y: 0 }, artifacts, { "A": { 2: { x: 11 }, 4: { y: 7 } } }, callback)
 
-      expect(permutations).toContainEqual([{ flower: c[0], plume: b[0], sand: a[1], clock: d[0] }, { x: 6 }]) // no set
-      expect(permutations).toContainEqual([{ flower: a[0], plume: b[0], sand: a[1], clock: a[2] }, { x: 7 + 11 }]) // set 2
+      expect(permutations).toContainEqual([{ flower: c[0], plume: b[0], sand: a[1], clock: d[0] }, { x: 6, y: 0 }]) // no set
+      expect(permutations).toContainEqual([{ flower: a[0], plume: b[0], sand: a[1], clock: a[2] }, { x: 7 + 11, y: 0 }]) // set 2
       expect(permutations).toContainEqual([{ flower: a[0], plume: a[0], sand: a[0], clock: a[2] }, { x: 6 + 11, y: 7 }]) // set 4
     })
     test(`should include sub-stats and main-stats`, () => {
@@ -124,7 +124,7 @@ describe(`Testing Build`, () => {
         clock: [a[2], d[0]]
       }
       const permutations = [], callback = (arg, stat) => { permutations.push([{ ...arg }, { ...stat }]) }
-      artifactPermutations({}, artifacts, [], callback)
+      artifactPermutations({ x: 0, other: 0 }, artifacts, [], callback)
 
       expect(permutations).toContainEqual([{ flower: a[0], plume: b[0], sand: a_, clock: d[0] }, { x: 4.2, other: 2 }])
     })

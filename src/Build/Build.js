@@ -97,12 +97,14 @@ function accumulate(slotKey, art, setCount, accu, stats, artifactSetEffects) {
   setCount[setKey] = (setCount[setKey] ?? 0) + 1
 
   // Add artifact stats
-  stats[art.mainStatKey] = (stats[art.mainStatKey] || 0) + art.mainStatVal
-  art.substats.forEach((substat) =>
-    substat?.key && (stats[substat.key] = (stats[substat.key] || 0) + substat.value))
+  if (art.mainStatKey in stats) stats[art.mainStatKey] += art.mainStatVal
+  art.substats.forEach((substat) => { 
+    if (substat?.key in stats) stats[substat.key] += substat.value
+  })
 
   // Add set effects
   let setEffect = artifactSetEffects[setKey]?.[setCount[setKey]]
-  setEffect && Object.entries(setEffect).forEach(([statKey, val]) =>
-    stats[statKey] = (stats[statKey] || 0) + val)
+  setEffect && Object.entries(setEffect).forEach(([statKey, val]) => {
+    if (statKey in stats) stats[statKey] += val
+  })
 }

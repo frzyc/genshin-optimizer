@@ -22,7 +22,7 @@ let artifact = {
   setEffects: {
     2: {
       text: "Energy Recharge +20%",
-      stats: { ener_rech: 20 }
+      stats: { enerRech_: 20 }
     },
     4: {
       text: "Using an Elemental Burst regenerates 2 Energy for other party members every 2s for 6s. This effect cannot stack.",

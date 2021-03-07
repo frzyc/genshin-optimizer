@@ -149,7 +149,7 @@ export default function UploadDisplay(props) {
 
     let guessLevel = (nStars, mainSKey, mainSVal) => {
       //if level isn't parsed, then we try to guess it
-      let mainStatValues = Artifact.getMainStatValues(nStars, mainSKey.includes("ele_dmg_bonus") ? "ele_dmg_bonus" : mainSKey)
+      let mainStatValues = Artifact.getMainStatValues(nStars, mainSKey.includes("ele_dmg_") ? "ele_dmg_" : mainSKey)
       if (mainStatValues.length > 0) {
         let isFloat = Stat.getStatUnit(mainSKey) === "%"
         let testLevel = mainStatValues.findIndex(val => isFloat ? (Math.abs(mainSVal - val) < 0.1) : (mainSVal === val))
@@ -546,7 +546,7 @@ function parseMainStatKey(recognition, defVal = "") {
     for (const key of Artifact.getMainStatKeys()) {
       if (text.toLowerCase().includes(Stat.getStatNameRaw(key).toLowerCase()))
         return key
-      //use fuzzy compare on the ... Bonus texts. heal_bonu is included.
+      //use fuzzy compare on the ... Bonus texts. heal_ is included.
       if (key.includes("_bonu") && hammingDistance(text.replace(/\W/g, ''), Stat.getStatNameRaw(key).replace(/\W/g, '')) <= 1)
         return key
     }

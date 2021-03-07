@@ -11,7 +11,8 @@ import Image from 'react-bootstrap/Image';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Row from 'react-bootstrap/Row';
 import Tooltip from 'react-bootstrap/Tooltip';
-import { CharacterNameDisplay, CharacterSelectionDropdownList } from '../Components/CharacterSelection';
+import Character from '../Character/Character';
+import { CharacterSelectionDropdownList } from '../Components/CharacterSelection';
 import { Stars } from '../Components/StarDisplay';
 import Stat from '../Stat';
 import Artifact from './Artifact';
@@ -19,15 +20,15 @@ import ArtifactDatabase from './ArtifactDatabase';
 import PercentBadge from './PercentBadge';
 export default function ArtifactCard({ artifactId, artifactObj, forceUpdate, onEdit, onDelete, assumeFull = false }) {
   if (!artifactId && !artifactObj) return null;
-  let art = artifactObj ? artifactObj : ArtifactDatabase.getArtifact(artifactId);
+  const art = artifactObj ? artifactObj : ArtifactDatabase.get(artifactId);
   if (!art) return null;
   let { setKey, slotKey, numStars = 0, level = 0, mainStatKey, substats = [], location = "", lock, currentEfficiency = 0, maximumEfficiency = 0 } = art
   let mainStatLevel = assumeFull ? numStars * 4 : level
   let assFullColor = assumeFull && level !== numStars * 4
   let mainStatVal = <span className={assFullColor ? "text-orange" : ""}>{Artifact.getMainStatValue(mainStatKey, numStars, mainStatLevel, "")}{Stat.getStatUnit(mainStatKey)}</span>
   let artifactValid = substats.every(sstat => (!sstat.key || (sstat.key && sstat.value && sstat?.rolls?.length)))
-  const equipOnChar = (charId) => {
-    Artifact.equipArtifactOnChar(artifactId, charId)
+  const equipOnChar = (charKey) => {
+    Artifact.equipArtifactOnChar(artifactId, charKey)
     forceUpdate?.()
   }
   return (<Card className="h-100" border={`${numStars}star`} bg="lightcontent" text="lightfont">
@@ -80,14 +81,14 @@ export default function ArtifactCard({ artifactId, artifactObj, forceUpdate, onE
       <Row className="d-flex justify-content-between no-gutters">
         {forceUpdate ? <Col xs="auto">
           <Dropdown>
-            <Dropdown.Toggle size="sm" className="text-left"><CharacterNameDisplay id={location} /></Dropdown.Toggle>
+            <Dropdown.Toggle size="sm" className="text-left">{Character.getName(location, "Inventory")}</Dropdown.Toggle>
             <Dropdown.Menu>
-              <Dropdown.Item onClick={() => equipOnChar()}>Inventory</Dropdown.Item>
+              <Dropdown.Item onClick={() => equipOnChar("")}>Inventory</Dropdown.Item>
               <Dropdown.Divider />
-              <CharacterSelectionDropdownList onSelect={cid => equipOnChar(cid)} />
+              <CharacterSelectionDropdownList onSelect={ckey => equipOnChar(ckey)} />
             </Dropdown.Menu>
           </Dropdown>
-        </Col> : <Col xs="auto"><span><CharacterNameDisplay id={location} /></span></Col>}
+        </Col> : <Col xs="auto"><b>{Character.getName(location)}</b></Col>}
         <Col xs="auto">
           <ButtonGroup>
             {forceUpdate ? <OverlayTrigger placement="top"

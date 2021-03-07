@@ -23,12 +23,12 @@ let artifact = {
     2: {
       text: "All Elemental RES increased by 20%",
       stats: {
-        anemo_ele_res: 20,
-        geo_ele_res: 20,
-        electro_ele_res: 20,
-        hydro_ele_res: 20,
-        pyro_ele_res: 20,
-        cryo_ele_res: 20,
+        anemo_res_: 20,
+        geo_res_: 20,
+        electro_res_: 20,
+        hydro_res_: 20,
+        pyro_res_: 20,
+        cryo_res_: 20,
       }
     },
     4: {
@@ -40,7 +40,7 @@ let artifact = {
           sourceKey: "TinyMiracle_4",
           maxStack: 1,
           stats: {
-            anemo_ele_res: 30
+            anemo_res_: 30
           }
         }, {
           type: "artifact",
@@ -48,7 +48,7 @@ let artifact = {
           sourceKey: "TinyMiracle_4",
           maxStack: 1,
           stats: {
-            geo_ele_res: 30
+            geo_res_: 30
           }
         }, {
           type: "artifact",
@@ -56,7 +56,7 @@ let artifact = {
           sourceKey: "TinyMiracle_4",
           maxStack: 1,
           stats: {
-            electro_ele_res: 30
+            electro_res_: 30
           }
         }, {
           type: "artifact",
@@ -64,7 +64,7 @@ let artifact = {
           sourceKey: "TinyMiracle_4",
           maxStack: 1,
           stats: {
-            hydro_ele_res: 30
+            hydro_res_: 30
           }
         }, {
           type: "artifact",
@@ -72,7 +72,7 @@ let artifact = {
           sourceKey: "TinyMiracle_4",
           maxStack: 1,
           stats: {
-            pyro_ele_res: 30
+            pyro_res_: 30
           }
         }, {
           type: "artifact",
@@ -80,7 +80,7 @@ let artifact = {
           sourceKey: "TinyMiracle_4",
           maxStack: 1,
           stats: {
-            cryo_ele_res: 30
+            cryo_res_: 30
           }
         },
       ]

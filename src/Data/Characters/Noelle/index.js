@@ -25,10 +25,10 @@ const hitPercent = [
 ]
 
 const charged_atk_spinnning = [50.74, 54.87, 59, 64.9, 69.03, 73.75, 80.24, 86.73, 93.22, 100.3, 107.38, 114.46, 121.54, 128.62, 135.7]
-const charged_atk_final = [90.47, 97.84, 105.2, 115.72, 123.08, 131.5, 143.07, 154.64, 166.22, 178.84, 191.46, 204.09, 216.71, 229.34, 241.96]
-const plunge_dmg = [74.59, 80.66, 86.73, 95.4, 101.47, 108.41, 117.95, 127.49, 137.03, 147.44, 157.85, 168.26, 178.66, 189.07, 199.48]
-const plunge_dmg_low = [149.14, 161.28, 173.42, 190.77, 202.91, 216.78, 235.86, 254.93, 274.01, 294.82, 315.63, 336.44, 357.25, 378.06, 398.87]
-const plunge_dmg_high = [186.29, 201.45, 216.62, 238.28, 253.44, 270.77, 294.6, 318.42, 342.25, 368.25, 394.24, 420.23, 446.23, 472.22, 498.21]
+const charged_finalATK = [90.47, 97.84, 105.2, 115.72, 123.08, 131.5, 143.07, 154.64, 166.22, 178.84, 191.46, 204.09, 216.71, 229.34, 241.96]
+const plunging_dmg = [74.59, 80.66, 86.73, 95.4, 101.47, 108.41, 117.95, 127.49, 137.03, 147.44, 157.85, 168.26, 178.66, 189.07, 199.48]
+const plunging_dmg_low = [149.14, 161.28, 173.42, 190.77, 202.91, 216.78, 235.86, 254.93, 274.01, 294.82, 315.63, 336.44, 357.25, 378.06, 398.87]
+const plunging_dmg_high = [186.29, 201.45, 216.62, 238.28, 253.44, 270.77, 294.6, 318.42, 342.25, 368.25, 394.24, 420.23, 446.23, 472.22, 498.21]
 
 //SKILL
 const breastplateStats = {
@@ -45,7 +45,7 @@ const sweepingTimeStats = {
   atk_bonu: [40, 43, 46, 50, 53, 56, 60, 64, 68, 72, 76, 80, 85, 90, 95],
 }
 
-let char = {
+const char = {
   name: "Noelle",
   cardImg: card,
   thumbImg: thumb,
@@ -56,9 +56,9 @@ let char = {
   constellationName: "Parma Cordis",
   titles: ["Chivalric Blossom", "Maid of Favonius"],
   baseStat: {
-    hp_base: [1012, 2600, 3356, 5027, 5564, 6400, 7117, 7953, 8490, 9325, 9862, 10698, 11235, 12071],
-    atk_character_base: [16, 41, 53, 80, 88, 101, 113, 126, 134, 148, 156, 169, 178, 191],
-    def_base: [67, 172, 222, 333, 368, 423, 471, 526, 562, 617, 652, 708, 743, 799]
+    characterHP: [1012, 2600, 3356, 5027, 5564, 6400, 7117, 7953, 8490, 9325, 9862, 10698, 11235, 12071],
+    characterATK: [16, 41, 53, 80, 88, 101, 113, 126, 134, 148, 156, 169, 178, 191],
+    characterDEF: [67, 172, 222, 333, 368, 423, 471, 526, 562, 617, 652, 708, 743, 799]
   },
   specializeStat: {
     key: "def_",
@@ -74,22 +74,25 @@ let char = {
         fields: hitPercent.map((percentArr, i) =>
         ({
           text: `${i + 1}-Hit DMG`,
-          basicVal: (tlvl, stats, c) => <span>{percentArr[tlvl]}% {Stat.printStat(Character.getTalentStatKey("norm_atk", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (percentArr[tlvl] / 100) * stats[Character.getTalentStatKey("norm_atk", c)],
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("norm_atk", c),
+          basicVal: (tlvl, stats, c) => <span>{percentArr[tlvl]}% {Stat.printStat(Character.getTalentStatKey("normal", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (percentArr[tlvl] / 100) * stats[Character.getTalentStatKey("normal", c)],
+          formula: (tlvl, stats, c) => ({ [Character.getTalentStatKey("normal", c)]: percentArr[tlvl] / 100 }),
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("normal", c),
         }))
       }, {
         text: <span><strong>Charged Attack</strong> Drains Stamina over time to perform continuous swirling attack on all nearby enemies. At the end of the sequence, performs an additional powerful slash</span>,
         fields: [{
           text: `Spinning DMG`,
-          basicVal: (tlvl, stats, c) => <span>{charged_atk_spinnning[tlvl]}% {Stat.printStat(Character.getTalentStatKey("char_atk", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (charged_atk_spinnning[tlvl] / 100) * stats[Character.getTalentStatKey("char_atk", c)],
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("char_atk", c),
+          basicVal: (tlvl, stats, c) => <span>{charged_atk_spinnning[tlvl]}% {Stat.printStat(Character.getTalentStatKey("charged", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (charged_atk_spinnning[tlvl] / 100) * stats[Character.getTalentStatKey("charged", c)],
+          formula: (tlvl, stats, c) => ({ [Character.getTalentStatKey("charged", c)]: charged_atk_spinnning[tlvl] / 100 }),
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("charged", c),
         }, {
           text: `Spinning Final DMG`,
-          basicVal: (tlvl, stats, c) => <span>{charged_atk_final[tlvl]}% {Stat.printStat(Character.getTalentStatKey("char_atk", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (charged_atk_final[tlvl] / 100) * stats[Character.getTalentStatKey("char_atk", c)],
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("char_atk", c),
+          basicVal: (tlvl, stats, c) => <span>{charged_finalATK[tlvl]}% {Stat.printStat(Character.getTalentStatKey("charged", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (charged_finalATK[tlvl] / 100) * stats[Character.getTalentStatKey("charged", c)],
+          formula: (tlvl, stats, c) => ({ [Character.getTalentStatKey("charged", c)]: charged_finalATK[tlvl] / 100 }),
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("charged", c),
         }, {
           text: `Stamina Cost`,
           value: `40/s`,
@@ -101,19 +104,22 @@ let char = {
         text: <span><strong>Plunging Attack</strong> Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.</span>,
         fields: [{
           text: `Plunge DMG`,
-          basicVal: (tlvl, stats, c) => <span>{plunge_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunge", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (plunge_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("plunge", c)],
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunge", c),
+          basicVal: (tlvl, stats, c) => <span>{plunging_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunging", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (plunging_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("plunging", c)],
+          formula: (tlvl, stats, c) => ({ [Character.getTalentStatKey("plunging", c)]: plunging_dmg[tlvl] / 100 }),
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunging", c),
         }, {
           text: `Low Plunge DMG`,
-          basicVal: (tlvl, stats, c) => <span>{plunge_dmg_low[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunge", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (plunge_dmg_low[tlvl] / 100) * stats[Character.getTalentStatKey("plunge", c)],
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunge", c),
+          basicVal: (tlvl, stats, c) => <span>{plunging_dmg_low[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunging", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (plunging_dmg_low[tlvl] / 100) * stats[Character.getTalentStatKey("plunging", c)],
+          formula: (tlvl, stats, c) => ({ [Character.getTalentStatKey("plunging", c)]: plunging_dmg_low[tlvl] / 100 }),
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunging", c),
         }, {
           text: `High Plunge DMG`,
-          basicVal: (tlvl, stats, c) => <span>{plunge_dmg_high[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunge", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (plunge_dmg_high[tlvl] / 100) * stats[Character.getTalentStatKey("plunge", c)],
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunge", c),
+          basicVal: (tlvl, stats, c) => <span>{plunging_dmg_high[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunging", c), stats)}</span>,
+          finalVal: (tlvl, stats, c) => (plunging_dmg_high[tlvl] / 100) * stats[Character.getTalentStatKey("plunging", c)],
+          formula: (tlvl, stats, c) => ({ [Character.getTalentStatKey("plunging", c)]: plunging_dmg_high[tlvl] / 100 }),
+          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunging", c),
         }]
       },],
     },
@@ -132,17 +138,21 @@ let char = {
         </span>,
         fields: [{
           text: "Skill DMG",
-          basicVal: (tlvl, stats, c) => <span>{breastplateStats.skill_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("skill", c), stats)} * {Stat.printStat("def_final", stats)} / {Stat.printStat("atk_final", stats)}</span>,
-          finalVal: (tlvl, stats, c) => (breastplateStats.skill_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("skill", c)] * stats.def_final / stats.atk_final,
+          basicVal: (tlvl, stats, c) => <span>{breastplateStats.skill_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("skill", c) + "_multi", stats)} * {Stat.printStat("finalDEF", stats)}</span>,
+          finalVal: (tlvl, stats, c) => (breastplateStats.skill_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("skill", c) + "_multi"] * stats.finalDEF,
+          formula: (tlvl, stats, c) => ({ [Character.getTalentStatKey("skill", c) + "_multi"]: { finalDEF: breastplateStats.skill_dmg[tlvl] / 100 } }),
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("skill", c),
         }, {
           text: "Shield DMG Absorption",
-          basicVal: (tlvl, stats, c) => <span>{breastplateStats.shield_def[tlvl]}% {Stat.printStat("def_final", stats)} + {breastplateStats.shield_flat[tlvl]}</span>,
-          finalVal: (tlvl, stats, c) => (breastplateStats.shield_def[tlvl] / 100) * stats.def_final + breastplateStats.shield_flat[tlvl],
+          basicVal: (tlvl, stats, c) => <span>{breastplateStats.shield_def[tlvl]}% {Stat.printStat("finalDEF", stats)} + {breastplateStats.shield_flat[tlvl]}</span>,
+          finalVal: (tlvl, stats, c) => (breastplateStats.shield_def[tlvl] / 100) * stats.finalDEF + breastplateStats.shield_flat[tlvl],
+          formula: (tlvl, stats, c) => ({ finalDEF: breastplateStats.shield_def[tlvl] / 100, flat: breastplateStats.shield_flat[tlvl] }),
         }, {
           text: "Healing",
-          basicVal: (tlvl, stats, c) => <span>{breastplateStats.heal_def[tlvl]}% {Stat.printStat("def_final", stats)} + {breastplateStats.heal_flat[tlvl]}</span>,
-          finalVal: (tlvl, stats, c) => (breastplateStats.heal_def[tlvl] / 100) * stats.def_final + breastplateStats.heal_flat[tlvl],
+          basicVal: (tlvl, stats, c) => <span>( {breastplateStats.heal_def[tlvl]}% {Stat.printStat("finalDEF", stats)} + {breastplateStats.heal_flat[tlvl]} ) * {Stat.printStat("heal_multi", stats)}</span>,
+          finalVal: (tlvl, stats, c) => ((breastplateStats.heal_def[tlvl] / 100) * stats.finalDEF + breastplateStats.heal_flat[tlvl]) * stats.heal_multi,
+          formula: (tlvl, stats, c) => ({ heal_multi: { finalDEF: breastplateStats.heal_def[tlvl] / 100, flat: breastplateStats.heal_flat[tlvl] } }),
+          variant: "success"
         }, (c) => ({
           text: "Trigger Chance",
           value: (tlvl) => <span>{breastplateStats.heal_trigger[tlvl]}%{c >= 1 ? <span> (100% while <b>Sweeping Time</b> and <b>Breastplate</b> are both in effect)</span> : ""}</span>,
@@ -172,16 +182,19 @@ let char = {
           text: "Burst DMG",
           basicVal: (tlvl, stats, c) => <span>{sweepingTimeStats.burst_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("burst", c), stats)}</span>,
           finalVal: (tlvl, stats, c) => (sweepingTimeStats.burst_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("burst", c)],
+          formula: (tlvl, stats, c) => ({ [Character.getTalentStatKey("burst", c)]: sweepingTimeStats.burst_dmg[tlvl] / 100 }),
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("burst", c),
         }, {
           text: "Skill DMG",
           basicVal: (tlvl, stats, c) => <span>{sweepingTimeStats.skill_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("burst", c), stats)}</span>,
           finalVal: (tlvl, stats, c) => (sweepingTimeStats.skill_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("burst", c)],
+          formula: (tlvl, stats, c) => ({ [Character.getTalentStatKey("burst", c)]: sweepingTimeStats.skill_dmg[tlvl] / 100 }),
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("burst", c),
         }, (c) => ({
           text: "ATK Bonus",
-          basicVal: (tlvl, stats) => <span>{sweepingTimeStats.atk_bonu[tlvl]}% {c >= 6 ? "+50% " : ""}{Stat.printStat("def_final", stats)}</span>,
-          finalVal: (tlvl, stats) => ((sweepingTimeStats.atk_bonu[tlvl] + (c >= 6 ? 50 : 0)) / 100) * stats.def_final,
+          basicVal: (tlvl, stats) => <span>{sweepingTimeStats.atk_bonu[tlvl]}% {c >= 6 ? "+50% " : ""}{Stat.printStat("finalDEF", stats)}</span>,
+          finalVal: (tlvl, stats) => ((sweepingTimeStats.atk_bonu[tlvl] + (c >= 6 ? 50 : 0)) / 100) * stats.finalDEF,
+          formula: (tlvl, stats, c) => ({ finalDEF: ((sweepingTimeStats.atk_bonu[tlvl] + (c >= 6 ? 50 : 0)) / 100) }),
         }), (c) => ({
           text: "Duration",
           value: "15s" + (c >= 6 ? " +1s per kill, up to 10s" : ""),
@@ -199,7 +212,7 @@ let char = {
           sourceKey: "noelle",
           maxStack: 1,
           stats: {
-            modifiers: { atk_final: { def_final: (sweepingTimeStats.atk_bonu[tlvl] + (c >= 6 ? 50 : 0)) / 100 } },
+            modifiers: { finalATK: { finalDEF: (sweepingTimeStats.atk_bonu[tlvl] + (c >= 6 ? 50 : 0)) / 100 } },
           },
         })
       }],
@@ -210,7 +223,7 @@ let char = {
       document: [{
         text: (tlvl, stats) => <span>
           When Noelle is in the party but not on the field, this ability triggers automatically when your active character's HP falls below 30%:
-          Creates a shield for your active character that lasts for 20s and absorbs DMG equal to 400% of Noelle's DEF{DisplayPercent(400, stats, "def_final")}. This effect can only occur once every 60s.
+          Creates a shield for your active character that lasts for 20s and absorbs DMG equal to 400% of Noelle's DEF{DisplayPercent(400, stats, "finalDEF")}. This effect can only occur once every 60s.
         </span>
       }],
     },
@@ -241,8 +254,8 @@ let char = {
       img: c2,
       document: [{ text: <span>Decreases Noelle's Stamina Consumption of <b>Charged Attacks</b> by 20% and increases <b>Charged Attack</b> DMG by 15%.</span> }],
       stats: {
-        char_atk_dmg_bonus: 15,
-        stamina_charged_dec: 20,
+        charged_dmg_: 15,
+        staminaChargedDec_: 20,
       }
     },
     constellation3: {
@@ -265,7 +278,7 @@ let char = {
     constellation6: {
       name: "Must Be Spotless",
       img: c6,
-      document: [{ text: (tlvl, stats) => <span><b>Sweeping Time</b> increases ATK by an additional 50% of Noelle's DEF{DisplayPercent(20, stats, "def_final")}. For the skill's duration, adds 1s duration time per opponent defeated, up to 10s.</span> }]
+      document: [{ text: (tlvl, stats) => <span><b>Sweeping Time</b> increases ATK by an additional 50% of Noelle's DEF{DisplayPercent(20, stats, "finalDEF")}. For the skill's duration, adds 1s duration time per opponent defeated, up to 10s.</span> }]
     }
   }
 };

@@ -23,7 +23,7 @@ let artifact = {
     2: {
       text: "Elemental Mastery +80",
       stats: {
-        ele_mas: 80
+        eleMas: 80
       }
     },
     4: {
@@ -33,7 +33,7 @@ let artifact = {
         sourceKey: "WanderersTroupe_4",
         maxStack: 1,
         stats: {
-          char_atk_dmg_bonus: 35,
+          charged_dmg_: 35,
         }
       }
     }

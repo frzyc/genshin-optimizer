@@ -26,7 +26,7 @@ let artifact = {
     },
     4: {
       text: "Increases Charged Attack CRIT Rate by 30%.",
-      stats: { char_atk_crit_rate: 30 }
+      stats: { charged_critRate_: 30 }
     }
   }
 }

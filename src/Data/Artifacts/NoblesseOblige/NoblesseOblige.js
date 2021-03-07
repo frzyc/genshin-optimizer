@@ -22,7 +22,7 @@ let artifact = {
   setEffects: {
     2: {
       text: "Elemental Burst DMG +20%",
-      stats: { burst_dmg_bonus: 20 }
+      stats: { burst_dmg_: 20 }
     },
     4: {
       text: "Using an Elemental Burst increase all party members' ATK by 20% for 12s. This effect cannot stack.",

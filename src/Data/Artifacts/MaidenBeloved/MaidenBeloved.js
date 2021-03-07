@@ -22,7 +22,7 @@ let artifact = {
   setEffects: {
     2: {
       text: "Character Healing Effectiveness +15%",
-      stats: { heal_bonu: 15 }
+      stats: { heal_: 15 }
     },
     4: {
       text: "Using an Elemental Skill or Burst increases healing received by all party members by 20% for 10s.",
@@ -31,7 +31,7 @@ let artifact = {
         sourceKey: "MaidenBeloved_4",
         maxStack: 1,
         stats: {
-          inc_heal: 20,//TODO party conditional
+          incHeal_: 20,//TODO party conditional
         }
       }
     }
