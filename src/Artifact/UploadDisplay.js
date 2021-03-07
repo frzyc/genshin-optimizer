@@ -199,7 +199,7 @@ export default function UploadDisplay(props) {
       setSlotText(<span>Detected slot name <span className="text-success">{Artifact.getSlotName(slotKey)}</span></span>)
     } else if (mainStatKey) {
       //infer slot name from main stat
-      let pieces = setKey ? Artifact.getPieces(setKey) : Artifact.getSlotKeys()
+      let pieces = setKey ? Object.keys(Artifact.getPieces(setKey)) : Artifact.getSlotKeys()
       for (const testSlotKey of pieces) {
         if (Artifact.getMainStatKeys(testSlotKey).includes(mainStatKey)) {
           slotKey = testSlotKey;
