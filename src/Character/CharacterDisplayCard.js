@@ -129,7 +129,7 @@ export default class CharacterDisplayCard extends React.Component {
     }
   }
   render() {
-    let { footer, newBuild, editable, onClose } = this.props
+    let { footer, newBuild, editable, onClose, tabName } = this.props
     let character = this.state
     let { characterKey, levelKey, compareAgainstEquipped } = this.state
     let equippedBuild = Character.calculateBuild(this.state)
@@ -190,7 +190,7 @@ export default class CharacterDisplayCard extends React.Component {
         </Row>
       </Card.Header>
       {Boolean(characterKey) && <Card.Body>
-        <Tab.Container defaultActiveKey={newBuild ? "newartifacts" : "character"} mountOnEnter={true} unmountOnExit={true}>
+        <Tab.Container defaultActiveKey={tabName ? tabName : (newBuild ? "newartifacts" : "character")} mountOnEnter={true} unmountOnExit={true}>
           <Nav variant="pills" className="mb-2 ml-2">
             <Nav.Item >
               <Nav.Link eventKey="character">Character</Nav.Link>

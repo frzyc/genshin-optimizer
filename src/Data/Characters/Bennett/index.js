@@ -86,13 +86,13 @@ let char = {
       }, {
         text: <span><strong>Charged Attack</strong> Consumes a certain amount of Stamina to unleash 2 rapid sword swings.</span>,
         fields: [{
-          text: `First Hit DMG`,
+          text: `Charged 1-Hit DMG`,
           basicVal: (tlvl, stats, c) => <span>{charged_atk_1[tlvl]}% {Stat.printStat(Character.getTalentStatKey("charged", c), stats)}</span>,
           finalVal: (tlvl, stats, c) => (charged_atk_1[tlvl] / 100) * stats[Character.getTalentStatKey("charged", c)],
           formula: (tlvl, stats, c) => ({ [Character.getTalentStatKey("charged", c)]: charged_atk_1[tlvl] / 100 }),
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("charged", c),
         }, {
-          text: `Second Hit DMG`,
+          text: `Charged 2-Hit DMG`,
           basicVal: (tlvl, stats, c) => <span>{charged_atk_2[tlvl]}% {Stat.printStat(Character.getTalentStatKey("charged", c), stats)}</span>,
           finalVal: (tlvl, stats, c) => (charged_atk_2[tlvl] / 100) * stats[Character.getTalentStatKey("charged", c)],
           formula: (tlvl, stats, c) => ({ [Character.getTalentStatKey("charged", c)]: charged_atk_2[tlvl] / 100 }),

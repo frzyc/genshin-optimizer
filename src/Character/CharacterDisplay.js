@@ -37,7 +37,6 @@ export default class CharacterDisplay extends React.Component {
     const saved = loadFromLocalStorage("CharacterDisplay.state")
     if (saved)
       this.state = { ...this.state, ...saved }
-    console.log(this.state)
     ReactGA.pageview('/character')
   }
 

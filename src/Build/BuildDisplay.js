@@ -39,8 +39,8 @@ export default class BuildDisplay extends React.Component {
     DatabaseInitAndVerify();
     this.state = BuildDisplay.getInitialState();
     if ("BuildsDisplay.state" in localStorage) {
-      const { characterKey = "" } = loadFromLocalStorage("BuildsDisplay.state")
-      this.state = { ...this.state, characterKey }
+      const { characterKey = "", maxBuildsToShow = maxBuildsToShowDefault } = loadFromLocalStorage("BuildsDisplay.state")
+      this.state = { ...this.state, characterKey, maxBuildsToShow }
     }
     if (props.location.characterKey) //override the one stored in BuildsDisplay.state
       this.state.characterKey = props.location.characterKey
@@ -52,9 +52,6 @@ export default class BuildDisplay extends React.Component {
       else
         this.state.characterKey = ""
     }
-    //this is a way to change this number in DB without setting a new DB version, since DatabaseUtil doesnt have access to these numbers.
-    if (this.state.maxBuildsToShow > maxBuildsToShowList[0])
-      this.state.maxBuildsToShow = maxBuildsToShowDefault
 
     ReactGA.pageview('/build')
   }
@@ -73,7 +70,7 @@ export default class BuildDisplay extends React.Component {
     modalBuild: null,
     showArtCondModal: false,
     showCharacterModal: false,
-    maxBuildsToShow: 100,
+    maxBuildsToShow: maxBuildsToShowDefault,
     generationProgress: 0,
     generationDuration: 0,//in ms
   }
@@ -87,7 +84,7 @@ export default class BuildDisplay extends React.Component {
       return this.setState({ ...BuildDisplay.getInitialState(), characterKey: "" })
     const character = CharacterDatabase.get(characterKey)
     if (character)
-      return this.setState(state => ({ ...BuildDisplay.getInitialState(), characterKey, ...(character?.buildSetting ?? {}), showCharacterModal: state.showCharacterModal }))
+      return this.setState(state => ({ ...BuildDisplay.getInitialState(), characterKey, maxBuildsToShow: state.maxBuildsToShow, ...(character?.buildSetting ?? {}), showCharacterModal: state.showCharacterModal }))
   }
   splitArtifacts = () => {
     if (!this.state.characterKey) // Make sure we have all slotKeys
@@ -522,9 +519,9 @@ export default class BuildDisplay extends React.Component {
     })
   }
   componentDidUpdate = (prevProps, prevState) => {
-    if (prevState.characterKey !== this.state.characterKey) {
-      let { characterKey } = this.state
-      saveToLocalStorage("BuildsDisplay.state", { characterKey })
+    if (prevState.characterKey !== this.state.characterKey || prevState.maxBuildsToShow !== this.state.maxBuildsToShow) {
+      let { characterKey, maxBuildsToShow } = this.state
+      saveToLocalStorage("BuildsDisplay.state", { characterKey, maxBuildsToShow })
     }
 
     if (this.state.characterKey) {
