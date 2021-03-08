@@ -198,10 +198,10 @@ let char = {
           finalVal: (tlvl, stats, c) => (eleBurst.burst_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("burst", c)],
           formula: (tlvl, stats, c) => ({ [Character.getTalentStatKey("burst", c)]: eleBurst.burst_dmg[tlvl] / 100 }),
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("burst", c),
-        }, {
+        }, (con, a) => ({
           text: "Duration",
-          value: "15s",
-        }, {
+          value: con >= 2 ? "18s" : "15s",
+        }), {
           text: "CD",
           value: "20s",
         }, {
