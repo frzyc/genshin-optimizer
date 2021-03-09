@@ -1,23 +1,31 @@
 import '../WorkerHack'
 import { PreprocessFormulas } from "../StatData";
 import { artifactSetPermutations, artifactPermutations } from "./Build"
+import charFormulas from "../Data/Characters/formula"
 
 onmessage = async (e) => {
-  let { splitArtifacts, setFilters, minFilters = {}, maxFilters = {}, initialStats: stats, artifactSetEffects, maxBuildsToShow, optimizationTarget, ascending, dependencies } = e.data;
-  if (process.env.NODE_ENV === "development") console.log(dependencies)
-  let t1 = performance.now()
+  const t1 = performance.now()
+  const { splitArtifacts, setFilters, minFilters = {}, maxFilters = {}, initialStats: stats, artifactSetEffects, maxBuildsToShow, optimizationTarget, ascending, character, character: { characterKey, talentLevelKey } } = e.data;
 
-  let {initialStats, formula} = PreprocessFormulas(dependencies, stats)
+  let target, dependencies = [];
+  if (typeof optimizationTarget === "string")
+    target = stats[optimizationTarget]
+  else {
+    const { talentKey, formulaKey } = optimizationTarget
+    const targetFormula = charFormulas?.[characterKey]?.[talentKey]?.[formulaKey]
+    if (typeof targetFormula === "function")
+      [target, dependencies] = targetFormula(talentLevelKey, character)
+    //TODO cannot find target formula
+  }
+
+  //TODO get dependency if tyepof optimizationTarget==="string"?
+  let { initialStats, formula } = PreprocessFormulas(dependencies, stats)
   let builds = [], threshold = -Infinity
 
-  let prune = () => {
+  const prune = () => {
     builds.sort((a, b) => (b.buildFilterVal - a.buildFilterVal))
     builds.splice(maxBuildsToShow)
   }
-
-  const target = typeof optimizationTarget === "string" ?
-    (stats) => stats[optimizationTarget] :
-    (stats) => calculateOptimizationTarget(optimizationTarget, stats)
 
   let buildCount = 0;
   const callback = (accu, stats) => {
@@ -43,6 +51,3 @@ onmessage = async (e) => {
   postMessage({ progress: buildCount, timing: t2 - t1 })
   postMessage({ builds, timing: t2 - t1 })
 }
-
-const calculateOptimizationTarget = (target, stats) => typeof target !== "object" ? target :
-  Object.entries(target).reduce((accu, [key, value]) => accu + stats[key] * calculateOptimizationTarget(value, stats), 0)

@@ -35,6 +35,7 @@ const char = {
     key: "atk_",
     value: [0, 0, 0, 0, 7.5, 7.5, 15, 15, 15, 15, 22.5, 22.5, 30, 30]
   },
+  formula,
   talent: {
     auto: {
       name: "Sharpshooter",
@@ -45,7 +46,7 @@ const char = {
         ({
           text: `${i + 1}-Hit DMG`,
           formulaText: (tlvl, stats, c) => <span>{percentArr[tlvl]}% {Stat.printStat(Character.getTalentStatKey("normal", c), stats)}</span>,
-          formula: formula.auto.normal.hitArr[i],
+          formula: formula.normal[i],
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("normal", c),
         }))
       }, {
@@ -53,12 +54,12 @@ const char = {
         fields: [{
           text: `Aimed Shot DMG`,
           formulaText: (tlvl, stats, c) => <span>{data.auto.charged.aimedShot[tlvl]}% {Stat.printStat(Character.getTalentStatKey("charged", c), stats)}</span>,
-          formula: formula.auto.charged.aimShot,
+          formula: formula.charged.aimShot,
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("charged", c),
         }, {
           text: <span>Fully-Charged Aimed Shot DMG</span>,
           formulaText: (tlvl, stats, c) => <span>{data.auto.charged.fullAimedShot[tlvl]}% {Stat.getStatName(Character.getTalentStatKey("charged", c, true))}</span>,
-          formula: formula.auto.charged.fullAimedShot,
+          formula: formula.charged.fullAimedShot,
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("charged", c, true),
         }]
       }, {
@@ -66,17 +67,17 @@ const char = {
         fields: [{
           text: `Plunge DMG`,
           formulaText: (tlvl, stats, c) => <span>{data.auto.plunging.dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunging", c), stats)}</span>,
-          formula: formula.auto.plunging.dmg,
+          formula: formula.plunging.dmg,
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunging", c),
         }, {
           text: `Low Plunge DMG`,
           formulaText: (tlvl, stats, c) => <span>{data.auto.plunging.low[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunging", c), stats)}</span>,
-          formula: formula.auto.plunging.low,
+          formula: formula.plunging.low,
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunging", c),
         }, {
           text: `High Plunge DMG`,
           formulaText: (tlvl, stats, c) => <span>{data.auto.plunging.high[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunging", c), stats)}</span>,
-          formula: formula.auto.plunging.high,
+          formula: formula.plunging.high,
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunging", c),
         }]
       }],
@@ -105,17 +106,17 @@ const char = {
           formulaText: (tlvl, stats, c) => <span>{data.skill.dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("skill", c), stats)}</span>,
           formula: formula.skill.dmg,
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("skill", c),
-        }, (c) => c >= 2 ? {
+        }, (con) => con >= 2 && {
           text: "Manual Detonation DMG",
           formulaText: (tlvl, stats, c) => <span>{data.skill.dmg[tlvl]}% + 200% {Stat.printStat(Character.getTalentStatKey("skill", c), stats)}</span>,
           formula: formula.skill.detonationDMG,
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("skill", c),
-        } : null, (c) => c >= 4 ? {
+        }, (con) => con >= 4 && {
           text: "Charges",
           value: 2,
-        } : null, (c) => ({
+        }, (con) => ({
           text: "CD",
-          value: "15s" + (c >= 4 ? " -20%" : ""),
+          value: "15s" + (con >= 4 ? " -20%" : ""),
         })]
       }],
     },
@@ -126,17 +127,17 @@ const char = {
         text: <span>
           Fires off a shower of arrows, dealing continuous <span className="text-pyro">AoE Pyro DMG</span>.
       </span>,
-        fields: [(c, a) => ({
+        fields: [{
           text: "DMG Per Wave",
           formulaText: (tlvl, stats, c) => <span>{data.burst.dmgPerWave[tlvl]}% {Stat.printStat(Character.getTalentStatKey("burst", c), stats)}</span>,
           formula: formula.burst.dmgPerWave,
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("burst", c),
-        }), (c, a) => ({
+        }, {
           text: "Rain DMG",
           formulaText: (tlvl, stats, c) => <span>{data.burst.totDMG[tlvl]}% {Stat.printStat(Character.getTalentStatKey("burst", c), stats)}</span>,
           formula: formula.burst.totDMG,
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("burst", c),
-        }), (c, a) => {
+        }, (c, a) => {
           if (a < 1) return null
           return {
             text: "CRIT Rate Bonus",
@@ -262,5 +263,4 @@ const char = {
     },
   },
 };
-
 export default char;

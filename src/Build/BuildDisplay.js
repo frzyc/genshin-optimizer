@@ -18,10 +18,9 @@ import CustomFormControl from '../Components/CustomFormControl';
 import { Stars } from '../Components/StarDisplay';
 import { DatabaseInitAndVerify } from '../DatabaseUtil';
 import Stat from '../Stat';
-import { GetDependencies, reduceOptimizationTarget } from '../StatDependency';
 import ConditionalsUtil from '../Util/ConditionalsUtil';
 import { timeStringMs } from '../Util/TimeUtil';
-import { deepClone, getObjectKeysRecursive, loadFromLocalStorage, saveToLocalStorage } from '../Util/Util';
+import { deepClone, loadFromLocalStorage, saveToLocalStorage } from '../Util/Util';
 import Weapon from '../Weapon/Weapon';
 import { calculateTotalBuildNumber } from './Build';
 
@@ -152,11 +151,8 @@ export default class BuildDisplay extends React.Component {
     if (typeof optimizationTarget === "object") {
       const { talentKey, sectionIndex, fieldIndex } = optimizationTarget
       let { formula } = Character.getTalentField(characterKey, talentKey, sectionIndex, fieldIndex)
-      optimizationTarget = typeof formula === "function" ? formula(Character.getTalentLevelKey(character, talentKey), {}, character) : formula
+      optimizationTarget = Character.getFormulaPath(characterKey, talentKey, formula)
     }
-    //if the formula is a simple one, convert it back to a statKey
-    optimizationTarget = reduceOptimizationTarget(optimizationTarget)
-    const optimiztionTargetDependencies = getObjectKeysRecursive(optimizationTarget)
 
     let initialStats = Character.calculateCharacterWithWeaponStats(character)
     initialStats.artifactsAssumeFull = artifactsAssumeFull
@@ -172,11 +168,18 @@ export default class BuildDisplay extends React.Component {
     //generate the key dependencies for the formula
     const minFilters = Object.fromEntries(Object.entries(statFilters).map(([statKey, { min }]) => [statKey, min]).filter(([, min]) => typeof min === "number"))
     const maxFilters = Object.fromEntries(Object.entries(statFilters).map(([statKey, { max }]) => [statKey, max]).filter(([, max]) => typeof max === "number"))
-    let dependencies = GetDependencies(initialStats?.modifiers, [...optimiztionTargetDependencies, ...Object.keys(minFilters), ...Object.keys(maxFilters)])
-
+    const { hitMode = "", autoInfused = false, reactionMode = null, constellation, levelKey } = character
+    const workerChar = {
+      characterKey, hitMode, reactionMode, constellation,
+      talentLevelKey: Character.getTalentLevelKey(characterKey, optimizationTarget?.talentKey),//will be null if optimizationTarget is a string
+      autoInfused: autoInfused && Character.getCDataObj(characterKey)?.talent?.auto?.infusable,
+      element: Character.getElementalKey(characterKey),
+      weaponType: Character.getWeaponTypeKey(characterKey),
+      ascension: Character.getAscension(levelKey)
+    }
     //create an obj with app the artifact set effects to pass to buildworker.
     let data = {
-      splitArtifacts, initialStats, artifactSetEffects, dependencies,
+      splitArtifacts, initialStats, artifactSetEffects, character: workerChar,
       setFilters, minFilters, maxFilters, maxBuildsToShow, optimizationTarget, ascending,
     }
     if (this.worker) this.worker.terminate()
