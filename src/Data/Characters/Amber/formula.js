@@ -32,20 +32,16 @@ const data = {
 }
 
 const formula = {
-  auto: {
-    normal: {
-      hitArr: data.auto.normal.hitArr.map((percentArr, i) => (tlvl, char) =>
-        basicDMGFormula(percentArr[tlvl], char, "normal"))
-    },
-    charged: {
-      aimShot: (tlvl, char) => basicDMGFormula(data.auto.charged.aimedShot[tlvl], char, "charged"),
-      fullAimedShot: (tlvl, char) => basicDMGFormula(data.auto.charged.fullAimedShot[tlvl], char, "charged"),
-    },
-    plunging: {
-      dmg: (tlvl, char) => basicDMGFormula(data.auto.plunging.dmg[tlvl], char, "plunging"),
-      low: (tlvl, char) => basicDMGFormula(data.auto.plunging.low[tlvl], char, "plunging"),
-      high: (tlvl, char) => basicDMGFormula(data.auto.plunging.high[tlvl], char, "plunging"),
-    }
+  normal: Object.fromEntries(data.auto.normal.hitArr.map((percentArr, i) => [i, (tlvl, char) =>
+    basicDMGFormula(percentArr[tlvl], char, "normal")])),
+  charged: {
+    aimShot: (tlvl, char) => basicDMGFormula(data.auto.charged.aimedShot[tlvl], char, "charged"),
+    fullAimedShot: (tlvl, char) => basicDMGFormula(data.auto.charged.fullAimedShot[tlvl], char, "charged"),
+  },
+  plunging: {
+    dmg: (tlvl, char) => basicDMGFormula(data.auto.plunging.dmg[tlvl], char, "plunging"),
+    low: (tlvl, char) => basicDMGFormula(data.auto.plunging.low[tlvl], char, "plunging"),
+    high: (tlvl, char) => basicDMGFormula(data.auto.plunging.high[tlvl], char, "plunging"),
   },
   skill: {
     hp: (tlvl) => {

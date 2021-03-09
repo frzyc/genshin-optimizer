@@ -146,7 +146,7 @@ export default class Character {
   }
   /**
    * Create statKey in the form of ${ele}_elemental_${type} for elemental DMG, ${ele}_${src}_${type} for talent DMG.
-   * @param {string} skillKey - The DMG src. Can be "norm","skill". Use an elemental to specify a lemental hit "physical" -> physical_elemental_{type}. Use "elemental" here to specify a elemental hit of character's element/reactionMode
+   * @param {string} skillKey - The DMG src. Can be "norm","skill". Use an elemental to specify a elemental hit "physical" -> physical_elemental_{type}. Use "elemental" here to specify a elemental hit of character's element/reactionMode
    * @param {*} character - The character. Will extract hitMode, autoInfused...
    * @param {*} elemental - Override the hit to be the character's elemental, that is not part of infusion.
    */
@@ -181,6 +181,25 @@ export default class Character {
 
   static isAutoElemental = (charKey, defVal = false) => this.getWeaponTypeKey(charKey) === "catalyst" || defVal
   static isAutoInfusable = (charKey, defVal = false) => this.getCDataObj(charKey)?.talent?.auto?.infusable || defVal
+
+  //look up the formula, and generate the formulaPath to send to worker.
+  static getFormulaPath(characterKey, talentKey, formula) {
+    const formulaDB = this.getCDataObj(characterKey)?.formula
+    if (!formulaDB) return
+    let formulaKey
+    if (talentKey === "auto") {
+      for (const tk of ["normal", "charged", "plunging"]) {
+        ([formulaKey,] = Object.entries(formulaDB?.[tk] ?? {}).find(([, value]) => value === formula) ?? [])
+        if (formulaKey) {
+          talentKey = tk
+          break;
+        }
+      }
+    } else ([formulaKey,] = Object.entries(formulaDB?.[talentKey] ?? {}).find(([, value]) => value === formula) ?? [])
+    if (!formulaKey) return
+    return { characterKey, talentKey, formulaKey }
+  }
+
 
   static hasTalentPage = (characterKey) => Boolean(Character.getCDataObj(characterKey)?.talent)
 

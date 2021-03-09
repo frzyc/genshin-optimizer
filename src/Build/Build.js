@@ -1,3 +1,5 @@
+import ElementalData from "../Data/ElementalData"
+
 /**
  * Generate all set of artifacts-by-slots based on the filters
  * @param {Object.<slotKey, artifact[]>} artifactsBySlot - list of artifacts, separated by slots
@@ -55,7 +57,7 @@ export function artifactSetPermutations(artifactsBySlot, setFilters) {
 export function calculateTotalBuildNumber(artifactsBySlot, setFilters) {
   return artifactSetPermutations(artifactsBySlot, setFilters).reduce((accu, artifactsBySlot) =>
     accu + Object.entries(artifactsBySlot).reduce((accu, artifacts) => accu * artifacts[1].length, 1)
-  , 0)
+    , 0)
 }
 
 /**
@@ -98,7 +100,7 @@ function accumulate(slotKey, art, setCount, accu, stats, artifactSetEffects) {
 
   // Add artifact stats
   if (art.mainStatKey in stats) stats[art.mainStatKey] += art.mainStatVal
-  art.substats.forEach((substat) => { 
+  art.substats.forEach((substat) => {
     if (substat?.key in stats) stats[substat.key] += substat.value
   })
 
@@ -107,4 +109,21 @@ function accumulate(slotKey, art, setCount, accu, stats, artifactSetEffects) {
   setEffect && Object.entries(setEffect).forEach(([statKey, val]) => {
     if (statKey in stats) stats[statKey] += val
   })
+}
+
+/**
+  * Create statKey in the form of ${ele}_elemental_${type} for elemental DMG, ${ele}_${src}_${type} for talent DMG.
+  * @param {string} skillKey - The DMG src. Can be "norm","skill". Use an elemental to specify a elemental hit "physical" -> physical_elemental_{type}. Use "elemental" here to specify a elemental hit of character's element/reactionMode
+  * @param {*} character - The character. Will extract hitMode, autoInfused...
+  * @param {*} elemental - Override the hit to be the character's elemental, that is not part of infusion.
+  */
+export function getTalentStatKey(skillKey, character, elemental = false) {
+  if (!character) return;
+  const { hitMode = "", autoInfused = false, reactionMode = null, element = "anemo", weaponType = "sword" } = character
+  if (Object.keys(ElementalData).includes(skillKey)) return `${skillKey}_elemental_${hitMode}`//elemental DMG
+  if (!elemental) elemental = weaponType === "catalyst" || (autoInfused)
+  let eleKey = "physical"
+  if (skillKey === "elemental" || skillKey === "burst" || skillKey === "skill" || elemental)
+    eleKey = (reactionMode ? reactionMode : element)
+  return `${eleKey}_${skillKey}_${hitMode}`
 }
