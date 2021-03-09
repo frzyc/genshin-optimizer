@@ -1,5 +1,5 @@
 // import albedo from './Albedo'
-import amber from './Amber/formula'
+import amber from './Amber/data'
 // import barbara from './Barbara'
 // import beidou from './Beidou'
 // import bennett from './Bennett'
