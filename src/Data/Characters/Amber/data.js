@@ -39,28 +39,28 @@ const data = {
 }
 
 const formula = {
-  normal: Object.fromEntries(data.normal.hitArr.map((percentArr, i) => [i, (tlvl, char) =>
-    basicDMGFormula(percentArr[tlvl], char, "normal")])),
+  normal: Object.fromEntries(data.normal.hitArr.map((percentArr, i) => [i, (tlvl, stats) =>
+    basicDMGFormula(percentArr[tlvl], stats, "normal")])),
   charged: {
-    aimShot: (tlvl, char) => basicDMGFormula(data.charged.aimedShot[tlvl], char, "charged"),
-    fullAimedShot: (tlvl, char) => basicDMGFormula(data.charged.fullAimedShot[tlvl], char, "charged"),
+    aimShot: (tlvl, stats) => basicDMGFormula(data.charged.aimedShot[tlvl], stats, "charged"),
+    fullAimedShot: (tlvl, stats) => basicDMGFormula(data.charged.fullAimedShot[tlvl], stats, "charged"),
   },
   plunging: {
-    dmg: (tlvl, char) => basicDMGFormula(data.plunging.dmg[tlvl], char, "plunging"),
-    low: (tlvl, char) => basicDMGFormula(data.plunging.low[tlvl], char, "plunging"),
-    high: (tlvl, char) => basicDMGFormula(data.plunging.high[tlvl], char, "plunging"),
+    dmg: (tlvl, stats) => basicDMGFormula(data.plunging.dmg[tlvl], stats, "plunging"),
+    low: (tlvl, stats) => basicDMGFormula(data.plunging.low[tlvl], stats, "plunging"),
+    high: (tlvl, stats) => basicDMGFormula(data.plunging.high[tlvl], stats, "plunging"),
   },
   skill: {
     hp: (tlvl) => {
       const hp = data.skill.hp[tlvl] / 100
       return [(s) => hp * s.finalHP, "finalHP"]
     },
-    dmg: (tlvl, char) => basicDMGFormula(data.skill.dmg[tlvl], char, "skill"),
-    detonationDMG: (tlvl, char) => basicDMGFormula(data.skill.dmg[tlvl] + 200, char, "skill"),
+    dmg: (tlvl, stats) => basicDMGFormula(data.skill.dmg[tlvl], stats, "skill"),
+    detonationDMG: (tlvl, stats) => basicDMGFormula(data.skill.dmg[tlvl] + 200, stats, "skill"),
   },
   burst: {
-    dmgPerWave: (tlvl, char) => basicDMGFormula(data.burst.dmgPerWave[tlvl], char, "burst"),
-    totDMG: (tlvl, char) => basicDMGFormula(data.burst.totDMG[tlvl], char, "burst"),
+    dmgPerWave: (tlvl, stats) => basicDMGFormula(data.burst.dmgPerWave[tlvl], stats, "burst"),
+    totDMG: (tlvl, stats) => basicDMGFormula(data.burst.totDMG[tlvl], stats, "burst"),
   }
 }
 

@@ -154,7 +154,7 @@ export default class BuildDisplay extends React.Component {
       optimizationTarget = Character.getFormulaPath(characterKey, talentKey, formula)
     }
 
-    let initialStats = Character.calculateCharacterWithWeaponStats(character)
+    const initialStats = Character.calculateCharacterWithWeaponStats(character)
     initialStats.artifactsAssumeFull = artifactsAssumeFull
 
     let artifactSetEffects = Artifact.getAllArtifactSetEffectsObj(artifactConditionals)
@@ -168,18 +168,9 @@ export default class BuildDisplay extends React.Component {
     //generate the key dependencies for the formula
     const minFilters = Object.fromEntries(Object.entries(statFilters).map(([statKey, { min }]) => [statKey, min]).filter(([, min]) => typeof min === "number"))
     const maxFilters = Object.fromEntries(Object.entries(statFilters).map(([statKey, { max }]) => [statKey, max]).filter(([, max]) => typeof max === "number"))
-    const { hitMode = "", autoInfused = false, reactionMode = null, constellation, levelKey } = character
-    const workerChar = {
-      characterKey, hitMode, reactionMode, constellation,
-      talentLevelKey: Character.getTalentLevelKey(characterKey, optimizationTarget?.talentKey),//will be null if optimizationTarget is a string
-      autoInfused: autoInfused && Character.getCDataObj(characterKey)?.talent?.auto?.infusable,
-      element: Character.getElementalKey(characterKey),
-      weaponType: Character.getWeaponTypeKey(characterKey),
-      ascension: Character.getAscension(levelKey)
-    }
     //create an obj with app the artifact set effects to pass to buildworker.
     let data = {
-      splitArtifacts, initialStats, artifactSetEffects, character: workerChar,
+      splitArtifacts, initialStats, artifactSetEffects,
       setFilters, minFilters, maxFilters, maxBuildsToShow, optimizationTarget, ascending,
     }
     if (this.worker) this.worker.terminate()
@@ -580,11 +571,12 @@ export default class BuildDisplay extends React.Component {
 function SortByStatDropdown({ characterKey, statsDisplayKeys, disabled, optimizationTarget, ascending, setState }) {
   const character = CharacterDatabase.get(characterKey)
   if (!character) return null
+  const initialStats = Character.calculateCharacterWithWeaponStats(character)
   let sortByText = "VALUE"
   if (typeof optimizationTarget === "object") {
     const { talentKey, sectionIndex, fieldIndex } = optimizationTarget
     let { variant = "", text } = Character.getTalentField(characterKey, talentKey, sectionIndex, fieldIndex)
-    variant = typeof variant === "function" ? variant?.(Character.getTalentLevelKey(character, talentKey), {}, character) : variant
+    variant = typeof variant === "function" ? variant?.(initialStats.talentLevelKeys[talentKey], initialStats) : variant
     sortByText = <b>{Character.getTalentName(characterKey, talentKey)}: <span className={`text-${variant}`}>{text}</span></b>
   } else
     sortByText = <b>Basic Stat: <span className={`text-${Stat.getStatVariant(optimizationTarget)}`}>{Stat.getStatNamePretty(optimizationTarget)}</span></b>
@@ -609,7 +601,7 @@ function SortByStatDropdown({ characterKey, statsDisplayKeys, disabled, optimiza
                   return <Dropdown.Item key={i} onClick={() => setState({ optimizationTarget: field })}>{Stat.getStatNamePretty(field)}</Dropdown.Item>
                 const talentField = Character.getTalentField(characterKey, field.talentKey, field.sectionIndex, field.fieldIndex)
                 return <Dropdown.Item key={i} onClick={() => setState({ optimizationTarget: field })}>
-                  <span className={`text-${Character.getTalentFieldValue(talentField, "variant", talentKey, character, {})}`}>{Character.getTalentFieldValue(talentField, "text", talentKey, character, {})}</span>
+                  <span className={`text-${Character.getTalentFieldValue(talentField, "variant", talentKey, initialStats)}`}>{Character.getTalentFieldValue(talentField, "text", talentKey, initialStats)}</span>
                 </Dropdown.Item>
               })}
             </Col>

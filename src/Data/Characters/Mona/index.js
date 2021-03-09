@@ -222,8 +222,8 @@ const char = {
         </span>,
         fields: [(con, a) => a >= 1 && {
           text: "Explosion DMG",
-          formulaText: (tlvl, stats, c) => <span>{eleSkill.skill_dmg[Character.getTalentLevelKey(c, "skill")]}% * 50% {Stat.printStat(Character.getTalentStatKey("skill", c), stats)}</span>,
-          formula: (tlvl, stats, c) => (eleSkill.skill_dmg[Character.getTalentLevelKey(c, "skill")] / 200) * stats[Character.getTalentStatKey("skill", c)],
+          formulaText: (tlvl, stats, c) => <span>{eleSkill.skill_dmg[stats.talentLevelKeys.skill]}% * 50% {Stat.printStat(Character.getTalentStatKey("skill", c), stats)}</span>,
+          formula: (tlvl, stats, c) => (eleSkill.skill_dmg[stats.talentLevelKeys.skill] / 200) * stats[Character.getTalentStatKey("skill", c)],
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("skill", c),
         }, (c, a) => a >= 1 && {
           text: "Phantom Duration",

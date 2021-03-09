@@ -3,11 +3,11 @@ import ArtifactDatabase from "../Artifact/ArtifactDatabase";
 import { CharacterData, CharacterDataImport, characterStatBase, LevelsData } from "../Data/CharacterData";
 import ElementalData from "../Data/ElementalData";
 import { ElementToReactionKeys, PreprocessFormulas } from "../StatData";
+import { GetDependencies } from "../StatDependency";
 import ConditionalsUtil from "../Util/ConditionalsUtil";
-import { clamp, deepClone } from "../Util/Util";
+import { deepClone } from "../Util/Util";
 import Weapon from "../Weapon/Weapon";
 import CharacterDatabase from "./CharacterDatabase";
-import { GetDependencies } from "../StatDependency"
 
 export default class Character {
   //do not instantiate.
@@ -71,15 +71,7 @@ export default class Character {
     }
     return defVal
   }
-  static getTalentLevelKey = (character, talentKey, withBoost = false) => {
-    if (talentKey === "auto" || talentKey === "skill" || talentKey === "burst") {
-      const { constellation = 0 } = character
-      let talentLvlKey = character?.talentLevelKeys?.[talentKey] || 0;
-      const levelBoost = this.getTalentLevelBoost(character?.characterKey, talentKey, constellation)
-      talentLvlKey = clamp(talentLvlKey + levelBoost, 0, 14)
-      return withBoost ? { talentLvlKey, levelBoost } : talentLvlKey
-    } else return withBoost ? {} : null
-  }
+
   static getTalentDocument = (charKey, talentKey, defVal = []) => this.getTalent(charKey, talentKey)?.document || defVal
   static getTalentDocumentSections = (charKey, talentKey, defVal = []) => {
     const character = CharacterDatabase.get(charKey);
@@ -97,11 +89,11 @@ export default class Character {
     if (!field) return defVal
     return typeof field === "function" ? field(constellation, ascension) : field
   }
-  static getTalentFieldValue = (field, key, talentKey, character, stats = {}, defVal = "") => {
+  static getTalentFieldValue = (field, key, talentKey, stats = {}, defVal = "") => {
     if (!field?.[key]) return defVal
     if (key === "formula")
-      return field?.formula?.(this.getTalentLevelKey(character, talentKey), character)?.[0]?.(stats)
-    return typeof field?.[key] === "function" ? field[key](this.getTalentLevelKey(character, talentKey), stats, character) : field[key]
+      return field?.formula?.(stats.talentLevelKeys[talentKey], stats)?.[0]?.(stats)
+    return typeof field?.[key] === "function" ? field[key](stats.talentLevelKeys[talentKey], stats) : field[key]
   }
 
   static getTalentStats = (charKey, talentKey, constellation, ascension, defVal = null) => {
@@ -144,7 +136,9 @@ export default class Character {
     let fields = ConditionalsUtil.getConditionalProp(conditional, "fields", conditionalNum)[0]
     return fields || defVal
   }
+
   /**
+   * @deprecated
    * Create statKey in the form of ${ele}_elemental_${type} for elemental DMG, ${ele}_${src}_${type} for talent DMG.
    * @param {string} skillKey - The DMG src. Can be "norm","skill". Use an elemental to specify a elemental hit "physical" -> physical_elemental_{type}. Use "elemental" here to specify a elemental hit of character's element/reactionMode
    * @param {*} character - The character. Will extract hitMode, autoInfused...
@@ -162,6 +156,10 @@ export default class Character {
     //{pyro}_{burst}_{avgHit}
     return `${eleKey}_${skillKey}_${hitMode}`
   }
+
+  /**
+   * @deprecated
+   */
   static getTalentStatKeyVariant = (skillKey, character, elemental = false) => {
     if (!character) return;
     if (this.getElementalKeys().includes(skillKey)) return skillKey
@@ -357,10 +355,24 @@ export default class Character {
   })
 
   static calculateCharacterWithWeaponStats = (character) => {
-    let statKeys = ["characterHP", "characterATK", "characterDEF", "weaponATK", "characterLevel", "enemyLevel", "physical_enemyRes_", "physical_enemyImmunity", ...Object.keys(characterStatBase)]
-    let initialStats = Object.fromEntries(statKeys.map(key => [key, this.getStatValueWithOverride(character, key)]))
-    //add element
-    initialStats.characterEle = this.getElementalKey(character.characterKey);
+    character = deepClone(character)
+    const { characterKey, levelKey, hitMode, autoInfused, reactionMode, talentLevelKeys, constellation, talentConditionals = [] } = character
+    const ascension = Character.getAscension(levelKey)
+
+    //generate the initalStats obj with data from Character & overrides
+    const statKeys = ["characterHP", "characterATK", "characterDEF", "weaponATK", "characterLevel", "enemyLevel", "physical_enemyRes_", "physical_enemyImmunity", ...Object.keys(characterStatBase)]
+    const initialStats = Object.fromEntries(statKeys.map(key => [key, this.getStatValueWithOverride(character, key)]))
+    initialStats.characterEle = this.getElementalKey(characterKey);
+    initialStats.characterKey = characterKey
+    initialStats.hitMode = hitMode;
+    initialStats.autoInfused = autoInfused && Character.getCDataObj(characterKey)?.talent?.auto?.infusable
+    initialStats.reactionMode = reactionMode;
+    initialStats.weaponType = this.getWeaponTypeKey(characterKey)
+    initialStats.talentLevelKeys = talentLevelKeys;
+    initialStats.constellation = constellation
+    initialStats.ascension = ascension
+    for (const key in initialStats.talentLevelKeys)
+      initialStats.talentLevelKeys[key] += this.getTalentLevelBoost(character.characterKey, key, constellation);
 
     //enemy stuff
     Character.getElementalKeys().forEach(eleKey => {
@@ -383,13 +395,10 @@ export default class Character {
     this.mergeStats(initialStats, { [specialStatKey]: specializedStatVal })
 
 
-    let { characterKey, levelKey, constellation, talentConditionals = [] } = character
-    let ascension = Character.getAscension(levelKey)
     //add stats from talentconditionals
     talentConditionals.forEach(cond => {
-      let { srcKey: talentKey, srcKey2: conditionalKey, conditionalNum } = cond
-      let talentLvlKey = Character.getTalentLevelKey(character, talentKey)
-      let conditional = Character.getTalentConditional(characterKey, talentKey, conditionalKey, talentLvlKey, constellation, ascension)
+      const { srcKey: talentKey, srcKey2: conditionalKey, conditionalNum } = cond
+      const conditional = Character.getTalentConditional(characterKey, talentKey, conditionalKey, initialStats.talentLevelKeys[talentKey], constellation, ascension)
       this.mergeStats(initialStats, Character.getTalentConditionalStats(conditional, conditionalNum, {}))
     })
 

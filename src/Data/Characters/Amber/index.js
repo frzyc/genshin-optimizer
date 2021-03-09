@@ -12,9 +12,9 @@ import burst from './Talent_Fiery_Rain.png'
 import passive1 from './Talent_Every_Arrow_Finds_Its_Target.png'
 import passive2 from './Talent_Precise_Shot.png'
 import passive3 from './Talent_Gliding_Champion.png'
-import Character from '../../../Character/Character'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
+import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 
 const char = {
   name: "Amber",
@@ -38,40 +38,40 @@ const char = {
         fields: data.normal.hitArr.map((percentArr, i) =>
         ({
           text: `${i + 1}-Hit DMG`,
-          formulaText: (tlvl, stats, c) => <span>{percentArr[tlvl]}% {Stat.printStat(Character.getTalentStatKey("normal", c), stats)}</span>,
+          formulaText: (tlvl, stats) => <span>{percentArr[tlvl]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
           formula: formula.normal[i],
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("normal", c),
+          variant: (tlvl, stats) => getTalentStatKeyVariant("normal", stats),
         }))
       }, {
         text: <span><strong>Charged Attack</strong> Perform a more precise Aimed Shot with increased DMG. While aiming, flames will accumulate on the arrowhead. A fully charged flaming arrow will deal <span className="text-pyro">Pyro DMG</span>.</span>,
         fields: [{
           text: `Aimed Shot DMG`,
-          formulaText: (tlvl, stats, c) => <span>{data.charged.aimedShot[tlvl]}% {Stat.printStat(Character.getTalentStatKey("charged", c), stats)}</span>,
+          formulaText: (tlvl, stats) => <span>{data.charged.aimedShot[tlvl]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
           formula: formula.charged.aimShot,
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("charged", c),
+          variant: (tlvl, stats) => getTalentStatKeyVariant("charged", stats),
         }, {
           text: <span>Fully-Charged Aimed Shot DMG</span>,
-          formulaText: (tlvl, stats, c) => <span>{data.charged.fullAimedShot[tlvl]}% {Stat.getStatName(Character.getTalentStatKey("charged", c, true))}</span>,
+          formulaText: (tlvl, stats) => <span>{data.charged.fullAimedShot[tlvl]}% {Stat.getStatName(getTalentStatKey("charged", stats, true))}</span>,
           formula: formula.charged.fullAimedShot,
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("charged", c, true),
+          variant: (tlvl, stats) => getTalentStatKeyVariant("charged", stats, true),
         }]
       }, {
         text: <span><strong>Plunging Attack</strong> Fires off a shower of arrows in mid-air before falling an striking the ground, dealing AoE DMG upon impact.</span>,
         fields: [{
           text: `Plunge DMG`,
-          formulaText: (tlvl, stats, c) => <span>{data.plunging.dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunging", c), stats)}</span>,
+          formulaText: (tlvl, stats) => <span>{data.plunging.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
           formula: formula.plunging.dmg,
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunging", c),
+          variant: (tlvl, stats) => getTalentStatKeyVariant("plunging", stats),
         }, {
           text: `Low Plunge DMG`,
-          formulaText: (tlvl, stats, c) => <span>{data.plunging.low[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunging", c), stats)}</span>,
+          formulaText: (tlvl, stats) => <span>{data.plunging.low[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
           formula: formula.plunging.low,
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunging", c),
+          variant: (tlvl, stats) => getTalentStatKeyVariant("plunging", stats),
         }, {
           text: `High Plunge DMG`,
-          formulaText: (tlvl, stats, c) => <span>{data.plunging.high[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunging", c), stats)}</span>,
+          formulaText: (tlvl, stats) => <span>{data.plunging.high[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
           formula: formula.plunging.high,
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunging", c),
+          variant: (tlvl, stats) => getTalentStatKeyVariant("plunging", stats),
         }]
       }],
     },
@@ -80,30 +80,30 @@ const char = {
       img: skill,
       document: [{
         text: <span>
-          The ever-reliable Baron Bunny takes the stage.
-        <h6>Baron Bunny:</h6>
-          <ul>
+          <p className="mb-2">The ever-reliable Baron Bunny takes the stage.</p>
+          <h6>Baron Bunny:</h6>
+          <ul className="mb-2">
             <li>Continuously taunts the enemy, drawing their fire.</li>
             <li>Baron Bunny's HP scales with Amber's Max HP.</li>
             <li>When destroyed or when its timer expires, Baron Bunny explodes, dealing AoE <span className="text-pyro">Pyro DMG</span>.</li>
             <li>Generate 4 elemental particles when it hit at least 1 target.</li>
           </ul>
-          <div><strong>Hold:</strong> Adjusts the throwing direction of Baron Bunny. The longer the button is held, the further the throw.</div>
+          <p className="mb-0"><strong>Hold:</strong> Adjusts the throwing direction of Baron Bunny. The longer the button is held, the further the throw.</p>
         </span>,
         fields: [{
           text: "Inherited HP",
-          formulaText: (tlvl, stats, c) => <span>{data.skill.hp[tlvl]}% {Stat.printStat("finalHP", stats)}</span>,
+          formulaText: (tlvl, stats) => <span>{data.skill.hp[tlvl]}% {Stat.printStat("finalHP", stats)}</span>,
           formula: formula.skill.hp,
         }, {
           text: "Explosion DMG",
-          formulaText: (tlvl, stats, c) => <span>{data.skill.dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("skill", c), stats)}</span>,
+          formulaText: (tlvl, stats) => <span>{data.skill.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
           formula: formula.skill.dmg,
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("skill", c),
+          variant: (tlvl, stats) => getTalentStatKeyVariant("skill", stats),
         }, (con) => con >= 2 && {
           text: "Manual Detonation DMG",
-          formulaText: (tlvl, stats, c) => <span>{data.skill.dmg[tlvl]}% + 200% {Stat.printStat(Character.getTalentStatKey("skill", c), stats)}</span>,
+          formulaText: (tlvl, stats) => <span>{data.skill.dmg[tlvl]}% + 200% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
           formula: formula.skill.detonationDMG,
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("skill", c),
+          variant: (tlvl, stats) => getTalentStatKeyVariant("skill", stats),
         }, (con) => con >= 4 && {
           text: "Charges",
           value: 2,
@@ -122,14 +122,14 @@ const char = {
       </span>,
         fields: [{
           text: "DMG Per Wave",
-          formulaText: (tlvl, stats, c) => <span>{data.burst.dmgPerWave[tlvl]}% {Stat.printStat(Character.getTalentStatKey("burst", c), stats)}</span>,
+          formulaText: (tlvl, stats) => <span>{data.burst.dmgPerWave[tlvl]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
           formula: formula.burst.dmgPerWave,
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("burst", c),
+          variant: (tlvl, stats) => getTalentStatKeyVariant("burst", stats),
         }, {
           text: "Rain DMG",
-          formulaText: (tlvl, stats, c) => <span>{data.burst.totDMG[tlvl]}% {Stat.printStat(Character.getTalentStatKey("burst", c), stats)}</span>,
+          formulaText: (tlvl, stats) => <span>{data.burst.totDMG[tlvl]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
           formula: formula.burst.totDMG,
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("burst", c),
+          variant: (tlvl, stats) => getTalentStatKeyVariant("burst", stats),
         }, (c, a) => {
           if (a < 1) return null
           return {
