@@ -14,7 +14,7 @@ import passive2 from './Talent_Precise_Shot.png'
 import passive3 from './Talent_Gliding_Champion.png'
 import Character from '../../../Character/Character'
 import Stat from '../../../Stat'
-import formula, { data } from './formula'
+import formula, { data } from './data'
 
 const char = {
   name: "Amber",
@@ -26,15 +26,8 @@ const char = {
   gender: "F",
   constellationName: "Lepus",
   titles: ["Outrider", "Champion Glider"],
-  baseStat: {
-    characterHP: [793, 2038, 2630, 3940, 4361, 5016, 5578, 6233, 6654, 7309, 7730, 8385, 8806, 9461],
-    characterATK: [19, 48, 62, 93, 103, 118, 131, 147, 157, 172, 182, 198, 208, 223],
-    characterDEF: [50, 129, 167, 250, 277, 318, 354, 396, 423, 464, 491, 532, 559, 601]
-  },
-  specializeStat: {
-    key: "atk_",
-    value: [0, 0, 0, 0, 7.5, 7.5, 15, 15, 15, 15, 22.5, 22.5, 30, 30]
-  },
+  baseStat: data.baseStat,
+  specializeStat: data.specializeStat,
   formula,
   talent: {
     auto: {
@@ -42,7 +35,7 @@ const char = {
       img: normal,
       document: [{
         text: <span><strong>Normal Attack</strong> Perform up to 5 consecutive shots with a bow.</span>,
-        fields: data.auto.normal.hitArr.map((percentArr, i) =>
+        fields: data.normal.hitArr.map((percentArr, i) =>
         ({
           text: `${i + 1}-Hit DMG`,
           formulaText: (tlvl, stats, c) => <span>{percentArr[tlvl]}% {Stat.printStat(Character.getTalentStatKey("normal", c), stats)}</span>,
@@ -53,12 +46,12 @@ const char = {
         text: <span><strong>Charged Attack</strong> Perform a more precise Aimed Shot with increased DMG. While aiming, flames will accumulate on the arrowhead. A fully charged flaming arrow will deal <span className="text-pyro">Pyro DMG</span>.</span>,
         fields: [{
           text: `Aimed Shot DMG`,
-          formulaText: (tlvl, stats, c) => <span>{data.auto.charged.aimedShot[tlvl]}% {Stat.printStat(Character.getTalentStatKey("charged", c), stats)}</span>,
+          formulaText: (tlvl, stats, c) => <span>{data.charged.aimedShot[tlvl]}% {Stat.printStat(Character.getTalentStatKey("charged", c), stats)}</span>,
           formula: formula.charged.aimShot,
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("charged", c),
         }, {
           text: <span>Fully-Charged Aimed Shot DMG</span>,
-          formulaText: (tlvl, stats, c) => <span>{data.auto.charged.fullAimedShot[tlvl]}% {Stat.getStatName(Character.getTalentStatKey("charged", c, true))}</span>,
+          formulaText: (tlvl, stats, c) => <span>{data.charged.fullAimedShot[tlvl]}% {Stat.getStatName(Character.getTalentStatKey("charged", c, true))}</span>,
           formula: formula.charged.fullAimedShot,
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("charged", c, true),
         }]
@@ -66,17 +59,17 @@ const char = {
         text: <span><strong>Plunging Attack</strong> Fires off a shower of arrows in mid-air before falling an striking the ground, dealing AoE DMG upon impact.</span>,
         fields: [{
           text: `Plunge DMG`,
-          formulaText: (tlvl, stats, c) => <span>{data.auto.plunging.dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunging", c), stats)}</span>,
+          formulaText: (tlvl, stats, c) => <span>{data.plunging.dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunging", c), stats)}</span>,
           formula: formula.plunging.dmg,
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunging", c),
         }, {
           text: `Low Plunge DMG`,
-          formulaText: (tlvl, stats, c) => <span>{data.auto.plunging.low[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunging", c), stats)}</span>,
+          formulaText: (tlvl, stats, c) => <span>{data.plunging.low[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunging", c), stats)}</span>,
           formula: formula.plunging.low,
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunging", c),
         }, {
           text: `High Plunge DMG`,
-          formulaText: (tlvl, stats, c) => <span>{data.auto.plunging.high[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunging", c), stats)}</span>,
+          formulaText: (tlvl, stats, c) => <span>{data.plunging.high[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunging", c), stats)}</span>,
           formula: formula.plunging.high,
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunging", c),
         }]
