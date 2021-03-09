@@ -9,10 +9,10 @@ function DisplayStatDiff({ label = "", val, oldVal, fixed = 0, unit = "", varian
   }
   const diff = val !== undefined ? val - oldVal : 0;
   let oldText = "", diffText = ""
-  if (oldVal || diff === 0) oldText = oldVal.toFixed(fixed)
-  else if (oldVal === undefined) oldText = val.toFixed(fixed)//if oldval isnt defined, just display val.
+  if (oldVal || diff === 0) oldText = oldVal?.toFixed(fixed)
+  else if (oldVal === undefined) oldText = val?.toFixed(fixed)//if oldval isnt defined, just display val.
   if (oldText) oldText = <span className={`text-${variant}`}>{oldText}{unit}</span>
-  if (diff !== 0) diffText = <span className={`text-${diff > 0 ? "success" : "danger"}`}>{diff > 0 ? "+" : ""}{diff.toFixed(fixed)}{unit}</span>
+  if (diff !== 0) diffText = <span className={`text-${diff > 0 ? "success" : "danger"}`}>{diff > 0 ? "+" : ""}{diff?.toFixed(fixed)}{unit}</span>
 
   return <div>
     <b>{label}</b>
@@ -53,9 +53,9 @@ export default function StatDisplay({ character, character: { characterKey }, eq
     const labelVariant = Character.getTalentFieldValue(field, "variant", talentKey, character, build.finalStats)
     label = <span className={`text-${labelVariant}`}>{Character.getTalentFieldValue(field, "text", talentKey, character, build.finalStats)}</span>
     fixed = Character.getTalentFieldValue(field, "fixed", talentKey, character, build.finalStats, 0)
-    val = Character.getTalentFieldValue(field, "finalVal", talentKey, character, build.finalStats)
+    val = Character.getTalentFieldValue(field, "formula", talentKey, character, build.finalStats)
     if (newBuild && equippedBuild) {//comparable
-      oldVal = Character.getTalentFieldValue(field, "finalVal", talentKey, character, equippedBuild.finalStats)
+      oldVal = Character.getTalentFieldValue(field, "formula", talentKey, character, equippedBuild.finalStats)
     }
   }
 

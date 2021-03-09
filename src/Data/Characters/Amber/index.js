@@ -14,33 +14,9 @@ import passive2 from './Talent_Precise_Shot.png'
 import passive3 from './Talent_Gliding_Champion.png'
 import Character from '../../../Character/Character'
 import Stat from '../../../Stat'
+import formula, { data } from './formula'
 
-//AUTO
-const hitPercent = [
-  [36.12, 39.06, 42, 46.2, 49.14, 52.5, 57.12, 61.74, 66.36, 71.4, 76.44, 81.48, 86.52, 91.56, 96.6],
-  [36.12, 39.06, 42, 46.2, 49.14, 52.5, 57.12, 61.74, 66.36, 71.4, 76.44, 81.48, 86.52, 91.56, 96.6],
-  [46.44, 50.22, 54, 59.4, 63.18, 67.5, 73.44, 79.38, 85.32, 91.8, 98.28, 104.76, 111.24, 117.72, 124.2],
-  [47.3, 51.15, 55, 60.5, 64.35, 68.75, 74.8, 80.85, 86.9, 93.5, 100.1, 106.7, 113.3, 119.9, 126.5],
-  [59.34, 64.17, 69, 75.9, 80.73, 86.25, 93.84, 101.43, 109.02, 117.3, 125.58, 133.86, 142.14, 150.42, 158.7],
-]
-
-const aimedShot = [43.86, 47.43, 51, 56.1, 59.67, 63.75, 69.36, 74.97, 80.58, 86.7, 92.82, 98.94, 105.06, 111.18, 117.3]
-const fullAimedShot = [124, 133.3, 142.6, 155, 164.3, 173.6, 186, 198.4, 210.8, 223.2, 235.6, 248, 263.5, 279, 294.5]
-const plunging_dmg = [56.83, 61.45, 66.08, 72.69, 77.31, 82.6, 89.87, 97.14, 104.41, 112.34, 120.27, 128.2, 136.12, 144.05, 151.98]
-const plunging_dmg_low = [113.63, 122.88, 132.13, 145.35, 154.59, 165.17, 179.7, 194.23, 208.77, 224.62, 240.48, 256.34, 272.19, 288.05, 303.9]
-const plunging_dmg_high = [141.93, 153.49, 165.04, 181.54, 193.1, 206.3, 224.45, 242.61, 260.76, 280.57, 300.37, 320.18, 339.98, 359.79, 379.59]
-
-//SKILL
-const explosivePuppet = {
-  hp: [41.36, 44.46, 47.56, 51.7, 54.8, 57.9, 62.04, 66.18, 70.31, 74.45, 78.58, 82.72, 87.89, 93.06, 98.23],
-  dmg: [123.2, 132.44, 141.68, 154, 163.24, 172.48, 184.8, 197.12, 209.44, 221.76, 234.08, 246.4, 261.8, 277.2, 292.6],
-}
-const fieryRain = {
-  dmg_perwave: [28.08, 30.19, 32.29, 35.1, 37.21, 39.31, 42.12, 44.93, 47.74, 50.54, 53.35, 56.16, 59.67, 63.18, 66.69],
-  total_dmg: [505.44, 543.35, 581.26, 631.8, 669.71, 707.62, 758.16, 808.7, 859.25, 909.79, 960.34, 1010.88, 1074.06, 1137.24, 1200.42],
-}
-
-let char = {
+const char = {
   name: "Amber",
   cardImg: card,
   thumbImg: thumb,
@@ -65,48 +41,42 @@ let char = {
       img: normal,
       document: [{
         text: <span><strong>Normal Attack</strong> Perform up to 5 consecutive shots with a bow.</span>,
-        fields: hitPercent.map((percentArr, i) =>
+        fields: data.auto.normal.hitArr.map((percentArr, i) =>
         ({
           text: `${i + 1}-Hit DMG`,
-          basicVal: (tlvl, stats, c) => <span>{percentArr[tlvl]}% {Stat.printStat(Character.getTalentStatKey("normal", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (percentArr[tlvl] / 100) * stats[Character.getTalentStatKey("normal", c)],
-          formula: (tlvl, s, c) => ({ [Character.getTalentStatKey("normal", c)]: percentArr[tlvl] / 100 }),
+          formulaText: (tlvl, stats, c) => <span>{percentArr[tlvl]}% {Stat.printStat(Character.getTalentStatKey("normal", c), stats)}</span>,
+          formula: formula.auto.normal.hitArr[i],
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("normal", c),
         }))
       }, {
         text: <span><strong>Charged Attack</strong> Perform a more precise Aimed Shot with increased DMG. While aiming, flames will accumulate on the arrowhead. A fully charged flaming arrow will deal <span className="text-pyro">Pyro DMG</span>.</span>,
         fields: [{
           text: `Aimed Shot DMG`,
-          basicVal: (tlvl, stats, c) => <span>{aimedShot[tlvl]}% {Stat.printStat(Character.getTalentStatKey("charged", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (aimedShot[tlvl] / 100) * stats[Character.getTalentStatKey("charged", c)],
-          formula: (tlvl, s, c) => ({ [Character.getTalentStatKey("charged", c)]: aimedShot[tlvl] / 100 }),
+          formulaText: (tlvl, stats, c) => <span>{data.auto.charged.aimedShot[tlvl]}% {Stat.printStat(Character.getTalentStatKey("charged", c), stats)}</span>,
+          formula: formula.auto.charged.aimShot,
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("charged", c),
         }, {
           text: <span>Fully-Charged Aimed Shot DMG</span>,
-          basicVal: (tlvl, stats, c) => <span>{fullAimedShot[tlvl]}% {Stat.getStatName(Character.getTalentStatKey("charged", c, true))}</span>,
-          finalVal: (tlvl, stats, c) => (fullAimedShot[tlvl] / 100) * stats[Character.getTalentStatKey("charged", c, true)],
-          formula: (tlvl, stats, c) => ({ [Character.getTalentStatKey("charged", c, true)]: fullAimedShot[tlvl] / 100 }),
+          formulaText: (tlvl, stats, c) => <span>{data.auto.charged.fullAimedShot[tlvl]}% {Stat.getStatName(Character.getTalentStatKey("charged", c, true))}</span>,
+          formula: formula.auto.charged.fullAimedShot,
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("charged", c, true),
         }]
       }, {
         text: <span><strong>Plunging Attack</strong> Fires off a shower of arrows in mid-air before falling an striking the ground, dealing AoE DMG upon impact.</span>,
         fields: [{
           text: `Plunge DMG`,
-          basicVal: (tlvl, stats, c) => <span>{plunging_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunging", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (plunging_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("plunging", c)],
-          formula: (tlvl, stats, c) => ({ [Character.getTalentStatKey("plunging", c)]: plunging_dmg[tlvl] / 100 }),
+          formulaText: (tlvl, stats, c) => <span>{data.auto.plunging.dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunging", c), stats)}</span>,
+          formula: formula.auto.plunging.dmg,
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunging", c),
         }, {
           text: `Low Plunge DMG`,
-          basicVal: (tlvl, stats, c) => <span>{plunging_dmg_low[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunging", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (plunging_dmg_low[tlvl] / 100) * stats[Character.getTalentStatKey("plunging", c)],
-          formula: (tlvl, stats, c) => ({ [Character.getTalentStatKey("plunging", c)]: plunging_dmg_low[tlvl] / 100 }),
+          formulaText: (tlvl, stats, c) => <span>{data.auto.plunging.low[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunging", c), stats)}</span>,
+          formula: formula.auto.plunging.low,
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunging", c),
         }, {
           text: `High Plunge DMG`,
-          basicVal: (tlvl, stats, c) => <span>{plunging_dmg_high[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunging", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (plunging_dmg_high[tlvl] / 100) * stats[Character.getTalentStatKey("plunging", c)],
-          formula: (tlvl, _, c) => ({ [Character.getTalentStatKey("plunging", c)]: plunging_dmg_high[tlvl] / 100 }),
+          formulaText: (tlvl, stats, c) => <span>{data.auto.plunging.high[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunging", c), stats)}</span>,
+          formula: formula.auto.plunging.high,
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunging", c),
         }]
       }],
@@ -128,20 +98,17 @@ let char = {
         </span>,
         fields: [{
           text: "Inherited HP",
-          basicVal: (tlvl, stats, c) => <span>{explosivePuppet.hp[tlvl]}% {Stat.printStat("finalHP", stats)}</span>,
-          finalVal: (tlvl, stats, c) => (explosivePuppet.hp[tlvl] / 100) * stats.finalHP,
-          formula: (tlvl) => ({ finalHP: explosivePuppet.hp[tlvl] / 100 }),
+          formulaText: (tlvl, stats, c) => <span>{data.skill.hp[tlvl]}% {Stat.printStat("finalHP", stats)}</span>,
+          formula: formula.skill.hp,
         }, {
           text: "Explosion DMG",
-          basicVal: (tlvl, stats, c) => <span>{explosivePuppet.dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("skill", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (explosivePuppet.dmg[tlvl] / 100) * stats[Character.getTalentStatKey("skill", c)],
-          formula: (tlvl, stats, c) => ({ [Character.getTalentStatKey("skill", c)]: explosivePuppet.dmg[tlvl] / 100 }),
+          formulaText: (tlvl, stats, c) => <span>{data.skill.dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("skill", c), stats)}</span>,
+          formula: formula.skill.dmg,
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("skill", c),
         }, (c) => c >= 2 ? {
           text: "Manual Detonation DMG",
-          basicVal: (tlvl, stats, c) => <span>{explosivePuppet.dmg[tlvl]}% + 200% {Stat.printStat(Character.getTalentStatKey("skill", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => ((explosivePuppet.dmg[tlvl] + 200) / 100) * stats[Character.getTalentStatKey("skill", c)],
-          formula: (tlvl, stats, c) => ({ [Character.getTalentStatKey("skill", c)]: (explosivePuppet.dmg[tlvl] + 200) / 100 }),
+          formulaText: (tlvl, stats, c) => <span>{data.skill.dmg[tlvl]}% + 200% {Stat.printStat(Character.getTalentStatKey("skill", c), stats)}</span>,
+          formula: formula.skill.detonationDMG,
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("skill", c),
         } : null, (c) => c >= 4 ? {
           text: "Charges",
@@ -161,15 +128,13 @@ let char = {
       </span>,
         fields: [(c, a) => ({
           text: "DMG Per Wave",
-          basicVal: (tlvl, stats, c) => <span>{fieryRain.dmg_perwave[tlvl]}% {Stat.printStat(Character.getTalentStatKey("burst", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (fieryRain.dmg_perwave[tlvl] / 100) * stats[Character.getTalentStatKey("burst", c)],
-          formula: (tlvl, stats, c) => ({ [Character.getTalentStatKey("burst", c)]: fieryRain.dmg_perwave[tlvl] / 100 }),
+          formulaText: (tlvl, stats, c) => <span>{data.burst.dmgPerWave[tlvl]}% {Stat.printStat(Character.getTalentStatKey("burst", c), stats)}</span>,
+          formula: formula.burst.dmgPerWave,
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("burst", c),
         }), (c, a) => ({
           text: "Rain DMG",
-          basicVal: (tlvl, stats, c) => <span>{fieryRain.total_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("burst", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (fieryRain.total_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("burst", c)],
-          formula: (tlvl, stats, c) => ({ [Character.getTalentStatKey("burst", c)]: fieryRain.total_dmg[tlvl] / 100 }),
+          formulaText: (tlvl, stats, c) => <span>{data.burst.totDMG[tlvl]}% {Stat.printStat(Character.getTalentStatKey("burst", c), stats)}</span>,
+          formula: formula.burst.totDMG,
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("burst", c),
         }), (c, a) => {
           if (a < 1) return null

@@ -45,7 +45,7 @@ const eleBurst = {
   regen_low: [8.35, 8.85, 9.35, 10, 10.5, 11, 11.65, 12.3, 12.95, 13.6, 14.25, 14.9, 15.55, 16.2, 16.85]
 }
 
-let char = {
+const char = {
   name: "Hu Tao",
   cardImg: card,
   thumbImg: thumb,
@@ -75,18 +75,16 @@ let char = {
         fields: hitPercent.map((percentArr, i) =>
         ({
           text: `${i + (i < 5 ? 1 : 0)}-Hit DMG`,
-          basicVal: (tlvl, stats, c) => <span>{percentArr[tlvl]}% {Stat.printStat(Character.getTalentStatKey("normal", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (percentArr[tlvl] / 100) * stats[Character.getTalentStatKey("normal", c)],
-          formula: (tlvl, _, c) => ({ [Character.getTalentStatKey("normal", c)]: percentArr[tlvl] / 100 }),
+          formulaText: (tlvl, stats, c) => <span>{percentArr[tlvl]}% {Stat.printStat(Character.getTalentStatKey("normal", c), stats)}</span>,
+          formula: (tlvl, stats, c) => (percentArr[tlvl] / 100) * stats[Character.getTalentStatKey("normal", c)],
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("normal", c),
         }))
       }, {
         text: <span><strong>Charged Attack</strong> Consumes a certain amount of Stamina to lunge forward, dealing damage to enemies along the way.</span>,
         fields: [{
           text: `Charged Attack`,
-          basicVal: (tlvl, stats, c) => <span>{charged_atk[tlvl]}% {Stat.printStat(Character.getTalentStatKey("charged", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (charged_atk[tlvl] / 100) * stats[Character.getTalentStatKey("charged", c)],
-          formula: (tlvl, stats, c) => ({ [Character.getTalentStatKey("charged", c)]: charged_atk[tlvl] / 100 }),
+          formulaText: (tlvl, stats, c) => <span>{charged_atk[tlvl]}% {Stat.printStat(Character.getTalentStatKey("charged", c), stats)}</span>,
+          formula: (tlvl, stats, c) => (charged_atk[tlvl] / 100) * stats[Character.getTalentStatKey("charged", c)],
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("charged", c),
         }, {
           text: `Stamina Cost`,
@@ -96,21 +94,18 @@ let char = {
         text: <span><strong>Plunging Attack</strong>TEMPLATE</span>,
         fields: [{
           text: `Plunge DMG`,
-          basicVal: (tlvl, stats, c) => <span>{plunge_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunging", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (plunge_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("plunging", c)],
-          formula: (tlvl, _, c) => ({ [Character.getTalentStatKey("plunging", c)]: plunge_dmg[tlvl] / 100 }),
+          formulaText: (tlvl, stats, c) => <span>{plunge_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunging", c), stats)}</span>,
+          formula: (tlvl, stats, c) => (plunge_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("plunging", c)],
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunging", c),
         }, {
           text: `Low Plunge DMG`,
-          basicVal: (tlvl, stats, c) => <span>{plunge_dmg_low[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunging", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (plunge_dmg_low[tlvl] / 100) * stats[Character.getTalentStatKey("plunging", c)],
-          formula: (tlvl, _, c) => ({ [Character.getTalentStatKey("plunging", c)]: plunge_dmg_low[tlvl] / 100 }),
+          formulaText: (tlvl, stats, c) => <span>{plunge_dmg_low[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunging", c), stats)}</span>,
+          formula: (tlvl, stats, c) => (plunge_dmg_low[tlvl] / 100) * stats[Character.getTalentStatKey("plunging", c)],
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunging", c),
         }, {
           text: `High Plunge DMG`,
-          basicVal: (tlvl, stats, c) => <span>{plunge_dmg_high[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunging", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (plunge_dmg_high[tlvl] / 100) * stats[Character.getTalentStatKey("plunging", c)],
-          formula: (tlvl, _, c) => ({ [Character.getTalentStatKey("plunging", c)]: plunge_dmg_high[tlvl] / 100 }),
+          formulaText: (tlvl, stats, c) => <span>{plunge_dmg_high[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunging", c), stats)}</span>,
+          formula: (tlvl, stats, c) => (plunge_dmg_high[tlvl] / 100) * stats[Character.getTalentStatKey("plunging", c)],
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunging", c),
         }]
       }],
@@ -142,14 +137,12 @@ let char = {
         }, {
           //TODO cap this at 400% baseATK
           text: "ATK Increase",
-          basicVal: (tlvl, stats, c) => <span>{eleSkill.atk_inc[tlvl]}% {Stat.printStat("finalHP", stats)}</span>,
-          finalVal: (tlvl, stats, c) => (eleSkill.atk_inc[tlvl] / 100) * stats.finalHP,
-          formula: (tlvl) => ({ finalHP: eleSkill.atk_inc[tlvl] / 100 }),
+          formulaText: (tlvl, stats, c) => <span>{eleSkill.atk_inc[tlvl]}% {Stat.printStat("finalHP", stats)}</span>,
+          formula: (tlvl, stats, c) => (eleSkill.atk_inc[tlvl] / 100) * stats.finalHP,
         }, {
           text: "Blood Blossom DMG",
-          basicVal: (tlvl, stats, c) => <span>{eleSkill.skill_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("skill", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (eleSkill.skill_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("skill", c)],
-          formula: (tlvl, _, c) => ({ [Character.getTalentStatKey("skill", c)]: eleSkill.skill_dmg[tlvl] / 100 }),
+          formulaText: (tlvl, stats, c) => <span>{eleSkill.skill_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("skill", c), stats)}</span>,
+          formula: (tlvl, stats, c) => (eleSkill.skill_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("skill", c)],
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("skill", c),
         }, {
           text: "Blood Blossom Duration",
@@ -183,27 +176,23 @@ let char = {
         </span>,
         fields: [{
           text: "Skill DMG",
-          basicVal: (tlvl, stats, c) => <span>{eleBurst.burst_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("burst", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (eleBurst.burst_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("burst", c)],
-          formula: (tlvl, _, c) => ({ [Character.getTalentStatKey("burst", c)]: eleBurst.burst_dmg[tlvl] / 100 }),
+          formulaText: (tlvl, stats, c) => <span>{eleBurst.burst_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("burst", c), stats)}</span>,
+          formula: (tlvl, stats, c) => (eleBurst.burst_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("burst", c)],
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("burst", c),
         }, {
           text: "Low HP Skill DMG",
-          basicVal: (tlvl, stats, c) => <span>{eleBurst.burst_low_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("burst", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (eleBurst.burst_low_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("burst", c)],
-          formula: (tlvl, _, c) => ({ [Character.getTalentStatKey("burst", c)]: eleBurst.burst_low_dmg[tlvl] / 100 }),
+          formulaText: (tlvl, stats, c) => <span>{eleBurst.burst_low_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("burst", c), stats)}</span>,
+          formula: (tlvl, stats, c) => (eleBurst.burst_low_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("burst", c)],
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("burst", c),
         }, {
           text: "Skill HP Regeneration",
-          basicVal: (tlvl, stats, c) => <span>( {eleBurst.regen[tlvl]}% {Stat.printStat("finalHP", stats)} ) * {Stat.printStat("heal_multi", stats)}</span>,
-          finalVal: (tlvl, stats, c) => (eleBurst.regen[tlvl] / 100) * stats.finalHP * stats.heal_multi,
-          formula: (tlvl) => ({ heal_multi: { finalHP: eleBurst.regen[tlvl] / 100 } }),
+          formulaText: (tlvl, stats, c) => <span>( {eleBurst.regen[tlvl]}% {Stat.printStat("finalHP", stats)} ) * {Stat.printStat("heal_multi", stats)}</span>,
+          formula: (tlvl, stats, c) => (eleBurst.regen[tlvl] / 100) * stats.finalHP * stats.heal_multi,
           variant: "success",
         }, {
           text: "Low HP Skill Regeneration",
-          basicVal: (tlvl, stats, c) => <span>( {eleBurst.regen_low[tlvl]}% {Stat.printStat("finalHP", stats)} ) * {Stat.printStat("heal_multi", stats)}</span>,
-          finalVal: (tlvl, stats, c) => (eleBurst.regen_low[tlvl] / 100) * stats.finalHP * stats.heal_multi,
-          formula: (tlvl) => ({ heal_multi: { finalHP: eleBurst.regen_low[tlvl] / 100 } }),
+          formulaText: (tlvl, stats, c) => <span>( {eleBurst.regen_low[tlvl]}% {Stat.printStat("finalHP", stats)} ) * {Stat.printStat("heal_multi", stats)}</span>,
+          formula: (tlvl, stats, c) => (eleBurst.regen_low[tlvl] / 100) * stats.finalHP * stats.heal_multi,
           variant: "success",
         }, {
           text: "CD",

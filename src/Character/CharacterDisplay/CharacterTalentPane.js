@@ -151,7 +151,7 @@ function modifiersToFields(modifiers, finalStats = {}) {
     text: Stat.getStatName(mStatKey),
     variant: Stat.getStatVariant(mStatKey),
     value: Object.entries(modifier ?? {}).reduce((accu, [mkey, multiplier]) => accu + finalStats[mkey] * multiplier, 0),
-    basicVal: <span>{Object.entries(modifier ?? {}).map(([mkey, multiplier], i) => <span key={i} >{i !== 0 ? " + " : ""}{Stat.printStat(mkey, finalStats)} * {multiplier?.toFixed?.(3) ?? multiplier}</span>)}</span>,
+    formulaText: <span>{Object.entries(modifier ?? {}).map(([mkey, multiplier], i) => <span key={i} >{i !== 0 ? " + " : ""}{Stat.printStat(mkey, finalStats)} * {multiplier?.toFixed?.(3) ?? multiplier}</span>)}</span>,
     fixed: Stat.fixedUnit(mStatKey)
   }))
 }
@@ -295,7 +295,7 @@ function FieldDisplay({ character, character: { compareAgainstEquipped, constell
   if (typeof fieldVariant === "function")
     fieldVariant = fieldVariant?.(talentLvlKey, build.finalStats, character)
 
-  let fieldBasic = field.basicVal
+  let fieldBasic = field.formulaText
   if (typeof fieldBasic === "function")
     fieldBasic = fieldBasic?.(talentLvlKey, build.finalStats, character)
   if (fieldBasic)
@@ -306,13 +306,13 @@ function FieldDisplay({ character, character: { compareAgainstEquipped, constell
       <FontAwesomeIcon icon={faQuestionCircle} className="ml-2" style={{ cursor: "help" }} />
     </OverlayTrigger>
 
-  let fieldVal = field.value ? field.value : field.finalVal
-  if (typeof fieldVal === "function")
-    fieldVal = fieldVal?.(talentLvlKey, build.finalStats, character)
+  let fieldVal = field.value ?
+    (typeof field.value === "function" ? field.value?.(talentLvlKey, build.finalStats, character) : field.value) :
+    field.formula?.(talentLvlKey, character)?.[0]?.(build.finalStats)
   let fixedVal = field.fixed || 0
   //compareAgainstEquipped
   if (compareAgainstEquipped && equippedBuild && typeof fieldVal === "number") {
-    let fieldEquippedVal = field.value ? field.value : field.finalVal
+    let fieldEquippedVal = field.value ? field.value : field.formula?.(talentLvlKey, character)?.[0]?.(equippedBuild.finalStats)
 
     if (typeof fieldEquippedVal === "function")
       fieldEquippedVal = parseInt(fieldEquippedVal?.(talentLvlKey, equippedBuild.finalStats, character)?.toFixed?.(fixedVal))

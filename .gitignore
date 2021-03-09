@@ -28,4 +28,4 @@ yarn-error.log*
 # for personal use
 .notes
 # template files
-TEMPLATE.js
+TEMPLATE*
