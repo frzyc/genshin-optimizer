@@ -43,7 +43,7 @@ const dawn = {
   explosion: [204, 219.3, 234.6, 255, 270.3, 285.6, 306, 326.4, 346.8, 367.2, 387.6, 408, 433.5, 459, 484.5],
 }
 
-let char = {
+const char = {
   name: "Diluc",
   cardImg: card,
   thumbImg: thumb,
@@ -72,24 +72,21 @@ let char = {
         fields: hitPercent.map((percentArr, i) =>
         ({
           text: `${i + 1}-Hit DMG`,
-          basicVal: (tlvl, stats, c) => <span>{percentArr[tlvl]}% {Stat.printStat(Character.getTalentStatKey("normal", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (percentArr[tlvl] / 100) * stats[Character.getTalentStatKey("normal", c)],
-          formula: (tlvl, stats, c) => ({ [Character.getTalentStatKey("normal", c)]: percentArr[tlvl] / 100 }),
+          formulaText: (tlvl, stats, c) => <span>{percentArr[tlvl]}% {Stat.printStat(Character.getTalentStatKey("normal", c), stats)}</span>,
+          formula: (tlvl, stats, c) => (percentArr[tlvl] / 100) * stats[Character.getTalentStatKey("normal", c)],
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("normal", c)
         }))
       }, {
         text: <span><strong>Charged Attack</strong> Drains Stamina over time to perform continuous slashes. At the end of the sequence, perform a more powerful slash.</span>,
         fields: [{
           text: `Spinning DMG`,
-          basicVal: (tlvl, stats, c) => <span>{charged_atk_spinnning[tlvl]}% {Stat.printStat(Character.getTalentStatKey("charged", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (charged_atk_spinnning[tlvl] / 100) * stats[Character.getTalentStatKey("charged", c)],
-          formula: (tlvl, stats, c) => ({ [Character.getTalentStatKey("charged", c)]: charged_atk_spinnning[tlvl] / 100 }),
+          formulaText: (tlvl, stats, c) => <span>{charged_atk_spinnning[tlvl]}% {Stat.printStat(Character.getTalentStatKey("charged", c), stats)}</span>,
+          formula: (tlvl, stats, c) => (charged_atk_spinnning[tlvl] / 100) * stats[Character.getTalentStatKey("charged", c)],
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("charged", c)
         }, {
           text: `Spinning Final DMG`,
-          basicVal: (tlvl, stats, c) => <span>{charged_finalATK[tlvl]}% {Stat.printStat(Character.getTalentStatKey("charged", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (charged_finalATK[tlvl] / 100) * stats[Character.getTalentStatKey("charged", c)],
-          formula: (tlvl, stats, c) => ({ [Character.getTalentStatKey("charged", c)]: charged_finalATK[tlvl] / 100 }),
+          formulaText: (tlvl, stats, c) => <span>{charged_finalATK[tlvl]}% {Stat.printStat(Character.getTalentStatKey("charged", c), stats)}</span>,
+          formula: (tlvl, stats, c) => (charged_finalATK[tlvl] / 100) * stats[Character.getTalentStatKey("charged", c)],
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("charged", c)
         }, (c, a) => ({
           text: `Stamina Cost`,
@@ -102,21 +99,18 @@ let char = {
         text: <span><strong>Plunging Attack</strong> Plunges from mid-air to strike the ground, damaging enemies along the path and dealing AoE DMG upon impact.</span>,
         fields: [{
           text: `Plunge DMG`,
-          basicVal: (tlvl, stats, c) => <span>{plunging_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunging", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (plunging_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("plunging", c)],
-          formula: (tlvl, stats, c) => ({ [Character.getTalentStatKey("plunging", c)]: plunging_dmg[tlvl] / 100 }),
+          formulaText: (tlvl, stats, c) => <span>{plunging_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunging", c), stats)}</span>,
+          formula: (tlvl, stats, c) => (plunging_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("plunging", c)],
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunging", c)
         }, {
           text: `Low Plunge DMG`,
-          basicVal: (tlvl, stats, c) => <span>{plunging_dmg_low[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunging", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (plunging_dmg_low[tlvl] / 100) * stats[Character.getTalentStatKey("plunging", c)],
-          formula: (tlvl, s, c) => ({ [Character.getTalentStatKey("plunging", c)]: plunging_dmg_low[tlvl] / 100 }),
+          formulaText: (tlvl, stats, c) => <span>{plunging_dmg_low[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunging", c), stats)}</span>,
+          formula: (tlvl, stats, c) => (plunging_dmg_low[tlvl] / 100) * stats[Character.getTalentStatKey("plunging", c)],
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunging", c)
         }, {
           text: `High Plunge DMG`,
-          basicVal: (tlvl, stats, c) => <span>{plunging_dmg_high[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunging", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (plunging_dmg_high[tlvl] / 100) * stats[Character.getTalentStatKey("plunging", c)],
-          formula: (tlvl, s, c) => ({ [Character.getTalentStatKey("plunging", c)]: plunging_dmg_high[tlvl] / 100 }),
+          formulaText: (tlvl, stats, c) => <span>{plunging_dmg_high[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunging", c), stats)}</span>,
+          formula: (tlvl, stats, c) => (plunging_dmg_high[tlvl] / 100) * stats[Character.getTalentStatKey("plunging", c)],
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunging", c)
         }]
       }],
@@ -131,38 +125,33 @@ let char = {
         </span>,
         fields: [{
           text: "1-Hit DMG",
-          basicVal: (tlvl, stats, c) => <span>{searing.hit1[tlvl]}% {Stat.printStat(Character.getTalentStatKey("skill", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (searing.hit1[tlvl] / 100) * stats[Character.getTalentStatKey("skill", c)],
-          formula: (tlvl, s, c) => ({ [Character.getTalentStatKey("skill", c)]: searing.hit1[tlvl] / 100 }),
+          formulaText: (tlvl, stats, c) => <span>{searing.hit1[tlvl]}% {Stat.printStat(Character.getTalentStatKey("skill", c), stats)}</span>,
+          formula: (tlvl, stats, c) => (searing.hit1[tlvl] / 100) * stats[Character.getTalentStatKey("skill", c)],
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("skill", c)
         }, {
           text: "2-Hit DMG",
-          basicVal: (tlvl, stats, c) => <span>{searing.hit2[tlvl]}% {Stat.printStat(Character.getTalentStatKey("skill", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (searing.hit2[tlvl] / 100) * stats[Character.getTalentStatKey("skill", c)],
-          formula: (tlvl, s, c) => ({ [Character.getTalentStatKey("skill", c)]: searing.hit2[tlvl] / 100 }),
+          formulaText: (tlvl, stats, c) => <span>{searing.hit2[tlvl]}% {Stat.printStat(Character.getTalentStatKey("skill", c), stats)}</span>,
+          formula: (tlvl, stats, c) => (searing.hit2[tlvl] / 100) * stats[Character.getTalentStatKey("skill", c)],
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("skill", c)
         }, {
           text: "3-Hit DMG",
-          basicVal: (tlvl, stats, c) => <span>{searing.hit3[tlvl]}% {Stat.printStat(Character.getTalentStatKey("skill", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (searing.hit3[tlvl] / 100) * stats[Character.getTalentStatKey("skill", c)],
-          formula: (tlvl, s, c) => ({ [Character.getTalentStatKey("skill", c)]: searing.hit3[tlvl] / 100 }),
+          formulaText: (tlvl, stats, c) => <span>{searing.hit3[tlvl]}% {Stat.printStat(Character.getTalentStatKey("skill", c), stats)}</span>,
+          formula: (tlvl, stats, c) => (searing.hit3[tlvl] / 100) * stats[Character.getTalentStatKey("skill", c)],
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("skill", c)
         }, (c) => {
           if (c < 4) return null
           return {
             text: "2-Hit DMG(Boosted)",
-            basicVal: (tlvl, stats, c) => <span>{searing.hit2[tlvl]}% + 40% {Stat.printStat(Character.getTalentStatKey("skill", c), stats)}</span>,
-            finalVal: (tlvl, stats, c) => ((searing.hit2[tlvl] + 40) / 100) * stats[Character.getTalentStatKey("skill", c)],
-            formula: (tlvl, s, c) => ({ [Character.getTalentStatKey("skill", c)]: (searing.hit2[tlvl] + 40) / 100 }),
+            formulaText: (tlvl, stats, c) => <span>{searing.hit2[tlvl]}% + 40% {Stat.printStat(Character.getTalentStatKey("skill", c), stats)}</span>,
+            formula: (tlvl, stats, c) => ((searing.hit2[tlvl] + 40) / 100) * stats[Character.getTalentStatKey("skill", c)],
             variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("skill", c)
           }
         }, (c) => {
           if (c < 4) return null
           return {
             text: "3-Hit DMG(Boosted)",
-            basicVal: (tlvl, stats, c) => <span>{searing.hit3[tlvl]}% + 40% {Stat.printStat(Character.getTalentStatKey("skill", c), stats)}</span>,
-            finalVal: (tlvl, stats, c) => ((searing.hit3[tlvl] + 40) / 100) * stats[Character.getTalentStatKey("skill", c)],
-            formula: (tlvl, s, c) => ({ [Character.getTalentStatKey("skill", c)]: (searing.hit3[tlvl] + 40) / 100 }),
+            formulaText: (tlvl, stats, c) => <span>{searing.hit3[tlvl]}% + 40% {Stat.printStat(Character.getTalentStatKey("skill", c), stats)}</span>,
+            formula: (tlvl, stats, c) => ((searing.hit3[tlvl] + 40) / 100) * stats[Character.getTalentStatKey("skill", c)],
             variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("skill", c)
           }
         }, {
@@ -197,21 +186,18 @@ let char = {
         </span>,
         fields: [{
           text: "Slashing DMG",
-          basicVal: (tlvl, stats, c) => <span>{dawn.slashing[tlvl]}% {Stat.printStat(Character.getTalentStatKey("burst", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (dawn.slashing[tlvl] / 100) * stats[Character.getTalentStatKey("burst", c)],
-          formula: (tlvl, s, c) => ({ [Character.getTalentStatKey("burst", c)]: dawn.slashing[tlvl] / 100 }),
+          formulaText: (tlvl, stats, c) => <span>{dawn.slashing[tlvl]}% {Stat.printStat(Character.getTalentStatKey("burst", c), stats)}</span>,
+          formula: (tlvl, stats, c) => (dawn.slashing[tlvl] / 100) * stats[Character.getTalentStatKey("burst", c)],
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("burst", c)
         }, {
           text: "DoT",
-          basicVal: (tlvl, stats, c) => <span>{dawn.dot[tlvl]}% {Stat.printStat(Character.getTalentStatKey("burst", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (dawn.dot[tlvl] / 100) * stats[Character.getTalentStatKey("burst", c)],
-          formula: (tlvl, s, c) => ({ [Character.getTalentStatKey("burst", c)]: dawn.dot[tlvl] / 100 }),
+          formulaText: (tlvl, stats, c) => <span>{dawn.dot[tlvl]}% {Stat.printStat(Character.getTalentStatKey("burst", c), stats)}</span>,
+          formula: (tlvl, stats, c) => (dawn.dot[tlvl] / 100) * stats[Character.getTalentStatKey("burst", c)],
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("burst", c)
         }, {
           text: "Explosion DMG",
-          basicVal: (tlvl, stats, c) => <span>{dawn.explosion[tlvl]}% {Stat.printStat(Character.getTalentStatKey("burst", c), stats)}</span>,
-          finalVal: (tlvl, stats, c) => (dawn.explosion[tlvl] / 100) * stats[Character.getTalentStatKey("burst", c)],
-          formula: (tlvl, stats, c) => ({ [Character.getTalentStatKey("burst", c)]: dawn.explosion[tlvl] / 100 }),
+          formulaText: (tlvl, stats, c) => <span>{dawn.explosion[tlvl]}% {Stat.printStat(Character.getTalentStatKey("burst", c), stats)}</span>,
+          formula: (tlvl, stats, c) => (dawn.explosion[tlvl] / 100) * stats[Character.getTalentStatKey("burst", c)],
           variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("burst", c)
         }, {
           text: "CD",

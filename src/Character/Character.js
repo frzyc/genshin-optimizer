@@ -99,6 +99,8 @@ export default class Character {
   }
   static getTalentFieldValue = (field, key, talentKey, character, stats = {}, defVal = "") => {
     if (!field?.[key]) return defVal
+    if (key === "formula")
+      return field?.formula?.(this.getTalentLevelKey(character, talentKey), character)?.[0]?.(stats)
     return typeof field?.[key] === "function" ? field[key](this.getTalentLevelKey(character, talentKey), stats, character) : field[key]
   }
 
@@ -149,6 +151,7 @@ export default class Character {
    * @param {*} elemental - Override the hit to be the character's elemental, that is not part of infusion.
    */
   static getTalentStatKey = (skillKey, character, elemental = false) => {
+    if (!character) return;
     const { hitMode = "", autoInfused = false, characterKey, reactionMode = null } = character
     if (this.getElementalKeys().includes(skillKey)) return `${skillKey}_elemental_${hitMode}`//elemental DMG
     let charEleKey = this.getElementalKey(characterKey)
@@ -160,6 +163,7 @@ export default class Character {
     return `${eleKey}_${skillKey}_${hitMode}`
   }
   static getTalentStatKeyVariant = (skillKey, character, elemental = false) => {
+    if (!character) return;
     if (this.getElementalKeys().includes(skillKey)) return skillKey
     let { autoInfused = false, characterKey, reactionMode = null } = character
     let charEleKey = this.getElementalKey(characterKey)
@@ -178,7 +182,7 @@ export default class Character {
   static isAutoElemental = (charKey, defVal = false) => this.getWeaponTypeKey(charKey) === "catalyst" || defVal
   static isAutoInfusable = (charKey, defVal = false) => this.getCDataObj(charKey)?.talent?.auto?.infusable || defVal
 
-  static hasTalentPage = (characterKey) => (Character.getCDataObj(characterKey)?.talent?.skill?.name || "TEMPLATE") !== "TEMPLATE"
+  static hasTalentPage = (characterKey) => Boolean(Character.getCDataObj(characterKey)?.talent)
 
   static getDisplayStatKeys = (characterKey, defVal = { basicKeys: [] }) => {
     if (!characterKey) return defVal
