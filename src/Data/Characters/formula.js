@@ -26,7 +26,7 @@ import amber from './Amber/data'
 // import venti from './Venti'
 // import xiao from './Xiao'
 // import xiangling from './Xiangling'
-// import xingqiu from './Xingqiu'
+import xingqiu from './Xingqiu/data'
 // import xinyan from './Xinyan'
 // import zhongli from './Zhongli'
 const formula = {
@@ -58,7 +58,7 @@ const formula = {
   // venti,
   // xiao,
   // xiangling,
-  // xingqiu,
+  xingqiu,
   // xinyan,
   // zhongli
 };
