@@ -24,7 +24,7 @@ import amber from './Amber/data'
 // import traveler_anemo from './Traveler Anemo'
 // import traveler_geo from './Traveler Geo'
 // import venti from './Venti'
-// import xiao from './Xiao'
+import xiao from './Xiao/data'
 // import xiangling from './Xiangling'
 import xingqiu from './Xingqiu/data'
 // import xinyan from './Xinyan'
@@ -56,7 +56,7 @@ const formula = {
   // traveler_anemo,
   // traveler_geo,
   // venti,
-  // xiao,
+  xiao,
   // xiangling,
   xingqiu,
   // xinyan,
