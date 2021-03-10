@@ -57,7 +57,7 @@ const formula = {
     shield: (tlvl) => {
       const hp = data.skill.hp[tlvl] / 100
       const flat = data.skill.flat[tlvl]
-      return [(s) => hp * s.finalHP + flat, "finalHP"]
+      return [(s) => hp * s.finalHP + flat, ["finalHP"]]
     },
     dmg: (tlvl, stats) => basicDMGFormula(data.skill.dmg[tlvl], stats, "skill"),
     onHit: (tlvl, stats) => basicDMGFormula(data.skill.onHit[tlvl], stats, "skill"),

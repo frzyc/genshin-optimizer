@@ -49,7 +49,7 @@ const formula = {
   skill: {
     hp: (tlvl) => {
       const hp = data.skill.hp[tlvl] / 100
-      return [(s) => hp * s.finalHP, "finalHP"]
+      return [(s) => hp * s.finalHP, ["finalHP"]]
     },
     dmg: (tlvl, stats) => basicDMGFormula(data.skill.dmg[tlvl], stats, "skill"),
     detonationDMG: (tlvl, stats) => basicDMGFormula(data.skill.dmg[tlvl] + 200, stats, "skill"),

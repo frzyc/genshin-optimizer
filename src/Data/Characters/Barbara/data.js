@@ -50,12 +50,12 @@ const formula = {
     regenPerHit: (tlvl) => {
       const hp = data.skill.hp[tlvl] / 100
       const flat = data.skill.hpFlat[tlvl]
-      return [s => (hp * s.finalHP + flat) * s.heal_multi, "finalHP", "heal_multi"]
+      return [s => (hp * s.finalHP + flat) * s.heal_multi, ["finalHP", "heal_multi"]]
     },
     contRegen: (tlvl) => {
       const hp = data.skill.contHP[tlvl] / 100
       const flat = data.skill.contHPFlat[tlvl]
-      return [s => (hp * s.finalHP + flat) * s.heal_multi, "finalHP", "heal_multi"]
+      return [s => (hp * s.finalHP + flat) * s.heal_multi, ["finalHP", "heal_multi"]]
     },
     dmg: (tlvl, stats) => basicDMGFormula(data.skill.dmg[tlvl], stats, "skill"),
   },
@@ -63,7 +63,7 @@ const formula = {
     regen: (tlvl) => {
       const hp = data.burst.hp[tlvl] / 100
       const flat = data.burst.flat[tlvl]
-      return [s => (hp * s.finalHP + flat) * s.heal_multi, "finalHP", "heal_multi"]
+      return [s => (hp * s.finalHP + flat) * s.heal_multi, ["finalHP", "heal_multi"]]
     },
   }
 }

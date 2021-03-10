@@ -58,12 +58,12 @@ const formula = {
     regen: (tlvl, stats) => {
       const hp = data.burst.healHP[tlvl] / 100
       const flat = data.burst.healHPFlat[tlvl]
-      return [s => (hp * s.finalHP + flat) * s.heal_multi, "finalHP", "heal_multi"]
+      return [s => (hp * s.finalHP + flat) * s.heal_multi, ["finalHP", "heal_multi"]]
     },
     atkBonus: (tlvl, stats) => {
       const { constellation } = stats
       const percent = (data.burst.atkRatio[tlvl] + (constellation < 1 ? 0 : 20)) / 100
-      return [s => percent * s.baseATK, "baseATK"]
+      return [s => percent * s.baseATK, ["baseATK"]]
     }
   }
 }
