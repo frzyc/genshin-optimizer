@@ -11,7 +11,7 @@ import bennett from './Bennett/data'
 // import hutao from './Hu Tao/data'
 // import jean from './Jean/data'
 // import kaeya from './Kaeya/data'
-// import keqing from './Keqing/data'
+import keqing from './Keqing/data'
 // import klee from './Klee/data'
 // import lisa from './Lisa/data'
 import mona from './Mona/data'
@@ -43,7 +43,7 @@ const formula = {
   // hutao,
   // jean,
   // kaeya,
-  // keqing,
+  keqing,
   // klee,
   // lisa,
   mona,
