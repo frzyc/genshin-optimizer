@@ -16,7 +16,6 @@ import Stat from '../../../Stat'
 import DisplayPercent from '../../../Components/DisplayPercent'
 import formula, {data} from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from "../../../Build/Build"
-//import DisplayPercent from '../../../Components/DisplayPercent'
 
 const char = {
   name: "Xingqiu",

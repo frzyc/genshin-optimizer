@@ -23,7 +23,7 @@ import bennett from './Bennett/data'
 // import tartaglia from './Tartaglia'
 // import traveler_anemo from './Traveler Anemo'
 // import traveler_geo from './Traveler Geo'
-// import venti from './Venti'
+import venti from './Venti/data'
 import xiao from './Xiao/data'
 // import xiangling from './Xiangling'
 import xingqiu from './Xingqiu/data'
@@ -55,7 +55,7 @@ const formula = {
   // tartaglia,
   // traveler_anemo,
   // traveler_geo,
-  // venti,
+  venti,
   xiao,
   // xiangling,
   xingqiu,

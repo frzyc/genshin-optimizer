@@ -13,36 +13,9 @@ import passive1 from './Talent_Embrace_of_Winds.png'
 import passive2 from './Talent_Stormeye.png'
 import passive3 from './Talent_Windrider.png'
 import ElementalData from '../../ElementalData'
-import Character from '../../../Character/Character'
 import Stat from '../../../Stat'
-
-//AUTO
-
-const hitPercent = [
-  [20.38, 22.04, 23.7, 26.07, 27.73, 29.63, 32.23, 34.84, 37.45, 40.29, 43.55, 47.38, 51.21, 55.05, 59.23],//1
-  [44.38, 47.99, 51.6, 56.76, 60.37, 64.5, 70.18, 75.85, 81.53, 87.72, 94.82, 103.16, 111.5, 119.85, 128.95],//2
-  [52.37, 56.64, 60.9, 66.99, 71.25, 76.13, 82.82, 89.52, 96.22, 103.53, 111.9, 121.75, 131.6, 141.45, 152.19],//3
-  [26.06, 28.18, 30.3, 33.33, 35.45, 37.87, 41.21, 44.54, 47.87, 51.51, 55.68, 60.58, 65.48, 70.37, 75.72],//4
-  [50.65, 54.78, 58.9, 64.79, 68.91, 73.63, 80.1, 86.58, 93.06, 100.13, 108.23, 117.75, 127.28, 136.8, 147.19],//5
-  [70.95, 76.73, 82.5, 90.75, 96.53, 103.13, 112.2, 121.28, 130.35, 140.25, 151.59, 164.93, 178.27, 191.61, 206.17],//6
-]
-
-const aimed = [43.86, 47.43, 51, 56.1, 59.67, 63.75, 69.36, 74.97, 80.58, 86.7, 93.71, 101.96, 110.21, 118.45, 127.45]
-const aimed_full = [124, 133.3, 142.6, 155, 164.3, 173.6, 186, 198.4, 210.8, 223.2, 236.1, 252.96, 269.82, 286.69, 303.55]
-const plunging_dmg = [56.83, 61.45, 66.08, 72.69, 77.31, 82.6, 89.87, 97.14, 104.41, 112.34, 120.27, 128.2, 136.12, 144.05, 151.98]
-const plunging_dmg_low = [113.63, 122.88, 132.13, 145.35, 154.59, 165.17, 179.7, 194.23, 208.77, 224.62, 240.48, 256.34, 272.19, 288.05, 303.9]
-const plunging_dmg_high = [141.93, 153.49, 165.04, 181.54, 193.1, 206.3, 224.45, 242.61, 260.76, 280.57, 300.37, 320.18, 339.98, 359.79, 379.59]
-
-//SKILL
-const sonnet = {
-  press_dmg: [276, 296.7, 317.4, 345, 365.7, 386.4, 414, 441.6, 469.2, 496.8, 524.4, 552, 586.5, 621, 655.5],
-  hold_dmg: [380, 408.5, 437, 475, 503.5, 532, 570, 608, 646, 684, 722, 760, 807.5, 855, 902.5],
-}
-
-//BURST
-const ode = {
-  dot: [37.6, 40.42, 43.24, 47, 49.82, 52.64, 56.4, 60.16, 63.92, 67.68, 71.44, 75.2, 79.9, 84.6, 89.3],
-}
+import formula, { data } from './data'
+import { getTalentStatKey, getTalentStatKeyVariant } from "../../../Build/Build"
 
 const char = {
   name: "Venti",
@@ -54,15 +27,9 @@ const char = {
   gender: "M",
   constellationName: "Carmen Dei",
   titles: ["Windborne Bard", "Tone-Deaf Bard"],
-  baseStat: {
-    characterHP: [820, 2127, 2830, 4234, 4734, 5446, 6112, 6832, 7331, 8058, 8557, 9292, 9791, 10531],
-    characterATK: [20, 53, 71, 106, 118, 136, 153, 171, 183, 201, 214, 232, 245, 263],
-    characterDEF: [52, 135, 180, 269, 301, 346, 388, 434, 465, 512, 543, 590, 622, 669]
-  },
-  specializeStat: {
-    key: "enerRech_",
-    value: [0, 0, 0, 0, 8, 8, 16, 16, 16, 16, 24, 24, 32, 32]
-  },
+  baseStat: data.baseStat,
+  specializeStat: data.specializeStat,
+  formula,
   talent: {
     auto: {
       name: "Divine Marksmanship",
@@ -70,56 +37,56 @@ const char = {
       infusable: false,
       document: [{
         text: <span><strong>Normal Attack</strong> Perform up to 6 consecutive shots with a bow. <small><i>Note: the 1st and 4th attack hits twice.</i></small></span>,
-        fields: hitPercent.map((percentArr, i) =>
+        fields: data.normal.hitArr.map((percentArr, i) =>
         ({
           text: `${i + 1}-Hit DMG`,
-          formulaText: (tlvl, stats, c) => <span>{percentArr[tlvl]}% {Stat.printStat(Character.getTalentStatKey("normal", c), stats)}</span>,
-          formula: (tlvl, stats, c) => (percentArr[tlvl] / 100) * stats[Character.getTalentStatKey("normal", c)],
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("normal", c),
+          formulaText: (tlvl, stats, c) => <span>{percentArr[tlvl]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
+          formula: formula.normal[i],
+          variant: (tlvl, stats) => getTalentStatKeyVariant("normal", stats),
         }))
       }, {
         text: <span><strong>Charged Attack</strong> Perform a more precise Aimed Shot with increased DMG. While aiming, favorable winds will accumulate on the arrowhead. A fully charged wind arrow will deal <span className="text-anemo">Anemo DMG</span>.</span>,
         fields: [{
           text: `Aimed Shot DMG`,
-          formulaText: (tlvl, stats, c) => <span>{aimed[tlvl]}% {Stat.printStat(Character.getTalentStatKey("charged", c), stats)}</span>,
-          formula: (tlvl, stats, c) => (aimed[tlvl] / 100) * stats[Character.getTalentStatKey("charged", c)],
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("charged", c),
+          formulaText: (tlvl, stats, c) => <span>{data.charged.hit[tlvl]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
+          formula: formula.charged.hit,
+          variant: (tlvl, stats) => getTalentStatKeyVariant("charged", stats),
         }, {
           text: <span>Fully-Charged Aimed Shot DMG</span>,
-          formulaText: (tlvl, stats, c) => <span>{aimed_full[tlvl]}% {Stat.printStat(Character.getTalentStatKey("charged", c, true), stats)}</span>,
-          formula: (tlvl, stats, c) => (aimed_full[tlvl] / 100) * stats[Character.getTalentStatKey("charged", c, true)],
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("charged", c, true),
+          formulaText: (tlvl, stats) => <span>{data.charged.full[tlvl]}% {Stat.printStat(getTalentStatKey("charged", stats, true), stats)}</span>,
+          formula: formula.charged.full,
+          variant: (tlvl, stats) => getTalentStatKeyVariant("charged", stats, true),
         },]
       }, (c) => c >= 1 && {
         text: <span><strong>Splitting Gales: </strong> Fires 2 additional split arrows per Aimed Shot</span>,
         fields: [{
           text: `Additional Aimed Shot DMG`,
-          formulaText: (tlvl, stats, c) => <span>{(aimed[tlvl] * 0.33)?.toFixed(2)}% {Stat.printStat(Character.getTalentStatKey("charged", c), stats)}</span>,
-          formula: (tlvl, stats, c) => (aimed[tlvl] * 0.33 / 100) * stats[Character.getTalentStatKey("charged", c)],
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("charged", c),
+          formulaText: (tlvl, stats) => <span>{(data.charged.hit[tlvl] * 0.33)?.toFixed(2)}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
+          formula: formula.charged.hit_,
+          variant: (tlvl, stats) => getTalentStatKeyVariant("charged", stats),
         }, {
           text: `Additional Full-Charged Aimed Shot DMG`,
-          formulaText: (tlvl, stats, c) => <span>{(aimed_full[tlvl] * 0.33)?.toFixed(2)}% {Stat.printStat(Character.getTalentStatKey("charged", c), stats)}</span>,
-          formula: (tlvl, stats, c) => (aimed_full[tlvl] * 0.33 / 100) * stats[Character.getTalentStatKey("charged", c)],
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("charged", c),
+          formulaText: (tlvl, stats) => <span>{(data.charged.full[tlvl] * 0.33)?.toFixed(2)}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
+          formula: formula.charged.full_,
+          variant: (tlvl, stats) => getTalentStatKeyVariant("charged", stats),
         }]
       }, {
         text: <span><strong>Plunging Attack</strong> Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.</span>,
         fields: [{
           text: `Plunge DMG`,
-          formulaText: (tlvl, stats, c) => <span>{plunging_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunging", c), stats)}</span>,
-          formula: (tlvl, stats, c) => (plunging_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("plunging", c)],
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunging", c),
+          formulaText: (tlvl, stats) => <span>{data.plunging.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+          formula: formula.plunging.dmg,
+          variant: (tlvl, stats) => getTalentStatKeyVariant("plunging", stats),
         }, {
           text: `Low Plunge DMG`,
-          formulaText: (tlvl, stats, c) => <span>{plunging_dmg_low[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunging", c), stats)}</span>,
-          formula: (tlvl, stats, c) => (plunging_dmg_low[tlvl] / 100) * stats[Character.getTalentStatKey("plunging", c)],
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunging", c),
+          formulaText: (tlvl, stats) => <span>{data.plunging.low[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+          formula: formula.plunging.low,
+          variant: (tlvl, stats) => getTalentStatKeyVariant("plunging", stats),
         }, {
           text: `High Plunge DMG`,
-          formulaText: (tlvl, stats, c) => <span>{plunging_dmg_high[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunging", c), stats)}</span>,
-          formula: (tlvl, stats, c) => (plunging_dmg_high[tlvl] / 100) * stats[Character.getTalentStatKey("plunging", c)],
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunging", c),
+          formulaText: (tlvl, stats) => <span>{data.plunging.high[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+          formula: formula.plunging.high,
+          variant: (tlvl, stats) => getTalentStatKeyVariant("plunging", stats),
         }]
       }],
     },
@@ -142,17 +109,17 @@ const char = {
         </span>,
         fields: [{
           text: "Press DMG",
-          formulaText: (tlvl, stats, c) => <span>{sonnet.press_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("skill", c), stats)}</span>,
-          formula: (tlvl, stats, c) => (sonnet.press_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("skill", c)],
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("skill", c),
+          formulaText: (tlvl, stats) => <span>{data.skill.press[tlvl]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
+          formula: formula.skill.press,
+          variant: (tlvl, stats) => getTalentStatKeyVariant("skill", stats),
         }, {
           text: "Press CD",
           value: "6s",
         }, {
           text: "Hold DMG",
-          formulaText: (tlvl, stats, c) => <span>{sonnet.hold_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("skill", c), stats)}</span>,
-          formula: (tlvl, stats, c) => (sonnet.hold_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("skill", c)],
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("skill", c),
+          formulaText: (tlvl, stats, c) => <span>{data.skill.hold[tlvl]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
+          formula: formula.skill.hold,
+          variant: (tlvl, stats) => getTalentStatKeyVariant("skill", stats),
         }, {
           text: "Hold CD",
           value: "15s",
@@ -196,9 +163,9 @@ const char = {
         </span>,
         fields: [{
           text: "DoT",
-          formulaText: (tlvl, stats, c) => <span>{ode.dot[tlvl]}% {Stat.printStat(Character.getTalentStatKey("burst", c), stats)}</span>,
-          formula: (tlvl, stats, c) => (ode.dot[tlvl] / 100) * stats[Character.getTalentStatKey("burst", c)],
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("burst", c),
+          formulaText: (tlvl, stats) => <span>{data.burst.hit[tlvl]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
+          formula: formula.burst.hit,
+          variant: (tlvl, stats) => getTalentStatKeyVariant("burst", stats),
         }, {
           text: "Duration",
           value: "8s",
@@ -222,8 +189,8 @@ const char = {
           maxStack: 1,
           fields: [{
             text: "Dot",
-            formulaText: (tlvl, stats, c) => <span>{(ode.dot[tlvl] / 2)?.toFixed(2)}% {Stat.printStat(`${eleKey}_burst_${c.hitMode}`, stats)}</span>,
-            formula: (tlvl, stats, c) => (ode.dot[tlvl] / 2 / 100) * stats[`${eleKey}_burst_${c.hitMode}`],
+            formulaText: (tlvl, stats, c) => <span>{(data.burst.hit[tlvl] / 2)?.toFixed(2)}% {Stat.printStat(`${eleKey}_burst_${c.hitMode}`, stats)}</span>,
+            formula: formula.burst[`${eleKey}_hit`],
           }, (c, a) => a >= 4 && {
             text: <span>Regen 15 Energy to all <span className={`text-${eleKey}`}>{ElementalData[eleKey].name}</span> characters.</span>,
           }, (c, a) => c >= 6 && {
