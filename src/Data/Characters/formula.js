@@ -16,7 +16,7 @@ import bennett from './Bennett/data'
 // import lisa from './Lisa'
 // import mona from './Mona'
 // import ningguang from './Ningguang'
-// import noelle from './Noelle'
+import noelle from './Noelle/data'
 // import qiqi from './Qiqi'
 // import razor from './Razor'
 // import sucrose from './Sucrose'
@@ -48,7 +48,7 @@ const formula = {
   // lisa,
   // mona,
   // ningguang,
-  // noelle,
+  noelle,
   // qiqi,
   // razor,
   // sucrose,

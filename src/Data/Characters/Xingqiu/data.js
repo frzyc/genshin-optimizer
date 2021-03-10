@@ -50,7 +50,10 @@ const formula = {
       [name, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "skill")]),
     ...Object.entries(data.skill).filter(([name]) => name !== "dmgRed").map(([name, arr]) =>
       [`${name}RainCutter`, (tlvl, stats) => basicDMGFormula(1.5 * arr[tlvl], stats, "skill")]),
-    ["dmgRed", (tlvl, stats) => [(s) => (data.skill.dmgRed[tlvl] + Math.min(24, 0.2 * s.hydro_dmg_)), ["hydro_dmg_"]]],
+    ["dmgRed", (tlvl, stats) => {
+      const flat = data.skill.dmgRed[tlvl]
+      return [s => (flat + Math.min(24, 0.2 * s.hydro_dmg_)), ["hydro_dmg_"]]
+    }],
   ]),
   burst: Object.fromEntries(Object.entries(data.burst).map(([name, arr]) =>
     [name, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "burst")])),
