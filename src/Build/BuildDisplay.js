@@ -580,7 +580,7 @@ function SortByStatDropdown({ characterKey, statsDisplayKeys, disabled, optimiza
   let sortByText = "VALUE"
   if (typeof optimizationTarget === "object") {
     const { talentKey, sectionIndex, fieldIndex } = optimizationTarget
-    let { variant = "", text } = Character.getTalentField(characterKey, talentKey, sectionIndex, fieldIndex)
+    let { variant = "", text } = Character.getTalentField(characterKey, talentKey, sectionIndex, fieldIndex) ?? {}
     variant = typeof variant === "function" ? variant?.(Character.getTalentLevelKey(character, talentKey), {}, character) : variant
     sortByText = <b>{Character.getTalentName(characterKey, talentKey)}: <span className={`text-${variant}`}>{text}</span></b>
   } else
