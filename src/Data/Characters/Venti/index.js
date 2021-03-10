@@ -62,12 +62,12 @@ const char = {
         fields: [{
           text: `Additional Aimed Shot DMG`,
           formulaText: (tlvl, stats) => <span>{(data.charged.hit[tlvl] * 0.33)?.toFixed(2)}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
-          formula: formula.charged.hit_,
+          formula: formula.charged.hit_bonus,
           variant: (tlvl, stats) => getTalentStatKeyVariant("charged", stats),
         }, {
           text: `Additional Full-Charged Aimed Shot DMG`,
           formulaText: (tlvl, stats) => <span>{(data.charged.full[tlvl] * 0.33)?.toFixed(2)}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
-          formula: formula.charged.full_,
+          formula: formula.charged.full_bonus,
           variant: (tlvl, stats) => getTalentStatKeyVariant("charged", stats),
         }]
       }, {
