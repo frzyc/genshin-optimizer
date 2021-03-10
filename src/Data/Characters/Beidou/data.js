@@ -52,15 +52,12 @@ const formula = {
     spinning: (tlvl, stats) => basicDMGFormula(data.charged.spinning[tlvl], stats, "charged"),
     finalATK: (tlvl, stats) => basicDMGFormula(data.charged.finalATK[tlvl], stats, "charged"),
   },
-  plunging: {
-    dmg: (tlvl, stats) => basicDMGFormula(data.plunging.dmg[tlvl], stats, "plunging"),
-    low: (tlvl, stats) => basicDMGFormula(data.plunging.low[tlvl], stats, "plunging"),
-    high: (tlvl, stats) => basicDMGFormula(data.plunging.high[tlvl], stats, "plunging"),
-  },
+  plunging: Object.fromEntries(Object.entries(data.plunging).map(([key, arr]) => [key, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "plunging")])),
   skill: {
     shield: (tlvl) => {
       const hp = data.skill.hp[tlvl] / 100
-      return [(s) => hp * s.finalHP + data.skill.flat[tlvl], "finalHP"]
+      const flat = data.skill.flat[tlvl]
+      return [(s) => hp * s.finalHP + flat, "finalHP"]
     },
     dmg: (tlvl, stats) => basicDMGFormula(data.skill.dmg[tlvl], stats, "skill"),
     onHit: (tlvl, stats) => basicDMGFormula(data.skill.onHit[tlvl], stats, "skill"),

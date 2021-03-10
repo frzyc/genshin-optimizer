@@ -45,11 +45,7 @@ const formula = {
     aimShot: (tlvl, stats) => basicDMGFormula(data.charged.aimedShot[tlvl], stats, "charged"),
     fullAimedShot: (tlvl, stats) => basicDMGFormula(data.charged.fullAimedShot[tlvl], stats, "charged"),
   },
-  plunging: {
-    dmg: (tlvl, stats) => basicDMGFormula(data.plunging.dmg[tlvl], stats, "plunging"),
-    low: (tlvl, stats) => basicDMGFormula(data.plunging.low[tlvl], stats, "plunging"),
-    high: (tlvl, stats) => basicDMGFormula(data.plunging.high[tlvl], stats, "plunging"),
-  },
+  plunging: Object.fromEntries(Object.entries(data.plunging).map(([key, arr]) => [key, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "plunging")])),
   skill: {
     hp: (tlvl) => {
       const hp = data.skill.hp[tlvl] / 100

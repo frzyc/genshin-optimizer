@@ -45,26 +45,25 @@ const formula = {
   charged: {
     dmg: (tlvl, stats) => basicDMGFormula(data.charged.dmg[tlvl], stats, "charged"),
   },
-  plunging: {
-    dmg: (tlvl, stats) => basicDMGFormula(data.plunging.dmg[tlvl], stats, "plunging"),
-    low: (tlvl, stats) => basicDMGFormula(data.plunging.low[tlvl], stats, "plunging"),
-    high: (tlvl, stats) => basicDMGFormula(data.plunging.high[tlvl], stats, "plunging"),
-  },
+  plunging: Object.fromEntries(Object.entries(data.plunging).map(([key, arr]) => [key, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "plunging")])),
   skill: {
     regenPerHit: (tlvl) => {
       const hp = data.skill.hp[tlvl] / 100
-      return [(s) => (hp * s.finalHP + data.skill.hpFlat[tlvl]) * s.heal_multi, "finalHP"]
+      const flat = data.skill.hpFlat[tlvl]
+      return [s => (hp * s.finalHP + flat) * s.heal_multi, "finalHP", "heal_multi"]
     },
     contRegen: (tlvl) => {
       const hp = data.skill.contHP[tlvl] / 100
-      return [(s) => (hp * s.finalHP + data.skill.contHPFlat[tlvl]) * s.heal_multi, "finalHP"]
+      const flat = data.skill.contHPFlat[tlvl]
+      return [s => (hp * s.finalHP + flat) * s.heal_multi, "finalHP", "heal_multi"]
     },
     dmg: (tlvl, stats) => basicDMGFormula(data.skill.dmg[tlvl], stats, "skill"),
   },
   burst: {
     regen: (tlvl) => {
       const hp = data.burst.hp[tlvl] / 100
-      return [(s) => (hp * s.finalHP + data.burst.flat[tlvl]) * s.heal_multi, "finalHP"]
+      const flat = data.burst.flat[tlvl]
+      return [s => (hp * s.finalHP + flat) * s.heal_multi, "finalHP", "heal_multi"]
     },
   }
 }

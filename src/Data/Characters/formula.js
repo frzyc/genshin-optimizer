@@ -1,8 +1,8 @@
 // import albedo from './Albedo'
 import amber from './Amber/data'
 import barbara from './Barbara/data'
-// import beidou from './Beidou'
-// import bennett from './Bennett'
+import beidou from './Beidou/data'
+import bennett from './Bennett/data'
 // import chongyun from './Chongyun'
 // import diluc from './Diluc'
 // import diona from './Diona'
@@ -33,8 +33,8 @@ const formula = {
   // albedo,
   amber,
   barbara,
-  // beidou,
-  // bennett,
+  beidou,
+  bennett,
   // chongyun,
   // diluc,
   // diona,
