@@ -13,29 +13,8 @@ import passive1 from './Talent_Backup_Plan.png'
 import passive2 from './Talent_Strategic_Reserve.png'
 import passive3 from './Talent_Trove_of_Marvelous_Treasures.png'
 import Stat from '../../../Stat'
-import Character from '../../../Character/Character'
-//import DisplayPercent from '../../../Components/DisplayPercent'
-
-//AUTO
-
-const hitPercent = [28, 30.1, 32.2, 35, 37.1, 39.2, 42, 44.8, 47.6, 50.4, 53.31, 57.12, 60.93, 64.74, 68.54]
-
-const charged_atk_dmg = [174.08, 187.14, 200.19, 217.6, 230.66, 243.71, 261.12, 278.53, 295.94, 313.34, 331.45, 355.12, 378.8, 402.47, 426.15]
-const charged_per_jade = [49.6, 53.32, 57.04, 62, 65.72, 69.44, 74.4, 79.36, 84.32, 89.28, 94.44, 101.18, 107.93, 114.68, 121.42]
-const plunging_dmg = [56.83, 61.45, 66.08, 72.69, 77.31, 82.6, 89.87, 97.14, 104.41, 112.34, 120.27, 128.2, 136.12, 144.05, 151.98]
-const plunging_dmg_low = [113.63, 122.88, 132.13, 145.35, 154.59, 165.17, 179.7, 194.23, 208.77, 224.62, 240.48, 256.34, 272.19, 288.05, 303.9]
-const plunging_dmg_high = [141.93, 153.49, 165.04, 181.54, 193.1, 206.3, 224.45, 242.61, 260.76, 280.57, 300.37, 320.18, 339.98, 359.79, 379.59]
-
-//SKILL
-const jadeScreen = {
-  inheri_hp: [50.1, 53.1, 56.1, 60, 63, 66, 69.9, 73.8, 77.7, 81.6, 85.5, 89.4, 93.3, 97.2, 101.1],
-  skill_dmg: [230.4, 247.68, 264.96, 288, 305.28, 322.56, 345.6, 368.64, 391.68, 414.72, 437.76, 460.8, 489.6, 518.4, 547.2],
-}
-
-//BURST
-const starShatter = {
-  dmg_per_gem: [86.96, 93.48, 100, 108.7, 115.22, 121.74, 130.44, 139.14, 147.83, 156.53, 165.22, 173.92, 184.79, 195.66, 206.53],
-}
+import formula, { data } from './data'
+import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 
 const char = {
   name: "Ningguang",
@@ -47,15 +26,9 @@ const char = {
   gender: "F",
   constellationName: "Opus Aequilibrium",
   titles: ["Eclipsing Star", "Lady of the Jade Chamber", "Tianquan of the Liyue Qixing"],
-  baseStat: {
-    characterHP: [821, 2108, 2721, 4076, 4512, 5189, 5770, 6448, 6884, 7561, 7996, 8674, 9110, 9787],
-    characterATK: [18, 46, 59, 89, 98, 113, 125, 140, 150, 164, 174, 188, 198, 212],
-    characterDEF: [48, 123, 159, 239, 264, 304, 338, 378, 403, 443, 468, 508, 533, 573]
-  },
-  specializeStat: {
-    key: "geo_dmg_",
-    value: [0, 0, 0, 0, 6, 6, 12, 12, 12, 12, 18, 18, 24, 24]
-  },
+  baseStat: data.baseStat,
+  specializeStat: data.specializeStat,
+  formula,
   talent: {
     auto: {
       name: "Sparkling Scatter",
@@ -65,22 +38,22 @@ const char = {
         text: <span><strong>Normal Attack</strong> Shoots gems that deal <span className="text-geo">{c >= 1 ? "AoE " : ""}Geo DMG</span>. Upon hit, this grants Ningguang 1 Star Jade.</span>,
         fields: [{
           text: `Normal Attack DMG`,
-          formulaText: (tlvl, stats, c) => <span>{hitPercent[tlvl]}% {Stat.printStat(Character.getTalentStatKey("normal", c), stats)}</span>,
-          formula: (tlvl, stats, c) => (hitPercent[tlvl] / 100) * stats[Character.getTalentStatKey("normal", c)],
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("normal", c),
+          formulaText: (tlvl, stats) => <span>{data.normal.hit[tlvl]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
+          formula: formula.normal.hit,
+          variant: (tlvl, stats) => getTalentStatKeyVariant("normal", stats),
         }]
       }), {
         text: <span><strong>Charged Attack</strong> Consumes a certain amount of stamina to fire off a giant gem that deals <span className="text-geo">Geo DMG</span>. If Ningguang has any Star Jades, unleashing a Charged Attack will cause the Star Jades to be fired at the enemy as well, dealing additional DMG.</span>,
         fields: [{
           text: `Charged Attack DMG`,
-          formulaText: (tlvl, stats, c) => <span>{charged_atk_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("charged", c), stats)}</span>,
-          formula: (tlvl, stats, c) => (charged_atk_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("charged", c)],
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("charged", c),
+          formulaText: (tlvl, stats) => <span>{data.charged.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
+          formula: formula.charged.dmg,
+          variant: (tlvl, stats) => getTalentStatKeyVariant("charged", stats),
         }, {
           text: `DMG per Star Jade`,
-          formulaText: (tlvl, stats, c) => <span>{charged_per_jade[tlvl]}% {Stat.printStat(Character.getTalentStatKey("charged", c), stats)}</span>,
-          formula: (tlvl, stats, c) => (charged_per_jade[tlvl] / 100) * stats[Character.getTalentStatKey("charged", c)],
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("charged", c),
+          formulaText: (tlvl, stats) => <span>{data.charged.jade[tlvl]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
+          formula: formula.charged.jade,
+          variant: (tlvl, stats) => getTalentStatKeyVariant("charged", stats),
         }, (c, a) => ({
           text: `Stamina Cost`,
           value: <span>50{(a >= 1 ? <span>; With <b>Star Jade</b>: 0</span> : "")}</span>,
@@ -89,19 +62,19 @@ const char = {
         text: <span><strong>Plunging Attack</strong>TEMPLATE</span>,
         fields: [{
           text: `Plunge DMG`,
-          formulaText: (tlvl, stats, c) => <span>{plunging_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunging", c), stats)}</span>,
-          formula: (tlvl, stats, c) => (plunging_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("plunging", c)],
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunging", c),
+          formulaText: (tlvl, stats) => <span>{data.plunging.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+          formula: formula.plunging.dmg,
+          variant: (tlvl, stats) => getTalentStatKeyVariant("plunging", stats),
         }, {
           text: `Low Plunge DMG`,
-          formulaText: (tlvl, stats, c) => <span>{plunging_dmg_low[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunging", c), stats)}</span>,
-          formula: (tlvl, stats, c) => (plunging_dmg_low[tlvl] / 100) * stats[Character.getTalentStatKey("plunging", c)],
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunging", c),
+          formulaText: (tlvl, stats) => <span>{data.plunging.low[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+          formula: formula.plunging.low,
+          variant: (tlvl, stats) => getTalentStatKeyVariant("plunging", stats),
         }, {
           text: `High Plunge DMG`,
-          formulaText: (tlvl, stats, c) => <span>{plunging_dmg_high[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunging", c), stats)}</span>,
-          formula: (tlvl, stats, c) => (plunging_dmg_high[tlvl] / 100) * stats[Character.getTalentStatKey("plunging", c)],
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunging", c),
+          formulaText: (tlvl, stats) => <span>{data.plunging.high[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+          formula: formula.plunging.high,
+          variant: (tlvl, stats) => getTalentStatKeyVariant("plunging", stats),
         }]
       }],
     },
@@ -125,13 +98,13 @@ const char = {
         </span>,
         fields: [{
           text: "Inherited HP",
-          formulaText: (tlvl, stats, c) => <span>{jadeScreen.inheri_hp[tlvl]}% {Stat.printStat("finalHP", stats)}</span>,
-          formula: (tlvl, stats, c) => (jadeScreen.inheri_hp[tlvl] / 100) * stats.finalHP,
+          formulaText: (tlvl, stats, c) => <span>{data.skill.inheri_hp[tlvl]}% {Stat.printStat("finalHP", stats)}</span>,
+          formula: formula.skill.inheri_hp,
         }, {
           text: "Skill DMG",
-          formulaText: (tlvl, stats, c) => <span>{jadeScreen.skill_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("skill", c), stats)}</span>,
-          formula: (tlvl, stats, c) => (jadeScreen.skill_dmg[tlvl] / 100) * stats[Character.getTalentStatKey("skill", c)],
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("skill", c),
+          formulaText: (tlvl, stats, c) => <span>{data.skill.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
+          formula: formula.skill.dmg,
+          variant: (tlvl, stats) => getTalentStatKeyVariant("skill", stats),
         }, {
           text: "CD",
           value: "12s",
@@ -156,9 +129,9 @@ const char = {
         </span>,
         fields: [{
           text: "DMG Per Gem",
-          formulaText: (tlvl, stats, c) => <span>{starShatter.dmg_per_gem[tlvl]}% {Stat.printStat(Character.getTalentStatKey("burst", c), stats)}</span>,
-          formula: (tlvl, stats, c) => (starShatter.dmg_per_gem[tlvl] / 100) * stats[Character.getTalentStatKey("burst", c)],
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("burst", c),
+          formulaText: (tlvl, stats) => <span>{data.burst.dmg_per_gem[tlvl]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
+          formula: formula.burst.dmg_per_gem,
+          variant: (tlvl, stats) => getTalentStatKeyVariant("burst", stats),
         }, {
           text: "CD",
           value: "12s",
