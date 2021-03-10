@@ -14,7 +14,7 @@ import bennett from './Bennett/data'
 // import keqing from './Keqing/data'
 // import klee from './Klee/data'
 // import lisa from './Lisa/data'
-// import mona from './Mona/data'
+import mona from './Mona/data'
 import ningguang from './Ningguang/data'
 import noelle from './Noelle/data'
 // import qiqi from './Qiqi/data'
@@ -46,7 +46,7 @@ const formula = {
   // keqing,
   // klee,
   // lisa,
-  // mona,
+  mona,
   ningguang,
   noelle,
   // qiqi,
