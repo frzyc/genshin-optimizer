@@ -2,23 +2,29 @@ import '../WorkerHack'
 import { PreprocessFormulas } from "../StatData";
 import { artifactSetPermutations, artifactPermutations } from "./Build"
 import charFormulas from "../Data/Characters/formula"
+import { GetDependencies } from '../StatDependency';
 
 onmessage = async (e) => {
   const t1 = performance.now()
-  const { splitArtifacts, setFilters, minFilters = {}, maxFilters = {}, initialStats: stats, initialStats: { characterKey, talentLevelKeys }, artifactSetEffects, maxBuildsToShow, optimizationTarget, ascending } = e.data;
+  const { splitArtifacts, setFilters, minFilters = {}, maxFilters = {}, initialStats: stats, artifactSetEffects, maxBuildsToShow, optimizationTarget, ascending } = e.data;
 
-  let target, dependencies = [];
-  if (typeof optimizationTarget === "string")
-    target = stats[optimizationTarget]
-  else {
+  let target, targetKeys;
+  if (typeof optimizationTarget === "string") {
+    target = (stats) => stats[optimizationTarget]
+    targetKeys = [optimizationTarget] 
+  } else {
     const { talentKey, formulaKey } = optimizationTarget
-    const targetFormula = charFormulas?.[characterKey]?.[talentKey]?.[formulaKey]
+    const targetFormula = charFormulas?.[stats.characterKey]?.[talentKey]?.[formulaKey]
     if (typeof targetFormula === "function")
-      [target, dependencies] = targetFormula(stats.talentLevelKeys[talentKey], stats)
-    //TODO cannot find target formula
+      [target, targetKeys] = targetFormula(stats.talentLevelKeys[talentKey], stats)
+    else {
+      postMessage({ progress: 0, timing: 0 })
+      postMessage({ builds: [], timing: 0 })    
+      return
+    }
   }
 
-  //TODO get dependency if tyepof optimizationTarget==="string"?
+  const dependencies = GetDependencies(stats.modifiers, targetKeys)
   let { initialStats, formula } = PreprocessFormulas(dependencies, stats)
   let builds = [], threshold = -Infinity
 
