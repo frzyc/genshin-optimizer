@@ -55,7 +55,7 @@ const formula = {
       [name, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "burst")]),
     ...Object.entries(data.burst).flatMap(([name, arr]) =>
       (["hydro", "pyro", "cryo", "electro"]).map((ele) =>
-        [`${ele}_${name}`, (tlvl, stats) => [(arr[tlvl] / 2 / 100) * stats[`${ele}_burst_${stats.hitMode}`], [`${ele}_burst_${stats.hitMode}`]]])),
+        [`${ele}_${name}`, (tlvl, stats) => [s=>(arr[tlvl] / 2 / 100) * stats[`${ele}_burst_${stats.hitMode}`], [`${ele}_burst_${stats.hitMode}`]]])),//not optimizationTarget, dont need to precompute
   ]),
 }
 export default formula

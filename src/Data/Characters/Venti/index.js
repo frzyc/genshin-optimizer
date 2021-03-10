@@ -40,7 +40,7 @@ const char = {
         fields: data.normal.hitArr.map((percentArr, i) =>
         ({
           text: `${i + 1}-Hit DMG`,
-          formulaText: (tlvl, stats, c) => <span>{percentArr[tlvl]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
+          formulaText: (tlvl, stats) => <span>{percentArr[tlvl]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
           formula: formula.normal[i],
           variant: (tlvl, stats) => getTalentStatKeyVariant("normal", stats),
         }))
@@ -48,7 +48,7 @@ const char = {
         text: <span><strong>Charged Attack</strong> Perform a more precise Aimed Shot with increased DMG. While aiming, favorable winds will accumulate on the arrowhead. A fully charged wind arrow will deal <span className="text-anemo">Anemo DMG</span>.</span>,
         fields: [{
           text: `Aimed Shot DMG`,
-          formulaText: (tlvl, stats, c) => <span>{data.charged.hit[tlvl]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
+          formulaText: (tlvl, stats) => <span>{data.charged.hit[tlvl]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
           formula: formula.charged.hit,
           variant: (tlvl, stats) => getTalentStatKeyVariant("charged", stats),
         }, {
@@ -117,7 +117,7 @@ const char = {
           value: "6s",
         }, {
           text: "Hold DMG",
-          formulaText: (tlvl, stats, c) => <span>{data.skill.hold[tlvl]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
+          formulaText: (tlvl, stats) => <span>{data.skill.hold[tlvl]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
           formula: formula.skill.hold,
           variant: (tlvl, stats) => getTalentStatKeyVariant("skill", stats),
         }, {
@@ -189,8 +189,9 @@ const char = {
           maxStack: 1,
           fields: [{
             text: "Dot",
-            formulaText: (tlvl, stats, c) => <span>{(data.burst.hit[tlvl] / 2)?.toFixed(2)}% {Stat.printStat(`${eleKey}_burst_${c.hitMode}`, stats)}</span>,
+            formulaText: (tlvl, stats) => <span>{(data.burst.hit[tlvl] / 2)?.toFixed(2)}% {Stat.printStat(`${eleKey}_burst_${stats.hitMode}`, stats)}</span>,
             formula: formula.burst[`${eleKey}_hit`],
+            variant: eleKey
           }, (c, a) => a >= 4 && {
             text: <span>Regen 15 Energy to all <span className={`text-${eleKey}`}>{ElementalData[eleKey].name}</span> characters.</span>,
           }, (c, a) => c >= 6 && {

@@ -310,9 +310,12 @@ function FieldDisplay({ character: { compareAgainstEquipped, constellation }, fi
       <FontAwesomeIcon icon={faQuestionCircle} className="ml-2" style={{ cursor: "help" }} />
     </OverlayTrigger>
 
-  let fieldVal = field.value ?
-    (typeof field.value === "function" ? field.value?.(talentLvlKey, build.finalStats) : field.value) :
-    field.formula?.(talentLvlKey, build.finalStats)?.[0]?.(build.finalStats)
+  let fieldVal = null
+  if (field.value)
+    fieldVal = typeof field.value === "function" ? field.value?.(talentLvlKey, build.finalStats) : field.value
+  else if (typeof field.formula === "function")
+    fieldVal = field?.formula?.(talentLvlKey, build.finalStats)?.[0]?.(build.finalStats)
+
   let fixedVal = field.fixed || 0
   //compareAgainstEquipped
   if (compareAgainstEquipped && equippedBuild && typeof fieldVal === "number") {
@@ -321,7 +324,7 @@ function FieldDisplay({ character: { compareAgainstEquipped, constellation }, fi
     if (typeof fieldEquippedVal === "function")
       fieldEquippedVal = parseInt(fieldEquippedVal?.(talentLvlKey, equippedBuild.finalStats)?.toFixed?.(fixedVal))
     let diff = fieldVal - fieldEquippedVal
-    fieldVal = <span>{fieldEquippedVal}{diff ? <span className={diff > 0 ? "text-success" : "text-danger"}> ({diff > 0 ? "+" : ""}{diff?.toFixed?.(fixedVal) || diff})</span> : ""}</span>
+    fieldVal = <span>{fieldEquippedVal?.toFixed(fixedVal) ?? fieldEquippedVal}{diff ? <span className={diff > 0 ? "text-success" : "text-danger"}> ({diff > 0 ? "+" : ""}{diff?.toFixed?.(fixedVal) || diff})</span> : ""}</span>
   }
 
   return <ListGroup.Item variant={index % 2 ? "customdark" : "customdarker"} className="p-2">
