@@ -13,9 +13,9 @@ import passive1 from './Talent_Hydropathic.png'
 import passive2 from './Talent_Blades_Amidst_Raindrops.png'
 import passive3 from './Talent_Flash_of_Genius.png'
 import Stat from '../../../Stat'
-import Character from '../../../Character/Character'
 import DisplayPercent from '../../../Components/DisplayPercent'
 import formula, {data} from './data'
+import { getTalentStatKey, getTalentStatKeyVariant } from "../../../Build/Build"
 //import DisplayPercent from '../../../Components/DisplayPercent'
 
 const char = {
@@ -41,22 +41,22 @@ const char = {
         fields: data.normal.hitArr.map((percentArr, i) =>
         ({
           text: `${i + 1}-Hit DMG`,
-          formulaText: (tlvl, stats, c) => <span>{i === 2 ? "2 × " : ""}{percentArr[tlvl]}% {Stat.printStat(Character.getTalentStatKey("normal", c), stats)}</span>,
+          formulaText: (tlvl, stats, c) => <span>{i === 2 ? "2 × " : ""}{percentArr[tlvl]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
           formula: formula.normal[i],
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("normal", c),
+          variant: (tlvl, stats) => getTalentStatKeyVariant("normal", stats),
         }))
       }, {
         text: <span><strong>Charged Attack</strong> Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.</span>,
         fields: [{
           text: `Charged 1-Hit DMG`,
-          formulaText: (tlvl, stats, c) => <span>{data.charged.hit1[tlvl]}% {Stat.printStat(Character.getTalentStatKey("charged", c), stats)}</span>,
+          formulaText: (tlvl, stats, c) => <span>{data.charged.hit1[tlvl]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
           formula: formula.charged.hit1,
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("charged", c),
+          variant: (tlvl, stats) => getTalentStatKeyVariant("charged", stats),
         }, {
           text: `Charged 2-Hit DMG`,
-          formulaText: (tlvl, stats, c) => <span>{data.charged.hit2[tlvl]}% {Stat.printStat(Character.getTalentStatKey("charged", c), stats)}</span>,
+          formulaText: (tlvl, stats, c) => <span>{data.charged.hit2[tlvl]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
           formula: formula.charged.hit2,
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("charged", c),
+          variant: (tlvl, stats) => getTalentStatKeyVariant("charged", stats),
         }, {
           text: `Stamina Cost`,
           value: 20,
@@ -65,19 +65,19 @@ const char = {
         text: <span><strong>Plunging Attack</strong> Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.</span>,
         fields: [{
           text: `Plunge DMG`,
-          formulaText: (tlvl, stats, c) => <span>{data.plunging.dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunging", c), stats)}</span>,
+          formulaText: (tlvl, stats, c) => <span>{data.plunging.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
           formula: formula.plunging.dmg,
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunge", c),
+          variant: (tlvl, stats) => getTalentStatKeyVariant("plunge", stats),
         }, {
           text: `Low Plunge DMG`,
-          formulaText: (tlvl, stats, c) => <span>{data.plunging.low[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunging", c), stats)}</span>,
+          formulaText: (tlvl, stats, c) => <span>{data.plunging.low[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
           formula: formula.plunging.low,
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunge", c),
+          variant: (tlvl, stats) => getTalentStatKeyVariant("plunge", stats),
         }, {
           text: `High Plunge DMG`,
-          formulaText: (tlvl, stats, c) => <span>{data.plunging.high[tlvl]}% {Stat.printStat(Character.getTalentStatKey("plunging", c), stats)}</span>,
+          formulaText: (tlvl, stats, c) => <span>{data.plunging.high[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
           formula: formula.plunging.high,
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("plunge", c),
+          variant: (tlvl, stats) => getTalentStatKeyVariant("plunge", stats),
         }]
       }],
     },
@@ -98,24 +98,24 @@ const char = {
         </span>,
         fields: [{
           text: "Skill 1-Hit DMG",
-          formulaText: (tlvl, stats, c) => <span>{data.skill.hit1[tlvl]}% {Stat.printStat(Character.getTalentStatKey("skill", c), stats)}</span>,
+          formulaText: (tlvl, stats, c) => <span>{data.skill.hit1[tlvl]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
           formula: formula.skill.hit1,
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("skill", c),
+          variant: (tlvl, stats) => getTalentStatKeyVariant("skill", stats),
         }, {
           text: "Skill 2-Hit DMG",
-          formulaText: (tlvl, stats, c) => <span>{data.skill.hit2[tlvl]}% {Stat.printStat(Character.getTalentStatKey("skill", c), stats)}</span>,
+          formulaText: (tlvl, stats, c) => <span>{data.skill.hit2[tlvl]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
           formula: formula.skill.hit2,
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("skill", c),
+          variant: (tlvl, stats) => getTalentStatKeyVariant("skill", stats),
         }, (con) => con >= 4 && {
           text: "Skill 1-Hit DMG during RainCutter",
-          formulaText: (tlvl, stats, c) => <span> ( {data.skill.hit1[tlvl]}% {Stat.printStat(Character.getTalentStatKey("skill", c), stats)} ) * 150%</span>,
+          formulaText: (tlvl, stats, c) => <span> ( {data.skill.hit1[tlvl]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)} ) * 150%</span>,
           formula: formula.skill.hit1RainCutter,
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("skill", c),
+          variant: (tlvl, stats) => getTalentStatKeyVariant("skill", stats),
         }, (con) => con >= 4 && {
           text: "Skill 2-Hit DMG during RainCutter",
-          formulaText: (tlvl, stats, c) => <span> ( {data.skill.hit2[tlvl]}% {Stat.printStat(Character.getTalentStatKey("skill", c), stats)} ) * 150%</span>,
+          formulaText: (tlvl, stats, c) => <span> ( {data.skill.hit2[tlvl]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)} ) * 150%</span>,
           formula: formula.skill.hit2RainCutter,
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("skill", c),
+          variant: (tlvl, stats) => getTalentStatKeyVariant("skill", stats),
         }, {
           text: "Damage Reduction Ratio(%)",
           formulaText: (tlvl, stats, c) => <span>{data.skill.dmgRed[tlvl]}%  + min(24%, 20% * {Stat.printStat("hydro_dmg_", stats)} )</span>,
@@ -148,9 +148,9 @@ const char = {
         </span>,
         fields: [{
           text: "Sword Rain DMG",
-          formulaText: (tlvl, stats, c) => <span>{data.burst.dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("burst", c), stats)}</span>,
+          formulaText: (tlvl, stats, c) => <span>{data.burst.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
           formula: formula.burst.dmg,
-          variant: (tlvl, stats, c) => Character.getTalentStatKeyVariant("burst", c),
+          variant: (tlvl, stats) => getTalentStatKeyVariant("burst", stats),
         }, (con, a) => ({
           text: "Duration",
           value: con >= 2 ? "18s" : "15s",
