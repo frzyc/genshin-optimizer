@@ -114,16 +114,31 @@ function accumulate(slotKey, art, setCount, accu, stats, artifactSetEffects) {
 /**
   * Create statKey in the form of ${ele}_elemental_${type} for elemental DMG, ${ele}_${src}_${type} for talent DMG.
   * @param {string} skillKey - The DMG src. Can be "norm","skill". Use an elemental to specify a elemental hit "physical" -> physical_elemental_{type}. Use "elemental" here to specify a elemental hit of character's element/reactionMode
-  * @param {*} character - The character. Will extract hitMode, autoInfused...
+  * @param {*} stats - The character. Will extract hitMode, autoInfused...
   * @param {*} elemental - Override the hit to be the character's elemental, that is not part of infusion.
   */
-export function getTalentStatKey(skillKey, character, elemental = false) {
-  if (!character) return;
-  const { hitMode = "", autoInfused = false, reactionMode = null, element = "anemo", weaponType = "sword" } = character
+export function getTalentStatKey(skillKey, stats, elemental = false) {
+  const { hitMode = "", autoInfused = false, reactionMode = null, characterEle = "anemo", weaponType = "sword" } = stats
   if (Object.keys(ElementalData).includes(skillKey)) return `${skillKey}_elemental_${hitMode}`//elemental DMG
-  if (!elemental) elemental = weaponType === "catalyst" || (autoInfused)
+  if (!elemental) elemental = weaponType === "catalyst" || autoInfused
   let eleKey = "physical"
   if (skillKey === "elemental" || skillKey === "burst" || skillKey === "skill" || elemental)
-    eleKey = (reactionMode ? reactionMode : element)
+    eleKey = (reactionMode ? reactionMode : characterEle)
   return `${eleKey}_${skillKey}_${hitMode}`
+}
+
+export function getTalentStatKeyVariant(skillKey, stats, elemental = false) {
+  if (Object.keys(ElementalData).includes(skillKey)) return skillKey
+  const { autoInfused = false, characterEle = "anemo", weaponType = "sword" } = stats
+  let { reactionMode } = stats
+  //reactionMode can be one of pyro_vaporize, pyro_melt, hydro_vaporize,cryo_melt
+  if (["pyro_vaporize", "hydro_vaporize"].includes(reactionMode))
+    reactionMode = "vaporize"
+  else if (["pyro_melt", "cryo_melt"].includes(reactionMode))
+    reactionMode = "melt"
+  if (!elemental) elemental = weaponType === "catalyst" || autoInfused
+  let eleKey = "physical"
+  if (skillKey === "elemental" || skillKey === "burst" || skillKey === "skill" || elemental)
+    eleKey = (reactionMode ? reactionMode : characterEle)
+  return eleKey
 }

@@ -5,7 +5,7 @@ import charFormulas from "../Data/Characters/formula"
 
 onmessage = async (e) => {
   const t1 = performance.now()
-  const { splitArtifacts, setFilters, minFilters = {}, maxFilters = {}, initialStats: stats, artifactSetEffects, maxBuildsToShow, optimizationTarget, ascending, character, character: { characterKey, talentLevelKey } } = e.data;
+  const { splitArtifacts, setFilters, minFilters = {}, maxFilters = {}, initialStats: stats, initialStats: { characterKey, talentLevelKeys }, artifactSetEffects, maxBuildsToShow, optimizationTarget, ascending } = e.data;
 
   let target, dependencies = [];
   if (typeof optimizationTarget === "string")
@@ -14,7 +14,7 @@ onmessage = async (e) => {
     const { talentKey, formulaKey } = optimizationTarget
     const targetFormula = charFormulas?.[characterKey]?.[talentKey]?.[formulaKey]
     if (typeof targetFormula === "function")
-      [target, dependencies] = targetFormula(talentLevelKey, character)
+      [target, dependencies] = targetFormula(stats.talentLevelKeys[talentKey], stats)
     //TODO cannot find target formula
   }
 
