@@ -43,8 +43,7 @@ const formula = {
   normal: Object.fromEntries(data.normal.hitArr.map((percentArr, i) => [i, (tlvl, stats) =>
     basicDMGFormula(percentArr[tlvl], stats, "normal")])),
   charged: {
-    aimShot: (tlvl, stats) => basicDMGFormula(data.charged.aimedShot[tlvl], stats, "charged"),
-    fullAimedShot: (tlvl, stats) => basicDMGFormula(data.charged.fullAimedShot[tlvl], stats, "charged"),
+    dmg: (tlvl, stats) => basicDMGFormula(data.charged.dmg[tlvl], stats, "charged"),
   },
   plunging: {
     dmg: (tlvl, stats) => basicDMGFormula(data.plunging.dmg[tlvl], stats, "plunging"),
