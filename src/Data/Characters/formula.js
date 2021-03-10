@@ -8,7 +8,7 @@ import bennett from './Bennett/data'
 // import diona from './Diona/data'
 // import fischl from './Fischl/data'
 // import ganyu from './Ganyu/data'
-// import hutao from './Hu Tao/data'
+import hutao from './Hu Tao/data'
 // import jean from './Jean/data'
 // import kaeya from './Kaeya/data'
 import keqing from './Keqing/data'
@@ -40,7 +40,7 @@ const formula = {
   // diona,
   // fischl,
   // ganyu,
-  // hutao,
+  hutao,
   // jean,
   // kaeya,
   keqing,
