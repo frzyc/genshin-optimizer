@@ -254,9 +254,9 @@ export default class BuildDisplay extends React.Component {
                 </Card.Header>
               </Card>}
             {/* Hit mode options */}
-            <HitModeCard characterKey={characterKey} forceUpdate={() => { this.forceUpdateBuildDisplay(); this.autoGenerateBuilds() }} />
+            {Character.hasTalentPage(characterKey) && <HitModeCard className="mb-2" characterKey={characterKey} forceUpdate={() => { this.forceUpdateBuildDisplay(); this.autoGenerateBuilds() }} />}
             {/* Final Stat Filter */}
-            <StatFilterCard statFilters={statFilters} statsDisplayKeys={statsDisplayKeys} setStatFilters={sFs => this.setState({ statFilters: sFs })} />
+            <StatFilterCard className="mb-2" statFilters={statFilters} statsDisplayKeys={statsDisplayKeys} setStatFilters={sFs => this.setState({ statFilters: sFs })} />
           </Col>
           <Col xs={12} lg={6}><Row>
             <Col className="mb-2" xs={12}>
@@ -654,7 +654,7 @@ function StatFilterItem({ statKey, statKeys = [], min, max, close, setFilter }) 
   </InputGroup>
 }
 
-function HitModeCard({ characterKey, forceUpdate }) {
+function HitModeCard({ characterKey, forceUpdate, className }) {
   const character = CharacterDatabase.get(characterKey)
   if (!character) return null
   const { hitMode } = character
@@ -670,7 +670,7 @@ function HitModeCard({ characterKey, forceUpdate }) {
     CharacterDatabase.updateCharacter(char)
     forceUpdate()
   }
-  return <Card bg="lightcontent" text="lightfont">
+  return <Card bg="lightcontent" text="lightfont" className={className}>
     <Card.Header>Hit Mode Options</Card.Header>
     <Card.Body>
       <HitModeToggle hitMode={hitMode} setHitMode={setHitmode} className="w-100" />
@@ -679,10 +679,10 @@ function HitModeCard({ characterKey, forceUpdate }) {
   </Card >
 }
 
-function StatFilterCard({ statsDisplayKeys = { basicKeys: [] }, statFilters = {}, setStatFilters }) {
+function StatFilterCard({ statsDisplayKeys = { basicKeys: [] }, statFilters = {}, setStatFilters, className }) {
   const remainingKeys = statsDisplayKeys.basicKeys.filter(key => !Object.keys(statFilters).some(k => k === key))
   const setFilter = (sKey, min, max) => setStatFilters({ ...statFilters, [sKey]: { min, max } })
-  return <Card bg="lightcontent" text="lightfont">
+  return <Card bg="lightcontent" text="lightfont" className={className}>
     <Card.Header>Final Stat Filter</Card.Header>
     <Card.Body>
       <Row className="mb-n2">
