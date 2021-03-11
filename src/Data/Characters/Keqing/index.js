@@ -111,7 +111,7 @@ const char = {
           variant: (tlvl, stats) => getTalentStatKeyVariant("skill", stats),
         }, {
           text: "Thunderclap Slash DMG",
-          formulaText: (tlvl, stats) => <span>{data.skill.slashing[tlvl]}% × 2 {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
+          formulaText: (tlvl, stats) => <span>{data.skill.thunderclasp_slash[tlvl]}% × 2 {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
           formula: formula.skill.thunderclap_slashing,
           variant: (tlvl, stats) => getTalentStatKeyVariant("skill", stats),
         }, {

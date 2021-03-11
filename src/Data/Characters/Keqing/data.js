@@ -32,7 +32,7 @@ export const data = {
   skill: {
     stilleto: [50.4, 54.18, 57.96, 63, 66.78, 70.56, 75.6, 80.64, 85.68, 90.72, 95.76, 100.8, 107.1, 113.4, 119.7],
     slashing: [168, 180.6, 193.2, 210, 222.6, 235.2, 252, 268.8, 285.6, 302.4, 319.2, 336, 357, 378, 399],
-    // thunderclasp_slash: [84, 90.3, 96.6, 105, 111.3, 117.6, 126, 134.4, 142.8, 151.2, 159.6, 168, 178.5, 189, 199.5],  
+    thunderclasp_slash: [84, 90.3, 96.6, 105, 111.3, 117.6, 126, 134.4, 142.8, 151.2, 159.6, 168, 178.5, 189, 199.5],  
   },
   burst: {
     skill: [88, 94.6, 101.2, 110, 116.6, 123.2, 132, 140.8, 149.6, 158.4, 167.2, 176, 187, 198, 209],
@@ -50,7 +50,7 @@ const formula = {
   skill: {
     ...Object.fromEntries(Object.entries(data.skill).map(([name, arr]) =>
       [name, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "skill")])),
-    thunderclap_slashing: (tlvl, stats) => basicDMGFormula(data.skill.slashing[tlvl] * 2, stats, "skill"),
+    thunderclap_slashing: (tlvl, stats) => basicDMGFormula(data.skill.thunderclasp_slash[tlvl] * 2, stats, "skill"),
   },
   burst: {
     skill: (tlvl, stats) => basicDMGFormula(data.burst.skill[tlvl], stats, "burst"),
