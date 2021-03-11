@@ -151,7 +151,7 @@ function modifiersToFields(modifiers, finalStats = {}) {
     text: Stat.getStatName(mStatKey),
     variant: Stat.getStatVariant(mStatKey),
     value: Object.entries(modifier ?? {}).reduce((accu, [mkey, multiplier]) => accu + finalStats[mkey] * multiplier, 0),
-    basicVal: <span>{Object.entries(modifier ?? {}).map(([mkey, multiplier], i) => <span key={i} >{i !== 0 ? " + " : ""}{Stat.printStat(mkey, finalStats)} * {multiplier?.toFixed?.(3) ?? multiplier}</span>)}</span>,
+    formulaText: <span>{Object.entries(modifier ?? {}).map(([mkey, multiplier], i) => <span key={i} >{i !== 0 ? " + " : ""}{Stat.printStat(mkey, finalStats)} * {multiplier?.toFixed?.(3) ?? multiplier}</span>)}</span>,
     fixed: Stat.fixedUnit(mStatKey)
   }))
 }
@@ -163,11 +163,10 @@ function statsToFields(stats, finalStats = {}) {
 
 const talentLimits = [1, 1, 2, 4, 6, 8, 10]
 function SkillDisplayCard(props) {
-  let { character, character: { characterKey, constellation, autoInfused = false }, talentKey, subtitle, ascension, equippedBuild, newBuild, editable, setState } = props
+  let { character, character: { characterKey, constellation, talentLevelKeys, autoInfused = false }, talentKey, subtitle, ascension, equippedBuild, newBuild, editable, setState } = props
   let { onClickTitle = null, ...otherProps } = props
   let build = newBuild ? newBuild : equippedBuild
   let header = null
-  let { talentLvlKey = undefined, levelBoost = 0 } = Character.getTalentLevelKey(character, talentKey, true)
   let infuseBtn = null
   if (talentKey === "auto" && Character.isAutoInfusable(characterKey)) {
     let eleKey = Character.getElementalKey(characterKey)
@@ -179,12 +178,17 @@ function SkillDisplayCard(props) {
       </Button>
     </Col>
   }
-  if (typeof talentLvlKey === "number") {
+
+  let talentLvlKey = 0
+  if (talentKey in talentLevelKeys) {
+    const talentLvlKeyRaw = talentLevelKeys[talentKey]
+    const levelBoost = Character.getTalentLevelBoost(characterKey, talentKey, constellation)
+    talentLvlKey = talentLvlKeyRaw + levelBoost
     if (editable) {
-      let setTalentLevel = (tKey, tLvl) => setState(state => {
-        let talentLevelKeys = state.talentLevelKeys || {}
-        talentLevelKeys[tKey] = tLvl
-        return { talentLevelKeys }
+      const setTalentLevel = (tKey, tLvl) => setState(state => {
+        const stateTalentLevelKeys = state.talentLevelKeys || {}
+        stateTalentLevelKeys[tKey] = tLvl
+        return { talentLevelKeys: stateTalentLevelKeys }
       })
       header = <Card.Header>
         <Row>
@@ -281,7 +285,7 @@ function SkillDisplayCard(props) {
     </Card.Body>
   </Card>
 }
-function FieldDisplay({ character, character: { compareAgainstEquipped, constellation }, field, index, talentLvlKey = 0, ascension, equippedBuild, newBuild }) {
+function FieldDisplay({ character: { compareAgainstEquipped, constellation }, field, index, talentLvlKey = 0, ascension, equippedBuild, newBuild }) {
   let build = newBuild ? newBuild : equippedBuild
   if (typeof field === "function")
     field = field(constellation, ascension)
@@ -289,15 +293,15 @@ function FieldDisplay({ character, character: { compareAgainstEquipped, constell
 
   let fieldText = field.text
   if (typeof fieldText === "function")
-    fieldText = fieldText?.(talentLvlKey, build.finalStats, character)
+    fieldText = fieldText?.(talentLvlKey, build.finalStats)
 
   let fieldVariant = field.variant || ""
   if (typeof fieldVariant === "function")
-    fieldVariant = fieldVariant?.(talentLvlKey, build.finalStats, character)
+    fieldVariant = fieldVariant?.(talentLvlKey, build.finalStats)
 
-  let fieldBasic = field.basicVal
+  let fieldBasic = field.formulaText
   if (typeof fieldBasic === "function")
-    fieldBasic = fieldBasic?.(talentLvlKey, build.finalStats, character)
+    fieldBasic = fieldBasic?.(talentLvlKey, build.finalStats)
   if (fieldBasic)
     fieldBasic = <OverlayTrigger
       placement="top"
@@ -306,18 +310,21 @@ function FieldDisplay({ character, character: { compareAgainstEquipped, constell
       <FontAwesomeIcon icon={faQuestionCircle} className="ml-2" style={{ cursor: "help" }} />
     </OverlayTrigger>
 
-  let fieldVal = field.value ? field.value : field.finalVal
-  if (typeof fieldVal === "function")
-    fieldVal = fieldVal?.(talentLvlKey, build.finalStats, character)
+  let fieldVal = null
+  if (field.value)
+    fieldVal = typeof field.value === "function" ? field.value?.(talentLvlKey, build.finalStats) : field.value
+  else if (typeof field.formula === "function")
+    fieldVal = field?.formula?.(talentLvlKey, build.finalStats)?.[0]?.(build.finalStats)
+
   let fixedVal = field.fixed || 0
   //compareAgainstEquipped
   if (compareAgainstEquipped && equippedBuild && typeof fieldVal === "number") {
-    let fieldEquippedVal = field.value ? field.value : field.finalVal
+    let fieldEquippedVal = field.value ? field.value : field.formula?.(talentLvlKey, equippedBuild.finalStats)?.[0]?.(equippedBuild.finalStats)
 
     if (typeof fieldEquippedVal === "function")
-      fieldEquippedVal = parseInt(fieldEquippedVal?.(talentLvlKey, equippedBuild.finalStats, character)?.toFixed?.(fixedVal))
+      fieldEquippedVal = parseInt(fieldEquippedVal?.(talentLvlKey, equippedBuild.finalStats)?.toFixed?.(fixedVal))
     let diff = fieldVal - fieldEquippedVal
-    fieldVal = <span>{fieldEquippedVal}{diff ? <span className={diff > 0 ? "text-success" : "text-danger"}> ({diff > 0 ? "+" : ""}{diff?.toFixed?.(fixedVal) || diff})</span> : ""}</span>
+    fieldVal = <span>{fieldEquippedVal?.toFixed(fixedVal) ?? fieldEquippedVal}{diff ? <span className={diff > 0 ? "text-success" : "text-danger"}> ({diff > 0 ? "+" : ""}{diff?.toFixed?.(fixedVal) || diff})</span> : ""}</span>
   }
 
   return <ListGroup.Item variant={index % 2 ? "customdark" : "customdarker"} className="p-2">

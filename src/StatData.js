@@ -239,7 +239,11 @@ function PreprocessFormulas(dependencyKeys, stats, debug = false) {
 
   return {
     initialStats,
-    formula: s => formulaList.forEach(([key, formula]) => s[key] = formula(s, constData))
+    formula: s => {
+      formulaList.forEach(([key, formula]) => s[key] = formula(s, constData))
+      // TODO: we shouldn't need to copy *all* constData, only ones that are targets.
+      Object.assign(s, constData)
+    }
   }
 }
 

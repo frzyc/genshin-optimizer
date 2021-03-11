@@ -107,10 +107,10 @@ export default function HomeDisplay(props) {
             <Col xs={12} md={6}>
               <h5>What's for the future?</h5>
               <ul>
-                <li>Domain name & server, hosted using funds from donations</li>
-                <li>Login, to access your data from any device(will need a server backend)</li>
-                <li>Damage calculations against specific enemies</li>
-                <li>Food buffs, team buffs, Elemental interaction calculations.</li>
+                <li>Full talent/constellation calculations for every released character.</li>
+                <li>Saving multiple artifact builds per character, for comparasion.</li>
+                <li>Food buffs, team buffs.</li>
+                <li>Resource planning to see artifact/character/weapon commitment costs.</li>
                 <li>Artifact Analytics, graphs to show your artifact data.</li>
               </ul>
               <p>For more, and to check on what is being worked on, join our <a href={process.env.REACT_APP_DISCORD_LINK} target="_blank" rel="noreferrer">discord.</a></p>

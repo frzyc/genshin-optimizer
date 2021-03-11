@@ -1,6 +1,6 @@
-import DragonspineSpear from './Weapon_Dragonspine_Spear.png'
-import Character from "../../../Character/Character"
+import { getTalentStatKey } from '../../../Build/Build'
 import DisplayPercent from "../../../Components/DisplayPercent"
+import DragonspineSpear from './Weapon_Dragonspine_Spear.png'
 
 const refinementVals = [60, 70, 80, 90, 100]
 const refinementRawDmgVals = [80, 95, 110, 125, 140]
@@ -11,7 +11,7 @@ const weapon = {
   img: DragonspineSpear,
   rarity: 4,
   passiveName: "Frost Burial",
-  passiveDescription: (refineIndex, charFinalStats, c) => <span>Hitting an opponent with Normal and Charged Attacks has a {refinementVals[refineIndex]}% chance of forming and dropping an Everfrost Icicle above them, dealing {refinementRawDmgVals[refineIndex]}% AoE ATK DMG{DisplayPercent(refinementRawDmgVals[refineIndex], charFinalStats, Character.getTalentStatKey("physical", c))}. Opponents affected by <span className="text-cryo">Cryo</span> are dealt {refinementRawDmgCryoVals[refineIndex]}% ATK DMG{DisplayPercent(refinementRawDmgCryoVals[refineIndex], charFinalStats, Character.getTalentStatKey("physical", c))}. Can only occur once every 10s.</span>,
+  passiveDescription: (refineIndex, charFinalStats, c) => <span>Hitting an opponent with Normal and Charged Attacks has a {refinementVals[refineIndex]}% chance of forming and dropping an Everfrost Icicle above them, dealing {refinementRawDmgVals[refineIndex]}% AoE ATK DMG{DisplayPercent(refinementRawDmgVals[refineIndex], charFinalStats, getTalentStatKey("physical", charFinalStats))}. Opponents affected by <span className="text-cryo">Cryo</span> are dealt {refinementRawDmgCryoVals[refineIndex]}% ATK DMG{DisplayPercent(refinementRawDmgCryoVals[refineIndex], charFinalStats, getTalentStatKey("physical", charFinalStats))}. Can only occur once every 10s.</span>,
   description: "A spear created from the fang of a dragon. It is oddly warm to the touch.",
   baseStats: {
     main: [41, 54, 69, 84, 99, 125, 140, 155, 169, 184, 210, 224, 238, 264, 278, 293, 319, 333, 347, 373, 387, 401, 427, 440, 454],

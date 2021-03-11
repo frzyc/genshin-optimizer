@@ -29,7 +29,7 @@ import xiangling from './Xiangling'
 import xingqiu from './Xingqiu'
 import xinyan from './Xinyan'
 import zhongli from './Zhongli'
-let characters = {
+const characters = {
   albedo,
   amber,
   barbara,

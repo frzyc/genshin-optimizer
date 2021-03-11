@@ -1,6 +1,6 @@
-import AquilaFavonia from './Weapon_Aquila_Favonia.png'
-import Character from "../../../Character/Character"
+import { getTalentStatKey } from '../../../Build/Build'
 import DisplayPercent from "../../../Components/DisplayPercent"
+import AquilaFavonia from './Weapon_Aquila_Favonia.png'
 
 const refinementVals = [20, 25, 30, 35, 40]
 const refinementRegenVals = [100, 115, 130, 145, 160]
@@ -11,7 +11,7 @@ const weapon = {
   img: AquilaFavonia,
   rarity: 5,
   passiveName: "Falcon's Defiance",
-  passiveDescription: (refineIndex, charFinalStats, c) => <span>ATK is increased by {refinementVals[refineIndex]}%. Triggers on taking DMG: the soul of the Falcon of the West awakens, holding the banner of resistance aloft, regenerating HP equal to {refinementRegenVals[refineIndex]}% of ATK{DisplayPercent(refinementRegenVals[refineIndex], charFinalStats, "finalATK")} and dealing {refinementDmgVals[refineIndex]}% of ATK{DisplayPercent(refinementDmgVals[refineIndex], charFinalStats, Character.getTalentStatKey("physical", c))} as DMG to surrounding opponents. This effect can only occur once every 15s.</span>,
+  passiveDescription: (refineIndex, charFinalStats, c) => <span>ATK is increased by {refinementVals[refineIndex]}%. Triggers on taking DMG: the soul of the Falcon of the West awakens, holding the banner of resistance aloft, regenerating HP equal to {refinementRegenVals[refineIndex]}% of ATK{DisplayPercent(refinementRegenVals[refineIndex], charFinalStats, "finalATK")} and dealing {refinementDmgVals[refineIndex]}% of ATK{DisplayPercent(refinementDmgVals[refineIndex], charFinalStats, getTalentStatKey("physical", charFinalStats))} as DMG to surrounding opponents. This effect can only occur once every 15s.</span>,
   description: "The soul of the Knights of Favonius. Millennia later, it still calls on the winds of swift justice to vanquish all evil— just like the last heroine who wielded it.",
   baseStats: {
     main: [48, 65, 87, 110, 133, 164, 188, 212, 236, 261, 292, 316, 341, 373, 398, 423, 455, 480, 506, 537, 563, 590, 621, 648, 674],

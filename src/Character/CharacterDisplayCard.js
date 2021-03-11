@@ -131,6 +131,13 @@ export default class CharacterDisplayCard extends React.Component {
   render() {
     let { footer, newBuild, editable, onClose, tabName } = this.props
     let character = this.state
+    //transfer the hitmode/reactions over 
+    if (newBuild?.finalStats) {
+      newBuild = deepClone(newBuild)
+      newBuild.finalStats.hitMode = character.hitMode;
+      newBuild.finalStats.reactionMode = character.reactionMode;
+    }
+
     let { characterKey, levelKey, compareAgainstEquipped } = this.state
     let equippedBuild = Character.calculateBuild(this.state)
     let HeaderIconDisplay = characterKey ? <span >

@@ -24,9 +24,6 @@ function CharacterArtifactPane({ character, character: { characterKey, artifactC
     <Row>
       <Col className="mb-2">
         <Card className="h-100" bg="lightcontent" text="lightfont">
-          <Card.Header>
-            <span>Character Stats</span>
-          </Card.Header>
           <Card.Body>
             <StatDisplayComponent {...{ character, equippedBuild, newBuild, statsDisplayKeys: statKeys, build, forceUpdate, setState, setOverride, editable }} />
           </Card.Body>

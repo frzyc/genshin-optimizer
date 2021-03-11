@@ -5,6 +5,6 @@ import '../StatDependency'
 export default function TestDisplay() {
   DatabaseInitAndVerify()
   return <Container>
-    <CharacterDisplayCard editable characterKey="noelle" />
+    <CharacterDisplayCard editable characterKey="amber" tabName="talent" />
   </Container>
 }
