@@ -61,6 +61,7 @@ const StatData = {
   crystalize_multi: { name: "Crystalize Multiplier", unit: "multi", const: true, variant: "crystalize" },
   crystalize_dmg_: { name: "Crystalize Bonus", unit: "%", variant: "crystalize" },
   crystalize_hit: { name: "Crystalize Shield HP", variant: "crystalize" },
+  burning_dmg_: { name: "Burning DMG Bonus", variant: "burning" },
 
   // Enemy
   enemyLevel: { name: "Enemy Level", const: true },
@@ -80,6 +81,7 @@ const Formulas = {
   // Reactions
   amplificative_dmg_: (s) => 2500 / 9 * s.eleMas / (1400 + s.eleMas),
   transformative_dmg_: (s) => 6000 / 9 * s.eleMas / (1400 + s.eleMas),
+
   crystalize_eleMas_: (s) => 4000 / 9 * s.eleMas / (1400 + s.eleMas),
   crystalize_multi: (s, c) => ReactionMatrix["crystalize"].reduce((accu, val, i) => accu + val * Math.pow(c.characterLevel, i), 0),
   crystalize_hit: (s, c) => (100 + s.crystalize_dmg_ + s.crystalize_eleMas_) / 100 * c.crystalize_multi,
@@ -165,7 +167,7 @@ Object.entries(transformativeReactions).forEach(([reaction, [reactionName, ele, 
 
 Object.entries(amplifyingReactions).forEach(([reaction, [name, variants]]) => {
   const opt = { variant: reaction }
-  StatData[`${reaction}_dmg_`] = { name: `${name} DMG Bonus`, unit: "%" }
+  StatData[`${reaction}_dmg_`] = { name: `${name} DMG Bonus`, unit: "%", ...opt }
   Object.entries(variants).forEach(([ele, baseMulti]) => {
     StatData[`${ele}_${reaction}_multi`] = { name: `${name} Multiplier`, unit: "multi", ...opt }
     Formulas[`${ele}_${reaction}_multi`] = (s) => baseMulti * (100 + s.amplificative_dmg_ + s[`${reaction}_dmg_`]) / 100
