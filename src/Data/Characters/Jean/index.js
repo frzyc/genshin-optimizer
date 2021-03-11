@@ -129,7 +129,7 @@ let char = {
       }, {
         text: "Max Hold Duration",
         value: "5s",
-      } {
+      }, {
         text: "CD",
         value: "6s",
       }]
