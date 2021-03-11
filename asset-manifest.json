@@ -9,16 +9,16 @@
     "static/js/3.4bcb654f.chunk.js": "/genshin-optimizer/static/js/3.4bcb654f.chunk.js",
     "static/js/3.4bcb654f.chunk.js.map": "/genshin-optimizer/static/js/3.4bcb654f.chunk.js.map",
     "main.css": "/genshin-optimizer/static/css/main.46a6b127.chunk.css",
-    "main.js": "/genshin-optimizer/static/js/main.8205c9de.chunk.js",
-    "main.js.map": "/genshin-optimizer/static/js/main.8205c9de.chunk.js.map",
-    "runtime-main.js": "/genshin-optimizer/static/js/runtime-main.cba3356d.js",
-    "runtime-main.js.map": "/genshin-optimizer/static/js/runtime-main.cba3356d.js.map",
+    "main.js": "/genshin-optimizer/static/js/main.f6774ac0.chunk.js",
+    "main.js.map": "/genshin-optimizer/static/js/main.f6774ac0.chunk.js.map",
+    "runtime-main.js": "/genshin-optimizer/static/js/runtime-main.50cb9127.js",
+    "runtime-main.js.map": "/genshin-optimizer/static/js/runtime-main.50cb9127.js.map",
     "static/js/6.a0401db2.chunk.js": "/genshin-optimizer/static/js/6.a0401db2.chunk.js",
     "static/js/6.a0401db2.chunk.js.map": "/genshin-optimizer/static/js/6.a0401db2.chunk.js.map",
     "static/js/7.74bed1ba.chunk.js": "/genshin-optimizer/static/js/7.74bed1ba.chunk.js",
     "static/js/7.74bed1ba.chunk.js.map": "/genshin-optimizer/static/js/7.74bed1ba.chunk.js.map",
-    "static/js/8.8f45f761.chunk.js": "/genshin-optimizer/static/js/8.8f45f761.chunk.js",
-    "static/js/8.8f45f761.chunk.js.map": "/genshin-optimizer/static/js/8.8f45f761.chunk.js.map",
+    "static/js/8.ed20e347.chunk.js": "/genshin-optimizer/static/js/8.ed20e347.chunk.js",
+    "static/js/8.ed20e347.chunk.js.map": "/genshin-optimizer/static/js/8.ed20e347.chunk.js.map",
     "static/js/9.0c83d903.chunk.js": "/genshin-optimizer/static/js/9.0c83d903.chunk.js",
     "static/js/9.0c83d903.chunk.js.map": "/genshin-optimizer/static/js/9.0c83d903.chunk.js.map",
     "static/js/10.31908537.chunk.js": "/genshin-optimizer/static/js/10.31908537.chunk.js",
@@ -751,9 +751,9 @@
     "static/media/tools.2724d338.png": "/genshin-optimizer/static/media/tools.2724d338.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.cba3356d.js",
+    "static/js/runtime-main.50cb9127.js",
     "static/js/6.a0401db2.chunk.js",
     "static/css/main.46a6b127.chunk.css",
-    "static/js/main.8205c9de.chunk.js"
+    "static/js/main.f6774ac0.chunk.js"
   ]
 }
