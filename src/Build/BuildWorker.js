@@ -30,7 +30,7 @@ onmessage = async (e) => {
     }
   }
 
-  const dependencies = GetDependencies(stats.modifiers, targetKeys)
+  const dependencies = GetDependencies(stats.modifiers, [...targetKeys, ...Object.keys(minFilters), ...Object.keys(maxFilters)])
   let { initialStats, formula } = PreprocessFormulas(dependencies, stats)
   let builds = [], threshold = -Infinity
 
