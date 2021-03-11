@@ -23,14 +23,170 @@ const char = {
   gender: "F",
   constellationName: "Leo Minor",
   titles: ["Acting Grand Master", "Dandelion Knight", "Lionfang Knight"],
-  baseStat: {
-    characterHP: [1144, 2967, 3948, 5908, 6605, 7599, 8528, 9533, 10230, 11243, 11940, 12965, 13662, 14695],
-    characterATK: [19, 48, 64, 96, 108, 124, 139, 155, 166, 183, 194, 211, 222, 239],
-    characterDEF: [60, 155, 206, 309, 345, 397, 446, 499, 535, 588, 624, 678, 715, 769]
-  },
-  specializeStat: {
-    key: "heal_",
-    value: [0, 0, 0, 0, 5.5, 5.5, 11.1, 11.1, 11.1, 11.1, 16.6, 16.6, 22.2, 22.2]
+  baseStat: data.baseStat,
+  specializeStat: data.specializeStat,
+  formula,
+  talent: {
+    auto: {
+      name: "Favonius Bladework",
+      img: normal,
+      document: [{
+        text: <span><strong>Normal Attack</strong> Performs up to 5 consecutive strikes.</span>,
+        fields: data.normal.hitArr.map((percentArr, i ) =>
+        ({
+          text: `${i + 1}-Hit DMG`,
+          formulaText: (tlvl, stats) => <span>{percentArr[tlvl]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
+          formula: formula.normal[i],
+          variant: (tlvl, stats) => getTalentStatKeyVarient("normal", stats),
+        }))
+      }, {
+        text: <span><strong>Charged Attack</strong> Consumes a certain amount of stamina to launch an opponent using the power of wind. Launched opponents will slowly fall to the ground.</span>,
+        fields: [{
+          text: `Charged Attack DMG`,
+          formulaText: (tlvl, stats) => <span>{data.charged.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
+          formula: formula.charged.dmg,
+          variant: (tlvl, stats) => getTalentStatKeyVariant("charged", stats),
+        }, {
+          text: `Stamina Cost`,
+          value: 20,
+        }]
+      }, {
+        text: <span><strong>Plunging Attack</strong> Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.</span>,
+        fields: [{
+          text: `Plunge DMG`,
+          formulaText: (tlvl, stats) => <span>{data.plunging.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+          formula: formula.plunging.dmg,
+          variant: (tlvl, stats) => getTalentStatKeyVariant("plunging", stats),
+        }, {
+          text: `Low Plunge DMG`,
+          formulaText: (tlvl, stats) => <span>{data.plunging.low[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+          formula: formula.plunging.low,
+          variant: (tlvl, stats) => getTalentStatKeyVariant("plunging", stats),
+        }, {
+          text: `High Plunge DMG`,
+          formulaText: (tlvl, stats) => <span>{data.plunging.high[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+          formula: formula.plunging.high,
+          variant: (tlvl, stats) => getTalentStatKeyVariant("plunging", stats),
+        }]
+      }]
+    },
+    skill: {
+      name: "Gale Blade",
+      img: skill,
+      document: [{
+        text: <span>
+          <p className="mb-2">Focusing the might of the formless wind around her blade, Jean releases a miniature storm, launching opponents in the direction she aims at, dealing massive <span className="text-anemo">Anemo DMG</span>.</p>
+          <p className="mb-2"><b>Hold:</b> At the cost of continued stamina consumption, Jean can command the whirlwind to pull surrounding opponents and objects towards her front.</p>
+          <ul className="mb-2">
+            <li>Dicrection can be adjusted/</li>
+            <li>Character is immobile during skill duration.</li>
+          </ul>
+        </span>,
+        fields: [{
+          text: "Gale Blade DMG",
+          formulaText: (tlvl, stats) => <span>{data.skill.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
+          formula: formula.skill.dmg,
+          variant: (tlvl, stats) => getTalentStatKeyVariant("skill", stats),
+        }, {
+          text: "Stamina Consumption (Hold)",
+          value: "20/s",
+        }, {
+          text: "Max Hold Duration",
+          value: "5s",
+        }, {
+          text: "CD",
+          value: "6s",
+        }]
+      }],
+      
+    },
+    burst: {
+      name: "Dandelion Breeze",
+      img: burst,
+      text: <span>
+          <p className="mb-2">Calling upon the wind's protection, Jean creates a swirling Dandelion Field, launching surrounding opponents and dealing <span className="text-anemo">Anemo DMG</span>. At the same time, she instantly regenerates a large amount of HP for all party members. The amount of HP restored scales off Jean's ATK.</p>
+          <p className="mb-2"><b>Dandelion Field:</b></p>
+          <ul className="mb-2">
+            <li>Continuously regenerates HP of characters within the AoE and continuously imbues them with <span className="text-ameno">Ameno</span>.</li>
+            <li>Deals <span className="text-anemo">Anemo DMG</span> to opponents entering or exiting the Dandelion Field.</li>
+          </ul>
+        </span>,
+      fields: [{
+        text: "Skill DMG",
+          formulaText: (tlvl, stats) => <span>{data.burst.skill[tlvl]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
+          formula: formula.burst.dmg,
+          variant: (tlvl, stats) => getTalentStatKeyVariant("burst", stats),
+      }, {
+          text: "Entering/Exiting DMG",
+          formulaText: (tlvl, stats) => <span>{dandelionBreeze.enter_exit_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("burst"), stats)}</span>,
+          formula: formula.burst.enter_exit_dmg,
+          variant: (tlvl, stats) => getTalentStatKeyVariant("burst", stats),
+      }, {
+        text: "Regeneration",
+          formulaText: (tlvl, stats) => <span>( {dandelionBreeze.atk[tlvl]}% {Stat.printStat("finalAtk", stats)} + {dandelionBreeze.heal_flat[tlvl]} ) * {Stat.printStat("heal_multi", stats)}</span>,
+          formula: formula.burst.heal,
+          variant: "success",
+      }, {
+          text: "Continuous Regeneration",
+          formulaText: (tlvl, stats) => <span>( {dandelionBreeze.regen_atk[tlvl]}% ATK + {dandelionBreeze.regen_flat[tlvl]} ) * {Stat.printStat("heal_multi", stats)}</span>,
+          formula: formula.burst.regen,
+          variant: "success",
+      }, {
+        text: "Duration",
+        value: "11s",
+      }, {
+        text: "CD",
+        value: "20s",
+      }, {
+        text: "Energy Cost",
+        value: 80,
+      }]
+    },
+    passive1: {
+      name: "Guiding Breeze",
+      img: passive1,
+      document: [{ text: <span>When a Perfect Cooking is achieved on a dish with restorative effects, Barbara has a 12% chance to obtain double the product.</span> }],
+    },
+    passive2: {
+      name: "Wind Companion",
+      img: passive2,
+      document: [{ text: <span>On hit, Jean's Normal Attacks have a 50% change to regenerate HP equal to 15% of Jean's ATK for all party members.</span> }],
+    },
+    passive3: {
+      name: "Let the Wind Lead",
+      img: passive3,
+      document: [{ text: <span>Using <b>Dandelion Breeze</b> will regenerate 20% of its Energy.</span> }],
+    },
+    constellation1: {
+      name: "Spiraling Tempest",
+      img: c1,
+      document: [{ text: <span>Increases the pulling speed of <b>Gale Blade</b> after holding for more than 1s, and increases the DMG dealt by 40%.</span> }],
+    },
+    constellation2: {
+      name: "People's Aegis",
+      img: c2,
+      document: [{ text: <span>When Jean picks up an Elemental Orb/Particle, all party members have their Movement SPD and ATK SPD increased by 15% for 15s.</span> }],
+    },
+    constellation3: {
+      name: "When the West Wind Arises",
+      img: c3,
+      document: [{ text: <span>Increases the level of <b>Dandelion Breeze</b> by 3. Maximum upgrade level is 15.</span> }],
+    },
+    constellation4: {
+      name: "Lands of Dandelion",
+      img: c4,
+      document: [{ text: <span>Within the Field created by <b>Dandelion Breeze</b>, all opponents have their Anemo RES decreased by 40%</span> }],
+    },
+    constellation5: {
+      name: "Outbursting Gust",
+      img: c5,
+      document: [{ text: <span>Increases the level of <b>Gale Blade</b> by 3. Maximum upgrade level is 15.</span> }],
+    },
+    constellation6: {
+      name: "Lion's Fang, Fair Protector of Mondstandt",
+      img: c6,
+      document: [{ text: <span>Incoming DMG is decreased by 35% within the Field created by <b>Dandelion Breeze</b>. Upon leaving the Dandelion Field, this effect lasts for 3 attacks or 10s.</span> }],
+    },
   },
 };
 export default char;
