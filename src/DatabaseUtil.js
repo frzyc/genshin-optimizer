@@ -150,6 +150,10 @@ function DatabaseInitAndVerify() {
     let valid = true;
     const { characterKey } = character
     //verify character database equipment validity
+    if (!character.equippedArtifacts) {
+      character.equippedArtifacts = {}
+      valid = false
+    }
     Object.entries(character.equippedArtifacts).forEach(([slotKey, artid]) => {
       const equippedArt = ArtifactDatabase.get(artid)
       if (equippedArt && equippedArt.location !== characterKey) //the artifact doesnt have the right location...

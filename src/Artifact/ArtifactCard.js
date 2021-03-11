@@ -68,11 +68,11 @@ export default function ArtifactCard({ artifactId, artifactObj, forceUpdate, onE
       <div className="mt-auto">
         <span className="mb-0 mr-1">Substat Eff.:</span>
         <PercentBadge percent={currentEfficiency} valid={artifactValid}>
-          {currentEfficiency.toFixed(2) + "%"}
+          {currentEfficiency?.toFixed(2) ?? currentEfficiency + "%"}
         </PercentBadge>
         <b>{" < "}</b>
         <PercentBadge percent={maximumEfficiency} valid={artifactValid}>
-          {maximumEfficiency.toFixed(2) + "%"}
+          {maximumEfficiency?.toFixed(2) ?? maximumEfficiency + "%"}
         </PercentBadge>
       </div>
     </Card.Body>
