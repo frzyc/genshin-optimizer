@@ -171,6 +171,7 @@ const char = {
       name: "When the West Wind Arises",
       img: c3,
       document: [{ text: <span>Increases the level of <b>Dandelion Breeze</b> by 3. Maximum upgrade level is 15.</span> }],
+      talentBoost: { burst: 3 }
     },
     constellation4: {
       name: "Lands of Dandelion",
@@ -181,6 +182,7 @@ const char = {
       name: "Outbursting Gust",
       img: c5,
       document: [{ text: <span>Increases the level of <b>Gale Blade</b> by 3. Maximum upgrade level is 15.</span> }],
+      talentBoost: { skill: 3 }
     },
     constellation6: {
       name: "Lion's Fang, Fair Protector of Mondstandt",
