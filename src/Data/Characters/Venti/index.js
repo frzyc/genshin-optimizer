@@ -252,7 +252,7 @@ const char = {
           sourceKey: "venti",
           maxStack: 1,
           stats: {
-            anemo_dmg_: 15,
+            anemo_dmg_: 25,
           },
           fields: [{
             text: "Duration",
