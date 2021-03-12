@@ -288,7 +288,7 @@ const char = {
         text: <span>Every 10s, Razor's sword charges up, causing the next Normal Attack to release lightning that deals 100% of Razor's ATK as <span className="text-electro">Electro DMG</span>. When Razor is not using <b>Lightning Fang</b>, a lightning strike on an opponent will grant Razor an Electro Sigil for <b>Claw and Thunder</b>.</span>,
         fields: [(con) => con >= 6 && {
           text: "Lupus Fulguris DMG",
-          formulaText: (tlvl, stats) => <span>10% {Stat.printStat(getTalentStatKey("electro", stats), stats)}</span>,
+          formulaText: (tlvl, stats) => <span>100% {Stat.printStat(getTalentStatKey("electro", stats), stats)}</span>,
           formula: formula.constellation6.dmg,
           variant: (tlvl, stats) => getTalentStatKeyVariant("electro", stats),
         }, (con) => con >= 6 && {
