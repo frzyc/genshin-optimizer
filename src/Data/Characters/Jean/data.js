@@ -31,9 +31,9 @@ const data = {
     dmg: [292, 313.9, 335.8, 365, 386.9, 408.8, 438, 467.2, 496.4, 525.6, 554.8, 584, 620.5, 657, 693.5],
   },
   burst: {
-    dmg: [424.8, 456.66, 488.52, 531, 562.86, 594.72, 637.2, 679.68, 722.16, 764.64, 807.12, 849.6, 902.7, 955.8, 1008.9],
-  	enter_exit_dmg : [78.4, 84.28, 90.16, 98, 103.88, 109.76, 117.6, 125.44, 133.28, 141.12, 148.96, 156.8, 166.6, 176.4, 186.2],
-  	hp_flat: [1540, 1694, 1861, 2041, 2234, 2439, 2657, 2888, 3132, 3389, 3659, 3941, 4236, 4544, 4865],
+    skill: [424.8, 456.66, 488.52, 531, 562.86, 594.72, 637.2, 679.68, 722.16, 764.64, 807.12, 849.6, 902.7, 955.8, 1008.9],
+  	field_dmg : [78.4, 84.28, 90.16, 98, 103.88, 109.76, 117.6, 125.44, 133.28, 141.12, 148.96, 156.8, 166.6, 176.4, 186.2],
+  	heal_flat: [1540, 1694, 1861, 2041, 2234, 2439, 2657, 2888, 3132, 3389, 3659, 3941, 4236, 4544, 4865],
   	heal_atk: [251.2, 270.04, 288.88, 314, 332.84, 351.68, 376.8, 401.92, 427.04, 452.16, 477.28, 502.4, 533.8, 565.2 , 596.6],
   	regen_flat: [154, 169, 186, 204, 223, 244, 266, 289, 313, 339, 366, 394, 424, 454, 487],
   	regen_atk: [25.12, 27, 28.89, 31.4, 33.28, 35.17, 37.68, 40.19, 42.7, 45.22 , 47.73, 50.24, 53.38, 56.52, 59.66],
@@ -49,11 +49,11 @@ const formula = {
   plunging: Object.fromEntries(Object.entries(data.plunging).map(([key, arr]) => [key, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "plunging")])),
   skill: Object.fromEntries(Object.entries(data.skill).map(([key, arr]) => [key, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "skill")])),
   burst: {
-    dmg: (tlvl, stats) => basicDMGFormula(data.burst.dmg[tlvl], stats, "burst"),
-    enter_exit_dmg: (tlvl, stats) => basicDMGFormula(data.burst.enter_exit_dmg[tlvl], stats, "burst"),
+    skill: (tlvl, stats) => basicDMGFormula(data.burst.skill[tlvl], stats, "burst"),
+    field_dmg: (tlvl, stats) => basicDMGFormula(data.burst.field_dmg[tlvl], stats, "burst"),
     heal: (tlvl) => {		
       const atk = data.burst.heal_atk[tlvl] / 100
-      const flat = data.burst.hp_flat[tlvl]
+      const flat = data.burst.heal_flat[tlvl]
       return [s => (atk * s.finalATK + flat) * s.heal_multi, ["finalATK", "heal_multi"]]
     },
     regen: (tlvl) => {

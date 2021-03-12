@@ -1,17 +1,20 @@
 import card from './Character_Jean_Card.jpg'
 import thumb from './Character_Jean_Thumb.png'
-// import c1 from './Constellation_Spiraling_Tempest.png'
-// import c2 from './Constellation_People\'s_Aegis.png'
-// import c3 from './Constellation_When_the_West_Wind_Arises.png'
-// import c4 from './Constellation_Lands_of_Dandelion.png'
-// import c5 from './Constellation_Outbursting_Gust.png'
-// import c6 from './Constellation_Lion\'s_Fang,_Fair_Protector_of_Mondstadt.png'
-// import normal from './Talent_Favonius_Bladework.png'
-// import skill from './Talent_Gale_Blade.png'
-// import burst from './Talent_Dandelion_Breeze.png'
-// import passive1 from './Talent_Wind_Companion.png'
-// import passive2 from './Talent_Let_the_Wind_Lead.png'
-// import passive3 from './Talent_Guiding_Breeze.png'
+import c1 from './Constellation_Spiraling_Tempest.png'
+import c2 from './Constellation_People\'s_Aegis.png'
+import c3 from './Constellation_When_the_West_Wind_Arises.png'
+import c4 from './Constellation_Lands_of_Dandelion.png'
+import c5 from './Constellation_Outbursting_Gust.png'
+import c6 from './Constellation_Lion\'s_Fang,_Fair_Protector_of_Mondstadt.png'
+import normal from './Talent_Favonius_Bladework.png'
+import skill from './Talent_Gale_Blade.png'
+import burst from './Talent_Dandelion_Breeze.png'
+import passive1 from './Talent_Wind_Companion.png'
+import passive2 from './Talent_Let_the_Wind_Lead.png'
+import passive3 from './Talent_Guiding_Breeze.png'
+import Stat from '../../../Stat'
+import formula, { data } from './data'
+import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 
 const char = {
   name: "Jean",
@@ -37,7 +40,7 @@ const char = {
           text: `${i + 1}-Hit DMG`,
           formulaText: (tlvl, stats) => <span>{percentArr[tlvl]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
           formula: formula.normal[i],
-          variant: (tlvl, stats) => getTalentStatKeyVarient("normal", stats),
+          variant: (tlvl, stats) => getTalentStatKeyVariant("normal", stats),
         }))
       }, {
         text: <span><strong>Charged Attack</strong> Consumes a certain amount of stamina to launch an opponent using the power of wind. Launched opponents will slowly fall to the ground.</span>,
@@ -103,7 +106,8 @@ const char = {
     burst: {
       name: "Dandelion Breeze",
       img: burst,
-      text: <span>
+      document: [{
+        text: <span>
           <p className="mb-2">Calling upon the wind's protection, Jean creates a swirling Dandelion Field, launching surrounding opponents and dealing <span className="text-anemo">Anemo DMG</span>. At the same time, she instantly regenerates a large amount of HP for all party members. The amount of HP restored scales off Jean's ATK.</p>
           <p className="mb-2"><b>Dandelion Field:</b></p>
           <ul className="mb-2">
@@ -112,25 +116,25 @@ const char = {
           </ul>
         </span>,
       fields: [{
-        text: "Skill DMG",
-          formulaText: (tlvl, stats) => <span>{data.burst.skill[tlvl]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
-          formula: formula.burst.dmg,
+       text: "Skill DMG",
+         formulaText: (tlvl, stats) => <span>{data.burst.skill[tlvl]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
+          formula: formula.burst.skill,
           variant: (tlvl, stats) => getTalentStatKeyVariant("burst", stats),
-      }, {
-          text: "Entering/Exiting DMG",
-          formulaText: (tlvl, stats) => <span>{dandelionBreeze.enter_exit_dmg[tlvl]}% {Stat.printStat(Character.getTalentStatKey("burst"), stats)}</span>,
-          formula: formula.burst.enter_exit_dmg,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("burst", stats),
-      }, {
-        text: "Regeneration",
-          formulaText: (tlvl, stats) => <span>( {dandelionBreeze.atk[tlvl]}% {Stat.printStat("finalAtk", stats)} + {dandelionBreeze.heal_flat[tlvl]} ) * {Stat.printStat("heal_multi", stats)}</span>,
-          formula: formula.burst.heal,
-          variant: "success",
-      }, {
-          text: "Continuous Regeneration",
-          formulaText: (tlvl, stats) => <span>( {dandelionBreeze.regen_atk[tlvl]}% ATK + {dandelionBreeze.regen_flat[tlvl]} ) * {Stat.printStat("heal_multi", stats)}</span>,
-          formula: formula.burst.regen,
-          variant: "success",
+     }, {
+         text: "Entering/Exiting DMG",
+         formulaText: (tlvl, stats) => <span>{data.burst.field_dmg[tlvl]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
+         formula: formula.burst.field_dmg,
+         variant: (tlvl, stats) => getTalentStatKeyVariant("burst", stats),
+     }, {
+       text: "Regeneration",
+         formulaText: (tlvl, stats) => <span>( {data.burst.heal_atk[tlvl]}% {Stat.printStat("finalAtk", stats)} + {data.burst.heal_flat[tlvl]} ) * {Stat.printStat("heal_multi", stats)}</span>,
+         formula: formula.burst.heal,
+         variant: "success",
+     }, {
+         text: "Continuous Regeneration",
+         formulaText: (tlvl, stats) => <span>( {data.burst.regen_atk[tlvl]}% ATK + {data.burst.regen_flat[tlvl]} ) * {Stat.printStat("heal_multi", stats)}</span>,
+         formula: formula.burst.regen,
+         variant: "success",
       }, {
         text: "Duration",
         value: "11s",
@@ -141,6 +145,7 @@ const char = {
         text: "Energy Cost",
         value: 80,
       }]
+      }],
     },
     passive1: {
       name: "Guiding Breeze",
