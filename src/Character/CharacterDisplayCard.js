@@ -8,6 +8,7 @@ import Col from 'react-bootstrap/Col';
 import DropdownToggle from 'react-bootstrap/esm/DropdownToggle';
 import Row from 'react-bootstrap/Row';
 import Artifact from '../Artifact/Artifact';
+import WIPComponent from '../Components/WIPComponent';
 import { WeaponLevelKeys } from '../Data/WeaponData';
 import { DatabaseInitAndVerify } from '../DatabaseUtil';
 import { deepClone } from '../Util/Util';
@@ -209,10 +210,17 @@ export default class CharacterDisplayCard extends React.Component {
               <Nav.Link eventKey="artifacts">{newBuild ? "Current Artifacts" : "Artifacts"}</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link eventKey="talent" disabled={process.env.NODE_ENV !== "development" && !Character.hasTalentPage(characterKey)}>Talents {!Character.hasTalentPage(characterKey) && <Badge variant="warning">WIP</Badge>}</Nav.Link>
+              {(process.env.NODE_ENV !== "development" && !Character.hasTalentPage(characterKey)) ?
+                <WIPComponent>
+                  <Nav.Link eventKey="talent" disabled>Talents <Badge variant="warning">WIP</Badge></Nav.Link>
+                </WIPComponent> :
+                <Nav.Link eventKey="talent">Talents</Nav.Link>
+              }
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link eventKey="team" disabled>Team <Badge variant="warning">WIP</Badge></Nav.Link>
+              <WIPComponent>
+                <Nav.Link eventKey="team" disabled>Team <Badge variant="warning">WIP</Badge></Nav.Link>
+              </WIPComponent>
             </Nav.Item>
           </Nav>
           <Tab.Content>
