@@ -91,7 +91,7 @@ const char = {
           formulaText: (tlvl, stats) => <span>{data.skill.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
           formula: formula.skill.dmg,
           variant: (tlvl, stats) => getTalentStatKeyVariant("skill", stats),
-        }, (con, a) => a >= 1 && {
+        }, (con) => con >= 1 && {
           text: "Gale Blade DMG (Holding)",
           formulaText: (tlvl, stats) => <span>{data.skill.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)} * 140%</span>,
           formula: formula.skill.dmg_hold,
@@ -185,7 +185,7 @@ const char = {
       img: c2,
       document: [{
         text: <span>When Jean picks up an Elemental Orb/Particle, all party members have their Movement SPD and ATK SPD increased by 15% for 15s.</span>,
-        conditional: (tlvl, c) => c >= 6 && {
+        conditional: (tlvl, c) => c >= 2 && {
           type: "character",
           conditionalKey: "PeoplesAegis",
           condition: "People's Aegis",
@@ -213,7 +213,7 @@ const char = {
       img: c4,
       document: [{
         text: <span>Within the Field created by <b>Dandelion Breeze</b>, all opponents have their Anemo RES decreased by 40%</span>,
-        conditional: (tlvl, c) => c >= 6 && {
+        conditional: (tlvl, c) => c >= 4 && {
           type: "character",
           conditionalKey: "LandsOfDandelion",
           condition: "Lands of Dandelion",
