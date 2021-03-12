@@ -81,9 +81,15 @@ export default class BuildDisplay extends React.Component {
   selectCharacter = (characterKey = "") => {
     if (!characterKey)
       return this.setState({ ...BuildDisplay.getInitialState(), characterKey: "" })
+    if (characterKey === this.state.characterKey) return
     const character = CharacterDatabase.get(characterKey)
-    if (character)
-      return this.setState(state => ({ ...BuildDisplay.getInitialState(), characterKey, maxBuildsToShow: state.maxBuildsToShow, ...(character?.buildSetting ?? {}), showCharacterModal: state.showCharacterModal }))
+    return this.setState(state => ({
+      ...BuildDisplay.getInitialState(), //get default state
+      characterKey, //add character key
+      ...(character?.buildSetting ?? {}), //override build settings, if character has any
+      maxBuildsToShow: state.maxBuildsToShow,//maintain build settings
+      showCharacterModal: state.showCharacterModal//maintain modal
+    }))
   }
   splitArtifacts = () => {
     if (!this.state.characterKey) // Make sure we have all slotKeys

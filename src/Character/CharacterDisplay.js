@@ -89,6 +89,7 @@ export default class CharacterDisplay extends React.Component {
       {showEditor ? <Row className="mt-2"><Col>
         <React.Suspense fallback={<span>Loading...</span>}>
           <CharacterDisplayCard editable
+            setCharacterKey={cKey => this.editCharacter(cKey)}
             characterKey={this.state.charIdToEdit}
             onClose={this.cancelEditCharacter}
             footer={<Button variant="danger" onClick={this.cancelEditCharacter}>Close</Button>}

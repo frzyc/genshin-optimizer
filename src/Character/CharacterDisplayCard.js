@@ -88,12 +88,15 @@ export default class CharacterDisplayCard extends React.Component {
     this.props.forceUpdate ? this.props.forceUpdate() : this.forceUpdate();
   }
   setCharacterKey = (characterKey) => {
-    this.props?.setCharacterKey?.(characterKey)
     let state = CharacterDisplayCard.getInitialState()
     let char = CharacterDatabase.get(characterKey)
     if (char) state = { ...state, ...char }
-    else state = { ...state, characterKey, weapon: CharacterDisplayCard.getIntialWeapon(characterKey) }
+    else {
+      state = { ...state, characterKey, weapon: CharacterDisplayCard.getIntialWeapon(characterKey) }
+      this.updateCharacter(this.state)
+    }
     this.setState(state)
+    this.props?.setCharacterKey?.(characterKey)
   }
 
   setLevelKey = (levelKey) =>
@@ -119,14 +122,17 @@ export default class CharacterDisplayCard extends React.Component {
       Artifact.getDataImport(),
     ]).then(() => this.forceUpdate())
   }
+  updateCharacter(state) {
+    state = deepClone(state)
+    delete state.compareAgainstEquipped
+    CharacterDatabase.updateCharacter(state)
+  }
   componentDidUpdate(prevProps) {
-    if (prevProps.characterKey !== this.props.characterKey)
+    if (prevProps.characterKey !== this.props.characterKey && this.props.characterKey !== this.state.characterKey)
       this.setCharacterKey(this.props.characterKey)
     if (this.props.editable && this.state.characterKey) {
       //save this.state as character to character db.
-      const state = deepClone(this.state)
-      delete state.compareAgainstEquipped
-      CharacterDatabase.updateCharacter(state)
+      this.updateCharacter(this.state)
     }
   }
   render() {
