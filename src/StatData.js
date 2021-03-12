@@ -41,7 +41,7 @@ const StatData = {
   // Misc. Stats
   heal_: { name: "Healing Bonus", unit: "%" },
   incHeal_: { name: "Incoming Healing Bonus", unit: "%" },
-  powShield_: { name: "Powerful Shield", unit: "%" },
+  powShield_: { name: "Shield Strength", unit: "%" },
   cdRed_: { name: "CD Red.", unit: "%" },
   skillCDRed_: { name: "Ele. Skill CD Red.", unit: "%" },
   burstCDRed_: { name: "Ele. Burst CD Red.", unit: "%" },

@@ -32,12 +32,12 @@ export const data = {
   skill: {
     stilleto: [50.4, 54.18, 57.96, 63, 66.78, 70.56, 75.6, 80.64, 85.68, 90.72, 95.76, 100.8, 107.1, 113.4, 119.7],
     slashing: [168, 180.6, 193.2, 210, 222.6, 235.2, 252, 268.8, 285.6, 302.4, 319.2, 336, 357, 378, 399],
-    thunderclasp_slash: [84, 90.3, 96.6, 105, 111.3, 117.6, 126, 134.4, 142.8, 151.2, 159.6, 168, 178.5, 189, 199.5],  
+    thunderclasp_slash: [84, 90.3, 96.6, 105, 111.3, 117.6, 126, 134.4, 142.8, 151.2, 159.6, 168, 178.5, 189, 199.5],
   },
   burst: {
     skill: [88, 94.6, 101.2, 110, 116.6, 123.2, 132, 140.8, 149.6, 158.4, 167.2, 176, 187, 198, 209],
     consec_slash: [24, 25.8, 27.6, 30, 31.8, 33.6, 36, 38.4, 40.8, 43.2, 45.6, 48, 51, 54, 57],
-    last: [188.8, 202.96, 217.12, 236, 250.16, 264.32, 283.2, 302.08, 320.96, 339.84, 358.72, 377.6, 401.2, 424.8, 448.4],  
+    last: [188.8, 202.96, 217.12, 236, 250.16, 264.32, 283.2, 302.08, 320.96, 339.84, 358.72, 377.6, 401.2, 424.8, 448.4],
   }
 }
 const formula = {
@@ -48,8 +48,8 @@ const formula = {
   plunging: Object.fromEntries(Object.entries(data.plunging).map(([name, arr]) =>
     [name, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "plunging")])),
   skill: {
-    ...Object.fromEntries(Object.entries(data.skill).map(([name, arr]) =>
-      [name, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "skill")])),
+    stilleto: (tlvl, stats) => basicDMGFormula(data.skill.stilleto[tlvl], stats, "skill"),
+    slashing: (tlvl, stats) => basicDMGFormula(data.skill.slashing[tlvl], stats, "skill"),
     thunderclap_slashing: (tlvl, stats) => basicDMGFormula(data.skill.thunderclasp_slash[tlvl] * 2, stats, "skill"),
   },
   burst: {

@@ -54,7 +54,7 @@ const formula = {
       // TODO Check if we need to cap the bonus here or elsewhere.
       return [s => Math.min(val * s.finalHP, 4 * s.baseATK), ["finalHP", "baseATK"]]
     },
-    dmg: (tlvl, stats) => basicDMGFormula(data.skill.dmg[tlvl] / 100, stats, "skill")
+    dmg: (tlvl, stats) => basicDMGFormula(data.skill.dmg[tlvl], stats, "skill"),
   },
   burst: {
     dmg: (tlvl, stats) => basicDMGFormula(data.burst.dmg[tlvl], stats, "burst"),
