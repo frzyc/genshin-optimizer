@@ -28,7 +28,7 @@ import xiao from './Xiao/data'
 // import xiangling from './Xiangling/data'
 import xingqiu from './Xingqiu/data'
 // import xinyan from './Xinyan/data'
-// import zhongli from './Zhongli/data'
+import zhongli from './Zhongli/data'
 const formula = {
   // albedo,
   amber,
@@ -60,6 +60,6 @@ const formula = {
   // xiangling,
   xingqiu,
   // xinyan,
-  // zhongli
+  zhongli
 };
 export default formula
