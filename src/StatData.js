@@ -66,6 +66,7 @@ const StatData = {
   // Enemy
   enemyLevel: { name: "Enemy Level", const: true },
   enemyLevel_multi: { name: "Enemy Level RES Multiplier", unit: "multi", const: true },
+  enemyDEFRed_: { name: "Enemy DEF Reduction", unit: "%", const: true }
 }
 const Formulas = {
   // Basic Stats
@@ -74,7 +75,7 @@ const Formulas = {
   finalHP: (s, c) => c.characterHP * (1 + s.hp_ / 100) + s.hp,
   finalDEF: (s, c) => c.characterDEF * (1 + s.def_ / 100) + s.def,
 
-  enemyLevel_multi: (s, c) => (100 + c.characterLevel) / (100 + c.enemyLevel + 100 + c.characterLevel),
+  enemyLevel_multi: (s, c) => (100 + c.characterLevel) / ((100 + c.characterLevel) + (100 + c.enemyLevel) * (1 - c.enemyDEFRed_ / 100)),
 
   heal_multi: (s) => (1 + s.heal_ / 100 + s.incHeal_ / 100),
 
