@@ -365,7 +365,7 @@ const char = {
             c >= 1 && {
               type: "character",
               conditionalKey: "WolfsInstinct",
-              condition: "Wolf's Instinct",
+              condition: "Pickup Elemental Particle",
               sourceKey: "razor",
               maxStack: 1,
               stats: {
@@ -499,6 +499,7 @@ const char = {
                   text: "Lupus Fulguris DMG",
                   formulaText: (<span>{data.c6.dmg}% of Razor's ATK</span>),
                   formula: formula.c6.dmg,
+                  variant: 'electro',
                 },
                 {
                   text: "Cooldown",

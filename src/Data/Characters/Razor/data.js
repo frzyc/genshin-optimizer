@@ -81,7 +81,10 @@ const formula = {
   },
   c6: {
     dmg: () => {
-      const f = (stats) => stats.characterATK * data.c6.dmg / 100;
+      const f = (stats) => {
+        const multi = (1 + (stats.dmg_ + stats.electro_dmg_) / 100);
+        return stats.characterATK * (data.c6.dmg / 100) * multi;
+      };
       const d = ['characterATK'];
       return [f, d];
     }
