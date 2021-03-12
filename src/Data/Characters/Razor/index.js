@@ -41,16 +41,14 @@ const char = {
         {
           text: (
             <span>
-              <strong>Normal Attack</strong> Perform up to 4 consecutive
-              strikes.
+              <strong>Normal Attack</strong> Perform up to 4 consecutive strikes.
             </span>
           ),
           fields: data.normal.hitArr.map((percentArr, i) => ({
             text: `${i + 1}-Hit DMG`,
             formulaText: (tlvl, stats) => (
               <span>
-                {percentArr[tlvl]}%{" "}
-                {Stat.printStat(getTalentStatKey("normal", stats), stats)}
+                {percentArr[tlvl]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}
               </span>
             ),
             formula: formula.normal[i],
@@ -62,7 +60,7 @@ const char = {
             <span>
               <strong>Charged Attack</strong> Drains Stamina over time to
               perform continuous spinning attacks against all nearby opponents.
-              At end of the sequence, perform a more powerful slash.{" "}
+              At end of the sequence, perform a more powerful slash.
             </span>
           ),
           fields: [
@@ -70,8 +68,7 @@ const char = {
               text: `Spinning DMG`,
               formulaText: (tlvl, stats) => (
                 <span>
-                  {data.charged.spinning[tlvl]}%{" "}
-                  {Stat.printStat(getTalentStatKey("charged", stats), stats)}
+                  {data.charged.spinning[tlvl]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}
                 </span>
               ),
               formula: formula.charged.spinning,
@@ -82,8 +79,7 @@ const char = {
               text: `Spinning Final DMG`,
               formulaText: (tlvl, stats) => (
                 <span>
-                  {data.charged.final[tlvl]}%{" "}
-                  {Stat.printStat(getTalentStatKey("charged", stats), stats)}
+                  {data.charged.final[tlvl]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}
                 </span>
               ),
               formula: formula.charged.final,
@@ -113,8 +109,7 @@ const char = {
               text: `Plunge DMG`,
               formulaText: (tlvl, stats) => (
                 <span>
-                  {data.plunging.dmg[tlvl]}%{" "}
-                  {Stat.printStat(getTalentStatKey("plunging", stats), stats)}
+                  {data.plunging.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}
                 </span>
               ),
               formula: formula.plunging.dmg,
@@ -125,8 +120,7 @@ const char = {
               text: `Low Plunge DMG`,
               formulaText: (tlvl, stats) => (
                 <span>
-                  {data.plunging.low[tlvl]}%{" "}
-                  {Stat.printStat(getTalentStatKey("plunging", stats), stats)}
+                  {data.plunging.low[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}
                 </span>
               ),
               formula: formula.plunging.low,
@@ -137,8 +131,7 @@ const char = {
               text: `High Plunge DMG`,
               formulaText: (tlvl, stats) => (
                 <span>
-                  {data.plunging.high[tlvl]}%{" "}
-                  {Stat.printStat(getTalentStatKey("plunging", stats), stats)}
+                  {data.plunging.high[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}
                 </span>
               ),
               formula: formula.plunging.high,
@@ -181,8 +174,7 @@ const char = {
               text: "Press DMG",
               formulaText: (tlvl, stats) => (
                 <span>
-                  {data.skill.press[tlvl]}%{" "}
-                  {Stat.printStat(getTalentStatKey("skill", stats), stats)}
+                  {data.skill.press[tlvl]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}
                 </span>
               ),
               formula: formula.skill.press,
@@ -196,8 +188,7 @@ const char = {
               text: "Hold DMG",
               formulaText: (tlvl, stats) => (
                 <span>
-                  {data.skill.hold[tlvl]}%{" "}
-                  {Stat.printStat(getTalentStatKey("skill", stats), stats)}
+                  {data.skill.hold[tlvl]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}
                 </span>
               ),
               formula: formula.skill.hold,
@@ -250,8 +241,7 @@ const char = {
               text: "Elemental Burst DMG",
               formulaText: (tlvl, stats) => (
                 <span>
-                  {data.burst.summon[tlvl]}%{" "}
-                  {Stat.printStat(getTalentStatKey("burst", stats), stats)}
+                  {data.burst.summon[tlvl]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}
                 </span>
               ),
               formula: formula.burst.summon,
@@ -261,8 +251,7 @@ const char = {
               text: "Wolf Within Electro DMG",
               formulaText: (tlvl, stats) => (
                 <span>
-                  {data.burst.dmg[tlvl]}%{" "}
-                  {Stat.printStat(getTalentStatKey("burst", stats), stats)}
+                  {data.burst.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}
                 </span>
               ),
               formula: formula.burst.dmg,
