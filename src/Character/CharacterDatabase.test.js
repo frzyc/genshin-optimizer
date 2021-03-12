@@ -92,4 +92,13 @@ describe('Test CharacterDatabase', () => {
       expect(CharacterDatabase.get("test2").equippedArtifacts).toEqual(build)
     })
   })
+  describe('unequipAllArtifacts()', () => {
+    test('should empty equipped', () => {
+      CharacterDatabase.equipArtifactBuild("test2", { slot1: "arttest_1", slot2: "arttest_2" })
+      CharacterDatabase.unequipAllArtifacts()
+      expect(CharacterDatabase.get("test1").equippedArtifacts).toEqual({})
+      expect(CharacterDatabase.get("test2").equippedArtifacts).toEqual({})
+    })
+  })
+
 })

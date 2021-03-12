@@ -66,6 +66,12 @@ export default class ArtifactDatabase {
   }
   static swapLocationsById = (artAid, artBid) =>
     this.swapLocations(this.get(artAid), this.get(artBid))
+  static unequipAllArtifacts = () => {
+    Object.values(artifactDatabase).forEach(art => {
+      art.location = ""
+      this.updateArtifact(art)
+    })
+  }
   //helper function for testing
   static clearDatabase = () => {
     artifactDatabase = {}

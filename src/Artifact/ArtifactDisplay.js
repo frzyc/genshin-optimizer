@@ -78,6 +78,12 @@ export default class ArtifactDisplay extends React.Component {
   cancelEditArtifact = () =>
     this.setState({ artToEditId: null })
 
+  unequipAll = () => {
+    if (!window.confirm("Do you want to unequip ALL your equipped artifacts from EVERY character?")) return
+    ArtifactDatabase.unequipAllArtifacts()
+    CharacterDatabase.unequipAllArtifacts()
+    this.forceUpdate()
+  }
   componentDidUpdate() {
     let state = deepClone(this.state)
     delete state.artToEditId
@@ -149,6 +155,7 @@ export default class ArtifactDisplay extends React.Component {
           <Card.Header>
             <span>Artifact Filter</span>
             <Button size="sm" className="ml-2" variant="danger" onClick={this.ressetFilters} ><FontAwesomeIcon icon={faUndo} className="fa-fw" /> Reset</Button>
+            <Button size="sm" className="ml-2" variant="danger" onClick={this.unequipAll} >Unequip Artifacts on every character</Button>
             <span className="float-right text-right">Showing <b>{artifacts.length > maxNumArtifactsToDisplay ? maxNumArtifactsToDisplay : artifacts.length}</b> out of {totalArtNum} Artifacts</span>
           </Card.Header>
           <Card.Body>

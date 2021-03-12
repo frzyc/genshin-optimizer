@@ -59,6 +59,12 @@ export default class CharacterDatabase {
     character.equippedArtifacts = artifactIds
     CharacterDatabase.updateCharacter(character);
   }
+  static unequipAllArtifacts = () => {
+    Object.values(characterDatabase).forEach(char => {
+      char.equippedArtifacts = {}
+      this.updateCharacter(char)
+    })
+  }
   //helper function for testing
   static clearDatabase = () => {
     characterDatabase = {}
