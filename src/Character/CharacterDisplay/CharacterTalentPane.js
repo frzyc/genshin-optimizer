@@ -152,12 +152,19 @@ function modifiersToFields(modifiers, finalStats = {}) {
     variant: Stat.getStatVariant(mStatKey),
     value: Object.entries(modifier ?? {}).reduce((accu, [mkey, multiplier]) => accu + finalStats[mkey] * multiplier, 0),
     formulaText: <span>{Object.entries(modifier ?? {}).map(([mkey, multiplier], i) => <span key={i} >{i !== 0 ? " + " : ""}{Stat.printStat(mkey, finalStats)} * {multiplier?.toFixed?.(3) ?? multiplier}</span>)}</span>,
-    fixed: Stat.fixedUnit(mStatKey)
+    fixed: Stat.fixedUnit(mStatKey),
+    unit: Stat.getStatUnit(mStatKey)
   }))
 }
 function statsToFields(stats, finalStats = {}) {
   return Object.entries(stats).map(([statKey, statVal]) =>
-    statKey === "modifiers" ? modifiersToFields(statVal, finalStats) : { text: Stat.getStatName(statKey), variant: Stat.getStatVariant(statKey), value: statVal, fixed: Stat.fixedUnit(statKey) }
+    statKey === "modifiers" ? modifiersToFields(statVal, finalStats) : {
+      text: Stat.getStatName(statKey),
+      variant: Stat.getStatVariant(statKey),
+      value: statVal,
+      fixed: Stat.fixedUnit(statKey),
+      unit: Stat.getStatUnit(statKey)
+    }
   ).flat()
 }
 
@@ -317,6 +324,7 @@ function FieldDisplay({ character: { compareAgainstEquipped, constellation }, fi
     fieldVal = field?.formula?.(talentLvlKey, build.finalStats)?.[0]?.(build.finalStats)
 
   let fixedVal = field.fixed || 0
+  const unit = typeof field.unit === "function" ? field.unit?.(talentLvlKey, build.finalStats) : (field.unit ?? "")
   //compareAgainstEquipped
   if (compareAgainstEquipped && equippedBuild && typeof fieldVal === "number") {
     let fieldEquippedVal = field.value ? field.value : field.formula?.(talentLvlKey, equippedBuild.finalStats)?.[0]?.(equippedBuild.finalStats)
@@ -330,7 +338,7 @@ function FieldDisplay({ character: { compareAgainstEquipped, constellation }, fi
   return <ListGroup.Item variant={index % 2 ? "customdark" : "customdarker"} className="p-2">
     <div>
       <span><b>{fieldText}</b>{fieldBasic}</span>
-      <span className={`float-right text-right text-${fieldVariant}`} >{fieldVal?.toFixed?.(fixedVal) || fieldVal}</span>
+      <span className={`float-right text-right text-${fieldVariant}`} >{fieldVal?.toFixed?.(fixedVal) || fieldVal}{unit}</span>
     </div>
   </ListGroup.Item>
 }

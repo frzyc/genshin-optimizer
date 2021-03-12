@@ -249,12 +249,12 @@ const char = {
           maxStack: 1,
           stats: {
             physical_res_: 200,
-            anemo_res__: 200,
-            geo_res__: 200,
-            electro_res__: 200,
-            hydro_res__: 200,
-            pyro_res__: 200,
-            cryo_res__: 200,
+            anemo_res_: 200,
+            geo_res_: 200,
+            electro_res_: 200,
+            hydro_res_: 200,
+            pyro_res_: 200,
+            cryo_res_: 200,
             critRate_: 100,
           },
           fields: [{
