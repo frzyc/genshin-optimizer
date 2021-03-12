@@ -30,21 +30,11 @@ const data = {
   skill: {
     press: [199.2, 214.14, 229.08, 249, 263.94, 278.88, 298.8, 318.72, 338.64, 358.56, 378.48, 398.4, 423.3, 448.2, 473.1],
     hold: [295.2, 317.34, 339.48, 369, 391.14, 413.28, 442.8, 472.32, 501.84, 531.36, 560.88, 590.4, 627.3, 664.2, 701.1],
-    cd: {
-      a1: 0.82, // 100% - 18%
-      press: 6,
-      hold: 10,
-    }
   },
   burst: {
     summon: [160, 172, 184, 200, 212, 224, 240, 256, 272, 288, 304, 320, 340, 360, 380],
     dmg: [24, 25.8, 27.6, 30, 31.8, 33.6, 36, 38.4, 40.8, 43.2, 45.6, 48, 51, 54, 57],
     atkspd: [26, 28, 30, 32, 34, 36, 37, 38, 39, 40, 40, 40, 40, 40, 40],
-  },
-  c6: {
-    dmg: 100,
-    cd: 10,
-    sigils: 1,
   }
 }
 
@@ -53,41 +43,17 @@ const formula = {
     basicDMGFormula(percentArr[tlvl], stats, "normal")])),
   charged: Object.fromEntries(Object.entries(data.charged).map(([name, arr]) =>
     [name, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "charged")])),
-  plunging: {
-    dmg: (tlvl, stats) => basicDMGFormula(data.plunging.dmg[tlvl], stats, "plunging"),
-    low: (tlvl, stats) => basicDMGFormula(data.plunging.low[tlvl], stats, "plunging"),
-    high: (tlvl, stats) => basicDMGFormula(data.plunging.high[tlvl], stats, "plunging"),
-  },
+  plunging: Object.fromEntries(Object.entries(data.plunging).map(([key, arr]) => [key, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "plunging")])),
   skill: {
     press: (tlvl, stats) => basicDMGFormula(data.skill.press[tlvl], stats, "skill"),
     hold: (tlvl, stats) => basicDMGFormula(data.skill.hold[tlvl], stats, "skill"),
-    cd: {
-      press: () => {
-        const f = (stats) => data.skill.cd.press * (stats.ascension >= 1 ? data.skill.cd.a1 : 1);
-        const d = ['ascension'];
-        return [f, d];
-      },
-      hold: () => {
-        const f = (stats) => data.skill.cd.hold * (stats.ascension >= 1 ? data.skill.cd.a1 : 1);
-        const d = ['ascension'];
-        return [f, d];
-      }
-    }
   },
   burst: {
     summon: (tlvl, stats) => basicDMGFormula(data.burst.summon[tlvl], stats, "burst"),
     dmg: (tlvl, stats) => basicDMGFormula(data.burst.dmg[tlvl], stats, "burst"),
-    atkspd: (tlvl, stats) => [() => data.burst.atkspd[tlvl], [""]],
   },
-  c6: {
-    dmg: () => {
-      const f = (stats) => {
-        const multi = (1 + (stats.dmg_ + stats.electro_dmg_) / 100);
-        return stats.characterATK * (data.c6.dmg / 100) * multi;
-      };
-      const d = ['characterATK'];
-      return [f, d];
-    }
+  constellation6: {
+    dmg: (tlvl, stats) => basicDMGFormula(data.burst.summon[tlvl], stats, "burst"),
   }
 }
 
