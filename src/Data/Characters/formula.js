@@ -17,7 +17,7 @@ import keqing from './Keqing/data'
 import mona from './Mona/data'
 import ningguang from './Ningguang/data'
 import noelle from './Noelle/data'
-// import qiqi from './Qiqi/data'
+import qiqi from './Qiqi/data'
 // import razor from './Razor/data'
 // import sucrose from './Sucrose/data'
 // import tartaglia from './Tartaglia/data'
@@ -49,7 +49,7 @@ const formula = {
   mona,
   ningguang,
   noelle,
-  // qiqi,
+  qiqi,
   // razor,
   // sucrose,
   // tartaglia,
