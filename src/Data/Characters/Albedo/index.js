@@ -125,10 +125,58 @@ const char = {
           formula: formula.burst.dmg,
           variant: (tlvl, stats) => getTalentStatKeyVariant("burst", stats),
         },
+        (con, a) => con >= 2 && {
+          text: "Brust DMG C2 1 Stack",
+          formulaText: (tlvl, stats) => <span>{data.burst.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)} + {DisplayPercent(30, stats, "finalDEF")}</span>,
+          formula: formula.burst.dmg1c2,
+          variant: (tlvl, stats) => getTalentStatKeyVariant("burst", stats),
+        },
+        (con, a) => con >= 2 && {
+          text: "Brust DMG C2 2 Stacks",
+          formulaText: (tlvl, stats) => <span>{data.burst.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)} + {DisplayPercent(30, stats, "finalDEF")} * 2</span>,
+          formula: formula.burst.dmg2c2,
+          variant: (tlvl, stats) => getTalentStatKeyVariant("burst", stats),
+        },
+        (con, a) => con >= 2 && {
+          text: "Brust DMG C2 3 Stacks",
+          formulaText: (tlvl, stats) => <span>{data.burst.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)} + {DisplayPercent(30, stats, "finalDEF")} * 3</span>,
+          formula: formula.burst.dmg3c2,
+          variant: (tlvl, stats) => getTalentStatKeyVariant("burst", stats),
+        },
+        (con, a) => con >= 2 && {
+          text: "Brust DMG C2 4 Stacks",
+          formulaText: (tlvl, stats) => <span>{data.burst.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)} + {DisplayPercent(30, stats, "finalDEF")} * 4</span>,
+          formula: formula.burst.dmg4c2,
+          variant: (tlvl, stats) => getTalentStatKeyVariant("burst", stats),
+        },
         {
           text: "Fatal Blossom DMG",
           formulaText: (tlvl, stats) => <span>{data.burst.blossom[tlvl]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
           formula: formula.burst.blossom,
+          variant: (tlvl, stats) => getTalentStatKeyVariant("burst", stats),
+        },
+        (con, a) => con >= 2 && {
+          text: "Fatal Blossom DMG C2 1 Stack",
+          formulaText: (tlvl, stats) => <span>{data.burst.blossom[tlvl]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)} + {DisplayPercent(30, stats, "finalDEF")}</span>,
+          formula: formula.burst.blossom1c2,
+          variant: (tlvl, stats) => getTalentStatKeyVariant("burst", stats),
+        },
+        (con, a) => con >= 2 && {
+          text: "Fatal Blossom DMG C2 2 Stacks",
+          formulaText: (tlvl, stats) => <span>{data.burst.blossom[tlvl]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)} + {DisplayPercent(30, stats, "finalDEF")} * 2</span>,
+          formula: formula.burst.blossom2c2,
+          variant: (tlvl, stats) => getTalentStatKeyVariant("burst", stats),
+        },
+        (con, a) => con >= 2 && {
+          text: "Fatal Blossom DMG C2 3 Stacks",
+          formulaText: (tlvl, stats) => <span>{data.burst.blossom[tlvl]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)} + {DisplayPercent(30, stats, "finalDEF")} * 3</span>,
+          formula: formula.burst.blossom3c2,
+          variant: (tlvl, stats) => getTalentStatKeyVariant("burst", stats),
+        },
+        (con, a) => con >= 2 && {
+          text: "Fatal Blossom DMG C2 4 Stacks",
+          formulaText: (tlvl, stats) => <span>{data.burst.blossom[tlvl]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)} + {DisplayPercent(30, stats, "finalDEF")} * 4</span>,
+          formula: formula.burst.blossom4c2,
           variant: (tlvl, stats) => getTalentStatKeyVariant("burst", stats),
         }]
       }],
@@ -177,7 +225,7 @@ const char = {
             <li>Unleashing <strong>Progeniture: Tectonic Tide</strong> consumes all stacks of <strong>Fatal Reckoning</strong>. Each stack of <strong>Fatal Reckoning</strong> consumed increases the DMG dealt by <strong>Fatal Blossoms</strong> and <strong>Progeniture: Tectonic Tide</strong>'s burst DMG by 30% of Albedo's DEF{DisplayPercent(30, stats, "finalDEF")}.</li>
             <li>This effect stacks up to 4 times.</li>
           </ul>
-        </span>,
+        </span>/* ,
         conditional: (tlvl, c, a) => c >= 2 && {
           type: "character",
           conditionalKey: "FatalReckoning",
@@ -187,7 +235,7 @@ const char = {
           stats: {
             modifiers: { geo_burst_hit: { finalDEF: 0.3 } },//This was the only way i could make it calculate the correct value but it isnt added and does not stack
           }//TODO: frzyc
-        }
+        }*/
       }],
     },
     constellation3: {

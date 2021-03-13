@@ -43,8 +43,8 @@ function burDMG(percent, stats, skillKey, stacks, elemental = false) {
   const val = percent / 100
   const statKey = getTalentStatKey(skillKey, stats, elemental) + "_multi"
   void 0 === stacks && (stacks = 0);
-  return [s => val * s.finalATK * s[statKey] + stacks * 0.3 * s.finalDEF, ["finalATK", "finalDEF", statKey, stacks]]
-}//TODO: Maybe be able to pass the amount of stacks?
+  return [s => (val * s.finalATK + stacks * 0.3 * s.finalDEF) * s[statKey], ["finalATK", "finalDEF", statKey, stacks]]
+}
 
 function blossomDMG(percent, multi, stats, skillKey, elemental = false) {
   const val = percent / 100
@@ -73,7 +73,15 @@ const formula = {
   },
   burst: {
     dmg: (tlvl, stats) => burDMG(data.burst.dmg[tlvl], stats, "burst"),
-    blossom: (tlvl, stats) => burDMG(data.burst.blossom[tlvl], stats, "burst")
+    dmg1c2: (tlvl, stats) => burDMG(data.burst.dmg[tlvl], stats, "burst", 1),
+    dmg2c2: (tlvl, stats) => burDMG(data.burst.dmg[tlvl], stats, "burst", 2),
+    dmg3c2: (tlvl, stats) => burDMG(data.burst.dmg[tlvl], stats, "burst", 3),
+    dmg4c2: (tlvl, stats) => burDMG(data.burst.dmg[tlvl], stats, "burst", 4),
+    blossom: (tlvl, stats) => burDMG(data.burst.blossom[tlvl], stats, "burst",),
+    blossom1c2: (tlvl, stats) => burDMG(data.burst.blossom[tlvl], stats, "burst", 1),
+    blossom2c2: (tlvl, stats) => burDMG(data.burst.blossom[tlvl], stats, "burst", 2),
+    blossom3c2: (tlvl, stats) => burDMG(data.burst.blossom[tlvl], stats, "burst", 3),
+    blossom4c2: (tlvl, stats) => burDMG(data.burst.blossom[tlvl], stats, "burst", 4),
   }
 }
 
