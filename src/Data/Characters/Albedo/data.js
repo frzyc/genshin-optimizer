@@ -46,6 +46,12 @@ function burDMG(percent, stats, skillKey, stacks, elemental = false) {
   return [s => val * s.finalATK * s[statKey] + stacks * 0.3 * s.finalDEF, ["finalATK", "finalDEF", statKey, stacks]]
 }//TODO: Maybe be able to pass the amount of stacks?
 
+function blossomDMG(percent, stats, skillKey, elemental = false) {
+  const val = percent / 100
+  const statKey = getTalentStatKey(skillKey, stats, elemental) + "_multi"
+  return [s => val * s.finalDEF * s[statKey], ["finalDEF", statKey]]
+}
+
 const formula = {
   normal: Object.fromEntries(data.normal.hitArr.map((percentArr, i) => [i, (tlvl, stats) =>
     basicDMGFormula(percentArr[tlvl], stats, "normal")
@@ -57,12 +63,8 @@ const formula = {
   plunging: Object.fromEntries(Object.entries(data.plunging).map(([key, arr]) => [key, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "plunging")])),
   skill: {
     press: (tlvl, stats) => basicDMGFormula(data.skill.press[tlvl], stats, "skill"),
-    blossom: (tlvl, stats) => {
-      const val = data.skill.blossom[tlvl] / 100
-      const statKey = getTalentStatKey("skill", stats, false) + "_multi"
-      console.log(statKey)
-      return [s => val * s.finalDEF * s[statKey], ["finalDEF", statKey]]
-    }
+    blossom: (tlvl, stats) => blossomDMG(data.skill.blossom[tlvl], stats, "skill"),
+    blossom50: (tlvl, stats) => blossomDMG(data.skill.blossom[tlvl] * 1.25, stats, "skill")
   },
   burst: {
     dmg: (tlvl, stats) => burDMG(data.burst.dmg[tlvl], stats, "burst"),
