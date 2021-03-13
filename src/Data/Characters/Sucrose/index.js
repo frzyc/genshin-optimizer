@@ -176,7 +176,7 @@ const char = {
     constellation5: {
       name: "Caution: Standard Flask",
       img: c5,
-      talentBoost: { skill: 5 },
+      talentBoost: { burst: 3 },
       document: [{ text: <span>
         Increases the Level of Forbidden Creation - Isomer 75 / Type II by 3.<br />
         Maximum upgrade level is 15.
