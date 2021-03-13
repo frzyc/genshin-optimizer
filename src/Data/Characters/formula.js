@@ -19,7 +19,7 @@ import ningguang from './Ningguang/data'
 import noelle from './Noelle/data'
 // import qiqi from './Qiqi/data'
 // import razor from './Razor/data'
-// import sucrose from './Sucrose/data'
+import sucrose from './Sucrose/data'
 // import tartaglia from './Tartaglia/data'
 // import traveler_anemo from './Traveler Anemo/data'
 // import traveler_geo from './Traveler Geo/data'
@@ -51,7 +51,7 @@ const formula = {
   noelle,
   // qiqi,
   // razor,
-  // sucrose,
+  sucrose,
   // tartaglia,
   // traveler_anemo,
   // traveler_geo,
