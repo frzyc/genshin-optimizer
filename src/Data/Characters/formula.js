@@ -1,4 +1,4 @@
-// import albedo from './Albedo/data'
+import albedo from './Albedo/data'
 import amber from './Amber/data'
 import barbara from './Barbara/data'
 import beidou from './Beidou/data'
@@ -30,7 +30,7 @@ import xingqiu from './Xingqiu/data'
 // import xinyan from './Xinyan/data'
 // import zhongli from './Zhongli/data'
 const formula = {
-  // albedo,
+  albedo,
   amber,
   barbara,
   beidou,
