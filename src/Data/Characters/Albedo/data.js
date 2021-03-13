@@ -46,10 +46,18 @@ function burDMG(percent, stats, skillKey, stacks, elemental = false) {
   return [s => val * s.finalATK * s[statKey] + stacks * 0.3 * s.finalDEF, ["finalATK", "finalDEF", statKey, stacks]]
 }//TODO: Maybe be able to pass the amount of stacks?
 
-function blossomDMG(percent, stats, skillKey, elemental = false) {
+function blossomDMG(percent, multi, stats, skillKey, elemental = false) {
   const val = percent / 100
-  const statKey = getTalentStatKey(skillKey, stats, elemental) + "_multi"
-  return [s => val * s.finalDEF * s[statKey], ["finalDEF", statKey]]
+  const statKey = getTalentStatKey(skillKey, stats, elemental)
+  const geo_skill_hit_multi = (1 + (stats.dmg_ + stats.geo_dmg_ + stats.skill_dmg_ + multi) / 100) * stats.enemyLevel_multi * stats.geo_enemyRes_multi
+  switch (statKey) {
+    case "geo_skill_critHit":
+      return [s => val * s.finalDEF * geo_skill_hit_multi * (1 + s.critDMG_ / 100), ["finalDEF", geo_skill_hit_multi]]
+    case "geo_skill_avgHit":
+      return [s => val * s.finalDEF * geo_skill_hit_multi * (1 + s.critDMG_ * s.final_skill_critRate_ / 10000), ["finalDEF", geo_skill_hit_multi]]
+    default:
+      return [s => val * s.finalDEF * geo_skill_hit_multi, ["finalDEF", geo_skill_hit_multi]]
+  }//TODO: Maybe a better way to write this
 }
 
 const formula = {
@@ -63,8 +71,8 @@ const formula = {
   plunging: Object.fromEntries(Object.entries(data.plunging).map(([key, arr]) => [key, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "plunging")])),
   skill: {
     press: (tlvl, stats) => basicDMGFormula(data.skill.press[tlvl], stats, "skill"),
-    blossom: (tlvl, stats) => blossomDMG(data.skill.blossom[tlvl], stats, "skill"),
-    blossom50: (tlvl, stats) => blossomDMG(data.skill.blossom[tlvl] * 1.25, stats, "skill")
+    blossom: (tlvl, stats) => blossomDMG(data.skill.blossom[tlvl], 0, stats, "skill"),
+    blossom50: (tlvl, stats) => blossomDMG(data.skill.blossom[tlvl], 25, stats, "skill")
   },
   burst: {
     dmg: (tlvl, stats) => burDMG(data.burst.dmg[tlvl], stats, "burst"),
