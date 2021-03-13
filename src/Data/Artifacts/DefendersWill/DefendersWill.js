@@ -33,7 +33,7 @@ let artifact = {
           sourceKey: "DefendersWill_4",
           maxStack: 1,
           stats: {
-            aneme_res_: 30
+            anemo_res_: 30
           }
         }, {
           type: "artifact",

@@ -4,6 +4,7 @@ import React, { useContext } from 'react';
 import { Accordion, AccordionContext, Button, Card, Col, Image, Row, ToggleButton, ToggleButtonGroup } from "react-bootstrap";
 import { useAccordionToggle } from 'react-bootstrap/AccordionToggle';
 import Assets from "../../Assets/Assets";
+import { getTalentStatKey } from "../../Build/Build";
 import Stat from "../../Stat";
 import { ElementToReactionKeys } from "../../StatData";
 import { GetDependencies } from "../../StatDependency";
@@ -66,13 +67,13 @@ export default function DamageOptionsAndCalculation({ character, character: { ch
     let autoKeys = ["normal", "charged", "plunging"];
     let talKeys = ["ele", "skill", "burst"];
     if (!isAutoElemental)  //add physical variants of the formulas
-      autoKeys.forEach(key => keys.push(Character.getTalentStatKey(key, character)))
+      autoKeys.forEach(key => keys.push(getTalentStatKey(key, build.finalStats)))
     if (isAutoElemental || (isAutoInfusable && character.autoInfused))
-      autoKeys.forEach(key => keys.push(Character.getTalentStatKey(key, character, true)))
+      autoKeys.forEach(key => keys.push(getTalentStatKey(key, build.finalStats, true)))
     else if (Character.getWeaponTypeKey(characterKey) === "bow")//bow charged atk does elemental dmg on charge
-      keys.push(Character.getTalentStatKey("charged", character, true))
+      keys.push(getTalentStatKey("charged", build.finalStats, true))
     //add talents/skills
-    talKeys.forEach(key => keys.push(Character.getTalentStatKey(key, character)))
+    talKeys.forEach(key => keys.push(getTalentStatKey(key, build.finalStats)))
     //show elemental interactions
     keys.push(...(ElementToReactionKeys[Character.getElementalKey(characterKey)] || []))
     let weaponTypeKey = Character.getWeaponTypeKey(characterKey)
@@ -178,4 +179,4 @@ export default function DamageOptionsAndCalculation({ character, character: { ch
 export {
   HitModeToggle,
   ReactionToggle,
-}
+};

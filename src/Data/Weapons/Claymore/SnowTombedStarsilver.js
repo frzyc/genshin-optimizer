@@ -1,6 +1,6 @@
-import SnowTombedStarsilver from './Weapon_Snow-Tombed_Starsilver.png'
-import Character from "../../../Character/Character"
+import { getTalentStatKey } from '../../../Build/Build'
 import DisplayPercent from "../../../Components/DisplayPercent"
+import SnowTombedStarsilver from './Weapon_Snow-Tombed_Starsilver.png'
 
 const refinementVals = [60, 70, 80, 90, 100]
 const refinementDmgVals = [80, 95, 110, 125, 140]
@@ -11,7 +11,7 @@ const weapon = {
   img: SnowTombedStarsilver,
   rarity: 4,
   passiveName: "Frost Burial",
-  passiveDescription: (refineIndex, charFinalStats, c) => <span>Hitting an opponent with Normal and Charged Attacks has a {refinementVals[refineIndex]}% chance of forming and dropping an Everfrost Icicle above them, dealing {refinementDmgVals[refineIndex]}% AoE ATK DMG{DisplayPercent(refinementDmgVals[refineIndex], charFinalStats, Character.getTalentStatKey("physical", c))}. Opponents affected by <span className="text-cryo">Cryo</span> are dealt {refinementDmgBonusVals[refineIndex]}% ATK DMG{DisplayPercent(refinementDmgBonusVals[refineIndex], charFinalStats, Character.getTalentStatKey("physical", c))}. Can only occur once every 10s.</span>,
+  passiveDescription: (refineIndex, charFinalStats, c) => <span>Hitting an opponent with Normal and Charged Attacks has a {refinementVals[refineIndex]}% chance of forming and dropping an Everfrost Icicle above them, dealing {refinementDmgVals[refineIndex]}% AoE ATK DMG{DisplayPercent(refinementDmgVals[refineIndex], charFinalStats, getTalentStatKey("physical", charFinalStats))}. Opponents affected by <span className="text-cryo">Cryo</span> are dealt {refinementDmgBonusVals[refineIndex]}% ATK DMG{DisplayPercent(refinementDmgBonusVals[refineIndex], charFinalStats, getTalentStatKey("physical", charFinalStats))}. Can only occur once every 10s.</span>,
   description: "An ancient greatsword that was stored between frescoes. Forged from Starsilver, it has the power to cleave through ice and snow.",
   baseStats: {
     main: [44, 59, 79, 99, 119, 144, 165, 185, 205, 226, 252, 273, 293, 319, 340, 361, 387, 408, 429, 455, 476, 497, 523, 544, 565],

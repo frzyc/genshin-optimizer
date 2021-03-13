@@ -18,10 +18,9 @@ import CustomFormControl from '../Components/CustomFormControl';
 import { Stars } from '../Components/StarDisplay';
 import { DatabaseInitAndVerify } from '../DatabaseUtil';
 import Stat from '../Stat';
-import { GetDependencies, reduceOptimizationTarget } from '../StatDependency';
 import ConditionalsUtil from '../Util/ConditionalsUtil';
 import { timeStringMs } from '../Util/TimeUtil';
-import { deepClone, getObjectKeysRecursive, loadFromLocalStorage, saveToLocalStorage } from '../Util/Util';
+import { deepClone, loadFromLocalStorage, saveToLocalStorage } from '../Util/Util';
 import Weapon from '../Weapon/Weapon';
 import { calculateTotalBuildNumber } from './Build';
 
@@ -152,13 +151,10 @@ export default class BuildDisplay extends React.Component {
     if (typeof optimizationTarget === "object") {
       const { talentKey, sectionIndex, fieldIndex } = optimizationTarget
       let { formula } = Character.getTalentField(characterKey, talentKey, sectionIndex, fieldIndex)
-      optimizationTarget = typeof formula === "function" ? formula(Character.getTalentLevelKey(character, talentKey), {}, character) : formula
+      optimizationTarget = Character.getFormulaPath(characterKey, talentKey, formula)
     }
-    //if the formula is a simple one, convert it back to a statKey
-    optimizationTarget = reduceOptimizationTarget(optimizationTarget)
-    const optimiztionTargetDependencies = getObjectKeysRecursive(optimizationTarget)
 
-    let initialStats = Character.calculateCharacterWithWeaponStats(character)
+    const initialStats = Character.calculateCharacterWithWeaponStats(character)
     initialStats.artifactsAssumeFull = artifactsAssumeFull
 
     let artifactSetEffects = Artifact.getAllArtifactSetEffectsObj(artifactConditionals)
@@ -172,11 +168,9 @@ export default class BuildDisplay extends React.Component {
     //generate the key dependencies for the formula
     const minFilters = Object.fromEntries(Object.entries(statFilters).map(([statKey, { min }]) => [statKey, min]).filter(([, min]) => typeof min === "number"))
     const maxFilters = Object.fromEntries(Object.entries(statFilters).map(([statKey, { max }]) => [statKey, max]).filter(([, max]) => typeof max === "number"))
-    let dependencies = GetDependencies(initialStats?.modifiers, [...optimiztionTargetDependencies, ...Object.keys(minFilters), ...Object.keys(maxFilters)])
-
     //create an obj with app the artifact set effects to pass to buildworker.
     let data = {
-      splitArtifacts, initialStats, artifactSetEffects, dependencies,
+      splitArtifacts, initialStats, artifactSetEffects,
       setFilters, minFilters, maxFilters, maxBuildsToShow, optimizationTarget, ascending,
     }
     if (this.worker) this.worker.terminate()
@@ -217,13 +211,13 @@ export default class BuildDisplay extends React.Component {
     if (generatingBuilds) {
       let progPercent = generationProgress * 100 / totBuildNumber
       buildAlert = <Alert variant="success">
-        <span>Generating and testing <b>{generationProgressString}/{totalBuildNumberString}</b> Build configurations against the criterias for <b>{characterName}</b></span>
+        <span>Generating and testing <b>{generationProgressString}/{totalBuildNumberString}</b> Build configurations against the criteria for <b>{characterName}</b></span>
         <h6>Time elapsed: {timeStringMs(generationDuration)}</h6>
         <ProgressBar now={progPercent} label={`${progPercent.toFixed(1)}%`} />
       </Alert>
     } else if (!generatingBuilds && generationProgress) {//done
       buildAlert = <Alert variant="success">
-        <span>Generated and tested <b>{totalBuildNumberString}</b> Build configurations against the criterias for <b>{characterName}</b></span>
+        <span>Generated and tested <b>{totalBuildNumberString}</b> Build configurations against the criteria for <b>{characterName}</b></span>
         <h6>Time elapsed: {timeStringMs(generationDuration)}</h6>
         <ProgressBar now={100} variant="success" label="100%" />
       </Alert>
@@ -577,11 +571,12 @@ export default class BuildDisplay extends React.Component {
 function SortByStatDropdown({ characterKey, statsDisplayKeys, disabled, optimizationTarget, ascending, setState }) {
   const character = CharacterDatabase.get(characterKey)
   if (!character) return null
+  const initialStats = Character.calculateCharacterWithWeaponStats(character)
   let sortByText = "VALUE"
   if (typeof optimizationTarget === "object") {
     const { talentKey, sectionIndex, fieldIndex } = optimizationTarget
     let { variant = "", text } = Character.getTalentField(characterKey, talentKey, sectionIndex, fieldIndex) ?? {}
-    variant = typeof variant === "function" ? variant?.(Character.getTalentLevelKey(character, talentKey), {}, character) : variant
+    variant = typeof variant === "function" ? variant?.(initialStats.talentLevelKeys[talentKey], initialStats) : variant
     sortByText = <b>{Character.getTalentName(characterKey, talentKey)}: <span className={`text-${variant}`}>{text}</span></b>
   } else
     sortByText = <b>Basic Stat: <span className={`text-${Stat.getStatVariant(optimizationTarget)}`}>{Stat.getStatNamePretty(optimizationTarget)}</span></b>
@@ -606,7 +601,7 @@ function SortByStatDropdown({ characterKey, statsDisplayKeys, disabled, optimiza
                   return <Dropdown.Item key={i} onClick={() => setState({ optimizationTarget: field })}>{Stat.getStatNamePretty(field)}</Dropdown.Item>
                 const talentField = Character.getTalentField(characterKey, field.talentKey, field.sectionIndex, field.fieldIndex)
                 return <Dropdown.Item key={i} onClick={() => setState({ optimizationTarget: field })}>
-                  <span className={`text-${Character.getTalentFieldValue(talentField, "variant", talentKey, character, {})}`}>{Character.getTalentFieldValue(talentField, "text", talentKey, character, {})}</span>
+                  <span className={`text-${Character.getTalentFieldValue(talentField, "variant", talentKey, initialStats)}`}>{Character.getTalentFieldValue(talentField, "text", talentKey, initialStats)}</span>
                 </Dropdown.Item>
               })}
             </Col>
