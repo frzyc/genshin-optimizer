@@ -25,7 +25,7 @@ import noelle from './Noelle/data'
 // import traveler_geo from './Traveler Geo/data'
 import venti from './Venti/data'
 import xiao from './Xiao/data'
-// import xiangling from './Xiangling/data'
+import xiangling from './Xiangling/data'
 import xingqiu from './Xingqiu/data'
 // import xinyan from './Xinyan/data'
 // import zhongli from './Zhongli/data'
@@ -57,7 +57,7 @@ const formula = {
   // traveler_geo,
   venti,
   xiao,
-  // xiangling,
+  xiangling,
   xingqiu,
   // xinyan,
   // zhongli
