@@ -116,7 +116,7 @@ const char = {
           text: "Electro Sigil Duration",
           value: "18s",
         }],
-        conditional: (tlvl, c) => c >= 6 && {
+        conditional: (tlvl, c) => ({
           type: "character",
           conditionalKey: "ElectroSigil",
           condition: "Electro Sigil",
@@ -125,7 +125,7 @@ const char = {
           stats: {
             enerRech_: 20,
           },
-        }
+        }),
       }],
     },
     burst: {
@@ -166,7 +166,7 @@ const char = {
           text: "Energy Cost",
           value: 80,
         }],
-        conditional: (tlvl, c) => c >= 6 && {
+        conditional: (tlvl, c) => ({
           type: "character",
           conditionalKey: "LightningFang",
           condition: "Lightning Fang",
@@ -179,7 +179,7 @@ const char = {
           fields: [{
             text: "Increases resistance to interruption"
           }]
-        }
+        })
       }],
 
     },
