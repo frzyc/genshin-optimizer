@@ -14,9 +14,9 @@ const data = {
     hitArr: [
       [37.75,40.83,43.9,48.29,51.36,54.88,59.7,64.53,69.36,74.63,79.9,85.17,90.43,95.7,100.97],
       [38.87,42.04,45.2,49.72,52.88,56.5,61.47,66.44,71.42,76.84,82.26,87.69,93.11,98.54,103.96],
-      // NOTE: Hit 3 deals damage twice.
       [24.17, 26.13, 28.1, 30.91, 32.88, 35.13, 38.22, 41.31, 44.4, 47.77, 51.14, 54.51, 57.89, 61.26, 64.63],
-      // NOTE: Hit 4 deals damage twice.
+      [24.17, 26.13, 28.1, 30.91, 32.88, 35.13, 38.22, 41.31, 44.4, 47.77, 51.14, 54.51, 57.89, 61.26, 64.63],
+      [24.68, 26.69, 28.7, 31.57, 33.58, 35.88, 39.03, 42.19, 45.35, 48.79, 52.23, 55.68, 59.12, 62.57, 66.01],
       [24.68, 26.69, 28.7, 31.57, 33.58, 35.88, 39.03, 42.19, 45.35, 48.79, 52.23, 55.68, 59.12, 62.57, 66.01],
       [63.04,68.17,73.3,80.63,85.76,91.63,99.69,107.75,115.81,124.61,133.41,142.2,151,159.79,168.59],
     ],
@@ -53,17 +53,8 @@ const data = {
 }
 
 const formula = {
-  normal: Object.fromEntries(data.normal.hitArr.map((percentArr, i) => {
-    return [i,
-      (tlvl, stats) => {
-        const [oneHitFormula, statKeys] = basicDMGFormula(percentArr[tlvl], stats, "normal");
-        const twoHitFormula = s => `${oneHitFormula(s)} + ${oneHitFormula(s)}`;
-    
-        const hitFormula = data.normal.twoHit[i] ? twoHitFormula : oneHitFormula;
-        return [hitFormula, statKeys]
-      }
-    ];
-  })),
+  normal: Object.fromEntries(data.normal.hitArr.map((arr, i) =>
+    [i, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "normal")])),
   charged: Object.fromEntries(Object.entries(data.charged).map(([name, arr]) =>
     [name, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "charged")])),
   plunging: Object.fromEntries(Object.entries(data.plunging).map(([key, arr]) => [key, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "plunging")])),

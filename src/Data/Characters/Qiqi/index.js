@@ -41,30 +41,15 @@ const char = {
         {
           text: (
             <span>
-              <strong>Normal Attack</strong> Perform up to 5 consecutive
-              strikes.
+              <strong>Normal Attack</strong> Perform up to 5 consecutive strikes. <small><i>Note: the 3rd and 4th attacks hit twice.</i></small>
             </span>
           ),
           fields: data.normal.hitArr.map((percentArr, i) => {
-            // Qiqi's 3rd and 4th AA deal two quick strikes.
-            const twoHit = data.normal.twoHit[i];
-            const formulaText = twoHit
-              ? (tlvl, stats) => (
-                  <span>
-                    {percentArr[tlvl]}% + {percentArr[tlvl]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}
-                  </span>
-                )
-              : (tlvl, stats) => (
-                  <span>
-                    {percentArr[tlvl]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}
-                  </span>
-                );
             return {
-              text: `${i + 1}-Hit DMG`,
-              formulaText,
+              text: `${i + (i < 3 ? 1 : i <= 4 ? 0 : -1)}-Hit DMG`,
+              formulaText: (tlvl, stats) => <span>{percentArr[tlvl]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
               formula: formula.normal[i],
-              variant: (tlvl, stats) =>
-                getTalentStatKeyVariant("normal", stats),
+              variant: (tlvl, stats) => getTalentStatKeyVariant("normal", stats),
             };
           }),
         },
