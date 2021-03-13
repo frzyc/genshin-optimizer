@@ -56,11 +56,22 @@ const char = {
         {
           text: (
             <span>
-              <strong>Charged Attack</strong> Consumes a certain amount of
-              Stamina to unleash 2 rapid sword strikes.
+              <strong>Charged Attack</strong> Consumes a certain amount of Stamina to unleash 2 rapid sword strikes. <small><i>Note: The attack hits twice.</i></small>
             </span>
           ),
           fields: [
+            {
+              text: `Charged ATK DMG`,
+              formulaText: (tlvl, stats) => (
+                <span>
+                  {data.charged.hit[tlvl]}%{" "}
+                  {Stat.printStat(getTalentStatKey("charged", stats), stats)}
+                </span>
+              ),
+              formula: formula.charged.hit,
+              variant: (tlvl, stats) =>
+                getTalentStatKeyVariant("charged", stats),
+            },
             {
               text: `Charged ATK DMG`,
               formulaText: (tlvl, stats) => (
