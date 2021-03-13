@@ -39,7 +39,12 @@ const data = {
     blossom: [72, 77.4, 82.8, 90, 95.4, 100.8, 108, 115.2, 122.4, 129.6, 136.8, 144, 153, 162, 171]
   }
 }
-
+function burDMG(percent, stats, skillKey, stacks, elemental = false) {
+  const val = percent / 100
+  const statKey = getTalentStatKey(skillKey, stats, elemental) + "_multi"
+  void 0 === stacks && (stacks = 0);
+  return [s => val * s.finalATK * s[statKey] + stacks * 0.3 * s.finalDEF, ["finalATK", "finalDEF", statKey, stacks]]
+}//TODO: Maybe be able to pass the amount of stacks?
 
 const formula = {
   normal: Object.fromEntries(data.normal.hitArr.map((percentArr, i) => [i, (tlvl, stats) =>
@@ -60,8 +65,8 @@ const formula = {
     }
   },
   burst: {
-    dmg: (tlvl, stats) => basicDMGFormula(data.burst.dmg[tlvl], stats, "burst"),
-    blossom: (tlvl, stats) => basicDMGFormula(data.burst.blossom[tlvl], stats, "burst")
+    dmg: (tlvl, stats) => burDMG(data.burst.dmg[tlvl], stats, "burst"),
+    blossom: (tlvl, stats) => burDMG(data.burst.blossom[tlvl], stats, "burst")
   }
 }
 
