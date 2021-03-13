@@ -50,14 +50,11 @@ function blossomDMG(percent, multi, stats, skillKey, elemental = false) {
   const val = percent / 100
   const statKey = getTalentStatKey(skillKey, stats, elemental)
   const geo_skill_hit_multi = (1 + (stats.dmg_ + stats.geo_dmg_ + stats.skill_dmg_ + multi) / 100) * stats.enemyLevel_multi * stats.geo_enemyRes_multi
-  switch (statKey) {
-    case "geo_skill_critHit":
-      return [s => val * s.finalDEF * geo_skill_hit_multi * (1 + s.critDMG_ / 100), ["finalDEF"]]
-    case "geo_skill_avgHit":
-      return [s => val * s.finalDEF * geo_skill_hit_multi * (1 + s.critDMG_ * s.final_skill_critRate_ / 10000), ["finalDEF"]]
-    default:
-      return [s => val * s.finalDEF * geo_skill_hit_multi, ["finalDEF"]]
-  }//TODO: Maybe a better way to write this
+  const finalMultiplier = {
+    "geo_skill_critHit": (1 + stats.critDMG_ / 100),
+    "geo_skill_avgHit": (1 + stats.critDMG_ * stats.final_skill_critRate_ / 10000),
+  }[statKey] || 1
+  return [s => val * s.finalDEF * geo_skill_hit_multi * finalMultiplier, ["finalDef"]]
 }
 
 const formula = {
