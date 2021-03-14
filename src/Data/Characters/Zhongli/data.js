@@ -71,7 +71,7 @@ const formula = {
     highHP: (tlvl, stats) => zliDMG(data.plunging.high[tlvl], 0.0139, stats, "plunging"),
   },
   skill: {
-    steeleDMG: (tlvl, stats) => basicDMGFormula(data.skill.steeleDMG[tlvl], 0.019, stats, "skill"),
+    steeleDMG: (tlvl, stats) => basicDMGFormula(data.skill.steeleDMG[tlvl], stats, "skill"),
     steeleDMGHP: (tlvl, stats) => zliDMG(data.skill.steeleDMG[tlvl], 0.019, stats, "skill"),
     resonanceDMG: (tlvl, stats) => basicDMGFormula(data.skill.resonanceDMG[tlvl], stats, "skill"),
     resonanceDMGHP: (tlvl, stats) => zliDMG(data.skill.resonanceDMG[tlvl], 0.019, stats, "skill"),

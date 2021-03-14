@@ -15,6 +15,7 @@ import passive3 from './Talent_Arcanum_of_Crystal.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
+import ElementalData from '../../ElementalData'
 
 const char = {
   name: "Zhongli",
@@ -183,7 +184,15 @@ const char = {
           }, {
             text: "Hold CD",
             value: "12s",
-          }]
+          }],
+        conditional: (tlvl, c) => c >= 6 && {
+          type: "character",
+          conditionalKey: "JadeShield",
+          condition: "Enemies near Jade Shield",
+          sourceKey: "zhongli",
+          maxStack: 1,
+          stats: Object.fromEntries(Object.keys(ElementalData).map(k => [`${k}_res_`, 20])),//TODO: party buff
+        }
       }],
     },
     burst: {
