@@ -96,7 +96,7 @@ const char = {
           condition: "Opponents hit by Gouba",
           sourceKey: "xiangling",
           maxStack: 1,
-          stats: { pyro_enemyRes_: 15 },
+          stats: { pyro_enemyRes_: -15 },
           fields: [{
             text: "Duration",
             value: "6s",
