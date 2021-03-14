@@ -41,12 +41,12 @@ const char = {
           (con, a) => a < 4 ?
             {
               text: `${i + 1}-Hit DMG`,
-              formulaText: (tlvl, stats) => <span>{percentArr[tlvl]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}{i === 4 ? " ×4" : ""}</span>,
+              formulaText: (tlvl, stats) => <span>{i === 4 ? "4 × " : ""}{percentArr[tlvl]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
               formula: formula.normal[i],
               variant: (tlvl, stats) => getTalentStatKeyVariant("normal", stats),
             } : {
               text: `${i + 1}-Hit DMG`,
-              formulaText: (tlvl, stats) => <span>( {percentArr[tlvl]}% {Stat.printStat("finalATK", stats)} + 1.39% {Stat.printStat("finalHP", stats)} ) * {Stat.printStat(getTalentStatKey("normal", stats) + "_multi", stats)}{i === 4 ? " ×4" : ""}</span>,
+              formulaText: (tlvl, stats) => <span>{i === 4 ? "4 × " : ""}( {percentArr[tlvl]}% {Stat.printStat("finalATK", stats)} + 1.39% {Stat.printStat("finalHP", stats)} ) * {Stat.printStat(getTalentStatKey("normal", stats) + "_multi", stats)}</span>,
               formula: formula.normal[`${i}HP`],
               variant: (tlvl, stats) => getTalentStatKeyVariant("normal", stats),
             })
