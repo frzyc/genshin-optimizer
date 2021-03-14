@@ -128,7 +128,7 @@ Object.entries(hitElements).forEach(([ele, { name: eleName }]) => {
 Object.assign(FormulaText, {
   amplificative_dmg_: (o) => <span>25 / 9 * {f(o, "eleMas")} / ( 1400 + {f(o, "eleMas")} ) * 100%</span>,
 })
-Object.entries(amplifyingReactions).forEach(([reaction, [name, variants]]) => {
+Object.entries(amplifyingReactions).forEach(([reaction, { variants }]) => {
   Object.entries(variants).forEach(([ele, baseMulti]) => {
     // Move them to the right position
     FormulaText[`${ele}_${reaction}_multi`] = (o) => <span>{baseMulti} * ( 100% + {f(o, "amplificative_dmg_")} + {f(o, `${reaction}_dmg_`)} )</span>
@@ -145,9 +145,16 @@ Object.entries(amplifyingReactions).forEach(([reaction, [name, variants]]) => {
 Object.assign(FormulaText, {
   transformative_dmg_: (o) => <span>60 / 9 * {f(o, "eleMas")} / ( 1400 + {f(o, "eleMas")} ) * 100%</span>,
 })
-Object.entries(transformativeReactions).forEach(([reaction, [reactionName, ele, baseMulti]]) => {
+Object.entries(transformativeReactions).forEach(([reaction, { variants }]) => {
   FormulaText[`${reaction}_multi`] = (o) => ReactionMatrix[reaction].map((val, i) => reactionMatrixElementRenderer(o, val, i))
-  FormulaText[`${reaction}_hit`] = (o) => <span>( 100% + {f(o, `transformative_dmg_`)} + {f(o, `${reaction}_dmg_`)} ) * {f(o, `${reaction}_multi`)} * {f(o, `${ele}_enemyRes_multi`)}</span>
+  if (Object.entries(variants).length === 1) {
+    const [[ ele ]] = Object.entries(variants)
+    FormulaText[`${reaction}_hit`] = (o) => <span>( 100% + {f(o, `transformative_dmg_`)} + {f(o, `${reaction}_dmg_`)} ) * {f(o, `${reaction}_multi`)} * {f(o, `${ele}_enemyRes_multi`)}</span>  
+  } else {
+    Object.keys(variants).forEach(ele => {
+      FormulaText[`${ele}_${reaction}_hit`] = (o) => <span>( 100% + {f(o, `transformative_dmg_`)} + {f(o, `${reaction}_dmg_`)} ) * {f(o, `${reaction}_multi`)} * {f(o, `${ele}_enemyRes_multi`)}</span>  
+    })    
+  }
 })
 Object.assign(FormulaText, {
   crystalize_eleMas_: (o) => <span>40 / 9 * {f(o, "eleMas")} / ( 1400 + {f(o, "eleMas")} ) * 100%</span>,

@@ -90,7 +90,7 @@ const Formulas = {
 
 const ElementToReactionKeys = {
   physical: [],
-  anemo: ["swirl_hit"],
+  anemo: ["electro_swirl_hit", "pyro_swirl_hit", "cryo_swirl_hit", "hydro_swirl_hit"],
   geo: ["crystalize_hit", "shattered_hit"],
   electro: ["overloaded_hit", "electrocharged_hit", "superconduct_hit"],
   hydro: ["electrocharged_hit", "shattered_hit"],//"hydro_vaporize_multi",
@@ -155,18 +155,27 @@ Object.entries(hitMoves).forEach(([move, moveName]) => {
   })
 })
 
-Object.entries(transformativeReactions).forEach(([reaction, [reactionName, ele, baseMulti]]) => {
-  let opt = {}
-  if (ele) opt.variant = reaction
-  StatData[`${reaction}_hit`] = { name: `${reactionName} DMG`, ...opt }
-  StatData[`${reaction}_dmg_`] = { name: `${reactionName} DMG Bonus`, unit: "%", ...opt }
-  StatData[`${reaction}_multi`] = { name: `${reactionName} Multiplier`, unit: "multi", const: true, ...opt }
+Object.entries(transformativeReactions).forEach(([reaction, { name, variants }]) => {
+  const opt = { variant: reaction }
+  StatData[`${reaction}_dmg_`] = { name: `${name} DMG Bonus`, unit: "%", ...opt }
+  StatData[`${reaction}_multi`] = { name: `${name} Multiplier`, unit: "multi", const: true, ...opt }
 
   Formulas[`${reaction}_multi`] = (s, c) => ReactionMatrix[reaction].reduce((accu, val, i) => accu + val * Math.pow(c.characterLevel, i), 0)
-  Formulas[`${reaction}_hit`] = (s, c) => (100 + s.transformative_dmg_ + s[`${reaction}_dmg_`]) / 100 * c[`${reaction}_multi`] * c[`${ele}_enemyRes_multi`]
+  if (Object.keys(variants).length === 1) {
+    const [ele] = Object.keys(variants), opt = { variant: reaction }
+    StatData[`${reaction}_hit`] = { name: `${name} DMG`, ...opt }
+    Formulas[`${reaction}_hit`] = (s, c) => (100 + s.transformative_dmg_ + s[`${reaction}_dmg_`]) / 100 * c[`${reaction}_multi`] * c[`${ele}_enemyRes_multi`]
+  } else {
+    Object.entries(variants).forEach(([ele, baseMulti]) => {
+      const opt = { variant: ele }
+
+      StatData[`${ele}_${reaction}_hit`] = { name: `${hitElements[ele].name} ${name} DMG`, ...opt }
+      Formulas[`${ele}_${reaction}_hit`] = (s, c) => (100 + s.transformative_dmg_ + s[`${reaction}_dmg_`]) / 100 * c[`${reaction}_multi`] * c[`${ele}_enemyRes_multi`]
+    })
+  }
 })
 
-Object.entries(amplifyingReactions).forEach(([reaction, [name, variants]]) => {
+Object.entries(amplifyingReactions).forEach(([reaction, { name, variants }]) => {
   const opt = { variant: reaction }
   StatData[`${reaction}_dmg_`] = { name: `${name} DMG Bonus`, unit: "%", ...opt }
   Object.entries(variants).forEach(([ele, baseMulti]) => {

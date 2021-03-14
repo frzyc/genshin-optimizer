@@ -12,11 +12,13 @@ import { CharacterSelectionDropdownList } from '../Components/CharacterSelection
 import CustomFormControl from '../Components/CustomFormControl';
 import { Stars } from '../Components/StarDisplay';
 import { DatabaseInitAndVerify } from '../DatabaseUtil';
+import InfoComponent from '../InfoComponent';
 import Stat from '../Stat';
 import { deepClone, loadFromLocalStorage, saveToLocalStorage } from '../Util/Util';
 import Artifact from './Artifact';
 import ArtifactCard from './ArtifactCard';
 import ArtifactDatabase from './ArtifactDatabase';
+import ArtifactDisplayInfo from './ArtifactDisplayInfo/ArtifactDisplayInfo';
 import ArtifactEditor from './ArtifactEditor';
 
 const sortMap = {
@@ -143,6 +145,17 @@ export default class ArtifactDisplay extends React.Component {
       return sortNum * (ascending ? 1 : -1)
     })
     return (<Container className="mt-2" ref={this.scrollRef}>
+      <InfoComponent
+        pageKey="artifactPage"
+        modalTitle="Artifact Editing/Management Page Info"
+        text={["The maximum efficiency of a 4 star artifact is around 60%.",
+          "The maximum efficiency of an artifact will usually decrease as you upgrade. It's perfectly normal!",
+          "Substats with \"1\"s are the hardest to scan in screenshots.",
+          "If all your rolls(6) went into a single substat, it will be purple!",
+          "Click on \"Details\" when you are upgrading your artifacts in game to scan as you upgrade."]}
+      >
+        <ArtifactDisplayInfo />
+      </InfoComponent>
       <Row className="mb-2 no-gutters"><Col>
         <ArtifactEditor
           artifactIdToEdit={artToEditId}
@@ -318,4 +331,3 @@ export default class ArtifactDisplay extends React.Component {
     </Container >)
   }
 }
-

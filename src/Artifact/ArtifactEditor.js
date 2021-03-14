@@ -1,7 +1,7 @@
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import { Alert, Badge, Button, Card, Col, Dropdown, DropdownButton, FormControl, InputGroup, OverlayTrigger, Popover, Row } from 'react-bootstrap';
+import { Alert, Badge, Button, ButtonGroup, Card, Col, Dropdown, DropdownButton, FormControl, InputGroup, OverlayTrigger, Popover, Row } from 'react-bootstrap';
 import CustomFormControl from '../Components/CustomFormControl';
 import { Stars } from '../Components/StarDisplay';
 import Stat from '../Stat';
@@ -394,16 +394,21 @@ function SubStatInput({ index, substat: { key, value, rolls, efficiency }, numSt
   }
   let rollLabel = null
   if (!error) {
-    let rollBadge = <Badge variant={rollNum === 0 ? "secondary" : `${rollNum}roll`} className="text-darkcontent">
+    const rollBadge = <Badge variant={rollNum === 0 ? "secondary" : `${rollNum}roll`} className="text-darkcontent">
       {rollNum ? rollNum : "No"} Roll{(rollNum > 1 || rollNum === 0) && "s"}
     </Badge>
-    let rollArr = rolls?.map((val, i) => {
-      let ind = rollData.indexOf(val)
-      let displayNum = 6 - (rollData.length - 1 - ind)
+    const rollArr = rolls?.map((val, i) => {
+      const ind = rollData.indexOf(val)
+      const displayNum = 6 - (rollData.length - 1 - ind)
       return <span key={i} className={`mr-2 text-${displayNum}roll`}>{val}</span>
     })
-    let rollDataDisplay = Boolean(rollData.length) && <span className="float-right text-right"><small>Possible Rolls:</small> {rollData.map((v, i, arr) =>
-      <span key={i} className={`text-${6 - (arr.length - 1 - i)}roll mr-1`}>{v}</span>)}</span>
+    const rollDataDisplay = Boolean(rollData.length) && <span className="float-right text-right">
+      <small>Possible Rolls: </small>
+      <ButtonGroup size="sm" className="mb-n1 mt-n2 mr-n1">
+        {rollData.map((v, i, arr) =>
+          <Button key={i} variant={`${6 - (arr.length - 1 - i)}roll`} className="py-0 text-darkcontent" onClick={() => setSubStat?.(index, key, isPercentStat ? parseFloat((value + v).toFixed(1)) : (value + v))}>{v}</Button>)}
+      </ButtonGroup>
+    </span>
     rollLabel = <span>{rollBadge} {rollArr}{rollDataDisplay}</span>
   }
   return <Card bg="lightcontent" text="lightfont">
