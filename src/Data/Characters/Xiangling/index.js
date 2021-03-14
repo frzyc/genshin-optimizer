@@ -96,7 +96,7 @@ const char = {
           condition: "Opponents hit by Gouba",
           sourceKey: "xiangling",
           maxStack: 1,
-          stats: { pyro_enemyRes_: 15 },
+          stats: { pyro_enemyRes_: -15 },
           fields: [{
             text: "Duration",
             value: "6s",
@@ -194,7 +194,7 @@ const char = {
         fields: [(con) => con >= 2 && {
           text: "Explosion DMG",
           formulaText: (tlvl, stats, c) => <span>75% {Stat.printStat(getTalentStatKey("elemental", stats), stats)}</span>,
-          formula: formula.burst.hit1,
+          formula: formula.constellation2.dmg,
           variant: (tlvl, stats) => getTalentStatKeyVariant("elemental", stats),
         }]
       }],
