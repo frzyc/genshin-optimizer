@@ -194,7 +194,7 @@ const char = {
         fields: [(con) => con >= 2 && {
           text: "Explosion DMG",
           formulaText: (tlvl, stats, c) => <span>75% {Stat.printStat(getTalentStatKey("elemental", stats), stats)}</span>,
-          formula: formula.burst.hit1,
+          formula: formula.constellation2.dmg,
           variant: (tlvl, stats) => getTalentStatKeyVariant("elemental", stats),
         }]
       }],
