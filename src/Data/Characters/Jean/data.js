@@ -67,7 +67,7 @@ const formula = {
   },
   passive2: {
     heal: Object.fromEntries(data.normal.hitArr.map((percentArr, i) => [i, (tlvl, stats) =>
-    basicDMGFormula(0.5 * percentArr[stats.talentLevelKeys.auto], stats, "normal")])),
+    basicDMGFormula(0.5 * percentArr[stats.talentLevelKeys.auto] * 0.15, stats, "normal")])),
   }
 }
 

@@ -165,7 +165,7 @@ const char = {
         fields: data.normal.hitArr.map((percentArr, i) =>
         ((con, a) => a >= 4 && {
           text: `Regeneration ${i + 1}-Hit Heal`,
-          formulaText: (tlvl, stats) => <span>50% * ({percentArr[stats.talentLevelKeys.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}) * {Stat.printStat("heal_multi", stats)}</span>,
+          formulaText: (tlvl, stats) => <span>50% * ({percentArr[stats.talentLevelKeys.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)} * 15%) * {Stat.printStat("heal_multi", stats)}</span>,
           formula: formula.passive2.heal[i],
           variant: (tlvl, stats) => getTalentStatKeyVariant("normal", stats),
         }))
