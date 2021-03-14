@@ -162,12 +162,13 @@ const char = {
       img: passive2,
       document: [{
         text: <span>On hit, Jean's Normal Attacks have a 50% change to regenerate HP equal to 15% of Jean's ATK for all party members.</span>,
-        fields: [(con, a) => a >= 4 && {
-          text: "Regeneration",
-          formulaText: (tlvl, stats) => <span>( 50% {Stat.printStat("finalATK", stats)} + {data.burst.heal_flat[tlvl]} ) * {Stat.printStat("heal_multi", stats)}</span>,
-          formula: formula.passive1.heal,
-          variant: "success",
-        }]
+        fields: data.normal.hitArr.map((percentArr, i) =>
+        ((con, a) => a >= 4 && {
+          text: `Regeneration ${i + 1}-Hit Heal`,
+          formulaText: (tlvl, stats) => <span>50% * ({percentArr[stats.talentLevelKeys.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}) * {Stat.printStat("heal_multi", stats)}</span>,
+          formula: formula.passive2.heal[i],
+          variant: (tlvl, stats) => getTalentStatKeyVariant("normal", stats),
+        }))
       }],
     },
     passive3: {
