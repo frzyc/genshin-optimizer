@@ -4,15 +4,15 @@ export const hitTypes = { hit: "DMG", avgHit: "Avg. DMG", critHit: "CRIT Hit DMG
 export const hitMoves = { normal: "Normal Att.", charged: "Charged Att.", plunging: "Plunging Att.", skill: "Ele. Skill", burst: "Ele. Burst" }
 export const hitElements = ElementalData
 export const transformativeReactions = {
-  overloaded: [ "Overloaded", "pyro", 4 ],
-  shattered: [ "Shattered", "physical", 3 ],
-  electrocharged: [ "Electro-Charged", "electro", 2.4 ],
-  superconduct: [ "Superconduct", "cryo", 1 ],
-  swirl: [ "Swirl", "anemo", 1.2 ],
+  overloaded: { name: "Overloaded", variants: { pyro: 4 } },
+  shattered: { name: "Shattered", variants: { physical: 3 } },
+  electrocharged: { name: "Electro-Charged", variants: { electro: 2.4 } },
+  superconduct: { name: "Superconduct", variants: { cryo: 1 } },
+  swirl: { name: "Swirl", variants: { pyro: 1.2, hydro: 1.2, electro: 1.2, cryo: 1.2 } },
 }
 export const amplifyingReactions = {
-  vaporize: ["Vaporize", { pyro: 1.5, hydro: 2 }],
-  melt: ["Melt", { pyro: 2, cryo: 1.5 }],
+  vaporize: { name: "Vaporize", variants: { pyro: 1.5, hydro: 2 } },
+  melt: { name: "Melt", variants: { pyro: 2, cryo: 1.5 } },
 }
 export const otherReactions = {
   burning: "Burning",
