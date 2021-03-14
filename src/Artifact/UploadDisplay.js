@@ -268,7 +268,7 @@ export default function UploadDisplay(props) {
         <Col xs="auto"><Button variant="info" size="sm" onClick={() => {
           setModalShow(true)
           ReactGA.modalview('/artifact/how-to-upload')
-        }}>Show me How!</Button></Col>
+        }}>Show Me How!</Button></Col>
       </Row>
     </Col>
     <Col xs={8} lg={image ? 4 : 0}>{img}</Col>
