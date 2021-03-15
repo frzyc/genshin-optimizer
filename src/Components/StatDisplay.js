@@ -55,7 +55,7 @@ export default function StatDisplay({ character, character: { characterKey }, eq
     fixed = Character.getTalentFieldValue(field, "fixed", talentKey, build.finalStats, 0)
     val = Character.getTalentFieldValue(field, "formula", talentKey, build.finalStats)?.[0]?.(build.finalStats)
     if (newBuild && equippedBuild) {//comparable
-      oldVal = Character.getTalentFieldValue(field, "formula", talentKey, equippedBuild.finalStats)?.[0]?.(build.finalStats)
+      oldVal = Character.getTalentFieldValue(field, "formula", talentKey, equippedBuild.finalStats)?.[0]?.(equippedBuild.finalStats)
     }
   }
 
