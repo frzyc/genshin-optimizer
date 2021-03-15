@@ -16,7 +16,7 @@ export default function StatDisplayComponent({ character, character: { character
       <Card bg={cardbg} text="lightfont" className="h-100">
         <Card.Header>{header}</Card.Header>
         <Card.Body>
-          {fields.map(field => <StatDisplay key={JSON.stringify(field)} {...{ character, equippedBuild, newBuild, editable, statKey: field }} />)}
+          <Row>{fields.map(field => <StatDisplay key={JSON.stringify(field)} {...{ character, equippedBuild, newBuild, editable, statKey: field }} />)}</Row>
         </Card.Body>
       </Card>
     </Col>
