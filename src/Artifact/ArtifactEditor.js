@@ -404,7 +404,7 @@ function SubStatInput({ index, substat: { key, value, rolls, efficiency }, numSt
     })
     const rollDataDisplay = Boolean(rollData.length) && <span className="float-right text-right">
       <small>Possible Rolls: </small>
-      <ButtonGroup size="sm" className="mb-n1 mt-n2 mr-n1">
+      <ButtonGroup size="sm">
         {rollData.map((v, i, arr) =>
           <Button key={i} variant={`${6 - (arr.length - 1 - i)}roll`} className="py-0 text-darkcontent" onClick={() => setSubStat?.(index, key, isPercentStat ? parseFloat((value + v).toFixed(1)) : (value + v))}>{v}</Button>)}
       </ButtonGroup>
@@ -443,6 +443,6 @@ function SubStatInput({ index, substat: { key, value, rolls, efficiency }, numSt
         </InputGroup.Text>
       </InputGroup.Append>
     </InputGroup>
-    <label className="w-100 mb-0 p-1">{!error ? rollLabel : <span><Badge variant="danger">ERR</Badge> {error}</span>}</label>
+    <div className="p-1">{!error ? rollLabel : <span><Badge variant="danger">ERR</Badge> {error}</span>}</div>
   </Card>
 }
