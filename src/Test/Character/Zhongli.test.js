@@ -4,7 +4,7 @@ import characters from "../../Data/Characters";
 
 function _test(calculated, experiment, epsilon = 0.006) {
   if (experiment < epsilon && calculated < epsilon) {
-    expect(Math.abs(calculated - experiment / 1e6)).toBeLessThan(epsilon**4)
+    expect(Math.abs(calculated - experiment) / 1e6).toBeLessThan(epsilon**4)
   } else {
     expect(Math.abs(calculated - experiment) / experiment).toBeLessThan(epsilon)
   }
