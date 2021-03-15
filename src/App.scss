@@ -78,6 +78,11 @@ input.invisible-input {
   background-image: linear-gradient(to bottom right, #695453, #e6ac54);
 }
 
+//class for changing the cursor to pointer
+.cursor-pointer{
+  cursor: pointer;
+}
+
 //default gutter size of 30px is wayyyyyyy too big
 $grid-gutter-width: 10px;
 

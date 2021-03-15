@@ -4,8 +4,8 @@ import React, { useEffect, useState } from 'react';
 import { Button, Card, Col, Form, Modal, ProgressBar, Row } from 'react-bootstrap';
 import ReactGA from 'react-ga';
 import { createWorker } from 'tesseract.js';
-import scan_art_main from "../imgs/scan_art_main.png";
-import Snippet from "../imgs/snippet.png";
+import scan_art_main from "./imgs/scan_art_main.png";
+import Snippet from "./imgs/snippet.png";
 import Stat from '../Stat';
 import { clamp, hammingDistance } from '../Util/Util';
 import Artifact from './Artifact';
@@ -268,7 +268,7 @@ export default function UploadDisplay(props) {
         <Col xs="auto"><Button variant="info" size="sm" onClick={() => {
           setModalShow(true)
           ReactGA.modalview('/artifact/how-to-upload')
-        }}>Show me How!</Button></Col>
+        }}>Show Me How!</Button></Col>
       </Row>
     </Col>
     <Col xs={8} lg={image ? 4 : 0}>{img}</Col>
@@ -315,15 +315,13 @@ function ExplainationModal({ modalShow, setModalShow }) {
   return <Modal show={modalShow} onHide={() => setModalShow(false)} size="xl" variant="success" contentClassName="bg-transparent">
     <Card bg="darkcontent" text="lightfont" >
       <Card.Header>
-        <Card.Title>
-          <Row>
-            <Col><span>How do Upload Screenshots for parsing</span></Col>
-            <Col xs="auto">
-              <Button variant="danger" onClick={() => setModalShow(false)} >
-                <FontAwesomeIcon icon={faTimes} /></Button>
-            </Col>
-          </Row>
-        </Card.Title>
+        <Row>
+          <Col><Card.Title>How do Upload Screenshots for parsing</Card.Title></Col>
+          <Col xs="auto">
+            <Button variant="danger" onClick={() => setModalShow(false)} >
+              <FontAwesomeIcon icon={faTimes} /></Button>
+          </Col>
+        </Row>
       </Card.Header>
       <Card.Body>
         <Row>
@@ -331,31 +329,22 @@ function ExplainationModal({ modalShow, setModalShow }) {
             <img alt="snippet of the screen to take" src={Snippet} className="w-100 h-auto" />
           </Col>
           <Col xs={12} md={8}>
-
             <p>Using screenshots can dramatically decrease the amount of time you manually input in stats on the Genshin Optimizer.</p>
+            <h5>Where to snip the screenshot.</h5>
+            <p>In game, Open your bag, and navigate to the artifacts tab. Select the artifact you want to scan with Genshin Optimizer. To take a screenshot, in Windows, the shortcut is <strong>Shift + WindowsKey + S</strong>. Once you selected the region, the image is automatically included in your clipboard.</p>
             <h5>What to include in the screenshot.</h5>
-            <p>
-              In Genshin Impact, Open your bag, and navigate to the artifacts tab. Select the artifact you want to scan with Genshin Optimizer.
-          To Take a screenshot, in Windows, the shortcut is <strong>Shift + WindowsKey + S</strong>.
-          Once you selected the region, the image is automatically included in your clipboard.
-        </p></Col>
+            <p>As shown in the Image, starting from the top with the artifact name, all the way to the set name(the text in green). </p>
+          </Col>
         </Row>
-
         <Row>
           <Col>
             <h5>Adding Screenshot to Genshin Optimizer</h5>
-            <p>
-              At this point, you should have the artifact snippet either saved to your harddrive, or in your clipboard.
-          You can click on the box next to "Browse" to browse the file in your harddrive, or even easier, just press <strong>Ctrl + V</strong> to paste from your clipboard.
-          You should be able to see a Preview of your artifact snippet, and after waiting a few seconds, the artifact set and the substats will be filled in in the <b>Artifact Editor</b>.
+            <p>At this point, you should have the artifact snippet either saved to your harddrive, or in your clipboard. You can click on the box next to "Browse" to browse the file in your harddrive, or even easier, just press <strong>Ctrl + V</strong> to paste from your clipboard. You should be able to see a Preview of your artifact snippet, and after waiting a few seconds, the artifact set and the substats will be filled in in the <b>Artifact Editor</b>.
         </p>
           </Col>
           <Col xs={12}>
             <h5>Finishing the Artifact</h5>
-            <p>
-              Unfortunately, computer vision is not 100%. There will always be cases where something is not scanned properly. You should always double check the scanned artifact values!
-          Once the artifact has been filled, Click on <strong>Add Artifact</strong> to finish editing the artifact.
-        </p>
+            <p>Unfortunately, computer vision is not 100%. There will always be cases where something is not scanned properly. You should always double check the scanned artifact values! Once the artifact has been filled, Click on <strong>Add Artifact</strong> to finish editing the artifact.</p>
             <img alt="main screen after importing stats" src={scan_art_main} className="w-75 h-auto" />
           </Col>
         </Row>

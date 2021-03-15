@@ -1,6 +1,7 @@
 import { faQuestionCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from 'react';
+import { useState } from "react";
 import { Button, Card, Col, Dropdown, DropdownButton, Image, ListGroup, OverlayTrigger, Row, Tooltip } from "react-bootstrap";
 import Assets from "../../Assets/Assets";
 import ConditionalSelector from "../../Components/ConditionalSelector";
@@ -83,7 +84,7 @@ const ReactionComponents = {
   superconduct_hit: SuperConductCard,
   electrocharged_hit: ElectroChargedCard,
   overloaded_hit: OverloadedCard,
-  swirl_hit: SwirlCard,
+  pyro_swirl_hit: SwirlCard,
   shattered_hit: ShatteredCard,
   crystalize_hit: CrystalizeCard,
 }
@@ -94,42 +95,53 @@ function ReactionDisplay({ character: { characterKey, reactionMode = "none" }, n
   if (!eleInterArr.includes("shattered_hit") && Character.getWeaponTypeKey(characterKey) === "claymore") eleInterArr.push("shattered_hit")
   return <Card bg="lightcontent" text="lightfont" className="mb-2">
     <Card.Body className="px-3 py-2">
-      <Row>
-        <Col ><Row className="mb-n2">
-          {eleInterArr.map(key => {
-            let Ele = ReactionComponents[key]
-            if (!Ele) return null
-            let val = build?.finalStats?.[key]
-            val = val?.toFixed?.(Stat.fixedUnit(key)) || val
-            return <Col xs="auto" className="mb-2" key={key}><Ele value={val} /></Col>
-          })}
-        </Row></Col>
+      <Row className="mb-n2">
+        {eleInterArr.map(key => {
+          const Ele = ReactionComponents[key]
+          if (!Ele) return null
+          return <Col xs="auto" className="mb-2" key={key}><Ele stats={build?.finalStats} /></Col>
+        })}
       </Row>
-
     </Card.Body>
   </Card>
 }
-function SuperConductCard({ value }) {
+function SuperConductCard({ stats }) {
+  const sKey = "superconduct_hit"
   return <Card bg="darkcontent" text="lightfont"><Card.Body className="p-2">
-    <span className="text-superconduct">{Stat.getStatName("superconduct_hit")} <Image src={Assets.elements.electro} className="inline-icon" />+<Image src={Assets.elements.cryo} className="inline-icon" /> {value}</span>
+    <span className="text-superconduct">{Stat.getStatName(sKey)} <Image src={Assets.elements.electro} className="inline-icon" />+<Image src={Assets.elements.cryo} className="inline-icon" /> {stats[sKey]?.toFixed(Stat.fixedUnit(sKey))}</span>
   </Card.Body></Card>
 }
-function ElectroChargedCard({ value }) {
+function ElectroChargedCard({ stats }) {
+  const sKey = "electrocharged_hit"
   return <Card bg="darkcontent" text="lightfont"><Card.Body className="p-2">
-    <span className="text-electrocharged">{Stat.getStatName("electrocharged_hit")} <Image src={Assets.elements.electro} className="inline-icon" />+<Image src={Assets.elements.hydro} className="inline-icon" /> {value}</span>
+    <span className="text-electrocharged">{Stat.getStatName(sKey)} <Image src={Assets.elements.electro} className="inline-icon" />+<Image src={Assets.elements.hydro} className="inline-icon" /> {stats[sKey]?.toFixed(Stat.fixedUnit(sKey))}</span>
   </Card.Body></Card>
 }
-function OverloadedCard({ value }) {
+function OverloadedCard({ stats }) {
+  const sKey = "overloaded_hit"
   return <Card bg="darkcontent" text="lightfont"><Card.Body className="p-2">
-    <span className="text-overloaded">{Stat.getStatName("overloaded_hit")} <Image src={Assets.elements.electro} className="inline-icon" />+<Image src={Assets.elements.pyro} className="inline-icon" /> {value}</span>
+    <span className="text-overloaded">{Stat.getStatName(sKey)} <Image src={Assets.elements.electro} className="inline-icon" />+<Image src={Assets.elements.pyro} className="inline-icon" /> {stats[sKey]?.toFixed(Stat.fixedUnit(sKey))}</span>
   </Card.Body></Card>
 }
-function SwirlCard({ value }) {
-  return <Card bg="darkcontent" text="lightfont"><Card.Body className="p-2">
-    <span className="text-swirl">{Stat.getStatName("swirl_hit")} <Image src={Assets.elements.electro} className="inline-icon" />/<Image src={Assets.elements.hydro} className="inline-icon" />/<Image src={Assets.elements.pyro} className="inline-icon" />/<Image src={Assets.elements.cryo} className="inline-icon" />+<Image src={Assets.elements.anemo} className="inline-icon" /> {value}</span>
+
+const swirlEleToDisplay = {
+  "pyro": <span>{Stat.getStatName("pyro_swirl_hit")} <Image src={Assets.elements.pyro} className="inline-icon" />+<Image src={Assets.elements.anemo} className="inline-icon" /></span>,
+  "electro": <span>{Stat.getStatName("electro_swirl_hit")} <Image src={Assets.elements.electro} className="inline-icon" />+<Image src={Assets.elements.anemo} className="inline-icon" /></span>,
+  "cryo": <span>{Stat.getStatName("cryo_swirl_hit")} <Image src={Assets.elements.cryo} className="inline-icon" />+<Image src={Assets.elements.anemo} className="inline-icon" /></span>,
+  "hydro": <span>{Stat.getStatName("hydro_swirl_hit")} <Image src={Assets.elements.hydro} className="inline-icon" />+<Image src={Assets.elements.anemo} className="inline-icon" /></span>
+}
+function SwirlCard({ stats }) {
+  const [ele, setele] = useState(Object.keys(swirlEleToDisplay)[0])
+  const sKey = `${ele}_swirl_hit`
+  return <Card bg="darkcontent" text="lightfont"><Card.Body className="p-0">
+    <DropdownButton size="sm" title={swirlEleToDisplay[ele]} className="d-inline-block">
+      {Object.entries(swirlEleToDisplay).map(([key, element]) => <Dropdown.Item key={key} onClick={() => setele(key)}>{element}</Dropdown.Item>)}
+    </DropdownButton>
+    <span className={`text-${ele} p-2`}> {stats[sKey]?.toFixed(Stat.fixedUnit(sKey))}</span>
   </Card.Body></Card>
 }
-function ShatteredCard({ value }) {
+function ShatteredCard({ stats }) {
+  const sKey = "electrocharged_hit"
   const information = <OverlayTrigger
     placement="top"
     overlay={<Tooltip>Claymores, Plunging Attacks and <span className="text-geo">Geo DMG</span></Tooltip>}
@@ -137,12 +149,13 @@ function ShatteredCard({ value }) {
     <FontAwesomeIcon icon={faQuestionCircle} className="ml-2" style={{ cursor: "help" }} />
   </OverlayTrigger>
   return <Card bg="darkcontent" text="lightfont"><Card.Body className="p-2">
-    <span className="text-shattered">{Stat.getStatName("shattered_hit")} <Image src={Assets.elements.hydro} className="inline-icon" />+<Image src={Assets.elements.cryo} className="inline-icon" />+ <small className="text-physical">Heavy Attack{information} </small> {value}</span>
+    <span className="text-shattered">{Stat.getStatName(sKey)} <Image src={Assets.elements.hydro} className="inline-icon" />+<Image src={Assets.elements.cryo} className="inline-icon" />+ <small className="text-physical">Heavy Attack{information} </small> {stats[sKey]?.toFixed(Stat.fixedUnit(sKey))}</span>
   </Card.Body></Card>
 }
-function CrystalizeCard({ value }) {
+function CrystalizeCard({ stats }) {
+  const sKey = "crystalize_hit"
   return <Card bg="darkcontent" text="lightfont"><Card.Body className="p-2">
-    <span className="text-crystalize">{Stat.getStatName("crystalize_hit")} <Image src={Assets.elements.electro} className="inline-icon" />/<Image src={Assets.elements.hydro} className="inline-icon" />/<Image src={Assets.elements.pyro} className="inline-icon" />/<Image src={Assets.elements.cryo} className="inline-icon" />+<Image src={Assets.elements.geo} className="inline-icon" /> {value}</span>
+    <span className="text-crystalize">{Stat.getStatName(sKey)} <Image src={Assets.elements.electro} className="inline-icon" />/<Image src={Assets.elements.hydro} className="inline-icon" />/<Image src={Assets.elements.pyro} className="inline-icon" />/<Image src={Assets.elements.cryo} className="inline-icon" />+<Image src={Assets.elements.geo} className="inline-icon" /> {stats[sKey]?.toFixed(Stat.fixedUnit(sKey))}</span>
   </Card.Body></Card>
 }
 
@@ -234,7 +247,7 @@ function SkillDisplayCard(props) {
   return <Card bg="lightcontent" text="lightfont" className="h-100">
     {header}
     <Card.Body>
-      <Row className="d-flex flex-row mb-245" onClick={onClickTitle} style={{ cursor: (editable && onClickTitle) ? "pointer" : "default" }}>
+      <Row className={`d-flex flex-row mb-2 ${(editable && onClickTitle) ? "cursor-pointer" : ""}`} onClick={onClickTitle} >
         <Col xs="auto" className="flex-shrink-1 d-flex flex-column">
           <Image src={Character.getTalentImg(characterKey, talentKey)} className="thumb-mid" />
         </Col>

@@ -74,8 +74,8 @@ export default function CharacterOverviewPane(props) {
                   <Row className="px-2">
                     {[...Array(6).keys()].map(i =>
                       <Col xs={4} className="p-1" key={i}>
-                        <Image src={Character.getConstellationImg(characterKey, i)} className={`w-100 h-auto ${constellation > i ? "" : "overlay-dark"}`}
-                          style={{ cursor: "pointer" }} roundedCircle onClick={editable ? (() =>
+                        <Image src={Character.getConstellationImg(characterKey, i)} className={`w-100 h-auto ${constellation > i ? "" : "overlay-dark"} cursor-pointer`}
+                          roundedCircle onClick={editable ? (() =>
                             setConstellation((i + 1) === constellation ? i : i + 1)) : null} />
                       </Col>)}
                   </Row>
@@ -244,31 +244,39 @@ function WeaponStatsEditorCard(props) {
 }
 
 function MainStatsCards(props) {
-  let { editable, character, setOverride, equippedBuild, newBuild } = props
+  const { editable, character, setOverride, equippedBuild, newBuild } = props
 
-  let [editing, SetEditing] = useState(false)
-  let [editingOther, SetEditingOther] = useState(false)
+  const [editing, SetEditing] = useState(false)
+  const [editingOther, SetEditingOther] = useState(false)
+  const [editingMisc, SetEditingMisc] = useState(false)
 
-  let additionalKeys = ["eleMas", "critRate_", "critDMG_", "enerRech_", "heal_"]
+  const additionalKeys = ["eleMas", "critRate_", "critDMG_", "enerRech_", "heal_"]
   const displayStatKeys = ["finalHP", "finalATK", "finalDEF"]
   displayStatKeys.push(...additionalKeys)
   const editStatKeys = ["characterHP", "hp", "hp_", "characterATK", "atk", "atk_", "characterDEF", "def", "def_"]
   editStatKeys.push(...additionalKeys)
-  const otherStatKeys = ["stamina", "incHeal_", "powShield_", "cdRed_"]
+  const otherStatKeys = []
 
   Character.getElementalKeys().forEach(ele => {
     otherStatKeys.push(`${ele}_dmg_`)
     otherStatKeys.push(`${ele}_res_`)
   })
-  const miscStatkeys = ["normal_dmg_", "charged_dmg_", "skill_dmg_", "burst_dmg_", "skill_critRate_", "burst_critRate_", "dmg_", "moveSPD_", "atkSPD_", "weakspotDMG_"]
+  otherStatKeys.push("stamina", "incHeal_", "powShield_")
 
-  let specializedStatKey = Character.getStatValueWithOverride(character, "specializedStatKey")
-  let specializedStatVal = Character.getStatValueWithOverride(character, "specializedStatVal");
-  let specializedStatUnit = Stat.getStatUnit(specializedStatKey)
+  const miscStatkeys = [
+    "normal_dmg_", "normal_critRate_",
+    "charged_dmg_", "charged_critRate_",
+    "skill_dmg_", "skill_critRate_",
+    "burst_dmg_", "burst_critRate_",
+    "dmg_", "moveSPD_", "atkSPD_", "weakspotDMG_"]
+
+  const specializedStatKey = Character.getStatValueWithOverride(character, "specializedStatKey")
+  const specializedStatVal = Character.getStatValueWithOverride(character, "specializedStatVal");
+  const specializedStatUnit = Stat.getStatUnit(specializedStatKey)
 
   const isPercentSpecialStatSelect = Stat.getStatUnit(specializedStatKey) === "%"
 
-  let displayNewBuildProps = { character, equippedBuild, newBuild, editable }
+  const displayNewBuildProps = { character, equippedBuild, newBuild, editable }
   return <>
     <Card bg="lightcontent" text="lightfont" className="mb-2">
       <Card.Header>
@@ -339,11 +347,11 @@ function MainStatsCards(props) {
           <Col>
             <span>Other Stats</span>
           </Col>
-          {editable ? <Col xs="auto" >
+          {editable && <Col xs="auto" >
             <Button variant={editingOther ? "danger" : "info"} onClick={() => SetEditingOther(!editingOther)} size="sm">
               <span><FontAwesomeIcon icon={editingOther ? faSave : faEdit} /> {editingOther ? "EXIT" : "EDIT"}</span>
             </Button>
-          </Col> : null}
+          </Col>}
         </Row>
       </Card.Header>
       {editingOther ?
@@ -374,11 +382,34 @@ function MainStatsCards(props) {
           <Col>
             <span>Misc Stats</span>
           </Col>
+          {editable && <Col xs="auto" >
+            <Button variant={editingMisc ? "danger" : "info"} onClick={() => SetEditingMisc(!editingMisc)} size="sm">
+              <span><FontAwesomeIcon icon={editingMisc ? faSave : faEdit} /> {editingMisc ? "EXIT" : "EDIT"}</span>
+            </Button>
+          </Col>}
         </Row>
       </Card.Header>
-      <Card.Body>
-        <Row className="mb-2">{miscStatkeys.map(statKey => <Col xs={12} lg={6} key={statKey} ><StatDisplay statKey={statKey} {...displayNewBuildProps} /></Col>)}</Row>
-      </Card.Body>
+      {editingMisc ?
+        <Card.Body>
+          <Row className="mb-2">
+            {miscStatkeys.map(statKey =>
+              <Col xl={6} xs={12} key={statKey}>
+                <StatInput
+                  className="mb-2"
+                  name={<span>{StatIconEle(statKey)} {Stat.getStatName(statKey)}</span>}
+                  placeholder={`Base ${Stat.getStatNameRaw(statKey)}`}
+                  value={Character.getStatValueWithOverride(character, statKey)}
+                  percent={Stat.getStatUnit(statKey) === "%"}
+                  onValueChange={(value) => setOverride(statKey, value)}
+                  defaultValue={Character.getBaseStatValue(character, statKey)}
+                />
+              </Col>)}
+          </Row>
+        </Card.Body> :
+        <Card.Body>
+          <Row className="mb-2">{miscStatkeys.map(statKey => <Col xs={12} lg={6} key={statKey} ><StatDisplay statKey={statKey} {...displayNewBuildProps} /></Col>)}</Row>
+        </Card.Body>
+      }
     </Card>
   </>
 }

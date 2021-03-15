@@ -88,7 +88,7 @@ export default function ArtifactCard({ artifactId, artifactObj, forceUpdate, onE
               <CharacterSelectionDropdownList onSelect={ckey => equipOnChar(ckey)} />
             </Dropdown.Menu>
           </Dropdown>
-        </Col> : <Col xs="auto"><b>{Character.getName(location)}</b></Col>}
+        </Col> : <Col xs="auto"><b>{Character.getName(location, "Inventory")}</b></Col>}
         <Col xs="auto">
           <ButtonGroup>
             {forceUpdate ? <OverlayTrigger placement="top"
