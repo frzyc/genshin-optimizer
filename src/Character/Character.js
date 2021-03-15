@@ -171,7 +171,7 @@ export default class Character {
       basicKeys.push("physical_dmg_")
 
     //show elemental interactions
-    const transReactions = ElementToReactionKeys[eleKey]
+    const transReactions = deepClone(ElementToReactionKeys[eleKey])
     const weaponTypeKey = this.getWeaponTypeKey(characterKey)
     if (!transReactions.includes("shattered_hit") && weaponTypeKey === "claymore") transReactions.push("shattered_hit")
     if (this.hasTalentPage(characterKey)) {

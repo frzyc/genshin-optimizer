@@ -141,7 +141,7 @@ function SwirlCard({ stats }) {
   </Card.Body></Card>
 }
 function ShatteredCard({ stats }) {
-  const sKey = "electrocharged_hit"
+  const sKey = "shattered_hit"
   const information = <OverlayTrigger
     placement="top"
     overlay={<Tooltip>Claymores, Plunging Attacks and <span className="text-geo">Geo DMG</span></Tooltip>}

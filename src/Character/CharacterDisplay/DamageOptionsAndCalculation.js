@@ -5,16 +5,13 @@ import { Accordion, AccordionContext, Button, Card, Col, Image, Row, ToggleButto
 import { useAccordionToggle } from 'react-bootstrap/AccordionToggle';
 import Assets from "../../Assets/Assets";
 import Stat from "../../Stat";
-import { ElementToReactionKeys } from "../../StatData";
 import { GetDependencies } from "../../StatDependency";
 import Character from "../Character";
 import StatInput from "../StatInput";
 
 function ReactionToggle({ character: { characterKey, reactionMode = "none" }, setReactionMode, className }) {
   reactionMode === null && (reactionMode = "none")
-  let charEleKey = Character.getElementalKey(characterKey)
-  let eleInterArr = [...(ElementToReactionKeys[charEleKey] || [])]
-  if (!eleInterArr.includes("shattered_hit") && Character.getWeaponTypeKey(characterKey) === "claymore") eleInterArr.push("shattered_hit")
+  const charEleKey = Character.getElementalKey(characterKey)
   return ["pyro", "hydro", "cryo"].includes(charEleKey) && <ToggleButtonGroup className={className}
     type="radio" name="reactionMode" defaultValue={reactionMode} onChange={(val) => setReactionMode(val === "none" ? null : val)}>
     <ToggleButton value={"none"} variant={reactionMode === "none" ? "success" : "primary"}>No Reactions</ToggleButton >
@@ -207,3 +204,4 @@ export {
   HitModeToggle,
   ReactionToggle,
 };
+
