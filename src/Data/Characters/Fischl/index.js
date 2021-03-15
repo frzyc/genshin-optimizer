@@ -184,9 +184,9 @@ const char = {
         text: <span>Even when Oz is not present in combat, he can still watch over Fischl through the crow's eyes. When Fischl attacks an opponent, Oz fires a joint attack through the crow's eyes, dealing 22% of <span className="text-physical">ATK DMG</span>.</span>,
         fields: [(con) => con >= 1 && {
           text: "Joint Attack DMG",
-          formulaText: (tlvl, stats) => <span>22% {Stat.printStat(getTalentStatKey("physical", stats), stats)}</span>,
+          formulaText: (tlvl, stats) => <span>22% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
           formula: formula.constellation1.jointAttDmg,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("phy", stats),
+          variant: (tlvl, stats) => getTalentStatKeyVariant("normal", stats),
         }]
       }],
     },

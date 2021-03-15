@@ -64,7 +64,7 @@ const formula = {
     thunderRetri: (tlvl, stats) => basicDMGFormula(80, stats, "elemental"),
   },
   constellation1: {
-    jointAttDmg: (tlvl, stats) => basicDMGFormula(22, stats, "physical"),
+    jointAttDmg: (tlvl, stats) => basicDMGFormula(22, stats, "normal"),
   }
 }
 
