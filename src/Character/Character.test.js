@@ -1,4 +1,3 @@
-import { saveToLocalStorage } from "../Util/Util"
 import Character from "./Character"
 import CharacterDatabase from "./CharacterDatabase"
 
@@ -21,7 +20,7 @@ describe('Character.getDisplayStatKeys()', () => {
   beforeEach(() => CharacterDatabase.updateCharacter({ characterKey, levelKey: "L60A" }))
   afterEach(() => localStorage.clear())
   test('should get statKeys for characters with finished talent page', () => {
-    const keys = Character.getDisplayStatKeys(characterKey)
+    const keys = Character.getDisplayStatKeys(CharacterDatabase.get(characterKey))
     expect(keys).toHaveProperty("auto")
   })
   test('should get statKeys for characters with unfinished talent page', () => {

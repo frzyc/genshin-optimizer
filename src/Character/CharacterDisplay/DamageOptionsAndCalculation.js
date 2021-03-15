@@ -40,9 +40,9 @@ function HitModeToggle({ hitMode, setHitMode, className }) {
   </ToggleButtonGroup>
 }
 
-function CalculationDisplay({ characterKey, build }) {
+function CalculationDisplay({ character, character: { characterKey }, build }) {
   return <div>
-    {Object.entries(Character.getDisplayStatKeys(characterKey)).map(([talentKey, fields]) => {
+    {Object.entries(Character.getDisplayStatKeys(character)).map(([talentKey, fields]) => {
       let header = ""
       if (talentKey === "basicKeys") header = "Basic Stats"
       else if (talentKey === "genericAvgHit") header = "Generic Optimization Values"
@@ -72,7 +72,7 @@ function CalculationDisplay({ characterKey, build }) {
                 </Card>
               }
               //fields
-              const talentField = Character.getTalentField(characterKey, field.talentKey, field.sectionIndex, field.fieldIndex)
+              const talentField = Character.getTalentField(character, field.talentKey, field.sectionIndex, field.fieldIndex)
               const fieldText = Character.getTalentFieldValue(talentField, "text", talentKey, build.finalStats)
               const fieldVariant = Character.getTalentFieldValue(talentField, "variant", talentKey, build.finalStats)
               const fieldFormulaText = Character.getTalentFieldValue(talentField, "formulaText", talentKey, build.finalStats)
@@ -118,7 +118,7 @@ const ContextAwareToggle = ({ eventKey, callback }) => {
   );
 }
 
-export default function DamageOptionsAndCalculation({ character, character: { characterKey, hitMode }, setState, setOverride, newBuild, equippedBuild }) {
+export default function DamageOptionsAndCalculation({ character, character: { hitMode }, setState, setOverride, newBuild, equippedBuild }) {
   //choose which one to display stats for
   const build = newBuild ? newBuild : equippedBuild
   return <Accordion>
@@ -197,7 +197,7 @@ export default function DamageOptionsAndCalculation({ character, character: { ch
       </Card.Header>
       <Accordion.Collapse eventKey="2">
         <Card.Body className="p-2">
-          <CalculationDisplay characterKey={characterKey} build={build} />
+          <CalculationDisplay character={character} build={build} />
         </Card.Body>
       </Accordion.Collapse>
     </Card>
