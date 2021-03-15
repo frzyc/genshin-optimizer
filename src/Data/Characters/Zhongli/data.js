@@ -44,7 +44,6 @@ const data = {
 function zliDMG(percent, hpMulti, stats, skillKey, elemental = false) {
   const val = percent / 100
   const statKey = getTalentStatKey(skillKey, stats, elemental) + "_multi"
-  console.log(statKey, getTalentStatKey(skillKey, stats, elemental))
   return [s => (val * s.finalATK + hpMulti * s.finalHP) * s[statKey], ["finalATK", "finalHP", statKey]]
 }
 const formula = {
