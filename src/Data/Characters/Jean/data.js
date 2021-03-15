@@ -65,8 +65,8 @@ const formula = {
       return [s => (atk * s.finalATK + flat) * s.heal_multi, ["finalATK", "heal_multi"]]
     },
   },
-  passive1: {
-    heal: (tlvl, stats) => [s => (0.5 * s.finalATK) * s.heal_multi, ["finalATK", "heal_multi"]],
+  passive2: {
+    heal: (tlvl, stats) => [s => (0.5 * (s.finalATK * 0.15)) * s.heal_multi, ["finalATK", "heal_multi"]],
   }
 }
 
