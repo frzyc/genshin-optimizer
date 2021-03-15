@@ -90,7 +90,7 @@ describe(`Testing StatData`, () => {
       _test(stat.finalHP, 14695 + 14945)
       _test(stat.finalATK, 274 + 518)
       _test(stat.finalDEF, 738 + 102)
-      // _test(stat.eleMas, 0)
+      _test(stat.eleMas, 0)
       _test(stat.critRate_, 52.0)
       _test(stat.critDMG_, 106.7)
       _test(stat.enerRech_, 156.4)
