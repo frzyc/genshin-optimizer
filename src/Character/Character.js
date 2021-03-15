@@ -80,12 +80,11 @@ export default class Character {
     const ascension = Character.getAscension(levelKey)
     return this.getTalentDocument(charKey, talentKey).map(section => typeof section === "function" ? section(constellation, ascension) : section)
   }
-  static getTalentField = (charKey, talentKey, sectionIndex, fieldIndex, defVal = {}) => {
-    const character = CharacterDatabase.get(charKey);
+  static getTalentField = (character, talentKey, sectionIndex, fieldIndex, defVal = {}) => {
     if (!character) return defVal
     const { constellation = 0, levelKey = Object.keys(LevelsData)[0] } = character
     const ascension = Character.getAscension(levelKey)
-    const field = this.getTalentDocumentSections(charKey, talentKey)?.[sectionIndex]?.fields?.[fieldIndex]
+    const field = this.getTalentDocumentSections(character.characterKey, talentKey)?.[sectionIndex]?.fields?.[fieldIndex]
     if (!field) return defVal
     return typeof field === "function" ? field(constellation, ascension) : field
   }
@@ -159,8 +158,9 @@ export default class Character {
 
   static hasTalentPage = (characterKey) => Boolean(Character.getCDataObj(characterKey)?.talent)
 
-  static getDisplayStatKeys = (characterKey, defVal = { basicKeys: [] }) => {
-    if (!characterKey) return defVal
+  static getDisplayStatKeys = (character, defVal = { basicKeys: [] }) => {
+    if (!character) return defVal
+    const { characterKey } = character
     let eleKey = Character.getElementalKey(characterKey)
     if (!eleKey) return defVal //usually means the character has not been lazy loaded yet
     const basicKeys = ["finalHP", "finalATK", "finalDEF", "eleMas", "critRate_", "critDMG_", "heal_", "enerRech_", `${eleKey}_dmg_`]
@@ -179,7 +179,7 @@ export default class Character {
       Object.keys(Character.getCDataObj(characterKey)?.talent ?? {}).forEach(talentKey =>
         Character.getTalentDocumentSections(characterKey, talentKey)?.forEach((section, sectionIndex) =>
           section?.fields?.forEach((field, fieldIndex) =>
-            (field?.formula || this.getTalentField(characterKey, talentKey, sectionIndex, fieldIndex)?.formula) && (charFormulas[talentKey] = [...(charFormulas[talentKey] ?? []), {
+            (field?.formula || this.getTalentField(character, talentKey, sectionIndex, fieldIndex)?.formula) && (charFormulas[talentKey] = [...(charFormulas[talentKey] ?? []), {
               talentKey,
               sectionIndex,
               fieldIndex

@@ -14,7 +14,7 @@ function CharacterArtifactPane({ character, character: { characterKey, artifactC
   let build = newBuild ? newBuild : equippedBuild
   let artifactsAssumeFull = newBuild ? newBuild.finalStats?.artifactsAssumeFull : character.artifactsAssumeFull
   if (newBuild) artifactConditionals = newBuild.artifactConditionals
-  const statKeys = Character.getDisplayStatKeys(characterKey)
+  const statKeys = Character.getDisplayStatKeys(character)
   const setStateArtifactConditional = (setKey, setNumKey, conditionalNum) => setState?.(state =>
     ({ artifactConditionals: ConditionalsUtil.setConditional(state.artifactConditionals, { srcKey: setKey, srcKey2: setNumKey }, conditionalNum) }))
   return <>

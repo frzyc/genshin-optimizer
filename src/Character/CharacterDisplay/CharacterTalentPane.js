@@ -88,10 +88,10 @@ const ReactionComponents = {
   shattered_hit: ShatteredCard,
   crystalize_hit: CrystalizeCard,
 }
-function ReactionDisplay({ character: { characterKey, reactionMode = "none" }, newBuild, equippedBuild, setState }) {
-  let build = newBuild ? newBuild : equippedBuild
-  let charEleKey = Character.getElementalKey(characterKey)
-  let eleInterArr = [...(ElementToReactionKeys[charEleKey] || [])]
+function ReactionDisplay({ character: { characterKey }, newBuild, equippedBuild }) {
+  const build = newBuild ? newBuild : equippedBuild
+  const charEleKey = Character.getElementalKey(characterKey)
+  const eleInterArr = [...(ElementToReactionKeys[charEleKey] || [])]
   if (!eleInterArr.includes("shattered_hit") && Character.getWeaponTypeKey(characterKey) === "claymore") eleInterArr.push("shattered_hit")
   return <Card bg="lightcontent" text="lightfont" className="mb-2">
     <Card.Body className="px-3 py-2">

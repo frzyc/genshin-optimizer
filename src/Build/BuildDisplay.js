@@ -156,7 +156,7 @@ export default class BuildDisplay extends React.Component {
     //get the formula for this targer
     if (typeof optimizationTarget === "object") {
       const { talentKey, sectionIndex, fieldIndex } = optimizationTarget
-      let { formula } = Character.getTalentField(characterKey, talentKey, sectionIndex, fieldIndex)
+      let { formula } = Character.getTalentField(character, talentKey, sectionIndex, fieldIndex)
       optimizationTarget = Character.getFormulaPath(characterKey, talentKey, formula)
     }
 
@@ -537,9 +537,10 @@ export default class BuildDisplay extends React.Component {
     delete this.worker
   }
   render() {
-    let { characterKey, modalBuild, maxBuildsToShow, builds = [] } = this.state
-    let characterName = Character.getName(characterKey, "Character Name")
-    let statsDisplayKeys = Character.getDisplayStatKeys(characterKey)
+    const { characterKey, modalBuild, maxBuildsToShow, builds = [] } = this.state
+    const character = CharacterDatabase.get(characterKey)
+    const characterName = Character.getName(characterKey, "Character Name")
+    const statsDisplayKeys = Character.getDisplayStatKeys(character)
     return (<Container>
       <this.BuildModal build={modalBuild} characterKey={characterKey} />
       <this.ArtConditionalModal />
@@ -581,7 +582,7 @@ function SortByStatDropdown({ characterKey, statsDisplayKeys, disabled, optimiza
   let sortByText = "VALUE"
   if (typeof optimizationTarget === "object") {
     const { talentKey, sectionIndex, fieldIndex } = optimizationTarget
-    let { variant = "", text } = Character.getTalentField(characterKey, talentKey, sectionIndex, fieldIndex) ?? {}
+    let { variant = "", text } = Character.getTalentField(character, talentKey, sectionIndex, fieldIndex) ?? {}
     variant = typeof variant === "function" ? variant?.(initialStats.talentLevelKeys[talentKey], initialStats) : variant
     sortByText = <b>{Character.getTalentName(characterKey, talentKey)}: <span className={`text-${variant}`}>{text}</span></b>
   } else
@@ -605,7 +606,7 @@ function SortByStatDropdown({ characterKey, statsDisplayKeys, disabled, optimiza
               {fields.map((field, i) => {
                 if (typeof field === "string")
                   return <Dropdown.Item key={i} onClick={() => setState({ optimizationTarget: field })}>{Stat.getStatNamePretty(field)}</Dropdown.Item>
-                const talentField = Character.getTalentField(characterKey, field.talentKey, field.sectionIndex, field.fieldIndex)
+                const talentField = Character.getTalentField(character, field.talentKey, field.sectionIndex, field.fieldIndex)
                 return <Dropdown.Item key={i} onClick={() => setState({ optimizationTarget: field })}>
                   <span className={`text-${Character.getTalentFieldValue(talentField, "variant", talentKey, initialStats)}`}>{Character.getTalentFieldValue(talentField, "text", talentKey, initialStats)}</span>
                 </Dropdown.Item>
