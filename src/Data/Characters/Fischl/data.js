@@ -61,7 +61,7 @@ const formula = {
     regen: (tlvl, stats) => [s => 0.2 * s.finalHP * s.heal_multi, ["finalHP", "heal_multi"]]
   },
   passive2: {
-    thunderRetri: (tlvl, stats) => basicDMGFormula(80, stats, "elemental"),
+    thunderRetri: (tlvl, stats) => basicDMGFormula(80, stats, "skill"),
   },
   constellation1: {
     jointAttDmg: (tlvl, stats) => basicDMGFormula(22, stats, "normal"),
