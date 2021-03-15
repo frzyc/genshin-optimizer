@@ -60,7 +60,7 @@ export default function CharacterCard({ characterKey, onEdit, onDelete, cardClas
         </Col>
       </Row>
     </Card.Header>
-    <Card.Body onClick={onEdit} style={{ cursor: onEdit ? "pointer" : "default" }}>
+    <Card.Body onClick={onEdit} className={onEdit ? "cursor-pointer" : ""} >
       <Row>
         <Col xs="auto" className="pr-0">
           <Image src={Character.getThumb(characterKey)} className={`thumb-big grad-${Character.getStar(characterKey)}star p-0`} thumbnail />

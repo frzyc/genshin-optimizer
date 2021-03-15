@@ -74,8 +74,8 @@ export default function CharacterOverviewPane(props) {
                   <Row className="px-2">
                     {[...Array(6).keys()].map(i =>
                       <Col xs={4} className="p-1" key={i}>
-                        <Image src={Character.getConstellationImg(characterKey, i)} className={`w-100 h-auto ${constellation > i ? "" : "overlay-dark"}`}
-                          style={{ cursor: "pointer" }} roundedCircle onClick={editable ? (() =>
+                        <Image src={Character.getConstellationImg(characterKey, i)} className={`w-100 h-auto ${constellation > i ? "" : "overlay-dark"} cursor-pointer`}
+                          roundedCircle onClick={editable ? (() =>
                             setConstellation((i + 1) === constellation ? i : i + 1)) : null} />
                       </Col>)}
                   </Row>

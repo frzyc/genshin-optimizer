@@ -4,7 +4,6 @@ import React, { useContext } from 'react';
 import { Accordion, AccordionContext, Button, Card, Col, Image, Row, ToggleButton, ToggleButtonGroup } from "react-bootstrap";
 import { useAccordionToggle } from 'react-bootstrap/AccordionToggle';
 import Assets from "../../Assets/Assets";
-import { getTalentStatKey } from "../../Build/Build";
 import Stat from "../../Stat";
 import { ElementToReactionKeys } from "../../StatData";
 import { GetDependencies } from "../../StatDependency";
@@ -41,47 +40,87 @@ function HitModeToggle({ hitMode, setHitMode, className }) {
   </ToggleButtonGroup>
 }
 
+function CalculationDisplay({ characterKey, build }) {
+  return <div>
+    {Object.entries(Character.getDisplayStatKeys(characterKey)).map(([talentKey, fields]) => {
+      let header = ""
+      if (talentKey === "basicKeys") header = "Basic Stats"
+      else if (talentKey === "genericAvgHit") header = "Generic Optimization Values"
+      else if (talentKey === "transReactions") header = "Transformation Reaction"
+      else header = Character.getTalentName(characterKey, talentKey, talentKey)
+      return <Card bg="darkcontent" text="lightfont" key={talentKey} className="w-100 mb-2">
+        <Card.Header>{header}</Card.Header>
+        <Card.Body className="p-2">
+          <Accordion className="mb-n2">
+            {fields.map((field, fieldIndex) => {
+              //simple statKey field
+              if (typeof field === "string") {
+                const subFormulaKeys = Stat.getPrintableFormulaStatKeyList(GetDependencies(build?.finalStats?.modifiers, [field]), build?.finalStats?.modifiers).reverse()
+                return Boolean(subFormulaKeys.length) && <Card key={fieldIndex} bg="lightcontent" text="lightfont" className="mb-2">
+                  <Accordion.Toggle as={Card.Header} className="p-2 cursor-pointer" variant="link" eventKey={`field${fieldIndex}`}>
+                    {Stat.printStat(field, build.finalStats)}
+                  </Accordion.Toggle>
+                  <Accordion.Collapse eventKey={`field${fieldIndex}`}>
+                    <Card.Body className="p-2">
+                      <div className="mb-n2">
+                        {subFormulaKeys.map(subKey =>
+                          <p className="mb-2" key={subKey}>{Stat.printStat(subKey, build.finalStats)} = <small>{Stat.printFormula(subKey, build.finalStats, build.finalStats.modifiers, false)}</small></p>
+                        )}
+                      </div>
+                    </Card.Body>
+                  </Accordion.Collapse>
+                </Card>
+              }
+              //fields
+              const talentField = Character.getTalentField(characterKey, field.talentKey, field.sectionIndex, field.fieldIndex)
+              const fieldText = Character.getTalentFieldValue(talentField, "text", talentKey, build.finalStats)
+              const fieldVariant = Character.getTalentFieldValue(talentField, "variant", talentKey, build.finalStats)
+              const fieldFormulaText = Character.getTalentFieldValue(talentField, "formulaText", talentKey, build.finalStats)
+              const [fieldFormula, fieldFormulaDependency] = Character.getTalentFieldValue(talentField, "formula", talentKey, build.finalStats, [])
+              if (!fieldFormula || !fieldFormulaDependency) return null
+              const fieldValue = fieldFormula?.(build.finalStats)?.toFixed?.()
+              const subFormulaKeys = Stat.getPrintableFormulaStatKeyList(GetDependencies(build?.finalStats?.modifiers, fieldFormulaDependency), build?.finalStats?.modifiers).reverse()
+              return <Card key={fieldIndex} bg="lightcontent" text="lightfont" className="mb-2">
+                <Accordion.Toggle as={Card.Header} className="p-2 cursor-pointer" variant="link" eventKey={`field${fieldIndex}`}>
+                  <b className={`text-${fieldVariant}`}>{fieldText}</b> <span className="text-info">{fieldValue}</span>
+                </Accordion.Toggle>
+                <Accordion.Collapse eventKey={`field${fieldIndex}`}>
+                  <Card.Body className="p-2">
+                    <div className="mb-n2">
+                      <p className="mb-2"><b className={`text-${fieldVariant}`}>{fieldText}</b> <span className="text-info">{fieldValue}</span> = <small>{fieldFormulaText}</small></p>
+                      {subFormulaKeys.map(subKey =>
+                        <p className="mb-2" key={subKey}>{Stat.printStat(subKey, build.finalStats)} = <small>{Stat.printFormula(subKey, build.finalStats, build.finalStats.modifiers, false)}</small></p>
+                      )}
+                    </div>
+                  </Card.Body>
+                </Accordion.Collapse>
+              </Card>
+            })}
+          </Accordion>
+        </Card.Body>
+      </Card>
+    })}
+  </div>
+}
+
+const ContextAwareToggle = ({ eventKey, callback }) => {
+  const currentEventKey = useContext(AccordionContext);
+  const decoratedOnClick = useAccordionToggle(
+    eventKey,
+    () => callback && callback(eventKey),
+  );
+  const expanded = currentEventKey === eventKey;
+  return (
+    <Button onClick={decoratedOnClick} >
+      <FontAwesomeIcon icon={expanded ? faWindowMinimize : faWindowMaximize} className={`fa-fw ${expanded ? "fa-rotate-180" : ""}`} />
+      <span> </span>{expanded ? "Retract" : "Expand"}
+    </Button>
+  );
+}
+
 export default function DamageOptionsAndCalculation({ character, character: { characterKey, hitMode }, setState, setOverride, newBuild, equippedBuild }) {
   //choose which one to display stats for
   const build = newBuild ? newBuild : equippedBuild
-
-  const ContextAwareToggle = ({ eventKey, callback }) => {
-    const currentEventKey = useContext(AccordionContext);
-    const decoratedOnClick = useAccordionToggle(
-      eventKey,
-      () => callback && callback(eventKey),
-    );
-    const expanded = currentEventKey === eventKey;
-    return (
-      <Button onClick={decoratedOnClick} >
-        <FontAwesomeIcon icon={expanded ? faWindowMinimize : faWindowMaximize} className={`fa-fw ${expanded ? "fa-rotate-180" : ""}`} />
-        <span> </span>{expanded ? "Retract" : "Expand"}
-      </Button>
-    );
-  }
-  const statsDisplayKeys = () => {
-    let keys = ["finalHP", "finalATK", "finalDEF"]
-    //we need to figure out if the character has: normal phy auto, elemental auto, infusable auto(both normal and phy)
-    let isAutoElemental = Character.isAutoElemental(characterKey)
-    let isAutoInfusable = Character.isAutoInfusable(characterKey)
-    let autoKeys = ["normal", "charged", "plunging"];
-    let talKeys = ["ele", "skill", "burst"];
-    if (!isAutoElemental)  //add physical variants of the formulas
-      autoKeys.forEach(key => keys.push(getTalentStatKey(key, build.finalStats)))
-    if (isAutoElemental || (isAutoInfusable && character.autoInfused))
-      autoKeys.forEach(key => keys.push(getTalentStatKey(key, build.finalStats, true)))
-    else if (Character.getWeaponTypeKey(characterKey) === "bow")//bow charged atk does elemental dmg on charge
-      keys.push(getTalentStatKey("charged", build.finalStats, true))
-    //add talents/skills
-    talKeys.forEach(key => keys.push(getTalentStatKey(key, build.finalStats)))
-    //show elemental interactions
-    keys.push(...(ElementToReactionKeys[Character.getElementalKey(characterKey)] || []))
-    let weaponTypeKey = Character.getWeaponTypeKey(characterKey)
-    if (!keys.includes("shattered_hit") && weaponTypeKey === "claymore") keys.push("shattered_hit")
-
-    //search for dependency
-    return Stat.getPrintableFormulaStatKeyList(GetDependencies(build?.finalStats?.modifiers, keys), build?.finalStats?.modifiers)
-  }
   return <Accordion>
     <Card bg="lightcontent" text="lightfont" className="mb-2">
       <Card.Header>
@@ -157,20 +196,8 @@ export default function DamageOptionsAndCalculation({ character, character: { ch
         </Row>
       </Card.Header>
       <Accordion.Collapse eventKey="2">
-        <Card.Body>
-          <Row>
-            {statsDisplayKeys().map(key => <Col key={key} xs={12} className="mb-2">
-              <Card bg="darkcontent" text="lightfont">
-                <Card.Header className="p-2">
-                  {Stat.printStat(key, build.finalStats)}
-                </Card.Header>
-                <Card.Body className="p-2">
-                  <small>{Stat.printFormula(key, build.finalStats, build.finalStats.modifiers, false)}</small>
-                </Card.Body>
-              </Card>
-            </Col>
-            )}
-          </Row>
+        <Card.Body className="p-2">
+          <CalculationDisplay characterKey={characterKey} build={build} />
         </Card.Body>
       </Accordion.Collapse>
     </Card>

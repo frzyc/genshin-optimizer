@@ -617,6 +617,7 @@ function SortByStatDropdown({ characterKey, statsDisplayKeys, disabled, optimiza
     </Dropdown>
     <Button onClick={() => setState(state => ({ ascending: !state.ascending }))} disabled={disabled}>
       <FontAwesomeIcon icon={ascending ? faSortAmountDownAlt : faSortAmountUp} className="fa-fw" />
+      <span>{ascending ? "Ascending" : "Decending"}</span>
     </Button>
   </ButtonGroup >
 }

@@ -247,7 +247,7 @@ function SkillDisplayCard(props) {
   return <Card bg="lightcontent" text="lightfont" className="h-100">
     {header}
     <Card.Body>
-      <Row className="d-flex flex-row mb-245" onClick={onClickTitle} style={{ cursor: (editable && onClickTitle) ? "pointer" : "default" }}>
+      <Row className={`d-flex flex-row mb-2 ${(editable && onClickTitle) ? "cursor-pointer" : ""}`} onClick={onClickTitle} >
         <Col xs="auto" className="flex-shrink-1 d-flex flex-column">
           <Image src={Character.getTalentImg(characterKey, talentKey)} className="thumb-mid" />
         </Col>

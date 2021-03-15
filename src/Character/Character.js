@@ -91,8 +91,6 @@ export default class Character {
   }
   static getTalentFieldValue = (field, key, talentKey, stats = {}, defVal = "") => {
     if (!field?.[key]) return defVal
-    if (key === "formula")
-      return field?.formula?.(stats.talentLevelKeys[talentKey], stats)?.[0]?.(stats)
     return typeof field?.[key] === "function" ? field[key](stats.talentLevelKeys[talentKey], stats) : field[key]
   }
 

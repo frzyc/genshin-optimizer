@@ -53,9 +53,9 @@ export default function StatDisplay({ character, character: { characterKey }, eq
     const labelVariant = Character.getTalentFieldValue(field, "variant", talentKey, build.finalStats)
     label = <span className={`text-${labelVariant}`}>{Character.getTalentFieldValue(field, "text", talentKey, build.finalStats)}</span>
     fixed = Character.getTalentFieldValue(field, "fixed", talentKey, build.finalStats, 0)
-    val = Character.getTalentFieldValue(field, "formula", talentKey, build.finalStats)
+    val = Character.getTalentFieldValue(field, "formula", talentKey, build.finalStats)?.[0]?.(build.finalStats)
     if (newBuild && equippedBuild) {//comparable
-      oldVal = Character.getTalentFieldValue(field, "formula", talentKey, equippedBuild.finalStats)
+      oldVal = Character.getTalentFieldValue(field, "formula", talentKey, equippedBuild.finalStats)?.[0]?.(build.finalStats)
     }
   }
 
