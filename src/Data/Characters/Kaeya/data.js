@@ -1,4 +1,3 @@
-import { getTalentStatKey } from "../../../Build/Build"
 import { basicDMGFormula } from "../../../Util/FormulaUtil"
 
 export const data = {
@@ -44,7 +43,7 @@ const formula = {
   plunging: Object.fromEntries(Object.entries(data.plunging).map(([name, arr]) =>
     [name, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "plunging")])),
   skill: {
-    skill_dmg: (tlvl, stats) => basicDMGFormula(data.skill.dmg[tlvl], stats, "burst"),
+    skill_dmg: (tlvl, stats) => basicDMGFormula(data.skill.dmg[tlvl], stats, "skill"),
   },
   burst: {
     burst_dmg: (tlvl, stats) => basicDMGFormula(data.burst.dmg[tlvl], stats, "burst"),

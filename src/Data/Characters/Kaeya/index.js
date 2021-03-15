@@ -90,6 +90,9 @@ const char = {
           formulaText: (tlvl, stats) => <span>{data.skill.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("skill", stats) + "_multi", stats)}</span>,
           formula: formula.skill.skill_dmg,
           variant: (tlvl, stats) => getTalentStatKeyVariant("skill", stats),
+        }, {
+          text: "CD",
+          value: "6s",
         }],
       }],
     },
@@ -99,7 +102,7 @@ const char = {
       document: [{
         text: <span>Coalescing the frost in the air, Kaeya summons 3 icicles that revolve around him. These icicles will follow the character around and deal <span className="text-cryo">Cryo DMG</span> to opponents in their path for the ability's duration.</span>,
         fields: [{
-          text: "Burst DMG",
+          text: "Icicles DMG",
           formulaText: (tlvl, stats) => <span>{data.burst.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
           formula: formula.burst.burst_dmg,
           variant: (tlvl, stats) => getTalentStatKeyVariant("burst", stats),
@@ -120,7 +123,7 @@ const char = {
       img: passive1,
       document: [{
         text: (tlvl, stats) => <span>
-          Every hit with Frostgnaw regenerates HP for Kaeya equal to 15% of his ATK.{DisplayPercent(15, stats, "finalATK")}</span>
+          Every hit with <b>Frostgnaw</b> regenerates HP for Kaeya equal to 15% of his ATK.{DisplayPercent(15, stats, "finalATK")}</span>
       }],
     },
     passive2: {
@@ -147,12 +150,12 @@ const char = {
     constellation2: {
       name: "Never-Ending Performance",
       img: c2,
-      document: [{ text: <span>Every time Glacial Waltz defeats an opponent during its duration, its duration is increased by 2.5s, up to a maximum of 15s.</span> }],
+      document: [{ text: <span>Every time <b>Glacial Waltz</b> defeats an opponent during its duration, its duration is increased by 2.5s, up to a maximum of 15s.</span> }],
     },
     constellation3: {
       name: "Dance of Frost",
       img: c3,
-      document: [{ text: <span>Increases the Level of <b>Frostgnaw </b> by 3. Maximum upgrade level is 15.</span> }],
+      document: [{ text: <span>Increases the Level of <b>Frostgnaw</b> by 3. Maximum upgrade level is 15.</span> }],
       talentBoost: { skill: 3 }
     },
     constellation4: {
