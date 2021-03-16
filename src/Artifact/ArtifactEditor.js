@@ -373,7 +373,7 @@ export default class ArtifactEditor extends React.Component {
           {id ? "Save Artifact" : "Add Artifact"}
         </Button>
         <Button className="mr-2" onClick={this.clearArtifact} variant="success">Clear</Button>
-        <Button variant="info" onClick={this.randomizeArtifact}>Randomize</Button>
+        {process.env.NODE_ENV === "development" && <Button variant="info" onClick={this.randomizeArtifact}>Randomize</Button>}
         {Boolean(dupId) && <Button className="float-right" onClick={() => this.saveArtifact(dupId)} disabled={ArtifactDatabase.isInvalid(this.state) || errMsgs.length} variant="success">Update Artifact</Button>}
       </Card.Footer>
     </Card>
