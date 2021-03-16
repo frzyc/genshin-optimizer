@@ -153,27 +153,27 @@ const char = {
       }],
     },
     passive1: {
-      name: "Guiding Breeze",
-      img: passive1,
-      document: [{ text: <span>When a Perfect Cooking is achieved on a dish with restorative effects, Barbara has a 12% chance to obtain double the product.</span> }],
-    },
-    passive2: {
       name: "Wind Companion",
-      img: passive2,
+      img: passive1,
       document: [{
         text: <span>On hit, Jean's Normal Attacks have a 50% change to regenerate HP equal to 15% of Jean's ATK for all party members.</span>,
         fields: [(con, a) => a >= 4 && {
-          text: "Average Heal per Auto",
-          formulaText: (tlvl, stats) => <span>50% ({Stat.printStat("finalATK", stats)} * 15%) * {Stat.printStat("heal_multi", stats)}</span>,
+          text: "Heal per Auto",
+          formulaText: (tlvl, stats) => <span>15% {Stat.printStat("finalATK", stats)} * {Stat.printStat("heal_multi", stats)}</span>,
           formula: formula.passive2.heal,
           variant: "success",
         }]
       }],
     },
-    passive3: {
+    passive2: {
       name: "Let the Wind Lead",
-      img: passive3,
+      img: passive2,
       document: [{ text: <span>Using <b>Dandelion Breeze</b> will regenerate 20% of its Energy.</span> }],
+    },
+    passive3: {
+      name: "Guiding Breeze",
+      img: passive3,
+      document: [{ text: <span>When a Perfect Cooking is achieved on a dish with restorative effects, Barbara has a 12% chance to obtain double the product.</span> }],
     },
     constellation1: {
       name: "Spiraling Tempest",
