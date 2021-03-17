@@ -32,10 +32,10 @@ const StatData = {
   finalDEF: { name: "DEF", pretty: "DEF" },
 
   eleMas: { name: "Elemental Mastery", },
-  enerRech_: { name: "Energy Recharge", unit: "%" },
-  critRate_: { name: "CRIT Rate", unit: "%" },
+  enerRech_: { name: "Energy Recharge", unit: "%", default: 100 },
+  critRate_: { name: "CRIT Rate", unit: "%", default: 5 },
 
-  critDMG_: { name: "CRIT DMG", unit: "%" },
+  critDMG_: { name: "CRIT DMG", unit: "%", default: 50 },
   weakspotDMG_: { name: "Weakspot DMG", unit: "%" },
 
   // Misc. Stats

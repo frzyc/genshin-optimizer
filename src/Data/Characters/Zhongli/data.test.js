@@ -1,280 +1,202 @@
-import { PreprocessFormulas, StatData } from "../../../StatData"
-import { GetDependencies } from "../../../StatDependency"
-import characters from "..";
-
-function _test(calculated, experiment, epsilon = 0.006) {
-  if (experiment < epsilon && calculated < epsilon) {
-    expect(Math.abs(calculated - experiment) / 1e6).toBeLessThan(epsilon**4)
-  } else {
-    expect(Math.abs(calculated - experiment) / experiment).toBeLessThan(epsilon)
-  }
-}
+import { PreprocessFormulas } from "../../../StatData";
+import { GetDependencies } from "../../../StatDependency";
+import { applyArtifacts, createProxiedStats } from "../TestUtils";
+import formula from "./data";
 
 // Discord ID: 249928411441659905
 // Discord Handle: ZyrenLe#5042
-const ZhongliSetupZyrenLe = {
-  talents: {
-    "auto": 6 - 1,
-    "skill": 7 - 1,
-    "burst": 8 - 1
-  },
-  statFixture: () => {
-    const rawStat = {
-      characterHP: 14695, characterATK: 251, characterDEF: 738, critRate_: 5,
-      characterLevel: 90,
-      characterEle: "geo",
-
-      weaponATK: 23,
-
-      physical_enemyRes_: 10,
-      geo_enemyRes_: 10,
-      enemyLevel: 93,
-
-      hp: 0, hp_: 0, atk: 0, atk_: 0, def: 0, def_: 0,
-      critRate_: 5, critDMG_: 50, enerRech_: 100, eleMas: 0,
-      geo_dmg_: 28.8,
-
-      burst_dmg_: 20,
-    }
-    return { ...rawStat };
-  },
-  targets: [
-    "finalHP", "finalATK", "finalDEF", "critRate_",
-    "physical_normal_hit", "physical_charged_hit", "physical_plunging_hit",
-    "physical_normal_critHit", "physical_charged_critHit", "physical_plunging_critHit",
-    "geo_skill_hit", "geo_burst_hit",
-    "geo_skill_critHit", "geo_burst_critHit",
-  ],
-  equipArtifacts: (stat) => {
-    // Flower of Life
-    stat.hp += 4780
-    stat.def += 39
-    stat.enerRech_ += 14.9
-    stat.critDMG_ += 7.0
-    stat.critRate_ += 6.2
-    // Plume of Death
-    stat.atk += 311
-    stat.def += 39
-    stat.enerRech_ += 5.8
-    stat.critRate_ += 3.5
-    stat.critDMG_ += 35.7
-    // Sand of Eon
-    stat.atk_ += 46.6
-    stat.enerRech_ += 12.3
-    stat.critRate_ += 6.2
-    stat.hp_ += 8.2
-    stat.hp += 538
-    // Goblet of Eonothem
-    stat.hp_ += 46.6
-    stat.enerRech_ += 23.3
-    stat.atk_ += 4.7
-    stat.atk += 31
-    stat.def += 23
-    // Circlet of Logos
-    stat.critRate_ += 31.1
-    stat.hp += 209
-    stat.critDMG_ += 14
-    stat.atk_ += 12.8
-    stat.hp_ += 9.3
-  }
+const baseStats = {
+  characterHP: 14695, characterATK: 251, characterDEF: 738, critRate_: 5,
+  characterLevel: 90, characterEle: "geo",
+  weaponATK: 23, weaponType: "polearm",
+  enemyLevel: 93,
+  
+  geo_dmg_: 28.8, burst_dmg_: 20,
+  
+  talentLevelKeys: Object.freeze({ auto: 6 - 1, skill: 7 - 1, burst: 8 - 1, }),
 }
+const artifacts = [
+  { hp: 4780, def: 39, enerRech_: 14.9, critDMG_: 7.0, critRate_: 6.2 }, // Flower of Life
+  { atk: 311, def: 39, enerRech_: 5.8, critRate_: 3.5, critDMG_: 35.7 }, // Plume of Death
+  { atk_: 46.6, enerRech_: 12.3, critRate_: 6.2, hp_: 8.2, hp: 538 }, // Sand of Eon
+  { hp_: 46.6, enerRech_: 23.3, atk_: 4.7, atk: 31, def: 23 }, // Goblet of Eonothem
+  { critRate_: 31.1, hp: 209, critDMG_: 14, atk_: 12.8, hp_: 9.3 }, // Circlet of Logos
+]
 
-describe(`Testing StatData`, () => {
-  describe(`PreprocessFormulas()`, () => {
-    test('should compute final stats', () => {
-      const { statFixture, targets, equipArtifacts } = ZhongliSetupZyrenLe
-      const stat = statFixture();
-      equipArtifacts(stat);
-      PreprocessFormulas(GetDependencies(stat.modifiers, targets), stat).formula(stat)
+let stats, currentStats = {}
+describe("Testing Zhongli's Formulas", () => {
+  beforeEach(() => {
+    currentStats = { ...stats } // This is fine so long as we don't mutate `modifier` or `talentLevelKeys`
+    PreprocessFormulas(GetDependencies(currentStats.modifiers), currentStats).formula(currentStats)
+  })
 
-      _test(stat.finalHP, 14695 + 14945)
-      _test(stat.finalATK, 274 + 518)
-      _test(stat.finalDEF, 738 + 102)
-      _test(stat.eleMas, 0)
-      _test(stat.critRate_, 52.0)
-      _test(stat.critDMG_, 106.7)
-      _test(stat.enerRech_, 156.4)
-      _test(stat.geo_dmg_, 28.8)
-    })
+  describe("without artifacts", () => {
+    beforeAll(() => { stats = createProxiedStats(baseStats) })
+    afterAll(() => stats = undefined)
 
     // No arti, no crit, no jade shield
-    test('should compute zhongli without artifacts no resonance nocrit', () => {
-      const { talents, statFixture, targets, equipArtifacts } = ZhongliSetupZyrenLe
-      const stat = statFixture();
-      stat.hitMode = "hit",
-      PreprocessFormulas(GetDependencies(stat.modifiers, targets), stat).formula(stat)
+    describe("no crit", () => {
+      beforeAll(() => stats.hitMode = "hit")
+      afterAll(() => delete stats.hitMode)
 
-      // Skills test
-      const formula = characters.zhongli.formula;
-      _test(formula.normal["0HP"](talents.auto, stat)[0](stat), 145, 0.00625)
-      _test(formula.normal["1HP"](talents.auto, stat)[0](stat), 146)
-      _test(formula.normal["2HP"](talents.auto, stat)[0](stat), 159)
-      _test(formula.normal["3HP"](talents.auto, stat)[0](stat), 167)
-      _test(formula.normal["4HP"](talents.auto, stat)[0](stat), 4*110)
-      _test(formula.normal["5HP"](talents.auto, stat)[0](stat), 188)
-      _test(formula.charged.dmgHP(talents.auto, stat)[0](stat), 288)
-      // _test(formula.plunging.dmgHP(talents.auto, stat)[0](stat), NaN)
-      // _test(formula.plunging.lowHP(talents.auto, stat)[0](stat), NaN)
-      _test(formula.plunging.highHP(talents.auto, stat)[0](stat), 375)
-      _test(formula.skill.steeleDMGHP(talents.skill, stat)[0](stat), 198)
-      _test(formula.skill.resonanceDMGHP(talents.skill, stat)[0](stat), 236)
-      _test(formula.skill.holdDMGHP(talents.skill, stat)[0](stat), 349)
-      // _test(formula.skill.shield(talents.skill, stat)[0](stat), NaN)
+      test("hits", () => {
+        const { auto, skill, burst } = currentStats.talentLevelKeys
+        expect(formula.normal["0HP"](auto, currentStats)[0](currentStats)).toApproximate(145)
+        expect(formula.normal["1HP"](auto, currentStats)[0](currentStats)).toApproximate(146)
+        expect(formula.normal["2HP"](auto, currentStats)[0](currentStats)).toApproximate(159)
+        expect(formula.normal["3HP"](auto, currentStats)[0](currentStats)).toApproximate(167)
+        expect(formula.normal["4HP"](auto, currentStats)[0](currentStats)).toApproximate(4*110)
+        expect(formula.normal["5HP"](auto, currentStats)[0](currentStats)).toApproximate(188)
+        expect(formula.charged.dmgHP(auto, currentStats)[0](currentStats)).toApproximate(288)
+        expect(formula.plunging.highHP(auto, currentStats)[0](currentStats)).toApproximate(375)
+        expect(formula.skill.steeleDMGHP(skill, currentStats)[0](currentStats)).toApproximate(198)
+        expect(formula.skill.resonanceDMGHP(skill, currentStats)[0](currentStats)).toApproximate(236)
+        expect(formula.skill.holdDMGHP(skill, currentStats)[0](currentStats)).toApproximate(349)
+        expect(formula.burst.dmgHP(burst, currentStats)[0](currentStats)).toApproximate(4670)
+      })
 
-      // C2 zhongli burst applies jade shield immediately, therefore -20 geo res
-      stat.geo_enemyRes_ -= 20
-      PreprocessFormulas(GetDependencies(stat.modifiers, targets), stat).formula(stat)
-      _test(formula.burst.dmgHP(talents.burst, stat)[0](stat), 4670, 0.155) // Inaccurate, off by ~330
+      describe("with jade shield", () => {
+        beforeAll(() => {
+          stats.geo_enemyRes_ -= 20
+          stats.physical_enemyRes_ -= 20
+        })
+        afterAll(() => {
+          stats.geo_enemyRes_ += 20
+          stats.physical_enemyRes_ += 20
+        })
+
+        test("hits", () => {    
+          const { auto, skill } = currentStats.talentLevelKeys
+          expect(formula.normal["0HP"](auto, currentStats)[0](currentStats)).toApproximate(170)
+          expect(formula.normal["1HP"](auto, currentStats)[0](currentStats)).toApproximate(171)
+          expect(formula.normal["2HP"](auto, currentStats)[0](currentStats)).toApproximate(186)
+          expect(formula.normal["3HP"](auto, currentStats)[0](currentStats)).toApproximate(195)
+          expect(formula.normal["4HP"](auto, currentStats)[0](currentStats)).toApproximate(4*128)
+          expect(formula.normal["5HP"](auto, currentStats)[0](currentStats)).toApproximate(219)
+          expect(formula.charged.dmgHP(auto, currentStats)[0](currentStats)).toApproximate(337)
+          expect(formula.plunging.highHP(auto, currentStats)[0](currentStats)).toApproximate(438)
+          expect(formula.skill.steeleDMGHP(skill, currentStats)[0](currentStats)).toApproximate(231)
+          expect(formula.skill.resonanceDMGHP(skill, currentStats)[0](currentStats)).toApproximate(275)
+          expect(formula.skill.holdDMGHP(skill, currentStats)[0](currentStats)).toApproximate(408)
+        })
+      })
+    })
+    describe("with crit", () => {
+      beforeAll(() => stats.hitMode = "critHit")
+      afterAll(() => delete stats.hitMode)
+
+      test("hits", () => {
+        const { auto } = currentStats.talentLevelKeys
+        expect(formula.normal["2HP"](auto, currentStats)[0](currentStats)).toApproximate(239)
+        expect(formula.charged.dmgHP(auto, currentStats)[0](currentStats)).toApproximate(433)
+      })
+
+      describe("with jade shield", () => {
+        beforeAll(() => {
+          stats.geo_enemyRes_ -= 20
+          stats.physical_enemyRes_ -= 20
+        })
+        afterAll(() => {
+          stats.geo_enemyRes_ += 20
+          stats.physical_enemyRes_ += 20
+        })
+
+        test("hits", () => {
+          const { auto } = currentStats.talentLevelKeys
+          expect(formula.normal["3HP"](auto, currentStats)[0](currentStats)).toApproximate(293)
+          expect(formula.normal["2HP"](auto, currentStats)[0](currentStats)).toApproximate(279)
+          expect(formula.charged.dmgHP(auto, currentStats)[0](currentStats)).toApproximate(505)
+        })
+      })
+    })
+  })
+  describe("with artifacts", () => {
+    beforeAll(() => {
+      stats = createProxiedStats(baseStats)
+      applyArtifacts(stats, artifacts)
+    })
+    afterAll(() => stats = undefined)
+
+    test("overall stats", () => {
+      expect(currentStats.finalHP).toApproximate(14695 + 14945)
+      expect(currentStats.finalATK).toApproximate(274 + 518)
+      expect(currentStats.finalDEF).toApproximate(738 + 102)
+      expect(currentStats.eleMas).toApproximate(0)
+      expect(currentStats.critRate_).toApproximate(52.0)
+      expect(currentStats.critDMG_).toApproximate(106.7)
+      expect(currentStats.enerRech_).toApproximate(156.4)
+      expect(currentStats.geo_dmg_).toApproximate(28.8)  
     })
 
-    // No arti, crit, no jade shield
-    test('should compute zhongli without artifacts no resonance crit', () => {
-      const { talents, statFixture, targets, equipArtifacts } = ZhongliSetupZyrenLe
-      const stat = statFixture();
-      stat.hitMode = "critHit",
-      PreprocessFormulas(GetDependencies(stat.modifiers, targets), stat).formula(stat)
+    describe("no crit", () => {
+      beforeAll(() => stats.hitMode = "hit")
+      afterAll(() => delete stats.hitMode)
 
-      // Skills test
-      const formula = characters.zhongli.formula;
-      // _test(formula.normal["0HP"](talents.auto, stat)[0](stat), NaN)
-      // _test(formula.normal["1HP"](talents.auto, stat)[0](stat), NaN)
-      _test(formula.normal["2HP"](talents.auto, stat)[0](stat), 239)
-      // _test(formula.normal["3HP"](talents.auto, stat)[0](stat), NaN)
-      // _test(formula.normal["4HP"](talents.auto, stat)[0](stat), NaN)
-      // _test(formula.normal["5HP"](talents.auto, stat)[0](stat), NaN)
-      _test(formula.charged.dmgHP(talents.auto, stat)[0](stat), 433)
-      // _test(formula.plunging.dmgHP(talents.auto, stat)[0](stat), NaN)
-      // _test(formula.plunging.lowHP(talents.auto, stat)[0](stat), NaN)
-      // _test(formula.plunging.highHP(talents.auto, stat)[0](stat), NaN)
-      // _test(formula.skill.steeleDMGHP(talents.skill, stat)[0](stat), NaN)
-      // _test(formula.skill.resonanceDMGHP(talents.skill, stat)[0](stat), NaN)
-      // _test(formula.skill.holdDMGHP(talents.skill, stat)[0](stat), NaN)
-      // _test(formula.skill.shield(talents.skill, stat)[0](stat), NaN)
-      // _test(formula.burst.dmgHP(talents.burst, stat)[0](stat), NaN)
+      test("hits", () => {
+        const { auto, skill } = currentStats.talentLevelKeys
+        expect(formula.normal["0HP"](auto, currentStats)[0](currentStats)).toApproximate(342)
+        expect(formula.normal["1HP"](auto, currentStats)[0](currentStats)).toApproximate(344)
+        expect(formula.normal["2HP"](auto, currentStats)[0](currentStats)).toApproximate(382)
+        expect(formula.normal["3HP"](auto, currentStats)[0](currentStats)).toApproximate(404)
+        expect(formula.normal["4HP"](auto, currentStats)[0](currentStats)).toApproximate(4*239)
+        expect(formula.normal["5HP"](auto, currentStats)[0](currentStats)).toApproximate(464)
+        expect(formula.charged.dmgHP(auto, currentStats)[0](currentStats)).toApproximate(754)
+        expect(formula.plunging.highHP(auto, currentStats)[0](currentStats)).toApproximate(1004)
+        expect(formula.skill.steeleDMGHP(skill, currentStats)[0](currentStats)).toApproximate(433)
+        expect(formula.skill.resonanceDMGHP(skill, currentStats)[0](currentStats)).toApproximate(542)
+        expect(formula.skill.holdDMGHP(skill, currentStats)[0](currentStats)).toApproximate(870)
+      })
+
+      describe("with jade shield", () => {
+        beforeAll(() => {
+          stats.geo_enemyRes_ -= 20
+          stats.physical_enemyRes_ -= 20
+        })
+        afterAll(() => {
+          stats.geo_enemyRes_ += 20
+          stats.physical_enemyRes_ += 20
+        })
+
+        test("hits", () => {
+          const { burst } = currentStats.talentLevelKeys
+          expect(formula.burst.dmgHP(burst, currentStats)[0](currentStats)).toApproximate(12635)
+        })
+      })  
     })
+    describe("with crit", () => {
+      beforeAll(() => stats.hitMode = "critHit")
+      afterAll(() => delete stats.hitMode)
+      
+      test("hits", () => {  
+        const { auto, skill } = currentStats.talentLevelKeys
+        expect(formula.normal["0HP"](auto, currentStats)[0](currentStats)).toApproximate(707)
+        expect(formula.normal["1HP"](auto, currentStats)[0](currentStats)).toApproximate(711)
+        expect(formula.normal["2HP"](auto, currentStats)[0](currentStats)).toApproximate(790)
+        expect(formula.normal["3HP"](auto, currentStats)[0](currentStats)).toApproximate(836)
+        expect(formula.normal["4HP"](auto, currentStats)[0](currentStats)).toApproximate(4*494)
+        expect(formula.normal["5HP"](auto, currentStats)[0](currentStats)).toApproximate(959)
+        expect(formula.charged.dmgHP(auto, currentStats)[0](currentStats)).toApproximate(1560)
+        expect(formula.plunging.highHP(auto, currentStats)[0](currentStats)).toApproximate(2077)
+        expect(formula.skill.steeleDMGHP(skill, currentStats)[0](currentStats)).toApproximate(895)
+        expect(formula.skill.resonanceDMGHP(skill, currentStats)[0](currentStats)).toApproximate(1121)
+        expect(formula.skill.holdDMGHP(skill, currentStats)[0](currentStats)).toApproximate(1799)
+      })
+  
+      describe("with jade shield", () => {
+        beforeAll(() => {
+          stats.geo_enemyRes_ -= 20
+          stats.physical_enemyRes_ -= 20
+        })
+        afterAll(() => {
+          stats.geo_enemyRes_ += 20
+          stats.physical_enemyRes_ += 20
+        })
 
-    // No arti, no crit, with jade shield
-    test('should compute zhongli without artifacts with jade shield nocrit', () => {
-      const { talents, statFixture, targets, equipArtifacts } = ZhongliSetupZyrenLe
-      const stat = statFixture();
-      stat.hitMode = "hit",
-      // due to jade shield shred
-      stat.geo_enemyRes_ -= 20
-      stat.physical_enemyRes_ -= 20
-      PreprocessFormulas(GetDependencies(stat.modifiers, targets), stat).formula(stat)
-
-      // Skills test
-      const formula = characters.zhongli.formula;
-      _test(formula.normal["0HP"](talents.auto, stat)[0](stat), 170)
-      _test(formula.normal["1HP"](talents.auto, stat)[0](stat), 171)
-      _test(formula.normal["2HP"](talents.auto, stat)[0](stat), 186)
-      _test(formula.normal["3HP"](talents.auto, stat)[0](stat), 195)
-      _test(formula.normal["4HP"](talents.auto, stat)[0](stat), 4*128)
-      _test(formula.normal["5HP"](talents.auto, stat)[0](stat), 219)
-      _test(formula.charged.dmgHP(talents.auto, stat)[0](stat), 337)
-      // _test(formula.plunging.dmgHP(talents.auto, stat)[0](stat), NaN)
-      // _test(formula.plunging.lowHP(talents.auto, stat)[0](stat), NaN)
-      _test(formula.plunging.highHP(talents.auto, stat)[0](stat), 438)
-      _test(formula.skill.steeleDMGHP(talents.skill, stat)[0](stat), 231)
-      _test(formula.skill.resonanceDMGHP(talents.skill, stat)[0](stat), 275)
-      _test(formula.skill.holdDMGHP(talents.skill, stat)[0](stat), 408)
-      // _test(formula.skill.shield(talents.skill, stat)[0](stat), NaN)
-
-      _test(formula.burst.dmgHP(talents.burst, stat)[0](stat), 4670, 0.155) // Inaccurate, off by ~330
-    })
-
-    // No arti, crit, with jade shield
-    test('should compute zhongli without artifacts no resonance crit', () => {
-      const { talents, statFixture, targets, equipArtifacts } = ZhongliSetupZyrenLe
-      const stat = statFixture();
-      stat.hitMode = "critHit",
-      // due to jade shield shred
-      stat.geo_enemyRes_ -= 20
-      stat.physical_enemyRes_ -= 20
-      PreprocessFormulas(GetDependencies(stat.modifiers, targets), stat).formula(stat)
-
-      // Skills test
-      const formula = characters.zhongli.formula;
-      // _test(formula.normal["0HP"](talents.auto, stat)[0](stat), NaN)
-      // _test(formula.normal["1HP"](talents.auto, stat)[0](stat), NaN)
-      _test(formula.normal["2HP"](talents.auto, stat)[0](stat), 279)
-      _test(formula.normal["3HP"](talents.auto, stat)[0](stat), 293)
-      // _test(formula.normal["4HP"](talents.auto, stat)[0](stat), NaN)
-      // _test(formula.normal["5HP"](talents.auto, stat)[0](stat), NaN)
-      _test(formula.charged.dmgHP(talents.auto, stat)[0](stat), 505)
-      // _test(formula.plunging.dmgHP(talents.auto, stat)[0](stat), NaN)
-      // _test(formula.plunging.lowHP(talents.auto, stat)[0](stat), NaN)
-      // _test(formula.plunging.highHP(talents.auto, stat)[0](stat), NaN)
-      // _test(formula.skill.steeleDMGHP(talents.skill, stat)[0](stat), NaN)
-      // _test(formula.skill.resonanceDMGHP(talents.skill, stat)[0](stat), NaN)
-      // _test(formula.skill.holdDMGHP(talents.skill, stat)[0](stat), NaN)
-      // _test(formula.skill.shield(talents.skill, stat)[0](stat), NaN)
-
-      // _test(formula.burst.dmgHP(talents.burst, stat)[0](stat), NaN)
-    })
-
-    // Arti, no crit, no jade shield
-    test('should compute zhongli with artifacts no resonance nocrit', () => {
-      const { talents, statFixture, targets, equipArtifacts } = ZhongliSetupZyrenLe
-      const stat = statFixture();
-      equipArtifacts(stat)
-      stat.hitMode = "hit",
-      PreprocessFormulas(GetDependencies(stat.modifiers, targets), stat).formula(stat)
-
-      // Skills test
-      const formula = characters.zhongli.formula;
-      _test(formula.normal["0HP"](talents.auto, stat)[0](stat), 342)
-      _test(formula.normal["1HP"](talents.auto, stat)[0](stat), 344)
-      _test(formula.normal["2HP"](talents.auto, stat)[0](stat), 382)
-      _test(formula.normal["3HP"](talents.auto, stat)[0](stat), 404)
-      _test(formula.normal["4HP"](talents.auto, stat)[0](stat), 4*239)
-      _test(formula.normal["5HP"](talents.auto, stat)[0](stat), 464)
-      _test(formula.charged.dmgHP(talents.auto, stat)[0](stat), 754)
-      // _test(formula.plunging.dmgHP(talents.auto, stat)[0](stat), NaN)
-      // _test(formula.plunging.lowHP(talents.auto, stat)[0](stat), NaN)
-      _test(formula.plunging.highHP(talents.auto, stat)[0](stat), 1004)
-      _test(formula.skill.steeleDMGHP(talents.skill, stat)[0](stat), 433)
-      _test(formula.skill.resonanceDMGHP(talents.skill, stat)[0](stat), 542)
-      _test(formula.skill.holdDMGHP(talents.skill, stat)[0](stat), 870)
-      // _test(formula.skill.shield(talents.skill, stat)[0](stat), NaN)
-
-      // C2 zhongli burst applies jade shield immediately, therefore -20 geo res
-      stat.geo_enemyRes_ -= 20
-      PreprocessFormulas(GetDependencies(stat.modifiers, targets), stat).formula(stat)
-      _test(formula.burst.dmgHP(talents.burst, stat)[0](stat), 12635, 0.27) // Inaccurate, off by ~330
-    })
-
-    // Arti, crit, no jade shield
-    test('should compute zhongli with artifacts no resonance crit', () => {
-      const { talents, statFixture, targets, equipArtifacts } = ZhongliSetupZyrenLe
-      const stat = statFixture();
-      equipArtifacts(stat)
-      stat.hitMode = "critHit",
-      PreprocessFormulas(GetDependencies(stat.modifiers, targets), stat).formula(stat)
-
-      // Skills test
-      const formula = characters.zhongli.formula;
-      _test(formula.normal["0HP"](talents.auto, stat)[0](stat), 707)
-      _test(formula.normal["1HP"](talents.auto, stat)[0](stat), 711)
-      _test(formula.normal["2HP"](talents.auto, stat)[0](stat), 790)
-      _test(formula.normal["3HP"](talents.auto, stat)[0](stat), 836)
-      _test(formula.normal["4HP"](talents.auto, stat)[0](stat), 4*494)
-      _test(formula.normal["5HP"](talents.auto, stat)[0](stat), 959)
-      _test(formula.charged.dmgHP(talents.auto, stat)[0](stat), 1560)
-      // _test(formula.plunging.dmgHP(talents.auto, stat)[0](stat), NaN)
-      // _test(formula.plunging.lowHP(talents.auto, stat)[0](stat), NaN)
-      _test(formula.plunging.highHP(talents.auto, stat)[0](stat), 2077)
-      _test(formula.skill.steeleDMGHP(talents.skill, stat)[0](stat), 895)
-      _test(formula.skill.resonanceDMGHP(talents.skill, stat)[0](stat), 1121)
-      _test(formula.skill.holdDMGHP(talents.skill, stat)[0](stat), 1799)
-      // _test(formula.skill.shield(talents.skill, stat)[0](stat), NaN)
-
-      // C2 zhongli burst applies jade shield immediately, therefore -20 geo res
-      stat.geo_enemyRes_ -= 20
-      PreprocessFormulas(GetDependencies(stat.modifiers, targets), stat).formula(stat)
-      _test(formula.burst.dmgHP(talents.burst, stat)[0](stat), 26118, 0.27) // Inaccurate, off by ~330
+        test("hits", () => {
+          const { burst } = currentStats.talentLevelKeys
+          expect(formula.burst.dmgHP(burst, currentStats)[0](currentStats)).toApproximate(26118)
+        })
+      })
     })
   })
 })
-
-
