@@ -110,9 +110,10 @@ export default class ArtifactDisplay extends React.Component {
     else locationDisplay = <b>{Character.getName(filterLocation)}</b>
     let artifacts = Object.values(artifactDB).filter(art => {
       if (filterLocation) {
-        if (filterLocation === "Inventory" && art.location) return false;
-        else if (filterLocation === "Equipped" && !art.location) return false;
-        else if (filterLocation !== art.location) return false;
+        if (filterLocation === "Inventory" && !art.location) {}
+        else if (filterLocation === "Equipped" && art.location) {}
+        else if (filterLocation === art.location) {}
+        else return false;
       }
       if (filterArtSetKey && filterArtSetKey !== art.setKey) return false;
       if (filterSlotKey && filterSlotKey !== art.slotKey) return false
