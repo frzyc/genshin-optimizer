@@ -112,6 +112,7 @@ export default class ArtifactDisplay extends React.Component {
       if (filterLocation) {
         if (filterLocation === "Inventory" && art.location) return false;
         else if (filterLocation === "Equipped" && !art.location) return false;
+        else if (filterLocation !== art.location) return false;
       }
       if (filterArtSetKey && filterArtSetKey !== art.setKey) return false;
       if (filterSlotKey && filterSlotKey !== art.slotKey) return false
