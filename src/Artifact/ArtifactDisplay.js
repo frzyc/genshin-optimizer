@@ -106,11 +106,12 @@ export default class ArtifactDisplay extends React.Component {
     let locationDisplay
     if (!filterLocation) locationDisplay = <span>Location: Any</span>
     else if (filterLocation === "Inventory") locationDisplay = <span>Location: Inventory</span>
+    else if (filterLocation === "Equipped") locationDisplay = <span>Location: Equipped</span>
     else locationDisplay = <b>{Character.getName(filterLocation)}</b>
     let artifacts = Object.values(artifactDB).filter(art => {
       if (filterLocation) {
         if (filterLocation === "Inventory" && art.location) return false;
-        else if (filterLocation !== "Inventory" && filterLocation !== art.location) return false;
+        else if (filterLocation === "Equipped" && !art.location) return false;
       }
       if (filterArtSetKey && filterArtSetKey !== art.setKey) return false;
       if (filterSlotKey && filterSlotKey !== art.slotKey) return false
@@ -290,6 +291,7 @@ export default class ArtifactDisplay extends React.Component {
                   <Dropdown.Menu>
                     <Dropdown.Item onClick={() => this.setState({ filterLocation: "" })}>Unselect</Dropdown.Item>
                     <Dropdown.Item onClick={() => this.setState({ filterLocation: "Inventory" })}>Inventory</Dropdown.Item>
+                    <Dropdown.Item onClick={() => this.setState({ filterLocation: "Equipped" })}>Currently Equipped</Dropdown.Item>
                     <Dropdown.Divider />
                     <CharacterSelectionDropdownList onSelect={cid => this.setState({ filterLocation: cid })} />
                   </Dropdown.Menu>
