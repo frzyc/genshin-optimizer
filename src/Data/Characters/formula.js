@@ -13,7 +13,7 @@ import hutao from './Hu Tao/data'
 // import kaeya from './Kaeya/data'
 import keqing from './Keqing/data'
 // import klee from './Klee/data'
-// import lisa from './Lisa/data'
+import lisa from './Lisa/data'
 import mona from './Mona/data'
 import ningguang from './Ningguang/data'
 import noelle from './Noelle/data'
@@ -45,7 +45,7 @@ const formula = {
   // kaeya,
   keqing,
   // klee,
-  // lisa,
+  lisa,
   mona,
   ningguang,
   noelle,
