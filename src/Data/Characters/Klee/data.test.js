@@ -23,100 +23,100 @@ const artifacts = [
   { eleMas: 80 }, // Wanderer's Troupe Set
 ]
 
-let stats, currentStats = {}
+let setupStats, stats = {}
 describe("Testing Klee's Formulas", () => {
   beforeEach(() => {
-    currentStats = { ...stats } // This is fine so long as we don't mutate `modifier` or `talentLevelKeys`
-    PreprocessFormulas(GetDependencies(currentStats.modifiers), currentStats).formula(currentStats)
+    stats = { ...setupStats } // This is fine so long as we don't mutate `modifier` or `talentLevelKeys`
+    PreprocessFormulas(GetDependencies(stats.modifiers), stats).formula(stats)
   })
 
   describe("with artifacts", () => {
     beforeAll(() => {
-      stats = createProxiedStats(baseStats)
-      applyArtifacts(stats, artifacts)
+      setupStats = createProxiedStats(baseStats)
+      applyArtifacts(setupStats, artifacts)
     })
-    afterAll(() => stats = undefined)
+    afterAll(() => setupStats = undefined)
 
     test("overall stats", () => {
-      expect(currentStats.finalHP).toApproximate(12527)
-      expect(currentStats.finalATK).toApproximate(1186)
-      expect(currentStats.finalDEF).toApproximate(700)
-      expect(currentStats.eleMas).toApproximate(319)
-      expect(currentStats.critRate_).toApproximate(10.3)
-      expect(currentStats.critDMG_).toApproximate(55.6)
-      expect(currentStats.enerRech_).toApproximate(159.5)
+      expect(stats.finalHP).toApproximate(12527)
+      expect(stats.finalATK).toApproximate(1186)
+      expect(stats.finalDEF).toApproximate(700)
+      expect(stats.eleMas).toApproximate(319)
+      expect(stats.critRate_).toApproximate(10.3)
+      expect(stats.critDMG_).toApproximate(55.6)
+      expect(stats.enerRech_).toApproximate(159.5)
     })
     test("reactions", () => {
-      expect(currentStats.overloaded_hit).toApproximate(2986, NaN) // TODO: Check the overloaded calculation
+      expect(stats.overloaded_hit).toApproximate(2986, NaN) // TODO: Check the overloaded calculation
     })
 
     describe("no crit", () => {
-      beforeAll(() => stats.hitMode = "hit")
-      afterAll(() => delete stats.hitMode)
+      beforeAll(() => setupStats.hitMode = "hit")
+      afterAll(() => delete setupStats.hitMode)
 
       test("hits", () => {
-        const { auto, skill, burst } = currentStats.talentLevelKeys
-        expect(formula.normal[0](auto, currentStats)[0](currentStats)).toApproximate(635)
-        expect(formula.normal[1](auto, currentStats)[0](currentStats)).toApproximate(549)
-        expect(formula.normal[2](auto, currentStats)[0](currentStats)).toApproximate(791)
-        expect(formula.charged.dmg(auto, currentStats)[0](currentStats)).toApproximate(1385)
-        expect(formula.skill.jumpyDmg(skill, currentStats)[0](currentStats)).toApproximate(838)
-        expect(formula.skill.mineDmg(skill, currentStats)[0](currentStats)).toApproximate(288)
-        expect(formula.burst.dmg(burst, currentStats)[0](currentStats)).toApproximate(375)
+        const { auto, skill, burst } = stats.talentLevelKeys
+        expect(formula.normal[0](auto, stats)[0](stats)).toApproximate(635)
+        expect(formula.normal[1](auto, stats)[0](stats)).toApproximate(549)
+        expect(formula.normal[2](auto, stats)[0](stats)).toApproximate(791)
+        expect(formula.charged.dmg(auto, stats)[0](stats)).toApproximate(1385)
+        expect(formula.skill.jumpyDmg(skill, stats)[0](stats)).toApproximate(838)
+        expect(formula.skill.mineDmg(skill, stats)[0](stats)).toApproximate(288)
+        expect(formula.burst.dmg(burst, stats)[0](stats)).toApproximate(375)
       })
       describe("with explosive spark", () => {
-        beforeAll(() => stats.charged_dmg_ += 50)
-        afterAll(() => stats.charged_dmg_ -= 50)
+        beforeAll(() => setupStats.charged_dmg_ += 50)
+        afterAll(() => setupStats.charged_dmg_ -= 50)
 
         test("hits", () => {
-          const { auto } = currentStats.talentLevelKeys
-          expect(formula.charged.dmg(auto, currentStats)[0](currentStats)).toApproximate(1955)
+          const { auto } = stats.talentLevelKeys
+          expect(formula.charged.dmg(auto, stats)[0](stats)).toApproximate(1955)
         })
       })
 
       describe("with vaporize", () => {
-        beforeAll(() => stats.reactionMode = "pyro_vaporize")
-        afterAll(() => delete stats.reactionMode)
+        beforeAll(() => setupStats.reactionMode = "pyro_vaporize")
+        afterAll(() => delete setupStats.reactionMode)
 
         test("hits", () => {
-          const { auto, skill, burst } = currentStats.talentLevelKeys
-          expect(formula.normal[0](auto, currentStats)[0](currentStats)).toApproximate(1444)
-          expect(formula.charged.dmg(auto, currentStats)[0](currentStats)).toApproximate(3149)
-          expect(formula.skill.jumpyDmg(skill, currentStats)[0](currentStats)).toApproximate(1905)
-          expect(formula.burst.dmg(burst, currentStats)[0](currentStats)).toApproximate(853)
+          const { auto, skill, burst } = stats.talentLevelKeys
+          expect(formula.normal[0](auto, stats)[0](stats)).toApproximate(1444)
+          expect(formula.charged.dmg(auto, stats)[0](stats)).toApproximate(3149)
+          expect(formula.skill.jumpyDmg(skill, stats)[0](stats)).toApproximate(1905)
+          expect(formula.burst.dmg(burst, stats)[0](stats)).toApproximate(853)
         })
       })
       describe("with melt", () => {
-        beforeAll(() => stats.reactionMode = "pyro_melt")
-        afterAll(() => delete stats.reactionMode)
+        beforeAll(() => setupStats.reactionMode = "pyro_melt")
+        afterAll(() => delete setupStats.reactionMode)
 
         test("hits", () => {
-          const { auto } = currentStats.talentLevelKeys
-          expect(formula.normal[0](auto, currentStats)[0](currentStats)).toApproximate(1925)
-          expect(formula.charged.dmg(auto, currentStats)[0](currentStats)).toApproximate(4199)
+          const { auto } = stats.talentLevelKeys
+          expect(formula.normal[0](auto, stats)[0](stats)).toApproximate(1925)
+          expect(formula.charged.dmg(auto, stats)[0](stats)).toApproximate(4199)
         })
       })
     })
     describe("with crit", () => {
-      beforeAll(() => stats.hitMode = "critHit" )
-      afterAll(() => delete stats.hitMode)
+      beforeAll(() => setupStats.hitMode = "critHit" )
+      afterAll(() => delete setupStats.hitMode)
 
       test("hits", () => {
-        const { auto, skill, burst } = currentStats.talentLevelKeys
-        expect(formula.normal[0](auto, currentStats)[0](currentStats)).toApproximate(988)
-        expect(formula.normal[1](auto, currentStats)[0](currentStats)).toApproximate(855)
-        expect(formula.normal[2](auto, currentStats)[0](currentStats)).toApproximate(1232)
-        expect(formula.skill.jumpyDmg(skill, currentStats)[0](currentStats)).toApproximate(1304)
-        expect(formula.burst.dmg(burst, currentStats)[0](currentStats)).toApproximate(584)
+        const { auto, skill, burst } = stats.talentLevelKeys
+        expect(formula.normal[0](auto, stats)[0](stats)).toApproximate(988)
+        expect(formula.normal[1](auto, stats)[0](stats)).toApproximate(855)
+        expect(formula.normal[2](auto, stats)[0](stats)).toApproximate(1232)
+        expect(formula.skill.jumpyDmg(skill, stats)[0](stats)).toApproximate(1304)
+        expect(formula.burst.dmg(burst, stats)[0](stats)).toApproximate(584)
       })
 
       describe("with explosive spark", () => {
-        beforeAll(() => stats.charged_dmg_ += 50)
-        afterAll(() => stats.charged_dmg_ -= 50)
+        beforeAll(() => setupStats.charged_dmg_ += 50)
+        afterAll(() => setupStats.charged_dmg_ -= 50)
 
         test("hits", () => {
-          const { auto } = currentStats.talentLevelKeys
-          expect(formula.charged.dmg(auto, currentStats)[0](currentStats)).toApproximate(3042)
+          const { auto } = stats.talentLevelKeys
+          expect(formula.charged.dmg(auto, stats)[0](stats)).toApproximate(3042)
         })
       })
     })
