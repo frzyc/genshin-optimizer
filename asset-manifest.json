@@ -9,10 +9,10 @@
     "static/js/3.a3727753.chunk.js": "/genshin-optimizer/static/js/3.a3727753.chunk.js",
     "static/js/3.a3727753.chunk.js.map": "/genshin-optimizer/static/js/3.a3727753.chunk.js.map",
     "main.css": "/genshin-optimizer/static/css/main.00c18839.chunk.css",
-    "main.js": "/genshin-optimizer/static/js/main.1edbe1cb.chunk.js",
-    "main.js.map": "/genshin-optimizer/static/js/main.1edbe1cb.chunk.js.map",
-    "runtime-main.js": "/genshin-optimizer/static/js/runtime-main.2298169d.js",
-    "runtime-main.js.map": "/genshin-optimizer/static/js/runtime-main.2298169d.js.map",
+    "main.js": "/genshin-optimizer/static/js/main.f061b8d6.chunk.js",
+    "main.js.map": "/genshin-optimizer/static/js/main.f061b8d6.chunk.js.map",
+    "runtime-main.js": "/genshin-optimizer/static/js/runtime-main.cb8ea2bb.js",
+    "runtime-main.js.map": "/genshin-optimizer/static/js/runtime-main.cb8ea2bb.js.map",
     "static/js/6.a0401db2.chunk.js": "/genshin-optimizer/static/js/6.a0401db2.chunk.js",
     "static/js/6.a0401db2.chunk.js.map": "/genshin-optimizer/static/js/6.a0401db2.chunk.js.map",
     "static/js/7.3a1466d6.chunk.js": "/genshin-optimizer/static/js/7.3a1466d6.chunk.js",
@@ -31,8 +31,8 @@
     "static/js/13.ccd40ca0.chunk.js.map": "/genshin-optimizer/static/js/13.ccd40ca0.chunk.js.map",
     "static/js/14.1413fb05.chunk.js": "/genshin-optimizer/static/js/14.1413fb05.chunk.js",
     "static/js/14.1413fb05.chunk.js.map": "/genshin-optimizer/static/js/14.1413fb05.chunk.js.map",
-    "static/js/15.cbe21863.chunk.js": "/genshin-optimizer/static/js/15.cbe21863.chunk.js",
-    "static/js/15.cbe21863.chunk.js.map": "/genshin-optimizer/static/js/15.cbe21863.chunk.js.map",
+    "static/js/15.2b4a1836.chunk.js": "/genshin-optimizer/static/js/15.2b4a1836.chunk.js",
+    "static/js/15.2b4a1836.chunk.js.map": "/genshin-optimizer/static/js/15.2b4a1836.chunk.js.map",
     "static/js/16.dad5e4f9.chunk.js": "/genshin-optimizer/static/js/16.dad5e4f9.chunk.js",
     "static/js/16.dad5e4f9.chunk.js.map": "/genshin-optimizer/static/js/16.dad5e4f9.chunk.js.map",
     "static/js/17.414c2885.chunk.js": "/genshin-optimizer/static/js/17.414c2885.chunk.js",
@@ -504,6 +504,7 @@
     "static/media/Weapon_Dragonspine_Spear.a9e18e36.png": "/genshin-optimizer/static/media/Weapon_Dragonspine_Spear.a9e18e36.png",
     "static/media/Weapon_Dull_Blade.f5de06e8.png": "/genshin-optimizer/static/media/Weapon_Dull_Blade.f5de06e8.png",
     "static/media/Weapon_Ebony_Bow.f89cc3cc.png": "/genshin-optimizer/static/media/Weapon_Ebony_Bow.f89cc3cc.png",
+    "static/media/Weapon_Elegy_for_the_End.73b73f92.png": "/genshin-optimizer/static/media/Weapon_Elegy_for_the_End.73b73f92.png",
     "static/media/Weapon_Emerald_Orb.4008f986.png": "/genshin-optimizer/static/media/Weapon_Emerald_Orb.4008f986.png",
     "static/media/Weapon_Eye_of_Perception.907a0288.png": "/genshin-optimizer/static/media/Weapon_Eye_of_Perception.907a0288.png",
     "static/media/Weapon_Favonius_Codex.6e201cfa.png": "/genshin-optimizer/static/media/Weapon_Favonius_Codex.6e201cfa.png",
@@ -600,9 +601,9 @@
     "static/media/tools.2724d338.png": "/genshin-optimizer/static/media/tools.2724d338.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.2298169d.js",
+    "static/js/runtime-main.cb8ea2bb.js",
     "static/js/6.a0401db2.chunk.js",
     "static/css/main.00c18839.chunk.css",
-    "static/js/main.1edbe1cb.chunk.js"
+    "static/js/main.f061b8d6.chunk.js"
   ]
 }
