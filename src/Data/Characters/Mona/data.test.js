@@ -10,10 +10,8 @@ const baseStats = {
   enemyLevel: 76,
 
   enerRech_: 100 + 24 + 37.9,
-
-  // C1
-  electrocharged_dmg_: 15, vaporized_dmg_: 15, hydro_swirl_dmg_: 15,
   modifiers: Object.freeze({ hydro_dmg_: { enerRech_: 0.2 } }),
+
   talentLevelKeys: Object.freeze({ auto: 6 - 1, skill: 7 - 1, burst: 6 - 1 }),
 }
 const artifacts = [

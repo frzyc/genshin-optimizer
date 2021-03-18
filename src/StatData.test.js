@@ -1,5 +1,5 @@
-import { PreprocessFormulas } from "./StatData"
-import { GetDependencies } from "./StatDependency"
+import { PreprocessFormulas, Formulas, StatData } from "./StatData"
+import { FormulaText } from "./Stat"
 
 describe(`Testing StatData`, () => {
   describe(`PreprocessFormulas()`, () => {
@@ -44,6 +44,11 @@ describe(`Testing StatData`, () => {
       const { initialStats, formula } = PreprocessFormulas(["depVal1", "depval2", "testVal"], stat)
       formula(initialStats)
       expect(initialStats).toHaveProperty("testVal", 10 + 15 * 2 + 20 * 3);
+    })
+    test("should match Stat", () => {
+      //checks for development
+      expect(Object.keys(Formulas)).toEqual(expect.arrayContaining(Object.keys(FormulaText)))
+      expect(Object.keys(StatData)).toEqual(expect.arrayContaining(Object.keys(Formulas)))
     })
   })
 })
