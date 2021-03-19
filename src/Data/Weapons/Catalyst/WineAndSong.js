@@ -1,26 +1,25 @@
 import WineAndSong from './Weapon_Wine_and_Song.png'
-const refinementAtkVals = [8, 10, 12, 14, 16]
-const refinementMoveVals = [3, 3.5, 4, 4.5, 5]
+const refinementSprintVals = [14, 16, 18, 20, 22]
+const refinementATKVals = [20, 25, 30, 35, 40]
 const weapon = {
   name: "Wine and Song",
   weaponType: "catalyst",
   img: WineAndSong,
   rarity: 4,
   passiveName: "Wind in the Square",
-  passiveDescription: (refineIndex) => `For every character in the party who hails from Mondstadt, the character who equips this weapon gains ${refinementAtkVals[refineIndex]}% ATK increase and ${refinementMoveVals[refineIndex]}% Movement SPD increase.`,
+  passiveDescription: (refineIndex) => `Hitting an opponent with a Normal Attack decreases the Stamina consumption of Sprint or Alternate sprint by ${refinementSprintVals[refineIndex]}% for 5s. Additionally, using a Sprint or Alternate Sprint ability increases ATK by ${refinementATKVals[refineIndex]}% for 5s.`,
   description: "A songbook from the bygone aristocratic era, whose composer has become forgotten. It chronicles the tale of a certain heroic outlaw.",
   baseStats: {
-    main: [42, NaN, NaN, NaN, 109, 135, NaN, NaN, NaN, 205, 231, NaN, 266, 292, NaN, 327, 353, NaN, 388, 414, NaN, 449, 475, NaN, 510],
+    main: [44, 59, 79, 99, 119, 144, 165, 185, 205, 226, 252, 273, 293, 319, 340, 361, 387, 408, 429, 455, 476, 497, 523, 544, 565],
     subStatKey: "enerRech_",
-    sub: [10, NaN, NaN, NaN, 17.7, 17.7, NaN, NaN, NaN, 25.8, 25.8, NaN, 29.8, 29.8, NaN, 33.8, 33.8, NaN, 40.9, 40.9, NaN, 41.9, 41.9, NaN, 45.9],
+    sub: [6.7, 7.7, 9.1, 10.4, 11.8, 11.8, 13.1, 14.5, 15.8, 17.2, 17.2, 18.5, 19.9, 19.9, 21.2, 22.6, 22.6, 23.9, 25.2, 25.2, 26.6, 27.9, 27.9, 29.3, 30.6],
   },
   conditional: {
     type: "weapon",
     sourceKey: "WineAndSong",
-    maxStack: 4,
+    maxStack: 1,
     stats: (refineIndex) => ({
-      atk_: refinementAtkVals[refineIndex],
-      moveSPD_: refinementMoveVals[refineIndex],
+      atk_: refinementATKVals[refineIndex],//TODO: stamine decrease for sprint
     })
   }
 }

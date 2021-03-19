@@ -20,6 +20,7 @@ import SkywardHarp from './Bow/SkywardHarp'
 import AmosBow from './Bow/AmosBow'
 import DreamsOfDragonfell from './Bow/DreamsOfDragonfell'
 import ElegyForTheEnd from './Bow/ElegyForTheEnd'
+import WindblumeOde from './Bow/WindblumeOde'
 const bow = {
   HuntersBow,
   SeasonedHuntersBow,
@@ -43,5 +44,6 @@ const bow = {
   AmosBow,
   DreamsOfDragonfell,
   ElegyForTheEnd,
+  WindblumeOde,
 }
 export default bow
