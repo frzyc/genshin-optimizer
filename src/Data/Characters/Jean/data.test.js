@@ -106,7 +106,7 @@ describe("Testing Jean's Formulas", () => {
           expect(formula.burst.heal(burst, stats)[0](stats)).toApproximate(13388)
           expect(formula.burst.regen(burst, stats)[0](stats)).toApproximate(1338)
 
-          expect(formula.passive2.heal(undefined, stats)[0](stats)).toApproximate(443)
+          expect(formula.passive1.heal(undefined, stats)[0](stats)).toApproximate(443)
         })
       })
     })

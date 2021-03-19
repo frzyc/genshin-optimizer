@@ -160,7 +160,7 @@ const char = {
         fields: [(con, a) => a >= 4 && {
           text: "Heal per Auto",
           formulaText: (tlvl, stats) => <span>15% {Stat.printStat("finalATK", stats)} * {Stat.printStat("heal_multi", stats)}</span>,
-          formula: formula.passive2.heal,
+          formula: formula.passive1.heal,
           variant: "success",
         }]
       }],
