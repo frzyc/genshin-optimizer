@@ -9,10 +9,10 @@
     "static/js/3.a3727753.chunk.js": "/genshin-optimizer/static/js/3.a3727753.chunk.js",
     "static/js/3.a3727753.chunk.js.map": "/genshin-optimizer/static/js/3.a3727753.chunk.js.map",
     "main.css": "/genshin-optimizer/static/css/main.00c18839.chunk.css",
-    "main.js": "/genshin-optimizer/static/js/main.b80e4752.chunk.js",
-    "main.js.map": "/genshin-optimizer/static/js/main.b80e4752.chunk.js.map",
-    "runtime-main.js": "/genshin-optimizer/static/js/runtime-main.7257b6d4.js",
-    "runtime-main.js.map": "/genshin-optimizer/static/js/runtime-main.7257b6d4.js.map",
+    "main.js": "/genshin-optimizer/static/js/main.6d48ac66.chunk.js",
+    "main.js.map": "/genshin-optimizer/static/js/main.6d48ac66.chunk.js.map",
+    "runtime-main.js": "/genshin-optimizer/static/js/runtime-main.e067a1db.js",
+    "runtime-main.js.map": "/genshin-optimizer/static/js/runtime-main.e067a1db.js.map",
     "static/js/6.a0401db2.chunk.js": "/genshin-optimizer/static/js/6.a0401db2.chunk.js",
     "static/js/6.a0401db2.chunk.js.map": "/genshin-optimizer/static/js/6.a0401db2.chunk.js.map",
     "static/js/7.3a1466d6.chunk.js": "/genshin-optimizer/static/js/7.3a1466d6.chunk.js",
@@ -31,8 +31,8 @@
     "static/js/13.ccd40ca0.chunk.js.map": "/genshin-optimizer/static/js/13.ccd40ca0.chunk.js.map",
     "static/js/14.1b0d9b12.chunk.js": "/genshin-optimizer/static/js/14.1b0d9b12.chunk.js",
     "static/js/14.1b0d9b12.chunk.js.map": "/genshin-optimizer/static/js/14.1b0d9b12.chunk.js.map",
-    "static/js/15.2b1c64df.chunk.js": "/genshin-optimizer/static/js/15.2b1c64df.chunk.js",
-    "static/js/15.2b1c64df.chunk.js.map": "/genshin-optimizer/static/js/15.2b1c64df.chunk.js.map",
+    "static/js/15.fb5162b4.chunk.js": "/genshin-optimizer/static/js/15.fb5162b4.chunk.js",
+    "static/js/15.fb5162b4.chunk.js.map": "/genshin-optimizer/static/js/15.fb5162b4.chunk.js.map",
     "static/js/16.dad5e4f9.chunk.js": "/genshin-optimizer/static/js/16.dad5e4f9.chunk.js",
     "static/js/16.dad5e4f9.chunk.js.map": "/genshin-optimizer/static/js/16.dad5e4f9.chunk.js.map",
     "static/js/17.4a5c7bc0.chunk.js": "/genshin-optimizer/static/js/17.4a5c7bc0.chunk.js",
@@ -598,7 +598,8 @@
     "static/media/Weapon_White_Iron_Greatsword.eda6295d.png": "/genshin-optimizer/static/media/Weapon_White_Iron_Greatsword.eda6295d.png",
     "static/media/Weapon_White_Tassel.a3cc9099.png": "/genshin-optimizer/static/media/Weapon_White_Tassel.a3cc9099.png",
     "static/media/Weapon_Whiteblind.9c37b7dd.png": "/genshin-optimizer/static/media/Weapon_Whiteblind.9c37b7dd.png",
-    "static/media/Weapon_Wine_and_Song.0aa416e6.png": "/genshin-optimizer/static/media/Weapon_Wine_and_Song.0aa416e6.png",
+    "static/media/Weapon_Windblume_Ode.f38d3c91.png": "/genshin-optimizer/static/media/Weapon_Windblume_Ode.f38d3c91.png",
+    "static/media/Weapon_Wine_and_Song.787df5e4.png": "/genshin-optimizer/static/media/Weapon_Wine_and_Song.787df5e4.png",
     "static/media/Weapon_Wolf's_Gravestone.032b607c.png": "/genshin-optimizer/static/media/Weapon_Wolf's_Gravestone.032b607c.png",
     "static/media/art_editor.f440facc.png": "/genshin-optimizer/static/media/art_editor.f440facc.png",
     "static/media/artifactcard.b41c23a2.png": "/genshin-optimizer/static/media/artifactcard.b41c23a2.png",
@@ -613,9 +614,9 @@
     "static/media/tools.2724d338.png": "/genshin-optimizer/static/media/tools.2724d338.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.7257b6d4.js",
+    "static/js/runtime-main.e067a1db.js",
     "static/js/6.a0401db2.chunk.js",
     "static/css/main.00c18839.chunk.css",
-    "static/js/main.b80e4752.chunk.js"
+    "static/js/main.6d48ac66.chunk.js"
   ]
 }
