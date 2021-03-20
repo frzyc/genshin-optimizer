@@ -36,18 +36,18 @@ const data = {
   },
   burst: {
     dmg: [80.8, 86.86, 92.92, 101, 107.06, 113.12, 121.2, 129.28, 137.36, 145.44, 153.52, 161.6, 171.7, 181.8, 191.9],
-  	ele_dmg: [24.8, 26.66, 28.52, 31, 32.86, 34.72, 37.2, 39.68, 42.16, 44.64, 47.12, 49.6, 52.7, 55.8, 58.9],
+    ele_dmg: [24.8, 26.66, 28.52, 31, 32.86, 34.72, 37.2, 39.68, 42.16, 44.64, 47.12, 49.6, 52.7, 55.8, 58.9],
   }
 }
 
 const formula = {
   normal: Object.fromEntries(data.normal.hitArr.map((percentArr, i) => [i, (tlvl, stats) =>
     basicDMGFormula(percentArr[tlvl], stats, "normal")])),
-  charged: Object.fromEntries(Object.entries(data.charged).map(([name, arr]) => 
-  [name, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "charged")])),
+  charged: Object.fromEntries(Object.entries(data.charged).map(([name, arr]) =>
+    [name, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "charged")])),
   plunging: Object.fromEntries(Object.entries(data.plunging).map(([key, arr]) => [key, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "plunging")])),
-  skill: Object.fromEntries(Object.entries(data.skill).map(([name, arr]) => 
-  [name, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "skill")])),
+  skill: Object.fromEntries(Object.entries(data.skill).map(([name, arr]) =>
+    [name, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "skill")])),
   burst: {
     dmg: (tlvl, stats) => basicDMGFormula(data.burst.dmg[tlvl], stats, "burst"),
     ...Object.fromEntries((["hydro", "pyro", "cryo", "electro"]).map(ele =>

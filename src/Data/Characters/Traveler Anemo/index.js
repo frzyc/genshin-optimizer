@@ -59,7 +59,7 @@ const char = {
           text: "Stamina Cost",
           value: "20",
         }]
-      } , {
+      }, {
         text: <span><strong>Plunging Attack</strong> Plugnes from mid-air to strike the ground below, damaing enemies along the path and ealing AoE DMG upon impact.</span>,
         fields: [{
           text: "Plunge DMG",
@@ -177,7 +177,8 @@ const char = {
     passive2: {
       name: "Second Wind",
       img: passive2,
-      document: [{ text: <span>Palm Vortext kills regenerate 2% HP for 5s. This effect can only occur once every 5s</span>,
+      document: [{
+        text: <span>Palm Vortext kills regenerate 2% HP for 5s. This effect can only occur once every 5s</span>,
         fields: [{
           text: "Heal per second",
           formulaText: (tlvl, stats) => <span>2% * {Stat.printStat("finalHP", stats)} * {Stat.printStat("heal_multi", stats)}</span>,
@@ -189,7 +190,7 @@ const char = {
     passive3: {
       name: "Slitting Wind",
       img: passive3,
-      document: [{ 
+      document: [{
         text: <span>The last hit of a Normal Attack combo unleases a wind blade, dealing 60% of ATK as <span className="text-anemo">Anemo DMG</span> to all opponents in its path.</span>,
         fields: [{
           text: "Anemo Auto",
@@ -202,12 +203,12 @@ const char = {
     constellation1: {
       name: "Raging Vortext",
       img: c1,
-      document: [{ text: <span>Palm Vortex pulls in enemies within a 5m radius.</span>}]
+      document: [{ text: <span>Palm Vortex pulls in enemies within a 5m radius.</span> }]
     },
     constellation2: {
       name: "Uprising Whirlwind",
       img: c2,
-      document: [{ 
+      document: [{
         text: <span>Increases Energy Recharge by 16%.</span>
       },
       (con) => con >= 2 && {
@@ -218,29 +219,29 @@ const char = {
           enerRech_: 16,
         }
       }
-    ]
+      ]
     },
     constellation3: {
       name: "Sweeping Gust",
       img: c3,
-      document: [{ text: <span>Increases the Level of <b>Gust Surge</b> by 3. Maximum upgrade level is 15.</span>}],
+      document: [{ text: <span>Increases the Level of <b>Gust Surge</b> by 3. Maximum upgrade level is 15.</span> }],
       talentBoost: { burst: 3 }
     },
     constellation4: {
       name: "Cherishing Breeze",
       img: c4,
-      document: [{ text: <span>Reduces DMG taken while casting <b>Palm Vortex</b> by 10%.</span>}]
+      document: [{ text: <span>Reduces DMG taken while casting <b>Palm Vortex</b> by 10%.</span> }]
     },
     constellation5: {
       name: "Vortext Stellaris",
       img: c5,
-      document: [{ text: <span>Increases the Level of <b>Palm Vortex</b> by 3. Maximum upgrade level is 15.</span>}],
-      talentBoost: { skill : 3 }
+      document: [{ text: <span>Increases the Level of <b>Palm Vortex</b> by 3. Maximum upgrade level is 15.</span> }],
+      talentBoost: { skill: 3 }
     },
     constellation6: {
       name: "Intertwined Winds",
       img: c6,
-      document: [{ text: <span>Targets who take DMG from <b>Gust Surge</b> have their <span className="text-anemo">Anemo RES</span> decreased by 20%. If an Elemental Absorption occurred, then their RES towards the corresponding Element is also decreased by 20%.</span>}]
+      document: [{ text: <span>Targets who take DMG from <b>Gust Surge</b> have their <span className="text-anemo">Anemo RES</span> decreased by 20%. If an Elemental Absorption occurred, then their RES towards the corresponding Element is also decreased by 20%.</span> }]
     },
   }
 };
