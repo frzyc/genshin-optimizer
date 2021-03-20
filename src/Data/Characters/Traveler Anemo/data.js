@@ -20,8 +20,8 @@ const data = {
     ],
   },
   charged: {
-    dmg1: [55.9, 60.45, 65, 71.5, 76.05, 81.25, 88.4, 95.55, 102.7, 110.5, 118.3, 126.1, 133.9, 141.7, 149.5],
-    dmg2: [60.72, 65.66, 70.6, 77.66, 82.6, 88.25, 96.02, 103.78, 111.55, 120.02, 128.49, 136.96, 145.44, 153.91, 162.38],
+    hit1: [55.9, 60.45, 65, 71.5, 76.05, 81.25, 88.4, 95.55, 102.7, 110.5, 118.3, 126.1, 133.9, 141.7, 149.5],
+    hit2: [60.72, 65.66, 70.6, 77.66, 82.6, 88.25, 96.02, 103.78, 111.55, 120.02, 128.49, 136.96, 145.44, 153.91, 162.38],
   },
   plunging: {
     dmg: [63.93, 69.14, 74.34, 81.77, 86.98, 92.93, 101.1, 109.28, 117.46, 126.38, 135.3, 144.22, 153.14, 162.06, 170.98],
@@ -30,40 +30,36 @@ const data = {
   },
   skill: {
     initial_dmg: [12, 12.9, 13.8, 15, 15.9, 16.8, 18, 19.2, 20.4, 21.6, 22.8, 24, 25.5, 27, 28.5],
-    initial_max: [6.8, 18.06, 19.32, 21, 22.26, 23.52, 25.2, 26.88, 28.56, 30.24, 31.92, 33.6, 35.7, 37.8, 39.9],
+    initial_max: [16.8, 18.06, 19.32, 21, 22.26, 23.52, 25.2, 26.88, 28.56, 30.24, 31.92, 33.6, 35.7, 37.8, 39.9],
     storm_dmg: [176, 189.2, 202.4, 220, 233.2, 246.4, 264, 281.6, 299.2, 316.8, 334.4, 352, 374, 396, 418],
     storm_max: [192, 206.4, 220.8, 240, 254.4, 268.8, 288, 307.2, 326.4, 345.6, 364.8, 384, 408, 432, 456],
   },
   burst: {
     dmg: [80.8, 86.86, 92.92, 101, 107.06, 113.12, 121.2, 129.28, 137.36, 145.44, 153.52, 161.6, 171.7, 181.8, 191.9],
-  	ele_dmg : [24.8, 26.66, 28.52, 31, 32.86, 34.72, 37.2, 39.68, 42.16, 44.64, 47.12, 49.6, 52.7, 55.8, 58.9],
+  	ele_dmg: [24.8, 26.66, 28.52, 31, 32.86, 34.72, 37.2, 39.68, 42.16, 44.64, 47.12, 49.6, 52.7, 55.8, 58.9],
   }
 }
 
 const formula = {
   normal: Object.fromEntries(data.normal.hitArr.map((percentArr, i) => [i, (tlvl, stats) =>
     basicDMGFormula(percentArr[tlvl], stats, "normal")])),
-  charged: {
-    dmg: (tlvl, stats) => basicDMGFormula(data.charged.dmg[tlvl], stats, "charged"),
-  },
+  charged: Object.fromEntries(Object.entries(data.charged).map(([name, arr]) => 
+  [name, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "charged")])),
   plunging: Object.fromEntries(Object.entries(data.plunging).map(([key, arr]) => [key, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "plunging")])),
-  skill: Object.fromEntries(Object.entries(data.skill).map(([key, arr]) => [key, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "skill")])),
+  skill: Object.fromEntries(Object.entries(data.skill).map(([name, arr]) => 
+  [name, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "skill")])),
   burst: {
-    skill: (tlvl, stats) => basicDMGFormula(data.burst.skill[tlvl], stats, "burst"),
-    field_dmg: (tlvl, stats) => basicDMGFormula(data.burst.field_dmg[tlvl], stats, "burst"),
-    heal: (tlvl) => {		
-      const atk = data.burst.heal_atk[tlvl] / 100
-      const flat = data.burst.heal_flat[tlvl]
-      return [s => (atk * s.finalATK + flat) * s.heal_multi, ["finalATK", "heal_multi"]]
-    },
-    regen: (tlvl) => {
-      const atk = data.burst.regen_atk[tlvl] / 100
-      const flat = data.burst.regen_flat[tlvl]
-      return [s => (atk * s.finalATK + flat) * s.heal_multi, ["finalATK", "heal_multi"]]
-    },
+    dmg: (tlvl, stats) => basicDMGFormula(data.burst.dmg[tlvl], stats, "burst"),
+    ...Object.fromEntries((["hydro", "pyro", "cryo", "electro"]).map(ele =>
+      [`${ele}_dmg_bonus`, (tlvl, stats) => [s => { return (data.burst.ele_dmg[tlvl] / 100) * s[`${ele}_burst_${stats.hitMode}`] }, [`${ele}_burst_${stats.hitMode}`]]])),//not optimizationTarget, dont need to precompute
+  },
+  passive2: {
+    heal: (tlvl, stats) => [s => 0.02 * s.finalHP * s.heal_multi, ["finalHP", "heal_multi"]],
+  },
+  passive3: {
+    windAuto: (tlvl, stats) => basicDMGFormula(60, stats, "normal", true), //Checked in-game, scales with normal attacks, Used black sword and 4pc glad.
   }
 }
-
 export default formula
 export {
   data
