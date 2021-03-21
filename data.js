@@ -30,22 +30,50 @@ export const data = {
         high: [186.29, 201.45, 216.62, 238.28, 253.44, 270.77, 294.6, 318.42, 342.25, 368.25, 394.24, 420.23, 446.23, 472.22, 498.21],
     },
     skill: {
-        skill_dmg: [169.6, 182.32, 195.04, 212, 224.72, 237.44, 254.4, 271.36, 288.32, 305.28, 322.24, 339.2, 360.4, 381.6, 402.8],
-        shield_def1: [104.04, 111.84, 119.65, 130.05, 137.85, 145.66, 156.06, 166.46, 176.87, 187.27, 197.68, 208.08, 221.09, 234.09, 247.1],
-        shield_flat1: [501, 551, 605, 663, 726, 793, 864, 939, 1018, 1101, 1189, 1281, 1377, 1477, 1581],
-        shield_def2: [122.4, 131.58, 140.76, 153, 162.18, 171.36, 183.6, 195.84, 208.08, 220.32, 232.56, 244.8, 260.1, 275.4, 290.7],
-        shield_flat2: [589, 648, 712, 780, 854, 932, 1016, 1104, 1197, 1296, 1399, 1507, 1620, 1737, 1860],
-        shield_def3: [144, 154.8, 165.6, 180, 190.8, 201.6, 216, 230.4, 244.8, 259.2, 273.6, 288, 306, 324, 342],
-        shield_flat3: [693, 762, 837, 918, 1005, 1097, 1195, 1299, 1409, 1524, 1646, 1773, 1905, 2044, 2188],
-        dot_dmg: [33.6, 36.12, 38.64, 42, 44.52, 47.04, 50.4, 53.76, 57.12, 60.48, 63.84, 67.2, 71.4, 75.6, 79.8],
+        dmg: [169.6, 182.32, 195.04, 212, 224.72, 237.44, 254.4, 271.36, 288.32, 305.28, 322.24, 339.2, 360.4, 381.6, 402.8],
+        def1: [104.04, 111.84, 119.65, 130.05, 137.85, 145.66, 156.06, 166.46, 176.87, 187.27, 197.68, 208.08, 221.09, 234.09, 247.1],
+        flat1: [501, 551, 605, 663, 726, 793, 864, 939, 1018, 1101, 1189, 1281, 1377, 1477, 1581],
+        def2: [122.4, 131.58, 140.76, 153, 162.18, 171.36, 183.6, 195.84, 208.08, 220.32, 232.56, 244.8, 260.1, 275.4, 290.7],
+        flat2: [589, 648, 712, 780, 854, 932, 1016, 1104, 1197, 1296, 1399, 1507, 1620, 1737, 1860],
+        def3: [144, 154.8, 165.6, 180, 190.8, 201.6, 216, 230.4, 244.8, 259.2, 273.6, 288, 306, 324, 342],
+        flat3: [693, 762, 837, 918, 1005, 1097, 1195, 1299, 1409, 1524, 1646, 1773, 1905, 2044, 2188],
+        dot: [33.6, 36.12, 38.64, 42, 44.52, 47.04, 50.4, 53.76, 57.12, 60.48, 63.84, 67.2, 71.4, 75.6, 79.8],
     },
     burst: {
-        skill_dmg: [340.8, 366.36, 391.92, 426, 451.56, 477.12, 511.2, 545.28, 579.36, 613.44, 647.52, 681.6, 724.2, 766.8, 809.4],
-        dot_dmg: [40, 43, 46, 50, 53, 56, 60, 64, 68, 72, 76, 80, 85, 90, 95],
+        dmg: [340.8, 366.36, 391.92, 426, 451.56, 477.12, 511.2, 545.28, 579.36, 613.44, 647.52, 681.6, 724.2, 766.8, 809.4],
+        dot: [40, 43, 46, 50, 53, 56, 60, 64, 68, 72, 76, 80, 85, 90, 95],
     }
 }
 
 const formula = {
-    //TODO: formula
+    normal: Object.fromEntries(data.normal.hitArr.map((percentArr, i) => [i, (tlvl, stats) =>
+        basicDMGFormula(percentArr[tlvl], stats, "normal")])),
+    charged: Object.fromEntries(Object.entries(data.charged).map(([name, arr]) =>
+        [name, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "charged")])),
+    plunging: Object.fromEntries(Object.entries(data.plunging).map(([name, arr]) =>
+    [name, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "plunging")])),
+    skill: {
+        dmg: (tlvl, stats) => basicDMGFormula(data.skill.dmg[tlvl], stats, "skill"),
+        shield1: (tlvl) => {
+            const def = data.skill.def1[tlvl] / 100
+            const flat = data.skill.flat1[tlvl]
+            return [(s) => def * s.finalDEF + flat, ["finalDEF"]]
+        },
+        shield2: (tlvl) => {
+            const def = data.skill.def2[tlvl] / 100
+            const flat = data.skill.flat2[tlvl]
+            return [(s) => def * s.finalDEF + flat, ["finalDEF"]]
+        },
+        shield3: (tlvl) => {
+            const def = data.skill.def3[tlvl] / 100
+            const flat = data.skill.flat3[tlvl]
+            return [(s) => def * s.finalDEF + flat, ["finalDEF"]]
+        },
+        dot: (tlvl, stats) => basicDMGFormula(data.skill.dot[tlvl], stats, "skill"),
+    },
+    burst: {
+        dmg: (tlvl, stats) => basicDMGFormula(data.burst.dmg[tlvl], stats, "burst"),
+        dot: (tlvl, stats) => basicDMGFormula(data.burst.dot[tlvl], stats, "burst"),
+    },
 }
 export default formula

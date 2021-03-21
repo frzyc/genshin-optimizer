@@ -6,39 +6,168 @@ import thumb from './Character_Xinyan_Thumb.png'
 // import c4 from './Constellation_Wildfire_Rhythm.png'
 // import c5 from './Constellation_Screamin\'_for_an_Encore.png'
 // import c6 from './Constellation_Rockin\'_in_a_Flaming_World.png'
-// import normal from './Talent_Dance_on_Fire.png'
-// import skill from './Talent_Sweeping_Fervor.png'
-// import burst from './Talent_Riff_Revolution.png'
+import normal from './Talent_Dance_on_Fire.png'
+import skill from './Talent_Sweeping_Fervor.png'
+import burst from './Talent_Riff_Revolution.png'
 // import passive1 from './Talent__The_Show_Goes_On,_Even_Without_an_Audience..._.png'
 // import passive2 from './Talent__...Now_That\'s_Rock_\'N\'_Roll_.png'
 // import passive3 from './Talent_A_Rad_Recipe.png'
+import Stat from '../../../Stat';
+import formula, {data} from './data';
+import {getTalentStatKey, getTalentStatKeyVariant} from "../../../Build/Build";
 
 const char = {
-  name: "Xinyan",
-  cardImg: card,
-  thumbImg: thumb,
-  star: 4,
-  elementKey: "pyro",
-  weaponTypeKey: "claymore",
-  gender: "F",
-  constellationName: "Fila Ignium",
-  titles: ["Blazing Riff", "Rock 'n' Roll Musician"],
-  baseStat: data.baseStat,
-  //     {
-  //   characterHP: [939, 2413, 3114, 4665, 5163, 5939, 6604, 7379, 7878, 8653, 9151, 9927, 10425, 11201],
-  //   characterATK: [21, 54, 69, 103, 115, 132, 147, 164, 175, 192, 203, 220, 231, 249],
-  //   characterDEF: [67, 172, 222, 333, 368, 423, 471, 526, 562, 617, 652, 708, 743, 799]
-  // },
-  specializeStat: data.specializeStat,
-  //     {
-  //   key: "atk_",
-  //   value: [0, 0, 0, 0, 6, 6, 12, 12, 12, 12, 18, 18, 24, 24]
-  // },
-  formula, // TODO in data
-  // TODO auto
-  // TODO skill
-  // TODO burts
-  // TODO passives
-  // TODO constelations
+    name: "Xinyan",
+    cardImg: card,
+    thumbImg: thumb,
+    star: 4,
+    elementKey: "pyro",
+    weaponTypeKey: "claymore",
+    gender: "F",
+    constellationName: "Fila Ignium",
+    titles: ["Blazing Riff", "Rock 'n' Roll Musician"],
+    baseStat: data.baseStat,
+    specializeStat: data.specializeStat,
+    formula,
+    talent: {
+        auto: {
+            name: "Dance on Fire",
+            img: normal,
+            document: [{
+                text: <span><strong>Normal Attack</strong> Performs up to 4 consecutive strikes.</span>,
+                fields: data.normal.hitArr.map((percentArr, i) =>
+                    ({
+                        text: `${i + 1}-Hit DMG`,
+                        formulaText: (tlvl, stats) =>
+                            <span>{percentArr[tlvl]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
+                        formula: formula.normal[i],
+                        variant: (tlvl, stats) => getTalentStatKeyVariant("normal", stats)
+                    }))
+            }, {
+                text: <span><strong>Charged Attack</strong> Drains Stamina over time to perform continuous spinning attacks against all nearby opponents.</span>,
+                fields: [{
+                    text: `Spinning DMG`,
+                    formulaText: (tlvl, stats) =>
+                        <span>{data.charged.spinning[tlvl]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
+                    formula: formula.charged.spinning,
+                    variant: (tlvl, stats) => getTalentStatKeyVariant("charged", stats)
+                }, {
+                    text: `Spinning Final DMG`,
+                    formulaText: (tlvl, stats) =>
+                        <span>{data.charged.final[tlvl]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
+                    formula: formula.charged.final,
+                    variant: (tlvl, stats) => getTalentStatKeyVariant("charged", stats)
+                }, {
+                    text: `Stamina Cost`,
+                    value: "40/s",
+                }, {
+                    text: `Max Duration`,
+                    value: "5s",
+                }],
+            }, {
+                text: <span><strong>Plunging Attack</strong> Plunges from mid-air to strike the ground, damaging enemies along the path and dealing AoE DMG upon impact.</span>,
+                fields: [{
+                    text: `Plunge DMG`,
+                    formulaText: (tlvl, stats) =>
+                        <span>{data.plunging.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+                    formula: formula.plunging.dmg,
+                    variant: (tlvl, stats) => getTalentStatKeyVariant("plunging", stats),
+                }, {
+                    text: `Low Plunge DMG`,
+                    formulaText: (tlvl, stats) =>
+                        <span>{data.plunging.low[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+                    formula: formula.plunging.low,
+                    variant: (tlvl, stats) => getTalentStatKeyVariant("plunging", stats),
+                }, {
+                    text: `High Plunge DMG`,
+                    formulaText: (tlvl, stats) =>
+                        <span>{data.plunging.high[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+                    formula: formula.plunging.high,
+                    variant: (tlvl, stats) => getTalentStatKeyVariant("plunging", stats),
+                }],
+            }],
+        },
+        skill: {
+            name: "Sweeping Fervor",
+            img: skill,
+            document: [{
+                text: <span>
+                <p className="mb-0">Xinyan brandishes her instrument, dealing <span className="text-pyro">Pyro DMG</span> on nearby opponents, forming a shield made out of her audience's passion.</p>
+                <p className="mb-2">The shield's DMG Absorption scales based on Xinyan's DEF and on the number of opponents hit.</p>
+                <ul className="mb-1">
+                    <li>Hitting 0-1 opponents grants Shield Level 1: Ad Lib.</li>
+                    <li>Hitting 2 opponents grants Shield Level 2: Lead-In.</li>
+                    <li>Hitting 3 or more opponents grants Shield Level 3: Rave, which will also deal intermittent <span className="text-pyro">Pyro DMG</span> to nearby opponents.</li>
+                </ul>
+                <p className="mb-2">The shield has the following special properties:</p>
+                <ul className="mb-1">
+                    <li>When unleashed, it infuses Xinyan with Pyro.</li>
+                    <li>It has 250% DMG Absorption effectiveness against <span className="text-pyro">Pyro DMG</span>.</li>
+                </ul>
+                    // TODO elemental particles
+                </span>,
+                fields: [{
+                    text: "Swing DMG",
+                    formulaText: (tlvl, stats) => <span>{data.skill.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
+                    formula: formula.skill.dmg,
+                    variant: (tlvl, stats) => getTalentStatKeyVariant("skill", stats),
+                }, {
+                    text: "Shield Level 1 DMG Absorption",
+                    formulaText: (tlvl, stats) => <span>{data.skill.def1[tlvl]}% {Stat.printStat("finalDEF", stats)} + {data.skill.flat1[tlvl]}</span>,
+                    formula: formula.skill.shield1,
+                }, {
+                    text: "Shield Level 2 DMG Absorption",
+                    formulaText: (tlvl, stats) => <span>{data.skill.def2[tlvl]}% {Stat.printStat("finalDEF", stats)} + {data.skill.flat2[tlvl]}</span>,
+                    formula: formula.skill.shield2,
+                }, {
+                    text: "Shield Level 3 DMG Absorption",
+                    formulaText: (tlvl, stats) => <span>{data.skill.def3[tlvl]}% {Stat.printStat("finalDEF", stats)} + {data.skill.flat3[tlvl]}</span>,
+                    formula: formula.skill.shield3,
+                }, {
+                    text: "DoT",
+                    formulaText: (tlvl, stats) =>
+                        <span>{data.skill.dot[tlvl]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
+                    formula: formula.skill.dot,
+                    variant: (tlvl, stats) => getTalentStatKeyVariant("skill", stats),
+                }, {
+                    text: "CD",
+                    value: "18s",
+                }]
+            }],
+        },
+        burst: {
+            name: "Riff Revolution",
+            img: burst,
+            document: [{
+                text: <span>
+                    <p>Strumming rapidly, Xinyan launches nearby opponents and deals Physical DMG to them, hyping up the crowd.</p>
+                    <p>The sheer intensity of the atmosphere will cause explosions that deal <span className="text-pyro">Pyro DMG</span> to nearby opponents.</p>
+                </span>
+                fields: [{
+                    text: "Skill DMG",
+                    formulaText: (tlvl, stats) => <span>{data.burst.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
+                    formula: formula.burst.dmg,
+                    variant: (tlvl, stats) => getTalentStatKeyVariant("burst", stats),
+                }, {
+                    text: "Pyro DoT"
+                    formulaText: (tlvl, stats) =>
+                        <span>{data.burst.dot[tlvl]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
+                    formula: formula.burst.dot,
+                    variant: (tlvl, stats) => getTalentStatKeyVariant("burst", stats),
+                }, {
+                    text: "Duration",
+                    value: "2s",
+                }, {
+                    text: "CD",
+                    value: "15s",
+                }, {
+                    text: "Energy Cost",
+                    value: 60,
+                }],
+            }]
+        },
+        // TODO passives
+        // TODO constelations
+    }
 };
 export default char;
