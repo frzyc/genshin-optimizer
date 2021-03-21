@@ -1,17 +1,17 @@
 import card from './Character_Xinyan_Card.jpg'
 import thumb from './Character_Xinyan_Thumb.png'
-// import c1 from './Constellation_Fatal_Acceleration.png'
-// import c2 from './Constellation_Impromptu_Opening.png'
-// import c3 from './Constellation_Double-Stop.png'
-// import c4 from './Constellation_Wildfire_Rhythm.png'
-// import c5 from './Constellation_Screamin\'_for_an_Encore.png'
-// import c6 from './Constellation_Rockin\'_in_a_Flaming_World.png'
+import c1 from './Constellation_Fatal_Acceleration.png'
+import c2 from './Constellation_Impromptu_Opening.png'
+import c3 from './Constellation_Double-Stop.png'
+import c4 from './Constellation_Wildfire_Rhythm.png'
+import c5 from './Constellation_Screamin\'_for_an_Encore.png'
+import c6 from './Constellation_Rockin\'_in_a_Flaming_World.png'
 import normal from './Talent_Dance_on_Fire.png'
 import skill from './Talent_Sweeping_Fervor.png'
 import burst from './Talent_Riff_Revolution.png'
-// import passive1 from './Talent__The_Show_Goes_On,_Even_Without_an_Audience..._.png'
-// import passive2 from './Talent__...Now_That\'s_Rock_\'N\'_Roll_.png'
-// import passive3 from './Talent_A_Rad_Recipe.png'
+import passive1 from './Talent__The_Show_Goes_On,_Even_Without_an_Audience..._.png'
+import passive2 from './Talent__...Now_That\'s_Rock_\'N\'_Roll_.png'
+import passive3 from './Talent_A_Rad_Recipe.png'
 import Stat from '../../../Stat';
 import formula, {data} from './data';
 import {getTalentStatKey, getTalentStatKeyVariant} from "../../../Build/Build";
@@ -142,14 +142,14 @@ const char = {
                 text: <span>
                     <p>Strumming rapidly, Xinyan launches nearby opponents and deals Physical DMG to them, hyping up the crowd.</p>
                     <p>The sheer intensity of the atmosphere will cause explosions that deal <span className="text-pyro">Pyro DMG</span> to nearby opponents.</p>
-                </span>
+                </span>,
                 fields: [{
                     text: "Skill DMG",
                     formulaText: (tlvl, stats) => <span>{data.burst.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
                     formula: formula.burst.dmg,
                     variant: (tlvl, stats) => getTalentStatKeyVariant("burst", stats),
                 }, {
-                    text: "Pyro DoT"
+                    text: "Pyro DoT",
                     formulaText: (tlvl, stats) =>
                         <span>{data.burst.dot[tlvl]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
                     formula: formula.burst.dot,
@@ -166,8 +166,59 @@ const char = {
                 }],
             }]
         },
-        // TODO passives
-        // TODO constelations
+        passive1: {
+            name: "\"The Show Goes On, Even Without an Audience...\"",
+            img: passive1,
+            document: [{ text: <span>
+                    Decreases the number of opponents <b>Sweeping Fervor</b> must hit to trigger each level of shielding.
+                    <ul className="mb-0">
+                        <li>Shield Level 2: Lead-In requirement reduced to 1 opponent hit.</li>
+                        <li>Shield Level 3: Rave requirement reduced to 2 opponents hit or more.</li>
+                    </ul>
+                </span>,
+            }],
+        },
+        passive2: {
+            name: "\"...Now That's Rock 'N' Roll!\"",
+            img: passive2,
+            document: [{ text: <span>Characters shielded by <b>Sweeping Fervor</b> deal 15% increased Physical DMG.</span>,}],// TODO Team buffs
+        },
+        passive3: {
+            name: "A Rad Recipe",
+            img: passive3,
+            document: [{ text: <span>When a Perfect Cooking is achieved on a DEF-boosting dish, Xinyan has a 12% chance to obtain double the product.</span>,}],
+        },
+        // TODO constelations implementation
+        constellation1: {
+            name: "Fatal Acceleration",
+            img: c1,
+            document: [{ text: <span>Upon scoring a CRIT hit, increases ATK SPD of Xinyan's <b>Normal and Charged Attacks</b> by 12% for 5s. Can only occur once every 5s.</span>,}],
+        },
+        constellation2: {
+            name: "Impromptu Opening",
+            img: c2,
+            document: [{ text: <span><b>Riff Revolution</b> Physical DMG has its Crit rate increased by 100%, and will form a shield at Shield Level 3: Rave when cast.</span>,}],
+        },
+        constellation3: {
+            name: "Double-Stop",
+            img: c3,
+            document: [{ text: <span>Increases the Level of <b>Sweeping Fervor</b> by 3. Maximum upgrade level is 15.</span>,}],
+        },
+        constellation4: {
+            name: "Wildfire Rhythm",
+            img: c4,
+            document: [{ text: <span><b>Sweeping Fervor</b>'s swing DMG decreases opponent's Physical RES by 15% for 12s.</span>,}],
+        },
+        constellation5: {
+            name: "Screamin' for an Encore",
+            img: c5,
+            document: [{ text: <span>Increases the Level of <b>Riff Revolution</b> by 3. Maximum upgrade level is 15.</span>,}],
+        },
+        constellation6: {
+            name: "Rockin' in a Flaming World",
+            img: c6,
+            document: [{ text: <span>Decrease the Stamina Consumption of Xinyan <b>Charged Attacks</b> by 30%. Additionally, Xinyan's <b>Charged Attacks</b> gain an ATK bonus equal to 50% of her DEF.</span>,}],
+        },
     }
 };
 export default char;
