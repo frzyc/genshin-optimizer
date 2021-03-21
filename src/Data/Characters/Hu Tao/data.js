@@ -1,3 +1,4 @@
+import { getTalentStatKey } from "../../../Build/Build"
 import { basicDMGFormula } from "../../../Util/FormulaUtil"
 
 export const data = {
@@ -31,13 +32,13 @@ export const data = {
   },
   skill: {
     atk_inc: [3.84, 4.07, 4.3, 4.6, 4.83, 5.06, 5.36, 5.66, 5.96, 6.26, 6.56, 6.85, 7.15, 7.45, 7.75],
-    dmg: [64, 68.8, 73.6, 80, 84.8, 89.6, 96, 102.4, 108.8, 115.2, 121.6, 128, 136, 144, 152],  
+    dmg: [64, 68.8, 73.6, 80, 84.8, 89.6, 96, 102.4, 108.8, 115.2, 121.6, 128, 136, 144, 152],
   },
   burst: {
     dmg: [303.27, 321.43, 339.59, 363.2, 381.36, 399.52, 423.13, 446.74, 470.34, 493.95, 517.56, 541.17, 564.78, 588.38, 611.99],
     low_dmg: [379.09, 401.79, 424.49, 454, 476.7, 499.4, 528.91, 558.42, 587.93, 617.44, 646.95, 676.46, 705.97, 735.48, 764.99],
     regen: [6.26, 6.64, 7.01, 7.5, 7.88, 8.25, 8.74, 9.23, 9.71, 10.2, 10.69, 11.18, 11.66, 12.15, 12.64],
-    low_regen: [8.35, 8.85, 9.35, 10, 10.5, 11, 11.65, 12.3, 12.95, 13.6, 14.25, 14.9, 15.55, 16.2, 16.85]  
+    low_regen: [8.35, 8.85, 9.35, 10, 10.5, 11, 11.65, 12.3, 12.95, 13.6, 14.25, 14.9, 15.55, 16.2, 16.85]
   }
 }
 const formula = {
@@ -55,6 +56,11 @@ const formula = {
       return [s => Math.min(val * s.finalHP, 4 * s.baseATK), ["finalHP", "baseATK"]]
     },
     dmg: (tlvl, stats) => basicDMGFormula(data.skill.dmg[tlvl], stats, "skill"),
+    dmgC2: (tlvl, stats) => {
+      const val = data.skill.dmg[tlvl] / 100
+      const statKey = getTalentStatKey("skill", stats) + "_multi"
+      return [s => (val * s.finalATK + 0.1 * s.finalHP) * s[statKey], ["finalATK", statKey]]
+    }
   },
   burst: {
     dmg: (tlvl, stats) => basicDMGFormula(data.burst.dmg[tlvl], stats, "burst"),

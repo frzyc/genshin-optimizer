@@ -9,17 +9,18 @@ import diluc from './Diluc/data'
 import fischl from './Fischl/data'
 import ganyu from './Ganyu/data'
 import hutao from './Hu Tao/data'
-// import jean from './Jean/data'
+import jean from './Jean/data'
 // import kaeya from './Kaeya/data'
 import keqing from './Keqing/data'
-// import klee from './Klee/data'
+import klee from './Klee/data'
 import lisa from './Lisa/data'
+import klee from './Klee/data'
 import mona from './Mona/data'
 import ningguang from './Ningguang/data'
 import noelle from './Noelle/data'
-// import qiqi from './Qiqi/data'
+import qiqi from './Qiqi/data'
 import razor from './Razor/data'
-// import sucrose from './Sucrose/data'
+import sucrose from './Sucrose/data'
 // import tartaglia from './Tartaglia/data'
 // import traveler_anemo from './Traveler Anemo/data'
 // import traveler_geo from './Traveler Geo/data'
@@ -41,17 +42,17 @@ const formula = {
   fischl,
   ganyu,
   hutao,
-  // jean,
+  jean,
   // kaeya,
   keqing,
-  // klee,
+  klee,
   lisa,
   mona,
   ningguang,
   noelle,
-  // qiqi,
+  qiqi,
   razor,
-  // sucrose,
+  sucrose,
   // tartaglia,
   // traveler_anemo,
   // traveler_geo,

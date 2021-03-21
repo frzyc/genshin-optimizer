@@ -103,10 +103,15 @@ const char = {
           text: "ATK Increase",
           formulaText: (tlvl, stats) => <span>{data.skill.atk_inc[tlvl]}% {Stat.printStat("finalHP", stats)}</span>,
           formula: formula.skill.atk_inc,
-        }, {
+        }, (con) => con < 2 && {
           text: "Blood Blossom DMG",
           formulaText: (tlvl, stats) => <span>{data.skill.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
           formula: formula.skill.dmg,
+          variant: (tlvl, stats) => getTalentStatKeyVariant("skill", stats),
+        }, (con) => con >= 2 && {
+          text: "Blood Blossom DMG (C2)",
+          formulaText: (tlvl, stats) => <span>( {data.skill.dmg[tlvl]}% {Stat.printStat("finalATK", stats)} + 10% {Stat.printStat("finalHP", stats)} ) * {Stat.printStat(getTalentStatKey("skill", stats) + "_multi", stats)}</span>,
+          formula: formula.skill.dmgC2,
           variant: (tlvl, stats) => getTalentStatKeyVariant("skill", stats),
         }, {
           text: "Blood Blossom Duration",
@@ -164,6 +169,8 @@ const char = {
         }, {
           text: "Energy Cost",
           value: 60,
+        }, (con) => con >= 2 && {
+          text: "Apply the Blood Blossom effect",
         }]
       }],
     },
@@ -207,7 +214,6 @@ const char = {
         text: <span>
           <p className="mb-2">Increases the <b>Blood Blossom</b> DMG by an amount equal to 10% of Hu Tao's Max HP at the time the effect is applied.</p>
           <p className="mb-2">Additionally, <b>Spirit Soother</b> will also apply the <b>Blood Blossom</b> effect.</p>
-          <small>NOTE: this damage is currently not applied. Calculations for this will be available pending a GO system change.</small>
         </span>
       }],
     },
