@@ -23,7 +23,7 @@ const weapon = {
     sourceKey: "ElegyForTheEnd",
     maxStack: 1,
     stats: (refineIndex) => ({
-      eleMas: refinementEM[refineIndex],
+      eleMas: refinementIncEM[refineIndex],
       atk_: refinementATK_[refineIndex]
     })
   }
