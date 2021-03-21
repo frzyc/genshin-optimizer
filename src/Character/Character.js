@@ -1,5 +1,5 @@
 import Artifact from "../Artifact/Artifact";
-import ArtifactDatabase from "../Artifact/ArtifactDatabase";
+import ArtifactDatabase from "../Database/ArtifactDatabase";
 import { CharacterData, CharacterDataImport, characterStatBase, LevelsData } from "../Data/CharacterData";
 import ElementalData from "../Data/ElementalData";
 import { ElementToReactionKeys, PreprocessFormulas } from "../StatData";
@@ -7,7 +7,7 @@ import { GetDependencies } from "../StatDependency";
 import ConditionalsUtil from "../Util/ConditionalsUtil";
 import { deepClone } from "../Util/Util";
 import Weapon from "../Weapon/Weapon";
-import CharacterDatabase from "./CharacterDatabase";
+import CharacterDatabase from "../Database/CharacterDatabase";
 
 export default class Character {
   //do not instantiate.
@@ -253,7 +253,7 @@ export default class Character {
     character.equippedArtifacts = {}
     Object.entries(artifactIds).forEach(([key, artid]) =>
       character.equippedArtifacts[key] = artid)
-    CharacterDatabase.updateCharacter(character);
+    CharacterDatabase.update(character);
   }
   static remove(characterKey) {
     let character = CharacterDatabase.get(characterKey)

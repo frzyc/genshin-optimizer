@@ -50,6 +50,14 @@ describe("Testing Jean's Formulas", () => {
       expect(stats.physical_dmg_).toApproximate(66.3)
     })
 
+    test("healing", () => {
+      const { burst } = stats.talentLevelKeys
+      expect(formula.burst.heal(burst, stats)[0](stats)).toApproximate(13388)
+      expect(formula.burst.regen(burst, stats)[0](stats)).toApproximate(1338)
+
+      expect(formula.passive1.heal(undefined, stats)[0](stats)).toApproximate(443)
+    })
+
     describe("swirl", () => {
       test("reaction", () => {
         expect(stats.pyro_swirl_hit).toApproximate(881)
@@ -100,13 +108,6 @@ describe("Testing Jean's Formulas", () => {
 
           expect(formula.skill.dmg(skill, stats)[0](stats)).toApproximate(5162)
           expect(formula.skill.dmg_hold(skill, stats)[0](stats)).toApproximate(7226)
-
-          // expect(formula.burst.skill(burst, stats)[0](stats)).toApproximate() No data
-          // expect(formula.burst.field_dmg(skill, stats)[0](stats)).toApproximate() No data
-          expect(formula.burst.heal(burst, stats)[0](stats)).toApproximate(13388)
-          expect(formula.burst.regen(burst, stats)[0](stats)).toApproximate(1338)
-
-          expect(formula.passive1.heal(undefined, stats)[0](stats)).toApproximate(443)
         })
       })
     })
@@ -118,11 +119,11 @@ describe("Testing Jean's Formulas", () => {
       describe("Ruin Guard lvl 85", () => {
         beforeAll(() => {
           setupStats.enemyLevel = 85
-          setupStats.physical_enemyRes_ += 60 //ruin guard has 70%
+          setupStats.physical_enemyRes_ = 70
         })
         afterAll(() => {
           delete setupStats.enemyLevel
-          setupStats.physical_enemyRes_ -= 60
+          delete setupStats.physical_enemyRes_
         })
 
         test("hits", () => {

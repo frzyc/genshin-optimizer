@@ -16,7 +16,7 @@ import { CharacterSelectionDropdownList } from '../Components/CharacterSelection
 import { Stars } from '../Components/StarDisplay';
 import Stat from '../Stat';
 import Artifact from './Artifact';
-import ArtifactDatabase from './ArtifactDatabase';
+import ArtifactDatabase from '../Database/ArtifactDatabase';
 import PercentBadge from './PercentBadge';
 export default function ArtifactCard({ artifactId, artifactObj, forceUpdate, onEdit, onDelete, assumeFull = false }) {
   if (!artifactId && !artifactObj) return null;
@@ -99,7 +99,7 @@ export default function ArtifactCard({ artifactId, artifactObj, forceUpdate, onE
                   style={location ? { pointerEvents: 'none' } : {}}
                   onClick={() => {
                     art.lock = !lock
-                    ArtifactDatabase.updateArtifact(art);
+                    ArtifactDatabase.update(art);
                     forceUpdate?.();
                   }}>
                   <FontAwesomeIcon icon={(lock || location) ? faLock : faLockOpen} className="fa-fw" />

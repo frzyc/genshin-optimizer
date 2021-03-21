@@ -23,7 +23,6 @@ const artifacts = [
   { hydro_dmg_: 15 } // Set
 ]
 
-
 let setupStats, stats = {}
 describe("Testing Mona's Formulas", () => {
   beforeEach(() => {

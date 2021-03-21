@@ -6,17 +6,17 @@ import ReactGA from 'react-ga';
 // eslint-disable-next-line
 import Worker from "worker-loader!./BuildWorker.js";
 import Artifact from '../Artifact/Artifact';
-import ArtifactDatabase from '../Artifact/ArtifactDatabase';
+import ArtifactDatabase from '../Database/ArtifactDatabase';
 import Character from '../Character/Character';
 import CharacterCard from '../Character/CharacterCard';
-import CharacterDatabase from '../Character/CharacterDatabase';
+import CharacterDatabase from '../Database/CharacterDatabase';
 import { HitModeToggle, ReactionToggle } from '../Character/CharacterDisplay/DamageOptionsAndCalculation';
 import StatDisplayComponent from '../Character/CharacterDisplay/StatDisplayComponent';
 import { CharacterSelectionDropdownList } from '../Components/CharacterSelection';
 import ConditionalSelector from '../Components/ConditionalSelector';
 import CustomFormControl from '../Components/CustomFormControl';
 import { Stars } from '../Components/StarDisplay';
-import { DatabaseInitAndVerify } from '../DatabaseUtil';
+import { DatabaseInitAndVerify } from '../Database/DatabaseUtil';
 import Stat from '../Stat';
 import ConditionalsUtil from '../Util/ConditionalsUtil';
 import { timeStringMs } from '../Util/TimeUtil';
@@ -529,7 +529,7 @@ export default class BuildDisplay extends React.Component {
       if (!character) return
       const { setFilters, statFilters, artifactConditionals, mainStat, optimizationTarget, artifactsAssumeFull, useLockedArts, ascending } = deepClone(this.state)
       character.buildSetting = { setFilters, statFilters, artifactConditionals, mainStat, optimizationTarget, artifactsAssumeFull, useLockedArts, ascending }
-      CharacterDatabase.updateCharacter(character)
+      CharacterDatabase.update(character)
     }
   }
   componentWillUnmount() {
@@ -664,13 +664,13 @@ function HitModeCard({ characterKey, forceUpdate, className }) {
   const setHitmode = v => {
     const char = CharacterDatabase.get(characterKey)
     char.hitMode = v;
-    CharacterDatabase.updateCharacter(char)
+    CharacterDatabase.update(char)
     forceUpdate()
   }
   const setReactionMode = r => {
     const char = CharacterDatabase.get(characterKey)
     char.reactionMode = r;
-    CharacterDatabase.updateCharacter(char)
+    CharacterDatabase.update(char)
     forceUpdate()
   }
   return <Card bg="lightcontent" text="lightfont" className={className}>

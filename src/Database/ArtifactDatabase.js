@@ -12,10 +12,10 @@ export default class ArtifactDatabase {
   static isInvalid = (art) =>
     !art || !art.setKey || !art.numStars || !art.slotKey || !art.mainStatKey
   static getArtifactDatabase = () => deepClone(artifactDatabase);
-  static getArtifactIdList = () => Object.keys(artifactDatabase);
+  static getIdList = () => Object.keys(artifactDatabase);
   static populateDatebaseFromLocalStorage = () => {
     if (initiated && process.env.NODE_ENV !== "development") return false;
-    Object.keys(localStorage).filter(key => key.includes("artifact_")).forEach(id => {
+    Object.keys(localStorage).filter(key => key.startsWith("artifact_")).forEach(id => {
       if (!artifactDatabase[id]) {
         let art = loadFromLocalStorage(id)
         if (!art) return;
@@ -33,7 +33,7 @@ export default class ArtifactDatabase {
   static removeArtifact = (art) => {
     this.removeArtifactById(art.id);
   }
-  static updateArtifact = (art) => {
+  static update = (art) => {
     if (this.isInvalid(art)) return;
     let id = art.id;
     if (!id) {//if does not have id, generate ID
@@ -56,7 +56,7 @@ export default class ArtifactDatabase {
     let art = this.get(artid)
     if (!art || art.location === location) return;
     art.location = location;
-    this.updateArtifact(art);
+    this.update(art);
   }
   static swapLocations = (artA, artB) => {
     let locA = artA.location
@@ -69,7 +69,7 @@ export default class ArtifactDatabase {
   static unequipAllArtifacts = () => {
     Object.values(artifactDatabase).forEach(art => {
       art.location = ""
-      this.updateArtifact(art)
+      this.update(art)
     })
   }
   //helper function for testing

@@ -1,12 +1,12 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import CharacterDatabase from '../Character/CharacterDatabase';
+import CharacterDatabase from '../Database/CharacterDatabase';
 import SlotIcon from '../Components/SlotIcon';
 import { ArtifactMainSlotKeys, ArtifactMainStatsData, ArtifactData, ArtifactSlotsData, ArtifactStarsData, ArtifactSubStatsData, ArtifactDataImport, ArtifactSubstatsMinMax } from '../Data/ArtifactData';
 import Stat from '../Stat';
 import ConditionalsUtil from '../Util/ConditionalsUtil';
 import { clampPercent, closeEnoughFloat, closeEnoughInt, deepClone } from '../Util/Util';
 import ArtifactBase from './ArtifactBase';
-import ArtifactDatabase from './ArtifactDatabase';
+import ArtifactDatabase from '../Database/ArtifactDatabase';
 
 const maxStar = 5
 

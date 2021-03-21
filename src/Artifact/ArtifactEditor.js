@@ -8,7 +8,7 @@ import Stat from '../Stat';
 import { deepClone, getArrLastElement, getRandomElementFromArray, getRandomIntInclusive } from '../Util/Util';
 import Artifact from './Artifact';
 import ArtifactCard from './ArtifactCard';
-import ArtifactDatabase from './ArtifactDatabase';
+import ArtifactDatabase from '../Database/ArtifactDatabase';
 import PercentBadge from './PercentBadge';
 import UploadDisplay from './UploadDisplay';
 

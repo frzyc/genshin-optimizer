@@ -10,11 +10,11 @@ import Row from 'react-bootstrap/Row';
 import Artifact from '../Artifact/Artifact';
 import WIPComponent from '../Components/WIPComponent';
 import { WeaponLevelKeys } from '../Data/WeaponData';
-import { DatabaseInitAndVerify } from '../DatabaseUtil';
+import { DatabaseInitAndVerify } from '../Database/DatabaseUtil';
 import { deepClone } from '../Util/Util';
 import Weapon from '../Weapon/Weapon';
 import Character from './Character';
-import CharacterDatabase from './CharacterDatabase';
+import CharacterDatabase from '../Database/CharacterDatabase';
 import CharacterArtifactPane from './CharacterDisplay/CharacterArtifactPane';
 import CharacterOverviewPane from './CharacterDisplay/CharacterOverviewPane';
 import CharacterTalentPane from './CharacterDisplay/CharacterTalentPane';
@@ -125,7 +125,7 @@ export default class CharacterDisplayCard extends React.Component {
   updateCharacter(state) {
     state = deepClone(state)
     delete state.compareAgainstEquipped
-    CharacterDatabase.updateCharacter(state)
+    CharacterDatabase.update(state)
   }
   componentDidUpdate(prevProps) {
     if (prevProps.characterKey !== this.props.characterKey && this.props.characterKey !== this.state.characterKey)

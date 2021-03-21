@@ -41,6 +41,7 @@ describe("Testing Jean's Formulas", () => {
     test("heal", () => {
       const { burst } = stats.talentLevelKeys
       expect(formula.burst.regen(burst, stats)[0](stats)).toApproximate(433)
+      expect(formula.passive1.heal(undefined, stats)[0](stats)).toApproximate(156)
     })
     test("reactions", () => {
       expect(stats.cryo_swirl_hit).toApproximate(423)

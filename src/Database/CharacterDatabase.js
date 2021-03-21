@@ -10,7 +10,7 @@ export default class CharacterDatabase {
   static isInvalid = (char) => !char || !char.characterKey || !char.levelKey
   static getCharacterDatabase = () => deepClone(characterDatabase);
   static getCharacterKeyList = () => Object.keys(characterDatabase);
-  static getIdNameList = () => Object.entries(characterDatabase).map(([id, char]) => [id, char.name]);
+  static getIdList = () => Object.keys(characterDatabase);
   static populateDatebaseFromLocalStorage = () => {
     if (initiated && process.env.NODE_ENV !== "development") return false;
     Object.keys(localStorage).filter(key => key.startsWith("char_")).forEach(key => {
@@ -24,7 +24,7 @@ export default class CharacterDatabase {
     initiated = true
     return true
   }
-  static updateCharacter = (char) => {
+  static update = (char) => {
     if (this.isInvalid(char)) return;
     const dchar = deepClone(char)
     saveToLocalStorage(`char_${char.characterKey}`, dchar);
@@ -44,25 +44,25 @@ export default class CharacterDatabase {
     if (!char || !art || !art.slotKey) return
     if (!char.equippedArtifacts) char.equippedArtifacts = {};
     char.equippedArtifacts[art.slotKey] = art.id;
-    this.updateCharacter(char)
+    this.update(char)
   }
   static unequipArtifactOnSlot = (characterKey, slotKey) => {
     const char = this.get(characterKey)
     if (!char || !slotKey) return
     if (!char?.equippedArtifacts?.[slotKey]) return;
     char.equippedArtifacts[slotKey] = "";
-    this.updateCharacter(char)
+    this.update(char)
   }
   static equipArtifactBuild = (characterKey, artifactIds) => {
     const character = this.get(characterKey)
     if (!character) return;
     character.equippedArtifacts = artifactIds
-    CharacterDatabase.updateCharacter(character);
+    CharacterDatabase.update(character);
   }
   static unequipAllArtifacts = () => {
     Object.values(characterDatabase).forEach(char => {
       char.equippedArtifacts = {}
-      this.updateCharacter(char)
+      this.update(char)
     })
   }
   //helper function for testing

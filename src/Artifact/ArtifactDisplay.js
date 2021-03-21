@@ -7,17 +7,17 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import ReactGA from 'react-ga';
 import Character from '../Character/Character';
-import CharacterDatabase from '../Character/CharacterDatabase';
+import CharacterDatabase from '../Database/CharacterDatabase';
 import { CharacterSelectionDropdownList } from '../Components/CharacterSelection';
 import CustomFormControl from '../Components/CustomFormControl';
 import { Stars } from '../Components/StarDisplay';
-import { DatabaseInitAndVerify } from '../DatabaseUtil';
+import { DatabaseInitAndVerify } from '../Database/DatabaseUtil';
 import InfoComponent from '../InfoComponent';
 import Stat from '../Stat';
 import { deepClone, loadFromLocalStorage, saveToLocalStorage } from '../Util/Util';
 import Artifact from './Artifact';
 import ArtifactCard from './ArtifactCard';
-import ArtifactDatabase from './ArtifactDatabase';
+import ArtifactDatabase from '../Database/ArtifactDatabase';
 import ArtifactDisplayInfo from './ArtifactDisplayInfo/ArtifactDisplayInfo';
 import ArtifactEditor from './ArtifactEditor';
 
@@ -61,7 +61,7 @@ export default class ArtifactDisplay extends React.Component {
   forceUpdateArtifactDisplay = () => this.forceUpdate()
 
   addArtifact = (art) => {
-    ArtifactDatabase.updateArtifact(art);
+    ArtifactDatabase.update(art);
     this.setState({ artToEditId: null })
   }
 

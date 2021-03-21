@@ -1,18 +1,19 @@
 import { faDiscord, faPatreon, faPaypal } from '@fortawesome/free-brands-svg-icons';
+import { faCog } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { Suspense, lazy } from 'react';
-import Card from 'react-bootstrap/Card'
-import Col from 'react-bootstrap/Col'
-import Row from 'react-bootstrap/Row'
-import Container from 'react-bootstrap/Container'
-import Spinner from 'react-bootstrap/Spinner'
+import React, { lazy, Suspense } from 'react';
+import Card from 'react-bootstrap/Card';
+import Col from 'react-bootstrap/Col';
+import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { Link, Route, Switch, HashRouter } from "react-router-dom";
-import './App.scss';
-import './Assets/Image.scss'
-import { version } from "../package.json"
+import Row from 'react-bootstrap/Row';
+import Spinner from 'react-bootstrap/Spinner';
 import ReactGA from 'react-ga';
+import { HashRouter, Link, Route, Switch } from "react-router-dom";
+import { version } from "../package.json";
+import './App.scss';
+import './Assets/Image.scss';
 
 const Home = lazy(() => import('./Home/HomeDisplay'))
 const ArtifactDisplay = lazy(() => import('./Artifact/ArtifactDisplay'))
@@ -20,7 +21,7 @@ const CharacterDisplay = lazy(() => import('./Character/CharacterDisplay'))
 const BuildDisplay = lazy(() => import('./Build/BuildDisplay'))
 const Planner = lazy(() => import('./Planner/PlannerDisplay'))
 const TestDisplay = lazy(() => import('./TestPage/TestDisplay'))
-
+const SettingsDisplay = lazy(() => import('./Settings/SettingsDisplay'))
 function App() {
   return (
     <HashRouter>
@@ -48,6 +49,7 @@ function App() {
                 <Nav.Link href={process.env.REACT_APP_DISCORD_LINK} target="_blank" rel="noreferrer" onClick={() => ReactGA.outboundLink({ label: "discord" }, () => { })}>
                   <span><FontAwesomeIcon icon={faDiscord} className="fa-fw" /> Discord</span>
                 </Nav.Link>
+                <Nav.Link as={Link} to="/setting"><FontAwesomeIcon icon={faCog} /></Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Navbar>
@@ -63,6 +65,7 @@ function App() {
               <Route path="/build" component={BuildDisplay} />
               <Route path="/tools" component={Planner} />
               {process.env.NODE_ENV === "development" && <Route path="/test" component={TestDisplay} />}
+              <Route path="/setting" component={SettingsDisplay} />
               <Route path="/" component={Home} />
               {/* <Route exact path="/" component={Home} /> */}
             </Switch>
