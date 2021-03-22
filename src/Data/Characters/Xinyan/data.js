@@ -80,7 +80,7 @@ const formula = {
         },
         dot: (tlvl, stats) => basicDMGFormula(data.skill.dot[tlvl], stats, "skill"),
     },
-    burst: {
+    burst: { //TODO does physical dmg (only dot is pyro)
         // dmg: (tlvl, stats) => {
         //     const val = data.burst.dmg[tlvl] / 100
         //     return [s => (val * s.finalATK) * s.[statKey], ["finalATK", statKey]]

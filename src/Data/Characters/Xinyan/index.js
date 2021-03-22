@@ -175,7 +175,7 @@ const char = {
                         className="text-pyro">Pyro DMG</span> to nearby opponents.</p>
                 </span>,
                 fields: [{
-                    text: "Burst DMG",
+                    text: "Burst DMG", //TODO does physical dmg
                     formulaText: (tlvl, stats) =>
                         <span>{data.burst.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
                     formula: formula.burst.dmg,
@@ -238,7 +238,7 @@ const char = {
                 text: <span>Upon scoring a CRIT hit, increases ATK SPD of Xinyan's <b>Normal and Charged Attacks</b> by 12% for 5s. Can only occur once every 5s.</span>,
             }],
         },
-        constellation2: {
+        constellation2: { //TODO implement
             name: "Impromptu Opening",
             img: c2,
             document: [{text: <span><b>Riff Revolution</b> Physical DMG has its Crit rate increased by 100%, and will form a shield at Shield Level 3: Rave when cast.</span>,}],
