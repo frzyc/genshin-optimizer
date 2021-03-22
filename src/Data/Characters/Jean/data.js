@@ -49,7 +49,12 @@ const formula = {
   plunging: Object.fromEntries(Object.entries(data.plunging).map(([key, arr]) => [key, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "plunging")])),
   skill: {
     dmg: (tlvl, stats) => basicDMGFormula(data.skill.dmg[tlvl], stats, "skill"),
-    dmg_hold: (tlvl, stats) => basicDMGFormula(data.skill.dmg[tlvl] * 1.4, stats, "skill")
+    dmg_hold: (tlvl, stats) => {
+      const val = data.skill.dmg[tlvl] / 100
+      const hitModeMultiKey = stats.hitMode === "avgHit" ? "skill_avgHit_base_multi" : stats.hitMode === "critHit" ? "critHit_base_multi" : ""
+      return [s => val * s.finalATK * (hitModeMultiKey ? s[hitModeMultiKey] : 1) * (s.anemo_skill_hit_base_multi + 0.4) * s.enemyLevel_multi * s.anemo_enemyRes_multi,
+      ["finalATK", ...(hitModeMultiKey ? [hitModeMultiKey] : []), "anemo_skill_hit_base_multi", "enemyLevel_multi", "anemo_enemyRes_multi"]]
+    }
   },
   burst: {
     skill: (tlvl, stats) => basicDMGFormula(data.burst.skill[tlvl], stats, "burst"),

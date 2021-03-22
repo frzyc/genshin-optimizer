@@ -1,4 +1,5 @@
-import { StatData } from "../../StatData"
+import { PreprocessFormulas, StatData } from "../../StatData"
+import { GetDependencies } from "../../StatDependency"
 
 export const createProxiedStats = (baseStats) => new Proxy({ ...baseStats }, {
   get: (target, property) => { 
@@ -11,4 +12,9 @@ export function applyArtifacts(stats, artifacts) {
     Object.entries(artifact).forEach(([key, value]) =>
       stats[key] += value)
   )
+}
+export function computeAllStats(baseStats) {
+  const stats = { ...baseStats }
+  PreprocessFormulas(GetDependencies(stats.modifiers), stats).formula(stats)
+  return stats
 }
