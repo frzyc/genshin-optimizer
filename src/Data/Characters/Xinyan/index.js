@@ -92,38 +92,45 @@ const char = {
             img: skill,
             document: [{
                 text: <span>
-                <p className="mb-0">Xinyan brandishes her instrument, dealing <span className="text-pyro">Pyro DMG</span> on nearby opponents, forming a shield made out of her audience's passion.</p>
+                <p className="mb-0">Xinyan brandishes her instrument, dealing <span
+                    className="text-pyro">Pyro DMG</span> on nearby opponents, forming a shield made out of her audience's passion.</p>
                 <p className="mb-2">The shield's DMG Absorption scales based on Xinyan's DEF and on the number of opponents hit.</p>
                 <ul className="mb-1">
                     <li>Hitting 0-1 opponents grants Shield Level 1: Ad Lib.</li>
                     <li>Hitting 2 opponents grants Shield Level 2: Lead-In.</li>
-                    <li>Hitting 3 or more opponents grants Shield Level 3: Rave, which will also deal intermittent <span className="text-pyro">Pyro DMG</span> to nearby opponents.</li>
+                    <li>Hitting 3 or more opponents grants Shield Level 3: Rave, which will also deal intermittent <span
+                        className="text-pyro">Pyro DMG</span> to nearby opponents.</li>
                 </ul>
                 <p className="mb-2">The shield has the following special properties:</p>
                 <ul className="mb-1">
                     <li>When unleashed, it infuses Xinyan with <span className="text-pyro">Pyro</span>.</li>
-                    <li>It has 250% DMG Absorption effectiveness against <span className="text-pyro">Pyro DMG</span>.</li>
+                    <li>It has 250% DMG Absorption effectiveness against <span
+                        className="text-pyro">Pyro DMG</span>.</li>
                 </ul>
                 </span>,
                 fields: [{
                     text: "Swing DMG",
-                    formulaText: (tlvl, stats) => <span>{data.skill.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
+                    formulaText: (tlvl, stats) =>
+                        <span>{data.skill.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
                     formula: formula.skill.dmg,
                     variant: (tlvl, stats) => getTalentStatKeyVariant("skill", stats),
                 }, {
                     text: "Shield Level 1 DMG Absorption",
-                    formulaText: (tlvl, stats) => <span>{data.skill.def1[tlvl]}% {Stat.printStat("finalDEF", stats)} + {data.skill.flat1[tlvl]}</span>,
+                    formulaText: (tlvl, stats) =>
+                        <span>{data.skill.def1[tlvl]}% {Stat.printStat("finalDEF", stats)} + {data.skill.flat1[tlvl]}</span>,
                     formula: formula.skill.shield1,
                 }, {
                     text: "Shield Level 2 DMG Absorption",
-                    formulaText: (tlvl, stats) => <span>{data.skill.def2[tlvl]}% {Stat.printStat("finalDEF", stats)} + {data.skill.flat2[tlvl]}</span>,
+                    formulaText: (tlvl, stats) =>
+                        <span>{data.skill.def2[tlvl]}% {Stat.printStat("finalDEF", stats)} + {data.skill.flat2[tlvl]}</span>,
                     formula: formula.skill.shield2,
                 }, {
                     text: "Shield Level 3 DMG Absorption",
-                    formulaText: (tlvl, stats) => <span>{data.skill.def3[tlvl]}% {Stat.printStat("finalDEF", stats)} + {data.skill.flat3[tlvl]}</span>,
+                    formulaText: (tlvl, stats) =>
+                        <span>{data.skill.def3[tlvl]}% {Stat.printStat("finalDEF", stats)} + {data.skill.flat3[tlvl]}</span>,
                     formula: formula.skill.shield3,
                 }, {
-                    text: "DoT",
+                    text: "Pyro DoT",
                     formulaText: (tlvl, stats) =>
                         <span>{data.skill.dot[tlvl]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
                     formula: formula.skill.dot,
@@ -143,11 +150,13 @@ const char = {
             document: [{
                 text: <span>
                     <p className="mb-0">Strumming rapidly, Xinyan launches nearby opponents and deals Physical DMG to them, hyping up the crowd.</p>
-                    <p className="mb-2">The sheer intensity of the atmosphere will cause explosions that deal <span className="text-pyro">Pyro DMG</span> to nearby opponents.</p>
+                    <p className="mb-2">The sheer intensity of the atmosphere will cause explosions that deal <span
+                        className="text-pyro">Pyro DMG</span> to nearby opponents.</p>
                 </span>,
                 fields: [{
                     text: "Skill DMG",
-                    formulaText: (tlvl, stats) => <span>{data.burst.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
+                    formulaText: (tlvl, stats) =>
+                        <span>{data.burst.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
                     formula: formula.burst.dmg,
                     variant: (tlvl, stats) => getTalentStatKeyVariant("burst", stats),
                 }, {
@@ -171,7 +180,8 @@ const char = {
         passive1: {
             name: "\"The Show Goes On, Even Without an Audience...\"",
             img: passive1,
-            document: [{ text: <span>
+            document: [{
+                text: <span>
                     Decreases the number of opponents <b>Sweeping Fervor</b> must hit to trigger each level of shielding.
                     <ul className="mb-0">
                         <li>Shield Level 2: Lead-In requirement reduced to 1 opponent hit.</li>
@@ -191,44 +201,58 @@ const char = {
                     condition: "Sweeping Fervor Shield",
                     sourceKey: "xinyan",
                     maxStack: 1,
-                    stats: { physical_dmg_: 15 },//TODO: party buff
+                    stats: {physical_dmg_: 15},//TODO: party buff
                 }
             }],
         },
         passive3: {
             name: "A Rad Recipe",
             img: passive3,
-            document: [{ text: <span>When a Perfect Cooking is achieved on a DEF-boosting dish, Xinyan has a 12% chance to obtain double the product.</span>,}],
+            document: [{text: <span>When a Perfect Cooking is achieved on a DEF-boosting dish, Xinyan has a 12% chance to obtain double the product.</span>,}],
         },
         constellation1: {
             name: "Fatal Acceleration",
             img: c1,
-            document: [{ text: <span>Upon scoring a CRIT hit, increases ATK SPD of Xinyan's <b>Normal and Charged Attacks</b> by 12% for 5s. Can only occur once every 5s.</span>,}],
+            document: [{
+                text: <span>Upon scoring a CRIT hit, increases ATK SPD of Xinyan's <b>Normal and Charged Attacks</b> by 12% for 5s. Can only occur once every 5s.</span>,
+            }],
         },
         constellation2: {
             name: "Impromptu Opening",
             img: c2,
-            document: [{ text: <span><b>Riff Revolution</b> Physical DMG has its Crit rate increased by 100%, and will form a shield at Shield Level 3: Rave when cast.</span>,}],
+            document: [{text: <span><b>Riff Revolution</b> Physical DMG has its Crit rate increased by 100%, and will form a shield at Shield Level 3: Rave when cast.</span>,}],
         },
         constellation3: {
             name: "Double-Stop",
             img: c3,
             document: [{ text: <span>Increases the Level of <b>Sweeping Fervor</b> by 3. Maximum upgrade level is 15.</span>,}],
+            talentBoost: { skill: 3}
         },
         constellation4: {
             name: "Wildfire Rhythm",
             img: c4,
-            document: [{ text: <span><b>Sweeping Fervor</b>'s swing DMG decreases opponent's Physical RES by 15% for 12s.</span>,}],
+            document: [{
+                text: <span><b>Sweeping Fervor</b>'s swing DMG decreases opponent's Physical RES by 15% for 12s.</span>,
+                conditional: (tlvl, c, a) => c >= 4 && {
+                    type: "character",
+                    conditionalKey: "WildfireRhythm",
+                    condition: "Sweeping Fervor Swing",
+                    sourceKey: "xinyan",
+                    maxStack: 1,
+                    stats: { physical_enemyRes_: -15,}//TODO: party buff
+                }
+            }],
         },
         constellation5: {
             name: "Screamin' for an Encore",
             img: c5,
             document: [{ text: <span>Increases the Level of <b>Riff Revolution</b> by 3. Maximum upgrade level is 15.</span>,}],
+            talentBoost: { burst: 3}
         },
         constellation6: {
             name: "Rockin' in a Flaming World",
             img: c6,
-            document: [{ text: <span>Decrease the Stamina Consumption of Xinyan <b>Charged Attacks</b> by 30%. Additionally, Xinyan's <b>Charged Attacks</b> gain an ATK bonus equal to 50% of her DEF.</span>,}],
+            document: [{text: <span>Decrease the Stamina Consumption of Xinyan <b>Charged Attacks</b> by 30%. Additionally, Xinyan's <b>Charged Attacks</b> gain an ATK bonus equal to 50% of her DEF.</span>,}],
         },
     }
 };
