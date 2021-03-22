@@ -45,25 +45,46 @@ const char = {
                     }))
             }, {
                 text: <span><strong>Charged Attack</strong> Drains Stamina over time to perform continuous spinning attacks against all nearby opponents.</span>,
-                fields: [{
-                    text: `Spinning DMG`,
-                    formulaText: (tlvl, stats) =>
-                        <span>{data.charged.spinning[tlvl]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
-                    formula: formula.charged.spinning,
-                    variant: (tlvl, stats) => getTalentStatKeyVariant("charged", stats)
-                }, {
-                    text: `Spinning Final DMG`,
-                    formulaText: (tlvl, stats) =>
-                        <span>{data.charged.final[tlvl]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
-                    formula: formula.charged.final,
-                    variant: (tlvl, stats) => getTalentStatKeyVariant("charged", stats)
-                }, {
-                    text: `Stamina Cost`,
-                    value: "40/s",
-                }, {
-                    text: `Max Duration`,
-                    value: "5s",
-                }],
+                fields: [
+                    (con, a) => con <= 5 ?
+                        {
+                            text: `Spinning DMG`,
+                            formulaText: (tlvl, stats) =>
+                                <span>{data.charged.spinning[tlvl]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
+                            formula: formula.charged.spinning,
+                            variant: (tlvl, stats) => getTalentStatKeyVariant("charged", stats)
+                        } : {
+                            text: `Spinning DMG`,
+                            formulaText: (tlvl, stats) =>
+                                <span>( {data.charged.spinning[tlvl]}% ( {Stat.printStat("finalATK", stats)} + 50% {Stat.printStat("finalDEF", stats)} ) ) * {Stat.printStat(getTalentStatKey("charged", stats) + "_multi", stats)}</span>,
+                            formula: formula.charged.spinningDEF,
+                            variant: (tlvl, stats) => getTalentStatKeyVariant("charged", stats)
+                        },
+                    (con, a) => con <= 5 ?
+                        {
+                            text: `Spinning Final DMG`,
+                            formulaText: (tlvl, stats) =>
+                                <span>{data.charged.final[tlvl]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
+                            formula: formula.charged.final,
+                            variant: (tlvl, stats) => getTalentStatKeyVariant("charged", stats)
+                        } : {
+                            text: `Spinning Final DMG`,
+                            formulaText: (tlvl, stats) =>
+                                <span> ( {data.charged.final[tlvl]}% ( {Stat.printStat("finalATK", stats)} + 50% {Stat.printStat("finalDEF", stats)} ) ) * {Stat.printStat(getTalentStatKey("charged", stats) + "_multi", stats)}</span>,
+                            formula: formula.charged.finalDEF,
+                            variant: (tlvl, stats) => getTalentStatKeyVariant("charged", stats)
+                        },
+                    (con, a) => con <= 5 ?
+                        {
+                            text: `Stamina Cost`,
+                            value: "40/s",
+                        } : {
+                            text: `Stamina Cost`,
+                            value: "40/s - 30%",
+                        }, {
+                        text: `Max Duration`,
+                        value: "5s",
+                    }],
             }, {
                 text: <span><strong>Plunging Attack</strong> Plunges from mid-air to strike the ground, damaging enemies along the path and dealing AoE DMG upon impact.</span>,
                 fields: [{
@@ -154,7 +175,7 @@ const char = {
                         className="text-pyro">Pyro DMG</span> to nearby opponents.</p>
                 </span>,
                 fields: [{
-                    text: "Skill DMG",
+                    text: "Burst DMG",
                     formulaText: (tlvl, stats) =>
                         <span>{data.burst.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
                     formula: formula.burst.dmg,
@@ -225,8 +246,10 @@ const char = {
         constellation3: {
             name: "Double-Stop",
             img: c3,
-            document: [{ text: <span>Increases the Level of <b>Sweeping Fervor</b> by 3. Maximum upgrade level is 15.</span>,}],
-            talentBoost: { skill: 3}
+            document: [{
+                text: <span>Increases the Level of <b>Sweeping Fervor</b> by 3. Maximum upgrade level is 15.</span>,
+            }],
+            talentBoost: {skill: 3}
         },
         constellation4: {
             name: "Wildfire Rhythm",
@@ -239,15 +262,17 @@ const char = {
                     condition: "Sweeping Fervor Swing",
                     sourceKey: "xinyan",
                     maxStack: 1,
-                    stats: { physical_enemyRes_: -15,}//TODO: party buff
+                    stats: {physical_enemyRes_: -15,}//TODO: party buff
                 }
             }],
         },
         constellation5: {
             name: "Screamin' for an Encore",
             img: c5,
-            document: [{ text: <span>Increases the Level of <b>Riff Revolution</b> by 3. Maximum upgrade level is 15.</span>,}],
-            talentBoost: { burst: 3}
+            document: [{
+                text: <span>Increases the Level of <b>Riff Revolution</b> by 3. Maximum upgrade level is 15.</span>,
+            }],
+            talentBoost: {burst: 3}
         },
         constellation6: {
             name: "Rockin' in a Flaming World",

@@ -1,4 +1,5 @@
 import {basicDMGFormula} from "../../../Util/FormulaUtil";
+import {getTalentStatKey} from "../../../Build/Build";
 
 
 export const data = {
@@ -43,12 +44,21 @@ export const data = {
         dot: [40, 43, 46, 50, 53, 56, 60, 64, 68, 72, 76, 80, 85, 90, 95],
     }
 }
+function nyanDMG(percent, defMulti, stats, skillKey = "charged", elemental = false) {
+    const val = percent / 100
+    const statKey = getTalentStatKey(skillKey, stats, elemental) + "_multi"
+    return [s => (val * (s.finalATK + (defMulti * s.finalDEF))) * s[statKey], ["finalATK", "finalDEF", statKey]]
+}
 
 const formula = {
     normal: Object.fromEntries(data.normal.hitArr.map((percentArr, i) => [i, (tlvl, stats) =>
         basicDMGFormula(percentArr[tlvl], stats, "normal")])),
-    charged: Object.fromEntries(Object.entries(data.charged).map(([name, arr]) =>
-        [name, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "charged")])),
+    charged: {
+        spinning: (tlvl, stats) => basicDMGFormula(data.charged.spinning[tlvl], stats, "charged"),
+        spinningDEF: (tlvl, stats) => nyanDMG(data.charged.spinning[tlvl], 0.5, stats),
+        final: (tlvl, stats) => basicDMGFormula(data.charged.final[tlvl], stats, "charged"),
+        finalDEF: (tlvl, stats) => nyanDMG(data.charged.final[tlvl], 0.5, stats),
+    },
     plunging: Object.fromEntries(Object.entries(data.plunging).map(([name, arr]) =>
         [name, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "plunging")])),
     skill: {
@@ -71,6 +81,10 @@ const formula = {
         dot: (tlvl, stats) => basicDMGFormula(data.skill.dot[tlvl], stats, "skill"),
     },
     burst: {
+        // dmg: (tlvl, stats) => {
+        //     const val = data.burst.dmg[tlvl] / 100
+        //     return [s => (val * s.finalATK) * s.[statKey], ["finalATK", statKey]]
+        // },
         dmg: (tlvl, stats) => basicDMGFormula(data.burst.dmg[tlvl], stats, "burst"),
         dot: (tlvl, stats) => basicDMGFormula(data.burst.dot[tlvl], stats, "burst"),
     },
