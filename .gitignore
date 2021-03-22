@@ -29,3 +29,4 @@ yarn-error.log*
 .notes
 # template files
 TEMPLATE*
+.idea/workspace.xml
