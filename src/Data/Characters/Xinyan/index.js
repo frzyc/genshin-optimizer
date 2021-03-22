@@ -101,10 +101,9 @@ const char = {
                 </ul>
                 <p className="mb-2">The shield has the following special properties:</p>
                 <ul className="mb-1">
-                    <li>When unleashed, it infuses Xinyan with Pyro.</li>
+                    <li>When unleashed, it infuses Xinyan with <span className="text-pyro">Pyro</span>.</li>
                     <li>It has 250% DMG Absorption effectiveness against <span className="text-pyro">Pyro DMG</span>.</li>
                 </ul>
-                    // TODO elemental particles
                 </span>,
                 fields: [{
                     text: "Swing DMG",
@@ -130,6 +129,9 @@ const char = {
                     formula: formula.skill.dot,
                     variant: (tlvl, stats) => getTalentStatKeyVariant("skill", stats),
                 }, {
+                    text: "Shield Duration",
+                    value: "12s",
+                }, {
                     text: "CD",
                     value: "18s",
                 }]
@@ -140,8 +142,8 @@ const char = {
             img: burst,
             document: [{
                 text: <span>
-                    <p>Strumming rapidly, Xinyan launches nearby opponents and deals Physical DMG to them, hyping up the crowd.</p>
-                    <p>The sheer intensity of the atmosphere will cause explosions that deal <span className="text-pyro">Pyro DMG</span> to nearby opponents.</p>
+                    <p className="mb-0">Strumming rapidly, Xinyan launches nearby opponents and deals Physical DMG to them, hyping up the crowd.</p>
+                    <p className="mb-2">The sheer intensity of the atmosphere will cause explosions that deal <span className="text-pyro">Pyro DMG</span> to nearby opponents.</p>
                 </span>,
                 fields: [{
                     text: "Skill DMG",
@@ -181,14 +183,23 @@ const char = {
         passive2: {
             name: "\"...Now That's Rock 'N' Roll!\"",
             img: passive2,
-            document: [{ text: <span>Characters shielded by <b>Sweeping Fervor</b> deal 15% increased Physical DMG.</span>,}],// TODO Team buffs
+            document: [{
+                text: <span>Characters shielded by <b>Sweeping Fervor</b> deal 15% increased Physical DMG.</span>,
+                conditional: (tlvl, c, a) => a >= 4 && {
+                    type: "character",
+                    conditionalKey: "NowThatsRockNRoll",
+                    condition: "Sweeping Fervor Shield",
+                    sourceKey: "xinyan",
+                    maxStack: 1,
+                    stats: { physical_dmg_: 15 },//TODO: party buff
+                }
+            }],
         },
         passive3: {
             name: "A Rad Recipe",
             img: passive3,
             document: [{ text: <span>When a Perfect Cooking is achieved on a DEF-boosting dish, Xinyan has a 12% chance to obtain double the product.</span>,}],
         },
-        // TODO constelations implementation
         constellation1: {
             name: "Fatal Acceleration",
             img: c1,
