@@ -177,9 +177,8 @@ const char = {
                 fields: [{
                     text: "Burst DMG", //TODO does physical dmg
                     formulaText: (tlvl, stats) =>
-                        <span>{data.burst.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
+                        <span>{data.burst.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
                     formula: formula.burst.dmg,
-                    variant: (tlvl, stats) => getTalentStatKeyVariant("burst", stats),
                 }, {
                     text: "Pyro DoT",
                     formulaText: (tlvl, stats) =>
