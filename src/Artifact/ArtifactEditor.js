@@ -26,6 +26,7 @@ export default class ArtifactEditor extends React.Component {
     slotKey: "",//one of flower, plume, sands, globlet, circlet
     mainStatKey: "",
     substats: [...Array(4).keys()].map(() => ({ key: "", value: 0 })),
+    location:"",
   }
   static getInitialState = () => deepClone(ArtifactEditor.initialState)
   setLevel = (newlevel) => this.setState(state => {
