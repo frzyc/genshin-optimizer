@@ -60,7 +60,7 @@ const char = {
           value: stats => "40/s" + (stats.ascension >= 1 ? " - 20/s" : ""),
         }, {
           text: `Max Duration`,
-          value: stats => "5s" + (stats.ascensionstats.ascension >= 1 ? " + 3s" : ""),
+          value: stats => "5s" + (stats.ascension >= 1 ? " + 3s" : ""),
         }]
       }, {
         text: <span><strong>Plunging Attack</strong> Plunges from mid-air to strike the ground, damaging enemies along the path and dealing AoE DMG upon impact.</span>,
