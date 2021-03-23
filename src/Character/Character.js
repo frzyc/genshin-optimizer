@@ -307,6 +307,7 @@ export default class Character {
   })
 
   static calculateCharacterWithWeaponStats = (character) => {
+    if (!character) return {}
     character = deepClone(character)
     const { characterKey, levelKey, hitMode, autoInfused, reactionMode, talentLevelKeys, constellation, talentConditionals = [] } = character
     const ascension = Character.getAscension(levelKey)
