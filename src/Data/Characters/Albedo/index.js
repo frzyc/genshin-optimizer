@@ -39,22 +39,22 @@ const char = {
         fields: data.normal.hitArr.map((percentArr, i) =>
         ({
           text: `${i + 1}-Hit DMG`,
-          formulaText: (tlvl, stats) => <span>{percentArr[tlvl]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
+          formulaText: stats => <span>{percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
           formula: formula.normal[i],
-          variant: (tlvl, stats) => getTalentStatKeyVariant("normal", stats)
+          variant: stats => getTalentStatKeyVariant("normal", stats)
         }))
       }, {
         text: <span><strong>Charged Attack</strong> Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.</span>,
         fields: [{
           text: `Charged 1-Hit DMG`,
-          formulaText: (tlvl, stats) => <span>{data.charged.atk1[tlvl]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
+          formulaText: stats => <span>{data.charged.atk1[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
           formula: formula.charged.atk1,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("charged", stats),
+          variant: stats => getTalentStatKeyVariant("charged", stats),
         }, {
           text: `Charged 2-Hit DMG`,
-          formulaText: (tlvl, stats) => <span>{data.charged.atk2[tlvl]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
+          formulaText: stats => <span>{data.charged.atk2[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
           formula: formula.charged.atk2,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("charged", stats),
+          variant: stats => getTalentStatKeyVariant("charged", stats),
         }, {
           text: `Stamina Cost`,
           value: 20,
@@ -63,19 +63,19 @@ const char = {
         text: <span><strong>Plunging Attack</strong> Plunges from mid-air to strike the ground, damaging enemies along the path and dealing AoE DMG upon impact.</span>,
         fields: [{
           text: `Plunge DMG`,
-          formulaText: (tlvl, stats) => <span>{data.plunging.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+          formulaText: stats => <span>{data.plunging.dmg[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
           formula: formula.plunging.dmg,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("plunging", stats),
+          variant: stats => getTalentStatKeyVariant("plunging", stats),
         }, {
           text: `Low Plunge DMG`,
-          formulaText: (tlvl, stats) => <span>{data.plunging.low[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+          formulaText: stats => <span>{data.plunging.low[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
           formula: formula.plunging.low,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("plunging", stats),
+          variant: stats => getTalentStatKeyVariant("plunging", stats),
         }, {
           text: `High Plunge DMG`,
-          formulaText: (tlvl, stats) => <span>{data.plunging.high[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+          formulaText: stats => <span>{data.plunging.high[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
           formula: formula.plunging.high,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("plunging", stats),
+          variant: stats => getTalentStatKeyVariant("plunging", stats),
         }]
       }]
     },
@@ -95,23 +95,23 @@ const char = {
         </span>,
         fields: [{
           text: "Place DMG",
-          formulaText: (tlvl, stats) => <span>{data.skill.press[tlvl]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
+          formulaText: stats => <span>{data.skill.press[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
           formula: formula.skill.press,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("skill", stats),
+          variant: stats => getTalentStatKeyVariant("skill", stats),
         }, {
           text: "Transient Blossom DMG",
-          formulaText: (tlvl, stats) => <span>{data.skill.blossom[tlvl]}% {Stat.printStat("finalDEF", stats)} * {Stat.printStat(getTalentStatKey("skill", stats) + "_multi", stats)}</span>,
+          formulaText: stats => <span>{data.skill.blossom[stats.tlvl.skill]}% {Stat.printStat("finalDEF", stats)} * {Stat.printStat(getTalentStatKey("skill", stats) + "_multi", stats)}</span>,
           formula: formula.skill.blossom,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("skill", stats),
+          variant: stats => getTalentStatKeyVariant("skill", stats),
         },
-        (con, a) => a >= 1 && {
+        stats => stats.ascension >= 1 && {
           text: "Transient Blossom DMG <50 HP",
-          formulaText: (tlvl, stats) => {
+          formulaText: stats => {
             const hitModeMultiKey = stats.hitMode === "avgHit" ? "skill_avgHit_base_multi" : stats.hitMode === "critHit" ? "critHit_base_multi" : ""
-            return < span >{data.skill.blossom[tlvl]}% {Stat.printStat("finalDEF", stats)} * {(hitModeMultiKey ? <span>{Stat.printStat(hitModeMultiKey, stats)} * </span> : "")}( {Stat.printStat("geo_skill_hit_base_multi", stats)} + 25%) * {Stat.printStat("enemyLevel_multi", stats)} * {Stat.printStat("geo_enemyRes_multi", stats)}</span >
+            return <span>{data.skill.blossom[stats.tlvl.skill]}% {Stat.printStat("finalDEF", stats)} * {(hitModeMultiKey ? <span>{Stat.printStat(hitModeMultiKey, stats)} * </span> : "")}( {Stat.printStat("geo_skill_hit_base_multi", stats)} + 25%) * {Stat.printStat("enemyLevel_multi", stats)} * {Stat.printStat("geo_enemyRes_multi", stats)}</span>
           },
           formula: formula.skill.blossom50,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("skill", stats),
+          variant: stats => getTalentStatKeyVariant("skill", stats),
         }]
       }],
     },
@@ -124,27 +124,27 @@ const char = {
         </span>,
         fields: [{
           text: "Burst DMG",
-          formulaText: (tlvl, stats) => <span>{data.burst.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
+          formulaText: stats => <span>{data.burst.dmg[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
           formula: formula.burst.dmg,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("burst", stats),
+          variant: stats => getTalentStatKeyVariant("burst", stats),
         },
-        ...[...Array(4).keys()].map(i => i + 1).map(i => (con, a) => con >= 2 && {
+        ...[...Array(4).keys()].map(i => i + 1).map(i => stats => stats.constellation >= 2 && {
           text: `Burst DMG C2 ${i} Stack`,
-          formulaText: (tlvl, stats) => <span>( {data.burst.dmg[tlvl]}% {Stat.printStat("finalATK", stats)} + {30 * i}% {Stat.printStat("finalDEF", stats)}) * {Stat.printStat(getTalentStatKey("burst", stats) + "_multi", stats)}</span>,
+          formulaText: stats => <span>( {data.burst.dmg[stats.tlvl.burst]}% {Stat.printStat("finalATK", stats)} + {30 * i}% {Stat.printStat("finalDEF", stats)}) * {Stat.printStat(getTalentStatKey("burst", stats) + "_multi", stats)}</span>,
           formula: formula.burst[`dmg${i}c2`],
-          variant: (tlvl, stats) => getTalentStatKeyVariant("burst", stats),
+          variant: stats => getTalentStatKeyVariant("burst", stats),
         }),
         {
           text: "Fatal Blossom DMG",
-          formulaText: (tlvl, stats) => <span>{data.burst.blossom[tlvl]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
+          formulaText: stats => <span>{data.burst.blossom[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
           formula: formula.burst.blossom,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("burst", stats),
+          variant: stats => getTalentStatKeyVariant("burst", stats),
         },
-        ...[...Array(4).keys()].map(i => i + 1).map(i => (con, a) => con >= 2 && {
+        ...[...Array(4).keys()].map(i => i + 1).map(i => stats => stats.constellation && {
           text: `Fatal Blossom DMG C2 ${i} Stack`,
-          formulaText: (tlvl, stats) => <span>( {data.burst.blossom[tlvl]}% {Stat.printStat("finalATK", stats)} + {30 * i}% {Stat.printStat("finalDEF", stats)}) * {Stat.printStat(getTalentStatKey("burst", stats) + "_multi", stats)}</span>,
+          formulaText: stats => <span>( {data.burst.blossom[stats.tlvl.burst]}% {Stat.printStat("finalATK", stats)} + {30 * i}% {Stat.printStat("finalDEF", stats)}) * {Stat.printStat(getTalentStatKey("burst", stats) + "_multi", stats)}</span>,
           formula: formula.burst[`blossom${i}c2`],
-          variant: (tlvl, stats) => getTalentStatKeyVariant("burst", stats),
+          variant: stats => getTalentStatKeyVariant("burst", stats),
         })]
       }],
     },
@@ -160,7 +160,7 @@ const char = {
       img: passive1,
       document: [{
         text: <span>Using Rite of <strong>Progeniture: Tectonic Tide</strong> increases the Elemental Mastery of nearby party members by 125 for 10s.</span>,
-        conditional: (tlvl, c, a) => a >= 4 && {
+        conditional: stats => stats.ascension >= 4 && {
           type: "character",
           conditionalKey: "TectonicTide",
           condition: "Tectonic Tide",
@@ -186,7 +186,7 @@ const char = {
       name: "Opening of Phanerozoic",
       img: c2,
       document: [{
-        text: (tlvl, stats) => <span>
+        text: stats => <span>
           <p className="mb-2"><strong>Transient Blossoms</strong> generated by <strong>Abiogenesis: Solar Isotoma</strong> grant Albedo <strong>Fatal Reckoning</strong> for 30s:</p>
           <ul className="mb-1">
             <li>Unleashing <strong>Progeniture: Tectonic Tide</strong> consumes all stacks of <strong>Fatal Reckoning</strong>. Each stack of <strong>Fatal Reckoning</strong> consumed increases the DMG dealt by <strong>Fatal Blossoms</strong> and <strong>Progeniture: Tectonic Tide</strong>'s burst DMG by 30% of Albedo's DEF{DisplayPercent(30, stats, "finalDEF")}.</li>
@@ -206,7 +206,7 @@ const char = {
       img: c4,
       document: [{
         text: <span>Active party members within the <strong>Solar Isotoma</strong> field have their Plunging Attack DMG increased by 30%.</span>,
-        conditional: (tlvl, c, a) => c >= 4 && {
+        conditional: stats => stats.constellation >= 4 && {
           type: "character",
           conditionalKey: "SolarIsotoma",
           condition: "Within the Solar Isotoma",
@@ -229,7 +229,7 @@ const char = {
       img: c6,
       document: [{
         text: <span>Active party members within the <strong>Solar Isotoma</strong> field who are protected by a shield created by <span className="text-geo">Crystallize</span> have their DMG increased by 17%.</span>,
-        conditional: (tlvl, c, a) => c >= 6 && {
+        conditional: stats => stats.constellation >= 6 && {
           type: "character",
           conditionalKey: "Protectedbyashield",
           condition: "Protected by a shield created by Crystallize",

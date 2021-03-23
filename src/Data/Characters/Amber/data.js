@@ -39,24 +39,24 @@ const data = {
 }
 
 const formula = {
-  normal: Object.fromEntries(data.normal.hitArr.map((percentArr, i) => [i, (tlvl, stats) =>
-    basicDMGFormula(percentArr[tlvl], stats, "normal")])),
+  normal: Object.fromEntries(data.normal.hitArr.map((percentArr, i) => [i, stats =>
+    basicDMGFormula(percentArr[stats.tlvl.auto], stats, "normal")])),
   charged: {
-    aimShot: (tlvl, stats) => basicDMGFormula(data.charged.aimedShot[tlvl], stats, "charged"),
-    fullAimedShot: (tlvl, stats) => basicDMGFormula(data.charged.fullAimedShot[tlvl], stats, "charged", true),
+    aimShot: stats => basicDMGFormula(data.charged.aimedShot[stats.tlvl.auto], stats, "charged"),
+    fullAimedShot: stats => basicDMGFormula(data.charged.fullAimedShot[stats.tlvl.auto], stats, "charged", true),
   },
-  plunging: Object.fromEntries(Object.entries(data.plunging).map(([key, arr]) => [key, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "plunging")])),
+  plunging: Object.fromEntries(Object.entries(data.plunging).map(([key, arr]) => [key, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "plunging")])),
   skill: {
-    hp: (tlvl) => {
-      const hp = data.skill.hp[tlvl] / 100
+    hp: stats => {
+      const hp = data.skill.hp[stats.tlvl.skill] / 100
       return [(s) => hp * s.finalHP, ["finalHP"]]
     },
-    dmg: (tlvl, stats) => basicDMGFormula(data.skill.dmg[tlvl], stats, "skill"),
-    detonationDMG: (tlvl, stats) => basicDMGFormula(data.skill.dmg[tlvl] + 200, stats, "skill"),
+    dmg: stats => basicDMGFormula(data.skill.dmg[stats.tlvl.skill], stats, "skill"),
+    detonationDMG: stats => basicDMGFormula(data.skill.dmg[stats.tlvl.skill] + 200, stats, "skill"),
   },
   burst: {
-    dmgPerWave: (tlvl, stats) => basicDMGFormula(data.burst.dmgPerWave[tlvl], stats, "burst"),
-    totDMG: (tlvl, stats) => basicDMGFormula(data.burst.totDMG[tlvl], stats, "burst"),
+    dmgPerWave: stats => basicDMGFormula(data.burst.dmgPerWave[stats.tlvl.burst], stats, "burst"),
+    totDMG: stats => basicDMGFormula(data.burst.totDMG[stats.tlvl.burst], stats, "burst"),
   }
 }
 

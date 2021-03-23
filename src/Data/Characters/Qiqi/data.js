@@ -51,29 +51,29 @@ const data = {
 
 const formula = {
   normal: Object.fromEntries(data.normal.hitArr.map((arr, i) =>
-    [i, (tlvl, stats) => basicDMGFormula(arr[tlvl] * (i === 2 || i === 3 ? 2 : 1), stats, "normal")])),
+    [i, stats => basicDMGFormula(arr[stats.tlvl.auto] * (i === 2 || i === 3 ? 2 : 1), stats, "normal")])),
   charged: Object.fromEntries(Object.entries(data.charged).map(([name, arr]) =>
-    [name, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "charged")])),
-  plunging: Object.fromEntries(Object.entries(data.plunging).map(([key, arr]) => [key, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "plunging")])),
+    [name, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "charged")])),
+  plunging: Object.fromEntries(Object.entries(data.plunging).map(([key, arr]) => [key, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "plunging")])),
   skill: {
-    hit: (tlvl, stats) => basicDMGFormula(data.skill.hit[tlvl], stats, "skill"),
-    herald: (tlvl, stats) => basicDMGFormula(data.skill.herald[tlvl], stats, "skill"),
-    hitregen: (tlvl) => {
-      const base = data.skill.hitregen.base[tlvl];
-      const atk = data.skill.hitregen.atk[tlvl] / 100;
+    hit: stats => basicDMGFormula(data.skill.hit[stats.tlvl.skill], stats, "skill"),
+    herald: stats => basicDMGFormula(data.skill.herald[stats.tlvl.skill], stats, "skill"),
+    hitregen: stats => {
+      const base = data.skill.hitregen.base[stats.tlvl.skill];
+      const atk = data.skill.hitregen.atk[stats.tlvl.skill] / 100;
       return [s => (atk * s.finalATK + base) * s.heal_multi, ["finalATK", "heal_multi"]]
     },
-    continuousregen: (tlvl) => {
-      const base = data.skill.continuousregen.base[tlvl];
-      const atk = data.skill.continuousregen.atk[tlvl] / 100;
+    continuousregen: stats => {
+      const base = data.skill.continuousregen.base[stats.tlvl.skill];
+      const atk = data.skill.continuousregen.atk[stats.tlvl.skill] / 100;
       return [s => (atk * s.finalATK + base) * s.heal_multi, ["finalATK", "heal_multi"]]
     },
   },
   burst: {
-    dmg: (tlvl, stats) => basicDMGFormula(data.burst.dmg[tlvl], stats, "burst"),
-    healing: (tlvl) => {
-      const base = data.burst.healing.base[tlvl];
-      const atk = data.burst.healing.atk[tlvl] / 100;
+    dmg: stats => basicDMGFormula(data.burst.dmg[stats.tlvl.burst], stats, "burst"),
+    healing: stats => {
+      const base = data.burst.healing.base[stats.tlvl.burst];
+      const atk = data.burst.healing.atk[stats.tlvl.burst] / 100;
       return [s => (atk * s.finalATK + base) * s.heal_multi, ["finalATK", "heal_multi"]]
     },
   },

@@ -73,24 +73,18 @@ export default class Character {
   }
 
   static getTalentDocument = (charKey, talentKey, defVal = []) => this.getTalent(charKey, talentKey)?.document || defVal
-  static getTalentDocumentSections = (charKey, talentKey, defVal = []) => {
-    const character = CharacterDatabase.get(charKey);
-    if (!character) return defVal
-    const { constellation = 0, levelKey = Object.keys(LevelsData)[0] } = character
-    const ascension = Character.getAscension(levelKey)
-    return this.getTalentDocument(charKey, talentKey).map(section => typeof section === "function" ? section(constellation, ascension) : section)
-  }
-  static getTalentField = (character, talentKey, sectionIndex, fieldIndex, defVal = {}) => {
-    if (!character) return defVal
-    const { constellation = 0, levelKey = Object.keys(LevelsData)[0] } = character
-    const ascension = Character.getAscension(levelKey)
-    const field = this.getTalentDocumentSections(character.characterKey, talentKey)?.[sectionIndex]?.fields?.[fieldIndex]
+  static getTalentDocumentSections = (stats, talentKey) =>
+    this.getTalentDocument(stats.characterKey, talentKey).map(section => typeof section === "function" ? section(stats) : section)
+
+  static getTalentField = (stats, talentKey, sectionIndex, fieldIndex, defVal = {}) => {
+    if (!stats) return defVal
+    const field = this.getTalentDocumentSections(stats, talentKey)?.[sectionIndex]?.fields?.[fieldIndex]
     if (!field) return defVal
-    return typeof field === "function" ? field(constellation, ascension) : field
+    return typeof field === "function" ? field(stats) : field
   }
-  static getTalentFieldValue = (field, key, talentKey, stats = {}, defVal = "") => {
+  static getTalentFieldValue = (field, key, stats = {}, defVal = "") => {
     if (!field?.[key]) return defVal
-    return typeof field?.[key] === "function" ? field[key](stats.talentLevelKeys[talentKey], stats) : field[key]
+    return typeof field?.[key] === "function" ? field[key](stats) : field[key]
   }
 
   static getTalentStats = (charKey, talentKey, constellation, ascension, defVal = null) => {
@@ -108,13 +102,13 @@ export default class Character {
     })
     return statsArr
   }
-  static getTalentConditional = (charKey, talentKey, conditionalKey, talentLvlKey, constellation, ascension, defVal = null) => {
-    const sections = this.getTalentDocumentSections(charKey, talentKey)
+  static getTalentConditional = (stats, talentKey, conditionalKey, defVal = null) => {
+    const sections = this.getTalentDocumentSections(stats, talentKey)
     let cond = null
     for (const section of sections) {
       let tempCond = section.conditional
       if (typeof tempCond === "function")
-        tempCond = tempCond(talentLvlKey, constellation, ascension)
+        tempCond = tempCond(stats)
       if (tempCond?.conditionalKey === conditionalKey) {
         cond = tempCond
         break;
@@ -158,9 +152,9 @@ export default class Character {
 
   static hasTalentPage = (characterKey) => Boolean(Character.getCDataObj(characterKey)?.talent)
 
-  static getDisplayStatKeys = (character, defVal = { basicKeys: [] }) => {
-    if (!character) return defVal
-    const { characterKey } = character
+  static getDisplayStatKeys = (stats, defVal = { basicKeys: [] }) => {
+    if (!stats) return defVal
+    const { characterKey } = stats
     let eleKey = Character.getElementalKey(characterKey)
     if (!eleKey) return defVal //usually means the character has not been lazy loaded yet
     const basicKeys = ["finalHP", "finalATK", "finalDEF", "eleMas", "critRate_", "critDMG_", "heal_", "enerRech_", `${eleKey}_dmg_`]
@@ -177,13 +171,13 @@ export default class Character {
     if (this.hasTalentPage(characterKey)) {
       const charFormulas = {}
       Object.keys(Character.getCDataObj(characterKey)?.talent ?? {}).forEach(talentKey =>
-        Character.getTalentDocumentSections(characterKey, talentKey)?.forEach((section, sectionIndex) =>
-          section?.fields?.forEach((field, fieldIndex) =>
-            (field?.formula || this.getTalentField(character, talentKey, sectionIndex, fieldIndex)?.formula) && (charFormulas[talentKey] = [...(charFormulas[talentKey] ?? []), {
-              talentKey,
-              sectionIndex,
-              fieldIndex
-            }]))))
+        Character.getTalentDocumentSections(stats, talentKey)?.forEach((section, sectionIndex) =>
+          section?.fields?.forEach((field, fieldIndex) => {
+            const hasFormula = field?.formula || this.getTalentField(stats, talentKey, sectionIndex, fieldIndex)?.formula
+            if (!hasFormula) return
+            if (!charFormulas[talentKey]) charFormulas[talentKey] = []
+            charFormulas[talentKey].push({ talentKey, sectionIndex, fieldIndex })
+          })))
       return { basicKeys, ...charFormulas, transReactions }
     } else {
       //generic average hit parameters.
@@ -327,11 +321,11 @@ export default class Character {
     initialStats.reactionMode = reactionMode;
     initialStats.talentConditionals = talentConditionals
     initialStats.weaponType = this.getWeaponTypeKey(characterKey)
-    initialStats.talentLevelKeys = talentLevelKeys;
+    initialStats.tlvl = talentLevelKeys;
     initialStats.constellation = constellation
     initialStats.ascension = ascension
-    for (const key in initialStats.talentLevelKeys)
-      initialStats.talentLevelKeys[key] += this.getTalentLevelBoost(character.characterKey, key, constellation);
+    for (const key in initialStats.tlvl)
+      initialStats.tlvl[key] += this.getTalentLevelBoost(character.characterKey, key, constellation);
 
     //enemy stuff
     Character.getElementalKeys().forEach(eleKey => {
@@ -353,14 +347,6 @@ export default class Character {
     let specialStatKey = Character.getStatValueWithOverride(character, "specializedStatKey")
     this.mergeStats(initialStats, { [specialStatKey]: specializedStatVal })
 
-
-    //add stats from talentconditionals
-    talentConditionals.forEach(cond => {
-      const { srcKey: talentKey, srcKey2: conditionalKey, conditionalNum } = cond
-      const conditional = Character.getTalentConditional(characterKey, talentKey, conditionalKey, initialStats.talentLevelKeys[talentKey], constellation, ascension)
-      this.mergeStats(initialStats, Character.getTalentConditionalStats(conditional, conditionalNum, {}))
-    })
-
     //add stats from all talents
     Character.getTalentStatsAll(characterKey, constellation, ascension).forEach(s => this.mergeStats(initialStats, s))
 
@@ -370,7 +356,13 @@ export default class Character {
     this.mergeStats(initialStats, Weapon.getWeaponBonusStat(character?.weapon?.key, character?.weapon?.refineIndex))
     this.mergeStats(initialStats, Weapon.getWeaponConditionalStat(character?.weapon?.key, character?.weapon?.refineIndex, character?.weapon?.conditionalNum, {}));
 
+    //add stats from talentconditionals
+    talentConditionals.forEach(cond => {
+      const { srcKey: talentKey, srcKey2: conditionalKey, conditionalNum } = cond
+      const conditional = Character.getTalentConditional(initialStats, talentKey, conditionalKey)
+      this.mergeStats(initialStats, Character.getTalentConditionalStats(conditional, conditionalNum, {}))
+    })
+
     return initialStats
   }
-
 }

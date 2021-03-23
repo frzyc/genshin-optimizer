@@ -36,18 +36,18 @@ export const data = {
 }
 const formula = {
   normal: Object.fromEntries(data.normal.hitArr.map((arr, i) =>
-    [i, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "normal")])),
+    [i, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "normal")])),
   charged: {
-    hit: (tlvl, stats) => basicDMGFormula(data.charged.hit[tlvl], stats, "charged"),
+    hit: stats => basicDMGFormula(data.charged.hit[stats.tlvl.auto], stats, "charged"),
   },
   plunging: Object.fromEntries(Object.entries(data.plunging).map(([name, arr]) =>
-    [name, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "plunging")])),
+    [name, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "plunging")])),
   skill: Object.fromEntries(Object.entries(data.skill).map(([name, arr]) =>
-    [name, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "skill")])),
+    [name, stats => basicDMGFormula(arr[stats.tlvl.skill], stats, "skill")])),
   burst: {
-    dot: (tlvl, stats) => basicDMGFormula(data.burst.dot[tlvl], stats, "burst"),
+    dot: stats => basicDMGFormula(data.burst.dot[stats.tlvl.burst], stats, "burst"),
     ...Object.fromEntries((["hydro", "pyro", "cryo", "electro"]).map(ele =>
-      [`${ele}_dmg_bonus`, (tlvl, stats) => [s => { return (data.burst.dmg_[tlvl] / 100) * s[`${ele}_burst_${stats.hitMode}`] }, [`${ele}_burst_${stats.hitMode}`]]])),//not optimizationTarget, dont need to precompute
+      [`${ele}_dmg_bonus`, stats => [s => { return (data.burst.dmg_[stats.tlvl.burst] / 100) * s[`${ele}_burst_${stats.hitMode}`] }, [`${ele}_burst_${stats.hitMode}`]]])),//not optimizationTarget, dont need to precompute
   },
 }
 export default formula

@@ -39,22 +39,22 @@ const char = {
         fields: data.normal.hitArr.map((percentArr, i) =>
         ({
           text: `${i + 1}-Hit DMG`,
-          formulaText: (tlvl, stats) => <span>{percentArr[tlvl]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
+          formulaText: stats => <span>{percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
           formula: formula.normal[i],
-          variant: (tlvl, stats) => getTalentStatKeyVariant("normal", stats),
+          variant: stats => getTalentStatKeyVariant("normal", stats),
         }))
       }, {
         text: <span><strong>Charged Attack</strong> Consumes a certain amount of Stamina to unleash 2 rapid sword swings.</span>,
         fields: [{
           text: `Charged 1-Hit DMG`,
-          formulaText: (tlvl, stats) => <span>{data.charged.atk1[tlvl]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
+          formulaText: stats => <span>{data.charged.atk1[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
           formula: formula.charged.atk1,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("charged", stats),
+          variant: stats => getTalentStatKeyVariant("charged", stats),
         }, {
           text: `Charged 2-Hit DMG`,
-          formulaText: (tlvl, stats) => <span>{data.charged.atk2[tlvl]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
+          formulaText: stats => <span>{data.charged.atk2[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
           formula: formula.charged.atk2,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("charged", stats),
+          variant: stats => getTalentStatKeyVariant("charged", stats),
         }, {
           text: `Stamina Cost`,
           value: 20,
@@ -63,19 +63,19 @@ const char = {
         text: <span><strong>Plunging Attack</strong> Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.</span>,
         fields: [{
           text: `Plunge DMG`,
-          formulaText: (tlvl, stats) => <span>{data.plunging.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+          formulaText: stats => <span>{data.plunging.dmg[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
           formula: formula.plunging.dmg,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("plunging", stats),
+          variant: stats => getTalentStatKeyVariant("plunging", stats),
         }, {
           text: `Low Plunge DMG`,
-          formulaText: (tlvl, stats) => <span>{data.plunging.low[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+          formulaText: stats => <span>{data.plunging.low[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
           formula: formula.plunging.low,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("plunging", stats),
+          variant: stats => getTalentStatKeyVariant("plunging", stats),
         }, {
           text: `High Plunge DMG`,
-          formulaText: (tlvl, stats) => <span>{data.plunging.high[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+          formulaText: stats => <span>{data.plunging.high[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
           formula: formula.plunging.high,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("plunging", stats),
+          variant: stats => getTalentStatKeyVariant("plunging", stats),
         }]
       }],
     },
@@ -95,17 +95,16 @@ const char = {
         fields: [
           ...[["press", "Press DMG"], ["lvl1hit1", "Lvl 1 1st Hit DMG"], ["lvl1hit2", "Lvl 1 2nd Hit DMG"], ["lvl2hit1", "Lvl 2 1st Hit DMG"], ["lvl2hit2", "Lvl 2 2nd Hit DMG"], ["explosion", "Explosion DMG"]].map(([key, text]) => ({
             text,
-            formulaText: (tlvl, stats) => <span>{formula.skill[key][tlvl]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
+            formulaText: stats => <span>{formula.skill[key][stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
             formula: formula.skill[key],
-            variant: (tlvl, stats) => getTalentStatKeyVariant("skill", stats),
-          })),
-          (c, a) => ({
+            variant: stats => getTalentStatKeyVariant("skill", stats),
+          })), {
             text: "CD",
-            value: a >= 1 ? "4s / 6s/ 8s" : "5s / 7.5s/ 10s",
-          }), (c, a) => ({
+            value: stats => stats.ascension >= 1 ? "4s / 6s/ 8s" : "5s / 7.5s/ 10s",
+          }, {
             text: <span>CD in <b>Fantastic Voyage</b>'s circle</span>,
             value: "2s / 3s/ 4s",
-          })]
+          }]
       }],
     },
     burst: {
@@ -123,19 +122,19 @@ const char = {
         </span>,
         fields: [{
           text: "Skill DMG",
-          formulaText: (tlvl, stats) => <span>{data.burst.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
+          formulaText: stats => <span>{data.burst.dmg[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
           formula: formula.burst.dmg,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("burst", stats),
+          variant: stats => getTalentStatKeyVariant("burst", stats),
         }, {
           text: "Continuous Regeneration Per Sec",
-          formulaText: (tlvl, stats) => <span>( {data.burst.healHP[tlvl]}% Max HP + {data.burst.healHPFlat[tlvl]} ) * {Stat.printStat("heal_multi", stats)}</span>,
+          formulaText: stats => <span>( {data.burst.healHP[stats.tlvl.burst]}% Max HP + {data.burst.healHPFlat[stats.tlvl.burst]} ) * {Stat.printStat("heal_multi", stats)}</span>,
           formula: formula.burst.regen,
           variant: "success",
-        }, (con, a) => ({
+        }, {
           text: "ATK Bonus Ratio",
-          formulaText: (tlvl, stats) => <span>{con < 1 ? data.burst.atkRatio[tlvl] : `(${data.burst.atkRatio[tlvl]} + 20)`}% {Stat.printStat("baseATK", stats)}</span>,
+          formulaText: stats => <span>{stats.constellation < 1 ? data.burst.atkRatio[stats.tlvl.burst] : `(${data.burst.atkRatio[stats.tlvl.burst]} + 20)`}% {Stat.printStat("baseATK", stats)}</span>,
           formula: formula.burst.atkBonus
-        }), {
+        }, {
           text: "Duration",
           value: "12s",
         }, {
@@ -145,14 +144,14 @@ const char = {
           text: "Energy Cost",
           value: 60,
         }],
-        conditional: (tlvl, c, a) => ({
+        conditional: stats => ({
           type: "character",
           conditionalKey: "FantasticVoyage",
           condition: "Fantastic Voyage",
           sourceKey: "bennett",
           maxStack: 1,
           stats: {
-            modifiers: { finalATK: { baseATK: (data.burst.atkRatio[tlvl] + (c < 1 ? 0 : 20)) / 100, } },
+            modifiers: { finalATK: { baseATK: (data.burst.atkRatio[stats.tlvl.burst] + (stats.constellation < 1 ? 0 : 20)) / 100, } },
           },
         })
       }],
@@ -182,7 +181,7 @@ const char = {
       img: c2,
       document: [{
         text: <span>When HP falls below 70%, increases Energy Recharge by 30%.</span>,
-        conditional: (tlvl, c, a) => c >= 2 && {
+        conditional: stats => stats.constellation >= 2 && {
           type: "character",
           conditionalKey: "ImpasseConqueror",
           condition: "Impasse Conqueror",
@@ -215,7 +214,20 @@ const char = {
       name: "Fire Ventures with Me",
       img: c6,
       document: [{
-        text: <span>Sword, Claymore, or Polearm-wielding characters inside Fantastic Voyage's radius gain a 15% Pyro DMG Bonus and their weapons are infused with <span className="text-pyro">Pyro</span>.</span>
+        text: <span>Sword, Claymore, or Polearm-wielding characters inside Fantastic Voyage's radius gain a 15% Pyro DMG Bonus and their weapons are infused with <span className="text-pyro">Pyro</span>.</span>,
+        conditional: stats => stats.constellation >= 6 && {
+          type: "character",
+          conditionalKey: "Fire Ventures with Me",
+          condition: "Sword, Claymore, or Polearm-wielding characters inside Fantastic Voyage's radius",
+          sourceKey: "bennett",
+          maxStack: 1,
+          stats: {
+            pyro_dmg_: 15,
+          },
+          fields: [{
+            text: <span className="text-pyro">Pyro infusion</span>,
+          }]
+        }
       }],
     }
   },

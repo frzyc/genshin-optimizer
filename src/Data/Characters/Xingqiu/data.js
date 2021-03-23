@@ -40,23 +40,23 @@ const data = {
 
 const formula = {
   normal: Object.fromEntries(data.normal.hitArr.map((percentArr, i) =>
-    [i, (tlvl, stats) => basicDMGFormula((i === 2 ? 2 : 1) * (percentArr[tlvl]), stats,"normal")])),
+    [i, stats => basicDMGFormula((i === 2 ? 2 : 1) * (percentArr[stats.tlvl.auto]), stats,"normal")])),
   charged: Object.fromEntries(Object.entries(data.charged).map(([name, arr]) =>
-    [name, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "charged")])),
+    [name, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "charged")])),
   plunging: Object.fromEntries(Object.entries(data.plunging).map(([name, arr]) =>
-    [name, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "plunging")])),
+    [name, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "plunging")])),
   skill: Object.fromEntries([
     ...Object.entries(data.skill).filter(([name]) => name !== "dmgRed").map(([name, arr]) =>
-      [name, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "skill")]),
+      [name, stats => basicDMGFormula(arr[stats.tlvl.skill], stats, "skill")]),
     ...Object.entries(data.skill).filter(([name]) => name !== "dmgRed").map(([name, arr]) =>
-      [`${name}RainCutter`, (tlvl, stats) => basicDMGFormula(1.5 * arr[tlvl], stats, "skill")]),
-    ["dmgRed", (tlvl, stats) => {
-      const flat = data.skill.dmgRed[tlvl]
+      [`${name}RainCutter`, stats => basicDMGFormula(1.5 * arr[stats.tlvl.skill], stats, "skill")]),
+    ["dmgRed", stats => {
+      const flat = data.skill.dmgRed[stats.tlvl.skill]
       return [s => (flat + Math.min(24, 0.2 * s.hydro_dmg_)), ["hydro_dmg_"]]
     }],
   ]),
   burst: Object.fromEntries(Object.entries(data.burst).map(([name, arr]) =>
-    [name, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "burst")])),
+    [name, stats => basicDMGFormula(arr[stats.tlvl.burst], stats, "burst")])),
 }
 
 export default formula

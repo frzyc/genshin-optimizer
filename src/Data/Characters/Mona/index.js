@@ -40,17 +40,17 @@ const char = {
         fields: data.normal.hitArr.map((percentArr, i) =>
         ({
           text: `${i + 1}-Hit DMG`,
-          formulaText: (tlvl, stats) => <span>{percentArr[tlvl]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
+          formulaText: stats => <span>{percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
           formula: formula.normal[i],
-          variant: (tlvl, stats) => getTalentStatKeyVariant("normal", stats),
+          variant: stats => getTalentStatKeyVariant("normal", stats),
         }))
       }, {
         text: <span><strong>Charged Attack</strong> Consumes a certain amount of Stamina to deal <span className="text-hydro">AoE Hydro DMG</span> after a short casting time.</span>,
         fields: [{
           text: `Charged Attack DMG`,
-          formulaText: (tlvl, stats) => <span>{data.charged.hit[tlvl]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
+          formulaText: stats => <span>{data.charged.hit[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
           formula: formula.charged.hit,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("charged", stats),
+          variant: stats => getTalentStatKeyVariant("charged", stats),
         }, {
           text: `Stamina Cost`,
           value: 50,
@@ -59,19 +59,19 @@ const char = {
         text: <span><strong>Plunging Attack</strong> Gathering the might of Hydro, Mona plunges towards the ground from mid-air, damaging all opponents in her path. Deals <span className="text-hydro">AoE Hydro DMG</span> upon impact with the ground.</span>,
         fields: [{
           text: `Plunge DMG`,
-          formulaText: (tlvl, stats) => <span>{data.plunging.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+          formulaText: stats => <span>{data.plunging.dmg[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
           formula: formula.plunging.dmg,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("plunging", stats),
+          variant: stats => getTalentStatKeyVariant("plunging", stats),
         }, {
           text: `Low Plunge DMG`,
-          formulaText: (tlvl, stats) => <span>{data.plunging.low[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+          formulaText: stats => <span>{data.plunging.low[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
           formula: formula.plunging.low,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("plunging", stats),
+          variant: stats => getTalentStatKeyVariant("plunging", stats),
         }, {
           text: `High Plunge DMG`,
-          formulaText: (tlvl, stats) => <span>{data.plunging.high[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+          formulaText: stats => <span>{data.plunging.high[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
           formula: formula.plunging.high,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("plunging", stats),
+          variant: stats => getTalentStatKeyVariant("plunging", stats),
         }]
       }],
     },
@@ -91,14 +91,14 @@ const char = {
         </span>,
         fields: [{
           text: "DoT",
-          formulaText: (tlvl, stats) => <span>{data.skill.dot[tlvl]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
+          formulaText: stats => <span>{data.skill.dot[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
           formula: formula.skill.dot,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("skill", stats),
+          variant: stats => getTalentStatKeyVariant("skill", stats),
         }, {
           text: "Explosion DMG",
-          formulaText: (tlvl, stats) => <span>{data.skill.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
+          formulaText: stats => <span>{data.skill.dmg[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
           formula: formula.skill.dmg,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("skill", stats),
+          variant: stats => getTalentStatKeyVariant("skill", stats),
         }, {
           text: "CD",
           value: "12s",
@@ -123,9 +123,9 @@ const char = {
           value: "8s",
         }, {
           text: "Illusory Bubble Explosion DMG",
-          formulaText: (tlvl, stats) => <span>{data.burst.bubble_explosion[tlvl]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
+          formulaText: stats => <span>{data.burst.bubble_explosion[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
           formula: formula.burst.bubble_explosion,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("burst", stats),
+          variant: stats => getTalentStatKeyVariant("burst", stats),
         }, {
           text: "CD",
           value: "15s",
@@ -133,8 +133,8 @@ const char = {
           text: "Energy Cost",
           value: 60,
         }],
-        conditional: (tlvl, c, a) => {
-          let c1 = c >= 1 ? {
+        conditional: stats => {
+          const c1 = stats.constellation >= 1 ? {
             electrocharged_dmg_: 15,
             vaporize_dmg_: 15,
             swirl_dmg_: 15
@@ -146,17 +146,17 @@ const char = {
             sourceKey: "mona",
             maxStack: 1,
             stats: {
-              dmg_: data.burst.dmg_[tlvl],
+              dmg_: data.burst.dmg_[stats.tlvl.burst],
               ...c1,
               //TODO frozen duration as a stat 
             },
-            fields: [(c, a) => c >= 1 && {
+            fields: [stats => stats.constellation >= 1 && {
               text: <span><span className="text-cryo">Frozen</span> Duration Increase</span>,
               value: "15%",
               variant: "cryo",
             }, {
               text: "Omen Duration",
-              value: (tlvl, stats, c) => `${data.burst.omen_duration[tlvl]}s`,
+              value: stats => `${data.burst.omen_duration[stats.tlvl.burst]}s`,
             }]
           }
         },
@@ -187,12 +187,12 @@ const char = {
           <p className="mb-2">After she has used <b>Illusory Torrent</b> for 2s, if there are any opponents nearby, Mona will automatically create a Phantom.</p>
           <p className="mb-2">A Phantom created in this manner lasts for 2s, and its explosion DMG is equal to 50% of <b>Mirror Reflection of Doom</b>.</p>
         </span>,
-        fields: [(con, a) => a >= 1 && {
+        fields: [stats => stats.ascension >= 1 && {
           text: "Explosion DMG",
-          formulaText: (tlvl, stats) => <span>{data.skill.dmg[stats.talentLevelKeys.skill]}% * 50% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
+          formulaText: stats => <span>{data.skill.dmg[stats.tlvl.skill]}% * 50% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
           formula: formula.passive1.hit,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("skill", stats),
-        }, (c, a) => a >= 1 && {
+          variant: stats => getTalentStatKeyVariant("skill", stats),
+        }, stats => stats.ascension >= 1 && {
           text: "Phantom Duration",
           value: "2s"
         }]
@@ -202,7 +202,7 @@ const char = {
       name: "Waterborne Destiny",
       img: passive2,
       document: [{ text: <span>Increases Mona's <span className="text-hydro">Hydro DMG Bonus</span> by a degree equivalent to 20% of her Energy Recharge rate.</span>, }],
-      stats: (c, a) => a >= 4 && {
+      stats: stats => stats.ascension >= 4 && {
         modifiers: { hydro_dmg_: { enerRech_: 0.2 } },
       }
     },
@@ -242,7 +242,7 @@ const char = {
       img: c4,
       document: [{
         text: <span>When any character in the party attacks an opponent affected by the Omen status effect, their CRIT Rate is increased by 15%.</span>,
-        conditional: (tlvl, c, a) => c >= 4 && {//TODO party conditional
+        conditional: stats => stats.constellation >= 4 && {//TODO party conditional
           type: "character",
           conditionalKey: "ProphecyOfOblivion",
           condition: "Prophecy of Oblivion",
@@ -265,7 +265,7 @@ const char = {
       img: c6,
       document: [{
         text: <span>Upon entering <b>Illusory Torrent</b>, Mona gains a 60% increase to the DMG her next Charged Attack per second of movement. A maximum DMG Bonus of 180% can be achieved in this manner. The effect lasts for no more than 8s.</span>,
-        conditional: (tlvl, c, a) => c >= 6 && {
+        conditional: stats => stats.constellation >= 6 && {
           type: "character",
           conditionalKey: "RhetoricsOfCalamitas",
           condition: "Rhetorics of Calamitas",

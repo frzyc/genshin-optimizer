@@ -35,30 +35,30 @@ const data = {
 }
 
 const formula = {
-  normal: Object.fromEntries(data.normal.hitArr.map((percentArr, i) => [i, (tlvl, stats) =>
-    basicDMGFormula(percentArr[tlvl], stats, "normal")])),
+  normal: Object.fromEntries(data.normal.hitArr.map((percentArr, i) => [i, stats =>
+    basicDMGFormula(percentArr[stats.tlvl.auto], stats, "normal")])),
   charged: {
-    dmg: (tlvl, stats) => basicDMGFormula(data.charged.dmg[tlvl], stats, "charged"),
+    dmg: stats => basicDMGFormula(data.charged.dmg[stats.tlvl.auto], stats, "charged"),
   },
   plunging: {
-    dmg: (tlvl, stats) => basicDMGFormula(data.plunging.dmg[tlvl], stats, "plunging"),
-    low: (tlvl, stats) => basicDMGFormula(data.plunging.low[tlvl], stats, "plunging"),
-    high: (tlvl, stats) => basicDMGFormula(data.plunging.high[tlvl], stats, "plunging"),
+    dmg: stats => basicDMGFormula(data.plunging.dmg[stats.tlvl.auto], stats, "plunging"),
+    low: stats => basicDMGFormula(data.plunging.low[stats.tlvl.auto], stats, "plunging"),
+    high: stats => basicDMGFormula(data.plunging.high[stats.tlvl.auto], stats, "plunging"),
   },
   skill: {
-    jumpyDmg: (tlvl, stats) => basicDMGFormula(data.skill.jumpyDmg[tlvl], stats, "skill"),
-    mineDmg: (tlvl, stats) => basicDMGFormula(data.skill.mineDmg[tlvl], stats, "skill"),
+    jumpyDmg: stats => basicDMGFormula(data.skill.jumpyDmg[stats.tlvl.skill], stats, "skill"),
+    mineDmg: stats => basicDMGFormula(data.skill.mineDmg[stats.tlvl.skill], stats, "skill"),
   },
   burst: {
-    dmg: (tlvl, stats) => basicDMGFormula(data.burst.dmg[tlvl], stats, "burst"),
-    dmgPounding: (tlvl, stats) => basicDMGFormula(data.burst.dmg[tlvl] * 1.5, stats, "burst"),
+    dmg: stats => basicDMGFormula(data.burst.dmg[stats.tlvl.burst], stats, "burst"),
+    dmgPounding: stats => basicDMGFormula(data.burst.dmg[stats.tlvl.burst] * 1.5, stats, "burst"),
   },
   constellation1: {
-    dmgChained: (tlvl, stats) =>
-      basicDMGFormula(data.burst.dmg[stats.talentLevelKeys.burst] * 1.2, stats, "burst"),
+    dmgChained: stats =>
+      basicDMGFormula(data.burst.dmg[stats.tlvl.burst] * 1.2, stats, "burst"),
   },
   constellation4: {
-    dmg: (tlvl, stats) => basicDMGFormula(555, stats, "elemental"),
+    dmg: stats => basicDMGFormula(555, stats, "elemental"),
   }
 }
 

@@ -41,9 +41,9 @@ const char = {
         fields: data.normal.hitArr.map((percentArr, i) =>
         ({
           text: `${i + 1}-Hit DMG`,
-          formulaText: (tlvl, stats) => <span>{percentArr[tlvl]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
+          formulaText: stats => <span>{percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
           formula: formula.normal[i],
-          variant: (tlvl, stats) => getTalentStatKeyVariant("normal", stats),
+          variant: stats => getTalentStatKeyVariant("normal", stats),
         }))
       }, {
         text: <span>
@@ -56,46 +56,46 @@ const char = {
         </span>,
         fields: [{
           text: `Aimed Shot`,
-          formulaText: (tlvl, stats) => <span>{data.charged.aimedShot[tlvl]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
+          formulaText: stats => <span>{data.charged.aimedShot[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
           formula: formula.charged.aimShot,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("charged", stats),
+          variant: stats => getTalentStatKeyVariant("charged", stats),
         }, {
           text: `Aimed Shot Charge Level 1`,
-          formulaText: (tlvl, stats) => <span>{data.charged.aimShot1[tlvl]}% {Stat.printStat(getTalentStatKey("charged", stats, true), stats)}</span>,
+          formulaText: stats => <span>{data.charged.aimShot1[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats, true), stats)}</span>,
           formula: formula.charged.aimShot1,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("charged", stats, true),
+          variant: stats => getTalentStatKeyVariant("charged", stats, true),
         }, {
           text: `Frostflake Arrow DMG`,
-          formulaText: (tlvl, stats) => {
+          formulaText: stats => {
             if (stats.hitMode === "avgHit") {
               let { talentConditionals = [] } = stats
               let conditionalNum = ConditionalsUtil.getConditionalNum(talentConditionals, { srcKey: "auto", srcKey2: "UndividedHeart" })
               if (conditionalNum) {
                 const statKey = `cryo${stats.reactionMode === "cryo_melt" ? "_melt" : ""}_charged_hit`
-                return <span>{data.charged.frostflake[tlvl]}% {Stat.printStat(statKey, stats)} * (1 + Min( 100% , 20% + {Stat.printStat("critRate_", stats)} + {Stat.printStat("charged_critRate_", stats)} ) * {Stat.printStat("critDMG_", stats)} )</span>
+                return <span>{data.charged.frostflake[stats.tlvl.auto]}% {Stat.printStat(statKey, stats)} * (1 + Min( 100% , 20% + {Stat.printStat("critRate_", stats)} + {Stat.printStat("charged_critRate_", stats)} ) * {Stat.printStat("critDMG_", stats)} )</span>
               }
             }
-            return <span>{data.charged.frostflake[tlvl]}% {Stat.printStat(getTalentStatKey("charged", stats, true), stats)}</span>
+            return <span>{data.charged.frostflake[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats, true), stats)}</span>
           },
           formula: formula.charged.frostflake,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("charged", stats, true),
+          variant: stats => getTalentStatKeyVariant("charged", stats, true),
         }, {
           text: `Frostflake Arrow Bloom DMG`,
-          formulaText: (tlvl, stats) => {
+          formulaText: stats => {
             if (stats.hitMode === "avgHit") {
               let { talentConditionals = [] } = stats
               let conditionalNum = ConditionalsUtil.getConditionalNum(talentConditionals, { srcKey: "auto", srcKey2: "UndividedHeart" })
               if (conditionalNum) {
                 const statKey = `cryo${stats.reactionMode === "cryo_melt" ? "_melt" : ""}_charged_hit`
-                return <span>{data.charged.frostflakeBloom[tlvl]}% {Stat.printStat(statKey, stats)} * (1 + Min( 100% , 20% + {Stat.printStat("critRate_", stats)} + {Stat.printStat("charged_critRate_", stats)} ) * {Stat.printStat("critDMG_", stats)} )</span>
+                return <span>{data.charged.frostflakeBloom[stats.tlvl.auto]}% {Stat.printStat(statKey, stats)} * (1 + Min( 100% , 20% + {Stat.printStat("critRate_", stats)} + {Stat.printStat("charged_critRate_", stats)} ) * {Stat.printStat("critDMG_", stats)} )</span>
               }
             }
-            return <span>{data.charged.frostflakeBloom[tlvl]}% {Stat.printStat(getTalentStatKey("charged", stats, true), stats)}</span>
+            return <span>{data.charged.frostflakeBloom[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats, true), stats)}</span>
           },
           formula: formula.charged.frostflakeBloom,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("charged", stats, true),
+          variant: stats => getTalentStatKeyVariant("charged", stats, true),
         },],
-        conditional: (tlvl, c, a) => a >= 1 && {
+        conditional: stats => stats.ascension >= 1 && {
           type: "character",
           conditionalKey: "UndividedHeart",
           condition: "Undivided Heart",
@@ -110,7 +110,7 @@ const char = {
           }]
         }
       }, {
-        conditional: (tlvl, c, a) => c >= 1 && {
+        conditional: stats => stats.constellation >= 1 && {
           type: "character",
           conditionalKey: "DewDrinker",
           condition: "Dew-Drinker",
@@ -124,19 +124,19 @@ const char = {
         text: <span><strong>Plunging Attack</strong> Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.</span>,
         fields: [{
           text: `Plunge DMG`,
-          formulaText: (tlvl, stats) => <span>{data.plunging.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+          formulaText: stats => <span>{data.plunging.dmg[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
           formula: formula.plunging.dmg,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("plunging", stats),
+          variant: stats => getTalentStatKeyVariant("plunging", stats),
         }, {
           text: `Low Plunge DMG`,
-          formulaText: (tlvl, stats) => <span>{data.plunging.low[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+          formulaText: stats => <span>{data.plunging.low[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
           formula: formula.plunging.low,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("plunging", stats),
+          variant: stats => getTalentStatKeyVariant("plunging", stats),
         }, {
           text: `High Plunge DMG`,
-          formulaText: (tlvl, stats) => <span>{data.plunging.high[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+          formulaText: stats => <span>{data.plunging.high[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
           formula: formula.plunging.high,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("plunging", stats),
+          variant: stats => getTalentStatKeyVariant("plunging", stats),
         }]
       }],
     },
@@ -156,21 +156,21 @@ const char = {
         </span>,
         fields: [{
           text: "Inherited HP",
-          formulaText: (tlvl, stats) => <span>{data.skill.hp[tlvl]}% {Stat.printStat("finalHP", stats)}</span>,
+          formulaText: stats => <span>{data.skill.hp[stats.tlvl.skill]}% {Stat.printStat("finalHP", stats)}</span>,
           formula: formula.skill.hp,
-          variant: (tlvl, stats) => "success",
+          variant: stats => "success",
         }, {
           text: "Skill DMG",
-          formulaText: (tlvl, stats) => <span>{data.skill.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
+          formulaText: stats => <span>{data.skill.dmg[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
           formula: formula.skill.dmg,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("skill", stats),
+          variant: stats => getTalentStatKeyVariant("skill", stats),
         }, {
           text: "Duration",
           value: "6s",
         }, {
           text: "CD",
           value: "10s",
-        }, (c, a) => c >= 2 && {
+        }, stats => stats.constellation >= 2 && {
           text: "Charges",
           value: 2
         }]
@@ -190,9 +190,9 @@ const char = {
         </span>,
         fields: [{
           text: "Ice Shard DMG",
-          formulaText: (tlvl, stats) => <span>{data.burst.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
+          formulaText: stats => <span>{data.burst.dmg[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
           formula: formula.burst.dmg,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("burst", stats),
+          variant: stats => getTalentStatKeyVariant("burst", stats),
         }, {
           text: "Duration",
           value: "15s",
@@ -203,7 +203,7 @@ const char = {
           text: "Energy Cost",
           value: 60,
         }],
-        conditional: (tlvl, c, a) => a >= 4 && {
+        conditional: stats => stats.ascension >= 4 && {
           type: "character",
           conditionalKey: "Harmony",
           condition: "Harmony between Heaven and Earth",
@@ -214,7 +214,7 @@ const char = {
           },
         }
       }, {
-        conditional: (tlvl, c, a) => c >= 4 && {
+        conditional: stats => stats.constellation >= 4 && {
           type: "character",
           conditionalKey: "WestwardSojourn",
           condition: "Westward Sojourn",

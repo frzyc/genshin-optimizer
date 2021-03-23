@@ -37,24 +37,24 @@ const data = {
 }
 const formula = {
   normal: Object.fromEntries(data.normal.hitArr.map((arr, i) =>
-    [i, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "normal")])),
+    [i, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "normal")])),
   charged: {
-    spinning: (tlvl, stats) => basicDMGFormula(data.charged.spinning[tlvl], stats, "charged"),
-    finalATK: (tlvl, stats) => basicDMGFormula(data.charged.finalATK[tlvl], stats, "charged"),
+    spinning: stats => basicDMGFormula(data.charged.spinning[stats.tlvl.auto], stats, "charged"),
+    finalATK: stats => basicDMGFormula(data.charged.finalATK[stats.tlvl.auto], stats, "charged"),
   },
   plunging: Object.fromEntries(Object.entries(data.plunging).map(([name, arr]) =>
-    [name, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "plunging")])),
+    [name, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "plunging")])),
   skill: {
-    dmg: (tlvl, stats) => basicDMGFormula(data.skill.dmg[tlvl], stats, "skill"),
+    dmg: stats => basicDMGFormula(data.skill.dmg[stats.tlvl.skill], stats, "skill"),
   },
   burst: {
-    dmg: (tlvl, stats) => basicDMGFormula(data.burst.dmg[tlvl], stats, "burst"),
+    dmg: stats => basicDMGFormula(data.burst.dmg[stats.tlvl.burst], stats, "burst"),
   },
   constellation1: {
-    dmg: (tlvl, stats) => basicDMGFormula(50, stats, "elemental"),
+    dmg: stats => basicDMGFormula(50, stats, "elemental"),
   },
   passive2: {
-    dmg: (tlvl, stats) => basicDMGFormula(data.skill.dmg[stats.talentLevelKeys.skill], stats, "elemental"),
+    dmg: stats => basicDMGFormula(data.skill.dmg[stats.tlvl.skill], stats, "elemental"),
   }
 }
 export default formula

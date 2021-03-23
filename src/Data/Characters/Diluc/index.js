@@ -39,46 +39,46 @@ const char = {
         fields: data.normal.hitArr.map((percentArr, i) =>
         ({
           text: `${i + 1}-Hit DMG`,
-          formulaText: (tlvl, stats) => <span>{percentArr[tlvl]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
+          formulaText: stats => <span>{percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
           formula: formula.normal[i],
-          variant: (tlvl, stats) => getTalentStatKeyVariant("normal", stats)
+          variant: stats => getTalentStatKeyVariant("normal", stats)
         }))
       }, {
         text: <span><strong>Charged Attack</strong> Drains Stamina over time to perform continuous slashes. At the end of the sequence, perform a more powerful slash.</span>,
         fields: [{
           text: `Spinning DMG`,
-          formulaText: (tlvl, stats) => <span>{data.charged.spinning[tlvl]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
+          formulaText: stats => <span>{data.charged.spinning[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
           formula: formula.charged.spinning,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("charged", stats)
+          variant: stats => getTalentStatKeyVariant("charged", stats)
         }, {
           text: `Spinning Final DMG`,
-          formulaText: (tlvl, stats) => <span>{data.charged.final[tlvl]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
+          formulaText: stats => <span>{data.charged.final[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
           formula: formula.charged.final,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("charged", stats)
-        }, (c, a) => ({
+          variant: stats => getTalentStatKeyVariant("charged", stats)
+        }, {
           text: `Stamina Cost`,
-          value: "40/s" + (a >= 1 ? " - 20/s" : ""),
-        }), (c, a) => ({
+          value: stats => "40/s" + (stats.ascension >= 1 ? " - 20/s" : ""),
+        }, {
           text: `Max Duration`,
-          value: "5s" + (a >= 1 ? " + 3s" : ""),
-        })]
+          value: stats => "5s" + (stats.ascensionstats.ascension >= 1 ? " + 3s" : ""),
+        }]
       }, {
         text: <span><strong>Plunging Attack</strong> Plunges from mid-air to strike the ground, damaging enemies along the path and dealing AoE DMG upon impact.</span>,
         fields: [{
           text: `Plunge DMG`,
-          formulaText: (tlvl, stats) => <span>{data.plunging.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+          formulaText: stats => <span>{data.plunging.dmg[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
           formula: formula.plunging.dmg,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("plunging", stats),
+          variant: stats => getTalentStatKeyVariant("plunging", stats),
         }, {
           text: `Low Plunge DMG`,
-          formulaText: (tlvl, stats) => <span>{data.plunging.low[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+          formulaText: stats => <span>{data.plunging.low[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
           formula: formula.plunging.low,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("plunging", stats),
+          variant: stats => getTalentStatKeyVariant("plunging", stats),
         }, {
           text: `High Plunge DMG`,
-          formulaText: (tlvl, stats) => <span>{data.plunging.high[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+          formulaText: stats => <span>{data.plunging.high[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
           formula: formula.plunging.high,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("plunging", stats),
+          variant: stats => getTalentStatKeyVariant("plunging", stats),
         }]
       }],
     },
@@ -93,32 +93,26 @@ const char = {
         fields: [
           ...[["hit1", "1-Hit DMG"], ["hit2", "2-Hit DMG"], ["hit3", "3-Hit DMG"]].map(([key, text]) => ({
             text,
-            formulaText: (tlvl, stats) => <span>{formula.skill[key][tlvl]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
+            formulaText: stats => <span>{formula.skill[key][stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
             formula: formula.skill[key],
-            variant: (tlvl, stats) => getTalentStatKeyVariant("skill", stats),
+            variant: stats => getTalentStatKeyVariant("skill", stats),
           })),
-          (c) => {
-            if (c < 4) return null
-            return {
-              text: "2-Hit DMG(Boosted)",
-              formulaText: (tlvl, stats) => <span>{data.skill.hit2[tlvl]}% + 40% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
-              formula: formula.skill.hit2b,
-              variant: (tlvl, stats) => getTalentStatKeyVariant("skill", stats)
-            }
-          }, (c) => {
-            if (c < 4) return null
-            return {
-              text: "3-Hit DMG(Boosted)",
-              formulaText: (tlvl, stats) => <span>{data.skill.hit3[tlvl]}% + 40% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
-              formula: formula.skill.hit3b,
-              variant: (tlvl, stats) => getTalentStatKeyVariant("skill", stats)
-            }
+          stats => stats.constellation >= 4 && {
+            text: "2-Hit DMG(Boosted)",
+            formulaText: stats => <span>{data.skill.hit2[stats.tlvl.skill]}% + 40% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
+            formula: formula.skill.hit2b,
+            variant: stats => getTalentStatKeyVariant("skill", stats)
+          }, stats => stats.constellation >= 4 && {
+            text: "3-Hit DMG(Boosted)",
+            formulaText: stats => <span>{data.skill.hit3[stats.tlvl.skill]}% + 40% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
+            formula: formula.skill.hit3b,
+            variant: stats => getTalentStatKeyVariant("skill", stats)
           }, {
             text: "CD",
             value: "12s",
           }]
       }, {
-        conditional: (tlvl, c, a) => c >= 6 && {
+        conditional: stats => stats.constellation >= 6 && {
           type: "character",
           conditionalKey: "FlamingSwordNemesisOfDark",
           condition: "Flaming Sword, Nemesis of Dark",
@@ -146,22 +140,22 @@ const char = {
         fields: [
           ...[["slashing", "Slashing DMG"], ["dot", "DoT"], ["explosion", "Explosion DMG"]].map(([key, text]) => ({
             text,
-            formulaText: (tlvl, stats) => <span>{formula.burst[key][tlvl]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
+            formulaText: stats => <span>{formula.burst[key][stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
             formula: formula.burst[key],
-            variant: (tlvl, stats) => getTalentStatKeyVariant("skill", stats),
+            variant: stats => getTalentStatKeyVariant("skill", stats),
           })),
           {
             text: "CD",
             value: "12s",
-          }, (c, a) => ({
+          }, {
             text: "Infusion Duration",
-            value: "8s" + (a > 4 ? " + 4s" : ""),
-          }), {
+            value: stats => "8s" + (stats.ascension > 4 ? " + 4s" : ""),
+          }, {
             text: "Energy Cost",
             value: 40,
           }]
       }, {
-        conditional: (tlvl, c, a) => a >= 4 && {
+        conditional: stats => stats.ascension >= 4 && {
           type: "character",
           conditionalKey: "BlessingOfPhoenix",
           condition: "Blessing of Phoenix",
@@ -192,7 +186,7 @@ const char = {
       name: "Conviction",
       img: c1,
       document: [{ text: <span>	Diluc deals 15% more DMG to enemies whose HP is above 50%.</span> }, {
-        conditional: (tlvl, c, a) => c >= 1 && {
+        conditional: stats => stats.constellation >= 1 && {
           type: "character",
           conditionalKey: "Enemy50",
           condition: "Enemies with >50% HP",
@@ -213,7 +207,7 @@ const char = {
           This effect can stack up to 3 times and can only occur once every 1.5s.
       </span>
       }, {
-        conditional: (tlvl, c, a) => c >= 2 && {
+        conditional: stats => stats.constellation >= 2 && {
           type: "character",
           conditionalKey: "TakeDMG",
           condition: "Take DMG",

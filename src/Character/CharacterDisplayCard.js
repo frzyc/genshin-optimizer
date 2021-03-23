@@ -137,7 +137,7 @@ export default class CharacterDisplayCard extends React.Component {
   }
   render() {
     let { footer, newBuild, editable, onClose, tabName } = this.props
-    let character = this.state
+    const character = this.state
     //transfer the hitmode/reactions over 
     if (newBuild?.finalStats) {
       newBuild = deepClone(newBuild)
@@ -145,9 +145,9 @@ export default class CharacterDisplayCard extends React.Component {
       newBuild.finalStats.reactionMode = character.reactionMode;
     }
 
-    let { characterKey, levelKey, compareAgainstEquipped } = this.state
-    let equippedBuild = Character.calculateBuild(this.state)
-    let HeaderIconDisplay = characterKey ? <span >
+    const { characterKey, levelKey, compareAgainstEquipped } = this.state
+    const equippedBuild = Character.calculateBuild(character)
+    const HeaderIconDisplay = characterKey ? <span >
       <Image src={Character.getThumb(characterKey)} className="thumb-small my-n1 ml-n2" roundedCircle />
       <h6 className="d-inline"> {Character.getName(characterKey)} </h6>
     </span> : <span>Select a Character</span>

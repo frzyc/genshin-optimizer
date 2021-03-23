@@ -1,20 +1,22 @@
 import { applyArtifacts, computeAllStats, createProxiedStats } from "../TestUtils";
 import formula from "./data";
- 
+
 let setupStats
 
 // Discord ID: 249928411441659905
 describe("Testing Zhongli's Formulas (ZyrenLe#5042)", () => {
-  beforeEach(() => { setupStats = createProxiedStats({
-    characterHP: 14695, characterATK: 251, characterDEF: 738, critRate_: 5,
-    characterLevel: 90, characterEle: "geo",
-    weaponATK: 23, weaponType: "polearm",
-    enemyLevel: 93,
-    
-    geo_dmg_: 28.8, burst_dmg_: 20,
-    
-    talentLevelKeys: Object.freeze({ auto: 6 - 1, skill: 7 - 1, burst: 8 - 1, }),
-  }) })
+  beforeEach(() => {
+    setupStats = createProxiedStats({
+      characterHP: 14695, characterATK: 251, characterDEF: 738, critRate_: 5,
+      characterLevel: 90, characterEle: "geo",
+      weaponATK: 23, weaponType: "polearm",
+      enemyLevel: 93,
+
+      geo_dmg_: 28.8, burst_dmg_: 20,
+
+      tlvl: Object.freeze({ auto: 6 - 1, skill: 7 - 1, burst: 8 - 1, }),
+    })
+  })
 
   describe("with artifacts", () => {
     beforeEach(() => applyArtifacts(setupStats, [
@@ -34,25 +36,25 @@ describe("Testing Zhongli's Formulas (ZyrenLe#5042)", () => {
       expect(stats.critRate_).toApproximate(52.0)
       expect(stats.critDMG_).toApproximate(106.7)
       expect(stats.enerRech_).toApproximate(156.4)
-      expect(stats.geo_dmg_).toApproximate(28.8)  
+      expect(stats.geo_dmg_).toApproximate(28.8)
     })
 
     describe("no crit", () => {
       beforeEach(() => setupStats.hitMode = "hit")
 
       test("hits", () => {
-        const stats = computeAllStats(setupStats), { auto, skill } = stats.talentLevelKeys
-        expect(formula.normal["0HP"](auto, stats)[0](stats)).toApproximate(342)
-        expect(formula.normal["1HP"](auto, stats)[0](stats)).toApproximate(344)
-        expect(formula.normal["2HP"](auto, stats)[0](stats)).toApproximate(382)
-        expect(formula.normal["3HP"](auto, stats)[0](stats)).toApproximate(404)
-        expect(formula.normal["4HP"](auto, stats)[0](stats)).toApproximate(4*239)
-        expect(formula.normal["5HP"](auto, stats)[0](stats)).toApproximate(464)
-        expect(formula.charged.dmgHP(auto, stats)[0](stats)).toApproximate(754)
-        expect(formula.plunging.highHP(auto, stats)[0](stats)).toApproximate(1004)
-        expect(formula.skill.steeleDMGHP(skill, stats)[0](stats)).toApproximate(433)
-        expect(formula.skill.resonanceDMGHP(skill, stats)[0](stats)).toApproximate(542)
-        expect(formula.skill.holdDMGHP(skill, stats)[0](stats)).toApproximate(870)
+        const stats = computeAllStats(setupStats)
+        expect(formula.normal["0HP"](stats)[0](stats)).toApproximate(342)
+        expect(formula.normal["1HP"](stats)[0](stats)).toApproximate(344)
+        expect(formula.normal["2HP"](stats)[0](stats)).toApproximate(382)
+        expect(formula.normal["3HP"](stats)[0](stats)).toApproximate(404)
+        expect(formula.normal["4HP"](stats)[0](stats)).toApproximate(4 * 239)
+        expect(formula.normal["5HP"](stats)[0](stats)).toApproximate(464)
+        expect(formula.charged.dmgHP(stats)[0](stats)).toApproximate(754)
+        expect(formula.plunging.highHP(stats)[0](stats)).toApproximate(1004)
+        expect(formula.skill.steeleDMGHP(stats)[0](stats)).toApproximate(433)
+        expect(formula.skill.resonanceDMGHP(stats)[0](stats)).toApproximate(542)
+        expect(formula.skill.holdDMGHP(stats)[0](stats)).toApproximate(870)
       })
 
       describe("with jade shield", () => {
@@ -60,31 +62,31 @@ describe("Testing Zhongli's Formulas (ZyrenLe#5042)", () => {
           setupStats.geo_enemyRes_ -= 20
           setupStats.physical_enemyRes_ -= 20
         })
-        
+
         test("hits", () => {
-          const stats = computeAllStats(setupStats), { burst } = stats.talentLevelKeys
-          expect(formula.burst.dmgHP(burst, stats)[0](stats)).toApproximate(12635)
+          const stats = computeAllStats(setupStats)
+          expect(formula.burst.dmgHP(stats)[0](stats)).toApproximate(12635)
         })
-      })  
+      })
     })
     describe("with crit", () => {
       beforeEach(() => setupStats.hitMode = "critHit")
-      
-      test("hits", () => {  
-        const stats = computeAllStats(setupStats), { auto, skill } = stats.talentLevelKeys
-        expect(formula.normal["0HP"](auto, stats)[0](stats)).toApproximate(707)
-        expect(formula.normal["1HP"](auto, stats)[0](stats)).toApproximate(711)
-        expect(formula.normal["2HP"](auto, stats)[0](stats)).toApproximate(790)
-        expect(formula.normal["3HP"](auto, stats)[0](stats)).toApproximate(836)
-        expect(formula.normal["4HP"](auto, stats)[0](stats)).toApproximate(4*494)
-        expect(formula.normal["5HP"](auto, stats)[0](stats)).toApproximate(959)
-        expect(formula.charged.dmgHP(auto, stats)[0](stats)).toApproximate(1560)
-        expect(formula.plunging.highHP(auto, stats)[0](stats)).toApproximate(2077)
-        expect(formula.skill.steeleDMGHP(skill, stats)[0](stats)).toApproximate(895)
-        expect(formula.skill.resonanceDMGHP(skill, stats)[0](stats)).toApproximate(1121)
-        expect(formula.skill.holdDMGHP(skill, stats)[0](stats)).toApproximate(1799)
+
+      test("hits", () => {
+        const stats = computeAllStats(setupStats)
+        expect(formula.normal["0HP"](stats)[0](stats)).toApproximate(707)
+        expect(formula.normal["1HP"](stats)[0](stats)).toApproximate(711)
+        expect(formula.normal["2HP"](stats)[0](stats)).toApproximate(790)
+        expect(formula.normal["3HP"](stats)[0](stats)).toApproximate(836)
+        expect(formula.normal["4HP"](stats)[0](stats)).toApproximate(4 * 494)
+        expect(formula.normal["5HP"](stats)[0](stats)).toApproximate(959)
+        expect(formula.charged.dmgHP(stats)[0](stats)).toApproximate(1560)
+        expect(formula.plunging.highHP(stats)[0](stats)).toApproximate(2077)
+        expect(formula.skill.steeleDMGHP(stats)[0](stats)).toApproximate(895)
+        expect(formula.skill.resonanceDMGHP(stats)[0](stats)).toApproximate(1121)
+        expect(formula.skill.holdDMGHP(stats)[0](stats)).toApproximate(1799)
       })
-  
+
       describe("with jade shield", () => {
         beforeEach(() => {
           setupStats.geo_enemyRes_ -= 20
@@ -92,8 +94,8 @@ describe("Testing Zhongli's Formulas (ZyrenLe#5042)", () => {
         })
 
         test("hits", () => {
-          const stats = computeAllStats(setupStats), { burst } = stats.talentLevelKeys
-          expect(formula.burst.dmgHP(burst, stats)[0](stats)).toApproximate(26118)
+          const stats = computeAllStats(setupStats)
+          expect(formula.burst.dmgHP(stats)[0](stats)).toApproximate(26118)
         })
       })
     })
@@ -104,50 +106,19 @@ describe("Testing Zhongli's Formulas (ZyrenLe#5042)", () => {
       beforeEach(() => setupStats.hitMode = "hit")
 
       test("hits", () => {
-        const stats = computeAllStats(setupStats), { auto, skill, burst } = stats.talentLevelKeys
-        expect(formula.normal["0HP"](auto, stats)[0](stats)).toApproximate(145)
-        expect(formula.normal["1HP"](auto, stats)[0](stats)).toApproximate(146)
-        expect(formula.normal["2HP"](auto, stats)[0](stats)).toApproximate(159)
-        expect(formula.normal["3HP"](auto, stats)[0](stats)).toApproximate(167)
-        expect(formula.normal["4HP"](auto, stats)[0](stats)).toApproximate(4*110)
-        expect(formula.normal["5HP"](auto, stats)[0](stats)).toApproximate(188)
-        expect(formula.charged.dmgHP(auto, stats)[0](stats)).toApproximate(288)
-        expect(formula.plunging.highHP(auto, stats)[0](stats)).toApproximate(375)
-        expect(formula.skill.steeleDMGHP(skill, stats)[0](stats)).toApproximate(198)
-        expect(formula.skill.resonanceDMGHP(skill, stats)[0](stats)).toApproximate(236)
-        expect(formula.skill.holdDMGHP(skill, stats)[0](stats)).toApproximate(349)
-        expect(formula.burst.dmgHP(burst, stats)[0](stats)).toApproximate(4670)
-      })
-
-      describe("with jade shield", () => {
-        beforeEach(() => {
-          setupStats.geo_enemyRes_ -= 20
-          setupStats.physical_enemyRes_ -= 20
-        })
-
-        test("hits", () => {    
-          const stats = computeAllStats(setupStats), { auto, skill } = stats.talentLevelKeys
-          expect(formula.normal["0HP"](auto, stats)[0](stats)).toApproximate(170)
-          expect(formula.normal["1HP"](auto, stats)[0](stats)).toApproximate(171)
-          expect(formula.normal["2HP"](auto, stats)[0](stats)).toApproximate(186)
-          expect(formula.normal["3HP"](auto, stats)[0](stats)).toApproximate(195)
-          expect(formula.normal["4HP"](auto, stats)[0](stats)).toApproximate(4*128)
-          expect(formula.normal["5HP"](auto, stats)[0](stats)).toApproximate(219)
-          expect(formula.charged.dmgHP(auto, stats)[0](stats)).toApproximate(337)
-          expect(formula.plunging.highHP(auto, stats)[0](stats)).toApproximate(438)
-          expect(formula.skill.steeleDMGHP(skill, stats)[0](stats)).toApproximate(231)
-          expect(formula.skill.resonanceDMGHP(skill, stats)[0](stats)).toApproximate(275)
-          expect(formula.skill.holdDMGHP(skill, stats)[0](stats)).toApproximate(408)
-        })
-      })
-    })
-    describe("with crit", () => {
-      beforeEach(() => setupStats.hitMode = "critHit")
-
-      test("hits", () => {
-        const stats = computeAllStats(setupStats), { auto } = stats.talentLevelKeys
-        expect(formula.normal["2HP"](auto, stats)[0](stats)).toApproximate(239)
-        expect(formula.charged.dmgHP(auto, stats)[0](stats)).toApproximate(433)
+        const stats = computeAllStats(setupStats)
+        expect(formula.normal["0HP"](stats)[0](stats)).toApproximate(145)
+        expect(formula.normal["1HP"](stats)[0](stats)).toApproximate(146)
+        expect(formula.normal["2HP"](stats)[0](stats)).toApproximate(159)
+        expect(formula.normal["3HP"](stats)[0](stats)).toApproximate(167)
+        expect(formula.normal["4HP"](stats)[0](stats)).toApproximate(4 * 110)
+        expect(formula.normal["5HP"](stats)[0](stats)).toApproximate(188)
+        expect(formula.charged.dmgHP(stats)[0](stats)).toApproximate(288)
+        expect(formula.plunging.highHP(stats)[0](stats)).toApproximate(375)
+        expect(formula.skill.steeleDMGHP(stats)[0](stats)).toApproximate(198)
+        expect(formula.skill.resonanceDMGHP(stats)[0](stats)).toApproximate(236)
+        expect(formula.skill.holdDMGHP(stats)[0](stats)).toApproximate(349)
+        expect(formula.burst.dmgHP(stats)[0](stats)).toApproximate(4670)
       })
 
       describe("with jade shield", () => {
@@ -157,10 +128,41 @@ describe("Testing Zhongli's Formulas (ZyrenLe#5042)", () => {
         })
 
         test("hits", () => {
-          const stats = computeAllStats(setupStats), { auto } = stats.talentLevelKeys
-          expect(formula.normal["3HP"](auto, stats)[0](stats)).toApproximate(293)
-          expect(formula.normal["2HP"](auto, stats)[0](stats)).toApproximate(279)
-          expect(formula.charged.dmgHP(auto, stats)[0](stats)).toApproximate(505)
+          const stats = computeAllStats(setupStats)
+          expect(formula.normal["0HP"](stats)[0](stats)).toApproximate(170)
+          expect(formula.normal["1HP"](stats)[0](stats)).toApproximate(171)
+          expect(formula.normal["2HP"](stats)[0](stats)).toApproximate(186)
+          expect(formula.normal["3HP"](stats)[0](stats)).toApproximate(195)
+          expect(formula.normal["4HP"](stats)[0](stats)).toApproximate(4 * 128)
+          expect(formula.normal["5HP"](stats)[0](stats)).toApproximate(219)
+          expect(formula.charged.dmgHP(stats)[0](stats)).toApproximate(337)
+          expect(formula.plunging.highHP(stats)[0](stats)).toApproximate(438)
+          expect(formula.skill.steeleDMGHP(stats)[0](stats)).toApproximate(231)
+          expect(formula.skill.resonanceDMGHP(stats)[0](stats)).toApproximate(275)
+          expect(formula.skill.holdDMGHP(stats)[0](stats)).toApproximate(408)
+        })
+      })
+    })
+    describe("with crit", () => {
+      beforeEach(() => setupStats.hitMode = "critHit")
+
+      test("hits", () => {
+        const stats = computeAllStats(setupStats)
+        expect(formula.normal["2HP"](stats)[0](stats)).toApproximate(239)
+        expect(formula.charged.dmgHP(stats)[0](stats)).toApproximate(433)
+      })
+
+      describe("with jade shield", () => {
+        beforeEach(() => {
+          setupStats.geo_enemyRes_ -= 20
+          setupStats.physical_enemyRes_ -= 20
+        })
+
+        test("hits", () => {
+          const stats = computeAllStats(setupStats)
+          expect(formula.normal["3HP"](stats)[0](stats)).toApproximate(293)
+          expect(formula.normal["2HP"](stats)[0](stats)).toApproximate(279)
+          expect(formula.charged.dmgHP(stats)[0](stats)).toApproximate(505)
         })
       })
     })

@@ -12,7 +12,7 @@ describe("Testing Albedo's skill + C2 Formulas (AdmiralRif#4541)", () => {
       critRate_: 5 + 25.1,
       geo_dmg_: 21.6,
       enemyLevel: 85, physical_enemyRes_: 70, // Ruin Guard
-      talentLevelKeys: Object.freeze({ auto: 1 - 1, skill: 8 - 1, burst: 8 - 1 }),
+      tlvl: Object.freeze({ auto: 1 - 1, skill: 8 - 1, burst: 8 - 1 }),
     })
   })
 
@@ -31,19 +31,19 @@ describe("Testing Albedo's skill + C2 Formulas (AdmiralRif#4541)", () => {
       beforeEach(() => setupStats.hitMode = "hit")
 
       test("skill + C2", () => {
-        const stats = computeAllStats(setupStats), { auto, skill, burst } = stats.talentLevelKeys
-        expect(formula.skill.press(skill, stats)[0](stats)).toApproximate(1532)
-        expect(formula.skill.blossom(skill, stats)[0](stats)).toApproximate(1753)
-        expect(formula.burst.dmg(burst, stats)[0](stats)).toApproximate(4314)
-        expect(formula.burst.dmg1c2(burst, stats)[0](stats)).toApproximate(4560)
-        expect(formula.burst.dmg2c2(burst, stats)[0](stats)).toApproximate(4806)
-        expect(formula.burst.dmg3c2(burst, stats)[0](stats)).toApproximate(5052)
-        expect(formula.burst.dmg4c2(burst, stats)[0](stats)).toApproximate(5298)
-        expect(formula.burst.blossom(burst, stats)[0](stats)).toApproximate(845)
-        expect(formula.burst.blossom1c2(burst, stats)[0](stats)).toApproximate(1092)
-        expect(formula.burst.blossom2c2(burst, stats)[0](stats)).toApproximate(1338)
-        expect(formula.burst.blossom3c2(burst, stats)[0](stats)).toApproximate(1584)
-        expect(formula.burst.blossom4c2(burst, stats)[0](stats)).toApproximate(1830)
+        const stats = computeAllStats(setupStats)
+        expect(formula.skill.press(stats)[0](stats)).toApproximate(1532)
+        expect(formula.skill.blossom(stats)[0](stats)).toApproximate(1753)
+        expect(formula.burst.dmg(stats)[0](stats)).toApproximate(4314)
+        expect(formula.burst.dmg1c2(stats)[0](stats)).toApproximate(4560)
+        expect(formula.burst.dmg2c2(stats)[0](stats)).toApproximate(4806)
+        expect(formula.burst.dmg3c2(stats)[0](stats)).toApproximate(5052)
+        expect(formula.burst.dmg4c2(stats)[0](stats)).toApproximate(5298)
+        expect(formula.burst.blossom(stats)[0](stats)).toApproximate(845)
+        expect(formula.burst.blossom1c2(stats)[0](stats)).toApproximate(1092)
+        expect(formula.burst.blossom2c2(stats)[0](stats)).toApproximate(1338)
+        expect(formula.burst.blossom3c2(stats)[0](stats)).toApproximate(1584)
+        expect(formula.burst.blossom4c2(stats)[0](stats)).toApproximate(1830)
       })
     })
 
@@ -51,19 +51,19 @@ describe("Testing Albedo's skill + C2 Formulas (AdmiralRif#4541)", () => {
       beforeEach(() => setupStats.hitMode = "critHit")
 
       test("C2", () => {
-        const stats = computeAllStats(setupStats), { auto, skill, burst } = stats.talentLevelKeys
-        expect(formula.skill.press(skill, stats)[0](stats)).toApproximate(3235)
-        expect(formula.skill.blossom(skill, stats)[0](stats)).toApproximate(3704)
-        expect(formula.burst.dmg(burst, stats)[0](stats)).toApproximate(9111)
-        expect(formula.burst.dmg1c2(burst, stats)[0](stats)).toApproximate(9631)
-        expect(formula.burst.dmg2c2(burst, stats)[0](stats)).toApproximate(10151)
-        expect(formula.burst.dmg3c2(burst, stats)[0](stats)).toApproximate(10671)
-        expect(formula.burst.dmg4c2(burst, stats)[0](stats)).toApproximate(11191)
-        expect(formula.burst.blossom(burst, stats)[0](stats)).toApproximate(1786)
-        expect(formula.burst.blossom1c2(burst, stats)[0](stats)).toApproximate(2306)
-        expect(formula.burst.blossom2c2(burst, stats)[0](stats)).toApproximate(2826)
-        expect(formula.burst.blossom3c2(burst, stats)[0](stats)).toApproximate(3346)
-        expect(formula.burst.blossom4c2(burst, stats)[0](stats)).toApproximate(3866)
+        const stats = computeAllStats(setupStats)
+        expect(formula.skill.press(stats)[0](stats)).toApproximate(3235)
+        expect(formula.skill.blossom(stats)[0](stats)).toApproximate(3704)
+        expect(formula.burst.dmg(stats)[0](stats)).toApproximate(9111)
+        expect(formula.burst.dmg1c2(stats)[0](stats)).toApproximate(9631)
+        expect(formula.burst.dmg2c2(stats)[0](stats)).toApproximate(10151)
+        expect(formula.burst.dmg3c2(stats)[0](stats)).toApproximate(10671)
+        expect(formula.burst.dmg4c2(stats)[0](stats)).toApproximate(11191)
+        expect(formula.burst.blossom(stats)[0](stats)).toApproximate(1786)
+        expect(formula.burst.blossom1c2(stats)[0](stats)).toApproximate(2306)
+        expect(formula.burst.blossom2c2(stats)[0](stats)).toApproximate(2826)
+        expect(formula.burst.blossom3c2(stats)[0](stats)).toApproximate(3346)
+        expect(formula.burst.blossom4c2(stats)[0](stats)).toApproximate(3866)
       })
     })
   })
@@ -79,7 +79,7 @@ describe("Testing Albedo's Formulas (The_Lolicon#4257)", () => {
       critDMG_: 50 + 42.7,
       geo_dmg_: 21.6,
       enemyLevel: 85, physical_enemyRes_: 70, // Ruin Guard
-      talentLevelKeys: Object.freeze({ auto: 1 - 1, skill: 8 - 1, burst: 6 - 1 }),
+      tlvl: Object.freeze({ auto: 1 - 1, skill: 8 - 1, burst: 6 - 1 }),
     })
   })
 
@@ -98,22 +98,22 @@ describe("Testing Albedo's Formulas (The_Lolicon#4257)", () => {
       beforeEach(() => setupStats.hitMode = "hit")
 
       test("with artifacts", () => {
-        const stats = computeAllStats(setupStats), { auto, skill, burst } = stats.talentLevelKeys
-        expect(formula.normal[0](auto, stats)[0](stats)).toApproximate(54)
-        expect(formula.normal[1](auto, stats)[0](stats)).toApproximate(54)
-        expect(formula.normal[2](auto, stats)[0](stats)).toApproximate(69)
-        expect(formula.normal[3](auto, stats)[0](stats)).toApproximate(73)
-        expect(formula.normal[4](auto, stats)[0](stats)).toApproximate(91)
-        expect(formula.charged.atk1(auto, stats)[0](stats)).toApproximate(69)
-        expect(formula.charged.atk2(auto, stats)[0](stats)).toApproximate(88)
-        expect(formula.plunging.dmg(auto, stats)[0](stats)).toApproximate(94)
-        expect(formula.plunging.low(auto, stats)[0](stats)).toApproximate(188)
-        expect(formula.plunging.high(auto, stats)[0](stats)).toApproximate(235)
-        expect(formula.skill.press(skill, stats)[0](stats)).toApproximate(1688)
-        expect(formula.skill.blossom(skill, stats)[0](stats)).toApproximate(2904)
-        expect(formula.skill.blossom50(skill, stats)[0](stats)).toApproximate(3300)
-        expect(formula.burst.dmg(burst, stats)[0](stats)).toApproximate(4195)
-        expect(formula.burst.blossom(burst, stats)[0](stats)).toApproximate(815)
+        const stats = computeAllStats(setupStats)
+        expect(formula.normal[0](stats)[0](stats)).toApproximate(54)
+        expect(formula.normal[1](stats)[0](stats)).toApproximate(54)
+        expect(formula.normal[2](stats)[0](stats)).toApproximate(69)
+        expect(formula.normal[3](stats)[0](stats)).toApproximate(73)
+        expect(formula.normal[4](stats)[0](stats)).toApproximate(91)
+        expect(formula.charged.atk1(stats)[0](stats)).toApproximate(69)
+        expect(formula.charged.atk2(stats)[0](stats)).toApproximate(88)
+        expect(formula.plunging.dmg(stats)[0](stats)).toApproximate(94)
+        expect(formula.plunging.low(stats)[0](stats)).toApproximate(188)
+        expect(formula.plunging.high(stats)[0](stats)).toApproximate(235)
+        expect(formula.skill.press(stats)[0](stats)).toApproximate(1688)
+        expect(formula.skill.blossom(stats)[0](stats)).toApproximate(2904)
+        expect(formula.skill.blossom50(stats)[0](stats)).toApproximate(3300)
+        expect(formula.burst.dmg(stats)[0](stats)).toApproximate(4195)
+        expect(formula.burst.blossom(stats)[0](stats)).toApproximate(815)
 
         expect(stats.shattered_hit).toApproximate(534)
       })
@@ -123,22 +123,22 @@ describe("Testing Albedo's Formulas (The_Lolicon#4257)", () => {
       beforeEach(() => setupStats.hitMode = "critHit")
 
       test("with artifacts", () => {
-        const stats = computeAllStats(setupStats), { auto, skill, burst } = stats.talentLevelKeys
-        expect(formula.normal[0](auto, stats)[0](stats)).toApproximate(151)
-        expect(formula.normal[1](auto, stats)[0](stats)).toApproximate(151)
-        expect(formula.normal[2](auto, stats)[0](stats)).toApproximate(195)
-        expect(formula.normal[3](auto, stats)[0](stats)).toApproximate(205)
-        expect(formula.normal[4](auto, stats)[0](stats)).toApproximate(256)
-        expect(formula.charged.atk1(auto, stats)[0](stats)).toApproximate(195)
-        expect(formula.charged.atk2(auto, stats)[0](stats)).toApproximate(248)
-        expect(formula.plunging.dmg(auto, stats)[0](stats)).toApproximate(264)
-        expect(formula.plunging.low(auto, stats)[0](stats)).toApproximate(527)
-        expect(formula.plunging.high(auto, stats)[0](stats)).toApproximate(659)
-        expect(formula.skill.press(skill, stats)[0](stats)).toApproximate(4735)
-        expect(formula.skill.blossom(skill, stats)[0](stats)).toApproximate(8147)
-        expect(formula.skill.blossom50(skill, stats)[0](stats)).toApproximate(9258)
-        expect(formula.burst.dmg(burst, stats)[0](stats)).toApproximate(11668)
-        expect(formula.burst.blossom(burst, stats)[0](stats)).toApproximate(2287)
+        const stats = computeAllStats(setupStats)
+        expect(formula.normal[0](stats)[0](stats)).toApproximate(151)
+        expect(formula.normal[1](stats)[0](stats)).toApproximate(151)
+        expect(formula.normal[2](stats)[0](stats)).toApproximate(195)
+        expect(formula.normal[3](stats)[0](stats)).toApproximate(205)
+        expect(formula.normal[4](stats)[0](stats)).toApproximate(256)
+        expect(formula.charged.atk1(stats)[0](stats)).toApproximate(195)
+        expect(formula.charged.atk2(stats)[0](stats)).toApproximate(248)
+        expect(formula.plunging.dmg(stats)[0](stats)).toApproximate(264)
+        expect(formula.plunging.low(stats)[0](stats)).toApproximate(527)
+        expect(formula.plunging.high(stats)[0](stats)).toApproximate(659)
+        expect(formula.skill.press(stats)[0](stats)).toApproximate(4735)
+        expect(formula.skill.blossom(stats)[0](stats)).toApproximate(8147)
+        expect(formula.skill.blossom50(stats)[0](stats)).toApproximate(9258)
+        expect(formula.burst.dmg(stats)[0](stats)).toApproximate(11668)
+        expect(formula.burst.blossom(stats)[0](stats)).toApproximate(2287)
       })
     })
   })

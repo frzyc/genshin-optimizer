@@ -38,33 +38,33 @@ const data = {
 }
 
 const formula = {
-  normal: Object.fromEntries(data.normal.hitArr.map((percentArr, i) => [i, (tlvl, stats) =>
-    basicDMGFormula(percentArr[tlvl], stats, "normal")])),
+  normal: Object.fromEntries(data.normal.hitArr.map((percentArr, i) => [i, stats =>
+    basicDMGFormula(percentArr[stats.tlvl.auto], stats, "normal")])),
   charged: {
-    aimShot: (tlvl, stats) => basicDMGFormula(data.charged.aimedShot[tlvl], stats, "charged"),
-    fullAimedShot: (tlvl, stats) => basicDMGFormula(data.charged.fullAimedShot[tlvl], stats, "charged", true),
-    fullAimedShotOz: (tlvl, stats) => basicDMGFormula(data.charged.fullAimedShot[tlvl] * (152.7 / 100), stats, "charged", true),
+    aimShot: stats => basicDMGFormula(data.charged.aimedShot[stats.tlvl.auto], stats, "charged"),
+    fullAimedShot: stats => basicDMGFormula(data.charged.fullAimedShot[stats.tlvl.auto], stats, "charged", true),
+    fullAimedShotOz: stats => basicDMGFormula(data.charged.fullAimedShot[stats.tlvl.auto] * (152.7 / 100), stats, "charged", true),
   },
   plunging: {
-    dmg: (tlvl, stats) => basicDMGFormula(data.plunging.dmg[tlvl], stats, "plunging"),
-    low: (tlvl, stats) => basicDMGFormula(data.plunging.low[tlvl], stats, "plunging"),
-    high: (tlvl, stats) => basicDMGFormula(data.plunging.high[tlvl], stats, "plunging"),
+    dmg: stats => basicDMGFormula(data.plunging.dmg[stats.tlvl.auto], stats, "plunging"),
+    low: stats => basicDMGFormula(data.plunging.low[stats.tlvl.auto], stats, "plunging"),
+    high: stats => basicDMGFormula(data.plunging.high[stats.tlvl.auto], stats, "plunging"),
   },
   skill: {
-    oz: (tlvl, stats) => basicDMGFormula(data.skill.oz[tlvl], stats, "skill"),
-    dmg: (tlvl, stats) => basicDMGFormula(data.skill.dmg[tlvl] + (stats.constellation >= 2 ? 200 : 0), stats, "skill"),
-    activeChar: (tlvl, stats) => basicDMGFormula(30, stats, "skill"),
+    oz: stats => basicDMGFormula(data.skill.oz[stats.tlvl.skill], stats, "skill"),
+    dmg: stats => basicDMGFormula(data.skill.dmg[stats.tlvl.skill] + (stats.constellation >= 2 ? 200 : 0), stats, "skill"),
+    activeChar: stats => basicDMGFormula(30, stats, "skill"),
   },
   burst: {
-    dmg: (tlvl, stats) => basicDMGFormula(data.burst.dmg[tlvl], stats, "burst"),
-    addDmg: (tlvl, stats) => basicDMGFormula(222, stats, "burst"),
-    regen: (tlvl, stats) => [s => 0.2 * s.finalHP * s.heal_multi, ["finalHP", "heal_multi"]]
+    dmg: stats => basicDMGFormula(data.burst.dmg[stats.tlvl.burst], stats, "burst"),
+    addDmg: stats => basicDMGFormula(222, stats, "burst"),
+    regen: stats => [s => 0.2 * s.finalHP * s.heal_multi, ["finalHP", "heal_multi"]]
   },
   passive2: {
-    thunderRetri: (tlvl, stats) => basicDMGFormula(80, stats, "skill"),
+    thunderRetri: stats => basicDMGFormula(80, stats, "skill"),
   },
   constellation1: {
-    jointAttDmg: (tlvl, stats) => basicDMGFormula(22, stats, "normal"),
+    jointAttDmg: stats => basicDMGFormula(22, stats, "normal"),
   }
 }
 

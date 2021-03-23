@@ -38,32 +38,32 @@ const char = {
       document: [{
         text: <span><strong>Normal Attack</strong> Performs up to 6 rapid strikes.</span>,
         fields: data.normal.hitArr.map((percentArr, i) =>
-          (con, a) => a < 4 ?
+          stats => stats.ascension < 4 ?
             {
               text: `${i + 1}-Hit DMG`,
-              formulaText: (tlvl, stats) => <span>{i === 4 ? "4 × " : ""}{percentArr[tlvl]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
+              formulaText: stats => <span>{i === 4 ? "4 × " : ""}{percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
               formula: formula.normal[i],
-              variant: (tlvl, stats) => getTalentStatKeyVariant("normal", stats),
+              variant: stats => getTalentStatKeyVariant("normal", stats),
             } : {
               text: `${i + 1}-Hit DMG`,
-              formulaText: (tlvl, stats) => <span>{i === 4 ? "4 × " : ""}( {percentArr[tlvl]}% {Stat.printStat("finalATK", stats)} + 1.39% {Stat.printStat("finalHP", stats)} ) * {Stat.printStat(getTalentStatKey("normal", stats) + "_multi", stats)}</span>,
+              formulaText: stats => <span>{i === 4 ? "4 × " : ""}( {percentArr[stats.tlvl.auto]}% {Stat.printStat("finalATK", stats)} + 1.39% {Stat.printStat("finalHP", stats)} ) * {Stat.printStat(getTalentStatKey("normal", stats) + "_multi", stats)}</span>,
               formula: formula.normal[`${i}HP`],
-              variant: (tlvl, stats) => getTalentStatKeyVariant("normal", stats),
+              variant: stats => getTalentStatKeyVariant("normal", stats),
             })
       }, {
         text: <span><strong>Charged Attack</strong> Consumes a certain amount of Stamina to lunge forward, causing stone spears to fall along his path.</span>,
         fields: [
-          (con, a) => a < 4 ?
+          stats => stats.ascension < 4 ?
             {
               text: `Charged Attack DMG`,
-              formulaText: (tlvl, stats) => <span>{data.charged.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
+              formulaText: stats => <span>{data.charged.dmg[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
               formula: formula.charged.dmg,
-              variant: (tlvl, stats) => getTalentStatKeyVariant("charged", stats),
+              variant: stats => getTalentStatKeyVariant("charged", stats),
             } : {
               text: `Charged Attack DMG`,
-              formulaText: (tlvl, stats) => <span>( {data.charged.dmg[tlvl]}% {Stat.printStat("finalATK", stats)} + 1.39% {Stat.printStat("finalHP", stats)} ) * {Stat.printStat(getTalentStatKey("charged", stats) + "_multi", stats)}</span>,
+              formulaText: stats => <span>( {data.charged.dmg[stats.tlvl.auto]}% {Stat.printStat("finalATK", stats)} + 1.39% {Stat.printStat("finalHP", stats)} ) * {Stat.printStat(getTalentStatKey("charged", stats) + "_multi", stats)}</span>,
               formula: formula.charged.dmgHP,
-              variant: (tlvl, stats) => getTalentStatKeyVariant("charged", stats),
+              variant: stats => getTalentStatKeyVariant("charged", stats),
             },
           {
             text: `Stamina Cost`,
@@ -72,41 +72,41 @@ const char = {
       }, {
         text: <span><strong>Plunging Attack</strong> Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.</span>,
         fields: [
-          (con, a) => a < 4 ?
+          stats => stats.ascension < 4 ?
             {
               text: `Plunge DMG`,
-              formulaText: (tlvl, stats) => <span>{data.plunging.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+              formulaText: stats => <span>{data.plunging.dmg[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
               formula: formula.plunging.dmg,
-              variant: (tlvl, stats) => getTalentStatKeyVariant("plunging", stats),
+              variant: stats => getTalentStatKeyVariant("plunging", stats),
             } : {
               text: `Plunge DMG`,
-              formulaText: (tlvl, stats) => <span>( {data.plunging.dmg[tlvl]}% {Stat.printStat("finalATK", stats)} + 1.39% {Stat.printStat("finalHP", stats)} ) * {Stat.printStat(getTalentStatKey("plunging", stats) + "_multi", stats)}</span>,
+              formulaText: stats => <span>( {data.plunging.dmg[stats.tlvl.auto]}% {Stat.printStat("finalATK", stats)} + 1.39% {Stat.printStat("finalHP", stats)} ) * {Stat.printStat(getTalentStatKey("plunging", stats) + "_multi", stats)}</span>,
               formula: formula.charged.dmgHP,
-              variant: (tlvl, stats) => getTalentStatKeyVariant("charged", stats),
+              variant: stats => getTalentStatKeyVariant("charged", stats),
             },
-          (con, a) => a < 4 ?
+          stats => stats.ascension < 4 ?
             {
               text: `Low Plunge DMG`,
-              formulaText: (tlvl, stats) => <span>{data.plunging.low[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+              formulaText: stats => <span>{data.plunging.low[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
               formula: formula.plunging.low,
-              variant: (tlvl, stats) => getTalentStatKeyVariant("plunging", stats),
+              variant: stats => getTalentStatKeyVariant("plunging", stats),
             } : {
               text: `Low Plunge DMG`,
-              formulaText: (tlvl, stats) => <span>( {data.plunging.low[tlvl]}% {Stat.printStat("finalATK", stats)} + 1.39% {Stat.printStat("finalHP", stats)} ) * {Stat.printStat(getTalentStatKey("plunging", stats) + "_multi", stats)}</span>,
+              formulaText: stats => <span>( {data.plunging.low[stats.tlvl.auto]}% {Stat.printStat("finalATK", stats)} + 1.39% {Stat.printStat("finalHP", stats)} ) * {Stat.printStat(getTalentStatKey("plunging", stats) + "_multi", stats)}</span>,
               formula: formula.plunging.lowHP,
-              variant: (tlvl, stats) => getTalentStatKeyVariant("plunging", stats),
+              variant: stats => getTalentStatKeyVariant("plunging", stats),
             },
-          (con, a) => a < 4 ?
+          stats => stats.ascension < 4 ?
             {
               text: `High Plunge DMG`,
-              formulaText: (tlvl, stats) => <span>{data.plunging.high[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+              formulaText: stats => <span>{data.plunging.high[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
               formula: formula.plunging.high,
-              variant: (tlvl, stats) => getTalentStatKeyVariant("plunging", stats),
+              variant: stats => getTalentStatKeyVariant("plunging", stats),
             } : {
               text: `High Plunge DMG`,
-              formulaText: (tlvl, stats) => <span>( {data.plunging.high[tlvl]}% {Stat.printStat("finalATK", stats)} + 1.39% {Stat.printStat("finalHP", stats)} ) * {Stat.printStat(getTalentStatKey("plunging", stats) + "_multi", stats)}</span>,
+              formulaText: stats => <span>( {data.plunging.high[stats.tlvl.auto]}% {Stat.printStat("finalATK", stats)} + 1.39% {Stat.printStat("finalHP", stats)} ) * {Stat.printStat(getTalentStatKey("plunging", stats) + "_multi", stats)}</span>,
               formula: formula.plunging.highHP,
-              variant: (tlvl, stats) => getTalentStatKeyVariant("plunging", stats),
+              variant: stats => getTalentStatKeyVariant("plunging", stats),
             }]
       }],
     },
@@ -131,52 +131,52 @@ const char = {
           <p className="mb-2">Characters protected by the Jade Shield will decrease the Elemental RES and Physical RES of opponents in a small AoE by 20%. This effect cannot be stacked.</p>
         </span>,
         fields: [
-          (con, a) => a < 4 ?
+          stats => stats.ascension < 4 ?
             {
               text: "Stone Stele DMG",
-              formulaText: (tlvl, stats) => <span>{data.skill.steeleDMG[tlvl]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
+              formulaText: stats => <span>{data.skill.steeleDMG[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
               formula: formula.skill.steeleDMG,
-              variant: (tlvl, stats) => getTalentStatKeyVariant("skill", stats),
+              variant: stats => getTalentStatKeyVariant("skill", stats),
             } : {
               text: "Stone Stele DMG",
-              formulaText: (tlvl, stats) => <span>( {data.skill.steeleDMG[tlvl]}% {Stat.printStat("finalATK", stats)} + 1.9% {Stat.printStat("finalHP", stats)} ) * {Stat.printStat(getTalentStatKey("skill", stats) + "_multi", stats)}</span>,
+              formulaText: stats => <span>( {data.skill.steeleDMG[stats.tlvl.skill]}% {Stat.printStat("finalATK", stats)} + 1.9% {Stat.printStat("finalHP", stats)} ) * {Stat.printStat(getTalentStatKey("skill", stats) + "_multi", stats)}</span>,
               formula: formula.skill.steeleDMGHP,
-              variant: (tlvl, stats) => getTalentStatKeyVariant("skill", stats),
+              variant: stats => getTalentStatKeyVariant("skill", stats),
             },
-          (con, a) => a < 4 ?
+          stats => stats.ascension < 4 ?
             {
               text: "Resonance DMG",
-              formulaText: (tlvl, stats) => <span>{data.skill.resonanceDMG[tlvl]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
+              formulaText: stats => <span>{data.skill.resonanceDMG[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
               formula: formula.skill.resonanceDMG,
-              variant: (tlvl, stats) => getTalentStatKeyVariant("skill", stats),
+              variant: stats => getTalentStatKeyVariant("skill", stats),
             } : {
               text: "Resonance DMG",
-              formulaText: (tlvl, stats) => <span>( {data.skill.resonanceDMG[tlvl]}% {Stat.printStat("finalATK", stats)} + 1.9% {Stat.printStat("finalHP", stats)} ) * {Stat.printStat(getTalentStatKey("skill", stats) + "_multi", stats)}</span>,
+              formulaText: stats => <span>( {data.skill.resonanceDMG[stats.tlvl.skill]}% {Stat.printStat("finalATK", stats)} + 1.9% {Stat.printStat("finalHP", stats)} ) * {Stat.printStat(getTalentStatKey("skill", stats) + "_multi", stats)}</span>,
               formula: formula.skill.resonanceDMGHP,
-              variant: (tlvl, stats) => getTalentStatKeyVariant("skill", stats),
+              variant: stats => getTalentStatKeyVariant("skill", stats),
             },
-          (con, a) => ({
+          {
             text: "Maximum Stele number",
-            value: con >= 1 ? 2 : 1,
-          }), {
+            value: stats => stats.constellation >= 1 ? 2 : 1,
+          }, {
             text: "Press CD",
             value: "4s",
           },
-          (con, a) => a < 4 ?
+          stats => stats.ascension < 4 ?
             {
               text: "Hold DMG",
-              formulaText: (tlvl, stats) => <span>{data.skill.holdDMG[tlvl]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
+              formulaText: stats => <span>{data.skill.holdDMG[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
               formula: formula.skill.holdDMG,
-              variant: (tlvl, stats) => getTalentStatKeyVariant("skill", stats),
+              variant: stats => getTalentStatKeyVariant("skill", stats),
             } : {
               text: "Hold DMG",
-              formulaText: (tlvl, stats) => <span>( {data.skill.holdDMG[tlvl]}% {Stat.printStat("finalATK", stats)} + 1.9% {Stat.printStat("finalHP", stats)} ) * {Stat.printStat(getTalentStatKey("skill", stats) + "_multi", stats)}</span>,
+              formulaText: stats => <span>( {data.skill.holdDMG[stats.tlvl.skill]}% {Stat.printStat("finalATK", stats)} + 1.9% {Stat.printStat("finalHP", stats)} ) * {Stat.printStat(getTalentStatKey("skill", stats) + "_multi", stats)}</span>,
               formula: formula.skill.holdDMGHP,
-              variant: (tlvl, stats) => getTalentStatKeyVariant("skill", stats),
+              variant: stats => getTalentStatKeyVariant("skill", stats),
             },
           {
             text: "Shield Absorption",
-            formulaText: (tlvl, stats) => <span>{data.skill.shieldBase[tlvl]} + {data.skill.shieldMaxHP[tlvl]}% {Stat.printStat("finalHP", stats)}</span>,
+            formulaText: stats => <span>{data.skill.shieldBase[stats.tlvl.skill]} + {data.skill.shieldMaxHP[stats.tlvl.skill]}% {Stat.printStat("finalHP", stats)}</span>,
             formula: formula.skill.shield,
           }, {
             text: "Shield Duration",
@@ -185,7 +185,7 @@ const char = {
             text: "Hold CD",
             value: "12s",
           }],
-        conditional: (tlvl, c) => c >= 6 && {
+        conditional: stats => stats.constellation >= 6 && {
           type: "character",
           conditionalKey: "JadeShield",
           condition: "Enemies near Jade Shield",
@@ -204,26 +204,25 @@ const char = {
           <p className="mb-0"><b>Petrification</b>: Opponents affected by the <span className="text-geo">Petrification</span> status cannot move.</p>
         </span>,
         fields: [
-          (con, a) => a < 4 ?
+          stats => stats.ascension < 4 ?
             {
               text: "Skill DMG",
-              formulaText: (tlvl, stats) => <span>{data.burst.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
+              formulaText: stats => <span>{data.burst.dmg[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
               formula: formula.burst.dmg,
-              variant: (tlvl, stats) => getTalentStatKeyVariant("burst", stats),
+              variant: stats => getTalentStatKeyVariant("burst", stats),
             } : {
               text: "Skill DMG",
-              formulaText: (tlvl, stats) => <span>( {data.burst.dmg[tlvl]}% {Stat.printStat("finalATK", stats)} + 33% {Stat.printStat("finalHP", stats)} ) * {Stat.printStat(getTalentStatKey("burst", stats) + "_multi", stats)}</span>,
+              formulaText: stats => <span>( {data.burst.dmg[stats.tlvl.burst]}% {Stat.printStat("finalATK", stats)} + 33% {Stat.printStat("finalHP", stats)} ) * {Stat.printStat(getTalentStatKey("burst", stats) + "_multi", stats)}</span>,
               formula: formula.burst.dmgHP,
-              variant: (tlvl, stats) => getTalentStatKeyVariant("burst", stats),
+              variant: stats => getTalentStatKeyVariant("burst", stats),
             },
-          (con) => con >= 4 && {
+          stats => stats.constellation >= 4 && {
             text: "AoE Increase",
             value: "20%",
-          },
-          (con) => ({
+          }, {
             text: "Petrification Duration",
-            value: (tlvl, stats) => data.burst.petriDur[tlvl] + "s" + (con >= 4 ? " +2s" : ""),
-          }), {
+            value: stats => data.burst.petriDur[stats.tlvl.burst] + "s" + (stats.constellation >= 4 ? " +2s" : ""),
+          }, {
             text: "CD",
             value: "12s",
           }, {
@@ -243,7 +242,7 @@ const char = {
             <li>Can stack up to 5 times, and lasts until the Jade Shield disappears.</li>
           </ul>
         </span>,
-        conditional: (tlvl, c) => c >= 6 && {
+        conditional: stats => stats.constellation >= 6 && {
           type: "character",
           conditionalKey: "ResonantWaves",
           condition: "Resonant Waves",
@@ -306,9 +305,9 @@ const char = {
       img: c6,
       document: [{
         text: <span>When the <b>Jade Shield</b> takes DMG, 40% of that incoming DMG is converted to HP for the current character. A single instance of regeneration cannot exceed 8% of that character's Max HP.</span>,
-        fields: [(con) => con >= 6 && {
+        fields: [stats => stats.constellation >= 6 && {
           text: "Maximum Health Regen",
-          value: (tlvl, stats) => stats.finalHP * 0.08,
+          value: stats => stats.finalHP * 0.08,
           variant: "success"
         },]
       }],

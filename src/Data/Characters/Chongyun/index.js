@@ -39,22 +39,22 @@ const char = {
         fields: data.normal.hitArr.map((percentArr, i) =>
         ({
           text: `${i + 1}-Hit DMG`,
-          formulaText: (tlvl, stats) => <span>{percentArr[tlvl]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
+          formulaText: stats => <span>{percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
           formula: formula.normal[i],
-          variant: (tlvl, stats) => getTalentStatKeyVariant("normal", stats),
+          variant: stats => getTalentStatKeyVariant("normal", stats),
         }))
       }, {
         text: <span><strong>Charged Attack</strong> Drains Stamina over time to perform continuous spinning attacks against all nearby opponents. At end of the sequence, perform a more powerful slash.</span>,
         fields: [{
           text: `Spinning DMG`,
-          formulaText: (tlvl, stats) => <span>{data.charged.spinning[tlvl]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
+          formulaText: stats => <span>{data.charged.spinning[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
           formula: formula.charged.spinning,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("charged", stats),
+          variant: stats => getTalentStatKeyVariant("charged", stats),
         }, {
           text: `Spinning Final DMG`,
-          formulaText: (tlvl, stats) => <span>{data.charged.finalATK[tlvl]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
+          formulaText: stats => <span>{data.charged.finalATK[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
           formula: formula.charged.finalATK,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("charged", stats),
+          variant: stats => getTalentStatKeyVariant("charged", stats),
         }, {
           text: `Stamina Cost`,
           value: `40/s`,
@@ -66,19 +66,19 @@ const char = {
         text: <span><strong>Plunging Attack</strong> Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.</span>,
         fields: [{
           text: `Plunge DMG`,
-          formulaText: (tlvl, stats) => <span>{data.plunging.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+          formulaText: stats => <span>{data.plunging.dmg[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
           formula: formula.plunging.dmg,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("plunging", stats),
+          variant: stats => getTalentStatKeyVariant("plunging", stats),
         }, {
           text: `Low Plunge DMG`,
-          formulaText: (tlvl, stats) => <span>{data.plunging.low[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+          formulaText: stats => <span>{data.plunging.low[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
           formula: formula.plunging.low,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("plunging", stats),
+          variant: stats => getTalentStatKeyVariant("plunging", stats),
         }, {
           text: `High Plunge DMG`,
-          formulaText: (tlvl, stats) => <span>{data.plunging.high[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+          formulaText: stats => <span>{data.plunging.high[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
           formula: formula.plunging.high,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("plunging", stats),
+          variant: stats => getTalentStatKeyVariant("plunging", stats),
         }]
       }],
     },
@@ -92,12 +92,12 @@ const char = {
         </span>,
         fields: [{
           text: "Skill DMG",
-          formulaText: (tlvl, stats, c) => <span>{data.skill.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
+          formulaText: stats => <span>{data.skill.dmg[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
           formula: formula.skill.dmg,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("skill", stats),
+          variant: stats => getTalentStatKeyVariant("skill", stats),
         }, {
           text: "Infusion Duration",
-          value: (tlvl, stats, c) => `${data.skill.infusionDuration[tlvl]}s`,
+          value: stats => `${data.skill.infusionDuration[stats.tlvl.skill]}s`,
         }, {
           text: "Field Duration",
           value: "10s",
@@ -105,7 +105,7 @@ const char = {
           text: "CD",
           value: "15s",
         }],
-        conditional: (tlvl, c, a) => a >= 4 && {
+        conditional: stats => stats.ascension >= 4 && {
           type: "character",
           conditionalKey: "RimechaserBlade",
           condition: "Opponents hit by Rimechase Blade",
@@ -129,20 +129,20 @@ const char = {
         </span>,
         fields: [{
           text: "Skill DMG",
-          formulaText: (tlvl, stats) => <span>{data.burst.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
+          formulaText: stats => <span>{data.burst.dmg[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
           formula: formula.burst.dmg,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("burst", stats),
+          variant: stats => getTalentStatKeyVariant("burst", stats),
         }, {
           text: "CD",
           value: "12s",
         }, {
           text: "Energy Cost",
           value: 40,
-        }, (con, a) => ({
+        }, {
           text: "Spirit Blades Summoned",
-          value: con < 6 ? 3 : 4
-        })],
-        conditional: (tlvl, c) => c >= 6 && {
+          value: stats => stats.constellation < 6 ? 3 : 4
+        }],
+        conditional: stats => stats.constellation >= 6 && {
           type: "character",
           conditionalKey: "RallyOfFourBlades",
           condition: "Enemy with lower MaxHP% than Chongyun",
@@ -165,11 +165,11 @@ const char = {
           <p className="mb-2">When the field created by <b>Spirit Blade: Chonghua's Layered Frost</b> disappears, another spirit blade will be summoned to strike nearby opponents, dealing 100% of Chonghua's Layered Frost's Skill DMG as <span className="text-cryo">AoE Cryo DMG</span>.</p>
           <p className="mb-2">Opponents hit by this blade will have their <span className="text-cryo">Cryo RES</span> decreased by 10% for 8s.</p>
         </span>,
-        fields: [(con, a) => a >= 4 && {
+        fields: [stats => stats.ascension >= 4 && {
           text: "Summoned Sword DMG",
-          formulaText: (tlvl, stats, c) => <span>{data.skill.dmg[stats.talentLevelKeys.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
+          formulaText: stats => <span>{data.skill.dmg[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
           formula: formula.passive2.dmg,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("skill", stats),
+          variant: stats => getTalentStatKeyVariant("skill", stats),
         }]
       }],
     },
@@ -185,11 +185,11 @@ const char = {
       img: c1,
       document: [{
         text: <span>The last attack of Chongyun's Normal Attack combo releases 3 ice blades. Each blade deals 50% of Chongyun's ATK as <span className="text-cryo">Cryo DMG</span> to all opponents in its path.</span>,
-        fields: [(con) => con >= 1 && {
+        fields: [stats => stats.constellation && {
           text: "Ice Blade DMG",
-          formulaText: (tlvl, stats) => <span>50% {Stat.printStat(getTalentStatKey("elemental", stats), stats)}</span>,
+          formulaText: stats => <span>50% {Stat.printStat(getTalentStatKey("elemental", stats), stats)}</span>,
           formula: formula.constellation1.dmg,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("elemental", stats),
+          variant: stats => getTalentStatKeyVariant("elemental", stats),
         }]
       }]
     },

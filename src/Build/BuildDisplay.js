@@ -153,14 +153,14 @@ export default class BuildDisplay extends React.Component {
     this.setState({ generatingBuilds: true, builds: [], generationDuration: 0, generationProgress: 0 })
     let { characterKey, setFilters, statFilters = {}, ascending, optimizationTarget, maxBuildsToShow, artifactConditionals, artifactsAssumeFull } = this.state
     const character = CharacterDatabase.get(characterKey)
+    const initialStats = Character.calculateCharacterWithWeaponStats(character)
     //get the formula for this targer
     if (typeof optimizationTarget === "object") {
       const { talentKey, sectionIndex, fieldIndex } = optimizationTarget
-      let { formula } = Character.getTalentField(character, talentKey, sectionIndex, fieldIndex)
+      const { formula } = Character.getTalentField(initialStats, talentKey, sectionIndex, fieldIndex)
       optimizationTarget = Character.getFormulaPath(characterKey, talentKey, formula)
     }
 
-    const initialStats = Character.calculateCharacterWithWeaponStats(character)
     initialStats.artifactsAssumeFull = artifactsAssumeFull
 
     let artifactSetEffects = Artifact.getAllArtifactSetEffectsObj(artifactConditionals)
@@ -203,7 +203,7 @@ export default class BuildDisplay extends React.Component {
     this.worker.postMessage(data)
   }
 
-  BuildGeneratorEditorCard = ({ statsDisplayKeys }) => {
+  BuildGeneratorEditorCard = ({ statsDisplayKeys, initialStats }) => {
     let { setFilters, statFilters = {}, characterKey, artifactsAssumeFull, artifactConditionals, useLockedArts, generatingBuilds, generationProgress, generationDuration, optimizationTarget, ascending } = this.state
     let characterName = Character.getName(characterKey, "Character Name")
     let artsAccounted = setFilters.reduce((accu, cur) => cur.key ? accu + cur.num : accu, 0)
@@ -406,6 +406,7 @@ export default class BuildDisplay extends React.Component {
               optimizationTarget={optimizationTarget}
               ascending={ascending}
               statsDisplayKeys={statsDisplayKeys}
+              initialStats={initialStats}
             />
           </Col>
         </Row>
@@ -539,15 +540,16 @@ export default class BuildDisplay extends React.Component {
   render() {
     const { characterKey, modalBuild, maxBuildsToShow, builds = [] } = this.state
     const character = CharacterDatabase.get(characterKey)
+    const initialStats = Character.calculateCharacterWithWeaponStats(character)
     const characterName = Character.getName(characterKey, "Character Name")
-    const statsDisplayKeys = Character.getDisplayStatKeys(character)
+    const statsDisplayKeys = Character.getDisplayStatKeys(initialStats)
     return (<Container>
       <this.BuildModal build={modalBuild} characterKey={characterKey} />
       <this.ArtConditionalModal />
       <Row className="mt-2 mb-2">
         <Col>
           {/* Build Generator Editor */}
-          <this.BuildGeneratorEditorCard statsDisplayKeys={statsDisplayKeys} />
+          <this.BuildGeneratorEditorCard statsDisplayKeys={statsDisplayKeys} initialStats={initialStats} />
         </Col>
       </Row>
       <Row className="mb-2">
@@ -575,15 +577,15 @@ export default class BuildDisplay extends React.Component {
     </Container>)
   }
 }
-function SortByStatDropdown({ characterKey, statsDisplayKeys, disabled, optimizationTarget, ascending, setState }) {
+function SortByStatDropdown({ characterKey, statsDisplayKeys, initialStats, disabled, optimizationTarget, ascending, setState }) {
   const character = CharacterDatabase.get(characterKey)
   if (!character) return null
-  const initialStats = Character.calculateCharacterWithWeaponStats(character)
   let sortByText = "VALUE"
   if (typeof optimizationTarget === "object") {
     const { talentKey, sectionIndex, fieldIndex } = optimizationTarget
-    let { variant = "", text } = Character.getTalentField(character, talentKey, sectionIndex, fieldIndex) ?? {}
-    variant = typeof variant === "function" ? variant?.(initialStats.talentLevelKeys[talentKey], initialStats) : variant
+    const field = Character.getTalentField(initialStats, talentKey, sectionIndex, fieldIndex) ?? {}
+    const variant = Character.getTalentFieldValue(field, "variant", initialStats)
+    const text = Character.getTalentFieldValue(field, "text", initialStats)
     sortByText = <b>{Character.getTalentName(characterKey, talentKey)}: <span className={`text-${variant}`}>{text}</span></b>
   } else
     sortByText = <b>Basic Stat: <span className={`text-${Stat.getStatVariant(optimizationTarget)}`}>{Stat.getStatNamePretty(optimizationTarget)}</span></b>
@@ -606,9 +608,9 @@ function SortByStatDropdown({ characterKey, statsDisplayKeys, disabled, optimiza
               {fields.map((field, i) => {
                 if (typeof field === "string")
                   return <Dropdown.Item key={i} onClick={() => setState({ optimizationTarget: field })}>{Stat.getStatNamePretty(field)}</Dropdown.Item>
-                const talentField = Character.getTalentField(character, field.talentKey, field.sectionIndex, field.fieldIndex)
+                const talentField = Character.getTalentField(initialStats, field.talentKey, field.sectionIndex, field.fieldIndex)
                 return <Dropdown.Item key={i} onClick={() => setState({ optimizationTarget: field })}>
-                  <span className={`text-${Character.getTalentFieldValue(talentField, "variant", talentKey, initialStats)}`}>{Character.getTalentFieldValue(talentField, "text", talentKey, initialStats)}</span>
+                  <span className={`text-${Character.getTalentFieldValue(talentField, "variant", initialStats)}`}>{Character.getTalentFieldValue(talentField, "text", initialStats)}</span>
                 </Dropdown.Item>
               })}
             </Col>

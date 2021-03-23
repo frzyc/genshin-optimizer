@@ -41,37 +41,37 @@ const data = {
 }
 
 const formula = {
-  normal: Object.fromEntries(data.normal.hitArr.map((percentArr, i) => [i, (tlvl, stats) =>
-    basicDMGFormula(percentArr[tlvl], stats, "normal")])),
+  normal: Object.fromEntries(data.normal.hitArr.map((percentArr, i) => [i, stats =>
+    basicDMGFormula(percentArr[stats.tlvl.auto], stats, "normal")])),
   charged: {
-    dmg: (tlvl, stats) => basicDMGFormula(data.charged.dmg[tlvl], stats, "charged"),
+    dmg: stats => basicDMGFormula(data.charged.dmg[stats.tlvl.auto], stats, "charged"),
   },
-  plunging: Object.fromEntries(Object.entries(data.plunging).map(([key, arr]) => [key, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "plunging")])),
+  plunging: Object.fromEntries(Object.entries(data.plunging).map(([key, arr]) => [key, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "plunging")])),
   skill: {
-    dmg: (tlvl, stats) => basicDMGFormula(data.skill.dmg[tlvl], stats, "skill"),
-    dmg_hold: (tlvl, stats) => {
-      const val = data.skill.dmg[tlvl] / 100
+    dmg: stats => basicDMGFormula(data.skill.dmg[stats.tlvl.skill], stats, "skill"),
+    dmg_hold: stats => {
+      const val = data.skill.dmg[stats.tlvl.skill] / 100
       const hitModeMultiKey = stats.hitMode === "avgHit" ? "skill_avgHit_base_multi" : stats.hitMode === "critHit" ? "critHit_base_multi" : ""
       return [s => val * s.finalATK * (hitModeMultiKey ? s[hitModeMultiKey] : 1) * (s.anemo_skill_hit_base_multi + 0.4) * s.enemyLevel_multi * s.anemo_enemyRes_multi,
       ["finalATK", ...(hitModeMultiKey ? [hitModeMultiKey] : []), "anemo_skill_hit_base_multi", "enemyLevel_multi", "anemo_enemyRes_multi"]]
     }
   },
   burst: {
-    skill: (tlvl, stats) => basicDMGFormula(data.burst.skill[tlvl], stats, "burst"),
-    field_dmg: (tlvl, stats) => basicDMGFormula(data.burst.field_dmg[tlvl], stats, "burst"),
-    heal: (tlvl) => {
-      const atk = data.burst.heal_atk[tlvl] / 100
-      const flat = data.burst.heal_flat[tlvl]
+    skill: stats => basicDMGFormula(data.burst.skill[stats.tlvl.burst], stats, "burst"),
+    field_dmg: stats => basicDMGFormula(data.burst.field_dmg[stats.tlvl.burst], stats, "burst"),
+    heal: stats => {
+      const atk = data.burst.heal_atk[stats.tlvl.burst] / 100
+      const flat = data.burst.heal_flat[stats.tlvl.burst]
       return [s => (atk * s.finalATK + flat) * s.heal_multi, ["finalATK", "heal_multi"]]
     },
-    regen: (tlvl) => {
-      const atk = data.burst.regen_atk[tlvl] / 100
-      const flat = data.burst.regen_flat[tlvl]
+    regen: stats => {
+      const atk = data.burst.regen_atk[stats.tlvl.burst] / 100
+      const flat = data.burst.regen_flat[stats.tlvl.burst]
       return [s => (atk * s.finalATK + flat) * s.heal_multi, ["finalATK", "heal_multi"]]
     },
   },
   passive1: {
-    heal: (tlvl, stats) => [s => 0.15 * s.finalATK * s.heal_multi, ["finalATK", "heal_multi"]],
+    heal: stats => [s => 0.15 * s.finalATK * s.heal_multi, ["finalATK", "heal_multi"]],
   }
 }
 

@@ -24,7 +24,7 @@ export const data = {
   },
   skill: {
     inheri_hp: [50.1, 53.1, 56.1, 60, 63, 66, 69.9, 73.8, 77.7, 81.6, 85.5, 89.4, 93.3, 97.2, 101.1],
-    dmg: [230.4, 247.68, 264.96, 288, 305.28, 322.56, 345.6, 368.64, 391.68, 414.72, 437.76, 460.8, 489.6, 518.4, 547.2],  
+    dmg: [230.4, 247.68, 264.96, 288, 305.28, 322.56, 345.6, 368.64, 391.68, 414.72, 437.76, 460.8, 489.6, 518.4, 547.2],
   },
   burst: {
     dmg_per_gem: [86.96, 93.48, 100, 108.7, 115.22, 121.74, 130.44, 139.14, 147.83, 156.53, 165.22, 173.92, 184.79, 195.66, 206.53],
@@ -32,21 +32,21 @@ export const data = {
 }
 const formula = {
   normal: {
-    hit: (tlvl, stats) => basicDMGFormula(data.normal.hit[tlvl], stats, "normal")
+    hit: stats => basicDMGFormula(data.normal.hit[stats.tlvl.auto], stats, "normal")
   },
   charged: Object.fromEntries(Object.entries(data.charged).map(([name, arr]) =>
-    [name, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "charged")])),
+    [name, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "charged")])),
   plunging: Object.fromEntries(Object.entries(data.plunging).map(([name, arr]) =>
-    [name, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "plunging")])),
+    [name, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "plunging")])),
   skill: {
-    inheri_hp: (tlvl, stats) => {
-      const val = data.skill.inheri_hp[tlvl] / 100
+    inheri_hp: stats => {
+      const val = data.skill.inheri_hp[stats.tlvl.skill] / 100
       return [s => val * s.finalHP, ["finalHP"]]
     },
-    dmg: (tlvl, stats) => basicDMGFormula(data.skill.dmg[tlvl], stats, "skill")
+    dmg: stats => basicDMGFormula(data.skill.dmg[stats.tlvl.skill], stats, "skill")
   },
   burst: {
-    dmg_per_gem: (tlvl, stats) => basicDMGFormula(data.burst.dmg_per_gem[tlvl], stats, "burst"),
+    dmg_per_gem: stats => basicDMGFormula(data.burst.dmg_per_gem[stats.tlvl.burst], stats, "burst"),
   },
 }
 export default formula

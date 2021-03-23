@@ -16,7 +16,7 @@ export const data = {
       [79.12, 85.56, 92, 101.2, 107.64, 115, 125.12, 135.24, 145.36, 156.4, 167.44, 178.48, 189.52, 200.56, 211.6],
       [73.36, 79.33, 85.3, 93.83, 99.8, 106.63, 116.01, 125.39, 134.77, 145.01, 155.25, 165.48, 175.72, 185.95, 196.19],
       [86.26, 93.28, 100.3, 110.33, 117.35, 125.38, 136.41, 147.44, 158.47, 170.51, 182.55, 194.58, 206.62, 218.65, 230.69],
-      [113.43, 122.67, 131.9, 145.09, 154.32, 164.88, 179.38, 193.89, 208.4, 224.23, 240.06, 255.89, 271.71, 287.54, 303.37],    
+      [113.43, 122.67, 131.9, 145.09, 154.32, 164.88, 179.38, 193.89, 208.4, 224.23, 240.06, 255.89, 271.71, 287.54, 303.37],
     ]
   },
   charged: {
@@ -34,42 +34,48 @@ export const data = {
     shield_flat: [770, 847, 930, 1020, 1116, 1219, 1328, 1443, 1565, 1694, 1828, 1970, 2117, 2271, 2431],
     heal_def: [21.28, 22.88, 24.47, 26.6, 28.2, 29.79, 31.92, 34.05, 36.18, 38.3, 40.43, 42.56, 45.22, 47.88, 50.54],
     heal_flat: [103, 113, 124, 136, 149, 163, 177, 193, 209, 226, 244, 263, 282, 303, 324],
-    heal_trigger: [50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 59, 60, 60, 60, 60],  
+    heal_trigger: [50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 59, 60, 60, 60, 60],
   },
   burst: {
     burst_dmg: [67.2, 72.24, 77.28, 84, 89.04, 94.08, 100.8, 107.52, 114.24, 120.96, 127.68, 134.4, 142.8, 151.2, 159.6],
     skill_dmg: [92.8, 99.76, 106.72, 116, 122.96, 129.92, 139.2, 148.48, 157.76, 167.04, 176.32, 185.6, 197.2, 208.8, 220.4],
-    bonus: [40, 43, 46, 50, 53, 56, 60, 64, 68, 72, 76, 80, 85, 90, 95],  
+    bonus: [40, 43, 46, 50, 53, 56, 60, 64, 68, 72, 76, 80, 85, 90, 95],
   }
 }
 const formula = {
   normal: Object.fromEntries(data.normal.hitArr.map((arr, i) =>
-    [i, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "normal")])),
+    [i, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "normal")])),
   charged: Object.fromEntries(Object.entries(data.charged).map(([name, arr]) =>
-    [name, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "charged")])),
+    [name, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "charged")])),
   plunging: Object.fromEntries(Object.entries(data.plunging).map(([name, arr]) =>
-    [name, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "plunging")])),
+    [name, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "plunging")])),
   skill: {
-    skill_dmg: (tlvl, stats) => {
-      const percent = data.skill.skill_dmg[tlvl] / 100, key = getTalentStatKey("skill", stats) + "_multi"
+    skill_dmg: stats => {
+      const percent = data.skill.skill_dmg[stats.tlvl.skill] / 100, key = getTalentStatKey("skill", stats) + "_multi"
       return [s => percent * s[key] * s.finalDEF, [key, "finalDEF"]]
     },
-    shield: (tlvl, stats) => {
-      const percent = data.skill.shield_def[tlvl] / 100, flat = data.skill.shield_flat[tlvl]
+    shield: stats => {
+      const percent = data.skill.shield_def[stats.tlvl.skill] / 100, flat = data.skill.shield_flat[stats.tlvl.skill]
       return [s => percent * s.finalDEF + flat, ["finalDEF"]]
     },
-    heal: (tlvl, stats) => {
-      const percent = data.skill.heal_def[tlvl] / 100, flat = data.skill.heal_flat[tlvl]
+    heal: stats => {
+      const percent = data.skill.heal_def[stats.tlvl.skill] / 100, flat = data.skill.heal_flat[stats.tlvl.skill]
       return [s => (percent * s.finalDEF + flat) * s.heal_multi, ["finalDEF", "heal_multi"]]
     },
   },
   burst: {
-    burst_dmg: (tlvl, stats) => basicDMGFormula(data.burst.burst_dmg[tlvl], stats, "burst"),
-    skill_dmg: (tlvl, stats) => basicDMGFormula(data.burst.skill_dmg[tlvl], stats, "skill"),
-    bonus: (tlvl, stats) => {
-      const val = (data.burst.bonus[tlvl] + (stats.constellation >= 6 ? 50 : 0)) / 100
+    burst_dmg: stats => basicDMGFormula(data.burst.burst_dmg[stats.tlvl.burst], stats, "burst"),
+    skill_dmg: stats => basicDMGFormula(data.burst.skill_dmg[stats.tlvl.skill], stats, "skill"),
+    bonus: stats => {
+      const val = (data.burst.bonus[stats.tlvl.burst] + (stats.constellation >= 6 ? 50 : 0)) / 100
       return [s => val * s.finalDEF, ["finalDEF"]]
     }
+  },
+  passive1: {
+    shield: stats => [s => 4 * s.finalDEF, ["finalDEF"]]
+  },
+  constellation4: {
+    dmg: stats => basicDMGFormula(400, stats, "elemental"),
   }
 }
 export default formula

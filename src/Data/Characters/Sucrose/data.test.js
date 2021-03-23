@@ -5,15 +5,17 @@ let setupStats
 
 // Discord ID: 822274940547629077
 describe("Testing Sucrose's Formulas (firedragon2508#8862)", () => {
-  beforeEach(() => { setupStats = createProxiedStats({
-    characterHP: 8192, characterATK: 151, characterDEF: 623,
-    characterEle: "anemo", characterLevel: 80,
-    weaponType: "catalyst", weaponATK: 448,
-    
-    anemo_dmg_: 18, critDMG_: 50 + 50.3,
-    
-    talentLevelKeys: Object.freeze({ auto: 6 - 1, skill: 9 - 1, burst: 10 - 1 }),
-  }) })
+  beforeEach(() => {
+    setupStats = createProxiedStats({
+      characterHP: 8192, characterATK: 151, characterDEF: 623,
+      characterEle: "anemo", characterLevel: 80,
+      weaponType: "catalyst", weaponATK: 448,
+
+      anemo_dmg_: 18, critDMG_: 50 + 50.3,
+
+      tlvl: Object.freeze({ auto: 6 - 1, skill: 9 - 1, burst: 10 - 1 }),
+    })
+  })
 
   describe("with artifacts", () => {
     beforeEach(() => applyArtifacts(setupStats, [
@@ -24,7 +26,7 @@ describe("Testing Sucrose's Formulas (firedragon2508#8862)", () => {
       { atk_: 46.6, critDMG_: 5.4, def: 21, enerRech_: 22.0, critRate_: 5.8 }, // Circlet of Logos
       { anemo_dmg_: 15, swirl_dmg_: 60 }, // Viridescent Venerer 4 Pieces Set
     ]))
-    
+
     test("overall stats", () => {
       const stats = computeAllStats(setupStats)
       expect(stats.finalHP).toApproximate(14245)
@@ -39,34 +41,34 @@ describe("Testing Sucrose's Formulas (firedragon2508#8862)", () => {
 
     describe("no crit", () => {
       beforeEach(() => setupStats.hitMode = "hit")
-  
+
       describe("Electro Hypostasis lvl 93", () => {
         beforeEach(() => setupStats.enemyLevel = 93)
-  
+
         test("hits", () => {
-          const stats = computeAllStats(setupStats), { auto, skill, burst } = stats.talentLevelKeys
-          expect(formula.normal[0](auto, stats)[0](stats)).toApproximate(532)
-          expect(formula.normal[1](auto, stats)[0](stats)).toApproximate(487)
-          expect(formula.normal[2](auto, stats)[0](stats)).toApproximate(612)
-          expect(formula.normal[3](auto, stats)[0](stats)).toApproximate(762)
-          expect(formula.charged.hit(auto, stats)[0](stats)).toApproximate(1913)
-          expect(formula.skill.press(skill, stats)[0](stats)).toApproximate(4082)
-          expect(formula.burst.dot(burst, stats)[0](stats)).toApproximate(3029)
+          const stats = computeAllStats(setupStats)
+          expect(formula.normal[0](stats)[0](stats)).toApproximate(532)
+          expect(formula.normal[1](stats)[0](stats)).toApproximate(487)
+          expect(formula.normal[2](stats)[0](stats)).toApproximate(612)
+          expect(formula.normal[3](stats)[0](stats)).toApproximate(762)
+          expect(formula.charged.hit(stats)[0](stats)).toApproximate(1913)
+          expect(formula.skill.press(stats)[0](stats)).toApproximate(4082)
+          expect(formula.burst.dot(stats)[0](stats)).toApproximate(3029)
         })
       })
 
       describe("Hilichurl lvl 86", () => {
         beforeEach(() => setupStats.enemyLevel = 86)
-  
+
         test("hits", () => {
-          const stats = computeAllStats(setupStats), { auto, skill, burst } = stats.talentLevelKeys
-          expect(formula.normal[0](auto, stats)[0](stats)).toApproximate(545)
-          expect(formula.normal[1](auto, stats)[0](stats)).toApproximate(499)
-          expect(formula.normal[2](auto, stats)[0](stats)).toApproximate(627)
-          expect(formula.normal[3](auto, stats)[0](stats)).toApproximate(781)
-          expect(formula.charged.hit(auto, stats)[0](stats)).toApproximate(1960)
-          expect(formula.skill.press(skill, stats)[0](stats)).toApproximate(4183)
-          expect(formula.burst.dot(burst, stats)[0](stats)).toApproximate(3104)
+          const stats = computeAllStats(setupStats)
+          expect(formula.normal[0](stats)[0](stats)).toApproximate(545)
+          expect(formula.normal[1](stats)[0](stats)).toApproximate(499)
+          expect(formula.normal[2](stats)[0](stats)).toApproximate(627)
+          expect(formula.normal[3](stats)[0](stats)).toApproximate(781)
+          expect(formula.charged.hit(stats)[0](stats)).toApproximate(1960)
+          expect(formula.skill.press(stats)[0](stats)).toApproximate(4183)
+          expect(formula.burst.dot(stats)[0](stats)).toApproximate(3104)
         })
       })
     })
@@ -83,44 +85,44 @@ describe("Testing Sucrose's Formulas (firedragon2508#8862)", () => {
       expect(stats.pyro_swirl_hit).toApproximate(1666)
     })
   })
-  
+
   describe("without artifacts", () => {
     test("reaction", () => {
       const stats = computeAllStats(setupStats)
       expect(stats.pyro_swirl_hit).toApproximate(511)
-    })  
+    })
 
     describe("no crit", () => {
       beforeEach(() => setupStats.hitMode = "hit")
-  
+
       describe("Ruin Guard lvl 85", () => {
         beforeEach(() => setupStats.enemyLevel = 85)
-  
+
         test("hits", () => {
-          const stats = computeAllStats(setupStats), { auto, skill, burst } = stats.talentLevelKeys
-          expect(formula.normal[0](auto, stats)[0](stats)).toApproximate(147)
-          expect(formula.normal[1](auto, stats)[0](stats)).toApproximate(134)
-          expect(formula.normal[2](auto, stats)[0](stats)).toApproximate(168)
-          expect(formula.normal[3](auto, stats)[0](stats)).toApproximate(210)
-          expect(formula.charged.hit(auto, stats)[0](stats)).toApproximate(527)
-          expect(formula.skill.press(skill, stats)[0](stats)).toApproximate(1126)
-          expect(formula.burst.dot(burst, stats)[0](stats)).toApproximate(836)
+          const stats = computeAllStats(setupStats)
+          expect(formula.normal[0](stats)[0](stats)).toApproximate(147)
+          expect(formula.normal[1](stats)[0](stats)).toApproximate(134)
+          expect(formula.normal[2](stats)[0](stats)).toApproximate(168)
+          expect(formula.normal[3](stats)[0](stats)).toApproximate(210)
+          expect(formula.charged.hit(stats)[0](stats)).toApproximate(527)
+          expect(formula.skill.press(stats)[0](stats)).toApproximate(1126)
+          expect(formula.burst.dot(stats)[0](stats)).toApproximate(836)
         })
       })
       describe("Electro Hypostasis lvl 93", () => {
         beforeEach(() => setupStats.enemyLevel = 93)
-  
+
         test("hits", () => {
-          const stats = computeAllStats(setupStats), { auto, skill, burst } = stats.talentLevelKeys
-          expect(formula.normal[0](auto, stats)[0](stats)).toApproximate(145)
-          expect(formula.normal[1](auto, stats)[0](stats)).toApproximate(132)
-          expect(formula.normal[2](auto, stats)[0](stats)).toApproximate(166)
-          expect(formula.normal[3](auto, stats)[0](stats)).toApproximate(207)
-          expect(formula.charged.hit(auto, stats)[0](stats)).toApproximate(520)
-          expect(formula.skill.press(skill, stats)[0](stats)).toApproximate(1111)
-          expect(formula.burst.dot(burst, stats)[0](stats)).toApproximate(824)
+          const stats = computeAllStats(setupStats)
+          expect(formula.normal[0](stats)[0](stats)).toApproximate(145)
+          expect(formula.normal[1](stats)[0](stats)).toApproximate(132)
+          expect(formula.normal[2](stats)[0](stats)).toApproximate(166)
+          expect(formula.normal[3](stats)[0](stats)).toApproximate(207)
+          expect(formula.charged.hit(stats)[0](stats)).toApproximate(520)
+          expect(formula.skill.press(stats)[0](stats)).toApproximate(1111)
+          expect(formula.burst.dot(stats)[0](stats)).toApproximate(824)
         })
       })
-    })  
+    })
   })
 })

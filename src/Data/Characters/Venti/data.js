@@ -39,23 +39,23 @@ export const data = {
 }
 const formula = {
   normal: Object.fromEntries(data.normal.hitArr.map((arr, i) =>
-    [i, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "normal")])),
+    [i, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "normal")])),
   charged: {
-    hit: (tlvl, stats) => basicDMGFormula(data.charged.hit[tlvl], stats, "charged"),
-    full: (tlvl, stats) => basicDMGFormula(data.charged.full[tlvl], stats, "charged", true),
-    hit_bonus: (tlvl, stats) => basicDMGFormula(data.charged.hit[tlvl] * 0.33, stats, "charged"),
-    full_bonus: (tlvl, stats) => basicDMGFormula(data.charged.full[tlvl] * 0.33, stats, "charged", true),
+    hit: stats => basicDMGFormula(data.charged.hit[stats.tlvl.auto], stats, "charged"),
+    full: stats => basicDMGFormula(data.charged.full[stats.tlvl.auto], stats, "charged", true),
+    hit_bonus: stats => basicDMGFormula(data.charged.hit[stats.tlvl.auto] * 0.33, stats, "charged"),
+    full_bonus: stats => basicDMGFormula(data.charged.full[stats.tlvl.auto] * 0.33, stats, "charged", true),
   },
   plunging: Object.fromEntries(Object.entries(data.plunging).map(([name, arr]) =>
-    [name, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "plunging")])),
+    [name, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "plunging")])),
   skill: Object.fromEntries(Object.entries(data.skill).map(([name, arr]) => 
-    [name, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "skill")])),
+    [name, stats => basicDMGFormula(arr[stats.tlvl.skill], stats, "skill")])),
   burst: Object.fromEntries([
     ...Object.entries(data.burst).map(([name, arr]) =>
-      [name, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "burst")]),
+      [name, stats => basicDMGFormula(arr[stats.tlvl.burst], stats, "burst")]),
     ...Object.entries(data.burst).flatMap(([name, arr]) =>
       (["hydro", "pyro", "cryo", "electro"]).map((ele) =>
-        [`${ele}_${name}`, (tlvl, stats) => [s=>(arr[tlvl] / 2 / 100) * stats[`${ele}_burst_${stats.hitMode}`], [`${ele}_burst_${stats.hitMode}`]]])),//not optimizationTarget, dont need to precompute
+        [`${ele}_${name}`, stats => [s=>(arr[stats.tlvl.burst] / 2 / 100) * stats[`${ele}_burst_${stats.hitMode}`], [`${ele}_burst_${stats.hitMode}`]]])),//not optimizationTarget, dont need to precompute
   ]),
 }
 export default formula

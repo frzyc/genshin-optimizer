@@ -14,10 +14,9 @@ onmessage = async (e) => {
     targetKeys = [optimizationTarget]
   } else {
     const { talentKey, formulaKey } = optimizationTarget
-    const tlvl = stats.talentLevelKeys[new Set(["normal", "charged", "plunging"]).has(talentKey) ? "auto" : talentKey]
     const targetFormula = charFormulas?.[stats.characterKey]?.[talentKey]?.[formulaKey]
     if (typeof targetFormula === "function")
-      [target, targetKeys] = targetFormula(tlvl, stats)
+      [target, targetKeys] = targetFormula(stats)
     else {
       postMessage({ progress: 0, timing: 0 })
       postMessage({ builds: [], timing: 0 })
