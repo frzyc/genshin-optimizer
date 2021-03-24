@@ -48,43 +48,43 @@ function zliDMG(percent, hpMulti, stats, skillKey, elemental = false) {
 }
 const formula = {
   normal: {
-    ...Object.fromEntries(data.normal.hitArr.map((percentArr, i) => [i, (tlvl, stats) =>
-      basicDMGFormula(percentArr[tlvl] * (i === 4 ? 4 : 1), stats, "normal")])),
-    ...Object.fromEntries(data.normal.hitArr.map((percentArr, i) => [`${i}HP`, (tlvl, stats) => {
-      const val = percentArr[tlvl] / 100
+    ...Object.fromEntries(data.normal.hitArr.map((percentArr, i) => [i, stats =>
+      basicDMGFormula(percentArr[stats.tlvl.auto] * (i === 4 ? 4 : 1), stats, "normal")])),
+    ...Object.fromEntries(data.normal.hitArr.map((percentArr, i) => [`${i}HP`, stats => {
+      const val = percentArr[stats.tlvl.auto] / 100
       const statKey = getTalentStatKey("normal", stats) + "_multi"
       const multi = i === 4 ? 4 : 1
       return [s => (val * s.finalATK + 0.0139 * s.finalHP) * s[statKey] * multi, ["finalATK", "finalHP", statKey]]
     }])),
   },
   charged: {
-    dmg: (tlvl, stats) => basicDMGFormula(data.charged.dmg[tlvl], stats, "charged"),
-    dmgHP: (tlvl, stats) => zliDMG(data.charged.dmg[tlvl], 0.0139, stats, "charged")
+    dmg: stats => basicDMGFormula(data.charged.dmg[stats.tlvl.auto], stats, "charged"),
+    dmgHP: stats => zliDMG(data.charged.dmg[stats.tlvl.auto], 0.0139, stats, "charged")
   },
   plunging: {
-    dmg: (tlvl, stats) => basicDMGFormula(data.plunging.dmg[tlvl], stats, "plunging"),
-    dmgHP: (tlvl, stats) => zliDMG(data.plunging.dmg[tlvl], 0.0139, stats, "plunging"),
-    low: (tlvl, stats) => basicDMGFormula(data.plunging.low[tlvl], stats, "plunging"),
-    lowHP: (tlvl, stats) => zliDMG(data.plunging.low[tlvl], 0.0139, stats, "plunging"),
-    high: (tlvl, stats) => basicDMGFormula(data.plunging.high[tlvl], stats, "plunging"),
-    highHP: (tlvl, stats) => zliDMG(data.plunging.high[tlvl], 0.0139, stats, "plunging"),
+    dmg: stats => basicDMGFormula(data.plunging.dmg[stats.tlvl.auto], stats, "plunging"),
+    dmgHP: stats => zliDMG(data.plunging.dmg[stats.tlvl.auto], 0.0139, stats, "plunging"),
+    low: stats => basicDMGFormula(data.plunging.low[stats.tlvl.auto], stats, "plunging"),
+    lowHP: stats => zliDMG(data.plunging.low[stats.tlvl.auto], 0.0139, stats, "plunging"),
+    high: stats => basicDMGFormula(data.plunging.high[stats.tlvl.auto], stats, "plunging"),
+    highHP: stats => zliDMG(data.plunging.high[stats.tlvl.auto], 0.0139, stats, "plunging"),
   },
   skill: {
-    steeleDMG: (tlvl, stats) => basicDMGFormula(data.skill.steeleDMG[tlvl], stats, "skill"),
-    steeleDMGHP: (tlvl, stats) => zliDMG(data.skill.steeleDMG[tlvl], 0.019, stats, "skill"),
-    resonanceDMG: (tlvl, stats) => basicDMGFormula(data.skill.resonanceDMG[tlvl], stats, "skill"),
-    resonanceDMGHP: (tlvl, stats) => zliDMG(data.skill.resonanceDMG[tlvl], 0.019, stats, "skill"),
-    holdDMG: (tlvl, stats) => basicDMGFormula(data.skill.holdDMG[tlvl], stats, "skill"),
-    holdDMGHP: (tlvl, stats) => zliDMG(data.skill.holdDMG[tlvl], 0.019, stats, "skill"),
-    shield: (tlvl, stats) => {
-      const base = data.skill.shieldBase[tlvl]
-      const hpMulti = data.skill.shieldMaxHP[tlvl] / 100
+    steeleDMG: stats => basicDMGFormula(data.skill.steeleDMG[stats.tlvl.skill], stats, "skill"),
+    steeleDMGHP: stats => zliDMG(data.skill.steeleDMG[stats.tlvl.skill], 0.019, stats, "skill"),
+    resonanceDMG: stats => basicDMGFormula(data.skill.resonanceDMG[stats.tlvl.skill], stats, "skill"),
+    resonanceDMGHP: stats => zliDMG(data.skill.resonanceDMG[stats.tlvl.skill], 0.019, stats, "skill"),
+    holdDMG: stats => basicDMGFormula(data.skill.holdDMG[stats.tlvl.skill], stats, "skill"),
+    holdDMGHP: stats => zliDMG(data.skill.holdDMG[stats.tlvl.skill], 0.019, stats, "skill"),
+    shield: stats => {
+      const base = data.skill.shieldBase[stats.tlvl.skill]
+      const hpMulti = data.skill.shieldMaxHP[stats.tlvl.skill] / 100
       return [s => hpMulti * s.finalHP + base, ["finalHP"]]
     }
   },
   burst: {
-    dmg: (tlvl, stats) => basicDMGFormula(data.burst.dmg[tlvl], stats, "burst"),
-    dmgHP: (tlvl, stats) => zliDMG(data.burst.dmg[tlvl], 0.33, stats, "burst"),
+    dmg: stats => basicDMGFormula(data.burst.dmg[stats.tlvl.burst], stats, "burst"),
+    dmgHP: stats => zliDMG(data.burst.dmg[stats.tlvl.burst], 0.33, stats, "burst"),
   }
 }
 

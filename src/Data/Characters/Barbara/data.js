@@ -40,29 +40,29 @@ const data = {
 }
 
 const formula = {
-  normal: Object.fromEntries(data.normal.hitArr.map((percentArr, i) => [i, (tlvl, stats) =>
-    basicDMGFormula(percentArr[tlvl], stats, "normal")])),
+  normal: Object.fromEntries(data.normal.hitArr.map((percentArr, i) => [i, stats =>
+    basicDMGFormula(percentArr[stats.tlvl.auto], stats, "normal")])),
   charged: {
-    dmg: (tlvl, stats) => basicDMGFormula(data.charged.dmg[tlvl], stats, "charged"),
+    dmg: stats => basicDMGFormula(data.charged.dmg[stats.tlvl.auto], stats, "charged"),
   },
-  plunging: Object.fromEntries(Object.entries(data.plunging).map(([key, arr]) => [key, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "plunging")])),
+  plunging: Object.fromEntries(Object.entries(data.plunging).map(([key, arr]) => [key, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "plunging")])),
   skill: {
-    regenPerHit: (tlvl) => {
-      const hp = data.skill.hp[tlvl] / 100
-      const flat = data.skill.hpFlat[tlvl]
+    regenPerHit: stats => {
+      const hp = data.skill.hp[stats.tlvl.skill] / 100
+      const flat = data.skill.hpFlat[stats.tlvl.skill]
       return [s => (hp * s.finalHP + flat) * s.heal_multi, ["finalHP", "heal_multi"]]
     },
-    contRegen: (tlvl) => {
-      const hp = data.skill.contHP[tlvl] / 100
-      const flat = data.skill.contHPFlat[tlvl]
+    contRegen: stats => {
+      const hp = data.skill.contHP[stats.tlvl.skill] / 100
+      const flat = data.skill.contHPFlat[stats.tlvl.skill]
       return [s => (hp * s.finalHP + flat) * s.heal_multi, ["finalHP", "heal_multi"]]
     },
-    dmg: (tlvl, stats) => basicDMGFormula(data.skill.dmg[tlvl], stats, "skill"),
+    dmg: stats => basicDMGFormula(data.skill.dmg[stats.tlvl.skill], stats, "skill"),
   },
   burst: {
-    regen: (tlvl) => {
-      const hp = data.burst.hp[tlvl] / 100
-      const flat = data.burst.flat[tlvl]
+    regen: stats => {
+      const hp = data.burst.hp[stats.tlvl.burst] / 100
+      const flat = data.burst.flat[stats.tlvl.burst]
       return [s => (hp * s.finalHP + flat) * s.heal_multi, ["finalHP", "heal_multi"]]
     },
   }

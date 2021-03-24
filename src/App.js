@@ -21,6 +21,7 @@ const CharacterDisplay = lazy(() => import('./Character/CharacterDisplay'))
 const BuildDisplay = lazy(() => import('./Build/BuildDisplay'))
 const Planner = lazy(() => import('./Planner/PlannerDisplay'))
 const TestDisplay = lazy(() => import('./TestPage/TestDisplay'))
+const FlexDisplay = lazy(() => import('./FlexPage/FlexDisplay'))
 const SettingsDisplay = lazy(() => import('./Settings/SettingsDisplay'))
 function App() {
   return (
@@ -66,6 +67,7 @@ function App() {
               <Route path="/tools" component={Planner} />
               {process.env.NODE_ENV === "development" && <Route path="/test" component={TestDisplay} />}
               <Route path="/setting" component={SettingsDisplay} />
+              <Route path="/flex" component={FlexDisplay} />
               <Route path="/" component={Home} />
               {/* <Route exact path="/" component={Home} /> */}
             </Switch>

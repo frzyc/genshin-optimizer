@@ -5,21 +5,23 @@ let setupStats
 
 // Discord ID: 822256929929822248
 describe("Testing Jean's Formulas (sohum#5921)", () => {
-  beforeEach(() => { setupStats = createProxiedStats({
-    characterHP: 9533, characterATK: 155, characterDEF: 499,
-    characterEle: "anemo", characterLevel: 60,
-    weaponType: "sword", weaponATK: 347,
-  
-    heal_: 11.1, enerRech_: 100 + 50.5,
-    enemyLevel: 85, physical_enemyRes_: 70, // Ruin Guard
-  
-    talentLevelKeys: Object.freeze({ auto: 1 - 1, skill: 1 - 1, burst: 1 - 1 }),
-  }) })
+  beforeEach(() => {
+    setupStats = createProxiedStats({
+      characterHP: 9533, characterATK: 155, characterDEF: 499,
+      characterEle: "anemo", characterLevel: 60,
+      weaponType: "sword", weaponATK: 347,
+
+      heal_: 11.1, enerRech_: 100 + 50.5,
+      enemyLevel: 85, physical_enemyRes_: 70, // Ruin Guard
+
+      tlvl: Object.freeze({ auto: 1 - 1, skill: 1 - 1, burst: 1 - 1 }),
+    })
+  })
 
   describe("with artifacts", () => {
     beforeEach(() => applyArtifacts(setupStats, [
-      { hp: 3967, atk_: 9.3, atk: 16, critDMG_: 13.2, hp_: 10.5,  }, // Flower of Life
-      { atk: 258, critDMG_: 7, def: 81, critRate_: 3.9, hp: 239,  }, // Plume of Death
+      { hp: 3967, atk_: 9.3, atk: 16, critDMG_: 13.2, hp_: 10.5, }, // Flower of Life
+      { atk: 258, critDMG_: 7, def: 81, critRate_: 3.9, hp: 239, }, // Plume of Death
       { enerRech_: 29.8, critDMG_: 6.2, hp: 209, eleMas: 19, atk: 16 }, // Sands of Eon
       { anemo_dmg_: 30.8, hp: 448, eleMas: 40, critRate_: 3.9, def: 21 }, // Goblet of Eonothem
       { critRate_: 25.8, hp: 478, critDMG_: 7, atk_: 13.4, atk: 35, }, // Circlet of Logos
@@ -27,9 +29,9 @@ describe("Testing Jean's Formulas (sohum#5921)", () => {
     ]))
 
     test("heal", () => {
-      const stats = computeAllStats(setupStats), { burst } = stats.talentLevelKeys
-      expect(formula.burst.regen(burst, stats)[0](stats)).toApproximate(433)
-      expect(formula.passive1.heal(undefined, stats)[0](stats)).toApproximate(156)
+      const stats = computeAllStats(setupStats)
+      expect(formula.burst.regen(stats)[0](stats)).toApproximate(433)
+      expect(formula.passive1.heal(stats)[0](stats)).toApproximate(156)
     })
     test("reactions", () => {
       const stats = computeAllStats(setupStats)
@@ -39,16 +41,16 @@ describe("Testing Jean's Formulas (sohum#5921)", () => {
       beforeEach(() => setupStats.hitMode = "hit")
 
       test("hit", () => {
-        const stats = computeAllStats(setupStats), { auto, skill, burst } = stats.talentLevelKeys
-        expect(formula.normal[0](auto, stats)[0](stats)).toApproximate(63)
-        expect(formula.normal[1](auto, stats)[0](stats)).toApproximate(59)
-        expect(formula.normal[2](auto, stats)[0](stats)).toApproximate(78)
-        expect(formula.normal[3](auto, stats)[0](stats)).toApproximate(86)
-        expect(formula.normal[4](auto, stats)[0](stats)).toApproximate(103)
-        expect(formula.charged.dmg(auto, stats)[0](stats)).toApproximate(211)
-        expect(formula.skill.dmg(skill, stats)[0](stats)).toApproximate(1498)
-        expect(formula.burst.skill(burst, stats)[0](stats)).toApproximate(2180)
-        expect(formula.burst.field_dmg(burst, stats)[0](stats)).toApproximate(402)
+        const stats = computeAllStats(setupStats)
+        expect(formula.normal[0](stats)[0](stats)).toApproximate(63)
+        expect(formula.normal[1](stats)[0](stats)).toApproximate(59)
+        expect(formula.normal[2](stats)[0](stats)).toApproximate(78)
+        expect(formula.normal[3](stats)[0](stats)).toApproximate(86)
+        expect(formula.normal[4](stats)[0](stats)).toApproximate(103)
+        expect(formula.charged.dmg(stats)[0](stats)).toApproximate(211)
+        expect(formula.skill.dmg(stats)[0](stats)).toApproximate(1498)
+        expect(formula.burst.skill(stats)[0](stats)).toApproximate(2180)
+        expect(formula.burst.field_dmg(stats)[0](stats)).toApproximate(402)
       })
     })
 
@@ -56,14 +58,14 @@ describe("Testing Jean's Formulas (sohum#5921)", () => {
       beforeEach(() => setupStats.hitMode = "critHit")
 
       test("hit", () => {
-        const stats = computeAllStats(setupStats), { auto, skill, burst } = stats.talentLevelKeys
-        expect(formula.normal[0](auto, stats)[0](stats)).toApproximate(115)
-        expect(formula.normal[1](auto, stats)[0](stats)).toApproximate(109)
-        expect(formula.normal[2](auto, stats)[0](stats)).toApproximate(144)
-        expect(formula.normal[4](auto, stats)[0](stats)).toApproximate(189)
-        expect(formula.skill.dmg(skill, stats)[0](stats)).toApproximate(2748)
-        expect(formula.burst.skill(burst, stats)[0](stats)).toApproximate(3998)
-        expect(formula.burst.field_dmg(burst, stats)[0](stats)).toApproximate(737)
+        const stats = computeAllStats(setupStats)
+        expect(formula.normal[0](stats)[0](stats)).toApproximate(115)
+        expect(formula.normal[1](stats)[0](stats)).toApproximate(109)
+        expect(formula.normal[2](stats)[0](stats)).toApproximate(144)
+        expect(formula.normal[4](stats)[0](stats)).toApproximate(189)
+        expect(formula.skill.dmg(stats)[0](stats)).toApproximate(2748)
+        expect(formula.burst.skill(stats)[0](stats)).toApproximate(3998)
+        expect(formula.burst.field_dmg(stats)[0](stats)).toApproximate(737)
       })
     })
   })
@@ -71,16 +73,18 @@ describe("Testing Jean's Formulas (sohum#5921)", () => {
 
 // Discord ID: 754914627246358610
 describe("Testing Jean's Formulas (Saber#9529)", () => {
-  beforeEach(() => { setupStats = createProxiedStats({
-    characterHP: 14695, characterATK: 239, characterDEF: 769,
-    characterEle: "anemo", characterLevel: 90,
-    weaponType: "sword", weaponATK: 674,
-  
-    heal_: 22.2,
-    atk_: 20, physical_dmg_: 41.3, // Weapon
-  
-    talentLevelKeys: Object.freeze({ auto: 9 - 1, skill: 8 - 1, burst: 6 - 1 }),
-  }) })
+  beforeEach(() => {
+    setupStats = createProxiedStats({
+      characterHP: 14695, characterATK: 239, characterDEF: 769,
+      characterEle: "anemo", characterLevel: 90,
+      weaponType: "sword", weaponATK: 674,
+
+      heal_: 22.2,
+      atk_: 20, physical_dmg_: 41.3, // Weapon
+
+      tlvl: Object.freeze({ auto: 9 - 1, skill: 8 - 1, burst: 6 - 1 }),
+    })
+  })
 
   describe("with artifacts", () => {
     beforeEach(() => applyArtifacts(setupStats, [
@@ -106,11 +110,11 @@ describe("Testing Jean's Formulas (Saber#9529)", () => {
     })
 
     test("healing", () => {
-      const stats = computeAllStats(setupStats), { burst } = stats.talentLevelKeys
-      expect(formula.burst.heal(burst, stats)[0](stats)).toApproximate(13388)
-      expect(formula.burst.regen(burst, stats)[0](stats)).toApproximate(1338)
+      const stats = computeAllStats(setupStats)
+      expect(formula.burst.heal(stats)[0](stats)).toApproximate(13388)
+      expect(formula.burst.regen(stats)[0](stats)).toApproximate(1338)
 
-      expect(formula.passive1.heal(undefined, stats)[0](stats)).toApproximate(443)
+      expect(formula.passive1.heal(stats)[0](stats)).toApproximate(443)
     })
 
     describe("swirl", () => {
@@ -144,21 +148,21 @@ describe("Testing Jean's Formulas (Saber#9529)", () => {
         })
 
         test("hits", () => {
-          const stats = computeAllStats(setupStats), { auto, skill, burst } = stats.talentLevelKeys
-          expect(formula.normal[0](auto, stats)[0](stats)).toApproximate(544)
-          expect(formula.normal[1](auto, stats)[0](stats)).toApproximate(513)
-          expect(formula.normal[2](auto, stats)[0](stats)).toApproximate(678)
-          expect(formula.normal[3](auto, stats)[0](stats)).toApproximate(741)
-          expect(formula.normal[4](auto, stats)[0](stats)).toApproximate(891)
+          const stats = computeAllStats(setupStats)
+          expect(formula.normal[0](stats)[0](stats)).toApproximate(544)
+          expect(formula.normal[1](stats)[0](stats)).toApproximate(513)
+          expect(formula.normal[2](stats)[0](stats)).toApproximate(678)
+          expect(formula.normal[3](stats)[0](stats)).toApproximate(741)
+          expect(formula.normal[4](stats)[0](stats)).toApproximate(891)
 
-          expect(formula.charged.dmg(auto, stats)[0](stats)).toApproximate(1823)
+          expect(formula.charged.dmg(stats)[0](stats)).toApproximate(1823)
 
-          expect(formula.plunging.dmg(auto, stats)[0](stats)).toApproximate(719)
-          expect(formula.plunging.low(auto, stats)[0](stats)).toApproximate(1438)
-          expect(formula.plunging.high(auto, stats)[0](stats)).toApproximate(1797)
+          expect(formula.plunging.dmg(stats)[0](stats)).toApproximate(719)
+          expect(formula.plunging.low(stats)[0](stats)).toApproximate(1438)
+          expect(formula.plunging.high(stats)[0](stats)).toApproximate(1797)
 
-          expect(formula.skill.dmg(skill, stats)[0](stats)).toApproximate(5162)
-          expect(formula.skill.dmg_hold(skill, stats)[0](stats)).toApproximate(7226)
+          expect(formula.skill.dmg(stats)[0](stats)).toApproximate(5162)
+          expect(formula.skill.dmg_hold(stats)[0](stats)).toApproximate(7226)
         })
       })
     })
@@ -173,24 +177,24 @@ describe("Testing Jean's Formulas (Saber#9529)", () => {
         })
 
         test("hits", () => {
-          const stats = computeAllStats(setupStats), { auto, skill, burst } = stats.talentLevelKeys
-          expect(formula.normal[0](auto, stats)[0](stats)).toApproximate(1259)
-          expect(formula.normal[1](auto, stats)[0](stats)).toApproximate(1188)
-          expect(formula.normal[2](auto, stats)[0](stats)).toApproximate(1571)
-          expect(formula.normal[3](auto, stats)[0](stats)).toApproximate(1717)
-          expect(formula.normal[4](auto, stats)[0](stats)).toApproximate(2064)
+          const stats = computeAllStats(setupStats)
+          expect(formula.normal[0](stats)[0](stats)).toApproximate(1259)
+          expect(formula.normal[1](stats)[0](stats)).toApproximate(1188)
+          expect(formula.normal[2](stats)[0](stats)).toApproximate(1571)
+          expect(formula.normal[3](stats)[0](stats)).toApproximate(1717)
+          expect(formula.normal[4](stats)[0](stats)).toApproximate(2064)
 
-          expect(formula.charged.dmg(auto, stats)[0](stats)).toApproximate(4223)
+          expect(formula.charged.dmg(stats)[0](stats)).toApproximate(4223)
 
-          expect(formula.plunging.dmg(auto, stats)[0](stats)).toApproximate(1666)
-          expect(formula.plunging.low(auto, stats)[0](stats)).toApproximate(3332)
-          expect(formula.plunging.high(auto, stats)[0](stats)).toApproximate(4162)
+          expect(formula.plunging.dmg(stats)[0](stats)).toApproximate(1666)
+          expect(formula.plunging.low(stats)[0](stats)).toApproximate(3332)
+          expect(formula.plunging.high(stats)[0](stats)).toApproximate(4162)
 
-          expect(formula.skill.dmg(skill, stats)[0](stats)).toApproximate(11954)
-          expect(formula.skill.dmg_hold(skill, stats)[0](stats)).toApproximate(16736)
+          expect(formula.skill.dmg(stats)[0](stats)).toApproximate(11954)
+          expect(formula.skill.dmg_hold(stats)[0](stats)).toApproximate(16736)
 
-          expect(formula.burst.skill(burst, stats)[0](stats)).toApproximate(15217)
-          expect(formula.burst.field_dmg(burst, stats)[0](stats)).toApproximate(2808)
+          expect(formula.burst.skill(stats)[0](stats)).toApproximate(15217)
+          expect(formula.burst.field_dmg(stats)[0](stats)).toApproximate(2808)
         })
       })
     })
@@ -209,7 +213,7 @@ describe("Testing Jean's Formulas (Saber#9529)", () => {
         delete setupStats.atk_
         delete setupStats.physical_dmg_
         setupStats.weaponATK = 914 - setupStats.characterATK
-        
+
         setupStats.hp = 7542
         setupStats.atk = 1487
         setupStats.def = 218
@@ -224,16 +228,16 @@ describe("Testing Jean's Formulas (Saber#9529)", () => {
 
         test("with Anemo DMG Bonus 46.6%", () => {
           setupStats.anemo_dmg_ = 46.6
-          const stats = computeAllStats(setupStats), { skill } = stats.talentLevelKeys
-          expect(formula.skill.dmg(skill, stats)[0](stats)).toApproximate(7477)
-          expect(formula.skill.dmg_hold(skill, stats)[0](stats)).toApproximate(9517)
+          const stats = computeAllStats(setupStats)
+          expect(formula.skill.dmg(stats)[0](stats)).toApproximate(7477)
+          expect(formula.skill.dmg_hold(stats)[0](stats)).toApproximate(9517)
         })
 
         test("with Anemo DMG Bonus 71.6%", () => {
           setupStats.anemo_dmg_ = 71.6
-          const stats = computeAllStats(setupStats), { skill } = stats.talentLevelKeys
-          expect(formula.skill.dmg(skill, stats)[0](stats)).toApproximate(8752)
-          expect(formula.skill.dmg_hold(skill, stats)[0](stats)).toApproximate(10792)
+          const stats = computeAllStats(setupStats)
+          expect(formula.skill.dmg(stats)[0](stats)).toApproximate(8752)
+          expect(formula.skill.dmg_hold(stats)[0](stats)).toApproximate(10792)
         })
       })
 
@@ -242,16 +246,16 @@ describe("Testing Jean's Formulas (Saber#9529)", () => {
 
         test("with Anemo DMG Bonus 46.6%", () => {
           setupStats.anemo_dmg_ = 46.6
-          const stats = computeAllStats(setupStats), { skill } = stats.talentLevelKeys
-          expect(formula.skill.dmg(skill, stats)[0](stats)).toApproximate(15700)
-          expect(formula.skill.dmg_hold(skill, stats)[0](stats)).toApproximate(19984)
+          const stats = computeAllStats(setupStats)
+          expect(formula.skill.dmg(stats)[0](stats)).toApproximate(15700)
+          expect(formula.skill.dmg_hold(stats)[0](stats)).toApproximate(19984)
         })
 
         test("with Anemo DMG Bonus 71.6%", () => {
           setupStats.anemo_dmg_ = 71.6
-          const stats = computeAllStats(setupStats), { skill } = stats.talentLevelKeys
-          expect(formula.skill.dmg(skill, stats)[0](stats)).toApproximate(18378)
-          expect(formula.skill.dmg_hold(skill, stats)[0](stats)).toApproximate(22662)
+          const stats = computeAllStats(setupStats)
+          expect(formula.skill.dmg(stats)[0](stats)).toApproximate(18378)
+          expect(formula.skill.dmg_hold(stats)[0](stats)).toApproximate(22662)
         })
       })
     })
@@ -262,7 +266,7 @@ describe("Testing Jean's Formulas (Saber#9529)", () => {
         delete setupStats.atk_
         delete setupStats.physical_dmg_
         setupStats.weaponATK = 914 - setupStats.characterATK
-        
+
         setupStats.hp = 7574
         setupStats.atk = 1487
         setupStats.def = 218
@@ -277,16 +281,16 @@ describe("Testing Jean's Formulas (Saber#9529)", () => {
 
         test("with Anemo DMG Bonus 61.6%", () => {
           setupStats.anemo_dmg_ = 61.6
-          const stats = computeAllStats(setupStats), { skill } = stats.talentLevelKeys
-          expect(formula.skill.dmg(skill, stats)[0](stats)).toApproximate(8242)
-          expect(formula.skill.dmg_hold(skill, stats)[0](stats)).toApproximate(10282)
+          const stats = computeAllStats(setupStats)
+          expect(formula.skill.dmg(stats)[0](stats)).toApproximate(8242)
+          expect(formula.skill.dmg_hold(stats)[0](stats)).toApproximate(10282)
         })
 
         test("with Anemo DMG Bonus 86.6%", () => {
           setupStats.anemo_dmg_ = 86.6
-          const stats = computeAllStats(setupStats), { skill } = stats.talentLevelKeys
-          expect(formula.skill.dmg(skill, stats)[0](stats)).toApproximate(9517)
-          expect(formula.skill.dmg_hold(skill, stats)[0](stats)).toApproximate(11557)
+          const stats = computeAllStats(setupStats)
+          expect(formula.skill.dmg(stats)[0](stats)).toApproximate(9517)
+          expect(formula.skill.dmg_hold(stats)[0](stats)).toApproximate(11557)
         })
       })
 
@@ -295,16 +299,16 @@ describe("Testing Jean's Formulas (Saber#9529)", () => {
 
         test("with Anemo DMG Bonus 61.6%", () => {
           setupStats.anemo_dmg_ = 61.6
-          const stats = computeAllStats(setupStats), { skill } = stats.talentLevelKeys
-          expect(formula.skill.dmg(skill, stats)[0](stats)).toApproximate(15706)
-          expect(formula.skill.dmg_hold(skill, stats)[0](stats)).toApproximate(19594)
+          const stats = computeAllStats(setupStats)
+          expect(formula.skill.dmg(stats)[0](stats)).toApproximate(15706)
+          expect(formula.skill.dmg_hold(stats)[0](stats)).toApproximate(19594)
         })
 
         test("with Anemo DMG Bonus 86.6%", () => {
           setupStats.anemo_dmg_ = 86.6
-          const stats = computeAllStats(setupStats), { skill } = stats.talentLevelKeys
-          expect(formula.skill.dmg(skill, stats)[0](stats)).toApproximate(18136)
-          expect(formula.skill.dmg_hold(skill, stats)[0](stats)).toApproximate(22024)
+          const stats = computeAllStats(setupStats)
+          expect(formula.skill.dmg(stats)[0](stats)).toApproximate(18136)
+          expect(formula.skill.dmg_hold(stats)[0](stats)).toApproximate(22024)
         })
       })
     })
@@ -315,7 +319,7 @@ describe("Testing Jean's Formulas (Saber#9529)", () => {
         delete setupStats.atk_
         delete setupStats.physical_dmg_
         setupStats.weaponATK = 914 - setupStats.characterATK
-        
+
         setupStats.hp = 7574
         setupStats.atk = 1237
         setupStats.def = 228
@@ -330,16 +334,16 @@ describe("Testing Jean's Formulas (Saber#9529)", () => {
 
         test("with Anemo DMG Bonus 22.0%", () => {
           setupStats.anemo_dmg_ = 22.0
-          const stats = computeAllStats(setupStats), { skill } = stats.talentLevelKeys
-          expect(formula.skill.dmg(skill, stats)[0](stats)).toApproximate(5575)
-          expect(formula.skill.dmg_hold(skill, stats)[0](stats)).toApproximate(7403)
+          const stats = computeAllStats(setupStats)
+          expect(formula.skill.dmg(stats)[0](stats)).toApproximate(5575)
+          expect(formula.skill.dmg_hold(stats)[0](stats)).toApproximate(7403)
         })
 
         test("with Anemo DMG Bonus 47.0%", () => {
           setupStats.anemo_dmg_ = 47.0
-          const stats = computeAllStats(setupStats), { skill } = stats.talentLevelKeys
-          expect(formula.skill.dmg(skill, stats)[0](stats)).toApproximate(6717)
-          expect(formula.skill.dmg_hold(skill, stats)[0](stats)).toApproximate(8545)
+          const stats = computeAllStats(setupStats)
+          expect(formula.skill.dmg(stats)[0](stats)).toApproximate(6717)
+          expect(formula.skill.dmg_hold(stats)[0](stats)).toApproximate(8545)
         })
       })
 
@@ -348,15 +352,15 @@ describe("Testing Jean's Formulas (Saber#9529)", () => {
 
         test("with Anemo DMG Bonus 22.0%", () => {
           setupStats.anemo_dmg_ = 22.0
-          const stats = computeAllStats(setupStats), { skill } = stats.talentLevelKeys
-          expect(formula.skill.dmg(skill, stats)[0](stats)).toApproximate(10624)
-          expect(formula.skill.dmg_hold(skill, stats)[0](stats)).toApproximate(14107)
+          const stats = computeAllStats(setupStats)
+          expect(formula.skill.dmg(stats)[0](stats)).toApproximate(10624)
+          expect(formula.skill.dmg_hold(stats)[0](stats)).toApproximate(14107)
         })
 
         test("with Anemo DMG Bonus 47.0%", () => {
           setupStats.anemo_dmg_ = 47.0
-          const stats = computeAllStats(setupStats), { skill } = stats.talentLevelKeys
-          expect(formula.skill.dmg(skill, stats)[0](stats)).toApproximate(12801)
+          const stats = computeAllStats(setupStats)
+          expect(formula.skill.dmg(stats)[0](stats)).toApproximate(12801)
         })
       })
     })
@@ -368,7 +372,7 @@ describe("Testing Jean's Formulas (Saber#9529)", () => {
         delete setupStats.physical_dmg_
         setupStats.weaponATK = 914 - setupStats.characterATK
         setupStats.skill_dmg_ = 16
-        
+
         setupStats.hp = 7574
         setupStats.atk = 921
         setupStats.def = 228
@@ -383,16 +387,16 @@ describe("Testing Jean's Formulas (Saber#9529)", () => {
 
         test("with Anemo DMG Bonus 22.0%", () => {
           setupStats.anemo_dmg_ = 22.0
-          const stats = computeAllStats(setupStats), { skill } = stats.talentLevelKeys
-          expect(formula.skill.dmg(skill, stats)[0](stats)).toApproximate(5462)
-          expect(formula.skill.dmg_hold(skill, stats)[0](stats)).toApproximate(6880)
+          const stats = computeAllStats(setupStats)
+          expect(formula.skill.dmg(stats)[0](stats)).toApproximate(5462)
+          expect(formula.skill.dmg_hold(stats)[0](stats)).toApproximate(6880)
         })
 
         test("with Anemo DMG Bonus 47.0%", () => {
           setupStats.anemo_dmg_ = 47.0
-          const stats = computeAllStats(setupStats), { skill } = stats.talentLevelKeys
-          expect(formula.skill.dmg(skill, stats)[0](stats)).toApproximate(6348)
-          expect(formula.skill.dmg_hold(skill, stats)[0](stats)).toApproximate(7767)
+          const stats = computeAllStats(setupStats)
+          expect(formula.skill.dmg(stats)[0](stats)).toApproximate(6348)
+          expect(formula.skill.dmg_hold(stats)[0](stats)).toApproximate(7767)
         })
       })
 
@@ -401,16 +405,16 @@ describe("Testing Jean's Formulas (Saber#9529)", () => {
 
         test("with Anemo DMG Bonus 22.0%", () => {
           setupStats.anemo_dmg_ = 22.0
-          const stats = computeAllStats(setupStats), { skill } = stats.talentLevelKeys
-          expect(formula.skill.dmg(skill, stats)[0](stats)).toApproximate(10408)
-          expect(formula.skill.dmg_hold(skill, stats)[0](stats)).toApproximate(13112)
+          const stats = computeAllStats(setupStats)
+          expect(formula.skill.dmg(stats)[0](stats)).toApproximate(10408)
+          expect(formula.skill.dmg_hold(stats)[0](stats)).toApproximate(13112)
         })
 
         test("with Anemo DMG Bonus 47.0%", () => {
           setupStats.anemo_dmg_ = 47.0
-          const stats = computeAllStats(setupStats), { skill } = stats.talentLevelKeys
-          expect(formula.skill.dmg(skill, stats)[0](stats)).toApproximate(12098)
-          expect(formula.skill.dmg_hold(skill, stats)[0](stats)).toApproximate(14801)
+          const stats = computeAllStats(setupStats)
+          expect(formula.skill.dmg(stats)[0](stats)).toApproximate(12098)
+          expect(formula.skill.dmg_hold(stats)[0](stats)).toApproximate(14801)
         })
       })
     })
@@ -419,21 +423,23 @@ describe("Testing Jean's Formulas (Saber#9529)", () => {
 
 // Discord ID: 822256929929822248
 describe("Testing Jean's Formulas (sohum#5921)", () => {
-  beforeEach(() => { setupStats = createProxiedStats({
-    characterHP: 9533, characterATK: 155, characterDEF: 499,
-    characterEle: "anemo", characterLevel: 60,
-    weaponType: "sword", weaponATK: 347,
-  
-    heal_: 11.1, enerRech_: 100 + 50.5,
-    enemyLevel: 85, physical_enemyRes_: 70, // Ruin Guard
-  
-    talentLevelKeys: Object.freeze({ auto: 1 - 1, skill: 1 - 1, burst: 1 - 1 }),
-  }) })
+  beforeEach(() => {
+    setupStats = createProxiedStats({
+      characterHP: 9533, characterATK: 155, characterDEF: 499,
+      characterEle: "anemo", characterLevel: 60,
+      weaponType: "sword", weaponATK: 347,
+
+      heal_: 11.1, enerRech_: 100 + 50.5,
+      enemyLevel: 85, physical_enemyRes_: 70, // Ruin Guard
+
+      tlvl: Object.freeze({ auto: 1 - 1, skill: 1 - 1, burst: 1 - 1 }),
+    })
+  })
 
   describe("with artifacts", () => {
     beforeEach(() => applyArtifacts(setupStats, [
-      { hp: 3967, atk_: 9.3, atk: 16, critDMG_: 13.2, hp_: 10.5,  }, // Flower of Life
-      { atk: 258, critDMG_: 7, def: 81, critRate_: 3.9, hp: 239,  }, // Plume of Death
+      { hp: 3967, atk_: 9.3, atk: 16, critDMG_: 13.2, hp_: 10.5, }, // Flower of Life
+      { atk: 258, critDMG_: 7, def: 81, critRate_: 3.9, hp: 239, }, // Plume of Death
       { enerRech_: 29.8, critDMG_: 6.2, hp: 209, eleMas: 19, atk: 16 }, // Sands of Eon
       { anemo_dmg_: 30.8, hp: 448, eleMas: 40, critRate_: 3.9, def: 21 }, // Goblet of Eonothem
       { critRate_: 25.8, hp: 478, critDMG_: 7, atk_: 13.4, atk: 35, }, // Circlet of Logos
@@ -441,9 +447,9 @@ describe("Testing Jean's Formulas (sohum#5921)", () => {
     ]))
 
     test("heal", () => {
-      const stats = computeAllStats(setupStats), { burst } = stats.talentLevelKeys
-      expect(formula.burst.regen(burst, stats)[0](stats)).toApproximate(433)
-      expect(formula.passive1.heal(undefined, stats)[0](stats)).toApproximate(156)
+      const stats = computeAllStats(setupStats)
+      expect(formula.burst.regen(stats)[0](stats)).toApproximate(433)
+      expect(formula.passive1.heal(stats)[0](stats)).toApproximate(156)
     })
     test("reactions", () => {
       const stats = computeAllStats(setupStats)
@@ -453,16 +459,16 @@ describe("Testing Jean's Formulas (sohum#5921)", () => {
       beforeEach(() => setupStats.hitMode = "hit")
 
       test("hit", () => {
-        const stats = computeAllStats(setupStats), { auto, skill, burst } = stats.talentLevelKeys
-        expect(formula.normal[0](auto, stats)[0](stats)).toApproximate(63)
-        expect(formula.normal[1](auto, stats)[0](stats)).toApproximate(59)
-        expect(formula.normal[2](auto, stats)[0](stats)).toApproximate(78)
-        expect(formula.normal[3](auto, stats)[0](stats)).toApproximate(86)
-        expect(formula.normal[4](auto, stats)[0](stats)).toApproximate(103)
-        expect(formula.charged.dmg(auto, stats)[0](stats)).toApproximate(211)
-        expect(formula.skill.dmg(skill, stats)[0](stats)).toApproximate(1498)
-        expect(formula.burst.skill(burst, stats)[0](stats)).toApproximate(2180)
-        expect(formula.burst.field_dmg(burst, stats)[0](stats)).toApproximate(402)
+        const stats = computeAllStats(setupStats)
+        expect(formula.normal[0](stats)[0](stats)).toApproximate(63)
+        expect(formula.normal[1](stats)[0](stats)).toApproximate(59)
+        expect(formula.normal[2](stats)[0](stats)).toApproximate(78)
+        expect(formula.normal[3](stats)[0](stats)).toApproximate(86)
+        expect(formula.normal[4](stats)[0](stats)).toApproximate(103)
+        expect(formula.charged.dmg(stats)[0](stats)).toApproximate(211)
+        expect(formula.skill.dmg(stats)[0](stats)).toApproximate(1498)
+        expect(formula.burst.skill(stats)[0](stats)).toApproximate(2180)
+        expect(formula.burst.field_dmg(stats)[0](stats)).toApproximate(402)
       })
     })
 
@@ -470,14 +476,14 @@ describe("Testing Jean's Formulas (sohum#5921)", () => {
       beforeEach(() => setupStats.hitMode = "critHit")
 
       test("hit", () => {
-        const stats = computeAllStats(setupStats), { auto, skill, burst } = stats.talentLevelKeys
-        expect(formula.normal[0](auto, stats)[0](stats)).toApproximate(115)
-        expect(formula.normal[1](auto, stats)[0](stats)).toApproximate(109)
-        expect(formula.normal[2](auto, stats)[0](stats)).toApproximate(144)
-        expect(formula.normal[4](auto, stats)[0](stats)).toApproximate(189)
-        expect(formula.skill.dmg(skill, stats)[0](stats)).toApproximate(2748)
-        expect(formula.burst.skill(burst, stats)[0](stats)).toApproximate(3998)
-        expect(formula.burst.field_dmg(burst, stats)[0](stats)).toApproximate(737)
+        const stats = computeAllStats(setupStats)
+        expect(formula.normal[0](stats)[0](stats)).toApproximate(115)
+        expect(formula.normal[1](stats)[0](stats)).toApproximate(109)
+        expect(formula.normal[2](stats)[0](stats)).toApproximate(144)
+        expect(formula.normal[4](stats)[0](stats)).toApproximate(189)
+        expect(formula.skill.dmg(stats)[0](stats)).toApproximate(2748)
+        expect(formula.burst.skill(stats)[0](stats)).toApproximate(3998)
+        expect(formula.burst.field_dmg(stats)[0](stats)).toApproximate(737)
       })
     })
   })

@@ -39,22 +39,22 @@ const data = {
 }
 
 const formula = {
-  normal: Object.fromEntries(data.normal.hitArr.map((percentArr, i) => [i, (tlvl, stats) =>
-    basicDMGFormula(percentArr[tlvl], stats, "normal")])),
+  normal: Object.fromEntries(data.normal.hitArr.map((percentArr, i) => [i, stats =>
+    basicDMGFormula(percentArr[stats.tlvl.auto], stats, "normal")])),
   charged: Object.fromEntries(Object.entries(data.charged).map(([name, arr]) =>
-    [name, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "charged")])),
-  plunging: Object.fromEntries(Object.entries(data.plunging).map(([key, arr]) => [key, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "plunging")])),
+    [name, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "charged")])),
+  plunging: Object.fromEntries(Object.entries(data.plunging).map(([key, arr]) => [key, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "plunging")])),
   skill: {
-    press: (tlvl, stats) => basicDMGFormula(data.skill.press[tlvl], stats, "skill"),
-    hold: (tlvl, stats) => basicDMGFormula(data.skill.hold[tlvl], stats, "skill"),
+    press: stats => basicDMGFormula(data.skill.press[stats.tlvl.skill], stats, "skill"),
+    hold: stats => basicDMGFormula(data.skill.hold[stats.tlvl.skill], stats, "skill"),
   },
   burst: {
-    summon: (tlvl, stats) => basicDMGFormula(data.burst.summon[tlvl], stats, "burst"),
-    ...Object.fromEntries(data.normal.hitArr.map((percentArr, i) => [i, (tlvl, stats) =>
-      basicDMGFormula(data.burst.dmg[tlvl] * percentArr[stats.talentLevelKeys.auto] / 100, stats, "burst")])),
+    summon: stats => basicDMGFormula(data.burst.summon[stats.tlvl.burst], stats, "burst"),
+    ...Object.fromEntries(data.normal.hitArr.map((percentArr, i) => [i, stats =>
+      basicDMGFormula(data.burst.dmg[stats.tlvl.burst] * percentArr[stats.tlvl.auto] / 100, stats, "burst")])),
   },
   constellation6: {
-    dmg: (tlvl, stats) => basicDMGFormula(100, stats, "elemental"),
+    dmg: stats => basicDMGFormula(100, stats, "elemental"),
   }
 }
 

@@ -39,18 +39,18 @@ const char = {
         fields: data.normal.hitArr.map((percentArr, i) => ({
           text: `${i + 1}-Hit DMG`,
           formulaText: (i === 2 || i === 3) ?
-            (tlvl, stats) => <span>( {percentArr[tlvl]}% + {percentArr[tlvl]}% ) {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span> :
-            (tlvl, stats) => <span>{percentArr[tlvl]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
+            stats => <span>( {percentArr[stats.tlvl.auto]}% + {percentArr[stats.tlvl.auto]}% ) {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span> :
+            stats => <span>{percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
           formula: formula.normal[i],
-          variant: (tlvl, stats) => getTalentStatKeyVariant("normal", stats),
+          variant: stats => getTalentStatKeyVariant("normal", stats),
         })),
       }, {
         text: <span><strong>Charged Attack</strong> Consumes a certain amount of Stamina to unleash 2 rapid sword strikes. <small><i>Note: The attack hits twice.</i></small></span>,
         fields: [{
           text: `Charged ATK DMG`,
-          formulaText: (tlvl, stats) => <span>( {data.charged.hit[tlvl]}% + {data.charged.hit[tlvl]}% ) {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
+          formulaText: stats => <span>( {data.charged.hit[stats.tlvl.auto]}% + {data.charged.hit[stats.tlvl.auto]}% ) {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
           formula: formula.charged.hit,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("charged", stats),
+          variant: stats => getTalentStatKeyVariant("charged", stats),
         }, {
           text: `Stamina Cost`,
           value: "20",
@@ -59,19 +59,19 @@ const char = {
         text: <span><strong>Plunging Attack</strong> Plunges from mid-air to strike the ground, damaging enemies along the path and dealing AoE DMG upon impact.</span>,
         fields: [{
           text: `Plunge DMG`,
-          formulaText: (tlvl, stats) => <span>{data.plunging.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+          formulaText: stats => <span>{data.plunging.dmg[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
           formula: formula.plunging.dmg,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("plunging", stats),
+          variant: stats => getTalentStatKeyVariant("plunging", stats),
         }, {
           text: `Low Plunge DMG`,
-          formulaText: (tlvl, stats) => <span>{data.plunging.low[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+          formulaText: stats => <span>{data.plunging.low[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
           formula: formula.plunging.low,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("plunging", stats),
+          variant: stats => getTalentStatKeyVariant("plunging", stats),
         }, {
           text: `High Plunge DMG`,
-          formulaText: (tlvl, stats) => <span>{data.plunging.high[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+          formulaText: stats => <span>{data.plunging.high[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
           formula: formula.plunging.high,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("plunging", stats),
+          variant: stats => getTalentStatKeyVariant("plunging", stats),
         }]
       },
       ],
@@ -91,24 +91,24 @@ const char = {
         </span>,
         fields: [{
           text: "Skill DMG",
-          formulaText: (tlvl, stats) => <span>{data.skill.hit[tlvl]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
+          formulaText: stats => <span>{data.skill.hit[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
           formula: formula.skill.hit,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("skill", stats),
+          variant: stats => getTalentStatKeyVariant("skill", stats),
         }, {
           text: "Regeneration on Hit",
-          formulaText: (tlvl, stats) => <span>( {data.skill.hitregen.atk[tlvl]}% {Stat.printStat("finalATK", stats)} + {data.skill.hitregen.base[tlvl]} ) * {Stat.printStat("heal_multi", stats)}</span>,
+          formulaText: stats => <span>( {data.skill.hitregen.atk[stats.tlvl.skill]}% {Stat.printStat("finalATK", stats)} + {data.skill.hitregen.base[stats.tlvl.skill]} ) * {Stat.printStat("heal_multi", stats)}</span>,
           formula: formula.skill.hitregen,
           variant: "success",
         }, {
           text: "Continuous Regeneration",
-          formulaText: (tlvl, stats) => <span>( {data.skill.continuousregen.atk[tlvl]}% {Stat.printStat("finalATK", stats)} + {data.skill.continuousregen.base[tlvl]} ) * {Stat.printStat("heal_multi", stats)}            </span>,
+          formulaText: stats => <span>( {data.skill.continuousregen.atk[stats.tlvl.skill]}% {Stat.printStat("finalATK", stats)} + {data.skill.continuousregen.base[stats.tlvl.skill]} ) * {Stat.printStat("heal_multi", stats)}            </span>,
           formula: formula.skill.continuousregen,
           variant: "success",
         }, {
           text: "Herald of Frost DMG",
-          formulaText: (tlvl, stats) => <span>{data.skill.herald[tlvl]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
+          formulaText: stats => <span>{data.skill.herald[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
           formula: formula.skill.herald,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("skill", stats),
+          variant: stats => getTalentStatKeyVariant("skill", stats),
         }, {
           text: "Duration",
           value: "15s",
@@ -129,12 +129,12 @@ const char = {
         </span>,
         fields: [{
           text: "Burst DMG",
-          formulaText: (tlvl, stats) => <span>{data.burst.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
+          formulaText: stats => <span>{data.burst.dmg[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
           formula: formula.burst.dmg,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("burst", stats),
+          variant: stats => getTalentStatKeyVariant("burst", stats),
         }, {
           text: "Talisman Healing",
-          formulaText: (tlvl, stats) => <span> ( {data.burst.healing.atk[tlvl]}% {Stat.printStat("finalATK", stats)} + {data.burst.healing.base[tlvl]} ) * {Stat.printStat("heal_multi", stats)}</span>,
+          formulaText: stats => <span> ( {data.burst.healing.atk[stats.tlvl.burst]}% {Stat.printStat("finalATK", stats)} + {data.burst.healing.base[stats.tlvl.burst]} ) * {Stat.printStat("heal_multi", stats)}</span>,
           formula: formula.burst.healing,
           variant: "success",
         }, {
@@ -154,7 +154,7 @@ const char = {
       img: passive1,
       document: [{
         text: <span>When a character under the effects of <b>Adeptus Art: Herald of Frost</b> triggers an Elemental Reaction, their Incoming Healing Bonus is increased by 20% for 8s.</span>,
-        conditional: (tlvl, c, a) => a >= 1 && {
+        conditional: stats => stats.ascension >= 1 && {
           type: "character",
           conditionalKey: "LifeProlongingMethods",
           condition: "Elemental Reaction Triggered",
@@ -173,10 +173,10 @@ const char = {
       img: passive2,
       document: [{
         text: <span>When Qiqi hits opponents with her <b>Normal and Charged Attacks</b>, she has a 50% chance to apply a Fortune-Preserving Talisman to them for 6s. This effect can only occur once every 30s.</span>,
-        fields: [(con, a) => a >= 4 && {
+        fields: [stats => stats.ascension >= 4 && {
           text: "Talisman Application Chance",
           value: "50%",
-        }, (con, a) => a >= 4 && {
+        }, stats => stats.ascension >= 4 && {
           text: "CD",
           value: "30s",
         }],
@@ -193,7 +193,7 @@ const char = {
       img: c1,
       document: [{
         text: <span>When the <b>Herald of Frost</b> hits an opponent marked by a <b>Fortune-Preserving Talisman</b>, Qiqi regenerates 2 Energy.</span>,
-        fields: [(con) => con >= 1 && {
+        fields: [stats => stats.constellation >= 1 && {
           text: "Energy on Hit",
           value: 2,
         }],
@@ -204,7 +204,7 @@ const char = {
       img: c2,
       document: [{
         text: <span>Qiqi's Normal and Charge Attack DMG against opponents affected by <span className="text-cryo">Cryo</span> is increased by 15%.</span>,
-        conditional: (tlvl, c, a) => c >= 2 && {
+        conditional: stats => stats.constellation >= 2 && {
           type: "character",
           conditionalKey: "EnemyCryo",
           condition: "Enemy Affected by Cryo",
@@ -228,7 +228,7 @@ const char = {
       img: c4,
       document: [{
         text: <span>Targets marked by the <b>Fortune-Preserving Talisman</b> have their ATK decreased by 20%.</span>,
-        conditional: (tlvl, c, a) => c >= 4 && {
+        conditional: stats => stats.constellation >= 4 && {
           type: "character",
           conditionalKey: "DivineSuppression",
           condition: "Enemy marked by Talisman",
@@ -255,10 +255,10 @@ const char = {
           <p className="mb-2">Using <b>Adeptus Art: Preserver of Fortune</b> revives all fallen party members nearby and regenerates 50% of their HP.</p>
           <ul className="mb-0"><li>This effect can only occur once every 15 mins.</li></ul>
         </span>,
-        fields: [(con) => con >= 6 && {
+        fields: [stats => stats.constellation >= 6 && {
           text: "Revival HP Regeneration",
           value: `50% of Max HP`,
-        }, (con) => con >= 6 && {
+        }, stats => stats.constellation >= 6 && {
           text: "Cooldown",
           value: `15m`,
         },

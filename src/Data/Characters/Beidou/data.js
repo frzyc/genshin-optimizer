@@ -43,28 +43,28 @@ const data = {
 
 const formula = {
   normal: {
-    ...Object.fromEntries(data.normal.hitArr.map((percentArr, i) => [i, (tlvl, stats) =>
-      basicDMGFormula(percentArr[tlvl], stats, "normal")])),
-    ...Object.fromEntries(data.normal.hitArr.map((percentArr, i) => [`a${i}`, (tlvl, stats) =>
-      basicDMGFormula(percentArr[tlvl] * 0.2, stats, "normal", true)])),
+    ...Object.fromEntries(data.normal.hitArr.map((percentArr, i) => [i, stats =>
+      basicDMGFormula(percentArr[stats.tlvl.auto], stats, "normal")])),
+    ...Object.fromEntries(data.normal.hitArr.map((percentArr, i) => [`a${i}`, stats =>
+      basicDMGFormula(percentArr[stats.tlvl.auto] * 0.2, stats, "normal", true)])),
   },
   charged: {
-    spinning: (tlvl, stats) => basicDMGFormula(data.charged.spinning[tlvl], stats, "charged"),
-    finalATK: (tlvl, stats) => basicDMGFormula(data.charged.finalATK[tlvl], stats, "charged"),
+    spinning: stats => basicDMGFormula(data.charged.spinning[stats.tlvl.auto], stats, "charged"),
+    finalATK: stats => basicDMGFormula(data.charged.finalATK[stats.tlvl.auto], stats, "charged"),
   },
-  plunging: Object.fromEntries(Object.entries(data.plunging).map(([key, arr]) => [key, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "plunging")])),
+  plunging: Object.fromEntries(Object.entries(data.plunging).map(([key, arr]) => [key, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "plunging")])),
   skill: {
-    shield: (tlvl) => {
-      const hp = data.skill.hp[tlvl] / 100
-      const flat = data.skill.flat[tlvl]
+    shield: stats => {
+      const hp = data.skill.hp[stats.tlvl.skill] / 100
+      const flat = data.skill.flat[stats.tlvl.skill]
       return [(s) => hp * s.finalHP + flat, ["finalHP"]]
     },
-    dmg: (tlvl, stats) => basicDMGFormula(data.skill.dmg[tlvl], stats, "skill"),
-    onHit: (tlvl, stats) => basicDMGFormula(data.skill.onHit[tlvl], stats, "skill"),
+    dmg: stats => basicDMGFormula(data.skill.dmg[stats.tlvl.skill], stats, "skill"),
+    onHit: stats => basicDMGFormula(data.skill.onHit[stats.tlvl.skill], stats, "skill"),
   },
   burst: {
-    dmg: (tlvl, stats) => basicDMGFormula(data.burst.dmg[tlvl], stats, "burst"),
-    lightningDMG: (tlvl, stats) => basicDMGFormula(data.burst.lightningDMG[tlvl], stats, "burst"),
+    dmg: stats => basicDMGFormula(data.burst.dmg[stats.tlvl.burst], stats, "burst"),
+    lightningDMG: stats => basicDMGFormula(data.burst.lightningDMG[stats.tlvl.burst], stats, "burst"),
   }
 }
 

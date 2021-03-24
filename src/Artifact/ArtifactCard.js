@@ -22,6 +22,7 @@ export default function ArtifactCard({ artifactId, artifactObj, forceUpdate, onE
   if (!artifactId && !artifactObj) return null;
   const art = artifactObj ? artifactObj : ArtifactDatabase.get(artifactId);
   if (!art) return null;
+  if (!art.maximumEfficiency) Artifact.substatsValidation(art)
   let { setKey, slotKey, numStars = 0, level = 0, mainStatKey, substats = [], location = "", lock, currentEfficiency = 0, maximumEfficiency = 0 } = art
   let mainStatLevel = assumeFull ? numStars * 4 : level
   let assFullColor = assumeFull && level !== numStars * 4
@@ -31,6 +32,7 @@ export default function ArtifactCard({ artifactId, artifactObj, forceUpdate, onE
     Artifact.equipArtifactOnChar(artifactId, charKey)
     forceUpdate?.()
   }
+
   return (<Card className="h-100" border={`${numStars}star`} bg="lightcontent" text="lightfont">
     <Card.Header className="p-0">
       <Row>

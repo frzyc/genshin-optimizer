@@ -39,17 +39,17 @@ const char = {
         fields: data.normal.hitArr.map((percentArr, i) =>
         ({
           text: `${i + 1}-Hit DMG`,
-          formulaText: (tlvl, stats) => <span>{percentArr[tlvl]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
+          formulaText: stats => <span>{percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
           formula: formula.normal[i],
-          variant: (tlvl, stats) => getTalentStatKeyVariant("normal", stats),
+          variant: stats => getTalentStatKeyVariant("normal", stats),
         }))
       }, {
         text: <span><strong>Charged Attack</strong> Consumes a certain amount of stamina to launch an opponent using the power of wind. Launched opponents will slowly fall to the ground.</span>,
         fields: [{
           text: `Charged Attack DMG`,
-          formulaText: (tlvl, stats) => <span>{data.charged.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
+          formulaText: stats => <span>{data.charged.dmg[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
           formula: formula.charged.dmg,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("charged", stats),
+          variant: stats => getTalentStatKeyVariant("charged", stats),
         }, {
           text: `Stamina Cost`,
           value: 20,
@@ -58,19 +58,19 @@ const char = {
         text: <span><strong>Plunging Attack</strong> Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.</span>,
         fields: [{
           text: `Plunge DMG`,
-          formulaText: (tlvl, stats) => <span>{data.plunging.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+          formulaText: stats => <span>{data.plunging.dmg[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
           formula: formula.plunging.dmg,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("plunging", stats),
+          variant: stats => getTalentStatKeyVariant("plunging", stats),
         }, {
           text: `Low Plunge DMG`,
-          formulaText: (tlvl, stats) => <span>{data.plunging.low[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+          formulaText: stats => <span>{data.plunging.low[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
           formula: formula.plunging.low,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("plunging", stats),
+          variant: stats => getTalentStatKeyVariant("plunging", stats),
         }, {
           text: `High Plunge DMG`,
-          formulaText: (tlvl, stats) => <span>{data.plunging.high[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+          formulaText: stats => <span>{data.plunging.high[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
           formula: formula.plunging.high,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("plunging", stats),
+          variant: stats => getTalentStatKeyVariant("plunging", stats),
         }]
       }]
     },
@@ -88,14 +88,14 @@ const char = {
         </span>,
         fields: [{
           text: "Gale Blade DMG",
-          formulaText: (tlvl, stats) => <span>{data.skill.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
+          formulaText: stats => <span>{data.skill.dmg[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
           formula: formula.skill.dmg,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("skill", stats),
-        }, (con) => con >= 1 && {
+          variant: stats => getTalentStatKeyVariant("skill", stats),
+        }, stats => stats.constellation >= 1 && {
           text: "Gale Blade DMG (Holding)",
-          formulaText: (tlvl, stats) => <span>{data.skill.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)} * 140%</span>,
+          formulaText: stats => <span>{data.skill.dmg[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)} * 140%</span>,
           formula: formula.skill.dmg_hold,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("skill", stats),
+          variant: stats => getTalentStatKeyVariant("skill", stats),
         }, {
           text: "Stamina Consumption (Hold)",
           value: "20/s",
@@ -122,22 +122,22 @@ const char = {
         </span>,
         fields: [{
           text: "Skill DMG",
-          formulaText: (tlvl, stats) => <span>{data.burst.skill[tlvl]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
+          formulaText: stats => <span>{data.burst.skill[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
           formula: formula.burst.skill,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("burst", stats),
+          variant: stats => getTalentStatKeyVariant("burst", stats),
         }, {
           text: "Entering/Exiting DMG",
-          formulaText: (tlvl, stats) => <span>{data.burst.field_dmg[tlvl]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
+          formulaText: stats => <span>{data.burst.field_dmg[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
           formula: formula.burst.field_dmg,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("burst", stats),
+          variant: stats => getTalentStatKeyVariant("burst", stats),
         }, {
           text: "Regeneration",
-          formulaText: (tlvl, stats) => <span>( {data.burst.heal_atk[tlvl]}% {Stat.printStat("finalATK", stats)} + {data.burst.heal_flat[tlvl]} ) * {Stat.printStat("heal_multi", stats)}</span>,
+          formulaText: stats => <span>( {data.burst.heal_atk[stats.tlvl.burst]}% {Stat.printStat("finalATK", stats)} + {data.burst.heal_flat[stats.tlvl.burst]} ) * {Stat.printStat("heal_multi", stats)}</span>,
           formula: formula.burst.heal,
           variant: "success",
         }, {
           text: "Continuous Regeneration",
-          formulaText: (tlvl, stats) => <span>( {data.burst.regen_atk[tlvl]}% {Stat.printStat("finalATK", stats)} + {data.burst.regen_flat[tlvl]} ) * {Stat.printStat("heal_multi", stats)}</span>,
+          formulaText: stats => <span>( {data.burst.regen_atk[stats.tlvl.burst]}% {Stat.printStat("finalATK", stats)} + {data.burst.regen_flat[stats.tlvl.burst]} ) * {Stat.printStat("heal_multi", stats)}</span>,
           formula: formula.burst.regen,
           variant: "success",
         }, {
@@ -157,9 +157,9 @@ const char = {
       img: passive1,
       document: [{
         text: <span>On hit, Jean's Normal Attacks have a 50% change to regenerate HP equal to 15% of Jean's ATK for all party members.</span>,
-        fields: [(con, a) => a >= 4 && {
+        fields: [stats => stats.ascension >= 4 && {
           text: "Heal per Auto",
-          formulaText: (tlvl, stats) => <span>15% {Stat.printStat("finalATK", stats)} * {Stat.printStat("heal_multi", stats)}</span>,
+          formulaText: stats => <span>15% {Stat.printStat("finalATK", stats)} * {Stat.printStat("heal_multi", stats)}</span>,
           formula: formula.passive1.heal,
           variant: "success",
         }]
@@ -185,7 +185,7 @@ const char = {
       img: c2,
       document: [{
         text: <span>When Jean picks up an Elemental Orb/Particle, all party members have their Movement SPD and ATK SPD increased by 15% for 15s.</span>,
-        conditional: (tlvl, c) => c >= 2 && {
+        conditional: stats => stats.constellation >= 2 && {
           type: "character",
           conditionalKey: "PeoplesAegis",
           condition: "People's Aegis",
@@ -213,7 +213,7 @@ const char = {
       img: c4,
       document: [{
         text: <span>Within the Field created by <b>Dandelion Breeze</b>, all opponents have their Anemo RES decreased by 40%</span>,
-        conditional: (tlvl, c) => c >= 4 && {
+        conditional: stats => stats.constellation >= 4 && {
           type: "character",
           conditionalKey: "LandsOfDandelion",
           condition: "Lands of Dandelion",
@@ -236,7 +236,7 @@ const char = {
       img: c6,
       document: [{
         text: <span>Incoming DMG is decreased by 35% within the Field created by <b>Dandelion Breeze</b>. Upon leaving the Dandelion Field, this effect lasts for 3 attacks or 10s.</span>,
-        fields: [(con) => con >= 6 && {
+        fields: [stats => stats.constellation >= 6 && {
           text: "Incoming DMG Decrease",
           value: "35%" //TODO: incoming dmg stat,
         }]

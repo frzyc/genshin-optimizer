@@ -42,20 +42,20 @@ export const data = {
 }
 const formula = {
   normal: Object.fromEntries(data.normal.hitArr.map((arr, i) =>
-    [i, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "normal")])),
+    [i, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "normal")])),
   charged: Object.fromEntries(Object.entries(data.charged).map(([name, arr]) =>
-    [name, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "charged")])),
+    [name, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "charged")])),
   plunging: Object.fromEntries(Object.entries(data.plunging).map(([name, arr]) =>
-    [name, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "plunging")])),
+    [name, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "plunging")])),
   skill: {
-    stilleto: (tlvl, stats) => basicDMGFormula(data.skill.stilleto[tlvl], stats, "skill"),
-    slashing: (tlvl, stats) => basicDMGFormula(data.skill.slashing[tlvl], stats, "skill"),
-    thunderclap_slashing: (tlvl, stats) => basicDMGFormula(data.skill.thunderclasp_slash[tlvl] * 2, stats, "skill"),
+    stilleto: stats => basicDMGFormula(data.skill.stilleto[stats.tlvl.skill], stats, "skill"),
+    slashing: stats => basicDMGFormula(data.skill.slashing[stats.tlvl.skill], stats, "skill"),
+    thunderclap_slashing: stats => basicDMGFormula(data.skill.thunderclasp_slash[stats.tlvl.skill] * 2, stats, "skill"),
   },
   burst: {
-    skill: (tlvl, stats) => basicDMGFormula(data.burst.skill[tlvl], stats, "burst"),
-    consec_slash: (tlvl, stats) => basicDMGFormula(data.burst.consec_slash[tlvl] * 8, stats, "burst"),
-    last: (tlvl, stats) => basicDMGFormula(data.burst.last[tlvl], stats, "burst"),
+    skill: stats => basicDMGFormula(data.burst.skill[stats.tlvl.burst], stats, "burst"),
+    consec_slash: stats => basicDMGFormula(data.burst.consec_slash[stats.tlvl.burst] * 8, stats, "burst"),
+    last: stats => basicDMGFormula(data.burst.last[stats.tlvl.burst], stats, "burst"),
   }
 }
 export default formula

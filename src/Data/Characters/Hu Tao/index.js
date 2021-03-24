@@ -39,17 +39,17 @@ const char = {
         fields: data.normal.hitArr.map((percentArr, i) =>
         ({
           text: `${i + (i < 5 ? 1 : 0)}-Hit DMG`,
-          formulaText: (tlvl, stats) => <span>{percentArr[tlvl]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
+          formulaText: stats => <span>{percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
           formula: formula.normal[i],
-          variant: (tlvl, stats) => getTalentStatKeyVariant("normal", stats),
+          variant: stats => getTalentStatKeyVariant("normal", stats),
         }))
       }, {
         text: <span><strong>Charged Attack</strong> Consumes a certain amount of Stamina to lunge forward, dealing damage to enemies along the way.</span>,
         fields: [{
           text: `Charged Attack`,
-          formulaText: (tlvl, stats) => <span>{data.charged.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
+          formulaText: stats => <span>{data.charged.dmg[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
           formula: formula.charged.dmg,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("charged", stats),
+          variant: stats => getTalentStatKeyVariant("charged", stats),
         }, {
           text: `Stamina Cost`,
           value: 25,
@@ -58,19 +58,19 @@ const char = {
         text: <span><strong>Plunging Attack</strong>TEMPLATE</span>,
         fields: [{
           text: `Plunge DMG`,
-          formulaText: (tlvl, stats) => <span>{data.plunging.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+          formulaText: stats => <span>{data.plunging.dmg[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
           formula: formula.plunging.dmg,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("plunging", stats),
+          variant: stats => getTalentStatKeyVariant("plunging", stats),
         }, {
           text: `Low Plunge DMG`,
-          formulaText: (tlvl, stats) => <span>{data.plunging.low[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+          formulaText: stats => <span>{data.plunging.low[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
           formula: formula.plunging.low,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("plunging", stats),
+          variant: stats => getTalentStatKeyVariant("plunging", stats),
         }, {
           text: `High Plunge DMG`,
-          formulaText: (tlvl, stats) => <span>{data.plunging.high[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+          formulaText: stats => <span>{data.plunging.high[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
           formula: formula.plunging.high,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("plunging", stats),
+          variant: stats => getTalentStatKeyVariant("plunging", stats),
         }]
       }],
     },
@@ -101,18 +101,18 @@ const char = {
         }, {
           // TODO Add 400% baseATK CAP text
           text: "ATK Increase",
-          formulaText: (tlvl, stats) => <span>{data.skill.atk_inc[tlvl]}% {Stat.printStat("finalHP", stats)}</span>,
+          formulaText: stats => <span>{data.skill.atk_inc[stats.tlvl.skill]}% {Stat.printStat("finalHP", stats)}</span>,
           formula: formula.skill.atk_inc,
-        }, (con) => con < 2 && {
+        }, stats => stats.constellation < 2 && {
           text: "Blood Blossom DMG",
-          formulaText: (tlvl, stats) => <span>{data.skill.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
+          formulaText: stats => <span>{data.skill.dmg[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
           formula: formula.skill.dmg,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("skill", stats),
-        }, (con) => con >= 2 && {
+          variant: stats => getTalentStatKeyVariant("skill", stats),
+        }, stats => stats.constellation >= 2 && {
           text: "Blood Blossom DMG (C2)",
-          formulaText: (tlvl, stats) => <span>( {data.skill.dmg[tlvl]}% {Stat.printStat("finalATK", stats)} + 10% {Stat.printStat("finalHP", stats)} ) * {Stat.printStat(getTalentStatKey("skill", stats) + "_multi", stats)}</span>,
+          formulaText: stats => <span>( {data.skill.dmg[stats.tlvl.skill]}% {Stat.printStat("finalATK", stats)} + 10% {Stat.printStat("finalHP", stats)} ) * {Stat.printStat(getTalentStatKey("skill", stats) + "_multi", stats)}</span>,
           formula: formula.skill.dmgC2,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("skill", stats),
+          variant: stats => getTalentStatKeyVariant("skill", stats),
         }, {
           text: "Blood Blossom Duration",
           value: "8s",
@@ -123,14 +123,14 @@ const char = {
           text: "CD",
           value: "16s",
         },],
-        conditional: (tlvl, c, a) => ({
+        conditional: stats => ({
           type: "character",
           conditionalKey: "GuideToAfterlife",
           condition: "Guide to Afterlife Voyage",
           sourceKey: "hutao",
           maxStack: 1,
           stats: {
-            modifiers: { finalATK: { finalHP: data.skill.atk_inc[tlvl] / 100, } },
+            modifiers: { finalATK: { finalHP: data.skill.atk_inc[stats.tlvl.skill] / 100, } },
           },
         })
       }],
@@ -145,22 +145,22 @@ const char = {
         </span>,
         fields: [{
           text: "Skill DMG",
-          formulaText: (tlvl, stats) => <span>{data.burst.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
+          formulaText: stats => <span>{data.burst.dmg[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
           formula: formula.burst.dmg,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("burst", stats),
+          variant: stats => getTalentStatKeyVariant("burst", stats),
         }, {
           text: "Low HP Skill DMG",
-          formulaText: (tlvl, stats) => <span>{data.burst.low_dmg[tlvl]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
+          formulaText: stats => <span>{data.burst.low_dmg[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
           formula: formula.burst.low_dmg,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("burst", stats),
+          variant: stats => getTalentStatKeyVariant("burst", stats),
         }, {
           text: "Skill HP Regeneration",
-          formulaText: (tlvl, stats) => <span>( {data.burst.regen[tlvl]}% {Stat.printStat("finalHP", stats)} ) * {Stat.printStat("heal_multi", stats)}</span>,
+          formulaText: stats => <span>( {data.burst.regen[stats.tlvl.burst]}% {Stat.printStat("finalHP", stats)} ) * {Stat.printStat("heal_multi", stats)}</span>,
           formula: formula.burst.regen,
           variant: "success",
         }, {
           text: "Low HP Skill Regeneration",
-          formulaText: (tlvl, stats, c) => <span>( {data.burst.low_regen[tlvl]}% {Stat.printStat("finalHP", stats)} ) * {Stat.printStat("heal_multi", stats)}</span>,
+          formulaText: stats => <span>( {data.burst.low_regen[stats.tlvl.burst]}% {Stat.printStat("finalHP", stats)} ) * {Stat.printStat("heal_multi", stats)}</span>,
           formula: formula.burst.low_regen,
           variant: "success",
         }, {
@@ -169,7 +169,7 @@ const char = {
         }, {
           text: "Energy Cost",
           value: 60,
-        }, (con) => con >= 2 && {
+        }, stats => stats.constellation >= 2 && {
           text: "Apply the Blood Blossom effect",
         }]
       }],
@@ -185,7 +185,7 @@ const char = {
       img: passive2,
       document: [{
         text: <span>When Hu Tao's HP is equal to or less than 50%, her <span className="text-pyro">Pyro DMG Bonus</span> is increased by 33%.</span>,
-        conditional: (tlvl, c, a) => a >= 4 && {
+        conditional: stats => stats.ascension >= 4 && {
           type: "character",
           conditionalKey: "SanguineRouge",
           condition: "Sanguine Rouge",
@@ -247,7 +247,7 @@ const char = {
             <li>Can only occur once every 60s.</li>
           </ul>
         </span>,
-        conditional: (tlvl, c, a) => c >= 6 && {
+        conditional: stats => stats.constellation >= 6 && {
           type: "character",
           conditionalKey: "ButterflysEmbrace",
           condition: "Butterfly's Embrace",

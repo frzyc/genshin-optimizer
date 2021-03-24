@@ -38,17 +38,17 @@ const char = {
         fields: data.normal.hitArr.map((percentArr, i) =>
         ({
           text: `${i + 1}-Hit DMG`,
-          formulaText: (tlvl, stats) => <span>{percentArr[tlvl]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
+          formulaText: stats => <span>{percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
           formula: formula.normal[i],
-          variant: (tlvl, stats) => getTalentStatKeyVariant("normal", stats),
+          variant: stats => getTalentStatKeyVariant("normal", stats),
         }))
       }, {
         text: <span><strong>Charged Attack</strong> Consumes a certain amount of Stamina to deal <span className="text-hydro">AoE Hydro DMG</span> after a short casting time.</span>,
         fields: [{
           text: `Charged Attack DMG`,
-          formulaText: (tlvl, stats) => <span>{data.charged.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
+          formulaText: stats => <span>{data.charged.dmg[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
           formula: formula.charged.dmg,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("charged", stats),
+          variant: stats => getTalentStatKeyVariant("charged", stats),
         }, {
           text: `Stamina Cost`,
           value: `50`,
@@ -57,19 +57,19 @@ const char = {
         text: <span><strong>Plunging Attack</strong> Gathering the might of Hydro, Barbara plunges towards the ground from mid-air, damaging all enemies in her path. Deals <span className="text-hydro">AoE Hydro DMG</span> upon impact with the ground.</span>,
         fields: [{
           text: `Plunge DMG`,
-          formulaText: (tlvl, stats) => <span>{data.plunging.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+          formulaText: stats => <span>{data.plunging.dmg[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
           formula: formula.plunging.dmg,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("plunging", stats),
+          variant: stats => getTalentStatKeyVariant("plunging", stats),
         }, {
           text: `Low Plunge DMG`,
-          formulaText: (tlvl, stats) => <span>{data.plunging.low[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+          formulaText: stats => <span>{data.plunging.low[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
           formula: formula.plunging.low,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("plunging", stats),
+          variant: stats => getTalentStatKeyVariant("plunging", stats),
         }, {
           text: `High Plunge DMG`,
-          formulaText: (tlvl, stats) => <span>{data.plunging.high[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+          formulaText: stats => <span>{data.plunging.high[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
           formula: formula.plunging.high,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("plunging", stats),
+          variant: stats => getTalentStatKeyVariant("plunging", stats),
         }]
       }],
     },
@@ -89,29 +89,29 @@ const char = {
         </span>,
         fields: [{
           text: "HP Regeneration Per Hit",
-          formulaText: (tlvl, stats) => <span>( {data.skill.hp[tlvl]}% {Stat.printStat("finalHP", stats)} + {data.skill.hpFlat[tlvl]} ) * {Stat.printStat("heal_multi", stats)}</span>,
+          formulaText: stats => <span>( {data.skill.hp[stats.tlvl.skill]}% {Stat.printStat("finalHP", stats)} + {data.skill.hpFlat[stats.tlvl.skill]} ) * {Stat.printStat("heal_multi", stats)}</span>,
           formula: formula.skill.regenPerHit,
           variant: "success"
         }, {
           text: "Continuous Regeneration",
-          formulaText: (tlvl, stats) => <span>( {data.skill.contHP[tlvl]}% {Stat.printStat("finalHP", stats)} + {data.skill.contHPFlat[tlvl]} ) * {Stat.printStat("heal_multi", stats)}</span>,
+          formulaText: stats => <span>( {data.skill.contHP[stats.tlvl.skill]}% {Stat.printStat("finalHP", stats)} + {data.skill.contHPFlat[stats.tlvl.skill]} ) * {Stat.printStat("heal_multi", stats)}</span>,
           formula: formula.skill.contRegen,
           variant: "success"
         }, {
           text: "Droplet DMG",
-          formulaText: (tlvl, stats) => <span>{data.skill.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
+          formulaText: stats => <span>{data.skill.dmg[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
           formula: formula.skill.dmg,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("skill", stats),
-        }, (c, a) => ({
+          variant: stats => getTalentStatKeyVariant("skill", stats),
+        }, {
           text: "Duration",
-          value: "15s" + (a >= 4 ? " +1s when your active character gains an Elemental Orb/Particle, up to 5s" : ""),
-        }), (c) => ({
+          value: stats => "15s" + (stats.ascension >= 4 ? " (+1s when your active character gains an Elemental Orb/Particle, up to 5s)" : ""),
+        }, {
           text: "CD",
-          value: "32s" + (c >= 2 ? " -15%" : ""),
-        })]
+          value: stats => "32s" + (stats.constellation >= 2 ? " -15%" : ""),
+        }]
       }, {
         //TODO party conditional
-        conditional: (tlvl, c, a) => a >= 1 && {
+        conditional: stats => stats.ascension >= 1 && {
           type: "character",
           conditionalKey: "GloriousSeason",
           condition: "Glorious Season",
@@ -122,7 +122,7 @@ const char = {
           }
         }
       }, {
-        conditional: (tlvl, c, a) => c >= 2 && {
+        conditional: stats => stats.constellation >= 2 && {
           type: "character",
           conditionalKey: "VitalityBurst",
           condition: "Vitality Burst",
@@ -142,7 +142,7 @@ const char = {
         text: <span>Heals nearby allied characters and your characters in the party for a large amount of HP that scales with Barbara's Max HP.</span>,
         fields: [{
           text: "Regeneration",
-          formulaText: (tlvl, stats) => <span>( {data.burst.hp[tlvl]}% {Stat.printStat("finalHP", stats)} + {data.burst.flat[tlvl]} ) * {Stat.printStat("heal_multi", stats)}</span>,
+          formulaText: stats => <span>( {data.burst.hp[stats.tlvl.burst]}% {Stat.printStat("finalHP", stats)} + {data.burst.flat[stats.tlvl.burst]} ) * {Stat.printStat("heal_multi", stats)}</span>,
           formula: formula.burst.regen,
           variant: "success"
         }, {
@@ -201,8 +201,8 @@ const char = {
       img: c6,
       document: [{
         text: <span>
-          When Barbara is not on the field, and one of your characters in the party falls:
-        <ul className="mb-0">
+          <p className="mb-2">When Barbara is not on the field, and one of your characters in the party falls:</p>
+          <ul className="mb-0">
             <li>Automatically revives this character.</li>
             <li>Fully regenerates this character's HP to 100%.</li>
             <li>This effect can only occur once every 15 mins.</li>

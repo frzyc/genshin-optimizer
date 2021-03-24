@@ -4,17 +4,19 @@ import formula from "./data"
 let setupStats
 
 describe("Testing Mona's Formulas", () => {
-  beforeEach(() => { setupStats = createProxiedStats({
-    characterHP: 8965, characterATK: 247, characterDEF: 563, 
-    characterEle: "hydro", characterLevel: 77,
-    weaponType: "catalyst", weaponATK: 421,
-    enemyLevel: 76,
-  
-    enerRech_: 100 + 24 + 37.9,
-    modifiers: Object.freeze({ hydro_dmg_: { enerRech_: 0.2 } }),
-  
-    talentLevelKeys: Object.freeze({ auto: 6 - 1, skill: 7 - 1, burst: 6 - 1 }),
-  }) })
+  beforeEach(() => {
+    setupStats = createProxiedStats({
+      characterHP: 8965, characterATK: 247, characterDEF: 563,
+      characterEle: "hydro", characterLevel: 77,
+      weaponType: "catalyst", weaponATK: 421,
+      enemyLevel: 76,
+
+      enerRech_: 100 + 24 + 37.9,
+      modifiers: Object.freeze({ hydro_dmg_: { enerRech_: 0.2 } }),
+
+      tlvl: Object.freeze({ auto: 6 - 1, skill: 7 - 1, burst: 6 - 1 }),
+    })
+  })
 
   describe("with artifacts", () => {
     beforeEach(() => applyArtifacts(setupStats, [
@@ -48,19 +50,19 @@ describe("Testing Mona's Formulas", () => {
       beforeEach(() => setupStats.hitMode = "hit")
 
       test("hits", () => {
-        const stats = computeAllStats(setupStats), { auto, skill } = stats.talentLevelKeys
-        expect(formula.normal[0](auto, stats)[0](stats)).toApproximate(483)
-        expect(formula.charged.hit(auto, stats)[0](stats)).toApproximate(1926)
-        expect(formula.skill.dot(skill, stats)[0](stats)).toApproximate(441)
+        const stats = computeAllStats(setupStats)
+        expect(formula.normal[0](stats)[0](stats)).toApproximate(483)
+        expect(formula.charged.hit(stats)[0](stats)).toApproximate(1926)
+        expect(formula.skill.dot(stats)[0](stats)).toApproximate(441)
       })
 
       describe("vaporize", () => {
         beforeEach(() => setupStats.reactionMode = "hydro_vaporize")
 
         test("hits", () => {
-          const stats = computeAllStats(setupStats), { auto } = stats.talentLevelKeys
-          expect(formula.normal[0](auto, stats)[0](stats)).toApproximate(1155)
-          expect(formula.charged.hit(auto, stats)[0](stats)).toApproximate(4599)
+          const stats = computeAllStats(setupStats)
+          expect(formula.normal[0](stats)[0](stats)).toApproximate(1155)
+          expect(formula.charged.hit(stats)[0](stats)).toApproximate(4599)
         })
       })
     })
@@ -68,17 +70,17 @@ describe("Testing Mona's Formulas", () => {
       beforeEach(() => setupStats.hitMode = "critHit")
 
       test("hits", () => {
-        const stats = computeAllStats(setupStats), { skill } = stats.talentLevelKeys
-        expect(formula.skill.dmg(skill, stats)[0](stats)).toApproximate(3802)
+        const stats = computeAllStats(setupStats)
+        expect(formula.skill.dmg(stats)[0](stats)).toApproximate(3802)
       })
 
       describe("vaporize", () => {
         beforeEach(() => setupStats.reactionMode = "hydro_vaporize")
 
         test("hits", () => {
-          const stats = computeAllStats(setupStats), { auto } = stats.talentLevelKeys
-          expect(formula.normal[0](auto, stats)[0](stats)).toApproximate(2398)
-          expect(formula.charged.hit(auto, stats)[0](stats)).toApproximate(9552)
+          const stats = computeAllStats(setupStats)
+          expect(formula.normal[0](stats)[0](stats)).toApproximate(2398)
+          expect(formula.charged.hit(stats)[0](stats)).toApproximate(9552)
         })
       })
     })
