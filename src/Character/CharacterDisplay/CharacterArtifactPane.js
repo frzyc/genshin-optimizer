@@ -9,7 +9,7 @@ import Character from "../Character";
 import DamageOptionsAndCalculation from './DamageOptionsAndCalculation';
 import StatDisplayComponent from './StatDisplayComponent';
 
-function CharacterArtifactPane({ character, character: { characterKey, artifactConditionals }, equippedBuild, newBuild, editable, forceUpdate, setState, setOverride }) {
+function CharacterArtifactPane({ character, character: { characterKey, artifactConditionals }, equippedBuild, newBuild, editable, forceUpdate, setState, setOverride, artifacts }) {
   //choose which one to display stats for
   let build = newBuild ? newBuild : equippedBuild
   let artifactsAssumeFull = newBuild ? newBuild.finalStats?.artifactsAssumeFull : character.artifactsAssumeFull
@@ -80,11 +80,17 @@ function CharacterArtifactPane({ character, character: { characterKey, artifactC
               </Card.Body>
             </Card>
           </Col>
-          {Artifact.getSlotKeys().map(slotKey =>
-            build.artifactIds[slotKey] ? <Col sm={6} lg={4} key={build.artifactIds[slotKey]} className="mb-2">
-              <ArtifactCard artifactId={build.artifactIds[slotKey]} forceUpdate={forceUpdate} assumeFull={artifactsAssumeFull} />
-            </Col> : null
-          )}
+          {artifacts ?
+            Artifact.getSlotKeys().map(slotKey => {
+              const art = artifacts.find(art => art.slotKey === slotKey)
+              return art ? <Col sm={6} lg={4} key={slotKey} className="mb-2">
+                <ArtifactCard artifactObj={art} />
+              </Col> : null
+            }) : Artifact.getSlotKeys().map(slotKey =>
+              build.artifactIds[slotKey] ? <Col sm={6} lg={4} key={build.artifactIds[slotKey]} className="mb-2">
+                <ArtifactCard artifactId={build.artifactIds[slotKey]} forceUpdate={forceUpdate} assumeFull={artifactsAssumeFull} />
+              </Col> : null
+            )}
         </Row>
       </Col>
     </Row>

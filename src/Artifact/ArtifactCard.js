@@ -31,6 +31,8 @@ export default function ArtifactCard({ artifactId, artifactObj, forceUpdate, onE
     Artifact.equipArtifactOnChar(artifactId, charKey)
     forceUpdate?.()
   }
+  if (!art.maximumEfficiency) Artifact.substatsValidation(art)
+
   return (<Card className="h-100" border={`${numStars}star`} bg="lightcontent" text="lightfont">
     <Card.Header className="p-0">
       <Row>

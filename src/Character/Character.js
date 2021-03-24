@@ -258,8 +258,13 @@ export default class Character {
   }
 
   static calculateBuild = (character) => {
-    let artifacts = Object.fromEntries(Object.entries(character.equippedArtifacts).map(([key, artid]) => [key, ArtifactDatabase.get(artid)]))
-    let initialStats = Character.calculateCharacterWithWeaponStats(character)
+    let artifacts
+    if (character.artifacts) //from flex
+      artifacts = Object.fromEntries(character.artifacts.map((art, i) => [i, art]))
+    else if (character.equippedArtifacts)
+      artifacts = Object.fromEntries(Object.entries(character.equippedArtifacts).map(([key, artid]) => [key, ArtifactDatabase.get(artid)]))
+    else return {}//probably won't happen. just in case.
+    const initialStats = Character.calculateCharacterWithWeaponStats(character)
     return this.calculateBuildWithObjs(character.artifactConditionals, initialStats, artifacts)
   }
 

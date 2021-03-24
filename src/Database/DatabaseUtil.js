@@ -4,6 +4,8 @@ import CharacterDatabase from "./CharacterDatabase";
 import { changes as v2change, dmgModeToHitMode } from "./dbV2KeyMap";
 import { loadFromLocalStorage, saveToLocalStorage } from "../Util/Util";
 
+const CurrentDatabaseVersion = 2
+
 function DatabaseInitAndVerify() {
   const dbVersion = getDatabaseVersion()
   //edit the data before the database is populated
@@ -184,14 +186,13 @@ function DatabaseInitAndVerify() {
     //update any invalid characters in DB
     if (!valid) CharacterDatabase.update(character)
   })
-  setDatabaseVersion(2)
+  setDatabaseVersion(CurrentDatabaseVersion)
 }
 const getDatabaseVersion = (defVal = 0) =>
   parseInt(loadFromLocalStorage("db_ver") ?? defVal)
 
 const setDatabaseVersion = (version) =>
   saveToLocalStorage("db_ver", version)
-
 
 function createDatabaseObj() {
   const characterDatabase = CharacterDatabase.getCharacterDatabase()
@@ -239,5 +240,6 @@ export {
   DatabaseInitAndVerify,
   createDatabaseObj,
   loadDatabaseObj,
-  clearDatabase
+  clearDatabase,
+  CurrentDatabaseVersion
 };
