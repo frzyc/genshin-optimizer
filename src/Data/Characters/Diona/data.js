@@ -43,34 +43,34 @@ const data = {
 }
 
 const formula = {
-  normal: Object.fromEntries(data.normal.hitArr.map((percentArr, i) => [i, (tlvl, stats) =>
-    basicDMGFormula(percentArr[tlvl], stats, "normal")])),
+  normal: Object.fromEntries(data.normal.hitArr.map((percentArr, i) => [i, stats =>
+    basicDMGFormula(percentArr[stats.tlvl.auto], stats, "normal")])),
   charged: {
-    aimShot: (tlvl, stats) => basicDMGFormula(data.charged.aimedShot[tlvl], stats, "charged"),
-    fullAimedShot: (tlvl, stats) => basicDMGFormula(data.charged.fullAimedShot[tlvl], stats, "charged", true),
+    aimShot: stats => basicDMGFormula(data.charged.aimedShot[stats.tlvl.auto], stats, "charged"),
+    fullAimedShot: stats => basicDMGFormula(data.charged.fullAimedShot[stats.tlvl.auto], stats, "charged", true),
   },
-  plunging: Object.fromEntries(Object.entries(data.plunging).map(([key, arr]) => [key, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "plunging")])),
+  plunging: Object.fromEntries(Object.entries(data.plunging).map(([key, arr]) => [key, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "plunging")])),
   skill: {
-    shield: (tlvl, stats) => {
-      const hp = data.skill.shieldHp[tlvl] / 100
-      const flat = data.skill.shieldFlat[tlvl]
+    shield: stats => {
+      const hp = data.skill.shieldHp[stats.tlvl.skill] / 100
+      const flat = data.skill.shieldFlat[stats.tlvl.skill]
       return [s => ((1 + (stats.constellation >= 2 ? 0.15 : 0)) * (hp * s.finalHP + flat)), ["finalHP"]] //TODO : Add shield strength
     },
-    shieldHold: (tlvl, stats) => {
-      const hp = data.skill.shieldHp[tlvl] / 100
-      const flat = data.skill.shieldFlat[tlvl]
+    shieldHold: stats => {
+      const hp = data.skill.shieldHp[stats.tlvl.skill] / 100
+      const flat = data.skill.shieldFlat[stats.tlvl.skill]
       return [s => ((1.75 + (stats.constellation >= 2 ? 0.15 : 0)) * (hp * s.finalHP + flat)), ["finalHP"]] //TODO : Add shield strength
     },
-    dmg: (tlvl, stats) => basicDMGFormula(data.skill.dmgPerPaw[tlvl], stats, "skill"),
+    dmg: stats => basicDMGFormula(data.skill.dmgPerPaw[stats.tlvl.skill], stats, "skill"),
   },
   burst: {
-    regen: (tlvl) => {
-      const hp = data.burst.hpPercent[tlvl] / 100
-      const flat = data.burst.hpFlat[tlvl]
+    regen: stats => {
+      const hp = data.burst.hpPercent[stats.tlvl.burst] / 100
+      const flat = data.burst.hpFlat[stats.tlvl.burst]
       return [s => (hp * s.finalHP + flat) * s.heal_multi, ["finalHP", "heal_multi"]]
     },
-    dmg: (tlvl, stats) => basicDMGFormula(data.burst.dmg[tlvl], stats, "skill"),
-    continuousDmg: (tlvl, stats) => basicDMGFormula(data.burst.continuousDmg[tlvl], stats, "skill"),
+    dmg: stats => basicDMGFormula(data.burst.dmg[stats.tlvl.burst], stats, "skill"),
+    continuousDmg: stats => basicDMGFormula(data.burst.continuousDmg[stats.tlvl.burst], stats, "skill"),
   }
 }
 

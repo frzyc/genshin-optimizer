@@ -38,22 +38,22 @@ const char = {
         fields: data.normal.hitArr.map((percentArr, i) =>
         ({
           text: `${i + 1}-Hit DMG`,
-          formulaText: (tlvl, stats) => <span>{percentArr[tlvl]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
+          formulaText: stats => <span>{percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
           formula: formula.normal[i],
-          variant: (tlvl, stats) => getTalentStatKeyVariant("normal", stats),
+          variant: stats => getTalentStatKeyVariant("normal", stats),
         }))
       }, {
         text: <span><strong>Charged Attack</strong> Perform a more precise Aimed Shot with increased DMG. While aiming, biting frost will accumulate on the arrowhead. A fully charged frost arrow will deal <span className="text-cryo">Cryo DMG</span>.</span>,
         fields: [{
           text: `Aimed Shot DMG`,
-          formulaText: (tlvl, stats) => <span>{data.charged.aimedShot[tlvl]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
+          formulaText: stats => <span>{data.charged.aimedShot[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
           formula: formula.charged.aimShot,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("charged", stats),
+          variant: stats => getTalentStatKeyVariant("charged", stats),
         }, {
           text: `Fully-Charged Aimed Shot DMG`,
-          formulaText: (tlvl, stats) => <span>{data.charged.fullAimedShot[tlvl]}% {Stat.printStat(getTalentStatKey("charged", stats, true), stats)}</span>,
+          formulaText: stats => <span>{data.charged.fullAimedShot[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats, true), stats)}</span>,
           formula: formula.charged.fullAimedShot,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("charged", stats, true),
+          variant: stats => getTalentStatKeyVariant("charged", stats, true),
         }, (con) => con >= 4 && {
           text: "Charge time reduced by 60% in Burst zone"
           }]
@@ -61,19 +61,19 @@ const char = {
         text: <span><strong>Plunging Attack</strong> Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.</span>,
         fields: [{
           text: `Plunge DMG`,
-          formulaText: (tlvl, stats) => <span>{data.plunging.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+          formulaText: stats => <span>{data.plunging.dmg[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
           formula: formula.plunging.dmg,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("plunging", stats),
+          variant: stats => getTalentStatKeyVariant("plunging", stats),
         }, {
           text: `Low Plunge DMG`,
-          formulaText: (tlvl, stats) => <span>{data.plunging.low[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+          formulaText: stats => <span>{data.plunging.low[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
           formula: formula.plunging.low,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("plunging", stats),
+          variant: stats => getTalentStatKeyVariant("plunging", stats),
         }, {
           text: `High Plunge DMG`,
-          formulaText: (tlvl, stats) => <span>{data.plunging.high[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+          formulaText: stats => <span>{data.plunging.high[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
           formula: formula.plunging.high,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("plunging", stats),
+          variant: stats => getTalentStatKeyVariant("plunging", stats),
         }]
       }],
     },
@@ -89,20 +89,20 @@ const char = {
           </span>,
         fields: [{
           text: "Shield DMG Absorption",
-          formulaText: (tlvl, stats) => <span>({data.skill.shieldHp[tlvl]}% {Stat.printStat("finalHP", stats)} + {data.skill.shieldFlat[tlvl]}){stats.constellation >= 2 ? " * 1.15" : ""}</span>,
+          formulaText: stats => <span>({data.skill.shieldHp[stats.tlvl.skill]}% {Stat.printStat("finalHP", stats)} + {data.skill.shieldFlat[stats.tlvl.skill]}){stats.constellation >= 2 ? " * 1.15" : ""}</span>,
           formula: formula.skill.shield,
           }, {
           text: "Hold Shield DMG Absorption",
-          formulaText: (tlvl, stats) => <span>({data.skill.shieldHp[tlvl]}% {Stat.printStat("finalHP", stats)} + {data.skill.shieldFlat[tlvl]}){stats.constellation >= 2 ? " * 1.9" : " * 1.75"}</span>,
+          formulaText: stats => <span>({data.skill.shieldHp[stats.tlvl.skill]}% {Stat.printStat("finalHP", stats)} + {data.skill.shieldFlat[stats.tlvl.skill]}){stats.constellation >= 2 ? " * 1.9" : " * 1.75"}</span>,
           formula: formula.skill.shieldHold,
           }, {
           text: "Icy Paw DMG",
-          formulaText: (tlvl, stats) => <span>{data.skill.dmgPerPaw[tlvl]}%{stats.constellation >= 2 ? " + 15%" : ""} {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
+          formulaText: stats => <span>{data.skill.dmgPerPaw[stats.tlvl.skill]}%{stats.constellation >= 2 ? " + 15%" : ""} {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
           formula: formula.skill.dmg,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("skill", stats),
+          variant: stats => getTalentStatKeyVariant("skill", stats),
           }, {
           text: "Duration per Paw",
-          value: (tlvl) => `${data.skill.durationPerPaw[tlvl]}s`,
+          value: (stats) => `${data.skill.durationPerPaw[stats.tlvl.skill]}s`,
           }, {
           text: "Press CD",
           value: "6s",
@@ -124,19 +124,19 @@ const char = {
         </span>,
         fields: [{
           text: "Skill DMG",
-          formulaText: (tlvl, stats) => <span>{data.burst.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
+          formulaText: stats => <span>{data.burst.dmg[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
           formula: formula.burst.dmg,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("burst", stats),
+          variant: stats => getTalentStatKeyVariant("burst", stats),
        }, {
           text: "Continuous Field DMG",
-          formulaText: (tlvl, stats) => <span>{data.burst.continuousDmg[tlvl]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
+          formulaText: stats => <span>{data.burst.continuousDmg[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
           formula: formula.burst.continuousDmg,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("burst", stats),
+          variant: stats => getTalentStatKeyVariant("burst", stats),
        }, {
          text: "HP Regeneration Over Time",
-         formulaText: (tlvl, stats) => <span>( {data.burst.hpPercent[tlvl]}% {Stat.printStat("finalHP", stats)} + {data.burst.hpFlat[tlvl]} ) * {Stat.printStat("heal_multi", stats)}</span>,
+         formulaText: stats => <span>( {data.burst.hpPercent[stats.tlvl.burst]}% {Stat.printStat("finalHP", stats)} + {data.burst.hpFlat[stats.tlvl.burst]} ) * {Stat.printStat("heal_multi", stats)}</span>,
          formula: formula.burst.regen,
-         variant: (tlvl, stats) => getTalentStatKeyVariant("burst", stats),
+         variant: stats => getTalentStatKeyVariant("burst", stats),
        }, {
          text: "Duration",
          value: "12s",
