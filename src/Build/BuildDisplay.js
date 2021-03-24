@@ -38,7 +38,7 @@ export default class BuildDisplay extends React.Component {
     DatabaseInitAndVerify();
     this.state = BuildDisplay.getInitialState();
     if ("BuildsDisplay.state" in localStorage) {
-      const { characterKey = "", maxBuildsToShow = maxBuildsToShowDefault } = loadFromLocalStorage("BuildsDisplay.state")
+      const { characterKey = "", maxBuildsToShow = maxBuildsToShowDefault } = loadFromLocalStorage("BuildsDisplay.state") ?? {}
       this.state = { ...this.state, characterKey, maxBuildsToShow }
     }
     if (props.location.characterKey) //override the one stored in BuildsDisplay.state

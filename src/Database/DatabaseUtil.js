@@ -196,9 +196,9 @@ const setDatabaseVersion = (version) =>
 function createDatabaseObj() {
   const characterDatabase = CharacterDatabase.getCharacterDatabase()
   const artifactDatabase = ArtifactDatabase.getArtifactDatabase()
-  const artifactDisplay = loadFromLocalStorage("ArtifactDisplay.state")
-  const characterDisplay = loadFromLocalStorage("CharacterDisplay.state")
-  const buildsDisplay = loadFromLocalStorage("BuildsDisplay.state")
+  const artifactDisplay = loadFromLocalStorage("ArtifactDisplay.state") ?? {}
+  const characterDisplay = loadFromLocalStorage("CharacterDisplay.state") ?? {}
+  const buildsDisplay = loadFromLocalStorage("BuildsDisplay.state") ?? {}
 
   return {
     version: getDatabaseVersion(),
