@@ -1,12 +1,17 @@
-import CharacterDatabase from "./Character/CharacterDatabase"
-import ArtifactDatabase from "./Artifact/ArtifactDatabase"
-import { DatabaseInitAndVerify } from "./DatabaseUtil"
-import { loadFromLocalStorage, saveToLocalStorage } from "./Util/Util"
-
+import CharacterDatabase from "./CharacterDatabase"
+import ArtifactDatabase from "./ArtifactDatabase"
+import { DatabaseInitAndVerify, createDatabaseObj, loadDatabaseObj } from "./DatabaseUtil"
+import { deepClone, loadFromLocalStorage, saveToLocalStorage } from "../Util/Util"
+import { chars, arts, artifactDisplay, characterDisplay, buildsDisplay } from './DataBaseUtil.test.data'
+import { text } from "@fortawesome/fontawesome-svg-core"
+beforeEach(() => {
+  localStorage.clear()
+  CharacterDatabase.clearDatabase()
+  ArtifactDatabase.clearDatabase()
+})
+afterEach(() => localStorage.clear())
 describe('DatabaseUtil Tests', () => {
   describe('dbVersion 2', () => {
-    beforeEach(() => localStorage.clear())
-    afterEach(() => localStorage.clear())
     test('should Convert old characters to unique', () => {
       const characterKey = "testCharKey"
       const character_1 = {
@@ -45,9 +50,6 @@ describe('DatabaseUtil Tests', () => {
       localStorage.setItem("artifact_3", JSON.stringify(artifact_3))
       localStorage.setItem("db_ver", "1")
 
-      CharacterDatabase.clearDatabase()
-      ArtifactDatabase.clearDatabase()
-
       //should generate unique character from character_1
       DatabaseInitAndVerify()
       const { id, name, dmgMode, ...rest } = character_1
@@ -65,9 +67,6 @@ describe('DatabaseUtil Tests', () => {
       localStorage.setItem("artifact_1", JSON.stringify(artifact_1))
       localStorage.setItem("artifact_2", JSON.stringify(artifact_2))
       localStorage.setItem("db_ver", "1")
-
-      CharacterDatabase.clearDatabase()
-      ArtifactDatabase.clearDatabase()
 
       DatabaseInitAndVerify()
       expect(ArtifactDatabase.get("artifact_1")).toEqual({ ...artifact_1, mainStatKey: "physical_dmg_" })
@@ -88,5 +87,33 @@ describe('DatabaseUtil Tests', () => {
       DatabaseInitAndVerify()
       expect(loadFromLocalStorage("ArtifactDisplay.state")).toEqual(expectedState)
     })
+  })
+})
+
+describe('Able to export database and revert.', () => {
+  const expectedDBbj = deepClone({ version: 2, characterDatabase: chars, artifactDatabase: arts, artifactDisplay, characterDisplay, buildsDisplay })
+  function setupLS() {
+    Object.entries(chars).map(([id, char]) => saveToLocalStorage(`char_${id}`, char))
+    Object.entries(arts).map(([id, art]) => saveToLocalStorage(id, art))
+    saveToLocalStorage("ArtifactDisplay.state", artifactDisplay)
+    saveToLocalStorage("CharacterDisplay.state", characterDisplay)
+    saveToLocalStorage("BuildsDisplay.state", buildsDisplay)
+    localStorage.setItem("db_ver", "2")
+  }
+  test('should generate DB obj, ', () => {
+    setupLS()
+    DatabaseInitAndVerify()
+    const dbObj = createDatabaseObj()
+    expect(dbObj).toEqual(expectedDBbj)
+  })
+  text('should generate same LocalStorage from object', () => {
+    expect(localStorage.keys()).toBe([])
+    loadDatabaseObj(expectedDBbj)
+    Object.entries(chars).map(([id, char]) => expect(loadFromLocalStorage(`char_${id}`)).toEqual(char))
+    Object.entries(arts).map(([id, art]) => expect(loadFromLocalStorage(id)).toEqual(art))
+    loadFromLocalStorage("ArtifactDisplay.state").toEqual(artifactDisplay)
+    loadFromLocalStorage("CharacterDisplay.state").toEqual(characterDisplay)
+    loadFromLocalStorage("BuildsDisplay.state").toEqual(buildsDisplay)
+    loadFromLocalStorage("db_ver").toEqual(2)
   })
 })

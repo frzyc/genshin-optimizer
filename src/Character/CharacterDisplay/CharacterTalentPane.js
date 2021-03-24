@@ -205,9 +205,9 @@ function SkillDisplayCard(props) {
     const levelBoost = Character.getTalentLevelBoost(characterKey, talentKey, constellation)
     talentLvlKey = talentLvlKeyRaw + levelBoost
     if (editable) {
-      const setTalentLevel = (tKey, tLvl) => setState(state => {
+      const setTalentLevel = (tKey, newTalentLevelKey) => setState(state => {
         const stateTalentLevelKeys = state.talentLevelKeys || {}
-        stateTalentLevelKeys[tKey] = tLvl
+        stateTalentLevelKeys[tKey] = newTalentLevelKey
         return { talentLevelKeys: stateTalentLevelKeys }
       })
       header = <Card.Header>
@@ -239,7 +239,7 @@ function SkillDisplayCard(props) {
     <Card bg="darkcontent" text="lightfont" className="mt-2 ml-n2 mr-n2">
       <ListGroup className="text-white" variant="flush">
         {statsToFields(talentStats, build?.finalStats).map((field, i) =>
-          <FieldDisplay key={i} index={i} {...{ field, talentLvlKey, ascension, ...otherProps }} />)}
+          <FieldDisplay key={i} index={i} {...{ field, ...otherProps }} />)}
       </ListGroup>
     </Card>
   </Col></Row>
@@ -258,17 +258,17 @@ function SkillDisplayCard(props) {
       </Row>
       {Character.getTalentDocument(characterKey, talentKey).map((section, i) => {
         if (typeof section === "function")
-          section = section(constellation, ascension)
+          section = section(build.finalStats)
         if (!section) return null
 
         let talentText = section.text
         if (typeof talentText === "function")
-          talentText = talentText(talentLvlKey, build.finalStats, character)
-        let fields = section.fields || []
+          talentText = talentText(build.finalStats)
+        let fields = section.fields ?? []
 
         let conditional = section.conditional;
         if (typeof conditional === "function")
-          conditional = conditional(talentLvlKey, constellation, ascension)
+          conditional = conditional(build.finalStats)
         let conditionalEle = null
         if (conditional) {
           let conditionalNum = ConditionalsUtil.getConditionalNum(character.talentConditionals, { srcKey: talentKey, srcKey2: conditional.conditionalKey })
@@ -289,7 +289,7 @@ function SkillDisplayCard(props) {
                   defEle={<span>{conditional.condition}</span>} />
               </Card.Header>
               <ListGroup className="text-white" variant="flush">
-                {conditionalFields.map((condField, i) => <FieldDisplay key={i} index={i} {...{ field: condField, talentLvlKey, ascension, ...otherProps }} />)}
+                {conditionalFields.map((condField, i) => <FieldDisplay key={i} index={i} {...{ field: condField, ...otherProps }} />)}
               </ListGroup>
             </Card>
           </Col>
@@ -297,7 +297,7 @@ function SkillDisplayCard(props) {
         return <Row className="mt-2 mb-n2" key={"section" + i}><Col xs={12}>
           <div className="mb-2">{talentText}</div>
           {fields.length > 0 && <ListGroup className="text-white mb-2">
-            {fields?.map?.((field, i) => <FieldDisplay key={i} index={i} {...{ field, talentLvlKey, ascension, ...otherProps }} />)}
+            {fields?.map?.((field, i) => <FieldDisplay key={i} index={i} {...{ field, ...otherProps }} />)}
           </ListGroup>}
         </Col>{conditionalEle}</Row>
       })}
@@ -305,53 +305,45 @@ function SkillDisplayCard(props) {
     </Card.Body>
   </Card>
 }
-function FieldDisplay({ character: { compareAgainstEquipped, constellation }, field, index, talentLvlKey = 0, ascension, equippedBuild, newBuild }) {
+function FieldDisplay({ character: { compareAgainstEquipped, }, field, index, equippedBuild, newBuild }) {
   let build = newBuild ? newBuild : equippedBuild
   if (typeof field === "function")
-    field = field(constellation, ascension)
+    field = field(build.finalStats)
   if (!field) return null
 
-  let fieldText = field.text
-  if (typeof fieldText === "function")
-    fieldText = fieldText?.(talentLvlKey, build.finalStats)
+  const fieldText = Character.getTalentFieldValue(field, "text", build.finalStats)
+  const fieldVariant = Character.getTalentFieldValue(field, "variant", build.finalStats)
 
-  let fieldVariant = field.variant || ""
-  if (typeof fieldVariant === "function")
-    fieldVariant = fieldVariant?.(talentLvlKey, build.finalStats)
-
-  let fieldBasic = field.formulaText
-  if (typeof fieldBasic === "function")
-    fieldBasic = fieldBasic?.(talentLvlKey, build.finalStats)
-  if (fieldBasic)
-    fieldBasic = <OverlayTrigger
-      placement="top"
-      overlay={<Tooltip>{fieldBasic}</Tooltip>}
-    >
-      <FontAwesomeIcon icon={faQuestionCircle} className="ml-2" style={{ cursor: "help" }} />
-    </OverlayTrigger>
+  const fieldFormulaText = Character.getTalentFieldValue(field, "formulaText", build.finalStats)
+  const formulaTextOverlay = fieldFormulaText ? <OverlayTrigger
+    placement="top"
+    overlay={<Tooltip>{fieldFormulaText}</Tooltip>}
+  >
+    <FontAwesomeIcon icon={faQuestionCircle} className="ml-2" style={{ cursor: "help" }} />
+  </OverlayTrigger> : null
 
   let fieldVal = null
   if (field.value)
-    fieldVal = typeof field.value === "function" ? field.value?.(talentLvlKey, build.finalStats) : field.value
-  else if (typeof field.formula === "function")
-    fieldVal = field?.formula?.(talentLvlKey, build.finalStats)?.[0]?.(build.finalStats)
+    fieldVal = Character.getTalentFieldValue(field, "value", build.finalStats)
+  else if (field.formula)
+    fieldVal = Character.getTalentFieldValue(field, "formula", build.finalStats)?.[0]?.(build.finalStats)
 
   let fixedVal = field.fixed || 0
-  const unit = typeof field.unit === "function" ? field.unit?.(talentLvlKey, build.finalStats) : (field.unit ?? "")
+  const unit = Character.getTalentFieldValue(field, "unit", build.finalStats)
   //compareAgainstEquipped
   if (compareAgainstEquipped && equippedBuild && typeof fieldVal === "number") {
-    let fieldEquippedVal = field.value ? field.value : field.formula?.(talentLvlKey, equippedBuild.finalStats)?.[0]?.(equippedBuild.finalStats)
+    let fieldEquippedVal = field.value ? field.value : field.formula?.(equippedBuild.finalStats)?.[0]?.(equippedBuild.finalStats)
 
     if (typeof fieldEquippedVal === "function")
-      fieldEquippedVal = parseInt(fieldEquippedVal?.(talentLvlKey, equippedBuild.finalStats)?.toFixed?.(fixedVal))
+      fieldEquippedVal = parseInt(fieldEquippedVal?.(equippedBuild.finalStats)?.toFixed?.(fixedVal))
     let diff = fieldVal - fieldEquippedVal
     fieldVal = <span>{fieldEquippedVal?.toFixed(fixedVal) ?? fieldEquippedVal}{diff ? <span className={diff > 0 ? "text-success" : "text-danger"}> ({diff > 0 ? "+" : ""}{diff?.toFixed?.(fixedVal) || diff})</span> : ""}</span>
   }
 
   return <ListGroup.Item variant={index % 2 ? "customdark" : "customdarker"} className="p-2">
     <div>
-      <span><b>{fieldText}</b>{fieldBasic}</span>
-      <span className={`float-right text-right text-${fieldVariant}`} >{fieldVal?.toFixed?.(fixedVal) || fieldVal}{unit}</span>
+      <span><b>{fieldText}</b>{formulaTextOverlay}</span>
+      <span className={`float-right text-right text-${fieldVariant}`} >{fieldVal?.toFixed?.(fixedVal) ?? fieldVal}{unit}</span>
     </div>
   </ListGroup.Item>
 }

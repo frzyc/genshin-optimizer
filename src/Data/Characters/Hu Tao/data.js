@@ -43,34 +43,34 @@ export const data = {
 }
 const formula = {
   normal: Object.fromEntries(data.normal.hitArr.map((arr, i) =>
-    [i, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "normal")])),
+    [i, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "normal")])),
   charged: {
-    dmg: (tlvl, stats) => basicDMGFormula(data.charged.dmg[tlvl], stats, "charged"),
+    dmg: stats => basicDMGFormula(data.charged.dmg[stats.tlvl.auto], stats, "charged"),
   },
   plunging: Object.fromEntries(Object.entries(data.plunging).map(([name, arr]) =>
-    [name, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "plunging")])),
+    [name, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "plunging")])),
   skill: {
-    atk_inc: (tlvl, stats) => {
-      const val = data.skill.atk_inc[tlvl] / 100
+    atk_inc: stats => {
+      const val = data.skill.atk_inc[stats.tlvl.skill] / 100
       // TODO Check if we need to cap the bonus here or elsewhere.
       return [s => Math.min(val * s.finalHP, 4 * s.baseATK), ["finalHP", "baseATK"]]
     },
-    dmg: (tlvl, stats) => basicDMGFormula(data.skill.dmg[tlvl], stats, "skill"),
-    dmgC2: (tlvl, stats) => {
-      const val = data.skill.dmg[tlvl] / 100
+    dmg: stats => basicDMGFormula(data.skill.dmg[stats.tlvl.skill], stats, "skill"),
+    dmgC2: stats => {
+      const val = data.skill.dmg[stats.tlvl.skill] / 100
       const statKey = getTalentStatKey("skill", stats) + "_multi"
       return [s => (val * s.finalATK + 0.1 * s.finalHP) * s[statKey], ["finalATK", statKey]]
     }
   },
   burst: {
-    dmg: (tlvl, stats) => basicDMGFormula(data.burst.dmg[tlvl], stats, "burst"),
-    low_dmg: (tlvl, stats) => basicDMGFormula(data.burst.low_dmg[tlvl], stats, "burst"),
-    regen: (tlvl, stats) => {
-      const val = data.burst.regen[tlvl] / 100
+    dmg: stats => basicDMGFormula(data.burst.dmg[stats.tlvl.burst], stats, "burst"),
+    low_dmg: stats => basicDMGFormula(data.burst.low_dmg[stats.tlvl.burst], stats, "burst"),
+    regen: stats => {
+      const val = data.burst.regen[stats.tlvl.burst] / 100
       return [s => val * s.finalHP * s.heal_multi, ["finalHP", "heal_multi"]]
     },
-    low_regen: (tlvl, stats) => {
-      const val = data.burst.low_regen[tlvl] / 100
+    low_regen: stats => {
+      const val = data.burst.low_regen[stats.tlvl.burst] / 100
       return [s => val * s.finalHP * s.heal_multi, ["finalHP", "heal_multi"]]
     },
   },

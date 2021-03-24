@@ -8,7 +8,7 @@ import Stat from '../Stat';
 import { deepClone, getArrLastElement, getRandomElementFromArray, getRandomIntInclusive } from '../Util/Util';
 import Artifact from './Artifact';
 import ArtifactCard from './ArtifactCard';
-import ArtifactDatabase from './ArtifactDatabase';
+import ArtifactDatabase from '../Database/ArtifactDatabase';
 import PercentBadge from './PercentBadge';
 import UploadDisplay from './UploadDisplay';
 
@@ -26,6 +26,7 @@ export default class ArtifactEditor extends React.Component {
     slotKey: "",//one of flower, plume, sands, globlet, circlet
     mainStatKey: "",
     substats: [...Array(4).keys()].map(() => ({ key: "", value: 0 })),
+    location:"",
   }
   static getInitialState = () => deepClone(ArtifactEditor.initialState)
   setLevel = (newlevel) => this.setState(state => {

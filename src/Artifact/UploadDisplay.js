@@ -299,13 +299,13 @@ export default function UploadDisplay(props) {
       <Form.File
         type="file"
         className="mb-0"
-        id="inputGroupFile01"
         label={fileName}
         onChange={(e) => {
           let file = e.target.files[0]
           uploadedFile(file)
         }}
-        custom={true}
+        accept="image/*"
+        custom
       />
       {Boolean(!image) && <Form.Label className="mb-0">Please Select an Image, or paste a screenshot here (Ctrl+V)</Form.Label>}
     </Col>

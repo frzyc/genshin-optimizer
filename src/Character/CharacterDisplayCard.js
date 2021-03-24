@@ -10,11 +10,11 @@ import Row from 'react-bootstrap/Row';
 import Artifact from '../Artifact/Artifact';
 import WIPComponent from '../Components/WIPComponent';
 import { WeaponLevelKeys } from '../Data/WeaponData';
-import { DatabaseInitAndVerify } from '../DatabaseUtil';
+import { DatabaseInitAndVerify } from '../Database/DatabaseUtil';
 import { deepClone } from '../Util/Util';
 import Weapon from '../Weapon/Weapon';
 import Character from './Character';
-import CharacterDatabase from './CharacterDatabase';
+import CharacterDatabase from '../Database/CharacterDatabase';
 import CharacterArtifactPane from './CharacterDisplay/CharacterArtifactPane';
 import CharacterOverviewPane from './CharacterDisplay/CharacterOverviewPane';
 import CharacterTalentPane from './CharacterDisplay/CharacterTalentPane';
@@ -125,7 +125,7 @@ export default class CharacterDisplayCard extends React.Component {
   updateCharacter(state) {
     state = deepClone(state)
     delete state.compareAgainstEquipped
-    CharacterDatabase.updateCharacter(state)
+    CharacterDatabase.update(state)
   }
   componentDidUpdate(prevProps) {
     if (prevProps.characterKey !== this.props.characterKey && this.props.characterKey !== this.state.characterKey)
@@ -137,7 +137,7 @@ export default class CharacterDisplayCard extends React.Component {
   }
   render() {
     let { footer, newBuild, editable, onClose, tabName } = this.props
-    let character = this.state
+    const character = this.state
     //transfer the hitmode/reactions over 
     if (newBuild?.finalStats) {
       newBuild = deepClone(newBuild)
@@ -145,9 +145,9 @@ export default class CharacterDisplayCard extends React.Component {
       newBuild.finalStats.reactionMode = character.reactionMode;
     }
 
-    let { characterKey, levelKey, compareAgainstEquipped } = this.state
-    let equippedBuild = Character.calculateBuild(this.state)
-    let HeaderIconDisplay = characterKey ? <span >
+    const { characterKey, levelKey, compareAgainstEquipped } = this.state
+    const equippedBuild = Character.calculateBuild(character)
+    const HeaderIconDisplay = characterKey ? <span >
       <Image src={Character.getThumb(characterKey)} className="thumb-small my-n1 ml-n2" roundedCircle />
       <h6 className="d-inline"> {Character.getName(characterKey)} </h6>
     </span> : <span>Select a Character</span>

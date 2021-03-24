@@ -37,14 +37,14 @@ describe('Test CharacterDatabase', () => {
     test('should add New Character', () => {
       const characterKey = "newchar"
       const newChar = { characterKey, levelKey: "L1" }
-      CharacterDatabase.updateCharacter(newChar)
+      CharacterDatabase.update(newChar)
       expect(CharacterDatabase.get(characterKey)).toEqual(newChar)
       expect(JSON.parse(localStorage.getItem(`char_${characterKey}`))).toEqual(newChar)
     })
     test('should update Existing Character', () => {
       const characterKey = "test1"
       const updateChar = { characterKey, levelKey: "L20" }
-      CharacterDatabase.updateCharacter(updateChar)
+      CharacterDatabase.update(updateChar)
       expect(CharacterDatabase.get(characterKey)).toEqual(updateChar)
       expect(JSON.parse(localStorage.getItem(`char_${characterKey}`))).toEqual(updateChar)
     })

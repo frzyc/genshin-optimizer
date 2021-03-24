@@ -38,13 +38,13 @@ export const data = {
 }
 const formula = {
   normal: Object.fromEntries(data.normal.hitArr.map((arr, i) =>
-    [i, (tlvl, stats) => basicDMGFormula(arr[tlvl] * ((i === 0 || i === 3) ? 2 : 1), stats, "normal")])),
+    [i, stats => basicDMGFormula(arr[stats.tlvl.auto] * ((i === 0 || i === 3) ? 2 : 1), stats, "normal")])),
   charged: Object.fromEntries(Object.entries(data.charged).map(([name, arr]) =>
-    [name, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "charged")])),
+    [name, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "charged")])),
   plunging: Object.fromEntries(Object.entries(data.plunging).map(([name, arr]) =>
-    [name, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "plunging")])),
+    [name, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "plunging")])),
   skill: Object.fromEntries(Object.entries(data.skill).map(([name, arr]) =>
-    [name, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "skill")])),
+    [name, stats => basicDMGFormula(arr[stats.tlvl.skill], stats, "skill")])),
 }
 
 export default formula

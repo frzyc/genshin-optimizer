@@ -39,7 +39,7 @@ function HitModeToggle({ hitMode, setHitMode, className }) {
 
 function CalculationDisplay({ character, character: { characterKey }, build }) {
   return <div>
-    {Object.entries(Character.getDisplayStatKeys(character)).map(([talentKey, fields]) => {
+    {Object.entries(Character.getDisplayStatKeys(build.finalStats)).map(([talentKey, fields]) => {
       let header = ""
       if (talentKey === "basicKeys") header = "Basic Stats"
       else if (talentKey === "genericAvgHit") header = "Generic Optimization Values"
@@ -69,11 +69,11 @@ function CalculationDisplay({ character, character: { characterKey }, build }) {
                 </Card>
               }
               //fields
-              const talentField = Character.getTalentField(character, field.talentKey, field.sectionIndex, field.fieldIndex)
-              const fieldText = Character.getTalentFieldValue(talentField, "text", talentKey, build.finalStats)
-              const fieldVariant = Character.getTalentFieldValue(talentField, "variant", talentKey, build.finalStats)
-              const fieldFormulaText = Character.getTalentFieldValue(talentField, "formulaText", talentKey, build.finalStats)
-              const [fieldFormula, fieldFormulaDependency] = Character.getTalentFieldValue(talentField, "formula", talentKey, build.finalStats, [])
+              const talentField = Character.getTalentField(build.finalStats, field.talentKey, field.sectionIndex, field.fieldIndex)
+              const fieldText = Character.getTalentFieldValue(talentField, "text", build.finalStats)
+              const fieldVariant = Character.getTalentFieldValue(talentField, "variant", build.finalStats)
+              const fieldFormulaText = Character.getTalentFieldValue(talentField, "formulaText", build.finalStats)
+              const [fieldFormula, fieldFormulaDependency] = Character.getTalentFieldValue(talentField, "formula", build.finalStats, [])
               if (!fieldFormula || !fieldFormulaDependency) return null
               const fieldValue = fieldFormula?.(build.finalStats)?.toFixed?.()
               const subFormulaKeys = Stat.getPrintableFormulaStatKeyList(GetDependencies(build?.finalStats?.modifiers, fieldFormulaDependency), build?.finalStats?.modifiers).reverse()

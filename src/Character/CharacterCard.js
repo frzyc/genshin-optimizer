@@ -14,7 +14,7 @@ import { StatIconEle } from '../Components/StatIcon';
 import Stat from '../Stat';
 import Weapon from '../Weapon/Weapon';
 import Character from './Character';
-import CharacterDatabase from './CharacterDatabase';
+import CharacterDatabase from '../Database/CharacterDatabase';
 export default function CharacterCard({ characterKey, onEdit, onDelete, cardClassName = "", bg = "", header, footer }) {
   const [, forceUpdate] = useReducer(x => x + 1, 0);
   useEffect(() => {

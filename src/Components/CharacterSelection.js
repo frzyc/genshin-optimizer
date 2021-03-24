@@ -1,6 +1,6 @@
 import Dropdown from "react-bootstrap/Dropdown";
 import Character from "../Character/Character";
-import CharacterDatabase from "../Character/CharacterDatabase";
+import CharacterDatabase from "../Database/CharacterDatabase";
 
 function CharacterSelectionDropdownList({ onSelect }) {
   return CharacterDatabase.getCharacterKeyList().sort(((a, b) => {

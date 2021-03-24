@@ -38,40 +38,40 @@ const char = {
         fields: data.normal.hitArr.map((percentArr, i) =>
         ({
           text: `${i + 1}-Hit DMG`,
-          formulaText: (tlvl, stats) => <span>{percentArr[tlvl]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
+          formulaText: stats => <span>{percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
           formula: formula.normal[i],
-          variant: (tlvl, stats) => getTalentStatKeyVariant("normal", stats),
+          variant: stats => getTalentStatKeyVariant("normal", stats),
         }))
       }, {
         text: <span><strong>Charged Attack</strong> Perform a more precise Aimed Shot with increased DMG. While aiming, flames will accumulate on the arrowhead. A fully charged flaming arrow will deal <span className="text-pyro">Pyro DMG</span>.</span>,
         fields: [{
           text: `Aimed Shot DMG`,
-          formulaText: (tlvl, stats) => <span>{data.charged.aimedShot[tlvl]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
+          formulaText: stats => <span>{data.charged.aimedShot[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
           formula: formula.charged.aimShot,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("charged", stats),
+          variant: stats => getTalentStatKeyVariant("charged", stats),
         }, {
           text: <span>Fully-Charged Aimed Shot DMG</span>,
-          formulaText: (tlvl, stats) => <span>{data.charged.fullAimedShot[tlvl]}% {Stat.getStatName(getTalentStatKey("charged", stats, true))}</span>,
+          formulaText: stats => <span>{data.charged.fullAimedShot[stats.tlvl.auto]}% {Stat.getStatName(getTalentStatKey("charged", stats, true))}</span>,
           formula: formula.charged.fullAimedShot,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("charged", stats, true),
+          variant: stats => getTalentStatKeyVariant("charged", stats, true),
         }]
       }, {
         text: <span><strong>Plunging Attack</strong> Fires off a shower of arrows in mid-air before falling an striking the ground, dealing AoE DMG upon impact.</span>,
         fields: [{
           text: `Plunge DMG`,
-          formulaText: (tlvl, stats) => <span>{data.plunging.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+          formulaText: stats => <span>{data.plunging.dmg[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
           formula: formula.plunging.dmg,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("plunging", stats),
+          variant: stats => getTalentStatKeyVariant("plunging", stats),
         }, {
           text: `Low Plunge DMG`,
-          formulaText: (tlvl, stats) => <span>{data.plunging.low[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+          formulaText: stats => <span>{data.plunging.low[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
           formula: formula.plunging.low,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("plunging", stats),
+          variant: stats => getTalentStatKeyVariant("plunging", stats),
         }, {
           text: `High Plunge DMG`,
-          formulaText: (tlvl, stats) => <span>{data.plunging.high[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+          formulaText: stats => <span>{data.plunging.high[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
           formula: formula.plunging.high,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("plunging", stats),
+          variant: stats => getTalentStatKeyVariant("plunging", stats),
         }]
       }],
     },
@@ -92,24 +92,24 @@ const char = {
         </span>,
         fields: [{
           text: "Inherited HP",
-          formulaText: (tlvl, stats) => <span>{data.skill.hp[tlvl]}% {Stat.printStat("finalHP", stats)}</span>,
+          formulaText: stats => <span>{data.skill.hp[stats.tlvl.skill]}% {Stat.printStat("finalHP", stats)}</span>,
           formula: formula.skill.hp,
         }, {
           text: "Explosion DMG",
-          formulaText: (tlvl, stats) => <span>{data.skill.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
+          formulaText: stats => <span>{data.skill.dmg[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
           formula: formula.skill.dmg,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("skill", stats),
-        }, (con) => con >= 2 && {
+          variant: stats => getTalentStatKeyVariant("skill", stats),
+        }, stats => stats.constellation >= 2 && {
           text: "Manual Detonation DMG",
-          formulaText: (tlvl, stats) => <span>{data.skill.dmg[tlvl]}% + 200% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
+          formulaText: stats => <span>{data.skill.dmg[stats.tlvl.skill]}% + 200% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
           formula: formula.skill.detonationDMG,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("skill", stats),
-        }, (con) => con >= 4 && {
+          variant: stats => getTalentStatKeyVariant("skill", stats),
+        }, stats => stats.constellation >= 4 && {
           text: "Charges",
           value: 2,
-        }, (con) => ({
+        }, stats => ({
           text: "CD",
-          value: "15s" + (con >= 4 ? " -20%" : ""),
+          value: "15s" + (stats.constellation >= 4 ? " -20%" : ""),
         })]
       }],
     },
@@ -122,26 +122,20 @@ const char = {
       </span>,
         fields: [{
           text: "DMG Per Wave",
-          formulaText: (tlvl, stats) => <span>{data.burst.dmgPerWave[tlvl]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
+          formulaText: stats => <span>{data.burst.dmgPerWave[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
           formula: formula.burst.dmgPerWave,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("burst", stats),
+          variant: stats => getTalentStatKeyVariant("burst", stats),
         }, {
           text: "Rain DMG",
-          formulaText: (tlvl, stats) => <span>{data.burst.totDMG[tlvl]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
+          formulaText: stats => <span>{data.burst.totDMG[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
           formula: formula.burst.totDMG,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("burst", stats),
-        }, (c, a) => {
-          if (a < 1) return null
-          return {
-            text: "CRIT Rate Bonus",
-            value: "10%"
-          }
-        }, (c, a) => {
-          if (a < 1) return null
-          return {
-            text: "AoE Range Bonus",
-            value: "30%"
-          }
+          variant: stats => getTalentStatKeyVariant("burst", stats),
+        }, stats => stats.ascension >= 1 && {
+          text: "CRIT Rate Bonus",
+          value: "10%"
+        }, stats => stats.ascension >= 1 && {
+          text: "AoE Range Bonus",
+          value: "30%"
         }, {
           text: "Duration",
           value: "2s",
@@ -153,7 +147,7 @@ const char = {
           value: 40,
         },]
       }, {
-        conditional: (tlvl, c) => c >= 6 && {
+        conditional: stats => stats.constellation >= 6 && {
           type: "character",
           conditionalKey: "WildFire",
           condition: "Wildfire",
@@ -169,7 +163,7 @@ const char = {
           }]
         }
       }],
-      stats: (c, a) => a >= 1 ? ({
+      stats: stats => stats.ascension >= 1 ? ({
         burst_critRate_: 10
       }) : null,
     },
@@ -182,7 +176,7 @@ const char = {
       name: "Precise Shot",
       img: passive2,
       document: [{ text: <span>Aimed Shot hits on weak spots increase ATK by 15% for 10s.</span> }, {
-        conditional: (tlvl, c, a) => a >= 4 && {
+        conditional: stats => stats.ascension >= 4 && {
           type: "character",
           conditionalKey: "PreciseShot",
           condition: "Precise Shot",

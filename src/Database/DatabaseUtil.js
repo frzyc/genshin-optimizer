@@ -1,8 +1,8 @@
-import Artifact from "./Artifact/Artifact";
-import ArtifactDatabase from "./Artifact/ArtifactDatabase";
-import CharacterDatabase from "./Character/CharacterDatabase";
+import Artifact from "../Artifact/Artifact";
+import ArtifactDatabase from "./ArtifactDatabase";
+import CharacterDatabase from "./CharacterDatabase";
 import { changes as v2change, dmgModeToHitMode } from "./dbV2KeyMap";
-import { loadFromLocalStorage, saveToLocalStorage } from "./Util/Util";
+import { loadFromLocalStorage, saveToLocalStorage } from "../Util/Util";
 
 function DatabaseInitAndVerify() {
   const dbVersion = getDatabaseVersion()
@@ -142,7 +142,7 @@ function DatabaseInitAndVerify() {
     }
 
     //Update any invalid artifacts in DB
-    if (!valid) ArtifactDatabase.updateArtifact(art)
+    if (!valid) ArtifactDatabase.update(art)
   })
 
   let chars = CharacterDatabase.getCharacterDatabase();
@@ -182,7 +182,7 @@ function DatabaseInitAndVerify() {
     }
 
     //update any invalid characters in DB
-    if (!valid) CharacterDatabase.updateCharacter(character)
+    if (!valid) CharacterDatabase.update(character)
   })
   setDatabaseVersion(2)
 }
@@ -192,6 +192,52 @@ const getDatabaseVersion = (defVal = 0) =>
 const setDatabaseVersion = (version) =>
   saveToLocalStorage("db_ver", version)
 
+
+function createDatabaseObj() {
+  const characterDatabase = CharacterDatabase.getCharacterDatabase()
+  const artifactDatabase = ArtifactDatabase.getArtifactDatabase()
+  const artifactDisplay = loadFromLocalStorage("ArtifactDisplay.state")
+  const characterDisplay = loadFromLocalStorage("CharacterDisplay.state")
+  const buildsDisplay = loadFromLocalStorage("BuildsDisplay.state")
+
+  return {
+    version: getDatabaseVersion(),
+    characterDatabase,
+    artifactDatabase,
+    artifactDisplay,
+    characterDisplay,
+    buildsDisplay,
+  }
+}
+
+function loadDatabaseObj({ version = 0, characterDatabase, artifactDatabase, artifactDisplay, characterDisplay, buildsDisplay, }) {
+  clearDatabase()
+  //load from obj charDB,artDB
+  Object.entries(characterDatabase).forEach(([charKey, char]) => saveToLocalStorage(`char_${charKey}`, char))
+  Object.entries(artifactDatabase).forEach(([id, art]) => saveToLocalStorage(id, art))
+  //override version
+  setDatabaseVersion(version)
+  saveToLocalStorage("ArtifactDisplay.state", artifactDisplay)
+  saveToLocalStorage("CharacterDisplay.state", characterDisplay)
+  saveToLocalStorage("BuildsDisplay.state", buildsDisplay)
+
+  DatabaseInitAndVerify()
+}
+function clearDatabase() {
+  //delete all characters and artifacts
+  Object.keys(localStorage).filter(key => key.startsWith("char_") || key.startsWith("artifact_")).forEach(id =>
+    localStorage.removeItem(id))
+  localStorage.removeItem("db_ver")
+  localStorage.removeItem("ArtifactDisplay.state")
+  localStorage.removeItem("CharacterDisplay.state")
+  localStorage.removeItem("BuildsDisplay.state")
+  //clear the database to validate again
+  CharacterDatabase.clearDatabase()
+  ArtifactDatabase.clearDatabase()
+}
 export {
-  DatabaseInitAndVerify
+  DatabaseInitAndVerify,
+  createDatabaseObj,
+  loadDatabaseObj,
+  clearDatabase
 };

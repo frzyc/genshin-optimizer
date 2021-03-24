@@ -14,7 +14,7 @@ import passive2 from './Talent_Blades_Amidst_Raindrops.png'
 import passive3 from './Talent_Flash_of_Genius.png'
 import Stat from '../../../Stat'
 import DisplayPercent from '../../../Components/DisplayPercent'
-import formula, {data} from './data'
+import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from "../../../Build/Build"
 
 const char = {
@@ -40,22 +40,22 @@ const char = {
         fields: data.normal.hitArr.map((percentArr, i) =>
         ({
           text: `${i + 1}-Hit DMG`,
-          formulaText: (tlvl, stats, c) => <span>{i === 2 ? "2 × " : ""}{percentArr[tlvl]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
+          formulaText: stats => <span>{i === 2 ? "2 × " : ""}{percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
           formula: formula.normal[i],
-          variant: (tlvl, stats) => getTalentStatKeyVariant("normal", stats),
+          variant: stats => getTalentStatKeyVariant("normal", stats),
         }))
       }, {
         text: <span><strong>Charged Attack</strong> Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.</span>,
         fields: [{
           text: `Charged 1-Hit DMG`,
-          formulaText: (tlvl, stats, c) => <span>{data.charged.hit1[tlvl]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
+          formulaText: stats => <span>{data.charged.hit1[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
           formula: formula.charged.hit1,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("charged", stats),
+          variant: stats => getTalentStatKeyVariant("charged", stats),
         }, {
           text: `Charged 2-Hit DMG`,
-          formulaText: (tlvl, stats, c) => <span>{data.charged.hit2[tlvl]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
+          formulaText: stats => <span>{data.charged.hit2[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
           formula: formula.charged.hit2,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("charged", stats),
+          variant: stats => getTalentStatKeyVariant("charged", stats),
         }, {
           text: `Stamina Cost`,
           value: 20,
@@ -64,19 +64,19 @@ const char = {
         text: <span><strong>Plunging Attack</strong> Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.</span>,
         fields: [{
           text: `Plunge DMG`,
-          formulaText: (tlvl, stats, c) => <span>{data.plunging.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+          formulaText: stats => <span>{data.plunging.dmg[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
           formula: formula.plunging.dmg,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("plunge", stats),
+          variant: stats => getTalentStatKeyVariant("plunge", stats),
         }, {
           text: `Low Plunge DMG`,
-          formulaText: (tlvl, stats, c) => <span>{data.plunging.low[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+          formulaText: stats => <span>{data.plunging.low[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
           formula: formula.plunging.low,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("plunge", stats),
+          variant: stats => getTalentStatKeyVariant("plunge", stats),
         }, {
           text: `High Plunge DMG`,
-          formulaText: (tlvl, stats, c) => <span>{data.plunging.high[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+          formulaText: stats => <span>{data.plunging.high[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
           formula: formula.plunging.high,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("plunge", stats),
+          variant: stats => getTalentStatKeyVariant("plunge", stats),
         }]
       }],
     },
@@ -97,33 +97,33 @@ const char = {
         </span>,
         fields: [{
           text: "Skill 1-Hit DMG",
-          formulaText: (tlvl, stats, c) => <span>{data.skill.hit1[tlvl]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
+          formulaText: stats => <span>{data.skill.hit1[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
           formula: formula.skill.hit1,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("skill", stats),
+          variant: stats => getTalentStatKeyVariant("skill", stats),
         }, {
           text: "Skill 2-Hit DMG",
-          formulaText: (tlvl, stats, c) => <span>{data.skill.hit2[tlvl]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
+          formulaText: stats => <span>{data.skill.hit2[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
           formula: formula.skill.hit2,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("skill", stats),
-        }, (con) => con >= 4 && {
+          variant: stats => getTalentStatKeyVariant("skill", stats),
+        }, stats => stats.constellation >= 4 && {
           text: "Skill 1-Hit DMG during RainCutter",
-          formulaText: (tlvl, stats, c) => <span> ( {data.skill.hit1[tlvl]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)} ) * 150%</span>,
+          formulaText: stats => <span> ( {data.skill.hit1[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)} ) * 150%</span>,
           formula: formula.skill.hit1RainCutter,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("skill", stats),
-        }, (con) => con >= 4 && {
+          variant: stats => getTalentStatKeyVariant("skill", stats),
+        }, stats => stats.constellation >= 4 && {
           text: "Skill 2-Hit DMG during RainCutter",
-          formulaText: (tlvl, stats, c) => <span> ( {data.skill.hit2[tlvl]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)} ) * 150%</span>,
+          formulaText: stats => <span> ( {data.skill.hit2[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)} ) * 150%</span>,
           formula: formula.skill.hit2RainCutter,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("skill", stats),
+          variant: stats => getTalentStatKeyVariant("skill", stats),
         }, {
           text: "Damage Reduction Ratio(%)",
-          formulaText: (tlvl, stats, c) => <span>{data.skill.dmgRed[tlvl]}%  + min(24%, 20% * {Stat.printStat("hydro_dmg_", stats)} )</span>,
+          formulaText: stats => <span>{data.skill.dmgRed[stats.tlvl.skill]}%  + min(24%, 20% * {Stat.printStat("hydro_dmg_", stats)} )</span>,
           formula: formula.skill.dmgRed,
           fixed: 2
-        }, (con, a) => ({
+        }, {
           text: "Sword Number",
-          value: con >= 1 ? 4 : 3,
-        }), {
+          value: stats => stats.constellation >= 1 ? 4 : 3,
+        }, {
           text: "Duration",
           value: "15s",
         }, {
@@ -147,13 +147,13 @@ const char = {
         </span>,
         fields: [{
           text: "Sword Rain DMG",
-          formulaText: (tlvl, stats, c) => <span>{data.burst.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
+          formulaText: stats => <span>{data.burst.dmg[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
           formula: formula.burst.dmg,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("burst", stats),
-        }, (con, a) => ({
+          variant: stats => getTalentStatKeyVariant("burst", stats),
+        }, {
           text: "Duration",
-          value: con >= 2 ? "18s" : "15s",
-        }), {
+          value: stats => stats.constellation >= 2 ? "18s" : "15s",
+        }, {
           text: "CD",
           value: "20s",
         }, {
@@ -165,13 +165,13 @@ const char = {
     passive1: {
       name: "Hydropathic",
       img: passive1,
-      document: [{ text: (tlvl, stats, c) => <span>When a <b>Rain Sword</b> is shattered or when its duration expires, it regenerates the current character's HP based on 6% of Xingqiu's Max HP{DisplayPercent(6, stats, "finalHP")}.</span> }],
+      document: [{ text: stats => <span>When a <b>Rain Sword</b> is shattered or when its duration expires, it regenerates the current character's HP based on 6% of Xingqiu's Max HP{DisplayPercent(6, stats, "finalHP")}.</span> }],
     },
     passive2: {
       name: "Blades Amidst Raindrops",
       img: passive2,
       document: [{ text: <span>Xingqiu gains a 20% <span className="text-hydro">Hydro DMG Bonus</span>.</span> }],
-      stats: (c, a) => a >= 4 && {
+      stats: stats => stats.ascension >= 4 && {
         hydro_dmg_: 20,
       }
     },
@@ -190,7 +190,7 @@ const char = {
       img: c2,
       document: [{
         text: <span>Extends the duration of <b>Guhua Sword: Raincutter</b> by 3s. Decreases the <span className="text-hydro">Hydro RES</span> of opponents hit by sword rain by 15% for 4s.</span>,
-        conditional: (tlvl, c, a) => c >= 2 && {
+        conditional: stats => stats.constellation >= 2 && {
           type: "character",
           conditionalKey: "RainbowUponTheAzureSky",
           condition: "Opponent hit by sword rain",
