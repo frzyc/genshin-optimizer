@@ -30,12 +30,6 @@ const data = {
         low: [127.84, 138.24, 148.65, 163.51, 173.92, 185.81, 202.16, 218.51, 234.86, 252.7, 270.54, 288.38, 306.22, 324.05, 341.89],
         high: [159.68, 172.67, 185.67, 204.24, 217.23, 232.09, 252.51, 272.93, 293.36, 315.64, 337.92, 360.2, 382.48, 404.76, 427.04],
     },
-    riptide: {
-        flash: [12.4, 13.33, 14.26, 15.5, 16.43, 17.36, 18.6, 19.84, 21.08, 22.32, 23.56, 24.8, 26.35, 27.9, 29.45],//x3, fully charged
-        burst: [62, 66.65, 71.3, 77.5, 82.15, 86.8, 93, 99.2, 105.4, 111.6, 117.8, 124, 131.75, 139.5, 147.25],//death
-        slash: [60.2, 65.1, 70, 77, 81.9, 87.5, 95.2, 102.9, 110.6, 119, 127.4, 135.8, 144.2, 152.6, 161],//melee
-        blast: [120, 129, 138, 150, 159, 168, 180, 192, 204, 216, 228, 240, 255, 270, 285],//burst
-    },
     skill: {
         skillDmg: [72, 77.4, 82.8, 90, 95.4, 100.8, 108, 115.2, 122.4, 129.6, 136.8, 144, 153, 162, 171],
         hitArr: [
@@ -55,14 +49,23 @@ const data = {
     burst: {
         meleeDmg: [464, 498.8, 533.6, 580, 614.8, 649.6, 696, 742.4, 788.8, 835.2, 881.6, 928, 986, 1044, 1102],
         rangedDmg: [378.4, 406.78, 435.16, 473, 501.38, 529.76, 567.6, 605.44, 643.28, 681.12, 718.96, 756.8, 804.1, 851.4, 898.7],
+    },
+    riptide: {
+        flash: [12.4, 13.33, 14.26, 15.5, 16.43, 17.36, 18.6, 19.84, 21.08, 22.32, 23.56, 24.8, 26.35, 27.9, 29.45],//x3, fully charged
+        burst: [62, 66.65, 71.3, 77.5, 82.15, 86.8, 93, 99.2, 105.4, 111.6, 117.8, 124, 131.75, 139.5, 147.25],//death
+        slash: [60.2, 65.1, 70, 77, 81.9, 87.5, 95.2, 102.9, 110.6, 119, 127.4, 135.8, 144.2, 152.6, 161],//melee
+        blast: [120, 129, 138, 150, 159, 168, 180, 192, 204, 216, 228, 240, 255, 270, 285],//burst
     }
 }
 
 const formula = {
     normal: Object.fromEntries(data.normal.hitArr.map((percentArr, i) => [i, stats =>
         basicDMGFormula(percentArr[stats.tlvl.auto], stats, "normal")])),
-    charged: {},
-    plunging: {},
+    charged: {
+        aimShot: stats => basicDMGFormula(data.charged.aimedShot[stats.tlvl.auto], stats, "charged"),
+        fullAimedShot: stats => basicDMGFormula(data.charged.fullAimedShot[stats.tlvl.auto], stats, "charged", true),
+    },
+    plunging: Object.fromEntries(Object.entries(data.plunging).map(([key, arr]) => [key, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "plunging")])),
     skill: {},
     burst: {},
 }
