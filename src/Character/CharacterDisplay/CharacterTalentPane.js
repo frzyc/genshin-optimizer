@@ -234,7 +234,7 @@ function SkillDisplayCard(props) {
       </Card.Header>
     }
   }
-  let talentStats = Character.getTalentStats(characterKey, talentKey, constellation, ascension)
+  const talentStats = Character.getTalentStats(characterKey, talentKey, build.finalStats)
   const statsEle = talentStats && <Row><Col>
     <Card bg="darkcontent" text="lightfont" className="mt-2 ml-n2 mr-n2">
       <ListGroup className="text-white" variant="flush">
