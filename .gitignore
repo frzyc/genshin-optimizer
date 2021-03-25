@@ -30,3 +30,5 @@ yarn-error.log*
 # template files
 TEMPLATE*
 .idea/workspace.xml
+
+.idea/vcs.xml
