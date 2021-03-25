@@ -57,7 +57,7 @@ const char = {
           formula: formula.charged.fullyAimedShot,
           variant: stats => getTalentStatKeyVariant("charged", stats, true),
         }]
-      }, {
+      }, { //TODO riptide
         text: <span><strong>Plunging Attack</strong> Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.</span>,
         fields: [{
           text: `Plunge DMG`,
@@ -77,7 +77,21 @@ const char = {
         }]
       }],
     },
-    skill: {},
+    skill: {
+        name: "Foul Legacy: Raging Tide",
+        img: skill,
+        document: [{
+            text: <span>Unleashes a set of weaponry made of pure water, dealing <span className="text-hydro">Hydro DMG</span> to surrounding opponents and entering Melee Stance.</span>,
+            fields: [{
+            text: "Skill DMG",
+                formulaText: stats => <span>{data.skill.press[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
+                    formula: formula.skill.skillDmg,
+                    variant: stats => getTalentStatKeyVariant("skill", stats),
+            }, {
+
+            }],
+        }],
+    },
     burst: {},
     passive1: {},
     passive2: {},

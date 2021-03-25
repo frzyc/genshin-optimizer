@@ -66,7 +66,9 @@ const formula = {
         fullAimedShot: stats => basicDMGFormula(data.charged.fullAimedShot[stats.tlvl.auto], stats, "charged", true),
     },
     plunging: Object.fromEntries(Object.entries(data.plunging).map(([key, arr]) => [key, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "plunging")])),
-    skill: {},
+    skill: {
+        skillDmg: stats => basicDMGFormula(data.skill.skillDmg[stats.tlvl.skill], stats, "skill"),
+    },
     burst: {},
 }
 
