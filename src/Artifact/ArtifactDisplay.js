@@ -86,6 +86,13 @@ export default class ArtifactDisplay extends React.Component {
     CharacterDatabase.unequipAllArtifacts()
     this.forceUpdate()
   }
+  lockFiltered = (artifacts) => {
+    for(var artifact in artifacts){
+      artifacts[artifact].lock = true;
+      ArtifactDatabase.update( artifacts[artifact]);
+    }
+    this.forceUpdate()
+  }
   componentDidUpdate() {
     let state = deepClone(this.state)
     delete state.artToEditId
@@ -172,6 +179,7 @@ export default class ArtifactDisplay extends React.Component {
             <span>Artifact Filter</span>
             <Button size="sm" className="ml-2" variant="danger" onClick={this.ressetFilters} ><FontAwesomeIcon icon={faUndo} className="fa-fw" /> Reset</Button>
             <Button size="sm" className="ml-2" variant="danger" onClick={this.unequipAll} >Unequip Artifacts on every character</Button>
+            <Button size="sm" className="ml-2" variant="danger" onClick={this.lockFiltered.bind(this, artifacts)} >Lock filtered Artifacts</Button>
             <span className="float-right text-right">Showing <b>{artifacts.length > maxNumArtifactsToDisplay ? maxNumArtifactsToDisplay : artifacts.length}</b> out of {artifacts.length !== totalArtNum ? `${artifacts.length}/` : ""}{totalArtNum} Artifacts</span>
           </Card.Header>
           <Card.Body>
