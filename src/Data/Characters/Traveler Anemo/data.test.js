@@ -86,7 +86,7 @@ describe("Traveler Anemo", () => {
   describe("swirl", () => {
     beforeEach(() => {
       setupStats.enemyLevel = 85
-      applyArtifacts(setupStats, [{ eleMas: 0, swirl_dmg_: 60, pyro_enemyRes_: -40 }]) // 4VV
+      applyArtifacts(setupStats, [{ eleMas: 0 }]) // 4VV
     })
 
     test("swirl", () => {
