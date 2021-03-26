@@ -1,4 +1,4 @@
-import { faCheckSquare, faSortAmountDownAlt, faSortAmountUp, faSquare, faUndo } from '@fortawesome/free-solid-svg-icons';
+import { faCheckSquare, faSortAmountDownAlt, faSortAmountUp, faSquare, faUndo, faLockOpen, faLock } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Button, ButtonGroup, Card, Dropdown, InputGroup, ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
@@ -55,6 +55,7 @@ export default class ArtifactDisplay extends React.Component {
     filterMainStatKey: "",
     filterSubstats: ["", "", "", ""],
     filterLocation: "",
+    filterLockedArtifacts: false,
     ascending: false,
   }
   ressetFilters = () => this.setState(state => ({ ...state, ...deepClone(ArtifactDisplay.initialFilter) }))
@@ -86,11 +87,12 @@ export default class ArtifactDisplay extends React.Component {
     CharacterDatabase.unequipAllArtifacts()
     this.forceUpdate()
   }
-  lockFiltered = (artifacts) => {
+  lockFiltered = (artifacts, filterLockedArtifacts) => {
     for(var artifact in artifacts){
-      artifacts[artifact].lock = true;
+      artifacts[artifact].lock = !filterLockedArtifacts;
       ArtifactDatabase.update( artifacts[artifact]);
     }
+    this.setState({ filterLockedArtifacts: !filterLockedArtifacts })
     this.forceUpdate()
   }
   componentDidUpdate() {
@@ -107,7 +109,7 @@ export default class ArtifactDisplay extends React.Component {
     ]).then(() => this.forceUpdate())
   }
   render() {
-    let { artToEditId, filterArtSetKey, filterSlotKey, filterMainStatKey, filterStars, filterLevelLow, filterLevelHigh, filterSubstats = this.initialFilter.filterSubstats, maxNumArtifactsToDisplay, filterLocation = "", sortType = Object.keys(sortMap)[0], ascending = false } = this.state
+    let { artToEditId, filterArtSetKey, filterSlotKey, filterMainStatKey, filterStars, filterLevelLow, filterLevelHigh, filterSubstats = this.initialFilter.filterSubstats, filterLockedArtifacts, maxNumArtifactsToDisplay, filterLocation = "", sortType = Object.keys(sortMap)[0], ascending = false } = this.state
     let artifactDB = ArtifactDatabase.getArtifactDatabase() || {}
     let totalArtNum = Object.keys(artifactDB)?.length || 0
     let locationDisplay
@@ -179,7 +181,7 @@ export default class ArtifactDisplay extends React.Component {
             <span>Artifact Filter</span>
             <Button size="sm" className="ml-2" variant="danger" onClick={this.ressetFilters} ><FontAwesomeIcon icon={faUndo} className="fa-fw" /> Reset</Button>
             <Button size="sm" className="ml-2" variant="danger" onClick={this.unequipAll} >Unequip Artifacts on every character</Button>
-            <Button size="sm" className="ml-2" variant="danger" onClick={this.lockFiltered.bind(this, artifacts)} >Lock filtered Artifacts</Button>
+            <Button size="sm" className="ml-2" variant="danger" onClick={this.lockFiltered.bind(this, artifacts, filterLockedArtifacts)} ><FontAwesomeIcon icon={filterLockedArtifacts ? faLockOpen : faLock} /> {filterLockedArtifacts ? "Unl" : "L"}ock filtered Artifacts</Button>
             <span className="float-right text-right">Showing <b>{artifacts.length > maxNumArtifactsToDisplay ? maxNumArtifactsToDisplay : artifacts.length}</b> out of {artifacts.length !== totalArtNum ? `${artifacts.length}/` : ""}{totalArtNum} Artifacts</span>
           </Card.Header>
           <Card.Body>
