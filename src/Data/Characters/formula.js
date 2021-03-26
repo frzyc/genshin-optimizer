@@ -21,7 +21,7 @@ import qiqi from './Qiqi/data'
 import razor from './Razor/data'
 import sucrose from './Sucrose/data'
 // import tartaglia from './Tartaglia/data'
-// import traveler_anemo from './Traveler Anemo/data'
+import traveler_anemo from './Traveler Anemo/data'
 // import traveler_geo from './Traveler Geo/data'
 import venti from './Venti/data'
 import xiao from './Xiao/data'
@@ -53,7 +53,7 @@ const formula = {
   razor,
   sucrose,
   // tartaglia,
-  // traveler_anemo,
+  traveler_anemo,
   // traveler_geo,
   venti,
   xiao,
