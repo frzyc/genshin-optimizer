@@ -31,7 +31,6 @@ const data = {
         high: [159.68, 172.67, 185.67, 204.24, 217.23, 232.09, 252.51, 272.93, 293.36, 315.64, 337.92, 360.2, 382.48, 404.76, 427.04],
     },
     skill: {
-        skillDmg: [72, 77.4, 82.8, 90, 95.4, 100.8, 108, 115.2, 122.4, 129.6, 136.8, 144, 153, 162, 171],
         hitArr: [
             [38.87, 42.04, 45.2, 49.72, 52.88, 56.5, 61.47, 66.44, 71.42, 76.84, 82.26, 87.69, 93.11, 98.54, 103.96],//1
             [41.62, 45.01, 48.4, 53.24, 56.63, 60.5, 65.82, 71.15, 76.47, 82.28, 88.09, 93.9, 99.7, 105.51, 111.32],//2
@@ -41,10 +40,11 @@ const data = {
             [35.43, 38.32, 41.2, 45.32, 48.2, 51.5, 56.03, 60.56, 65.1, 70.04, 74.98, 79.93, 84.87, 89.82, 94.76],//6.1 (1st hit)
             [37.67, 40.73, 43.8, 48.18, 51.25, 54.75, 59.57, 64.39, 69.2, 74.46, 79.72, 84.97, 90.23, 95.48, 100.74],//6.2 (2nd hit)
         ],
-        charged: [
-            [60.2, 65.1, 70, 77, 81.9, 87.5, 95.2, 102.9, 110.6, 119, 127.4, 135.8, 144.2, 152.6, 161],//1st hit
-            [71.98, 77.84, 83.7, 92.07, 97.93, 104.62, 113.83, 123.04, 132.25, 142.29, 152.33, 162.38, 172.42, 182.47, 192.51],//2nd hit
-        ],
+        skillDmg: [72, 77.4, 82.8, 90, 95.4, 100.8, 108, 115.2, 122.4, 129.6, 136.8, 144, 153, 162, 171],
+        charged: {
+            cross1: [60.2, 65.1, 70, 77, 81.9, 87.5, 95.2, 102.9, 110.6, 119, 127.4, 135.8, 144.2, 152.6, 161],//1st hit
+            cross2: [71.98, 77.84, 83.7, 92.07, 97.93, 104.62, 113.83, 123.04, 132.25, 142.29, 152.33, 162.38, 172.42, 182.47, 192.51],//2nd hit
+        },
     },
     burst: {
         meleeDmg: [464, 498.8, 533.6, 580, 614.8, 649.6, 696, 742.4, 788.8, 835.2, 881.6, 928, 986, 1044, 1102],
@@ -67,9 +67,21 @@ const formula = {
     },
     plunging: Object.fromEntries(Object.entries(data.plunging).map(([key, arr]) => [key, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "plunging")])),
     skill: {
+        normal: Object.fromEntries(data.skill.hitArr.map((percentArr, i) => [i, stats =>
+            basicDMGFormula(percentArr[stats.tlvl.skill], stats, "skill", true)])),
         skillDmg: stats => basicDMGFormula(data.skill.skillDmg[stats.tlvl.skill], stats, "skill"),
+        charged: {
+            cross1: stats => basicDMGFormula(data.skill.charged.cross1[stats.tlvl.skill], stats, "skill", true),
+            cross2: stats => basicDMGFormula(data.skill.charged.cross2[stats.tlvl.skill], stats, "skill", true),
+        },
     },
     burst: {},
+    riptide: {
+        flash: stats => basicDMGFormula(data.riptide.flash[stats.tlvl.auto], stats, "normal", true),
+        burst: stats => basicDMGFormula(data.riptide.burst[stats.tlvl.auto], stats, "normal", true),
+        slash: stats => basicDMGFormula(data.riptide.slash[stats.tlvl.skill], stats, "normal", true),
+        blast: stats => basicDMGFormula(data.riptide.blast[stats.tlvl.burst], stats, "normal", true),
+    },
 }
 
 export default formula
