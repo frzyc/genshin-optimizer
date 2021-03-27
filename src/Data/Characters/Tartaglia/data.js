@@ -75,7 +75,10 @@ const formula = {
             cross2: stats => basicDMGFormula(data.skill.charged.cross2[stats.tlvl.skill], stats, "skill", true),
         },
     },
-    burst: {},
+    burst: {
+        melee: stats => basicDMGFormula(data.burst.meleeDmg[stats.tlvl.burst], stats, "burst"),
+        ranged: stats => basicDMGFormula(data.burst.rangedDmg[stats.tlvl.burst], stats, "burst"),
+    },
     riptide: {
         flash: stats => basicDMGFormula(data.riptide.flash[stats.tlvl.auto], stats, "normal", true),
         burst: stats => basicDMGFormula(data.riptide.burst[stats.tlvl.auto], stats, "normal", true),
