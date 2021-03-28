@@ -10,7 +10,6 @@ import Row from 'react-bootstrap/Row';
 import Artifact from '../Artifact/Artifact';
 import WIPComponent from '../Components/WIPComponent';
 import { WeaponLevelKeys } from '../Data/WeaponData';
-import { DatabaseInitAndVerify } from '../Database/DatabaseUtil';
 import { deepClone } from '../Util/Util';
 import Weapon from '../Weapon/Weapon';
 import Character from './Character';
@@ -39,7 +38,6 @@ const CustomMenu = React.forwardRef(
 export default class CharacterDisplayCard extends React.Component {
   constructor(props) {
     super(props)
-    DatabaseInitAndVerify();
     this.state = CharacterDisplayCard.getInitialState()
     const { characterKey, character } = props
     if (characterKey) {
@@ -177,7 +175,7 @@ export default class CharacterDisplayCard extends React.Component {
                 </Dropdown.Menu>
               </Dropdown>
               <DropdownButton as={ButtonGroup} disabled={!characterKey} title={
-                <h6 className="d-inline">{Character.getlevelNames(levelKey)} </h6>
+                <h6 className="d-inline">Stats Template: {Character.getlevelNames(levelKey)} </h6>
               }>
                 <Dropdown.ItemText>
                   <span>Select Base Stat Template</span>

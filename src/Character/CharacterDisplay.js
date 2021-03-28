@@ -4,7 +4,6 @@ import React, { lazy } from 'react';
 import { Button, Card, Col, Container, Image, Row, ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
 import ReactGA from 'react-ga';
 import Assets from '../Assets/Assets';
-import { DatabaseInitAndVerify } from '../Database/DatabaseUtil';
 import { loadFromLocalStorage, saveToLocalStorage } from '../Util/Util';
 import Weapon from '../Weapon/Weapon';
 import Character from './Character';
@@ -27,7 +26,6 @@ const sortingFunc = {
 export default class CharacterDisplay extends React.Component {
   constructor(props) {
     super(props)
-    DatabaseInitAndVerify();
     this.state = {
       charIdToEdit: "",
       showEditor: false,

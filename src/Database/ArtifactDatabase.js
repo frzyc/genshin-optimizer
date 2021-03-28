@@ -2,6 +2,8 @@ import { deepClone, loadFromLocalStorage, saveToLocalStorage } from "../Util/Uti
 var initiated = false
 var artifactDatabase = {};
 var artIdIndex = 1;
+const artListener = {}
+var listener = []
 export default class ArtifactDatabase {
   //do not instantiate.
   constructor() {
@@ -11,7 +13,7 @@ export default class ArtifactDatabase {
   }
   static isInvalid = (art) =>
     !art || !art.setKey || !art.numStars || !art.slotKey || !art.mainStatKey
-  static getArtifactDatabase = () => deepClone(artifactDatabase);
+  static getArtifactDatabase = () => artifactDatabase;
   static getIdList = () => Object.keys(artifactDatabase);
   static populateDatebaseFromLocalStorage = () => {
     if (initiated && process.env.NODE_ENV !== "development") return false;
@@ -27,6 +29,7 @@ export default class ArtifactDatabase {
       }
     })
     initiated = true
+    this.emitEvent()
     return true
   }
   static get = (id) => artifactDatabase[id] ?? null
@@ -45,17 +48,25 @@ export default class ArtifactDatabase {
     let dart = deepClone(art)
     saveToLocalStorage(id, dart);
     artifactDatabase[id] = dart;
+    this.emitEvent()
+    this.emitArtEvent(id, dart)
   }
   static removeArtifactById = (artId) => {
     delete artifactDatabase[artId];
     localStorage.removeItem(artId);
+    this.emitEvent()
   }
 
-  static moveToNewLocation = (artid, location) => {
-    if (!artid) return;
-    let art = this.get(artid)
+  static moveToNewLocation = (artid, location = "") => {
+    const art = this.get(artid)
     if (!art || art.location === location) return;
     art.location = location;
+    this.update(art);
+  }
+  static setLocked = (artid, lock = false) => {
+    const art = this.get(artid)
+    if (!art || art.lock === lock) return;
+    art.lock = lock;
     this.update(art);
   }
   static swapLocations = (artA, artB) => {
@@ -77,5 +88,25 @@ export default class ArtifactDatabase {
     artifactDatabase = {}
     initiated = false
     artIdIndex = 1
+    this.emitEvent()
+  }
+  static registerListener(callback) {
+    listener.push(callback)
+  }
+  static unregisterListener(callback) {
+    listener = listener.filter(cb => cb !== callback)
+  }
+  static emitEvent() {
+    listener.forEach(cb => cb(artifactDatabase))
+  }
+  static registerArtListener(id, callback) {
+    if (!artListener[id]) artListener[id] = [callback]
+    else artListener[id].push(callback)
+  }
+  static unregisterArtListener(id, callback) {
+    artListener[id] = artListener[id]?.filter(cb => cb !== callback)
+  }
+  static emitArtEvent(id, art) {
+    artListener[id]?.forEach(cb => cb(art))
   }
 }

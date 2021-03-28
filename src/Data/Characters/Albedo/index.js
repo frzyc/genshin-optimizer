@@ -145,7 +145,13 @@ const char = {
           formulaText: stats => <span>( {data.burst.blossom[stats.tlvl.burst]}% {Stat.printStat("finalATK", stats)} + {30 * i}% {Stat.printStat("finalDEF", stats)}) * {Stat.printStat(getTalentStatKey("burst", stats) + "_multi", stats)}</span>,
           formula: formula.burst[`blossom${i}c2`],
           variant: stats => getTalentStatKeyVariant("burst", stats),
-        })]
+        }), {
+          text: "CD",
+          value: "12s"
+        }, {
+          text: "Energy Cost",
+          value: 40
+        }]
       }],
     },
     passive1: {

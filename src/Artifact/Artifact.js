@@ -164,7 +164,7 @@ export default class Artifact {
       let { key, value } = substat
       let rollArr = Artifact.getSubstatRolls(key, value, numStars) || []
       substat.rolls = rollArr[0] || []
-      if (rollArr.length > 1) substat.rollArr = rollArr
+      substat.rollArr = rollArr.length > 1 ? rollArr : undefined
       substat.efficiency = Artifact.getSubstatEfficiency(key, substat.rolls)
     }
     let { currentEfficiency, maximumEfficiency } = Artifact.getArtifactEfficiency(substats, numStars, level)
@@ -286,5 +286,13 @@ export default class Artifact {
       else
         CharacterDatabase.unequipArtifactOnSlot(currentLocation, slotKey)
     }
+  }
+  static unequipArtifact(artifactId) {
+    const art = ArtifactDatabase.get(artifactId)
+    if (!art || !art.location) return
+    const location = art.location
+    const slotKey = art.slotKey
+    CharacterDatabase.unequipArtifactOnSlot(location, slotKey)
+    ArtifactDatabase.moveToNewLocation(artifactId)
   }
 }

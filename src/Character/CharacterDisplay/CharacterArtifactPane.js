@@ -25,7 +25,7 @@ function CharacterArtifactPane({ character, character: { characterKey, artifactC
       <Col className="mb-2">
         <Card className="h-100" bg="lightcontent" text="lightfont">
           <Card.Body>
-            <StatDisplayComponent {...{ character, equippedBuild, newBuild, statsDisplayKeys: statKeys, build, forceUpdate, setState, setOverride, editable }} />
+            <StatDisplayComponent {...{ character, equippedBuild, newBuild, statsDisplayKeys: statKeys, editable }} />
           </Card.Body>
           {newBuild ? <Card.Footer>
             <Button onClick={() => {
@@ -88,7 +88,7 @@ function CharacterArtifactPane({ character, character: { characterKey, artifactC
               </Col> : null
             }) : Artifact.getSlotKeys().map(slotKey =>
               build.artifactIds[slotKey] ? <Col sm={6} lg={4} key={build.artifactIds[slotKey]} className="mb-2">
-                <ArtifactCard artifactId={build.artifactIds[slotKey]} forceUpdate={forceUpdate} assumeFull={artifactsAssumeFull} />
+                <ArtifactCard artifactId={build.artifactIds[slotKey]} editable={Boolean(forceUpdate)} assumeFull={artifactsAssumeFull} />
               </Col> : null
             )}
         </Row>
