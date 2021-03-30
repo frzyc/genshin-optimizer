@@ -46,9 +46,11 @@ function filterReducer(state, action) {
   if (action.type === "reset") return initialFilter()
   return { ...state, ...action }
 }
+function filterInit(initial = initialFilter()) {
+  return { ...initial, ...(loadFromLocalStorage("ArtifactDisplay.state") ?? {}) }
+}
 export default function ArtifactDisplay(props) {
-  const savedState = loadFromLocalStorage("ArtifactDisplay.state") ?? {}
-  const [filters, filterDispatch] = useReducer(filterReducer, { ...initialFilter(), ...savedState })
+  const [filters, filterDispatch] = useReducer(filterReducer, initialFilter(), filterInit)
   const [artToEditId, setartToEditId] = useState(props?.location?.artToEditId)//TODO:where does this location param come from?
   const [pageIdex, setpageIdex] = useState(0)
   const scrollRef = useRef(null)
