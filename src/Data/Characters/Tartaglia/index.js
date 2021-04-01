@@ -226,7 +226,7 @@ const char = {
             name: "Master of Weaponry",
             img: passive3,
             document: [{text: <span>Increases your own party members' Normal Attack Level by 1.</span>,}], //TODO party buffs
-            talentBoost: {auto: 1}
+            // talentBoost: {auto: 1} TODO: Party buffs
         },
         constellation1: {
             name: "Foul Legacy: Tide Withholder",
