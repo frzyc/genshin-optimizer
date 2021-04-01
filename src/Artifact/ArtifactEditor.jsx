@@ -12,7 +12,7 @@ import ArtifactCard from './ArtifactCard';
 import PercentBadge from './PercentBadge';
 import UploadDisplay from './UploadDisplay';
 
-const initialArtifact = () => ({
+export const initialArtifact = () => ({
   id: null,
   setKey: "",
   numStars: 0,
@@ -23,13 +23,15 @@ const initialArtifact = () => ({
   location: "",
 })
 
-//TODO: unit test
-function artifactReducer(state, action) {
+// assume only one prop is changed at a time.
+export function artifactReducer(state, action) {
   switch (action.type) {
     case "reset":
       return initialArtifact()
     case "substat": {
       const { index, key, value } = action
+      if (state.mainStatKey === key) return state
+      if (state.substats.some((substat, i) => i !== index && substat.key === key)) return state
       if (index >= 4) return state
       const substats = state.substats
       substats[index].key = key
@@ -42,35 +44,50 @@ function artifactReducer(state, action) {
       break;
   }
 
-  if (action.slotKey) {
-    state.mainStatKey = action.mainStatKey ?? state.mainStatKey
-    if (!state.mainStatKey) {
+  const newState = { ...state, ...action }
+  if ("setKey" in action) {
+    if (!Artifact.getSetKeys().includes(newState.setKey)) return state
+    action.numStars = newState.numStars//trigger numStar
+    action.slotKey = newState.slotKey//trigger slotKey
+  }
+  if ("numStars" in action) {
+    const rarity = Artifact.getRarityArr(newState.setKey)
+    if (!rarity.includes(newState.numStars))
+      newState.numStars = getArrLastElement(rarity)
+    action.level = newState.level//trigger level 
+  }
+  if ("level" in action) newState.level = clamp(newState.level, 0, newState.numStars * 4)
+  if ("slotKey" in action) {
+    const pieces = Object.keys(Artifact.getPieces(newState.setKey))
+    if (!pieces.includes(newState.slotKey))
+      newState.slotKey = pieces[0]
+    action.mainStatKey = newState.mainStatKey//trigger mainStatKey
+  }
+
+  if ("mainStatKey" in action) {
+    const mainstats = Artifact.getSlotMainStatKeys(newState.slotKey);
+    //set mainStatKey if not set or invalid
+    if (!newState.mainStatKey || !mainstats.includes(newState.mainStatKey)) {
       //find a mainstat that isnt taken,
-      const mainstats = Artifact.getSlotMainStatKeys(action.slotKey);
-      for (const mainStatKey of mainstats)
-        if (!state.substats.some(substat => substat.key === mainStatKey)) {
-          state.mainStatKey = mainStatKey
-          break
-        }
-      //if could not resolve a substat, set mainstatkey to pass down redux
-      if (!state.mainStatKey) action.mainStatKey = mainstats[0]
+      let selectedMainStatKey = ""
+      if (mainstats.length === 1) selectedMainStatKey = mainstats[0]//flower or plume
+      else {
+        for (const mainStatKey of mainstats)
+          if (!newState.substats.some(substat => substat.key === mainStatKey)) {
+            selectedMainStatKey = mainStatKey
+            break
+          }
+        //if could not resolve a substat, set mainstatkey to pass down redux
+        if (!selectedMainStatKey) selectedMainStatKey = mainstats[0]
+      }
+      newState.mainStatKey = selectedMainStatKey
     }
+
+    newState.substats.forEach((substat, index) =>
+      substat.key === newState.mainStatKey && (newState.substats[index] = { key: "", value: 0 }))
   }
 
-  if (action.mainStatKey) {
-    state.substats.forEach((substat, index) =>
-      substat.key === action.mainStatKey && (state.substats[index] = { key: "", value: 0 }))
-  }
-  if (action.level) action.level = clamp(action.level, 0, state.numStars * 4)
-  if (action.numStars) action.level = clamp(action.level ?? state.level, 0, action.numStars * 4)
-  if (action.setKey) {
-    const rarity = Artifact.getRarityArr(action.setKey)
-    state.numStars = action.numStars ?? state.numStars
-    if (!rarity.includes(action.numStars)) action.numStars = getArrLastElement(rarity)
-    state.level = clamp(action.level ?? state.level, 0, state.numStars * 4)
-  }
-
-  return { ...state, ...action }
+  return newState
 }
 const getRemainingSubstats = (mainStatKey, substats) =>
   Artifact.getSubStatKeys().filter(key => {

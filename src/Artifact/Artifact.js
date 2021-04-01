@@ -5,7 +5,6 @@ import { ArtifactMainSlotKeys, ArtifactMainStatsData, ArtifactData, ArtifactSlot
 import Stat from '../Stat';
 import ConditionalsUtil from '../Util/ConditionalsUtil';
 import { clampPercent, closeEnoughFloat, closeEnoughInt, deepClone } from '../Util/Util';
-import ArtifactBase from './ArtifactBase';
 import ArtifactDatabase from '../Database/ArtifactDatabase';
 
 const maxStar = 5
@@ -226,7 +225,15 @@ export default class Artifact {
     return { currentEfficiency, maximumEfficiency }
   }
 
-  static setToSlots = ArtifactBase.setToSlots;
+  static setToSlots = (artifacts) => {
+    let setToSlots = {};
+    Object.entries(artifacts).forEach(([key, art]) => {
+      if (!art) return
+      if (setToSlots[art.setKey]) setToSlots[art.setKey].push(key)
+      else setToSlots[art.setKey] = [key]
+    })
+    return setToSlots
+  };
 
   static getConditionalStats = (setKey, setNumKey, conditionalNum, defVal = {}) => {
     if (!conditionalNum) return defVal
