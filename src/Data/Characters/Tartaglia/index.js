@@ -71,7 +71,7 @@ const char = {
                 fields: [{
                     text: `Riptide Flash DMG`,
                     formulaText: stats =>
-                        <span>{data.riptide.flash[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats, true), stats)} x 3</span>,
+                        <span>3 x {data.riptide.flash[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats, true), stats)}</span>,
                     formula: formula.riptide.flash,
                     variant: stats => getTalentStatKeyVariant("normal", stats, true),
                 }, {
@@ -125,7 +125,6 @@ const char = {
                     text: "Stance Change DMG",
                     formulaText: stats =>
                         <span>{data.skill.skillDmg[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
-                    //TODO: @frzyc formula should be multiplied by 3
                     formula: formula.skill.skillDmg,
                     variant: stats => getTalentStatKeyVariant("skill", stats),
                     //TODO: @frzyc Hit DMG doesn't show properly

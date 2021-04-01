@@ -80,7 +80,7 @@ const formula = {
         ranged: stats => basicDMGFormula(data.burst.rangedDmg[stats.tlvl.burst], stats, "burst"),
     },
     riptide: {
-        flash: stats => basicDMGFormula(data.riptide.flash[stats.tlvl.auto], stats, "normal", true),
+        flash: stats => basicDMGFormula(data.riptide.flash[stats.tlvl.auto] * 3, stats, "normal", true),
         burst: stats => basicDMGFormula(data.riptide.burst[stats.tlvl.auto], stats, "normal", true),
         slash: stats => basicDMGFormula(data.riptide.slash[stats.tlvl.skill], stats, "normal", true),
         blast: stats => basicDMGFormula(data.riptide.blast[stats.tlvl.burst], stats, "normal", true),
