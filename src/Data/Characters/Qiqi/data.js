@@ -53,7 +53,7 @@ const formula = {
   normal: Object.fromEntries(data.normal.hitArr.map((arr, i) =>
     [i, stats => basicDMGFormula(arr[stats.tlvl.auto] * (i === 2 || i === 3 ? 2 : 1), stats, "normal")])),
   charged: Object.fromEntries(Object.entries(data.charged).map(([name, arr]) =>
-    [name, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "charged")])),
+    [name, stats => basicDMGFormula(arr[stats.tlvl.auto] * 2, stats, "charged")])),
   plunging: Object.fromEntries(Object.entries(data.plunging).map(([key, arr]) => [key, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "plunging")])),
   skill: {
     hit: stats => basicDMGFormula(data.skill.hit[stats.tlvl.skill], stats, "skill"),
