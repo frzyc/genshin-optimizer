@@ -46,13 +46,17 @@ export default function ArtifactDisplayInfo() {
       </Col>
       <Col xs={12} lg={5} xl={6}>
         <h5>Artifact Inventory</h5>
-        <p>All your artifacts that you've added to GO can be displayed here. However, displaying hundreds of artifacts at once will be laggy, so GO only shows your a maximum of 50. Use the artifact filter to filter your results. </p>
-
-        <h5>Unequip all artifacts</h5>
-        <p>If you ever need to unequip all your artifacts from all your characters, so you can re-optimize your characters in a fresh state, you can use this button. You will have to confirm a dialog, of course/</p>
+        <p>All your artifacts that you've added to GO is displayed here. The filters here allow you to further refine your view of your artifacts. </p>
 
         <h5>Example: Finding Fodder Artifacts</h5>
-        <p>By utilizing the artifact filter, and the artifact efficiency calculations, you can quickly find artifacts to feed as food. Select the undesirable substat combinations(in the Image, flat ATK and flat DEF are selected), set the filter to artifacts in Inventory, and sort the artifacts by lowest artifact efficiency.</p>
+        <p>By utilizing the artifact filter, and the artifact efficiency calculations, you can quickly find artifacts to feed as food.</p>
+        <p className="mb-0">In this example, the filters are set thusly: </p>
+        <ul>
+          <li>Unlocked artifacts in Inventory.</li>
+          <li>With substats: flat ATK and flat DEF.</li>
+          <li>Sorted by Ascending Max Efficiency.</li>
+        </ul>
+        <p>Once the artifacts are fed as food, click on "Delete Artifacts" to delete the current filtered artifacts.</p>
       </Col>
     </Row>
   </>

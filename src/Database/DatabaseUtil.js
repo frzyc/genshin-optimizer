@@ -2,7 +2,7 @@ import Artifact from "../Artifact/Artifact";
 import ArtifactDatabase from "./ArtifactDatabase";
 import CharacterDatabase from "./CharacterDatabase";
 import { changes as v2change, dmgModeToHitMode } from "./dbV2KeyMap";
-import { loadFromLocalStorage, saveToLocalStorage } from "../Util/Util";
+import { deepClone, loadFromLocalStorage, saveToLocalStorage } from "../Util/Util";
 
 const CurrentDatabaseVersion = 2
 
@@ -58,7 +58,7 @@ function DatabaseInitAndVerify() {
     artDBJustPopualted = ArtifactDatabase.populateDatebaseFromLocalStorage()
   if (!charDBJustPopualted && !artDBJustPopualted) return
 
-  Object.values(ArtifactDatabase.getArtifactDatabase()).forEach(art => {
+  Object.values(deepClone(ArtifactDatabase.getArtifactDatabase())).forEach(art => {
     let valid = true
 
     //verify the linking of artifacts and characters
