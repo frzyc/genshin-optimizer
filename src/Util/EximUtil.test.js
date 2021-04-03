@@ -3,15 +3,9 @@ import artifacts from "../Data/Artifacts"
 import { CharacterSpecializedStatKey } from "../Data/CharacterData"
 import characters from "../Data/Characters"
 import { amplifyingReactions } from "../StatConstants"
-import { exportUInt, importUInt, constants } from "./EximUtil"
+import { constants } from "./EximUtil"
 
 describe('Export Import', () => {
-  test('roundtrip integers', () => {
-    for (let j = 0; j < 4000; j++) {
-      expect(importUInt(exportUInt(j, 3))).toEqual(j)
-    }
-  })
-
   test('supports all characters', () => {
     for (const character in characters)
       expect(constants.characters).toContain(character)

@@ -1,22 +1,26 @@
 import ArtifactDatabase from "../Database/ArtifactDatabase";
 import CharacterDatabase from "../Database/CharacterDatabase";
 import { CurrentDatabaseVersion } from "../Database/DatabaseUtil";
-import { deepClone } from "./Util";
-import { exportArtifact, importArtifact, importCharacter, exportCharacter } from "./EximUtil"
+import { decode, encode } from "./CodingUtil";
+import { artifactSchema, characterSchema } from "./EximUtil";
+
+export const flexSchema = {
+  type: "object",
+  schemas: {
+    artifacts: { type: "array", defaultSchema: artifactSchema },
+    character: characterSchema
+  }
+}
 
 export function createFlexObj(characterKey) {
-  const character = deepClone(CharacterDatabase.get(characterKey))
+  const character = CharacterDatabase.get(characterKey)
   if (!character) return null
 
-  return {
-    v: 1,
-    ...exportCharacter(character),
+  const artifacts = Object.values(character.equippedArtifacts)
+    .filter(art => art)
+    .map(id => ArtifactDatabase.get(id))
 
-    // Artifacts
-    a: Object.values(character.equippedArtifacts)
-      .filter(art => art)
-      .map(id => exportArtifact(ArtifactDatabase.get(id)))
-  }
+  return { v: 1, d: encode({ character, artifacts }, flexSchema) }
 }
 
 export function parseFlexObj(character) {
@@ -24,15 +28,14 @@ export function parseFlexObj(character) {
   return parseFlexObjOld(character)
 }
 
-function parseFlexObj3(character) {
-  const imported = importCharacter(character)
-  const artifacts = character.a.map(string => importArtifact(string))
-  artifacts.forEach(art => {
-    art.location = imported.characterKey
+function parseFlexObj3(data) {
+  const { character, artifacts } = decode(data.d, flexSchema)
+  artifacts.forEach(artifact => {
+    artifact.location = character.characterKey
   })
   return {
     databaseVersion: CurrentDatabaseVersion,
-    artifacts, ...imported
+    artifacts, ...character
   }
 }
 function parseFlexObjOld(character) {
