@@ -7,15 +7,17 @@ function setupLS() {
   Object.entries(chars).map(([id, char]) => saveToLocalStorage(`char_${id}`, char))
   Object.entries(arts).map(([id, art]) => saveToLocalStorage(id, art))
 }
-afterEach(() => localStorage.clear())
-test('should create Obj', () => {
-  setupLS()
-  DatabaseInitAndVerify()
-  expect(createFlexObj("ningguang")).toEqual(flexObj)
-})
+describe('flex import export', () => {
+  beforeEach(() => {
+    setupLS()
+    DatabaseInitAndVerify()
+  })
+  afterEach(() => localStorage.clear())
 
-test('should parse characterObj', () => {
-  setupLS()
-  DatabaseInitAndVerify()
-  expect(parseFlexObj(flexObj)).toEqual(characterObj)
+  test('should support round tripping', () => {
+    expect(parseFlexObj(createFlexObj("ningguang"))).toEqual(characterObj)
+  })
+  test('should support old format', () => {
+    expect(parseFlexObj(flexObj)).toEqual(characterObj)
+  })
 })
