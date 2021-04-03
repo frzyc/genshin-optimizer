@@ -21,6 +21,12 @@ const characters = [
   "albedo", "amber", "barbara", "beidou", "bennett", "chongyun", "diluc", "diona", "fischl", "ganyu", "hutao", "jean", "kaeya", "keqing", "klee", "lisa", "mona", "ningguang", "noelle", "qiqi", "razor", "sucrose", "tartaglia", "traveler_anemo", "traveler_geo", "venti", "xiao", "xiangling", "xingqiu", "xinyan", "zhongli",
 ]
 
+// For testing purpose only, no need to maintain strict ordering
+export const constants = {
+  slots, hitModes, reactionModes, stats, artifactSets, characters
+}
+
+
 function exportUInt(number, length = 0) {
   if (number < 0) throw new Error(`Cannot export ${number}`)
 
