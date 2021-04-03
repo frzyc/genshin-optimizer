@@ -5,18 +5,13 @@ import { deepClone } from "./Util"
 // The index of items in this list is used to
 // compress the exported data. Removing an item
 // from this list will shift subsequent entries.
-const slots = [
-  "flower", "plume", "sands", "goblet", "circlet",
-]
-const hitModes = [
-  "hit", "avgHit", "critHit",
-]
+const slots = [ "flower", "plume", "sands", "goblet", "circlet", ]
+const hitModes = [ "hit", "avgHit", "critHit", ]
 const reactionModes = [
   null, "hydro_vaporize", "pyro_vaporize", "pyro_melt", "cryo_melt",
 ]
 const stats = [
   "hp", "hp_", "atk", "atk_", "def", "def_", "eleMas", "enerRech_", "critRate_", "critDMG_", "heal_",
-
   "physical_dmg_", "anemo_dmg_", "cryo_dmg_", "dendro_dmg_", "electro_dmg_", "geo_dmg_", "hydro_dmg_", "pyro_dmg_",
 ]
 const artifactSets = [
@@ -27,28 +22,23 @@ const characters = [
 ]
 
 function exportUInt(number, length = 0) {
+  if (number < 0) throw new Error(`Cannot export ${number}`)
+
   var string = ""
-
-  if (number < 0) {
-    throw new Error(`Cannot export ${number}`)
-  }
-
   do {
     let remainder = number % 60
-    if (remainder < 10) {
-      string += String.fromCharCode(remainder + 48 - 0) // 0-9
-    } else if (remainder < 35) {
-      string += String.fromCharCode(remainder + 97 - 10) // a-y
-    } else if (remainder < 60) {
-      string += String.fromCharCode(remainder + 65 - 35) // A-Y
-    }
     number = Math.floor(number / 60)
+    if (remainder < 10) // 0-9
+      string += String.fromCharCode(remainder + 48 - 0)
+    else if (remainder < 35) // a-y
+      string += String.fromCharCode(remainder + 97 - 10)
+    else if (remainder < 60) // A-Y
+      string += String.fromCharCode(remainder + 65 - 35)
   } while (number > 0)
 
   if (length > 0) {
-    if (string.length > length) {
+    if (string.length > length)
       throw new Error(`Cannot export ${string} for length ${length}`)
-    }
     return string.padEnd(length, "0")
   }
   return string
@@ -75,10 +65,8 @@ function importUInt(string) {
 
 function exportFixedItem(item, array, length) {
   let index = array.indexOf(item)
-  if (index === -1) {
+  if (index === -1)
     throw new Error(`Cannot find item ${item}`)
-  }
-
   return exportUInt(index, length)
 }
 const importFixedItem = (string, array) => array[importUInt(string)]
