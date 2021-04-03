@@ -12,7 +12,7 @@ const hitModes = [
   "hit", "avgHit", "critHit",
 ]
 const reactionModes = [
-  null, "hydro_vaporize", "hydro_vaporize", "pyro_melt", "cryo_melt",
+  null, "hydro_vaporize", "pyro_vaporize", "pyro_melt", "cryo_melt",
 ]
 const stats = [
   "hp", "hp_", "atk", "atk_", "def", "def_", "eleMas", "enerRech_", "critRate_", "critDMG_", "heal_",
