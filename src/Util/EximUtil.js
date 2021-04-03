@@ -41,7 +41,7 @@ function exportUInt(number, length = 0) {
     }
     return string.padEnd(length, "0")
   }
-  return string + "z"
+  return string
 }
 function importUInt(string) {
   let result = 0, multiplier = 1
