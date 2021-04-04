@@ -17,7 +17,7 @@ describe("Testing Bennett's Formulas (Mabmab#6492)", () => {
 
       atk_: 25,//pyro reso
       enemyLevel: 75, physical_enemyRes_: 70 - 20, // Ruin Guard with zhongli shield
-      pyro_enemyRes_: -10,
+      pyro_enemyRes_: 10 - 20,
       tlvl: Object.freeze({ auto: 4 - 1, skill: 4 - 1, burst: 4 - 1 }),
       constellation: 1,
     })
@@ -26,8 +26,7 @@ describe("Testing Bennett's Formulas (Mabmab#6492)", () => {
   describe("with artifacts", () => {
     beforeEach(() => applyArtifacts(setupStats, [
       ...artifacts,
-      { pyro_dmg_: 23.5 }, // TODO ??????
-      { pyro_dmg_: 15, vaporize_dmg_: 15, overloaded_dmg_: 40, }, // 4 piece crimson witch
+      { pyro_dmg_: 15 + 22.5, vaporize_dmg_: 15, overloaded_dmg_: 40, }, // 4 piece crimson witch + 3 stacks
     ]))
 
     describe("no crit", () => {
