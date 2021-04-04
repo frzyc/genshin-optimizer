@@ -23,6 +23,7 @@ export function createFlexObj(characterKey) {
 }
 
 /// Print new url query from old url
+// TODO: Remove this when all test URLs are converted to new format
 export function updateFlexURL(oldURL) {
   const [hostname, queries] = oldURL.split("flex?")
   const parsed = parseFlexObj(queries)
@@ -46,8 +47,8 @@ export function parseFlexObj(string) {
   }
 }
 
-// TODO Remove this when all test URLs are converted to new format
-function _createFlexObj(character, artifacts) {
+// TODO: Remove this when all test URLs are converted to new format
+export function _createFlexObj(character, artifacts) {
   return "v=1&d=" + encode({ character, artifacts }, flexSchema)
 }
 

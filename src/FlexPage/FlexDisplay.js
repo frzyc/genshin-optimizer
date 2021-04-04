@@ -1,9 +1,9 @@
 import { Alert, Button, Card, Container, Form, InputGroup, Toast } from "react-bootstrap";
 import { Redirect, useLocation } from "react-router-dom";
 import CharacterDisplayCard from "../Character/CharacterDisplayCard";
-import { CurrentDatabaseVersion, DatabaseInitAndVerify } from '../Database/DatabaseUtil';
+import { CurrentDatabaseVersion } from '../Database/DatabaseUtil';
 import '../StatDependency'
-import { createFlexObj, parseFlexObj } from "../Util/FlexUtil";
+import { createFlexObj, parseFlexObj, _createFlexObj } from "../Util/FlexUtil";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLink } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
@@ -13,14 +13,16 @@ export default function TestDisplay() {
   const searchStr = location.search
   if (searchStr) {
     const character = parseFlexObj(searchStr.substring(1))
+    if (!character) return <Redirect to={`/`} />
+    if (searchStr.startsWith("?$"))
+      return <Redirect to={`/flex?${_createFlexObj(character, character.artifacts)}`} />
     return <Display character={character} />
   } else {
     const characterKey = location.characterKey
     if (!characterKey) return <Redirect to={`/`} />
-    DatabaseInitAndVerify()
     const flexObj = createFlexObj(characterKey)
     if (!flexObj) return <Redirect to={`/`} />
-    window.scrollTo(0, 0)//sometimes the window isnt scolled to the top on redirect.
+    window.scrollTo(0, 0)//sometimes the window isnt scrolled to the top on redirect.
     return <Redirect to={`/flex?${flexObj}`} />
   }
 }
