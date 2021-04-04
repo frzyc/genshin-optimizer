@@ -2,16 +2,8 @@ import ArtifactDatabase from "../Database/ArtifactDatabase";
 import CharacterDatabase from "../Database/CharacterDatabase";
 import { CurrentDatabaseVersion } from "../Database/DatabaseUtil";
 import { decode, encode } from "./CodingUtil";
-import { artifactSchema, characterSchema } from "./EximUtil";
+import { flexSchema } from "./Schemas";
 import urlon from 'urlon'
-
-export const flexSchema = {
-  type: "object",
-  schemas: {
-    artifacts: { type: "array", defaultSchema: artifactSchema },
-    character: characterSchema
-  }
-}
 
 export function createFlexObj(characterKey) {
   const character = CharacterDatabase.get(characterKey)

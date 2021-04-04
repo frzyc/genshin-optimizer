@@ -3,7 +3,7 @@ import artifacts from "../Data/Artifacts"
 import { CharacterSpecializedStatKey } from "../Data/CharacterData"
 import characters from "../Data/Characters"
 import { amplifyingReactions } from "../StatConstants"
-import { constants } from "./EximUtil"
+import { constants } from "./Schemas"
 
 describe('Export Import', () => {
   test('supports all characters', () => {

@@ -19,12 +19,7 @@ const characters = [
   "albedo", "amber", "barbara", "beidou", "bennett", "chongyun", "diluc", "diona", "fischl", "ganyu", "hutao", "jean", "kaeya", "keqing", "klee", "lisa", "mona", "ningguang", "noelle", "qiqi", "razor", "sucrose", "tartaglia", "traveler_anemo", "traveler_geo", "venti", "xiao", "xiangling", "xingqiu", "xinyan", "zhongli",
 ]
 
-// For testing purpose only, no need to maintain strict ordering
-export const constants = {
-  slots, hitModes, reactionModes, stats, artifactSets, characters
-}
-
-export const artifactSchema = {
+const artifactSchema = {
   type: "object",
   schemas: {
     setKey: { type: "fixed", list: artifactSets, length: 1 },
@@ -52,7 +47,7 @@ export const artifactSchema = {
     }
   }
 }
-const conditionalScheme = {
+const conditionalSchema = {
   type: "array",
   defaultSchema: {
     type: "object",
@@ -74,7 +69,7 @@ const weaponSchema = {
     conditionalNum: { type: "uint", length: 1 },
   }
 }
-export const characterSchema = {
+const characterSchema = {
   type: "object",
   schemas: {
     characterKey: { type: "fixed", list: characters, length: 1 },
@@ -93,7 +88,7 @@ export const characterSchema = {
       schemas: { auto: null, skill: null, burst: null },
       defaultSchema: { type: "uint", length: 1, }
     },
-    artifactConditionals: conditionalScheme,
+    artifactConditionals: conditionalSchema,
     baseStatOverrides: {
       type: "array",
       defaultSchema: {
@@ -110,7 +105,23 @@ export const characterSchema = {
         [key, parseInt(value.replace(/_/g, '.'))]
       ))
     },
-    talentConditionals: conditionalScheme,
+    talentConditionals: conditionalSchema,
     weapon: weaponSchema,
   }
+}
+
+const flexSchema = {
+  type: "object",
+  schemas: {
+    artifacts: { type: "array", defaultSchema: artifactSchema },
+    character: characterSchema
+  }
+}
+
+export {
+  flexSchema
+}
+// For testing purpose only, no need to maintain strict ordering
+export const constants = {
+  slots, hitModes, reactionModes, stats, artifactSets, characters
 }
