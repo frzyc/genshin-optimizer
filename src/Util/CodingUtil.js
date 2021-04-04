@@ -31,7 +31,7 @@ export function encode(data, schema) {
 }
 export function decode(string, schema) {
   let { result, offset } = decodeItem(string, 0, schema, null)
-  if (offset != string.length)
+  if (offset !== string.length)
     throw new Error(`Decoding string is too long ${string}`)
   return result
 }
