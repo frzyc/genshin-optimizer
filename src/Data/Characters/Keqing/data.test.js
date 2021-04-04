@@ -1,9 +1,8 @@
-import { applyArtifacts, computeAllStats, createProxiedStats } from "../TestUtils"
-import formula, { data } from "./data"
-import urlon from 'urlon'
+import { applyArtifacts, computeAllStats, createProxiedStats, parseTestFlexObject } from "../TestUtils"
+import formula from "./data"
 
-const url1 = "https://frzyc.github.io/genshin-optimizer/#/flex?$dbv:2&characterKey=keqing&levelKey=L80A&hitMode=hit&reactionMode:null&artifactConditionals@;&baseStatOverrides$;&weapon$key=TheBlackSword&levelKey=L90&refineIndex:0&overrideMainVal:0&overrideSubVal:0&conditionalNum:0;&autoInfused:true&talentConditionals@;&constellation:1&artifacts@$level:20&numStars:5&mainStatKey=hp&setKey=ThunderingFury&slotKey=flower&substats$critDMG_:25.6&eleMas:19&critRate_:3.9&atk:54;;&$level:20&numStars:5&mainStatKey=atk&setKey=GladiatorsFinale&slotKey=plume&substats$eleMas:16&def:44&critRate_:10.1&atk_:15.2;;&$level:18&numStars:5&mainStatKey=electro_dmg_&setKey=CrimsonWitchOfFlames&slotKey=goblet&substats$enerRech_:9.7&critDMG_:7&hp_:14&atk_:11.1;;&$level:16&numStars:5&mainStatKey=critDMG_&setKey=GladiatorsFinale&slotKey=circlet&substats$def_:12.4&hp_:14&hp:269&critRate_:7.4;;&$level:16&numStars:5&mainStatKey=atk_&setKey=ThunderingFury&slotKey=sands&substats$def_:18.2&hp_:5.8&atk:33&critRate_:3.1;;;&tlvl@:7&:6&:6"
-const charObj1 = urlon.parse(url1.split("flex?")[1])
+const url = "https://frzyc.github.io/genshin-optimizer/#/flex?v=1&d=5p5k0104a047j09D03S095k03147g05I09B14o265i0g348x1a612c24L195g0a446Y12c21d49a1p5g04246S22W03x09v0d001004L80A1766000dTheBlackSword3L90010100"
+const { artifacts } = parseTestFlexObject(url)
 
 let setupStats
 describe("Testing Keqing's Formulas (Agent RAF#3111)", () => {
@@ -17,7 +16,7 @@ describe("Testing Keqing's Formulas (Agent RAF#3111)", () => {
 
       critDMG_: 50 + 38.4,//specialized
 
-      enemyLevel: 85, physical_enemyRes_: 70, // Ruin Guard 
+      enemyLevel: 85, physical_enemyRes_: 70, // Ruin Guard
       tlvl: Object.freeze({ auto: 8 - 1, skill: 7 - 1, burst: 7 - 1 }),
       constellation: 1,
     })
@@ -25,11 +24,7 @@ describe("Testing Keqing's Formulas (Agent RAF#3111)", () => {
 
   describe("with artifacts", () => {
     beforeEach(() => applyArtifacts(setupStats, [
-      { hp: 4780, ...(charObj1.artifacts.find(art => art.slotKey === "flower")?.substats ?? {}) }, // Flower of Life
-      { atk: 311, ...(charObj1.artifacts.find(art => art.slotKey === "plume")?.substats ?? {}) }, // Plume of Death
-      { atk_: 38.7, ...(charObj1.artifacts.find(art => art.slotKey === "sands")?.substats ?? {}) }, // Sands of Eon
-      { electro_dmg_: 42.7, ...(charObj1.artifacts.find(art => art.slotKey === "goblet")?.substats ?? {}) }, // Goblet of Eonothem
-      { critDMG_: 51.6, ...(charObj1.artifacts.find(art => art.slotKey === "circlet")?.substats ?? {}) }, // Circlet of Logos
+      ...artifacts,
       { electro_dmg_: 15, atk_: 18 }, // 2 piece thunder-fury 2 piece gladiators
     ]))
 
@@ -138,7 +133,6 @@ describe("Testing Keqing's Formulas (Agent RAF#3111)", () => {
         expect(formula.plunging.low(stats)[0](stats)).toApproximate(7838)
         expect(formula.plunging.high(stats)[0](stats)).toApproximate(9791)
       })
-
     })
   })
 })

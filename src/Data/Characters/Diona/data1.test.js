@@ -1,10 +1,9 @@
-import { applyArtifacts, computeAllStats, createProxiedStats } from "../TestUtils"
-import formula, { data } from "./data"
-import urlon from 'urlon'
+import { applyArtifacts, computeAllStats, createProxiedStats, parseTestFlexObject } from "../TestUtils"
+import formula from "./data"
 
-const url = "https://frzyc.github.io/genshin-optimizer/#/flex?$dbv:2&characterKey=diona&levelKey=L80A&hitMode=hit&reactionMode:null&artifactConditionals@;&baseStatOverrides$;&weapon$key=FavoniusWarbow&levelKey=L85&refineIndex:0&overrideMainVal:0&overrideSubVal:0&conditionalNum:0;&autoInfused:false&talentConditionals@;&constellation:0&artifacts@$level:12&numStars:5&mainStatKey=hp&setKey=MaidenBeloved&slotKey=flower&substats$atk:19&enerRech_:11&hp_:4.1&critDMG_:14;;&$level:9&numStars:5&mainStatKey=atk&setKey=MaidenBeloved&slotKey=plume&substats$hp_:11.7&hp:269&def:19&def_:12.4;;&$level:10&numStars:5&mainStatKey=enerRech_&setKey=MaidenBeloved&slotKey=sands&substats$def:23&eleMas:21&critDMG_:5.4&atk:37;;&$level:12&numStars:4&mainStatKey=hp_&setKey=MaidenBeloved&slotKey=goblet&substats$atk:16&eleMas:30&def:19&hp:167;;&$level:12&numStars:4&mainStatKey=atk_&setKey=MaidenBeloved&slotKey=circlet&substats$hp_:4.7&hp:406&enerRech_:5.2&atk:16;;;&tlvl@:0&:0&:0"
-const charObj = urlon.parse(url.split("flex?")[1])
-charObj.artifacts.map(art => delete art.substats[""])//delete empty substats
+const url = "https://frzyc.github.io/genshin-optimizer/#/flex?v=1&d=5e5c01043j08K12F0ac2e5903142R11d45j06Y1e5a08245n07l0aS03B0e4c02343g07u05j01D2e4c04442L01m68Q03g07000004L80A0000000eFavoniusWarbow3L85010100"
+const { artifacts } = parseTestFlexObject(url)
+
 let setupStats
 describe("Testing Diona's Formulas (⛧ Sin ⛧#0663)", () => {
   beforeEach(() => {
@@ -15,7 +14,7 @@ describe("Testing Diona's Formulas (⛧ Sin ⛧#0663)", () => {
       cryo_dmg_: 24,//specialized
       skill_dmg_: 15,//C2
 
-      enemyLevel: 82, physical_enemyRes_: 70, // Ruin Guard 
+      enemyLevel: 82, physical_enemyRes_: 70, // Ruin Guard
       tlvl: Object.freeze({ auto: 6 - 1, skill: 10 - 1, burst: 11 - 1 }),
       constellation: 6,
     })
@@ -23,11 +22,7 @@ describe("Testing Diona's Formulas (⛧ Sin ⛧#0663)", () => {
 
   describe("with artifacts", () => {
     beforeEach(() => applyArtifacts(setupStats, [
-      { hp: 3155, ...(charObj.artifacts.find(art => art.slotKey === "flower")?.substats ?? {}) }, // Flower of Life
-      { atk: 166, ...(charObj.artifacts.find(art => art.slotKey === "plume")?.substats ?? {}) }, // Plume of Death
-      { enerRech_: 29.8, ...(charObj.artifacts.find(art => art.slotKey === "sands")?.substats ?? {}) }, // Sands of Eon
-      { hp_: 27.7, ...(charObj.artifacts.find(art => art.slotKey === "goblet")?.substats ?? {}) }, // Goblet of Eonothem
-      { atk_: 27.7, ...(charObj.artifacts.find(art => art.slotKey === "circlet")?.substats ?? {}) }, // Circlet of Logos
+      ...artifacts,
       { heal_: 15 }, // 4 piece maiden
     ]))
 

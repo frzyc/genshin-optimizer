@@ -1,9 +1,8 @@
-import { applyArtifacts, computeAllStats, createProxiedStats } from "../TestUtils"
-import formula, { data } from "./data"
-import urlon from 'urlon'
+import { applyArtifacts, computeAllStats, createProxiedStats, parseTestFlexObject } from "../TestUtils"
+import formula from "./data"
 
-const url = "https://frzyc.github.io/genshin-optimizer/#/flex?$dbv:2&characterKey=lisa&levelKey=L60A&hitMode=hit&reactionMode:null&artifactConditionals@;&baseStatOverrides$;&weapon$key=TwinNephrite&levelKey=L40A&refineIndex:2&overrideMainVal:0&overrideSubVal:0&conditionalNum:0;&autoInfused:false&talentConditionals@;&constellation:0&artifacts@$level:16&numStars:4&mainStatKey=atk&setKey=ThunderingFury&slotKey=plume&substats$critRate_:5.3&critDMG_:11.2&atk_:7&enerRech_:3.6;;&$level:16&numStars:4&mainStatKey=hp&setKey=ThunderingFury&slotKey=flower&substats$eleMas:47&critDMG_:5.6&atk:16&def_:9.9;;&$level:16&numStars:5&mainStatKey=atk_&setKey=ThunderingFury&slotKey=circlet&substats$def_:7.3&atk:19&enerRech_:10.4&critDMG_:20.2;;&$level:16&numStars:4&mainStatKey=enerRech_&setKey=ThunderingFury&slotKey=sands&substats$hp_:7.9&def:15&atk_:3.7&hp:359;;&$level:16&numStars:5&mainStatKey=electro_dmg_&setKey=CrimsonWitchOfFlames&slotKey=goblet&substats$critDMG_:5.4&enerRech_:11&hp:508&atk_:10.5;;;&tlvl@:0&:0&:0"
-const charObj = urlon.parse(url.split("flex?")[1])
+const url = "https://frzyc.github.io/genshin-optimizer/#/flex?v=1&d=5p4g03149R0aM14618A0p4g01047L0aU03g06z1p5g04446913j08E1aa3p4g08242f15f04B01D565g0g34aS08K11Y74F1f000004L60A0000000cTwinNephrite4L40A210100"
+const { artifacts } = parseTestFlexObject(url)
 
 let setupStats
 describe("Testing Lisa's Formulas (Derpy#2132)", () => {
@@ -14,7 +13,7 @@ describe("Testing Lisa's Formulas (Derpy#2132)", () => {
       weaponType: "catalyst", weaponATK: 207, critRate_: 5 + 8.8,//Twin Nephrite R3
       eleMas: 48,//specialized
 
-      enemyLevel: 85, physical_enemyRes_: 70, // Ruin Guard 
+      enemyLevel: 85, physical_enemyRes_: 70, // Ruin Guard
       tlvl: Object.freeze({ auto: 2 - 1, skill: 2 - 1, burst: 2 - 1 }),
       constellation: 1,
     })
@@ -22,12 +21,8 @@ describe("Testing Lisa's Formulas (Derpy#2132)", () => {
 
   describe("with artifacts", () => {
     beforeEach(() => applyArtifacts(setupStats, [
-      { hp: 3571, ...(charObj.artifacts.find(art => art.slotKey === "flower")?.substats ?? {}) }, // Flower of Life
-      { atk: 232, ...(charObj.artifacts.find(art => art.slotKey === "plume")?.substats ?? {}) }, // Plume of Death
-      { enerRech_: 38.7, ...(charObj.artifacts.find(art => art.slotKey === "sands")?.substats ?? {}) }, // Sands of Eon
-      { electro_dmg_: 38.7, ...(charObj.artifacts.find(art => art.slotKey === "goblet")?.substats ?? {}) }, // Goblet of Eonothem
-      { atk_: 38.7, ...(charObj.artifacts.find(art => art.slotKey === "circlet")?.substats ?? {}) }, // Circlet of Logos
-      { electro_dmg_: 15, overloaded_dmg_: 40, electrocharged_dmg_: 40, superconduct_dmg_: 40 }, // 4 piece thundering -fury 
+      ...artifacts,
+      { electro_dmg_: 15, overloaded_dmg_: 40, electrocharged_dmg_: 40, superconduct_dmg_: 40 }, // 4 piece thundering-fury
     ]))
 
     describe('no crit', () => {
@@ -122,6 +117,5 @@ describe("Testing Lisa's Formulas (Derpy#2132)", () => {
         expect(formula.burst.dmg(stats)[0](stats)).toApproximate(452)
       })
     })
-
   })
 })

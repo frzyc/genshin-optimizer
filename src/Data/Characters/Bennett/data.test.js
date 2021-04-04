@@ -1,9 +1,8 @@
-import { applyArtifacts, computeAllStats, createProxiedStats } from "../TestUtils"
+import { applyArtifacts, computeAllStats, createProxiedStats, parseTestFlexObject } from "../TestUtils"
 import formula, { data } from "./data"
-import urlon from 'urlon'
 
-const url1 = "https://frzyc.github.io/genshin-optimizer/#/flex?$dbv:2&characterKey=bennett&levelKey=L60&hitMode=hit&reactionMode:null&artifactConditionals@$srcKey=CrimsonWitchOfFlames&conditionalNum:3&srcKey2=4;;&baseStatOverrides$atk_:25&physical_enemyRes_:50&enemyLevel:75&anemo_enemyRes_:-10&geo_enemyRes_:-10&electro_enemyRes_:-10&hydro_enemyRes_:-10&pyro_enemyRes_:-10&cryo_enemyRes_:-10;&weapon$key=SkywardBlade&levelKey=L70&refineIndex:0&overrideMainVal:0&overrideSubVal:0&conditionalNum:0;&autoInfused:false&talentConditionals@;&constellation:1&artifacts@$level:20&numStars:5&mainStatKey=hp&setKey=CrimsonWitchOfFlames&slotKey=flower&substats$critRate_:12.4&critDMG_:12.4&enerRech_:5.8&def_:13.1;;&$level:20&numStars:5&mainStatKey=atk&setKey=CrimsonWitchOfFlames&slotKey=plume&substats$enerRech_:5.8&critDMG_:7.8&critRate_:3.9&eleMas:93;;&$level:20&numStars:5&mainStatKey=atk_&setKey=MaidenBeloved&slotKey=sands&substats$critRate_:3.9&def:79&enerRech_:5.8&critDMG_:13.2;;&$level:16&numStars:4&mainStatKey=pyro_dmg_&setKey=CrimsonWitchOfFlames&slotKey=goblet&substats$enerRech_:3.6&atk:16&def_:5.3&hp:598;;&$level:20&numStars:5&mainStatKey=atk_&setKey=CrimsonWitchOfFlames&slotKey=circlet&substats$critRate_:10.9&hp_:10.5&critDMG_:7.8&atk:33;;;&tlvl@:3&:3&:3"
-const charObj1 = urlon.parse(url1.split("flex?")[1])
+const url = "https://frzyc.github.io/genshin-optimizer/#/flex?v=1&d=565k01049Y1aY18W063265k03148W0ae19D07t1e5k04249D05f18W0a4264g0j348A03g06R01m965k04449J12F1ae13x04001003L6003331kCrimsonWitchOfFlames14394atk_225iphysical_enemyRes_250aenemyLevel275fanemo_enemyRes_3-10dgeo_enemyRes_3-10helectro_enemyRes_3-10fhydro_enemyRes_3-10epyro_enemyRes_3-10ecryo_enemyRes_3-100cSkywardBlade3L70010100"
+const { artifacts } = parseTestFlexObject(url)
 
 let setupStats
 describe("Testing Bennett's Formulas (Mabmab#6492)", () => {
@@ -17,7 +16,7 @@ describe("Testing Bennett's Formulas (Mabmab#6492)", () => {
 
       atk_: 25,//pyro reso
       enemyLevel: 75, physical_enemyRes_: 70 - 20, // Ruin Guard with zhongli shield
-      pyro_enemyRes_: -10,
+      pyro_enemyRes_: 10 - 20,
       tlvl: Object.freeze({ auto: 4 - 1, skill: 4 - 1, burst: 4 - 1 }),
       constellation: 1,
     })
@@ -25,12 +24,8 @@ describe("Testing Bennett's Formulas (Mabmab#6492)", () => {
 
   describe("with artifacts", () => {
     beforeEach(() => applyArtifacts(setupStats, [
-      { hp: 4780, ...charObj1.artifacts[0].substats }, // Flower of Life
-      { atk: 311, ...charObj1.artifacts[1].substats }, // Plume of Death
-      { atk_: 46.6, ...charObj1.artifacts[2].substats }, // Sands of Eon
-      { pyro_dmg_: 58.3, ...charObj1.artifacts[3].substats }, // Goblet of Eonothem
-      { atk_: 46.6, ...charObj1.artifacts[4].substats }, // Circlet of Logos
-      { pyro_dmg_: 15, vaporize_dmg_: 15, overloaded_dmg_: 40, }, // 4 piece crimson witch
+      ...artifacts,
+      { pyro_dmg_: 15 + 22.5, vaporize_dmg_: 15, overloaded_dmg_: 40, }, // 4 piece crimson witch + 3 stacks
     ]))
 
     describe("no crit", () => {

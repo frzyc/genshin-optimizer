@@ -3,7 +3,6 @@ import { Redirect, useLocation } from "react-router-dom";
 import CharacterDisplayCard from "../Character/CharacterDisplayCard";
 import { CurrentDatabaseVersion, DatabaseInitAndVerify } from '../Database/DatabaseUtil';
 import '../StatDependency'
-import urlon from 'urlon'
 import { createFlexObj, parseFlexObj } from "../Util/FlexUtil";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLink } from "@fortawesome/free-solid-svg-icons";
@@ -13,7 +12,7 @@ export default function TestDisplay() {
   const location = useLocation()
   const searchStr = location.search
   if (searchStr) {
-    const character = parseFlexObj(urlon.parse(searchStr.substring(1)))
+    const character = parseFlexObj(searchStr.substring(1))
     return <Display character={character} />
   } else {
     const characterKey = location.characterKey
@@ -22,7 +21,7 @@ export default function TestDisplay() {
     const flexObj = createFlexObj(characterKey)
     if (!flexObj) return <Redirect to={`/`} />
     window.scrollTo(0, 0)//sometimes the window isnt scolled to the top on redirect.
-    return <Redirect to={`/flex?${urlon.stringify(flexObj)}`} />
+    return <Redirect to={`/flex?${flexObj}`} />
   }
 }
 function Display({ character }) {
