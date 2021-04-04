@@ -22,12 +22,17 @@ export function createFlexObj(characterKey) {
     .map(id => ArtifactDatabase.get(id))
 
   try {
-    return "v=1&d=" + encode({ character, artifacts }, flexSchema)
+    return _createFlexObj(character, artifacts)
   } catch (error) {
     if (process.env.NODE_ENV === "development")
       console.error(`Fail to encode data on path ${error.path ?? []}: ${error}`)
     return null
   }
+}
+
+// TODO Remove this when all test URLs are converted to new format
+export function _createFlexObj(character, artifacts) {
+  return "v=1&d=" + encode({ character, artifacts }, flexSchema)
 }
 
 export function parseFlexObj(string) {
@@ -40,7 +45,7 @@ export function parseFlexObj(string) {
     }
   } catch (error) {
     if (process.env.NODE_ENV === "development")
-    console.error(`Fail to encode data on path ${error.path ?? []}: ${error}`)
+      console.error(`Fail to encode data on path ${error.path ?? []}: ${error}`)
     return null
   }
 }

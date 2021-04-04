@@ -30,19 +30,25 @@ export function encode(data, schema) {
   return encodeItem(data, schema, null)
 }
 export function decode(string, schema) {
-  return decodeItem(string, 0, schema, null).result
+  let { result, offset } = decodeItem(string, 0, schema, null)
+  if (offset != string.length)
+    throw new Error(`Decoding string is too long ${string}`)
+  return result
 }
 
+// Keep the length low. We might want to reserve high bits for later extension.
 export function encodeLength(length) {
-  let string = numberToString(length)
-  return numberToString(string.length, 1) + string
+  if (length >= 32)
+    throw new Error(`Length (${length}) too large`)
+  return numberToString(length, 1)
 }
 export function decodeLength(string, offset) {
   let length = stringToNumber(string[offset])
-  offset += 1
+  if (length >= 32)
+    throw new Error(`Length (${length}) too large`)
   return {
-    result: stringToNumber(string.slice(offset, offset + length)),
-    offset: offset + length,
+    result: length,
+    offset: offset + 1,
   }
 }
 

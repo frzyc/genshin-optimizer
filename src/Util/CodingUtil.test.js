@@ -76,10 +76,7 @@ describe('Export Import', () => {
   })
 
   test('roundtrip length', () => {
-    for (let j = 0; j < 64; j++)
-      expect(decodeLength(encodeLength(j), 0)).toEqual({result:j, offset: 2})
-    for (let j = 64; j < 4096; j++)
-      expect(decodeLength(encodeLength(j), 0)).toEqual({result:j, offset: 3})
-    expect(decodeLength(encodeLength(4096), 0)).toEqual({result: 4096, offset: 4})
+    for (let j = 0; j < 32; j++)
+      expect(decodeLength(encodeLength(j), 0)).toEqual({result:j, offset: 1})
   })
 })

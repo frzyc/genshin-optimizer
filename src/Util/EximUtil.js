@@ -95,18 +95,20 @@ export const characterSchema = {
     },
     artifactConditionals: conditionalScheme,
     baseStatOverrides: {
-      type: "object",
-      schemas: { k: null, v: null },
-      defaultSchema: { type: "array", defaultSchema: { type: "string" } },
-      encode: (object) => ({
-        // Change the format so that we can safely encode
-        k: Object.keys(object),
-        v: Object.values(object).map((value) =>
-          value.toString().replace(/\./g, '_')
-        ),
-      }),
-      decode: ({k, v}) => Object.fromEntries(k.map((key, i) =>
-        [ key, parseInt(v[i].replace(/_/g, '.')) ]))
+      type: "array",
+      defaultSchema: {
+        type: "object",
+        schemas: {
+          key: { type: "string" },
+          value: { type: "string" },
+        }
+      },
+      encode: (object) => Object.entries(object).map(([key, value]) =>
+        ({ key, value: value.toString().replace(/\./g, '_') })
+      ),
+      decode: (entries) => Object.fromEntries(entries.map(({key, value}) =>
+        [key, parseInt(value.replace(/_/g, '.'))]
+      ))
     },
     talentConditionals: conditionalScheme,
     weapon: weaponSchema,

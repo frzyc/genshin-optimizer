@@ -1,9 +1,8 @@
-import { applyArtifacts, computeAllStats, createProxiedStats } from "../TestUtils"
+import { applyArtifacts, computeAllStats, createProxiedStats, parseTestFlexObject, updateURL } from "../TestUtils"
 import formula from "./data"
-import urlon from 'urlon'
 
-const url1 = "https://frzyc.github.io/genshin-optimizer/#/flex?$dbv:2&characterKey=razor&levelKey=L80&hitMode=critHit&reactionMode:null&artifactConditionals@;&baseStatOverrides$physical_enemyImmunity:false&enemyLevel:77&physical_enemyRes_:70;&weapon$key=PrototypeAminus&levelKey=L80&refineIndex:0&overrideMainVal:0&overrideSubVal:0&conditionalNum:0;&autoInfused:false&talentConditionals@$srcKey=constellation1&conditionalNum:1&srcKey2=WolfsInstinct;;&constellation:3&artifacts@$level:20&numStars:5&mainStatKey=hp&setKey=BloodstainedChivalry&slotKey=flower&substats$critRate_:8.9&atk_:5.8&atk:35&critDMG_:13.2;;&$level:20&numStars:5&mainStatKey=atk&setKey=BloodstainedChivalry&slotKey=plume&substats$eleMas:33&critDMG_:10.9&critRate_:9.3&atk_:8.7;;&$level:16&numStars:5&mainStatKey=atk_&setKey=GladiatorsFinale&slotKey=sands&substats$critDMG_:13.2&atk:51&enerRech_:5.8&hp_:10.5;;&$level:20&numStars:5&mainStatKey=physical_dmg_&setKey=NoblesseOblige&slotKey=goblet&substats$critRate_:10.9&hp_:5.8&critDMG_:5.4&enerRech_:16.8;;&$level:20&numStars:5&mainStatKey=atk_&setKey=GladiatorsFinale&slotKey=circlet&substats$def_:7.3&hp_:13.4&critRate_:7.8&def:42;;;&tlvl@:7&:5&:5"
-const charObj1 = urlon.parse(url1.split("flex?")[1])
+const string1 = "v=1&d=545k01049p14W03z0a4245k03147x0aJ19t14n195g0424a423P08W02F1g5k0c349J12W0aS08E295k04446912629e15G0k203003L80075503mphysical_enemyImmunity5falseaenemyLevel277iphysical_enemyRes_2701econstellation1dWolfsInstinct1fPrototypeAminus3L80010100"
+const { artifacts: artifacts1 } = parseTestFlexObject(string1)
 
 let setupStats
 describe("Testing Razor's Formulas (Mabmab#6492)", () => {
@@ -23,11 +22,7 @@ describe("Testing Razor's Formulas (Mabmab#6492)", () => {
 
   describe("with artifacts", () => {
     beforeEach(() => applyArtifacts(setupStats, [
-      { hp: 4780, ...charObj1.artifacts[0].substats }, // Flower of Life
-      { atk: 311, ...charObj1.artifacts[1].substats }, // Plume of Death
-      { atk_: 38.7, ...charObj1.artifacts[2].substats }, // Sands of Eon
-      { physical_dmg_: 58.3, ...charObj1.artifacts[3].substats }, // Goblet of Eonothem
-      { atk_: 46.6, ...charObj1.artifacts[4].substats }, // Circlet of Logos
+      ...artifacts1,
       { physical_dmg_: 25, atk_: 18 }, // 2 piece bloodstained 2 piece gladiator
     ]))
 
@@ -95,9 +90,8 @@ describe("Testing Razor's Formulas (Mabmab#6492)", () => {
   })
 })
 
-
-const url2 = "https://frzyc.github.io/genshin-optimizer/#/flex?$dbv:2&characterKey=razor&levelKey=L80&hitMode=hit&reactionMode:null&artifactConditionals@;&baseStatOverrides$;&weapon$key=PrototypeAminus&levelKey=L90&refineIndex:1&overrideMainVal:0&overrideSubVal:0&conditionalNum:0;&autoInfused:false&talentConditionals@;&constellation:6&artifacts@$level:16&numStars:4&mainStatKey=hp&setKey=GladiatorsFinale&slotKey=flower&substats$critDMG_:14.3&atk_:8.4&critRate_:2.8&atk:12;;&$level:20&numStars:5&mainStatKey=atk&setKey=GladiatorsFinale&slotKey=plume&substats$hp_:4.1&hp:508&critRate_:3.1&enerRech_:20.1;;&$level:20&numStars:5&mainStatKey=atk_&setKey=GladiatorsFinale&slotKey=sands&substats$atk:68&critRate_:6.2&critDMG_:7&eleMas:21;;&$level:20&numStars:5&mainStatKey=critRate_&setKey=GladiatorsFinale&slotKey=circlet&substats$atk:68&hp_:5.3&enerRech_:10.4&atk_:4.1;;&$level:16&numStars:5&mainStatKey=physical_dmg_&setKey=WanderersTroupe&slotKey=goblet&substats$atk:27&hp:478&eleMas:40&atk_:5.3;;;&tlvl@:0&:0&:0"
-const charObj2 = urlon.parse(url2.split("flex?")[1])
+const string2 = "v=1&d=594g0104af24k19s03c095k03142F01Y79v089395k04243419-0a617l095k09443412R08E14F0u5g0c343r01u77E04R0k006003L800000000fPrototypeAminus3L90110100"
+const { artifacts: artifacts2 } = parseTestFlexObject(string2)
 
 describe("Testing Razor's Formulas (sohum#5921)", () => {
   beforeEach(() => {
@@ -116,11 +110,7 @@ describe("Testing Razor's Formulas (sohum#5921)", () => {
 
   describe("with artifacts", () => {
     beforeEach(() => applyArtifacts(setupStats, [
-      { hp: 3571, ...charObj2.artifacts[0].substats }, // Flower of Life
-      { atk: 311, ...charObj2.artifacts[1].substats }, // Plume of Death
-      { atk_: 46.6, ...charObj2.artifacts[2].substats }, // Sands of Eon
-      { physical_dmg_: 48.4, ...charObj2.artifacts[3].substats }, // Goblet of Eonothem
-      { atk_: 31.1, ...charObj2.artifacts[4].substats }, // Circlet of Logos
+      ...artifacts2,
       { atk_: 18, normal_dmg_: 35 }, // 4 piece gladiator
     ]))
 
