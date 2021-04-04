@@ -25,9 +25,12 @@ export function parseTestFlexObject(url) {
   let character = parseFlexObj(url.split("flex?")[1])
   let artifacts = character.artifacts.map(artifact => {
     let { numStars, level, mainStatKey, substats } = artifact
-    let result = Object.fromEntries(substats.map(({key, value}) => [ key, value ]))
-    result[mainStatKey] = Artifact.getMainStatValue(mainStatKey, numStars, level)
-    return result
+    return {
+      ...Object.fromEntries(substats
+        .filter(s => s.key != "")
+        .map(({key, value}) => [ key, value ])),
+      [mainStatKey]: Artifact.getMainStatValue(mainStatKey, numStars, level)
+    }
   })
   delete character.artifacts
   return { character, artifacts }
