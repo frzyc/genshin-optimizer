@@ -9,7 +9,7 @@ const reactionModes = [
   null, "hydro_vaporize", "pyro_vaporize", "pyro_melt", "cryo_melt",
 ]
 const stats = [
-  "hp", "hp_", "atk", "atk_", "def", "def_", "eleMas", "enerRech_", "critRate_", "critDMG_", "heal_",
+  "", "hp", "hp_", "atk", "atk_", "def", "def_", "eleMas", "enerRech_", "critRate_", "critDMG_", "heal_",
   "physical_dmg_", "anemo_dmg_", "cryo_dmg_", "dendro_dmg_", "electro_dmg_", "geo_dmg_", "hydro_dmg_", "pyro_dmg_",
 ]
 const artifactSets = [
@@ -48,7 +48,7 @@ export const artifactSchema = {
           let factor = key.endsWith("_") ? 10 : 1 // one decomal place for percentage
           return { key, value: value / factor }
         },
-      }
+      },
     }
   }
 }
