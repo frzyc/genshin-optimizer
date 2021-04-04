@@ -22,9 +22,13 @@ export function createFlexObj(characterKey) {
   }
 }
 
-// TODO Remove this when all test URLs are converted to new format
-export function _createFlexObj(character, artifacts) {
-  return "v=1&d=" + encode({ character, artifacts }, flexSchema)
+/// Print new url query from old url
+export function updateFlexURL(oldURL) {
+  const [hostname, queries] = oldURL.split("flex?")
+  const parsed = parseFlexObj(queries)
+  console.log(
+    hostname + "flex?" + _createFlexObj(parsed, parsed.artifacts)
+  )
 }
 
 export function parseFlexObj(string) {
@@ -40,6 +44,11 @@ export function parseFlexObj(string) {
       console.error(`Fail to encode data on path ${error.path ?? []}: ${error}`)
     return null
   }
+}
+
+// TODO Remove this when all test URLs are converted to new format
+function _createFlexObj(character, artifacts) {
+  return "v=1&d=" + encode({ character, artifacts }, flexSchema)
 }
 
 function parseFlexObj1(string) {

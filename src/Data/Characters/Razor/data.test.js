@@ -1,7 +1,7 @@
-import { applyArtifacts, computeAllStats, createProxiedStats, parseTestFlexObject, updateURL } from "../TestUtils"
+import { applyArtifacts, computeAllStats, createProxiedStats, parseTestFlexObject } from "../TestUtils"
 import formula from "./data"
 
-const string1 = "v=1&d=545k01049p14W03z0a4245k03147x0aJ19t14n195g0424a423P08W02F1g5k0c349J12W0aS08E295k04446912629e15G0k203003L80075503mphysical_enemyImmunity5falseaenemyLevel277iphysical_enemyRes_2701econstellation1dWolfsInstinct1fPrototypeAminus3L80010100"
+const string1 = "https://frzyc.github.io/genshin-optimizer/#/flex?v=1&d=545k01049p14W03z0a4245k03147x0aJ19t14n195g0424a423P08W02F1g5k0c349J12W0aS08E295k04446912629e15G0k203003L80075503mphysical_enemyImmunity5falseaenemyLevel277iphysical_enemyRes_2701econstellation1dWolfsInstinct1fPrototypeAminus3L80010100"
 const { artifacts: artifacts1 } = parseTestFlexObject(string1)
 
 let setupStats
@@ -90,7 +90,7 @@ describe("Testing Razor's Formulas (Mabmab#6492)", () => {
   })
 })
 
-const string2 = "v=1&d=594g0104af24k19s03c095k03142F01Y79v089395k04243419-0a617l095k09443412R08E14F0u5g0c343r01u77E04R0k006003L800000000fPrototypeAminus3L90110100"
+const string2 = "https://frzyc.github.io/genshin-optimizer/#/flex?v=1&d=594g0104af24k19s03c095k03142F01Y79v089395k04243419-0a617l095k09443412R08E14F0u5g0c343r01u77E04R0k006003L800000000fPrototypeAminus3L90110100"
 const { artifacts: artifacts2 } = parseTestFlexObject(string2)
 
 describe("Testing Razor's Formulas (sohum#5921)", () => {

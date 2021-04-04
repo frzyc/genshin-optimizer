@@ -21,15 +21,8 @@ export function computeAllStats(baseStats) {
   return stats
 }
 
-/// Print new url query from old url
-export function updateURL(oldURL) {
-  let parsed = parseFlexObj(oldURL.split("flex?")[1])
-  console.log(
-    _createFlexObj(parsed, parsed.artifacts)
-  )
-}
-export function parseTestFlexObject(string) {
-  let character = parseFlexObj(string)
+export function parseTestFlexObject(url) {
+  let character = parseFlexObj(url.split("flex?")[1])
   let artifacts = character.artifacts.map(artifact => {
     let { numStars, level, mainStatKey, substats } = artifact
     let result = Object.fromEntries(substats.map(({key, value}) => [ key, value ]))
