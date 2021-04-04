@@ -3,6 +3,7 @@ import CharacterDatabase from "../Database/CharacterDatabase";
 import { CurrentDatabaseVersion } from "../Database/DatabaseUtil";
 import { decode, encode } from "./CodingUtil";
 import { artifactSchema, characterSchema } from "./EximUtil";
+import urlon from 'urlon'
 
 export const flexSchema = {
   type: "object",
@@ -20,16 +21,26 @@ export function createFlexObj(characterKey) {
     .filter(art => art)
     .map(id => ArtifactDatabase.get(id))
 
-  return { v: 1, d: encode({ character, artifacts }, flexSchema) }
+  try {
+    return "v=1&d=" + encode({ character, artifacts }, flexSchema)
+  } catch (error) {
+    if (process.env.NODE_ENV === "development")
+      console.error(`Fail to encode data on path ${error.path ?? []}`, character, artifacts)
+    return null
+  }
 }
 
-export function parseFlexObj(character) {
-  if (character.v === 1) return parseFlexObj3(character)
-  return parseFlexObjOld(character)
+export function parseFlexObj(string) {
+  const parameters = Object.fromEntries(string.split('&').map(s => s.split('=')))
+
+  switch (parseInt(parameters.v)) {
+    case 1: return parseFlexObj3(parameters.d)
+    default: return parseFlexObjOld(urlon.parse(string))
+  }
 }
 
-function parseFlexObj3(data) {
-  const { character, artifacts } = decode(data.d, flexSchema)
+function parseFlexObj3(string) {
+  const { character, artifacts } = decode(string, flexSchema)
   artifacts.forEach(artifact => {
     artifact.location = character.characterKey
   })

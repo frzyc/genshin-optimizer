@@ -2,6 +2,7 @@ import { chars, arts, characterObj, flexObj } from './FlexUtil.test.data'
 import { saveToLocalStorage } from './Util'
 import { createFlexObj, parseFlexObj } from './FlexUtil'
 import { DatabaseInitAndVerify } from '../Database/DatabaseUtil'
+import urlon from 'urlon'
 
 function setupLS() {
   Object.entries(chars).map(([id, char]) => saveToLocalStorage(`char_${id}`, char))
@@ -18,6 +19,6 @@ describe('flex import export', () => {
     expect(parseFlexObj(createFlexObj("ningguang"))).toEqual(characterObj)
   })
   test('should support old format', () => {
-    expect(parseFlexObj(flexObj)).toEqual(characterObj)
+    expect(parseFlexObj(urlon.stringify(flexObj))).toEqual(characterObj)
   })
 })
