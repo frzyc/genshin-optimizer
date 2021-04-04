@@ -214,7 +214,7 @@ function SkillDisplayCard(props) {
         <Row>
           <Col xs="auto">
             <DropdownButton title={`Talent Lv. ${talentLvlKey + 1}`}>
-              {[...Array(talentLimits[ascension]).keys()].map(i =>
+              {[...Array(talentLimits[ascension] + (talentKey === "auto" ? 1 : 0)).keys()].map(i =>
                 <Dropdown.Item key={i} onClick={() => setTalentLevel(talentKey, i)}>Talent Lv. {i + levelBoost + 1}</Dropdown.Item>)}
             </DropdownButton>
           </Col>
