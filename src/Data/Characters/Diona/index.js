@@ -108,7 +108,7 @@ const char = {
           value: "6s",
         }, {
           text: "Hold CD",
-          value: "12s",
+          value: "15s",
         }],
         conditional: stats => stats.constellation >= 4 && {
           type: "character",

@@ -17,7 +17,7 @@ describe("Testing Diona's Formulas (VoidAssassin#9930)", () => {
 
       enemyLevel: 85, physical_enemyRes_: 70, // Ruin Guard 
       tlvl: Object.freeze({ auto: 5 - 1, skill: 9 - 1, burst: 9 - 1 }),
-      constellation: 1,
+      constellation: 6,
     })
   })
 
