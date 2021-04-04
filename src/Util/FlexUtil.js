@@ -25,7 +25,7 @@ export function createFlexObj(characterKey) {
     return "v=1&d=" + encode({ character, artifacts }, flexSchema)
   } catch (error) {
     if (process.env.NODE_ENV === "development")
-      console.error(`Fail to encode data on path ${error.path ?? []}`, character, artifacts)
+      console.error(`Fail to encode data on path ${error.path ?? []}: ${error}`)
     return null
   }
 }
@@ -33,13 +33,19 @@ export function createFlexObj(characterKey) {
 export function parseFlexObj(string) {
   const parameters = Object.fromEntries(string.split('&').map(s => s.split('=')))
 
-  switch (parseInt(parameters.v)) {
-    case 1: return parseFlexObj3(parameters.d)
-    default: return parseFlexObjOld(urlon.parse(string))
+  try {
+    switch (parseInt(parameters.v)) {
+      case 1: return parseFlexObj1(parameters.d)
+      default: return parseFlexObj0(urlon.parse(string))
+    }
+  } catch (error) {
+    if (process.env.NODE_ENV === "development")
+    console.error(`Fail to encode data on path ${error.path ?? []}: ${error}`)
+    return null
   }
 }
 
-function parseFlexObj3(string) {
+function parseFlexObj1(string) {
   const { character, artifacts } = decode(string, flexSchema)
   artifacts.forEach(artifact => {
     artifact.location = character.characterKey
@@ -49,7 +55,7 @@ function parseFlexObj3(string) {
     artifacts, ...character
   }
 }
-function parseFlexObjOld(character) {
+function parseFlexObj0(character) {
   const { dbv, characterKey, levelKey, hitMode, reactionMode, artifactConditionals, baseStatOverrides, weapon, autoInfused, talentConditionals, constellation, overrideLevel, tlvl, artifacts } = character
   const characterkey = character.characterKey
   character.artifacts.forEach(art => {
