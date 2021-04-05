@@ -69,13 +69,13 @@ const char = {
           text: `Riptide Flash DMG (x3)`,
           formulaText: stats =>
             <span>{data.riptide.flash[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats, true), stats)}</span>,
-          formula: formula.riptide.flash,
+          formula: formula.normal.flash,
           variant: stats => getTalentStatKeyVariant("normal", stats, true),
         }, {
           text: `Riptide Burst DMG`,
           formulaText: stats =>
             <span>{data.riptide.burst[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats, true), stats)}</span>,
-          formula: formula.riptide.burst,
+          formula: formula.normal.burst,
           variant: stats => getTalentStatKeyVariant("normal", stats, true),
         }]
       }, {
@@ -145,7 +145,7 @@ const char = {
           text: `Riptide Slash DMG`,
           formulaText: stats =>
             <span>{data.riptide.slash[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
-          formula: formula.riptide.slash,
+          formula: formula.skill.slash,
           variant: stats => getTalentStatKeyVariant("skill", stats),
         }, {
           text: `Duration`,
@@ -188,7 +188,7 @@ const char = {
           text: `Riptide Blast DMG`,
           formulaText: stats =>
             <span>{data.riptide.blast[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
-          formula: formula.riptide.blast,
+          formula: formula.burst.blast,
           variant: stats => getTalentStatKeyVariant("burst", stats),
         }, {
           text: "CD",

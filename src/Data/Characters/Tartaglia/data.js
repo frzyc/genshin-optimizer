@@ -56,8 +56,12 @@ export const data = {
 }
 
 const formula = {
-  normal: Object.fromEntries(data.normal.hitArr.map((percentArr, i) => [i, stats =>
-    basicDMGFormula(percentArr[stats.tlvl.auto], stats, "normal")])),
+  normal: {
+    ...Object.fromEntries(data.normal.hitArr.map((percentArr, i) => [i, stats =>
+      basicDMGFormula(percentArr[stats.tlvl.auto], stats, "normal")])),
+    flash: stats => basicDMGFormula(data.riptide.flash[stats.tlvl.auto], stats, "normal", true),
+    burst: stats => basicDMGFormula(data.riptide.burst[stats.tlvl.auto], stats, "normal", true),
+  },
   charged: {
     aimedShot: stats => basicDMGFormula(data.charged.aimedShot[stats.tlvl.auto], stats, "charged"),
     fullAimedShot: stats => basicDMGFormula(data.charged.fullAimedShot[stats.tlvl.auto], stats, "charged", true),
@@ -69,16 +73,11 @@ const formula = {
     skillDmg: stats => basicDMGFormula(data.skill.skillDmg[stats.tlvl.skill], stats, "skill"),
     charged1: stats => basicDMGFormula(data.skill.charged1[stats.tlvl.skill], stats, "charged", true),
     charged2: stats => basicDMGFormula(data.skill.charged2[stats.tlvl.skill], stats, "charged", true),
-
+    slash: stats => basicDMGFormula(data.riptide.slash[stats.tlvl.skill], stats, "skill", true),
   },
   burst: {
     melee: stats => basicDMGFormula(data.burst.melee[stats.tlvl.burst], stats, "burst"),
     ranged: stats => basicDMGFormula(data.burst.ranged[stats.tlvl.burst], stats, "burst"),
-  },
-  riptide: {
-    flash: stats => basicDMGFormula(data.riptide.flash[stats.tlvl.auto], stats, "normal", true),
-    burst: stats => basicDMGFormula(data.riptide.burst[stats.tlvl.auto], stats, "normal", true),
-    slash: stats => basicDMGFormula(data.riptide.slash[stats.tlvl.skill], stats, "skill", true),
     blast: stats => basicDMGFormula(data.riptide.blast[stats.tlvl.burst], stats, "burst", true),
   },
 }
