@@ -17,8 +17,9 @@
 ///   defaultSchema?: Default schema for when `schemas[i]` is `null`,
 /// }
 /// Object: { type: "object",
-///   schemas: A key-schema dictionary, some value entries may be `null`,
-///   defaultSchema?: default schema for when `schemas[key]` is `null`,
+///   schemas: A key-schema dictionary. All keys are encoded {
+///     default: default value if the object[key] doesn't exist
+///   }
 /// }
 /// Sparse: { type: "sparse",
 ///   keys?: A list of permitted keys, `null` if all keys are permitted,
@@ -30,26 +31,10 @@ export function encode(data, schema) {
   return encodeItem(data, schema, null)
 }
 export function decode(string, schema) {
-  let { result, offset } = decodeItem(string, 0, schema, null)
-  if (offset !== string.length)
-    throw new Error(`Decoding string is too long ${string}`)
+  const stream = new BlockStream(string)
+  const result = decodeItem(stream, schema, null)
+  stream.end()
   return result
-}
-
-// Keep the length low. We might want to reserve high bits for later extension.
-export function encodeLength(length) {
-  if (length >= 32)
-    throw new Error(`Length (${length}) too large`)
-  return numberToString(length, 1)
-}
-export function decodeLength(string, offset) {
-  let length = stringToNumber(string[offset])
-  if (length >= 32)
-    throw new Error(`Length (${length}) too large`)
-  return {
-    result: length,
-    offset: offset + 1,
-  }
 }
 
 function encodeItem(data, schema, pathItem) {
@@ -71,20 +56,21 @@ function encodeItem(data, schema, pathItem) {
     throw error
   }
 }
-function decodeItem(string, offset, schema, pathItem) {
+function decodeItem(stream, schema, pathItem) {
   try {
     let result
     switch (schema.type) {
-      case "uint": ({result, offset} = decodeUInt(string, offset, schema)); break
-      case "string": ({result, offset} = decodeString(string, offset, schema)); break
-      case "fixed": ({result, offset} = decodeFixed(string, offset, schema)); break
-      case "array": ({result, offset} = decodeArray(string, offset, schema)); break
-      case "object": ({result, offset} = decodeObject(string, offset, schema)); break
-      case "sparse": ({result, offset} = decodeSparse(string, offset, schema)); break
+      case "uint": result = decodeUInt(stream, schema); break
+      case "string": result = decodeString(stream, schema); break
+      case "fixed": result = decodeFixed(stream, schema); break
+      case "array": result = decodeArray(stream, schema); break
+      case "object": result = decodeObject(stream, schema); break
+      case "sparse": result = decodeSparse(stream, schema); break
       default: throw new Error(`Unsupported schema type ${schema.type} on array`)
     }
-    if (schema.decode) result = schema.decode(result)
-    return { result, offset }
+    if (schema.decode)
+      return schema.decode(result)
+    return result
   } catch (error) {
     error.path = error.path ?? []
     error.path.push(pathItem)
@@ -100,38 +86,28 @@ function encodeSparse(data, schema) {
     encodeItem(key, keySchema, key) + encodeItem(value, valueSchema, key)
   ).join('')
 }
-function decodeSparse(string, offset, schema) {
+function decodeSparse(stream, schema) {
   const { keys, keySchema, valueSchema } = schema
-  let length
-  ({result: length, offset} = decodeLength(string, offset))
+  const length = decodeLength(stream)
 
-  let result = Object.fromEntries([...new Array(length)].map(() => {
-    let key, value;
-    ({result: key, offset} = decodeItem(string, offset, keySchema, null));
-    ({result: value, offset} = decodeItem(string, offset, valueSchema, key));
+  return Object.fromEntries([...new Array(length)].map(() => {
+    const key = decodeItem(stream, keySchema, null)
+    const value = decodeItem(stream, valueSchema, key)
     return [key, value]
   }).filter(([key]) => keys?.includes(key) ?? true))
-
-  return { result, offset }
 }
 
 function encodeObject(data, schema) {
-  const { schemas=[], defaultSchema } = schema
-
-  return Object.entries(schemas).map(([key, schema]) => {
-    schema = schema ?? defaultSchema
-    return encodeItem(key in data ? data[key] : schema.default, schema, key)
-  }).join('')
+  const { schemas = [] } = schema
+  return Object.entries(schemas).map(([key, schema]) =>
+    encodeItem(key in data ? data[key] : schema.default, schema, key)
+  ).join('')
 }
-function decodeObject(string, offset, schema) {
-  const { schemas=[], defaultSchema } = schema
-
-  const result = Object.fromEntries(Object.entries(schemas).map(([key, schema]) => {
-    let result
-    ({result, offset} = decodeItem(string, offset, schema ?? defaultSchema, key))
-    return [key, result]
-  }))
-  return { result, offset }
+function decodeObject(stream, schema) {
+  const { schemas = [] } = schema
+  return Object.fromEntries(Object.entries(schemas).map(([key, schema]) =>
+    [key, decodeItem(stream, schema, key)]
+  ))
 }
 
 function encodeArray(data, schema) {
@@ -140,62 +116,54 @@ function encodeArray(data, schema) {
     encodeItem(item, schemas[i] ?? defaultSchema, i)
   ).join('')
 }
-function decodeArray(string, offset, schema) {
-  const { schemas = [], defaultSchema } = schema
-  let length
-  ({result: length, offset} = decodeLength(string, offset))
-  let result = [...new Array(length)].map((unused, i) => {
-    let result
-    ({result, offset} = decodeItem(string, offset, schemas[i] ?? defaultSchema, i))
-    return result
-  })
-  return { result, offset }
+function decodeArray(stream, schema) {
+  const { schemas = [], defaultSchema } = schema, length = decodeLength(stream)
+  return [...new Array(length)].map((unused, i) =>
+    decodeItem(stream, schemas[i] ?? defaultSchema, i))
 }
 
-function encodeFixed(data, schema) {
-  return encodeUInt(schema.list.indexOf(data), schema)
-}
-function decodeFixed(string, offset, schema) {
-  let result
-  ({result, offset} = decodeUInt(string, offset, schema))
-  return { result: schema.list[result], offset }
-}
+const encodeFixed = (data, schema) => encodeUInt(schema.list.indexOf(data), schema)
+const decodeFixed = (stream, schema) => schema.list[decodeUInt(stream, schema)]
 
 function encodeString(string, schema) {
   if (!string.match(/^[a-z0-9\-_]+$/i))
-    throw new Error(`Cannot encode string ${string}: not alphanumeric`)
+    throw new Error(`Cannot encode string ${string}: not alphanumeric or -_`)
   return encodeLength(string.length) + string
 }
-function decodeString(string, offset, schema) {
-  let length
-  ({ result: length, offset } = decodeLength(string, offset))
-  return {
-    result: string.slice(offset, offset + length),
-    offset: offset + length
-  }
+function decodeString(stream, schema) {
+  const string = stream.take(decodeLength(stream))
+  if (!string.match(/^[a-z0-9\-_]+$/i))
+    throw new Error(`Cannot decode string ${string}: not alphanumeric or -_`)
+  return string
 }
 
 function encodeUInt(uint, schema) {
   const string = numberToString(uint, schema.length)
   return schema.length ? string : (encodeLength(string.length) + string)
 }
-function decodeUInt(string, offset, schema) {
-  let length = schema.length
+function decodeUInt(stream, schema) {
+  let length = schema.length || decodeLength(stream)
+  return stringToNumber(stream.take(length))
+}
 
-  if (!schema.length)
-    ({ result: length, offset } = decodeLength(string, offset))
-
-  return {
-    result: stringToNumber(string.slice(offset, offset + length)),
-    offset: offset + length
-  }
+// Keep the length low. We might want to reserve high bits for later extension.
+function encodeLength(length) {
+  if (length >= 32)
+    throw new Error(`Length (${length}) too large`)
+  return numberToString(length, 1)
+}
+function decodeLength(stream) {
+  let length = stringToNumber(stream.take(1))
+  if (length >= 32)
+    throw new Error(`Length (${length}) too large`)
+  return length
 }
 
 function numberToString(number, length = 0) {
   if (number < 0) throw new Error(`Cannot encode negative number ${number}`)
 
   var string = ""
-  do {
+  while (number > 0) {
     const remainder = number % 64
     number = Math.floor(number / 64)
     if (remainder < 10) // 0-9
@@ -208,7 +176,7 @@ function numberToString(number, length = 0) {
       string += "-"
     else if (remainder === 63) // _
       string += "_"
-  } while (number > 0)
+  }
 
   if (!length)
     return string
@@ -239,4 +207,21 @@ function stringToNumber(string) {
   }
 
   return result
+}
+
+function BlockStream(string) {
+  this.string = string
+  this.offset = 0
+}
+BlockStream.prototype.take = function(count) {
+  if (this.offset + count > this.string.length)
+    throw new Error(`Cannot take ${count} items from ${this.string.slice(this.offset)}`)
+
+  const result = this.string.slice(this.offset, this.offset + count)
+  this.offset += count
+  return result
+}
+BlockStream.prototype.end = function() {
+  if (this.string.length !== this.offset)
+    throw new Error(`Unused string ${this.string.slice(this.offset)}`)
 }

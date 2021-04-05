@@ -7,8 +7,8 @@ import { constants } from "./Schemas"
 
 describe('Export Import', () => {
   test('supports all characters', () => {
-    for (const character in characters)
-      expect(constants.characters).toContain(character)
+    for (const characterKey in characters)
+      expect(constants.characterKeys).toContain(characterKey)
   })
   test('support all artifacts', () => {
     for (const artifact in artifacts)

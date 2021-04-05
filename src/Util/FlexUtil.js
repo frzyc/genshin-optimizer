@@ -2,7 +2,7 @@ import ArtifactDatabase from "../Database/ArtifactDatabase";
 import CharacterDatabase from "../Database/CharacterDatabase";
 import { CurrentDatabaseVersion } from "../Database/DatabaseUtil";
 import { decode, encode } from "./CodingUtil";
-import { flexSchema } from "./Schemas";
+import { schemas } from "./Schemas";
 import urlon from 'urlon'
 
 export function createFlexObj(characterKey) {
@@ -13,23 +13,18 @@ export function createFlexObj(characterKey) {
     .filter(art => art)
     .map(id => ArtifactDatabase.get(id))
 
+  return _createFlexObj(character, artifacts)
+}
+
+// TODO: Remove this when all test URLs are converted to new format
+export function _createFlexObj(character, artifacts) {
   try {
-    return _createFlexObj(character, artifacts)
+    return "v=1&d=" + encode({ character, artifacts }, schemas.flex)
   } catch (error) {
     if (process.env.NODE_ENV === "development")
       console.error(`Fail to encode data on path ${error.path ?? []}: ${error}`)
     return null
   }
-}
-
-/// Print new url query from old url
-// TODO: Remove this when all test URLs are converted to new format
-export function updateFlexURL(oldURL) {
-  const [hostname, queries] = oldURL.split("flex?")
-  const parsed = parseFlexObj(queries)
-  console.log(
-    hostname + "flex?" + _createFlexObj(parsed, parsed.artifacts)
-  )
 }
 
 export function parseFlexObj(string) {
@@ -47,13 +42,8 @@ export function parseFlexObj(string) {
   }
 }
 
-// TODO: Remove this when all test URLs are converted to new format
-export function _createFlexObj(character, artifacts) {
-  return "v=1&d=" + encode({ character, artifacts }, flexSchema)
-}
-
 function parseFlexObj1(string) {
-  const { character, artifacts } = decode(string, flexSchema)
+  const { character, artifacts } = decode(string, schemas.flex)
   artifacts.forEach(artifact => {
     artifact.location = character.characterKey
   })

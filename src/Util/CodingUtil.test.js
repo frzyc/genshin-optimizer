@@ -1,4 +1,4 @@
-import { encode, decode, encodeLength, decodeLength } from './CodingUtil'
+import { encode, decode } from './CodingUtil'
 
 describe('Export Import', () => {
   test('roundtrip sparse object', () => {
@@ -73,10 +73,5 @@ describe('Export Import', () => {
     for (let j = 0; j < 1000; j++) {
       expect(decode(encode(j, schema), schema)).toEqual(j)
     }
-  })
-
-  test('roundtrip length', () => {
-    for (let j = 0; j < 32; j++)
-      expect(decodeLength(encodeLength(j), 0)).toEqual({result:j, offset: 1})
   })
 })

@@ -15,113 +15,100 @@ const stats = [
 const artifactSets = [
   "Adventurer", "ArchaicPetra", "Berserker", "BlizzardStrayer", "BloodstainedChivalry", "BraveHeart", "CrimsonWitchOfFlames", "DefendersWill", "Gambler", "GladiatorsFinale", "HeartOfDepth", "Instructor", "Lavawalker", "LuckyDog", "MaidenBeloved", "MartialArtist", "NoblesseOblige", "PrayersForDestiny", "PrayersForIllumination", "PrayersForWisdom", "PrayersToSpringtime", "ResolutionOfSojourner", "RetracingBolide", "Scholar", "TheExile", "ThunderingFury", "Thundersoother", "TinyMiracle", "TravelingDoctor", "ViridescentVenerer", "WanderersTroupe",
 ]
-const characters = [
+const characterKeys = [
   "albedo", "amber", "barbara", "beidou", "bennett", "chongyun", "diluc", "diona", "fischl", "ganyu", "hutao", "jean", "kaeya", "keqing", "klee", "lisa", "mona", "ningguang", "noelle", "qiqi", "razor", "sucrose", "tartaglia", "traveler_anemo", "traveler_geo", "venti", "xiao", "xiangling", "xingqiu", "xinyan", "zhongli",
 ]
 
-const artifactSchema = {
-  type: "object",
-  schemas: {
-    setKey: { type: "fixed", list: artifactSets, length: 1 },
-    numStars: { type: "uint", length: 1 },
-    level: { type: "uint", length: 2 },
-    mainStatKey: { type: "fixed", list: stats, length: 1 },
-    slotKey: { type: "fixed", list: slots, length: 1 },
-    substats: {
-      type: "array",
-      defaultSchema: {
-        type: "object",
-        schemas: {
-          key: { type: "fixed", list: stats, length: 1 },
-          value: { type: "uint", length: 2 },
-        },
-        encode: ({key, value}) => {
-          let factor = key.endsWith("_") ? 10 : 1 // one decimal place for percentage
-          return { key, value: value * factor }
-        },
-        decode: ({key, value}) => {
-          let factor = key.endsWith("_") ? 10 : 1 // one decomal place for percentage
-          return { key, value: value / factor }
-        },
-      },
-    }
-  }
-}
-const conditionalSchema = {
-  type: "array",
-  defaultSchema: {
-    type: "object",
-    schemas: {
-      srcKey: { type: "string" },
-      srcKey2: { type: "string" },
-      conditionalNum: { type: "uint", length: 1 },
-    }
-  }
-}
-const weaponSchema = {
-  type: "object",
-  schemas: {
-    key: { type: "string" },
-    levelKey: { type: "string" },
-    refineIndex: { type: "uint", length: 1 },
-    overrideMainVal: { type: "uint" },
-    overrideSubVal: { type: "uint" },
-    conditionalNum: { type: "uint", length: 1 },
-  }
-}
-const characterSchema = {
-  type: "object",
-  schemas: {
-    characterKey: { type: "fixed", list: characters, length: 1 },
-    hitMode: { type: "fixed", list: hitModes, length: 1 },
-    reactionMode: { type: "fixed", list: reactionModes, length: 1 },
-    constellation: { type: "uint", length: 1 },
-    overrideLevel: { type: "uint", length: 2 },
-    levelKey: { type: "string" },
-    autoInfused: {
-      type: "uint", length: 1,
-      encode: (bool) => bool ? 1 : 0,
-      decode: (int) => int === 1,
-    },
-    talentLevelKeys: {
-      type: "object",
-      schemas: { auto: null, skill: null, burst: null },
-      defaultSchema: { type: "uint", length: 1, }
-    },
-    artifactConditionals: conditionalSchema,
-    baseStatOverrides: {
-      type: "array",
-      defaultSchema: {
-        type: "object",
-        schemas: {
-          key: { type: "string" },
-          value: { type: "string" },
-        }
-      },
-      encode: (object) => Object.entries(object).map(([key, value]) =>
-        ({ key, value: value.toString().replace(/\./g, '_') })
-      ),
-      decode: (entries) => Object.fromEntries(entries.map(({key, value}) =>
-        [key, parseInt(value.replace(/_/g, '.'))]
-      ))
-    },
-    talentConditionals: conditionalSchema,
-    weapon: weaponSchema,
-  }
-}
+// Common schemas
 
-const flexSchema = {
-  type: "object",
-  schemas: {
-    artifacts: { type: "array", defaultSchema: artifactSchema },
-    character: characterSchema
-  }
+const bool = {
+  type: "uint", length: 1,
+  encode: (bool) => bool ? 1 : 0,
+  decode: (int) => int !== 0,
 }
+const uint = (length) => ({ type: "uint", length })
+const float = {
+  type: "string",
+  encode: (value) => value.toString().replace(/\./g, '_'),
+  decode: (string) => parseFloat(string.replace(/_/g, '.')),
+}
+const string = { type: "string" }
+const array = (defaultSchema, other = {}) => ({ type: "array", defaultSchema, ...other })
+const object = (schemas, other = {}) => ({ type: "object", schemas, ...other })
+const sparse = (keySchema, valueSchema, keys=null) => ({ type: "sparse", keys, keySchema, valueSchema })
 
-export {
-  flexSchema
+// Fixed schema
+
+const stat = { type: "fixed", list: stats, length: 1 }
+const artifactSet = { type: "fixed", list: artifactSets, length: 1 }
+const slot = { type: "fixed", list: slots, length: 1 }
+const characterKey = { type: "fixed", list: characterKeys, length: 1 }
+const hitMode = { type: "fixed", list: hitModes, length: 1 }
+const reactionMode = { type: "fixed", list: reactionModes, length: 1 }
+
+// Complex schemas
+
+const artifact = object({
+  setKey: artifactSet,
+  numStars: uint(1),
+  level: uint(2),
+  mainStatKey: stat,
+  slotKey: slot,
+  substats: array(
+    object({
+      key: stat,
+      value: uint(2),
+    }, {
+      encode: ({key, value}) => {
+        let factor = key.endsWith("_") ? 10 : 1 // one decimal place for percentage
+        return { key, value: value * factor }
+      },
+      decode: ({key, value}) => {
+        let factor = key.endsWith("_") ? 10 : 1 // one decomal place for percentage
+        return { key, value: value / factor }
+      }
+    })
+  )
+})
+const conditional = array(
+  object({
+    srcKey: string,
+    srcKey2: string,
+    conditionalNum: uint(1),
+  })
+)
+const weapon = object({
+  key: string,
+  levelKey: string,
+  refineIndex: uint(1),
+  overrideMainVal: float,
+  overrideSubVal: float,
+  conditionalNum: uint(1),
+})
+const character = object({
+  characterKey,
+  hitMode,
+  reactionMode,
+  constellation: uint(1),
+  overrideLevel: uint(2),
+  levelKey: string,
+  autoInfused: bool,
+  talentLevelKeys: object({ auto: uint(1), skill: uint(1), burst: uint(1) }),
+  artifactConditionals: conditional,
+  baseStatOverrides: sparse(string, float),
+  talentConditionals: conditional,
+  weapon,
+})
+
+const flex = object({
+  artifacts: array(artifact),
+  character,
+})
+
+export const schemas = {
+  flex
 }
 // For testing purpose only, no need to maintain strict ordering
 export const constants = {
-  slots, hitModes, reactionModes, stats, artifactSets, characters
+  slots, hitModes, reactionModes, stats, artifactSets, characterKeys
 }
