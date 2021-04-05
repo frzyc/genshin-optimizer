@@ -130,13 +130,13 @@ const char = {
           text: `Charged 1-Hit DMG`,
           formulaText: stats =>
             <span>{data.skill.charged1[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("charged", stats, true), stats)}</span>,
-          formula: formula.skill.cross1,
+          formula: formula.skill.charged1,
           variant: stats => getTalentStatKeyVariant("charged", stats, true),
         }, {
           text: `Charged 2-Hit DMG`,
           formulaText: stats =>
             <span>{data.skill.charged2[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("charged", stats, true), stats)}</span>,
-          formula: formula.skill.cross2,
+          formula: formula.skill.charged2,
           variant: stats => getTalentStatKeyVariant("charged", stats, true),
         }, {
           text: `Charged Attack Stamina Cost`,
