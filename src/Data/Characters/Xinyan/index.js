@@ -264,7 +264,7 @@ const char = {
       img: c4,
       document: [{
         text: <span><b>Sweeping Fervor</b>'s swing DMG decreases opponent's Physical RES by 15% for 12s.</span>,
-        conditional: (tlvl, c, a) => c >= 4 && {
+        conditional: stats => stats.ascension >= 4 && {
           type: "character",
           conditionalKey: "WildfireRhythm",
           condition: "Sweeping Fervor Swing",
