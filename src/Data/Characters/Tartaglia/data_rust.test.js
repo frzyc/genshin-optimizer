@@ -43,7 +43,7 @@ describe("Testing Tartaglia's Formulas (Gilgamesh#1095)", () => {
         expect(formula.plunging.low(stats)[0](stats)).toApproximate(259)
         expect(formula.plunging.high(stats)[0](stats)).toApproximate(324)
 
-        expect(formula.riptide.flash(stats)[0](stats)).toApproximate(165)
+        expect(formula.normal.flash(stats)[0](stats)).toApproximate(165)
 
         expect(formula.skill.skillDmg(stats)[0](stats)).toApproximate(950)
         expect(formula.skill[0](stats)[0](stats)).toApproximate(682)
@@ -56,17 +56,17 @@ describe("Testing Tartaglia's Formulas (Gilgamesh#1095)", () => {
         expect(formula.skill.charged1(stats)[0](stats)).toApproximate(827)
         expect(formula.skill.charged2(stats)[0](stats)).toApproximate(989)
 
-        expect(formula.riptide.slash(stats)[0](stats)).toApproximate(873)
+        expect(formula.skill.slash(stats)[0](stats)).toApproximate(873)
 
         expect(formula.burst.melee(stats)[0](stats)).toApproximate(5447)
         expect(formula.burst.ranged(stats)[0](stats)).toApproximate(4442)
-        expect(formula.riptide.blast(stats)[0](stats)).toApproximate(1408)
+        expect(formula.burst.blast(stats)[0](stats)).toApproximate(1408)
       })
       test('riptide burst vs lvl90 hilichurls', () => {
         setupStats.physical_enemyRes_ = 10
         setupStats.enemyLevel = 90
         const stats = computeAllStats(setupStats)
-        expect(formula.riptide.burst(stats)[0](stats)).toApproximate(814)
+        expect(formula.normal.burst(stats)[0](stats)).toApproximate(814)
       })
     })
     describe('crit', () => {
@@ -86,7 +86,7 @@ describe("Testing Tartaglia's Formulas (Gilgamesh#1095)", () => {
         expect(formula.plunging.low(stats)[0](stats)).toApproximate(522)
         expect(formula.plunging.high(stats)[0](stats)).toApproximate(652)
 
-        expect(formula.riptide.flash(stats)[0](stats)).toApproximate(332)
+        expect(formula.normal.flash(stats)[0](stats)).toApproximate(332)
 
         expect(formula.skill.skillDmg(stats)[0](stats)).toApproximate(1914)
         expect(formula.skill[0](stats)[0](stats)).toApproximate(1373)
@@ -99,18 +99,18 @@ describe("Testing Tartaglia's Formulas (Gilgamesh#1095)", () => {
         expect(formula.skill.charged1(stats)[0](stats)).toApproximate(1665)
         expect(formula.skill.charged2(stats)[0](stats)).toApproximate(1991)
 
-        expect(formula.riptide.slash(stats)[0](stats)).toApproximate(1757)
+        expect(formula.skill.slash(stats)[0](stats)).toApproximate(1757)
 
         expect(formula.burst.melee(stats)[0](stats)).toApproximate(10964)
         expect(formula.burst.ranged(stats)[0](stats)).toApproximate(8941)
-        expect(formula.riptide.blast(stats)[0](stats)).toApproximate(2835)
+        expect(formula.burst.blast(stats)[0](stats)).toApproximate(2835)
 
       })
       test('riptide burst vs lvl90 hilichurls', () => {
         setupStats.physical_enemyRes_ = 10
         setupStats.enemyLevel = 90
         const stats = computeAllStats(setupStats)
-        expect(formula.riptide.burst(stats)[0](stats)).toApproximate(1639)
+        expect(formula.normal.burst(stats)[0](stats)).toApproximate(1639)
       })
     })
   })

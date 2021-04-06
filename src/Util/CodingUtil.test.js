@@ -43,24 +43,13 @@ describe('Export Import', () => {
         { type: "string" },
         { type: "uint", length: 2 },
         { type: "uint" },
-        { type: "fixed", list: [1, 1000000, 10000002, "Hi"] },
         { type: "array", defaultSchema: { type: "uint", defaultValue: 1 } },
       ]
     }
     let array = [
-      "test", 200, 11, "Hi", [1, 2, 3, 444]
+      "test", 200, 11, [1, 2, 3, 444]
     ]
     expect(decode(encode(array, schema), schema)).toEqual(array)
-  })
-
-  test('roundtrip fixed item list', () => {
-    let schema = {
-      type: "fixed", length: 1,
-      list: ["a", "1234", "s", "test", 1, 2, 3, 4, 5]
-    }
-    for (const item of schema.list) {
-      expect(decode(encode(item, schema), schema)).toEqual(item)
-    }
   })
 
   test('roundtrip string', () => {

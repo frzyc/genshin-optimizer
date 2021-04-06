@@ -42,7 +42,7 @@ describe("Testing Tartaglia's Formulas (Blakeblaze#2916)", () => {
         expect(formula.plunging.low(stats)[0](stats)).toApproximate(577)
         expect(formula.plunging.high(stats)[0](stats)).toApproximate(721)
 
-        expect(formula.riptide.flash(stats)[0](stats)).toApproximate(303)
+        expect(formula.normal.flash(stats)[0](stats)).toApproximate(303)
 
 
         expect(formula.skill.skillDmg(stats)[0](stats)).toApproximate(1997)
@@ -56,18 +56,18 @@ describe("Testing Tartaglia's Formulas (Blakeblaze#2916)", () => {
         expect(formula.skill.charged1(stats)[0](stats)).toApproximate(1804)
         expect(formula.skill.charged2(stats)[0](stats)).toApproximate(2157)
 
-        expect(formula.riptide.slash(stats)[0](stats)).toApproximate(1804)
+        expect(formula.skill.slash(stats)[0](stats)).toApproximate(1804)
 
         expect(formula.burst.melee(stats)[0](stats)).toApproximate(12114)
         expect(formula.burst.ranged(stats)[0](stats)).toApproximate(9879)
-        expect(formula.riptide.blast(stats)[0](stats)).toApproximate(3133)
+        expect(formula.burst.blast(stats)[0](stats)).toApproximate(3133)
 
       })
       test('riptide burst vs lvl78 hilichurls', () => {
         setupStats.physical_enemyRes_ = 10
         setupStats.enemyLevel = 78
         const stats = computeAllStats(setupStats)
-        expect(formula.riptide.burst(stats)[0](stats)).toApproximate(1546)
+        expect(formula.normal.burst(stats)[0](stats)).toApproximate(1546)
       })
     })
     describe('crit', () => {
@@ -87,7 +87,7 @@ describe("Testing Tartaglia's Formulas (Blakeblaze#2916)", () => {
         expect(formula.plunging.low(stats)[0](stats)).toApproximate(1297)
         expect(formula.plunging.high(stats)[0](stats)).toApproximate(1620)
 
-        expect(formula.riptide.flash(stats)[0](stats)).toApproximate(681)
+        expect(formula.normal.flash(stats)[0](stats)).toApproximate(681)
 
 
         expect(formula.skill.skillDmg(stats)[0](stats)).toApproximate(4486)
@@ -101,18 +101,18 @@ describe("Testing Tartaglia's Formulas (Blakeblaze#2916)", () => {
         expect(formula.skill.charged1(stats)[0](stats)).toApproximate(4053)
         // expect(formula.skill.charged2(stats)[0](stats)).toApproximate(5847)//should be 4847? entry err
 
-        expect(formula.riptide.slash(stats)[0](stats)).toApproximate(4053)
+        expect(formula.skill.slash(stats)[0](stats)).toApproximate(4053)
 
         expect(formula.burst.melee(stats)[0](stats)).toApproximate(27210)
         expect(formula.burst.ranged(stats)[0](stats)).toApproximate(22190)
-        expect(formula.riptide.blast(stats)[0](stats)).toApproximate(7037)
+        expect(formula.burst.blast(stats)[0](stats)).toApproximate(7037)
 
       })
       test('riptide burst vs lvl78 hilichurls', () => {
         setupStats.physical_enemyRes_ = 10
         setupStats.enemyLevel = 78
         const stats = computeAllStats(setupStats)
-        expect(formula.riptide.burst(stats)[0](stats)).toApproximate(3472)
+        expect(formula.normal.burst(stats)[0](stats)).toApproximate(3472)
       })
     })
   })

@@ -3,8 +3,8 @@
 // The index of items in this list is used to
 // compress the exported data. Removing an item
 // from this list will shift subsequent entries.
-const slots = [ "flower", "plume", "sands", "goblet", "circlet", ]
-const hitModes = [ "hit", "avgHit", "critHit", ]
+const slots = ["flower", "plume", "sands", "goblet", "circlet",]
+const hitModes = ["hit", "avgHit", "critHit",]
 const reactionModes = [
   null, "hydro_vaporize", "pyro_vaporize", "pyro_melt", "cryo_melt",
 ]
@@ -16,7 +16,7 @@ const artifactSets = [
   "Adventurer", "ArchaicPetra", "Berserker", "BlizzardStrayer", "BloodstainedChivalry", "BraveHeart", "CrimsonWitchOfFlames", "DefendersWill", "Gambler", "GladiatorsFinale", "HeartOfDepth", "Instructor", "Lavawalker", "LuckyDog", "MaidenBeloved", "MartialArtist", "NoblesseOblige", "PrayersForDestiny", "PrayersForIllumination", "PrayersForWisdom", "PrayersToSpringtime", "ResolutionOfSojourner", "RetracingBolide", "Scholar", "TheExile", "ThunderingFury", "Thundersoother", "TinyMiracle", "TravelingDoctor", "ViridescentVenerer", "WanderersTroupe",
 ]
 const characterKeys = [
-  "albedo", "amber", "barbara", "beidou", "bennett", "chongyun", "diluc", "diona", "fischl", "ganyu", "hutao", "jean", "kaeya", "keqing", "klee", "lisa", "mona", "ningguang", "noelle", "qiqi", "razor", "sucrose", "tartaglia", "traveler_anemo", "traveler_geo", "venti", "xiao", "xiangling", "xingqiu", "xinyan", "zhongli",
+  "albedo", "amber", "barbara", "beidou", "bennett", "chongyun", "diluc", "diona", "fischl", "ganyu", "hutao", "jean", "kaeya", "keqing", "klee", "lisa", "mona", "ningguang", "noelle", "qiqi", "razor", "sucrose", "tartaglia", "traveler_anemo", "traveler_geo", "venti", "xiao", "xiangling", "xingqiu", "xinyan", "zhongli", "rosaria",
 ]
 
 // Common schemas
@@ -35,16 +35,21 @@ const float = {
 const string = { type: "string" }
 const array = (defaultSchema, other = {}) => ({ type: "array", defaultSchema, ...other })
 const object = (schemas, other = {}) => ({ type: "object", schemas, ...other })
-const sparse = (keySchema, valueSchema, keys=null) => ({ type: "sparse", keys, keySchema, valueSchema })
+const sparse = (keySchema, valueSchema, keys = null) => ({ type: "sparse", keys, keySchema, valueSchema })
 
 // Fixed schema
 
-const stat = { type: "fixed", list: stats, length: 1 }
-const artifactSet = { type: "fixed", list: artifactSets, length: 1 }
-const slot = { type: "fixed", list: slots, length: 1 }
-const characterKey = { type: "fixed", list: characterKeys, length: 1 }
-const hitMode = { type: "fixed", list: hitModes, length: 1 }
-const reactionMode = { type: "fixed", list: reactionModes, length: 1 }
+const fixed = (list, length = 1) => ({
+  type: "uint", length,
+  encode: (item) => list.indexOf(item),
+  decode: (index) => list[index],
+})
+const stat = fixed(stats)
+const artifactSet = fixed(artifactSets)
+const slot = fixed(slots)
+const characterKey = fixed(characterKeys)
+const hitMode = fixed(hitModes)
+const reactionMode = fixed(reactionModes)
 
 // Complex schemas
 
@@ -59,11 +64,11 @@ const artifact = object({
       key: stat,
       value: uint(2),
     }, {
-      encode: ({key, value}) => {
+      encode: ({ key, value }) => {
         let factor = key.endsWith("_") ? 10 : 1 // one decimal place for percentage
         return { key, value: value * factor }
       },
-      decode: ({key, value}) => {
+      decode: ({ key, value }) => {
         let factor = key.endsWith("_") ? 10 : 1 // one decomal place for percentage
         return { key, value: value / factor }
       }
@@ -75,7 +80,10 @@ const conditional = array(
     srcKey: string,
     srcKey2: string,
     conditionalNum: uint(1),
-  })
+  }), {
+  // Add this here because someone is being naughty.
+  encode: (array) => array.filter(({ srcKey2 }) => srcKey2.match(/^[a-z0-9\-_]+$/i))
+}
 )
 const weapon = object({
   key: string,

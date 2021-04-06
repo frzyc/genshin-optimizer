@@ -8,10 +8,6 @@
 ///   length?: number of bytes, uses variable-length format if not set,
 /// }
 /// String: { type: "string" }
-/// Fixed: { type: "fixed",
-///   list: array of permitted items,
-///   length?: Same as UInt,
-/// }
 /// Array: { type: "array",
 ///   schemas?: Array of schemas, in the same order as the item,
 ///   defaultSchema?: Default schema for when `schemas[i]` is `null`,
@@ -44,7 +40,6 @@ function encodeItem(data, schema, pathItem) {
     switch (schema.type) {
       case "uint": return encodeUInt(data, schema)
       case "string": return encodeString(data, schema)
-      case "fixed": return encodeFixed(data, schema)
       case "array": return encodeArray(data, schema)
       case "object": return encodeObject(data, schema)
       case "sparse": return encodeSparse(data, schema)
@@ -62,7 +57,6 @@ function decodeItem(stream, schema, pathItem) {
     switch (schema.type) {
       case "uint": result = decodeUInt(stream, schema); break
       case "string": result = decodeString(stream, schema); break
-      case "fixed": result = decodeFixed(stream, schema); break
       case "array": result = decodeArray(stream, schema); break
       case "object": result = decodeObject(stream, schema); break
       case "sparse": result = decodeSparse(stream, schema); break
@@ -121,9 +115,6 @@ function decodeArray(stream, schema) {
   return [...new Array(length)].map((unused, i) =>
     decodeItem(stream, schemas[i] ?? defaultSchema, i))
 }
-
-const encodeFixed = (data, schema) => encodeUInt(schema.list.indexOf(data), schema)
-const decodeFixed = (stream, schema) => schema.list[decodeUInt(stream, schema)]
 
 function encodeString(string, schema) {
   if (!string.match(/^[a-z0-9\-_]+$/i))

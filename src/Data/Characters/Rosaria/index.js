@@ -181,7 +181,7 @@ const char = {
         text: <span>When Rosaria deals a CRIT Hit, her ATK SPD increases by 10% and her Normal Attack DMG increases by 10% for 4s.</span>,
         conditional: stats => stats.constellation >= 1 && {
           type: "character",
-          conditionalKey: "Unholy Revelation",
+          conditionalKey: "UnholyRevelation",
           condition: <span>After CRIT Hit</span>,
           sourceKey: "rosaria",
           maxStack: 1,
