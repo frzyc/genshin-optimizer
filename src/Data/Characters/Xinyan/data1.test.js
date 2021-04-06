@@ -66,7 +66,7 @@ describe("Testing Xinyan's Formulas (Stain#9093)", () => {
 
       test("shielded hit + infusion", () => {
         setupStats.physical_dmg_ += 15
-        setupStats.autoInfused = true
+        setupStats.physical_enemyRes_ += -15
         const stats = computeAllStats(setupStats)
         expect(formula.normal[0](stats)[0](stats)).toApproximate(1479)
         expect(formula.normal[1](stats)[0](stats)).toApproximate(1429)
@@ -110,9 +110,7 @@ describe("Testing Xinyan's Formulas (Stain#9093)", () => {
       test("shielded hit + infusion", () => {
         setupStats.physical_dmg_ += 15
         setupStats.physical_enemyRes_ += -15
-        setupStats.autoInfused = true
         const stats = computeAllStats(setupStats)
-        console.log(stats.physical_dmg_)
         expect(formula.normal[0](stats)[0](stats)).toApproximate(2816)
         expect(formula.normal[1](stats)[0](stats)).toApproximate(2721)
         expect(formula.normal[2](stats)[0](stats)).toApproximate(3513)

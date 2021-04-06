@@ -33,7 +33,6 @@ const char = {
     auto: {
       name: "Dance on Fire",
       img: normal,
-      infusable: true,
       document: [{
         text: <span><strong>Normal Attack</strong> Performs up to 4 consecutive strikes.</span>,
         fields: data.normal.hitArr.map((percentArr, i) =>
