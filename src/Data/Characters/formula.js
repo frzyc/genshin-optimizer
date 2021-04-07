@@ -28,7 +28,7 @@ import venti from './Venti/data'
 import xiao from './Xiao/data'
 import xiangling from './Xiangling/data'
 import xingqiu from './Xingqiu/data'
-// import xinyan from './Xinyan/data'
+import xinyan from './Xinyan/data'
 import zhongli from './Zhongli/data'
 const formula = {
   albedo,
@@ -61,7 +61,7 @@ const formula = {
   xiao,
   xiangling,
   xingqiu,
-  // xinyan,
+  xinyan,
   zhongli
 };
 export default formula
