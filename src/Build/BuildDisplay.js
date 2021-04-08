@@ -16,7 +16,6 @@ import { CharacterSelectionDropdownList } from '../Components/CharacterSelection
 import ConditionalSelector from '../Components/ConditionalSelector';
 import CustomFormControl from '../Components/CustomFormControl';
 import { Stars } from '../Components/StarDisplay';
-import { DatabaseInitAndVerify } from '../Database/DatabaseUtil';
 import Stat from '../Stat';
 import ConditionalsUtil from '../Util/ConditionalsUtil';
 import { timeStringMs } from '../Util/TimeUtil';
@@ -35,10 +34,9 @@ const autoBuildGenLimit = 100
 export default class BuildDisplay extends React.Component {
   constructor(props) {
     super(props)
-    DatabaseInitAndVerify();
     this.state = BuildDisplay.getInitialState();
     if ("BuildsDisplay.state" in localStorage) {
-      const { characterKey = "", maxBuildsToShow = maxBuildsToShowDefault } = loadFromLocalStorage("BuildsDisplay.state")
+      const { characterKey = "", maxBuildsToShow = maxBuildsToShowDefault } = loadFromLocalStorage("BuildsDisplay.state") ?? {}
       this.state = { ...this.state, characterKey, maxBuildsToShow }
     }
     if (props.location.characterKey) //override the one stored in BuildsDisplay.state
@@ -94,7 +92,7 @@ export default class BuildDisplay extends React.Component {
   splitArtifacts = () => {
     if (!this.state.characterKey) // Make sure we have all slotKeys
       return Object.fromEntries(Artifact.getSlotKeys().map(slotKey => [slotKey, []]))
-    let artifactDatabase = ArtifactDatabase.getArtifactDatabase();
+    const artifactDatabase = deepClone(ArtifactDatabase.getArtifactDatabase())
     //do not use artifacts that are locked.
     if (!this.state.useLockedArts)
       Object.entries(artifactDatabase).forEach(([key, val]) => {
@@ -231,7 +229,7 @@ export default class BuildDisplay extends React.Component {
       buildAlert = totBuildNumber === 0 ?
         <Alert variant="warning" className="mb-0"><span>Current configuration will not generate any builds for <b>{characterName}</b>. Please change your Artifact configurations, or add/unlock more Artifacts.</span></Alert>
         : (totBuildNumber > warningBuildNumber ?
-          <Alert variant="warning" className="mb-0"><span>Current configuration will generate <b>{totalBuildNumberString}</b> builds for <b>{characterName}</b>. This might take quite awhile to generate...</span></Alert> :
+          <Alert variant="warning" className="mb-0"><span>Current configuration will generate <b>{totalBuildNumberString}</b> builds for <b>{characterName}</b>. This might take quite a while to generate...</span></Alert> :
           <Alert variant="success" className="mb-0"><span>Current configuration {totBuildNumber <= this.state.maxBuildsToShow ? "generated" : "will generate"} <b>{totalBuildNumberString}</b> builds for <b>{characterName}</b>.</span></Alert>)
     }
     let characterDropDown = <DropdownButton title={Character.getName(characterKey, "Select Character")} disabled={generatingBuilds}>
@@ -335,7 +333,7 @@ export default class BuildDisplay extends React.Component {
             <Col className="mb-2" xs={12}>
               <Card bg="lightcontent" text="lightfont"><Card.Body>
                 <Button className="w-100" onClick={() => this.setState(state => ({ useLockedArts: !state.useLockedArts }), this.autoGenerateBuilds)} disabled={generatingBuilds}>
-                  <span><FontAwesomeIcon icon={useLockedArts ? faCheckSquare : faSquare} /> {useLockedArts ? "Use Locked & Equipped Artifacts" : "Do not use Locked & Equipped Artifacts"}</span>
+                  <span><FontAwesomeIcon icon={useLockedArts ? faCheckSquare : faSquare} /> Use Locked {"&"} Equipped Artifacts</span>
                 </Button>
               </Card.Body></Card>
             </Col>
@@ -618,7 +616,7 @@ function SortByStatDropdown({ characterKey, statsDisplayKeys, initialStats, disa
         </Row>
       </Dropdown.Menu>
     </Dropdown>
-    <Button onClick={() => setState(state => ({ ascending: !state.ascending }))} disabled={disabled}>
+    <Button onClick={() => setState(state => ({ ascending: !state.ascending }))} disabled={disabled} variant={ascending ? "danger" : "primary"}>
       <FontAwesomeIcon icon={ascending ? faSortAmountDownAlt : faSortAmountUp} className="fa-fw" />
       <span>{ascending ? "Ascending" : "Descending"}</span>
     </Button>

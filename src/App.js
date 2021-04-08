@@ -14,6 +14,7 @@ import { HashRouter, Link, Route, Switch } from "react-router-dom";
 import { version } from "../package.json";
 import './App.scss';
 import './Assets/Image.scss';
+import { DatabaseInitAndVerify } from './Database/DatabaseUtil';
 
 const Home = lazy(() => import('./Home/HomeDisplay'))
 const ArtifactDisplay = lazy(() => import('./Artifact/ArtifactDisplay'))
@@ -21,7 +22,9 @@ const CharacterDisplay = lazy(() => import('./Character/CharacterDisplay'))
 const BuildDisplay = lazy(() => import('./Build/BuildDisplay'))
 const Planner = lazy(() => import('./Planner/PlannerDisplay'))
 const TestDisplay = lazy(() => import('./TestPage/TestDisplay'))
+const FlexDisplay = lazy(() => import('./FlexPage/FlexDisplay'))
 const SettingsDisplay = lazy(() => import('./Settings/SettingsDisplay'))
+DatabaseInitAndVerify()
 function App() {
   return (
     <HashRouter>
@@ -66,6 +69,7 @@ function App() {
               <Route path="/tools" component={Planner} />
               {process.env.NODE_ENV === "development" && <Route path="/test" component={TestDisplay} />}
               <Route path="/setting" component={SettingsDisplay} />
+              <Route path="/flex" component={FlexDisplay} />
               <Route path="/" component={Home} />
               {/* <Route exact path="/" component={Home} /> */}
             </Switch>

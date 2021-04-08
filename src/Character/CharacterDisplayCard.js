@@ -10,7 +10,6 @@ import Row from 'react-bootstrap/Row';
 import Artifact from '../Artifact/Artifact';
 import WIPComponent from '../Components/WIPComponent';
 import { WeaponLevelKeys } from '../Data/WeaponData';
-import { DatabaseInitAndVerify } from '../Database/DatabaseUtil';
 import { deepClone } from '../Util/Util';
 import Weapon from '../Weapon/Weapon';
 import Character from './Character';
@@ -39,12 +38,13 @@ const CustomMenu = React.forwardRef(
 export default class CharacterDisplayCard extends React.Component {
   constructor(props) {
     super(props)
-    DatabaseInitAndVerify();
     this.state = CharacterDisplayCard.getInitialState()
-    const { characterKey } = props
+    const { characterKey, character } = props
     if (characterKey) {
       const char = CharacterDatabase.get(characterKey) ?? { characterKey, weapon: CharacterDisplayCard.getIntialWeapon(characterKey) }
       this.state = { ...this.state, ...char }
+    } else if (character) {
+      this.state = { ...this.state, ...character }
     }
   }
 
@@ -145,13 +145,14 @@ export default class CharacterDisplayCard extends React.Component {
       newBuild.finalStats.reactionMode = character.reactionMode;
     }
 
-    const { characterKey, levelKey, compareAgainstEquipped } = this.state
+    const { characterKey, levelKey, compareAgainstEquipped, artifacts: flexArts } = character
     const equippedBuild = Character.calculateBuild(character)
     const HeaderIconDisplay = characterKey ? <span >
       <Image src={Character.getThumb(characterKey)} className="thumb-small my-n1 ml-n2" roundedCircle />
       <h6 className="d-inline"> {Character.getName(characterKey)} </h6>
     </span> : <span>Select a Character</span>
     const commonPaneProps = { character, newBuild, equippedBuild: !newBuild || compareAgainstEquipped ? equippedBuild : undefined, editable, setState: u => this.setState(u), setOverride: this.setOverride, forceUpdate: this.forceUpdateComponent }
+    if (flexArts) commonPaneProps.artifacts = flexArts//from flex
     // main CharacterDisplayCard
     return (<Card bg="darkcontent" text="lightfont" >
       <Card.Header>
@@ -174,7 +175,7 @@ export default class CharacterDisplayCard extends React.Component {
                 </Dropdown.Menu>
               </Dropdown>
               <DropdownButton as={ButtonGroup} disabled={!characterKey} title={
-                <h6 className="d-inline">{Character.getlevelNames(levelKey)} </h6>
+                <h6 className="d-inline">Stats Template: {Character.getlevelNames(levelKey)} </h6>
               }>
                 <Dropdown.ItemText>
                   <span>Select Base Stat Template</span>
@@ -184,7 +185,7 @@ export default class CharacterDisplayCard extends React.Component {
                     <h6 >{Character.getlevelNames(lvlKey)} </h6>
                   </Dropdown.Item>)}
               </DropdownButton>
-            </ButtonGroup> : <span>{HeaderIconDisplay} Lvl. {Character.getStatValueWithOverride(this.state, "characterLevel")}</span>}
+            </ButtonGroup> : <span>{HeaderIconDisplay} Lvl. {Character.getStatValueWithOverride(character, "characterLevel")}</span>}
           </Col>
           {/* Compare against new build toggle */}
           {newBuild ? <Col xs="auto">
@@ -197,10 +198,10 @@ export default class CharacterDisplayCard extends React.Component {
               </Button>
             </ButtonGroup>
           </Col> : null}
-          <Col xs="auto" >
+          {Boolean(onClose) && <Col xs="auto" >
             <Button variant="danger" onClick={onClose}>
               <FontAwesomeIcon icon={faTimes} /></Button>
-          </Col>
+          </Col>}
         </Row>
       </Card.Header>
       {Boolean(characterKey) && <Card.Body>
@@ -223,11 +224,11 @@ export default class CharacterDisplayCard extends React.Component {
                 <Nav.Link eventKey="talent">Talents</Nav.Link>
               }
             </Nav.Item>
-            <Nav.Item>
+            {!flexArts && <Nav.Item>
               <WIPComponent>
                 <Nav.Link eventKey="team" disabled>Team <Badge variant="warning">WIP</Badge></Nav.Link>
               </WIPComponent>
-            </Nav.Item>
+            </Nav.Item>}
           </Nav>
           <Tab.Content>
             <Tab.Pane eventKey="character">

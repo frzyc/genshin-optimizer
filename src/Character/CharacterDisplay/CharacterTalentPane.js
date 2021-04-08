@@ -214,7 +214,7 @@ function SkillDisplayCard(props) {
         <Row>
           <Col xs="auto">
             <DropdownButton title={`Talent Lv. ${talentLvlKey + 1}`}>
-              {[...Array(talentLimits[ascension]).keys()].map(i =>
+              {[...Array(talentLimits[ascension] + (talentKey === "auto" ? 1 : 0)).keys()].map(i =>
                 <Dropdown.Item key={i} onClick={() => setTalentLevel(talentKey, i)}>Talent Lv. {i + levelBoost + 1}</Dropdown.Item>)}
             </DropdownButton>
           </Col>
@@ -234,7 +234,7 @@ function SkillDisplayCard(props) {
       </Card.Header>
     }
   }
-  let talentStats = Character.getTalentStats(characterKey, talentKey, constellation, ascension)
+  const talentStats = Character.getTalentStats(characterKey, talentKey, build.finalStats)
   const statsEle = talentStats && <Row><Col>
     <Card bg="darkcontent" text="lightfont" className="mt-2 ml-n2 mr-n2">
       <ListGroup className="text-white" variant="flush">

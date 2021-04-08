@@ -2,7 +2,9 @@ import Artifact from "../Artifact/Artifact";
 import ArtifactDatabase from "./ArtifactDatabase";
 import CharacterDatabase from "./CharacterDatabase";
 import { changes as v2change, dmgModeToHitMode } from "./dbV2KeyMap";
-import { loadFromLocalStorage, saveToLocalStorage } from "../Util/Util";
+import { deepClone, loadFromLocalStorage, saveToLocalStorage } from "../Util/Util";
+
+const CurrentDatabaseVersion = 2
 
 function DatabaseInitAndVerify() {
   const dbVersion = getDatabaseVersion()
@@ -56,7 +58,7 @@ function DatabaseInitAndVerify() {
     artDBJustPopualted = ArtifactDatabase.populateDatebaseFromLocalStorage()
   if (!charDBJustPopualted && !artDBJustPopualted) return
 
-  Object.values(ArtifactDatabase.getArtifactDatabase()).forEach(art => {
+  Object.values(deepClone(ArtifactDatabase.getArtifactDatabase())).forEach(art => {
     let valid = true
 
     //verify the linking of artifacts and characters
@@ -184,7 +186,7 @@ function DatabaseInitAndVerify() {
     //update any invalid characters in DB
     if (!valid) CharacterDatabase.update(character)
   })
-  setDatabaseVersion(2)
+  setDatabaseVersion(CurrentDatabaseVersion)
 }
 const getDatabaseVersion = (defVal = 0) =>
   parseInt(loadFromLocalStorage("db_ver") ?? defVal)
@@ -192,13 +194,12 @@ const getDatabaseVersion = (defVal = 0) =>
 const setDatabaseVersion = (version) =>
   saveToLocalStorage("db_ver", version)
 
-
 function createDatabaseObj() {
   const characterDatabase = CharacterDatabase.getCharacterDatabase()
   const artifactDatabase = ArtifactDatabase.getArtifactDatabase()
-  const artifactDisplay = loadFromLocalStorage("ArtifactDisplay.state")
-  const characterDisplay = loadFromLocalStorage("CharacterDisplay.state")
-  const buildsDisplay = loadFromLocalStorage("BuildsDisplay.state")
+  const artifactDisplay = loadFromLocalStorage("ArtifactDisplay.state") ?? {}
+  const characterDisplay = loadFromLocalStorage("CharacterDisplay.state") ?? {}
+  const buildsDisplay = loadFromLocalStorage("BuildsDisplay.state") ?? {}
 
   return {
     version: getDatabaseVersion(),
@@ -239,5 +240,6 @@ export {
   DatabaseInitAndVerify,
   createDatabaseObj,
   loadDatabaseObj,
-  clearDatabase
+  clearDatabase,
+  CurrentDatabaseVersion
 };

@@ -87,18 +87,18 @@ export default class Character {
     return typeof field?.[key] === "function" ? field[key](stats) : field[key]
   }
 
-  static getTalentStats = (charKey, talentKey, constellation, ascension, defVal = null) => {
-    let stats = this.getTalent(charKey, talentKey)?.stats
-    if (typeof stats === "function")
-      return stats(constellation, ascension)
-    return stats || defVal
+  static getTalentStats = (charKey, talentKey, stats, defVal = null) => {
+    const talentStats = this.getTalent(charKey, talentKey)?.stats
+    if (typeof talentStats === "function")
+      return talentStats(stats)
+    return talentStats || defVal
   }
-  static getTalentStatsAll = (charKey, constellation, ascension) => {
-    let talents = this.getCDataObj(charKey)?.talent || {}
-    let statsArr = []
+  static getTalentStatsAll = (charKey, stats) => {
+    const talents = this.getCDataObj(charKey)?.talent || {}
+    const statsArr = []
     Object.keys(talents).forEach(talentKey => {
-      let stats = this.getTalentStats(charKey, talentKey, constellation, ascension)
-      if (stats) statsArr.push(stats)
+      const talentStats = this.getTalentStats(charKey, talentKey, stats)
+      if (talentStats) statsArr.push(talentStats)
     })
     return statsArr
   }
@@ -258,8 +258,13 @@ export default class Character {
   }
 
   static calculateBuild = (character) => {
-    let artifacts = Object.fromEntries(Object.entries(character.equippedArtifacts).map(([key, artid]) => [key, ArtifactDatabase.get(artid)]))
-    let initialStats = Character.calculateCharacterWithWeaponStats(character)
+    let artifacts
+    if (character.artifacts) //from flex
+      artifacts = Object.fromEntries(character.artifacts.map((art, i) => [i, art]))
+    else if (character.equippedArtifacts)
+      artifacts = Object.fromEntries(Object.entries(character.equippedArtifacts).map(([key, artid]) => [key, ArtifactDatabase.get(artid)]))
+    else return {}//probably won't happen. just in case.
+    const initialStats = Character.calculateCharacterWithWeaponStats(character)
     return this.calculateBuildWithObjs(character.artifactConditionals, initialStats, artifacts)
   }
 
@@ -349,7 +354,7 @@ export default class Character {
     this.mergeStats(initialStats, { [specialStatKey]: specializedStatVal })
 
     //add stats from all talents
-    Character.getTalentStatsAll(characterKey, constellation, ascension).forEach(s => this.mergeStats(initialStats, s))
+    Character.getTalentStatsAll(characterKey, initialStats).forEach(s => this.mergeStats(initialStats, s))
 
     //add stats from weapons
     const weaponSubKey = Weapon.getWeaponSubStatKey(character?.weapon?.key)

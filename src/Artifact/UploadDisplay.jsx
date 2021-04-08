@@ -1,6 +1,6 @@
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Button, Card, Col, Form, Modal, ProgressBar, Row } from 'react-bootstrap';
 import ReactGA from 'react-ga';
 import { createWorker } from 'tesseract.js';
@@ -12,8 +12,28 @@ import Artifact from './Artifact';
 
 const starColor = { r: 255, g: 204, b: 50 } //#FFCC32
 
-export default function UploadDisplay(props) {
-  let { setState, reset } = props
+async function ocrImage(image, setImage, sProgress, sProgvariant, debug) {
+  if (process.env.NODE_ENV === "development" && debug) setImage(image)
+  const tworker = createWorker({
+    logger: m => {
+      m.status === "loading tesseract core" && sProgvariant("danger");
+      m.status.includes("loading language traineddata") && sProgvariant("warning");
+      m.status.includes("initializing api") && sProgvariant("info");
+      m.status === "recognizing text" && sProgvariant("success");
+      sProgress(m.progress);
+    },
+    errorHandler: err => console.error(err)
+  });
+  await tworker.load();
+  await tworker.loadLanguage('eng');
+  await tworker.initialize('eng');
+  const rec = await tworker.recognize(image);
+  await tworker.terminate();
+  if (process.env.NODE_ENV === "development" && debug) console.log(rec)
+  return rec
+}
+export default function UploadDisplay({ setState, setReset, artifactInEditor }) {
+  const [fileList, setFileList] = useState([])
   const [fileName, setFileName] = useState("Click here to Upload Artifact Screenshot File");
   const [image, setImage] = useState('');
 
@@ -42,222 +62,214 @@ export default function UploadDisplay(props) {
     setMainStatText("")
     setLevelText("")
   }
-  const resetState = () => {
-    setFileName("Click here to Upload Artifact Screenshot File")
-    setImage("")
-    setModalShow(false)
-    setScanning(false)
+  const scanFile = useCallback(
+    async () => {
+      if (!fileList.length) return
+      const [file, ...rest] = fileList
+      setFileList(rest)
+      if (!file) return
+      setScanning(true)
+      resetText()
+      setFileName(file.name)
+      const urlFile = await fileToURL(file)
 
-    setOtherProgress(0);
-    setOtherProgVariant("")
-    setSubstatProgress(0);
-    setSubstatProgVariant("")
-    setArtSetProgress(0);
-    setArtSetProgVariant("")
-    resetText();
-  }
+      setImage(urlFile)
+      const imageDataObj = await urlToImageData(urlFile)
 
-  const ocrImage = async (image, sProgress, sProgvariant, debug) => {
-    if (process.env.NODE_ENV === "development" && debug) setImage(image)
-    let tworker = createWorker({
-      logger: m => {
-        m.status === "loading tesseract core" && sProgvariant("danger");
-        m.status.includes("loading language traineddata") && sProgvariant("warning");
-        m.status.includes("initializing api") && sProgvariant("info");
-        m.status === "recognizing text" && sProgvariant("success");
-        sProgress(m.progress);
-      },
-      errorHandler: err => console.error(err)
-    });
-    await tworker.load();
-    await tworker.loadLanguage('eng');
-    await tworker.initialize('eng');
-    let rec = await tworker.recognize(image);
-    await tworker.terminate();
-    if (process.env.NODE_ENV === "development" && debug) console.log(rec)
-    return rec
-  }
+      let numStars = clamp(starScanning(imageDataObj.data, imageDataObj.width, imageDataObj.height, 5), 3, 5)
+      let numStarsText = <span>Detected <span className="text-success">{numStars}</span> Stars.</span>
+      let awaits = [
+        // other is for slotkey and mainStatValue and level
+        ocrImage(imageDataToURL(processImageWithBandPassFilter(imageDataObj, { r: 140, g: 140, b: 140 }, { r: 255, g: 255, b: 255 }, { region: "top", mode: "bw" })), setImage, setOtherProgress, setOtherProgVariant),
+        // substats
+        ocrImage(imageDataToURL(processImageWithBandPassFilter(imageDataObj, { r: 30, g: 50, b: 80 }, { r: 160, g: 160, b: 160 }, { region: "bot" })), setImage, setSubstatProgress, setSubstatProgVariant),
+        // artifact set, scan the greenish text
+        ocrImage(imageDataToURL(processImageWithBandPassFilter(imageDataObj, { r: 30, g: 160, b: 30 }, { r: 200, g: 255, b: 200 }, { region: "bot", mode: "bw" })), setImage, setArtSetProgress, setArtSetProgVariant),
+      ]
 
-  const uploadedFile = async (file) => {
+      let [whiteparsed, substatOCRText, setOCRText] = await Promise.all(awaits)
 
-    if (!file) return
-    setScanning(true)
-    resetText()
-    setFileName(file.name)
-    const urlFile = await fileToURL(file)
+      let setKey = parseSetKey(setOCRText)
+      let slotKey = parseSlotKey(whiteparsed)
+      let substats = parseSubstat(substatOCRText)
+      let level = NaN//looks like the level isnt consistently parsed. 
+      let mainStatKey = parseMainStatKey(whiteparsed)
+      let { mainStatValue, unit = "" } = parseMainStatvalue(whiteparsed)
+      if (mainStatValue)
+        setMainStatValText(<span>Detected Main Stat value to be <span className="text-success">{mainStatValue}{unit}</span>.</span>)
+      else
+        setMainStatValText(<span className="text-warning">Could not detect main stat value.</span>)
+      //the main stat value is used to distinguish main stats between % and flat
+      if (mainStatKey === "hp" || mainStatKey === "def" || mainStatKey === "atk")
+        if (unit === "%" || Artifact.getSlotMainStatKeys(slotKey).includes(`${mainStatKey}_`))
+          mainStatKey = `${mainStatKey}_`
+      if (slotKey && !Artifact.getSlotMainStatKeys(slotKey).includes(mainStatKey))
+        mainStatKey = ""
 
-    setImage(urlFile)
-    const imageDataObj = await urlToImageData(urlFile)
+      if (mainStatKey) setMainStatText(<span>Detected main stat: <span className="text-success">{Stat.getStatNameRaw(mainStatKey)}</span></span>)
 
-    let numStars = clamp(starScanning(imageDataObj.data, imageDataObj.width, imageDataObj.height, 5), 3, 5)
-    let numStarsText = <span>Detected <span className="text-success">{numStars}</span> Stars.</span>
-    let awaits = [
-      // other is for slotkey and mainStatValue and level
-      ocrImage(imageDataToURL(processImageWithBandPassFilter(imageDataObj, { r: 140, g: 140, b: 140 }, { r: 255, g: 255, b: 255 }, { region: "top", mode: "bw" })), setOtherProgress, setOtherProgVariant),
-      // substats
-      ocrImage(imageDataToURL(processImageWithBandPassFilter(imageDataObj, { r: 30, g: 50, b: 80 }, { r: 160, g: 160, b: 160 }, { region: "bot" })), setSubstatProgress, setSubstatProgVariant),
-      // artifact set, scan the greenish text
-      ocrImage(imageDataToURL(processImageWithBandPassFilter(imageDataObj, { r: 30, g: 160, b: 30 }, { r: 200, g: 255, b: 200 }, { region: "bot", mode: "bw" })), setArtSetProgress, setArtSetProgVariant),
-    ]
+      if (setKey && numStars)
+        if (!Artifact.getRarityArr(setKey).includes(numStars)) {
+          numStars = 0;
+          numStarsText = <span className="text-danger">Could not detect artifact rarity.</span>
+        }
 
-    let [whiteparsed, substatOCRText, setOCRText] = await Promise.all(awaits)
-
-    let setKey = parseSetKey(setOCRText)
-    let slotKey = parseSlotKey(whiteparsed)
-    let substats = parseSubstat(substatOCRText)
-    let level = NaN//looks like the level isnt consistently parsed. 
-    let mainStatKey = parseMainStatKey(whiteparsed)
-    let { mainStatValue, unit = "" } = parseMainStatvalue(whiteparsed)
-    if (mainStatValue)
-      setMainStatValText(<span>Detected Main Stat value to be <span className="text-success">{mainStatValue}{unit}</span>.</span>)
-    else
-      setMainStatValText(<span className="text-warning">Could not detect main stat value.</span>)
-    //the main stat value is used to distinguish main stats between % and flat
-    if (mainStatKey === "hp" || mainStatKey === "def" || mainStatKey === "atk")
-      if (unit === "%" || Artifact.getSlotMainStatKeys(slotKey).includes(`${mainStatKey}_`))
-        mainStatKey = `${mainStatKey}_`
-    if (slotKey && !Artifact.getSlotMainStatKeys(slotKey).includes(mainStatKey))
-      mainStatKey = ""
-
-    if (mainStatKey) setMainStatText(<span>Detected main stat: <span className="text-success">{Stat.getStatNameRaw(mainStatKey)}</span></span>)
-
-    if (setKey && numStars)
-      if (!Artifact.getRarityArr(setKey).includes(numStars)) {
-        numStars = 0;
-        numStarsText = <span className="text-danger">Could not detect artifact rarity.</span>
-      }
-
-    //if main stat isnt parsed, then we try to guess it
-    if (slotKey && !mainStatKey) {
-      let stats = Artifact.getSlotMainStatKeys(slotKey)
-      if (stats.length === 1) {
-        mainStatKey = stats[0]
-        setMainStatText(<span className="text-warning">Main stat was not successfully detected. Since artifact is of "{Artifact.getSlotName(slotKey)}", main stat: <span className="text-danger">{Stat.getStatName(mainStatKey)}</span>.</span>)
-      } else {
-        stats = stats.filter(stat => {
-          if (mainStatValue && unit !== Stat.getStatUnit(stat)) return false
-          if (substats && substats.some(substat => substat.key === stat)) return false
-          if (mainStatValue && numStars && level && Artifact.getMainStatValue(stat, numStars, level) !== mainStatValue) return false
-          return true
-        });
-        if (stats.length > 0) {
+      //if main stat isnt parsed, then we try to guess it
+      if (slotKey && !mainStatKey) {
+        let stats = Artifact.getSlotMainStatKeys(slotKey)
+        if (stats.length === 1) {
           mainStatKey = stats[0]
-          setMainStatText(<span className="text-warning">Main stat was not successfully detected. Inferring main stat: <span className="text-danger">{Stat.getStatName(mainStatKey)}</span>.</span>)
+          setMainStatText(<span className="text-warning">Main stat was not successfully detected. Since artifact is of "{Artifact.getSlotName(slotKey)}", main stat: <span className="text-danger">{Stat.getStatName(mainStatKey)}</span>.</span>)
+        } else {
+          stats = stats.filter(stat => {
+            if (mainStatValue && unit !== Stat.getStatUnit(stat)) return false
+            if (substats && substats.some(substat => substat.key === stat)) return false
+            if (mainStatValue && numStars && level && Artifact.getMainStatValue(stat, numStars, level) !== mainStatValue) return false
+            return true
+          });
+          if (stats.length > 0) {
+            mainStatKey = stats[0]
+            setMainStatText(<span className="text-warning">Main stat was not successfully detected. Inferring main stat: <span className="text-danger">{Stat.getStatName(mainStatKey)}</span>.</span>)
+          }
         }
       }
-    }
 
-    let guessLevel = (nStars, mainSKey, mainSVal) => {
-      //if level isn't parsed, then we try to guess it
-      let mainStatValues = Artifact.getMainStatValues(nStars, mainSKey.includes("ele_dmg_") ? "ele_dmg_" : mainSKey)
-      if (mainStatValues.length > 0) {
-        let isFloat = Stat.getStatUnit(mainSKey) === "%"
-        let testLevel = mainStatValues.findIndex(val => isFloat ? (Math.abs(mainSVal - val) < 0.1) : (mainSVal === val))
-        if (testLevel !== -1) {
-          level = testLevel
-          return true
+      let guessLevel = (nStars, mainSKey, mainSVal) => {
+        //if level isn't parsed, then we try to guess it
+        let mainStatValues = Artifact.getMainStatValues(nStars, mainSKey.includes("ele_dmg_") ? "ele_dmg_" : mainSKey)
+        if (mainStatValues.length > 0) {
+          let isFloat = Stat.getStatUnit(mainSKey) === "%"
+          let testLevel = mainStatValues.findIndex(val => isFloat ? (Math.abs(mainSVal - val) < 0.1) : (mainSVal === val))
+          if (testLevel !== -1) {
+            level = testLevel
+            return true
+          }
         }
+        return false
       }
-      return false
-    }
-    //guess level when we have all the stats
-    if (isNaN(level) && numStars && mainStatKey && mainStatValue)
-      guessLevel(numStars, mainStatKey, mainStatValue)
-    let detectedlevel = !isNaN(level)
-    if (!isNaN(level)) setLevelText(<span>Detected level: <span className="text-success">{level}</span></span>)
+      //guess level when we have all the stats
+      if (isNaN(level) && numStars && mainStatKey && mainStatValue)
+        guessLevel(numStars, mainStatKey, mainStatValue)
+      let detectedlevel = !isNaN(level)
+      if (!isNaN(level)) setLevelText(<span>Detected level: <span className="text-success">{level}</span></span>)
 
-    //try to guess the level when we only have mainStatKey and mainStatValue
-    if (isNaN(level) && mainStatKey && mainStatValue) {
-      let stars = setKey ? Artifact.getRarityArr(setKey) : Artifact.getStars().reverse()//reverse so we check 5* first
-      for (const nStar of stars)
-        if (guessLevel(nStar, mainStatKey, mainStatValue)) {
-          if (!setKey || Artifact.getRarityArr(setKey).includes(nStar)) {
-            numStars = nStar
-            numStarsText = <span className="text-warning">Inferred <span className="text-success">{numStars}</span> Stars from Artifact Set.</span>
+      //try to guess the level when we only have mainStatKey and mainStatValue
+      if (isNaN(level) && mainStatKey && mainStatValue) {
+        let stars = setKey ? Artifact.getRarityArr(setKey) : Artifact.getStars().reverse()//reverse so we check 5* first
+        for (const nStar of stars)
+          if (guessLevel(nStar, mainStatKey, mainStatValue)) {
+            if (!setKey || Artifact.getRarityArr(setKey).includes(nStar)) {
+              numStars = nStar
+              numStarsText = <span className="text-warning">Inferred <span className="text-success">{numStars}</span> Stars from Artifact Set.</span>
+              break;
+            }
+          }
+      }
+      if (!isNaN(level) && !detectedlevel) setLevelText(<span className="text-warning">Inferred level: <span className="text-danger">{level}</span></span>)
+
+      //check level validity against numStars
+      if (numStars && !isNaN(level))
+        if (level > numStars * 4)
+          level = NaN
+
+      //check if the final star values are valid
+      numStars = clamp(numStars, 3, 5)
+
+      //if the level is not parsed at all after all the prevous steps, default it to the highest level of the star value
+      if (isNaN(level)) {
+        level = numStars * 4
+        setLevelText(<span className="text-warning">Could not detect artifact level. Default to: <span className="text-danger">{level}</span></span>)
+      }
+
+      //try to infer slotKey if could not be detected.
+      if (slotKey) {
+        setSlotText(<span>Detected slot name <span className="text-success">{Artifact.getSlotName(slotKey)}</span></span>)
+      } else if (mainStatKey) {
+        //infer slot name from main stat
+        let pieces = setKey ? Object.keys(Artifact.getPieces(setKey)) : Artifact.getSlotKeys()
+        for (const testSlotKey of pieces) {
+          if (Artifact.getMainStatKeys(testSlotKey).includes(mainStatKey)) {
+            slotKey = testSlotKey;
+            setSlotText(<span className="text-warning">Slot name was not successfully detected. Inferring slot name: <span className="text-danger">{Artifact.getSlotName(slotKey)}</span>.</span>)
             break;
           }
         }
-    }
-    if (!isNaN(level) && !detectedlevel) setLevelText(<span className="text-warning">Inferred level: <span className="text-danger">{level}</span></span>)
-
-    //check level validity against numStars
-    if (numStars && !isNaN(level))
-      if (level > numStars * 4)
-        level = NaN
-
-    //check if the final star values are valid
-    numStars = clamp(numStars, 3, 5)
-
-    //if the level is not parsed at all after all the prevous steps, default it to the highest level of the star value
-    if (isNaN(level)) {
-      level = numStars * 4
-      setLevelText(<span className="text-warning">Could not detect artifact level. Default to: <span className="text-danger">{level}</span></span>)
-    }
-
-    //try to infer slotKey if could not be detected.
-    if (slotKey) {
-      setSlotText(<span>Detected slot name <span className="text-success">{Artifact.getSlotName(slotKey)}</span></span>)
-    } else if (mainStatKey) {
-      //infer slot name from main stat
-      let pieces = setKey ? Object.keys(Artifact.getPieces(setKey)) : Artifact.getSlotKeys()
-      for (const testSlotKey of pieces) {
-        if (Artifact.getMainStatKeys(testSlotKey).includes(mainStatKey)) {
-          slotKey = testSlotKey;
-          setSlotText(<span className="text-warning">Slot name was not successfully detected. Inferring slot name: <span className="text-danger">{Artifact.getSlotName(slotKey)}</span>.</span>)
-          break;
-        }
       }
-    }
 
-    let state = {}
-    if (!isNaN(level)) state.level = level
+      let state = {}
+      if (!isNaN(level)) state.level = level
 
-    if (setKey) {
-      state.setKey = setKey
-      setArtSetText(<span>Detected set <span className="text-success">{Artifact.getSetName(setKey)}</span></span>)
-    } else
-      setArtSetText(<span className="text-danger">Could not detect artifact set name.</span>)
+      if (setKey) {
+        state.setKey = setKey
+        setArtSetText(<span>Detected set <span className="text-success">{Artifact.getSetName(setKey)}</span></span>)
+      } else
+        setArtSetText(<span className="text-danger">Could not detect artifact set name.</span>)
 
-    if (slotKey) {
-      state.slotKey = slotKey
-    } else {
-      setSlotText(<span className="text-danger">Could not detect slot name.</span>)
-    }
+      if (slotKey) {
+        state.slotKey = slotKey
+      } else {
+        setSlotText(<span className="text-danger">Could not detect slot name.</span>)
+      }
 
-    if (substats) {
-      state.substats = substats
-      let len = substats.reduce((accu, substat) => accu + (substat.key ? 1 : 0), 0)
-      let low = Artifact.getBaseSubRollNumLow(numStars)
-      if (numStars && len < low)
-        setSubstatText(<span className="text-warning">Detected {len} substats, but there should be at least {low} substats.</span>)
-      else
-        setSubstatText(<span>Detected <span className="text-success">{len}</span> substats.</span>)
-    } else
-      setSubstatText(<span className="text-danger">Could not detect any substats.</span>)
+      if (substats) {
+        state.substats = substats
+        let len = substats.reduce((accu, substat) => accu + (substat.key ? 1 : 0), 0)
+        let low = Artifact.getBaseSubRollNumLow(numStars)
+        if (numStars && len < low)
+          setSubstatText(<span className="text-warning">Detected {len} substats, but there should be at least {low} substats.</span>)
+        else
+          setSubstatText(<span>Detected <span className="text-success">{len}</span> substats.</span>)
+      } else
+        setSubstatText(<span className="text-danger">Could not detect any substats.</span>)
 
-    if (numStars) {
-      state.numStars = numStars
-      setStarText(numStarsText)
-    }
-    if (mainStatKey) {
-      state.mainStatKey = mainStatKey
-    } else
-      setMainStatText(<span className="text-danger">Could not detect main stat.</span>)
-    setState?.(state)
-  }
+      if (numStars) {
+        state.numStars = numStars
+        setStarText(numStarsText)
+      }
+      if (mainStatKey) {
+        state.mainStatKey = mainStatKey
+      } else
+        setMainStatText(<span className="text-danger">Could not detect main stat.</span>)
+      setState?.(state)
+    }, [fileList, setState])
 
+  const resetState = useCallback(
+    () => {
+      setFileName("Click here to Upload Artifact Screenshot File")
+      setImage("")
+      setModalShow(false)
+      setScanning(false)
+
+      setOtherProgress(0);
+      setOtherProgVariant("")
+      setSubstatProgress(0);
+      setSubstatProgVariant("")
+      setArtSetProgress(0);
+      setArtSetProgVariant("")
+      resetText();
+      //scan the next file
+      scanFile();
+    }, [scanFile])
+
+  const uploadFiles = useCallback(
+    (files) => setFileList([...fileList, ...files]), [fileList])
   useEffect(() => {
-    let pasteFunc = e =>
-      uploadedFile(e.clipboardData.files[0])
+    const pasteFunc = e =>
+      uploadFiles(e.clipboardData.files)
     window.addEventListener('paste', pasteFunc);
-    reset?.(resetState);
+    setReset?.(resetState);
     return () =>
       window.removeEventListener('paste', pasteFunc)
-  })
-  let img = Boolean(image) && <img src={image} className="w-100 h-auto" alt="Screenshot to parse for artifact values" />
-  let artSetProgPercent = (artSetProgress * 100).toFixed(1)
-  let substatProgPercent = (substatProgress * 100).toFixed(1)
-  let otherProgPercent = (otherProgress * 100).toFixed(1)
+  }, [setReset, resetState, uploadFiles])
+
+  useEffect(() => {
+    if (!scanning && !artifactInEditor) scanFile()
+  }, [scanning, artifactInEditor, fileList, scanFile])
+
+  const img = Boolean(image) && <img src={image} className="w-100 h-auto" alt="Screenshot to parse for artifact values" />
+  const artSetProgPercent = (artSetProgress * 100).toFixed(1)
+  const substatProgPercent = (substatProgress * 100).toFixed(1)
+  const otherProgPercent = (otherProgress * 100).toFixed(1)
   return (<Row>
     <ExplainationModal {...{ modalShow, setModalShow }} />
     <Col xs={12} className="mb-2">
@@ -271,6 +283,14 @@ export default function UploadDisplay(props) {
         }}>Show Me How!</Button></Col>
       </Row>
     </Col>
+    {Boolean(fileList.length) && <Col xs={12}>
+      <Card bg="lightcontent" text="lightfont" className="mb-2">
+        <Row>
+          <Col className="p-1 ml-2">Screenshots in file-queue: <b>{fileList.length}</b></Col>
+          <Col xs="auto"><Button size="sm" variant="danger" onClick={() => setFileList([])}>Clear file-queue</Button></Col>
+        </Row>
+      </Card>
+    </Col>}
     <Col xs={8} lg={image ? 4 : 0}>{img}</Col>
     <Col xs={12} lg={image ? 8 : 12}>
       {scanning && <>
@@ -300,12 +320,13 @@ export default function UploadDisplay(props) {
         type="file"
         className="mb-0"
         label={fileName}
-        onChange={(e) => {
-          let file = e.target.files[0]
-          uploadedFile(file)
+        onChange={e => {
+          uploadFiles(e.target.files)
+          e.target.value = null//reset the value so the same file can be uploaded again...
         }}
         accept="image/*"
         custom
+        multiple
       />
       {Boolean(!image) && <Form.Label className="mb-0">Please Select an Image, or paste a screenshot here (Ctrl+V)</Form.Label>}
     </Col>
@@ -331,7 +352,11 @@ function ExplainationModal({ modalShow, setModalShow }) {
           <Col xs={12} md={8}>
             <p>Using screenshots can dramatically decrease the amount of time you manually input in stats on the Genshin Optimizer.</p>
             <h5>Where to snip the screenshot.</h5>
-            <p>In game, Open your bag, and navigate to the artifacts tab. Select the artifact you want to scan with Genshin Optimizer. To take a screenshot, in Windows, the shortcut is <strong>Shift + WindowsKey + S</strong>. Once you selected the region, the image is automatically included in your clipboard.</p>
+            <p>In game, Open your bag, and navigate to the artifacts tab. Select the artifact you want to scan with Genshin Optimizer. <b>Only artifact from this screen can be scanned.</b></p>
+            <h6>Single artifact</h6>
+            <p>To take a screenshot, in Windows, the shortcut is <strong>Shift + WindowsKey + S</strong>. Once you selected the region, the image is automatically included in your clipboard.</p>
+            <h6>Multiple artifacts</h6>
+            <p>To take advantage of batch uploads, you can use a tool like <a href="https://picpick.app/" target="_blank" rel="noreferrer">PicPick</a> to create a macro to easily to screenshot a region to screenshot multiple artifacts at once.</p>
             <h5>What to include in the screenshot.</h5>
             <p>As shown in the Image, starting from the top with the artifact name, all the way to the set name(the text in green). </p>
           </Col>
@@ -339,7 +364,10 @@ function ExplainationModal({ modalShow, setModalShow }) {
         <Row>
           <Col>
             <h5>Adding Screenshot to Genshin Optimizer</h5>
-            <p>At this point, you should have the artifact snippet either saved to your harddrive, or in your clipboard. You can click on the box next to "Browse" to browse the file in your harddrive, or even easier, just press <strong>Ctrl + V</strong> to paste from your clipboard. You should be able to see a Preview of your artifact snippet, and after waiting a few seconds, the artifact set and the substats will be filled in in the <b>Artifact Editor</b>.
+            <p>At this point, you should have the artifact snippet either saved to your harddrive, or in your clipboard.</p>
+            <p className="mb-0">You can click on the box next to "Browse" to browse the files in your harddrive for multiple screenshots.</p>
+            <p>For single screenshots from the snippets, just press <strong>Ctrl + V</strong> to paste from your clipboard.</p>
+            <p>You should be able to see a Preview of your artifact snippet, and after waiting a few seconds, the artifact set and the substats will be filled in in the <b>Artifact Editor</b>.
         </p>
           </Col>
           <Col xs={12}>

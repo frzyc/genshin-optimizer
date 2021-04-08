@@ -1,15 +1,15 @@
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faLink, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { lazy } from 'react';
 import { Button, Card, Col, Container, Image, Row, ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
 import ReactGA from 'react-ga';
 import Assets from '../Assets/Assets';
-import { DatabaseInitAndVerify } from '../Database/DatabaseUtil';
 import { loadFromLocalStorage, saveToLocalStorage } from '../Util/Util';
 import Weapon from '../Weapon/Weapon';
 import Character from './Character';
 import CharacterCard from './CharacterCard';
 import CharacterDatabase from '../Database/CharacterDatabase';
+import { Link } from 'react-router-dom';
 
 //lazy load the character display
 const CharacterDisplayCardPromise = import('../Character/CharacterDisplayCard');
@@ -26,7 +26,6 @@ const sortingFunc = {
 export default class CharacterDisplay extends React.Component {
   constructor(props) {
     super(props)
-    DatabaseInitAndVerify();
     this.state = {
       charIdToEdit: "",
       showEditor: false,
@@ -92,7 +91,7 @@ export default class CharacterDisplay extends React.Component {
             setCharacterKey={cKey => this.editCharacter(cKey)}
             characterKey={this.state.charIdToEdit}
             onClose={this.cancelEditCharacter}
-            footer={<Button variant="danger" onClick={this.cancelEditCharacter}>Close</Button>}
+            footer={<CharDisplayFooter onClose={this.cancelEditCharacter} characterKey={this.state.charIdToEdit} />}
           />
         </React.Suspense>
       </Col></Row> : null}
@@ -145,10 +144,22 @@ export default class CharacterDisplay extends React.Component {
               characterKey={charKey}
               onDelete={() => this.deleteCharacter(charKey)}
               onEdit={() => this.editCharacter(charKey)}
+              footer
             />
           </Col>
         )}
       </Row>
     </Container>)
   }
+}
+
+function CharDisplayFooter({ onClose, characterKey }) {
+  return <Row>
+    <Col>
+      <Button variant="info" as={Link} to={{ pathname: "/flex", characterKey }}><FontAwesomeIcon icon={faLink} /> Share Character</Button>
+    </Col>
+    <Col xs="auto">
+      <Button variant="danger" onClick={onClose}>Close</Button>
+    </Col>
+  </Row>
 }

@@ -1,6 +1,6 @@
 import { faEdit, faLock, faLockOpen, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
+import React, { useCallback, useEffect } from 'react';
 import Badge from 'react-bootstrap/Badge';
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
@@ -14,23 +14,34 @@ import Tooltip from 'react-bootstrap/Tooltip';
 import Character from '../Character/Character';
 import { CharacterSelectionDropdownList } from '../Components/CharacterSelection';
 import { Stars } from '../Components/StarDisplay';
-import Stat from '../Stat';
-import Artifact from './Artifact';
 import ArtifactDatabase from '../Database/ArtifactDatabase';
+import Stat from '../Stat';
+import { useForceUpdate } from '../Util/ReactUtil';
+import Artifact from './Artifact';
 import PercentBadge from './PercentBadge';
-export default function ArtifactCard({ artifactId, artifactObj, forceUpdate, onEdit, onDelete, assumeFull = false }) {
+export default function ArtifactCard({ artifactId, artifactObj, editable, onEdit, onDelete, assumeFull = false }) {
+  const forceUpdateHook = useForceUpdate()
+  useEffect(() => {
+    Artifact.getDataImport()?.then(forceUpdateHook)
+    if (artifactId) ArtifactDatabase.registerArtListener(artifactId, forceUpdateHook)
+    return () => {
+      if (artifactId) ArtifactDatabase.unregisterArtListener(artifactId, forceUpdateHook)
+    }
+  }, [artifactId, forceUpdateHook])
+  const equipOnChar = useCallback(
+    (charKey) => Artifact.equipArtifactOnChar(artifactId, charKey),
+    [artifactId],
+  )
   if (!artifactId && !artifactObj) return null;
   const art = artifactObj ? artifactObj : ArtifactDatabase.get(artifactId);
   if (!art) return null;
-  let { setKey, slotKey, numStars = 0, level = 0, mainStatKey, substats = [], location = "", lock, currentEfficiency = 0, maximumEfficiency = 0 } = art
+  if (!art.maximumEfficiency) Artifact.substatsValidation(art)
+  const { setKey, slotKey, numStars = 0, level = 0, mainStatKey, substats = [], location = "", lock, currentEfficiency = 0, maximumEfficiency = 0 } = art
   let mainStatLevel = assumeFull ? numStars * 4 : level
   let assFullColor = assumeFull && level !== numStars * 4
   let mainStatVal = <span className={assFullColor ? "text-orange" : ""}>{Artifact.getMainStatValue(mainStatKey, numStars, mainStatLevel, "")}{Stat.getStatUnit(mainStatKey)}</span>
   let artifactValid = substats.every(sstat => (!sstat.key || (sstat.key && sstat.value && sstat?.rolls?.length)))
-  const equipOnChar = (charKey) => {
-    Artifact.equipArtifactOnChar(artifactId, charKey)
-    forceUpdate?.()
-  }
+
   return (<Card className="h-100" border={`${numStars}star`} bg="lightcontent" text="lightfont">
     <Card.Header className="p-0">
       <Row>
@@ -65,21 +76,19 @@ export default function ArtifactCard({ artifactId, artifactObj, forceUpdate, onE
           </Col>)
         })}
       </Row>
-      <div className="mt-auto">
-        <span className="mb-0 mr-1">Substat Eff.:</span>
-        <PercentBadge percent={currentEfficiency} valid={artifactValid}>
+      <Row className="mt-auto">
+        <Col>Current SS Eff.: <PercentBadge percent={currentEfficiency} valid={artifactValid} className="float-right">
           {currentEfficiency?.toFixed(2) ?? currentEfficiency + "%"}
-        </PercentBadge>
-        <b>{" < "}</b>
-        <PercentBadge percent={maximumEfficiency} valid={artifactValid}>
+        </PercentBadge></Col>
+        {currentEfficiency !== maximumEfficiency && <Col className="text-right">Max SS Eff.: <PercentBadge percent={maximumEfficiency} valid={artifactValid}>
           {maximumEfficiency?.toFixed(2) ?? maximumEfficiency + "%"}
-        </PercentBadge>
-      </div>
+        </PercentBadge></Col>}
+      </Row>
     </Card.Body>
 
     <Card.Footer className="pr-3">
       <Row className="d-flex justify-content-between no-gutters">
-        {forceUpdate ? <Col xs="auto">
+        {editable ? <Col xs="auto">
           <Dropdown>
             <Dropdown.Toggle size="sm" className="text-left">{Character.getName(location, "Inventory")}</Dropdown.Toggle>
             <Dropdown.Menu>
@@ -91,7 +100,7 @@ export default function ArtifactCard({ artifactId, artifactObj, forceUpdate, onE
         </Col> : <Col xs="auto"><b>{Character.getName(location, "Inventory")}</b></Col>}
         <Col xs="auto">
           <ButtonGroup>
-            {forceUpdate ? <OverlayTrigger placement="top"
+            {editable ? <OverlayTrigger placement="top"
               overlay={<Tooltip>Locking a artifact will prevent the build generator from picking it for builds. Artifacts on characters are locked by default.</Tooltip>}>
               <span className="d-inline-block">
                 <Button size="sm"
@@ -100,18 +109,17 @@ export default function ArtifactCard({ artifactId, artifactObj, forceUpdate, onE
                   onClick={() => {
                     art.lock = !lock
                     ArtifactDatabase.update(art);
-                    forceUpdate?.();
                   }}>
                   <FontAwesomeIcon icon={(lock || location) ? faLock : faLockOpen} className="fa-fw" />
                 </Button>
               </span>
             </OverlayTrigger> : null}
             {Boolean(onEdit) && <Button variant="info" size="sm"
-              onClick={() => onEdit()}>
+              onClick={onEdit}>
               <FontAwesomeIcon icon={faEdit} className="fa-fw" />
             </Button>}
             {Boolean(onDelete) && <Button variant="danger" size="sm"
-              onClick={() => onDelete()}>
+              onClick={onDelete}>
               <FontAwesomeIcon icon={faTrashAlt} className="fa-fw" />
             </Button>}
           </ButtonGroup>

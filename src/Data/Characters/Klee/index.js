@@ -132,7 +132,7 @@ const char = {
         text: <span>When <b>Jumpy Dumpty</b> and <b>Normal Attacks</b> deal DMG, Klee has a 50% chance to obtain an Explosive Spark. This Explosive Spark is consumed by the next Charged Attack, which costs no Stamina and deals 50% increased DMG.</span>,
         conditional: stats => stats.ascension >= 1 && {
           type: "character",
-          conditionalKey: "Pounding Surprise",
+          conditionalKey: "PoundingSurprise",
           condition: "has Explosive Spark",
           sourceKey: "klee",
           maxStack: 1,

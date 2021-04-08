@@ -145,7 +145,13 @@ const char = {
           formulaText: stats => <span>( {data.burst.blossom[stats.tlvl.burst]}% {Stat.printStat("finalATK", stats)} + {30 * i}% {Stat.printStat("finalDEF", stats)}) * {Stat.printStat(getTalentStatKey("burst", stats) + "_multi", stats)}</span>,
           formula: formula.burst[`blossom${i}c2`],
           variant: stats => getTalentStatKeyVariant("burst", stats),
-        })]
+        }), {
+          text: "CD",
+          value: "12s"
+        }, {
+          text: "Energy Cost",
+          value: 40
+        }]
       }],
     },
     passive1: {
@@ -199,7 +205,7 @@ const char = {
       name: "Grace of Helios",
       img: c3,
       document: [{ text: <span>	Increases the level of <strong>Abiogenesis: Solar Isotoma</strong> by 3. Maximum upgrade level is 15.</span> }],
-      talentBoost: { burst: 3 }
+      talentBoost: { skill: 3 }
     },
     constellation4: {
       name: "Descent of Divinity",
@@ -222,7 +228,7 @@ const char = {
       name: "Tide of Hadean",
       img: c5,
       document: [{ text: <span>Increases the level of <b>Rite of Progeniture: Tectonic Tide</b> by 3. Maximum upgrade level is 15.</span> }],
-      talentBoost: { skill: 3 }
+      talentBoost: { burst: 3 }
     },
     constellation6: {
       name: "Dust of Purification",
