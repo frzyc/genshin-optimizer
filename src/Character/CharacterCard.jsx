@@ -1,6 +1,6 @@
 import { faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useEffect, useReducer } from 'react';
+import React, { useEffect } from 'react';
 import { Badge, Image } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
@@ -15,15 +15,19 @@ import Stat from '../Stat';
 import Weapon from '../Weapon/Weapon';
 import Character from './Character';
 import CharacterDatabase from '../Database/CharacterDatabase';
+import { useForceUpdate } from '../Util/ReactUtil';
 export default function CharacterCard({ characterKey, onEdit, onDelete, cardClassName = "", bg = "", header, footer }) {
-  const [, forceUpdate] = useReducer(x => x + 1, 0);
+  const forceUpdate = useForceUpdate()
   useEffect(() => {
     Promise.all([
       Character.getCharacterDataImport(),
       Weapon.getWeaponDataImport(),
       Artifact.getDataImport(),
-    ]).then(() => forceUpdate())
-  }, [])
+    ]).then(forceUpdate)
+    characterKey && CharacterDatabase.registerCharListener(characterKey, forceUpdate)
+    return () =>
+      characterKey && CharacterDatabase.unregisterCharListener(characterKey, forceUpdate)
+  }, [characterKey, forceUpdate])
   const character = CharacterDatabase.get(characterKey)
   if (!character) return null;
   const build = Character.calculateBuild(character)
@@ -49,24 +53,24 @@ export default function CharacterCard({ characterKey, onEdit, onDelete, cardClas
         <Col xs={"auto"}>
           <span className="float-right align-top ml-1">
             {onEdit && <Button variant="primary" size="sm" className="mr-1"
-              onClick={onEdit}>
+              onClick={() => onEdit(characterKey)}>
               <FontAwesomeIcon icon={faEdit} />
             </Button>}
             {onDelete && <Button variant="danger" size="sm"
-              onClick={onDelete}>
+              onClick={() => onDelete(characterKey)}>
               <FontAwesomeIcon icon={faTrashAlt} />
             </Button>}
           </span>
         </Col>
       </Row>
     </Card.Header>
-    <Card.Body onClick={onEdit} className={onEdit ? "cursor-pointer" : ""} >
+    <Card.Body onClick={() => onEdit(characterKey)} className={onEdit ? "cursor-pointer" : ""} >
       <Row>
         <Col xs="auto" className="pr-0">
           <Image src={Character.getThumb(characterKey)} className={`thumb-big grad-${Character.getStar(characterKey)}star p-0`} thumbnail />
         </Col>
         <Col>
-          <h3 className="mb-0">{`Lvl. ${Character.getStatValueWithOverride(character, "characterLevel")} C${constellation}`}</h3>
+          <h3 className="mb-0">{Character.getLevelString(character)} {`C${constellation}`}</h3>
           <h5 className="mb-0"><Stars stars={Character.getStar(characterKey)} colored /></h5>
           <h2 className="mb-0"><Image src={Assets.elements[elementKey]} className="inline-icon" /> <Image src={Assets.weaponTypes?.[weaponTypeKey]} className="inline-icon" /></h2>
         </Col>

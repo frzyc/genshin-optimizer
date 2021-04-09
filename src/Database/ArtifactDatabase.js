@@ -7,12 +7,11 @@ var listener = []
 export default class ArtifactDatabase {
   //do not instantiate.
   constructor() {
-    if (this instanceof ArtifactDatabase) {
-      throw Error('A static class cannot be instantiated.');
-    }
+    if (this instanceof ArtifactDatabase) throw Error('A static class cannot be instantiated.');
+
   }
   static isInvalid = (art) =>
-    !art || !art.setKey || !art.numStars || !art.slotKey || !art.mainStatKey
+    !art || !art.setKey || !art.numStars || !art.slotKey || !art.mainStatKey || art.substats?.some(substat => substat.key && !substat.value)
   static getArtifactDatabase = () => artifactDatabase;
   static getIdList = () => Object.keys(artifactDatabase);
   static populateDatebaseFromLocalStorage = () => {

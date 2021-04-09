@@ -23,10 +23,9 @@ export default function ArtifactCard({ artifactId, artifactObj, editable, onEdit
   const forceUpdateHook = useForceUpdate()
   useEffect(() => {
     Artifact.getDataImport()?.then(forceUpdateHook)
-    if (artifactId) ArtifactDatabase.registerArtListener(artifactId, forceUpdateHook)
-    return () => {
-      if (artifactId) ArtifactDatabase.unregisterArtListener(artifactId, forceUpdateHook)
-    }
+    artifactId && ArtifactDatabase.registerArtListener(artifactId, forceUpdateHook)
+    return () =>
+      artifactId && ArtifactDatabase.unregisterArtListener(artifactId, forceUpdateHook)
   }, [artifactId, forceUpdateHook])
   const equipOnChar = useCallback(
     (charKey) => Artifact.equipArtifactOnChar(artifactId, charKey),

@@ -20,7 +20,7 @@ function DisplayStatDiff({ label = "", val, oldVal, fixed = 0, unit = "", varian
     <Col xs="auto">{oldText}{diff ? " " : ""}{diffText}</Col>
   </Row></Col>
 }
-export default function StatDisplay({ character, character: { characterKey }, equippedBuild, newBuild, editable, statKey }) {
+export default function StatDisplay({ character, equippedBuild, newBuild, editable, statKey }) {
   let val, oldVal, fixed, unit, variant;
   let label = ""
   if (typeof statKey === "string") {//basic statKey

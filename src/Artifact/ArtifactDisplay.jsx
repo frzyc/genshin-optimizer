@@ -18,9 +18,9 @@ import { useForceUpdate } from '../Util/ReactUtil';
 import { clamp, loadFromLocalStorage, saveToLocalStorage } from '../Util/Util';
 import Artifact from './Artifact';
 import ArtifactCard from './ArtifactCard';
-import ArtifactDisplayInfo from './ArtifactDisplayInfo/ArtifactDisplayInfo';
 import ArtifactEditor from './ArtifactEditor';
 
+const ArtifactDisplayInfo = React.lazy(() => import('./ArtifactDisplayInfo'));
 const sortMap = {
   quality: "Quality",
   level: "Level",
@@ -51,7 +51,7 @@ function filterInit(initial = initialFilter()) {
 }
 export default function ArtifactDisplay(props) {
   const [filters, filterDispatch] = useReducer(filterReducer, initialFilter(), filterInit)
-  const [artToEditId, setartToEditId] = useState(props?.location?.artToEditId)//TODO:where does this location param come from?
+  const [artToEditId, setartToEditId] = useState(props?.location?.artToEditId)
   const [pageIdex, setpageIdex] = useState(0)
   const scrollRef = useRef(null)
   const forceUpdateArtifactDisplay = useForceUpdate()
@@ -72,9 +72,7 @@ export default function ArtifactDisplay(props) {
 
   useEffect(() => {
     ReactGA.pageview('/artifact')
-    function handleDbDirty() {
-      setdbDirty({})
-    }
+    const handleDbDirty = () => setdbDirty({})
     Character.getCharacterDataImport()?.then(forceUpdateArtifactDisplay)
     Artifact.getDataImport()?.then(forceUpdateArtifactDisplay)
     ArtifactDatabase.registerListener(handleDbDirty)
@@ -197,7 +195,7 @@ export default function ArtifactDisplay(props) {
       <Card.Header>
         <Row>
           <Col><span>Artifact Filter</span></Col>
-          <Col xs="auto"><Button size="sm" className="ml-2" variant="danger" onClick={() => filterDispatch({ type: "reset" })} ><FontAwesomeIcon icon={faUndo} className="fa-fw" /> Reset</Button></Col>
+          <Col xs="auto"><Button size="sm" className="ml-2" variant="danger" onClick={() => filterDispatch({ type: "reset" })} ><FontAwesomeIcon icon={faUndo} className="fa-fw" /> Reset Filters</Button></Col>
         </Row>
       </Card.Header>
       <Card.Body>
@@ -224,7 +222,7 @@ export default function ArtifactDisplay(props) {
           </Col>
           {/* Artifact stars filter */}
           <Col xs={12} lg={6} className="mb-2">
-            <ToggleButtonGroup className="w-100 d-flex" type="checkbox" as={InputGroup.Append} onChange={(e) => filterDispatch({ filterStars: e })} defaultValue={filterStars}>
+            <ToggleButtonGroup className="w-100 d-flex" type="checkbox" as={InputGroup.Append} onChange={(e) => filterDispatch({ filterStars: e })} value={filterStars}>
               {Artifact.getStars().map(star => {
                 let selected = filterStars.includes(star)
                 return <ToggleButton key={star} value={star} variant={selected ? "success" : "primary"}><FontAwesomeIcon icon={selected ? faCheckSquare : faSquare} /> <Stars stars={star} /></ToggleButton>
@@ -240,12 +238,12 @@ export default function ArtifactDisplay(props) {
               <CustomFormControl
                 value={filterLevelLow}
                 placeholder={`Min Level`}
-                onValueChange={(val) => val >= 0 && val <= filterLevelHigh && filterDispatch({ filterLevelLow: val })}
+                onChange={val => filterDispatch({ filterLevelLow: clamp(val, 0, filterLevelHigh) })}
               />
               <CustomFormControl
                 value={filterLevelHigh}
                 placeholder={`Max Level`}
-                onValueChange={(val) => val <= 20 && val >= filterLevelLow && filterDispatch({ filterLevelHigh: val })}
+                onChange={val => filterDispatch({ filterLevelHigh: clamp(val, filterLevelLow, 20) })}
               />
             </InputGroup>
           </Col>
@@ -364,7 +362,7 @@ export default function ArtifactDisplay(props) {
           <Col>
             {numPages > 1 && <ButtonGroup size="sm">
               {[...Array(numPages).keys()].map(i => <Button key={i} variant={currentPageIndex === i ? "success" : "primary"} onClick={() => setpageIdex(i)} >
-                {i + 1}
+                {i === 0 ? "Page " : ""}{i + 1}
               </Button>)}
             </ButtonGroup>}
           </Col>

@@ -82,8 +82,8 @@ const conditional = array(
     conditionalNum: uint(1),
   }), {
   // Add this here because someone is being naughty.
-  encode: (array) => array.filter(({ srcKey2 }) => srcKey2.match(/^[a-z0-9\-_]+$/i))
-}
+  encode: (array) => array.filter(({ srcKey2 }) => srcKey2?.match(/^[a-z0-9\-_]+$/i))
+  }
 )
 const weapon = object({
   key: string,
