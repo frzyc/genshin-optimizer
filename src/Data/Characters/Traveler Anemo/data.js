@@ -47,7 +47,7 @@ const formula = {
     basicDMGFormula(percentArr[stats.tlvl.auto], stats, "normal")])),
   charged: Object.fromEntries(data.charged.hitArr.map((percentArr, i) => [i, stats =>
     basicDMGFormula(percentArr[stats.tlvl.auto], stats, "charged")])),
-  plunging: Object.fromEntries(Object.entries(data.plunging).map(([key, arr]) => [key, stats => basicDMGFormula(arr[stats.tlvl.plunging], stats, "plunging")])),
+  plunging: Object.fromEntries(Object.entries(data.plunging).map(([key, arr]) => [key, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "plunging")])),
   skill: Object.fromEntries(Object.entries(data.skill).map(([name, arr]) =>
     [name, stats => basicDMGFormula(arr[stats.tlvl.skill], stats, "skill")])),
   burst: {
