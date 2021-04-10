@@ -140,7 +140,7 @@ export default function ArtifactDisplay(props) {
 
   const { artifactsToShow, numPages, currentPageIndex } = useMemo(() => {
     const numPages = Math.ceil(artifacts.length / maxNumArtifactsToDisplay)
-    const currentPageIndex = clamp(pageIdex, 0, numPages)
+    const currentPageIndex = clamp(pageIdex, 0, numPages - 1)
     return { artifactsToShow: artifacts.slice(currentPageIndex * maxNumArtifactsToDisplay, (currentPageIndex + 1) * maxNumArtifactsToDisplay), numPages, currentPageIndex }
   }, [artifacts, pageIdex, maxNumArtifactsToDisplay])
 
