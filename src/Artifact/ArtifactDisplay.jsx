@@ -54,6 +54,7 @@ export default function ArtifactDisplay(props) {
   const [artToEditId, setartToEditId] = useState(props?.location?.artToEditId)
   const [pageIdex, setpageIdex] = useState(0)
   const scrollRef = useRef(null)
+  const invScrollRef = useRef(null)
   const forceUpdateArtifactDisplay = useForceUpdate()
   const [dbDirty, setdbDirty] = useState({})
   const deleteArtifact = useCallback(
@@ -191,7 +192,7 @@ export default function ArtifactDisplay(props) {
         cancelEdit={cancelEditArtifact}
       />
     </div>
-    <Card bg="darkcontent" text="lightfont" className="mb-2">
+    <Card bg="darkcontent" text="lightfont" className="mb-2" ref={invScrollRef}>
       <Card.Header>
         <Row>
           <Col><span>Artifact Filter</span></Col>
@@ -361,7 +362,7 @@ export default function ArtifactDisplay(props) {
         <Row>
           <Col>
             {numPages > 1 && <ButtonGroup size="sm">
-              {[...Array(numPages).keys()].map(i => <Button key={i} variant={currentPageIndex === i ? "success" : "primary"} onClick={() => setpageIdex(i)} >
+              {[...Array(numPages).keys()].map(i => <Button key={i} className="px-3" variant={currentPageIndex === i ? "success" : "primary"} onClick={() => setpageIdex(i)} >
                 {i === 0 ? "Page " : ""}{i + 1}
               </Button>)}
             </ButtonGroup>}
@@ -370,17 +371,33 @@ export default function ArtifactDisplay(props) {
         </Row>
       </Card.Body>
     </Card>
-    <Row className="mb-2">
+    <Row>
       {artifactsToShow.map((art, i) =>
         <Col key={i} lg={4} md={6} className="mb-2">
           <ArtifactCard
             artifactId={art.id}
             onDelete={() => deleteArtifact(art.id)}
             onEdit={() => editArtifact(art.id)}
-            editable
           />
         </Col>
       )}
     </Row>
+    {numPages > 1 && <Card bg="darkcontent" text="lightfont" className="mb-2">
+      <Card.Body>
+        <Row>
+          <Col>
+            <ButtonGroup size="sm">
+              {[...Array(numPages).keys()].map(i => <Button key={i} className="px-3" variant={currentPageIndex === i ? "success" : "primary"} onClick={() => {
+                setpageIdex(i)
+                invScrollRef.current?.scrollIntoView({ behavior: "smooth" })
+              }} >
+                {i === 0 ? "Page " : ""}{i + 1}
+              </Button>)}
+            </ButtonGroup>
+          </Col>
+          <Col xs="auto"><span className="float-right text-right">Showing <b>{artifactsToShow.length}</b> out of {artifacts.length !== totalArtNum ? `${artifacts.length}/` : ""}{totalArtNum} Artifacts</span></Col>
+        </Row>
+      </Card.Body>
+    </Card>}
   </Container >
 }

@@ -19,7 +19,7 @@ import Stat from '../Stat';
 import { useForceUpdate } from '../Util/ReactUtil';
 import Artifact from './Artifact';
 import PercentBadge from './PercentBadge';
-export default function ArtifactCard({ artifactId, artifactObj, editable, onEdit, onDelete, assumeFull = false }) {
+export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete, assumeFull = false }) {
   const forceUpdateHook = useForceUpdate()
   useEffect(() => {
     Artifact.getDataImport()?.then(forceUpdateHook)
@@ -32,6 +32,7 @@ export default function ArtifactCard({ artifactId, artifactObj, editable, onEdit
     [artifactId],
   )
   if (!artifactId && !artifactObj) return null;
+  const editable = !artifactObj//dont allow edit for flex artifacts
   const art = artifactObj ? artifactObj : ArtifactDatabase.get(artifactId);
   if (!art) return null;
   if (!art.maximumEfficiency) Artifact.substatsValidation(art)

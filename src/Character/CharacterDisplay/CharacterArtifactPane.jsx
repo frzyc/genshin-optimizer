@@ -98,7 +98,7 @@ function CharacterArtifactPane({ character, character: { characterKey, artifactC
               </Col> : null
             }) : Artifact.getSlotKeys().map(slotKey =>
               build.artifactIds[slotKey] ? <Col sm={6} lg={4} key={build.artifactIds[slotKey]} className="mb-2">
-                <ArtifactCard artifactId={build.artifactIds[slotKey]} editable={editable} assumeFull={artifactsAssumeFull} onEdit={() => edit(build.artifactIds[slotKey])} />
+                <ArtifactCard artifactId={build.artifactIds[slotKey]} assumeFull={artifactsAssumeFull} onEdit={() => edit(build.artifactIds[slotKey])} />
               </Col> : null
             )}
         </Row>
