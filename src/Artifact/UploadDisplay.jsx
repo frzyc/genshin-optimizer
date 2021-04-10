@@ -601,7 +601,7 @@ function parseMainStatvalue(recognition, defVal = { mainStatValue: NaN }) {
     let regex = /(\d+[,|\\.]+\d)%/
     let match = regex.exec(text)
     if (match) return { mainStatValue: parseFloat(match[1].replace(/,/g,".").replace(/\.{2,}/g, ".")), unit: "%" }
-    regex = /(\d+,\d{3}|\d{2,3})/
+    regex = /(\d+[,|\\.]\d{3}|\d{2,3})/
     match = regex.exec(text)
     if (match) return { mainStatValue: parseInt(match[1].replace(/[,|\\.]+/g, "")) }
   }
