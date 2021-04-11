@@ -275,7 +275,7 @@ export default function UploadDisplay({ setState, setReset, artifactInEditor }) 
     <Col xs={12} className="mb-2">
       <Row>
         <Col>
-          <h6 className="mb-0">Parse Substats by Uploading Image</h6>
+          <h6 className="mb-0">Parse Artifact by Uploading Image</h6>
         </Col>
         <Col xs="auto"><Button variant="info" size="sm" onClick={() => {
           setModalShow(true)

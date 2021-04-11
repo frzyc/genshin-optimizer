@@ -201,9 +201,10 @@ export default function ArtifactDisplay(props) {
       </Card.Header>
       <Card.Body>
         <Row className="mb-n2">
-          {/* Artifact set filter */}
-          <Col xs={12} lg={6} className="mb-2">
-            <Dropdown as={InputGroup.Prepend} className="flex-grow-1">
+          {/* Left half */}
+          <Col xs={12} lg={6}>
+            {/* Artifact set filter */}
+            <Dropdown as={InputGroup.Prepend} className="flex-grow-1 mb-2">
               <Dropdown.Toggle className="w-100" variant={filterArtSetKey ? "success" : "primary"}>
                 {Artifact.getSetName(filterArtSetKey, "Artifact Set")}
               </Dropdown.Toggle>
@@ -220,19 +221,17 @@ export default function ArtifactDisplay(props) {
                   </React.Fragment>)}
               </Dropdown.Menu>
             </Dropdown>
-          </Col>
-          {/* Artifact stars filter */}
-          <Col xs={12} lg={6} className="mb-2">
-            <ToggleButtonGroup className="w-100 d-flex" type="checkbox" as={InputGroup.Append} onChange={(e) => filterDispatch({ filterStars: e })} value={filterStars}>
+
+            {/* Artifact stars filter */}
+            <ToggleButtonGroup className="w-100 d-flex mb-2" type="checkbox" as={InputGroup.Append} onChange={(e) => filterDispatch({ filterStars: e })} value={filterStars}>
               {Artifact.getStars().map(star => {
                 let selected = filterStars.includes(star)
                 return <ToggleButton key={star} value={star} variant={selected ? "success" : "primary"}><FontAwesomeIcon icon={selected ? faCheckSquare : faSquare} /> <Stars stars={star} /></ToggleButton>
               })}
             </ToggleButtonGroup>
-          </Col>
-          {/* Artiface level filter */}
-          <Col xs={12} lg={6} className="mb-2">
-            <InputGroup>
+
+            {/* Artiface level filter */}
+            <InputGroup className="mb-2">
               <InputGroup.Prepend>
                 <InputGroup.Text><span>Level <span className={`text-${filterLevelLow > 0 ? "success" : ""}`}>Low</span>/<span className={`text-${filterLevelHigh < 20 ? "success" : ""}`}>High</span> (Inclusive)</span></InputGroup.Text>
               </InputGroup.Prepend>
@@ -247,92 +246,9 @@ export default function ArtifactDisplay(props) {
                 onChange={val => filterDispatch({ filterLevelHigh: clamp(val, filterLevelLow, 20) })}
               />
             </InputGroup>
-          </Col>
-          {/* Artifact Slot */}
-          <Col xs={6} lg={3} className="mb-2">
-            <Dropdown className="flex-grow-1">
-              <Dropdown.Toggle className="w-100" variant={filterSlotKey ? "success" : "primary"}>
-                {Artifact.getSlotNameWithIcon(filterSlotKey, "Slot")}
-              </Dropdown.Toggle>
-              <Dropdown.Menu>
-                <Dropdown.Item onClick={() => filterDispatch({ filterSlotKey: "" })} >Unselect</Dropdown.Item>
-                {Artifact.getSlotKeys().map(key =>
-                  <Dropdown.Item key={key} onClick={() => filterDispatch({ filterSlotKey: key })} >
-                    {Artifact.getSlotNameWithIcon(key)}
-                  </Dropdown.Item>)}
-              </Dropdown.Menu>
-            </Dropdown>
-          </Col>
-          {/* Main Stat filter */}
-          <Col xs={6} lg={3} className="mb-2">
-            <Dropdown className="flex-grow-1">
-              <Dropdown.Toggle className="w-100" variant={filterMainStatKey ? "success" : "primary"}>
-                {Stat.getStatNameWithPercent(filterMainStatKey, "Main Stat")}
-              </Dropdown.Toggle>
-              <Dropdown.Menu>
-                <Dropdown.Item onClick={() => filterDispatch({ filterMainStatKey: "" })}>Unselect</Dropdown.Item>
-                {Artifact.getMainStatKeys().map((statKey) => <Dropdown.Item key={statKey} onClick={() => filterDispatch({ filterMainStatKey: statKey })} >
-                  {Stat.getStatNameWithPercent(statKey)}
-                </Dropdown.Item>)}
-              </Dropdown.Menu>
-            </Dropdown>
-          </Col>
-          {/* substat filter */}
-          {filterSubstats.map((substatKey, index) =>
-            <Col key={index} xs={6} lg={3} className="mb-2">
-              <Dropdown >
-                <Dropdown.Toggle id="dropdown-basic" className="w-100" variant={substatKey ? "success" : "primary"}>
-                  {Stat.getStatNameWithPercent(substatKey, `Substat ${index + 1}`)}
-                </Dropdown.Toggle>
-                <Dropdown.Menu>
-                  <Dropdown.Item
-                    onClick={() => {
-                      filterSubstats[index] = ""
-                      filterDispatch({ filterSubstats })
-                    }}
-                  >No Substat</Dropdown.Item>
-                  {Artifact.getSubStatKeys().filter(key => !filterSubstats.includes(key)).map(key =>
-                    <Dropdown.Item key={key}
-                      onClick={() => {
-                        filterSubstats[index] = key
-                        filterDispatch({ filterSubstats })
-                      }}
-                    >{Stat.getStatNameWithPercent(key)}</Dropdown.Item>
-                  )}
-                </Dropdown.Menu>
-              </Dropdown>
-            </Col>
-          )}
-          {/* location */}
-          <Col xs={6} lg={3} className="mb-2">
-            <Dropdown className="flex-grow-1" >
-              <Dropdown.Toggle className="w-100" variant={filterLocation ? "success" : "primary"} >
-                {locationDisplay}
-              </Dropdown.Toggle>
-              <Dropdown.Menu>
-                <Dropdown.Item onClick={() => filterDispatch({ filterLocation: "" })}>Unselect</Dropdown.Item>
-                <Dropdown.Item onClick={() => filterDispatch({ filterLocation: "Inventory" })}>Inventory</Dropdown.Item>
-                <Dropdown.Item onClick={() => filterDispatch({ filterLocation: "Equipped" })}>Currently Equipped</Dropdown.Item>
-                <Dropdown.Divider />
-                <CharacterSelectionDropdownList onSelect={cid => filterDispatch({ filterLocation: cid })} />
-              </Dropdown.Menu>
-            </Dropdown>
-          </Col>
-          <Col xs={6} lg={3} className="mb-2">
-            <Dropdown className="flex-grow-1" >
-              <Dropdown.Toggle className="w-100" variant={filterLocked ? "success" : "primary"} >
-                {lockedDisplay}
-              </Dropdown.Toggle>
-              <Dropdown.Menu>
-                <Dropdown.Item onClick={() => filterDispatch({ filterLocked: "" })}>Any</Dropdown.Item>
-                <Dropdown.Item onClick={() => filterDispatch({ filterLocked: "locked" })}><span><FontAwesomeIcon icon={faLock} /> Locked</span></Dropdown.Item>
-                <Dropdown.Item onClick={() => filterDispatch({ filterLocked: "unlocked" })}><span><FontAwesomeIcon icon={faLockOpen} /> Unlocked</span></Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
-          </Col>
-          {/* Sort */}
-          <Col xs={12} lg={6} className="mb-2">
-            <ButtonGroup className="w-100 d-flex flex-row">
+
+            {/* Sort */}
+            <ButtonGroup className="w-100 d-flex flex-row mb-2">
               <Dropdown as={ButtonGroup} className="flex-grow-1">
                 <Dropdown.Toggle >
                   <span>Sort By: {sortMap[sortType]}</span>
@@ -346,6 +262,92 @@ export default function ArtifactDisplay(props) {
                 <FontAwesomeIcon icon={ascending ? faSortAmountDownAlt : faSortAmountUp} className="fa-fw" /><span> {ascending ? "Ascending" : "Descending"}</span>
               </Button>
             </ButtonGroup>
+          </Col>
+          {/* Right half */}
+          <Col xs={12} lg={6}>
+            <Row>
+              {/* Left */}
+              <Col>
+                {/* Artifact Slot */}
+                <Dropdown className="flex-grow-1 mb-2">
+                  <Dropdown.Toggle className="w-100" variant={filterSlotKey ? "success" : "primary"}>
+                    {Artifact.getSlotNameWithIcon(filterSlotKey, "Slot")}
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu>
+                    <Dropdown.Item onClick={() => filterDispatch({ filterSlotKey: "" })} >Unselect</Dropdown.Item>
+                    {Artifact.getSlotKeys().map(key =>
+                      <Dropdown.Item key={key} onClick={() => filterDispatch({ filterSlotKey: key })} >
+                        {Artifact.getSlotNameWithIcon(key)}
+                      </Dropdown.Item>)}
+                  </Dropdown.Menu>
+                </Dropdown>
+                {/* Main Stat filter */}
+                <Dropdown className="flex-grow-1 mb-2">
+                  <Dropdown.Toggle className="w-100" variant={filterMainStatKey ? "success" : "primary"}>
+                    {Stat.getStatNameWithPercent(filterMainStatKey, "Main Stat")}
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu>
+                    <Dropdown.Item onClick={() => filterDispatch({ filterMainStatKey: "" })}>Unselect</Dropdown.Item>
+                    {Artifact.getMainStatKeys().map((statKey) => <Dropdown.Item key={statKey} onClick={() => filterDispatch({ filterMainStatKey: statKey })} >
+                      {Stat.getStatNameWithPercent(statKey)}
+                    </Dropdown.Item>)}
+                  </Dropdown.Menu>
+                </Dropdown>
+
+                {/* location */}
+                <Dropdown className="flex-grow-1 mb-2" >
+                  <Dropdown.Toggle className="w-100" variant={filterLocation ? "success" : "primary"} >
+                    {locationDisplay}
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu>
+                    <Dropdown.Item onClick={() => filterDispatch({ filterLocation: "" })}>Unselect</Dropdown.Item>
+                    <Dropdown.Item onClick={() => filterDispatch({ filterLocation: "Inventory" })}>Inventory</Dropdown.Item>
+                    <Dropdown.Item onClick={() => filterDispatch({ filterLocation: "Equipped" })}>Currently Equipped</Dropdown.Item>
+                    <Dropdown.Divider />
+                    <CharacterSelectionDropdownList onSelect={cid => filterDispatch({ filterLocation: cid })} />
+                  </Dropdown.Menu>
+                </Dropdown>
+
+                {/* locked state */}
+                <Dropdown className="flex-grow-1 mb-2" >
+                  <Dropdown.Toggle className="w-100" variant={filterLocked ? "success" : "primary"} >
+                    {lockedDisplay}
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu>
+                    <Dropdown.Item onClick={() => filterDispatch({ filterLocked: "" })}>Any</Dropdown.Item>
+                    <Dropdown.Item onClick={() => filterDispatch({ filterLocked: "locked" })}><span><FontAwesomeIcon icon={faLock} /> Locked</span></Dropdown.Item>
+                    <Dropdown.Item onClick={() => filterDispatch({ filterLocked: "unlocked" })}><span><FontAwesomeIcon icon={faLockOpen} /> Unlocked</span></Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+              </Col>
+              {/* Right */}
+              <Col>
+                {/* substat filter */}
+                {filterSubstats.map((substatKey, index) =>
+                  <Dropdown className="mb-2" >
+                    <Dropdown.Toggle id="dropdown-basic" className="w-100" variant={substatKey ? "success" : "primary"}>
+                      {Stat.getStatNameWithPercent(substatKey, `Substat ${index + 1}`)}
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                      <Dropdown.Item
+                        onClick={() => {
+                          filterSubstats[index] = ""
+                          filterDispatch({ filterSubstats })
+                        }}
+                      >No Substat</Dropdown.Item>
+                      {Artifact.getSubStatKeys().filter(key => !filterSubstats.includes(key)).map(key =>
+                        <Dropdown.Item key={key}
+                          onClick={() => {
+                            filterSubstats[index] = key
+                            filterDispatch({ filterSubstats })
+                          }}
+                        >{Stat.getStatNameWithPercent(key)}</Dropdown.Item>
+                      )}
+                    </Dropdown.Menu>
+                  </Dropdown>
+                )}
+              </Col>
+            </Row>
           </Col>
         </Row>
       </Card.Body>
