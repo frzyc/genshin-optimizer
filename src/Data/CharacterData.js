@@ -17,7 +17,7 @@ const LevelsData = {
     asend: 0
   },
   "L20A": {
-    name: "Lv. 20 As.1",
+    name: "Lv. 20/40",
     level: 20,
     asend: 1
 
@@ -28,7 +28,7 @@ const LevelsData = {
     asend: 1
   },
   "L40A": {
-    name: "Lv. 40 As.2",
+    name: "Lv. 40/50",
     level: 40,
     asend: 2
   },
@@ -39,7 +39,7 @@ const LevelsData = {
     asend: 2
   },
   "L50A": {
-    name: "Lv. 50 As.3",
+    name: "Lv. 50/60",
     level: 50,
     asend: 3
   },
@@ -49,7 +49,7 @@ const LevelsData = {
     asend: 3
   },
   "L60A": {
-    name: "Lv. 60 As.4",
+    name: "Lv. 60/70",
     level: 60,
     asend: 4
   },
@@ -59,7 +59,7 @@ const LevelsData = {
     asend: 4
   },
   "L70A": {
-    name: "Lv. 70 As.5",
+    name: "Lv. 70/80",
     level: 70,
     asend: 5
   },
@@ -70,7 +70,7 @@ const LevelsData = {
     asend: 5
   },
   "L80A": {
-    name: "Lv. 80 As.6",
+    name: "Lv. 80/90",
     level: 80,
     asend: 6
   },

@@ -1,26 +1,28 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { Alert, Badge, Button, Card, Col, Row } from 'react-bootstrap';
+import { useHistory } from 'react-router-dom';
 import Artifact from '../../Artifact/Artifact';
 import ArtifactCard from '../../Artifact/ArtifactCard';
 import ConditionalSelector from '../../Components/ConditionalSelector';
 import Stat from "../../Stat";
 import ConditionalsUtil from '../../Util/ConditionalsUtil';
 import Character from "../Character";
-import DamageOptionsAndCalculation from './DamageOptionsAndCalculation';
 import StatDisplayComponent from './StatDisplayComponent';
 
-function CharacterArtifactPane({ character, character: { characterKey, artifactConditionals }, equippedBuild, newBuild, editable, forceUpdate, setState, setOverride, artifacts }) {
+function CharacterArtifactPane({ character, character: { characterKey, artifactConditionals }, equippedBuild, newBuild, editable, characterDispatch, artifacts }) {
+  const history = useHistory()
   //choose which one to display stats for
-  let build = newBuild ? newBuild : equippedBuild
+  const build = newBuild ? newBuild : equippedBuild
   let artifactsAssumeFull = newBuild ? newBuild.finalStats?.artifactsAssumeFull : character.artifactsAssumeFull
   if (newBuild) artifactConditionals = newBuild.artifactConditionals
   const statKeys = Character.getDisplayStatKeys(build.finalStats)
-  const setStateArtifactConditional = (setKey, setNumKey, conditionalNum) => setState?.(state =>
-    ({ artifactConditionals: ConditionalsUtil.setConditional(state.artifactConditionals, { srcKey: setKey, srcKey2: setNumKey }, conditionalNum) }))
+  const setStateArtifactConditional = (setKey, setNumKey, conditionalNum) => characterDispatch?.({ artifactConditionals: ConditionalsUtil.setConditional(artifactConditionals, { srcKey: setKey, srcKey2: setNumKey }, conditionalNum) })
+  const edit = useCallback(
+    artid => history.push({
+      pathname: "/artifact",
+      artToEditId: artid
+    }), [history])
   return <>
-    {Character.hasTalentPage(characterKey) && <Row><Col xs={12} className="mb-2">
-      <DamageOptionsAndCalculation {...{ character, setState, setOverride, newBuild, equippedBuild }} />
-    </Col></Row>}
     <Row>
       <Col className="mb-2">
         <Card className="h-100" bg="lightcontent" text="lightfont">
@@ -29,11 +31,19 @@ function CharacterArtifactPane({ character, character: { characterKey, artifactC
           </Card.Body>
           {newBuild ? <Card.Footer>
             <Button onClick={() => {
+              if (!window.confirm("Do you want to equip this artifact build to this character?")) return
               Character.equipArtifacts(characterKey, newBuild.artifactIds)
-              forceUpdate?.()
-            }}>Equip All artifacts to current character</Button>
+              characterDispatch?.({ type: "fromDB" })
+            }}>Equip all artifacts to current character</Button>
             {artifactsAssumeFull && <Alert className="float-right text-right mb-0 py-2" variant="orange" ><b>Assume Main Stats are Fully Leveled</b></Alert>}
-          </Card.Footer> : null}
+          </Card.Footer> : (editable && <Card.Footer>
+            <Button onClick={() => {
+              if (!window.confirm("Do you want to move all the artifacts equipped to inventory?")) return
+              Character.equipArtifacts(characterKey, Object.fromEntries(Artifact.getSlotKeys().map(sKey => [sKey, ""])))
+              characterDispatch?.({ type: "fromDB" })
+            }}>Unequip all artifacts</Button>
+            {artifactsAssumeFull && <Alert className="float-right text-right mb-0 py-2" variant="orange" ><b>Assume Main Stats are Fully Leveled</b></Alert>}
+          </Card.Footer>)}
         </Card>
       </Col>
     </Row>
@@ -81,14 +91,14 @@ function CharacterArtifactPane({ character, character: { characterKey, artifactC
             </Card>
           </Col>
           {artifacts ?
-            Artifact.getSlotKeys().map(slotKey => {
+            Artifact.getSlotKeys().map(slotKey => {//from flex
               const art = artifacts.find(art => art.slotKey === slotKey)
               return art ? <Col sm={6} lg={4} key={slotKey} className="mb-2">
                 <ArtifactCard artifactObj={art} />
               </Col> : null
             }) : Artifact.getSlotKeys().map(slotKey =>
               build.artifactIds[slotKey] ? <Col sm={6} lg={4} key={build.artifactIds[slotKey]} className="mb-2">
-                <ArtifactCard artifactId={build.artifactIds[slotKey]} editable={Boolean(forceUpdate)} assumeFull={artifactsAssumeFull} />
+                <ArtifactCard artifactId={build.artifactIds[slotKey]} assumeFull={artifactsAssumeFull} onEdit={() => edit(build.artifactIds[slotKey])} />
               </Col> : null
             )}
         </Row>

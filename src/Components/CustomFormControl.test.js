@@ -1,59 +1,58 @@
-import { fireEvent, render } from "@testing-library/react";
+import { render } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import CustomFormControl from "./CustomFormControl";
 
 describe("Testing CustomFormControl Component", () => {
-
-  describe('Int Input', () => {
-    let displayValue, onValueChange, utils, input
+  let displayValue, utils, input
+  const onChangeMock = jest.fn(v => v)
+  describe('Basic Interactions, Int', () => {
     beforeEach(() => {
-      displayValue = 999
-      onValueChange = (v) => displayValue = v
-      utils = render(<CustomFormControl value={displayValue} onValueChange={onValueChange} />)
+      displayValue = null
+      utils = render(<CustomFormControl value={displayValue} onChange={onChangeMock} />)
       input = utils.getByLabelText('custom-input')
     })
-    test('should Take basic Int', () => {
-      fireEvent.change(input, { target: { value: 23 } })
-      expect(displayValue).toBe(23)
+    test('should basic input', () => {
+      userEvent.type(input, "12")
+      input.blur()
+      expect(onChangeMock.mock.calls.length).toBe(1)
+      expect(onChangeMock.mock.calls[0][0]).toBe(12)//1st call 1st arg
     })
-    test('should Parse Float', () => {
-      fireEvent.change(input, { target: { value: 23.45 } })
-      expect(displayValue).toBe(23)
+    test('should Use Enter key to finalize', () => {
+      userEvent.type(input, "3{enter}")
+      expect(onChangeMock.mock.calls[0][0]).toBe(3)//1st call 1st arg
     })
-    test('should handle empty as zero by default', () => {
-      fireEvent.change(input, { target: { value: "" } })
-      expect(displayValue).toBe(0)
+    test('empty by backspacing', () => {
+      userEvent.type(input, "{enter}")
+      expect(onChangeMock.mock.calls[0][0]).toBe(0)//1st call 1st arg
     })
+    test('should parse float to int', () => {
+      userEvent.type(input, "12.345")
+      input.blur()
+      expect(onChangeMock.mock.calls[0][0]).toBe(12)//1st call 1st arg
+    })
+  })
 
+  describe('Basic Interactions, float', () => {
+    beforeEach(() => {
+      displayValue = null
+      utils = render(<CustomFormControl value={displayValue} onChange={onChangeMock} float />)
+      input = utils.getByLabelText('custom-input')
+    })
+    test('should parse float', () => {
+      userEvent.type(input, "12.345")
+      input.blur()
+      expect(onChangeMock.mock.calls[0][0]).toBe(12.345)//1st call 1st arg
+    })
   })
   describe('allowEmpty', () => {
-    test('should handle empty', () => {
-      let displayValue = 999
-      const onValueChange = (v) => displayValue = v
-      const utils = render(<CustomFormControl value={displayValue} onValueChange={onValueChange} allowEmpty={true} />)
-      const input = utils.getByLabelText('custom-input')
-      fireEvent.change(input, { target: { value: "" } })
-      expect(displayValue).toBe(null)
-    })
-  })
-  describe('Int Input', () => {
-    let displayValue, onValueChange, utils, input
     beforeEach(() => {
-      displayValue = 999.99
-      onValueChange = (v) => displayValue = v
-      utils = render(<CustomFormControl value={displayValue} onValueChange={onValueChange} float={true} />)
+      displayValue = null
+      utils = render(<CustomFormControl value={displayValue} onChange={onChangeMock} allowEmpty />)
       input = utils.getByLabelText('custom-input')
     })
-    test('should Take basic float', () => {
-      fireEvent.change(input, { target: { value: 23 } })
-      expect(displayValue).toBe(23)
-    })
-    test('should Parse Float', () => {
-      fireEvent.change(input, { target: { value: 23.45 } })
-      expect(displayValue).toBe(23.45)
-    })
-    test('should handle empty as zero by default', () => {
-      fireEvent.change(input, { target: { value: "" } })
-      expect(displayValue).toBe(0)
+    test('should allowEMpty', () => {
+      userEvent.type(input, "{enter}")
+      expect(onChangeMock.mock.calls[0][0]).toBe(null)//1st call 1st arg
     })
   })
 })

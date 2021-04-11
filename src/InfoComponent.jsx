@@ -1,7 +1,7 @@
 import { faQuestionCircle, faTimes } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { useState } from "react"
-import { Button, Card, Col, Modal, Row } from "react-bootstrap"
+import { Suspense, useState } from "react"
+import { Button, Card, Col, Modal, Row, Spinner } from "react-bootstrap"
 import { getRandomElementFromArray, loadFromLocalStorage, saveToLocalStorage } from "./Util/Util"
 
 export default function InfoComponent({ pageKey = "", text = "", modalTitle = "", children }) {
@@ -28,7 +28,9 @@ export default function InfoComponent({ pageKey = "", text = "", modalTitle = ""
           </Row>
         </Card.Header>
         <Card.Body>
-          {children}
+          <Suspense fallback={<h3 className="text-center">Loading... <Spinner animation="border" variant="primary" /></h3>}>
+            {children}
+          </Suspense>
         </Card.Body>
         <Card.Footer>
           <Button variant="danger" onClick={() => closeModal()}>

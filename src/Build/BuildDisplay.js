@@ -633,13 +633,13 @@ function StatFilterItem({ statKey, statKeys = [], min, max, close, setFilter }) 
     ...inputProps,
     placeholder: "MIN",
     value: min,
-    onValueChange: (s) => setFilter(statKey, s, max)
+    onChange: (s) => setFilter(statKey, s, max)
   }
   const maxInputProps = {
     ...inputProps,
     placeholder: "MAX",
     value: max,
-    onValueChange: (s) => setFilter(statKey, min, s)
+    onChange: (s) => setFilter(statKey, min, s)
   }
   return <InputGroup className="mb-2">
     <DropdownButton
@@ -661,23 +661,19 @@ function HitModeCard({ characterKey, forceUpdate, className }) {
   const character = CharacterDatabase.get(characterKey)
   if (!character) return null
   const { hitMode } = character
-  const setHitmode = v => {
-    const char = CharacterDatabase.get(characterKey)
-    char.hitMode = v;
-    CharacterDatabase.update(char)
+  const setHitmode = ({ hitMode }) => {
+    CharacterDatabase.update({ ...CharacterDatabase.get(characterKey), hitMode })
     forceUpdate()
   }
-  const setReactionMode = r => {
-    const char = CharacterDatabase.get(characterKey)
-    char.reactionMode = r;
-    CharacterDatabase.update(char)
+  const setReactionMode = ({ reactionMode }) => {
+    CharacterDatabase.update({ ...CharacterDatabase.get(characterKey), reactionMode })
     forceUpdate()
   }
   return <Card bg="lightcontent" text="lightfont" className={className}>
     <Card.Header>Hit Mode Options</Card.Header>
     <Card.Body>
-      <HitModeToggle hitMode={hitMode} setHitMode={setHitmode} className="w-100" />
-      <ReactionToggle character={character} setReactionMode={setReactionMode} className="w-100 mt-2" />
+      <HitModeToggle hitMode={hitMode} characterDispatch={setHitmode} className="w-100" />
+      <ReactionToggle character={character} characterDispatch={setReactionMode} className="w-100 mt-2" />
     </Card.Body>
   </Card >
 }

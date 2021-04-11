@@ -41,7 +41,11 @@ export default class Character {
 
   //LEVEL
   static getlevelKeys = () => Object.keys(LevelsData)
-  static getlevelNames = (levelKey, defVal = "") => (LevelsData?.[levelKey]?.name || defVal)
+  static getlevelTemplateName = (levelKey, defVal = "") => (LevelsData?.[levelKey]?.name || defVal)
+  static getLevelString = (character) => {
+    const levelOverride = Character.getStatValueWithOverride(character, "characterLevel")
+    return Character.getLevel(character.levelKey) === levelOverride ? Character.getlevelTemplateName(character.levelKey) : `Lvl. ${levelOverride}`
+  }
   static getIndexFromlevelkey = (levelKey) => this.getlevelKeys().indexOf(levelKey);
   static getLevel = (levelKey, defVal = 1) => (LevelsData?.[levelKey]?.level || defVal)
   static getAscension = (levelKey, defVal = 0) => (LevelsData?.[levelKey]?.asend || defVal)
@@ -225,17 +229,17 @@ export default class Character {
 
   //equipment, with consideration on swapping equipped.
   static equipArtifacts = (characterKey, artifactIds) => {
-    let character = CharacterDatabase.get(characterKey)
+    const character = CharacterDatabase.get(characterKey)
     if (!character) return;
-    let artIdsOnCharacter = character.equippedArtifacts;
+    const artIdsOnCharacter = character.equippedArtifacts;
     let artIdsNotOnCharacter = artifactIds
 
     //swap, by slot
     Artifact.getSlotKeys().forEach(slotKey => {
-      let artNotOnChar = ArtifactDatabase.get(artIdsNotOnCharacter?.[slotKey])
-      if (artNotOnChar.location === characterKey) return; //it is already equipped
-      let artOnChar = ArtifactDatabase.get(artIdsOnCharacter?.[slotKey])
-      let notCharLoc = (artNotOnChar?.location || "")
+      const artNotOnChar = ArtifactDatabase.get(artIdsNotOnCharacter?.[slotKey])
+      if (artNotOnChar?.location === characterKey) return; //it is already equipped
+      const artOnChar = ArtifactDatabase.get(artIdsOnCharacter?.[slotKey])
+      const notCharLoc = (artNotOnChar?.location ?? "")
       //move current art to other char
       if (artOnChar) ArtifactDatabase.moveToNewLocation(artOnChar.id, notCharLoc)
       //move current art to other char
@@ -244,7 +248,7 @@ export default class Character {
       if (artNotOnChar) ArtifactDatabase.moveToNewLocation(artNotOnChar.id, characterKey)
     })
     //move other art to current char 
-    character.equippedArtifacts = {}
+    character.equippedArtifacts = Object.fromEntries(Artifact.getSlotKeys().map(sKey => [sKey, ""]))
     Object.entries(artifactIds).forEach(([key, artid]) =>
       character.equippedArtifacts[key] = artid)
     CharacterDatabase.update(character);

@@ -228,6 +228,9 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }) {
 
   const errMsgs = Artifact.substatsValidation(artifact)
   const { id, setKey = "", numStars = 0, level = 0, slotKey = "", mainStatKey = "", substats = initialArtifact().substat, currentEfficiency, maximumEfficiency } = artifact
+  //check if all the substats are filled
+  const invalidSubstat = substats.find(substat => substat.key && !substat.value)
+  invalidSubstat && errMsgs.push(<span>Invalid substat value: <b>{Stat.getStatName(invalidSubstat.key)}</b>.</span>)
   return <Card bg="darkcontent" text="lightfont">
     <Card.Header>Artifact Editor</Card.Header>
     <Card.Body><Row className="mb-n2">
@@ -265,12 +268,7 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }) {
           <InputGroup.Prepend>
             <InputGroup.Text>Level</InputGroup.Text>
           </InputGroup.Prepend>
-          <FormControl
-            value={level}
-            disabled={!setKey}
-            placeholder={`0~${numStars * 4}`}
-            onChange={(e => artifactDispatch({ level: parseInt(e.target.value) || 0 }))}
-          />
+          <CustomFormControl value={level} disabled={!setKey} placeholder={`0~${numStars * 4}`} onChange={l => artifactDispatch({ level: l })} />
           <InputGroup.Append>
             <Button onClick={() => artifactDispatch({ level: 0 })} disabled={!setKey || level === 0}>0</Button>
             <Button onClick={() => artifactDispatch({ level: level - 1 })} disabled={!setKey || level === 0}>-</Button>
@@ -401,7 +399,7 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }) {
       </Col>}
       {/* Error alert */}
       {Boolean(errMsgs.length) && <Col xs={12} className="mb-2">
-        <Alert variant="danger" className="py-2 px-3 mb-0 ">{errMsgs.map(e => <div key={e}>{e}</div>)}</Alert>
+        <Alert variant="danger" className="py-2 px-3 mb-0 ">{errMsgs.map((e, i) => <div key={i}>{e}</div>)}</Alert>
       </Col>}
     </Row></Card.Body>
     <Card.Footer>
@@ -469,8 +467,9 @@ function SubStatInput({ index, substat: { key, value, rolls, efficiency }, numSt
         float={isPercentStat}
         placeholder="Select a Substat."
         value={value || ""}
-        onValueChange={(val) => setSubstat?.(index, key, val)}
+        onChange={(val) => setSubstat?.(index, key, val)}
         disabled={!key}
+        allowEmpty
       />
       {Boolean(rollData.length) && <ButtonGroup size="sm" as={InputGroup.Append}>
         {rollData.map((v, i, arr) =>

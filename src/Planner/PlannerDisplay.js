@@ -313,7 +313,7 @@ function EXPCalc(props) {
             </InputGroup.Prepend>
             <CustomFormControl
               value={level}
-              onValueChange={(val) => setLevel(clamp(val, 0, 90))}
+              onChange={(val) => setLevel(clamp(val, 0, 90))}
             />
           </InputGroup>
         </Col>
@@ -324,7 +324,7 @@ function EXPCalc(props) {
             </InputGroup.Prepend>
             <CustomFormControl
               value={curExp}
-              onValueChange={(val) => setCurExp(clamp(val, 0, (levelExp[level] || 1) - 1))}
+              onChange={(val) => setCurExp(clamp(val, 0, (levelExp[level] || 1) - 1))}
             />
             <InputGroup.Append>
               <InputGroup.Text>/{levelExp[level] || 0}</InputGroup.Text>
@@ -355,7 +355,7 @@ function EXPCalc(props) {
             </InputGroup.Prepend>
             <CustomFormControl
               value={mora}
-              onValueChange={(val) => setMora(Math.max(val, 0))}
+              onChange={(val) => setMora(Math.max(val, 0))}
             />
           </InputGroup>
         </Col>
@@ -417,7 +417,7 @@ function BookDisplay(props) {
             </InputGroup.Prepend>
             <CustomFormControl
               value={value}
-              onValueChange={(val) => setValue(Math.max(val, 0))}
+              onChange={(val) => setValue(Math.max(val, 0))}
             />
           </InputGroup>
           <div className="mt-2"><span>Required: </span><span className="float-right text-right"><b className={required ? "text-success" : ""}>{required}</b></span></div>

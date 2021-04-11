@@ -15,12 +15,11 @@ import { clamp } from "../../Util/Util"
 import Weapon from "../../Weapon/Weapon"
 import Character from "../Character"
 import StatInput from "../StatInput"
-export default function CharacterOverviewPane(props) {
-  let { character, character: { characterKey, constellation }, editable, setOverride, setConstellation } = props
-  let [editLevel, setEditLevel] = useState(false)
-  let elementKey = Character.getElementalKey(characterKey)
-  let weaponTypeKey = Character.getWeaponTypeKey(characterKey)
-  let level = Character.getStatValueWithOverride(character, "characterLevel")
+export default function CharacterOverviewPane({ editable, character, character: { characterKey, constellation }, characterDispatch, equippedBuild, newBuild }) {
+  const [editLevel, setEditLevel] = useState(false)
+  const elementKey = Character.getElementalKey(characterKey)
+  const weaponTypeKey = Character.getWeaponTypeKey(characterKey)
+  const level = Character.getStatValueWithOverride(character, "characterLevel")
   return <Row>
     <Col xs={12} md={3} >
       {/* Image card with star and name and level */}
@@ -38,10 +37,10 @@ export default function CharacterOverviewPane(props) {
                   <InputGroup.Prepend>
                     <InputGroup.Text>Lvl.</InputGroup.Text>
                   </InputGroup.Prepend>
-                  <CustomFormControl onValueChange={(val) => setOverride("characterLevel", clamp(val, 1, 90))} value={level} />
+                  <CustomFormControl onChange={val => characterDispatch({ type: "statOverride", statKey: "characterLevel", value: clamp(val, 1, 90) })} value={level} />
                   <InputGroup.Append>
                     <Button>
-                      <FontAwesomeIcon icon={faUndo} size="sm" onClick={() => setOverride("characterLevel", Character.getLevel(character.levelKey))} />
+                      <FontAwesomeIcon icon={faUndo} size="sm" onClick={() => characterDispatch({ type: "statOverride", statKey: "characterLevel", value: Character.getLevel(character.levelKey) })} />
                     </Button>
                   </InputGroup.Append>
                   <InputGroup.Append>
@@ -49,7 +48,7 @@ export default function CharacterOverviewPane(props) {
                       placement="bottom"
                       overlay={<Tooltip>Override the level value for calculations. Does not change Stats.</Tooltip>}
                     >
-                      <Button variant="danger" onClick={() => setEditLevel(!editLevel)} size="sm">
+                      <Button variant="success" onClick={() => setEditLevel(!editLevel)} size="sm">
                         <span><FontAwesomeIcon icon={faSave} /></span>
                       </Button>
                     </OverlayTrigger>
@@ -75,8 +74,7 @@ export default function CharacterOverviewPane(props) {
                     {[...Array(6).keys()].map(i =>
                       <Col xs={4} className="p-1" key={i}>
                         <Image src={Character.getConstellationImg(characterKey, i)} className={`w-100 h-auto ${constellation > i ? "" : "overlay-dark"} cursor-pointer`}
-                          roundedCircle onClick={editable ? (() =>
-                            setConstellation((i + 1) === constellation ? i : i + 1)) : null} />
+                          roundedCircle onClick={() => editable && characterDispatch({ constellation: (i + 1) === constellation ? i : i + 1 })} />
                       </Col>)}
                   </Row>
                 </Col>
@@ -87,8 +85,8 @@ export default function CharacterOverviewPane(props) {
       </Card>
     </Col>
     <Col xs={12} md={9} >
-      <WeaponStatsEditorCard {...props} />
-      <MainStatsCards {...props} />
+      <WeaponStatsEditorCard {...{ editable, character, characterDispatch, equippedBuild, newBuild }} />
+      <MainStatsCards {...{ editable, character, characterDispatch, equippedBuild, newBuild }} />
     </Col>
   </Row >
 }
@@ -110,30 +108,29 @@ function WeaponStatsCard({ title, stats = {}, finalStats = {} }) {
     </Row></Card.Body>
   </Card>
 }
-function WeaponStatsEditorCard(props) {
+function WeaponStatsEditorCard({ editable, character, character: { characterKey, weapon = {} }, characterDispatch, equippedBuild, newBuild }) {
   let [editing, SetEditing] = useState(false)
   let [showDescription, setShowDescription] = useState(false)
-  let { character, character: { characterKey, weapon = {} }, editable, setState, equippedBuild, newBuild } = props
 
   //choose which one to display stats for
-  let build = newBuild ? newBuild : equippedBuild
+  const build = newBuild ? newBuild : equippedBuild
 
-  const setStateWeapon = (key, value) => setState(state => {
+  const setStateWeapon = (key, value) => {
     //reset the conditionalNum when we switch weapons
-    if (key === "key") state.weapon.conditionalNum = 0
-    state.weapon[key] = value
-    return { weapon: state.weapon }
-  })
-  let subStatKey = Weapon.getWeaponSubStatKey(weapon.key)
-  let weaponTypeKey = Character.getWeaponTypeKey(characterKey)
-  let weaponDisplayMainVal = weapon.overrideMainVal || Weapon.getWeaponMainStatVal(weapon.key, weapon.levelKey)
-  let weaponDisplaySubVal = weapon.overrideSubVal || Weapon.getWeaponSubStatVal(weapon.key, weapon.levelKey)
-  let weaponPassiveName = Weapon.getWeaponPassiveName(weapon.key)
-  let weaponBonusStats = Weapon.getWeaponBonusStat(weapon.key, weapon.refineIndex, undefined)
-  let conditionalStats = Weapon.getWeaponConditionalStat(weapon.key, weapon.refineIndex, weapon.conditionalNum, undefined)
-  let conditional = Weapon.getWeaponConditional(weapon.key)
-  let conditionalNum = weapon.conditionalNum;
-  let conditionalEle = <ConditionalSelector
+    if (key === "key") character.weapon.conditionalNum = 0
+    character.weapon[key] = value
+    characterDispatch({ weapon: character.weapon })
+  }
+  const subStatKey = Weapon.getWeaponSubStatKey(weapon.key)
+  const weaponTypeKey = Character.getWeaponTypeKey(characterKey)
+  const weaponDisplayMainVal = weapon.overrideMainVal || Weapon.getWeaponMainStatVal(weapon.key, weapon.levelKey)
+  const weaponDisplaySubVal = weapon.overrideSubVal || Weapon.getWeaponSubStatVal(weapon.key, weapon.levelKey)
+  const weaponPassiveName = Weapon.getWeaponPassiveName(weapon.key)
+  const weaponBonusStats = Weapon.getWeaponBonusStat(weapon.key, weapon.refineIndex, undefined)
+  const conditionalStats = Weapon.getWeaponConditionalStat(weapon.key, weapon.refineIndex, weapon.conditionalNum, undefined)
+  const conditional = Weapon.getWeaponConditional(weapon.key)
+  const conditionalNum = weapon.conditionalNum;
+  const conditionalEle = <ConditionalSelector
     conditional={conditional}
     conditionalNum={conditionalNum}
     setConditional={(cnum) => setStateWeapon("conditionalNum", cnum)}
@@ -243,9 +240,7 @@ function WeaponStatsEditorCard(props) {
   </Card>
 }
 
-function MainStatsCards(props) {
-  const { editable, character, setOverride, equippedBuild, newBuild } = props
-
+function MainStatsCards({ editable, character, characterDispatch, equippedBuild, newBuild }) {
   const [editing, SetEditing] = useState(false)
   const [editingOther, SetEditingOther] = useState(false)
   const [editingMisc, SetEditingMisc] = useState(false)
@@ -302,7 +297,7 @@ function MainStatsCards(props) {
                   placeholder={`Base ${Stat.getStatName(statKey)}`}
                   value={Character.getStatValueWithOverride(character, statKey)}
                   percent={Stat.getStatUnit(statKey) === "%"}
-                  onValueChange={(value) => setOverride(statKey, value)}
+                  onValueChange={value => characterDispatch({ type: "statOverride", statKey, value })}
                   defaultValue={Character.getBaseStatValue(character, statKey)}
                 />
               </Col>)}
@@ -315,17 +310,25 @@ function MainStatsCards(props) {
                 >
                   <Dropdown.ItemText>Select Specialized Stat </Dropdown.ItemText>
                   {CharacterSpecializedStatKey.map(key =>
-                    <Dropdown.Item key={key} onClick={() => setOverride("specializedStatKey", key)} >
+                    <Dropdown.Item key={key} onClick={() => characterDispatch({ type: "statOverride", statKey: "specializedStatKey", value: key })} >
                       {Stat.getStatNameWithPercent(key)}
                     </Dropdown.Item>)}
                 </DropdownButton>
                 <CustomFormControl float={isPercentSpecialStatSelect}
                   placeholder="Character Special Stat"
                   value={Character.getStatValueWithOverride(character, "specializedStatVal")}
-                  onValueChange={(value) => setOverride("specializedStatVal", value)} />
-                {isPercentSpecialStatSelect && (<InputGroup.Append>
-                  <InputGroup.Text>%</InputGroup.Text>
-                </InputGroup.Append>)}
+                  onChange={value => characterDispatch({ type: "statOverride", statKey: "specializedStatVal", value })} />
+                <InputGroup.Append>
+                  {isPercentSpecialStatSelect && <InputGroup.Text>%</InputGroup.Text>}
+                  <Button onClick={() => {
+                    characterDispatch({ type: "statOverride", statKey: "specializedStatKey", value: Character.getBaseStatValue(character, "specializedStatKey") })
+                    characterDispatch({ type: "statOverride", statKey: "specializedStatVal", value: Character.getBaseStatValue(character, "specializedStatVal") })
+                  }}
+                    disabled={!Character.hasOverride(character, "specializedStatKey") && !Character.hasOverride(character, "specializedStatVal")}
+                  >
+                    <FontAwesomeIcon icon={faUndo} />
+                  </Button>
+                </InputGroup.Append>
               </InputGroup>
             </Col>
           </Row>
@@ -333,10 +336,10 @@ function MainStatsCards(props) {
         <Card.Body>
           <Row className="mb-2">
             {displayStatKeys.map(statKey => <Col xs={12} lg={6} key={statKey} ><StatDisplay statKey={statKey} {...displayNewBuildProps} /></Col>)}
-            {specializedStatVal ? <Col lg={6} xs={12}>
+            <Col lg={6} xs={12}>
               <span><b>Specialized:</b> <span className={Character.hasOverride(character, "specializedStatKey") ? "text-warning" : ""}>{Stat.getStatName(specializedStatKey)}</span></span>
               <span className={`float-right ${Character.hasOverride(character, "specializedStatVal") ? "text-warning" : ""}`}>{`${specializedStatVal}${specializedStatUnit}`}</span>
-            </Col> : null}
+            </Col>
           </Row>
         </Card.Body>
       }
@@ -365,7 +368,7 @@ function MainStatsCards(props) {
                   placeholder={`Base ${Stat.getStatNameRaw(statKey)}`}
                   value={Character.getStatValueWithOverride(character, statKey)}
                   percent={Stat.getStatUnit(statKey) === "%"}
-                  onValueChange={(value) => setOverride(statKey, value)}
+                  onValueChange={value => characterDispatch({ type: "statOverride", statKey, value })}
                   defaultValue={Character.getBaseStatValue(character, statKey)}
                 />
               </Col>)}
@@ -400,7 +403,7 @@ function MainStatsCards(props) {
                   placeholder={`Base ${Stat.getStatNameRaw(statKey)}`}
                   value={Character.getStatValueWithOverride(character, statKey)}
                   percent={Stat.getStatUnit(statKey) === "%"}
-                  onValueChange={(value) => setOverride(statKey, value)}
+                  onValueChange={value => characterDispatch({ type: "statOverride", statKey, value })}
                   defaultValue={Character.getBaseStatValue(character, statKey)}
                 />
               </Col>)}

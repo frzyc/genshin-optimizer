@@ -1,7 +1,6 @@
 import { faQuestionCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from 'react';
-import { useState } from "react";
+import React, { useContext, useState } from 'react';
 import { Button, Card, Col, Dropdown, DropdownButton, Image, ListGroup, OverlayTrigger, Row, Tooltip } from "react-bootstrap";
 import Assets from "../../Assets/Assets";
 import ConditionalSelector from "../../Components/ConditionalSelector";
@@ -9,24 +8,17 @@ import Stat from "../../Stat";
 import { ElementToReactionKeys } from "../../StatData";
 import ConditionalsUtil from "../../Util/ConditionalsUtil";
 import Character from "../Character";
-import DamageOptionsAndCalculation from "./DamageOptionsAndCalculation";
+import { compareAgainstEquippedContext } from "../CharacterDisplayCard";
 
 export default function CharacterTalentPane(props) {
-  let { character, character: { characterKey, levelKey, constellation }, editable, setState, setOverride, newBuild, equippedBuild } = props
-
-  let ascension = Character.getAscension(levelKey)
-
-  let skillBurstList = [["auto", "Normal/Charged Attack"], ["skill", "Elemental Skill"], ["burst", "Elemental Burst"]]
-
-  let passivesList = [["passive1", "Unlocked at Ascension 1", 1], ["passive2", "Unlocked at Ascension 4", 4], ["passive3", "Unlocked by Default", 0]]
-
-  let skillDisplayProps = { ...props, ascension }
+  const { character, character: { characterKey, levelKey, constellation }, editable, characterDispatch, newBuild, equippedBuild } = props
+  const ascension = Character.getAscension(levelKey)
+  const skillBurstList = [["auto", "Normal/Charged Attack"], ["skill", "Elemental Skill"], ["burst", "Elemental Burst"]]
+  const passivesList = [["passive1", "Unlocked at Ascension 1", 1], ["passive2", "Unlocked at Ascension 4", 4], ["passive3", "Unlocked by Default", 0]]
+  const skillDisplayProps = { ...props, ascension }
 
   return <>
-    <Row><Col xs={12} className="mb-2">
-      <DamageOptionsAndCalculation {...{ character, setState, setOverride, newBuild, equippedBuild }} />
-    </Col></Row>
-    <Row><Col><ReactionDisplay {...props} /></Col></Row>
+    <Row><Col><ReactionDisplay {...{ character, newBuild, equippedBuild }} /></Col></Row>
     <Row>
       {/* auto, skill, burst */}
       {skillBurstList.map(([tKey, tText]) =>
@@ -73,7 +65,7 @@ export default function CharacterTalentPane(props) {
             {...skillDisplayProps}
             talentKey={tKey}
             subtitle={`Contellation Lv. ${i + 1}`}
-            onClickTitle={editable ? (() => setState({ constellation: (i + 1) === constellation ? i : i + 1 })) : undefined}
+            onClickTitle={() => editable && characterDispatch({ constellation: (i + 1) === constellation ? i : i + 1 })}
           />
         </Col>
       })}
@@ -134,7 +126,7 @@ function SwirlCard({ stats }) {
   const [ele, setele] = useState(Object.keys(swirlEleToDisplay)[0])
   const sKey = `${ele}_swirl_hit`
   return <Card bg="darkcontent" text="lightfont"><Card.Body className="p-0">
-    <DropdownButton size="sm" title={swirlEleToDisplay[ele]} className="d-inline-block">
+    <DropdownButton size="sm" title={swirlEleToDisplay[ele]} className="d-inline-block" variant="success">
       {Object.entries(swirlEleToDisplay).map(([key, element]) => <Dropdown.Item key={key} onClick={() => setele(key)}>{element}</Dropdown.Item>)}
     </DropdownButton>
     <span className={`text-${ele} p-2`}> {stats[sKey]?.toFixed(Stat.fixedUnit(sKey))}</span>
@@ -182,16 +174,14 @@ function statsToFields(stats, finalStats = {}) {
 }
 
 const talentLimits = [1, 1, 2, 4, 6, 8, 10]
-function SkillDisplayCard(props) {
-  let { character, character: { characterKey, constellation, talentLevelKeys, autoInfused = false }, talentKey, subtitle, ascension, equippedBuild, newBuild, editable, setState } = props
-  let { onClickTitle = null, ...otherProps } = props
+function SkillDisplayCard({ character, character: { characterKey, constellation, talentLevelKeys = {}, autoInfused = false }, characterDispatch, talentKey, subtitle, ascension, equippedBuild, newBuild, editable, onClickTitle }) {
   let build = newBuild ? newBuild : equippedBuild
   let header = null
   let infuseBtn = null
   if (talentKey === "auto" && Character.isAutoInfusable(characterKey)) {
     let eleKey = Character.getElementalKey(characterKey)
     infuseBtn = <Col xs="auto">
-      <Button variant={autoInfused ? eleKey : "secondary"} className="text-white" disabled={!editable} onClick={editable ? (() => setState(state => ({ autoInfused: !state.autoInfused }))) : undefined} size={editable ? null : "sm"}>
+      <Button variant={autoInfused ? eleKey : "secondary"} className="text-white" disabled={!editable} onClick={() => editable && characterDispatch({ autoInfused: !character.autoInfused })} size={editable ? null : "sm"}>
         {autoInfused ?
           <span>Infused with <b>{Character.getElementalName(eleKey)}</b></span>
           : "Not Infused"}
@@ -205,11 +195,10 @@ function SkillDisplayCard(props) {
     const levelBoost = Character.getTalentLevelBoost(characterKey, talentKey, constellation)
     talentLvlKey = talentLvlKeyRaw + levelBoost
     if (editable) {
-      const setTalentLevel = (tKey, newTalentLevelKey) => setState(state => {
-        const stateTalentLevelKeys = state.talentLevelKeys || {}
-        stateTalentLevelKeys[tKey] = newTalentLevelKey
-        return { talentLevelKeys: stateTalentLevelKeys }
-      })
+      const setTalentLevel = (tKey, newTalentLevelKey) => {
+        talentLevelKeys[tKey] = newTalentLevelKey
+        characterDispatch({ talentLevelKeys })
+      }
       header = <Card.Header>
         <Row>
           <Col xs="auto">
@@ -239,7 +228,7 @@ function SkillDisplayCard(props) {
     <Card bg="darkcontent" text="lightfont" className="mt-2 ml-n2 mr-n2">
       <ListGroup className="text-white" variant="flush">
         {statsToFields(talentStats, build?.finalStats).map((field, i) =>
-          <FieldDisplay key={i} index={i} {...{ field, ...otherProps }} />)}
+          <FieldDisplay key={i} index={i} {...{ field, equippedBuild, newBuild }} />)}
       </ListGroup>
     </Card>
   </Col></Row>
@@ -277,8 +266,7 @@ function SkillDisplayCard(props) {
             let conditionalStats = Character.getTalentConditionalStats(conditional, conditionalNum, {})
             conditionalFields = [...Character.getTalentConditionalFields(conditional, conditionalNum, []), ...statsToFields(conditionalStats, build?.finalStats)]
           }
-          let setConditional = (conditionalNum) => setState(state =>
-            ({ talentConditionals: ConditionalsUtil.setConditional(state.talentConditionals, { srcKey: talentKey, srcKey2: conditional.conditionalKey }, conditionalNum) }))
+          const setConditional = (conditionalNum) => characterDispatch({ talentConditionals: ConditionalsUtil.setConditional(character.talentConditionals, { srcKey: talentKey, srcKey2: conditional.conditionalKey }, conditionalNum) })
           conditionalEle = <Col xs={12}>
             <Card bg="darkcontent" text="lightfont" className="mb-2">
               <Card.Header>
@@ -289,7 +277,7 @@ function SkillDisplayCard(props) {
                   defEle={<span>{conditional.condition}</span>} />
               </Card.Header>
               <ListGroup className="text-white" variant="flush">
-                {conditionalFields.map((condField, i) => <FieldDisplay key={i} index={i} {...{ field: condField, ...otherProps }} />)}
+                {conditionalFields.map((condField, i) => <FieldDisplay key={i} index={i} {...{ field: condField, equippedBuild, newBuild }} />)}
               </ListGroup>
             </Card>
           </Col>
@@ -297,7 +285,7 @@ function SkillDisplayCard(props) {
         return <Row className="mt-2 mb-n2" key={"section" + i}><Col xs={12}>
           <div className="mb-2">{talentText}</div>
           {fields.length > 0 && <ListGroup className="text-white mb-2">
-            {fields?.map?.((field, i) => <FieldDisplay key={i} index={i} {...{ field, ...otherProps }} />)}
+            {fields?.map?.((field, i) => <FieldDisplay key={i} index={i} {...{ field, equippedBuild, newBuild }} />)}
           </ListGroup>}
         </Col>{conditionalEle}</Row>
       })}
@@ -305,7 +293,8 @@ function SkillDisplayCard(props) {
     </Card.Body>
   </Card>
 }
-function FieldDisplay({ character: { compareAgainstEquipped, }, field, index, equippedBuild, newBuild }) {
+function FieldDisplay({ field, index, equippedBuild, newBuild }) {
+  const compareAgainstEquipped = useContext(compareAgainstEquippedContext)
   let build = newBuild ? newBuild : equippedBuild
   if (typeof field === "function")
     field = field(build.finalStats)
