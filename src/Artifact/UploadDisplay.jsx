@@ -533,16 +533,17 @@ function parseSubstat(recognition, defVal = null) {
   let texts = recognition?.data?.lines?.map(line => line.text)
   if (!texts) return defVal
   let matches = []
-  for (const text of texts) {
+  for (let text of texts) {
+    text = text.replace(/^[\W]+/, "").replace(/\n/, "")
     //parse substats
     Artifact.getSubStatKeys().forEach(key => {
       let regex = null
       let unit = Stat.getStatUnit(key)
       let name = Stat.getStatNameRaw(key)
-      if (unit === "%") regex = new RegExp(name + "\\s*\\+\\s*(\\d+\\.\\d)%", "im");
+      if (unit === "%") regex = new RegExp(name + "\\s*\\+\\s*(\\d+[\\.|,]+\\d)%", "im");
       else regex = new RegExp(name + "\\s*\\+\\s*(\\d+,\\d+|\\d+)($|\\s)", "im");
       let match = regex.exec(text)
-      match && matches.push({ value: match[1], unit, key })
+      match && matches.push({ value: match[1].replace(/,/g,".").replace(/\.{2,}/g, "."), unit, key })
     })
   }
   matches.forEach((match, i) => {
@@ -597,12 +598,12 @@ function parseMainStatvalue(recognition, defVal = { mainStatValue: NaN }) {
   let texts = recognition?.data?.lines?.map(line => line.text)
   if (!texts) return defVal
   for (const text of texts) {
-    let regex = /(\d+\.\d)%/
+    let regex = /(\d+[,|\\.]+\d)%/
     let match = regex.exec(text)
-    if (match) return { mainStatValue: parseFloat(match[1]), unit: "%" }
-    regex = /(\d+,\d{3}|\d{2,3})/
+    if (match) return { mainStatValue: parseFloat(match[1].replace(/,/g,".").replace(/\.{2,}/g, ".")), unit: "%" }
+    regex = /(\d+[,|\\.]\d{3}|\d{2,3})/
     match = regex.exec(text)
-    if (match) return { mainStatValue: parseInt(match[1].replace(/,/g, "")) }
+    if (match) return { mainStatValue: parseInt(match[1].replace(/[,|\\.]+/g, "")) }
   }
   return defVal
 }
