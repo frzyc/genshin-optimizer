@@ -324,7 +324,7 @@ export default function ArtifactDisplay(props) {
               <Col>
                 {/* substat filter */}
                 {filterSubstats.map((substatKey, index) =>
-                  <Dropdown className="mb-2" >
+                  <Dropdown className="mb-2" key={index}>
                     <Dropdown.Toggle id="dropdown-basic" className="w-100" variant={substatKey ? "success" : "primary"}>
                       {Stat.getStatNameWithPercent(substatKey, `Substat ${index + 1}`)}
                     </Dropdown.Toggle>

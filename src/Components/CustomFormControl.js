@@ -12,7 +12,7 @@ export default function CustomFormControl({ value, onChange, disabled, float = f
       const parseFunc = float ? parseFloat : parseInt
       onChange(parseFunc(state) || 0)
     },
-    [value, onChange, state, float, allowEmpty],
+    [onChange, state, float, allowEmpty],
   )
   useEffect(() => setstate(value ?? ""), [value, setstate, stateDirty])//update value on value change
 
