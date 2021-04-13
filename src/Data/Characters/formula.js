@@ -10,7 +10,7 @@ import fischl from './Fischl/data'
 import ganyu from './Ganyu/data'
 import hutao from './Hu Tao/data'
 import jean from './Jean/data'
-// import kaeya from './Kaeya/data'
+import kaeya from './Kaeya/data'
 import keqing from './Keqing/data'
 import klee from './Klee/data'
 import lisa from './Lisa/data'
@@ -43,7 +43,7 @@ const formula = {
   ganyu,
   hutao,
   jean,
-  // kaeya,
+  kaeya,
   keqing,
   klee,
   lisa,
