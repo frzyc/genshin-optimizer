@@ -14,7 +14,7 @@ import passive2 from './Talent_Nice_and_Clean.png'
 import passive3 from './Talent_Maid\'s_Knighthood.png'
 import DisplayPercent from '../../../Components/DisplayPercent'
 import Stat from '../../../Stat'
-import formula, {data} from './data'
+import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 
 const char = {
@@ -40,22 +40,22 @@ const char = {
         fields: data.normal.hitArr.map((percentArr, i) =>
         ({
           text: `${i + 1}-Hit DMG`,
-          formulaText: (tlvl, stats) => <span>{percentArr[tlvl]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
+          formulaText: stats => <span>{percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
           formula: formula.normal[i],
-          variant: (tlvl, stats) => getTalentStatKeyVariant("normal", stats),
+          variant: stats => getTalentStatKeyVariant("normal", stats),
         }))
       }, {
         text: <span><strong>Charged Attack</strong> Drains Stamina over time to perform continuous swirling attack on all nearby enemies. At the end of the sequence, performs an additional powerful slash</span>,
         fields: [{
           text: `Spinning DMG`,
-          formulaText: (tlvl, stats) => <span>{data.charged.spinning[tlvl]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
+          formulaText: stats => <span>{data.charged.spinning[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
           formula: formula.charged.spinning,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("charged", stats),
+          variant: stats => getTalentStatKeyVariant("charged", stats),
         }, {
           text: `Spinning Final DMG`,
-          formulaText: (tlvl, stats) => <span>{data.charged.final[tlvl]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
+          formulaText: stats => <span>{data.charged.final[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
           formula: formula.charged.final,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("charged", stats),
+          variant: stats => getTalentStatKeyVariant("charged", stats),
         }, {
           text: `Stamina Cost`,
           value: `40/s`,
@@ -67,19 +67,19 @@ const char = {
         text: <span><strong>Plunging Attack</strong> Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.</span>,
         fields: [{
           text: `Plunge DMG`,
-          formulaText: (tlvl, stats) => <span>{data.plunging.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+          formulaText: stats => <span>{data.plunging.dmg[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
           formula: formula.plunging.dmg,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("plunging", stats),
+          variant: stats => getTalentStatKeyVariant("plunging", stats),
         }, {
           text: `Low Plunge DMG`,
-          formulaText: (tlvl, stats) => <span>{data.plunging.low[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+          formulaText: stats => <span>{data.plunging.low[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
           formula: formula.plunging.low,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("plunging", stats),
+          variant: stats => getTalentStatKeyVariant("plunging", stats),
         }, {
           text: `High Plunge DMG`,
-          formulaText: (tlvl, stats) => <span>{data.plunging.high[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+          formulaText: stats => <span>{data.plunging.high[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
           formula: formula.plunging.high,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("plunging", stats),
+          variant: stats => getTalentStatKeyVariant("plunging", stats),
         }]
       },],
     },
@@ -98,28 +98,28 @@ const char = {
         </span>,
         fields: [{
           text: "Skill DMG",
-          formulaText: (tlvl, stats) => <span>{data.skill.skill_dmg[tlvl]}% {Stat.printStat(getTalentStatKey("skill", stats) + "_multi", stats)} * {Stat.printStat("finalDEF", stats)}</span>,
+          formulaText: stats => <span>{data.skill.skill_dmg[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats) + "_multi", stats)} * {Stat.printStat("finalDEF", stats)}</span>,
           formula: formula.skill.skill_dmg,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("skill", stats),
+          variant: stats => getTalentStatKeyVariant("skill", stats),
         }, {
           text: "Shield DMG Absorption",
-          formulaText: (tlvl, stats) => <span>{data.skill.shield_def[tlvl]}% {Stat.printStat("finalDEF", stats)} + {data.skill.shield_flat[tlvl]}</span>,
+          formulaText: stats => <span>{data.skill.shield_def[stats.tlvl.skill]}% {Stat.printStat("finalDEF", stats)} + {data.skill.shield_flat[stats.tlvl.skill]}</span>,
           formula: formula.skill.shield,
         }, {
           text: "Healing",
-          formulaText: (tlvl, stats) => <span>( {data.skill.heal_def[tlvl]}% {Stat.printStat("finalDEF", stats)} + {data.skill.heal_flat[tlvl]} ) * {Stat.printStat("heal_multi", stats)}</span>,
+          formulaText: stats => <span>( {data.skill.heal_def[stats.tlvl.skill]}% {Stat.printStat("finalDEF", stats)} + {data.skill.heal_flat[stats.tlvl.skill]} ) * {Stat.printStat("heal_multi", stats)}</span>,
           formula: formula.skill.heal,
           variant: "success"
-        }, (c) => ({
+        }, {
           text: "Trigger Chance",
-          value: (tlvl) => <span>{data.skill.heal_trigger[tlvl]}%{c >= 1 ? <span> (100% while <b>Sweeping Time</b> and <b>Breastplate</b> are both in effect)</span> : ""}</span>,
-        }), {
+          value: stats => <span>{data.skill.heal_trigger[stats.tlvl.skill]}%{stats.constellation >= 1 ? <span> (100% while <b>Sweeping Time</b> and <b>Breastplate</b> are both in effect)</span> : ""}</span>,
+        }, {
           text: "Duration",
           value: "12s",
-        }, (c, a) => ({
+        }, {
           text: "CD",
-          value: "24s" + (a > 4 ? " -1s Every 4 hits" : ""),
-        })],
+          value: stats => "24s" + (stats.ascension > 4 ? " -1s Every 4 hits" : ""),
+        }],
       }],
     },
     burst: {
@@ -137,36 +137,36 @@ const char = {
         </span>,
         fields: [{
           text: "Burst DMG",
-          formulaText: (tlvl, stats) => <span>{data.burst.burst_dmg[tlvl]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
+          formulaText: stats => <span>{data.burst.burst_dmg[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
           formula: formula.burst.burst_dmg,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("burst", stats),
+          variant: stats => getTalentStatKeyVariant("burst", stats),
         }, {
           text: "Skill DMG",
-          formulaText: (tlvl, stats) => <span>{data.burst.skill_dmg[tlvl]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
+          formulaText: stats => <span>{data.burst.skill_dmg[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
           formula: formula.burst.skill_dmg,
-          variant: (tlvl, stats) => getTalentStatKeyVariant("burst", stats),
+          variant: stats => getTalentStatKeyVariant("burst", stats),
         }, {
           text: "ATK Bonus",
-          formulaText: (tlvl, stats) => <span>{data.burst.bonus[tlvl]}% {stats.constellation >= 6 ? "+50% " : ""}{Stat.printStat("finalDEF", stats)}</span>,
-          formula:  formula.burst.bonus,
-        }, (c) => ({
+          formulaText: stats => <span>{data.burst.bonus[stats.tlvl.burst]}% {stats.constellation >= 6 ? "+50% " : ""}{Stat.printStat("finalDEF", stats)}</span>,
+          formula: formula.burst.bonus,
+        }, {
           text: "Duration",
-          value: "15s" + (c >= 6 ? " +1s per kill, up to 10s" : ""),
-        }), {
+          value: stats => "15s" + (stats.constellation >= 6 ? " +1s per kill, up to 10s" : ""),
+        }, {
           text: "CD",
           value: "15s",
         }, {
           text: "Energy Cost",
           value: 60,
         }],
-        conditional: (tlvl, c) => ({
+        conditional: stats => ({
           type: "character",
           conditionalKey: "Sweeping",
           condition: "Sweeping Time",
           sourceKey: "noelle",
           maxStack: 1,
           stats: {
-            modifiers: { finalATK: { finalDEF: (data.burst.bonus[tlvl] + (c >= 6 ? 50 : 0)) / 100 } },
+            modifiers: { finalATK: { finalDEF: (data.burst.bonus[stats.tlvl.burst] + (stats.constellation >= 6 ? 50 : 0)) / 100 } },
           },
         })
       }],
@@ -175,10 +175,18 @@ const char = {
       name: "Devotion",
       img: passive1,
       document: [{
-        text: (tlvl, stats) => <span>
-          When Noelle is in the party but not on the field, this ability triggers automatically when your active character's HP falls below 30%:
-          Creates a shield for your active character that lasts for 20s and absorbs DMG equal to 400% of Noelle's DEF{DisplayPercent(400, stats, "finalDEF")}. This effect can only occur once every 60s.
-        </span>
+        text: stats => <span>
+          <p className="mb-2">When Noelle is in the party but not on the field, this ability triggers automatically when your active character's HP falls below 30%:</p>
+          <p className="mb-0">Creates a shield for your active character that lasts for 20s and absorbs DMG equal to 400% of Noelle's DEF. This effect can only occur once every 60s.</p>
+        </span>,
+        fields: [stats => stats.ascension >= 1 && {
+          text: "Shield strength",
+          formulaText: stats => <span>400% {Stat.printStat("finalDEF", stats)}</span>,
+          formula: formula.passive1.shield,
+        }, stats => stats.ascension >= 1 && {
+          text: "CD",
+          value: "60s",
+        }]
       }],
     },
     passive2: {
@@ -221,7 +229,15 @@ const char = {
     constellation4: {
       name: "To Be Cleaned",
       img: c4,
-      document: [{ text: (tlvl, stats) => <span>When <b>Breastplate</b> ends or shatters, it deals 400% of ATK{DisplayPercent(400, stats, getTalentStatKey("elemental", stats))} as <span className="text-geo">Geo DMG</span> to surrounding enemies.</span> }]
+      document: [{
+        text: stats => <span>When <b>Breastplate</b> ends or shatters, it deals 400% of ATK as <span className="text-geo">Geo DMG</span> to surrounding enemies.</span>,
+        fields: [stats => stats.constellation >= 6 && {
+          text: "Breastplate shatter damage",
+          formulaText: stats => <span>400% {Stat.printStat(getTalentStatKey("elemental", stats), stats)}</span>,
+          formula: formula.constellation4.dmg,
+          variant: stats => getTalentStatKeyVariant("elemental", stats),
+        }]
+      }]
     },
     constellation5: {
       name: "Favonius Sweeper Master",
@@ -232,7 +248,7 @@ const char = {
     constellation6: {
       name: "Must Be Spotless",
       img: c6,
-      document: [{ text: (tlvl, stats) => <span><b>Sweeping Time</b> increases ATK by an additional 50% of Noelle's DEF{DisplayPercent(50, stats, "finalDEF")}. For the skill's duration, adds 1s duration time per opponent defeated, up to 10s.</span> }]
+      document: [{ text: stats => <span><b>Sweeping Time</b> increases ATK by an additional 50% of Noelle's DEF{DisplayPercent(50, stats, "finalDEF")}. For the skill's duration, adds 1s duration time per opponent defeated, up to 10s.</span> }]
     }
   }
 };

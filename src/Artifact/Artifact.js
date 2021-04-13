@@ -1,12 +1,11 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import CharacterDatabase from '../Character/CharacterDatabase';
+import CharacterDatabase from '../Database/CharacterDatabase';
 import SlotIcon from '../Components/SlotIcon';
 import { ArtifactMainSlotKeys, ArtifactMainStatsData, ArtifactData, ArtifactSlotsData, ArtifactStarsData, ArtifactSubStatsData, ArtifactDataImport, ArtifactSubstatsMinMax } from '../Data/ArtifactData';
 import Stat from '../Stat';
 import ConditionalsUtil from '../Util/ConditionalsUtil';
 import { clampPercent, closeEnoughFloat, closeEnoughInt, deepClone } from '../Util/Util';
-import ArtifactBase from './ArtifactBase';
-import ArtifactDatabase from './ArtifactDatabase';
+import ArtifactDatabase from '../Database/ArtifactDatabase';
 
 const maxStar = 5
 
@@ -164,7 +163,7 @@ export default class Artifact {
       let { key, value } = substat
       let rollArr = Artifact.getSubstatRolls(key, value, numStars) || []
       substat.rolls = rollArr[0] || []
-      if (rollArr.length > 1) substat.rollArr = rollArr
+      substat.rollArr = rollArr.length > 1 ? rollArr : undefined
       substat.efficiency = Artifact.getSubstatEfficiency(key, substat.rolls)
     }
     let { currentEfficiency, maximumEfficiency } = Artifact.getArtifactEfficiency(substats, numStars, level)
@@ -226,7 +225,15 @@ export default class Artifact {
     return { currentEfficiency, maximumEfficiency }
   }
 
-  static setToSlots = ArtifactBase.setToSlots;
+  static setToSlots = (artifacts) => {
+    let setToSlots = {};
+    Object.entries(artifacts).forEach(([key, art]) => {
+      if (!art) return
+      if (setToSlots[art.setKey]) setToSlots[art.setKey].push(key)
+      else setToSlots[art.setKey] = [key]
+    })
+    return setToSlots
+  };
 
   static getConditionalStats = (setKey, setNumKey, conditionalNum, defVal = {}) => {
     if (!conditionalNum) return defVal
@@ -286,5 +293,13 @@ export default class Artifact {
       else
         CharacterDatabase.unequipArtifactOnSlot(currentLocation, slotKey)
     }
+  }
+  static unequipArtifact(artifactId) {
+    const art = ArtifactDatabase.get(artifactId)
+    if (!art || !art.location) return
+    const location = art.location
+    const slotKey = art.slotKey
+    CharacterDatabase.unequipArtifactOnSlot(location, slotKey)
+    ArtifactDatabase.moveToNewLocation(artifactId)
   }
 }

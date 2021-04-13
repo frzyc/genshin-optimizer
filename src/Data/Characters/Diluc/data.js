@@ -40,23 +40,23 @@ const data = {
 }
 
 const formula = {
-  normal: Object.fromEntries(data.normal.hitArr.map((percentArr, i) => [i, (tlvl, stats) =>
-    basicDMGFormula(percentArr[tlvl], stats, "normal")])),
+  normal: Object.fromEntries(data.normal.hitArr.map((percentArr, i) => [i, stats =>
+    basicDMGFormula(percentArr[stats.tlvl.auto], stats, "normal")])),
   charged: Object.fromEntries(Object.entries(data.charged).map(([name, arr]) =>
-    [name, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "charged")])),
+    [name, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "charged")])),
   plunging: {
-    dmg: (tlvl, stats) => basicDMGFormula(data.plunging.dmg[tlvl], stats, "plunging"),
-    low: (tlvl, stats) => basicDMGFormula(data.plunging.low[tlvl], stats, "plunging"),
-    high: (tlvl, stats) => basicDMGFormula(data.plunging.high[tlvl], stats, "plunging"),
+    dmg: stats => basicDMGFormula(data.plunging.dmg[stats.tlvl.auto], stats, "plunging"),
+    low: stats => basicDMGFormula(data.plunging.low[stats.tlvl.auto], stats, "plunging"),
+    high: stats => basicDMGFormula(data.plunging.high[stats.tlvl.auto], stats, "plunging"),
   },
   skill: {
     ...Object.fromEntries(Object.entries(data.skill).map(([name, arr]) =>
-      [name, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "skill")])),
-    hit2b: (tlvl, stats) => basicDMGFormula(data.skill.hit2[tlvl] + 40, stats, "skill"),
-    hit3b: (tlvl, stats) => basicDMGFormula(data.skill.hit3[tlvl] + 40, stats, "skill"),
+      [name, stats => basicDMGFormula(arr[stats.tlvl.skill], stats, "skill")])),
+    hit2b: stats => basicDMGFormula(data.skill.hit2[stats.tlvl.skill] + 40, stats, "skill"),
+    hit3b: stats => basicDMGFormula(data.skill.hit3[stats.tlvl.skill] + 40, stats, "skill"),
   },
   burst: Object.fromEntries(Object.entries(data.burst).map(([name, arr]) =>
-    [name, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "burst")])),
+    [name, stats => basicDMGFormula(arr[stats.tlvl.burst], stats, "burst")])),
 }
 
 export default formula

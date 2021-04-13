@@ -19,6 +19,7 @@ import ningguang from './Ningguang'
 import noelle from './Noelle'
 import qiqi from './Qiqi'
 import razor from './Razor'
+import rosaria from './Rosaria'
 import sucrose from './Sucrose'
 import tartaglia from './Tartaglia'
 import traveler_anemo from './Traveler Anemo'
@@ -51,6 +52,7 @@ const characters = {
   noelle,
   qiqi,
   razor,
+  rosaria,
   sucrose,
   tartaglia,
   traveler_anemo,

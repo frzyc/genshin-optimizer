@@ -1,31 +1,30 @@
-import React, { useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import FormControl from 'react-bootstrap/FormControl'
 
-const CustomFormControl = ({ float = false, placeholder, value, onValueChange, disabled, allowEmpty = false }) => {
-  let [focus, setFocus] = useState(false)
-  let displayValue = value
-  if (allowEmpty) displayValue = typeof value === "number" ? value : ""
-  else displayValue = !value && focus ? "" : (value?.toString?.() || value)
-  const props = {
-    type: "number",
-    className: "hide-appearance",
-    placeholder,
-    value: displayValue,
-    disabled,
-    onChange: (e) => {
-      let value = e.target.value;
-      if (float) {
-        if (allowEmpty) value = value === "" ? null : (parseFloat(value) || 0)
-        else value = parseFloat(value) || 0
-      } else {
-        if (allowEmpty) value = value === "" ? null : (parseInt(value) || 0)
-        else value = parseInt(value) || 0
-      }
-      onValueChange?.(value);
+export default function CustomFormControl({ value, onChange, disabled, float = false, placeholder, allowEmpty = false }) {
+  const [state, setstate] = useState(value ?? "")
+  const [stateDirty, setstateDirty] = useState({})
+  const sendChange = useCallback(
+    () => {
+      setstateDirty({})
+      if (allowEmpty && state === "") return onChange(null)
+      if (state === "") setstate(0)
+      const parseFunc = float ? parseFloat : parseInt
+      onChange(parseFunc(state) || 0)
     },
-    onFocus: () => setFocus(true),
-    onBlur: () => setFocus(false),
-  }
-  return <FormControl {...props} aria-label="custom-input" />
+    [value, onChange, state, float, allowEmpty],
+  )
+  useEffect(() => setstate(value ?? ""), [value, setstate, stateDirty])//update value on value change
+
+  return <FormControl
+    value={state}
+    aria-label="custom-input"
+    className="hide-appearance"
+    type="number"
+    placeholder={placeholder}
+    onChange={e => setstate(e.target.value)}
+    onBlur={sendChange}
+    disabled={disabled}
+    onKeyDown={e => e.key === "Enter" && sendChange()}
+  />
 }
-export default CustomFormControl;

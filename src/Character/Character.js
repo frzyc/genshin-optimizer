@@ -1,5 +1,5 @@
 import Artifact from "../Artifact/Artifact";
-import ArtifactDatabase from "../Artifact/ArtifactDatabase";
+import ArtifactDatabase from "../Database/ArtifactDatabase";
 import { CharacterData, CharacterDataImport, characterStatBase, LevelsData } from "../Data/CharacterData";
 import ElementalData from "../Data/ElementalData";
 import { ElementToReactionKeys, PreprocessFormulas } from "../StatData";
@@ -7,7 +7,7 @@ import { GetDependencies } from "../StatDependency";
 import ConditionalsUtil from "../Util/ConditionalsUtil";
 import { deepClone } from "../Util/Util";
 import Weapon from "../Weapon/Weapon";
-import CharacterDatabase from "./CharacterDatabase";
+import CharacterDatabase from "../Database/CharacterDatabase";
 
 export default class Character {
   //do not instantiate.
@@ -41,7 +41,11 @@ export default class Character {
 
   //LEVEL
   static getlevelKeys = () => Object.keys(LevelsData)
-  static getlevelNames = (levelKey, defVal = "") => (LevelsData?.[levelKey]?.name || defVal)
+  static getlevelTemplateName = (levelKey, defVal = "") => (LevelsData?.[levelKey]?.name || defVal)
+  static getLevelString = (character) => {
+    const levelOverride = Character.getStatValueWithOverride(character, "characterLevel")
+    return Character.getLevel(character.levelKey) === levelOverride ? Character.getlevelTemplateName(character.levelKey) : `Lvl. ${levelOverride}`
+  }
   static getIndexFromlevelkey = (levelKey) => this.getlevelKeys().indexOf(levelKey);
   static getLevel = (levelKey, defVal = 1) => (LevelsData?.[levelKey]?.level || defVal)
   static getAscension = (levelKey, defVal = 0) => (LevelsData?.[levelKey]?.asend || defVal)
@@ -73,48 +77,42 @@ export default class Character {
   }
 
   static getTalentDocument = (charKey, talentKey, defVal = []) => this.getTalent(charKey, talentKey)?.document || defVal
-  static getTalentDocumentSections = (charKey, talentKey, defVal = []) => {
-    const character = CharacterDatabase.get(charKey);
-    if (!character) return defVal
-    const { constellation = 0, levelKey = Object.keys(LevelsData)[0] } = character
-    const ascension = Character.getAscension(levelKey)
-    return this.getTalentDocument(charKey, talentKey).map(section => typeof section === "function" ? section(constellation, ascension) : section)
-  }
-  static getTalentField = (character, talentKey, sectionIndex, fieldIndex, defVal = {}) => {
-    if (!character) return defVal
-    const { constellation = 0, levelKey = Object.keys(LevelsData)[0] } = character
-    const ascension = Character.getAscension(levelKey)
-    const field = this.getTalentDocumentSections(character.characterKey, talentKey)?.[sectionIndex]?.fields?.[fieldIndex]
+  static getTalentDocumentSections = (stats, talentKey) =>
+    this.getTalentDocument(stats.characterKey, talentKey).map(section => typeof section === "function" ? section(stats) : section)
+
+  static getTalentField = (stats, talentKey, sectionIndex, fieldIndex, defVal = {}) => {
+    if (!stats) return defVal
+    const field = this.getTalentDocumentSections(stats, talentKey)?.[sectionIndex]?.fields?.[fieldIndex]
     if (!field) return defVal
-    return typeof field === "function" ? field(constellation, ascension) : field
+    return typeof field === "function" ? field(stats) : field
   }
-  static getTalentFieldValue = (field, key, talentKey, stats = {}, defVal = "") => {
+  static getTalentFieldValue = (field, key, stats = {}, defVal = "") => {
     if (!field?.[key]) return defVal
-    return typeof field?.[key] === "function" ? field[key](stats.talentLevelKeys[talentKey], stats) : field[key]
+    return typeof field?.[key] === "function" ? field[key](stats) : field[key]
   }
 
-  static getTalentStats = (charKey, talentKey, constellation, ascension, defVal = null) => {
-    let stats = this.getTalent(charKey, talentKey)?.stats
-    if (typeof stats === "function")
-      return stats(constellation, ascension)
-    return stats || defVal
+  static getTalentStats = (charKey, talentKey, stats, defVal = null) => {
+    const talentStats = this.getTalent(charKey, talentKey)?.stats
+    if (typeof talentStats === "function")
+      return talentStats(stats)
+    return talentStats || defVal
   }
-  static getTalentStatsAll = (charKey, constellation, ascension) => {
-    let talents = this.getCDataObj(charKey)?.talent || {}
-    let statsArr = []
+  static getTalentStatsAll = (charKey, stats) => {
+    const talents = this.getCDataObj(charKey)?.talent || {}
+    const statsArr = []
     Object.keys(talents).forEach(talentKey => {
-      let stats = this.getTalentStats(charKey, talentKey, constellation, ascension)
-      if (stats) statsArr.push(stats)
+      const talentStats = this.getTalentStats(charKey, talentKey, stats)
+      if (talentStats) statsArr.push(talentStats)
     })
     return statsArr
   }
-  static getTalentConditional = (charKey, talentKey, conditionalKey, talentLvlKey, constellation, ascension, defVal = null) => {
-    const sections = this.getTalentDocumentSections(charKey, talentKey)
+  static getTalentConditional = (stats, talentKey, conditionalKey, defVal = null) => {
+    const sections = this.getTalentDocumentSections(stats, talentKey)
     let cond = null
     for (const section of sections) {
       let tempCond = section.conditional
       if (typeof tempCond === "function")
-        tempCond = tempCond(talentLvlKey, constellation, ascension)
+        tempCond = tempCond(stats)
       if (tempCond?.conditionalKey === conditionalKey) {
         cond = tempCond
         break;
@@ -158,9 +156,9 @@ export default class Character {
 
   static hasTalentPage = (characterKey) => Boolean(Character.getCDataObj(characterKey)?.talent)
 
-  static getDisplayStatKeys = (character, defVal = { basicKeys: [] }) => {
-    if (!character) return defVal
-    const { characterKey } = character
+  static getDisplayStatKeys = (stats, defVal = { basicKeys: [] }) => {
+    if (!stats) return defVal
+    const { characterKey } = stats
     let eleKey = Character.getElementalKey(characterKey)
     if (!eleKey) return defVal //usually means the character has not been lazy loaded yet
     const basicKeys = ["finalHP", "finalATK", "finalDEF", "eleMas", "critRate_", "critDMG_", "heal_", "enerRech_", `${eleKey}_dmg_`]
@@ -177,13 +175,13 @@ export default class Character {
     if (this.hasTalentPage(characterKey)) {
       const charFormulas = {}
       Object.keys(Character.getCDataObj(characterKey)?.talent ?? {}).forEach(talentKey =>
-        Character.getTalentDocumentSections(characterKey, talentKey)?.forEach((section, sectionIndex) =>
-          section?.fields?.forEach((field, fieldIndex) =>
-            (field?.formula || this.getTalentField(character, talentKey, sectionIndex, fieldIndex)?.formula) && (charFormulas[talentKey] = [...(charFormulas[talentKey] ?? []), {
-              talentKey,
-              sectionIndex,
-              fieldIndex
-            }]))))
+        Character.getTalentDocumentSections(stats, talentKey)?.forEach((section, sectionIndex) =>
+          section?.fields?.forEach((field, fieldIndex) => {
+            const hasFormula = field?.formula || this.getTalentField(stats, talentKey, sectionIndex, fieldIndex)?.formula
+            if (!hasFormula) return
+            if (!charFormulas[talentKey]) charFormulas[talentKey] = []
+            charFormulas[talentKey].push({ talentKey, sectionIndex, fieldIndex })
+          })))
       return { basicKeys, ...charFormulas, transReactions }
     } else {
       //generic average hit parameters.
@@ -231,17 +229,17 @@ export default class Character {
 
   //equipment, with consideration on swapping equipped.
   static equipArtifacts = (characterKey, artifactIds) => {
-    let character = CharacterDatabase.get(characterKey)
+    const character = CharacterDatabase.get(characterKey)
     if (!character) return;
-    let artIdsOnCharacter = character.equippedArtifacts;
+    const artIdsOnCharacter = character.equippedArtifacts;
     let artIdsNotOnCharacter = artifactIds
 
     //swap, by slot
     Artifact.getSlotKeys().forEach(slotKey => {
-      let artNotOnChar = ArtifactDatabase.get(artIdsNotOnCharacter?.[slotKey])
-      if (artNotOnChar.location === characterKey) return; //it is already equipped
-      let artOnChar = ArtifactDatabase.get(artIdsOnCharacter?.[slotKey])
-      let notCharLoc = (artNotOnChar?.location || "")
+      const artNotOnChar = ArtifactDatabase.get(artIdsNotOnCharacter?.[slotKey])
+      if (artNotOnChar?.location === characterKey) return; //it is already equipped
+      const artOnChar = ArtifactDatabase.get(artIdsOnCharacter?.[slotKey])
+      const notCharLoc = (artNotOnChar?.location ?? "")
       //move current art to other char
       if (artOnChar) ArtifactDatabase.moveToNewLocation(artOnChar.id, notCharLoc)
       //move current art to other char
@@ -250,10 +248,10 @@ export default class Character {
       if (artNotOnChar) ArtifactDatabase.moveToNewLocation(artNotOnChar.id, characterKey)
     })
     //move other art to current char 
-    character.equippedArtifacts = {}
+    character.equippedArtifacts = Object.fromEntries(Artifact.getSlotKeys().map(sKey => [sKey, ""]))
     Object.entries(artifactIds).forEach(([key, artid]) =>
       character.equippedArtifacts[key] = artid)
-    CharacterDatabase.updateCharacter(character);
+    CharacterDatabase.update(character);
   }
   static remove(characterKey) {
     let character = CharacterDatabase.get(characterKey)
@@ -264,8 +262,13 @@ export default class Character {
   }
 
   static calculateBuild = (character) => {
-    let artifacts = Object.fromEntries(Object.entries(character.equippedArtifacts).map(([key, artid]) => [key, ArtifactDatabase.get(artid)]))
-    let initialStats = Character.calculateCharacterWithWeaponStats(character)
+    let artifacts
+    if (character.artifacts) //from flex
+      artifacts = Object.fromEntries(character.artifacts.map((art, i) => [i, art]))
+    else if (character.equippedArtifacts)
+      artifacts = Object.fromEntries(Object.entries(character.equippedArtifacts).map(([key, artid]) => [key, ArtifactDatabase.get(artid)]))
+    else return {}//probably won't happen. just in case.
+    const initialStats = Character.calculateCharacterWithWeaponStats(character)
     return this.calculateBuildWithObjs(character.artifactConditionals, initialStats, artifacts)
   }
 
@@ -313,6 +316,7 @@ export default class Character {
   })
 
   static calculateCharacterWithWeaponStats = (character) => {
+    if (!character) return {}
     character = deepClone(character)
     const { characterKey, levelKey, hitMode, autoInfused, reactionMode, talentLevelKeys, constellation, talentConditionals = [] } = character
     const ascension = Character.getAscension(levelKey)
@@ -327,11 +331,11 @@ export default class Character {
     initialStats.reactionMode = reactionMode;
     initialStats.talentConditionals = talentConditionals
     initialStats.weaponType = this.getWeaponTypeKey(characterKey)
-    initialStats.talentLevelKeys = talentLevelKeys;
+    initialStats.tlvl = talentLevelKeys;
     initialStats.constellation = constellation
     initialStats.ascension = ascension
-    for (const key in initialStats.talentLevelKeys)
-      initialStats.talentLevelKeys[key] += this.getTalentLevelBoost(character.characterKey, key, constellation);
+    for (const key in initialStats.tlvl)
+      initialStats.tlvl[key] += this.getTalentLevelBoost(character.characterKey, key, constellation);
 
     //enemy stuff
     Character.getElementalKeys().forEach(eleKey => {
@@ -353,16 +357,8 @@ export default class Character {
     let specialStatKey = Character.getStatValueWithOverride(character, "specializedStatKey")
     this.mergeStats(initialStats, { [specialStatKey]: specializedStatVal })
 
-
-    //add stats from talentconditionals
-    talentConditionals.forEach(cond => {
-      const { srcKey: talentKey, srcKey2: conditionalKey, conditionalNum } = cond
-      const conditional = Character.getTalentConditional(characterKey, talentKey, conditionalKey, initialStats.talentLevelKeys[talentKey], constellation, ascension)
-      this.mergeStats(initialStats, Character.getTalentConditionalStats(conditional, conditionalNum, {}))
-    })
-
     //add stats from all talents
-    Character.getTalentStatsAll(characterKey, constellation, ascension).forEach(s => this.mergeStats(initialStats, s))
+    Character.getTalentStatsAll(characterKey, initialStats).forEach(s => this.mergeStats(initialStats, s))
 
     //add stats from weapons
     const weaponSubKey = Weapon.getWeaponSubStatKey(character?.weapon?.key)
@@ -370,7 +366,13 @@ export default class Character {
     this.mergeStats(initialStats, Weapon.getWeaponBonusStat(character?.weapon?.key, character?.weapon?.refineIndex))
     this.mergeStats(initialStats, Weapon.getWeaponConditionalStat(character?.weapon?.key, character?.weapon?.refineIndex, character?.weapon?.conditionalNum, {}));
 
+    //add stats from talentconditionals
+    talentConditionals.forEach(cond => {
+      const { srcKey: talentKey, srcKey2: conditionalKey, conditionalNum } = cond
+      const conditional = Character.getTalentConditional(initialStats, talentKey, conditionalKey)
+      this.mergeStats(initialStats, Character.getTalentConditionalStats(conditional, conditionalNum, {}))
+    })
+
     return initialStats
   }
-
 }

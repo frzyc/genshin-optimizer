@@ -39,22 +39,22 @@ export const data = {
 }
 const formula = {
   normal: Object.fromEntries(data.normal.hitArr.map((arr, i) =>
-    [i, (tlvl, stats) => basicDMGFormula((i === 2 ? 2 : i === 3 ? 4 : 1) * (arr[tlvl]), stats, "normal")])),
+    [i, stats => basicDMGFormula((i === 2 ? 2 : i === 3 ? 4 : 1) * (arr[stats.tlvl.auto]), stats, "normal")])),
   charged: Object.fromEntries(Object.entries(data.charged).map(([name, arr]) =>
-    [name, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "charged")])),
+    [name, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "charged")])),
   plunging: Object.fromEntries(Object.entries(data.plunging).map(([name, arr]) =>
-    [name, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "plunging")])),
+    [name, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "plunging")])),
   skill: {
-    dmg: (tlvl, stats) => basicDMGFormula(data.skill.dmg[tlvl], stats, "skill"),
+    dmg: stats => basicDMGFormula(data.skill.dmg[stats.tlvl.skill], stats, "skill"),
   },
   burst: {
-    hit1: (tlvl, stats) => basicDMGFormula(data.burst.hit1[tlvl], stats, "burst"),
-    hit2: (tlvl, stats) => basicDMGFormula(data.burst.hit2[tlvl], stats, "burst"),
-    hit3: (tlvl, stats) => basicDMGFormula(data.burst.hit3[tlvl], stats, "burst"),
-    dmg: (tlvl, stats) => basicDMGFormula(data.burst.dmg[tlvl], stats, "burst"),
+    hit1: stats => basicDMGFormula(data.burst.hit1[stats.tlvl.burst], stats, "burst"),
+    hit2: stats => basicDMGFormula(data.burst.hit2[stats.tlvl.burst], stats, "burst"),
+    hit3: stats => basicDMGFormula(data.burst.hit3[stats.tlvl.burst], stats, "burst"),
+    dmg: stats => basicDMGFormula(data.burst.dmg[stats.tlvl.burst], stats, "burst"),
   },
   constellation2: {
-    dmg: (tlvl, stats) => basicDMGFormula(75, stats, "elemental"),
+    dmg: stats => basicDMGFormula(75, stats, "elemental"),
   }
 }
 export default formula

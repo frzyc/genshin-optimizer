@@ -40,17 +40,17 @@ const char = {
         fields: data.normal.hitArr.map((percentArr, i) =>
         ({
           text: `${i + 1}-Hit DMG`,
-          formulaText: (tlvl, stats, c) => <span>{percentArr[tlvl]}%{(i === 0 || i === 3) ? " × 2" : ""} {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
+          formulaText: stats => <span>{percentArr[stats.tlvl.auto]}%{(i === 0 || i === 3) ? " × 2" : ""} {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
           formula: formula.normal[i],
-          variant: (tlvl, stats, c) => getTalentStatKeyVariant("normal", stats),
+          variant: stats => getTalentStatKeyVariant("normal", stats),
         }))
       }, {
         text: <span><strong>Charged Attack</strong> Consumes a certain amount of Stamina to perform an upward thrust.</span>,
         fields: [{
           text: `Charged Attack DMG`,
-          formulaText: (tlvl, stats, c) => <span>{data.charged.hit[tlvl]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
+          formulaText: stats => <span>{data.charged.hit[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
           formula: formula.charged.hit,
-          variant: (tlvl, stats, c) => getTalentStatKeyVariant("charged", stats),
+          variant: stats => getTalentStatKeyVariant("charged", stats),
         }, {
           text: `Stamina Cost`,
           value: 25,
@@ -59,19 +59,19 @@ const char = {
         text: <span><strong>Plunging Attack</strong> Plunges from mid-air to strike the ground from below, damaging opponents along the path and dealing AoE DMG upon impact. Xiao does not take DMG from performing Plunging Attacks.</span>,
         fields: [{
           text: `Plunge DMG`,
-          formulaText: (tlvl, stats, c) => <span>{data.plunging.dmg[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+          formulaText: stats => <span>{data.plunging.dmg[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
           formula: formula.plunging.dmg,
-          variant: (tlvl, stats, c) => getTalentStatKeyVariant("plunging", stats),
+          variant: stats => getTalentStatKeyVariant("plunging", stats),
         }, {
           text: `Low Plunge DMG`,
-          formulaText: (tlvl, stats, c) => <span>{data.plunging.low[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+          formulaText: stats => <span>{data.plunging.low[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
           formula: formula.plunging.low,
-          variant: (tlvl, stats, c) => getTalentStatKeyVariant("plunging", stats),
+          variant: stats => getTalentStatKeyVariant("plunging", stats),
         }, {
           text: `High Plunge DMG`,
-          formulaText: (tlvl, stats, c) => <span>{data.plunging.high[tlvl]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+          formulaText: stats => <span>{data.plunging.high[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
           formula: formula.plunging.high,
-          variant: (tlvl, stats, c) => getTalentStatKeyVariant("plunging", stats),
+          variant: stats => getTalentStatKeyVariant("plunging", stats),
         }]
       }],
     },
@@ -85,16 +85,16 @@ const char = {
         </span>,
         fields: [{
           text: "Skill DMG",
-          formulaText: (tlvl, stats, c) => <span>{data.skill.hit[tlvl]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
+          formulaText: stats => <span>{data.skill.hit[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
           formula: formula.skill.hit,
-          variant: (tlvl, stats, c) => getTalentStatKeyVariant("skill", stats),
+          variant: stats => getTalentStatKeyVariant("skill", stats),
         }, {
           text: "CD",
           value: "10s",
-        }, (c, a) => ({
+        }, {
           text: "Charges",
-          value: c >= 1 ? "2 + 1" : `2`,
-        }),]
+          value: stats => stats.constellation >= 1 ? "2 + 1" : `2`,
+        }]
       }],
     },
     burst: {
@@ -113,7 +113,7 @@ const char = {
         </span>,
         fields: [{
           text: "Normal/Charged/Plunging Attack DMG Bonus",
-          value: (tlvl, stats, c) => <span>{data.burst.atk_bonus[tlvl]}%</span>,
+          value: stats => <span>{data.burst.atk_bonus[stats.tlvl.burst]}%</span>,
         }, {
           text: "Duration",
           value: "15s",
@@ -124,16 +124,16 @@ const char = {
           text: "Energy Cost",
           value: 70,
         }],
-        conditional: (tlvl, c, a) => ({
+        conditional: stats => ({
           type: "character",
           conditionalKey: "BaneOfAllEvil",
           condition: "Bane of All Evil",
           sourceKey: "xiao",
           maxStack: 1,
           stats: {
-            normal_dmg_: data.burst.atk_bonus[tlvl],
-            charged_dmg_: data.burst.atk_bonus[tlvl],
-            plunging_dmg_: data.burst.atk_bonus[tlvl],
+            normal_dmg_: data.burst.atk_bonus[stats.tlvl.burst],
+            charged_dmg_: data.burst.atk_bonus[stats.tlvl.burst],
+            plunging_dmg_: data.burst.atk_bonus[stats.tlvl.burst],
           }
         })
       }],
@@ -143,7 +143,7 @@ const char = {
       img: passive1,
       document: [{
         text: <span>While under the effects of <b>Bane of All Evil</b>, all DMG dealt by Xiao increases by 5%. DMG increases by a further 5% for every 3s the ability persists. The maximum DMG Bonus is 25%.</span>,
-        conditional: (tlvl, c, a) => a >= 1 && {
+        conditional: stats => stats.ascension >= 1 && {
           type: "character",
           conditionalKey: "TamerofDemons",
           condition: "Tamer of Demons",
@@ -160,7 +160,7 @@ const char = {
       img: passive2,
       document: [{
         text: <span>Using <b>Lemniscatic Wind Cycling</b> increases the DMG of subsequent uses of Lemniscatic Wind Cycling by 15%. This effect lasts for 7s, and has a maximum of 3 stacks. Gaining a new stack refreshes the effect's duration.</span>,
-        conditional: (tlvl, c, a) => a >= 1 && {
+        conditional: stats => stats.ascension >= 1 && {
           type: "character",
           conditionalKey: "HeavenFall",
           condition: "Heaven Fall",
@@ -189,7 +189,7 @@ const char = {
       img: c2,
       document: [{
         text: <span>When in party but not on the field, Xiao's Energy Recharge is increased by 25%.</span>,
-        conditional: (tlvl, c, a) => c >= 2 && {
+        conditional: stats => stats.constellation >= 2 && {
           type: "character",
           conditionalKey: "BlossomofKaleidos",
           condition: "Blossom of Kaleidos",
@@ -211,8 +211,8 @@ const char = {
       name: "Transcension: Extinction of Suffering",
       img: c4,
       document: [{
-        text: (tlvl, stats, c) => <span>When Xiao's HP falls below 50%{DisplayPercent(50, stats, "finalHP")}, he gains a 100% DEF Bonus.</span>,
-        conditional: (tlvl, c, a) => c >= 4 && {
+        text: stats => <span>When Xiao's HP falls below 50%{DisplayPercent(50, stats, "finalHP")}, he gains a 100% DEF Bonus.</span>,
+        conditional: stats => stats.constellation >= 4 && {
           type: "character",
           conditionalKey: "ExtinctionofSuffering",
           condition: "Extinction of Suffering",

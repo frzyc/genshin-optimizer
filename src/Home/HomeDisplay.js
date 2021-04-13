@@ -128,6 +128,18 @@ export default function HomeDisplay(props) {
             </Col>
           </Row></Card.Body></Card>
 
+          <Card bg="lightcontent" text="lightfont" ><Card.Body>
+            <h5>Credit where credit is due</h5>
+            <p>GO would not be where it is where all these sources/people. Time to take a bow and thank them.</p>
+            <ul>
+              <li>Thanks to everyone in the community, and especially people on our <a href={process.env.REACT_APP_DISCORD_LINK} target="_blank" rel="noreferrer">discord</a> for providing feedback and helping me improve this tool.</li>
+              <li>Thanks to <a href="https://genshin.honeyhunterworld.com/" target="_blank" rel="noreferrer">Honey Impact</a>, for giving us a reliable, consistent source for data and numbers. All our calculations would be moot without them.</li>
+              <li>A healthy percent of our Genshin images are yoinked from <a href="https://genshin-impact.fandom.com/" target="_blank" rel="noreferrer">The Genshin Impact Wiki</a>, so a serendipitous thanks for them.</li>
+              <li>Special thanks to members of our community who has gone the extra file, and has been helping us test formulas by recording in-game data, and people who has helped us with source code contributions.</li>
+              <li>Thanks for everyone else, for sharing this tool, and getting more people to use this tool.</li>
+              <li>Lastly, and most importantly, thank <b>YOU</b>, for using GO right now.</li>
+            </ul>
+          </Card.Body></Card>
         </Card.Body>
       </Card>
     </Col></Row>

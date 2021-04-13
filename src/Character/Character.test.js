@@ -1,5 +1,5 @@
+import CharacterDatabase from "../Database/CharacterDatabase"
 import Character from "./Character"
-import CharacterDatabase from "./CharacterDatabase"
 
 describe('Character.mergeStats()', () => {
   test('should merge stats', () => {
@@ -17,13 +17,11 @@ describe('Character.mergeStats()', () => {
 describe('Character.getDisplayStatKeys()', () => {
   const characterKey = "noelle"
 
-  beforeEach(() => CharacterDatabase.updateCharacter({ characterKey, levelKey: "L60A" }))
+  beforeEach(() => CharacterDatabase.update({ characterKey, levelKey: "L60A" }))
   afterEach(() => localStorage.clear())
   test('should get statKeys for characters with finished talent page', () => {
-    const keys = Character.getDisplayStatKeys(CharacterDatabase.get(characterKey))
+    const initialStats = Character.calculateCharacterWithWeaponStats(CharacterDatabase.get(characterKey))
+    const keys = Character.getDisplayStatKeys(initialStats)
     expect(keys).toHaveProperty("auto")
-  })
-  test('should get statKeys for characters with unfinished talent page', () => {
-
   })
 })

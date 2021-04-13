@@ -12,12 +12,12 @@ export const data = {
   },
   normal: {
     hitArr: [
-      [41.02, 44.36, 47.7, 52.47, 55.81, 59.62, 64.87, 70.12, 75.37, 81.09, 86.81, 92.54, 98.26, 103.99, 109.71],
-      [41.02, 44.36, 47.7, 52.47, 55.81, 59.62, 64.87, 70.12, 75.37, 81.09, 86.81, 92.54, 98.26, 103.99, 109.71],
-      [54.44, 58.87, 63.3, 69.63, 74.06, 79.13, 86.09, 93.05, 100.01, 107.61, 115.21, 122.8, 130.4, 137.99, 145.59],
-      [31.48, 34.04, 36.6, 40.26, 42.82, 45.75, 49.78, 53.8, 57.83, 62.22, 66.61, 71, 75.4, 79.79, 84.18],
-      [34.4, 37.2, 40, 44, 46.8, 50, 54.4, 58.8, 63.2, 68, 72.8, 77.6, 82.4, 87.2, 92],
-      [66.99, 72.45, 77.9, 85.69, 91.14, 97.38, 105.94, 114.51, 123.08, 132.43, 141.78, 151.13, 160.47, 169.82, 179.17],
+      [41.02, 44.36, 47.7, 52.47, 55.81, 59.62, 64.87, 70.12, 75.37, 81.09, 86.81, 92.54, 98.26, 103.99, 109.71],//1
+      [41.02, 44.36, 47.7, 52.47, 55.81, 59.62, 64.87, 70.12, 75.37, 81.09, 86.81, 92.54, 98.26, 103.99, 109.71],//2
+      [54.44, 58.87, 63.3, 69.63, 74.06, 79.13, 86.09, 93.05, 100.01, 107.61, 115.21, 122.8, 130.4, 137.99, 145.59],//3
+      [31.48, 34.04, 36.6, 40.26, 42.82, 45.75, 49.78, 53.8, 57.83, 62.22, 66.61, 71, 75.4, 79.79, 84.18],//4.1
+      [34.4, 37.2, 40, 44, 46.8, 50, 54.4, 58.8, 63.2, 68, 72.8, 77.6, 82.4, 87.2, 92],//4.2
+      [66.99, 72.45, 77.9, 85.69, 91.14, 97.38, 105.94, 114.51, 123.08, 132.43, 141.78, 151.13, 160.47, 169.82, 179.17],//5
     ],
   },
   charged: {
@@ -42,20 +42,23 @@ export const data = {
 }
 const formula = {
   normal: Object.fromEntries(data.normal.hitArr.map((arr, i) =>
-    [i, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "normal")])),
+    [i, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "normal")])),
   charged: Object.fromEntries(Object.entries(data.charged).map(([name, arr]) =>
-    [name, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "charged")])),
+    [name, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "charged")])),
   plunging: Object.fromEntries(Object.entries(data.plunging).map(([name, arr]) =>
-    [name, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "plunging")])),
+    [name, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "plunging")])),
   skill: {
-    stilleto: (tlvl, stats) => basicDMGFormula(data.skill.stilleto[tlvl], stats, "skill"),
-    slashing: (tlvl, stats) => basicDMGFormula(data.skill.slashing[tlvl], stats, "skill"),
-    thunderclap_slashing: (tlvl, stats) => basicDMGFormula(data.skill.thunderclasp_slash[tlvl] * 2, stats, "skill"),
+    stilleto: stats => basicDMGFormula(data.skill.stilleto[stats.tlvl.skill], stats, "skill"),
+    slashing: stats => basicDMGFormula(data.skill.slashing[stats.tlvl.skill], stats, "skill"),
+    thunderclap_slashing: stats => basicDMGFormula(data.skill.thunderclasp_slash[stats.tlvl.skill], stats, "skill"),
   },
   burst: {
-    skill: (tlvl, stats) => basicDMGFormula(data.burst.skill[tlvl], stats, "burst"),
-    consec_slash: (tlvl, stats) => basicDMGFormula(data.burst.consec_slash[tlvl] * 8, stats, "burst"),
-    last: (tlvl, stats) => basicDMGFormula(data.burst.last[tlvl], stats, "burst"),
+    skill: stats => basicDMGFormula(data.burst.skill[stats.tlvl.burst], stats, "burst"),
+    consec_slash: stats => basicDMGFormula(data.burst.consec_slash[stats.tlvl.burst], stats, "burst"),
+    last: stats => basicDMGFormula(data.burst.last[stats.tlvl.burst], stats, "burst"),
+  },
+  constellation1: {
+    dmg: stats => basicDMGFormula(50, stats, "elemental"),
   }
 }
 export default formula

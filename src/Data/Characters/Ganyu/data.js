@@ -42,55 +42,55 @@ const data = {
 }
 
 const formula = {
-  normal: Object.fromEntries(data.normal.hitArr.map((percentArr, i) => [i, (tlvl, stats) =>
-    basicDMGFormula(percentArr[tlvl], stats, "normal")])),
+  normal: Object.fromEntries(data.normal.hitArr.map((percentArr, i) => [i, stats =>
+    basicDMGFormula(percentArr[stats.tlvl.auto], stats, "normal")])),
   charged: {
-    aimShot: (tlvl, stats) => basicDMGFormula(data.charged.aimedShot[tlvl], stats, "charged"),
-    aimShot1: (tlvl, stats) => basicDMGFormula(data.charged.aimShot1[tlvl], stats, "charged", true),
-    frostflake: (tlvl, stats) => {
+    aimShot: stats => basicDMGFormula(data.charged.aimedShot[stats.tlvl.auto], stats, "charged"),
+    aimShot1: stats => basicDMGFormula(data.charged.aimShot1[stats.tlvl.auto], stats, "charged", true),
+    frostflake: stats => {
       if (stats.hitMode === "avgHit") {
         let { talentConditionals = [] } = stats
         let conditionalNum = ConditionalsUtil.getConditionalNum(talentConditionals, { srcKey: "auto", srcKey2: "UndividedHeart" })
         if (conditionalNum) {
-          const val = data.charged.frostflake[tlvl] / 100
+          const val = data.charged.frostflake[stats.tlvl.auto] / 100
           //cryo_charged_hit or cryo_melt_charged_hit
           const statKey = `cryo${stats.reactionMode === "cryo_melt" ? "_melt" : ""}_charged_hit`
           //cryo charged atk hit * (1 + min(20% + critRate, 100) critDmg_)
           return [s => val * s[statKey] * (1 + Math.min(20 + s.critRate_ + s.charged_critRate_, 100) * s.critDMG_ / 10000), [statKey, "critRate_", "critDMG_", "charged_critRate_"]]
         }
       }
-      return basicDMGFormula(data.charged.frostflake[tlvl], stats, "charged", true)
+      return basicDMGFormula(data.charged.frostflake[stats.tlvl.auto], stats, "charged", true)
     },
-    frostflakeBloom: (tlvl, stats) => {
+    frostflakeBloom: stats => {
       if (stats.hitMode === "avgHit") {
         let { talentConditionals = [] } = stats
         let conditionalNum = ConditionalsUtil.getConditionalNum(talentConditionals, { srcKey: "auto", srcKey2: "UndividedHeart" })
         if (conditionalNum) {
-          const val = data.charged.frostflakeBloom[tlvl] / 100
+          const val = data.charged.frostflakeBloom[stats.tlvl.auto] / 100
           //cryo_charged_hit or cryo_melt_charged_hit
           const statKey = `cryo${stats.reactionMode === "cryo_melt" ? "_melt" : ""}_charged_hit`
           //cryo charged atk hit * (1 + min(20% + critRate, 100) critDmg_)
           return [s => val * s[statKey] * (1 + Math.min(20 + s.critRate_ + s.charged_critRate_, 100) * s.critDMG_ / 10000), [statKey, "critRate_", "critDMG_", "charged_critRate_"]]
         }
       }
-      return basicDMGFormula(data.charged.frostflakeBloom[tlvl], stats, "charged", true)
+      return basicDMGFormula(data.charged.frostflakeBloom[stats.tlvl.auto], stats, "charged", true)
     },
   },
   plunging: {
-    dmg: (tlvl, stats) => basicDMGFormula(data.plunging.dmg[tlvl], stats, "plunging"),
-    low: (tlvl, stats) => basicDMGFormula(data.plunging.low[tlvl], stats, "plunging"),
-    high: (tlvl, stats) => basicDMGFormula(data.plunging.high[tlvl], stats, "plunging"),
+    dmg: stats => basicDMGFormula(data.plunging.dmg[stats.tlvl.auto], stats, "plunging"),
+    low: stats => basicDMGFormula(data.plunging.low[stats.tlvl.auto], stats, "plunging"),
+    high: stats => basicDMGFormula(data.plunging.high[stats.tlvl.auto], stats, "plunging"),
   },
   skill: {
-    hp: (tlvl) => {
-      const hp = data.skill.hp[tlvl] / 100
+    hp: stats => {
+      const hp = data.skill.hp[stats.tlvl.skill] / 100
       return [(s) => hp * s.finalHP, ["finalHP"]]
     },
-    dmg: (tlvl, stats) => basicDMGFormula(data.skill.dmg[tlvl], stats, "skill"),
-    detonationDMG: (tlvl, stats) => basicDMGFormula(data.skill.dmg[tlvl], stats, "skill"),
+    dmg: stats => basicDMGFormula(data.skill.dmg[stats.tlvl.skill], stats, "skill"),
+    detonationDMG: stats => basicDMGFormula(data.skill.dmg[stats.tlvl.skill], stats, "skill"),
   },
   burst: {
-    dmg: (tlvl, stats) => basicDMGFormula(data.burst.dmg[tlvl], stats, "burst"),
+    dmg: stats => basicDMGFormula(data.burst.dmg[stats.tlvl.burst], stats, "burst"),
   }
 }
 

@@ -45,24 +45,24 @@ const data = {
 }
 
 const formula = {
-  normal: Object.fromEntries(data.normal.hitArr.map((percentArr, i) => [i, (tlvl, stats) =>
-    basicDMGFormula(percentArr[tlvl], stats, "normal")])),
+  normal: Object.fromEntries(data.normal.hitArr.map((percentArr, i) => [i, stats =>
+    basicDMGFormula(percentArr[stats.tlvl.auto], stats, "normal")])),
   charged: {
-    atk1: (tlvl, stats) => basicDMGFormula(data.charged.atk1[tlvl], stats, "charged"),
-    atk2: (tlvl, stats) => basicDMGFormula(data.charged.atk2[tlvl], stats, "charged"),
+    atk1: stats => basicDMGFormula(data.charged.atk1[stats.tlvl.auto], stats, "charged"),
+    atk2: stats => basicDMGFormula(data.charged.atk2[stats.tlvl.auto], stats, "charged"),
   },
-  plunging: Object.fromEntries(Object.entries(data.plunging).map(([key, arr]) => [key, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "plunging")])),
-  skill: Object.fromEntries(Object.entries(data.skill).map(([key, arr]) => [key, (tlvl, stats) => basicDMGFormula(arr[tlvl], stats, "skill")])),
+  plunging: Object.fromEntries(Object.entries(data.plunging).map(([key, arr]) => [key, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "plunging")])),
+  skill: Object.fromEntries(Object.entries(data.skill).map(([key, arr]) => [key, stats => basicDMGFormula(arr[stats.tlvl.skill], stats, "skill")])),
   burst: {
-    dmg: (tlvl, stats) => basicDMGFormula(data.burst.dmg[tlvl], stats, "burst"),
-    regen: (tlvl, stats) => {
-      const hp = data.burst.healHP[tlvl] / 100
-      const flat = data.burst.healHPFlat[tlvl]
+    dmg: stats => basicDMGFormula(data.burst.dmg[stats.tlvl.burst], stats, "burst"),
+    regen: stats => {
+      const hp = data.burst.healHP[stats.tlvl.burst] / 100
+      const flat = data.burst.healHPFlat[stats.tlvl.burst]
       return [s => (hp * s.finalHP + flat) * s.heal_multi, ["finalHP", "heal_multi"]]
     },
-    atkBonus: (tlvl, stats) => {
+    atkBonus: stats => {
       const { constellation } = stats
-      const percent = (data.burst.atkRatio[tlvl] + (constellation < 1 ? 0 : 20)) / 100
+      const percent = (data.burst.atkRatio[stats.tlvl.burst] + (constellation < 1 ? 0 : 20)) / 100
       return [s => percent * s.baseATK, ["baseATK"]]
     }
   }
