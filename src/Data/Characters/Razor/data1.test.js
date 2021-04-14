@@ -14,7 +14,7 @@ describe("Testing Razor's Formulas (sohum#5921)", () => {
       atk_: 27.6,//prototype Archiac R2
       physical_dmg_: 22.5,//specialized
 
-      enemyLevel: 77, physical_enemyRes_: 70, // Ruin Guard
+      enemyLevel: 85, physical_enemyRes_: 70, // Ruin Guard
       // dmg_: 10,//C1
       tlvl: Object.freeze({ auto: 8 - 1, skill: 11 - 1, burst: 10 - 1 }),
     })
