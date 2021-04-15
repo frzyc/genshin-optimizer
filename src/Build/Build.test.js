@@ -1,4 +1,4 @@
-import { artifactSetPermutations, calculateTotalBuildNumber, artifactPermutations, getTalentStatKey, getTalentStatKeyVariant } from "./Build"
+import { artifactSetPermutations, calculateTotalBuildNumber, artifactPermutations, getTalentStatKey, getTalentStatKeyVariant, pruneArtifacts } from "./Build"
 
 const dummyArtifact = (setKey, value) => { return { setKey, mainStatKey: "x", mainStatVal: value, substats: [] } }
 const a = [dummyArtifact("A", 1), dummyArtifact("A", 2), dummyArtifact("A", 3)]
@@ -135,6 +135,106 @@ describe(`artifactPermutations()`, () => {
     artifactPermutations({ y: 2, x: 4 }, artifacts, [], callback)
 
     expect(permutations).toContainEqual([{ flower: a[0], plume: b[0], sand: a[1], clock: d[0] }, { x: 9, y: 2 }])
+  })
+})
+
+describe('pruneArtifacts', () => {
+  test('should keep incomparable artifacts', () => {
+    const goodArtifact = [{
+      id: 0, setKey: "x",
+      mainStatKey: "stat1", mainStatVal: 10,
+      substats: [ { key: "stat2", value: 20 }, ]
+    }, {
+      id: 1, setKey: "x",
+      mainStatKey: "stat1", mainStatVal: 20,
+      substats: [ { key: "stat2", value: 10 }, ]
+    }, {
+      id: 2, setKey: "x",
+      mainStatKey: "irrelevant", mainStatVal: -10000,
+      substats: [ { key: "stat2", value: 30 }, ]
+    }]
+    const badArtifact = [{
+      // Worse than 0.
+      id: 4, setKey: "x",
+      mainStatKey: "irrelevant", mainStatVal: 10,
+      substats: [ { key: "stat2", value: 15 }, ]
+    }]
+    const stats = new Set(["stat1", "stat2"])
+    expect(pruneArtifacts([...goodArtifact, ...badArtifact], {}, stats)).toEqual(goodArtifact)
+  })
+  test('should keep the "similar" artifacts', () => {
+    const goodArtifact = [{
+      id: "0", setKey: "x",
+      mainStatKey: "stat1", mainStatVal: 10,
+      substats: [ { key: "stat2", value: 20 }, ]
+    }, {
+      id: "1", setKey: "x",
+      mainStatKey: "stat1", mainStatVal: 10,
+      substats: [ { key: "stat2", value: 20 }, ]
+    }, {
+      id: "2", setKey: "x",
+      mainStatKey: "stat1", mainStatVal: 10,
+      substats: [ { key: "stat2", value: 20 }, ]
+    }]
+    const stats = new Set(["stat1", "stat2"])
+    expect(pruneArtifacts(goodArtifact, {}, stats)).toEqual(goodArtifact)
+  })
+  test('should include set bonus', () => {
+    const good = {
+      id: 0, setKey: "x",
+      mainStatKey: "stat1", mainStatVal: 10,
+      substats: [ { key: "stat2", value: 20 }, ]
+    }
+    const goodFromSetEffect = {
+      // But stat, 0 is better, but "y" set makes up for it
+      id: 1, setKey: "y",
+      mainStatKey: "stat1", mainStatVal: 5,
+      substats: [ ]
+    }
+
+    const artifactSetEffects = { y: { 4: { "stat2": 21 } } }
+    const stats = new Set(["stat1", "stat2"])
+    expect(pruneArtifacts([good, goodFromSetEffect], {}, stats)).toEqual([good])
+    expect(pruneArtifacts([good, goodFromSetEffect], artifactSetEffects, stats)).toEqual([good, goodFromSetEffect])
+  })
+  test('should ignore irrelevant stats', () => {
+    const good = {
+      id: 0, setKey: "x",
+      mainStatKey: "stat1", mainStatVal: 10,
+      substats: [ { key: "stat2", value: 20 }, ]
+    }
+    const bad = {
+      // But stat, 0 is better, but "y" set makes up for it
+      id: 1, setKey: "y",
+      mainStatKey: "stat1", mainStatVal: 5,
+      substats: [ { key: { "irrelevant": 1000000 } } ]
+    }
+
+    const stats = new Set(["stat1", "stat2"])
+    expect(pruneArtifacts([good, bad], {}, stats)).toEqual([good])
+  })
+  test('should support ascending pruning', () => {
+    const goodArtifact = [{
+      id: 0, setKey: "x",
+      mainStatKey: "stat1", mainStatVal: 10,
+      substats: [ { key: "stat2", value: 20 }, ]
+    }, {
+      id: 1, setKey: "x",
+      mainStatKey: "stat1", mainStatVal: 20,
+      substats: [ { key: "stat2", value: 10 }, ]
+    }, {
+      id: 2, setKey: "x",
+      mainStatKey: "irrelevant", mainStatVal: -10000,
+      substats: [ { key: "stat2", value: 30 }, ]
+    }]
+    const badArtifact = [{
+      // Worse than 0.
+      id: 4, setKey: "x",
+      mainStatKey: "irrelevant", mainStatVal: 10,
+      substats: [ { key: "stat2", value: 21 }, ]
+    }]
+    const stats = new Set(["stat1", "stat2"])
+    expect(pruneArtifacts([...goodArtifact, ...badArtifact], {}, stats)).toEqual(goodArtifact)
   })
 })
 

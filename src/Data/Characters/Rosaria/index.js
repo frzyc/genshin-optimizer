@@ -137,7 +137,21 @@ const char = {
     passive1: {
       name: "Regina Probationum",
       img: passive1,
-      document: [{ text: <span>When Rosaria strikes an opponent from behind using <b>Ravaging Confession</b>, Rosaria's CRIT Rate increases by 12% for 5s.</span> }],//TODO: conditional for crit
+      document: [{
+        text: <span>When Rosaria strikes an opponent from behind using <b>Ravaging Confession</b>, Rosaria's CRIT Rate increases by 12% for 5s.</span>,
+        conditional: stats => stats.ascension >= 1 && {
+          type: "character",
+          conditionalKey: "Regina Probationum",
+          condition: <span>After back hit</span>,
+          sourceKey: "rosaria",
+          maxStack: 1,
+          stats: { critRate_: 12 },
+          fields: [{
+            text: "Duration",
+            value: "5s"
+          }]
+        }
+      }],
     },
     passive2: {
       name: "Shadow Samaritan",
@@ -156,7 +170,7 @@ const char = {
           //stats: { critRate_: 15 },//TODO: party buff
           fields: [{
             text: "Party CRIT Rate increase",
-            value: "15%",
+            value: "15% of Rosaria's CRIT Rate",
           }, {
             text: "Duration",
             value: "10s",
