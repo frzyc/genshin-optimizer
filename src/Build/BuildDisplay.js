@@ -387,9 +387,9 @@ export default class BuildDisplay extends React.Component {
                 onClick={this.generateBuilds}
               ><span>Generate Builds</span></Button>
               {totBuildNumber > warningBuildNumber && <OverlayTrigger
-                overlay={<Tooltip>Dramatically speeds up build time, but only generates one result</Tooltip>}
+                overlay={<Tooltip>Dramatically speeds up build time, but only generates one result. Does not work with Final Stat Filters.</Tooltip>}
               >
-                <Button variant="success" onClick={() => this.generateBuilds(true)}><strong>TURBO</strong></Button>
+                <Button variant="success" disabled={Object.keys(statFilters).length} onClick={() => this.generateBuilds(true)}><strong>TURBO</strong></Button>
               </OverlayTrigger>}
               <Button
                 className="h-100"
