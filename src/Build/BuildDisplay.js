@@ -1,7 +1,7 @@
 import { faCheckSquare, faSortAmountDownAlt, faSortAmountUp, faSquare, faTimes, faTrash, faUndo } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { lazy } from 'react';
-import { Alert, Badge, Button, ButtonGroup, Card, Col, Container, Dropdown, DropdownButton, Image, InputGroup, ListGroup, Modal, ProgressBar, Row } from 'react-bootstrap';
+import { Alert, Badge, Button, ButtonGroup, Card, Col, Container, Dropdown, DropdownButton, Image, InputGroup, ListGroup, Modal, OverlayTrigger, ProgressBar, Row, Tooltip } from 'react-bootstrap';
 import ReactGA from 'react-ga';
 // eslint-disable-next-line
 import Worker from "worker-loader!./BuildWorker.js";
@@ -68,6 +68,7 @@ export default class BuildDisplay extends React.Component {
     showArtCondModal: false,
     showCharacterModal: false,
     maxBuildsToShow: maxBuildsToShowDefault,
+    generationSkipped: 0,
     generationProgress: 0,
     generationDuration: 0,//in ms
   }
@@ -142,13 +143,14 @@ export default class BuildDisplay extends React.Component {
   autoGenerateBuilds = () => {
     if (typeof this.totBuildNumber === "number" && this.totBuildNumber <= autoBuildGenLimit)
       this.generateBuilds()
-    else if (this.state.builds.length) this.setState({ builds: [], generationProgress: 0, generationDuration: 0 })
+    else if (this.state.builds.length) this.setState({ builds: [], generationProgress: 0, generationDuration: 0, generationSkipped: 0 })
   }
 
-  generateBuilds = () => {
+  generateBuilds = (turbo = false) => {
+    if (typeof turbo !== "boolean") turbo = false
     let { split, totBuildNumber } = this
     if (!totBuildNumber) return this.setState({ builds: [] })
-    this.setState({ generatingBuilds: true, builds: [], generationDuration: 0, generationProgress: 0 })
+    this.setState({ generatingBuilds: true, builds: [], generationDuration: 0, generationProgress: 0, generationSkipped: 0 })
     let { characterKey, setFilters, statFilters = {}, ascending, optimizationTarget, maxBuildsToShow, artifactConditionals, artifactsAssumeFull } = this.state
     const character = CharacterDatabase.get(characterKey)
     const initialStats = Character.calculateCharacterWithWeaponStats(character)
@@ -175,14 +177,14 @@ export default class BuildDisplay extends React.Component {
     //create an obj with app the artifact set effects to pass to buildworker.
     let data = {
       splitArtifacts, initialStats, artifactSetEffects,
-      setFilters, minFilters, maxFilters, maxBuildsToShow, optimizationTarget, ascending,
+      setFilters, minFilters, maxFilters, maxBuildsToShow, optimizationTarget, ascending, turbo
     }
     if (this.worker) this.worker.terminate()
     this.worker = new Worker();
     this.worker.onmessage = (e) => {
       if (typeof e.data.progress === "number") {
-        const { progress = 0, timing = 0 } = e.data
-        return this.setState({ generationProgress: progress, generationDuration: timing })
+        const { progress, timing = 0, skipped = 0 } = e.data
+        return this.setState({ generationProgress: progress, generationDuration: timing, generationSkipped: skipped })
       }
       ReactGA.timing({
         category: "Build Generation",
@@ -202,7 +204,7 @@ export default class BuildDisplay extends React.Component {
   }
 
   BuildGeneratorEditorCard = ({ statsDisplayKeys, initialStats }) => {
-    let { setFilters, statFilters = {}, characterKey, artifactsAssumeFull, artifactConditionals, useLockedArts, generatingBuilds, generationProgress, generationDuration, optimizationTarget, ascending } = this.state
+    let { setFilters, statFilters = {}, characterKey, artifactsAssumeFull, artifactConditionals, useLockedArts, generatingBuilds, generationProgress, generationSkipped, generationDuration, optimizationTarget, ascending } = this.state
     let characterName = Character.getName(characterKey, "Character Name")
     let artsAccounted = setFilters.reduce((accu, cur) => cur.key ? accu + cur.num : accu, 0)
     //these variables are used for build generator.
@@ -210,19 +212,23 @@ export default class BuildDisplay extends React.Component {
     this.totBuildNumber = calculateTotalBuildNumber(this.split, setFilters)
     let { totBuildNumber } = this
     let totalBuildNumberString = totBuildNumber?.toLocaleString() ?? totBuildNumber
+    let totalUnskipped = totBuildNumber - generationSkipped
     let generationProgressString = generationProgress?.toLocaleString() ?? generationProgress
+    let generationSkippedString = generationSkipped?.toLocaleString() ?? generationSkipped
+    let totalUnskippedString = totalUnskipped?.toLocaleString() ?? totalUnskipped
     let buildAlert = null
+    const generationSkippedText = Boolean(generationSkipped) && <span>(<b>{generationSkippedString}</b> skipped)</span>
     if (generatingBuilds) {
-      let progPercent = generationProgress * 100 / totBuildNumber
+      let progPercent = generationProgress * 100 / (totalUnskipped)
       buildAlert = <Alert variant="success">
-        <span>Generating and testing <b>{generationProgressString}/{totalBuildNumberString}</b> Build configurations against the criteria for <b>{characterName}</b></span>
-        <h6>Time elapsed: {timeStringMs(generationDuration)}</h6>
+        <span>Generating and testing <b className="text-monospace">{generationProgressString}/{totalUnskippedString}</b> build configurations against the criteria for <b>{characterName}</b>. {generationSkippedText}</span><br />
+        <h6>Time elapsed: <strong className="text-monospace">{timeStringMs(generationDuration)}</strong></h6>
         <ProgressBar now={progPercent} label={`${progPercent.toFixed(1)}%`} />
       </Alert>
     } else if (!generatingBuilds && generationProgress) {//done
       buildAlert = <Alert variant="success">
-        <span>Generated and tested <b>{totalBuildNumberString}</b> Build configurations against the criteria for <b>{characterName}</b></span>
-        <h6>Time elapsed: {timeStringMs(generationDuration)}</h6>
+        <span>Generated and tested <b className="text-monospace">{totalUnskippedString}</b> Build configurations against the criteria for <b>{characterName}</b>. {generationSkippedText}</span>
+        <h6>Total duration: <strong className="text-monospace">{timeStringMs(generationDuration)}</strong></h6>
         <ProgressBar now={100} variant="success" label="100%" />
       </Alert>
     } else {
@@ -380,6 +386,11 @@ export default class BuildDisplay extends React.Component {
                 variant={(characterKey && totBuildNumber <= warningBuildNumber) ? "success" : "warning"}
                 onClick={this.generateBuilds}
               ><span>Generate Builds</span></Button>
+              {totBuildNumber > warningBuildNumber && <OverlayTrigger
+                overlay={<Tooltip>Dramatically speeds up build time, but only generates one result. Does not work with Final Stat Filters.</Tooltip>}
+              >
+                <Button variant="success" disabled={Object.keys(statFilters).length} onClick={() => this.generateBuilds(true)}><strong>TURBO</strong></Button>
+              </OverlayTrigger>}
               <Button
                 className="h-100"
                 disabled={!generatingBuilds}
@@ -388,7 +399,7 @@ export default class BuildDisplay extends React.Component {
                   if (this.worker) {
                     this.worker.terminate()
                     delete this.worker
-                    this.setState({ generatingBuilds: false, builds: [], generationDuration: 0, generationProgress: 0 })
+                    this.setState({ generatingBuilds: false, builds: [], generationDuration: 0, generationProgress: 0, generationSkipped: 0 })
                   }
                 }}
               ><span>Cancel</span></Button>

@@ -1,6 +1,66 @@
 import ElementalData from "../Data/ElementalData"
 
 /**
+ * Remove artifacts that can never be used in optimized builds
+ * @param {artifact[]} artifacts - List of artifacts of the same slot
+ * @param {Object.<setKey, Object.<number, Object.<statKey, statValue>>>} artifactSetEffects - The list of the set effects
+ * @param {Set.<statKey>} significantStats - A set of stats that pruning needs to take into consideration
+ * @param {bool} ascending - Whether the sorting is ascending or descending
+ * @param {Set.<setKey>} alwaysAccepted - The list of artifact sets that are always included
+ */
+export function pruneArtifacts(artifacts, artifactSetEffects, significantStats, ascending, alwaysAccepted = new Set()) {
+  const tmp = artifacts.map(artifact => {
+    let potential = {}
+
+    if (significantStats.has(artifact.mainStatKey))
+      potential[artifact.mainStatKey] = artifact.mainStatVal
+    for (const {key, value} of artifact.substats)
+      if (significantStats.has(key))
+        potential[key] = (potential[key] ?? 0) + value
+
+    const min = { ...potential }
+
+    for (const effects of Object.values(artifactSetEffects[artifact.setKey] ?? {})) {
+      for (const [key, value] of Object.entries(effects))
+        if (significantStats.has(key))
+          potential[key] = (potential[key] ?? 0) + value
+    }
+
+    if (ascending) {
+      for (const key in min)
+        min[key] = -min[key]
+      for (const key in potential)
+        potential[key] = -potential[key]
+      return {artifact, min: potential, max: min}
+    }
+    return { artifact, min, max: potential }
+  })
+
+  return tmp.filter(({artifact: candidate, max: candidateMax}) =>
+    // Keep if no `other` is better than `candidate`
+    alwaysAccepted.has(candidate.setKey) || tmp.every(({artifact: other, min: otherMin}) => {
+      // return true if `candidate` is better than or incomparable to `other`
+      if (candidate.id === other.id) return true
+
+      let equal = true
+      for (const [key, candidateValue] of Object.entries(candidateMax)) {
+        const otherValue = otherMin[key] ?? 0
+        if (candidateValue > otherValue)
+          return true
+        if (candidateValue !== otherValue)
+          equal = false
+      }
+      for (const key in otherMin) {
+        if (!(key in candidateMax))
+          equal = false
+      }
+
+      return equal
+    })
+  ).map(tmp => tmp.artifact)
+}
+
+/**
  * Generate all set of artifacts-by-slots based on the filters
  * @param {Object.<slotKey, artifact[]>} artifactsBySlot - list of artifacts, separated by slots
  * @param {Object.<setKey, number>} setFilters - minimum number of artifacts in each set
