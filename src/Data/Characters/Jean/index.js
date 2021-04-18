@@ -15,7 +15,35 @@ import passive3 from './Talent_Guiding_Breeze.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-
+const conditionals = {
+  constellation2: {
+    canShow: stats => stats.constellation >= 2,
+    name: "Jean pick up Elemental Orb/Particle",
+    stats: {//TODO PARTY buff
+      moveSPD_: 15,
+      atkSPD_: 15
+    },
+    fields: [{
+      text: "Duration",
+      value: "15s"
+    }]
+  },
+  constellation4: {
+    name: "Opponents within the field created by Dandelion Breeze",
+    canShow: stats => stats.constellation >= 4,
+    stats: {
+      anemo_enemyRes_: -40,
+    },
+  },
+  constellation6: {
+    name: "WIthin field created by Dandelion Breeze",
+    canShow: stats => stats.constellation >= 6,
+    fields: [{
+      text: "Incoming DMG Decrease",
+      value: "35%" //TODO: incoming dmg stat,
+    }]
+  }
+}
 const char = {
   name: "Jean",
   cardImg: card,
@@ -29,6 +57,7 @@ const char = {
   baseStat: data.baseStat,
   specializeStat: data.specializeStat,
   formula,
+  conditionals,
   talent: {
     auto: {
       name: "Favonius Bladework",
@@ -185,21 +214,7 @@ const char = {
       img: c2,
       document: [{
         text: <span>When Jean picks up an Elemental Orb/Particle, all party members have their Movement SPD and ATK SPD increased by 15% for 15s.</span>,
-        conditional: stats => stats.constellation >= 2 && {
-          type: "character",
-          conditionalKey: "PeoplesAegis",
-          condition: "People's Aegis",
-          sourceKey: "jean",
-          maxStack: 1,
-          stats: {
-            moveSPD_: 15,
-            atkSPD_: 15
-          },
-          fields: [{
-            text: "Duration",
-            value: "15s"
-          }]
-        }
+        conditional: conditionals.constellation2
       }],
     },
     constellation3: {
@@ -212,17 +227,8 @@ const char = {
       name: "Lands of Dandelion",
       img: c4,
       document: [{
-        text: <span>Within the Field created by <b>Dandelion Breeze</b>, all opponents have their Anemo RES decreased by 40%</span>,
-        conditional: stats => stats.constellation >= 4 && {
-          type: "character",
-          conditionalKey: "LandsOfDandelion",
-          condition: "Lands of Dandelion",
-          sourceKey: "jean",
-          maxStack: 1,
-          stats: {
-            anemo_enemyRes_: -40,
-          },
-        }
+        text: <span>Within the Field created by <b>Dandelion Breeze</b>, all opponents have their <span className="text-anemo">Anemo RES</span> decreased by 40%</span>,
+        conditional: conditionals.constellation4
       }],
     },
     constellation5: {
@@ -236,10 +242,7 @@ const char = {
       img: c6,
       document: [{
         text: <span>Incoming DMG is decreased by 35% within the Field created by <b>Dandelion Breeze</b>. Upon leaving the Dandelion Field, this effect lasts for 3 attacks or 10s.</span>,
-        fields: [stats => stats.constellation >= 6 && {
-          text: "Incoming DMG Decrease",
-          value: "35%" //TODO: incoming dmg stat,
-        }]
+        conditional: conditionals.constellation6
       }],
     },
   },

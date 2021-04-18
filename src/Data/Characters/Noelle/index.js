@@ -16,7 +16,20 @@ import DisplayPercent from '../../../Components/DisplayPercent'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-
+const conditionals = {
+  sweepingTime: {
+    name: "Sweeping Time",
+    maxStack: 1,
+    stats: stats => ({
+      modifiers: { finalATK: { finalDEF: (data.burst.bonus[stats.tlvl.burst] + (stats.constellation >= 6 ? 50 : 0)) / 100 } },
+    }),
+    fields: [{
+      text: "Larger attack AOE"
+    }, {
+      text: <span>DMG convert to <span className="text-geo">Geo DMG</span></span>
+    }]
+  }
+}
 const char = {
   name: "Noelle",
   cardImg: card,
@@ -30,6 +43,7 @@ const char = {
   baseStat: data.baseStat,
   specializeStat: data.specializeStat,
   formula,
+  conditionals,
   talent: {
     auto: {
       name: "Favonius Bladework - Maid",
@@ -159,16 +173,7 @@ const char = {
           text: "Energy Cost",
           value: 60,
         }],
-        conditional: stats => ({
-          type: "character",
-          conditionalKey: "Sweeping",
-          condition: "Sweeping Time",
-          sourceKey: "noelle",
-          maxStack: 1,
-          stats: {
-            modifiers: { finalATK: { finalDEF: (data.burst.bonus[stats.tlvl.burst] + (stats.constellation >= 6 ? 50 : 0)) / 100 } },
-          },
-        })
+        conditional: conditionals.sweepingTime
       }],
     },
     passive1: {
@@ -179,11 +184,13 @@ const char = {
           <p className="mb-2">When Noelle is in the party but not on the field, this ability triggers automatically when your active character's HP falls below 30%:</p>
           <p className="mb-0">Creates a shield for your active character that lasts for 20s and absorbs DMG equal to 400% of Noelle's DEF. This effect can only occur once every 60s.</p>
         </span>,
-        fields: [stats => stats.ascension >= 1 && {
+        fields: [{
           text: "Shield strength",
+          condition: stats => stats.ascension >= 1,
           formulaText: stats => <span>400% {Stat.printStat("finalDEF", stats)}</span>,
           formula: formula.passive1.shield,
-        }, stats => stats.ascension >= 1 && {
+        }, {
+          condition: stats => stats.ascension >= 1,
           text: "CD",
           value: "60s",
         }]
@@ -230,7 +237,7 @@ const char = {
       name: "To Be Cleaned",
       img: c4,
       document: [{
-        text: stats => <span>When <b>Breastplate</b> ends or shatters, it deals 400% of ATK as <span className="text-geo">Geo DMG</span> to surrounding enemies.</span>,
+        text: <span>When <b>Breastplate</b> ends or shatters, it deals 400% of ATK as <span className="text-geo">Geo DMG</span> to surrounding enemies.</span>,
         fields: [stats => stats.constellation >= 6 && {
           text: "Breastplate shatter damage",
           formulaText: stats => <span>400% {Stat.printStat(getTalentStatKey("elemental", stats), stats)}</span>,

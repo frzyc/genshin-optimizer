@@ -4,10 +4,10 @@ import { CharacterData, CharacterDataImport, characterStatBase, LevelsData } fro
 import ElementalData from "../Data/ElementalData";
 import { ElementToReactionKeys, PreprocessFormulas } from "../StatData";
 import { GetDependencies } from "../StatDependency";
-import ConditionalsUtil from "../Util/ConditionalsUtil";
 import { deepClone } from "../Util/Util";
 import Weapon from "../Weapon/Weapon";
 import CharacterDatabase from "../Database/CharacterDatabase";
+import Conditional from "../Conditional/Conditional";
 
 export default class Character {
   //do not instantiate.
@@ -106,31 +106,6 @@ export default class Character {
     })
     return statsArr
   }
-  static getTalentConditional = (stats, talentKey, conditionalKey, defVal = null) => {
-    const sections = this.getTalentDocumentSections(stats, talentKey)
-    let cond = null
-    for (const section of sections) {
-      let tempCond = section.conditional
-      if (typeof tempCond === "function")
-        tempCond = tempCond(stats)
-      if (tempCond?.conditionalKey === conditionalKey) {
-        cond = tempCond
-        break;
-      }
-    }
-    return cond || defVal
-  }
-  static getTalentConditionalStats = (conditional, conditionalNum, defVal = null) => {
-    if (!conditionalNum || !conditional) return defVal
-    let [stats = {}, stacks] = ConditionalsUtil.getConditionalProp(conditional, "stats", conditionalNum)
-    if (!stacks) return defVal
-    return Object.fromEntries(Object.entries(stats).map(([key, val]) => key === "modifiers" ? [key, val] : [key, val * stacks]))
-  }
-  static getTalentConditionalFields = (conditional, conditionalNum, defVal = []) => {
-    if (!conditionalNum || !conditional) return defVal
-    let fields = ConditionalsUtil.getConditionalProp(conditional, "fields", conditionalNum)[0]
-    return fields || defVal
-  }
 
   static isAutoElemental = (charKey, defVal = false) => this.getWeaponTypeKey(charKey) === "catalyst" || defVal
   static isAutoInfusable = (charKey, defVal = false) => this.getCDataObj(charKey)?.talent?.auto?.infusable || defVal
@@ -156,6 +131,9 @@ export default class Character {
 
   static hasTalentPage = (characterKey) => Boolean(Character.getCDataObj(characterKey)?.talent)
 
+  /**
+   * TODO:CONDITIONAL instead of crawling through the character sheet, just crawl through the character formula. Can add weapon formula?
+   */
   static getDisplayStatKeys = (stats, defVal = { basicKeys: [] }) => {
     if (!stats) return defVal
     const { characterKey } = stats
@@ -268,12 +246,12 @@ export default class Character {
     else if (character.equippedArtifacts)
       artifacts = Object.fromEntries(Object.entries(character.equippedArtifacts).map(([key, artid]) => [key, ArtifactDatabase.get(artid)]))
     else return {}//probably won't happen. just in case.
-    const initialStats = Character.calculateCharacterWithWeaponStats(character)
-    return this.calculateBuildWithObjs(character.artifactConditionals, initialStats, artifacts)
+    const initialStats = Character.createInitialStats(character)
+    return this.calcualteBuildwithArtifact(initialStats, artifacts)
   }
 
-  static calculateBuildWithObjs = (artifactConditionals = [], initialStats, artifacts) => {
-    let setToSlots = Artifact.setToSlots(artifacts)
+  static calcualteBuildwithArtifact = (initialStats, artifacts) => {
+    const setToSlots = Artifact.setToSlots(artifacts)
     let artifactSetEffectsStats = Artifact.getArtifactSetEffectsStats(setToSlots)
 
     let stats = deepClone(initialStats)
@@ -289,20 +267,18 @@ export default class Character {
     //setEffects
     artifactSetEffectsStats.forEach(stat => stats[stat.key] = (stats[stat.key] || 0) + stat.statVal)
     //setEffects conditionals
-    artifactConditionals.forEach(({ srcKey: setKey, srcKey2: setNumKey, conditionalNum }) => {
-      if (!setToSlots[setKey] || setToSlots[setKey].length < parseInt(setNumKey)) return
-      Object.entries(Artifact.getConditionalStats(setKey, setNumKey, conditionalNum))
-        .forEach(([statKey, val]) => stats[statKey] = (stats[statKey] || 0) + val)
+    Conditional.parseConditionalValues({ artifact: stats?.conditionalValues?.artifact }, ([, setKey], conditionalValue, conditional) => {
+      const { setNumKey } = conditional
+      if (parseInt(setNumKey) > (setToSlots?.[setKey]?.length ?? 0)) return
+      const { stats: condStats } = Conditional.resolve(conditional, stats, conditionalValue)
+      Object.entries(condStats).forEach(([statKey, val]) => stats[statKey] = (stats[statKey] || 0) + val)
     })
 
+    stats.equippedArtifacts = Object.fromEntries(Object.entries(artifacts).map(([key, val]) => [key, val?.id]))
+    stats.setToSlots = setToSlots
     let dependencies = GetDependencies(stats?.modifiers)
     PreprocessFormulas(dependencies, stats).formula(stats)
-    return {
-      artifactIds: Object.fromEntries(Object.entries(artifacts).map(([key, val]) => [key, val?.id])),
-      setToSlots,
-      finalStats: stats,
-      artifactConditionals
-    }
+    return stats
   }
   static mergeStats = (initialStats, stats) => stats && Object.entries(stats).forEach(([key, val]) => {
     if (key === "modifiers") {
@@ -315,10 +291,10 @@ export default class Character {
     } else initialStats[key] = (initialStats[key] ?? 0) + val
   })
 
-  static calculateCharacterWithWeaponStats = (character) => {
+  static createInitialStats = (character) => {
     if (!character) return {}
     character = deepClone(character)
-    const { characterKey, levelKey, hitMode, autoInfused, reactionMode, talentLevelKeys, constellation, talentConditionals = [] } = character
+    const { characterKey, levelKey, hitMode, autoInfused, reactionMode, talentLevelKeys, constellation, equippedArtifacts, conditionalValues = {}, weapon = { key: "" } } = character
     const ascension = Character.getAscension(levelKey)
 
     //generate the initalStats obj with data from Character & overrides
@@ -329,11 +305,13 @@ export default class Character {
     initialStats.hitMode = hitMode;
     initialStats.autoInfused = autoInfused && Character.getCDataObj(characterKey)?.talent?.auto?.infusable
     initialStats.reactionMode = reactionMode;
-    initialStats.talentConditionals = talentConditionals
+    initialStats.conditionalValues = conditionalValues
     initialStats.weaponType = this.getWeaponTypeKey(characterKey)
     initialStats.tlvl = talentLevelKeys;
     initialStats.constellation = constellation
     initialStats.ascension = ascension
+    initialStats.weapon = weapon
+    initialStats.equippedArtifacts = equippedArtifacts
     for (const key in initialStats.tlvl)
       initialStats.tlvl[key] += this.getTalentLevelBoost(character.characterKey, key, constellation);
 
@@ -364,15 +342,16 @@ export default class Character {
     const weaponSubKey = Weapon.getWeaponSubStatKey(character?.weapon?.key)
     if (weaponSubKey) this.mergeStats(initialStats, { [weaponSubKey]: Weapon.getWeaponSubStatValWithOverride(character?.weapon) })
     this.mergeStats(initialStats, Weapon.getWeaponBonusStat(character?.weapon?.key, character?.weapon?.refineIndex))
-    this.mergeStats(initialStats, Weapon.getWeaponConditionalStat(character?.weapon?.key, character?.weapon?.refineIndex, character?.weapon?.conditionalNum, {}));
 
-    //add stats from talentconditionals
-    talentConditionals.forEach(cond => {
-      const { srcKey: talentKey, srcKey2: conditionalKey, conditionalNum } = cond
-      const conditional = Character.getTalentConditional(initialStats, talentKey, conditionalKey)
-      this.mergeStats(initialStats, Character.getTalentConditionalStats(conditional, conditionalNum, {}))
+
+    //Handle conditionals, without artifact, since the pipeline for that comes later.
+    const { artifact: artifactCond, weapon: weaponCond, ...otherCond } = conditionalValues
+
+    //handle conditionals. only the conditional applicable to the equipped weapon is parsed.
+    Conditional.parseConditionalValues({ ...weapon.key && { weapon: { [weapon.key]: weaponCond?.[weapon.key] } }, ...otherCond }, (keys, conditionalValue, conditional) => {
+      const { stats: condStats } = Conditional.resolve(conditional, initialStats, conditionalValue)
+      this.mergeStats(initialStats, condStats)
     })
-
     return initialStats
   }
 }

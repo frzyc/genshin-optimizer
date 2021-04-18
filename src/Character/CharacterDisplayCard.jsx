@@ -44,6 +44,7 @@ const initialCharacter = (characterKey) => ({
   reactionMode: null,
   equippedArtifacts: {},
   artifactConditionals: [],
+  conditionalValues: {},
   baseStatOverrides: {},//overriding the baseStat
   weapon: {
     key: Object.keys(Weapon.getWeaponsOfType(Character.getWeaponTypeKey(characterKey)))[0] ?? "",
@@ -131,11 +132,10 @@ export default function CharacterDisplayCard({ characterKey: propCharacterKey, c
     }, [characterKey, characterDispatch, propSetCharacterKey])
 
   const newBuild = useMemo(() => {
+    if (!propNewBuild) return
     const newBuild = propNewBuild && deepClone(propNewBuild)
-    if (newBuild?.finalStats) {
-      newBuild.finalStats.hitMode = character.hitMode;
-      newBuild.finalStats.reactionMode = character.reactionMode;
-    }
+    newBuild.hitMode = character.hitMode;
+    newBuild.reactionMode = character.reactionMode;
     return newBuild
   }, [propNewBuild, character.hitMode, character.reactionMode])
 
@@ -147,7 +147,7 @@ export default function CharacterDisplayCard({ characterKey: propCharacterKey, c
     <Image src={Character.getThumb(characterKey)} className="thumb-small my-n1 ml-n2" roundedCircle />
     <h6 className="d-inline"> {Character.getName(characterKey)} </h6>
   </span> : <span>Select a Character</span>
-  const commonPaneProps = { character, newBuild, equippedBuild: !newBuild || compareAgainstEquipped ? equippedBuild : undefined, editable, characterDispatch, compareAgainstEquipped }
+  const commonPaneProps = { character, newBuild, equippedBuild: (!newBuild || compareAgainstEquipped) ? equippedBuild : undefined, editable, characterDispatch, compareAgainstEquipped }
   if (flexArts) commonPaneProps.artifacts = flexArts//from flex
   // main CharacterDisplayCard
   return (<Card bg="darkcontent" text="lightfont" >

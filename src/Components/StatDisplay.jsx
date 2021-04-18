@@ -27,12 +27,12 @@ export default function StatDisplay({ character, equippedBuild, newBuild, editab
     if (newBuild && equippedBuild) {//comparable
       //newbuild -> val
       //equippedbuild ->old
-      val = newBuild?.finalStats?.[statKey] ?? 0
-      oldVal = equippedBuild?.finalStats?.[statKey] ?? 0
+      val = newBuild?.[statKey] ?? 0
+      oldVal = equippedBuild?.[statKey] ?? 0
     } else {
       const build = newBuild ? newBuild : equippedBuild
       //build ->val
-      val = build?.finalStats?.[statKey] ?? 0
+      val = build?.[statKey] ?? 0
       //statvaluewith override -> old
       const invalid = "invalid"//can't use undeinfed as the defVal, since I want undefined for invalid numbers.
       oldVal = Character.getStatValueWithOverride(character, statKey, invalid)
@@ -50,13 +50,13 @@ export default function StatDisplay({ character, equippedBuild, newBuild, editab
   } else {//from character sheet
     const build = newBuild ? newBuild : equippedBuild
     const { talentKey, sectionIndex, fieldIndex } = statKey
-    const field = Character.getTalentField(build.finalStats, talentKey, sectionIndex, fieldIndex)
-    const labelVariant = Character.getTalentFieldValue(field, "variant", build.finalStats)
-    label = <span className={`text-${labelVariant}`}>{Character.getTalentFieldValue(field, "text", build.finalStats)}</span>
-    fixed = Character.getTalentFieldValue(field, "fixed", build.finalStats, 0)
-    val = Character.getTalentFieldValue(field, "formula", build.finalStats)?.[0]?.(build.finalStats)
+    const field = Character.getTalentField(build, talentKey, sectionIndex, fieldIndex)
+    const labelVariant = Character.getTalentFieldValue(field, "variant", build)
+    label = <span className={`text-${labelVariant}`}>{Character.getTalentFieldValue(field, "text", build)}</span>
+    fixed = Character.getTalentFieldValue(field, "fixed", build, 0)
+    val = Character.getTalentFieldValue(field, "formula", build)?.[0]?.(build)
     if (newBuild && equippedBuild) {//comparable
-      oldVal = Character.getTalentFieldValue(field, "formula", equippedBuild.finalStats)?.[0]?.(equippedBuild.finalStats)
+      oldVal = Character.getTalentFieldValue(field, "formula", equippedBuild)?.[0]?.(equippedBuild)
     }
   }
 

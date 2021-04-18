@@ -1,4 +1,4 @@
-import { getObjectKeysRecursive, objMultiplication } from "./Util"
+import { getObjectKeysRecursive, objMultiplication, layeredAssignment, objPathValue } from "./Util"
 
 describe('objMultiplication()', () => {
   test('should multiply', () => {
@@ -16,4 +16,19 @@ describe('getObjectKeysRecursive', () => {
   test('should handle string', () => {
     expect(getObjectKeysRecursive("test").sort()).toEqual(["test"].sort())
   })
+})
+
+test('layeredAssignment', () => {
+  const obj = {}
+  const keys = ["a", "b", "c", "d"]
+  const expected = { a: { b: { c: { d: "test" } } } }
+  expect(layeredAssignment(obj, keys, "test")).toEqual(expected)
+})
+
+test('objPathValue ', () => {
+  const obj = { a: { b: { c: "test" }, b1: {} } }
+  expect(objPathValue(obj, ["a", "b", "c"])).toBe("test")
+  expect(objPathValue(obj, ["a", "b", "c", "d"])).toBe(undefined)
+  expect(objPathValue(obj, ["a", "b1",])).toEqual({})
+  expect(objPathValue(obj, ["a", "b1", "c"])).toBe(undefined)
 })

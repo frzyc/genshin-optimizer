@@ -1,11 +1,11 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import CharacterDatabase from '../Database/CharacterDatabase';
 import SlotIcon from '../Components/SlotIcon';
-import { ArtifactMainSlotKeys, ArtifactMainStatsData, ArtifactData, ArtifactSlotsData, ArtifactStarsData, ArtifactSubStatsData, ArtifactDataImport, ArtifactSubstatsMinMax } from '../Data/ArtifactData';
-import Stat from '../Stat';
-import ConditionalsUtil from '../Util/ConditionalsUtil';
-import { clampPercent, closeEnoughFloat, closeEnoughInt, deepClone } from '../Util/Util';
+import Conditional from '../Conditional/Conditional';
+import { ArtifactData, ArtifactDataImport, ArtifactMainSlotKeys, ArtifactMainStatsData, ArtifactSlotsData, ArtifactStarsData, ArtifactSubStatsData, ArtifactSubstatsMinMax } from '../Data/ArtifactData';
 import ArtifactDatabase from '../Database/ArtifactDatabase';
+import CharacterDatabase from '../Database/CharacterDatabase';
+import Stat from '../Stat';
+import { clampPercent, closeEnoughFloat, closeEnoughInt, deepClone } from '../Util/Util';
 
 const maxStar = 5
 
@@ -46,11 +46,11 @@ export default class Artifact {
     return artifactSetEffect
   }
 
-  static getSetEffectText = (setKey, setNumKey, charFinalStats, defVal = "") => {
+  static getSetEffectText = (setKey, setNumKey, stats, defVal = "") => {
     let setEffectText = this.getSetEffectsObj(setKey)?.[setNumKey]?.text
     if (!setEffectText) return defVal
     if (typeof setEffectText === "function")
-      return setEffectText(charFinalStats)
+      return setEffectText(stats)
     else if (setEffectText)
       return setEffectText
     return defVal
@@ -225,6 +225,7 @@ export default class Artifact {
     return { currentEfficiency, maximumEfficiency }
   }
 
+  //start with {slotKey:art} end with {setKey:[slotKey]}
   static setToSlots = (artifacts) => {
     let setToSlots = {};
     Object.entries(artifacts).forEach(([key, art]) => {
@@ -235,17 +236,12 @@ export default class Artifact {
     return setToSlots
   };
 
-  static getConditionalStats = (setKey, setNumKey, conditionalNum, defVal = {}) => {
-    if (!conditionalNum) return defVal
-    let conditional = this.getSetEffectConditional(setKey, setNumKey)
-    if (!conditional) return defVal
-    let [stats, stacks] = ConditionalsUtil.getConditionalProp(conditional, "stats", conditionalNum)
-    if (!stacks) return defVal
-    return Object.fromEntries(Object.entries(stats).map(([key, val]) => [key, val * stacks]))
-  }
-
-  static getAllArtifactSetEffectsObj = (artifactConditionals = []) => {
+  /**
+   * TODO: Unit test 
+   */
+  static getAllArtifactSetEffectsObj = stats => {
     let ArtifactSetEffectsObj = {};
+    //accumulate the non-conditional stats
     Object.entries(ArtifactData).forEach(([setKey, setObj]) => {
       let setEffect = {}
       if (setObj.setEffects)
@@ -256,14 +252,13 @@ export default class Artifact {
       if (Object.keys(setEffect).length > 0)
         ArtifactSetEffectsObj[setKey] = setEffect;
     })
-    artifactConditionals.forEach(({ srcKey: setKey, srcKey2: setNumKey, conditionalNum }) => {
-      let condStats = this.getConditionalStats(setKey, setNumKey, conditionalNum)
-      if (Object.keys(condStats).length > 0) {
-        ArtifactSetEffectsObj[setKey] ?? (ArtifactSetEffectsObj[setKey] = {})
-        ArtifactSetEffectsObj[setKey][setNumKey] ?? (ArtifactSetEffectsObj[setKey][setNumKey] = {})
-        Object.entries(condStats).forEach(([statKey, value]) =>
-          ArtifactSetEffectsObj[setKey][setNumKey][statKey] = (ArtifactSetEffectsObj[setKey][setNumKey][statKey] || 0) + value)
-      }
+    Conditional.parseConditionalValues({ artifact: stats?.conditionalValues?.artifact }, ([, setKey], conditionalValue, conditional) => {
+      const { setNumKey } = conditional
+      const { stats: condStats } = Conditional.resolve(conditional, stats, conditionalValue)
+      ArtifactSetEffectsObj[setKey] ?? (ArtifactSetEffectsObj[setKey] = {})
+      ArtifactSetEffectsObj[setKey][setNumKey] ?? (ArtifactSetEffectsObj[setKey][setNumKey] = {})
+      Object.entries(condStats).forEach(([statKey, value]) =>
+        ArtifactSetEffectsObj[setKey][setNumKey][statKey] = (ArtifactSetEffectsObj[setKey][setNumKey][statKey] ?? 0) + value)
     })
     return ArtifactSetEffectsObj
   }

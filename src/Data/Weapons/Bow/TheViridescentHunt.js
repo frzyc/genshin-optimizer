@@ -10,7 +10,7 @@ const weapon = {
   img: TheViridescentHunt,
   rarity: 4,
   passiveName: "Verdant Wind",
-  passiveDescription: (refineIndex, charFinalStats, c) => <span>Upon hit, Normal and Aimed Shot Attacks have a 50% chance to generate a Cyclone, which will continuously attract surrounding enemies, dealing {refinementVals[refineIndex]}% of ATK{DisplayPercent(refinementVals[refineIndex], charFinalStats, getTalentStatKey("physical", charFinalStats))} as DMG to these enemies every 0.5s for 4s. This effect can only occur once every {refinementCdVals[refineIndex]}s.</span>,//$
+  passiveDescription: (refineIndex, charFinalStats) => <span>Upon hit, Normal and Aimed Shot Attacks have a 50% chance to generate a Cyclone, which will continuously attract surrounding enemies, dealing {refinementVals[refineIndex]}% of ATK{DisplayPercent(refinementVals[refineIndex], charFinalStats, getTalentStatKey("physical", charFinalStats))} as DMG to these enemies every 0.5s for 4s. This effect can only occur once every {refinementCdVals[refineIndex]}s.</span>,//$
   description: "A pure green hunting bow. This once belonged to a certain hunter whose home was the forest.",
   baseStats: {
     main: [42, 56, 74, 91, 109, 135, 152, 170, 187, 205, 231, 248, 266, 292, 309, 327, 353, 370, 388, 414, 431, 449, 475, 492, 510],

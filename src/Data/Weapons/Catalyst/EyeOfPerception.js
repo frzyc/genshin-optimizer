@@ -9,7 +9,7 @@ const weapon = {
   img: EyeOfPerception,
   rarity: 4,
   passiveName: "Echo",
-  passiveDescription: (refineIndex, charFinalStats, c) => <span>Normal and Charged Attacks have a 50% chance to fire a Bolt of Perception, dealing {refinementVals[refineIndex]}% ATK{DisplayPercent(refinementVals[refineIndex], charFinalStats, getTalentStatKey("physical", charFinalStats))} as DMG. This bolt can bounce between opponents a maximum of 4 times. This effect can occur once every {refinementCdVals[refineIndex]}s.</span>,
+  passiveDescription: (refineIndex, charFinalStats) => <span>Normal and Charged Attacks have a 50% chance to fire a Bolt of Perception, dealing {refinementVals[refineIndex]}% ATK{DisplayPercent(refinementVals[refineIndex], charFinalStats, getTalentStatKey("physical", charFinalStats))} as DMG. This bolt can bounce between opponents a maximum of 4 times. This effect can occur once every {refinementCdVals[refineIndex]}s.</span>,
   description: "A dim black glaze pearl that is said to have the power to read the purity of one's heart.",
   baseStats: {
     main: [41, 54, 69, 84, 99, 125, 140, 155, 169, 184, 210, 224, 238, 264, 278, 293, 319, 333, 347, 373, 387, 401, 427, 440, 454],

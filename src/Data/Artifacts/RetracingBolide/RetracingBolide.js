@@ -3,7 +3,18 @@ import plume from './Item_Summer_Night\'s_Finale.png'
 import sands from './Item_Summer_Night\'s_Moment.png'
 import goblet from './Item_Summer_Night\'s_Waterballoon.png'
 import circlet from './Item_Summer_Night\'s_Mask.png'
-let artifact = {
+import { Badge } from 'react-bootstrap'
+const conditionals = {
+  set4: {
+    name: <Badge variant="success">4-Set</Badge>,
+    maxStack: 1,
+    stats: {
+      normal_dmg_: 40,
+      charged_dmg_: 40
+    }
+  }
+}
+const artifact = {
   name: "Retracing Bolide", rarity: [4, 5],
   pieces: {
     flower: "Summer Night's Bloom",
@@ -19,6 +30,7 @@ let artifact = {
     goblet,
     circlet
   },
+  conditionals,
   setEffects: {
     2: {
       text: "Increases the effectiveness of shields by 35%",
@@ -26,15 +38,7 @@ let artifact = {
     },
     4: {
       text: "Gain an additional 40% Normal and Charged Attack DMG while under the protection of a shield.",
-      conditional: {
-        type: "artifact",
-        sourceKey: "RetracingBolide_4",
-        maxStack: 1,
-        stats: {
-          normal_dmg_: 40,
-          charged_dmg_: 40
-        }
-      }
+      conditional: conditionals.set4
     }
   }
 }

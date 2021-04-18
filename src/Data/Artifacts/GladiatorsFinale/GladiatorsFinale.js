@@ -3,6 +3,15 @@ import plume from './Item_Gladiator\'s_Destiny.png'
 import sands from './Item_Gladiator\'s_Longing.png'
 import goblet from './Item_Gladiator\'s_Intoxication.png'
 import circlet from './Item_Gladiator\'s_Triumphus.png'
+import { Badge } from 'react-bootstrap'
+const conditionals = {
+  set4: {
+    name: <Badge variant="success">4-Set</Badge>,
+    stats: {
+      normal_dmg_: 35
+    }
+  }
+}
 let artifact = {
   name: "Gladiator's Finale", rarity: [4, 5],
   pieces: {
@@ -19,6 +28,7 @@ let artifact = {
     goblet,
     circlet
   },
+  conditionals,
   setEffects: {
     2: {
       text: "ATK +18%",
@@ -26,14 +36,7 @@ let artifact = {
     },
     4: {
       text: "If the wielder of this artifact set uses a Sword, Claymore or Polearm, increases their Normal Attack DMG by 35%.",
-      conditional: {
-        type: "artifact",
-        sourceKey: "GladiatorsFinale_4",
-        maxStack: 1,
-        stats: {
-          normal_dmg_: 35
-        }
-      }
+      conditional: conditionals.set4
     }
   }
 }

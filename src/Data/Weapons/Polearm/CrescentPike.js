@@ -8,7 +8,7 @@ const weapon = {
   img: CrescentPike,
   rarity: 4,
   passiveName: "Infusion Needle",
-  passiveDescription: (refineIndex, charFinalStats, c) => <span>After picking up an Elemental Orb/Particle, Normal and Charged Attacks deal an additional {refinementVals[refineIndex]}% ATK DMG{DisplayPercent(refinementVals[refineIndex], charFinalStats, getTalentStatKey("physical", charFinalStats))} for 5s.</span>,
+  passiveDescription: (refineIndex, charFinalStats) => <span>After picking up an Elemental Orb/Particle, Normal and Charged Attacks deal an additional {refinementVals[refineIndex]}% ATK DMG{DisplayPercent(refinementVals[refineIndex], charFinalStats, getTalentStatKey("physical", charFinalStats))} for 5s.</span>,
   description: "An exotic weapon with an extremely long blade on the top and a crescent blade at the bottom. It found its way into Liyue through foreign traders. With practice, it can deal heavy damage.",
   baseStats: {
     main: [44, 59, 79, 99, 119, 144, 165, 185, 205, 226, 252, 273, 293, 319, 340, 361, 387, 408, 429, 455, 476, 497, 523, 544, 565],

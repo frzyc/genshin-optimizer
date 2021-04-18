@@ -1,13 +1,13 @@
 import { faEdit, faGavel, faQuoteLeft, faSave, faUndo } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import React, { useState } from "react"
-import { Button, Card, Col, Dropdown, DropdownButton, Image, InputGroup, OverlayTrigger, Row, Tooltip } from "react-bootstrap"
+import { Button, Card, Col, Dropdown, DropdownButton, Image, InputGroup, ListGroup, OverlayTrigger, Row, Tooltip } from "react-bootstrap"
 import Assets from "../../Assets/Assets"
-import ConditionalSelector from "../../Components/ConditionalSelector"
 import CustomFormControl from "../../Components/CustomFormControl"
 import { Stars } from "../../Components/StarDisplay"
 import StatDisplay from "../../Components/StatDisplay"
 import { StatIconEle } from "../../Components/StatIcon"
+import Conditional from "../../Conditional/Conditional"
 import { CharacterSpecializedStatKey } from "../../Data/CharacterData"
 import { LevelNameData } from "../../Data/WeaponData"
 import Stat from "../../Stat"
@@ -15,6 +15,9 @@ import { clamp } from "../../Util/Util"
 import Weapon from "../../Weapon/Weapon"
 import Character from "../Character"
 import StatInput from "../StatInput"
+import ConditionalDisplay from "./Components/ConditionalDisplay"
+import statsToFields from "./statsToFields"
+import FieldDisplay from "./Components/FieldDisplay"
 export default function CharacterOverviewPane({ editable, character, character: { characterKey, constellation }, characterDispatch, equippedBuild, newBuild }) {
   const [editLevel, setEditLevel] = useState(false)
   const elementKey = Character.getElementalKey(characterKey)
@@ -90,34 +93,35 @@ export default function CharacterOverviewPane({ editable, character, character: 
     </Col>
   </Row >
 }
-function StatItem({ statKey, val }) {
-  if (!statKey) return null
-  return <Col xs={12} lg={6} className="px-3">
-    <span><b>{StatIconEle(statKey)} {Stat.getStatName(statKey)}</b></span>
-    <span className={`float-right text-right text-${Stat.getStatVariant(statKey)}`} >{val?.toFixed?.(Stat.fixedUnit(statKey)) || val}{Stat.getStatUnit(statKey)}</span>
-  </Col>
-}
-function WeaponStatsCard({ title, stats = {}, finalStats = {} }) {
-  if (Object.keys(stats ?? {}).length === 0) return null
+
+function WeaponStatsCard({ title, statsVals = {}, stats = {} }) {
+  if (Object.keys(statsVals ?? {}).length === 0) return null
+  const fields = statsToFields(statsVals, stats)
   return <Card bg="darkcontent" text="lightfont" className="mb-2">
     <Card.Header className="py-2 px-3">{title}</Card.Header>
-    <Card.Body className="py-2 px-0"><Row>
-      {Object.entries(stats).map(([key, val]) => key === "modifiers" ? <React.Fragment key={key} >{Object.entries(val ?? {}).map(([mkey, modifier]) =>
-        <StatItem key={mkey} statKey={mkey} val={Object.entries(modifier ?? {}).reduce((accu, [mkey, multiplier]) => accu + finalStats[mkey] * multiplier, 0)} />)}</React.Fragment>
-        : <StatItem key={key} statKey={key} val={val} />)}
-    </Row></Card.Body>
+    <ListGroup className="text-white" variant="flush">
+      {fields.map((field, i) => <FieldDisplay key={i} index={i} {...{ field, equippedBuild: stats, className: "px-3 py-2" }} />)}
+    </ListGroup>
   </Card>
 }
+
 function WeaponStatsEditorCard({ editable, character, character: { characterKey, weapon = {} }, characterDispatch, equippedBuild, newBuild }) {
-  let [editing, SetEditing] = useState(false)
-  let [showDescription, setShowDescription] = useState(false)
+  const [editing, SetEditing] = useState(false)
+  const [showDescription, setShowDescription] = useState(false)
 
   //choose which one to display stats for
   const build = newBuild ? newBuild : equippedBuild
 
   const setStateWeapon = (key, value) => {
-    //reset the conditionalNum when we switch weapons
-    if (key === "key") character.weapon.conditionalNum = 0
+    if (key === "key") {
+      if (value === weapon.key) return
+      else {
+        //reset the conditionalNum when we switch weapons
+        const talentConditionals = character
+        delete talentConditionals.weapon
+        characterDispatch({ talentConditionals })
+      }
+    }
     character.weapon[key] = value
     characterDispatch({ weapon: character.weapon })
   }
@@ -126,17 +130,8 @@ function WeaponStatsEditorCard({ editable, character, character: { characterKey,
   const weaponDisplayMainVal = weapon.overrideMainVal || Weapon.getWeaponMainStatVal(weapon.key, weapon.levelKey)
   const weaponDisplaySubVal = weapon.overrideSubVal || Weapon.getWeaponSubStatVal(weapon.key, weapon.levelKey)
   const weaponPassiveName = Weapon.getWeaponPassiveName(weapon.key)
-  const weaponBonusStats = Weapon.getWeaponBonusStat(weapon.key, weapon.refineIndex, undefined)
-  const conditionalStats = Weapon.getWeaponConditionalStat(weapon.key, weapon.refineIndex, weapon.conditionalNum, undefined)
-  const conditional = Weapon.getWeaponConditional(weapon.key)
-  const conditionalNum = weapon.conditionalNum;
-  const conditionalEle = <ConditionalSelector
-    conditional={conditional}
-    conditionalNum={conditionalNum}
-    setConditional={(cnum) => setStateWeapon("conditionalNum", cnum)}
-    defEle={<span>{weaponPassiveName}</span>}
-  />
-
+  const weaponBonusStats = Weapon.getWeaponBonusStat(weapon.key, build, {})
+  const conditionals = Conditional.weapon[weapon.key]
   return <Card bg="lightcontent" text="lightfont" className="mb-2">
     <Card.Header>
       <Row>
@@ -155,9 +150,9 @@ function WeaponStatsEditorCard({ editable, character, character: { characterKey,
         </Col> : null}
       </Row>
     </Card.Header>
-    <Card.Body>
-      <Row className="mb-2">
-        <Col xs={12} md={3}>
+    <Card.Body >
+      <Row className="mb-n2">
+        <Col xs={12} md={3} lg={4}>
           <Image src={Weapon.getWeaponImg(weapon.key)} className={`w-100 h-auto grad-${Weapon.getWeaponRarity(weapon.key)}star`} thumbnail />
         </Col>
         {editing ? <Col>
@@ -221,21 +216,17 @@ function WeaponStatsEditorCard({ editable, character, character: { characterKey,
           </Row>
         </Col> :
           <Col>
-            <Row className="mb-2"><Col>
-              <h5 className="mb-0">{Weapon.getWeaponName(weapon.key)} {Weapon.getLevelName(weapon.levelKey)} {weaponPassiveName && `(Refinement ${weapon.refineIndex + 1})`}</h5>
-              <small ><Stars stars={Weapon.getWeaponRarity(weapon.key)} /></small>
-            </Col></Row>
-            <Row>
-              <Col>{conditionalEle}</Col>
-            </Row>
-
-            <p>{weaponPassiveName && Weapon.getWeaponPassiveDescription(weapon.key, weapon.refineIndex, build?.finalStats, character)}</p>
-            <WeaponStatsCard title={"Main Stats"} stats={{ atk: weaponDisplayMainVal, [subStatKey]: weaponDisplaySubVal }} finalStats={build?.finalStats} />
-            <WeaponStatsCard title={"Bonus Stats"} stats={weaponBonusStats} finalStats={build?.finalStats} />
-            <WeaponStatsCard title={"Conditional Stats"} stats={conditionalStats} finalStats={build?.finalStats} />
+            <h5 className="mb-0">{Weapon.getWeaponName(weapon.key)} {Weapon.getLevelName(weapon.levelKey)} {weaponPassiveName && `(Refinement ${weapon.refineIndex + 1})`}</h5>
+            <p><Stars stars={Weapon.getWeaponRarity(weapon.key)} /></p>
+            <h6>{weaponPassiveName}</h6>
+            <p>{weaponPassiveName && Weapon.getWeaponPassiveDescription(weapon.key, weapon.refineIndex, build)}</p>
+            <WeaponStatsCard title={"Main Stats"} statsVals={{ atk: weaponDisplayMainVal, [subStatKey]: weaponDisplaySubVal }} stats={build} />
+            <WeaponStatsCard title={"Bonus Stats"} statsVals={weaponBonusStats} stats={build} />
+            {Boolean(conditionals) && Object.entries(conditionals).map(([stateKey, conditional]) =>
+              <ConditionalDisplay key={stateKey} {...{ conditional, equippedBuild, newBuild, characterDispatch, editable }} fieldClassName="py-2 px-3" />)}
           </Col>}
       </Row>
-      {showDescription && <Row><Col><small>{Weapon.getWeaponDescription(weapon.key)}</small></Col></Row>}
+      {showDescription && <small>{Weapon.getWeaponDescription(weapon.key)}</small>}
     </Card.Body>
   </Card>
 }

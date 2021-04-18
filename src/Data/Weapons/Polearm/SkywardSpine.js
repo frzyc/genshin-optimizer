@@ -9,7 +9,7 @@ const weapon = {
   img: SkywardSpine,
   rarity: 5,
   passiveName: "Black Wing",
-  passiveDescription: (refineIndex, charFinalStats, c) => <span>Increases CRIT Rate by {refinementCritVals[refineIndex]}% and increases Normal ATK SPD by 12%. Additionally, Normal and Charged Attacks hits on opponents have a 50% chance to trigger a vacuum blade that deals {refinementRawDmgVals[refineIndex]}% of ATK{DisplayPercent(refinementRawDmgVals[refineIndex], charFinalStats, getTalentStatKey("physical", charFinalStats))} as DMG in a small AoE. This effect can occur no more than once every 2s.</span>,
+  passiveDescription: (refineIndex, charFinalStats) => <span>Increases CRIT Rate by {refinementCritVals[refineIndex]}% and increases Normal ATK SPD by 12%. Additionally, Normal and Charged Attacks hits on opponents have a 50% chance to trigger a vacuum blade that deals {refinementRawDmgVals[refineIndex]}% of ATK{DisplayPercent(refinementRawDmgVals[refineIndex], charFinalStats, getTalentStatKey("physical", charFinalStats))} as DMG in a small AoE. This effect can occur no more than once every 2s.</span>,
   description: "A polearm that symbolizes Dvalin's firm resolve. The upright shaft of this weapon points towards the heavens, clad in the might of sky and wind.",
   baseStats: {
     main: [48, 65, 87, 110, 133, 164, 188, 212, 236, 261, 292, 316, 341, 373, 398, 423, 455, 480, 506, 537, 563, 590, 621, 648, 674],

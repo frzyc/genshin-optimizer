@@ -13,7 +13,6 @@ import burst from './Talent_Celestial_Shower.png'
 import passive1 from './Talent_Undivided_Heart.png'
 import passive2 from './Talent_Harmony_between_Heaven_and_Earth.png'
 import passive3 from './Talent_Preserved_for_the_Hunt.png'
-import ConditionalsUtil from '../../../Util/ConditionalsUtil'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
@@ -68,8 +67,8 @@ const char = {
           text: `Frostflake Arrow DMG`,
           formulaText: stats => {
             if (stats.hitMode === "avgHit") {
-              let { talentConditionals = [] } = stats
-              let conditionalNum = ConditionalsUtil.getConditionalNum(talentConditionals, { srcKey: "auto", srcKey2: "UndividedHeart" })
+              //TODO: new conditional system
+              const [conditionalNum] = stats.conditionalValue?.character?.ganyu?.UndividedHeart_CONDITIONALKEY ?? []
               if (conditionalNum) {
                 const statKey = `cryo${stats.reactionMode === "cryo_melt" ? "_melt" : ""}_charged_hit`
                 return <span>{data.charged.frostflake[stats.tlvl.auto]}% {Stat.printStat(statKey, stats)} * (1 + Min( 100% , 20% + {Stat.printStat("critRate_", stats)} + {Stat.printStat("charged_critRate_", stats)} ) * {Stat.printStat("critDMG_", stats)} )</span>
@@ -83,8 +82,8 @@ const char = {
           text: `Frostflake Arrow Bloom DMG`,
           formulaText: stats => {
             if (stats.hitMode === "avgHit") {
-              let { talentConditionals = [] } = stats
-              let conditionalNum = ConditionalsUtil.getConditionalNum(talentConditionals, { srcKey: "auto", srcKey2: "UndividedHeart" })
+              //TODO: new conditional system
+              const [conditionalNum] = stats.conditionalValue?.character?.ganyu?.UndividedHeart_CONDITIONALKEY ?? []
               if (conditionalNum) {
                 const statKey = `cryo${stats.reactionMode === "cryo_melt" ? "_melt" : ""}_charged_hit`
                 return <span>{data.charged.frostflakeBloom[stats.tlvl.auto]}% {Stat.printStat(statKey, stats)} * (1 + Min( 100% , 20% + {Stat.printStat("critRate_", stats)} + {Stat.printStat("charged_critRate_", stats)} ) * {Stat.printStat("critDMG_", stats)} )</span>
