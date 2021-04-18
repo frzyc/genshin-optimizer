@@ -30,6 +30,7 @@ import xiangling from './Xiangling'
 import xingqiu from './Xingqiu'
 import xinyan from './Xinyan'
 import zhongli from './Zhongli'
+import { fieldProcessing } from '../../Util/FieldUtil'
 const characters = {
   albedo,
   amber,
@@ -65,9 +66,8 @@ const characters = {
   zhongli
 };
 
-//attach the field prop to the formulas for reverse search
 Object.values(characters).forEach(char =>
   Object.values(char.talent ?? {}).forEach(talent => //TODO: escape for character with imcomplete characer sheet
     talent.document.forEach(section =>
-      section.fields?.forEach?.(field => field.formula && (field.formula.field = field)))))
+      section.fields?.forEach?.(fieldProcessing))))
 export default characters

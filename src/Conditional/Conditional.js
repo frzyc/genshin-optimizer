@@ -1,6 +1,7 @@
 import { ArtifactData, ArtifactDataImport } from "../Data/ArtifactData"
 import { CharacterDataImport, CharacterData } from "../Data/CharacterData"
 import { WeaponData, WeaponDataImport } from "../Data/WeaponData";
+import { fieldProcessing } from "../Util/FieldUtil";
 import { deepClone, layeredAssignment, objMultiplication, objPathValue } from "../Util/Util"
 
 export default class Conditional {
@@ -23,37 +24,39 @@ export default class Conditional {
     return defVal
   }
   static get = (keys, defVal = {}) => objPathValue(this, keys) ?? defVal
-  //where callback is a function ([key1,key2,key3], conditionalValue, conditional) //TODO: make this work with any number of layers
+
+  //where callback is a function (conditional, conditionalValue, keys)
   static parseConditionalValues = (conditionalValues, callback) => {
-    if (typeof conditionalValues !== "object") return
-    Object.entries(conditionalValues).forEach(([key1, key1Obj]) => {
-      if (typeof key1Obj !== "object") return
-      Object.entries(key1Obj).forEach(([key2, key2Obj]) => {
-        if (typeof key2Obj !== "object") return
-        Object.entries(key2Obj).forEach(([key3, conditionalValue]) => {
-          const keys = [key1, key2, key3]
-          const conditional = this.get(keys, null)
-          conditionalValue && conditional && callback([key1, key2, key3], conditionalValue, conditionalValue)
-        })
-      })
+    function crawlConditionalValues(obj, keys, cb) {
+      if (Array.isArray(obj)) cb(obj, keys)
+      else obj && typeof obj === "object" && Object.entries(obj).forEach(([key, val]) => crawlConditionalValues(val, [...keys, key], cb))
+    }
+    crawlConditionalValues(conditionalValues, [], (conditionalValue, keys) => {
+      const conditional = this.get(keys, null)
+      conditionalValue && conditional && callback(conditional, conditionalValue, keys)
     })
   }
 }
 
-//general parsing of conditionals, and adding it to Conditional //TODO: make this work with any number of layers
-function addConditional(source, key1) {
-  Object.entries(source).forEach(([key2, key2Obj]) => {
-    Object.entries(key2Obj.conditionals ?? {}).forEach(([key3, conditional]) => {
-      const keys = [key1, key2, key3]
-      conditional.keys = keys
-      if (conditional.states) {//complex format
-        Object.entries(conditional.states).forEach(([stateKey, state]) => {
-          state.maxStack = state.maxStack ?? 1 //maxStack of 1 by default
-        })
-      } else //simple format
-        conditional.maxStack = conditional.maxStack ?? 1 //maxStack of 1 by default
-      layeredAssignment(Conditional, keys, conditional)
-    })
+//general parsing of conditionals, and adding it to Conditional 
+function addConditional(source, key) {
+  function findConditionals(obj, keys, callback) {
+    if (keys.length > 10) return
+    if (obj?.conditionals) Object.entries(obj.conditionals).forEach(([condKey, conditional]) => callback(conditional, [...keys, condKey]))
+    else obj && typeof obj === "object" && Object.entries(obj).forEach(([key, val]) => findConditionals(val, [...keys, key], callback))
+  }
+  findConditionals(source, [key], (conditional, keys) => {
+    conditional.keys = keys
+    if (conditional.states) {//complex format
+      Object.values(conditional.states).forEach(state => {
+        state.maxStack = state.maxStack ?? 1 //maxStack of 1 by default
+        state.fields?.forEach?.(fieldProcessing)
+      })
+    } else { //simple format
+      conditional.maxStack = conditional.maxStack ?? 1 //maxStack of 1 by default
+      conditional.fields?.forEach?.(fieldProcessing)
+    }
+    layeredAssignment(Conditional, keys, conditional)
   })
 }
 

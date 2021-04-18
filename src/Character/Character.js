@@ -152,7 +152,7 @@ export default class Character {
       const charFormulas = {}
       Object.entries(Formula.character[characterKey]).forEach(([talentKey, formulas]) => {
         Object.values(formulas).forEach(formula => {
-          if (formula.field?.condition && !formula.field.condition(stats)) return
+          if (!formula.field.condition(stats)) return
           if (talentKey === "normal" || talentKey === "charged" || talentKey === "plunging") talentKey = "auto"
           if (!charFormulas[talentKey]) charFormulas[talentKey] = []
           charFormulas[talentKey].push(formula.keys)
@@ -265,7 +265,7 @@ export default class Character {
     //setEffects
     artifactSetEffectsStats.forEach(stat => stats[stat.key] = (stats[stat.key] || 0) + stat.statVal)
     //setEffects conditionals
-    Conditional.parseConditionalValues({ artifact: stats?.conditionalValues?.artifact }, ([, setKey], conditionalValue, conditional) => {
+    Conditional.parseConditionalValues({ artifact: stats?.conditionalValues?.artifact }, (conditional, conditionalValue, [, setKey]) => {
       const { setNumKey } = conditional
       if (parseInt(setNumKey) > (setToSlots?.[setKey]?.length ?? 0)) return
       const { stats: condStats } = Conditional.resolve(conditional, stats, conditionalValue)
@@ -346,7 +346,7 @@ export default class Character {
     const { artifact: artifactCond, weapon: weaponCond, ...otherCond } = conditionalValues
 
     //handle conditionals. only the conditional applicable to the equipped weapon is parsed.
-    Conditional.parseConditionalValues({ ...weapon.key && { weapon: { [weapon.key]: weaponCond?.[weapon.key] } }, ...otherCond }, (keys, conditionalValue, conditional) => {
+    Conditional.parseConditionalValues({ ...weapon.key && { weapon: { [weapon.key]: weaponCond?.[weapon.key] } }, ...otherCond }, (conditional, conditionalValue, keys) => {
       const { stats: condStats } = Conditional.resolve(conditional, initialStats, conditionalValue)
       this.mergeStats(initialStats, condStats)
     })

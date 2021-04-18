@@ -12,7 +12,7 @@ function addFormula(src, key) {
 
 function attachKeys(obj, keys) {
   if (typeof obj === "function") obj.keys = [...keys]
-  else Object.entries(obj).forEach(([key, val]) => attachKeys(val, [...keys, key]))
+  else obj && typeof obj === "object" && Object.entries(obj).forEach(([key, val]) => attachKeys(val, [...keys, key]))
 }
 
 addFormula(charFormulas, "character")

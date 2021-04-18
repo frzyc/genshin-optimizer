@@ -252,7 +252,7 @@ export default class Artifact {
       if (Object.keys(setEffect).length > 0)
         ArtifactSetEffectsObj[setKey] = setEffect;
     })
-    Conditional.parseConditionalValues({ artifact: stats?.conditionalValues?.artifact }, ([, setKey], conditionalValue, conditional) => {
+    Conditional.parseConditionalValues({ artifact: stats?.conditionalValues?.artifact }, (conditional, conditionalValue, [, setKey]) => {
       const { setNumKey } = conditional
       const { stats: condStats } = Conditional.resolve(conditional, stats, conditionalValue)
       ArtifactSetEffectsObj[setKey] ?? (ArtifactSetEffectsObj[setKey] = {})
