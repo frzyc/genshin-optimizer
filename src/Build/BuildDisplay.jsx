@@ -16,8 +16,8 @@ import CustomFormControl from '../Components/CustomFormControl';
 import { Stars } from '../Components/StarDisplay';
 import ArtifactDatabase from '../Database/ArtifactDatabase';
 import CharacterDatabase from '../Database/CharacterDatabase';
+import Formula from '../Formula';
 import Stat from '../Stat';
-import { useForceUpdate } from '../Util/ReactUtil';
 import { timeStringMs } from '../Util/TimeUtil';
 import { deepClone, getObjValueCount, loadFromLocalStorage, saveToLocalStorage } from '../Util/Util';
 import Weapon from '../Weapon/Weapon';
@@ -57,6 +57,9 @@ function buildSettingsReducer(state, action) {
     default:
       break;
   }
+  if (Array.isArray(action.optimizationTarget) && !Formula.get(action.optimizationTarget))
+    action.optimizationTarget = "finalATK"
+
   return { ...state, ...action }
 }
 
@@ -85,14 +88,13 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
 
   const worker = useRef()
 
-  const forceUpdate = useForceUpdate()
   useEffect(() => {
     Promise.all([
       Character.getCharacterDataImport(),
       Weapon.getWeaponDataImport(),
       Artifact.getDataImport(),
-    ]).then(forceUpdate)
-  }, [forceUpdate])
+    ]).then(setCharDirty)
+  }, [setCharDirty])
 
   useEffect(() => ReactGA.pageview('/build'), [])
 
@@ -121,8 +123,8 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
 
   useEffect(() => propCharacterKey && selectCharacter(propCharacterKey), [propCharacterKey, selectCharacter])//update when props update
   const character = useMemo(() => charDirty && CharacterDatabase.get(characterKey), [characterKey, charDirty])
-  const initialStats = useMemo(() => Character.createInitialStats(character), [character])
-  const statsDisplayKeys = useMemo(() => Character.getDisplayStatKeys(character), [character])
+  const initialStats = useMemo(() => charDirty && Character.createInitialStats(character), [character, charDirty])
+  const statsDisplayKeys = useMemo(() => charDirty && Character.getDisplayStatKeys(initialStats), [initialStats, charDirty])
 
   //save build settings to character when buildSettings change, will cause infinite loop if add 'character' to dependency array
   useEffect(() => {
@@ -168,12 +170,6 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     setgenerationProgress(0)
     setgenerationSkipped(0)
     //get the formula for this targer
-    let formulaTarget
-    if (typeof optimizationTarget === "object") {
-      const { talentKey, sectionIndex, fieldIndex } = optimizationTarget
-      const { formula } = Character.getTalentField(initialStats, talentKey, sectionIndex, fieldIndex)
-      formulaTarget = Character.getFormulaPath(characterKey, talentKey, formula)
-    }
 
     initialStats.artifactsAssumeFull = artifactsAssumeFull
     const artifactSetEffects = Artifact.getAllArtifactSetEffectsObj(initialStats)
@@ -190,7 +186,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     //create an obj with app the artifact set effects to pass to buildworker.
     const data = {
       splitArtifacts, initialStats, artifactSetEffects,
-      setFilters, minFilters, maxFilters, maxBuildsToShow, optimizationTarget: formulaTarget ?? optimizationTarget, ascending, turbo
+      setFilters, minFilters, maxFilters, maxBuildsToShow, optimizationTarget, ascending, turbo
     }
     worker.current?.terminate()
     worker.current = new Worker();
@@ -216,7 +212,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
       worker.current = null
     }
     worker.current.postMessage(data)
-  }, [split, totBuildNumber, artifactsAssumeFull, ascending, characterKey, initialStats, maxBuildsToShow, optimizationTarget, setFilters, statFilters])
+  }, [split, totBuildNumber, artifactsAssumeFull, ascending, initialStats, maxBuildsToShow, optimizationTarget, setFilters, statFilters])
 
   //try to generate build when build numbers are low
   useEffect(() => {
@@ -234,25 +230,30 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     </Dropdown.Item>)
   }), [setFilters, buildSettingsDispatch])
 
-  const characterName = Character.getName(characterKey, "Character Name")
-  const artsAccounted = setFilters.reduce((accu, cur) => cur.key ? accu + cur.num : accu, 0)
-
-  let characterDropDown = <DropdownButton title={Character.getName(characterKey, "Select Character")} disabled={generatingBuilds}>
+  const characterDropDown = useMemo(() => <DropdownButton title={Character.getName(characterKey, "Select Character")} disabled={generatingBuilds}>
     <Dropdown.Item onClick={() => selectCharacter("")}>Unselect Character</Dropdown.Item>
     <Dropdown.Divider />
     <CharacterSelectionDropdownList onSelect={cKey => selectCharacter(cKey)} />
-  </DropdownButton>
+  </DropdownButton>, [characterKey, generatingBuilds, selectCharacter])
+
   const toggleArtifactsAssumeFull = () => buildSettingsDispatch({ artifactsAssumeFull: !buildSettings.artifactsAssumeFull })
 
-  let sortByText = "VALUE"
-  if (typeof optimizationTarget === "object") {
-    const { talentKey, sectionIndex, fieldIndex } = optimizationTarget
-    const field = Character.getTalentField(initialStats, talentKey, sectionIndex, fieldIndex) ?? {}
-    const variant = Character.getTalentFieldValue(field, "variant", initialStats)
-    const text = Character.getTalentFieldValue(field, "text", initialStats)
-    sortByText = <b>{Character.getTalentName(characterKey, talentKey)}: <span className={`text-${variant}`}>{text}</span></b>
-  } else
-    sortByText = <b>Basic Stat: <span className={`text-${Stat.getStatVariant(optimizationTarget)}`}>{Stat.getStatNamePretty(optimizationTarget)}</span></b>
+  const sortByText = useMemo(() => {
+    if (Array.isArray(optimizationTarget)) {
+      const formula = Formula.get(optimizationTarget)
+      if (formula.field) {
+        const variant = Character.getTalentFieldValue(formula.field, "variant", initialStats)
+        const text = Character.getTalentFieldValue(formula.field, "text", initialStats)
+        let [, , talentKey] = formula.keys
+        if (talentKey === "normal" || talentKey === "charged" || talentKey === "plunging") talentKey = "auto"
+        return <b>{Character.getTalentName(characterKey, talentKey)}: <span className={`text-${variant}`}>{text}</span></b>
+      }
+    } else return <b>Basic Stat: <span className={`text-${Stat.getStatVariant(optimizationTarget)}`}>{Stat.getStatNamePretty(optimizationTarget)}</span></b>
+    return <Badge variant="danger">INVALID</Badge>
+  }, [optimizationTarget, characterKey, initialStats])
+
+  const characterName = Character.getName(characterKey, "Character Name")
+  const artsAccounted = setFilters.reduce((accu, cur) => cur.key ? accu + cur.num : accu, 0)
 
   const artifactCondCount = getObjValueCount(initialStats?.conditionalValues?.artifact ?? {})
   //rudimentary dispatcher, definitely not the same API as the real characterDispatch.
@@ -279,7 +280,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
                 {/* Hit mode options */}
                 {Character.hasTalentPage(characterKey) && <HitModeCard className="mb-2" character={character} />}
                 {/* Final Stat Filter */}
-                <StatFilterCard className="mb-2" statFilters={statFilters} statsDisplayKeys={statsDisplayKeys} setStatFilters={sFs => buildSettingsDispatch({ statFilters: sFs })} />
+                <StatFilterCard className="mb-2" statFilters={statFilters} statKeys={statsDisplayKeys?.basicKeys} setStatFilters={sFs => buildSettingsDispatch({ statFilters: sFs })} />
               </Col>
               <Col xs={12} lg={6}><Row>
                 <Col className="mb-2" xs={12}>
@@ -414,11 +415,13 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
                           else header = Character.getTalentName(characterKey, talentKey, talentKey)
                           return <Col xs={12} md={6} key={talentKey}>
                             <Dropdown.Header><b>{header}</b></Dropdown.Header>
-                            {fields.map((field, i) => {
-                              if (typeof field === "string")
-                                return <Dropdown.Item key={i} onClick={() => buildSettingsDispatch({ optimizationTarget: field })}>{Stat.getStatNamePretty(field)}</Dropdown.Item>
-                              const talentField = Character.getTalentField(initialStats, field.talentKey, field.sectionIndex, field.fieldIndex)
-                              return <Dropdown.Item key={i} onClick={() => buildSettingsDispatch({ optimizationTarget: field })}>
+                            {fields.map((target, i) => {
+                              if (typeof target === "string")
+                                return <Dropdown.Item key={i} onClick={() => buildSettingsDispatch({ optimizationTarget: target })}>{Stat.getStatNamePretty(target)}</Dropdown.Item>
+                              const formula = Formula.get(target)
+                              const talentField = formula.field
+                              if (!formula || !talentField) return null
+                              return <Dropdown.Item key={i} onClick={() => buildSettingsDispatch({ optimizationTarget: target })}>
                                 <span className={`text-${Character.getTalentFieldValue(talentField, "variant", initialStats)}`}>{Character.getTalentFieldValue(talentField, "text", initialStats)}</span>
                               </Dropdown.Item>
                             })}
@@ -586,8 +589,8 @@ function HitModeCard({ character, className }) {
   </Card >
 }
 
-function StatFilterCard({ statsDisplayKeys = { basicKeys: [] }, statFilters = {}, setStatFilters, className }) {
-  const remainingKeys = statsDisplayKeys.basicKeys.filter(key => !Object.keys(statFilters).some(k => k === key))
+function StatFilterCard({ statKeys = [], statFilters = {}, setStatFilters, className }) {
+  const remainingKeys = statKeys.filter(key => !Object.keys(statFilters).some(k => k === key))
   const setFilter = (sKey, min, max) => setStatFilters({ ...statFilters, [sKey]: { min, max } })
   return <Card bg="lightcontent" text="lightfont" className={className}>
     <Card.Header>Final Stat Filter</Card.Header>

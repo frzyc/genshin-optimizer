@@ -5,10 +5,9 @@ import { ListGroup, OverlayTrigger, Tooltip } from "react-bootstrap";
 import Character from "../../Character";
 import { compareAgainstEquippedContext } from "../../CharacterDisplayCard";
 
-export default function FieldDisplay({ field: propField, index, equippedBuild, newBuild, className = "p-2" }) {
+export default function FieldDisplay({ field, index, equippedBuild, newBuild, className = "p-2" }) {
   const compareAgainstEquipped = useContext(compareAgainstEquippedContext)
   const stats = newBuild ? newBuild : equippedBuild
-  const field = useMemo(() => typeof propField === "function" ? propField(stats) : propField, [stats, propField]) //TODO: after field.condition change, this will not ever be a function. create a unit test to make sure the format is right.
   const fixedVal = field.fixed || 0
   const fieldVal = useMemo(() => {
     if (field.value) return Character.getTalentFieldValue(field, "value", stats)

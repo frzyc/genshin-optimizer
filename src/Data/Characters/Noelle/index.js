@@ -238,8 +238,9 @@ const char = {
       img: c4,
       document: [{
         text: <span>When <b>Breastplate</b> ends or shatters, it deals 400% of ATK as <span className="text-geo">Geo DMG</span> to surrounding enemies.</span>,
-        fields: [stats => stats.constellation >= 6 && {
+        fields: [{
           text: "Breastplate shatter damage",
+          condition: stats => stats.constellation >= 4,
           formulaText: stats => <span>400% {Stat.printStat(getTalentStatKey("elemental", stats), stats)}</span>,
           formula: formula.constellation4.dmg,
           variant: stats => getTalentStatKeyVariant("elemental", stats),

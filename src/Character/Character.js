@@ -8,6 +8,7 @@ import { deepClone } from "../Util/Util";
 import Weapon from "../Weapon/Weapon";
 import CharacterDatabase from "../Database/CharacterDatabase";
 import Conditional from "../Conditional/Conditional";
+import Formula from "../Formula";
 
 export default class Character {
   //do not instantiate.
@@ -131,11 +132,8 @@ export default class Character {
 
   static hasTalentPage = (characterKey) => Boolean(Character.getCDataObj(characterKey)?.talent)
 
-  /**
-   * TODO:CONDITIONAL instead of crawling through the character sheet, just crawl through the character formula. Can add weapon formula?
-   */
   static getDisplayStatKeys = (stats, defVal = { basicKeys: [] }) => {
-    if (!stats) return defVal
+    if (!stats || !Object.keys(stats).length) return defVal
     const { characterKey } = stats
     let eleKey = Character.getElementalKey(characterKey)
     if (!eleKey) return defVal //usually means the character has not been lazy loaded yet
@@ -150,18 +148,18 @@ export default class Character {
     const transReactions = deepClone(ElementToReactionKeys[eleKey])
     const weaponTypeKey = this.getWeaponTypeKey(characterKey)
     if (!transReactions.includes("shattered_hit") && weaponTypeKey === "claymore") transReactions.push("shattered_hit")
-    if (this.hasTalentPage(characterKey)) {
+    if (Formula.character[characterKey]) {
       const charFormulas = {}
-      Object.keys(Character.getCDataObj(characterKey)?.talent ?? {}).forEach(talentKey =>
-        Character.getTalentDocumentSections(stats, talentKey)?.forEach((section, sectionIndex) =>
-          section?.fields?.forEach((field, fieldIndex) => {
-            const hasFormula = field?.formula || this.getTalentField(stats, talentKey, sectionIndex, fieldIndex)?.formula
-            if (!hasFormula) return
-            if (!charFormulas[talentKey]) charFormulas[talentKey] = []
-            charFormulas[talentKey].push({ talentKey, sectionIndex, fieldIndex })
-          })))
+      Object.entries(Formula.character[characterKey]).forEach(([talentKey, formulas]) => {
+        Object.values(formulas).forEach(formula => {
+          if (formula.field?.condition && !formula.field.condition(stats)) return
+          if (talentKey === "normal" || talentKey === "charged" || talentKey === "plunging") talentKey = "auto"
+          if (!charFormulas[talentKey]) charFormulas[talentKey] = []
+          charFormulas[talentKey].push(formula.keys)
+        })
+      })
       return { basicKeys, ...charFormulas, transReactions }
-    } else {
+    } else {//TODO: doesnt have character sheet
       //generic average hit parameters.
       const genericAvgHit = []
       if (!isAutoElemental) //add phy auto + charged + physical 

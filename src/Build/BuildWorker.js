@@ -1,8 +1,8 @@
 import '../WorkerHack'
 import { PreprocessFormulas } from "../StatData";
 import { artifactSetPermutations, artifactPermutations, pruneArtifacts, calculateTotalBuildNumber } from "./Build"
-import charFormulas from "../Data/Characters/formula"
 import { GetDependencies } from '../StatDependency';
+import Formula from '../Formula';
 
 onmessage = async (e) => {
   const t1 = performance.now()
@@ -13,8 +13,7 @@ onmessage = async (e) => {
     target = (stats) => stats[optimizationTarget]
     targetKeys = [optimizationTarget]
   } else {
-    const { talentKey, formulaKey } = optimizationTarget
-    const targetFormula = charFormulas?.[stats.characterKey]?.[talentKey]?.[formulaKey]
+    const targetFormula = Formula.get(optimizationTarget)
     if (typeof targetFormula === "function")
       [target, targetKeys] = targetFormula(stats)
     else {

@@ -6,7 +6,7 @@ import StatDisplay from "../../Components/StatDisplay"
 import Character from "../Character"
 
 export default function StatDisplayComponent({ character, character: { characterKey }, equippedBuild, newBuild, statsDisplayKeys, editable, cardbg = "darkcontent" }) {
-  return <Row className="mb-n2">{Object.entries(statsDisplayKeys).map(([talentKey, fields]) => {
+  return <Row className="mb-n2">{Object.entries(statsDisplayKeys).map(([talentKey, sectionValues]) => {
     let header = ""
     if (talentKey === "basicKeys") header = "Basic Stats"
     else if (talentKey === "genericAvgHit") header = "Generic Optimization Values"
@@ -16,7 +16,7 @@ export default function StatDisplayComponent({ character, character: { character
       <Card bg={cardbg} text="lightfont" className="h-100">
         <Card.Header>{header}</Card.Header>
         <Card.Body>
-          <Row>{fields.map(field => <StatDisplay key={JSON.stringify(field)} {...{ character, equippedBuild, newBuild, editable, statKey: field }} />)}</Row>
+          <Row>{sectionValues.map(statKey => <StatDisplay key={JSON.stringify(statKey)} {...{ character, equippedBuild, newBuild, editable, statKey }} />)}</Row>
         </Card.Body>
       </Card>
     </Col>

@@ -160,7 +160,7 @@ function DatabaseInitAndVerify() {
       const equippedArt = ArtifactDatabase.get(artid)
       if (equippedArt && equippedArt.location !== characterKey) //the artifact doesnt have the right location...
         ArtifactDatabase.moveToNewLocation(artid, characterKey)
-      if (!equippedArt) {
+      if (artid && !equippedArt) {
         valid = false
         character.equippedArtifacts[slotKey] = ""
       }
