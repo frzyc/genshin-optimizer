@@ -1,10 +1,13 @@
-import { useState } from "react"
+import { useCallback, useState, useEffect } from "react"
 import { Alert, Badge, Button, Card, Col, Container, Dropdown, Form, Row } from "react-bootstrap"
 import ReactGA from 'react-ga'
 import { Trans, useTranslation } from "react-i18next"
 import { database } from "../Database/Database"
 import { languageCodeList } from "../i18n"
 import { useForceUpdate } from "../Util/ReactUtil"
+import { GenshinArtDataCheckForError, GenshinArtGetCount, GenshinArtImport } from "../Database/GenshinArtConversion"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheckSquare, faSquare } from '@fortawesome/free-solid-svg-icons';
 
 export default function SettingsDisplay() {
   const { t } = useTranslation(["settings"]);
@@ -18,6 +21,7 @@ export default function SettingsDisplay() {
         <LanguageCard />
         <DownloadCard forceUpdate={forceUpdate} />
         <UploadCard forceUpdate={forceUpdate} />
+        <GenshinArtCard forceUpdate={forceUpdate} />
       </Card.Body>
     </Card>
   </Container >
@@ -155,7 +159,7 @@ function UploadCard({ forceUpdate }) {
     if (file) setfilename(file.name)
     readFile(file, setdata)
   }
-  return <Card bg="lightcontent" text={"lightfont" as any}>
+  return <Card bg="lightcontent" text={"lightfont" as any} className="mb-3">
     <Card.Header><Trans t={t} i18nKey="settings:uploadCard.title" /></Card.Header>
     <Card.Body>
       <Row className="mb-2">
@@ -177,6 +181,89 @@ function UploadCard({ forceUpdate }) {
     </Card.Body>
     <Card.Footer>
       <Button variant={dataValid ? "success" : "danger"} disabled={!dataValid} onClick={replaceDB}><Trans t={t} i18nKey="settings:uploadCard.replaceDatabase" /></Button>
+    </Card.Footer>
+  </Card>
+}
+
+function GenshinArtCard({ forceUpdate }) {
+  const [data, setData] = useState("");
+  const [filename, setFilename] = useState("");
+  const [deleteExistingArtifacts, setDeleteExistingArtifacts] = useState(false);
+  const [ignoreDuplicateArtifacts, setIgnoreDuplicateArtifacts] = useState(true);
+  const [error, setError] = useState("");
+  const [dataObj, setDataObj] = useState({});
+  let numArt, dataValid;
+
+  if (Boolean(data && !error)) {
+    numArt = GenshinArtGetCount(dataObj);
+    dataValid = numArt > 0;
+  }
+
+  useEffect(() => {
+    if (data) {
+      try {
+        let parsedObj = JSON.parse(data);
+        let checkedError = GenshinArtDataCheckForError(parsedObj);
+
+        setError(checkedError);
+        if (!checkedError) {
+          setDataObj(parsedObj);
+        }
+
+      } catch (e) {
+        setError(`Invalid JSON: ${e}`);
+      }
+    }
+  }, [data]);
+
+  const importArtifacts = () => {
+    if (!deleteExistingArtifacts ||
+      window.confirm(`Are you sure you want to delete all existing artifacts? (Artifacts present in the import will not be affected.)`)) {
+      try {
+        GenshinArtImport(dataObj, deleteExistingArtifacts, ignoreDuplicateArtifacts);
+        setData("");
+        setFilename("");
+        forceUpdate();
+      } catch (e) {
+        setError(e);
+      }
+    }
+  }
+
+  const onUpload = e => {
+    const file = e.target.files[0]
+    e.target.value = null//reset the value so the same file can be uploaded again...
+    if (file) setFilename(file.name)
+    readFile(file, setData)
+  }
+
+  return <Card bg="lightcontent" text={"lightfont" as any}>
+    <Card.Header>genshin.art Artifact Import</Card.Header>
+    <Card.Body>
+      <Row className="mb-2">
+        <Form.File
+          className="mb-2"
+          label={filename ? filename : "Upload your JSON file here"}
+          onChange={onUpload}
+          custom
+          accept=".json"
+        />
+        <h6>...or Paste your data below...</h6>
+        <textarea className="w-100 text-monospace" value={data} onChange={e => setData(e.target.value)} style={{ minHeight: "10em" }} />
+      </Row>
+      {dataValid && <Row>
+        <Col xs={12} md={6}><h6>Number of artifacts: <b>{numArt}</b></h6></Col>
+      </Row>}
+      {Boolean(data && (error || !dataValid)) && <Alert variant="danger">{error ? error : "Unable to parse character & artifact data from file."}</Alert>}
+    </Card.Body>
+    <Card.Footer>
+      <Button variant={dataValid ? "success" : "danger"} disabled={!dataValid} onClick={() => importArtifacts()}>Import</Button>
+      <Button className="float-right text-right" variant={deleteExistingArtifacts ? "danger" : "primary"} onClick={() => setDeleteExistingArtifacts(value => !value)}>
+        <span><FontAwesomeIcon icon={deleteExistingArtifacts ? faCheckSquare : faSquare} className="fa-fw" /> Delete Existing Artifacts</span>
+      </Button>
+      <Button className="float-right text-right mr-2" disabled={deleteExistingArtifacts} onClick={() => setIgnoreDuplicateArtifacts(value => !value)}>
+        <span><FontAwesomeIcon icon={ignoreDuplicateArtifacts ? faCheckSquare : faSquare} className="fa-fw" /> Ignore Duplicates</span>
+      </Button>
     </Card.Footer>
   </Card>
 }
