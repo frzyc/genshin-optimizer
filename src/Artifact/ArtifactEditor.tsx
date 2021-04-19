@@ -337,7 +337,7 @@ export function artifactReducer(state: IFlexArtifact | undefined, action: Messag
   }
 }
 
-function checkDuplicate(editorArt: IFlexArtifact | undefined): { dupId?: string, isDup: boolean } {
+export function checkDuplicate(editorArt: IFlexArtifact | undefined): { dupId?: string, isDup: boolean } {
   if (!editorArt) return { isDup: false }
   const { id, setKey, numStars, level, slotKey, mainStatKey, substats } = editorArt
   if (id) return { isDup: false }

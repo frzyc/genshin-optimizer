@@ -1,5 +1,6 @@
-import ArtifactDatabase from '../Database/ArtifactDatabase';
+import ArtifactDatabase from './ArtifactDatabase';
 import Artifact from '../Artifact/Artifact';
+import { checkDuplicate } from '../Artifact/ArtifactEditor';
 
 const ArtifactSlotKeyMap = {
   "flower": "flower",
@@ -56,7 +57,7 @@ const ArtifactStatKeyMap = {
   "criticalDamage": "critDMG_",
   "elementalMastery": "eleMas",
   "recharge": "enerRech_",
-  "thunderBonus": "physical_dmg_",
+  "thunderBonus": "electro_dmg_",
   "fireBonus": "pyro_dmg_",
   "waterBonus": "hydro_dmg_",
   "iceBonus": "cryo_dmg_",
@@ -85,7 +86,6 @@ function GetConvertedArtifactsVersion1(dataObj) {
     }
     for (const genshinArtArtifact of dataObj[property]) {
       let artifact = {
-        id: `artifact_${genshinArtArtifact.id}`,
         setKey: ArtifactSetKeyMap[genshinArtArtifact.setName],
         numStars: genshinArtArtifact.star,
         level: genshinArtArtifact.level,
@@ -99,15 +99,14 @@ function GetConvertedArtifactsVersion1(dataObj) {
           value: genshinArtSubstat.value,
         };
         if (substat.key.slice(-1) === "_") {
-          // decimal to percentage
-          substat.value *= 100;
+          substat.value *= 100;  // decimal to percentage
         }
         artifact.substats.push(substat);
       }
 
       let errMsgs = Artifact.substatsValidation(artifact);
       if (errMsgs.length) {
-        let error = `${artifact.id}: ${errMsgs}`;
+        let error = `id ${genshinArtArtifact.id}: ${errMsgs}`;
         throw error;
       }
 
@@ -118,14 +117,47 @@ function GetConvertedArtifactsVersion1(dataObj) {
   return convertedArtifacts;
 }
 
-function GenshinArtImport(dataObj, deleteExisting, ignoreDupe) {
+function GenshinArtImport(dataObj, deleteExisting, skipDupDetection) {
   if (deleteExisting) {
-    ignoreDupe = false;  // ignoreDupe should be disabled when deleteExisting is turned on
+    skipDupDetection = false;  // skipDupDetection should be disabled when deleteExisting is turned on
   }
 
   let importedArtifacts = GetConvertedArtifactsOfVersion["version" in dataObj ? dataObj.version : DefaultVersion](dataObj);
 
-  // TODO    
+  if (skipDupDetection) {
+    for (const artifact of importedArtifacts) {
+      ArtifactDatabase.update(artifact);
+    }
+    return `Successfully imported ${importedArtifacts.length} artifacts`;
+  }
+
+  let dupCount = 0, upgradeCount = 0, newCount = 0;
+  let artifactIdsToRemove = new Set(ArtifactDatabase.getIdList());
+  for (const artifact of importedArtifacts) {
+    const { dupId, isDup } = checkDuplicate(artifact);
+    if (dupId) {
+      artifactIdsToRemove.delete(dupId);
+      artifact.id = dupId;
+      if (isDup) {
+        dupCount++;
+      } else {
+        upgradeCount++;
+      }
+    } else {
+      newCount++;
+    }
+    ArtifactDatabase.update(artifact);
+  }
+
+  let successMsg = `Import successful: ${importedArtifacts.length} total, ${newCount} new, ${upgradeCount} upgraded, ${dupCount} duplicate`;
+  if (deleteExisting) {
+    successMsg += `, ${artifactIdsToRemove.size} foddered`;
+    for (const artifactId of artifactIdsToRemove) {
+      ArtifactDatabase.removeArtifactById(artifactId);
+    }
+  }
+
+  return successMsg;
 }
 
 const GenshinArtCheckForErrorVersion = {

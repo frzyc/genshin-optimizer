@@ -189,8 +189,9 @@ function GenshinArtCard({ forceUpdate }) {
   const [data, setData] = useState("");
   const [filename, setFilename] = useState("");
   const [deleteExistingArtifacts, setDeleteExistingArtifacts] = useState(false);
-  const [ignoreDuplicateArtifacts, setIgnoreDuplicateArtifacts] = useState(true);
+  const [skipDupDetection, setSkipDupDetection] = useState(false);
   const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
   const [dataObj, setDataObj] = useState({});
   let numArt, dataValid;
 
@@ -201,6 +202,7 @@ function GenshinArtCard({ forceUpdate }) {
 
   useEffect(() => {
     if (data) {
+      setSuccess("");
       try {
         let parsedObj = JSON.parse(data);
         let checkedError = GenshinArtDataCheckForError(parsedObj);
@@ -217,16 +219,23 @@ function GenshinArtCard({ forceUpdate }) {
   }, [data]);
 
   const importArtifacts = () => {
-    if (!deleteExistingArtifacts ||
-      window.confirm(`Are you sure you want to delete all existing artifacts? (Artifacts present in the import will not be affected.)`)) {
-      try {
-        GenshinArtImport(dataObj, deleteExistingArtifacts, ignoreDuplicateArtifacts);
-        setData("");
-        setFilename("");
-        forceUpdate();
-      } catch (e) {
-        setError(e);
-      }
+    if (deleteExistingArtifacts && !window.confirm(`Are you sure you want to delete all artifacts not found in the current import as fodder? (Upgraded artifacts will not be affected.)`)) {
+      setDeleteExistingArtifacts(false);
+      return;
+    }
+    if (skipDupDetection && !window.confirm(`Are you sure you want to import all artifacts without checking for duplicates?`)) {
+      setSkipDupDetection(false);
+      return;
+    }
+    try {
+      let successMsg = GenshinArtImport(dataObj, deleteExistingArtifacts, skipDupDetection);
+      setSuccess(successMsg);
+      setData("");
+      setFilename("");
+      forceUpdate();
+    } catch (e) {
+      console.error(e);
+      setError(`${e}`);
     }
   }
 
@@ -255,14 +264,15 @@ function GenshinArtCard({ forceUpdate }) {
         <Col xs={12} md={6}><h6>Number of artifacts: <b>{numArt}</b></h6></Col>
       </Row>}
       {Boolean(data && (error || !dataValid)) && <Alert variant="danger">{error ? error : "Unable to parse character & artifact data from file."}</Alert>}
+      {success && <Alert variant="success">{success}</Alert>}
     </Card.Body>
     <Card.Footer>
       <Button variant={dataValid ? "success" : "danger"} disabled={!dataValid} onClick={() => importArtifacts()}>Import</Button>
       <Button className="float-right text-right" variant={deleteExistingArtifacts ? "danger" : "primary"} onClick={() => setDeleteExistingArtifacts(value => !value)}>
-        <span><FontAwesomeIcon icon={deleteExistingArtifacts ? faCheckSquare : faSquare} className="fa-fw" /> Delete Existing Artifacts</span>
+        <span><FontAwesomeIcon icon={deleteExistingArtifacts ? faCheckSquare : faSquare} className="fa-fw" /> Delete Foddered Artifacts</span>
       </Button>
-      <Button className="float-right text-right mr-2" disabled={deleteExistingArtifacts} onClick={() => setIgnoreDuplicateArtifacts(value => !value)}>
-        <span><FontAwesomeIcon icon={ignoreDuplicateArtifacts ? faCheckSquare : faSquare} className="fa-fw" /> Ignore Duplicates</span>
+      <Button hidden className="float-right text-right mr-2" disabled={deleteExistingArtifacts} variant={!skipDupDetection ? "success" : "primary"} onClick={() => setSkipDupDetection(value => !value)}>
+        <span><FontAwesomeIcon icon={!skipDupDetection ? faCheckSquare : faSquare} className="fa-fw" /> Detect Upgraded/Duplicates</span>
       </Button>
     </Card.Footer>
   </Card>
