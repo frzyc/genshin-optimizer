@@ -131,7 +131,7 @@ function WeaponStatsEditorCard({ editable, character, character: { characterKey,
   const weaponDisplaySubVal = weapon.overrideSubVal || Weapon.getWeaponSubStatVal(weapon.key, weapon.levelKey)
   const weaponPassiveName = Weapon.getWeaponPassiveName(weapon.key)
   const weaponBonusStats = Weapon.getWeaponBonusStat(weapon.key, build, {})
-  const conditionals = Conditional.weapon[weapon.key]
+  const conditionals = Conditional.conditionals.weapon[weapon.key]
   return <Card bg="lightcontent" text="lightfont" className="mb-2">
     <Card.Header>
       <Row>
