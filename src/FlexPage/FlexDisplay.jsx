@@ -3,7 +3,7 @@ import { Redirect, useLocation } from "react-router-dom";
 import CharacterDisplayCard from "../Character/CharacterDisplayCard";
 import { CurrentDatabaseVersion } from '../Database/DatabaseUtil';
 import '../StatDependency'
-import { createFlexObj, parseFlexObj, _createFlexObj } from "../Util/FlexUtil";
+import { createFlexObj, parseFlexObj, _createFlexObj } from "./FlexUtil";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLink } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";

@@ -11,12 +11,12 @@ import Conditional from "../../Conditional/Conditional"
 import { CharacterSpecializedStatKey } from "../../Data/CharacterData"
 import { LevelNameData } from "../../Data/WeaponData"
 import Stat from "../../Stat"
+import statsToFields from "../../Util/FieldUtil"
 import { clamp } from "../../Util/Util"
 import Weapon from "../../Weapon/Weapon"
 import Character from "../Character"
 import StatInput from "../StatInput"
 import ConditionalDisplay from "./Components/ConditionalDisplay"
-import statsToFields from "./statsToFields"
 import FieldDisplay from "./Components/FieldDisplay"
 export default function CharacterOverviewPane({ editable, character, character: { characterKey, constellation }, characterDispatch, equippedBuild, newBuild }) {
   const [editLevel, setEditLevel] = useState(false)

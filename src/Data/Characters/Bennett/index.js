@@ -15,7 +15,27 @@ import passive3 from './Talent_It_Should_Be_Safe....png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-
+const conditionals = {
+  FantasticVoyage: {
+    name: "Fantastic Voyage",
+    stats: stats => ({
+      modifiers: { finalATK: { baseATK: (data.burst.atkRatio[stats.tlvl.burst] + (stats.constellation < 1 ? 0 : 20)) / 100, } },
+    }),
+  },
+  ImpasseConqueror: {
+    canShow: stats => stats.constellation >= 2,
+    name: "When HP falls below 70%",
+    stats: { enerRech_: 30 }
+  },
+  FireVenturesWithMe: {
+    canShow: stats => stats.constellation >= 6,
+    name: "Sword, Claymore, or Polearm-wielding characters inside Fantastic Voyage's radius",
+    stats: { pyro_dmg_: 15 },
+    fields: [{
+      text: <span className="text-pyro">Pyro infusion</span>,//TODO: infusion as a stat
+    }]
+  }
+}
 const char = {
   name: "Bennett",
   cardImg: card,
@@ -29,6 +49,7 @@ const char = {
   baseStat: data.baseStat,
   specializeStat: data.specializeStat,
   formula,
+  conditionals,
   talent: {
     auto: {
       name: "Strike of Fortune",
@@ -144,16 +165,7 @@ const char = {
           text: "Energy Cost",
           value: 60,
         }],
-        conditional: stats => ({
-          type: "character",
-          conditionalKey: "FantasticVoyage",
-          condition: "Fantastic Voyage",
-          sourceKey: "bennett",
-          maxStack: 1,
-          stats: {
-            modifiers: { finalATK: { baseATK: (data.burst.atkRatio[stats.tlvl.burst] + (stats.constellation < 1 ? 0 : 20)) / 100, } },
-          },
-        })
+        conditional: conditionals.FantasticVoyage
       }],
     },
     passive1: {
@@ -181,16 +193,7 @@ const char = {
       img: c2,
       document: [{
         text: <span>When HP falls below 70%, increases Energy Recharge by 30%.</span>,
-        conditional: stats => stats.constellation >= 2 && {
-          type: "character",
-          conditionalKey: "ImpasseConqueror",
-          condition: "Impasse Conqueror",
-          sourceKey: "bennett",
-          maxStack: 1,
-          stats: {
-            enerRech_: 30,
-          }
-        }
+        conditional: conditionals.ImpasseConqueror
       }],
     },
     constellation3: {
@@ -215,19 +218,7 @@ const char = {
       img: c6,
       document: [{
         text: <span>Sword, Claymore, or Polearm-wielding characters inside Fantastic Voyage's radius gain a 15% Pyro DMG Bonus and their weapons are infused with <span className="text-pyro">Pyro</span>.</span>,
-        conditional: stats => stats.constellation >= 6 && {
-          type: "character",
-          conditionalKey: "Fire Ventures with Me",
-          condition: "Sword, Claymore, or Polearm-wielding characters inside Fantastic Voyage's radius",
-          sourceKey: "bennett",
-          maxStack: 1,
-          stats: {
-            pyro_dmg_: 15,
-          },
-          fields: [{
-            text: <span className="text-pyro">Pyro infusion</span>,
-          }]
-        }
+        conditional: conditionals.FireVenturesWithMe
       }],
     }
   },

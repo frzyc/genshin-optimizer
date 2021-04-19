@@ -15,7 +15,18 @@ import passive3 from './Talent_With_My_Whole_Heart.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-
+const conditionals = {
+  GloriousSeason: {
+    canShow: stats => stats.ascension >= 1,
+    name: <span>Within <b>Let the Show Begin</b>'s Melody Loop</span>,
+    stats: { staminaDec_: 12 }//TODO: Party buff
+  },
+  VitalityBurst: {
+    canShow: stats => stats.constellation >= 2,
+    name: <span>During <b>Let the Show Begin</b></span>,
+    stats: { hydro_dmg_: 15 }//TODO: Party buff active character
+  }
+}
 const char = {
   name: "Barbara",
   cardImg: card,
@@ -29,6 +40,7 @@ const char = {
   baseStat: data.baseStat,
   specializeStat: data.specializeStat,
   formula,
+  conditionals,
   talent: {
     auto: {
       name: "Whisper of Water",
@@ -110,28 +122,9 @@ const char = {
           value: stats => "32s" + (stats.constellation >= 2 ? " -15%" : ""),
         }]
       }, {
-        //TODO party conditional
-        conditional: stats => stats.ascension >= 1 && {
-          type: "character",
-          conditionalKey: "GloriousSeason",
-          condition: "Glorious Season",
-          sourceKey: "barbara",
-          maxStack: 1,
-          stats: {
-            staminaDec_: 12,
-          }
-        }
+        conditional: conditionals.GloriousSeason
       }, {
-        conditional: stats => stats.constellation >= 2 && {
-          type: "character",
-          conditionalKey: "VitalityBurst",
-          condition: "Vitality Burst",
-          sourceKey: "barbara",
-          maxStack: 1,
-          stats: {
-            hydro_dmg_: 15,
-          }
-        }
+        conditional: conditionals.VitalityBurst
       }],
 
     },

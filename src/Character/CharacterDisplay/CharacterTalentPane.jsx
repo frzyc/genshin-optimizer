@@ -5,10 +5,10 @@ import { Button, Card, Col, Dropdown, DropdownButton, Image, ListGroup, OverlayT
 import Assets from "../../Assets/Assets";
 import Stat from "../../Stat";
 import { ElementToReactionKeys } from "../../StatData";
+import statsToFields from "../../Util/FieldUtil";
 import Character from "../Character";
 import ConditionalDisplay from './Components/ConditionalDisplay';
 import FieldDisplay from './Components/FieldDisplay';
-import statsToFields from "./statsToFields";
 
 export default function CharacterTalentPane(props) {
   const { character, character: { characterKey, levelKey, constellation }, editable, characterDispatch, newBuild, equippedBuild } = props
@@ -215,7 +215,7 @@ function SkillDisplayCard({ character, character: { characterKey, constellation,
 
   return <Card bg="lightcontent" text="lightfont" className="h-100">
     {header}
-    <Card.Body>
+    <Card.Body className="mb-n2">
       <Row className={`d-flex flex-row mb-2 ${(editable && onClickTitle) ? "cursor-pointer" : ""}`} onClick={onClickTitle} >
         <Col xs="auto" className="flex-shrink-1 d-flex flex-column">
           <Image src={Character.getTalentImg(characterKey, talentKey)} className="thumb-mid" />
@@ -235,7 +235,7 @@ function SkillDisplayCard({ character, character: { characterKey, constellation,
         if (typeof talentText === "function")
           talentText = talentText(build)
         let fields = section.fields ?? []
-        return <div className="mt-2 mb-n2" key={"section" + i}>
+        return <div className="my-2" key={"section" + i}>
           <div xs={12}>
             <div className="mb-2">{talentText}</div>
             {fields.length > 0 && <ListGroup className="text-white mb-2">

@@ -16,7 +16,39 @@ import passive3 from './Talent_Preserved_for_the_Hunt.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-
+const conditionals = {
+  UndividedHeart: {
+    canShow: stats => stats.ascension >= 1,
+    name: <span>After firing a <b>Frostflake</b> Arrow</span>,
+    fields: [{
+      text: "Frostflake CRIT Rate",
+      value: "+20%",
+    }, {
+      text: "Duration",
+      value: "5s",
+    }]
+  },
+  DewDrinker: {
+    canShow: stats => stats.constellation >= 1,
+    name: <span>Opponent taking DMG from a Charge Level 2 <b>Frostflake Arrow</b> or <b>Frostflake Arrow Bloom</b> decreases opponents</span>,
+    stats: { cryo_enemyRes_: -15 },
+  },
+  Harmony: {
+    canShow: stats => stats.ascension >= 4,
+    name: <span>Active members in the AoE of <b>Celestial Shower</b></span>,
+    stats: { cryo_dmg_: 20 },
+  },
+  WestwardSojourn: {
+    canShow: stats => stats.constellation >= 4,
+    name: <span>Opponents standing within the AoE of <b>Celestial Shower</b></span>,
+    maxStack: 5,
+    stats: { dmg_: 5 },
+    fields: [{
+      text: "Effect Linger Duration",
+      value: "3s"
+    }]
+  }
+}
 const char = {
   name: "Ganyu",
   cardImg: card,
@@ -30,6 +62,7 @@ const char = {
   baseStat: data.baseStat,
   specializeStat: data.specializeStat,
   formula,
+  conditionals,
   talent: {
     auto: {
       name: "Liutian Archery",
@@ -67,8 +100,7 @@ const char = {
           text: `Frostflake Arrow DMG`,
           formulaText: stats => {
             if (stats.hitMode === "avgHit") {
-              //TODO: new conditional system
-              const [conditionalNum] = stats.conditionalValue?.character?.ganyu?.UndividedHeart_CONDITIONALKEY ?? []
+              const [conditionalNum] = stats.conditionalValue?.character?.ganyu?.UndividedHeart ?? []
               if (conditionalNum) {
                 const statKey = `cryo${stats.reactionMode === "cryo_melt" ? "_melt" : ""}_charged_hit`
                 return <span>{data.charged.frostflake[stats.tlvl.auto]}% {Stat.printStat(statKey, stats)} * (1 + Min( 100% , 20% + {Stat.printStat("critRate_", stats)} + {Stat.printStat("charged_critRate_", stats)} ) * {Stat.printStat("critDMG_", stats)} )</span>
@@ -82,8 +114,7 @@ const char = {
           text: `Frostflake Arrow Bloom DMG`,
           formulaText: stats => {
             if (stats.hitMode === "avgHit") {
-              //TODO: new conditional system
-              const [conditionalNum] = stats.conditionalValue?.character?.ganyu?.UndividedHeart_CONDITIONALKEY ?? []
+              const [conditionalNum] = stats.conditionalValue?.character?.ganyu?.UndividedHeart ?? []
               if (conditionalNum) {
                 const statKey = `cryo${stats.reactionMode === "cryo_melt" ? "_melt" : ""}_charged_hit`
                 return <span>{data.charged.frostflakeBloom[stats.tlvl.auto]}% {Stat.printStat(statKey, stats)} * (1 + Min( 100% , 20% + {Stat.printStat("critRate_", stats)} + {Stat.printStat("charged_critRate_", stats)} ) * {Stat.printStat("critDMG_", stats)} )</span>
@@ -94,31 +125,9 @@ const char = {
           formula: formula.charged.frostflakeBloom,
           variant: stats => getTalentStatKeyVariant("charged", stats, true),
         },],
-        conditional: stats => stats.ascension >= 1 && {
-          type: "character",
-          conditionalKey: "UndividedHeart",
-          condition: "Undivided Heart",
-          sourceKey: "ganyu",
-          maxStack: 1,
-          fields: [{
-            text: "Frostflake CRIT Rate",
-            value: "+20%",
-          }, {
-            text: "Duration",
-            value: "5s",
-          }]
-        }
+        conditional: conditionals.UndividedHeart
       }, {
-        conditional: stats => stats.constellation >= 1 && {
-          type: "character",
-          conditionalKey: "DewDrinker",
-          condition: "Dew-Drinker",
-          sourceKey: "ganyu",
-          maxStack: 1,
-          stats: {
-            cryo_enemyRes_: -15,
-          },
-        }
+        conditional: conditionals.DewDrinker
       }, {
         text: <span><strong>Plunging Attack</strong> Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.</span>,
         fields: [{
@@ -157,7 +166,7 @@ const char = {
           text: "Inherited HP",
           formulaText: stats => <span>{data.skill.hp[stats.tlvl.skill]}% {Stat.printStat("finalHP", stats)}</span>,
           formula: formula.skill.hp,
-          variant: stats => "success",
+          variant: "success",
         }, {
           text: "Skill DMG",
           formulaText: stats => <span>{data.skill.dmg[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
@@ -169,7 +178,8 @@ const char = {
         }, {
           text: "CD",
           value: "10s",
-        }, stats => stats.constellation >= 2 && {
+        }, {
+          canShow: stats => stats.constellation >= 2,
           text: "Charges",
           value: 2
         }]
@@ -202,31 +212,9 @@ const char = {
           text: "Energy Cost",
           value: 60,
         }],
-        conditional: stats => stats.ascension >= 4 && {
-          type: "character",
-          conditionalKey: "Harmony",
-          condition: "Harmony between Heaven and Earth",
-          sourceKey: "ganyu",
-          maxStack: 1,
-          stats: {
-            cryo_dmg_: 20,
-          },
-        }
+        conditional: conditionals.Harmony
       }, {
-        conditional: stats => stats.constellation >= 4 && {
-          type: "character",
-          conditionalKey: "WestwardSojourn",
-          condition: "Westward Sojourn",
-          sourceKey: "ganyu",
-          maxStack: 5,
-          stats: {
-            dmg_: 5,
-          },
-          fields: [{
-            text: "Effect Linger Duration",
-            value: "3s"
-          }]
-        }
+        conditional: conditionals.WestwardSojourn
       }],
     },
     passive1: {

@@ -1,7 +1,7 @@
 import { Badge, Card, ListGroup } from "react-bootstrap"
 import ConditionalDisplay from "../../Character/CharacterDisplay/Components/ConditionalDisplay"
 import FieldDisplay from "../../Character/CharacterDisplay/Components/FieldDisplay"
-import statsToFields from "../../Character/CharacterDisplay/statsToFields"
+import statsToFields from "../../Util/FieldUtil"
 import Artifact from "../Artifact"
 
 export default function SetEffectDisplay({ setKey, setNumKey, equippedBuild, newBuild, editable, characterDispatch }) {

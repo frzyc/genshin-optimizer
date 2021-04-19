@@ -1,8 +1,8 @@
 import { chars, arts, characterObj, flexObj } from './FlexUtil.test.data'
-import { saveToLocalStorage } from './Util'
 import { createFlexObj, parseFlexObj } from './FlexUtil'
 import { DatabaseInitAndVerify } from '../Database/DatabaseUtil'
 import urlon from 'urlon'
+import { saveToLocalStorage } from '../Util/Util'
 
 function setupLS() {
   Object.entries(chars).map(([id, char]) => saveToLocalStorage(`char_${id}`, char))

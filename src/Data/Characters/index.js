@@ -67,7 +67,7 @@ const characters = {
 };
 
 Object.values(characters).forEach(char =>
-  Object.values(char.talent ?? {}).forEach(talent => //TODO: escape for character with imcomplete characer sheet
+  Object.values(char.talent ?? {}).forEach(talent => //TODO: escape for character with imcomplete character sheet
     talent.document.forEach(section =>
       section.fields?.forEach?.(fieldProcessing))))
 export default characters

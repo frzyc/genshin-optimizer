@@ -8,7 +8,8 @@ import { compareAgainstEquippedContext } from "../../CharacterDisplayCard";
 export default function FieldDisplay({ field, index, equippedBuild, newBuild, className = "p-2" }) {
   const compareAgainstEquipped = useContext(compareAgainstEquippedContext)
   const stats = newBuild ? newBuild : equippedBuild
-  const fixedVal = field.fixed || 0
+  const canShow = useMemo(() => field.canShow(stats), [stats])
+  const fixedVal = field?.fixed || 0
   const fieldVal = useMemo(() => {
     if (field.value) return Character.getTalentFieldValue(field, "value", stats)
     else if (field.formula) {
@@ -40,7 +41,7 @@ export default function FieldDisplay({ field, index, equippedBuild, newBuild, cl
 
   const unit = useMemo(() => Character.getTalentFieldValue(field, "unit", stats), [field, stats])
 
-  if (!field) return null
+  if (!canShow) return null
   return <ListGroup.Item variant={index % 2 ? "customdark" : "customdarker"} className={className}>
     <span><b>{fieldText}</b>{formulaTextOverlay}</span>
     <span className={`float-right text-right text-${fieldVariant}`} >{fieldVal?.toFixed?.(fixedVal) ?? fieldVal}{unit}</span>

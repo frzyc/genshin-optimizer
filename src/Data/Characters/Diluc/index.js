@@ -15,7 +15,43 @@ import passive3 from './Talent_Tradition_of_the_Dawn_Knight.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-
+const conditionals = {
+  FlamingSwordNemesisOfDark: {
+    canShow: stats => stats.constellation >= 6,
+    name: <span>After casting <b>Searing Onslaught</b></span>,
+    stats: {
+      normal_dmg_: 30,
+      atkSPD_: 30,
+    },
+    fields: [{
+      text: "Next 2 Normal Attack within",
+      value: "6s",
+    }]
+  },
+  BlessingOfPhoenix: {
+    canShow: stats => stats.ascension >= 4,
+    name: <span>During <b>Dawn</b></span>,
+    stats: { pyro_dmg_: 20 },
+  },
+  Conviction: {
+    canShow: stats => stats.constellation >= 1,
+    name: "Enemies with >50% HP",
+    stats: { dmg_: 15 },
+  },
+  SearingEmber: {
+    canShow: stats => stats.constellation >= 2,
+    name: "Take DMG",
+    maxStack: 3,
+    stats: {
+      atk_: 10,
+      atkSPD_: 5
+    },
+    fields: [{
+      text: "Duration",
+      value: "10s",
+    }]
+  }
+}
 const char = {
   name: "Diluc",
   cardImg: card,
@@ -29,6 +65,7 @@ const char = {
   baseStat: data.baseStat,
   specializeStat: data.specializeStat,
   formula,
+  conditionals,
   talent: {
     auto: {
       name: "Tempered Sword",
@@ -87,8 +124,8 @@ const char = {
       img: skill,
       document: [{
         text: <span>
-          Performs a forward slash that deals <span className="text-pyro">Pyro DMG</span>.
-          This skill can be used 3 times consecutively. Enters CD if not cast again within a short period (5s).
+          <p className="mb-2">Performs a forward slash that deals <span className="text-pyro">Pyro DMG</span>.</p>
+          <p className="mb-0">This skill can be used 3 times consecutively. Enters CD if not cast again within a short period (5s).</p>
         </span>,
         fields: [
           ...[["hit1", "1-Hit DMG"], ["hit2", "2-Hit DMG"], ["hit3", "3-Hit DMG"]].map(([key, text]) => ({
@@ -97,12 +134,14 @@ const char = {
             formula: formula.skill[key],
             variant: stats => getTalentStatKeyVariant("skill", stats),
           })),
-          stats => stats.constellation >= 4 && {
+          {
+            canShow: stats => stats.constellation >= 4,
             text: "2-Hit DMG(Boosted)",
             formulaText: stats => <span>{data.skill.hit2[stats.tlvl.skill]}% + 40% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
             formula: formula.skill.hit2b,
             variant: stats => getTalentStatKeyVariant("skill", stats)
-          }, stats => stats.constellation >= 4 && {
+          }, {
+            canShow: stats => stats.constellation >= 4,
             text: "3-Hit DMG(Boosted)",
             formulaText: stats => <span>{data.skill.hit3[stats.tlvl.skill]}% + 40% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
             formula: formula.skill.hit3b,
@@ -112,31 +151,14 @@ const char = {
             value: "12s",
           }]
       }, {
-        conditional: stats => stats.constellation >= 6 && {
-          type: "character",
-          conditionalKey: "FlamingSwordNemesisOfDark",
-          condition: "Flaming Sword, Nemesis of Dark",
-          sourceKey: "diluc",
-          maxStack: 1,
-          stats: {
-            normal_dmg_: 30,
-            atkSPD_: 30,
-          },
-          fields: [{
-            text: "Next 2 Normal Attack within",
-            value: "6s",
-          }]
-        }
+        conditional: conditionals.FlamingSwordNemesisOfDark
       }],
     },
     burst: {
       name: "Dawn",
       img: burst,
       document: [{
-        text: <span>
-          Releases intense flames to knock nearby opponents back, dealing <span className="text-pyro">Pyro DMG</span>. The flames then converge into the weapon, summoning a Phoenix that flies forward and deals massive <span className="text-pyro">Pyro DMG</span> to all opponents in its path. The Phoenix explodes upon reaching its destination, causing a large amount of <span className="text-pyro">AoE Pyro DMG</span>.
-          The searing flames that run down his blade cause it to be infused with <span className="text-pyro">Pyro</span>.
-        </span>,
+        text: <span>Releases intense flames to knock nearby opponents back, dealing <span className="text-pyro">Pyro DMG</span>. The flames then converge into the weapon, summoning a Phoenix that flies forward and deals massive <span className="text-pyro">Pyro DMG</span> to all opponents in its path. The Phoenix explodes upon reaching its destination, causing a large amount of <span className="text-pyro">AoE Pyro DMG</span>. The searing flames that run down his blade cause it to be infused with <span className="text-pyro">Pyro</span>.</span>,
         fields: [
           ...[["slashing", "Slashing DMG"], ["dot", "DoT"], ["explosion", "Explosion DMG"]].map(([key, text]) => ({
             text,
@@ -153,18 +175,8 @@ const char = {
           }, {
             text: "Energy Cost",
             value: 40,
-          }]
-      }, {
-        conditional: stats => stats.ascension >= 4 && {
-          type: "character",
-          conditionalKey: "BlessingOfPhoenix",
-          condition: "Blessing of Phoenix",
-          sourceKey: "diluc",
-          maxStack: 1,
-          stats: {
-            pyro_dmg_: 20,
-          },
-        }
+          }],
+        conditional: conditionals.BlessingOfPhoenix
       }],
     },
     passive1: {
@@ -185,17 +197,9 @@ const char = {
     constellation1: {
       name: "Conviction",
       img: c1,
-      document: [{ text: <span>	Diluc deals 15% more DMG to enemies whose HP is above 50%.</span> }, {
-        conditional: stats => stats.constellation >= 1 && {
-          type: "character",
-          conditionalKey: "Enemy50",
-          condition: "Enemies with >50% HP",
-          sourceKey: "diluc",
-          maxStack: 1,
-          stats: {
-            dmg_: 15,
-          },
-        }
+      document: [{
+        text: <span>	Diluc deals 15% more DMG to enemies whose HP is above 50%.</span>,
+        conditional: conditionals.Conviction
       }],
     },
     constellation2: {
@@ -203,25 +207,10 @@ const char = {
       img: c2,
       document: [{
         text: <span>
-          When Diluc takes DMG, his ATK increases by 10%, and his ATK SPD increases by 5%. Last for 10s.
-          This effect can stack up to 3 times and can only occur once every 1.5s.
-      </span>
-      }, {
-        conditional: stats => stats.constellation >= 2 && {
-          type: "character",
-          conditionalKey: "TakeDMG",
-          condition: "Take DMG",
-          sourceKey: "diluc",
-          maxStack: 3,
-          stats: {
-            atk_: 10,
-            atkSPD_: 5
-          },
-          fields: [{
-            text: "Duration",
-            value: "10s",
-          }]
-        }
+          <p className="mb-2">When Diluc takes DMG, his ATK increases by 10%, and his ATK SPD increases by 5%. Last for 10s.</p>
+          <p className="mb-0">This effect can stack up to 3 times and can only occur once every 1.5s.</p>
+        </span>,
+        conditional: conditionals.SearingEmber
       }],
     },
     constellation3: {
@@ -234,8 +223,10 @@ const char = {
       name: "Flowing Flame",
       img: c4,
       document: [{
-        text: <span>Casting <b>Searing Onslaught</b> in sequence greatly increases damage dealt.
-        Within 2s of using Searing Onslaught, casting the next Searing Onslaught in the combo deals 40% additional DMG. This effect lasts for the next 2s.</span>
+        text: <span>
+          <p className="mb-2">Casting <b>Searing Onslaught</b> in sequence greatly increases damage dealt.</p>
+          <p className="mb-0">Within 2s of using Searing Onslaught, casting the next Searing Onslaught in the combo deals 40% additional DMG. This effect lasts for the next 2s.</p>
+        </span>
       }],
     },
     constellation5: {
@@ -249,8 +240,8 @@ const char = {
       img: c6,
       document: [{
         text: <span>
-          After casting <b>Searing Onslaught</b>, the next 2 Normal Attacks within the next 6s will have their DMG and ATK SPD increased by 30%.
-          Additionally, <b>Searing Onslaught</b> will not interrupt the Normal Attack combo.
+          <p className="mb-2">After casting <b>Searing Onslaught</b>, the next 2 Normal Attacks within the next 6s will have their DMG and ATK SPD increased by 30%.</p>
+          <p className="mb-0">Additionally, <b>Searing Onslaught</b> will not interrupt the Normal Attack combo.</p>
         </span>
       }],
     }

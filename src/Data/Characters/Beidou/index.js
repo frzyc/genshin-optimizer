@@ -16,7 +16,28 @@ import DisplayPercent from '../../../Components/DisplayPercent'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-
+const conditionals = {
+  LightningStorm: {
+    canShow: stats => stats.ascension >= 4,
+    name: <span>Unleashing <b>Tidecaller</b> with its maximum DMG Bonus</span>,
+    stats: {
+      normal_dmg_: 15,
+      charged_dmg_: 15,
+      atkSPD_: 15,
+    },
+    fields: [{
+      text: "Duration",
+      value: "10s",
+    }, {
+      text: "Reduced delay before Charged Attacks",
+    }]
+  },
+  BaneEvil: {
+    canShow: stats => stats.constellation >= 6,
+    name: <span>During the duration of <b>Stormbreaker</b></span>,
+    stats: { electro_enemyRes_: -15, }
+  }
+}
 const char = {
   name: "Beidou",
   cardImg: card,
@@ -30,6 +51,7 @@ const char = {
   baseStat: data.baseStat,
   specializeStat: data.specializeStat,
   formula,
+  conditionals,
   talent: {
     auto: {
       name: "Oceanborne",
@@ -128,26 +150,8 @@ const char = {
         }, {
           text: "CD",
           value: "7.5s",
-        }]
-      }, {
-        conditional: stats => stats.ascension >= 4 && {
-          type: "character",
-          conditionalKey: "LightningStorm",
-          condition: "Lightning Storm",
-          sourceKey: "beidou",
-          maxStack: 1,
-          stats: {
-            normal_dmg_: 15,
-            charged_dmg_: 15,
-            atkSPD_: 15,
-          },
-          fields: [{
-            text: "Duration",
-            value: "10s",
-          }, {
-            text: "Reduced delay before Charged Attacks",
-          }]
-        }
+        }],
+        conditional: conditionals.LightningStorm
       }],
     },
     burst: {
@@ -186,16 +190,7 @@ const char = {
           text: "Energy Cost",
           value: 60,
         }],
-        conditional: stats => stats.constellation >= 6 && {
-          type: "character",
-          conditionalKey: "BaneEvil",
-          condition: "Bane of the Evil",
-          sourceKey: "beidou",
-          maxStack: 1,
-          stats: {
-            electro_enemyRes_: -15,
-          }
-        }
+        conditional: conditionals.BaneEvil
       }],
     },
     passive1: {

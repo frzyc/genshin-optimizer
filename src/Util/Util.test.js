@@ -1,11 +1,9 @@
-import { getObjectKeysRecursive, objMultiplication, layeredAssignment, objPathValue } from "./Util"
+import { getObjectKeysRecursive, objMultiplication, layeredAssignment, objPathValue, crawlObject } from "./Util"
 
-describe('objMultiplication()', () => {
-  test('should multiply', () => {
-    const obj = { a: { b: { c: 3 }, d: "e", f: 5 } }
-    objMultiplication(obj, 2)
-    expect(obj).toEqual({ a: { b: { c: 6 }, d: "e", f: 10 } })
-  })
+test('objMultiplication', () => {
+  const obj = { a: { b: { c: 3 }, d: "e", f: 5 } }
+  objMultiplication(obj, 2)
+  expect(obj).toEqual({ a: { b: { c: 6 }, d: "e", f: 10 } })
 })
 
 describe('getObjectKeysRecursive', () => {
@@ -31,4 +29,11 @@ test('objPathValue ', () => {
   expect(objPathValue(obj, ["a", "b", "c", "d"])).toBe(undefined)
   expect(objPathValue(obj, ["a", "b1",])).toEqual({})
   expect(objPathValue(obj, ["a", "b1", "c"])).toBe(undefined)
+})
+test('crawlObject', () => {
+  const obj = { a: { b: { c: "Test", c1: false }, b1: null }, a1: {} }
+  crawlObject(obj, [], t => t === "Test", (o, keys) => {
+    expect(o).toBe("Test")
+    expect(keys).toEqual(["a", "b", "c"])
+  })
 })

@@ -148,11 +148,11 @@ export default class Character {
     const transReactions = deepClone(ElementToReactionKeys[eleKey])
     const weaponTypeKey = this.getWeaponTypeKey(characterKey)
     if (!transReactions.includes("shattered_hit") && weaponTypeKey === "claymore") transReactions.push("shattered_hit")
-    if (Formula.character[characterKey]) {
+    if (Formula.formulas.character[characterKey]) {
       const charFormulas = {}
-      Object.entries(Formula.character[characterKey]).forEach(([talentKey, formulas]) => {
+      Object.entries(Formula.formulas.character[characterKey]).forEach(([talentKey, formulas]) => {
         Object.values(formulas).forEach(formula => {
-          if (!formula.field.condition(stats)) return
+          if (!formula.field.canShow(stats)) return
           if (talentKey === "normal" || talentKey === "charged" || talentKey === "plunging") talentKey = "auto"
           if (!charFormulas[talentKey]) charFormulas[talentKey] = []
           charFormulas[talentKey].push(formula.keys)

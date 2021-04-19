@@ -15,6 +15,7 @@ import passive3 from './Talent_Mein_Hausgarten.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
+const conditionals = {}
 
 const char = {
   name: "Fischl",
@@ -29,6 +30,7 @@ const char = {
   baseStat: data.baseStat,
   specializeStat: data.specializeStat,
   formula,
+  conditionals,
   talent: {
     auto: {
       name: "Bolts of Downfall",
@@ -55,10 +57,11 @@ const char = {
           formulaText: stats => <span>{data.charged.fullAimedShot[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats, true), stats)}</span>,
           formula: formula.charged.fullAimedShot,
           variant: stats => getTalentStatKeyVariant("charged", stats, true),
-        }, stats => stats.ascension >= 1 && {
+        }, {
+          canShow: stats => stats.ascension >= 1,
           text: <span>Full Aimed Shot on Oz <span className="text-electro">AoE</span></span>,
           formulaText: stats => <span>152.7% * {data.charged.fullAimedShot[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats, true), stats)}</span>,
-          formula: formula.charged.fullAimedShot,
+          formula: formula.charged.fullAimedShotOz,
           variant: stats => getTalentStatKeyVariant("charged", stats, true),
         }]
       }, {
@@ -101,7 +104,8 @@ const char = {
           formulaText: stats => <span>{data.skill.dmg[stats.tlvl.skill]}%{stats.constellation >= 2 ? " + 200%" : ""} {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
           formula: formula.skill.dmg,
           variant: stats => getTalentStatKeyVariant("skill", stats),
-        }, stats => stats.constellation >= 6 && {
+        }, {
+          canShow: stats => stats.constellation >= 6,
           text: "Attack with Active Character",
           formulaText: stats => <span>30% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
           formula: formula.skill.activeChar,
@@ -112,7 +116,8 @@ const char = {
         }, {
           text: "CD",
           value: "25s",
-        }, stats => stats.constellation >= 2 && {
+        }, {
+          canShow: stats => stats.constellation >= 2,
           text: "AoE Increase",
           value: "50%",
         }]
@@ -135,12 +140,14 @@ const char = {
           formulaText: stats => <span>{data.burst.dmg[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
           formula: formula.burst.dmg,
           variant: stats => getTalentStatKeyVariant("burst", stats),
-        }, stats => stats.constellation >= 4 && {
+        }, {
+          canShow: stats => stats.constellation >= 4,
           text: "Additional AoE Damage",
           formulaText: stats => <span>222% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
           formula: formula.burst.addDmg,
           variant: stats => getTalentStatKeyVariant("burst", stats),
-        }, stats => stats.constellation >= 4 && {
+        }, {
+          canShow: stats => stats.constellation >= 4,
           text: "HP Recovered",
           formulaText: stats => <span>( 20% {Stat.printStat("finalHP", stats)} ) * {Stat.printStat("heal_multi", stats)}</span>,
           formula: formula.burst.regen,
@@ -164,7 +171,8 @@ const char = {
       img: passive2,
       document: [{
         text: <span>If your active character triggers an <span className="text-electro">Electro-related Elemental Reaction</span> when Oz is on the field, the opponent shall be stricken with Thundering Retribution, dealing <span className="text-electro">Electro DMG</span> equal to 80% of Fischl's ATK.</span>,
-        fields: [stats => stats.ascension >= 4 && {
+        fields: [{
+          canShow: stats => stats.ascension >= 4,
           text: "Thundering Retribution",
           formulaText: stats => <span>80% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
           formula: formula.passive2.thunderRetri,
@@ -182,7 +190,8 @@ const char = {
       img: c1,
       document: [{
         text: <span>Even when Oz is not present in combat, he can still watch over Fischl through the crow's eyes. When Fischl attacks an opponent, Oz fires a joint attack through the crow's eyes, dealing 22% of <span className="text-physical">ATK DMG</span>.</span>,
-        fields: [stats => stats.constellation >= 1 && {
+        fields: [{
+          canShow: stats => stats.constellation >= 1,
           text: "Joint Attack DMG",
           formulaText: stats => <span>22% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
           formula: formula.constellation1.jointAttDmg,

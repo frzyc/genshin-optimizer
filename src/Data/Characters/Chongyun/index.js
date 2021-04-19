@@ -15,7 +15,22 @@ import passive3 from './Talent_Gallant_Journey.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-
+const conditionals = {
+  RimechaserBlade: {
+    canShow: stats => stats.ascension >= 4,
+    name: "Opponents hit by Rimechase Blade",
+    stats: { cryo_enemyRes_: -10 },
+    fields: [{
+      text: "Duration",
+      value: "8s",
+    }]
+  },
+  RallyOfFourBlades: {
+    canShow: stats => stats.constellation >= 6,
+    name: "Enemy with lower MaxHP% than Chongyun",
+    stats: { burst_dmg_: 15 }
+  }
+}
 const char = {
   name: "Chongyun",
   cardImg: card,
@@ -29,6 +44,7 @@ const char = {
   baseStat: data.baseStat,
   specializeStat: data.specializeStat,
   formula,
+  conditionals,
   talent: {
     auto: {
       name: "Demonbane",
@@ -105,18 +121,7 @@ const char = {
           text: "CD",
           value: "15s",
         }],
-        conditional: stats => stats.ascension >= 4 && {
-          type: "character",
-          conditionalKey: "RimechaserBlade",
-          condition: "Opponents hit by Rimechase Blade",
-          sourceKey: "chongyun",
-          maxStack: 1,
-          stats: { cryo_enemyRes_: -10 },
-          fields: [{
-            text: "Duration",
-            value: "8s",
-          }]
-        }
+        conditional: conditionals.RimechaserBlade
       }],
     },
     burst: {
@@ -142,14 +147,7 @@ const char = {
           text: "Spirit Blades Summoned",
           value: stats => stats.constellation < 6 ? 3 : 4
         }],
-        conditional: stats => stats.constellation >= 6 && {
-          type: "character",
-          conditionalKey: "RallyOfFourBlades",
-          condition: "Enemy with lower MaxHP% than Chongyun",
-          sourceKey: "chongyuon",
-          maxStack: 1,
-          stats: { burst_dmg_: 15 }
-        }
+        conditional: conditionals.RallyOfFourBlades
       }],
     },
     passive1: {
@@ -165,7 +163,8 @@ const char = {
           <p className="mb-2">When the field created by <b>Spirit Blade: Chonghua's Layered Frost</b> disappears, another spirit blade will be summoned to strike nearby opponents, dealing 100% of Chonghua's Layered Frost's Skill DMG as <span className="text-cryo">AoE Cryo DMG</span>.</p>
           <p className="mb-2">Opponents hit by this blade will have their <span className="text-cryo">Cryo RES</span> decreased by 10% for 8s.</p>
         </span>,
-        fields: [stats => stats.ascension >= 4 && {
+        fields: [{
+          canShow: stats => stats.ascension >= 4,
           text: "Summoned Sword DMG",
           formulaText: stats => <span>{data.skill.dmg[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
           formula: formula.passive2.dmg,
@@ -185,7 +184,8 @@ const char = {
       img: c1,
       document: [{
         text: <span>The last attack of Chongyun's Normal Attack combo releases 3 ice blades. Each blade deals 50% of Chongyun's ATK as <span className="text-cryo">Cryo DMG</span> to all opponents in its path.</span>,
-        fields: [stats => stats.constellation && {
+        fields: [{
+          canShow: stats => stats.constellation >= 1,
           text: "Ice Blade DMG",
           formulaText: stats => <span>50% {Stat.printStat(getTalentStatKey("elemental", stats), stats)}</span>,
           formula: formula.constellation1.dmg,

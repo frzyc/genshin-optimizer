@@ -1,18 +1,16 @@
 import charFormulas from './Data/Characters/formula'
-import { objPathValue } from './Util/Util';
+import { crawlObject, objPathValue } from './Util/Util';
 export default class Formula {
   constructor() { if (this instanceof Formula) throw Error('A static class cannot be instantiated.'); }
-  static get = (keys, defVal = null) => objPathValue(this, keys) ?? defVal
+  static formulas = {}
+  static get = (keys, defVal = null) => objPathValue(this.formulas, keys) ?? defVal
 }
 
 function addFormula(src, key) {
-  Formula[key] = src
-  attachKeys(src, [key])
-}
-
-function attachKeys(obj, keys) {
-  if (typeof obj === "function") obj.keys = [...keys]
-  else obj && typeof obj === "object" && Object.entries(obj).forEach(([key, val]) => attachKeys(val, [...keys, key]))
+  Formula.formulas[key] = src
+  crawlObject(src, [key], f => typeof f === "function", (formula, keys) => {
+    formula.keys = keys
+  })
 }
 
 addFormula(charFormulas, "character")

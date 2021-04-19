@@ -16,6 +16,30 @@ import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant, } from "../../../Build/Build"
 import DisplayPercent from '../../../Components/DisplayPercent'
+const conditionals = {
+  HomuncularNature: {//passive2
+    canShow: stats => stats.ascension >= 4,
+    name: "Using Tectonic Tide",
+    stats: {//TODO: team buff
+      eleMas: 125,
+    }
+  },
+  DescentOfDivinity: {//constellation4
+    canShow: stats => stats.constellation >= 4,
+    name: "Within the Solar Isotoma",
+    stats: {//TODO: team buff 
+      plunging_dmg_: 30,
+    }
+  },
+  DustOfPurification: {
+    canShow: stats => stats.constellation >= 6,
+    name: "Protected by a shield created by Crystallize",
+    type: "character",
+    stats: {//TODO: team buff
+      dmg_: 17,
+    }
+  }
+}
 const char = {
   name: "Albedo",
   cardImg: card,
@@ -29,6 +53,7 @@ const char = {
   baseStat: data.baseStat,
   specializeStat: data.specializeStat,
   formula,
+  conditionals,
   talent: {
     auto: {
       name: "Favonius Bladework - Weiss",
@@ -103,8 +128,8 @@ const char = {
           formulaText: stats => <span>{data.skill.blossom[stats.tlvl.skill]}% {Stat.printStat("finalDEF", stats)} * {Stat.printStat(getTalentStatKey("skill", stats) + "_multi", stats)}</span>,
           formula: formula.skill.blossom,
           variant: stats => getTalentStatKeyVariant("skill", stats),
-        },
-        stats => stats.ascension >= 1 && {
+        }, {
+          canShow: stats => stats.ascension >= 1,
           text: "Transient Blossom DMG <50 HP",
           formulaText: stats => {
             const hitModeMultiKey = stats.hitMode === "avgHit" ? "skill_avgHit_base_multi" : stats.hitMode === "critHit" ? "critHit_base_multi" : ""
@@ -128,24 +153,26 @@ const char = {
           formula: formula.burst.dmg,
           variant: stats => getTalentStatKeyVariant("burst", stats),
         },
-        ...[...Array(4).keys()].map(i => i + 1).map(i => stats => stats.constellation >= 2 && {
+        ...[...Array(4).keys()].map(i => i + 1).map(i => ({
+          canShow: stats => stats.constellation >= 2,
           text: `Burst DMG C2 ${i} Stack`,
           formulaText: stats => <span>( {data.burst.dmg[stats.tlvl.burst]}% {Stat.printStat("finalATK", stats)} + {30 * i}% {Stat.printStat("finalDEF", stats)}) * {Stat.printStat(getTalentStatKey("burst", stats) + "_multi", stats)}</span>,
           formula: formula.burst[`dmg${i}c2`],
           variant: stats => getTalentStatKeyVariant("burst", stats),
-        }),
+        })),
         {
           text: "Fatal Blossom DMG",
           formulaText: stats => <span>{data.burst.blossom[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
           formula: formula.burst.blossom,
           variant: stats => getTalentStatKeyVariant("burst", stats),
         },
-        ...[...Array(4).keys()].map(i => i + 1).map(i => stats => stats.constellation && {
+        ...[...Array(4).keys()].map(i => i + 1).map(i => ({
+          canShow: stats => stats.constellation >= 2,
           text: `Fatal Blossom DMG C2 ${i} Stack`,
           formulaText: stats => <span>( {data.burst.blossom[stats.tlvl.burst]}% {Stat.printStat("finalATK", stats)} + {30 * i}% {Stat.printStat("finalDEF", stats)}) * {Stat.printStat(getTalentStatKey("burst", stats) + "_multi", stats)}</span>,
           formula: formula.burst[`blossom${i}c2`],
           variant: stats => getTalentStatKeyVariant("burst", stats),
-        }), {
+        })), {
           text: "CD",
           value: "12s"
         }, {
@@ -166,16 +193,7 @@ const char = {
       img: passive1,
       document: [{
         text: <span>Using Rite of <strong>Progeniture: Tectonic Tide</strong> increases the Elemental Mastery of nearby party members by 125 for 10s.</span>,
-        conditional: stats => stats.ascension >= 4 && {
-          type: "character",
-          conditionalKey: "TectonicTide",
-          condition: "Tectonic Tide",
-          sourceKey: "albedo",
-          maxStack: 1,
-          stats: {
-            eleMas: 125,
-          }//TODO: team buff
-        }
+        conditional: conditionals.HomuncularNature
       }],
     },
     passive3: {
@@ -212,16 +230,7 @@ const char = {
       img: c4,
       document: [{
         text: <span>Active party members within the <strong>Solar Isotoma</strong> field have their Plunging Attack DMG increased by 30%.</span>,
-        conditional: stats => stats.constellation >= 4 && {
-          type: "character",
-          conditionalKey: "SolarIsotoma",
-          condition: "Within the Solar Isotoma",
-          sourceKey: "albedo",
-          maxStack: 1,
-          stats: {
-            plunging_dmg_: 30,
-          }
-        }//TODO: team buff 
+        conditional: conditionals.DescentOfDivinity
       }],
     },
     constellation5: {
@@ -235,16 +244,7 @@ const char = {
       img: c6,
       document: [{
         text: <span>Active party members within the <strong>Solar Isotoma</strong> field who are protected by a shield created by <span className="text-geo">Crystallize</span> have their DMG increased by 17%.</span>,
-        conditional: stats => stats.constellation >= 6 && {
-          type: "character",
-          conditionalKey: "Protectedbyashield",
-          condition: "Protected by a shield created by Crystallize",
-          sourceKey: "albedo",
-          maxStack: 1,
-          stats: {
-            dmg_: 17,
-          }
-        }//TODO: team buff
+        conditional: conditionals.DustOfPurification
       }],
     }
   },

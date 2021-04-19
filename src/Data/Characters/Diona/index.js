@@ -15,7 +15,26 @@ import passive3 from './Talent_Complimentary_Bar_Food.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-
+const conditionals = {
+  IcyPawsShield: {
+    canShow: stats => stats.constellation >= 4,
+    name: "Characters Shielded",
+    stats: {
+      moveSPD_: 10,
+      staminaDec_: 10
+    },
+  },
+  CatsTailClosingTimeBelow50: {
+    canShow: stats => stats.constellation >= 6,
+    name: "Characters within radius below or equal 50% HP",
+    stats: { incHeal_: 30 },
+  },
+  TailClosingTimeAbove50: {
+    canShow: stats => stats.constellation >= 6,
+    name: "Characters within radius above 50% HP",
+    stats: { eleMas: 200 },
+  }
+}
 const char = {
   name: "Diona",
   cardImg: card,
@@ -29,6 +48,7 @@ const char = {
   baseStat: data.baseStat,
   specializeStat: data.specializeStat,
   formula,
+  conditionals,
   talent: {
     auto: {
       name: "Kätzlein Style",
@@ -54,7 +74,8 @@ const char = {
           formulaText: stats => <span>{data.charged.fullAimedShot[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats, true), stats)}</span>,
           formula: formula.charged.fullAimedShot,
           variant: stats => getTalentStatKeyVariant("charged", stats, true),
-        }, stats => stats.constellation >= 4 && {
+        }, {
+          canShow: stats => stats.constellation >= 4,
           text: "Charge time reduced by 60% in Burst zone"
         }]
       }, {
@@ -110,17 +131,7 @@ const char = {
           text: "Hold CD",
           value: "15s",
         }],
-        conditional: stats => stats.constellation >= 4 && {
-          type: "character",
-          conditionalKey: "IcyPawsShield",
-          condition: "Characters Shielded",
-          sourceKey: "diona",
-          maxStack: 1,
-          stats: {
-            moveSPD_: 10,
-            staminaDec_: 10
-          },
-        }
+        conditional: conditionals.IcyPawsShield
       }]
     },
     burst: {
@@ -157,29 +168,10 @@ const char = {
         }, {
           text: "Energy Cost",
           value: 80,
-        }]
+        }],
+        conditional: conditionals.CatsTailClosingTime
       }, {
-        conditional: stats => stats.constellation >= 6 && {
-          type: "character",
-          conditionalKey: "TailClosingTimeBelow50",
-          condition: "Characters within radius below or equal 50% HP",
-          sourceKey: "diona",
-          maxStack: 1,
-          stats: {
-            incHeal_: 30,
-          },
-        }
-      }, {
-        conditional: stats => stats.constellation >= 6 && {
-          type: "character",
-          conditionalKey: "TailClosingTimeAbove50",
-          condition: "Characters within radius above 50% HP",
-          sourceKey: "diona",
-          maxStack: 1,
-          stats: {
-            eleMas: 200,
-          },
-        }
+        conditional: conditionals.TailClosingTimeAbove50
       }],
     },
     passive1: {

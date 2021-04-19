@@ -15,7 +15,31 @@ import passive3 from './Talent_Gliding_Champion.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-
+const conditionals = {
+  Wildfire: {
+    canShow: stats => stats.constellation >= 6,
+    name: "Fiery Rain",
+    stats: {//TODO: party buff
+      atk_: 15,
+      moveSPD_: 15
+    },
+    fields: [{
+      text: "Duration",
+      value: "10s",
+    }]
+  },
+  PreciseShot: {
+    canShow: stats => stats.ascension >= 4,
+    name: "Aim shot hit on weak spots",
+    stats: {
+      atk_: 15,
+    },
+    fields: [{
+      text: "Duration",
+      value: "10s",
+    }]
+  }
+}
 const char = {
   name: "Amber",
   cardImg: card,
@@ -29,6 +53,7 @@ const char = {
   baseStat: data.baseStat,
   specializeStat: data.specializeStat,
   formula,
+  conditionals,
   talent: {
     auto: {
       name: "Sharpshooter",
@@ -99,27 +124,27 @@ const char = {
           formulaText: stats => <span>{data.skill.dmg[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
           formula: formula.skill.dmg,
           variant: stats => getTalentStatKeyVariant("skill", stats),
-        }, stats => stats.constellation >= 2 && {
+        }, {
+          canShow: stats => stats.constellation >= 2,
           text: "Manual Detonation DMG",
           formulaText: stats => <span>{data.skill.dmg[stats.tlvl.skill]}% + 200% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
           formula: formula.skill.detonationDMG,
           variant: stats => getTalentStatKeyVariant("skill", stats),
-        }, stats => stats.constellation >= 4 && {
+        }, {
+          canShow: stats => stats.constellation >= 4,
           text: "Charges",
           value: 2,
-        }, stats => ({
+        }, {
           text: "CD",
-          value: "15s" + (stats.constellation >= 4 ? " -20%" : ""),
-        })]
+          value: stats => "15s" + (stats.constellation >= 4 ? " -20%" : ""),
+        }]
       }],
     },
     burst: {
       name: "Fiery Rain",
       img: burst,
       document: [{
-        text: <span>
-          Fires off a shower of arrows, dealing continuous <span className="text-pyro">AoE Pyro DMG</span>.
-      </span>,
+        text: <span>Fires off a shower of arrows, dealing continuous <span className="text-pyro">AoE Pyro DMG</span>.</span>,
         fields: [{
           text: "DMG Per Wave",
           formulaText: stats => <span>{data.burst.dmgPerWave[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
@@ -130,10 +155,12 @@ const char = {
           formulaText: stats => <span>{data.burst.totDMG[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
           formula: formula.burst.totDMG,
           variant: stats => getTalentStatKeyVariant("burst", stats),
-        }, stats => stats.ascension >= 1 && {
+        }, {
+          canShow: stats => stats.ascension >= 1,
           text: "CRIT Rate Bonus",
           value: "10%"
-        }, stats => stats.ascension >= 1 && {
+        }, {
+          canShow: stats => stats.ascension >= 1,
           text: "AoE Range Bonus",
           value: "30%"
         }, {
@@ -145,23 +172,8 @@ const char = {
         }, {
           text: "Energy Cost",
           value: 40,
-        },]
-      }, {
-        conditional: stats => stats.constellation >= 6 && {
-          type: "character",
-          conditionalKey: "WildFire",
-          condition: "Wildfire",
-          sourceKey: "amber",
-          maxStack: 1,
-          stats: {
-            atk_: 15,
-            moveSPD_: 15
-          },
-          fields: [{
-            text: "Duration",
-            value: "10s",
-          }]
-        }
+        },],
+        conditional: conditionals.Wildfire
       }],
       stats: stats => stats.ascension >= 1 ? ({
         burst_critRate_: 10
@@ -176,20 +188,7 @@ const char = {
       name: "Precise Shot",
       img: passive2,
       document: [{ text: <span>Aimed Shot hits on weak spots increase ATK by 15% for 10s.</span> }, {
-        conditional: stats => stats.ascension >= 4 && {
-          type: "character",
-          conditionalKey: "PreciseShot",
-          condition: "Precise Shot",
-          sourceKey: "amber",
-          maxStack: 1,
-          stats: {
-            atk_: 15,
-          },
-          fields: [{
-            text: "Duration",
-            value: "10s",
-          }]
-        }
+        conditional: conditionals.PreciseShot
       }],
     },
     passive3: {
@@ -246,7 +245,6 @@ const char = {
       name: "Wildfire",
       img: c6,
       document: [{ text: <span><b>Fiery Rain</b> increases the entire party's Movement SPD by 15% and ATK by 15% for 10s.</span> }]
-      //TODO party buff
     },
   },
 };

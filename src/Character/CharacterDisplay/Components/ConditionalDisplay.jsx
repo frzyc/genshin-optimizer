@@ -2,13 +2,15 @@ import { useCallback, useMemo } from "react"
 import { Card, ListGroup } from "react-bootstrap"
 import Conditional from "../../../Conditional/Conditional"
 import ConditionalSelector from "../../../Conditional/ConditionalSelector"
+import statsToFields from "../../../Util/FieldUtil"
 import { deletePropPath, layeredAssignment, objClearEmpties } from "../../../Util/Util"
-import statsToFields from "../statsToFields"
 import FieldDisplay from "./FieldDisplay"
 
 export default function ConditionalDisplay({ conditional, titleText = null, equippedBuild, newBuild, characterDispatch, editable, fieldClassName, initialFields = [] }) {
   const stats = newBuild ? newBuild : equippedBuild
-  const { stats: conditionalStats = {}, fields: conditionalFields = [], conditionalValue } = useMemo(() => Conditional.resolve(conditional, stats), [conditional, stats])
+  const canShow = useMemo(() => Conditional.canShow(conditional, stats), [conditional, stats])
+  const { stats: conditionalStats = {}, fields: conditionalFields = [], conditionalValue } = useMemo(() => canShow && Conditional.resolve(conditional, stats), [canShow, conditional, stats])
+  const displayFields = useMemo(() => canShow && [...initialFields, ...statsToFields(conditionalStats, stats), ...conditionalFields], [canShow, initialFields, conditionalStats, stats, conditionalFields])
   const setConditional = useCallback(condV => {
     const [conditionalNum = 0] = condV
     if (!conditionalNum) {
@@ -17,8 +19,8 @@ export default function ConditionalDisplay({ conditional, titleText = null, equi
     } else layeredAssignment(stats.conditionalValues, conditional.keys, condV)
     characterDispatch({ conditionalValues: stats.conditionalValues })
   }, [stats.conditionalValues, conditional.keys, characterDispatch])
-  const displayFields = useMemo(() => [...initialFields, ...statsToFields(conditionalStats, stats), ...conditionalFields], [initialFields, conditionalStats, stats, conditionalFields])
-  if (!conditional || !Conditional.canShow(conditional, stats)) return null
+
+  if (!canShow) return null
   return <Card bg="darkcontent" text="lightfont" className="mb-2 w-100">
     <Card.Header className="p-2">
       <ConditionalSelector disabled={!editable}

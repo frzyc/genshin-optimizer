@@ -1,7 +1,8 @@
 import Artifact from "../../Artifact/Artifact"
+import { parseFlexObj } from "../../FlexPage/FlexUtil"
 import { PreprocessFormulas, StatData } from "../../StatData"
 import { GetDependencies } from "../../StatDependency"
-import { parseFlexObj } from "../../Util/FlexUtil"
+
 
 export const createProxiedStats = (baseStats) => new Proxy({ ...baseStats }, {
   get: (target, property) => {

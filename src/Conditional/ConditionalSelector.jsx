@@ -14,7 +14,7 @@ export default function ConditionalSelector({ conditional, conditionalValue, set
     const badge = <Badge variant={conditionalNum === 0 ? "secondary" : "success"}>{text}</Badge>
     return <Dropdown>
       <Dropdown.Toggle size="sm" disabled={disabled}>
-        <h6 className="mb-0 d-inline">{name} {badge}</h6>
+        <h6 className="mb-0 d-inline" style={{ whiteSpace: "normal" }}>{name} {badge}</h6>
       </Dropdown.Toggle>
       <Dropdown.Menu>
         <Dropdown.Item onClick={() => setConditional(0)}>
@@ -35,7 +35,7 @@ export default function ConditionalSelector({ conditional, conditionalValue, set
     const badge = <Badge variant={conditionalNum === 0 ? "secondary" : "success"}>{conditionalNum > 0 ? `${conditionalNum} stack${conditionalNum > 1 ? "s" : ""}` : "Not Active"}</Badge>
     return <Dropdown>
       <Dropdown.Toggle size="sm" disabled={disabled}>
-        <h6 className="mb-0 d-inline">{name} {badge}</h6>
+        <h6 className="mb-0 d-inline" style={{ whiteSpace: "normal" }}>{name} {badge}</h6>
       </Dropdown.Toggle>
       <Dropdown.Menu>
         <Dropdown.Item onClick={() => setConditional([0])}>
