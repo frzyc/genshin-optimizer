@@ -52,7 +52,6 @@ const initialCharacter = (characterKey) => ({
     refineIndex: 0,
     overrideMainVal: 0,
     overrideSubVal: 0,
-    conditionalNum: 0,//weapon conditional
   },
   talentLevelKeys: {
     auto: 0,

@@ -117,7 +117,7 @@ function WeaponStatsEditorCard({ editable, character, character: { characterKey,
       if (value === weapon.key) return
       else {
         //reset the conditionalNum when we switch weapons
-        const talentConditionals = character
+        const { talentConditionals } = character
         delete talentConditionals.weapon
         characterDispatch({ talentConditionals })
       }
@@ -161,7 +161,7 @@ function WeaponStatsEditorCard({ editable, character, character: { characterKey,
               <DropdownButton title={Weapon.getWeaponName(weapon.key)}>
                 {[...Array(5).keys()].reverse().map(key => key + 1).map((star, i, arr) => <React.Fragment key={star}>
                   <Dropdown.ItemText key={"star" + star}><Stars stars={star} /></Dropdown.ItemText>
-                  {Object.entries(Weapon.getWeaponsOfType(weaponTypeKey)).filter(([key, weaponObj]) => weaponObj.rarity === star).map(([key, weaponObj]) =>
+                  {Object.entries(Weapon.getWeaponsOfType(weaponTypeKey)).filter(([, weaponObj]) => weaponObj.rarity === star).map(([key, weaponObj]) =>
                     <Dropdown.Item key={key} onClick={() => setStateWeapon("key", key)}>
                       {weaponObj.name}
                     </Dropdown.Item>

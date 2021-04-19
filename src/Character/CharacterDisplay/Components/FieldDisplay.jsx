@@ -8,7 +8,7 @@ import { compareAgainstEquippedContext } from "../../CharacterDisplayCard";
 export default function FieldDisplay({ field, index, equippedBuild, newBuild, className = "p-2" }) {
   const compareAgainstEquipped = useContext(compareAgainstEquippedContext)
   const stats = newBuild ? newBuild : equippedBuild
-  const canShow = useMemo(() => field.canShow(stats), [stats])
+  const canShow = useMemo(() => field.canShow(stats), [field, stats])
   const fixedVal = field?.fixed || 0
   const fieldVal = useMemo(() => {
     if (field.value) return Character.getTalentFieldValue(field, "value", stats)
