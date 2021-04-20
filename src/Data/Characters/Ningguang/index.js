@@ -15,7 +15,25 @@ import passive3 from './Talent_Trove_of_Marvelous_Treasures.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-
+const conditionals = {
+  StrategicReserve: {
+    canShow: stats => stats.ascension >= 4,
+    name: <span>Passing through <b>Jade Screen</b></span>,
+    stats: { geo_dmg_: 12 },//TODO: party buff
+    fields: [{
+      text: "Duration",
+      value: "10s",
+    }]
+  },
+  ExquisiteBeTheJade: {
+    canShow: stats => stats.constellation >= 4,
+    name: <span>Allies within 10m of <b>Jade Screen</b></span>,
+    fields: [{
+      text: "Elemental DMG received",//TODO: elemental dmg reduction
+      value: "-10.0%"
+    }]
+  }
+}
 const char = {
   name: "Ningguang",
   cardImg: card,
@@ -29,6 +47,7 @@ const char = {
   baseStat: data.baseStat,
   specializeStat: data.specializeStat,
   formula,
+  conditionals,
   talent: {
     auto: {
       name: "Sparkling Scatter",
@@ -108,15 +127,10 @@ const char = {
         }, {
           text: "CD",
           value: "12s",
-        }, stats => stats.constellation >= 2 && {
+        }, {
+          canShow: stats => stats.constellation >= 2,
           text: "Resets CD on shatter, every 6s",
-        }, stats => stats.constellation >= 4 && {
-          text: "Elemental DMG Reduc.",
-          value: "10%",
-        }, stats => stats.constellation >= 4 && {
-          text: "Elemental DMG Reduc. Range",
-          value: "10m",
-        }]
+        },]
       }],
     },
     burst: {
@@ -138,7 +152,8 @@ const char = {
         }, {
           text: "Energy Cost",
           value: 40,
-        }, stats => stats.constellation >= 6 && {
+        }, {
+          canShow: stats => stats.constellation >= 6,
           text: "Star Jade gained",
           value: "7",
         }]
@@ -154,20 +169,7 @@ const char = {
       img: passive2,
       document: [{
         text: <span>A character that passes through the <b>Jade Screen</b> will gain a 12% <span className="text-geo">Geo DMG Bonus</span> for 10s.</span>,
-        conditional: stats => stats.ascension >= 4 && {
-          type: "character",
-          conditionalKey: "StrategicReserve",
-          condition: "Strategic Reserve",
-          sourceKey: "ningguang",
-          maxStack: 1,
-          stats: {
-            geo_dmg_: 12
-          },
-          fields: [{
-            text: "Duration",
-            value: "10s",
-          }]
-        }
+        conditional: conditionals.StrategicReserve
       }],
     },
     passive3: {
@@ -194,7 +196,10 @@ const char = {
     constellation4: {
       name: "Exquisite be the Jade, Outshining All Beneath",
       img: c4,
-      document: [{ text: <span>Allies within a 10m radius of the Jade Screen take 10% less Elemental DMG.</span> }],
+      document: [{
+        text: <span>Allies within a 10m radius of the Jade Screen take 10% less Elemental DMG.</span>,
+        conditional: conditionals.ExquisiteBeTheJade
+      }],
     },
     constellation5: {
       name: "Invincible be the Jade Screen",

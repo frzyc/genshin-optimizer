@@ -15,7 +15,38 @@ import passive3 from './Talent_Land\'s_Overseer.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-
+const conditionals = {
+  AristocraticDignity: {
+    canShow: stats => stats.ascension >= 4,
+    name: <span>Casting <b>Starward Sword</b></span>,
+    stats: {
+      critRate_: 15,
+      enerRech_: 15,
+    },
+    fields: [{
+      text: "Duration",
+      value: "8s",
+    }]
+  },
+  Attunement: {
+    canShow: stats => stats.constellation >= 4,
+    name: "Trigger an Electro-related Elemental Reaction",
+    stats: { atk_: 25 },
+    fields: [{
+      text: "Duration",
+      value: "10s",
+    }]
+  },
+  Initating: {
+    canShow: stats => stats.constellation >= 6,
+    name: "Initiating Normal/Charged Attack, Skill or Burst",
+    stats: { electro_dmg_: 6 },
+    fields: [{
+      text: "Duration",
+      value: "8s",
+    }]
+  }
+}
 const char = {
   name: "Keqing",
   cardImg: card,
@@ -29,13 +60,14 @@ const char = {
   baseStat: data.baseStat,
   specializeStat: data.specializeStat,
   formula,
+  conditionals,
   talent: {
     auto: {
       name: "Yunlai Swordsmanship",
       img: normal,
       infusable: true,
       document: [{
-        text: <span><strong>Normal Attack</strong> Perform up to 5 rapid strikes. <small><i>Note: the 4th attack hits twice.</i></small></span>,
+        text: <span><strong>Normal Attack</strong> Perform up to 5 rapid strikes.</span>,
         fields: data.normal.hitArr.map((percentArr, i) =>
         ({
           text: `${i + (i < 4 ? 1 : 0)}${i === 3 ? ".1" : i === 4 ? ".2" : ""}-Hit DMG`,
@@ -146,23 +178,8 @@ const char = {
         }, {
           text: "Energy Cost",
           value: 60,
-        }]
-      }, {
-        conditional: stats => stats.ascension >= 4 && {
-          type: "character",
-          conditionalKey: "AristocraticDignity",
-          condition: "Aristocratic Dignity",
-          sourceKey: "keqing",
-          maxStack: 1,
-          stats: {
-            critRate_: 15,
-            enerRech_: 15,
-          },
-          fields: [{
-            text: "Duration",
-            value: "8s",
-          }]
-        }
+        }],
+        conditional: conditionals.AristocraticDignity
       }],
     },
     passive1: {
@@ -208,20 +225,7 @@ const char = {
       name: "Attunement",
       img: c4,
       document: [{ text: <span>For 10s after Keqing triggers an <span className="text-electro">Electro-related Elemental Reaction</span>, her ATK is increased by 25%.</span> }, {
-        conditional: stats => stats.constellation >= 4 && {
-          type: "character",
-          conditionalKey: "Trigger",
-          condition: "Trigger an Electro-related Elemental Reaction",
-          sourceKey: "keqing",
-          maxStack: 1,
-          stats: {
-            atk_: 25,
-          },
-          fields: [{
-            text: "Duration",
-            value: "10s",
-          }]
-        }
+        conditional: conditionals.Attunement
       }],
     },
     constellation5: {
@@ -234,20 +238,7 @@ const char = {
       name: "Tenacious Star",
       img: c6,
       document: [{ text: <span>When initiating a Normal Attack, a Charged Attack, Elemental Skill or Elemental Burst, Keqing gains a 6% <span className="text-electro">Electro DMG Bonus</span> for 8s. Effects triggered by Normal Attacks, Charged Attacks, Elemental Skills, and Elemental Bursts are considered independent entities.</span> }, {
-        conditional: stats => stats.constellation >= 6 && {
-          type: "character",
-          conditionalKey: "Initating",
-          condition: "Initiating Normal/Charged Attack, Skill or Burst",
-          sourceKey: "keqing",
-          maxStack: 1,
-          stats: {
-            electro_dmg_: 6,
-          },
-          fields: [{
-            text: "Duration",
-            value: "8s",
-          }]
-        }
+        conditional: conditionals.Initating
       }],
     },
   },

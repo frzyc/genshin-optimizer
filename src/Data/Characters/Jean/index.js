@@ -19,7 +19,7 @@ const conditionals = {
   constellation2: {
     canShow: stats => stats.constellation >= 2,
     name: "Jean pick up Elemental Orb/Particle",
-    stats: {//TODO PARTY buff
+    stats: {//TODO: PARTY buff
       moveSPD_: 15,
       atkSPD_: 15
     },
@@ -29,15 +29,13 @@ const conditionals = {
     }]
   },
   constellation4: {
-    name: "Opponents within the field created by Dandelion Breeze",
     canShow: stats => stats.constellation >= 4,
-    stats: {
-      anemo_enemyRes_: -40,
-    },
+    name: "Opponents within the field created by Dandelion Breeze",
+    stats: { anemo_enemyRes_: -40 },
   },
   constellation6: {
-    name: "WIthin field created by Dandelion Breeze",
     canShow: stats => stats.constellation >= 6,
+    name: "WIthin field created by Dandelion Breeze",
     fields: [{
       text: "Incoming DMG Decrease",
       value: "35%" //TODO: incoming dmg stat,
@@ -120,7 +118,8 @@ const char = {
           formulaText: stats => <span>{data.skill.dmg[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
           formula: formula.skill.dmg,
           variant: stats => getTalentStatKeyVariant("skill", stats),
-        }, stats => stats.constellation >= 1 && {
+        }, {
+          canShow: stats => stats.constellation >= 1,
           text: "Gale Blade DMG (Holding)",
           formulaText: stats => <span>{data.skill.dmg[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)} * 140%</span>,
           formula: formula.skill.dmg_hold,
@@ -186,7 +185,8 @@ const char = {
       img: passive1,
       document: [{
         text: <span>On hit, Jean's Normal Attacks have a 50% change to regenerate HP equal to 15% of Jean's ATK for all party members.</span>,
-        fields: [stats => stats.ascension >= 4 && {
+        fields: [{
+          canShow: stats => stats.ascension >= 4,
           text: "Heal per Auto",
           formulaText: stats => <span>15% {Stat.printStat("finalATK", stats)} * {Stat.printStat("heal_multi", stats)}</span>,
           formula: formula.passive1.heal,

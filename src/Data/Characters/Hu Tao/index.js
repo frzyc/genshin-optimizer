@@ -15,7 +15,42 @@ import passive3 from './Talent_The_More_the_Merrier.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-
+const conditionals = {
+  GuideToAfterlife: {
+    name: "Guide to Afterlife Voyage",
+    stats: stats => ({
+      modifiers: { finalATK: { finalHP: data.skill.atk_inc[stats.tlvl.skill] / 100, } },
+    }),
+  },
+  SanguineRouge: {
+    canShow: stats => stats.ascension >= 4,
+    name: "HP is equal to or less than 50%",
+    stats: {
+      pyro_dmg_: 33,
+    },
+  },
+  ButterflysEmbrace: {
+    canShow: stats => stats.constellation >= 6,
+    name: "HP drops below 25%, or suffers a lethal strike",
+    stats: {
+      physical_res_: 200,
+      anemo_res_: 200,
+      geo_res_: 200,
+      electro_res_: 200,
+      hydro_res_: 200,
+      pyro_res_: 200,
+      cryo_res_: 200,
+      critRate_: 100,
+    },
+    fields: [{
+      text: "Duration",
+      value: "10s"
+    }, {
+      text: "CD",
+      value: "60s"
+    }]
+  }
+}
 const char = {
   name: "Hu Tao",
   cardImg: card,
@@ -29,6 +64,7 @@ const char = {
   baseStat: data.baseStat,
   specializeStat: data.specializeStat,
   formula,
+  conditionals,
   talent: {
     auto: {
       name: "Secret Spear of Wangsheng",
@@ -103,12 +139,14 @@ const char = {
           text: "ATK Increase",
           formulaText: stats => <span>{data.skill.atk_inc[stats.tlvl.skill]}% {Stat.printStat("finalHP", stats)}</span>,
           formula: formula.skill.atk_inc,
-        }, stats => stats.constellation < 2 && {
+        }, {
+          canShow: stats => stats.constellation < 2,
           text: "Blood Blossom DMG",
           formulaText: stats => <span>{data.skill.dmg[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
           formula: formula.skill.dmg,
           variant: stats => getTalentStatKeyVariant("skill", stats),
-        }, stats => stats.constellation >= 2 && {
+        }, {
+          canShow: stats => stats.constellation >= 2,
           text: "Blood Blossom DMG (C2)",
           formulaText: stats => <span>( {data.skill.dmg[stats.tlvl.skill]}% {Stat.printStat("finalATK", stats)} + 10% {Stat.printStat("finalHP", stats)} ) * {Stat.printStat(getTalentStatKey("skill", stats) + "_multi", stats)}</span>,
           formula: formula.skill.dmgC2,
@@ -123,16 +161,7 @@ const char = {
           text: "CD",
           value: "16s",
         },],
-        conditional: stats => ({
-          type: "character",
-          conditionalKey: "GuideToAfterlife",
-          condition: "Guide to Afterlife Voyage",
-          sourceKey: "hutao",
-          maxStack: 1,
-          stats: {
-            modifiers: { finalATK: { finalHP: data.skill.atk_inc[stats.tlvl.skill] / 100, } },
-          },
-        })
+        conditional: conditionals.GuideToAfterlife
       }],
     },
     burst: {
@@ -169,7 +198,8 @@ const char = {
         }, {
           text: "Energy Cost",
           value: 60,
-        }, stats => stats.constellation >= 2 && {
+        }, {
+          canShow: stats => stats.constellation >= 2,
           text: "Apply the Blood Blossom effect",
         }]
       }],
@@ -178,23 +208,14 @@ const char = {
       name: "Flutter By",
       img: passive1,
       document: [{ text: <span>When a <b>Paramita Papilio</b> state activated by <b>Guide to Afterlife</b> ends, all allies in the party (excluding Hu Tao herself) will have their CRIT Rate increased by 12% for 8s.</span> }],
-      //TODO party buff
+      //TODO: party buff
     },
     passive2: {
       name: "Sanguine Rouge",
       img: passive2,
       document: [{
         text: <span>When Hu Tao's HP is equal to or less than 50%, her <span className="text-pyro">Pyro DMG Bonus</span> is increased by 33%.</span>,
-        conditional: stats => stats.ascension >= 4 && {
-          type: "character",
-          conditionalKey: "SanguineRouge",
-          condition: "Sanguine Rouge",
-          sourceKey: "hutao",
-          maxStack: 1,
-          stats: {
-            pyro_dmg_: 33,
-          },
-        }
+        conditional: conditionals.SanguineRouge
       }],
     },
     passive3: {
@@ -227,7 +248,7 @@ const char = {
       name: "Garden of Eternal Rest",
       img: c4,
       document: [{ text: <span>Upon defeating an enemy affected by a <b>Blood Blossom</b> that Hu Tao applied herself, all nearby allies in the party (excluding Hu Tao herself) will have their CRIT Rate increased by 12% for 15s.</span> }],
-      //TODO party buff
+      //TODO: party buff
     },
     constellation5: {
       name: "Floral Incense",
@@ -247,30 +268,7 @@ const char = {
             <li>Can only occur once every 60s.</li>
           </ul>
         </span>,
-        conditional: stats => stats.constellation >= 6 && {
-          type: "character",
-          conditionalKey: "ButterflysEmbrace",
-          condition: "Butterfly's Embrace",
-          sourceKey: "hutao",
-          maxStack: 1,
-          stats: {
-            physical_res_: 200,
-            anemo_res_: 200,
-            geo_res_: 200,
-            electro_res_: 200,
-            hydro_res_: 200,
-            pyro_res_: 200,
-            cryo_res_: 200,
-            critRate_: 100,
-          },
-          fields: [{
-            text: "Duration",
-            value: "10s"
-          }, {
-            text: "CD",
-            value: "60s"
-          }]
-        }
+        conditional: conditionals.ButterflysEmbrace
       }],
     }
   },

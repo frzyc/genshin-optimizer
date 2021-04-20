@@ -15,7 +15,28 @@ import passive3 from './Talent_All_Of_My_Treasures.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-
+const conditionals = {
+  PoundingSurprise: {
+    canShow: stats => stats.ascension >= 1,
+    name: "has Explosive Spark",
+    stats: { charged_dmg_: 50 },
+    fields: [{ text: "Next Charged attack cost no stamina" }]
+  },
+  ExplosiveFrags: {
+    canShow: stats => stats.constellation >= 2,
+    name: "Hit by Jumpy Dumpty's mines",
+    stats: { enemyDEFRed_: 23 },
+    fields: [{
+      text: "Duration",
+      value: "10s",
+    }]
+  },
+  BlazingDelight: {
+    canShow: stats => stats.constellation >= 6,
+    name: "Sparks 'n' Splash is used",
+    stats: { pyro_dmg_: 10 }//TODO: party buff
+  }
+}
 const char = {
   name: "Klee",
   cardImg: card,
@@ -29,6 +50,7 @@ const char = {
   baseStat: data.baseStat,
   specializeStat: data.specializeStat,
   formula,
+  conditionals,
   talent: {
     auto: {
       name: "Kaboom!",
@@ -130,17 +152,7 @@ const char = {
       img: passive1,
       document: [{
         text: <span>When <b>Jumpy Dumpty</b> and <b>Normal Attacks</b> deal DMG, Klee has a 50% chance to obtain an Explosive Spark. This Explosive Spark is consumed by the next Charged Attack, which costs no Stamina and deals 50% increased DMG.</span>,
-        conditional: stats => stats.ascension >= 1 && {
-          type: "character",
-          conditionalKey: "PoundingSurprise",
-          condition: "has Explosive Spark",
-          sourceKey: "klee",
-          maxStack: 1,
-          stats: {
-            charged_dmg_: 50,
-          },
-          fields: [{ text: "Next Charged attack cost no stamina" }]
-        }
+        conditional: conditionals.PoundingSurprise
       }],
     },
     passive2: {
@@ -158,7 +170,8 @@ const char = {
       img: c1,
       document: [{
         text: <span>Attacks and Skills have a certain chance to summon sparks that bombard opponents, dealing DMG equal to 120% of Sparks 'n' Splash's DMG.</span>,
-        fields: [stats => stats.constellation >= 1 && {
+        fields: [{
+          canShow: stats => stats.constellation >= 1,
           text: "Chained Reactions DMG",
           formulaText: stats => <span>120% x {data.burst.dmg[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
           formula: formula.constellation1.dmgChained,
@@ -171,18 +184,7 @@ const char = {
       img: c2,
       document: [{
         text: <span>Being hit by <b>Jumpy Dumpty</b>'s mines decreases opponents' DEF by 23% for 10s.</span>,
-        conditional: stats => stats.constellation >= 2 && {
-          type: "character",
-          conditionalKey: "Explosive Frags",
-          condition: "Hit by Jumpy Dumpty's mines",
-          sourceKey: "klee",
-          maxStack: 1,
-          stats: { enemyDEFRed_: 23 },
-          fields: [{
-            text: "Duration",
-            value: "10s",
-          }]
-        }
+        conditional: conditionals.ExplosiveFrags
       }],
     },
     constellation3: {
@@ -218,14 +220,7 @@ const char = {
           <p className="mb-2">While under the effects of <b>Sparks 'n' Splash</b>, other members of the party will continuously regenerate Energy.</p>
           <p className="mb-0">When <b>Sparks 'n' Splash</b> is used, all party members will gain a 10% <span className="text-pyro">Pyro DMG Bonus</span> for 25s.</p>
         </span>,
-        conditional: stats => stats.constellation >= 6 && {
-          type: "character",
-          conditionalKey: "Blazing Delight",
-          condition: "Sparks 'n' Splash is used",
-          sourceKey: "klee",
-          maxStack: 1,
-          stats: { pyro_dmg_: 10 }//TODO: party buff
-        }
+        conditional: conditionals.BlazingDelight
       }],
     }
   },

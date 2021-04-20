@@ -185,12 +185,12 @@ const char = {
           <p className="mb-0">Creates a shield for your active character that lasts for 20s and absorbs DMG equal to 400% of Noelle's DEF. This effect can only occur once every 60s.</p>
         </span>,
         fields: [{
+          canShow: stats => stats.ascension >= 1,
           text: "Shield strength",
-          condition: stats => stats.ascension >= 1,
           formulaText: stats => <span>400% {Stat.printStat("finalDEF", stats)}</span>,
           formula: formula.passive1.shield,
         }, {
-          condition: stats => stats.ascension >= 1,
+          canShow: stats => stats.ascension >= 1,
           text: "CD",
           value: "60s",
         }]
@@ -239,8 +239,8 @@ const char = {
       document: [{
         text: <span>When <b>Breastplate</b> ends or shatters, it deals 400% of ATK as <span className="text-geo">Geo DMG</span> to surrounding enemies.</span>,
         fields: [{
+          canShow: stats => stats.constellation >= 4,
           text: "Breastplate shatter damage",
-          condition: stats => stats.constellation >= 4,
           formulaText: stats => <span>400% {Stat.printStat(getTalentStatKey("elemental", stats), stats)}</span>,
           formula: formula.constellation4.dmg,
           variant: stats => getTalentStatKeyVariant("elemental", stats),

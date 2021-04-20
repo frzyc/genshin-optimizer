@@ -15,6 +15,23 @@ import passive3 from './Talent_General_Pharmaceutics.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
+const conditionals = {
+  StaticElectricityFieldDestiny: {
+    canShow: stats => stats.ascension >= 4,
+    name: "Opponents hit by Lightning Rose",
+    stats: { enemyDEFRed_: 15 },
+    fields: [{
+      text: "Duration",
+      value: "10s",
+    }],
+  },
+  ElectromagneticField: {
+    canShow: stats => stats.constellation >= 2,
+    name: "Holding Violent Arc",
+    stats: { def_: 25 },
+    fields: [{ text: "Increase resistance to interruption" }],
+  },
+}
 const char = {
   name: "Lisa",
   cardImg: card,
@@ -28,6 +45,7 @@ const char = {
   baseStat: data.baseStat,
   specializeStat: data.specializeStat,
   formula,
+  conditionals,
   talent: {
     auto: {
       name: "Lightning Touch",
@@ -149,20 +167,7 @@ const char = {
           text: "Energy Cost",
           value: 80,
         }],
-        conditional: stats => stats.ascension >= 4 && {
-          type: "character",
-          conditionalKey: "StaticElectricityFieldDestiny",
-          condition: "Opponents hit by Lightning Rose",
-          sourceKey: "lisa",
-          maxStack: 1,
-          stats: {
-            enemyDEFRed_: 15,
-          },
-          fields: [{
-            text: "Duration",
-            value: "10s",
-          }],
-        },
+        conditional: conditionals.StaticElectricityFieldDestiny
       }],
     },
     passive1: {
@@ -195,15 +200,7 @@ const char = {
             <li>Increases DEF by 25%.</li>
             <li>Increases Lisa's resistance to interruption.</li>
           </ul></span>,
-        conditional: stats => stats.constellation >= 2 && {
-          type: "character",
-          conditionalKey: "ElectromagneticField",
-          condition: "Holding Violent Arc",
-          sourceKey: "lisa",
-          maxStack: 1,
-          stats: { def_: 25 },
-          fields: [{ text: "Increase resistance to interruption" }],
-        },
+        conditional: conditionals.ElectromagneticField
       }],
     },
     constellation3: {

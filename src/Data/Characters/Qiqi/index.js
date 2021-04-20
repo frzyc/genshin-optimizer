@@ -15,7 +15,33 @@ import passive3 from "./Talent_Former_Life_Memories.png";
 import Stat from "../../../Stat";
 import formula, { data } from "./data";
 import { getTalentStatKey, getTalentStatKeyVariant } from "../../../Build/Build";
-
+const conditionals = {
+  LifeProlongingMethods: {
+    canShow: stats => stats.ascension >= 1,
+    name: <span>Character under the effects of <b>Adeptus Art: Herald of Frost</b> triggers an Elemental Reaction</span>,
+    stats: { heal_: 20, },
+    fields: [{
+      text: "Duration",
+      value: "8s",
+    }],
+  },
+  FrozenToTheBone: {
+    canShow: stats => stats.constellation >= 2,
+    name: "Enemy Affected by Cryo",
+    stats: {
+      normal_dmg_: 15,
+      charged_dmg_: 15,
+    },
+  },
+  DivineSuppression: {
+    canShow: stats => stats.constellation >= 4,
+    name: "Enemy marked by Talisman",
+    fields: [{//TODO: enemy atk decrease
+      text: "Enemy ATK Decrease",
+      value: "20%"
+    }],
+  },
+}
 const char = {
   name: "Qiqi",
   cardImg: card,
@@ -29,6 +55,7 @@ const char = {
   baseStat: data.baseStat,
   specializeStat: data.specializeStat,
   formula,
+  conditionals,
   talent: {
     auto: {
       name: "Ancient Sword Art",
@@ -154,18 +181,7 @@ const char = {
       img: passive1,
       document: [{
         text: <span>When a character under the effects of <b>Adeptus Art: Herald of Frost</b> triggers an Elemental Reaction, their Incoming Healing Bonus is increased by 20% for 8s.</span>,
-        conditional: stats => stats.ascension >= 1 && {
-          type: "character",
-          conditionalKey: "LifeProlongingMethods",
-          condition: "Elemental Reaction Triggered",
-          sourceKey: "qiqi",
-          maxStack: 1,
-          stats: { heal_: 20, },
-          fields: [{
-            text: "Duration",
-            value: "8s",
-          }],
-        },
+        conditional: conditionals.LifeProlongingMethods
       }],
     },
     passive2: {
@@ -173,10 +189,12 @@ const char = {
       img: passive2,
       document: [{
         text: <span>When Qiqi hits opponents with her <b>Normal and Charged Attacks</b>, she has a 50% chance to apply a Fortune-Preserving Talisman to them for 6s. This effect can only occur once every 30s.</span>,
-        fields: [stats => stats.ascension >= 4 && {
+        fields: [{
+          canShow: stats => stats.ascension >= 4,
           text: "Talisman Application Chance",
           value: "50%",
-        }, stats => stats.ascension >= 4 && {
+        }, {
+          canShow: stats => stats.ascension >= 4,
           text: "CD",
           value: "30s",
         }],
@@ -193,7 +211,8 @@ const char = {
       img: c1,
       document: [{
         text: <span>When the <b>Herald of Frost</b> hits an opponent marked by a <b>Fortune-Preserving Talisman</b>, Qiqi regenerates 2 Energy.</span>,
-        fields: [stats => stats.constellation >= 1 && {
+        fields: [{
+          canShow: stats => stats.constellation >= 1,
           text: "Energy on Hit",
           value: 2,
         }],
@@ -204,17 +223,7 @@ const char = {
       img: c2,
       document: [{
         text: <span>Qiqi's Normal and Charge Attack DMG against opponents affected by <span className="text-cryo">Cryo</span> is increased by 15%.</span>,
-        conditional: stats => stats.constellation >= 2 && {
-          type: "character",
-          conditionalKey: "EnemyCryo",
-          condition: "Enemy Affected by Cryo",
-          sourceKey: "qiqi",
-          maxStack: 1,
-          stats: {
-            normal_dmg_: 15,
-            charged_dmg_: 15,
-          },
-        },
+        conditional: conditionals.FrozenToTheBone
       }],
     },
     constellation3: {
@@ -228,17 +237,7 @@ const char = {
       img: c4,
       document: [{
         text: <span>Targets marked by the <b>Fortune-Preserving Talisman</b> have their ATK decreased by 20%.</span>,
-        conditional: stats => stats.constellation >= 4 && {
-          type: "character",
-          conditionalKey: "DivineSuppression",
-          condition: "Enemy marked by Talisman",
-          sourceKey: "qiqi",
-          maxStack: 1,
-          fields: [{
-            text: "Enemy ATK Decrease",//TODO: enemy atk decrease
-            value: "20%"
-          }],
-        },
+        conditional: conditionals.DivineSuppression
       }],
     },
     constellation5: {
@@ -255,16 +254,16 @@ const char = {
           <p className="mb-2">Using <b>Adeptus Art: Preserver of Fortune</b> revives all fallen party members nearby and regenerates 50% of their HP.</p>
           <ul className="mb-0"><li>This effect can only occur once every 15 mins.</li></ul>
         </span>,
-        fields: [stats => stats.constellation >= 6 && {
+        fields: [{
+          canShow: stats => stats.constellation >= 6,
           text: "Revival HP Regeneration",
           value: `50% of Max HP`,
-        }, stats => stats.constellation >= 6 && {
+        }, {
+          canShow: stats => stats.constellation >= 6,
           text: "Cooldown",
           value: `15m`,
-        },
-        ],
-      },
-      ],
+        }],
+      }],
     },
   },
 };

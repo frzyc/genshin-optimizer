@@ -16,7 +16,16 @@ import DisplayPercent from '../../../Components/DisplayPercent'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-
+const conditionals = {
+  ColdBloodedStrike: {
+    canShow: stats => stats.constellation >= 1,
+    name: <span>Opponent affected by <span className="text-cryo">Cryo</span></span>,
+    stats: {
+      normal_critRate_: 15,
+      charged_critRate_: 15
+    }
+  }
+}
 const char = {
   name: "Kaeya",
   cardImg: card,
@@ -30,6 +39,7 @@ const char = {
   baseStat: data.baseStat,
   specializeStat: data.specializeStat,
   formula,
+  conditionals,
   talent: {
     auto: {
       name: "Ceremonial Bladework",
@@ -114,7 +124,8 @@ const char = {
         }, {
           text: "Energy Cost",
           value: 60,
-        }, stats => stats.constellation >= 2 && {
+        }, {
+          canShow: stats => stats.constellation >= 2,
           text: "Increase duration by 2.5s per opponent defeated during, up to 15s"
         }],
       }],
@@ -151,17 +162,7 @@ const char = {
       img: c1,
       document: [{
         text: <span>The CRIT Rate of Kaeya's <b>Normal</b> and <b>Charged Attacks</b> against opponents affected by <span className="text-cryo">Cryo</span> is increased by 15%.</span>,
-        conditional: stats => stats.constellation >= 1 && {
-          type: "character",
-          conditionalKey: "ColdBloodedStrike",
-          condition: <span>Opponent affected by <span className="text-cryo">Cryo</span></span>,
-          sourceKey: "kaeya",
-          maxStack: 1,
-          stats: {
-            normal_critRate_: 15,
-            charged_critRate_: 15
-          }
-        }
+        conditional: conditionals.ColdBloodedStrike
       }]
     },
     constellation2: {

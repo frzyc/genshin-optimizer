@@ -51,7 +51,6 @@ const formula = {
   },
   burst: {
     dmg: stats => basicDMGFormula(data.burst.dmg[stats.tlvl.burst], stats, "burst"),
-    dmgPounding: stats => basicDMGFormula(data.burst.dmg[stats.tlvl.burst] * 1.5, stats, "burst"),
   },
   constellation1: {
     dmgChained: stats =>

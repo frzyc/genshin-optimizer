@@ -16,7 +16,43 @@ import passive3 from './Talent_Principium_of_Astrology.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-
+const conditionals = {
+  StellarisPhantasm: {
+    name: "Stellaris Phantasm",
+    stats: stats => ({
+      dmg_: data.burst.dmg_[stats.tlvl.burst],
+      ...(stats.constellation >= 1) && {
+        electrocharged_dmg_: 15,
+        vaporize_dmg_: 15,
+        swirl_dmg_: 15
+      },//TODO: frozen duration as a stat 
+    }),
+    fields: [{
+      canShow: stats => stats.constellation >= 1,
+      text: <span><span className="text-cryo">Frozen</span> Duration Increase</span>,
+      value: "15.0%",
+      variant: "cryo",
+    }, {
+      text: "Omen Duration",
+      value: stats => `${data.burst.omen_duration[stats.tlvl.burst]}s`,
+    }]
+  },
+  ProphecyOfOblivion: {
+    canShow: stats => stats.constellation >= 4,
+    name: <span>Any characters in the party hit an opponent affected by an <b>Omen</b></span>,
+    stats: { critRate_: 15 },//TODO: party conditional
+  },
+  RhetoricsOfCalamitas: {
+    canShow: stats => stats.constellation >= 6,
+    name: <span>Upon entering <b>Illusory Torrent</b></span>,
+    maxStack: 3,
+    stats: { charged_dmg_: 60 },
+    fields: [{
+      text: "Duration",
+      value: "8s"
+    }]
+  },
+}
 const char = {
   name: "Mona",
   cardImg: card,
@@ -30,6 +66,7 @@ const char = {
   baseStat: data.baseStat,
   specializeStat: data.specializeStat,
   formula,
+  conditionals,
   talent: {
     auto: {
       name: "Ripple of Fate",
@@ -133,33 +170,7 @@ const char = {
           text: "Energy Cost",
           value: 60,
         }],
-        conditional: stats => {
-          const c1 = stats.constellation >= 1 ? {
-            electrocharged_dmg_: 15,
-            vaporize_dmg_: 15,
-            swirl_dmg_: 15
-          } : {}
-          return {
-            type: "character",
-            conditionalKey: "StellarisPhantasm",
-            condition: "Stellaris Phantasm",
-            sourceKey: "mona",
-            maxStack: 1,
-            stats: {
-              dmg_: data.burst.dmg_[stats.tlvl.burst],
-              ...c1,
-              //TODO frozen duration as a stat 
-            },
-            fields: [stats => stats.constellation >= 1 && {
-              text: <span><span className="text-cryo">Frozen</span> Duration Increase</span>,
-              value: "15%",
-              variant: "cryo",
-            }, {
-              text: "Omen Duration",
-              value: stats => `${data.burst.omen_duration[stats.tlvl.burst]}s`,
-            }]
-          }
-        },
+        conditional: conditionals.StellarisPhantasm
       }],
     },
     sprint: {
@@ -187,12 +198,14 @@ const char = {
           <p className="mb-2">After she has used <b>Illusory Torrent</b> for 2s, if there are any opponents nearby, Mona will automatically create a Phantom.</p>
           <p className="mb-2">A Phantom created in this manner lasts for 2s, and its explosion DMG is equal to 50% of <b>Mirror Reflection of Doom</b>.</p>
         </span>,
-        fields: [stats => stats.ascension >= 1 && {
+        fields: [{
+          canShow: stats => stats.ascension >= 1,
           text: "Explosion DMG",
           formulaText: stats => <span>{data.skill.dmg[stats.tlvl.skill]}% * 50% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
           formula: formula.passive1.hit,
           variant: stats => getTalentStatKeyVariant("skill", stats),
-        }, stats => stats.ascension >= 1 && {
+        }, {
+          canShow: stats => stats.ascension >= 1,
           text: "Phantom Duration",
           value: "2s"
         }]
@@ -241,17 +254,8 @@ const char = {
       name: "Prophecy of Oblivion",
       img: c4,
       document: [{
-        text: <span>When any character in the party attacks an opponent affected by the Omen status effect, their CRIT Rate is increased by 15%.</span>,
-        conditional: stats => stats.constellation >= 4 && {//TODO party conditional
-          type: "character",
-          conditionalKey: "ProphecyOfOblivion",
-          condition: "Prophecy of Oblivion",
-          sourceKey: "mona",
-          maxStack: 1,
-          stats: {
-            critRate_: 15,
-          },
-        },
+        text: <span>When any character in the party attacks an opponent affected by the <b>Omen</b> status effect, their CRIT Rate is increased by 15%.</span>,
+        conditional: conditionals.ProphecyOfOblivion
       }],
     },
     constellation5: {
@@ -265,20 +269,7 @@ const char = {
       img: c6,
       document: [{
         text: <span>Upon entering <b>Illusory Torrent</b>, Mona gains a 60% increase to the DMG her next Charged Attack per second of movement. A maximum DMG Bonus of 180% can be achieved in this manner. The effect lasts for no more than 8s.</span>,
-        conditional: stats => stats.constellation >= 6 && {
-          type: "character",
-          conditionalKey: "RhetoricsOfCalamitas",
-          condition: "Rhetorics of Calamitas",
-          sourceKey: "mona",
-          maxStack: 3,
-          stats: {
-            charged_dmg_: 60,
-          },
-          fields: [{
-            text: "Duration",
-            value: "8s"
-          }]
-        },
+        conditional: conditionals.RhetoricsOfCalamitas
       }],
     }
   },
