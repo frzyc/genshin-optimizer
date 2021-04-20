@@ -227,10 +227,7 @@ function SkillDisplayCard({ character, character: { characterKey, constellation,
       </Row>
       {/* Display document sections */}
       {Character.getTalentDocument(characterKey, talentKey).map((section, i) => {
-        if (typeof section === "function")
-          section = section(build)
-        if (!section) return null
-
+        if (!section.canShow(build)) return null
         let talentText = section.text
         if (typeof talentText === "function")
           talentText = talentText(build)
