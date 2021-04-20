@@ -1,8 +1,18 @@
 import DisplayPercent from '../../../Components/DisplayPercent'
 import img from './Weapon_Staff_of_Homa.png'
+
 const refinementVals_hp = [20, 25, 30, 35, 40]
 const refinementVals_hp_atk = [0.8, 1, 1.2, 1.4, 1.6]
 const refinementVals_hp_atk_add = [1, 1.2, 1.4, 1.6, 1.8]
+const conditionals = {
+  esj: {
+    name: "Low HP",
+    maxStack: 1,
+    stats: (refineIndex) => ({
+      modifiers: { finalATK: { finalHP: refinementVals_hp_atk_add[refineIndex] / 100 } }
+    })
+  }
+}
 const weapon = {
   name: "Staff of Homa",
   weaponType: "polearm",
@@ -21,14 +31,6 @@ const weapon = {
     hp_: refinementVals_hp[refineIndex],
     modifiers: { finalATK: { finalHP: refinementVals_hp_atk[refineIndex] / 100 } }
   }),
-  conditional: {
-    type: "weapon",
-    condition: "Less than 50% HP",
-    sourceKey: "StaffOfHoma",
-    maxStack: 1,
-    stats: (refineIndex) => ({
-      modifiers: { finalATK: { finalHP: refinementVals_hp_atk_add[refineIndex] / 100 } }
-    })
-  },
+  conditionals,
 }
 export default weapon

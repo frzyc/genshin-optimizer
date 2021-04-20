@@ -1,9 +1,10 @@
-import WhiteTassel from './Weapon_White_Tassel.png'
+import img from './Weapon_White_Tassel.png'
+
 const refinementVals = [24, 30, 36, 42, 48]
 const weapon = {
   name: "White Tassel",
   weaponType: "polearm",
-  img: WhiteTassel,
+  img,
   rarity: 3,
   passiveName: "Sharp",
   passiveDescription: (refineIndex) => `Increases Normal Attack DMG by ${refinementVals[refineIndex]}%.`,

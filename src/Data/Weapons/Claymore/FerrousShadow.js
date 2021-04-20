@@ -1,10 +1,20 @@
-import FerrousShadow from './Weapon_Ferrous_Shadow.png'
+import img from './Weapon_Ferrous_Shadow.png'
+
 const refinementHpVals = [70, 75, 80, 85, 90]
 const refinementVals = [30, 35, 40, 45, 50]
+const conditionals = {
+  u: {
+    name: "Low HP",
+    maxStack: 1,
+    stats: (refineIndex) => ({
+      charged_dmg_: refinementVals[refineIndex]
+    })
+  }
+}
 const weapon = {
   name: "Ferrous Shadow",
   weaponType: "claymore",
-  img: FerrousShadow,
+  img,
   rarity: 3,
   passiveName: "Unbending",
   passiveDescription: (refineIndex) => `When HP falls below ${refinementHpVals[refineIndex]}%, increases Charged Attack DMG by ${refinementVals[refineIndex]}% and Charged Attacks become harder to interrupt.`,
@@ -14,13 +24,6 @@ const weapon = {
     subStatKey: "hp_",
     sub: [7.7, 8.9, 10.4, 12, 13.5, 13.5, 15.1, 16.6, 18.2, 19.7, 19.7, 21.3, 22.8, 22.8, 24.4, 25.9, 25.9, 27.5, 29, 29, 30.5, 32.1, 32.1, 33.6, 35.2],
   },
-  conditional: {
-    type: "weapon",
-    sourceKey: "FerrousShadow",
-    maxStack: 1,
-    stats: (refineIndex) => ({
-      charged_dmg_: refinementVals[refineIndex]
-    })
-  }
+  conditionals,
 }
 export default weapon

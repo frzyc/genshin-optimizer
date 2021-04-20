@@ -1,9 +1,10 @@
-import Rust from './Weapon_Rust.png'
+import img from './Weapon_Rust.png'
+
 const refinementVals = [40, 50, 60, 70, 80]
 const weapon = {
   name: "Rust",
   weaponType: "bow",
-  img: Rust,
+  img,
   rarity: 4,
   passiveName: "Rapid Firing",
   passiveDescription: (refineIndex) => `Increases Normal Attack DMG by ${refinementVals[refineIndex]}% but decreases Charged Attack DMG by 10%.`,

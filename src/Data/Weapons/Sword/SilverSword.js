@@ -1,8 +1,9 @@
-import SilverSword from './Weapon_Silver_Sword.png'
+import img from './Weapon_Silver_Sword.png'
+
 const weapon = {
   name: "Silver Sword",
   weaponType: "sword",
-  img: SilverSword,
+  img,
   rarity: 2,
   passiveName: "",
   passiveDescription: () => "",

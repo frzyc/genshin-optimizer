@@ -1,6 +1,6 @@
 import { getTalentStatKey } from '../../../Build/Build'
 import DisplayPercent from "../../../Components/DisplayPercent"
-import DragonspineSpear from './Weapon_Dragonspine_Spear.png'
+import img from './Weapon_Dragonspine_Spear.png'
 
 const refinementVals = [60, 70, 80, 90, 100]
 const refinementRawDmgVals = [80, 95, 110, 125, 140]
@@ -8,7 +8,7 @@ const refinementRawDmgCryoVals = [200, 240, 280, 320, 360]
 const weapon = {
   name: "Dragonspine Spear",
   weaponType: "polearm",
-  img: DragonspineSpear,
+  img,
   rarity: 4,
   passiveName: "Frost Burial",
   passiveDescription: (refineIndex, charFinalStats) => <span>Hitting an opponent with Normal and Charged Attacks has a {refinementVals[refineIndex]}% chance of forming and dropping an Everfrost Icicle above them, dealing {refinementRawDmgVals[refineIndex]}% AoE ATK DMG{DisplayPercent(refinementRawDmgVals[refineIndex], charFinalStats, getTalentStatKey("physical", charFinalStats))}. Opponents affected by <span className="text-cryo">Cryo</span> are dealt {refinementRawDmgCryoVals[refineIndex]}% ATK DMG{DisplayPercent(refinementRawDmgCryoVals[refineIndex], charFinalStats, getTalentStatKey("physical", charFinalStats))}. Can only occur once every 10s.</span>,

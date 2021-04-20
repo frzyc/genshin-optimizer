@@ -1,13 +1,13 @@
 import { getTalentStatKey } from '../../../Build/Build'
 import DisplayPercent from "../../../Components/DisplayPercent"
-import SkywardAtlas from './Weapon_Skyward_Atlas.png'
+import img from './Weapon_Skyward_Atlas.png'
 
 const refinementVals = [12, 15, 18, 21, 24]
 const refinementDmgVals = [160, 200, 240, 280, 320]
 const weapon = {
   name: "Skyward Atlas",
   weaponType: "catalyst",
-  img: SkywardAtlas,
+  img,
   rarity: 5,
   passiveName: "Wandering Clouds",
   passiveDescription: (refineIndex, charFinalStats) => <span>Increases Elemental DMG Bonus by {refinementVals[refineIndex]}%. Normal Attack hits have a 50% chance to earn the favor of the clouds. which actively seek out nearby enemies to attack for 15s, dealing {refinementDmgVals[refineIndex]}% ATK DMG{DisplayPercent(refinementDmgVals[refineIndex], charFinalStats, getTalentStatKey("physical", charFinalStats))}. Can only occur once every 30s.</span>,

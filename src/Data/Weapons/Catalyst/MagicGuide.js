@@ -1,9 +1,19 @@
-import MagicGuide from './Weapon_Magic_Guide.png'
+import img from './Weapon_Magic_Guide.png'
+
 const refinementVals = [12, 15, 18, 21, 24]
+const conditionals = {
+  bst: {
+    name: "Against Opponents Accefted by Hydro/Electro",
+    maxStack: 1,
+    stats: (refineIndex) => ({
+      dmg_: refinementVals[refineIndex]
+    })
+  }
+}
 const weapon = {
   name: "Magic Guide",
   weaponType: "catalyst",
-  img: MagicGuide,
+  img,
   rarity: 3,
   passiveName: "Bane of Storm and Tide",
   passiveDescription: (refineIndex) => `Increases DMG against enemies affected by Hydro or Electro by ${refinementVals[refineIndex]}%.`,
@@ -13,13 +23,6 @@ const weapon = {
     subStatKey: "eleMas",
     sub: [41, 47, 56, 64, 72, 72, 80, 89, 97, 105, 105, 113, 122, 122, 130, 138, 138, 146, 154, 154, 163, 171, 171, 179, 187],
   },
-  conditional: {
-    type: "weapon",
-    sourceKey: "MagicGuide",
-    maxStack: 1,
-    stats: (refineIndex) => ({
-      dmg_: refinementVals[refineIndex]
-    })
-  }
+  conditionals,
 }
 export default weapon

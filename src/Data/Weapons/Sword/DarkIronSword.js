@@ -1,9 +1,19 @@
-import DarkIronSword from './Weapon_Dark_Iron_Sword.png'
+import img from './Weapon_Dark_Iron_Sword.png'
+
 const refinementVals = [20, 25, 30, 35, 40]
+const conditionals = {
+  em: {
+    name: "After Electro-related reactions",
+    maxStack: 1,
+    stats: (refineIndex) => ({
+      dmg_: refinementVals[refineIndex]
+    })
+  }
+}
 const weapon = {
   name: "Dark Iron Sword",
   weaponType: "sword",
-  img: DarkIronSword,
+  img,
   rarity: 3,
   passiveName: "Elemental Mastery",
   passiveDescription: (refineIndex) => `Upon causing an Overloaded, Superconduct, Electro-Charged, or an Electro-infused Swirl reaction, ATK is increased by ${refinementVals[refineIndex]}% for 12s`,
@@ -13,13 +23,6 @@ const weapon = {
     subStatKey: "eleMas",
     sub: [31, 36, 42, 48, 54, 54, 60, 66, 73, 79, 79, 85, 91, 91, 97, 104, 104, 110, 116, 116, 122, 128, 128, 134, 141],
   },
-  conditional: {
-    type: "weapon",
-    sourceKey: "DarkIronSword",
-    maxStack: 1,
-    stats: (refineIndex) => ({
-      dmg_: refinementVals[refineIndex]
-    })
-  }
+  conditionals,
 }
 export default weapon

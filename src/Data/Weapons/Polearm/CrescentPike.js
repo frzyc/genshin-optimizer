@@ -1,11 +1,12 @@
 import { getTalentStatKey } from '../../../Build/Build'
 import DisplayPercent from "../../../Components/DisplayPercent"
-import CrescentPike from './Weapon_Crescent_Pike.png'
+import img from './Weapon_Crescent_Pike.png'
+
 const refinementVals = [20, 25, 30, 35, 40]
 const weapon = {
   name: "Crescent Pike",
   weaponType: "polearm",
-  img: CrescentPike,
+  img,
   rarity: 4,
   passiveName: "Infusion Needle",
   passiveDescription: (refineIndex, charFinalStats) => <span>After picking up an Elemental Orb/Particle, Normal and Charged Attacks deal an additional {refinementVals[refineIndex]}% ATK DMG{DisplayPercent(refinementVals[refineIndex], charFinalStats, getTalentStatKey("physical", charFinalStats))} for 5s.</span>,

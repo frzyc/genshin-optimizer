@@ -1,9 +1,10 @@
-import FavoniusSword from './Weapon_Favonius_Sword.png'
+import img from './Weapon_Favonius_Sword.png'
+
 const refinementVals = [12, 10.5, 9, 7.5, 6]
 const weapon = {
   name: "Favonius Sword",
   weaponType: "sword",
-  img: FavoniusSword,
+  img,
   rarity: 4,
   passiveName: "Windfall",
   passiveDescription: (refineIndex) => `60% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every ${refinementVals[refineIndex]}s`,

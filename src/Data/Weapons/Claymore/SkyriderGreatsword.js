@@ -1,9 +1,19 @@
-import SkyriderGreatsword from './Weapon_Skyrider_Greatsword.png'
+import img from './Weapon_Skyrider_Greatsword.png'
+
 const refinementVals = [6, 7, 8, 9, 10]
+const conditionals = {
+  c: {
+    name: "Normal/Charged Attack Hits",
+    maxStack: 4,
+    stats: (refineIndex) => ({
+      atk_: refinementVals[refineIndex]
+    })
+  }
+}
 const weapon = {
   name: "Skyrider Greatsword",
   weaponType: "claymore",
-  img: SkyriderGreatsword,
+  img,
   rarity: 3,
   passiveName: "Courage",
   passiveDescription: (refineIndex) => `On hit, Normal or Charged Attacks increase ATK by ${refinementVals[refineIndex]}% for 6s. Max 4 stacks. Can occur once every 0.5s.`,
@@ -13,13 +23,6 @@ const weapon = {
     subStatKey: "physical_dmg_",
     sub: [9.6, 11.1, 13, 15, 16.9, 16.9, 18.8, 20.8, 22.7, 24.6, 24.6, 26.5, 28.5, 28.5, 30.4, 32.3, 32.3, 34.3, 36.2, 36.2, 38.1, 40.1, 40.1, 42, 43.9],
   },
-  conditional: {
-    type: "weapon",
-    sourceKey: "SkyriderGreatsword",
-    maxStack: 4,
-    stats: (refineIndex) => ({
-      atk_: refinementVals[refineIndex]
-    })
-  }
+  conditionals,
 }
 export default weapon

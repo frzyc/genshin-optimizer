@@ -1,11 +1,12 @@
 import { getTalentStatKey } from '../../../Build/Build'
 import DisplayPercent from "../../../Components/DisplayPercent"
-import PrototypeAminus from './Weapon_Prototype_Aminus.png'
+import img from './Weapon_Prototype_Aminus.png'
+
 const refinementVals = [240, 300, 360, 420, 480]
 const weapon = {
   name: "Prototype Archaic",
   weaponType: "claymore",
-  img: PrototypeAminus,
+  img,
   rarity: 4,
   passiveName: "Crush",
   passiveDescription: (refineIndex, charFinalStats) => <span>On hit, Normal or Charged Attacks have a 50% chance to deal an additional {refinementVals[refineIndex]}% ATK DMG{DisplayPercent(refinementVals[refineIndex], charFinalStats, getTalentStatKey("physical", charFinalStats))} to opponents within a small AoE. Can only occur once every 15s.</span>,

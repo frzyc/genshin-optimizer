@@ -1,13 +1,13 @@
 import { getTalentStatKey } from '../../../Build/Build'
 import DisplayPercent from "../../../Components/DisplayPercent"
-import SkywardPride from './Weapon_Skyward_Pride.png'
+import img from './Weapon_Skyward_Pride.png'
 
 const refinementVals = [8, 10, 12, 14, 16]
 const refinementDmgVals = [80, 100, 120, 140, 160]
 const weapon = {
   name: "Skyward Pride",
   weaponType: "claymore",
-  img: SkywardPride,
+  img,
   rarity: 5,
   passiveName: "Sky-ripping Dragon Spine",
   passiveDescription: (refineIndex, charFinalStats) => <span>Increases all DMG by {refinementVals[refineIndex]}%. After using an Elemental Burst, Normal or Charged Attack, on hit, creates a vacuum blade that does {refinementDmgVals[refineIndex]}% of ATK{DisplayPercent(refinementDmgVals[refineIndex], charFinalStats, getTalentStatKey("physical", charFinalStats))} as DMG to opponents along its path. Lasts for 20s or 8 vacuum blades.</span>,

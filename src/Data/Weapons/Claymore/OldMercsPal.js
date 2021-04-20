@@ -1,8 +1,9 @@
-import OldMercsPal from './Weapon_Old_Merc\'s_Pal.png'
+import img from './Weapon_Old_Merc\'s_Pal.png'
+
 const weapon = {
   name: "Old Merc’s Pal",
   weaponType: "claymore",
-  img: OldMercsPal,
+  img,
   rarity: 2,
   passiveName: "",
   passiveDescription: () => ``,

@@ -1,11 +1,11 @@
-import OtherworldlyStory from './Weapon_Otherworldly_Story.png'
 import DisplayPercent from "../../../Components/DisplayPercent"
+import img from './Weapon_Otherworldly_Story.png'
 
 const refinementVals = [1, 1.25, 1.5, 1.75, 2]
 const weapon = {
   name: "Otherworldly Story",
   weaponType: "catalyst",
-  img: OtherworldlyStory,
+  img,
   rarity: 3,
   passiveName: "Energy Shower",
   passiveDescription: (refineIndex, charFinalStats) => <span>Each Elemental Orb or Particle collected restores {refinementVals[refineIndex]}% HP{DisplayPercent(refinementVals[refineIndex], charFinalStats, "finalHP")}</span>,

@@ -1,12 +1,12 @@
 import { getTalentStatKey } from '../../../Build/Build'
 import DisplayPercent from "../../../Components/DisplayPercent"
-import DebateClub from './Weapon_Debate_Club.png'
+import img from './Weapon_Debate_Club.png'
 
 const refinementVals = [60, 75, 90, 105, 120]
 const weapon = {
   name: "Debate Club",
   weaponType: "claymore",
-  img: DebateClub,
+  img,
   rarity: 3,
   passiveName: "Blunt Conclusion",
   passiveDescription: (refineIndex, charFinalStats) => <span>After using an Elemental Skill, Normal or Charged Attacks, on hit, deal an additional {refinementVals[refineIndex]}% ATK DMG{DisplayPercent(refinementVals[refineIndex], charFinalStats, getTalentStatKey("physical", charFinalStats))} in a small area. Effect lasts 15s. DMG can only occur once every 3s.</span>,

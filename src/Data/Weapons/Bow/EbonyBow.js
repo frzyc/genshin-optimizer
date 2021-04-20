@@ -1,9 +1,19 @@
-import EbonyBow from './Weapon_Ebony_Bow.png'
+import img from './Weapon_Ebony_Bow.png'
+
 const refinementVals = [40, 50, 60, 70, 80]
+const conditionals = {
+  d: {
+    name: "Against Ruin Opponents",
+    maxStack: 1,
+    stats: (refineIndex) => ({
+      dmg_: refinementVals[refineIndex]
+    })
+  }
+}
 const weapon = {
   name: "Ebony Bow",
   weaponType: "bow",
-  img: EbonyBow,
+  img,
   rarity: 3,
   passiveName: "Decimate",
   passiveDescription: (refineIndex) => `Increases DMG against mechanoid Ruin opponents by ${refinementVals[refineIndex]}%.`,
@@ -13,13 +23,6 @@ const weapon = {
     subStatKey: "atk_",
     sub: [7.7, 8.9, 10.4, 12, 13.5, 13.5, 15.1, 16.6, 18.2, 19.7, 19.7, 21.3, 22.8, 22.8, 24.4, 25.9, 25.9, 27.5, 29, 29, 30.5, 32.1, 32.1, 33.6, 35.2],
   },
-  conditional: {
-    type: "weapon",
-    sourceKey: "EbonyBow",
-    maxStack: 1,
-    stats: (refineIndex) => ({
-      dmg_: refinementVals[refineIndex]
-    })
-  }
+  conditionals,
 }
 export default weapon

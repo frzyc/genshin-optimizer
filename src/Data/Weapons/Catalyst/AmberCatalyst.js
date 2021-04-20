@@ -1,9 +1,19 @@
-import AmberCatalyst from './Weapon_Amber_Catalyst.png'
+import img from './Weapon_Amber_Catalyst.png'
+
 const refinementVals = [6, 7.5, 9, 10.5, 12]
+const conditionals = {
+  em: {
+    name: "Normal Attack Hits",
+    maxStack: 2,
+    stats: (refineIndex) => ({
+      dmg_: refinementVals[refineIndex]
+    })
+  }
+}
 const weapon = {
   name: "Amber Catalyst",
   weaponType: "catalyst",
-  img: AmberCatalyst,
+  img,
   rarity: 3,
   passiveName: "Elemental Mastery",
   passiveDescription: (refineIndex) => `Normal Attack hits increase all Elemental DMG by ${refinementVals[refineIndex]}% for 6s. Max 2 stacks.`,
@@ -13,13 +23,6 @@ const weapon = {
     subStatKey: "eleMas",
     sub: [31, 36, 42, 48, 54, 54, 60, 66, 73, 79, 79, 85, 91, 91, 97, 104, 104, 110, 116, 116, 122, 128, 128, 134, 141],
   },
-  conditional: {
-    type: "weapon",
-    sourceKey: "AmberCatalyst",
-    maxStack: 2,
-    stats: (refineIndex) => ({
-      dmg_: refinementVals[refineIndex]
-    })
-  }
+  conditionals,
 }
 export default weapon

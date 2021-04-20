@@ -1,12 +1,13 @@
 import { getTalentStatKey } from '../../../Build/Build'
 import DisplayPercent from "../../../Components/DisplayPercent"
-import EyeOfPerception from './Weapon_Eye_of_Perception.png'
+import img from './Weapon_Eye_of_Perception.png'
+
 const refinementVals = [240, 270, 300, 330, 360]
 const refinementCdVals = [12, 11, 10, 9, 8]
 const weapon = {
   name: "Eye of Perception",
   weaponType: "catalyst",
-  img: EyeOfPerception,
+  img,
   rarity: 4,
   passiveName: "Echo",
   passiveDescription: (refineIndex, charFinalStats) => <span>Normal and Charged Attacks have a 50% chance to fire a Bolt of Perception, dealing {refinementVals[refineIndex]}% ATK{DisplayPercent(refinementVals[refineIndex], charFinalStats, getTalentStatKey("physical", charFinalStats))} as DMG. This bolt can bounce between opponents a maximum of 4 times. This effect can occur once every {refinementCdVals[refineIndex]}s.</span>,

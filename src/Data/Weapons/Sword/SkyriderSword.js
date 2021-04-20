@@ -1,9 +1,20 @@
-import SkyriderSword from './Weapon_Skyrider_Sword.png'
+import img from './Weapon_Skyrider_Sword.png'
+
 const refinementVals = [12, 15, 18, 21, 24]
+const conditionals = {
+  d: {
+    name: "After Elemental Burst",
+    maxStack: 1,
+    stats: (refineIndex) => ({
+      atk_: refinementVals[refineIndex],
+      moveSPD_: refinementVals[refineIndex],
+    })
+  }
+}
 const weapon = {
   name: "Skyrider Sword",
   weaponType: "sword",
-  img: SkyriderSword,
+  img,
   rarity: 3,
   passiveName: "Determination",
   passiveDescription: (refineIndex) => `Using an Elemental Burst grants a ${refinementVals[refineIndex]}% increase in ATK and Movement SPD for 15s.`,
@@ -13,14 +24,6 @@ const weapon = {
     subStatKey: "enerRech_",
     sub: [11.3, 13.2, 15.4, 17.7, 20, 20, 22.3, 24.6, 26.9, 29.2, 29.2, 31.5, 33.8, 33.8, 36.1, 38.3, 38.3, 40.6, 42.9, 42.9, 45.2, 47.5, 47.5, 49.8, 52.1],
   },
-  conditional: {
-    type: "weapon",
-    sourceKey: "SkyriderSword",
-    maxStack: 1,
-    stats: (refineIndex) => ({
-      atk_: refinementVals[refineIndex],
-      moveSPD_: refinementVals[refineIndex],
-    })
-  }
+  conditionals,
 }
 export default weapon

@@ -1,10 +1,11 @@
 import DisplayPercent from "../../../Components/DisplayPercent"
-import Messenger from './Weapon_Messenger.png'
+import img from './Weapon_Messenger.png'
+
 const refinementVals = [100, 125, 150, 175, 200]
 const weapon = {
   name: "Messenger",
   weaponType: "bow",
-  img: Messenger,
+  img,
   rarity: 3,
   passiveName: "Archer's Message",
   passiveDescription: (refineIndex, charFinalStats) => <span>Charged Attack hits on weak points deal an additional {refinementVals[refineIndex]}% ATK DMG as CRIT DMG{DisplayPercent(refinementVals[refineIndex], charFinalStats, "physical_critHit")}. Can only occur once every 10s.</span>,

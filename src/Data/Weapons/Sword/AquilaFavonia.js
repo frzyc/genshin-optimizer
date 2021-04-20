@@ -1,6 +1,6 @@
 import { getTalentStatKey } from '../../../Build/Build'
 import DisplayPercent from "../../../Components/DisplayPercent"
-import AquilaFavonia from './Weapon_Aquila_Favonia.png'
+import img from './Weapon_Aquila_Favonia.png'
 
 const refinementVals = [20, 25, 30, 35, 40]
 const refinementRegenVals = [100, 115, 130, 145, 160]
@@ -8,7 +8,7 @@ const refinementDmgVals = [200, 230, 260, 290, 320]
 const weapon = {
   name: "Aquila Favonia",
   weaponType: "sword",
-  img: AquilaFavonia,
+  img,
   rarity: 5,
   passiveName: "Falcon's Defiance",
   passiveDescription: (refineIndex, charFinalStats) => <span>ATK is increased by {refinementVals[refineIndex]}%. Triggers on taking DMG: the soul of the Falcon of the West awakens, holding the banner of resistance aloft, regenerating HP equal to {refinementRegenVals[refineIndex]}% of ATK{DisplayPercent(refinementRegenVals[refineIndex], charFinalStats, "finalATK")} and dealing {refinementDmgVals[refineIndex]}% of ATK{DisplayPercent(refinementDmgVals[refineIndex], charFinalStats, getTalentStatKey("physical", charFinalStats))} as DMG to surrounding opponents. This effect can only occur once every 15s.</span>,

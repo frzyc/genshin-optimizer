@@ -1,8 +1,9 @@
-import WasterGreatsword from './Weapon_Waster_Greatsword.png'
+import img from './Weapon_Waster_Greatsword.png'
+
 const weapon = {
   name: "Waster Greatsword",
   weaponType: "claymore",
-  img: WasterGreatsword,
+  img,
   rarity: 1,
   passiveName: "",
   passiveDescription: () => ``,

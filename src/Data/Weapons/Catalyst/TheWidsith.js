@@ -1,11 +1,13 @@
-import TheWidsith from './Weapon_The_Widsith.png'
+import img from './Weapon_The_Widsith.png'
+
 const refinementAtkVals = [60, 75, 90, 105, 120]
 const refinementEleDmgVals = [48, 60, 72, 84, 96]
 const refinementEleMasVals = [240, 300, 360, 420, 480]
+// TODO: multi-conditionals
 const weapon = {
   name: "The Widsith",
   weaponType: "catalyst",
-  img: TheWidsith,
+  img,
   rarity: 4,
   passiveName: "Debut",
   passiveDescription: (refineIndex) => <span>When a character takes the field, they will gain a random theme song for 10s. This can only occur once every 30s. <br />Recitative: ATK is increased by {refinementAtkVals[refineIndex]}%. <br />Aria: Increases all Elemental DMG by {refinementEleDmgVals[refineIndex]}%. <br />Interlude: Elemental Mastery is increased by {refinementEleMasVals[refineIndex]}.</span>,//${refinementVals[refineIndex]}

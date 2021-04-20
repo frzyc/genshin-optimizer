@@ -1,6 +1,6 @@
 import { getTalentStatKey } from '../../../Build/Build'
 import DisplayPercent from "../../../Components/DisplayPercent"
-import SkywardHarp from './Weapon_Skyward_Harp.png'
+import img from './Weapon_Skyward_Harp.png'
 
 const refinementVals = [20, 25, 30, 35, 40]
 const refinementChangeVals = [60, 70, 80, 90, 100]
@@ -8,7 +8,7 @@ const refinementCD = [4, 3.5, 3, 2.5, 2]
 const weapon = {
   name: "Skyward Harp",
   weaponType: "bow",
-  img: SkywardHarp,
+  img,
   rarity: 5,
   passiveName: "Echoing Ballad",
   passiveDescription: (refineIndex, charFinalStats) => <span>Increases CRIT DMG by {refinementVals[refineIndex]}%. Hits have a {refinementChangeVals[refineIndex]}% chance to inflict a small AoE attack, dealing 125% <span className="text-physical">Physical ATK DMG</span>{DisplayPercent(125, charFinalStats, getTalentStatKey("physical", charFinalStats))}. Can only occur once every {refinementCD[refineIndex]}s.</span>,//$

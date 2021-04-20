@@ -1,8 +1,9 @@
-import ApprenticesNotes from './Weapon_Apprentice\'s_Notes.png'
+import img from './Weapon_Apprentice\'s_Notes.png'
+
 const weapon = {
   name: "Apprentice’s Notes",
   weaponType: "catalyst",
-  img: ApprenticesNotes,
+  img,
   rarity: 1,
   passiveName: "",
   passiveDescription: () => ``,

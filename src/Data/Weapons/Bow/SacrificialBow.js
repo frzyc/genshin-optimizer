@@ -1,10 +1,20 @@
-import SacrificialBow from './Weapon_Sacrificial_Bow.png'
+import img from './Weapon_Sacrificial_Bow.png'
+
 const refinementVals = [40, 50, 60, 70, 80]
 const refinementCdVals = [30, 26, 22, 19, 16]
+const conditionals = {
+  c: {
+    name: "Elemental Skill Ends CD",
+    maxStack: 1,
+    stats: () => ({
+      cdRed_: 100
+    }),
+  }
+}
 const weapon = {
   name: "Sacrificial Bow",
   weaponType: "bow",
-  img: SacrificialBow,
+  img,
   rarity: 4,
   passiveName: "Composed",
   passiveDescription: (refineIndex) => `After dealing damage to an enemy with an Elemental Skill, the skill has a ${refinementVals[refineIndex]}% chance to end its own CD. Can only occur once every ${refinementCdVals[refineIndex]}s.`,
@@ -14,13 +24,6 @@ const weapon = {
     subStatKey: "enerRech_",
     sub: [6.7, 7.7, 9.1, 10.4, 11.8, 11.8, 13.1, 14.5, 15.8, 17.2, 17.2, 18.5, 19.9, 19.9, 21.2, 22.6, 22.6, 23.9, 25.2, 25.2, 26.6, 27.9, 27.9, 29.3, 30.6],
   },
-  conditional: {
-    type: "weapon",
-    sourceKey: "SacrificialBow",
-    maxStack: 1,
-    stats: () => ({
-      cdRed_: 100
-    })
-  }
+  conditionals,
 }
 export default weapon

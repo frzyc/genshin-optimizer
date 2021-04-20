@@ -1,9 +1,19 @@
-import MappaMare from './Weapon_Mappa_Mare.png'
+import img from './Weapon_Mappa_Mare.png'
+
 const refinementVals = [8, 10, 12, 14, 16]
+const conditionals = {
+  is: {
+    name: "Elemental Reactions",
+    maxStack: 2,
+    stats: (refineIndex) => ({
+      dmg_: refinementVals[refineIndex]
+    })
+  }
+}
 const weapon = {
   name: "Mappa Mare",
   weaponType: "catalyst",
-  img: MappaMare,
+  img,
   rarity: 4,
   passiveName: "Infusion Scroll",
   passiveDescription: (refineIndex) => `Triggering an Elemental reaction grants a ${refinementVals[refineIndex]}% Elemental DMG Bonus for 10s. Max 2 stacks.`,
@@ -13,13 +23,6 @@ const weapon = {
     subStatKey: "eleMas",
     sub: [24, 28, 33, 38, 42, 42, 47, 52, 57, 62, 62, 67, 71, 71, 76, 81, 81, 86, 91, 91, 96, 101, 101, 105, 110],
   },
-  conditional: {
-    type: "weapon",
-    sourceKey: "MappaMare",
-    maxStack: 2,
-    stats: (refineIndex) => ({
-      dmg_: refinementVals[refineIndex]
-    })
-  }
+  conditionals,
 }
 export default weapon

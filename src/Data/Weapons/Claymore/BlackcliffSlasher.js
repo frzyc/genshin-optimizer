@@ -1,9 +1,19 @@
-import BlackcliffSlasher from './Weapon_Blackcliff_Slasher.png'
+import img from './Weapon_Blackcliff_Slasher.png'
+
 const refinementVals = [12, 15, 18, 21, 24]
+const conditionals = {
+  pa: {
+    name: "Opponents Defeated",
+    maxStack: 3,
+    stats: (refineIndex) => ({
+      atk_: refinementVals[refineIndex]
+    })
+  }
+}
 const weapon = {
   name: "Blackcliff Slasher",
   weaponType: "claymore",
-  img: BlackcliffSlasher,
+  img,
   rarity: 4,
   passiveName: "Press the Advantage",
   passiveDescription: (refineIndex) => `After defeating an opponent, ATK is increased by ${refinementVals[refineIndex]}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others.`,
@@ -13,13 +23,6 @@ const weapon = {
     subStatKey: "critDMG_",
     sub: [12, 13.9, 16.4, 18.8, 21.2, 21.2, 23.6, 26.1, 28.5, 30.9, 30.9, 33.3, 35.7, 35.7, 38.2, 40.6, 40.6, 43, 45.4, 45.4, 47.9, 50.3, 50.3, 52.7, 55.1],
   },
-  conditional: {
-    type: "weapon",
-    sourceKey: "BlackcliffSlasher",
-    maxStack: 3,
-    stats: (refineIndex) => ({
-      atk_: refinementVals[refineIndex]
-    })
-  }
+  conditionals,
 }
 export default weapon

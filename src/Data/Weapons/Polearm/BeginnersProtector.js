@@ -1,8 +1,9 @@
-import BeginnersProtector from './Weapon_Beginner\'s_Protector.png'
+import img from './Weapon_Beginner\'s_Protector.png'
+
 const weapon = {
   name: "Beginner’s Protector",
   weaponType: "polearm",
-  img: BeginnersProtector,
+  img,
   rarity: 1,
   passiveName: "",
   passiveDescription: () => ``,

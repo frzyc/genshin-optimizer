@@ -1,9 +1,19 @@
-import EmeraldOrb from './Weapon_Emerald_Orb.png'
+import img from './Weapon_Emerald_Orb.png'
+
 const refinementVals = [20, 25, 30, 35, 40]
+const conditionals = {
+  r: {
+    name: "After Hydro-Related Reactions",
+    maxStack: 1,
+    stats: (refineIndex) => ({
+      atk_: refinementVals[refineIndex]
+    })
+  }
+}
 const weapon = {
   name: "Emerald Orb",
   weaponType: "catalyst",
-  img: EmeraldOrb,
+  img,
   rarity: 3,
   passiveName: "Rapids",
   passiveDescription: (refineIndex) => `Upon causing a Vaporize, Electro-Charged, Frozen, or a Hydro-infused Swirl reaction, increases ATK by ${refinementVals[refineIndex]}% for 12s.`,
@@ -13,13 +23,6 @@ const weapon = {
     subStatKey: "eleMas",
     sub: [20, 24, 28, 32, 36, 36, 40, 44, 48, 53, 53, 57, 61, 61, 65, 69, 69, 73, 77, 77, 81, 85, 85, 90, 94],
   },
-  conditional: {
-    type: "weapon",
-    sourceKey: "EmeraldOrb",
-    maxStack: 1,
-    stats: (refineIndex) => ({
-      atk_: refinementVals[refineIndex]
-    })
-  }
+  conditionals,
 }
 export default weapon

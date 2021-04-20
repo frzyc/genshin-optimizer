@@ -1,9 +1,19 @@
-import IronSting from './Weapon_Iron_Sting.png'
+import img from './Weapon_Iron_Sting.png'
+
 const refinementVals = [6, 7.5, 9, 10.5, 12]
+const conditionals = {
+  is: {
+    name: "Elemental Hits",
+    maxStack: 2,
+    stats: (refineIndex) => ({
+      dmg_: refinementVals[refineIndex]
+    })
+  }
+}
 const weapon = {
   name: "Iron Sting",
   weaponType: "sword",
-  img: IronSting,
+  img,
   rarity: 4,
   passiveName: "Infusion Stinger",
   passiveDescription: (refineIndex) => `Dealing Elemental DMG increases all DMG by ${refinementVals[refineIndex]}% for 6s. Max 2 stacks. Can occur once every 1s.`,
@@ -13,13 +23,6 @@ const weapon = {
     subStatKey: "eleMas",
     sub: [36, 42, 49, 56, 64, 64, 71, 78, 85, 93, 93, 100, 107, 107, 115, 122, 122, 129, 136, 136, 144, 151, 151, 158, 165],
   },
-  conditional: {
-    type: "weapon",
-    sourceKey: "IronSting",
-    maxStack: 2,
-    stats: (refineIndex) => ({
-      dmg_: refinementVals[refineIndex]
-    })
-  }
+  conditionals,
 }
 export default weapon

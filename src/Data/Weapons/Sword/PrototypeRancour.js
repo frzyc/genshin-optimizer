@@ -1,8 +1,9 @@
-import PrototypeRancour from './Weapon_Prototype_Rancour.png'
+import img from './Weapon_Prototype_Rancour.png'
+
 const refinementVals = [4, 5, 6, 7, 8]
 const conditionals = {
   smashedStone: {
-    name: "On Normal or Charged Attack Hit",
+    name: "Normal/Charged Attack Hits",
     maxStack: 4,
     stats: (refineIndex) => ({
       atk_: refinementVals[refineIndex],
@@ -17,7 +18,7 @@ const conditionals = {
 const weapon = {
   name: "Prototype Rancour",
   weaponType: "sword",
-  img: PrototypeRancour,
+  img,
   rarity: 4,
   passiveName: "Smashed Stone",
   passiveDescription: (refineIndex) => `On hit, Normal or Charged Attacks increase ATK and DEF by ${refinementVals[refineIndex]}% for 6s. Max 4 stacks. This effect can only occur once every 0.3s.`,
@@ -27,6 +28,6 @@ const weapon = {
     subStatKey: "physical_dmg_",
     sub: [7.5, 8.7, 10.2, 11.7, 13.3, 13.3, 14.8, 16.3, 17.8, 19.3, 19.3, 20.8, 22.4, 22.4, 23.9, 25.4, 25.4, 26.9, 28.4, 28.4, 29.9, 31.5, 31.5, 33, 34.5],
   },
-  conditionals
+  conditionals,
 }
 export default weapon

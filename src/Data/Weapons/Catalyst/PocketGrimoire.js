@@ -1,8 +1,9 @@
-import PocketGrimoire from './Weapon_Pocket_Grimoire.png'
+import img from './Weapon_Pocket_Grimoire.png'
+
 const weapon = {
   name: "Pocket Grimoire",
   weaponType: "catalyst",
-  img: PocketGrimoire,
+  img,
   rarity: 2,
   passiveName: "",
   passiveDescription: () => ``,

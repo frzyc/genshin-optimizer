@@ -1,10 +1,11 @@
 import DisplayPercent from "../../../Components/DisplayPercent"
-import RecurveBow from './Weapon_Recurve_Bow.png'
+import img from './Weapon_Recurve_Bow.png'
+
 const refinementVals = [8, 10, 12, 14, 16]
 const weapon = {
   name: "Recurve Bow",
   weaponType: "bow",
-  img: RecurveBow,
+  img,
   rarity: 3,
   passiveName: "Cull the Weak",
   passiveDescription: (refineIndex, charFinalStats) => <span>Defeating an opponent restores {refinementVals[refineIndex]}% HP{DisplayPercent(refinementVals[refineIndex], charFinalStats, "finalHP")}.</span>,

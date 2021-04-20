@@ -1,12 +1,13 @@
 import { getTalentStatKey } from '../../../Build/Build'
 import DisplayPercent from "../../../Components/DisplayPercent"
-import SkywardSpine from './Weapon_Skyward_Spine.png'
+import img from './Weapon_Skyward_Spine.png'
+
 const refinementCritVals = [8, 10, 12, 14, 16]
 const refinementRawDmgVals = [40, 55, 70, 85, 100]
 const weapon = {
   name: "Skyward Spine",
   weaponType: "polearm",
-  img: SkywardSpine,
+  img,
   rarity: 5,
   passiveName: "Black Wing",
   passiveDescription: (refineIndex, charFinalStats) => <span>Increases CRIT Rate by {refinementCritVals[refineIndex]}% and increases Normal ATK SPD by 12%. Additionally, Normal and Charged Attacks hits on opponents have a 50% chance to trigger a vacuum blade that deals {refinementRawDmgVals[refineIndex]}% of ATK{DisplayPercent(refinementRawDmgVals[refineIndex], charFinalStats, getTalentStatKey("physical", charFinalStats))} as DMG in a small AoE. This effect can occur no more than once every 2s.</span>,

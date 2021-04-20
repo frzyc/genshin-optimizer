@@ -1,9 +1,19 @@
-import HarbingerOfDawn from './Weapon_Harbinger_of_Dawn.png'
+import img from './Weapon_Harbinger_of_Dawn.png'
+
 const refinementVals = [14, 17.5, 21, 24.5, 28]
+const conditionals = {
+  v: {
+    name: "High HP",
+    maxStack: 1,
+    stats: (refineIndex) => ({
+      critRate_: refinementVals[refineIndex]
+    })
+  }
+}
 const weapon = {
   name: "Harbinger of Dawn",
   weaponType: "sword",
-  img: HarbingerOfDawn,
+  img,
   rarity: 3,
   passiveName: "Vigorous",
   passiveDescription: (refineIndex) => `When HP is above 90%, increases CRIT Rate by ${refinementVals[refineIndex]}%.`,
@@ -13,13 +23,6 @@ const weapon = {
     subStatKey: "critDMG_",
     sub: [10.2, 11.9, 13.9, 16, 18, 18, 20.1, 22.1, 24.2, 26.3, 26.3, 28.3, 30.4, 30.4, 32.4, 34.5, 34.5, 36.6, 38.6, 38.6, 40.7, 42.7, 42.7, 44.8, 46.9],
   },
-  conditional: {
-    type: "weapon",
-    sourceKey: "HarbingerOfDawn",
-    maxStack: 1,
-    stats: (refineIndex) => ({
-      critRate_: refinementVals[refineIndex]
-    })
-  }
+  conditionals,
 }
 export default weapon

@@ -1,13 +1,13 @@
 import { getTalentStatKey } from '../../../Build/Build'
 import DisplayPercent from "../../../Components/DisplayPercent"
-import FilletBlade from './Weapon_Fillet_Blade.png'
+import img from './Weapon_Fillet_Blade.png'
 
 const refinementVals = [240, 280, 320, 360, 400]
 const refinementcdVals = [15, 14, 13, 12, 11]
 const weapon = {
   name: "Fillet Blade",
   weaponType: "sword",
-  img: FilletBlade,
+  img,
   rarity: 3,
   passiveName: "Gash",
   passiveDescription: (refineIndex, charFinalStats) => <span>On hit, has a 50% chance to deal {refinementVals[refineIndex]}% ATK DMG{DisplayPercent(refinementVals[refineIndex], charFinalStats, getTalentStatKey("physical", charFinalStats))} to a single opponent. Can only occur once every {refinementcdVals[refineIndex]}s.</span>,

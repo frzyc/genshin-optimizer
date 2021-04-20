@@ -1,9 +1,20 @@
-import Slingshot from './Weapon_Slingshot.png'
+import img from './Weapon_Slingshot.png'
+
 const refinementVals = [36, 42, 48, 54, 60]
+const conditionals = {
+  s: {
+    name: "Normal/Charged Attack Hits within 0.3s",
+    maxStack: 1,
+    stats: (refineIndex) => ({
+      // TODO: Shouldn't we exclude elemental skill/burst?
+      dmg_: refinementVals[refineIndex] + 10//+10 to neutralize the -10
+    })
+  }
+}
 const weapon = {
   name: "Slingshot",
   weaponType: "bow",
-  img: Slingshot,
+  img,
   rarity: 3,
   passiveName: "Slingshot",
   passiveDescription: (refineIndex) => `If a Normal or Charged Attack hits a target within 0.3s of being fired, increases DMG by ${refinementVals[refineIndex]}%. Otherwise, decreases DMG by 10%.`,
@@ -16,13 +27,6 @@ const weapon = {
   stats: () => ({
     dmg_: -10
   }),
-  conditional: {
-    type: "weapon",
-    sourceKey: "Slingshot",
-    maxStack: 1,
-    stats: (refineIndex) => ({
-      dmg_: refinementVals[refineIndex] + 10//+10 to neutralize the -10
-    })
-  }
+  conditionals,
 }
 export default weapon

@@ -1,10 +1,11 @@
 import DisplayPercent from "../../../Components/DisplayPercent"
-import PrototypeMalice from './Weapon_Prototype_Malice.png'
+import img from './Weapon_Prototype_Malice.png'
+
 const refinementVals = [4, 4.5, 5, 5.5, 6]
 const weapon = {
   name: "Prototype Amber",
   weaponType: "catalyst",
-  img: PrototypeMalice,
+  img,
   rarity: 4,
   passiveName: "Gilding",
   passiveDescription: (refineIndex, charFinalStats) => <span>Using an Elemental Burst regenerates {refinementVals[refineIndex]} Energy every 2s for 6s. All party members will regenerate {refinementVals[refineIndex]}% HP{DisplayPercent(refinementVals[refineIndex], charFinalStats, "finalHP")} every 2s for this duration.</span>,//${refinementVals[refineIndex]}

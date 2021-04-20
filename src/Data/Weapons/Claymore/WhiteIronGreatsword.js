@@ -1,10 +1,11 @@
 import DisplayPercent from "../../../Components/DisplayPercent"
-import WhiteIronGreatsword from './Weapon_White_Iron_Greatsword.png'
+import img from './Weapon_White_Iron_Greatsword.png'
+
 const refinementVals = [8, 10, 12, 14, 16]
 const weapon = {
   name: "White Iron Greatsword",
   weaponType: "claymore",
-  img: WhiteIronGreatsword,
+  img,
   rarity: 3,
   passiveName: "Cull the Weak",
   passiveDescription: (refineIndex, charFinalStats) => <span>Defeating an opponent restores {refinementVals[refineIndex]}% HP{DisplayPercent(refinementVals[refineIndex], charFinalStats, "finalHP")}.</span>,

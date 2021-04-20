@@ -1,12 +1,12 @@
 import { getTalentStatKey } from '../../../Build/Build'
 import DisplayPercent from "../../../Components/DisplayPercent"
-import TheFlute from './Weapon_The_Flute.png'
+import img from './Weapon_The_Flute.png'
 
 const refinementVals = [100, 125, 150, 175, 200]
 const weapon = {
   name: "The Flute",
   weaponType: "sword",
-  img: TheFlute,
+  img,
   rarity: 4,
   passiveName: "Chord",
   passiveDescription: (refineIndex, charFinalStats) => <span>Normal or Charged Attacks grant a Harmonic on hits. Gaining 5 Harmonics triggers the power of music and deals {refinementVals[refineIndex]}% ATK DMG{DisplayPercent(refinementVals[refineIndex], charFinalStats, getTalentStatKey("physical", charFinalStats))} to surrounding opponents. Harmonics last up to 30s, and a maximum of 1 can be gained every 0.5s.</span>,

@@ -1,13 +1,13 @@
 import { getTalentStatKey } from '../../../Build/Build'
 import DisplayPercent from "../../../Components/DisplayPercent"
-import TheViridescentHunt from './Weapon_The_Viridescent_Hunt.png'
+import img from './Weapon_The_Viridescent_Hunt.png'
 
 const refinementVals = [40, 50, 60, 70, 80]
 const refinementCdVals = [14, 13, 12, 11, 10]
 const weapon = {
   name: "The Viridescent Hunt",
   weaponType: "bow",
-  img: TheViridescentHunt,
+  img,
   rarity: 4,
   passiveName: "Verdant Wind",
   passiveDescription: (refineIndex, charFinalStats) => <span>Upon hit, Normal and Aimed Shot Attacks have a 50% chance to generate a Cyclone, which will continuously attract surrounding enemies, dealing {refinementVals[refineIndex]}% of ATK{DisplayPercent(refinementVals[refineIndex], charFinalStats, getTalentStatKey("physical", charFinalStats))} as DMG to these enemies every 0.5s for 4s. This effect can only occur once every {refinementCdVals[refineIndex]}s.</span>,//$

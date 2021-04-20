@@ -1,9 +1,10 @@
-import TheStringless from './Weapon_The_Stringless.png'
+import img from './Weapon_The_Stringless.png'
+
 const refinementVals = [24, 30, 36, 42, 48]
 const weapon = {
   name: "The Stringless",
   weaponType: "bow",
-  img: TheStringless,
+  img,
   rarity: 4,
   passiveName: "Arrowless Song",
   passiveDescription: (refineIndex) => `Increases Elemental Skill and Elemental Burst DMG by ${refinementVals[refineIndex]}%.`,

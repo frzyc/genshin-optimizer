@@ -1,10 +1,21 @@
-import CompoundBow from './Weapon_Compound_Bow.png'
+import img from './Weapon_Compound_Bow.png'
+
 const refinementVals = [4, 5, 6, 7, 8]
 const refinementSpdVals = [1.2, 1.5, 1.8, 2.1, 2.4]
+const conditionals = {
+  ia: {
+    name: "Normal/Charged Attack Hits",
+    maxStack: 4,
+    stats: (refineIndex) => ({
+      atk_: refinementVals[refineIndex],
+      atkSPD_: refinementSpdVals[refineIndex]
+    })
+  }
+}
 const weapon = {
   name: "Compound Bow",
   weaponType: "bow",
-  img: CompoundBow,
+  img,
   rarity: 4,
   passiveName: "Infusion Arrow",
   passiveDescription: (refineIndex) => `Normal Attack and Charged Attack hits increase ATK by ${refinementVals[refineIndex]}% and Normal ATK SPD by ${refinementSpdVals[refineIndex]}% for 6s. Max 4 stacks. Can only occur once every 0.3s.`,
@@ -14,14 +25,6 @@ const weapon = {
     subStatKey: "physical_dmg_",
     sub: [15, 17.4, 20.5, 23.5, 26.5, 26.5, 29.6, 32.6, 35.6, 38.7, 38.7, 41.7, 44.7, 44.7, 47.8, 50.8, 50.8, 53.8, 56.8, 56.8, 59.9, 62.9, 62.9, 65.9, 69],
   },
-  conditional: {
-    type: "weapon",
-    sourceKey: "CompoundBow",
-    maxStack: 4,
-    stats: (refineIndex) => ({
-      atk_: refinementVals[refineIndex],
-      atkSPD_: refinementSpdVals[refineIndex]
-    })
-  }
+  conditionals,
 }
 export default weapon

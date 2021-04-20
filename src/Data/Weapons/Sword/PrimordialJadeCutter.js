@@ -1,5 +1,6 @@
 import DisplayPercent from '../../../Components/DisplayPercent'
 import img from './Weapon_Primordial_Jade_Cutter.png'
+
 const refinementVals_hp = [20, 25, 30, 35, 40]
 const refinementVals_hp_Atk = [1.2, 1.5, 1.8, 2.1, 2.4]
 const weapon = {

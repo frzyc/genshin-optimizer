@@ -1,9 +1,19 @@
-import DragonsBane from './Weapon_Dragon\'s_Bane.png'
+import img from './Weapon_Dragon\'s_Bane.png'
+
 const refinementVals = [20, 24, 28, 32, 36]
+const conditionals = {
+  bfw: {
+    name: "Against Opponents Affected by Hydro/Pyro",
+    maxStack: 1,
+    stats: (refineIndex) => ({
+      dmg_: refinementVals[refineIndex]
+    })
+  }
+}
 const weapon = {
   name: "Dragon’s Bane",
   weaponType: "polearm",
-  img: DragonsBane,
+  img,
   rarity: 4,
   passiveName: "Bane of Flame and Water",
   passiveDescription: (refineIndex) => <span>Increases DMG against opponents affected by <span className="text-hydro">Hydro</span> or <span className="text-pyro">Pyro</span> by {refinementVals[refineIndex]}%.</span>,
@@ -13,13 +23,6 @@ const weapon = {
     subStatKey: "eleMas",
     sub: [48, 56, 65, 75, 85, 85, 95, 104, 114, 124, 124, 133, 143, 143, 153, 162, 162, 172, 182, 182, 191, 201, 201, 211, 221],
   },
-  conditional: {
-    type: "weapon",
-    sourceKey: "DragonsBane",
-    maxStack: 1,
-    stats: (refineIndex) => ({
-      dmg_: refinementVals[refineIndex]
-    })
-  }
+  conditionals,
 }
 export default weapon

@@ -1,5 +1,15 @@
 import img from './Weapon_Windblume_Ode.png'
+
 const refinementVals = [16, 20, 24, 28, 32]
+const conditionals = {
+  ww: {
+    name: "After Elemental Skill",
+    maxStack: 1,
+    stats: (refineIndex) => ({
+      atk_: refinementVals[refineIndex]
+    })
+  }
+}
 const weapon = {
   name: "Windblume Ode",
   weaponType: "bow",
@@ -13,13 +23,6 @@ const weapon = {
     subStatKey: "eleMas",
     sub: [36, 42, 49, 56, 64, 64, 71, 78, 85, 93, 93, 100, 107, 107, 115, 122, 122, 129, 136, 136, 144, 151, 151, 158, 165],
   },
-  conditional: {
-    type: "weapon",
-    sourceKey: "WindblumeOde",
-    maxStack: 1,
-    stats: (refineIndex) => ({
-      atk_: refinementVals[refineIndex]
-    })
-  }
+  conditionals,
 }
 export default weapon

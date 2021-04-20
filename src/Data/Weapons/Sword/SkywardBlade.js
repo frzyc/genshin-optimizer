@@ -1,14 +1,25 @@
 import { getTalentStatKey } from '../../../Build/Build'
 import DisplayPercent from '../../../Components/DisplayPercent'
-import SkywardBlade from './Weapon_Skyward_Blade.png'
+import img from './Weapon_Skyward_Blade.png'
+
 const refinementVals = [4, 5, 6, 7, 8]
 const refinementMoveSpdVals = [10, 10, 10, 10, 10]
 const refinementatkSpdVals = [10, 10, 10, 10, 10]
 const refinementautoVals = [20, 25, 30, 35, 40]
+const conditionals = {
+  spf: {
+    name: "After Elemental Burst",
+    maxStack: 1,
+    stats: (refineIndex) => ({
+      moveSPD_: refinementMoveSpdVals[refineIndex],
+      atkSPD_: refinementatkSpdVals[refineIndex],
+    })
+  }
+}
 const weapon = {
   name: "Skyward Blade",
   weaponType: "sword",
-  img: SkywardBlade,
+  img,
   rarity: 5,
   passiveName: "Sky-Piercing Fang",
   passiveDescription: (refineIndex, charFinalStats) => <span>CRIT Rate increased by {refinementVals[refineIndex]}%. Gains <b>Skypiercing Might</b> upon using an Elemental Burst: Increases Movement SPD by {refinementMoveSpdVals[refineIndex]}%, increases ATK SPD by {refinementatkSpdVals[refineIndex]}%, and Normal and Charged hits deal additional DMG equal to {refinementautoVals[refineIndex]}% of ATK{DisplayPercent(refinementautoVals[refineIndex], charFinalStats, getTalentStatKey("physical", charFinalStats))}. Skypiercing Might lasts for 12s.</span>,
@@ -21,14 +32,6 @@ const weapon = {
   stats: (refineIndex) => ({
     critRate_: refinementVals[refineIndex]
   }),
-  conditional: {
-    type: "weapon",
-    sourceKey: "SkywardBlade",
-    maxStack: 1,
-    stats: (refineIndex) => ({
-      moveSPD_: refinementMoveSpdVals[refineIndex],
-      atkSPD_: refinementatkSpdVals[refineIndex],
-    })
-  }
+  conditionals,
 }
 export default weapon

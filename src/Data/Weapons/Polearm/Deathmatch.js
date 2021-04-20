@@ -1,6 +1,7 @@
 import Deathmatch from './Weapon_Deathmatch.png'
 const refinementVals = [16, 20, 24, 28, 32]
 const refinementSoloVals = [24, 30, 36, 42, 48]
+// TODO: multi-conditionals
 const weapon = {
   name: "Deathmatch",
   weaponType: "polearm",

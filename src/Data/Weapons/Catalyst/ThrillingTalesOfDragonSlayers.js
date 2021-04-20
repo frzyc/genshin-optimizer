@@ -1,9 +1,10 @@
-import ThrillingTalesOfDragonSlayers from './Weapon_Thrilling_Tales_of_Dragon_Slayers.png'
+import img from './Weapon_Thrilling_Tales_of_Dragon_Slayers.png'
+
 const refinementVals = [24, 30, 36, 42, 48]
 const weapon = {
   name: "Thrilling Tales of Dragon Slayers",
   weaponType: "catalyst",
-  img: ThrillingTalesOfDragonSlayers,
+  img,
   rarity: 3,
   passiveName: "Heritage",
   passiveDescription: (refineIndex) => `When switching characters, the new character taking the field has their ATK increased by ${refinementVals[refineIndex]}% for 10s. This effect can only occur once every 20s.`,

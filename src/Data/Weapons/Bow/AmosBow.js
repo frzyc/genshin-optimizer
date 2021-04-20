@@ -1,10 +1,21 @@
-import AmosBow from './Weapon_Amos\'_Bow.png'
+import img from './Weapon_Amos\'_Bow.png'
+
 const refinementVals = [12, 15, 18, 21, 24]
 const refinementDmgVals = [8, 10, 12, 14, 16]
+const conditionals = {
+  sw: {
+    name: "Arrow Flight Duration (0.1s / stack)",
+    maxStack: 5,
+    stats: (refineIndex) => ({
+      normal_dmg_: refinementDmgVals[refineIndex],
+      charged_dmg_: refinementDmgVals[refineIndex]
+    }),
+  }
+}
 const weapon = {
   name: "Amos’ Bow",
   weaponType: "bow",
-  img: AmosBow,
+  img,
   rarity: 5,
   passiveName: "Strong-Willed",
   passiveDescription: (refineIndex) => `Increases Normal Attack and Charged Attack DMG by ${refinementVals[refineIndex]}%. Normal and Charged Attack DMG from arrows shot by a further ${refinementDmgVals[refineIndex]}% for every 0.1s that the arrow is in flight, up to 0.5s.`,
@@ -18,14 +29,6 @@ const weapon = {
     normal_dmg_: refinementVals[refineIndex],
     charged_dmg_: refinementVals[refineIndex]
   }),
-  conditional: {
-    type: "weapon",
-    sourceKey: "AmosBow",
-    maxStack: 5,
-    stats: (refineIndex) => ({
-      normal_dmg_: refinementDmgVals[refineIndex],
-      charged_dmg_: refinementDmgVals[refineIndex]
-    })
-  }
+  conditionals,
 }
 export default weapon

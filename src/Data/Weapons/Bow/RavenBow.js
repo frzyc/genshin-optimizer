@@ -1,9 +1,19 @@
-import RavenBow from './Weapon_Raven_Bow.png'
+import img from './Weapon_Raven_Bow.png'
+
 const refinementVals = [12, 15, 18, 21, 24]
+const conditionals = {
+  bfw: {
+    name: "Against Opponents Affected by Hydro/Pyro",
+    maxStack: 1,
+    stats: (refineIndex) => ({
+      dmg_: refinementVals[refineIndex]
+    })
+  }
+}
 const weapon = {
   name: "Raven Bow",
   weaponType: "bow",
-  img: RavenBow,
+  img,
   rarity: 3,
   passiveName: "Bane of Flame and Water",
   passiveDescription: (refineIndex) => <span>Increases DMG against opponents affected by <span className="text-hydro">Hydro</span> or <span className="text-pyro">Pyro</span> by {refinementVals[refineIndex]}%.</span>,
@@ -13,13 +23,6 @@ const weapon = {
     subStatKey: "eleMas",
     sub: [20, 24, 28, 32, 36, 36, 40, 44, 48, 53, 53, 57, 61, 61, 65, 69, 69, 73, 77, 77, 81, 85, 85, 90, 94],
   },
-  conditional: {
-    type: "weapon",
-    sourceKey: "RavenBow",
-    maxStack: 1,
-    stats: (refineIndex) => ({
-      dmg_: refinementVals[refineIndex]
-    })
-  }
+  conditionals
 }
 export default weapon

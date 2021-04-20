@@ -1,13 +1,14 @@
 import { getTalentStatKey } from '../../../Build/Build'
 import DisplayPercent from "../../../Components/DisplayPercent"
-import Frostbearer from './Weapon_Frostbearer.png'
+import img from './Weapon_Frostbearer.png'
+
 const refinementChanceVals = [60, 70, 80, 90, 100]
 const refinementDmgVals = [80, 95, 110, 125, 140]
 const refinementDmgCryoVals = [200, 240, 280, 320, 360]
 const weapon = {
   name: "Frostbearer",
   weaponType: "catalyst",
-  img: Frostbearer,
+  img,
   rarity: 4,
   passiveName: "Frost Burial",
   passiveDescription: (refineIndex, charFinalStats) => <span>Hitting an opponent with Normal and Charged Attacks has a {refinementChanceVals[refineIndex]}% chance of forming and dropping an Everfrost Icicle above them, dealing {refinementDmgVals[refineIndex]}% AoE ATK DMG{DisplayPercent(refinementDmgVals[refineIndex], charFinalStats, getTalentStatKey("physical", charFinalStats))}. Opponents affected by <span className="text-cryo">Cryo</span> are dealt {refinementDmgCryoVals[refineIndex]}% ATK DMG{DisplayPercent(refinementDmgCryoVals[refineIndex], charFinalStats, getTalentStatKey("physical", charFinalStats))}. Can only occur once every 10s.</span>,

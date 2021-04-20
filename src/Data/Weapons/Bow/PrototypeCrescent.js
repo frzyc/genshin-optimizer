@@ -1,9 +1,20 @@
-import PrototypeCrescent from './Weapon_Prototype_Crescent.png'
+import img from './Weapon_Prototype_Crescent.png'
+
 const refinementVals = [36, 45, 54, 63, 72]
+const conditionals = {
+  u: {
+    name: "Against Weak Points",
+    maxStack: 1,
+    stats: (refineIndex) => ({
+      moveSPD_: 10,
+      atk_: refinementVals[refineIndex]
+    }),
+  }
+}
 const weapon = {
   name: "Prototype Crescent",
   weaponType: "bow",
-  img: PrototypeCrescent,
+  img,
   rarity: 4,
   passiveName: "Unreturning",
   passiveDescription: (refineIndex) => `Charged Attack hits on weak points increase Movement SPD by 10% and ATK by ${refinementVals[refineIndex]}% for 10s.`,
@@ -13,14 +24,6 @@ const weapon = {
     subStatKey: "atk_",
     sub: [9, 10.5, 12.3, 14.1, 15.9, 15.9, 17.7, 19.5, 21.4, 23.2, 23.2, 25, 26.8, 26.8, 28.6, 30.4, 30.4, 32.3, 34.1, 34.1, 35.9, 37.7, 37.7, 39.5, 41.3],
   },
-  conditional: {
-    type: "weapon",
-    sourceKey: "PrototypeCrescent",
-    maxStack: 1,
-    stats: (refineIndex) => ({
-      moveSPD_: 10,
-      atk_: refinementVals[refineIndex]
-    })
-  }
+  conditionals,
 }
 export default weapon
