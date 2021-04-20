@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import CharacterDatabase from '../Database/CharacterDatabase';
 import SlotIcon from '../Components/SlotIcon';
 import { ArtifactMainSlotKeys, ArtifactMainStatsData, ArtifactData, ArtifactSlotsData, ArtifactStarsData, ArtifactSubStatsData, ArtifactDataImport, ArtifactSubstatsMinMax } from '../Data/ArtifactData';
+import { ArtifactSubstatLookupTable } from '../Data/ArtifactLookupTable';
 import Stat from '../Stat';
 import ConditionalsUtil from '../Util/ConditionalsUtil';
 import { clampPercent, closeEnoughFloat, closeEnoughInt, deepClone } from '../Util/Util';
@@ -114,39 +115,34 @@ export default class Artifact {
     state.substats.reduce((sum, cur) =>
       sum + (cur && cur.value ? 1 : 0), 0);
   static getSubstatRollData = (subStatKey, numStars) => ArtifactSubStatsData?.[subStatKey]?.[numStars] ?? []
-  static getSubstatRolls = (subStatKey, subStatValue, numStars, defVal = []) => {
-    if (!numStars || !subStatKey || typeof subStatValue !== "number" || !subStatValue) return defVal
+  static getSubstatRolls = (subStatKey, subStatValue, numStars) => {
+    if (!numStars || !subStatKey || typeof subStatValue !== "number" || !subStatValue) return []
     let rollData = this.getSubstatRollData(subStatKey, numStars)
-    if (!rollData.length) return defVal
-    if (rollData.includes(subStatValue)) return [[subStatValue]]
-    if (subStatValue > (rollData[rollData.length - 1] * (this.getNumUpgradesOrUnlocks(numStars) + 2)))//+2 instead of +1 to go over rounding
-      return defVal
-    let isFloat = Stat.getStatUnit(subStatKey) === "%"
-    //calculation is more expensive now, since its calculating all the combinations to test to get to the value.
-    let rolls = [];
-    let maxNumRoll = Math.round(subStatValue / rollData[0])
-    if (!maxNumRoll) return defVal;
-    const rollOption = (val, arr) => {
-      if (arr.length) {
-        if (arr.length > maxNumRoll) return;
-        let sum = arr.reduce((accu, v) => accu + v, 0)
-        if (isFloat) {
-          if (sum - val >= 0.101) return
-          if (closeEnoughFloat(sum, val))
-            return rolls.push(arr);
-        } else {
-          if (sum - val > 1) return
-          if (closeEnoughInt(sum, val))
-            return rolls.push(arr);
-        }
+    if (!rollData.length) return []
+
+    let table = ArtifactSubstatLookupTable[subStatKey][numStars]
+    let lookupValue = subStatValue.toFixed(1)
+
+    if (table[lookupValue]) return table[lookupValue].map(roll => roll.map(i => rollData[i]))
+    else {
+      // Lookup fail, do binary search instead
+
+      // Find smallest value > `lookupValue`
+      const values = Object.keys(table).map(key => parseFloat(key))
+      let first = 0, last = values.length - 1, mid = Math.floor((first + last) / 2)
+      while (first !== last) {
+        if (values[mid] > lookupValue) last = mid
+        else first = mid + 1
+        mid = Math.floor((first + last) / 2)
       }
-      rollData.slice().reverse().forEach(roll => {
-        if (!arr.length || arr[arr.length - 1] >= roll)
-          rollOption(subStatValue, [...arr, roll])
-      })
+
+      let candidate1 = Math.abs(values[mid] - lookupValue)
+      let candidate2 = mid > 0 ? Math.abs(values[mid - 1] - lookupValue) : Infinity
+      // Bad candidates
+      if (candidate1 > 0.2 && candidate2 > 0.2) return []
+      return ((candidate1 < candidate2) ? table[values[mid]] : table[values[mid - 1]])
+        .map(roll => roll.map(i => rollData[i]))
     }
-    rollOption(subStatValue, [])
-    return rolls;
   }
   static getSubstatEfficiency = (subStatKey, rolls = []) => {
     let len = rolls.length
