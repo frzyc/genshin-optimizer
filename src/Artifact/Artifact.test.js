@@ -50,7 +50,7 @@ describe('Testing Artifact.js', () => {
         expect(Artifact.getSubstatEfficiency("def_", [9999, 9999, 9999, 9999])).toEqual(100)
         expect(Artifact.getSubstatEfficiency("def_", [-1])).toEqual(0)
         expect(Artifact.getSubstatEfficiency("", [-1])).toEqual(0)
-        expect(Artifact.getSubstatEfficiency()).toEqual(0)
+        expect(Artifact.getSubstatEfficiency(undefined, [])).toEqual(0)
       })
     })
   })
