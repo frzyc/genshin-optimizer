@@ -17,22 +17,20 @@ describe('Testing Artifact.js', () => {
         expect(Artifact.getSubstatRolls("def_", 11.1, 4)).toEqual([[5.25, 5.83]])
       })
       test('should get multiple rolls with multiple options', () => {
-        expect(Artifact.getSubstatRolls("critDMG_", 32.6, 5)).toEqual([
+        expect(Artifact.getSubstatRolls("critDMG_", 32.6, 5)).toEqual(expect.arrayContaining([
           [5.44, 6.22, 6.99, 6.99, 6.99], [5.44, 5.44, 5.44, 5.44, 5.44, 5.44]
-        ])
+        ]))
       })
-      test('should get close rolls', () => {
+      test('should reject close rolls', () => {
         // 31.9 - 32.6
-        // Close to 31.9
-        expect(Artifact.getSubstatRolls("critDMG_", 32, 5)).toEqual([[5.44, 5.44, 6.99, 6.99, 6.99,]])
+        // Not exactly 31.9
+        expect(Artifact.getSubstatRolls("critDMG_", 32, 5)).toEqual([])
         // Too far from 31.9
         expect(Artifact.getSubstatRolls("critDMG_", 32.4, 5)).toEqual([])
         // Too far from 32.6
         expect(Artifact.getSubstatRolls("critDMG_", 32.3, 5)).toEqual([])
-        // Close to 32.6
-        expect(Artifact.getSubstatRolls("critDMG_", 32.5, 5)).toEqual([
-          [5.44, 6.22, 6.99, 6.99, 6.99], [5.44, 5.44, 5.44, 5.44, 5.44, 5.44]
-        ])
+        // Not exactly 32.6
+        expect(Artifact.getSubstatRolls("critDMG_", 32.5, 5)).toEqual([])
       })
       test('deal with invalid', () => {
         expect(Artifact.getSubstatRolls("def_", 10000, 4)).toEqual([])

@@ -62,24 +62,6 @@ describe('artifactReducer', () => {
     expect(newState).toEqual({ ...initial, mainStatKey: "hp", substats: initialArtifact().substats })
 
   })
-  test('should handle substats', () => {
-    let newState = artifactReducer(initial, { type: "substat", key: "def", value: 999, index: 0 })
-    expect(newState.substats[0]).toEqual({ key: "def", value: 999 })
-
-    //wont assign if mainstat has the key
-    initial = initialArtifact()
-    initial.mainStatKey = "hp"
-    newState = artifactReducer(initial, { type: "substat", key: "hp", value: 999, index: 1 })
-    expect(newState.substats[1]).toEqual({ key: "", value: 0 })
-
-    //wont assign substat if another substat has the key
-    initial = initialArtifact()
-    initial.substats[0].key = "hp"
-    initial.substats[0].value = 999
-    newState = artifactReducer(initial, { type: "substat", key: "hp", value: 999, index: 1 })
-    expect(newState.substats[0]).toEqual({ key: "hp", value: 999 })
-    expect(newState.substats[1]).toEqual({ key: "", value: 0 })
-  })
   test("should reset", () => {
     initial.setKey = "GladiatorsFinale"
     initial.level = 20

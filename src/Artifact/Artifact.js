@@ -123,25 +123,9 @@ export default class Artifact {
     let table = ArtifactSubstatLookupTable[subStatKey][numStars]
     let lookupValue = subStatValue.toFixed(1)
 
-    if (table[lookupValue]) return table[lookupValue].map(roll => roll.map(i => rollData[i]))
-    else {
-      // Lookup fail, do binary search instead
-
-      // Find smallest value > `lookupValue`
-      const values = Object.keys(table).map(key => parseFloat(key))
-      let first = 0, last = values.length - 1, mid = Math.floor((first + last) / 2)
-      while (first !== last) {
-        if (values[mid] > lookupValue) last = mid
-        else first = mid + 1
-        mid = Math.floor((first + last) / 2)
-      }
-
-      let candidate1 = Math.abs(values[mid] - lookupValue)
-      let candidate2 = mid > 0 ? Math.abs(values[mid - 1] - lookupValue) : Infinity
-      if (candidate1 > 0.101 && candidate2 > 0.101) return [] // Bad candidates
-      return ((candidate1 < candidate2) ? table[values[mid]] : table[values[mid - 1]])
-        .map(roll => roll.map(i => rollData[i]))
-    }
+    if (table[lookupValue])
+      return table[lookupValue].map(roll => roll.map(i => rollData[i]))
+    else return [] // Lookup fails
   }
   static getSubstatEfficiency = (subStatKey, rolls) => {
     const sum = rolls.reduce((a, b) => a + b, 0)
