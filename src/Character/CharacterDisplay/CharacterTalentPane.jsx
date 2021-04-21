@@ -205,7 +205,7 @@ function SkillDisplayCard({ character, character: { characterKey, constellation,
   }
   const talentStats = Character.getTalentStats(characterKey, talentKey, build)
   const statsEle = talentStats && <Row><Col>
-    <Card bg="darkcontent" text="lightfont" className="mt-2 ml-n2 mr-n2">
+    <Card bg="darkcontent" text="lightfont" className="mb-2">
       <ListGroup className="text-white" variant="flush">
         {statsToFields(talentStats, build).map((field, i) =>
           <FieldDisplay key={i} index={i} {...{ field, equippedBuild, newBuild }} />)}

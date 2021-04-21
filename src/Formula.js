@@ -1,5 +1,9 @@
-import charFormulas from './Data/Characters/formula'
 import { crawlObject, objPathValue } from './Util/Util';
+export let CharacterFormulaImport = import('./Data/Characters/formula')
+CharacterFormulaImport.then(imp => {
+  addFormula(imp.default, "character")
+  CharacterFormulaImport = null
+})
 export default class Formula {
   constructor() { if (this instanceof Formula) throw Error('A static class cannot be instantiated.'); }
   static formulas = {}
@@ -12,5 +16,3 @@ function addFormula(src, key) {
     formula.keys = keys
   })
 }
-
-addFormula(charFormulas, "character")

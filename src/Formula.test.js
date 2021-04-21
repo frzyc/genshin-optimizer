@@ -1,7 +1,8 @@
-import Formula from "./Formula"
+import Formula, { CharacterFormulaImport } from "./Formula"
 import { crawlObject } from "./Util/Util"
 import './Data/Characters/index' //attaches field to formulas.
 import { StatData } from "./StatData"
+import './Conditional/Conditional' //attach field to formulas.
 
 expect.extend({
   toBeValidFormula(formula, keys) {
@@ -30,8 +31,11 @@ expect.extend({
     }
   },
 })
-test('validate formulas', () => {
-  crawlObject(Formula.formulas, [], f => typeof f === "function", (formula, keys) => {
-    expect(formula).toBeValidFormula(keys)
+describe('test Formula', () => {
+  beforeAll(() => CharacterFormulaImport)
+  test('validate formulas', () => {
+    crawlObject(Formula.formulas, [], f => typeof f === "function", (formula, keys) => {
+      expect(formula).toBeValidFormula(keys)
+    })
   })
 })

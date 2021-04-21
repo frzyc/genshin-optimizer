@@ -18,6 +18,7 @@ import CharacterArtifactPane from './CharacterDisplay/CharacterArtifactPane';
 import CharacterOverviewPane from './CharacterDisplay/CharacterOverviewPane';
 import CharacterTalentPane from './CharacterDisplay/CharacterTalentPane';
 import DamageOptionsAndCalculation from './CharacterDisplay/DamageOptionsAndCalculation';
+import { CharacterFormulaImport } from '../Formula';
 
 export const compareAgainstEquippedContext = createContext()
 
@@ -105,6 +106,7 @@ export default function CharacterDisplayCard({ characterKey: propCharacterKey, c
       Character.getCharacterDataImport(),
       Weapon.getWeaponDataImport(),
       Artifact.getDataImport(),
+      CharacterFormulaImport
     ]).then(forceUpdate)
   }, [forceUpdate])
 

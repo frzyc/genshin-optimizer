@@ -2,7 +2,7 @@ import '../WorkerHack'
 import { PreprocessFormulas } from "../StatData";
 import { artifactSetPermutations, artifactPermutations, pruneArtifacts, calculateTotalBuildNumber } from "./Build"
 import { GetDependencies } from '../StatDependency';
-import Formula from '../Formula';
+import Formula, { CharacterFormulaImport } from '../Formula';
 
 onmessage = async (e) => {
   const t1 = performance.now()
@@ -13,6 +13,7 @@ onmessage = async (e) => {
     target = (stats) => stats[optimizationTarget]
     targetKeys = [optimizationTarget]
   } else {
+    await CharacterFormulaImport
     const targetFormula = Formula.get(optimizationTarget)
     if (typeof targetFormula === "function")
       [target, targetKeys] = targetFormula(stats)

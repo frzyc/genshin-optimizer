@@ -6,7 +6,7 @@ import Button from 'react-bootstrap/Button'
 import Dropdown from 'react-bootstrap/Dropdown'
 
 export default function ConditionalSelector({ conditional, conditionalValue, setConditional, name, disabled }) {
-  const [conditionalNum, conditionalStateKey] = conditionalValue
+  const [conditionalNum=0, conditionalStateKey] = conditionalValue
   if (!conditional) return name
   if (conditional.states) {//complex conditional 
     const state = conditional.states[conditionalStateKey] ?? {}
@@ -17,7 +17,7 @@ export default function ConditionalSelector({ conditional, conditionalValue, set
         <h6 className="mb-0 d-inline" style={{ whiteSpace: "normal" }}>{name} {badge}</h6>
       </Dropdown.Toggle>
       <Dropdown.Menu>
-        <Dropdown.Item onClick={() => setConditional(0)}>
+        <Dropdown.Item onClick={() => setConditional([0])}>
           <span>Not Active</span>
         </Dropdown.Item>
         {Object.entries(conditional.states).map(([stateKey, condial], i) =>

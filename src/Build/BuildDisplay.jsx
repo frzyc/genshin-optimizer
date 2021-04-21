@@ -16,7 +16,7 @@ import CustomFormControl from '../Components/CustomFormControl';
 import { Stars } from '../Components/StarDisplay';
 import ArtifactDatabase from '../Database/ArtifactDatabase';
 import CharacterDatabase from '../Database/CharacterDatabase';
-import Formula from '../Formula';
+import Formula, { CharacterFormulaImport } from '../Formula';
 import Stat from '../Stat';
 import { timeStringMs } from '../Util/TimeUtil';
 import { deepClone, getObjValueCount, loadFromLocalStorage, saveToLocalStorage } from '../Util/Util';
@@ -93,6 +93,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
       Character.getCharacterDataImport(),
       Weapon.getWeaponDataImport(),
       Artifact.getDataImport(),
+      CharacterFormulaImport,
     ]).then(setCharDirty)
   }, [setCharDirty])
 

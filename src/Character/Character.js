@@ -130,7 +130,7 @@ export default class Character {
   }
 
 
-  static hasTalentPage = (characterKey) => Boolean(Character.getCDataObj(characterKey)?.talent)
+  static hasTalentPage = (characterKey) => Boolean(Object.keys(Character.getCDataObj(characterKey)?.talent ?? {}).length)//TODO: remove when all chararacter sheets are complete
 
   static getDisplayStatKeys = (stats, defVal = { basicKeys: [] }) => {
     if (!stats || !Object.keys(stats).length) return defVal
@@ -148,7 +148,7 @@ export default class Character {
     const transReactions = deepClone(ElementToReactionKeys[eleKey])
     const weaponTypeKey = this.getWeaponTypeKey(characterKey)
     if (!transReactions.includes("shattered_hit") && weaponTypeKey === "claymore") transReactions.push("shattered_hit")
-    if (Formula.formulas.character[characterKey]) {
+    if (Formula.formulas.character?.[characterKey]) {
       const charFormulas = {}
       Object.entries(Formula.formulas.character[characterKey]).forEach(([talentKey, formulas]) => {
         Object.values(formulas).forEach(formula => {

@@ -4,24 +4,29 @@
   "version": "4.23.1",
   "private": true,
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.32",
-    "@fortawesome/free-brands-svg-icons": "^5.15.1",
-    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-brands-svg-icons": "^5.15.3",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "@fortawesome/react-fontawesome": "^0.1.13",
-    "@testing-library/jest-dom": "^5.11.8",
-    "@testing-library/react": "^11.2.3",
-    "@testing-library/user-event": "^12.6.0",
-    "bootstrap": "^4.5.3",
+    "@testing-library/jest-dom": "^5.11.10",
+    "@testing-library/react": "^11.2.6",
+    "@testing-library/user-event": "^12.8.3",
+    "@types/jest": "^26.0.22",
+    "@types/node": "^14.14.41",
+    "@types/react": "^17.0.3",
+    "@types/react-dom": "^17.0.3",
+    "bootstrap": "^4.6.0",
     "node-sass": "^4.14.1",
-    "react": "^17.0.1",
-    "react-bootstrap": "^1.4.3",
-    "react-dom": "^17.0.1",
+    "react": "^17.0.2",
+    "react-bootstrap": "^1.5.2",
+    "react-dom": "^17.0.2",
     "react-ga": "^3.3.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "^4.0.0",
+    "react-scripts": "^4.0.3",
     "source-map-explorer": "^2.5.2",
     "tesseract.js": "^2.1.1",
-    "urlon": "^3.0.1",
+    "typescript": "^4.2.4",
+    "urlon": "^3.1.0",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
@@ -55,6 +60,6 @@
   "devDependencies": {
     "express": "^4.17.1",
     "gh-pages": "^3.1.0",
-    "worker-loader": "^3.0.7"
+    "worker-loader": "^3.0.8"
   }
 }
