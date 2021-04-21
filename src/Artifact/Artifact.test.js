@@ -9,15 +9,29 @@ describe('SubStat Rolls/efficiency', () => {
     expect(Artifact.getBaseSubRollNumHigh(5)).toBe(4)
     expect(Artifact.getBaseSubRollNumLow(5)).toBe(3)
   })
+
   describe('Artifact.getSubstatRolls()', () => {
     test('should get simple rolls', () => {
-      expect(Artifact.getSubstatRolls("def_", 5.8, 4)).toEqual([[5.8]])
+      expect(Artifact.getSubstatRolls("def_", 5.8, 4)).toEqual([expect.arrayContaining([5.83])])
     })
     test('should get multiple rolls ', () => {
-      expect(Artifact.getSubstatRolls("def_", 11.1, 4)).toEqual([[5.8, 5.3]])
+      expect(Artifact.getSubstatRolls("def_", 11.1, 4)).toEqual([[5.25, 5.83]])
     })
-    test('should get multiple rolls with multiple options', () => {//5.8+4.1 = 9.9 which is "close enough"
-      expect(Artifact.getSubstatRolls("def_", 10, 4)).toEqual([[5.8, 4.1], [5.3, 4.7]])
+    test('should get multiple rolls with multiple options', () => {
+      expect(Artifact.getSubstatRolls("critDMG_", 32.6, 5)).toEqual(expect.arrayContaining([
+        [5.44, 6.22, 6.99, 6.99, 6.99], [5.44, 5.44, 5.44, 5.44, 5.44, 5.44]
+      ]))
+    })
+    test('should reject close rolls', () => {
+      // 31.9 - 32.6
+      // Not exactly 31.9
+      expect(Artifact.getSubstatRolls("critDMG_", 32, 5)).toEqual([])
+      // Too far from 31.9
+      expect(Artifact.getSubstatRolls("critDMG_", 32.4, 5)).toEqual([])
+      // Too far from 32.6
+      expect(Artifact.getSubstatRolls("critDMG_", 32.3, 5)).toEqual([])
+      // Not exactly 32.6
+      expect(Artifact.getSubstatRolls("critDMG_", 32.5, 5)).toEqual([])
     })
     test('deal with invalid', () => {
       expect(Artifact.getSubstatRolls("def_", 10000, 4)).toEqual([])
@@ -27,15 +41,28 @@ describe('SubStat Rolls/efficiency', () => {
   })
   describe('Artifact.getSubstatEfficiency()', () => {
     test('should deal with one roll', () => {
-      expect(Artifact.getSubstatEfficiency("def_", [7.3])).toEqual(100)
-      expect(Artifact.getSubstatEfficiency("def_", [7.3 / 2])).toEqual(100 / 2)
+      expect(Artifact.getSubstatEfficiency("def_", [7.29])).toEqual(100)
+      expect(Artifact.getSubstatEfficiency("def_", [7.29 / 2])).toEqual(100 / 2)
     })
     test('should deal with invalids', () => {
       expect(Artifact.getSubstatEfficiency("def_", [9999])).toEqual(100)
       expect(Artifact.getSubstatEfficiency("def_", [9999, 9999, 9999, 9999])).toEqual(100)
       expect(Artifact.getSubstatEfficiency("def_", [-1])).toEqual(0)
       expect(Artifact.getSubstatEfficiency("", [-1])).toEqual(0)
-      expect(Artifact.getSubstatEfficiency()).toEqual(0)
+      expect(Artifact.getSubstatEfficiency(undefined, [])).toEqual(0)
+    })
+  })
+  describe('Artifact.getSubstatEfficiency()', () => {
+    test('should deal with one roll', () => {
+      expect(Artifact.getSubstatEfficiency("def_", [7.29])).toEqual(100)
+      expect(Artifact.getSubstatEfficiency("def_", [7.29 / 2])).toEqual(100 / 2)
+    })
+    test('should deal with invalids', () => {
+      expect(Artifact.getSubstatEfficiency("def_", [9999])).toEqual(100)
+      expect(Artifact.getSubstatEfficiency("def_", [9999, 9999, 9999, 9999])).toEqual(100)
+      expect(Artifact.getSubstatEfficiency("def_", [-1])).toEqual(0)
+      expect(Artifact.getSubstatEfficiency("", [-1])).toEqual(0)
+      expect(Artifact.getSubstatEfficiency(undefined, [])).toEqual(0)
     })
   })
 })

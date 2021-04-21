@@ -21,7 +21,7 @@ describe('Export Import', () => {
   test('support all reaction modes', () => {
     expect(constants.reactionModes).toContain(null)
 
-    for (const [reaction, {variants}] of Object.entries(amplifyingReactions))
+    for (const [reaction, { variants }] of Object.entries(amplifyingReactions))
       for (const variant in variants)
         expect(constants.reactionModes).toContain(`${variant}_${reaction}`)
   })

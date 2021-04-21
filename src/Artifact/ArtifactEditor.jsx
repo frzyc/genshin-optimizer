@@ -6,6 +6,7 @@ import CustomFormControl from '../Components/CustomFormControl';
 import { Stars } from '../Components/StarDisplay';
 import ArtifactDatabase from '../Database/ArtifactDatabase';
 import Stat from '../Stat';
+import { valueString } from '../Util/UIUtil';
 import { clamp, deepClone, getArrLastElement, getRandomElementFromArray, getRandomIntInclusive } from '../Util/Util';
 import Artifact from './Artifact';
 import ArtifactCard from './ArtifactCard';
@@ -30,12 +31,9 @@ export function artifactReducer(state, action) {
       return initialArtifact()
     case "substat": {
       const { index, key, value } = action
-      if (state.mainStatKey === key) return state
-      if (state.substats.some((substat, i) => i !== index && substat.key === key)) return state
-      if (index >= 4) return state
       const substats = state.substats
       substats[index].key = key
-      substats[index].value = value
+      substats[index].value = parseFloat(valueString(value ?? 0, Stat.getStatUnit(key)))
       return { ...state, substats }
     }
     case "overwrite":
@@ -54,7 +52,7 @@ export function artifactReducer(state, action) {
     const rarity = Artifact.getRarityArr(newState.setKey)
     if (!rarity.includes(newState.numStars))
       newState.numStars = getArrLastElement(rarity)
-    action.level = newState.level//trigger level 
+    action.level = newState.level//trigger level
   }
   if ("level" in action) newState.level = clamp(newState.level, 0, newState.numStars * 4)
   if ("slotKey" in action) {
@@ -228,9 +226,6 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }) {
 
   const errMsgs = Artifact.substatsValidation(artifact)
   const { id, setKey = "", numStars = 0, level = 0, slotKey = "", mainStatKey = "", substats = initialArtifact().substat, currentEfficiency, maximumEfficiency } = artifact
-  //check if all the substats are filled
-  const invalidSubstat = substats.find(substat => substat.key && !substat.value)
-  invalidSubstat && errMsgs.push(<span>Invalid substat value: <b>{Stat.getStatName(invalidSubstat.key)}</b>.</span>)
   return <Card bg="darkcontent" text="lightfont">
     <Card.Header>Artifact Editor</Card.Header>
     <Card.Body>
@@ -414,68 +409,69 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }) {
   </Card>
 }
 
-function SubStatInput({ index, substat: { key, value, rolls, efficiency }, numStars, remainingSubstats = [], setSubstat, className }) {
-  const isPercentStat = Stat.getStatUnit(key) === "%"
-  let error = ""
-  if (!numStars && key && value) error = `Artifact Rarity not set.`;
-  let rollData = Artifact.getSubstatRollData(key, numStars)
-  let rollNum = rolls?.length || 0
-  if (!error && !rollNum && key && value)
-    error = `Substat cannot be rolled 0 times.`
-  if (!error && numStars) {
+function SubStatInput({ index, substat: { key, value, rolls = [], efficiency = 0 }, numStars, remainingSubstats = [], setSubstat, className }) {
+  const accurateValue = rolls.reduce((a, b) => a + b, 0)
+  const unit = Stat.getStatUnit(key), rollNum = rolls.length
+  const enabled = !!numStars
+
+  let error = null, rollData = [], allowedRolls = 0, rollLabel = null
+
+  if (enabled) {
     //account for the rolls it will to fill all 4 substates, +1 for its base roll
-    let totalAllowableRolls = Artifact.getNumUpgradesOrUnlocks(numStars) - (4 - Artifact.getBaseSubRollNumHigh(numStars)) + 1;
-    if (rollNum > totalAllowableRolls) error = `Substat cannot be rolled more than ${totalAllowableRolls} times.`;
+    const maxRollNum = Artifact.getNumUpgradesOrUnlocks(numStars) + Artifact.getBaseSubRollNumHigh(numStars) - 3;
+    allowedRolls = maxRollNum - rollNum
+    rollData = Artifact.getSubstatRollData(key, numStars)
   }
-  let rollLabel = null
+  const rollOffset = 7 - rollData.length
+
+  if (!rollNum && key && value) error = error || `Cannot calculate stat rolls.`
+  if (allowedRolls < 0) error = error || `Substat cannot be rolled more than ${allowedRolls + rollNum} times.`
+
   if (!error) {
     const rollBadge = <Badge variant={rollNum === 0 ? "secondary" : `${rollNum}roll`} className="text-darkcontent">
       {rollNum ? rollNum : "No"} Roll{(rollNum > 1 || rollNum === 0) && "s"}
     </Badge>
-    const rollArr = rolls?.map((val, i) => {
-      const ind = rollData.indexOf(val)
-      const displayNum = 6 - (rollData.length - 1 - ind)
-      return <span key={i} className={`mr-2 text-${displayNum}roll`}>{val}</span>
-    })
+    const rollArr = rolls.map((val, i) =>
+      <span key={i} className={`mr-2 text-${rollOffset + rollData.indexOf(val)}roll`}>{valueString(val, unit)}</span>)
 
-    const efficiencyBadge = <PercentBadge
-      valid={!error || !key}
-      percent={efficiency}>
-      {key ? (!error ? `${(efficiency ? efficiency : 0).toFixed(2)}%` : "ERR") : "No Stat"}
-    </PercentBadge>
     rollLabel = <Row>
       <Col>{rollBadge} {rollArr}</Col>
-      <Col xs="auto">Efficiency: {efficiencyBadge}</Col>
+      <Col xs="auto">Efficiency: <PercentBadge
+        valid={true}
+        percent={efficiency}>
+        {key ? `${valueString(efficiency, "eff")}%` : "No Stat"}
+      </PercentBadge></Col>
     </Row>
   }
+
   return <Card bg="lightcontent" text="lightfont" className={className}>
     <InputGroup>
       <DropdownButton
         title={Stat.getStatNameWithPercent(key, `Substat ${index + 1}`)}
-        disabled={remainingSubstats.length === 0}
+        disabled={!enabled}
         variant={key ? "success" : "primary"}
         as={InputGroup.Prepend}
       >
-        {Boolean(key) && <Dropdown.Item key={key} onClick={() => setSubstat?.(index, "")} >No Substat</Dropdown.Item>}
-        {remainingSubstats.map((key) =>
-          <Dropdown.Item key={key} onClick={() => setSubstat?.(index, key)} >
+        {Boolean(key) && <Dropdown.Item key={key} onClick={() => setSubstat(index, "")}>No Substat</Dropdown.Item>}
+        {remainingSubstats.map(key =>
+          <Dropdown.Item key={key} onClick={() => setSubstat(index, key)} >
             {Stat.getStatNameWithPercent(key)}
           </Dropdown.Item>
         )}
       </DropdownButton>
       <CustomFormControl
-        float={isPercentStat}
+        float={unit === "%"}
         placeholder="Select a Substat."
         value={value || ""}
-        onChange={(val) => setSubstat?.(index, key, val)}
+        onChange={(val) => setSubstat(index, key, val)}
         disabled={!key}
         allowEmpty
       />
-      {Boolean(rollData.length) && <ButtonGroup size="sm" as={InputGroup.Append}>
-        {rollData.map((v, i, arr) =>
-          <Button key={i} variant={`${6 - (arr.length - 1 - i)}roll`} className="py-0 text-darkcontent" onClick={() => setSubstat?.(index, key, isPercentStat ? parseFloat((value + v).toFixed(1)) : (value + v))}>{v}</Button>)}
+      {<ButtonGroup size="sm" as={InputGroup.Append}>
+        {rollData.map((v, i) =>
+          <Button key={i} variant={`${rollOffset + i}roll`} className="py-0 text-darkcontent" disabled={(value && !rollNum) || allowedRolls <= 0} onClick={() => setSubstat(index, key, accurateValue + v)}>{valueString(accurateValue + v, unit)}</Button>)}
       </ButtonGroup>}
     </InputGroup>
-    <div className="p-1">{!error ? rollLabel : <span><Badge variant="danger">ERR</Badge> {error}</span>}</div>
+    <div className="p-1">{error && <Badge variant="danger">ERR</Badge>}{error ?? rollLabel}</div>
   </Card>
 }
