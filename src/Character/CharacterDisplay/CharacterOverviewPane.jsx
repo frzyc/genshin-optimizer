@@ -130,7 +130,7 @@ function WeaponStatsEditorCard({ editable, character, character: { characterKey,
   const weaponDisplayMainVal = weapon.overrideMainVal || Weapon.getWeaponMainStatVal(weapon.key, weapon.levelKey)
   const weaponDisplaySubVal = weapon.overrideSubVal || Weapon.getWeaponSubStatVal(weapon.key, weapon.levelKey)
   const weaponPassiveName = Weapon.getWeaponPassiveName(weapon.key)
-  const weaponBonusStats = Weapon.getWeaponBonusStat(weapon.key, build, {})
+  const weaponBonusStats = Weapon.getWeaponBonusStat(weapon.key, build)
   const conditionals = Conditional.conditionals.weapon[weapon.key]
   return <Card bg="lightcontent" text="lightfont" className="mb-2">
     <Card.Header>
@@ -219,7 +219,7 @@ function WeaponStatsEditorCard({ editable, character, character: { characterKey,
             <h5 className="mb-0">{Weapon.getWeaponName(weapon.key)} {Weapon.getLevelName(weapon.levelKey)} {weaponPassiveName && `(Refinement ${weapon.refineIndex + 1})`}</h5>
             <p><Stars stars={Weapon.getWeaponRarity(weapon.key)} /></p>
             <h6>{weaponPassiveName}</h6>
-            <p>{weaponPassiveName && Weapon.getWeaponPassiveDescription(weapon.key, weapon.refineIndex, build)}</p>
+            <p>{weaponPassiveName && Weapon.getWeaponPassiveDescription(weapon.key, build)}</p>
             <WeaponStatsCard title={"Main Stats"} statsVals={{ atk: weaponDisplayMainVal, [subStatKey]: weaponDisplaySubVal }} stats={build} />
             <WeaponStatsCard title={"Bonus Stats"} statsVals={weaponBonusStats} stats={build} />
             {Boolean(conditionals) && Object.entries(conditionals).map(([stateKey, conditional]) =>

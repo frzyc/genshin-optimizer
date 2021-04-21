@@ -33,7 +33,7 @@ describe('Conditional tests', () => {
     expect(Object.keys(Conditional.conditionals)).toEqual(expect.arrayContaining(["artifact", "character", "weapon"]))
   })
   test('should be all valid conditionals', () => {
-    crawlObject(Conditional.conditionals, [], c => c?.name, (conditional, keys) => {
+    crawlObject(Conditional.conditionals, [], c => c?.name !== undefined, (conditional, keys) => {
       expect(conditional).toBeValidConditional(keys)
       conditional.field?.forEach?.((field, i) => {
         expect(field).toBeValidField(`${joinPath(keys)}.fields[${i}]`)

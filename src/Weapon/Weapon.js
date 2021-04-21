@@ -10,7 +10,7 @@ export default class Weapon {
   static getWeaponName = (weaponKey, defVal = "") => (WeaponData[weaponKey]?.name || defVal)
   static getWeaponRarity = (weaponKey, defVal = 0) => (WeaponData[weaponKey]?.rarity || defVal)
   static getWeaponPassiveName = (weaponKey, defVal = "") => (WeaponData[weaponKey]?.passiveName || defVal)
-  static getWeaponPassiveDescription = (weaponKey, refineIndex, charFinalStats, defVal = "") => (WeaponData[weaponKey]?.passiveDescription?.(refineIndex, charFinalStats) || defVal)
+  static getWeaponPassiveDescription = (weaponKey, charFinalStats, defVal = "") => (WeaponData[weaponKey]?.passiveDescription?.(charFinalStats) || defVal)
   static getWeaponDescription = (weaponKey, defVal = "") => (WeaponData[weaponKey]?.description || defVal)
   static getWeaponConditional = (weaponKey, defVal = null) => (WeaponData[weaponKey]?.conditional || defVal)
   static getWeaponImg = (weaponKey, defVal = null) => WeaponData[weaponKey]?.img || defVal
@@ -19,7 +19,7 @@ export default class Weapon {
   static getWeaponMainStatVal = (weaponKey, levelKey, defVal = 0) => (WeaponData[weaponKey]?.baseStats?.main?.[this.getLevelIndex(levelKey)] || defVal)
   static getWeaponSubStatVal = (weaponKey, levelKey, defVal = 0) => (WeaponData[weaponKey]?.baseStats?.sub?.[this.getLevelIndex(levelKey)] || defVal)
   static getWeaponSubStatKey = (weaponKey, defVal = "") => (WeaponData[weaponKey]?.baseStats?.subStatKey || defVal)
-  static getWeaponBonusStat = (weaponKey, stats, defVal = {}) => WeaponData[weaponKey]?.stats?.(stats) ?? defVal
+  static getWeaponBonusStat = (weaponKey, stats, defVal = {}) => WeaponData[weaponKey]?.stats?.(stats) ?? WeaponData[weaponKey]?.stats ?? defVal
 
   static getWeaponsOfType = (weaponType) => Object.fromEntries(Object.entries(WeaponData).filter(([key, weaponObj]) => weaponObj.weaponType === weaponType))
   static getWeaponTypeName = (weaponType, defVal = "") => (WeaponTypeData[weaponType] || defVal)

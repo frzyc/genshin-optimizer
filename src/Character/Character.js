@@ -339,7 +339,7 @@ export default class Character {
     //add stats from weapons
     const weaponSubKey = Weapon.getWeaponSubStatKey(character?.weapon?.key)
     if (weaponSubKey) this.mergeStats(initialStats, { [weaponSubKey]: Weapon.getWeaponSubStatValWithOverride(character?.weapon) })
-    this.mergeStats(initialStats, Weapon.getWeaponBonusStat(character?.weapon?.key, character?.weapon?.refineIndex))
+    this.mergeStats(initialStats, Weapon.getWeaponBonusStat(character?.weapon?.key, initialStats))
 
 
     //Handle conditionals, without artifact, since the pipeline for that comes later.
