@@ -1,7 +1,7 @@
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { createContext, useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'react';
-import { Badge, ButtonGroup, Dropdown, DropdownButton, Image, Nav, Tab } from 'react-bootstrap';
+import { Alert, Badge, ButtonGroup, Dropdown, DropdownButton, Image, Nav, Tab } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
@@ -142,7 +142,8 @@ export default function CharacterDisplayCard({ characterKey: propCharacterKey, c
 
   const { levelKey, artifacts: flexArts } = character
 
-  const equippedBuild = useMemo(() => updateState && Character.calculateBuild(character), [character, updateState])
+  const artifactsAssumeFull = Boolean(newBuild?.artifactsAssumeFull)
+  const equippedBuild = useMemo(() => updateState && Character.calculateBuild(character, artifactsAssumeFull), [character, updateState, artifactsAssumeFull])
 
   const HeaderIconDisplay = characterKey ? <span >
     <Image src={Character.getThumb(characterKey)} className="thumb-small my-n1 ml-n2" roundedCircle />
@@ -184,6 +185,7 @@ export default function CharacterDisplayCard({ characterKey: propCharacterKey, c
             </DropdownButton>
           </ButtonGroup> : <span>{HeaderIconDisplay} {Character.getLevelString(character)}</span>}
         </Col>
+        {artifactsAssumeFull && <Col xs="auto"><Alert className="mb-0 py-1 h-100" variant="orange" ><b>Assume Main Stats are Fully Leveled</b></Alert></Col>}
         {/* Compare against new build toggle */}
         {newBuild ? <Col xs="auto">
           <ButtonGroup>

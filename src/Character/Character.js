@@ -237,7 +237,7 @@ export default class Character {
     CharacterDatabase.remove(characterKey)
   }
 
-  static calculateBuild = (character) => {
+  static calculateBuild = (character, artifactsAssumeFull = false) => {
     let artifacts
     if (character.artifacts) //from flex
       artifacts = Object.fromEntries(character.artifacts.map((art, i) => [i, art]))
@@ -245,6 +245,7 @@ export default class Character {
       artifacts = Object.fromEntries(Object.entries(character.equippedArtifacts).map(([key, artid]) => [key, ArtifactDatabase.get(artid)]))
     else return {}//probably won't happen. just in case.
     const initialStats = Character.createInitialStats(character)
+    if (artifactsAssumeFull) initialStats.artifactsAssumeFull = true
     return this.calcualteBuildwithArtifact(initialStats, artifacts)
   }
 

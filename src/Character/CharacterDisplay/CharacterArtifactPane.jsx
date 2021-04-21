@@ -11,7 +11,7 @@ function CharacterArtifactPane({ character, character: { characterKey }, equippe
   const history = useHistory()
   //choose which one to display stats for
   const stats = newBuild ? newBuild : equippedBuild
-  const artifactsAssumeFull = Boolean(newBuild?.artifactsAssumeFull)//TODO: artifactsAssumeFull overhaul
+  const artifactsAssumeFull = Boolean(stats?.artifactsAssumeFull)
   const statKeys = useMemo(() => Character.getDisplayStatKeys(stats), [stats])
   const edit = useCallback(
     artid => history.push({
