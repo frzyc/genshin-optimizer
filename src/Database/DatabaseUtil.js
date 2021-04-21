@@ -4,7 +4,7 @@ import CharacterDatabase from "./CharacterDatabase";
 import { changes as v2change, dmgModeToHitMode } from "./dbV2KeyMap";
 import { deepClone, loadFromLocalStorage, saveToLocalStorage } from "../Util/Util";
 
-const CurrentDatabaseVersion = 2
+const CurrentDatabaseVersion = 3
 
 function DatabaseInitAndVerify() {
   const dbVersion = getDatabaseVersion()
@@ -52,6 +52,14 @@ function DatabaseInitAndVerify() {
       saveToLocalStorage("ArtifactDisplay.state", ArtifactDisplayState)
     }
   }
+  if (dbVersion < 3) {
+    const state = loadFromLocalStorage("CharacterDisplay.state")
+    if (state) {
+      if (Array.isArray(state.elementalFilter)) state.elementalFilter = ""
+      if (Array.isArray(state.weaponFilter)) state.weaponFilter = ""
+      saveToLocalStorage("CharacterDisplay.state", state)
+    }
+  }
 
   //this will only run if neither of the database has been initated.
   const charDBJustPopualted = CharacterDatabase.populateDatebaseFromLocalStorage(),
@@ -78,58 +86,6 @@ function DatabaseInitAndVerify() {
       }
     }
 
-    if (dbVersion < 1) {
-      //generate artifact efficiency again for artifacts
-      Artifact.substatsValidation(art)
-      valid = false
-
-      //there was a bug that saved the numStars as strings. convert to number.
-      if (typeof art.numStars === "string") {
-        art.numStars = parseInt(art.numStars)
-        valid = false
-      }
-
-      //the set keys were changed to camelcase, need to convert for old databases.
-      let keyMapping = {
-        "Wanderer's Troupe": "WanderersTroupe",
-        "Viridescent Venerer": "ViridescentVenerer",
-        "Thundering Fury": "ThunderingFury",
-        "Retracing Bolide": "RetracingBolide",
-        "Noblesse Oblige": "NoblesseOblige",
-        "Maiden Beloved": "MaidenBeloved",
-        "Gladiator's Finale": "GladiatorsFinale",
-        "Crimson Witch of Flames": "CrimsonWitchOfFlames",
-        "Bloodstained Chivalry": "BloodstainedChivalry",
-        "Archaic Petra": "ArchaicPetra",
-        "Brave Heart": "BraveHeart",
-        "Tiny Miracle": "TinyMiracle",
-        "Defender's Will": "DefendersWill",
-        "Martial Artist": "MartialArtist",
-        "Resolution of Sojourner": "ResolutionOfSojourner",
-        "The Exile": "TheExile",
-        "Traveling Doctor": "TravelingDoctor",
-        "Lucky Dog": "LuckyDog",
-        "Prayers of Wisdom": "PrayersForWisdom",
-        "Prayers of Springtime": "PrayersToSpringtime",
-        "Prayers of Illumination": "PrayersForIllumination",
-        "Prayers of Destiny": "PrayersForDestiny",
-      }
-      if (keyMapping[art.setKey]) {
-        art.setKey = keyMapping[art.setKey]
-        valid = false
-      }
-      //key names were changed. convert old DB
-      if (art?.mainStatKey?.endsWith?.("ele_dmg")) {
-        art.mainStatKey = art.mainStatKey.replace("ele_dmg", "ele_dmg_bonus")
-        valid = false
-      }
-      //key names were changed. convert old DB
-      if (art?.mainStatKey === "phy_dmg") {
-        art.mainStatKey = "phy_dmg_bonus"
-        valid = false
-      }
-    }
-
     if (dbVersion < 2) {
       if (art.mainStatKey in v2change) {
         art.mainStatKey = v2change[art.mainStatKey]
@@ -141,6 +97,16 @@ function DatabaseInitAndVerify() {
           valid = false
         }
       })
+    }
+    if (dbVersion < 3) {
+      //remove cached efficiency & rolls
+      delete art.currentEfficiency
+      delete art.maximumEfficiency
+      art?.substats?.forEach((substat, i) => {
+        delete substat.efficiency
+        delete substat.rolls
+      })
+      valid = false
     }
 
     //Update any invalid artifacts in DB
@@ -166,21 +132,16 @@ function DatabaseInitAndVerify() {
       }
     })
 
-    if (dbVersion < 1) {
-      //conditional format was refactored. this makes sure there is no error when using old DB.
-      character.artifactConditionals = character.artifactConditionals?.filter?.(cond => {
-        if (!cond.srcKey || !cond.srcKey2) {
-          valid = false
-          return false
-        }
-        return true
-      }) ?? []
-
-      //check for dmgMode
-      if (!character.hitMode) {
-        character.hitMode = "hit"
-        valid = false
+    if (dbVersion < 3) {
+      delete character.artifactConditional
+      delete character.talentCondtiional
+      if (character.buildSetting) {
+        const { artifactsAssumeFull = false, ascending = false, mainStat = ["", "", ""], setFilters = [{ key: "", num: 0 }, { key: "", num: 0 }, { key: "", num: 0 }] } = character.buildSetting ?? {}
+        delete character.buildSetting
+        character.buildSettings = { artifactsAssumeFull, ascending, mainStatKeys: mainStat, setFilters }
       }
+      delete character.weapon?.conditionalNum
+      valid = false
     }
 
     //update any invalid characters in DB

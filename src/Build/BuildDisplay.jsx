@@ -111,7 +111,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     setcharacterKey(cKey)
     prevCharKey.current = cKey
     CharacterDatabase.registerCharListener(prevCharKey.current, setCharDirty)
-    buildSettingsDispatch((CharacterDatabase.get(cKey)?.buildSettings ?? {}))
+    buildSettingsDispatch({ ...initialBuildSettings(), ...(CharacterDatabase.get(cKey)?.buildSettings ?? {}) })
     setbuilds([])
   }, [setCharDirty, setcharacterKey, buildSettingsDispatch])
 
