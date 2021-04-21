@@ -3,7 +3,15 @@ import plume from './Item_Lavawalker\'s_Salvation.png'
 import sands from './Item_Lavawalker\'s_Torment.png'
 import goblet from './Item_Lavawalker\'s_Epiphany.png'
 import circlet from './Item_Lavawalker\'s_Wisdom.png'
-let artifact = {
+import ArtifactSheet from '../../../Artifact/ArtifactSheetInterface'
+import { Conditionals } from '../../../Conditional/Conditionalnterface'
+const conditionals: Conditionals = {
+  set4: {
+    name: <span>Enemies that are Burning or affected by <span className="text-pyro">Pyro</span></span>,
+    stats: { dmg_: 35 }
+  }
+}
+const artifact: ArtifactSheet = {
   name: "Lavawalker", rarity: [4, 5],
   pieces: {
     flower: "Lavawalker's Resolution",
@@ -19,6 +27,7 @@ let artifact = {
     goblet,
     circlet
   },
+  conditionals,
   setEffects: {
     2: {
       text: <span><span className="text-pyro">Pyro RES</span> increased by 40%</span>,
@@ -26,14 +35,7 @@ let artifact = {
     },
     4: {
       text: <span>Increases DMG against enemies that are Burning or affected by <span className="text-pyro">Pyro</span> by 35%.</span>,
-      conditional: {
-        type: "artifact",
-        sourceKey: "Lavawalker_4",
-        maxStack: 1,
-        stats: {
-          dmg_: 35,
-        }
-      }
+      conditional: conditionals.set4
     }
   }
 }

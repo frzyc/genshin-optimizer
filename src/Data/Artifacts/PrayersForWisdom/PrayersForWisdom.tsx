@@ -1,5 +1,6 @@
 import circlet from './Item_Tiara_of_Thunder.png'
-let artifact = {
+import ArtifactSheet from '../../../Artifact/ArtifactSheetInterface'
+const artifact:ArtifactSheet = {
   name: "Prayers for Wisdom", rarity: [3, 4],
   pieces: {
     circlet: "Tiara of Thunder"

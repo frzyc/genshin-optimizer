@@ -55,8 +55,16 @@ export default class Artifact {
       return setEffectText
     return defVal
   }
-  static getSetEffectConditional = (setKey, setNumKey, defVal = null) =>
-    this.getSetEffectsObj(setKey)?.[setNumKey]?.conditional || defVal
+  static getSetEffectConditionals = (setKey, setNumKey, defVal = null) => {
+    const setEffect = this.getSetEffectsObj(setKey)?.[setNumKey]
+    if (setEffect?.conditional || setEffect?.conditionals) {
+      return {
+        ...setEffect?.conditional && { default: setEffect?.conditional },
+        ...setEffect?.conditionals && setEffect?.conditionals
+      }
+    }
+    return defVal
+  }
 
   //SLOT
   static getSlotKeys = () => Object.keys(ArtifactSlotsData || {})

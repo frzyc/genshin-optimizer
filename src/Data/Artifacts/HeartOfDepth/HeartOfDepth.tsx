@@ -3,7 +3,18 @@ import plume from './Item_Gust_of_Nostalgia.png'
 import sands from './Item_Copper_Compass.png'
 import goblet from './Item_Goblet_of_Thundering_Deep.png'
 import circlet from './Item_Wine-Stained_Tricorne.png'
-let artifact = {//Ocean Conqueror
+import ArtifactSheet from '../../../Artifact/ArtifactSheetInterface'
+import { Conditionals } from '../../../Conditional/Conditionalnterface'
+const conditionals: Conditionals = {
+  set4: {
+    name: "After using Elemental Skill",
+    stats: {
+      normal_dmg_: 30,
+      charged_dmg_: 30
+    }
+  }
+}
+const artifact: ArtifactSheet = {//Ocean Conqueror
   name: "Heart of Depth", rarity: [4, 5],
   pieces: {
     flower: "Gilded Corsage",
@@ -19,6 +30,7 @@ let artifact = {//Ocean Conqueror
     goblet,
     circlet
   },
+  conditionals,
   setEffects: {
     2: {
       text: <span><span className="text-hydro">Hydro DMG Bonus</span> +15%</span>,
@@ -26,15 +38,7 @@ let artifact = {//Ocean Conqueror
     },
     4: {
       text: "After using Elemental Skill, increases Normal Attack and Charged Attack DMG by 30% for 15s",
-      conditional: {
-        type: "artifact",
-        sourceKey: "HeartOfDepth_4",
-        maxStack: 1,
-        stats: {
-          normal_dmg_: 30,
-          charged_dmg_: 30
-        }
-      }
+      conditional: conditionals.set4
     }
   }
 }

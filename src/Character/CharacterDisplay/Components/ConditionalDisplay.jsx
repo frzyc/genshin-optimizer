@@ -6,11 +6,11 @@ import statsToFields from "../../../Util/FieldUtil"
 import { deletePropPath, layeredAssignment, objClearEmpties } from "../../../Util/Util"
 import FieldDisplay from "./FieldDisplay"
 
-export default function ConditionalDisplay({ conditional, titleText = null, equippedBuild, newBuild, characterDispatch, editable, fieldClassName, initialFields = [] }) {
+export default function ConditionalDisplay({ conditional, equippedBuild, newBuild, characterDispatch, editable, fieldClassName }) {
   const stats = newBuild ? newBuild : equippedBuild
   const canShow = useMemo(() => Conditional.canShow(conditional, stats), [conditional, stats])
   const { stats: conditionalStats = {}, fields: conditionalFields = [], conditionalValue } = useMemo(() => canShow && Conditional.resolve(conditional, stats), [canShow, conditional, stats])
-  const displayFields = useMemo(() => canShow && [...initialFields, ...statsToFields(conditionalStats, stats), ...conditionalFields], [canShow, initialFields, conditionalStats, stats, conditionalFields])
+  const displayFields = useMemo(() => canShow && [...statsToFields(conditionalStats, stats), ...conditionalFields], [canShow, conditionalStats, stats, conditionalFields])
   const setConditional = useCallback(condV => {
     const [conditionalNum = 0] = condV
     if (!conditionalNum) {
@@ -27,7 +27,7 @@ export default function ConditionalDisplay({ conditional, titleText = null, equi
         conditional={conditional}
         conditionalValue={conditionalValue}
         setConditional={setConditional}
-        name={<span>{conditional.name}</span>} /> {titleText}
+        name={conditional.name} />
     </Card.Header>
     <ListGroup className="text-white" variant="flush">
       {displayFields.map((field, i) => <FieldDisplay key={i} index={i} {...{ field, equippedBuild, newBuild, className: fieldClassName }} />)}

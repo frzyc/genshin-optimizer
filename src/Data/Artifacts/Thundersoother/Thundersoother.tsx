@@ -3,7 +3,15 @@ import plume from './Item_Thundersoother\'s_Plume.png'
 import sands from './Item_Hour_of_Soothing_Thunder.png'
 import goblet from './Item_Thundersoother\'s_Goblet.png'
 import circlet from './Item_Thundersoother\'s_Diadem.png'
-let artifact = {
+import ArtifactSheet from '../../../Artifact/ArtifactSheetInterface'
+import { Conditionals } from '../../../Conditional/Conditionalnterface'
+const conditionals: Conditionals = {
+  set4: {
+    name: <span>Enemies affected by <span className="text-electro">Electro</span></span>,
+    stats: { dmg_: 35 }
+  }
+}
+const artifact: ArtifactSheet = {
   name: "Thundersoother", rarity: [4, 5],
   pieces: {
     flower: "Thundersoother's Heart",
@@ -19,6 +27,7 @@ let artifact = {
     goblet,
     circlet
   },
+  conditionals,
   setEffects: {
     2: {
       text: <span><span className="text-electro">Electro RES</span> increased by 40%</span>,
@@ -26,14 +35,7 @@ let artifact = {
     },
     4: {
       text: <span>Increases DMG against enemies affected by <span className="text-electro">Electro</span> by 35%.</span>,
-      conditional: {
-        type: "artifact",
-        sourceKey: "Thundersoother_4",
-        maxStack: 1,
-        stats: {
-          dmg_: 35,
-        }
-      }
+      conditional: conditionals.set4
     }
   }
 }

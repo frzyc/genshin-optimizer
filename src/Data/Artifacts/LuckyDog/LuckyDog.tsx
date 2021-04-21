@@ -3,7 +3,8 @@ import plume from './Item_Lucky_Dog\'s_Eagle_Feather.png'
 import sands from './Item_Lucky_Dog\'s_Hourglass.png'
 import goblet from './Item_Lucky_Dog\'s_Goblet.png'
 import circlet from './Item_Lucky_Dog\'s_Silver_Circlet.png'
-let artifact = {
+import ArtifactSheet from '../../../Artifact/ArtifactSheetInterface'
+const artifact:ArtifactSheet = {
   name: "Lucky Dog", rarity: [3],
   pieces: {
     flower: "Lucky Dog's Clover",

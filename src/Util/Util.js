@@ -96,15 +96,6 @@ export function objClearEmpties(o) {
     if (!Object.keys(o[k]).length) delete o[k];
   }
 }
-export function getObjValueCount(o) {
-  let count = 0
-  for (const k in o) {
-    if (typeof o[k] === "object") {
-      count += getObjValueCount(o[k])
-    } else count++
-  }
-  return count
-}
 export function crawlObject(obj, keys, validate, cb) {
   if (validate(obj)) cb(obj, keys)
   else obj && typeof obj === "object" && Object.entries(obj).forEach(([key, val]) => crawlObject(val, [...keys, key], validate, cb))

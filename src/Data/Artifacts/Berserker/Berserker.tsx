@@ -3,7 +3,15 @@ import plume from './Item_Berserker\'s_Indigo_Feather.png'
 import sands from './Item_Berserker\'s_Timepiece.png'
 import goblet from './Item_Berserker\'s_Bone_Goblet.png'
 import circlet from './Item_Berserker\'s_Battle_Mask.png'
-let artifact = {
+import ArtifactSheet from '../../../Artifact/ArtifactSheetInterface'
+import { Conditionals } from '../../../Conditional/Conditionalnterface'
+const conditionals: Conditionals = {
+  set4: {
+    name: "HP below 70%",
+    stats: { critRate_: 24 }
+  }
+}
+const artifact: ArtifactSheet = {
   name: "Berserker", rarity: [3, 4],
   pieces: {
     flower: "Berserker's Rose",
@@ -19,6 +27,7 @@ let artifact = {
     goblet,
     circlet
   },
+  conditionals,
   setEffects: {
     2: {
       text: "CRIT Rate +12%",
@@ -26,14 +35,7 @@ let artifact = {
     },
     4: {
       text: "When HP is below 70%, CRIT Rate increases by an additional 24%.",
-      conditional: {
-        type: "artifact",
-        sourceKey: "Berserker_4",
-        maxStack: 1,
-        stats: {
-          critRate_: 24,
-        }
-      }
+      conditional: conditionals.set4
     }
   }
 }

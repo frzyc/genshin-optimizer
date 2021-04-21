@@ -19,7 +19,7 @@ import CharacterDatabase from '../Database/CharacterDatabase';
 import Formula, { CharacterFormulaImport } from '../Formula';
 import Stat from '../Stat';
 import { timeStringMs } from '../Util/TimeUtil';
-import { deepClone, getObjValueCount, loadFromLocalStorage, saveToLocalStorage } from '../Util/Util';
+import { crawlObject, deepClone, loadFromLocalStorage, saveToLocalStorage } from '../Util/Util';
 import Weapon from '../Weapon/Weapon';
 import { calculateTotalBuildNumber } from './Build';
 
@@ -255,8 +255,11 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
 
   const characterName = Character.getName(characterKey, "Character Name")
   const artsAccounted = setFilters.reduce((accu, cur) => cur.key ? accu + cur.num : accu, 0)
-
-  const artifactCondCount = getObjValueCount(initialStats?.conditionalValues?.artifact ?? {})
+  const artifactCondCount = useMemo(() => {
+    let count = 0;
+    crawlObject(initialStats?.conditionalValues, [], v => Array.isArray(v), () => count++)
+    return count
+  }, [initialStats?.conditionalValues])
   //rudimentary dispatcher, definitely not the same API as the real characterDispatch.
   const characterDispatch = useCallback(val => CharacterDatabase.update({ ...character, ...val }), [character])
   return <Container>

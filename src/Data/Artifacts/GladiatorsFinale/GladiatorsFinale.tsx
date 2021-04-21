@@ -3,16 +3,15 @@ import plume from './Item_Gladiator\'s_Destiny.png'
 import sands from './Item_Gladiator\'s_Longing.png'
 import goblet from './Item_Gladiator\'s_Intoxication.png'
 import circlet from './Item_Gladiator\'s_Triumphus.png'
-import { Badge } from 'react-bootstrap'
-const conditionals = {
+import { Conditionals } from '../../../Conditional/Conditionalnterface'
+import ArtifactSheet from '../../../Artifact/ArtifactSheetInterface'
+const conditionals: Conditionals = {
   set4: {
-    name: <Badge variant="success">4-Set</Badge>,
-    stats: {
-      normal_dmg_: 35
-    }
+    name: "Owner uses a Melee weapon",
+    stats: { normal_dmg_: 35 }
   }
 }
-let artifact = {
+const artifact: ArtifactSheet = {
   name: "Gladiator's Finale", rarity: [4, 5],
   pieces: {
     flower: "Gladiator's Nostalgia",

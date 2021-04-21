@@ -3,8 +3,16 @@ import plume from './Item_Royal_Plume.png'
 import sands from './Item_Royal_Pocket_Watch.png'
 import goblet from './Item_Royal_Silver_Urn.png'
 import circlet from './Item_Royal_Masque.png'
-let artifact = {
-  name: "Noblesse Oblige", rarity: [4, 5], 
+import ArtifactSheet from '../../../Artifact/ArtifactSheetInterface'
+import { Conditionals } from '../../../Conditional/Conditionalnterface'
+const conditionals: Conditionals = {
+  set4: {
+    name: "Using an Elemental Burst",
+    stats: { atk_: 20 }//TODO: party buff
+  }
+}
+const artifact: ArtifactSheet = {
+  name: "Noblesse Oblige", rarity: [4, 5],
   pieces: {
     flower: "Royal Flora",
     plume: "Royal Plume",
@@ -19,6 +27,7 @@ let artifact = {
     goblet,
     circlet
   },
+  conditionals,
   setEffects: {
     2: {
       text: "Elemental Burst DMG +20%",
@@ -26,14 +35,7 @@ let artifact = {
     },
     4: {
       text: "Using an Elemental Burst increase all party members' ATK by 20% for 12s. This effect cannot stack.",
-      conditional: {//TODO party conditional
-        type: "artifact",
-        sourceKey: "NoblesseOblige_4",
-        maxStack: 1,
-        stats: {
-          atk_: 20,
-        }
-      }
+      conditional: conditionals.set4
     }
   }
 }

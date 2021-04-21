@@ -3,7 +3,15 @@ import plume from './Item_Prospect_of_the_Brave.png'
 import sands from './Item_Fortitude_of_the_Brave.png'
 import goblet from './Item_Outset_of_the_Brave.png'
 import circlet from './Item_Crown_of_the_Brave.png'
-let artifact = {
+import ArtifactSheet from '../../../Artifact/ArtifactSheetInterface'
+import { Conditionals } from '../../../Conditional/Conditionalnterface'
+const conditionals: Conditionals = {
+  set4: {
+    name: "Enemy with more than 50% HP",
+    stats: { dmg_: 30, }
+  }
+}
+const artifact: ArtifactSheet = {
   name: "Brave Heart", rarity: [3, 4],
   pieces: {
     flower: "Medal of the Brave",
@@ -19,6 +27,7 @@ let artifact = {
     goblet,
     circlet
   },
+  conditionals,
   setEffects: {
     2: {
       text: "2-piece Set Bonus: ATK +18%",
@@ -26,14 +35,7 @@ let artifact = {
     },
     4: {
       text: "Increases DMG by 30% against enemies with more than 50% HP.",
-      conditional: {
-        type: "artifact",
-        sourceKey: "BraveHeart_4",
-        maxStack: 1,
-        stats: {
-          dmg_: 30,
-        }
-      }
+      conditional: conditionals.set4
     }
   }
 }

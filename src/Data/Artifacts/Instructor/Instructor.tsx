@@ -3,7 +3,15 @@ import plume from './Item_Instructor\'s_Feather_Accessory.png'
 import sands from './Item_Instructor\'s_Pocket_Watch.png'
 import goblet from './Item_Instructor\'s_Tea_Cup.png'
 import circlet from './Item_Instructor\'s_Cap.png'
-let artifact = {
+import ArtifactSheet from '../../../Artifact/ArtifactSheetInterface'
+import { Conditionals } from '../../../Conditional/Conditionalnterface'
+const conditionals: Conditionals = {
+  set4: {
+    name: "After using Elemental Skill",
+    stats: { eleMas: 120 }//TODO: party buff
+  }
+}
+const artifact: ArtifactSheet = {
   name: "Instructor", rarity: [3, 4],
   pieces: {
     flower: "Instructor's Brooch",
@@ -19,6 +27,7 @@ let artifact = {
     goblet,
     circlet
   },
+  conditionals,
   setEffects: {
     2: {
       text: "Increases Elemental Mastery by 80.",
@@ -26,14 +35,7 @@ let artifact = {
     },
     4: {
       text: "After using Elemental Skill, increases all party members' Elemental Mastery by 120 for 8s.",
-      conditional: {
-        type: "artifact",
-        sourceKey: "Instructor_4",
-        maxStack: 1,
-        stats: {
-          eleMas: 120,//TODO all party conditional
-        }
-      }
+      conditional: conditionals.set4
     }
   }
 }

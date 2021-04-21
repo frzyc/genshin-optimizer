@@ -9,14 +9,16 @@ export default function SetEffectDisplay({ setKey, setNumKey, equippedBuild, new
   const setEffectText = Artifact.getSetEffectText(setKey, setNumKey, stats)
   const setStats = Artifact.getArtifactSetNumStats(setKey, setNumKey)
   const setStatsFields = statsToFields(setStats, stats)
-  const conditional = Artifact.getSetEffectConditional(setKey, setNumKey)
-  if (conditional) return <ConditionalDisplay {...{ conditional, titleText: setEffectText, equippedBuild, newBuild, characterDispatch, editable, initialFields: setStatsFields }} />
-  return <Card bg="darkcontent" text="lightfont" className="mb-2 w-100" >
-    <Card.Header className="p-2">
-      <Badge variant="success">{setNumKey}-Set</Badge> {setEffectText}
-    </Card.Header>
-    <ListGroup className="text-white" variant="flush">
-      {setStatsFields.map((field, i) => <FieldDisplay key={i} index={i} {...{ field, equippedBuild, newBuild }} />)}
-    </ListGroup>
-  </Card>
+  const conditionals = Artifact.getSetEffectConditionals(setKey, setNumKey)
+  return <>
+    <Card bg="darkcontent" text="lightfont" className="mb-2 w-100" >
+      <Card.Header className="p-2">
+        <Badge variant="success">{setNumKey}-Set</Badge> {setEffectText}
+      </Card.Header>
+      <ListGroup className="text-white" variant="flush">
+        {setStatsFields.map((field, i) => <FieldDisplay key={i} index={i} {...{ field, equippedBuild, newBuild }} />)}
+      </ListGroup>
+    </Card>
+    {Boolean(conditionals) && Object.entries(conditionals).map(([ckey, conditional]) => <ConditionalDisplay key={ckey} {...{ conditional, equippedBuild, newBuild, characterDispatch, editable }} />)}
+  </>
 }

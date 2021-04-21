@@ -4,7 +4,8 @@ import sands from './Item_Traveling_Doctor\'s_Pocket_Watch.png'
 import goblet from './Item_Traveling_Doctor\'s_Medicine_Pot.png'
 import circlet from './Item_Traveling_Doctor\'s_Handkerchief.png'
 import DisplayPercent from '../../../Components/DisplayPercent'
-let artifact = {
+import ArtifactSheet from '../../../Artifact/ArtifactSheetInterface'
+const artifact:ArtifactSheet = {
   name: "Traveling Doctor", rarity: [3],
   pieces: {
     flower: "Traveling Doctor's Silver Lotus",
@@ -26,7 +27,7 @@ let artifact = {
       stats: { incHeal_: 20 }
     },
     4: {
-      text: (charFinalStats) => <span>Using Elemental Burst restores 20% HP{DisplayPercent(20, charFinalStats, "finalHP")}.</span>,
+      text: stats => <span>Using Elemental Burst restores 20% HP{DisplayPercent(20, stats, "finalHP")}.</span>,
     }
   }
 }

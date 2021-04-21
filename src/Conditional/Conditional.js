@@ -19,6 +19,7 @@ const processed = new Promise(resolve => {
       Object.values(ArtifactData).forEach(setObj =>
         Object.entries(setObj.setEffects).forEach(([setNumKey, setNumObj]) => {
           if (setNumObj.conditional) setNumObj.conditional.setNumKey = setNumKey
+          if (setNumObj.conditionals) Object.values(setNumObj.conditionals).forEach(c => c.setNumKey = setNumKey)
         }))
       res()
     }))

@@ -3,7 +3,16 @@ import plume from './Item_Witch\'s_Ever-Burning_Plume.png'
 import sands from './Item_Witch\'s_End_Time.png'
 import goblet from './Item_Witch\'s_Heart_Flames.png'
 import circlet from './Item_Witch\'s_Scorching_Hat.png'
-let artifact = {
+import ArtifactSheet from '../../../Artifact/ArtifactSheetInterface'
+import { Conditionals } from '../../../Conditional/Conditionalnterface'
+const conditionals: Conditionals = {
+  set4: {
+    name: "Using an Elemental SKill",
+    maxStack: 3,
+    stats: { pyro_dmg_: 7.5 }
+  }
+}
+const artifact: ArtifactSheet = {
   name: "Crimson Witch of Flames", rarity: [4, 5],
   pieces: {
     flower: "Witch's Flower of Blaze",
@@ -19,6 +28,7 @@ let artifact = {
     goblet,
     circlet
   },
+  conditionals,
   setEffects: {
     2: {
       text: <span><span className="text-pyro">Pyro DMG Bonus</span> +15%</span>,
@@ -32,14 +42,7 @@ let artifact = {
         vaporize_dmg_: 15,
         melt_dmg_: 15,
       },
-      conditional: {
-        type: "artifact",
-        sourceKey: "CrimsonWitchOfFlames_4",
-        maxStack: 3,
-        stats: {
-          pyro_dmg_: 7.5
-        }
-      }
+      conditional: conditionals.set4
     }
   }
 }

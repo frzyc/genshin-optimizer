@@ -3,7 +3,18 @@ import plume from './Item_Martial_Artist\'s_Feather_Accessory.png'
 import sands from './Item_Martial_Artist\'s_Water_Hourglass.png'
 import goblet from './Item_Martial_Artist\'s_Wine_Cup.png'
 import circlet from './Item_Martial_Artist\'s_Bandana.png'
-let artifact = {
+import ArtifactSheet from '../../../Artifact/ArtifactSheetInterface'
+import { Conditionals } from '../../../Conditional/Conditionalnterface'
+const conditionals: Conditionals = {
+  set4: {
+    name: "After using Elemental Skill",
+    stats: {
+      normal_dmg_: 25,
+      charged_dmg_: 25
+    }
+  }
+}
+const artifact: ArtifactSheet = {
   name: "Martial Artist", rarity: [3, 4],
   pieces: {
     flower: "Martial Artist's Red Flower",
@@ -19,6 +30,7 @@ let artifact = {
     goblet,
     circlet
   },
+  conditionals,
   setEffects: {
     2: {
       text: "Increases Normal Attack and Charged Attack DMG by 15%.",
@@ -29,15 +41,7 @@ let artifact = {
     },
     4: {
       text: "After using Elemental Skill, increases Normal Attack and Charged Attack DMG by 25% for 8s.",
-      conditional: {
-        type: "artifact",
-        sourceKey: "MartialArtist_4",
-        maxStack: 1,
-        stats: {
-          normal_dmg_: 25,
-          charged_dmg_: 25
-        }
-      }
+      conditional: conditionals.set4
     }
   }
 }

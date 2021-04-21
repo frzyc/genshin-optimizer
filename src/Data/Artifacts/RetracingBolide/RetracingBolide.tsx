@@ -1,20 +1,19 @@
+import ArtifactSheet from '../../../Artifact/ArtifactSheetInterface'
 import flower from './Item_Summer_Night\'s_Bloom.png'
 import plume from './Item_Summer_Night\'s_Finale.png'
+import circlet from './Item_Summer_Night\'s_Mask.png'
 import sands from './Item_Summer_Night\'s_Moment.png'
 import goblet from './Item_Summer_Night\'s_Waterballoon.png'
-import circlet from './Item_Summer_Night\'s_Mask.png'
-import { Badge } from 'react-bootstrap'
 const conditionals = {
   set4: {
-    name: <Badge variant="success">4-Set</Badge>,
-    maxStack: 1,
+    name: "With Shield",
     stats: {
       normal_dmg_: 40,
       charged_dmg_: 40
     }
   }
 }
-const artifact = {
+const artifact:ArtifactSheet = {
   name: "Retracing Bolide", rarity: [4, 5],
   pieces: {
     flower: "Summer Night's Bloom",

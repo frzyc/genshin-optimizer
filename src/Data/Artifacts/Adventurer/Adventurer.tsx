@@ -4,7 +4,8 @@ import sands from './Item_Adventurer\'s_Pocket_Watch.png'
 import goblet from './Item_Adventurer\'s_Golden_Goblet.png'
 import circlet from './Item_Adventurer\'s_Bandana.png'
 import DisplayPercent from '../../../Components/DisplayPercent'
-let artifact = {
+import ArtifactSheet from '../../../Artifact/ArtifactSheetInterface'
+const artifact:ArtifactSheet = {
   name: "Adventurer", rarity: [3],
   pieces: {
     flower: "Adventurer's Flower",
@@ -26,7 +27,7 @@ let artifact = {
       stats: { hp: 1000 }
     },
     4: {
-      text: (charFinalStats) => <span>Opening chest regenerates 30% Max HP{DisplayPercent(30, charFinalStats, "finalHP")} over 5s.</span>,
+      text: stats => <span>Opening chest regenerates 30% Max HP{DisplayPercent(30, stats, "finalHP")} over 5s.</span>,
     }
   }
 }
