@@ -36,7 +36,7 @@ const processed = new Promise(resolve => {
 export default class Conditional {
   constructor() { if (this instanceof Conditional) throw Error('A static class cannot be instantiated.'); }
   static processed = processed
-  static conditionals = {}//where all the conditionals are stored
+  static conditionals = { artifact: {}, character: {}, weapon: {} } //where all the conditionals are stored
   static canShow = (conditional, stats) => conditional?.canShow(stats)
   static resolve = (conditional, stats, conditionalValue, defVal = { stats: {}, fields: [], conditionalValue: [] }) => {
     if (!conditionalValue) conditionalValue = objPathValue(stats.conditionalValues, conditional.keys)
@@ -65,7 +65,7 @@ export default class Conditional {
   }
 }
 
-//general parsing of conditionals, and add it to Conditional 
+//general parsing of conditionals, and add it to Conditional
 function addConditional(source, key) {
   function findConditionals(obj, keys, callback) {
     if (keys.length > 10) return
