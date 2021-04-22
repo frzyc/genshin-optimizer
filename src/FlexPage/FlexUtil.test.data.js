@@ -78,6 +78,7 @@ export const flexObj = {
   talentLevelKeys: { auto: 5, skill: 5, burst: 5 },
   baseStatOverrides: { characterLevel: 89 },
   conditionalValues: {
+    artifact: {},
     character: {
       hutao: {
         SanguineRouge: [1],

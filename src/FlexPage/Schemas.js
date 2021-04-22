@@ -153,7 +153,6 @@ const characterV2 = object({
         }
         current[last] = value.map(item => isNaN(parseFloat(item)) ? item : parseFloat(item))
       }
-      console.log(conditionalValues)
       return conditionalValues
     }
   }),
