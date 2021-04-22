@@ -3,15 +3,15 @@ import plume from './Item_Berserker\'s_Indigo_Feather.png'
 import sands from './Item_Berserker\'s_Timepiece.png'
 import goblet from './Item_Berserker\'s_Bone_Goblet.png'
 import circlet from './Item_Berserker\'s_Battle_Mask.png'
-import ArtifactSheet from '../../../Artifact/ArtifactSheetInterface'
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
-const conditionals: Conditionals = {
+import IArtifactSheet from '../../../Artifact/IArtifactSheet'
+import { IConditionals } from '../../../Conditional/IConditional'
+const conditionals: IConditionals = {
   set4: {
     name: "HP below 70%",
     stats: { critRate_: 24 }
   }
 }
-const artifact: ArtifactSheet = {
+const artifact: IArtifactSheet = {
   name: "Berserker", rarity: [3, 4],
   pieces: {
     flower: "Berserker's Rose",

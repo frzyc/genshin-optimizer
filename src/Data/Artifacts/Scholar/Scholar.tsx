@@ -3,8 +3,8 @@ import plume from './Item_Scholar\'s_Quill_Pen.png'
 import sands from './Item_Scholar\'s_Clock.png'
 import goblet from './Item_Scholar\'s_Ink_Cup.png'
 import circlet from './Item_Scholar\'s_Lens.png'
-import ArtifactSheet from '../../../Artifact/ArtifactSheetInterface'
-const artifact:ArtifactSheet = {
+import IArtifactSheet from '../../../Artifact/IArtifactSheet'
+const artifact:IArtifactSheet = {
   name: "Scholar", rarity: [3, 4],
   pieces: {
     flower: "Scholar's Bookmark",

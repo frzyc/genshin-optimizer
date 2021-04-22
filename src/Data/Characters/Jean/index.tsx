@@ -15,9 +15,9 @@ import passive3 from './Talent_Guiding_Breeze.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
-import CharacterSheet from '../../CharacterSheetInterface'
-const conditionals: Conditionals = {
+import { IConditionals } from '../../../Conditional/IConditional'
+import ICharacterSheet from '../../ICharacterSheet'
+const conditionals: IConditionals = {
   constellation2: {
     canShow: stats => stats.constellation >= 2,
     name: "Jean pick up Elemental Orb/Particle",
@@ -44,7 +44,7 @@ const conditionals: Conditionals = {
     }]
   }
 }
-const char: CharacterSheet = {
+const char: ICharacterSheet = {
   name: "Jean",
   cardImg: card,
   thumbImg: thumb,

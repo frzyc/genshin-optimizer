@@ -1,10 +1,10 @@
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
+import { IConditionals } from '../../../Conditional/IConditional'
 import WeaponSheet from '../../WeaponSheetInterace'
 import img from './Weapon_Sacrificial_Bow.png'
 
 const refinementVals = [40, 50, 60, 70, 80]
 const refinementCdVals = [30, 26, 22, 19, 16]
-const conditionals : Conditionals = {
+const conditionals : IConditionals = {
   c: {
     name: "Elemental Skill Ends CD",
     maxStack: 1,

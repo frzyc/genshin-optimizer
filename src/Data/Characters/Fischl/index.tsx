@@ -15,11 +15,11 @@ import passive3 from './Talent_Mein_Hausgarten.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-import CharacterSheet from '../../CharacterSheetInterface'
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
-const conditionals: Conditionals = {}
+import ICharacterSheet from '../../ICharacterSheet'
+import { IConditionals } from '../../../Conditional/IConditional'
+const conditionals: IConditionals = {}
 
-const char: CharacterSheet = {
+const char: ICharacterSheet = {
   name: "Fischl",
   cardImg: card,
   thumbImg: thumb,

@@ -3,9 +3,9 @@ import plume from './Item_Gust_of_Nostalgia.png'
 import sands from './Item_Copper_Compass.png'
 import goblet from './Item_Goblet_of_Thundering_Deep.png'
 import circlet from './Item_Wine-Stained_Tricorne.png'
-import ArtifactSheet from '../../../Artifact/ArtifactSheetInterface'
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
-const conditionals: Conditionals = {
+import IArtifactSheet from '../../../Artifact/IArtifactSheet'
+import { IConditionals } from '../../../Conditional/IConditional'
+const conditionals: IConditionals = {
   set4: {
     name: "After using Elemental Skill",
     stats: {
@@ -14,7 +14,7 @@ const conditionals: Conditionals = {
     }
   }
 }
-const artifact: ArtifactSheet = {//Ocean Conqueror
+const artifact: IArtifactSheet = {//Ocean Conqueror
   name: "Heart of Depth", rarity: [4, 5],
   pieces: {
     flower: "Gilded Corsage",

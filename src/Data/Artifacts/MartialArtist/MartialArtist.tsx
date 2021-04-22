@@ -3,9 +3,9 @@ import plume from './Item_Martial_Artist\'s_Feather_Accessory.png'
 import sands from './Item_Martial_Artist\'s_Water_Hourglass.png'
 import goblet from './Item_Martial_Artist\'s_Wine_Cup.png'
 import circlet from './Item_Martial_Artist\'s_Bandana.png'
-import ArtifactSheet from '../../../Artifact/ArtifactSheetInterface'
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
-const conditionals: Conditionals = {
+import IArtifactSheet from '../../../Artifact/IArtifactSheet'
+import { IConditionals } from '../../../Conditional/IConditional'
+const conditionals: IConditionals = {
   set4: {
     name: "After using Elemental Skill",
     stats: {
@@ -14,7 +14,7 @@ const conditionals: Conditionals = {
     }
   }
 }
-const artifact: ArtifactSheet = {
+const artifact: IArtifactSheet = {
   name: "Martial Artist", rarity: [3, 4],
   pieces: {
     flower: "Martial Artist's Red Flower",

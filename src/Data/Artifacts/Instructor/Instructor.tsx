@@ -3,15 +3,15 @@ import plume from './Item_Instructor\'s_Feather_Accessory.png'
 import sands from './Item_Instructor\'s_Pocket_Watch.png'
 import goblet from './Item_Instructor\'s_Tea_Cup.png'
 import circlet from './Item_Instructor\'s_Cap.png'
-import ArtifactSheet from '../../../Artifact/ArtifactSheetInterface'
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
-const conditionals: Conditionals = {
+import IArtifactSheet from '../../../Artifact/IArtifactSheet'
+import { IConditionals } from '../../../Conditional/IConditional'
+const conditionals: IConditionals = {
   set4: {
     name: "After using Elemental Skill",
     stats: { eleMas: 120 }//TODO: party buff
   }
 }
-const artifact: ArtifactSheet = {
+const artifact: IArtifactSheet = {
   name: "Instructor", rarity: [3, 4],
   pieces: {
     flower: "Instructor's Brooch",

@@ -16,9 +16,9 @@ import Stat from '../../../Stat'
 import DisplayPercent from '../../../Components/DisplayPercent'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from "../../../Build/Build"
-import CharacterSheet from '../../CharacterSheetInterface'
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
-const conditionals: Conditionals = {
+import ICharacterSheet from '../../ICharacterSheet'
+import { IConditionals } from '../../../Conditional/IConditional'
+const conditionals: IConditionals = {
   BaneOfAllEvil: {
     name: "Bane of All Evil",
     stats: stats => ({
@@ -50,7 +50,7 @@ const conditionals: Conditionals = {
     stats: { def_: 100 }
   }
 }
-const char: CharacterSheet = {
+const char: ICharacterSheet = {
   name: "Xiao",
   cardImg: card,
   thumbImg: thumb,

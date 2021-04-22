@@ -15,9 +15,9 @@ import passive3 from "./Talent_Former_Life_Memories.png";
 import Stat from "../../../Stat";
 import formula, { data } from "./data";
 import { getTalentStatKey, getTalentStatKeyVariant } from "../../../Build/Build";
-import { Conditionals } from "../../../Conditional/Conditionalnterface";
-import CharacterSheet from "../../CharacterSheetInterface";
-const conditionals: Conditionals = {
+import { IConditionals } from "../../../Conditional/IConditional";
+import ICharacterSheet from "../../ICharacterSheet";
+const conditionals: IConditionals = {
   LifeProlongingMethods: {
     canShow: stats => stats.ascension >= 1,
     name: <span>Character under the effects of <b>Adeptus Art: Herald of Frost</b> triggers an Elemental Reaction</span>,
@@ -44,7 +44,7 @@ const conditionals: Conditionals = {
     }],
   },
 }
-const char: CharacterSheet = {
+const char: ICharacterSheet = {
   name: "Qiqi",
   cardImg: card,
   thumbImg: thumb,

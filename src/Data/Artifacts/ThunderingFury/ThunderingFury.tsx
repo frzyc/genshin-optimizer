@@ -3,8 +3,8 @@ import plume from './Item_Survivor_of_Catastrophe.png'
 import sands from './Item_Hourglass_of_Thunder.png'
 import goblet from './Item_Omen_of_Thunderstorm.png'
 import circlet from './Item_Thunder_Summoner\'s_Crown.png'
-import ArtifactSheet from '../../../Artifact/ArtifactSheetInterface'
-const artifact:ArtifactSheet = {
+import IArtifactSheet from '../../../Artifact/IArtifactSheet'
+const artifact:IArtifactSheet = {
   name: "Thundering Fury", rarity: [4, 5], pieces: {
     flower: "Thunderbird's Mercy",
     plume: "Survivor of Catastrophe",

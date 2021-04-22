@@ -3,9 +3,9 @@ import plume from './Item_Bloodstained_Black_Plume.png'
 import sands from './Item_Bloodstained_Final_Hour.png'
 import goblet from './Item_Bloodstained_Chevalier\'s_Goblet.png'
 import circlet from './Item_Bloodstained_Iron_Mask.png'
-import ArtifactSheet from '../../../Artifact/ArtifactSheetInterface'
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
-const conditionals: Conditionals = {
+import IArtifactSheet from '../../../Artifact/IArtifactSheet'
+import { IConditionals } from '../../../Conditional/IConditional'
+const conditionals: IConditionals = {
   set4: {
     name: "After defeating an opponent",
     stats: {
@@ -14,7 +14,7 @@ const conditionals: Conditionals = {
     }
   }
 }
-const artifact: ArtifactSheet = {
+const artifact: IArtifactSheet = {
   name: "Bloodstained Chivalry", rarity: [4, 5],
   pieces: {
     flower: "Bloodstained Flower of Iron",

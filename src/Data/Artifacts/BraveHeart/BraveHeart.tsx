@@ -3,15 +3,15 @@ import plume from './Item_Prospect_of_the_Brave.png'
 import sands from './Item_Fortitude_of_the_Brave.png'
 import goblet from './Item_Outset_of_the_Brave.png'
 import circlet from './Item_Crown_of_the_Brave.png'
-import ArtifactSheet from '../../../Artifact/ArtifactSheetInterface'
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
-const conditionals: Conditionals = {
+import IArtifactSheet from '../../../Artifact/IArtifactSheet'
+import { IConditionals } from '../../../Conditional/IConditional'
+const conditionals: IConditionals = {
   set4: {
     name: "Enemy with more than 50% HP",
     stats: { dmg_: 30, }
   }
 }
-const artifact: ArtifactSheet = {
+const artifact: IArtifactSheet = {
   name: "Brave Heart", rarity: [3, 4],
   pieces: {
     flower: "Medal of the Brave",

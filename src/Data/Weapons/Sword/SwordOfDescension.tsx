@@ -1,10 +1,10 @@
 import { getTalentStatKey } from '../../../Build/Build'
 import DisplayPercent from "../../../Components/DisplayPercent"
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
+import { IConditionals } from '../../../Conditional/IConditional'
 import WeaponSheet from '../../WeaponSheetInterace'
 import img from './Weapon_Sword_of_Descension.png'
 
-const conditionals : Conditionals = {
+const conditionals : IConditionals = {
   d: {
     name: "Traveller",
     maxStack: 1,

@@ -1,10 +1,10 @@
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
+import { IConditionals } from '../../../Conditional/IConditional'
 import WeaponSheet from '../../WeaponSheetInterace'
 import img from './Weapon_Primordial_Jade_Winged-Spear.png'
 
 const refinementVals = [3.2, 3.9, 4.6, 5.3, 6]
 const refinementDmgVals = [12, 15, 18, 21, 24]
-const conditionals: Conditionals = {
+const conditionals: IConditionals = {
   e: {
     name: "Stacks",
     states: {

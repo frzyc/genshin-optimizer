@@ -4,9 +4,9 @@ import sands from './Item_Viridescent_Venerer\'s_Determination.png'
 import goblet from './Item_Viridescent_Venerer\'s_Vessel.png'
 import circlet from './Item_Viridescent_Venerer\'s_Diadem.png'
 import ElementalData from '../../ElementalData'
-import ArtifactSheet from '../../../Artifact/ArtifactSheetInterface'
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
-const conditionals: Conditionals = {
+import IArtifactSheet from '../../../Artifact/IArtifactSheet'
+import { IConditionals } from '../../../Conditional/IConditional'
+const conditionals: IConditionals = {
   set4: {
     name: "Element Swirled",
     states: Object.fromEntries(Object.entries(ElementalData).filter(([key]) => key !== "anemo" && key !== "geo" && key !== "physical").map(([key, { name }]) => [key, {
@@ -15,7 +15,7 @@ const conditionals: Conditionals = {
     }]))
   }
 }
-const artifact: ArtifactSheet = {
+const artifact: IArtifactSheet = {
   name: "Viridescent Venerer", rarity: [4, 5], pieces: {
     flower: "In Remembrance of Viridescent Fields",
     plume: "Viridescent Arrow Feather",

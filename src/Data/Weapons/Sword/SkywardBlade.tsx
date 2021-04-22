@@ -1,6 +1,6 @@
 import { getTalentStatKey } from '../../../Build/Build'
 import DisplayPercent from '../../../Components/DisplayPercent'
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
+import { IConditionals } from '../../../Conditional/IConditional'
 import WeaponSheet from '../../WeaponSheetInterace'
 import img from './Weapon_Skyward_Blade.png'
 
@@ -8,7 +8,7 @@ const refinementVals = [4, 5, 6, 7, 8]
 const refinementMoveSpdVals = [10, 10, 10, 10, 10]
 const refinementatkSpdVals = [10, 10, 10, 10, 10]
 const refinementautoVals = [20, 25, 30, 35, 40]
-const conditionals : Conditionals = {
+const conditionals : IConditionals = {
   spf: {
     name: "After Elemental Burst",
     maxStack: 1,

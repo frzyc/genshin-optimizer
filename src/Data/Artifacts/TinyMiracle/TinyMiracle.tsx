@@ -3,9 +3,9 @@ import plume from './Item_Tiny_Miracle\'s_Feather.png'
 import sands from './Item_Tiny_Miracle\'s_Hourglass.png'
 import goblet from './Item_Tiny_Miracle\'s_Goblet.png'
 import circlet from './Item_Tiny_Miracle\'s_Earrings.png'
-import ArtifactSheet from '../../../Artifact/ArtifactSheetInterface'
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
-const conditionals: Conditionals = {
+import IArtifactSheet from '../../../Artifact/IArtifactSheet'
+import { IConditionals } from '../../../Conditional/IConditional'
+const conditionals: IConditionals = {
   set4: {
     name: "Incoming DMG",
     states: {
@@ -41,7 +41,7 @@ const conditionals: Conditionals = {
   }
 
 }
-const artifact: ArtifactSheet = {
+const artifact: IArtifactSheet = {
   name: "Tiny Miracle", rarity: [3, 4],
   pieces: {
     flower: "Tiny Miracle's Flower",

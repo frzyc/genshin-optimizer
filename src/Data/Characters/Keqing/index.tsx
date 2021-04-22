@@ -15,9 +15,9 @@ import passive3 from './Talent_Land\'s_Overseer.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
-import CharacterSheet from '../../CharacterSheetInterface'
-const conditionals: Conditionals = {
+import { IConditionals } from '../../../Conditional/IConditional'
+import ICharacterSheet from '../../ICharacterSheet'
+const conditionals: IConditionals = {
   AristocraticDignity: {
     canShow: stats => stats.ascension >= 4,
     name: <span>Casting <b>Starward Sword</b></span>,
@@ -49,7 +49,7 @@ const conditionals: Conditionals = {
     }]
   }
 }
-const char: CharacterSheet = {
+const char: ICharacterSheet = {
   name: "Keqing",
   cardImg: card,
   thumbImg: thumb,

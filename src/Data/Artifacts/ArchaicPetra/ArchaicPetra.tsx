@@ -3,9 +3,9 @@ import plume from './Item_Feather_of_Jagged_Peaks.png'
 import sands from './Item_Sundial_of_Enduring_Jade.png'
 import goblet from './Item_Goblet_of_Chiseled_Crag.png'
 import circlet from './Item_Mask_of_Solitude_Basalt.png'
-import ArtifactSheet from '../../../Artifact/ArtifactSheetInterface'
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
-const conditionals: Conditionals = {//TODO: all party conditional
+import IArtifactSheet from '../../../Artifact/IArtifactSheet'
+import { IConditionals } from '../../../Conditional/IConditional'
+const conditionals: IConditionals = {//TODO: all party conditional
   set4: {
     name: "Obtaining Crystallize Shard",
     states: {
@@ -28,7 +28,7 @@ const conditionals: Conditionals = {//TODO: all party conditional
     }
   }
 }
-const artifact: ArtifactSheet = {
+const artifact: IArtifactSheet = {
   name: "Archaic Petra", rarity: [4, 5],
   pieces: {
     flower: "Flower of Creviced Cliff",

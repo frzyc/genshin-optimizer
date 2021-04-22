@@ -1,6 +1,6 @@
 import card from './Traveler_Male_Card.jpg'
 import thumb from './Character_Traveler_Thumb.png'
-import CharacterSheet from '../../CharacterSheetInterface';
+import ICharacterSheet from '../../ICharacterSheet';
 // import c1 from './Constellation_Invincible_Stonewall.png'
 // import c2 from './Constellation_Rockcore_Meltdown.png'
 // import c3 from './Constellation_Will_of_the_Rock.png'
@@ -13,7 +13,7 @@ import CharacterSheet from '../../CharacterSheetInterface';
 // import passive1 from './Talent_Shattered_Darkrock.png'
 // import passive2 from './Talent_Frenzied_Rockslide.png'
 
-const char: CharacterSheet = {
+const char: ICharacterSheet = {
   name: "Traveler (Geo)",
   cardImg: card,
   thumbImg: thumb,

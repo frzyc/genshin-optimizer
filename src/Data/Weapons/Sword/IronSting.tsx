@@ -1,9 +1,9 @@
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
+import { IConditionals } from '../../../Conditional/IConditional'
 import WeaponSheet from '../../WeaponSheetInterace'
 import img from './Weapon_Iron_Sting.png'
 
 const refinementVals = [6, 7.5, 9, 10.5, 12]
-const conditionals : Conditionals = {
+const conditionals : IConditionals = {
   is: {
     name: "Elemental Hits",
     maxStack: 2,

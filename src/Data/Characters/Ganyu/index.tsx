@@ -16,9 +16,9 @@ import passive3 from './Talent_Preserved_for_the_Hunt.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
-import CharacterSheet from '../../CharacterSheetInterface'
-const conditionals: Conditionals = {
+import { IConditionals } from '../../../Conditional/IConditional'
+import ICharacterSheet from '../../ICharacterSheet'
+const conditionals: IConditionals = {
   UndividedHeart: {
     canShow: stats => stats.ascension >= 1,
     name: <span>After firing a <b>Frostflake</b> Arrow</span>,
@@ -51,7 +51,7 @@ const conditionals: Conditionals = {
     }]
   }
 }
-const char: CharacterSheet = {
+const char: ICharacterSheet = {
   name: "Ganyu",
   cardImg: card,
   thumbImg: thumb,

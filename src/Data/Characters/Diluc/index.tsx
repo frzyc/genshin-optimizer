@@ -15,9 +15,9 @@ import passive3 from './Talent_Tradition_of_the_Dawn_Knight.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
-import CharacterSheet from '../../CharacterSheetInterface'
-const conditionals: Conditionals = {
+import { IConditionals } from '../../../Conditional/IConditional'
+import ICharacterSheet from '../../ICharacterSheet'
+const conditionals: IConditionals = {
   FlamingSwordNemesisOfDark: {
     canShow: stats => stats.constellation >= 6,
     name: <span>After casting <b>Searing Onslaught</b></span>,
@@ -54,7 +54,7 @@ const conditionals: Conditionals = {
     }]
   }
 }
-const char: CharacterSheet = {
+const char: ICharacterSheet = {
   name: "Diluc",
   cardImg: card,
   thumbImg: thumb,

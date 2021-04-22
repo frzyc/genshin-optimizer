@@ -3,15 +3,15 @@ import plume from './Item_Gladiator\'s_Destiny.png'
 import sands from './Item_Gladiator\'s_Longing.png'
 import goblet from './Item_Gladiator\'s_Intoxication.png'
 import circlet from './Item_Gladiator\'s_Triumphus.png'
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
-import ArtifactSheet from '../../../Artifact/ArtifactSheetInterface'
-const conditionals: Conditionals = {
+import { IConditionals } from '../../../Conditional/IConditional'
+import IArtifactSheet from '../../../Artifact/IArtifactSheet'
+const conditionals: IConditionals = {
   set4: {
     name: "Owner uses a Melee weapon",
     stats: { normal_dmg_: 35 }
   }
 }
-const artifact: ArtifactSheet = {
+const artifact: IArtifactSheet = {
   name: "Gladiator's Finale", rarity: [4, 5],
   pieces: {
     flower: "Gladiator's Nostalgia",

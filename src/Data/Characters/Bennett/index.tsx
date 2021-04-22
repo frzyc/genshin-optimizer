@@ -15,9 +15,9 @@ import passive3 from './Talent_It_Should_Be_Safe....png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-import CharacterSheet from '../../CharacterSheetInterface'
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
-const conditionals: Conditionals = {
+import ICharacterSheet from '../../ICharacterSheet'
+import { IConditionals } from '../../../Conditional/IConditional'
+const conditionals: IConditionals = {
   FantasticVoyage: {
     name: "Fantastic Voyage",
     stats: stats => ({
@@ -38,7 +38,7 @@ const conditionals: Conditionals = {
     }]
   }
 }
-const char: CharacterSheet = {
+const char: ICharacterSheet = {
   name: "Bennett",
   cardImg: card,
   thumbImg: thumb,

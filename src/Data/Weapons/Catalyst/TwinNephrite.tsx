@@ -1,9 +1,9 @@
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
+import { IConditionals } from '../../../Conditional/IConditional'
 import WeaponSheet from '../../WeaponSheetInterace'
 import img from './Weapon_Twin_Nephrite.png'
 
 const refinementVals = [12, 14, 16, 18, 20]
-const conditionals : Conditionals = {
+const conditionals : IConditionals = {
   gt: {
     name: "Opponents Defeated",
     maxStack: 1,

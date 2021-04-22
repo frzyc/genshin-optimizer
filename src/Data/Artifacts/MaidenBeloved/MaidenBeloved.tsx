@@ -3,15 +3,15 @@ import plume from './Item_Maiden\'s_Heart-stricken_Infatuation.png'
 import sands from './Item_Maiden\'s_Passing_Youth.png'
 import goblet from './Item_Maiden\'s_Fleeting_Leisure.png'
 import circlet from './Item_Maiden\'s_Fading_Beauty.png'
-import ArtifactSheet from '../../../Artifact/ArtifactSheetInterface'
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
-const conditionals: Conditionals = {
+import IArtifactSheet from '../../../Artifact/IArtifactSheet'
+import { IConditionals } from '../../../Conditional/IConditional'
+const conditionals: IConditionals = {
   set4: {
     name: "Using an Elemental Skill or Burst",
     stats: { incHeal_: 20 }//TODO: party buff
   }
 }
-const artifact: ArtifactSheet = {
+const artifact: IArtifactSheet = {
   name: "Maiden Beloved", rarity: [4, 5],
   pieces: {
     flower: "Maiden's Distant Love",

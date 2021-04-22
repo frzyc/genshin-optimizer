@@ -1,4 +1,4 @@
-export default interface CalculatedStats {
+export default interface ICalculatedStats {
   weapon: {
     key: string;
     refineIndex: number;

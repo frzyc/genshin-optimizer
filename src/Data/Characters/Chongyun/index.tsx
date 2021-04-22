@@ -15,9 +15,9 @@ import passive3 from './Talent_Gallant_Journey.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
-import CharacterSheet from '../../CharacterSheetInterface'
-const conditionals: Conditionals = {
+import { IConditionals } from '../../../Conditional/IConditional'
+import ICharacterSheet from '../../ICharacterSheet'
+const conditionals: IConditionals = {
   RimechaserBlade: {
     canShow: stats => stats.ascension >= 4,
     name: "Opponents hit by Rimechase Blade",
@@ -33,7 +33,7 @@ const conditionals: Conditionals = {
     stats: { burst_dmg_: 15 }
   }
 }
-const char: CharacterSheet = {
+const char: ICharacterSheet = {
   name: "Chongyun",
   cardImg: card,
   thumbImg: thumb,

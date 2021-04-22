@@ -15,9 +15,9 @@ import passive3 from './Talent_Wolvensprint.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant, } from "../../../Build/Build"
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
-import CharacterSheet from '../../CharacterSheetInterface'
-const conditionals: Conditionals = {
+import { IConditionals } from '../../../Conditional/IConditional'
+import ICharacterSheet from '../../ICharacterSheet'
+const conditionals: IConditionals = {
   ElectroSigil: {
     name: "Electro Sigil",
     maxStack: 3,
@@ -62,7 +62,7 @@ const conditionals: Conditionals = {
     }],
   },
 }
-const char: CharacterSheet = {
+const char: ICharacterSheet = {
   name: "Razor",
   cardImg: card,
   thumbImg: thumb,

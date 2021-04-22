@@ -1,9 +1,9 @@
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
+import { IConditionals } from '../../../Conditional/IConditional'
 import WeaponSheet from '../../WeaponSheetInterace'
 import img from './Weapon_Harbinger_of_Dawn.png'
 
 const refinementVals = [14, 17.5, 21, 24.5, 28]
-const conditionals : Conditionals = {
+const conditionals : IConditionals = {
   v: {
     name: "High HP",
     maxStack: 1,

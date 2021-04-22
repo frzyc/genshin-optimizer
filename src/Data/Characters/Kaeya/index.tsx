@@ -16,9 +16,9 @@ import DisplayPercent from '../../../Components/DisplayPercent'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
-import CharacterSheet from '../../CharacterSheetInterface'
-const conditionals: Conditionals = {
+import { IConditionals } from '../../../Conditional/IConditional'
+import ICharacterSheet from '../../ICharacterSheet'
+const conditionals: IConditionals = {
   ColdBloodedStrike: {
     canShow: stats => stats.constellation >= 1,
     name: <span>Opponent affected by <span className="text-cryo">Cryo</span></span>,
@@ -28,7 +28,7 @@ const conditionals: Conditionals = {
     }
   }
 }
-const char: CharacterSheet = {
+const char: ICharacterSheet = {
   name: "Kaeya",
   cardImg: card,
   thumbImg: thumb,

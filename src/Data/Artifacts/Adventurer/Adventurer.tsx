@@ -4,8 +4,8 @@ import sands from './Item_Adventurer\'s_Pocket_Watch.png'
 import goblet from './Item_Adventurer\'s_Golden_Goblet.png'
 import circlet from './Item_Adventurer\'s_Bandana.png'
 import DisplayPercent from '../../../Components/DisplayPercent'
-import ArtifactSheet from '../../../Artifact/ArtifactSheetInterface'
-const artifact:ArtifactSheet = {
+import IArtifactSheet from '../../../Artifact/IArtifactSheet'
+const artifact:IArtifactSheet = {
   name: "Adventurer", rarity: [3],
   pieces: {
     flower: "Adventurer's Flower",

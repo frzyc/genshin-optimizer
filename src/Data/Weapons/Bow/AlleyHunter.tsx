@@ -1,9 +1,9 @@
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
+import { IConditionals } from '../../../Conditional/IConditional'
 import WeaponSheet from '../../WeaponSheetInterace'
 import img from './Weapon_Alley_Hunter.png'
 
 const refinementVals = [2, 2.5, 3, 3.5, 4]
-const conditionals : Conditionals = {
+const conditionals : IConditionals = {
   ug: {
     name: "Duration not on Field (1s / stack)",
     maxStack: 10,

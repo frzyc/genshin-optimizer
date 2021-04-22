@@ -15,9 +15,9 @@ import passive3 from './Talent_Complimentary_Bar_Food.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
-import CharacterSheet from '../../CharacterSheetInterface'
-const conditionals: Conditionals = {
+import { IConditionals } from '../../../Conditional/IConditional'
+import ICharacterSheet from '../../ICharacterSheet'
+const conditionals: IConditionals = {
   IcyPawsShield: {
     canShow: stats => stats.constellation >= 4,
     name: "Characters Shielded",
@@ -37,7 +37,7 @@ const conditionals: Conditionals = {
     stats: { eleMas: 200 },
   }
 }
-const char: CharacterSheet = {
+const char: ICharacterSheet = {
   name: "Diona",
   cardImg: card,
   thumbImg: thumb,

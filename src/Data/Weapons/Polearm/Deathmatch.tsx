@@ -1,9 +1,9 @@
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
+import { IConditionals } from '../../../Conditional/IConditional'
 import WeaponSheet from '../../WeaponSheetInterace'
 import Deathmatch from './Weapon_Deathmatch.png'
 const refinementVals = [16, 20, 24, 28, 32]
 const refinementSoloVals = [24, 30, 36, 42, 48]
-const conditionals: Conditionals = {
+const conditionals: IConditionals = {
   g: {
     name: "",
     states: {

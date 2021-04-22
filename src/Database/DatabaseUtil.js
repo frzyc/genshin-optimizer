@@ -1,4 +1,3 @@
-import Artifact from "../Artifact/Artifact";
 import ArtifactDatabase from "./ArtifactDatabase";
 import CharacterDatabase from "./CharacterDatabase";
 import { changes as v2change, dmgModeToHitMode } from "./dbV2KeyMap";

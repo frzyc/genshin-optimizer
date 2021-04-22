@@ -15,9 +15,9 @@ import passive3 from './Talent_Night_Walk.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
-import CharacterSheet from '../../CharacterSheetInterface'
-const conditionals: Conditionals = {
+import { IConditionals } from '../../../Conditional/IConditional'
+import ICharacterSheet from '../../ICharacterSheet'
+const conditionals: IConditionals = {
   ReginaProbationum: {
     canShow: stats => stats.ascension >= 1,
     name: <span>After back hit</span>,
@@ -58,7 +58,7 @@ const conditionals: Conditionals = {
     }]
   }
 }
-const char: CharacterSheet = {
+const char: ICharacterSheet = {
   name: "Rosaria",
   cardImg: card,
   thumbImg: thumb,

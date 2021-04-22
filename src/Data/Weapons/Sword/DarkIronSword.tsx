@@ -1,9 +1,9 @@
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
+import { IConditionals } from '../../../Conditional/IConditional'
 import WeaponSheet from '../../WeaponSheetInterace'
 import img from './Weapon_Dark_Iron_Sword.png'
 
 const refinementVals = [20, 25, 30, 35, 40]
-const conditionals : Conditionals = {
+const conditionals : IConditionals = {
   em: {
     name: "After Electro-related reactions",
     maxStack: 1,

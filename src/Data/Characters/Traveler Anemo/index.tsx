@@ -1,6 +1,6 @@
 import card from './Traveler_Female_Card.jpg'
 import thumb from './Character_Traveler_Thumb.png'
-import CharacterSheet from '../../CharacterSheetInterface';
+import ICharacterSheet from '../../ICharacterSheet';
 // import c1 from './Constellation_Raging_Vortex.png'
 // import c2 from './Constellation_Uprising_Whirlwind.png'
 // import c3 from './Constellation_Sweeping_Gust.png'
@@ -13,7 +13,7 @@ import CharacterSheet from '../../CharacterSheetInterface';
 // import passive1 from './Talent_Slitting_Wind.png'
 // import passive2 from './Talent_Second_Wind.png'
 
-const char: CharacterSheet = {
+const char: ICharacterSheet = {
   name: "Traveler (Anemo)",
   cardImg: card,
   thumbImg: thumb,

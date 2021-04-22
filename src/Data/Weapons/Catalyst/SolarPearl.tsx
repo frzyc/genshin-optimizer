@@ -1,7 +1,7 @@
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
+import { IConditionals } from '../../../Conditional/IConditional'
 import WeaponSheet from '../../WeaponSheetInterace'
 import img from './Weapon_Solar_Pearl.png'
-const conditionals: Conditionals = {
+const conditionals: IConditionals = {
   ss: {
     name: "Hits",
     states: {

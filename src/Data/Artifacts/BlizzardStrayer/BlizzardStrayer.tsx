@@ -3,9 +3,9 @@ import plume from './Item_Icebreaker\'s_Resolve.png'
 import sands from './Item_Frozen_Homeland\'s_Demise.png'
 import goblet from './Item_Frost-Weaved_Dignity.png'
 import circlet from './Item_Broken_Rime\'s_Echo.png'
-import ArtifactSheet from '../../../Artifact/ArtifactSheetInterface'
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
-const conditionals: Conditionals = {
+import IArtifactSheet from '../../../Artifact/IArtifactSheet'
+import { IConditionals } from '../../../Conditional/IConditional'
+const conditionals: IConditionals = {
   set4: {
     name: "Attack enemy",
     states: {
@@ -20,7 +20,7 @@ const conditionals: Conditionals = {
     }
   }
 }
-const artifact: ArtifactSheet = {//Icebreaker
+const artifact: IArtifactSheet = {//Icebreaker
   name: "Blizzard Strayer", rarity: [4, 5],
   pieces: {
     flower: "Snowswept Memory",

@@ -1,9 +1,9 @@
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
+import { IConditionals } from '../../../Conditional/IConditional'
 import WeaponSheet from '../../WeaponSheetInterace'
 import img from './Weapon_Skyrider_Greatsword.png'
 
 const refinementVals = [6, 7, 8, 9, 10]
-const conditionals : Conditionals = {
+const conditionals : IConditionals = {
   c: {
     name: "Normal/Charged Attack Hits",
     maxStack: 4,

@@ -1,12 +1,12 @@
 import DisplayPercent from '../../../Components/DisplayPercent'
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
+import { IConditionals } from '../../../Conditional/IConditional'
 import WeaponSheet from '../../WeaponSheetInterace'
 import img from './Weapon_Staff_of_Homa.png'
 
 const refinementVals_hp = [20, 25, 30, 35, 40]
 const refinementVals_hp_atk = [0.8, 1, 1.2, 1.4, 1.6]
 const refinementVals_hp_atk_add = [1, 1.2, 1.4, 1.6, 1.8]
-const conditionals: Conditionals = {
+const conditionals: IConditionals = {
   esj: {
     name: "Low HP",
     maxStack: 1,

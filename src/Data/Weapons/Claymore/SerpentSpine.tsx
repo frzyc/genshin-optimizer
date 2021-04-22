@@ -1,10 +1,10 @@
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
+import { IConditionals } from '../../../Conditional/IConditional'
 import WeaponSheet from '../../WeaponSheetInterace'
 import img from './Weapon_Serpent_Spine.png'
 
 const refinementVals = [6, 7, 8, 9, 10]
 const refinementTakeDmgVals = [3, 2.7, 2.4, 2.2, 2]
-const conditionals : Conditionals = {
+const conditionals : IConditionals = {
   w: {
     name: "Duration on Field (4s / stack)",
     maxStack: 5,

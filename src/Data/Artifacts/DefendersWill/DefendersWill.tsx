@@ -3,9 +3,9 @@ import plume from './Item_Guardian\'s_Sigil.png'
 import sands from './Item_Guardian\'s_Clock.png'
 import goblet from './Item_Guardian\'s_Vessel.png'
 import circlet from './Item_Guardian\'s_Band.png'
-import ArtifactSheet from '../../../Artifact/ArtifactSheetInterface'
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
-const conditionals: Conditionals = {
+import IArtifactSheet from '../../../Artifact/IArtifactSheet'
+import { IConditionals } from '../../../Conditional/IConditional'
+const conditionals: IConditionals = {
   anemo: {
     name: "Anemo in party",
     stats: { anemo_res_: 30 }//TODO: party conditional
@@ -31,7 +31,7 @@ const conditionals: Conditionals = {
     stats: { cryo_res_: 30 }//TODO: party conditional
   }
 }
-const artifact: ArtifactSheet = {
+const artifact: IArtifactSheet = {
   name: "Defender's Will", rarity: [3, 4],
   pieces: {
     flower: "Guardian's Flower",

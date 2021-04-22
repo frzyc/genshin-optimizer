@@ -15,9 +15,9 @@ import passive3 from './Talent_All_Of_My_Treasures.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-import CharacterSheet from '../../CharacterSheetInterface'
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
-const conditionals: Conditionals = {
+import ICharacterSheet from '../../ICharacterSheet'
+import { IConditionals } from '../../../Conditional/IConditional'
+const conditionals: IConditionals = {
   PoundingSurprise: {
     canShow: stats => stats.ascension >= 1,
     name: "has Explosive Spark",
@@ -39,7 +39,7 @@ const conditionals: Conditionals = {
     stats: { pyro_dmg_: 10 }//TODO: party buff
   }
 }
-const char: CharacterSheet = {
+const char: ICharacterSheet = {
   name: "Klee",
   cardImg: card,
   thumbImg: thumb,

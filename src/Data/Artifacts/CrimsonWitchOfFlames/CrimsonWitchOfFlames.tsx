@@ -3,16 +3,16 @@ import plume from './Item_Witch\'s_Ever-Burning_Plume.png'
 import sands from './Item_Witch\'s_End_Time.png'
 import goblet from './Item_Witch\'s_Heart_Flames.png'
 import circlet from './Item_Witch\'s_Scorching_Hat.png'
-import ArtifactSheet from '../../../Artifact/ArtifactSheetInterface'
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
-const conditionals: Conditionals = {
+import IArtifactSheet from '../../../Artifact/IArtifactSheet'
+import { IConditionals } from '../../../Conditional/IConditional'
+const conditionals: IConditionals = {
   set4: {
     name: "Using an Elemental SKill",
     maxStack: 3,
     stats: { pyro_dmg_: 7.5 }
   }
 }
-const artifact: ArtifactSheet = {
+const artifact: IArtifactSheet = {
   name: "Crimson Witch of Flames", rarity: [4, 5],
   pieces: {
     flower: "Witch's Flower of Blaze",

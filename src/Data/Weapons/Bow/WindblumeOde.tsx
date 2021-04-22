@@ -1,9 +1,9 @@
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
+import { IConditionals } from '../../../Conditional/IConditional'
 import WeaponSheet from '../../WeaponSheetInterace'
 import img from './Weapon_Windblume_Ode.png'
 
 const refinementVals = [16, 20, 24, 28, 32]
-const conditionals : Conditionals = {
+const conditionals : IConditionals = {
   ww: {
     name: "After Elemental Skill",
     maxStack: 1,

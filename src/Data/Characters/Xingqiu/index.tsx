@@ -16,16 +16,16 @@ import Stat from '../../../Stat'
 import DisplayPercent from '../../../Components/DisplayPercent'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from "../../../Build/Build"
-import CharacterSheet from '../../CharacterSheetInterface'
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
-const conditionals: Conditionals = {
+import ICharacterSheet from '../../ICharacterSheet'
+import { IConditionals } from '../../../Conditional/IConditional'
+const conditionals: IConditionals = {
   RainbowUponTheAzureSky: {
     canShow: stats => stats.constellation >= 2,
     name: "Opponent hit by sword rain",
     stats: { hydro_enemyRes_: -15 },
   },
 }
-const char: CharacterSheet = {
+const char: ICharacterSheet = {
   name: "Xingqiu",
   cardImg: card,
   thumbImg: thumb,

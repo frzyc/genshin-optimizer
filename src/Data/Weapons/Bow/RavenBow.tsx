@@ -1,9 +1,9 @@
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
+import { IConditionals } from '../../../Conditional/IConditional'
 import WeaponSheet from '../../WeaponSheetInterace'
 import img from './Weapon_Raven_Bow.png'
 
 const refinementVals = [12, 15, 18, 21, 24]
-const conditionals : Conditionals = {
+const conditionals : IConditionals = {
   bfw: {
     name: "Against Opponents Affected by Hydro/Pyro",
     maxStack: 1,

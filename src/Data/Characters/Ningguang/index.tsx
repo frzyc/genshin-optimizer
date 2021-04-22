@@ -15,9 +15,9 @@ import passive3 from './Talent_Trove_of_Marvelous_Treasures.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
-import CharacterSheet from '../../CharacterSheetInterface'
-const conditionals: Conditionals = {
+import { IConditionals } from '../../../Conditional/IConditional'
+import ICharacterSheet from '../../ICharacterSheet'
+const conditionals: IConditionals = {
   StrategicReserve: {
     canShow: stats => stats.ascension >= 4,
     name: <span>Passing through <b>Jade Screen</b></span>,
@@ -36,7 +36,7 @@ const conditionals: Conditionals = {
     }]
   }
 }
-const char: CharacterSheet = {
+const char: ICharacterSheet = {
   name: "Ningguang",
   cardImg: card,
   thumbImg: thumb,

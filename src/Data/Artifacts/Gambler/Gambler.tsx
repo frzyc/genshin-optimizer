@@ -3,9 +3,9 @@ import plume from './Item_Gambler\'s_Feather_Accessory.png'
 import sands from './Item_Gambler\'s_Pocket_Watch.png'
 import goblet from './Item_Gambler\'s_Dice_Cup.png'
 import circlet from './Item_Gambler\'s_Earrings.png'
-import ArtifactSheet from '../../../Artifact/ArtifactSheetInterface'
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
-const conditionals: Conditionals = {
+import IArtifactSheet from '../../../Artifact/IArtifactSheet'
+import { IConditionals } from '../../../Conditional/IConditional'
+const conditionals: IConditionals = {
   set4: {
     name: "Defeating an enemy",
     stats: { skillCDRed_: 100 },
@@ -15,7 +15,7 @@ const conditionals: Conditionals = {
     }]
   }
 }
-const artifact: ArtifactSheet = {
+const artifact: IArtifactSheet = {
   name: "Gambler", rarity: [3, 4],
   pieces: {
     flower: "Gambler's Brooch",

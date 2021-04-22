@@ -1,9 +1,9 @@
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
+import { IConditionals } from '../../../Conditional/IConditional'
 import WeaponSheet from '../../WeaponSheetInterace'
 import img from './Weapon_Skyrider_Sword.png'
 
 const refinementVals = [12, 15, 18, 21, 24]
-const conditionals : Conditionals = {
+const conditionals : IConditionals = {
   d: {
     name: "After Elemental Burst",
     maxStack: 1,

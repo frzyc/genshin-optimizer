@@ -1,9 +1,9 @@
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
+import { IConditionals } from '../../../Conditional/IConditional'
 import WeaponSheet from '../../WeaponSheetInterace'
 import img from './Weapon_Amber_Catalyst.png'
 
 const refinementVals = [6, 7.5, 9, 10.5, 12]
-const conditionals : Conditionals = {
+const conditionals : IConditionals = {
   em: {
     name: "Normal Attack Hits",
     maxStack: 2,

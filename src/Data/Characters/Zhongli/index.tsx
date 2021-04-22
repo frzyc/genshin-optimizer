@@ -16,9 +16,9 @@ import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import ElementalData from '../../ElementalData'
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
-import CharacterSheet from '../../CharacterSheetInterface'
-const conditionals: Conditionals = {
+import { IConditionals } from '../../../Conditional/IConditional'
+import ICharacterSheet from '../../ICharacterSheet'
+const conditionals: IConditionals = {
   JadeShield: {
     canShow: stats => stats.constellation >= 6,
     name: <span>Enemies near <b>Jade Shield</b></span>,
@@ -31,7 +31,7 @@ const conditionals: Conditionals = {
     stats: { powShield_: 5 },
   }
 }
-const char: CharacterSheet = {
+const char: ICharacterSheet = {
   name: "Zhongli",
   cardImg: card,
   thumbImg: thumb,

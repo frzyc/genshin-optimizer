@@ -3,15 +3,15 @@ import plume from './Item_Royal_Plume.png'
 import sands from './Item_Royal_Pocket_Watch.png'
 import goblet from './Item_Royal_Silver_Urn.png'
 import circlet from './Item_Royal_Masque.png'
-import ArtifactSheet from '../../../Artifact/ArtifactSheetInterface'
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
-const conditionals: Conditionals = {
+import IArtifactSheet from '../../../Artifact/IArtifactSheet'
+import { IConditionals } from '../../../Conditional/IConditional'
+const conditionals: IConditionals = {
   set4: {
     name: "Using an Elemental Burst",
     stats: { atk_: 20 }//TODO: party buff
   }
 }
-const artifact: ArtifactSheet = {
+const artifact: IArtifactSheet = {
   name: "Noblesse Oblige", rarity: [4, 5],
   pieces: {
     flower: "Royal Flora",

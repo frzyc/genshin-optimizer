@@ -1,10 +1,10 @@
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
+import { IConditionals } from '../../../Conditional/IConditional'
 import WeaponSheet from '../../WeaponSheetInterace'
 import img from './Weapon_Lithic_Spear.png'
 
 const refinementCritVals = [3, 4, 5, 6, 7]
 const refinementAtkVals = [7, 8, 9, 10, 11]
-const conditionals : Conditionals = {
+const conditionals : IConditionals = {
   lau: {
     name: "Liyue Members",
     maxStack: 4,

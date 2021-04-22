@@ -1,9 +1,9 @@
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
+import { IConditionals } from '../../../Conditional/IConditional'
 import WeaponSheet from '../../WeaponSheetInterace'
 import img from './Weapon_Slingshot.png'
 
 const refinementVals = [36, 42, 48, 54, 60]
-const conditionals : Conditionals = {
+const conditionals : IConditionals = {
   s: {
     name: "Normal/Charged Attack Hits within 0.3s",
     maxStack: 1,

@@ -15,9 +15,9 @@ import passive3 from './Talent_With_My_Whole_Heart.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
-import CharacterSheet from '../../CharacterSheetInterface'
-const conditionals: Conditionals = {
+import { IConditionals } from '../../../Conditional/IConditional'
+import ICharacterSheet from '../../ICharacterSheet'
+const conditionals: IConditionals = {
   GloriousSeason: {
     canShow: stats => stats.ascension >= 1,
     name: <span>Within <b>Let the Show Begin</b>'s Melody Loop</span>,
@@ -29,7 +29,7 @@ const conditionals: Conditionals = {
     stats: { hydro_dmg_: 15 }//TODO: Party buff active character
   }
 }
-const char: CharacterSheet = {
+const char: ICharacterSheet = {
   name: "Barbara",
   cardImg: card,
   thumbImg: thumb,

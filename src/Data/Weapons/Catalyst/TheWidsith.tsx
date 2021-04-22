@@ -1,4 +1,4 @@
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
+import { IConditionals } from '../../../Conditional/IConditional'
 import WeaponSheet from '../../WeaponSheetInterace'
 import img from './Weapon_The_Widsith.png'
 
@@ -6,7 +6,7 @@ const refinementAtkVals = [60, 75, 90, 105, 120]
 const refinementEleDmgVals = [48, 60, 72, 84, 96]
 const refinementEleMasVals = [240, 300, 360, 420, 480]
 // TODO: multi-conditionals
-const conditionals: Conditionals = {
+const conditionals: IConditionals = {
   d: {
     name: "",
     states: {

@@ -1,5 +1,5 @@
-import CalculatedStats from "../Build/CalculatedStatsInterface";
-import { Conditionals } from "../Conditional/Conditionalnterface";
+import ICalculatedStats from "../Build/ICalculatedStats";
+import { IConditionals } from "../Conditional/IConditional";
 
 export default interface WeaponSheet {
   name: string;
@@ -7,13 +7,13 @@ export default interface WeaponSheet {
   img: string;
   rarity: number;
   passiveName: string;
-  passiveDescription: string | ((stats: CalculatedStats) => string | JSX.Element)
+  passiveDescription: string | ((stats: ICalculatedStats) => string | JSX.Element)
   description: string;
   baseStats: {
     main: Array<number>,
     subStatKey: String,
     sub?: Array<number>
   },
-  stats?: object | ((stats: CalculatedStats) => object)
-  conditionals?: Conditionals
+  stats?: object | ((stats: ICalculatedStats) => object)
+  conditionals?: IConditionals
 }

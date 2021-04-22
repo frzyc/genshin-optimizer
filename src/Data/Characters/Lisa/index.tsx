@@ -15,9 +15,9 @@ import passive3 from './Talent_General_Pharmaceutics.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
-import CharacterSheet from '../../CharacterSheetInterface'
-const conditionals: Conditionals = {
+import { IConditionals } from '../../../Conditional/IConditional'
+import ICharacterSheet from '../../ICharacterSheet'
+const conditionals: IConditionals = {
   StaticElectricityFieldDestiny: {
     canShow: stats => stats.ascension >= 4,
     name: "Opponents hit by Lightning Rose",
@@ -34,7 +34,7 @@ const conditionals: Conditionals = {
     fields: [{ text: "Increase resistance to interruption" }],
   },
 }
-const char: CharacterSheet = {
+const char: ICharacterSheet = {
   name: "Lisa",
   cardImg: card,
   thumbImg: thumb,

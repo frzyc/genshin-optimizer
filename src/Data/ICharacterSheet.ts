@@ -1,7 +1,7 @@
-import Conditional, { Conditionals } from "../Conditional/Conditionalnterface";
-import { FieldDisplay } from "./FieldDisplayInterface";
+import IConditional, { IConditionals } from "../Conditional/IConditional";
+import { IFieldDisplay } from "./IFieldDisplay";
 
-export default interface CharacterSheet {
+export default interface ICharacterSheet {
   name: string;
   cardImg: string;
   thumbImg: string;
@@ -14,7 +14,7 @@ export default interface CharacterSheet {
   baseStat: object;//TODO: custom interface
   specializeStat: object;//TODO: interface
   formula: object;
-  conditionals: Conditionals;
+  conditionals: IConditionals;
   talent: TalentSheet;
 }
 
@@ -32,6 +32,6 @@ export interface TalentSheetElement {
 export interface DocumentSection {
   canShow?: (stats: any) => boolean;
   text?: string | JSX.Element | ((stats: any) => JSX.Element);
-  fields?: Array<FieldDisplay>;
-  conditional?: Conditional;
+  fields?: Array<IFieldDisplay>;
+  conditional?: IConditional;
 }

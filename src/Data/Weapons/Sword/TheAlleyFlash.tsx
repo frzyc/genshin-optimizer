@@ -1,9 +1,9 @@
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
+import { IConditionals } from '../../../Conditional/IConditional'
 import WeaponSheet from '../../WeaponSheetInterace'
 import img from './Weapon_The_Alley_Flash.png'
 
 const refinementVals = [12, 15, 18, 21, 24]
-const conditionals : Conditionals = {
+const conditionals : IConditionals = {
   ih: {
     name: "Not Taking DMG",
     maxStack: 1,

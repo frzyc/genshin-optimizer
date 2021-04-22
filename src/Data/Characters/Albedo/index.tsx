@@ -16,9 +16,9 @@ import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant, } from "../../../Build/Build"
 import DisplayPercent from '../../../Components/DisplayPercent'
-import CharacterSheet from '../../CharacterSheetInterface'
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
-const conditionals: Conditionals = {
+import ICharacterSheet from '../../ICharacterSheet'
+import { IConditionals } from '../../../Conditional/IConditional'
+const conditionals: IConditionals = {
   HomuncularNature: {//passive2
     canShow: stats => stats.ascension >= 4,
     name: "Using Tectonic Tide",
@@ -41,7 +41,7 @@ const conditionals: Conditionals = {
     }
   }
 }
-const char: CharacterSheet = {
+const char: ICharacterSheet = {
   name: "Albedo",
   cardImg: card,
   thumbImg: thumb,

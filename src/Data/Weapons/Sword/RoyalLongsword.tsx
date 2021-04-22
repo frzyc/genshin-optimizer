@@ -1,9 +1,9 @@
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
+import { IConditionals } from '../../../Conditional/IConditional'
 import WeaponSheet from '../../WeaponSheetInterace'
 import img from './Weapon_Royal_Longsword.png'
 
 const refinementVals = [8, 10, 12, 14, 16]
-const conditionals : Conditionals = {
+const conditionals : IConditionals = {
   f: {
     name: "Opponents Damaged",
     maxStack: 5,

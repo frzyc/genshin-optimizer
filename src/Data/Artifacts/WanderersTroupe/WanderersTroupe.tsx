@@ -3,15 +3,15 @@ import plume from './Item_Bard\'s_Arrow_Feather.png'
 import sands from './Item_Concert\'s_Final_Hour.png'
 import goblet from './Item_Wanderer\'s_String_Kettle.png'
 import circlet from './Item_Conductor\'s_Top_Hat.png'
-import ArtifactSheet from '../../../Artifact/ArtifactSheetInterface'
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
-const conditionals: Conditionals = {
+import IArtifactSheet from '../../../Artifact/IArtifactSheet'
+import { IConditionals } from '../../../Conditional/IConditional'
+const conditionals: IConditionals = {
   set4: {
     name: "Character uses a ranged weapon",
     stats: { charged_dmg_: 35 }
   }
 }
-const artifact: ArtifactSheet = {
+const artifact: IArtifactSheet = {
   name: "Wanderer's Troupe", rarity: [4, 5],
   pieces: {
     flower: "Troupe's Dawnlight",

@@ -3,8 +3,8 @@ import plume from './Item_Feather_of_Homecoming.png'
 import sands from './Item_Sundial_of_the_Sojourner.png'
 import goblet from './Item_Goblet_of_the_Sojourner.png'
 import circlet from './Item_Crown_of_Parting.png'
-import ArtifactSheet from '../../../Artifact/ArtifactSheetInterface'
-const artifact:ArtifactSheet = {
+import IArtifactSheet from '../../../Artifact/IArtifactSheet'
+const artifact: IArtifactSheet = {
   name: "Resolution of Sojourner", rarity: [3, 4],
   pieces: {
     flower: "Heart of Comradeship",

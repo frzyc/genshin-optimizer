@@ -1,10 +1,12 @@
-import ArtifactSheet from '../../../Artifact/ArtifactSheetInterface'
+
 import flower from './Item_Summer_Night\'s_Bloom.png'
 import plume from './Item_Summer_Night\'s_Finale.png'
 import circlet from './Item_Summer_Night\'s_Mask.png'
 import sands from './Item_Summer_Night\'s_Moment.png'
 import goblet from './Item_Summer_Night\'s_Waterballoon.png'
-const conditionals = {
+import IArtifactSheet from '../../../Artifact/IArtifactSheet'
+import { IConditionals } from '../../../Conditional/IConditional'
+const conditionals: IConditionals = {
   set4: {
     name: "With Shield",
     stats: {
@@ -13,7 +15,7 @@ const conditionals = {
     }
   }
 }
-const artifact:ArtifactSheet = {
+const artifact: IArtifactSheet = {
   name: "Retracing Bolide", rarity: [4, 5],
   pieces: {
     flower: "Summer Night's Bloom",

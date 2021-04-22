@@ -1,10 +1,10 @@
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
+import { IConditionals } from '../../../Conditional/IConditional'
 import WeaponSheet from '../../WeaponSheetInterace'
 import img from './Weapon_Wolf\'s_Gravestone.png'
 
 const refinementVals = [20, 25, 30, 35, 40]
 const refinementPartyAtkVal = [40, 50, 60, 70, 80]
-const conditionals : Conditionals = {
+const conditionals : IConditionals = {
   wt: {
     name: "Attacked Opponent with Low HP",
     maxStack: 1,

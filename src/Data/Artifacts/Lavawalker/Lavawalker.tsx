@@ -3,15 +3,15 @@ import plume from './Item_Lavawalker\'s_Salvation.png'
 import sands from './Item_Lavawalker\'s_Torment.png'
 import goblet from './Item_Lavawalker\'s_Epiphany.png'
 import circlet from './Item_Lavawalker\'s_Wisdom.png'
-import ArtifactSheet from '../../../Artifact/ArtifactSheetInterface'
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
-const conditionals: Conditionals = {
+import IArtifactSheet from '../../../Artifact/IArtifactSheet'
+import { IConditionals } from '../../../Conditional/IConditional'
+const conditionals: IConditionals = {
   set4: {
     name: <span>Enemies that are Burning or affected by <span className="text-pyro">Pyro</span></span>,
     stats: { dmg_: 35 }
   }
 }
-const artifact: ArtifactSheet = {
+const artifact: IArtifactSheet = {
   name: "Lavawalker", rarity: [4, 5],
   pieces: {
     flower: "Lavawalker's Resolution",

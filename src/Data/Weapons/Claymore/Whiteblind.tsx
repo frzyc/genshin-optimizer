@@ -1,9 +1,9 @@
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
+import { IConditionals } from '../../../Conditional/IConditional'
 import WeaponSheet from '../../WeaponSheetInterace'
 import img from './Weapon_Whiteblind.png'
 
 const refinementVals = [6, 7.5, 9, 10.5, 12]
-const conditionals: Conditionals = {
+const conditionals: IConditionals = {
   infusionBlade: {
     name: "Normal/Charged Attack Hits",
     maxStack: 4,

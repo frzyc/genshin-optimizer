@@ -1,7 +1,7 @@
 import circlet from './Item_Tiara_of_Frost.png'
-import ArtifactSheet from '../../../Artifact/ArtifactSheetInterface'
-const artifact:ArtifactSheet = {
-  name: "Prayers to Springtime", rarity: [3, 4], 
+import IArtifactSheet from '../../../Artifact/IArtifactSheet'
+const artifact: IArtifactSheet = {
+  name: "Prayers to Springtime", rarity: [3, 4],
   pieces: {
     circlet: "Tiara of Frost"
   },

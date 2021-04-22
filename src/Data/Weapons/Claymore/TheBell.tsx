@@ -1,11 +1,11 @@
 import DisplayPercent from "../../../Components/DisplayPercent"
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
+import { IConditionals } from '../../../Conditional/IConditional'
 import WeaponSheet from '../../WeaponSheetInterace'
 import img from './Weapon_The_Bell.png'
 
 const refinementVals = [12, 15, 18, 21, 24]
 const refinementShieldVals = [20, 23, 26, 29, 32]
-const conditionals : Conditionals = {
+const conditionals : IConditionals = {
   rg: {
     name: "Taking DMG",
     maxStack: 1,

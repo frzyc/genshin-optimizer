@@ -1,11 +1,11 @@
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
+import { IConditionals } from '../../../Conditional/IConditional'
 import WeaponSheet from '../../WeaponSheetInterace'
 import img from './Weapon_Elegy_for_the_End.png'
 
 const refinementEM = [60, 75, 90, 105, 120]
 const refinementIncEM = [100, 125, 150, 175, 200]
 const refinementATK_ = [20, 25, 30, 35, 40]
-const conditionals : Conditionals = {
+const conditionals : IConditionals = {
   pr: {
     name: "Millennial Movement: Farewell Song",
     maxStack: 1,

@@ -4,8 +4,8 @@ import sands from './Item_Traveling_Doctor\'s_Pocket_Watch.png'
 import goblet from './Item_Traveling_Doctor\'s_Medicine_Pot.png'
 import circlet from './Item_Traveling_Doctor\'s_Handkerchief.png'
 import DisplayPercent from '../../../Components/DisplayPercent'
-import ArtifactSheet from '../../../Artifact/ArtifactSheetInterface'
-const artifact:ArtifactSheet = {
+import IArtifactSheet from '../../../Artifact/IArtifactSheet'
+const artifact:IArtifactSheet = {
   name: "Traveling Doctor", rarity: [3],
   pieces: {
     flower: "Traveling Doctor's Silver Lotus",

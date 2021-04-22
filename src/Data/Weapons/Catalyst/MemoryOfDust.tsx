@@ -1,9 +1,9 @@
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
+import { IConditionals } from '../../../Conditional/IConditional'
 import WeaponSheet from '../../WeaponSheetInterace'
 import img from './Weapon_Memory_of_Dust.png'
 
 const refinementVals = [4, 5, 6, 7, 8]
-const conditionals: Conditionals = {
+const conditionals: IConditionals = {
   gm: {
     name: "Hits on opponents",
     states: {

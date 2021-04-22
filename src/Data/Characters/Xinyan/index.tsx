@@ -15,9 +15,9 @@ import passive3 from './Talent_A_Rad_Recipe.png'
 import Stat from '../../../Stat';
 import formula, { data } from './data';
 import { getTalentStatKey, getTalentStatKeyVariant } from "../../../Build/Build";
-import CharacterSheet from '../../CharacterSheetInterface'
-import { Conditionals } from '../../../Conditional/Conditionalnterface'
-const conditionals: Conditionals = {
+import ICharacterSheet from '../../ICharacterSheet'
+import { IConditionals } from '../../../Conditional/IConditional'
+const conditionals: IConditionals = {
   NowThatsRockNRoll: {
     canShow: stats => stats.ascension >= 4,
     name: <span>Shielded by <b>Sweeping Fervor</b></span>,
@@ -38,7 +38,7 @@ const conditionals: Conditionals = {
     stats: { physical_enemyRes_: -15, }//TODO: party buff
   }
 }
-const char: CharacterSheet = {
+const char: ICharacterSheet = {
   name: "Xinyan",
   cardImg: card,
   thumbImg: thumb,
