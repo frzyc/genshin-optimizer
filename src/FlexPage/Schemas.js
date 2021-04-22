@@ -116,7 +116,7 @@ const characterV1 = object({
     delete character.artifactConditionals
     delete character.talentConditionals
     delete character.weapon.conditionalNum
-    character.conditionalValues = {}
+    character.conditionalValues = { weapon: {}, artifact: {}, character: {} }
     return character
   }
 })
@@ -153,6 +153,7 @@ const characterV2 = object({
         }
         current[last] = value.map(item => isNaN(parseFloat(item)) ? item : parseFloat(item))
       }
+      console.log(conditionalValues)
       return conditionalValues
     }
   }),
