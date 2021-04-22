@@ -2,6 +2,9 @@
 //        ONLY APPEND NEW ENTRIES
 // The index of items in this list is used to
 // compress the exported data. Removing an item
+
+import { crawlObject } from "../Util/Util"
+
 // from this list will shift subsequent entries.
 const slots = ["flower", "plume", "sands", "goblet", "circlet",]
 const hitModes = ["hit", "avgHit", "critHit",]
@@ -75,17 +78,12 @@ const artifact = object({
     })
   )
 })
-const conditional = array(
-  object({
-    srcKey: string,
-    srcKey2: string,
-    conditionalNum: uint(1),
-  }), {
-  // Add this here because someone is being naughty.
-  encode: (array) => array.filter(({ srcKey2 }) => srcKey2?.match(/^[a-z0-9\-_]+$/i))
-  }
-)
-const weapon = object({
+const conditionalV1 = array(object({
+  srcKey: string,
+  srcKey2: string,
+  conditionalNum: uint(1),
+}))
+const weaponV1 = object({
   key: string,
   levelKey: string,
   refineIndex: uint(1),
@@ -93,7 +91,14 @@ const weapon = object({
   overrideSubVal: float,
   conditionalNum: uint(1),
 })
-const character = object({
+const weaponV2 = object({
+  key: string,
+  levelKey: string,
+  refineIndex: uint(1),
+  overrideMainVal: float,
+  overrideSubVal: float,
+})
+const characterV1 = object({
   characterKey,
   hitMode,
   reactionMode,
@@ -102,19 +107,72 @@ const character = object({
   levelKey: string,
   autoInfused: bool,
   talentLevelKeys: object({ auto: uint(1), skill: uint(1), burst: uint(1) }),
-  artifactConditionals: conditional,
+  artifactConditionals: conditionalV1,
   baseStatOverrides: sparse(string, float),
-  talentConditionals: conditional,
-  weapon,
+  talentConditionals: conditionalV1,
+  weapon: weaponV1,
+}, {
+  decode: (character) => {
+    delete character.artifactConditionals
+    delete character.talentConditionals
+    delete character.weapon.conditionalNum
+    character.conditionalValues = {}
+    return character
+  }
+})
+const characterV2 = object({
+  characterKey,
+  hitMode,
+  reactionMode,
+  constellation: uint(1),
+  overrideLevel: uint(2),
+  levelKey: string,
+  autoInfused: bool,
+  talentLevelKeys: object({ auto: uint(1), skill: uint(1), burst: uint(1) }),
+  baseStatOverrides: sparse(string, float),
+  weapon: weaponV2,
+  conditionalValues: array(object({
+    path: array(string), value: array(string)
+  }), {
+    encode: (conditionalValues) => {
+      let result = []
+      crawlObject(conditionalValues, [], c => Array.isArray(c), (value, path) => {
+        result.push({ path, value: value.map(item => item.toString()) })
+      })
+      return result
+    },
+    decode: (pathvalues) => {
+      let conditionalValues = {}
+      for (const { path, value } of pathvalues) {
+        let last = path.pop()
+        let current = conditionalValues
+        for (const key of path) {
+          const next = current[key] ?? {}
+          current[key] = next
+          current = next
+        }
+        current[last] = value.map(item => isNaN(parseFloat(item)) ? item : parseFloat(item))
+      }
+      return conditionalValues
+    }
+  }),
+  reserved: array(uint(1)),
+}, {
+  encode: (value) => { value.reserved = []; return value },
+  decode: (value) => { delete value.reserved; return value },
 })
 
-const flex = object({
+const flexV1 = object({
   artifacts: array(artifact),
-  character,
+  character: characterV1,
+})
+const flexV2 = object({
+  artifacts: array(artifact),
+  character: characterV2,
 })
 
 export const schemas = {
-  flex
+  flexV1, flexV2
 }
 // For testing purpose only, no need to maintain strict ordering
 export const constants = {

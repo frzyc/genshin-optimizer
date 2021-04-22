@@ -1,12 +1,11 @@
-import { chars, arts, characterObj, flexObj } from './FlexUtil.test.data'
+import { characters, artifacts, flexObj, oldURL } from './FlexUtil.test.data'
 import { createFlexObj, parseFlexObj } from './FlexUtil'
 import { DatabaseInitAndVerify } from '../Database/DatabaseUtil'
-import urlon from 'urlon'
 import { saveToLocalStorage } from '../Util/Util'
 
 function setupLS() {
-  Object.entries(chars).map(([id, char]) => saveToLocalStorage(`char_${id}`, char))
-  Object.entries(arts).map(([id, art]) => saveToLocalStorage(id, art))
+  characters.map(char => saveToLocalStorage(`char_${char.characterKey}`, char))
+  Object.entries(artifacts).map(([id, art]) => saveToLocalStorage(id, art))
 }
 describe('flex import export', () => {
   beforeEach(() => {
@@ -16,9 +15,11 @@ describe('flex import export', () => {
   afterEach(() => localStorage.clear())
 
   test('should support round tripping', () => {
-    expect(parseFlexObj(createFlexObj("ningguang"))).toEqual(characterObj)
+    expect(parseFlexObj(createFlexObj("hutao"))).toEqual(flexObj)
   })
   test('should support old format', () => {
-    expect(parseFlexObj(urlon.stringify(flexObj))).toEqual(characterObj)
+    let obj = parseFlexObj(oldURL.split("flex?")[1])
+    // We're dropping conditional values from old version
+    expect({ ...obj, conditionalValues: flexObj.conditionalValues }).toEqual(flexObj)
   })
 })

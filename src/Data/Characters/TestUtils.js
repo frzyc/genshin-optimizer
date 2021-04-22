@@ -29,7 +29,7 @@ export function parseTestFlexObject(url) {
     return {
       ...Object.fromEntries(substats
         .filter(s => s.key != "")
-        .map(({key, value}) => [ key, value ])),
+        .map(({ key, value }) => [key, value])),
       [mainStatKey]: Artifact.getMainStatValue(mainStatKey, numStars, level)
     }
   })

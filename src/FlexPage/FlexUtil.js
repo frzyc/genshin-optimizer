@@ -3,7 +3,6 @@ import CharacterDatabase from "../Database/CharacterDatabase";
 import { CurrentDatabaseVersion } from "../Database/DatabaseUtil";
 import { decode, encode } from "./CodingUtil";
 import { schemas } from "./Schemas";
-import urlon from 'urlon'
 
 export function createFlexObj(characterKey) {
   const character = CharacterDatabase.get(characterKey)
@@ -19,7 +18,7 @@ export function createFlexObj(characterKey) {
 // TODO: Remove this when all test URLs are converted to new format
 export function _createFlexObj(character, artifacts) {
   try {
-    return "v=1&d=" + encode({ character, artifacts }, schemas.flex)
+    return "v=2&d=" + encode({ character, artifacts }, schemas.flexV2)
   } catch (error) {
     if (process.env.NODE_ENV === "development")
       console.error(`Fail to encode data on path ${error.path ?? []}: ${error}`)
@@ -32,8 +31,9 @@ export function parseFlexObj(string) {
 
   try {
     switch (parseInt(parameters.v)) {
-      case 1: return parseFlexObj1(parameters.d)
-      default: return parseFlexObj0(urlon.parse(string))
+      case 2: return parseFlexObjFromSchema(parameters.d, schemas.flexV2)
+      case 1: return parseFlexObjFromSchema(parameters.d, schemas.flexV1)
+      default: return null
     }
   } catch (error) {
     if (process.env.NODE_ENV === "development")
@@ -42,27 +42,13 @@ export function parseFlexObj(string) {
   }
 }
 
-function parseFlexObj1(string) {
-  const { character, artifacts } = decode(string, schemas.flex)
+function parseFlexObjFromSchema(string, schema) {
+  const { character, artifacts } = decode(string, schema)
   artifacts.forEach(artifact => {
     artifact.location = character.characterKey
   })
   return {
     databaseVersion: CurrentDatabaseVersion,
     artifacts, ...character
-  }
-}
-function parseFlexObj0(character) {
-  const { dbv, characterKey, levelKey, hitMode, reactionMode, artifactConditionals, baseStatOverrides, weapon, autoInfused, talentConditionals, constellation, overrideLevel, tlvl, artifacts } = character
-  const characterkey = character.characterKey
-  character.artifacts.forEach(art => {
-    art.location = characterkey
-    art.substats = Object.entries(art.substats).map(([key, value]) => ({ key, value }))
-  });
-  const [auto, skill, burst] = tlvl
-  return {
-    databaseVersion: dbv,
-    characterKey, levelKey, hitMode, reactionMode, artifactConditionals, baseStatOverrides, weapon, autoInfused, talentConditionals, constellation, overrideLevel,
-    talentLevelKeys: { auto, skill, burst }, artifacts
   }
 }
