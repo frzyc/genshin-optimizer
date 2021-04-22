@@ -142,9 +142,9 @@ const characterV2 = object({
       return result
     },
     decode: (pathvalues) => {
-      let conditionalValues = {}
+      const conditionalValues = { weapon: {}, artifact: {}, character: {} }
       for (const { path, value } of pathvalues) {
-        let last = path.pop()
+        const last = path.pop()
         let current = conditionalValues
         for (const key of path) {
           const next = current[key] ?? {}

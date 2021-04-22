@@ -23,7 +23,7 @@ export function computeAllStats(baseStats) {
 }
 
 export function parseTestFlexObject(url) {
-  let character = parseFlexObj(url.split("flex?")[1])
+  let [character] = parseFlexObj(url.split("flex?")[1])
   let artifacts = character.artifacts.map(artifact => {
     let { numStars, level, mainStatKey, substats } = artifact
     return {

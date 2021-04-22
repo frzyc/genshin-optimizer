@@ -15,10 +15,10 @@ describe('flex import export', () => {
   afterEach(() => localStorage.clear())
 
   test('should support round tripping', () => {
-    expect(parseFlexObj(createFlexObj("hutao"))).toEqual(flexObj)
+    expect(parseFlexObj(createFlexObj("hutao"))[0]).toEqual(flexObj)
   })
   test('should support old format', () => {
-    let obj = parseFlexObj(oldURL.split("flex?")[1])
+    let [obj] = parseFlexObj(oldURL.split("flex?")[1])
     // We're dropping conditional values from old version
     expect({ ...obj, conditionalValues: flexObj.conditionalValues }).toEqual(flexObj)
   })

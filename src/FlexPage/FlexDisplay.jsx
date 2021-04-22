@@ -12,9 +12,9 @@ export default function TestDisplay() {
   const location = useLocation()
   const searchStr = location.search
   if (searchStr) {
-    const character = parseFlexObj(searchStr.substring(1))
+    const [character, version] = parseFlexObj(searchStr.substring(1))
     if (!character) return <Redirect to={`/`} />
-    if (searchStr.startsWith("?$"))
+    if (version !== 2)
       return <Redirect to={`/flex?${_createFlexObj(character, character.artifacts)}`} />
     return <Display character={character} />
   } else {
