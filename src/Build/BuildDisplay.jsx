@@ -37,7 +37,7 @@ const initialBuildSettings = () => ({
   statFilters: {},
   mainStatKeys: ["", "", ""],
   optimizationTarget: "finalATK",//TODO need to validate
-  artifactsAssumeFull: false,
+  mainStatAssumptionLevel: 0,
   useLockedArts: false,
   ascending: false,
 })
@@ -66,7 +66,7 @@ function buildSettingsReducer(state, action) {
 export default function BuildDisplay({ location: { characterKey: propCharacterKey } }) {
   const [characterKey, setcharacterKey] = useState("")
   const [buildSettings, buildSettingsDispatch] = useReducer(buildSettingsReducer, initialBuildSettings())
-  const { setFilters, statFilters, mainStatKeys, optimizationTarget, artifactsAssumeFull, useLockedArts, ascending, } = buildSettings
+  const { setFilters, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useLockedArts, ascending, } = buildSettings
 
   const [builds, setbuilds] = useState([])
   const [maxBuildsToShow, setmaxBuildsToShow] = useState(maxBuildsToShowDefault)
@@ -172,13 +172,13 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     setgenerationSkipped(0)
     //get the formula for this targer
 
-    initialStats.artifactsAssumeFull = artifactsAssumeFull
+    initialStats.mainStatAssumptionLevel = mainStatAssumptionLevel
     const artifactSetEffects = Artifact.getAllArtifactSetEffectsObj(initialStats)
     const splitArtifacts = deepClone(split)
     //add mainStatVal to each artifact
     Object.values(splitArtifacts).forEach(artArr => {
       artArr.forEach(art => {
-        art.mainStatVal = Artifact.getMainStatValue(art.mainStatKey, art.numStars, artifactsAssumeFull ? art.numStars * 4 : art.level);
+        art.mainStatVal = Artifact.getMainStatValue(art.mainStatKey, art.numStars, Math.max(Math.min(mainStatAssumptionLevel, art.numStars * 4), art.level));
       })
     })
     //generate the key dependencies for the formula
@@ -206,14 +206,14 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
         label: totBuildNumber
       })
       const builds = e.data.builds.map(obj =>
-        Character.calcualteBuildwithArtifact(initialStats, obj.artifacts))
+        Character.calculateBuildwithArtifact(initialStats, obj.artifacts))
       setbuilds(builds)
       setgeneratingBuilds(false)
       worker.current.terminate()
       worker.current = null
     }
     worker.current.postMessage(data)
-  }, [split, totBuildNumber, artifactsAssumeFull, ascending, initialStats, maxBuildsToShow, optimizationTarget, setFilters, statFilters])
+  }, [split, totBuildNumber, mainStatAssumptionLevel, ascending, initialStats, maxBuildsToShow, optimizationTarget, setFilters, statFilters])
 
   //try to generate build when build numbers are low
   useEffect(() => {
@@ -236,8 +236,6 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     <Dropdown.Divider />
     <CharacterSelectionDropdownList onSelect={cKey => selectCharacter(cKey)} />
   </DropdownButton>, [characterKey, generatingBuilds, selectCharacter])
-
-  const toggleArtifactsAssumeFull = () => buildSettingsDispatch({ artifactsAssumeFull: !buildSettings.artifactsAssumeFull })
 
   const sortByText = useMemo(() => {
     if (Array.isArray(optimizationTarget)) {
@@ -342,10 +340,10 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
                 <Col className="mb-2" xs={12}>
                   <Card bg="lightcontent" text="lightfont">
                     <Card.Header>
-                      <span>Artifact Main Stat</span>
-                      <Button className="float-right text-right" variant={artifactsAssumeFull ? "orange" : "primary"} onClick={toggleArtifactsAssumeFull} disabled={generatingBuilds}>
-                        <span><FontAwesomeIcon icon={artifactsAssumeFull ? faCheckSquare : faSquare} className="fa-fw" /> Assume Fully Leveled</span>
-                      </Button>
+                      <Row>
+                        <Col>Artifact Main Stat</Col>
+                        <Col xs="auto"><AssumeFullLevelToggle mainStatAssumptionLevel={mainStatAssumptionLevel} setmainStatAssumptionLevel={v => buildSettingsDispatch({ mainStatAssumptionLevel: v })} /></Col>
+                      </Row>
                     </Card.Header>
                     <Card.Body className="mb-n2">
                       {artifactsSlotsToSelectMainStats.map((slotKey, index) =>
@@ -658,4 +656,24 @@ function BuildAlert({ totBuildNumber, generatingBuilds, generationSkipped, gener
         <Alert variant="warning" className="mb-0"><span>Current configuration will generate <b>{totalBuildNumberString}</b> builds for <b>{characterName}</b>. This might take quite a while to generate...</span></Alert> :
         <Alert variant="success" className="mb-0"><span>Current configuration {totBuildNumber <= maxBuildsToShow ? "generated" : "will generate"} <b>{totalBuildNumberString}</b> builds for <b>{characterName}</b>.</span></Alert>)
   }
+}
+
+const levels = {
+  0: <span>No level assumption</span>,
+  4: <span>Assume at least level 4</span>,
+  8: <span>Assume at least level 8</span>,
+  12: <span>Assume at least level 12</span>,
+  16: <span>Assume at least level 16</span>,
+  20: <span>Assume at least level 20</span>
+}
+function AssumeFullLevelToggle({ mainStatAssumptionLevel = 0, setmainStatAssumptionLevel }) {
+  return <OverlayTrigger overlay={<Tooltip>Change Main Stat value to be at least a specific level. Does not change substats.</Tooltip>}  >
+    <Dropdown>
+      <Dropdown.Toggle variant={mainStatAssumptionLevel ? "orange" : "primary"}>{levels[mainStatAssumptionLevel]}</Dropdown.Toggle>
+      <Dropdown.Menu>
+        {Object.entries(levels).map(([key, text]) => <Dropdown.Item key={key} onClick={() => setmainStatAssumptionLevel(parseInt(key))}>{text}</Dropdown.Item>)}
+      </Dropdown.Menu>
+    </Dropdown>
+  </OverlayTrigger>
+
 }

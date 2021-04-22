@@ -138,7 +138,7 @@ function DatabaseInitAndVerify() {
       if (character.buildSetting) {
         const { artifactsAssumeFull = false, ascending = false, mainStat = ["", "", ""], setFilters = [{ key: "", num: 0 }, { key: "", num: 0 }, { key: "", num: 0 }] } = character.buildSetting ?? {}
         delete character.buildSetting
-        character.buildSettings = { artifactsAssumeFull, ascending, mainStatKeys: mainStat, setFilters }
+        character.buildSettings = { mainStatAssumptionLevel: artifactsAssumeFull ? 20 : 0, ascending, mainStatKeys: mainStat, setFilters }
       }
       delete character.weapon?.conditionalNum
       valid = false

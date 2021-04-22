@@ -19,7 +19,7 @@ import Stat from '../Stat';
 import { useForceUpdate } from '../Util/ReactUtil';
 import Artifact from './Artifact';
 import PercentBadge from './PercentBadge';
-export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete, assumeFull = false }) {
+export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete, mainStatAssumptionLevel = 0 }) {
   const forceUpdateHook = useForceUpdate()
   useEffect(() => {
     Artifact.getDataImport()?.then(forceUpdateHook)
@@ -37,8 +37,8 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
   if (!art) return null;
   if (!art.maximumEfficiency) Artifact.substatsValidation(art)
   const { setKey, slotKey, numStars = 0, level = 0, mainStatKey, substats = [], location = "", lock, currentEfficiency = 0, maximumEfficiency = 0 } = art
-  let mainStatLevel = assumeFull ? numStars * 4 : level
-  let assFullColor = assumeFull && level !== numStars * 4
+  const mainStatLevel = Math.max(Math.min(mainStatAssumptionLevel, numStars * 4), level)
+  let assFullColor = mainStatAssumptionLevel && level !== numStars * 4
   let mainStatVal = <span className={assFullColor ? "text-orange" : ""}>{Artifact.getMainStatValue(mainStatKey, numStars, mainStatLevel, "")}{Stat.getStatUnit(mainStatKey)}</span>
   let artifactValid = substats.every(sstat => (!sstat.key || (sstat.key && sstat.value && sstat?.rolls?.length)))
 

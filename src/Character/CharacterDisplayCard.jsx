@@ -142,8 +142,8 @@ export default function CharacterDisplayCard({ characterKey: propCharacterKey, c
 
   const { levelKey, artifacts: flexArts } = character
 
-  const artifactsAssumeFull = Boolean(newBuild?.artifactsAssumeFull)
-  const equippedBuild = useMemo(() => updateState && Character.calculateBuild(character, artifactsAssumeFull), [character, updateState, artifactsAssumeFull])
+  const mainStatAssumptionLevel = newBuild?.mainStatAssumptionLevel ?? 0
+  const equippedBuild = useMemo(() => updateState && Character.calculateBuild(character, mainStatAssumptionLevel), [character, updateState, mainStatAssumptionLevel])
 
   const HeaderIconDisplay = characterKey ? <span >
     <Image src={Character.getThumb(characterKey)} className="thumb-small my-n1 ml-n2" roundedCircle />
@@ -185,7 +185,7 @@ export default function CharacterDisplayCard({ characterKey: propCharacterKey, c
             </DropdownButton>
           </ButtonGroup> : <span>{HeaderIconDisplay} {Character.getLevelString(character)}</span>}
         </Col>
-        {artifactsAssumeFull && <Col xs="auto"><Alert className="mb-0 py-1 h-100" variant="orange" ><b>Assume Main Stats are Fully Leveled</b></Alert></Col>}
+        {Boolean(mainStatAssumptionLevel) && <Col xs="auto"><Alert className="mb-0 py-1 h-100" variant="orange" ><b>Assume Main Stats are Level {mainStatAssumptionLevel}</b></Alert></Col>}
         {/* Compare against new build toggle */}
         {newBuild ? <Col xs="auto">
           <ButtonGroup>

@@ -237,7 +237,7 @@ export default class Character {
     CharacterDatabase.remove(characterKey)
   }
 
-  static calculateBuild = (character, artifactsAssumeFull = false) => {
+  static calculateBuild = (character, mainStatAssumptionLevel = 0) => {
     let artifacts
     if (character.artifacts) //from flex
       artifacts = Object.fromEntries(character.artifacts.map((art, i) => [i, art]))
@@ -245,11 +245,11 @@ export default class Character {
       artifacts = Object.fromEntries(Object.entries(character.equippedArtifacts).map(([key, artid]) => [key, ArtifactDatabase.get(artid)]))
     else return {}//probably won't happen. just in case.
     const initialStats = Character.createInitialStats(character)
-    if (artifactsAssumeFull) initialStats.artifactsAssumeFull = true
-    return this.calcualteBuildwithArtifact(initialStats, artifacts)
+    initialStats.mainStatAssumptionLevel = mainStatAssumptionLevel
+    return this.calculateBuildwithArtifact(initialStats, artifacts)
   }
 
-  static calcualteBuildwithArtifact = (initialStats, artifacts) => {
+  static calculateBuildwithArtifact = (initialStats, artifacts) => {
     const setToSlots = Artifact.setToSlots(artifacts)
     let artifactSetEffectsStats = Artifact.getArtifactSetEffectsStats(setToSlots)
 
@@ -258,7 +258,7 @@ export default class Character {
     Object.values(artifacts).forEach(art => {
       if (!art) return
       //main stats
-      stats[art.mainStatKey] = (stats[art.mainStatKey] || 0) + Artifact.getMainStatValue(art.mainStatKey, art.numStars, stats.artifactsAssumeFull ? art.numStars * 4 : art.level)
+      stats[art.mainStatKey] = (stats[art.mainStatKey] || 0) + Artifact.getMainStatValue(art.mainStatKey, art.numStars, Math.max(Math.min(stats.mainStatAssumptionLevel, art.numStars * 4), art.level))
       //substats
       art.substats.forEach((substat) =>
         substat && substat.key && (stats[substat.key] = (stats[substat.key] || 0) + substat.value))

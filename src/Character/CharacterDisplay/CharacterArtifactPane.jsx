@@ -11,7 +11,7 @@ function CharacterArtifactPane({ character, character: { characterKey }, equippe
   const history = useHistory()
   //choose which one to display stats for
   const stats = newBuild ? newBuild : equippedBuild
-  const artifactsAssumeFull = Boolean(stats?.artifactsAssumeFull)
+  const mainStatAssumptionLevel = stats?.mainStatAssumptionLevel ?? 0
   const statKeys = useMemo(() => Character.getDisplayStatKeys(stats), [stats])
   const edit = useCallback(
     artid => history.push({
@@ -37,7 +37,7 @@ function CharacterArtifactPane({ character, character: { characterKey }, equippe
       </Card.Body>
       <Card.Footer>
         {newBuild ? <Button onClick={equipArts}>Equip all artifacts to current character</Button> : (editable && <Button onClick={unequipArts}>Unequip all artifacts</Button>)}
-        {artifactsAssumeFull && <Alert className="float-right text-right mb-0 py-2" variant="orange" ><b>Assume Main Stats are Fully Leveled</b></Alert>}
+        {Boolean(mainStatAssumptionLevel) && <Alert className="float-right text-right mb-0 py-2" variant="orange" ><b>Assume Main Stats are Level {mainStatAssumptionLevel}</b></Alert>}
       </Card.Footer>
     </Card>
     <Row className="mb-n2">
@@ -59,7 +59,7 @@ function CharacterArtifactPane({ character, character: { characterKey }, equippe
           </Col>
         }) : Artifact.getSlotKeys().map(slotKey =>
           Boolean(stats.equippedArtifacts[slotKey]) && <Col {...artLayoutSize} key={stats.equippedArtifacts[slotKey]} className="mb-2">
-            <ArtifactCard artifactId={stats.equippedArtifacts[slotKey]} assumeFull={artifactsAssumeFull} onEdit={() => edit(stats.equippedArtifacts[slotKey])} />
+            <ArtifactCard artifactId={stats.equippedArtifacts[slotKey]} mainStatAssumptionLevel={mainStatAssumptionLevel} onEdit={() => edit(stats.equippedArtifacts[slotKey])} />
           </Col>
         )}
     </Row>
