@@ -200,19 +200,21 @@ function stringToNumber(string) {
   return result
 }
 
-function BlockStream(string) {
-  this.string = string
-  this.offset = 0
-}
-BlockStream.prototype.take = function(count) {
-  if (this.offset + count > this.string.length)
-    throw new Error(`Cannot take ${count} items from ${this.string.slice(this.offset)}`)
+class BlockStream {
+  constructor(string) {
+    this.string = string
+    this.offset = 0
+  }
+  take(count) {
+    if (this.offset + count > this.string.length)
+      throw new Error(`Cannot take ${count} items from ${this.string.slice(this.offset)}`)
 
-  const result = this.string.slice(this.offset, this.offset + count)
-  this.offset += count
-  return result
-}
-BlockStream.prototype.end = function() {
-  if (this.string.length !== this.offset)
-    throw new Error(`Unused string ${this.string.slice(this.offset)}`)
+    const result = this.string.slice(this.offset, this.offset + count)
+    this.offset += count
+    return result
+  }
+  end() {
+    if (this.string.length !== this.offset)
+      throw new Error(`Unused string ${this.string.slice(this.offset)}`)
+  }
 }
