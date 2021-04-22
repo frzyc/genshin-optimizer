@@ -4,6 +4,7 @@
 // compress the exported data. Removing an item
 
 import { crawlObject } from "../Util/Util"
+import { uintToString, stringToUInt } from "./CodingUtil"
 
 // from this list will shift subsequent entries.
 const slots = ["flower", "plume", "sands", "goblet", "circlet",]
@@ -78,6 +79,63 @@ const artifact = object({
     })
   )
 })
+const conditionalValues = array(object({
+  path: array(string), value: array(string)
+}), {
+  encode: (conditionalValues) => {
+    let result = []
+    crawlObject(conditionalValues, [], c => Array.isArray(c), (value, path) => {
+      result.push({ path, value: value.map(item => item.toString()) })
+    })
+    result.filter(({ path }) => {
+      switch (path[0]) {
+        case "character":
+          path[0] = "c"
+          path[1] = uintToString(characterKeys.indexOf(path[1]))
+          break
+        case "weapon":
+          path[0] = "w"
+          break
+        case "artifact":
+          path[0] = "a"
+          path[1] = uintToString(artifactSets.indexOf(path[1]))
+          break
+        default: return false
+      }
+      return true
+    })
+    return result
+  },
+  decode: (pathvalues) => {
+    const conditionalValues = { weapon: {}, artifact: {}, character: {} }
+    for (const { path, value } of pathvalues) {
+      switch (path[0]) {
+        case "c":
+          path[0] = "character"
+          path[1] = characterKeys[stringToUInt(path[1])]
+          break
+        case "w":
+          path[0] = "weapon"
+          break
+        case "a":
+          path[0] = "artifact"
+          path[1] = artifactSets[stringToUInt(path[1])]
+          break
+        default:
+          continue
+      }
+      const last = path.pop()
+      let current = conditionalValues
+      for (const key of path) {
+        const next = current[key] ?? {}
+        current[key] = next
+        current = next
+      }
+      current[last] = value.map(item => isNaN(parseFloat(item)) ? item : parseFloat(item))
+    }
+    return conditionalValues
+  }
+})
 const conditionalV1 = array(object({
   srcKey: string,
   srcKey2: string,
@@ -131,31 +189,7 @@ const characterV2 = object({
   talentLevelKeys: object({ auto: uint(1), skill: uint(1), burst: uint(1) }),
   baseStatOverrides: sparse(string, float),
   weapon: weaponV2,
-  conditionalValues: array(object({
-    path: array(string), value: array(string)
-  }), {
-    encode: (conditionalValues) => {
-      let result = []
-      crawlObject(conditionalValues, [], c => Array.isArray(c), (value, path) => {
-        result.push({ path, value: value.map(item => item.toString()) })
-      })
-      return result
-    },
-    decode: (pathvalues) => {
-      const conditionalValues = { weapon: {}, artifact: {}, character: {} }
-      for (const { path, value } of pathvalues) {
-        const last = path.pop()
-        let current = conditionalValues
-        for (const key of path) {
-          const next = current[key] ?? {}
-          current[key] = next
-          current = next
-        }
-        current[last] = value.map(item => isNaN(parseFloat(item)) ? item : parseFloat(item))
-      }
-      return conditionalValues
-    }
-  }),
+  conditionalValues,
   reserved: array(uint(1)),
 }, {
   encode: (value) => { value.reserved = []; return value },

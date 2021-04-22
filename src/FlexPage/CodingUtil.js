@@ -129,28 +129,28 @@ function decodeString(stream, schema) {
 }
 
 function encodeUInt(uint, schema) {
-  const string = numberToString(uint, schema.length)
+  const string = uintToString(uint, schema.length)
   return schema.length ? string : (encodeLength(string.length) + string)
 }
 function decodeUInt(stream, schema) {
   let length = schema.length || decodeLength(stream)
-  return stringToNumber(stream.take(length))
+  return stringToUInt(stream.take(length))
 }
 
 // Keep the length low. We might want to reserve high bits for later extension.
 function encodeLength(length) {
   if (length >= 32)
     throw new Error(`Length (${length}) too large`)
-  return numberToString(length, 1)
+  return uintToString(length, 1)
 }
 function decodeLength(stream) {
-  let length = stringToNumber(stream.take(1))
+  let length = stringToUInt(stream.take(1))
   if (length >= 32)
     throw new Error(`Length (${length}) too large`)
   return length
 }
 
-function numberToString(number, length = 0) {
+export function uintToString(number, length = 0) {
   if (number < 0) throw new Error(`Cannot encode negative number ${number}`)
 
   var string = ""
@@ -176,7 +176,7 @@ function numberToString(number, length = 0) {
     throw new Error(`Cannot encode uint ${number}: value too large`)
   return string.padEnd(length, "0")
 }
-function stringToNumber(string) {
+export function stringToUInt(string) {
   let result = 0, multiplier = 1
 
   for (let i = 0; i < string.length; i++) {
