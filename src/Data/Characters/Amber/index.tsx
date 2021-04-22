@@ -18,7 +18,7 @@ import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import ICharacterSheet from '../../ICharacterSheet'
 import { IConditionals } from '../../../Conditional/IConditional'
 const conditionals: IConditionals = {
-  Wildfire: {
+  c6: { // Wildfire
     canShow: stats => stats.constellation >= 6,
     name: "Fiery Rain",
     stats: {//TODO: party buff
@@ -30,7 +30,7 @@ const conditionals: IConditionals = {
       value: "10s",
     }]
   },
-  PreciseShot: {
+  a4: { // Precise Shot
     canShow: stats => stats.ascension >= 4,
     name: "Aim shot hit on weak spots",
     stats: {
@@ -175,7 +175,7 @@ const char: ICharacterSheet = {
           text: "Energy Cost",
           value: 40,
         },],
-        conditional: conditionals.Wildfire
+        conditional: conditionals.c6
       }],
       stats: stats => stats.ascension >= 1 ? ({
         burst_critRate_: 10
@@ -191,7 +191,7 @@ const char: ICharacterSheet = {
       img: passive2,
       document: [{
         text: <span>Aimed Shot hits on weak spots increase ATK by 15% for 10s.</span>,
-        conditional: conditionals.PreciseShot
+        conditional: conditionals.a4
       }],
     },
     passive3: {

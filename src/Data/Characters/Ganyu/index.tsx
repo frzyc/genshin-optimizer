@@ -19,7 +19,7 @@ import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { IConditionals } from '../../../Conditional/IConditional'
 import ICharacterSheet from '../../ICharacterSheet'
 const conditionals: IConditionals = {
-  UndividedHeart: {
+  a1: { // UndividedHeart
     canShow: stats => stats.ascension >= 1,
     name: <span>After firing a <b>Frostflake</b> Arrow</span>,
     fields: [{
@@ -30,17 +30,17 @@ const conditionals: IConditionals = {
       value: "5s",
     }]
   },
-  DewDrinker: {
+  c1: { // DewDrinker
     canShow: stats => stats.constellation >= 1,
     name: <span>Opponent taking DMG from a Charge Level 2 <b>Frostflake Arrow</b> or <b>Frostflake Arrow Bloom</b> decreases opponents</span>,
     stats: { cryo_enemyRes_: -15 },
   },
-  Harmony: {
+  a4: { // Harmony
     canShow: stats => stats.ascension >= 4,
     name: <span>Active members in the AoE of <b>Celestial Shower</b></span>,
     stats: { cryo_dmg_: 20 },
   },
-  WestwardSojourn: {
+  c4: { // WestwardSojourn
     canShow: stats => stats.constellation >= 4,
     name: <span>Opponents standing within the AoE of <b>Celestial Shower</b></span>,
     maxStack: 5,
@@ -127,9 +127,9 @@ const char: ICharacterSheet = {
           formula: formula.charged.frostflakeBloom,
           variant: stats => getTalentStatKeyVariant("charged", stats, true),
         },],
-        conditional: conditionals.UndividedHeart
+        conditional: conditionals.a1
       }, {
-        conditional: conditionals.DewDrinker
+        conditional: conditionals.c1
       }, {
         text: <span><strong>Plunging Attack</strong> Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.</span>,
         fields: [{
@@ -214,9 +214,9 @@ const char: ICharacterSheet = {
           text: "Energy Cost",
           value: 60,
         }],
-        conditional: conditionals.Harmony
+        conditional: conditionals.a4
       }, {
-        conditional: conditionals.WestwardSojourn
+        conditional: conditionals.c4
       }],
     },
     passive1: {

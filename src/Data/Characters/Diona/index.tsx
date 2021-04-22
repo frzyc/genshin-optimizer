@@ -18,7 +18,7 @@ import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { IConditionals } from '../../../Conditional/IConditional'
 import ICharacterSheet from '../../ICharacterSheet'
 const conditionals: IConditionals = {
-  IcyPawsShield: {
+  c4: { // IcyPawsShield
     canShow: stats => stats.constellation >= 4,
     name: "Characters Shielded",
     stats: {
@@ -26,12 +26,12 @@ const conditionals: IConditionals = {
       staminaDec_: 10
     },
   },
-  CatsTailClosingTimeBelow50: {
+  c6n: { // CatsTailClosingTimeBelow50 (near)
     canShow: stats => stats.constellation >= 6,
     name: "Characters within radius below or equal 50% HP",
     stats: { incHeal_: 30 },
   },
-  TailClosingTimeAbove50: {
+  c6f: { // TailClosingTimeAbove50 (far)
     canShow: stats => stats.constellation >= 6,
     name: "Characters within radius above 50% HP",
     stats: { eleMas: 200 },
@@ -133,7 +133,7 @@ const char: ICharacterSheet = {
           text: "Hold CD",
           value: "15s",
         }],
-        conditional: conditionals.IcyPawsShield
+        conditional: conditionals.c4
       }]
     },
     burst: {
@@ -171,9 +171,9 @@ const char: ICharacterSheet = {
           text: "Energy Cost",
           value: 80,
         }],
-        conditional: conditionals.CatsTailClosingTime
+        conditional: conditionals.c6n
       }, {
-        conditional: conditionals.TailClosingTimeAbove50
+        conditional: conditionals.c6f
       }],
     },
     passive1: {

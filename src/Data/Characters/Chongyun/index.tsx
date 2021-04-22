@@ -18,7 +18,7 @@ import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { IConditionals } from '../../../Conditional/IConditional'
 import ICharacterSheet from '../../ICharacterSheet'
 const conditionals: IConditionals = {
-  RimechaserBlade: {
+  a4: { // Rimechaser Blade
     canShow: stats => stats.ascension >= 4,
     name: "Opponents hit by Rimechase Blade",
     stats: { cryo_enemyRes_: -10 },
@@ -27,7 +27,7 @@ const conditionals: IConditionals = {
       value: "8s",
     }]
   },
-  RallyOfFourBlades: {
+  c6: { // Rally of Four Blades
     canShow: stats => stats.constellation >= 6,
     name: "Enemy with lower MaxHP% than Chongyun",
     stats: { burst_dmg_: 15 }
@@ -123,7 +123,7 @@ const char: ICharacterSheet = {
           text: "CD",
           value: "15s",
         }],
-        conditional: conditionals.RimechaserBlade
+        conditional: conditionals.a4
       }],
     },
     burst: {
@@ -149,7 +149,7 @@ const char: ICharacterSheet = {
           text: "Spirit Blades Summoned",
           value: stats => stats.constellation < 6 ? 3 : 4
         }],
-        conditional: conditionals.RallyOfFourBlades
+        conditional: conditionals.c6
       }],
     },
     passive1: {

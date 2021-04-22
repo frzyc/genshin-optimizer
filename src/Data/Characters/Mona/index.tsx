@@ -19,7 +19,7 @@ import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { IConditionals } from '../../../Conditional/IConditional'
 import ICharacterSheet from '../../ICharacterSheet'
 const conditionals: IConditionals = {
-  StellarisPhantasm: {
+  q: { // StellarisPhantasm
     name: "Stellaris Phantasm",
     stats: stats => ({
       dmg_: data.burst.dmg_[stats.tlvl.burst],
@@ -27,7 +27,7 @@ const conditionals: IConditionals = {
         electrocharged_dmg_: 15,
         vaporize_dmg_: 15,
         swirl_dmg_: 15
-      },//TODO: frozen duration as a stat 
+      },//TODO: frozen duration as a stat
     }),
     fields: [{
       canShow: stats => stats.constellation >= 1,
@@ -39,12 +39,12 @@ const conditionals: IConditionals = {
       value: stats => `${data.burst.omen_duration[stats.tlvl.burst]}s`,
     }]
   },
-  ProphecyOfOblivion: {
+  c4: { // ProphecyOfOblivion
     canShow: stats => stats.constellation >= 4,
     name: <span>Any characters in the party hit an opponent affected by an <b>Omen</b></span>,
     stats: { critRate_: 15 },//TODO: party conditional
   },
-  RhetoricsOfCalamitas: {
+  c6: { // RhetoricsOfCalamitas
     canShow: stats => stats.constellation >= 6,
     name: <span>Upon entering <b>Illusory Torrent</b></span>,
     maxStack: 3,
@@ -172,7 +172,7 @@ const char: ICharacterSheet = {
           text: "Energy Cost",
           value: 60,
         }],
-        conditional: conditionals.StellarisPhantasm
+        conditional: conditionals.q
       }],
     },
     sprint: {
@@ -257,7 +257,7 @@ const char: ICharacterSheet = {
       img: c4,
       document: [{
         text: <span>When any character in the party attacks an opponent affected by the <b>Omen</b> status effect, their CRIT Rate is increased by 15%.</span>,
-        conditional: conditionals.ProphecyOfOblivion
+        conditional: conditionals.c4
       }],
     },
     constellation5: {
@@ -271,7 +271,7 @@ const char: ICharacterSheet = {
       img: c6,
       document: [{
         text: <span>Upon entering <b>Illusory Torrent</b>, Mona gains a 60% increase to the DMG her next Charged Attack per second of movement. A maximum DMG Bonus of 180% can be achieved in this manner. The effect lasts for no more than 8s.</span>,
-        conditional: conditionals.RhetoricsOfCalamitas
+        conditional: conditionals.c6
       }],
     }
   },

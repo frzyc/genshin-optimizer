@@ -18,7 +18,7 @@ import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { IConditionals } from '../../../Conditional/IConditional'
 import ICharacterSheet from '../../ICharacterSheet'
 const conditionals: IConditionals = {
-  FlamingSwordNemesisOfDark: {
+  c6: { // Flaming Sword Nemesis of Dark
     canShow: stats => stats.constellation >= 6,
     name: <span>After casting <b>Searing Onslaught</b></span>,
     stats: {
@@ -30,17 +30,17 @@ const conditionals: IConditionals = {
       value: "6s",
     }]
   },
-  BlessingOfPhoenix: {
+  a4: { // Blessing of Phoenix
     canShow: stats => stats.ascension >= 4,
     name: <span>During <b>Dawn</b></span>,
     stats: { pyro_dmg_: 20 },
   },
-  Conviction: {
+  c1: { // Conviction
     canShow: stats => stats.constellation >= 1,
     name: "Enemies with >50% HP",
     stats: { dmg_: 15 },
   },
-  SearingEmber: {
+  c2: { // SearingEmber
     canShow: stats => stats.constellation >= 2,
     name: "Take DMG",
     maxStack: 3,
@@ -153,7 +153,7 @@ const char: ICharacterSheet = {
             value: "12s",
           }]
       }, {
-        conditional: conditionals.FlamingSwordNemesisOfDark
+        conditional: conditionals.c6
       }],
     },
     burst: {
@@ -178,7 +178,7 @@ const char: ICharacterSheet = {
             text: "Energy Cost",
             value: 40,
           }],
-        conditional: conditionals.BlessingOfPhoenix
+        conditional: conditionals.a4
       }],
     },
     passive1: {
@@ -201,7 +201,7 @@ const char: ICharacterSheet = {
       img: c1,
       document: [{
         text: <span>	Diluc deals 15% more DMG to enemies whose HP is above 50%.</span>,
-        conditional: conditionals.Conviction
+        conditional: conditionals.c1
       }],
     },
     constellation2: {
@@ -212,7 +212,7 @@ const char: ICharacterSheet = {
           <p className="mb-2">When Diluc takes DMG, his ATK increases by 10%, and his ATK SPD increases by 5%. Last for 10s.</p>
           <p className="mb-0">This effect can stack up to 3 times and can only occur once every 1.5s.</p>
         </span>,
-        conditional: conditionals.SearingEmber
+        conditional: conditionals.c2
       }],
     },
     constellation3: {

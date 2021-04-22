@@ -19,12 +19,12 @@ import ElementalData from '../../ElementalData'
 import { IConditionals } from '../../../Conditional/IConditional'
 import ICharacterSheet from '../../ICharacterSheet'
 const conditionals: IConditionals = {
-  JadeShield: {
+  c6n: { // JadeShield (near)
     canShow: stats => stats.constellation >= 6,
     name: <span>Enemies near <b>Jade Shield</b></span>,
     stats: Object.fromEntries(Object.keys(ElementalData).map(k => [`${k}_enemyRes_`, -20])),//TODO: party buff
   },
-  ResonantWaves: {
+  c6d: { // ResonantWaves (on dmg)
     canShow: stats => stats.constellation >= 6,
     name: <span>When the <b>Jade Shield</b> takes DMG</span>,
     maxStack: 5,
@@ -199,7 +199,7 @@ const char: ICharacterSheet = {
           text: "Hold CD",
           value: "12s",
         }],
-        conditional: conditionals.JadeShield
+        conditional: conditionals.c6n
       }],
     },
     burst: {
@@ -249,7 +249,7 @@ const char: ICharacterSheet = {
             <li>Can stack up to 5 times, and lasts until the Jade Shield disappears.</li>
           </ul>
         </span>,
-        conditional: conditionals.ResonantWaves
+        conditional: conditionals.c6d
       }],
     },
     passive2: {

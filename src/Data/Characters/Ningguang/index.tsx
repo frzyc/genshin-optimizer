@@ -18,7 +18,7 @@ import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { IConditionals } from '../../../Conditional/IConditional'
 import ICharacterSheet from '../../ICharacterSheet'
 const conditionals: IConditionals = {
-  StrategicReserve: {
+  a4: { // StrategicReserve
     canShow: stats => stats.ascension >= 4,
     name: <span>Passing through <b>Jade Screen</b></span>,
     stats: { geo_dmg_: 12 },//TODO: party buff
@@ -27,7 +27,7 @@ const conditionals: IConditionals = {
       value: "10s",
     }]
   },
-  ExquisiteBeTheJade: {
+  c4: { // ExquisiteBeTheJade
     canShow: stats => stats.constellation >= 4,
     name: <span>Allies within 10m of <b>Jade Screen</b></span>,
     fields: [{
@@ -171,7 +171,7 @@ const char: ICharacterSheet = {
       img: passive2,
       document: [{
         text: <span>A character that passes through the <b>Jade Screen</b> will gain a 12% <span className="text-geo">Geo DMG Bonus</span> for 10s.</span>,
-        conditional: conditionals.StrategicReserve
+        conditional: conditionals.a4
       }],
     },
     passive3: {
@@ -200,7 +200,7 @@ const char: ICharacterSheet = {
       img: c4,
       document: [{
         text: <span>Allies within a 10m radius of the Jade Screen take 10% less Elemental DMG.</span>,
-        conditional: conditionals.ExquisiteBeTheJade
+        conditional: conditionals.c4
       }],
     },
     constellation5: {

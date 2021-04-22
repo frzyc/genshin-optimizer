@@ -18,7 +18,7 @@ import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { IConditionals } from '../../../Conditional/IConditional'
 import ICharacterSheet from '../../ICharacterSheet'
 const conditionals: IConditionals = {
-  StaticElectricityFieldDestiny: {
+  a4: { // StaticElectricityFieldDestiny
     canShow: stats => stats.ascension >= 4,
     name: "Opponents hit by Lightning Rose",
     stats: { enemyDEFRed_: 15 },
@@ -27,7 +27,7 @@ const conditionals: IConditionals = {
       value: "10s",
     }],
   },
-  ElectromagneticField: {
+  c2: { // ElectromagneticField
     canShow: stats => stats.constellation >= 2,
     name: "Holding Violent Arc",
     stats: { def_: 25 },
@@ -169,7 +169,7 @@ const char: ICharacterSheet = {
           text: "Energy Cost",
           value: 80,
         }],
-        conditional: conditionals.StaticElectricityFieldDestiny
+        conditional: conditionals.a4
       }],
     },
     passive1: {
@@ -202,7 +202,7 @@ const char: ICharacterSheet = {
             <li>Increases DEF by 25%.</li>
             <li>Increases Lisa's resistance to interruption.</li>
           </ul></span>,
-        conditional: conditionals.ElectromagneticField
+        conditional: conditionals.c2
       }],
     },
     constellation3: {

@@ -18,7 +18,7 @@ import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import ICharacterSheet from '../../ICharacterSheet'
 import { IConditionals } from '../../../Conditional/IConditional'
 const conditionals: IConditionals = {
-  CrispyOutsideTenderInside: {
+  c1: { // CrispyOutsideTenderInside
     canShow: stats => stats.constellation >= 1,
     name: "Opponents hit by Gouba",
     stats: { pyro_enemyRes_: -15 },
@@ -27,12 +27,12 @@ const conditionals: IConditionals = {
       value: "6s",
     }]
   },
-  CondensedPyronado: {
+  c6: { // CondensedPyronado
     canShow: stats => stats.constellation >= 6,
     name: <span>During <b>Pyronado</b></span>,
     stats: { pyro_dmg_: 15 },//TODO: party buff
   },
-  BewareItsSuperHot: {
+  a4: { // BewareItsSuperHot
     canShow: stats => stats.ascension >= 4,
     name: "Pick up chili pepper",
     stats: { atk_: 10 },//TODO: party buff
@@ -117,7 +117,7 @@ const char: ICharacterSheet = {
           text: "CD",
           value: "12s",
         }],
-        conditional: conditionals.CrispyOutsideTenderInside
+        conditional: conditionals.c1
       }],
     },
     burst: {
@@ -157,7 +157,7 @@ const char: ICharacterSheet = {
           text: "Energy Cost",
           value: 80,
         }],
-        conditional: conditionals.CondensedPyronado
+        conditional: conditionals.c6
       }],
     },
     passive1: {
@@ -170,7 +170,7 @@ const char: ICharacterSheet = {
       img: passive2,
       document: [{
         text: <span>When Guoba Attack's effect ends, Guoba leaves a chili pepper on the spot where it disappeared. Picking up a chili pepper increases ATK by 10% for 10s.</span>,
-        conditional: conditionals.BewareItsSuperHot
+        conditional: conditionals.a4
       }],
     },
     passive3: {

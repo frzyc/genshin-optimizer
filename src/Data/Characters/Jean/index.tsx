@@ -18,7 +18,7 @@ import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { IConditionals } from '../../../Conditional/IConditional'
 import ICharacterSheet from '../../ICharacterSheet'
 const conditionals: IConditionals = {
-  constellation2: {
+  c2: { // People's Aegis
     canShow: stats => stats.constellation >= 2,
     name: "Jean pick up Elemental Orb/Particle",
     stats: {//TODO: PARTY buff
@@ -30,12 +30,12 @@ const conditionals: IConditionals = {
       value: "15s"
     }]
   },
-  constellation4: {
+  c4: { // Lands of Dandelion
     canShow: stats => stats.constellation >= 4,
     name: "Opponents within the field created by Dandelion Breeze",
     stats: { anemo_enemyRes_: -40 },
   },
-  constellation6: {
+  c6: { // Lion's Fang, Fair Protector of Mondstandt
     canShow: stats => stats.constellation >= 6,
     name: "WIthin field created by Dandelion Breeze",
     fields: [{
@@ -216,7 +216,7 @@ const char: ICharacterSheet = {
       img: c2,
       document: [{
         text: <span>When Jean picks up an Elemental Orb/Particle, all party members have their Movement SPD and ATK SPD increased by 15% for 15s.</span>,
-        conditional: conditionals.constellation2
+        conditional: conditionals.c2
       }],
     },
     constellation3: {
@@ -230,7 +230,7 @@ const char: ICharacterSheet = {
       img: c4,
       document: [{
         text: <span>Within the Field created by <b>Dandelion Breeze</b>, all opponents have their <span className="text-anemo">Anemo RES</span> decreased by 40%</span>,
-        conditional: conditionals.constellation4
+        conditional: conditionals.c4
       }],
     },
     constellation5: {
@@ -244,7 +244,7 @@ const char: ICharacterSheet = {
       img: c6,
       document: [{
         text: <span>Incoming DMG is decreased by 35% within the Field created by <b>Dandelion Breeze</b>. Upon leaving the Dandelion Field, this effect lasts for 3 attacks or 10s.</span>,
-        conditional: conditionals.constellation6
+        conditional: conditionals.c6
       }],
     },
   },

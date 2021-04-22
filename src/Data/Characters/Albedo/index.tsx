@@ -19,21 +19,21 @@ import DisplayPercent from '../../../Components/DisplayPercent'
 import ICharacterSheet from '../../ICharacterSheet'
 import { IConditionals } from '../../../Conditional/IConditional'
 const conditionals: IConditionals = {
-  HomuncularNature: {//passive2
+  a4: { // Homuncular Nature
     canShow: stats => stats.ascension >= 4,
     name: "Using Tectonic Tide",
     stats: {//TODO: team buff
       eleMas: 125,
     }
   },
-  DescentOfDivinity: {//constellation4
+  c4: { // Descent Of Divinity
     canShow: stats => stats.constellation >= 4,
     name: "Within the Solar Isotoma",
-    stats: {//TODO: team buff 
+    stats: {//TODO: team buff
       plunging_dmg_: 30,
     }
   },
-  DustOfPurification: {
+  c6: { // Dust Of Purification
     canShow: stats => stats.constellation >= 6,
     name: "Protected by a shield created by Crystallize",
     stats: {//TODO: team buff
@@ -193,7 +193,7 @@ const char: ICharacterSheet = {
       img: passive1,
       document: [{
         text: <span>Using Rite of <strong>Progeniture: Tectonic Tide</strong> increases the Elemental Mastery of nearby party members by 125 for 10s.</span>,
-        conditional: conditionals.HomuncularNature
+        conditional: conditionals.a4
       }],
     },
     passive3: {
@@ -230,7 +230,7 @@ const char: ICharacterSheet = {
       img: c4,
       document: [{
         text: <span>Active party members within the <strong>Solar Isotoma</strong> field have their Plunging Attack DMG increased by 30%.</span>,
-        conditional: conditionals.DescentOfDivinity
+        conditional: conditionals.c4
       }],
     },
     constellation5: {
@@ -244,7 +244,7 @@ const char: ICharacterSheet = {
       img: c6,
       document: [{
         text: <span>Active party members within the <strong>Solar Isotoma</strong> field who are protected by a shield created by <span className="text-geo">Crystallize</span> have their DMG increased by 17%.</span>,
-        conditional: conditionals.DustOfPurification
+        conditional: conditionals.c6
       }],
     }
   },

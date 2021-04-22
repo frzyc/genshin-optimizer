@@ -19,7 +19,7 @@ import { getTalentStatKey, getTalentStatKeyVariant } from "../../../Build/Build"
 import ICharacterSheet from '../../ICharacterSheet'
 import { IConditionals } from '../../../Conditional/IConditional'
 const conditionals: IConditionals = {
-  BaneOfAllEvil: {
+  q: { // BaneOfAllEvil
     name: "Bane of All Evil",
     stats: stats => ({
       normal_dmg_: data.burst.atk_bonus[stats.tlvl.burst],
@@ -27,24 +27,24 @@ const conditionals: IConditionals = {
       plunging_dmg_: data.burst.atk_bonus[stats.tlvl.burst],
     })
   },
-  TamerofDemons: {
+  a1q: { // TamerofDemons
     canShow: stats => stats.ascension >= 1,
     name: <span>While under the effects of <b>Bane of All Evil</b></span>,
     maxStack: 5,
     stats: { dmg_: 5 }
   },
-  HeavenFall: {
+  a1: { // HeavenFall
     canShow: stats => stats.ascension >= 1,
     name: <span>Using <b>Lemniscatic Wind Cycling</b></span>,
     maxStack: 3,
     stats: { skill_dmg_: 15 }
   },
-  BlossomofKaleidos: {
+  c2: { // BlossomofKaleidos
     canShow: stats => stats.constellation >= 2,
     name: "When in party but not on the field",
     stats: { enerRech_: 25 }
   },
-  ExtinctionofSuffering: {
+  c4: { // ExtinctionofSuffering
     canShow: stats => stats.constellation >= 4,
     name: "HP falls below 50%",
     stats: { def_: 100 }
@@ -158,7 +158,7 @@ const char: ICharacterSheet = {
           text: "Energy Cost",
           value: 70,
         }],
-        conditional: conditionals.BaneOfAllEvil
+        conditional: conditionals.q
       }],
     },
     passive1: {
@@ -166,7 +166,7 @@ const char: ICharacterSheet = {
       img: passive1,
       document: [{
         text: <span>While under the effects of <b>Bane of All Evil</b>, all DMG dealt by Xiao increases by 5%. DMG increases by a further 5% for every 3s the ability persists. The maximum DMG Bonus is 25%.</span>,
-        conditional: conditionals.TamerofDemons
+        conditional: conditionals.a1q
       }],
     },
     passive2: {
@@ -174,7 +174,7 @@ const char: ICharacterSheet = {
       img: passive2,
       document: [{
         text: <span>Using <b>Lemniscatic Wind Cycling</b> increases the DMG of subsequent uses of Lemniscatic Wind Cycling by 15%. This effect lasts for 7s, and has a maximum of 3 stacks. Gaining a new stack refreshes the effect's duration.</span>,
-        conditional: conditionals.HeavenFall
+        conditional: conditionals.a1
       }],
     },
     passive3: {
@@ -194,7 +194,7 @@ const char: ICharacterSheet = {
       img: c2,
       document: [{
         text: <span>When in party but not on the field, Xiao's Energy Recharge is increased by 25%.</span>,
-        conditional: conditionals.BlossomofKaleidos
+        conditional: conditionals.c2
       }],
     },
     constellation3: {
@@ -208,7 +208,7 @@ const char: ICharacterSheet = {
       img: c4,
       document: [{
         text: stats => <span>When Xiao's HP falls below 50%{DisplayPercent(50, stats, "finalHP")}, he gains a 100% DEF Bonus.</span>,
-        conditional: conditionals.ExtinctionofSuffering
+        conditional: conditionals.c4
       }],
     },
     constellation5: {

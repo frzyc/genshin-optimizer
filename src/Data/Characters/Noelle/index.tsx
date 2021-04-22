@@ -19,7 +19,7 @@ import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { IConditionals } from '../../../Conditional/IConditional'
 import ICharacterSheet from '../../ICharacterSheet'
 const conditionals: IConditionals = {
-  sweepingTime: {
+  q: { // Sweeping Time
     name: "Sweeping Time",
     maxStack: 1,
     stats: stats => ({
@@ -175,7 +175,7 @@ const char: ICharacterSheet = {
           text: "Energy Cost",
           value: 60,
         }],
-        conditional: conditionals.sweepingTime
+        conditional: conditionals.q
       }],
     },
     passive1: {

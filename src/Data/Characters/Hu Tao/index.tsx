@@ -18,20 +18,20 @@ import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { IConditionals } from '../../../Conditional/IConditional'
 import ICharacterSheet from '../../ICharacterSheet'
 const conditionals: IConditionals = {
-  GuideToAfterlife: {
+  e: { // GuideToAfterlife
     name: "Guide to Afterlife Voyage",
     stats: stats => ({
       modifiers: { finalATK: { finalHP: data.skill.atk_inc[stats.tlvl.skill] / 100, } },
     }),
   },
-  SanguineRouge: {
+  a4: { // SanguineRouge
     canShow: stats => stats.ascension >= 4,
     name: "HP is equal to or less than 50%",
     stats: {
       pyro_dmg_: 33,
     },
   },
-  ButterflysEmbrace: {
+  c6: { // ButterflysEmbrace
     canShow: stats => stats.constellation >= 6,
     name: "HP drops below 25%, or suffers a lethal strike",
     stats: {
@@ -163,7 +163,7 @@ const char: ICharacterSheet = {
           text: "CD",
           value: "16s",
         },],
-        conditional: conditionals.GuideToAfterlife
+        conditional: conditionals.e
       }],
     },
     burst: {
@@ -217,7 +217,7 @@ const char: ICharacterSheet = {
       img: passive2,
       document: [{
         text: <span>When Hu Tao's HP is equal to or less than 50%, her <span className="text-pyro">Pyro DMG Bonus</span> is increased by 33%.</span>,
-        conditional: conditionals.SanguineRouge
+        conditional: conditionals.a4
       }],
     },
     passive3: {
@@ -270,7 +270,7 @@ const char: ICharacterSheet = {
             <li>Can only occur once every 60s.</li>
           </ul>
         </span>,
-        conditional: conditionals.ButterflysEmbrace
+        conditional: conditionals.c6
       }],
     }
   },

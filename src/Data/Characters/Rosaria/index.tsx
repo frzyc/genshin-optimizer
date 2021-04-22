@@ -18,7 +18,7 @@ import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { IConditionals } from '../../../Conditional/IConditional'
 import ICharacterSheet from '../../ICharacterSheet'
 const conditionals: IConditionals = {
-  ReginaProbationum: {
+  a1: { // ReginaProbationum
     canShow: stats => stats.ascension >= 1,
     name: <span>After back hit</span>,
     stats: { critRate_: 12 },
@@ -27,7 +27,7 @@ const conditionals: IConditionals = {
       value: "5s"
     }]
   },
-  ShadowSamaritan: {
+  a4: { // ShadowSamaritan
     canShow: stats => stats.ascension >= 4,
     name: <span>After using <b>Rites of Termination</b></span>,
     //stats: { critRate_: 15 },//TODO: party buff modifier
@@ -39,7 +39,7 @@ const conditionals: IConditionals = {
       value: "10s",
     }]
   },
-  UnholyRevelation: {
+  c1: { // UnholyRevelation
     canShow: stats => stats.constellation >= 1,
     name: <span>After CRIT Hit</span>,
     stats: { normal_dmg_: 10, atkSPD_: 10 },
@@ -48,7 +48,7 @@ const conditionals: IConditionals = {
       value: "4s"
     }]
   },
-  DivineRetribution: {
+  c6: { // DivineRetribution
     canShow: stats => stats.constellation >= 6,
     name: <span><b>Rites of Termination</b> Attack on enemy</span>,
     stats: { enemyDEFRed_: 20 },
@@ -182,7 +182,7 @@ const char: ICharacterSheet = {
       img: passive1,
       document: [{
         text: <span>When Rosaria strikes an opponent from behind using <b>Ravaging Confession</b>, Rosaria's CRIT Rate increases by 12% for 5s.</span>,
-        conditional: conditionals.ReginaProbationum
+        conditional: conditionals.a1
       }],
     },
     passive2: {
@@ -193,7 +193,7 @@ const char: ICharacterSheet = {
           <p className="mb-2">Casting <b>Rites of Termination</b> increases CRIT Rate of all nearby party members (except Rosaria herself) by 15% of Rosaria's CRIT Rate for 10s.</p>
           <p className="mb-0">CRIT Rate Bonus gained this way cannot exceed 15%.</p>
         </span>,
-        conditional: conditionals.ShadowSamaritan
+        conditional: conditionals.a4
       }],
     },
     passive3: {
@@ -211,7 +211,7 @@ const char: ICharacterSheet = {
       img: c1,
       document: [{
         text: <span>When Rosaria deals a CRIT Hit, her ATK SPD increases by 10% and her Normal Attack DMG increases by 10% for 4s.</span>,
-        conditional: conditionals.UnholyRevelation
+        conditional: conditionals.c1
       }],
     },
     constellation2: {
@@ -248,7 +248,7 @@ const char: ICharacterSheet = {
       img: c6,
       document: [{
         text: <span>Rites of Termination's attack decreases opponents' Physical RES by 20% for 10s.</span>,
-        conditional: conditionals.DivineRetribution
+        conditional: conditionals.c6
       }],
     }
   },

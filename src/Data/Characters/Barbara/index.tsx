@@ -18,12 +18,12 @@ import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { IConditionals } from '../../../Conditional/IConditional'
 import ICharacterSheet from '../../ICharacterSheet'
 const conditionals: IConditionals = {
-  GloriousSeason: {
+  a1: { // Glorious Season
     canShow: stats => stats.ascension >= 1,
     name: <span>Within <b>Let the Show Begin</b>'s Melody Loop</span>,
     stats: { staminaDec_: 12 }//TODO: Party buff
   },
-  VitalityBurst: {
+  c2: { // VitalityBurst
     canShow: stats => stats.constellation >= 2,
     name: <span>During <b>Let the Show Begin</b></span>,
     stats: { hydro_dmg_: 15 }//TODO: Party buff active character
@@ -124,9 +124,9 @@ const char: ICharacterSheet = {
           value: stats => "32s" + (stats.constellation >= 2 ? " -15%" : ""),
         }]
       }, {
-        conditional: conditionals.GloriousSeason
+        conditional: conditionals.a1
       }, {
-        conditional: conditionals.VitalityBurst
+        conditional: conditionals.c2
       }],
 
     },

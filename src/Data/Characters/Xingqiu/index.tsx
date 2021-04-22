@@ -19,7 +19,7 @@ import { getTalentStatKey, getTalentStatKeyVariant } from "../../../Build/Build"
 import ICharacterSheet from '../../ICharacterSheet'
 import { IConditionals } from '../../../Conditional/IConditional'
 const conditionals: IConditionals = {
-  RainbowUponTheAzureSky: {
+  c2: { // RainbowUponTheAzureSky
     canShow: stats => stats.constellation >= 2,
     name: "Opponent hit by sword rain",
     stats: { hydro_enemyRes_: -15 },
@@ -201,7 +201,7 @@ const char: ICharacterSheet = {
       img: c2,
       document: [{
         text: <span>Extends the duration of <b>Guhua Sword: Raincutter</b> by 3s. Decreases the <span className="text-hydro">Hydro RES</span> of opponents hit by sword rain by 15% for 4s.</span>,
-        conditional: conditionals.RainbowUponTheAzureSky
+        conditional: conditionals.c2
       }],
     },
     constellation3: {

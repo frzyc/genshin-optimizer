@@ -18,7 +18,7 @@ import { getTalentStatKey, getTalentStatKeyVariant } from "../../../Build/Build"
 import { IConditionals } from "../../../Conditional/IConditional";
 import ICharacterSheet from "../../ICharacterSheet";
 const conditionals: IConditionals = {
-  LifeProlongingMethods: {
+  a1: { // LifeProlongingMethods
     canShow: stats => stats.ascension >= 1,
     name: <span>Character under the effects of <b>Adeptus Art: Herald of Frost</b> triggers an Elemental Reaction</span>,
     stats: { heal_: 20, },
@@ -27,7 +27,7 @@ const conditionals: IConditionals = {
       value: "8s",
     }],
   },
-  FrozenToTheBone: {
+  c2: { // FrozenToTheBone
     canShow: stats => stats.constellation >= 2,
     name: "Enemy Affected by Cryo",
     stats: {
@@ -35,7 +35,7 @@ const conditionals: IConditionals = {
       charged_dmg_: 15,
     },
   },
-  DivineSuppression: {
+  c4: { // DivineSuppression
     canShow: stats => stats.constellation >= 4,
     name: "Enemy marked by Talisman",
     fields: [{//TODO: enemy atk decrease
@@ -183,7 +183,7 @@ const char: ICharacterSheet = {
       img: passive1,
       document: [{
         text: <span>When a character under the effects of <b>Adeptus Art: Herald of Frost</b> triggers an Elemental Reaction, their Incoming Healing Bonus is increased by 20% for 8s.</span>,
-        conditional: conditionals.LifeProlongingMethods
+        conditional: conditionals.a1
       }],
     },
     passive2: {
@@ -225,7 +225,7 @@ const char: ICharacterSheet = {
       img: c2,
       document: [{
         text: <span>Qiqi's Normal and Charge Attack DMG against opponents affected by <span className="text-cryo">Cryo</span> is increased by 15%.</span>,
-        conditional: conditionals.FrozenToTheBone
+        conditional: conditionals.c2
       }],
     },
     constellation3: {
@@ -239,7 +239,7 @@ const char: ICharacterSheet = {
       img: c4,
       document: [{
         text: <span>Targets marked by the <b>Fortune-Preserving Talisman</b> have their ATK decreased by 20%.</span>,
-        conditional: conditionals.DivineSuppression
+        conditional: conditionals.c4
       }],
     },
     constellation5: {

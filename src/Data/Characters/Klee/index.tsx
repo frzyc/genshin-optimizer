@@ -18,13 +18,13 @@ import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import ICharacterSheet from '../../ICharacterSheet'
 import { IConditionals } from '../../../Conditional/IConditional'
 const conditionals: IConditionals = {
-  PoundingSurprise: {
+  a1: { // PoundingSurprise
     canShow: stats => stats.ascension >= 1,
     name: "has Explosive Spark",
     stats: { charged_dmg_: 50 },
     fields: [{ text: "Next Charged attack cost no stamina" }]
   },
-  ExplosiveFrags: {
+  c2: { // ExplosiveFrags
     canShow: stats => stats.constellation >= 2,
     name: "Hit by Jumpy Dumpty's mines",
     stats: { enemyDEFRed_: 23 },
@@ -33,7 +33,7 @@ const conditionals: IConditionals = {
       value: "10s",
     }]
   },
-  BlazingDelight: {
+  c6: { // BlazingDelight
     canShow: stats => stats.constellation >= 6,
     name: "Sparks 'n' Splash is used",
     stats: { pyro_dmg_: 10 }//TODO: party buff
@@ -154,7 +154,7 @@ const char: ICharacterSheet = {
       img: passive1,
       document: [{
         text: <span>When <b>Jumpy Dumpty</b> and <b>Normal Attacks</b> deal DMG, Klee has a 50% chance to obtain an Explosive Spark. This Explosive Spark is consumed by the next Charged Attack, which costs no Stamina and deals 50% increased DMG.</span>,
-        conditional: conditionals.PoundingSurprise
+        conditional: conditionals.a1
       }],
     },
     passive2: {
@@ -186,7 +186,7 @@ const char: ICharacterSheet = {
       img: c2,
       document: [{
         text: <span>Being hit by <b>Jumpy Dumpty</b>'s mines decreases opponents' DEF by 23% for 10s.</span>,
-        conditional: conditionals.ExplosiveFrags
+        conditional: conditionals.c2
       }],
     },
     constellation3: {
@@ -222,7 +222,7 @@ const char: ICharacterSheet = {
           <p className="mb-2">While under the effects of <b>Sparks 'n' Splash</b>, other members of the party will continuously regenerate Energy.</p>
           <p className="mb-0">When <b>Sparks 'n' Splash</b> is used, all party members will gain a 10% <span className="text-pyro">Pyro DMG Bonus</span> for 25s.</p>
         </span>,
-        conditional: conditionals.BlazingDelight
+        conditional: conditionals.c6
       }],
     }
   },

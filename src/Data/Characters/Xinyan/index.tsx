@@ -18,12 +18,12 @@ import { getTalentStatKey, getTalentStatKeyVariant } from "../../../Build/Build"
 import ICharacterSheet from '../../ICharacterSheet'
 import { IConditionals } from '../../../Conditional/IConditional'
 const conditionals: IConditionals = {
-  NowThatsRockNRoll: {
+  a4s: { // NowThatsRockNRoll
     canShow: stats => stats.ascension >= 4,
     name: <span>Shielded by <b>Sweeping Fervor</b></span>,
     stats: { physical_dmg_: 15 },//TODO: party buff
   },
-  FatalAcceleration: {
+  a1: { // FatalAcceleration
     canShow: stats => stats.ascension >= 1,
     name: "Scoring a CRIT hit",
     stats: { atkSPD_: 12 },
@@ -32,7 +32,7 @@ const conditionals: IConditionals = {
       value: "5s"
     }]
   },
-  WildfireRhythm: {
+  a4: { // WildfireRhythm
     canShow: stats => stats.ascension >= 4,
     name: <span><b>Sweeping Fervor</b> DMG</span>,
     stats: { physical_enemyRes_: -15, }//TODO: party buff
@@ -230,7 +230,7 @@ const char: ICharacterSheet = {
       img: passive2,
       document: [{
         text: <span>Characters shielded by <b>Sweeping Fervor</b> deal 15% increased Physical DMG.</span>,
-        conditional: conditionals.NowThatsRockNRoll
+        conditional: conditionals.a4s
       }],
     },
     passive3: {
@@ -243,7 +243,7 @@ const char: ICharacterSheet = {
       img: c1,
       document: [{
         text: <span>Upon scoring a CRIT hit, increases ATK SPD of Xinyan's <b>Normal and Charged Attacks</b> by 12% for 5s. Can only occur once every 5s.</span>,
-        conditional: conditionals.FatalAcceleration
+        conditional: conditionals.a1
       }],
     },
     constellation2: {
@@ -264,7 +264,7 @@ const char: ICharacterSheet = {
       img: c4,
       document: [{
         text: <span><b>Sweeping Fervor</b>'s swing DMG decreases opponent's Physical RES by 15% for 12s.</span>,
-        conditional: conditionals.WildfireRhythm
+        conditional: conditionals.a4
       }],
     },
     constellation5: {

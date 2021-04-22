@@ -19,7 +19,7 @@ import { getTalentStatKey, getTalentStatKeyVariant } from "../../../Build/Build"
 import { IConditionals } from '../../../Conditional/IConditional'
 import ICharacterSheet from '../../ICharacterSheet'
 const conditionals: IConditionals = {
-  Absorption: {
+  q: { // Absorption
     name: "Elemental Absoption",
     states: {
       ...Object.fromEntries(["hydro", "pyro", "cryo", "electro"].map(eleKey => [eleKey, {
@@ -134,7 +134,7 @@ const char: ICharacterSheet = {
           text: "Energy Cost",
           value: "80"
         }],
-        conditional: conditionals.Absorption
+        conditional: conditionals.q
       }]
     },
     passive1: {

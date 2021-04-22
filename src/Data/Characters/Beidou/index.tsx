@@ -19,7 +19,7 @@ import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { IConditionals } from '../../../Conditional/IConditional'
 import ICharacterSheet from '../../ICharacterSheet'
 const conditionals: IConditionals = {
-  LightningStorm: {
+  a4: { // Lightning Storm
     canShow: stats => stats.ascension >= 4,
     name: <span>Unleashing <b>Tidecaller</b> with its maximum DMG Bonus</span>,
     stats: {
@@ -34,7 +34,7 @@ const conditionals: IConditionals = {
       text: "Reduced delay before Charged Attacks",
     }]
   },
-  BaneEvil: {
+  c6: { // Bane Evil
     canShow: stats => stats.constellation >= 6,
     name: <span>During the duration of <b>Stormbreaker</b></span>,
     stats: { electro_enemyRes_: -15, }
@@ -154,7 +154,7 @@ const char: ICharacterSheet = {
           text: "CD",
           value: "7.5s",
         }],
-        conditional: conditionals.LightningStorm
+        conditional: conditionals.a4
       }],
     },
     burst: {
@@ -193,7 +193,7 @@ const char: ICharacterSheet = {
           text: "Energy Cost",
           value: 60,
         }],
-        conditional: conditionals.BaneEvil
+        conditional: conditionals.c6
       }],
     },
     passive1: {

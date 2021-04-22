@@ -19,7 +19,7 @@ import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { IConditionals } from '../../../Conditional/IConditional'
 import ICharacterSheet from '../../ICharacterSheet'
 const conditionals: IConditionals = {
-  ColdBloodedStrike: {
+  c1: { // ColdBloodedStrike
     canShow: stats => stats.constellation >= 1,
     name: <span>Opponent affected by <span className="text-cryo">Cryo</span></span>,
     stats: {
@@ -164,7 +164,7 @@ const char: ICharacterSheet = {
       img: c1,
       document: [{
         text: <span>The CRIT Rate of Kaeya's <b>Normal</b> and <b>Charged Attacks</b> against opponents affected by <span className="text-cryo">Cryo</span> is increased by 15%.</span>,
-        conditional: conditionals.ColdBloodedStrike
+        conditional: conditionals.c1
       }]
     },
     constellation2: {

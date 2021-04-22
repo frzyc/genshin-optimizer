@@ -18,18 +18,18 @@ import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import ICharacterSheet from '../../ICharacterSheet'
 import { IConditionals } from '../../../Conditional/IConditional'
 const conditionals: IConditionals = {
-  FantasticVoyage: {
+  q: { // Fantastic Voyage
     name: "Fantastic Voyage",
     stats: stats => ({
       modifiers: { finalATK: { baseATK: (data.burst.atkRatio[stats.tlvl.burst] + (stats.constellation < 1 ? 0 : 20)) / 100, } },
     }),
   },
-  ImpasseConqueror: {
+  c2: { // Impasse Conqueror
     canShow: stats => stats.constellation >= 2,
     name: "When HP falls below 70%",
     stats: { enerRech_: 30 }
   },
-  FireVenturesWithMe: {
+  c6: { // Fire Ventures With Me
     canShow: stats => stats.constellation >= 6,
     name: "Sword, Claymore, or Polearm-wielding characters inside Fantastic Voyage's radius",
     stats: { pyro_dmg_: 15 },
@@ -167,7 +167,7 @@ const char: ICharacterSheet = {
           text: "Energy Cost",
           value: 60,
         }],
-        conditional: conditionals.FantasticVoyage
+        conditional: conditionals.q
       }],
     },
     passive1: {
@@ -195,7 +195,7 @@ const char: ICharacterSheet = {
       img: c2,
       document: [{
         text: <span>When HP falls below 70%, increases Energy Recharge by 30%.</span>,
-        conditional: conditionals.ImpasseConqueror
+        conditional: conditionals.c2
       }],
     },
     constellation3: {
@@ -220,7 +220,7 @@ const char: ICharacterSheet = {
       img: c6,
       document: [{
         text: <span>Sword, Claymore, or Polearm-wielding characters inside Fantastic Voyage's radius gain a 15% Pyro DMG Bonus and their weapons are infused with <span className="text-pyro">Pyro</span>.</span>,
-        conditional: conditionals.FireVenturesWithMe
+        conditional: conditionals.c6
       }],
     }
   },

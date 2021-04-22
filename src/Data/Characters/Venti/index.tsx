@@ -19,7 +19,7 @@ import { getTalentStatKey, getTalentStatKeyVariant } from "../../../Build/Build"
 import { IConditionals } from '../../../Conditional/IConditional'
 import ICharacterSheet from '../../ICharacterSheet'
 const conditionals: IConditionals = {
-  BreezeOfReminiscence: {
+  c2: { // BreezeOfReminiscence
     name: <b>Skyward Sonnet</b>,
     canShow: stats => stats.constellation >= 2,
     states: {
@@ -39,7 +39,7 @@ const conditionals: IConditionals = {
       }
     }
   },
-  Absorption: {
+  q: { // Absorption
     name: "Elemental Absoption",
     states: {
       ...Object.fromEntries(["hydro", "pyro", "cryo", "electro"].map(eleKey => [eleKey, {
@@ -60,7 +60,7 @@ const conditionals: IConditionals = {
       }]))
     }
   },
-  HurricaneOfFreedom: {
+  c4: { // HurricaneOfFreedom
     canShow: stats => stats.constellation >= 4,
     name: "Venti picks up an Elemental Orb or Particle",
     stats: { anemo_dmg_: 25 },
@@ -177,7 +177,7 @@ const char: ICharacterSheet = {
           text: "Upcurrent Duration",
           value: "20s",
         }],
-        conditional: conditionals.BreezeOfReminiscence
+        conditional: conditionals.c2
       }],
     },
     burst: {
@@ -210,7 +210,7 @@ const char: ICharacterSheet = {
           text: <span>Enemy <span className="text-anemo">Anemo RES</span> decrease</span>,//TODO stats
           value: "20%"
         }],
-        conditional: conditionals.Absorption
+        conditional: conditionals.q
       }],
     },
     passive1: {
@@ -257,7 +257,7 @@ const char: ICharacterSheet = {
       img: c4,
       document: [{
         text: <span>When Venti picks up an Elemental Orb or Particle, he receives a 25% Anemo DMG Bonus for 10s.</span>,
-        conditional: conditionals.HurricaneOfFreedom
+        conditional: conditionals.c4
       }],
     },
     constellation5: {

@@ -18,7 +18,7 @@ import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { IConditionals } from '../../../Conditional/IConditional'
 import ICharacterSheet from '../../ICharacterSheet'
 const conditionals: IConditionals = {
-  AristocraticDignity: {
+  a4: { // AristocraticDignity
     canShow: stats => stats.ascension >= 4,
     name: <span>Casting <b>Starward Sword</b></span>,
     stats: {
@@ -30,7 +30,7 @@ const conditionals: IConditionals = {
       value: "8s",
     }]
   },
-  Attunement: {
+  c4: { // Attunement
     canShow: stats => stats.constellation >= 4,
     name: "Trigger an Electro-related Elemental Reaction",
     stats: { atk_: 25 },
@@ -39,7 +39,7 @@ const conditionals: IConditionals = {
       value: "10s",
     }]
   },
-  Initating: {
+  c6: { // Initating
     canShow: stats => stats.constellation >= 6,
     name: "Initiating Normal/Charged Attack, Skill or Burst",
     stats: { electro_dmg_: 6 },
@@ -181,7 +181,7 @@ const char: ICharacterSheet = {
           text: "Energy Cost",
           value: 60,
         }],
-        conditional: conditionals.AristocraticDignity
+        conditional: conditionals.a4
       }],
     },
     passive1: {
@@ -227,7 +227,7 @@ const char: ICharacterSheet = {
       name: "Attunement",
       img: c4,
       document: [{ text: <span>For 10s after Keqing triggers an <span className="text-electro">Electro-related Elemental Reaction</span>, her ATK is increased by 25%.</span> }, {
-        conditional: conditionals.Attunement
+        conditional: conditionals.c4
       }],
     },
     constellation5: {
@@ -240,7 +240,7 @@ const char: ICharacterSheet = {
       name: "Tenacious Star",
       img: c6,
       document: [{ text: <span>When initiating a Normal Attack, a Charged Attack, Elemental Skill or Elemental Burst, Keqing gains a 6% <span className="text-electro">Electro DMG Bonus</span> for 8s. Effects triggered by Normal Attacks, Charged Attacks, Elemental Skills, and Elemental Bursts are considered independent entities.</span> }, {
-        conditional: conditionals.Initating
+        conditional: conditionals.c6
       }],
     },
   },

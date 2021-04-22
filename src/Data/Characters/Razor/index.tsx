@@ -18,12 +18,12 @@ import { getTalentStatKey, getTalentStatKeyVariant, } from "../../../Build/Build
 import { IConditionals } from '../../../Conditional/IConditional'
 import ICharacterSheet from '../../ICharacterSheet'
 const conditionals: IConditionals = {
-  ElectroSigil: {
+  e: { // ElectroSigil
     name: "Electro Sigil",
     maxStack: 3,
     stats: { enerRech_: 20 },
   },
-  LightningFang: {
+  q: { // LightningFang
     name: "Lightning Fang",
     stats: stats => ({
       electro_res_: 80,
@@ -33,12 +33,12 @@ const conditionals: IConditionals = {
       text: "Increases resistance to interruption"
     }]
   },
-  Hunger: {
+  a4: { // Hunger
     canShow: stats => stats.ascension >= 4,
     name: "Energy < 50%",
     stats: { enerRech_: 30 },
   },
-  WolfsInstinct: {
+  c1: { // WolfsInstinct
     canShow: stats => stats.constellation >= 1,
     name: "Pickup Elemental Particle",
     stats: { dmg_: 10 },
@@ -47,12 +47,12 @@ const conditionals: IConditionals = {
       value: "8s",
     }],
   },
-  Suppression: {
+  c2: { // Suppression
     canShow: stats => stats.constellation >= 2,
     name: "Enemy with <30% HP",
     stats: { critRate_: 10 },
   },
-  Bite: {
+  c4: { // Bite
     canShow: stats => stats.constellation >= 4,
     name: <span>Casting <b>Claw and Thunder</b> (Press)</span>,
     stats: { enemyDEFRed_: 15 },
@@ -163,7 +163,7 @@ const char: ICharacterSheet = {
           text: "Electro Sigil Duration",
           value: "18s",
         }],
-        conditional: conditionals.ElectroSigil
+        conditional: conditionals.e
       }],
     },
     burst: {
@@ -205,7 +205,7 @@ const char: ICharacterSheet = {
           text: "Energy Cost",
           value: 80,
         }],
-        conditional: conditionals.LightningFang
+        conditional: conditionals.q
       }],
 
     },
@@ -219,7 +219,7 @@ const char: ICharacterSheet = {
       img: passive2,
       document: [{
         text: <span>When Razor's Energy is below 50%, increases Energy Recharge by 30%.</span>,
-        conditional: conditionals.Hunger
+        conditional: conditionals.a4
       }],
     },
     passive3: {
@@ -232,7 +232,7 @@ const char: ICharacterSheet = {
       img: c1,
       document: [{
         text: <span>Picking up an Elemental Orb or Particle increases Razor's DMG by 10% for 8s.</span>,
-        conditional: conditionals.WolfsInstinct
+        conditional: conditionals.c1
       }],
     },
     constellation2: {
@@ -240,7 +240,7 @@ const char: ICharacterSheet = {
       img: c2,
       document: [{
         text: <span>Increases CRIT Rate against opponents with less than 30% HP by 10%.</span>,
-        conditional: conditionals.Suppression
+        conditional: conditionals.c2
       }],
     },
     constellation3: {
@@ -254,7 +254,7 @@ const char: ICharacterSheet = {
       img: c4,
       document: [{
         text: <span>When casting <b>Claw and Thunder</b> (Press), opponents hit will have their DEF decreased by 15% for 7s.</span>,
-        conditional: conditionals.Bite
+        conditional: conditionals.c4
       }],
     },
     constellation5: {
