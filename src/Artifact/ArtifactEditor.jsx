@@ -320,9 +320,7 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }) {
               <Row>
                 <Col className="text-center"><span >Current Substat Efficiency </span></Col>
                 <Col xs="auto">
-                  <PercentBadge valid={!errMsgs.length} percent={currentEfficiency}>
-                    {currentEfficiency.toFixed(2) + "%"}
-                  </PercentBadge>
+                  <PercentBadge valid={!errMsgs.length} value={currentEfficiency} />
                   <OverlayTrigger
                     placement="bottom"
                     overlay={<Popover >
@@ -345,9 +343,7 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }) {
               <Row>
                 <Col className="text-center"><span>Maximum Substat Efficiency </span></Col>
                 <Col xs="auto">
-                  <PercentBadge valid={!errMsgs.length} percent={maximumEfficiency}>
-                    {maximumEfficiency.toFixed(2) + "%"}
-                  </PercentBadge>
+                  <PercentBadge valid={!errMsgs.length} value={maximumEfficiency} />
                   <OverlayTrigger
                     placement="bottom"
                     overlay={<Popover >
@@ -436,11 +432,7 @@ function SubStatInput({ index, substat: { key, value, rolls = [], efficiency = 0
 
     rollLabel = <Row>
       <Col>{rollBadge} {rollArr}</Col>
-      <Col xs="auto">Efficiency: <PercentBadge
-        valid={true}
-        percent={efficiency}>
-        {key ? `${valueString(efficiency, "eff")}%` : "No Stat"}
-      </PercentBadge></Col>
+      <Col xs="auto">Efficiency: <PercentBadge valid={true} value={efficiency ? efficiency : "No Stat"} /></Col>
     </Row>
   }
 

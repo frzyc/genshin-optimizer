@@ -77,12 +77,8 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
         })}
       </Row>
       <Row className="mt-auto">
-        <Col>Current SS Eff.: <PercentBadge percent={currentEfficiency} valid={artifactValid} className="float-right">
-          {currentEfficiency?.toFixed(2) ?? currentEfficiency + "%"}
-        </PercentBadge></Col>
-        {currentEfficiency !== maximumEfficiency && <Col className="text-right">Max SS Eff.: <PercentBadge percent={maximumEfficiency} valid={artifactValid}>
-          {maximumEfficiency?.toFixed(2) ?? maximumEfficiency + "%"}
-        </PercentBadge></Col>}
+        <Col>Current SS Eff.: <PercentBadge value={currentEfficiency} valid={artifactValid} className="float-right" /></Col>
+        {currentEfficiency !== maximumEfficiency && <Col className="text-right">Max SS Eff.: <PercentBadge value={maximumEfficiency} valid={artifactValid} /></Col>}
       </Row>
     </Card.Body>
 
