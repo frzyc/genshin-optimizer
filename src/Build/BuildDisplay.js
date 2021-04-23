@@ -208,6 +208,9 @@ export default class BuildDisplay extends React.Component {
     let characterName = Character.getName(characterKey, "Character Name")
     let artsAccounted = setFilters.reduce((accu, cur) => cur.key ? accu + cur.num : accu, 0)
     //these variables are used for build generator.
+    const hasMinFilters = Object.entries(statFilters).some(([statKey, { min }]) => typeof min === "number")
+    const hasMaxFilters = Object.entries(statFilters).some(([statKey, { max }]) => typeof max === "number")
+    const disabledTurbo = ascending ? hasMinFilters : hasMaxFilters
     this.split = this.splitArtifacts();
     this.totBuildNumber = calculateTotalBuildNumber(this.split, setFilters)
     let { totBuildNumber } = this
@@ -387,10 +390,13 @@ export default class BuildDisplay extends React.Component {
                 onClick={this.generateBuilds}
               ><span>Generate Builds</span></Button>
               {totBuildNumber > warningBuildNumber && <OverlayTrigger
-                overlay={<Tooltip>Dramatically speeds up build time, but only generates one result. Does not work with Final Stat Filters.</Tooltip>}
-              >
-                <Button variant="success" disabled={Object.keys(statFilters).length} onClick={() => this.generateBuilds(true)}><strong>TURBO</strong></Button>
-              </OverlayTrigger>}
+                overlay={<Tooltip>
+                  Dramatically speeds up build time.<br />Yields only 1 build.
+                  {Boolean(disabledTurbo) && <span><hr />Does not work with <b>{Boolean(ascending) ? 'min' : 'max'}imum</b> stat filter when sort by <b>{Boolean(ascending) ? 'as' : 'des'}cending</b></span>}
+                </Tooltip>}
+              ><div class="btn" style={{ borderTop: 'none', padding: 0 }}>
+                  <Button variant="success" disabled={disabledTurbo} style={{ borderRadius: 0, ...disabledTurbo && { pointerEvents: 'none' } }} onClick={() => this.generateBuilds(true)}><strong>TURBO</strong></Button>
+                </div></OverlayTrigger>}
               <Button
                 className="h-100"
                 disabled={!generatingBuilds}
