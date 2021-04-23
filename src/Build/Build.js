@@ -9,55 +9,66 @@ import ElementalData from "../Data/ElementalData"
  * @param {Set.<setKey>} alwaysAccepted - The list of artifact sets that are always included
  */
 export function pruneArtifacts(artifacts, artifactSetEffects, significantStats, ascending, alwaysAccepted = new Set()) {
-  const tmp = artifacts.map(artifact => {
-    let potential = {}
+  function shouldKeepFirst(first, second, preferFirst) {
+    let firstBetter = Object.entries(first).some(([k, v]) => v > (second[k] ?? 0))
+    let secondBetter = Object.entries(second).some(([k, v]) => v > (first[k] ?? 0))
+    if (ascending) [firstBetter, secondBetter] = [secondBetter, firstBetter]
+    // Keep if first is strictly better, uncomparable, or equal + prefer first
+    return firstBetter || (!secondBetter && preferFirst)
+  }
 
+  // Prune unused set effects. Sets with no relevant effects are regrouped to "other"
+  const prunedSetEffects = { "other": {} }
+  for (const set in artifactSetEffects)
+    for (const num in artifactSetEffects[set]) {
+      const effects = Object.entries(artifactSetEffects[set][num]).filter(([key]) => significantStats.has(key))
+      if (effects.length > 0) {
+        prunedSetEffects[set] = prunedSetEffects[set] ?? {}
+        prunedSetEffects[set][num] = Object.fromEntries(effects)
+      }
+    }
+
+  // array of artifacts, artifact stats, and set (may be "other")
+  let tmp = artifacts.map(artifact => {
+    let stats = {}, set = (artifact.setKey in prunedSetEffects) ? artifact.setKey : "other"
     if (significantStats.has(artifact.mainStatKey))
-      potential[artifact.mainStatKey] = artifact.mainStatVal
-    for (const {key, value} of artifact.substats)
+      stats[artifact.mainStatKey] = artifact.mainStatVal
+    for (const { key, value } of artifact.substats)
       if (significantStats.has(key))
-        potential[key] = (potential[key] ?? 0) + value
-
-    const min = { ...potential }
-
-    for (const effects of Object.values(artifactSetEffects[artifact.setKey] ?? {})) {
-      for (const [key, value] of Object.entries(effects))
-        if (significantStats.has(key))
-          potential[key] = (potential[key] ?? 0) + value
-    }
-
-    if (ascending) {
-      for (const key in min)
-        min[key] = -min[key]
-      for (const key in potential)
-        potential[key] = -potential[key]
-      return {artifact, min: potential, max: min}
-    }
-    return { artifact, min, max: potential }
+        stats[key] = (stats[key] ?? 0) + value
+    return { artifact, stats, set }
   })
 
-  return tmp.filter(({artifact: candidate, max: candidateMax}) =>
-    // Keep if no `other` is better than `candidate`
-    alwaysAccepted.has(candidate.setKey) || tmp.every(({artifact: other, min: otherMin}) => {
-      // return true if `candidate` is better than or incomparable to `other`
-      if (candidate.id === other.id) return true
+  // Compare artifacts' base stats from the same set
+  tmp = tmp.filter(({ artifact: candidate, stats: candidateStats, set: candidateSet }) =>
+    tmp.every(({ artifact: other, stats: otherStats, set: otherSet }) =>
+      candidateSet !== otherSet || shouldKeepFirst(candidateStats, otherStats, candidate.id <= other.id)
+    ))
 
-      let equal = true
-      for (const [key, candidateValue] of Object.entries(candidateMax)) {
-        const otherValue = otherMin[key] ?? 0
-        if (candidateValue > otherValue)
-          return true
-        if (candidateValue !== otherValue)
-          equal = false
-      }
-      for (const key in otherMin) {
-        if (!(key in candidateMax))
-          equal = false
-      }
+  if (!ascending) {
+    // Cross-check with different sets
+    tmp = tmp.filter(({ artifact: candidate, stats: candidateStats, set: candidateSet }) => {
+      // Possible "additional stats" if a build equips `candidate` on an empty slot.
+      let possibleStats = [...Object.values(prunedSetEffects[candidateSet]), {}].map(c => {
+        const current = { ...candidateStats }
+        Object.entries(c).forEach(([key, value]) => current[key] = (current[key] ?? 0) + value)
+        return current
+      })
+      return tmp.every(({ artifact: other, stats: otherStats, set: otherSet }) => {
+        if (candidateSet === otherSet) return true // Already checked same-set
 
-      return equal
+        // Remove possibilities that shouldn't be kept
+        possibleStats = possibleStats.filter(current =>
+          shouldKeepFirst(current, otherStats, candidate.id <= other.id))
+        return possibleStats.length !== 0
+      })
     })
-  ).map(tmp => tmp.artifact)
+  }
+  // Reinstate `alwaysAccepted`
+  return [
+    ...artifacts.filter(artifact => alwaysAccepted.has(artifact.set)),
+    ...tmp.map(tmp => tmp.artifact).filter(artifact => !alwaysAccepted.has(artifact.set)),
+  ]
 }
 
 /**
