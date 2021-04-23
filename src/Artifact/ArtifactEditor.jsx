@@ -214,12 +214,12 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }) {
     for (let i = 0; i < numUpgradesOrUnlocks; i++) {
       let substat = getRandomElementFromArray(state.substats)
       substat.value += RollStat(substat.key)
-      //make sure there is no rounding numbers
-      if (!Number.isInteger(substat.value)) substat.value = parseFloat(substat.value.toFixed(1))
-
     }
     cancelEdit?.();
     artifactDispatch({ type: "overwrite", artifact: state })
+    for (let index = 0; index < 4; index++) {
+      artifactDispatch({ type: "substat", index, ...state.substats[index] })
+    }
   }
 
   const { dupId, isDup } = useMemo(() => checkDuplicate(artifact), [artifact])
