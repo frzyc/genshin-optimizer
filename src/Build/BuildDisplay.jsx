@@ -24,8 +24,7 @@ import Weapon from '../Weapon/Weapon';
 import { calculateTotalBuildNumber } from './Build';
 
 //lazy load the character display
-const CharacterDisplayCardPromise = import('../Character/CharacterDisplayCard');
-const CharacterDisplayCard = lazy(() => CharacterDisplayCardPromise)
+const CharacterDisplayCard = lazy(() => import('../Character/CharacterDisplayCard'))
 
 const warningBuildNumber = 10000000
 const maxBuildsToShowList = [50, 25, 10, 5]
@@ -39,6 +38,7 @@ const initialBuildSettings = () => ({
   optimizationTarget: "finalATK",//TODO need to validate
   mainStatAssumptionLevel: 0,
   useLockedArts: false,
+  useEquippedArts: false,
   ascending: false,
 })
 
@@ -66,7 +66,7 @@ function buildSettingsReducer(state, action) {
 export default function BuildDisplay({ location: { characterKey: propCharacterKey } }) {
   const [characterKey, setcharacterKey] = useState("")
   const [buildSettings, buildSettingsDispatch] = useReducer(buildSettingsReducer, initialBuildSettings())
-  const { setFilters, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useLockedArts, ascending, } = buildSettings
+  const { setFilters, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useLockedArts, useEquippedArts, ascending, } = buildSettings
 
   const [builds, setbuilds] = useState([])
   const [maxBuildsToShow, setmaxBuildsToShow] = useState(maxBuildsToShowDefault)
@@ -146,22 +146,20 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     if (!characterKey) // Make sure we have all slotKeys
       return Object.fromEntries(Artifact.getSlotKeys().map(slotKey => [slotKey, []]))
     const artifactDatabase = deepClone(ArtifactDatabase.getArtifactDatabase())
-    //do not use artifacts that are locked.
-    if (!useLockedArts)
-      Object.entries(artifactDatabase).forEach(([key, val]) => {
-        //if its equipped on the selected character, bypass the lock check
-        if (val.location === characterKey) return
-        //if its locked, or equipped, remove from consideration
-        if (val.lock || val.location)
-          delete artifactDatabase[key]
-      })
+    Object.entries(artifactDatabase).forEach(([key, art]) => {
+      //if its equipped on the selected character, bypass the check
+      if (art.location === characterKey) return
+
+      if (art.lock && !useLockedArts) delete artifactDatabase[key]
+      else if (art.location && !useEquippedArts) delete artifactDatabase[key]
+    })
     const split = Artifact.splitArtifactsBySlot(artifactDatabase);
     //filter the split slots on the mainstats selected.
     artifactsSlotsToSelectMainStats.forEach((slotKey, index) =>
       mainStatKeys[index] && (split[slotKey] = split[slotKey].filter((art) => art.mainStatKey === mainStatKeys[index])))
     const totBuildNumber = calculateTotalBuildNumber(split, setFilters)
     return { split, totBuildNumber }
-  }, [characterKey, useLockedArts, mainStatKeys, setFilters])
+  }, [characterKey, useLockedArts, useEquippedArts, mainStatKeys, setFilters])
 
   const generateBuilds = useCallback((turbo = false) => {
     if (typeof turbo !== "boolean") turbo = false
@@ -255,7 +253,6 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   const artsAccounted = setFilters.reduce((accu, cur) => cur.key ? accu + cur.num : accu, 0)
   const artifactCondCount = useMemo(() => {
     let count = 0;
-    console.log(initialStats?.conditionalValues?.artifact);
     crawlObject(initialStats?.conditionalValues?.artifact, [], v => Array.isArray(v), () => count++)
     return count
   }, [initialStats?.conditionalValues])
@@ -335,9 +332,12 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
                   </Card>
                 </Col>)}
                 <Col className="mb-2" xs={12}>
-                  <Card bg="lightcontent" text="lightfont"><Card.Body>
-                    <Button className="w-100" onClick={() => buildSettingsDispatch({ useLockedArts: !buildSettings.useLockedArts })} disabled={generatingBuilds}>
-                      <span><FontAwesomeIcon icon={useLockedArts ? faCheckSquare : faSquare} /> Use Locked {"&"} Equipped Artifacts</span>
+                  <Card bg="lightcontent" text="lightfont"><Card.Body className="mb-n2">
+                    <Button className="w-100 mb-2" onClick={() => buildSettingsDispatch({ useEquippedArts: !useEquippedArts })} disabled={generatingBuilds}>
+                      <span><FontAwesomeIcon icon={useEquippedArts ? faCheckSquare : faSquare} /> Use Equipped Artifacts</span>
+                    </Button>
+                    <Button className="w-100 mb-2" onClick={() => buildSettingsDispatch({ useLockedArts: !useLockedArts })} disabled={generatingBuilds}>
+                      <span><FontAwesomeIcon icon={useLockedArts ? faCheckSquare : faSquare} /> Use Locked Artifacts</span>
                     </Button>
                   </Card.Body></Card>
                 </Col>

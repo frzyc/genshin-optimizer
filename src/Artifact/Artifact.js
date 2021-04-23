@@ -245,9 +245,6 @@ export default class Artifact {
     return setToSlots
   };
 
-  /**
-   * TODO: Unit test
-   */
   static getAllArtifactSetEffectsObj = stats => {
     let ArtifactSetEffectsObj = {};
     //accumulate the non-conditional stats

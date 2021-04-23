@@ -38,9 +38,8 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
   if (!art.maximumEfficiency) Artifact.substatsValidation(art)
   const { setKey, slotKey, numStars = 0, level = 0, mainStatKey, substats = [], location = "", lock, currentEfficiency = 0, maximumEfficiency = 0 } = art
   const mainStatLevel = Math.max(Math.min(mainStatAssumptionLevel, numStars * 4), level)
-  let assFullColor = mainStatAssumptionLevel && level !== numStars * 4
-  let mainStatVal = <span className={assFullColor ? "text-orange" : ""}>{Artifact.getMainStatValue(mainStatKey, numStars, mainStatLevel, "")}{Stat.getStatUnit(mainStatKey)}</span>
-  let artifactValid = substats.every(sstat => (!sstat.key || (sstat.key && sstat.value && sstat?.rolls?.length)))
+  const mainStatVal = <span className={mainStatLevel !== level ? "text-orange" : ""}>{Artifact.getMainStatValue(mainStatKey, numStars, mainStatLevel, "")}{Stat.getStatUnit(mainStatKey)}</span>
+  const artifactValid = substats.every(sstat => (!sstat.key || (sstat.key && sstat.value && sstat?.rolls?.length)))
 
   return (<Card className="h-100" border={`${numStars}star`} bg="lightcontent" text="lightfont">
     <Card.Header className="p-0">
@@ -97,16 +96,14 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
         <Col xs="auto">
           <ButtonGroup>
             {editable ? <OverlayTrigger placement="top"
-              overlay={<Tooltip>Locking a artifact will prevent the build generator from picking it for builds. Artifacts on characters are locked by default.</Tooltip>}>
+              overlay={<Tooltip>Locking a artifact will prevent the build generator from picking it for builds.</Tooltip>}>
               <span className="d-inline-block">
                 <Button size="sm"
-                  disabled={location}
-                  style={location ? { pointerEvents: 'none' } : {}}
                   onClick={() => {
                     art.lock = !lock
                     ArtifactDatabase.update(art);
                   }}>
-                  <FontAwesomeIcon icon={(lock || location) ? faLock : faLockOpen} className="fa-fw" />
+                  <FontAwesomeIcon icon={lock ? faLock : faLockOpen} className="fa-fw" />
                 </Button>
               </span>
             </OverlayTrigger> : null}

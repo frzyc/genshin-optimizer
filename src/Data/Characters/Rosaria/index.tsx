@@ -51,7 +51,7 @@ const conditionals: IConditionals = {
   c6: { // DivineRetribution
     canShow: stats => stats.constellation >= 6,
     name: <span><b>Rites of Termination</b> Attack on enemy</span>,
-    stats: { enemyDEFRed_: 20 },
+    stats: { physical_enemyRes_: -20 },
     fields: [{
       text: "Duration",
       value: "10s",
