@@ -255,7 +255,8 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   const artsAccounted = setFilters.reduce((accu, cur) => cur.key ? accu + cur.num : accu, 0)
   const artifactCondCount = useMemo(() => {
     let count = 0;
-    crawlObject(initialStats?.conditionalValues, [], v => Array.isArray(v), () => count++)
+    console.log(initialStats?.conditionalValues?.artifact);
+    crawlObject(initialStats?.conditionalValues?.artifact, [], v => Array.isArray(v), () => count++)
     return count
   }, [initialStats?.conditionalValues])
   //rudimentary dispatcher, definitely not the same API as the real characterDispatch.
@@ -384,12 +385,13 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
                   ><span>Generate Builds</span></Button>
                   {totBuildNumber > warningBuildNumber && <OverlayTrigger
                     overlay={<Tooltip>
-                      <span>Dramatically speeds up build time.<br />Yields only 1 build.</span>
-                      {Boolean(disabledTurbo) && <span><hr />Does not work with <b>{Boolean(ascending) ? 'min' : 'max'}imum</b> stat filter when sort by <b>{Boolean(ascending) ? 'as' : 'des'}cending</b></span>}
+                      <div>Dramatically speeds up build time.</div>
+                      <div>Yields only 1 build.</div>
+                      {Boolean(disabledTurbo) && <div className="mt-2">Does not work with <b>{Boolean(ascending) ? 'min' : 'max'}imum</b> stat filter when sorting by <b>{Boolean(ascending) ? 'as' : 'des'}cending</b></div>}
                     </Tooltip>}
-                  ><div class="btn" style={{ borderTop: 'none', padding: 0 }}>
-                      <Button variant="success" disabled={disabledTurbo} style={{ borderRadius: 0, ...disabledTurbo && { pointerEvents: 'none' } }} onClick={() => generateBuilds(true)}><strong>TURBO</strong></Button>
-                    </div></OverlayTrigger>}
+                  ><span >
+                      <Button variant="success" disabled={disabledTurbo} className={`rounded-0 ${disabledTurbo ? "cursor-pointer" : ""}`} onClick={() => generateBuilds(true)}><strong>TURBO</strong></Button>
+                    </span></OverlayTrigger>}
                   <Button
                     className="h-100"
                     disabled={!generatingBuilds}
