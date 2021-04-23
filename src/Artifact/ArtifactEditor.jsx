@@ -174,47 +174,33 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }) {
   const getUpdloadDisplayReset = useCallback(
     reset => uploadDisplayReset = reset, [])
   const randomizeArtifact = () => {
-    const state = initialArtifact();
-    //randomly choose artifact set
-    state.setKey = getRandomElementFromArray(Artifact.getSetKeys());
-    //choose star
-    state.numStars = getRandomElementFromArray(Artifact.getRarityArr(state.setKey));
-    //choose piece
-    state.slotKey = getRandomElementFromArray(Object.keys(Artifact.getPieces(state.setKey)));
-    //choose mainstat
-    state.mainStatKey = getRandomElementFromArray(Artifact.getSlotMainStatKeys(state.slotKey));
-
-    //choose initial substats from star
-    let numOfInitialSubStats = getRandomIntInclusive(Artifact.getBaseSubRollNumLow(state.numStars), Artifact.getBaseSubRollNumHigh(state.numStars));
-
-    //choose level
+    const state = initialArtifact()
+    state.setKey = getRandomElementFromArray(Artifact.getSetKeys())
+    state.numStars = getRandomElementFromArray(Artifact.getRarityArr(state.setKey))
+    state.slotKey = getRandomElementFromArray(Object.keys(Artifact.getPieces(state.setKey)))
+    state.mainStatKey = getRandomElementFromArray(Artifact.getSlotMainStatKeys(state.slotKey))
     state.level = getRandomIntInclusive(0, state.numStars * 4)
-    let numUpgradesOrUnlocks = Math.floor(state.level / 4);
-    const totRolls = numOfInitialSubStats + numUpgradesOrUnlocks
-    if (totRolls >= 4) {
-      numOfInitialSubStats = 4;
-      numUpgradesOrUnlocks = totRolls - 4;
-    } else {
-      numOfInitialSubStats = totRolls;
-      numUpgradesOrUnlocks = 0;
-    }
+
+    const totRolls = Math.floor(state.level / 4) + getRandomIntInclusive(
+      Artifact.getBaseSubRollNumLow(state.numStars),
+      Artifact.getBaseSubRollNumHigh(state.numStars))
+    const numOfInitialSubStats = Math.min(totRolls, 4)
+    const numUpgradesOrUnlocks = totRolls - numOfInitialSubStats
+
     const RollStat = (subStatKey) =>
       getRandomElementFromArray(Artifact.getSubstatRollData(subStatKey, state.numStars))
 
     let remainingSubstats = getRemainingSubstats(state.mainStatKey, state.substats)
-    //set initial substat & value
-    for (let i = 0; i < numOfInitialSubStats; i++) {
-      let substat = state.substats[i]
+    for (const substat of state.substats.slice(0, numOfInitialSubStats)) {
       substat.key = getRandomElementFromArray(remainingSubstats)
       remainingSubstats = remainingSubstats.filter(key => key !== substat.key)
       substat.value = RollStat(substat.key)
     }
-
-    //numUpgradesOrUnlocks should only have upgrades right now. that means all 4 substats have value.
     for (let i = 0; i < numUpgradesOrUnlocks; i++) {
       let substat = getRandomElementFromArray(state.substats)
       substat.value += RollStat(substat.key)
     }
+
     cancelEdit?.();
     artifactDispatch({ type: "overwrite", artifact: state })
     for (let index = 0; index < 4; index++) {
