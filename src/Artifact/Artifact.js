@@ -145,10 +145,6 @@ export default class Artifact {
   static substatsValidation(state) {
     const { numStars, level, substats } = state, errors = []
 
-    const { currentEfficiency, maximumEfficiency } = Artifact.getArtifactEfficiency(substats, numStars, level)
-    state.currentEfficiency = currentEfficiency
-    state.maximumEfficiency = maximumEfficiency
-
     const allSubstatRolls = []
     let total = 0
     substats.forEach((substat, index) => {
@@ -215,6 +211,13 @@ export default class Artifact {
       else {
         errors.push(`${numStars}-star artifact (level ${level}) should have no more than ${maximum - remaining} rolls. It currently has ${total} rolls.`)
       }
+    } else {
+      // Found valid build, filling missing data
+      for (const substat of substats)
+        substat.accurateValue = substat.rolls.reduce((sum, cur) => sum + cur, 0)
+      const { currentEfficiency, maximumEfficiency } = Artifact.getArtifactEfficiency(substats, numStars, level)
+      state.currentEfficiency = currentEfficiency
+      state.maximumEfficiency = maximumEfficiency
     }
 
     return errors
@@ -222,15 +225,12 @@ export default class Artifact {
   static getArtifactEfficiency(substats, numStars, level) {
     if (!numStars) return { currentEfficiency: 0, maximumEfficiency: 0 }
     // Relative to max star, so comparison between different * makes sense.
-    let totalPossbleRolls = Artifact.totalPossibleRolls(maxStar);
+    let totalRolls = Artifact.totalPossibleRolls(maxStar);
     let rollsRemaining = Artifact.rollsRemaining(level, numStars);
-    let totalCurrentEfficiency = substats.reduce((sum, cur) => sum + (cur?.efficiency * cur?.rolls?.length || 0), 0);
-    let statKeys = substats.filter(({ key }) => key).map(({ key }) => key)
-    let maxPerRoll = 100 * Math.max(...(statKeys.length === 4 ? statKeys : Object.keys(ArtifactSubstatsMinMax)).map(
-      key => Artifact.getSubstatAllMax(key, numStars) / Artifact.getSubstatAllMax(key)
-    ))
-    let currentEfficiency = clampPercent(totalCurrentEfficiency / totalPossbleRolls);
-    let maximumEfficiency = clampPercent((totalCurrentEfficiency + rollsRemaining * maxPerRoll) / totalPossbleRolls);
+    let current = substats.reduce((sum, { key, accurateValue }) => sum + (key ? (accurateValue / ArtifactSubstatsMinMax[key].max[maxStar]) : 0), 0)
+    let maximum = current + rollsRemaining
+    let currentEfficiency = current * 100 / totalRolls
+    let maximumEfficiency = maximum * 100 / totalRolls
     return { currentEfficiency, maximumEfficiency }
   }
 

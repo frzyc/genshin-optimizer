@@ -306,7 +306,7 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }) {
               <Row>
                 <Col className="text-center"><span >Current Substat Efficiency </span></Col>
                 <Col xs="auto">
-                  <PercentBadge valid={!errMsgs.length} value={currentEfficiency} />
+                  <PercentBadge valid={!errMsgs.length} value={errMsgs.length ? "ERR" : currentEfficiency} />
                   <OverlayTrigger
                     placement="bottom"
                     overlay={<Popover >
@@ -329,7 +329,7 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }) {
               <Row>
                 <Col className="text-center"><span>Maximum Substat Efficiency </span></Col>
                 <Col xs="auto">
-                  <PercentBadge valid={!errMsgs.length} value={maximumEfficiency} />
+                  <PercentBadge valid={!errMsgs.length} value={errMsgs.length ? "ERR" : maximumEfficiency} />
                   <OverlayTrigger
                     placement="bottom"
                     overlay={<Popover >
