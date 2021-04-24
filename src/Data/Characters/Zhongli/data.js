@@ -49,13 +49,9 @@ function zliDMG(percent, hpMulti, stats, skillKey, elemental = false) {
 const formula = {
   normal: {
     ...Object.fromEntries(data.normal.hitArr.map((percentArr, i) => [i, stats =>
-      basicDMGFormula(percentArr[stats.tlvl.auto] * (i === 4 ? 4 : 1), stats, "normal")])),
-    ...Object.fromEntries(data.normal.hitArr.map((percentArr, i) => [`${i}HP`, stats => {
-      const val = percentArr[stats.tlvl.auto] / 100
-      const statKey = getTalentStatKey("normal", stats) + "_multi"
-      const multi = i === 4 ? 4 : 1
-      return [s => (val * s.finalATK + 0.0139 * s.finalHP) * s[statKey] * multi, ["finalATK", "finalHP", statKey]]
-    }])),
+      basicDMGFormula(percentArr[stats.tlvl.auto], stats, "normal")])),
+    ...Object.fromEntries(data.normal.hitArr.map((percentArr, i) => [`${i}HP`, stats =>
+      zliDMG(percentArr[stats.tlvl.auto], 0.0139, stats, "normal")])),
   },
   charged: {
     dmg: stats => basicDMGFormula(data.charged.dmg[stats.tlvl.auto], stats, "charged"),

@@ -40,7 +40,7 @@ const data = {
 
 const formula = {
   normal: Object.fromEntries(data.normal.hitArr.map((percentArr, i) =>
-    [i, stats => basicDMGFormula((i === 2 ? 2 : 1) * (percentArr[stats.tlvl.auto]), stats,"normal")])),
+    [i, stats => basicDMGFormula(percentArr[stats.tlvl.auto], stats, "normal")])),
   charged: Object.fromEntries(Object.entries(data.charged).map(([name, arr]) =>
     [name, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "charged")])),
   plunging: Object.fromEntries(Object.entries(data.plunging).map(([name, arr]) =>

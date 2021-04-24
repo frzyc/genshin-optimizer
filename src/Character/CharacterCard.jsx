@@ -1,6 +1,6 @@
 import { faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useEffect } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { Badge, Image } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
@@ -29,9 +29,8 @@ export default function CharacterCard({ characterKey, onEdit, onDelete, cardClas
       characterKey && CharacterDatabase.unregisterCharListener(characterKey, forceUpdate)
   }, [characterKey, forceUpdate])
   const character = CharacterDatabase.get(characterKey)
+  const stats = useMemo(() => character && Character.calculateBuild(character), [character])
   if (!character) return null;
-  const build = Character.calculateBuild(character)
-  const { setToSlots } = build
 
   const { weapon = {}, constellation } = character
   const name = Character.getName(characterKey)
@@ -83,7 +82,7 @@ export default function CharacterCard({ characterKey, onEdit, onDelete, cardClas
       </Row>
       <Row>
         <Col>
-          {Object.entries(Artifact.getSetEffects(setToSlots)).map(([key, arr]) => {
+          {Object.entries(Artifact.getSetEffects(stats.setToSlots)).map(([key, arr]) => {
             let artifactSetName = Artifact.getSetName(key)
             let highestNum = Math.max(...arr)
             return <h5 key={key}><Badge variant="secondary">{artifactSetName} <Badge variant="success">{highestNum}</Badge></Badge></h5>
@@ -93,7 +92,7 @@ export default function CharacterCard({ characterKey, onEdit, onDelete, cardClas
       <Row>
         {statkeys.map(statKey => {
           let unit = Stat.getStatUnit(statKey)
-          let statVal = build.finalStats[statKey]
+          let statVal = stats[statKey]
           return <Col xs={12} key={statKey}>
             <h6 className="d-inline">{StatIconEle(statKey)} {Stat.getStatName(statKey)}</h6>
             <span className={`float-right`}>

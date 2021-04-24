@@ -1,4 +1,3 @@
-import ConditionalsUtil from "../../../Util/ConditionalsUtil"
 import { basicDMGFormula } from "../../../Util/FormulaUtil"
 
 const data = {
@@ -49,8 +48,7 @@ const formula = {
     aimShot1: stats => basicDMGFormula(data.charged.aimShot1[stats.tlvl.auto], stats, "charged", true),
     frostflake: stats => {
       if (stats.hitMode === "avgHit") {
-        let { talentConditionals = [] } = stats
-        let conditionalNum = ConditionalsUtil.getConditionalNum(talentConditionals, { srcKey: "auto", srcKey2: "UndividedHeart" })
+        const [conditionalNum] = stats.conditionalValue?.character?.ganyu?.UndividedHeart ?? []
         if (conditionalNum) {
           const val = data.charged.frostflake[stats.tlvl.auto] / 100
           //cryo_charged_hit or cryo_melt_charged_hit
@@ -63,8 +61,7 @@ const formula = {
     },
     frostflakeBloom: stats => {
       if (stats.hitMode === "avgHit") {
-        let { talentConditionals = [] } = stats
-        let conditionalNum = ConditionalsUtil.getConditionalNum(talentConditionals, { srcKey: "auto", srcKey2: "UndividedHeart" })
+        const [conditionalNum] = stats.conditionalValue?.character?.ganyu?.UndividedHeart ?? []
         if (conditionalNum) {
           const val = data.charged.frostflakeBloom[stats.tlvl.auto] / 100
           //cryo_charged_hit or cryo_melt_charged_hit
@@ -87,7 +84,6 @@ const formula = {
       return [(s) => hp * s.finalHP, ["finalHP"]]
     },
     dmg: stats => basicDMGFormula(data.skill.dmg[stats.tlvl.skill], stats, "skill"),
-    detonationDMG: stats => basicDMGFormula(data.skill.dmg[stats.tlvl.skill], stats, "skill"),
   },
   burst: {
     dmg: stats => basicDMGFormula(data.burst.dmg[stats.tlvl.burst], stats, "burst"),

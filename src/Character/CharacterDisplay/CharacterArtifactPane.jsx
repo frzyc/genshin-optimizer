@@ -1,108 +1,67 @@
-import React, { useCallback } from 'react';
-import { Alert, Badge, Button, Card, Col, Row } from 'react-bootstrap';
+import React, { useCallback, useMemo } from 'react';
+import { Alert, Button, Card, Col, Row } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import Artifact from '../../Artifact/Artifact';
 import ArtifactCard from '../../Artifact/ArtifactCard';
-import ConditionalSelector from '../../Components/ConditionalSelector';
-import Stat from "../../Stat";
-import ConditionalsUtil from '../../Util/ConditionalsUtil';
+import SetEffectDisplay from '../../Artifact/Component/SetEffectDisplay';
 import Character from "../Character";
 import StatDisplayComponent from './StatDisplayComponent';
-
-function CharacterArtifactPane({ character, character: { characterKey, artifactConditionals }, equippedBuild, newBuild, editable, characterDispatch, artifacts }) {
+const artLayoutSize = { xs: 12, md: 6, lg: 4 }
+function CharacterArtifactPane({ character, character: { characterKey }, equippedBuild, newBuild, editable, characterDispatch, artifacts }) {
   const history = useHistory()
   //choose which one to display stats for
-  const build = newBuild ? newBuild : equippedBuild
-  let artifactsAssumeFull = newBuild ? newBuild.finalStats?.artifactsAssumeFull : character.artifactsAssumeFull
-  if (newBuild) artifactConditionals = newBuild.artifactConditionals
-  const statKeys = Character.getDisplayStatKeys(build.finalStats)
-  const setStateArtifactConditional = (setKey, setNumKey, conditionalNum) => characterDispatch?.({ artifactConditionals: ConditionalsUtil.setConditional(artifactConditionals, { srcKey: setKey, srcKey2: setNumKey }, conditionalNum) })
+  const stats = newBuild ? newBuild : equippedBuild
+  const mainStatAssumptionLevel = stats?.mainStatAssumptionLevel ?? 0
+  const statKeys = useMemo(() => Character.getDisplayStatKeys(stats), [stats])
   const edit = useCallback(
     artid => history.push({
       pathname: "/artifact",
       artToEditId: artid
     }), [history])
+
+  const equipArts = useCallback(() => {
+    if (!window.confirm("Do you want to equip this artifact build to this character?")) return
+    Character.equipArtifacts(characterKey, newBuild.equippedArtifacts)
+    characterDispatch?.({ type: "fromDB" })
+  }, [characterKey, newBuild?.equippedArtifacts, characterDispatch])
+
+  const unequipArts = useCallback(() => {
+    if (!window.confirm("Do you want to move all the artifacts equipped to inventory?")) return
+    Character.equipArtifacts(characterKey, Object.fromEntries(Artifact.getSlotKeys().map(sKey => [sKey, ""])))
+    characterDispatch?.({ type: "fromDB" })
+  }, [characterKey, characterDispatch])
   return <>
-    <Row>
-      <Col className="mb-2">
-        <Card className="h-100" bg="lightcontent" text="lightfont">
-          <Card.Body>
-            <StatDisplayComponent {...{ character, equippedBuild, newBuild, statsDisplayKeys: statKeys, editable }} />
-          </Card.Body>
-          {newBuild ? <Card.Footer>
-            <Button onClick={() => {
-              if (!window.confirm("Do you want to equip this artifact build to this character?")) return
-              Character.equipArtifacts(characterKey, newBuild.artifactIds)
-              characterDispatch?.({ type: "fromDB" })
-            }}>Equip all artifacts to current character</Button>
-            {artifactsAssumeFull && <Alert className="float-right text-right mb-0 py-2" variant="orange" ><b>Assume Main Stats are Fully Leveled</b></Alert>}
-          </Card.Footer> : (editable && <Card.Footer>
-            <Button onClick={() => {
-              if (!window.confirm("Do you want to move all the artifacts equipped to inventory?")) return
-              Character.equipArtifacts(characterKey, Object.fromEntries(Artifact.getSlotKeys().map(sKey => [sKey, ""])))
-              characterDispatch?.({ type: "fromDB" })
-            }}>Unequip all artifacts</Button>
-            {artifactsAssumeFull && <Alert className="float-right text-right mb-0 py-2" variant="orange" ><b>Assume Main Stats are Fully Leveled</b></Alert>}
-          </Card.Footer>)}
-        </Card>
-      </Col>
-    </Row>
+    <Card className="h-100 mb-2" bg="lightcontent" text="lightfont">
+      <Card.Body>
+        <StatDisplayComponent {...{ character, equippedBuild, newBuild, statsDisplayKeys: statKeys, editable }} />
+      </Card.Body>
+      <Card.Footer>
+        {newBuild ? <Button onClick={equipArts}>Equip all artifacts to current character</Button> : (editable && <Button onClick={unequipArts}>Unequip all artifacts</Button>)}
+        {Boolean(mainStatAssumptionLevel) && <Alert className="float-right text-right mb-0 py-2" variant="orange" ><b>Assume Main Stats are Level {mainStatAssumptionLevel}</b></Alert>}
+      </Card.Footer>
+    </Card>
     <Row className="mb-n2">
-      <Col>
-        <Row>
-          <Col sm={6} lg={4} className="mb-2">
-            <Card className="h-100 d-flex flex-column" bg="lightcontent" text="lightfont">
-              <Card.Header>Artifact Set Effects</Card.Header>
-              <Card.Body className="flex-grow-1">
-                <Row>
-                  {Object.entries(Artifact.getSetEffects(build.setToSlots)).map(([setKey, setNumKeyArr]) =>
-                    <Col key={setKey} xs={12} className="mb-2">
-                      <h5>{Artifact.getSetName(setKey)}</h5>
-                      <Row>
-                        {setNumKeyArr.map(setNumKey => {
-                          let setStats = Artifact.getArtifactSetNumStats(setKey, setNumKey)
-                          let conditionalNum = 0;
-                          let conditional = Artifact.getSetEffectConditional(setKey, setNumKey)
-                          if (conditional) {
-                            conditionalNum = ConditionalsUtil.getConditionalNum(artifactConditionals, { srcKey: setKey, srcKey2: setNumKey })
-                            Object.entries(Artifact.getConditionalStats(setKey, setNumKey, conditionalNum)).forEach(([statKey, val]) =>
-                              setStats[statKey] = (setStats[statKey] || 0) + val)
-                          }
-                          let conditionalElement = <ConditionalSelector
-                            disabled={newBuild ? true : false}
-                            conditional={conditional}
-                            conditionalNum={conditionalNum}
-                            setConditional={(cnum) => setStateArtifactConditional(setKey, setNumKey, cnum)}
-                            defEle={<Badge variant="success">{setNumKey}-Set</Badge>}
-                          />
-                          return <Col key={setNumKey} xs={12} className="mb-2">
-                            <h6>{conditionalElement} {Artifact.getSetEffectText(setKey, setNumKey, build.finalStats)}</h6>
-                            {setStats ? <Row>
-                              {Object.entries(setStats).map(([statKey, val]) =>
-                                <Col xs={12} key={statKey}>{Stat.getStatName(statKey)}: {val}{Stat.getStatUnit(statKey)}</Col>)}
-                            </Row> : null}
-                          </Col>
-                        })}
-                      </Row>
-                    </Col>
-                  )}
-                </Row>
-              </Card.Body>
-            </Card>
-          </Col>
-          {artifacts ?
-            Artifact.getSlotKeys().map(slotKey => {//from flex
-              const art = artifacts.find(art => art.slotKey === slotKey)
-              return art ? <Col sm={6} lg={4} key={slotKey} className="mb-2">
-                <ArtifactCard artifactObj={art} />
-              </Col> : null
-            }) : Artifact.getSlotKeys().map(slotKey =>
-              build.artifactIds[slotKey] ? <Col sm={6} lg={4} key={build.artifactIds[slotKey]} className="mb-2">
-                <ArtifactCard artifactId={build.artifactIds[slotKey]} assumeFull={artifactsAssumeFull} onEdit={() => edit(build.artifactIds[slotKey])} />
-              </Col> : null
-            )}
-        </Row>
+      <Col {...artLayoutSize} className="d-flex flex-column">
+        {Object.entries(Artifact.getSetEffects(stats.setToSlots)).map(([setKey, setNumKeyArr]) =>
+          <Card key={setKey} className="mb-2 flex-grow-1" bg="lightcontent" text="lightfont">
+            <Card.Header>{Artifact.getSetName(setKey)}</Card.Header>
+            <Card.Body className="p-2 mb-n2">
+              {setNumKeyArr.map(setNumKey => <SetEffectDisplay key={setKey + setNumKey} {...{ setKey, setNumKey, equippedBuild, newBuild, characterDispatch, editable }} />)}
+            </Card.Body>
+          </Card>
+        )}
       </Col>
+      {artifacts ?
+        Artifact.getSlotKeys().map(slotKey => {//from flex
+          const art = artifacts.find(art => art.slotKey === slotKey)
+          return Boolean(art) && <Col {...artLayoutSize} key={slotKey} className="mb-2">
+            <ArtifactCard artifactObj={art} />
+          </Col>
+        }) : Artifact.getSlotKeys().map(slotKey =>
+          Boolean(stats.equippedArtifacts[slotKey]) && <Col {...artLayoutSize} key={stats.equippedArtifacts[slotKey]} className="mb-2">
+            <ArtifactCard artifactId={stats.equippedArtifacts[slotKey]} mainStatAssumptionLevel={mainStatAssumptionLevel} onEdit={() => edit(stats.equippedArtifacts[slotKey])} />
+          </Col>
+        )}
     </Row>
   </>
 }

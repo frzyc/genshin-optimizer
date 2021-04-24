@@ -1,11 +1,12 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import CharacterDatabase from '../Database/CharacterDatabase';
 import SlotIcon from '../Components/SlotIcon';
-import { ArtifactMainSlotKeys, ArtifactMainStatsData, ArtifactData, ArtifactSlotsData, ArtifactStarsData, ArtifactSubStatsData, ArtifactDataImport, ArtifactSubstatsMinMax } from '../Data/ArtifactData';
-import Stat from '../Stat';
-import ConditionalsUtil from '../Util/ConditionalsUtil';
-import { clampPercent, closeEnoughFloat, closeEnoughInt, deepClone } from '../Util/Util';
+import Conditional from '../Conditional/Conditional';
+import { ArtifactData, ArtifactDataImport, ArtifactMainSlotKeys, ArtifactMainStatsData, ArtifactSlotsData, ArtifactStarsData, ArtifactSubStatsData, ArtifactSubstatsMinMax } from '../Data/ArtifactData';
 import ArtifactDatabase from '../Database/ArtifactDatabase';
+import CharacterDatabase from '../Database/CharacterDatabase';
+import { ArtifactSubstatLookupTable } from '../Data/ArtifactLookupTable';
+import Stat from '../Stat';
+import { clampPercent, closeEnoughFloat, closeEnoughInt, deepClone } from '../Util/Util';
 
 const maxStar = 5
 
@@ -46,17 +47,25 @@ export default class Artifact {
     return artifactSetEffect
   }
 
-  static getSetEffectText = (setKey, setNumKey, charFinalStats, defVal = "") => {
+  static getSetEffectText = (setKey, setNumKey, stats, defVal = "") => {
     let setEffectText = this.getSetEffectsObj(setKey)?.[setNumKey]?.text
     if (!setEffectText) return defVal
     if (typeof setEffectText === "function")
-      return setEffectText(charFinalStats)
+      return setEffectText(stats)
     else if (setEffectText)
       return setEffectText
     return defVal
   }
-  static getSetEffectConditional = (setKey, setNumKey, defVal = null) =>
-    this.getSetEffectsObj(setKey)?.[setNumKey]?.conditional || defVal
+  static getSetEffectConditionals = (setKey, setNumKey, defVal = null) => {
+    const setEffect = this.getSetEffectsObj(setKey)?.[setNumKey]
+    if (setEffect?.conditional || setEffect?.conditionals) {
+      return {
+        ...setEffect?.conditional && { default: setEffect?.conditional },
+        ...setEffect?.conditionals && setEffect?.conditionals
+      }
+    }
+    return defVal
+  }
 
   //SLOT
   static getSlotKeys = () => Object.keys(ArtifactSlotsData || {})
@@ -114,101 +123,101 @@ export default class Artifact {
     state.substats.reduce((sum, cur) =>
       sum + (cur && cur.value ? 1 : 0), 0);
   static getSubstatRollData = (subStatKey, numStars) => ArtifactSubStatsData?.[subStatKey]?.[numStars] ?? []
-  static getSubstatRolls = (subStatKey, subStatValue, numStars, defVal = []) => {
-    if (!numStars || !subStatKey || typeof subStatValue !== "number" || !subStatValue) return defVal
+  static getSubstatRolls = (subStatKey, subStatValue, numStars) => {
+    if (!numStars || !subStatKey || typeof subStatValue !== "number" || !subStatValue) return []
     let rollData = this.getSubstatRollData(subStatKey, numStars)
-    if (!rollData.length) return defVal
-    if (rollData.includes(subStatValue)) return [[subStatValue]]
-    if (subStatValue > (rollData[rollData.length - 1] * (this.getNumUpgradesOrUnlocks(numStars) + 2)))//+2 instead of +1 to go over rounding
-      return defVal
-    let isFloat = Stat.getStatUnit(subStatKey) === "%"
-    //calculation is more expensive now, since its calculating all the combinations to test to get to the value.
-    let rolls = [];
-    let maxNumRoll = Math.round(subStatValue / rollData[0])
-    if (!maxNumRoll) return defVal;
-    const rollOption = (val, arr) => {
-      if (arr.length) {
-        if (arr.length > maxNumRoll) return;
-        let sum = arr.reduce((accu, v) => accu + v, 0)
-        if (isFloat) {
-          if (sum - val >= 0.101) return
-          if (closeEnoughFloat(sum, val))
-            return rolls.push(arr);
-        } else {
-          if (sum - val > 1) return
-          if (closeEnoughInt(sum, val))
-            return rolls.push(arr);
-        }
-      }
-      rollData.slice().reverse().forEach(roll => {
-        if (!arr.length || arr[arr.length - 1] >= roll)
-          rollOption(subStatValue, [...arr, roll])
-      })
-    }
-    rollOption(subStatValue, [])
-    return rolls;
+    if (!rollData.length) return []
+
+    let table = ArtifactSubstatLookupTable[subStatKey][numStars]
+    let lookupValue = subStatValue.toFixed(1)
+
+    if (table[lookupValue])
+      return table[lookupValue].map(roll => roll.map(i => rollData[i]))
+    else return [] // Lookup fails
   }
-  static getSubstatEfficiency = (subStatKey, rolls = []) => {
-    let len = rolls.length
-    let sum = rolls.reduce((a, c) => a + c, 0)
-    let max = this.getSubstatAllMax(subStatKey) * len
+  static getSubstatEfficiency = (subStatKey, rolls) => {
+    const sum = rolls.reduce((a, b) => a + b, 0)
+    const max = this.getSubstatAllMax(subStatKey) * rolls.length
     return max ? clampPercent((sum / max) * 100) : 0
   }
 
   //ARTIFACT IN GENERAL
   static substatsValidation(state) {
-    let { numStars = 0, level = 0, substats = [] } = state
-    //calculate rolls for substats
-    for (const substat of substats) {
-      let { key, value } = substat
-      let rollArr = Artifact.getSubstatRolls(key, value, numStars) || []
-      substat.rolls = rollArr[0] || []
-      substat.rollArr = rollArr.length > 1 ? rollArr : undefined
-      substat.efficiency = Artifact.getSubstatEfficiency(key, substat.rolls)
-    }
-    let { currentEfficiency, maximumEfficiency } = Artifact.getArtifactEfficiency(substats, numStars, level)
+    const { numStars, level, substats } = state, errors = []
+
+    const { currentEfficiency, maximumEfficiency } = Artifact.getArtifactEfficiency(substats, numStars, level)
     state.currentEfficiency = currentEfficiency
     state.maximumEfficiency = maximumEfficiency
-    //artifact validation logic
-    let errMsgs = []
-    for (const substat of substats)
-      if (!substat.rolls?.length && substat.key && substat.value)
-        errMsgs.push("One of the substat is invalid.")
 
-    //only show this error when all substats are "valid"
-    if (!errMsgs.length && substats.some(substat => substat.rolls?.length > 1) && substats.some((substat) => !substat.rolls?.length))
-      errMsgs.push("One of the substat have >1 rolls, but not all substats are unlocked.")
+    const allSubstatRolls = []
+    let total = 0
+    substats.forEach((substat, index) => {
+      const { key, value } = substat, substatRolls = Artifact.getSubstatRolls(key, value, numStars)
 
-    if (numStars) {
-      let currentNumOfRolls = substats.reduce((sum, cur) => sum + (cur.rolls?.length || 0), 0);
-      let leastNumRolls = Artifact.getBaseSubRollNumLow(numStars) + Math.floor(level / 4)
-      if (currentNumOfRolls < leastNumRolls) {//there might be substats with more rolls
-        for (const substat of substats) {
-          let rollslen = substat.rolls?.length
-          if (!rollslen || !substat.rollArr) continue
-          let moreRolls = substat.rollArr.filter(rolls => rolls.length > rollslen)
-          if (moreRolls.length) {
-            substat.rolls = moreRolls[0]
-            moreRolls.length > 1 ? (substat.rollArr = moreRolls) : (delete substat.rollArr)
-            substat.efficiency = Artifact.getSubstatEfficiency(substat.key, substat.rolls)
-            let { currentEfficiency, maximumEfficiency } = Artifact.getArtifactEfficiency(substats, numStars, level)
-            state.currentEfficiency = currentEfficiency
-            state.maximumEfficiency = maximumEfficiency
-          }
-          currentNumOfRolls = substats.reduce((sum, cur) => sum + (cur.rolls?.length || 0), 0);
-          if (currentNumOfRolls >= leastNumRolls) break;
-        }
+      if (substatRolls.length) {
+        const possibleLengths = new Set(substatRolls.map(roll => roll.length))
+        if (possibleLengths.size !== 1)
+          allSubstatRolls.push({ index, substatRolls })
+        else
+          total += substatRolls[0].length
+
+        substat.rolls = substatRolls[0]
+        substat.efficiency = Artifact.getSubstatEfficiency(key, substat.rolls)
+      } else {
+        if (substat.key)
+          errors.push(`Invalid substat ${Stat.getStatNameWithPercent(substat.key)}`)
+
+        substat.rolls = []
+        substat.efficiency = 0
       }
-      if (currentNumOfRolls < leastNumRolls)
-        errMsgs.push(`Artifact should have at least ${leastNumRolls} Rolls, it currently only have ${currentNumOfRolls} Rolls.`)
-      else {
-        let rollsRemaining = Artifact.rollsRemaining(level, numStars);
-        let totalPossbleRolls = Artifact.totalPossibleRolls(numStars);
-        if ((currentNumOfRolls + rollsRemaining) > totalPossbleRolls)
-          errMsgs.push(`Current number of substat rolles(${currentNumOfRolls}) + Rolls remaining from level up (${rollsRemaining}) is greater than the total possible roll of this artifact (${totalPossbleRolls}) `)
+    })
+
+    if (errors.length) return errors
+    {
+      let substat = substats.find(substat => substat.rolls.length > 1)
+      if (substat && substats.some((substat) => !substat.rolls.length))
+        return [`Substat ${Stat.getStatNameWithPercent(substat.key)} has > 1 roll, but not all substats are unlocked.`]
+    }
+
+    const minimum = Artifact.getBaseSubRollNumLow(numStars) + Math.floor(level / 4)
+    const remaining = Artifact.rollsRemaining(level, numStars);
+    const maximum = Artifact.totalPossibleRolls(numStars);
+
+    let minimumMaxRolls = Infinity
+    function tryAllSubstats(rolls, maxRolls, total) {
+      if (rolls.length === allSubstatRolls.length) {
+        if (total + remaining <= maximum && total >= minimum && maxRolls < minimumMaxRolls) {
+          minimumMaxRolls = maxRolls
+          for (const { index, roll } of rolls) {
+            substats[index].rolls = roll
+            substats[index].efficiency = Artifact.getSubstatEfficiency(substats[index].key, roll)
+          }
+        }
+
+        return
+      }
+
+      const { index, substatRolls } = allSubstatRolls[rolls.length]
+      for (const roll of substatRolls) {
+        rolls.push({ index, roll })
+        tryAllSubstats(rolls, Math.max(maxRolls, roll.length), total + roll.length)
+        rolls.pop()
       }
     }
-    return errMsgs
+
+    tryAllSubstats([], 0, total)
+
+    if (!isFinite(minimumMaxRolls)) {
+      // No build found
+      const total = substats.reduce((accu, current) => accu + current.rolls.length, 0)
+      if (total < minimum)
+        errors.push(`${numStars}-star artifact (level ${level}) should have at least ${minimum} rolls. It currently has ${total} rolls.`)
+      else {
+        errors.push(`${numStars}-star artifact (level ${level}) should have no more than ${maximum - remaining} rolls. It currently has ${total} rolls.`)
+      }
+    }
+
+    return errors
   }
   static getArtifactEfficiency(substats, numStars, level) {
     if (!numStars) return { currentEfficiency: 0, maximumEfficiency: 0 }
@@ -225,6 +234,7 @@ export default class Artifact {
     return { currentEfficiency, maximumEfficiency }
   }
 
+  //start with {slotKey:art} end with {setKey:[slotKey]}
   static setToSlots = (artifacts) => {
     let setToSlots = {};
     Object.entries(artifacts).forEach(([key, art]) => {
@@ -235,17 +245,9 @@ export default class Artifact {
     return setToSlots
   };
 
-  static getConditionalStats = (setKey, setNumKey, conditionalNum, defVal = {}) => {
-    if (!conditionalNum) return defVal
-    let conditional = this.getSetEffectConditional(setKey, setNumKey)
-    if (!conditional) return defVal
-    let [stats, stacks] = ConditionalsUtil.getConditionalProp(conditional, "stats", conditionalNum)
-    if (!stacks) return defVal
-    return Object.fromEntries(Object.entries(stats).map(([key, val]) => [key, val * stacks]))
-  }
-
-  static getAllArtifactSetEffectsObj = (artifactConditionals = []) => {
+  static getAllArtifactSetEffectsObj = stats => {
     let ArtifactSetEffectsObj = {};
+    //accumulate the non-conditional stats
     Object.entries(ArtifactData).forEach(([setKey, setObj]) => {
       let setEffect = {}
       if (setObj.setEffects)
@@ -256,14 +258,13 @@ export default class Artifact {
       if (Object.keys(setEffect).length > 0)
         ArtifactSetEffectsObj[setKey] = setEffect;
     })
-    artifactConditionals.forEach(({ srcKey: setKey, srcKey2: setNumKey, conditionalNum }) => {
-      let condStats = this.getConditionalStats(setKey, setNumKey, conditionalNum)
-      if (Object.keys(condStats).length > 0) {
-        ArtifactSetEffectsObj[setKey] ?? (ArtifactSetEffectsObj[setKey] = {})
-        ArtifactSetEffectsObj[setKey][setNumKey] ?? (ArtifactSetEffectsObj[setKey][setNumKey] = {})
-        Object.entries(condStats).forEach(([statKey, value]) =>
-          ArtifactSetEffectsObj[setKey][setNumKey][statKey] = (ArtifactSetEffectsObj[setKey][setNumKey][statKey] || 0) + value)
-      }
+    Conditional.parseConditionalValues({ artifact: stats?.conditionalValues?.artifact }, (conditional, conditionalValue, [, setKey]) => {
+      const { setNumKey } = conditional
+      const { stats: condStats } = Conditional.resolve(conditional, stats, conditionalValue)
+      ArtifactSetEffectsObj[setKey] ?? (ArtifactSetEffectsObj[setKey] = {})
+      ArtifactSetEffectsObj[setKey][setNumKey] ?? (ArtifactSetEffectsObj[setKey][setNumKey] = {})
+      Object.entries(condStats).forEach(([statKey, value]) =>
+        ArtifactSetEffectsObj[setKey][setNumKey][statKey] = (ArtifactSetEffectsObj[setKey][setNumKey][statKey] ?? 0) + value)
     })
     return ArtifactSetEffectsObj
   }

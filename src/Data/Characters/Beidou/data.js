@@ -45,8 +45,6 @@ const formula = {
   normal: {
     ...Object.fromEntries(data.normal.hitArr.map((percentArr, i) => [i, stats =>
       basicDMGFormula(percentArr[stats.tlvl.auto], stats, "normal")])),
-    ...Object.fromEntries(data.normal.hitArr.map((percentArr, i) => [`a${i}`, stats =>
-      basicDMGFormula(percentArr[stats.tlvl.auto] * 0.2, stats, "normal", true)])),
   },
   charged: {
     spinning: stats => basicDMGFormula(data.charged.spinning[stats.tlvl.auto], stats, "charged"),

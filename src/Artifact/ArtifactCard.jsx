@@ -19,7 +19,7 @@ import Stat from '../Stat';
 import { useForceUpdate } from '../Util/ReactUtil';
 import Artifact from './Artifact';
 import PercentBadge from './PercentBadge';
-export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete, assumeFull = false }) {
+export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete, mainStatAssumptionLevel = 0 }) {
   const forceUpdateHook = useForceUpdate()
   useEffect(() => {
     Artifact.getDataImport()?.then(forceUpdateHook)
@@ -37,10 +37,9 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
   if (!art) return null;
   if (!art.maximumEfficiency) Artifact.substatsValidation(art)
   const { setKey, slotKey, numStars = 0, level = 0, mainStatKey, substats = [], location = "", lock, currentEfficiency = 0, maximumEfficiency = 0 } = art
-  let mainStatLevel = assumeFull ? numStars * 4 : level
-  let assFullColor = assumeFull && level !== numStars * 4
-  let mainStatVal = <span className={assFullColor ? "text-orange" : ""}>{Artifact.getMainStatValue(mainStatKey, numStars, mainStatLevel, "")}{Stat.getStatUnit(mainStatKey)}</span>
-  let artifactValid = substats.every(sstat => (!sstat.key || (sstat.key && sstat.value && sstat?.rolls?.length)))
+  const mainStatLevel = Math.max(Math.min(mainStatAssumptionLevel, numStars * 4), level)
+  const mainStatVal = <span className={mainStatLevel !== level ? "text-orange" : ""}>{Artifact.getMainStatValue(mainStatKey, numStars, mainStatLevel, "")}{Stat.getStatUnit(mainStatKey)}</span>
+  const artifactValid = substats.every(sstat => (!sstat.key || (sstat.key && sstat.value && sstat?.rolls?.length)))
 
   return (<Card className="h-100" border={`${numStars}star`} bg="lightcontent" text="lightfont">
     <Card.Header className="p-0">
@@ -77,12 +76,8 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
         })}
       </Row>
       <Row className="mt-auto">
-        <Col>Current SS Eff.: <PercentBadge percent={currentEfficiency} valid={artifactValid} className="float-right">
-          {currentEfficiency?.toFixed(2) ?? currentEfficiency + "%"}
-        </PercentBadge></Col>
-        {currentEfficiency !== maximumEfficiency && <Col className="text-right">Max SS Eff.: <PercentBadge percent={maximumEfficiency} valid={artifactValid}>
-          {maximumEfficiency?.toFixed(2) ?? maximumEfficiency + "%"}
-        </PercentBadge></Col>}
+        <Col>Current SS Eff.: <PercentBadge value={currentEfficiency} valid={artifactValid} className="float-right" /></Col>
+        {currentEfficiency !== maximumEfficiency && <Col className="text-right">Max SS Eff.: <PercentBadge value={maximumEfficiency} valid={artifactValid} /></Col>}
       </Row>
     </Card.Body>
 
@@ -101,16 +96,14 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
         <Col xs="auto">
           <ButtonGroup>
             {editable ? <OverlayTrigger placement="top"
-              overlay={<Tooltip>Locking a artifact will prevent the build generator from picking it for builds. Artifacts on characters are locked by default.</Tooltip>}>
+              overlay={<Tooltip>Locking a artifact will prevent the build generator from picking it for builds.</Tooltip>}>
               <span className="d-inline-block">
                 <Button size="sm"
-                  disabled={location}
-                  style={location ? { pointerEvents: 'none' } : {}}
                   onClick={() => {
                     art.lock = !lock
                     ArtifactDatabase.update(art);
                   }}>
-                  <FontAwesomeIcon icon={(lock || location) ? faLock : faLockOpen} className="fa-fw" />
+                  <FontAwesomeIcon icon={lock ? faLock : faLockOpen} className="fa-fw" />
                 </Button>
               </span>
             </OverlayTrigger> : null}

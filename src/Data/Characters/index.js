@@ -30,6 +30,7 @@ import xiangling from './Xiangling'
 import xingqiu from './Xingqiu'
 import xinyan from './Xinyan'
 import zhongli from './Zhongli'
+import { fieldProcessing } from '../../Util/FieldUtil'
 const characters = {
   albedo,
   amber,
@@ -64,4 +65,11 @@ const characters = {
   xinyan,
   zhongli
 };
+
+Object.values(characters).forEach(char =>
+  Object.values(char.talent ?? {}).forEach(talent => //TODO: escape for character with imcomplete character sheet
+    talent.document.forEach(section => {
+      if (typeof section.canShow !== "function") section.canShow = () => true
+      section.fields?.forEach?.(fieldProcessing)
+    })))
 export default characters

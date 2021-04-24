@@ -42,7 +42,7 @@ describe("Testing Chongyun's Formulas (sohum#5921)", () => {
       })
 
       describe("inside Spirit Blade: Chonghua's Layered Frost", () => {
-        beforeEach(() => setupStats.autoInfused = true)
+        beforeEach(() => setupStats.infusionAura = "cryo")
 
         test("hit", () => {
           const stats = computeAllStats(setupStats)
@@ -68,7 +68,7 @@ describe("Testing Chongyun's Formulas (sohum#5921)", () => {
       })
 
       describe("inside Spirit Blade: Chonghua's Layered Frost", () => {
-        beforeEach(() => setupStats.autoInfused = true)
+        beforeEach(() => setupStats.infusionAura = "cryo")
 
         test("hit", () => {
           const stats = computeAllStats(setupStats)
@@ -129,7 +129,7 @@ describe("Testing Chongyun's Formulas (Derpy#2132)", () => {
       })
 
       describe("inside Spirit Blade: Chonghua's Layered Frost", () => {
-        beforeEach(() => setupStats.autoInfused = true)
+        beforeEach(() => setupStats.infusionAura = "cryo")
 
         test("hit", () => {
           const stats = computeAllStats(setupStats)
@@ -184,7 +184,7 @@ describe("Testing Chongyun's Formulas (Derpy#2132)", () => {
       })
 
       describe("inside Spirit Blade: Chonghua's Layered Frost", () => {
-        beforeEach(() => setupStats.autoInfused = true)
+        beforeEach(() => setupStats.infusionAura = "cryo")
 
         test("hit", () => {
           const stats = computeAllStats(setupStats)

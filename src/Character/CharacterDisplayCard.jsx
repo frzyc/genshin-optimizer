@@ -1,7 +1,7 @@
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { createContext, useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'react';
-import { Badge, ButtonGroup, Dropdown, DropdownButton, Image, Nav, Tab } from 'react-bootstrap';
+import { Alert, Badge, ButtonGroup, Dropdown, DropdownButton, Image, Nav, Tab } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
@@ -18,6 +18,7 @@ import CharacterArtifactPane from './CharacterDisplay/CharacterArtifactPane';
 import CharacterOverviewPane from './CharacterDisplay/CharacterOverviewPane';
 import CharacterTalentPane from './CharacterDisplay/CharacterTalentPane';
 import DamageOptionsAndCalculation from './CharacterDisplay/DamageOptionsAndCalculation';
+import { CharacterFormulaImport } from '../Formula';
 
 export const compareAgainstEquippedContext = createContext()
 
@@ -44,6 +45,7 @@ const initialCharacter = (characterKey) => ({
   reactionMode: null,
   equippedArtifacts: {},
   artifactConditionals: [],
+  conditionalValues: {},
   baseStatOverrides: {},//overriding the baseStat
   weapon: {
     key: Object.keys(Weapon.getWeaponsOfType(Character.getWeaponTypeKey(characterKey)))[0] ?? "",
@@ -51,14 +53,13 @@ const initialCharacter = (characterKey) => ({
     refineIndex: 0,
     overrideMainVal: 0,
     overrideSubVal: 0,
-    conditionalNum: 0,//weapon conditional
   },
   talentLevelKeys: {
     auto: 0,
     skill: 0,
     burst: 0,
   },
-  autoInfused: false,
+  infusionAura: "",
   talentConditionals: [],
   constellation: 0,
 })
@@ -105,6 +106,7 @@ export default function CharacterDisplayCard({ characterKey: propCharacterKey, c
       Character.getCharacterDataImport(),
       Weapon.getWeaponDataImport(),
       Artifact.getDataImport(),
+      CharacterFormulaImport
     ]).then(forceUpdate)
   }, [forceUpdate])
 
@@ -131,25 +133,26 @@ export default function CharacterDisplayCard({ characterKey: propCharacterKey, c
     }, [characterKey, characterDispatch, propSetCharacterKey])
 
   const newBuild = useMemo(() => {
+    if (!propNewBuild) return
     const newBuild = propNewBuild && deepClone(propNewBuild)
-    if (newBuild?.finalStats) {
-      newBuild.finalStats.hitMode = character.hitMode;
-      newBuild.finalStats.reactionMode = character.reactionMode;
-    }
+    newBuild.hitMode = character.hitMode;
+    newBuild.reactionMode = character.reactionMode;
     return newBuild
   }, [propNewBuild, character.hitMode, character.reactionMode])
 
   const { levelKey, artifacts: flexArts } = character
 
-  const equippedBuild = useMemo(() => updateState && Character.calculateBuild(character), [character, updateState])
+  const mainStatAssumptionLevel = newBuild?.mainStatAssumptionLevel ?? 0
+  const equippedBuild = useMemo(() => updateState && Character.calculateBuild(character, mainStatAssumptionLevel), [character, updateState, mainStatAssumptionLevel])
 
   const HeaderIconDisplay = characterKey ? <span >
     <Image src={Character.getThumb(characterKey)} className="thumb-small my-n1 ml-n2" roundedCircle />
     <h6 className="d-inline"> {Character.getName(characterKey)} </h6>
   </span> : <span>Select a Character</span>
-  const commonPaneProps = { character, newBuild, equippedBuild: !newBuild || compareAgainstEquipped ? equippedBuild : undefined, editable, characterDispatch, compareAgainstEquipped }
+  const commonPaneProps = { character, newBuild, equippedBuild: (!newBuild || compareAgainstEquipped) ? equippedBuild : undefined, editable, characterDispatch, compareAgainstEquipped }
   if (flexArts) commonPaneProps.artifacts = flexArts//from flex
   // main CharacterDisplayCard
+  const DamageOptionsAndCalculationEle = Character.hasTalentPage(characterKey) && <DamageOptionsAndCalculation {...{ character, characterDispatch, newBuild, equippedBuild }} className="mb-2" />
   return (<Card bg="darkcontent" text="lightfont" >
     <Card.Header>
       <Row>
@@ -183,6 +186,7 @@ export default function CharacterDisplayCard({ characterKey: propCharacterKey, c
             </DropdownButton>
           </ButtonGroup> : <span>{HeaderIconDisplay} {Character.getLevelString(character)}</span>}
         </Col>
+        {Boolean(mainStatAssumptionLevel) && <Col xs="auto"><Alert className="mb-0 py-1 h-100" variant="orange" ><b>Assume Main Stats are Level {mainStatAssumptionLevel}</b></Alert></Col>}
         {/* Compare against new build toggle */}
         {newBuild ? <Col xs="auto">
           <ButtonGroup>
@@ -222,20 +226,23 @@ export default function CharacterDisplayCard({ characterKey: propCharacterKey, c
               }
             </Nav.Item>
           </Nav>
-          {Character.hasTalentPage(characterKey) && <DamageOptionsAndCalculation {...{ character, characterDispatch, newBuild, equippedBuild }} className="mb-2" />}
           <Tab.Content>
             <Tab.Pane eventKey="character">
+              {DamageOptionsAndCalculationEle}
               <CharacterOverviewPane
                 {...commonPaneProps}
               />
             </Tab.Pane>
             <Tab.Pane eventKey="artifacts" >
+              {DamageOptionsAndCalculationEle}
               <CharacterArtifactPane {...{ ...commonPaneProps, newBuild: undefined, equippedBuild, }} />
             </Tab.Pane>
             {newBuild ? <Tab.Pane eventKey="newartifacts" >
+              {DamageOptionsAndCalculationEle}
               <CharacterArtifactPane {...commonPaneProps} />
             </Tab.Pane> : null}
             <Tab.Pane eventKey="talent">
+              {DamageOptionsAndCalculationEle}
               <CharacterTalentPane {...commonPaneProps} />
             </Tab.Pane>
           </Tab.Content>
