@@ -74,7 +74,7 @@ export const flexObj = {
   constellation: 2,
   overrideLevel: 0,
   levelKey: 'L90',
-  autoInfused: true,
+  infusionAura: 'pyro',
   talentLevelKeys: { auto: 5, skill: 5, burst: 5 },
   baseStatOverrides: { characterLevel: 89 },
   conditionalValues: {
@@ -107,7 +107,7 @@ export const characters = [{
   constellation: 2,
   overrideLevel: 0,
   levelKey: 'L90',
-  autoInfused: true,
+  infusionAura: 'pyro',
   talentLevelKeys: { auto: 5, skill: 5, burst: 5 },
   baseStatOverrides: { characterLevel: 89 },
   equippedArtifacts: {

@@ -12,6 +12,9 @@ const hitModes = ["hit", "avgHit", "critHit",]
 const reactionModes = [
   null, "hydro_vaporize", "pyro_vaporize", "pyro_melt", "cryo_melt",
 ]
+const elements = [
+  '', 'anemo', 'geo', 'electro', 'hydro', 'pyro', 'cryo'
+]
 const stats = [
   "", "hp", "hp_", "atk", "atk_", "def", "def_", "eleMas", "enerRech_", "critRate_", "critDMG_", "heal_",
   "physical_dmg_", "anemo_dmg_", "cryo_dmg_", "dendro_dmg_", "electro_dmg_", "geo_dmg_", "hydro_dmg_", "pyro_dmg_",
@@ -54,6 +57,7 @@ const slot = fixed(slots)
 const characterKey = fixed(characterKeys)
 const hitMode = fixed(hitModes)
 const reactionMode = fixed(reactionModes)
+const element = fixed(elements)
 
 // Complex schemas
 
@@ -174,6 +178,8 @@ const characterV1 = object({
     delete character.artifactConditionals
     delete character.talentConditionals
     delete character.weapon.conditionalNum
+    delete character.autoInfused
+    character.infusionAura = ''
     character.conditionalValues = { weapon: {}, artifact: {}, character: {} }
     return character
   }
@@ -185,7 +191,7 @@ const characterV2 = object({
   constellation: uint(1),
   overrideLevel: uint(2),
   levelKey: string,
-  autoInfused: bool,
+  infusionAura: element,
   talentLevelKeys: object({ auto: uint(1), skill: uint(1), burst: uint(1) }),
   baseStatOverrides: sparse(string, float),
   weapon: weaponV2,
