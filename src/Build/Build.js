@@ -66,8 +66,8 @@ export function pruneArtifacts(artifacts, artifactSetEffects, significantStats, 
   }
   // Reinstate `alwaysAccepted`
   return [
-    ...artifacts.filter(artifact => alwaysAccepted.has(artifact.set)),
-    ...tmp.map(tmp => tmp.artifact).filter(artifact => !alwaysAccepted.has(artifact.set)),
+    ...artifacts.filter(artifact => alwaysAccepted.has(artifact.setKey)),
+    ...tmp.map(tmp => tmp.artifact).filter(artifact => !alwaysAccepted.has(artifact.setKey)),
   ]
 }
 
