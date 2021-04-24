@@ -62,7 +62,6 @@ const char: ICharacterSheet = {
     auto: {
       name: "Ancient Sword Art",
       img: normal,
-      infusable: false,
       document: [{
         text: <span><strong>Normal Attack</strong> Perform up to 5 consecutive strikes. <small><i>Note: the 3rd and 4th attacks hit twice.</i></small></span>,
         fields: data.normal.hitArr.map((percentArr, i) => ({

@@ -69,7 +69,10 @@ const StatData = {
   // Enemy
   enemyLevel: { name: "Enemy Level", const: true },
   enemyLevel_multi: { name: "Enemy Level RES Multiplier", unit: "multi", const: true },
-  enemyDEFRed_: { name: "Enemy DEF Reduction", unit: "%", const: true }
+  enemyDEFRed_: { name: "Enemy DEF Reduction", unit: "%", const: true },
+
+  //infusion
+  infusionSelf: { name: "Elemental Infusion", const: true, default: "" }
 }
 const Formulas = {
   // Basic Stats

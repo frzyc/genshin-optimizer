@@ -62,7 +62,6 @@ const char: ICharacterSheet = {
     auto: {
       name: "Favonius Bladework",
       img: normal,
-      infusable: false,
       document: [{
         text: <span><strong>Normal Attack</strong> Performs up to 5 consecutive strikes.</span>,
         fields: data.normal.hitArr.map((percentArr, i) =>

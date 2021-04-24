@@ -248,16 +248,19 @@ describe('getTalentStatKey()', () => {
     expect(getTalentStatKey("normal", stats)).toBe("physical_normal_avgHit")
     expect(getTalentStatKeyVariant("normal", stats)).toBe("physical")
 
-    expect(getTalentStatKey("normal", { ...stats, autoInfused: true })).toBe("electro_normal_avgHit")
-    expect(getTalentStatKeyVariant("normal", { ...stats, autoInfused: true })).toBe("electro")
+    expect(getTalentStatKey("normal", { ...stats, infusionAura: "cryo" })).toBe("cryo_normal_avgHit")
+    expect(getTalentStatKeyVariant("normal", { ...stats, infusionAura: "cryo" })).toBe("cryo")
+
+    expect(getTalentStatKey("normal", { ...stats, infusionSelf: "electro" })).toBe("electro_normal_avgHit")
+    expect(getTalentStatKeyVariant("normal", { ...stats, infusionSelf: "electro" })).toBe("electro")
+
+    expect(getTalentStatKey("normal", { ...stats, infusionAura: "cryo", infusionSelf: "electro" })).toBe("electro_normal_avgHit")
+    expect(getTalentStatKeyVariant("normal", { ...stats, infusionAura: "cryo", infusionSelf: "electro" })).toBe("electro")
   })
 
   test('should override element', () => {
     expect(getTalentStatKey("normal", stats, true)).toBe("electro_normal_avgHit")
     expect(getTalentStatKeyVariant("normal", stats, true)).toBe("electro")
-
-    expect(getTalentStatKey("normal", { ...stats, autoInfused: true }, true)).toBe("electro_normal_avgHit")
-    expect(getTalentStatKeyVariant("normal", { ...stats, autoInfused: true }, true)).toBe("electro")
   })
   test('should do elemental', () => {
     expect(getTalentStatKey("pyro", stats)).toBe("pyro_elemental_avgHit")
@@ -266,25 +269,46 @@ describe('getTalentStatKey()', () => {
     expect(getTalentStatKey("elemental", stats)).toBe("electro_elemental_avgHit")
     expect(getTalentStatKeyVariant("elemental", stats)).toBe("electro")
   })
-  test('should do amp.reactions', () => {
+  test('should not do amp.reactions with wrong element', () => {
     //normal without infusion
     expect(getTalentStatKey("normal", { ...stats, reactionMode: "pyro_melt" })).toBe("physical_normal_avgHit")
     expect(getTalentStatKeyVariant("normal", { ...stats, reactionMode: "pyro_melt" })).toBe("physical")
 
     //normal with infusion
-    expect(getTalentStatKey("normal", { ...stats, reactionMode: "pyro_melt", autoInfused: true })).toBe("pyro_melt_normal_avgHit")
-    expect(getTalentStatKeyVariant("normal", { ...stats, reactionMode: "pyro_melt", autoInfused: true })).toBe("melt")
+    expect(getTalentStatKey("normal", { ...stats, reactionMode: "pyro_melt", infusionAura: "cryo" })).toBe("cryo_normal_avgHit")
+    expect(getTalentStatKeyVariant("normal", { ...stats, reactionMode: "pyro_melt", infusionAura: "cryo" })).toBe("cryo")
 
     //normal with override
-    expect(getTalentStatKey("normal", { ...stats, reactionMode: "pyro_melt" }, true)).toBe("pyro_melt_normal_avgHit")
-    expect(getTalentStatKeyVariant("normal", { ...stats, reactionMode: "pyro_melt" }, true)).toBe("melt")
+    expect(getTalentStatKey("normal", { ...stats, reactionMode: "pyro_melt" }, true)).toBe("electro_normal_avgHit")
+    expect(getTalentStatKeyVariant("normal", { ...stats, reactionMode: "pyro_melt" }, true)).toBe("electro")
 
     //skill
-    expect(getTalentStatKey("skill", { ...stats, reactionMode: "pyro_melt" })).toBe("pyro_melt_skill_avgHit")
-    expect(getTalentStatKeyVariant("skill", { ...stats, reactionMode: "pyro_melt" })).toBe("melt")
+    expect(getTalentStatKey("skill", { ...stats, reactionMode: "pyro_melt" })).toBe("electro_skill_avgHit")
+    expect(getTalentStatKeyVariant("skill", { ...stats, reactionMode: "pyro_melt" })).toBe("electro")
 
     //elemental
-    expect(getTalentStatKey("elemental", { ...stats, reactionMode: "pyro_melt" })).toBe("pyro_melt_elemental_avgHit")
-    expect(getTalentStatKeyVariant("elemental", { ...stats, reactionMode: "pyro_melt" })).toBe("melt")
+    expect(getTalentStatKey("elemental", { ...stats, reactionMode: "pyro_melt" })).toBe("electro_elemental_avgHit")
+    expect(getTalentStatKeyVariant("elemental", { ...stats, reactionMode: "pyro_melt" })).toBe("electro")
+  })
+  test('should do amp.reactions with wrong element', () => {
+    //normal without infusion
+    expect(getTalentStatKey("normal", { ...stats, characterEle: "pyro", reactionMode: "pyro_melt" })).toBe("physical_normal_avgHit")
+    expect(getTalentStatKeyVariant("normal", { ...stats, characterEle: "pyro", reactionMode: "pyro_melt" })).toBe("physical")
+
+    //normal with infusion
+    expect(getTalentStatKey("normal", { ...stats, characterEle: "pyro", reactionMode: "pyro_melt", infusionAura: "cryo" })).toBe("cryo_normal_avgHit")
+    expect(getTalentStatKeyVariant("normal", { ...stats, characterEle: "pyro", reactionMode: "pyro_melt", infusionAura: "cryo" })).toBe("cryo")
+
+    //normal with override
+    expect(getTalentStatKey("normal", { ...stats, characterEle: "pyro", reactionMode: "pyro_melt" }, true)).toBe("pyro_melt_normal_avgHit")
+    expect(getTalentStatKeyVariant("normal", { ...stats, characterEle: "pyro", reactionMode: "pyro_melt" }, true)).toBe("melt")
+
+    //skill
+    expect(getTalentStatKey("skill", { ...stats, characterEle: "pyro", reactionMode: "pyro_melt" })).toBe("pyro_melt_skill_avgHit")
+    expect(getTalentStatKeyVariant("skill", { ...stats, characterEle: "pyro", reactionMode: "pyro_melt" })).toBe("melt")
+
+    //elemental
+    expect(getTalentStatKey("elemental", { ...stats, characterEle: "pyro", reactionMode: "pyro_melt" })).toBe("pyro_melt_elemental_avgHit")
+    expect(getTalentStatKeyVariant("elemental", { ...stats, characterEle: "pyro", reactionMode: "pyro_melt" })).toBe("melt")
   })
 })

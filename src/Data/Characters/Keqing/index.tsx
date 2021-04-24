@@ -18,6 +18,15 @@ import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { IConditionals } from '../../../Conditional/IConditional'
 import ICharacterSheet from '../../ICharacterSheet'
 const conditionals: IConditionals = {
+  a1: {
+    canShow: stats => stats.ascension >= 4,
+    name: <span>Recasting <b>Stellar Restoration</b> while a Lightning Stiletto is present</span>,
+    stats: { infusionSelf: "electro" },
+    fields: [{
+      text: "Duration",
+      value: "5s"
+    }]
+  },
   a4: { // AristocraticDignity
     canShow: stats => stats.ascension >= 4,
     name: <span>Casting <b>Starward Sword</b></span>,
@@ -67,7 +76,6 @@ const char: ICharacterSheet = {
     auto: {
       name: "Yunlai Swordsmanship",
       img: normal,
-      infusable: true,
       document: [{
         text: <span><strong>Normal Attack</strong> Perform up to 5 rapid strikes.</span>,
         fields: data.normal.hitArr.map((percentArr, i) =>
@@ -187,7 +195,10 @@ const char: ICharacterSheet = {
     passive1: {
       name: "Thundering Penance",
       img: passive1,
-      document: [{ text: <span>After recasting <b>Stellar Restoration</b> while a Lightning Stiletto is present, Keqing's weapon gains an <span className="text-electro">Electro Infusion</span> for 5s.</span> }],
+      document: [{
+        text: <span>After recasting <b>Stellar Restoration</b> while a Lightning Stiletto is present, Keqing's weapon gains an <span className="text-electro">Electro Infusion</span> for 5s.</span>,
+        conditional: conditionals.a1
+      }],
     },
     passive2: {
       name: "Aristocratic Dignity",

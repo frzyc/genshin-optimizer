@@ -22,6 +22,7 @@ const conditionals: IConditionals = {
   q: { // BaneOfAllEvil
     name: "Bane of All Evil",
     stats: stats => ({
+      infusionSelf: "anemo",
       normal_dmg_: data.burst.atk_bonus[stats.tlvl.burst],
       charged_dmg_: data.burst.atk_bonus[stats.tlvl.burst],
       plunging_dmg_: data.burst.atk_bonus[stats.tlvl.burst],
@@ -68,7 +69,6 @@ const char: ICharacterSheet = {
     auto: {
       name: "Whirlwind Thrust",
       img: normal,
-      infusable: true,
       document: [{
         text: <span><strong>Normal Attack</strong> Performs up to 6 consecutive spear strikes.</span>,
         fields: data.normal.hitArr.map((percentArr, i) =>

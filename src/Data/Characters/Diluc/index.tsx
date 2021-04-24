@@ -18,6 +18,17 @@ import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { IConditionals } from '../../../Conditional/IConditional'
 import ICharacterSheet from '../../ICharacterSheet'
 const conditionals: IConditionals = {
+  b: {//Dawn
+    name: <b>Dawn</b>,
+    stats: stats => ({
+      infusionSelf: "pyro",
+      ...stats.ascension >= 4 && { pyro_dmg_: 20 } // Blessing of Phoenix
+    }),
+    fields: [{
+      text: "Infusion Duration",
+      value: stats => "8s" + (stats.ascension > 4 ? " + 4s" : ""),
+    }]
+  },
   c6: { // Flaming Sword Nemesis of Dark
     canShow: stats => stats.constellation >= 6,
     name: <span>After casting <b>Searing Onslaught</b></span>,
@@ -29,11 +40,6 @@ const conditionals: IConditionals = {
       text: "Next 2 Normal Attack within",
       value: "6s",
     }]
-  },
-  a4: { // Blessing of Phoenix
-    canShow: stats => stats.ascension >= 4,
-    name: <span>During <b>Dawn</b></span>,
-    stats: { pyro_dmg_: 20 },
   },
   c1: { // Conviction
     canShow: stats => stats.constellation >= 1,
@@ -72,7 +78,6 @@ const char: ICharacterSheet = {
     auto: {
       name: "Tempered Sword",
       img: normal,
-      infusable: true,
       document: [{
         text: <span><strong>Normal Attack</strong> Perform up to 4 consecutive strikes.</span>,
         fields: data.normal.hitArr.map((percentArr, i) =>
@@ -172,13 +177,10 @@ const char: ICharacterSheet = {
             text: "CD",
             value: "12s",
           }, {
-            text: "Infusion Duration",
-            value: stats => "8s" + (stats.ascension > 4 ? " + 4s" : ""),
-          }, {
             text: "Energy Cost",
             value: 40,
           }],
-        conditional: conditionals.a4
+        conditional: conditionals.b
       }],
     },
     passive1: {

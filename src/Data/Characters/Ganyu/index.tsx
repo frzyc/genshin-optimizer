@@ -69,7 +69,6 @@ const char: ICharacterSheet = {
     auto: {
       name: "Liutian Archery",
       img: normal,
-      infusable: false,
       document: [{
         text: <span><strong>Normal Attack</strong> Perform up to 6 consecutive shots with a bow.</span>,
         fields: data.normal.hitArr.map((percentArr, i) =>

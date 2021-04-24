@@ -64,7 +64,7 @@ describe("Testing Keqing's Formulas (Agent RAF#3111)", () => {
     describe("no crit", () => {
       beforeEach(() => {
         setupStats.hitMode = "hit"
-        setupStats.autoInfused = true
+        setupStats.infusionSelf = "electro"
       })
 
       test("electro infusion", () => {
@@ -116,7 +116,7 @@ describe("Testing Keqing's Formulas (Agent RAF#3111)", () => {
     describe("crit", () => {
       beforeEach(() => {
         setupStats.hitMode = "critHit"
-        setupStats.autoInfused = true
+        setupStats.infusionSelf = "electro"
       })
 
       test("electro infusion", () => {

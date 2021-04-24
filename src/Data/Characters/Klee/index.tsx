@@ -57,7 +57,6 @@ const char: ICharacterSheet = {
     auto: {
       name: "Kaboom!",
       img: normal,
-      infusable: false,
       document: [{
         text: <span><strong>Normal Attack</strong> Throws things that go boom when they hit things! Perform up to 3 explosive attacks, dealing <span className="text-pyro">AoE Pyro DMG</span>.</span>,
         fields: data.normal.hitArr.map((percentArr, i) =>

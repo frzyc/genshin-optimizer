@@ -1,4 +1,5 @@
 import { StatIconEle } from "../Components/StatIcon"
+import ElementalData from "../Data/ElementalData"
 import Stat from "../Stat"
 
 function modifiersToFields(modifiers, stats = {}) {
@@ -13,15 +14,26 @@ function modifiersToFields(modifiers, stats = {}) {
   }))
 }
 export default function statsToFields(statVals, stats = {}) {
-  return Object.entries(statVals).map(([statKey, statVal]) =>
-    statKey === "modifiers" ? modifiersToFields(statVal, stats) : {
-      text: <span>{StatIconEle(statKey)}{Stat.getStatName(statKey)}</span>,
-      variant: Stat.getStatVariant(statKey),
-      canShow: () => true,
-      value: statVal,
-      fixed: Stat.fixedUnit(statKey),
-      unit: Stat.getStatUnit(statKey)
+  return Object.entries(statVals).map(([statKey, statVal]) => {
+    switch (statKey) {
+      case "infusionSelf":
+        return {
+          text: <span className={`text-${statVal}`}>{ElementalData[statVal]?.name} Infusion</span>,
+          canShow: () => true,
+        }
+      case "modifiers":
+        return modifiersToFields(statVal, stats)
+      default:
+        return {
+          text: <span>{StatIconEle(statKey)}{Stat.getStatName(statKey)}</span>,
+          variant: Stat.getStatVariant(statKey),
+          canShow: () => true,
+          value: statVal,
+          fixed: Stat.fixedUnit(statKey),
+          unit: Stat.getStatUnit(statKey)
+        }
     }
+  }
   ).flat()
 }
 

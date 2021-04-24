@@ -56,7 +56,6 @@ const char: ICharacterSheet = {
     auto: {
       name: "Strike of Fortune",
       img: normal,
-      infusable: true,
       document: [{
         text: <span><strong>Normal Attack</strong> Performs up to 5 rapid strikes.</span>,
         fields: data.normal.hitArr.map((percentArr, i) =>

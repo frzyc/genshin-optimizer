@@ -109,7 +109,10 @@ export default class Character {
   }
 
   static isAutoElemental = (charKey, defVal = false) => this.getWeaponTypeKey(charKey) === "catalyst" || defVal
-  static isAutoInfusable = (charKey, defVal = false) => this.getCDataObj(charKey)?.talent?.auto?.infusable || defVal
+  static isMelee = (charKey, defVal = false) => {
+    const weaponTypeKey = this.getWeaponTypeKey(charKey)
+    return weaponTypeKey === "sword" || weaponTypeKey === "polearm" || weaponTypeKey === "claymore" || defVal
+  }
 
   //look up the formula, and generate the formulaPath to send to worker.
   static getFormulaPath(characterKey, talentKey, formula) {
@@ -129,7 +132,6 @@ export default class Character {
     return { characterKey, talentKey, formulaKey }
   }
 
-
   static hasTalentPage = (characterKey) => Boolean(Object.keys(Character.getCDataObj(characterKey)?.talent ?? {}).length)//TODO: remove when all chararacter sheets are complete
 
   static getDisplayStatKeys = (stats, defVal = { basicKeys: [] }) => {
@@ -138,11 +140,8 @@ export default class Character {
     let eleKey = Character.getElementalKey(characterKey)
     if (!eleKey) return defVal //usually means the character has not been lazy loaded yet
     const basicKeys = ["finalHP", "finalATK", "finalDEF", "eleMas", "critRate_", "critDMG_", "heal_", "enerRech_", `${eleKey}_dmg_`]
-    //we need to figure out if the character has: normal phy auto, elemental auto, infusable auto(both normal and phy)
     const isAutoElemental = Character.isAutoElemental(characterKey)
-    const isAutoInfusable = Character.isAutoInfusable(characterKey)
-    if (!isAutoElemental)
-      basicKeys.push("physical_dmg_")
+    if (!isAutoElemental) basicKeys.push("physical_dmg_")
 
     //show elemental interactions
     const transReactions = deepClone(ElementToReactionKeys[eleKey])
@@ -165,8 +164,6 @@ export default class Character {
       if (!isAutoElemental) //add phy auto + charged + physical 
         genericAvgHit.push("physical_normal_avgHit", "physical_charged_avgHit")
 
-      if (isAutoElemental || isAutoInfusable) //add elemental auto + charged
-        genericAvgHit.push(`${eleKey}_normal_avgHit`, `${eleKey}_charged_avgHit`)
       else if (Character.getWeaponTypeKey(characterKey) === "bow") {//bow charged atk does elemental dmg on charge
         genericAvgHit.push(`${eleKey}_charged_avgHit`)
       }
@@ -287,13 +284,16 @@ export default class Character {
         for (const [mkey, multiplier] of Object.entries(modifier))
           initialStats.modifiers[statKey][mkey] = (initialStats.modifiers[statKey][mkey] ?? 0) + multiplier
       }
-    } else initialStats[key] = (initialStats[key] ?? 0) + val
+    } else {
+      if (initialStats[key] === undefined) initialStats[key] = val
+      else if (typeof initialStats[key] === "number") initialStats[key] += val
+    }
   })
 
   static createInitialStats = (character) => {
     if (!character) return {}
     character = deepClone(character)
-    const { characterKey, levelKey, hitMode, autoInfused, reactionMode, talentLevelKeys, constellation, equippedArtifacts, conditionalValues = {}, weapon = { key: "" } } = character
+    const { characterKey, levelKey, hitMode, infusionAura, reactionMode, talentLevelKeys, constellation, equippedArtifacts, conditionalValues = {}, weapon = { key: "" } } = character
     const ascension = Character.getAscension(levelKey)
 
     //generate the initalStats obj with data from Character & overrides
@@ -302,7 +302,7 @@ export default class Character {
     initialStats.characterEle = this.getElementalKey(characterKey);
     initialStats.characterKey = characterKey
     initialStats.hitMode = hitMode;
-    initialStats.autoInfused = autoInfused && Character.getCDataObj(characterKey)?.talent?.auto?.infusable
+    initialStats.infusionAura = infusionAura
     initialStats.reactionMode = reactionMode;
     initialStats.conditionalValues = conditionalValues
     initialStats.weaponType = this.getWeaponTypeKey(characterKey)

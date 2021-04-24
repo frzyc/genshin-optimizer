@@ -9,7 +9,7 @@ import Artifact from '../Artifact/Artifact';
 import SetEffectDisplay from '../Artifact/Component/SetEffectDisplay';
 import Character from '../Character/Character';
 import CharacterCard from '../Character/CharacterCard';
-import { HitModeToggle, ReactionToggle } from '../Character/CharacterDisplay/DamageOptionsAndCalculation';
+import { HitModeToggle, InfusionAuraDropdown, ReactionToggle } from '../Character/CharacterDisplay/DamageOptionsAndCalculation';
 import StatDisplayComponent from '../Character/CharacterDisplay/StatDisplayComponent';
 import { CharacterSelectionDropdownList } from '../Components/CharacterSelection';
 import CustomFormControl from '../Components/CustomFormControl';
@@ -590,12 +590,18 @@ function StatFilterItem({ statKey, statKeys = [], min, max, close, setFilter }) 
 function HitModeCard({ character, className }) {
   const setHitmode = useCallback(({ hitMode }) => CharacterDatabase.update({ ...character, hitMode }), [character])
   const setReactionMode = useCallback(({ reactionMode }) => CharacterDatabase.update({ ...character, reactionMode }), [character])
+  const setInfusionAura = useCallback(({ infusionAura }) => CharacterDatabase.update({ ...character, infusionAura }), [character])
   if (!character) return null
   return <Card bg="lightcontent" text="lightfont" className={className}>
-    <Card.Header>Hit Mode Options</Card.Header>
-    <Card.Body>
-      <HitModeToggle hitMode={character.hitMode} characterDispatch={setHitmode} className="w-100" />
-      <ReactionToggle character={character} characterDispatch={setReactionMode} className="w-100 mt-2" />
+    <Card.Header>
+      <Row>
+        <Col>Hit Mode Options</Col>
+        <Col xs="auto"><InfusionAuraDropdown character={character} characterDispatch={setInfusionAura} /></Col>
+      </Row>
+    </Card.Header>
+    <Card.Body className="mb-n2">
+      <HitModeToggle hitMode={character.hitMode} characterDispatch={setHitmode} className="w-100 mb-2" />
+      <ReactionToggle character={character} characterDispatch={setReactionMode} className="w-100 mb-2" />
     </Card.Body>
   </Card >
 }

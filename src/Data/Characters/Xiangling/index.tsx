@@ -60,7 +60,6 @@ const char: ICharacterSheet = {
     auto: {
       name: "Dough-Fu",
       img: normal,
-      infusable: false,
       document: [{
         text: <span><strong>Normal Attack</strong> Performs up to five consecutive spear strikes. <small><i>Note: the 3th attack hits twice, the 4th hits four times.</i></small></span>,
         fields: data.normal.hitArr.map((percentArr, i) =>

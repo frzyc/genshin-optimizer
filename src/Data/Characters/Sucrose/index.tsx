@@ -52,7 +52,6 @@ const char: ICharacterSheet = {
     auto: {
       name: "Wind Spirit Creation",
       img: normal,
-      infusable: false,
       document: [{
         text: <span><strong>Normal Attack</strong> Performs up to 4 attacks using Wind Spirits, dealing <span className="text-anemo">Anemo DMG</span>.</span>,
         fields: data.normal.hitArr.map((percentArr, i) =>

@@ -134,6 +134,7 @@ function DatabaseInitAndVerify() {
     if (dbVersion < 3) {
       delete character.artifactConditional
       delete character.talentCondtiional
+      delete character.autoInfused
       if (character.buildSetting) {
         const { artifactsAssumeFull = false, ascending = false, mainStat = ["", "", ""], setFilters = [{ key: "", num: 0 }, { key: "", num: 0 }, { key: "", num: 0 }], useLockedArts = false } = character.buildSetting ?? {}
         delete character.buildSetting

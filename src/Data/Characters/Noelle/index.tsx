@@ -24,12 +24,9 @@ const conditionals: IConditionals = {
     maxStack: 1,
     stats: stats => ({
       modifiers: { finalATK: { finalDEF: (data.burst.bonus[stats.tlvl.burst] + (stats.constellation >= 6 ? 50 : 0)) / 100 } },
+      infusionSelf: "geo",
     }),
-    fields: [{
-      text: "Larger attack AOE"
-    }, {
-      text: <span>DMG convert to <span className="text-geo">Geo DMG</span></span>
-    }]
+    fields: [{ text: "Larger attack AOE" }]
   }
 }
 const char: ICharacterSheet = {
@@ -50,7 +47,6 @@ const char: ICharacterSheet = {
     auto: {
       name: "Favonius Bladework - Maid",
       img: normal,
-      infusable: true,
       document: [{
         text: <span><strong>Normal Attack</strong> Performs up to 4 consecutive slashes.</span>,
         fields: data.normal.hitArr.map((percentArr, i) =>

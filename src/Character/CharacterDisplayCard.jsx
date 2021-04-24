@@ -59,7 +59,7 @@ const initialCharacter = (characterKey) => ({
     skill: 0,
     burst: 0,
   },
-  autoInfused: false,
+  infusionAura: "",
   talentConditionals: [],
   constellation: 0,
 })
@@ -152,6 +152,7 @@ export default function CharacterDisplayCard({ characterKey: propCharacterKey, c
   const commonPaneProps = { character, newBuild, equippedBuild: (!newBuild || compareAgainstEquipped) ? equippedBuild : undefined, editable, characterDispatch, compareAgainstEquipped }
   if (flexArts) commonPaneProps.artifacts = flexArts//from flex
   // main CharacterDisplayCard
+  const DamageOptionsAndCalculationEle = Character.hasTalentPage(characterKey) && <DamageOptionsAndCalculation {...{ character, characterDispatch, newBuild, equippedBuild }} className="mb-2" />
   return (<Card bg="darkcontent" text="lightfont" >
     <Card.Header>
       <Row>
@@ -225,20 +226,23 @@ export default function CharacterDisplayCard({ characterKey: propCharacterKey, c
               }
             </Nav.Item>
           </Nav>
-          {Character.hasTalentPage(characterKey) && <DamageOptionsAndCalculation {...{ character, characterDispatch, newBuild, equippedBuild }} className="mb-2" />}
           <Tab.Content>
             <Tab.Pane eventKey="character">
+              {DamageOptionsAndCalculationEle}
               <CharacterOverviewPane
                 {...commonPaneProps}
               />
             </Tab.Pane>
             <Tab.Pane eventKey="artifacts" >
+              {DamageOptionsAndCalculationEle}
               <CharacterArtifactPane {...{ ...commonPaneProps, newBuild: undefined, equippedBuild, }} />
             </Tab.Pane>
             {newBuild ? <Tab.Pane eventKey="newartifacts" >
+              {DamageOptionsAndCalculationEle}
               <CharacterArtifactPane {...commonPaneProps} />
             </Tab.Pane> : null}
             <Tab.Pane eventKey="talent">
+              {DamageOptionsAndCalculationEle}
               <CharacterTalentPane {...commonPaneProps} />
             </Tab.Pane>
           </Tab.Content>

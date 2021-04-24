@@ -80,7 +80,6 @@ const char: ICharacterSheet = {
     auto: {
       name: "Steel Fang",
       img: normal,
-      infusable: false,
       document: [{
         text: <span><strong>Normal Attack</strong> Perform up to 4 consecutive strikes.</span>,
         fields: data.normal.hitArr.map((percentArr, i) => ({

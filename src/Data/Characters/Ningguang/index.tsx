@@ -54,7 +54,6 @@ const char: ICharacterSheet = {
     auto: {
       name: "Sparkling Scatter",
       img: normal,
-      infusable: false,
       document: [{
         text: stats => <span><strong>Normal Attack</strong> Shoots gems that deal <span className="text-geo">{stats.constellation >= 1 ? "AoE " : ""}Geo DMG</span>. Upon hit, this grants Ningguang 1 Star Jade.</span>,
         fields: [{

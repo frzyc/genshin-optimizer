@@ -49,7 +49,6 @@ const char: ICharacterSheet = {
     auto: {
       name: "Rain of Stone",
       img: normal,
-      infusable: false,
       document: [{
         text: <span><strong>Normal Attack</strong> Performs up to 6 rapid strikes.</span>,
         fields: [

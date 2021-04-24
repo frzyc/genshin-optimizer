@@ -22,6 +22,7 @@ const conditionals: IConditionals = {
     name: "Guide to Afterlife Voyage",
     stats: stats => ({
       modifiers: { finalATK: { finalHP: data.skill.atk_inc[stats.tlvl.skill] / 100, } },
+      infusionSelf: "pyro",
     }),
   },
   a4: { // SanguineRouge
@@ -71,7 +72,6 @@ const char: ICharacterSheet = {
     auto: {
       name: "Secret Spear of Wangsheng",
       img: normal,
-      infusable: true,
       document: [{
         text: <span><strong>Normal Attack</strong> Perform up to 6 rapid strikes. <small><i>Note: the 5th attack hits twice.</i></small></span>,
         fields: data.normal.hitArr.map((percentArr, i) =>

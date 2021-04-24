@@ -37,7 +37,6 @@ const char: ICharacterSheet = {
     auto: {
       name: "Bolts of Downfall",
       img: normal,
-      infusable: false,
       document: [{
         text: <span><strong>Normal Attack</strong> Perform up to 5 consecutive shots with a bow.</span>,
         fields: data.normal.hitArr.map((percentArr, i) =>

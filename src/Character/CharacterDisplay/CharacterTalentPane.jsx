@@ -1,7 +1,7 @@
 import { faQuestionCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from 'react';
-import { Button, Card, Col, Dropdown, DropdownButton, Image, ListGroup, OverlayTrigger, Row, Tooltip } from "react-bootstrap";
+import { Card, Col, Dropdown, DropdownButton, Image, ListGroup, OverlayTrigger, Row, Tooltip } from "react-bootstrap";
 import Assets from "../../Assets/Assets";
 import Stat from "../../Stat";
 import { ElementToReactionKeys } from "../../StatData";
@@ -151,23 +151,10 @@ function CrystalizeCard({ stats }) {
   </Card.Body></Card>
 }
 
-
-
 const talentLimits = [1, 1, 2, 4, 6, 8, 10]
-function SkillDisplayCard({ character, character: { characterKey, constellation, talentLevelKeys = {}, autoInfused = false }, characterDispatch, talentKey, subtitle, ascension, equippedBuild, newBuild, editable, onClickTitle }) {
+function SkillDisplayCard({ character: { characterKey, constellation, talentLevelKeys = {}, }, characterDispatch, talentKey, subtitle, ascension, equippedBuild, newBuild, editable, onClickTitle }) {
   let build = newBuild ? newBuild : equippedBuild
   let header = null
-  let infuseBtn = null
-  if (talentKey === "auto" && Character.isAutoInfusable(characterKey)) {
-    let eleKey = Character.getElementalKey(characterKey)
-    infuseBtn = <Col xs="auto">
-      <Button variant={autoInfused ? eleKey : "secondary"} className="text-white" disabled={!editable} onClick={() => editable && characterDispatch({ autoInfused: !character.autoInfused })} size={editable ? null : "sm"}>
-        {autoInfused ?
-          <span>Infused with <b>{Character.getElementalName(eleKey)}</b></span>
-          : "Not Infused"}
-      </Button>
-    </Col>
-  }
 
   let talentLvlKey = 0
   if (talentKey in talentLevelKeys) {
@@ -180,27 +167,13 @@ function SkillDisplayCard({ character, character: { characterKey, constellation,
         characterDispatch({ talentLevelKeys })
       }
       header = <Card.Header>
-        <Row>
-          <Col xs="auto">
-            <DropdownButton title={`Talent Lv. ${talentLvlKey + 1}`}>
-              {[...Array(talentLimits[ascension] + (talentKey === "auto" ? 1 : 0)).keys()].map(i =>
-                <Dropdown.Item key={i} onClick={() => setTalentLevel(talentKey, i)}>Talent Lv. {i + levelBoost + 1}</Dropdown.Item>)}
-            </DropdownButton>
-          </Col>
-          {infuseBtn}
-        </Row>
+        <DropdownButton title={`Talent Lv. ${talentLvlKey + 1}`}>
+          {[...Array(talentLimits[ascension] + (talentKey === "auto" ? 1 : 0)).keys()].map(i =>
+            <Dropdown.Item key={i} onClick={() => setTalentLevel(talentKey, i)}>Talent Lv. {i + levelBoost + 1}</Dropdown.Item>)}
+        </DropdownButton>
       </Card.Header>
     } else {
-      header = <Card.Header>
-        <Row>
-          <Col xs="auto">
-            {`Talent Level: ${talentLvlKey + 1}`}
-          </Col>
-          <Col xs="auto">
-            {infuseBtn}
-          </Col>
-        </Row>
-      </Card.Header>
+      header = <Card.Header>{`Talent Level: ${talentLvlKey + 1}`}</Card.Header>
     }
   }
   const talentStats = Character.getTalentStats(characterKey, talentKey, build)

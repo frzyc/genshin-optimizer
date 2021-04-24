@@ -24,7 +24,6 @@ export interface TalentSheet {
 export interface TalentSheetElement {
   name: string; //talentName
   img: string;
-  infusable?: boolean;
   document: Array<DocumentSection>;
   stats?: object;
   talentBoost?: object;

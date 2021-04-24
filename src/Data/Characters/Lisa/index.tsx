@@ -52,7 +52,6 @@ const char: ICharacterSheet = {
     auto: {
       name: "Lightning Touch",
       img: normal,
-      infusable: false,
       document: [{
         text: <span><strong>Normal Attack</strong> Perform up to 4 lightning attacks that deal Electro DMG <span className="text-electro">Electro DMG</span>.</span>,
         fields: data.normal.hitArr.map((percentArr, i) =>

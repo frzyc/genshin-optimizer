@@ -43,7 +43,6 @@ const char: ICharacterSheet = {
     auto: {
       name: "Guhua Style",
       img: normal,
-      infusable: false,
       document: [{
         text: <span><strong>Normal Attack</strong> Perform up to 5 rapid strikes. <small><i>Note: the 3rd attack hits twice.</i></small></span>,
         fields: data.normal.hitArr.map((percentArr, i) =>

@@ -76,7 +76,6 @@ const char: ICharacterSheet = {
     auto: {
       name: "Spear of the Church",
       img: normal,
-      infusable: false,
       document: [{
         text: <span><strong>Normal Attack</strong> Performs up to five consecutive spear strikes.</span>,
         fields: data.normal.hitArr.map((percentArr, i) =>

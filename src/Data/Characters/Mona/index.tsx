@@ -73,7 +73,6 @@ const char: ICharacterSheet = {
     auto: {
       name: "Ripple of Fate",
       img: normal,
-      infusable: false,
       document: [{
         text: <span><strong>Normal Attack</strong> Perform up to 4 water splash attacks that deal <span className="text-hydro">Hydro DMG</span>.</span>,
         fields: data.normal.hitArr.map((percentArr, i) =>

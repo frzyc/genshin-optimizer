@@ -88,7 +88,6 @@ const char: ICharacterSheet = {
     auto: {
       name: "Divine Marksmanship",
       img: normal,
-      infusable: false,
       document: [{
         text: <span><strong>Normal Attack</strong> Perform up to 6 consecutive shots with a bow. <small><i>Note: the 1st and 4th attack hits twice.</i></small></span>,
         fields: data.normal.hitArr.map((percentArr, i) =>
