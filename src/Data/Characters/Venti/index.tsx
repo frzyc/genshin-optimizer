@@ -40,12 +40,12 @@ const conditionals: IConditionals = {
     }
   },
   q: { // Absorption
-    name: "Elemental Absoption",
+    name: "Elemental Absorption",
     states: {
       ...Object.fromEntries(["hydro", "pyro", "cryo", "electro"].map(eleKey => [eleKey, {
         name: <span className={`text-${eleKey}`}><b>{ElementalData[eleKey].name}</b></span>,
         fields: [{
-          text: "Absoption DoT",
+          text: "Absorption DoT",
           formulaText: stats => <span>{(data.burst.hit[stats.tlvl.burst] / 2)?.toFixed(2)}% {Stat.printStat(`${eleKey}_burst_${stats.hitMode}`, stats)}</span>,
           formula: formula.burst[`${eleKey}_hit`],
           variant: eleKey

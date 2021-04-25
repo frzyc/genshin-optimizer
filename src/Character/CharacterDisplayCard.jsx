@@ -41,7 +41,7 @@ const CustomMenu = React.forwardRef(
 const initialCharacter = (characterKey) => ({
   characterKey: characterKey ?? "",//the game character this is based off
   levelKey: "L1",//combination of level and ascension
-  hitMode: "hit",
+  hitMode: "avgHit",
   reactionMode: null,
   equippedArtifacts: {},
   artifactConditionals: [],

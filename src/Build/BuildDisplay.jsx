@@ -413,10 +413,10 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
                 {/* Dropdown to select sorting value */}
                 <ButtonGroup>
                   <Dropdown as={ButtonGroup}>
-                    <Dropdown.Toggle disabled={generatingBuilds} >
+                    <Dropdown.Toggle disabled={generatingBuilds} variant="success" >
                       <span>Sort by {sortByText}</span>
                     </Dropdown.Toggle>
-                    <Dropdown.Menu drop="up" align="right" style={{ minWidth: "35rem" }} >
+                    <Dropdown.Menu drop="up" align="right" style={{ minWidth: "40rem" }} >
                       <Row>
                         {Object.entries(statsDisplayKeys).map(([talentKey, fields]) => {
                           let header = ""
@@ -425,14 +425,14 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
                           else if (talentKey === "transReactions") header = "Transformation Reaction"
                           else header = Character.getTalentName(characterKey, talentKey, talentKey)
                           return <Col xs={12} md={6} key={talentKey}>
-                            <Dropdown.Header><b>{header}</b></Dropdown.Header>
+                            <Dropdown.Header style={{ overflow: "hidden", textOverflow: "ellipsis" }}><b>{header}</b></Dropdown.Header>
                             {fields.map((target, i) => {
                               if (typeof target === "string")
                                 return <Dropdown.Item key={i} onClick={() => buildSettingsDispatch({ optimizationTarget: target })}>{Stat.getStatNamePretty(target)}</Dropdown.Item>
                               const formula = Formula.get(target)
                               const talentField = formula.field
                               if (!formula || !talentField) return null
-                              return <Dropdown.Item key={i} onClick={() => buildSettingsDispatch({ optimizationTarget: target })}>
+                              return <Dropdown.Item key={i} onClick={() => buildSettingsDispatch({ optimizationTarget: target })} style={{ overflow: "hidden", textOverflow: "ellipsis" }}>
                                 <span className={`text-${Character.getTalentFieldValue(talentField, "variant", initialStats)}`}>{Character.getTalentFieldValue(talentField, "text", initialStats)}</span>
                               </Dropdown.Item>
                             })}
