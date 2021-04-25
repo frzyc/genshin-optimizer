@@ -236,6 +236,20 @@ describe('pruneArtifacts', () => {
     const stats = new Set(["stat1", "stat2"])
     expect(pruneArtifacts([...goodArtifact, ...badArtifact], {}, stats)).toEqual(goodArtifact)
   })
+  test('should reverse the order with enemy resistance', () => {
+    const goodArtifact = [{
+      id: 0, setKey: "x",
+      mainStatKey: "cryo_enemyRes_", mainStatVal: 10,
+      substats: []
+    }]
+    const badArtifact = [{
+      id: 1, setKey: "x",
+      mainStatKey: "cryo_enemyRes_", mainStatVal: 20,
+      substats: []
+    }]
+    const stats = new Set(['cryo_enemyRes_'])
+    expect(pruneArtifacts([...goodArtifact, ...badArtifact], {}, stats)).toEqual(goodArtifact)
+  })
 })
 
 const stats = { characterKey: "electro-dude", hitMode: "avgHit", characterEle: "electro" }

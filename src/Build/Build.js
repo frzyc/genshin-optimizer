@@ -36,6 +36,9 @@ export function pruneArtifacts(artifacts, artifactSetEffects, significantStats, 
     for (const { key, value } of artifact.substats)
       if (significantStats.has(key))
         stats[key] = (stats[key] ?? 0) + value
+    for (const key in stats)
+      if (key.endsWith("enemyRes_"))
+        stats[key] = -stats[key]
     return { artifact, stats, set }
   })
 

@@ -103,8 +103,8 @@ const ElementToReactionKeys = {
   geo: ["crystalize_hit", "shattered_hit"],
   electro: ["overloaded_hit", "electrocharged_hit", "superconduct_hit"],
   hydro: ["electrocharged_hit", "shattered_hit"],//"hydro_vaporize_multi",
-  pyro: ["overloaded_hit"],// "burning_hit","pyro_vaporize_multi", "pyro_melt_multi", 
-  cryo: ["shattered_hit", "superconduct_hit"],//"cryo_melt_multi", 
+  pyro: ["overloaded_hit"],// "burning_hit","pyro_vaporize_multi", "pyro_melt_multi",
+  cryo: ["shattered_hit", "superconduct_hit"],//"cryo_melt_multi",
   dendro: []
 }
 function resMultiplier(res) {
@@ -128,13 +128,13 @@ Object.entries(hitElements).forEach(([ele, { name: eleName }]) => {
   StatData[`${ele}_dmg_`] = { name: `${eleName} DMG Bonus`, unit: "%", ...opt }
   StatData[`${ele}_res_`] = { name: `${eleName} DMG RES`, unit: "%", ...opt }
 
-  StatData[`${ele}_enemyRes_`] = { name: `Enemy ${eleName} DMG RES`, unit: "%", default: 10, const: true, ...opt }
+  StatData[`${ele}_enemyRes_`] = { name: `Enemy ${eleName} DMG RES`, unit: "%", default: 10, ...opt }
   StatData[`${ele}_enemyImmunity`] = { name: `Enemy ${eleName} Immunity`, default: false, const: true, ...opt }
 
-  StatData[`${ele}_enemyRes_multi`] = { name: `Enemy ${eleName} RES Multiplier`, unit: "multi", const: true, ...opt }
+  StatData[`${ele}_enemyRes_multi`] = { name: `Enemy ${eleName} RES Multiplier`, unit: "multi", ...opt }
   StatData[`${ele}_bonus_multi`] = { name: `${eleName} Attack Bonus DMG Multiplier`, unit: "multi", ...opt }
 
-  Formulas[`${ele}_enemyRes_multi`] = (s, c) => c[`${ele}_enemyImmunity`] ? 0 : resMultiplier(c[`${ele}_enemyRes_`])
+  Formulas[`${ele}_enemyRes_multi`] = (s, c) => c[`${ele}_enemyImmunity`] ? 0 : resMultiplier(s[`${ele}_enemyRes_`])
 })
 
 Object.entries(hitMoves).forEach(([move, moveName]) => {
@@ -150,7 +150,7 @@ Object.entries(hitMoves).forEach(([move, moveName]) => {
       StatData[`${ele}_${move}_${type}_multi`] = { name: `${moveName} ${typeName} Multiplier`, unit: "multi", ...opt }
     })
 
-    Formulas[`${ele}_${move}_hit_multi`] = (s, c) => s[`${ele}_${move}_hit_base_multi`] * c.enemyLevel_multi * c[`${ele}_enemyRes_multi`]
+    Formulas[`${ele}_${move}_hit_multi`] = (s, c) => s[`${ele}_${move}_hit_base_multi`] * c.enemyLevel_multi * s[`${ele}_enemyRes_multi`]
     Formulas[`${ele}_${move}_critHit_multi`] = (s) => s[`${ele}_${move}_hit_multi`] * s[`critHit_base_multi`]
     Formulas[`${ele}_${move}_avgHit_multi`] = (s) => s[`${ele}_${move}_hit_multi`] * s[`${move}_avgHit_base_multi`]
   })
@@ -164,13 +164,13 @@ Object.entries(transformativeReactions).forEach(([reaction, { name, multi, varia
   if (variants.length === 1) {
     const [ele] = variants, opt = { variant: reaction }
     StatData[`${reaction}_hit`] = { name: `${name} DMG`, ...opt }
-    Formulas[`${reaction}_hit`] = (s, c) => (100 + s.transformative_dmg_ + s[`${reaction}_dmg_`]) / 100 * c[`${reaction}_multi`] * c[`${ele}_enemyRes_multi`]
+    Formulas[`${reaction}_hit`] = (s, c) => (100 + s.transformative_dmg_ + s[`${reaction}_dmg_`]) / 100 * c[`${reaction}_multi`] * s[`${ele}_enemyRes_multi`]
   } else {
     variants.forEach(ele => {
       const opt = { variant: ele }
 
       StatData[`${ele}_${reaction}_hit`] = { name: `${hitElements[ele].name} ${name} DMG`, ...opt }
-      Formulas[`${ele}_${reaction}_hit`] = (s, c) => (100 + s.transformative_dmg_ + s[`${reaction}_dmg_`]) / 100 * c[`${reaction}_multi`] * c[`${ele}_enemyRes_multi`]
+      Formulas[`${ele}_${reaction}_hit`] = (s, c) => (100 + s.transformative_dmg_ + s[`${reaction}_dmg_`]) / 100 * c[`${reaction}_multi`] * s[`${ele}_enemyRes_multi`]
     })
   }
 })
