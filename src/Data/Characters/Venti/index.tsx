@@ -45,6 +45,13 @@ const conditionals: IConditionals = {
       ...Object.fromEntries(["hydro", "pyro", "cryo", "electro"].map(eleKey => [eleKey, {
         name: <span className={`text-${eleKey}`}><b>{ElementalData[eleKey].name}</b></span>,
         fields: [{
+          canShow: stats => {
+            const value = stats.conditionalValues?.character?.venti?.q
+            if (!value) return false
+            const [num, condEleKey] = value
+            if (!num || condEleKey !== eleKey) return false
+            return true
+          },
           text: "Absorption DoT",
           formulaText: stats => <span>{(data.burst.hit[stats.tlvl.burst] / 2)?.toFixed(2)}% {Stat.printStat(`${eleKey}_burst_${stats.hitMode}`, stats)}</span>,
           formula: formula.burst[`${eleKey}_hit`],
@@ -52,11 +59,10 @@ const conditionals: IConditionals = {
         }, {
           canShow: stats => stats.ascension >= 4,
           text: <span>Regen 15 Energy to all <span className={`text-${eleKey}`}>{ElementalData[eleKey].name}</span> characters.</span>,
-        }, {
-          canShow: stats => stats.constellation >= 6,
-          text: <span>Enemy <span className={`text-${eleKey}`}>{ElementalData[eleKey].name} RES</span> decrease</span>,
-          value: "20%"
-        }]
+        }],
+        stats: stats => ({
+          ...stats.constellation >= 6 && { [`${eleKey}_enemyRes_`]: -20 }
+        })
       }]))
     }
   },
@@ -184,7 +190,7 @@ const char: ICharacterSheet = {
       img: burst,
       document: [{
         text: <span>
-          <p className="mb-2">Fires off an arrow made of countless coalesced winds, creating a huge Stormeye that sucks in objects and opponents along its path, dealing 18 times <span className="text-anemo">Anemo DMG</span> in 8 seconds.</p>
+          <p className="mb-2">Fires off an arrow made of countless coalesced winds, creating a huge Stormeye that sucks in objects and opponents and deals continuous <span className="text-anemo">Anemo DMG</span>.</p>
           <p className="mb-2"><strong>Elemental Absorption:</strong> If the Stormeye comes into contact with <span className="text-hydro">Hydro</span>/<span className="text-pyro">Pyro</span>/<span className="text-cryo">Cryo</span>/<span className="text-electro">Electro</span> elements, it will deal 50% additional elemental DMG of that type. Elemental Absorption may only occur once per use.</p>
         </span>,
         fields: [{
@@ -210,6 +216,30 @@ const char: ICharacterSheet = {
           value: "20%"
         }],
         conditional: conditionals.q
+      }, {
+        canShow: stats => Boolean(stats.conditionalValues?.character?.venti?.q),
+        text: <span>
+          <h6>Full Elemental Burst DMG</h6>
+          <p className="mb-2">This calculates the total Elemental Burst DMG, including swirl. This calculation assumes:</p>
+          <ul>
+            <li>20 ticks of Burst DMG</li>
+            <li>15 ticks of absorption DMG</li>
+            <li>7 ticks of Swirl, for one enemy, OR,</li>
+            <li>14 ticks of Swirl, for multiple enemy, that Swirls eachother.</li>
+          </ul>
+        </span>,
+        fields: ["hydro", "pyro", "cryo", "electro"].flatMap(eleKey => ([7, 14].map(swirlTicks => ({
+          canShow: stats => {
+            const value = stats.conditionalValues?.character?.venti?.q
+            if (!value) return false
+            const [num, condEleKey] = value
+            if (!num || condEleKey !== eleKey) return false
+            return true
+          },
+          text: <span>Total DMG(<span className={`text-${eleKey}`}>{swirlTicks} Swirl ticks</span>)</span>,
+          formula: formula.burst[`${eleKey}_tot_${swirlTicks}`],
+          formulaText: stats => <span>20 * {data.burst.hit[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)} + 15 * {(data.burst.hit[stats.tlvl.burst] / 2)?.toFixed(2)}% {Stat.printStat(`${eleKey}_burst_${stats.hitMode}`, stats)} + {swirlTicks} * {Stat.printStat(`${eleKey}_swirl_hit`, stats)}</span>
+        }))))
       }],
     },
     passive1: {

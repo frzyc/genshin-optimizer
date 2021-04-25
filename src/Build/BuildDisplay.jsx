@@ -412,11 +412,11 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
               <Col xs="auto">
                 {/* Dropdown to select sorting value */}
                 <ButtonGroup>
-                  <Dropdown as={ButtonGroup}>
+                  <Dropdown as={ButtonGroup} drop="up">
                     <Dropdown.Toggle disabled={generatingBuilds} variant="success" >
                       <span>Sort by {sortByText}</span>
                     </Dropdown.Toggle>
-                    <Dropdown.Menu drop="up" align="right" style={{ minWidth: "40rem" }} >
+                    <Dropdown.Menu align="right" style={{ minWidth: "40rem" }} >
                       <Row>
                         {Object.entries(statsDisplayKeys).map(([talentKey, fields]) => {
                           let header = ""

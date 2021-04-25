@@ -4,6 +4,7 @@ import { useContext, useMemo } from 'react';
 import { Accordion, AccordionContext, Button, Card, Col, Dropdown, Image, Row, ToggleButton, ToggleButtonGroup } from "react-bootstrap";
 import { useAccordionToggle } from 'react-bootstrap/AccordionToggle';
 import Assets from "../../Assets/Assets";
+import Formula from "../../Formula";
 import Stat from "../../Stat";
 import { GetDependencies } from "../../StatDependency";
 import Character from "../Character";
@@ -85,11 +86,12 @@ function CalculationDisplay({ build }) {
                 </Card>
               }
               //fields
-              const talentField = Character.getTalentField(build, field.talentKey, field.sectionIndex, field.fieldIndex)
-              const fieldText = Character.getTalentFieldValue(talentField, "text", build)
-              const fieldVariant = Character.getTalentFieldValue(talentField, "variant", build)
-              const fieldFormulaText = Character.getTalentFieldValue(talentField, "formulaText", build)
-              const [fieldFormula, fieldFormulaDependency] = Character.getTalentFieldValue(talentField, "formula", build, [])
+              const formula = Formula.get(field)
+              const formulaField = formula.field//Character.getDisplayStatKeys already calls formula.field.canShow
+              const fieldText = Character.getTalentFieldValue(formulaField, "text", build)
+              const fieldVariant = Character.getTalentFieldValue(formulaField, "variant", build)
+              const fieldFormulaText = Character.getTalentFieldValue(formulaField, "formulaText", build)
+              const [fieldFormula, fieldFormulaDependency] = Character.getTalentFieldValue(formulaField, "formula", build, [])
               if (!fieldFormula || !fieldFormulaDependency) return null
               const fieldValue = fieldFormula?.(build)?.toFixed?.()
               const subFormulaKeys = Stat.getPrintableFormulaStatKeyList(GetDependencies(build?.modifiers, fieldFormulaDependency), build?.modifiers).reverse()

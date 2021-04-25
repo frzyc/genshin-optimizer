@@ -48,14 +48,27 @@ const formula = {
   },
   plunging: Object.fromEntries(Object.entries(data.plunging).map(([name, arr]) =>
     [name, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "plunging")])),
-  skill: Object.fromEntries(Object.entries(data.skill).map(([name, arr]) => 
+  skill: Object.fromEntries(Object.entries(data.skill).map(([name, arr]) =>
     [name, stats => basicDMGFormula(arr[stats.tlvl.skill], stats, "skill")])),
   burst: Object.fromEntries([
     ...Object.entries(data.burst).map(([name, arr]) =>
       [name, stats => basicDMGFormula(arr[stats.tlvl.burst], stats, "burst")]),
     ...Object.entries(data.burst).flatMap(([name, arr]) =>
       (["hydro", "pyro", "cryo", "electro"]).map((ele) =>
-        [`${ele}_${name}`, stats => [s=>(arr[stats.tlvl.burst] / 2 / 100) * stats[`${ele}_burst_${stats.hitMode}`], [`${ele}_burst_${stats.hitMode}`]]])),//not optimizationTarget, dont need to precompute
+        [`${ele}_${name}`, stats => [s => (arr[stats.tlvl.burst] / 2 / 100) * stats[`${ele}_burst_${stats.hitMode}`], [`${ele}_burst_${stats.hitMode}`]]])),//not optimizationTarget, dont need to precompute
+    ...(["hydro", "pyro", "cryo", "electro"]).flatMap(eleKey => [
+      [`${eleKey}_tot_7`, stats => totBurst(stats, eleKey, 7)],
+      [`${eleKey}_tot_14`, stats => totBurst(stats, eleKey, 14)],
+    ])
   ]),
+}
+function totBurst(stats, absorptionEle, swirlTicks) {
+  const ultTicks = 20
+  const absorptionTicks = 15
+  const burstStatKey = `anemo_burst_${stats.hitMode}`
+  const absorptionStatKey = `${absorptionEle}_burst_${stats.hitMode}`
+  const swirlStatKey = `${absorptionEle}_swirl_hit`
+  const burstScaling = data.burst.hit[stats.tlvl.burst] / 100
+  return [s => ultTicks * burstScaling * s[burstStatKey] + absorptionTicks * 0.5 * burstScaling * s[absorptionStatKey] + swirlTicks * s[swirlStatKey], [burstStatKey, absorptionStatKey, swirlStatKey]]
 }
 export default formula
