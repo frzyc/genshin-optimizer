@@ -48,7 +48,7 @@ const formula = {
     aimShot1: stats => basicDMGFormula(data.charged.aimShot1[stats.tlvl.auto], stats, "charged", true),
     frostflake: stats => {
       if (stats.hitMode === "avgHit") {
-        const [conditionalNum] = stats.conditionalValue?.character?.ganyu?.UndividedHeart ?? []
+        const [conditionalNum] = stats.conditionalValues?.character?.ganyu?.a1 ?? []
         if (conditionalNum) {
           const val = data.charged.frostflake[stats.tlvl.auto] / 100
           //cryo_charged_hit or cryo_melt_charged_hit
@@ -61,7 +61,7 @@ const formula = {
     },
     frostflakeBloom: stats => {
       if (stats.hitMode === "avgHit") {
-        const [conditionalNum] = stats.conditionalValue?.character?.ganyu?.UndividedHeart ?? []
+        const [conditionalNum] = stats.conditionalValues?.character?.ganyu?.a1 ?? []
         if (conditionalNum) {
           const val = data.charged.frostflakeBloom[stats.tlvl.auto] / 100
           //cryo_charged_hit or cryo_melt_charged_hit
