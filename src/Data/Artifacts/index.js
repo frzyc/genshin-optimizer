@@ -15,6 +15,7 @@ import LuckyDog from './LuckyDog/LuckyDog'
 import MaidenBeloved from './MaidenBeloved/MaidenBeloved'
 import MartialArtist from './MartialArtist/MartialArtist'
 import NoblesseOblige from './NoblesseOblige/NoblesseOblige'
+import PaleFlame from './PaleFlame/PaleFlame'
 import PrayersForDestiny from './PrayersForDestiny/PrayersForDestiny'
 import PrayersForIllumination from './PrayersForIllumination/PrayersForIllumination'
 import PrayersForWisdom from './PrayersForWisdom/PrayersForWisdom'
@@ -22,6 +23,7 @@ import PrayersToSpringtime from './PrayersToSpringtime/PrayersToSpringtime'
 import ResolutionOfSojourner from './ResolutionOfSojourner/ResolutionOfSojourner'
 import RetracingBolide from './RetracingBolide/RetracingBolide'
 import Scholar from './Scholar/Scholar'
+import TenacityOfTheMillelith from './TenacityOfTheMillelith/TenacityOfTheMillelith'
 import TheExile from './TheExile/TheExile'
 import ThunderingFury from './ThunderingFury/ThunderingFury'
 import Thundersoother from './Thundersoother/Thundersoother'
@@ -47,6 +49,7 @@ let artifacts = {
   MaidenBeloved,
   MartialArtist,
   NoblesseOblige,
+  PaleFlame,
   PrayersForDestiny,
   PrayersForIllumination,
   PrayersForWisdom,
@@ -54,6 +57,7 @@ let artifacts = {
   ResolutionOfSojourner,
   RetracingBolide,
   Scholar,
+  TenacityOfTheMillelith,
   TheExile,
   ThunderingFury,
   Thundersoother,
