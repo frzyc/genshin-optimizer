@@ -1,8 +1,8 @@
-import flower from './Item_Tenacity_of_the_Millelith_Flower.png'
-import plume from './Item_Tenacity_of_the_Millelith_Flower.png'
-import sands from './Item_Tenacity_of_the_Millelith_Flower.png'
-import goblet from './Item_Tenacity_of_the_Millelith_Flower.png'
-import circlet from './Item_Tenacity_of_the_Millelith_Flower.png'
+import flower from './Item_Flower_of_Accolades.png'
+import plume from './Item_Ceremonial_War-Plume.png'
+import sands from './Item_Orichalceous_Time-Dial.png'
+import goblet from './Item_Noble\'s_Pledging_Vessel.png'
+import circlet from './Item_General\'s_Ancient_Helm.png'
 import { IConditionals } from '../../../Conditional/IConditional'
 import IArtifactSheet from '../../../Artifact/IArtifactSheet'
 const conditionals: IConditionals = {
@@ -16,7 +16,7 @@ const artifact: IArtifactSheet = {
   pieces: {
     flower: "Flower of Accolades",
     plume: "Ceremonial War-Plume",
-    sands: " Orichalceous Time-Dial",
+    sands: "Orichalceous Time-Dial",
     goblet: "Noble's Pledging Vessel",
     circlet: "General's Ancient Helm"
   },

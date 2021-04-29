@@ -1,8 +1,8 @@
-import flower from './Item_Pale_Flame_Flower.png'
-import plume from './Item_Pale_Flame_Flower.png'
-import sands from './Item_Pale_Flame_Flower.png'
-import goblet from './Item_Pale_Flame_Flower.png'
-import circlet from './Item_Pale_Flame_Flower.png'
+import flower from './Item_Stainless_Bloom.png'
+import plume from './Item_Wise_Doctor\'s_Pinion.png'
+import sands from './Item_Moment_of_Cessation.png'
+import goblet from './Item_Surpassing_Cup.png'
+import circlet from './Item_Mocking_Mask.png'
 import { IConditionals } from '../../../Conditional/IConditional'
 import IArtifactSheet from '../../../Artifact/IArtifactSheet'
 const conditionals: IConditionals = {
@@ -34,7 +34,7 @@ const artifact: IArtifactSheet = {
     flower: "Stainless Bloom",
     plume: "Wise Doctor's Pinion",
     sands: "Moment of Cessation",
-    goblet: "Noble's Pledging Vessel",
+    goblet: "Surpassing Cup",
     circlet: "Mocking Mask"
   },
   icons: {
