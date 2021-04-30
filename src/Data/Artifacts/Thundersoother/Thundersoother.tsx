@@ -3,8 +3,8 @@ import plume from './Item_Thundersoother\'s_Plume.png'
 import sands from './Item_Hour_of_Soothing_Thunder.png'
 import goblet from './Item_Thundersoother\'s_Goblet.png'
 import circlet from './Item_Thundersoother\'s_Diadem.png'
-import IArtifactSheet from '../../../Artifact/IArtifactSheet'
-import { IConditionals } from '../../../Conditional/IConditional'
+import { IArtifactSheet } from '../../../Types/artifact'
+import { IConditionals } from '../../../Types/IConditional'
 const conditionals: IConditionals = {
   set4: {
     name: <span>Enemies affected by <span className="text-electro">Electro</span></span>,

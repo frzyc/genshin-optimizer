@@ -3,8 +3,8 @@ import plume from './Item_Gambler\'s_Feather_Accessory.png'
 import sands from './Item_Gambler\'s_Pocket_Watch.png'
 import goblet from './Item_Gambler\'s_Dice_Cup.png'
 import circlet from './Item_Gambler\'s_Earrings.png'
-import IArtifactSheet from '../../../Artifact/IArtifactSheet'
-import { IConditionals } from '../../../Conditional/IConditional'
+import { IArtifactSheet } from '../../../Types/artifact'
+import { IConditionals } from '../../../Types/IConditional'
 const conditionals: IConditionals = {
   set4: {
     name: "Defeating an enemy",

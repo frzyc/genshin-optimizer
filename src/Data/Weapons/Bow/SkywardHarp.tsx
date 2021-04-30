@@ -1,12 +1,12 @@
 import { getTalentStatKey } from '../../../Build/Build'
 import DisplayPercent from "../../../Components/DisplayPercent"
-import WeaponSheet from '../../WeaponSheetInterace'
+import { IWeaponSheet } from '../../../Types/weapon'
 import img from './Weapon_Skyward_Harp.png'
 
 const refinementVals = [20, 25, 30, 35, 40]
 const refinementChangeVals = [60, 70, 80, 90, 100]
 const refinementCD = [4, 3.5, 3, 2.5, 2]
-const weapon : WeaponSheet = {
+const weapon: IWeaponSheet = {
   name: "Skyward Harp",
   weaponType: "bow",
   img,
@@ -16,7 +16,7 @@ const weapon : WeaponSheet = {
   description: "A greatbow that symbolizes Dvalin's affiliation with the Anemo Archon. The sound of the bow firing is music to the Anemo Archon's ears. It contains the power of the sky and wind within.",
   baseStats: {
     main: [48, 65, 87, 110, 133, 164, 188, 212, 236, 261, 292, 316, 341, 373, 398, 423, 455, 480, 506, 537, 563, 590, 621, 648, 674],
-    subStatKey: "critRate_",
+    substatKey: "critRate_",
     sub: [4.8, 5.6, 6.5, 7.5, 8.5, 8.5, 9.5, 10.4, 11.4, 12.4, 12.4, 13.3, 14.3, 14.3, 15.3, 16.2, 16.2, 17.2, 18.2, 18.2, 19.1, 20.1, 20.1, 21.1, 22.1],
   },
   stats: stats => ({

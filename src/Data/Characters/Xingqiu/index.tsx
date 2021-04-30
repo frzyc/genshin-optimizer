@@ -16,8 +16,8 @@ import Stat from '../../../Stat'
 import DisplayPercent from '../../../Components/DisplayPercent'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from "../../../Build/Build"
-import ICharacterSheet from '../../ICharacterSheet'
-import { IConditionals } from '../../../Conditional/IConditional'
+import { ICharacterSheet } from '../../../Types/character'
+import { IConditionals } from '../../../Types/IConditional'
 const conditionals: IConditionals = {
   c2: { // RainbowUponTheAzureSky
     canShow: stats => stats.constellation >= 2,
@@ -207,7 +207,7 @@ const char: ICharacterSheet = {
       name: "Weaver of Verses",
       img: c3,
       document: [{ text: <span>	Increases the level of <b>Guhua Sword: Raincutter</b> by 3. Maximum upgrade level is 15.</span> }],
-      talentBoost: { burst: 3 }
+      stats: { burstBoost: 3 }
     },
     constellation4: {
       name: "Evilsoother",
@@ -218,7 +218,7 @@ const char: ICharacterSheet = {
       name: "Embrace of Rain",
       img: c5,
       document: [{ text: <span>Increases the level of <b>Guhua Sword: Fatal Rainscreen</b> by 3. Maximum upgrade level is 15.</span> }],
-      talentBoost: { skill: 3 }
+      stats: { skillBoost: 3 }
     },
     constellation6: {
       name: "Hence, Call Them My Own Verses",

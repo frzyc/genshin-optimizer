@@ -3,7 +3,7 @@ import plume from './Item_Feather_of_Homecoming.png'
 import sands from './Item_Sundial_of_the_Sojourner.png'
 import goblet from './Item_Goblet_of_the_Sojourner.png'
 import circlet from './Item_Crown_of_Parting.png'
-import IArtifactSheet from '../../../Artifact/IArtifactSheet'
+import { IArtifactSheet } from '../../../Types/artifact'
 const artifact: IArtifactSheet = {
   name: "Resolution of Sojourner", rarity: [3, 4],
   pieces: {

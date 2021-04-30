@@ -15,8 +15,8 @@ import passive3 from './Talent_Guiding_Breeze.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-import { IConditionals } from '../../../Conditional/IConditional'
-import ICharacterSheet from '../../ICharacterSheet'
+import { IConditionals } from '../../../Types/IConditional'
+import { ICharacterSheet } from '../../../Types/character'
 const conditionals: IConditionals = {
   c2: { // People's Aegis
     canShow: stats => stats.constellation >= 2,
@@ -190,7 +190,7 @@ const char: ICharacterSheet = {
           canShow: stats => stats.ascension >= 4,
           text: "Heal per Auto",
           formulaText: stats => <span>15% {Stat.printStat("finalATK", stats)} * {Stat.printStat("heal_multi", stats)}</span>,
-          formula: formula.passive1.heal,
+          formula: formula.etc!.a4,
           variant: "success",
         }]
       }],
@@ -222,7 +222,7 @@ const char: ICharacterSheet = {
       name: "When the West Wind Arises",
       img: c3,
       document: [{ text: <span>Increases the level of <b>Dandelion Breeze</b> by 3. Maximum upgrade level is 15.</span> }],
-      talentBoost: { burst: 3 }
+      stats: { burstBoost: 3 }
     },
     constellation4: {
       name: "Lands of Dandelion",
@@ -236,7 +236,7 @@ const char: ICharacterSheet = {
       name: "Outbursting Gust",
       img: c5,
       document: [{ text: <span>Increases the level of <b>Gale Blade</b> by 3. Maximum upgrade level is 15.</span> }],
-      talentBoost: { skill: 3 }
+      stats: { skillBoost: 3 }
     },
     constellation6: {
       name: "Lion's Fang, Fair Protector of Mondstandt",

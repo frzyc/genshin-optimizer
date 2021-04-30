@@ -16,8 +16,8 @@ import ElementalData from '../../ElementalData'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from "../../../Build/Build"
-import { IConditionals } from '../../../Conditional/IConditional'
-import ICharacterSheet from '../../ICharacterSheet'
+import { IConditionals } from '../../../Types/IConditional'
+import { ICharacterSheet } from '../../../Types/character'
 const conditionals: IConditionals = {
   q: { // Absorption
     name: "Elemental Absorption",
@@ -171,7 +171,7 @@ const char: ICharacterSheet = {
     constellation3: {
       name: "Flawless Alchemistress",
       img: c3,
-      talentBoost: { skill: 3 },
+      stats: { skillBoost: 3 },
       document: [{
         text: <span>
           Increases the Level of Astable Anemohypostasis Creation - 6308 by 3.<br />
@@ -187,7 +187,7 @@ const char: ICharacterSheet = {
     constellation5: {
       name: "Caution: Standard Flask",
       img: c5,
-      talentBoost: { burst: 3 },
+      stats: { burstBoost: 3 },
       document: [{
         text: <span>
           Increases the Level of Forbidden Creation - Isomer 75 / Type II by 3.<br />

@@ -3,8 +3,8 @@ import plume from './Item_Bloodstained_Black_Plume.png'
 import sands from './Item_Bloodstained_Final_Hour.png'
 import goblet from './Item_Bloodstained_Chevalier\'s_Goblet.png'
 import circlet from './Item_Bloodstained_Iron_Mask.png'
-import IArtifactSheet from '../../../Artifact/IArtifactSheet'
-import { IConditionals } from '../../../Conditional/IConditional'
+import { IArtifactSheet } from '../../../Types/artifact'
+import { IConditionals } from '../../../Types/IConditional'
 const conditionals: IConditionals = {
   set4: {
     name: "After defeating an opponent",

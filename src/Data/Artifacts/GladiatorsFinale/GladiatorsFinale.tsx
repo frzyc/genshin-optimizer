@@ -3,14 +3,8 @@ import plume from './Item_Gladiator\'s_Destiny.png'
 import sands from './Item_Gladiator\'s_Longing.png'
 import goblet from './Item_Gladiator\'s_Intoxication.png'
 import circlet from './Item_Gladiator\'s_Triumphus.png'
-import { IConditionals } from '../../../Conditional/IConditional'
-import IArtifactSheet from '../../../Artifact/IArtifactSheet'
-const conditionals: IConditionals = {
-  set4: {
-    name: "Owner uses a Melee weapon",
-    stats: { normal_dmg_: 35 }
-  }
-}
+import { IArtifactSheet } from '../../../Types/artifact'
+
 const artifact: IArtifactSheet = {
   name: "Gladiator's Finale", rarity: [4, 5],
   pieces: {
@@ -27,7 +21,6 @@ const artifact: IArtifactSheet = {
     goblet,
     circlet
   },
-  conditionals,
   setEffects: {
     2: {
       text: "ATK +18%",
@@ -35,7 +28,7 @@ const artifact: IArtifactSheet = {
     },
     4: {
       text: "If the wielder of this artifact set uses a Sword, Claymore or Polearm, increases their Normal Attack DMG by 35%.",
-      conditional: conditionals.set4
+      stats: stats => (stats.weaponType === "sword" || stats.weaponType === "polearm" || stats.weaponType === "claymore") && ({ normal_dmg_: 35 })
     }
   }
 }

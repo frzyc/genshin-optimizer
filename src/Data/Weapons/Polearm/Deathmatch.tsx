@@ -1,5 +1,5 @@
-import { IConditionals } from '../../../Conditional/IConditional'
-import WeaponSheet from '../../WeaponSheetInterace'
+import { IConditionals } from '../../../Types/IConditional'
+import { IWeaponSheet } from '../../../Types/weapon'
 import Deathmatch from './Weapon_Deathmatch.png'
 const refinementVals = [16, 20, 24, 28, 32]
 const refinementSoloVals = [24, 30, 36, 42, 48]
@@ -23,7 +23,7 @@ const conditionals: IConditionals = {
     }
   }
 }
-const weapon: WeaponSheet = {
+const weapon: IWeaponSheet = {
   name: "Deathmatch",
   weaponType: "polearm",
   img: Deathmatch,
@@ -33,7 +33,7 @@ const weapon: WeaponSheet = {
   description: "A sharp crimson polearm that was once a gladiator's priceless treasure. Its awl has been stained by the blood of countless beasts and men.",
   baseStats: {
     main: [41, 54, 69, 84, 99, 125, 140, 155, 169, 184, 210, 224, 238, 264, 278, 293, 319, 333, 347, 373, 387, 401, 427, 440, 454],
-    subStatKey: "critRate_",
+    substatKey: "critRate_",
     sub: [8, 9.3, 10.9, 12.5, 14.1, 14.1, 15.8, 17.4, 19, 20.6, 20.6, 22.2, 23.8, 23.8, 25.4, 27.1, 27.1, 28.7, 30.3, 30.3, 31.9, 33.5, 33.5, 35.1, 36.8],
   },
   conditionals

@@ -1,5 +1,5 @@
-import { IConditionals } from '../../../Conditional/IConditional'
-import WeaponSheet from '../../WeaponSheetInterace'
+import { IConditionals } from '../../../Types/IConditional'
+import { IWeaponSheet } from '../../../Types/weapon'
 import img from './Weapon_Primordial_Jade_Winged-Spear.png'
 
 const refinementVals = [3.2, 3.9, 4.6, 5.3, 6]
@@ -25,7 +25,7 @@ const conditionals: IConditionals = {
     }
   }
 }
-const weapon: WeaponSheet = {
+const weapon: IWeaponSheet = {
   name: "Primordial Jade Winged-Spear",
   weaponType: "polearm",
   img,
@@ -35,7 +35,7 @@ const weapon: WeaponSheet = {
   description: "A jade polearm made by the archons, capable of slaying ancient beasts.",
   baseStats: {
     main: [48, 65, 87, 110, 133, 164, 188, 212, 236, 261, 292, 316, 341, 373, 398, 423, 455, 480, 506, 537, 563, 590, 621, 648, 674],
-    subStatKey: "critRate_",
+    substatKey: "critRate_",
     sub: [4.8, 5.6, 6.5, 7.5, 8.5, 8.5, 9.5, 10.4, 11.4, 12.4, 12.4, 13.3, 14.3, 14.3, 15.3, 16.2, 16.2, 17.2, 18.2, 18.2, 19.1, 20.1, 20.1, 21.1, 22.1],
   },
   conditionals

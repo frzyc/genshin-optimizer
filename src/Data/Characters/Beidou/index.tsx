@@ -16,8 +16,8 @@ import DisplayPercent from '../../../Components/DisplayPercent'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-import { IConditionals } from '../../../Conditional/IConditional'
-import ICharacterSheet from '../../ICharacterSheet'
+import { IConditionals } from '../../../Types/IConditional'
+import { ICharacterSheet } from '../../../Types/character'
 const conditionals: IConditionals = {
   a4: { // Lightning Storm
     canShow: stats => stats.ascension >= 4,
@@ -238,7 +238,7 @@ const char: ICharacterSheet = {
       name: "Summoner of Storm",
       img: c3,
       document: [{ text: <span>Increases the level of <b>Tidecaller</b> by 3. Maximum upgrade level is 15.</span> }],
-      talentBoost: { skill: 3 }
+      stats: { skillBoost: 3 }
     },
     constellation4: {
       name: "Stunning Revenge",
@@ -249,7 +249,7 @@ const char: ICharacterSheet = {
       name: "Crimson Tidewalker",
       img: c5,
       document: [{ text: <span>Increases the level of <b>Stormbreaker</b> by 3. Maximum upgrade level is 15.</span> }],
-      talentBoost: { burst: 3 }
+      stats: { burstBoost: 3 }
     },
     constellation6: {
       name: "Bane of the Evil",

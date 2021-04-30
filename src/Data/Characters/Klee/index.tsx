@@ -15,8 +15,8 @@ import passive3 from './Talent_All_Of_My_Treasures.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-import ICharacterSheet from '../../ICharacterSheet'
-import { IConditionals } from '../../../Conditional/IConditional'
+import { ICharacterSheet } from '../../../Types/character'
+import { IConditionals } from '../../../Types/IConditional'
 const conditionals: IConditionals = {
   a1: { // PoundingSurprise
     canShow: stats => stats.ascension >= 1,
@@ -162,7 +162,7 @@ const char: ICharacterSheet = {
       document: [{ text: <span>When Klee's <b>Charged Attack</b> results in a CRIT, all party members gain 2 Elemental Energy.</span> }],//TODO: party buff
     },
     passive3: {
-      name: "	All Of My Treasures!",
+      name: "All Of My Treasures!",
       img: passive3,
       document: [{ text: <span>Displays the location of nearby resources unique to Mondstadt on the mini-map.</span> }],
     },
@@ -175,7 +175,7 @@ const char: ICharacterSheet = {
           canShow: stats => stats.constellation >= 1,
           text: "Chained Reactions DMG",
           formulaText: stats => <span>120% x {data.burst.dmg[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
-          formula: formula.constellation1.dmgChained,
+          formula: formula.etc!.c1,
           variant: stats => getTalentStatKeyVariant("burst", stats),
         },]
       }],
@@ -192,7 +192,7 @@ const char: ICharacterSheet = {
       name: "Exquisite Compound",
       img: c3,
       document: [{ text: <span>Increases the level of <b>Jumpy Dumpty</b> by 3. Maximum level is 15.</span> }],
-      talentBoost: { skill: 3 }
+      stats: { skillBoost: 3 }
     },
     constellation4: {
       name: "Sparkly Explosion",
@@ -202,7 +202,7 @@ const char: ICharacterSheet = {
         fields: [{
           text: "Sparkly Explosion DMG",
           formulaText: stats => <span>555% {Stat.printStat(getTalentStatKey("elemental", stats), stats)}</span>,
-          formula: formula.constellation4.dmg,
+          formula: formula.etc!.c4,
           variant: stats => getTalentStatKeyVariant("elemental", stats),
         }]
       }],
@@ -211,7 +211,7 @@ const char: ICharacterSheet = {
       name: "Nova Burst",
       img: c5,
       document: [{ text: <span>Increases the level of <b>Sparks 'n' Splash</b> by 3. Maximum level is 15.</span> }],
-      talentBoost: { burst: 3 }
+      stats: { burstBoost: 3 }
     },
     constellation6: {
       name: "Blazing Delight",

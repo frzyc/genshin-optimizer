@@ -3,8 +3,8 @@ import plume from './Item_Tiny_Miracle\'s_Feather.png'
 import sands from './Item_Tiny_Miracle\'s_Hourglass.png'
 import goblet from './Item_Tiny_Miracle\'s_Goblet.png'
 import circlet from './Item_Tiny_Miracle\'s_Earrings.png'
-import IArtifactSheet from '../../../Artifact/IArtifactSheet'
-import { IConditionals } from '../../../Conditional/IConditional'
+import { IArtifactSheet } from '../../../Types/artifact'
+import { IConditionals } from '../../../Types/IConditional'
 const conditionals: IConditionals = {
   set4: {
     name: "Incoming DMG",

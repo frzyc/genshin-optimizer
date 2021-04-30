@@ -3,8 +3,8 @@ import plume from './Item_Lavawalker\'s_Salvation.png'
 import sands from './Item_Lavawalker\'s_Torment.png'
 import goblet from './Item_Lavawalker\'s_Epiphany.png'
 import circlet from './Item_Lavawalker\'s_Wisdom.png'
-import IArtifactSheet from '../../../Artifact/IArtifactSheet'
-import { IConditionals } from '../../../Conditional/IConditional'
+import { IArtifactSheet } from '../../../Types/artifact'
+import { IConditionals } from '../../../Types/IConditional'
 const conditionals: IConditionals = {
   set4: {
     name: <span>Enemies that are Burning or affected by <span className="text-pyro">Pyro</span></span>,

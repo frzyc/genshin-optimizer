@@ -15,8 +15,8 @@ import passive3 from './Talent_With_My_Whole_Heart.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-import { IConditionals } from '../../../Conditional/IConditional'
-import ICharacterSheet from '../../ICharacterSheet'
+import { IConditionals } from '../../../Types/IConditional'
+import { ICharacterSheet } from '../../../Types/character'
 const conditionals: IConditionals = {
   a1: { // Glorious Season
     canShow: stats => stats.ascension >= 1,
@@ -178,7 +178,7 @@ const char: ICharacterSheet = {
       name: "Star of Tomorrow",
       img: c3,
       document: [{ text: <span>Increases the level of <b>Shining Miracle</b> by 3. Maximum upgrade level is 15.</span> }],
-      talentBoost: { burst: 3 }
+      stats: { burstBoost: 3 }
     },
     constellation4: {
       name: "Attentiveness be My Power",
@@ -189,7 +189,7 @@ const char: ICharacterSheet = {
       name: "The Purest Companionship",
       img: c5,
       document: [{ text: <span>Increases the level of <b>Let the Show Begin</b> by 3. Maximum upgrade level is 15.</span> }],
-      talentBoost: { skill: 3 }
+      stats: { skillBoost: 3 }
     },
     constellation6: {
       name: "Dedicating Everything to You",

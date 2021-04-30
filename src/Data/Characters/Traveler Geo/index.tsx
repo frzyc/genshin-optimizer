@@ -1,6 +1,6 @@
 import card from './Traveler_Male_Card.jpg'
 import thumb from './Character_Traveler_Thumb.png'
-import ICharacterSheet from '../../ICharacterSheet';
+import { ICharacterSheet } from '../../../Types/character';
 // import c1 from './Constellation_Invincible_Stonewall.png'
 // import c2 from './Constellation_Rockcore_Meltdown.png'
 // import c3 from './Constellation_Will_of_the_Rock.png'

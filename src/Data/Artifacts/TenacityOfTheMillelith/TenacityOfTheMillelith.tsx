@@ -3,8 +3,9 @@ import plume from './Item_Ceremonial_War-Plume.png'
 import sands from './Item_Orichalceous_Time-Dial.png'
 import goblet from './Item_Noble\'s_Pledging_Vessel.png'
 import circlet from './Item_General\'s_Ancient_Helm.png'
-import { IConditionals } from '../../../Conditional/IConditional'
-import IArtifactSheet from '../../../Artifact/IArtifactSheet'
+import { IConditionals } from '../../../Types/IConditional'
+import { IArtifactSheet } from '../../../Types/artifact'
+
 const conditionals: IConditionals = {
   set4: {
     name: "Elemental Skill hits an opponent",

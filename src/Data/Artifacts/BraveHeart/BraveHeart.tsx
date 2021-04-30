@@ -3,8 +3,8 @@ import plume from './Item_Prospect_of_the_Brave.png'
 import sands from './Item_Fortitude_of_the_Brave.png'
 import goblet from './Item_Outset_of_the_Brave.png'
 import circlet from './Item_Crown_of_the_Brave.png'
-import IArtifactSheet from '../../../Artifact/IArtifactSheet'
-import { IConditionals } from '../../../Conditional/IConditional'
+import { IArtifactSheet } from '../../../Types/artifact'
+import { IConditionals } from '../../../Types/IConditional'
 const conditionals: IConditionals = {
   set4: {
     name: "Enemy with more than 50% HP",

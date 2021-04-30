@@ -15,8 +15,8 @@ import passive3 from './Talent_Wolvensprint.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant, } from "../../../Build/Build"
-import { IConditionals } from '../../../Conditional/IConditional'
-import ICharacterSheet from '../../ICharacterSheet'
+import { IConditionals } from '../../../Types/IConditional'
+import { ICharacterSheet } from '../../../Types/character'
 const conditionals: IConditionals = {
   e: { // ElectroSigil
     name: "Electro Sigil",
@@ -246,7 +246,7 @@ const char: ICharacterSheet = {
       name: "Soul Companion",
       img: c3,
       document: [{ text: <span>Increases <b>Lightning Fang</b>'s skill level by 3. Maximum upgrade level is 15.</span>, }],
-      talentBoost: { burst: 3 },
+      stats: { burstBoost: 3 },
     },
     constellation4: {
       name: "Bite",
@@ -260,7 +260,7 @@ const char: ICharacterSheet = {
       name: "Sharpened Claws",
       img: c5,
       document: [{ text: <span>Increases <b>Claw and Thunder</b>'s skill level by 3. Maximum upgrade level is 15.</span> }],
-      talentBoost: { skill: 3 },
+      stats: { skillBoost: 3 },
     },
     constellation6: {
       name: "Lupus Fulguris",
@@ -271,7 +271,7 @@ const char: ICharacterSheet = {
           canShow: stats => stats.constellation >= 6,
           text: "Lupus Fulguris DMG",
           formulaText: stats => <span>100% {Stat.printStat(getTalentStatKey("elemental", stats), stats)}</span>,
-          formula: formula.constellation6.dmg,
+          formula: formula.etc!.c6,
           variant: stats => getTalentStatKeyVariant("elemental", stats),
         }, {
           canShow: stats => stats.constellation >= 6,

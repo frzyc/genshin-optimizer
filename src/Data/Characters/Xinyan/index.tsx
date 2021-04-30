@@ -15,8 +15,8 @@ import passive3 from './Talent_A_Rad_Recipe.png'
 import Stat from '../../../Stat';
 import formula, { data } from './data';
 import { getTalentStatKey, getTalentStatKeyVariant } from "../../../Build/Build";
-import ICharacterSheet from '../../ICharacterSheet'
-import { IConditionals } from '../../../Conditional/IConditional'
+import { ICharacterSheet } from '../../../Types/character'
+import { IConditionals } from '../../../Types/IConditional'
 const conditionals: IConditionals = {
   a4s: { // NowThatsRockNRoll
     canShow: stats => stats.ascension >= 4,
@@ -257,7 +257,7 @@ const char: ICharacterSheet = {
       document: [{
         text: <span>Increases the Level of <b>Sweeping Fervor</b> by 3. Maximum upgrade level is 15.</span>,
       }],
-      talentBoost: { skill: 3 }
+      stats: { skillBoost: 3 }
     },
     constellation4: {
       name: "Wildfire Rhythm",
@@ -273,7 +273,7 @@ const char: ICharacterSheet = {
       document: [{
         text: <span>Increases the Level of <b>Riff Revolution</b> by 3. Maximum upgrade level is 15.</span>,
       }],
-      talentBoost: { burst: 3 }
+      stats: { burstBoost: 3 }
     },
     constellation6: {
       name: "Rockin' in a Flaming World",

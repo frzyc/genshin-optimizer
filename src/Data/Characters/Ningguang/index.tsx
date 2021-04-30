@@ -15,8 +15,8 @@ import passive3 from './Talent_Trove_of_Marvelous_Treasures.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-import { IConditionals } from '../../../Conditional/IConditional'
-import ICharacterSheet from '../../ICharacterSheet'
+import { IConditionals } from '../../../Types/IConditional'
+import { ICharacterSheet } from '../../../Types/character'
 const conditionals: IConditionals = {
   a4: { // StrategicReserve
     canShow: stats => stats.ascension >= 4,
@@ -192,7 +192,7 @@ const char: ICharacterSheet = {
       name: "Majesty be the Array of Stars",
       img: c3,
       document: [{ text: <span>	Increases Starshatter's skill level by 3. Max level is 15.</span> }],
-      talentBoost: { burst: 3 }
+      stats: { burstBoost: 3 }
     },
     constellation4: {
       name: "Exquisite be the Jade, Outshining All Beneath",
@@ -206,7 +206,7 @@ const char: ICharacterSheet = {
       name: "Invincible be the Jade Screen",
       img: c5,
       document: [{ text: <span>Increases <b>Jade Screen</b>'s skill level by 3. Max level is 15.</span> }],
-      talentBoost: { skill: 3 }
+      stats: { skillBoost: 3 }
     },
     constellation6: {
       name: "Grandeur be the Seven Stars",

@@ -16,8 +16,8 @@ import Stat from '../../../Stat'
 import DisplayPercent from '../../../Components/DisplayPercent'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from "../../../Build/Build"
-import ICharacterSheet from '../../ICharacterSheet'
-import { IConditionals } from '../../../Conditional/IConditional'
+import { ICharacterSheet } from '../../../Types/character'
+import { IConditionals } from '../../../Types/IConditional'
 const conditionals: IConditionals = {
   q: { // BaneOfAllEvil
     name: "Bane of All Evil",
@@ -201,7 +201,7 @@ const char: ICharacterSheet = {
       name: "Conqueror of Evil: Wrath Deity",
       img: c3,
       document: [{ text: <span>Increases the Level of <b>Lemniscatic Wind Cycling</b> by 3. Maximum upgrade level is 15.</span> }],
-      talentBoost: { skill: 3 }
+      stats: { skillBoost: 3 }
     },
     constellation4: {
       name: "Transcension: Extinction of Suffering",
@@ -215,7 +215,7 @@ const char: ICharacterSheet = {
       name: "Evolution Eon: Origin of Ignorance",
       img: c5,
       document: [{ text: <span>Increases the Level of <b>Bane of All Evil</b> by 3. Maximum upgrade level is 15.</span> }],
-      talentBoost: { burst: 3 }
+      stats: { burstBoost: 3 }
     },
     constellation6: {
       name: "Conqueror of Evil: Guardian Yaksha",

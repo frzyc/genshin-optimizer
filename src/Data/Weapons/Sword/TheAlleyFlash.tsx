@@ -1,5 +1,5 @@
-import { IConditionals } from '../../../Conditional/IConditional'
-import WeaponSheet from '../../WeaponSheetInterace'
+import { IConditionals } from '../../../Types/IConditional'
+import { IWeaponSheet } from '../../../Types/weapon'
 import img from './Weapon_The_Alley_Flash.png'
 
 const refinementVals = [12, 15, 18, 21, 24]
@@ -12,7 +12,7 @@ const conditionals: IConditionals = {
     })
   }
 }
-const weapon: WeaponSheet = {
+const weapon: IWeaponSheet = {
   name: "The Alley Flash",
   weaponType: "sword",
   img,
@@ -22,7 +22,7 @@ const weapon: WeaponSheet = {
   description: "A straight sword as black as the night. It once belonged to a thief who roamed the benighted streets.",
   baseStats: {
     main: [45, 62, 84, 106, 128, 154, 177, 200, 224, 247, 273, 297, 321, 347, 371, 395, 421, 445, 470, 496, 520, 545, 571, 595, 620],
-    subStatKey: "eleMas",
+    substatKey: "eleMas",
     sub: [12, 14, 16, 19, 21, 21, 24, 26, 28, 31, 31, 33, 36, 36, 38, 41, 41, 43, 45, 45, 48, 50, 50, 53, 55],
   },
   conditionals,

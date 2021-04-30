@@ -3,8 +3,8 @@ import plume from './Item_Guardian\'s_Sigil.png'
 import sands from './Item_Guardian\'s_Clock.png'
 import goblet from './Item_Guardian\'s_Vessel.png'
 import circlet from './Item_Guardian\'s_Band.png'
-import IArtifactSheet from '../../../Artifact/IArtifactSheet'
-import { IConditionals } from '../../../Conditional/IConditional'
+import { IArtifactSheet } from '../../../Types/artifact'
+import { IConditionals } from '../../../Types/IConditional'
 const conditionals: IConditionals = {
   anemo: {
     name: "Anemo in party",

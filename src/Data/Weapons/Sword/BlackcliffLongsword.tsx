@@ -1,9 +1,9 @@
-import { IConditionals } from '../../../Conditional/IConditional'
-import WeaponSheet from '../../WeaponSheetInterace'
+import { IConditionals } from '../../../Types/IConditional'
+import { IWeaponSheet } from '../../../Types/weapon'
 import img from './Weapon_Blackcliff_Longsword.png'
 
 const refinementVals = [12, 15, 18, 21, 24]
-const conditionals : IConditionals = {
+const conditionals: IConditionals = {
   pa: {
     name: "Opponents Defeated",
     maxStack: 3,
@@ -12,7 +12,7 @@ const conditionals : IConditionals = {
     })
   }
 }
-const weapon : WeaponSheet = {
+const weapon: IWeaponSheet = {
   name: "Blackcliff Longsword",
   weaponType: "sword",
   img,
@@ -22,7 +22,7 @@ const weapon : WeaponSheet = {
   description: "A sword made of a material known as \"blackcliff.\" It has a dark crimson glow on its black blade.",
   baseStats: {
     main: [44, 59, 79, 99, 119, 144, 165, 185, 205, 226, 252, 273, 293, 319, 340, 361, 387, 408, 429, 455, 476, 497, 523, 544, 565],
-    subStatKey: "critDMG_",
+    substatKey: "critDMG_",
     sub: [8, 9.3, 10.9, 12.5, 14.1, 14.1, 15.8, 17.4, 19, 20.6, 20.6, 22.2, 23.8, 23.8, 25.4, 27.1, 27.1, 28.7, 30.3, 30.3, 31.9, 33.5, 33.5, 35.1, 36.8],
   },
   conditionals,

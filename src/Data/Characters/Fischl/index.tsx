@@ -15,8 +15,8 @@ import passive3 from './Talent_Mein_Hausgarten.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-import ICharacterSheet from '../../ICharacterSheet'
-import { IConditionals } from '../../../Conditional/IConditional'
+import { ICharacterSheet } from '../../../Types/character'
+import { IConditionals } from '../../../Types/IConditional'
 const conditionals: IConditionals = {}
 
 const char: ICharacterSheet = {
@@ -176,7 +176,7 @@ const char: ICharacterSheet = {
           canShow: stats => stats.ascension >= 4,
           text: "Thundering Retribution",
           formulaText: stats => <span>80% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
-          formula: formula.passive2.thunderRetri,
+          formula: formula.etc!.a4,
           variant: stats => getTalentStatKeyVariant("skill", stats),
         }]
       }],
@@ -195,7 +195,7 @@ const char: ICharacterSheet = {
           canShow: stats => stats.constellation >= 1,
           text: "Joint Attack DMG",
           formulaText: stats => <span>22% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
-          formula: formula.constellation1.jointAttDmg,
+          formula: formula.etc!.c1,
           variant: stats => getTalentStatKeyVariant("normal", stats),
         }]
       }],
@@ -209,7 +209,7 @@ const char: ICharacterSheet = {
       name: "Wings of Nightmare",
       img: c3,
       document: [{ text: <span>Increases <b>Nightrider</b>'s skill level by 3. Maximum upgrade level is 15.</span> }],
-      talentBoost: { skill: 3 }
+      stats: { skillBoost: 3 }
     },
     constellation4: {
       name: "Her Pilgrimage of Bleak",
@@ -220,7 +220,7 @@ const char: ICharacterSheet = {
       name: "Against the Fleeing Light",
       img: c5,
       document: [{ text: <span>Increases <b>Midnight Phantasmagoria</b>'s skill level by 3. Maximum upgrade level is 15.</span> }],
-      talentBoost: { burst: 3 }
+      stats: { burstBoost: 3 }
     },
     constellation6: {
       name: "Evernight Raven",

@@ -15,8 +15,8 @@ import passive3 from './Talent_Chef_de_Cuisine.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-import ICharacterSheet from '../../ICharacterSheet'
-import { IConditionals } from '../../../Conditional/IConditional'
+import { ICharacterSheet } from '../../../Types/character'
+import { IConditionals } from '../../../Types/IConditional'
 const conditionals: IConditionals = {
   c1: { // CrispyOutsideTenderInside
     canShow: stats => stats.constellation >= 1,
@@ -191,7 +191,7 @@ const char: ICharacterSheet = {
           canShow: stats => stats.constellation >= 2,
           text: "Explosion DMG",
           formulaText: stats => <span>75% {Stat.printStat(getTalentStatKey("elemental", stats), stats)}</span>,
-          formula: formula.constellation2.dmg,
+          formula: formula.etc!.c2,
           variant: stats => getTalentStatKeyVariant("elemental", stats),
         }]
       }],
@@ -200,7 +200,7 @@ const char: ICharacterSheet = {
       name: "Deepfry",
       img: c3,
       document: [{ text: <span>	Increases the level of <b>Pyronado</b> by 3. Maximum upgrade level is 15.</span> }],
-      talentBoost: { burst: 3 }
+      stats: { burstBoost: 3 }
     },
     constellation4: {
       name: "Slowbake",
@@ -211,7 +211,7 @@ const char: ICharacterSheet = {
       name: "Guoba Mad",
       img: c5,
       document: [{ text: <span>Increases the level of <b>Guoba Attack</b> by 3. Maximum upgrade level is 15.</span> }],
-      talentBoost: { skill: 3 }
+      stats: { skillBoost: 3 }
     },
     constellation6: {
       name: "Condensed Pyronado",

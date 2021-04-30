@@ -16,8 +16,8 @@ import passive3 from './Talent_Preserved_for_the_Hunt.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-import { IConditionals } from '../../../Conditional/IConditional'
-import ICharacterSheet from '../../ICharacterSheet'
+import { IConditionals } from '../../../Types/IConditional'
+import { ICharacterSheet } from '../../../Types/character'
 const conditionals: IConditionals = {
   a1: { // UndividedHeart
     canShow: stats => stats.ascension >= 1,
@@ -252,7 +252,7 @@ const char: ICharacterSheet = {
       name: "Cloud-Strider",
       img: c3,
       document: [{ text: <span>Increases the Level of <b>Celestial Shower</b> by 3. Maximum upgrade level is 15.</span> }],
-      talentBoost: { burst: 3 }
+      stats: { burstBoost: 3 }
     },
     constellation4: {
       name: "Westward Sojourn",
@@ -268,7 +268,7 @@ const char: ICharacterSheet = {
       name: "The Merciful",
       img: c5,
       document: [{ text: <span>Increases the Level of <b>Trail of the Qilin</b> by 3. Maximum upgrade level is 15.</span> }],
-      talentBoost: { skill: 3 }
+      stats: { skillBoost: 3 }
     },
     constellation6: {
       name: "The Clement",

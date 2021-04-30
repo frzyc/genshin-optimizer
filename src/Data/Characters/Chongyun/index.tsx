@@ -15,8 +15,8 @@ import passive3 from './Talent_Gallant_Journey.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-import { IConditionals } from '../../../Conditional/IConditional'
-import ICharacterSheet from '../../ICharacterSheet'
+import { IConditionals } from '../../../Types/IConditional'
+import { ICharacterSheet } from '../../../Types/character'
 const conditionals: IConditionals = {
   a4: { // Rimechaser Blade
     canShow: stats => stats.ascension >= 4,
@@ -168,7 +168,7 @@ const char: ICharacterSheet = {
           canShow: stats => stats.ascension >= 4,
           text: "Summoned Sword DMG",
           formulaText: stats => <span>{data.skill.dmg[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
-          formula: formula.passive2.dmg,
+          formula: formula.etc!.a4,
           variant: stats => getTalentStatKeyVariant("skill", stats),
         }]
       }],
@@ -189,7 +189,7 @@ const char: ICharacterSheet = {
           canShow: stats => stats.constellation >= 1,
           text: "Ice Blade DMG",
           formulaText: stats => <span>50% {Stat.printStat(getTalentStatKey("elemental", stats), stats)}</span>,
-          formula: formula.constellation1.dmg,
+          formula: formula.etc!.c1,
           variant: stats => getTalentStatKeyVariant("elemental", stats),
         }]
       }]
@@ -203,7 +203,7 @@ const char: ICharacterSheet = {
       name: "Cloudburst",
       img: c3,
       document: [{ text: <span>Increases the level of <b>Spirit Blade: Cloud-parting Star</b> by 3. Maximum upgrade level is 15.</span> }],
-      talentBoost: { burst: 3 }
+      stats: { burstBoost: 3 }
     },
     constellation4: {
       name: "Frozen Skies",
@@ -219,7 +219,7 @@ const char: ICharacterSheet = {
       name: "The True Path",
       img: c5,
       document: [{ text: <span>Increases the level of <b>Spirit Blade: Chonghua's Layered Frost</b> by 3. Maximum upgrade level is 15.</span> }],
-      talentBoost: { skill: 3 }
+      stats: { skillBoost: 3 }
     },
     constellation6: {
       name: "Rally of Four Blades",

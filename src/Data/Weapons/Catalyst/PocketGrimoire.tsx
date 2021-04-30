@@ -1,7 +1,7 @@
-import WeaponSheet from '../../WeaponSheetInterace'
+import { IWeaponSheet } from '../../../Types/weapon'
 import img from './Weapon_Pocket_Grimoire.png'
 
-const weapon : WeaponSheet = {
+const weapon: IWeaponSheet = {
   name: "Pocket Grimoire",
   weaponType: "catalyst",
   img,
@@ -11,7 +11,7 @@ const weapon : WeaponSheet = {
   description: "A carefully compiled notebook featuring the essentials needed to pass a magic exam.",
   baseStats: {
     main: [33, 43, 55, 68, 80, 91, 103, 115, 127, 139, 151, 162, 174, 186, 197, 209, 220, 232, 243],
-    subStatKey: "",
+    substatKey: "",
   },
 }
 export default weapon

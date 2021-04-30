@@ -3,8 +3,8 @@ import plume from './Item_Feather_of_Jagged_Peaks.png'
 import sands from './Item_Sundial_of_Enduring_Jade.png'
 import goblet from './Item_Goblet_of_Chiseled_Crag.png'
 import circlet from './Item_Mask_of_Solitude_Basalt.png'
-import IArtifactSheet from '../../../Artifact/IArtifactSheet'
-import { IConditionals } from '../../../Conditional/IConditional'
+import { IArtifactSheet } from '../../../Types/artifact'
+import { IConditionals } from '../../../Types/IConditional'
 const conditionals: IConditionals = {//TODO: all party conditional
   set4: {
     name: "Obtaining Crystallize Shard",

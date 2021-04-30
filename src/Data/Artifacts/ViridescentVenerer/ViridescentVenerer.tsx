@@ -4,8 +4,8 @@ import sands from './Item_Viridescent_Venerer\'s_Determination.png'
 import goblet from './Item_Viridescent_Venerer\'s_Vessel.png'
 import circlet from './Item_Viridescent_Venerer\'s_Diadem.png'
 import ElementalData from '../../ElementalData'
-import IArtifactSheet from '../../../Artifact/IArtifactSheet'
-import { IConditionals } from '../../../Conditional/IConditional'
+import { IArtifactSheet } from '../../../Types/artifact'
+import { IConditionals } from '../../../Types/IConditional'
 const conditionals: IConditionals = {
   set4: {
     name: "Element Swirled",

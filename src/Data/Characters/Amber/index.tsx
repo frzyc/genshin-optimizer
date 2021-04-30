@@ -15,8 +15,8 @@ import passive3 from './Talent_Gliding_Champion.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-import ICharacterSheet from '../../ICharacterSheet'
-import { IConditionals } from '../../../Conditional/IConditional'
+import { ICharacterSheet } from '../../../Types/character'
+import { IConditionals } from '../../../Types/IConditional'
 const conditionals: IConditionals = {
   c6: { // Wildfire
     canShow: stats => stats.constellation >= 6,
@@ -231,7 +231,7 @@ const char: ICharacterSheet = {
       name: "It Burns!",
       img: c3,
       document: [{ text: <span>Increases the level of<b>Fiery Rain</b> by 3. Maximum upgrade level is 15. </span> }],
-      talentBoost: { burst: 3 }
+      stats: { burstBoost: 3 }
     },
     constellation4: {
       name: "It's Not Just Any Doll...",
@@ -242,7 +242,7 @@ const char: ICharacterSheet = {
       name: "It's Baron Bunny!",
       img: c5,
       document: [{ text: <span>Increases the level of<b>Explosive Puppet</b> by 3. Maximum upgrade level is 15. </span> }],
-      talentBoost: { skill: 3 }
+      stats: { skillBoost: 3 }
     },
     constellation6: {
       name: "Wildfire",

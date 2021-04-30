@@ -15,8 +15,8 @@ import passive3 from './Talent_It_Should_Be_Safe....png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-import ICharacterSheet from '../../ICharacterSheet'
-import { IConditionals } from '../../../Conditional/IConditional'
+import { ICharacterSheet } from '../../../Types/character'
+import { IConditionals } from '../../../Types/IConditional'
 const conditionals: IConditionals = {
   q: { // Fantastic Voyage
     name: "Fantastic Voyage",
@@ -201,7 +201,7 @@ const char: ICharacterSheet = {
       name: "Unstoppable Fervor",
       img: c3,
       document: [{ text: <span>Increases <b>Passion Overload</b>'s skill level by 3. Maximum upgrade level is 15.</span> }],
-      talentBoost: { skill: 3 }
+      stats: { skillBoost: 3 }
     },
     constellation4: {
       name: "Unexpected Odyssey",
@@ -212,7 +212,7 @@ const char: ICharacterSheet = {
       name: "True Explorer",
       img: c5,
       document: [{ text: <span>Increases <b>Fantastic Voyage</b>'s skill level by 3. Maximum upgrade level is 15.</span> }],
-      talentBoost: { burst: 3 }
+      stats: { burstBoost: 3 }
     },
     constellation6: {
       name: "Fire Ventures with Me",

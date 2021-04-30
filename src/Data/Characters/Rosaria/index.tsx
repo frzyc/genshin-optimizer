@@ -15,8 +15,8 @@ import passive3 from './Talent_Night_Walk.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-import { IConditionals } from '../../../Conditional/IConditional'
-import ICharacterSheet from '../../ICharacterSheet'
+import { IConditionals } from '../../../Types/IConditional'
+import { ICharacterSheet } from '../../../Types/character'
 const conditionals: IConditionals = {
   a1: { // ReginaProbationum
     canShow: stats => stats.ascension >= 1,
@@ -224,7 +224,7 @@ const char: ICharacterSheet = {
       name: "The Wages of Sin",
       img: c3,
       document: [{ text: <span>	Increases the level of <b>Ravaging Confession</b> by 3. Maximum upgrade level is 15.</span> }],
-      talentBoost: { skill: 3 }
+      stats: { skillBoost: 3 }
     },
     constellation4: {
       name: "Painful Grace",
@@ -240,7 +240,7 @@ const char: ICharacterSheet = {
       name: "Last Rites",
       img: c5,
       document: [{ text: <span>Increases the level of <b>Rites of Termination</b> by 3. Maximum upgrade level is 15.</span> }],
-      talentBoost: { burst: 3 }
+      stats: { burstBoost: 3 }
     },
     constellation6: {
       name: "Divine Retribution",

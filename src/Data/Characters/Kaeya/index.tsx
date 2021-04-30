@@ -16,8 +16,8 @@ import DisplayPercent from '../../../Components/DisplayPercent'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-import { IConditionals } from '../../../Conditional/IConditional'
-import ICharacterSheet from '../../ICharacterSheet'
+import { IConditionals } from '../../../Types/IConditional'
+import { ICharacterSheet } from '../../../Types/character'
 const conditionals: IConditionals = {
   c1: { // ColdBloodedStrike
     canShow: stats => stats.constellation >= 1,
@@ -140,7 +140,7 @@ const char: ICharacterSheet = {
         fields: [{
           text: "Healing",
           formulaText: stats => <span>15% {Stat.printStat("finalATK", stats)} * {Stat.printStat("heal_multi", stats)}</span>,
-          formula: formula.passive1.heal,
+          formula: formula.etc!.p1,
           variant: "success",
         }],
       }],
@@ -176,7 +176,7 @@ const char: ICharacterSheet = {
       name: "Dance of Frost",
       img: c3,
       document: [{ text: <span>Increases the Level of <b>Frostgnaw</b> by 3. Maximum upgrade level is 15.</span> }],
-      talentBoost: { skill: 3 }
+      stats: { skillBoost: 3 }
     },
     constellation4: {
       name: "Frozen Kiss",
@@ -187,7 +187,7 @@ const char: ICharacterSheet = {
       name: "Frostbiting Embrace",
       img: c5,
       document: [{ text: <span>Increases the Level of <b>Glacial Waltz</b> by 3. Maximum upgrade level is 15.</span> }],
-      talentBoost: { burst: 3 }
+      stats: { burstBoost: 3 }
     },
     constellation6: {
       name: "Glacial Whirlwind",

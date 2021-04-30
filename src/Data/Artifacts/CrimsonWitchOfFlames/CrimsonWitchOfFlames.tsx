@@ -3,8 +3,8 @@ import plume from './Item_Witch\'s_Ever-Burning_Plume.png'
 import sands from './Item_Witch\'s_End_Time.png'
 import goblet from './Item_Witch\'s_Heart_Flames.png'
 import circlet from './Item_Witch\'s_Scorching_Hat.png'
-import IArtifactSheet from '../../../Artifact/IArtifactSheet'
-import { IConditionals } from '../../../Conditional/IConditional'
+import { IArtifactSheet } from '../../../Types/artifact'
+import { IConditionals } from '../../../Types/IConditional'
 const conditionals: IConditionals = {
   set4: {
     name: "Using an Elemental SKill",

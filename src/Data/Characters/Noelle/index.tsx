@@ -16,8 +16,8 @@ import DisplayPercent from '../../../Components/DisplayPercent'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-import { IConditionals } from '../../../Conditional/IConditional'
-import ICharacterSheet from '../../ICharacterSheet'
+import { IConditionals } from '../../../Types/IConditional'
+import { ICharacterSheet } from '../../../Types/character'
 const conditionals: IConditionals = {
   q: { // Sweeping Time
     name: "Sweeping Time",
@@ -186,7 +186,7 @@ const char: ICharacterSheet = {
           canShow: stats => stats.ascension >= 1,
           text: "Shield strength",
           formulaText: stats => <span>400% {Stat.printStat("finalDEF", stats)}</span>,
-          formula: formula.passive1.shield,
+          formula: formula.etc!.a1,
         }, {
           canShow: stats => stats.ascension >= 1,
           text: "CD",
@@ -229,7 +229,7 @@ const char: ICharacterSheet = {
       name: "Invulnerable Maid",
       img: c3,
       document: [{ text: <span>Increases <b>Breastplate</b>'s skill level by 3. Max level is 15</span> }],
-      talentBoost: { skill: 3 }
+      stats: { skillBoost: 3 }
     },
     constellation4: {
       name: "To Be Cleaned",
@@ -240,7 +240,7 @@ const char: ICharacterSheet = {
           canShow: stats => stats.constellation >= 4,
           text: "Breastplate shatter damage",
           formulaText: stats => <span>400% {Stat.printStat(getTalentStatKey("elemental", stats), stats)}</span>,
-          formula: formula.constellation4.dmg,
+          formula: formula.etc!.c4,
           variant: stats => getTalentStatKeyVariant("elemental", stats),
         }]
       }]
@@ -249,7 +249,7 @@ const char: ICharacterSheet = {
       name: "Favonius Sweeper Master",
       img: c5,
       document: [{ text: <span>Increases <b>Sweeping Time</b>'s skill level by 3. Max level is 15.</span> }],
-      talentBoost: { burst: 3 }
+      stats: { burstBoost: 3 }
     },
     constellation6: {
       name: "Must Be Spotless",

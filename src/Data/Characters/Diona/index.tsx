@@ -15,8 +15,8 @@ import passive3 from './Talent_Complimentary_Bar_Food.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-import { IConditionals } from '../../../Conditional/IConditional'
-import ICharacterSheet from '../../ICharacterSheet'
+import { IConditionals } from '../../../Types/IConditional'
+import { ICharacterSheet } from '../../../Types/character'
 const conditionals: IConditionals = {
   c4: { // IcyPawsShield
     canShow: stats => stats.constellation >= 4,
@@ -208,7 +208,7 @@ const char: ICharacterSheet = {
       name: "A—Another Round?",
       img: c3,
       document: [{ text: <span> Increases the Level of <b>Signature Mix</b> by 3. Maximum upgrade level is 15.</span> }],
-      talentBoost: { burst: 3 }
+      stats: { burstBoost: 3 }
     },
     constellation4: {
       name: "Wine Industry Slayer",
@@ -219,7 +219,7 @@ const char: ICharacterSheet = {
       name: "Double Shot, On The Rocks",
       img: c5,
       document: [{ text: <span>Increases the Level of <b>Icy Paws</b> by 3. Maximum upgrade level is 15.</span> }],
-      talentBoost: { skill: 3 }
+      stats: { skillBoost: 3 }
     },
     constellation6: {
       name: "Cat's Tail Closing Time",

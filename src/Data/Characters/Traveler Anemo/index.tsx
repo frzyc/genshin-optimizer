@@ -1,6 +1,6 @@
 import card from './Traveler_Female_Card.jpg'
 import thumb from './Character_Traveler_Thumb.png'
-import ICharacterSheet from '../../ICharacterSheet';
+import { ICharacterSheet } from '../../../Types/character';
 // import c1 from './Constellation_Raging_Vortex.png'
 // import c2 from './Constellation_Uprising_Whirlwind.png'
 // import c3 from './Constellation_Sweeping_Gust.png'

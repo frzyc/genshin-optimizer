@@ -3,8 +3,8 @@ import plume from './Item_Royal_Plume.png'
 import sands from './Item_Royal_Pocket_Watch.png'
 import goblet from './Item_Royal_Silver_Urn.png'
 import circlet from './Item_Royal_Masque.png'
-import IArtifactSheet from '../../../Artifact/IArtifactSheet'
-import { IConditionals } from '../../../Conditional/IConditional'
+import { IArtifactSheet } from '../../../Types/artifact'
+import { IConditionals } from '../../../Types/IConditional'
 const conditionals: IConditionals = {
   set4: {
     name: "Using an Elemental Burst",

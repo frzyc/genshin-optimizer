@@ -3,8 +3,8 @@ import plume from './Item_Berserker\'s_Indigo_Feather.png'
 import sands from './Item_Berserker\'s_Timepiece.png'
 import goblet from './Item_Berserker\'s_Bone_Goblet.png'
 import circlet from './Item_Berserker\'s_Battle_Mask.png'
-import IArtifactSheet from '../../../Artifact/IArtifactSheet'
-import { IConditionals } from '../../../Conditional/IConditional'
+import { IArtifactSheet } from '../../../Types/artifact'
+import { IConditionals } from '../../../Types/IConditional'
 const conditionals: IConditionals = {
   set4: {
     name: "HP below 70%",

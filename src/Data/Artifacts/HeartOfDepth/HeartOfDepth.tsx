@@ -3,8 +3,8 @@ import plume from './Item_Gust_of_Nostalgia.png'
 import sands from './Item_Copper_Compass.png'
 import goblet from './Item_Goblet_of_Thundering_Deep.png'
 import circlet from './Item_Wine-Stained_Tricorne.png'
-import IArtifactSheet from '../../../Artifact/IArtifactSheet'
-import { IConditionals } from '../../../Conditional/IConditional'
+import { IArtifactSheet } from '../../../Types/artifact'
+import { IConditionals } from '../../../Types/IConditional'
 const conditionals: IConditionals = {
   set4: {
     name: "After using Elemental Skill",

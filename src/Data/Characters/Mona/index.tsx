@@ -16,8 +16,8 @@ import passive3 from './Talent_Principium_of_Astrology.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-import { IConditionals } from '../../../Conditional/IConditional'
-import ICharacterSheet from '../../ICharacterSheet'
+import { IConditionals } from '../../../Types/IConditional'
+import { ICharacterSheet } from '../../../Types/character'
 const conditionals: IConditionals = {
   q: { // StellarisPhantasm
     name: "Stellaris Phantasm",
@@ -203,7 +203,7 @@ const char: ICharacterSheet = {
           canShow: stats => stats.ascension >= 1,
           text: "Explosion DMG",
           formulaText: stats => <span>{data.skill.dmg[stats.tlvl.skill]}% * 50% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
-          formula: formula.passive1.hit,
+          formula: formula.etc!.a1,
           variant: stats => getTalentStatKeyVariant("skill", stats),
         }, {
           canShow: stats => stats.ascension >= 1,
@@ -249,7 +249,7 @@ const char: ICharacterSheet = {
       name: "Restless Revolution",
       img: c3,
       document: [{ text: <span>Increases the Level of <b>Stellaris Phantasm</b> by 3. Maximum upgrade level is 15.</span> }],
-      talentBoost: { burst: 3 }
+      stats: { burstBoost: 3 }
     },
     constellation4: {
       name: "Prophecy of Oblivion",
@@ -263,7 +263,7 @@ const char: ICharacterSheet = {
       name: "Mockery of Fortuna",
       img: c5,
       document: [{ text: <span>Increase the Level of <b>Mirror Reflection of Doom</b> by 3. Maximum upgrade level is 15.</span> }],
-      talentBoost: { skill: 3 }
+      stats: { skillBoost: 3 }
     },
     constellation6: {
       name: "Rhetorics of Calamitas",

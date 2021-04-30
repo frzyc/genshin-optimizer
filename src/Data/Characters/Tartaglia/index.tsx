@@ -15,8 +15,8 @@ import passive3 from './Talent_Master_of_Weaponry.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-import { IConditionals } from '../../../Conditional/IConditional'
-import ICharacterSheet from '../../ICharacterSheet'
+import { IConditionals } from '../../../Types/IConditional'
+import { ICharacterSheet } from '../../../Types/character'
 const conditionals: IConditionals = {}
 const char: ICharacterSheet = {
   name: "Tartaglia",
@@ -204,6 +204,7 @@ const char: ICharacterSheet = {
       name: "Master of Weaponry",
       img: passive3,
       document: [{ text: <span>Increases your own party members' Normal Attack Level by 1.</span>, }], //TODO: party buffs
+      stats: { autoBoost: 1 }
     },
     constellation1: {
       name: "Foul Legacy: Tide Withholder",
@@ -219,7 +220,7 @@ const char: ICharacterSheet = {
       name: "Abyssal Mayhem: Vortex of Turmoil",
       img: c3,
       document: [{ text: <span>Increases the Level of Foul Legacy: Raging Tide by 3. Maximum upgrade level is 15.</span> }],
-      talentBoost: { skill: 3 }
+      stats: { skillBoost: 3 }
     },
     constellation4: {
       name: "Abyssal Mayhem: Hydrosprout",
@@ -237,7 +238,7 @@ const char: ICharacterSheet = {
       document: [{
         text: <span>Increases the level of Havoc: Obliteration by 3. Maximum upgrade level is 15.</span>,
       }],
-      talentBoost: { burst: 3 }
+      stats: { burstBoost: 3 }
     },
     constellation6: {
       name: "Havoc: Annihilation",

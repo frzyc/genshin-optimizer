@@ -1,5 +1,5 @@
 import circlet from './Item_Tiara_of_Thunder.png'
-import IArtifactSheet from '../../../Artifact/IArtifactSheet'
+import { IArtifactSheet } from '../../../Types/artifact'
 const artifact: IArtifactSheet = {
   name: "Prayers for Wisdom", rarity: [3, 4],
   pieces: {

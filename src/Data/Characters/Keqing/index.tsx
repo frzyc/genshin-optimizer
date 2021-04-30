@@ -15,8 +15,8 @@ import passive3 from './Talent_Land\'s_Overseer.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-import { IConditionals } from '../../../Conditional/IConditional'
-import ICharacterSheet from '../../ICharacterSheet'
+import { IConditionals } from '../../../Types/IConditional'
+import { ICharacterSheet } from '../../../Types/character'
 const conditionals: IConditionals = {
   a1: {
     canShow: stats => stats.ascension >= 4,
@@ -218,7 +218,7 @@ const char: ICharacterSheet = {
         fields: [{
           text: " Thundering Might DMG",
           formulaText: stats => <span>50% {Stat.printStat(getTalentStatKey("elemental", stats), stats)}</span>,
-          formula: formula.constellation1.dmg,
+          formula: formula.etc!.c1,
           variant: stats => getTalentStatKeyVariant("elemental", stats),
         }]
       }],
@@ -232,7 +232,7 @@ const char: ICharacterSheet = {
       name: "Foreseen Reformation",
       img: c3,
       document: [{ text: <span>Increases the level of <b>Starward Sword</b> by 3. Maximum upgrade level is 15.</span> }],
-      talentBoost: { burst: 3 }
+      stats: { burstBoost: 3 }
     },
     constellation4: {
       name: "Attunement",
@@ -245,7 +245,7 @@ const char: ICharacterSheet = {
       name: "Beckoning Stars",
       img: c5,
       document: [{ text: <span>Increases the level of <b>Stellar Restoration</b> by 3. Maximum upgrade level is 15.</span> }],
-      talentBoost: { skill: 3 }
+      stats: { skillBoost: 3 }
     },
     constellation6: {
       name: "Tenacious Star",
