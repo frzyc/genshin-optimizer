@@ -74,7 +74,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
           let statName = Stat.getStatName(stat.key)
           return (<Col key={i} xs={12}>
             <Badge variant={numRolls ? `${numRolls}roll` : "danger"} className="text-darkcontent"><b>{numRolls ? numRolls : "?"}</b></Badge>{" "}
-            <span className={`text-${numRolls}roll`}>{statName}{`+${valueString(stat.value, Stat.getStatUnit)}${Stat.getStatUnit(stat.key)}`}</span>
+            <span className={`text-${numRolls}roll`}>{statName}{`+${valueString(stat.value, Stat.getStatUnit(stat.key))}${Stat.getStatUnit(stat.key)}`}</span>
             <span className="float-right" style={{ opacity: effOpacity }}>{valueString(efficiency, "eff")}%</span>
           </Col>)
         })}
