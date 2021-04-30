@@ -1,3 +1,3 @@
-//why does this work? no idea. 
-$RefreshReg$ = () => { };
-$RefreshSig$ = () => () => { };
+//why does this work? no idea.
+$RefreshReg$ = () => { }
+$RefreshSig$ = () => () => { }
