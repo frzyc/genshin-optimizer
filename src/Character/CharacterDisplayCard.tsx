@@ -216,7 +216,7 @@ export default function CharacterDisplayCard({ characterKey: propCharacterKey, c
               <Nav.Link eventKey="artifacts"><h5 className="mb-0">{newBuild ? "Current Artifacts" : "Artifacts"}</h5></Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              {process.env.NODE_ENV !== "development" && characterSheet.hasTalentPage ?
+              {process.env.NODE_ENV !== "development" && !characterSheet.hasTalentPage ?
                 <WIPComponent>
                   <Nav.Link eventKey="talent" disabled><h5 className="mb-0">Talents</h5> <Badge variant="warning">WIP</Badge></Nav.Link>
                 </WIPComponent> :
