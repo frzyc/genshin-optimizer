@@ -175,7 +175,7 @@ const char: ICharacterSheet = {
           canShow: stats => stats.constellation >= 1,
           text: "Chained Reactions DMG",
           formulaText: stats => <span>120% x {data.burst.dmg[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
-          formula: formula.etc!.c1,
+          formula: formula.constellation1.dmg,
           variant: stats => getTalentStatKeyVariant("burst", stats),
         },]
       }],
@@ -202,7 +202,7 @@ const char: ICharacterSheet = {
         fields: [{
           text: "Sparkly Explosion DMG",
           formulaText: stats => <span>555% {Stat.printStat(getTalentStatKey("elemental", stats), stats)}</span>,
-          formula: formula.etc!.c4,
+          formula: formula.constellation4.dmg,
           variant: stats => getTalentStatKeyVariant("elemental", stats),
         }]
       }],

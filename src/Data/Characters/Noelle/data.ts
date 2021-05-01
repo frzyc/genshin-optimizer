@@ -72,9 +72,11 @@ const formula: IFormulaSheet = {
       return [s => val * s.finalDEF, ["finalDEF"]]
     }
   },
-  etc: {
-    a1: stats => [s => 4 * s.finalDEF, ["finalDEF"]],
-    c4: stats => basicDMGFormula(400, stats, "elemental"),
+  constellation4: {
+    dmg: stats => basicDMGFormula(400, stats, "elemental"),
+  },
+  passive1: {
+    dmg: stats => [s => 4 * s.finalDEF, ["finalDEF"]],
   }
 }
 export default formula

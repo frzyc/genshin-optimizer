@@ -22,13 +22,14 @@ import razor from './Razor/data'
 import rosaria from './Rosaria/data'
 import sucrose from './Sucrose/data'
 import tartaglia from './Tartaglia/data'
-import traveler_anemo from './Traveler Anemo/data'
-// import traveler_geo from './Traveler Geo/data'
+import traveler_anemo from './Traveler_Anemo/data'
+// import traveler_geo from './Traveler_Geo/data'
 import venti from './Venti/data'
 import xiao from './Xiao/data'
 import xiangling from './Xiangling/data'
 import xingqiu from './Xingqiu/data'
 import xinyan from './Xinyan/data'
+import yanfei from './Yanfei/data'
 import zhongli from './Zhongli/data'
 import { IFormulaSheets } from '../../Types/character'
 const formula: IFormulaSheets = {
@@ -63,6 +64,7 @@ const formula: IFormulaSheets = {
   xiangling,
   xingqiu,
   xinyan,
+  yanfei,
   zhongli
 };
 export default formula

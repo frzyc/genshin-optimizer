@@ -32,7 +32,7 @@ describe("Testing Razor's Formulas (sohum#5921)", () => {
       test("hit", () => {
         const stats = computeAllStats(setupStats)
         expect(formula.normal[0](stats)[0](stats)).toApproximate(972)
-        expect(formula.etc!.c6(stats)[0](stats)).toApproximate(935)
+        expect(formula.constellation6.dmg(stats)[0](stats)).toApproximate(935)
 
         //prototype Archiac R1 dmg
         expect(3 * stats.physical_elemental_hit).toApproximate(1598)
@@ -45,7 +45,7 @@ describe("Testing Razor's Formulas (sohum#5921)", () => {
       test("hit", () => {
         const stats = computeAllStats(setupStats)
         expect(formula.normal[0](stats)[0](stats)).toApproximate(1665)
-        expect(formula.etc!.c6(stats)[0](stats)).toApproximate(1601)
+        expect(formula.constellation6.dmg(stats)[0](stats)).toApproximate(1601)
 
         //prototype Archiac R1 dmg
         expect(3 * stats.physical_elemental_critHit).toApproximate(2737)

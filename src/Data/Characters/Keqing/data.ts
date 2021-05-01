@@ -58,8 +58,8 @@ const formula: IFormulaSheet = {
     consec_slash: stats => basicDMGFormula(data.burst.consec_slash[stats.tlvl.burst], stats, "burst"),
     last: stats => basicDMGFormula(data.burst.last[stats.tlvl.burst], stats, "burst"),
   },
-  etc: {
-    c1: stats => basicDMGFormula(50, stats, "elemental"),
+  constellation1: {
+    dmg: stats => basicDMGFormula(50, stats, "elemental"),
   }
 }
 export default formula

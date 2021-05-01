@@ -42,10 +42,10 @@ describe("Testing Fischl's Formulas (sohum#5921)", () => {
           expect(formula.normal[4](stats)[0](stats)).toApproximate(235)
           expect(formula.charged.fullAimedShot(stats)[0](stats)).toApproximate(1233)
 
-          expect(formula.etc!.c1(stats)[0](stats)).toApproximate(61)
+          expect(formula.constellation1.dmg(stats)[0](stats)).toApproximate(61)
           expect(formula.skill.activeChar(stats)[0](stats)).toApproximate(277)
 
-          expect(formula.etc!.a4(stats)[0](stats)).toApproximate(740)
+          expect(formula.passive2.dmg(stats)[0](stats)).toApproximate(740)
 
           expect(formula.skill.dmg(stats)[0](stats)).toApproximate(3665)
           expect(formula.skill.oz(stats)[0](stats)).toApproximate(1396)
@@ -66,7 +66,7 @@ describe("Testing Fischl's Formulas (sohum#5921)", () => {
           expect(formula.charged.aimShot(stats)[0](stats)).toApproximate(176)
           expect(formula.charged.fullAimedShot(stats)[0](stats)).toApproximate(2363)
 
-          expect(formula.etc!.c1(stats)[0](stats)).toApproximate(118)
+          expect(formula.constellation1.dmg(stats)[0](stats)).toApproximate(118)
           expect(formula.skill.activeChar(stats)[0](stats)).toApproximate(531)
 
           expect(formula.skill.dmg(stats)[0](stats)).toApproximate(7025)
@@ -91,10 +91,10 @@ describe("Testing Fischl's Formulas (sohum#5921)", () => {
           expect(formula.charged.aimShot(stats)[0](stats)).toApproximate(90)
           expect(formula.charged.fullAimedShot(stats)[0](stats)).toApproximate(1212)
 
-          expect(formula.etc!.c1(stats)[0](stats)).toApproximate(60)
+          expect(formula.constellation1.dmg(stats)[0](stats)).toApproximate(60)
           expect(formula.skill.activeChar(stats)[0](stats)).toApproximate(272)
 
-          expect(formula.etc!.a4(stats)[0](stats)).toApproximate(727)
+          expect(formula.passive2.dmg(stats)[0](stats)).toApproximate(727)
 
           expect(formula.skill.dmg(stats)[0](stats)).toApproximate(3602)
           expect(formula.skill.oz(stats)[0](stats)).toApproximate(1372)
@@ -117,10 +117,10 @@ describe("Testing Fischl's Formulas (sohum#5921)", () => {
           expect(formula.charged.fullAimedShot(stats)[0](stats)).toApproximate(2323)
           expect(formula.charged.fullAimedShotOz(stats)[0](stats)).toApproximate(3547)
 
-          expect(formula.etc!.c1(stats)[0](stats)).toApproximate(116)
+          expect(formula.constellation1.dmg(stats)[0](stats)).toApproximate(116)
           expect(formula.skill.activeChar(stats)[0](stats)).toApproximate(522)
 
-          expect(formula.etc!.a4(stats)[0](stats)).toApproximate(1394)
+          expect(formula.passive2.dmg(stats)[0](stats)).toApproximate(1394)
 
           expect(formula.skill.dmg(stats)[0](stats)).toApproximate(6905)
           expect(formula.skill.oz(stats)[0](stats)).toApproximate(2630)

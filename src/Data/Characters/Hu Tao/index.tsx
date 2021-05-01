@@ -93,7 +93,7 @@ const char: ICharacterSheet = {
           value: 25,
         }]
       }, {
-        text: <span><strong>Plunging Attack</strong>TEMPLATE</span>,
+        text: <span><strong>Plunging Attack</strong> Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.</span>,
         fields: [{
           text: `Plunge DMG`,
           formulaText: stats => <span>{data.plunging.dmg[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,

@@ -1,9 +1,11 @@
+import ICalculatedStats from "./ICalculatedStats";
+
 export interface IFieldDisplay {
-  canShow?: (any) => any;
+  canShow?: (stats: ICalculatedStats) => boolean;
   text: Displayable;
-  value?: number | Displayable | ((stats: any) => number | Displayable);
+  value?: number | Displayable | ((stats: ICalculatedStats) => number | Displayable);
   fixed?: number;
   formula?: (stats: any) => Array<any>;
-  formulaText?: (stats: any) => JSX.Element
-  variant?: string | ((stats: any) => string);
+  formulaText?: (stats: ICalculatedStats) => JSX.Element
+  variant?: string | ((stats: ICalculatedStats) => string);
 }

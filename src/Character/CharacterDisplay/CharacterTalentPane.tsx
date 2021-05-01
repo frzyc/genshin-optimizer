@@ -233,7 +233,7 @@ function SkillDisplayCard({ characterSheet, character: { constellation, talentLe
               {fields?.map?.((field, i) => <FieldDisplay key={i} index={i} {...{ field, equippedBuild, newBuild }} />)}
             </ListGroup>}
           </div>
-          {Boolean(section.conditional) && <ConditionalDisplay fieldClassName={undefined} {...{ conditional: section.conditional, equippedBuild, newBuild, characterDispatch, editable }} />}
+          {!!section.conditional && <ConditionalDisplay {...{ conditional: section.conditional, equippedBuild, newBuild, characterDispatch, editable }} />}
         </div>
       })}
       {statsEle}

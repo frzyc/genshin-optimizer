@@ -1,14 +1,14 @@
 import { IArtifactSheet, SetEffectEntry, StatArr, StatDict } from "../Types/artifact";
-import { allArtifactSets, allRarities, ArtifactSet, Rarity, SetNum, SlotKey } from "../Types/consts";
+import { allArtifactSets, allRarities, ArtifactSetKey, Rarity, SetNum, SlotKey } from "../Types/consts";
 import ICalculatedStats from "../Types/ICalculatedStats";
 import { IConditionals } from "../Types/IConditional";
 import { deepClone, evalIfFunc } from "../Util/Util";
 
 export const artifactImport = import("../Data/Artifacts").then(imp =>
   Object.fromEntries(Object.entries(imp.default).map(([set, value]) =>
-    [set, new ArtifactSheet(value)])) as StrictDict<ArtifactSet, ArtifactSheet>)
+    [set, new ArtifactSheet(value)])) as StrictDict<ArtifactSetKey, ArtifactSheet>)
 const promiseSheets = Object.fromEntries(allArtifactSets.map(set =>
-  [set, artifactImport.then(sheets => sheets[set])])) as StrictDict<ArtifactSet, Promise<ArtifactSheet>>
+  [set, artifactImport.then(sheets => sheets[set])])) as StrictDict<ArtifactSetKey, Promise<ArtifactSheet>>
 
 export class ArtifactSheet {
   readonly data: IArtifactSheet
@@ -39,21 +39,21 @@ export class ArtifactSheet {
   }
 
   static getAll() { return artifactImport }
-  static get(set: ArtifactSet | undefined): Promise<ArtifactSheet> | undefined { return set && promiseSheets[set] }
+  static get(set: ArtifactSetKey | undefined): Promise<ArtifactSheet> | undefined { return set && promiseSheets[set] }
 
-  static namesByMaxRarities(sheets: StrictDict<ArtifactSet, ArtifactSheet>): [Rarity, [ArtifactSet, string][]][] {
-    const grouped: Dict<Rarity, [ArtifactSet, string][]> = {}
+  static namesByMaxRarities(sheets: StrictDict<ArtifactSetKey, ArtifactSheet>): [Rarity, [ArtifactSetKey, string][]][] {
+    const grouped: Dict<Rarity, [ArtifactSetKey, string][]> = {}
     Object.entries(sheets).forEach(([key, sheet]) => {
       const rarity = Math.max(...sheet.rarity) as Rarity
       if (grouped[rarity]) grouped[rarity]!.push([key, sheet.name])
       else grouped[rarity] = [[key, sheet.name]]
     })
-    return allRarities.map(rarity => [rarity, grouped[rarity] ?? []] as [Rarity, [ArtifactSet, string][]]).filter(([, group]) => group.length)
+    return allRarities.map(rarity => [rarity, grouped[rarity] ?? []] as [Rarity, [ArtifactSetKey, string][]]).filter(([, group]) => group.length)
   }
-  static setsWithMaxRarity(sheets: StrictDict<ArtifactSet, ArtifactSheet>, rarity: Rarity): [ArtifactSet, ArtifactSheet][] {
+  static setsWithMaxRarity(sheets: StrictDict<ArtifactSetKey, ArtifactSheet>, rarity: Rarity): [ArtifactSetKey, ArtifactSheet][] {
     return Object.entries(sheets).filter(([, sheet]) => Math.max(...sheet.rarity) === rarity)
   }
-  static setEffectsStats(sheets: StrictDict<ArtifactSet, ArtifactSheet>, setToSlots: Dict<ArtifactSet, SlotKey[]>): StatArr {
+  static setEffectsStats(sheets: StrictDict<ArtifactSetKey, ArtifactSheet>, setToSlots: Dict<ArtifactSetKey, SlotKey[]>): StatArr {
     let artifactSetEffect: StatArr = []
     Object.entries(setToSlots).forEach(([set, slots]) =>
       Object.entries(sheets[set]?.setEffects ?? {}).forEach(([num, value]) =>
@@ -62,8 +62,8 @@ export class ArtifactSheet {
           artifactSetEffect.push({ key, value }))))
     return artifactSetEffect
   }
-  static setEffects(sheets: StrictDict<ArtifactSet, ArtifactSheet>, setToSlots: Dict<ArtifactSet, SlotKey[]>) {
-    let artifactSetEffect: Dict<ArtifactSet, SetNum[]> = {}
+  static setEffects(sheets: StrictDict<ArtifactSetKey, ArtifactSheet>, setToSlots: Dict<ArtifactSetKey, SlotKey[]>) {
+    let artifactSetEffect: Dict<ArtifactSetKey, SetNum[]> = {}
     Object.entries(setToSlots).forEach(([set, slots]) => {
       let setNum = Object.keys(sheets[set]?.setEffects ?? {})
         .map(setNum => parseInt(setNum) as SetNum)

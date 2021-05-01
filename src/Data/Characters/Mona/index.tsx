@@ -203,7 +203,7 @@ const char: ICharacterSheet = {
           canShow: stats => stats.ascension >= 1,
           text: "Explosion DMG",
           formulaText: stats => <span>{data.skill.dmg[stats.tlvl.skill]}% * 50% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
-          formula: formula.etc!.a1,
+          formula: formula.passive1.dmg,
           variant: stats => getTalentStatKeyVariant("skill", stats),
         }, {
           canShow: stats => stats.ascension >= 1,

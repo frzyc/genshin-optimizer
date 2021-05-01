@@ -86,7 +86,7 @@ function CalculationDisplay({ characterSheet, build }: { characterSheet: Charact
           <Accordion className="mb-n2">
             {fields.map((field, fieldIndex) => {
               if (Array.isArray(field))
-                <FormulaCalculationField key={fieldIndex} fieldKeys={field} build={build} fieldIndex={fieldIndex} />
+                return <FormulaCalculationField key={fieldIndex} fieldKeys={field} build={build} fieldIndex={fieldIndex} />
               else if (typeof field === "string") {//simple statKey field
                 const subFormulaKeys: any[] = Stat.getPrintableFormulaStatKeyList(GetDependencies(build?.modifiers, [field]), build?.modifiers).reverse()
                 return Boolean(subFormulaKeys.length) && <Card key={fieldIndex} bg="lightcontent" text={"lightfont" as any} className="mb-2">

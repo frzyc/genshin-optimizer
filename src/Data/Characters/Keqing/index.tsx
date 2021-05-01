@@ -218,7 +218,7 @@ const char: ICharacterSheet = {
         fields: [{
           text: " Thundering Might DMG",
           formulaText: stats => <span>50% {Stat.printStat(getTalentStatKey("elemental", stats), stats)}</span>,
-          formula: formula.etc!.c1,
+          formula: formula.constellation1.dmg,
           variant: stats => getTalentStatKeyVariant("elemental", stats),
         }]
       }],

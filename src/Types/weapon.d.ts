@@ -5,7 +5,7 @@ export type IWeaponSheets = Dict<string, IWeaponSheet>
 
 export interface IWeaponSheet {
   name: string;
-  weaponType: WeaponType;
+  weaponType: WeaponTypeKey;
   img: string;
   rarity: number;
   passiveName: string;
@@ -19,5 +19,3 @@ export interface IWeaponSheet {
   stats?: object | ((stats: ICalculatedStats) => object)
   conditionals?: IConditionals
 }
-
-export type WeaponType = "bow" | "catalyst" | "claymore" | "polearm" | "sword"

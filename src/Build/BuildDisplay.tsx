@@ -23,7 +23,7 @@ import Stat from '../Stat';
 import { IArtifact } from '../Types/artifact';
 import { ArtifactsBySlot, BuildSetting } from '../Types/Build';
 import { ICharacter } from '../Types/character';
-import { allSlotKeys, ArtifactSet, SlotKey } from '../Types/consts';
+import { allSlotKeys, ArtifactSetKey, SlotKey } from '../Types/consts';
 import ICalculatedStats from '../Types/ICalculatedStats';
 import { IFieldDisplay } from '../Types/IFieldDisplay';
 import { useForceUpdate, usePromise } from '../Util/ReactUtil';
@@ -113,11 +113,11 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     return () => CharacterDatabase.unregisterCharListener(cKey, setCharDirty)
   }, [setCharDirty, setcharacterKey, buildSettingsDispatch, characterKey])
 
-  //save build settings to character when buildSettings change, will cause infinite loop if add 'selectCharacter' to dependency array
+  //load saved stat from DB. will cause infinite loop if add 'selectCharacter' to dependency array
   useEffect(() => {//startup load from localStorage
     if (!("BuildsDisplay.state" in localStorage)) return
     const { characterKey = "", maxBuildsToShow = maxBuildsToShowDefault } = loadFromLocalStorage("BuildsDisplay.state") ?? {}
-    if (characterKey) selectCharacter(characterKey)
+    if (characterKey && CharacterDatabase.get(characterKey)) selectCharacter(characterKey)
     setmaxBuildsToShow(maxBuildsToShow)
   }, [])// eslint-disable-line react-hooks/exhaustive-deps
 
@@ -298,7 +298,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
                   </Card.Body></Card>
                 </Col>
                 {/* Artifact set picker */}
-                {setFilters.map(({ key: setKey, num: setNum }: { key: ArtifactSet, num: number }, index) => <Col className="mb-2" key={index} xs={12}>
+                {setFilters.map(({ key: setKey, num: setNum }: { key: ArtifactSetKey, num: number }, index) => <Col className="mb-2" key={index} xs={12}>
                   <Card className="h-100" bg="lightcontent" text={"lightfont" as any}>
                     <Card.Header>
                       <ButtonGroup>
@@ -651,7 +651,7 @@ function ArtifactDisplayItem({ characterSheet, weaponSheet, index, characterKey,
       variant={index % 2 ? "customdark" : "customdarker"} className="text-white" action
       onClick={onClick}
     >
-      <h5>{(Object.entries(build.setToSlots) as [ArtifactSet, SlotKey[]][]).sort(([key1, slotarr1], [key2, slotarr2]) => slotarr2.length - slotarr1.length).map(([key, slotarr]) =>
+      <h5>{(Object.entries(build.setToSlots) as [ArtifactSetKey, SlotKey[]][]).sort(([key1, slotarr1], [key2, slotarr2]) => slotarr2.length - slotarr1.length).map(([key, slotarr]) =>
         <Badge key={key} variant="primary" className="mr-2">
           {slotarr.map(slotKey => Artifact.slotIcon(slotKey))} {sheets?.[key].name ?? ""}
         </Badge>

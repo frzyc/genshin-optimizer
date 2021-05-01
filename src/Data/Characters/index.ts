@@ -22,13 +22,14 @@ import razor from './Razor'
 import rosaria from './Rosaria'
 import sucrose from './Sucrose'
 import tartaglia from './Tartaglia'
-import traveler_anemo from './Traveler Anemo'
-import traveler_geo from './Traveler Geo'
+import traveler_anemo from './Traveler_Anemo'
+import traveler_geo from './Traveler_Geo'
 import venti from './Venti'
 import xiao from './Xiao'
 import xiangling from './Xiangling'
 import xingqiu from './Xingqiu'
 import xinyan from './Xinyan'
+import yanfei from './Yanfei'
 import zhongli from './Zhongli'
 import { fieldProcessing } from '../../Util/FieldUtil'
 import { CharacterKey } from '../../Types/consts'
@@ -65,6 +66,7 @@ const characters: StrictDict<CharacterKey, ICharacterSheet> = {
   xiangling,
   xingqiu,
   xinyan,
+  yanfei,
   zhongli
 };
 

@@ -38,7 +38,7 @@ export default function CharacterCard({ characterKey, onEdit, onDelete, cardClas
   const weaponTypeKey = characterSheet.weaponTypeKey
   const weaponName = weaponSheet?.name
   const weaponMainVal = Weapon.getWeaponMainStatValWithOverride(weapon, weaponSheet)
-  const weaponSubKey = Weapon.getWeaponSubstatKey(weapon.key)
+  const weaponSubKey = Weapon.getWeaponSubstatKey(weaponSheet)
   const weaponSubVal = Weapon.getWeaponSubstatValWithOverride(weapon, weaponSheet)
   const weaponLevelName = Weapon.getLevelName(weapon.levelKey)
   const weaponPassiveName = weaponSheet?.passiveName

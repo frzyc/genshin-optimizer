@@ -270,7 +270,7 @@ function CharSelectDropdown({ characterSheet, weaponSheet, character, editable, 
         {HeaderIconDisplay}
       </Dropdown.Toggle>
       <Dropdown.Menu as={CustomMenu}>
-        {allCharacterKeys.map(charKey => <CharDropdownItem key={charKey} characterKey={charKey} setCharacterKey={setCharacterKey} />)}
+        {[...allCharacterKeys].sort().map(charKey => <CharDropdownItem key={charKey} characterKey={charKey} setCharacterKey={setCharacterKey} />)}
       </Dropdown.Menu>
     </Dropdown>
     <DropdownButton as={ButtonGroup} disabled={!characterSheet} title={

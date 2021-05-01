@@ -1,21 +1,20 @@
 import { CharacterKey } from "./consts";
+import ICalculatedStats from "./ICalculatedStats";
 import IConditional, { IConditionals } from "./IConditional";
 import { IFieldDisplay } from "./IFieldDisplay";
-import { WeaponType } from "./weapon";
-
 export interface ICharacterSheet {
   name: string,
   cardImg: string,
   thumbImg: string,
-  star: number,
-  elementKey: string, //TODO: enum?
-  weaponTypeKey: WeaponType, //TODO: enum?
+  star: Rarity,
+  elementKey: ElementKey
+  weaponTypeKey: WeaponTypeKey
   gender: string,
   constellationName: string,
   titles: Array<string>,
-  baseStat: object, //TODO: custom interface
+  baseStat: IBaseStat
   specializeStat: ISpecializedStat,
-  formula: object,
+  formula: object, //TODO: IFormulaSheet when all sheets are done
   conditionals: IConditionals,
   talent: TalentSheet,
 }
@@ -63,8 +62,8 @@ export interface TalentSheetElement {
   stats?: object,
 }
 export interface DocumentSection {
-  canShow?: (stats: any) => boolean,
-  text?: Displayable | ((stats: any) => Displayable),
+  canShow?: (stats: ICalculatedStats) => boolean,
+  text?: Displayable | ((stats: ICalculatedStats) => Displayable),
   fields?: Array<IFieldDisplay>,
   conditional?: IConditional,
 }
@@ -77,11 +76,11 @@ export interface IFormulaSheet {
   plunging: ISubFormula
   skill: ISubFormula
   burst: ISubFormula
-  etc?: ISubFormula
+  [name: string]: ISubFormula
 }
 
 interface ISubFormula {
-  [name: string]: (cnst: any) => FormulaItem
+  [name: string]: (stats: any) => FormulaItem
 }
 
-export type FormulaItem = [(stat: any) => number, string[]]
+export type FormulaItem = [(s: any) => number, string[]]

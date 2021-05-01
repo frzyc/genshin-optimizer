@@ -55,12 +55,12 @@ const formula: IFormulaSheet = {
     shield: stats => {
       const hp = data.skill.shieldHp[stats.tlvl.skill] / 100
       const flat = data.skill.shieldFlat[stats.tlvl.skill]
-      return [s => ((1 + (stats.constellation >= 2 ? 0.15 : 0)) * (hp * s.finalHP + flat)), ["finalHP"]] //TODO : Add shield strength
+      return [s => ((1 + (stats.constellation >= 2 ? 0.15 : 0)) * (hp * s.finalHP + flat)), ["finalHP"]] //TODO: Add shield strength
     },
     shieldHold: stats => {
       const hp = data.skill.shieldHp[stats.tlvl.skill] / 100
       const flat = data.skill.shieldFlat[stats.tlvl.skill]
-      return [s => ((1.75 + (stats.constellation >= 2 ? 0.15 : 0)) * (hp * s.finalHP + flat)), ["finalHP"]] //TODO : Add shield strength
+      return [s => ((1.75 + (stats.constellation >= 2 ? 0.15 : 0)) * (hp * s.finalHP + flat)), ["finalHP"]] //TODO: Add shield strength
     },
     dmg: stats => basicDMGFormula(data.skill.dmgPerPaw[stats.tlvl.skill], stats, "skill"),
   },

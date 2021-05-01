@@ -140,7 +140,7 @@ const char: ICharacterSheet = {
         fields: [{
           text: "Healing",
           formulaText: stats => <span>15% {Stat.printStat("finalATK", stats)} * {Stat.printStat("heal_multi", stats)}</span>,
-          formula: formula.etc!.p1,
+          formula: formula.passive1.dmg,
           variant: "success",
         }],
       }],

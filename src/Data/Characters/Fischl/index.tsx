@@ -176,7 +176,7 @@ const char: ICharacterSheet = {
           canShow: stats => stats.ascension >= 4,
           text: "Thundering Retribution",
           formulaText: stats => <span>80% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
-          formula: formula.etc!.a4,
+          formula: formula.passive2.dmg,
           variant: stats => getTalentStatKeyVariant("skill", stats),
         }]
       }],
@@ -195,7 +195,7 @@ const char: ICharacterSheet = {
           canShow: stats => stats.constellation >= 1,
           text: "Joint Attack DMG",
           formulaText: stats => <span>22% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
-          formula: formula.etc!.c1,
+          formula: formula.constellation1.dmg,
           variant: stats => getTalentStatKeyVariant("normal", stats),
         }]
       }],

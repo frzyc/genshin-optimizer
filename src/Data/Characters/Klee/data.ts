@@ -53,9 +53,11 @@ const formula: IFormulaSheet = {
   burst: {
     dmg: stats => basicDMGFormula(data.burst.dmg[stats.tlvl.burst], stats, "burst"),
   },
-  etc: {
-    c1: stats => basicDMGFormula(data.burst.dmg[stats.tlvl.burst] * 1.2, stats, "burst"),
-    c4: stats => basicDMGFormula(555, stats, "elemental"),
+  constellation1: {
+    dmg: stats => basicDMGFormula(data.burst.dmg[stats.tlvl.burst] * 1.2, stats, "burst"),
+  },
+  constellation4: {
+    dmg: stats => basicDMGFormula(555, stats, "elemental"),
   }
 }
 

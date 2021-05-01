@@ -53,8 +53,8 @@ const formula = {
     hit3: stats => basicDMGFormula(data.burst.hit3[stats.tlvl.burst], stats, "burst"),
     dmg: stats => basicDMGFormula(data.burst.dmg[stats.tlvl.burst], stats, "burst"),
   },
-  etc: {
-    c2: stats => basicDMGFormula(75, stats, "elemental"),
+  constellation2: {
+    dmg: stats => basicDMGFormula(75, stats, "elemental"),
   }
 }
 export default formula

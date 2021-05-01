@@ -79,7 +79,7 @@ const char: ICharacterSheet = {
           value: stats => <span>50{(stats.ascension >= 1 ? <span>; With <b>Star Jade</b>: 0</span> : "")}</span>,
         }]
       }, {
-        text: <span><strong>Plunging Attack</strong>TEMPLATE</span>,
+        text: <span><strong>Plunging Attack</strong> Gathering the might of Geo, Ningguang plunges toward the ground from mid-air, damaging all opponents in her path. Deals <span className="text-geo">AoE Geo DMG</span> upon impact with the ground.</span>,
         fields: [{
           text: `Plunge DMG`,
           formulaText: stats => <span>{data.plunging.dmg[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,

@@ -1,7 +1,7 @@
 import ElementalData from "../Data/ElementalData"
 import { StatKey, StatDict, IArtifact, SubstatKey } from "../Types/artifact"
 import { ArtifactSetEffects, PrunedArtifactSetEffects, ArtifactsBySlot, SetFilter } from "../Types/Build"
-import { ArtifactSet } from "../Types/consts"
+import { ArtifactSetKey } from "../Types/consts"
 
 /**
  * Remove artifacts that can never be used in optimized builds
@@ -11,7 +11,7 @@ import { ArtifactSet } from "../Types/consts"
  * @param {bool} ascending - Whether the sorting is ascending or descending
  * @param {Set.<setKey>} alwaysAccepted - The list of artifact sets that are always included
  */
-export function pruneArtifacts(artifacts: IArtifact[], artifactSetEffects: ArtifactSetEffects, significantStats: Set<StatKey>, ascending: boolean = false, alwaysAccepted: Set<ArtifactSet> = new Set()): IArtifact[] {
+export function pruneArtifacts(artifacts: IArtifact[], artifactSetEffects: ArtifactSetEffects, significantStats: Set<StatKey>, ascending: boolean = false, alwaysAccepted: Set<ArtifactSetKey> = new Set()): IArtifact[] {
   function shouldKeepFirst(first: StatDict, second: StatDict, preferFirst: boolean) {
     let firstBetter = Object.entries(first).some(([k, v]) => v! > (second[k] ?? 0))
     let secondBetter = Object.entries(second).some(([k, v]) => v! > (first[k] ?? 0))
@@ -32,8 +32,8 @@ export function pruneArtifacts(artifacts: IArtifact[], artifactSetEffects: Artif
     }
 
   // array of artifacts, artifact stats, and set (may be "other")
-  let tmp: { artifact: IArtifact, stats: Dict<StatKey, number>, set: ArtifactSet | "other" }[] = artifacts.map(artifact => {
-    let stats = {}, set: ArtifactSet | "other" = (artifact.setKey in prunedSetEffects) ? artifact.setKey : "other"
+  let tmp: { artifact: IArtifact, stats: Dict<StatKey, number>, set: ArtifactSetKey | "other" }[] = artifacts.map(artifact => {
+    let stats = {}, set: ArtifactSetKey | "other" = (artifact.setKey in prunedSetEffects) ? artifact.setKey : "other"
     if (significantStats.has(artifact.mainStatKey as any))
       stats[artifact.mainStatKey] = artifact.mainStatVal
     for (const { key, value } of artifact.substats)
@@ -88,7 +88,7 @@ export function artifactSetPermutations(artifactsBySlot: ArtifactsBySlot, setFil
   const slotKeys = Object.keys(artifactsBySlot)
 
   for (const slotKey of slotKeys) {
-    let artifactsBySet: { [setKey in ArtifactSet]?: IArtifact[] } = {}
+    let artifactsBySet: { [setKey in ArtifactSetKey]?: IArtifact[] } = {}
     for (const artifact of (artifactsBySlot[slotKey] as any)) {
       if (setKeys.has(artifact.setKey)) {
         if (artifactsBySet[artifact.setKey]) artifactsBySet[artifact.setKey]!.push(artifact)

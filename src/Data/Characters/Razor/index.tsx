@@ -271,7 +271,7 @@ const char: ICharacterSheet = {
           canShow: stats => stats.constellation >= 6,
           text: "Lupus Fulguris DMG",
           formulaText: stats => <span>100% {Stat.printStat(getTalentStatKey("elemental", stats), stats)}</span>,
-          formula: formula.etc!.c6,
+          formula: formula.constellation6.dmg,
           variant: stats => getTalentStatKeyVariant("elemental", stats),
         }, {
           canShow: stats => stats.constellation >= 6,

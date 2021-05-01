@@ -190,7 +190,7 @@ const char: ICharacterSheet = {
           canShow: stats => stats.ascension >= 4,
           text: "Heal per Auto",
           formulaText: stats => <span>15% {Stat.printStat("finalATK", stats)} * {Stat.printStat("heal_multi", stats)}</span>,
-          formula: formula.etc!.a4,
+          formula: formula.passive1.dmg,
           variant: "success",
         }]
       }],
