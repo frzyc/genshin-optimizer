@@ -51,9 +51,11 @@ const formula: IFormulaSheet = {
   burst: {
     dmg: stats => basicDMGFormula(data.burst.dmg[stats.tlvl.burst], stats, "burst"),
   },
-  etc: {
-    c1: stats => basicDMGFormula(50, stats, "elemental"),
-    a4: stats => basicDMGFormula(data.skill.dmg[stats.tlvl.skill], stats, "elemental"),
+  constellation1: {
+    dmg: stats => basicDMGFormula(50, stats, "elemental"),
+  },
+  passive2: {
+    dmg: stats => basicDMGFormula(data.skill.dmg[stats.tlvl.skill], stats, "elemental"),
   }
 }
 export default formula

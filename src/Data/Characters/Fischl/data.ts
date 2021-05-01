@@ -61,9 +61,11 @@ const formula: IFormulaSheet = {
     addDmg: stats => basicDMGFormula(222, stats, "burst"),
     regen: stats => [s => 0.2 * s.finalHP * s.heal_multi, ["finalHP", "heal_multi"]]
   },
-  etc: {
-    a4: stats => basicDMGFormula(80, stats, "skill"),
-    c1: stats => basicDMGFormula(22, stats, "normal"),
+  passive2: {
+    dmg: stats => basicDMGFormula(80, stats, "skill"),
+  },
+  constellation1: {
+    dmg: stats => basicDMGFormula(22, stats, "normal"),
   }
 }
 

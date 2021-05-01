@@ -76,7 +76,7 @@ export interface IFormulaSheet {
   plunging: ISubFormula
   skill: ISubFormula
   burst: ISubFormula
-  etc?: ISubFormula
+  [name: string]: ISubFormula
 }
 
 interface ISubFormula {

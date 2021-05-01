@@ -48,8 +48,8 @@ const formula = {
   burst: {
     bubble_explosion: stats => basicDMGFormula(data.burst.bubble_explosion[stats.tlvl.burst], stats, "burst")
   },
-  etc: {
-    a1: stats => basicDMGFormula(data.skill.dmg[stats.tlvl.skill] / 2, stats, "skill"),
+  passive1: {
+    dmg: stats => basicDMGFormula(data.skill.dmg[stats.tlvl.skill] / 2, stats, "skill"),
   }
 }
 export default formula

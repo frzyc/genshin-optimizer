@@ -168,7 +168,7 @@ const char: ICharacterSheet = {
           canShow: stats => stats.ascension >= 4,
           text: "Summoned Sword DMG",
           formulaText: stats => <span>{data.skill.dmg[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
-          formula: formula.etc!.a4,
+          formula: formula.passive2.dmg,
           variant: stats => getTalentStatKeyVariant("skill", stats),
         }]
       }],
@@ -189,7 +189,7 @@ const char: ICharacterSheet = {
           canShow: stats => stats.constellation >= 1,
           text: "Ice Blade DMG",
           formulaText: stats => <span>50% {Stat.printStat(getTalentStatKey("elemental", stats), stats)}</span>,
-          formula: formula.etc!.c1,
+          formula: formula.constellation1.dmg,
           variant: stats => getTalentStatKeyVariant("elemental", stats),
         }]
       }]

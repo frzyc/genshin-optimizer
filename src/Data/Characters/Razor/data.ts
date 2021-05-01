@@ -54,8 +54,8 @@ const formula: IFormulaSheet = {
     ...Object.fromEntries(data.normal.hitArr.map((percentArr, i) => [i, stats =>
       basicDMGFormula(data.burst.dmg[stats.tlvl.burst] * percentArr[stats.tlvl.auto] / 100, stats, "burst")])),
   },
-  etc: {
-    c6: stats => basicDMGFormula(100, stats, "elemental"),
+  constellation6: {
+    dmg: stats => basicDMGFormula(100, stats, "elemental"),
   }
 }
 

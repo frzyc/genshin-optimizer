@@ -53,7 +53,7 @@ describe("Testing Keqing's Formulas (Agent RAF#3111)", () => {
         expect(formula.burst.consec_slash(stats)[0](stats)).toApproximate(473)
         expect(formula.burst.last(stats)[0](stats)).toApproximate(3726)
 
-        expect(formula.etc!.c1(stats)[0](stats)).toApproximate(657)
+        expect(formula.constellation1.dmg(stats)[0](stats)).toApproximate(657)
         expect(stats.overloaded_hit).toApproximate(1979)
         expect(stats.electrocharged_hit).toApproximate(1187)
         expect(stats.superconduct_hit).toApproximate(494)
@@ -108,7 +108,7 @@ describe("Testing Keqing's Formulas (Agent RAF#3111)", () => {
         expect(formula.burst.consec_slash(stats)[0](stats)).toApproximate(1291)
         expect(formula.burst.last(stats)[0](stats)).toApproximate(10159)
 
-        expect(formula.etc!.c1(stats)[0](stats)).toApproximate(1793)
+        expect(formula.constellation1.dmg(stats)[0](stats)).toApproximate(1793)
 
       })
 

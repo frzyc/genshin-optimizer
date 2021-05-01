@@ -71,8 +71,8 @@ const formula: IFormulaSheet = {
       return [s => (atk * s.finalATK + flat) * s.heal_multi, ["finalATK", "heal_multi"]]
     },
   },
-  etc: {
-    a4: stats => [s => 0.15 * s.finalATK * s.heal_multi, ["finalATK", "heal_multi"]],
+  passive1: {
+    dmg: stats => [s => 0.15 * s.finalATK * s.heal_multi, ["finalATK", "heal_multi"]],
   },
 }
 

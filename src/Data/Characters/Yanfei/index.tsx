@@ -153,7 +153,7 @@ const char: ICharacterSheet = {
           canShow: stats => stats.constellation >= 4,
           text: "Shield on Cast",
           formulaText: stats => <span>45% {Stat.printStat("finalHP", stats)}</span>,
-          formula: formula.etc!.c4,
+          formula: formula.constellation4.dmg,
         }, {
           text: "CD",
           value: "20s",
@@ -180,7 +180,7 @@ const char: ICharacterSheet = {
         fields: [{
           text: "Crit Hit on Opponent",
           formulaText: stats => <span>80% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
-          formula: formula.etc!.p2,
+          formula: formula.passive2.dmg,
           variant: stats => getTalentStatKeyVariant("charged", stats),
         }]
       }],

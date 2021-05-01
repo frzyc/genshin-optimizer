@@ -186,7 +186,7 @@ const char: ICharacterSheet = {
           canShow: stats => stats.ascension >= 1,
           text: "Shield strength",
           formulaText: stats => <span>400% {Stat.printStat("finalDEF", stats)}</span>,
-          formula: formula.etc!.a1,
+          formula: formula.passive1.dmg,
         }, {
           canShow: stats => stats.ascension >= 1,
           text: "CD",
@@ -240,7 +240,7 @@ const char: ICharacterSheet = {
           canShow: stats => stats.constellation >= 4,
           text: "Breastplate shatter damage",
           formulaText: stats => <span>400% {Stat.printStat(getTalentStatKey("elemental", stats), stats)}</span>,
-          formula: formula.etc!.c4,
+          formula: formula.constellation4.dmg,
           variant: stats => getTalentStatKeyVariant("elemental", stats),
         }]
       }]

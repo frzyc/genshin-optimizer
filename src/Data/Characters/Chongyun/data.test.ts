@@ -38,7 +38,7 @@ describe("Testing Chongyun's Formulas (sohum#5921)", () => {
         expect(formula.normal[2](stats)[0](stats)).toApproximate(73)
         expect(formula.skill.dmg(stats)[0](stats)).toApproximate(739)
         expect(formula.burst.dmg(stats)[0](stats)).toApproximate(612)
-        expect(formula.etc!.c1(stats)[0](stats)).toApproximate(215)
+        expect(formula.constellation1.dmg(stats)[0](stats)).toApproximate(215)
       })
 
       describe("inside Spirit Blade: Chonghua's Layered Frost", () => {
@@ -64,7 +64,7 @@ describe("Testing Chongyun's Formulas (sohum#5921)", () => {
         expect(formula.normal[3](stats)[0](stats)).toApproximate(180)
         expect(formula.skill.dmg(stats)[0](stats)).toApproximate(1489)
         expect(formula.burst.dmg(stats)[0](stats)).toApproximate(1232)
-        expect(formula.etc!.c1(stats)[0](stats)).toApproximate(432)
+        expect(formula.constellation1.dmg(stats)[0](stats)).toApproximate(432)
       })
 
       describe("inside Spirit Blade: Chonghua's Layered Frost", () => {
@@ -119,7 +119,7 @@ describe("Testing Chongyun's Formulas (Derpy#2132)", () => {
         expect(formula.charged.spinning(stats)[0](stats)).toApproximate(69)
         expect(formula.charged.finalATK(stats)[0](stats)).toApproximate(126)
         expect(formula.skill.dmg(stats)[0](stats)).toApproximate(1358)
-        expect(formula.etc!.a4(stats)[0](stats)).toApproximate(1358)
+        expect(formula.passive2.dmg(stats)[0](stats)).toApproximate(1358)
         expect(formula.burst.dmg(stats)[0](stats)).toApproximate(1139)
       })
       test("C6", () => {
@@ -137,7 +137,7 @@ describe("Testing Chongyun's Formulas (Derpy#2132)", () => {
           expect(formula.normal[1](stats)[0](stats)).toApproximate(317)
           expect(formula.normal[2](stats)[0](stats)).toApproximate(403)
           expect(formula.normal[3](stats)[0](stats)).toApproximate(508)
-          expect(formula.etc!.c1(stats)[0](stats)).toApproximate(232)
+          expect(formula.constellation1.dmg(stats)[0](stats)).toApproximate(232)
         })
 
         describe("with Rimechaser Blade", () => {
@@ -149,7 +149,7 @@ describe("Testing Chongyun's Formulas (Derpy#2132)", () => {
             expect(formula.normal[1](stats)[0](stats)).toApproximate(352)
             expect(formula.normal[2](stats)[0](stats)).toApproximate(448)
             expect(formula.normal[3](stats)[0](stats)).toApproximate(565)
-            expect(formula.etc!.c1(stats)[0](stats)).toApproximate(258)
+            expect(formula.constellation1.dmg(stats)[0](stats)).toApproximate(258)
             expect(formula.skill.dmg(stats)[0](stats)).toApproximate(1509)
             expect(formula.burst.dmg(stats)[0](stats)).toApproximate(1250)
           })
@@ -174,7 +174,7 @@ describe("Testing Chongyun's Formulas (Derpy#2132)", () => {
         expect(formula.normal[3](stats)[0](stats)).toApproximate(206)
         expect(formula.charged.spinning(stats)[0](stats)).toApproximate(114)
         expect(formula.skill.dmg(stats)[0](stats)).toApproximate(2228)
-        expect(formula.etc!.a4(stats)[0](stats)).toApproximate(2228)
+        expect(formula.passive2.dmg(stats)[0](stats)).toApproximate(2228)
         expect(formula.burst.dmg(stats)[0](stats)).toApproximate(1868)
       })
       test("C6", () => {
@@ -192,7 +192,7 @@ describe("Testing Chongyun's Formulas (Derpy#2132)", () => {
           expect(formula.normal[1](stats)[0](stats)).toApproximate(520)
           expect(formula.normal[2](stats)[0](stats)).toApproximate(661)
           expect(formula.normal[3](stats)[0](stats)).toApproximate(834)
-          expect(formula.etc!.c1(stats)[0](stats)).toApproximate(380)
+          expect(formula.constellation1.dmg(stats)[0](stats)).toApproximate(380)
         })
 
         describe("with Rimechaser Blade", () => {
@@ -204,7 +204,7 @@ describe("Testing Chongyun's Formulas (Derpy#2132)", () => {
             expect(formula.normal[1](stats)[0](stats)).toApproximate(577)
             expect(formula.normal[2](stats)[0](stats)).toApproximate(735)
             expect(formula.normal[3](stats)[0](stats)).toApproximate(926)
-            expect(formula.etc!.c1(stats)[0](stats)).toApproximate(423)
+            expect(formula.constellation1.dmg(stats)[0](stats)).toApproximate(423)
             expect(formula.skill.dmg(stats)[0](stats)).toApproximate(2475)
             expect(formula.burst.dmg(stats)[0](stats)).toApproximate(2050)
           })

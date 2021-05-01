@@ -45,7 +45,7 @@ describe("Testing Kaeya's Formulas (Derpy#2132)", () => {
         expect(formula.skill.dmg(stats)[0](stats)).toApproximate(871)
         expect(formula.burst.dmg(stats)[0](stats)).toApproximate(353)
 
-        expect(formula.etc!.p1(stats)[0](stats)).toApproximate(95)
+        expect(formula.passive1.dmg(stats)[0](stats)).toApproximate(95)
         // expect(stats.superconduct_hit).toApproximate(871)//definitely wrong, should be 384
       });
       test('melt', () => {
@@ -74,7 +74,7 @@ describe("Testing Kaeya's Formulas (Derpy#2132)", () => {
         expect(formula.skill.dmg(stats)[0](stats)).toApproximate(1998)
         expect(formula.burst.dmg(stats)[0](stats)).toApproximate(811)
 
-        expect(formula.etc!.p1(stats)[0](stats)).toApproximate(95)
+        expect(formula.passive1.dmg(stats)[0](stats)).toApproximate(95)
 
       });
       test('melt', () => {

@@ -31,7 +31,7 @@ describe("Testing Jean's Formulas (sohum#5921)", () => {
     test("heal", () => {
       const stats = computeAllStats(setupStats)
       expect(formula.burst.regen(stats)[0](stats)).toApproximate(433)
-      expect(formula.etc!.a4(stats)[0](stats)).toApproximate(156)
+      expect(formula.passive1.dmg(stats)[0](stats)).toApproximate(156)
     })
     test("reactions", () => {
       const stats = computeAllStats(setupStats)
@@ -114,7 +114,7 @@ describe("Testing Jean's Formulas (Saber#9529)", () => {
       expect(formula.burst.heal(stats)[0](stats)).toApproximate(13388)
       expect(formula.burst.regen(stats)[0](stats)).toApproximate(1338)
 
-      expect(formula.etc!.a4(stats)[0](stats)).toApproximate(443)
+      expect(formula.passive1.dmg(stats)[0](stats)).toApproximate(443)
     })
 
     describe("swirl", () => {
@@ -449,7 +449,7 @@ describe("Testing Jean's Formulas (sohum#5921)", () => {
     test("heal", () => {
       const stats = computeAllStats(setupStats)
       expect(formula.burst.regen(stats)[0](stats)).toApproximate(433)
-      expect(formula.etc!.a4(stats)[0](stats)).toApproximate(156)
+      expect(formula.passive1.dmg(stats)[0](stats)).toApproximate(156)
     })
     test("reactions", () => {
       const stats = computeAllStats(setupStats)
