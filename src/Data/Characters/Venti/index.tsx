@@ -16,7 +16,7 @@ import ElementalData from '../../ElementalData'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from "../../../Build/Build"
-import { IConditionals } from '../../../Types/IConditional'
+import { IConditionals, IConditionalValue } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
 const conditionals: IConditionals = {
   c2: { // BreezeOfReminiscence
@@ -41,30 +41,28 @@ const conditionals: IConditionals = {
   },
   q: { // Absorption
     name: "Elemental Absorption",
-    states: {
-      ...Object.fromEntries(["hydro", "pyro", "cryo", "electro"].map(eleKey => [eleKey, {
-        name: <span className={`text-${eleKey}`}><b>{ElementalData[eleKey].name}</b></span>,
-        fields: [{
-          canShow: stats => {
-            const value = stats.conditionalValues?.character?.venti?.q
-            if (!value) return false
-            const [num, condEleKey] = value
-            if (!num || condEleKey !== eleKey) return false
-            return true
-          },
-          text: "Absorption DoT",
-          formulaText: stats => <span>{(data.burst.hit[stats.tlvl.burst] / 2)?.toFixed(2)}% {Stat.printStat(`${eleKey}_burst_${stats.hitMode}`, stats)}</span>,
-          formula: formula.burst[`${eleKey}_hit`],
-          variant: eleKey
-        }, {
-          canShow: stats => stats.ascension >= 4,
-          text: <span>Regen 15 Energy to all <span className={`text-${eleKey}`}>{ElementalData[eleKey].name}</span> characters.</span>,
-        }],
-        stats: stats => ({
-          ...stats.constellation >= 6 && { [`${eleKey}_enemyRes_`]: -20 }
-        })
-      }]))
-    }
+    states: Object.fromEntries(["hydro", "pyro", "cryo", "electro"].map(eleKey => [eleKey, {
+      name: <span className={`text-${eleKey}`}><b>{ElementalData[eleKey].name}</b></span>,
+      fields: [{
+        canShow: stats => {
+          const value = stats.conditionalValues?.character?.venti?.q as IConditionalValue | undefined
+          if (!value) return false
+          const [num, condEleKey] = value
+          if (!num || condEleKey !== eleKey) return false
+          return true
+        },
+        text: "Absorption DoT",
+        formulaText: stats => <span>{(data.burst.hit[stats.tlvl.burst] / 2)?.toFixed(2)}% {Stat.printStat(`${eleKey}_burst_${stats.hitMode}`, stats)}</span>,
+        formula: formula.burst[`${eleKey}_hit`],
+        variant: eleKey
+      }, {
+        canShow: stats => stats.ascension >= 4,
+        text: <span>Regen 15 Energy to all <span className={`text-${eleKey}`}>{ElementalData[eleKey].name}</span> characters.</span>,
+      }],
+      stats: stats => ({
+        ...stats.constellation >= 6 && { [`${eleKey}_enemyRes_`]: -20 }
+      })
+    }]))
   },
   c4: { // HurricaneOfFreedom
     canShow: stats => stats.constellation >= 4,

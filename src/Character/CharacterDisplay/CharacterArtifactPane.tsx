@@ -34,7 +34,7 @@ function CharacterArtifactPane({ characterSheet, weaponSheet, character, charact
     artid => history.push({
       pathname: "/artifact",
       artToEditId: artid
-    }), [history])
+    } as any), [history])
   const artifactSheets = usePromise(ArtifactSheet.getAll())
 
   const equipArts = useCallback(() => {

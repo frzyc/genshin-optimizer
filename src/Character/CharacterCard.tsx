@@ -106,7 +106,7 @@ export default function CharacterCard({ characterKey, onEdit, onDelete, cardClas
       <Button as={Link} to={{
         pathname: "/build",
         characterKey
-      }}>Generate Builds</Button>
+      } as any}>Generate Builds</Button>
     </Card.Footer>}
   </Card>)
 }

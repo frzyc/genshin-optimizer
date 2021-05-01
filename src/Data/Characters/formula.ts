@@ -22,7 +22,7 @@ import razor from './Razor/data'
 import rosaria from './Rosaria/data'
 import sucrose from './Sucrose/data'
 import tartaglia from './Tartaglia/data'
-// import traveler_anemo from './Traveler_Anemo/data'
+import traveler_anemo from './Traveler_Anemo/data'
 // import traveler_geo from './Traveler_Geo/data'
 import venti from './Venti/data'
 import xiao from './Xiao/data'
@@ -57,7 +57,7 @@ const formula: IFormulaSheets = {
   rosaria,
   sucrose,
   tartaglia,
-  // traveler_anemo,
+  traveler_anemo,
   // traveler_geo,
   venti,
   xiao,

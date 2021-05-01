@@ -1,16 +1,17 @@
 import { Badge, Card, ListGroup } from "react-bootstrap"
 import ConditionalDisplay from "../../Character/CharacterDisplay/Components/ConditionalDisplay"
 import FieldDisplay from "../../Character/CharacterDisplay/Components/FieldDisplay"
+import { ArtifactSetKey, SetNum } from "../../Types/consts"
+import ICalculatedStats from "../../Types/ICalculatedStats"
 import statsToFields from "../../Util/FieldUtil"
 import { usePromise } from "../../Util/ReactUtil"
 import { ArtifactSheet } from "../ArtifactSheet"
 
-export default function SetEffectDisplay({ setKey, setNumKey, equippedBuild, newBuild, editable, characterDispatch }) {
+export default function SetEffectDisplay({ setKey, setNumKey, equippedBuild, newBuild, editable, characterDispatch }: Data) {
   const sheet = usePromise(ArtifactSheet.get(setKey))
-
   if (!sheet) return null
 
-  const stats = newBuild ? newBuild : equippedBuild
+  const stats = newBuild ?? equippedBuild!
   const setEffectText = sheet.setEffectTexts(setNumKey, stats)
   const setStats = sheet.setNumStats(setNumKey, stats)
   const setStatsFields = statsToFields(setStats, stats)
@@ -26,4 +27,13 @@ export default function SetEffectDisplay({ setKey, setNumKey, equippedBuild, new
     </Card>
     {Boolean(conditionals) && Object.entries(conditionals!).map(([ckey, conditional]) => <ConditionalDisplay key={ckey as any} {...{ conditional, equippedBuild, newBuild, characterDispatch, editable }} />)}
   </>
+}
+
+type Data = {
+  setKey: ArtifactSetKey,
+  setNumKey: SetNum,
+  editable: boolean,
+  newBuild?: ICalculatedStats,
+  equippedBuild?: ICalculatedStats
+  characterDispatch: (arg0: any) => void,
 }

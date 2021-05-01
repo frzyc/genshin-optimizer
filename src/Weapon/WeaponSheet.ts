@@ -27,9 +27,6 @@ export default class WeaponSheet {
   }
   get description() { return this.sheet.description }
   get baseStats() { return this.sheet.baseStats }
-  stats = (build: ICalculatedStats): object | undefined => {
-    const stats = this.sheet.stats
-    return evalIfFunc(stats, build)
-  }
+  stats = (build: ICalculatedStats): object | false | undefined => evalIfFunc(this.sheet.stats, build)
   get conditionals() { return this.sheet.conditionals }
 }

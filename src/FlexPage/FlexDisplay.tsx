@@ -18,7 +18,7 @@ export default function TestDisplay() {
       return <Redirect to={`/flex?${_createFlexObj(character, character.artifacts)}`} />
     return <Display character={character} />
   } else {
-    const characterKey = location.characterKey
+    const characterKey = (location as any).characterKey
     if (!characterKey) return <Redirect to={`/`} />
     const flexObj = createFlexObj(characterKey)
     if (!flexObj) return <Redirect to={`/`} />

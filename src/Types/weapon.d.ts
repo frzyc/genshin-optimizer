@@ -16,6 +16,6 @@ export interface IWeaponSheet {
     substatKey: string,
     sub?: number[]
   },
-  stats?: object | ((stats: ICalculatedStats) => object)
+  stats?: object | ((stats: ICalculatedStats) => object | false)
   conditionals?: IConditionals
 }

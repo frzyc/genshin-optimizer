@@ -1,18 +1,8 @@
 import { getTalentStatKey } from '../../../Build/Build'
 import DisplayPercent from "../../../Components/DisplayPercent"
-import { IConditionals } from '../../../Types/IConditional'
 import { IWeaponSheet } from '../../../Types/weapon'
 import img from './Weapon_Sword_of_Descension.png'
 
-const conditionals: IConditionals = {
-  d: {
-    name: "Traveller",
-    maxStack: 1,
-    stats: () => ({
-      atk: 66
-    })
-  }
-}
 const weapon: IWeaponSheet = {
   name: "Sword of Descension",
   weaponType: "sword",
@@ -26,6 +16,8 @@ const weapon: IWeaponSheet = {
     substatKey: "atk_",
     sub: [7.7, 8.9, 10.4, 12, 13.5, 13.5, 15.1, 16.6, 18.2, 19.7, 19.7, 21.3, 22.8, 22.8, 24.4, 25.9, 25.9, 27.5, 29, 29, 30.5, 32.1, 32.1, 33.6, 35.2],
   },
-  conditionals,
+  stats: stats => stats.characterKey.startsWith("traveler") && {
+    atk: 66
+  },
 }
 export default weapon

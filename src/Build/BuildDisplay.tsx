@@ -23,7 +23,7 @@ import Stat from '../Stat';
 import { IArtifact } from '../Types/artifact';
 import { ArtifactsBySlot, BuildSetting } from '../Types/Build';
 import { ICharacter } from '../Types/character';
-import { allSlotKeys, ArtifactSetKey, SlotKey } from '../Types/consts';
+import { allSlotKeys, ArtifactSetKey, SetNum, SlotKey } from '../Types/consts';
 import ICalculatedStats from '../Types/ICalculatedStats';
 import { IFieldDisplay } from '../Types/IFieldDisplay';
 import { useForceUpdate, usePromise } from '../Util/ReactUtil';
@@ -329,7 +329,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
                       </ButtonGroup>
                     </Card.Header>
                     {setKey ? <Card.Body><Row className="mb-n2">
-                      {!!initialStats && Object.keys(artifactSheets?.[setKey]?.setEffects ?? {}).filter((setNkey: any) => parseInt(setNkey) <= setNum).map(setNumKey =>
+                      {!!initialStats && Object.keys(artifactSheets?.[setKey].setEffects ?? {}).map(setNKey => parseInt(setNKey) as SetNum).filter(setNkey => setNkey <= setNum).map(setNumKey =>
                         <SetEffectDisplay newBuild={undefined} key={setKey + setNumKey} {...{ setKey, setNumKey, equippedBuild: initialStats, characterDispatch, editable: true }} />)}
                     </Row></Card.Body> : null}
                   </Card>
@@ -549,7 +549,7 @@ function ArtConditionalModal({ showArtCondModal, setshowArtCondModal, initialSta
                   </Row>
                 </Card.Header>
                 <Card.Body><Row className="mb-n2">
-                  {Boolean(setKey) && Object.keys(sheet.setEffects).map(setNumKey =>
+                  {Boolean(setKey) && Object.keys(sheet.setEffects).map(key => parseInt(key) as SetNum).map(setNumKey =>
                     <SetEffectDisplay newBuild={undefined} key={setKey + setNumKey} {...{ setKey, setNumKey, equippedBuild: initialStats, editable: true, characterDispatch, }} />)}
                 </Row></Card.Body>
               </Card>

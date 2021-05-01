@@ -20,7 +20,7 @@ const conditionals: IConditionals = {
       },
       s2: {
         name: "2 Stacks",
-        stats: { atk_: 18 },
+        stats: { atk_: 18, physical_dmg_: 25 },
         fields: [{
           text: "Duration",
           value: "7s"

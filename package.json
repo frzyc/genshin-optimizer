@@ -1,19 +1,19 @@
 {
   "homepage": "https://frzyc.github.io/genshin-optimizer/",
   "name": "genshin-optimizer",
-  "version": "5.3.1",
+  "version": "5.4.0",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-brands-svg-icons": "^5.15.3",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "@fortawesome/react-fontawesome": "^0.1.13",
-    "@testing-library/jest-dom": "^5.11.10",
+    "@testing-library/jest-dom": "^5.12.0",
     "@testing-library/react": "^11.2.6",
     "@testing-library/user-event": "^12.8.3",
-    "@types/jest": "^26.0.22",
-    "@types/node": "^14.14.41",
-    "@types/react": "^17.0.3",
+    "@types/jest": "^26.0.23",
+    "@types/node": "^14.14.43",
+    "@types/react": "^17.0.4",
     "@types/react-dom": "^17.0.3",
     "bootstrap": "^4.6.0",
     "node-sass": "^4.14.1",
@@ -33,7 +33,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "testserver": "set PUBLIC_URL= && npm run build && node ./test-server.js",
+    "testserver": "set PUBLIC_URL= && npm run build && node ./test-server.ts",
     "analyze": "source-map-explorer 'build/static/js/*.js'",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
@@ -58,6 +58,7 @@
     ]
   },
   "devDependencies": {
+    "@types/react-router-dom": "^5.1.7",
     "express": "^4.17.1",
     "gh-pages": "^3.1.0",
     "worker-loader": "^3.0.8"

@@ -52,6 +52,7 @@ export default function CharacterTalentPane(props: CharacterTalentPaneProps) {
       {/* passives */}
       {passivesList.map(([tKey, tText, asc]) => {
         let enabled = ascension >= asc
+        if (!characterSheet.getTalent(tKey)) return null
         return <Col key={tKey} style={{ opacity: enabled ? 1 : 0.5 }} xs={12} md={4} className="mb-2">
           <SkillDisplayCard
             {...skillDisplayProps}
