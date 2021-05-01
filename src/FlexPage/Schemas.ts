@@ -4,14 +4,11 @@
 // compress the exported data. Removing an item
 // from this list will shift subsequent entries.
 
-import { allSlotKeys, allElements, allArtifactSets, allHitModes, allCharacterKeys } from "../Types/consts"
+import { allSlotKeys, allElements, allArtifactSets, allHitModes, allReactionModes, allCharacterKeys } from "../Types/consts"
 import { crawlObject } from "../Util/Util"
 import { uintToString, stringToUInt } from "./CodingUtil"
 
 const elements = ['', ...allElements] as const
-const reactionModes = [
-  null, "hydro_vaporize", "pyro_vaporize", "pyro_melt", "cryo_melt",
-] as const
 const stats = [
   "", "hp", "hp_", "atk", "atk_", "def", "def_", "eleMas", "enerRech_", "critRate_", "critDMG_", "heal_",
   "physical_dmg_", "anemo_dmg_", "cryo_dmg_", "dendro_dmg_", "electro_dmg_", "geo_dmg_", "hydro_dmg_", "pyro_dmg_",
@@ -47,7 +44,7 @@ const artifactSet = fixed(allArtifactSets)
 const slot = fixed(allSlotKeys)
 const characterKey = fixed(allCharacterKeys)
 const hitMode = fixed(allHitModes)
-const reactionMode = fixed(reactionModes)
+const reactionMode = fixed([null, ...allReactionModes])
 const element = fixed(elements)
 
 // Complex schemas
@@ -207,5 +204,5 @@ export const schemas = {
 }
 // For testing purpose only, no need to maintain strict ordering
 export const constants = {
-  reactionModes, stats
+  reactionModes: [null, ...allReactionModes], stats
 }

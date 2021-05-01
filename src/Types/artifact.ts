@@ -1,8 +1,8 @@
-import { ArtifactSet, Rarity, SetNum, SlotKey } from "./consts";
+import { ArtifactSetKey, Rarity, SetNum, SlotKey } from "./consts";
 import ICalculatedStats from "./ICalculatedStats";
 import IConditional, { IConditionalComplex, IConditionals } from "./IConditional";
 
-export type IArtifactSheets = StrictDict<ArtifactSet, IArtifactSheet>
+export type IArtifactSheets = StrictDict<ArtifactSetKey, IArtifactSheet>
 
 export interface IArtifactSheet {
   name: string,
@@ -24,7 +24,7 @@ export type StatDict = Dict<StatKey, number>
 
 export interface IArtifact {
   id?: string,
-  setKey: ArtifactSet,
+  setKey: ArtifactSetKey,
   numStars: Rarity,
   level: number,
   slotKey: SlotKey,

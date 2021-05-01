@@ -1,3 +1,4 @@
+import { HitModeKey } from "./consts";
 export default interface ICalculatedStats {
   characterKey: string
   weapon: {
@@ -17,6 +18,10 @@ export default interface ICalculatedStats {
   equippedArtifacts: object //TODO: when is this considered attached?
   setToSlots: object//TODO: type
   weaponType: string
+  hitMode: HitModeKey
+  reactionMode: reactionModeKey | null
+
+  finalHP: number
 }
 
 type ConditionalValues = {

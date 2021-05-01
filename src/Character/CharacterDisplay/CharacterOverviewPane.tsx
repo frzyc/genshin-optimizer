@@ -14,6 +14,7 @@ import Stat from "../../Stat"
 import { ICharacter } from "../../Types/character"
 import { allElements } from "../../Types/consts"
 import ICalculatedStats from "../../Types/ICalculatedStats"
+import { IConditionals } from "../../Types/IConditional"
 import statsToFields from "../../Util/FieldUtil"
 import { usePromise } from "../../Util/ReactUtil"
 import { clamp } from "../../Util/Util"
@@ -172,7 +173,7 @@ function WeaponStatsEditorCard({ characterSheet, weaponSheet, editable, characte
   const weaponDisplaySubVal = weapon.overrideSubVal || Weapon.getWeaponSubstatVal(weaponSheet, weapon.levelKey)
   const weaponPassiveName = weaponSheet.passiveName
   const weaponBonusStats = weaponSheet.stats(build)
-  const conditionals = Conditional.conditionals.weapon[weapon.key]
+  const conditionals = Conditional.conditionals.weapon[weapon.key] as IConditionals
   return <Card bg="lightcontent" text={"lightfont" as any} className="mb-2">
     <Card.Header>
       <Row>

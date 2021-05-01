@@ -7,7 +7,7 @@ import { ArtifactSubstatLookupTable } from '../Data/ArtifactLookupTable';
 import Stat from '../Stat';
 import { clampPercent, closeEnoughFloat, closeEnoughInt, deepClone, evalIfFunc } from '../Util/Util';
 import { IArtifact, MainStatKey, SetEffectEntry, SubstatKey } from '../Types/artifact';
-import { SlotKey, Rarity, ArtifactSet, allSlotKeys, SetNum } from '../Types/consts';
+import { SlotKey, Rarity, ArtifactSetKey, allSlotKeys, SetNum } from '../Types/consts';
 import ICalculatedStats from '../Types/ICalculatedStats';
 import { ArtifactSheet } from './ArtifactSheet';
 import Conditional from '../Conditional/Conditional';
@@ -29,8 +29,8 @@ export default class Artifact {
 
   static slotMainStats = (slotKey: SlotKey): MainStatKey[] => ArtifactSlotsData[slotKey].stats
 
-  static setEffectsObjs = (artifactSheets: StrictDict<ArtifactSet, ArtifactSheet>, stats: ICalculatedStats): Dict<ArtifactSet, Dict<SetNum, SetEffectEntry>> => {
-    let result: Dict<ArtifactSet, Dict<SetNum, SetEffectEntry>> = {};
+  static setEffectsObjs = (artifactSheets: StrictDict<ArtifactSetKey, ArtifactSheet>, stats: ICalculatedStats): Dict<ArtifactSetKey, Dict<SetNum, SetEffectEntry>> => {
+    let result: Dict<ArtifactSetKey, Dict<SetNum, SetEffectEntry>> = {};
     //accumulate the non-conditional stats
     Object.entries(artifactSheets).forEach(([setKey, setObj]) => {
       let setEffect: Dict<SetNum, SetEffectEntry> = {}
@@ -202,7 +202,7 @@ export default class Artifact {
   }
 
   //start with {slotKey:art} end with {setKey:[slotKey]}
-  static setToSlots = (artifacts: Dict<SlotKey, IArtifact>): Dict<ArtifactSet, SlotKey[]> => {
+  static setToSlots = (artifacts: Dict<SlotKey, IArtifact>): Dict<ArtifactSetKey, SlotKey[]> => {
     let setToSlots = {};
     Object.entries(artifacts).forEach(([key, art]) => {
       if (!art) return

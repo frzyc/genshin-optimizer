@@ -3,14 +3,15 @@ import { Card, ListGroup } from "react-bootstrap"
 import Conditional from "../../../Conditional/Conditional"
 import ConditionalSelector from "../../../Conditional/ConditionalSelector"
 import ICalculatedStats from "../../../Types/ICalculatedStats"
+import IConditional from "../../../Types/IConditional"
 import statsToFields from "../../../Util/FieldUtil"
 import { deletePropPath, layeredAssignment, objClearEmpties } from "../../../Util/Util"
 import FieldDisplay from "./FieldDisplay"
 type ConditionalDisplayProps = {
-  conditional: any,//TODO: type
+  conditional: IConditional,
   equippedBuild?: ICalculatedStats,
   newBuild?: ICalculatedStats,
-  characterDispatch: (any) => void,
+  characterDispatch: (any) => void,//TODO: characterDispatch type
   editable: boolean,
   fieldClassName?: string
 }
@@ -24,11 +25,11 @@ export default function ConditionalDisplay({ conditional, equippedBuild, newBuil
   const setConditional = useCallback(condV => {
     const [conditionalNum = 0] = condV
     if (!conditionalNum) {
-      deletePropPath(stats.conditionalValues, conditional.keys)
+      deletePropPath(stats.conditionalValues, conditional!.keys)
       objClearEmpties(stats.conditionalValues)
-    } else layeredAssignment(stats.conditionalValues, conditional.keys, condV)
+    } else layeredAssignment(stats.conditionalValues, conditional!.keys, condV)
     characterDispatch({ conditionalValues: stats.conditionalValues })
-  }, [stats.conditionalValues, conditional.keys, characterDispatch])
+  }, [conditional, stats.conditionalValues, characterDispatch])
 
   if (!canShow) return null
   return <Card bg="darkcontent" text={"lightfont" as any} className="mb-2 w-100">
@@ -37,7 +38,8 @@ export default function ConditionalDisplay({ conditional, equippedBuild, newBuil
         conditional={conditional}
         conditionalValue={conditionalValue}
         setConditional={setConditional}
-        name={conditional.name} />
+        name={conditional.name}
+        stats={stats} />
     </Card.Header>
     <ListGroup className="text-white" variant="flush">
       {displayFields.map((field, i) => <FieldDisplay key={i} index={i} {...{ field, equippedBuild, newBuild, className: fieldClassName }} />)}
