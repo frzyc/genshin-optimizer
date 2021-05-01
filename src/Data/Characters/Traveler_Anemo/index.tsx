@@ -9,14 +9,14 @@ import c6 from './Constellation_Interwinded_Winds.png'
 import normal from './Talent_Foreign_Ironwind.png'
 import skill from './Talent_Palm_Vortex.png'
 import burst from './Talent_Gust_Surge.png'
-import passive3 from './Talent_Slitting_Wind.png'
+import passive1 from './Talent_Slitting_Wind.png'
 import passive2 from './Talent_Second_Wind.png'
 import ElementalData from '../../ElementalData'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from "../../../Build/Build"
 import { ICharacterSheet } from '../../../Types/character';
-import { IConditionals } from '../../../Types/IConditional'
+import { IConditionals, IConditionalValue } from '../../../Types/IConditional'
 const conditionals: IConditionals = {
   q: { // Absorption
     name: "Elemental Absorption",
@@ -25,23 +25,28 @@ const conditionals: IConditionals = {
         name: <span className={`text-${eleKey}`}><b>{ElementalData[eleKey].name}</b></span>,
         fields: [{
           canShow: stats => {
-            const value = stats.conditionalValues?.traveller_anemo?.venti?.q
+            const value = stats.conditionalValues?.character?.traveler_anemo?.q as IConditionalValue | undefined
             if (!value) return false
             const [num, condEleKey] = value
             if (!num || condEleKey !== eleKey) return false
             return true
           },
           text: "Absorption DoT",
-          formulaText: stats => <span>{data.burst.ele_dmg[stats.tlvl.burst]?.toFixed(2)}% {Stat.printStat(`${eleKey}_burst_${stats.hitMode}`, stats)}</span>,
+          formulaText: stats => <span>{data.burst.ele_dmg[stats.tlvl.burst]}% {Stat.printStat(`${eleKey}_burst_${stats.hitMode}`, stats)}</span>,
           formula: formula.burst[`${eleKey}_hit`],
           variant: eleKey
         },],
         stats: stats => ({
+          ...stats.constellation >= 6 && { anemo_enemyRes_: - 20 },
           ...stats.constellation >= 6 && { [`${eleKey}_enemyRes_`]: -20 }
         })
       }]))
     }
   },
+  c2: {
+    name: "Uprising Whirlwind",
+    stats: { enerRech_: 16 }
+  }
 }
 
 const char: ICharacterSheet = {
@@ -138,7 +143,7 @@ const char: ICharacterSheet = {
           text: "Max Charging CD",
           value: "8s",
         }, {
-          canShow: stats => stats.ascension >= 3,//TODO: where is this from? this doesnt seem right
+          canShow: stats => stats.constellation >= 4,
           text: "Reduce DMG taken while casting",
           value: "10%",
         }],
@@ -166,13 +171,22 @@ const char: ICharacterSheet = {
         }, {
           text: "Energy Cost",
           value: 60,
-        }, {
-          canShow: stats => stats.constellation >= 6,
-          text: <span>Enemy <span className="text-anemo">Anemo RES</span> decrease</span>,
-          value: "20%"
         }],
         conditional: conditionals.q
       }],
+    },
+    passive1: {
+      name: "Slitting Wind",
+      img: passive1,
+      document: [{
+        text: <span>The last hit of a Normal Attack combo unleases a wind blade, dealing 60% of ATK as <span className="text-anemo">Anemo DMG</span> to all opponents in its path.</span>,
+        fields: [{
+          text: "Anemo Auto",
+          formulaText: stats => <span>60% * {Stat.printStat("finalATK", stats)}</span>,
+          formula: formula.passive3.windAuto,
+          variant: stats => getTalentStatKeyVariant("normal", stats, true),
+        }]
+      }]
     },
     passive2: {
       name: "Second Wind",
@@ -187,19 +201,6 @@ const char: ICharacterSheet = {
         }]
       }]
     },
-    passive3: {
-      name: "Slitting Wind",
-      img: passive3,
-      document: [{
-        text: <span>The last hit of a Normal Attack combo unleases a wind blade, dealing 60% of ATK as <span className="text-anemo">Anemo DMG</span> to all opponents in its path.</span>,
-        fields: [{
-          text: "Anemo Auto",
-          formulaText: stats => <span>60% * {Stat.printStat("finalATK", stats)}</span>,
-          formula: formula.passive3.windAuto,
-          variant: stats => getTalentStatKeyVariant("normal", stats, true),
-        }]
-      }]
-    },
     constellation1: {
       name: "Raging Vortext",
       img: c1,
@@ -209,23 +210,15 @@ const char: ICharacterSheet = {
       name: "Uprising Whirlwind",
       img: c2,
       document: [{
-        text: <span>Increases Energy Recharge by 16%.</span>
-      },
-      stats => stats.constellation >= 2 && {
-        type: "character",
-        sourceKey: "Traveler (Anemo)",
-        maxStack: 1,
-        stats: {
-          enerRech_: 16, //TODO: Figure out why this no add to stat?????
-        }
-      }
-      ]
+        text: <span>Increases Energy Recharge by 16%.</span>,
+        conditional: conditionals.c2
+      }]
     },
     constellation3: {
       name: "Sweeping Gust",
       img: c3,
       document: [{ text: <span>Increases the Level of <b>Gust Surge</b> by 3. Maximum upgrade level is 15.</span> }],
-      talentBoost: { burst: 3 }
+      stats: { burstBoost: 3 }
     },
     constellation4: {
       name: "Cherishing Breeze",
@@ -236,7 +229,7 @@ const char: ICharacterSheet = {
       name: "Vortext Stellaris",
       img: c5,
       document: [{ text: <span>Increases the Level of <b>Palm Vortex</b> by 3. Maximum upgrade level is 15.</span> }],
-      talentBoost: { skill: 3 }
+      stats: { skillBoost: 3 }
     },
     constellation6: {
       name: "Intertwined Winds",

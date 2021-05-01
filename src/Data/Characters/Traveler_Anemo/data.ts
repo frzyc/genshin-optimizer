@@ -54,11 +54,13 @@ const formula: IFormulaSheet = {
   burst: {
     dmg: stats => basicDMGFormula(data.burst.dmg[stats.tlvl.burst], stats, "burst"),
     ...Object.fromEntries((["hydro", "pyro", "cryo", "electro"]).map(ele =>
-      [`${ele}_dmg_bonus`, stats => [s => { return (data.burst.ele_dmg[stats.tlvl.burst] / 100) * s[`${ele}_burst_${stats.hitMode}`] }, [`${ele}_burst_${stats.hitMode}`]]])),//not optimizationTarget, dont need to precompute
+      [`${ele}_hit`, stats => [s => { return (data.burst.ele_dmg[stats.tlvl.burst] / 100) * s[`${ele}_burst_${stats.hitMode}`] }, [`${ele}_burst_${stats.hitMode}`]]])),//not optimizationTarget, dont need to precompute
   },
-  etc: {
-    p2: stats => [s => 0.02 * s.finalHP * s.heal_multi, ["finalHP", "heal_multi"]],
-    p3: stats => basicDMGFormula(60, stats, "normal", true), //Checked in-game, scales with normal attacks, Used black sword and 4pc glad.
+  passive2: {
+    heal: stats => [s => 0.02 * s.finalHP * s.heal_multi, ["finalHP", "heal_multi"]],
+  },
+  passive3: {
+    windAuto: stats => basicDMGFormula(60, stats, "normal", true),
   }
 }
 export default formula
