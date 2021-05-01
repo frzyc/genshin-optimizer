@@ -1,6 +1,7 @@
+import { IFormulaSheet } from "../../../Types/character"
 import { basicDMGFormula } from "../../../Util/FormulaUtil"
 
-const data = {
+export const data = {
   baseStat: {
     characterHP: [912, 2342, 3024, 4529, 5013, 5766, 6411, 7164, 7648, 8401, 8885, 9638, 10122, 10875],
     characterATK: [18, 46, 60, 88, 98, 112, 126, 140, 149, 164, 174, 188, 198, 213],
@@ -42,7 +43,7 @@ const data = {
   }
 }
 
-const formula = {
+const formula: IFormulaSheet = {
   normal: Object.fromEntries(data.normal.hitArr.map((percentArr, i) => [i, stats =>
     basicDMGFormula(percentArr[stats.tlvl.auto], stats, "normal")])),
   charged: Object.fromEntries(data.charged.hitArr.map((percentArr, i) => [i, stats =>
@@ -55,14 +56,9 @@ const formula = {
     ...Object.fromEntries((["hydro", "pyro", "cryo", "electro"]).map(ele =>
       [`${ele}_dmg_bonus`, stats => [s => { return (data.burst.ele_dmg[stats.tlvl.burst] / 100) * s[`${ele}_burst_${stats.hitMode}`] }, [`${ele}_burst_${stats.hitMode}`]]])),//not optimizationTarget, dont need to precompute
   },
-  passive2: {
-    heal: (tlvl, stats) => [s => 0.02 * s.finalHP * s.heal_multi, ["finalHP", "heal_multi"]],
-  },
-  passive3: {
-    windAuto: (tlvl, stats) => basicDMGFormula(60, stats, "normal", true), //Checked in-game, scales with normal attacks, Used black sword and 4pc glad.
+  etc: {
+    p2: stats => [s => 0.02 * s.finalHP * s.heal_multi, ["finalHP", "heal_multi"]],
+    p3: stats => basicDMGFormula(60, stats, "normal", true), //Checked in-game, scales with normal attacks, Used black sword and 4pc glad.
   }
 }
 export default formula
-export {
-  data
-}

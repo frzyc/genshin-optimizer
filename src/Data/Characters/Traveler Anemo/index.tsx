@@ -16,7 +16,33 @@ import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from "../../../Build/Build"
 import { ICharacterSheet } from '../../../Types/character';
-
+import { IConditionals } from '../../../Types/IConditional'
+const conditionals: IConditionals = {
+  q: { // Absorption
+    name: "Elemental Absorption",
+    states: {
+      ...Object.fromEntries(["hydro", "pyro", "cryo", "electro"].map(eleKey => [eleKey, {
+        name: <span className={`text-${eleKey}`}><b>{ElementalData[eleKey].name}</b></span>,
+        fields: [{
+          canShow: stats => {
+            const value = stats.conditionalValues?.traveller_anemo?.venti?.q
+            if (!value) return false
+            const [num, condEleKey] = value
+            if (!num || condEleKey !== eleKey) return false
+            return true
+          },
+          text: "Absorption DoT",
+          formulaText: stats => <span>{data.burst.ele_dmg[stats.tlvl.burst]?.toFixed(2)}% {Stat.printStat(`${eleKey}_burst_${stats.hitMode}`, stats)}</span>,
+          formula: formula.burst[`${eleKey}_hit`],
+          variant: eleKey
+        },],
+        stats: stats => ({
+          ...stats.constellation >= 6 && { [`${eleKey}_enemyRes_`]: -20 }
+        })
+      }]))
+    }
+  },
+}
 
 const char: ICharacterSheet = {
   name: "Traveler (Anemo)",
@@ -31,11 +57,11 @@ const char: ICharacterSheet = {
   baseStat: data.baseStat,
   specializeStat: data.specializeStat,
   formula,
+  conditionals,
   talent: {
     auto: {
       name: "Foreign Ironwind",
       img: normal,
-      infusable: false,
       document: [{
         text: <span><strong>Normal Attack</strong> Perform up to 5 rapid strikes.</span>,
         fields: data.normal.hitArr.map((percentArr, i) =>
@@ -79,15 +105,11 @@ const char: ICharacterSheet = {
       img: skill,
       document: [{
         text: <span>
-          <p className="mb-2">
-            Grasping the wind's might, you form a vortext of vacuum in your palm, causing continous <span className="text-anemo">Anemo DMG</span> to enemies in front of you. The vacuum vortext explodes when the skill duration ends, causing a greater amount of Anemo DMG over a larger area.
-          </p>
+          <p className="mb-2">Grasping the wind's might, you form a vortext of vacuum in your palm, causing continous <span className="text-anemo">Anemo DMG</span> to enemies in front of you. The vacuum vortext explodes when the skill duration ends, causing a greater amount of Anemo DMG over a larger area.</p>
           <p className="mb-2">
             <strong>Hold:</strong> DMG and AoE will gradually increase.
           </p>
-          <p>
-            <strong>Elemental Absorption:</strong> If the votext comes into contact with <span className="text-hydro">Hydro</span>/<span className="text-pyro">Pyro</span>/<span className="text-cryo">Cryo</span>/<span className="text-electro">Electro</span> elements, it will deal additional elemental DMG of that type. Elemental Absorption may only occur once per use.
-          </p>
+          <p><strong>Elemental Absorption:</strong> If the votext comes into contact with <span className="text-hydro">Hydro</span>/<span className="text-pyro">Pyro</span>/<span className="text-cryo">Cryo</span>/<span className="text-electro">Electro</span> elements, it will deal additional elemental DMG of that type. Elemental Absorption may only occur once per use.</p>
         </span>,
         fields: [{
           text: "Initial Cutting DMG",
@@ -115,7 +137,8 @@ const char: ICharacterSheet = {
         }, {
           text: "Max Charging CD",
           value: "8s",
-        }, stats => stats.ascension >= 3 && {
+        }, {
+          canShow: stats => stats.ascension >= 3,//TODO: where is this from? this doesnt seem right
           text: "Reduce DMG taken while casting",
           value: "10%",
         }],
@@ -126,12 +149,8 @@ const char: ICharacterSheet = {
       img: burst,
       document: [{
         text: <span>
-          <p className="mb-2">
-            Guiding the path of the wind currents, you summon a forward-moving tornado that pulls objects and opponents towards itself, dealing continous <span className="text-anemo">Anemo DMG</span>.
-          </p>
-          <p className="mb-2">
-            <strong>Elemental Absorption:</strong> If the tornado comes into contact with <span className="text-hydro">Hydro</span>/<span className="text-pyro">Pyro</span>/<span className="text-cryo">Cryo</span>/<span className="text-electro">Electro</span> elements, it will deal additional elemental DMG of that type. Elemental Absorption may only occur once per use.
-          </p>
+          <p className="mb-2">Guiding the path of the wind currents, you summon a forward-moving tornado that pulls objects and opponents towards itself, dealing continous <span className="text-anemo">Anemo DMG</span>.</p>
+          <p className="mb-2"><strong>Elemental Absorption:</strong> If the tornado comes into contact with <span className="text-hydro">Hydro</span>/<span className="text-pyro">Pyro</span>/<span className="text-cryo">Cryo</span>/<span className="text-electro">Electro</span> elements, it will deal additional elemental DMG of that type. Elemental Absorption may only occur once per use.</p>
         </span>,
         fields: [{
           text: "Tornado DMG",
@@ -147,26 +166,12 @@ const char: ICharacterSheet = {
         }, {
           text: "Energy Cost",
           value: 60,
-        }, stats => stats.constellation >= 6 && {
+        }, {
+          canShow: stats => stats.constellation >= 6,
           text: <span>Enemy <span className="text-anemo">Anemo RES</span> decrease</span>,
           value: "20%"
         }],
-        conditional: (["hydro", "pyro", "cryo", "electro"]).map(eleKey => ({
-          type: "character",
-          conditionalKey: "Absorption",
-          condition: <span><span className={`text-${eleKey}`}><b>{ElementalData[eleKey].name}</b></span> Absorption</span>,
-          sourceKey: "Traveler (Anemo)",
-          maxStack: 1,
-          fields: [{
-            text: "Absorbtion DMG",
-            formulaText: stats => <span>{data.burst.ele_dmg[stats.tlvl.burst]}% {Stat.printStat(`${eleKey}_burst_${stats.hitMode}`, stats)}</span>,
-            formula: formula.burst[`${eleKey}_dmg_bonus`],
-            variant: eleKey
-          }, stats => stats.constellation >= 6 && {
-            text: <span>Enemy <span className={`text-${eleKey}`}>{ElementalData[eleKey].name} RES</span> decrease</span>,
-            value: "20%"
-          }]
-        }))
+        conditional: conditionals.q
       }],
     },
     passive2: {
