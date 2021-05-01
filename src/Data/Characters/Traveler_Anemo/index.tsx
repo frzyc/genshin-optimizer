@@ -80,7 +80,7 @@ const char: ICharacterSheet = {
         text: <span><strong>Charged Attack</strong> Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.</span>,
         fields: data.charged.hitArr.map((percentArr, i) =>
         ({
-          text: `Charged ${i + 1}-Hit DMG`,
+          text: i == 1 ? `Male Charged 2-Hit DMG`: (i == 2 ? `Female Charged 2-Hit DMG` : `Charged ${i + 1}-Hit DMG`),
           formulaText: stats => <span>{percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
           formula: formula.charged[i],
           variant: stats => getTalentStatKeyVariant("charged", stats),
