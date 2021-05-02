@@ -395,7 +395,7 @@ async function artifactFromImage(urlFile: string, setOtherProgress, setSubstatPr
 
   if (setKey && numStars)
     if (!sheet?.rarity.includes(numStars)) {
-      numStars = 0;
+      numStars = sheet?.rarity[0] ?? 4
       numStarsText = <span className="text-danger">Could not detect artifact rarity.</span>
     }
 
@@ -484,17 +484,21 @@ async function artifactFromImage(urlFile: string, setOtherProgress, setSubstatPr
 
   let state: Partial<IArtifact> = {}
   if (!isNaN(level)) state.level = level
+  else state.level = 0
 
   if (setKey) {
     state.setKey = setKey as any
     texts.setKey = <span>Detected set <span className="text-success">{sheet?.name}</span></span>
-  } else
+  } else {
     texts.setKey = <span className="text-danger">Could not detect artifact set name.</span>
+    state.setKey = "ArchaicPetra"
+  }
 
   if (slotKey) {
     state.slotKey = slotKey
   } else {
     texts.slotKey = <span className="text-danger">Could not detect slot name.</span>
+    state.slotKey = "circlet"
   }
 
   if (substats) {
@@ -505,17 +509,25 @@ async function artifactFromImage(urlFile: string, setOtherProgress, setSubstatPr
       texts.substats = <span className="text-warning">Detected {len} substats, but there should be at least {low} substats.</span>
     else
       texts.substats = <span>Detected <span className="text-success">{len}</span> substats.</span>
-  } else
+  } else {
     texts.substats = <span className="text-danger">Could not detect any substats.</span>
+    state.substats = []
+  }
+  for (let i = state.substats!.length; i < 4; i++)
+    state.substats.push({ key: "", value: 0 })
 
   if (numStars) {
     state.numStars = numStars
     texts.numStars = numStarsText
+  } else {
+    state.numStars = sheet?.rarity[0] ?? 4
   }
   if (mainStatKey) {
     state.mainStatKey = mainStatKey as any
-  } else
+  } else {
     texts.mainStatKey = <span className="text-danger">Could not detect main stat.</span>
+    state.mainStatKey = Artifact.slotMainStats(state.slotKey)[0]
+  }
 
   return [state as IArtifact, texts]
 }
