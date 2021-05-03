@@ -33,7 +33,7 @@ export interface ICharacter {
   levelKey: string
   hitMode: string
   reactionMode: string | null
-  equippedArtifacts: object,
+  equippedArtifacts: StrictDict<SlotKey, string>,
   conditionalValues: any,
   baseStatOverrides: {},//overriding the baseStat
   weapon: {
@@ -51,6 +51,7 @@ export interface ICharacter {
   infusionAura: string
   constellation: number
   artifacts?: any[]//from flex TODO: type
+  buildSettings?: object
 }
 
 export type TalentSheet = Dict<string, TalentSheetElement>

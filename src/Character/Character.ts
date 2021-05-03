@@ -8,7 +8,7 @@ import CharacterDatabase from "../Database/CharacterDatabase";
 import { PreprocessFormulas } from "../StatData";
 import { GetDependencies } from "../StatDependency";
 import { ICharacter } from "../Types/character";
-import { allElements, allSlotKeys } from "../Types/consts";
+import { allElements, allSlotKeys, SlotKey } from "../Types/consts";
 import ICalculatedStats from "../Types/ICalculatedStats";
 import { deepClone, evalIfFunc } from "../Util/Util";
 import Weapon from "../Weapon/Weapon";
@@ -64,36 +64,33 @@ export default class Character {
   }
 
   //equipment, with consideration on swapping equipped.
-  static equipArtifacts = (characterKey, artifactIds) => {
+  static equipArtifacts = (characterKey: string, artIds: StrictDict<SlotKey, string>) => {
     const character = CharacterDatabase.get(characterKey)
     if (!character) return;
     const artIdsOnCharacter = character.equippedArtifacts;
-    let artIdsNotOnCharacter = artifactIds
 
     //swap, by slot
     allSlotKeys.forEach(slotKey => {
-      const artNotOnChar = ArtifactDatabase.get(artIdsNotOnCharacter?.[slotKey])
+      const artNotOnChar = ArtifactDatabase.get(artIds[slotKey])
+      if (!artNotOnChar) return
       if (artNotOnChar?.location === characterKey) return; //it is already equipped
       const artOnChar = ArtifactDatabase.get(artIdsOnCharacter?.[slotKey])
       const notCharLoc = (artNotOnChar?.location ?? "")
       //move current art to other char
       if (artOnChar) ArtifactDatabase.moveToNewLocation(artOnChar.id, notCharLoc)
       //move current art to other char
-      if (notCharLoc) CharacterDatabase.equipArtifact(notCharLoc, artOnChar)
+      if (notCharLoc) CharacterDatabase.equipArtifactOnSlot(notCharLoc, slotKey, artOnChar?.id ?? "")
       //move other art to current char
       if (artNotOnChar) ArtifactDatabase.moveToNewLocation(artNotOnChar.id, characterKey)
     })
     //move other art to current char
-    character.equippedArtifacts = Object.fromEntries(allSlotKeys.map(sKey => [sKey, ""]))
-    Object.entries(artifactIds).forEach(([key, artid]: any) =>
-      character.equippedArtifacts[key] = artid)
-    CharacterDatabase.update(character);
+    CharacterDatabase.equipArtifactBuild(characterKey, artIds);
   }
   static remove(characterKey) {
-    let character = CharacterDatabase.get(characterKey)
-    if (character.equippedArtifacts)
-      Object.values(character.equippedArtifacts).forEach(artid =>
-        ArtifactDatabase.moveToNewLocation(artid, ""))
+    const character = CharacterDatabase.get(characterKey)
+    if (!character) return
+    Object.values(character.equippedArtifacts).forEach(artid =>
+      ArtifactDatabase.moveToNewLocation(artid, ""))
     CharacterDatabase.remove(characterKey)
   }
 

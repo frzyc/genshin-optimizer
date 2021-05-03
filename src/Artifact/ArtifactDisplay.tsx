@@ -64,7 +64,7 @@ export default function ArtifactDisplay(props) {
     id => {
       const art = ArtifactDatabase.get(id);
       if (art && art.location)
-        CharacterDatabase.unequipArtifactOnSlot(art.location, art.slotKey);
+        CharacterDatabase.equipArtifactOnSlot(art.location, art.slotKey, "");
       ArtifactDatabase.removeArtifactById(id)
     }, [])
   const editArtifact = useCallback(

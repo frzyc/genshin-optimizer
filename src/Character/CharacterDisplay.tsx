@@ -53,7 +53,7 @@ export default function CharacterDisplay(props) {
   }, [forceUpdate])
   const allCharacterSheets: StrictDict<CharacterKey, CharacterSheet> | {} = usePromise(CharacterSheet.getAll()) ?? {}
   const sortingFunc = {
-    level: (ck) => Character.getLevel(CharacterDatabase.get(ck).levelKey),
+    level: (ck) => Character.getLevel(CharacterDatabase.get(ck)?.levelKey),
     rarity: (ck) => allCharacterSheets[ck]?.star
   }
   useEffect(() => {

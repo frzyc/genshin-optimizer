@@ -15,7 +15,7 @@ export default interface ICalculatedStats {
   conditionalValues: ConditionalValues
   mainStatAssumptionLevel: number
   modifiers?: object
-  equippedArtifacts: object //TODO: when is this considered attached?
+  equippedArtifacts?: StrictDict<SlotKey, string>
   setToSlots: object//TODO: type
   weaponType: string
   hitMode: HitModeKey

@@ -5,7 +5,7 @@ import ArtifactCard from '../../Artifact/ArtifactCard';
 import { ArtifactSheet } from '../../Artifact/ArtifactSheet';
 import SetEffectDisplay from '../../Artifact/Component/SetEffectDisplay';
 import { ICharacter } from '../../Types/character';
-import { allSlotKeys } from '../../Types/consts';
+import { allSlotKeys, SlotKey } from '../../Types/consts';
 import ICalculatedStats from '../../Types/ICalculatedStats';
 import { usePromise } from '../../Util/ReactUtil';
 import WeaponSheet from '../../Weapon/WeaponSheet';
@@ -39,13 +39,14 @@ function CharacterArtifactPane({ characterSheet, weaponSheet, character, charact
 
   const equipArts = useCallback(() => {
     if (!window.confirm("Do you want to equip this artifact build to this character?")) return
-    Character.equipArtifacts(characterKey, newBuild?.equippedArtifacts)
+    if (!newBuild) return
+    newBuild.equippedArtifacts && Character.equipArtifacts(characterKey, newBuild.equippedArtifacts)
     characterDispatch?.({ type: "fromDB" })
-  }, [characterKey, newBuild?.equippedArtifacts, characterDispatch])
+  }, [characterKey, newBuild, characterDispatch])
 
   const unequipArts = useCallback(() => {
     if (!window.confirm("Do you want to move all the artifacts equipped to inventory?")) return
-    Character.equipArtifacts(characterKey, Object.fromEntries(allSlotKeys.map(sKey => [sKey, ""])))
+    Character.equipArtifacts(characterKey, Object.fromEntries(allSlotKeys.map(sKey => [sKey, ""])) as StrictDict<SlotKey, string>)
     characterDispatch?.({ type: "fromDB" })
   }, [characterKey, characterDispatch])
   return <>
@@ -76,8 +77,8 @@ function CharacterArtifactPane({ characterSheet, weaponSheet, character, charact
             <ArtifactCard artifactObj={art} />
           </Col>
         }) : allSlotKeys.map(slotKey =>
-          Boolean(stats.equippedArtifacts[slotKey]) && <Col {...artLayoutSize} key={stats.equippedArtifacts[slotKey]} className="mb-2">
-            <ArtifactCard artifactId={stats.equippedArtifacts[slotKey]} mainStatAssumptionLevel={mainStatAssumptionLevel} onEdit={() => edit(stats.equippedArtifacts[slotKey])} />
+          Boolean(stats?.equippedArtifacts?.[slotKey]) && <Col {...artLayoutSize} key={stats?.equippedArtifacts?.[slotKey]} className="mb-2">
+            <ArtifactCard artifactId={stats?.equippedArtifacts?.[slotKey]} mainStatAssumptionLevel={mainStatAssumptionLevel} onEdit={() => edit(stats?.equippedArtifacts?.[slotKey])} />
           </Col>
         )}
     </Row>

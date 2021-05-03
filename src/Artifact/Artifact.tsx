@@ -226,13 +226,10 @@ export default class Artifact {
 
     //update Character
     if (intendedLocation)
-      CharacterDatabase.equipArtifact(intendedLocation, art)
+      CharacterDatabase.equipArtifactOnSlot(intendedLocation, art.slotKey, art.id)
 
     if (currentLocation) {
-      if (artifactToSwapWith)
-        CharacterDatabase.equipArtifact(currentLocation, artifactToSwapWith)
-      else
-        CharacterDatabase.unequipArtifactOnSlot(currentLocation, slotKey)
+      CharacterDatabase.equipArtifactOnSlot(currentLocation, slotKey, artifactToSwapWith?.id ?? "")
     }
   }
   static unequipArtifact(artifactId: string | undefined) {
@@ -240,7 +237,7 @@ export default class Artifact {
     if (!art || !art.location) return
     const location = art.location
     const slotKey = art.slotKey
-    CharacterDatabase.unequipArtifactOnSlot(location, slotKey)
+    CharacterDatabase.equipArtifactOnSlot(location, slotKey, "")
     ArtifactDatabase.moveToNewLocation(artifactId)
   }
 }

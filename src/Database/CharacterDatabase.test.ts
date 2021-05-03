@@ -9,6 +9,7 @@ describe('Test CharacterDatabase', () => {
   const char_test2 = {
     characterKey: "test2",
     levelKey: "L1",
+    equippedArtifacts: { "slot1": "", "slot2": "" }
   }
   beforeEach(() => {
     localStorage.clear()
@@ -29,7 +30,7 @@ describe('Test CharacterDatabase', () => {
     test('should get character', () => {
       expect(CharacterDatabase.get("test1")).toEqual(char_test1)
       expect(CharacterDatabase.get("test2")).toEqual(char_test2)
-      expect(CharacterDatabase.get("invalid")).toEqual(null)
+      expect(CharacterDatabase.get("invalid")).toEqual(undefined)
     })
   })
 
@@ -53,7 +54,7 @@ describe('Test CharacterDatabase', () => {
     test('should remove character', () => {
       const characterKey = "test1"
       CharacterDatabase.remove(characterKey)
-      expect(CharacterDatabase.get(characterKey)).toBe(null)
+      expect(CharacterDatabase.get(characterKey)).toBe(undefined)
       expect(JSON.parse(localStorage.getItem(`char_${characterKey}`)!)).toBe(null)
     })
   })
@@ -61,43 +62,43 @@ describe('Test CharacterDatabase', () => {
     test('should get', () => {
       expect(CharacterDatabase.getArtifactIDFromSlot("test1", "slot1")).toBe("art1")
       expect(CharacterDatabase.getArtifactIDFromSlot("test1", "slot2")).toBe("art2")
-      expect(CharacterDatabase.getArtifactIDFromSlot("test2", "slot2")).toBe(null)
+      expect(CharacterDatabase.getArtifactIDFromSlot("test2", "slot2")).toBe("")
     })
   })
   describe('equipArtifact()', () => {
     test('should equip', () => {
       const art1 = { id: "art_1", slotKey: "slot1" }
-      CharacterDatabase.equipArtifact("test1", art1)
+      CharacterDatabase.equipArtifactOnSlot("test1", "slot1", "art_1")
       expect(CharacterDatabase.getArtifactIDFromSlot("test1", "slot1")).toBe("art_1")
       const artnew = { id: "art_23", slotKey: "slot2" }
-      CharacterDatabase.equipArtifact("test2", artnew)
+      CharacterDatabase.equipArtifactOnSlot("test2", "slot2", "art_23")
       expect(CharacterDatabase.getArtifactIDFromSlot("test2", "slot2")).toBe("art_23")
     })
   })
   describe('unequipArtifactOnSlot()', () => {
     test('should unequip', () => {
-      CharacterDatabase.unequipArtifactOnSlot("test1", "slot1")
+      CharacterDatabase.equipArtifactOnSlot("test1", "slot1", "")
       expect(CharacterDatabase.getArtifactIDFromSlot("test1", "slot1")).toBe("")
 
-      CharacterDatabase.unequipArtifactOnSlot("test2", "slot1")
-      expect(CharacterDatabase.getArtifactIDFromSlot("test2", "slot1")).toBe(null)
+      CharacterDatabase.equipArtifactOnSlot("test2", "slot1", "")
+      expect(CharacterDatabase.getArtifactIDFromSlot("test2", "slot1")).toBe("")
     })
   })
   describe('equipArtifactBuild()', () => {
     test('should equip build', () => {
       const build = { slot1: "art1", slot2: "art2" }
       CharacterDatabase.equipArtifactBuild("test1", build)
-      expect(CharacterDatabase.get("test1").equippedArtifacts).toEqual(build)
+      expect(CharacterDatabase.get("test1")?.equippedArtifacts).toEqual(build)
       CharacterDatabase.equipArtifactBuild("test2", build)
-      expect(CharacterDatabase.get("test2").equippedArtifacts).toEqual(build)
+      expect(CharacterDatabase.get("test2")?.equippedArtifacts).toEqual(build)
     })
   })
   describe('unequipAllArtifacts()', () => {
     test('should empty equipped', () => {
       CharacterDatabase.equipArtifactBuild("test2", { slot1: "arttest_1", slot2: "arttest_2" })
       CharacterDatabase.unequipAllArtifacts()
-      expect(CharacterDatabase.get("test1").equippedArtifacts).toEqual({})
-      expect(CharacterDatabase.get("test2").equippedArtifacts).toEqual({})
+      expect(CharacterDatabase.get("test1")?.equippedArtifacts).toEqual({})
+      expect(CharacterDatabase.get("test2")?.equippedArtifacts).toEqual({})
     })
   })
 

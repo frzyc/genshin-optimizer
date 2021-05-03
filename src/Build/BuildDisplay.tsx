@@ -124,8 +124,8 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   useEffect(() => propCharacterKey && selectCharacter(propCharacterKey), [propCharacterKey, selectCharacter])//update when props update
   const character = useMemo(() => charDirty && CharacterDatabase.get(characterKey), [characterKey, charDirty])
   const characterSheet = usePromise(CharacterSheet.get(characterKey))
-  const weaponSheet = usePromise(WeaponSheet.get(character?.weapon?.key))
-  const initialStats = useMemo(() => charDirty && characterSheet && weaponSheet && Character.createInitialStats(character, characterSheet, weaponSheet), [character, charDirty, characterSheet, weaponSheet])
+  const weaponSheet = usePromise(character && WeaponSheet.get(character.weapon.key))
+  const initialStats = useMemo(() => charDirty && character && characterSheet && weaponSheet && Character.createInitialStats(character, characterSheet, weaponSheet), [character, charDirty, characterSheet, weaponSheet])
   const statsDisplayKeys = useMemo(() => charDirty && characterSheet && characterSheet.getDisplayStatKeys(initialStats), [initialStats, charDirty, characterSheet])
 
   //save build settings to character when buildSettings change, will cause infinite loop if add 'character' to dependency array
@@ -285,7 +285,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
                     </Card.Header>
                   </Card>}
                 {/* Hit mode options */}
-                {!!characterSheet?.hasTalentPage && <HitModeCard characterSheet={characterSheet} className="mb-2" character={character} />}
+                {!!characterSheet?.hasTalentPage && character && <HitModeCard characterSheet={characterSheet} className="mb-2" character={character} />}
                 {/* Final Stat Filter */}
                 {Boolean(statsDisplayKeys) && <StatFilterCard className="mb-2" statFilters={statFilters} statKeys={statsDisplayKeys?.basicKeys as any} setStatFilters={sFs => buildSettingsDispatch({ statFilters: sFs })} />}
               </Col>
@@ -646,6 +646,8 @@ type ArtifactDisplayItemProps = { characterSheet: CharacterSheet, weaponSheet: W
 //for displaying each artifact build
 function ArtifactDisplayItem({ characterSheet, weaponSheet, index, characterKey, build, statsDisplayKeys, onClick }: ArtifactDisplayItemProps) {
   const sheets = usePromise(ArtifactSheet.getAll())
+  const character = CharacterDatabase.get(characterKey)
+  if (!character) return null
   return (<div>
     <ListGroup.Item
       variant={index % 2 ? "customdark" : "customdarker"} className="text-white" action
@@ -656,7 +658,7 @@ function ArtifactDisplayItem({ characterSheet, weaponSheet, index, characterKey,
           {slotarr.map(slotKey => Artifact.slotIcon(slotKey))} {sheets?.[key].name ?? ""}
         </Badge>
       )}</h5>
-      <StatDisplayComponent editable={false} {...{ characterSheet, weaponSheet, character: CharacterDatabase.get(characterKey), newBuild: build, statsDisplayKeys, cardbg: (index % 2 ? "lightcontent" : "darkcontent") }} />
+      <StatDisplayComponent editable={false} {...{ characterSheet, weaponSheet, character, newBuild: build, statsDisplayKeys, cardbg: (index % 2 ? "lightcontent" : "darkcontent") }} />
     </ListGroup.Item>
   </div>)
 }

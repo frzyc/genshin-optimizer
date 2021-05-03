@@ -12,7 +12,7 @@ export default class ArtifactDatabase {
 
   }
   static isInvalid = (art) =>
-    !art || !art.setKey || !art.numStars || !art.slotKey || !art.mainStatKey || art.substats?.some(substat => substat.key && !substat.value)
+    !art || !art.setKey || !art.numStars || !art.slotKey || !art.mainStatKey || art.substats?.some(substat => substat.key && !substat.value) //TODO: is this necessary now that we are using typescript?
   static getArtifactDatabase = () => artifactDatabase;
   static getIdList = () => Object.keys(artifactDatabase);
   static populateDatebaseFromLocalStorage = () => {
@@ -50,6 +50,7 @@ export default class ArtifactDatabase {
     artifactDatabase[id] = dart;
     ArtifactDatabase.emitEvent()
     ArtifactDatabase.emitArtEvent(id, dart)
+    return id
   }
   static removeArtifactById = (artId) => {
     delete artifactDatabase[artId];

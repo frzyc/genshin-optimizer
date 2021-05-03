@@ -11,7 +11,7 @@ import WIPComponent from '../Components/WIPComponent';
 import { WeaponLevelKeys } from '../Data/WeaponData';
 import CharacterDatabase from '../Database/CharacterDatabase';
 import { ICharacter } from '../Types/character';
-import { allCharacterKeys } from '../Types/consts';
+import { allCharacterKeys, allSlotKeys } from '../Types/consts';
 import ICalculatedStats from '../Types/ICalculatedStats';
 import { usePromise } from '../Util/ReactUtil';
 import { deepClone } from '../Util/Util';
@@ -46,7 +46,7 @@ const initialCharacter = (characterKey): ICharacter => ({
   levelKey: "L1",//combination of level and ascension
   hitMode: "avgHit",
   reactionMode: null,
-  equippedArtifacts: {},
+  equippedArtifacts: Object.fromEntries(allSlotKeys.map(sKey => [sKey, ""])),
   conditionalValues: {},
   baseStatOverrides: {},//overriding the baseStat
   weapon: {
@@ -86,7 +86,7 @@ function characterReducer(state: ICharacter, action: characterReducerOverwriteAc
     case "overwrite":
       return { ...state, ...action.character }
     case "fromDB"://for equipping artifacts, that makes the changes in DB instead of in state.
-      return { ...state, ...CharacterDatabase.get(state.characterKey, {} as any) }
+      return { ...state, ...CharacterDatabase.get(state.characterKey) ?? {} }
     case "statOverride": {
       const { statKey, value, characterSheet, weaponSheet, } = action
       const baseStatOverrides = state.baseStatOverrides
@@ -118,7 +118,7 @@ export default function CharacterDisplayCard({ characterKey: propCharacterKey, c
   const firstUpdate = useRef(true)
   useEffect(() => {
     if (!propCharacterKey) return
-    const char = { ...initialCharacter(propCharacterKey), ...CharacterDatabase.get(propCharacterKey, {} as any) }
+    const char = { ...initialCharacter(propCharacterKey), ...CharacterDatabase.get(propCharacterKey) ?? {} }
     characterDispatch({ type: "overwrite", character: char })
   }, [propCharacterKey])
   useEffect(() => {
