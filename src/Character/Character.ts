@@ -108,7 +108,7 @@ export default class Character {
 
   static calculateBuildwithArtifact = (initialStats, artifacts, artifactSheets) => {
     const setToSlots = Artifact.setToSlots(artifacts)
-    let artifactSetEffectsStats = ArtifactSheet.setEffectsStats(artifactSheets, setToSlots)
+    let artifactSetEffectsStats = ArtifactSheet.setEffectsStats(artifactSheets, initialStats, setToSlots)
 
     let stats = deepClone(initialStats)
     //add artifact and artifactsets
