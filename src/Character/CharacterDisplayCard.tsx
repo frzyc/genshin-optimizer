@@ -63,6 +63,7 @@ const initialCharacter = (characterKey): ICharacter => ({
   },
   infusionAura: "",
   constellation: 0,
+  buildSettings: {}//use to reset when changing to a new character, so it would not copy from old character.
 })
 
 type characterReducerOverwrite = {

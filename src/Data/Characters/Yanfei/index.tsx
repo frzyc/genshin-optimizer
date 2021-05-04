@@ -217,7 +217,22 @@ const char: ICharacterSheet = {
           <p className="mb-2">When <b>Done Deal</b> is used:</p>
           <p className="mb-0">Creates a shield which absorbes upto 45% of Yanfei's Max HP for 15s. This shield absorbes <span className="text-pyro">Pyro DMG</span> 250% more efficiently.</p>
         </span>,
-        conditional: conditionals.c4
+        fields: [{
+          canShow: stats => stats.constellation >= 4,
+          text: <span className="text-pyro">Shield DMG Absorption</span>,
+          formulaText: stats => <span>45% {Stat.printStat("finalHP", stats)} * (100% + {Stat.printStat("powShield_", stats)}) * (250% <span className="text-pyro">Pyro Absorption</span>)</span>,
+          formula: formula.constellation4.shieldCryo,
+          variant: "pyro"
+        }, {
+          canShow: stats => stats.constellation >= 4,
+          text: "Shield DMG Absorption",
+          formulaText: stats => <span>45% {Stat.printStat("finalHP", stats)} * (100% + {Stat.printStat("powShield_", stats)})</span>,
+          formula: formula.constellation4.shield,
+        }, {
+          canShow: stats => stats.constellation >= 4,
+          text: "Duration",
+          value: "20s",
+        },]
       }],
     },
     constellation5: {

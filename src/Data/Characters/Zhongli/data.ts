@@ -76,7 +76,8 @@ const formula: IFormulaSheet = {
     shield: stats => {
       const base = data.skill.shieldBase[stats.tlvl.skill]
       const hpMulti = data.skill.shieldMaxHP[stats.tlvl.skill] / 100
-      return [s => hpMulti * s.finalHP + base, ["finalHP"]]
+      const shdStr = (1 + stats.powShield_ / 100) * 1.5
+      return [s => (hpMulti * s.finalHP + base) * shdStr, ["finalHP", "powShield_"]]
     }
   },
   burst: {

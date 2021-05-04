@@ -53,11 +53,18 @@ const formula: IFormulaSheet = {
   burst: {
     dmg: stats => basicDMGFormula(data.burst.dmg[stats.tlvl.burst], stats, "burst"),
   },
-  constellation4: {
-    dmg: stats => [s => 0.45 * s.finalHP, ["finalHP"]] //TODO: Add shield strength?
-  },
   passive2: {
     dmg: stats => basicDMGFormula(80, stats, "charged"),
-  }
+  },
+  constellation4: {
+    shield: stats => {
+      const shdStr = (1 + stats.powShield_ / 100)
+      return [s => 0.45 * s.finalHP * shdStr, ["finalHP", "powShield_"]]
+    },
+    shieldCryo: stats => {
+      const shdStr = (1 + stats.powShield_ / 100) * 2.5
+      return [s => 0.45 * s.finalHP * shdStr, ["finalHP", "powShield_"]]
+    },
+  },
 }
 export default formula

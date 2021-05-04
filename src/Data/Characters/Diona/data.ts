@@ -52,15 +52,29 @@ const formula: IFormulaSheet = {
   },
   plunging: Object.fromEntries(Object.entries(data.plunging).map(([key, arr]) => [key, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "plunging")])),
   skill: {
+    shieldCryo: stats => {
+      const hp = data.skill.shieldHp[stats.tlvl.skill] / 100
+      const flat = data.skill.shieldFlat[stats.tlvl.skill]
+      const shdStr = (1 + stats.powShield_ / 100) * 2.5 * (stats.constellation >= 2 ? 1.15 : 1)
+      return [s => (hp * s.finalHP + flat) * shdStr, ["finalHP", "powShield_"]]
+    },
     shield: stats => {
       const hp = data.skill.shieldHp[stats.tlvl.skill] / 100
       const flat = data.skill.shieldFlat[stats.tlvl.skill]
-      return [s => ((1 + (stats.constellation >= 2 ? 0.15 : 0)) * (hp * s.finalHP + flat)), ["finalHP"]] //TODO: Add shield strength
+      const shdStr = (1 + stats.powShield_ / 100) * (stats.constellation >= 2 ? 1.15 : 1)
+      return [s => (hp * s.finalHP + flat) * shdStr, ["finalHP", "powShield_"]]
+    },
+    shieldHoldCryo: stats => {
+      const hp = data.skill.shieldHp[stats.tlvl.skill] / 100
+      const flat = data.skill.shieldFlat[stats.tlvl.skill]
+      const shdStr = (1 + stats.powShield_ / 100) * 2.5 * 1.75 * (stats.constellation >= 2 ? 1.15 : 1)
+      return [s => (hp * s.finalHP + flat) * shdStr, ["finalHP", "powShield_"]]
     },
     shieldHold: stats => {
       const hp = data.skill.shieldHp[stats.tlvl.skill] / 100
       const flat = data.skill.shieldFlat[stats.tlvl.skill]
-      return [s => ((1.75 + (stats.constellation >= 2 ? 0.15 : 0)) * (hp * s.finalHP + flat)), ["finalHP"]] //TODO: Add shield strength
+      const shdStr = (1 + stats.powShield_ / 100) * 1.75 * (stats.constellation >= 2 ? 1.15 : 1)
+      return [s => (hp * s.finalHP + flat) * shdStr, ["finalHP", "powShield_"]]
     },
     dmg: stats => basicDMGFormula(data.skill.dmgPerPaw[stats.tlvl.skill], stats, "skill"),
   },

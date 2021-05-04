@@ -133,7 +133,7 @@ const swirlEleToDisplay = {
   "electro": <span>{Stat.getStatName("electro_swirl_hit")} <Image src={Assets.elements.electro} className="inline-icon" />+<Image src={Assets.elements.anemo} className="inline-icon" /></span>,
   "cryo": <span>{Stat.getStatName("cryo_swirl_hit")} <Image src={Assets.elements.cryo} className="inline-icon" />+<Image src={Assets.elements.anemo} className="inline-icon" /></span>,
   "hydro": <span>{Stat.getStatName("hydro_swirl_hit")} <Image src={Assets.elements.hydro} className="inline-icon" />+<Image src={Assets.elements.anemo} className="inline-icon" /></span>
-}
+} as const
 function SwirlCard({ stats }) {
   const [ele, setele] = useState(Object.keys(swirlEleToDisplay)[0])
   const sKey = `${ele}_swirl_hit`
@@ -156,10 +156,21 @@ function ShatteredCard({ stats }) {
     <span className="text-shattered">{Stat.getStatName(sKey)} <Image src={Assets.elements.hydro} className="inline-icon" />+<Image src={Assets.elements.cryo} className="inline-icon" />+ <small className="text-physical">Heavy Attack{information} </small> {stats[sKey]?.toFixed(Stat.fixedUnit(sKey))}</span>
   </Card.Body></Card>
 }
+const crystalizeEleToDisplay = {
+  "default": <span className="text-crystalize">{Stat.getStatName("crystalize_hit")} <Image src={Assets.elements.electro} className="inline-icon" />/<Image src={Assets.elements.hydro} className="inline-icon" />/<Image src={Assets.elements.pyro} className="inline-icon" />/<Image src={Assets.elements.cryo} className="inline-icon" />+<Image src={Assets.elements.geo} className="inline-icon" /></span>,
+  "pyro": <span>{Stat.getStatName("pyro_crystalize_hit")} <Image src={Assets.elements.pyro} className="inline-icon" />+<Image src={Assets.elements.geo} className="inline-icon" /></span>,
+  "electro": <span>{Stat.getStatName("electro_crystalize_hit")} <Image src={Assets.elements.electro} className="inline-icon" />+<Image src={Assets.elements.geo} className="inline-icon" /></span>,
+  "cryo": <span>{Stat.getStatName("cryo_crystalize_hit")} <Image src={Assets.elements.cryo} className="inline-icon" />+<Image src={Assets.elements.geo} className="inline-icon" /></span>,
+  "hydro": <span>{Stat.getStatName("hydro_crystalize_hit")} <Image src={Assets.elements.hydro} className="inline-icon" />+<Image src={Assets.elements.geo} className="inline-icon" /></span>
+} as const
 function CrystalizeCard({ stats }) {
-  const sKey = "crystalize_hit"
-  return <Card bg="darkcontent" text={"lightfont" as any}><Card.Body className="p-2">
-    <span className="text-crystalize">{Stat.getStatName(sKey)} <Image src={Assets.elements.electro} className="inline-icon" />/<Image src={Assets.elements.hydro} className="inline-icon" />/<Image src={Assets.elements.pyro} className="inline-icon" />/<Image src={Assets.elements.cryo} className="inline-icon" />+<Image src={Assets.elements.geo} className="inline-icon" /> {stats[sKey]?.toFixed(Stat.fixedUnit(sKey))}</span>
+  const [ele, setele] = useState(Object.keys(crystalizeEleToDisplay)[0])
+  const sKey = ele === "default" ? "crystalize_hit" : `${ele}_crystalize_hit`
+  return <Card bg="darkcontent" text={"lightfont" as any}><Card.Body className="p-0">
+    <DropdownButton size="sm" title={crystalizeEleToDisplay[ele]} className="d-inline-block" variant="success">
+      {Object.entries(crystalizeEleToDisplay).map(([key, element]) => <Dropdown.Item key={key} onClick={() => setele(key)}>{element}</Dropdown.Item>)}
+    </DropdownButton>
+    <span className={`text-${ele} p-2`}> {stats[sKey]?.toFixed(Stat.fixedUnit(sKey))}</span>
   </Card.Body></Card>
 }
 

@@ -57,7 +57,8 @@ const formula: IFormulaSheet = {
     },
     shield: stats => {
       const percent = data.skill.shield_def[stats.tlvl.skill] / 100, flat = data.skill.shield_flat[stats.tlvl.skill]
-      return [s => percent * s.finalDEF + flat, ["finalDEF"]]
+      const shdStr = (1 + stats.powShield_ / 100) * 1.5
+      return [s => (percent * s.finalDEF + flat) * shdStr, ["finalDEF", "powShield_"]]
     },
     heal: stats => {
       const percent = data.skill.heal_def[stats.tlvl.skill] / 100, flat = data.skill.heal_flat[stats.tlvl.skill]
@@ -76,7 +77,10 @@ const formula: IFormulaSheet = {
     dmg: stats => basicDMGFormula(400, stats, "elemental"),
   },
   passive1: {
-    dmg: stats => [s => 4 * s.finalDEF, ["finalDEF"]],
+    hp: stats => {
+      const shdStr = (1 + stats.powShield_ / 100) * 1.5
+      return [s => 4 * s.finalDEF * shdStr, ["finalDEF", "powShield_"]]
+    },
   }
 }
 export default formula

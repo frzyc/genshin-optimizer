@@ -115,7 +115,7 @@ const char: ICharacterSheet = {
           variant: stats => getTalentStatKeyVariant("skill", stats),
         }, {
           text: "Shield DMG Absorption",
-          formulaText: stats => <span>{data.skill.shield_def[stats.tlvl.skill]}% {Stat.printStat("finalDEF", stats)} + {data.skill.shield_flat[stats.tlvl.skill]}</span>,
+          formulaText: stats => <span>( {data.skill.shield_def[stats.tlvl.skill]}% {Stat.printStat("finalDEF", stats)} + {data.skill.shield_flat[stats.tlvl.skill]} ) * (100% + {Stat.printStat("powShield_", stats)}) * 150% All DMG Absorption</span>,
           formula: formula.skill.shield,
         }, {
           text: "Healing",
@@ -180,13 +180,13 @@ const char: ICharacterSheet = {
       document: [{
         text: stats => <span>
           <p className="mb-2">When Noelle is in the party but not on the field, this ability triggers automatically when your active character's HP falls below 30%:</p>
-          <p className="mb-0">Creates a shield for your active character that lasts for 20s and absorbs DMG equal to 400% of Noelle's DEF. This effect can only occur once every 60s.</p>
+          <p className="mb-0">Creates a shield for your active character that lasts for 20s and absorbs DMG equal to 400% of Noelle's DEF. The shield has a 150% DMG Absorption effectiveness against all Elemental and Physical DMG. This effect can only occur once every 60s.</p>
         </span>,
         fields: [{
           canShow: stats => stats.ascension >= 1,
-          text: "Shield strength",
-          formulaText: stats => <span>400% {Stat.printStat("finalDEF", stats)}</span>,
-          formula: formula.passive1.dmg,
+          text: "Shield Effective HP",
+          formulaText: stats => <span>400% {Stat.printStat("finalDEF", stats)} * (100% + {Stat.printStat("powShield_", stats)}) * 150% All DMG Absorption</span>,
+          formula: formula.passive1.hp,
         }, {
           canShow: stats => stats.ascension >= 1,
           text: "CD",

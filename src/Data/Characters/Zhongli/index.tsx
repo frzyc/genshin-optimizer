@@ -188,7 +188,7 @@ const char: ICharacterSheet = {
           variant: stats => getTalentStatKeyVariant("skill", stats),
         }, {
           text: "Shield Absorption",
-          formulaText: stats => <span>{data.skill.shieldBase[stats.tlvl.skill]} + {data.skill.shieldMaxHP[stats.tlvl.skill]}% {Stat.printStat("finalHP", stats)}</span>,
+          formulaText: stats => <span>( {data.skill.shieldBase[stats.tlvl.skill]} + {data.skill.shieldMaxHP[stats.tlvl.skill]}% {Stat.printStat("finalHP", stats)} ) * (100% + {Stat.printStat("powShield_", stats)}) * 150% All DMG Absorption</span>,
           formula: formula.skill.shield,
         }, {
           text: "Shield Duration",

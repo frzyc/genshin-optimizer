@@ -127,8 +127,13 @@ const char: ICharacterSheet = {
           </p>
         </span>,
         fields: [{
+          text: <span className="text-electro">Shield DMG Absorption</span>,
+          formulaText: stats => <span>( {data.skill.hp[stats.tlvl.skill]}% {Stat.printStat("finalHP", stats)} + {data.skill.flat[stats.tlvl.skill]} ) * (100% + {Stat.printStat("powShield_", stats)}) * (250% <span className="text-electro">Electro Absorption</span>)</span>,
+          formula: formula.skill.shieldElectro,
+          variant: "electro"
+        }, {
           text: "Shield DMG Absorption",
-          formulaText: stats => <span>{data.skill.hp[stats.tlvl.skill]}% {Stat.printStat("finalHP", stats)} + {data.skill.flat[stats.tlvl.skill]}</span>,
+          formulaText: stats => <span>( {data.skill.hp[stats.tlvl.skill]}% {Stat.printStat("finalHP", stats)} + {data.skill.flat[stats.tlvl.skill]} ) * (100% + {Stat.printStat("powShield_", stats)})</span>,
           formula: formula.skill.shield,
         }, {
           text: "Base DMG",
@@ -222,7 +227,21 @@ const char: ICharacterSheet = {
     constellation1: {
       name: "Sea Beast's Scourge",
       img: c1,
-      document: [{ text: stats => <span>When <b>Stormbreaker</b> is used: Creates a shield that absorbs up to 16% of Beidou's Max HP{DisplayPercent(16, stats, "finalHP")} for 15s. This shield absorbs <span className="text-electro">Electro DMG</span> 250% more effectively.</span> }],
+      document: [{
+        text: stats => <span>When <b>Stormbreaker</b> is used: Creates a shield that absorbs up to 16% of Beidou's Max HP{DisplayPercent(16, stats, "finalHP")} for 15s. This shield absorbs <span className="text-electro">Electro DMG</span> 250% more effectively.</span>,
+        fields: [{
+          canShow: stats => stats.constellation >= 1,
+          text: <span className="text-electro">Shield DMG Absorption</span>,
+          formulaText: stats => <span>16% {Stat.printStat("finalHP", stats)} * (100% + {Stat.printStat("powShield_", stats)}) * (250% <span className="text-electro">Electro Absorption</span>)</span>,
+          formula: formula.constellation1.shieldElectro,
+          variant: "electro"
+        }, {
+          canShow: stats => stats.constellation >= 1,
+          text: "Shield DMG Absorption",
+          formulaText: stats => <span>16% {Stat.printStat("finalHP", stats)} * (100% + {Stat.printStat("powShield_", stats)})</span>,
+          formula: formula.constellation1.shield,
+        },]
+      }],
     },
     constellation2: {
       name: "Upon the Turbulent Sea, the Thunder Arises",

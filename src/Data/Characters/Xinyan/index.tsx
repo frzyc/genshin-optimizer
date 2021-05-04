@@ -147,21 +147,18 @@ const char: ICharacterSheet = {
           formulaText: stats => <span>{data.skill.dmg[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
           formula: formula.skill.dmg,
           variant: stats => getTalentStatKeyVariant("skill", stats),
+        },
+        ...[...Array(3)].map((_, i) => i + 1).flatMap(i => [{
+          text: <span className="text-pyro">Shield Level {i} DMG Absorption</span>,
+          formulaText: stats => <span>( {data.skill[`def${i}`][stats.tlvl.skill]}% {Stat.printStat("finalDEF", stats)} + {data.skill[`flat${i}`][stats.tlvl.skill]} ) * (100% + {Stat.printStat("powShield_", stats)}) * (250% <span className="text-pyro">Pyro Absorption</span>)</span>,
+          formula: formula.skill[`shield${i}Pyro`],
+          variant: "pyro"
         }, {
-          text: "Shield Level 1 DMG Absorption",
-          formulaText: stats => <span>{data.skill.def1[stats.tlvl.skill]}% {Stat.printStat("finalDEF", stats)} + {data.skill.flat1[stats.tlvl.skill]}</span>,
-          formula: formula.skill.shield1,
-        }, {
-          text: "Shield Level 2 DMG Absorption",
-          formulaText: stats =>
-            <span>{data.skill.def2[stats.tlvl.skill]}% {Stat.printStat("finalDEF", stats)} + {data.skill.flat2[stats.tlvl.skill]}</span>,
-          formula: formula.skill.shield2,
-        }, {
-          text: "Shield Level 3 DMG Absorption",
-          formulaText: stats =>
-            <span>{data.skill.def3[stats.tlvl.skill]}% {Stat.printStat("finalDEF", stats)} + {data.skill.flat3[stats.tlvl.skill]}</span>,
-          formula: formula.skill.shield3,
-        }, {
+          text: `Shield Level ${i} DMG Absorption`,
+          formulaText: stats => <span>( {data.skill[`def${i}`][stats.tlvl.skill]}% {Stat.printStat("finalDEF", stats)} + {data.skill[`flat${i}`][stats.tlvl.skill]} ) * (100% + {Stat.printStat("powShield_", stats)})</span>,
+          formula: formula.skill[`shield${i}`],
+        }]),
+        {
           text: "Pyro DoT",
           formulaText: stats =>
             <span>{data.skill.dot[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
