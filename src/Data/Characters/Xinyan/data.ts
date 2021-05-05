@@ -67,14 +67,12 @@ const formula: IFormulaSheet = {
       [`shield${i}`, stats => {
         const percent = data.skill[`def${i}`][stats.tlvl.skill] / 100
         const flat = data.skill[`flat${i}`][stats.tlvl.skill]
-        const shdStr = (1 + stats.powShield_ / 100)
-        return [s => (percent * s.finalDEF + flat) * shdStr, ["finalDEF", "powShield_"]]
+        return [s => (percent * s.finalDEF + flat) * (1 + s.powShield_ / 100), ["finalDEF", "powShield_"]]
       }],
       [`shield${i}Pyro`, stats => {
         const percent = data.skill[`def${i}`][stats.tlvl.skill] / 100
         const flat = data.skill[`flat${i}`][stats.tlvl.skill]
-        const shdStr = (1 + stats.powShield_ / 100) * 2.5
-        return [s => (percent * s.finalDEF + flat) * shdStr, ["finalDEF", "powShield_"]]
+        return [s => (percent * s.finalDEF + flat) * (1 + s.powShield_ / 100) * 2.5, ["finalDEF", "powShield_"]]
       }],
     ])),
     dot: stats => basicDMGFormula(data.skill.dot[stats.tlvl.skill], stats, "skill"),

@@ -57,14 +57,8 @@ const formula: IFormulaSheet = {
     dmg: stats => basicDMGFormula(80, stats, "charged"),
   },
   constellation4: {
-    shield: stats => {
-      const shdStr = (1 + stats.powShield_ / 100)
-      return [s => 0.45 * s.finalHP * shdStr, ["finalHP", "powShield_"]]
-    },
-    shieldCryo: stats => {
-      const shdStr = (1 + stats.powShield_ / 100) * 2.5
-      return [s => 0.45 * s.finalHP * shdStr, ["finalHP", "powShield_"]]
-    },
+    shield: stats => [s => 0.45 * s.finalHP * (1 + s.powShield_ / 100), ["finalHP", "powShield_"]],
+    shieldCryo: stats => [s => 0.45 * s.finalHP * (1 + s.powShield_ / 100) * 2.5, ["finalHP", "powShield_"]],
   },
 }
 export default formula

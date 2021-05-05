@@ -216,7 +216,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
 
   //try to generate build when build numbers are low
   useEffect(() => {
-    if (totBuildNumber <= autoBuildGenLimit) generateBuilds()
+    if (totBuildNumber && totBuildNumber <= autoBuildGenLimit) generateBuilds()
     else setbuilds([])
   }, [characterKey, split, totBuildNumber, buildSettings, generateBuilds])
 
