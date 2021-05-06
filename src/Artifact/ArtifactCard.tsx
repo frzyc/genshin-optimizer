@@ -40,7 +40,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
   if (!art) return null
   if (!art.maximumEfficiency) Artifact.substatsValidation(art)
 
-  const { slotKey, numStars, level, mainStatKey, substats, lock, currentEfficiency = 0, maximumEfficiency = 0 } = art
+  const { id, slotKey, numStars, level, mainStatKey, substats, lock, currentEfficiency = 0, maximumEfficiency = 0 } = art
   const mainStatLevel = Math.max(Math.min(mainStatAssumptionLevel, numStars * 4), level)
   const mainStatVal = <span className={mainStatLevel !== level ? "text-orange" : ""}>{Artifact.mainStatValue(mainStatKey, numStars, mainStatLevel) ?? ""}{Stat.getStatUnit(mainStatKey)}</span>
   const artifactValid = art.maximumEfficiency !== undefined
@@ -102,11 +102,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
             {editable ? <OverlayTrigger placement="top"
               overlay={<Tooltip id="lock-artifact-tip">Locking a artifact will prevent the build generator from picking it for builds.</Tooltip>}>
               <span className="d-inline-block">
-                <Button size="sm"
-                  onClick={() => {
-                    art.lock = !lock
-                    ArtifactDatabase.update(art);
-                  }}>
+                <Button size="sm" onClick={() => ArtifactDatabase.setLocked(id, !lock)}>
                   <FontAwesomeIcon icon={lock ? faLock : faLockOpen} className="fa-fw" />
                 </Button>
               </span>

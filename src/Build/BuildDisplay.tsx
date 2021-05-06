@@ -89,6 +89,8 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   const [charDirty, setCharDirty] = useForceUpdate()
   const artifactSheets = usePromise(ArtifactSheet.getAll())
 
+  const [artsDirty, setArtsDirty] = useForceUpdate()
+
   const isMounted = useRef(false)
 
   const worker = useRef(null as Worker | null)
@@ -99,6 +101,12 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     CharacterDatabase.registerCharListener(characterKey, setCharDirty)
     return () => { characterKey && CharacterDatabase.unregisterCharListener(characterKey, setCharDirty) }
   }, [characterKey, setCharDirty])
+
+  //register changes in artifact database
+  useEffect(() => {
+    ArtifactDatabase.registerListener(setArtsDirty)
+    return () => { ArtifactDatabase.unregisterListener(setArtsDirty) }
+  }, [setArtsDirty])
 
   //terminate worker when component unmounts
   useEffect(() => () => worker.current?.terminate(), [])
@@ -158,8 +166,8 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     artifactsSlotsToSelectMainStats.forEach((slotKey, index) =>
       mainStatKeys[index] && (split[slotKey] = split[slotKey]?.filter((art) => art.mainStatKey === mainStatKeys[index])))
     const totBuildNumber = calculateTotalBuildNumber(split, setFilters)
-    return { split, totBuildNumber }
-  }, [characterKey, useLockedArts, useEquippedArts, mainStatKeys, setFilters])
+    return artsDirty && { split, totBuildNumber }
+  }, [characterKey, useLockedArts, useEquippedArts, mainStatKeys, setFilters, artsDirty])
 
   const generateBuilds = useCallback((turbo = false) => {
     if (!initialStats || !artifactSheets) return

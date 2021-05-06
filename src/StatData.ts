@@ -107,7 +107,7 @@ const Formulas = {
   crystalize_hit: (s, c) => (100 + s.crystalize_dmg_ + s.crystalize_eleMas_) / 100 * c.crystalize_multi,
 };
 
-["pyro", "cryo", "electro", "hydro"].map(ele => {
+["pyro", "cryo", "electro", "hydro"].forEach(ele => {
   StatData[`${ele}_crystalize_hit`] = { name: `Crystalize Shield ${hitElements[ele].name} Effective HP`, variant: ele }
   Formulas[`${ele}_crystalize_hit`] = s => s.crystalize_hit * 2.5
 })

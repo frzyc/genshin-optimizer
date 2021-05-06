@@ -72,7 +72,6 @@ export default class Character {
     //swap, by slot
     allSlotKeys.forEach(slotKey => {
       const artNotOnChar = ArtifactDatabase.get(artIds[slotKey])
-      if (!artNotOnChar) return
       if (artNotOnChar?.location === characterKey) return; //it is already equipped
       const artOnChar = ArtifactDatabase.get(artIdsOnCharacter?.[slotKey])
       const notCharLoc = (artNotOnChar?.location ?? "")

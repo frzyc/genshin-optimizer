@@ -1,7 +1,7 @@
 import ArtifactDatabase from "../Database/ArtifactDatabase"
 import CharacterDatabase from "../Database/CharacterDatabase"
 import { IArtifact } from "../Types/artifact"
-import { allSlotKeys } from "../Types/consts"
+import { allSlotKeys, SlotKey } from "../Types/consts"
 import WeaponSheet from "../Weapon/WeaponSheet"
 import Character from "./Character"
 import CharacterSheet from "./CharacterSheet"
@@ -39,22 +39,17 @@ describe('Character.getDisplayStatKeys()', () => {
   })
 })
 
-describe('Character.equipArtifacts', () => {
-  /**
-   * To validate bug:
-   * charA has artifacts a,b,c
-   * equip a,b,c to charB
-   * charA still has artifacts equipped
-   * a,b,c, still has .location B.
-   * expect: charA to be empty, a,b,c location to be charB
-   * 
-   */
-  test('test equip of artifacts from one char to another', () => {
+describe('Equipment functions', () => {
+  let a: IArtifact, b: IArtifact, c: IArtifact, d: IArtifact, e: IArtifact,
+    aID: string, bID: string, cID: string, dID: string, eID: string,
+    abcde: StrictDict<SlotKey, string>, empty: StrictDict<SlotKey, "">
+  let noelle, ningguang
+  beforeEach(() => {
     ArtifactDatabase.clearDatabase()
     CharacterDatabase.clearDatabase()
     localStorage.clear()
 
-    const a: IArtifact = {
+    a = {
       setKey: "GladiatorsFinale",
       numStars: 5,
       level: 20,
@@ -65,26 +60,26 @@ describe('Character.equipArtifacts', () => {
       location: "",
       lock: false
     }
-    const b = { ...a, slotKey: "plume" }
-    const c = { ...a, slotKey: "sands", location: "noelle" }
-    const d = { ...a, slotKey: "goblet", location: "noelle" }
-    const e = { ...a, slotKey: "circlet", location: "noelle" }
-    const aID = ArtifactDatabase.update(a)
-    const bID = ArtifactDatabase.update(b)
-    const cID = ArtifactDatabase.update(c)
-    const dID = ArtifactDatabase.update(d)
-    const eID = ArtifactDatabase.update(e)
-    const abcde = {
+    b = { ...a, slotKey: "plume" }
+    c = { ...a, slotKey: "sands", location: "noelle" }
+    d = { ...a, slotKey: "goblet", location: "noelle" }
+    e = { ...a, slotKey: "circlet", location: "noelle" }
+    aID = ArtifactDatabase.update(a)
+    bID = ArtifactDatabase.update(b)
+    cID = ArtifactDatabase.update(c)
+    dID = ArtifactDatabase.update(d)
+    eID = ArtifactDatabase.update(e)
+    abcde = {
       flower: aID,
       plume: bID,
       sands: cID,
       goblet: dID,
       circlet: eID
     }
-    const empty = Object.fromEntries(allSlotKeys.map(sk => [sk, ""]))
+    empty = Object.fromEntries(allSlotKeys.map(sk => [sk, ""])) as StrictDict<SlotKey, "">
 
     ArtifactDatabase.update(a)
-    const noelle = {
+    noelle = {
       characterKey: "noelle",
       equippedArtifacts: {
         flower: "",
@@ -95,27 +90,39 @@ describe('Character.equipArtifacts', () => {
       },
       levelKey: "lvl"
     }
-    const ningguang = {
+    ningguang = {
       characterKey: "ningguang",
       equippedArtifacts: empty,
       levelKey: "lvl"
     }
     CharacterDatabase.update(noelle)
     CharacterDatabase.update(ningguang)
-
-    //finish setup, time to test!
-    Character.equipArtifacts("ningguang", abcde)
-
-    const ningguangDB = CharacterDatabase.get("ningguang")
-    expect(ningguangDB?.equippedArtifacts).toEqual(abcde)
-
-    const noelleDB = CharacterDatabase.get("noelle")
-    expect(noelleDB?.equippedArtifacts).toEqual(empty)
-
-    Object.values(abcde).forEach(id => expect(ArtifactDatabase.get(id).location).toBe("ningguang"))
   })
+  describe('Character.equipArtifacts', () => {
+    test('unequip from one character to another', () => {
+      //finish setup, time to test!
+      Character.equipArtifacts("ningguang", abcde)
 
+      const ningguangDB = CharacterDatabase.get("ningguang")
+      expect(ningguangDB?.equippedArtifacts).toEqual(abcde)
 
+      const noelleDB = CharacterDatabase.get("noelle")
+      expect(noelleDB?.equippedArtifacts).toEqual(empty)
 
+      Object.values(abcde).forEach(id => expect(ArtifactDatabase.get(id).location).toBe("ningguang"))
+    })
+    test(`unequip`, () => {
+      Character.equipArtifacts("noelle", empty)
+      const noelleDB = CharacterDatabase.get("noelle")
+      expect(noelleDB?.equippedArtifacts).toEqual(empty)
+      Object.values(abcde).forEach(id => expect(ArtifactDatabase.get(id).location).toBe(""))
+    })
+  })
+  test(`Character.remove`, () => {
+    Character.remove("noelle")
+    const noelleDB = CharacterDatabase.get("noelle")
+    expect(noelleDB).toBe(undefined)
+    Object.values(abcde).forEach(id => expect(ArtifactDatabase.get(id).location).toBe(""))
+  })
 
 })
