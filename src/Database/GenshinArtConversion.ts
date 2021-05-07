@@ -132,7 +132,7 @@ function GetConvertedArtifactsVersion1(dataObj: any) {
           value: genshinArtSubstat.value,
         };
         if (substat.key.slice(-1) === "_") {
-          substat.value *= 100;  // decimal to percentage
+          substat.value = Math.round(substat.value * 1000) / 10;  // decimal to percentage
         }
         artifact.substats.push(substat);
       }
