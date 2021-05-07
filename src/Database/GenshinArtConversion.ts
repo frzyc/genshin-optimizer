@@ -50,6 +50,8 @@ const ArtifactSetKeyMap = new Map<string, ArtifactSetKey>([
   ["travelingDoctor", "TravelingDoctor"],
   ["viridescentVenerer", "ViridescentVenerer"],
   ["wandererTroupe", "WanderersTroupe"],
+  ["tenacityOfTheMillelith", "TenacityOfTheMillelith"],
+  ["paleFlame", "PaleFlame"],
 ]);
 
 const ArtifactMainStatKeyMap = new Map<string, MainStatKey>([
