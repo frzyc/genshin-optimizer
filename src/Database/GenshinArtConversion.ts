@@ -168,19 +168,25 @@ function GenshinArtImport(dataObj: any, deleteExisting: boolean, skipDupDetectio
   let artifactIdsToRemove = new Set(ArtifactDatabase.getIdList());
   for (const artifact of importedArtifacts) {
     const { dupId, isDup } = checkDuplicate(artifact);
-    if (dupId) {
-      artifactIdsToRemove.delete(dupId);
-      if (isDup) {
-        dupCount++;
-      } else {
-        upgradeCount++;
-        artifact.id = dupId;
-        ArtifactDatabase.update(artifact);
-      }
-    } else {
+    if (!dupId) {
       newCount++;
       ArtifactDatabase.update(artifact);
+      continue;
     }
+
+    artifactIdsToRemove.delete(dupId);
+
+    if (isDup) {
+      dupCount++;
+      continue;
+    }
+
+    upgradeCount++;
+    const oldArtifact = ArtifactDatabase.get(dupId);
+    artifact.id = dupId;
+    artifact.location = oldArtifact.location;
+    artifact.lock = oldArtifact.lock;
+    ArtifactDatabase.update(artifact);
   }
 
   let successMsg = `Import successful: ${importedArtifacts.length} total, ${newCount} new, ${upgradeCount} upgraded, ${dupCount} duplicate`;
