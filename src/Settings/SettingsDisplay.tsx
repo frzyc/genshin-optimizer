@@ -1,4 +1,4 @@
-import { useCallback, useState, useEffect } from "react"
+import { useState, useEffect } from "react"
 import { Alert, Badge, Button, Card, Col, Container, Dropdown, Form, Row } from "react-bootstrap"
 import ReactGA from 'react-ga'
 import { Trans, useTranslation } from "react-i18next"
