@@ -8,7 +8,7 @@ import CharacterDatabase from "../Database/CharacterDatabase";
 import { PreprocessFormulas } from "../StatData";
 import { GetDependencies } from "../StatDependency";
 import { ICharacter } from "../Types/character";
-import { allElements, allSlotKeys, SlotKey } from "../Types/consts";
+import { allElements, allSlotKeys, CharacterKey, SlotKey } from "../Types/consts";
 import ICalculatedStats from "../Types/ICalculatedStats";
 import { deepClone, evalIfFunc } from "../Util/Util";
 import Weapon from "../Weapon/Weapon";
@@ -64,7 +64,7 @@ export default class Character {
   }
 
   //equipment, with consideration on swapping equipped.
-  static equipArtifacts = (characterKey: string, artIds: StrictDict<SlotKey, string>) => {
+  static equipArtifacts = (characterKey: CharacterKey | "", artIds: StrictDict<SlotKey, string>) => {
     const character = CharacterDatabase.get(characterKey)
     if (!character) return;
     const artIdsOnCharacter = character.equippedArtifacts;

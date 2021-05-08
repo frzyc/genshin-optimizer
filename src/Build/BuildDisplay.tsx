@@ -20,10 +20,9 @@ import ArtifactDatabase from '../Database/ArtifactDatabase';
 import CharacterDatabase from '../Database/CharacterDatabase';
 import Formula from '../Formula';
 import Stat from '../Stat';
-import { IArtifact } from '../Types/artifact';
 import { ArtifactsBySlot, BuildSetting } from '../Types/Build';
 import { ICharacter } from '../Types/character';
-import { allSlotKeys, ArtifactSetKey, SetNum, SlotKey } from '../Types/consts';
+import { allSlotKeys, ArtifactSetKey, CharacterKey, SetNum, SlotKey } from '../Types/consts';
 import ICalculatedStats from '../Types/ICalculatedStats';
 import { IFieldDisplay } from '../Types/IFieldDisplay';
 import { useForceUpdate, usePromise } from '../Util/ReactUtil';
@@ -70,7 +69,7 @@ function buildSettingsReducer(state: BuildSetting, action): BuildSetting {
 }
 
 export default function BuildDisplay({ location: { characterKey: propCharacterKey } }) {
-  const [characterKey, setcharacterKey] = useState("")
+  const [characterKey, setcharacterKey] = useState("" as CharacterKey | "")
   const [buildSettings, buildSettingsDispatch] = useReducer(buildSettingsReducer, initialBuildSettings())
   const { setFilters, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useLockedArts, useEquippedArts, ascending, } = buildSettings
 
@@ -153,7 +152,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   const { split, totBuildNumber } = useMemo(() => {
     if (!characterKey) // Make sure we have all slotKeys
       return { split: Object.fromEntries(allSlotKeys.map(slotKey => [slotKey, []])) as ArtifactsBySlot, totBuildNumber: 0 }
-    const artifactDatabase: { [id: string]: IArtifact } = deepClone(ArtifactDatabase.getArtifactDatabase())
+    const artifactDatabase = deepClone(ArtifactDatabase.getArtifactDatabase())
     Object.entries(artifactDatabase).forEach(([key, art]) => {
       //if its equipped on the selected character, bypass the check
       if (art.location === characterKey) return

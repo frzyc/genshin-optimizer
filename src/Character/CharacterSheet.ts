@@ -15,7 +15,7 @@ const loadCharacterSheet = Object.fromEntries(allCharacterKeys.map(set =>
 export default class CharacterSheet {
   sheet: ICharacterSheet;
   constructor(charSheet: ICharacterSheet) { this.sheet = charSheet }
-  static get = (charKey: CharacterKey | string): Promise<CharacterSheet> | undefined => charKey ? loadCharacterSheet[charKey] : undefined
+  static get = (charKey: CharacterKey | ""): Promise<CharacterSheet> | undefined => charKey ? loadCharacterSheet[charKey] : undefined
   static getAll = (): Promise<StrictDict<CharacterKey, CharacterSheet>> => charImport
   get name() { return this.sheet.name }
   get cardImg() { return this.sheet.cardImg }

@@ -34,9 +34,9 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
   const sheet = usePromise(ArtifactSheet.get((artifactObj ?? (artifactId ? ArtifactDatabase.get(artifactId) : undefined))?.setKey))
   const equipOnChar = (charKey) => Artifact.equipArtifactOnChar(artifactId, charKey)
 
-  const editable = !artifactObj //dont allow edit for flex artifacts
-  const art = artifactObj || ArtifactDatabase.get(artifactId);
-  const characterSheet = usePromise(CharacterSheet.get(art.location))
+  const editable = !artifactObj // dont allow edit for flex artifacts
+  const art = artifactObj ?? ArtifactDatabase.get(artifactId);
+  const characterSheet = usePromise(CharacterSheet.get(art?.location ?? ""))
   if (!art) return null
   if (!art.maximumEfficiency) Artifact.substatsValidation(art)
 

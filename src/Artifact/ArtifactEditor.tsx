@@ -25,8 +25,12 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }) {
   const sheet = artifact ? artifactSheets?.[artifact.setKey] : undefined
 
   useEffect(() => {
-    if (artifactIdToEdit && artifactIdToEdit !== artifact?.id)
-      artifactDispatch({ type: "overwrite", artifact: deepClone(ArtifactDatabase.get(artifactIdToEdit)) })
+    if (artifactIdToEdit && artifactIdToEdit !== artifact?.id) {
+      const databaseArtifact = ArtifactDatabase.get(artifactIdToEdit)
+      if (databaseArtifact) {
+        artifactDispatch({ type: "overwrite", artifact: deepClone(databaseArtifact) })
+      }
+    }
   }, [artifactIdToEdit, artifact?.id])
 
   const getUpdloadDisplayReset = reset => uploadDisplayReset = reset
