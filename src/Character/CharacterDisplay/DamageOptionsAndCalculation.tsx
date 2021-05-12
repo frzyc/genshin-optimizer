@@ -17,7 +17,7 @@ import Character from "../Character";
 import CharacterSheet from "../CharacterSheet";
 import StatInput from "../StatInput";
 const infusionVals = {
-  "": <span>No Infusion</span>,
+  "": <span>No External Infusion</span>,
   "pyro": <span >Pyro Infusion</span>,
   "cryo": <span >Cryo Infusion</span>,
 }

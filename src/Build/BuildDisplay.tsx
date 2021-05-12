@@ -19,6 +19,7 @@ import { Stars } from '../Components/StarDisplay';
 import ArtifactDatabase from '../Database/ArtifactDatabase';
 import CharacterDatabase from '../Database/CharacterDatabase';
 import Formula from '../Formula';
+import InfoComponent from '../Components/InfoComponent';
 import Stat from '../Stat';
 import { ArtifactsBySlot, BuildSetting } from '../Types/Build';
 import { ICharacter } from '../Types/character';
@@ -30,6 +31,7 @@ import { timeStringMs } from '../Util/TimeUtil';
 import { crawlObject, deepClone, loadFromLocalStorage, saveToLocalStorage } from '../Util/Util';
 import WeaponSheet from '../Weapon/WeaponSheet';
 import { calculateTotalBuildNumber } from './Build';
+const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
 
 //lazy load the character display
 const CharacterDisplayCard = lazy(() => import('../Character/CharacterDisplayCard'))
@@ -272,7 +274,15 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   const hasMaxFilters = Object.entries(statFilters).some(([statKey, { max }]) => typeof max === "number")
   const disabledTurbo = ascending ? hasMinFilters : hasMaxFilters
 
-  return <Container>
+  return <Container className="mt-2">
+    <InfoComponent
+      pageKey="buildPage"
+      modalTitle="Character Management Page Guide"
+      text={["For self-infused attacks, like Noelle's Sweeping Time, enable to skill in the talent page.",
+        "You can compare the difference between equipped artifacts and generated builds.",
+        "TURBO mode can process millions of builds in seconds.",
+        "The more complex the formula, the longer the generation time.",]}
+    ><InfoDisplay /></InfoComponent>
     <BuildModal {...{ build: modalBuild, showCharacterModal, characterKey, selectCharacter, setmodalBuild, setshowCharacterModal }} />
     {!!initialStats && <ArtConditionalModal {...{ showArtCondModal, setshowArtCondModal, initialStats, characterDispatch, artifactCondCount }} />}
     <Row className="mt-2 mb-2">
@@ -423,8 +433,8 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
                 {/* Dropdown to select sorting value */}
                 {<ButtonGroup>
                   <Dropdown as={ButtonGroup} drop="up">
-                    <Dropdown.Toggle disabled={generatingBuilds} variant="success" >
-                      <span>Sort by {sortByText}</span>
+                    <Dropdown.Toggle disabled={generatingBuilds} variant="light" >
+                      <span>Optimization Target: {sortByText}</span>
                     </Dropdown.Toggle>
                     <Dropdown.Menu align="right" style={{ minWidth: "40rem" }} >
                       <Row>

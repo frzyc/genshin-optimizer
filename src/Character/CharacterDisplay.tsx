@@ -6,7 +6,7 @@ import ReactGA from 'react-ga';
 import { Link } from 'react-router-dom';
 import Assets from '../Assets/Assets';
 import CharacterDatabase from '../Database/CharacterDatabase';
-import InfoComponent from '../InfoComponent';
+import InfoComponent from '../Components/InfoComponent';
 import { allElements, CharacterKey } from '../Types/consts';
 import { useForceUpdate, usePromise } from '../Util/ReactUtil';
 import { loadFromLocalStorage, saveToLocalStorage } from '../Util/Util';
@@ -14,7 +14,7 @@ import Weapon from '../Weapon/Weapon';
 import Character from './Character';
 import CharacterCard from './CharacterCard';
 import CharacterSheet from './CharacterSheet';
-const CharacterDisplayInfo = React.lazy(() => import('./CharacterDisplayInfo'));
+const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
 
 //lazy load the character display
 const CharacterDisplayCard = lazy(() => import('./CharacterDisplayCard'))
@@ -110,9 +110,9 @@ export default function CharacterDisplay(props) {
         "You can see the details of the calculations of every number.",
         "You need to manually enable auto infusion for characters like Choungyun or Noelle.",
         "You can change character constellations in both \"Character\" tab and in \"Talents\" tab.",
-        "Modified character Stats show up in yellow."] as any}
+        "Modified character Stats show up in yellow."]}
     >
-      <CharacterDisplayInfo />
+      <InfoDisplay />
     </InfoComponent>
     {/* editor/character detail display */}
     {showEditor ? <Row className="mt-2"><Col>

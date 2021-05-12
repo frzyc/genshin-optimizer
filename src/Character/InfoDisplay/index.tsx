@@ -7,7 +7,7 @@ import enemyEditor from './enemyEditor.png'
 import ArtifactView from './ArtifactView.png'
 import TalentView from './TalentView.png'
 
-export default function CharacterDisplayInfo() {
+export default function CharacterInfoDisplay() {
   /**
    * Enemies & calculations
    *  hitMode
@@ -25,8 +25,6 @@ export default function CharacterDisplayInfo() {
    * talents & constellations
    *  talent conditional
    *  autoInfusion
-   * 
-   *  
    */
   return <>
     <Row className="mb-2">
@@ -49,7 +47,8 @@ export default function CharacterDisplayInfo() {
         <p>You can change the character to edit here. The Level template changes the default base stats that are populated in the editor for the character. Currently, GO only offers milestone templates, so the stats will need to be manually adjusted for non-milestone levels.</p>
         <h5>2. Navigation tabs</h5>
         <p>The tabs here navigate to different views of the character editor. Currently the <i>Character</i> view is enabled. The <i>Artifacts</i> and <i>Talents</i> view will be elaborated in their dedicated section below.</p>
-        <h5>3. Hit Mode & Reaction Mode</h5>
+        <h5>3. Party Infusion, Hit Mode & Reaction Mode</h5>
+        <p>If a character's autos can be infused with an element from their talents(e.g. <i>Chongyun's Spirit Blade: Chonghua's Layered Frost</i>), this will need to be manually enabled here.</p>
         <p>For the DMG numbers shown in GO, the <b>Hit Mode</b> determines how they are calculated: </p>
         <ul className="mb-0">
           <li><b>Avg. DMG:</b> The damage is averaged over CRIT Rate & CRIT DMG.</li>
@@ -110,7 +109,6 @@ export default function CharacterDisplayInfo() {
         <div>
           <h4>Talent View</h4>
           <p>This page shows all the detailed character talent/constellations details. This is also the place to set your talent levels of your talents.</p>
-          <p>If a character's autos can be infused with an element from their talents(e.g. <i>Chongyun's Spirit Blade: Chonghua's Layered Frost</i>), this will need to be manually enabled here.</p>
           <p>Any conditional stats from talents can be enabled here. </p>
         </div>
       </Col>

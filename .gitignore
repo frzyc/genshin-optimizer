@@ -29,3 +29,6 @@ yarn-error.log*
 .notes
 # template files
 TEMPLATE*
+
+#preedited images
+*_.png

@@ -193,7 +193,7 @@ export default function CharacterDisplayCard({ characterKey: propCharacterKey, c
               <small>Show New artifact Stats</small>
             </Button>
             <Button variant={!compareAgainstEquipped ? "primary" : "success"} disabled={compareAgainstEquipped} onClick={() => setcompareAgainstEquipped(true)}>
-              <small>Compare against equipped artifact</small>
+              <small>Compare against equipped artifacts</small>
             </Button>
           </ButtonGroup>
         </Col> : null}

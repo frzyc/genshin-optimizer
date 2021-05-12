@@ -12,7 +12,7 @@ import CustomFormControl from '../Components/CustomFormControl';
 import { Stars } from '../Components/StarDisplay';
 import ArtifactDatabase from '../Database/ArtifactDatabase';
 import CharacterDatabase from '../Database/CharacterDatabase';
-import InfoComponent from '../InfoComponent';
+import InfoComponent from '../Components/InfoComponent';
 import Stat from '../Stat';
 import { allMainStatKeys } from '../Types/artifact';
 import { allArtifactRarities, allSlotKeys } from '../Types/consts';
@@ -23,7 +23,7 @@ import ArtifactCard from './ArtifactCard';
 import ArtifactEditor from './ArtifactEditor';
 import { ArtifactSheet } from './ArtifactSheet';
 
-const ArtifactDisplayInfo = React.lazy(() => import('./ArtifactDisplayInfo'));
+const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
 const sortMap = {
   quality: "Quality",
   level: "Level",
@@ -183,9 +183,9 @@ export default function ArtifactDisplay(props) {
         "Substats with \"1\"s are the hardest to scan in screenshots.",
         "If all your rolls(6) went into a single substat, it will be purple!",
         "Click on \"Details\" when you are upgrading your artifacts in game to scan as you upgrade.",
-        "You can now upload mutiple artifact screenshots to scan!"] as any}
+        "You can now upload mutiple artifact screenshots to scan!"]}
     >
-      <ArtifactDisplayInfo />
+      <InfoDisplay />
     </InfoComponent>
     <div className="mb-2" ref={scrollRef}>
       <ArtifactEditor

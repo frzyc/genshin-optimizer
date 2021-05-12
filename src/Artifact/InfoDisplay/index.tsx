@@ -5,7 +5,7 @@ import { Stars } from '../../Components/StarDisplay'
 import artifactcard from './artifactcard.png'
 import artifacteditor from './artifacteditor.png'
 import artifactfilter from './artifactfilter.png'
-export default function ArtifactDisplayInfo() {
+export default function ArtifactInfoDisplay() {
   return <>
     <Row className="mb-2">
       <Col xs={12} lg={5} xl={4}>

@@ -2,9 +2,9 @@ import { faQuestionCircle, faTimes } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Suspense, useState } from "react"
 import { Button, Card, Col, Modal, Row, Spinner } from "react-bootstrap"
-import { getRandomElementFromArray, loadFromLocalStorage, saveToLocalStorage } from "./Util/Util"
+import { getRandomElementFromArray, loadFromLocalStorage, saveToLocalStorage } from "../Util/Util"
 
-export default function InfoComponent({ pageKey = "", text = "", modalTitle = "", children }) {
+export default function InfoComponent({ pageKey = "", text = "", modalTitle = "", children }: { pageKey: string, text: Displayable | Displayable[], modalTitle: Displayable, children: JSX.Element }) {
   const [showInfoModal, setshowInfoModal] = useState(loadFromLocalStorage("infoShown")?.[pageKey] ?? true)
   const [displayText,] = useState(Array.isArray(text) ? getRandomElementFromArray(text) : text)
   const closeModal = () => {
