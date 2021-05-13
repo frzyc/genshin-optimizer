@@ -182,7 +182,7 @@ function GenshinArtImport(dataObj: any, deleteExisting: boolean, skipDupDetectio
     }
 
     upgradeCount++;
-    const oldArtifact = ArtifactDatabase.get(dupId);
+    const oldArtifact = ArtifactDatabase.get(dupId)!;
     artifact.id = dupId;
     artifact.location = oldArtifact.location;
     artifact.lock = oldArtifact.lock;
