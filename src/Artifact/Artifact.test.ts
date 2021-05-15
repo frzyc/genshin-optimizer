@@ -38,7 +38,6 @@ describe('Substat Rolls/efficiency', () => {
     test('deal with invalid', () => {
       expect(Artifact.getSubstatRolls("def_", 10000, 4)).toEqual([])
       expect(Artifact.getSubstatRolls("def_", 0, 4)).toEqual([])
-      expect(Artifact.getSubstatRolls("def_", 10, 0)).toEqual([])
     })
   })
   describe('Artifact.getSubstatEfficiency()', () => {
@@ -51,20 +50,6 @@ describe('Substat Rolls/efficiency', () => {
       expect(Artifact.getSubstatEfficiency("def_", [9999, 9999, 9999, 9999])).toEqual(100)
       expect(Artifact.getSubstatEfficiency("def_", [-1])).toEqual(0)
       expect(Artifact.getSubstatEfficiency("", [-1])).toEqual(0)
-      expect(Artifact.getSubstatEfficiency(undefined, [])).toEqual(0)
-    })
-  })
-  describe('Artifact.getSubstatEfficiency()', () => {
-    test('should deal with one roll', () => {
-      expect(Artifact.getSubstatEfficiency("def_", [7.29])).toEqual(100)
-      expect(Artifact.getSubstatEfficiency("def_", [7.29 / 2])).toEqual(100 / 2)
-    })
-    test('should deal with invalids', () => {
-      expect(Artifact.getSubstatEfficiency("def_", [9999])).toEqual(100)
-      expect(Artifact.getSubstatEfficiency("def_", [9999, 9999, 9999, 9999])).toEqual(100)
-      expect(Artifact.getSubstatEfficiency("def_", [-1])).toEqual(0)
-      expect(Artifact.getSubstatEfficiency("", [-1])).toEqual(0)
-      expect(Artifact.getSubstatEfficiency(undefined, [])).toEqual(0)
     })
   })
 })
