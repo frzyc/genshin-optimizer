@@ -1,6 +1,6 @@
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useEffect, useMemo, useReducer } from 'react';
+import React, { useCallback, useEffect, useMemo, useReducer } from 'react';
 import { Alert, Badge, Button, ButtonGroup, Card, Col, Dropdown, DropdownButton, FormControl, InputGroup, OverlayTrigger, Popover, Row } from 'react-bootstrap';
 import CustomFormControl from '../Components/CustomFormControl';
 import { Stars } from '../Components/StarDisplay';
@@ -20,27 +20,27 @@ import { usePromise } from '../Util/ReactUtil';
 let uploadDisplayReset
 export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }) {
   const [artifact, artifactDispatch] = useReducer(artifactReducer, undefined)
-  const artifactInEditor = useMemo(() => !ArtifactDatabase.isInvalid(artifact), [artifact])
   const artifactSheets = usePromise(ArtifactSheet.getAll())
+
+  const artifactInEditor = artifact !== undefined
   const sheet = artifact ? artifactSheets?.[artifact.setKey] : undefined
 
   useEffect(() => {
     if (artifactIdToEdit && artifactIdToEdit !== artifact?.id) {
       const databaseArtifact = ArtifactDatabase.get(artifactIdToEdit)
-      if (databaseArtifact) {
+      if (databaseArtifact)
         artifactDispatch({ type: "overwrite", artifact: deepClone(databaseArtifact) })
-      }
     }
   }, [artifactIdToEdit, artifact?.id])
 
   const getUpdloadDisplayReset = reset => uploadDisplayReset = reset
 
-  const reset = () => {
+  const reset = useCallback(() => {
     cancelEdit?.();
     uploadDisplayReset?.()
     artifactDispatch({ type: "reset" })
-  }
-  const update = (newValue: Partial<IArtifact>) => {
+  }, [cancelEdit, artifactDispatch])
+  const update = useCallback((newValue: Partial<IArtifact>) => {
     const newSheet = newValue.setKey ? artifactSheets![newValue.setKey] : sheet!
 
     function pick<T>(value: T | undefined, available: readonly T[], prefer?: T): T {
@@ -63,10 +63,10 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }) {
         (artifact && artifact.substats[i].key !== newValue.mainStatKey) ? artifact!.substats[i] : { key: "", value: 0 })
     }
     artifactDispatch({ type: "update", artifact: newValue })
-  }
-  const setSubstat = (index: number, substat: Substat) => {
+  }, [artifact, artifactSheets, sheet, artifactDispatch])
+  const setSubstat = useCallback((index: number, substat: Substat) => {
     artifactDispatch({ type: "substat", index, substat })
-  }
+  }, [artifactDispatch])
 
   const { dupId, isDup } = useMemo(() => checkDuplicate(artifact), [artifact])
   const { numStars = 5, level = 0, slotKey = "flower" } = artifact ?? {}
