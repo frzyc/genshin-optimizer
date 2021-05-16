@@ -1,0 +1,31 @@
+{
+  "title": "Settings",
+  "languageCard": {
+    "selectLanguage": "Select Language",
+    "languageFormat": "Language: {{language}}"
+  },
+  "downloadCard": {
+    "databaseDownload": "Database Download",
+    "charsStored": "Character Stored <0>{{count}}</0> ",
+    "charsStored_plural": "<0>{{count}}</0> Characters Stored",
+    "artisStored": "<0>{{count}}</0> Artifact Stored",
+    "artisStored_plural": "<0>{{count}}</0> Artifacts Stored",
+    "databaseDisclaimer": "Notes: any data within the \"Tools\" page, e.g. Resin amount/timer, are not part of the downloaded database.",
+    "button": {
+      "download": "Download",
+      "copy": "Copy to Clipboard",
+      "delete": "Delete Database"
+    }
+  },
+  "uploadCard": {
+    "title": "Database Upload",
+    "replaceDatabase": "Replace Database",
+    "hint": "Upload your JSON file here...",
+    "hintPaste": "...or paste your data below.",
+    "numChar": "Number of Characters:",
+    "numArt": "Number of artifacts:"
+  },
+  "dialog": {
+    "delete-database": "Are you sure you want to delete your database? All existing characters and artifacts will be deleted."
+  }
+}

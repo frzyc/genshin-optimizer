@@ -1,0 +1,97 @@
+{
+  "constellationName": "Parma Cordis",
+  "auto": {
+    "name": "Favonius-Schwertkunst – Magd",
+    "fields": {
+      "normal": "<strong>Standardangriff</strong> Führt bis zu 4 Schwünge mit dem Schwert aus.",
+      "charged": "<strong>Heftiger Schlag</strong> Verbraucht fortlaufend Ausdauer, wirbelt das Großschwert und greift Gegner in der Umgebung an. Schwingt das Schwert am Ende mit besonders großer Wucht.",
+      "plunging": "<strong>Angriff aus dem Fall</strong> Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden."
+    }
+  },
+  "skill": {
+    "name": "Brustpanzer",
+    "description": {
+      "0": "Erschafft einen Geo-Panzer, der Gegnern in der Umgebung <geo>Geo-Schaden</geo>zufügt, sowie einen Schutzschild, der Schaden basierend auf Noelles VTD abhält.",
+      "1": "Effekte des Schutzschilds:",
+      "2": "- Noelle stellt allen Truppenmitgliedern bei Treffern mit Standardangriffen und heftigen Schlägen mit gewisser Wahrscheinlichkeit LP wieder her.",
+      "3": "- Hält bei elementarem sowie physischem Schaden 150 % ab.",
+      "4": "<br/>",
+      "5": "Heilkraft basiert auf Noelles VTD.",
+      "6": "<br/>",
+      "7": "<i>Noelle ist eine hingebungsvolle Magd, aber auch ein zielstrebiger Ritter.</i>"
+    }
+  },
+  "burst": {
+    "name": "Großreinigung",
+    "description": {
+      "0": "Konzentriert die Kraft der Felsen auf ihrer Waffe, greift Gegner in der Umgebung mit hoher Reichweite an und verursacht <geo>Geo-Schaden</geo>.",
+      "1": "Löst danach folgende Effekte aus:",
+      "2": "- Erhöht Noelles Angriffsreichweite.",
+      "3": "- Wandelt den verursachten Schaden in <geo>Geo-Schaden</geo> um. Diese Elementarumwandlung kann nicht von anderen Elementen überdeckt werden.",
+      "4": "- Erhöht Noelles ANG basierend auf Noelles VTD.",
+      "5": "<br/>",
+      "6": "<i>Was gesäubert werden muss, ist nicht immer nur einfacher Dreck ...</i>"
+    }
+  },
+  "passive1": {
+    "name": "Hingabe einer Magd",
+    "description": {
+      "0": "Stellt bei der perfekten Zubereitung eines Gerichts mit defensiver Funktion mit einer Wahrscheinlichkeit von 12 % den 2-fachen Ertrag her."
+    }
+  },
+  "passive2": {
+    "name": "Ernsthaftigkeit",
+    "description": {
+      "0": "Effekte, wenn Noelle inaktiv in der Truppe ist und die aktuelle eigene Figur weniger als 30 % LP hat:",
+      "1": "Erstellt einen Schutzschild für die aktuelle eigene Figur, der Schaden in Höhe von 400 % von Noelles VTD abhält, hält 20 s.",
+      "2": "- Hält bei elementarem sowie physischem Schaden 150 % ab.",
+      "3": "60 s Abklingzeit."
+    }
+  },
+  "passive3": {
+    "name": "Sauber und geschwind",
+    "description": {
+      "0": "Verringert die Abklingzeit von <strong>Brustpanzer</strong> alle vier Treffer mit Standardangriffen oder heftigen Schlägen um 1 s.",
+      "1": "Das gleichzeitige Treffen mehrerer Gegner zählt als ein Treffer."
+    }
+  },
+  "constellation1": {
+    "name": "Fürsorgliche Unterstützung",
+    "description": {
+      "0": "Löst den Heileffekt von Brustpanzer mit einer Wahrscheinlichkeit von 100 % aus, wenn sowohl <strong>Großreinigung</strong> als auch <strong>Brustpanzer</strong> aktiv sind."
+    }
+  },
+  "constellation2": {
+    "name": "Wirbelnde Magd",
+    "description": {
+      "0": "Verringert Noelles Ausdauerverbrauch für heftige Schläge um 20 % und erhöht den Schaden um 15 %."
+    }
+  },
+  "constellation3": {
+    "name": "Unverletzliche Magd",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Brustpanzer</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Zur Säuberung vorgesehen",
+    "description": {
+      "0": "Fügt Gegnern in der Umgebung nach dem Ende des Effekts von <strong>Brustpanzer</strong> oder nach Zerstörung des Schildes <geo>Geo-Schaden</geo> in Höhe von 400 % ANG zu."
+    }
+  },
+  "constellation5": {
+    "name": "Säuberungsexpertin des Ordens",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Großreinigung</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Putzfimmel",
+    "description": {
+      "0": "<strong>Großreinigung</strong> erhöht den ANG zusätzlich um 50 % der VTD von Noelle.",
+      "1": "Verlängert die Wirkungsdauer für jeden während der Dauer besiegten Gegner um 1 s und insgesamt um bis zu 10 s."
+    }
+  }
+}
