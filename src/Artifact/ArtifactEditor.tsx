@@ -2,20 +2,21 @@ import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useCallback, useEffect, useMemo, useReducer } from 'react';
 import { Alert, Badge, Button, ButtonGroup, Card, Col, Dropdown, DropdownButton, FormControl, InputGroup, OverlayTrigger, Popover, Row } from 'react-bootstrap';
+import { Trans } from 'react-i18next';
 import CustomFormControl from '../Components/CustomFormControl';
 import { Stars } from '../Components/StarDisplay';
-import { allSubstats, IArtifact, Substat, SubstatKey } from '../Types/artifact';
 import ArtifactDatabase from '../Database/ArtifactDatabase';
 import Stat from '../Stat';
+import { allSubstats, IArtifact, Substat, SubstatKey } from '../Types/artifact';
+import { allArtifactSets, Rarity, SlotKey } from '../Types/consts';
+import { usePromise } from '../Util/ReactUtil';
 import { valueString } from '../Util/UIUtil';
 import { clamp, deepClone, getRandomElementFromArray, getRandomIntInclusive } from '../Util/Util';
 import Artifact from './Artifact';
 import ArtifactCard from './ArtifactCard';
+import { ArtifactSheet } from './ArtifactSheet';
 import PercentBadge from './PercentBadge';
 import UploadDisplay from './UploadDisplay';
-import { allArtifactSets, Rarity, SlotKey } from '../Types/consts';
-import { ArtifactSheet } from './ArtifactSheet';
-import { usePromise } from '../Util/ReactUtil';
 
 let uploadDisplayReset
 export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }) {
@@ -72,7 +73,7 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }) {
   const { numStars = 5, level = 0, slotKey = "flower" } = artifact ?? {}
   const errMsgs = artifact ? Artifact.substatsValidation(artifact) : []
   return <Card bg="darkcontent" text={"lightfont" as any}>
-    <Card.Header>Artifact Editor</Card.Header>
+    <Card.Header><Trans i18nKey="artifact:editor.title" >Artifact Editor</Trans></Card.Header>
     <Card.Body>
       <Row>
         {/* Left column */}

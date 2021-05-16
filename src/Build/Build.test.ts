@@ -116,7 +116,7 @@ describe(`artifactPermutations()`, () => {
     expect(permutations).toContainEqual([{ flower: a[0], plume: b[0], sand: a[1], clock: a[2] }, { x: 7 + 11, y: 0 }]) // set 2
     expect(permutations).toContainEqual([{ flower: a[0], plume: a[0], sand: a[0], clock: a[2] }, { x: 6 + 11, y: 7 }]) // set 4
   })
-  test(`should include sub-stats and main-stats`, () => {
+  test(`should include sub-stats and mainStats`, () => {
     const a_ = { setKey: "A", mainStatKey: "other", mainStatVal: 2, substats: [{ key: "x", value: 1.2 }] }
     const artifacts = {
       flower: [a[0]],

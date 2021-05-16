@@ -75,7 +75,7 @@ function CalculationDisplay({ characterSheet, build }: { characterSheet: Charact
   const displayStatKeys = useMemo(() => characterSheet.getDisplayStatKeys(build), [build, characterSheet])
   return <div>
     {Object.entries(displayStatKeys).map(([talentKey, fields]) => {
-      let header = ""
+      let header: Displayable = ""
       if (talentKey === "basicKeys") header = "Basic Stats"
       else if (talentKey === "genericAvgHit") header = "Generic Optimization Values"
       else if (talentKey === "transReactions") header = "Transformation Reaction"

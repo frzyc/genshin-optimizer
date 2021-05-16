@@ -1,0 +1,28 @@
+{
+  "editor": {
+    "title": "Artifact Editor"
+  },
+  "artifactFilter": "Artifact Filter",
+  "filterLocation": {
+    "inventory": "Inventory",
+    "currentlyEquipped": "Currently Equipped"
+  },
+  "button": {
+    "unequipArtifacts": "Unequip Artifacts",
+    "deleteArtifacts": "Delete Artifacts",
+    "lockArtifacts": "Lock Artifacts",
+    "unlockArtifacts": "Unlock Artifacts"
+  },
+  "filterLevelFormat": "Level <1>Low</1>/<3>High</3> (Inclusive)",
+  "buttonHint": "Note: the above buttons only applies to <1>filtered artifacts</1>",
+  "tipsOfTheDay": [
+    "The maximum efficiency of a 4 star artifact is around 60%.",
+    "The maximum efficiency of an artifact will usually decrease as you upgrade. It's perfectly normal!",
+    "Substats with \"1\"s are the hardest to scan in screenshots.",
+    "If all your rolls(6) went into a single substat, it will be purple!",
+    "Click on \"Details\" when you are upgrading your artifacts in game to scan as you upgrade.",
+    "You can now upload mutiple artifact screenshots to scan!"
+  ],
+  "locked": "Locked",
+  "unlocked": "Unlocked"
+}

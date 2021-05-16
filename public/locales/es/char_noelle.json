@@ -1,0 +1,97 @@
+{
+  "constellationName": "Parma Cordis",
+  "auto": {
+    "name": "Técnica de espada Favonius - Criada",
+    "fields": {
+      "normal": "<strong>Ataque Normal</strong> Realiza hasta 4 tajos de espada consecutivos.",
+      "charged": "<strong>Ataque Cargado</strong> Consume Aguante de manera constante para realizar golpes de espada giratorios contra los enemigos cercanos. Al final del Ataque Cargado, realizará un golpe de espada más poderoso.",
+      "plunging": "<strong>Ataque Descendente</strong> Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto."
+    }
+  },
+  "skill": {
+    "name": "Guardiana del corazón",
+    "description": {
+      "0": "Invoca un recubrimiento Geo que inflige <geo>Daño Geo</geo> a los enemigos cercanos y absorbe daño en proporción a la DEF de Noelle. El escudo tiene los siguientes efectos:",
+      "1": [
+        "Cuando los Ataques Normales y Ataques Cargados de Noelle golpean un objetivo, hay una probabilidad de regenerar Vida para todos los miembros del equipo.",
+        "Posee un 150% de eficiencia de absorción contra todo el Daño Elemental y el Daño Físico."
+      ],
+      "2": "<br/>",
+      "3": "La cantidad de Vida curada es proporcional a la DEF de Noelle.",
+      "4": "<br/>",
+      "5": "<i>Noelle es una fiel criada y, al mismo tiempo, una valiente caballera.</i>"
+    }
+  },
+  "burst": {
+    "name": "Hora de limpiar",
+    "description": {
+      "0": "Al reunir el poder de la roca alrededor de su arma, Noelle golpea a los enemigos que la rodean dentro de una gran AdE, infligiendo <geo>Daño Geo</geo>.",
+      "1": "Después, Noelle obtiene los siguientes efectos:",
+      "2": [
+        "Aumenta el alcance de su ataque.",
+        "Convierte el daño de ATQ en <geo>Daño Geo</geo>. Este cambio elemental no puede ser sustituido imbuyéndolo de otro elemento.",
+        "Aumenta el ATQ en proporción a la DEF de Noelle."
+      ],
+      "3": "<br/>",
+      "4": "<i>Lo que debe limpiarse a veces no es solo el polvo...</i>"
+    }
+  },
+  "passive1": {
+    "name": "Dedicación de la criada",
+    "description": {
+      "0": "Al lograr un “Perfecto” en un plato con efectos de defensa, hay una probabilidad del 12% de obtener el doble."
+    }
+  },
+  "passive2": {
+    "name": "De todo corazón",
+    "description": {
+      "0": "Si la Vida de tu personaje en uso es inferior al 30% cuando Noelle está en tu equipo pero no en combate:"
+    }
+  },
+  "passive3": {
+    "name": "Pulcra y eficaz",
+    "description": {
+      "0": "Cuando Noelle inflige daño a los enemigos con Ataques Normales o Cargados, el TdE de <strong>Guardiana del corazón</strong> se reducirá 1 s cada 4 golpes.",
+      "1": "Infligir daño a varios enemigos al mismo tiempo se considera un solo movimiento de ataque."
+    }
+  },
+  "constellation1": {
+    "name": "Yo te cubro",
+    "description": {
+      "0": "Al atacar estando al mismo tiempo bajo los efectos de <strong>Hora de limpiar</strong> y <strong>Guardiana del corazón</strong>, la probabilidad de restaurar Vida de Guardiana del corazón será del 100%."
+    }
+  },
+  "constellation2": {
+    "name": "Torbellino de la criada",
+    "description": {
+      "0": "Reduce en un 20% el coste de Aguante del Ataque Cargado de Noelle, y aumenta en un 15% el daño infligido con dicho ataque."
+    }
+  },
+  "constellation3": {
+    "name": "Sin un rasguño",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Guardiana del corazón</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Limpieza obligada",
+    "description": {
+      "0": "Cuando termina la duración de <strong>Guardiana del corazón</strong> o el escudo se rompe debido al daño, inflige un 400% de <geo>Daño Geo</geo> a los enemigos cercanos."
+    }
+  },
+  "constellation5": {
+    "name": "Experta en limpieza",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Hora de limpiar</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Debe quedar impoluto",
+    "description": {
+      "0": "<strong>Hora de limpiar</strong> aumenta el ATQ de Noelle en un 50% adicional de su DEF.",
+      "1": "Además, mientras dure la habilidad, su duración se extenderá en 1 s por cada enemigo derrotado (máx. 10 s)."
+    }
+  }
+}

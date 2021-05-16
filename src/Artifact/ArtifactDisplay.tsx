@@ -6,6 +6,7 @@ import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import ReactGA from 'react-ga';
+import { Trans, useTranslation } from 'react-i18next';
 import CharacterSheet from '../Character/CharacterSheet';
 import { CharacterSelectionDropdownList } from '../Components/CharacterSelection';
 import CustomFormControl from '../Components/CustomFormControl';
@@ -53,6 +54,7 @@ function filterInit(initial = initialFilter()) {
   return { ...initial, ...(loadFromLocalStorage("ArtifactDisplay.state") ?? {}) }
 }
 export default function ArtifactDisplay(props) {
+  const { t } = useTranslation(["ui", "artifact"]);
   const [filters, filterDispatch] = useReducer(filterReducer, initialFilter(), filterInit)
   const [artToEditId, setartToEditId] = useState(props?.location?.artToEditId)
   const [pageIdex, setpageIdex] = useState(0)
@@ -178,12 +180,7 @@ export default function ArtifactDisplay(props) {
     <InfoComponent
       pageKey="artifactPage"
       modalTitle="Artifact Editing/Management Page Info"
-      text={["The maximum efficiency of a 4 star artifact is around 60%.",
-        "The maximum efficiency of an artifact will usually decrease as you upgrade. It's perfectly normal!",
-        "Substats with \"1\"s are the hardest to scan in screenshots.",
-        "If all your rolls(6) went into a single substat, it will be purple!",
-        "Click on \"Details\" when you are upgrading your artifacts in game to scan as you upgrade.",
-        "You can now upload mutiple artifact screenshots to scan!"]}
+      text={t("artifact:tipsOfTheDay", { returnObjects: true }) as string[]}
     >
       <InfoDisplay />
     </InfoComponent>
@@ -196,7 +193,7 @@ export default function ArtifactDisplay(props) {
     <Card bg="darkcontent" text={"lightfont" as any} className="mb-2" ref={invScrollRef}>
       <Card.Header>
         <Row>
-          <Col><span>Artifact Filter</span></Col>
+          <Col><span><Trans i18nKey="artifact:artifactFilter" >Artifact Filter</Trans></span></Col>
           <Col xs="auto"><Button size="sm" className="ml-2" variant="danger" onClick={() => filterDispatch({ type: "reset" })} ><FontAwesomeIcon icon={faUndo} className="fa-fw" /> Reset Filters</Button></Col>
         </Row>
       </Card.Header>
@@ -207,10 +204,10 @@ export default function ArtifactDisplay(props) {
             {/* Artifact set filter */}
             <Dropdown as={InputGroup.Prepend} className="flex-grow-1 mb-2">
               <Dropdown.Toggle className="w-100" variant={filterArtSetKey ? "success" : "primary"}>
-                {artifactSheets?.[filterArtSetKey]?.name ?? "Artifact Set"}
+                {artifactSheets?.[filterArtSetKey]?.name ?? t('ui:game.artifactSet')}
               </Dropdown.Toggle>
               <Dropdown.Menu>
-                <Dropdown.Item onClick={() => filterDispatch({ filterArtSetKey: "" })}>Unselect</Dropdown.Item>
+                <Dropdown.Item onClick={() => filterDispatch({ filterArtSetKey: "" })}><Trans t={t} i18nKey="ui:unselect" >Unselect</Trans></Dropdown.Item>
                 {artifactSheets && ArtifactSheet.namesByMaxRarities(artifactSheets).map(([star, sets]) =>
                   <React.Fragment key={star}>
                     <Dropdown.Divider />
@@ -235,16 +232,22 @@ export default function ArtifactDisplay(props) {
             {/* Artiface level filter */}
             <InputGroup className="mb-2">
               <InputGroup.Prepend>
-                <InputGroup.Text><span>Level <span className={`text-${filterLevelLow > 0 ? "success" : ""}`}>Low</span>/<span className={`text-${filterLevelHigh < 20 ? "success" : ""}`}>High</span> (Inclusive)</span></InputGroup.Text>
+                <InputGroup.Text>
+                  <span>
+                    <Trans t={t} i18nKey="artifact:filterLevelFormat">
+                      Level <span className={`text-${filterLevelLow > 0 ? "success" : ""}`}>Low</span>/<span className={`text-${filterLevelHigh < 20 ? "success" : ""}`}>High</span> (Inclusive)
+                    </Trans>
+                  </span>
+                </InputGroup.Text>
               </InputGroup.Prepend>
               <CustomFormControl
                 value={filterLevelLow}
-                placeholder={`Min Level`}
+                placeholder={t('ui:game.minLevel')}
                 onChange={val => filterDispatch({ filterLevelLow: clamp(val, 0, filterLevelHigh) })}
               />
               <CustomFormControl
                 value={filterLevelHigh}
-                placeholder={`Max Level`}
+                placeholder={t('ui:game.maxLevel')}
                 onChange={val => filterDispatch({ filterLevelHigh: clamp(val, filterLevelLow, 20) })}
               />
             </InputGroup>
@@ -253,7 +256,9 @@ export default function ArtifactDisplay(props) {
             <ButtonGroup className="w-100 d-flex flex-row mb-2">
               <Dropdown as={ButtonGroup} className="flex-grow-1">
                 <Dropdown.Toggle >
-                  <span>Sort By: {sortMap[sortType]}</span>
+                  <span>
+                    <Trans t={t} i18nKey="ui:sortByFormat" value={sortMap[sortType]}>Sort By: {{ value: sortMap[sortType] }}</Trans>
+                  </span>
                 </Dropdown.Toggle>
                 <Dropdown.Menu>
                   {Object.entries(sortMap).map(([key, name]) =>
@@ -261,7 +266,7 @@ export default function ArtifactDisplay(props) {
                 </Dropdown.Menu>
               </Dropdown>
               <Button onClick={() => filterDispatch({ ascending: !ascending })} className="flex-shrink-1">
-                <FontAwesomeIcon icon={ascending ? faSortAmountDownAlt : faSortAmountUp} className="fa-fw" /><span> {ascending ? "Ascending" : "Descending"}</span>
+                <FontAwesomeIcon icon={ascending ? faSortAmountDownAlt : faSortAmountUp} className="fa-fw" /><span> {ascending ? <Trans t={t} i18nKey="ui:ascending" >Ascending</Trans> : <Trans t={t} i18nKey="ui:descending" >Descending</Trans>}</span>
               </Button>
             </ButtonGroup>
           </Col>
@@ -273,10 +278,10 @@ export default function ArtifactDisplay(props) {
                 {/* Artifact Slot */}
                 <Dropdown className="flex-grow-1 mb-2">
                   <Dropdown.Toggle className="w-100" variant={filterSlotKey ? "success" : "primary"}>
-                    {filterSlotKey ? Artifact.slotNameWithIcon(filterSlotKey) : "Slot"}
+                    {filterSlotKey ? Artifact.slotNameWithIcon(filterSlotKey) : t('ui:game.slot')}
                   </Dropdown.Toggle>
                   <Dropdown.Menu>
-                    <Dropdown.Item onClick={() => filterDispatch({ filterSlotKey: "" })} >Unselect</Dropdown.Item>
+                    <Dropdown.Item onClick={() => filterDispatch({ filterSlotKey: "" })} ><Trans t={t} i18nKey="ui:unselect" >Unselect</Trans></Dropdown.Item>
                     {allSlotKeys.map(key =>
                       <Dropdown.Item key={key} onClick={() => filterDispatch({ filterSlotKey: key })} >
                         {Artifact.slotNameWithIcon(key)}
@@ -289,7 +294,7 @@ export default function ArtifactDisplay(props) {
                     {Stat.getStatNameWithPercent(filterMainStatKey, "Main Stat")}
                   </Dropdown.Toggle>
                   <Dropdown.Menu>
-                    <Dropdown.Item onClick={() => filterDispatch({ filterMainStatKey: "" })}>Unselect</Dropdown.Item>
+                    <Dropdown.Item onClick={() => filterDispatch({ filterMainStatKey: "" })}><Trans t={t} i18nKey="ui:unselect" >Unselect</Trans></Dropdown.Item>
                     {allMainStatKeys.map(statKey => <Dropdown.Item key={statKey} onClick={() => filterDispatch({ filterMainStatKey: statKey })} >
                       {Stat.getStatNameWithPercent(statKey)}
                     </Dropdown.Item>)}
@@ -302,9 +307,9 @@ export default function ArtifactDisplay(props) {
                     {locationDisplay}
                   </Dropdown.Toggle>
                   <Dropdown.Menu>
-                    <Dropdown.Item onClick={() => filterDispatch({ filterLocation: "" })}>Unselect</Dropdown.Item>
-                    <Dropdown.Item onClick={() => filterDispatch({ filterLocation: "Inventory" })}>Inventory</Dropdown.Item>
-                    <Dropdown.Item onClick={() => filterDispatch({ filterLocation: "Equipped" })}>Currently Equipped</Dropdown.Item>
+                    <Dropdown.Item onClick={() => filterDispatch({ filterLocation: "" })}><Trans t={t} i18nKey="ui:unselect" >Unselect</Trans></Dropdown.Item>
+                    <Dropdown.Item onClick={() => filterDispatch({ filterLocation: "Inventory" })}><Trans t={t} i18nKey="artifact:filterLocation.inventory" >Inventory</Trans></Dropdown.Item>
+                    <Dropdown.Item onClick={() => filterDispatch({ filterLocation: "Equipped" })}><Trans t={t} i18nKey="artifact:filterLocation.currentlyEquipped" >Currently Equipped</Trans></Dropdown.Item>
                     <Dropdown.Divider />
                     <CharacterSelectionDropdownList onSelect={cid => filterDispatch({ filterLocation: cid })} />
                   </Dropdown.Menu>
@@ -317,8 +322,8 @@ export default function ArtifactDisplay(props) {
                   </Dropdown.Toggle>
                   <Dropdown.Menu>
                     <Dropdown.Item onClick={() => filterDispatch({ filterLocked: "" })}>Any</Dropdown.Item>
-                    <Dropdown.Item onClick={() => filterDispatch({ filterLocked: "locked" })}><span><FontAwesomeIcon icon={faLock} /> Locked</span></Dropdown.Item>
-                    <Dropdown.Item onClick={() => filterDispatch({ filterLocked: "unlocked" })}><span><FontAwesomeIcon icon={faLockOpen} /> Unlocked</span></Dropdown.Item>
+                    <Dropdown.Item onClick={() => filterDispatch({ filterLocked: "locked" })}><span><FontAwesomeIcon icon={faLock} /> <Trans t={t} i18nKey="artifact:locked" >Locked</Trans></span></Dropdown.Item>
+                    <Dropdown.Item onClick={() => filterDispatch({ filterLocked: "unlocked" })}><span><FontAwesomeIcon icon={faLockOpen} /> <Trans t={t} i18nKey="artifact:unlocked" >Unlocked</Trans></span></Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>
               </Col>
@@ -328,7 +333,7 @@ export default function ArtifactDisplay(props) {
                 {filterSubstats.map((substatKey, index) =>
                   <Dropdown className="mb-2" key={index}>
                     <Dropdown.Toggle id="dropdown-basic" className="w-100" variant={substatKey ? "success" : "primary"}>
-                      {Stat.getStatNameWithPercent(substatKey, `Substat ${index + 1}`)}
+                      {Stat.getStatNameWithPercent(substatKey, t('ui:game.substatFormat', { value: index + 1 }))}
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
                       <Dropdown.Item
@@ -336,7 +341,7 @@ export default function ArtifactDisplay(props) {
                           filterSubstats[index] = ""
                           filterDispatch({ filterSubstats })
                         }}
-                      >No Substat</Dropdown.Item>
+                      ><Trans t={t} i18nKey="ui:noSubstat" >No Substat</Trans></Dropdown.Item>
                       {Artifact.getSubstatKeys().filter(key => !filterSubstats.includes(key)).map(key =>
                         <Dropdown.Item key={key}
                           onClick={() => {
@@ -357,11 +362,11 @@ export default function ArtifactDisplay(props) {
     <Card bg="darkcontent" text={"lightfont" as any} className="mb-2">
       <Card.Body>
         <Row className="mb-2">
-          <Col xs={6} lg={3} className="mb-2"><Button className="w-100" variant="danger" disabled={!numUnequip} onClick={unequipArtifacts}><FontAwesomeIcon icon={faUserSlash} /> Unequip Artifacts</Button></Col>
-          <Col xs={6} lg={3} className="mb-2"><Button className="w-100" variant="danger" disabled={!artifacts.length} onClick={deleteArtifacts}><FontAwesomeIcon icon={faTrash} /> Delete Artifacts</Button></Col>
-          <Col xs={6} lg={3} className="mb-2"><Button className="w-100" variant="danger" disabled={!numLock} onClick={lockArtifacts}><FontAwesomeIcon icon={faLock} /> Lock Artifacts</Button></Col>
-          <Col xs={6} lg={3} className="mb-2"><Button className="w-100" variant="danger" disabled={!numUnlock} onClick={unlockArtifacts}><FontAwesomeIcon icon={faLockOpen} /> Unlock Artifacts </Button></Col>
-          <Col xs={12} className="mt-n2"><small>Note: the above buttons only applies to <b>filtered artifacts</b></small></Col>
+          <Col xs={6} lg={3} className="mb-2"><Button className="w-100" variant="danger" disabled={!numUnequip} onClick={unequipArtifacts}><FontAwesomeIcon icon={faUserSlash} /> <Trans t={t} i18nKey="artifact:button.unequipArtifacts" >Unequip Artifacts</Trans></Button></Col>
+          <Col xs={6} lg={3} className="mb-2"><Button className="w-100" variant="danger" disabled={!artifacts.length} onClick={deleteArtifacts}><FontAwesomeIcon icon={faTrash} /> <Trans t={t} i18nKey="artifact:button.deleteArtifacts" >Delete Artifacts</Trans></Button></Col>
+          <Col xs={6} lg={3} className="mb-2"><Button className="w-100" variant="danger" disabled={!numLock} onClick={lockArtifacts}><FontAwesomeIcon icon={faLock} /> <Trans t={t} i18nKey="artifact:button.lockArtifacts" >Lock Artifacts</Trans></Button></Col>
+          <Col xs={6} lg={3} className="mb-2"><Button className="w-100" variant="danger" disabled={!numUnlock} onClick={unlockArtifacts}><FontAwesomeIcon icon={faLockOpen} /> <Trans t={t} i18nKey="artifact:button.unlockArtifacts" >Unlock Artifacts</Trans></Button></Col>
+          <Col xs={12} className="mt-n2"><small><Trans t={t} i18nKey="artifact:buttonHint">Note: the above buttons only applies to <b>filtered artifacts</b></Trans></small></Col>
         </Row>
         <Row>
           <Col>
@@ -371,6 +376,7 @@ export default function ArtifactDisplay(props) {
               </Button>)}
             </ButtonGroup>}
           </Col>
+          {/* TODO: localization */}
           <Col xs="auto"><span className="float-right text-right">Showing <b>{artifactsToShow.length}</b> out of {artifacts.length !== totalArtNum ? `${artifacts.length}/` : ""}{totalArtNum} Artifacts</span></Col>
         </Row>
       </Card.Body>
@@ -399,6 +405,7 @@ export default function ArtifactDisplay(props) {
               </Button>)}
             </ButtonGroup>
           </Col>
+          {/* TODO: localization */}
           <Col xs="auto"><span className="float-right text-right">Showing <b>{artifactsToShow.length}</b> out of {artifacts.length !== totalArtNum ? `${artifacts.length}/` : ""}{totalArtNum} Artifacts</span></Col>
         </Row>
       </Card.Body>

@@ -25,10 +25,12 @@ yarn-error.log*
 .vscode
 .eslintcache
 
+# localization JSON from datamined
+/localization-gen/TextMap/*.json
+
 # for personal use
 .notes
 # template files
 TEMPLATE*
-
 #preedited images
 *_.png

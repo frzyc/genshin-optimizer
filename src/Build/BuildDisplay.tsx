@@ -439,11 +439,11 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
                     <Dropdown.Menu align="right" style={{ minWidth: "40rem" }} >
                       <Row>
                         {!!statsDisplayKeys && Object.entries(statsDisplayKeys).map(([talentKey, fields]) => {
-                          let header = ""
+                          let header: Displayable = ""
                           if (talentKey === "basicKeys") header = "Basic Stats"
                           else if (talentKey === "genericAvgHit") header = "Generic Optimization Values"
                           else if (talentKey === "transReactions") header = "Transformation Reaction"
-                          else header = (characterSheet?.getTalent(talentKey)?.name ?? talentKey as string)
+                          else header = (characterSheet?.getTalent(talentKey)?.name ?? talentKey)
                           return <Col xs={12} md={6} key={talentKey}>
                             <Dropdown.Header style={{ overflow: "hidden", textOverflow: "ellipsis" }}><b>{header}</b></Dropdown.Header>
                             {fields.map((target, i) => {

@@ -10,7 +10,7 @@ export interface ICharacterSheet {
   elementKey: ElementKey
   weaponTypeKey: WeaponTypeKey
   gender: string,
-  constellationName: string,
+  constellationName: Displayable,
   titles: Array<string>,
   baseStat: IBaseStat
   specializeStat: ISpecializedStat,
@@ -57,7 +57,7 @@ export interface ICharacter {
 export type TalentSheet = Dict<string, TalentSheetElement>
 
 export interface TalentSheetElement {
-  name: string, //talentName
+  name: Displayable, //talentName
   img: string,
   document: Array<DocumentSection>,
   stats?: object,
