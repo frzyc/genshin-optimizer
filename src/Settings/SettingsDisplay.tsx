@@ -186,14 +186,14 @@ function UploadCard({ forceUpdate }) {
 }
 
 function GenshinArtCard({ forceUpdate }) {
+  const { t } = useTranslation(["ui", "settings"]);
   const [data, setData] = useState("");
   const [filename, setFilename] = useState("");
   const [deleteExistingArtifacts, setDeleteExistingArtifacts] = useState(false);
-  const [skipDupDetection, setSkipDupDetection] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const [dataObj, setDataObj] = useState({});
-  let numArt, dataValid;
+  let numArt: number | undefined, dataValid = false;
 
   if (Boolean(data && !error)) {
     numArt = GenshinArtGetCount(dataObj);
@@ -219,16 +219,21 @@ function GenshinArtCard({ forceUpdate }) {
   }, [data]);
 
   const importArtifacts = () => {
-    if (deleteExistingArtifacts && !window.confirm(`Are you sure you want to delete all artifacts not found in the current import as fodder? (Upgraded artifacts will not be affected.)`)) {
+    if (deleteExistingArtifacts && !window.confirm(t("settings:genshinArt.dialog.deleteExistingPrompt"))) {
       setDeleteExistingArtifacts(false);
       return;
     }
-    if (skipDupDetection && !window.confirm(`Are you sure you want to import all artifacts without checking for duplicates?`)) {
-      setSkipDupDetection(false);
-      return;
-    }
     try {
-      let successMsg = GenshinArtImport(dataObj, deleteExistingArtifacts, skipDupDetection);
+      let successCount = GenshinArtImport(dataObj, deleteExistingArtifacts, true);
+      let successMsg = t("settings:genshinArt.card.successMsg", {
+        totalCount: successCount.total,
+        newCount: successCount.new,
+        upgradeCount: successCount.upgraded,
+        dupCount: successCount.dupe
+      });
+      if (deleteExistingArtifacts) {
+        successMsg += t("settings:genshinArt.card.successMsgDeleteExistingAddon", { deleteCount: successCount.deleted });
+      }
       setSuccess(successMsg);
       setData("");
       setFilename("");
@@ -247,32 +252,29 @@ function GenshinArtCard({ forceUpdate }) {
   }
 
   return <Card bg="lightcontent" text={"lightfont" as any}>
-    <Card.Header>genshin.art Artifact Import</Card.Header>
+    <Card.Header><Trans t={t} i18nKey="settings:genshinArt.card.title" /></Card.Header>
     <Card.Body>
       <Row className="mb-2">
         <Form.File
           className="mb-2"
-          label={filename ? filename : "Upload your JSON file here"}
+          label={filename ? filename : <Trans t={t} i18nKey="settings:uploadCard.hint" />}
           onChange={onUpload}
           custom
           accept=".json"
         />
-        <h6>...or Paste your data below...</h6>
+        <h6><Trans t={t} i18nKey="settings:uploadCard.hintPaste" /></h6>
         <textarea className="w-100 text-monospace" value={data} onChange={e => setData(e.target.value)} style={{ minHeight: "10em" }} />
       </Row>
       {dataValid && <Row>
-        <Col xs={12} md={6}><h6>Number of artifacts: <b>{numArt}</b></h6></Col>
+        <Col xs={12} md={6}><h6><Trans t={t} i18nKey="settings:uploadCard.numArt" /> <b>{numArt}</b></h6></Col>
       </Row>}
-      {Boolean(data && (error || !dataValid)) && <Alert variant="danger">{error ? error : "Unable to parse character & artifact data from file."}</Alert>}
+      {Boolean(data && (error || !dataValid)) && <Alert variant="danger">{error ? error : "Unable to parse artifact data."}</Alert>}
       {success && <Alert variant="success">{success}</Alert>}
     </Card.Body>
     <Card.Footer>
-      <Button variant={dataValid ? "success" : "danger"} disabled={!dataValid} onClick={() => importArtifacts()}>Import</Button>
+      <Button variant={dataValid ? "success" : "danger"} disabled={!dataValid} onClick={() => importArtifacts()}><Trans t={t} i18nKey="settings:genshinArt:card.import" /></Button>
       <Button className="float-right text-right" variant={deleteExistingArtifacts ? "danger" : "primary"} onClick={() => setDeleteExistingArtifacts(value => !value)}>
-        <span><FontAwesomeIcon icon={deleteExistingArtifacts ? faCheckSquare : faSquare} className="fa-fw" /> Delete Foddered Artifacts</span>
-      </Button>
-      <Button hidden className="float-right text-right mr-2" disabled={deleteExistingArtifacts} variant={!skipDupDetection ? "success" : "primary"} onClick={() => setSkipDupDetection(value => !value)}>
-        <span><FontAwesomeIcon icon={!skipDupDetection ? faCheckSquare : faSquare} className="fa-fw" /> Detect Upgraded/Duplicates</span>
+        <span><FontAwesomeIcon icon={deleteExistingArtifacts ? faCheckSquare : faSquare} className="fa-fw" /> <Trans t={t} i18nKey="settings:genshinArt:card.deleteExistingButton" /></span>
       </Button>
     </Card.Footer>
   </Card>

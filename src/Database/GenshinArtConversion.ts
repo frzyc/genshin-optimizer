@@ -149,27 +149,42 @@ function GetConvertedArtifactsVersion1(dataObj: any) {
   return convertedArtifacts;
 }
 
-function GenshinArtImport(dataObj: any, deleteExisting: boolean, skipDupDetection: boolean) {
-  if (deleteExisting && skipDupDetection) {
-    throw new Error("GenshinArtImport: skipDupDetection should be disabled when deleteExisting is turned on");
+interface IImportResult {
+  total: number,
+  new: number,
+  upgraded: number,
+  dupe: number,
+  deleted: number,
+}
+
+function GenshinArtImport(dataObj: any, deleteExisting: boolean, detectDupe: boolean) {
+  if (deleteExisting && !detectDupe) {
+    throw new Error("GenshinArtImport: detectDupe should be enabled when deleteExisting is turned on");
   }
 
   const usingVersion: GenshinArtVersion = "version" in dataObj ? dataObj.version : DefaultVersion;
   let importedArtifacts = GetConvertedArtifactsOfVersion[usingVersion](dataObj);
-
-  if (skipDupDetection) {
-    for (const artifact of importedArtifacts) {
-      ArtifactDatabase.update(artifact);
-    }
-    return `Successfully imported ${importedArtifacts.length} artifacts`;
+  let importResult: IImportResult = {
+    total: importedArtifacts.length,
+    new: 0,
+    upgraded: 0,
+    dupe: 0,
+    deleted: 0,
   }
 
-  let dupCount = 0, upgradeCount = 0, newCount = 0;
+  if (!detectDupe) {
+    throw new Error("feature is disabled (who actually needs this?)");
+    // for (const artifact of importedArtifacts) {
+    //   ArtifactDatabase.update(artifact);
+    // }
+    // return importResult;
+  }
+
   let artifactIdsToRemove = new Set(ArtifactDatabase.getIdList());
   for (const artifact of importedArtifacts) {
     const { dupId, isDup } = checkDuplicate(artifact);
     if (!dupId) {
-      newCount++;
+      importResult.new++;
       ArtifactDatabase.update(artifact);
       continue;
     }
@@ -177,11 +192,11 @@ function GenshinArtImport(dataObj: any, deleteExisting: boolean, skipDupDetectio
     artifactIdsToRemove.delete(dupId);
 
     if (isDup) {
-      dupCount++;
+      importResult.dupe++;
       continue;
     }
 
-    upgradeCount++;
+    importResult.upgraded++;
     const oldArtifact = ArtifactDatabase.get(dupId)!;
     artifact.id = dupId;
     artifact.location = oldArtifact.location;
@@ -189,15 +204,14 @@ function GenshinArtImport(dataObj: any, deleteExisting: boolean, skipDupDetectio
     ArtifactDatabase.update(artifact);
   }
 
-  let successMsg = `Import successful: ${importedArtifacts.length} total, ${newCount} new, ${upgradeCount} upgraded, ${dupCount} duplicate`;
   if (deleteExisting) {
-    successMsg += `, ${artifactIdsToRemove.size} foddered`;
     for (const artifactId of artifactIdsToRemove) {
       ArtifactDatabase.removeArtifactById(artifactId);
     }
+    importResult.deleted = artifactIdsToRemove.size;
   }
 
-  return successMsg;
+  return importResult;
 }
 
 const GenshinArtCheckForErrorVersion = {

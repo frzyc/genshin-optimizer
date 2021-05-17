@@ -27,5 +27,17 @@
   },
   "dialog": {
     "delete-database": "Are you sure you want to delete your database? All existing characters and artifacts will be deleted."
+  },
+  "genshinArt": {
+    "card": {
+      "title": "genshin.art Artifact Import",
+      "import": "Import",
+      "deleteExistingButton": "Delete Foddered Artifacts",
+      "successMsg": "Import successful: {{totalCount}} total, {{newCount}} new, {{upgradeCount}} upgraded, {{dupCount}} duplicate",
+      "successMsgDeleteExistingAddon": ", {{deleteCount}} foddered"
+    },
+    "dialog": {
+      "deleteExistingPrompt": "Are you sure you want to delete all artifacts not found in the current import as fodder? (Upgraded artifacts will not be affected.)"
+    }
   }
 }
