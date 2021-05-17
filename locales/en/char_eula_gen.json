@@ -1,0 +1,101 @@
+{
+  "name": "Eula",
+  "constellationName": "Aphros Delos",
+  "auto": {
+    "name": "Favonius Bladework - Edel",
+    "fields": {
+      "normal": "<strong>Normal Attack</strong> Perform up to 5 consecutive strikes.",
+      "charged": "<strong>Charged Attack</strong> Drains Stamina over time to perform continuous slashes. At the end of the sequence, perform a more powerful slash.",
+      "plunging": "<strong>Plunging Attack</strong> Plunges from mid-air to strike the ground, damaging opponents along the path and dealing AoE DMG upon impact."
+    }
+  },
+  "skill": {
+    "name": "Icetide Vortex",
+    "description": {
+      "0": "Sharp frost, swift blade.",
+      "1": "<br/>",
+      "2": "<strong>Press</strong>",
+      "3": "Slashes swiftly, dealing <cryo>Cryo DMG</cryo>.",
+      "4": "When it hits an opponent, Eula gains a stack of Grimheart that stacks up to 2 times. These stacks can only be gained once every 0.3s.",
+      "5": "<br/>",
+      "6": "<strong>Grimheart</strong>",
+      "7": "Increases Eula's resistance to interruption and DEF.",
+      "8": "<br/>",
+      "9": "<strong>Hold</strong>",
+      "10": "Wielding her sword, Eula consumes all the stacks of Grimheart and lashes forward, dealing <cryo>AoE Cryo DMG</cryo> to opponents in front of her.",
+      "11": "If Grimheart stacks are consumed, surrounding opponents will have their Physical RES and <cryo>Cryo RES</cryo> decreased.",
+      "12": "Each consumed stack of Grimheart will be converted into an Icewhirl Brand that deals <cryo>Cryo DMG</cryo> to nearby opponents.",
+      "13": "<br/>",
+      "14": "<i>\"So the waves roiled, swallowing the crown of the nobles. And ever after did each drop amidst the icy waves reflect a golden crown, each and every droplet of the spray shining with its light.\"</i>"
+    }
+  },
+  "burst": {
+    "name": "Glacial Illumination",
+    "description": {
+      "0": "Brandishes her greatsword, dealing <cryo>Cryo DMG</cryo> to nearby opponents and creating a Lightfall Sword that follows her around for a duration of up to 7s.",
+      "1": "While present, the Lightfall Sword increases Eula's resistance to interruption. When Eula's own Normal Attack, Elemental Skill, and Elemental Burst deal DMG to opponents, they will charge the Lightfall Sword, which can gain an energy stack once every 0.1s.",
+      "2": "Once its duration ends, the Lightfall Sword will descend and explode violently, dealing Physical DMG to nearby opponents.",
+      "3": "This DMG scales on the number of energy stacks the Lightfall Sword has accumulated.",
+      "4": "If Eula leaves the field, the Lightfall Sword will explode immediately.",
+      "5": "<br/>",
+      "6": "<i>It is easy to sink. But even so, she desires to freeze this oncoming tide.</i>"
+    }
+  },
+  "passive1": {
+    "name": "Roiling Rime",
+    "description": {
+      "0": "If 2 stacks of Grimheart are consumed upon unleashing the Holding Mode of <strong>Icetide Vortex</strong>, a Shattered Lightfall Sword will be created that will explode immediately, dealing 50% of the basic Physical DMG dealt by a Lightfall Sword created by <strong>Glacial Illumination</strong>."
+    }
+  },
+  "passive2": {
+    "name": "Wellspring of War-Lust",
+    "description": {
+      "0": "When <strong>Glacial Illumination</strong> is cast, the CD of <strong>Icetide Vortex</strong> is reset and Eula gains 1 stack of Grimheart."
+    }
+  },
+  "passive3": {
+    "name": "Aristocratic Introspection",
+    "description": {
+      "0": "When Eula crafts Character Talent Materials, she has a 10% chance to receive double the product."
+    }
+  },
+  "constellation1": {
+    "name": "Tidal Illusion",
+    "description": {
+      "0": "Every time <strong>Icetide Vortex</strong>'s Grimheart stacks are consumed, Eula's Physical DMG is increased by 30% for 6s.",
+      "1": "Each stack consumed will increase the duration of this effect by 6s up to a maximum of 18s."
+    }
+  },
+  "constellation2": {
+    "name": "Lady of Seafoam",
+    "description": {
+      "0": "Decreases the CD of <strong>Icetide Vortex</strong>'s Holding Mode, rendering it identical to Press CD."
+    }
+  },
+  "constellation3": {
+    "name": "Lawrence Pedigree",
+    "description": {
+      "0": "Increases the Level of <strong>Glacial Illumination</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation4": {
+    "name": "The Obstinacy of One's Inferiors",
+    "description": {
+      "0": "Lightfall Swords deal 25% increased DMG against opponents with less than 50% HP."
+    }
+  },
+  "constellation5": {
+    "name": "Chivalric Quality",
+    "description": {
+      "0": "Increases the Level of <strong>Icetide Vortex</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation6": {
+    "name": "Noble Obligation",
+    "description": {
+      "0": "Lightfall Swords created by <strong>Glacial Illumination</strong> start with 5 stacks of energy. Normal Attacks, Elemental Skills, and Elemental Bursts have a 50% chance to grant the Lightfall Sword an additional stack of energy."
+    }
+  }
+}

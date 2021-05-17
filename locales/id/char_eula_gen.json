@@ -1,0 +1,100 @@
+{
+  "name": "Eula",
+  "constellationName": "Aphros Delos",
+  "auto": {
+    "name": "Favonius Bladework - Edel",
+    "fields": {
+      "normal": "<strong>Normal Attack</strong> Melancarkan maks. 5 serangan berturut-turut.",
+      "charged": "<strong>Charged Attack</strong> Terus menguras Stamina untuk melancarkan tebasan berkelanjutan. Diakhiri dengan sebuah tebasan yang kuat.",
+      "plunging": "<strong>Plunging Attack</strong> Menerjang dari udara untuk menghantam tanah, menyerang semua musuh di jalurnya dan mengakibatkan DMG area saat mendarat."
+    }
+  },
+  "skill": {
+    "name": "Icetide Vortex",
+    "description": {
+      "0": "Es yang tajam, pedang yang lincah.",
+      "1": "<br/>",
+      "2": "<strong>Tekan</strong>",
+      "3": "Menebas dengan cepat dan mengakibatkan <cryo>Cryo DMG</cryo>.",
+      "4": "Saat mengenai musuh, Eula akan mendapatkan satu lapis Grimheart yang bisa ditumpuk hingga 2 lapis. Lapisan ini hanya bisa ditumpuk setiap 0,3 detik.",
+      "5": "<br/>",
+      "6": "<strong>Grimheart</strong>",
+      "7": "Meningkatkan DEF dan ketahanan Eula terhadap interupsi.",
+      "8": "<br/>",
+      "9": "<strong>Tahan</strong>",
+      "10": "Dengan mengonsumsi semua lapisan Grimheart yang ada, Eula menebas pedangnya ke arah depan dan mengakibatkan <cryo>Cryo DMG area</cryo> pada musuh di hadapannya.",
+      "11": "Jika Eula mengonsumsi lapisan Grimheart, musuh di sekitar akan mengalami penurunan Physical RES dan <cryo>Cryo RES</cryo>.",
+      "12": "Setiap lapis Grimheart akan berubah menjadi Icewhirl Brand yang mengakibatkan <cryo>Cryo DMG</cryo> pada musuh di sekitar.",
+      "13": "<br/>",
+      "14": "<i>\"Ombak-ombak pun bergulung, menelan mahkota para bangsawan. Setelah itu, setiap tetesan di antara gulungan ombak es akan memantulkan mahkota emas, dan setiap tetesan busa ombak akan memancarkan cahayanya.</i>"
+    }
+  },
+  "burst": {
+    "name": "Glacial Illumination",
+    "description": {
+      "0": "Eula mengayunkan pedang besarnya dan mengakibatkan <cryo>Cryo DMG</cryo> terhadap musuh di sekitar, serta menciptakan Lightfall Sword yang mengikutinya selama maks. 7 detik.",
+      "1": "Selama aktif, Lightfall Sword akan meningkatkan ketahanan Eula terhadap interupsi. Saat Normal Attack, Elemental Skill, dan Elemental Burst Eula mengakibatkan DMG terhadap musuh, energi Lightfall Sword akan terisi. 1 lapisan energi hanya dapat terisi setiap 0,1 detik.",
+      "2": "Setelah durasinya berakhir, Lightfall Sword akan meledak hebat dan mengakibatkan Physical DMG terhadap musuh di sekitarnya.",
+      "3": "DMG ini akan meningkat sesuai dengan jumlah lapisan energi yang berhasil dikumpulkan Lightfall Sword. Lightfall Sword akan langsung meledak saat Eula meninggalkan medan pertempuran.",
+      "4": "<br/>",
+      "5": "<i>Mudah sekali bagi seseorang untuk tenggelam dalam arus ombak. Meski begitu, Eula lebih tertantang untuk membekukan arus yang datang.</i>"
+    }
+  },
+  "passive1": {
+    "name": "Roiling Rime",
+    "description": {
+      "0": "Jika 2 lapis Grimheart dikonsumsi saat menggunakan Mode Tahan dari <strong>Icetide Vortex</strong>, sebuah Shattered Lightfall Sword akan terbentuk dan langsung meledak, mengakibatkan Physical DMG sebesar 50% dari DMG dasar Lightfall Sword yang terbentuk dari skill <strong>Glacial Illumination</strong>."
+    }
+  },
+  "passive2": {
+    "name": "Wellspring of War-Lust",
+    "description": {
+      "0": "Menggunakan <strong>Glacial Illumination</strong> akan langsung menyelesaikan CD <strong>Icetide Vortex</strong> dan memberikan Eula satu lapis Grimheart."
+    }
+  },
+  "passive3": {
+    "name": "Aristocratic Introspection",
+    "description": {
+      "0": "Saat Eula membuat Material Talenta Karakter, memiliki 10% kemungkinan untuk mendapatkan hasil 2 kali lipat."
+    }
+  },
+  "constellation1": {
+    "name": "Tidal Illusion",
+    "description": {
+      "0": "Setiap kali lapisan Grimheart dari <strong>Icetide Vortex</strong> dikonsumsi, Physical DMG Eula akan meningkat 30% selama 6 detik.",
+      "1": "Setiap lapis yang terkonsumsi akan meningkatkan durasi efek ini sebanyak 6 detik, hingga maksimum 18 detik."
+    }
+  },
+  "constellation2": {
+    "name": "Lady of Seafoam",
+    "description": {
+      "0": "Mengurangi CD dari Mode Tahan <strong>Icetide Vortex</strong>, membuatnya sama dengan CD Mode Tekan."
+    }
+  },
+  "constellation3": {
+    "name": "Lawrence Pedigree",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Glacial Illumination</strong>.",
+      "1": "Level maksimum adalah level 15."
+    }
+  },
+  "constellation4": {
+    "name": "The Obstinacy of One's Inferiors",
+    "description": {
+      "0": "Meningkatkan 25% DMG Lightfall Sword terhadap musuh dengan HP kurang dari 50%."
+    }
+  },
+  "constellation5": {
+    "name": "Chivalric Quality",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Icetide Vortex</strong>.",
+      "1": "Level maksimum adalah level 15."
+    }
+  },
+  "constellation6": {
+    "name": "Noble Obligation",
+    "description": {
+      "0": "Lightfall Sword yang tercipta dari <strong>Glacial Illumination</strong> langsung memiliki 5 lapis energi. Normal Attack, Elemental Skill, dan Elemental Burst mempunyai 50% kemungkinan untuk memberikan lapisan energi tambahan pada Lightfall Sword."
+    }
+  }
+}
