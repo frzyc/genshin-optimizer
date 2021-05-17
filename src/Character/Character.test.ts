@@ -109,20 +109,20 @@ describe('Equipment functions', () => {
       const noelleDB = CharacterDatabase.get("noelle")
       expect(noelleDB?.equippedArtifacts).toEqual(empty)
 
-      Object.values(abcde).forEach(id => expect(ArtifactDatabase.get(id).location).toBe("ningguang"))
+      Object.values(abcde).forEach(id => expect(ArtifactDatabase.get(id)?.location).toBe("ningguang"))
     })
     test(`unequip`, () => {
       Character.equipArtifacts("noelle", empty)
       const noelleDB = CharacterDatabase.get("noelle")
       expect(noelleDB?.equippedArtifacts).toEqual(empty)
-      Object.values(abcde).forEach(id => expect(ArtifactDatabase.get(id).location).toBe(""))
+      Object.values(abcde).forEach(id => expect(ArtifactDatabase.get(id)?.location).toBe(""))
     })
   })
   test(`Character.remove`, () => {
     Character.remove("noelle")
     const noelleDB = CharacterDatabase.get("noelle")
     expect(noelleDB).toBe(undefined)
-    Object.values(abcde).forEach(id => expect(ArtifactDatabase.get(id).location).toBe(""))
+    Object.values(abcde).forEach(id => expect(ArtifactDatabase.get(id)?.location).toBe(""))
   })
 
 })

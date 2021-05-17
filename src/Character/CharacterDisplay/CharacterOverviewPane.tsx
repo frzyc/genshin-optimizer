@@ -207,7 +207,7 @@ function WeaponStatsEditorCard({ characterSheet, weaponSheet, editable, characte
                 <Dropdown.ItemText>
                   <span>Select Weapon Level</span>
                 </Dropdown.ItemText>
-                {Object.entries(LevelNameData).map(([key, name]) =>
+                {Object.entries(LevelNameData).reverse().map(([key, name]) =>
                   <Dropdown.Item key={key} onClick={() => setStateWeapon("levelKey", key)}>
                     {name}
                   </Dropdown.Item>)}

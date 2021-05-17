@@ -280,7 +280,7 @@ function CharSelectDropdown({ characterSheet, weaponSheet, character, editable, 
       <Dropdown.ItemText>
         <span>Select Base Stat Template</span>
       </Dropdown.ItemText>
-      {Character.getlevelKeys().map(lvlKey =>
+      {Character.getlevelKeys().reverse().map(lvlKey =>
         <Dropdown.Item key={lvlKey} onClick={() => characterDispatch({ levelKey: lvlKey })}>
           <h6 >{Character.getlevelTemplateName(lvlKey)} </h6>
         </Dropdown.Item>)}

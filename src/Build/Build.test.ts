@@ -277,6 +277,8 @@ describe('getTalentStatKey()', () => {
   test('should override element', () => {
     expect(getTalentStatKey("normal", stats, "electro")).toBe("electro_normal_avgHit")
     expect(getTalentStatKeyVariant("normal", stats, "electro")).toBe("electro")
+    expect(getTalentStatKey("burst", stats, "physical")).toBe("physical_burst_avgHit")
+    expect(getTalentStatKeyVariant("burst", stats, "physical")).toBe("physical")
   })
   test('should do elemental', () => {
     expect(getTalentStatKey("pyro", stats)).toBe("pyro_elemental_avgHit")

@@ -20,18 +20,34 @@ import { ICharacterSheet } from '../../../Types/character'
 import { Translate } from '../../../Components/Translate'
 const tr = (strKey: string) => <Translate ns="char_eula_gen" key18={strKey} />
 const conditionals: IConditionals = {
-  eg: {
+  e: {
     name: "Grimheart",
-    maxStack: 2,
-    stats: stats => ({
-      def_: 30,
-      cryo_enemyRes_: -data.skill.cyroResDec[stats.tlvl.skill],
-      physical_enemyRes_: -data.skill.cyroResDec[stats.tlvl.skill],
-    }),
-    fields: [{
-      text: "RES Decrease Duration",
-      value: "7s"
-    }]
+    states: {
+      g: {//grimheart
+        name: "Grimheart Stacks",
+        stats: { def_: 30 },
+        fields: [{
+          text: "Increase resistance to interruption"
+        }, {
+          text: "Grimheart Duration",
+          value: "18s"
+        }, {
+          text: "Max Stacks",
+          value: 2
+        }]
+      },
+      c: {//consumed
+        name: "Grimheart Consumed",
+        stats: stats => ({
+          cryo_enemyRes_: -data.skill.cyroResDec[stats.tlvl.skill],
+          physical_enemyRes_: -data.skill.cyroResDec[stats.tlvl.skill],
+        }),
+        fields: [{
+          text: "RES Decrease Duration",
+          value: "7s"
+        }]
+      }
+    }
   },
   q: { // Sweeping Time
     name: "Lightfall Sword",
@@ -158,19 +174,14 @@ const char: ICharacterSheet = {
           text: "Hold CD",
           value: stats => stats.constellation >= 2 ? "4s" : "10s"
         },],
+        conditional: conditionals.e
       }, {
         fields: [{
-          text: "Grimheart Duration",
-          value: "18s"
-        }],
-        conditional: conditionals.eg
-      }, {
-        fields: [{
-          text: "IceWhile Brand DMG",
+          text: "Icewhirl Brand DMG",
           formulaText: stats => <span>{data.skill.brandDMG[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
           formula: formula.skill.brandDMG,
           variant: stats => getTalentStatKeyVariant("skill", stats),
-        }]
+        }],
       }],
     },
     burst: {
@@ -206,6 +217,7 @@ const char: ICharacterSheet = {
           text: "Shattered Lightfall Sword DMG",
           formulaText: stats => <span>50% * {data.burst.baseDMG[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats, "physical"), stats)}</span>,
           formula: formula.passive1.dmg,
+          variant: stats => getTalentStatKeyVariant("burst", stats, "physical")
         }]
       }],
     },

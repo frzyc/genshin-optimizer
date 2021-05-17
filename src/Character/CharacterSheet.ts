@@ -29,7 +29,7 @@ export default class CharacterSheet {
   get talent() { return this.sheet.talent }
   get formula() { return this.sheet.formula }
   get conditionals() { return this.sheet.conditionals }
-  isAutoElemental = () => this.sheet.weaponTypeKey === "catalyst"
+  get isAutoElemental() { return this.sheet.weaponTypeKey === "catalyst" }
   isMelee = () => {
     const weaponTypeKey = this.sheet.weaponTypeKey
     return weaponTypeKey === "sword" || weaponTypeKey === "polearm" || weaponTypeKey === "claymore"
