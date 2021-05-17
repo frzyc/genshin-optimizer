@@ -307,6 +307,10 @@ describe('getTalentStatKey()', () => {
     //elemental
     expect(getTalentStatKey("elemental", { ...stats, reactionMode: "pyro_melt" })).toBe("electro_elemental_avgHit")
     expect(getTalentStatKeyVariant("elemental", { ...stats, reactionMode: "pyro_melt" })).toBe("electro")
+
+    //overwrite
+    expect(getTalentStatKey("burst", { ...stats, reactionMode: "pyro_melt" }, "pyro")).toBe("pyro_melt_burst_avgHit")
+    expect(getTalentStatKeyVariant("burst", { ...stats, reactionMode: "pyro_melt" }, "pyro")).toBe("melt")
   })
   test('should do amp.reactions with wrong element', () => {
     //normal without infusion

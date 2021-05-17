@@ -194,13 +194,13 @@ function accumulate(slotKey, art: IArtifact, setCount, accu, stats, artifactSetE
   * @param {*} stats - The calcualted stats
   * @param {*} overwriteElement - Override the hit to be the character's elemental, that is not part of infusion.
   */
-export function getTalentStatKey(skillKey, stats, overwriteElement: ElementKey | "physical" | undefined | "" = "") {
+export function getTalentStatKey(skillKey, stats, overwriteElement?: ElementKey | "physical") {
   const { hitMode = "", infusionAura = "", infusionSelf = "", reactionMode = null, characterEle = "anemo", weaponType = "sword" } = stats
   if ((Object.keys(ElementalData) as any).includes(skillKey)) return `${skillKey}_elemental_${hitMode}`//elemental DMG
   if (!overwriteElement && weaponType === "catalyst") overwriteElement = characterEle
 
   if (skillKey === "elemental" || skillKey === "burst" || skillKey === "skill" || overwriteElement) {
-    if (reactionMode && reactionMode.startsWith(characterEle)) return `${reactionMode}_${skillKey}_${hitMode}`
+    if (reactionMode && reactionMode.startsWith(overwriteElement || characterEle)) return `${reactionMode}_${skillKey}_${hitMode}`
     return `${overwriteElement || characterEle}_${skillKey}_${hitMode}`
   }
   //auto attacks
@@ -218,7 +218,7 @@ export function getTalentStatKeyVariant(skillKey, stats, overwriteElement: Eleme
   if (!overwriteElement && weaponType === "catalyst") overwriteElement = characterEle
 
   if (skillKey === "elemental" || skillKey === "burst" || skillKey === "skill" || overwriteElement) {
-    if (reactionMode && reactionMode.startsWith(characterEle)) {
+    if (reactionMode && reactionMode.startsWith(overwriteElement || characterEle)) {
       if (["pyro_vaporize", "hydro_vaporize"].includes(reactionMode)) return "vaporize"
       else if (["pyro_melt", "cryo_melt"].includes(reactionMode)) return "melt"
     }

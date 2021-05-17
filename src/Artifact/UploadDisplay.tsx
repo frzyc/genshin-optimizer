@@ -410,8 +410,13 @@ export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactShee
 
   const unit = Stat.getStatUnit(result.mainStatKey)
   if (mainStatValues.find(value => value.mainStatValue === result.mainStatVal)) {
-    texts.level = detectedText(result.level, "Level", (value) => "+" + value)
-    texts.mainStatVal = detectedText(result.mainStatVal, "Main Stat value", (value) => <>{valueString(value, unit)}{unit === "%" ? "%" : ""}</>)
+    if (mainStatKeys.has(result.mainStatKey)) {
+      texts.level = detectedText(result.level, "Level", (value) => "+" + value)
+      texts.mainStatVal = detectedText(result.mainStatVal, "Main Stat value", (value) => <>{valueString(value, unit)}{unit === "%" ? "%" : ""}</>)
+    } else {
+      texts.level = inferredText(result.level, "Level", (value) => "+" + value)
+      texts.mainStatVal = inferredText(result.mainStatVal, "Main Stat value", (value) => <>{valueString(value, unit)}{unit === "%" ? "%" : ""}</>)
+    }
   } else {
     texts.level = unknownText(result.level, "Level", (value) => "+" + value)
     texts.mainStatVal = unknownText(result.mainStatVal, "Main Stat value", (value) => <>{valueString(value, unit)}{unit === "%" ? "%" : ""}</>)
