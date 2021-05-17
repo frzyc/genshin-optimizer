@@ -25,8 +25,8 @@ const conditionals: IConditionals = {
     maxStack: 2,
     stats: stats => ({
       def_: 30,
-      cryo_enemyRes_: data.skill.cyroResDec[stats.tlvl.skill],
-      physical_enemyRes_: data.skill.cyroResDec[stats.tlvl.skill],
+      cryo_enemyRes_: -data.skill.cyroResDec[stats.tlvl.skill],
+      physical_enemyRes_: -data.skill.cyroResDec[stats.tlvl.skill],
     }),
     fields: [{
       text: "RES Decrease Duration",
