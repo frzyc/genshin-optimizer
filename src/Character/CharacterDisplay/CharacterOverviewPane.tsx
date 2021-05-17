@@ -253,9 +253,9 @@ function WeaponStatsEditorCard({ characterSheet, weaponSheet, editable, characte
         </Col> :
           <Col>
             <h5 className="mb-0">{weaponSheet.name} {Weapon.getLevelName(weapon.levelKey)} {weaponPassiveName && `(Refinement ${weapon.refineIndex + 1})`}</h5>
-            <p><Stars stars={weaponSheet.rarity} /></p>
+            <div className="mb-2"><Stars stars={weaponSheet.rarity} /></div>
             <h6>{weaponPassiveName}</h6>
-            <p>{weaponPassiveName && weaponSheet.passiveDescription(build)}</p>
+            <div className="mb-2">{weaponPassiveName && weaponSheet.passiveDescription(build)}</div>
             <WeaponStatsCard title={"Main Stats"} statsVals={{ atk: weaponDisplayMainVal, [substatKey]: weaponDisplaySubVal }} stats={build} />
             <WeaponStatsCard title={"Bonus Stats"} statsVals={weaponBonusStats} stats={build} />
             {Boolean(conditionals) && Object.entries(conditionals).map(([stateKey, conditional]) =>

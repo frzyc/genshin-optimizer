@@ -290,10 +290,10 @@ function CharSelectDropdown({ characterSheet, weaponSheet, character, editable, 
 function CharDropdownItem({ characterKey, setCharacterKey }) {
   const characterSheet = usePromise(CharacterSheet.get(characterKey))
   if (!characterSheet) return null
-  return <Dropdown.Item onClick={() => setCharacterKey(characterKey)}>
-    <span >
-      <Image src={characterSheet.thumbImg} className={`thumb-small p-0 m-n1 grad-${characterSheet.star}star`} thumbnail />
-      <h6 className="d-inline ml-2">{characterSheet.name} </h6>
-    </span>
+  return <Dropdown.Item onClick={() => setCharacterKey(characterKey)} className="pl-2 pr-0">
+    <Row>
+      <Col xs="auto"><Image src={characterSheet.thumbImg} className={`thumb-small p-0 m-n1 grad-${characterSheet.star}star`} thumbnail /></Col>
+      <Col>{characterSheet.name}</Col>
+    </Row>
   </Dropdown.Item>
 }

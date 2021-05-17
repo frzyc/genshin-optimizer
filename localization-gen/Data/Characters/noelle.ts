@@ -1,6 +1,7 @@
 import { ICharacter } from "../../Type/const"
 
 const char: ICharacter = {
+  name: 208133317,
   constellationName: 808906466,
   auto: {
     name: [1521716213, "autoName"],

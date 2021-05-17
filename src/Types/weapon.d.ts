@@ -4,13 +4,13 @@ import { IConditionals } from "./IConditional";
 export type IWeaponSheets = Dict<string, IWeaponSheet>
 
 export interface IWeaponSheet {
-  name: string;
+  name: Displayable;
   weaponType: WeaponTypeKey;
   img: string;
   rarity: number;
-  passiveName: string;
+  passiveName: Displayable;
   passiveDescription: string | ((stats: ICalculatedStats) => Displayable)
-  description: string;
+  description: Displayable;
   baseStats: {
     main: number[],
     substatKey: string,

@@ -275,8 +275,8 @@ describe('getTalentStatKey()', () => {
   })
 
   test('should override element', () => {
-    expect(getTalentStatKey("normal", stats, true)).toBe("electro_normal_avgHit")
-    expect(getTalentStatKeyVariant("normal", stats, true)).toBe("electro")
+    expect(getTalentStatKey("normal", stats, "electro")).toBe("electro_normal_avgHit")
+    expect(getTalentStatKeyVariant("normal", stats, "electro")).toBe("electro")
   })
   test('should do elemental', () => {
     expect(getTalentStatKey("pyro", stats)).toBe("pyro_elemental_avgHit")
@@ -295,8 +295,8 @@ describe('getTalentStatKey()', () => {
     expect(getTalentStatKeyVariant("normal", { ...stats, reactionMode: "pyro_melt", infusionAura: "cryo" })).toBe("cryo")
 
     //normal with override
-    expect(getTalentStatKey("normal", { ...stats, reactionMode: "pyro_melt" }, true)).toBe("electro_normal_avgHit")
-    expect(getTalentStatKeyVariant("normal", { ...stats, reactionMode: "pyro_melt" }, true)).toBe("electro")
+    expect(getTalentStatKey("normal", { ...stats, reactionMode: "pyro_melt" }, "electro")).toBe("electro_normal_avgHit")
+    expect(getTalentStatKeyVariant("normal", { ...stats, reactionMode: "pyro_melt" }, "electro")).toBe("electro")
 
     //skill
     expect(getTalentStatKey("skill", { ...stats, reactionMode: "pyro_melt" })).toBe("electro_skill_avgHit")
@@ -316,8 +316,8 @@ describe('getTalentStatKey()', () => {
     expect(getTalentStatKeyVariant("normal", { ...stats, characterEle: "pyro", reactionMode: "pyro_melt", infusionAura: "cryo" })).toBe("cryo")
 
     //normal with override
-    expect(getTalentStatKey("normal", { ...stats, characterEle: "pyro", reactionMode: "pyro_melt" }, true)).toBe("pyro_melt_normal_avgHit")
-    expect(getTalentStatKeyVariant("normal", { ...stats, characterEle: "pyro", reactionMode: "pyro_melt" }, true)).toBe("melt")
+    expect(getTalentStatKey("normal", { ...stats, characterEle: "pyro", reactionMode: "pyro_melt" }, "pyro")).toBe("pyro_melt_normal_avgHit")
+    expect(getTalentStatKeyVariant("normal", { ...stats, characterEle: "pyro", reactionMode: "pyro_melt" }, "pyro")).toBe("melt")
 
     //skill
     expect(getTalentStatKey("skill", { ...stats, characterEle: "pyro", reactionMode: "pyro_melt" })).toBe("pyro_melt_skill_avgHit")

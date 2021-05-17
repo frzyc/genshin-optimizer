@@ -80,7 +80,7 @@ const char: ICharacterSheet = {
         text: <span><strong>Normal Attack</strong> Performs up to five consecutive spear strikes.</span>,
         fields: data.normal.hitArr.map((percentArr, i) =>
         ({
-          text: `${i + (i < 5 ? 1 : 0)}${i === 4 ? ".1" : i === 5 ? ".2" : ""}-Hit DMG ${i === 2 ? " (x2)" : ""}`,
+          text: `${i + (i < 5 ? 1 : 0)}${i === 4 ? ".1" : i === 5 ? ".2" : ""}-Hit DMG${i === 2 ? " (x2)" : ""}`,
           formulaText: stats => <span>{percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
           formula: formula.normal[i],
           variant: stats => getTalentStatKeyVariant("normal", stats),

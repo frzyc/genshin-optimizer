@@ -45,9 +45,9 @@ export const data = {
     dot: [40, 43, 46, 50, 53, 56, 60, 64, 68, 72, 76, 80, 85, 90, 95],
   }
 }
-function nyanDMG(percent, defMulti, stats, skillKey = "charged", elemental = false): FormulaItem {
+function nyanDMG(percent, defMulti, stats, skillKey = "charged"): FormulaItem {
   const val = percent / 100
-  const statKey = getTalentStatKey(skillKey, stats, elemental) + "_multi"
+  const statKey = getTalentStatKey(skillKey, stats) + "_multi"
   return [s => val * (s.finalATK + defMulti * s.finalDEF) * s[statKey], ["finalATK", "finalDEF", statKey]]
 }
 

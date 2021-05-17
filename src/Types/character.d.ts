@@ -3,7 +3,7 @@ import ICalculatedStats from "./ICalculatedStats";
 import IConditional, { IConditionals } from "./IConditional";
 import { IFieldDisplay } from "./IFieldDisplay";
 export interface ICharacterSheet {
-  name: string,
+  name: Displayable,
   cardImg: string,
   thumbImg: string,
   star: Rarity,
@@ -81,7 +81,7 @@ export interface IFormulaSheet {
 }
 
 interface ISubFormula {
-  [name: string]: (stats: any) => FormulaItem
+  [name: string]: (stats: ICalculatedStats) => FormulaItem
 }
 
 export type FormulaItem = [(s: any) => number, string[]]

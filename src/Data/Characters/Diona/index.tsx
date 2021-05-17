@@ -73,9 +73,9 @@ const char: ICharacterSheet = {
           variant: stats => getTalentStatKeyVariant("charged", stats),
         }, {
           text: `Fully-Charged Aimed Shot DMG`,
-          formulaText: stats => <span>{data.charged.fullAimedShot[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats, true), stats)}</span>,
+          formulaText: stats => <span>{data.charged.fullAimedShot[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats, "cryo"), stats)}</span>,
           formula: formula.charged.fullAimedShot,
-          variant: stats => getTalentStatKeyVariant("charged", stats, true),
+          variant: stats => getTalentStatKeyVariant("charged", stats, "cryo"),
         }, {
           canShow: stats => stats.constellation >= 4,
           text: "Charge time reduced by 60% in Burst zone"

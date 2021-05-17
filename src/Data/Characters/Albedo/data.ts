@@ -40,9 +40,9 @@ const data = {
     blossom: [72, 77.4, 82.8, 90, 95.4, 100.8, 108, 115.2, 122.4, 129.6, 136.8, 144, 153, 162, 171]
   }
 }
-function burDMG(percent, stats, skillKey, stacks = 0, elemental = false): [(stat: any) => number, string[]] {
+function burDMG(percent, stats, skillKey, stacks = 0): [(stat: any) => number, string[]] {
   const val = percent / 100
-  const statKey = getTalentStatKey(skillKey, stats, elemental) + "_multi"
+  const statKey = getTalentStatKey(skillKey, stats) + "_multi"
   const stacksVal = stacks * 0.3
   return [s => (val * s.finalATK + stacksVal * s.finalDEF) * s[statKey], ["finalATK", "finalDEF", statKey]]
 }

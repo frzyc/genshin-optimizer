@@ -63,7 +63,7 @@ function AppInner() {
             </Nav>
           </Navbar.Collapse>
         </Navbar>
-        <Suspense fallback={<LoadingCard />}>
+        <Suspense fallback={<Container><LoadingCard /></Container>}>
           <Switch>
             <Route path="/artifact" component={ArtifactDisplay} />
             <Route path="/character" component={CharacterDisplay} />

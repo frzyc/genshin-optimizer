@@ -1,45 +1,85 @@
-import card from './Character_Noelle_Card.jpg'
-import thumb from './Character_Noelle_Thumb.png'
-import c1 from './Constellation_I_Got_Your_Back.png'
-import c2 from './Constellation_Combat_Maid.png'
-import c3 from './Constellation_Invulnerable_Maid.png'
-import c4 from './Constellation_To_Be_Cleaned.png'
-import c5 from './Constellation_Favonius_Sweeper_Master.png'
-import c6 from './Constellation_Must_Be_Spotless.png'
-import normal from './Talent_Favonius_Bladework_-_Maid.png'
-import skill from './Talent_Breastplate.png'
-import burst from './Talent_Sweeping_Time.png'
-import passive1 from './Talent_Devotion.png'
-import passive2 from './Talent_Nice_and_Clean.png'
-import passive3 from './Talent_Maid\'s_Knighthood.png'
+import card from './Character_Eula_Card.png'
+import thumb from './Character_Eula_Thumb.png'
+import c1 from './placeholder.png'
+import c2 from './placeholder.png'
+import c3 from './placeholder.png'
+import c4 from './placeholder.png'
+import c5 from './placeholder.png'
+import c6 from './placeholder.png'
+import normal from './Talent_Favonius_Bladework_-_Edel.png'
+import skill from './Talent_Icetide_Vortex.png'
+import burst from './Talent_Glacial_Illumination.png'
+import passive1 from './placeholder.png'
+import passive2 from './placeholder.png'
+import passive3 from './placeholder.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { IConditionals } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
 import { Translate } from '../../../Components/Translate'
-const tr = (strKey: string) => <Translate ns="char_noelle_gen" key18={strKey} />
+const tr = (strKey: string) => <Translate ns="char_eula_gen" key18={strKey} />
 const conditionals: IConditionals = {
-  q: { // Sweeping Time
-    name: "Sweeping Time",
-    maxStack: 1,
+  eg: {
+    name: "Grimheart",
+    maxStack: 2,
     stats: stats => ({
-      modifiers: { finalATK: { finalDEF: (data.burst.bonus[stats.tlvl.burst] + (stats.constellation >= 6 ? 50 : 0)) / 100 } },
-      infusionSelf: "geo",
+      def_: 30,
+      cryo_enemyRes_: data.skill.cyroResDec[stats.tlvl.skill],
+      physical_enemyRes_: data.skill.cyroResDec[stats.tlvl.skill],
     }),
-    fields: [{ text: "Larger attack AOE" }]
+    fields: [{
+      text: "RES Decrease Duration",
+      value: "7s"
+    }]
+  },
+  q: { // Sweeping Time
+    name: "Lightfall Sword",
+    states: Object.fromEntries([...Array(31).keys()].map(i =>
+      [i, {
+        name: i === 0 ? `Base DMG` : i === 1 ? `1 Stack` : `${i} Stacks`,
+        fields: [{
+          text: `Lightfall Sword ${i === 0 ? `Base DMG` : i === 1 ? `1 Stack` : `${i} Stacks`}`,
+          canShow: stats => {
+            if (i < 5 && stats.constellation >= 6) return false
+            const [stacks, stateKey] = (stats.conditionalValues?.character?.eula?.q ?? [])
+            return stacks && stateKey === i.toString()
+          },
+          formulaText: stats => {
+            const statKey = getTalentStatKey("burst", stats, "physical")
+            const increase = stats.constellation >= 4 ? "125% * " : ""
+            return i === 0 ? <span>{increase}{data.burst.baseDMG[stats.tlvl.burst]}% {Stat.printStat(statKey, stats)}</span> :
+              <span>{increase}( {data.burst.baseDMG[stats.tlvl.burst]}% + {i} * {data.burst.stackDMG[stats.tlvl.burst]}%) {Stat.printStat(statKey, stats)}</span>
+          },
+          formula: formula.burst[i],
+          variant: stats => getTalentStatKeyVariant("burst", stats, "physical"),
+        }, {
+          text: "Starts at 5 stacks"
+        }]
+      }])),
+  },
+  c1: {
+    name: <span>Consume <b>Grimheart</b> stacks</span>,
+    canShow: stats => stats.constellation >= 1,
+    stats: {
+      physical_dmg_: 30
+    },
+    fields: [{
+      text: "Duration",
+      value: "6s + 6s per stack, up to 18s"
+    }]
   }
 }
 const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
-  star: 4,
-  elementKey: "geo",
+  star: 5,
+  elementKey: "cryo",
   weaponTypeKey: "claymore",
   gender: "F",
   constellationName: tr("constellationName"),
-  titles: ["Chivalric Blossom", "Maid of Favonius"],
+  titles: [],
   baseStat: data.baseStat,
   specializeStat: data.specializeStat,
   formula,
@@ -52,7 +92,7 @@ const char: ICharacterSheet = {
         text: tr("auto.fields.normal"),
         fields: data.normal.hitArr.map((percentArr, i) =>
         ({
-          text: `${i + 1}-Hit DMG`,
+          text: `${i + 1}-Hit DMG${i === 2 || i === 4 ? " (x2)" : ""}`,
           formulaText: stats => <span>{percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
           formula: formula.normal[i],
           variant: stats => getTalentStatKeyVariant("normal", stats),
@@ -102,29 +142,35 @@ const char: ICharacterSheet = {
       document: [{
         text: tr("skill.description"),
         fields: [{
-          text: "Skill DMG",
-          formulaText: stats => <span>{data.skill.skill_dmg[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats) + "_multi", stats)} * {Stat.printStat("finalDEF", stats)}</span>,
-          formula: formula.skill.skill_dmg,
+          text: "Press DMG",
+          formulaText: stats => <span>{data.skill.pressDMG[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
+          formula: formula.skill.pressDMG,
           variant: stats => getTalentStatKeyVariant("skill", stats),
         }, {
-          text: "Shield DMG Absorption",
-          formulaText: stats => <span>( {data.skill.shield_def[stats.tlvl.skill]}% {Stat.printStat("finalDEF", stats)} + {data.skill.shield_flat[stats.tlvl.skill]} ) * (100% + {Stat.printStat("powShield_", stats)}) * 150% All DMG Absorption</span>,
-          formula: formula.skill.shield,
+          text: "Press CD",
+          value: "4s"
         }, {
-          text: "Healing",
-          formulaText: stats => <span>( {data.skill.heal_def[stats.tlvl.skill]}% {Stat.printStat("finalDEF", stats)} + {data.skill.heal_flat[stats.tlvl.skill]} ) * {Stat.printStat("heal_multi", stats)}</span>,
-          formula: formula.skill.heal,
-          variant: "success"
+          text: "Hold DMG",
+          formulaText: stats => <span>{data.skill.holdDMG[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
+          formula: formula.skill.holdDMG,
+          variant: stats => getTalentStatKeyVariant("skill", stats),
         }, {
-          text: "Trigger Chance",
-          value: stats => <span>{data.skill.heal_trigger[stats.tlvl.skill]}%{stats.constellation >= 1 ? <span> (100% while <b>Sweeping Time</b> and <b>Breastplate</b> are both in effect)</span> : ""}</span>,
-        }, {
-          text: "Duration",
-          value: "12s",
-        }, {
-          text: "CD",
-          value: stats => "24s" + (stats.ascension > 4 ? " -1s Every 4 hits" : ""),
+          text: "Hold CD",
+          value: stats => stats.constellation >= 2 ? "4s" : "10s"
+        },],
+      }, {
+        fields: [{
+          text: "Grimheart Duration",
+          value: "18s"
         }],
+        conditional: conditionals.eg
+      }, {
+        fields: [{
+          text: "IceWhile Brand DMG",
+          formulaText: stats => <span>{data.skill.brandDMG[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
+          formula: formula.skill.brandDMG,
+          variant: stats => getTalentStatKeyVariant("skill", stats),
+        }]
       }],
     },
     burst: {
@@ -133,28 +179,19 @@ const char: ICharacterSheet = {
       document: [{
         text: tr("burst.description"),
         fields: [{
-          text: "Burst DMG",
-          formulaText: stats => <span>{data.burst.burst_dmg[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
-          formula: formula.burst.burst_dmg,
-          variant: stats => getTalentStatKeyVariant("burst", stats),
-        }, {
           text: "Skill DMG",
-          formulaText: stats => <span>{data.burst.skill_dmg[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
-          formula: formula.burst.skill_dmg,
+          formulaText: stats => <span>{data.burst.dmg[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
+          formula: formula.burst.dmg,
           variant: stats => getTalentStatKeyVariant("burst", stats),
-        }, {
-          text: "ATK Bonus",
-          formulaText: stats => <span>{data.burst.bonus[stats.tlvl.burst]}% {stats.constellation >= 6 ? "+50% " : ""}{Stat.printStat("finalDEF", stats)}</span>,
-          formula: formula.burst.bonus,
-        }, {
-          text: "Duration",
-          value: stats => "15s" + (stats.constellation >= 6 ? " +1s per kill, up to 10s" : ""),
         }, {
           text: "CD",
           value: "15s",
         }, {
           text: "Energy Cost",
           value: 60,
+        }, {
+          text: "Lightfall Sword Duration",
+          value: "7s"
         }],
         conditional: conditionals.q
       }],
@@ -166,69 +203,51 @@ const char: ICharacterSheet = {
         text: tr("passive1.description"),
         fields: [{
           canShow: stats => stats.ascension >= 1,
-          text: "Shield Effective HP",
-          formulaText: stats => <span>400% {Stat.printStat("finalDEF", stats)} * (100% + {Stat.printStat("powShield_", stats)}) * 150% All DMG Absorption</span>,
-          formula: formula.passive1.hp,
-        }, {
-          canShow: stats => stats.ascension >= 1,
-          text: "CD",
-          value: "60s",
+          text: "Shattered Lightfall Sword DMG",
+          formulaText: stats => <span>50% * {data.burst.baseDMG[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats, "physical"), stats)}</span>,
+          formula: formula.passive1.dmg,
         }]
       }],
     },
     passive2: {
       name: tr("passive2.name"),
       img: passive2,
-      document: [{
-        text: tr("passive2.description"),
-      }],
+      document: [{ text: tr("passive2.description"), }],
     },
     passive3: {
       name: tr("passive3.name"),
       img: passive3,
-      document: [{
-        text: tr("passive3.description"),
-      }]
+      document: [{ text: tr("passive3.description"), }]
     },
     constellation1: {
       name: tr("constellation1.name"),
       img: c1,
-      document: [{ text: tr("constellation1.description"), }]
+      document: [{
+        text: tr("constellation1.description"),
+        conditional: conditionals.c1
+      }]
     },
     constellation2: {
       name: tr("constellation2.name"),
       img: c2,
-      document: [{ text: tr("constellation2.description"), }],
-      stats: {
-        charged_dmg_: 15,
-        staminaChargedDec_: 20,
-      }
+      document: [{ text: tr("constellation2.description"), }]
     },
     constellation3: {
       name: tr("constellation3.name"),
       img: c3,
       document: [{ text: tr("constellation3.description"), }],
-      stats: { skillBoost: 3 }
+      stats: { burstBoost: 3 }
     },
     constellation4: {
       name: tr("constellation4.name"),
       img: c4,
-      document: [{
-        text: tr("constellation4.description"),
-        fields: [{
-          canShow: stats => stats.constellation >= 4,
-          text: "Breastplate shatter damage",
-          formulaText: stats => <span>400% {Stat.printStat(getTalentStatKey("elemental", stats), stats)}</span>,
-          formula: formula.constellation4.dmg,
-          variant: stats => getTalentStatKeyVariant("elemental", stats),
-        }]
-      }]
+      document: [{ text: tr("constellation4.description") }]
     },
     constellation5: {
       name: tr("constellation5.name"),
       img: c5,
       document: [{ text: tr("constellation5.description"), }],
-      stats: { burstBoost: 3 }
+      stats: { skillBoost: 3 }
     },
     constellation6: {
       name: tr("constellation6.name"),

@@ -1,5 +1,7 @@
 import char from './Characters'
+import weapon from './Weapons'
 const data = {
-  char
+  char,
+  weapon
 }
 export default data

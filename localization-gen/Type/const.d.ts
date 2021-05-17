@@ -5,6 +5,7 @@ interface ISkill {
   description: transID
 }
 export type ICharacter = {
+  name: transID,
   auto: {
     name: transID,
     fields: transID
@@ -21,4 +22,10 @@ export type ICharacter = {
   constellation4: ISkill,
   constellation5: ISkill,
   constellation6: ISkill
-} & Iauto
+}
+export type IWeapon = {
+  name: transID,
+  passiveName: transID,
+  passiveDescription: transID[]
+  description: transID
+}

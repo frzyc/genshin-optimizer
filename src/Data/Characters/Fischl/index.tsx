@@ -55,15 +55,15 @@ const char: ICharacterSheet = {
           variant: stats => getTalentStatKeyVariant("charged", stats),
         }, {
           text: `Fully-Charged Aimed Shot DMG`,
-          formulaText: stats => <span>{data.charged.fullAimedShot[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats, true), stats)}</span>,
+          formulaText: stats => <span>{data.charged.fullAimedShot[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats, "electro"), stats)}</span>,
           formula: formula.charged.fullAimedShot,
-          variant: stats => getTalentStatKeyVariant("charged", stats, true),
+          variant: stats => getTalentStatKeyVariant("charged", stats, "electro"),
         }, {
           canShow: stats => stats.ascension >= 1,
           text: <span>Full Aimed Shot on Oz <span className="text-electro">AoE</span></span>,
-          formulaText: stats => <span>152.7% * {data.charged.fullAimedShot[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats, true), stats)}</span>,
+          formulaText: stats => <span>152.7% * {data.charged.fullAimedShot[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats, "electro"), stats)}</span>,
           formula: formula.charged.fullAimedShotOz,
-          variant: stats => getTalentStatKeyVariant("charged", stats, true),
+          variant: stats => getTalentStatKeyVariant("charged", stats, "electro"),
         }]
       }, {
         text: <span><strong>Plunging Attack</strong> Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.</span>,

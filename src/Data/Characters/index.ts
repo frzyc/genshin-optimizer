@@ -6,6 +6,7 @@ import bennett from './Bennett'
 import chongyun from './Chongyun'
 import diluc from './Diluc'
 import diona from './Diona'
+import eula from './Eula'
 import fischl from './Fischl'
 import ganyu from './Ganyu'
 import hutao from './Hu Tao'
@@ -43,6 +44,7 @@ const characters: StrictDict<CharacterKey, ICharacterSheet> = {
   chongyun,
   diluc,
   diona,
+  eula,
   fischl,
   ganyu,
   hutao,

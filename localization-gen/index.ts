@@ -1,3 +1,4 @@
+import { throws } from 'node:assert'
 import data from './Data'
 const fs = require('fs')
 function crawlObject(obj, keys, validate, cb) {
@@ -12,34 +13,22 @@ function layeredAssignment(obj, keys, value) {
   }, obj)
   return obj
 }
-const tagData = {
-  "<color=#FFD780FF>": ["<strong>", "</strong>"],
-  "<color=#FFE699FF>": ["<geo>", "</geo>"]
-}
-const endTag = "</color>"
-function colorTagConvertor(string: string) {
-  Object.entries(tagData).forEach(([startTag, [replaceStrStartTag, replaceStrEndTag]]) => {
-    while (string.includes(startTag))
-      string = string.replace(startTag, replaceStrStartTag).replace(endTag, replaceStrEndTag)
-  })
-  return string
-}
 function parseBulletPoints(strings: string[]): string[] {
-  const { strs } = strings.reduce(({ strs, arr }: { strs: any[], arr: string[] | undefined }, str) => {
+  const { strs } = strings.reduce(({ strs, arr }, str) => {
     const isBullet = str.startsWith("·")
     if (isBullet) str = str.slice(1)
     if (arr) {
       if (isBullet) arr.push(str)
       else {
-        strs.push(arr)
+        strs.push(arr as any) // TODO
         arr = undefined
       }
-    } else if (isBullet) {//start of new bullet point list
+    } else if (isBullet) { //start of new bullet point list
       arr = [str]
     }
     if (!isBullet) strs.push(str)
     return { strs, arr }
-  }, { strs: [], arr: undefined })
+  }, { strs: [] as string[], arr: undefined as string[] | undefined })
   return strs
 }
 const languageMap = {
@@ -57,10 +46,33 @@ const languageMap = {
   th: require('./TextMap/TextTH.json'),
   vi: require('./TextMap/TextVI.json')
 }
-const parsingFunctions: { [key: string]: (lang: string, string: string) => string } = {
+
+const tagColor = {
+  "FFD780FF": "strong",
+  "FFE699FF": "geo",
+  "99FFFFFF": "cryo",
+} as const
+function preprocess(string: string): string {
+  { // color tags
+    const stack: ColorTag[] = []
+    string = string.replace(/<(\/?)color(?:=#([0-9A-F]{8}))?>/g, (_match, isClosed, color) => {
+      if (isClosed) return `</${stack.pop()}>`
+      const tag = tagColor[color]!
+      stack.push(tag)
+      return `<${tag}>`
+    })
+  }
+
+  if (string.startsWith("#")) { // `{}` tags
+    string = string.substring(1)
+      .replace(/\{LAYOUT_(PC|PS|MOBILE)#(.*?)\}/g,
+        (_match, layout, text) => layout === "PC" ? text : "") // Use PC layout
+  }
+  return string
+}
+const parsingFunctions: { [key: string]: (lang: Language, string: string) => string } = {
   autoName: (lang, string) => {
     //starts with Normal Attack: ______ in english
-    // console.log(lang, string);
     if (["chs", "cht", "ja", "ko"].includes(lang)) {
       const index = string.indexOf("·")
       string = string.slice(index + 1)
@@ -72,25 +84,17 @@ const parsingFunctions: { [key: string]: (lang: string, string: string) => strin
     } else {
       string = string.split(":")[1].trim()
     }
-    // console.log(lang, string);
     if (!string) throw (`${lang} has invalid "name"`)
     return string
   },
   autoFields: (lang, string) => {
-    // console.log(lang, string);
-    const [normal, charged, plunging] = string.split("\\n\\n").map(s => s.trim().replace(/\\n/g, " ")).map(s => colorTagConvertor(s))
+    const [normal, charged, plunging] = string.split("\\n\\n").map(s => s.trim().replace(/\\n/g, " "))
     string = { normal, charged, plunging } as any
-    // console.log(lang, string);
     return string
   },
   paragraph: (lang, string) => {
-    // console.log(lang, string);
-    let parsed = string.split("\\n").map(s => {
-      if (!s) return "<br/>"
-      return colorTagConvertor(s)
-    }) as any
+    let parsed = string.split("\\n").map(s => s || "<br/>")
     string = { ...parseBulletPoints(parsed) } as any
-    // console.log(lang, string);
     return string
   },
   string: (lang, string) => string
@@ -98,12 +102,13 @@ const parsingFunctions: { [key: string]: (lang: string, string: string) => strin
 
 const languageData = {}
 Object.entries(languageMap).forEach(([lang, langStrings]) => {
-  crawlObject(data, [], v => typeof v === "number" || Array.isArray(v), (value, keys) => {
+  crawlObject(data, [], v => typeof v === "number" || (Array.isArray(v) && typeof v[1] === "string"), (value, keys) => {
     // const [type, characterKey, skill, field] = keys
 
     if (typeof value === "number") value = [value, "string"]
     const [stringID, processing] = value
-    const string = parsingFunctions[processing](lang, langStrings[stringID])
+    const string = parsingFunctions[processing](lang as Language, preprocess(langStrings[stringID]))
+    if (!string) throw (`Invalid string in ${keys}, for lang:${lang} (${stringID}:${processing})`)
     layeredAssignment(languageData, [lang, ...keys], string)
   })
 })
@@ -113,10 +118,14 @@ Object.entries(languageData).forEach(([lang, data]) => {
   const fileDir = `../public/locales/${lang}`
   if (!fs.existsSync(fileDir)) fs.mkdirSync(fileDir)
 
-  //TODO: do with weapon/artifacts
-  Object.entries((data as any).char).forEach(([charKey, charData]) => {
-    const filename = `${fileDir}/char_${charKey}.json`
-    const fileStr = JSON.stringify(charData, null, 2)
-    fs.writeFile(filename, fileStr, () => console.log("Generated JSON at", filename))
+  Object.entries(data).forEach(([type, typeData]) => {
+    Object.entries((typeData as any)).forEach(([charKey, charData]) => {
+      const filename = `${fileDir}/${type}_${charKey}_gen.json`
+      const fileStr = JSON.stringify(charData, null, 2)
+      fs.writeFile(filename, fileStr, () => console.log("Generated JSON at", filename))
+    })
   })
 })
+
+type Language = keyof typeof languageMap
+type ColorTag = typeof tagColor[keyof typeof tagColor]

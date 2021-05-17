@@ -60,26 +60,26 @@ const formula: IFormulaSheet = {
   normal: {
     ...Object.fromEntries(data.normal.hitArr.map((percentArr, i) => [i, stats =>
       basicDMGFormula(percentArr[stats.tlvl.auto], stats, "normal")])),
-    flash: stats => basicDMGFormula(data.riptide.flash[stats.tlvl.auto], stats, "normal", true),
-    burst: stats => basicDMGFormula(data.riptide.burst[stats.tlvl.auto], stats, "normal", true),
+    flash: stats => basicDMGFormula(data.riptide.flash[stats.tlvl.auto], stats, "normal", "hydro"),
+    burst: stats => basicDMGFormula(data.riptide.burst[stats.tlvl.auto], stats, "normal", "hydro"),
   },
   charged: {
     aimedShot: stats => basicDMGFormula(data.charged.aimedShot[stats.tlvl.auto], stats, "charged"),
-    fullAimedShot: stats => basicDMGFormula(data.charged.fullAimedShot[stats.tlvl.auto], stats, "charged", true),
+    fullAimedShot: stats => basicDMGFormula(data.charged.fullAimedShot[stats.tlvl.auto], stats, "charged", "hydro"),
   },
   plunging: Object.fromEntries(Object.entries(data.plunging).map(([key, arr]) => [key, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "plunging")])),
   skill: {
     ...Object.fromEntries(data.skill.hitArr.map((percentArr, i) => [i, stats =>
-      basicDMGFormula(percentArr[stats.tlvl.skill], stats, "normal", true)])),
+      basicDMGFormula(percentArr[stats.tlvl.skill], stats, "normal", "hydro")])),
     skillDmg: stats => basicDMGFormula(data.skill.skillDmg[stats.tlvl.skill], stats, "skill"),
-    charged1: stats => basicDMGFormula(data.skill.charged1[stats.tlvl.skill], stats, "charged", true),
-    charged2: stats => basicDMGFormula(data.skill.charged2[stats.tlvl.skill], stats, "charged", true),
-    slash: stats => basicDMGFormula(data.riptide.slash[stats.tlvl.skill], stats, "skill", true),
+    charged1: stats => basicDMGFormula(data.skill.charged1[stats.tlvl.skill], stats, "charged", "hydro"),
+    charged2: stats => basicDMGFormula(data.skill.charged2[stats.tlvl.skill], stats, "charged", "hydro"),
+    slash: stats => basicDMGFormula(data.riptide.slash[stats.tlvl.skill], stats, "skill", "hydro"),
   },
   burst: {
     melee: stats => basicDMGFormula(data.burst.melee[stats.tlvl.burst], stats, "burst"),
     ranged: stats => basicDMGFormula(data.burst.ranged[stats.tlvl.burst], stats, "burst"),
-    blast: stats => basicDMGFormula(data.riptide.blast[stats.tlvl.burst], stats, "burst", true),
+    blast: stats => basicDMGFormula(data.riptide.blast[stats.tlvl.burst], stats, "burst", "hydro"),
   },
 }
 export default formula

@@ -24,7 +24,7 @@ export const allCharacterKeys = [
   "albedo", "amber", "barbara", "beidou", "bennett", "chongyun", "diluc", "diona", "fischl", "ganyu",
   "hutao", "jean", "kaeya", "keqing", "klee", "lisa", "mona", "ningguang", "noelle", "qiqi",
   "razor", "sucrose", "tartaglia", "traveler_anemo", "traveler_geo", "venti", "xiao", "xiangling", "xingqiu", "xinyan",
-  "zhongli", "rosaria", "yanfei",
+  "zhongli", "rosaria", "yanfei", "eula"
 ] as const
 export const allWeaponKeys = [
   "DullBlade", "SilverSword", "CoolSteel", "DarkIronSword", "FilletBlade", "HarbingerOfDawn", "SkyriderSword",
@@ -43,7 +43,8 @@ export const allWeaponKeys = [
   "AmosBow", "ElegyForTheEnd", "WindblumeOde", "ApprenticesNotes", "PocketGrimoire", "AmberCatalyst", "EmeraldOrb",
   "MagicGuide", "OtherworldlyStory", "ThrillingTalesOfDragonSlayers", "TwinNephrite", "BlackcliffAgate",
   "FavoniusCodex", "MappaMare", "PrototypeMalice", "RoyalGrimoire", "SacrificialFragments", "SolarPearl", "TheWidsith",
-  "WineAndSong", "EyeOfPerception", "Frostbearer", "LostPrayerToTheSacredWinds", "SkywardAtlas", "MemoryOfDust"
+  "WineAndSong", "EyeOfPerception", "Frostbearer", "LostPrayerToTheSacredWinds", "SkywardAtlas", "MemoryOfDust",
+  "SongOfBrokenPines"
 ] as const
 export type HitModeKey = typeof allHitModes[number]
 export type ReactionModeKey = typeof allReactionModes[number]

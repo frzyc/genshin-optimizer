@@ -110,9 +110,9 @@ const char: ICharacterSheet = {
           variant: stats => getTalentStatKeyVariant("charged", stats),
         }, {
           text: <span>Fully-Charged Aimed Shot DMG</span>,
-          formulaText: stats => <span>{data.charged.full[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats, true), stats)}</span>,
+          formulaText: stats => <span>{data.charged.full[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats, "anemo"), stats)}</span>,
           formula: formula.charged.full,
-          variant: stats => getTalentStatKeyVariant("charged", stats, true),
+          variant: stats => getTalentStatKeyVariant("charged", stats, "anemo"),
         },]
       }, {
         canShow: stats => stats.constellation >= 1,
@@ -124,9 +124,9 @@ const char: ICharacterSheet = {
           variant: stats => getTalentStatKeyVariant("charged", stats),
         }, {
           text: `Additional Full-Charged Aimed Shot DMG`,
-          formulaText: stats => <span>{(data.charged.full[stats.tlvl.auto] * 0.33)?.toFixed(2)}% {Stat.printStat(getTalentStatKey("charged", stats, true), stats)}</span>,
+          formulaText: stats => <span>{(data.charged.full[stats.tlvl.auto] * 0.33)?.toFixed(2)}% {Stat.printStat(getTalentStatKey("charged", stats, "anemo"), stats)}</span>,
           formula: formula.charged.full_bonus,
-          variant: stats => getTalentStatKeyVariant("charged", stats, true),
+          variant: stats => getTalentStatKeyVariant("charged", stats, "anemo"),
         }]
       }, {
         text: <span><strong>Plunging Attack</strong> Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.</span>,
