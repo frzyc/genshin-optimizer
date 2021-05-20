@@ -70,7 +70,11 @@ const conditionals: IConditionals = {
           formula: formula.burst[i],
           variant: stats => getTalentStatKeyVariant("burst", stats, "physical"),
         }, {
+          canShow: stats => stats.constellation >= 6,
           text: "Starts at 5 stacks"
+        }, {
+          canShow: stats => stats.constellation >= 6,
+          text: "50% chance to get additional stacks"
         }]
       }])),
   },
