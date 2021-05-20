@@ -58,7 +58,8 @@ function f(options, statKey) {
   let statUnit = Stat.getStatUnit(statKey)
   let fixedUnit = Stat.fixedUnit(statKey)
   let value = stats?.[statKey]?.toFixed?.(fixedUnit) || stats?.[statKey]
-  return <span className="text-nowrap"><b>{statName}</b> <span className="text-info">{value}{statUnit}</span></span>
+  const debug = process.env.NODE_ENV === "development" ? <code className="text-warning"> {statKey}</code> : null
+  return <span className="text-nowrap"><b>{statName}</b>{debug} <span className="text-info">{value}{statUnit}</span></span>
 }
 
 export const FormulaText = {

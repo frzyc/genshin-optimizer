@@ -1,4 +1,4 @@
-import { IFormulaSheet } from "../../../Types/character"
+import { FormulaItem, IFormulaSheet } from "../../../Types/character"
 import { basicDMGFormula } from "../../../Util/FormulaUtil"
 
 export const data = {
@@ -37,10 +37,15 @@ export const data = {
     cyroResDec: [16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 25, 25, 25, 25, 25]
   },
   burst: {
-    dmg: [245.6, 264.02, 282.44, 307, 325.42, 343.84, 368.4, 392.96, 417.52, 442.08, 466.64, 491.2, 521.9, 552.6, 583.3, 0],
-    baseDMG: [367.05, 396.92, 426.8, 469.48, 499.36, 533.5, 580.45, 627.4, 674.34, 725.56, 784.25, 853.26, 922.27, 991.29, 1066.57, 0],
-    stackDMG: [74.99, 81.1, 87.2, 95.92, 102.02, 109, 118.59, 128.18, 137.78, 148.24, 160.23, 174.33, 188.43, 202.53, 217.91, 0]
+    dmg: [245.6, 264.02, 282.44, 307, 325.42, 343.84, 368.4, 392.96, 417.52, 442.08, 466.64, 491.2, 521.9, 552.6, 583.3],
+    baseDMG: [367.05, 396.92, 426.8, 469.48, 499.36, 533.5, 580.45, 627.4, 674.34, 725.56, 784.25, 853.26, 922.27, 991.29, 1066.57],
+    stackDMG: [74.99, 81.1, 87.2, 95.92, 102.02, 109, 118.59, 128.18, 137.78, 148.24, 160.23, 174.33, 188.43, 202.53, 217.91]
   }
+}
+const physicalBurst25 = (val, stats): FormulaItem => {
+  val = val / 100
+  const hitModeMultiKey = stats.hitMode === "avgHit" ? "burst_avgHit_base_multi" : stats.hitMode === "critHit" ? "critHit_base_multi" : ""
+  return [s => val * s.finalATK * (hitModeMultiKey ? s[hitModeMultiKey] : 1) * (s.physical_burst_hit_base_multi + 0.25) * s.enemyLevel_multi * s.physical_enemyRes_multi, ["finalATK", ...(hitModeMultiKey ? [hitModeMultiKey] : []), "physical_burst_hit_base_multi", "enemyLevel_multi", "physical_enemyRes_multi"]]
 }
 const formula: IFormulaSheet = {
   normal: Object.fromEntries(data.normal.hitArr.map((arr, i) =>
@@ -57,10 +62,13 @@ const formula: IFormulaSheet = {
   burst: {
     dmg: stats => basicDMGFormula(data.burst.dmg[stats.tlvl.burst], stats, "burst"),
     ...Object.fromEntries([...Array(31).keys()].map(i =>
-      [i, stats => basicDMGFormula((stats.constellation >= 4 ? 1.25 : 1) * (data.burst.baseDMG[stats.tlvl.burst] + i * data.burst.stackDMG[stats.tlvl.burst]), stats, "burst", "physical")]))
+      [i, stats => basicDMGFormula(data.burst.baseDMG[stats.tlvl.burst] + i * data.burst.stackDMG[stats.tlvl.burst], stats, "burst", "physical")])),
+    ...Object.fromEntries([...Array(31).keys()].map(i =>
+      [`${i}_50`, stats => physicalBurst25(data.burst.baseDMG[stats.tlvl.burst] + i * data.burst.stackDMG[stats.tlvl.burst], stats)]))
   },
   passive1: {
     dmg: stats => basicDMGFormula(data.burst.baseDMG[stats.tlvl.burst] / 2, stats, "burst", "physical"),
+    dmg50: stats => physicalBurst25(data.burst.baseDMG[stats.tlvl.burst] / 2, stats)
   },
 }
 export default formula

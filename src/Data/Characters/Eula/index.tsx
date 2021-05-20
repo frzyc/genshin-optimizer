@@ -1,17 +1,17 @@
 import card from './Character_Eula_Card.png'
 import thumb from './Character_Eula_Thumb.png'
-import c1 from './placeholder.png'
-import c2 from './placeholder.png'
-import c3 from './placeholder.png'
-import c4 from './placeholder.png'
-import c5 from './placeholder.png'
-import c6 from './placeholder.png'
+import c1 from './Constellation_Tidal_Illusion.png'
+import c2 from './Constellation_Lady_of_Seafoam.png'
+import c3 from './Constellation_Lawrence_Pedigree.png'
+import c4 from './Constellation_The_Obstinacy_of_One\'s_Inferiors.png'
+import c5 from './Constellation_Chivalric_Quality.png'
+import c6 from './Constellation_Noble_Obligation.png'
 import normal from './Talent_Favonius_Bladework_-_Edel.png'
 import skill from './Talent_Icetide_Vortex.png'
 import burst from './Talent_Glacial_Illumination.png'
-import passive1 from './placeholder.png'
-import passive2 from './placeholder.png'
-import passive3 from './placeholder.png'
+import passive1 from './Talent_Roiling_Rime.png'
+import passive2 from './Talent_Wellspring_of_War-Lust.png'
+import passive3 from './Talent_Aristocratic_Introspection.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
@@ -49,12 +49,12 @@ const conditionals: IConditionals = {
       }
     }
   },
-  q: { // Sweeping Time
+  q: {
     name: "Lightfall Sword",
     states: Object.fromEntries([...Array(31).keys()].map(i =>
       [i, {
         name: i === 0 ? `Base DMG` : i === 1 ? `1 Stack` : `${i} Stacks`,
-        fields: [{
+        fields: [{//above 50%
           text: `Lightfall Sword ${i === 0 ? `Base DMG` : i === 1 ? `1 Stack` : `${i} Stacks`}`,
           canShow: stats => {
             if (i < 5 && stats.constellation >= 6) return false
@@ -62,12 +62,26 @@ const conditionals: IConditionals = {
             return stacks && stateKey === i.toString()
           },
           formulaText: stats => {
+            const val = i === 0 ? <span>{data.burst.baseDMG[stats.tlvl.burst]}%</span> : <span>( {data.burst.baseDMG[stats.tlvl.burst]}% + {i} * {data.burst.stackDMG[stats.tlvl.burst]}% )</span>
             const statKey = getTalentStatKey("burst", stats, "physical")
-            const increase = stats.constellation >= 4 ? "125% * " : ""
-            return i === 0 ? <span>{increase}{data.burst.baseDMG[stats.tlvl.burst]}% {Stat.printStat(statKey, stats)}</span> :
-              <span>{increase}( {data.burst.baseDMG[stats.tlvl.burst]}% + {i} * {data.burst.stackDMG[stats.tlvl.burst]}%) {Stat.printStat(statKey, stats)}</span>
+            return <span>{val} {Stat.printStat(statKey, stats)}</span>
           },
           formula: formula.burst[i],
+          variant: stats => getTalentStatKeyVariant("burst", stats, "physical"),
+        }, {//below 50%
+          text: `Lightfall Sword ${i === 0 ? `Base DMG` : i === 1 ? `1 Stack` : `${i} Stacks`} < 50% HP`,
+          canShow: stats => {
+            if (stats.constellation < 4) return false
+            if (i < 5 && stats.constellation >= 6) return false
+            const [stacks, stateKey] = (stats.conditionalValues?.character?.eula?.q ?? [])
+            return stacks && stateKey === i.toString()
+          },
+          formulaText: stats => {
+            const val = i === 0 ? <span>{data.burst.baseDMG[stats.tlvl.burst]}%</span> : <span>( {data.burst.baseDMG[stats.tlvl.burst]}% + {i} * {data.burst.stackDMG[stats.tlvl.burst]}% )</span>
+            const hitModeMultiKey = stats.hitMode === "avgHit" ? "skill_avgHit_base_multi" : stats.hitMode === "critHit" ? "critHit_base_multi" : ""
+            return <span>{val} {Stat.printStat("finalATK", stats)} * {(hitModeMultiKey ? <span>{Stat.printStat(hitModeMultiKey, stats)} * </span> : "")}( {Stat.printStat("physical_burst_hit_base_multi", stats)} + 25%) * {Stat.printStat("enemyLevel_multi", stats)} * {Stat.printStat("physical_enemyRes_multi", stats)}</span>
+          },
+          formula: formula.burst[`${i}_50`],
           variant: stats => getTalentStatKeyVariant("burst", stats, "physical"),
         }, {
           canShow: stats => stats.constellation >= 6,
@@ -221,6 +235,15 @@ const char: ICharacterSheet = {
           text: "Shattered Lightfall Sword DMG",
           formulaText: stats => <span>50% * {data.burst.baseDMG[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats, "physical"), stats)}</span>,
           formula: formula.passive1.dmg,
+          variant: stats => getTalentStatKeyVariant("burst", stats, "physical")
+        }, {//below 50% hp
+          canShow: stats => stats.constellation >= 4,
+          text: "Shattered Lightfall Sword DMG < 50% hp",
+          formulaText: stats => {
+            const hitModeMultiKey = stats.hitMode === "avgHit" ? "skill_avgHit_base_multi" : stats.hitMode === "critHit" ? "critHit_base_multi" : ""
+            return <span>50% * {data.burst.baseDMG[stats.tlvl.burst]}% {Stat.printStat("finalATK", stats)} * {(hitModeMultiKey ? <span>{Stat.printStat(hitModeMultiKey, stats)} * </span> : "")}( {Stat.printStat("physical_burst_hit_base_multi", stats)} + 25%) * {Stat.printStat("enemyLevel_multi", stats)} * {Stat.printStat("physical_enemyRes_multi", stats)}</span>
+          },
+          formula: formula.passive1.dmg50,
           variant: stats => getTalentStatKeyVariant("burst", stats, "physical")
         }]
       }],
