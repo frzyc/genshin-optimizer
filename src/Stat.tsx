@@ -100,7 +100,7 @@ Object.entries(hitMoves).forEach(([move, moveName]) => {
       FormulaText[`${ele}_${move}_${type}`] = (o) => <span>{f(o, `finalATK`)} * {f(o, `${ele}_${move}_${type}_multi`)}</span>
     })
 
-    FormulaText[`${ele}_${move}_hit_base_multi`] = (o) => <span>100% + {f(o, 'dmg_')} + {f(o, `${ele}_dmg_`)} + {f(o, `${move}_dmg_`)}</span>
+    FormulaText[`${ele}_${move}_hit_base_multi`] = (o) => <span>100% + {f(o, 'dmg_')} + {f(o, `${ele}_dmg_`)} + {f(o, `${move}_dmg_`)} + {f(o, `${ele}_${move}_dmg_`)}</span>
     FormulaText[`${move}_avgHit_base_multi`] = (o) => <span>100% + {f(o, 'critDMG_')} * {f(o, `final_${move}_critRate_`)} </span>
     FormulaText[`critHit_base_multi`] = (o) => <span>100% + {f(o, 'critDMG_')}</span>
 

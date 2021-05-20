@@ -57,10 +57,10 @@ const formula: IFormulaSheet = {
   burst: {
     dmg: stats => basicDMGFormula(data.burst.dmg[stats.tlvl.burst], stats, "burst"),
     ...Object.fromEntries([...Array(31).keys()].map(i =>
-      [i, stats => basicDMGFormula((stats.constellation >= 4 ? 1.25 : 1) * (data.burst.baseDMG[stats.tlvl.burst] + i * data.burst.stackDMG[stats.tlvl.burst]), stats, "burst", "physical")]))
+      [i, stats => basicDMGFormula((data.burst.baseDMG[stats.tlvl.burst] + i * data.burst.stackDMG[stats.tlvl.burst]), stats, "physical burst")]))
   },
   passive1: {
-    dmg: stats => basicDMGFormula(data.burst.baseDMG[stats.tlvl.burst] / 2, stats, "burst", "physical"),
+    dmg: stats => basicDMGFormula(data.burst.baseDMG[stats.tlvl.burst] / 2, stats, "physical burst"),
   },
 }
 export default formula

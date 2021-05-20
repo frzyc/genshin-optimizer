@@ -140,6 +140,7 @@ Object.entries(hitMoves).forEach(([move, moveName]) => {
 
 Object.entries(hitElements).forEach(([ele, { name: eleName }]) => {
   const opt = { variant: ele }
+  if(ele === "physical") StatData[`${ele}_burst_dmg_`] = { name: `${eleName} Burst DMG Bonus`, unit: "%"}
   // DONT CHANGE. needed for screenshot parsing
   StatData[`${ele}_dmg_`] = { name: `${eleName} DMG Bonus`, unit: "%", ...opt }
   StatData[`${ele}_res_`] = { name: `${eleName} DMG RES`, unit: "%", ...opt }
@@ -159,7 +160,8 @@ Object.entries(hitMoves).forEach(([move, moveName]) => {
   Object.entries(hitElements).forEach(([ele, { name: eleName }]) => {
     const opt = { variant: ele }
     StatData[`${ele}_${move}_hit_base_multi`] = { name: `${moveName} Base Multiplier`, unit: "multi", ...opt }
-    Formulas[`${ele}_${move}_hit_base_multi`] = (s, c) => (100 + s.dmg_ + s[`${ele}_dmg_`] + s[`${move}_dmg_`]) / 100
+    if(ele === "physical" && move === "burst") Formulas[`${ele}_${move}_hit_base_multi`] = (s, c) => (100 + s.dmg_ + s[`${ele}_dmg_`] + s[`${move}_dmg_`] + s[`${ele}_${move}_dmg_`]) / 100
+    else Formulas[`${ele}_${move}_hit_base_multi`] = (s, c) => (100 + s.dmg_ + s[`${ele}_dmg_`] + s[`${move}_dmg_`]) / 100
     Object.entries(hitTypes).forEach(([type, typeName]) => {
       StatData[`${ele}_${move}_${type}`] = { name: `${moveName} ${typeName}`, ...opt }
       Formulas[`${ele}_${move}_${type}`] = (s) => s.finalATK * s[`${ele}_${move}_${type}_multi`]

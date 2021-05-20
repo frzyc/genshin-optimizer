@@ -1,17 +1,17 @@
 import card from './Character_Eula_Card.png'
 import thumb from './Character_Eula_Thumb.png'
-import c1 from './placeholder.png'
-import c2 from './placeholder.png'
-import c3 from './placeholder.png'
-import c4 from './placeholder.png'
-import c5 from './placeholder.png'
-import c6 from './placeholder.png'
+import c1 from './Constellation_Tidal_illusion.png'
+import c2 from './Constellation_Lady_of_Seafoam.png'
+import c3 from './Constellation_Lawrence_Pedigree.png'
+import c4 from './Constellation_The_obstinacy_of_One\'s_inferiors.png'
+import c5 from './Constellation_Chivalric_Quality.png'
+import c6 from './Constellation_Noble_Obligation.png'
 import normal from './Talent_Favonius_Bladework_-_Edel.png'
 import skill from './Talent_Icetide_Vortex.png'
 import burst from './Talent_Glacial_Illumination.png'
-import passive1 from './placeholder.png'
-import passive2 from './placeholder.png'
-import passive3 from './placeholder.png'
+import passive1 from './Talent_Roiling_Rime.png'
+import passive2 from './Talent_Wellspring_of_War-lust.png'
+import passive3 from './Talent_Aristocratic_Introspection.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
@@ -70,6 +70,7 @@ const conditionals: IConditionals = {
           formula: formula.burst[i],
           variant: stats => getTalentStatKeyVariant("burst", stats, "physical"),
         }, {
+          canShow: stats => stats.constellation >= 6,
           text: "Starts at 5 stacks"
         }]
       }])),
@@ -84,6 +85,11 @@ const conditionals: IConditionals = {
       text: "Duration",
       value: "6s + 6s per stack, up to 18s"
     }]
+  },
+  c4: { 
+    canShow: stats => stats.constellation >= 4,
+    name: "Enemy with less than 50% HP.",
+    stats: { physical_burst_dmg_: 25 },
   }
 }
 const char: ICharacterSheet = {
@@ -253,7 +259,10 @@ const char: ICharacterSheet = {
     constellation4: {
       name: tr("constellation4.name"),
       img: c4,
-      document: [{ text: tr("constellation4.description") }]
+      document: [{ 
+        text: tr("constellation4.description"),
+        conditional: conditionals.c4
+      }]
     },
     constellation5: {
       name: tr("constellation5.name"),

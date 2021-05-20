@@ -199,6 +199,7 @@ export function getTalentStatKey(skillKey, stats, overwriteElement?: ElementKey 
   if ((Object.keys(ElementalData) as any).includes(skillKey)) return `${skillKey}_elemental_${hitMode}`//elemental DMG
   if (!overwriteElement && weaponType === "catalyst") overwriteElement = characterEle
 
+  if (skillKey === "physical burst") return `physical_burst_${hitMode}`
   if (skillKey === "elemental" || skillKey === "burst" || skillKey === "skill" || overwriteElement) {
     if (reactionMode && reactionMode.startsWith(overwriteElement || characterEle)) return `${reactionMode}_${skillKey}_${hitMode}`
     return `${overwriteElement || characterEle}_${skillKey}_${hitMode}`
