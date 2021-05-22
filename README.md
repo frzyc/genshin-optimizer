@@ -42,9 +42,17 @@ To view graphically the size/structure of the built bundles. For optimizing payl
 ### `npm run testserver`
 To create a "production" server
 
-### `npm run localization`
+### `npm run localization-main`
+Combine all english translation as a single JSON to be uploaded to translation site.
+Will generate the JSON as `/public/locales/en/main_gen.json`.
+
+### `npm run localization-load`
+Load the translated JSON into each locale, and separate them into namespaces.
+Load the translations into `/src/localization/Translated`.
+
+### `npm run localization-datamined`
 Generate localization from data from datamined data: [Dimbreath/GenshinData](https://github.com/Dimbreath/GenshinData)
-Make sure to populate `/src/localization-gen/TextMap` with `Dimbreath/GenshinData/TextMap` before running the command.
+Make sure to populate `/src/localization/TextMap` with `Dimbreath/GenshinData/TextMap` before running the command.
 This will create localization files in `/public/locales/...` with in-game translated text.
 
 ### `npm run eject`

@@ -35,6 +35,22 @@ function LanguageCard() {
     </Card.Body>
   </Card>
 }
+
+const nativeLanguages = {
+  "chs": "中文 正体字",
+  "cht": "中文 繁體字",
+  "de": "Deutsch",
+  "en": "English",
+  "es": "español",
+  "fr": "français",
+  "id": "Bahasa Indonesia",
+  "ja": "日本語",
+  "ko": "한국어",
+  "pt": "Português",
+  "ru": "Русский язык",
+  "th": "ภาษาไทย",
+  "vi": "Tiếng Việt"
+}
 export function LanguageDropdown() {
   const { t, i18n } = useTranslation(["ui", "settings"]);
   const onSetLanguage = (lang) => () => i18n.changeLanguage(lang);
@@ -44,7 +60,7 @@ export function LanguageDropdown() {
       {t('settings:languageCard.languageFormat', { language: t(`languages:${currentLang}`) })}
     </Dropdown.Toggle>
     <Dropdown.Menu>
-      {languageCodeList.map((lang) => <Dropdown.Item key={lang} onClick={onSetLanguage(lang)}><Trans i18nKey={`languages:${lang}`} /></Dropdown.Item>)}
+      {languageCodeList.map((lang) => <Dropdown.Item key={lang} onClick={onSetLanguage(lang)}><Trans i18nKey={`languages:${lang}`} />{lang !== currentLang ? ` (${nativeLanguages[lang]})` : ""}</Dropdown.Item>)}
     </Dropdown.Menu>
   </Dropdown>
 }

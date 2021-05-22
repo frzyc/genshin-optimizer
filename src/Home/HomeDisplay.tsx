@@ -21,13 +21,11 @@ export default function HomeDisplay(props) {
               <h5>What is Genshin Optimizer?</h5>
               <p>
                 Genshin Optimizer is a tool for the action-rpg gacha game <a href="https://genshin.mihoyo.com/" target="_blank" rel="noreferrer"><strong>Genshin Impact</strong></a>.
-              It is intended to help you with dealing with the more complex aspect of the game: Artifacts.
-              Artifacts are heavily RNG-based elements that directly contributes to how effective your characters are in the game.
-              This tool seek to alleviate some of the complexity associated with artifact efficiency, along with which artifact to choose on your character to maximize your stats.
-            </p>
-              <p>
-                However, this tool can do so much more. It will allow calculations of all conditional stats from artifacts, weapons, teams buffs, and calculate how those stats will affect your character in REAL TIME.
-            </p>
+                It is intended to help you with dealing with the more complex aspect of the game: Artifacts.
+                Artifacts are heavily RNG-based elements that directly contributes to how effective your characters are in the game.
+                This tool seek to alleviate some of the complexity associated with artifact efficiency, along with which artifact to choose on your character to maximize your stats.
+              </p>
+              <p>However, this tool can do so much more. It will allow calculations of all conditional stats from artifacts, weapons, teams buffs, and calculate how those stats will affect your character in REAL TIME.</p>
             </Trans>
           </Col></Row></Card.Body></Card>
 
@@ -139,9 +137,7 @@ export default function HomeDisplay(props) {
                   Genshin Optimizer has been the manifestation of many days and weeks of sleepless nights, and the developer is still actively trying to improve and add features.
                 If you want to give feedback, request a feature, report a bug, please join our <a href={process.env.REACT_APP_DISCORD_LINK} target="_blank" rel="noreferrer">discord.</a>
                 </p>
-                <p>
-                  If you want to fiancially support the developer, please either donate via <a href={process.env.REACT_APP_PAYPAL_LINK} target="_blank" rel="noreferrer">Paypal</a> or <a href={process.env.REACT_APP_PATREON_LINK} target="_blank" rel="noreferrer">Patreon</a>.
-              </p>
+                <p>If you want to fiancially support the developer, please either donate via <a href={process.env.REACT_APP_PAYPAL_LINK} target="_blank" rel="noreferrer">Paypal</a> or <a href={process.env.REACT_APP_PATREON_LINK} target="_blank" rel="noreferrer">Patreon</a>.</p>
               </Trans>
             </Col>
           </Row></Card.Body></Card>

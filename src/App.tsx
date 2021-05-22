@@ -38,7 +38,7 @@ function AppInner() {
     <div className="h-100 d-flex flex-column" id="mainContainer">
       <div id="content" className="flex-grow-1">
         <Navbar bg="dark" variant="dark" expand="md">
-          <Navbar.Brand as={Link} to="/"><Trans t={t} i18nKey="page-title">Genshin Optimizer</Trans></Navbar.Brand>
+          <Navbar.Brand as={Link} to="/"><Trans t={t} i18nKey="pageTitle">Genshin Optimizer</Trans></Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">

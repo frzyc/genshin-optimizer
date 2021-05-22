@@ -6,7 +6,7 @@
   },
   "downloadCard": {
     "databaseDownload": "Database Download",
-    "charsStored": "Character Stored <0>{{count}}</0> ",
+    "charsStored": "<0>{{count}}</0> Character Stored",
     "charsStored_plural": "<0>{{count}}</0> Characters Stored",
     "artisStored": "<0>{{count}}</0> Artifact Stored",
     "artisStored_plural": "<0>{{count}}</0> Artifacts Stored",

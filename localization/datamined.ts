@@ -1,4 +1,3 @@
-import { throws } from 'node:assert'
 import data from './Data'
 const fs = require('fs')
 function crawlObject(obj, keys, validate, cb) {
@@ -129,3 +128,4 @@ Object.entries(languageData).forEach(([lang, data]) => {
 
 type Language = keyof typeof languageMap
 type ColorTag = typeof tagColor[keyof typeof tagColor]
+

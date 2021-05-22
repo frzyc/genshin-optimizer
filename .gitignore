@@ -26,10 +26,13 @@ yarn-error.log*
 .eslintcache
 
 # localization JSON from datamined
-/localization-gen/TextMap/*.json
+/localization/TextMap/*.json
+/localization/Translated/*.json
 
 # localization generated JSON
 *_gen.json
+public/locales/*
+!public/locales/en
 
 # for personal use
 .notes
