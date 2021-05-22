@@ -1,0 +1,33 @@
+{
+  "pageTitle": "Genshin Optimizer",
+  "tabs": {
+    "artifacts": "Artefatos",
+    "characters": "Personagens",
+    "builds": "Builds",
+    "tools": "Ferramentas"
+  },
+  "social": {
+    "paypal": "Paypal",
+    "patreon": "Patreon",
+    "discord": "Discord"
+  },
+  "game": {
+    "minLevel": "Nível Mínimo",
+    "maxLevel": "Nível Máximo",
+    "artifactSet": "Conjunto de artefatos",
+    "rarity": "Raridade",
+    "mainStat": "Atributo Principal",
+    "slot": "Slot",
+    "level": "Nível",
+    "substatFormat": "Atributo Secundário {{value}}",
+    "noSubstat": "Sem Atributos Secundários"
+  },
+  "unselect": "Desmarcar",
+  "ascending": "Ascendente",
+  "descending": "Descendente",
+  "sortByFormat": "Ordenar por: {{value}}",
+  "loading": "Carregando...",
+  "rightsDisclaimer": "Genshin Optimizer não é afiliado ou endossado por miHoYo.",
+  "appVersion": "$t(pageTitle) Versão: {{version}}",
+  "underConstruction": "Em Construção"
+}

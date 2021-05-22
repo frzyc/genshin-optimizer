@@ -1,0 +1,33 @@
+{
+  "pageTitle": "Optimizador Genshin",
+  "tabs": {
+    "artifacts": "Artefactos",
+    "characters": "Personajes",
+    "builds": "Builds",
+    "tools": "Herramientas"
+  },
+  "social": {
+    "paypal": "PayPal",
+    "patreon": "Patreon",
+    "discord": "Discord"
+  },
+  "game": {
+    "minLevel": "Nivel Mínimo",
+    "maxLevel": "Nivel Máximo",
+    "artifactSet": "Conjunto de Artefactos",
+    "rarity": "Rareza",
+    "mainStat": "Estado Principal",
+    "slot": "Ranura",
+    "level": "Nivel",
+    "substatFormat": "Substat {{value}}",
+    "noSubstat": "Sin Substat"
+  },
+  "unselect": "No seleccionado",
+  "ascending": "Ascendente",
+  "descending": "Descendente",
+  "sortByFormat": "Ordenar por: {{valor}}",
+  "loading": "Cargando...",
+  "rightsDisclaimer": "El Optimizador Genshin no está afiliado ni respaldado por miHoYo.",
+  "appVersion": "$t(pageTitle) Versión: {{version}}",
+  "underConstruction": "En construcción"
+}

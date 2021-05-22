@@ -1,0 +1,18 @@
+{
+  "editor": {
+    "title": "圣遗物编辑器"
+  },
+  "artifactFilter": "圣遗物筛选",
+  "filterLocation": {
+    "inventory": "背包",
+    "currentlyEquipped": "已装备"
+  },
+  "button": {
+    "unequipArtifacts": "卸下圣遗物",
+    "deleteArtifacts": "删除圣遗物",
+    "lockArtifacts": "锁定圣遗物",
+    "unlockArtifacts": "解锁圣遗物"
+  },
+  "locked": "已锁定",
+  "unlocked": "已解锁"
+}

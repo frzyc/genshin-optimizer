@@ -1,0 +1,28 @@
+{
+  "editor": {
+    "title": "Trình chỉnh sửa thánh di vật"
+  },
+  "artifactFilter": "Bộ lọc thánh di vật",
+  "filterLocation": {
+    "inventory": "Túi",
+    "currentlyEquipped": "Đã trang bị"
+  },
+  "button": {
+    "unequipArtifacts": "Gỡ thánh di vật",
+    "deleteArtifacts": "Xóa thánh di vật",
+    "lockArtifacts": "Khóa thánh di vật\n",
+    "unlockArtifacts": "Mở khóa thánh di vật"
+  },
+  "filterLevelFormat": "Cấp  <1>từ</1>/<3>đến/</3>",
+  "buttonHint": "Ghi chú: Những nút trên chỉ ảnh hưởng đến  <1>bộ lọc thánh di vật</1>",
+  "tipsOfTheDay": [
+    "Hiệu suất tối đa của thánh di vật 4 sao ở khoảng 60%.",
+    "Hiệu suất tối đa của thánh di vật có thể bị giảm khi bạn cường hóa thánh di vật. Đó là bình thường!",
+    "Chỉ số phụ có chứa số \"1\" trong hình là khó để quét nhất.",
+    "Nếu tất cả các lần cường hóa vào hết 1 chỉ số phụ (6 lần), nó sẽ chuyển thành màu tím!",
+    "Bấm vào \"chi tiết\" nếu bạn đang cường hóa thánh di vật và muốn chụp hình để quét.",
+    "Bạn có thể tải lên nhiều hình ảnh cùng lúc, nó sẽ vào hàng chờ."
+  ],
+  "locked": "Khóa",
+  "unlocked": "Mở khóa"
+}

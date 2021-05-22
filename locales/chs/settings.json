@@ -1,0 +1,10 @@
+{
+  "title": "设置",
+  "languageCard": {
+    "selectLanguage": "选择语言",
+    "languageFormat": "语言：{{language}}"
+  },
+  "dialog": {
+    "delete-database": "您确定要删除数据库吗？当前全部角色与圣遗物将被清除。"
+  }
+}

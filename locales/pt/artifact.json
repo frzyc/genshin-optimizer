@@ -1,0 +1,28 @@
+{
+  "editor": {
+    "title": "Editor de Artefatos"
+  },
+  "artifactFilter": "Filtro de Artefatos",
+  "filterLocation": {
+    "inventory": "Inventário",
+    "currentlyEquipped": "Atualmente Equipado"
+  },
+  "button": {
+    "unequipArtifacts": "Desequipar Artefatos",
+    "deleteArtifacts": "Excluir Artefatos",
+    "lockArtifacts": "Bloquear Artefatos",
+    "unlockArtifacts": "Desbloquear Artefatos"
+  },
+  "filterLevelFormat": "Nível <1>Mín</1>/<3>Máx</3> (Inclusivo)",
+  "buttonHint": "Nota: os botões acima só se aplicam a <1>artefatos filtrados</1>",
+  "tipsOfTheDay": [
+    "A eficiência máxima de um artefato de 4 estrelas é de cerca de 60%.",
+    "A eficiência máxima de um artefato geralmente diminuirá conforme você atualiza. É perfeitamente normal!",
+    "Atributos secundários com \"1\"s são os mais difíceis de digitalizar em capturas de tela.",
+    "Se todos os seus sorteios(6) foram para um único atributo secundário, ele será roxo!",
+    "Clique em \"Detalhes\" quando estiver atualizando seus artefatos no jogo para digitalizar conforme você atualiza.",
+    "Agora você pode fazer upload de capturas de tela de vários artefatos para serem escaneados!"
+  ],
+  "locked": "Bloqueado",
+  "unlocked": "Desbloqueado"
+}

@@ -1,0 +1,30 @@
+{
+  "title": "Paramètres",
+  "languageCard": {
+    "selectLanguage": "Choisir la langue",
+    "languageFormat": "Langue: {{language}}"
+  },
+  "downloadCard": {
+    "databaseDownload": "Téléchargement des Données",
+    "charsStored": "<0>{{count}}</0> Personnage Stocké",
+    "charsStored_plural": "<0>{{count}}</0> Personnages Stockés",
+    "artisStored": "<0>{{count}}</0> Artéfact Stocké",
+    "artisStored_plural": "<0>{{count}}</0> Artéfacts Stockés",
+    "button": {
+      "download": "Télécharger",
+      "copy": "Copier vers le presse-papier",
+      "delete": "Supprimer la base de données"
+    }
+  },
+  "uploadCard": {
+    "title": "Téléverser la base de données",
+    "replaceDatabase": "Remplacer la base de données",
+    "hint": "Téléverser votre fichier JSON ici...",
+    "hintPaste": "...ou coller vos données ci-dessous.",
+    "numChar": "Nombre de Personnages:",
+    "numArt": "Nombre d'artéfacts:"
+  },
+  "dialog": {
+    "delete-database": "Êtes-vous sûr de vouloir supprimer votre base de données? Tous les personnages et artéfacts existants seront supprimés."
+  }
+}

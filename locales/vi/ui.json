@@ -1,0 +1,33 @@
+{
+  "pageTitle": "Genshin Optimizer",
+  "tabs": {
+    "artifacts": "Thánh di vật",
+    "characters": "Nhân vật",
+    "builds": "Builds",
+    "tools": "Công cụ"
+  },
+  "social": {
+    "paypal": "Paypal",
+    "patreon": "Patreon",
+    "discord": "Discord"
+  },
+  "game": {
+    "minLevel": "Cấp thấp nhất",
+    "maxLevel": "Cấp cao nhất",
+    "artifactSet": "Bộ thánh di vật",
+    "rarity": "Độ hiếm",
+    "mainStat": "Chỉ số chính",
+    "slot": "Vị trí",
+    "level": "Cấp độ",
+    "substatFormat": "Chỉ số phụ {{value}}",
+    "noSubstat": "Không chỉ số phụ"
+  },
+  "unselect": "Bỏ chọn",
+  "ascending": "Đột phá",
+  "descending": "Giảm dần",
+  "sortByFormat": "Xếp theo: {{value}}",
+  "loading": "Đang tải...",
+  "rightsDisclaimer": "Genshin Optimizer không được liên kết hoặc xác nhận bởi miHoyo",
+  "appVersion": "$t(pageTitle) Version: {{version}}",
+  "underConstruction": "Đang hoàn thiện"
+}

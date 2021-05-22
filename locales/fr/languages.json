@@ -1,4 +1,15 @@
 {
+  "chs": "Chinois (Simplifié)",
+  "cht": "Chinois (Traditionel)",
+  "de": "Allemand",
   "en": "Anglais",
-  "fr": "Français"
-} 
+  "es": "Espagnol",
+  "fr": "Français",
+  "id": "Indonésien",
+  "ja": "Japonais",
+  "ko": "Coréen",
+  "pt": "Portugais",
+  "ru": "Russe",
+  "th": "Thaïlandais",
+  "vi": "Vietnamien"
+}
