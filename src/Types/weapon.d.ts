@@ -1,3 +1,4 @@
+import { DocumentSection } from "./character";
 import ICalculatedStats from "./ICalculatedStats";
 import { IConditionals } from "./IConditional";
 
@@ -18,4 +19,5 @@ export interface IWeaponSheet {
   },
   stats?: object | ((stats: ICalculatedStats) => object | false)
   conditionals?: IConditionals
+  document?: DocumentSection[],
 }

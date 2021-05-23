@@ -3,6 +3,9 @@ import Tooltip from 'react-bootstrap/Tooltip'
 import Stat from "../Stat"
 
 //small helper component to help display calculated values in description text
+/**
+ * @deprecated all these values can to be optimizable targets. However, this component cannot be inserted into datamined strings, which will be the new format.
+ */
 export default function DisplayPercent(percent, stats, statKey, fixed = 0) {
   if (!percent || !stats || !statKey) return null
   let variant = Stat.getStatVariant(statKey) || "success"

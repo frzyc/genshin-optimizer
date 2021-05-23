@@ -72,16 +72,14 @@ function preprocess(string: string): string {
 const parsingFunctions: { [key: string]: (lang: Language, string: string) => string } = {
   autoName: (lang, string) => {
     //starts with Normal Attack: ______ in english
-    if (["chs", "cht", "ja", "ko"].includes(lang)) {
+    if (string.includes("·")) {
       const index = string.indexOf("·")
       string = string.slice(index + 1)
-    } else if (["pt", "th"].includes(lang)) {
+    } else if (string.includes(":")) {
+      string = string.split(":")[1].trim()
+    } else if (string.includes(" - ")) {
       const index = string.indexOf(" - ")
       string = string.slice(index + 3)
-    } else if (["ru"].includes(lang)) {
-      //Do nothing?
-    } else {
-      string = string.split(":")[1].trim()
     }
     if (!string) throw (`${lang} has invalid "name"`)
     return string

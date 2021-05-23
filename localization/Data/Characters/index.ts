@@ -20,7 +20,7 @@ import eula from './Eula'
 import noelle from './Noelle'
 // import qiqi from './Qiqi'
 // import razor from './Razor'
-// import rosaria from './Rosaria'
+import rosaria from './Rosaria'
 // import sucrose from './Sucrose'
 // import tartaglia from './Tartaglia'
 // import traveler_anemo from './Traveler_Anemo'
@@ -55,7 +55,7 @@ const char = {
   noelle,
   // qiqi,
   // razor,
-  // rosaria,
+  rosaria,
   // sucrose,
   // tartaglia,
   // traveler_anemo,

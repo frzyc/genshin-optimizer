@@ -1,6 +1,6 @@
 import { Badge, Card, ListGroup } from "react-bootstrap"
-import ConditionalDisplay from "../../Character/CharacterDisplay/Components/ConditionalDisplay"
-import FieldDisplay from "../../Character/CharacterDisplay/Components/FieldDisplay"
+import ConditionalDisplay from "../../Components/ConditionalDisplay"
+import FieldDisplay from "../../Components/FieldDisplay"
 import { ArtifactSetKey, SetNum } from "../../Types/consts"
 import ICalculatedStats from "../../Types/ICalculatedStats"
 import statsToFields from "../../Util/FieldUtil"

@@ -29,4 +29,5 @@ export default class WeaponSheet {
   get baseStats() { return this.sheet.baseStats }
   stats = (build: ICalculatedStats): object | false | undefined => evalIfFunc(this.sheet.stats, build)
   get conditionals() { return this.sheet.conditionals }
+  get document() { return this.sheet.document }
 }

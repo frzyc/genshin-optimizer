@@ -1,11 +1,11 @@
 import { useCallback, useMemo } from "react"
 import { Card, ListGroup } from "react-bootstrap"
-import Conditional from "../../../Conditional/Conditional"
-import ConditionalSelector from "../../../Conditional/ConditionalSelector"
-import ICalculatedStats from "../../../Types/ICalculatedStats"
-import IConditional from "../../../Types/IConditional"
-import statsToFields from "../../../Util/FieldUtil"
-import { deletePropPath, layeredAssignment, objClearEmpties } from "../../../Util/Util"
+import Conditional from "../Conditional/Conditional"
+import ConditionalSelector from "../Conditional/ConditionalSelector"
+import ICalculatedStats from "../Types/ICalculatedStats"
+import IConditional from "../Types/IConditional"
+import statsToFields from "../Util/FieldUtil"
+import { deletePropPath, layeredAssignment, objClearEmpties } from "../Util/Util"
 import FieldDisplay from "./FieldDisplay"
 type ConditionalDisplayProps = {
   conditional: IConditional,

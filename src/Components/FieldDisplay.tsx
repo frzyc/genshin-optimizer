@@ -2,8 +2,8 @@ import { faQuestionCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useContext, useMemo } from 'react';
 import { ListGroup, OverlayTrigger, Tooltip } from "react-bootstrap";
-import Character from "../../Character";
-import { compareAgainstEquippedContext } from "../../CharacterDisplayCard";
+import Character from "../Character/Character";
+import { compareAgainstEquippedContext } from "../Character/CharacterDisplayCard";
 
 export default function FieldDisplay({ field, index, equippedBuild, newBuild, className = "p-2" }) {
   const compareAgainstEquipped = useContext(compareAgainstEquippedContext)

@@ -20,7 +20,7 @@ expect.extend({
       message: () => `${formulaStr}.keys is invalid. ${JSON.stringify(formula.keys)} vs. ${JSON.stringify(keys)}`,
       pass: false
     }
-    const stats = { hitMode: "avgHit", tlvl: { auto: 0, skill: 0, burst: 0 } }
+    const stats = { hitMode: "avgHit", tlvl: { auto: 0, skill: 0, burst: 0 }, weapon: { refineIndex: 0 } }
     const [targetFormula, dependencies] = formula(stats)
     expect(Array.isArray(dependencies))
     expect(typeof targetFormula({}, stats)).toBe("number")
