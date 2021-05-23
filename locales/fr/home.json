@@ -1,3 +1,4 @@
 {
-  "welcome": "Bienvenue sur Genshin Optimizer!"
+  "welcome": "Bienvenue sur l'Optimiseur Genshin!",
+  "paragraphIntro": "<0>Qu'est-ce que l'Optimiseur Genshin</0><1>L'Optimiseur Genshin est un outil pour le jeu action-rpg gacha <1><strong>Genshin Impact</strong></1>. Il est destiné à vous aider à gérer l'aspect le plus complexe du jeu: les artéfacts. Les Artéfacts sont des éléments fortement basé sur le RNG qui contribuent directement à l'efficacité de vos personnages dans le jeu. Cet outil cherche à alléger une partie de la complexité associée à l'efficacité des artéfacts, ainsi que l'artéfact à choisir pour votre personnage afin de maximiser vos stats.</1><p>Cependant, cet outil peut faire tellement plus. Il permettra le calcul de toutes les stats conditionnelles provenant des artéfacts, armes, buffs d'équipe, et calculera comment ces stats affectent votre personnage en TEMPS RÉEL.</p>"
 }

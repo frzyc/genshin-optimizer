@@ -8,8 +8,8 @@
     "databaseDownload": "Tải dữ liệu",
     "charsStored": "<0>{{count}}</0> Nhân vật lưu trữ",
     "charsStored_plural": "<0>{{count}}</0>Nhân vật lưu trữ",
-    "artisStored": "<0>{{count}}</0> Thánh di vật lưu trữ",
-    "artisStored_plural": "<0>{{count}}</0> Thánh di vật lưu trữ",
+    "artisStored": "<0>{{count}}</0> Thánh di vật đã lưu trữ",
+    "artisStored_plural": "<0>{{count}}</0> Thánh di vật đã lưu trữ",
     "databaseDisclaimer": "Ghi chú: bất kỳ thông tin nào trong trang \"công cụ\", ví dụ: số lượng Nhựa, thời gian hồi không thuộc dữ liệu có thể tải xuống",
     "button": {
       "download": "Tải xuống",
@@ -20,7 +20,7 @@
   "uploadCard": {
     "title": "Tải dữ liệu",
     "replaceDatabase": "Thay thế dữ liệu",
-    "hint": "tải tệp JSON ở đây",
+    "hint": "Tải lên tệp JSON ở đây",
     "hintPaste": "...hoặc dán thông tin của bạn bên dưới",
     "numChar": "Số lượng nhân vật:",
     "numArt": "Số lượng thánh di vật:"

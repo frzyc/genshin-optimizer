@@ -1,7 +1,38 @@
 {
   "editor": {
-    "title": "Éditeur d'artéfact"
+    "title": "Éditeur d'artéfact",
+    "set": {
+      "artifactSet": "Set d'artéfact",
+      "maxRarity": "Rareté Max"
+    },
+    "rarity": "Rareté",
+    "level": "Niveau",
+    "unknownPieceName": "Nom de Pièce Inconnu",
+    "mainSelect": "Sélectionner une Stat Principal",
+    "curSubEff": "Efficacité actuel Stat secondaire",
+    "substat": {
+      "selectSub": "Sélectionner une Stat secondaire",
+      "error": {
+        "noCalc": "Impossible de calculer les rolls de la stat.",
+        "noOverRoll": "Une stat secondaire ne peut être roll plus de {{value}} fois."
+      },
+      "noRoll": "Aucun Rolls",
+      "RollCount": "{{count}} Roll",
+      "RollCount_plural": "{{count}} Roll",
+      "noStat": "Pas de valeur",
+      "eff": "Efficiency: <1></1>",
+      "noSubstat": "Pas de stat secondaire"
+    },
+    "preview": "Prévisualisation d'artefact",
+    "dupArt": "Doublon d'artefact détecté.",
+    "beforeEdit": "Avant modification",
+    "btnSave": "Enregistrer l'Artefact",
+    "btnAdd": "Ajouter",
+    "btnClear": "Effacer",
+    "btnUpdate": "Mettre à jour l'artefact",
+    "clearPrompt": "Il y a un artefact dans l'éditeur. Êtes-vous sûr de vouloir effacer l'éditeur?"
   },
+  "artifactFilter": "Filtre d'artéfact",
   "filterLocation": {
     "inventory": "Inventaire",
     "currentlyEquipped": "Actuellement équipé"
@@ -13,5 +44,27 @@
     "unlockArtifacts": "Déverrouiller les artéfacts"
   },
   "filterLevelFormat": "Niveau <1>Bas</1>/<3>Haut</3> (Inclusif)",
-  "buttonHint": "Note: les boutons ci-dessus ne s'appliquent qu'aux <1>artéfacts filtrés</1>"
+  "buttonHint": "Note: les boutons ci-dessus ne s'appliquent qu'aux <1>artéfacts filtrés</1>",
+  "tipsOfTheDay": [
+    "L'efficacité maximum d'un artéfact 4 étoiles est environ de 60%.",
+    "L'efficacité maximum d'un artéfact diminuera généralement au fur et à mesure de l'amélioration. C'est parfaitement normal!",
+    "Les Stats secondaires avec des \"1\"s sont les plus difficiles à analyser sur les captures d'écran.",
+    "Si tous vos rolls(6) sont aller dans une seule stat secondaire, elle sera violette!",
+    "Cliquez sur \"Détails\" quand vous améliorez vos artéfacts dans le jeu pour les analyser au fur et à mesure que vous les améliorés.",
+    "Vous pouvez maintenant télécharger plusieurs captures d'écran d'artéfacts à analyser!"
+  ],
+  "info": {
+    "title": "Guide d' Edition/Gestion d'artefact"
+  },
+  "locationDisplay": "Localisation: {{value}}",
+  "lockDisplay": "Verrouillé: {{value}}",
+  "lock": {
+    "locked": "Verrouillé",
+    "unlocked": "Déverouillé"
+  },
+  "sortMap": {
+    "quality": "Qualité",
+    "level": "Niveau"
+  },
+  "mainStat": "Stat Principale"
 }

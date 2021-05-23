@@ -23,11 +23,12 @@
     "noSubstat": "Không chỉ số phụ"
   },
   "unselect": "Bỏ chọn",
-  "ascending": "Đột phá",
+  "ascending": "Tăng dần",
   "descending": "Giảm dần",
   "sortByFormat": "Xếp theo: {{value}}",
   "loading": "Đang tải...",
   "rightsDisclaimer": "Genshin Optimizer không được liên kết hoặc xác nhận bởi miHoyo",
   "appVersion": "$t(pageTitle) Version: {{version}}",
-  "underConstruction": "Đang hoàn thiện"
+  "underConstruction": "Đang hoàn thiện",
+  "error": "Lỗi"
 }

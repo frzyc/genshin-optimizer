@@ -14,7 +14,7 @@
   "game": {
     "minLevel": "Nivel Mínimo",
     "maxLevel": "Nivel Máximo",
-    "artifactSet": "Conjunto de Artefactos",
+    "artifactSet": "Set de Artefactos",
     "rarity": "Rareza",
     "mainStat": "Stat Principal",
     "slot": "Ranura",
@@ -29,5 +29,6 @@
   "loading": "Cargando...",
   "rightsDisclaimer": "El Optimizador de Genshin no está afiliado ni respaldado por miHoYo.",
   "appVersion": "$t(pageTitle) Versión: {{version}}",
-  "underConstruction": "En construcción"
+  "underConstruction": "En construcción",
+  "error": "Error"
 }

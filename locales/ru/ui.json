@@ -29,6 +29,5 @@
   "loading": "Загрузка...",
   "rightsDisclaimer": "Genshin Optimizer не сотрудничает или поддерживается miHoYo.",
   "appVersion": "$t(pageTitle) Версия: {{version}}",
-  "underConstruction": "В разработке",
-  "error": ""
+  "underConstruction": "В разработке"
 }

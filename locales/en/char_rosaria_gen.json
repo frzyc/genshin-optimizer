@@ -1,0 +1,89 @@
+{
+  "name": "Rosaria",
+  "constellationName": "Spinea Corona",
+  "auto": {
+    "name": "Spear of the Church",
+    "fields": {
+      "normal": "<strong>Normal Attack</strong> Performs up to five consecutive spear strikes.",
+      "charged": "<strong>Charged Attack</strong> Consumes a certain amount of Stamina to lunge forward, dealing damage to opponents along the way.",
+      "plunging": "<strong>Plunging Attack</strong> Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact."
+    }
+  },
+  "skill": {
+    "name": "Ravaging Confession",
+    "description": {
+      "0": "Rosaria swiftly shifts her position to appear behind her opponent, then stabs and slashes them with her polearm, dealing <cryo>Cryo DMG</cryo>.",
+      "1": "This ability cannot be used to travel behind opponents of a larger build.",
+      "2": "<br/>",
+      "3": "<i>Those who confess to Sister Rosaria will be granted no absolution. All sinners shall be met with the piercing cold of punishment proportionate to the weight of their sins.</i>"
+    }
+  },
+  "burst": {
+    "name": "Rites of Termination",
+    "description": {
+      "0": "Rosaria's unique take on this prayer ritual: First, she swings her weapon to slash surrounding opponents; then, she summons a frigid Ice Lance that strikes the ground. Both actions deal <cryo>Cryo DMG</cryo>.",
+      "1": "While active, the Ice Lance periodically releases a blast of cold air, dealing <cryo>Cryo DMG</cryo> to surrounding opponents.",
+      "2": "<br/>",
+      "3": "<i>Judgment is such a tedious ordeal — much easier to skip that phase and get straight to the last rites. Rosaria was never very devoted to the Anemo God anyway, which makes performing them all too easy.</i>"
+    }
+  },
+  "passive1": {
+    "name": "Regina Probationum",
+    "description": {
+      "0": "When Rosaria strikes an opponent from behind using <strong>Ravaging Confession</strong>, Rosaria's CRIT Rate increases by 12% for 5s."
+    }
+  },
+  "passive2": {
+    "name": "Shadow Samaritan",
+    "description": {
+      "0": "Casting <strong>Rites of Termination</strong> increases CRIT Rate of all nearby party members (except Rosaria herself) by 15% of Rosaria's CRIT Rate for 10s.",
+      "1": "CRIT Rate Bonus gained this way cannot exceed 15%."
+    }
+  },
+  "passive3": {
+    "name": "Night Walk",
+    "description": {
+      "0": "At night (18:00–6:00), increases the Movement SPD of your own party members by 10%.",
+      "1": "Does not take effect in Domains, Trounce Domains, or Spiral Abyss. Not stackable with Passive Talents that provide the exact same effects."
+    }
+  },
+  "constellation1": {
+    "name": "Unholy Revelation",
+    "description": {
+      "0": "When Rosaria deals a CRIT Hit, her ATK SPD increases by 10% and her Normal Attack DMG increases by 10% for 4s."
+    }
+  },
+  "constellation2": {
+    "name": "Land Without Promise",
+    "description": {
+      "0": "The duration of the Ice Lance created by <strong>Rites of Termination</strong> is increased by 4s."
+    }
+  },
+  "constellation3": {
+    "name": "The Wages of Sin",
+    "description": {
+      "0": "Increases the Level of <strong>Ravaging Confession</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation4": {
+    "name": "Painful Grace",
+    "description": {
+      "0": "<strong>Ravaging Confession</strong>'s CRIT Hits regenerate 5 Energy for Rosaria.",
+      "1": "Can only be triggered once each time Ravaging Confession is cast."
+    }
+  },
+  "constellation5": {
+    "name": "Last Rites",
+    "description": {
+      "0": "Increases the Level of <strong>Rites of Termination</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
+    }
+  },
+  "constellation6": {
+    "name": "Divine Retribution",
+    "description": {
+      "0": "<strong>Rites of Termination</strong>'s attack decreases opponents' Physical RES by 20% for 10s."
+    }
+  }
+}

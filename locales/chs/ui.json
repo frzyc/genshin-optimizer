@@ -27,7 +27,8 @@
   "descending": "降序",
   "sortByFormat": "排序方式：{{value}}",
   "loading": "加载中…",
-  "rightsDisclaimer": "\nGenshin Optimizer不属于miHoYo，无miHoYo背书。",
+  "rightsDisclaimer": "\nGenshin Optimizer不隶属于miHoYo，无miHoYo背书。",
   "appVersion": "$t(pageTitle) 版本：{{version}}",
-  "underConstruction": "施工中"
+  "underConstruction": "施工中",
+  "error": "错误"
 }

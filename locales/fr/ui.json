@@ -16,6 +16,7 @@
     "artifactSet": "Set d'artéfact",
     "rarity": "Rareté",
     "mainStat": "Stat principal",
+    "slot": "Emplacement",
     "level": "Niveau",
     "substatFormat": "Stat secondaire {{value}}",
     "noSubstat": "Pas de Stat secondaire"
@@ -27,5 +28,6 @@
   "loading": "Chargement...",
   "rightsDisclaimer": "Genshin Optimizer n'est pas affilié ou approuvé par miHoYo",
   "appVersion": "$t(pageTitle) Version: {{version}}",
-  "underConstruction": "En Construction"
+  "underConstruction": "En Construction",
+  "error": "Erreur"
 }

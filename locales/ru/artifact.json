@@ -1,47 +1,11 @@
 {
   "editor": {
-    "title": "Редактор Артефактов",
-    "set": {
-      "artifactSet": "",
-      "maxRarity": ""
-    },
-    "rarity": "",
-    "level": "",
-    "unknownPieceName": "",
-    "mainSelect": "",
-    "curSubEff": "",
-    "curSubEffDesc": "",
-    "maxSubEff": "",
-    "maxSubEffDesc": "",
-    "substat": {
-      "selectSub": "",
-      "error": {
-        "noCalc": "",
-        "noOverRoll": ""
-      },
-      "noRoll": "",
-      "RollCount": "",
-      "RollCount_plural": "",
-      "noStat": "",
-      "eff": "",
-      "noSubstat": ""
-    },
-    "preview": "",
-    "dupArt": "",
-    "upArt": "",
-    "beforeEdit": "",
-    "btnSave": "",
-    "btnAdd": "",
-    "btnClear": "",
-    "btnRandom": "",
-    "btnUpdate": "",
-    "clearPrompt": ""
+    "title": "Редактор Артефактов"
   },
   "artifactFilter": "Фильтр Артефактов",
   "filterLocation": {
     "inventory": "Инвентарь",
-    "currentlyEquipped": "Используются",
-    "any": ""
+    "currentlyEquipped": "Используются"
   },
   "button": {
     "unequipArtifacts": "Снять Артефакты",
@@ -58,34 +22,5 @@
     "Если все ваши роллы (6) ушли в один сабстат, он будет фиолетовым!",
     "Нажмите на \"Детали\" когда улучшаете артефакт в игре, чтобы сканировать по мере улучшения.",
     "Теперь вы можете загружать несколько скриншотов артефактов для сканирования!"
-  ],
-  "slotName": {
-    "flower": "",
-    "plume": "",
-    "sands": "",
-    "goblet": "",
-    "circlet": ""
-  },
-  "info": {
-    "title": "",
-    "section1": "",
-    "section2": "",
-    "section3": ""
-  },
-  "locationDisplay": "",
-  "lockDisplay": "",
-  "lock": {
-    "any": "",
-    "locked": "",
-    "unlocked": ""
-  },
-  "sortMap": {
-    "quality": "",
-    "level": "",
-    "efficiency": "",
-    "mefficiency": ""
-  },
-  "mainStat": "",
-  "showingNum": "",
-  "showingNum_plural": ""
+  ]
 }
