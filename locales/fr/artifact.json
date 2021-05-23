@@ -13,7 +13,5 @@
     "unlockArtifacts": "Déverrouiller les artéfacts"
   },
   "filterLevelFormat": "Niveau <1>Bas</1>/<3>Haut</3> (Inclusif)",
-  "buttonHint": "Note: les boutons ci-dessus ne s'appliquent qu'aux <1>artéfacts filtrés</1>",
-  "locked": "Vérouillé",
-  "unlocked": "Déverrouillé"
+  "buttonHint": "Note: les boutons ci-dessus ne s'appliquent qu'aux <1>artéfacts filtrés</1>"
 }

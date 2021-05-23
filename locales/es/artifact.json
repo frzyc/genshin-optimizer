@@ -13,16 +13,14 @@
     "lockArtifacts": "Bloquear Artefactos",
     "unlockArtifacts": "Desbloquear Artefactos"
   },
-  "filterLevelFormat": "Nivel <1>Bajo</1>/<3>Alto</3> (Incluido)",
+  "filterLevelFormat": "Nivel <1>Bajo</1>/<3>Alto</3> (Inclusivo)",
   "buttonHint": "Nota: los botones anteriores sólo se aplican a los <1>artefactos filtrados</1>",
   "tipsOfTheDay": [
     "La eficiencia máxima de un artefacto de 4 estrellas es en torno al 60%.",
-    "La eficacia máxima de un artefacto suele disminuir a medida que lo subes de nivel. Esto es perfectamente normal.",
+    "La eficacia máxima de un artefacto suele disminuir a medida que lo subes de nivel. Esto es completamente normal.",
     "Los substats con \"1\" son los más difíciles de escanear en las capturas de pantalla.",
     "Si todos tus rolls (6) fueron a un solo substat, ¡será de color púrpura!",
     "Haz clic en \"Detalles\" cuando estés mejorando tus artefactos en el juego para escanearlos mientras los mejoras.",
     "Ahora puedes subir varias capturas de pantalla de artefactos para escanear!"
-  ],
-  "locked": "Bloqueado",
-  "unlocked": "Desbloqueado"
+  ]
 }

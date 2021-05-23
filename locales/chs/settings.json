@@ -4,6 +4,27 @@
     "selectLanguage": "选择语言",
     "languageFormat": "语言：{{language}}"
   },
+  "downloadCard": {
+    "databaseDownload": "数据库下载",
+    "charsStored": "<0>{{count}}</0> 保存的角色",
+    "charsStored_plural": "<0>{{count}}</0> 保存的角色",
+    "artisStored": "<0>{{count}}</0> 保存的圣遗物",
+    "artisStored_plural": "<0>{{count}}</0> 保存的圣遗物",
+    "databaseDisclaimer": "注意：工具页面所有的数据，例如：体力计数器，不包含在下载的数据库中。",
+    "button": {
+      "download": "下载",
+      "copy": "复制到剪贴板",
+      "delete": "删除数据库"
+    }
+  },
+  "uploadCard": {
+    "title": "上传数据库",
+    "replaceDatabase": "替换数据库",
+    "hint": "上传JSON文件…",
+    "hintPaste": "…或在此粘贴数据",
+    "numChar": "角色数目：",
+    "numArt": "圣遗物数目："
+  },
   "dialog": {
     "delete-database": "您确定要删除数据库吗？当前全部角色与圣遗物将被清除。"
   }

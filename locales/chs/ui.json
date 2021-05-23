@@ -1,9 +1,9 @@
 {
-  "pageTitle": "原神优化器",
+  "pageTitle": "Genshin Optimizer",
   "tabs": {
     "artifacts": "圣遗物",
     "characters": "角色",
-    "builds": "搭配",
+    "builds": "配装",
     "tools": "工具"
   },
   "social": {
@@ -12,19 +12,22 @@
     "discord": "Discord"
   },
   "game": {
+    "minLevel": "最小等级",
+    "maxLevel": "最大等级",
     "artifactSet": "圣遗物套装",
     "rarity": "稀有度",
     "mainStat": "主词条",
     "slot": "位置",
     "level": "等级",
     "substatFormat": "副词条 {{value}}",
-    "noSubstat": "无次词条"
+    "noSubstat": "无副词条"
   },
   "unselect": "取消选择",
   "ascending": "升序",
   "descending": "降序",
   "sortByFormat": "排序方式：{{value}}",
   "loading": "加载中…",
+  "rightsDisclaimer": "\nGenshin Optimizer不属于miHoYo，无miHoYo背书。",
   "appVersion": "$t(pageTitle) 版本：{{version}}",
   "underConstruction": "施工中"
 }

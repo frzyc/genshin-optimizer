@@ -1,0 +1,34 @@
+{
+  "pageTitle": "Genshin Optimizer",
+  "tabs": {
+    "artifacts": "Артефакты",
+    "characters": "Персонажи",
+    "builds": "Билды",
+    "tools": "Инструменты"
+  },
+  "social": {
+    "paypal": "Paypal",
+    "patreon": "Patreon",
+    "discord": "Discord"
+  },
+  "game": {
+    "minLevel": "Мин Уровень",
+    "maxLevel": "Макс Уровень",
+    "artifactSet": "Сет Артефактов",
+    "rarity": "Редкость",
+    "mainStat": "Основной Стат",
+    "slot": "Слот",
+    "level": "Уровень",
+    "substatFormat": "Сабстат {{value}}",
+    "noSubstat": "Нету Сабстата"
+  },
+  "unselect": "Отменить",
+  "ascending": "По возрастанию",
+  "descending": "По убыванию",
+  "sortByFormat": "Сортировать за: {{value}}",
+  "loading": "Загрузка...",
+  "rightsDisclaimer": "Genshin Optimizer не сотрудничает или поддерживается miHoYo.",
+  "appVersion": "$t(pageTitle) Версия: {{version}}",
+  "underConstruction": "В разработке",
+  "error": ""
+}

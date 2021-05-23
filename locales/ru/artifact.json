@@ -1,0 +1,91 @@
+{
+  "editor": {
+    "title": "Редактор Артефактов",
+    "set": {
+      "artifactSet": "",
+      "maxRarity": ""
+    },
+    "rarity": "",
+    "level": "",
+    "unknownPieceName": "",
+    "mainSelect": "",
+    "curSubEff": "",
+    "curSubEffDesc": "",
+    "maxSubEff": "",
+    "maxSubEffDesc": "",
+    "substat": {
+      "selectSub": "",
+      "error": {
+        "noCalc": "",
+        "noOverRoll": ""
+      },
+      "noRoll": "",
+      "RollCount": "",
+      "RollCount_plural": "",
+      "noStat": "",
+      "eff": "",
+      "noSubstat": ""
+    },
+    "preview": "",
+    "dupArt": "",
+    "upArt": "",
+    "beforeEdit": "",
+    "btnSave": "",
+    "btnAdd": "",
+    "btnClear": "",
+    "btnRandom": "",
+    "btnUpdate": "",
+    "clearPrompt": ""
+  },
+  "artifactFilter": "Фильтр Артефактов",
+  "filterLocation": {
+    "inventory": "Инвентарь",
+    "currentlyEquipped": "Используются",
+    "any": ""
+  },
+  "button": {
+    "unequipArtifacts": "Снять Артефакты",
+    "deleteArtifacts": "Удалить артефакты",
+    "lockArtifacts": "Заблокировать артефакты",
+    "unlockArtifacts": "Разблокировать артефакты"
+  },
+  "filterLevelFormat": "Уровень <1>От</1>/<3>До</3> (включительно)",
+  "buttonHint": "Примечание: кнопки выше применяются только к <1>отфильтрованным артефактам</1>",
+  "tipsOfTheDay": [
+    "Максимальная эффективность 4-х звездочного артефакта становит около 60%.",
+    "Максимальная эффективность артефакта обычно уменьшается с его улучшением. Это нормально!",
+    "Сабстаты с цифрами \"1\" самые сложные для сканирования на скриншотах.",
+    "Если все ваши роллы (6) ушли в один сабстат, он будет фиолетовым!",
+    "Нажмите на \"Детали\" когда улучшаете артефакт в игре, чтобы сканировать по мере улучшения.",
+    "Теперь вы можете загружать несколько скриншотов артефактов для сканирования!"
+  ],
+  "slotName": {
+    "flower": "",
+    "plume": "",
+    "sands": "",
+    "goblet": "",
+    "circlet": ""
+  },
+  "info": {
+    "title": "",
+    "section1": "",
+    "section2": "",
+    "section3": ""
+  },
+  "locationDisplay": "",
+  "lockDisplay": "",
+  "lock": {
+    "any": "",
+    "locked": "",
+    "unlocked": ""
+  },
+  "sortMap": {
+    "quality": "",
+    "level": "",
+    "efficiency": "",
+    "mefficiency": ""
+  },
+  "mainStat": "",
+  "showingNum": "",
+  "showingNum_plural": ""
+}

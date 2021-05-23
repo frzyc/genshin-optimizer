@@ -5,14 +5,22 @@
   "artifactFilter": "圣遗物筛选",
   "filterLocation": {
     "inventory": "背包",
-    "currentlyEquipped": "已装备"
+    "currentlyEquipped": "当前装备"
   },
   "button": {
-    "unequipArtifacts": "卸下圣遗物",
+    "unequipArtifacts": "卸除圣遗物",
     "deleteArtifacts": "删除圣遗物",
     "lockArtifacts": "锁定圣遗物",
     "unlockArtifacts": "解锁圣遗物"
   },
-  "locked": "已锁定",
-  "unlocked": "已解锁"
+  "filterLevelFormat": "等级<1>低值</1>/<3>高值</3> (包含)",
+  "buttonHint": "注意:上述选项仅用于 <1>筛选后的圣遗物</1>",
+  "tipsOfTheDay": [
+    "4星圣遗物的最高评分为60%左右。",
+    "圣遗物的最高评分一般随着你对它的升级而降低。这很正常！",
+    "含有“1”的副词条是最难通过截图扫描识别的。",
+    "如果你的6次副词条升级，贡献了单一的副词条，它会呈现紫色！",
+    "扫描在游戏内升级的圣遗物时，单击“详情”。",
+    "目前支持多圣遗物截图扫描识别！"
+  ]
 }
