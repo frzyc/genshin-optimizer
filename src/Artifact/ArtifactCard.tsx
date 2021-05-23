@@ -21,6 +21,7 @@ import { useForceUpdate, usePromise } from '../Util/ReactUtil';
 import { valueString } from '../Util/UIUtil';
 import Artifact from './Artifact';
 import { ArtifactSheet } from './ArtifactSheet';
+import SlotNameWithIcon from './Component/SlotNameWIthIcon';
 import PercentBadge from './PercentBadge';
 
 type Data = { artifactId?: string, artifactObj?: IArtifact, onEdit?: () => void, onDelete?: () => void, mainStatAssumptionLevel?: number }
@@ -53,7 +54,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
         </Col>
         <Col className="pt-3">
           <h6><b>{sheet?.slotNames[slotKey] ?? "Unknown Piece Name"}</b></h6>
-          <div>{Artifact.slotNameWithIcon(slotKey)}{` +${level}`}</div>
+          <div><SlotNameWithIcon slotKey={slotKey} />{` +${level}`}</div>
         </Col>
       </Row>
     </Card.Header>

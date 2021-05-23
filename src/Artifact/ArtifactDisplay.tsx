@@ -23,14 +23,10 @@ import Artifact from './Artifact';
 import ArtifactCard from './ArtifactCard';
 import ArtifactEditor from './ArtifactEditor';
 import { ArtifactSheet } from './ArtifactSheet';
+import SlotNameWithIcon from './Component/SlotNameWIthIcon';
 
 const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
-const sortMap = {
-  quality: "Quality",
-  level: "Level",
-  efficiency: "Current Substat Eff.",
-  mefficiency: "Maximum Substat Eff."
-}
+const sortKeys = ["quality", "level", "efficiency", "mefficiency"]
 
 const initialFilter = () => ({
   filterArtSetKey: "",
@@ -43,7 +39,7 @@ const initialFilter = () => ({
   filterLocation: "",
   filterLocked: "",
   ascending: false,
-  sortType: Object.keys(sortMap)[0],
+  sortType: Object.keys(sortKeys)[0],
   maxNumArtifactsToDisplay: 50
 })
 function filterReducer(state, action) {
@@ -87,7 +83,7 @@ export default function ArtifactDisplay(props) {
   }, [filters])
 
   const { artifacts, totalArtNum, numUnequip, numUnlock, numLock } = useMemo(() => {
-    const { filterArtSetKey, filterSlotKey, filterMainStatKey, filterStars, filterLevelLow, filterLevelHigh, filterSubstats = initialFilter().filterSubstats, filterLocation = "", filterLocked = "", sortType = Object.keys(sortMap)[0], ascending = false } = filters
+    const { filterArtSetKey, filterSlotKey, filterMainStatKey, filterStars, filterLevelLow, filterLevelHigh, filterSubstats = initialFilter().filterSubstats, filterLocation = "", filterLocked = "", sortType = Object.keys(sortKeys)[0], ascending = false } = filters
     const artifactDB = ArtifactDatabase.getArtifactDatabase() || {}
     const artifacts = Object.values(artifactDB).filter(art => {
       if (filterLocked) {
@@ -139,7 +135,7 @@ export default function ArtifactDisplay(props) {
     return { artifacts, totalArtNum: Object.keys(artifactDB)?.length || 0, numUnequip, numUnlock, numLock, ...dbDirty }//use dbDirty to shoo away warnings!
   }, [filters, dbDirty])
 
-  const { filterArtSetKey, filterSlotKey, filterMainStatKey, filterStars, filterLevelLow, filterLevelHigh, filterSubstats = initialFilter().filterSubstats, maxNumArtifactsToDisplay, filterLocation = "", filterLocked = "", sortType = Object.keys(sortMap)[0], ascending = false } = filters
+  const { filterArtSetKey, filterSlotKey, filterMainStatKey, filterStars, filterLevelLow, filterLevelHigh, filterSubstats = initialFilter().filterSubstats, maxNumArtifactsToDisplay, filterLocation = "", filterLocked = "", sortType = Object.keys(sortKeys)[0], ascending = false } = filters
 
   const { artifactsToShow, numPages, currentPageIndex } = useMemo(() => {
     const numPages = Math.ceil(artifacts.length / maxNumArtifactsToDisplay)
@@ -149,15 +145,15 @@ export default function ArtifactDisplay(props) {
 
   const locationCharacterSheet = usePromise(CharacterSheet.get(filterLocation))
   let locationDisplay
-  if (!filterLocation) locationDisplay = <span>Location: Any</span>
-  else if (filterLocation === "Inventory") locationDisplay = <span>Location: Inventory</span>
-  else if (filterLocation === "Equipped") locationDisplay = <span>Location: Equipped</span>
+  if (!filterLocation) locationDisplay = t("artifact:locationDisplay", { value: t("artifact:filterLocation.any") })
+  else if (filterLocation === "Inventory") locationDisplay = t("artifact:locationDisplay", { value: t("artifact:filterLocation.inventory") })
+  else if (filterLocation === "Equipped") locationDisplay = t("artifact:filterLocation.currentlyEquipped")
   else locationDisplay = <b>{locationCharacterSheet?.name}</b>
 
   let lockedDisplay
-  if (filterLocked === "locked") lockedDisplay = <span><FontAwesomeIcon icon={faLock} /> Locked</span>
-  else if (filterLocked === "unlocked") lockedDisplay = <span><FontAwesomeIcon icon={faLockOpen} /> Unlocked</span>
-  else lockedDisplay = <span>Locked: Any</span>
+  if (filterLocked === "locked") lockedDisplay = <span><FontAwesomeIcon icon={faLock} /> {t`artifact:lock.locked`}</span>
+  else if (filterLocked === "unlocked") lockedDisplay = <span><FontAwesomeIcon icon={faLockOpen} /> {t`artifact:lock.unlocked`}</span>
+  else lockedDisplay = t("artifact:lockDisplay", { value: t("artifact:lock.any") })
 
   const unequipArtifacts = () =>
     window.confirm(`Are you sure you want to unequip ${numUnequip} artifacts currently equipped on characters?`) &&
@@ -176,10 +172,12 @@ export default function ArtifactDisplay(props) {
     artifacts.map(art => ArtifactDatabase.setLocked(art.id, false))
 
 
+  const showingValue = artifacts.length !== totalArtNum ? `${artifacts.length}/${totalArtNum}` : `${totalArtNum}`
+
   return <Container className="mt-2" >
     <InfoComponent
       pageKey="artifactPage"
-      modalTitle="Artifact Editing/Management Page Info"
+      modalTitle={t`artifact:info.title`}
       text={t("artifact:tipsOfTheDay", { returnObjects: true }) as string[]}
     >
       <InfoDisplay />
@@ -257,12 +255,12 @@ export default function ArtifactDisplay(props) {
               <Dropdown as={ButtonGroup} className="flex-grow-1">
                 <Dropdown.Toggle >
                   <span>
-                    <Trans t={t} i18nKey="ui:sortByFormat" value={sortMap[sortType]}>Sort By: {{ value: sortMap[sortType] }}</Trans>
+                    <Trans t={t} i18nKey="ui:sortByFormat" value={t(`artifact:sortMap.${sortType}`) as any}>Sort By: {{ value: t(`artifact:sortMap.${sortType}`) }}</Trans>
                   </span>
                 </Dropdown.Toggle>
                 <Dropdown.Menu>
-                  {Object.entries(sortMap).map(([key, name]) =>
-                    <Dropdown.Item key={key} onClick={() => filterDispatch({ sortType: key })}>{name}</Dropdown.Item>)}
+                  {sortKeys.map(key =>
+                    <Dropdown.Item key={key} onClick={() => filterDispatch({ sortType: key })}>{t(`artifact:sortMap.${key}`) as any}</Dropdown.Item>)}
                 </Dropdown.Menu>
               </Dropdown>
               <Button onClick={() => filterDispatch({ ascending: !ascending })} className="flex-shrink-1">
@@ -278,20 +276,18 @@ export default function ArtifactDisplay(props) {
                 {/* Artifact Slot */}
                 <Dropdown className="flex-grow-1 mb-2">
                   <Dropdown.Toggle className="w-100" variant={filterSlotKey ? "success" : "primary"}>
-                    {filterSlotKey ? Artifact.slotNameWithIcon(filterSlotKey) : t('ui:game.slot')}
+                    {filterSlotKey ? <SlotNameWithIcon slotKey={filterSlotKey} /> : t('ui:game.slot')}
                   </Dropdown.Toggle>
                   <Dropdown.Menu>
                     <Dropdown.Item onClick={() => filterDispatch({ filterSlotKey: "" })} ><Trans t={t} i18nKey="ui:unselect" >Unselect</Trans></Dropdown.Item>
                     {allSlotKeys.map(key =>
-                      <Dropdown.Item key={key} onClick={() => filterDispatch({ filterSlotKey: key })} >
-                        {Artifact.slotNameWithIcon(key)}
-                      </Dropdown.Item>)}
+                      <Dropdown.Item key={key} onClick={() => filterDispatch({ filterSlotKey: key })} ><SlotNameWithIcon slotKey={key} /></Dropdown.Item>)}
                   </Dropdown.Menu>
                 </Dropdown>
                 {/* Main Stat filter */}
                 <Dropdown className="flex-grow-1 mb-2">
                   <Dropdown.Toggle className="w-100" variant={filterMainStatKey ? "success" : "primary"}>
-                    {Stat.getStatNameWithPercent(filterMainStatKey, "Main Stat")}
+                    {Stat.getStatNameWithPercent(filterMainStatKey, t(`artifact:mainStat`))}
                   </Dropdown.Toggle>
                   <Dropdown.Menu>
                     <Dropdown.Item onClick={() => filterDispatch({ filterMainStatKey: "" })}><Trans t={t} i18nKey="ui:unselect" >Unselect</Trans></Dropdown.Item>
@@ -321,9 +317,9 @@ export default function ArtifactDisplay(props) {
                     {lockedDisplay}
                   </Dropdown.Toggle>
                   <Dropdown.Menu>
-                    <Dropdown.Item onClick={() => filterDispatch({ filterLocked: "" })}>Any</Dropdown.Item>
-                    <Dropdown.Item onClick={() => filterDispatch({ filterLocked: "locked" })}><span><FontAwesomeIcon icon={faLock} /> <Trans t={t} i18nKey="artifact:locked" >Locked</Trans></span></Dropdown.Item>
-                    <Dropdown.Item onClick={() => filterDispatch({ filterLocked: "unlocked" })}><span><FontAwesomeIcon icon={faLockOpen} /> <Trans t={t} i18nKey="artifact:unlocked" >Unlocked</Trans></span></Dropdown.Item>
+                    <Dropdown.Item onClick={() => filterDispatch({ filterLocked: "" })}><Trans t={t} i18nKey="artifact:lock.any" >Any</Trans></Dropdown.Item>
+                    <Dropdown.Item onClick={() => filterDispatch({ filterLocked: "locked" })}><span><FontAwesomeIcon icon={faLock} /> <Trans t={t} i18nKey="artifact:lock.locked" >Locked</Trans></span></Dropdown.Item>
+                    <Dropdown.Item onClick={() => filterDispatch({ filterLocked: "unlocked" })}><span><FontAwesomeIcon icon={faLockOpen} /> <Trans t={t} i18nKey="artifact:lock.unlocked" >Unlocked</Trans></span></Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>
               </Col>
@@ -376,8 +372,7 @@ export default function ArtifactDisplay(props) {
               </Button>)}
             </ButtonGroup>}
           </Col>
-          {/* TODO: localization */}
-          <Col xs="auto"><span className="float-right text-right">Showing <b>{artifactsToShow.length}</b> out of {artifacts.length !== totalArtNum ? `${artifacts.length}/` : ""}{totalArtNum} Artifacts</span></Col>
+          <Col xs="auto"><Trans t={t} i18nKey="artifact:showingNum" count={artifactsToShow.length} value={showingValue} >Showing <b>{{ count: artifactsToShow.length }}</b> out of {{ value: showingValue }} Artifacts</Trans></Col>
         </Row>
       </Card.Body>
     </Card>
@@ -405,8 +400,7 @@ export default function ArtifactDisplay(props) {
               </Button>)}
             </ButtonGroup>
           </Col>
-          {/* TODO: localization */}
-          <Col xs="auto"><span className="float-right text-right">Showing <b>{artifactsToShow.length}</b> out of {artifacts.length !== totalArtNum ? `${artifacts.length}/` : ""}{totalArtNum} Artifacts</span></Col>
+          <Col xs="auto"><Trans t={t} i18nKey="artifact:showingNum" count={artifactsToShow.length} value={showingValue} >Showing <b>{{ count: artifactsToShow.length }}</b> out of {{ value: showingValue }} Artifacts</Trans></Col>
         </Row>
       </Card.Body>
     </Card>}

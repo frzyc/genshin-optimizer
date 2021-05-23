@@ -31,6 +31,7 @@ import { timeStringMs } from '../Util/TimeUtil';
 import { crawlObject, deepClone, loadFromLocalStorage, saveToLocalStorage } from '../Util/Util';
 import WeaponSheet from '../Weapon/WeaponSheet';
 import { calculateTotalBuildNumber } from './Build';
+import SlotNameWithIcon, { artifactSlotIcon } from '../Artifact/Component/SlotNameWIthIcon';
 const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
 
 //lazy load the character display
@@ -373,9 +374,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
                     <Card.Body className="mb-n2">
                       {artifactsSlotsToSelectMainStats.map((slotKey, index) =>
                       (<div className="text-inline mb-1 d-flex justify-content-between" key={slotKey}>
-                        <h6 className="d-inline mb-0">
-                          {Artifact.slotNameWithIcon(slotKey)}
-                        </h6>
+                        <h6 className="d-inline mb-0"><SlotNameWithIcon slotKey={slotKey} /></h6>
                         <DropdownButton disabled={generatingBuilds} size="sm"
                           title={mainStatKeys[index] ? Stat.getStatNameWithPercent(mainStatKeys[index]) : "Select a mainstat"}
                           className="d-inline">
@@ -672,7 +671,7 @@ function ArtifactDisplayItem({ characterSheet, weaponSheet, index, characterKey,
     >
       <h5>{(Object.entries(build.setToSlots) as [ArtifactSetKey, SlotKey[]][]).sort(([key1, slotarr1], [key2, slotarr2]) => slotarr2.length - slotarr1.length).map(([key, slotarr]) =>
         <Badge key={key} variant="primary" className="mr-2">
-          {slotarr.map(slotKey => Artifact.slotIcon(slotKey))} {sheets?.[key].name ?? ""}
+          {slotarr.map(slotKey => artifactSlotIcon(slotKey))} {sheets?.[key].name ?? ""}
         </Badge>
       )}</h5>
       <StatDisplayComponent editable={false} {...{ characterSheet, weaponSheet, character, newBuild: build, statsDisplayKeys, cardbg: (index % 2 ? "lightcontent" : "darkcontent") }} />

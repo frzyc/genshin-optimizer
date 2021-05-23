@@ -153,6 +153,7 @@ function ExplainationModal({ modalShow, hide }) {
         </Row>
       </Card.Header>
       <Card.Body>
+        <h5 className="text-warning">NOTE: Artifact Scanning currently only work for ENGLISH artifacts.</h5>
         <Row>
           <Col xs={8} md={4}>
             <img alt="snippet of the screen to take" src={Snippet} className="w-100 h-auto" />

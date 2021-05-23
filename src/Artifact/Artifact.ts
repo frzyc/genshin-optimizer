@@ -1,5 +1,3 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import SlotIcon from '../Components/SlotIcon';
 import { ArtifactMainStatsData, ArtifactSlotsData, ArtifactStarsData, ArtifactSubstatsData, ArtifactSubstatsMinMax } from '../Data/ArtifactData';
 import ArtifactDatabase from '../Database/ArtifactDatabase';
 import CharacterDatabase from '../Database/CharacterDatabase';
@@ -20,12 +18,6 @@ export default class Artifact {
 
   //SLOT
   static slotName = (slotKey: SlotKey) => slotKey ? ArtifactSlotsData[slotKey].name : ""
-  static slotIcon = (slotKey: SlotKey) => <FontAwesomeIcon icon={SlotIcon[slotKey]} key={slotKey} className="fa-fw" />
-  static slotNameWithIcon = (slotKey: SlotKey) => {
-    let name = Artifact.slotName(slotKey)
-    let slotIcon = Artifact.slotIcon(slotKey)
-    return <span>{slotIcon} {name}</span>
-  }
 
   static slotMainStats = (slotKey: SlotKey): MainStatKey[] => ArtifactSlotsData[slotKey].stats
 

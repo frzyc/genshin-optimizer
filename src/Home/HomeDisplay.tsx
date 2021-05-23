@@ -7,17 +7,18 @@ import character_editor from './character_editor.png'
 import talent_screen from './talent_scr.png'
 import tools from './tools.png'
 
-import { Trans } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 
 export default function HomeDisplay(props) {
+  const { t } = useTranslation()
   ReactGA.pageview('/home')
   return <Container className="my-2">
     <Row><Col>
       <Card bg="darkcontent" text={"lightfont" as any}>
-        <Card.Header><Trans i18nKey="home:welcome">Welcome to Genshin Optimizer!</Trans></Card.Header>
+        <Card.Header><Trans t={t} i18nKey="home:welcome">Welcome to Genshin Optimizer!</Trans></Card.Header>
         <Card.Body>
           <Card bg="lightcontent" text={"lightfont" as any} className="mb-2"><Card.Body><Row ><Col>
-            <Trans i18nKey="home:paragraphIntro">
+            <Trans t={t} i18nKey="home:paragraphIntro">
               <h5>What is Genshin Optimizer?</h5>
               <p>
                 Genshin Optimizer is a tool for the action-rpg gacha game <a href="https://genshin.mihoyo.com/" target="_blank" rel="noreferrer"><strong>Genshin Impact</strong></a>.
@@ -32,7 +33,7 @@ export default function HomeDisplay(props) {
           <Card bg="lightcontent" text={"lightfont" as any} className="mb-2"><Card.Body><Row>
             <Col xs={12} md={4}><Image src={art_editor} className="w-100 h-auto" rounded /></Col>
             <Col>
-              <Trans i18nKey="home:paragraphArtifactEditor">
+              <Trans t={t} i18nKey="home:paragraphArtifactEditor">
                 <h5>Artifact Editor</h5>
                 <ul>
                   <li>Full featured Artifact editor.</li>
@@ -47,7 +48,7 @@ export default function HomeDisplay(props) {
 
           <Card bg="lightcontent" text={"lightfont" as any} className="mb-2"><Card.Body><Row>
             <Col>
-              <Trans i18nKey="home:paragraphCharacterEditor">
+              <Trans t={t} i18nKey="home:paragraphCharacterEditor">
                 <h5>Character Editor</h5>
                 <ul>
                   <li>Full featured Character editor.</li>
@@ -68,7 +69,7 @@ export default function HomeDisplay(props) {
           <Card bg="lightcontent" text={"lightfont" as any} className="mb-2"><Card.Body><Row>
             <Col xs={12} md={4}><Image src={talent_screen} className="w-100 h-auto" rounded /></Col>
             <Col>
-              <Trans i18nKey="home:paragraphCharacterDamageCalculations">
+              <Trans t={t} i18nKey="home:paragraphCharacterDamageCalculations">
                 <h5>Character Damage Calculations</h5>
                 <ul>
                   <li>All the details for Every <WIPComponent><Badge variant="warning">WIP</Badge></WIPComponent> character's talents.</li>
@@ -85,7 +86,7 @@ export default function HomeDisplay(props) {
 
           <Card bg="lightcontent" text={"lightfont" as any} className="mb-2"><Card.Body><Row>
             <Col>
-              <Trans i18nKey="home:paragraphBuildGenerator">
+              <Trans t={t} i18nKey="home:paragraphBuildGenerator">
                 <h5>Build Generator</h5>
                 <ul>
                   <li>Generator builds for specific characters using artifacts added by user.</li>
@@ -103,14 +104,14 @@ export default function HomeDisplay(props) {
           <Card bg="lightcontent" text={"lightfont" as any} className="mb-2"><Card.Body><Row>
             <Col xs={12} md={4}><Image src={tools} className="w-100 h-auto" rounded /></Col>
             <Col>
-              <Trans i18nKey="home:paragraphTools">
+              <Trans t={t} i18nKey="home:paragraphTools">
                 <h5>Tools and Doodads</h5>
                 <ul>
                   <li>Server time, with countdown to reset.</li>
                   <li>Resin Counter.</li>
                   <li>Experience Calculator, to optimize EXP. books usage.</li>
-                  <li><Badge variant="warning">Under Construction</Badge> Resource Coverter, for all those pesky x3 tiered resources.</li>
-                  <li><Badge variant="warning">Under Construction</Badge> To-Do list: a dynamic to-do list to tell you what to grind for every day</li>
+                  <li><Badge variant="warning">{t`ui:underConstruction`}</Badge> Resource Converter, for all those pesky x3 tiered resources.</li>
+                  <li><Badge variant="warning">{t`ui:underConstruction`}</Badge> To-Do list: a dynamic to-do list to tell you what to grind for every day</li>
                 </ul>
               </Trans>
             </Col>
@@ -118,7 +119,7 @@ export default function HomeDisplay(props) {
 
           <Card bg="lightcontent" text={"lightfont" as any} className="mb-2"><Card.Body><Row>
             <Col xs={12} md={6}>
-              <Trans i18nKey="home:paragraphFuture">
+              <Trans t={t} i18nKey="home:paragraphFuture">
                 <h5>What's for the future?</h5>
                 <ul>
                   <li>Full talent/constellation calculations for every released character.</li>
@@ -131,7 +132,7 @@ export default function HomeDisplay(props) {
               </Trans>
             </Col>
             <Col xs={12} md={6}>
-              <Trans i18nKey="home:paragraphHelpDevelopment">
+              <Trans t={t} i18nKey="home:paragraphHelpDevelopment">
                 <h5>Want to help the developer?</h5>
                 <p>
                   Genshin Optimizer has been the manifestation of many days and weeks of sleepless nights, and the developer is still actively trying to improve and add features.
@@ -143,9 +144,9 @@ export default function HomeDisplay(props) {
           </Row></Card.Body></Card>
 
           <Card bg="lightcontent" text={"lightfont" as any} ><Card.Body>
-            <Trans i18nKey="home:paragraphCredits">
+            <Trans t={t} i18nKey="home:paragraphCredits">
               <h5>Credit where credit is due</h5>
-              <p>GO would not be where it is where all these sources/people. Time to take a bow and thank them.</p>
+              <p>GO would not be where it is without all these sources/people. Time to take a bow and thank them.</p>
               <ul>
                 <li>Thanks to everyone in the community, and especially people on our <a href={process.env.REACT_APP_DISCORD_LINK} target="_blank" rel="noreferrer">discord</a> for providing feedback and helping me improve this tool.</li>
                 <li>Thanks to <a href="https://genshin.honeyhunterworld.com/" target="_blank" rel="noreferrer">Honey Impact</a>, for giving us a reliable, consistent source for data and numbers. All our calculations would be moot without them.</li>

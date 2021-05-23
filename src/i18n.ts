@@ -67,6 +67,9 @@ i18n
       // Path to load localization data from.
       loadPath: 'locales/{{lng}}/{{ns}}.json',
     },
+    interpolation: {
+      escapeValue: false,//react does interlopation already
+    }
   });
 
 export default i18n;

@@ -2,7 +2,7 @@ import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useCallback, useEffect, useMemo, useReducer } from 'react';
 import { Alert, Badge, Button, ButtonGroup, Card, Col, Dropdown, DropdownButton, FormControl, InputGroup, OverlayTrigger, Popover, Row } from 'react-bootstrap';
-import { Trans } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 import CustomFormControl from '../Components/CustomFormControl';
 import { Stars } from '../Components/StarDisplay';
 import ArtifactDatabase from '../Database/ArtifactDatabase';
@@ -15,11 +15,13 @@ import { clamp, deepClone, getRandomElementFromArray, getRandomIntInclusive } fr
 import Artifact from './Artifact';
 import ArtifactCard from './ArtifactCard';
 import { ArtifactSheet } from './ArtifactSheet';
+import SlotNameWithIcon from './Component/SlotNameWIthIcon';
 import PercentBadge from './PercentBadge';
 import UploadDisplay from './UploadDisplay';
 
 let uploadDisplayReset
 export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }) {
+  const { t } = useTranslation("artifact")
   const [artifact, artifactDispatch] = useReducer(artifactReducer, undefined)
   const artifactSheets = usePromise(ArtifactSheet.getAll())
 
@@ -68,12 +70,12 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }) {
   const setSubstat = useCallback((index: number, substat: Substat) => {
     artifactDispatch({ type: "substat", index, substat })
   }, [artifactDispatch])
-
+  const canClearArtifact = (): boolean => window.confirm(t`editor.clearPrompt` as string)
   const { dupId, isDup } = useMemo(() => checkDuplicate(artifact), [artifact])
   const { numStars = 5, level = 0, slotKey = "flower" } = artifact ?? {}
   const errMsgs = artifact ? Artifact.substatsValidation(artifact) : []
   return <Card bg="darkcontent" text={"lightfont" as any}>
-    <Card.Header><Trans i18nKey="artifact:editor.title" >Artifact Editor</Trans></Card.Header>
+    <Card.Header><Trans t={t} i18nKey="editor.title" >Artifact Editor</Trans></Card.Header>
     <Card.Body>
       <Row>
         {/* Left column */}
@@ -83,13 +85,13 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }) {
             {/* Artifact Set */}
             <Dropdown as={InputGroup.Prepend} className="flex-grow-1">
               <Dropdown.Toggle className="w-100" variant={artifact ? "success" : "primary"}>
-                {sheet?.name ?? "Artifact Set"}
+                {sheet?.name ?? t`editor.set.artifactSet`}
               </Dropdown.Toggle>
               <Dropdown.Menu>
                 {artifactSheets && ArtifactSheet.namesByMaxRarities(artifactSheets).map(([rarity, sets], i) =>
                   <React.Fragment key={rarity}>
                     {i > 0 && <Dropdown.Divider />}
-                    <Dropdown.ItemText>Max Rarity <Stars stars={rarity} /></Dropdown.ItemText>
+                    <Dropdown.ItemText><Trans t={t} i18nKey="editor.set.maxRarity">Max Rarity <Stars stars={rarity} /></Trans></Dropdown.ItemText>
                     {sets.map(([setKey, name]) =>
                       <Dropdown.Item key={setKey} onClick={() => update({ setKey })}>
                         {name}
@@ -98,7 +100,7 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }) {
               </Dropdown.Menu>
             </Dropdown>
             {/* rarity dropdown */}
-            <DropdownButton as={InputGroup.Append} title={artifact ? <Stars stars={numStars} /> : "Rarity"} disabled={!sheet} variant={artifact ? "success" : "primary"}>
+            <DropdownButton as={InputGroup.Append} title={artifact ? <Stars stars={numStars} /> : t`editor.rarity`} disabled={!sheet} variant={artifact ? "success" : "primary"}>
               {([5, 4, 3] as Rarity[]).map((numStars, index) => <Dropdown.Item key={index} disabled={!sheet?.rarity.includes(numStars)} onClick={() => update({ numStars })}>
                 {<Stars stars={numStars} />}
               </Dropdown.Item>)}
@@ -108,32 +110,29 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }) {
           {/* level */}
           <InputGroup className="mb-2">
             <InputGroup.Prepend>
-              <InputGroup.Text>Level</InputGroup.Text>
+              <InputGroup.Text>{t`editor.level`}</InputGroup.Text>
             </InputGroup.Prepend>
             <CustomFormControl value={level} disabled={!sheet} placeholder={`0~${numStars * 4}`} onChange={l => update({ level: l })} />
             <InputGroup.Append>
-              <Button onClick={() => update({ level: 0 })} disabled={!sheet || level === 0}>0</Button>
               <Button onClick={() => update({ level: level - 1 })} disabled={!sheet || level === 0}>-</Button>
+              {numStars ? [...Array(numStars + 1).keys()].map(i => 4 * i).map(i => <Button key={i} onClick={() => update({ level: i })} disabled={!sheet || level === i}>{i}</Button>) : null}
               <Button onClick={() => update({ level: level + 1 })} disabled={!sheet || level === (numStars * 4)}>+</Button>
-              <Button onClick={() => update({ level: numStars * 4 })} disabled={!sheet || level === (numStars * 4)}>{numStars * 4}</Button>
             </InputGroup.Append>
           </InputGroup>
 
           {/* slot */}
           <InputGroup className="mb-2">
             <DropdownButton
-              title={Artifact.slotNameWithIcon(slotKey)}
+              title={<SlotNameWithIcon slotKey={slotKey} />}
               disabled={!sheet}
               variant={artifact ? "success" : "primary"}
               as={InputGroup.Prepend}
             >
               {Object.keys(sheet?.slotNames ?? {}).map((sKey: SlotKey) =>
-                <Dropdown.Item key={sKey as any} onClick={() => update({ slotKey: sKey })} >
-                  {Artifact.slotNameWithIcon(sKey)}
-                </Dropdown.Item>)}
+                <Dropdown.Item key={sKey as any} onClick={() => update({ slotKey: sKey })} ><SlotNameWithIcon slotKey={sKey} /></Dropdown.Item>)}
             </DropdownButton>
             <FormControl
-              value={sheet?.slotNames[artifact!.slotKey] ?? "Unknown Piece Name"}
+              value={sheet?.slotNames[artifact!.slotKey] ?? t`editor.unknownPieceName` as any}
               disabled
               readOnly
             />
@@ -142,19 +141,19 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }) {
           {/* main stat */}
           <InputGroup className="mb-2">
             <DropdownButton
-              title={<b>{artifact ? Stat.getStatNameWithPercent(artifact.mainStatKey) : "Main Stat"}</b>}
+              title={<b>{artifact ? Stat.getStatNameWithPercent(artifact.mainStatKey) : t`mainStat`}</b>}
               disabled={!sheet}
               variant={artifact ? "success" : "primary"}
               as={InputGroup.Prepend}
             >
-              <Dropdown.ItemText>Select a Main Artifact Stat </Dropdown.ItemText>
+              <Dropdown.ItemText>{t`editor.mainSelect`}</Dropdown.ItemText>
               {Artifact.slotMainStats(slotKey).map(mainStatK =>
                 <Dropdown.Item key={mainStatK} onClick={() => update({ mainStatKey: mainStatK })} >
                   {Stat.getStatNameWithPercent(mainStatK)}
                 </Dropdown.Item>)}
             </DropdownButton>
             <FormControl
-              value={artifact ? `${Artifact.mainStatValue(artifact.mainStatKey, numStars, level)}${Stat.getStatUnit(artifact.mainStatKey)}` : "Main Stat"}
+              value={artifact ? `${Artifact.mainStatValue(artifact.mainStatKey, numStars, level)}${Stat.getStatUnit(artifact.mainStatKey)}` : t`mainStat` as any}
               disabled
               readOnly
             />
@@ -164,16 +163,14 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }) {
           <Card bg="lightcontent" text={"lightfont" as any} className="mb-2">
             <Card.Body className="py-1 px-2">
               <Row>
-                <Col className="text-center"><span >Current Substat Efficiency </span></Col>
+                <Col className="text-center">{t`editor.curSubEff`}</Col>
                 <Col xs="auto">
                   <PercentBadge valid={!errMsgs.length} value={errMsgs.length ? "ERR" : (artifact?.currentEfficiency ?? 0)} />
                   <OverlayTrigger
                     placement="bottom"
                     overlay={<Popover id="current-efficiency">
-                      <Popover.Title as="h5">Current Substat Efficiency</Popover.Title>
-                      <Popover.Content>
-                        <span>Every 4 artifact upgrades, you get a substat roll. <strong>Substat Efficiency</strong> calculates how high the substat rolled as a percentage.</span>
-                      </Popover.Content>
+                      <Popover.Title as="h5">{t`editor.curSubEff`}</Popover.Title>
+                      <Popover.Content><Trans t={t} i18nKey="editor.curSubEffDesc" /></Popover.Content>
                     </Popover>}
                   >
                     <FontAwesomeIcon icon={faQuestionCircle} className="ml-2" style={{ cursor: "help" }} />
@@ -187,16 +184,14 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }) {
           <Card bg="lightcontent" text={"lightfont" as any} className="mb-2">
             <Card.Body className="py-1 px-2">
               <Row>
-                <Col className="text-center"><span>Maximum Substat Efficiency </span></Col>
+                <Col className="text-center">{t`editor.maxSubEff`}</Col>
                 <Col xs="auto">
                   <PercentBadge valid={!errMsgs.length} value={errMsgs.length ? "ERR" : (artifact?.maximumEfficiency ?? 0)} />
                   <OverlayTrigger
                     placement="bottom"
                     overlay={<Popover id="max-efficiency">
-                      <Popover.Title as="h5">Maximum Substat Efficiency</Popover.Title>
-                      <Popover.Content>
-                        <span>The <strong>Maximum Substat Efficiency</strong> of an artifact calculates the efficiency if the remaining upgrades rolled their maximum values.</span>
-                      </Popover.Content>
+                      <Popover.Title as="h5">{t`editor.maxSubEff`}</Popover.Title>
+                      <Popover.Content><Trans t={t} i18nKey="editor.maxSubEffDesc" /></Popover.Content>
                     </Popover>}
                   >
                     <FontAwesomeIcon icon={faQuestionCircle} className="ml-2" style={{ cursor: "help" }} />
@@ -210,9 +205,7 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }) {
         {/* Right column */}
         <Col xs={12} lg={6}>
           {/* substat selections */}
-          {[0, 1, 2, 3].map((index) =>
-            <SubstatInput key={"substat" + index} className="mb-2" {...{ index, artifact, setSubstat }} />
-          )}
+          {[0, 1, 2, 3].map((index) => <SubstatInput key={index} className="mb-2" {...{ index, artifact, setSubstat }} />)}
         </Col>
       </Row>
       <Row className="mb-n2">
@@ -225,11 +218,11 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }) {
         {(dupId || artifact?.id) && <Col xs={12} className="mb-2">
           <Row className="d-flex justify-content-around mb-n2">
             <Col lg={4} md={6} className="mb-2">
-              <h6 className="text-center">Artifact Editor Preview</h6>
+              <h6 className="text-center">{t`editor.preview`}</h6>
               <div><ArtifactCard artifactObj={artifact} /></div>
             </Col>
             <Col lg={4} md={6} className="mb-2">
-              <h6 className="text-center">{dupId ? `Detected ${isDup ? "Duplicate" : "Upgraded"} Artifact` : `Before Edit`}</h6>
+              <h6 className="text-center">{dupId ? (isDup ? t`editor.dupArt` : t`editor.upArt`) : t`editor.beforeEdit`}</h6>
               <div><ArtifactCard artifactId={dupId || artifact?.id} /></div>
             </Col>
           </Row>
@@ -241,16 +234,17 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }) {
       </Row></Card.Body>
     <Card.Footer>
       <Button className="mr-2" onClick={() => { saveArtifact(artifact!, artifact!.id); reset() }} disabled={ArtifactDatabase.isInvalid(artifact) || errMsgs.length} variant={dupId ? "warning" : "primary"}>
-        {artifact?.id ? "Save Artifact" : "Add Artifact"}
+        {artifact?.id ? t`editor.btnSave` : t`editor.btnAdd`}
       </Button>
-      <Button className="mr-2" disabled={!artifactInEditor} onClick={() => { canClearArtifact() && reset() }} variant="success">Clear</Button>
-      {process.env.NODE_ENV === "development" && <Button variant="info" onClick={async () => artifactDispatch({ type: "overwrite", artifact: await randomizeArtifact() })}>Randomize</Button>}
-      {Boolean(dupId) && <Button className="float-right" onClick={() => { saveArtifact(artifact!, dupId); reset() }} disabled={ArtifactDatabase.isInvalid(artifact) || errMsgs.length} variant="success">Update Artifact</Button>}
+      <Button className="mr-2" disabled={!artifactInEditor} onClick={() => { canClearArtifact() && reset() }} variant="success">{t`editor.btnClear`}</Button>
+      {process.env.NODE_ENV === "development" && <Button variant="info" onClick={async () => artifactDispatch({ type: "overwrite", artifact: await randomizeArtifact() })}>{t`editor.btnRandom`}</Button>}
+      {Boolean(dupId) && <Button className="float-right" onClick={() => { saveArtifact(artifact!, dupId); reset() }} disabled={ArtifactDatabase.isInvalid(artifact) || errMsgs.length} variant="success">{t`editor.btnUpdate`}</Button>}
     </Card.Footer>
   </Card >
 }
 
 function SubstatInput({ index, artifact, setSubstat, className }: { index: number, artifact: IArtifact | undefined, setSubstat: (index: number, substat: Substat) => void, className }) {
+  const { t } = useTranslation("artifact")
   const { mainStatKey = "", substats = [] } = artifact ?? {}
   const { key = "", value = 0, rolls = [], efficiency = 0 } = artifact?.substats[index] ?? {}
 
@@ -269,19 +263,19 @@ function SubstatInput({ index, artifact, setSubstat, className }: { index: numbe
   }
   const rollOffset = 7 - rollData.length
 
-  if (!rollNum && key && value) error = error || `Cannot calculate stat rolls.`
-  if (allowedRolls < 0) error = error || `Substat cannot be rolled more than ${allowedRolls + rollNum} times.`
+  if (!rollNum && key && value) error = error || t`editor.substat.error.noCalc`
+  if (allowedRolls < 0) error = error || t("editor.substat.error.noOverRoll", { value: allowedRolls + rollNum })
 
   if (!error) {
     const rollBadge = <Badge variant={rollNum === 0 ? "secondary" : `${rollNum}roll`} className="text-darkcontent">
-      {rollNum ? rollNum : "No"} Roll{(rollNum > 1 || rollNum === 0) && "s"}
+      {rollNum ? t("editor.substat.RollCount", { count: rollNum }) : t`editor.substat.noRoll`}
     </Badge>
     const rollArr = rolls.map((val, i) =>
       <span key={i} className={`mr-2 text-${rollOffset + rollData.indexOf(val)}roll`}>{valueString(val, unit)}</span>)
 
     rollLabel = <Row>
       <Col>{rollBadge} {rollArr}</Col>
-      <Col xs="auto">Efficiency: <PercentBadge valid={true} value={efficiency ? efficiency : "No Stat"} /></Col>
+      <Col xs="auto"><Trans t={t} i18nKey="editor.substat.eff">Efficiency: <PercentBadge valid={true} value={efficiency ? efficiency : t`editor.substat.noStat` as string} /></Trans></Col>
     </Row>
   }
 
@@ -293,7 +287,7 @@ function SubstatInput({ index, artifact, setSubstat, className }: { index: numbe
         variant={key ? "success" : "primary"}
         as={InputGroup.Prepend}
       >
-        {Boolean(key) && <Dropdown.Item key={key} onClick={() => setSubstat(index, { key: "", value: 0 })}>No Substat</Dropdown.Item>}
+        {Boolean(key) && <Dropdown.Item key={key} onClick={() => setSubstat(index, { key: "", value: 0 })}>{t`editor.substat.noSubstat`}</Dropdown.Item>}
         {allSubstats
           .filter(key => mainStatKey !== key && substats.every(other => other.key !== key))
           .map(key =>
@@ -304,9 +298,9 @@ function SubstatInput({ index, artifact, setSubstat, className }: { index: numbe
       </DropdownButton>
       <CustomFormControl
         float={unit === "%"}
-        placeholder="Select a Substat."
+        placeholder={t`editor.substat.selectSub`}
         value={key ? value : ""}
-        onChange={(value) => setSubstat(index, { key, value })}
+        onChange={value => setSubstat(index, { key, value })}
         disabled={!key}
         allowEmpty
       />
@@ -317,7 +311,7 @@ function SubstatInput({ index, artifact, setSubstat, className }: { index: numbe
         })}
       </ButtonGroup>}
     </InputGroup>
-    <div className="p-1">{error && <Badge variant="danger">ERR</Badge>}{error || rollLabel}</div>
+    <div className="p-1">{error && <Badge variant="danger">{t`ui:error`}</Badge>} {error || rollLabel}</div>
   </Card >
 }
 
@@ -417,4 +411,3 @@ const saveArtifact = (artifact: IArtifact, id: string | undefined) => {
   }
   ArtifactDatabase.update(artToSave)
 }
-const canClearArtifact = (): boolean => window.confirm("There is an artifact in editor. Are you sure you want to clear the editor?")
