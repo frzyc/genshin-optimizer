@@ -14,13 +14,8 @@
   "game": {
     "minLevel": "Min Level",
     "maxLevel": "Max Level",
-    "artifactSet": "Artifact Set",
     "rarity": "Rarity",
-    "mainStat": "Main Stat",
-    "slot": "Slot",
-    "level": "Level",
-    "substatFormat": "Substat {{value}}",
-    "noSubstat": "No Substat"
+    "level": "Level"
   },
   "unselect": "Unselect",
   "ascending": "Ascending",

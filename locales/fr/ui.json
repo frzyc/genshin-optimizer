@@ -13,13 +13,8 @@
   "game": {
     "minLevel": "Niveau Min",
     "maxLevel": "Niveau Max",
-    "artifactSet": "Set d'artéfact",
     "rarity": "Rareté",
-    "mainStat": "Stat principal",
-    "slot": "Emplacement",
-    "level": "Niveau",
-    "substatFormat": "Stat secondaire {{value}}",
-    "noSubstat": "Pas de Stat secondaire"
+    "level": "Niveau"
   },
   "unselect": "Désélectionner",
   "ascending": "Croissant",

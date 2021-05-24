@@ -14,13 +14,8 @@
   "game": {
     "minLevel": "Nivel Mínimo",
     "maxLevel": "Nivel Máximo",
-    "artifactSet": "Set de Artefactos",
     "rarity": "Rareza",
-    "mainStat": "Stat Principal",
-    "slot": "Ranura",
-    "level": "Nivel",
-    "substatFormat": "Substat {{value}}",
-    "noSubstat": "Sin Substat"
+    "level": "Nivel"
   },
   "unselect": "No seleccionado",
   "ascending": "Ascendente",

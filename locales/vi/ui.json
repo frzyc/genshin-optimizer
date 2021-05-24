@@ -14,13 +14,8 @@
   "game": {
     "minLevel": "Cấp thấp nhất",
     "maxLevel": "Cấp cao nhất",
-    "artifactSet": "Bộ thánh di vật",
     "rarity": "Độ hiếm",
-    "mainStat": "Chỉ số chính",
-    "slot": "Vị trí",
-    "level": "Cấp độ",
-    "substatFormat": "Chỉ số phụ {{value}}",
-    "noSubstat": "Không chỉ số phụ"
+    "level": "Cấp độ"
   },
   "unselect": "Bỏ chọn",
   "ascending": "Tăng dần",

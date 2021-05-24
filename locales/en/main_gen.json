@@ -25,7 +25,8 @@
         "RollCount_plural": "{{count}} Rolls",
         "noStat": "No Value",
         "eff": "Efficiency: <1></1>",
-        "noSubstat": "No Substat"
+        "noSubstat": "No Substat",
+        "substatFormat": "Substat {{value}}"
       },
       "preview": "Artifact Preview",
       "dupArt": "Duplicate artifact detected.",
@@ -38,6 +39,7 @@
       "btnUpdate": "Update Artifact",
       "clearPrompt": "There is an artifact in editor. Are you sure you want to clear the editor?"
     },
+    "slot": "Slot",
     "slotName": {
       "flower": "Flower of Life",
       "plume": "Plume of Death",
@@ -164,13 +166,8 @@
     "game": {
       "minLevel": "Min Level",
       "maxLevel": "Max Level",
-      "artifactSet": "Artifact Set",
       "rarity": "Rarity",
-      "mainStat": "Main Stat",
-      "slot": "Slot",
-      "level": "Level",
-      "substatFormat": "Substat {{value}}",
-      "noSubstat": "No Substat"
+      "level": "Level"
     },
     "unselect": "Unselect",
     "ascending": "Ascending",

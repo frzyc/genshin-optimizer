@@ -14,13 +14,8 @@
   "game": {
     "minLevel": "Мин Уровень",
     "maxLevel": "Макс Уровень",
-    "artifactSet": "Сет Артефактов",
     "rarity": "Редкость",
-    "mainStat": "Основной Стат",
-    "slot": "Слот",
-    "level": "Уровень",
-    "substatFormat": "Сабстат {{value}}",
-    "noSubstat": "Нету Сабстата"
+    "level": "Уровень"
   },
   "unselect": "Отменить",
   "ascending": "По возрастанию",

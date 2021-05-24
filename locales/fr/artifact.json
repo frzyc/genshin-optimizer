@@ -5,12 +5,9 @@
       "artifactSet": "Set d'artéfact",
       "maxRarity": "Rareté Max"
     },
-    "rarity": "Rareté",
-    "level": "Niveau",
-    "unknownPieceName": "Nom de Pièce Inconnu",
-    "mainSelect": "Sélectionner une Stat Principal",
-    "curSubEff": "Efficacité actuel Stat secondaire",
     "substat": {
+      "substatFormat": "Stat secondaire {{value}}",
+      "noSubstat": "Pas de Stat secondaire",
       "selectSub": "Sélectionner une Stat secondaire",
       "error": {
         "noCalc": "Impossible de calculer les rolls de la stat.",
@@ -20,9 +17,13 @@
       "RollCount": "{{count}} Roll",
       "RollCount_plural": "{{count}} Roll",
       "noStat": "Pas de valeur",
-      "eff": "Efficiency: <1></1>",
-      "noSubstat": "Pas de stat secondaire"
+      "eff": "Efficiency: <1></1>"
     },
+    "rarity": "Rareté",
+    "level": "Niveau",
+    "unknownPieceName": "Nom de Pièce Inconnu",
+    "mainSelect": "Sélectionner une Stat Principal",
+    "curSubEff": "Efficacité actuel Stat secondaire",
     "preview": "Prévisualisation d'artefact",
     "dupArt": "Doublon d'artefact détecté.",
     "beforeEdit": "Avant modification",
@@ -53,6 +54,8 @@
     "Cliquez sur \"Détails\" quand vous améliorez vos artéfacts dans le jeu pour les analyser au fur et à mesure que vous les améliorés.",
     "Vous pouvez maintenant télécharger plusieurs captures d'écran d'artéfacts à analyser!"
   ],
+  "mainStat": "Stat principal",
+  "slot": "Emplacement",
   "info": {
     "title": "Guide d' Edition/Gestion d'artefact"
   },
@@ -65,6 +68,5 @@
   "sortMap": {
     "quality": "Qualité",
     "level": "Niveau"
-  },
-  "mainStat": "Stat Principale"
+  }
 }

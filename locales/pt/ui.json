@@ -14,13 +14,8 @@
   "game": {
     "minLevel": "Nível Mínimo",
     "maxLevel": "Nível Máximo",
-    "artifactSet": "Conjunto de artefatos",
     "rarity": "Raridade",
-    "mainStat": "Atributo Principal",
-    "slot": "Slot",
-    "level": "Nível",
-    "substatFormat": "Atributo Secundário {{value}}",
-    "noSubstat": "Sem Atributos Secundários"
+    "level": "Nível"
   },
   "unselect": "Desmarcar",
   "ascending": "Ascendente",

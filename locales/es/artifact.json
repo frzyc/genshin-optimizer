@@ -5,15 +5,9 @@
       "artifactSet": "Set de Artefactos",
       "maxRarity": "Rareza Máxima <1></1>"
     },
-    "rarity": "Rareza",
-    "level": "Nivel",
-    "unknownPieceName": "Nombre de Pieza Desconocido",
-    "mainSelect": "Selecciona un Stat Principal",
-    "curSubEff": "Eficiencia de Substat Actual",
-    "curSubEffDesc": "Cada 4 upgrades del artefacto, obtienes un roll de substat. <strong>La Eficiencia de Substat</strong> calcula qué tan alto rolleó el substat como un porcentaje.",
-    "maxSubEff": "Eficiencia Máxima de Substat",
-    "maxSubEffDesc": "La <strong>Eficiencia Máxima de Substat</strong> de un artefacto calcula la eficiencia si los upgrades restantes rolleasen sus valores máximos.",
     "substat": {
+      "substatFormat": "Substat {{value}}",
+      "noSubstat": "Sin Substat",
       "selectSub": "Selecciona un Substat",
       "error": {
         "noCalc": "No se pueden calcular los rolls de stat.",
@@ -23,9 +17,16 @@
       "RollCount": "{{count}} Roll",
       "RollCount_plural": "{{count}} Rolls",
       "noStat": "Sin Valor",
-      "eff": "Eficiencia: <1></1>",
-      "noSubstat": "Sin Substat"
+      "eff": "Eficiencia: <1></1>"
     },
+    "rarity": "Rareza",
+    "level": "Nivel",
+    "unknownPieceName": "Nombre de Pieza Desconocido",
+    "mainSelect": "Selecciona un Stat Principal",
+    "curSubEff": "Eficiencia de Substat Actual",
+    "curSubEffDesc": "Cada 4 upgrades del artefacto, obtienes un roll de substat. <strong>La Eficiencia de Substat</strong> calcula qué tan alto rolleó el substat como un porcentaje.",
+    "maxSubEff": "Eficiencia Máxima de Substat",
+    "maxSubEffDesc": "La <strong>Eficiencia Máxima de Substat</strong> de un artefacto calcula la eficiencia si los upgrades restantes rolleasen sus valores máximos.",
     "preview": "Vista Previa del Artefacto",
     "dupArt": "Artefacto duplicado detectado.",
     "upArt": "Artefacto mejorado detectado.",
@@ -59,6 +60,8 @@
     "Haz clic en \"Detalles\" cuando estés mejorando tus artefactos en el juego para escanearlos mientras los mejoras.",
     "Ahora puedes subir varias capturas de pantalla de artefactos para escanear!"
   ],
+  "mainStat": "Stat Principal",
+  "slot": "Ranura",
   "slotName": {
     "flower": "Flor de la Vida",
     "plume": "Pluma de la Muerte",
@@ -85,7 +88,6 @@
     "efficiency": "Ef. Actual de Substat.",
     "mefficiency": "Ef. Máxima de Substat."
   },
-  "mainStat": "Stat Principal",
   "showingNum": "Mostrando <1>{{count}}</1> de {{value}} Artefacto",
   "showingNum_plural": "Mostrando <1>{{count}}</1> de {{value}} Artefactos"
 }
