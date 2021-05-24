@@ -12,7 +12,7 @@
   "skill": {
     "name": "Brustpanzer",
     "description": {
-      "0": "Erschafft einen Geo-Panzer, der Gegnern in der Umgebung <geo>Geo-Schaden</geo>zufügt, sowie einen Schutzschild, der Schaden basierend auf Noelles VTD abhält.",
+      "0": "Erschafft einen Geo-Panzer, der Gegnern in der Umgebung <geo>Geo-Schaden</geo> zufügt, sowie einen Schutzschild, der Schaden basierend auf Noelles VTD abhält.",
       "1": "Effekte des Schutzschilds:",
       "2": "- Noelle stellt allen Truppenmitgliedern bei Treffern mit Standardangriffen und heftigen Schlägen mit gewisser Wahrscheinlichkeit LP wieder her.",
       "3": "- Hält bei elementarem sowie physischem Schaden 150 % ab.",
