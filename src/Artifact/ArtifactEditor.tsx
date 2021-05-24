@@ -282,7 +282,7 @@ function SubstatInput({ index, artifact, setSubstat, className }: { index: numbe
   return <Card bg="lightcontent" text={"lightfont" as any} className={className}>
     <InputGroup>
       <DropdownButton
-        title={Stat.getStatNameWithPercent(key, `Substat ${index + 1}`)}
+        title={key ? Stat.getStatNameWithPercent(key) : t('editor.substat.substatFormat', { value: index + 1 })}
         disabled={!artifact}
         variant={key ? "success" : "primary"}
         as={InputGroup.Prepend}
