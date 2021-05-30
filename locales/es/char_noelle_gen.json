@@ -21,7 +21,8 @@
       "3": "La cantidad de Vida curada es proporcional a la DEF de Noelle.",
       "4": "<br/>",
       "5": "<i>Noelle es una fiel criada y, al mismo tiempo, una valiente caballera.</i>"
-    }
+    },
+    "triggerChance": "Prob. de curación"
   },
   "burst": {
     "name": "Hora de limpiar",
@@ -35,7 +36,8 @@
       ],
       "3": "<br/>",
       "4": "<i>Lo que debe limpiarse a veces no es solo el polvo...</i>"
-    }
+    },
+    "atkBonus": "Aumento de ATQ"
   },
   "passive1": {
     "name": "Dedicación de la criada",

@@ -22,7 +22,8 @@
       "4": "The amount of HP healed when regeneration is triggered scales based on Noelle's DEF.",
       "5": "<br/>",
       "6": "<i>Noelle is both a dutiful maid and a valiant knight.</i>"
-    }
+    },
+    "triggerChance": "Healing Triggering Chance"
   },
   "burst": {
     "name": "Sweeping Time",
@@ -36,7 +37,8 @@
       ],
       "3": "<br/>",
       "4": "<i>Sometimes, it's not just dust that needs sweeping...</i>"
-    }
+    },
+    "atkBonus": "ATK Bonus"
   },
   "passive1": {
     "name": "Maid's Knighthood",

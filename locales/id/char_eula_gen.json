@@ -27,7 +27,9 @@
       "12": "Setiap lapis Grimheart akan berubah menjadi Icewhirl Brand yang mengakibatkan <cryo>Cryo DMG</cryo> pada musuh di sekitar.",
       "13": "<br/>",
       "14": "<i>\"Ombak-ombak pun bergulung, menelan mahkota para bangsawan. Setelah itu, setiap tetesan di antara gulungan ombak es akan memantulkan mahkota emas, dan setiap tetesan busa ombak akan memancarkan cahayanya.</i>"
-    }
+    },
+    "brandDMG": "DMG Icewhirl Brand",
+    "grimheartDuration": "Durasi Grimheart"
   },
   "burst": {
     "name": "Glacial Illumination",

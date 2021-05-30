@@ -26,7 +26,9 @@
       "11": "Caso o efeito do Coração Impassível seja consumido, irá diminuir a RES Física  e <cryo>RES Cryo</cryo> dos inimigos acertados. Cada Coração Impassível se converterá em uma Espada do Vórtice de Gelo, causando <cryo>Dano Cryo</cryo> nos inimigos ao redor.",
       "12": "<br/>",
       "13": "<i>\"As ondas enrolam dessa forma e engolem as coroas nobres. Depois, cada gota de espuma que cai voando das ondas congelantes reflete uma coroa dourada, cada gota de espuma do mar brilha gloriosamente.\"</i>"
-    }
+    },
+    "brandDMG": "Dano da Espada do Vórtice do Gelo",
+    "grimheartDuration": "Duração do Coração Impassível"
   },
   "burst": {
     "name": "Espada das Ondas Congeladas",

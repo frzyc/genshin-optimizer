@@ -27,7 +27,9 @@
       "12": "Mỗi một tầng Trái Tim Băng Giá bị tiêu hao sẽ chuyển hóa thành 1 thanh Băng Vũ Kiếm, gây <cryo>Sát Thương Nguyên Tố Băng</cryo> cho địch xung quanh.",
       "13": "<br/>",
       "14": "<i>\"Những con sóng cuộn trào nuốt chửng chiếc vương miện của quý tộc. Và mãi đến sau này, mỗi bọt nước giữa những con sóng băng giá lại phản chiếu ra một chiếc vương miện vàng, mỗi bọt nước đều tỏa sáng lấp lánh.\"</i>"
-    }
+    },
+    "brandDMG": "Sát Thương Băng Vũ Kiếm",
+    "grimheartDuration": "Thời gian Trái Tim Băng Giá kéo dài"
   },
   "burst": {
     "name": "Thanh Kiếm Sóng Nước",

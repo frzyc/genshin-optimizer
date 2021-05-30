@@ -27,7 +27,9 @@
       "12": "Cada carga de corazón impasible consumida se convertirá en una crioespada de vacío que inflige <cryo>Daño Cryo</cryo> a los enemigos cercanos.",
       "13": "<br/>",
       "14": "<i>“Así se daba la vuelta la espuma del mar, engullendo la corona de la aristocracia a su paso. Entonces, en todas y cada una de las gotas de agua que salieron despedidas de la gélida marea se reflejó una corona dorada, y cada gota de espuma emitía un glorioso brillo”.</i>"
-    }
+    },
+    "brandDMG": "Daño de crioespada de vacío",
+    "grimheartDuration": "Duración de corazón impasible"
   },
   "burst": {
     "name": "Fulgor glacial",

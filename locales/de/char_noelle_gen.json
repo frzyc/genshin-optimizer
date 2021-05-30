@@ -20,7 +20,8 @@
       "5": "Heilkraft basiert auf Noelles VTD.",
       "6": "<br/>",
       "7": "<i>Noelle ist eine hingebungsvolle Magd, aber auch ein zielstrebiger Ritter.</i>"
-    }
+    },
+    "triggerChance": "Wahrscheinlichkeit der Heilung"
   },
   "burst": {
     "name": "Großreinigung",
@@ -32,7 +33,8 @@
       "4": "- Erhöht Noelles ANG basierend auf Noelles VTD.",
       "5": "<br/>",
       "6": "<i>Was gesäubert werden muss, ist nicht immer nur einfacher Dreck ...</i>"
-    }
+    },
+    "atkBonus": "ANG-Bonus"
   },
   "passive1": {
     "name": "Hingabe einer Magd",

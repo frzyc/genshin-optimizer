@@ -22,7 +22,8 @@
       "5": "Lượng trị liệu dựa trên phòng ngự của Noelle.",
       "6": "<br/>",
       "7": "<i>Noelle tuy là hầu gái nhưng cũng là một kỵ sĩ kiên cường.</i>"
-    }
+    },
+    "triggerChance": "Tỷ lệ kích hoạt trị liệu"
   },
   "burst": {
     "name": "Quét Sạch",
@@ -36,7 +37,8 @@
       ],
       "3": "<br/>",
       "4": "<i>Đôi lúc không chỉ có bụi bẩn mới cần quét dọn...</i>"
-    }
+    },
+    "atkBonus": "Tấn Công Tăng"
   },
   "passive1": {
     "name": "Thái Độ Của Hầu Gái",

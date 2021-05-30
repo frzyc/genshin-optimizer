@@ -22,7 +22,8 @@
       "4": "Les soins reçus sont proportionnels à la DÉF de Noëlle.",
       "5": "<br/>",
       "6": "<i>Noëlle est à la fois une servante fidèle et un chevalier vaillant.</i>"
-    }
+    },
+    "triggerChance": "Chance de soins"
   },
   "burst": {
     "name": "Grand ménage",
@@ -36,7 +37,8 @@
       ],
       "3": "<br/>",
       "4": "<i>Parfois, la poussière n'est pas la seule chose qu'il faut balayer... </i>"
-    }
+    },
+    "atkBonus": "Bonus ATQ"
   },
   "passive1": {
     "name": "À votre service",

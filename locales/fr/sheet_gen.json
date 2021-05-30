@@ -1,0 +1,40 @@
+{
+  "normal": {
+    "hit1": "DGT 1er coup",
+    "hit2": "DGT 2e coup",
+    "hit3": "DGT 3e coup",
+    "hit4": "DGT 4e coup",
+    "hit5": "DGT 5e coup",
+    "hit6": "DGT 6e coup"
+  },
+  "charged": {
+    "spinning": "DGT enchaînement attaque chargée",
+    "final": "DGT attaque chargée finale",
+    "stamina": "Endurance attaque chargée",
+    "aimed": "DGT tir visé",
+    "fullyAimed": "DGT tir visé (Pleine charge)"
+  },
+  "plunging": {
+    "dmg": "DGT durant la chute",
+    "low": "DGT chute basse",
+    "high": "DGT chute élevée"
+  },
+  "maxDuration": "Durée max",
+  "maxStacks": "Bonus de charges d'énergie accumulées",
+  "skillDMG": "DGT compétence",
+  "burstDMG": "DGT",
+  "dmgAbsorption": "PV du bouclier",
+  "healing": "Soins",
+  "duration": "Durée",
+  "cd": "Temps de recharge",
+  "energyCost": "Énergie élémentaire",
+  "baseDMG": "DGT de base",
+  "press": {
+    "dmg": "DGT appui simple",
+    "cd": "TdR appui simple"
+  },
+  "hold": {
+    "dmg": "DGT appui long",
+    "cd": "TdR appui long"
+  }
+}

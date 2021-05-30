@@ -27,7 +27,9 @@
       "12": "Jede verbrauchte Stapelung von Kaltes Herz wandelt sich in ein Eisstrudelschwert um, das den Gegnern in der Umgebung <cryo>Kryo-Schaden</cryo> zufügt.",
       "13": "<br/>",
       "14": "<i>„So wird die Krone der Aristokraten in den Strudel hineingerissen. In jedem eiskalten Tröpfchen ist der Widerschein der goldenen Krone zu sehen. Der stiebende Schaum glänzt.“</i>"
-    }
+    },
+    "brandDMG": "SCH von Schwert des Eisstrudel",
+    "grimheartDuration": "Dauer von Kaltes Herz"
   },
   "burst": {
     "name": "Schwert der Brandung",

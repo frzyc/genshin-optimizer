@@ -20,7 +20,8 @@
       "5": "A quantidade de Vida curada quando a recuperação é desencadeada é baseada na DEF de Noelle.",
       "6": "<br/>",
       "7": "<i>Noelle é ao mesmo tempo uma empregada dedicada e uma cavaleira corajosa.</i>"
-    }
+    },
+    "triggerChance": "Probabilidade de Cura"
   },
   "burst": {
     "name": "Grande Limpeza",
@@ -34,7 +35,8 @@
       ],
       "3": "<br/>",
       "4": "<i>Às vezes, não é apenas poeira que precisa ser varrida...</i>"
-    }
+    },
+    "atkBonus": "Aumento de ATQ"
   },
   "passive1": {
     "name": "Dedicação da Empregada",
