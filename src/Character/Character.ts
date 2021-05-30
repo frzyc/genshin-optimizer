@@ -5,7 +5,8 @@ import { characterStatBase, LevelsData } from "../Data/CharacterData";
 import ElementalData from "../Data/ElementalData";
 import ArtifactDatabase from "../Database/ArtifactDatabase";
 import CharacterDatabase from "../Database/CharacterDatabase";
-import { PreprocessFormulas } from "../StatData";
+import Formula from "../Formula";
+import { ElementToReactionKeys, PreprocessFormulas } from "../StatData";
 import { GetDependencies } from "../StatDependency";
 import { ICharacter } from "../Types/character";
 import { allElements, allSlotKeys, CharacterKey, SlotKey } from "../Types/consts";
@@ -214,5 +215,78 @@ export default class Character {
       Character.mergeStats(initialStats, condStats)
     })
     return initialStats as ICalculatedStats
+  }
+  static getDisplayStatKeys = (stats: ICalculatedStats, characterSheet: CharacterSheet) => {
+    const { characterKey } = stats
+    let eleKey = characterSheet.elementKey
+    const basicKeys = ["finalHP", "finalATK", "finalDEF", "eleMas", "critRate_", "critDMG_", "heal_", "enerRech_", `${eleKey}_dmg_`]
+    const isAutoElemental = characterSheet.isAutoElemental
+    if (!isAutoElemental) basicKeys.push("physical_dmg_")
+
+    //show elemental interactions
+    const transReactions = deepClone(ElementToReactionKeys[eleKey])
+    const weaponTypeKey = characterSheet.weaponTypeKey
+    if (!transReactions.includes("shattered_hit") && weaponTypeKey === "claymore") transReactions.push("shattered_hit")
+    if (Formula.formulas.character?.[characterKey]) {
+      const charFormulas = {}
+      Object.entries(Formula.formulas.character[characterKey]).forEach(([talentKey, formulas]: any) => {
+        Object.values(formulas as any).forEach((formula: any) => {
+          if (!formula.field.canShow(stats)) return
+          if (talentKey === "normal" || talentKey === "charged" || talentKey === "plunging") talentKey = "auto"
+          const formKey = `talentKey_${talentKey}`
+          if (!charFormulas[formKey]) charFormulas[formKey] = []
+          charFormulas[formKey].push(formula.keys)
+        })
+      })
+
+      const weaponFormulas = Formula.formulas.weapon[stats.weapon.key]
+
+      if (weaponFormulas) {
+        Object.values(weaponFormulas as any).forEach((formula: any) => {
+          if (!formula.field.canShow(stats)) return
+          const formKey = `weapon_${stats.weapon.key}`
+          if (!charFormulas[formKey]) charFormulas[formKey] = []
+          charFormulas[formKey].push(formula.keys)
+        })
+      }
+      return { basicKeys, ...charFormulas, transReactions }
+    } else {//TODO: doesnt have character sheet
+      //generic average hit parameters.
+      const genericAvgHit: string[] = []
+      if (!isAutoElemental) //add phy auto + charged + physical
+        genericAvgHit.push("physical_normal_avgHit", "physical_charged_avgHit")
+
+      else if (weaponTypeKey === "bow") {//bow charged atk does elemental dmg on charge
+        genericAvgHit.push(`${eleKey}_charged_avgHit`)
+      }
+      //show skill/burst
+      genericAvgHit.push(`${eleKey}_skill_avgHit`, `${eleKey}_burst_avgHit`)
+
+      //add reactions.
+      if (eleKey === "pyro") {
+        const reactions: string[] = []
+        reactions.push(...genericAvgHit.filter(key => key.startsWith(`${eleKey}_`)).map(key => key.replace(`${eleKey}_`, `${eleKey}_vaporize_`)))
+        reactions.push(...genericAvgHit.filter(key => key.startsWith(`${eleKey}_`)).map(key => key.replace(`${eleKey}_`, `${eleKey}_melt_`)))
+        genericAvgHit.push(...reactions)
+      } else if (eleKey === "cryo")
+        genericAvgHit.push(...genericAvgHit.filter(key => key.startsWith(`${eleKey}_`)).map(key => key.replace(`${eleKey}_`, `${eleKey}_melt_`)))
+      else if (eleKey === "hydro")
+        genericAvgHit.push(...genericAvgHit.filter(key => key.startsWith(`${eleKey}_`)).map(key => key.replace(`${eleKey}_`, `${eleKey}_vaporize_`)))
+
+      return { basicKeys, genericAvgHit, transReactions }
+    }
+  }
+  static getDisplayHeading(key: string, characterSheet: CharacterSheet, weaponSheet: WeaponSheet) {
+    if (key === "basicKeys") return "Basic Stats"
+    else if (key === "genericAvgHit") return "Generic Optimization Values"
+    else if (key === "transReactions") return "Transformation Reaction"
+    else if (key.startsWith("talentKey_")) {
+      const subkey = key.split("talentKey_")[1]
+      return (characterSheet?.getTalent(subkey)?.name ?? subkey)
+    } else if (key.startsWith("weapon_")) {
+      const subkey = key.split("weapon_")[1]
+      return (weaponSheet?.name ?? subkey)
+    }
+    return ""
   }
 }

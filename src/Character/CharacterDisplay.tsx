@@ -14,6 +14,7 @@ import Weapon from '../Weapon/Weapon';
 import Character from './Character';
 import CharacterCard from './CharacterCard';
 import CharacterSheet from './CharacterSheet';
+import i18next from 'i18next';
 const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
 
 //lazy load the character display
@@ -62,7 +63,12 @@ export default function CharacterDisplay(props) {
   }, [charIdToEdit, sortBy, elementalFilter, weaponFilter])
   const deleteCharacter = useCallback(async id => {
     const chararcterSheet = await CharacterSheet.get(id)
-    if (!window.confirm(`Are you sure you want to remove ${chararcterSheet?.name}?`)) return
+    let name = chararcterSheet?.name
+    //use translated string
+    if (typeof name === "object")
+      name = i18next.t(`char_${id}_gen:name`)
+
+    if (!window.confirm(`Are you sure you want to remove ${name}?`)) return
     Character.remove(id)
     if (charIdToEdit === id)
       setcharIdToEdit("")

@@ -25,7 +25,7 @@ import rosaria from './Rosaria'
 // import tartaglia from './Tartaglia'
 // import traveler_anemo from './Traveler_Anemo'
 // import traveler_geo from './Traveler_Geo'
-// import venti from './Venti'
+import venti from './Venti'
 // import xiao from './Xiao'
 // import xiangling from './Xiangling'
 // import xingqiu from './Xingqiu'
@@ -60,7 +60,7 @@ const char = {
   // tartaglia,
   // traveler_anemo,
   // traveler_geo,
-  // venti,
+  venti,
   // xiao,
   // xiangling,
   // xingqiu,

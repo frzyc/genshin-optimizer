@@ -29,7 +29,7 @@ function CharacterArtifactPane({ characterSheet, weaponSheet, character, charact
   //choose which one to display stats for
   const stats = newBuild ? newBuild : equippedBuild
   const mainStatAssumptionLevel = stats?.mainStatAssumptionLevel ?? 0
-  const statKeys = useMemo(() => characterSheet.getDisplayStatKeys(stats), [stats, characterSheet])
+  const statKeys = useMemo(() => Character.getDisplayStatKeys(stats, characterSheet), [stats, characterSheet])
   const edit = useCallback(
     artid => history.push({
       pathname: "/artifact",

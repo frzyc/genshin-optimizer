@@ -9,7 +9,9 @@ const char: ICharacter = {
   },
   skill: {
     name: 741315613,
-    description: [1769739528, "paragraph"]
+    description: [1769739528, "paragraph"],
+    brandDMG: [3765549071, "skillParam"],
+    grimheartDuration: [164817062, "skillParam"],
   },
   burst: {
     name: 3521320029,

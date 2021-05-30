@@ -9,11 +9,13 @@ const char: ICharacter = {
   },
   skill: {
     name: 737506901,
-    description: [204798264, "paragraph"]
+    description: [204798264, "paragraph"],
+    triggerChance: [3971383039, "skillParam"],
   },
   burst: {
     name: 1615963973,
-    description: [313107928, "paragraph"]
+    description: [313107928, "paragraph"],
+    atkBonus: [4151293863, "skillParam"]
   },
   passive1: {
     name: 1771533717,

@@ -1,4 +1,4 @@
-import { Translate } from '../../../Components/Translate'
+import { Translate, TransWrapper } from '../../../Components/Translate'
 import { IConditionals } from '../../../Types/IConditional'
 import { IWeaponSheet } from '../../../Types/weapon'
 import img from './Weapon_Song_of_Broken_Pines.png'
@@ -8,7 +8,7 @@ const condAtk_ = [20, 25, 30, 35, 40]
 const tr = (strKey: string) => <Translate ns="weapon_SongOfBrokenPines_gen" key18={strKey} />
 const conditionals: IConditionals = {
   r: {
-    name: "Millennial Movement: Banner-Hymn",
+    name: <TransWrapper ns="weapon_SongOfBrokenPines" key18="name" />,
     stats: stats => ({
       atk_: condAtk_[stats.weapon.refineIndex],
       atkSPD_: atkSPD_[stats.weapon.refineIndex],

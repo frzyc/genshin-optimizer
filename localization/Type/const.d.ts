@@ -3,6 +3,7 @@ type transID = number | [number, string]
 interface ISkill {
   name: transID
   description: transID
+  [key: string]: transID
 }
 export type ICharacter = {
   name: transID,

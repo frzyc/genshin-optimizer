@@ -9,7 +9,7 @@ const data = {
   },
   specializeStat: {
     key: "atk_",
-    value: [0, 0, 0, 0, 7.5, 7.5, 15, 15, 15, 15, 22.5, 22.5, 30, 30]
+    value: [0, 0, 0, 0, 6, 6, 12, 12, 12, 12, 18, 18, 24, 24]
   },
   normal: {
     hitArr: [

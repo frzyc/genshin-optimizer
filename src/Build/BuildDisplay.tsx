@@ -136,7 +136,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   const characterSheet = usePromise(CharacterSheet.get(characterKey))
   const weaponSheet = usePromise(character && WeaponSheet.get(character.weapon.key))
   const initialStats = useMemo(() => charDirty && character && characterSheet && weaponSheet && Character.createInitialStats(character, characterSheet, weaponSheet), [character, charDirty, characterSheet, weaponSheet])
-  const statsDisplayKeys = useMemo(() => charDirty && characterSheet && characterSheet.getDisplayStatKeys(initialStats), [initialStats, charDirty, characterSheet])
+  const statsDisplayKeys = useMemo(() => charDirty && characterSheet && initialStats && Character.getDisplayStatKeys(initialStats, characterSheet), [initialStats, charDirty, characterSheet])
 
   //save build settings to character when buildSettings change, will cause infinite loop if add 'character' to dependency array
   useEffect(() => {
@@ -151,6 +151,16 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     else isMounted.current = true
   }, [characterKey, maxBuildsToShow])
 
+  //validate optimizationTarget 
+  useEffect(() => {
+    if (!statsDisplayKeys) return
+    for (const sectionKey in statsDisplayKeys) {
+      const section = statsDisplayKeys[sectionKey]
+      for (const keys of section)
+        if (keys === optimizationTarget) return
+    }
+    buildSettingsDispatch({ optimizationTarget: initialBuildSettings().optimizationTarget })
+  }, [optimizationTarget, statsDisplayKeys])
 
   const { split, totBuildNumber } = useMemo(() => {
     if (!characterKey) // Make sure we have all slotKeys
@@ -250,16 +260,19 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   const formula = usePromise(Array.isArray(optimizationTarget) ? Formula.get(optimizationTarget) : undefined)
   const sortByText = useMemo(() => {
     if (Array.isArray(optimizationTarget) && formula) {
+      let [type, , talentKey] = (formula as any).keys as string[]
       const field = (formula as any).field as IFieldDisplay
       const variant = Character.getTalentFieldValue(field, "variant", initialStats)
       const text = Character.getTalentFieldValue(field, "text", initialStats)
-      let [, , talentKey] = (formula as any).keys as string[]
-      if (talentKey === "normal" || talentKey === "charged" || talentKey === "plunging") talentKey = "auto"
-      return <b>{characterSheet?.getTalent(talentKey)?.name}: <span className={`text-${variant}`}>{text}</span></b>
-
+      if (type === "character") {
+        if (talentKey === "normal" || talentKey === "charged" || talentKey === "plunging") talentKey = "auto"
+        return <b>{characterSheet?.getTalent(talentKey)?.name}: <span className={`text-${variant}`}>{text}</span></b>
+      } else if (type === "weapon") {
+        return <b>{weaponSheet?.name}: <span className={`text-${variant}`}>{text}</span></b>
+      }
     } else return <b>Basic Stat: <span className={`text-${Stat.getStatVariant(optimizationTarget)}`}>{Stat.getStatNamePretty(optimizationTarget)}</span></b>
     // return <Badge variant="danger">INVALID</Badge>
-  }, [optimizationTarget, formula, initialStats, characterSheet])
+  }, [optimizationTarget, formula, initialStats, characterSheet, weaponSheet])
 
 
   const artsAccounted = setFilters.reduce((accu, cur) => cur.key ? accu + cur.num : accu, 0)
@@ -437,13 +450,9 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
                     </Dropdown.Toggle>
                     <Dropdown.Menu align="right" style={{ minWidth: "40rem" }} >
                       <Row>
-                        {!!statsDisplayKeys && Object.entries(statsDisplayKeys).map(([talentKey, fields]) => {
-                          let header: Displayable = ""
-                          if (talentKey === "basicKeys") header = "Basic Stats"
-                          else if (talentKey === "genericAvgHit") header = "Generic Optimization Values"
-                          else if (talentKey === "transReactions") header = "Transformation Reaction"
-                          else header = (characterSheet?.getTalent(talentKey)?.name ?? talentKey)
-                          return <Col xs={12} md={6} key={talentKey}>
+                        {!!statsDisplayKeys && Object.entries(statsDisplayKeys).map(([sectionKey, fields]: [string, any]) => {
+                          const header = (characterSheet && weaponSheet) ? Character.getDisplayHeading(sectionKey, characterSheet, weaponSheet) : sectionKey
+                          return <Col xs={12} md={6} key={sectionKey}>
                             <Dropdown.Header style={{ overflow: "hidden", textOverflow: "ellipsis" }}><b>{header}</b></Dropdown.Header>
                             {fields.map((target, i) => {
                               if (Array.isArray(target))

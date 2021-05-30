@@ -17,45 +17,47 @@ import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { IConditionals } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
-import { Translate } from '../../../Components/Translate'
+import { Translate, TransWrapper } from '../../../Components/Translate'
+import { claymoreChargedDocSection, plungeDocSection, sgt, talentTemplate } from '../SheetUtil'
 const tr = (strKey: string) => <Translate ns="char_eula_gen" key18={strKey} />
+const eula = (strKey: string) => <TransWrapper ns="char_eula" key18={strKey} />
 const conditionals: IConditionals = {
   e: {
-    name: "Grimheart",
+    name: eula("skillC.name"),
     states: {
       g: {//grimheart
-        name: "Grimheart Stacks",
+        name: eula("skillC.grimheart.name"),
         stats: { def_: 30 },
         fields: [{
-          text: "Increase resistance to interruption"
+          text: eula("skillC.grimheart.int"),
         }, {
-          text: "Grimheart Duration",
+          text: tr("skill.grimheartDuration"),
           value: "18s"
         }, {
-          text: "Max Stacks",
+          text: sgt("maxStacks"),
           value: 2
         }]
       },
       c: {//consumed
-        name: "Grimheart Consumed",
+        name: eula("skillC.consumed"),
         stats: stats => ({
           cryo_enemyRes_: -data.skill.cyroResDec[stats.tlvl.skill],
           physical_enemyRes_: -data.skill.cyroResDec[stats.tlvl.skill],
         }),
         fields: [{
-          text: "RES Decrease Duration",
+          text: sgt("duration"),
           value: "7s"
         }]
       }
     }
   },
   q: {
-    name: "Lightfall Sword",
+    name: eula("burstC.name"),
     states: Object.fromEntries([...Array(31).keys()].map(i =>
       [i, {
         name: i === 0 ? `Base DMG` : i === 1 ? `1 Stack` : `${i} Stacks`,
         fields: [{//above 50%
-          text: `Lightfall Sword ${i === 0 ? `Base DMG` : i === 1 ? `1 Stack` : `${i} Stacks`}`,
+          text: <span>{eula("burstC.name")} {i === 0 ? sgt("baseDMG") : <TransWrapper ns="sheet" key18="stack" values={{ count: i }} />}</span>,
           canShow: stats => {
             if (i < 5 && stats.constellation >= 6) return false
             const [stacks, stateKey] = (stats.conditionalValues?.character?.eula?.q ?? [])
@@ -69,7 +71,7 @@ const conditionals: IConditionals = {
           formula: formula.burst[i],
           variant: stats => getTalentStatKeyVariant("burst", stats, "physical"),
         }, {//below 50%
-          text: `Lightfall Sword ${i === 0 ? `Base DMG` : i === 1 ? `1 Stack` : `${i} Stacks`} < 50% HP`,
+          text: <span>{eula("burstC.name")} {i === 0 ? sgt("baseDMG") : <TransWrapper ns="sheet" key18="stack" values={{ count: i }} />} <TransWrapper ns="sheet" key18="lessPercentHP" values={{ percent: 50 }} /></span>,
           canShow: stats => {
             if (stats.constellation < 4) return false
             if (i < 5 && stats.constellation >= 6) return false
@@ -85,22 +87,22 @@ const conditionals: IConditionals = {
           variant: stats => getTalentStatKeyVariant("burst", stats, "physical"),
         }, {
           canShow: stats => stats.constellation >= 6,
-          text: "Starts at 5 stacks"
+          text: eula("burstC.start5")
         }, {
           canShow: stats => stats.constellation >= 6,
-          text: "50% chance to get additional stacks"
+          text: eula("burstC.addStacks")
         }]
       }])),
   },
   c1: {
-    name: <span>Consume <b>Grimheart</b> stacks</span>,
+    name: eula("c1C.name"),
     canShow: stats => stats.constellation >= 1,
     stats: {
       physical_dmg_: 30
     },
     fields: [{
-      text: "Duration",
-      value: "6s + 6s per stack, up to 18s"
+      text: sgt("duration"),
+      value: eula("c1C.durationStack"),
     }]
   }
 }
@@ -126,49 +128,14 @@ const char: ICharacterSheet = {
         text: tr("auto.fields.normal"),
         fields: data.normal.hitArr.map((percentArr, i) =>
         ({
-          text: `${i + 1}-Hit DMG${i === 2 || i === 4 ? " (x2)" : ""}`,
+          text: <span>{sgt(`normal.hit${i + 1}`)} {i === 2 || i === 4 ? <TransWrapper ns="sheet" key18="hits" values={{ hits: 2 }} /> : ""}</span>,
           formulaText: stats => <span>{percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
           formula: formula.normal[i],
           variant: stats => getTalentStatKeyVariant("normal", stats),
         }))
-      }, {
-        text: tr("auto.fields.charged"),
-        fields: [{
-          text: `Spinning DMG`,
-          formulaText: stats => <span>{data.charged.spinning[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
-          formula: formula.charged.spinning,
-          variant: stats => getTalentStatKeyVariant("charged", stats),
-        }, {
-          text: `Spinning Final DMG`,
-          formulaText: stats => <span>{data.charged.final[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
-          formula: formula.charged.final,
-          variant: stats => getTalentStatKeyVariant("charged", stats),
-        }, {
-          text: `Stamina Cost`,
-          value: `40/s`,
-        }, {
-          text: `Max Duration`,
-          value: `5s`,
-        }]
-      }, {
-        text: tr("auto.fields.plunging"),
-        fields: [{
-          text: `Plunge DMG`,
-          formulaText: stats => <span>{data.plunging.dmg[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-          formula: formula.plunging.dmg,
-          variant: stats => getTalentStatKeyVariant("plunging", stats),
-        }, {
-          text: `Low Plunge DMG`,
-          formulaText: stats => <span>{data.plunging.low[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-          formula: formula.plunging.low,
-          variant: stats => getTalentStatKeyVariant("plunging", stats),
-        }, {
-          text: `High Plunge DMG`,
-          formulaText: stats => <span>{data.plunging.high[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-          formula: formula.plunging.high,
-          variant: stats => getTalentStatKeyVariant("plunging", stats),
-        }]
-      },],
+      },
+      claymoreChargedDocSection(tr, formula, data),
+      plungeDocSection(tr, formula, data)],
     },
     skill: {
       name: tr("skill.name"),
@@ -176,26 +143,26 @@ const char: ICharacterSheet = {
       document: [{
         text: tr("skill.description"),
         fields: [{
-          text: "Press DMG",
+          text: sgt("press.dmg"),
           formulaText: stats => <span>{data.skill.pressDMG[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
           formula: formula.skill.pressDMG,
           variant: stats => getTalentStatKeyVariant("skill", stats),
         }, {
-          text: "Press CD",
+          text: sgt("press.cd"),
           value: "4s"
         }, {
-          text: "Hold DMG",
+          text: sgt("hold.dmg"),
           formulaText: stats => <span>{data.skill.holdDMG[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
           formula: formula.skill.holdDMG,
           variant: stats => getTalentStatKeyVariant("skill", stats),
         }, {
-          text: "Hold CD",
+          text: sgt("hold.cd"),
           value: stats => stats.constellation >= 2 ? "4s" : "10s"
         },],
         conditional: conditionals.e
       }, {
         fields: [{
-          text: "Icewhirl Brand DMG",
+          text: tr("skill.brandDMG"),
           formulaText: stats => <span>{data.skill.brandDMG[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
           formula: formula.skill.brandDMG,
           variant: stats => getTalentStatKeyVariant("skill", stats),
@@ -213,13 +180,13 @@ const char: ICharacterSheet = {
           formula: formula.burst.dmg,
           variant: stats => getTalentStatKeyVariant("burst", stats),
         }, {
-          text: "CD",
+          text: sgt("cd"),
           value: "15s",
         }, {
-          text: "Energy Cost",
+          text: sgt("energyCost"),
           value: 60,
         }, {
-          text: "Lightfall Sword Duration",
+          text: sgt("duration"),
           value: "7s"
         }],
         conditional: conditionals.q
@@ -232,13 +199,13 @@ const char: ICharacterSheet = {
         text: tr("passive1.description"),
         fields: [{
           canShow: stats => stats.ascension >= 1,
-          text: "Shattered Lightfall Sword DMG",
+          text: eula("passive1"),
           formulaText: stats => <span>50% * {data.burst.baseDMG[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats, "physical"), stats)}</span>,
           formula: formula.passive1.dmg,
           variant: stats => getTalentStatKeyVariant("burst", stats, "physical")
         }, {//below 50% hp
           canShow: stats => stats.constellation >= 4,
-          text: "Shattered Lightfall Sword DMG < 50% hp",
+          text: <span>{eula("passive1")} <TransWrapper ns="sheet" key18="lessPercentHP" values={{ percent: 50 }} /></span>,
           formulaText: stats => {
             const hitModeMultiKey = stats.hitMode === "avgHit" ? "skill_avgHit_base_multi" : stats.hitMode === "critHit" ? "critHit_base_multi" : ""
             return <span>50% * {data.burst.baseDMG[stats.tlvl.burst]}% {Stat.printStat("finalATK", stats)} * {(hitModeMultiKey ? <span>{Stat.printStat(hitModeMultiKey, stats)} * </span> : "")}( {Stat.printStat("physical_burst_hit_base_multi", stats)} + 25%) * {Stat.printStat("enemyLevel_multi", stats)} * {Stat.printStat("physical_enemyRes_multi", stats)}</span>
@@ -248,16 +215,8 @@ const char: ICharacterSheet = {
         }]
       }],
     },
-    passive2: {
-      name: tr("passive2.name"),
-      img: passive2,
-      document: [{ text: tr("passive2.description"), }],
-    },
-    passive3: {
-      name: tr("passive3.name"),
-      img: passive3,
-      document: [{ text: tr("passive3.description"), }]
-    },
+    passive2: talentTemplate("passive2", tr, passive2),
+    passive3: talentTemplate("passive3", tr, passive3),
     constellation1: {
       name: tr("constellation1.name"),
       img: c1,
@@ -266,33 +225,11 @@ const char: ICharacterSheet = {
         conditional: conditionals.c1
       }]
     },
-    constellation2: {
-      name: tr("constellation2.name"),
-      img: c2,
-      document: [{ text: tr("constellation2.description"), }]
-    },
-    constellation3: {
-      name: tr("constellation3.name"),
-      img: c3,
-      document: [{ text: tr("constellation3.description"), }],
-      stats: { burstBoost: 3 }
-    },
-    constellation4: {
-      name: tr("constellation4.name"),
-      img: c4,
-      document: [{ text: tr("constellation4.description") }]
-    },
-    constellation5: {
-      name: tr("constellation5.name"),
-      img: c5,
-      document: [{ text: tr("constellation5.description"), }],
-      stats: { skillBoost: 3 }
-    },
-    constellation6: {
-      name: tr("constellation6.name"),
-      img: c6,
-      document: [{ text: tr("constellation6.description"), }]
-    }
+    constellation2: talentTemplate("constellation2", tr, c2),
+    constellation3: talentTemplate("constellation3", tr, c3, { burstBoost: 3 }),
+    constellation4: talentTemplate("constellation4", tr, c4),
+    constellation5: talentTemplate("constellation5", tr, c5, { skillBoost: 3 }),
+    constellation6: talentTemplate("constellation6", tr, c6),
   }
 };
 export default char;

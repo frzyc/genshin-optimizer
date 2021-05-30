@@ -3,7 +3,7 @@ import Stat from '../../../Stat'
 import { IWeaponSheet } from '../../../Types/weapon'
 import img from './Weapon_Crescent_Pike.png'
 import formula, { data } from './CrescentPikeData'
-import { Translate } from '../../../Components/Translate'
+import { Translate, TransWrapper } from '../../../Components/Translate'
 const tr = (strKey: string) => <Translate ns="weapon_CrescentPike_gen" key18={strKey} />
 const weapon: IWeaponSheet = {
   name: tr("name"),
@@ -20,7 +20,7 @@ const weapon: IWeaponSheet = {
   },
   document: [{
     fields: [{
-      text: "Additional DMG",
+      text: <TransWrapper ns="sheet" key18="dmg" />,
       formulaText: stats => <span>{data.vals[stats.weapon.refineIndex]}% {Stat.printStat(getTalentStatKey("physical", stats), stats)}</span>,
       formula: formula.dmg,
       variant: stats => getTalentStatKeyVariant("physical", stats),

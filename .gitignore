@@ -27,7 +27,6 @@ yarn-error.log*
 
 # localization JSON from datamined
 /localization/TextMap/*.json
-/localization/Translated/*.json
 
 # localization generated JSON
 *_gen.json

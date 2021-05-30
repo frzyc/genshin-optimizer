@@ -1,0 +1,7 @@
+{
+  "dmg": "DMG",
+  "hits": "({{hits}} Hits)",
+  "lessPercentHP": "< {{percent}}% HP",
+  "stack": "{{count}} Stack",
+  "stack_plural": "{{count}} Stacks"
+}

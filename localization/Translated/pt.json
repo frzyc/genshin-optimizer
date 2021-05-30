@@ -1,0 +1,182 @@
+{
+    "artifact": {
+        "editor": {
+            "title": "Editor de Artefatos",
+            "set": {
+                "artifactSet": "Conjunto de artefatos",
+                "maxRarity": "Raridade Máxima <1></1>"
+            },
+            "substat": {
+                "substatFormat": "Atributo Secundário {{value}}",
+                "noSubstat": "Sem Atributos Secundários",
+                "selectSub": "Selecione um Atributo Secundário",
+                "error": {
+                    "noCalc": "Não foi possível calcular o sorteio dos atributos.",
+                    "noOverRoll": "O atributo secundário não pode ser sorteado mais que {{value}} vezes."
+                },
+                "noRoll": "Sem Sorteios",
+                "RollCount": "{{count}} Sorteio",
+                "RollCount_plural": "{{count}} Sorteios",
+                "noStat": "Sem Valor",
+                "eff": "Eficiência: <1></1>"
+            },
+            "rarity": "Raridade",
+            "level": "Nível",
+            "unknownPieceName": "Nome da Peça Desconhecido",
+            "mainSelect": "Selecione o Atributo Principal",
+            "curSubEff": "Eficiência Atual do Atributo Secundário",
+            "curSubEffDesc": "A cada 4 aumentos no nível no artefato, você ganha um sorteio no atributo secundário. <strong>Eficiência do Atributo Secundário</strong> calcula como uma porcentagem o quão alto o atributo secundário foi sorteado.",
+            "maxSubEff": "Eficiência Máxima do Atributo Secundário",
+            "maxSubEffDesc": "A <strong>Eficiência Máxima do Atributo Secundário</strong> de um artefato calcula a eficiência máxima nos aumentos de nível restantes.",
+            "preview": "Visualização do Artefato",
+            "dupArt": "Artefato duplicado detectado.",
+            "upArt": "Artefato atualizado detectado.",
+            "beforeEdit": "Antes de Editar",
+            "btnSave": "Salvar o Artefato",
+            "btnAdd": "Adicionar Artefato",
+            "btnClear": "Limpar",
+            "btnRandom": "Aleatório",
+            "btnUpdate": "Atualizar o Artefato",
+            "clearPrompt": "Existe um artefato no editor. Tem certeza de que deseja limpar o editor?"
+        },
+        "artifactFilter": "Filtro de Artefatos",
+        "filterLocation": {
+            "inventory": "Inventário",
+            "currentlyEquipped": "Atualmente Equipado",
+            "any": "Qualquer"
+        },
+        "button": {
+            "unequipArtifacts": "Desequipar Artefatos",
+            "deleteArtifacts": "Excluir Artefatos",
+            "lockArtifacts": "Bloquear Artefatos",
+            "unlockArtifacts": "Desbloquear Artefatos"
+        },
+        "filterLevelFormat": "Nível <1>Mín</1>/<3>Máx</3> (Inclusivo)",
+        "buttonHint": "Nota: Os botões acima só se aplicam a <1>artefatos filtrados</1>",
+        "tipsOfTheDay": [
+            "A eficiência máxima de um artefato de 4 estrelas é de cerca de 60%.",
+            "A eficiência máxima de um artefato geralmente diminuirá conforme você aumenta o nível. É perfeitamente normal!",
+            "Atributos secundários com \"1\"s são os mais difíceis de digitalizar em capturas de tela.",
+            "Se todos os seus sorteios(6) foram para um único atributo secundário, ele será roxo!",
+            "Clique em \"Detalhes\" quando estiver atualizando seus artefatos no jogo para digitalizar conforme você o aumenta o nível.",
+            "Agora você pode fazer upload de capturas de tela de vários artefatos para serem digitalizados!"
+        ],
+        "mainStat": "Atributo Principal",
+        "slot": "Slot",
+        "slotName": {
+            "flower": "Flor da Vida",
+            "plume": "Pluma da Morte",
+            "sands": "Areia do Tempo",
+            "goblet": "Cálice de Erátema",
+            "circlet": "Tiara de Logos"
+        },
+        "info": {
+            "title": "Edição de Artefato/Guia de Gerenciamento",
+            "section1": "<0>Sorteio dos atributos secundários</0><1>O <1>número de sorteios</1> que um atributo secundário possui é mostrado no seu lado esquerdo. À medida que o número aumenta, o atributo secundário fica mais colorido:<3></3>.</1><2>Eficiência do Atributo Secundário</2><3>A eficiência de um atributo secundário é uma porcentagem do valor atual sobre o valor potencial de um 5<1></1>. Na imagem o valor máximo de rolagem de DANO CRIT é 7,8%. Em eficiência: <3>5,8/7,8 = 69,2%.</3></3><4>Eficiência Atual vs. Máxima Eficiência Potencial</4><5>Quando um 5<1></1> tiver 9(4+5) sorteios no total, com cada um tendo o valor mais alto, isso é definido como um artefato 100% eficiente. No entanto, a maioria dos artefatos não tem essa sorte. A <3>eficiência atual</3> de um artefato é uma porcentagem sobre esse artefato 100%. A <5>eficiência máxima</5> é a eficiência máxima possível que um artefato pode alcançar, se os sorteios restantes dos aumentos de nível forem o valor mais alto.</5><6>Bloqueando um artefato</6><7>Ao bloquear um artefato <1></1>, este artefato não será usado pelo gerador de builds para otimização. Um artefato equipado é bloqueado por padrão.</7>",
+            "section2": "<0>Editor de Artefatos</0><1>Um editor de artefato completo, que pode aceitar qualquer artefato de 3<1></1> até 5<3></3>. Quando um atributo secundário é inserido, ele pode calcular os valores de sorteio exatos e a partir dele, a eficiência. Ele também garantirá que você tenha o número correto de sorteios no artefato de acordo com o nível, junto com outras métricas de validação.</1><2>Digitalizar capturas de tela</2><3>A entrada de dados manual não é sua preferência? Você pode digitalizar seus artefatos com capturas de tela! No Editor de Artefatos, clique no botão <1>Mostre-me como!</1> para aprender mais.</3><4>Detecção de artefatos Duplicados/Atualizados</4><5>Você sabia que o GO pode detectar se você está adicionando um artefato <1>duplicado</1> que já existe? Ele também pode detectar se o artefato atual no editor é uma <3>atualização</3> de um artefato existente também. Assim que um artefato duplicado/atualizado é detectado, uma visualização permitirá que você compare os dois artefatos em questão (veja a imagem).</5>",
+            "section3": "<0>Inventário de Artefatos</0><p>Todos os seus artefatos que você adicionou ao GO são exibidos aqui. Os filtros permitem que você refine ainda mais sua visão de seus artefatos. </p><2>Exemplo: Encontrando Artefatos para Experiência</2><p>Ao utilizar o filtro e os cálculos de eficiência, você pode encontrar rapidamente um candidato para usar como experiência para outros artefatos.</p><4>Neste exemplo, os filtros são definidos desta forma: </4><5><0>Artefatos desbloqueados no inventário.</0><1>Com atributos secundários: ATK puro e DEF pura.</1><2>Ordenado por Eficiência Máxima Crescente.</2></5><6>Uma vez que os artefatos são utilizados como experiência, clique em <1>Excluir Artefatos</1> para excluir os artefatos filtrados atualmente.</6>"
+        },
+        "locationDisplay": "Localização: {{value}}",
+        "lockDisplay": "Bloqueado: {{value}}",
+        "lock": {
+            "any": "Qualquer",
+            "locked": "Bloqueado",
+            "unlocked": "Desbloqueado"
+        },
+        "sortMap": {
+            "quality": "Qualidade",
+            "level": "Nível",
+            "efficiency": "Efic. Atual do Atributo Secundário",
+            "mefficiency": "Efic. Máxima do Atributo Secundário"
+        },
+        "showingNum": "Mostrando <1>{{count}}</1> de {{value}} Artefato",
+        "showingNum_plural": "Mostrando <1>{{count}}</1> de {{value}} Artefatos"
+    },
+    "home": {
+        "welcome": "Bem-vindo ao Genshin Optimizer!",
+        "paragraphIntro": "<0>O que é o Genshin Optimizer?</0><1>Genshin Optimizer é uma ferramenta para o jogo gacha de rpg de ação <1><strong>Genshin Impact</strong></1>. É destinado a ajudá-lo a lidar com os aspectos mais complexos do jogo: Artefatos. Artefatos são elementos fortemente baseados em RNG que contribuem diretamente para a eficácia de seus personagens no jogo. Esta ferramenta visa aliviar um pouco da complexidade associada à eficiência do artefato, junto com qual artefato escolher em seu personagem para maximizar seus atributos.</1><p>No entanto, esta ferramenta pode fazer muito mais. Ela permitirá cálculos de todas as habilidades passivas dos artefatos, armas, buffs das equipes e calcular como essas estatísticas afetarão seu personagem em TEMPO REAL.</p>",
+        "paragraphArtifactEditor": "<0>Editor de artefatos</0><1><0>Editor de artefatos completo.</0><1>Adicione artefatos digitalizando uma captura de tela.</1><2>Calcule automaticamente o valor exato sorteado em cada artefato.</2><3>Calcule a eficiência dos atributos secundários usando os cálculos de sorteio. Use um único número para determinar se deve manter ou descartar um artefato!</3><4>Equipe/desequipe/troque artefatos entre seus personagens, experimente diferentes builds.</4></1>",
+        "paragraphCharacterEditor": "<0>Editor de Personagens</0><1><0>Editor de personagens com recursos completos.</0><1>Preencha automaticamente os atributos do personagem em cada nível/ascensão.</1><2>Atributos totalmente editáveis ​​para personalização.</2><3>Calcule os atributos atuais com base nas armas/artefatos.</3><4>Armas completas, com nível/atributos de ascensão</4><5>Adicione habilidades passivas, p.ex. Os bônus de ataque e defesa acumulados para o seu personagem da Sombra Branca.</5><6>Aplique habilidades passivas dos conjuntos de artefatos também!</6><7>Em desenvolvimento, cálculos de danos por talentos</7><8>Em desenvolvimento, Atualize os atributos/talentos dos personagens com base nas constelações.</8></1>",
+        "paragraphCharacterDamageCalculations": "<0>Cálculos de Dano dos Personagens</0><1><0><1><0>Trabalho em Progresso</0></1>Todos os detalhes para cada talento dos personagens.</0><1>Todos os números devem refletir o dano real no jogo.</1><2>Habilidades passivas e modificações de cada constelação contabilizada.</2><3>Mostra os cálculos para todos os números, junto com as fórmulas. Eu mostro meu trabalho.</3><4>Editor de inimigos com campos de nível/resistência para personalizar os cálculos de dano.</4><5>Conta com infusão elemental para ataques normais/carregados/em queda.</5><6>Cálculos de dano em tempo real.</6></1>",
+        "paragraphBuildGenerator": "<0>Gerador de Builds</0><1><0>O gerador cria builds para personagens específicos usando os artefatos adicionados pelo usuário.</0><1>Limite as Builds por conjuntos de artefatos, atributos principais...</1><2>Classifique as builds geradas por um atributo específico para maximização.</2><3>O gerador de builds não utilizará artefatos já equipados em outro personagem.</3><4>Compare a build gerada com os artefatos atualmente no personagem.</4><5>Use habilidades passivas dos conjuntos de artefatos, p.ex. Bônus de dano das 4 peças do conjunto Gladiador, no cálculo de dano da build.</5></1>",
+        "paragraphTools": "<0>Ferramentas e bugigangas</0><1><0>Tempo do servidor, com contagem regressiva até o reinício.</0><1>Contador de Resina.</1><2>Calculadora de Experiência, para otimizar o uso de livros de XP.</2><3><0>Em Construção</0> Conversor de Recursos, para todos aqueles recursos em camadas x3 incômodas.</3><4><0>Em Construção</0> Lista de tarefas: uma lista dinâmica de tarefas para lhe informar o que fazer todos os dias.</4></1>",
+        "paragraphFuture": "<0>E no futuro?</0><1><0>Cálculos completos de talento/constelações para cada personagem lançado.</0><1>Opção de salvar várias builds por personagem para comparação.</1><2>Buffs de comida, buffs do time.</2><3>Planejamento de recursos para ver o custo do comprometimento com os artefatos/personagens/armas.</3><4>Análise dos artefatos, com gráficos para mostrar os dados dos seus artefatos.</4></1><2>Para saber mais e verificar o que está sendo trabalhado, inscreva-se em nosso <1>discord</1>.</2>",
+        "paragraphHelpDevelopment": "<0>Deseja ajudar o desenvolvedor?</0><1>Genshin Optimizer tem sido a manifestação de muitos dias e semanas de noites sem dormir e o desenvolvedor ainda está tentando ativamente melhorar e adicionar recursos. Se você quiser dar feedback, solicitar um recurso, relatar um bug, por favor junte-se ao nosso <1>discord</1>.</1><2>Se você deseja apoiar financeiramente o desenvolvedor, faça uma doação via <1>Paypal</1> ou <3>Patreon</3>.</2>",
+        "paragraphCredits": "<0>Crédito onde o crédito é devido</0><p>GO não estaria onde está sem todas essas fontes/pessoas. É hora de fazer uma reverência e agradecê-los.</p><2><0>Obrigado a todos na comunidade e especialmente às pessoas em nosso <1>discord</1> por fornecer feedback e me ajudar a melhorar esta ferramenta.</0><1>Obrigado ao trabalho de <1>Honey Impact</1>, por nos fornecer uma fonte confiável e consistente de dados e números. Todos os nossos cálculos seriam discutíveis sem eles.</1><2>Uma porcentagem grande de nossas imagens do Genshin são derivadas da <1>Wiki do Genshin Impact</1>, então um agradecimento fortuito a eles.</2><3>Agradecimentos especiais aos membros da nossa comunidade que se esforçaram e nos ajudaram a testar fórmulas, a registrar dados do jogo e às pessoas que nos ajudaram com contribuições no código-fonte.</3><4>Obrigado a todos, por compartilhar e fazer com que mais pessoas usem esta ferramenta.</4><5>Por último e mais importante, obrigado a <1>VOCÊ</1>, por estar usando o GO no momento.</5></2>"
+    },
+    "languages": {
+        "chs": "Chinês (Simplificado)",
+        "cht": "Chinês (Tradicional)",
+        "de": "Alemão",
+        "en": "Inglês",
+        "es": "Espanhol",
+        "fr": "Francês",
+        "id": "Indonésio",
+        "ja": "Japonês",
+        "ko": "Coreano",
+        "pt": "Português",
+        "ru": "Russo",
+        "th": "Tailandês",
+        "vi": "Vietnamita"
+    },
+    "settings": {
+        "title": "Configurações",
+        "languageCard": {
+            "selectLanguage": "Selecione o Idioma",
+            "languageFormat": "Idioma: {{language}}"
+        },
+        "downloadCard": {
+            "databaseDownload": "Download do Banco de Dados",
+            "charsStored": "Personagem Armazenado <0>{{count}}</0> ",
+            "charsStored_plural": "<0>{{count}}</0> Personagens Armazenados",
+            "artisStored": "<0>{{count}}</0> Artefato Armazenado",
+            "artisStored_plural": "<0>{{count}}</0> Artefatos Armazenados",
+            "databaseDisclaimer": "Nota: Quaisquer dados dentro da página \"Ferramentas\", p.ex. Quantidade de resina/cronômetro, não fazem parte do banco de dados baixado.",
+            "button": {
+                "download": "Download",
+                "copy": "Copiar para área de transferência",
+                "delete": "Excluir banco de dados"
+            }
+        },
+        "uploadCard": {
+            "title": "Upload de Banco de Dados",
+            "replaceDatabase": "Substituir Banco de Dados",
+            "hint": "Faça upload do seu arquivo JSON aqui...",
+            "hintPaste": "...ou cole seus dados abaixo.",
+            "numChar": "Número de Personagens:",
+            "numArt": "Número de artefatos:"
+        },
+        "dialog": {
+            "delete-database": "Tem certeza de que deseja excluir seu banco de dados? Todos os personagens e artefatos existentes serão excluídos."
+        }
+    },
+    "ui": {
+        "pageTitle": "Genshin Optimizer",
+        "tabs": {
+            "artifacts": "Artefatos",
+            "characters": "Personagens",
+            "builds": "Builds",
+            "tools": "Ferramentas"
+        },
+        "social": {
+            "paypal": "Paypal",
+            "patreon": "Patreon",
+            "discord": "Discord"
+        },
+        "game": {
+            "minLevel": "Nível Mínimo",
+            "maxLevel": "Nível Máximo",
+            "rarity": "Raridade",
+            "level": "Nível"
+        },
+        "unselect": "Desmarcar",
+        "ascending": "Crescente",
+        "descending": "Decrescente",
+        "sortByFormat": "Ordenar por: {{value}}",
+        "loading": "Carregando...",
+        "rightsDisclaimer": "Genshin Optimizer não é afiliado ou endossado por miHoYo.",
+        "appVersion": "$t(pageTitle) Versão: {{version}}",
+        "underConstruction": "Em Construção",
+        "error": "Erro"
+    }
+}

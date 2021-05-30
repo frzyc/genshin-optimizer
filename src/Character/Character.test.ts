@@ -34,8 +34,8 @@ describe('Character.getDisplayStatKeys()', () => {
     expect(weaponSheet).toBeInstanceOf(WeaponSheet)
     if (!characterSheet || !weaponSheet) return
     const initialStats = Character.createInitialStats(character, characterSheet, weaponSheet)
-    const keys = characterSheet.getDisplayStatKeys(initialStats)
-    expect(keys).toHaveProperty("auto")
+    const keys = Character.getDisplayStatKeys(initialStats, characterSheet)
+    expect(keys).toHaveProperty("talentKey_auto")
   })
 })
 

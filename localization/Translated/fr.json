@@ -1,0 +1,151 @@
+{
+    "artifact": {
+        "editor": {
+            "title": "Éditeur d'artéfact",
+            "set": {
+                "artifactSet": "Set d'artéfact",
+                "maxRarity": "Rareté Max"
+            },
+            "substat": {
+                "substatFormat": "Stat secondaire {{value}}",
+                "noSubstat": "Pas de Stat secondaire",
+                "selectSub": "Sélectionner une Stat secondaire",
+                "error": {
+                    "noCalc": "Impossible de calculer les rolls de la stat.",
+                    "noOverRoll": "Une stat secondaire ne peut être roll plus de {{value}} fois."
+                },
+                "noRoll": "Aucun Rolls",
+                "RollCount": "{{count}} Roll",
+                "RollCount_plural": "{{count}} Roll",
+                "noStat": "Pas de valeur",
+                "eff": "Efficiency: <1></1>"
+            },
+            "rarity": "Rareté",
+            "level": "Niveau",
+            "unknownPieceName": "Nom de Pièce Inconnu",
+            "mainSelect": "Sélectionner une Stat Principal",
+            "curSubEff": "Efficacité actuel Stat secondaire",
+            "preview": "Prévisualisation d'artefact",
+            "dupArt": "Doublon d'artefact détecté.",
+            "beforeEdit": "Avant modification",
+            "btnSave": "Enregistrer l'Artefact",
+            "btnAdd": "Ajouter",
+            "btnClear": "Effacer",
+            "btnUpdate": "Mettre à jour l'artefact",
+            "clearPrompt": "Il y a un artefact dans l'éditeur. Êtes-vous sûr de vouloir effacer l'éditeur?"
+        },
+        "artifactFilter": "Filtre d'artéfact",
+        "filterLocation": {
+            "inventory": "Inventaire",
+            "currentlyEquipped": "Actuellement équipé"
+        },
+        "button": {
+            "unequipArtifacts": "Déséquiper les artéfacts",
+            "deleteArtifacts": "Supprimer les artéfacts",
+            "lockArtifacts": "Verrouiller les artéfacts",
+            "unlockArtifacts": "Déverrouiller les artéfacts"
+        },
+        "filterLevelFormat": "Niveau <1>Bas</1>/<3>Haut</3> (Inclusif)",
+        "buttonHint": "Note: les boutons ci-dessus ne s'appliquent qu'aux <1>artéfacts filtrés</1>",
+        "tipsOfTheDay": [
+            "L'efficacité maximum d'un artéfact 4 étoiles est environ de 60%.",
+            "L'efficacité maximum d'un artéfact diminuera généralement au fur et à mesure de l'amélioration. C'est parfaitement normal!",
+            "Les Stats secondaires avec des \"1\"s sont les plus difficiles à analyser sur les captures d'écran.",
+            "Si tous vos rolls(6) sont aller dans une seule stat secondaire, elle sera violette!",
+            "Cliquez sur \"Détails\" quand vous améliorez vos artéfacts dans le jeu pour les analyser au fur et à mesure que vous les améliorés.",
+            "Vous pouvez maintenant télécharger plusieurs captures d'écran d'artéfacts à analyser!"
+        ],
+        "mainStat": "Stat principal",
+        "slot": "Emplacement",
+        "info": {
+            "title": "Guide d' Edition/Gestion d'artefact"
+        },
+        "locationDisplay": "Localisation: {{value}}",
+        "lockDisplay": "Verrouillé: {{value}}",
+        "lock": {
+            "locked": "Verrouillé",
+            "unlocked": "Déverouillé"
+        },
+        "sortMap": {
+            "quality": "Qualité",
+            "level": "Niveau"
+        }
+    },
+    "home": {
+        "welcome": "Bienvenue sur l'Optimiseur Genshin!",
+        "paragraphIntro": "<0>Qu'est-ce que l'Optimiseur Genshin</0><1>L'Optimiseur Genshin est un outil pour le jeu action-rpg gacha <1><strong>Genshin Impact</strong></1>. Il est destiné à vous aider à gérer l'aspect le plus complexe du jeu: les artéfacts. Les Artéfacts sont des éléments fortement basé sur le RNG qui contribuent directement à l'efficacité de vos personnages dans le jeu. Cet outil cherche à alléger une partie de la complexité associée à l'efficacité des artéfacts, ainsi que l'artéfact à choisir pour votre personnage afin de maximiser vos stats.</1><p>Cependant, cet outil peut faire tellement plus. Il permettra le calcul de toutes les stats conditionnelles provenant des artéfacts, armes, buffs d'équipe, et calculera comment ces stats affectent votre personnage en TEMPS RÉEL.</p>"
+    },
+    "languages": {
+        "chs": "Chinois (Simplifié)",
+        "cht": "Chinois (Traditionel)",
+        "de": "Allemand",
+        "en": "Anglais",
+        "es": "Espagnol",
+        "fr": "Français",
+        "id": "Indonésien",
+        "ja": "Japonais",
+        "ko": "Coréen",
+        "pt": "Portugais",
+        "ru": "Russe",
+        "th": "Thaïlandais",
+        "vi": "Vietnamien"
+    },
+    "settings": {
+        "title": "Paramètres",
+        "languageCard": {
+            "selectLanguage": "Choisir la langue",
+            "languageFormat": "Langue: {{language}}"
+        },
+        "downloadCard": {
+            "databaseDownload": "Téléchargement des Données",
+            "charsStored": "<0>{{count}}</0> Personnage Stocké",
+            "charsStored_plural": "<0>{{count}}</0> Personnages Stockés",
+            "artisStored": "<0>{{count}}</0> Artéfact Stocké",
+            "artisStored_plural": "<0>{{count}}</0> Artéfacts Stockés",
+            "button": {
+                "download": "Télécharger",
+                "copy": "Copier vers le presse-papier",
+                "delete": "Supprimer la base de données"
+            }
+        },
+        "uploadCard": {
+            "title": "Téléverser la base de données",
+            "replaceDatabase": "Remplacer la base de données",
+            "hint": "Téléverser votre fichier JSON ici...",
+            "hintPaste": "...ou coller vos données ci-dessous.",
+            "numChar": "Nombre de Personnages:",
+            "numArt": "Nombre d'artéfacts:"
+        },
+        "dialog": {
+            "delete-database": "Êtes-vous sûr de vouloir supprimer votre base de données? Tous les personnages et artéfacts existants seront supprimés."
+        }
+    },
+    "ui": {
+        "pageTitle": "Genshin Optimizer",
+        "tabs": {
+            "artifacts": "Artéfacts",
+            "characters": "Personnages",
+            "tools": "Outils"
+        },
+        "social": {
+            "paypal": "Paypal",
+            "patreon": "Patreon",
+            "discord": "Discord"
+        },
+        "game": {
+            "minLevel": "Niveau Min",
+            "maxLevel": "Niveau Max",
+            "rarity": "Rareté",
+            "level": "Niveau"
+        },
+        "unselect": "Désélectionner",
+        "ascending": "Croissant",
+        "descending": "Décroissant",
+        "sortByFormat": "Trier Par: {{value}}",
+        "loading": "Chargement...",
+        "rightsDisclaimer": "Genshin Optimizer n'est pas affilié ou approuvé par miHoYo",
+        "appVersion": "$t(pageTitle) Version: {{version}}",
+        "underConstruction": "En Construction",
+        "error": "Erreur"
+    }
+}

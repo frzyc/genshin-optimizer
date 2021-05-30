@@ -48,8 +48,12 @@ const languageMap = {
 
 const tagColor = {
   "FFD780FF": "strong",
+  "80FFD7FF": "anemo",
   "FFE699FF": "geo",
   "99FFFFFF": "cryo",
+  "80C0FFFF": "hydro",
+  "FF9999FF": "pyro",
+  "FFACFFFF": "electro"
 } as const
 function preprocess(string: string): string {
   { // color tags
@@ -69,6 +73,24 @@ function preprocess(string: string): string {
   }
   return string
 }
+function plungeUtil(lang, string, low) {
+  const res = low ? "$2" : "$3"
+  string = string.split('|')[0]
+  switch (lang) {
+    case "chs":
+    case "cht":
+    case "ja":
+      string = string.replace(/((\S{2})\/(\S{2}))/, res)
+      break;
+    case "th":
+      string = string.replace(/((\S{3})\/(\S{3}))/, res)
+    default:
+      string = string.replace(/((\S+)\/(\S+))/, res)
+      break;
+  }
+  return string
+}
+
 const parsingFunctions: { [key: string]: (lang: Language, string: string) => string } = {
   autoName: (lang, string) => {
     //starts with Normal Attack: ______ in english
@@ -94,6 +116,12 @@ const parsingFunctions: { [key: string]: (lang: Language, string: string) => str
     string = { ...parseBulletPoints(parsed) } as any
     return string
   },
+  skillParam: (lang, string) => {
+    string = string.split('|')[0]
+    return string
+  },
+  plungeLow: (lang, string) => plungeUtil(lang, string, true),
+  plungeHigh: (lang, string) => plungeUtil(lang, string, false),
   string: (lang, string) => string
 }
 
@@ -116,6 +144,12 @@ Object.entries(languageData).forEach(([lang, data]) => {
   if (!fs.existsSync(fileDir)) fs.mkdirSync(fileDir)
 
   Object.entries(data).forEach(([type, typeData]) => {
+    if (type === "sheet") {
+      const filename = `${fileDir}/${type}_gen.json`
+      const fileStr = JSON.stringify(typeData, null, 2)
+      fs.writeFile(filename, fileStr, () => console.log("Generated JSON at", filename))
+      return
+    }
     Object.entries((typeData as any)).forEach(([charKey, charData]) => {
       const filename = `${fileDir}/${type}_${charKey}_gen.json`
       const fileStr = JSON.stringify(charData, null, 2)
