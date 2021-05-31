@@ -154,10 +154,11 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   //validate optimizationTarget 
   useEffect(() => {
     if (!statsDisplayKeys) return
+    if (!Array.isArray(optimizationTarget)) return
     for (const sectionKey in statsDisplayKeys) {
       const section = statsDisplayKeys[sectionKey]
       for (const keys of section)
-        if (keys === optimizationTarget) return
+        if (JSON.stringify(keys) === JSON.stringify(optimizationTarget)) return
     }
     buildSettingsDispatch({ optimizationTarget: initialBuildSettings().optimizationTarget })
   }, [optimizationTarget, statsDisplayKeys])
