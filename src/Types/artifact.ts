@@ -29,7 +29,7 @@ export interface IArtifact {
   level: number,
   slotKey: SlotKey,
   mainStatKey: MainStatKey,
-  mainStatVal: number,
+  mainStatVal?: number,
   substats: Substat[],
   location: CharacterKey | "",
 

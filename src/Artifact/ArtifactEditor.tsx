@@ -396,7 +396,7 @@ async function randomizeArtifact(): Promise<IArtifact> {
       substat.value = parseFloat(valueString(substat.value, Stat.getStatUnit(substat.key)))
 
   return {
-    setKey: set, numStars: rarity, slotKey: slot, mainStatKey, level, substats, mainStatVal: Artifact.mainStatValue(mainStatKey, rarity, level)!, location: "", lock: false
+    setKey: set, numStars: rarity, slotKey: slot, mainStatKey, level, substats, location: "", lock: false
   }
 }
 

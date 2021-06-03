@@ -35,7 +35,7 @@ export function pruneArtifacts(artifacts: IArtifact[], artifactSetEffects: Artif
   let tmp: { artifact: IArtifact, stats: Dict<StatKey, number>, set: ArtifactSetKey | "other" }[] = artifacts.map(artifact => {
     let stats = {}, set: ArtifactSetKey | "other" = (artifact.setKey in prunedSetEffects) ? artifact.setKey : "other"
     if (significantStats.has(artifact.mainStatKey as any))
-      stats[artifact.mainStatKey] = artifact.mainStatVal
+      stats[artifact.mainStatKey] = artifact.mainStatVal!
     for (const { key, value } of artifact.substats)
       if (significantStats.has(key as SubstatKey))
         stats[key] = (stats[key] ?? 0) + value
@@ -176,7 +176,7 @@ function accumulate(slotKey, art: IArtifact, setCount, accu, stats, artifactSetE
   setCount[setKey] = (setCount[setKey] ?? 0) + 1
 
   // Add artifact stats
-  if (art.mainStatKey in stats) stats[art.mainStatKey] += art.mainStatVal
+  if (art.mainStatKey in stats) stats[art.mainStatKey] += art.mainStatVal!
   art.substats.forEach((substat) => {
     if (substat?.key in stats) stats[substat.key] += substat.value
   })

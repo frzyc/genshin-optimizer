@@ -31,8 +31,8 @@ expect.extend({
       return { message: () => `expect valid slot key, found ${this.utils.printReceived(artifact.slotKey)}`, pass: false }
     if (!artifact.mainStatKey || !Artifact.slotMainStats(artifact.slotKey).includes(artifact.mainStatKey))
       return { message: () => `expect valid main stat key for slot ${this.utils.printExpected(artifact.slotKey)}, found ${this.utils.printReceived(artifact.mainStatKey)}`, pass: false }
-    if (artifact.mainStatVal !== Artifact.mainStatValue(artifact.mainStatKey, artifact.numStars, artifact.level))
-      return { message: () => `expect numeric main stat value, found ${this.utils.printReceived(artifact.mainStatVal)}`, pass: false }
+    if ("mainStatVal" in artifact)
+      return { message: () => `expect no main stat value, found ${this.utils.printReceived(artifact.mainStatVal)}`, pass: false }
 
     if (!artifact.substats || artifact.substats.length !== 4)
       return { message: () => `expect 4 substats, found ${this.utils.printReceived(artifact.substats?.length ?? 4)}`, pass: false }

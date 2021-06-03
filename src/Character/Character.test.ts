@@ -55,7 +55,6 @@ describe('Equipment functions', () => {
       level: 20,
       mainStatKey: "eleMas",
       slotKey: "flower",
-      mainStatVal: 100,
       substats: [],
       location: "",
       lock: false

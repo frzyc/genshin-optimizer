@@ -69,6 +69,12 @@ function DatabaseInitAndVerify() {
   Object.values(deepClone(ArtifactDatabase.getArtifactDatabase())).forEach((art: any) => {
     let valid = true
 
+    // remove mainStatVal
+    if (art.mainStatVal) {
+      delete art.mainStatVal
+      valid = false
+    }
+
     //verify the linking of artifacts and characters
     if (art.location) {
       const locationChar = CharacterDatabase.get(art.location)

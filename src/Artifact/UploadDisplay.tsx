@@ -288,7 +288,7 @@ export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactShee
   const relevantSetKey = [...new Set<ArtifactSetKey>([...textSetKeys, "Adventurer", "ArchaicPetra"])]
 
   let bestScore = -1, bestArtifacts: IArtifact[] = [{
-    setKey: "Adventurer", numStars: 3, level: 0, slotKey: "flower", mainStatKey: "hp", mainStatVal: 430, substats: [],
+    setKey: "Adventurer", numStars: 3, level: 0, slotKey: "flower", mainStatKey: "hp", substats: [],
     location: "", lock: false,
   }]
 
@@ -334,20 +334,20 @@ export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactShee
               if (score > bestScore) bestArtifacts = []
               bestScore = score
               bestArtifacts.push({
-                setKey, numStars, level, slotKey, mainStatKey, mainStatVal, substats: [], location: "", lock: false
+                setKey, numStars, level, slotKey, mainStatKey, substats: [], location: "", lock: false
               })
             }
           }
         }
         if (rarityScore >= bestScore) {
-          const level = 0, mainStatVal = Artifact.mainStatValue(mainStatKey, numStars, 0)!
+          const level = 0
           for (const setKey of setKeys) {
             const score = rarityScore + (textSetKeys.has(setKey) ? 1 : 0)
 
             if (score > bestScore) bestArtifacts = []
             bestScore = score
             bestArtifacts.push({
-              setKey, numStars, level, slotKey, mainStatKey, mainStatVal, substats: [], location: "", lock: false
+              setKey, numStars, level, slotKey, mainStatKey, substats: [], location: "", lock: false
             })
           }
         }
@@ -360,7 +360,7 @@ export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactShee
     setKey: new Set(), numStars: new Set(), level: new Set(), slotKey: new Set(), mainStatKey: new Set(), mainStatVal: new Set(),
   } as Dict<keyof IArtifact, Set<string>>
 
-  const result = bestArtifacts[0]
+  const result = bestArtifacts[0], resultMainStatVal = Artifact.mainStatValue(result.mainStatKey, result.numStars, result.level)!
   result.substats = substats.filter((substat, i) =>
     substat.key !== result.mainStatKey &&
     substats.slice(0, i).every(other => other.key !== substat.key))
@@ -410,17 +410,17 @@ export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactShee
   }</>
 
   const unit = Stat.getStatUnit(result.mainStatKey)
-  if (mainStatValues.find(value => value.mainStatValue === result.mainStatVal)) {
+  if (mainStatValues.find(value => value.mainStatValue === resultMainStatVal)) {
     if (mainStatKeys.has(result.mainStatKey)) {
       texts.level = detectedText(result.level, "Level", (value) => "+" + value)
-      texts.mainStatVal = detectedText(result.mainStatVal, "Main Stat value", (value) => <>{valueString(value, unit)}{unit === "%" ? "%" : ""}</>)
+      texts.mainStatVal = detectedText(resultMainStatVal, "Main Stat value", (value) => <>{valueString(value, unit)}{unit === "%" ? "%" : ""}</>)
     } else {
       texts.level = inferredText(result.level, "Level", (value) => "+" + value)
-      texts.mainStatVal = inferredText(result.mainStatVal, "Main Stat value", (value) => <>{valueString(value, unit)}{unit === "%" ? "%" : ""}</>)
+      texts.mainStatVal = inferredText(resultMainStatVal, "Main Stat value", (value) => <>{valueString(value, unit)}{unit === "%" ? "%" : ""}</>)
     }
   } else {
     texts.level = unknownText(result.level, "Level", (value) => "+" + value)
-    texts.mainStatVal = unknownText(result.mainStatVal, "Main Stat value", (value) => <>{valueString(value, unit)}{unit === "%" ? "%" : ""}</>)
+    texts.mainStatVal = unknownText(resultMainStatVal, "Main Stat value", (value) => <>{valueString(value, unit)}{unit === "%" ? "%" : ""}</>)
   }
 
   return [result, texts]
