@@ -11,13 +11,11 @@ import skill from './Talent_Starfell_Sword.png'
 import burst from './Talent_Wake_of_Earth.png'
 import passive1 from './Talent_Shattered_Darkrock.png'
 import passive2 from './Talent_Frenzied_Rockslide.png'
-import ElementalData from '../../ElementalData'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from "../../../Build/Build"
 import { ICharacterSheet } from '../../../Types/character';
 import { IConditionals, IConditionalValue } from '../../../Types/IConditional'
-import { stat } from 'fs'
 
 const conditionals: IConditionals = {
   c1: { // InvincibleStonewall
@@ -138,6 +136,11 @@ const char: ICharacterSheet = {
           value: 60,
         }],
       }],
+    },
+    passive1: {
+      name: "Shattered Darkrock",
+      img: passive1,
+      document: [{text: <span>Reduces <b>Starfell Swords's</b> CD by 2s/</span>}]
     },
     passive2: {
       name: "Frenzied Rockslide",
