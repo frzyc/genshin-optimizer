@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 import ReactGA from 'react-ga';
+import App from './App';
+import './index.css';
+import reportWebVitals from './reportWebVitals';
 ReactGA.initialize(process.env.REACT_APP_GA_TRACKINGID as any, {
   // debug: process.env.NODE_ENV === "development"
 });

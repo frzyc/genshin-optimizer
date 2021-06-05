@@ -54,16 +54,29 @@ const formula: IFormulaSheet = {
   plunging: Object.fromEntries(Object.entries(data.plunging).map(([key, arr]) => [key, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "plunging")])),
   skill: {
     shield: stats => {
-      const hp = data.skill.hp[stats.tlvl.skill] / 100
+      const percent = data.skill.hp[stats.tlvl.skill] / 100
       const flat = data.skill.flat[stats.tlvl.skill]
-      return [(s) => hp * s.finalHP + flat, ["finalHP"]]
+      return [s => (percent * s.finalHP + flat) * (1 + s.powShield_ / 100), ["finalHP", "powShield_"]]
+    },
+    shieldElectro: stats => {
+      const percent = data.skill.hp[stats.tlvl.skill] / 100
+      const flat = data.skill.flat[stats.tlvl.skill]
+      return [s => (percent * s.finalHP + flat) * (1 + s.powShield_ / 100) * 2.5, ["finalHP", "powShield_"]]
     },
     dmg: stats => basicDMGFormula(data.skill.dmg[stats.tlvl.skill], stats, "skill"),
-    onHit: stats => basicDMGFormula(data.skill.onHit[stats.tlvl.skill], stats, "skill"),
+    hit1: stats => basicDMGFormula(data.skill.dmg[stats.tlvl.skill] + data.skill.onHit[stats.tlvl.skill], stats, "skill"),
+    hit2: stats => basicDMGFormula(data.skill.dmg[stats.tlvl.skill] + 2 * data.skill.onHit[stats.tlvl.skill], stats, "skill"),
   },
   burst: {
     dmg: stats => basicDMGFormula(data.burst.dmg[stats.tlvl.burst], stats, "burst"),
     lightningDMG: stats => basicDMGFormula(data.burst.lightningDMG[stats.tlvl.burst], stats, "burst"),
+  },
+  constellation1: {
+    shield: stats => [s => 0.16 * s.finalHP * (1 + s.powShield_ / 100), ["finalHP", "powShield_"]],
+    shieldElectro: stats => [s => 0.16 * s.finalHP * (1 + s.powShield_ / 100) * 2.5, ["finalHP", "powShield_"]],
+  },
+  constellation4: {
+    dmg: stats => basicDMGFormula(20, stats, "electro"),
   }
 }
 

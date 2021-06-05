@@ -130,7 +130,7 @@ const char: ICharacterSheet = {
           variant: stats => getTalentStatKeyVariant("skill", stats),
         }, {
           canShow: stats => stats.ascension >= 1,
-          text: "Transient Blossom DMG <50 HP",
+          text: "Transient Blossom DMG < 50% HP",
           formulaText: stats => {
             const hitModeMultiKey = stats.hitMode === "avgHit" ? "skill_avgHit_base_multi" : stats.hitMode === "critHit" ? "critHit_base_multi" : ""
             return <span>{data.skill.blossom[stats.tlvl.skill]}% {Stat.printStat("finalDEF", stats)} * {(hitModeMultiKey ? <span>{Stat.printStat(hitModeMultiKey, stats)} * </span> : "")}( {Stat.printStat("geo_skill_hit_base_multi", stats)} + 25%) * {Stat.printStat("enemyLevel_multi", stats)} * {Stat.printStat("geo_enemyRes_multi", stats)}</span>

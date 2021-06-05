@@ -105,12 +105,18 @@ const Formulas = {
   crystalize_eleMas_: (s) => 4000 / 9 * s.eleMas / (1400 + s.eleMas),
   crystalize_multi: (s, c) => crystalizeLevelMultipliers[c.characterLevel],
   crystalize_hit: (s, c) => (100 + s.crystalize_dmg_ + s.crystalize_eleMas_) / 100 * c.crystalize_multi,
-}
+};
+
+["pyro", "cryo", "electro", "hydro"].forEach(ele => {
+  StatData[`${ele}_crystalize_hit`] = { name: `Crystalize Shield ${hitElements[ele].name} Effective HP`, variant: ele }
+  Formulas[`${ele}_crystalize_hit`] = s => s.crystalize_hit * 2.5
+})
+
 
 const ElementToReactionKeys = {
   physical: [],
   anemo: ["electro_swirl_hit", "pyro_swirl_hit", "cryo_swirl_hit", "hydro_swirl_hit"],
-  geo: ["crystalize_hit", "shattered_hit"],
+  geo: ["shattered_hit", "crystalize_hit", "electro_crystalize_hit", "pyro_crystalize_hit", "cryo_crystalize_hit", "hydro_crystalize_hit"],
   electro: ["overloaded_hit", "electrocharged_hit", "superconduct_hit"],
   hydro: ["electrocharged_hit", "shattered_hit"],//"hydro_vaporize_multi",
   pyro: ["overloaded_hit"],// "burning_hit","pyro_vaporize_multi", "pyro_melt_multi",

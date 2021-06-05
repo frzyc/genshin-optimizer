@@ -3,16 +3,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from 'react';
 import { Card, Col, Dropdown, DropdownButton, Image, ListGroup, OverlayTrigger, Row, Tooltip } from "react-bootstrap";
 import Assets from "../../Assets/Assets";
+import DocumentDisplay from "../../Components/DocumentDisplay";
+import FieldDisplay from "../../Components/FieldDisplay";
 import Stat from "../../Stat";
 import { ElementToReactionKeys } from "../../StatData";
 import { ICharacter } from "../../Types/character";
 import ICalculatedStats from "../../Types/ICalculatedStats";
 import statsToFields from "../../Util/FieldUtil";
-import { evalIfFunc } from "../../Util/Util";
 import Character from "../Character";
 import CharacterSheet from "../CharacterSheet";
-import ConditionalDisplay from './Components/ConditionalDisplay';
-import FieldDisplay from './Components/FieldDisplay';
 type CharacterTalentPaneProps = {
   characterSheet: CharacterSheet,
   character: ICharacter,
@@ -133,7 +132,7 @@ const swirlEleToDisplay = {
   "electro": <span>{Stat.getStatName("electro_swirl_hit")} <Image src={Assets.elements.electro} className="inline-icon" />+<Image src={Assets.elements.anemo} className="inline-icon" /></span>,
   "cryo": <span>{Stat.getStatName("cryo_swirl_hit")} <Image src={Assets.elements.cryo} className="inline-icon" />+<Image src={Assets.elements.anemo} className="inline-icon" /></span>,
   "hydro": <span>{Stat.getStatName("hydro_swirl_hit")} <Image src={Assets.elements.hydro} className="inline-icon" />+<Image src={Assets.elements.anemo} className="inline-icon" /></span>
-}
+} as const
 function SwirlCard({ stats }) {
   const [ele, setele] = useState(Object.keys(swirlEleToDisplay)[0])
   const sKey = `${ele}_swirl_hit`
@@ -156,10 +155,21 @@ function ShatteredCard({ stats }) {
     <span className="text-shattered">{Stat.getStatName(sKey)} <Image src={Assets.elements.hydro} className="inline-icon" />+<Image src={Assets.elements.cryo} className="inline-icon" />+ <small className="text-physical">Heavy Attack{information} </small> {stats[sKey]?.toFixed(Stat.fixedUnit(sKey))}</span>
   </Card.Body></Card>
 }
+const crystalizeEleToDisplay = {
+  "default": <span className="text-crystalize">{Stat.getStatName("crystalize_hit")} <Image src={Assets.elements.electro} className="inline-icon" />/<Image src={Assets.elements.hydro} className="inline-icon" />/<Image src={Assets.elements.pyro} className="inline-icon" />/<Image src={Assets.elements.cryo} className="inline-icon" />+<Image src={Assets.elements.geo} className="inline-icon" /></span>,
+  "pyro": <span>{Stat.getStatName("pyro_crystalize_hit")} <Image src={Assets.elements.pyro} className="inline-icon" />+<Image src={Assets.elements.geo} className="inline-icon" /></span>,
+  "electro": <span>{Stat.getStatName("electro_crystalize_hit")} <Image src={Assets.elements.electro} className="inline-icon" />+<Image src={Assets.elements.geo} className="inline-icon" /></span>,
+  "cryo": <span>{Stat.getStatName("cryo_crystalize_hit")} <Image src={Assets.elements.cryo} className="inline-icon" />+<Image src={Assets.elements.geo} className="inline-icon" /></span>,
+  "hydro": <span>{Stat.getStatName("hydro_crystalize_hit")} <Image src={Assets.elements.hydro} className="inline-icon" />+<Image src={Assets.elements.geo} className="inline-icon" /></span>
+} as const
 function CrystalizeCard({ stats }) {
-  const sKey = "crystalize_hit"
-  return <Card bg="darkcontent" text={"lightfont" as any}><Card.Body className="p-2">
-    <span className="text-crystalize">{Stat.getStatName(sKey)} <Image src={Assets.elements.electro} className="inline-icon" />/<Image src={Assets.elements.hydro} className="inline-icon" />/<Image src={Assets.elements.pyro} className="inline-icon" />/<Image src={Assets.elements.cryo} className="inline-icon" />+<Image src={Assets.elements.geo} className="inline-icon" /> {stats[sKey]?.toFixed(Stat.fixedUnit(sKey))}</span>
+  const [ele, setele] = useState(Object.keys(crystalizeEleToDisplay)[0])
+  const sKey = ele === "default" ? "crystalize_hit" : `${ele}_crystalize_hit`
+  return <Card bg="darkcontent" text={"lightfont" as any}><Card.Body className="p-0">
+    <DropdownButton size="sm" title={crystalizeEleToDisplay[ele]} className="d-inline-block" variant="success">
+      {Object.entries(crystalizeEleToDisplay).map(([key, element]) => <Dropdown.Item key={key} onClick={() => setele(key)}>{element}</Dropdown.Item>)}
+    </DropdownButton>
+    <span className={`text-${ele} p-2`}> {stats[sKey]?.toFixed(Stat.fixedUnit(sKey))}</span>
   </Card.Body></Card>
 }
 
@@ -210,6 +220,7 @@ function SkillDisplayCard({ characterSheet, character: { constellation, talentLe
     </Card>
   </Col></Row>
 
+  const document = characterSheet.getTalent(talentKey)?.document
   return <Card bg="lightcontent" text={"lightfont" as any} className="h-100">
     {header}
     <Card.Body className="mb-n2">
@@ -223,20 +234,7 @@ function SkillDisplayCard({ characterSheet, character: { constellation, talentLe
         </Col>
       </Row>
       {/* Display document sections */}
-      {characterSheet.getTalent(talentKey)?.document?.map((section, i) => {
-        if (!section.canShow!(build)) return null
-        const talentText = evalIfFunc(section.text, build)
-        let fields = section.fields ?? []
-        return <div className="my-2" key={"section" + i}>
-          <div {...{ xs: 12 }}>
-            <div className="mb-2">{talentText}</div>
-            {fields.length > 0 && <ListGroup className="text-white mb-2">
-              {fields?.map?.((field, i) => <FieldDisplay key={i} index={i} {...{ field, equippedBuild, newBuild }} />)}
-            </ListGroup>}
-          </div>
-          {!!section.conditional && <ConditionalDisplay {...{ conditional: section.conditional, equippedBuild, newBuild, characterDispatch, editable }} />}
-        </div>
-      })}
+      {document ? <DocumentDisplay {...{ document, characterDispatch, equippedBuild, newBuild, editable }} /> : null}
       {statsEle}
     </Card.Body>
   </Card>

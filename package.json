@@ -1,7 +1,7 @@
 {
   "homepage": "https://frzyc.github.io/genshin-optimizer/",
   "name": "genshin-optimizer",
-  "version": "5.4.0",
+  "version": "5.7.13",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
@@ -16,17 +16,19 @@
     "@types/react": "^17.0.4",
     "@types/react-dom": "^17.0.3",
     "bootstrap": "^4.6.0",
+    "i18next": "^20.2.2",
+    "i18next-browser-languagedetector": "^6.1.0",
+    "i18next-http-backend": "^1.2.2",
     "node-sass": "^4.14.1",
     "react": "^17.0.2",
     "react-bootstrap": "^1.5.2",
     "react-dom": "^17.0.2",
     "react-ga": "^3.3.0",
+    "react-i18next": "^11.8.15",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^4.0.3",
     "source-map-explorer": "^2.5.2",
     "tesseract.js": "^2.1.1",
-    "typescript": "^4.2.4",
-    "urlon": "^3.1.0",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
@@ -35,6 +37,9 @@
     "test": "react-scripts test",
     "testserver": "set PUBLIC_URL= && npm run build && node ./test-server.ts",
     "analyze": "source-map-explorer 'build/static/js/*.js'",
+    "localization-datamined": "cd ./localization && npx ts-node ./datamined.ts",
+    "localization-main": "cd ./localization && npx ts-node ./mainGen.ts",
+    "localization-load": "cd ./localization && npx ts-node ./load.ts",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
@@ -61,6 +66,8 @@
     "@types/react-router-dom": "^5.1.7",
     "express": "^4.17.1",
     "gh-pages": "^3.1.0",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.4",
     "worker-loader": "^3.0.8"
   }
 }

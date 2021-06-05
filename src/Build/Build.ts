@@ -1,7 +1,7 @@
 import ElementalData from "../Data/ElementalData"
 import { StatKey, StatDict, IArtifact, SubstatKey } from "../Types/artifact"
 import { ArtifactSetEffects, PrunedArtifactSetEffects, ArtifactsBySlot, SetFilter } from "../Types/Build"
-import { ArtifactSetKey } from "../Types/consts"
+import { ArtifactSetKey, ElementKey } from "../Types/consts"
 
 /**
  * Remove artifacts that can never be used in optimized builds
@@ -35,7 +35,7 @@ export function pruneArtifacts(artifacts: IArtifact[], artifactSetEffects: Artif
   let tmp: { artifact: IArtifact, stats: Dict<StatKey, number>, set: ArtifactSetKey | "other" }[] = artifacts.map(artifact => {
     let stats = {}, set: ArtifactSetKey | "other" = (artifact.setKey in prunedSetEffects) ? artifact.setKey : "other"
     if (significantStats.has(artifact.mainStatKey as any))
-      stats[artifact.mainStatKey] = artifact.mainStatVal
+      stats[artifact.mainStatKey] = artifact.mainStatVal!
     for (const { key, value } of artifact.substats)
       if (significantStats.has(key as SubstatKey))
         stats[key] = (stats[key] ?? 0) + value
@@ -176,7 +176,7 @@ function accumulate(slotKey, art: IArtifact, setCount, accu, stats, artifactSetE
   setCount[setKey] = (setCount[setKey] ?? 0) + 1
 
   // Add artifact stats
-  if (art.mainStatKey in stats) stats[art.mainStatKey] += art.mainStatVal
+  if (art.mainStatKey in stats) stats[art.mainStatKey] += art.mainStatVal!
   art.substats.forEach((substat) => {
     if (substat?.key in stats) stats[substat.key] += substat.value
   })
@@ -192,16 +192,16 @@ function accumulate(slotKey, art: IArtifact, setCount, accu, stats, artifactSetE
   * Create statKey in the form of ${ele}_elemental_${type} for elemental DMG, ${ele}_${src}_${type} for talent DMG.
   * @param {string} skillKey - The DMG src. Can be "norm","skill". Use an elemental to specify a elemental hit "physical" -> physical_elemental_{type}. Use "elemental" here to specify a elemental hit of character's element/reactionMode
   * @param {*} stats - The calcualted stats
-  * @param {*} useCharElement - Override the hit to be the character's elemental, that is not part of infusion.
+  * @param {*} overwriteElement - Override the hit to be the character's elemental, that is not part of infusion.
   */
-export function getTalentStatKey(skillKey, stats, useCharElement = false) {
+export function getTalentStatKey(skillKey, stats, overwriteElement?: ElementKey | "physical") {
   const { hitMode = "", infusionAura = "", infusionSelf = "", reactionMode = null, characterEle = "anemo", weaponType = "sword" } = stats
   if ((Object.keys(ElementalData) as any).includes(skillKey)) return `${skillKey}_elemental_${hitMode}`//elemental DMG
-  if (!useCharElement) useCharElement = weaponType === "catalyst"
+  if (!overwriteElement && weaponType === "catalyst") overwriteElement = characterEle
 
-  if (skillKey === "elemental" || skillKey === "burst" || skillKey === "skill" || useCharElement) {
-    if (reactionMode && reactionMode.startsWith(characterEle)) return `${reactionMode}_${skillKey}_${hitMode}`
-    return `${characterEle}_${skillKey}_${hitMode}`
+  if (skillKey === "elemental" || skillKey === "burst" || skillKey === "skill" || overwriteElement) {
+    if (reactionMode && reactionMode.startsWith(overwriteElement || characterEle)) return `${reactionMode}_${skillKey}_${hitMode}`
+    return `${overwriteElement || characterEle}_${skillKey}_${hitMode}`
   }
   //auto attacks
   let eleKey = "physical"
@@ -212,17 +212,17 @@ export function getTalentStatKey(skillKey, stats, useCharElement = false) {
   return `${eleKey}_${skillKey}_${hitMode}`
 }
 
-export function getTalentStatKeyVariant(skillKey, stats, useCharElement = false) {
+export function getTalentStatKeyVariant(skillKey, stats, overwriteElement: ElementKey | "physical" | undefined | "" = "") {
   if ((Object.keys(ElementalData) as any).includes(skillKey)) return skillKey//elemental DMG
   const { infusionAura = "", infusionSelf = "", reactionMode = null, characterEle = "anemo", weaponType = "sword" } = stats
-  if (!useCharElement) useCharElement = weaponType === "catalyst"
+  if (!overwriteElement && weaponType === "catalyst") overwriteElement = characterEle
 
-  if (skillKey === "elemental" || skillKey === "burst" || skillKey === "skill" || useCharElement) {
-    if (reactionMode && reactionMode.startsWith(characterEle)) {
+  if (skillKey === "elemental" || skillKey === "burst" || skillKey === "skill" || overwriteElement) {
+    if (reactionMode && reactionMode.startsWith(overwriteElement || characterEle)) {
       if (["pyro_vaporize", "hydro_vaporize"].includes(reactionMode)) return "vaporize"
       else if (["pyro_melt", "cryo_melt"].includes(reactionMode)) return "melt"
     }
-    return characterEle
+    return overwriteElement || characterEle
   }
   //auto attacks
   let eleKey = "physical"

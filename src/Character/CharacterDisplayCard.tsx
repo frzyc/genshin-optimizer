@@ -11,7 +11,7 @@ import WIPComponent from '../Components/WIPComponent';
 import { WeaponLevelKeys } from '../Data/WeaponData';
 import CharacterDatabase from '../Database/CharacterDatabase';
 import { ICharacter } from '../Types/character';
-import { allCharacterKeys } from '../Types/consts';
+import { allCharacterKeys, allSlotKeys } from '../Types/consts';
 import ICalculatedStats from '../Types/ICalculatedStats';
 import { usePromise } from '../Util/ReactUtil';
 import { deepClone } from '../Util/Util';
@@ -46,7 +46,7 @@ const initialCharacter = (characterKey): ICharacter => ({
   levelKey: "L1",//combination of level and ascension
   hitMode: "avgHit",
   reactionMode: null,
-  equippedArtifacts: {},
+  equippedArtifacts: Object.fromEntries(allSlotKeys.map(sKey => [sKey, ""])),
   conditionalValues: {},
   baseStatOverrides: {},//overriding the baseStat
   weapon: {
@@ -63,6 +63,7 @@ const initialCharacter = (characterKey): ICharacter => ({
   },
   infusionAura: "",
   constellation: 0,
+  buildSettings: {}//use to reset when changing to a new character, so it would not copy from old character.
 })
 
 type characterReducerOverwrite = {
@@ -86,7 +87,7 @@ function characterReducer(state: ICharacter, action: characterReducerOverwriteAc
     case "overwrite":
       return { ...state, ...action.character }
     case "fromDB"://for equipping artifacts, that makes the changes in DB instead of in state.
-      return { ...state, ...CharacterDatabase.get(state.characterKey, {} as any) }
+      return { ...state, ...CharacterDatabase.get(state.characterKey) ?? {} }
     case "statOverride": {
       const { statKey, value, characterSheet, weaponSheet, } = action
       const baseStatOverrides = state.baseStatOverrides
@@ -118,7 +119,7 @@ export default function CharacterDisplayCard({ characterKey: propCharacterKey, c
   const firstUpdate = useRef(true)
   useEffect(() => {
     if (!propCharacterKey) return
-    const char = { ...initialCharacter(propCharacterKey), ...CharacterDatabase.get(propCharacterKey, {} as any) }
+    const char = { ...initialCharacter(propCharacterKey), ...CharacterDatabase.get(propCharacterKey) ?? {} }
     characterDispatch({ type: "overwrite", character: char })
   }, [propCharacterKey])
   useEffect(() => {
@@ -192,7 +193,7 @@ export default function CharacterDisplayCard({ characterKey: propCharacterKey, c
               <small>Show New artifact Stats</small>
             </Button>
             <Button variant={!compareAgainstEquipped ? "primary" : "success"} disabled={compareAgainstEquipped} onClick={() => setcompareAgainstEquipped(true)}>
-              <small>Compare against equipped artifact</small>
+              <small>Compare against equipped artifacts</small>
             </Button>
           </ButtonGroup>
         </Col> : null}
@@ -279,7 +280,7 @@ function CharSelectDropdown({ characterSheet, weaponSheet, character, editable, 
       <Dropdown.ItemText>
         <span>Select Base Stat Template</span>
       </Dropdown.ItemText>
-      {Character.getlevelKeys().map(lvlKey =>
+      {Character.getlevelKeys().reverse().map(lvlKey =>
         <Dropdown.Item key={lvlKey} onClick={() => characterDispatch({ levelKey: lvlKey })}>
           <h6 >{Character.getlevelTemplateName(lvlKey)} </h6>
         </Dropdown.Item>)}
@@ -289,10 +290,10 @@ function CharSelectDropdown({ characterSheet, weaponSheet, character, editable, 
 function CharDropdownItem({ characterKey, setCharacterKey }) {
   const characterSheet = usePromise(CharacterSheet.get(characterKey))
   if (!characterSheet) return null
-  return <Dropdown.Item onClick={() => setCharacterKey(characterKey)}>
-    <span >
-      <Image src={characterSheet.thumbImg} className={`thumb-small p-0 m-n1 grad-${characterSheet.star}star`} thumbnail />
-      <h6 className="d-inline ml-2">{characterSheet.name} </h6>
-    </span>
+  return <Dropdown.Item onClick={() => setCharacterKey(characterKey)} className="pl-2 pr-0">
+    <Row>
+      <Col xs="auto"><Image src={characterSheet.thumbImg} className={`thumb-small p-0 m-n1 grad-${characterSheet.star}star`} thumbnail /></Col>
+      <Col>{characterSheet.name}</Col>
+    </Row>
   </Dropdown.Item>
 }

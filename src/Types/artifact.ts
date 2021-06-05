@@ -1,4 +1,4 @@
-import { ArtifactSetKey, Rarity, SetNum, SlotKey } from "./consts";
+import { ArtifactSetKey, CharacterKey, Rarity, SetNum, SlotKey } from "./consts";
 import ICalculatedStats from "./ICalculatedStats";
 import IConditional, { IConditionalComplex, IConditionals } from "./IConditional";
 
@@ -29,9 +29,9 @@ export interface IArtifact {
   level: number,
   slotKey: SlotKey,
   mainStatKey: MainStatKey,
-  mainStatVal: number,
+  mainStatVal?: number,
   substats: Substat[],
-  location: string,
+  location: CharacterKey | "",
 
   currentEfficiency?: number,
   maximumEfficiency?: number,

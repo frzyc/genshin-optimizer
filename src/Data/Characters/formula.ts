@@ -6,6 +6,7 @@ import bennett from './Bennett/data'
 import chongyun from './Chongyun/data'
 import diluc from './Diluc/data'
 import diona from './Diona/data'
+import eula from './Eula/data'
 import fischl from './Fischl/data'
 import ganyu from './Ganyu/data'
 import hutao from './Hu Tao/data'
@@ -41,6 +42,7 @@ const formula: IFormulaSheets = {
   chongyun,
   diluc,
   diona,
+  eula,
   fischl,
   ganyu,
   hutao,

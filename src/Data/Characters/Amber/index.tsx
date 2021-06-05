@@ -78,9 +78,9 @@ const char: ICharacterSheet = {
           variant: stats => getTalentStatKeyVariant("charged", stats),
         }, {
           text: <span>Fully - Charged Aimed Shot DMG</span>,
-          formulaText: stats => <span>{data.charged.fullAimedShot[stats.tlvl.auto]} % {Stat.getStatName(getTalentStatKey("charged", stats, true))} </span>,
+          formulaText: stats => <span>{data.charged.fullAimedShot[stats.tlvl.auto]} % {Stat.getStatName(getTalentStatKey("charged", stats, "pyro"))} </span>,
           formula: formula.charged.fullAimedShot,
-          variant: stats => getTalentStatKeyVariant("charged", stats, true),
+          variant: stats => getTalentStatKeyVariant("charged", stats, "pyro"),
         }]
       }, {
         text: <span><strong>Plunging Attack </strong> Fires off a shower of arrows in mid-air before falling an striking the ground, dealing AoE DMG upon impact.</span>,

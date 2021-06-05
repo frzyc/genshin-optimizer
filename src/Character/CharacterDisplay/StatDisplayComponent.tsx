@@ -7,6 +7,7 @@ import { ICharacter } from "../../Types/character"
 import CharacterSheet from "../CharacterSheet"
 import ICalculatedStats from "../../Types/ICalculatedStats"
 import WeaponSheet from "../../Weapon/WeaponSheet"
+import Character from "../Character"
 
 type StatDisplayComponentProps = {
   characterSheet: CharacterSheet
@@ -20,13 +21,9 @@ type StatDisplayComponentProps = {
 }
 
 export default function StatDisplayComponent({ characterSheet, weaponSheet, character, equippedBuild, newBuild, statsDisplayKeys, editable, cardbg = "darkcontent" }: StatDisplayComponentProps) {
-  return <Row className="mb-n2">{Object.entries(statsDisplayKeys).map(([talentKey, sectionValues]: any) => {
-    let header = ""
-    if (talentKey === "basicKeys") header = "Basic Stats"
-    else if (talentKey === "genericAvgHit") header = "Generic Optimization Values"
-    else if (talentKey === "transReactions") header = "Transformation Reaction"
-    else header = characterSheet.getTalent(talentKey)?.name ?? talentKey
-    return <Col key={talentKey} className="mb-2" xs={12} md={6} xl={4}>
+  return <Row className="mb-n2">{Object.entries(statsDisplayKeys).map(([sectionKey, sectionValues]: any) => {
+    const header = Character.getDisplayHeading(sectionKey, characterSheet, weaponSheet)
+    return <Col key={sectionKey} className="mb-2" xs={12} md={6} xl={4}>
       <Card bg={cardbg} text={"lightfont" as any} className="h-100">
         <Card.Header>{header}</Card.Header>
         <Card.Body>

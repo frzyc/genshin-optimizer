@@ -21,6 +21,7 @@ import { useForceUpdate, usePromise } from '../Util/ReactUtil';
 import { valueString } from '../Util/UIUtil';
 import Artifact from './Artifact';
 import { ArtifactSheet } from './ArtifactSheet';
+import SlotNameWithIcon from './Component/SlotNameWIthIcon';
 import PercentBadge from './PercentBadge';
 
 type Data = { artifactId?: string, artifactObj?: IArtifact, onEdit?: () => void, onDelete?: () => void, mainStatAssumptionLevel?: number }
@@ -34,13 +35,13 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
   const sheet = usePromise(ArtifactSheet.get((artifactObj ?? (artifactId ? ArtifactDatabase.get(artifactId) : undefined))?.setKey))
   const equipOnChar = (charKey) => Artifact.equipArtifactOnChar(artifactId, charKey)
 
-  const editable = !artifactObj //dont allow edit for flex artifacts
-  const art = artifactObj || ArtifactDatabase.get(artifactId);
-  const characterSheet = usePromise(CharacterSheet.get(art.location))
+  const editable = !artifactObj // dont allow edit for flex artifacts
+  const art = artifactObj ?? ArtifactDatabase.get(artifactId);
+  const characterSheet = usePromise(CharacterSheet.get(art?.location ?? ""))
   if (!art) return null
   if (!art.maximumEfficiency) Artifact.substatsValidation(art)
 
-  const { slotKey, numStars, level, mainStatKey, substats, lock, currentEfficiency = 0, maximumEfficiency = 0 } = art
+  const { id, slotKey, numStars, level, mainStatKey, substats, lock, currentEfficiency = 0, maximumEfficiency = 0 } = art
   const mainStatLevel = Math.max(Math.min(mainStatAssumptionLevel, numStars * 4), level)
   const mainStatVal = <span className={mainStatLevel !== level ? "text-orange" : ""}>{Artifact.mainStatValue(mainStatKey, numStars, mainStatLevel) ?? ""}{Stat.getStatUnit(mainStatKey)}</span>
   const artifactValid = art.maximumEfficiency !== undefined
@@ -53,7 +54,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
         </Col>
         <Col className="pt-3">
           <h6><b>{sheet?.slotNames[slotKey] ?? "Unknown Piece Name"}</b></h6>
-          <div>{Artifact.slotNameWithIcon(slotKey)}{` +${level}`}</div>
+          <div><SlotNameWithIcon slotKey={slotKey} />{` +${level}`}</div>
         </Col>
       </Row>
     </Card.Header>
@@ -102,11 +103,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
             {editable ? <OverlayTrigger placement="top"
               overlay={<Tooltip id="lock-artifact-tip">Locking a artifact will prevent the build generator from picking it for builds.</Tooltip>}>
               <span className="d-inline-block">
-                <Button size="sm"
-                  onClick={() => {
-                    art.lock = !lock
-                    ArtifactDatabase.update(art);
-                  }}>
+                <Button size="sm" onClick={() => ArtifactDatabase.setLocked(id, !lock)}>
                   <FontAwesomeIcon icon={lock ? faLock : faLockOpen} className="fa-fw" />
                 </Button>
               </span>

@@ -53,12 +53,11 @@ export class ArtifactSheet {
   static setsWithMaxRarity(sheets: StrictDict<ArtifactSetKey, ArtifactSheet>, rarity: Rarity): [ArtifactSetKey, ArtifactSheet][] {
     return Object.entries(sheets).filter(([, sheet]) => Math.max(...sheet.rarity) === rarity)
   }
-  static setEffectsStats(sheets: StrictDict<ArtifactSetKey, ArtifactSheet>, setToSlots: Dict<ArtifactSetKey, SlotKey[]>): StatArr {
+  static setEffectsStats(sheets: StrictDict<ArtifactSetKey, ArtifactSheet>, charStats: ICalculatedStats, setToSlots: Dict<ArtifactSetKey, SlotKey[]>): StatArr {
     let artifactSetEffect: StatArr = []
     Object.entries(setToSlots).forEach(([set, slots]) =>
       Object.entries(sheets[set]?.setEffects ?? {}).forEach(([num, value]) =>
-        parseInt(num) <= slots.length && Object.keys(value.stats ?? {}).length &&
-        Object.entries(value.stats!).forEach(([key, value]) =>
+        parseInt(num) <= slots.length && Object.entries(evalIfFunc(value.stats, charStats) ?? {}).forEach(([key, value]) =>
           artifactSetEffect.push({ key, value }))))
     return artifactSetEffect
   }

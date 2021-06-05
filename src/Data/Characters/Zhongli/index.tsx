@@ -19,13 +19,12 @@ import ElementalData from '../../ElementalData'
 import { IConditionals } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
 const conditionals: IConditionals = {
-  c6n: { // JadeShield (near)
-    canShow: stats => stats.constellation >= 6,
+  sk: { // JadeShield (near)
     name: <span>Enemies near <b>Jade Shield</b></span>,
     stats: Object.fromEntries(Object.keys(ElementalData).map(k => [`${k}_enemyRes_`, -20])),//TODO: party buff
   },
-  c6d: { // ResonantWaves (on dmg)
-    canShow: stats => stats.constellation >= 6,
+  p1: { // ResonantWaves (on dmg)
+    canShow: stats => stats.ascension >= 1,
     name: <span>When the <b>Jade Shield</b> takes DMG</span>,
     maxStack: 5,
     stats: { powShield_: 5 },
@@ -189,7 +188,7 @@ const char: ICharacterSheet = {
           variant: stats => getTalentStatKeyVariant("skill", stats),
         }, {
           text: "Shield Absorption",
-          formulaText: stats => <span>{data.skill.shieldBase[stats.tlvl.skill]} + {data.skill.shieldMaxHP[stats.tlvl.skill]}% {Stat.printStat("finalHP", stats)}</span>,
+          formulaText: stats => <span>( {data.skill.shieldBase[stats.tlvl.skill]} + {data.skill.shieldMaxHP[stats.tlvl.skill]}% {Stat.printStat("finalHP", stats)} ) * (100% + {Stat.printStat("powShield_", stats)}) * 150% All DMG Absorption</span>,
           formula: formula.skill.shield,
         }, {
           text: "Shield Duration",
@@ -198,7 +197,7 @@ const char: ICharacterSheet = {
           text: "Hold CD",
           value: "12s",
         }],
-        conditional: conditionals.c6n
+        conditional: conditionals.sk
       }],
     },
     burst: {
@@ -248,7 +247,7 @@ const char: ICharacterSheet = {
             <li>Can stack up to 5 times, and lasts until the Jade Shield disappears.</li>
           </ul>
         </span>,
-        conditional: conditionals.c6d
+        conditional: conditionals.p1
       }],
     },
     passive2: {

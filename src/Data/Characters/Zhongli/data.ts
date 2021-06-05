@@ -42,9 +42,9 @@ const data = {
     petriDur: [3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4, 4, 4, 4, 4, 4]
   }
 }
-function zliDMG(percent, hpMulti, stats, skillKey, elemental = false): FormulaItem {
+function zliDMG(percent, hpMulti, stats, skillKey): FormulaItem {
   const val = percent / 100
-  const statKey = getTalentStatKey(skillKey, stats, elemental) + "_multi"
+  const statKey = getTalentStatKey(skillKey, stats) + "_multi"
   return [s => (val * s.finalATK + hpMulti * s.finalHP) * s[statKey], ["finalATK", "finalHP", statKey]]
 }
 const formula: IFormulaSheet = {
@@ -76,7 +76,7 @@ const formula: IFormulaSheet = {
     shield: stats => {
       const base = data.skill.shieldBase[stats.tlvl.skill]
       const hpMulti = data.skill.shieldMaxHP[stats.tlvl.skill] / 100
-      return [s => hpMulti * s.finalHP + base, ["finalHP"]]
+      return [s => (hpMulti * s.finalHP + base) * (1 + s.powShield_ / 100) * 1.5, ["finalHP", "powShield_"]]
     }
   },
   burst: {

@@ -19,11 +19,11 @@ import { Stars } from '../Components/StarDisplay';
 import ArtifactDatabase from '../Database/ArtifactDatabase';
 import CharacterDatabase from '../Database/CharacterDatabase';
 import Formula from '../Formula';
+import InfoComponent from '../Components/InfoComponent';
 import Stat from '../Stat';
-import { IArtifact } from '../Types/artifact';
 import { ArtifactsBySlot, BuildSetting } from '../Types/Build';
 import { ICharacter } from '../Types/character';
-import { allSlotKeys, ArtifactSetKey, SetNum, SlotKey } from '../Types/consts';
+import { allSlotKeys, ArtifactSetKey, CharacterKey, SetNum, SlotKey } from '../Types/consts';
 import ICalculatedStats from '../Types/ICalculatedStats';
 import { IFieldDisplay } from '../Types/IFieldDisplay';
 import { useForceUpdate, usePromise } from '../Util/ReactUtil';
@@ -31,6 +31,8 @@ import { timeStringMs } from '../Util/TimeUtil';
 import { crawlObject, deepClone, loadFromLocalStorage, saveToLocalStorage } from '../Util/Util';
 import WeaponSheet from '../Weapon/WeaponSheet';
 import { calculateTotalBuildNumber } from './Build';
+import SlotNameWithIcon, { artifactSlotIcon } from '../Artifact/Component/SlotNameWIthIcon';
+const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
 
 //lazy load the character display
 const CharacterDisplayCard = lazy(() => import('../Character/CharacterDisplayCard'))
@@ -70,7 +72,7 @@ function buildSettingsReducer(state: BuildSetting, action): BuildSetting {
 }
 
 export default function BuildDisplay({ location: { characterKey: propCharacterKey } }) {
-  const [characterKey, setcharacterKey] = useState("")
+  const [characterKey, setcharacterKey] = useState("" as CharacterKey | "")
   const [buildSettings, buildSettingsDispatch] = useReducer(buildSettingsReducer, initialBuildSettings())
   const { setFilters, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useLockedArts, useEquippedArts, ascending, } = buildSettings
 
@@ -89,6 +91,8 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   const [charDirty, setCharDirty] = useForceUpdate()
   const artifactSheets = usePromise(ArtifactSheet.getAll())
 
+  const [artsDirty, setArtsDirty] = useForceUpdate()
+
   const isMounted = useRef(false)
 
   const worker = useRef(null as Worker | null)
@@ -99,6 +103,12 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     CharacterDatabase.registerCharListener(characterKey, setCharDirty)
     return () => { characterKey && CharacterDatabase.unregisterCharListener(characterKey, setCharDirty) }
   }, [characterKey, setCharDirty])
+
+  //register changes in artifact database
+  useEffect(() => {
+    ArtifactDatabase.registerListener(setArtsDirty)
+    return () => { ArtifactDatabase.unregisterListener(setArtsDirty) }
+  }, [setArtsDirty])
 
   //terminate worker when component unmounts
   useEffect(() => () => worker.current?.terminate(), [])
@@ -124,9 +134,9 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   useEffect(() => propCharacterKey && selectCharacter(propCharacterKey), [propCharacterKey, selectCharacter])//update when props update
   const character = useMemo(() => charDirty && CharacterDatabase.get(characterKey), [characterKey, charDirty])
   const characterSheet = usePromise(CharacterSheet.get(characterKey))
-  const weaponSheet = usePromise(WeaponSheet.get(character?.weapon?.key))
-  const initialStats = useMemo(() => charDirty && characterSheet && weaponSheet && Character.createInitialStats(character, characterSheet, weaponSheet), [character, charDirty, characterSheet, weaponSheet])
-  const statsDisplayKeys = useMemo(() => charDirty && characterSheet && characterSheet.getDisplayStatKeys(initialStats), [initialStats, charDirty, characterSheet])
+  const weaponSheet = usePromise(character && WeaponSheet.get(character.weapon.key))
+  const initialStats = useMemo(() => charDirty && character && characterSheet && weaponSheet && Character.createInitialStats(character, characterSheet, weaponSheet), [character, charDirty, characterSheet, weaponSheet])
+  const statsDisplayKeys = useMemo(() => charDirty && characterSheet && initialStats && Character.getDisplayStatKeys(initialStats, characterSheet), [initialStats, charDirty, characterSheet])
 
   //save build settings to character when buildSettings change, will cause infinite loop if add 'character' to dependency array
   useEffect(() => {
@@ -141,11 +151,22 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     else isMounted.current = true
   }, [characterKey, maxBuildsToShow])
 
+  //validate optimizationTarget 
+  useEffect(() => {
+    if (!statsDisplayKeys) return
+    if (!Array.isArray(optimizationTarget)) return
+    for (const sectionKey in statsDisplayKeys) {
+      const section = statsDisplayKeys[sectionKey]
+      for (const keys of section)
+        if (JSON.stringify(keys) === JSON.stringify(optimizationTarget)) return
+    }
+    buildSettingsDispatch({ optimizationTarget: initialBuildSettings().optimizationTarget })
+  }, [optimizationTarget, statsDisplayKeys])
 
   const { split, totBuildNumber } = useMemo(() => {
     if (!characterKey) // Make sure we have all slotKeys
       return { split: Object.fromEntries(allSlotKeys.map(slotKey => [slotKey, []])) as ArtifactsBySlot, totBuildNumber: 0 }
-    const artifactDatabase: { [id: string]: IArtifact } = deepClone(ArtifactDatabase.getArtifactDatabase())
+    const artifactDatabase = deepClone(ArtifactDatabase.getArtifactDatabase())
     Object.entries(artifactDatabase).forEach(([key, art]) => {
       //if its equipped on the selected character, bypass the check
       if (art.location === characterKey) return
@@ -158,8 +179,8 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     artifactsSlotsToSelectMainStats.forEach((slotKey, index) =>
       mainStatKeys[index] && (split[slotKey] = split[slotKey]?.filter((art) => art.mainStatKey === mainStatKeys[index])))
     const totBuildNumber = calculateTotalBuildNumber(split, setFilters)
-    return { split, totBuildNumber }
-  }, [characterKey, useLockedArts, useEquippedArts, mainStatKeys, setFilters])
+    return artsDirty && { split, totBuildNumber }
+  }, [characterKey, useLockedArts, useEquippedArts, mainStatKeys, setFilters, artsDirty])
 
   const generateBuilds = useCallback((turbo = false) => {
     if (!initialStats || !artifactSheets) return
@@ -216,7 +237,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
 
   //try to generate build when build numbers are low
   useEffect(() => {
-    if (totBuildNumber <= autoBuildGenLimit) generateBuilds()
+    if (totBuildNumber && totBuildNumber <= autoBuildGenLimit) generateBuilds()
     else setbuilds([])
   }, [characterKey, split, totBuildNumber, buildSettings, generateBuilds])
 
@@ -240,16 +261,19 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   const formula = usePromise(Array.isArray(optimizationTarget) ? Formula.get(optimizationTarget) : undefined)
   const sortByText = useMemo(() => {
     if (Array.isArray(optimizationTarget) && formula) {
+      let [type, , talentKey] = (formula as any).keys as string[]
       const field = (formula as any).field as IFieldDisplay
       const variant = Character.getTalentFieldValue(field, "variant", initialStats)
       const text = Character.getTalentFieldValue(field, "text", initialStats)
-      let [, , talentKey] = (formula as any).keys as string[]
-      if (talentKey === "normal" || talentKey === "charged" || talentKey === "plunging") talentKey = "auto"
-      return <b>{characterSheet?.getTalent(talentKey)?.name}: <span className={`text-${variant}`}>{text}</span></b>
-
+      if (type === "character") {
+        if (talentKey === "normal" || talentKey === "charged" || talentKey === "plunging") talentKey = "auto"
+        return <b>{characterSheet?.getTalent(talentKey)?.name}: <span className={`text-${variant}`}>{text}</span></b>
+      } else if (type === "weapon") {
+        return <b>{weaponSheet?.name}: <span className={`text-${variant}`}>{text}</span></b>
+      }
     } else return <b>Basic Stat: <span className={`text-${Stat.getStatVariant(optimizationTarget)}`}>{Stat.getStatNamePretty(optimizationTarget)}</span></b>
     // return <Badge variant="danger">INVALID</Badge>
-  }, [optimizationTarget, formula, initialStats, characterSheet])
+  }, [optimizationTarget, formula, initialStats, characterSheet, weaponSheet])
 
 
   const artsAccounted = setFilters.reduce((accu, cur) => cur.key ? accu + cur.num : accu, 0)
@@ -265,7 +289,15 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   const hasMaxFilters = Object.entries(statFilters).some(([statKey, { max }]) => typeof max === "number")
   const disabledTurbo = ascending ? hasMinFilters : hasMaxFilters
 
-  return <Container>
+  return <Container className="mt-2">
+    <InfoComponent
+      pageKey="buildPage"
+      modalTitle="Character Management Page Guide"
+      text={["For self-infused attacks, like Noelle's Sweeping Time, enable to skill in the talent page.",
+        "You can compare the difference between equipped artifacts and generated builds.",
+        "TURBO mode can process millions of builds in seconds.",
+        "The more complex the formula, the longer the generation time.",]}
+    ><InfoDisplay /></InfoComponent>
     <BuildModal {...{ build: modalBuild, showCharacterModal, characterKey, selectCharacter, setmodalBuild, setshowCharacterModal }} />
     {!!initialStats && <ArtConditionalModal {...{ showArtCondModal, setshowArtCondModal, initialStats, characterDispatch, artifactCondCount }} />}
     <Row className="mt-2 mb-2">
@@ -285,7 +317,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
                     </Card.Header>
                   </Card>}
                 {/* Hit mode options */}
-                {!!characterSheet?.hasTalentPage && <HitModeCard characterSheet={characterSheet} className="mb-2" character={character} />}
+                {!!characterSheet?.hasTalentPage && character && <HitModeCard characterSheet={characterSheet} className="mb-2" character={character} />}
                 {/* Final Stat Filter */}
                 {Boolean(statsDisplayKeys) && <StatFilterCard className="mb-2" statFilters={statFilters} statKeys={statsDisplayKeys?.basicKeys as any} setStatFilters={sFs => buildSettingsDispatch({ statFilters: sFs })} />}
               </Col>
@@ -356,9 +388,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
                     <Card.Body className="mb-n2">
                       {artifactsSlotsToSelectMainStats.map((slotKey, index) =>
                       (<div className="text-inline mb-1 d-flex justify-content-between" key={slotKey}>
-                        <h6 className="d-inline mb-0">
-                          {Artifact.slotNameWithIcon(slotKey)}
-                        </h6>
+                        <h6 className="d-inline mb-0"><SlotNameWithIcon slotKey={slotKey} /></h6>
                         <DropdownButton disabled={generatingBuilds} size="sm"
                           title={mainStatKeys[index] ? Stat.getStatNameWithPercent(mainStatKeys[index]) : "Select a mainstat"}
                           className="d-inline">
@@ -416,18 +446,14 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
                 {/* Dropdown to select sorting value */}
                 {<ButtonGroup>
                   <Dropdown as={ButtonGroup} drop="up">
-                    <Dropdown.Toggle disabled={generatingBuilds} variant="success" >
-                      <span>Sort by {sortByText}</span>
+                    <Dropdown.Toggle disabled={generatingBuilds} variant="light" >
+                      <span>Optimization Target: {sortByText}</span>
                     </Dropdown.Toggle>
                     <Dropdown.Menu align="right" style={{ minWidth: "40rem" }} >
                       <Row>
-                        {!!statsDisplayKeys && Object.entries(statsDisplayKeys).map(([talentKey, fields]) => {
-                          let header = ""
-                          if (talentKey === "basicKeys") header = "Basic Stats"
-                          else if (talentKey === "genericAvgHit") header = "Generic Optimization Values"
-                          else if (talentKey === "transReactions") header = "Transformation Reaction"
-                          else header = (characterSheet?.getTalent(talentKey)?.name ?? talentKey as string)
-                          return <Col xs={12} md={6} key={talentKey}>
+                        {!!statsDisplayKeys && Object.entries(statsDisplayKeys).map(([sectionKey, fields]: [string, any]) => {
+                          const header = (characterSheet && weaponSheet) ? Character.getDisplayHeading(sectionKey, characterSheet, weaponSheet) : sectionKey
+                          return <Col xs={12} md={6} key={sectionKey}>
                             <Dropdown.Header style={{ overflow: "hidden", textOverflow: "ellipsis" }}><b>{header}</b></Dropdown.Header>
                             {fields.map((target, i) => {
                               if (Array.isArray(target))
@@ -646,6 +672,8 @@ type ArtifactDisplayItemProps = { characterSheet: CharacterSheet, weaponSheet: W
 //for displaying each artifact build
 function ArtifactDisplayItem({ characterSheet, weaponSheet, index, characterKey, build, statsDisplayKeys, onClick }: ArtifactDisplayItemProps) {
   const sheets = usePromise(ArtifactSheet.getAll())
+  const character = CharacterDatabase.get(characterKey)
+  if (!character) return null
   return (<div>
     <ListGroup.Item
       variant={index % 2 ? "customdark" : "customdarker"} className="text-white" action
@@ -653,10 +681,10 @@ function ArtifactDisplayItem({ characterSheet, weaponSheet, index, characterKey,
     >
       <h5>{(Object.entries(build.setToSlots) as [ArtifactSetKey, SlotKey[]][]).sort(([key1, slotarr1], [key2, slotarr2]) => slotarr2.length - slotarr1.length).map(([key, slotarr]) =>
         <Badge key={key} variant="primary" className="mr-2">
-          {slotarr.map(slotKey => Artifact.slotIcon(slotKey))} {sheets?.[key].name ?? ""}
+          {slotarr.map(slotKey => artifactSlotIcon(slotKey))} {sheets?.[key].name ?? ""}
         </Badge>
       )}</h5>
-      <StatDisplayComponent editable={false} {...{ characterSheet, weaponSheet, character: CharacterDatabase.get(characterKey), newBuild: build, statsDisplayKeys, cardbg: (index % 2 ? "lightcontent" : "darkcontent") }} />
+      <StatDisplayComponent editable={false} {...{ characterSheet, weaponSheet, character, newBuild: build, statsDisplayKeys, cardbg: (index % 2 ? "lightcontent" : "darkcontent") }} />
     </ListGroup.Item>
   </div>)
 }

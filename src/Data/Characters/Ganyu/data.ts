@@ -46,7 +46,7 @@ const formula: IFormulaSheet = {
     basicDMGFormula(percentArr[stats.tlvl.auto], stats, "normal")])),
   charged: {
     aimShot: stats => basicDMGFormula(data.charged.aimedShot[stats.tlvl.auto], stats, "charged"),
-    aimShot1: stats => basicDMGFormula(data.charged.aimShot1[stats.tlvl.auto], stats, "charged", true),
+    aimShot1: stats => basicDMGFormula(data.charged.aimShot1[stats.tlvl.auto], stats, "charged", "cryo"),
     frostflake: stats => {
       if (stats.hitMode === "avgHit") {
         const [conditionalNum] = stats.conditionalValues?.character?.ganyu?.a1 ?? []
@@ -58,7 +58,7 @@ const formula: IFormulaSheet = {
           return [s => val * s[statKey] * (1 + Math.min(20 + s.critRate_ + s.charged_critRate_, 100) * s.critDMG_ / 10000), [statKey, "critRate_", "critDMG_", "charged_critRate_"]]
         }
       }
-      return basicDMGFormula(data.charged.frostflake[stats.tlvl.auto], stats, "charged", true)
+      return basicDMGFormula(data.charged.frostflake[stats.tlvl.auto], stats, "charged", "cryo")
     },
     frostflakeBloom: stats => {
       if (stats.hitMode === "avgHit") {
@@ -71,7 +71,7 @@ const formula: IFormulaSheet = {
           return [s => val * s[statKey] * (1 + Math.min(20 + s.critRate_ + s.charged_critRate_, 100) * s.critDMG_ / 10000), [statKey, "critRate_", "critDMG_", "charged_critRate_"]]
         }
       }
-      return basicDMGFormula(data.charged.frostflakeBloom[stats.tlvl.auto], stats, "charged", true)
+      return basicDMGFormula(data.charged.frostflakeBloom[stats.tlvl.auto], stats, "charged", "cryo")
     },
   },
   plunging: {

@@ -1,7 +1,8 @@
 import { IArtifact } from "../Types/artifact";
+import { CharacterKey } from "../Types/consts";
 import { deepClone, loadFromLocalStorage, saveToLocalStorage } from "../Util/Util";
 var initiated = false
-var artifactDatabase: { [id: string]: IArtifact } = {};
+var artifactDatabase: Dict<string, IArtifact> = {};
 var artIdIndex = 1;
 const artListener = {}
 var listener: any[] = []
@@ -12,7 +13,7 @@ export default class ArtifactDatabase {
 
   }
   static isInvalid = (art) =>
-    !art || !art.setKey || !art.numStars || !art.slotKey || !art.mainStatKey || art.substats?.some(substat => substat.key && !substat.value)
+    !art || !art.setKey || !art.numStars || !art.slotKey || !art.mainStatKey || art.substats?.some(substat => substat.key && !substat.value) //TODO: is this necessary now that we are using typescript?
   static getArtifactDatabase = () => artifactDatabase;
   static getIdList = () => Object.keys(artifactDatabase);
   static populateDatebaseFromLocalStorage = () => {
@@ -32,7 +33,7 @@ export default class ArtifactDatabase {
     ArtifactDatabase.emitEvent()
     return true
   }
-  static get = (id) => artifactDatabase[id] ?? null
+  static get = (id) => artifactDatabase[id]
   static removeArtifact = (art) => {
     ArtifactDatabase.removeArtifactById(art.id);
   }
@@ -50,6 +51,7 @@ export default class ArtifactDatabase {
     artifactDatabase[id] = dart;
     ArtifactDatabase.emitEvent()
     ArtifactDatabase.emitArtEvent(id, dart)
+    return id
   }
   static removeArtifactById = (artId) => {
     delete artifactDatabase[artId];
@@ -57,7 +59,7 @@ export default class ArtifactDatabase {
     ArtifactDatabase.emitEvent()
   }
 
-  static moveToNewLocation = (artid, location = "") => {
+  static moveToNewLocation = (artid, location: CharacterKey | "" = "") => {
     const art = ArtifactDatabase.get(artid)
     if (!art || art.location === location) return;
     art.location = location;

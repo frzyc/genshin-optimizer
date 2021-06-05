@@ -43,8 +43,8 @@ const formula: IFormulaSheet = {
     basicDMGFormula(percentArr[stats.tlvl.auto], stats, "normal")])),
   charged: {
     aimShot: stats => basicDMGFormula(data.charged.aimedShot[stats.tlvl.auto], stats, "charged"),
-    fullAimedShot: stats => basicDMGFormula(data.charged.fullAimedShot[stats.tlvl.auto], stats, "charged", true),
-    fullAimedShotOz: stats => basicDMGFormula(data.charged.fullAimedShot[stats.tlvl.auto] * (152.7 / 100), stats, "charged", true),
+    fullAimedShot: stats => basicDMGFormula(data.charged.fullAimedShot[stats.tlvl.auto], stats, "charged", "electro"),
+    fullAimedShotOz: stats => basicDMGFormula(data.charged.fullAimedShot[stats.tlvl.auto] * (152.7 / 100), stats, "charged", "electro"),
   },
   plunging: {
     dmg: stats => basicDMGFormula(data.plunging.dmg[stats.tlvl.auto], stats, "plunging"),

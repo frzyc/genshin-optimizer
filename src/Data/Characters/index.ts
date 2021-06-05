@@ -6,6 +6,7 @@ import bennett from './Bennett'
 import chongyun from './Chongyun'
 import diluc from './Diluc'
 import diona from './Diona'
+import eula from './Eula'
 import fischl from './Fischl'
 import ganyu from './Ganyu'
 import hutao from './Hu Tao'
@@ -31,9 +32,9 @@ import xingqiu from './Xingqiu'
 import xinyan from './Xinyan'
 import yanfei from './Yanfei'
 import zhongli from './Zhongli'
-import { fieldProcessing } from '../../Util/FieldUtil'
 import { CharacterKey } from '../../Types/consts'
 import { ICharacterSheet } from '../../Types/character'
+import { documentProcessing } from '../../Util/DocumentUtil'
 const characters: StrictDict<CharacterKey, ICharacterSheet> = {
   albedo,
   amber,
@@ -43,6 +44,7 @@ const characters: StrictDict<CharacterKey, ICharacterSheet> = {
   chongyun,
   diluc,
   diona,
+  eula,
   fischl,
   ganyu,
   hutao,
@@ -72,8 +74,5 @@ const characters: StrictDict<CharacterKey, ICharacterSheet> = {
 
 Object.values(characters).forEach(char =>
   Object.values(char.talent ?? {}).forEach(talent => //TODO: escape for character with imcomplete character sheet
-    talent.document.forEach(section => {
-      if (typeof section.canShow !== "function") section.canShow = () => true
-      section.fields?.forEach?.(fieldProcessing)
-    })))
+    documentProcessing(talent.document)))
 export default characters

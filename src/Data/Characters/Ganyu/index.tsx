@@ -94,9 +94,9 @@ const char: ICharacterSheet = {
           variant: stats => getTalentStatKeyVariant("charged", stats),
         }, {
           text: `Aimed Shot Charge Level 1`,
-          formulaText: stats => <span>{data.charged.aimShot1[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats, true), stats)}</span>,
+          formulaText: stats => <span>{data.charged.aimShot1[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats, "cryo"), stats)}</span>,
           formula: formula.charged.aimShot1,
-          variant: stats => getTalentStatKeyVariant("charged", stats, true),
+          variant: stats => getTalentStatKeyVariant("charged", stats, "cryo"),
         }, {
           text: `Frostflake Arrow DMG`,
           formulaText: stats => {
@@ -107,10 +107,10 @@ const char: ICharacterSheet = {
                 return <span>{data.charged.frostflake[stats.tlvl.auto]}% {Stat.printStat(statKey, stats)} * (1 + Min( 100% , 20% + {Stat.printStat("critRate_", stats)} + {Stat.printStat("charged_critRate_", stats)} ) * {Stat.printStat("critDMG_", stats)} )</span>
               }
             }
-            return <span>{data.charged.frostflake[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats, true), stats)}</span>
+            return <span>{data.charged.frostflake[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats, "cryo"), stats)}</span>
           },
           formula: formula.charged.frostflake,
-          variant: stats => getTalentStatKeyVariant("charged", stats, true),
+          variant: stats => getTalentStatKeyVariant("charged", stats, "cryo"),
         }, {
           text: `Frostflake Arrow Bloom DMG`,
           formulaText: stats => {
@@ -121,10 +121,10 @@ const char: ICharacterSheet = {
                 return <span>{data.charged.frostflakeBloom[stats.tlvl.auto]}% {Stat.printStat(statKey, stats)} * (1 + Min( 100% , 20% + {Stat.printStat("critRate_", stats)} + {Stat.printStat("charged_critRate_", stats)} ) * {Stat.printStat("critDMG_", stats)} )</span>
               }
             }
-            return <span>{data.charged.frostflakeBloom[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats, true), stats)}</span>
+            return <span>{data.charged.frostflakeBloom[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats, "cryo"), stats)}</span>
           },
           formula: formula.charged.frostflakeBloom,
-          variant: stats => getTalentStatKeyVariant("charged", stats, true),
+          variant: stats => getTalentStatKeyVariant("charged", stats, "cryo"),
         },],
         conditional: conditionals.a1
       }, {

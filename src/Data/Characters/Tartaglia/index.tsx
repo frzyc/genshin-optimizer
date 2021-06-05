@@ -54,9 +54,9 @@ const char: ICharacterSheet = {
           variant: stats => getTalentStatKeyVariant("charged", stats),
         }, {
           text: `Fully-Charged Aimed Shot DMG`,
-          formulaText: stats => <span>{data.charged.fullAimedShot[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats, true), stats)}</span>,
+          formulaText: stats => <span>{data.charged.fullAimedShot[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats, "hydro"), stats)}</span>,
           formula: formula.charged.fullAimedShot,
-          variant: stats => getTalentStatKeyVariant("charged", stats, true),
+          variant: stats => getTalentStatKeyVariant("charged", stats, "hydro"),
         }]
       }, {
         text: <span>
@@ -68,14 +68,14 @@ const char: ICharacterSheet = {
         </span>,
         fields: [{
           text: `Riptide Flash DMG (3 Hits)`,
-          formulaText: stats => <span>{data.riptide.flash[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats, true), stats)}</span>,
+          formulaText: stats => <span>{data.riptide.flash[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats, "hydro"), stats)}</span>,
           formula: formula.normal.flash,
-          variant: stats => getTalentStatKeyVariant("normal", stats, true),
+          variant: stats => getTalentStatKeyVariant("normal", stats, "hydro"),
         }, {
           text: `Riptide Burst DMG`,
-          formulaText: stats => <span>{data.riptide.burst[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats, true), stats)}</span>,
+          formulaText: stats => <span>{data.riptide.burst[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats, "hydro"), stats)}</span>,
           formula: formula.normal.burst,
-          variant: stats => getTalentStatKeyVariant("normal", stats, true),
+          variant: stats => getTalentStatKeyVariant("normal", stats, "hydro"),
         }]
       }, {
         text: <span><strong>Plunging Attack</strong> Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.</span>,
@@ -117,19 +117,19 @@ const char: ICharacterSheet = {
         },
         ...data.skill.hitArr.map((percentArr, i) => ({
           text: `${i + (i < 6 ? 1 : 0)}${i > 4 ? `.${i - 4}` : ""}-Hit DMG`,
-          formulaText: stats => <span>{percentArr[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("normal", stats, true), stats)}</span>,
+          formulaText: stats => <span>{percentArr[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("normal", stats, "hydro"), stats)}</span>,
           formula: formula.skill[i],
-          variant: stats => getTalentStatKeyVariant("normal", stats, true),
+          variant: stats => getTalentStatKeyVariant("normal", stats, "hydro"),
         })), {
           text: `Charged 1-Hit DMG`,
-          formulaText: stats => <span>{data.skill.charged1[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("charged", stats, true), stats)}</span>,
+          formulaText: stats => <span>{data.skill.charged1[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("charged", stats, "hydro"), stats)}</span>,
           formula: formula.skill.charged1,
-          variant: stats => getTalentStatKeyVariant("charged", stats, true),
+          variant: stats => getTalentStatKeyVariant("charged", stats, "hydro"),
         }, {
           text: `Charged 2-Hit DMG`,
-          formulaText: stats => <span>{data.skill.charged2[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("charged", stats, true), stats)}</span>,
+          formulaText: stats => <span>{data.skill.charged2[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("charged", stats, "hydro"), stats)}</span>,
           formula: formula.skill.charged2,
-          variant: stats => getTalentStatKeyVariant("charged", stats, true),
+          variant: stats => getTalentStatKeyVariant("charged", stats, "hydro"),
         }, {
           text: `Charged Attack Stamina Cost`,
           value: 20,

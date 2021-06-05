@@ -17,6 +17,8 @@ import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { IConditionals } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
+import { Translate } from '../../../Components/Translate'
+const tr = (strKey: string) => <Translate ns="char_rosaria_gen" key18={strKey} />
 const conditionals: IConditionals = {
   a1: { // ReginaProbationum
     canShow: stats => stats.ascension >= 1,
@@ -59,14 +61,14 @@ const conditionals: IConditionals = {
   }
 }
 const char: ICharacterSheet = {
-  name: "Rosaria",
+  name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   star: 4,
   elementKey: "cryo",
   weaponTypeKey: "polearm",
   gender: "F",
-  constellationName: "Spinea Corona",
+  constellationName: tr("constellationName"),
   titles: ["Thorny Benevolence", "Sister", "A Nonconforming Sister"],
   baseStat: data.baseStat,
   specializeStat: data.specializeStat,
@@ -74,19 +76,19 @@ const char: ICharacterSheet = {
   conditionals,
   talent: {
     auto: {
-      name: "Spear of the Church",
+      name: tr("auto.name"),
       img: normal,
       document: [{
-        text: <span><strong>Normal Attack</strong> Performs up to five consecutive spear strikes.</span>,
+        text: tr("auto.fields.normal"),
         fields: data.normal.hitArr.map((percentArr, i) =>
         ({
-          text: `${i + (i < 5 ? 1 : 0)}${i === 4 ? ".1" : i === 5 ? ".2" : ""}-Hit DMG ${i === 2 ? " (x2)" : ""}`,
+          text: `${i + (i < 5 ? 1 : 0)}${i === 4 ? ".1" : i === 5 ? ".2" : ""}-Hit DMG${i === 2 ? " (x2)" : ""}`,
           formulaText: stats => <span>{percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
           formula: formula.normal[i],
           variant: stats => getTalentStatKeyVariant("normal", stats),
         }))
       }, {
-        text: <span><strong>Charged Attack</strong> Consumes a certain amount of Stamina to lunge forward, dealing damage to opponents along the way.</span>,
+        text: tr("auto.fields.charged"),
         fields: [{
           text: `Charged Attack`,
           formulaText: stats => <span>{data.charged.dmg[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
@@ -97,7 +99,7 @@ const char: ICharacterSheet = {
           value: 25,
         }]
       }, {
-        text: <span><strong>Plunging Attack</strong> Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.</span>,
+        text: tr("auto.fields.plunging"),
         fields: [{
           text: `Plunge DMG`,
           formulaText: stats => <span>{data.plunging.dmg[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
@@ -117,13 +119,10 @@ const char: ICharacterSheet = {
       }],
     },
     skill: {
-      name: "Ravaging Confession",
+      name: tr("skill.name"),
       img: skill,
       document: [{
-        text: <span>
-          <p className="mb-2">Rosaria swiftly shifts her position to appear behind the enemy, and then pierces and slashes them with her polearm, dealing <span className="text-cryo">Cryo DMG</span>.</p>
-          <p className="mb-0">Rosaria cannot use this skill to appear behind larger enemies.</p>
-        </span>,
+        text: tr("skill.description"),
         fields: [{
           text: "Skill DMG 1",
           formulaText: stats => <span>{data.skill.hit1[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
@@ -141,14 +140,10 @@ const char: ICharacterSheet = {
       }],
     },
     burst: {
-      name: "Rites of Termination",
+      name: tr("burst.name"),
       img: burst,
       document: [{
-        text: <span>
-          <p className="mb-2">Rosaria's signature act of prayer.</p>
-          <p className="mb-2">Rosaria swings her weapon to slash nearby enemies and summons a frigid Ice Lance that strikes the ground, dealing <span className="text-cryo">Cryo DMG</span>.</p>
-          <p className="mb-0">The Ice Lance will periodically release blasts of cold air, dealing more <span className="text-cryo">Cryo DMG</span>.</p>
-        </span>,
+        text: tr("burst.description"),
         fields: [{
           text: "Skill DMG 1",
           formulaText: stats => <span>{data.burst.hit1[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
@@ -177,76 +172,61 @@ const char: ICharacterSheet = {
       }],
     },
     passive1: {
-      name: "Regina Probationum",
+      name: tr("passive1.name"),
       img: passive1,
       document: [{
-        text: <span>When Rosaria strikes an opponent from behind using <b>Ravaging Confession</b>, Rosaria's CRIT Rate increases by 12% for 5s.</span>,
+        text: tr("passive1.description"),
         conditional: conditionals.a1
       }],
     },
     passive2: {
-      name: "Shadow Samaritan",
+      name: tr("passive2.name"),
       img: passive2,
       document: [{
-        text: <span>
-          <p className="mb-2">Casting <b>Rites of Termination</b> increases CRIT Rate of all nearby party members (except Rosaria herself) by 15% of Rosaria's CRIT Rate for 10s.</p>
-          <p className="mb-0">CRIT Rate Bonus gained this way cannot exceed 15%.</p>
-        </span>,
+        text: tr("passive2.description"),
         conditional: conditionals.a4
       }],
     },
     passive3: {
-      name: "Night Walk",
+      name: tr("passive3.name"),
       img: passive3,
-      document: [{
-        text: <span>
-          <p className="mb-2">At night (18:00–6:00), increases the Movement SPD of your own party members by 10%.</p>
-          <p className="mb-0">Does not take effect in Domains, Trounce Domains, or Spiral Abyss. Not stackable with Passive Talents that provide the exact same effects.</p>
-        </span>
-      }],
+      document: [{ text: tr("passive3.description"), }]
     },
     constellation1: {
-      name: "Unholy Revelation",
+      name: tr("constellation1.name"),
       img: c1,
       document: [{
-        text: <span>When Rosaria deals a CRIT Hit, her ATK SPD increases by 10% and her Normal Attack DMG increases by 10% for 4s.</span>,
+        text: tr("constellation1.description"),
         conditional: conditionals.c1
       }],
     },
     constellation2: {
-      name: "Land Without Promise",
+      name: tr("constellation2.name"),
       img: c2,
-      document: [{
-        text: <span>The duration of the Ice Lance created by Rites of Termination is increased by 4s.</span>,
-      }],
+      document: [{ text: tr("constellation2.description"), }]
     },
     constellation3: {
-      name: "The Wages of Sin",
+      name: tr("constellation3.name"),
       img: c3,
-      document: [{ text: <span>	Increases the level of <b>Ravaging Confession</b> by 3. Maximum upgrade level is 15.</span> }],
+      document: [{ text: tr("constellation3.description"), }],
       stats: { skillBoost: 3 }
     },
     constellation4: {
-      name: "Painful Grace",
+      name: tr("constellation4.name"),
       img: c4,
-      document: [{
-        text: <span>
-          <p className="mb-2">Ravaging Confession's CRIT Hits regenerate 5 Energy for Rosaria.</p>
-          <p className="mb-0">Can only be triggered once each time Ravaging Confession is cast.</p>
-        </span>
-      }],
+      document: [{ text: tr("constellation4.description") }]
     },
     constellation5: {
-      name: "Last Rites",
+      name: tr("constellation5.name"),
       img: c5,
-      document: [{ text: <span>Increases the level of <b>Rites of Termination</b> by 3. Maximum upgrade level is 15.</span> }],
+      document: [{ text: tr("constellation5.description"), }],
       stats: { burstBoost: 3 }
     },
     constellation6: {
-      name: "Divine Retribution",
+      name: tr("constellation6.name"),
       img: c6,
       document: [{
-        text: <span>Rites of Termination's attack decreases opponents' Physical RES by 20% for 10s.</span>,
+        text: tr("constellation6.description"),
         conditional: conditionals.c6
       }],
     }

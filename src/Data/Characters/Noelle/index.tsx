@@ -12,32 +12,35 @@ import burst from './Talent_Sweeping_Time.png'
 import passive1 from './Talent_Devotion.png'
 import passive2 from './Talent_Nice_and_Clean.png'
 import passive3 from './Talent_Maid\'s_Knighthood.png'
-import DisplayPercent from '../../../Components/DisplayPercent'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { IConditionals } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
+import { Translate, TransWrapper } from '../../../Components/Translate'
+import { claymoreChargedDocSection, normalDocSection, plungeDocSection, sgt, talentTemplate } from '../SheetUtil'
+const tr = (strKey: string) => <Translate ns="char_noelle_gen" key18={strKey} />
+const noelle = (strKey: string) => <TransWrapper ns="char_noelle" key18={strKey} />
 const conditionals: IConditionals = {
   q: { // Sweeping Time
-    name: "Sweeping Time",
+    name: tr("burst.name"),
     maxStack: 1,
     stats: stats => ({
       modifiers: { finalATK: { finalDEF: (data.burst.bonus[stats.tlvl.burst] + (stats.constellation >= 6 ? 50 : 0)) / 100 } },
       infusionSelf: "geo",
     }),
-    fields: [{ text: "Larger attack AOE" }]
+    fields: [{ text: noelle("qlarger") }]
   }
 }
 const char: ICharacterSheet = {
-  name: "Noelle",
+  name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   star: 4,
   elementKey: "geo",
   weaponTypeKey: "claymore",
   gender: "F",
-  constellationName: "Parma Cordis",
+  constellationName: tr("constellationName"),
   titles: ["Chivalric Blossom", "Maid of Favonius"],
   baseStat: data.baseStat,
   specializeStat: data.specializeStat,
@@ -45,217 +48,123 @@ const char: ICharacterSheet = {
   conditionals,
   talent: {
     auto: {
-      name: "Favonius Bladework - Maid",
+      name: tr("auto.name"),
       img: normal,
-      document: [{
-        text: <span><strong>Normal Attack</strong> Performs up to 4 consecutive slashes.</span>,
-        fields: data.normal.hitArr.map((percentArr, i) =>
-        ({
-          text: `${i + 1}-Hit DMG`,
-          formulaText: stats => <span>{percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
-          formula: formula.normal[i],
-          variant: stats => getTalentStatKeyVariant("normal", stats),
-        }))
-      }, {
-        text: <span><strong>Charged Attack</strong> Drains Stamina over time to perform continuous swirling attack on all nearby enemies. At the end of the sequence, performs an additional powerful slash</span>,
-        fields: [{
-          text: `Spinning DMG`,
-          formulaText: stats => <span>{data.charged.spinning[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
-          formula: formula.charged.spinning,
-          variant: stats => getTalentStatKeyVariant("charged", stats),
-        }, {
-          text: `Spinning Final DMG`,
-          formulaText: stats => <span>{data.charged.final[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
-          formula: formula.charged.final,
-          variant: stats => getTalentStatKeyVariant("charged", stats),
-        }, {
-          text: `Stamina Cost`,
-          value: `40/s`,
-        }, {
-          text: `Max Duration`,
-          value: `5s`,
-        }]
-      }, {
-        text: <span><strong>Plunging Attack</strong> Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.</span>,
-        fields: [{
-          text: `Plunge DMG`,
-          formulaText: stats => <span>{data.plunging.dmg[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-          formula: formula.plunging.dmg,
-          variant: stats => getTalentStatKeyVariant("plunging", stats),
-        }, {
-          text: `Low Plunge DMG`,
-          formulaText: stats => <span>{data.plunging.low[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-          formula: formula.plunging.low,
-          variant: stats => getTalentStatKeyVariant("plunging", stats),
-        }, {
-          text: `High Plunge DMG`,
-          formulaText: stats => <span>{data.plunging.high[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-          formula: formula.plunging.high,
-          variant: stats => getTalentStatKeyVariant("plunging", stats),
-        }]
-      },],
+      document: [
+        normalDocSection(tr, formula, data),
+        claymoreChargedDocSection(tr, formula, data),
+        plungeDocSection(tr, formula, data)
+      ],
     },
     skill: {
-      name: "Breastplate",
+      name: tr("skill.name"),
       img: skill,
       document: [{
-        text: <span>
-          <p className="mb-2">Summons protective stone armor, dealing <span className="text-geo">Geo DMG</span> to surrounding enemies and creating a shield. The shield's DMG Absorption scales based on Noelle's DEF.</p>
-          <p className="mb-2">The shield has the following properties:</p>
-          <ul className="mb-2">
-            <li>When Noelle's Normal and Charged Attacks hit a target, they have a certain chance to regenerate HP for all characters.</li>
-            <li>Possesses 150% DMG Absorption efficiency against all Elemental and <span className="text-physical">Physical DMG</span>.</li>
-          </ul>
-          <p className="mb-2">The amount of HP healed when regeneration is triggered scales based on Noelle's DEF.</p>
-        </span>,
+        text: tr("skill.description"),
         fields: [{
-          text: "Skill DMG",
+          text: sgt("skillDMG"),
           formulaText: stats => <span>{data.skill.skill_dmg[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats) + "_multi", stats)} * {Stat.printStat("finalDEF", stats)}</span>,
           formula: formula.skill.skill_dmg,
           variant: stats => getTalentStatKeyVariant("skill", stats),
         }, {
-          text: "Shield DMG Absorption",
-          formulaText: stats => <span>{data.skill.shield_def[stats.tlvl.skill]}% {Stat.printStat("finalDEF", stats)} + {data.skill.shield_flat[stats.tlvl.skill]}</span>,
+          text: sgt("dmgAbsorption"),
+          formulaText: stats => <span>( {data.skill.shield_def[stats.tlvl.skill]}% {Stat.printStat("finalDEF", stats)} + {data.skill.shield_flat[stats.tlvl.skill]} ) * (100% + {Stat.printStat("powShield_", stats)}) * 150% All DMG Absorption</span>,
           formula: formula.skill.shield,
         }, {
-          text: "Healing",
+          text: sgt("healing"),
           formulaText: stats => <span>( {data.skill.heal_def[stats.tlvl.skill]}% {Stat.printStat("finalDEF", stats)} + {data.skill.heal_flat[stats.tlvl.skill]} ) * {Stat.printStat("heal_multi", stats)}</span>,
           formula: formula.skill.heal,
           variant: "success"
         }, {
-          text: "Trigger Chance",
-          value: stats => <span>{data.skill.heal_trigger[stats.tlvl.skill]}%{stats.constellation >= 1 ? <span> (100% while <b>Sweeping Time</b> and <b>Breastplate</b> are both in effect)</span> : ""}</span>,
+          text: tr("skill.triggerChance"),
+          value: stats => <span>{data.skill.heal_trigger[stats.tlvl.skill]}% {stats.constellation >= 1 ? noelle("c1chance") : ""}</span>,
         }, {
-          text: "Duration",
+          text: sgt("healing"),
           value: "12s",
         }, {
-          text: "CD",
-          value: stats => "24s" + (stats.ascension > 4 ? " -1s Every 4 hits" : ""),
+          text: sgt("cd"),
+          value: stats => stats.ascension > 4 ? noelle("p4cd") : "24s",
         }],
       }],
     },
     burst: {
-      name: "Sweeping Time",
+      name: tr("burst.name"),
       img: burst,
       document: [{
-        text: <span>
-          <p className="mb-2">Gathering the strength of stone around her weapon, Noelle strikes the enemies surrounding her within a large AoE, dealing <span className="text-geo">Geo DMG</span>.</p>
-          <p className="mb-2">Afterwards, Noelle gains the following effects:</p>
-          <ul className="mb-2">
-            <li>Larger attack AoE</li>
-            <li>Converts attack DMG to <span className="text-geo">Geo DMG</span></li>
-            <li>Increased ATK that scales based on her DEF.</li>
-          </ul>
-        </span>,
+        text: tr("burst.description"),
         fields: [{
-          text: "Burst DMG",
+          text: sgt("burstDMG"),
           formulaText: stats => <span>{data.burst.burst_dmg[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
           formula: formula.burst.burst_dmg,
           variant: stats => getTalentStatKeyVariant("burst", stats),
         }, {
-          text: "Skill DMG",
+          text: sgt("skillDMG"),
           formulaText: stats => <span>{data.burst.skill_dmg[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
           formula: formula.burst.skill_dmg,
           variant: stats => getTalentStatKeyVariant("burst", stats),
         }, {
-          text: "ATK Bonus",
+          text: tr("burst.atkBonus"),
           formulaText: stats => <span>{data.burst.bonus[stats.tlvl.burst]}% {stats.constellation >= 6 ? "+50% " : ""}{Stat.printStat("finalDEF", stats)}</span>,
           formula: formula.burst.bonus,
         }, {
-          text: "Duration",
-          value: stats => "15s" + (stats.constellation >= 6 ? " +1s per kill, up to 10s" : ""),
+          text: sgt("duration"),
+          value: stats => stats.constellation >= 6 ? noelle("c6duration") : "15s",
         }, {
-          text: "CD",
+          text: sgt("cd"),
           value: "15s",
         }, {
-          text: "Energy Cost",
+          text: sgt("energyCost"),
           value: 60,
         }],
         conditional: conditionals.q
       }],
     },
     passive1: {
-      name: "Devotion",
+      name: tr("passive1.name"),
       img: passive1,
       document: [{
-        text: stats => <span>
-          <p className="mb-2">When Noelle is in the party but not on the field, this ability triggers automatically when your active character's HP falls below 30%:</p>
-          <p className="mb-0">Creates a shield for your active character that lasts for 20s and absorbs DMG equal to 400% of Noelle's DEF. This effect can only occur once every 60s.</p>
-        </span>,
+        text: tr("passive1.description"),
         fields: [{
           canShow: stats => stats.ascension >= 1,
-          text: "Shield strength",
-          formulaText: stats => <span>400% {Stat.printStat("finalDEF", stats)}</span>,
-          formula: formula.passive1.dmg,
+          text: sgt("dmgAbsorption"),
+          formulaText: stats => <span>400% {Stat.printStat("finalDEF", stats)} * (100% + {Stat.printStat("powShield_", stats)}) * 150% All DMG Absorption</span>,
+          formula: formula.passive1.hp,
         }, {
           canShow: stats => stats.ascension >= 1,
-          text: "CD",
+          text: sgt("cd"),
           value: "60s",
         }]
       }],
     },
-    passive2: {
-      name: "Nice and Clean",
-      img: passive2,
-      document: [{
-        text: <span>
-          Every 4 Normal or Charged Attack hits will decrease the CD of <b>Breastplate</b> by 1s.
-          Hitting multiple enemies with a single attack is only counted as 1 hit.
-        </span>
-      }],
-    },
-    passive3: {
-      name: "Maid's Knighthood",
-      img: passive3,
-      document: [{
-        text: <span>When a Perfect Cooking is achieved on a DEF-boosting dish, Noelle has a 12% chance to obtain double the product.</span>
-      }]
-    },
-    constellation1: {
-      name: "I Got Your Back",
-      img: c1,
-      document: [{ text: <span>While <b>Sweeping Time</b> and <b>Breastplate</b> are both in effect, attacks hits have a 100% chance to trigger <b>Breastplate</b>'s healing effects.</span> }]
-    },
+    passive2: talentTemplate("passive2", tr, passive2),
+    passive3: talentTemplate("passive3", tr, passive3),
+    constellation1: talentTemplate("constellation1", tr, c1),
     constellation2: {
-      name: "Combat Maid",
+      name: tr("constellation2.name"),
       img: c2,
-      document: [{ text: <span>Decreases Noelle's Stamina Consumption of <b>Charged Attacks</b> by 20% and increases <b>Charged Attack</b> DMG by 15%.</span> }],
+      document: [{ text: tr("constellation2.description"), }],
       stats: {
         charged_dmg_: 15,
         staminaChargedDec_: 20,
       }
     },
-    constellation3: {
-      name: "Invulnerable Maid",
-      img: c3,
-      document: [{ text: <span>Increases <b>Breastplate</b>'s skill level by 3. Max level is 15</span> }],
-      stats: { skillBoost: 3 }
-    },
+    constellation3: talentTemplate("constellation3", tr, c3, { skillBoost: 3 }),
     constellation4: {
-      name: "To Be Cleaned",
+      name: tr("constellation4.name"),
       img: c4,
       document: [{
-        text: <span>When <b>Breastplate</b> ends or shatters, it deals 400% of ATK as <span className="text-geo">Geo DMG</span> to surrounding enemies.</span>,
+        text: tr("constellation4.description"),
         fields: [{
           canShow: stats => stats.constellation >= 4,
-          text: "Breastplate shatter damage",
+          text: "Breastplate Shatter DMG",
           formulaText: stats => <span>400% {Stat.printStat(getTalentStatKey("elemental", stats), stats)}</span>,
           formula: formula.constellation4.dmg,
           variant: stats => getTalentStatKeyVariant("elemental", stats),
         }]
       }]
     },
-    constellation5: {
-      name: "Favonius Sweeper Master",
-      img: c5,
-      document: [{ text: <span>Increases <b>Sweeping Time</b>'s skill level by 3. Max level is 15.</span> }],
-      stats: { burstBoost: 3 }
-    },
-    constellation6: {
-      name: "Must Be Spotless",
-      img: c6,
-      document: [{ text: stats => <span><b>Sweeping Time</b> increases ATK by an additional 50% of Noelle's DEF{DisplayPercent(50, stats, "finalDEF")}. For the skill's duration, adds 1s duration time per opponent defeated, up to 10s.</span> }]
-    }
+    constellation5: talentTemplate("constellation5", tr, c5, { burstBoost: 3 }),
+    constellation6: talentTemplate("constellation6", tr, c6),
   }
 };
 export default char;

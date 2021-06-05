@@ -4,6 +4,7 @@ import React, { useState } from "react"
 import { Button, Card, Col, Dropdown, DropdownButton, Image, InputGroup, ListGroup, OverlayTrigger, Row, Tooltip } from "react-bootstrap"
 import Assets from "../../Assets/Assets"
 import CustomFormControl from "../../Components/CustomFormControl"
+import DocumentDisplay from "../../Components/DocumentDisplay"
 import { Stars } from "../../Components/StarDisplay"
 import StatDisplay from "../../Components/StatDisplay"
 import { StatIconEle } from "../../Components/StatIcon"
@@ -23,8 +24,8 @@ import WeaponSheet from "../../Weapon/WeaponSheet"
 import Character from "../Character"
 import CharacterSheet from "../CharacterSheet"
 import StatInput from "../StatInput"
-import ConditionalDisplay from "./Components/ConditionalDisplay"
-import FieldDisplay from "./Components/FieldDisplay"
+import ConditionalDisplay from "../../Components/ConditionalDisplay"
+import FieldDisplay from "../../Components/FieldDisplay"
 type CharacterOverviewPaneProps = {
   characterSheet: CharacterSheet;
   weaponSheet: WeaponSheet
@@ -174,6 +175,7 @@ function WeaponStatsEditorCard({ characterSheet, weaponSheet, editable, characte
   const weaponPassiveName = weaponSheet.passiveName
   const weaponBonusStats = weaponSheet.stats(build)
   const conditionals = Conditional.conditionals.weapon[weapon.key] as IConditionals
+  const document = weaponSheet.document
   return <Card bg="lightcontent" text={"lightfont" as any} className="mb-2">
     <Card.Header>
       <Row>
@@ -207,7 +209,7 @@ function WeaponStatsEditorCard({ characterSheet, weaponSheet, editable, characte
                 <Dropdown.ItemText>
                   <span>Select Weapon Level</span>
                 </Dropdown.ItemText>
-                {Object.entries(LevelNameData).map(([key, name]) =>
+                {Object.entries(LevelNameData).reverse().map(([key, name]) =>
                   <Dropdown.Item key={key} onClick={() => setStateWeapon("levelKey", key)}>
                     {name}
                   </Dropdown.Item>)}
@@ -253,13 +255,16 @@ function WeaponStatsEditorCard({ characterSheet, weaponSheet, editable, characte
         </Col> :
           <Col>
             <h5 className="mb-0">{weaponSheet.name} {Weapon.getLevelName(weapon.levelKey)} {weaponPassiveName && `(Refinement ${weapon.refineIndex + 1})`}</h5>
-            <p><Stars stars={weaponSheet.rarity} /></p>
+            <div className="mb-2"><Stars stars={weaponSheet.rarity} /></div>
             <h6>{weaponPassiveName}</h6>
-            <p>{weaponPassiveName && weaponSheet.passiveDescription(build)}</p>
+            <div className="mb-2">{weaponPassiveName && weaponSheet.passiveDescription(build)}</div>
             <WeaponStatsCard title={"Main Stats"} statsVals={{ atk: weaponDisplayMainVal, [substatKey]: weaponDisplaySubVal }} stats={build} />
             <WeaponStatsCard title={"Bonus Stats"} statsVals={weaponBonusStats} stats={build} />
+            {/* TODO: remove conditionals display here in lieu of document once sheets are converted*/}
             {Boolean(conditionals) && Object.entries(conditionals).map(([stateKey, conditional]) =>
               <ConditionalDisplay key={stateKey as any} {...{ conditional, equippedBuild, newBuild, characterDispatch, editable }} fieldClassName="py-2 px-3" />)}
+
+            {document ? <DocumentDisplay {...{ document, equippedBuild, newBuild, characterDispatch, editable }} /> : null}
           </Col>}
       </Row>
       {showDescription && <small>{weaponSheet.description}</small>}

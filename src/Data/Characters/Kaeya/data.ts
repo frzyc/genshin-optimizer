@@ -51,6 +51,10 @@ const formula: IFormulaSheet = {
   },
   passive1: {
     dmg: stats => [s => 0.15 * s.finalATK * s.heal_multi, ["finalATK", "heal_multi"]],
-  }
+  },
+  constellation4: {
+    shield: stats => [s => 0.3 * s.finalHP * (1 + s.powShield_ / 100), ["finalHP", "powShield_"]],
+    shieldCryo: stats => [s => 0.3 * s.finalHP * (1 + s.powShield_ / 100) * 2.5, ["finalHP", "powShield_"]],
+  },
 }
 export default formula

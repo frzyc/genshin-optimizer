@@ -68,16 +68,6 @@ const char: ICharacterSheet = {
           variant: stats => getTalentStatKeyVariant("normal", stats),
         }))
       }, {
-        canShow: stats => stats.constellation >= 4,
-        text: <span><strong>Stunning Revenge:</strong> Within 10s of taking DMG, Beidou's Normal Attacks gain 20% additional <span className="text-electro">Electro DMG</span>.</span>,
-        fields: data.normal.hitArr.map((percentArr, i) =>
-        ({
-          text: `${i + 1}-Hit Additional Electro DMG`,
-          formulaText: stats => <span>{(percentArr[stats.tlvl.auto] * 0.2)?.toFixed(2)}% {Stat.printStat(getTalentStatKey("normal", stats, true), stats)}</span>,
-          formula: formula.normal[`a${i}`],
-          variant: stats => getTalentStatKeyVariant("normal", stats),
-        }))
-      }, {
         text: <span><strong>Charged Attack</strong> Drains Stamina over time to perform continuous slashes. At end of the sequence, perform a more powerful slash.</span>,
         fields: [{
           text: `Spinning DMG`,
@@ -137,8 +127,13 @@ const char: ICharacterSheet = {
           </p>
         </span>,
         fields: [{
+          text: <span className="text-electro">Shield DMG Absorption</span>,
+          formulaText: stats => <span>( {data.skill.hp[stats.tlvl.skill]}% {Stat.printStat("finalHP", stats)} + {data.skill.flat[stats.tlvl.skill]} ) * (100% + {Stat.printStat("powShield_", stats)}) * (250% <span className="text-electro">Electro Absorption</span>)</span>,
+          formula: formula.skill.shieldElectro,
+          variant: "electro"
+        }, {
           text: "Shield DMG Absorption",
-          formulaText: stats => <span>{data.skill.hp[stats.tlvl.skill]}% {Stat.printStat("finalHP", stats)} + {data.skill.flat[stats.tlvl.skill]}</span>,
+          formulaText: stats => <span>( {data.skill.hp[stats.tlvl.skill]}% {Stat.printStat("finalHP", stats)} + {data.skill.flat[stats.tlvl.skill]} ) * (100% + {Stat.printStat("powShield_", stats)})</span>,
           formula: formula.skill.shield,
         }, {
           text: "Base DMG",
@@ -146,9 +141,14 @@ const char: ICharacterSheet = {
           formula: formula.skill.dmg,
           variant: stats => getTalentStatKeyVariant("skill", stats),
         }, {
-          text: "DMG Bonus on Hit Taken",
-          formulaText: stats => <span>{data.skill.onHit[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
-          formula: formula.skill.onHit,
+          text: "1-Hit Taken",
+          formulaText: stats => <span>( {data.skill.dmg[stats.tlvl.skill]}% + {data.skill.onHit[stats.tlvl.skill]}% )  {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
+          formula: formula.skill.hit1,
+          variant: stats => getTalentStatKeyVariant("skill", stats),
+        }, {
+          text: "2-Hit Taken",
+          formulaText: stats => <span>( {data.skill.dmg[stats.tlvl.skill]}% + 2 * {data.skill.onHit[stats.tlvl.skill]}% ) {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
+          formula: formula.skill.hit2,
           variant: stats => getTalentStatKeyVariant("skill", stats),
         }, {
           text: "CD",
@@ -185,13 +185,13 @@ const char: ICharacterSheet = {
           value: stats => data.burst.dmgRed[stats.tlvl.burst] + "%",
         }, {
           text: "Duration",
-          value: "20s",
-        }, {
-          text: "CD",
           value: "15s",
         }, {
+          text: "CD",
+          value: "20s",
+        }, {
           text: "Energy Cost",
-          value: 60,
+          value: 80,
         }],
         conditional: conditionals.c6
       }],
@@ -227,7 +227,21 @@ const char: ICharacterSheet = {
     constellation1: {
       name: "Sea Beast's Scourge",
       img: c1,
-      document: [{ text: stats => <span>When <b>Stormbreaker</b> is used: Creates a shield that absorbs up to 16% of Beidou's Max HP{DisplayPercent(16, stats, "finalHP")} for 15s. This shield absorbs <span className="text-electro">Electro DMG</span> 250% more effectively.</span> }],
+      document: [{
+        text: stats => <span>When <b>Stormbreaker</b> is used: Creates a shield that absorbs up to 16% of Beidou's Max HP{DisplayPercent(16, stats, "finalHP")} for 15s. This shield absorbs <span className="text-electro">Electro DMG</span> 250% more effectively.</span>,
+        fields: [{
+          canShow: stats => stats.constellation >= 1,
+          text: <span className="text-electro">Shield DMG Absorption</span>,
+          formulaText: stats => <span>16% {Stat.printStat("finalHP", stats)} * (100% + {Stat.printStat("powShield_", stats)}) * (250% <span className="text-electro">Electro Absorption</span>)</span>,
+          formula: formula.constellation1.shieldElectro,
+          variant: "electro"
+        }, {
+          canShow: stats => stats.constellation >= 1,
+          text: "Shield DMG Absorption",
+          formulaText: stats => <span>16% {Stat.printStat("finalHP", stats)} * (100% + {Stat.printStat("powShield_", stats)})</span>,
+          formula: formula.constellation1.shield,
+        },]
+      }],
     },
     constellation2: {
       name: "Upon the Turbulent Sea, the Thunder Arises",
@@ -243,7 +257,15 @@ const char: ICharacterSheet = {
     constellation4: {
       name: "Stunning Revenge",
       img: c4,
-      document: [{ text: <span>Within 10s of taking DMG, Beidou's Normal Attacks gain 20% additional <span className="text-electro">Electro DMG</span>.</span> }],
+      document: [{
+        text: <span>Within 10s of taking DMG, Beidou's Normal Attacks gain 20% additional <span className="text-electro">Electro DMG</span>.</span>,
+        fields: [{
+          text: "Electro DMG",
+          formulaText: stats => <span>20% {Stat.printStat(getTalentStatKey("electro", stats), stats)}</span>,
+          formula: formula.constellation4.dmg,
+          variant: stats => getTalentStatKeyVariant("electro", stats),
+        }]
+      }],
     },
     constellation5: {
       name: "Crimson Tidewalker",

@@ -184,7 +184,7 @@ const char: ICharacterSheet = {
           text: "Anemo Auto",
           formulaText: stats => <span>60% * {Stat.printStat("finalATK", stats)}</span>,
           formula: formula.passive3.windAuto,
-          variant: stats => getTalentStatKeyVariant("normal", stats, true),
+          variant: stats => getTalentStatKeyVariant("normal", stats, "anemo"),
         }]
       }]
     },

@@ -43,9 +43,9 @@ const formula: IFormulaSheet = {
     [i, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "normal")])),
   charged: {
     hit: stats => basicDMGFormula(data.charged.hit[stats.tlvl.auto], stats, "charged"),
-    full: stats => basicDMGFormula(data.charged.full[stats.tlvl.auto], stats, "charged", true),
+    full: stats => basicDMGFormula(data.charged.full[stats.tlvl.auto], stats, "charged", "anemo"),
     hit_bonus: stats => basicDMGFormula(data.charged.hit[stats.tlvl.auto] * 0.33, stats, "charged"),
-    full_bonus: stats => basicDMGFormula(data.charged.full[stats.tlvl.auto] * 0.33, stats, "charged", true),
+    full_bonus: stats => basicDMGFormula(data.charged.full[stats.tlvl.auto] * 0.33, stats, "charged", "anemo"),
   },
   plunging: Object.fromEntries(Object.entries(data.plunging).map(([name, arr]) =>
     [name, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "plunging")])),

@@ -116,7 +116,7 @@ describe(`artifactPermutations()`, () => {
     expect(permutations).toContainEqual([{ flower: a[0], plume: b[0], sand: a[1], clock: a[2] }, { x: 7 + 11, y: 0 }]) // set 2
     expect(permutations).toContainEqual([{ flower: a[0], plume: a[0], sand: a[0], clock: a[2] }, { x: 6 + 11, y: 7 }]) // set 4
   })
-  test(`should include sub-stats and main-stats`, () => {
+  test(`should include sub-stats and mainStats`, () => {
     const a_ = { setKey: "A", mainStatKey: "other", mainStatVal: 2, substats: [{ key: "x", value: 1.2 }] }
     const artifacts = {
       flower: [a[0]],
@@ -275,8 +275,10 @@ describe('getTalentStatKey()', () => {
   })
 
   test('should override element', () => {
-    expect(getTalentStatKey("normal", stats, true)).toBe("electro_normal_avgHit")
-    expect(getTalentStatKeyVariant("normal", stats, true)).toBe("electro")
+    expect(getTalentStatKey("normal", stats, "electro")).toBe("electro_normal_avgHit")
+    expect(getTalentStatKeyVariant("normal", stats, "electro")).toBe("electro")
+    expect(getTalentStatKey("burst", stats, "physical")).toBe("physical_burst_avgHit")
+    expect(getTalentStatKeyVariant("burst", stats, "physical")).toBe("physical")
   })
   test('should do elemental', () => {
     expect(getTalentStatKey("pyro", stats)).toBe("pyro_elemental_avgHit")
@@ -295,8 +297,8 @@ describe('getTalentStatKey()', () => {
     expect(getTalentStatKeyVariant("normal", { ...stats, reactionMode: "pyro_melt", infusionAura: "cryo" })).toBe("cryo")
 
     //normal with override
-    expect(getTalentStatKey("normal", { ...stats, reactionMode: "pyro_melt" }, true)).toBe("electro_normal_avgHit")
-    expect(getTalentStatKeyVariant("normal", { ...stats, reactionMode: "pyro_melt" }, true)).toBe("electro")
+    expect(getTalentStatKey("normal", { ...stats, reactionMode: "pyro_melt" }, "electro")).toBe("electro_normal_avgHit")
+    expect(getTalentStatKeyVariant("normal", { ...stats, reactionMode: "pyro_melt" }, "electro")).toBe("electro")
 
     //skill
     expect(getTalentStatKey("skill", { ...stats, reactionMode: "pyro_melt" })).toBe("electro_skill_avgHit")
@@ -305,6 +307,10 @@ describe('getTalentStatKey()', () => {
     //elemental
     expect(getTalentStatKey("elemental", { ...stats, reactionMode: "pyro_melt" })).toBe("electro_elemental_avgHit")
     expect(getTalentStatKeyVariant("elemental", { ...stats, reactionMode: "pyro_melt" })).toBe("electro")
+
+    //overwrite
+    expect(getTalentStatKey("burst", { ...stats, reactionMode: "pyro_melt" }, "pyro")).toBe("pyro_melt_burst_avgHit")
+    expect(getTalentStatKeyVariant("burst", { ...stats, reactionMode: "pyro_melt" }, "pyro")).toBe("melt")
   })
   test('should do amp.reactions with wrong element', () => {
     //normal without infusion
@@ -316,8 +322,8 @@ describe('getTalentStatKey()', () => {
     expect(getTalentStatKeyVariant("normal", { ...stats, characterEle: "pyro", reactionMode: "pyro_melt", infusionAura: "cryo" })).toBe("cryo")
 
     //normal with override
-    expect(getTalentStatKey("normal", { ...stats, characterEle: "pyro", reactionMode: "pyro_melt" }, true)).toBe("pyro_melt_normal_avgHit")
-    expect(getTalentStatKeyVariant("normal", { ...stats, characterEle: "pyro", reactionMode: "pyro_melt" }, true)).toBe("melt")
+    expect(getTalentStatKey("normal", { ...stats, characterEle: "pyro", reactionMode: "pyro_melt" }, "pyro")).toBe("pyro_melt_normal_avgHit")
+    expect(getTalentStatKeyVariant("normal", { ...stats, characterEle: "pyro", reactionMode: "pyro_melt" }, "pyro")).toBe("melt")
 
     //skill
     expect(getTalentStatKey("skill", { ...stats, characterEle: "pyro", reactionMode: "pyro_melt" })).toBe("pyro_melt_skill_avgHit")

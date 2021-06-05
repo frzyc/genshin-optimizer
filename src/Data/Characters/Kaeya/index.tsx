@@ -181,7 +181,29 @@ const char: ICharacterSheet = {
     constellation4: {
       name: "Frozen Kiss",
       img: c4,
-      document: [{ text: stats => <span>Triggers automatically when Kaeya's HP falls below 20%: Creates a shield that absorbs damage equal to 30% of Kaeya's Max HP{DisplayPercent(30, stats, "finalHP")}. Lasts for 20s. This shield absorbs <span className="text-cryo">Cryo DMG</span> with 250% efficiency. Can only occur once every 60s.</span> }]
+      document: [{
+        text: stats => <span>Triggers automatically when Kaeya's HP falls below 20%: Creates a shield that absorbs damage equal to 30% of Kaeya's Max HP{DisplayPercent(30, stats, "finalHP")}. Lasts for 20s. This shield absorbs <span className="text-cryo">Cryo DMG</span> with 250% efficiency. Can only occur once every 60s.</span>,
+        fields: [{
+          canShow: stats => stats.constellation >= 4,
+          text: <span className="text-cryo">Shield DMG Absorption</span>,
+          formulaText: stats => <span>30% {Stat.printStat("finalHP", stats)} * (100% + {Stat.printStat("powShield_", stats)}) * (250% <span className="text-cryo">Cryo Absorption</span>)</span>,
+          formula: formula.constellation4.shieldCryo,
+          variant: "cryo"
+        }, {
+          canShow: stats => stats.constellation >= 4,
+          text: "Shield DMG Absorption",
+          formulaText: stats => <span>30% {Stat.printStat("finalHP", stats)} * (100% + {Stat.printStat("powShield_", stats)})</span>,
+          formula: formula.constellation4.shield,
+        }, {
+          canShow: stats => stats.constellation >= 4,
+          text: "Duration",
+          value: "20s",
+        }, {
+          canShow: stats => stats.constellation >= 4,
+          text: "CD",
+          value: "60s",
+        }]
+      }]
     },
     constellation5: {
       name: "Frostbiting Embrace",

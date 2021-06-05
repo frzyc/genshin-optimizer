@@ -2,6 +2,7 @@ import ArtifactDatabase from "./ArtifactDatabase";
 import CharacterDatabase from "./CharacterDatabase";
 import { changes as v2change, dmgModeToHitMode } from "./dbV2KeyMap";
 import { deepClone, loadFromLocalStorage, saveToLocalStorage } from "../Util/Util";
+import { allSlotKeys } from "../Types/consts";
 
 const CurrentDatabaseVersion = 3
 
@@ -68,13 +69,19 @@ function DatabaseInitAndVerify() {
   Object.values(deepClone(ArtifactDatabase.getArtifactDatabase())).forEach((art: any) => {
     let valid = true
 
+    // remove mainStatVal
+    if (art.mainStatVal) {
+      delete art.mainStatVal
+      valid = false
+    }
+
     //verify the linking of artifacts and characters
     if (art.location) {
       const locationChar = CharacterDatabase.get(art.location)
       if (locationChar) {
         let artInSlotId = CharacterDatabase.getArtifactIDFromSlot(art.location, art.slotKey)
         if (!artInSlotId) {//character doesnt seem to show this artifact equipped...
-          CharacterDatabase.equipArtifact(art.location, art)
+          CharacterDatabase.equipArtifactOnSlot(art.location, art.slotKey, art.id)
         } else if (artInSlotId !== art.id) {//character has a different artifact equipped, invalidate this location
           art.location = ""
           valid = false
@@ -117,8 +124,8 @@ function DatabaseInitAndVerify() {
     let valid = true;
     const { characterKey } = character
     //verify character database equipment validity
-    if (!character.equippedArtifacts) {
-      character.equippedArtifacts = {}
+    if (!character.equippedArtifacts || !Object.keys(character.equippedArtifacts).length) {
+      character.equippedArtifacts = Object.fromEntries(allSlotKeys.map(sk => [sk, ""]))
       valid = false
     }
     Object.entries(character.equippedArtifacts).forEach(([slotKey, artid]) => {

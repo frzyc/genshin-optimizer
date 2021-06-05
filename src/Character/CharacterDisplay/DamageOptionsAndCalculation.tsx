@@ -17,7 +17,7 @@ import Character from "../Character";
 import CharacterSheet from "../CharacterSheet";
 import StatInput from "../StatInput";
 const infusionVals = {
-  "": <span>No Infusion</span>,
+  "": <span>No External Infusion</span>,
   "pyro": <span >Pyro Infusion</span>,
   "cryo": <span >Cryo Infusion</span>,
 }
@@ -71,16 +71,12 @@ export function HitModeToggle({ hitMode, characterDispatch, className }) {
   </ToggleButtonGroup>
 }
 
-function CalculationDisplay({ characterSheet, build }: { characterSheet: CharacterSheet, build: ICalculatedStats }) {
-  const displayStatKeys = useMemo(() => characterSheet.getDisplayStatKeys(build), [build, characterSheet])
+function CalculationDisplay({ characterSheet, weaponSheet, build }: { characterSheet: CharacterSheet, weaponSheet: WeaponSheet, build: ICalculatedStats }) {
+  const displayStatKeys = useMemo(() => Character.getDisplayStatKeys(build, characterSheet), [build, characterSheet])
   return <div>
-    {Object.entries(displayStatKeys).map(([talentKey, fields]) => {
-      let header = ""
-      if (talentKey === "basicKeys") header = "Basic Stats"
-      else if (talentKey === "genericAvgHit") header = "Generic Optimization Values"
-      else if (talentKey === "transReactions") header = "Transformation Reaction"
-      else header = characterSheet.getTalent(talentKey)?.name ?? talentKey
-      return <Card bg="darkcontent" text={"lightfont" as any} key={talentKey} className="w-100 mb-2">
+    {Object.entries(displayStatKeys).map(([sectionKey, fields]: [string, any]) => {
+      const header = Character.getDisplayHeading(sectionKey, characterSheet, weaponSheet)
+      return <Card bg="darkcontent" text={"lightfont" as any} key={sectionKey} className="w-100 mb-2">
         <Card.Header>{header}</Card.Header>
         <Card.Body className="p-2">
           <Accordion className="mb-n2">
@@ -240,7 +236,7 @@ export default function DamageOptionsAndCalculation({ characterSheet, weaponShee
                 </Row>
               </Card.Body>
             </Card>
-            <CalculationDisplay characterSheet={characterSheet} build={build} />
+            <CalculationDisplay characterSheet={characterSheet} weaponSheet={weaponSheet} build={build} />
           </Card.Body>
         </Accordion.Collapse>
       </Card>

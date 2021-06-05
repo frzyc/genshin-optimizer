@@ -6,7 +6,7 @@ import ReactGA from 'react-ga';
 import { Link } from 'react-router-dom';
 import Assets from '../Assets/Assets';
 import CharacterDatabase from '../Database/CharacterDatabase';
-import InfoComponent from '../InfoComponent';
+import InfoComponent from '../Components/InfoComponent';
 import { allElements, CharacterKey } from '../Types/consts';
 import { useForceUpdate, usePromise } from '../Util/ReactUtil';
 import { loadFromLocalStorage, saveToLocalStorage } from '../Util/Util';
@@ -14,7 +14,8 @@ import Weapon from '../Weapon/Weapon';
 import Character from './Character';
 import CharacterCard from './CharacterCard';
 import CharacterSheet from './CharacterSheet';
-const CharacterDisplayInfo = React.lazy(() => import('./CharacterDisplayInfo'));
+import i18next from 'i18next';
+const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
 
 //lazy load the character display
 const CharacterDisplayCard = lazy(() => import('./CharacterDisplayCard'))
@@ -53,7 +54,7 @@ export default function CharacterDisplay(props) {
   }, [forceUpdate])
   const allCharacterSheets: StrictDict<CharacterKey, CharacterSheet> | {} = usePromise(CharacterSheet.getAll()) ?? {}
   const sortingFunc = {
-    level: (ck) => Character.getLevel(CharacterDatabase.get(ck).levelKey),
+    level: (ck) => Character.getLevel(CharacterDatabase.get(ck)?.levelKey),
     rarity: (ck) => allCharacterSheets[ck]?.star
   }
   useEffect(() => {
@@ -62,7 +63,12 @@ export default function CharacterDisplay(props) {
   }, [charIdToEdit, sortBy, elementalFilter, weaponFilter])
   const deleteCharacter = useCallback(async id => {
     const chararcterSheet = await CharacterSheet.get(id)
-    if (!window.confirm(`Are you sure you want to remove ${chararcterSheet?.name}?`)) return
+    let name = chararcterSheet?.name
+    //use translated string
+    if (typeof name === "object")
+      name = i18next.t(`char_${id}_gen:name`)
+
+    if (!window.confirm(`Are you sure you want to remove ${name}?`)) return
     Character.remove(id)
     if (charIdToEdit === id)
       setcharIdToEdit("")
@@ -110,9 +116,9 @@ export default function CharacterDisplay(props) {
         "You can see the details of the calculations of every number.",
         "You need to manually enable auto infusion for characters like Choungyun or Noelle.",
         "You can change character constellations in both \"Character\" tab and in \"Talents\" tab.",
-        "Modified character Stats show up in yellow."] as any}
+        "Modified character Stats show up in yellow."]}
     >
-      <CharacterDisplayInfo />
+      <InfoDisplay />
     </InfoComponent>
     {/* editor/character detail display */}
     {showEditor ? <Row className="mt-2"><Col>

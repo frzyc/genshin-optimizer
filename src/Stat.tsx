@@ -58,7 +58,8 @@ function f(options, statKey) {
   let statUnit = Stat.getStatUnit(statKey)
   let fixedUnit = Stat.fixedUnit(statKey)
   let value = stats?.[statKey]?.toFixed?.(fixedUnit) || stats?.[statKey]
-  return <span className="text-nowrap"><b>{statName}</b> <span className="text-info">{value}{statUnit}</span></span>
+  const debug = process.env.NODE_ENV === "development" ? <code className="text-warning"> {statKey}</code> : null
+  return <span className="text-nowrap"><b>{statName}</b>{debug} <span className="text-info">{value}{statUnit}</span></span>
 }
 
 export const FormulaText = {
@@ -76,7 +77,8 @@ export const FormulaText = {
 
   crystalize_eleMas_: (o) => <span>40 / 9 * {f(o, "eleMas")} / ( 1400 + {f(o, "eleMas")} ) * 100%</span>,
   crystalize_hit: (o) => <span>( 100% + {f(o, "crystalize_dmg_")} + {f(o, "crystalize_eleMas_")} ) * {f(o, "crystalize_multi")}</span>,
-}
+};
+["pyro", "cryo", "electro", "hydro"].map(ele => FormulaText[`${ele}_crystalize_hit`] = o => <span>250% * {f(o, `crystalize_hit`)}</span>)
 
 Object.entries(hitMoves).forEach(([move, moveName]) => {
   FormulaText[`final_${move}_critRate_`] = (o) => <span>Min( {f(o, "critRate_")} + {f(o, `${move}_critRate_`)} , 100% )</span>

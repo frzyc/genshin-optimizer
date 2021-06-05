@@ -3,14 +3,14 @@ import ICalculatedStats from "./ICalculatedStats";
 import IConditional, { IConditionals } from "./IConditional";
 import { IFieldDisplay } from "./IFieldDisplay";
 export interface ICharacterSheet {
-  name: string,
+  name: Displayable,
   cardImg: string,
   thumbImg: string,
   star: Rarity,
   elementKey: ElementKey
   weaponTypeKey: WeaponTypeKey
   gender: string,
-  constellationName: string,
+  constellationName: Displayable,
   titles: Array<string>,
   baseStat: IBaseStat
   specializeStat: ISpecializedStat,
@@ -33,7 +33,7 @@ export interface ICharacter {
   levelKey: string
   hitMode: string
   reactionMode: string | null
-  equippedArtifacts: object,
+  equippedArtifacts: StrictDict<SlotKey, string>,
   conditionalValues: any,
   baseStatOverrides: {},//overriding the baseStat
   weapon: {
@@ -51,12 +51,13 @@ export interface ICharacter {
   infusionAura: string
   constellation: number
   artifacts?: any[]//from flex TODO: type
+  buildSettings?: object
 }
 
 export type TalentSheet = Dict<string, TalentSheetElement>
 
 export interface TalentSheetElement {
-  name: string, //talentName
+  name: Displayable, //talentName
   img: string,
   document: Array<DocumentSection>,
   stats?: object,
@@ -80,7 +81,7 @@ export interface IFormulaSheet {
 }
 
 interface ISubFormula {
-  [name: string]: (stats: any) => FormulaItem
+  [name: string]: (stats: ICalculatedStats) => FormulaItem
 }
 
 export type FormulaItem = [(s: any) => number, string[]]

@@ -1,3 +1,5 @@
+import { ICharacter } from "../Types/character";
+import { CharacterKey } from "../Types/consts";
 import { deepClone, loadFromLocalStorage, saveToLocalStorage } from "../Util/Util";
 export default class CharacterDatabase {
   //do not instantiate.
@@ -5,12 +7,12 @@ export default class CharacterDatabase {
     if (this instanceof CharacterDatabase) throw Error('A static class cannot be instantiated.');
   }
   static initiated = false
-  static characterDatabase: { [characterKey: string]: any } = {}
+  static characterDatabase: Dict<CharacterKey, ICharacter> = {}
   static listener: any[] = []
   static charListener: any[] = []
-  static isInvalid = (char) => !char || !char.characterKey || !char.levelKey
+  static isInvalid = (char) => !char || !char.characterKey || !char.levelKey //TODO: is this useful since we use typescript?
   static getCharacterDatabase = () => deepClone(CharacterDatabase.characterDatabase);
-  static getCharacterKeyList = () => Object.keys(CharacterDatabase.characterDatabase);
+  static getCharacterKeyList = (): CharacterKey[] => Object.keys(CharacterDatabase.characterDatabase);
   static getIdList = () => Object.keys(CharacterDatabase.characterDatabase);
   static populateDatebaseFromLocalStorage = () => {
     if (CharacterDatabase.initiated && process.env.NODE_ENV !== "development") return false;
@@ -34,7 +36,7 @@ export default class CharacterDatabase {
     CharacterDatabase.emitEvent()
     CharacterDatabase.emitCharEvent(dchar.characterKey, dchar)
   }
-  static get = (characterKey, defVal = null) => CharacterDatabase.characterDatabase?.[characterKey] ?? defVal
+  static get = (characterKey: string): ICharacter | undefined => CharacterDatabase.characterDatabase[characterKey]
 
   static remove = (characterKey) => {
     delete CharacterDatabase.characterDatabase[characterKey];
@@ -44,18 +46,10 @@ export default class CharacterDatabase {
   static getArtifactIDFromSlot = (characterKey, slotKey) =>
     CharacterDatabase.get(characterKey)?.equippedArtifacts?.[slotKey] ?? null
 
-  static equipArtifact = (characterKey, art) => {
+  static equipArtifactOnSlot = (characterKey, slotKey, artid) => {
     const char = CharacterDatabase.get(characterKey)
-    if (!char || !art || !art.slotKey) return
-    if (!char.equippedArtifacts) char.equippedArtifacts = {};
-    char.equippedArtifacts[art.slotKey] = art.id;
-    CharacterDatabase.update(char)
-  }
-  static unequipArtifactOnSlot = (characterKey, slotKey) => {
-    const char = CharacterDatabase.get(characterKey)
-    if (!char || !slotKey) return
-    if (!char?.equippedArtifacts?.[slotKey]) return;
-    char.equippedArtifacts[slotKey] = "";
+    if (!char) return
+    char.equippedArtifacts[slotKey] = artid;
     CharacterDatabase.update(char)
   }
   static equipArtifactBuild = (characterKey, artifactIds) => {

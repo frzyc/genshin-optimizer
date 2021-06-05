@@ -13,12 +13,13 @@ import { Stars } from '../Components/StarDisplay';
 import { StatIconEle } from '../Components/StatIcon';
 import CharacterDatabase from '../Database/CharacterDatabase';
 import Stat from '../Stat';
+import { CharacterKey } from '../Types/consts';
 import { useForceUpdate, usePromise } from '../Util/ReactUtil';
 import Weapon from '../Weapon/Weapon';
 import WeaponSheet from '../Weapon/WeaponSheet';
 import Character from './Character';
 import CharacterSheet from './CharacterSheet';
-type CharacterCardProps = { characterKey: string, onEdit?: (any) => void, onDelete?: (any) => void, cardClassName: string, header?: JSX.Element, bg?: string, footer?: boolean }
+type CharacterCardProps = { characterKey: CharacterKey | "", onEdit?: (any) => void, onDelete?: (any) => void, cardClassName: string, header?: JSX.Element, bg?: string, footer?: boolean }
 export default function CharacterCard({ characterKey, onEdit, onDelete, cardClassName = "", bg = "", header, footer = false }: CharacterCardProps) {
   const [, forceUpdate] = useForceUpdate()
   useEffect(() => {
@@ -28,11 +29,11 @@ export default function CharacterCard({ characterKey, onEdit, onDelete, cardClas
   const artifactSheets = usePromise(ArtifactSheet.getAll())
   const character = CharacterDatabase.get(characterKey)
   const characterSheet = usePromise(CharacterSheet.get(characterKey))
-  const weaponSheet = usePromise(WeaponSheet.get(character?.weapon?.key))
+  const weaponSheet = usePromise(character && WeaponSheet.get(character.weapon.key))
   const stats = useMemo(() => character && characterSheet && weaponSheet && artifactSheets && Character.calculateBuild(character, characterSheet, weaponSheet, artifactSheets), [character, characterSheet, weaponSheet, artifactSheets])
   if (!character || !characterSheet || !weaponSheet || !stats) return null;
 
-  const { weapon = {}, constellation } = character
+  const { weapon, constellation } = character
   const name = characterSheet.name
   const elementKey = characterSheet.elementKey
   const weaponTypeKey = characterSheet.weaponTypeKey
