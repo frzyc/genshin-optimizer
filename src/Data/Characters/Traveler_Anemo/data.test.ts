@@ -53,7 +53,7 @@ describe("aznn8ter#3651 Traveler Anemo", () => {
           expect(formula.normal[3](stats)[0](stats)).toApproximate(654)
           expect(formula.normal[4](stats)[0](stats)).toApproximate(783)
           expect(formula.charged[0](stats)[0](stats)).toApproximate(618)
-          //expect(formula.charged[1](stats)[0](stats)).toApproximate(799) //dmg from female mc, calc using male mc
+          expect(formula.charged[2](stats)[0](stats)).toApproximate(799)
           expect(formula.skill.initial_dmg(stats)[0](stats)).toApproximate(285)
           expect(formula.skill.initial_max(stats)[0](stats)).toApproximate(399)
           expect(formula.skill.storm_dmg(stats)[0](stats)).toApproximate(4183)
