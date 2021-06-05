@@ -151,7 +151,7 @@ const char: ICharacterSheet = {
           text: "Geo Auto",
           formulaText: stats => <span>60% * {Stat.printStat("finalATK", stats)}</span>,
           formula: formula.passive2.geoAuto,
-          variant: stats => getTalentStatKeyVariant("normal", stats, true),
+          variant: stats => getTalentStatKeyVariant("normal", stats),
         }]
       }]
     },

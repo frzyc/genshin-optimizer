@@ -51,7 +51,7 @@ const formula: IFormulaSheet = {
   burst: Object.fromEntries(Object.entries(data.burst).map(([name, arr]) =>
     [name, stats => basicDMGFormula(arr[stats.tlvl.burst], stats, "burst")])),//not optimizationTarget, dont need to precompute
   passive2: {
-    geoAuto: stats => basicDMGFormula(60, stats, "normal", true),
+    geoAuto: stats => basicDMGFormula(60, stats, "normal", "geo"),
   }
 }
 export default formula
