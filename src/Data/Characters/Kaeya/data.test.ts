@@ -46,7 +46,6 @@ describe("Testing Kaeya's Formulas (Derpy#2132)", () => {
         expect(formula.burst.dmg(stats)[0](stats)).toApproximate(353)
 
         expect(formula.passive1.dmg(stats)[0](stats)).toApproximate(95)
-        // expect(stats.superconduct_hit).toApproximate(871)//definitely wrong, should be 384
       });
       test('melt', () => {
         setupStats.reactionMode = "cryo_melt"

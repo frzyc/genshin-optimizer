@@ -47,10 +47,6 @@ describe("Testing Lisa's Formulas (Derpy#2132)", () => {
 
         expect(formula.burst.summon(stats)[0](stats)).toApproximate(55)
         expect(formula.burst.dmg(stats)[0](stats)).toApproximate(216)
-
-        expect(stats.overloaded_hit).toApproximate(1608)
-        expect(stats.electrocharged_hit).toApproximate(964)
-        expect(stats.superconduct_hit).toApproximate(402)
       })
       test("hit + Q", () => {
         setupStats.enemyDEFRed_ += 15

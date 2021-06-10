@@ -33,10 +33,6 @@ describe("Testing Jean's Formulas (sohum#5921)", () => {
       expect(formula.burst.regen(stats)[0](stats)).toApproximate(433)
       expect(formula.passive1.dmg(stats)[0](stats)).toApproximate(156)
     })
-    test("reactions", () => {
-      const stats = computeAllStats(setupStats)
-      expect(stats.cryo_swirl_hit).toApproximate(423)
-    })
     describe("no crit", () => {
       beforeEach(() => setupStats.hitMode = "hit")
 
@@ -115,27 +111,6 @@ describe("Testing Jean's Formulas (Saber#9529)", () => {
       expect(formula.burst.regen(stats)[0](stats)).toApproximate(1338)
 
       expect(formula.passive1.dmg(stats)[0](stats)).toApproximate(443)
-    })
-
-    describe("swirl", () => {
-      test("reaction", () => {
-        const stats = computeAllStats(setupStats)
-        expect(stats.pyro_swirl_hit).toApproximate(881)
-        expect(stats.cryo_swirl_hit).toApproximate(881)
-        expect(stats.electro_swirl_hit).toApproximate(881)
-        expect(stats.hydro_swirl_hit).toApproximate(881)
-      })
-    })
-    describe("swirl with 51EM", () => {
-      beforeEach(() => setupStats.eleMas = 51)
-
-      test("reaction", () => {
-        const stats = computeAllStats(setupStats)
-        expect(stats.pyro_swirl_hit).toApproximate(802)
-        expect(stats.cryo_swirl_hit).toApproximate(802)
-        expect(stats.electro_swirl_hit).toApproximate(802)
-        expect(stats.hydro_swirl_hit).toApproximate(802)
-      })
     })
 
     describe("no crit", () => {
@@ -450,10 +425,6 @@ describe("Testing Jean's Formulas (sohum#5921)", () => {
       const stats = computeAllStats(setupStats)
       expect(formula.burst.regen(stats)[0](stats)).toApproximate(433)
       expect(formula.passive1.dmg(stats)[0](stats)).toApproximate(156)
-    })
-    test("reactions", () => {
-      const stats = computeAllStats(setupStats)
-      expect(stats.cryo_swirl_hit).toApproximate(423)
     })
     describe("no crit", () => {
       beforeEach(() => setupStats.hitMode = "hit")

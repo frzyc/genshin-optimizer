@@ -14,7 +14,7 @@ describe("Testing Tartaglia's Formulas (Derpy#2132)", () => {
       weaponType: "polearm", weaponATK: 429, physical_dmg_: 28.4, weapon: { refineIndex: 1 - 1 },//Crescent Pike Lvl. 70 (Refinement 1)
       atk_: 18,//specialized
 
-      enemyLevel: 85, physical_enemyRes_: 70, // Ruin Guard 
+      enemyLevel: 85, physical_enemyRes_: 70, // Ruin Guard
       tlvl: Object.freeze({ auto: 4 - 1, skill: 4 - 1, burst: 4 - 1 }),
       constellation: 0,
     })
@@ -51,8 +51,6 @@ describe("Testing Tartaglia's Formulas (Derpy#2132)", () => {
           expect(formula.burst.dot(stats)[0](stats)).toApproximate(1981)
           //crecent pike
           expect(cformula.dmg(stats)[0](stats)).toApproximate(56)
-
-          expect(stats.superconduct_hit).toApproximate(407)
         })
         test("cryo_melt", () => {
           setupStats.reactionMode = "cryo_melt"

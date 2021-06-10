@@ -15,7 +15,7 @@ describe("aznn8ter#3651 Traveler Anemo", () => {
       weaponType: "sword", weaponATK: 454,
 
       atk_: 24, // Specialize stat
-      enerRech_ : 16 + 61.3, // Sac sword 90 + C2
+      enerRech_: 16 + 61.3, // Sac sword 90 + C2
       physical_enemyRes_: 10,
       tlvl: Object.freeze({ auto: 4 - 1, skill: 9 - 1, burst: 9 - 1 }),
     })
@@ -81,18 +81,6 @@ describe("aznn8ter#3651 Traveler Anemo", () => {
           expect(formula.burst.dmg(stats)[0](stats)).toApproximate(1951)
         })
       })
-    })
-  })
-
-  describe("swirl", () => {
-    beforeEach(() => {
-      setupStats.enemyLevel = 85
-      applyArtifacts(setupStats, [{ eleMas: 0, swirl_dmg_: 60, pyro_enemyRes_: -40 }]) // 4VV
-    })
-
-    test("swirl", () => {
-      const stats = computeAllStats(setupStats)
-      expect(stats.pyro_swirl_hit).toApproximate(1327)
     })
   })
 })

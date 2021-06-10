@@ -114,8 +114,6 @@ describe("Testing Albedo's Formulas (The_Lolicon#4257)", () => {
         expect(formula.skill.blossom50(stats)[0](stats)).toApproximate(3300)
         expect(formula.burst.dmg(stats)[0](stats)).toApproximate(4195)
         expect(formula.burst.blossom(stats)[0](stats)).toApproximate(815)
-
-        expect(stats.shattered_hit).toApproximate(534)
       })
     })
 

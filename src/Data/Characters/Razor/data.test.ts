@@ -50,11 +50,6 @@ describe("Testing Razor's Formulas (Mabmab#6492)", () => {
         expect(formula.burst[2](stats)[0](stats)).toApproximate(700)
         expect(formula.burst[3](stats)[0](stats)).toApproximate(922)
 
-        //reactions
-        expect(stats.overloaded_hit).toApproximate(1961)
-        expect(stats.electrocharged_hit).toApproximate(1177)
-        expect(stats.shattered_hit).toApproximate(490)
-
         //prototype Archiac R1 dmg
         expect(2.4 * stats.physical_elemental_hit).toApproximate(1650)
       })

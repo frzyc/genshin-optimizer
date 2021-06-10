@@ -45,12 +45,6 @@ describe("Testing Xinyan's Formulas (Stain#9093)", () => {
 
         // expect(formula.burst.dmg(stats)[0](stats)).toApproximate() C2 cant not crit
         expect(formula.burst.dot(stats)[0](stats)).toApproximate(721)
-
-
-        //reactions
-        expect(stats.overloaded_hit).toApproximate(2741)
-        expect(stats.shattered_hit).toApproximate(685)
-
       })
 
       test("vaorize", () => {
@@ -100,11 +94,6 @@ describe("Testing Xinyan's Formulas (Stain#9093)", () => {
 
         expect(formula.burst.dmg(stats)[0](stats)).toApproximate(7151)
         expect(formula.burst.dot(stats)[0](stats)).toApproximate(1373)
-
-
-        //reactions
-        expect(stats.overloaded_hit).toApproximate(2741)
-        expect(stats.shattered_hit).toApproximate(685)
       })
 
       test("shielded hit + infusion", () => {

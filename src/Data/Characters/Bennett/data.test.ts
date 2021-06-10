@@ -49,8 +49,6 @@ describe("Testing Bennett's Formulas (Mabmab#6492)", () => {
         expect(formula.skill.lvl2hit1(stats)[0](stats)).toApproximate(1550)
         expect(formula.skill.lvl2hit2(stats)[0](stats)).toApproximate(1691)
         expect(formula.skill.explosion(stats)[0](stats)).toApproximate(2326)
-
-        expect(stats.overloaded_hit).toApproximate(1870)
       })
 
     })

@@ -100,7 +100,7 @@ const Formulas = {
   // Reactions
   transformative_level_multi: (s, c) => transformativeReactionLevelMultipliers[c.characterLevel],
   amplificative_dmg_: (s) => 2500 / 9 * s.eleMas / (1400 + s.eleMas),
-  transformative_dmg_: (s) => 6000 / 9 * s.eleMas / (1400 + s.eleMas),
+  transformative_dmg_: (s) => 1600 * s.eleMas / (2000 + s.eleMas),
 
   crystalize_eleMas_: (s) => 4000 / 9 * s.eleMas / (1400 + s.eleMas),
   crystalize_multi: (s, c) => crystalizeLevelMultipliers[c.characterLevel],

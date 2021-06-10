@@ -100,8 +100,6 @@ describe("Testing Fischl's Formulas (sohum#5921)", () => {
           expect(formula.skill.oz(stats)[0](stats)).toApproximate(1372)
           expect(formula.burst.dmg(stats)[0](stats)).toApproximate(3215)
           expect(formula.burst.addDmg(stats)[0](stats)).toApproximate(2018)
-
-          expect(stats.electrocharged_hit).toApproximate(659)
         })
       })
 

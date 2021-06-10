@@ -44,12 +44,6 @@ describe("Testing Xinyan's Formulas (⛧ Sin ⛧#0663)", () => {
         expect(formula.skill.dmg(stats)[0](stats)).toApproximate(1496)
 
         expect(formula.burst.dot(stats)[0](stats)).toApproximate(333)
-
-
-        //reactions
-        // expect(stats.overloaded_hit).toApproximate(1496) //invalid?
-        expect(stats.shattered_hit).toApproximate(657)
-
       })
 
     })

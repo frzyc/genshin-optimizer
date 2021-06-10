@@ -34,16 +34,11 @@ describe("Testing Mona's Formulas", () => {
       expect(stats.finalATK).toApproximate(668 + 469)
       expect(stats.finalDEF).toApproximate(563 + 171)
       expect(stats.eleMas).toApproximate(105)
-      expect(stats.transformative_dmg_).toApproximate(46.4)
       expect(stats.amplificative_dmg_).toApproximate(19.4)
       expect(stats.critRate_).toApproximate(26.4)
       expect(stats.critDMG_).toApproximate(107.7)
       expect(stats.enerRech_).toApproximate(167.0)
       expect(stats.hydro_dmg_).toApproximate(79.2)
-    })
-    test("reactions", () => {
-      const stats = computeAllStats(setupStats)
-      expect(stats.electrocharged_hit).toApproximate(1388)
     })
 
     describe('no crit', () => {

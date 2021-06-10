@@ -14,7 +14,7 @@ describe("Testing Venti's Formulas (Derpy#2132)", () => {
       weaponType: "bow", weaponATK: 449, critRate_: 5 + 25.1, weapon: { refineIndex: 1 - 1 },//The Viridescent Hunt Lvl. 90 (Refinement 1)
       enerRech: 24,//specialized
 
-      enemyLevel: 85, physical_enemyRes_: 70, // Ruin Guard 
+      enemyLevel: 85, physical_enemyRes_: 70, // Ruin Guard
       tlvl: Object.freeze({ auto: 4 - 1, skill: 7 - 1, burst: 7 - 1 }),
       constellation: 1,
     })
@@ -54,17 +54,6 @@ describe("Testing Venti's Formulas (Derpy#2132)", () => {
         expect(cformula.dmg(stats)[0](stats)).toApproximate(58)
 
 
-      })
-      test('swirl 4VV', () => {
-        setupStats.pyro_enemyRes_ -= 40
-        setupStats.cryo_enemyRes_ -= 40
-        setupStats.electro_enemyRes_ -= 40
-        setupStats.hydro_enemyRes_ -= 40
-        const stats = computeAllStats(setupStats)
-        expect(stats.pyro_swirl_hit).toApproximate(982)
-        expect(stats.cryo_swirl_hit).toApproximate(982)
-        expect(stats.electro_swirl_hit).toApproximate(982)
-        expect(stats.hydro_swirl_hit).toApproximate(982)
       })
 
       test('C2', () => {

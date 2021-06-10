@@ -47,8 +47,6 @@ describe("Testing Diona's Formulas (⛧ Sin ⛧#0663)", () => {
 
         expect(formula.burst.dmg(stats)[0](stats)).toApproximate(901)
         expect(formula.burst.continuousDmg(stats)[0](stats)).toApproximate(593)
-
-        expect(stats.superconduct_hit).toApproximate(525)
       })
       test('4p Maiden', () => {
         setupStats.incHeal_ += 20

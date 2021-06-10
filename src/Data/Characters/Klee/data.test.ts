@@ -38,10 +38,6 @@ describe("Testing Klee's Formulas", () => {
       expect(stats.critDMG_).toApproximate(55.6)
       expect(stats.enerRech_).toApproximate(159.5)
     })
-    test("reactions", () => {
-      const stats = computeAllStats(setupStats)
-      expect(stats.overloaded_hit).toApproximate(2986, NaN) // TODO: Check the overloaded calculation
-    })
 
     describe("no crit", () => {
       beforeEach(() => setupStats.hitMode = "hit")

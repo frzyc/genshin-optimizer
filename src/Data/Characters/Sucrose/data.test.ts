@@ -74,24 +74,7 @@ describe("Testing Sucrose's Formulas (firedragon2508#8862)", () => {
     })
   })
 
-  describe("swirl", () => {
-    beforeEach(() => {
-      setupStats.enemyLevel = 81
-      applyArtifacts(setupStats, [{ eleMas: 234, swirl_dmg_: 60, pyro_enemyRes_: -40 }]) // 4VV
-    })
-
-    test("swirl", () => {
-      const stats = computeAllStats(setupStats)
-      expect(stats.pyro_swirl_hit).toApproximate(1666)
-    })
-  })
-
   describe("without artifacts", () => {
-    test("reaction", () => {
-      const stats = computeAllStats(setupStats)
-      expect(stats.pyro_swirl_hit).toApproximate(511)
-    })
-
     describe("no crit", () => {
       beforeEach(() => setupStats.hitMode = "hit")
 

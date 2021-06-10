@@ -43,7 +43,6 @@ describe("Testing Yanfei's Formulas (Stain#9093)", () => {
         expect(formula.burst.dmg(stats)[0](stats)).toApproximate(2700);
 
         expect(formula.passive2.dmg(stats)[0](stats)).toApproximate(1026);
-        expect(stats.overloaded_hit).toApproximate(2913)
       });
       test('vaporize', () => {
         setupStats.reactionMode = "pyro_vaporize"
@@ -109,7 +108,6 @@ describe("Testing Yanfei's Formulas (Stain#9093)", () => {
         expect(formula.burst.dmg(stats)[0](stats)).toApproximate(6486);
 
         expect(formula.passive2.dmg(stats)[0](stats)).toApproximate(2464);
-        expect(stats.overloaded_hit).toApproximate(2913)
       });
       test('vaporize', () => {
         setupStats.reactionMode = "pyro_vaporize"
