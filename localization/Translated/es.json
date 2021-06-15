@@ -178,5 +178,57 @@
         "appVersion": "$t(pageTitle) Versión: {{version}}",
         "underConstruction": "En construcción",
         "error": "Error"
+    },
+    "char_eula": {
+        "skillC": {
+            "name": "corazón impasible",
+            "consumed": "corazón impasible Consumido",
+            "grimheart": {
+                "name": "Cargas de corazón impasible",
+                "int": "Aumenta la RES a interrupción"
+            }
+        },
+        "burstC": {
+            "name": "espada luminosa",
+            "start5": "Comienza con 5 cargas",
+            "addStacks": "probabilidad del 50% de obtener cargas adicionales"
+        },
+        "c1C": {
+            "name": "Consume cargas de <strong>corazón impasible</strong>",
+            "durationStack": "6s + 6s por carga, hasta un máximo de 18s"
+        },
+        "passive1": "Daño de fragmento de espada luminosa"
+    },
+    "char_noelle": {
+        "p4cd": "24s, -1s Cada 4 golpes",
+        "c1chance": "(100% estando bajo los efectos de <strong>Hora de Limpiar</strong> y <strong>Guardiana del corazón</strong>)",
+        "c6duration": "15s, +1s por enemigo derrotado, hasta un máximo de 10s"
+    },
+    "char_venti": {
+        "addAimed": "Daño Adicional de Disparo Preciso",
+        "addFullAimed": "Daño Adicional de Disparo Preciso (carga completa)",
+        "upcurrentDuration": "Duración de corrientes de viento ascendentes",
+        "regenEner": "Regenera 15 pts. de Energía a Venti cuando el efecto termina",
+        "fullBurstDMG": {
+            "text": "<0><0>Daño total de Habilidad Definitiva</0><1>Esto calcula el daño total de la Habilidad Definitiva, incluyendo torbellino. Este cálculo asume:</1><2><0>20 ticks de <1>daño de la Definitiva</1></0><1>15 ticks de <1>daño de Absorción</1></1><2>7 ticks de <1>Torbellino</1>, para un enemigo, O,</2><3>14 ticks de <1>Torbellino</1>, para múltiples enemigos, que se causan Torbellinos entre ellos.</3></2></0>",
+            "dmg": "<0>Daño Total (<1>{{swirlTicks}} ticks de Torbellino</1>)</0>"
+        },
+        "c6": "Objetivos que reciben daño de <strong>Gran Oda del Viento</strong>",
+        "c4": "Venti recoge un Orbe o Partícula Elemental",
+        "q": "Restaura 15 pts. de energía a todos los personajes <1>{{elementKey}}</1> .",
+        "c2": {
+            "hit": "Golpe del enemigo",
+            "launched": "Enemigo lanzado"
+        }
+    },
+    "sheet": {
+        "dmg": "Daño",
+        "hits": "({{hits}} Hits)",
+        "lessPercentHP": "< {{percent}}% Vida",
+        "stack": "{{count}} Carga",
+        "stack_plural": "{{count}} Cargas"
+    },
+    "weapon_SongOfBrokenPines": {
+        "name": "Gran concierto milenario: Canción de la revelación"
     }
 }

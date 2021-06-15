@@ -7,12 +7,12 @@
                 "maxRarity": "Raridade Máxima <1></1>"
             },
             "substat": {
-                "substatFormat": "Atributo Secundário {{value}}",
-                "noSubstat": "Sem Atributos Secundários",
-                "selectSub": "Selecione um Atributo Secundário",
+                "substatFormat": "Subatributo {{value}}",
+                "noSubstat": "Sem Subatributos",
+                "selectSub": "Selecione um Subatributo",
                 "error": {
                     "noCalc": "Não foi possível calcular o sorteio dos atributos.",
-                    "noOverRoll": "O atributo secundário não pode ser sorteado mais que {{value}} vezes."
+                    "noOverRoll": "O subatributo não pode ser sorteado mais que {{value}} vezes."
                 },
                 "noRoll": "Sem Sorteios",
                 "RollCount": "{{count}} Sorteio",
@@ -24,10 +24,10 @@
             "level": "Nível",
             "unknownPieceName": "Nome da Peça Desconhecido",
             "mainSelect": "Selecione o Atributo Principal",
-            "curSubEff": "Eficiência Atual do Atributo Secundário",
-            "curSubEffDesc": "A cada 4 aumentos no nível no artefato, você ganha um sorteio no atributo secundário. <strong>Eficiência do Atributo Secundário</strong> calcula como uma porcentagem o quão alto o atributo secundário foi sorteado.",
-            "maxSubEff": "Eficiência Máxima do Atributo Secundário",
-            "maxSubEffDesc": "A <strong>Eficiência Máxima do Atributo Secundário</strong> de um artefato calcula a eficiência máxima nos aumentos de nível restantes.",
+            "curSubEff": "Eficiência Atual do Subatributo",
+            "curSubEffDesc": "A cada 4 aumentos no nível no artefato, você ganha um sorteio no subatributo. <strong>Eficiência do Subatributo</strong> calcula como uma porcentagem o quão alto o subatributo foi sorteado.",
+            "maxSubEff": "Eficiência Máxima do Subatributo",
+            "maxSubEffDesc": "A <strong>Eficiência Máxima do Subatributo</strong> de um artefato calcula a eficiência máxima nos aumentos de nível restantes.",
             "preview": "Visualização do Artefato",
             "dupArt": "Artefato duplicado detectado.",
             "upArt": "Artefato atualizado detectado.",
@@ -51,13 +51,13 @@
             "lockArtifacts": "Bloquear Artefatos",
             "unlockArtifacts": "Desbloquear Artefatos"
         },
-        "filterLevelFormat": "Nível <1>Mín</1>/<3>Máx</3> (Inclusivo)",
+        "filterLevelFormat": "Nível <1>Mín</1>/<3>Máx</3>",
         "buttonHint": "Nota: Os botões acima só se aplicam a <1>artefatos filtrados</1>",
         "tipsOfTheDay": [
             "A eficiência máxima de um artefato de 4 estrelas é de cerca de 60%.",
             "A eficiência máxima de um artefato geralmente diminuirá conforme você aumenta o nível. É perfeitamente normal!",
-            "Atributos secundários com \"1\"s são os mais difíceis de digitalizar em capturas de tela.",
-            "Se todos os seus sorteios(6) foram para um único atributo secundário, ele será roxo!",
+            "Subatributos com \"1\"s são os mais difíceis de digitalizar em capturas de tela.",
+            "Se todos os seus sorteios(6) foram para um único subatributo, ele será roxo!",
             "Clique em \"Detalhes\" quando estiver atualizando seus artefatos no jogo para digitalizar conforme você o aumenta o nível.",
             "Agora você pode fazer upload de capturas de tela de vários artefatos para serem digitalizados!"
         ],
@@ -72,9 +72,9 @@
         },
         "info": {
             "title": "Edição de Artefato/Guia de Gerenciamento",
-            "section1": "<0>Sorteio dos atributos secundários</0><1>O <1>número de sorteios</1> que um atributo secundário possui é mostrado no seu lado esquerdo. À medida que o número aumenta, o atributo secundário fica mais colorido:<3></3>.</1><2>Eficiência do Atributo Secundário</2><3>A eficiência de um atributo secundário é uma porcentagem do valor atual sobre o valor potencial de um 5<1></1>. Na imagem o valor máximo de rolagem de DANO CRIT é 7,8%. Em eficiência: <3>5,8/7,8 = 69,2%.</3></3><4>Eficiência Atual vs. Máxima Eficiência Potencial</4><5>Quando um 5<1></1> tiver 9(4+5) sorteios no total, com cada um tendo o valor mais alto, isso é definido como um artefato 100% eficiente. No entanto, a maioria dos artefatos não tem essa sorte. A <3>eficiência atual</3> de um artefato é uma porcentagem sobre esse artefato 100%. A <5>eficiência máxima</5> é a eficiência máxima possível que um artefato pode alcançar, se os sorteios restantes dos aumentos de nível forem o valor mais alto.</5><6>Bloqueando um artefato</6><7>Ao bloquear um artefato <1></1>, este artefato não será usado pelo gerador de builds para otimização. Um artefato equipado é bloqueado por padrão.</7>",
-            "section2": "<0>Editor de Artefatos</0><1>Um editor de artefato completo, que pode aceitar qualquer artefato de 3<1></1> até 5<3></3>. Quando um atributo secundário é inserido, ele pode calcular os valores de sorteio exatos e a partir dele, a eficiência. Ele também garantirá que você tenha o número correto de sorteios no artefato de acordo com o nível, junto com outras métricas de validação.</1><2>Digitalizar capturas de tela</2><3>A entrada de dados manual não é sua preferência? Você pode digitalizar seus artefatos com capturas de tela! No Editor de Artefatos, clique no botão <1>Mostre-me como!</1> para aprender mais.</3><4>Detecção de artefatos Duplicados/Atualizados</4><5>Você sabia que o GO pode detectar se você está adicionando um artefato <1>duplicado</1> que já existe? Ele também pode detectar se o artefato atual no editor é uma <3>atualização</3> de um artefato existente também. Assim que um artefato duplicado/atualizado é detectado, uma visualização permitirá que você compare os dois artefatos em questão (veja a imagem).</5>",
-            "section3": "<0>Inventário de Artefatos</0><p>Todos os seus artefatos que você adicionou ao GO são exibidos aqui. Os filtros permitem que você refine ainda mais sua visão de seus artefatos. </p><2>Exemplo: Encontrando Artefatos para Experiência</2><p>Ao utilizar o filtro e os cálculos de eficiência, você pode encontrar rapidamente um candidato para usar como experiência para outros artefatos.</p><4>Neste exemplo, os filtros são definidos desta forma: </4><5><0>Artefatos desbloqueados no inventário.</0><1>Com atributos secundários: ATK puro e DEF pura.</1><2>Ordenado por Eficiência Máxima Crescente.</2></5><6>Uma vez que os artefatos são utilizados como experiência, clique em <1>Excluir Artefatos</1> para excluir os artefatos filtrados atualmente.</6>"
+            "section1": "<0>Sorteio dos subatributos</0><1>O <1>número de sorteios</1> que um subatributo possui é mostrado no seu lado esquerdo. À medida que o número aumenta, o subatributo fica mais colorido:<3></3>.</1><2>Eficiência do Subatributo</2><3>A eficiência de um subatributo é uma porcentagem do valor atual sobre o valor potencial de um 5<1></1>. Na imagem o valor máximo de rolagem de DANO CRIT é 7,8%. Em eficiência: <3>5,8/7,8 = 69,2%.</3></3><4>Eficiência Atual vs. Máxima Eficiência Potencial</4><5>Quando um 5<1></1> tiver 9(4+5) sorteios no total, com cada um tendo o valor mais alto, isso é definido como um artefato 100% eficiente. No entanto, a maioria dos artefatos não tem essa sorte. A <3>eficiência atual</3> de um artefato é uma porcentagem sobre esse artefato 100%. A <5>eficiência máxima</5> é a eficiência máxima possível que um artefato pode alcançar, se os sorteios restantes dos aumentos de nível forem o valor mais alto.</5><6>Bloqueando um artefato</6><7>Ao bloquear um artefato <1></1>, este artefato não será usado pelo gerador de builds para otimização. Um artefato equipado é bloqueado por padrão.</7>",
+            "section2": "<0>Editor de Artefatos</0><1>Um editor de artefato completo, que pode aceitar qualquer artefato de 3<1></1> até 5<3></3>. Quando um subatributo é inserido, ele pode calcular os valores de sorteio exatos e a partir dele, a eficiência. Ele também garantirá que você tenha o número correto de sorteios no artefato de acordo com o nível, junto com outras métricas de validação.</1><2>Digitalizar capturas de tela</2><3>A entrada de dados manual não é sua preferência? Você pode digitalizar seus artefatos com capturas de tela! No Editor de Artefatos, clique no botão <1>Mostre-me como!</1> para aprender mais.</3><4>Detecção de artefatos Duplicados/Atualizados</4><5>Você sabia que o GO pode detectar se você está adicionando um artefato <1>duplicado</1> que já existe? Ele também pode detectar se o artefato atual no editor é uma <3>atualização</3> de um artefato existente também. Assim que um artefato duplicado/atualizado é detectado, uma visualização permitirá que você compare os dois artefatos em questão (veja a imagem).</5>",
+            "section3": "<0>Inventário de Artefatos</0><p>Todos os seus artefatos que você adicionou ao GO são exibidos aqui. Os filtros permitem que você refine ainda mais sua visão de seus artefatos. </p><2>Exemplo: Encontrando Artefatos para Experiência</2><p>Ao utilizar o filtro e os cálculos de eficiência, você pode encontrar rapidamente um candidato para usar como experiência para outros artefatos.</p><4>Neste exemplo, os filtros são definidos desta forma: </4><5><0>Artefatos desbloqueados no inventário.</0><1>Com subatributos: ATK puro e DEF pura.</1><2>Ordenado por Eficiência Máxima Crescente.</2></5><6>Uma vez que os artefatos são utilizados como experiência, clique em <1>Excluir Artefatos</1> para excluir os artefatos filtrados atualmente.</6>"
         },
         "locationDisplay": "Localização: {{value}}",
         "lockDisplay": "Bloqueado: {{value}}",
@@ -86,8 +86,8 @@
         "sortMap": {
             "quality": "Qualidade",
             "level": "Nível",
-            "efficiency": "Efic. Atual do Atributo Secundário",
-            "mefficiency": "Efic. Máxima do Atributo Secundário"
+            "efficiency": "Efic. Atual do Subatributo",
+            "mefficiency": "Efic. Máxima do Subatributo"
         },
         "showingNum": "Mostrando <1>{{count}}</1> de {{value}} Artefato",
         "showingNum_plural": "Mostrando <1>{{count}}</1> de {{value}} Artefatos"
@@ -95,7 +95,7 @@
     "home": {
         "welcome": "Bem-vindo ao Genshin Optimizer!",
         "paragraphIntro": "<0>O que é o Genshin Optimizer?</0><1>Genshin Optimizer é uma ferramenta para o jogo gacha de rpg de ação <1><strong>Genshin Impact</strong></1>. É destinado a ajudá-lo a lidar com os aspectos mais complexos do jogo: Artefatos. Artefatos são elementos fortemente baseados em RNG que contribuem diretamente para a eficácia de seus personagens no jogo. Esta ferramenta visa aliviar um pouco da complexidade associada à eficiência do artefato, junto com qual artefato escolher em seu personagem para maximizar seus atributos.</1><p>No entanto, esta ferramenta pode fazer muito mais. Ela permitirá cálculos de todas as habilidades passivas dos artefatos, armas, buffs das equipes e calcular como essas estatísticas afetarão seu personagem em TEMPO REAL.</p>",
-        "paragraphArtifactEditor": "<0>Editor de artefatos</0><1><0>Editor de artefatos completo.</0><1>Adicione artefatos digitalizando uma captura de tela.</1><2>Calcule automaticamente o valor exato sorteado em cada artefato.</2><3>Calcule a eficiência dos atributos secundários usando os cálculos de sorteio. Use um único número para determinar se deve manter ou descartar um artefato!</3><4>Equipe/desequipe/troque artefatos entre seus personagens, experimente diferentes builds.</4></1>",
+        "paragraphArtifactEditor": "<0>Editor de artefatos</0><1><0>Editor de artefatos completo.</0><1>Adicione artefatos digitalizando uma captura de tela.</1><2>Calcule automaticamente o valor exato sorteado em cada artefato.</2><3>Calcule a eficiência dos subatributos usando os cálculos de sorteio. Use um único número para determinar se deve manter ou descartar um artefato!</3><4>Equipe/desequipe/troque artefatos entre seus personagens, experimente diferentes builds.</4></1>",
         "paragraphCharacterEditor": "<0>Editor de Personagens</0><1><0>Editor de personagens com recursos completos.</0><1>Preencha automaticamente os atributos do personagem em cada nível/ascensão.</1><2>Atributos totalmente editáveis ​​para personalização.</2><3>Calcule os atributos atuais com base nas armas/artefatos.</3><4>Armas completas, com nível/atributos de ascensão</4><5>Adicione habilidades passivas, p.ex. Os bônus de ataque e defesa acumulados para o seu personagem da Sombra Branca.</5><6>Aplique habilidades passivas dos conjuntos de artefatos também!</6><7>Em desenvolvimento, cálculos de danos por talentos</7><8>Em desenvolvimento, Atualize os atributos/talentos dos personagens com base nas constelações.</8></1>",
         "paragraphCharacterDamageCalculations": "<0>Cálculos de Dano dos Personagens</0><1><0><1><0>Trabalho em Progresso</0></1>Todos os detalhes para cada talento dos personagens.</0><1>Todos os números devem refletir o dano real no jogo.</1><2>Habilidades passivas e modificações de cada constelação contabilizada.</2><3>Mostra os cálculos para todos os números, junto com as fórmulas. Eu mostro meu trabalho.</3><4>Editor de inimigos com campos de nível/resistência para personalizar os cálculos de dano.</4><5>Conta com infusão elemental para ataques normais/carregados/em queda.</5><6>Cálculos de dano em tempo real.</6></1>",
         "paragraphBuildGenerator": "<0>Gerador de Builds</0><1><0>O gerador cria builds para personagens específicos usando os artefatos adicionados pelo usuário.</0><1>Limite as Builds por conjuntos de artefatos, atributos principais...</1><2>Classifique as builds geradas por um atributo específico para maximização.</2><3>O gerador de builds não utilizará artefatos já equipados em outro personagem.</3><4>Compare a build gerada com os artefatos atualmente no personagem.</4><5>Use habilidades passivas dos conjuntos de artefatos, p.ex. Bônus de dano das 4 peças do conjunto Gladiador, no cálculo de dano da build.</5></1>",
@@ -178,5 +178,57 @@
         "appVersion": "$t(pageTitle) Versão: {{version}}",
         "underConstruction": "Em Construção",
         "error": "Erro"
+    },
+    "char_eula": {
+        "skillC": {
+            "name": "Coração Impassível",
+            "consumed": "Coração Impassível Consumido",
+            "grimheart": {
+                "name": "Acúmulos de Coração Impassível",
+                "int": "Aumenta a resistência à interrupção"
+            }
+        },
+        "burstC": {
+            "name": "Espada Luminosa",
+            "start5": "Começa em 5 acúmulos",
+            "addStacks": "50% de chance de conseguir um acúmulo adicional"
+        },
+        "c1C": {
+            "name": "Consumir acúmulos de <strong>Coração Impassível</strong>",
+            "durationStack": "6s + 6s por acúmulo, até 18s"
+        },
+        "passive1": "Dano da Espada Luminosa Fragmentada"
+    },
+    "char_noelle": {
+        "p4cd": "24s, -1s a cada 4 acertos",
+        "c1chance": "\n(100% enquanto <strong>Grande Limpeza</strong> e <strong>Guardião do Coração</strong> estiverem em efeito)",
+        "c6duration": "15s, +1s por oponente derrotado, até 10s"
+    },
+    "char_venti": {
+        "addAimed": "Dano Adicional no Tiro com Mira",
+        "addFullAimed": "Dano adicional no Tiro Carregado",
+        "upcurrentDuration": "Duração da corrente de vento",
+        "regenEner": "Regenera 15 de Energia para Venti após o efeito terminar",
+        "fullBurstDMG": {
+            "text": "<0><0>Dano total do Supremo</0><1>Calcula o Dano total do Supremo, incluindo o redemoinho. Este cálculo assume:</1><2><0>20 ticks do <1>Supremo</1></0><1>15 ticks de <1>absorção de Dano</1></1><2>7 ticks de <1>Redemoinho</1>, para um inimigo, OU,</2><3>14 ticks de <1>Redemoinho</1>, para múltiplos inimigos que rodopiam uns aos outros.</3></2></0>",
+            "dmg": "<0>Dano total (<1>{{swirlTicks}} ticks do Redemoinho</1>)</0>"
+        },
+        "c6": "Alvos que levarem Dano da <strong>Grande Ode do Vento</strong>",
+        "c4": "Venti pega um Orbe Elemental ou Partícula",
+        "q": "Regenera 15 de Energia a todos os personagens <1>{{elementKey}}</1>.",
+        "c2": {
+            "hit": "Opponent acertado",
+            "launched": "Oponente lançado"
+        }
+    },
+    "sheet": {
+        "dmg": "DANO",
+        "hits": "({{hits}} Acertos)",
+        "lessPercentHP": "< {{percent}}% VIDA",
+        "stack": "{{count}} Acúmulo",
+        "stack_plural": "{{count}} Acúmulos"
+    },
+    "weapon_SongOfBrokenPines": {
+        "name": "Concerto Milenar: Rebelião da Bandeira"
     }
 }

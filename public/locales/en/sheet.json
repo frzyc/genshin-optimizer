@@ -3,5 +3,12 @@
   "hits": "({{hits}} Hits)",
   "lessPercentHP": "< {{percent}}% HP",
   "stack": "{{count}} Stack",
-  "stack_plural": "{{count}} Stacks"
+  "stack_plural": "{{count}} Stacks",
+  "hitOp": {
+    "normal": "Normal Attack hits on oppoents",
+    "charged": "Charged Attack hits on oppoents",
+    "plunging": "Plunging Attack hits on oppoents",
+    "skill": "Elemental Skill hits on oppoents",
+    "burst":"Elemental Skill hits on oppoents"
+  }
 }

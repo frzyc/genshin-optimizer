@@ -7,6 +7,7 @@ import ElegyForTheEnd from './Bow/ElegyForTheEnd'
 import FavoniusWarbow from './Bow/FavoniusWarbow'
 import HuntersBow from './Bow/HuntersBow'
 import Messenger from './Bow/Messenger'
+import MitternachtsWaltz from './Bow/MitternachtsWaltz'
 import PrototypeCrescent from './Bow/PrototypeCrescent'
 import RavenBow from './Bow/RavenBow'
 import RecurveBow from './Bow/RecurveBow'
@@ -30,6 +31,7 @@ const bow = {
   FavoniusWarbow,
   HuntersBow,
   Messenger,
+  MitternachtsWaltz,
   PrototypeCrescent,
   RavenBow,
   RecurveBow,

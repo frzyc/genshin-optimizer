@@ -7,7 +7,7 @@ import { IArtifactSheet } from '../../../Types/artifact'
 import { IConditionals } from '../../../Types/IConditional'
 const conditionals: IConditionals = {
   set4: {
-    name: "Using an Elemental SKill",
+    name: "Using an Elemental Skill",
     maxStack: 3,
     stats: { pyro_dmg_: 7.5 }
   }

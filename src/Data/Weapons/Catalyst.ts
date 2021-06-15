@@ -1,47 +1,49 @@
-import ApprenticesNotes from './Catalyst/ApprenticesNotes'
-import PocketGrimoire from './Catalyst/PocketGrimoire'
 import AmberCatalyst from './Catalyst/AmberCatalyst'
-import EmeraldOrb from './Catalyst/EmeraldOrb'
-import MagicGuide from './Catalyst/MagicGuide'
-import OtherworldlyStory from './Catalyst/OtherworldlyStory'
-import ThrillingTalesOfDragonSlayers from './Catalyst/ThrillingTalesOfDragonSlayers'
-import TwinNephrite from './Catalyst/TwinNephrite'
+import ApprenticesNotes from './Catalyst/ApprenticesNotes'
 import BlackcliffAgate from './Catalyst/BlackcliffAgate'
+import DodocoTales from './Catalyst/DodocoTales'
+import EmeraldOrb from './Catalyst/EmeraldOrb'
+import EyeOfPerception from './Catalyst/EyeOfPerception'
 import FavoniusCodex from './Catalyst/FavoniusCodex'
+import Frostbearer from './Catalyst/Frostbearer'
+import LostPrayerToTheSacredWinds from './Catalyst/LostPrayerToTheSacredWinds'
+import MagicGuide from './Catalyst/MagicGuide'
 import MappaMare from './Catalyst/MappaMare'
+import MemoryOfDust from './Catalyst/MemoryOfDust'
+import OtherworldlyStory from './Catalyst/OtherworldlyStory'
+import PocketGrimoire from './Catalyst/PocketGrimoire'
 import PrototypeMalice from './Catalyst/PrototypeMalice'
 import RoyalGrimoire from './Catalyst/RoyalGrimoire'
 import SacrificialFragments from './Catalyst/SacrificialFragments'
+import SkywardAtlas from './Catalyst/SkywardAtlas'
 import SolarPearl from './Catalyst/SolarPearl'
 import TheWidsith from './Catalyst/TheWidsith'
+import ThrillingTalesOfDragonSlayers from './Catalyst/ThrillingTalesOfDragonSlayers'
+import TwinNephrite from './Catalyst/TwinNephrite'
 import WineAndSong from './Catalyst/WineAndSong'
-import EyeOfPerception from './Catalyst/EyeOfPerception'
-import Frostbearer from './Catalyst/Frostbearer'
-import LostPrayerToTheSacredWinds from './Catalyst/LostPrayerToTheSacredWinds'
-import SkywardAtlas from './Catalyst/SkywardAtlas'
-import MemoryOfDust from './Catalyst/MemoryOfDust'
 const catalyst = {
-  ApprenticesNotes,
-  PocketGrimoire,
   AmberCatalyst,
-  EmeraldOrb,
-  MagicGuide,
-  OtherworldlyStory,
-  ThrillingTalesOfDragonSlayers,
-  TwinNephrite,
+  ApprenticesNotes,
   BlackcliffAgate,
+  DodocoTales,
+  EmeraldOrb,
+  EyeOfPerception,
   FavoniusCodex,
+  Frostbearer,
+  LostPrayerToTheSacredWinds,
+  MagicGuide,
   MappaMare,
+  MemoryOfDust,
+  OtherworldlyStory,
+  PocketGrimoire,
   PrototypeMalice,
   RoyalGrimoire,
   SacrificialFragments,
+  SkywardAtlas,
   SolarPearl,
   TheWidsith,
+  ThrillingTalesOfDragonSlayers,
+  TwinNephrite,
   WineAndSong,
-  EyeOfPerception,
-  Frostbearer,
-  LostPrayerToTheSacredWinds,
-  SkywardAtlas,
-  MemoryOfDust
 }
 export default catalyst

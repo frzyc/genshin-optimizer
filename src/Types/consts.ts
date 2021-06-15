@@ -44,7 +44,7 @@ export const allWeaponKeys = [
   "MagicGuide", "OtherworldlyStory", "ThrillingTalesOfDragonSlayers", "TwinNephrite", "BlackcliffAgate",
   "FavoniusCodex", "MappaMare", "PrototypeMalice", "RoyalGrimoire", "SacrificialFragments", "SolarPearl", "TheWidsith",
   "WineAndSong", "EyeOfPerception", "Frostbearer", "LostPrayerToTheSacredWinds", "SkywardAtlas", "MemoryOfDust",
-  "SongOfBrokenPines"
+  "SongOfBrokenPines", "DodocoTales", "MitternachtsWaltz", "FreedomSworn"
 ] as const
 export type HitModeKey = typeof allHitModes[number]
 export type ReactionModeKey = typeof allReactionModes[number]

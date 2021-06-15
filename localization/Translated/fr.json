@@ -57,6 +57,13 @@
         ],
         "mainStat": "Stat principal",
         "slot": "Emplacement",
+        "slotName": {
+            "flower": "Fleur de la Vie",
+            "plume": "Plume de la Mort",
+            "sands": "Sables du Temps",
+            "goblet": "Coupe d'Eonothem",
+            "circlet": "Diadème de Logos"
+        },
         "info": {
             "title": "Guide d' Edition/Gestion d'artefact"
         },
@@ -69,7 +76,9 @@
         "sortMap": {
             "quality": "Qualité",
             "level": "Niveau"
-        }
+        },
+        "showingNum": "Affiche <1>{{count}}</1> sur {{value}} Artéfact",
+        "showingNum_plural": "Affiche <1>{{count}}</1> sur {{value}} Artéfacts"
     },
     "home": {
         "welcome": "Bienvenue sur l'Optimiseur Genshin!",
@@ -147,5 +156,24 @@
         "appVersion": "$t(pageTitle) Version: {{version}}",
         "underConstruction": "En Construction",
         "error": "Erreur"
+    },
+    "char_noelle": {
+        "p4cd": "24s, -1s Tous les 4 coups",
+        "c1chance": "(100% tant que <strong>Grand ménage</strong> et <strong>Armure de coeur</strong> sont actifs en même temps)",
+        "c6duration": "15s, +1s par ennemi vaincu, jusqu'à 10s"
+    },
+    "char_venti": {
+        "c4": "Venti obtient une orbe ou une particule",
+        "c2": {
+            "hit": "Ennemi touché",
+            "launched": "Ennemi projeté"
+        }
+    },
+    "sheet": {
+        "dmg": "DGT",
+        "hits": "({{hits}} Coups)",
+        "lessPercentHP": "< {{percent}}% PV",
+        "stack": "{{count}} Stack",
+        "stack_plural": "{{count}} Stacks"
     }
 }

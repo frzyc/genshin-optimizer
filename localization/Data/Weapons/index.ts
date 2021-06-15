@@ -1,15 +1,15 @@
 import claymore from './Claymore'
-// import sword from './Sword'
+import sword from './Sword'
 import polearm from './Polearm'
 import bow from './Bow'
-// import catalyst from './Catalyst'
+import catalyst from './Catalyst'
 
 const WeaponData = {
-  // ...sword,
+  ...sword,
   ...claymore,
   ...polearm,
   ...bow,
-  // ...catalyst
+  ...catalyst
 }
 
 export default WeaponData

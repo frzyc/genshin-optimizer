@@ -8,7 +8,12 @@ const conditionals: IConditionals = {
     name: "Duration on Field (4s / stack)",
     maxStack: 4,
     stats: stats => ({
-      dmg_: refinementVals[stats.weapon.refineIndex]
+      anemo_dmg_: refinementVals[stats.weapon.refineIndex],
+      geo_dmg_: refinementVals[stats.weapon.refineIndex],
+      electro_dmg_: refinementVals[stats.weapon.refineIndex],
+      hydro_dmg_: refinementVals[stats.weapon.refineIndex],
+      pyro_dmg_: refinementVals[stats.weapon.refineIndex],
+      cryo_dmg_: refinementVals[stats.weapon.refineIndex],
     })
   }
 }

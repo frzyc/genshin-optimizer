@@ -42,7 +42,7 @@ export default function ArtifactInfoDisplay() {
           <p>Manual input is not your cup of tea? You can scan in your artifacts with screenshots! On the Artifact Editor, click the <Badge variant="info">Show Me How!</Badge> button to learn more.</p>
 
           <h5>Duplicate/Upgrade artifact detection</h5>
-          <p>Did you know GO can detect if you are adding a <b>duplicate</b> artifact that exist in the system? It can also detect if the current artifact in editor is an <b>upgrade</b> of an existing artifact as well. Once a duplicate/upgrade is detected, a preview will allow you to compare the two artifact in question(See Image).</p>
+          <p>Did you know GO can detect if you are adding a <b>duplicate</b> artifact that exists in the system? It can also detect if the current artifact in editor is an <b>upgrade</b> of an existing artifact as well. Once a duplicate/upgrade is detected, a preview will allow you to compare the two artifacts in question(See Image).</p>
         </Trans>
       </Col>
       <Col xs={12} lg={6} xl={5}>

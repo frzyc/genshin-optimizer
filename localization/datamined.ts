@@ -31,19 +31,19 @@ function parseBulletPoints(strings: string[]): string[] {
   return strs
 }
 const languageMap = {
-  chs: require('./TextMap/TextCHS.json'),
-  cht: require('./TextMap/TextCHT.json'),
-  de: require('./TextMap/TextDE.json'),
-  en: require('./TextMap/TextEN.json'),
-  es: require('./TextMap/TextES.json'),
-  fr: require('./TextMap/TextFR.json'),
-  id: require('./TextMap/TextID.json'),
-  ja: require('./TextMap/TextJA.json'),
-  ko: require('./TextMap/TextKO.json'),
-  pt: require('./TextMap/TextPT.json'),
-  ru: require('./TextMap/TextRU.json'),
-  th: require('./TextMap/TextTH.json'),
-  vi: require('./TextMap/TextVI.json')
+  chs: require('./TextMap/TextMapCHS.json'),
+  cht: require('./TextMap/TextMapCHT.json'),
+  de: require('./TextMap/TextMapDE.json'),
+  en: require('./TextMap/TextMapEN.json'),
+  es: require('./TextMap/TextMapES.json'),
+  fr: require('./TextMap/TextMapFR.json'),
+  id: require('./TextMap/TextMapID.json'),
+  ja: require('./TextMap/TextMapJP.json'),
+  ko: require('./TextMap/TextMapKR.json'),
+  pt: require('./TextMap/TextMapPT.json'),
+  ru: require('./TextMap/TextMapRU.json'),
+  th: require('./TextMap/TextMapTH.json'),
+  vi: require('./TextMap/TextMapVI.json')
 }
 
 const tagColor = {
