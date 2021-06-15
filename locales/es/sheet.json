@@ -1,0 +1,7 @@
+{
+  "dmg": "Daño",
+  "hits": "({{hits}} Hits)",
+  "lessPercentHP": "< {{percent}}% Vida",
+  "stack": "{{count}} Carga",
+  "stack_plural": "{{count}} Cargas"
+}

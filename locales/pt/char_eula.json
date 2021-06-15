@@ -1,0 +1,20 @@
+{
+  "skillC": {
+    "name": "Coração Impassível",
+    "consumed": "Coração Impassível Consumido",
+    "grimheart": {
+      "name": "Acúmulos de Coração Impassível",
+      "int": "Aumenta a resistência à interrupção"
+    }
+  },
+  "burstC": {
+    "name": "Espada Luminosa",
+    "start5": "Começa em 5 acúmulos",
+    "addStacks": "50% de chance de conseguir um acúmulo adicional"
+  },
+  "c1C": {
+    "name": "Consumir acúmulos de <strong>Coração Impassível</strong>",
+    "durationStack": "6s + 6s por acúmulo, até 18s"
+  },
+  "passive1": "Dano da Espada Luminosa Fragmentada"
+}

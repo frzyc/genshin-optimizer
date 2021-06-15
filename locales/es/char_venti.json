@@ -1,0 +1,17 @@
+{
+  "addAimed": "Daño Adicional de Disparo Preciso",
+  "addFullAimed": "Daño Adicional de Disparo Preciso (carga completa)",
+  "upcurrentDuration": "Duración de corrientes de viento ascendentes",
+  "regenEner": "Regenera 15 pts. de Energía a Venti cuando el efecto termina",
+  "fullBurstDMG": {
+    "text": "<0><0>Daño total de Habilidad Definitiva</0><1>Esto calcula el daño total de la Habilidad Definitiva, incluyendo torbellino. Este cálculo asume:</1><2><0>20 ticks de <1>daño de la Definitiva</1></0><1>15 ticks de <1>daño de Absorción</1></1><2>7 ticks de <1>Torbellino</1>, para un enemigo, O,</2><3>14 ticks de <1>Torbellino</1>, para múltiples enemigos, que se causan Torbellinos entre ellos.</3></2></0>",
+    "dmg": "<0>Daño Total (<1>{{swirlTicks}} ticks de Torbellino</1>)</0>"
+  },
+  "c6": "Objetivos que reciben daño de <strong>Gran Oda del Viento</strong>",
+  "c4": "Venti recoge un Orbe o Partícula Elemental",
+  "q": "Restaura 15 pts. de energía a todos los personajes <1>{{elementKey}}</1> .",
+  "c2": {
+    "hit": "Golpe del enemigo",
+    "launched": "Enemigo lanzado"
+  }
+}

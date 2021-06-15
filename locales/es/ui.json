@@ -1,5 +1,5 @@
 {
-  "pageTitle": "Optimizador de Genshin",
+  "pageTitle": "Genshin Optimizer",
   "tabs": {
     "artifacts": "Artefactos",
     "characters": "Personajes",
@@ -22,7 +22,7 @@
   "descending": "Descendente",
   "sortByFormat": "Ordenar por: {{value}}",
   "loading": "Cargando...",
-  "rightsDisclaimer": "El Optimizador de Genshin no está afiliado ni respaldado por miHoYo.",
+  "rightsDisclaimer": "Genshin Optimizer no está afiliado ni respaldado por miHoYo.",
   "appVersion": "$t(pageTitle) Versión: {{version}}",
   "underConstruction": "En construcción",
   "error": "Error"

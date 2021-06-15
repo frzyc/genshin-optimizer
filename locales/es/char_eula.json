@@ -1,0 +1,20 @@
+{
+  "skillC": {
+    "name": "corazón impasible",
+    "consumed": "corazón impasible Consumido",
+    "grimheart": {
+      "name": "Cargas de corazón impasible",
+      "int": "Aumenta la RES a interrupción"
+    }
+  },
+  "burstC": {
+    "name": "espada luminosa",
+    "start5": "Comienza con 5 cargas",
+    "addStacks": "probabilidad del 50% de obtener cargas adicionales"
+  },
+  "c1C": {
+    "name": "Consume cargas de <strong>corazón impasible</strong>",
+    "durationStack": "6s + 6s por carga, hasta un máximo de 18s"
+  },
+  "passive1": "Daño de fragmento de espada luminosa"
+}

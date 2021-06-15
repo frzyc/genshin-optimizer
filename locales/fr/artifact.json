@@ -56,6 +56,13 @@
   ],
   "mainStat": "Stat principal",
   "slot": "Emplacement",
+  "slotName": {
+    "flower": "Fleur de la Vie",
+    "plume": "Plume de la Mort",
+    "sands": "Sables du Temps",
+    "goblet": "Coupe d'Eonothem",
+    "circlet": "Diadème de Logos"
+  },
   "info": {
     "title": "Guide d' Edition/Gestion d'artefact"
   },
@@ -68,5 +75,7 @@
   "sortMap": {
     "quality": "Qualité",
     "level": "Niveau"
-  }
+  },
+  "showingNum": "Affiche <1>{{count}}</1> sur {{value}} Artéfact",
+  "showingNum_plural": "Affiche <1>{{count}}</1> sur {{value}} Artéfacts"
 }

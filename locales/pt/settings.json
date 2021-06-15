@@ -10,7 +10,7 @@
     "charsStored_plural": "<0>{{count}}</0> Personagens Armazenados",
     "artisStored": "<0>{{count}}</0> Artefato Armazenado",
     "artisStored_plural": "<0>{{count}}</0> Artefatos Armazenados",
-    "databaseDisclaimer": "Notas: quaisquer dados dentro da página \"Ferramentas\", p.ex. Quantidade de resina/cronômetro, não fazem parte do banco de dados baixado.",
+    "databaseDisclaimer": "Nota: Quaisquer dados dentro da página \"Ferramentas\", p.ex. Quantidade de resina/cronômetro, não fazem parte do banco de dados baixado.",
     "button": {
       "download": "Download",
       "copy": "Copiar para área de transferência",

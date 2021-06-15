@@ -20,7 +20,7 @@
     "high": "DGT chute élevée"
   },
   "maxDuration": "Durée max",
-  "maxStacks": "Bonus de charges d'énergie accumulées",
+  "maxStacks": "Limite de charges d'énergie",
   "skillDMG": "DGT compétence",
   "burstDMG": "DGT",
   "dmgAbsorption": "PV du bouclier",

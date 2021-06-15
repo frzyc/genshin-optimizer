@@ -24,7 +24,7 @@
     "unknownPieceName": "Nombre de Pieza Desconocido",
     "mainSelect": "Selecciona un Stat Principal",
     "curSubEff": "Eficiencia de Substat Actual",
-    "curSubEffDesc": "Cada 4 upgrades del artefacto, obtienes un roll de substat. <strong>La Eficiencia de Substat</strong> calcula qué tan alto rolleó el substat como un porcentaje.",
+    "curSubEffDesc": "Cada 4 niveles del artefacto, obtienes un roll de substat. <strong>La Eficiencia de Substat</strong> calcula qué tan alto rolleó el substat como un porcentaje.",
     "maxSubEff": "Eficiencia Máxima de Substat",
     "maxSubEffDesc": "La <strong>Eficiencia Máxima de Substat</strong> de un artefacto calcula la eficiencia si los upgrades restantes rolleasen sus valores máximos.",
     "preview": "Vista Previa del Artefacto",

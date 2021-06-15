@@ -7,7 +7,7 @@
   "downloadCard": {
     "databaseDownload": "Descarga Base de Datos",
     "charsStored": "Personaje Almacenado <0>{{count}}</0>",
-    "charsStored_plural": "<0>{{count}}</0> Caracteres Almacenados",
+    "charsStored_plural": "<0>{{count}}</0> Personajes Almacenados",
     "artisStored": "<0>{{count}}</0> Artefacto Almacenado",
     "artisStored_plural": "<0>{{count}}</0> Artefactos Almacenados",
     "databaseDisclaimer": "Notas: los datos de la página \"Herramientas\", por ejemplo, la cantidad/temporizador de resina, no forman parte de la base de datos descargada.",

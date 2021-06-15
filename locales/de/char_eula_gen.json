@@ -35,7 +35,7 @@
     "name": "Schwert der Brandung",
     "description": {
       "0": "Schwingt das Schwert mit großer Wucht, fügt den Gegnern in der Umgebung <cryo>Kryo-Schaden</cryo> zu und erstellt dabei ein Schwert des Lichtfalls, das Eula folgt und bis zu 7 Sekunden existiert.",
-      "1": "Das Schwert des Lichtfalls erhöht innerhalb der Wirkungsdauer Eulas Unterbrechungs-WDS und lädt beim Verursachen von Schaden bei Gegnern mit Eulas Standardangriff, Elementarfähigkeit oder Spezialfähigkeit Energie auf, nur neue 1 Stapelung in 0,1 s.",
+      "1": "Das Schwert des Lichtfalls erhöht innerhalb der Wirkungsdauer Eulas Unterbrechungs-WDS und lädt beim Verursachen von Schaden bei Gegnern mit Eulas Standardangriff, Elementarfähigkeit oder Spezialfähigkeit Energie auf, nur 1 neue Stapelung in 0,1 s.",
       "2": "Sobald die Dauer abgelaufen ist, fällt das Schwert herunter, explodiert und fügt den Gegnern in der Umgebung physischen Schaden zu.",
       "3": "Der Schaden ist von der gestapelten Energie des Schwerts des Lichtfalls abhängig.",
       "4": "Wenn Eula ausgewechselt wird, explodiert das Schwert des Lichtfalls sofort.",

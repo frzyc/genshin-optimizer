@@ -1,0 +1,7 @@
+{
+  "dmg": "伤害",
+  "hits": "({{hits}} 段)",
+  "lessPercentHP": "< {{percent}}% 生命值",
+  "stack": "{{count}} 层数",
+  "stack_plural": "{{count}} 层数"
+}
