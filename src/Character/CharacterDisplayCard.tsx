@@ -1,13 +1,13 @@
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { createContext, useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'react';
-import { Alert, Badge, ButtonGroup, Dropdown, DropdownButton, Image, Nav, Tab } from 'react-bootstrap';
+import { Alert, ButtonGroup, Dropdown, DropdownButton, Image, Nav, Tab } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { ArtifactSheet } from '../Artifact/ArtifactSheet';
-import WIPComponent from '../Components/WIPComponent';
+import ElementalData from '../Data/ElementalData';
 import { WeaponLevelKeys } from '../Data/WeaponData';
 import CharacterDatabase from '../Database/CharacterDatabase';
 import { ICharacter } from '../Types/character';
@@ -143,11 +143,17 @@ export default function CharacterDisplayCard({ characterKey: propCharacterKey, c
   const weaponSheets = usePromise(WeaponSheet.getAll())
   useEffect(() => {
     if (weaponSheets && characterSheet && !character.weapon.key) {
-      character.weapon.key = Object.keys(WeaponSheet.getWeaponsOfType(weaponSheets, characterSheet.weaponTypeKey))[0] ?? ""
+      const possibleWeapons = WeaponSheet.getWeaponsOfType(weaponSheets, characterSheet.weaponTypeKey)
+      //sort the weapons to get the lowest rarity weapon.
+      const [weaponKey] = Object.entries(possibleWeapons).sort(([k1, ws1], [k2, ws2]) => ws1.rarity - ws2.rarity)[0]
+      character.weapon.key = weaponKey
       characterDispatch({ weapon: character.weapon })
     }
   }, [characterSheet, weaponSheets, character.weapon])
-
+  useEffect(() => {//check for default value for traveler
+    if (characterSheet && "talents" in characterSheet.sheet && !character.elementKey)
+      characterDispatch({ elementKey: Object.keys(characterSheet.sheet.talents)[0] })
+  }, [character.elementKey, characterSheet])
   const weaponSheet = usePromise(WeaponSheet.get(character.weapon.key))
   const artifactSheets = usePromise(ArtifactSheet.getAll())
 
@@ -164,8 +170,8 @@ export default function CharacterDisplayCard({ characterKey: propCharacterKey, c
   const newBuild = useMemo(() => {
     if (!propNewBuild) return
     const newBuild = propNewBuild && deepClone(propNewBuild);
-    (newBuild as any).hitMode = character.hitMode;
-    (newBuild as any).reactionMode = character.reactionMode;
+    newBuild.hitMode = character.hitMode;
+    newBuild.reactionMode = character.reactionMode;
     return newBuild
   }, [propNewBuild, character.hitMode, character.reactionMode])
 
@@ -177,7 +183,7 @@ export default function CharacterDisplayCard({ characterKey: propCharacterKey, c
   const commonPaneProps = { character, newBuild, equippedBuild: (!newBuild || compareAgainstEquipped) ? equippedBuild : undefined, editable, characterDispatch, compareAgainstEquipped }
   if (flexArts) (commonPaneProps as any).artifacts = flexArts//from flex
   // main CharacterDisplayCard
-  const DamageOptionsAndCalculationEle = characterSheet?.hasTalentPage && weaponSheet && <DamageOptionsAndCalculation {...{ characterSheet, weaponSheet, character, characterDispatch, newBuild, equippedBuild }} className="mb-2" />
+  const DamageOptionsAndCalculationEle = characterSheet && weaponSheet && <DamageOptionsAndCalculation {...{ characterSheet, weaponSheet, character, characterDispatch, newBuild, equippedBuild }} className="mb-2" />
   return (<Card bg="darkcontent" text={"lightfont" as any} >
     <Card.Header>
       <Row>
@@ -217,12 +223,7 @@ export default function CharacterDisplayCard({ characterKey: propCharacterKey, c
               <Nav.Link eventKey="artifacts"><h5 className="mb-0">{newBuild ? "Current Artifacts" : "Artifacts"}</h5></Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              {process.env.NODE_ENV !== "development" && !characterSheet.hasTalentPage ?
-                <WIPComponent>
-                  <Nav.Link eventKey="talent" disabled><h5 className="mb-0">Talents</h5> <Badge variant="warning">WIP</Badge></Nav.Link>
-                </WIPComponent> :
-                <Nav.Link eventKey="talent"><h5 className="mb-0">Talents</h5></Nav.Link>
-              }
+              <Nav.Link eventKey="talent"><h5 className="mb-0">Talents</h5></Nav.Link>
             </Nav.Item>
           </Nav>
           <Tab.Content>
@@ -260,7 +261,7 @@ type CharSelectDropdownProps = {
   characterDispatch: (any) => void
   setCharacterKey: (any) => void
 }
-function CharSelectDropdown({ characterSheet, weaponSheet, character, editable, levelKey, characterDispatch, setCharacterKey }: CharSelectDropdownProps) {
+function CharSelectDropdown({ characterSheet, weaponSheet, character, character: { elementKey = "anemo" }, editable, levelKey, characterDispatch, setCharacterKey }: CharSelectDropdownProps) {
   const HeaderIconDisplay = characterSheet ? <span >
     <Image src={characterSheet.thumbImg} className="thumb-small my-n1 ml-n2" roundedCircle />
     <h6 className="d-inline"> {characterSheet.name} </h6>
@@ -271,9 +272,18 @@ function CharSelectDropdown({ characterSheet, weaponSheet, character, editable, 
         {HeaderIconDisplay}
       </Dropdown.Toggle>
       <Dropdown.Menu as={CustomMenu}>
-        {[...allCharacterKeys].sort().map(charKey => <CharDropdownItem key={charKey} characterKey={charKey} setCharacterKey={setCharacterKey} />)}
+        {[...new Set(allCharacterKeys)].sort().map(charKey => <CharDropdownItem key={charKey} characterKey={charKey} setCharacterKey={setCharacterKey} />)}
       </Dropdown.Menu>
     </Dropdown>
+    {characterSheet?.sheet && "talents" in characterSheet?.sheet && <Dropdown as={ButtonGroup}>
+      <Dropdown.Toggle as={Button} className={`text-${elementKey}`}>
+        <strong>{ElementalData[elementKey].name}</strong>
+      </Dropdown.Toggle>
+      <Dropdown.Menu >
+        {Object.keys(characterSheet.sheet.talents).map(eleKey =>
+          <Dropdown.Item key={eleKey} className={`text-${eleKey}`} onClick={() => characterDispatch({ elementKey: eleKey })}><strong>{ElementalData[eleKey].name}</strong></Dropdown.Item>)}
+      </Dropdown.Menu>
+    </Dropdown>}
     <DropdownButton as={ButtonGroup} disabled={!characterSheet} title={
       <h6 className="d-inline">Stats Template: {Character.getlevelTemplateName(levelKey)} </h6>
     }>

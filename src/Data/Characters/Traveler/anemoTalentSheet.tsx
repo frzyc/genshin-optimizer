@@ -1,5 +1,3 @@
-import card from './Traveler_Female_Card.jpg'
-import thumb from './Character_Traveler_Thumb.png'
 import c1 from './Constellation_Raging_Vortex.png'
 import c2 from './Constellation_Uprising_Whirlwind.png'
 import c3 from './Constellation_Sweeping_Gust.png'
@@ -13,10 +11,11 @@ import passive1 from './Talent_Slitting_Wind.png'
 import passive2 from './Talent_Second_Wind.png'
 import ElementalData from '../../ElementalData'
 import Stat from '../../../Stat'
-import formula, { data } from './data'
+import formula, { data } from './anemoData'
 import { getTalentStatKey, getTalentStatKeyVariant } from "../../../Build/Build"
-import { ICharacterSheet } from '../../../Types/character';
+import { TalentSheet } from '../../../Types/character';
 import { IConditionals, IConditionalValue } from '../../../Types/IConditional'
+
 const conditionals: IConditionals = {
   q: { // Absorption
     name: "Elemental Absorption",
@@ -48,26 +47,14 @@ const conditionals: IConditionals = {
     stats: { enerRech_: 16 }
   }
 }
-
-const char: ICharacterSheet = {
-  name: "Traveler (Anemo)",
-  cardImg: card,
-  thumbImg: thumb,
-  star: 5,
-  elementKey: "anemo",
-  weaponTypeKey: "sword",
-  gender: "F/M",
-  constellationName: "Viatrix",//female const
-  titles: ["Outlander", "Honorary Knight"],
-  baseStat: data.baseStat,
-  specializeStat: data.specializeStat,
+const talentSheet: TalentSheet = {
   formula,
   conditionals,
-  talent: {
+  sheets: {
     auto: {
       name: "Foreign Ironwind",
       img: normal,
-      document: [{
+      sections: [{
         text: <span><strong>Normal Attack</strong> Perform up to 5 rapid strikes.</span>,
         fields: data.normal.hitArr.map((percentArr, i) =>
         ({
@@ -80,7 +67,7 @@ const char: ICharacterSheet = {
         text: <span><strong>Charged Attack</strong> Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.</span>,
         fields: data.charged.hitArr.map((percentArr, i) =>
         ({
-          text: `Charged ${i + 1}-Hit DMG`,
+          text: i === 1 ? `Male Charged 2-Hit DMG` : (i === 2 ? `Female Charged 2-Hit DMG` : `Charged ${i + 1}-Hit DMG`),
           formulaText: stats => <span>{percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
           formula: formula.charged[i],
           variant: stats => getTalentStatKeyVariant("charged", stats),
@@ -108,12 +95,12 @@ const char: ICharacterSheet = {
     skill: {
       name: "Palm Vortex",
       img: skill,
-      document: [{
+      sections: [{
         text: <span>
           <p className="mb-2">Grasping the wind's might, you form a vortext of vacuum in your palm, causing continous <span className="text-anemo">Anemo DMG</span> to enemies in front of you. The vacuum vortext explodes when the skill duration ends, causing a greater amount of Anemo DMG over a larger area.</p>
           <p className="mb-2">
             <strong>Hold:</strong> DMG and AoE will gradually increase.
-          </p>
+        </p>
           <p><strong>Elemental Absorption:</strong> If the votext comes into contact with <span className="text-hydro">Hydro</span>/<span className="text-pyro">Pyro</span>/<span className="text-cryo">Cryo</span>/<span className="text-electro">Electro</span> elements, it will deal additional elemental DMG of that type. Elemental Absorption may only occur once per use.</p>
         </span>,
         fields: [{
@@ -152,7 +139,7 @@ const char: ICharacterSheet = {
     burst: {
       name: "Gust Surge",
       img: burst,
-      document: [{
+      sections: [{
         text: <span>
           <p className="mb-2">Guiding the path of the wind currents, you summon a forward-moving tornado that pulls objects and opponents towards itself, dealing continous <span className="text-anemo">Anemo DMG</span>.</p>
           <p className="mb-2"><strong>Elemental Absorption:</strong> If the tornado comes into contact with <span className="text-hydro">Hydro</span>/<span className="text-pyro">Pyro</span>/<span className="text-cryo">Cryo</span>/<span className="text-electro">Electro</span> elements, it will deal additional elemental DMG of that type. Elemental Absorption may only occur once per use.</p>
@@ -178,7 +165,7 @@ const char: ICharacterSheet = {
     passive1: {
       name: "Slitting Wind",
       img: passive1,
-      document: [{
+      sections: [{
         text: <span>The last hit of a Normal Attack combo unleases a wind blade, dealing 60% of ATK as <span className="text-anemo">Anemo DMG</span> to all opponents in its path.</span>,
         fields: [{
           text: "Anemo Auto",
@@ -191,7 +178,7 @@ const char: ICharacterSheet = {
     passive2: {
       name: "Second Wind",
       img: passive2,
-      document: [{
+      sections: [{
         text: <span>Palm Vortext kills regenerate 2% HP for 5s. This effect can only occur once every 5s</span>,
         fields: [{
           text: "Heal",
@@ -204,12 +191,12 @@ const char: ICharacterSheet = {
     constellation1: {
       name: "Raging Vortext",
       img: c1,
-      document: [{ text: <span>Palm Vortex pulls in enemies within a 5m radius.</span> }]
+      sections: [{ text: <span>Palm Vortex pulls in enemies within a 5m radius.</span> }]
     },
     constellation2: {
       name: "Uprising Whirlwind",
       img: c2,
-      document: [{
+      sections: [{
         text: <span>Increases Energy Recharge by 16%.</span>,
         conditional: conditionals.c2
       }]
@@ -217,25 +204,25 @@ const char: ICharacterSheet = {
     constellation3: {
       name: "Sweeping Gust",
       img: c3,
-      document: [{ text: <span>Increases the Level of <b>Gust Surge</b> by 3. Maximum upgrade level is 15.</span> }],
+      sections: [{ text: <span>Increases the Level of <b>Gust Surge</b> by 3. Maximum upgrade level is 15.</span> }],
       stats: { burstBoost: 3 }
     },
     constellation4: {
       name: "Cherishing Breeze",
       img: c4,
-      document: [{ text: <span>Reduces DMG taken while casting <b>Palm Vortex</b> by 10%.</span> }]
+      sections: [{ text: <span>Reduces DMG taken while casting <b>Palm Vortex</b> by 10%.</span> }]
     },
     constellation5: {
       name: "Vortext Stellaris",
       img: c5,
-      document: [{ text: <span>Increases the Level of <b>Palm Vortex</b> by 3. Maximum upgrade level is 15.</span> }],
+      sections: [{ text: <span>Increases the Level of <b>Palm Vortex</b> by 3. Maximum upgrade level is 15.</span> }],
       stats: { skillBoost: 3 }
     },
     constellation6: {
       name: "Intertwined Winds",
       img: c6,
-      document: [{ text: <span>Targets who take DMG from <b>Gust Surge</b> have their <span className="text-anemo">Anemo RES</span> decreased by 20%. If an Elemental Absorption occurred, then their RES towards the corresponding Element is also decreased by 20%.</span> }]
+      sections: [{ text: <span>Targets who take DMG from <b>Gust Surge</b> have their <span className="text-anemo">Anemo RES</span> decreased by 20%. If an Elemental Absorption occurred, then their RES towards the corresponding Element is also decreased by 20%.</span> }]
     },
-  }
-};
-export default char;
+  },
+}
+export default talentSheet

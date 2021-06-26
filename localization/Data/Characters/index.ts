@@ -9,7 +9,7 @@
 import eula from './Eula'
 // import fischl from './Fischl'
 // import ganyu from './Ganyu'
-// import hutao from './Hu Tao'
+// import hutao from './HuTao'
 // import jean from './Jean'
 // import kaeya from './Kaeya'
 // import keqing from './Keqing'

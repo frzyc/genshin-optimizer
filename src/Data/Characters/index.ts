@@ -9,7 +9,7 @@ import diona from './Diona'
 import eula from './Eula'
 import fischl from './Fischl'
 import ganyu from './Ganyu'
-import hutao from './Hu Tao'
+import hutao from './HuTao'
 import jean from './Jean'
 import kaeya from './Kaeya'
 import keqing from './Keqing'
@@ -23,8 +23,7 @@ import razor from './Razor'
 import rosaria from './Rosaria'
 import sucrose from './Sucrose'
 import tartaglia from './Tartaglia'
-import traveler_anemo from './Traveler_Anemo'
-import traveler_geo from './Traveler_Geo'
+import traveler from './Traveler'
 import venti from './Venti'
 import xiao from './Xiao'
 import xiangling from './Xiangling'
@@ -34,7 +33,7 @@ import yanfei from './Yanfei'
 import zhongli from './Zhongli'
 import { CharacterKey } from '../../Types/consts'
 import { ICharacterSheet } from '../../Types/character'
-import { documentProcessing } from '../../Util/DocumentUtil'
+import { documentSectionsProcessing } from '../../Util/DocumentUtil'
 const characters: StrictDict<CharacterKey, ICharacterSheet> = {
   albedo,
   amber,
@@ -61,8 +60,7 @@ const characters: StrictDict<CharacterKey, ICharacterSheet> = {
   rosaria,
   sucrose,
   tartaglia,
-  traveler_anemo,
-  traveler_geo,
+  traveler,
   venti,
   xiao,
   xiangling,
@@ -72,7 +70,13 @@ const characters: StrictDict<CharacterKey, ICharacterSheet> = {
   zhongli
 };
 
-Object.values(characters).forEach(char =>
-  Object.values(char.talent ?? {}).forEach(talent => //TODO: escape for character with imcomplete character sheet
-    documentProcessing(talent.document)))
+Object.values(characters).forEach(char => {
+  if ("talent" in char)
+    Object.values(char.talent.sheets).forEach(talentSheetElement =>
+      documentSectionsProcessing(talentSheetElement.sections))
+  else //char.talents -> traveler
+    Object.values(char.talents).forEach(talentSheet =>
+      Object.values(talentSheet.sheets).forEach(talentSheetElement =>
+        documentSectionsProcessing(talentSheetElement.sections)))
+})
 export default characters

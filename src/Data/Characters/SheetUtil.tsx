@@ -73,6 +73,6 @@ export const bowChargedDocSection = (tr, formula, data, elementKey: ElementKey) 
 export const talentTemplate = (talentKey, tr, img, stats: undefined | object = undefined) => ({
   name: tr(`${talentKey}.name`),
   img,
-  document: [{ text: tr(`${talentKey}.description`), }],
+  sections: [{ text: tr(`${talentKey}.description`), }],
   ...stats ? { stats } : {}
 })

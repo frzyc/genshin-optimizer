@@ -9,7 +9,7 @@ import diona from './Diona/data'
 import eula from './Eula/data'
 import fischl from './Fischl/data'
 import ganyu from './Ganyu/data'
-import hutao from './Hu Tao/data'
+import hutao from './HuTao/data'
 import jean from './Jean/data'
 import kaeya from './Kaeya/data'
 import keqing from './Keqing/data'
@@ -23,8 +23,8 @@ import razor from './Razor/data'
 import rosaria from './Rosaria/data'
 import sucrose from './Sucrose/data'
 import tartaglia from './Tartaglia/data'
-import traveler_anemo from './Traveler_Anemo/data'
-// import traveler_geo from './Traveler_Geo/data'
+import travelerAnemo from './Traveler/anemoData'
+import travelerGeo from './Traveler/geoData'
 import venti from './Venti/data'
 import xiao from './Xiao/data'
 import xiangling from './Xiangling/data'
@@ -32,7 +32,9 @@ import xingqiu from './Xingqiu/data'
 import xinyan from './Xinyan/data'
 import yanfei from './Yanfei/data'
 import zhongli from './Zhongli/data'
-import { IFormulaSheets } from '../../Types/character'
+import { IFormulaSheet } from '../../Types/character'
+import { ElementKey } from '../../Types/consts'
+type IFormulaSheets = Dict<string, IFormulaSheet | Dict<ElementKey, IFormulaSheet>>
 const formula: IFormulaSheets = {
   albedo,
   amber,
@@ -59,8 +61,7 @@ const formula: IFormulaSheets = {
   rosaria,
   sucrose,
   tartaglia,
-  traveler_anemo,
-  // traveler_geo,
+  traveler: { anemo: travelerAnemo, geo: travelerGeo },
   venti,
   xiao,
   xiangling,

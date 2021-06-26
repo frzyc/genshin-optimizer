@@ -35,7 +35,7 @@ export default function CharacterCard({ characterKey, onEdit, onDelete, cardClas
 
   const { weapon, constellation } = character
   const name = characterSheet.name
-  const elementKey = characterSheet.elementKey
+  const elementKey = stats.characterEle
   const weaponTypeKey = characterSheet.weaponTypeKey
   const weaponName = weaponSheet?.name
   const weaponMainVal = Weapon.getWeaponMainStatValWithOverride(weapon, weaponSheet)

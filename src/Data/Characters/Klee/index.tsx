@@ -51,179 +51,181 @@ const char: ICharacterSheet = {
   titles: ["Fleeing Sunlight", "Spark Knight", "Red Burny Girl"],
   baseStat: data.baseStat,
   specializeStat: data.specializeStat,
-  formula,
-  conditionals,
   talent: {
-    auto: {
-      name: "Kaboom!",
-      img: normal,
-      document: [{
-        text: <span><strong>Normal Attack</strong> Throws things that go boom when they hit things! Perform up to 3 explosive attacks, dealing <span className="text-pyro">AoE Pyro DMG</span>.</span>,
-        fields: data.normal.hitArr.map((percentArr, i) =>
-        ({
-          text: `${i + 1}-Hit DMG`,
-          formulaText: stats => <span>{percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
-          formula: formula.normal[i],
-          variant: stats => getTalentStatKeyVariant("normal", stats),
-        }))
-      }, {
-        text: <span><strong>Charged Attack</strong> Consumes a certain amount of Stamina and deals <span className="text-pyro">AoE Pyro DMG</span> to opponents after a short casting time.</span>,
-        fields: [{
-          text: `Charged Attack DMG`,
-          formulaText: stats => <span>{data.charged.dmg[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
-          formula: formula.charged.dmg,
-          variant: stats => getTalentStatKeyVariant("charged", stats),
+    formula,
+    conditionals,
+    sheets: {
+      auto: {
+        name: "Kaboom!",
+        img: normal,
+        sections: [{
+          text: <span><strong>Normal Attack</strong> Throws things that go boom when they hit things! Perform up to 3 explosive attacks, dealing <span className="text-pyro">AoE Pyro DMG</span>.</span>,
+          fields: data.normal.hitArr.map((percentArr, i) =>
+          ({
+            text: `${i + 1}-Hit DMG`,
+            formulaText: stats => <span>{percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
+            formula: formula.normal[i],
+            variant: stats => getTalentStatKeyVariant("normal", stats),
+          }))
         }, {
-          text: `Stamina Cost`,
-          value: 50,
+          text: <span><strong>Charged Attack</strong> Consumes a certain amount of Stamina and deals <span className="text-pyro">AoE Pyro DMG</span> to opponents after a short casting time.</span>,
+          fields: [{
+            text: `Charged Attack DMG`,
+            formulaText: stats => <span>{data.charged.dmg[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
+            formula: formula.charged.dmg,
+            variant: stats => getTalentStatKeyVariant("charged", stats),
+          }, {
+            text: `Stamina Cost`,
+            value: 50,
+          }],
+        }, {
+          text: <span><strong>Plunging Attack</strong> Gathering the power of <span className="text-pyro">Pyro</span>, Klee plunges towards the ground from mid-air, damaging all opponents in her path. Deals <span className="text-pyro">AoE Pyro DMG</span> upon impact with the ground.</span>,
+          fields: [{
+            text: `Plunge DMG`,
+            formulaText: stats => <span>{data.plunging.dmg[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+            formula: formula.plunging.dmg,
+            variant: stats => getTalentStatKeyVariant("plunging", stats),
+          }, {
+            text: `Low Plunge DMG`,
+            formulaText: stats => <span>{data.plunging.low[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+            formula: formula.plunging.low,
+            variant: stats => getTalentStatKeyVariant("plunging", stats),
+          }, {
+            text: `High Plunge DMG`,
+            formulaText: stats => <span>{data.plunging.high[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+            formula: formula.plunging.high,
+            variant: stats => getTalentStatKeyVariant("plunging", stats),
+          }]
         }],
-      }, {
-        text: <span><strong>Plunging Attack</strong> Gathering the power of <span className="text-pyro">Pyro</span>, Klee plunges towards the ground from mid-air, damaging all opponents in her path. Deals <span className="text-pyro">AoE Pyro DMG</span> upon impact with the ground.</span>,
-        fields: [{
-          text: `Plunge DMG`,
-          formulaText: stats => <span>{data.plunging.dmg[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-          formula: formula.plunging.dmg,
-          variant: stats => getTalentStatKeyVariant("plunging", stats),
-        }, {
-          text: `Low Plunge DMG`,
-          formulaText: stats => <span>{data.plunging.low[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-          formula: formula.plunging.low,
-          variant: stats => getTalentStatKeyVariant("plunging", stats),
-        }, {
-          text: `High Plunge DMG`,
-          formulaText: stats => <span>{data.plunging.high[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-          formula: formula.plunging.high,
-          variant: stats => getTalentStatKeyVariant("plunging", stats),
-        }]
-      }],
+      },
+      skill: {
+        name: "Jumpy Dumpty",
+        img: skill,
+        sections: [{
+          text: <span>
+            <p className="mb-2">Jumpy Dumpty is tons of boom-bang-fun!</p>
+            <p className="mb-2">When thrown, Jumpy Dumpty bounces thrice, igniting and dealing <span className="text-pyro">AoE Pyro DMG</span> with every bounce.</p>
+            <p className="mb-2">On the third bounce, the bomb splits into 8 mines. The mines will explode upon contact with opponents, or after a short period of time, dealing <span className="text-pyro">AoE Pyro DMG</span>.</p>
+            <p className="mb-2">Starts with 2 charges.</p>
+          </span>,
+          fields: [{
+            text: "Jumpy Dumpty DMG",
+            formulaText: stats => <span>{data.skill.jumpyDmg[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
+            formula: formula.skill.jumpyDmg,
+            variant: stats => getTalentStatKeyVariant("skill", stats),
+          }, {
+            text: "Mine DMG",
+            formulaText: stats => <span>{data.skill.mineDmg[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
+            formula: formula.skill.mineDmg,
+            variant: stats => getTalentStatKeyVariant("skill", stats),
+          }, {
+            text: "Mine Duration",
+            value: "15s",
+          }, {
+            text: "CD",
+            value: "20s",
+          }]
+        }],
+      },
+      burst: {
+        name: "Sparks 'n' Splash",
+        img: burst,
+        sections: [{
+          text: <span>Klee's Blazing Delight! For 10 seconds, summons 5 times 4 Sparks 'n' Splash to attack nearby opponents, dealing <span className="text-pyro">AoE Pyro DMG</span>.</span>,
+          fields: [{
+            text: "Sparks 'n' Splash DMG",
+            formulaText: stats => <span>{data.burst.dmg[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
+            formula: formula.burst.dmg,
+            variant: stats => getTalentStatKeyVariant("burst", stats),
+          }, {
+            text: "Duration",
+            value: "10s",
+          }, {
+            text: "CD",
+            value: "15s",
+          }, {
+            text: "Energy Cost",
+            value: 60,
+          }]
+        }],
+      },
+      passive1: {
+        name: "Pounding Surprise",
+        img: passive1,
+        sections: [{
+          text: <span>When <b>Jumpy Dumpty</b> and <b>Normal Attacks</b> deal DMG, Klee has a 50% chance to obtain an Explosive Spark. This Explosive Spark is consumed by the next Charged Attack, which costs no Stamina and deals 50% increased DMG.</span>,
+          conditional: conditionals.a1
+        }],
+      },
+      passive2: {
+        name: "Sparkling Burst",
+        img: passive2,
+        sections: [{ text: <span>When Klee's <b>Charged Attack</b> results in a CRIT, all party members gain 2 Elemental Energy.</span> }],//TODO: party buff
+      },
+      passive3: {
+        name: "All Of My Treasures!",
+        img: passive3,
+        sections: [{ text: <span>Displays the location of nearby resources unique to Mondstadt on the mini-map.</span> }],
+      },
+      constellation1: {
+        name: "Chained Reactions",
+        img: c1,
+        sections: [{
+          text: <span>Attacks and Skills have a certain chance to summon sparks that bombard opponents, dealing DMG equal to 120% of Sparks 'n' Splash's DMG.</span>,
+          fields: [{
+            canShow: stats => stats.constellation >= 1,
+            text: "Chained Reactions DMG",
+            formulaText: stats => <span>120% x {data.burst.dmg[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
+            formula: formula.constellation1.dmg,
+            variant: stats => getTalentStatKeyVariant("burst", stats),
+          },]
+        }],
+      },
+      constellation2: {
+        name: "Explosive Frags",
+        img: c2,
+        sections: [{
+          text: <span>Being hit by <b>Jumpy Dumpty</b>'s mines decreases opponents' DEF by 23% for 10s.</span>,
+          conditional: conditionals.c2
+        }],
+      },
+      constellation3: {
+        name: "Exquisite Compound",
+        img: c3,
+        sections: [{ text: <span>Increases the level of <b>Jumpy Dumpty</b> by 3. Maximum level is 15.</span> }],
+        stats: { skillBoost: 3 }
+      },
+      constellation4: {
+        name: "Sparkly Explosion",
+        img: c4,
+        sections: [{
+          text: <span>If Klee leaves the field during the duration of <b>Sparks 'n' Splash</b>, her departure triggers an explosion that deals 555% of her ATK as <span className="text-pyro">AoE Pyro DMG</span>.</span>,
+          fields: [{
+            text: "Sparkly Explosion DMG",
+            formulaText: stats => <span>555% {Stat.printStat(getTalentStatKey("elemental", stats), stats)}</span>,
+            formula: formula.constellation4.dmg,
+            variant: stats => getTalentStatKeyVariant("elemental", stats),
+          }]
+        }],
+      },
+      constellation5: {
+        name: "Nova Burst",
+        img: c5,
+        sections: [{ text: <span>Increases the level of <b>Sparks 'n' Splash</b> by 3. Maximum level is 15.</span> }],
+        stats: { burstBoost: 3 }
+      },
+      constellation6: {
+        name: "Blazing Delight",
+        img: c6,
+        sections: [{
+          text: <span>
+            <p className="mb-2">While under the effects of <b>Sparks 'n' Splash</b>, other members of the party will continuously regenerate Energy.</p>
+            <p className="mb-0">When <b>Sparks 'n' Splash</b> is used, all party members will gain a 10% <span className="text-pyro">Pyro DMG Bonus</span> for 25s.</p>
+          </span>,
+          conditional: conditionals.c6
+        }],
+      }
     },
-    skill: {
-      name: "Jumpy Dumpty",
-      img: skill,
-      document: [{
-        text: <span>
-          <p className="mb-2">Jumpy Dumpty is tons of boom-bang-fun!</p>
-          <p className="mb-2">When thrown, Jumpy Dumpty bounces thrice, igniting and dealing <span className="text-pyro">AoE Pyro DMG</span> with every bounce.</p>
-          <p className="mb-2">On the third bounce, the bomb splits into 8 mines. The mines will explode upon contact with opponents, or after a short period of time, dealing <span className="text-pyro">AoE Pyro DMG</span>.</p>
-          <p className="mb-2">Starts with 2 charges.</p>
-        </span>,
-        fields: [{
-          text: "Jumpy Dumpty DMG",
-          formulaText: stats => <span>{data.skill.jumpyDmg[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
-          formula: formula.skill.jumpyDmg,
-          variant: stats => getTalentStatKeyVariant("skill", stats),
-        }, {
-          text: "Mine DMG",
-          formulaText: stats => <span>{data.skill.mineDmg[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
-          formula: formula.skill.mineDmg,
-          variant: stats => getTalentStatKeyVariant("skill", stats),
-        }, {
-          text: "Mine Duration",
-          value: "15s",
-        }, {
-          text: "CD",
-          value: "20s",
-        }]
-      }],
-    },
-    burst: {
-      name: "Sparks 'n' Splash",
-      img: burst,
-      document: [{
-        text: <span>Klee's Blazing Delight! For 10 seconds, summons 5 times 4 Sparks 'n' Splash to attack nearby opponents, dealing <span className="text-pyro">AoE Pyro DMG</span>.</span>,
-        fields: [{
-          text: "Sparks 'n' Splash DMG",
-          formulaText: stats => <span>{data.burst.dmg[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
-          formula: formula.burst.dmg,
-          variant: stats => getTalentStatKeyVariant("burst", stats),
-        }, {
-          text: "Duration",
-          value: "10s",
-        }, {
-          text: "CD",
-          value: "15s",
-        }, {
-          text: "Energy Cost",
-          value: 60,
-        }]
-      }],
-    },
-    passive1: {
-      name: "Pounding Surprise",
-      img: passive1,
-      document: [{
-        text: <span>When <b>Jumpy Dumpty</b> and <b>Normal Attacks</b> deal DMG, Klee has a 50% chance to obtain an Explosive Spark. This Explosive Spark is consumed by the next Charged Attack, which costs no Stamina and deals 50% increased DMG.</span>,
-        conditional: conditionals.a1
-      }],
-    },
-    passive2: {
-      name: "Sparkling Burst",
-      img: passive2,
-      document: [{ text: <span>When Klee's <b>Charged Attack</b> results in a CRIT, all party members gain 2 Elemental Energy.</span> }],//TODO: party buff
-    },
-    passive3: {
-      name: "All Of My Treasures!",
-      img: passive3,
-      document: [{ text: <span>Displays the location of nearby resources unique to Mondstadt on the mini-map.</span> }],
-    },
-    constellation1: {
-      name: "Chained Reactions",
-      img: c1,
-      document: [{
-        text: <span>Attacks and Skills have a certain chance to summon sparks that bombard opponents, dealing DMG equal to 120% of Sparks 'n' Splash's DMG.</span>,
-        fields: [{
-          canShow: stats => stats.constellation >= 1,
-          text: "Chained Reactions DMG",
-          formulaText: stats => <span>120% x {data.burst.dmg[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
-          formula: formula.constellation1.dmg,
-          variant: stats => getTalentStatKeyVariant("burst", stats),
-        },]
-      }],
-    },
-    constellation2: {
-      name: "Explosive Frags",
-      img: c2,
-      document: [{
-        text: <span>Being hit by <b>Jumpy Dumpty</b>'s mines decreases opponents' DEF by 23% for 10s.</span>,
-        conditional: conditionals.c2
-      }],
-    },
-    constellation3: {
-      name: "Exquisite Compound",
-      img: c3,
-      document: [{ text: <span>Increases the level of <b>Jumpy Dumpty</b> by 3. Maximum level is 15.</span> }],
-      stats: { skillBoost: 3 }
-    },
-    constellation4: {
-      name: "Sparkly Explosion",
-      img: c4,
-      document: [{
-        text: <span>If Klee leaves the field during the duration of <b>Sparks 'n' Splash</b>, her departure triggers an explosion that deals 555% of her ATK as <span className="text-pyro">AoE Pyro DMG</span>.</span>,
-        fields: [{
-          text: "Sparkly Explosion DMG",
-          formulaText: stats => <span>555% {Stat.printStat(getTalentStatKey("elemental", stats), stats)}</span>,
-          formula: formula.constellation4.dmg,
-          variant: stats => getTalentStatKeyVariant("elemental", stats),
-        }]
-      }],
-    },
-    constellation5: {
-      name: "Nova Burst",
-      img: c5,
-      document: [{ text: <span>Increases the level of <b>Sparks 'n' Splash</b> by 3. Maximum level is 15.</span> }],
-      stats: { burstBoost: 3 }
-    },
-    constellation6: {
-      name: "Blazing Delight",
-      img: c6,
-      document: [{
-        text: <span>
-          <p className="mb-2">While under the effects of <b>Sparks 'n' Splash</b>, other members of the party will continuously regenerate Energy.</p>
-          <p className="mb-0">When <b>Sparks 'n' Splash</b> is used, all party members will gain a 10% <span className="text-pyro">Pyro DMG Bonus</span> for 25s.</p>
-        </span>,
-        conditional: conditionals.c6
-      }],
-    }
   },
 };
 export default char;

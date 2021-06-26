@@ -1,6 +1,7 @@
-import { HitModeKey } from "./consts";
+import { ElementKey, HitModeKey } from "./consts";
 export default interface ICalculatedStats {
   characterKey: string
+  characterEle: ElementKey
   weapon: {
     key: string;
     refineIndex: number;
@@ -20,7 +21,7 @@ export default interface ICalculatedStats {
   weaponType: string
   hitMode: HitModeKey
   reactionMode: reactionModeKey | null
-
+  infusionAura: ElementKey | ""
   finalHP: number
 }
 

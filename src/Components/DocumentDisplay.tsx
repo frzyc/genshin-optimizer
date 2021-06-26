@@ -6,15 +6,15 @@ import { evalIfFunc } from "../Util/Util"
 import FieldDisplay from "./FieldDisplay"
 
 type SkillDisplayCardProps = {
-  document: DocumentSection[],
+  sections: DocumentSection[],
   characterDispatch: (any) => void,
   equippedBuild?: ICalculatedStats,
   newBuild?: ICalculatedStats,
   editable: boolean,
 }
-export default function DocumentDisplay({ document, characterDispatch, equippedBuild, newBuild, editable }: SkillDisplayCardProps) {
+export default function DocumentDisplay({ sections, characterDispatch, equippedBuild, newBuild, editable }: SkillDisplayCardProps) {
   const build = newBuild ? newBuild : equippedBuild as ICalculatedStats //assumes at least one of them is not undefined
-  return <div>{document?.map((section, i) => {
+  return <div>{sections?.map((section, i) => {
     if (!section.canShow!(build)) return null
     const talentText = evalIfFunc(section.text, build)
     const fields = section.fields ?? []

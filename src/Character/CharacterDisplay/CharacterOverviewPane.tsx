@@ -32,12 +32,13 @@ type CharacterOverviewPaneProps = {
   editable: boolean;
   character: ICharacter
   characterDispatch: (any) => void
-  equippedBuild: ICalculatedStats
+  equippedBuild?: ICalculatedStats
   newBuild?: ICalculatedStats
 }
-export default function CharacterOverviewPane({ characterSheet, weaponSheet, editable, character, character: { characterKey, constellation }, characterDispatch, equippedBuild, newBuild }: CharacterOverviewPaneProps) {
+export default function CharacterOverviewPane({ characterSheet, weaponSheet, editable, character, character: { constellation }, characterDispatch, equippedBuild, newBuild }: CharacterOverviewPaneProps) {
   const [editLevel, setEditLevel] = useState(false)
-  const elementKey = characterSheet.elementKey
+  const build = (newBuild ? newBuild : equippedBuild) as ICalculatedStats
+  const elementKey = build.characterEle
   const weaponTypeKey = characterSheet.weaponTypeKey
   const level = Character.getStatValueWithOverride(character, characterSheet, weaponSheet, "characterLevel")
   return <Row>
@@ -93,7 +94,7 @@ export default function CharacterOverviewPane({ characterSheet, weaponSheet, edi
                   <Row className="px-2">
                     {[...Array(6).keys()].map(i =>
                       <Col xs={4} className="p-1" key={i}>
-                        <Image src={characterSheet.getTalent(`constellation${i + 1}`)?.img} className={`w-100 h-auto ${constellation > i ? "" : "overlay-dark"} cursor-pointer`}
+                        <Image src={characterSheet.getTalentOfKey(`constellation${i + 1}`, build.characterEle)?.img} className={`w-100 h-auto ${constellation > i ? "" : "overlay-dark"} cursor-pointer`}
                           roundedCircle onClick={() => editable && characterDispatch({ constellation: (i + 1) === constellation ? i : i + 1 })} />
                       </Col>)}
                   </Row>
@@ -146,14 +147,14 @@ type WeaponStatsEditorCardProps = {
   editable: boolean
   character: ICharacter
   characterDispatch: (any) => void
-  equippedBuild: ICalculatedStats
+  equippedBuild?: ICalculatedStats
   newBuild?: ICalculatedStats
 }
 function WeaponStatsEditorCard({ characterSheet, weaponSheet, editable, character, character: { weapon }, characterDispatch, equippedBuild, newBuild }: WeaponStatsEditorCardProps) {
   const [editing, SetEditing] = useState(false)
   const [showDescription, setShowDescription] = useState(false)
   //choose which one to display stats for
-  const build = newBuild ? newBuild : equippedBuild
+  const build = (newBuild ? newBuild : equippedBuild) as ICalculatedStats
 
   const setStateWeapon = (key, value) => {
     if (key === "key") {
@@ -264,7 +265,7 @@ function WeaponStatsEditorCard({ characterSheet, weaponSheet, editable, characte
             {Boolean(conditionals) && Object.entries(conditionals).map(([stateKey, conditional]) =>
               <ConditionalDisplay key={stateKey as any} {...{ conditional, equippedBuild, newBuild, characterDispatch, editable }} fieldClassName="py-2 px-3" />)}
 
-            {document ? <DocumentDisplay {...{ document, equippedBuild, newBuild, characterDispatch, editable }} /> : null}
+            {document ? <DocumentDisplay {...{ sections: document, equippedBuild, newBuild, characterDispatch, editable }} /> : null}
           </Col>}
       </Row>
       {showDescription && <small>{weaponSheet.description}</small>}

@@ -267,7 +267,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
       const text = Character.getTalentFieldValue(field, "text", initialStats)
       if (type === "character") {
         if (talentKey === "normal" || talentKey === "charged" || talentKey === "plunging") talentKey = "auto"
-        return <b>{characterSheet?.getTalent(talentKey)?.name}: <span className={`text-${variant}`}>{text}</span></b>
+        return <b>{characterSheet?.getTalentOfKey(talentKey, initialStats?.characterEle)?.name}: <span className={`text-${variant}`}>{text}</span></b>
       } else if (type === "weapon") {
         return <b>{weaponSheet?.name}: <span className={`text-${variant}`}>{text}</span></b>
       }
@@ -293,7 +293,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     <InfoComponent
       pageKey="buildPage"
       modalTitle="Character Management Page Guide"
-      text={["For self-infused attacks, like Noelle's Sweeping Time, enable to skill in the talent page.",
+      text={["For self-infused attacks, like Noelle's Sweeping Time, enable the skill in the talent page.",
         "You can compare the difference between equipped artifacts and generated builds.",
         "TURBO mode can process millions of builds in seconds.",
         "The more complex the formula, the longer the generation time.",]}
@@ -317,7 +317,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
                     </Card.Header>
                   </Card>}
                 {/* Hit mode options */}
-                {!!characterSheet?.hasTalentPage && character && <HitModeCard characterSheet={characterSheet} className="mb-2" character={character} />}
+                {characterSheet && character && initialStats && <HitModeCard build={initialStats} characterSheet={characterSheet} className="mb-2" character={character} />}
                 {/* Final Stat Filter */}
                 {Boolean(statsDisplayKeys) && <StatFilterCard className="mb-2" statFilters={statFilters} statKeys={statsDisplayKeys?.basicKeys as any} setStatFilters={sFs => buildSettingsDispatch({ statFilters: sFs })} />}
               </Col>
@@ -452,7 +452,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
                     <Dropdown.Menu align="right" style={{ minWidth: "40rem" }} >
                       <Row>
                         {!!statsDisplayKeys && Object.entries(statsDisplayKeys).map(([sectionKey, fields]: [string, any]) => {
-                          const header = (characterSheet && weaponSheet) ? Character.getDisplayHeading(sectionKey, characterSheet, weaponSheet) : sectionKey
+                          const header = (characterSheet && weaponSheet) ? Character.getDisplayHeading(sectionKey, characterSheet, weaponSheet, initialStats?.characterEle) : sectionKey
                           return <Col xs={12} md={6} key={sectionKey}>
                             <Dropdown.Header style={{ overflow: "hidden", textOverflow: "ellipsis" }}><b>{header}</b></Dropdown.Header>
                             {fields.map((target, i) => {
@@ -628,7 +628,7 @@ function StatFilterItem({ statKey, statKeys = [], min, max, close, setFilter }: 
   </InputGroup>
 }
 
-function HitModeCard({ characterSheet, character, className }: { characterSheet: CharacterSheet, character: ICharacter, className: string }) {
+function HitModeCard({ characterSheet, character, build, className }: { characterSheet: CharacterSheet, character: ICharacter, build: ICalculatedStats, className: string }) {
   const setHitmode = useCallback(({ hitMode }) => CharacterDatabase.update({ ...character, hitMode }), [character])
   const setReactionMode = useCallback(({ reactionMode }) => CharacterDatabase.update({ ...character, reactionMode }), [character])
   const setInfusionAura = useCallback(({ infusionAura }) => CharacterDatabase.update({ ...character, infusionAura }), [character])
@@ -642,7 +642,7 @@ function HitModeCard({ characterSheet, character, className }: { characterSheet:
     </Card.Header>
     <Card.Body className="mb-n2">
       <HitModeToggle hitMode={character.hitMode} characterDispatch={setHitmode} className="w-100 mb-2" />
-      <ReactionToggle characterSheet={characterSheet} character={character} characterDispatch={setReactionMode} className="w-100 mb-2" />
+      <ReactionToggle build={build} character={character} characterDispatch={setReactionMode} className="w-100 mb-2" />
     </Card.Body>
   </Card >
 }

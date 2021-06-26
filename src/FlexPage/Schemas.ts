@@ -186,8 +186,20 @@ const characterV2 = object({
   conditionalValues,
   reserved: array(uint(1)),
 }, {
-  encode: (value) => { value.reserved = []; return value },
-  decode: (value) => { delete value.reserved; return value },
+  encode: (value) => {
+    if (value.characterKey === "traveler")
+      value.reserved = [elements.indexOf(value.elementKey)]
+    else
+      value.reserved = []
+    return value
+  },
+  decode: (value) => {
+    if (value.characterKey === "traveler") {
+      value.elementKey = elements[value.reserved[0]] ?? "anemo"
+    }
+    delete value.reserved
+    return value
+  },
 })
 
 const flexV1 = object({

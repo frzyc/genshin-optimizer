@@ -72,164 +72,166 @@ const char: ICharacterSheet = {
   titles: ["Thorny Benevolence", "Sister", "A Nonconforming Sister"],
   baseStat: data.baseStat,
   specializeStat: data.specializeStat,
-  formula,
-  conditionals,
   talent: {
-    auto: {
-      name: tr("auto.name"),
-      img: normal,
-      document: [{
-        text: tr("auto.fields.normal"),
-        fields: data.normal.hitArr.map((percentArr, i) =>
-        ({
-          text: `${i + (i < 5 ? 1 : 0)}${i === 4 ? ".1" : i === 5 ? ".2" : ""}-Hit DMG${i === 2 ? " (x2)" : ""}`,
-          formulaText: stats => <span>{percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
-          formula: formula.normal[i],
-          variant: stats => getTalentStatKeyVariant("normal", stats),
-        }))
-      }, {
-        text: tr("auto.fields.charged"),
-        fields: [{
-          text: `Charged Attack`,
-          formulaText: stats => <span>{data.charged.dmg[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
-          formula: formula.charged.dmg,
-          variant: stats => getTalentStatKeyVariant("charged", stats),
+    formula,
+    conditionals,
+    sheets: {
+      auto: {
+        name: tr("auto.name"),
+        img: normal,
+        sections: [{
+          text: tr("auto.fields.normal"),
+          fields: data.normal.hitArr.map((percentArr, i) =>
+          ({
+            text: `${i + (i < 5 ? 1 : 0)}${i === 4 ? ".1" : i === 5 ? ".2" : ""}-Hit DMG${i === 2 ? " (x2)" : ""}`,
+            formulaText: stats => <span>{percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
+            formula: formula.normal[i],
+            variant: stats => getTalentStatKeyVariant("normal", stats),
+          }))
         }, {
-          text: `Stamina Cost`,
-          value: 25,
-        }]
-      }, {
-        text: tr("auto.fields.plunging"),
-        fields: [{
-          text: `Plunge DMG`,
-          formulaText: stats => <span>{data.plunging.dmg[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-          formula: formula.plunging.dmg,
-          variant: stats => getTalentStatKeyVariant("plunging", stats),
+          text: tr("auto.fields.charged"),
+          fields: [{
+            text: `Charged Attack`,
+            formulaText: stats => <span>{data.charged.dmg[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
+            formula: formula.charged.dmg,
+            variant: stats => getTalentStatKeyVariant("charged", stats),
+          }, {
+            text: `Stamina Cost`,
+            value: 25,
+          }]
         }, {
-          text: `Low Plunge DMG`,
-          formulaText: stats => <span>{data.plunging.low[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-          formula: formula.plunging.low,
-          variant: stats => getTalentStatKeyVariant("plunging", stats),
-        }, {
-          text: `High Plunge DMG`,
-          formulaText: stats => <span>{data.plunging.high[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-          formula: formula.plunging.high,
-          variant: stats => getTalentStatKeyVariant("plunging", stats),
-        }]
-      }],
-    },
-    skill: {
-      name: tr("skill.name"),
-      img: skill,
-      document: [{
-        text: tr("skill.description"),
-        fields: [{
-          text: "Skill DMG 1",
-          formulaText: stats => <span>{data.skill.hit1[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
-          formula: formula.skill.hit1,
-          variant: stats => getTalentStatKeyVariant("skill", stats),
-        }, {
-          text: "Skill DMG 2",
-          formulaText: stats => <span>{data.skill.hit2[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
-          formula: formula.skill.hit2,
-          variant: stats => getTalentStatKeyVariant("skill", stats),
-        }, {
-          text: "CD",
-          value: "6s",
+          text: tr("auto.fields.plunging"),
+          fields: [{
+            text: `Plunge DMG`,
+            formulaText: stats => <span>{data.plunging.dmg[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+            formula: formula.plunging.dmg,
+            variant: stats => getTalentStatKeyVariant("plunging", stats),
+          }, {
+            text: `Low Plunge DMG`,
+            formulaText: stats => <span>{data.plunging.low[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+            formula: formula.plunging.low,
+            variant: stats => getTalentStatKeyVariant("plunging", stats),
+          }, {
+            text: `High Plunge DMG`,
+            formulaText: stats => <span>{data.plunging.high[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
+            formula: formula.plunging.high,
+            variant: stats => getTalentStatKeyVariant("plunging", stats),
+          }]
         }],
-      }],
-    },
-    burst: {
-      name: tr("burst.name"),
-      img: burst,
-      document: [{
-        text: tr("burst.description"),
-        fields: [{
-          text: "Skill DMG 1",
-          formulaText: stats => <span>{data.burst.hit1[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
-          formula: formula.burst.hit1,
-          variant: stats => getTalentStatKeyVariant("burst", stats),
-        }, {
-          text: "Skill DMG 2",
-          formulaText: stats => <span>{data.burst.hit2[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
-          formula: formula.burst.hit2,
-          variant: stats => getTalentStatKeyVariant("burst", stats),
-        }, {
-          text: "Ice Lance DoT",
-          formulaText: stats => <span>{data.burst.dot[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
-          formula: formula.burst.dot,
-          variant: stats => getTalentStatKeyVariant("burst", stats),
-        }, {
-          text: "Duration",
-          value: "8s",
-        }, {
-          text: "CD",
-          value: "15s",
-        }, {
-          text: "Energy Cost",
-          value: 60,
+      },
+      skill: {
+        name: tr("skill.name"),
+        img: skill,
+        sections: [{
+          text: tr("skill.description"),
+          fields: [{
+            text: "Skill DMG 1",
+            formulaText: stats => <span>{data.skill.hit1[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
+            formula: formula.skill.hit1,
+            variant: stats => getTalentStatKeyVariant("skill", stats),
+          }, {
+            text: "Skill DMG 2",
+            formulaText: stats => <span>{data.skill.hit2[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
+            formula: formula.skill.hit2,
+            variant: stats => getTalentStatKeyVariant("skill", stats),
+          }, {
+            text: "CD",
+            value: "6s",
+          }],
         }],
-      }],
+      },
+      burst: {
+        name: tr("burst.name"),
+        img: burst,
+        sections: [{
+          text: tr("burst.description"),
+          fields: [{
+            text: "Skill DMG 1",
+            formulaText: stats => <span>{data.burst.hit1[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
+            formula: formula.burst.hit1,
+            variant: stats => getTalentStatKeyVariant("burst", stats),
+          }, {
+            text: "Skill DMG 2",
+            formulaText: stats => <span>{data.burst.hit2[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
+            formula: formula.burst.hit2,
+            variant: stats => getTalentStatKeyVariant("burst", stats),
+          }, {
+            text: "Ice Lance DoT",
+            formulaText: stats => <span>{data.burst.dot[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
+            formula: formula.burst.dot,
+            variant: stats => getTalentStatKeyVariant("burst", stats),
+          }, {
+            text: "Duration",
+            value: "8s",
+          }, {
+            text: "CD",
+            value: "15s",
+          }, {
+            text: "Energy Cost",
+            value: 60,
+          }],
+        }],
+      },
+      passive1: {
+        name: tr("passive1.name"),
+        img: passive1,
+        sections: [{
+          text: tr("passive1.description"),
+          conditional: conditionals.a1
+        }],
+      },
+      passive2: {
+        name: tr("passive2.name"),
+        img: passive2,
+        sections: [{
+          text: tr("passive2.description"),
+          conditional: conditionals.a4
+        }],
+      },
+      passive3: {
+        name: tr("passive3.name"),
+        img: passive3,
+        sections: [{ text: tr("passive3.description"), }]
+      },
+      constellation1: {
+        name: tr("constellation1.name"),
+        img: c1,
+        sections: [{
+          text: tr("constellation1.description"),
+          conditional: conditionals.c1
+        }],
+      },
+      constellation2: {
+        name: tr("constellation2.name"),
+        img: c2,
+        sections: [{ text: tr("constellation2.description"), }]
+      },
+      constellation3: {
+        name: tr("constellation3.name"),
+        img: c3,
+        sections: [{ text: tr("constellation3.description"), }],
+        stats: { skillBoost: 3 }
+      },
+      constellation4: {
+        name: tr("constellation4.name"),
+        img: c4,
+        sections: [{ text: tr("constellation4.description") }]
+      },
+      constellation5: {
+        name: tr("constellation5.name"),
+        img: c5,
+        sections: [{ text: tr("constellation5.description"), }],
+        stats: { burstBoost: 3 }
+      },
+      constellation6: {
+        name: tr("constellation6.name"),
+        img: c6,
+        sections: [{
+          text: tr("constellation6.description"),
+          conditional: conditionals.c6
+        }],
+      }
     },
-    passive1: {
-      name: tr("passive1.name"),
-      img: passive1,
-      document: [{
-        text: tr("passive1.description"),
-        conditional: conditionals.a1
-      }],
-    },
-    passive2: {
-      name: tr("passive2.name"),
-      img: passive2,
-      document: [{
-        text: tr("passive2.description"),
-        conditional: conditionals.a4
-      }],
-    },
-    passive3: {
-      name: tr("passive3.name"),
-      img: passive3,
-      document: [{ text: tr("passive3.description"), }]
-    },
-    constellation1: {
-      name: tr("constellation1.name"),
-      img: c1,
-      document: [{
-        text: tr("constellation1.description"),
-        conditional: conditionals.c1
-      }],
-    },
-    constellation2: {
-      name: tr("constellation2.name"),
-      img: c2,
-      document: [{ text: tr("constellation2.description"), }]
-    },
-    constellation3: {
-      name: tr("constellation3.name"),
-      img: c3,
-      document: [{ text: tr("constellation3.description"), }],
-      stats: { skillBoost: 3 }
-    },
-    constellation4: {
-      name: tr("constellation4.name"),
-      img: c4,
-      document: [{ text: tr("constellation4.description") }]
-    },
-    constellation5: {
-      name: tr("constellation5.name"),
-      img: c5,
-      document: [{ text: tr("constellation5.description"), }],
-      stats: { burstBoost: 3 }
-    },
-    constellation6: {
-      name: tr("constellation6.name"),
-      img: c6,
-      document: [{
-        text: tr("constellation6.description"),
-        conditional: conditionals.c6
-      }],
-    }
   },
 };
 export default char;

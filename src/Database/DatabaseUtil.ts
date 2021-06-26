@@ -3,8 +3,9 @@ import CharacterDatabase from "./CharacterDatabase";
 import { changes as v2change, dmgModeToHitMode } from "./dbV2KeyMap";
 import { deepClone, loadFromLocalStorage, saveToLocalStorage } from "../Util/Util";
 import { allSlotKeys } from "../Types/consts";
+import { ICharacter } from "../Types/character";
 
-const CurrentDatabaseVersion = 3
+const CurrentDatabaseVersion = 4
 
 function DatabaseInitAndVerify() {
   const dbVersion = getDatabaseVersion()
@@ -58,6 +59,18 @@ function DatabaseInitAndVerify() {
       if (Array.isArray(state.elementalFilter)) state.elementalFilter = ""
       if (Array.isArray(state.weaponFilter)) state.weaponFilter = ""
       saveToLocalStorage("CharacterDisplay.state", state)
+    }
+  }
+
+  if (dbVersion < 4) {
+    //merged both travelers in the system. So need to convert & merge. Keep anemo, and delete geo.
+    const traveler = loadFromLocalStorage("char_traveler_anemo") as ICharacter
+    if (traveler) {
+      localStorage.removeItem("char_traveler_anemo")
+      localStorage.removeItem("char_traveler_geo")
+      traveler.elementKey = "anemo"
+      traveler.characterKey = "traveler"
+      saveToLocalStorage("char_traveler", traveler)
     }
   }
 
@@ -115,6 +128,16 @@ function DatabaseInitAndVerify() {
       valid = false
     }
 
+    if (dbVersion < 4) {
+      //move traveler_anemo artifacts to traveler, and remove geo artifacts
+      if (art.location === "traveler_anemo") {
+        art.location = "traveler"
+        valid = false
+      } else if (art.location === "traveler_geo") {
+        art.location = ""
+        valid = false
+      }
+    }
     //Update any invalid artifacts in DB
     if (!valid) ArtifactDatabase.update(art)
   })

@@ -38,14 +38,14 @@ export function InfusionAuraDropdown({ characterSheet, character: { infusionAura
 }
 
 type ReactionToggleProps = {
-  characterSheet: CharacterSheet
   character: ICharacter,
+  build: ICalculatedStats,
   characterDispatch: (any) => void,
   className: string
 }
-export function ReactionToggle({ characterSheet, character: { characterKey, reactionMode = "none", infusionAura }, characterDispatch, className }: ReactionToggleProps) {
+export function ReactionToggle({ character: { reactionMode = "none", infusionAura }, build, characterDispatch, className }: ReactionToggleProps) {
   if (reactionMode === null) reactionMode = "none"
-  const charEleKey = characterSheet.elementKey
+  const charEleKey = build.characterEle
   if (!["pyro", "hydro", "cryo"].includes(charEleKey) && !["pyro", "hydro", "cryo"].includes(infusionAura)) return null
   return <ToggleButtonGroup className={className} type="radio" name="reactionMode" value={reactionMode} onChange={val => characterDispatch({ reactionMode: val === "none" ? null : val })}>
     <ToggleButton value={"none"} variant={reactionMode === "none" ? "success" : "primary"}>No Reactions</ToggleButton >
@@ -75,7 +75,7 @@ function CalculationDisplay({ characterSheet, weaponSheet, build }: { characterS
   const displayStatKeys = useMemo(() => Character.getDisplayStatKeys(build, characterSheet), [build, characterSheet])
   return <div>
     {Object.entries(displayStatKeys).map(([sectionKey, fields]: [string, any]) => {
-      const header = Character.getDisplayHeading(sectionKey, characterSheet, weaponSheet)
+      const header = Character.getDisplayHeading(sectionKey, characterSheet, weaponSheet, build.characterEle)
       return <Card bg="darkcontent" text={"lightfont" as any} key={sectionKey} className="w-100 mb-2">
         <Card.Header>{header}</Card.Header>
         <Card.Body className="p-2">
@@ -167,9 +167,9 @@ export default function DamageOptionsAndCalculation({ characterSheet, weaponShee
     <Card bg="lightcontent" text={"lightfont" as any} className="mb-2">
       <Card.Header>
         <Row className="mb-n2">
-          <Col xs="auto"><InfusionAuraDropdown characterSheet={characterSheet} character={character as any} characterDispatch={characterDispatch} className="mb-2" /></Col>
+          <Col xs="auto"><InfusionAuraDropdown characterSheet={characterSheet} character={character} characterDispatch={characterDispatch} className="mb-2" /></Col>
           <Col xs="auto"><HitModeToggle hitMode={hitMode} characterDispatch={characterDispatch} className="mb-2" /></Col>
-          <Col xs="auto"><ReactionToggle characterSheet={characterSheet} character={character as any} characterDispatch={characterDispatch} className="mb-2" /></Col>
+          <Col xs="auto"><ReactionToggle character={character} build={build} characterDispatch={characterDispatch} className="mb-2" /></Col>
         </Row>
       </Card.Header>
     </Card>

@@ -1,7 +1,9 @@
+import { CurrentDatabaseVersion } from "../Database/DatabaseUtil"
+
 export const oldURL = "https://frzyc.github.io/genshin-optimizer/#/flex?v=1&d=565k01043N09F18W04R165k03141Y79W0aa37G0p5g07242o21074W05l095k0j347E03z02c292195k09443j08111HbaV3a122003L90155501echaracterLevel28928passive2dSanguineRouge15skillgGuideToAfterlife1bStaffOfHoma3L90010101"
 
 export const flexObj = {
-  databaseVersion: 3,
+  databaseVersion: CurrentDatabaseVersion,
   artifacts: [{
     setKey: 'CrimsonWitchOfFlames',
     numStars: 5,

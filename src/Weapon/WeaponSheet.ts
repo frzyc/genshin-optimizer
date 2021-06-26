@@ -15,7 +15,7 @@ export default class WeaponSheet {
   constructor(weaponSheet: IWeaponSheet) { this.sheet = weaponSheet }
   static get = (weaponKey: WeaponKey | string): Promise<WeaponSheet> | undefined => weaponKey ? loadWeaponSheet[weaponKey] : undefined
   static getAll = (): Promise<StrictDict<WeaponKey, WeaponSheet>> => weaponImport
-  static getWeaponsOfType = (sheets: StrictDict<WeaponKey, WeaponSheet>, weaponType: string) => Object.fromEntries(Object.entries(sheets).filter(([key, sheet]) => (sheet as WeaponSheet).weaponType === weaponType))
+  static getWeaponsOfType = (sheets: StrictDict<WeaponKey, WeaponSheet>, weaponType: string): Dict<WeaponKey, WeaponSheet> => Object.fromEntries(Object.entries(sheets).filter(([key, sheet]) => (sheet as WeaponSheet).weaponType === weaponType))
   get name() { return this.sheet.name }
   get weaponType() { return this.sheet.weaponType }
   get img() { return this.sheet.img }

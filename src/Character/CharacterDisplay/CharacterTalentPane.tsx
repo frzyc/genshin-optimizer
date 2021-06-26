@@ -26,7 +26,7 @@ export default function CharacterTalentPane(props: CharacterTalentPaneProps) {
   const skillBurstList = [["auto", "Normal/Charged Attack"], ["skill", "Elemental Skill"], ["burst", "Elemental Burst"]]
   const passivesList: Array<[tKey: string, tText: string, asc: number]> = [["passive1", "Unlocked at Ascension 1", 1], ["passive2", "Unlocked at Ascension 4", 4], ["passive3", "Unlocked by Default", 0]]
   const skillDisplayProps = { ...props, ascension }
-
+  const build = newBuild ? newBuild : equippedBuild
   return <>
     <Row><Col><ReactionDisplay {...{ characterSheet, newBuild, equippedBuild }} /></Col></Row>
     <Row>
@@ -39,7 +39,7 @@ export default function CharacterTalentPane(props: CharacterTalentPaneProps) {
             subtitle={tText}
           />
         </Col>)}
-      {!!characterSheet.getTalent("sprint") && <Col xs={12} md={6} lg={4} className="mb-2">
+      {!!characterSheet.getTalentOfKey("sprint", build?.characterEle) && <Col xs={12} md={6} lg={4} className="mb-2">
         <SkillDisplayCard
           {...skillDisplayProps}
           talentKey="sprint"
@@ -51,7 +51,7 @@ export default function CharacterTalentPane(props: CharacterTalentPaneProps) {
       {/* passives */}
       {passivesList.map(([tKey, tText, asc]) => {
         let enabled = ascension >= asc
-        if (!characterSheet.getTalent(tKey)) return null
+        if (!characterSheet.getTalentOfKey(tKey, build?.characterEle)) return null
         return <Col key={tKey} style={{ opacity: enabled ? 1 : 0.5 }} xs={12} md={4} className="mb-2">
           <SkillDisplayCard
             {...skillDisplayProps}
@@ -93,7 +93,8 @@ const ReactionComponents = {
 }
 function ReactionDisplay({ characterSheet, newBuild, equippedBuild }: { characterSheet: CharacterSheet, newBuild?: ICalculatedStats, equippedBuild?: ICalculatedStats }) {
   const build = newBuild ? newBuild : equippedBuild
-  const charEleKey = characterSheet.elementKey
+  if (!build) return null
+  const charEleKey = build.characterEle
   const eleInterArr = [...(ElementToReactionKeys[charEleKey] || [])]
   if (!eleInterArr.includes("shattered_hit") && characterSheet.weaponTypeKey === "claymore") eleInterArr.push("shattered_hit")
   return <Card bg="lightcontent" text={"lightfont" as any} className="mb-2">
@@ -186,7 +187,7 @@ type SkillDisplayCardProps = {
   editable: boolean,
   onClickTitle?: (any) => any
 }
-function SkillDisplayCard({ characterSheet, character: { constellation, talentLevelKeys, }, characterDispatch, talentKey, subtitle, ascension, equippedBuild, newBuild, editable, onClickTitle }: SkillDisplayCardProps) {
+function SkillDisplayCard({ characterSheet, character: { elementKey, talentLevelKeys, }, characterDispatch, talentKey, subtitle, ascension, equippedBuild, newBuild, editable, onClickTitle }: SkillDisplayCardProps) {
   let build = newBuild ? newBuild : equippedBuild as ICalculatedStats //assumes at least one of them is not undefined
   let header: Displayable | null = null
 
@@ -220,21 +221,22 @@ function SkillDisplayCard({ characterSheet, character: { constellation, talentLe
     </Card>
   </Col></Row>
 
-  const document = characterSheet.getTalent(talentKey)?.document
+  const talentSheet = characterSheet.getTalentOfKey(talentKey, build.characterEle)
+  const sections = talentSheet?.sections
   return <Card bg="lightcontent" text={"lightfont" as any} className="h-100">
     {header}
     <Card.Body className="mb-n2">
       <Row className={`d-flex flex-row mb-2 ${(editable && onClickTitle) ? "cursor-pointer" : ""}`} onClick={onClickTitle} >
         <Col xs="auto" className="flex-shrink-1 d-flex flex-column">
-          <Image src={characterSheet.getTalent(talentKey)?.img} className="thumb-mid" />
+          <Image src={talentSheet?.img} className="thumb-mid" />
         </Col>
         <Col className="flex-grow-1">
-          <Card.Title>{characterSheet.getTalent(talentKey)?.name}</Card.Title>
+          <Card.Title>{talentSheet?.name}</Card.Title>
           <Card.Subtitle>{subtitle}</Card.Subtitle>
         </Col>
       </Row>
       {/* Display document sections */}
-      {document ? <DocumentDisplay {...{ document, characterDispatch, equippedBuild, newBuild, editable }} /> : null}
+      {sections ? <DocumentDisplay {...{ sections, characterDispatch, equippedBuild, newBuild, editable }} /> : null}
       {statsEle}
     </Card.Body>
   </Card>

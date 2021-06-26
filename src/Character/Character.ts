@@ -9,7 +9,7 @@ import Formula from "../Formula";
 import { ElementToReactionKeys, PreprocessFormulas } from "../StatData";
 import { GetDependencies } from "../StatDependency";
 import { ICharacter } from "../Types/character";
-import { allElements, allSlotKeys, CharacterKey, SlotKey } from "../Types/consts";
+import { allElements, allSlotKeys, CharacterKey, ElementKey, SlotKey } from "../Types/consts";
 import ICalculatedStats from "../Types/ICalculatedStats";
 import { deepClone, evalIfFunc } from "../Util/Util";
 import Weapon from "../Weapon/Weapon";
@@ -94,13 +94,12 @@ export default class Character {
     CharacterDatabase.remove(characterKey)
   }
 
-  static calculateBuild = (character: ICharacter, characterSheet: CharacterSheet, weaponSheet: WeaponSheet, artifactSheets, mainStatAssumptionLevel = 0) => {
+  static calculateBuild = (character: ICharacter, characterSheet: CharacterSheet, weaponSheet: WeaponSheet, artifactSheets, mainStatAssumptionLevel = 0): ICalculatedStats => {
     let artifacts
     if (character.artifacts) //from flex
       artifacts = Object.fromEntries(character.artifacts.map((art, i) => [i, art]))
     else if (character.equippedArtifacts)
       artifacts = Object.fromEntries(Object.entries(character.equippedArtifacts).map(([key, artid]) => [key, ArtifactDatabase.get(artid)]))
-    else return {}//probably won't happen. just in case.
     const initialStats = Character.createInitialStats(character, characterSheet, weaponSheet)
     initialStats.mainStatAssumptionLevel = mainStatAssumptionLevel
     return Character.calculateBuildwithArtifact(initialStats, artifacts, artifactSheets)
@@ -152,13 +151,13 @@ export default class Character {
 
   static createInitialStats = (character: ICharacter, characterSheet: CharacterSheet, weaponSheet: WeaponSheet): ICalculatedStats => {
     character = deepClone(character)
-    const { characterKey, levelKey, hitMode, infusionAura, reactionMode, talentLevelKeys, constellation, equippedArtifacts, conditionalValues = {}, weapon = { key: "" } } = character
+    const { characterKey, elementKey, levelKey, hitMode, infusionAura, reactionMode, talentLevelKeys, constellation, equippedArtifacts, conditionalValues = {}, weapon = { key: "", refineIndex: 0 } } = character
     const ascension = Character.getAscension(levelKey)
 
     //generate the initalStats obj with data from Character & overrides
     const statKeys = ["characterHP", "characterATK", "characterDEF", "weaponATK", "characterLevel", "enemyLevel", "physical_enemyRes_", "physical_enemyImmunity", ...Object.keys(characterStatBase)]
-    const initialStats = Object.fromEntries(statKeys.map(key => [key, Character.getStatValueWithOverride(character, characterSheet, weaponSheet, key)]))
-    initialStats.characterEle = characterSheet.elementKey;
+    const initialStats = Object.fromEntries(statKeys.map(key => [key, Character.getStatValueWithOverride(character, characterSheet, weaponSheet, key)])) as ICalculatedStats
+    initialStats.characterEle = characterSheet.elementKey ?? elementKey ?? "anemo";
     initialStats.characterKey = characterKey
     initialStats.hitMode = hitMode;
     initialStats.infusionAura = infusionAura
@@ -168,9 +167,9 @@ export default class Character {
     initialStats.tlvl = talentLevelKeys;
     initialStats.constellation = constellation
     initialStats.ascension = ascension
-    initialStats.weapon = weapon
+    const { key: weapon_key, refineIndex: weapon_refineIndex } = weapon
+    initialStats.weapon = { key: weapon_key, refineIndex: weapon_refineIndex }
     initialStats.equippedArtifacts = equippedArtifacts;
-
 
     //enemy stuff
     ["physical", ...allElements].forEach(eleKey => {
@@ -193,7 +192,7 @@ export default class Character {
     Character.mergeStats(initialStats, { [specialStatKey]: specializedStatVal })
 
     //add stats from all talents
-    characterSheet.getTalentStatsAll(initialStats as ICalculatedStats).forEach(s => Character.mergeStats(initialStats, s))
+    characterSheet.getTalentStatsAll(initialStats as ICalculatedStats, initialStats.characterEle).forEach(s => Character.mergeStats(initialStats, s))
 
     //add levelBoosts, from Talent stats.
     for (const key in initialStats.tlvl)
@@ -217,8 +216,7 @@ export default class Character {
     return initialStats as ICalculatedStats
   }
   static getDisplayStatKeys = (stats: ICalculatedStats, characterSheet: CharacterSheet) => {
-    const { characterKey } = stats
-    let eleKey = characterSheet.elementKey
+    const eleKey = stats.characterEle
     const basicKeys = ["finalHP", "finalATK", "finalDEF", "eleMas", "critRate_", "critDMG_", "heal_", "enerRech_", `${eleKey}_dmg_`]
     const isAutoElemental = characterSheet.isAutoElemental
     if (!isAutoElemental) basicKeys.push("physical_dmg_")
@@ -227,62 +225,37 @@ export default class Character {
     const transReactions = deepClone(ElementToReactionKeys[eleKey])
     const weaponTypeKey = characterSheet.weaponTypeKey
     if (!transReactions.includes("shattered_hit") && weaponTypeKey === "claymore") transReactions.push("shattered_hit")
-    if (Formula.formulas.character?.[characterKey]) {
-      const charFormulas = {}
-      Object.entries(Formula.formulas.character[characterKey]).forEach(([talentKey, formulas]: any) => {
-        Object.values(formulas as any).forEach((formula: any) => {
-          if (!formula.field.canShow(stats)) return
-          if (talentKey === "normal" || talentKey === "charged" || talentKey === "plunging") talentKey = "auto"
-          const formKey = `talentKey_${talentKey}`
-          if (!charFormulas[formKey]) charFormulas[formKey] = []
-          charFormulas[formKey].push(formula.keys)
-        })
+    const charFormulas = {}
+    const talentSheet = characterSheet.getTalent(eleKey)
+    talentSheet && Object.entries(talentSheet.formula).forEach(([talentKey, formulas]: any) => {
+      Object.values(formulas as any).forEach((formula: any) => {
+        if (!formula.field.canShow(stats)) return
+        if (talentKey === "normal" || talentKey === "charged" || talentKey === "plunging") talentKey = "auto"
+        const formKey = `talentKey_${talentKey}`
+        if (!charFormulas[formKey]) charFormulas[formKey] = []
+        charFormulas[formKey].push(formula.keys)
       })
+    })
 
-      const weaponFormulas = Formula.formulas.weapon[stats.weapon.key]
+    const weaponFormulas = Formula.formulas.weapon[stats.weapon.key]
 
-      if (weaponFormulas) {
-        Object.values(weaponFormulas as any).forEach((formula: any) => {
-          if (!formula.field.canShow(stats)) return
-          const formKey = `weapon_${stats.weapon.key}`
-          if (!charFormulas[formKey]) charFormulas[formKey] = []
-          charFormulas[formKey].push(formula.keys)
-        })
-      }
-      return { basicKeys, ...charFormulas, transReactions }
-    } else {//TODO: doesnt have character sheet
-      //generic average hit parameters.
-      const genericAvgHit: string[] = []
-      if (!isAutoElemental) //add phy auto + charged + physical
-        genericAvgHit.push("physical_normal_avgHit", "physical_charged_avgHit")
-
-      else if (weaponTypeKey === "bow") {//bow charged atk does elemental dmg on charge
-        genericAvgHit.push(`${eleKey}_charged_avgHit`)
-      }
-      //show skill/burst
-      genericAvgHit.push(`${eleKey}_skill_avgHit`, `${eleKey}_burst_avgHit`)
-
-      //add reactions.
-      if (eleKey === "pyro") {
-        const reactions: string[] = []
-        reactions.push(...genericAvgHit.filter(key => key.startsWith(`${eleKey}_`)).map(key => key.replace(`${eleKey}_`, `${eleKey}_vaporize_`)))
-        reactions.push(...genericAvgHit.filter(key => key.startsWith(`${eleKey}_`)).map(key => key.replace(`${eleKey}_`, `${eleKey}_melt_`)))
-        genericAvgHit.push(...reactions)
-      } else if (eleKey === "cryo")
-        genericAvgHit.push(...genericAvgHit.filter(key => key.startsWith(`${eleKey}_`)).map(key => key.replace(`${eleKey}_`, `${eleKey}_melt_`)))
-      else if (eleKey === "hydro")
-        genericAvgHit.push(...genericAvgHit.filter(key => key.startsWith(`${eleKey}_`)).map(key => key.replace(`${eleKey}_`, `${eleKey}_vaporize_`)))
-
-      return { basicKeys, genericAvgHit, transReactions }
+    if (weaponFormulas) {
+      Object.values(weaponFormulas as any).forEach((formula: any) => {
+        if (!formula.field.canShow(stats)) return
+        const formKey = `weapon_${stats.weapon.key}`
+        if (!charFormulas[formKey]) charFormulas[formKey] = []
+        charFormulas[formKey].push(formula.keys)
+      })
     }
+    return { basicKeys, ...charFormulas, transReactions }
   }
-  static getDisplayHeading(key: string, characterSheet: CharacterSheet, weaponSheet: WeaponSheet) {
+  static getDisplayHeading(key: string, characterSheet: CharacterSheet, weaponSheet: WeaponSheet, eleKey: ElementKey = "anemo") {
     if (key === "basicKeys") return "Basic Stats"
     else if (key === "genericAvgHit") return "Generic Optimization Values"
     else if (key === "transReactions") return "Transformation Reaction"
     else if (key.startsWith("talentKey_")) {
       const subkey = key.split("talentKey_")[1]
-      return (characterSheet?.getTalent(subkey)?.name ?? subkey)
+      return (characterSheet?.getTalentOfKey(subkey, eleKey)?.name ?? subkey)
     } else if (key.startsWith("weapon_")) {
       const subkey = key.split("weapon_")[1]
       return (weaponSheet?.name ?? subkey)

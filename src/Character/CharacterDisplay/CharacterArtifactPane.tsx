@@ -18,7 +18,7 @@ type CharacterArtifactPaneProps = {
   characterSheet: CharacterSheet,
   weaponSheet: WeaponSheet
   character: ICharacter,
-  equippedBuild: ICalculatedStats,
+  equippedBuild?: ICalculatedStats,
   newBuild?: ICalculatedStats,
   editable: boolean,
   characterDispatch: (any) => void,
@@ -27,7 +27,7 @@ type CharacterArtifactPaneProps = {
 function CharacterArtifactPane({ characterSheet, weaponSheet, character, character: { characterKey }, equippedBuild, newBuild, editable, characterDispatch, artifacts }: CharacterArtifactPaneProps) {
   const history = useHistory()
   //choose which one to display stats for
-  const stats = newBuild ? newBuild : equippedBuild
+  const stats = (newBuild ? newBuild : equippedBuild) as ICalculatedStats
   const mainStatAssumptionLevel = stats?.mainStatAssumptionLevel ?? 0
   const statKeys = useMemo(() => Character.getDisplayStatKeys(stats, characterSheet), [stats, characterSheet])
   const edit = useCallback(

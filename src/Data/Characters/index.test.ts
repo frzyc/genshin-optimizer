@@ -1,5 +1,7 @@
 import characters from './index'
 import Formula from '../../Formula'//load the formula processing
+import { ICharacterSheet } from '../../Types/character'
+import { CharacterKey } from '../../Types/consts'
 expect.extend({
   toBeValidField(field, fieldStr) {
     if (field.formula && !field.formula.keys) return {
@@ -19,11 +21,26 @@ expect.extend({
       pass: true
     }
   },
-  toBeValidCharacterSheet(charSheet, characterKey) {
-    if (charSheet.formula !== (Formula.formulas as any).character[characterKey]) return {
-      message: () => `Character sheet: ${characterKey}.formula is not being brought into Formula properly.`,
-      pass: false
+  async toBeValidCharacterSheet(charSheet: ICharacterSheet, characterKey: CharacterKey) {
+    if ("talent" in charSheet) {
+      const charformula = await Formula.get(["character", characterKey])
+      if (charSheet.talent.formula !== charformula) return {
+        message: () => `Character sheet: ${characterKey}.formula is not being brought into Formula properly.`,
+        pass: false
+      }
+    } else {
+      for (const eleKey of Object.keys(charSheet.talents)) {
+        const talentSheet = charSheet.talents[eleKey]
+        if (!talentSheet) continue
+        const charformula = await Formula.get(["character", characterKey, eleKey])
+        if (talentSheet.formula !== charformula) return {
+          message: () => `Character sheet: ${characterKey}.${eleKey}.formula is not being brought into Formula properly.`,
+          pass: false
+        }
+      }
+
     }
+
     return {
       message: () => `Character sheet: ${characterKey} is valid.`,
       pass: true
@@ -32,12 +49,20 @@ expect.extend({
 })
 test('validate character sheet', () => {
   Object.entries(characters).forEach(([characterKey, char]) => {
-    Object.keys(char.talent).length && expect(char).toBeValidCharacterSheet(characterKey) //TODO: escape for character with imcomplete characer sheet
-    Object.entries(char.talent).forEach(([talentKey, talent]) =>
-      talent.document.forEach((section, sectionIndex) =>
-        section.fields?.forEach?.((field, fieldIndex) => {
-          expect(field).toBeValidField(`${characterKey}.${talentKey}.document[${sectionIndex}].fields[${fieldIndex}]`)
-        })))
+    expect(char).toBeValidCharacterSheet(characterKey)
+    if ("talent" in char)
+      Object.entries(char.talent.sheets).forEach(([talentKey, talent]) =>
+        talent.sections.forEach((section, sectionIndex) =>
+          section.fields?.forEach?.((field, fieldIndex) => {
+            expect(field).toBeValidField(`${characterKey}.${talentKey}.sections[${sectionIndex}].fields[${fieldIndex}]`)
+          })))
+    else //char.talents -> traveler
+      Object.entries(char.talents).forEach(([eleKey, talentSheet]) =>
+        Object.entries(talentSheet.sheets).forEach(([talentKey, talent]) =>
+          talent.sections.forEach((section, sectionIndex) =>
+            section.fields?.forEach?.((field, fieldIndex) => {
+              expect(field).toBeValidField(`${characterKey}.${eleKey}.${talentKey}.sections[${sectionIndex}].fields[${fieldIndex}]`)
+            }))))
   })
 })
 

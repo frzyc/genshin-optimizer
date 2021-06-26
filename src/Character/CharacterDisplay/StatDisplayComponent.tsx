@@ -21,8 +21,9 @@ type StatDisplayComponentProps = {
 }
 
 export default function StatDisplayComponent({ characterSheet, weaponSheet, character, equippedBuild, newBuild, statsDisplayKeys, editable, cardbg = "darkcontent" }: StatDisplayComponentProps) {
+  const build = newBuild ? newBuild : equippedBuild
   return <Row className="mb-n2">{Object.entries(statsDisplayKeys).map(([sectionKey, sectionValues]: any) => {
-    const header = Character.getDisplayHeading(sectionKey, characterSheet, weaponSheet)
+    const header = Character.getDisplayHeading(sectionKey, characterSheet, weaponSheet, build?.characterEle)
     return <Col key={sectionKey} className="mb-2" xs={12} md={6} xl={4}>
       <Card bg={cardbg} text={"lightfont" as any} className="h-100">
         <Card.Header>{header}</Card.Header>
