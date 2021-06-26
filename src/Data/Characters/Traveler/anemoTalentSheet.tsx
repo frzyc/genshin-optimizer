@@ -170,7 +170,7 @@ const talentSheet: TalentSheet = {
         fields: [{
           text: "Anemo Auto",
           formulaText: stats => <span>60% * {Stat.printStat("finalATK", stats)}</span>,
-          formula: formula.passive3.windAuto,
+          formula: formula.passive1.windAuto,
           variant: stats => getTalentStatKeyVariant("normal", stats, "anemo"),
         }]
       }]

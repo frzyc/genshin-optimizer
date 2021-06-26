@@ -42,7 +42,7 @@ export default class CharacterSheet {
     return evalIfFunc(this.getTalentOfKey(talentKey)?.stats, stats)
   }
   getTalentStatsAll = (stats: ICalculatedStats, eleKey: ElementKey = "anemo") => {
-    const talents = this.getTalent(eleKey)
+    const talents = this.getTalent(eleKey)?.sheets
     if (!talents) return []
     const statsArr: any[] = []
     Object.keys(talents).forEach(talentKey => {

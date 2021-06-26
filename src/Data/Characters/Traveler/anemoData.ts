@@ -50,7 +50,7 @@ const formula: IFormulaSheet = {
   passive2: {
     heal: stats => [s => 0.02 * s.finalHP * s.heal_multi, ["finalHP", "heal_multi"]],
   },
-  passive3: {
+  passive1: {
     windAuto: stats => basicDMGFormula(60, stats, "normal", "anemo"),
   }
 }

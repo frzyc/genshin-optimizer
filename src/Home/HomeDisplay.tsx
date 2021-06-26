@@ -1,6 +1,5 @@
 import { Badge, Card, Col, Container, Image, Row } from "react-bootstrap"
 import ReactGA from 'react-ga'
-import WIPComponent from '../Components/WIPComponent'
 import art_editor from './art_editor.png'
 import build_generator from './build_generator.png'
 import character_editor from './character_editor.png'
@@ -72,7 +71,7 @@ export default function HomeDisplay(props) {
               <Trans t={t} i18nKey="home:paragraphCharacterDamageCalculations">
                 <h5>Character Damage Calculations</h5>
                 <ul>
-                  <li>All the details for Every <WIPComponent><Badge variant="warning">WIP</Badge></WIPComponent> character's talents.</li>
+                  <li>All the details for every character's talents.</li>
                   <li>All numbers should reflect real in game damage.</li>
                   <li>Conditional stats and modifications from every Constellation accounted for.</li>
                   <li>Shows calculations for all the numbers, along with formulas. I show my work.</li>
