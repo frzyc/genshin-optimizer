@@ -54,10 +54,21 @@ describe("Testing Mona's Formulas", () => {
       describe("vaporize", () => {
         beforeEach(() => setupStats.reactionMode = "hydro_vaporize")
 
-        test("hits", () => {
-          const stats = computeAllStats(setupStats)
-          expect(formula.normal[0](stats)[0](stats)).toApproximate(1155)
-          expect(formula.charged.hit(stats)[0](stats)).toApproximate(4599)
+        describe("with 100% reactionChance", () => {
+          beforeEach(() => setupStats.reactionChance = 100)
+          test("hits", () => {
+            const stats = computeAllStats(setupStats)
+            expect(formula.normal[0](stats)[0](stats)).toApproximate(1155)
+            expect(formula.charged.hit(stats)[0](stats)).toApproximate(4599)
+          })
+        })
+        describe("with 100% reactionChance", () => {
+          beforeEach(() => setupStats.reactionChance = 50)
+          test("hits", () => {
+            const stats = computeAllStats(setupStats)
+            expect(formula.normal[0](stats)[0](stats)).toApproximate(820)
+            expect(formula.charged.hit(stats)[0](stats)).toApproximate(3265)
+          })
         })
       })
     })
@@ -72,10 +83,21 @@ describe("Testing Mona's Formulas", () => {
       describe("vaporize", () => {
         beforeEach(() => setupStats.reactionMode = "hydro_vaporize")
 
-        test("hits", () => {
-          const stats = computeAllStats(setupStats)
-          expect(formula.normal[0](stats)[0](stats)).toApproximate(2398)
-          expect(formula.charged.hit(stats)[0](stats)).toApproximate(9552)
+        describe("with 100% reactionChance", () => {
+          beforeEach(() => setupStats.reactionChance = 100)
+          test("hits", () => {
+            const stats = computeAllStats(setupStats)
+            expect(formula.normal[0](stats)[0](stats)).toApproximate(2398)
+            expect(formula.charged.hit(stats)[0](stats)).toApproximate(9552)
+          })
+        })
+        describe("with 50% reactionChance", () => {
+          beforeEach(() => setupStats.reactionChance = 50)
+          test("hits", () => {
+            const stats = computeAllStats(setupStats)
+            expect(formula.normal[0](stats)[0](stats)).toApproximate(1703)
+            expect(formula.charged.hit(stats)[0](stats)).toApproximate(6782)
+          })
         })
       })
     })

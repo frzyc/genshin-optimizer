@@ -66,6 +66,7 @@ describe("Testing Bennett's Formulas (Mabmab#6492)", () => {
       beforeEach(() => {
         setupStats.hitMode = "hit"
         setupStats.reactionMode = "pyro_vaporize"
+        setupStats.reactionChance = 100
       })
 
       test("hit", () => {
@@ -115,10 +116,19 @@ describe("Testing Bennett's Formulas (Mabmab#6492)", () => {
         setupStats.hitMode = "critHit"
         setupStats.reactionMode = "pyro_vaporize"
       })
-
-      test("hit", () => {
-        const stats = computeAllStats(setupStats)
-        expect(formula.skill.press(stats)[0](stats)).toApproximate(9203)
+      describe("with 100% reactionChance", () => {
+        beforeEach(() => setupStats.reactionChance = 100)
+        test("hit", () => {
+          const stats = computeAllStats(setupStats)
+          expect(formula.skill.press(stats)[0](stats)).toApproximate(9203)
+        })
+      })
+      describe("with 50% reactionChance", () => {
+        beforeEach(() => setupStats.reactionChance = 50)
+        test("hit", () => {
+          const stats = computeAllStats(setupStats)
+          expect(formula.skill.press(stats)[0](stats)).toApproximate(6920)
+        })
       })
     })
   })

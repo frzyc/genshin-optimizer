@@ -21,6 +21,7 @@ export default interface ICalculatedStats {
   weaponType: string
   hitMode: HitModeKey
   reactionMode: reactionModeKey | null
+  reactionChance: number
   infusionAura: ElementKey | ""
   finalHP: number
 }

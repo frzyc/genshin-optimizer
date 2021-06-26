@@ -49,6 +49,7 @@ describe("Testing Kaeya's Formulas (Derpy#2132)", () => {
       });
       test('melt', () => {
         setupStats.reactionMode = "cryo_melt"
+        setupStats.reactionChance = 100
         const stats = computeAllStats(setupStats)
         expect(formula.skill.dmg(stats)[0](stats)).toApproximate(1711)
       })
@@ -78,6 +79,7 @@ describe("Testing Kaeya's Formulas (Derpy#2132)", () => {
       });
       test('melt', () => {
         setupStats.reactionMode = "cryo_melt"
+        setupStats.reactionChance = 100
         const stats = computeAllStats(setupStats)
         expect(formula.skill.dmg(stats)[0](stats)).toApproximate(3925)
       })

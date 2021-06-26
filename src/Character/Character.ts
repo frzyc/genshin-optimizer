@@ -151,7 +151,7 @@ export default class Character {
 
   static createInitialStats = (character: ICharacter, characterSheet: CharacterSheet, weaponSheet: WeaponSheet): ICalculatedStats => {
     character = deepClone(character)
-    const { characterKey, elementKey, levelKey, hitMode, infusionAura, reactionMode, talentLevelKeys, constellation, equippedArtifacts, conditionalValues = {}, weapon = { key: "", refineIndex: 0 } } = character
+    const { characterKey, elementKey, levelKey, hitMode, infusionAura, reactionMode, reactionChance, talentLevelKeys, constellation, equippedArtifacts, conditionalValues = {}, weapon = { key: "", refineIndex: 0 } } = character
     const ascension = Character.getAscension(levelKey)
 
     //generate the initalStats obj with data from Character & overrides
@@ -162,6 +162,7 @@ export default class Character {
     initialStats.hitMode = hitMode;
     initialStats.infusionAura = infusionAura
     initialStats.reactionMode = reactionMode;
+    initialStats.reactionChance = reactionChance;
     initialStats.conditionalValues = conditionalValues
     initialStats.weaponType = characterSheet.weaponTypeKey
     initialStats.tlvl = talentLevelKeys;

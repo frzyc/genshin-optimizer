@@ -62,6 +62,7 @@ const StatData: { [stat: string]: StatItem } = {
   heal_multi: { name: "Heal multiplier", unit: "multi" },
 
   // Reaction
+  reactionChance: { name: "Reaction Chance", unit: "%", const: true },
   transformative_level_multi: { name: "Reaction Level Multiplier", unit: "multi", const: true },
   amplificative_dmg_: { name: "Amplificative Reaction DMG Bonus", unit: "%" },
   transformative_dmg_: { name: "Transformative Reaction DMG Bonus", unit: "%" },
@@ -203,7 +204,7 @@ Object.entries(amplifyingReactions).forEach(([reaction, { name, variants }]) => 
         StatData[`${ele}_${reaction}_${move}_${type}`] = { name: `${name} ${moveName} ${typeName}`, ...opt }
 
         Formulas[`${ele}_${reaction}_${move}_${type}_multi`] = (s) => s[`${ele}_${move}_${type}_multi`] * s[`${ele}_${reaction}_multi`]
-        Formulas[`${ele}_${reaction}_${move}_${type}`] = (s) => s.finalATK * s[`${ele}_${reaction}_${move}_${type}_multi`]
+        Formulas[`${ele}_${reaction}_${move}_${type}`] = (s, c) => s.finalATK * s[`${ele}_${reaction}_${move}_${type}_multi`] * c.reactionChance/100 + s.finalATK * s[`${ele}_${move}_${type}_multi`] * (1 - c.reactionChance/100)
       })
     })
   })

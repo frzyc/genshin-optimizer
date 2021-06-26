@@ -43,12 +43,12 @@ type ReactionToggleProps = {
   characterDispatch: (any) => void,
   className: string
 }
-export function ReactionToggle({ character: { reactionMode = "none", infusionAura }, build, characterDispatch, className }: ReactionToggleProps) {
+export function ReactionToggle({ character: { reactionMode = "none", infusionAura, reactionChance = 100 }, build, characterDispatch, className }: ReactionToggleProps) {
   if (reactionMode === null) reactionMode = "none"
   const charEleKey = build.characterEle
   if (!["pyro", "hydro", "cryo"].includes(charEleKey) && !["pyro", "hydro", "cryo"].includes(infusionAura)) return null
-  return <ToggleButtonGroup className={className} type="radio" name="reactionMode" value={reactionMode} onChange={val => characterDispatch({ reactionMode: val === "none" ? null : val })}>
-    <ToggleButton value={"none"} variant={reactionMode === "none" ? "success" : "primary"}>No Reactions</ToggleButton >
+  return <Dropdown as={ToggleButtonGroup} className={className} type="radio" name="reactionMode" value={reactionMode} onChange={val => characterDispatch({ reactionMode: val === "none" ? null : val, reactionChance })}>
+    <ToggleButton value={"none"} variant={reactionMode === "none" ? "success" : "primary"}>No Reaction</ToggleButton >
     {(charEleKey === "pyro" || infusionAura === "pyro") && <ToggleButton value={"pyro_vaporize"} variant={reactionMode === "pyro_vaporize" ? "success" : "primary"}>
       <span className="text-vaporize">Vaporize(Pyro) <Image src={Assets.elements.hydro} className="inline-icon" />+<Image src={Assets.elements.pyro} className="inline-icon" /></span>
     </ToggleButton >}
@@ -61,7 +61,15 @@ export function ReactionToggle({ character: { reactionMode = "none", infusionAur
     {(charEleKey === "cryo" || infusionAura === "cryo") && <ToggleButton value={"cryo_melt"} variant={reactionMode === "cryo_melt" ? "success" : "primary"}>
       <span className="text-melt">Melt(Cryo) <Image src={Assets.elements.pyro} className="inline-icon" />+<Image src={Assets.elements.cryo} className="inline-icon" /></span>
     </ToggleButton >}
-  </ToggleButtonGroup>
+    <Dropdown.Toggle split variant="primary" />
+    <Dropdown.Menu onSelect={e => console.log(e)} >
+      <Dropdown.Header className="text-reactionChance">Reaction Chance</Dropdown.Header>
+      {Array.from({length: 10}, (_, i) => 10 + i * 10).map(i =>
+        <Dropdown.Item active={reactionChance === i} onSelect={() => characterDispatch({ reactionMode, reactionChance: i })}>
+          {i} %
+        </Dropdown.Item>)}
+    </Dropdown.Menu>
+  </Dropdown>
 }
 export function HitModeToggle({ hitMode, characterDispatch, className }) {
   return <ToggleButtonGroup type="radio" value={hitMode} name="hitOptions" onChange={m => characterDispatch({ hitMode: m })} className={className}>

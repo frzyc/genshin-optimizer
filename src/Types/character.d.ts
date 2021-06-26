@@ -39,6 +39,7 @@ export interface ICharacter {
   hitMode: HitModeKey
   elementKey?: ElementKey
   reactionMode: reactionModeKey | null
+  reactionChance: number
   equippedArtifacts: StrictDict<SlotKey, string>,
   conditionalValues: any,
   baseStatOverrides: {},//overriding the baseStat

@@ -64,21 +64,45 @@ describe("Testing Klee's Formulas", () => {
       describe("with vaporize", () => {
         beforeEach(() => setupStats.reactionMode = "pyro_vaporize")
 
-        test("hits", () => {
-          const stats = computeAllStats(setupStats)
-          expect(formula.normal[0](stats)[0](stats)).toApproximate(1444)
-          expect(formula.charged.dmg(stats)[0](stats)).toApproximate(3149)
-          expect(formula.skill.jumpyDmg(stats)[0](stats)).toApproximate(1905)
-          expect(formula.burst.dmg(stats)[0](stats)).toApproximate(853)
+        describe("with 100% reactionChance", () => {
+          beforeEach(() => setupStats.reactionChance = 100)
+          test("hits", () => {
+            const stats = computeAllStats(setupStats)
+            expect(formula.normal[0](stats)[0](stats)).toApproximate(1444)
+            expect(formula.charged.dmg(stats)[0](stats)).toApproximate(3149)
+            expect(formula.skill.jumpyDmg(stats)[0](stats)).toApproximate(1905)
+            expect(formula.burst.dmg(stats)[0](stats)).toApproximate(853)
+          })
+        })
+        describe("with 50% reactionChance", () => {
+          beforeEach(() => setupStats.reactionChance = 50)
+          test("hits", () => {
+            const stats = computeAllStats(setupStats)
+            expect(formula.normal[0](stats)[0](stats)).toApproximate(1039)
+            expect(formula.charged.dmg(stats)[0](stats)).toApproximate(2267)
+            expect(formula.skill.jumpyDmg(stats)[0](stats)).toApproximate(1371)
+            expect(formula.burst.dmg(stats)[0](stats)).toApproximate(614)
+          })
         })
       })
       describe("with melt", () => {
         beforeEach(() => setupStats.reactionMode = "pyro_melt")
 
-        test("hits", () => {
-          const stats = computeAllStats(setupStats)
-          expect(formula.normal[0](stats)[0](stats)).toApproximate(1925)
-          expect(formula.charged.dmg(stats)[0](stats)).toApproximate(4199)
+        describe("with 100% reactionChance", () => {
+          beforeEach(() => setupStats.reactionChance = 100)
+          test("hits", () => {
+            const stats = computeAllStats(setupStats)
+            expect(formula.normal[0](stats)[0](stats)).toApproximate(1925)
+            expect(formula.charged.dmg(stats)[0](stats)).toApproximate(4199)
+          })
+        })
+        describe("with 50% reactionChance", () => {
+          beforeEach(() => setupStats.reactionChance = 50)
+          test("hits", () => {
+            const stats = computeAllStats(setupStats)
+            expect(formula.normal[0](stats)[0](stats)).toApproximate(1280)
+            expect(formula.charged.dmg(stats)[0](stats)).toApproximate(2792)
+          })
         })
       })
     })

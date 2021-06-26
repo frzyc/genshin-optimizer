@@ -151,7 +151,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     else isMounted.current = true
   }, [characterKey, maxBuildsToShow])
 
-  //validate optimizationTarget 
+  //validate optimizationTarget
   useEffect(() => {
     if (!statsDisplayKeys) return
     if (!Array.isArray(optimizationTarget)) return
@@ -630,7 +630,7 @@ function StatFilterItem({ statKey, statKeys = [], min, max, close, setFilter }: 
 
 function HitModeCard({ characterSheet, character, build, className }: { characterSheet: CharacterSheet, character: ICharacter, build: ICalculatedStats, className: string }) {
   const setHitmode = useCallback(({ hitMode }) => CharacterDatabase.update({ ...character, hitMode }), [character])
-  const setReactionMode = useCallback(({ reactionMode }) => CharacterDatabase.update({ ...character, reactionMode }), [character])
+  const setReactionMode = useCallback(({ reactionMode, reactionChance }) => CharacterDatabase.update({ ...character, reactionMode, reactionChance }), [character])
   const setInfusionAura = useCallback(({ infusionAura }) => CharacterDatabase.update({ ...character, infusionAura }), [character])
   if (!character) return null
   return <Card bg="lightcontent" text={"lightfont" as any} className={className}>
