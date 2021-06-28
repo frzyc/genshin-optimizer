@@ -8,6 +8,7 @@
     "hit6": "Daño de 6.º golpe"
   },
   "charged": {
+    "dmg": "Ataque Cargado",
     "spinning": "Daño de ATQ Cargado en ciclo",
     "final": "Daño final de Ataque Cargado",
     "stamina": "Coste de Aguante de ATQ Cargado",
@@ -29,6 +30,7 @@
   "cd": "TdE",
   "energyCost": "Energía Elemental",
   "baseDMG": "Daño base",
+  "dot": "Daño continuo",
   "press": {
     "dmg": "Daño al pulsar una vez",
     "cd": "TdE al pulsar una vez"

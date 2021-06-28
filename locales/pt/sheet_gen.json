@@ -8,6 +8,7 @@
     "hit6": "Dano do 6° Golpe"
   },
   "charged": {
+    "dmg": "Dano de Ataque Carregado",
     "spinning": "Dano de Loop de Ataque Carregado",
     "final": "Dano Final de Ataque Carregado",
     "stamina": "Consumo de Stamina de Ataque Carregado",
@@ -29,6 +30,7 @@
   "cd": "Tempo de Recarga",
   "energyCost": "Energia Elemental",
   "baseDMG": "Dano Básico",
+  "dot": "Dano de Contínuo",
   "press": {
     "dmg": "Dano de Toque",
     "cd": "Recarga ao Tocar"

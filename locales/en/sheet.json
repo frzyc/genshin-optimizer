@@ -1,6 +1,8 @@
 {
   "dmg": "DMG",
-  "hits": "({{hits}} Hits)",
+  "baseDMG": "Base DMG",
+  "hits": "{{count}} Hit",
+  "hits_plural": "{{count}} Hits",
   "lessPercentHP": "< {{percent}}% HP",
   "stack": "{{count}} Stack",
   "stack_plural": "{{count}} Stacks",
@@ -9,6 +11,7 @@
     "charged": "Charged Attack hits on oppoents",
     "plunging": "Plunging Attack hits on oppoents",
     "skill": "Elemental Skill hits on oppoents",
-    "burst":"Elemental Skill hits on oppoents"
-  }
+    "burst": "Elemental Burst hits on oppoents"
+  },
+  "eleAbsor": "Elemental Absorption"
 }

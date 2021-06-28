@@ -8,6 +8,7 @@
     "hit6": "Sát Thương Lần 6"
   },
   "charged": {
+    "dmg": "Sát Thương Trọng Kích",
     "spinning": "Sát Thương Trọng Kích Tuần Hoàn",
     "final": "Sát Thương Trọng Kích Chí Mạng",
     "stamina": "Thể lực Trọng Kích tiêu hao",
@@ -29,6 +30,7 @@
   "cd": "CD",
   "energyCost": "Năng Lượng Nguyên Tố",
   "baseDMG": "Sát Thương Cơ Bản",
+  "dot": "Sát Thương Kéo Dài",
   "press": {
     "dmg": "Sát Thương Nhấn",
     "cd": "CD Nhấn"

@@ -8,6 +8,7 @@
     "hit6": "DGT 6e coup"
   },
   "charged": {
+    "dmg": "DGT attaque chargée",
     "spinning": "DGT enchaînement attaque chargée",
     "final": "DGT attaque chargée finale",
     "stamina": "Endurance attaque chargée",
@@ -29,6 +30,7 @@
   "cd": "Temps de recharge",
   "energyCost": "Énergie élémentaire",
   "baseDMG": "DGT de base",
+  "dot": "DGT continus",
   "press": {
     "dmg": "DGT appui simple",
     "cd": "TdR appui simple"

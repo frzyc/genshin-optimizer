@@ -8,6 +8,7 @@
     "hit6": "DMG Tahap 6"
   },
   "charged": {
+    "dmg": "DMG Charged Attack",
     "spinning": "DMG Berputar Charged Attack",
     "final": "DMG Akhir Charged Attack",
     "stamina": "Konsumsi Stamina Charged Attack",
@@ -29,6 +30,7 @@
   "cd": "Cooldown",
   "energyCost": "Energy",
   "baseDMG": "Base DMG",
+  "dot": "DMG Berkelanjutan",
   "press": {
     "dmg": "DMG Tekan",
     "cd": "CD (Tekan)"

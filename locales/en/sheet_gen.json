@@ -8,6 +8,7 @@
     "hit6": "6-Hit DMG"
   },
   "charged": {
+    "dmg": "Charged Attack DMG",
     "spinning": "Charged Attack Spinning DMG",
     "final": "Charged Attack Final DMG",
     "stamina": "Charged Attack Stamina Cost",
@@ -29,6 +30,7 @@
   "cd": "CD",
   "energyCost": "Energy Cost",
   "baseDMG": "Base DMG",
+  "dot": "DoT",
   "press": {
     "dmg": "Press DMG",
     "cd": "Press CD"
