@@ -25,7 +25,7 @@ const conditionals: IConditionals = {
       name: <span className={`text-${eleKey}`}><b>{ElementalData[eleKey].name}</b></span>,
       fields: [{
         canShow: stats => {
-          const value = stats.conditionalValues?.character?.sucrose?.q as IConditionalValue | undefined
+          const value = stats.conditionalValues?.character?.sucrose?.sheet?.talent?.q as IConditionalValue | undefined
           if (!value) return false
           const [num, condEleKey] = value
           if (!num || condEleKey !== eleKey) return false

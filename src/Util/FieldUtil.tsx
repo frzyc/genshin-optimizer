@@ -1,8 +1,9 @@
 import { StatIconEle } from "../Components/StatIcon"
 import ElementalData from "../Data/ElementalData"
 import Stat from "../Stat"
+import { IFieldDisplay } from "../Types/IFieldDisplay"
 
-function modifiersToFields(modifiers, stats = {}) {
+function modifiersToFields(modifiers, stats = {}): IFieldDisplay[] {
   return Object.entries(modifiers).map(([mStatKey, modifier]) => ({
     text: Stat.getStatName(mStatKey),
     variant: Stat.getStatVariant(mStatKey),
@@ -13,7 +14,7 @@ function modifiersToFields(modifiers, stats = {}) {
     unit: Stat.getStatUnit(mStatKey)
   }))
 }
-export default function statsToFields(statVals, stats = {}) {
+export default function statsToFields(statVals, stats = {}): IFieldDisplay[] {
   return Object.entries(statVals).map(([statKey, statVal]) => {
     switch (statKey) {
       case "infusionSelf":
@@ -28,7 +29,7 @@ export default function statsToFields(statVals, stats = {}) {
           text: <span>{StatIconEle(statKey)}{Stat.getStatName(statKey)}</span>,
           variant: Stat.getStatVariant(statKey),
           canShow: () => true,
-          value: statVal,
+          value: statVal as number,
           fixed: Stat.fixedUnit(statKey),
           unit: Stat.getStatUnit(statKey)
         }

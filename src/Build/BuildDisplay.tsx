@@ -110,6 +110,13 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     return () => { ArtifactDatabase.unregisterListener(setArtsDirty) }
   }, [setArtsDirty])
 
+  //register changes in character in db
+  useEffect(() => {
+    if (!characterKey) return
+    CharacterDatabase.registerCharListener(characterKey, setCharDirty)
+    return () => CharacterDatabase.unregisterCharListener(characterKey, setCharDirty)
+  }, [characterKey, setCharDirty])
+
   //terminate worker when component unmounts
   useEffect(() => () => worker.current?.terminate(), [])
 
@@ -117,10 +124,9 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   const selectCharacter = useCallback((cKey = "") => {
     if (characterKey === cKey) return
     setcharacterKey(cKey)
-    CharacterDatabase.registerCharListener(cKey, setCharDirty)
     buildSettingsDispatch({ ...initialBuildSettings(), ...(CharacterDatabase.get(cKey)?.buildSettings ?? {}) })
     setbuilds([])
-    return () => CharacterDatabase.unregisterCharListener(cKey, setCharDirty)
+    setCharDirty()
   }, [setCharDirty, setcharacterKey, buildSettingsDispatch, characterKey])
 
   //load saved stat from DB. will cause infinite loop if add 'selectCharacter' to dependency array

@@ -18,7 +18,7 @@ import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from "../../../Build/Build"
 import { IConditionals, IConditionalValue } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
-import { bowChargedDocSection, plungeDocSection, sgt, talentTemplate } from '../SheetUtil'
+import { bowChargedDocSection, plungeDocSection, sgt, st, talentTemplate } from '../SheetUtil'
 import { Translate, TransWrapper } from '../../../Components/Translate'
 const tr = (strKey: string) => <Translate ns="char_venti_gen" key18={strKey} />
 
@@ -44,18 +44,18 @@ const conditionals: IConditionals = {
     }
   },
   q: { // Absorption
-    name: "Elemental Absorption",
+    name: st("eleAbsor"),
     states: Object.fromEntries(["hydro", "pyro", "cryo", "electro"].map(eleKey => [eleKey, {
       name: <span className={`text-${eleKey}`}><b>{ElementalData[eleKey].name}</b></span>,
       fields: [{
         canShow: stats => {
-          const value = stats.conditionalValues?.character?.venti?.q as IConditionalValue | undefined
+          const value = stats.conditionalValues?.character?.venti?.sheet?.talent?.q as IConditionalValue | undefined
           if (!value) return false
           const [num, condEleKey] = value
           if (!num || condEleKey !== eleKey) return false
           return true
         },
-        text: "Absorption DoT",
+        text: <TransWrapper ns="char_venti" key18="absorDot" />,
         formulaText: stats => <span>{(data.burst.hit[stats.tlvl.burst] / 2)?.toFixed(2)}% {Stat.printStat(`${eleKey}_burst_${stats.hitMode}`, stats)}</span>,
         formula: formula.burst[`${eleKey}_hit`],
         variant: eleKey
@@ -106,7 +106,7 @@ const char: ICharacterSheet = {
           text: tr(`auto.fields.normal`),
           fields: data.normal.hitArr.map((percentArr, i) =>
           ({
-            text: <span>{sgt(`normal.hit${i + 1}`)} {i === 0 || i === 3 ? <TransWrapper ns="sheet" key18="hits" values={{ hits: 2 }} /> : null}</span>,
+            text: <span>{sgt(`normal.hit${i + 1}`)} {i === 0 || i === 3 ? <span>(<TransWrapper ns="sheet" key18="hits" values={{ count: 2 }} />)</span> : null}</span>,
             formulaText: stats => <span>{percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
             formula: formula.normal[i],
             variant: stats => getTalentStatKeyVariant("normal", stats),
@@ -162,7 +162,7 @@ const char: ICharacterSheet = {
         sections: [{
           text: tr("burst.description"),
           fields: [{
-            text: "DoT",
+            text: sgt("dot"),
             formulaText: stats => <span>{data.burst.hit[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
             formula: formula.burst.hit,
             variant: stats => getTalentStatKeyVariant("burst", stats),
@@ -183,13 +183,13 @@ const char: ICharacterSheet = {
         }, {
           conditional: conditionals.q
         }, {
-          canShow: stats => Boolean(stats.conditionalValues?.character?.venti?.q),
+          canShow: stats => Boolean(stats.conditionalValues?.character?.venti?.sheet?.talent?.q),
           text: stats => {
-            const value = stats.conditionalValues?.character?.venti?.q
+            const value = stats.conditionalValues?.character?.venti?.sheet?.talent?.q
             if (!value) return ""
             const [num, eleKey] = value
             if (!num) return ""
-
+            console.log(eleKey)
             return <TransWrapper ns="char_venti" key18="fullBurstDMG.text"><span>
               <h6>Full Elemental Burst DMG</h6>
               <p className="mb-2">This calculates the total Elemental Burst DMG, including swirl. This calculation assumes:</p>
@@ -203,7 +203,7 @@ const char: ICharacterSheet = {
           },
           fields: ["hydro", "pyro", "cryo", "electro"].flatMap(eleKey => ([7, 14].map(swirlTicks => ({
             canShow: stats => {
-              const value = stats.conditionalValues?.character?.venti?.q
+              const value = stats.conditionalValues?.character?.venti?.sheet?.talent?.q
               if (!value) return false
               const [num, condEleKey] = value
               if (!num || condEleKey !== eleKey) return false

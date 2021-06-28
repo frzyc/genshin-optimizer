@@ -18,7 +18,7 @@ import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { IConditionals } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
 import { Translate, TransWrapper } from '../../../Components/Translate'
-import { claymoreChargedDocSection, plungeDocSection, sgt, talentTemplate } from '../SheetUtil'
+import { claymoreChargedDocSection, plungeDocSection, sgt, st, talentTemplate } from '../SheetUtil'
 const tr = (strKey: string) => <Translate ns="char_eula_gen" key18={strKey} />
 const eula = (strKey: string) => <TransWrapper ns="char_eula" key18={strKey} />
 const conditionals: IConditionals = {
@@ -55,12 +55,12 @@ const conditionals: IConditionals = {
     name: eula("burstC.name"),
     states: Object.fromEntries([...Array(31).keys()].map(i =>
       [i, {
-        name: i === 0 ? `Base DMG` : i === 1 ? `1 Stack` : `${i} Stacks`,
+        name: i === 0 ? st("baseDMG") : <TransWrapper ns="sheet" key18="stack" values={{ count: i }} />,
         fields: [{//above 50%
           text: <span>{eula("burstC.name")} {i === 0 ? sgt("baseDMG") : <TransWrapper ns="sheet" key18="stack" values={{ count: i }} />}</span>,
           canShow: stats => {
             if (i < 5 && stats.constellation >= 6) return false
-            const [stacks, stateKey] = (stats.conditionalValues?.character?.eula?.q ?? [])
+            const [stacks, stateKey] = (stats.conditionalValues?.character?.eula?.sheet?.talent?.q ?? [])
             return stacks && stateKey === i.toString()
           },
           formulaText: stats => {
@@ -75,7 +75,7 @@ const conditionals: IConditionals = {
           canShow: stats => {
             if (stats.constellation < 4) return false
             if (i < 5 && stats.constellation >= 6) return false
-            const [stacks, stateKey] = (stats.conditionalValues?.character?.eula?.q ?? [])
+            const [stacks, stateKey] = (stats.conditionalValues?.character?.eula?.sheet?.talent?.q ?? [])
             return stacks && stateKey === i.toString()
           },
           formulaText: stats => {
@@ -129,7 +129,7 @@ const char: ICharacterSheet = {
           text: tr("auto.fields.normal"),
           fields: data.normal.hitArr.map((percentArr, i) =>
           ({
-            text: <span>{sgt(`normal.hit${i + 1}`)} {i === 2 || i === 4 ? <TransWrapper ns="sheet" key18="hits" values={{ hits: 2 }} /> : ""}</span>,
+            text: <span>{sgt(`normal.hit${i + 1}`)} {i === 2 || i === 4 ? <span>(<TransWrapper ns="sheet" key18="hits" values={{ count: 2 }} />)</span> : ""}</span>,
             formulaText: stats => <span>{percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
             formula: formula.normal[i],
             variant: stats => getTalentStatKeyVariant("normal", stats),
@@ -176,7 +176,7 @@ const char: ICharacterSheet = {
         sections: [{
           text: tr("burst.description"),
           fields: [{
-            text: "Skill DMG",
+            text: sgt("burstDMG"),
             formulaText: stats => <span>{data.burst.dmg[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
             formula: formula.burst.dmg,
             variant: stats => getTalentStatKeyVariant("burst", stats),

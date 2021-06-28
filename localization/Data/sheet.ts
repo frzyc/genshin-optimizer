@@ -8,6 +8,8 @@ const data = {
     hit6: [3407801690, "skillParam"],
   },
   charged: {
+    //Charged Attack DMG
+    dmg: [2106332570, "skillParam"],
     //Charged Attack Spinning DMG
     spinning: [1418022206, "skillParam"],
     //Charged Attack Final DMG
@@ -47,6 +49,9 @@ const data = {
   energyCost: [3073197810, "skillParam"],
   //Base DMG
   baseDMG: [430832806, "skillParam"],
+  //DoT
+  dot: [1521507646, "skillParam"],
+
   press: {
     //Press DMG
     dmg: [3774314422, "skillParam"],

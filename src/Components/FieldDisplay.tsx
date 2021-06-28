@@ -4,11 +4,13 @@ import React, { useContext, useMemo } from 'react';
 import { ListGroup, OverlayTrigger, Tooltip } from "react-bootstrap";
 import Character from "../Character/Character";
 import { compareAgainstEquippedContext } from "../Character/CharacterDisplayCard";
+import ICalculatedStats from "../Types/ICalculatedStats";
+import { IFieldDisplay } from "../Types/IFieldDisplay";
 
-export default function FieldDisplay({ field, index, equippedBuild, newBuild, className = "p-2" }) {
+export default function FieldDisplay({ field, index, equippedBuild, newBuild, className = "p-2" }: { field: IFieldDisplay, index: number, equippedBuild?: ICalculatedStats, newBuild?: ICalculatedStats, className?: string }) {
   const compareAgainstEquipped = useContext(compareAgainstEquippedContext)
-  const stats = newBuild ? newBuild : equippedBuild
-  const canShow = useMemo(() => field.canShow(stats), [field, stats])
+  const stats = (newBuild ? newBuild : equippedBuild) as ICalculatedStats
+  const canShow = useMemo(() => field?.canShow?.(stats), [field, stats])
   const fixedVal = field?.fixed || 0
   const fieldVal = useMemo(() => {
     if (field.value) return Character.getTalentFieldValue(field, "value", stats)

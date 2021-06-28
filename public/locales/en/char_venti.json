@@ -13,5 +13,6 @@
   "c2": {
     "hit": "Opponent hit",
     "launched": "Opponent launched"
-  }
+  },
+  "absorDot":"Absorption DoT"
 }

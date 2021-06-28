@@ -112,7 +112,7 @@ export default function CharacterOverviewPane({ characterSheet, weaponSheet, edi
   </Row >
 }
 
-function WeaponStatsCard({ title, statsVals = {}, stats = {} }) {
+function WeaponStatsCard({ title, statsVals = {}, stats }: { title: Displayable, statsVals?: object, stats: ICalculatedStats }) {
   if ((Object.keys(statsVals ?? {}) as any).length === 0) return null
   const fields = statsToFields(statsVals, stats)
   return <Card bg="darkcontent" text={"lightfont" as any} className="mb-2">

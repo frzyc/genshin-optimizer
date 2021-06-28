@@ -102,7 +102,7 @@ const char: ICharacterSheet = {
             text: `Frostflake Arrow DMG`,
             formulaText: stats => {
               if (stats.hitMode === "avgHit") {
-                const [conditionalNum] = stats.conditionalValues?.character?.ganyu?.a1 ?? []
+                const [conditionalNum] = stats.conditionalValues?.character?.ganyu?.sheet?.talent?.a1 ?? []
                 if (conditionalNum) {
                   const statKey = `cryo${stats.reactionMode === "cryo_melt" ? "_melt" : ""}_charged_hit`
                   return <span>{data.charged.frostflake[stats.tlvl.auto]}% {Stat.printStat(statKey, stats)} * (1 + Min( 100% , 20% + {Stat.printStat("critRate_", stats)} + {Stat.printStat("charged_critRate_", stats)} ) * {Stat.printStat("critDMG_", stats)} )</span>
@@ -116,7 +116,7 @@ const char: ICharacterSheet = {
             text: `Frostflake Arrow Bloom DMG`,
             formulaText: stats => {
               if (stats.hitMode === "avgHit") {
-                const [conditionalNum] = stats.conditionalValues?.character?.ganyu?.a1 ?? []
+                const [conditionalNum] = stats.conditionalValues?.character?.ganyu?.sheet?.talent?.a1 ?? []
                 if (conditionalNum) {
                   const statKey = `cryo${stats.reactionMode === "cryo_melt" ? "_melt" : ""}_charged_hit`
                   return <span>{data.charged.frostflakeBloom[stats.tlvl.auto]}% {Stat.printStat(statKey, stats)} * (1 + Min( 100% , 20% + {Stat.printStat("critRate_", stats)} + {Stat.printStat("charged_critRate_", stats)} ) * {Stat.printStat("critDMG_", stats)} )</span>

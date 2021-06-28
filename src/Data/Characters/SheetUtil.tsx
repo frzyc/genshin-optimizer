@@ -2,6 +2,7 @@ import { getTalentStatKey, getTalentStatKeyVariant } from "../../Build/Build";
 import { TransWrapper } from "../../Components/Translate";
 import Stat from "../../Stat";
 import { ElementKey } from "../../Types/consts";
+export const st = (strKey: string) => <TransWrapper ns="sheet" key18={strKey} />
 export const sgt = (strKey: string) => <TransWrapper ns="sheet_gen" key18={strKey} />
 
 //this template only works if there is no variation in normal attacks.(no multi hits)
