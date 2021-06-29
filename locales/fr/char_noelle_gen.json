@@ -50,7 +50,11 @@
     "name": "Dévotion ultime",
     "description": {
       "0": "Lorsque Noëlle fait partie de l'équipe et n'est pas déployée, l'effet suivant se déclenche automatiquement si les PV du personnage déployé tombent en dessous de 30 % :",
-      "1": "Confère un bouclier au personnage déployé pouvant absorber des DGT équivalant à 400 % de la DÉF de Noëlle pendant 20 s."
+      "1": "Confère un bouclier au personnage déployé pouvant absorber des DGT équivalant à 400 % de la DÉF de Noëlle pendant 20 s.",
+      "2": [
+        " Le bouclier est efficace à 150 % contre les DGT élémentaires et les DGT physiques.",
+        " Le bouclier peut être déclenché une fois toutes les 60 s."
+      ]
     }
   },
   "passive3": {

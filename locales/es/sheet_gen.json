@@ -31,6 +31,7 @@
   "energyCost": "Energía Elemental",
   "baseDMG": "Daño base",
   "dot": "Daño continuo",
+  "addEleDMG": "Daño Elemental adicional",
   "press": {
     "dmg": "Daño al pulsar una vez",
     "cd": "TdE al pulsar una vez"

@@ -31,6 +31,7 @@
   "energyCost": "Năng Lượng Nguyên Tố",
   "baseDMG": "Sát Thương Cơ Bản",
   "dot": "Sát Thương Kéo Dài",
+  "addEleDMG": "Sát Thương Nguyên Tố Kèm Theo",
   "press": {
     "dmg": "Sát Thương Nhấn",
     "cd": "CD Nhấn"

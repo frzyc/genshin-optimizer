@@ -31,6 +31,7 @@
   "energyCost": "Énergie élémentaire",
   "baseDMG": "DGT de base",
   "dot": "DGT continus",
+  "addEleDMG": "Bonus DGT élémentaires",
   "press": {
     "dmg": "DGT appui simple",
     "cd": "TdR appui simple"

@@ -43,7 +43,8 @@
       "7": "Esta conversão só ocorre uma vez durante a duração da habilidade.",
       "8": "<br/>",
       "9": "<i>\"Eu vejo a eternidade desvanecer em um piscar de olhos, vejo os outonos de muitos anos em apenas uma folha. Por isso, desejo cortar essa árvore e perguntar ao tempo...\"</i>"
-    }
+    },
+    "slashdmg": "Dano do Corte"
   },
   "passive1": {
     "name": "Esgrima Soumon",
@@ -93,7 +94,11 @@
   "constellation4": {
     "name": "Magia Ilusória",
     "description": {
-      "0": "Quando a Energia Elemental de Kaedehara Kazuha está em menos que 45, ele possui os seguintes efeitos: "
+      "0": "Quando a Energia Elemental de Kaedehara Kazuha está em menos que 45, ele possui os seguintes efeitos: ",
+      "1": [
+        "Ao Pressionar e Manter Pressionado <strong>Chihayaburu</strong>, ele recupera 3 e 4 de Energia Elemental respectivamente;",
+        "Kaedehara Kazuha recupera 2 pontos de Energia Elemental por cada segundo que passa Planando."
+      ]
     }
   },
   "constellation5": {

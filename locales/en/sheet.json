@@ -13,5 +13,6 @@
     "skill": "Elemental Skill hits on oppoents",
     "burst": "Elemental Burst hits on oppoents"
   },
-  "eleAbsor": "Elemental Absorption"
+  "eleAbsor": "Elemental Absorption",
+  "absorDot":"Absorption DoT"
 }

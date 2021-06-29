@@ -1,6 +1,7 @@
 {
   "a1": "After Back Hit",
-  "c4": {
+  "a4": {
+    "name":"After using <strong>Rites of Termination<strong/>",
     "text": "Party CRIT Rate increase",
     "value": "15% of Rosaria's CRIT Rate"
   },

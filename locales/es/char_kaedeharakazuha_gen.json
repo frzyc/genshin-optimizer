@@ -44,7 +44,8 @@
       "8": "Sé al instante que el otoño va a llegar",
       "9": "Mas prefiero depender del viento que corta",
       "10": "Para ser aquel que a la eternidad interroga”.</i>"
-    }
+    },
+    "slashdmg": "Daño de corte"
   },
   "passive1": {
     "name": "Espada de la erosión",
@@ -94,7 +95,11 @@
   "constellation4": {
     "name": "Ilusión de la nada",
     "description": {
-      "0": "Cuando la Energía Elemental de Kaedehara Kazuha está por debajo de 45 pts., obtiene los siguientes efectos:"
+      "0": "Cuando la Energía Elemental de Kaedehara Kazuha está por debajo de 45 pts., obtiene los siguientes efectos:",
+      "1": [
+        "Al pulsar una vez <strong>Vehemencia estremecedora</strong>, recupera 3 pts. de energía. Al mantener pulsado, recupera 4 pts.",
+        "Mientras vuela, Kazuha recupera 2 pts. de Energía Elemental por segundo."
+      ]
     }
   },
   "constellation5": {

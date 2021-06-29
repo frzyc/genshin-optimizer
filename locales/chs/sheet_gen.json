@@ -31,6 +31,7 @@
   "energyCost": "元素能量",
   "baseDMG": "基础伤害",
   "dot": "持续伤害",
+  "addEleDMG": "附加元素伤害",
   "press": {
     "dmg": "点按伤害",
     "cd": "点按冷却时间"

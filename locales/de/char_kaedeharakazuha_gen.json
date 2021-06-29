@@ -39,7 +39,8 @@
       "5": "Elementarumwandlung nur einmal während der Wirkungsdauer möglich.",
       "6": "<br/>",
       "7": "<i>„Die Ewigkeit zieht im Nu an mir vorbei, wie ein Blatt vom Baume fällt und derweil tausende Herbste vergehen. So fälle ich diesen Ahorn, um die Antwort auf alle Fragen zu erhalten.“</i>"
-    }
+    },
+    "slashdmg": "Schwerthieb-SCH"
   },
   "passive1": {
     "name": "Soumon-Schwertkunst",

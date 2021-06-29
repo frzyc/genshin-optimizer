@@ -41,7 +41,8 @@
       "5": "Elemental Absorption may only occur once per use.",
       "6": "<br/>",
       "7": "<i>\"I see eternity go by in an instant, the autumns of many years from a single leaf. Thus I shall slice this maple in a flash, and ask a question of the ages.\"</i>"
-    }
+    },
+    "slashdmg": "Slashing DMG"
   },
   "passive1": {
     "name": "Soumon Swordsmanship",
@@ -92,7 +93,11 @@
   "constellation4": {
     "name": "Oozora Genpou",
     "description": {
-      "0": "When Kaedehara Kazuha's Energy is lower than 45, he obtains the following effects:"
+      "0": "When Kaedehara Kazuha's Energy is lower than 45, he obtains the following effects:",
+      "1": [
+        "Pressing or Holding <strong>Chihayaburu</strong> regenerates 3 or 4 Energy for Kaedehara Kazuha, respectively.",
+        "When gliding, Kaedehara Kazuha regenerates 2 Energy per second."
+      ]
     }
   },
   "constellation5": {

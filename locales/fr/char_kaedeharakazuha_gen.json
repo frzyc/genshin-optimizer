@@ -39,7 +39,8 @@
       "5": "Un seul élément peut être absorbé à la fois.",
       "6": "<br/>",
       "7": "<i>« Je vois passer l'éternité en un instant, les automnes de plusieurs années d'une seule feuille ; ainsi je trancherai cet érable en un éclair, et je poserai la question des âges... »</i>"
-    }
+    },
+    "slashdmg": "DGT entaille"
   },
   "passive1": {
     "name": "Lame d'érosion",
@@ -90,7 +91,11 @@
   "constellation4": {
     "name": "Illusion du néant",
     "description": {
-      "0": "Quand l'énergie élémentaire de Kazuha tombe en dessous de 45 pts, il obtient les effets suivants :"
+      "0": "Quand l'énergie élémentaire de Kazuha tombe en dessous de 45 pts, il obtient les effets suivants :",
+      "1": [
+        " Cliquer simplement ou longuement pour utiliser <strong>Véhémence divine</strong> restaure l'énergie élémentaire de Kazuha de 3 ou 4 pts, respectivement.",
+        " Planer restaure l'énergie élémentaire de Kazuha de 2 pts toutes les secondes."
+      ]
     }
   },
   "constellation5": {

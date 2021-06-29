@@ -41,7 +41,8 @@
       "5": "Elemental Absorption hanya dapat terpicu sekali setiap penggunaan.",
       "6": "<br/>",
       "7": "<i>\"Aku dapat melihat keabadian yang berlalu dalam satu kedipan mata, dalam selembar daun yang telah melewati ribuan musim gugur. Biarkan pedangku memotong lembaran daun ini, dan mempertanyakan jalannya sang waktu——\"</i>"
-    }
+    },
+    "slashdmg": "DMG Tebasan"
   },
   "passive1": {
     "name": "Soumon Swordmanship",
@@ -91,7 +92,11 @@
   "constellation4": {
     "name": "Oozora Genpou",
     "description": {
-      "0": "Saat Energy Kaedehara Kazuha kurang dari 45, Kazuha akan mendapatkan efek berikut:"
+      "0": "Saat Energy Kaedehara Kazuha kurang dari 45, Kazuha akan mendapatkan efek berikut:",
+      "1": [
+        "Menekan atau Menahan skill <strong>Chihayaburu</strong> akan memulihkan 3 atau 4 Energy Kaedehara Kazuha;",
+        "Memulihkan 2 Energy Kaedehara Kazuha setiap detik saat sedang meluncur."
+      ]
     }
   },
   "constellation5": {

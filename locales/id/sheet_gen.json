@@ -31,6 +31,7 @@
   "energyCost": "Energy",
   "baseDMG": "Base DMG",
   "dot": "DMG Berkelanjutan",
+  "addEleDMG": "Tambahan Elemental DMG",
   "press": {
     "dmg": "DMG Tekan",
     "cd": "CD (Tekan)"
