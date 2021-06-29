@@ -20,6 +20,7 @@ import { IConditionals, IConditionalValue } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
 import { bowChargedDocSection, plungeDocSection, sgt, st, talentTemplate } from '../SheetUtil'
 import { Translate, TransWrapper } from '../../../Components/Translate'
+import { absorbableEle } from '../dataUtil'
 const tr = (strKey: string) => <Translate ns="char_venti_gen" key18={strKey} />
 
 const conditionals: IConditionals = {
@@ -45,7 +46,7 @@ const conditionals: IConditionals = {
   },
   q: { // Absorption
     name: st("eleAbsor"),
-    states: Object.fromEntries(["hydro", "pyro", "cryo", "electro"].map(eleKey => [eleKey, {
+    states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
       name: <span className={`text-${eleKey}`}><b>{ElementalData[eleKey].name}</b></span>,
       fields: [{
         canShow: stats => {
@@ -55,9 +56,9 @@ const conditionals: IConditionals = {
           if (!num || condEleKey !== eleKey) return false
           return true
         },
-        text: <TransWrapper ns="char_venti" key18="absorDot" />,
-        formulaText: stats => <span>{(data.burst.hit[stats.tlvl.burst] / 2)?.toFixed(2)}% {Stat.printStat(`${eleKey}_burst_${stats.hitMode}`, stats)}</span>,
-        formula: formula.burst[`${eleKey}_hit`],
+        text: st("absorDot"),
+        formulaText: stats => <span>{(data.burst.hit[stats.tlvl.burst] / 2)?.toFixed(2)}% {Stat.printStat(getTalentStatKey("burst", stats, eleKey), stats)}</span>,
+        formula: formula.burst[eleKey],
         variant: eleKey
       }, {
         canShow: stats => stats.ascension >= 4,
@@ -100,7 +101,7 @@ const char: ICharacterSheet = {
     conditionals,
     sheets: {
       auto: {
-        name: tr(`auto.fields.normal`),
+        name: tr(`auto.name`),
         img: normal,
         sections: [{
           text: tr(`auto.fields.normal`),
@@ -201,7 +202,7 @@ const char: ICharacterSheet = {
               </ul>
             </span></TransWrapper>
           },
-          fields: ["hydro", "pyro", "cryo", "electro"].flatMap(eleKey => ([7, 14].map(swirlTicks => ({
+          fields: absorbableEle.flatMap(eleKey => ([7, 14].map(swirlTicks => ({
             canShow: stats => {
               const value = stats.conditionalValues?.character?.venti?.sheet?.talent?.q
               if (!value) return false

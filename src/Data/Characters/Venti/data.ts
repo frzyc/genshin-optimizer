@@ -1,5 +1,6 @@
 import { IFormulaSheet } from "../../../Types/character"
 import { basicDMGFormula } from "../../../Util/FormulaUtil"
+import { absorbableEle } from "../dataUtil"
 
 export const data = {
   baseStat: {
@@ -53,12 +54,8 @@ const formula: IFormulaSheet = {
     [name, stats => basicDMGFormula(arr[stats.tlvl.skill], stats, "skill")])),
   burst: Object.fromEntries([
     ["hit", stats => basicDMGFormula(data.burst.hit[stats.tlvl.burst], stats, "burst")],
-    ...(["hydro", "pyro", "cryo", "electro"]).map(eleKey => [`${eleKey}_hit`, stats => {
-      const val = data.burst.hit[stats.tlvl.burst] / 2 / 100
-      const statKey = `${eleKey}_burst_${stats.hitMode}`
-      return [s => val * s[statKey], [statKey]]
-    }]),
-    ...(["hydro", "pyro", "cryo", "electro"]).flatMap(eleKey => [
+    ...absorbableEle.map(eleKey => [eleKey, stats => basicDMGFormula(data.burst.hit[stats.tlvl.burst] / 2, stats, "burst", eleKey)]),
+    ...absorbableEle.flatMap(eleKey => [
       [`${eleKey}_tot_7`, stats => totBurst(stats, eleKey, 7)],
       [`${eleKey}_tot_14`, stats => totBurst(stats, eleKey, 14)],
     ])

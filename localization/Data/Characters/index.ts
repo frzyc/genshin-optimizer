@@ -11,6 +11,7 @@ import eula from './Eula'
 // import ganyu from './Ganyu'
 // import hutao from './HuTao'
 // import jean from './Jean'
+import kaedeharakazuha from './kaedeharakazuha'
 // import kaeya from './Kaeya'
 // import keqing from './Keqing'
 // import klee from './Klee'
@@ -46,6 +47,7 @@ const char = {
   // ganyu,
   // hutao,
   // jean,
+  kaedeharakazuha,
   // kaeya,
   // keqing,
   // klee,

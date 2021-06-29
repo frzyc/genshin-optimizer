@@ -8,4 +8,5 @@ export interface IFieldDisplay {
   formula?: (stats: any) => Array<any>;
   formulaText?: JSX.Element | ((stats: ICalculatedStats) => JSX.Element)
   variant?: string | ((stats: ICalculatedStats) => string);
+  unit?: Displayable
 }

@@ -32,11 +32,11 @@ const conditionals: IConditionals = {
   },
   a4: { // ShadowSamaritan
     canShow: stats => stats.ascension >= 4,
-    name: <span>After using <b>Rites of Termination</b></span>,
+    name: <TransWrapper ns="char_rosaria" key18="a4.name" />,
     //stats: { critRate_: 15 },//TODO: party buff modifier
     fields: [{
-      text: <TransWrapper ns="char_rosaria" key18="c4.text" />,
-      value: <TransWrapper ns="char_rosaria" key18="c4.value" />,
+      text: <TransWrapper ns="char_rosaria" key18="a4.text" />,
+      value: <TransWrapper ns="char_rosaria" key18="a4.value" />,
     }, {
       text: sgt("duration"),
       value: "10s",

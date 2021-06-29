@@ -123,7 +123,8 @@ const conditionalValues = array(object({
         current[key] = next
         current = next
       }
-      current[last] = value.map(item => isNaN(parseFloat(item)) ? item : parseFloat(item))
+      value[0] = parseFloat(value[0])
+      current[last] = value
     }
     return conditionalValues
   }

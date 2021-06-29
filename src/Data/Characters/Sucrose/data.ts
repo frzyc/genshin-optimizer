@@ -1,5 +1,6 @@
 import { IFormulaSheet } from "../../../Types/character";
 import { basicDMGFormula } from "../../../Util/FormulaUtil";
+import { absorbableEle } from "../dataUtil";
 
 export const data = {
   baseStat: {
@@ -47,8 +48,8 @@ const formula: IFormulaSheet = {
     [name, stats => basicDMGFormula(arr[stats.tlvl.skill], stats, "skill")])),
   burst: {
     dot: stats => basicDMGFormula(data.burst.dot[stats.tlvl.burst], stats, "burst"),
-    ...Object.fromEntries((["hydro", "pyro", "cryo", "electro"]).map(ele =>
-      [`${ele}_dmg_bonus`, stats => [s => { return (data.burst.dmg_[stats.tlvl.burst] / 100) * s[`${ele}_burst_${stats.hitMode}`] }, [`${ele}_burst_${stats.hitMode}`]]])),//not optimizationTarget, dont need to precompute
+    ...Object.fromEntries(absorbableEle.map(eleKey =>
+      [eleKey, stats => basicDMGFormula(data.burst.dmg_[stats.tlvl.burst], stats, "burst", eleKey)]))
   },
 }
 export default formula

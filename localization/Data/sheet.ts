@@ -51,7 +51,9 @@ const data = {
   baseDMG: [430832806, "skillParam"],
   //DoT
   dot: [1521507646, "skillParam"],
-
+  //Additional Elemental DMG
+  addEleDMG: [3006681174, "skillParam"],
+  
   press: {
     //Press DMG
     dmg: [3774314422, "skillParam"],

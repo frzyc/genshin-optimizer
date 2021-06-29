@@ -11,6 +11,7 @@ import fischl from './Fischl/data'
 import ganyu from './Ganyu/data'
 import hutao from './HuTao/data'
 import jean from './Jean/data'
+import kaedeharakazuha from './KaedeharaKazuha/data'
 import kaeya from './Kaeya/data'
 import keqing from './Keqing/data'
 import klee from './Klee/data'
@@ -33,8 +34,8 @@ import xinyan from './Xinyan/data'
 import yanfei from './Yanfei/data'
 import zhongli from './Zhongli/data'
 import { IFormulaSheet } from '../../Types/character'
-import { ElementKey } from '../../Types/consts'
-type IFormulaSheets = Dict<string, IFormulaSheet | Dict<ElementKey, IFormulaSheet>>
+import { CharacterKey, ElementKey } from '../../Types/consts'
+type IFormulaSheets = StrictDict<CharacterKey, IFormulaSheet | Dict<ElementKey, IFormulaSheet>>
 const formula: IFormulaSheets = {
   albedo,
   amber,
@@ -49,6 +50,7 @@ const formula: IFormulaSheets = {
   ganyu,
   hutao,
   jean,
+  kaedeharakazuha,
   kaeya,
   keqing,
   klee,

@@ -1,5 +1,6 @@
 import { IFormulaSheet } from "../../../Types/character"
 import { basicDMGFormula } from "../../../Util/FormulaUtil"
+import { absorbableEle } from "../dataUtil"
 export const data = {
   normal: {
     hitArr: [
@@ -30,7 +31,7 @@ export const data = {
   },
   burst: {
     dmg: [80.8, 86.86, 92.92, 101, 107.06, 113.12, 121.2, 129.28, 137.36, 145.44, 153.52, 161.6, 171.7, 181.8, 191.9],
-    ele_dmg: [24.8, 26.66, 28.52, 31, 32.86, 34.72, 37.2, 39.68, 42.16, 44.64, 47.12, 49.6, 52.7, 55.8, 58.9],
+    dmg_: [24.8, 26.66, 28.52, 31, 32.86, 34.72, 37.2, 39.68, 42.16, 44.64, 47.12, 49.6, 52.7, 55.8, 58.9],
   }
 }
 
@@ -44,8 +45,8 @@ const formula: IFormulaSheet = {
     [name, stats => basicDMGFormula(arr[stats.tlvl.skill], stats, "skill")])),
   burst: {
     dmg: stats => basicDMGFormula(data.burst.dmg[stats.tlvl.burst], stats, "burst"),
-    ...Object.fromEntries((["hydro", "pyro", "cryo", "electro"]).map(ele =>
-      [`${ele}_hit`, stats => [s => { return (data.burst.ele_dmg[stats.tlvl.burst] / 100) * s[`${ele}_burst_${stats.hitMode}`] }, [`${ele}_burst_${stats.hitMode}`]]])),//not optimizationTarget, dont need to precompute
+    ...Object.fromEntries(absorbableEle.map(eleKey =>
+      [eleKey, stats => basicDMGFormula(data.burst.dmg_[stats.tlvl.burst], stats, "burst", eleKey)]))
   },
   passive2: {
     heal: stats => [s => 0.02 * s.finalHP * s.heal_multi, ["finalHP", "heal_multi"]],

@@ -158,7 +158,8 @@ const char: ICharacterSheet = {
         img: passive3,
         sections: [{
           text: <span>Decreases sprinting Stamina consumption for your own party members by 20%. Not stackable with Passive Talents that provide the exact same effects.</span>
-        }]
+        }],
+        stats: { staminaSprintDec_: 20 }
       },
       constellation1: {
         name: "Excellent Blood",

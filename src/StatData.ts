@@ -56,6 +56,7 @@ const StatData: { [stat: string]: StatItem } = {
   atkSPD_: { name: "ATK SPD", unit: "%" },
   stamina: { name: "Stamina" },
   staminaDec_: { name: "Stamina Consumption Dec.", unit: "%" },
+  staminaSprintDec_: { name: "Sprinting Stamina Consumption Dec.", unit: "%" },
   staminaGlidingDec_: { name: "Gliding Stamina Consumption Dec.", unit: "%" },
   staminaChargedDec_: { name: "Charged Attack Stamina Consumption Dec.", unit: "%" },
 

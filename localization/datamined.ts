@@ -13,6 +13,7 @@ function layeredAssignment(obj, keys, value) {
   return obj
 }
 function parseBulletPoints(strings: string[]): string[] {
+  strings.push("")
   const { strs } = strings.reduce(({ strs, arr }, str) => {
     const isBullet = str.startsWith("·")
     if (isBullet) str = str.slice(1)
@@ -28,6 +29,7 @@ function parseBulletPoints(strings: string[]): string[] {
     if (!isBullet) strs.push(str)
     return { strs, arr }
   }, { strs: [] as string[], arr: undefined as string[] | undefined })
+  strs.pop()
   return strs
 }
 const languageMap = {
