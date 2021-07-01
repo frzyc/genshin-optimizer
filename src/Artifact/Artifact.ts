@@ -176,7 +176,7 @@ export default class Artifact {
     const { substats, numStars, level } = artifact
     // Relative to max star, so comparison between different * makes sense.
     const totalRolls = Artifact.totalPossibleRolls(maxStar);
-    const current = substats.filter(({ key }) => key && filter.has(key)).reduce((sum, { rolls, efficiency }) => sum + (efficiency! * rolls!.length), 0)
+    const current = substats.filter(({ key }) => key && filter.has(key)).reduce((sum, { rolls, efficiency }) => sum + ((efficiency ?? 0) * (rolls?.length ?? 0)), 0)
 
     const rollsRemaining = Artifact.rollsRemaining(level, numStars);
     const emptySlotCount = substats.filter(s => !s.key).length
