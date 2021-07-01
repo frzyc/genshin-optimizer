@@ -95,11 +95,11 @@ const ArtifactSubstatsData: StrictDict<SubstatKey, { [numStars: number]: number[
   critRate_: { 3: [1.63, 1.86, 2.1, 2.33], 4: [2.18, 2.49, 2.8, 3.11], 5: [2.72, 3.11, 3.5, 3.89] },
   critDMG_: { 3: [3.26, 3.73, 4.2, 4.66], 4: [4.35, 4.97, 5.6, 6.22], 5: [5.44, 6.22, 6.99, 7.77] },
 }
-const ArtifactSubstatsMinMax = Object.fromEntries(Object.entries(ArtifactSubstatsData).map(([key, obj]) =>
-  [key, {
-    max: Object.fromEntries(Object.keys(obj).map(key => [key, getArrLastElement(obj[key])])),
-    min: Object.fromEntries(Object.keys(obj).map(key => [key, obj[key][0]])),
-  }]))
+const ArtifactSubstatMaxRolls = Object.fromEntries([3, 4, 5].map(rarity =>
+  [rarity, Object.fromEntries(Object.entries(ArtifactSubstatsData).map(([key, rolls]) => [key, getArrLastElement(rolls[rarity])])) as StrictDict<SubstatKey, number>]))
+const ArtifactSubstatMaxRollEfficiency = Object.fromEntries(Object.entries(ArtifactSubstatMaxRolls).map(([rarity, obj]) =>
+  [rarity, 100 * (Object.keys(obj) as SubstatKey[]).reduce((acc, key) => Math.max(acc, obj[key] / ArtifactSubstatMaxRolls[5][key]!), 0)]
+))
 
 const ArtifactSlotsData: StrictDict<SlotKey, { name: string, stats: MainStatKey[] }> = {
   flower: { name: "Flower of Life", stats: ["hp"] },
@@ -112,7 +112,8 @@ const ArtifactSlotsData: StrictDict<SlotKey, { name: string, stats: MainStatKey[
 export {
   ArtifactSlotsData,
   ArtifactSubstatsData,
-  ArtifactSubstatsMinMax,
+  ArtifactSubstatMaxRolls,
+  ArtifactSubstatMaxRollEfficiency,
   ArtifactStarsData,
   ArtifactMainStatsData
 };

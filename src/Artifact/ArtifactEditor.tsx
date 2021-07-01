@@ -19,6 +19,8 @@ import SlotNameWithIcon from './Component/SlotNameWIthIcon';
 import PercentBadge from './PercentBadge';
 import UploadDisplay from './UploadDisplay';
 
+const allSubstatFilter = new Set(allSubstats)
+
 let uploadDisplayReset
 export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }) {
   const { t } = useTranslation("artifact")
@@ -74,6 +76,7 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }) {
   const { dupId, isDup } = useMemo(() => checkDuplicate(artifact), [artifact])
   const { numStars = 5, level = 0, slotKey = "flower" } = artifact ?? {}
   const errMsgs = artifact ? Artifact.substatsValidation(artifact) : []
+  const { currentEfficiency = 0, maximumEfficiency = 0 } = artifact ? Artifact.getArtifactEfficiency(artifact, allSubstatFilter) : {}
   return <Card bg="darkcontent" text={"lightfont" as any}>
     <Card.Header><Trans t={t} i18nKey="editor.title" >Artifact Editor</Trans></Card.Header>
     <Card.Body>
@@ -165,7 +168,7 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }) {
               <Row>
                 <Col className="text-center">{t`editor.curSubEff`}</Col>
                 <Col xs="auto">
-                  <PercentBadge valid={!errMsgs.length} value={errMsgs.length ? "ERR" : (artifact?.currentEfficiency ?? 0)} />
+                  <PercentBadge valid={!errMsgs.length} value={errMsgs.length ? "ERR" : (currentEfficiency)} />
                   <OverlayTrigger
                     placement="bottom"
                     overlay={<Popover id="current-efficiency">
@@ -186,7 +189,7 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }) {
               <Row>
                 <Col className="text-center">{t`editor.maxSubEff`}</Col>
                 <Col xs="auto">
-                  <PercentBadge valid={!errMsgs.length} value={errMsgs.length ? "ERR" : (artifact?.maximumEfficiency ?? 0)} />
+                  <PercentBadge valid={!errMsgs.length} value={errMsgs.length ? "ERR" : (maximumEfficiency)} />
                   <OverlayTrigger
                     placement="bottom"
                     overlay={<Popover id="max-efficiency">

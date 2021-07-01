@@ -16,7 +16,7 @@ import { CharacterSelectionDropdownList } from '../Components/CharacterSelection
 import { Stars } from '../Components/StarDisplay';
 import ArtifactDatabase from '../Database/ArtifactDatabase';
 import Stat from '../Stat';
-import { IArtifact, Substat } from '../Types/artifact';
+import { allSubstats, IArtifact, Substat, SubstatKey } from '../Types/artifact';
 import { useForceUpdate, usePromise } from '../Util/ReactUtil';
 import { valueString } from '../Util/UIUtil';
 import Artifact from './Artifact';
@@ -24,9 +24,10 @@ import { ArtifactSheet } from './ArtifactSheet';
 import SlotNameWithIcon from './Component/SlotNameWIthIcon';
 import PercentBadge from './PercentBadge';
 
-type Data = { artifactId?: string, artifactObj?: IArtifact, onEdit?: () => void, onDelete?: () => void, mainStatAssumptionLevel?: number }
+type Data = { artifactId?: string, artifactObj?: IArtifact, onEdit?: () => void, onDelete?: () => void, mainStatAssumptionLevel?: number, effFilter?: Set<SubstatKey> }
+const allSubstatFilter = new Set(allSubstats)
 
-export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete, mainStatAssumptionLevel = 0 }: Data): JSX.Element | null {
+export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete, mainStatAssumptionLevel = 0, effFilter = allSubstatFilter }: Data): JSX.Element | null {
   const [, forceUpdateHook] = useForceUpdate()
   useEffect(() => {
     artifactId && ArtifactDatabase.registerArtListener(artifactId, forceUpdateHook)
@@ -39,12 +40,13 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
   const art = artifactObj ?? ArtifactDatabase.get(artifactId);
   const characterSheet = usePromise(CharacterSheet.get(art?.location ?? ""))
   if (!art) return null
-  if (!art.maximumEfficiency) Artifact.substatsValidation(art)
+  if (art.substats[0].rolls === undefined) Artifact.substatsValidation(art)
 
-  const { id, slotKey, numStars, level, mainStatKey, substats, lock, currentEfficiency = 0, maximumEfficiency = 0 } = art
+  const { id, slotKey, numStars, level, mainStatKey, substats, lock } = art
   const mainStatLevel = Math.max(Math.min(mainStatAssumptionLevel, numStars * 4), level)
   const mainStatVal = <span className={mainStatLevel !== level ? "text-orange" : ""}>{Artifact.mainStatValue(mainStatKey, numStars, mainStatLevel) ?? ""}{Stat.getStatUnit(mainStatKey)}</span>
-  const artifactValid = art.maximumEfficiency !== undefined
+  const { currentEfficiency, maximumEfficiency } = Artifact.getArtifactEfficiency(art, effFilter)
+  const artifactValid = maximumEfficiency !== 0
   const locationName = characterSheet?.name ?? "Inventory"
   return (<Card className="h-100" border={`${numStars}star`} bg="lightcontent" text={"lightfont" as any}>
     <Card.Header className="p-0">
@@ -76,7 +78,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
           return (<Col key={i} xs={12}>
             <Badge variant={numRolls ? `${numRolls}roll` : "danger"} className="text-darkcontent"><b>{numRolls ? numRolls : "?"}</b></Badge>{" "}
             <span className={`text-${numRolls}roll`}>{statName}{`+${valueString(stat.value, Stat.getStatUnit(stat.key))}${Stat.getStatUnit(stat.key)}`}</span>
-            <span className="float-right" style={{ opacity: effOpacity }}>{valueString(efficiency, "eff")}%</span>
+            <span className="float-right" style={{ opacity: effOpacity }}>{stat.key && effFilter.has(stat.key) ? valueString(efficiency, "eff") : "-"}</span>
           </Col>)
         })}
       </Row>

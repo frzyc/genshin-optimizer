@@ -62,11 +62,12 @@ export default function ArtifactInfoDisplay() {
           <p>By utilizing the artifact filter, and the artifact efficiency calculations, you can quickly find artifacts to feed as food.</p>
           <p className="mb-0">In this example, the filters are set thusly: </p>
           <ul>
+            <li>Limit level to 0-8.</li>
             <li>Unlocked artifacts in Inventory.</li>
-            <li>With substats: flat ATK and flat DEF.</li>
+            <li>Removing the contribution of flat HP, flat DEF and Energy Recharge to efficiency calculations.</li>
             <li>Sorted by Ascending Max Efficiency.</li>
           </ul>
-          <p>Once the artifacts are fed as food, click on <Badge variant="danger">Delete Artifacts</Badge> to delete the current filtered artifacts.</p>
+          <p>This will filter the artifact Inventory by the lowest efficiency artifacts, for desired substats.</p>
         </Trans>
       </Col>
     </Row>
