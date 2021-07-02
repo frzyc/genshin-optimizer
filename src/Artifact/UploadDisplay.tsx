@@ -177,7 +177,7 @@ function ExplainationModal({ modalShow, hide }) {
             <p className="mb-0">You can click on the box next to "Browse" to browse the files in your harddrive for multiple screenshots.</p>
             <p>For single screenshots from the snippets, just press <strong>Ctrl + V</strong> to paste from your clipboard.</p>
             <p>You should be able to see a Preview of your artifact snippet, and after waiting a few seconds, the artifact set and the substats will be filled in in the <b>Artifact Editor</b>.
-        </p>
+            </p>
           </Col>
           <Col xs={12}>
             <h5>Finishing the Artifact</h5>
@@ -288,6 +288,7 @@ export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactShee
   const relevantSetKey = [...new Set<ArtifactSetKey>([...textSetKeys, "Adventurer", "ArchaicPetra"])]
 
   let bestScore = -1, bestArtifacts: IArtifact[] = [{
+    id: undefined,
     setKey: "Adventurer", numStars: 3, level: 0, slotKey: "flower", mainStatKey: "hp", substats: [],
     location: "", lock: false,
   }]
@@ -334,7 +335,7 @@ export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactShee
               if (score > bestScore) bestArtifacts = []
               bestScore = score
               bestArtifacts.push({
-                setKey, numStars, level, slotKey, mainStatKey, substats: [], location: "", lock: false
+                id: undefined, setKey, numStars, level, slotKey, mainStatKey, substats: [], location: "", lock: false
               })
             }
           }
@@ -347,7 +348,7 @@ export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactShee
             if (score > bestScore) bestArtifacts = []
             bestScore = score
             bestArtifacts.push({
-              setKey, numStars, level, slotKey, mainStatKey, substats: [], location: "", lock: false
+              id: undefined, setKey, numStars, level, slotKey, mainStatKey, substats: [], location: "", lock: false
             })
           }
         }

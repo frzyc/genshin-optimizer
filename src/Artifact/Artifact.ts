@@ -97,8 +97,11 @@ export default class Artifact {
   }
 
   //ARTIFACT IN GENERAL
-  static substatsValidation(state: IArtifact) {
+  static validateSubstats(state: IArtifact, { load = true, store = true }: CacheMode) {
+    if (load && state.validationErrors) return state.validationErrors // Use cache value
+
     const { numStars, level, substats } = state, errors: string[] = []
+    state.validationErrors = errors
 
     const allSubstatRolls: { index: number, substatRolls: number[][] }[] = []
     let total = 0
@@ -118,16 +121,22 @@ export default class Artifact {
         if (substat.key)
           errors.push(`Invalid substat ${Stat.getStatNameWithPercent(substat.key)}`)
 
-        substat.rolls = []
-        substat.efficiency = 0
+        delete substat.rolls
+        delete substat.efficiency
       }
     })
 
-    if (errors.length) return errors
+    if (errors.length) {
+      if (store) ArtifactDatabase.update(state)
+      return errors
+    }
+
     {
       let substat = substats.find(substat => (substat.rolls?.length ?? 0) > 1)
-      if (substat && substats.some((substat) => !substat.rolls?.length))
+      if (substat && substats.some((substat) => !substat.rolls?.length)) {
+        if (store) ArtifactDatabase.update(state)
         return [`Substat ${Stat.getStatNameWithPercent(substat.key)} has > 1 roll, but not all substats are unlocked.`]
+      }
     }
 
     const { low } = Artifact.rollInfo(numStars)
@@ -170,9 +179,13 @@ export default class Artifact {
       }
     }
 
+    if (store) ArtifactDatabase.update(state)
     return errors
   }
   static getArtifactEfficiency(artifact: IArtifact, filter: Set<SubstatKey>) {
+    if (Artifact.validateSubstats(artifact, { store: false }).length)
+      return { currentEfficiency: 0, maximumEfficiency: 0 } // Invalid artifact
+
     const { substats, numStars, level } = artifact
     // Relative to max star, so comparison between different * makes sense.
     const totalRolls = Artifact.totalPossibleRolls(maxStar);

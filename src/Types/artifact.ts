@@ -23,23 +23,27 @@ export type StatArr = { key: StatKey, value: number }[]
 export type StatDict = Dict<StatKey, number>
 
 export interface IArtifact {
-  id?: string,
+  id: string | undefined,
   setKey: ArtifactSetKey,
   numStars: Rarity,
   level: number,
   slotKey: SlotKey,
   mainStatKey: MainStatKey,
-  mainStatVal?: number,
   substats: Substat[],
   location: CharacterKey | "",
 
   lock: boolean,
+
+  // Cache
+  mainStatVal?: number,
+  validationErrors?: string[],
 }
 
 export interface Substat {
   key: SubstatKey | "",
   value: number,
 
+  // Cache
   rolls?: number[],
   efficiency?: number,
 }

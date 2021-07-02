@@ -17,6 +17,11 @@ declare global {
         export values<K, V>(o: StrictDict<K, V> | {}): V[]
         export entries<K, V>(o: StrictDict<K, V> | {}): [K extends number ? string : K, V][]
     }
+
+    type CacheMode = {
+        load?: boolean, // Use old value, if existed
+        store?: boolean, // Save new value to database, if compute new value
+    }
 }
 
 export {

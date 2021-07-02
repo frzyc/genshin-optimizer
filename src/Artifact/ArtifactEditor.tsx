@@ -75,7 +75,7 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }) {
   const canClearArtifact = (): boolean => window.confirm(t`editor.clearPrompt` as string)
   const { dupId, isDup } = useMemo(() => checkDuplicate(artifact), [artifact])
   const { numStars = 5, level = 0, slotKey = "flower" } = artifact ?? {}
-  const errMsgs = artifact ? Artifact.substatsValidation(artifact) : []
+  const errMsgs = artifact ? Artifact.validateSubstats(artifact, { load: false, store: false }) : []
   const { currentEfficiency = 0, maximumEfficiency = 0 } = artifact ? Artifact.getArtifactEfficiency(artifact, allSubstatFilter) : {}
   return <Card bg="darkcontent" text={"lightfont" as any}>
     <Card.Header><Trans t={t} i18nKey="editor.title" >Artifact Editor</Trans></Card.Header>
@@ -399,7 +399,7 @@ async function randomizeArtifact(): Promise<IArtifact> {
       substat.value = parseFloat(valueString(substat.value, Stat.getStatUnit(substat.key)))
 
   return {
-    setKey: set, numStars: rarity, slotKey: slot, mainStatKey, level, substats, location: "", lock: false
+    id: undefined, setKey: set, numStars: rarity, slotKey: slot, mainStatKey, level, substats, location: "", lock: false
   }
 }
 
