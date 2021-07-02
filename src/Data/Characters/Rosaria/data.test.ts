@@ -54,6 +54,7 @@ describe("Testing Tartaglia's Formulas (Derpy#2132)", () => {
         })
         test("cryo_melt", () => {
           setupStats.reactionMode = "cryo_melt"
+          setupStats.reactionChance = 100
           const stats = computeAllStats(setupStats)
           expect(formula.skill.hit1(stats)[0](stats)).toApproximate(1295)
           expect(formula.skill.hit2(stats)[0](stats)).toApproximate(3016)
@@ -113,6 +114,7 @@ describe("Testing Tartaglia's Formulas (Derpy#2132)", () => {
         })
         test("cryo_melt", () => {
           setupStats.reactionMode = "cryo_melt"
+          setupStats.reactionChance = 100
           const stats = computeAllStats(setupStats)
           expect(formula.skill.hit1(stats)[0](stats)).toApproximate(2355)
           expect(formula.skill.hit2(stats)[0](stats)).toApproximate(5486)

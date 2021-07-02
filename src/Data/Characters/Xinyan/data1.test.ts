@@ -49,11 +49,13 @@ describe("Testing Xinyan's Formulas (Stain#9093)", () => {
 
       test("vaorize", () => {
         setupStats.reactionMode = "pyro_vaporize"
+        setupStats.reactionChance = 100
         const stats = computeAllStats(setupStats)
         expect(formula.skill.dmg(stats)[0](stats)).toApproximate(5098)
       })
       test("melt", () => {
         setupStats.reactionMode = "pyro_melt"
+        setupStats.reactionChance = 100
         const stats = computeAllStats(setupStats)
         expect(formula.skill.dmg(stats)[0](stats)).toApproximate(6798)
       })

@@ -60,6 +60,7 @@ describe("Testing Diona's Formulas (⛧ Sin ⛧#0663)", () => {
       })
       test('melt', () => {
         setupStats.reactionMode = "cryo_melt"
+        setupStats.reactionChance = 100
         const stats = computeAllStats(setupStats)
         expect(formula.charged.fullAimedShot(stats)[0](stats)).toApproximate(1694)
         expect(formula.skill.dmg(stats)[0](stats)).toApproximate(825)

@@ -46,12 +46,14 @@ describe("Testing Yanfei's Formulas (Stain#9093)", () => {
       });
       test('vaporize', () => {
         setupStats.reactionMode = "pyro_vaporize"
+        setupStats.reactionChance = 100
         const stats = computeAllStats(setupStats)
         expect(formula.skill.dmg(stats)[0](stats)).toApproximate(5729);
         expect(formula.burst.dmg(stats)[0](stats)).toApproximate(6161);
       })
       test('melt', () => {
         setupStats.reactionMode = "pyro_melt"
+        setupStats.reactionChance = 100
         const stats = computeAllStats(setupStats)
         expect(formula.skill.dmg(stats)[0](stats)).toApproximate(7639);
         expect(formula.burst.dmg(stats)[0](stats)).toApproximate(8215);
@@ -111,12 +113,14 @@ describe("Testing Yanfei's Formulas (Stain#9093)", () => {
       });
       test('vaporize', () => {
         setupStats.reactionMode = "pyro_vaporize"
+        setupStats.reactionChance = 100
         const stats = computeAllStats(setupStats)
         expect(formula.skill.dmg(stats)[0](stats)).toApproximate(13759);
         expect(formula.burst.dmg(stats)[0](stats)).toApproximate(14798);
       })
       test('melt', () => {
         setupStats.reactionMode = "pyro_melt"
+        setupStats.reactionChance = 100
         const stats = computeAllStats(setupStats)
         expect(formula.skill.dmg(stats)[0](stats)).toApproximate(18346);
         expect(formula.burst.dmg(stats)[0](stats)).toApproximate(19731);

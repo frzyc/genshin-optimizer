@@ -46,6 +46,7 @@ const initialCharacter = (characterKey): ICharacter => ({
   levelKey: "L1",//combination of level and ascension
   hitMode: "avgHit",
   reactionMode: null,
+  reactionChance: 100,
   equippedArtifacts: Object.fromEntries(allSlotKeys.map(sKey => [sKey, ""])),
   conditionalValues: {},
   baseStatOverrides: {},//overriding the baseStat
@@ -172,8 +173,9 @@ export default function CharacterDisplayCard({ characterKey: propCharacterKey, c
     const newBuild = propNewBuild && deepClone(propNewBuild);
     newBuild.hitMode = character.hitMode;
     newBuild.reactionMode = character.reactionMode;
+    newBuild.reactionChance = character.reactionChance;
     return newBuild
-  }, [propNewBuild, character.hitMode, character.reactionMode])
+  }, [propNewBuild, character.hitMode, character.reactionMode, character.reactionChance])
 
   const { levelKey, artifacts: flexArts } = character
 
