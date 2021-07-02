@@ -237,7 +237,7 @@ export default class Character {
       })
     })
 
-    const weaponFormulas = Formula.formulas.weapon[stats.weapon.key]
+    const weaponFormulas = Formula.formulas?.weapon[stats.weapon.key]
 
     if (weaponFormulas) {
       Object.values(weaponFormulas as any).forEach((formula: any) => {
