@@ -112,7 +112,7 @@ export default class Character {
 
     let stats = deepClone(initialStats)
     //add artifact and artifactsets
-    Object.values(artifacts).forEach((art: any) => {
+    Object.values(artifacts).forEach(art => {
       if (!art) return
       //main stats
       stats[art.mainStatKey] = (stats[art.mainStatKey] || 0) + Artifact.mainStatValue(art.mainStatKey, art.numStars, Math.max(Math.min(stats.mainStatAssumptionLevel, art.numStars * 4), art.level))
