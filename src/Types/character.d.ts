@@ -1,3 +1,4 @@
+import { IMinimalArtifact } from "./artifact";
 import { CharacterKey, ElementKey, WeaponTypeKey } from "./consts";
 import ICalculatedStats from "./ICalculatedStats";
 import IConditional, { IConditionals } from "./IConditional";
@@ -56,7 +57,7 @@ export interface ICharacter {
   },
   infusionAura: ElementKey | ""
   constellation: number
-  artifacts?: any[]//from flex TODO: type
+  artifacts?: IMinimalArtifact[]//from flex TODO: type
   buildSettings?: object
 }
 

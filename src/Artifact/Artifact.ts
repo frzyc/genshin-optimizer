@@ -3,9 +3,9 @@ import ArtifactDatabase from '../Database/ArtifactDatabase';
 import CharacterDatabase from '../Database/CharacterDatabase';
 import { ArtifactSubstatLookupTable } from '../Data/ArtifactLookupTable';
 import Stat from '../Stat';
-import { clampPercent, closeEnoughFloat, closeEnoughInt, deepClone, evalIfFunc } from '../Util/Util';
-import { CompressMainStatKey, IArtifact, MainStatKey, StatDict, SubstatKey } from '../Types/artifact';
-import { SlotKey, Rarity, ArtifactSetKey, allSlotKeys, SetNum, CharacterKey } from '../Types/consts';
+import { closeEnoughFloat, closeEnoughInt, deepClone, evalIfFunc } from '../Util/Util';
+import { CompressMainStatKey, IArtifact, IMinimalArtifact, MainStatKey, StatDict, ISubstat, SubstatKey } from '../Types/artifact';
+import { SlotKey, Rarity, ArtifactSetKey, allSlotKeys, SetNum, CharacterKey, allArtifactSets, allRarities } from '../Types/consts';
 import ICalculatedStats from '../Types/ICalculatedStats';
 import { ArtifactSheet } from './ArtifactSheet';
 import Conditional from '../Conditional/Conditional';
@@ -90,45 +90,53 @@ export default class Artifact {
       return table[lookupValue].map(roll => roll.map(i => rollData[i]))
     else return [] // Lookup fails
   }
-  static getSubstatEfficiency = (substatKey: SubstatKey | "", rolls: number[]): number => {
-    const sum = rolls.reduce((a, b) => a + b, 0)
-    const max = substatKey ? Artifact.maxSubstatValues(substatKey) * rolls.length : 0
-    return max ? clampPercent((sum / max) * 100) : 0
-  }
 
   //ARTIFACT IN GENERAL
-  static substatsValidation(state: IArtifact) {
-    const { numStars, level, substats } = state, errors: string[] = []
+  static validate(art: IMinimalArtifact): IArtifact {
+    function nearest<T>(value: T, validValues: readonly T[]): T {
+      return validValues.includes(value) ? value : validValues[0]
+    }
+
+    const { id, location, lock } = art, errors: string[] = []
+    const setKey = nearest(art.setKey, allArtifactSets)
+    const slotKey = nearest(art.slotKey, allSlotKeys) // TODO: Use artifact sheet
+    const numStars = nearest(art.numStars, allRarities) // TODO: Use artifact sheet
+    const mainStatKey = nearest(art.mainStatKey, Artifact.slotMainStats(slotKey))
+
+    const level = Math.round(Math.min(Math.max(0, art.level), numStars >= 3 ? numStars * 4 : 4))
+    const mainStatVal = Artifact.mainStatValue(mainStatKey, numStars, level)!
+
+    const substats: ISubstat[] = art.substats.map(substat => ({ ...substat, rolls: [], weightedEfficiency: NaN }))
+    const validated: IArtifact = { id, setKey, location, slotKey, lock, mainStatKey, numStars, level, substats, mainStatVal, validationErrors: errors }
 
     const allSubstatRolls: { index: number, substatRolls: number[][] }[] = []
     let total = 0
     substats.forEach((substat, index) => {
-      const { key, value } = substat, substatRolls = key ? Artifact.getSubstatRolls(key, value, numStars) : []
+      const { key, value } = substat
+      if (!key) return
+
+      const substatRolls = Artifact.getSubstatRolls(key, value, numStars)
 
       if (substatRolls.length) {
         const possibleLengths = new Set(substatRolls.map(roll => roll.length))
         if (possibleLengths.size !== 1)
           allSubstatRolls.push({ index, substatRolls })
-        else
+        else {
           total += substatRolls[0].length
-
-        substat.rolls = substatRolls[0]
-        substat.efficiency = Artifact.getSubstatEfficiency(key, substat.rolls)
-      } else {
-        if (substat.key)
-          errors.push(`Invalid substat ${Stat.getStatNameWithPercent(substat.key)}`)
-
-        substat.rolls = []
-        substat.efficiency = 0
-      }
+          substat.rolls = substatRolls[0]
+          substat.weightedEfficiency = substat.rolls.reduce((a, b) => a + b) / Artifact.maxSubstatValues(key) * 100
+        }
+      } else if (substat.key)
+        errors.push(`Invalid substat ${Stat.getStatNameWithPercent(substat.key)}`)
     })
 
-    if (errors.length) return errors
-    {
+    if (substats.some((substat) => !substat.key)) {
       let substat = substats.find(substat => (substat.rolls?.length ?? 0) > 1)
-      if (substat && substats.some((substat) => !substat.rolls?.length))
-        return [`Substat ${Stat.getStatNameWithPercent(substat.key)} has > 1 roll, but not all substats are unlocked.`]
+      if (substat)
+        errors.push(`Substat ${Stat.getStatNameWithPercent(substat.key)} has > 1 roll, but not all substats are unlocked.`)
     }
+
+    if (errors.length) return validated
 
     const { low } = Artifact.rollInfo(numStars)
     const minimum = low + Math.floor(level / 4)
@@ -142,8 +150,9 @@ export default class Artifact {
           minimumMaxRolls = maxRolls
           for (const { index, roll } of rolls) {
             const key = substats[index].key
+            if (!key) continue
             substats[index].rolls = roll
-            substats[index].efficiency = Artifact.getSubstatEfficiency(key, roll)
+            substats[index].weightedEfficiency = roll.reduce((a, b) => a + b) / Artifact.maxSubstatValues(key) * 100
           }
         }
 
@@ -170,13 +179,17 @@ export default class Artifact {
       }
     }
 
-    return errors
+    return validated
   }
+  static getSubstatEfficiency({ key, value, weightedEfficiency }: ISubstat): number {
+    return key ? weightedEfficiency / Artifact.maxSubstatValues(key) * 100 : 0
+  }
+
   static getArtifactEfficiency(artifact: IArtifact, filter: Set<SubstatKey>) {
     const { substats, numStars, level } = artifact
     // Relative to max star, so comparison between different * makes sense.
     const totalRolls = Artifact.totalPossibleRolls(maxStar);
-    const current = substats.filter(({ key }) => key && filter.has(key)).reduce((sum, { rolls, efficiency }) => sum + ((efficiency ?? 0) * (rolls?.length ?? 0)), 0)
+    const current = substats.filter(({ key }) => filter.has(key as any)).reduce((sum, { weightedEfficiency }) => sum + weightedEfficiency, 0)
 
     const rollsRemaining = Artifact.rollsRemaining(level, numStars);
     const emptySlotCount = substats.filter(s => !s.key).length

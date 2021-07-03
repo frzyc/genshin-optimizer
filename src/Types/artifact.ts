@@ -22,27 +22,37 @@ export interface SetEffectEntry {
 export type StatArr = { key: StatKey, value: number }[]
 export type StatDict = Dict<StatKey, number>
 
-export interface IArtifact {
-  id?: string,
+// Artifact that is saved into database.
+export interface IArtifact extends IMinimalArtifact {
+  substats: ISubstat[],
+
+  mainStatVal: number,
+  validationErrors: string[],
+}
+// Smallest amount of information required to recover artifact information.
+export interface IMinimalArtifact {
+  id: string,
   setKey: ArtifactSetKey,
   numStars: Rarity,
   level: number,
   slotKey: SlotKey,
   mainStatKey: MainStatKey,
-  mainStatVal?: number,
-  substats: Substat[],
+  substats: IMinimalSubstat[],
   location: CharacterKey | "",
-
   lock: boolean,
 }
 
-export interface Substat {
+export interface ISubstat extends IMinimalSubstat {
+  // Cache
+  rolls: number[],
+  weightedEfficiency: number, // Efficiency contributed to total efficiency.
+}
+// Smallest amount of information required to recover substat information.
+export interface IMinimalSubstat {
   key: SubstatKey | "",
   value: number,
-
-  rolls?: number[],
-  efficiency?: number,
 }
+
 export type StatKey = MainStatKey | SubstatKey | ReactionDMGStatKey | MoveDMGStatKey | ElementalRESStatKey | SpecializedStatKey
 
 type ElementalRESStatKey = "physical_res_" | "anemo_res_" | "geo_res_" | "electro_res_" | "hydro_res_" | "pyro_res_" | "cryo_res_"

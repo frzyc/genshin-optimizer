@@ -9,7 +9,7 @@ import Snippet from "./imgs/snippet.png";
 import Stat from '../Stat';
 import { clamp, hammingDistance } from '../Util/Util';
 import Artifact from './Artifact';
-import { allMainStatKeys, allSubstats, IArtifact, MainStatKey, Substat, SubstatKey } from '../Types/artifact';
+import { allMainStatKeys, allSubstats, IArtifact, IMinimalArtifact, IMinimalSubstat, MainStatKey, SubstatKey } from '../Types/artifact';
 import { allArtifactRarities, allArtifactSets, allSlotKeys, ArtifactSetKey, Rarity, SlotKey } from '../Types/consts';
 import { ArtifactSheet } from './ArtifactSheet';
 import { valueString } from '../Util/UIUtil';
@@ -177,7 +177,7 @@ function ExplainationModal({ modalShow, hide }) {
             <p className="mb-0">You can click on the box next to "Browse" to browse the files in your harddrive for multiple screenshots.</p>
             <p>For single screenshots from the snippets, just press <strong>Ctrl + V</strong> to paste from your clipboard.</p>
             <p>You should be able to see a Preview of your artifact snippet, and after waiting a few seconds, the artifact set and the substats will be filled in in the <b>Artifact Editor</b>.
-        </p>
+            </p>
           </Col>
           <Col xs={12}>
             <h5>Finishing the Artifact</h5>
@@ -284,10 +284,11 @@ async function textsFromImage(imageData: ImageData, options: object | undefined 
   return rec.data.lines.map(line => line.text)
 }
 
-export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactSheet>, rarities: Set<number>, textSetKeys: Set<ArtifactSetKey>, slotKeys: Set<SlotKey>, substats: Substat[], mainStatKeys: Set<MainStatKey>, mainStatValues: { mainStatValue: number, unit?: string }[]): [IArtifact, Dict<keyof IArtifact, Displayable>] {
+export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactSheet>, rarities: Set<number>, textSetKeys: Set<ArtifactSetKey>, slotKeys: Set<SlotKey>, substats: IMinimalSubstat[], mainStatKeys: Set<MainStatKey>, mainStatValues: { mainStatValue: number, unit?: string }[]): [IMinimalArtifact, Dict<keyof IArtifact, Displayable>] {
   const relevantSetKey = [...new Set<ArtifactSetKey>([...textSetKeys, "Adventurer", "ArchaicPetra"])]
 
-  let bestScore = -1, bestArtifacts: IArtifact[] = [{
+  let bestScore = -1, bestArtifacts: IMinimalArtifact[] = [{
+    id: "",
     setKey: "Adventurer", numStars: 3, level: 0, slotKey: "flower", mainStatKey: "hp", substats: [],
     location: "", lock: false,
   }]
@@ -334,7 +335,7 @@ export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactShee
               if (score > bestScore) bestArtifacts = []
               bestScore = score
               bestArtifacts.push({
-                setKey, numStars, level, slotKey, mainStatKey, substats: [], location: "", lock: false
+                id: "", setKey, numStars, level, slotKey, mainStatKey, substats: [], location: "", lock: false
               })
             }
           }
@@ -347,7 +348,7 @@ export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactShee
             if (score > bestScore) bestArtifacts = []
             bestScore = score
             bestArtifacts.push({
-              setKey, numStars, level, slotKey, mainStatKey, substats: [], location: "", lock: false
+              id: "", setKey, numStars, level, slotKey, mainStatKey, substats: [], location: "", lock: false
             })
           }
         }
@@ -500,8 +501,8 @@ function parseMainStatValues(texts: string[]): { mainStatValue: number, unit?: s
   }
   return results
 }
-function parseSubstats(texts: string[]): Substat[] {
-  const matches: Substat[] = []
+function parseSubstats(texts: string[]): IMinimalSubstat[] {
+  const matches: IMinimalSubstat[] = []
   for (let text of texts) {
     text = text.replace(/^[\W]+/, "").replace(/\n/, "")
     //parse substats
@@ -544,7 +545,7 @@ function bandPass(pixelData: ImageData, color1: Color, color2: Color, options: {
 }
 
 type ProcessedEntry = {
-  fileName: string, imageURL: string, artifact: IArtifact, texts: Dict<keyof IArtifact, Displayable>
+  fileName: string, imageURL: string, artifact: IMinimalArtifact, texts: Dict<keyof IArtifact, Displayable>
 }
 type OutstandingEntry = {
   file: File, fileName: string, imageURL?: Promise<string>, result?: Promise<{ file: File, result: ProcessedEntry }>

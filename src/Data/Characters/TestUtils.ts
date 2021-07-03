@@ -23,16 +23,16 @@ export function computeAllStats(baseStats) {
 }
 
 export function parseTestFlexObject(url) {
-  let [character] = parseFlexObj(url.split("flex?")[1])
-  let artifacts = character.artifacts.map(artifact => {
+  const flexObj = parseFlexObj(url.split("flex?")[1])[0]!
+  const { character, artifacts } = flexObj
+  const artifactStats = artifacts.map(artifact => {
     let { numStars, level, mainStatKey, substats } = artifact
     return {
       ...Object.fromEntries(substats
         .filter(s => s.key != "")
         .map(({ key, value }) => [key, value])),
-      [mainStatKey]: Artifact.mainStatValue(mainStatKey, numStars, level)
+      [mainStatKey]: Artifact.mainStatValue(mainStatKey, numStars, level)!
     }
   })
-  delete character.artifacts
-  return { character, artifacts }
+  return { character, artifacts: artifactStats }
 }

@@ -7,11 +7,11 @@ import CustomFormControl from '../Components/CustomFormControl';
 import { Stars } from '../Components/StarDisplay';
 import ArtifactDatabase from '../Database/ArtifactDatabase';
 import Stat from '../Stat';
-import { allSubstats, IArtifact, Substat, SubstatKey } from '../Types/artifact';
+import { allSubstats, IArtifact, IMinimalArtifact, IMinimalSubstat, SubstatKey } from '../Types/artifact';
 import { allArtifactSets, Rarity, SlotKey } from '../Types/consts';
 import { usePromise } from '../Util/ReactUtil';
 import { valueString } from '../Util/UIUtil';
-import { clamp, deepClone, getRandomElementFromArray, getRandomIntInclusive } from '../Util/Util';
+import { deepClone, getRandomElementFromArray, getRandomIntInclusive } from '../Util/Util';
 import Artifact from './Artifact';
 import ArtifactCard from './ArtifactCard';
 import { ArtifactSheet } from './ArtifactSheet';
@@ -24,8 +24,10 @@ const allSubstatFilter = new Set(allSubstats)
 let uploadDisplayReset
 export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }) {
   const { t } = useTranslation("artifact")
-  const [artifact, artifactDispatch] = useReducer(artifactReducer, undefined)
   const artifactSheets = usePromise(ArtifactSheet.getAll())
+
+  const [preValidated, artifactDispatch] = useReducer(artifactReducer, undefined)
+  const artifact = useMemo(() => preValidated && Artifact.validate(preValidated), [preValidated])
 
   const artifactInEditor = artifact !== undefined
   const sheet = artifact ? artifactSheets?.[artifact.setKey] : undefined
@@ -45,7 +47,7 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }) {
     uploadDisplayReset?.()
     artifactDispatch({ type: "reset" })
   }, [cancelEdit, artifactDispatch])
-  const update = useCallback((newValue: Partial<IArtifact>) => {
+  const update = useCallback((newValue: Partial<IMinimalArtifact>) => {
     const newSheet = newValue.setKey ? artifactSheets![newValue.setKey] : sheet!
 
     function pick<T>(value: T | undefined, available: readonly T[], prefer?: T): T {
@@ -58,8 +60,6 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }) {
     }
     if (newValue.numStars)
       newValue.level = artifact?.level ?? 0
-    if (newValue.level)
-      newValue.level = clamp(newValue.level, 0, 4 * (newValue.numStars ?? artifact!.numStars))
     if (newValue.slotKey)
       newValue.mainStatKey = pick(artifact?.mainStatKey, Artifact.slotMainStats(newValue.slotKey))
 
@@ -69,13 +69,13 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }) {
     }
     artifactDispatch({ type: "update", artifact: newValue })
   }, [artifact, artifactSheets, sheet, artifactDispatch])
-  const setSubstat = useCallback((index: number, substat: Substat) => {
+  const setSubstat = useCallback((index: number, substat: IMinimalSubstat) => {
     artifactDispatch({ type: "substat", index, substat })
   }, [artifactDispatch])
   const canClearArtifact = (): boolean => window.confirm(t`editor.clearPrompt` as string)
   const { dupId, isDup } = useMemo(() => checkDuplicate(artifact), [artifact])
   const { numStars = 5, level = 0, slotKey = "flower" } = artifact ?? {}
-  const errMsgs = artifact ? Artifact.substatsValidation(artifact) : []
+  const errMsgs = artifact?.validationErrors ?? []
   const { currentEfficiency = 0, maximumEfficiency = 0 } = artifact ? Artifact.getArtifactEfficiency(artifact, allSubstatFilter) : {}
   return <Card bg="darkcontent" text={"lightfont" as any}>
     <Card.Header><Trans t={t} i18nKey="editor.title" >Artifact Editor</Trans></Card.Header>
@@ -246,10 +246,12 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }) {
   </Card >
 }
 
-function SubstatInput({ index, artifact, setSubstat, className }: { index: number, artifact: IArtifact | undefined, setSubstat: (index: number, substat: Substat) => void, className }) {
+function SubstatInput({ index, artifact, setSubstat, className }: { index: number, artifact: IArtifact | undefined, setSubstat: (index: number, substat: IMinimalSubstat) => void, className }) {
   const { t } = useTranslation("artifact")
+
   const { mainStatKey = "", substats = [] } = artifact ?? {}
-  const { key = "", value = 0, rolls = [], efficiency = 0 } = artifact?.substats[index] ?? {}
+  const { key = "", value = 0, rolls = [], weightedEfficiency = NaN } = substats[index] ?? {}
+  const efficiency = weightedEfficiency / rolls.length
 
   const accurateValue = rolls.reduce((a, b) => a + b, 0)
   const unit = Stat.getStatUnit(key), rollNum = rolls.length
@@ -257,7 +259,7 @@ function SubstatInput({ index, artifact, setSubstat, className }: { index: numbe
   let error: string = "", rollData: number[] = [], allowedRolls = 0, rollLabel: Displayable | null = null
 
   if (artifact) {
-    //account for the rolls it will to fill all 4 substates, +1 for its base roll
+    // Account for the rolls it will need to fill all 4 substates, +1 for its base roll
     const numStars = artifact.numStars
     const { numUpgrades, high } = Artifact.rollInfo(numStars)
     const maxRollNum = numUpgrades + high - 3;
@@ -319,11 +321,11 @@ function SubstatInput({ index, artifact, setSubstat, className }: { index: numbe
 }
 
 type ResetMessage = { type: "reset" }
-type SubstatMessage = { type: "substat", index: number, substat: Substat }
-type OverwriteMessage = { type: "overwrite", artifact: IArtifact }
-type UpdateMessage = { type: "update", artifact: Partial<IArtifact> }
+type SubstatMessage = { type: "substat", index: number, substat: IMinimalSubstat }
+type OverwriteMessage = { type: "overwrite", artifact: IMinimalArtifact }
+type UpdateMessage = { type: "update", artifact: Partial<IMinimalArtifact> }
 type Message = ResetMessage | SubstatMessage | OverwriteMessage | UpdateMessage
-export function artifactReducer(state: IArtifact | undefined, action: Message): IArtifact | undefined {
+export function artifactReducer(state: IMinimalArtifact | undefined, action: Message): IMinimalArtifact | undefined {
   switch (action.type) {
     case "reset": return
     case "substat": {
@@ -337,11 +339,10 @@ export function artifactReducer(state: IArtifact | undefined, action: Message): 
 }
 
 function checkDuplicate(editorArt: IArtifact | undefined): { dupId?: string, isDup: boolean } {
-  if (!editorArt) return { isDup: false }
-  const { id, setKey, numStars, level, slotKey, mainStatKey, substats } = editorArt
-  if (id) return { isDup: false }
+  if (!editorArt || editorArt.id || editorArt.validationErrors.length) return { isDup: false }
+  const { setKey, numStars, level, slotKey, mainStatKey, substats } = editorArt
 
-  //check for a "upgrade" or duplicate
+  // Check for "upgrade" or duplicate artifacts
   const artifacts = Object.values(ArtifactDatabase.getArtifactDatabase()).filter(candidate =>
     setKey === candidate.setKey &&
     numStars === candidate.numStars &&
@@ -355,6 +356,7 @@ function checkDuplicate(editorArt: IArtifact | undefined): { dupId?: string, isD
       )))
   if (!artifacts.length) return { isDup: false }
 
+  // Check for duplicate artifacts
   const dupArtifacts = artifacts.filter(candidate =>
     level === candidate.level &&
     substats.every(substat =>
@@ -363,18 +365,18 @@ function checkDuplicate(editorArt: IArtifact | undefined): { dupId?: string, isD
         substat.value === candidateSubstat.value
       )))
 
-  const dupId = dupArtifacts[0]?.id! ?? artifacts[0].id!
+  const dupId = dupArtifacts[0]?.id ?? artifacts[0].id
   return { dupId, isDup: dupArtifacts.length > 0 }
 }
 
-async function randomizeArtifact(): Promise<IArtifact> {
+async function randomizeArtifact(): Promise<IMinimalArtifact> {
   const set = getRandomElementFromArray(allArtifactSets)
   const sheet = await ArtifactSheet.get(set)!
   const rarity = getRandomElementFromArray(sheet.rarity)
   const slot = getRandomElementFromArray(Object.keys(sheet.slotNames))
   const mainStatKey = getRandomElementFromArray(Artifact.slotMainStats(slot))
   const level = getRandomIntInclusive(0, rarity * 4)
-  const substats: Substat[] = [0, 1, 2, 3].map(i => ({ key: "", value: 0 }))
+  const substats: IMinimalSubstat[] = [0, 1, 2, 3].map(i => ({ key: "", value: 0 }))
 
   const { low, high } = Artifact.rollInfo(rarity)
   const totRolls = Math.floor(level / 4) + getRandomIntInclusive(low, high)
@@ -399,7 +401,7 @@ async function randomizeArtifact(): Promise<IArtifact> {
       substat.value = parseFloat(valueString(substat.value, Stat.getStatUnit(substat.key)))
 
   return {
-    setKey: set, numStars: rarity, slotKey: slot, mainStatKey, level, substats, location: "", lock: false
+    id: "", setKey: set, numStars: rarity, slotKey: slot, mainStatKey, level, substats, location: "", lock: false
   }
 }
 

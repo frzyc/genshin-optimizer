@@ -4,8 +4,9 @@ import { changes as v2change, dmgModeToHitMode } from "./dbV2KeyMap";
 import { deepClone, loadFromLocalStorage, saveToLocalStorage } from "../Util/Util";
 import { allSlotKeys } from "../Types/consts";
 import { ICharacter } from "../Types/character";
+import Artifact from "../Artifact/Artifact";
 
-const CurrentDatabaseVersion = 4
+const CurrentDatabaseVersion = 5
 
 function DatabaseInitAndVerify() {
   const dbVersion = getDatabaseVersion()
@@ -137,6 +138,11 @@ function DatabaseInitAndVerify() {
         art.location = ""
         valid = false
       }
+    }
+
+    if (dbVersion < 5) {
+      art = Artifact.validate(art)
+      valid = false
     }
     //Update any invalid artifacts in DB
     if (!valid) ArtifactDatabase.update(art)

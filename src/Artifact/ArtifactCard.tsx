@@ -16,7 +16,7 @@ import { CharacterSelectionDropdownList } from '../Components/CharacterSelection
 import { Stars } from '../Components/StarDisplay';
 import ArtifactDatabase from '../Database/ArtifactDatabase';
 import Stat from '../Stat';
-import { allSubstats, IArtifact, Substat, SubstatKey } from '../Types/artifact';
+import { allSubstats, IArtifact, ISubstat, SubstatKey } from '../Types/artifact';
 import { useForceUpdate, usePromise } from '../Util/ReactUtil';
 import { valueString } from '../Util/UIUtil';
 import Artifact from './Artifact';
@@ -40,7 +40,6 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
   const art = artifactObj ?? ArtifactDatabase.get(artifactId);
   const characterSheet = usePromise(CharacterSheet.get(art?.location ?? ""))
   if (!art) return null
-  if (art.substats[0].rolls === undefined) Artifact.substatsValidation(art)
 
   const { id, slotKey, numStars, level, mainStatKey, substats, lock } = art
   const mainStatLevel = Math.max(Math.min(mainStatAssumptionLevel, numStars * 4), level)
@@ -69,10 +68,10 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
         <b>{Stat.getStatName(mainStatKey)} {mainStatVal}</b>
       </h5>
       <Row className="mb-0">
-        {substats.map((stat: Substat, i) => {
+        {substats.map((stat: ISubstat, i) => {
           if (!stat.value) return null
           let numRolls = stat.rolls?.length ?? 0
-          let efficiency = stat.efficiency ?? 0
+          let efficiency = numRolls ? stat.value / numRolls : 0
           let effOpacity = 0.3 + efficiency * 0.7
           let statName = Stat.getStatName(stat.key)
           return (<Col key={i} xs={12}>

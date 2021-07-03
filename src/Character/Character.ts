@@ -8,6 +8,7 @@ import CharacterDatabase from "../Database/CharacterDatabase";
 import Formula from "../Formula";
 import { ElementToReactionKeys, PreprocessFormulas } from "../StatData";
 import { GetDependencies } from "../StatDependency";
+import { IMinimalArtifact } from "../Types/artifact";
 import { ICharacter } from "../Types/character";
 import { allElements, allSlotKeys, CharacterKey, ElementKey, SlotKey } from "../Types/consts";
 import ICalculatedStats from "../Types/ICalculatedStats";
@@ -95,17 +96,17 @@ export default class Character {
   }
 
   static calculateBuild = (character: ICharacter, characterSheet: CharacterSheet, weaponSheet: WeaponSheet, artifactSheets, mainStatAssumptionLevel = 0): ICalculatedStats => {
-    let artifacts
+    let artifacts: Dict<number, IMinimalArtifact>
     if (character.artifacts) //from flex
       artifacts = Object.fromEntries(character.artifacts.map((art, i) => [i, art]))
-    else if (character.equippedArtifacts)
+    else
       artifacts = Object.fromEntries(Object.entries(character.equippedArtifacts).map(([key, artid]) => [key, ArtifactDatabase.get(artid)]))
     const initialStats = Character.createInitialStats(character, characterSheet, weaponSheet)
     initialStats.mainStatAssumptionLevel = mainStatAssumptionLevel
     return Character.calculateBuildwithArtifact(initialStats, artifacts, artifactSheets)
   }
 
-  static calculateBuildwithArtifact = (initialStats, artifacts, artifactSheets) => {
+  static calculateBuildwithArtifact = (initialStats, artifacts: Dict<number, IMinimalArtifact>, artifactSheets) => {
     const setToSlots = Artifact.setToSlots(artifacts)
     let artifactSetEffectsStats = ArtifactSheet.setEffectsStats(artifactSheets, initialStats, setToSlots)
 
