@@ -22,14 +22,14 @@ export interface SetEffectEntry {
 export type StatArr = { key: StatKey, value: number }[]
 export type StatDict = Dict<StatKey, number>
 
-// Artifact that is saved into database.
+/** Artifact that is saved into database. */
 export interface IArtifact extends IMinimalArtifact {
   substats: ISubstat[],
 
   mainStatVal: number,
   validationErrors: string[],
 }
-// Smallest amount of information required to recover artifact information.
+/** Smallest amount of information required to recover artifact information. */
 export interface IMinimalArtifact {
   id: string,
   setKey: ArtifactSetKey,
@@ -47,7 +47,7 @@ export interface ISubstat extends IMinimalSubstat {
   rolls: number[],
   weightedEfficiency: number, // Efficiency contributed to total efficiency.
 }
-// Smallest amount of information required to recover substat information.
+/** Smallest amount of information required to recover substat information. */
 export interface IMinimalSubstat {
   key: SubstatKey | "",
   value: number,
