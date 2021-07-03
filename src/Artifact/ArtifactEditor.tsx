@@ -26,8 +26,7 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }) {
   const { t } = useTranslation("artifact")
   const artifactSheets = usePromise(ArtifactSheet.getAll())
 
-  const [preValidated, artifactDispatch] = useReducer(artifactReducer, undefined)
-  const artifact = useMemo(() => preValidated && Artifact.validate(preValidated), [preValidated])
+  const [artifact, artifactDispatch] = useReducer(artifactReducer, undefined)
 
   const artifactInEditor = artifact !== undefined
   const sheet = artifact ? artifactSheets?.[artifact.setKey] : undefined
@@ -325,17 +324,21 @@ type SubstatMessage = { type: "substat", index: number, substat: IMinimalSubstat
 type OverwriteMessage = { type: "overwrite", artifact: IMinimalArtifact }
 type UpdateMessage = { type: "update", artifact: Partial<IMinimalArtifact> }
 type Message = ResetMessage | SubstatMessage | OverwriteMessage | UpdateMessage
-export function artifactReducer(state: IMinimalArtifact | undefined, action: Message): IMinimalArtifact | undefined {
+export function artifactReducer(state: IArtifact | undefined, action: Message): IArtifact | undefined {
+  let result: IMinimalArtifact
   switch (action.type) {
     case "reset": return
     case "substat": {
       const { index, substat } = action
-      state!.substats[index] = substat
-      return { ...state! }
+      result = state!
+      result.substats[index] = substat
+      break
     }
-    case "overwrite": return action.artifact
-    case "update": return { ...state!, ...action.artifact }
+    case "overwrite": result = action.artifact; break
+    case "update": result = { ...state!, ...action.artifact }; break
   }
+
+  return Artifact.validate(result)
 }
 
 function checkDuplicate(editorArt: IArtifact | undefined): { dupId?: string, isDup: boolean } {
