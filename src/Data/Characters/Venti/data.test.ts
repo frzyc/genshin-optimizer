@@ -49,7 +49,7 @@ describe("Testing Venti's Formulas (Derpy#2132)", () => {
         expect(formula.skill.hold(stats)[0](stats)).toApproximate(4038)
 
         expect(formula.burst.hit(stats)[0](stats)).toApproximate(399)
-        expect(formula.burst.pyro_hit(stats)[0](stats)).toApproximate(123)
+        expect(formula.burst.pyro(stats)[0](stats)).toApproximate(123)
 
         expect(cformula.dmg(stats)[0](stats)).toApproximate(58)
 
@@ -106,7 +106,7 @@ describe("Testing Venti's Formulas (Derpy#2132)", () => {
         expect(formula.skill.hold(stats)[0](stats)).toApproximate(9573)
 
         expect(formula.burst.hit(stats)[0](stats)).toApproximate(947)
-        expect(formula.burst.pyro_hit(stats)[0](stats)).toApproximate(293)
+        expect(formula.burst.pyro(stats)[0](stats)).toApproximate(293)
 
         expect(cformula.dmg(stats)[0](stats)).toApproximate(138)
       })
