@@ -69,35 +69,37 @@ export const flexObj = {
     ],
     location: 'hutao'
   }],
-  characterKey: 'hutao',
-  hitMode: 'avgHit',
-  reactionMode: 'pyro_vaporize',
-  constellation: 2,
-  overrideLevel: 0,
-  levelKey: 'L90',
-  infusionAura: 'pyro',
-  talentLevelKeys: { auto: 5, skill: 5, burst: 5 },
-  baseStatOverrides: { characterLevel: 89 },
-  conditionalValues: {
-    artifact: {},
-    character: {
-      hutao: {
-        SanguineRouge: [1],
-        GuideToAfterlife: [1],
+  character: {
+    characterKey: 'hutao',
+    hitMode: 'avgHit',
+    reactionMode: 'pyro_vaporize',
+    constellation: 2,
+    overrideLevel: 0,
+    levelKey: 'L90',
+    infusionAura: 'pyro',
+    talentLevelKeys: { auto: 5, skill: 5, burst: 5 },
+    baseStatOverrides: { characterLevel: 89 },
+    conditionalValues: {
+      artifact: {},
+      character: {
+        hutao: {
+          SanguineRouge: [1],
+          GuideToAfterlife: [1],
+        }
+      },
+      weapon: {
+        StaffOfHoma: {
+          esj: [1],
+        }
       }
     },
     weapon: {
-      StaffOfHoma: {
-        esj: [1],
-      }
+      key: 'StaffOfHoma',
+      levelKey: 'L90',
+      refineIndex: 0,
+      overrideMainVal: 0,
+      overrideSubVal: 0,
     }
-  },
-  weapon: {
-    key: 'StaffOfHoma',
-    levelKey: 'L90',
-    refineIndex: 0,
-    overrideMainVal: 0,
-    overrideSubVal: 0,
   }
 }
 

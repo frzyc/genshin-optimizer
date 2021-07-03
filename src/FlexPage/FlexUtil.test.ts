@@ -19,7 +19,9 @@ describe('flex import export', () => {
   })
   test('should support old format', () => {
     let [obj] = parseFlexObj(oldURL.split("flex?")[1])
+    obj!.character.conditionalValues = flexObj.character.conditionalValues
+    obj!.character.infusionAura = 'pyro'
     // We're dropping conditional values and infusion from old version
-    expect({ ...obj, conditionalValues: flexObj.conditionalValues, infusionAura: 'pyro' }).toEqual(flexObj)
+    expect(obj).toEqual(flexObj)
   })
 })
