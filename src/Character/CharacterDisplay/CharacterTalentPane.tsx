@@ -10,7 +10,6 @@ import { ElementToReactionKeys } from "../../StatData";
 import { ICharacter } from "../../Types/character";
 import ICalculatedStats from "../../Types/ICalculatedStats";
 import statsToFields from "../../Util/FieldUtil";
-import Character from "../Character";
 import CharacterSheet from "../CharacterSheet";
 type CharacterTalentPaneProps = {
   characterSheet: CharacterSheet,
@@ -21,8 +20,7 @@ type CharacterTalentPaneProps = {
   equippedBuild?: ICalculatedStats
 }
 export default function CharacterTalentPane(props: CharacterTalentPaneProps) {
-  const { characterSheet, character: { levelKey, constellation }, editable, characterDispatch, newBuild, equippedBuild } = props
-  const ascension = Character.getAscension(levelKey)
+  const { characterSheet, character: { ascension, constellation }, editable, characterDispatch, newBuild, equippedBuild } = props
   const skillBurstList = [["auto", "Normal/Charged Attack"], ["skill", "Elemental Skill"], ["burst", "Elemental Burst"]]
   const passivesList: Array<[tKey: string, tText: string, asc: number]> = [["passive1", "Unlocked at Ascension 1", 1], ["passive2", "Unlocked at Ascension 4", 4], ["passive3", "Unlocked by Default", 0]]
   const skillDisplayProps = { ...props, ascension }

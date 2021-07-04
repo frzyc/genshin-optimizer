@@ -1,7 +1,7 @@
 import Artifact from "../Artifact/Artifact";
 import { ArtifactSheet } from "../Artifact/ArtifactSheet";
 import Conditional from "../Conditional/Conditional";
-import { characterStatBase, LevelsData } from "../Data/CharacterData";
+import { ascensionMaxLevel, characterStatBase } from "../Data/CharacterData";
 import ElementalData from "../Data/ElementalData";
 import ArtifactDatabase from "../Database/ArtifactDatabase";
 import CharacterDatabase from "../Database/CharacterDatabase";
@@ -22,16 +22,7 @@ export default class Character {
 
   static getElementalName = (elementalKey, defVal = "") => (ElementalData?.[elementalKey]?.name || defVal)
 
-  //LEVEL
-  static getlevelKeys = (): string[] => Object.keys(LevelsData)
-  static getlevelTemplateName = (levelKey, defVal = "") => (LevelsData?.[levelKey]?.name || defVal)
-  static getLevelString = (character: ICharacter, characterSheet: CharacterSheet, weaponSheet: WeaponSheet) => {
-    const levelOverride = Character.getStatValueWithOverride(character, characterSheet, weaponSheet, "characterLevel")
-    return Character.getLevel(character.levelKey) === levelOverride ? Character.getlevelTemplateName(character.levelKey) : `Lvl. ${levelOverride}`
-  }
-  static getIndexFromlevelkey = (levelKey) => Character.getlevelKeys().indexOf(levelKey);
-  static getLevel = (levelKey, defVal = 1) => (LevelsData?.[levelKey]?.level || defVal)
-  static getAscension = (levelKey, defVal = 0) => (LevelsData?.[levelKey]?.asend || defVal)
+  static getLevelString = (character: ICharacter) => `${character.level}/${ascensionMaxLevel[character.ascension]}`
 
   static getTalentFieldValue = (field, key, stats = {}, defVal = "") => {
     if (!field?.[key]) return defVal
@@ -49,14 +40,15 @@ export default class Character {
   }
 
   static getBaseStatValue = (character: ICharacter, characetSheet: CharacterSheet, weaponSheet: WeaponSheet, statKey: string, defVal = 0) => {
-    const { levelKey } = character
-    if (statKey === "specializedStatKey") return characetSheet.specializeStat.key
-    if (statKey === "specializedStatVal") return characetSheet.specializeStat.value[Character.getIndexFromlevelkey(levelKey)]
+    if (statKey === "specializedStatKey") return characetSheet.getSpecializedStat(character.ascension)
+    if (statKey === "specializedStatVal") return characetSheet.getSpecializedStatVal(character.ascension)
     if (statKey === "weaponATK") return Weapon.getWeaponMainStatValWithOverride(character?.weapon, weaponSheet)
-    if (statKey === "characterLevel" || statKey === "enemyLevel") return Character.getLevel(levelKey)
+    if (statKey === "enemyLevel") return character.level
     if (statKey.includes("enemyRes_")) return 10
     if (statKey in characterStatBase) return characterStatBase[statKey]
-    if (statKey in characetSheet.baseStat) return characetSheet.baseStat[statKey][Character.getIndexFromlevelkey(levelKey)]
+    if (statKey === "characterDEF") return characetSheet.getBase("def", character.level, character.ascension)
+    if (statKey === "characterATK") return characetSheet.getBase("atk", character.level, character.ascension)
+    if (statKey === "characterHP") return characetSheet.getBase("hp", character.level, character.ascension)
     return defVal
   }
   static getStatValueWithOverride = (character: ICharacter, characterSheet: CharacterSheet, weaponSheet: WeaponSheet, statKey: string, defVal = 0) => {
@@ -151,12 +143,12 @@ export default class Character {
 
   static createInitialStats = (character: ICharacter, characterSheet: CharacterSheet, weaponSheet: WeaponSheet): ICalculatedStats => {
     character = deepClone(character)
-    const { characterKey, elementKey, levelKey, hitMode, infusionAura, reactionMode, talentLevelKeys, constellation, equippedArtifacts, conditionalValues = {}, weapon = { key: "", refineIndex: 0 } } = character
-    const ascension = Character.getAscension(levelKey)
+    const { characterKey, elementKey, level, ascension, hitMode, infusionAura, reactionMode, talentLevelKeys, constellation, equippedArtifacts, conditionalValues = {}, weapon = { key: "", refineIndex: 0 } } = character
 
     //generate the initalStats obj with data from Character & overrides
-    const statKeys = ["characterHP", "characterATK", "characterDEF", "weaponATK", "characterLevel", "enemyLevel", "physical_enemyRes_", "physical_enemyImmunity", ...Object.keys(characterStatBase)]
+    const statKeys = ["characterHP", "characterATK", "characterDEF", "weaponATK", "enemyLevel", "physical_enemyRes_", "physical_enemyImmunity", ...Object.keys(characterStatBase)]
     const initialStats = Object.fromEntries(statKeys.map(key => [key, Character.getStatValueWithOverride(character, characterSheet, weaponSheet, key)])) as ICalculatedStats
+    initialStats.characterLevel = level
     initialStats.characterEle = characterSheet.elementKey ?? elementKey ?? "anemo";
     initialStats.characterKey = characterKey
     initialStats.hitMode = hitMode;
@@ -215,6 +207,7 @@ export default class Character {
     })
     return initialStats as ICalculatedStats
   }
+  //TODO: this needs weaponSheet/artifactsheets as a parameter.
   static getDisplayStatKeys = (stats: ICalculatedStats, characterSheet: CharacterSheet) => {
     const eleKey = stats.characterEle
     const basicKeys = ["finalHP", "finalATK", "finalDEF", "eleMas", "critRate_", "critDMG_", "heal_", "enerRech_", `${eleKey}_dmg_`]

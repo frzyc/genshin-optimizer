@@ -32,16 +32,19 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
+    "gen-files": "npm run localization-datamined && npm run localization-load",
+    "prestart": "npm run gen-files",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "testserver": "set PUBLIC_URL= && npm run build && node ./test-server.ts",
+    "testserver": "set PUBLIC_URL= && npm run build && node ./test-server.js",
     "analyze": "source-map-explorer 'build/static/js/*.js'",
+    "postinstall": "node ./clone_genshindata.js",
     "localization-datamined": "cd ./localization && npx ts-node ./datamined.ts",
     "localization-main": "cd ./localization && npx ts-node ./mainGen.ts",
     "localization-load": "cd ./localization && npx ts-node ./load.ts",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build",
+    "predeploy": "npm run gen-files && npm run build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {

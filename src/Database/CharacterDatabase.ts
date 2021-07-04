@@ -10,7 +10,6 @@ export default class CharacterDatabase {
   static characterDatabase: Dict<CharacterKey, ICharacter> = {}
   static listener: any[] = []
   static charListener: any[] = []
-  static isInvalid = (char) => !char || !char.characterKey || !char.levelKey //TODO: is this useful since we use typescript?
   static getCharacterDatabase = () => deepClone(CharacterDatabase.characterDatabase);
   static getCharacterKeyList = (): CharacterKey[] => Object.keys(CharacterDatabase.characterDatabase);
   static getIdList = () => Object.keys(CharacterDatabase.characterDatabase);
@@ -28,8 +27,7 @@ export default class CharacterDatabase {
     CharacterDatabase.emitEvent()
     return true
   }
-  static update = (char) => {
-    if (CharacterDatabase.isInvalid(char)) return;
+  static update = (char: ICharacter) => {
     const dchar = deepClone(char)
     saveToLocalStorage(`char_${char.characterKey}`, dchar);
     CharacterDatabase.characterDatabase[char.characterKey] = dchar;
