@@ -252,7 +252,7 @@ function MainStatsCards({ characterSheet, weaponSheet, editable, character, char
   const additionalKeys = ["eleMas", "critRate_", "critDMG_", "enerRech_", "heal_"]
   const displayStatKeys = ["finalHP", "finalATK", "finalDEF"]
   displayStatKeys.push(...additionalKeys)
-  const editStatKeys = ["characterHP", "hp", "hp_", "characterATK", "atk", "atk_", "characterDEF", "def", "def_"]
+  const editStatKeys = ["hp", "hp_", "def", "def_", "atk", "atk_"]
   editStatKeys.push(...additionalKeys)
   const otherStatKeys: any[] = [];
 

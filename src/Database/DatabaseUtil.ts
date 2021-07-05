@@ -189,6 +189,9 @@ function DatabaseInitAndVerify() {
       }
       delete character.levelKey
       delete character.baseStatOverrides?.characterLevel
+      delete character.baseStatOverrides?.characterHP
+      delete character.baseStatOverrides?.characterATK
+      delete character.baseStatOverrides?.characterDEF
       valid = false
     }
 
