@@ -3,6 +3,7 @@ import { allCharacterKeys, CharacterKey, ElementKey } from "../Types/consts";
 import ICalculatedStats from "../Types/ICalculatedStats";
 import { evalIfFunc } from "../Util/Util";
 import expCurve from './expCurve_gen.json'
+import Stat from '../Stat'
 
 export const charImport = import('../Data/Characters').then(imp =>
   Object.fromEntries(Object.entries(imp.default).map(([charKey, value]) =>
@@ -30,7 +31,9 @@ export default class CharacterSheet {
   getSpecializedStatVal = (ascensionLvl = 0) => {
     const statKey = this.getSpecializedStat(ascensionLvl)
     if (!statKey) return 0
-    return this.sheet.ascensions[0].props[statKey] ?? 0
+    const value = this.sheet.ascensions[ascensionLvl].props[statKey] ?? 0
+    if (Stat.getStatUnit(statKey) === "%") return value * 100
+    return value
   }
   isMelee = () => {
     const weaponTypeKey = this.sheet.weaponTypeKey
