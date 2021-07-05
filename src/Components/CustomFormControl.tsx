@@ -1,7 +1,17 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import FormControl from 'react-bootstrap/FormControl'
-
-export default function CustomFormControl({ value, onChange, disabled = false, float = false, placeholder, allowEmpty = false }) {
+type props = {
+  value: any,
+  onChange: (any) => void,
+  className?: string
+  disabled?: boolean
+  float?: boolean,
+  placeholder?: string,
+  allowEmpty?: boolean,
+  max?: string | number,
+  min?: string | number,
+}
+export default function CustomFormControl({ value, onChange, className = "", disabled = false, float = false, placeholder, allowEmpty = false, max, min }: props) {
   const [state, setstate] = useState(value ?? "")
   const [stateDirty, setstateDirty] = useState({})
   const sendChange = useCallback(
@@ -19,12 +29,14 @@ export default function CustomFormControl({ value, onChange, disabled = false, f
   return <FormControl
     value={state}
     aria-label="custom-input"
-    className="hide-appearance"
+    className={`hide-appearance ${className}`}
     type="number"
     placeholder={placeholder}
     onChange={e => setstate(e.target.value)}
     onBlur={sendChange}
     disabled={disabled}
     onKeyDown={e => e.key === "Enter" && sendChange()}
+    max={max}
+    min={min}
   />
 }

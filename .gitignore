@@ -26,7 +26,7 @@ yarn-error.log*
 .eslintcache
 
 # localization JSON from datamined
-/localization/TextMap/*.json
+/localization/GenshinData
 
 # localization generated JSON
 *_gen.json
@@ -39,5 +39,4 @@ public/locales/*
 _TEMPLATE
 # template files
 TEMPLATE*
-#preedited images
-*_.png
+*_ignore.png

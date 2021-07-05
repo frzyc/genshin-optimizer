@@ -12,7 +12,8 @@ interface ICharacterSheetBase {
   constellationName: Displayable,
   titles: Array<string>,
   baseStat: IBaseStat
-  specializeStat: ISpecializedStat,
+  baseStatCurve: IBaseStatCurve
+  ascensions: ascension[],
 
 }
 interface ICharacterSheetTalent extends ICharacterSheetBase {
@@ -24,18 +25,28 @@ interface ICharacterSheetTalents extends ICharacterSheetBase {
 }
 export type ICharacterSheet = ICharacterSheetTalent | ICharacterSheetTalents
 interface IBaseStat {
-  characterHP: number[]
-  characterATK: number[]
-  characterDEF: number[]
+  hp: number
+  atk: number
+  def: number
 }
-interface ISpecializedStat {
-  key: string;
-  value: number[]
+interface IBaseStatCurve {
+  hp: string
+  atk: string
+  def: string
+}
+interface ascension {
+  props: {
+    hp: number
+    atk: number
+    def: number
+    [key: string]: number //TODO: [key: CharacterSpecializedStatKey]: number
+  }
 }
 
 export interface ICharacter {
   characterKey: CharacterKey
-  levelKey: string
+  level: number,
+  ascension: number,
   hitMode: HitModeKey
   elementKey?: ElementKey
   reactionMode: reactionModeKey | null

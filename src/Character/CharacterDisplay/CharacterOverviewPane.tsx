@@ -1,31 +1,29 @@
 import { faEdit, faGavel, faQuoteLeft, faSave, faUndo } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import React, { useState } from "react"
-import { Button, Card, Col, Dropdown, DropdownButton, Image, InputGroup, ListGroup, OverlayTrigger, Row, Tooltip } from "react-bootstrap"
+import { Button, Card, Col, Dropdown, DropdownButton, Image, InputGroup, ListGroup, Row } from "react-bootstrap"
 import Assets from "../../Assets/Assets"
+import ConditionalDisplay from "../../Components/ConditionalDisplay"
 import CustomFormControl from "../../Components/CustomFormControl"
 import DocumentDisplay from "../../Components/DocumentDisplay"
+import FieldDisplay from "../../Components/FieldDisplay"
 import { Stars } from "../../Components/StarDisplay"
 import StatDisplay from "../../Components/StatDisplay"
 import { StatIconEle } from "../../Components/StatIcon"
 import Conditional from "../../Conditional/Conditional"
-import { CharacterSpecializedStatKey } from "../../Data/CharacterData"
 import { LevelNameData } from "../../Data/WeaponData"
 import Stat from "../../Stat"
 import { ICharacter } from "../../Types/character"
-import { allElements } from "../../Types/consts"
+import { allElements, characterSpecializedStatKeys } from "../../Types/consts"
 import ICalculatedStats from "../../Types/ICalculatedStats"
 import { IConditionals } from "../../Types/IConditional"
 import statsToFields from "../../Util/FieldUtil"
 import { usePromise } from "../../Util/ReactUtil"
-import { clamp } from "../../Util/Util"
 import Weapon from "../../Weapon/Weapon"
 import WeaponSheet from "../../Weapon/WeaponSheet"
 import Character from "../Character"
 import CharacterSheet from "../CharacterSheet"
 import StatInput from "../StatInput"
-import ConditionalDisplay from "../../Components/ConditionalDisplay"
-import FieldDisplay from "../../Components/FieldDisplay"
 type CharacterOverviewPaneProps = {
   characterSheet: CharacterSheet;
   weaponSheet: WeaponSheet
@@ -35,12 +33,10 @@ type CharacterOverviewPaneProps = {
   equippedBuild?: ICalculatedStats
   newBuild?: ICalculatedStats
 }
-export default function CharacterOverviewPane({ characterSheet, weaponSheet, editable, character, character: { constellation }, characterDispatch, equippedBuild, newBuild }: CharacterOverviewPaneProps) {
-  const [editLevel, setEditLevel] = useState(false)
+export default function CharacterOverviewPane({ characterSheet, weaponSheet, editable, character, character: { constellation, level, ascension }, characterDispatch, equippedBuild, newBuild }: CharacterOverviewPaneProps) {
   const build = (newBuild ? newBuild : equippedBuild) as ICalculatedStats
   const elementKey = build.characterEle
   const weaponTypeKey = characterSheet.weaponTypeKey
-  const level = Character.getStatValueWithOverride(character, characterSheet, weaponSheet, "characterLevel")
   return <Row>
     <Col xs={12} md={3} >
       {/* Image card with star and name and level */}
@@ -52,41 +48,7 @@ export default function CharacterOverviewPane({ characterSheet, weaponSheet, edi
               <h3>{characterSheet.name} <Image src={Assets.elements[elementKey]} className="inline-icon" /> <Image src={Assets.weaponTypes?.[weaponTypeKey]} className="inline-icon" /></h3>
               <h6><Stars stars={characterSheet.star} colored /></h6>
             </Col>
-            <Col>
-              {editLevel ? <Row><Col>
-                <InputGroup >
-                  <InputGroup.Prepend>
-                    <InputGroup.Text>Lvl.</InputGroup.Text>
-                  </InputGroup.Prepend>
-                  <CustomFormControl placeholder={undefined} onChange={val => characterDispatch({ type: "statOverride", statKey: "characterLevel", value: clamp(val, 1, 90), characterSheet, weaponSheet })} value={level} />
-                  <InputGroup.Append>
-                    <Button>
-                      <FontAwesomeIcon icon={faUndo} size="sm" onClick={() => characterDispatch({ type: "statOverride", statKey: "characterLevel", value: Character.getLevel(character.levelKey), characterSheet, weaponSheet })} />
-                    </Button>
-                  </InputGroup.Append>
-                  <InputGroup.Append>
-                    <OverlayTrigger
-                      placement="bottom"
-                      overlay={<Tooltip id="artifact-override-level">Override the level value for calculations. Does not change Stats.</Tooltip>}
-                    >
-                      <Button variant="success" onClick={() => setEditLevel(!editLevel)} size="sm">
-                        <span><FontAwesomeIcon icon={faSave} /></span>
-                      </Button>
-                    </OverlayTrigger>
-                  </InputGroup.Append>
-                </InputGroup>
-              </Col></Row> :
-                <Row>
-                  <Col>
-                    <h5>Level: {level}</h5>
-                  </Col>
-                  {editable ? <Col xs="auto" className="pr-1 pl-1">
-                    <Button variant="info" onClick={() => setEditLevel(!editLevel)} size="sm">
-                      <span><FontAwesomeIcon icon={faEdit} /></span>
-                    </Button>
-                  </Col> : null}
-                </Row>}
-            </Col>
+            <Col><h5>Level: {Character.getLevelString(character)}</h5></Col>
             <Col xs={12}>
               <Row>
                 <Col xs={12}><h5>{characterSheet.constellationName}</h5></Col>
@@ -353,7 +315,7 @@ function MainStatsCards({ characterSheet, weaponSheet, editable, character, char
                   as={InputGroup.Prepend}
                 >
                   <Dropdown.ItemText>Select Specialized Stat </Dropdown.ItemText>
-                  {CharacterSpecializedStatKey.map(key =>
+                  {characterSpecializedStatKeys.map(key =>
                     <Dropdown.Item key={key} onClick={() => characterDispatch({ type: "statOverride", statKey: "specializedStatKey", value: key, characterSheet, weaponSheet })} >
                       {Stat.getStatNameWithPercent(key)}
                     </Dropdown.Item>)}

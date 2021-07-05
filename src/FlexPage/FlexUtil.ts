@@ -32,7 +32,6 @@ export function parseFlexObj(string) {
   try {
     switch (parseInt(parameters.v)) {
       case 2: return [parseFlexObjFromSchema(parameters.d, schemas.flexV2), 2]
-      case 1: return [parseFlexObjFromSchema(parameters.d, schemas.flexV1), 1]
       default: return [null]
     }
   } catch (error) {

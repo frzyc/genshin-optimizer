@@ -4,40 +4,46 @@
             "title": "Éditeur d'artéfact",
             "set": {
                 "artifactSet": "Set d'artéfact",
-                "maxRarity": "Rareté Max"
+                "maxRarity": "Rareté Max <1></1>"
             },
             "substat": {
-                "substatFormat": "Stat secondaire {{value}}",
-                "noSubstat": "Pas de Stat secondaire",
-                "selectSub": "Sélectionner une Stat secondaire",
+                "substatFormat": "Substat {{value}}",
+                "noSubstat": "Pas de Substat",
+                "selectSub": "Sélectionner une Substat",
                 "error": {
                     "noCalc": "Impossible de calculer les rolls de la stat.",
-                    "noOverRoll": "Une stat secondaire ne peut être roll plus de {{value}} fois."
+                    "noOverRoll": "Une substat ne peut être roll plus de {{value}} fois."
                 },
-                "noRoll": "Aucun Rolls",
+                "noRoll": "Aucun Roll",
                 "RollCount": "{{count}} Roll",
-                "RollCount_plural": "{{count}} Roll",
+                "RollCount_plural": "{{count}} Rolls",
                 "noStat": "Pas de valeur",
-                "eff": "Efficiency: <1></1>"
+                "eff": "Efficacité: <1></1>"
             },
             "rarity": "Rareté",
             "level": "Niveau",
             "unknownPieceName": "Nom de Pièce Inconnu",
-            "mainSelect": "Sélectionner une Stat Principal",
-            "curSubEff": "Efficacité actuel Stat secondaire",
-            "preview": "Prévisualisation d'artefact",
-            "dupArt": "Doublon d'artefact détecté.",
+            "mainSelect": "Sélectionner une Main Stat",
+            "curSubEff": "Efficacité Substat actuelle",
+            "curSubEffDesc": "Tous les 4 niveaux d'amélioration d'artéfact, vous obtenez une augmentation d'une substat. <strong>Efficacité de Substat</strong> calcule à quel point cette augmentation est élevée à l'aide d'un pourcentage.",
+            "maxSubEff": "Efficacité Substat maximum",
+            "maxSubEffDesc": "L'<strong>Efficacité de Substat maximum</strong> d'un artéfact calcule l'efficacité si les améliorations restantes donnent des valeurs parfaites.",
+            "preview": "Prévisualisation d'artéfact",
+            "dupArt": "Doublon d'artéfact détecté.",
+            "upArt": "Artéfact amélioré détecté.",
             "beforeEdit": "Avant modification",
-            "btnSave": "Enregistrer l'Artefact",
+            "btnSave": "Enregistrer l'Artéfact",
             "btnAdd": "Ajouter",
             "btnClear": "Effacer",
-            "btnUpdate": "Mettre à jour l'artefact",
-            "clearPrompt": "Il y a un artefact dans l'éditeur. Êtes-vous sûr de vouloir effacer l'éditeur?"
+            "btnRandom": "Randomiser",
+            "btnUpdate": "Mettre à jour l'artéfact",
+            "clearPrompt": "Il y a un artéfact dans l'éditeur. Êtes-vous sûr de vouloir effacer l'éditeur?"
         },
         "artifactFilter": "Filtre d'artéfact",
         "filterLocation": {
             "inventory": "Inventaire",
-            "currentlyEquipped": "Actuellement équipé"
+            "currentlyEquipped": "Actuellement équipé",
+            "any": "N'importe quel"
         },
         "button": {
             "unequipArtifacts": "Déséquiper les artéfacts",
@@ -46,16 +52,16 @@
             "unlockArtifacts": "Déverrouiller les artéfacts"
         },
         "filterLevelFormat": "Niveau <1>Bas</1>/<3>Haut</3> (Inclusif)",
-        "buttonHint": "Note: les boutons ci-dessus ne s'appliquent qu'aux <1>artéfacts filtrés</1>",
+        "buttonHint": "Note: les boutons rouges ci-dessus ne s'appliquent qu'aux <1>artéfacts filtrés</1>",
         "tipsOfTheDay": [
             "L'efficacité maximum d'un artéfact 4 étoiles est environ de 60%.",
-            "L'efficacité maximum d'un artéfact diminuera généralement au fur et à mesure de l'amélioration. C'est parfaitement normal!",
-            "Les Stats secondaires avec des \"1\"s sont les plus difficiles à analyser sur les captures d'écran.",
-            "Si tous vos rolls(6) sont aller dans une seule stat secondaire, elle sera violette!",
-            "Cliquez sur \"Détails\" quand vous améliorez vos artéfacts dans le jeu pour les analyser au fur et à mesure que vous les améliorés.",
-            "Vous pouvez maintenant télécharger plusieurs captures d'écran d'artéfacts à analyser!"
+            "L'efficacité maximum d'un artéfact diminuera généralement au fur et à mesure de l'amélioration. C'est parfaitement normal !",
+            "Les substats avec des \"1\" sont les plus difficiles à analyser sur les captures d'écran.",
+            "Si tous vos rolls (6) sont allés dans une seule substat, elle sera violette !",
+            "Cliquez sur \"Détails\" quand vous améliorez vos artéfacts dans le jeu pour les analyser au fur et à mesure que vous les améliorez.",
+            "Vous pouvez maintenant upload plusieurs captures d'écran d'artéfacts à analyser !"
         ],
-        "mainStat": "Stat principal",
+        "mainStat": "Main Stat",
         "slot": "Emplacement",
         "slotName": {
             "flower": "Fleur de la Vie",
@@ -65,28 +71,46 @@
             "circlet": "Diadème de Logos"
         },
         "info": {
-            "title": "Guide d' Edition/Gestion d'artefact"
+            "title": "Édition d'Artéfact / Guide de Gestion",
+            "section1": "<0>Rolls des substats</0><1>Le <1>nombre de rolls</1> qu'une substat a est affiché à gauche de la substat. Au fur et à mesure que le nombre augmente, la substat est plus colorée :<3></3>.</1><2>Efficacité de la Substat</2><3>L'Efficacité d'une substat est un pourcentage de la valeur actuelle par rapport au potentiel maximum de la valeur 5<1></1>. D'après l'image, la valeur maximale d'un roll DGT CRIT est 7.8%. En efficacité : <3>5.4/7.8 = 69.2%.</3></3><4>Efficacité actuelle vs. Efficacité potentielle maximale</4><5>Quand un 5<1></1> a 9 (4+5) rolls au total, avec chacun des rolls ayant la valeur la plus élevée, c'est donc un artéfact efficace à 100%. Cependant, la plupart des artéfacts n'ont pas cette chance. L'<3>efficacité actuelle</3> d'un artéfact est son pourcentage par rapport à cet artéfact 100%. L'<5>efficacité maximale</5> est l'efficacité maximale possible qu'un artéfact peut atteindre, si les rolls d'artéfact restants ont les valeurs les plus élevées.</5><6>Verrouiller un artéfact</6><7>En verrouillant un artéfact <1></1>, cet artéfact ne sera pas récupéré par le générateur de build pour optimisation. Un artéfact équipé est verrouillé par défaut.</7>",
+            "section2": "<0>Éditeur d'Artéfact</0><1>Un éditeur d'artéfact complet, qui accepte tout 3<1></1> to 5<3></3> Artéfact. Lorsqu'une substat est saisie, ça peut calculer la valeur exacte des rolls, et à partir de ça, son efficacité. Il s'assurera également que vous ayez le bon nombre de rolls dans l'artéfact en fonction du niveau, ainsi que d'autres métriques de validation.</1><2>Scan des captures d'écran</2><3>La saisie manuelle n'est pas votre tasse de thé ? Vous pouvez numériser vos artéfacts avec des captures d'écran ! Dans l'éditeur d'artéfact, cliquez sur le bouton <1>Montrez-moi Comment</1> pour en savoir plus.</3><4>Détecteur d'artéfacts en double / améliorés</4><5>Saviez-vous que Genshin Optimizer peut détecter si vous ajoutez un artéfact <1>dupliqué</1> qui existe dans le système ? Il peut également détecter si l'artéfact actuel dans l'éditeur est une <3>amélioration</3> d'un artéfact existant. Une fois qu'un doublon / un amélioré est détecté, un aperçu vous permettra de comparer les deux artéfacts en question (Voir Image).</5>",
+            "section3": "<0>Inventaire d'Artéfacts</0><p>Tous les artefacts que vous avez ajoutés à Genshin Optimizer sont affichés ici. Les filtres ici vous permettent d'affiner davantage votre vision de vos artéfacts. </p><2>Exemple : Trouver des artéfacts à feed</2><p>En utilisant le filtre d'artéfact et les calculs d'efficacité des artéfacts, vous pouvez rapidement trouver des artéfacts à feed.</p><4>Dans cet exemple, les filtres sont définis ainsi : </4><5><0>Niveau limité à 0-8.</0><1>Artéfacts débloqués dans l'inventaire.</1><2>Suppression de la contribution des PV Flat, DEF Flat et Recharge d'Énergie aux calculs d'efficacité.</2><3>Trié par efficacité maximale croissante.</3></5><p>Cela filtrera l'inventaire d'artéfacts par efficacité d'artéfacts les plus bas, pour les substats souhaitées. </p>"
         },
         "locationDisplay": "Localisation: {{value}}",
         "lockDisplay": "Verrouillé: {{value}}",
         "lock": {
+            "any": "N'importe quel",
             "locked": "Verrouillé",
-            "unlocked": "Déverouillé"
+            "unlocked": "Déverrouillé"
         },
         "sortMap": {
             "quality": "Qualité",
-            "level": "Niveau"
+            "level": "Niveau",
+            "efficiency": "Eff. Substat actuelle",
+            "mefficiency": "Eff. Substat maximum"
         },
         "showingNum": "Affiche <1>{{count}}</1> sur {{value}} Artéfact",
-        "showingNum_plural": "Affiche <1>{{count}}</1> sur {{value}} Artéfacts"
+        "showingNum_plural": "Affiche <1>{{count}}</1> sur {{value}} Artéfacts",
+        "efficiencyFilter": {
+            "title": "Substats à utiliser dans le calcul de l'efficacité"
+        },
+        "resetFilters": "Réinitialiser les filtres"
     },
     "home": {
-        "welcome": "Bienvenue sur l'Optimiseur Genshin!",
-        "paragraphIntro": "<0>Qu'est-ce que l'Optimiseur Genshin</0><1>L'Optimiseur Genshin est un outil pour le jeu action-rpg gacha <1><strong>Genshin Impact</strong></1>. Il est destiné à vous aider à gérer l'aspect le plus complexe du jeu: les artéfacts. Les Artéfacts sont des éléments fortement basé sur le RNG qui contribuent directement à l'efficacité de vos personnages dans le jeu. Cet outil cherche à alléger une partie de la complexité associée à l'efficacité des artéfacts, ainsi que l'artéfact à choisir pour votre personnage afin de maximiser vos stats.</1><p>Cependant, cet outil peut faire tellement plus. Il permettra le calcul de toutes les stats conditionnelles provenant des artéfacts, armes, buffs d'équipe, et calculera comment ces stats affectent votre personnage en TEMPS RÉEL.</p>"
+        "welcome": "Bienvenue sur Genshin Optimizer !",
+        "paragraphIntro": "<0>Qu'est-ce que Genshin Optimizer</0><1>Genshin Optimizer est un outil pour le jeu d'action - RPG Gacha <1><strong>Genshin Impact</strong></1>. Il est destiné à vous aider à gérer l'aspect le plus complexe du jeu : les artéfacts. Les Artéfacts sont des éléments fortement basé sur la RNG qui contribuent directement à l'efficacité de vos personnages en jeu. Cet outil cherche à alléger une partie de la complexité associée à l'efficacité des artéfacts, ainsi que l'artéfact à choisir pour votre personnage afin de maximiser vos stats.</1><p>Cependant, cet outil peut faire tellement plus. Il permettra le calcul de toutes les stats conditionnelles provenant des artéfacts, armes, buffs d'équipe, et calculera comment ces stats affectent votre personnage en TEMPS RÉEL.</p>",
+        "paragraphArtifactEditor": "<0>Éditeur d'artéfact</0><1><0>Éditeur complet d'artéfact.</0><1>Ajouter un artéfact en scannant une capture d'écran.</1><2>Calculer automatiquement la valeur exacte obtenue de chaque artéfact.</2><3>Calculer l'efficacité des artéfacts, en calculant les rolls. Utiliser un seul nombre pour déterminer s'il faut conserver ou supprimer un artéfact !</3><4>Équiper / déséquiper / échanger des artéfacts entre vos personnages, essayer différents builds.</4></1>",
+        "paragraphCharacterEditor": "<0>Éditeur de personnage</0><1><0>Éditeur complet de personnage.</0><1>Remplir automatiquement les statistiques des personnages à chaque niveau/ascension.</1><2>Statistiques entièrement modifiables pour la personnalisation.</2><3>Calculer les statistiques actuelles en fonction des armes/artéfacts.</3><4>Fonction arme complétée, aves les statistiques des niveaux/ascensions.</4><5>Appliquer des passifs conditionnels, par ex. Bonus supplémentaires ATK & DEF de Ombre immaculée, aux statistiques de votre personnage.</5><6>Appliquer également les passifs conditionnels des sets d'artéfacts !</6><7><0>$t(ui:underConstruction)</0> Calculs des dégâts des talents.</7><8><0>$t(ui:underConstruction)</0> Mise à jour des statistiques/talents des personnages en fonction des constellations.</8></1>",
+        "paragraphCharacterDamageCalculations": "<0>Calculs des DGTs des Personnages</0><1><0>Tous les détails pour chacun des talents des personnages.</0><1>Tous les chiffres devraient refléter les dégâts réels en jeu.</1><2>Statistiques conditionnelles et modifications de chaque constellation prises en compte.</2><3>Affiche les calculs pour tous les nombres, ainsi que les formules. Je montre mon travail.</3><4>Éditeur d'ennemis avec des champs de niveau/résistance pour personnaliser les calculs de DGTs.</4><5>Prise en compte de l'infusion élémentaire pour les attaques normales / chargées / plongées.</5><6>Calculs de DGTs en temps réel.</6></1>",
+        "paragraphBuildGenerator": "<0>Générateur de Build</0><1><0>Générateur de Build pour des personnages spécifiques utilisant les artéfacts ajoutés par l'utilisateur.</0><1>Limiter les builds par sets d'artéfact, main stats...</1><2>Trier les builds générés par une stat spécifique pour une maximisation.</2><3>Le générateur ne récupérera pas les artéfacts déjà équipés sur un autre personnage.</3><4>Comparer l'artéfact généré avec l'artéfact actuellement sur le personnage.</4><5>Utiliser les statistiques conditionnelles des sets d'artéfacts, par ex. Bonus de DMG d'attaque normale de Gladiateur en set 4 pièces, dans le cadre des calculs de construction.</5></1>",
+        "paragraphTools": "<0>Outils et autres</0><1><0>Heure du serveur, avec compte à rebours jusqu'au reset.</0><1>Compteur de Résine.</1><2>Calculateur d'expérience, pour optimiser l'utilisation des livres d'EXP.</2><3><0>$t(ui:underConstruction)</0> Convertisseur de Ressources, pour toutes les ressources synthétisables x3 par tier.</3><4><0>$t(ui:underConstruction)</0> To-Do List: une liste des choses à faire dynamique pour vous dire quoi farmer chaque jour</4></1>",
+        "paragraphFuture": "<0>Quoi de prévu à l'avenir ?</0><1><0>Calculs complets des talents / constellations pour chaque personnage disponible.</0><1>Enregistrement de plusieurs builds d'artéfacts par personnage, à des fins de comparaison.</1><2>Buffs via nourriture, buffs via team.</2><3>Planification des ressources pour voir les coûts d'amélioration des artéfacts / personnages / armes.</3><4>Artifact Analytics, des graphiques pour afficher vos données d'artéfact.</4></1><2>Pour en savoir plus et pour vérifier ce qui est en cours de travail, rejoignez notre <1>Discord.</1></2>",
+        "paragraphHelpDevelopment": "<0>Vous voulez aider le développeur ?</0><1>Genshin Optimizer a été la manifestation de plusieurs jours et semaines de nuits blanches, et le développeur essaie toujours activement d'améliorer et d'ajouter des fonctionnalités. Si vous souhaitez donner votre avis, demander une fonctionnalité, signaler un bug, s'il vous plaît rejoignez notre <1>Discord.</1></1><2>Si vous souhaitez soutenir financièrement le développeur, veuillez faire un don via <1>Paypal</1> ou <3>Patreon</3>.</2>",
+        "paragraphCredits": "<0>Crédit où le crédit est dû</0><p>Genshin Optimizer n'en serait pas là où il est sans toutes ces sources / personnes. Il est temps de saluer et de les remercier.</p><2><0>Merci à tous les membres de la communauté, et en particulier aux personnes de notre <1>Discord</1> pour m'avoir fait part de vos commentaires et m'avoir aidé à améliorer cet outil.</0><1>Merci à <1>Honey Impact</1>, pour nous avoir fourni une source fiable et cohérente de données et de chiffres. Tous nos calculs seraient discutables sans eux.</1><2>Un pourcentage sain de nos images Genshin sont issues de <1>The Genshin Impact Wiki</1>, donc un heureux merci pour eux.</2><3>Un merci spécial aux membres de notre communauté qui ont utilisé le fichier supplémentaire et nous ont aidés à tester des formules en enregistrant des données dans le jeu, et aux personnes qui nous ont aidés avec les contributions au code source.</3><4>Merci à tous les autres, d'avoir partagé cet outil et d'avoir permis à plus de gens d'utiliser cet outil.</4><5>Enfin, et surtout, merci à <1>VOUS</1> d'utiliser Genshin Optimizer actuellement.</5></2>"
     },
     "languages": {
         "chs": "Chinois (Simplifié)",
-        "cht": "Chinois (Traditionel)",
+        "cht": "Chinois (Traditionnel)",
         "de": "Allemand",
         "en": "Anglais",
         "es": "Espagnol",
@@ -111,6 +135,7 @@
             "charsStored_plural": "<0>{{count}}</0> Personnages Stockés",
             "artisStored": "<0>{{count}}</0> Artéfact Stocké",
             "artisStored_plural": "<0>{{count}}</0> Artéfacts Stockés",
+            "databaseDisclaimer": "Note: toute donnée de la page \"Outils\", par exemple les calculs de Résine, ne font pas partie de la base de donnée téléchargée.",
             "button": {
                 "download": "Télécharger",
                 "copy": "Copier vers le presse-papier",
@@ -126,7 +151,7 @@
             "numArt": "Nombre d'artéfacts:"
         },
         "dialog": {
-            "delete-database": "Êtes-vous sûr de vouloir supprimer votre base de données? Tous les personnages et artéfacts existants seront supprimés."
+            "delete-database": "Êtes-vous sûr de vouloir supprimer votre base de données ? Tous les personnages et artéfacts existants seront supprimés."
         }
     },
     "ui": {
@@ -134,6 +159,7 @@
         "tabs": {
             "artifacts": "Artéfacts",
             "characters": "Personnages",
+            "builds": "Builds",
             "tools": "Outils"
         },
         "social": {
@@ -155,7 +181,28 @@
         "rightsDisclaimer": "Genshin Optimizer n'est pas affilié ou approuvé par miHoYo",
         "appVersion": "$t(pageTitle) Version: {{version}}",
         "underConstruction": "En Construction",
-        "error": "Erreur"
+        "error": "Erreur",
+        "reset": "Réinitialisation"
+    },
+    "char_eula": {
+        "skillC": {
+            "name": "Cœur de glace",
+            "consumed": "Cœur de glace consommés",
+            "grimheart": {
+                "name": "Stacks de Cœur de glace",
+                "int": "Augmente la résistance à l'interruption"
+            }
+        },
+        "burstC": {
+            "name": "Lame de fond",
+            "start5": "Commence à 5 stacks",
+            "addStacks": "50% de chance d'obtenir un stack supplémentaire"
+        },
+        "c1C": {
+            "name": "Consomme les stacks de <strong>Cœur de glace</strong>",
+            "durationStack": "6s + 6s par stack, jusqu'à 18s"
+        },
+        "passive1": "DGT épée de lumière"
     },
     "char_noelle": {
         "p4cd": "24s, -1s Tous les 4 coups",
@@ -163,7 +210,17 @@
         "c6duration": "15s, +1s par ennemi vaincu, jusqu'à 10s"
     },
     "char_venti": {
+        "addAimed": "DGTs tir visé",
+        "addFullAimed": "DGTs tir visé (Pleine charge)",
+        "upcurrentDuration": "Durée",
+        "regenEner": "Régénère 15 Énergie à Venti lorsque l'effet prend fin",
+        "fullBurstDMG": {
+            "text": "<0><0>Total DGTs Déchaînement Élémentaire</0><1>Cela calcule le total des DGTs du Déchaînement Élémentaire, y compris la Dispersion. Ce calcul comprend :</1><2><0>20 ticks de <1>DGTs de Déchaînement</1></0><1>15 ticks de <1>DGTs d'Absorption</1></1><2>7 ticks de <1>Dispersion</1>, pour un ennemi, OU,</2><3>14 ticks de <1>Dispersion</1>, pour plusieurs ennemis, qui Disperse chacun d'entre eux.</3></2></0>",
+            "dmg": "<0>DGTs Total (<1>{{swirlTicks}} ticks de Dispersion</1>)</0>"
+        },
+        "c6": "Cibles qui prennent les DGTs de <strong>Ode au Vent</strong>",
         "c4": "Venti obtient une orbe ou une particule",
+        "q": "Régénère 15 Énergies à chaque personnage <1>{{elementKey}}</1>.",
         "c2": {
             "hit": "Ennemi touché",
             "launched": "Ennemi projeté"
@@ -171,9 +228,43 @@
     },
     "sheet": {
         "dmg": "DGT",
-        "hits": "({{hits}} Coups)",
+        "hits": "{{hits}} coup",
         "lessPercentHP": "< {{percent}}% PV",
         "stack": "{{count}} Stack",
-        "stack_plural": "{{count}} Stacks"
+        "stack_plural": "{{count}} Stacks",
+        "hitOp": {
+            "normal": "Attaque Normale touche des ennemis",
+            "charged": "Attaque Chargée touche des ennemis",
+            "plunging": "Attaque Plongeante touche des ennemis",
+            "skill": "Compétence Élémentaire touche des ennemis",
+            "burst": "Déchaînement Élémentaire touche des ennemis"
+        },
+        "baseDMG": "DGT de base",
+        "hits_plural": "{{count}} coups",
+        "eleAbsor": "Absorption Élémentaire",
+        "absorDot": "Absorption DoT"
+    },
+    "weapon_SongOfBrokenPines": {
+        "name": "Concert du millénaire - Hymne du drapeau"
+    },
+    "weapon_FreedomSworn": {
+        "name": "Concert du Millénaire - Ode à la Révolte"
+    },
+    "char_kaedeharakazuha": {
+        "a4": {
+            "name": "Lors du déclenchement d'une Dispersion",
+            "text": "Bonus DGTs Élémentaires Teammate"
+        },
+        "c2": "Dans Vent d'automne"
+    },
+    "char_rosaria": {
+        "a1": "Après le coup dans le dos",
+        "a4": {
+            "name": "Après avoir utilisé <strong>Sacrement mortel<strong/>",
+            "text": "Tx CRIT de l'équipe augmente",
+            "value": "15% du Tx CRIT de Rosalia"
+        },
+        "c1": "Après coup CRIT",
+        "c6": "<strong>Sacrement mortel<strong/> sur un ennemi"
     }
 }
