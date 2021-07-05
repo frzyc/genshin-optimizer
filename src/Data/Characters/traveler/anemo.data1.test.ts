@@ -4,7 +4,7 @@ import formula from "./anemoData"
 let setupStats
 
 // Agent RAF#3111 data male
-const url = "https://frzyc.github.io/genshin-optimizer/#/flex?v=1&d=54500d344L08J02R000094g0104aY19s03q02G0t5004443i08W07j0000t5003141L35l09z04W0t5004245j09v01L3000n000004L80A0000000fFesteringDesire4L80A410100"
+const url = "http://localhost:3000/genshin-optimizer/#/flex?v=2&d=54500d344L08J02R000094g0104aY19s03q02G0t5004443i08W07j0000t5003141L35l09z04W0t5004245j09v01L3000n000004L80A00000fFesteringDesire4L80A41010011"
 const { artifacts } = parseTestFlexObject(url)
 
 describe("Agent RAF#3111 Traveler Anemo", () => {

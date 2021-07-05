@@ -1,8 +1,9 @@
 import { applyArtifacts, computeAllStats, createProxiedStats, parseTestFlexObject } from "../TestUtils"
 import formula from "./data"
 
-const url = "https://frzyc.github.io/genshin-optimizer/#/flex?v=1&d=5o4803147f0a-08L05h0o4g07241D22k19s06z164g0e34aS19p03g08o13580a441Y78W05n03v035g01046P0a618F37l0c000004L60A0000000jBlackcliffLongsword3L50010100";
-const { artifacts } = parseTestFlexObject(url);
+const url = "https://frzyc.github.io/genshin-optimizer/#/flex?v=2&d=5o4803147f0a-08L05h0o4g07241D22k19s06z164g0e34aS19p03g08o13580a441Y78W05n03v035g01046P0a618F37l0c000004L60A00000jBlackcliffLongsword3L500101000"
+const { artifacts } = parseTestFlexObject(url)
+
 
 let setupStats;
 describe("Testing Kaeya's Formulas (Derpy#2132)", () => {

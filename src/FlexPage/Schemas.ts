@@ -1,13 +1,13 @@
+import { ascensionMaxLevel } from "../Data/CharacterData"
+import { allSlotKeys, allElements, allArtifactSets, allHitModes, allReactionModes, allCharacterKeys } from "../Types/consts"
+import { crawlObject } from "../Util/Util"
+import { uintToString, stringToUInt } from "./CodingUtil"
+
 // DO NOT REMOVE ITEMS FROM THESE LISTS
 //        ONLY APPEND NEW ENTRIES
 // The index of items in this list is used to
 // compress the exported data. Removing an item
 // from this list will shift subsequent entries.
-
-import { allSlotKeys, allElements, allArtifactSets, allHitModes, allReactionModes, allCharacterKeys } from "../Types/consts"
-import { crawlObject } from "../Util/Util"
-import { uintToString, stringToUInt } from "./CodingUtil"
-
 const elements = ['', ...allElements] as const
 const stats = [
   "", "hp", "hp_", "atk", "atk_", "def", "def_", "eleMas", "enerRech_", "critRate_", "critDMG_", "heal_",
@@ -129,49 +129,12 @@ const conditionalValues = array(object({
     return conditionalValues
   }
 })
-const conditionalV1 = array(object({
-  srcKey: string,
-  srcKey2: string,
-  conditionalNum: uint(1),
-}))
-const weaponV1 = object({
-  key: string,
-  levelKey: string,
-  refineIndex: uint(1),
-  overrideMainVal: float,
-  overrideSubVal: float,
-  conditionalNum: uint(1),
-})
 const weaponV2 = object({
   key: string,
   levelKey: string,
   refineIndex: uint(1),
   overrideMainVal: float,
   overrideSubVal: float,
-})
-const characterV1 = object({
-  characterKey,
-  hitMode,
-  reactionMode,
-  constellation: uint(1),
-  overrideLevel: uint(2),
-  levelKey: string,
-  autoInfused: bool,
-  talentLevelKeys: object({ auto: uint(1), skill: uint(1), burst: uint(1) }),
-  artifactConditionals: conditionalV1,
-  baseStatOverrides: sparse(string, float),
-  talentConditionals: conditionalV1,
-  weapon: weaponV1,
-}, {
-  decode: (character) => {
-    delete character.artifactConditionals
-    delete character.talentConditionals
-    delete character.weapon.conditionalNum
-    delete character.autoInfused
-    character.infusionAura = ''
-    character.conditionalValues = { weapon: {}, artifact: {}, character: {} }
-    return character
-  }
 })
 const characterV2 = object({
   characterKey,
@@ -188,6 +151,13 @@ const characterV2 = object({
   reserved: array(uint(1)),
 }, {
   encode: (value) => {
+    const roundedLevel = Math.round(value.level / 10) * 10 // Nearest level
+    const maxLevel = ascensionMaxLevel[value.ascension]
+    value.levelKey = `L${roundedLevel}${roundedLevel === maxLevel ? "" : "A"}`
+    if (roundedLevel !== value.level) {
+      value.baseStatOverrides.characterLevel = value.level
+    }
+
     if (value.characterKey === "traveler")
       value.reserved = [elements.indexOf(value.elementKey)]
     else
@@ -195,6 +165,28 @@ const characterV2 = object({
     return value
   },
   decode: (value) => {
+    const isAscended = value.levelKey.slice(-1) === "A"
+    const levelString = isAscended ? value.levelKey.slice(1, -1) : value.levelKey.slice(1)
+    value.level = parseInt(levelString)
+    switch (value.level) {
+      case 1: value.ascension = 0; break
+      case 20: value.ascension = 0; break
+      case 40: value.ascension = 1; break
+      case 50: value.ascension = 2; break
+      case 60: value.ascension = 3; break
+      case 70: value.ascension = 4; break
+      case 80: value.ascension = 5; break
+      case 90: value.ascension = 6; break
+    }
+    if (isAscended) {
+      value.ascension += 1
+    }
+    if (value.baseStatOverrides.characterLevel) {
+      value.level = value.baseStatOverrides.characterLevel
+      delete value.baseStatOverrides.characterLevel
+    }
+    delete value.levelKey
+
     if (value.characterKey === "traveler") {
       value.elementKey = elements[value.reserved[0]] ?? "anemo"
     }
@@ -203,17 +195,13 @@ const characterV2 = object({
   },
 })
 
-const flexV1 = object({
-  artifacts: array(artifact),
-  character: characterV1,
-})
 const flexV2 = object({
   artifacts: array(artifact),
   character: characterV2,
 })
 
 export const schemas = {
-  flexV1, flexV2
+  flexV2
 }
 // For testing purpose only, no need to maintain strict ordering
 export const constants = {

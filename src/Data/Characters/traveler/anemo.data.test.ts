@@ -4,7 +4,7 @@ import formula from "./anemoData"
 let setupStats
 
 //aznn8ter#3651 data female
-const url = "https://frzyc.github.io/genshin-optimizer/#/flex?v=1&d=5t5g01049W0a615D06i2t5g0424aJ13g05j019ct5k03148W05K02F14F2t5k04443R02L0511811u5k0d342L01Dc6W03P0n000003L900000000gSacrificialSword3L90010100"
+const url = "http://localhost:3000/genshin-optimizer/#/flex?v=2&d=5t5g01049W0a615D06i2t5g0424aJ13g05j019ct5k03148W05K02F14F2t5k04443R02L0511811u5k0d342L01Dc6W03P0n000003L9000000gSacrificialSword3L9001010011"
 const { artifacts } = parseTestFlexObject(url)
 
 describe("aznn8ter#3651 Traveler Anemo", () => {
