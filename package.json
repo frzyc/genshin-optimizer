@@ -35,6 +35,7 @@
     "gen-files": "npm run localization-datamined && npm run localization-load",
     "prestart": "npm run gen-files",
     "start": "react-scripts start",
+    "prebuild": "npm run gen-files",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "testserver": "set PUBLIC_URL= && npm run build && node ./test-server.js",
@@ -44,7 +45,7 @@
     "localization-main": "cd ./localization && npx ts-node ./mainGen.ts",
     "localization-load": "cd ./localization && npx ts-node ./load.ts",
     "eject": "react-scripts eject",
-    "predeploy": "npm run gen-files && npm run build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {

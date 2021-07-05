@@ -12,10 +12,11 @@ In the project directory, you can run:
 
 ### `npm install`
 Install all dependencies/modules to build the site.
-Pulls the [GenshinData repo](https://github.com/Dimbreath/GenshinData) into `localization/GenshinData`.
+
+`postinstall:` Pulls the [GenshinData repo](https://github.com/Dimbreath/GenshinData) into `localization/GenshinData`.
 
 ### `npm start`
-`prestart:` Parse datamined localization/values from GenshinData, and load the latest localizations.
+`prestart: npm run gen-files`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -29,7 +30,7 @@ Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
-
+`prebuild: npm run gen-files`
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
@@ -39,7 +40,7 @@ Your app is ready to be deployed!
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 ### `npm run deploy`
-`predeploy:` Parse datamined localization/values from GenshinData, and load the latest localizations. Build the app.
+`predeploy: npm run build`
 
 Deploy the site using Github Pages. 
 
@@ -55,12 +56,14 @@ Will generate the JSON as `/public/locales/en/main_gen.json`.
 
 ### `npm run localization-load`
 Load the translated JSON into each locale, and separate them into namespaces.
-Load the translations into `/src/localization/Translated`.
+Load the translations from [POEditor](https://poeditor.com/projects/view?id=439583) into `/src/localization/Translated`.
 
 ### `npm run localization-datamined`
-Generate localization from data from datamined data: [Dimbreath/GenshinData](https://github.com/Dimbreath/GenshinData)
-Make sure to populate `/src/localization/TextMap` with `Dimbreath/GenshinData/TextMap` before running the command.
+Generate localization from data from datamined data in `localization/GenshinData` from the repo [Dimbreath/GenshinData](https://github.com/Dimbreath/GenshinData)
 This will create localization files in `/public/locales/...` with in-game translated text.
+
+### `npm run gen-files`
+`npm run localization-datamined && npm run localization-load`
 
 ### `npm run eject`
 
