@@ -10,7 +10,12 @@ This project is primarily bootstrapped with with [Create React App](https://gith
 
 In the project directory, you can run:
 
+### `npm install`
+Install all dependencies/modules to build the site.
+Pulls the [GenshinData repo](https://github.com/Dimbreath/GenshinData) into `localization/GenshinData`.
+
 ### `npm start`
+`prestart:` Parse datamined localization/values from GenshinData, and load the latest localizations.
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -34,7 +39,9 @@ Your app is ready to be deployed!
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 ### `npm run deploy`
-To deploy the site using Github Pages. 
+`predeploy:` Parse datamined localization/values from GenshinData, and load the latest localizations. Build the app.
+
+Deploy the site using Github Pages. 
 
 ### `npm run analyze`
 To view graphically the size/structure of the built bundles. For optimizing payload size of the built site.
