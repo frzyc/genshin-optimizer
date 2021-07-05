@@ -1,12 +1,15 @@
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { createContext, useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'react';
-import { Alert, ButtonGroup, Dropdown, DropdownButton, Image, Nav, Tab } from 'react-bootstrap';
+import { Alert, ButtonGroup, Dropdown, Image, InputGroup, Nav, Tab } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
+import DropdownItem from 'react-bootstrap/esm/DropdownItem';
 import Row from 'react-bootstrap/Row';
 import { ArtifactSheet } from '../Artifact/ArtifactSheet';
+import CustomFormControl from '../Components/CustomFormControl';
+import { ascensionMaxLevel } from '../Data/CharacterData';
 import ElementalData from '../Data/ElementalData';
 import { WeaponLevelKeys } from '../Data/WeaponData';
 import CharacterDatabase from '../Database/CharacterDatabase';
@@ -14,7 +17,7 @@ import { ICharacter } from '../Types/character';
 import { allCharacterKeys, allSlotKeys } from '../Types/consts';
 import ICalculatedStats from '../Types/ICalculatedStats';
 import { usePromise } from '../Util/ReactUtil';
-import { deepClone } from '../Util/Util';
+import { clamp, deepClone } from '../Util/Util';
 import WeaponSheet from '../Weapon/WeaponSheet';
 import Character from './Character';
 import CharacterArtifactPane from './CharacterDisplay/CharacterArtifactPane';
@@ -43,7 +46,8 @@ const CustomMenu = React.forwardRef(
 );
 const initialCharacter = (characterKey): ICharacter => ({
   characterKey: characterKey ?? "",//the game character this is based off
-  levelKey: "L1",//combination of level and ascension
+  level: 1,
+  ascension: 0,
   hitMode: "avgHit",
   reactionMode: null,
   equippedArtifacts: Object.fromEntries(allSlotKeys.map(sKey => [sKey, ""])),
@@ -175,7 +179,7 @@ export default function CharacterDisplayCard({ characterKey: propCharacterKey, c
     return newBuild
   }, [propNewBuild, character.hitMode, character.reactionMode])
 
-  const { levelKey, artifacts: flexArts } = character
+  const { artifacts: flexArts } = character
 
   const mainStatAssumptionLevel = newBuild?.mainStatAssumptionLevel ?? 0
   const equippedBuild = useMemo(() => characterSheet && weaponSheet && artifactSheets && Character.calculateBuild(character, characterSheet, weaponSheet, artifactSheets, mainStatAssumptionLevel), [character, characterSheet, weaponSheet, artifactSheets, mainStatAssumptionLevel])
@@ -189,7 +193,7 @@ export default function CharacterDisplayCard({ characterKey: propCharacterKey, c
       <Row>
         <Col xs={"auto"} className="mr-auto">
           {/* character selecter/display */}
-          <CharSelectDropdown characterSheet={characterSheet} character={character} weaponSheet={weaponSheet} editable={editable} levelKey={levelKey} characterDispatch={characterDispatch} setCharacterKey={setCharacterKey} />
+          <CharSelectDropdown characterSheet={characterSheet} character={character} weaponSheet={weaponSheet} editable={editable} characterDispatch={characterDispatch} setCharacterKey={setCharacterKey} />
         </Col>
         {Boolean(mainStatAssumptionLevel) && <Col xs="auto"><Alert className="mb-0 py-1 h-100" variant="orange" ><b>Assume Main Stats are Level {mainStatAssumptionLevel}</b></Alert></Col>}
         {/* Compare against new build toggle */}
@@ -252,50 +256,90 @@ export default function CharacterDisplayCard({ characterKey: propCharacterKey, c
     </Card.Footer>}
   </Card>)
 }
+
+const levelSelector = [
+  [90, 6],
+  [80, 6],
+  [80, 5],
+  [70, 5],
+  [70, 4],
+  [60, 4],
+  [60, 3],
+  [50, 3],
+  [50, 2],
+  [40, 2],
+  [40, 1],
+  [20, 1],
+  [20, 0],
+  [1, 0]
+] as const
 type CharSelectDropdownProps = {
   characterSheet?: CharacterSheet,
   weaponSheet?: WeaponSheet,
   character: ICharacter
   editable: boolean
-  levelKey: string
   characterDispatch: (any) => void
   setCharacterKey: (any) => void
 }
-function CharSelectDropdown({ characterSheet, weaponSheet, character, character: { elementKey = "anemo" }, editable, levelKey, characterDispatch, setCharacterKey }: CharSelectDropdownProps) {
+function CharSelectDropdown({ characterSheet, weaponSheet, character, character: { elementKey = "anemo", level = 1, ascension = 0 }, editable, characterDispatch, setCharacterKey }: CharSelectDropdownProps) {
   const HeaderIconDisplay = characterSheet ? <span >
     <Image src={characterSheet.thumbImg} className="thumb-small my-n1 ml-n2" roundedCircle />
     <h6 className="d-inline"> {characterSheet.name} </h6>
   </span> : <span>Select a Character</span>
-  return <>{editable ? <ButtonGroup>
-    <Dropdown as={ButtonGroup}>
-      <Dropdown.Toggle as={Button}>
-        {HeaderIconDisplay}
-      </Dropdown.Toggle>
-      <Dropdown.Menu as={CustomMenu}>
-        {[...new Set(allCharacterKeys)].sort().map(charKey => <CharDropdownItem key={charKey} characterKey={charKey} setCharacterKey={setCharacterKey} />)}
-      </Dropdown.Menu>
-    </Dropdown>
-    {characterSheet?.sheet && "talents" in characterSheet?.sheet && <Dropdown as={ButtonGroup}>
-      <Dropdown.Toggle as={Button} className={`text-${elementKey}`}>
-        <strong>{ElementalData[elementKey].name}</strong>
-      </Dropdown.Toggle>
-      <Dropdown.Menu >
-        {Object.keys(characterSheet.sheet.talents).map(eleKey =>
-          <Dropdown.Item key={eleKey} className={`text-${eleKey}`} onClick={() => characterDispatch({ elementKey: eleKey })}><strong>{ElementalData[eleKey].name}</strong></Dropdown.Item>)}
-      </Dropdown.Menu>
-    </Dropdown>}
-    <DropdownButton as={ButtonGroup} disabled={!characterSheet} title={
-      <h6 className="d-inline">Stats Template: {Character.getlevelTemplateName(levelKey)} </h6>
-    }>
-      <Dropdown.ItemText>
-        <span>Select Base Stat Template</span>
-      </Dropdown.ItemText>
-      {Character.getlevelKeys().reverse().map(lvlKey =>
-        <Dropdown.Item key={lvlKey} onClick={() => characterDispatch({ levelKey: lvlKey })}>
-          <h6 >{Character.getlevelTemplateName(lvlKey)} </h6>
-        </Dropdown.Item>)}
-    </DropdownButton>
-  </ButtonGroup> : <span>{HeaderIconDisplay} {characterSheet && weaponSheet && Character.getLevelString(character, characterSheet, weaponSheet)}</span>}</>
+  const setLevel = useCallback((level) => {
+    level = clamp(level, 1, 90)
+    const ascension = ascensionMaxLevel.findIndex(ascenML => level <= ascenML)
+    characterDispatch({ level, ascension })
+  }, [characterDispatch])
+  const ambiguousLevel = ascensionMaxLevel.findIndex(ascenML => level === ascenML) > 0
+  const setAscension = useCallback(() => {
+    const lowerAscension = ascensionMaxLevel.findIndex(ascenML => level === ascenML)
+    if (ascension === lowerAscension) characterDispatch({ ascension: ascension + 1 })
+    else characterDispatch({ ascension: lowerAscension })
+  }, [characterDispatch, ascension, level])
+  return <>{editable ? <InputGroup >
+    <ButtonGroup as={InputGroup.Prepend}>
+      <Dropdown as={ButtonGroup}>
+        <Dropdown.Toggle as={Button}>
+          {HeaderIconDisplay}
+        </Dropdown.Toggle>
+        <Dropdown.Menu as={CustomMenu}>
+          {[...new Set(allCharacterKeys)].sort().map(charKey => <CharDropdownItem key={charKey} characterKey={charKey} setCharacterKey={setCharacterKey} />)}
+        </Dropdown.Menu>
+      </Dropdown>
+      {characterSheet?.sheet && "talents" in characterSheet?.sheet && <Dropdown as={ButtonGroup}>
+        <Dropdown.Toggle as={Button} className={`text-${elementKey}`}>
+          <strong>{ElementalData[elementKey].name}</strong>
+        </Dropdown.Toggle>
+        <Dropdown.Menu >
+          {Object.keys(characterSheet.sheet.talents).map(eleKey =>
+            <Dropdown.Item key={eleKey} className={`text-${eleKey}`} onClick={() => characterDispatch({ elementKey: eleKey })}><strong>{ElementalData[eleKey].name}</strong></Dropdown.Item>)}
+        </Dropdown.Menu>
+      </Dropdown>}
+    </ButtonGroup>
+    <InputGroup.Prepend>
+      <InputGroup.Text><strong>Lvl. </strong></InputGroup.Text>
+    </InputGroup.Prepend>
+
+    <InputGroup.Append>
+      <CustomFormControl placeholder={undefined} className="h-100" onChange={setLevel} value={level} min={1} max={90} />
+    </InputGroup.Append>
+    <InputGroup.Append>
+      <Button disabled={!ambiguousLevel} onClick={setAscension}><strong>/ {ascensionMaxLevel[ascension]}</strong></Button>
+    </InputGroup.Append>
+    <ButtonGroup as={InputGroup.Append}>
+      <Dropdown as={ButtonGroup}>
+        <Dropdown.Toggle as={Button}>Select Level</Dropdown.Toggle>
+        <Dropdown.Menu>
+          {levelSelector.map(([lv, as]) => {
+            const sameLevel = lv === ascensionMaxLevel[as]
+            const lvlstr = sameLevel ? `Lv. ${lv}` : `Lv. ${lv}/${ascensionMaxLevel[as]}`
+            return <DropdownItem key={`${lv}/${as}`} onClick={() => characterDispatch({ level: lv, ascension: as })}>{lvlstr}</DropdownItem>
+          })}
+        </Dropdown.Menu>
+      </Dropdown>
+    </ButtonGroup>
+  </InputGroup> : <span>{HeaderIconDisplay} {characterSheet && weaponSheet && Character.getLevelString(character)}</span>}</>
 }
 function CharDropdownItem({ characterKey, setCharacterKey }) {
   const characterSheet = usePromise(CharacterSheet.get(characterKey))

@@ -1,7 +1,7 @@
 import { ArtifactSubstatsData } from "../Data/ArtifactData"
-import { CharacterSpecializedStatKey } from "../Data/CharacterData"
 import { amplifyingReactions } from "../StatConstants"
 import { allMainStatKeys } from "../Types/artifact"
+import { characterSpecializedStatKeys } from "../Types/consts"
 import { constants } from "./Schemas"
 
 describe('Export Import', () => {
@@ -13,7 +13,7 @@ describe('Export Import', () => {
         expect(constants.reactionModes).toContain(`${variant}_${reaction}`)
   })
   test('support all stat keys', () => {
-    for (const specializedStat of CharacterSpecializedStatKey)
+    for (const specializedStat of characterSpecializedStatKeys)
       expect(constants.stats).toContain(specializedStat)
 
     for (const mainStat of allMainStatKeys)

@@ -1,0 +1,21 @@
+{
+    "artifact": {
+        "editor": {
+            "title": "聖遺物エディター"
+        },
+        "artifactFilter": "聖遺物フィルター",
+        "filterLocation": {
+            "inventory": "インベントリー",
+            "currentlyEquipped": "装備中"
+        },
+        "button": {
+            "unequipArtifacts": "聖遺物を外す",
+            "deleteArtifacts": "聖遺物を消す",
+            "lockArtifacts": "聖遺物をロック",
+            "unlockArtifacts": "聖遺物をアンロック"
+        }
+    },
+    "home": {
+        "welcome": "Genshin Optimizerへようこそ！"
+    }
+}

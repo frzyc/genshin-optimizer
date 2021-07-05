@@ -226,7 +226,11 @@
         "hits": "({{hits}} Acertos)",
         "lessPercentHP": "< {{percent}}% VIDA",
         "stack": "{{count}} Acúmulo",
-        "stack_plural": "{{count}} Acúmulos"
+        "stack_plural": "{{count}} Acúmulos",
+        "hitOp": {
+            "normal": "Acertos de Ataques Normais nos oponentes",
+            "charged": "Acertos de Ataques Carregados nos oponentes"
+        }
     },
     "weapon_SongOfBrokenPines": {
         "name": "Concerto Milenar: Rebelião da Bandeira"

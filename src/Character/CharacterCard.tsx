@@ -70,7 +70,7 @@ export default function CharacterCard({ characterKey, onEdit, onDelete, cardClas
           <Image src={characterSheet.thumbImg} className={`thumb-big grad-${characterSheet.star}star p-0`} thumbnail />
         </Col>
         <Col>
-          <h3 className="mb-0">{Character.getLevelString(character, characterSheet, weaponSheet)} {`C${constellation}`}</h3>
+          <h3 className="mb-0">{Character.getLevelString(character)} {`C${constellation}`}</h3>
           <h5 className="mb-0"><Stars stars={characterSheet.star} colored /></h5>
           <h2 className="mb-0"><Image src={Assets.elements[elementKey]} className="inline-icon" /> <Image src={Assets.weaponTypes?.[weaponTypeKey]} className="inline-icon" /></h2>
         </Col>

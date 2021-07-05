@@ -34,8 +34,7 @@ export function parseFlexObj(string): [FlexObject | undefined, number] {
   try {
     switch (parseInt(parameters.v)) {
       case 2: return [parseFlexObjFromSchema(parameters.d, schemas.flexV2), 2]
-      case 1: return [parseFlexObjFromSchema(parameters.d, schemas.flexV1), 1]
-      default: return [undefined, -1]
+      default: return [null]
     }
   } catch (error) {
     if (process.env.NODE_ENV === "development")

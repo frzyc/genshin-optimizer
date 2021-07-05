@@ -4,6 +4,7 @@ import { deepClone, loadFromLocalStorage, saveToLocalStorage } from "../Util/Uti
 import { allSlotKeys } from "../Types/consts";
 import { ICharacter } from "../Types/character";
 import Artifact from "../Artifact/Artifact";
+import { ascensionMaxLevel } from "../Data/CharacterData";
 
 const CurrentDatabaseVersion = 5
 
@@ -104,6 +105,23 @@ function DatabaseInitAndVerify() {
         character.buildSettings = { mainStatAssumptionLevel: artifactsAssumeFull ? 20 : 0, ascending, mainStatKeys: mainStat, setFilters, useLockedArts }
       }
       delete character.weapon?.conditionalNum
+      valid = false
+    }
+    if (dbVersion < 5 && character.levelKey) {
+      const levelKey = character.levelKey
+      const [, lvla] = levelKey.split("L")
+      const level = parseInt(lvla)
+      const ascension = ascensionMaxLevel.findIndex(ascenML => level <= ascenML)
+      const addAsc = lvla.includes("A")
+      if (level < 0 || level > 90 || ascension < 0) {
+        character.level = 1
+        character.ascension = 0
+      } else {
+        character.level = level
+        character.ascension = ascension + (addAsc ? 1 : 0)
+      }
+      delete character.levelKey
+      delete character.baseStatOverrides?.characterLevel
       valid = false
     }
 

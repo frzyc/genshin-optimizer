@@ -1,7 +1,7 @@
 {
     "artifact": {
         "editor": {
-            "title": "Trình chỉnh sửa thánh di vật",
+            "title": "Trình chỉnh sửa Thánh Di Vật",
             "set": {
                 "artifactSet": "Bộ thánh di vật",
                 "maxRarity": "Độ hiếm cao nhất <1></1>"
@@ -39,17 +39,17 @@
             "btnUpdate": "Nâng cấp thánh di vật",
             "clearPrompt": "Đang có thánh di vật trong trình chỉnh sửa. Bạn có chắc muốn làm xóa hết?"
         },
-        "artifactFilter": "Bộ lọc thánh di vật",
+        "artifactFilter": "Bộ lọc Thánh Di Vật",
         "filterLocation": {
             "inventory": "Túi",
             "currentlyEquipped": "Đã trang bị",
             "any": "Bất kỳ"
         },
         "button": {
-            "unequipArtifacts": "Gỡ thánh di vật",
-            "deleteArtifacts": "Xóa thánh di vật",
-            "lockArtifacts": "Khóa thánh di vật\n",
-            "unlockArtifacts": "Mở khóa thánh di vật"
+            "unequipArtifacts": "Gỡ Thánh Di Vật",
+            "deleteArtifacts": "Xóa Thánh Di Vật",
+            "lockArtifacts": "Khóa Thánh Di Vật",
+            "unlockArtifacts": "Mở khóa Thánh Di Vật"
         },
         "filterLevelFormat": "Cấp <1>từ</1>/<3>đến</3>",
         "buttonHint": "Ghi chú: Những nút trên chỉ ảnh hưởng đến <1>bộ lọc thánh di vật</1>",

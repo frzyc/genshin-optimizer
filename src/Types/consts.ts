@@ -46,6 +46,8 @@ export const allWeaponKeys = [
   "WineAndSong", "EyeOfPerception", "Frostbearer", "LostPrayerToTheSacredWinds", "SkywardAtlas", "MemoryOfDust",
   "SongOfBrokenPines", "DodocoTales", "MitternachtsWaltz", "FreedomSworn"
 ] as const
+export const characterSpecializedStatKeys = ["hp_", "atk_", "def_", "eleMas", "enerRech_", "heal_", "critRate_", "critDMG_", "physical_dmg_", "anemo_dmg_", "geo_dmg_", "electro_dmg_", "hydro_dmg_", "pyro_dmg_", "cryo_dmg_"] as const
+
 export type HitModeKey = typeof allHitModes[number]
 export type ReactionModeKey = typeof allReactionModes[number]
 export type SetNum = typeof allArtifactSetCount[number]
@@ -56,3 +58,4 @@ export type ArtifactSetKey = typeof allArtifactSets[number]
 export type CharacterKey = typeof allCharacterKeys[number]
 export type WeaponKey = typeof allWeaponKeys[number]
 export type WeaponTypeKey = typeof allWeaponTypeKeys[number]
+export type CharacterSpecializedStatKey = typeof characterSpecializedStatKeys[number]

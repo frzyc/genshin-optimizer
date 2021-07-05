@@ -1,0 +1,240 @@
+{
+    "artifact": {
+        "editor": {
+            "title": "Artefakt Editor",
+            "set": {
+                "artifactSet": "Artefakt Set",
+                "maxRarity": "Maximale Qualität <1></1>"
+            },
+            "substat": {
+                "substatFormat": "Bonusattribut {{value}}",
+                "noSubstat": "Kein Bonusattribut",
+                "selectSub": "Bonusattribut auswählen",
+                "error": {
+                    "noCalc": "Zufällige Aufwertungen konnten nicht automatisch bestimmt werden.",
+                    "noOverRoll": "Bonusattribute können nicht mehr als {{value}}-mal aufgewertet werden."
+                },
+                "noRoll": "Keine zufälligen Aufwertungen",
+                "RollCount": "{{count}} zufällige Aufwertung",
+                "RollCount_plural": "{{count}} zufällige Aufwertungen",
+                "noStat": "Kein Wert",
+                "eff": "Effizenz: <1></1>"
+            },
+            "rarity": "Qualität",
+            "level": "Level",
+            "unknownPieceName": "Name nicht bekannt",
+            "mainSelect": "Hauptattribut auswählen",
+            "curSubEff": "Aktuelle Bonusattributseffizienz",
+            "curSubEffDesc": "Alle 4 Artefakt-Stufen, wird 1 zufälliges Bonusattribut erhöht. <strong>Bonusattributseffizienz</strong> zeigt, wie hoch die Bonusattributsaufwertung prozentual ausgefallen ist.",
+            "maxSubEff": "Maximale Bonusattributseffizienz",
+            "maxSubEffDesc": "Die <strong>Maximale Bonusattributseffizienz</strong> eines Artefakts berechnet die Effizienz unter der Annahme, dass alle verbleibenden zufälligen Aufwertungen maximal gut ausfallen.",
+            "preview": "Artefaktvorschau",
+            "dupArt": "Artefaktduplikate entdeckt.",
+            "upArt": "Verstärktes Artefakt entdeckt.",
+            "beforeEdit": "Vor dem Bearbeiten",
+            "btnSave": "Artefakt sichern",
+            "btnAdd": "Artefakt hinzufügen",
+            "btnClear": "Eingaben löschen",
+            "btnRandom": "Zufällig ausfüllen",
+            "btnUpdate": "Artefakt aktualisieren",
+            "clearPrompt": "Artefakt in Bearbeitung. Soll die Eingabe abgebrochen werden?"
+        },
+        "artifactFilter": "Artefakt Filter",
+        "filterLocation": {
+            "inventory": "Inventar",
+            "currentlyEquipped": "Aktuell ausgerüstet",
+            "any": "Überall"
+        },
+        "button": {
+            "unequipArtifacts": "Artefakte ablegen",
+            "deleteArtifacts": "Artefakte löschen",
+            "lockArtifacts": "Artefakte sperren",
+            "unlockArtifacts": "Artefakt entsperren"
+        },
+        "filterLevelFormat": "Level <1>Low</1>/<3>High</3> (Eingeschlossen)",
+        "buttonHint": "Hinweis: Die oberen Buttons gelten nur für <1>gefilterte Artefakte</1>",
+        "tipsOfTheDay": [
+            "Die maximale Effizienz eines 4-Stern Artefakts liegt bei rund 60%.",
+            "Die maximale Effizienz eines Artefakts singt meist durch das Verstärken von diesem. Dies ist absolut normal.",
+            "Bonusattribute mit 1-en sind für den Scanner am schwersten zu erkennen.",
+            "Wird durch alle zufälligen Aufwertungen das selbe Bonusattribut aufgewertet, so wird dieses in Lila angezeigt.",
+            "Klicke beim Verstärken der Artefakte auf \"Details\", um diese während des Verstärkens zu scannen.",
+            "Das gleichzeitige Hochladen mehrerer Bilder wird untersützt."
+        ],
+        "mainStat": "Hauptattribut",
+        "slot": "Platz",
+        "slotName": {
+            "flower": "Blume des Lebens",
+            "plume": "Feder des Todes",
+            "sands": "Sand der Zeit",
+            "goblet": "Kelch der Leere",
+            "circlet": "Haarreif der Vernunft"
+        },
+        "info": {
+            "title": "Anleitung zum Bearbeiten/Verwalten von Artefakten",
+            "section3": "<0>Artefakt Inventar</0><p>Hier sind alle Artefakte zu sehen, die zum Genshin Optimizer hinzugefügt wurden. Mit den Filtern kannst du die Auswahl an angezeigten Artefakte weiter verfeinern.</p><2>Beispiel: Finding Fodder Artifacts</2><p>Durch die Verwendung von Filtern und Effizenz-Berechnungen können schnell Artefakte gefunden werden, die zur Aufwertung anderer Artefakte verwendet werden können.</p><4>In diesem Beispiel sind die Filter wie folgt gesetzt: </4><5><0>Level zwischen 0 und 8.</0><1>Nicht gesperrte im Inventar.</1><2>Ausschluss von LP, VTD und Aufladerate aus der Berechnung der Effizienz.</2><3>Aufsteigend sortiert nach maximaler Effizienz.</3></5><p>Dies sortiert die Artefakte nach geringster Effizienz für die gewählten Bonusattribute.</p>"
+        },
+        "locationDisplay": "Ort: {{value}}",
+        "lockDisplay": "Gesperrt: {{value}}",
+        "lock": {
+            "any": "Beides",
+            "locked": "Gesperrt",
+            "unlocked": "Entsperrt"
+        },
+        "sortMap": {
+            "quality": "Qualität",
+            "level": "Level",
+            "efficiency": "Aktuelle Bonusattributseffizienz",
+            "mefficiency": "Maximale Bonusattributseffizienz"
+        },
+        "showingNum": "<1>{{count}}</1> von {{value}} Artefakt werden angezeigt",
+        "showingNum_plural": "<1>{{count}}</1> von {{value}} Artefakten werden angezeigt"
+    },
+    "home": {
+        "welcome": "Willkommen beim Genshin Optimizer!",
+        "paragraphIntro": "<0>Was ist der Genshin Optimizer?</0><1>Der Genshin Optimizer ist ein Werkzeug für das Action-RPG Gacha-Game <1><strong>Genshin Impact</strong></1>. Er wurde dazu entwickelt, Arbeit in einem der komplexesten Teile des Spieles abzunehmen: Artefakte. Artefakte sind in besonderem Maße zufallsbariert und tragen zur Verbesserung der Charaktere bei. Dieses Tool versucht, die Komplexität des Auswahlprozesses zu veringern und die Statuswerte der Charaktere zu maximieren.</1><p>Zusätzlich werden in Echtzeit an Bedingungen gebundene Attribute von Artefakten, Waffen und Team-Fähigkeiten einberechnet.</p>",
+        "paragraphArtifactEditor": "<0>Artefakt Editor</0><1><0>Vollwertiger Artefakt Editor.</0><1>Artefakte können durch Screenshots hinzugefügt werden.</1><2>Berechnet die exakten Werte aller Attributs-Aufwertungen für jedes Artefakt automatisch.</2><3>Berechnet Bonusattributseffizienz. Einfach mit Hilde einer einigen Zahl entscheiden, ob das Artefakt behalten werden sollte!</3><4>Artefakte anlegen/ablegen/tauschen - unterschiedliche Kombinationen ausprobieren.</4></1>",
+        "paragraphCharacterEditor": "<0>Figuren Editor</0><1><0>Vollwertiger Figuren Editor.</0><1>Charakter-Attribute bei jeden Aufstieg automatisch ausfüllen lassen.</1><2>Alle Attribute sind individuell anpassbar.</2><3>Aktuelle Attributswerte basierend auf Artefakten und Waffe berechnen lassen.</3><4>Vollwertige Waffen-Integration mit automatischen Attributen für jeden Aufstieg.</4><5>Auswirkungen bedingter passiver Effekte, wie z.B. ANG&VTD Stapel des Weißen Schattens, anzeigen lassen.</5><6>Auswirkungen bedingter passiver Effekte von Artefakten sind ebenfalls enthalten!</6><7><0>$t(ui:underConstruction)</0> Berechnung von Talent-Schaden.</7><8><0>$t(ui:underConstruction)</0> Figuren-Talente und Attribute werden anhand des Sternenbildes aktualisiert.</8></1>",
+        "paragraphCharacterDamageCalculations": "<0>Schadensberechnung für Figuren</0><1><0>Detaillierte Informationen für jedes Figuren-Talent</0><1>Alle berechneten Werte sollten mit dem Schaden im Spielübereinstimmen.</1><2>Bedingte Attribute und Veränderungen durch das Sternenbild werden mit bedacht.</2><3>Berechnung und Formel sind einsehbar. Keine versteckte Magie.</3><4>Angabe des Gegners, seines Levels und seiner Resistenzen für genauere Berechnungen.</4><5>Auswirkungen des \"Element verleihen\"-Effekts auf nicht-elementare Angriffe werden mit bedacht.</5><6>Echtzeit Schadensberechnung.</6></1>",
+        "paragraphBuildGenerator": "\n<0>Build Generator</0><1><0> Generator builds für einen spezifischen Charakter, der Artefakte nutzt die durch den Benutzer hinzugefüt wurden.</0><1> Limitiert die builds durch Artefaktsets und Hauptattribute...</1><2>Sortiert die generierten builds nach spezifischen Stat´s für maximierung.</2><3>Generator wählt keine Artefakte aus, die bereits auf einem anderen Charakter ausgerüstet wurden..</3><4>Vergleiche generierten Artefaktbuild mit aktuall angelegtem Artefaktbuild des Charakters.</4><5>Nutz konditionierte Stat´s von Artefaktsets, z.B. Gladiator 4-Teile set normaler Angriff´s Schadensbonus, als teil der build berechnungen</5></1>  ",
+        "paragraphTools": "<0>Extras und Sonstiges</0><1><0>Server-Uhr und Countdown bis zum nächsten Tag.</0><1>Counter für ursprüngliches Harz.</1><2>EP-Rechner, um die Nutzung von EX-Büchern zu optimieren.</2><3><0>$t(ui:underConstruction)</0> Recourcen-Umrechner für alle nervigen mit 3 gestaffelten Ressourcen.</3><4><0>$t(ui:underConstruction)</0> To-Do-List: Dynamisch generiert und nach Tagen gruppiert.</4></1>"
+    },
+    "languages": {
+        "chs": "Chinesisch (Vereinfacht)",
+        "cht": "Chinesisch (Traditionell)",
+        "de": "Deutsch",
+        "en": "Englisch",
+        "es": "Spanisch",
+        "fr": "Französisch",
+        "id": "Indonesisch",
+        "ja": "Japanisch",
+        "ko": "Koreanisch",
+        "pt": "Portugisisch",
+        "ru": "Russisch",
+        "th": "Thailändisch",
+        "vi": "Vietnamesisch"
+    },
+    "settings": {
+        "title": "Einstellungen",
+        "languageCard": {
+            "selectLanguage": "Sprache auswählen",
+            "languageFormat": "Sprache: {{language}}"
+        },
+        "downloadCard": {
+            "databaseDownload": "Datenbank exportieren",
+            "charsStored": "<0>{{count}}</0> Figur gespeichert",
+            "charsStored_plural": "<0>{{count}}</0> Figur gespeichert",
+            "artisStored": "<0>{{count}}</0> Artefakt gespeichert",
+            "artisStored_plural": "<0>{{count}}</0> Artefakte gespeichert",
+            "databaseDisclaimer": "Hinweis: Alle Daten aus der \"Extras\" Rubrik, wie z.B. Anzahl/Timer für Ursprüngliches Harz, sind nicht teil der exportieren Datenbank.",
+            "button": {
+                "download": "Herunterladen",
+                "copy": "In die Zwischenablage kopieren",
+                "delete": "Datenbank löschen"
+            }
+        },
+        "uploadCard": {
+            "title": "Datenbank importieren",
+            "replaceDatabase": "Datenbank ersetzen",
+            "hint": "Lade die JSON-Datei hier hoch...",
+            "hintPaste": "... oder kopiere den Text hierhin.",
+            "numChar": "Anzahl Figuren:",
+            "numArt": "Anzahl Artefakte:"
+        },
+        "dialog": {
+            "delete-database": "Datenbank wirklich löschen? Alle existierenden Figuren und Artefakte werden dadurch gelöscht."
+        }
+    },
+    "ui": {
+        "pageTitle": "Genshin Optimizer",
+        "tabs": {
+            "artifacts": "Artefakte",
+            "characters": "Figuren",
+            "builds": "Builds",
+            "tools": "Extras"
+        },
+        "social": {
+            "paypal": "Paypal",
+            "patreon": "Patreon",
+            "discord": "Discord"
+        },
+        "game": {
+            "minLevel": "Min Level",
+            "maxLevel": "Max Level",
+            "rarity": "Qualität",
+            "level": "Level"
+        },
+        "unselect": "Abwählen",
+        "ascending": "Aufsteigend",
+        "descending": "Absteigend",
+        "sortByFormat": "Sortieren nach: {{value}}",
+        "loading": "Laden...",
+        "rightsDisclaimer": "Genshin Optimizer ist kein Teil von miHoYo und wird nicht davon unterstützt.",
+        "appVersion": "$t(pageTitle) Version: {{version}}",
+        "underConstruction": "In Arbeit",
+        "error": "Fehler"
+    },
+    "char_eula": {
+        "skillC": {
+            "name": "Kaltes Herz",
+            "consumed": "Stapelungen verbraucht",
+            "grimheart": {
+                "name": "Stapelung aktiv",
+                "int": "Erhöht Unterbrechungs-Wiederstand"
+            }
+        },
+        "burstC": {
+            "name": "Schwert der Brandung",
+            "start5": "Beginnt bei 5 Stapelungen",
+            "addStacks": "50% Wahrscheinlichkeit auf neue Stapelung"
+        },
+        "c1C": {
+            "name": "Verbraucht Stapelungen von <strong>Kaltes Herz</strong>",
+            "durationStack": "6s + 6s pro Stapelung, bis zu 18s"
+        },
+        "passive1": "Schaden von fragmentarischem Schwert des Lichtfalls"
+    },
+    "char_noelle": {
+        "p4cd": "24s, -1s pro 4 Treffer",
+        "c1chance": "(100%, wenn sowohl <strong>Großreinigung</strong> als auch <strong>Brustpanzer</strong> aktiv sind)",
+        "c6duration": "15s, +1s pro besiegtem Gegner, bis zu 10s",
+        "qlarger": "Erhöhte Angriffsreichweite"
+    },
+    "char_venti": {
+        "addAimed": "Zusätzlicher Schaden durch gezielte Schüsse",
+        "addFullAimed": "Zusätzlicher Schaden durch voll aufgeladene gezielte Schüsse",
+        "upcurrentDuration": "Dauer der Luftströmung",
+        "regenEner": "Stellt Venti nach Ende des Effekts 15 Elementarenergie wiederher.",
+        "fullBurstDMG": {
+            "text": "<0><0>Vollständiger Spezialfähigkeits-Schaden</0><1>Dies berechnet den vollständigen, ausgeteilten Schaden inkl. fortlaufendem Schaden. Dabei wird das Austeilen volgendem Schaden angenommen:</1><2><0>20 Vorkommen von <1>Spezialfähigkeits-Schaden</1></0><1>15 Vorkommen von <1>Absorptions-Schaden</1></1><2>7 Vorkommen von <1>fortlaufendem Schaden</1>, für einen Gegner, ODER,</2><3>14 Vorkommen von <1>fortlaufendem Schaden</1>, für mehrere Gegner, die zusammen Schaden erhalten.</3></2></0>",
+            "dmg": "<0>Vollständiger Schaden (<1>{{swirlTicks}}-mal fortlaufender Schaden</1>)</0>"
+        },
+        "c6": "Ziele, denen mit <strong>Ode vom Anemo-Archon</strong> Schaden zugefügt wird",
+        "c4": "Venti erhält Elementarkristalle oder Elementarteilchen",
+        "q": "Stellt allen <1>{{elementKey}}</1> Figuren 15 Elementarenergie wieder her.",
+        "c2": {
+            "hit": "getroffene Gegner",
+            "launched": "weggeschleuderte Gegner"
+        }
+    },
+    "sheet": {
+        "dmg": "Schaden",
+        "hits": "({{hits}} Treffer)",
+        "lessPercentHP": "< {{percent}}% HP",
+        "stack": "{{count}} Stapelung",
+        "stack_plural": "{{count}} Stapelungen",
+        "hitOp": {
+            "normal": "Treffer gegen Gegner bei normalen Schlägen",
+            "charged": "Treffer gegen Gegner bei heftigen Schlägen",
+            "plunging": "Treffer gegen Gegnern aus dem Fall",
+            "skill": "Treffer gegen Gegner durch Elementarfähigkeit",
+            "burst": "Treffer gegen Gegner durch Elementarfähigkeit"
+        }
+    },
+    "weapon_SongOfBrokenPines": {
+        "name": "Bewegung des Jahrtausends – Lied vom Aufstand"
+    },
+    "weapon_FreedomSworn": {
+        "name": "Bewegung des Jahrtausends – Lied der Revolution"
+    }
+}

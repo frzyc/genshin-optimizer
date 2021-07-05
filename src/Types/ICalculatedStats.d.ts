@@ -2,6 +2,7 @@ import { ElementKey, HitModeKey } from "./consts";
 export default interface ICalculatedStats {
   characterKey: string
   characterEle: ElementKey
+  characterLevel: number
   weapon: {
     key: string;
     refineIndex: number;
