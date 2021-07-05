@@ -1,0 +1,30 @@
+{
+  "pageTitle": "Genshin Optimizer",
+  "tabs": {
+    "artifacts": "성유물",
+    "characters": "캐릭터",
+    "builds": "빌드",
+    "tools": "기타 기능"
+  },
+  "social": {
+    "paypal": "Paypal",
+    "patreon": "Patreon",
+    "discord": "Discord"
+  },
+  "game": {
+    "minLevel": "최소 레벨",
+    "maxLevel": "최대 레벨",
+    "rarity": "등급",
+    "level": "레벨"
+  },
+  "unselect": "선택해제",
+  "ascending": "오름차순",
+  "descending": "내림차순",
+  "sortByFormat": "정렬기준: {{value}}",
+  "loading": "불러오는중...",
+  "rightsDisclaimer": "Genshin Optimizer는 미호요와 관계가 없으며 승인되지 않았습니다.",
+  "appVersion": "$t(pageTitle) 버전: {{version}}",
+  "underConstruction": "개발중",
+  "error": "오류",
+  "reset": "리셋"
+}

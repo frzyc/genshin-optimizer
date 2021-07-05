@@ -10,6 +10,7 @@
     "charsStored_plural": "<0>{{count}}</0> Personnages Stockés",
     "artisStored": "<0>{{count}}</0> Artéfact Stocké",
     "artisStored_plural": "<0>{{count}}</0> Artéfacts Stockés",
+    "databaseDisclaimer": "Note: toute donnée de la page \"Outils\", par exemple les calculs de Résine, ne font pas partie de la base de donnée téléchargée.",
     "button": {
       "download": "Télécharger",
       "copy": "Copier vers le presse-papier",
@@ -25,6 +26,6 @@
     "numArt": "Nombre d'artéfacts:"
   },
   "dialog": {
-    "delete-database": "Êtes-vous sûr de vouloir supprimer votre base de données? Tous les personnages et artéfacts existants seront supprimés."
+    "delete-database": "Êtes-vous sûr de vouloir supprimer votre base de données ? Tous les personnages et artéfacts existants seront supprimés."
   }
 }

@@ -1,0 +1,20 @@
+{
+  "skillC": {
+    "name": "Cœur de glace",
+    "consumed": "Cœur de glace consommés",
+    "grimheart": {
+      "name": "Stacks de Cœur de glace",
+      "int": "Augmente la résistance à l'interruption"
+    }
+  },
+  "burstC": {
+    "name": "Lame de fond",
+    "start5": "Commence à 5 stacks",
+    "addStacks": "50% de chance d'obtenir un stack supplémentaire"
+  },
+  "c1C": {
+    "name": "Consomme les stacks de <strong>Cœur de glace</strong>",
+    "durationStack": "6s + 6s par stack, jusqu'à 18s"
+  },
+  "passive1": "DGT épée de lumière"
+}

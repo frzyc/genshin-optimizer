@@ -3,6 +3,7 @@
   "tabs": {
     "artifacts": "Artéfacts",
     "characters": "Personnages",
+    "builds": "Builds",
     "tools": "Outils"
   },
   "social": {
@@ -24,5 +25,6 @@
   "rightsDisclaimer": "Genshin Optimizer n'est pas affilié ou approuvé par miHoYo",
   "appVersion": "$t(pageTitle) Version: {{version}}",
   "underConstruction": "En Construction",
-  "error": "Erreur"
+  "error": "Erreur",
+  "reset": "Réinitialisation"
 }

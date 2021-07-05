@@ -1,7 +1,18 @@
 {
   "dmg": "DGT",
-  "hits": "({{hits}} Coups)",
+  "hits": "{{hits}} coup",
   "lessPercentHP": "< {{percent}}% PV",
   "stack": "{{count}} Stack",
-  "stack_plural": "{{count}} Stacks"
+  "stack_plural": "{{count}} Stacks",
+  "hitOp": {
+    "normal": "Attaque Normale touche des ennemis",
+    "charged": "Attaque Chargée touche des ennemis",
+    "plunging": "Attaque Plongeante touche des ennemis",
+    "skill": "Compétence Élémentaire touche des ennemis",
+    "burst": "Déchaînement Élémentaire touche des ennemis"
+  },
+  "baseDMG": "DGT de base",
+  "hits_plural": "{{count}} coups",
+  "eleAbsor": "Absorption Élémentaire",
+  "absorDot": "Absorption DoT"
 }
