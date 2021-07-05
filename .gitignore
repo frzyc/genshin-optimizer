@@ -39,4 +39,4 @@ public/locales/*
 _TEMPLATE
 # template files
 TEMPLATE*
-
+*_ignore.png
