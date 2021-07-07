@@ -26,10 +26,10 @@ export default function CharacterCard({ characterKey, onEdit, onDelete, cardClas
     characterKey && CharacterDatabase.registerCharListener(characterKey, forceUpdate)
     return () => { characterKey && CharacterDatabase.unregisterCharListener(characterKey, forceUpdate) }
   }, [characterKey, forceUpdate])
-  const artifactSheets = usePromise(ArtifactSheet.getAll())
+  const artifactSheets = usePromise(ArtifactSheet.getAll(), [])
   const character = CharacterDatabase.get(characterKey)
-  const characterSheet = usePromise(CharacterSheet.get(characterKey))
-  const weaponSheet = usePromise(character && WeaponSheet.get(character.weapon.key))
+  const characterSheet = usePromise(CharacterSheet.get(characterKey), [characterKey])
+  const weaponSheet = usePromise(character && WeaponSheet.get(character.weapon.key), [character])
   const stats = useMemo(() => character && characterSheet && weaponSheet && artifactSheets && Character.calculateBuild(character, characterSheet, weaponSheet, artifactSheets), [character, characterSheet, weaponSheet, artifactSheets])
   if (!character || !characterSheet || !weaponSheet || !stats) return null;
 

@@ -12,7 +12,7 @@ function CharacterSelectionDropdownList({ onSelect }) {
   })).map(characterKey => <DropDownItem key={characterKey} characterKey={characterKey} onSelect={onSelect} />)}</>
 }
 function DropDownItem({ characterKey, onSelect }) {
-  const characterSheet = usePromise(CharacterSheet.get(characterKey))
+  const characterSheet = usePromise(CharacterSheet.get(characterKey), [characterKey])
   if (!characterSheet) return null
   return <Dropdown.Item onClick={() => onSelect(characterKey)}>
     {characterSheet.name}

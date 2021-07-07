@@ -8,7 +8,7 @@ import { usePromise } from "../../Util/ReactUtil"
 import { ArtifactSheet } from "../ArtifactSheet"
 
 export default function SetEffectDisplay({ setKey, setNumKey, equippedBuild, newBuild, editable, characterDispatch }: Data) {
-  const sheet = usePromise(ArtifactSheet.get(setKey))
+  const sheet = usePromise(ArtifactSheet.get(setKey), [setKey])
   if (!sheet) return null
 
   const stats = newBuild ?? equippedBuild!

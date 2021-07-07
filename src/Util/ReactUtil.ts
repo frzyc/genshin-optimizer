@@ -6,12 +6,15 @@ export function useForceUpdate(): [object, () => void] {
   return [stateDirty, forceUpdateHook]
 }
 
-export function usePromise<T>(promise: Promise<T> | undefined): T | undefined {
-  const [res, setRes] = useState<T | undefined>();
+export function usePromise<T>(promise: Promise<T> | undefined, dependencies: any[]): T | undefined {
+  const [res, setRes] = useState<T | undefined>(undefined);
   useEffect(() => {
     let pending = true
     promise?.then(res => pending && setRes(() => res), console.error) ?? setRes(undefined)
-    return () => { pending = false }
-  }, [promise])
+    return () => {
+      pending = false
+      setRes(undefined)
+    }
+  }, dependencies)// eslint-disable-line react-hooks/exhaustive-deps
   return res
 }

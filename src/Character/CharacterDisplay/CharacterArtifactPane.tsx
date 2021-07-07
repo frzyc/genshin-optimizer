@@ -27,15 +27,15 @@ type CharacterArtifactPaneProps = {
 function CharacterArtifactPane({ characterSheet, weaponSheet, character, character: { characterKey }, equippedBuild, newBuild, editable, characterDispatch, artifacts }: CharacterArtifactPaneProps) {
   const history = useHistory()
   //choose which one to display stats for
-  const stats = (newBuild ? newBuild : equippedBuild) as ICalculatedStats
+  const stats = (newBuild ? newBuild : equippedBuild)
   const mainStatAssumptionLevel = stats?.mainStatAssumptionLevel ?? 0
-  const statKeys = useMemo(() => Character.getDisplayStatKeys(stats, characterSheet), [stats, characterSheet])
+  const statKeys = useMemo(() => stats && Character.getDisplayStatKeys(stats, characterSheet), [stats, characterSheet])
   const edit = useCallback(
     artid => history.push({
       pathname: "/artifact",
       artToEditId: artid
     } as any), [history])
-  const artifactSheets = usePromise(ArtifactSheet.getAll())
+  const artifactSheets = usePromise(ArtifactSheet.getAll(), [])
 
   const equipArts = useCallback(() => {
     if (!window.confirm("Do you want to equip this artifact build to this character?")) return
@@ -49,6 +49,7 @@ function CharacterArtifactPane({ characterSheet, weaponSheet, character, charact
     Character.equipArtifacts(characterKey, Object.fromEntries(allSlotKeys.map(sKey => [sKey, ""])) as StrictDict<SlotKey, string>)
     characterDispatch?.({ type: "fromDB" })
   }, [characterKey, characterDispatch])
+  if (!stats) return null
   return <>
     <Card className="h-100 mb-2" bg="lightcontent" text={"lightfont" as any}>
       <Card.Body>

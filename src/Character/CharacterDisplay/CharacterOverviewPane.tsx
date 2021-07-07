@@ -34,7 +34,8 @@ type CharacterOverviewPaneProps = {
   newBuild?: ICalculatedStats
 }
 export default function CharacterOverviewPane({ characterSheet, weaponSheet, editable, character, character: { constellation, level, ascension }, characterDispatch, equippedBuild, newBuild }: CharacterOverviewPaneProps) {
-  const build = (newBuild ? newBuild : equippedBuild) as ICalculatedStats
+  const build = newBuild ? newBuild : equippedBuild
+  if (!build) return null
   const elementKey = build.characterEle
   const weaponTypeKey = characterSheet.weaponTypeKey
   return <Row>
@@ -87,7 +88,7 @@ function WeaponStatsCard({ title, statsVals = {}, stats }: { title: Displayable,
 
 
 function WeaponStatsEditorCardWeaponDropdown({ weaponSheet, weaponTypeKey, setStateWeapon }: { weaponSheet: WeaponSheet, weaponTypeKey: string, setStateWeapon: (key: any, value: any) => void }) {
-  const weaponSheets = usePromise(WeaponSheet.getAll())
+  const weaponSheets = usePromise(WeaponSheet.getAll(), [])
   if (!weaponSheets) return null
 
   return <DropdownButton title={weaponSheet.name}>
@@ -116,7 +117,8 @@ function WeaponStatsEditorCard({ characterSheet, weaponSheet, editable, characte
   const [editing, SetEditing] = useState(false)
   const [showDescription, setShowDescription] = useState(false)
   //choose which one to display stats for
-  const build = (newBuild ? newBuild : equippedBuild) as ICalculatedStats
+  const build = newBuild ? newBuild : equippedBuild
+  if (!build) return null
 
   const setStateWeapon = (key, value) => {
     if (key === "key") {

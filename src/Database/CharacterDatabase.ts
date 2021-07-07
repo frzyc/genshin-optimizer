@@ -27,12 +27,14 @@ export default class CharacterDatabase {
     CharacterDatabase.emitEvent()
     return true
   }
-  static update = (char: ICharacter) => {
+  static update = (char: ICharacter, emit = true) => {
     const dchar = deepClone(char)
     saveToLocalStorage(`char_${char.characterKey}`, dchar);
     CharacterDatabase.characterDatabase[char.characterKey] = dchar;
-    CharacterDatabase.emitEvent()
-    CharacterDatabase.emitCharEvent(dchar.characterKey, dchar)
+    if (emit) {
+      CharacterDatabase.emitEvent()
+      CharacterDatabase.emitCharEvent(dchar.characterKey, dchar)
+    }
   }
   static get = (characterKey: string): ICharacter | undefined => CharacterDatabase.characterDatabase[characterKey]
 

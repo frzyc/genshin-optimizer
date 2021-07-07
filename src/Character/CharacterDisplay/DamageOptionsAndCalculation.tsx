@@ -109,7 +109,7 @@ function CalculationDisplay({ characterSheet, weaponSheet, build }: { characterS
   </div>
 }
 function FormulaCalculationField({ fieldKeys, build, fieldIndex }: { fieldKeys: string[], build: ICalculatedStats, fieldIndex: number, }) {
-  const formula = usePromise(Formula.get(fieldKeys))
+  const formula = usePromise(Formula.get(fieldKeys), [fieldKeys])
   if (!formula) return null
   const formulaField = (formula as any).field as IFieldDisplay
   const fieldText = Character.getTalentFieldValue(formulaField, "text", build)
@@ -221,7 +221,7 @@ export default function DamageOptionsAndCalculation({ characterSheet, weaponShee
                       <StatInput
                         prependEle={<Button variant={eleKey} onClick={() => characterDispatch({ type: "statOverride", statKey: immunityStatKey, value: !elementImmunity, characterSheet, weaponSheet })} className="text-darkcontent">
                           <FontAwesomeIcon icon={elementImmunity ? faCheckSquare : faSquare} className="fa-fw" /> Immunity
-                </Button>}
+                        </Button>}
                         name={<b>{Stat.getStatName(statKey)}</b>}
                         value={Character.getStatValueWithOverride(character, characterSheet, weaponSheet, statKey)}
                         placeholder={Stat.getStatNameRaw(statKey)}

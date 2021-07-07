@@ -121,11 +121,18 @@ export default function CharacterDisplayCard({ characterKey: propCharacterKey, c
   const [character, characterDispatch] = useReducer(characterReducer, initialCharacter(propCharacterKey))
   const [compareAgainstEquipped, setcompareAgainstEquipped] = useState(false)
   const firstUpdate = useRef(true)
+  const weaponSheets = usePromise(WeaponSheet.getAll(), [])
+  const characterKey = propCharacter?.characterKey ?? character.characterKey
+  const characterSheet = usePromise(CharacterSheet.get(characterKey), [characterKey])
+  const weaponSheet = usePromise(WeaponSheet.get(character.weapon.key), [character.weapon.key])
+  const artifactSheets = usePromise(ArtifactSheet.getAll(), [])
+
   useEffect(() => {
     if (!propCharacterKey) return
     const char = { ...initialCharacter(propCharacterKey), ...CharacterDatabase.get(propCharacterKey) ?? {} }
     characterDispatch({ type: "overwrite", character: char })
   }, [propCharacterKey])
+
   useEffect(() => {
     if (!propCharacter) return
     const char = { ...initialCharacter(propCharacter.characterKey), ...propCharacter }
@@ -142,24 +149,21 @@ export default function CharacterDisplayCard({ characterKey: propCharacterKey, c
     editable && CharacterDatabase.update(character)
   }, [character, editable])
 
-  const characterKey = propCharacter?.characterKey ?? character.characterKey
-  const characterSheet = usePromise(CharacterSheet.get(characterKey))
-  const weaponSheets = usePromise(WeaponSheet.getAll())
+  //callback for when switching to a new character, and need to initiate a weapon.
   useEffect(() => {
-    if (weaponSheets && characterSheet && !character.weapon.key) {
+    if (!character.weapon.key && weaponSheets && characterSheet) {
       const possibleWeapons = WeaponSheet.getWeaponsOfType(weaponSheets, characterSheet.weaponTypeKey)
       //sort the weapons to get the lowest rarity weapon.
       const [weaponKey] = Object.entries(possibleWeapons).sort(([k1, ws1], [k2, ws2]) => ws1.rarity - ws2.rarity)[0]
       character.weapon.key = weaponKey
       characterDispatch({ weapon: character.weapon })
     }
-  }, [characterSheet, weaponSheets, character.weapon])
+  }, [characterSheet, weaponSheets])// eslint-disable-line react-hooks/exhaustive-deps
+
   useEffect(() => {//check for default value for traveler
     if (characterSheet && "talents" in characterSheet.sheet && !character.elementKey)
       characterDispatch({ elementKey: Object.keys(characterSheet.sheet.talents)[0] })
   }, [character.elementKey, characterSheet])
-  const weaponSheet = usePromise(WeaponSheet.get(character.weapon.key))
-  const artifactSheets = usePromise(ArtifactSheet.getAll())
 
   const setCharacterKey = useCallback(
     newCKey => {
@@ -342,7 +346,7 @@ function CharSelectDropdown({ characterSheet, weaponSheet, character, character:
   </InputGroup> : <span>{HeaderIconDisplay} {characterSheet && weaponSheet && Character.getLevelString(character)}</span>}</>
 }
 function CharDropdownItem({ characterKey, setCharacterKey }) {
-  const characterSheet = usePromise(CharacterSheet.get(characterKey))
+  const characterSheet = usePromise(CharacterSheet.get(characterKey), [characterKey])
   if (!characterSheet) return null
   return <Dropdown.Item onClick={() => setCharacterKey(characterKey)} className="pl-2 pr-0">
     <Row>

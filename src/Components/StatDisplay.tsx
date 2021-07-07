@@ -38,7 +38,7 @@ type StatDisplayProps = {
   statKey: string
 }
 export default function StatDisplay({ characterSheet, weaponSheet, character, equippedBuild, newBuild, editable, statKey }: StatDisplayProps) {
-  const formula = usePromise(Array.isArray(statKey) ? Formula.get(statKey) : undefined)
+  const formula = usePromise(Array.isArray(statKey) ? Formula.get(statKey) : undefined, [statKey])
 
   const { val, oldVal, fixed, unit, variant, label } = useMemo(() => {
     let val, oldVal, fixed, unit, variant, label: Displayable = ""

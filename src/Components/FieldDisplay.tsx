@@ -9,8 +9,8 @@ import { IFieldDisplay } from "../Types/IFieldDisplay";
 
 export default function FieldDisplay({ field, index, equippedBuild, newBuild, className = "p-2" }: { field: IFieldDisplay, index: number, equippedBuild?: ICalculatedStats, newBuild?: ICalculatedStats, className?: string }) {
   const compareAgainstEquipped = useContext(compareAgainstEquippedContext)
-  const stats = (newBuild ? newBuild : equippedBuild) as ICalculatedStats
-  const canShow = useMemo(() => field?.canShow?.(stats), [field, stats])
+  const stats = (newBuild ? newBuild : equippedBuild)
+  const canShow = useMemo(() => stats ? field?.canShow?.(stats) : false, [field, stats])
   const fixedVal = field?.fixed || 0
   const fieldVal = useMemo(() => {
     if (field.value) return Character.getTalentFieldValue(field, "value", stats)

@@ -13,7 +13,8 @@ type SkillDisplayCardProps = {
   editable: boolean,
 }
 export default function DocumentDisplay({ sections, characterDispatch, equippedBuild, newBuild, editable }: SkillDisplayCardProps) {
-  const build = newBuild ? newBuild : equippedBuild as ICalculatedStats //assumes at least one of them is not undefined
+  const build = newBuild ? newBuild : equippedBuild
+  if (!build) return null
   return <div>{sections?.map((section, i) => {
     if (!section.canShow!(build)) return null
     const talentText = evalIfFunc(section.text, build)

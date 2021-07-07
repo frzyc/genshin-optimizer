@@ -186,7 +186,8 @@ type SkillDisplayCardProps = {
   onClickTitle?: (any) => any
 }
 function SkillDisplayCard({ characterSheet, character: { elementKey, talentLevelKeys, }, characterDispatch, talentKey, subtitle, ascension, equippedBuild, newBuild, editable, onClickTitle }: SkillDisplayCardProps) {
-  let build = newBuild ? newBuild : equippedBuild as ICalculatedStats //assumes at least one of them is not undefined
+  let build = newBuild ? newBuild : equippedBuild
+  if (!build) return null
   let header: Displayable | null = null
 
   let talentLvlKey = 0

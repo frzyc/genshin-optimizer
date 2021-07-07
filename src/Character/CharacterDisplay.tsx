@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import Assets from '../Assets/Assets';
 import CharacterDatabase from '../Database/CharacterDatabase';
 import InfoComponent from '../Components/InfoComponent';
-import { allElements, CharacterKey } from '../Types/consts';
+import { allElements } from '../Types/consts';
 import { useForceUpdate, usePromise } from '../Util/ReactUtil';
 import { loadFromLocalStorage, saveToLocalStorage } from '../Util/Util';
 import Weapon from '../Weapon/Weapon';
@@ -52,7 +52,7 @@ export default function CharacterDisplay(props) {
     CharacterDatabase.registerListener(forceUpdate)
     return () => CharacterDatabase.unregisterListener(forceUpdate)
   }, [forceUpdate])
-  const allCharacterSheets: StrictDict<CharacterKey, CharacterSheet> | {} = usePromise(CharacterSheet.getAll()) ?? {}
+  const allCharacterSheets = usePromise(CharacterSheet.getAll(), []) ?? {}
   const sortingFunc = {
     level: (ck) => CharacterDatabase.get(ck)?.level ?? 0,
     rarity: (ck) => allCharacterSheets[ck]?.star

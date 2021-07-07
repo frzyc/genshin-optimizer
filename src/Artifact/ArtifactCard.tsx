@@ -33,12 +33,12 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
     artifactId && ArtifactDatabase.registerArtListener(artifactId, forceUpdateHook)
     return () => { artifactId && ArtifactDatabase.unregisterArtListener(artifactId, forceUpdateHook) }
   }, [artifactId, forceUpdateHook])
-  const sheet = usePromise(ArtifactSheet.get((artifactObj ?? (artifactId ? ArtifactDatabase.get(artifactId) : undefined))?.setKey))
+  const sheet = usePromise(ArtifactSheet.get((artifactObj ?? (artifactId ? ArtifactDatabase.get(artifactId) : undefined))?.setKey), [artifactObj, artifactId])
   const equipOnChar = (charKey) => Artifact.equipArtifactOnChar(artifactId, charKey)
 
   const editable = !artifactObj // dont allow edit for flex artifacts
   const art = artifactObj ?? ArtifactDatabase.get(artifactId);
-  const characterSheet = usePromise(CharacterSheet.get(art?.location ?? ""))
+  const characterSheet = usePromise(CharacterSheet.get(art?.location ?? ""), [art?.location])
   if (!art) return null
   if (art.substats[0].rolls === undefined) Artifact.substatsValidation(art)
 

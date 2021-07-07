@@ -60,7 +60,7 @@ export default function ArtifactDisplay(props) {
   const scrollRef = useRef(null)
   const invScrollRef = useRef(null)
   const [dbDirty, forceUpdate] = useForceUpdate()
-  const artifactSheets = usePromise(ArtifactSheet.getAll())
+  const artifactSheets = usePromise(ArtifactSheet.getAll(), [])
   const effFilterSet = useMemo(() => new Set(effFilter), [effFilter]) as Set<SubstatKey>
   const deleteArtifact = useCallback(
     id => {
@@ -138,7 +138,7 @@ export default function ArtifactDisplay(props) {
     return { artifactsToShow: artifacts.slice(currentPageIndex * maxNumArtifactsToDisplay, (currentPageIndex + 1) * maxNumArtifactsToDisplay), numPages, currentPageIndex }
   }, [artifacts, pageIdex, maxNumArtifactsToDisplay])
 
-  const locationCharacterSheet = usePromise(CharacterSheet.get(filterLocation))
+  const locationCharacterSheet = usePromise(CharacterSheet.get(filterLocation), [filterLocation])
   let locationDisplay
   if (!filterLocation) locationDisplay = t("locationDisplay", { value: t("filterLocation.any") })
   else if (filterLocation === "Inventory") locationDisplay = t("locationDisplay", { value: t("filterLocation.inventory") })

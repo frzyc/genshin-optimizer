@@ -25,7 +25,7 @@ let uploadDisplayReset
 export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }) {
   const { t } = useTranslation("artifact")
   const [artifact, artifactDispatch] = useReducer(artifactReducer, undefined)
-  const artifactSheets = usePromise(ArtifactSheet.getAll())
+  const artifactSheets = usePromise(ArtifactSheet.getAll(), [])
 
   const artifactInEditor = artifact !== undefined
   const sheet = artifact ? artifactSheets?.[artifact.setKey] : undefined

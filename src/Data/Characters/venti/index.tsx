@@ -192,7 +192,6 @@ const char: ICharacterSheet = {
             if (!value) return ""
             const [num, eleKey] = value
             if (!num) return ""
-            console.log(eleKey)
             return <TransWrapper ns="char_venti" key18="fullBurstDMG.text"><span>
               <h6>Full Elemental Burst DMG</h6>
               <p className="mb-2">This calculates the total Elemental Burst DMG, including swirl. This calculation assumes:</p>
