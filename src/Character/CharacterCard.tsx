@@ -34,6 +34,7 @@ export default function CharacterCard({ characterKey, onEdit, onDelete, cardClas
   if (!character || !characterSheet || !weaponSheet || !stats) return null;
 
   const { weapon, constellation } = character
+  const { tlvl } = stats
   const name = characterSheet.name
   const elementKey = stats.characterEle
   const weaponTypeKey = characterSheet.weaponTypeKey
@@ -70,9 +71,14 @@ export default function CharacterCard({ characterKey, onEdit, onDelete, cardClas
           <Image src={characterSheet.thumbImg} className={`thumb-big grad-${characterSheet.star}star p-0`} thumbnail />
         </Col>
         <Col>
-          <h3 className="mb-0">{Character.getLevelString(character)} {`C${constellation}`}</h3>
-          <h5 className="mb-0"><Stars stars={characterSheet.star} colored /></h5>
-          <h2 className="mb-0"><Image src={Assets.elements[elementKey]} className="inline-icon" /> <Image src={Assets.weaponTypes?.[weaponTypeKey]} className="inline-icon" /></h2>
+          <h5 className="mb-0">Lv. {Character.getLevelString(character)} {`C${constellation}`}</h5>
+          <h6 className="mb-0">
+            <Badge variant="secondary"><strong className="mx-1">{tlvl.auto + 1}</strong></Badge>{` `}
+            <Badge variant="secondary"><strong className="mx-1">{tlvl.skill + 1}</strong></Badge>{` `}
+            <Badge variant="secondary"><strong className="mx-1">{tlvl.burst + 1}</strong></Badge>
+          </h6>
+          <h6 className="mb-0"><Stars stars={characterSheet.star} colored /></h6>
+          <h4 className="mb-0"><Image src={Assets.elements[elementKey]} className="inline-icon" /> <Image src={Assets.weaponTypes?.[weaponTypeKey]} className="inline-icon" /></h4>
         </Col>
       </Row>
       <Row className="mb-2">

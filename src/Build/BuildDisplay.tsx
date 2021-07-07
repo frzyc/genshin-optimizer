@@ -690,16 +690,23 @@ function ArtifactDisplayItem({ characterSheet, weaponSheet, index, characterKey,
   const sheets = usePromise(ArtifactSheet.getAll(), [])
   const character = CharacterDatabase.get(characterKey)
   if (!character) return null
+  const { equippedArtifacts } = character
+  const currentlyEquipped = allSlotKeys.every(slotKey => equippedArtifacts[slotKey] === build.equippedArtifacts?.[slotKey])
   return (<div>
     <ListGroup.Item
       variant={index % 2 ? "customdark" : "customdarker"} className="text-white" action
       onClick={onClick}
     >
-      <h5>{(Object.entries(build.setToSlots) as [ArtifactSetKey, SlotKey[]][]).sort(([key1, slotarr1], [key2, slotarr2]) => slotarr2.length - slotarr1.length).map(([key, slotarr]) =>
-        <Badge key={key} variant="primary" className="mr-2">
-          {slotarr.map(slotKey => artifactSlotIcon(slotKey))} {sheets?.[key].name ?? ""}
-        </Badge>
-      )}</h5>
+      <h5 className="mb-2"><Row>
+        <Col xs="auto">
+          <Badge variant="info"><strong>{index + 1}{currentlyEquipped ? " (Equipped)" : ""}</strong></Badge>
+        </Col>
+        <Col xs="auto">{(Object.entries(build.setToSlots) as [ArtifactSetKey, SlotKey[]][]).sort(([key1, slotarr1], [key2, slotarr2]) => slotarr2.length - slotarr1.length).map(([key, slotarr]) =>
+          <Badge key={key} variant={currentlyEquipped ? "success" : "primary"} className="mr-2">
+            {slotarr.map(slotKey => artifactSlotIcon(slotKey))} {sheets?.[key].name ?? ""}
+          </Badge>
+        )}</Col>
+      </Row></h5>
       <StatDisplayComponent editable={false} {...{ characterSheet, weaponSheet, character, newBuild: build, statsDisplayKeys, cardbg: (index % 2 ? "lightcontent" : "darkcontent") }} />
     </ListGroup.Item>
   </div>)

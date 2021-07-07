@@ -1,7 +1,7 @@
 import { faEdit, faGavel, faQuoteLeft, faSave, faUndo } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import React, { useState } from "react"
-import { Button, Card, Col, Dropdown, DropdownButton, Image, InputGroup, ListGroup, Row } from "react-bootstrap"
+import { Badge, Button, Card, Col, Dropdown, DropdownButton, Image, InputGroup, ListGroup, Row } from "react-bootstrap"
 import Assets from "../../Assets/Assets"
 import ConditionalDisplay from "../../Components/ConditionalDisplay"
 import CustomFormControl from "../../Components/CustomFormControl"
@@ -36,6 +36,7 @@ type CharacterOverviewPaneProps = {
 export default function CharacterOverviewPane({ characterSheet, weaponSheet, editable, character, character: { constellation, level, ascension }, characterDispatch, equippedBuild, newBuild }: CharacterOverviewPaneProps) {
   const build = newBuild ? newBuild : equippedBuild
   if (!build) return null
+  const { tlvl } = build
   const elementKey = build.characterEle
   const weaponTypeKey = characterSheet.weaponTypeKey
   return <Row>
@@ -44,26 +45,23 @@ export default function CharacterOverviewPane({ characterSheet, weaponSheet, edi
       <Card bg="lightcontent" text={"lightfont" as any} className="mb-2">
         <Card.Img src={characterSheet.cardImg} className="w-100 h-auto" />
         <Card.Body>
-          <Row>
-            <Col xs={12}>
-              <h3>{characterSheet.name} <Image src={Assets.elements[elementKey]} className="inline-icon" /> <Image src={Assets.weaponTypes?.[weaponTypeKey]} className="inline-icon" /></h3>
-              <h6><Stars stars={characterSheet.star} colored /></h6>
-            </Col>
-            <Col><h5>Level: {Character.getLevelString(character)}</h5></Col>
-            <Col xs={12}>
-              <Row>
-                <Col xs={12}><h5>{characterSheet.constellationName}</h5></Col>
-                <Col>
-                  <Row className="px-2">
-                    {[...Array(6).keys()].map(i =>
-                      <Col xs={4} className="p-1" key={i}>
-                        <Image src={characterSheet.getTalentOfKey(`constellation${i + 1}`, build.characterEle)?.img} className={`w-100 h-auto ${constellation > i ? "" : "overlay-dark"} cursor-pointer`}
-                          roundedCircle onClick={() => editable && characterDispatch({ constellation: (i + 1) === constellation ? i : i + 1 })} />
-                      </Col>)}
-                  </Row>
-                </Col>
-              </Row>
-            </Col>
+          <h3>{characterSheet.name} <Image src={Assets.elements[elementKey]} className="inline-icon" /> <Image src={Assets.weaponTypes?.[weaponTypeKey]} className="inline-icon" /></h3>
+          <h6><Stars stars={characterSheet.star} colored /></h6>
+          <h5>Level: {Character.getLevelString(character)}</h5>
+          <Row className="px-2 mb-2">
+            {["auto", "skill", "burst"].map(tKey =>
+              <Col xs={4} className="p-1" key={tKey}>
+                <Image src={characterSheet.getTalentOfKey(tKey, build.characterEle)?.img} className="w-100 h-auto" roundedCircle />
+                <h5 className="mb-0"><Badge variant="info" style={{ position: "absolute", bottom: "0", right: "0" }}><strong>{tlvl[tKey] + 1}</strong></Badge></h5>
+              </Col>)}
+          </Row>
+          <div className="text-center"><h6>{characterSheet.constellationName}</h6></div>
+          <Row className="px-2">
+            {[...Array(6).keys()].map(i =>
+              <Col xs={4} className="p-1" key={i}>
+                <Image src={characterSheet.getTalentOfKey(`constellation${i + 1}`, build.characterEle)?.img} className={`w-100 h-auto ${constellation > i ? "" : "overlay-dark"} cursor-pointer`}
+                  roundedCircle onClick={() => editable && characterDispatch({ constellation: (i + 1) === constellation ? i : i + 1 })} />
+              </Col>)}
           </Row>
         </Card.Body>
       </Card>
