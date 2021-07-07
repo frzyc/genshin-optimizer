@@ -2,8 +2,8 @@
   "files": {
     "static/js/0.b7671663.chunk.js": "/genshin-optimizer/static/js/0.b7671663.chunk.js",
     "static/js/0.b7671663.chunk.js.map": "/genshin-optimizer/static/js/0.b7671663.chunk.js.map",
-    "static/js/1.b64da31f.chunk.js": "/genshin-optimizer/static/js/1.b64da31f.chunk.js",
-    "static/js/1.b64da31f.chunk.js.map": "/genshin-optimizer/static/js/1.b64da31f.chunk.js.map",
+    "static/js/1.ea252604.chunk.js": "/genshin-optimizer/static/js/1.ea252604.chunk.js",
+    "static/js/1.ea252604.chunk.js.map": "/genshin-optimizer/static/js/1.ea252604.chunk.js.map",
     "static/js/2.b775a0c2.chunk.js": "/genshin-optimizer/static/js/2.b775a0c2.chunk.js",
     "static/js/2.b775a0c2.chunk.js.map": "/genshin-optimizer/static/js/2.b775a0c2.chunk.js.map",
     "static/js/3.84692fc1.chunk.js": "/genshin-optimizer/static/js/3.84692fc1.chunk.js",
@@ -11,10 +11,10 @@
     "static/js/4.5a00087c.chunk.js": "/genshin-optimizer/static/js/4.5a00087c.chunk.js",
     "static/js/4.5a00087c.chunk.js.map": "/genshin-optimizer/static/js/4.5a00087c.chunk.js.map",
     "main.css": "/genshin-optimizer/static/css/main.9a133fa7.chunk.css",
-    "main.js": "/genshin-optimizer/static/js/main.bc6a1064.chunk.js",
-    "main.js.map": "/genshin-optimizer/static/js/main.bc6a1064.chunk.js.map",
-    "runtime-main.js": "/genshin-optimizer/static/js/runtime-main.5de5e53a.js",
-    "runtime-main.js.map": "/genshin-optimizer/static/js/runtime-main.5de5e53a.js.map",
+    "main.js": "/genshin-optimizer/static/js/main.aae0f6ea.chunk.js",
+    "main.js.map": "/genshin-optimizer/static/js/main.aae0f6ea.chunk.js.map",
+    "runtime-main.js": "/genshin-optimizer/static/js/runtime-main.56a8516c.js",
+    "runtime-main.js.map": "/genshin-optimizer/static/js/runtime-main.56a8516c.js.map",
     "static/js/7.f574e9c4.chunk.js": "/genshin-optimizer/static/js/7.f574e9c4.chunk.js",
     "static/js/7.f574e9c4.chunk.js.map": "/genshin-optimizer/static/js/7.f574e9c4.chunk.js.map",
     "static/js/8.03d2c8e7.chunk.js": "/genshin-optimizer/static/js/8.03d2c8e7.chunk.js",
@@ -25,14 +25,14 @@
     "static/js/10.9fb5113d.chunk.js.map": "/genshin-optimizer/static/js/10.9fb5113d.chunk.js.map",
     "static/js/11.4507cd54.chunk.js": "/genshin-optimizer/static/js/11.4507cd54.chunk.js",
     "static/js/11.4507cd54.chunk.js.map": "/genshin-optimizer/static/js/11.4507cd54.chunk.js.map",
-    "static/js/12.fe2ce5a3.chunk.js": "/genshin-optimizer/static/js/12.fe2ce5a3.chunk.js",
-    "static/js/12.fe2ce5a3.chunk.js.map": "/genshin-optimizer/static/js/12.fe2ce5a3.chunk.js.map",
+    "static/js/12.b67d4f4e.chunk.js": "/genshin-optimizer/static/js/12.b67d4f4e.chunk.js",
+    "static/js/12.b67d4f4e.chunk.js.map": "/genshin-optimizer/static/js/12.b67d4f4e.chunk.js.map",
     "static/js/13.ba52d1c4.chunk.js": "/genshin-optimizer/static/js/13.ba52d1c4.chunk.js",
     "static/js/13.ba52d1c4.chunk.js.map": "/genshin-optimizer/static/js/13.ba52d1c4.chunk.js.map",
     "static/js/14.4eedc06c.chunk.js": "/genshin-optimizer/static/js/14.4eedc06c.chunk.js",
     "static/js/14.4eedc06c.chunk.js.map": "/genshin-optimizer/static/js/14.4eedc06c.chunk.js.map",
-    "static/js/15.041d5a18.chunk.js": "/genshin-optimizer/static/js/15.041d5a18.chunk.js",
-    "static/js/15.041d5a18.chunk.js.map": "/genshin-optimizer/static/js/15.041d5a18.chunk.js.map",
+    "static/js/15.f625d9b1.chunk.js": "/genshin-optimizer/static/js/15.f625d9b1.chunk.js",
+    "static/js/15.f625d9b1.chunk.js.map": "/genshin-optimizer/static/js/15.f625d9b1.chunk.js.map",
     "static/js/16.e8164dff.chunk.js": "/genshin-optimizer/static/js/16.e8164dff.chunk.js",
     "static/js/16.e8164dff.chunk.js.map": "/genshin-optimizer/static/js/16.e8164dff.chunk.js.map",
     "static/js/17.ba13e822.chunk.js": "/genshin-optimizer/static/js/17.ba13e822.chunk.js",
@@ -841,9 +841,9 @@
     "static/media/tools.2724d338.png": "/genshin-optimizer/static/media/tools.2724d338.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.5de5e53a.js",
+    "static/js/runtime-main.56a8516c.js",
     "static/js/7.f574e9c4.chunk.js",
     "static/css/main.9a133fa7.chunk.css",
-    "static/js/main.bc6a1064.chunk.js"
+    "static/js/main.aae0f6ea.chunk.js"
   ]
 }
