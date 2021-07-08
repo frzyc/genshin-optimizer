@@ -8,9 +8,7 @@ export const tagColor = {
   "FFACFFFF": "electro"
 } as const
 export const langKeys = ["chs", "cht", "de", "en", "es", "fr", "id", "ja", "ko", "pt", "ru", "th", "vi"] as const
-export type ColorTag = typeof tagColor[keyof typeof tagColor]
 export type Language = typeof langKeys[number]
-
 
 export const characterIdMap = {
   //10000000: Kate
@@ -58,6 +56,8 @@ export const characterIdMap = {
   // 11000010: "TEMPLATE",
   // 11000011: "TEMPLATE",
 } as const
+export type characterId = keyof typeof characterIdMap
+export const characterIds = Object.keys(characterIdMap).map(id => parseInt(id))
 
 export const weaponMap = {
   WEAPON_SWORD_ONE_HAND: "sword",
@@ -66,6 +66,7 @@ export const weaponMap = {
   WEAPON_BOW: "bow",
   WEAPON_POLE: "polearm"
 } as const
+
 export const propTypeMap = {
   FIGHT_PROP_BASE_HP: "hp",
   FIGHT_PROP_BASE_ATTACK: "atk",
@@ -92,3 +93,7 @@ export const QualityTypeMap = {
   QUALITY_BLUE: 3,
   QUALITY_GREEN: 2,
 } as const
+
+
+export type ColorTag = typeof tagColor[keyof typeof tagColor]
+export type PropKey = keyof typeof propTypeMap

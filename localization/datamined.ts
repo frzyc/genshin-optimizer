@@ -1,5 +1,8 @@
 import { characterIdMap, Language, propTypeMap, QualityTypeMap, weaponMap } from './const'
 import data from './Data'
+import ascensionData from './DataminedModules/ascension'
+import characterData from './DataminedModules/character'
+import expCurve from './DataminedModules/expCurve'
 import { parsingFunctions, preprocess } from './parseUtil'
 import { crawlObject, dumpFile, layeredAssignment } from './Util'
 const fs = require('fs')
@@ -47,47 +50,14 @@ Object.entries(languageData).forEach(([lang, data]) => {
   })
 })
 
-/** parsing character data/MapHash. Will superseed a lot of the above code for manual localization parsing. */
-const characterIds = Object.keys(characterIdMap).map(id => parseInt(id))
+/* ####################################################
+ * # Importing data from datmained files.
+ */
 
-//ascenion parsing
-const ascensionSrc = require('./GenshinData/ExcelBinOutput/AvatarPromoteExcelConfigData.json')
-const ascensionData = {}
-ascensionSrc.forEach(asc => {
-  const { AvatarPromoteId, PromoteLevel = 0, AddProps } = asc
-  if (!ascensionData[AvatarPromoteId]) ascensionData[AvatarPromoteId] = []
-  const props = Object.fromEntries(AddProps.map(({ PropType, Value = 0 }) =>
-    [propTypeMap[PropType], Value]))
-  ascensionData[AvatarPromoteId][PromoteLevel] = {
-    props
-  }
-})
-
-//exp curve
-const expCurveSrc = require('./GenshinData/ExcelBinOutput/AvatarCurveExcelConfigData.json')
-const parsedCurve = {}
-expCurveSrc.forEach(({ Level, CurveInfos }) =>
-  CurveInfos.forEach(({ Type, Value }) => {
-    if (!parsedCurve[Type]) parsedCurve[Type] = {}
-    parsedCurve[Type][Level] = Value
-  }))
-dumpFile(`../src/Character/expCurve_gen.json`, parsedCurve)
-
-
-//skill depot TODO: use this to extract talent strings for localization
-const skillDepotSrc = require('./GenshinData/ExcelBinOutput/AvatarSkillDepotExcelConfigData.json')
-const skillDepot = Object.fromEntries(skillDepotSrc.map(skill => {
-  const { Id } = skill
-  return [Id, skill]
-}))
-
-const characterDataSrc = require('./GenshinData/ExcelBinOutput/AvatarExcelConfigData.json')
-//character data
-const characterDataMapped = Object.fromEntries(characterDataSrc.filter(charData => characterIds.includes(charData.Id)).map(charData =>
-  [characterIdMap[charData.Id], charData]))
+dumpFile(`../src/Character/expCurve_gen.json`, expCurve)
 
 //parse baseStat/ascension/basic data
-const characterData = Object.fromEntries(Object.entries(characterDataMapped).map(([characterKey, charData]) => {
+const characterDataDump = Object.fromEntries(Object.entries(characterData).filter(([charid, charData]) => charid in characterIdMap).map(([charid, charData]) => {
   const { WeaponType, QualityType, AvatarPromoteId, HpBase, AttackBase, DefenseBase, PropGrowCurves } = charData
   const curves = Object.fromEntries(PropGrowCurves.map(({ Type, GrowCurve }) => [propTypeMap[Type], GrowCurve]))
   const result = {
@@ -99,11 +69,11 @@ const characterData = Object.fromEntries(Object.entries(characterDataMapped).map
     ascensions: ascensionData[AvatarPromoteId]
   }
 
-  return [characterKey, result]
+  return [characterIdMap[charid], result]
 }))
 
 //dump data file to respective character directory.
-Object.entries(characterData).forEach(([characterKey, data]) => {
+Object.entries(characterDataDump).forEach(([characterKey, data]) => {
   if (characterKey.includes('_')) {//traveler, for multi element support
     const [charKey, eleKey] = characterKey.split("_")
     dumpFile(`../src/Data/Characters/${charKey}/data_${eleKey}_gen.json`, data)
@@ -112,7 +82,7 @@ Object.entries(characterData).forEach(([characterKey, data]) => {
 })
 
 //parse MapHash
-const characterMapHash = Object.fromEntries(Object.entries(characterDataMapped).map(([characterKey, charData]) => {
+const characterMapHash = Object.fromEntries(Object.entries(characterData).filter(([charid, charData]) => charid in characterIdMap).map(([charid, charData]) => {
   //TODO SkillDepotId
   const { NameTextMapHash, DescTextMapHash } = charData
   const result = {
@@ -122,5 +92,5 @@ const characterMapHash = Object.fromEntries(Object.entries(characterDataMapped).
     },
   }
 
-  return [characterKey, result]
+  return [characterIdMap[charid], result]
 }))
