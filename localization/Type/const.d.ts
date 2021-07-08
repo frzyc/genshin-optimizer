@@ -5,6 +5,7 @@ interface ISkill {
   description: transID
   [key: string]: transID
 }
+/**@deprecated these skill based strings can be parsed from datamined...*/
 export type ICharacter = {
   name: transID,
   auto: {
