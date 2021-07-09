@@ -15,11 +15,13 @@ describe('flex import export', () => {
   afterEach(() => localStorage.clear())
 
   test('should support round tripping', () => {
-    expect(parseFlexObj(createFlexObj("hutao"))[0]).toEqual(flexObj)
+    expect(parseFlexObj(createFlexObj("hutao")!)![0]).toEqual(flexObj)
   })
   test('should support old format', () => {
-    let [obj] = parseFlexObj(oldURL.split("flex?")[1])
+    const [{ character, artifacts }] = parseFlexObj(oldURL.split("flex?")[1])!
     // We're dropping conditional values and infusion from old version
-    expect({ ...obj, conditionalValues: flexObj.conditionalValues, infusionAura: 'pyro' }).toEqual(flexObj)
+    character.conditionalValues = flexObj.character.conditionalValues
+    character.infusionAura = 'pyro'
+    expect({ character, artifacts }).toEqual(flexObj)
   })
 })

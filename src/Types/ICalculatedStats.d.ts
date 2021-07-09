@@ -18,11 +18,12 @@ export default interface ICalculatedStats {
   mainStatAssumptionLevel: number
   modifiers?: object
   equippedArtifacts?: StrictDict<SlotKey, string>
-  setToSlots: object//TODO: type
+  setToSlots: object // TODO: type
   weaponType: string
   hitMode: HitModeKey
   reactionMode: reactionModeKey | null
   infusionAura: ElementKey | ""
+  infusionSelf?: ElementKey
   finalHP: number
 }
 

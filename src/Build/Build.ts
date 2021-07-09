@@ -196,8 +196,7 @@ function accumulate(slotKey, art: IArtifact, setCount, accu, stats, artifactSetE
   * @param {*} overwriteElement - Override the hit to be the character's elemental, that is not part of infusion.
   */
 export function getTalentStatKey(skillKey: string, stats: ICalculatedStats, overwriteElement?: ElementKey | "physical") {
-  const { hitMode = "", infusionAura = "", reactionMode = null, characterEle = "anemo", weaponType = "sword" } = stats
-  const infusionSelf = "" // TODO: check if we have it in `stats.infusionSelf`
+  const { hitMode = "", infusionAura = "", infusionSelf = "", reactionMode = null, characterEle = "anemo", weaponType = "sword" } = stats
   if ((Object.keys(ElementalData) as any).includes(skillKey)) return `${skillKey}_elemental_${hitMode}`//elemental DMG
   if (!overwriteElement && weaponType === "catalyst") overwriteElement = characterEle
 
@@ -216,8 +215,7 @@ export function getTalentStatKey(skillKey: string, stats: ICalculatedStats, over
 
 export function getTalentStatKeyVariant(skillKey: string, stats: ICalculatedStats, overwriteElement: ElementKey | "physical" | undefined | "" = "") {
   if ((Object.keys(ElementalData) as any).includes(skillKey)) return skillKey//elemental DMG
-  const { infusionAura = "", reactionMode = null, characterEle = "anemo", weaponType = "sword" } = stats
-  const infusionSelf = "" // TODO: check if we have it in `stats.infusionSelf`
+  const { infusionAura = "", infusionSelf = "", reactionMode = null, characterEle = "anemo", weaponType = "sword" } = stats
   if (!overwriteElement && weaponType === "catalyst") overwriteElement = characterEle
 
   if (skillKey === "elemental" || skillKey === "burst" || skillKey === "skill" || overwriteElement) {

@@ -11,10 +11,6 @@ function DatabaseInitAndVerify() {
   const dbVersion = getDatabaseVersion()
   //edit the data before the database is populated
 
-  if (dbVersion < 2) {
-    // No longer support < dbv2
-    clearDatabase()
-  }
   if (dbVersion < 3) {
     const state = loadFromLocalStorage("CharacterDisplay.state")
     if (state) {
