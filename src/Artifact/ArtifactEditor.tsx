@@ -21,8 +21,8 @@ import UploadDisplay from './UploadDisplay';
 
 const allSubstatFilter = new Set(allSubstats)
 
-let uploadDisplayReset
-export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }) {
+let uploadDisplayReset: (() => void) | undefined
+export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: { artifactIdToEdit: string, cancelEdit: () => void }) {
   const { t } = useTranslation("artifact")
   const [artifact, artifactDispatch] = useReducer(artifactReducer, undefined)
   const artifactSheets = usePromise(ArtifactSheet.getAll(), [])
@@ -38,7 +38,7 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }) {
     }
   }, [artifactIdToEdit, artifact?.id])
 
-  const getUpdloadDisplayReset = reset => uploadDisplayReset = reset
+  const getUpdloadDisplayReset = (reset: () => void) => uploadDisplayReset = reset
 
   const reset = useCallback(() => {
     cancelEdit?.();
@@ -246,7 +246,7 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }) {
   </Card >
 }
 
-function SubstatInput({ index, artifact, setSubstat, className }: { index: number, artifact: IArtifact | undefined, setSubstat: (index: number, substat: Substat) => void, className }) {
+function SubstatInput({ index, artifact, setSubstat, className }: { index: number, artifact: IArtifact | undefined, setSubstat: (index: number, substat: Substat) => void, className: string }) {
   const { t } = useTranslation("artifact")
   const { mainStatKey = "", substats = [] } = artifact ?? {}
   const { key = "", value = 0, rolls = [], efficiency = 0 } = artifact?.substats[index] ?? {}
@@ -302,8 +302,8 @@ function SubstatInput({ index, artifact, setSubstat, className }: { index: numbe
       <CustomFormControl
         float={unit === "%"}
         placeholder={t`editor.substat.selectSub`}
-        value={key ? value : ""}
-        onChange={value => setSubstat(index, { key, value })}
+        value={key ? value : undefined}
+        onChange={value => setSubstat(index, { key, value: value ?? 0 })}
         disabled={!key}
         allowEmpty
       />

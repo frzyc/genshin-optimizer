@@ -17,6 +17,7 @@ import { Stars } from '../Components/StarDisplay';
 import ArtifactDatabase from '../Database/ArtifactDatabase';
 import Stat from '../Stat';
 import { allSubstats, IArtifact, Substat, SubstatKey } from '../Types/artifact';
+import { CharacterKey } from '../Types/consts';
 import { useForceUpdate, usePromise } from '../Util/ReactUtil';
 import { valueString } from '../Util/UIUtil';
 import Artifact from './Artifact';
@@ -34,7 +35,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
     return () => { artifactId && ArtifactDatabase.unregisterArtListener(artifactId, forceUpdateHook) }
   }, [artifactId, forceUpdateHook])
   const sheet = usePromise(ArtifactSheet.get((artifactObj ?? (artifactId ? ArtifactDatabase.get(artifactId) : undefined))?.setKey), [artifactObj, artifactId])
-  const equipOnChar = (charKey) => Artifact.equipArtifactOnChar(artifactId, charKey)
+  const equipOnChar = (charKey: CharacterKey | "") => Artifact.equipArtifactOnChar(artifactId, charKey)
 
   const editable = !artifactObj // dont allow edit for flex artifacts
   const art = artifactObj ?? ArtifactDatabase.get(artifactId);

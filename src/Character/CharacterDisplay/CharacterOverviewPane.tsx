@@ -1,10 +1,9 @@
-import { faEdit, faGavel, faQuoteLeft, faSave, faUndo } from "@fortawesome/free-solid-svg-icons"
+import { faEdit, faGavel, faQuoteLeft, faSave } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import React, { useState } from "react"
-import { Badge, Button, Card, Col, Dropdown, DropdownButton, Image, InputGroup, ListGroup, Row } from "react-bootstrap"
+import { Badge, Button, Card, Col, Dropdown, DropdownButton, Image, ListGroup, Row } from "react-bootstrap"
 import Assets from "../../Assets/Assets"
 import ConditionalDisplay from "../../Components/ConditionalDisplay"
-import CustomFormControl from "../../Components/CustomFormControl"
 import DocumentDisplay from "../../Components/DocumentDisplay"
 import FieldDisplay from "../../Components/FieldDisplay"
 import { Stars } from "../../Components/StarDisplay"
@@ -14,7 +13,7 @@ import Conditional from "../../Conditional/Conditional"
 import { LevelNameData } from "../../Data/WeaponData"
 import Stat from "../../Stat"
 import { ICharacter } from "../../Types/character"
-import { allElements, characterSpecializedStatKeys } from "../../Types/consts"
+import { allElements, allRarities } from "../../Types/consts"
 import ICalculatedStats from "../../Types/ICalculatedStats"
 import { IConditionals } from "../../Types/IConditional"
 import statsToFields from "../../Util/FieldUtil"
@@ -90,9 +89,9 @@ function WeaponStatsEditorCardWeaponDropdown({ weaponSheet, weaponTypeKey, setSt
   if (!weaponSheets) return null
 
   return <DropdownButton title={weaponSheet.name}>
-    {[...Array(5).keys()].reverse().map(key => key + 1).map((star, i, arr) => <React.Fragment key={star}>
-      <Dropdown.ItemText key={"star" + star}><Stars stars={star} /></Dropdown.ItemText>
-      {Object.entries(WeaponSheet.getWeaponsOfType(weaponSheets, weaponTypeKey)).filter(([, weaponObj]: any) => weaponObj.rarity === star).map(([key, weaponObj]: any) =>
+    {allRarities.map((stars, i, arr) => <React.Fragment key={stars}>
+      <Dropdown.ItemText key={"star" + stars}><Stars stars={stars} /></Dropdown.ItemText>
+      {Object.entries(WeaponSheet.getWeaponsOfType(weaponSheets, weaponTypeKey)).filter(([, weaponObj]: any) => weaponObj.rarity === stars).map(([key, weaponObj]: any) =>
         <Dropdown.Item key={key} onClick={() => setStateWeapon("key", key)}>
           {weaponObj.name}
         </Dropdown.Item>
@@ -192,8 +191,6 @@ function WeaponStatsEditorCard({ characterSheet, weaponSheet, editable, characte
             </Col>}
             <Col xs={12} className="mb-2">
               <StatInput
-                prependEle={undefined}
-                disabled={undefined}
                 name={<span><FontAwesomeIcon icon={faGavel} className="mr-2" />ATK</span>}
                 placeholder="Weapon Attack"
                 value={weaponDisplayMainVal}
@@ -204,8 +201,6 @@ function WeaponStatsEditorCard({ characterSheet, weaponSheet, editable, characte
             </Col>
             {substatKey && <Col xs={12} className="mb-2">
               <StatInput
-                prependEle={undefined}
-                disabled={undefined}
                 name={<span><span className="mr-2">{StatIconEle(substatKey)}</span>{Stat.getStatName(substatKey)}</span>}
                 placeholder="Weapon Substat"
                 value={weaponDisplaySubVal}
@@ -269,7 +264,7 @@ function MainStatsCards({ characterSheet, weaponSheet, editable, character, char
     "burst_dmg_", "burst_critRate_",
     "dmg_", "moveSPD_", "atkSPD_", "weakspotDMG_"]
 
-  const specializedStatKey = Character.getStatValueWithOverride(character, characterSheet, weaponSheet, "specializedStatKey")
+  const specializedStatKey = characterSheet.getSpecializedStat(character.ascension)
   const specializedStatVal = Character.getStatValueWithOverride(character, characterSheet, weaponSheet, "specializedStatVal");
   const specializedStatUnit = Stat.getStatUnit(specializedStatKey)
 
@@ -309,33 +304,15 @@ function MainStatsCards({ characterSheet, weaponSheet, editable, character, char
               </Col>)}
 
             <Col lg={6} xs={12}>
-              <InputGroup>
-                <DropdownButton
-                  title={Stat.getStatNameWithPercent(specializedStatKey, "Specialized Stat")}
-                  as={InputGroup.Prepend}
-                >
-                  <Dropdown.ItemText>Select Specialized Stat </Dropdown.ItemText>
-                  {characterSpecializedStatKeys.map(key =>
-                    <Dropdown.Item key={key} onClick={() => characterDispatch({ type: "statOverride", statKey: "specializedStatKey", value: key, characterSheet, weaponSheet })} >
-                      {Stat.getStatNameWithPercent(key)}
-                    </Dropdown.Item>)}
-                </DropdownButton>
-                <CustomFormControl float={isPercentSpecialStatSelect}
-                  placeholder="Character Special Stat"
-                  value={Character.getStatValueWithOverride(character, characterSheet, weaponSheet, "specializedStatVal")}
-                  onChange={value => characterDispatch({ type: "statOverride", statKey: "specializedStatVal", value, characterSheet, weaponSheet })} />
-                <InputGroup.Append>
-                  {isPercentSpecialStatSelect && <InputGroup.Text>%</InputGroup.Text>}
-                  <Button onClick={() => {
-                    characterDispatch({ type: "statOverride", statKey: "specializedStatKey", value: Character.getBaseStatValue(character, characterSheet, weaponSheet, "specializedStatKey"), characterSheet, weaponSheet })
-                    characterDispatch({ type: "statOverride", statKey: "specializedStatVal", value: Character.getBaseStatValue(character, characterSheet, weaponSheet, "specializedStatVal"), characterSheet, weaponSheet })
-                  }}
-                    disabled={!Character.hasOverride(character, "specializedStatKey") && !Character.hasOverride(character, "specializedStatVal")}
-                  >
-                    <FontAwesomeIcon icon={faUndo} />
-                  </Button>
-                </InputGroup.Append>
-              </InputGroup>
+              <StatInput
+                className="mb-2"
+                name={Stat.getStatNameWithPercent(specializedStatKey, "Specialized Stat")}
+                placeholder={"Character Special Stat"}
+                value={Character.getStatValueWithOverride(character, characterSheet, weaponSheet, "specializedStatVal")}
+                percent={isPercentSpecialStatSelect}
+                onValueChange={value => characterDispatch({ type: "statOverride", statKey: "specializedStatVal", value, characterSheet, weaponSheet })}
+                defaultValue={Character.getBaseStatValue(character, characterSheet, weaponSheet, "specializedStatVal")}
+              />
             </Col>
           </Row>
         </Card.Body> :
@@ -369,8 +346,6 @@ function MainStatsCards({ characterSheet, weaponSheet, editable, character, char
             {otherStatKeys.map(statKey =>
               <Col lg={6} xs={12} key={statKey}>
                 <StatInput
-                  prependEle={undefined}
-                  disabled={undefined}
                   className="mb-2"
                   name={<span>{StatIconEle(statKey)} {Stat.getStatName(statKey)}</span>}
                   placeholder={`Base ${Stat.getStatNameRaw(statKey)}`}
@@ -406,9 +381,6 @@ function MainStatsCards({ characterSheet, weaponSheet, editable, character, char
             {miscStatkeys.map(statKey =>
               <Col xl={6} xs={12} key={statKey}>
                 <StatInput
-                  prependEle={undefined}
-                  disabled={undefined
-                  }
                   className="mb-2"
                   name={<span>{StatIconEle(statKey)} {Stat.getStatName(statKey)}</span>}
                   placeholder={`Base ${Stat.getStatNameRaw(statKey)}`}

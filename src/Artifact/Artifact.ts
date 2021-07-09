@@ -194,7 +194,8 @@ export default class Artifact {
   }
 
   //database manipulation
-  static equipArtifactOnChar(artifactId: string | undefined, characterKey: CharacterKey) {
+  static equipArtifactOnChar(artifactId: string | undefined, characterKey: CharacterKey | "") {
+    if (!characterKey) return this.unequipArtifact(artifactId)
     let art = ArtifactDatabase.get(artifactId)
     if (!art) return
     let currentLocation = art.location;
@@ -210,7 +211,7 @@ export default class Artifact {
 
     //update Character
     if (intendedLocation)
-      CharacterDatabase.equipArtifactOnSlot(intendedLocation, art.slotKey, art.id)
+      CharacterDatabase.equipArtifactOnSlot(intendedLocation, art.slotKey, art.id!)
 
     if (currentLocation) {
       CharacterDatabase.equipArtifactOnSlot(currentLocation, slotKey, artifactToSwapWith?.id ?? "")

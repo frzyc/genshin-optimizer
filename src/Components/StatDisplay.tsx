@@ -53,8 +53,8 @@ export default function StatDisplay({ characterSheet, weaponSheet, character, eq
         //build ->val
         val = build?.[statKey] ?? 0
         //statvaluewith override -> old
-        const invalid = "invalid"//can't use undeinfed as the defVal, since I want undefined for invalid numbers.
-        oldVal = Character.getStatValueWithOverride(character, characterSheet, weaponSheet, statKey, invalid as any)
+        const invalid = "invalid" //can't use undeinfed as the defVal, since I want undefined for invalid numbers.
+        oldVal = Character.getStatValueWithOverride(character, characterSheet, weaponSheet, statKey) ?? invalid
         oldVal === invalid && (oldVal = undefined)
         if (statKey === "finalHP")
           oldVal = Character.getStatValueWithOverride(character, characterSheet, weaponSheet, "characterHP")

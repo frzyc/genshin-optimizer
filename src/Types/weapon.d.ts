@@ -1,4 +1,5 @@
 import { DocumentSection } from "./character";
+import { Rarity } from "./consts";
 import ICalculatedStats from "./ICalculatedStats";
 import { IConditionals } from "./IConditional";
 
@@ -8,7 +9,7 @@ export interface IWeaponSheet {
   name: Displayable;
   weaponType: WeaponTypeKey;
   img: string;
-  rarity: number;
+  rarity: Rarity;
   passiveName: Displayable;
   passiveDescription: string | ((stats: ICalculatedStats) => Displayable)
   description: Displayable;

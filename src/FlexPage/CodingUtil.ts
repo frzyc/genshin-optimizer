@@ -1,3 +1,7 @@
+// @ts-nocheck
+// The *type* of these data are in schema and so are unknown at compile time.
+// Type annotation here will only amount to adding `any` everywhere
+
 /// Schema keys
 /// Common {
 ///   encode?: A function that transform encoding object into the specified format

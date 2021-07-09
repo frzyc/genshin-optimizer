@@ -22,7 +22,7 @@ describe('Character.mergeStats()', () => {
 describe('Character.getDisplayStatKeys()', () => {
   const characterKey = "noelle"
 
-  beforeEach(() => CharacterDatabase.update({ characterKey, levelKey: "L60A", weapon: { key: "Whiteblind" } }))
+  beforeEach(() => CharacterDatabase.update({ characterKey, levelKey: "L60A", weapon: { key: "Whiteblind" } } as any))
   afterEach(() => localStorage.clear())
   test('should get statKeys for characters with finished talent page', async () => {
     const character = CharacterDatabase.get(characterKey)

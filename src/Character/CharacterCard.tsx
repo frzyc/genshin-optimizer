@@ -45,6 +45,7 @@ export default function CharacterCard({ characterKey, onEdit, onDelete, cardClas
   const weaponLevelName = Weapon.getLevelName(weapon.levelKey)
   const weaponPassiveName = weaponSheet?.passiveName
   const statkeys = ["finalHP", "finalATK", "finalDEF", "eleMas", "critRate_", "critDMG_", "enerRech_",]
+
   return (<Card className={cardClassName} bg={bg ? bg : "darkcontent"} text={"lightfont" as any}>
     <Card.Header className="pr-2">
       <Row className="no-gutters">

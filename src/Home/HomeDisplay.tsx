@@ -8,7 +8,7 @@ import tools from './tools.png'
 
 import { Trans, useTranslation } from 'react-i18next';
 
-export default function HomeDisplay(props) {
+export default function HomeDisplay(props: any) {
   const { t } = useTranslation()
   ReactGA.pageview('/home')
   return <Container className="my-2">
@@ -135,7 +135,7 @@ export default function HomeDisplay(props) {
                 <h5>Want to help the developer?</h5>
                 <p>
                   Genshin Optimizer has been the manifestation of many days and weeks of sleepless nights, and the developer is still actively trying to improve and add features.
-                If you want to give feedback, request a feature, report a bug, please join our <a href={process.env.REACT_APP_DISCORD_LINK} target="_blank" rel="noreferrer">discord.</a>
+                  If you want to give feedback, request a feature, report a bug, please join our <a href={process.env.REACT_APP_DISCORD_LINK} target="_blank" rel="noreferrer">discord.</a>
                 </p>
                 <p>If you want to fiancially support the developer, please either donate via <a href={process.env.REACT_APP_PAYPAL_LINK} target="_blank" rel="noreferrer">Paypal</a> or <a href={process.env.REACT_APP_PATREON_LINK} target="_blank" rel="noreferrer">Patreon</a>.</p>
               </Trans>

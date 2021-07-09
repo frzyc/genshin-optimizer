@@ -26,9 +26,9 @@ export default class CharacterSheet {
   get constellationName() { return this.sheet.constellationName }
   get isAutoElemental() { return this.sheet.weaponTypeKey === "catalyst" }
   getBase = (statKey: "hp" | "def" | "atk", level = 1, ascensionLvl = 0) =>
-    this.sheet.baseStat[statKey] * expCurve[this.sheet.baseStatCurve[statKey]][level] + this.sheet.ascensions[ascensionLvl].props[statKey]
-  getSpecializedStat = (ascensionLvl = 0) => Object.keys(this.sheet.ascensions[ascensionLvl].props).find(k => k !== "hp" && k !== "def" && k !== "atk")
-  getSpecializedStatVal = (ascensionLvl = 0) => {
+    this.sheet.baseStat[statKey] * (expCurve[this.sheet.baseStatCurve[statKey] as any])[level] + this.sheet.ascensions[ascensionLvl].props[statKey]
+  getSpecializedStat = (ascensionLvl = 0): string | undefined => Object.keys(this.sheet.ascensions[ascensionLvl].props).find(k => k !== "hp" && k !== "def" && k !== "atk")
+  getSpecializedStatVal = (ascensionLvl = 0): number => {
     const statKey = this.getSpecializedStat(ascensionLvl)
     if (!statKey) return 0
     const value = this.sheet.ascensions[ascensionLvl].props[statKey] ?? 0

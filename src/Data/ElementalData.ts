@@ -1,4 +1,6 @@
-const ElementalData = {
+import { ElementKey } from "../Types/consts"
+
+const ElementalData: StrictDict<ElementKey | "physical", { name: string }> = {
   physical: { name: "Physical" },
   anemo: { name: "Anemo" },
   geo: { name: "Geo" },

@@ -12,10 +12,12 @@ export default function TestDisplay() {
   const location = useLocation()
   const searchStr = location.search
   if (searchStr) {
-    const [character, version] = parseFlexObj(searchStr.substring(1))
-    if (!character) return <Redirect to={`/`} />
+    const flexResult = parseFlexObj(searchStr.substring(1))
+    if (!flexResult) return <Redirect to={`/`} />
+    const [{ character, artifacts }, version] = flexResult
+    character.artifacts = artifacts // TODO: Decouple artifacts and character
     if (version !== 2)
-      return <Redirect to={`/flex?${_createFlexObj(character, character.artifacts)}`} />
+      return <Redirect to={`/flex?${_createFlexObj(character, artifacts)}`} />
     return <Display character={character} />
   } else {
     const characterKey = (location as any).characterKey

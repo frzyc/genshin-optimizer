@@ -1,8 +1,10 @@
+import { IArtifact, MainStatKey, StatArr, StatDict, StatKey } from "./artifact"
+import { ArtifactSetKey, SetNum, SlotKey } from "./consts"
 
 export type ArtifactsBySlot = Dict<SlotKey, IArtifact[]>
-export type PrunedArtifactSetEffects = Dict<ArtifactSet | "other", Dict<SetNum, StatDict>>
-export type ArtifactSetEffects = Dict<ArtifactSet, Dict<SetNum, StatArr>>
-export type SetFilter = { key: ArtifactSet, num: number }[]
+export type PrunedArtifactSetEffects = Dict<ArtifactSetKey | "other", Dict<SetNum, StatDict>>
+export type ArtifactSetEffects = Dict<ArtifactSetKey, Dict<SetNum, StatArr>>
+export type SetFilter = { key: ArtifactSetKey | "", num: number }[]
 export interface BuildSetting {
   setFilters: SetFilter,
   statFilters: MinMaxFilter,

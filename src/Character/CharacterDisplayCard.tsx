@@ -14,7 +14,7 @@ import ElementalData from '../Data/ElementalData';
 import { WeaponLevelKeys } from '../Data/WeaponData';
 import CharacterDatabase from '../Database/CharacterDatabase';
 import { ICharacter } from '../Types/character';
-import { allCharacterKeys, allSlotKeys } from '../Types/consts';
+import { allCharacterKeys, allSlotKeys, CharacterKey } from '../Types/consts';
 import ICalculatedStats from '../Types/ICalculatedStats';
 import { usePromise } from '../Util/ReactUtil';
 import { clamp, deepClone } from '../Util/Util';
@@ -90,7 +90,7 @@ function characterReducer(state: ICharacter, action: characterReducerOverwriteAc
   if ("type" in action) switch (action?.type) {
     case "overwrite":
       return { ...state, ...action.character }
-    case "fromDB"://for equipping artifacts, that makes the changes in DB instead of in state.
+    case "fromDB": // for equipping artifacts, that makes the changes in DB instead of in state.
       return { ...state, ...CharacterDatabase.get(state.characterKey) ?? {} }
     case "statOverride": {
       const { statKey, value, characterSheet, weaponSheet, } = action
@@ -108,7 +108,7 @@ function characterReducer(state: ICharacter, action: characterReducerOverwriteAc
   return { ...state, ...action }
 }
 type CharacterDisplayCardProps = {
-  characterKey?: string,
+  characterKey?: CharacterKey | "",
   character?: ICharacter,
   setCharacterKey?: (any) => void
   footer?: JSX.Element
@@ -117,7 +117,7 @@ type CharacterDisplayCardProps = {
   onClose?: (any) => void,
   tabName?: string
 }
-export default function CharacterDisplayCard({ characterKey: propCharacterKey, character: propCharacter, setCharacterKey: propSetCharacterKey, footer, newBuild: propNewBuild, editable = false, onClose, tabName }: CharacterDisplayCardProps) {
+export default function CharacterDisplayCard({ characterKey: propCharacterKey = "", character: propCharacter, setCharacterKey: propSetCharacterKey, footer, newBuild: propNewBuild, editable = false, onClose, tabName }: CharacterDisplayCardProps) {
   const [character, characterDispatch] = useReducer(characterReducer, initialCharacter(propCharacterKey))
   const [compareAgainstEquipped, setcompareAgainstEquipped] = useState(false)
   const firstUpdate = useRef(true)

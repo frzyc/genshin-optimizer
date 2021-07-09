@@ -361,7 +361,7 @@ function EXPCalc(props) {
             <CustomFormControl
               placeholder={undefined}
               value={mora}
-              onChange={(val) => setMora(Math.max(val, 0))}
+              onChange={(val) => setMora(Math.max(val ?? 0, 0))}
             />
           </InputGroup>
         </Col>
@@ -424,7 +424,7 @@ function BookDisplay(props) {
             <CustomFormControl
               placeholder={undefined}
               value={value}
-              onChange={(val) => setValue(Math.max(val, 0))}
+              onChange={(val) => setValue(Math.max(val ?? 0, 0))}
             />
           </InputGroup>
           <div className="mt-2"><span>Required: </span><span className="float-right text-right"><b className={required ? "text-success" : ""}>{required}</b></span></div>
