@@ -3,8 +3,8 @@ import ArtifactDatabase from '../Database/ArtifactDatabase';
 import CharacterDatabase from '../Database/CharacterDatabase';
 import { ArtifactSubstatLookupTable } from '../Data/ArtifactLookupTable';
 import Stat from '../Stat';
-import { clampPercent, closeEnoughFloat, closeEnoughInt, deepClone, evalIfFunc } from '../Util/Util';
-import { CompressMainStatKey, IArtifact, MainStatKey, StatDict, SubstatKey } from '../Types/artifact';
+import { clampPercent, deepClone, evalIfFunc } from '../Util/Util';
+import { allSubstats, CompressMainStatKey, IArtifact, MainStatKey, StatDict, SubstatKey } from '../Types/artifact';
 import { SlotKey, Rarity, ArtifactSetKey, allSlotKeys, SetNum, CharacterKey } from '../Types/consts';
 import ICalculatedStats from '../Types/ICalculatedStats';
 import { ArtifactSheet } from './ArtifactSheet';
@@ -17,15 +17,16 @@ export default class Artifact {
   constructor() { if (this instanceof Artifact) throw Error('A static class cannot be instantiated.'); }
 
   //SLOT
-  static slotName = (slotKey: SlotKey) => slotKey ? ArtifactSlotsData[slotKey].name : ""
-
-  static slotMainStats = (slotKey: SlotKey): MainStatKey[] => ArtifactSlotsData[slotKey].stats
+  static slotName = (slotKey: SlotKey): string =>
+    ArtifactSlotsData[slotKey].name
+  static slotMainStats = (slotKey: SlotKey): readonly MainStatKey[] =>
+    ArtifactSlotsData[slotKey].stats
 
   static setEffectsObjs = (artifactSheets: StrictDict<ArtifactSetKey, ArtifactSheet>, stats: ICalculatedStats): Dict<ArtifactSetKey, Dict<SetNum, StatDict>> => {
-    let result: Dict<ArtifactSetKey, Dict<SetNum, StatDict>> = {};
+    const result: Dict<ArtifactSetKey, Dict<SetNum, StatDict>> = {};
     //accumulate the non-conditional stats
     Object.entries(artifactSheets).forEach(([setKey, setObj]) => {
-      let setEffect: Dict<SetNum, StatDict> = {}
+      const setEffect: Dict<SetNum, StatDict> = {}
       Object.entries(setObj.setEffects).forEach(([setNumKey, setEffectObj]) => {
         const setStats = evalIfFunc(setEffectObj.stats, stats)
         if (setStats) setEffect[setNumKey] = deepClone(setStats)
@@ -49,46 +50,35 @@ export default class Artifact {
       [slotKey, Object.values(databaseObj).filter(art => art.slotKey === slotKey)]))
 
   //MAIN STATS
-  static mainStatValues = (numStar: Rarity, statKey: MainStatKey, defVal = []) => {
+  static mainStatValues = (numStar: Rarity, statKey: MainStatKey): readonly number[] => {
     if (statKey.endsWith("_dmg_") && statKey !== "physical_dmg_")
       return ArtifactMainStatsData[numStar]["ele_dmg_"]
-    return ArtifactMainStatsData[numStar][statKey as CompressMainStatKey] || defVal
+    return ArtifactMainStatsData[numStar][statKey as CompressMainStatKey]
   }
-
-  static mainStatValue = (key: MainStatKey, numStars: Rarity, level: number): number | undefined =>
+  static mainStatValue = (key: MainStatKey, numStars: Rarity, level: number): number =>
     Artifact.mainStatValues(numStars, key)[level]
 
   //SUBSTATS
-  static rollInfo = (rarity: Rarity): { low: number, high: number, numUpgrades: number } => {
-    const data = ArtifactStarsData[rarity]!
-    return { low: data.subsBaselow, high: data.subBaseHigh, numUpgrades: data.numUpgradesOrUnlocks }
-  }
+  static rollInfo = (rarity: Rarity): { low: number, high: number, numUpgrades: number } =>
+    ArtifactStarsData[rarity]
 
-  static maxSubstatValues = (statKey: SubstatKey, numStars = maxStar): number => ArtifactSubstatMaxRolls[numStars]![statKey]
-  static maxSubstatRollEfficiency = (numStar: Rarity): number => ArtifactSubstatMaxRollEfficiency[numStar]
-  static getSubstatKeys = (): SubstatKey[] => Object.keys(ArtifactSubstatsData) as SubstatKey[]
-  static substatCloseEnough = (key: SubstatKey, value1: number, value2: number): boolean => {
-    if (Stat.getStatUnit(key) === "%")
-      return closeEnoughFloat(value1, value2)
-    else
-      return closeEnoughInt(value1, value2)
-  }
-  static totalPossibleRolls = (numStars: Rarity) => ArtifactStarsData[numStars] ?
-    (ArtifactStarsData[numStars]!.subBaseHigh + ArtifactStarsData[numStars]!.numUpgradesOrUnlocks) : 0;
+  static maxSubstatValues = (statKey: SubstatKey, numStars = maxStar): number =>
+    ArtifactSubstatMaxRolls[numStars][statKey]
+  static maxSubstatRollEfficiency = (numStar: Rarity): number =>
+    ArtifactSubstatMaxRollEfficiency[numStar]
+  static getSubstatKeys = (): readonly SubstatKey[] =>
+    allSubstats
+  static totalPossibleRolls = (numStars: Rarity): number =>
+    ArtifactStarsData[numStars].high + ArtifactStarsData[numStars].numUpgrades
   static rollsRemaining = (level: number, numStars: Rarity) =>
-    Math.ceil((numStars * 4 - level) / 4);
-  static getSubstatRollData = (substatKey: SubstatKey | "", numStars: Rarity) => ArtifactSubstatsData[substatKey]?.[numStars] ?? []
+    Math.ceil((numStars * 4 - level) / 4)
+  static getSubstatRollData = (substatKey: SubstatKey, numStars: Rarity) =>
+    ArtifactSubstatsData[substatKey][numStars]!
   static getSubstatRolls = (substatKey: SubstatKey, substatValue: number, numStars: Rarity): number[][] => {
-    if (!numStars || !substatKey || typeof substatValue !== "number" || !substatValue) return []
-    let rollData = Artifact.getSubstatRollData(substatKey, numStars)
-    if (!rollData.length) return []
-
-    let table = ArtifactSubstatLookupTable[substatKey][numStars]
-    let lookupValue = substatValue.toFixed(1)
-
-    if (table[lookupValue])
-      return table[lookupValue].map(roll => roll.map(i => rollData[i]))
-    else return [] // Lookup fails
+    const rollData = Artifact.getSubstatRollData(substatKey, numStars)
+    const table = ArtifactSubstatLookupTable[substatKey][numStars]
+    const lookupValue = substatValue.toFixed(1)
+    return table[lookupValue]?.map(roll => roll.map(i => rollData[i])) ?? []
   }
   static getSubstatEfficiency = (substatKey: SubstatKey | "", rolls: number[]): number => {
     const sum = rolls.reduce((a, b) => a + b, 0)
@@ -97,7 +87,7 @@ export default class Artifact {
   }
 
   //ARTIFACT IN GENERAL
-  static substatsValidation(state: IArtifact) {
+  static substatsValidation(state: IArtifact): string[] {
     const { numStars, level, substats } = state, errors: string[] = []
 
     const allSubstatRolls: { index: number, substatRolls: number[][] }[] = []
@@ -172,7 +162,7 @@ export default class Artifact {
 
     return errors
   }
-  static getArtifactEfficiency(artifact: IArtifact, filter: Set<SubstatKey>) {
+  static getArtifactEfficiency(artifact: IArtifact, filter: Set<SubstatKey>): { currentEfficiency: number, maxEfficiency: number } {
     const { substats, numStars, level } = artifact
     // Relative to max star, so comparison between different * makes sense.
     const totalRolls = Artifact.totalPossibleRolls(maxStar);
@@ -188,28 +178,28 @@ export default class Artifact {
     else maximum = current // No possible roll
 
     const currentEfficiency = current / totalRolls
-    const maximumEfficiency = maximum / totalRolls
-    return { currentEfficiency, maximumEfficiency }
+    const maxEfficiency = maximum / totalRolls
+    return { currentEfficiency, maxEfficiency }
   }
 
   //start with {slotKey:art} end with {setKey:[slotKey]}
   static setToSlots = (artifacts: Dict<SlotKey, IArtifact>): Dict<ArtifactSetKey, SlotKey[]> => {
-    let setToSlots: Dict<ArtifactSetKey, SlotKey[]> = {};
+    const setToSlots: Dict<ArtifactSetKey, SlotKey[]> = {};
     Object.entries(artifacts).forEach(([key, art]) => {
       if (!art) return
       if (setToSlots[art.setKey]) setToSlots[art.setKey]!.push(key)
       else setToSlots[art.setKey] = [key]
     })
     return setToSlots
-  };
+  }
 
   //database manipulation
   static equipArtifactOnChar(artifactId: string | undefined, characterKey: CharacterKey) {
-    let art = ArtifactDatabase.get(artifactId);
-    if (!art) return;
+    let art = ArtifactDatabase.get(artifactId)
+    if (!art) return
     let currentLocation = art.location;
     let intendedLocation = (characterKey || "")
-    if (currentLocation === intendedLocation) return;
+    if (currentLocation === intendedLocation) return
     let slotKey = art.slotKey
     let artifactToSwapWithid = CharacterDatabase.getArtifactIDFromSlot(intendedLocation, slotKey)
     let artifactToSwapWith = ArtifactDatabase.get(artifactToSwapWithid)
@@ -228,9 +218,8 @@ export default class Artifact {
   }
   static unequipArtifact(artifactId: string | undefined) {
     const art = ArtifactDatabase.get(artifactId)
-    if (!art || !art.location) return
-    const location = art.location
-    const slotKey = art.slotKey
+    if (!art?.location) return
+    const location = art.location, slotKey = art.slotKey
     CharacterDatabase.equipArtifactOnSlot(location, slotKey, "")
     ArtifactDatabase.moveToNewLocation(artifactId)
   }

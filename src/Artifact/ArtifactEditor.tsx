@@ -76,7 +76,7 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }) {
   const { dupId, isDup } = useMemo(() => checkDuplicate(artifact), [artifact])
   const { numStars = 5, level = 0, slotKey = "flower" } = artifact ?? {}
   const errMsgs = artifact ? Artifact.substatsValidation(artifact) : []
-  const { currentEfficiency = 0, maximumEfficiency = 0 } = artifact ? Artifact.getArtifactEfficiency(artifact, allSubstatFilter) : {}
+  const { currentEfficiency = 0, maxEfficiency = 0 } = artifact ? Artifact.getArtifactEfficiency(artifact, allSubstatFilter) : {}
   return <Card bg="darkcontent" text={"lightfont" as any}>
     <Card.Header><Trans t={t} i18nKey="editor.title" >Artifact Editor</Trans></Card.Header>
     <Card.Body>
@@ -189,7 +189,7 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }) {
               <Row>
                 <Col className="text-center">{t`editor.maxSubEff`}</Col>
                 <Col xs="auto">
-                  <PercentBadge valid={!errMsgs.length} value={errMsgs.length ? "ERR" : (maximumEfficiency)} />
+                  <PercentBadge valid={!errMsgs.length} value={errMsgs.length ? "ERR" : (maxEfficiency)} />
                   <OverlayTrigger
                     placement="bottom"
                     overlay={<Popover id="max-efficiency">
@@ -254,7 +254,7 @@ function SubstatInput({ index, artifact, setSubstat, className }: { index: numbe
   const accurateValue = rolls.reduce((a, b) => a + b, 0)
   const unit = Stat.getStatUnit(key), rollNum = rolls.length
 
-  let error: string = "", rollData: number[] = [], allowedRolls = 0, rollLabel: Displayable | null = null
+  let error: string = "", rollData: readonly number[] = [], allowedRolls = 0, rollLabel: Displayable | null = null
 
   if (artifact) {
     //account for the rolls it will to fill all 4 substates, +1 for its base roll
@@ -262,7 +262,7 @@ function SubstatInput({ index, artifact, setSubstat, className }: { index: numbe
     const { numUpgrades, high } = Artifact.rollInfo(numStars)
     const maxRollNum = numUpgrades + high - 3;
     allowedRolls = maxRollNum - rollNum
-    rollData = Artifact.getSubstatRollData(key, numStars)
+    rollData = key ? Artifact.getSubstatRollData(key, numStars) : []
   }
   const rollOffset = 7 - rollData.length
 

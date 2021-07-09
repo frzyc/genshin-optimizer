@@ -45,8 +45,8 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
   const { id, slotKey, numStars, level, mainStatKey, substats, lock } = art
   const mainStatLevel = Math.max(Math.min(mainStatAssumptionLevel, numStars * 4), level)
   const mainStatVal = <span className={mainStatLevel !== level ? "text-orange" : ""}>{Artifact.mainStatValue(mainStatKey, numStars, mainStatLevel) ?? ""}{Stat.getStatUnit(mainStatKey)}</span>
-  const { currentEfficiency, maximumEfficiency } = Artifact.getArtifactEfficiency(art, effFilter)
-  const artifactValid = maximumEfficiency !== 0
+  const { currentEfficiency, maxEfficiency } = Artifact.getArtifactEfficiency(art, effFilter)
+  const artifactValid = maxEfficiency !== 0
   const locationName = characterSheet?.name ?? "Inventory"
   return (<Card className="h-100" border={`${numStars}star`} bg="lightcontent" text={"lightfont" as any}>
     <Card.Header className="p-0">
@@ -84,7 +84,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
       </Row>
       <Row className="mt-auto">
         <Col>Current SS Eff.: <PercentBadge value={currentEfficiency} valid={artifactValid} {...{ className: "float-right" }} /></Col>
-        {currentEfficiency !== maximumEfficiency && <Col className="text-right">Max SS Eff.: <PercentBadge value={maximumEfficiency} valid={artifactValid} /></Col>}
+        {currentEfficiency !== maxEfficiency && <Col className="text-right">Max SS Eff.: <PercentBadge value={maxEfficiency} valid={artifactValid} /></Col>}
       </Row>
     </Card.Body>
 

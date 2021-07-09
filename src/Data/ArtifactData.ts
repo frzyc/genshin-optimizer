@@ -2,15 +2,15 @@ import { getArrLastElement } from '../Util/Util';
 import { CompressMainStatKey, MainStatKey, SubstatKey } from '../Types/artifact';
 import { Rarity, SlotKey } from '../Types/consts'
 
-const ArtifactStarsData: Dict<Rarity, { subsBaselow: number, subBaseHigh: number, numUpgradesOrUnlocks: number }> = {
-  // 1: { subsBaselow: 0, subBaseHigh: 0, numUpgradesOrUnlocks: 1 },
-  // 2: { subsBaselow: 0, subBaseHigh: 1, numUpgradesOrUnlocks: 2 },
-  3: { subsBaselow: 1, subBaseHigh: 2, numUpgradesOrUnlocks: 3 },
-  4: { subsBaselow: 2, subBaseHigh: 3, numUpgradesOrUnlocks: 4 },
-  5: { subsBaselow: 3, subBaseHigh: 4, numUpgradesOrUnlocks: 5 }
+const ArtifactSubstatRollData: StrictDict<Rarity, { low: number, high: number, numUpgrades: number }> = {
+  1: { low: 0, high: 0, numUpgrades: 1 },
+  2: { low: 0, high: 1, numUpgrades: 2 },
+  3: { low: 1, high: 2, numUpgrades: 3 },
+  4: { low: 2, high: 3, numUpgrades: 4 },
+  5: { low: 3, high: 4, numUpgrades: 5 }
 };
 
-const ArtifactMainStatsData: StrictDict<Rarity, StrictDict<CompressMainStatKey, number[]>> = {
+const ArtifactMainStatsData: StrictDict<Rarity, StrictDict<CompressMainStatKey, readonly number[]>> = {
   1: {
     hp: [129, 178, 227, 275, 324],
     atk: [8, 12, 15, 18, 21],
@@ -83,7 +83,7 @@ const ArtifactMainStatsData: StrictDict<Rarity, StrictDict<CompressMainStatKey, 
   }
 }
 
-const ArtifactSubstatsData: StrictDict<SubstatKey, { [numStars: number]: number[] }> = {
+const ArtifactSubstatsData: StrictDict<SubstatKey, Dict<Rarity, readonly number[]>> = {
   hp: { 3: [100.38, 114.72, 129.06, 143.4], 4: [167.3, 191.2, 215.1, 239], 5: [209.13, 239, 268.88, 298.75] },
   atk: { 3: [6.54, 7.47, 8.4, 9.34], 4: [10.89, 12.45, 14.0, 15.56], 5: [13.62, 15.56, 17.51, 19.45] },
   def: { 3: [7.78, 8.89, 10, 11.11], 4: [12.96, 14.82, 16.67, 18.52], 5: [16.2, 18.52, 20.83, 23.15] },
@@ -101,7 +101,7 @@ const ArtifactSubstatMaxRollEfficiency = Object.fromEntries(Object.entries(Artif
   [rarity, 100 * (Object.keys(obj) as SubstatKey[]).reduce((acc, key) => Math.max(acc, obj[key] / ArtifactSubstatMaxRolls[5][key]!), 0)]
 ))
 
-const ArtifactSlotsData: StrictDict<SlotKey, { name: string, stats: MainStatKey[] }> = {
+const ArtifactSlotsData: StrictDict<SlotKey, { name: string, stats: readonly MainStatKey[] }> = {
   flower: { name: "Flower of Life", stats: ["hp"] },
   plume: { name: "Plume of Death", stats: ["atk"] },
   sands: { name: "Sands of Eon", stats: ["hp_", "def_", "atk_", "eleMas", "enerRech_"] },
@@ -114,6 +114,6 @@ export {
   ArtifactSubstatsData,
   ArtifactSubstatMaxRolls,
   ArtifactSubstatMaxRollEfficiency,
-  ArtifactStarsData,
+  ArtifactSubstatRollData as ArtifactStarsData,
   ArtifactMainStatsData
 };
