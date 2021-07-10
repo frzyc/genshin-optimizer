@@ -1,5 +1,7 @@
 import { characterIdMap, Language, propTypeMap, QualityTypeMap, weaponMap, WeaponTypeKey } from './const'
 import data from './Data'
+import artifactMainstatData from './DataminedModules/artifactMainstat'
+import artifactSubstatData from './DataminedModules/artifactSubstat'
 import ascensionData from './DataminedModules/ascension'
 import characterData from './DataminedModules/character'
 import expCurve, { GrowCurveKey } from './DataminedModules/expCurve'
@@ -115,3 +117,7 @@ const characterMapHash = Object.fromEntries(Object.entries(characterData).filter
 
   return [characterIdMap[charid], result]
 }))
+
+//dump artifact data
+dumpFile('./artifactsub.json', artifactSubstatData)//TODO: how is this structured?
+dumpFile('../src/Artifact/artifact_main_gen.json', artifactMainstatData)

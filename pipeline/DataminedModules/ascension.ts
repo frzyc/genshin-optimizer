@@ -1,4 +1,4 @@
-import { PropKey, propTypeMap } from "../const"
+import { PropTypeKey, propTypeMap } from "../const"
 
 type AvatarPromoteExcelConfigData = {
   "AvatarPromoteId": number//2,
@@ -23,19 +23,19 @@ type AvatarPromoteExcelConfigData = {
   "UnlockMaxLevel": number//40,
   "AddProps": [
     {
-      "PropType": PropKey// "FIGHT_PROP_BASE_HP",
+      "PropType": PropTypeKey// "FIGHT_PROP_BASE_HP",
       "Value": number//858.2550048828125
     },
     {
-      "PropType": PropKey//"FIGHT_PROP_BASE_DEFENSE",
+      "PropType": PropTypeKey//"FIGHT_PROP_BASE_DEFENSE",
       "Value": number//52.32600021362305
     },
     {
-      "PropType": PropKey// "FIGHT_PROP_BASE_ATTACK",
+      "PropType": PropTypeKey// "FIGHT_PROP_BASE_ATTACK",
       "Value": number//22.82823371887207
     },
     {
-      "PropType": PropKey// "FIGHT_PROP_CRITICAL_HURT"
+      "PropType": PropTypeKey// "FIGHT_PROP_CRITICAL_HURT"
       "Value": number
     }
   ],
