@@ -28,7 +28,8 @@ export default function ConditionalDisplay({ conditional, equippedBuild, newBuil
     if (!conditionalNum) {
       deletePropPath(stats.conditionalValues, conditional!.keys)
       objClearEmpties(stats.conditionalValues)
-    } else layeredAssignment(stats.conditionalValues, conditional!.keys, condV)
+    } else if (conditional.keys)
+      layeredAssignment(stats.conditionalValues, conditional!.keys, condV)
     characterDispatch({ conditionalValues: stats.conditionalValues })
   }, [conditional, stats, characterDispatch])
 
