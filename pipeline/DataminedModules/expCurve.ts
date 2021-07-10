@@ -25,9 +25,10 @@ type AvatarCurveExcelConfigData = {
     }
   ]
 }
+export type GrowCurveKey = "GROW_CURVE_HP_S4" | "GROW_CURVE_ATTACK_S4" | "GROW_CURVE_HP_S5" | "GROW_CURVE_ATTACK_S5"
 const expCurveSrc = require('../GenshinData/ExcelBinOutput/AvatarCurveExcelConfigData.json') as AvatarCurveExcelConfigData[]
 
-type ExpCurveData = {
+export type ExpCurveData = {
   GROW_CURVE_HP_S4: {
     [level: number]: number
   },

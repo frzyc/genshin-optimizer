@@ -42,7 +42,7 @@ type AvatarPromoteExcelConfigData = {
   "RequiredPlayerLevel": number// 15
 }
 const ascensionSrc = require('../GenshinData/ExcelBinOutput/AvatarPromoteExcelConfigData.json') as AvatarPromoteExcelConfigData[]
-type AscensionData = {
+export type AscensionData = {
   [AvatarPromoteId: number]: Array<{
     props: {
       [key: string]: number

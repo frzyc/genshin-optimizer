@@ -1,4 +1,5 @@
-import { characterIdMap, characterIds } from "../const"
+import { GrowCurveKey } from "./expCurve"
+
 type AvatarExcelConfigData = {
   "UseType": string//"AVATAR_FORMAL",
   "BodyType": string//"BODY_GIRL",
@@ -43,15 +44,15 @@ type AvatarExcelConfigData = {
   "PropGrowCurves": [
     {
       "Type": "FIGHT_PROP_BASE_HP",
-      "GrowCurve": "GROW_CURVE_HP_S4"
+      "GrowCurve": GrowCurveKey//"GROW_CURVE_HP_S4"
     },
     {
       "Type": "FIGHT_PROP_BASE_ATTACK",
-      "GrowCurve": "GROW_CURVE_ATTACK_S4"
+      "GrowCurve": GrowCurveKey//"GROW_CURVE_ATTACK_S4"
     },
     {
       "Type": "FIGHT_PROP_BASE_DEFENSE",
-      "GrowCurve": "GROW_CURVE_HP_S4"
+      "GrowCurve": GrowCurveKey//"GROW_CURVE_HP_S4"
     }
   ],
   "PrefabPathRagdollHashSuffix": number//3565889523,
@@ -68,6 +69,7 @@ type AvatarExcelConfigData = {
   "ControllerPathRemoteHashPre": number//101,
   "LODPatternName": string//""
 }
+
 const characterDataSrc = require('../GenshinData/ExcelBinOutput/AvatarExcelConfigData.json') as AvatarExcelConfigData[]
 //character data
 const characterData = Object.fromEntries(characterDataSrc.map(charData =>

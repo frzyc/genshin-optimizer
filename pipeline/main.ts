@@ -2,9 +2,10 @@ import { characterIdMap, Language, propTypeMap, QualityTypeMap, weaponMap } from
 import data from './Data'
 import ascensionData from './DataminedModules/ascension'
 import characterData from './DataminedModules/character'
-import expCurve from './DataminedModules/expCurve'
+import expCurve, { GrowCurveKey } from './DataminedModules/expCurve'
 import { parsingFunctions, preprocess } from './parseUtil'
 import { crawlObject, dumpFile, layeredAssignment } from './Util'
+import { CharacterKey, WeaponTypeKey, StrictDict } from 'genshin-optimizer'
 const fs = require('fs')
 
 const languageMap = {
@@ -51,16 +52,35 @@ Object.entries(languageData).forEach(([lang, data]) => {
 })
 
 /* ####################################################
- * # Importing data from datmained files.
+ * # Importing data from datamined files.
  */
 
+//exp curve to generate character stats at every level
 dumpFile(`../src/Character/expCurve_gen.json`, expCurve)
-
+export type CharacterData = {
+  weaponTypeKey: WeaponTypeKey
+  base: {
+    hp: number,
+    atk: number,
+    def: number,
+  },
+  curves: {
+    hp: GrowCurveKey,
+    atk: GrowCurveKey,
+    def: GrowCurveKey,
+  },
+  star: number,
+  ascensions: Array<{
+    props: {
+      [key: string]: number
+    }
+  }>
+}
 //parse baseStat/ascension/basic data
 const characterDataDump = Object.fromEntries(Object.entries(characterData).filter(([charid, charData]) => charid in characterIdMap).map(([charid, charData]) => {
   const { WeaponType, QualityType, AvatarPromoteId, HpBase, AttackBase, DefenseBase, PropGrowCurves } = charData
-  const curves = Object.fromEntries(PropGrowCurves.map(({ Type, GrowCurve }) => [propTypeMap[Type], GrowCurve]))
-  const result = {
+  const curves = Object.fromEntries(PropGrowCurves.map(({ Type, GrowCurve }) => [propTypeMap[Type], GrowCurve])) as StrictDict<"hp" | "atk" | "def", GrowCurveKey>
+  const result: CharacterData = {
     weaponTypeKey: weaponMap[WeaponType],
     base: { hp: HpBase, atk: AttackBase, def: DefenseBase },
     curves,
@@ -70,7 +90,9 @@ const characterDataDump = Object.fromEntries(Object.entries(characterData).filte
   }
 
   return [characterIdMap[charid], result]
-}))
+})) as {
+  [characterkey: string]: CharacterData
+}
 
 //dump data file to respective character directory.
 Object.entries(characterDataDump).forEach(([characterKey, data]) => {
