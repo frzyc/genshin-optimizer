@@ -7,10 +7,9 @@ import { Link } from 'react-router-dom';
 import Assets from '../Assets/Assets';
 import CharacterDatabase from '../Database/CharacterDatabase';
 import InfoComponent from '../Components/InfoComponent';
-import { allElements, CharacterKey } from '../Types/consts';
+import { allElements, allWeaponTypeKeys, CharacterKey } from '../Types/consts';
 import { useForceUpdate, usePromise } from '../Util/ReactUtil';
 import { loadFromLocalStorage, saveToLocalStorage } from '../Util/Util';
-import Weapon from '../Weapon/Weapon';
 import Character from './Character';
 import CharacterCard from './CharacterCard';
 import CharacterSheet from './CharacterSheet';
@@ -47,7 +46,7 @@ export default function CharacterDisplay(props) {
       setcharIdToEdit(charIdToEdit)
       setsortBy(sortBy)
       allElements.includes(elementalFilter) && elementalFilterDispatch(elementalFilter)
-      Weapon.getWeaponTypeKeys().includes(weaponFilter) && weaponFilterDispatch(weaponFilter)
+      allWeaponTypeKeys.includes(weaponFilter) && weaponFilterDispatch(weaponFilter)
     }
     CharacterDatabase.registerListener(forceUpdate)
     return () => CharacterDatabase.unregisterListener(forceUpdate)
@@ -148,7 +147,7 @@ export default function CharacterDisplay(props) {
           </Col>
           <Col>
             <ButtonGroup >
-              {Weapon.getWeaponTypeKeys().map(weaponType =>
+              {allWeaponTypeKeys.map(weaponType =>
                 <Button key={weaponType} variant={(!weaponFilter || weaponFilter === weaponType) ? "success" : "primary"} className="py-1 px-2" onClick={() => weaponFilterDispatch(weaponType)}><h4 className="mb-0"><Image src={Assets.weaponTypes?.[weaponType]} className="inline-icon" /></h4></Button>)}
             </ButtonGroup>
           </Col>

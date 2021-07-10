@@ -1,4 +1,5 @@
-import { CharacterKey, ElementKey, WeaponTypeKey } from "./consts";
+import { WeaponLevel } from "../Data/WeaponData";
+import { CharacterKey, ElementKey, WeaponKey, WeaponTypeKey } from "./consts";
 import ICalculatedStats from "./ICalculatedStats";
 import IConditional, { IConditionals } from "./IConditional";
 import { IFieldDisplay } from "./IFieldDisplay";
@@ -54,8 +55,8 @@ export interface ICharacter {
   conditionalValues: any,
   baseStatOverrides: object, //overriding the baseStat
   weapon: {
-    key: string
-    levelKey: string
+    key: WeaponKey
+    levelKey: WeaponLevel
     refineIndex: number
     overrideMainVal: number
     overrideSubVal: number
