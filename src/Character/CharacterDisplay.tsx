@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import Assets from '../Assets/Assets';
 import CharacterDatabase from '../Database/CharacterDatabase';
 import InfoComponent from '../Components/InfoComponent';
-import { allElements } from '../Types/consts';
+import { allElements, CharacterKey } from '../Types/consts';
 import { useForceUpdate, usePromise } from '../Util/ReactUtil';
 import { loadFromLocalStorage, saveToLocalStorage } from '../Util/Util';
 import Weapon from '../Weapon/Weapon';
@@ -32,7 +32,7 @@ function filterReducer(oldFilter, newFilter) {
 }
 
 export default function CharacterDisplay(props) {
-  const [charIdToEdit, setcharIdToEdit] = useState("")
+  const [charIdToEdit, setcharIdToEdit] = useState("" as CharacterKey | "")
   const [sortBy, setsortBy] = useState(() => Object.keys(toggle)[0])
   const [elementalFilter, elementalFilterDispatch] = useReducer(filterReducer, "")
   const [weaponFilter, weaponFilterDispatch] = useReducer(filterReducer, "")

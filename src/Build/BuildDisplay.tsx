@@ -79,7 +79,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   const [builds, setbuilds] = useState([] as any[])
   const [maxBuildsToShow, setmaxBuildsToShow] = useState(maxBuildsToShowDefault)
 
-  const [modalBuild, setmodalBuild] = useState(null)//the newBuild that is being displayed in the character modal
+  const [modalBuild, setmodalBuild] = useState(null) // the newBuild that is being displayed in the character modal
   const [showArtCondModal, setshowArtCondModal] = useState(false)
   const [showCharacterModal, setshowCharacterModal] = useState(false)
 
@@ -346,7 +346,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
                   </Card.Body></Card>
                 </Col>
                 {/* Artifact set picker */}
-                {setFilters.map(({ key: setKey, num: setNum }: { key: ArtifactSetKey, num: number }, index) => <Col className="mb-2" key={index} xs={12}>
+                {setFilters.map(({ key: setKey, num: setNum }, index) => <Col className="mb-2" key={index} xs={12}>
                   <Card className="h-100" bg="lightcontent" text={"lightfont" as any}>
                     <Card.Header>
                       <ButtonGroup>
@@ -510,7 +510,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
           {/* Build List */}
           <ListGroup>
             {builds.map((build, index) =>
-              index < maxBuildsToShow && characterSheet && weaponSheet && <ArtifactDisplayItem characterSheet={characterSheet} weaponSheet={weaponSheet} build={build} characterKey={characterKey} index={index} key={index} statsDisplayKeys={statsDisplayKeys} onClick={() => setmodalBuild(build as any)} />
+              index < maxBuildsToShow && characterSheet && weaponSheet && <ArtifactDisplayItem characterSheet={characterSheet} weaponSheet={weaponSheet} build={build} characterKey={characterKey as CharacterKey} index={index} key={index} statsDisplayKeys={statsDisplayKeys} onClick={() => setmodalBuild(build as any)} />
             )}
           </ListGroup>
         </Card>
@@ -684,7 +684,7 @@ function StatFilterCard({ statKeys = [], statFilters = {}, setStatFilters, class
   </Card>
 }
 
-type ArtifactDisplayItemProps = { characterSheet: CharacterSheet, weaponSheet: WeaponSheet, index: number, characterKey: string, build: ICalculatedStats, statsDisplayKeys: any, onClick: () => void }
+type ArtifactDisplayItemProps = { characterSheet: CharacterSheet, weaponSheet: WeaponSheet, index: number, characterKey: CharacterKey, build: ICalculatedStats, statsDisplayKeys: any, onClick: () => void }
 //for displaying each artifact build
 function ArtifactDisplayItem({ characterSheet, weaponSheet, index, characterKey, build, statsDisplayKeys, onClick }: ArtifactDisplayItemProps) {
   const sheets = usePromise(ArtifactSheet.getAll(), [])

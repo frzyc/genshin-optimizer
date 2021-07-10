@@ -22,11 +22,6 @@ export const saveToLocalStorage = (key, obj) =>
 export const deepClone = <T>(obj: T): T =>
   JSON.parse(JSON.stringify(obj))
 
-export const closeEnoughFloat = (a, b) =>
-  Math.abs(a - b) <= 0.101
-
-export const closeEnoughInt = (a, b) =>
-  Math.abs(a - b) <= 1
 export const clamp = (val, low, high) => {
   if (val < low) return low;
   if (val > high) return high;

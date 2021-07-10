@@ -16,11 +16,6 @@ const stats = [
 
 // Common schemas
 
-const bool = {
-  type: "uint", length: 1,
-  encode: (bool) => bool ? 1 : 0,
-  decode: (int) => int !== 0,
-}
 const uint = (length) => ({ type: "uint", length })
 const float = {
   type: "string",

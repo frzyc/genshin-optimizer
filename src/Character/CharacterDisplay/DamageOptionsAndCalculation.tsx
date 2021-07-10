@@ -203,9 +203,6 @@ export default function DamageOptionsAndCalculation({ characterSheet, weaponShee
                 <Row >
                   <Col xs={12} xl={6} className="mb-2">
                     <StatInput
-                      prependEle={undefined}
-                      disabled={undefined}
-                      percent={undefined}
                       name={<b>Enemy Level</b>}
                       value={Character.getStatValueWithOverride(character, characterSheet, weaponSheet, "enemyLevel")}
                       placeholder={Stat.getStatNameRaw("enemyLevel")}

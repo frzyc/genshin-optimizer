@@ -52,7 +52,7 @@ describe("Testing CustomFormControl Component", () => {
     })
     test('should allowEMpty', () => {
       userEvent.type(input, "{enter}")
-      expect(onChangeMock.mock.calls[0][0]).toBe(null)//1st call 1st arg
+      expect(onChangeMock.mock.calls[0][0]).toBe(undefined) // 1st call 1st arg
     })
   })
 })

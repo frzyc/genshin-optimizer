@@ -2,6 +2,7 @@ import { CharacterKey, ElementKey, WeaponTypeKey } from "./consts";
 import ICalculatedStats from "./ICalculatedStats";
 import IConditional, { IConditionals } from "./IConditional";
 import { IFieldDisplay } from "./IFieldDisplay";
+
 interface ICharacterSheetBase {
   name: Displayable,
   cardImg: string,
@@ -14,7 +15,6 @@ interface ICharacterSheetBase {
   baseStat: IBaseStat
   baseStatCurve: IBaseStatCurve
   ascensions: ascension[],
-
 }
 interface ICharacterSheetTalent extends ICharacterSheetBase {
   elementKey: ElementKey
@@ -52,7 +52,7 @@ export interface ICharacter {
   reactionMode: reactionModeKey | null
   equippedArtifacts: StrictDict<SlotKey, string>,
   conditionalValues: any,
-  baseStatOverrides: {},//overriding the baseStat
+  baseStatOverrides: object, //overriding the baseStat
   weapon: {
     key: string
     levelKey: string
@@ -67,7 +67,7 @@ export interface ICharacter {
   },
   infusionAura: ElementKey | ""
   constellation: number
-  artifacts?: any[]//from flex TODO: type
+  artifacts?: any[] //from flex TODO: type
   buildSettings?: object
 }
 

@@ -6,7 +6,7 @@ import Stat from "../Stat"
 /**
  * @deprecated all these values can to be optimizable targets. However, this component cannot be inserted into datamined strings, which will be the new format.
  */
-export default function DisplayPercent(percent, stats, statKey, fixed = 0) {
+export default function DisplayPercent(percent: number, stats, statKey, fixed = 0) {
   if (!percent || !stats || !statKey) return null
   let variant = Stat.getStatVariant(statKey) || "success"
   let value = (percent / 100) * (stats[statKey] || 0)

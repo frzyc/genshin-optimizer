@@ -113,7 +113,7 @@ export default function ArtifactDisplay(props) {
         case "quality": return { value: [art.numStars], art }
         case "level": return { value: [art.level, art.numStars], art }
         case "efficiency": return { value: [Artifact.getArtifactEfficiency(art, effFilterSet).currentEfficiency], art }
-        case "mefficiency": return { value: [Artifact.getArtifactEfficiency(art, effFilterSet).maximumEfficiency], art }
+        case "mefficiency": return { value: [Artifact.getArtifactEfficiency(art, effFilterSet).maxEfficiency], art }
       }
       return { value: [0], art }
     }).sort((a, b) => {

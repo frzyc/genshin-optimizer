@@ -6,7 +6,19 @@ import OverlayTrigger from "react-bootstrap/OverlayTrigger"
 import Tooltip from "react-bootstrap/Tooltip"
 import CustomFormControl from "../Components/CustomFormControl"
 
-const StatInput = ({ name, prependEle, value, placeholder, defaultValue, onValueChange, percent, disabled, ...restProps }) =>
+type StatInputInput = {
+  name: Displayable,
+  prependEle?: Displayable,
+  value: number,
+  placeholder: string,
+  defaultValue: number,
+  onValueChange: (newValue: number | undefined) => void,
+  percent?: boolean,
+  disabled?: boolean,
+  className?: any,
+}
+
+const StatInput = ({ name, prependEle, value, placeholder, defaultValue, onValueChange, percent = false, disabled = false, ...restProps }: StatInputInput) =>
   <InputGroup {...restProps}>
     {prependEle ? <InputGroup.Prepend>{prependEle}</InputGroup.Prepend> : null}
     <InputGroup.Prepend>

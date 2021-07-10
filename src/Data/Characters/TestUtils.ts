@@ -23,8 +23,8 @@ export function computeAllStats(baseStats) {
 }
 
 export function parseTestFlexObject(url) {
-  let [character] = parseFlexObj(url.split("flex?")[1])
-  let artifacts = character.artifacts.map(artifact => {
+  const [{ character, artifacts: flexArts }] = parseFlexObj(url.split("flex?")[1])!
+  let artifacts = flexArts.map(artifact => {
     let { numStars, level, mainStatKey, substats } = artifact
     return {
       ...Object.fromEntries(substats
@@ -33,6 +33,5 @@ export function parseTestFlexObject(url) {
       [mainStatKey]: Artifact.mainStatValue(mainStatKey, numStars, level)
     }
   })
-  delete character.artifacts
   return { character, artifacts }
 }

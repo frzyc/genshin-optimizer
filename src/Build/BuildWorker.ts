@@ -4,6 +4,7 @@ import { artifactSetPermutations, artifactPermutations, pruneArtifacts, calculat
 import { GetDependencies } from '../StatDependency';
 import Formula from '../Formula';
 import { IArtifact } from '../Types/artifact';
+import { ArtifactSetKey } from '../Types/consts';
 
 onmessage = async (e) => {
   const t1 = performance.now()
@@ -36,7 +37,7 @@ onmessage = async (e) => {
   if (turbo) {
     // Prune artifact with strictly inferior (relevant) stats.
     if (Object.keys(ascending ? minFilters : maxFilters).length === 0) {
-      const prune = (alwaysAccepted) => Object.fromEntries(Object.entries(splitArtifacts).map(([key, values]) =>
+      const prune = (alwaysAccepted: ArtifactSetKey[]) => Object.fromEntries(Object.entries(splitArtifacts).map(([key, values]) =>
         [key, pruneArtifacts(values as IArtifact[], artifactSetEffects, new Set(dependencies), ascending, new Set(alwaysAccepted))]))
 
       prunedArtifacts = prune([])
