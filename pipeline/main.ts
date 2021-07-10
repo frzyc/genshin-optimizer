@@ -1,11 +1,10 @@
-import { characterIdMap, Language, propTypeMap, QualityTypeMap, weaponMap } from './const'
+import { characterIdMap, Language, propTypeMap, QualityTypeMap, weaponMap, WeaponTypeKey } from './const'
 import data from './Data'
 import ascensionData from './DataminedModules/ascension'
 import characterData from './DataminedModules/character'
 import expCurve, { GrowCurveKey } from './DataminedModules/expCurve'
 import { parsingFunctions, preprocess } from './parseUtil'
 import { crawlObject, dumpFile, layeredAssignment } from './Util'
-import { CharacterKey, WeaponTypeKey, StrictDict } from 'genshin-optimizer'
 const fs = require('fs')
 
 const languageMap = {
@@ -79,7 +78,7 @@ export type CharacterData = {
 //parse baseStat/ascension/basic data
 const characterDataDump = Object.fromEntries(Object.entries(characterData).filter(([charid, charData]) => charid in characterIdMap).map(([charid, charData]) => {
   const { WeaponType, QualityType, AvatarPromoteId, HpBase, AttackBase, DefenseBase, PropGrowCurves } = charData
-  const curves = Object.fromEntries(PropGrowCurves.map(({ Type, GrowCurve }) => [propTypeMap[Type], GrowCurve])) as StrictDict<"hp" | "atk" | "def", GrowCurveKey>
+  const curves = Object.fromEntries(PropGrowCurves.map(({ Type, GrowCurve }) => [propTypeMap[Type], GrowCurve])) as any //TODO: typing
   const result: CharacterData = {
     weaponTypeKey: weaponMap[WeaponType],
     base: { hp: HpBase, atk: AttackBase, def: DefenseBase },

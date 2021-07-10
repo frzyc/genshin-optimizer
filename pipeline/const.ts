@@ -97,3 +97,5 @@ export const QualityTypeMap = {
 
 export type ColorTag = typeof tagColor[keyof typeof tagColor]
 export type PropKey = keyof typeof propTypeMap
+export type WeaponTypeKey = keyof typeof weaponMap
+export type DWeaponTypeKey = keyof typeof weaponMap

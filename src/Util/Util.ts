@@ -65,7 +65,7 @@ export function objMultiplication(obj, multi) {
 }
 
 //assign obj.[keys...] = value
-export function layeredAssignment(obj, keys, value) {
+export function layeredAssignment(obj, keys: string[], value) {
   keys.reduce((accu, key, i, arr) => {
     if (i === arr.length - 1) return (accu[key] = value)
     if (!accu[key]) accu[key] = {}
@@ -73,7 +73,8 @@ export function layeredAssignment(obj, keys, value) {
   }, obj)
   return obj
 }
-export function objPathValue(obj, keys) {
+//get the value in a nested object, giving array of path
+export function objPathValue(obj: object, keys: string[]) {
   return keys.reduce((a, k) => a?.[k], obj)
 }
 //delete the value denoted by the path. Will also delete empty objects as well.
