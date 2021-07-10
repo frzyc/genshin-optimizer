@@ -54,7 +54,7 @@ const initialCharacter = (characterKey): ICharacter => ({
   conditionalValues: {},
   baseStatOverrides: {},//overriding the baseStat
   weapon: {
-    key: "",
+    key: "" as any,
     levelKey: WeaponLevelKeys[0],
     refineIndex: 0,
     overrideMainVal: 0,

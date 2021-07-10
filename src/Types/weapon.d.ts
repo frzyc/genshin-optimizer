@@ -1,5 +1,6 @@
+import { SubstatKey } from "./artifact";
 import { DocumentSection } from "./character";
-import { Rarity } from "./consts";
+import { Rarity, WeaponTypeKey } from "./consts";
 import ICalculatedStats from "./ICalculatedStats";
 import { IConditionals } from "./IConditional";
 
