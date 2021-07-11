@@ -1,4 +1,5 @@
-import { characterIdMap, Language, propTypeMap, QualityTypeMap, weaponMap, WeaponTypeKey } from './const'
+
+import { characterIdMap, Language, propTypeMap, QualityTypeMap, weaponMap, WeaponTypeKey } from '.'
 import data from './Data'
 import artifactMainstatData from './DataminedModules/artifactMainstat'
 import artifactSubstatData from './DataminedModules/artifactSubstat'
@@ -119,5 +120,5 @@ const characterMapHash = Object.fromEntries(Object.entries(characterData).filter
 }))
 
 //dump artifact data
-dumpFile('./artifactsub.json', artifactSubstatData)//TODO: how is this structured?
+dumpFile('../src/Artifact/artifact_sub_gen.json', artifactSubstatData)
 dumpFile('../src/Artifact/artifact_main_gen.json', artifactMainstatData)

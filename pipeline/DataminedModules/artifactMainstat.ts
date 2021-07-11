@@ -1,4 +1,4 @@
-import { MainPropMap, MainStatKey, PropTypeKey, propTypeMap, StatKey } from "../const"
+import { MainPropMap, MainStatKey, PropTypeKey, propTypeMap, StatKey } from ".."
 import { extrapolateFloat } from "../extrapolateFloat"
 import { layeredAssignment } from "../Util"
 
@@ -31,8 +31,9 @@ artifactMainstatDataSrc.forEach(({ Rank = 0, Level, AddProps }) => {
   if (!Rank) return //1st element is invalid
   if ((Level - 1) > Rank * 4) return //prune extra values 
   AddProps.forEach(({ PropType, Value }) => {
-    //TODO: wtf is FIGHT_PROP_FIRE_SUB_HURT?
-    if (PropType as any === "FIGHT_PROP_FIRE_SUB_HURT" || PropType as any === "FIGHT_PROP_GRASS_ADD_HURT") return
+    // Main stat has these values, which we are not really using.
+    //TODO: wtf is FIGHT_PROP_FIRE_SUB_HURT? burning reduction?
+    if (["FIGHT_PROP_FIRE_SUB_HURT", "FIGHT_PROP_GRASS_ADD_HURT", "FIGHT_PROP_DEFENSE"].includes(PropType)) return
     if (Object.keys(MainPropMap).includes(PropType))
       layeredAssignment(artifactMainstatData, [Rank, propTypeMap[PropType], Level - 1], extrapolateFloat(Value))
     else console.warn(`MainPropMap.${PropType} is not a valid key.`);

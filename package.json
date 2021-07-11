@@ -40,7 +40,6 @@
     "test": "react-scripts test",
     "testserver": "set PUBLIC_URL= && npm run build && node ./test-server.js",
     "analyze": "source-map-explorer 'build/static/js/*.js'",
-    "preinstall": "cd ./pipeline && npm install",
     "postinstall": "node ./clone_genshindata.js",
     "pipeline-datamined": "cd ./pipeline && npx ts-node ./main.ts",
     "localization-gen-main": "cd ./localization && npx ts-node ./mainGen.ts",

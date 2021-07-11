@@ -1,4 +1,4 @@
-import { PropTypeKey } from "../const"
+import { PropTypeKey, SubstatKey, SubStatPropTypeMap } from ".."
 import { extrapolateFloat } from "../extrapolateFloat"
 import { layeredAssignment } from "../Util"
 
@@ -12,19 +12,24 @@ type ReliquaryAffixExcelConfigData = {
   "UpgradeWeight": number//1000
 }
 const artifactSubstatDataSrc = require('../GenshinData/ExcelBinOutput/ReliquaryAffixExcelConfigData.json') as ReliquaryAffixExcelConfigData[]
-/**
- * TODO: how is this structured?
- */
 
 type artifaceSubstatData = {
-  [DepotId: number]: {
-    [GroupId: number]: [PropTypeKey, number]
-  }
+  [Rarity: number]: Record<SubstatKey, Array<number>>
 }
 
 const artifactSubstatData = {} as artifaceSubstatData
+
+//create the general shape of artifactSubstatData 
+Array.from({ length: 5 }, (_, i) => i + 1).forEach(rank => {
+  Object.values(SubStatPropTypeMap).forEach(element => {
+    layeredAssignment(artifactSubstatData, [rank, element], [])
+  });
+})
+
 artifactSubstatDataSrc.forEach(({ DepotId, GroupId, PropType, PropValue }) => {
-  layeredAssignment(artifactSubstatData, [DepotId, GroupId], [PropType, extrapolateFloat(PropValue)])
+  const rank = Math.round(DepotId / 100)
+  if (rank > 5) return
+  artifactSubstatData[rank][SubStatPropTypeMap[PropType]].push(extrapolateFloat(PropValue))
 })
 
 export default artifactSubstatData

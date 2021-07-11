@@ -1,4 +1,4 @@
-import { ColorTag, Language, tagColor } from "./const"
+import { ColorTag, Language, tagColor } from "."
 
 export function preprocess(string: string): string {
   { // color tags

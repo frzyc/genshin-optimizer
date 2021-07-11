@@ -1,3 +1,6 @@
+import { ExpCurveData } from "./DataminedModules/expCurve";
+export { ExpCurveData }
+
 export const tagColor = {
   "FFD780FF": "strong",
   "80FFD7FF": "anemo",
@@ -67,21 +70,23 @@ export const weaponMap = {
   WEAPON_POLE: "polearm"
 } as const
 
-export const propTypeMap = {
+export const SubStatPropTypeMap = {
   FIGHT_PROP_HP: "hp",
-  FIGHT_PROP_BASE_HP: "hp",
   FIGHT_PROP_HP_PERCENT: "hp_",
   FIGHT_PROP_ATTACK: "atk",
-  FIGHT_PROP_BASE_ATTACK: "atk",
   FIGHT_PROP_ATTACK_PERCENT: "atk_",
   FIGHT_PROP_DEFENSE: "def",
-  FIGHT_PROP_BASE_DEFENSE: "def",
   FIGHT_PROP_DEFENSE_PERCENT: "def_",
   FIGHT_PROP_CRITICAL: "critRate_",
   FIGHT_PROP_CRITICAL_HURT: "critDMG_",
-  FIGHT_PROP_HEAL_ADD: "heal_",
   FIGHT_PROP_ELEMENT_MASTERY: "eleMas",
   FIGHT_PROP_CHARGE_EFFICIENCY: "enerRech_",
+} as const
+
+const { FIGHT_PROP_DEFENSE, ...mainPart } = SubStatPropTypeMap//subtract flat def
+export const MainPropMap = {
+  ...mainPart,
+  FIGHT_PROP_HEAL_ADD: "heal_",
   FIGHT_PROP_PHYSICAL_ADD_HURT: "physical_dmg_",
   FIGHT_PROP_ELEC_ADD_HURT: "electro_dmg_",
   FIGHT_PROP_ROCK_ADD_HURT: "geo_dmg_",
@@ -91,6 +96,15 @@ export const propTypeMap = {
   FIGHT_PROP_WIND_ADD_HURT: "anemo_dmg_",
   // FIGHT_PROP_GRASS_ADD_HURT: "dendro_dmg_"
   // FIGHT_PROP_FIRE_SUB_HURT:"" //
+
+} as const
+export const propTypeMap = {
+  ...SubStatPropTypeMap,
+  ...MainPropMap,
+  FIGHT_PROP_BASE_HP: "hp",
+  FIGHT_PROP_BASE_ATTACK: "atk",
+  FIGHT_PROP_BASE_DEFENSE: "def",
+
 } as const
 export const QualityTypeMap = {
   QUALITY_ORANGE: 5,
@@ -99,9 +113,6 @@ export const QualityTypeMap = {
   QUALITY_GREEN: 2,
 } as const
 
-const { FIGHT_PROP_BASE_DEFENSE, FIGHT_PROP_BASE_HP, FIGHT_PROP_BASE_ATTACK, ...MainPropMap } = propTypeMap;
-
-export { MainPropMap }
 
 export type ColorTag = typeof tagColor[keyof typeof tagColor]
 export type PropTypeKey = keyof typeof propTypeMap
@@ -110,3 +121,5 @@ export type WeaponTypeKey = keyof typeof weaponMap
 export type DWeaponTypeKey = keyof typeof weaponMap
 
 export type MainStatKey = typeof MainPropMap[keyof typeof MainPropMap]
+
+export type SubstatKey = typeof SubStatPropTypeMap[keyof typeof SubStatPropTypeMap]

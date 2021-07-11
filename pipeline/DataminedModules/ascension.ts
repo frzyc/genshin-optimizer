@@ -1,4 +1,4 @@
-import { PropTypeKey, propTypeMap } from "../const"
+import { PropTypeKey, propTypeMap } from ".."
 
 type AvatarPromoteExcelConfigData = {
   "AvatarPromoteId": number//2,

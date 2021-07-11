@@ -13,8 +13,6 @@ In the project directory, you can run:
 ### `npm install`
 Install all dependencies/modules to build the site.
 
-`preinstall`: `cd ./pipeline && npm install`
-
 `postinstall:` Pulls the [GenshinData repo](https://github.com/Dimbreath/GenshinData) into `pipeline/GenshinData`.
 
 ### `npm start`
