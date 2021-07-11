@@ -119,5 +119,5 @@ const characterMapHash = Object.fromEntries(Object.entries(characterData).filter
 }))
 
 //dump artifact data
-dumpFile('./artifactsub.json', artifactSubstatData)//TODO: how is this structured?
+dumpFile('./artifactsub_gen.json', artifactSubstatData) // TODO: how is this structured?
 dumpFile('../src/Artifact/artifact_main_gen.json', artifactMainstatData)
