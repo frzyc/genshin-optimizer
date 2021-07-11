@@ -36,9 +36,9 @@ describe('Test ArtifactDatabase', () => {
   describe('unequipAllArtifacts()', () => {
     test('should empty location', () => {
       ArtifactDatabase.unequipAllArtifacts()
-      expect(ArtifactDatabase.get("artifact_1").location).toEqual("")
-      expect(ArtifactDatabase.get("artifact_2").location).toEqual("")
-      expect(ArtifactDatabase.get("artifact_3").location).toEqual("")
+      expect(ArtifactDatabase.get("artifact_1")?.location).toEqual("")
+      expect(ArtifactDatabase.get("artifact_2")?.location).toEqual("")
+      expect(ArtifactDatabase.get("artifact_3")?.location).toEqual("")
     })
   })
 

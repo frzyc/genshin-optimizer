@@ -45,7 +45,7 @@ export default class CharacterDatabase {
     CharacterDatabase.emitEvent()
   }
   static getArtifactIDFromSlot = (characterKey: CharacterKey, slotKey: SlotKey) =>
-    CharacterDatabase.get(characterKey)?.equippedArtifacts?.[slotKey] ?? null
+    CharacterDatabase.get(characterKey)?.equippedArtifacts?.[slotKey]
 
   static equipArtifactOnSlot = (characterKey: CharacterKey, slotKey: SlotKey, artid: string) => {
     const char = CharacterDatabase.get(characterKey)

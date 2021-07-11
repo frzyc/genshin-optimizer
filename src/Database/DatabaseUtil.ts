@@ -97,7 +97,7 @@ function DatabaseInitAndVerify() {
       character.equippedArtifacts = Object.fromEntries(allSlotKeys.map(sk => [sk, ""]))
       valid = false
     }
-    Object.entries(character.equippedArtifacts).forEach(([slotKey, artid]) => {
+    Object.entries((character as ICharacter).equippedArtifacts).forEach(([slotKey, artid]) => {
       const equippedArt = ArtifactDatabase.get(artid)
       if (equippedArt && equippedArt.location !== characterKey) //the artifact doesnt have the right location...
         ArtifactDatabase.moveToNewLocation(artid, characterKey)
