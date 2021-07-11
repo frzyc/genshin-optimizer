@@ -19,10 +19,11 @@ import SlotNameWithIcon from './Component/SlotNameWIthIcon';
 import PercentBadge from './PercentBadge';
 import UploadDisplay from './UploadDisplay';
 
+type ArtifactEditorArgument = { artifactIdToEdit: string, cancelEdit: () => void }
 const allSubstatFilter = new Set(allSubstats)
 
 let uploadDisplayReset: (() => void) | undefined
-export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: { artifactIdToEdit: string, cancelEdit: () => void }) {
+export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: ArtifactEditorArgument) {
   const { t } = useTranslation("artifact")
   const [artifact, artifactDispatch] = useReducer(artifactReducer, undefined)
   const artifactSheets = usePromise(ArtifactSheet.getAll(), [])
