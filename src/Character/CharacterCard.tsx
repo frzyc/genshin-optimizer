@@ -1,6 +1,6 @@
 import { faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useEffect, useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Badge, Image } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
@@ -13,21 +13,22 @@ import { Stars } from '../Components/StarDisplay';
 import { StatIconEle } from '../Components/StatIcon';
 import CharacterDatabase from '../Database/CharacterDatabase';
 import Stat from '../Stat';
+import { ICharacter } from '../Types/character';
 import { CharacterKey } from '../Types/consts';
-import { useForceUpdate, usePromise } from '../Util/ReactUtil';
+import { usePromise } from '../Util/ReactUtil';
 import Weapon from '../Weapon/Weapon';
 import WeaponSheet from '../Weapon/WeaponSheet';
 import Character from './Character';
 import CharacterSheet from './CharacterSheet';
 type CharacterCardProps = { characterKey: CharacterKey | "", onEdit?: (any) => void, onDelete?: (any) => void, cardClassName: string, header?: JSX.Element, bg?: string, footer?: boolean }
 export default function CharacterCard({ characterKey, onEdit, onDelete, cardClassName = "", bg = "", header, footer = false }: CharacterCardProps) {
-  const [, forceUpdate] = useForceUpdate()
-  useEffect(() => {
-    characterKey && CharacterDatabase.registerCharListener(characterKey, forceUpdate)
-    return () => { characterKey && CharacterDatabase.unregisterCharListener(characterKey, forceUpdate) }
-  }, [characterKey, forceUpdate])
+  const [databaseCharacter, updateDatabaseCharacter] = useState(undefined as ICharacter | undefined)
+  useEffect(() =>
+    CharacterDatabase.registerCharListener(characterKey, updateDatabaseCharacter),
+    [characterKey, updateDatabaseCharacter])
+
   const artifactSheets = usePromise(ArtifactSheet.getAll(), [])
-  const character = CharacterDatabase.get(characterKey)
+  const character = databaseCharacter
   const characterSheet = usePromise(CharacterSheet.get(characterKey), [characterKey])
   const weaponSheet = usePromise(character && WeaponSheet.get(character.weapon.key), [character])
   const stats = useMemo(() => character && characterSheet && weaponSheet && artifactSheets && Character.calculateBuild(character, characterSheet, weaponSheet, artifactSheets), [character, characterSheet, weaponSheet, artifactSheets])

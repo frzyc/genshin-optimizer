@@ -57,6 +57,8 @@ export default class ArtifactDatabase {
     delete artifactDatabase[artId!];
     localStorage.removeItem(artId!);
     ArtifactDatabase.emitEvent()
+    ArtifactDatabase.emitArtEvent(artId!, undefined)
+    delete artListener[artId!]
   }
 
   static moveToNewLocation = (artid: string | undefined, location: CharacterKey | "" = "") => {
@@ -84,32 +86,33 @@ export default class ArtifactDatabase {
       ArtifactDatabase.update(art)
     })
   }
-  //helper function for testing
+  // Helper function for testing
   static clearDatabase = () => {
     artifactDatabase = {}
     initiated = false
     artIdIndex = 1
     ArtifactDatabase.emitEvent()
+    // TODO: emit events to all artifact-specific listeners.
+    // Otherwise, we could end up having dead artifact on UI somewhere.
   }
-  static registerListener(callback: UpdateCallback) {
+  static registerListener(callback: UpdateCallback): () => void {
     listener.push(callback)
-  }
-  static unregisterListener(callback: UpdateCallback) {
-    listener = listener.filter(cb => cb !== callback)
+    return () => { listener = listener.filter(cb => cb !== callback) }
   }
   static emitEvent() {
     listener.forEach(cb => cb(artifactDatabase))
   }
-  static registerArtListener(id: string, callback: UpdateCallback) {
+  static registerArtListener(id: string | undefined, callback: UpdateCallback): (() => void) | undefined {
+    if (!id) return
     if (!artListener[id]) artListener[id] = [callback]
     else artListener[id]!.push(callback)
+    callback(ArtifactDatabase.get(id))
+
+    return () => { artListener[id] = artListener[id]?.filter(cb => cb !== callback) }
   }
-  static unregisterArtListener(id: string, callback: UpdateCallback) {
-    artListener[id] = artListener[id]?.filter(cb => cb !== callback)
-  }
-  static emitArtEvent(id: string, art: IArtifact) {
+  static emitArtEvent(id: string, art: IArtifact | undefined) {
     artListener[id]?.forEach(cb => cb(art))
   }
 }
 
-type UpdateCallback = (art: IArtifact) => void
+type UpdateCallback = (art: IArtifact | undefined) => void

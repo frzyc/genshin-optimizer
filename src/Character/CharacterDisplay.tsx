@@ -48,8 +48,7 @@ export default function CharacterDisplay(props) {
       allElements.includes(elementalFilter) && elementalFilterDispatch(elementalFilter)
       allWeaponTypeKeys.includes(weaponFilter) && weaponFilterDispatch(weaponFilter)
     }
-    CharacterDatabase.registerListener(forceUpdate)
-    return () => CharacterDatabase.unregisterListener(forceUpdate)
+    return CharacterDatabase.registerListener(forceUpdate)
   }, [forceUpdate])
   const allCharacterSheets = usePromise(CharacterSheet.getAll(), []) ?? {}
   const sortingFunc = {

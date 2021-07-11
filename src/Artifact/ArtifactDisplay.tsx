@@ -78,8 +78,7 @@ export default function ArtifactDisplay(props) {
 
   useEffect(() => {
     ReactGA.pageview('/artifact')
-    ArtifactDatabase.registerListener(forceUpdate)
-    return () => ArtifactDatabase.unregisterListener(forceUpdate)
+    return ArtifactDatabase.registerListener(forceUpdate)
   }, [forceUpdate])
 
   useEffect(() => {

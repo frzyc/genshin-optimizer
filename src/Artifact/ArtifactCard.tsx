@@ -1,6 +1,6 @@
 import { faEdit, faLock, faLockOpen, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Badge from 'react-bootstrap/Badge';
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
@@ -18,7 +18,7 @@ import ArtifactDatabase from '../Database/ArtifactDatabase';
 import Stat from '../Stat';
 import { allSubstats, IArtifact, Substat, SubstatKey } from '../Types/artifact';
 import { CharacterKey } from '../Types/consts';
-import { useForceUpdate, usePromise } from '../Util/ReactUtil';
+import { usePromise } from '../Util/ReactUtil';
 import { valueString } from '../Util/UIUtil';
 import Artifact from './Artifact';
 import { ArtifactSheet } from './ArtifactSheet';
@@ -29,16 +29,15 @@ type Data = { artifactId?: string, artifactObj?: IArtifact, onEdit?: () => void,
 const allSubstatFilter = new Set(allSubstats)
 
 export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete, mainStatAssumptionLevel = 0, effFilter = allSubstatFilter }: Data): JSX.Element | null {
-  const [, forceUpdateHook] = useForceUpdate()
-  useEffect(() => {
-    artifactId && ArtifactDatabase.registerArtListener(artifactId, forceUpdateHook)
-    return () => { artifactId && ArtifactDatabase.unregisterArtListener(artifactId, forceUpdateHook) }
-  }, [artifactId, forceUpdateHook])
+  const [databaseArtifact, updateDatabaseArtifact] = useState(undefined as IArtifact | undefined)
+  useEffect(() =>
+    ArtifactDatabase.registerArtListener(artifactId, updateDatabaseArtifact),
+    [artifactId, updateDatabaseArtifact])
   const sheet = usePromise(ArtifactSheet.get((artifactObj ?? (artifactId ? ArtifactDatabase.get(artifactId) : undefined))?.setKey), [artifactObj, artifactId])
   const equipOnChar = (charKey: CharacterKey | "") => Artifact.equipArtifactOnChar(artifactId, charKey)
 
   const editable = !artifactObj // dont allow edit for flex artifacts
-  const art = artifactObj ?? ArtifactDatabase.get(artifactId);
+  const art = artifactObj ?? databaseArtifact
   const characterSheet = usePromise(CharacterSheet.get(art?.location ?? ""), [art?.location])
   if (!art) return null
   if (art.substats[0].rolls === undefined) Artifact.substatsValidation(art)
