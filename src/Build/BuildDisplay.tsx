@@ -118,17 +118,14 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   }, [charDirty, characterKey])
 
   //register changes in artifact database
-  useEffect(() => {
-    ArtifactDatabase.registerListener(setArtsDirty)
-    return () => { ArtifactDatabase.unregisterListener(setArtsDirty) }
-  }, [setArtsDirty])
+  useEffect(() =>
+    ArtifactDatabase.registerListener(setArtsDirty),
+    [setArtsDirty])
 
   //register changes in character in db
-  useEffect(() => {
-    if (!characterKey) return
-    CharacterDatabase.registerCharListener(characterKey, setCharDirty)
-    return () => CharacterDatabase.unregisterCharListener(characterKey, setCharDirty)
-  }, [characterKey, setCharDirty])
+  useEffect(() =>
+    CharacterDatabase.registerCharListener(characterKey, setCharDirty),
+    [characterKey, setCharDirty])
 
   //terminate worker when component unmounts
   useEffect(() => () => worker.current?.terminate(), [])

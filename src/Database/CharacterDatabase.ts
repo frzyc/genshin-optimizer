@@ -10,7 +10,7 @@ export default class CharacterDatabase {
   static initiated = false
   static characterDatabase: Dict<CharacterKey | "", ICharacter> = {}
   static listener: any[] = []
-  static charListener: Dict<CharacterKey, ((char: ICharacter) => void)[]> = {}
+  static charListener: Dict<CharacterKey, UpdateCallback[]> = {}
   static getCharacterDatabase = () => deepClone(CharacterDatabase.characterDatabase);
   static getCharacterKeyList = (): CharacterKey[] => (Object.keys(CharacterDatabase.characterDatabase) as any).filter(k => k)
   static getIdList = () => Object.keys(CharacterDatabase.characterDatabase);
@@ -43,9 +43,10 @@ export default class CharacterDatabase {
     delete CharacterDatabase.characterDatabase[characterKey];
     localStorage.removeItem(`char_${characterKey}`);
     CharacterDatabase.emitEvent()
+    CharacterDatabase.emitCharEvent(characterKey as any, undefined)
   }
   static getArtifactIDFromSlot = (characterKey: CharacterKey, slotKey: SlotKey) =>
-    CharacterDatabase.get(characterKey)?.equippedArtifacts?.[slotKey] ?? null
+    CharacterDatabase.get(characterKey)?.equippedArtifacts?.[slotKey]
 
   static equipArtifactOnSlot = (characterKey: CharacterKey, slotKey: SlotKey, artid: string) => {
     const char = CharacterDatabase.get(characterKey)
@@ -71,23 +72,27 @@ export default class CharacterDatabase {
     CharacterDatabase.initiated = false
     CharacterDatabase.emitEvent()
   }
-  static registerListener(callback: () => void) {
+  static registerListener(callback: () => void): () => void {
     CharacterDatabase.listener.push(callback)
-  }
-  static unregisterListener(callback: () => void) {
-    CharacterDatabase.listener = CharacterDatabase.listener.filter(cb => cb !== callback)
+    return () => { CharacterDatabase.listener = CharacterDatabase.listener.filter(cb => cb !== callback) }
   }
   static emitEvent() {
     CharacterDatabase.listener.forEach(cb => cb(CharacterDatabase.characterDatabase))
   }
-  static registerCharListener(characterKey: CharacterKey, callback: (char: ICharacter) => void) {
+  static registerCharListener(characterKey: CharacterKey | "", callback: UpdateCallback): (() => void) | undefined {
+    if (!characterKey) return
+
     if (!CharacterDatabase.charListener[characterKey]) CharacterDatabase.charListener[characterKey] = [callback]
     else CharacterDatabase.charListener[characterKey]!.push(callback)
+    callback(CharacterDatabase.get(characterKey))
+
+    return () => {
+      CharacterDatabase.charListener[characterKey] = CharacterDatabase.charListener[characterKey]?.filter(cb => cb !== callback)
+    }
   }
-  static unregisterCharListener(characterKey: CharacterKey, callback: (char: ICharacter) => void) {
-    CharacterDatabase.charListener[characterKey] = CharacterDatabase.charListener[characterKey]?.filter(cb => cb !== callback)
-  }
-  static emitCharEvent(characterKey: CharacterKey, char: ICharacter) {
+  static emitCharEvent(characterKey: CharacterKey, char: ICharacter | undefined) {
     CharacterDatabase.charListener[characterKey]?.forEach(cb => cb(char))
   }
 }
+
+type UpdateCallback = (char: ICharacter | undefined) => void
