@@ -2,11 +2,11 @@ import { ICharacterSheet, TalentSheet } from "../Types/character";
 import { allCharacterKeys, CharacterKey, ElementKey } from "../Types/consts";
 import ICalculatedStats from "../Types/ICalculatedStats";
 import { evalIfFunc } from "../Util/Util";
-import { ExpCurveData } from "pipeline";
+import { CharacterExpCurveData } from "pipeline";
 import expCurveJSON from './expCurve_gen.json'
 import Stat from '../Stat'
 
-const expCurve = expCurveJSON as ExpCurveData
+const expCurve = expCurveJSON as CharacterExpCurveData
 
 export const charImport = import('../Data/Characters').then(imp =>
   Object.fromEntries(Object.entries(imp.default).map(([charKey, value]) =>

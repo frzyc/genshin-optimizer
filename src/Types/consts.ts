@@ -40,7 +40,7 @@ export const allWeaponKeys = [
   "SkywardSpine", "HuntersBow", "SeasonedHuntersBow", "EbonyBow", "Messenger", "RavenBow", "RecurveBow",
   "SharpshootersOath", "Slingshot", "TheStringless", "AlleyHunter", "BlackcliffWarbow", "CompoundBow",
   "FavoniusWarbow", "PrototypeCrescent", "RoyalBow", "Rust", "SacrificialBow", "TheViridescentHunt", "SkywardHarp",
-  "AmosBow", "ElegyForTheEnd", "WindblumeOde", "ApprenticesNotes", "PocketGrimoire", "AmberCatalyst", "EmeraldOrb",
+  "AmosBow", "ElegyForTheEnd", "WindblumeOde", "ApprenticesNotes", "PocketGrimoire", "AmberCatalyst", "EmeraldOrb", //NOTE: AmberCatalyst is not a valid weapon.
   "MagicGuide", "OtherworldlyStory", "ThrillingTalesOfDragonSlayers", "TwinNephrite", "BlackcliffAgate",
   "FavoniusCodex", "MappaMare", "PrototypeMalice", "RoyalGrimoire", "SacrificialFragments", "SolarPearl", "TheWidsith",
   "WineAndSong", "EyeOfPerception", "Frostbearer", "LostPrayerToTheSacredWinds", "SkywardAtlas", "MemoryOfDust",

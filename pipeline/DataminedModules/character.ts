@@ -1,4 +1,4 @@
-import { GrowCurveKey } from "./expCurve"
+import { CharacterGrowCurveKey } from "./characterExpCurve"
 
 type AvatarExcelConfigData = {
   "UseType": string//"AVATAR_FORMAL",
@@ -44,15 +44,15 @@ type AvatarExcelConfigData = {
   "PropGrowCurves": [
     {
       "Type": "FIGHT_PROP_BASE_HP",
-      "GrowCurve": GrowCurveKey//"GROW_CURVE_HP_S4"
+      "GrowCurve": CharacterGrowCurveKey//"GROW_CURVE_HP_S4"
     },
     {
       "Type": "FIGHT_PROP_BASE_ATTACK",
-      "GrowCurve": GrowCurveKey//"GROW_CURVE_ATTACK_S4"
+      "GrowCurve": CharacterGrowCurveKey//"GROW_CURVE_ATTACK_S4"
     },
     {
       "Type": "FIGHT_PROP_BASE_DEFENSE",
-      "GrowCurve": GrowCurveKey//"GROW_CURVE_HP_S4"
+      "GrowCurve": CharacterGrowCurveKey//"GROW_CURVE_HP_S4"
     }
   ],
   "PrefabPathRagdollHashSuffix": number//3565889523,
@@ -72,7 +72,7 @@ type AvatarExcelConfigData = {
 
 const characterDataSrc = require('../GenshinData/ExcelBinOutput/AvatarExcelConfigData.json') as AvatarExcelConfigData[]
 //character data
-const characterData = Object.fromEntries(characterDataSrc.map(charData =>
-  [charData.Id, charData]))
+const characterData = Object.fromEntries(characterDataSrc.map(data =>
+  [data.Id, data]))
 
 export default characterData

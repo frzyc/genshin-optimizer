@@ -25,10 +25,10 @@ type AvatarCurveExcelConfigData = {
     }
   ]
 }
-export type GrowCurveKey = "GROW_CURVE_HP_S4" | "GROW_CURVE_ATTACK_S4" | "GROW_CURVE_HP_S5" | "GROW_CURVE_ATTACK_S5"
-const expCurveSrc = require('../GenshinData/ExcelBinOutput/AvatarCurveExcelConfigData.json') as AvatarCurveExcelConfigData[]
+export type CharacterGrowCurveKey = "GROW_CURVE_HP_S4" | "GROW_CURVE_ATTACK_S4" | "GROW_CURVE_HP_S5" | "GROW_CURVE_ATTACK_S5"
+const characterExpCurveSrc = require('../GenshinData/ExcelBinOutput/AvatarCurveExcelConfigData.json') as AvatarCurveExcelConfigData[]
 
-export type ExpCurveData = {
+export type CharacterExpCurveData = {
   GROW_CURVE_HP_S4: {
     [level: number]: number
   },
@@ -40,11 +40,11 @@ export type ExpCurveData = {
   }
 }
 
-const expCurve = {} as ExpCurveData
-expCurveSrc.forEach(({ Level, CurveInfos }) =>
+const characterExpCurve = {} as CharacterExpCurveData
+characterExpCurveSrc.forEach(({ Level, CurveInfos }) =>
   CurveInfos.forEach(({ Type, Value }) => {
-    if (!expCurve[Type]) expCurve[Type] = {}
-    expCurve[Type][Level] = Value
+    if (!characterExpCurve[Type]) characterExpCurve[Type] = {}
+    characterExpCurve[Type][Level] = Value
   }))
 
-export default expCurve
+export default characterExpCurve

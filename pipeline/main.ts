@@ -1,11 +1,14 @@
 
-import { characterIdMap, Language, propTypeMap, QualityTypeMap, weaponMap, WeaponTypeKey } from '.'
+import { characterIdMap, Language, propTypeMap, QualityTypeMap, weaponMap, DWeaponTypeKey, WeaponKey, CharacterKey, weaponIdMap, PropTypeKey, StatKey, WeaponTypeKey } from '.'
 import data from './Data'
 import artifactMainstatData from './DataminedModules/artifactMainstat'
 import artifactSubstatData from './DataminedModules/artifactSubstat'
 import ascensionData from './DataminedModules/ascension'
 import characterData from './DataminedModules/character'
-import expCurve, { GrowCurveKey } from './DataminedModules/expCurve'
+import characterExpCurve, { CharacterGrowCurveKey } from './DataminedModules/characterExpCurve'
+import weaponData from './DataminedModules/weapon'
+import weaponExpCurve, { WeaponGrowCurveKey } from './DataminedModules/weaponExpCurve'
+import { extrapolateFloat } from './extrapolateFloat'
 import { parsingFunctions, preprocess } from './parseUtil'
 import { crawlObject, dumpFile, layeredAssignment } from './Util'
 const fs = require('fs')
@@ -56,20 +59,17 @@ Object.entries(languageData).forEach(([lang, data]) => {
 /* ####################################################
  * # Importing data from datamined files.
  */
-
-//exp curve to generate character stats at every level
-dumpFile(`../src/Character/expCurve_gen.json`, expCurve)
 export type CharacterData = {
-  weaponTypeKey: WeaponTypeKey
+  weaponTypeKey: DWeaponTypeKey
   base: {
     hp: number,
     atk: number,
     def: number,
   },
   curves: {
-    hp: GrowCurveKey,
-    atk: GrowCurveKey,
-    def: GrowCurveKey,
+    hp: CharacterGrowCurveKey,
+    atk: CharacterGrowCurveKey,
+    def: CharacterGrowCurveKey,
   },
   star: number,
   ascensions: Array<{
@@ -92,9 +92,7 @@ const characterDataDump = Object.fromEntries(Object.entries(characterData).filte
   }
 
   return [characterIdMap[charid], result]
-})) as {
-  [characterkey: string]: CharacterData
-}
+})) as Record<CharacterKey, CharacterData>
 
 //dump data file to respective character directory.
 Object.entries(characterDataDump).forEach(([characterKey, data]) => {
@@ -118,6 +116,45 @@ const characterMapHash = Object.fromEntries(Object.entries(characterData).filter
 
   return [characterIdMap[charid], result]
 }))
+
+type WeaponProp = {
+  type: StatKey,
+  base: number,
+  curve: WeaponGrowCurveKey
+}
+export type WeaponData = {
+  weaponType: WeaponTypeKey
+  rarity: number
+  mainStat: WeaponProp
+  subStat: WeaponProp
+}
+const weaponDataDump = Object.fromEntries(Object.entries(weaponData).filter(([weaponid, weaponData]) => weaponid in weaponIdMap).map(([weaponid, weaponData]) => {
+  const { WeaponType, RankLevel, WeaponProp } = weaponData
+  const [main, sub] = WeaponProp
+  const result: WeaponData = {
+    weaponType: weaponMap[WeaponType],
+    rarity: RankLevel,
+    mainStat: {
+      type: propTypeMap[main.PropType],
+      base: extrapolateFloat(main.InitValue),
+      curve: main.Type
+    },
+    subStat: {
+      type: propTypeMap[sub.PropType],
+      base: extrapolateFloat(sub.InitValue),
+      curve: sub.Type
+    }
+  }
+  return [weaponIdMap[weaponid], result]
+})) as Record<WeaponKey, WeaponData>
+
+//dump data file to respective character directory.
+Object.entries(weaponDataDump).forEach(([weaponKey, data]) =>
+  dumpFile(`../src/Data/Weapons/${data.weaponType[0].toUpperCase() + data.weaponType.slice(1)}/${weaponKey}_gen.json`, data))
+
+//exp curve to generate  stats at every level
+dumpFile(`../src/Weapon/expCurve_gen.json`, weaponExpCurve)
+dumpFile(`../src/Character/expCurve_gen.json`, characterExpCurve)
 
 //dump artifact data
 dumpFile('../src/Artifact/artifact_sub_gen.json', artifactSubstatData)
