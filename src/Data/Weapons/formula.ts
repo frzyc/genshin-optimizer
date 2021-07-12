@@ -1,5 +1,5 @@
-import TheViridescentHunt from './Bow/TheViridescentHuntData'
-import CrescentPike from './Polearm/CrescentPikeData'
+import TheViridescentHunt from './Bow/TheViridescentHunt/TheViridescentHuntData'
+import CrescentPike from './Polearm/CrescentPike/CrescentPikeData'
 const bow = {
   TheViridescentHunt
 }

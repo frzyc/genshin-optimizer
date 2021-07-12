@@ -150,7 +150,7 @@ const weaponDataDump = Object.fromEntries(Object.entries(weaponData).filter(([we
 
 //dump data file to respective character directory.
 Object.entries(weaponDataDump).forEach(([weaponKey, data]) =>
-  dumpFile(`../src/Data/Weapons/${data.weaponType[0].toUpperCase() + data.weaponType.slice(1)}/${weaponKey}_gen.json`, data))
+  dumpFile(`../src/Data/Weapons/${data.weaponType[0].toUpperCase() + data.weaponType.slice(1)}/${weaponKey}/data_gen.json`, data))
 
 //exp curve to generate  stats at every level
 dumpFile(`../src/Weapon/expCurve_gen.json`, weaponExpCurve)
