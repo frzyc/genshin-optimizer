@@ -1,4 +1,3 @@
-
 import { characterIdMap, Language, propTypeMap, QualityTypeMap, weaponMap, DWeaponTypeKey, WeaponKey, CharacterKey, weaponIdMap, PropTypeKey, StatKey, WeaponTypeKey } from '.'
 import data from './Data'
 import artifactMainstatData from './DataminedModules/artifactMainstat'
@@ -7,6 +6,7 @@ import ascensionData from './DataminedModules/ascension'
 import characterData from './DataminedModules/character'
 import characterExpCurve, { CharacterGrowCurveKey } from './DataminedModules/characterExpCurve'
 import weaponData from './DataminedModules/weapon'
+import WeaponAscensionData from './DataminedModules/weaponAscension'
 import weaponExpCurve, { WeaponGrowCurveKey } from './DataminedModules/weaponExpCurve'
 import { extrapolateFloat } from './extrapolateFloat'
 import { parsingFunctions, preprocess } from './parseUtil'
@@ -28,33 +28,6 @@ const languageMap = {
   th: require('./GenshinData/TextMap/TextMapTH.json'),
   vi: require('./GenshinData/TextMap/TextMapVI.json')
 }
-
-//Main localization dumping
-const languageData = {}
-Object.entries(languageMap).forEach(([lang, langStrings]) => {
-  crawlObject(data, [], v => typeof v === "number" || (Array.isArray(v) && typeof v[1] === "string"), (value, keys) => {
-    // const [type, characterKey, skill, field] = keys
-
-    if (typeof value === "number") value = [value, "string"]
-    const [stringID, processing] = value
-    const string = parsingFunctions[processing](lang as Language, preprocess(langStrings[stringID]))
-    if (!string) throw (`Invalid string in ${keys}, for lang:${lang} (${stringID}:${processing})`)
-    layeredAssignment(languageData, [lang, ...keys], string)
-  })
-})
-
-//dump the language data to files
-Object.entries(languageData).forEach(([lang, data]) => {
-  const fileDir = `../public/locales/${lang}`
-  if (!fs.existsSync(fileDir)) fs.mkdirSync(fileDir)
-
-  Object.entries(data).forEach(([type, typeData]) => {
-    if (type === "sheet")
-      return dumpFile(`${fileDir}/${type}_gen.json`, typeData)
-    Object.entries((typeData as any)).forEach(([charKey, charData]) =>
-      dumpFile(`${fileDir}/${type}_${charKey}_gen.json`, charData))
-  })
-})
 
 /* ####################################################
  * # Importing data from datamined files.
@@ -126,7 +99,7 @@ export type WeaponData = {
   weaponType: WeaponTypeKey
   rarity: number
   mainStat: WeaponProp
-  subStat: WeaponProp
+  subStat?: WeaponProp
 }
 const weaponDataDump = Object.fromEntries(Object.entries(weaponData).filter(([weaponid, weaponData]) => weaponid in weaponIdMap).map(([weaponid, weaponData]) => {
   const { WeaponType, RankLevel, WeaponProp } = weaponData
@@ -139,11 +112,11 @@ const weaponDataDump = Object.fromEntries(Object.entries(weaponData).filter(([we
       base: extrapolateFloat(main.InitValue),
       curve: main.Type
     },
-    subStat: {
+    subStat: sub.PropType ? {
       type: propTypeMap[sub.PropType],
       base: extrapolateFloat(sub.InitValue),
       curve: sub.Type
-    }
+    } : undefined
   }
   return [weaponIdMap[weaponid], result]
 })) as Record<WeaponKey, WeaponData>
@@ -159,3 +132,47 @@ dumpFile(`../src/Character/expCurve_gen.json`, characterExpCurve)
 //dump artifact data
 dumpFile('../src/Artifact/artifact_sub_gen.json', artifactSubstatData)
 dumpFile('../src/Artifact/artifact_main_gen.json', artifactMainstatData)
+
+//generate the MapHashes for localization for weapons
+Object.entries(weaponData).filter(([weaponid,]) => weaponid in weaponIdMap).map(([weaponid, weaponData]) => {
+  const { NameTextMapHash, DescTextMapHash, SkillAffix } = weaponData
+  const [ascensionDataId,] = SkillAffix
+  const ascData = ascensionDataId && WeaponAscensionData[ascensionDataId]
+
+  data.weapon[weaponIdMap[weaponid]] = {
+    name: NameTextMapHash,
+    description: DescTextMapHash,
+    passiveName: ascData ? ascData[0].NameTextMapHash : 0,
+    passiveDescription: ascData ? ascData.map(asc => asc.DescTextMapHash) : [0, 0, 0, 0, 0]
+  }
+})
+
+//Main localization dumping
+const languageData = {}
+Object.entries(languageMap).forEach(([lang, langStrings]) => {
+  crawlObject(data, [], v => typeof v === "number" || v?.length === 2 && (Array.isArray(v) && typeof v[0] === "number" && typeof v[1] === "string"), (value, keys) => {
+    // const [type, characterKey, skill, field] = keys
+    if (value === 0) return layeredAssignment(languageData, [lang, ...keys], "")
+    if (typeof value === "number") value = [value, "string"]
+    const [stringID, processing] = value
+    const string = parsingFunctions[processing](lang as Language, preprocess(langStrings[stringID]))
+    if (!string) throw (`Invalid string in ${keys}, for lang:${lang} (${stringID}:${processing})`)
+    layeredAssignment(languageData, [lang, ...keys], string)
+  })
+})
+
+//dump the language data to files
+Object.entries(languageData).forEach(([lang, data]) => {
+  const fileDir = `../public/locales/${lang}`
+  if (!fs.existsSync(fileDir)) fs.mkdirSync(fileDir)
+
+  Object.entries(data).forEach(([type, typeData]) => {
+    //general sheet
+    if (type === "sheet")
+      return dumpFile(`${fileDir}/${type}_gen.json`, typeData)
+
+    //weapons/character
+    Object.entries((typeData as any)).forEach(([itemKey, data]) =>
+      dumpFile(`${fileDir}/${type}_${itemKey}_gen.json`, data))
+  })
+})

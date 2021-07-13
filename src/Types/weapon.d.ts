@@ -7,14 +7,14 @@ import { IConditionals } from "./IConditional";
 export type IWeaponSheets = Dict<string, IWeaponSheet>
 
 export interface IWeaponSheet {
-  name: Displayable;
+  name: Displayable; //TODO: REMOVE after pipeline
   weaponType: WeaponTypeKey;
   img: string;
   rarity: Rarity;
-  passiveName: Displayable;
-  passiveDescription: string | ((stats: ICalculatedStats) => Displayable)
-  description: Displayable;
-  baseStats: {
+  passiveName: Displayable; //TODO: REMOVE after pipeline
+  passiveDescription: string | ((stats: ICalculatedStats) => Displayable) //TODO: REMOVE after pipeline
+  description: Displayable; //TODO: REMOVE after pipeline
+  baseStats: { //TODO: REMOVE after pipeline
     main: number[],
     substatKey: string,
     sub?: number[]
