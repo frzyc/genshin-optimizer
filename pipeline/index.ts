@@ -1,5 +1,5 @@
-import { CharacterExpCurveData } from "./DataminedModules/characterExpCurve";
-import { WeaponExpCurveData } from "./DataminedModules/weaponExpCurve";
+import { CharacterExpCurveData } from "./DataminedModules/character/characterExpCurve";
+import { WeaponExpCurveData } from "./DataminedModules/weapon/weaponExpCurve";
 export { CharacterExpCurveData, WeaponExpCurveData }
 
 export const tagColor = {

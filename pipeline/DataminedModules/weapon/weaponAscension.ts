@@ -1,5 +1,5 @@
-import { PropTypeKey, WeaponId } from ".."
-import { layeredAssignment } from "../Util"
+import { PropTypeKey, WeaponId } from "../.."
+import { layeredAssignment } from "../../Util"
 
 type EquipAffixExcelConfigData = {
   "AffixId": number//1125034,
@@ -32,7 +32,7 @@ type EquipAffixExcelConfigData = {
   //   0.0
   // ]
 }
-const WeaponAscensionDataSrc = require('../GenshinData/ExcelBinOutput/EquipAffixExcelConfigData.json') as EquipAffixExcelConfigData[]
+const WeaponAscensionDataSrc = require('../../GenshinData/ExcelBinOutput/EquipAffixExcelConfigData.json') as EquipAffixExcelConfigData[]
 
 const WeaponAscensionData = {} as Record<number, Array<EquipAffixExcelConfigData>>
 WeaponAscensionDataSrc.forEach(data => {

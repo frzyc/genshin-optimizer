@@ -1,4 +1,4 @@
-import { DWeaponTypeKey } from ".."
+import { DWeaponTypeKey } from "../.."
 
 type WeaponExcelConfigData = {
   "WeaponType": DWeaponTypeKey// "WEAPON_CLAYMORE",
@@ -52,7 +52,7 @@ type WeaponExcelConfigData = {
   "Rank": 10,
   "GadgetId": 50012407
 }
-const weaponDataSrc = require('../GenshinData/ExcelBinOutput/WeaponExcelConfigData.json') as WeaponExcelConfigData[]
+const weaponDataSrc = require('../../GenshinData/ExcelBinOutput/WeaponExcelConfigData.json') as WeaponExcelConfigData[]
 const weaponData = Object.fromEntries(weaponDataSrc.map(data =>
   [data.Id, data]))
 

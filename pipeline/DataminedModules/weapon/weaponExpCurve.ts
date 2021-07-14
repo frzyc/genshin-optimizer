@@ -99,7 +99,7 @@ export type WeaponGrowCurveKey = "GROW_CURVE_ATTACK_101" | "GROW_CURVE_ATTACK_10
   "GROW_CURVE_ATTACK_105" | "GROW_CURVE_CRITICAL_101" | "GROW_CURVE_ATTACK_201" | "GROW_CURVE_ATTACK_202" | "GROW_CURVE_ATTACK_203" |
   "GROW_CURVE_ATTACK_204" | "GROW_CURVE_ATTACK_205" | "GROW_CURVE_CRITICAL_201" | "GROW_CURVE_ATTACK_301" | "GROW_CURVE_ATTACK_302" |
   "GROW_CURVE_ATTACK_303" | "GROW_CURVE_ATTACK_304" | "GROW_CURVE_ATTACK_305" | "GROW_CURVE_CRITICAL_301"
-const weaponExpCurveSrc = require('../GenshinData/ExcelBinOutput/WeaponCurveExcelConfigData.json') as WeaponCurveExcelConfigData[]
+const weaponExpCurveSrc = require('../../GenshinData/ExcelBinOutput/WeaponCurveExcelConfigData.json') as WeaponCurveExcelConfigData[]
 
 export type WeaponExpCurveData = Record<WeaponGrowCurveKey, { [level: number]: number }>
 

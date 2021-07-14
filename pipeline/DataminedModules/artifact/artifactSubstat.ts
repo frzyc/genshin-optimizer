@@ -1,6 +1,6 @@
-import { PropTypeKey, SubstatKey, SubStatPropTypeMap } from ".."
-import { extrapolateFloat } from "../extrapolateFloat"
-import { layeredAssignment } from "../Util"
+import { PropTypeKey, SubstatKey, SubStatPropTypeMap } from "../.."
+import { extrapolateFloat } from "../../extrapolateFloat"
+import { layeredAssignment } from "../../Util"
 
 type ReliquaryAffixExcelConfigData = {
   "Id": number//996004, AFAIK, not used
@@ -11,7 +11,7 @@ type ReliquaryAffixExcelConfigData = {
   "Weight": number//1,
   "UpgradeWeight": number//1000
 }
-const artifactSubstatDataSrc = require('../GenshinData/ExcelBinOutput/ReliquaryAffixExcelConfigData.json') as ReliquaryAffixExcelConfigData[]
+const artifactSubstatDataSrc = require('../../GenshinData/ExcelBinOutput/ReliquaryAffixExcelConfigData.json') as ReliquaryAffixExcelConfigData[]
 
 type artifaceSubstatData = {
   [Rarity: number]: Record<SubstatKey, Array<number>>

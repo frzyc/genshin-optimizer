@@ -1,4 +1,4 @@
-import { PropTypeKey, propTypeMap } from ".."
+import { PropTypeKey, propTypeMap } from "../.."
 
 type AvatarPromoteExcelConfigData = {
   "AvatarPromoteId": number//2,
@@ -41,7 +41,7 @@ type AvatarPromoteExcelConfigData = {
   ],
   "RequiredPlayerLevel": number// 15
 }
-const ascensionSrc = require('../GenshinData/ExcelBinOutput/AvatarPromoteExcelConfigData.json') as AvatarPromoteExcelConfigData[]
+const ascensionSrc = require('../../GenshinData/ExcelBinOutput/AvatarPromoteExcelConfigData.json') as AvatarPromoteExcelConfigData[]
 export type AscensionData = {
   [AvatarPromoteId: number]: Array<{
     props: {

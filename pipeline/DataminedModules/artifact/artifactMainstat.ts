@@ -1,6 +1,6 @@
-import { MainPropMap, MainStatKey, PropTypeKey, propTypeMap, StatKey } from ".."
-import { extrapolateFloat } from "../extrapolateFloat"
-import { layeredAssignment } from "../Util"
+import { MainPropMap, MainStatKey, PropTypeKey, propTypeMap, StatKey } from "../.."
+import { extrapolateFloat } from "../../extrapolateFloat"
+import { layeredAssignment } from "../../Util"
 
 type ReliquaryLevelExcelConfigData = {
   "Rank": number,
@@ -11,7 +11,7 @@ type ReliquaryLevelExcelConfigData = {
     "Value": number//129.0
   }>
 }
-const artifactMainstatDataSrc = require('../GenshinData/ExcelBinOutput/ReliquaryLevelExcelConfigData.json') as ReliquaryLevelExcelConfigData[]
+const artifactMainstatDataSrc = require('../../GenshinData/ExcelBinOutput/ReliquaryLevelExcelConfigData.json') as ReliquaryLevelExcelConfigData[]
 
 export type artifaceMainstatData = {
   [rank: number]: Record<MainStatKey, number[]>

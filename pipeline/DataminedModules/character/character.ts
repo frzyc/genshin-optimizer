@@ -25,7 +25,7 @@ type AvatarExcelConfigData = {
   "CutsceneShow": string//"",
   "SkillDepotId": number//3401,
   "StaminaRecoverSpeed": number//25.0,
-  "CandSkillDepotIds": any[]//[],
+  "CandSkillDepotIds": any[]//[], used by traveler?
   "ManekinJsonConfigHashSuffix": number//4186788044,
   "ManekinJsonConfigHashPre": number//152,
   "ManekinMotionConfig": number//103,
@@ -70,9 +70,9 @@ type AvatarExcelConfigData = {
   "LODPatternName": string//""
 }
 
-const characterDataSrc = require('../GenshinData/ExcelBinOutput/AvatarExcelConfigData.json') as AvatarExcelConfigData[]
+const characterDataSrc = require('../../GenshinData/ExcelBinOutput/AvatarExcelConfigData.json') as AvatarExcelConfigData[]
 //character data
 const characterData = Object.fromEntries(characterDataSrc.map(data =>
-  [data.Id, data]))
+  [data.Id, data])) as { [charId: number]: AvatarExcelConfigData }
 
 export default characterData

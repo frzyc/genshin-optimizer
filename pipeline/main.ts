@@ -1,13 +1,18 @@
 import { characterIdMap, Language, propTypeMap, QualityTypeMap, weaponMap, DWeaponTypeKey, WeaponKey, CharacterKey, weaponIdMap, PropTypeKey, StatKey, WeaponTypeKey } from '.'
-import data from './Data'
-import artifactMainstatData from './DataminedModules/artifactMainstat'
-import artifactSubstatData from './DataminedModules/artifactSubstat'
-import ascensionData from './DataminedModules/ascension'
-import characterData from './DataminedModules/character'
-import characterExpCurve, { CharacterGrowCurveKey } from './DataminedModules/characterExpCurve'
-import weaponData from './DataminedModules/weapon'
-import WeaponAscensionData from './DataminedModules/weaponAscension'
-import weaponExpCurve, { WeaponGrowCurveKey } from './DataminedModules/weaponExpCurve'
+import mapHashData from './Data'
+import artifactMainstatData from './DataminedModules/artifact/artifactMainstat'
+import artifactSubstatData from './DataminedModules/artifact/artifactSubstat'
+import ascensionData from './DataminedModules/character/ascension'
+import characterData from './DataminedModules/character/character'
+import characterExpCurve, { CharacterGrowCurveKey } from './DataminedModules/character/characterExpCurve'
+import characterInfo from './DataminedModules/character/characterInfo'
+import constellations from './DataminedModules/character/constellations'
+import passives from './DataminedModules/character/passives'
+import skillDepot from './DataminedModules/character/skillDepot'
+import talents from './DataminedModules/character/talents'
+import weaponData from './DataminedModules/weapon/weapon'
+import WeaponAscensionData from './DataminedModules/weapon/weaponAscension'
+import weaponExpCurve, { WeaponGrowCurveKey } from './DataminedModules/weapon/weaponExpCurve'
 import { extrapolateFloat } from './extrapolateFloat'
 import { parsingFunctions, preprocess } from './parseUtil'
 import { crawlObject, dumpFile, layeredAssignment } from './Util'
@@ -49,17 +54,22 @@ export type CharacterData = {
     props: {
       [key: string]: number
     }
-  }>
+  }>,
+  birthday: {
+    month: number,
+    day: number
+  }
 }
 //parse baseStat/ascension/basic data
 const characterDataDump = Object.fromEntries(Object.entries(characterData).filter(([charid, charData]) => charid in characterIdMap).map(([charid, charData]) => {
   const { WeaponType, QualityType, AvatarPromoteId, HpBase, AttackBase, DefenseBase, PropGrowCurves } = charData
   const curves = Object.fromEntries(PropGrowCurves.map(({ Type, GrowCurve }) => [propTypeMap[Type], GrowCurve])) as any //TODO: typing
+  const { InfoBirthDay, InfoBirthMonth, } = characterInfo[charid]
   const result: CharacterData = {
     weaponTypeKey: weaponMap[WeaponType],
     base: { hp: HpBase, atk: AttackBase, def: DefenseBase },
     curves,
-
+    birthday: { month: InfoBirthMonth, day: InfoBirthDay },
     star: QualityTypeMap[QualityType],
     ascensions: ascensionData[AvatarPromoteId]
   }
@@ -75,20 +85,6 @@ Object.entries(characterDataDump).forEach(([characterKey, data]) => {
   } else
     dumpFile(`../src/Data/Characters/${characterKey}/data_gen.json`, data)
 })
-
-//parse MapHash
-const characterMapHash = Object.fromEntries(Object.entries(characterData).filter(([charid, charData]) => charid in characterIdMap).map(([charid, charData]) => {
-  //TODO SkillDepotId
-  const { NameTextMapHash, DescTextMapHash } = charData
-  const result = {
-    MapHash: {
-      name: NameTextMapHash,
-      DescText: DescTextMapHash
-    },
-  }
-
-  return [characterIdMap[charid], result]
-}))
 
 type WeaponProp = {
   type: StatKey,
@@ -139,7 +135,7 @@ Object.entries(weaponData).filter(([weaponid,]) => weaponid in weaponIdMap).map(
   const [ascensionDataId,] = SkillAffix
   const ascData = ascensionDataId && WeaponAscensionData[ascensionDataId]
 
-  data.weapon[weaponIdMap[weaponid]] = {
+  mapHashData.weapon[weaponIdMap[weaponid]] = {
     name: NameTextMapHash,
     description: DescTextMapHash,
     passiveName: ascData ? ascData[0].NameTextMapHash : 0,
@@ -147,16 +143,68 @@ Object.entries(weaponData).filter(([weaponid,]) => weaponid in weaponIdMap).map(
   }
 })
 
+//generate the MapHashes for localization for characters
+Object.entries(characterData).filter(([charid,]) => charid in characterIdMap).forEach(([charid, charData]) => {
+  const { NameTextMapHash, DescTextMapHash, SkillDepotId, CandSkillDepotIds } = charData
+  const { AvatarTitleTextMapHash, AvatarConstellationBeforTextMapHash } = characterInfo[charid]
+  let skillDepotId = SkillDepotId
+  if (CandSkillDepotIds.length) {
+    if (parseInt(charid) === 10000005)//traveler_geo
+      skillDepotId = 506
+    if (parseInt(charid) === 10000007)//traveler_anemo
+      skillDepotId = 706
+  }
+  const { EnergySkill: burst, Skills: [normal, skill, sprint], Talents, InherentProudSkillOpens: [passive1, passive2, passive3] } = skillDepot[skillDepotId]
+
+  const keys = ["char", characterIdMap[charid]]
+  layeredAssignment(mapHashData, [...keys, "name"], NameTextMapHash)
+  layeredAssignment(mapHashData, [...keys, "title"], AvatarTitleTextMapHash)
+  layeredAssignment(mapHashData, [...keys, "description"], DescTextMapHash)
+  // layeredAssignment(mapHashData, [...keys, "descriptionDetail"], AvatarDetailTextMapHash)
+  layeredAssignment(mapHashData, [...keys, "constellationName"], AvatarConstellationBeforTextMapHash)
+
+  layeredAssignment(mapHashData, [...keys, "auto", "name"], [talents[normal].NameTextMapHash, "autoName"])
+  layeredAssignment(mapHashData, [...keys, "auto", "fields"], [talents[normal].DescTextMapHash, "autoFields"])
+
+  layeredAssignment(mapHashData, [...keys, "skill", "name"], talents[skill].NameTextMapHash)
+  layeredAssignment(mapHashData, [...keys, "skill", "description"], [talents[skill].DescTextMapHash, "paragraph"])
+
+  layeredAssignment(mapHashData, [...keys, "burst", "name"], talents[burst].NameTextMapHash)
+  layeredAssignment(mapHashData, [...keys, "burst", "description"], [talents[burst].DescTextMapHash, "paragraph"])
+
+  if (sprint) {
+    layeredAssignment(mapHashData, [...keys, "sprint", "name"], talents[sprint].NameTextMapHash)
+    layeredAssignment(mapHashData, [...keys, "sprint", "description"], [talents[sprint].DescTextMapHash, "paragraph"])
+  }
+
+  layeredAssignment(mapHashData, [...keys, "passive1", "name"], passives[passive1.ProudSkillGroupId].NameTextMapHash)
+  layeredAssignment(mapHashData, [...keys, "passive1", "description"], [passives[passive1.ProudSkillGroupId].DescTextMapHash, "paragraph"])
+
+  layeredAssignment(mapHashData, [...keys, "passive2", "name"], passives[passive2.ProudSkillGroupId].NameTextMapHash)
+  layeredAssignment(mapHashData, [...keys, "passive2", "description"], [passives[passive2.ProudSkillGroupId].DescTextMapHash, "paragraph"])
+
+  if (passive3?.ProudSkillGroupId) {
+    layeredAssignment(mapHashData, [...keys, "passive3", "name"], passives[passive3.ProudSkillGroupId].NameTextMapHash)
+    layeredAssignment(mapHashData, [...keys, "passive3", "description"], [passives[passive3.ProudSkillGroupId].DescTextMapHash, "paragraph"])
+  }
+
+  Talents.forEach((skId, i) => {
+    layeredAssignment(mapHashData, [...keys, `constellation${i + 1}`, "name"], constellations[skId].NameTextMapHash)
+    layeredAssignment(mapHashData, [...keys, `constellation${i + 1}`, "description"], [constellations[skId].DescTextMapHash, "paragraph"])
+  })
+
+})
+
 //Main localization dumping
 const languageData = {}
 Object.entries(languageMap).forEach(([lang, langStrings]) => {
-  crawlObject(data, [], v => typeof v === "number" || v?.length === 2 && (Array.isArray(v) && typeof v[0] === "number" && typeof v[1] === "string"), (value, keys) => {
+  crawlObject(mapHashData, [], v => typeof v === "number" || v?.length === 2 && (Array.isArray(v) && typeof v[0] === "number" && typeof v[1] === "string"), (value, keys) => {
     // const [type, characterKey, skill, field] = keys
     if (value === 0) return layeredAssignment(languageData, [lang, ...keys], "")
     if (typeof value === "number") value = [value, "string"]
     const [stringID, processing] = value
     const string = parsingFunctions[processing](lang as Language, preprocess(langStrings[stringID]))
-    if (!string) throw (`Invalid string in ${keys}, for lang:${lang} (${stringID}:${processing})`)
+    if (string === undefined) throw (`Invalid string in ${keys}, for lang:${lang} (${stringID}:${processing})`)
     layeredAssignment(languageData, [lang, ...keys], string)
   })
 })
