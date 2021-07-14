@@ -342,30 +342,47 @@ function checkDuplicate(editorArt: IArtifact | undefined): { dupId?: string, isD
   const { id, setKey, numStars, level, slotKey, mainStatKey, substats } = editorArt
   if (id) return { isDup: false }
 
-  //check for a "upgrade" or duplicate
-  const artifacts = Object.values(ArtifactDatabase.getArtifactDatabase()).filter(candidate =>
+  const candidates = Object.values(ArtifactDatabase.getArtifactDatabase()).filter(candidate =>
     setKey === candidate.setKey &&
     numStars === candidate.numStars &&
     slotKey === candidate.slotKey &&
     mainStatKey === candidate.mainStatKey &&
     level >= candidate.level &&
-    candidate.substats.every(candidateSubstat =>
-      !candidateSubstat.key || substats.some(substat =>
-        substat.key === candidateSubstat.key &&
-        substat.value >= candidateSubstat.value
-      )))
-  if (!artifacts.length) return { isDup: false }
+    substats.every((substat, i) =>
+      !candidate.substats[i].key || // Candidate doesn't have anything on this slot
+      (substat.key === candidate.substats[i].key && // Or editor simply has better substat
+        substat.value >= candidate.substats[i].value)
+    )
+  )
 
-  const dupArtifacts = artifacts.filter(candidate =>
+  // Strictly upgraded artifact
+  const upgraded = candidates.filter(candidate =>
+    level > candidate.level &&
+    (Math.floor(level / 4) === Math.floor(candidate.level / 4) ? // Check for extra rolls
+      substats.every((substat, i) => // Has no extra roll
+        substat.key === candidate.substats[i].key && substat.value === candidate.substats[i].value) :
+      substats.some((substat, i) => // Has extra rolls
+        candidate.substats[i].key ?
+          substat.value > candidate.substats[i].value : // Extra roll to existing substat
+          substat.key // Extra roll to new substat
+      )
+    )
+  )
+  // Strictly duplicated artifact
+  const duplicated = candidates.filter(candidate =>
     level === candidate.level &&
     substats.every(substat =>
-      !substat.key || candidate.substats.some(candidateSubstat =>
-        substat.key === candidateSubstat.key &&
+      !substat.key ||  // Empty slot
+      candidate.substats.some(candidateSubstat =>
+        substat.key === candidateSubstat.key && // Or same slot
         substat.value === candidateSubstat.value
       )))
 
-  const dupId = dupArtifacts[0]?.id! ?? artifacts[0].id!
-  return { dupId, isDup: dupArtifacts.length > 0 }
+  if (!duplicated.length && !upgraded.length)
+    return { isDup: false }
+
+  const dupId = duplicated[0]?.id! ?? upgraded[0].id!
+  return { dupId, isDup: duplicated.length > 0 }
 }
 
 async function randomizeArtifact(): Promise<IArtifact> {
