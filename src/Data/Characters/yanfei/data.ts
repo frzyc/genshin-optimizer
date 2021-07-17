@@ -2,15 +2,6 @@ import { IFormulaSheet } from "../../../Types/character"
 import { basicDMGFormula } from "../../../Util/FormulaUtil"
 
 export const data = {
-  baseStat: {
-    characterHP: [784, 2014, 2600, 3895, 4311, 4959, 5514, 6161, 6578, 7225, 7641, 8289, 8705, 9352],
-    characterATK: [20, 52, 67, 100, 111, 127, 141, 158, 169, 185, 196, 213, 223, 240],
-    characterDEF: [49, 126, 163, 244, 271, 311, 346, 387, 413, 453, 480, 520, 546, 587]
-  },
-  specializeStat: {
-    key: "pyro_dmg_",
-    value: [0, 0, 0, 0, 6, 6, 12, 12, 12, 12, 18, 18, 24, 24]
-  },
   normal: {
     hitArr: [
       [58.34, 62.72, 67.09, 72.93, 77.3, 81.68, 87.51, 93.35, 99.18, 105.01, 110.85, 116.68, 123.98, 131.27, 138.56],

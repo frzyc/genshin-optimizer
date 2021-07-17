@@ -71,7 +71,7 @@ const char: ICharacterSheet = {
   weaponTypeKey: "polearm",
   gender: "F",
   constellationName: tr("constellationName"),
-  titles: ["Thorny Benevolence", "Sister", "A Nonconforming Sister"],
+  title: tr("title"),
   baseStat: data_gen.base,
   baseStatCurve: data_gen.curves,
   ascensions: data_gen.ascensions,

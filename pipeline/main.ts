@@ -152,7 +152,7 @@ Object.entries(characterData).filter(([charid,]) => charid in characterIdMap).fo
     if (parseInt(charid) === 10000005)//traveler_geo
       skillDepotId = 506
     if (parseInt(charid) === 10000007)//traveler_anemo
-      skillDepotId = 706
+      skillDepotId = 504
   }
   const { EnergySkill: burst, Skills: [normal, skill, sprint], Talents, InherentProudSkillOpens: [passive1, passive2, passive3] } = skillDepot[skillDepotId]
 
@@ -203,7 +203,14 @@ Object.entries(languageMap).forEach(([lang, langStrings]) => {
     if (value === 0) return layeredAssignment(languageData, [lang, ...keys], "")
     if (typeof value === "number") value = [value, "string"]
     const [stringID, processing] = value
-    const string = parsingFunctions[processing](lang as Language, preprocess(langStrings[stringID]))
+    let rawString = langStrings[stringID]
+
+    //manually fix bad strings that breaks pipeline, seem to be only in russian translations
+    if (processing === "autoFields" && lang === "ru" && rawString.split("\\n\\n").length === 2) {
+      const ind = rawString.indexOf("n<color=#FFD780FF>") + 1
+      rawString = rawString.slice(0, ind) + ("\\n") + rawString.slice(ind);
+    }
+    const string = parsingFunctions[processing](lang as Language, preprocess(rawString), keys)
     if (string === undefined) throw (`Invalid string in ${keys}, for lang:${lang} (${stringID}:${processing})`)
     layeredAssignment(languageData, [lang, ...keys], string)
   })

@@ -2,15 +2,6 @@ import { IFormulaSheet } from "../../../Types/character"
 import { basicDMGFormula } from "../../../Util/FormulaUtil"
 
 const data = {
-  baseStat: {
-    characterHP: [1094, 2811, 3628, 5435, 6015, 6919, 7694, 8597, 9178, 10081, 10662, 11565, 12146, 13050],
-    characterATK: [19, 49, 63, 94, 104, 119, 133, 148, 158, 174, 184, 200, 210, 225],
-    characterDEF: [54, 140, 180, 270, 299, 344, 382, 427, 456, 501, 530, 575, 603, 648]
-  },
-  specializeStat: {
-    key: "electro_dmg_",
-    value: [0, 0, 0, 0, 6, 6, 12, 12, 12, 12, 18, 18, 24, 24]
-  },
   normal: {
     hitArr: [
       [71.12, 76.91, 82.7, 90.97, 96.76, 103.38, 112.47, 121.57, 130.67, 140.59, 151.96, 165.33, 178.71, 192.08, 206.67],
@@ -22,7 +13,7 @@ const data = {
   },
   charged: {
     spinning: [56.24, 60.82, 65.4, 71.94, 76.52, 81.75, 88.94, 96.14, 103.33, 111.18, 120.17, 130.75, 141.32, 151.9, 163.43],
-    finalATK: [101.82, 110.11, 118.4, 130.24, 138.53, 148, 161.02, 174.05, 187.07, 201.28, 217.56, 236.71, 255.85, 275, 295.88]
+    final: [101.82, 110.11, 118.4, 130.24, 138.53, 148, 161.02, 174.05, 187.07, 201.28, 217.56, 236.71, 255.85, 275, 295.88]
   },
   plunging: {
     dmg: [74.59, 80.66, 86.73, 95.4, 101.47, 108.41, 117.95, 127.49, 137.03, 147.44, 157.85, 168.26, 178.66, 189.07, 199.48],
@@ -43,15 +34,12 @@ const data = {
 }
 
 const formula: IFormulaSheet = {
-  normal: {
-    ...Object.fromEntries(data.normal.hitArr.map((percentArr, i) => [i, stats =>
-      basicDMGFormula(percentArr[stats.tlvl.auto], stats, "normal")])),
-  },
-  charged: {
-    spinning: stats => basicDMGFormula(data.charged.spinning[stats.tlvl.auto], stats, "charged"),
-    finalATK: stats => basicDMGFormula(data.charged.finalATK[stats.tlvl.auto], stats, "charged"),
-  },
-  plunging: Object.fromEntries(Object.entries(data.plunging).map(([key, arr]) => [key, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "plunging")])),
+  normal: Object.fromEntries(data.normal.hitArr.map((percentArr, i) =>
+    [i, stats => basicDMGFormula(percentArr[stats.tlvl.auto], stats, "normal")])),
+  charged: Object.fromEntries(Object.entries(data.charged).map(([name, arr]) =>
+    [name, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "charged")])),
+  plunging: Object.fromEntries(Object.entries(data.plunging).map(([name, arr]) =>
+    [name, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "plunging")])),
   skill: {
     shield: stats => {
       const percent = data.skill.hp[stats.tlvl.skill] / 100

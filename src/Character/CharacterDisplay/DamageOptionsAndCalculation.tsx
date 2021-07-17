@@ -44,6 +44,7 @@ type ReactionToggleProps = {
   className: string
 }
 export function ReactionToggle({ character: { reactionMode = null, infusionAura }, build, characterDispatch, className }: ReactionToggleProps) {
+  if (!build) return null
   const charEleKey = build.characterEle
   if (!["pyro", "hydro", "cryo"].includes(charEleKey) && !["pyro", "hydro", "cryo"].includes(infusionAura)) return null
   return <ToggleButtonGroup className={className} type="radio" name="reactionMode" value={reactionMode} onChange={val => characterDispatch({ reactionMode: val === "none" ? null : val })}>
@@ -71,7 +72,8 @@ export function HitModeToggle({ hitMode, characterDispatch, className }) {
 }
 
 function CalculationDisplay({ characterSheet, weaponSheet, build }: { characterSheet: CharacterSheet, weaponSheet: WeaponSheet, build: ICalculatedStats }) {
-  const displayStatKeys = useMemo(() => Character.getDisplayStatKeys(build, characterSheet), [build, characterSheet])
+  const displayStatKeys = useMemo(() => build && Character.getDisplayStatKeys(build, characterSheet), [build, characterSheet])
+  if (!build) return null
   return <div>
     {Object.entries(displayStatKeys).map(([sectionKey, fields]: [string, any]) => {
       const header = Character.getDisplayHeading(sectionKey, characterSheet, weaponSheet, build.characterEle)

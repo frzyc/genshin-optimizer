@@ -1,6 +1,6 @@
 import { applyArtifacts, computeAllStats, createProxiedStats, parseTestFlexObject } from "../TestUtils"
 import formula from "./data"
-import cformula from '../../Weapons/Bow/TheViridescentHunt/TheViridescentHuntData'
+import cformula from '../../Weapons/Bow/TheViridescentHunt/data'
 
 const url = "https://frzyc.github.io/genshin-optimizer/#/flex?v=2&d=5t5k0824a-09N11L35h1t5k0d341U86c3a-0921t5k0a4419c7k15l09D065k0104a613v09824F0t5g0314aS04W06c3961p202004L70A03662iphysical_enemyRes_270aenemyLevel285iTheViridescentHunt3L800101000"
 const { artifacts } = parseTestFlexObject(url)

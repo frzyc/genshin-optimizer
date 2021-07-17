@@ -18,6 +18,8 @@ import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { ICharacterSheet } from '../../../Types/character'
 import { IConditionals } from '../../../Types/IConditional'
+import { Translate } from '../../../Components/Translate'
+const tr = (strKey: string) => <Translate ns="char_klee_gen" key18={strKey} />
 const conditionals: IConditionals = {
   a1: { // PoundingSurprise
     canShow: stats => stats.ascension >= 1,
@@ -41,15 +43,15 @@ const conditionals: IConditionals = {
   }
 }
 const char: ICharacterSheet = {
-  name: "Klee",
+  name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   star: 5,
   elementKey: "pyro",
   weaponTypeKey: "catalyst",
   gender: "F",
-  constellationName: "Trifolium",
-  titles: ["Fleeing Sunlight", "Spark Knight", "Red Burny Girl"],
+  constellationName: tr("constellationName"),
+  title: tr("title"),
   baseStat: data_gen.base,
   baseStatCurve: data_gen.curves,
   ascensions: data_gen.ascensions,
@@ -58,7 +60,7 @@ const char: ICharacterSheet = {
     conditionals,
     sheets: {
       auto: {
-        name: "Kaboom!",
+        name: tr("auto.name"),
         img: normal,
         sections: [{
           text: <span><strong>Normal Attack</strong> Throws things that go boom when they hit things! Perform up to 3 explosive attacks, dealing <span className="text-pyro">AoE Pyro DMG</span>.</span>,
@@ -101,15 +103,10 @@ const char: ICharacterSheet = {
         }],
       },
       skill: {
-        name: "Jumpy Dumpty",
+        name: tr("skill.name"),
         img: skill,
         sections: [{
-          text: <span>
-            <p className="mb-2">Jumpy Dumpty is tons of boom-bang-fun!</p>
-            <p className="mb-2">When thrown, Jumpy Dumpty bounces thrice, igniting and dealing <span className="text-pyro">AoE Pyro DMG</span> with every bounce.</p>
-            <p className="mb-2">On the third bounce, the bomb splits into 8 mines. The mines will explode upon contact with opponents, or after a short period of time, dealing <span className="text-pyro">AoE Pyro DMG</span>.</p>
-            <p className="mb-2">Starts with 2 charges.</p>
-          </span>,
+          text: tr("skill.description"),
           fields: [{
             text: "Jumpy Dumpty DMG",
             formulaText: stats => <span>{data.skill.jumpyDmg[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
@@ -130,10 +127,10 @@ const char: ICharacterSheet = {
         }],
       },
       burst: {
-        name: "Sparks 'n' Splash",
+        name: tr("burst.name"),
         img: burst,
         sections: [{
-          text: <span>Klee's Blazing Delight! For 10 seconds, summons 5 times 4 Sparks 'n' Splash to attack nearby opponents, dealing <span className="text-pyro">AoE Pyro DMG</span>.</span>,
+          text: tr("burst.description"),
           fields: [{
             text: "Sparks 'n' Splash DMG",
             formulaText: stats => <span>{data.burst.dmg[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,

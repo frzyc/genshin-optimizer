@@ -37,8 +37,8 @@ describe("Testing Diona's Formulas (⛧ Sin ⛧#0663)", () => {
         expect(formula.normal[3](stats)[0](stats)).toApproximate(99)
         expect(formula.normal[4](stats)[0](stats)).toApproximate(124)
 
-        expect(formula.charged.aimShot(stats)[0](stats)).toApproximate(101)
-        expect(formula.charged.fullAimedShot(stats)[0](stats)).toApproximate(1029)
+        expect(formula.charged.hit(stats)[0](stats)).toApproximate(101)
+        expect(formula.charged.full(stats)[0](stats)).toApproximate(1029)
         // expect(formula.plunging.dmg(stats)[0](stats)).toApproximate()
         // expect(formula.plunging.low(stats)[0](stats)).toApproximate()
         expect(formula.plunging.high(stats)[0](stats)).toApproximate(328)
@@ -61,7 +61,7 @@ describe("Testing Diona's Formulas (⛧ Sin ⛧#0663)", () => {
       test('melt', () => {
         setupStats.reactionMode = "cryo_melt"
         const stats = computeAllStats(setupStats)
-        expect(formula.charged.fullAimedShot(stats)[0](stats)).toApproximate(1694)
+        expect(formula.charged.full(stats)[0](stats)).toApproximate(1694)
         expect(formula.skill.dmg(stats)[0](stats)).toApproximate(825)
         expect(formula.burst.dmg(stats)[0](stats)).toApproximate(1483)
         expect(formula.burst.continuousDmg(stats)[0](stats)).toApproximate(976)
@@ -78,8 +78,8 @@ describe("Testing Diona's Formulas (⛧ Sin ⛧#0663)", () => {
         expect(formula.normal[3](stats)[0](stats)).toApproximate(168)
         expect(formula.normal[4](stats)[0](stats)).toApproximate(210)
 
-        expect(formula.charged.aimShot(stats)[0](stats)).toApproximate(172)
-        expect(formula.charged.fullAimedShot(stats)[0](stats)).toApproximate(1743)
+        expect(formula.charged.hit(stats)[0](stats)).toApproximate(172)
+        expect(formula.charged.full(stats)[0](stats)).toApproximate(1743)
         // expect(formula.plunging.dmg(stats)[0](stats)).toApproximate()
         // expect(formula.plunging.low(stats)[0](stats)).toApproximate()
         // expect(formula.plunging.high(stats)[0](stats)).toApproximate()

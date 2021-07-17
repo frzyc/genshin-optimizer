@@ -106,7 +106,7 @@ const char: ICharacterSheet = {
   weaponTypeKey: "sword",
   gender: "M",
   constellationName: tr("constellationName"),
-  titles: ["TEMPLATE"],
+  title: tr("title"),
   baseStat: data_gen.base,
   baseStatCurve: data_gen.curves,
   ascensions: data_gen.ascensions,

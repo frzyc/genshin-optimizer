@@ -1,6 +1,6 @@
 import { applyArtifacts, computeAllStats, createProxiedStats, parseTestFlexObject } from "../TestUtils"
 import formula from "./data"
-import cformula from '../../Weapons/Polearm/CrescentPike/CrescentPikeData'
+import cformula from '../../Weapons/Polearm/CrescentPike/data'
 
 const url = "https://frzyc.github.io/genshin-optimizer/#/flex?v=2&d=5g5g01045z03i08X17U035g04449a1a-06W08E235g04243v0511921ae1g4g03145x09L08L0aY145k0e343x02621u7aS0v000004L70A03332iphysical_enemyRes_270aenemyLevel285cCrescentPike3L700101000"
 const { artifacts } = parseTestFlexObject(url)

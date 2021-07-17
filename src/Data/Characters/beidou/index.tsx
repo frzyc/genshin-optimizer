@@ -12,13 +12,15 @@ import burst from './Talent_Stormbreaker.png'
 import passive1 from './Talent_Retribution.png'
 import passive2 from './Talent_Lightning_Storm.png'
 import passive3 from './Talent_Conqueror_of_Tides.png'
-import DisplayPercent from '../../../Components/DisplayPercent'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { IConditionals } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
+import { Translate } from '../../../Components/Translate'
+import { claymoreChargedDocSection, normalDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
+const tr = (strKey: string) => <Translate ns="char_beidou_gen" key18={strKey} />
 const conditionals: IConditionals = {
   a4: { // Lightning Storm
     canShow: stats => stats.ascension >= 4,
@@ -42,15 +44,15 @@ const conditionals: IConditionals = {
   }
 }
 const char: ICharacterSheet = {
-  name: "Beidou",
+  name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   star: 4,
   elementKey: "electro",
   weaponTypeKey: "claymore",
   gender: "F",
-  constellationName: "Victor Mare",
-  titles: ["Uncrowned Lord of Ocean", "Queen of the Crux Fleet"],
+  constellationName: tr("constellationName"),
+  title: tr("title"),
   baseStat: data_gen.base,
   baseStatCurve: data_gen.curves,
   ascensions: data_gen.ascensions,
@@ -59,76 +61,19 @@ const char: ICharacterSheet = {
     conditionals,
     sheets: {
       auto: {
-        name: "Oceanborne",
+        name: tr("auto.name"),
         img: normal,
-        sections: [{
-          text: <span><strong>Normal Attack</strong> Perform up to 5 successive strikes.</span>,
-          fields: data.normal.hitArr.map((percentArr, i) =>
-          ({
-            text: `${i + 1}-Hit DMG`,
-            formulaText: stats => <span>{percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
-            formula: formula.normal[i],
-            variant: stats => getTalentStatKeyVariant("normal", stats),
-          }))
-        }, {
-          text: <span><strong>Charged Attack</strong> Drains Stamina over time to perform continuous slashes. At end of the sequence, perform a more powerful slash.</span>,
-          fields: [{
-            text: `Spinning DMG`,
-            formulaText: stats => <span>{data.charged.spinning[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
-            formula: formula.charged.spinning,
-            variant: stats => getTalentStatKeyVariant("charged", stats),
-          }, {
-            text: `Spinning Final DMG`,
-            formulaText: stats => <span>{data.charged.finalATK[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
-            formula: formula.charged.finalATK,
-            variant: stats => getTalentStatKeyVariant("charged", stats),
-          }, {
-            text: `Stamina Cost`,
-            value: `40/s`,
-          }, {
-            text: `Max Duration`,
-            value: `5s`,
-          }]
-        }, {
-          text: <span><strong>Plunging Attack</strong> Plunges from mid-air to strike the ground, damaging opponents along the path and dealing AoE DMG upon impact.</span>,
-          fields: [{
-            text: `Plunge DMG`,
-            formulaText: stats => <span>{data.plunging.dmg[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-            formula: formula.plunging.dmg,
-            variant: stats => getTalentStatKeyVariant("plunging", stats),
-          }, {
-            text: `Low Plunge DMG`,
-            formulaText: stats => <span>{data.plunging.low[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-            formula: formula.plunging.low,
-            variant: stats => getTalentStatKeyVariant("plunging", stats),
-          }, {
-            text: `High Plunge DMG`,
-            formulaText: stats => <span>{data.plunging.high[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-            formula: formula.plunging.high,
-            variant: stats => getTalentStatKeyVariant("plunging", stats),
-          }]
-        }],
+        sections: [
+          normalDocSection(tr, formula, data),
+          claymoreChargedDocSection(tr, formula, data),
+          plungeDocSection(tr, formula, data)
+        ],
       },
       skill: {
-        name: "Tidecaller",
+        name: tr("skill.name"),
         img: skill,
         sections: [{
-          text: <span>
-            <p className="mb-2">Nothing to worry about. Should anyone raise a hand against her or her men, she will avenge it ten-fold with sword and thunder.</p>
-            <p className="mb-2"><strong>Press:</strong> Accumulating the power of lightning, Beidou swings her blade forward fiercely, dealing <span className="text-electro">Electro DMG</span>.</p>
-            <p className="mb-2">
-              <strong>Hold:</strong> Lifts her weapon up as a shield. Max DMG absorbed scales off Beidou's Max HP.
-          Attacks using the energy stored within the greatsword upon release or once this ability's duration expires, dealing <span className="text-electro">Electro DMG</span>. DMG dealt scales with the number of times beidou is attacked in the skill's duration. The greatest DMG Bonus will be attained once this effect is triggered twice.
-          The shield possesses the following properties:
-          </p>
-            <ul className="mb-1">
-              <li>Has 250% <span className="text-electro">Electro DMG</span> Absorption Efficiency.</li>
-              <li>Applies the <span className="text-electro">Electro element</span> to Beidou upon activation.</li>
-            </ul>
-            <p className="mb-2">
-              Generate 2 elemental particles when it hit at least 1 target, or 4 when hit with energy stored.
-          </p>
-          </span>,
+          text: tr("skill.description"),
           fields: [{
             text: <span className="text-electro">Shield DMG Absorption</span>,
             formulaText: stats => <span>( {data.skill.hp[stats.tlvl.skill]}% {Stat.printStat("finalHP", stats)} + {data.skill.flat[stats.tlvl.skill]} ) * (100% + {Stat.printStat("powShield_", stats)}) * (250% <span className="text-electro">Electro Absorption</span>)</span>,
@@ -161,18 +106,10 @@ const char: ICharacterSheet = {
         }],
       },
       burst: {
-        name: "Stormbreaker",
+        name: tr("burst.name"),
         img: burst,
         sections: [{
-          text: <span>
-            <p>Recalling her slaying of the great beast Haishan, Beidou calls upon that monstrous strength and the lightning to create a Thunderbeast's Targe around herself, dealing <span className="text-electro">Electro DMG</span> to nearby enemies.</p>
-            <h6>Thunderbeast's Targe:</h6>
-            <ul className="mb-1">
-              <li>When Normal and Charged Attacks hit, they create a lightning discharge that can jump between enemies, dealing <span className="text-electro">Electro DMG</span>.</li>
-              <li>Increases the character's resistance to interruption, and decreases DMG taken.</li>
-              <li>Triggers a maximum of 1 lightning discharge per second.</li>
-            </ul>
-          </span>,
+          text: tr("burst.description"),
           fields: [{
             text: "Skill DMG",
             formulaText: stats => <span>{data.burst.dmg[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
@@ -199,39 +136,14 @@ const char: ICharacterSheet = {
           conditional: conditionals.c6
         }],
       },
-      passive1: {
-        name: "Retribution",
-        img: passive1,
-        sections: [{ text: <span>Counterattacking with <b>Tidecaller</b> at the precise moment when the character is hit grants the maximum DMG Bonus.</span> }],
-      },
-      passive2: {
-        name: "Lightning Storm",
-        img: passive2,
-        sections: [{
-          text: <span>
-            Gain the following effects for 10s after unleashing <b>Tidecaller</b> with its maximum DMG Bonus:
-          <ul className="mb-0">
-              <li>DMG dealt by Normal and Charged Attacks is increased by 15%. ATK SPD of Normal and Charged Attacks is increased by 15%.</li>
-              <li>Greatly reduced delay before unleashing Charged Attacks.</li>
-            </ul>
-          </span>
-        }],
-      },
-      passive3: {
-        name: "Conqueror of Tides",
-        img: passive3,
-        sections: [{
-          text: <span>
-            Decreases swimming Stamina consumption of your characters in the party by 20%.
-            Not stackable with Passive Talents that provide the exact same effects.
-        </span>
-        }],
-      },
+      passive1: talentTemplate("passive1", tr, passive1),
+      passive2: talentTemplate("passive2", tr, passive2),
+      passive3: talentTemplate("passive3", tr, passive3),
       constellation1: {
-        name: "Sea Beast's Scourge",
+        name: tr("constellation1.name"),
         img: c1,
         sections: [{
-          text: stats => <span>When <b>Stormbreaker</b> is used: Creates a shield that absorbs up to 16% of Beidou's Max HP{DisplayPercent(16, stats, "finalHP")} for 15s. This shield absorbs <span className="text-electro">Electro DMG</span> 250% more effectively.</span>,
+          text: tr("constellation1.description"),
           fields: [{
             canShow: stats => stats.constellation >= 1,
             text: <span className="text-electro">Shield DMG Absorption</span>,
@@ -246,22 +158,13 @@ const char: ICharacterSheet = {
           },]
         }],
       },
-      constellation2: {
-        name: "Upon the Turbulent Sea, the Thunder Arises",
-        img: c2,
-        sections: [{ text: <span><b>Stormbreaker</b>'s arc lightning can jump to 2 additional targets.</span> }],
-      },
-      constellation3: {
-        name: "Summoner of Storm",
-        img: c3,
-        sections: [{ text: <span>Increases the level of <b>Tidecaller</b> by 3. Maximum upgrade level is 15.</span> }],
-        stats: { skillBoost: 3 }
-      },
+      constellation2: talentTemplate("constellation2", tr, c2),
+      constellation3: talentTemplate("constellation3", tr, c3, { skillBoost: 3 }),
       constellation4: {
-        name: "Stunning Revenge",
+        name: tr("constellation4.name"),
         img: c4,
         sections: [{
-          text: <span>Within 10s of taking DMG, Beidou's Normal Attacks gain 20% additional <span className="text-electro">Electro DMG</span>.</span>,
+          text: tr("constellation4.description"),
           fields: [{
             text: "Electro DMG",
             formulaText: stats => <span>20% {Stat.printStat(getTalentStatKey("electro", stats), stats)}</span>,
@@ -270,17 +173,8 @@ const char: ICharacterSheet = {
           }]
         }],
       },
-      constellation5: {
-        name: "Crimson Tidewalker",
-        img: c5,
-        sections: [{ text: <span>Increases the level of <b>Stormbreaker</b> by 3. Maximum upgrade level is 15.</span> }],
-        stats: { burstBoost: 3 }
-      },
-      constellation6: {
-        name: "Bane of the Evil",
-        img: c6,
-        sections: [{ text: <span>During the duration of <b>Stormbreaker</b>, the <span className="text-electro">Electro RES</span> of surrounding enemies is decreased by 15%.</span> }],
-      },
+      constellation5: talentTemplate("constellation5", tr, c5, { burstBoost: 3 }),
+      constellation6: talentTemplate("constellation6", tr, c6),
     },
   },
 };

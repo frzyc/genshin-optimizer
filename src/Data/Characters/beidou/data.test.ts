@@ -38,7 +38,7 @@ describe("Testing Beidou's Formulas (Blakeblaze#2916)", () => {
         expect(formula.normal[3](stats)[0](stats)).toApproximate(451)
         expect(formula.normal[4](stats)[0](stats)).toApproximate(585)
         expect(formula.charged.spinning(stats)[0](stats)).toApproximate(217)
-        expect(formula.charged.finalATK(stats)[0](stats)).toApproximate(393)
+        expect(formula.charged.final(stats)[0](stats)).toApproximate(393)
         // expect(formula.plunging.dmg(stats)[0](stats)).toApproximate(692)//not sure what this 692 is
         // expect(formula.plunging.low(stats)[0](stats)).toApproximate(692)
         expect(formula.plunging.high(stats)[0](stats)).toApproximate(720)
@@ -69,7 +69,7 @@ describe("Testing Beidou's Formulas (Blakeblaze#2916)", () => {
         expect(formula.normal[3](stats)[0](stats)).toApproximate(1084)
         expect(formula.normal[4](stats)[0](stats)).toApproximate(1405)
         expect(formula.charged.spinning(stats)[0](stats)).toApproximate(522)
-        expect(formula.charged.finalATK(stats)[0](stats)).toApproximate(945)
+        expect(formula.charged.final(stats)[0](stats)).toApproximate(945)
         // expect(formula.plunging.dmg(stats)[0](stats)).toApproximate()
         expect(formula.plunging.low(stats)[0](stats)).toApproximate(1384)
         expect(formula.plunging.high(stats)[0](stats)).toApproximate(1729)

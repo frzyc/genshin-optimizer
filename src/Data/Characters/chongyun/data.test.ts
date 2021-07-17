@@ -117,7 +117,7 @@ describe("Testing Chongyun's Formulas (Derpy#2132)", () => {
         expect(formula.normal[2](stats)[0](stats)).toApproximate(99)
         expect(formula.normal[3](stats)[0](stats)).toApproximate(125)
         expect(formula.charged.spinning(stats)[0](stats)).toApproximate(69)
-        expect(formula.charged.finalATK(stats)[0](stats)).toApproximate(126)
+        expect(formula.charged.final(stats)[0](stats)).toApproximate(126)
         expect(formula.skill.dmg(stats)[0](stats)).toApproximate(1358)
         expect(formula.passive2.dmg(stats)[0](stats)).toApproximate(1358)
         expect(formula.burst.dmg(stats)[0](stats)).toApproximate(1139)

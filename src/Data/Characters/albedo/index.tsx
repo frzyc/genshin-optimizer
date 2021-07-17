@@ -16,9 +16,11 @@ import Stat from '../../../Stat'
 import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant, } from "../../../Build/Build"
-import DisplayPercent from '../../../Components/DisplayPercent'
 import { ICharacterSheet } from '../../../Types/character'
 import { IConditionals } from '../../../Types/IConditional'
+import { Translate } from '../../../Components/Translate'
+import { plungeDocSection, talentTemplate } from '../SheetUtil'
+const tr = (strKey: string) => <Translate ns="char_albedo_gen" key18={strKey} />
 const conditionals: IConditionals = {
   a4: { // Homuncular Nature
     canShow: stats => stats.ascension >= 4,
@@ -43,15 +45,15 @@ const conditionals: IConditionals = {
   }
 }
 const char: ICharacterSheet = {
-  name: "Albedo",
+  name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   star: 5,
   elementKey: "geo",
   weaponTypeKey: "sword",
   gender: "M",
-  constellationName: "Princeps Cretaceus",
-  titles: ["Kreideprinz", "The Chalk Prince", "Chief Alchemist"],
+  constellationName: tr("constellationName"),
+  title: tr("title"),
   baseStat: data_gen.base,
   baseStatCurve: data_gen.curves,
   ascensions: data_gen.ascensions,
@@ -60,10 +62,10 @@ const char: ICharacterSheet = {
     conditionals,
     sheets: {
       auto: {
-        name: "Favonius Bladework - Weiss",
+        name: tr("auto.name"),
         img: normal,
         sections: [{
-          text: <span><strong>Normal Attack</strong> Perform up to 5 rapid strikes.</span>,
+          text: tr(`auto.fields.normal`),
           fields: data.normal.hitArr.map((percentArr, i) =>
           ({
             text: `${i + 1}-Hit DMG`,
@@ -72,7 +74,7 @@ const char: ICharacterSheet = {
             variant: stats => getTalentStatKeyVariant("normal", stats)
           }))
         }, {
-          text: <span><strong>Charged Attack</strong> Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.</span>,
+          text: tr("auto.fields.charged"),
           fields: [{
             text: `Charged 1-Hit DMG`,
             formulaText: stats => <span>{data.charged.atk1[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
@@ -87,40 +89,13 @@ const char: ICharacterSheet = {
             text: `Stamina Cost`,
             value: 20,
           }]
-        }, {
-          text: <span><strong>Plunging Attack</strong> Plunges from mid-air to strike the ground, damaging enemies along the path and dealing AoE DMG upon impact.</span>,
-          fields: [{
-            text: `Plunge DMG`,
-            formulaText: stats => <span>{data.plunging.dmg[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-            formula: formula.plunging.dmg,
-            variant: stats => getTalentStatKeyVariant("plunging", stats),
-          }, {
-            text: `Low Plunge DMG`,
-            formulaText: stats => <span>{data.plunging.low[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-            formula: formula.plunging.low,
-            variant: stats => getTalentStatKeyVariant("plunging", stats),
-          }, {
-            text: `High Plunge DMG`,
-            formulaText: stats => <span>{data.plunging.high[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-            formula: formula.plunging.high,
-            variant: stats => getTalentStatKeyVariant("plunging", stats),
-          }]
-        }]
+        }, plungeDocSection(tr, formula, data)]
       },
       skill: {
-        name: "Abiogenesis: Solar Isotoma",
+        name: tr("skill.name"),
         img: skill,
         sections: [{
-          text: <span>
-            <p className="mb-2">Albedo creates a Solar Isotoma using alchemy, which deals <span className="text-geo">AoE Geo DMG</span> on appearance.</p>
-            <h6><strong>Solar Isotoma</strong>:</h6>
-            <ul className="mb-1">
-              <li>When opponents within the <strong>Solar Isotoma</strong> field take DMG, the <strong>Solar Isotoma</strong> will generate Transient Blossoms which deal <span className="text-geo">AoE Geo DMG</span>. DMG dealt scales off Albedo's DEF. </li>
-              <li>Transient Blossoms can only be generated once every 2s.</li>
-              <li>When a character is located at the locus of the <strong>Solar Isotoma</strong>, the <strong>Solar Isotoma</strong> will accumulate Geo power to form a crystallized platform that lifts the character up to a certain height. Only one crystallized platform can exist at a time.</li>
-              <li><strong>Solar Isotoma</strong> is considered a <span className="text-geo">Geo construct</span>. Only one <strong>Solar Isotoma</strong> created by Albedo himself can exist at a time</li>
-            </ul>
-          </span>,
+          text: tr("skill.description"),
           fields: [{
             text: "Place DMG",
             formulaText: stats => <span>{data.skill.press[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
@@ -144,12 +119,10 @@ const char: ICharacterSheet = {
         }],
       },
       burst: {
-        name: "Rite of Progeniture: Tectonic Tide",
+        name: tr("burst.name"),
         img: burst,
         sections: [{
-          text: <span>
-            <p className="mb-2">Under Albedo's command, Geo crystals surge and burst forth, dealing AoE Geo DMG in front of him. If a <strong>Solar Isotoma</strong> created by Albedo himself is on the field, 7 Fatal Blossoms will be generated in the Solar Isotoma field, bursting violently into bloom and dealing AoE Geo DMG. Tectonic Tide DMG and Fatal Blossom DMG will not generate Transient Blossoms.</p>
-          </span>,
+          text: tr("burst.description"),
           fields: [{
             text: "Burst DMG",
             formulaText: stats => <span>{data.burst.dmg[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
@@ -184,69 +157,33 @@ const char: ICharacterSheet = {
           }]
         }],
       },
-      passive1: {
-        name: "Calcite Might",
+      passive1: talentTemplate("passive1", tr, passive1),
+      passive2: {
+        name: tr("passive1.name"),
         img: passive2,
         sections: [{
-          text: <span><strong>Transient Blossoms</strong> generated by <strong>Abiogenesis: Solar Isotoma</strong> deal 25% more DMG to opponents whose HP is below 50%.</span>
-        }],
-      },
-      passive2: {
-        name: "Homuncular Nature",
-        img: passive1,
-        sections: [{
-          text: <span>Using Rite of <strong>Progeniture: Tectonic Tide</strong> increases the Elemental Mastery of nearby party members by 125 for 10s.</span>,
+          text: tr("passive2.description"),
           conditional: conditionals.a4
         }],
       },
-      passive3: {
-        name: "Flash of Genius",
-        img: passive3,
-        sections: [{ text: <span>When Albedo crafts Weapon Ascension Materials, he has a 10% chance to receive double the product.</span> }],
-      },
-      constellation1: {
-        name: "Flower of Eden",
-        img: c1,
-        sections: [{ text: <span><strong>Transient Blossoms</strong> generated by Albedo's <strong>Abiogenesis: Solar Isotoma</strong> regenerate 1.2 Energy for Albedo.</span> }],
-      },
-      constellation2: {
-        name: "Opening of Phanerozoic",
-        img: c2,
-        sections: [{
-          text: stats => <span>
-            <p className="mb-2"><strong>Transient Blossoms</strong> generated by <strong>Abiogenesis: Solar Isotoma</strong> grant Albedo <strong>Fatal Reckoning</strong> for 30s:</p>
-            <ul className="mb-1">
-              <li>Unleashing <strong>Progeniture: Tectonic Tide</strong> consumes all stacks of <strong>Fatal Reckoning</strong>. Each stack of <strong>Fatal Reckoning</strong> consumed increases the DMG dealt by <strong>Fatal Blossoms</strong> and <strong>Progeniture: Tectonic Tide</strong>'s burst DMG by 30% of Albedo's DEF{DisplayPercent(30, stats, "finalDEF")}.</li>
-              <li>This effect stacks up to 4 times.</li>
-            </ul>
-          </span>
-        }],
-      },
-      constellation3: {
-        name: "Grace of Helios",
-        img: c3,
-        sections: [{ text: <span>	Increases the level of <strong>Abiogenesis: Solar Isotoma</strong> by 3. Maximum upgrade level is 15.</span> }],
-        stats: { skillBoost: 3 }
-      },
+      passive3: talentTemplate("passive3", tr, passive3),
+      constellation1: talentTemplate("constellation1", tr, c1),
+      constellation2: talentTemplate("constellation2", tr, c2),
+      constellation3: talentTemplate("constellation3", tr, c3, { skillBoost: 3 }),
       constellation4: {
-        name: "Descent of Divinity",
+        name: tr("constellation4.name"),
         img: c4,
         sections: [{
-          text: <span>Active party members within the <strong>Solar Isotoma</strong> field have their Plunging Attack DMG increased by 30%.</span>,
+          text: tr("constellation4.description"),
           conditional: conditionals.c4
         }],
       },
-      constellation5: {
-        name: "Tide of Hadean",
-        img: c5,
-        sections: [{ text: <span>Increases the level of <b>Rite of Progeniture: Tectonic Tide</b> by 3. Maximum upgrade level is 15.</span> }],
-        stats: { burstBoost: 3 }
-      },
+      constellation5: talentTemplate("constellation5", tr, c5, { burstBoost: 3 }),
       constellation6: {
-        name: "Dust of Purification",
+        name: tr("constellation6.name"),
         img: c6,
         sections: [{
-          text: <span>Active party members within the <strong>Solar Isotoma</strong> field who are protected by a shield created by <span className="text-geo">Crystallize</span> have their DMG increased by 17%.</span>,
+          text: tr("constellation6.description"),
           conditional: conditionals.c6
         }],
       }

@@ -3,15 +3,6 @@ import { FormulaItem, IFormulaSheet } from "../../../Types/character"
 import { basicDMGFormula } from "../../../Util/FormulaUtil"
 
 const data = {
-  baseStat: {
-    characterHP: [1144, 2967, 3948, 5908, 6605, 7599, 8528, 9533, 10230, 11243, 11940, 12965, 13662, 14695],
-    characterATK: [20, 51, 67, 101, 113, 130, 146, 163, 175, 192, 204, 222, 233, 251],
-    characterDEF: [57, 149, 198, 297, 332, 382, 428, 479, 514, 564, 699, 651, 686, 738]
-  },
-  specializeStat: {
-    key: "geo_dmg_",
-    value: [0, 0, 0, 0, 7.2, 7.2, 14.4, 14.4, 14.4, 14.4, 21.6, 21.6, 28.8, 28.8]
-  },
   normal: {
     hitArr: [
       [30.77, 33.27, 35.78, 39.36, 41.86, 44.72, 48.66, 52.59, 56.53, 60.82, 65.74, 71.53, 77.31, 83.1, 89.41],//1

@@ -18,6 +18,9 @@ import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { IConditionals } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
+import { Translate } from '../../../Components/Translate'
+import { plungeDocSection, talentTemplate } from '../SheetUtil'
+const tr = (strKey: string) => <Translate ns="char_yanfei_gen" key18={strKey} />
 const conditionals: IConditionals = {
   q: {
     name: <span>Brilliance</span>,
@@ -47,15 +50,15 @@ const conditionals: IConditionals = {
   }
 }
 const char: ICharacterSheet = {
-  name: "Yanfei",
+  name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   star: 4,
   elementKey: "pyro",
   weaponTypeKey: "catalyst",
   gender: "F",
-  constellationName: "Bestia Iustitia",
-  titles: ["Wise Innocence", "Liyue Harbor's famed legal adviser"],
+  constellationName: tr("constellationName"),
+  title: tr("title"),
   baseStat: data_gen.base,
   baseStatCurve: data_gen.curves,
   ascensions: data_gen.ascensions,
@@ -64,10 +67,10 @@ const char: ICharacterSheet = {
     conditionals,
     sheets: {
       auto: {
-        name: "Seal of Approval",
+        name: tr("auto.name"),
         img: normal,
         sections: [{
-          text: <span><strong>Normal Attack</strong> Shoots fireballs that deal up to three counts of <span className="text-pyro">Pyro DMG</span>. When Yanfei's Normal Attacks hit enemies, they will grant her a single <b>Scarlet Seal</b>. Yanfei may possess a maximum of 3 <b>Scarlet Seals</b>, and each time this effect is triggered, the duration of currently possessed <b>Scarlet Seals</b> will refresh. Each <b>Scarlet Seal</b> will decrease Yanfei's Stamina consumption and will disappear when she leaves the field.</span>,
+          text: tr(`auto.fields.normal`),
           fields: [...data.normal.hitArr.map((percentArr, i) =>
           ({
             text: `${i + 1}-Hit DMG`,
@@ -82,7 +85,7 @@ const char: ICharacterSheet = {
             value: stats => stats.constellation >= 6 ? 4 : 3
           }]
         }, {
-          text: <span><strong>Charged Attack</strong> Consumes Stamina and all <b>Scarlet Seals</b> before dealing <span className="text-pyro">AoE Pyro DMG</span> to the opponents after a short casting time. This Charged Attack's AoE and DMG will increase according to the amount of <b>Scarlet Seals</b> consumed.</span>,
+          text: tr(`auto.fields.charged`),
           fields: [...data.charged.hitArr.map((percentArr, i) => ({
             canShow: stats => i < 4 || stats.constellation >= 6,
             text: `${i}-Seal DMG`,
@@ -99,34 +102,15 @@ const char: ICharacterSheet = {
             canShow: stats => stats.constellation >= 1,
             text: "Increases resistance against interruption during release."
           }]
-        }, {
-          text: <span><strong>Plunging Attack</strong> Gathering the power of Pyro, Yanfei plunges towards the ground from mid-air, damaging all opponents in her path. Deals <span className="text-pyro">AoE Pyro DMG</span> upon impact with the ground.</span>,
-          fields: [{
-            text: `Plunge DMG`,
-            formulaText: stats => <span>{data.plunging.dmg[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-            formula: formula.plunging.dmg,
-            variant: stats => getTalentStatKeyVariant("plunging", stats),
-          }, {
-            text: `Low Plunge DMG`,
-            formulaText: stats => <span>{data.plunging.low[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-            formula: formula.plunging.low,
-            variant: stats => getTalentStatKeyVariant("plunging", stats),
-          }, {
-            text: `High Plunge DMG`,
-            formulaText: stats => <span>{data.plunging.high[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-            formula: formula.plunging.high,
-            variant: stats => getTalentStatKeyVariant("plunging", stats),
-          }]
-        }],
+        },
+        plungeDocSection(tr, formula, data),
+        ],
       },
       skill: {
-        name: "Signed Edict",
+        name: tr("skill.name"),
         img: skill,
         sections: [{
-          text: <span>
-            <p className="mb-2">Summons blistering flames that deal <span className="text-pyro">AoE Pyro DMG</span>.</p>
-            <p className="mb-0">If this attack hits an enemy, Yanfei is granted the maximum number of <b>Scarlet Seals</b>.</p>
-          </span>,
+          text: tr("skill.description"),
           fields: [{
             text: "Skill DMG",
             formulaText: stats => <span>{data.skill.dmg[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
@@ -139,14 +123,10 @@ const char: ICharacterSheet = {
         }],
       },
       burst: {
-        name: "Done Deal",
+        name: tr("burst.name"),
         img: burst,
         sections: [{
-          text: <span>
-            <p className="mb-2">Triggers a spray of intense flames that rush at nearby opponents, dealing <span className="text-pyro">AoE Pyro DMG</span>, granting Yanfei the maximum number of <b>Scarlet Seals</b>, and applying <b>Brilliance</b> to her.</p>
-            <h6>Brilliance</h6>
-            <p className="mb-0">Perodically grants Yanfei a <b>Scarlet Seal</b>. Increases the DMG of her Charged Attacks. The <b>Brilliance</b> effect stops when Yanfei leaves the field or dies.</p>
-          </span>,
+          text: tr("burst.description"),
           fields: [{
             text: "Skill DMG",
             formulaText: stats => <span>{data.burst.dmg[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
@@ -168,18 +148,18 @@ const char: ICharacterSheet = {
         }],
       },
       passive1: {
-        name: "Proviso",
+        name: tr("passive1.name"),
         img: passive1,
         sections: [{
-          text: <span>When Yanfei consumes <b>Scarlet Seals</b> by using a Charged Attack, each <b>Scarlet Seal</b> will increase Yanfei's <span className="text-pyro">Pyro DMG Bonus</span> by 5%. This effect lasts for 6s. When a Charged Attack is used again during the effect's duration, it will dispel the previous effect.</span>,
+          text: tr("passive1.description"),
           conditional: conditionals.p1
         }],
       },
       passive2: {
-        name: "Blazing Eye",
+        name: tr("passive2.name"),
         img: passive2,
         sections: [{
-          text: <span>When Yanfei's Charged Attack deals a CRIT Hit to opponents, she will deal an additional instance of <span className="text-pyro">AoE Pyro DMG</span> equal to 80% of her ATK. This DMG counts as Charged Attack DMG.</span>,
+          text: tr("passive2.description"),
           fields: [{
             text: "Crit Hit on Opponent",
             formulaText: stats => <span>80% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
@@ -188,38 +168,22 @@ const char: ICharacterSheet = {
           }]
         }],
       },
-      passive3: {
-        name: "	Encyclopedic Expertise",
-        img: passive3,
-        sections: [{ text: <span>Displays the location of nearby resources unique to Liyue on the mini-map.</span> }],
-      },
-      constellation1: {
-        name: "The Law Knows No Kindness",
-        img: c1,
-        sections: [{ text: <span>When Yanfei uses her Charged Attacks, each existing <b>Scarlet Seal</b> additionally reduces the stamina cost of this Charged Attack by 10% and increases resistance against interruption during its release.</span> }],
-      },
+      passive3: talentTemplate("passive3", tr, passive3),
+      constellation1: talentTemplate("constellation1", tr, c1),
       constellation2: {
-        name: "Right of Final Interpretation",
+        name: tr("constellation2.name"),
         img: c2,
         sections: [{
-          text: <span>Increases Yanfei's Charged Attack CRIT rate by 20% against enemies below 50% HP.</span>,
+          text: tr("constellation2.description"),
           conditional: conditionals.c2
         }],
       },
-      constellation3: {
-        name: "Samadhi Fire-Forged",
-        img: c3,
-        sections: [{ text: <span>Increases the level of <b>Signed Edict</b> by 3. Maximum upgrade level is 15.</span> }],
-        stats: { skillBoost: 3 }
-      },
+      constellation3: talentTemplate("constellation3", tr, c3, { skillBoost: 3 }),
       constellation4: {
-        name: "Supreme Amnesty",
+        name: tr("constellation4.name"),
         img: c4,
         sections: [{
-          text: <span>
-            <p className="mb-2">When <b>Done Deal</b> is used:</p>
-            <p className="mb-0">Creates a shield which absorbes upto 45% of Yanfei's Max HP for 15s. This shield absorbes <span className="text-pyro">Pyro DMG</span> 250% more efficiently.</p>
-          </span>,
+          text: tr("constellation4.description"),
           fields: [{
             canShow: stats => stats.constellation >= 4,
             text: <span className="text-pyro">Shield DMG Absorption</span>,
@@ -238,17 +202,8 @@ const char: ICharacterSheet = {
           },]
         }],
       },
-      constellation5: {
-        name: "Abiding Affidavit",
-        img: c5,
-        sections: [{ text: <span>Increases the level of <b>Done Deal</b> by 3. Maximum upgrade level is 15.</span> }],
-        stats: { burstBoost: 3 }
-      },
-      constellation6: {
-        name: "Extra Clause",
-        img: c6,
-        sections: [{ text: <span>Increases the maximum number of <b>Scarlet Seals</b> by 1.</span> }],
-      }
+      constellation5: talentTemplate("constellation5", tr, c5, { burstBoost: 3 }),
+      constellation6: talentTemplate("constellation6", tr, c6),
     },
   },
 };

@@ -19,6 +19,9 @@ import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import ElementalData from '../../ElementalData'
 import { IConditionals } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
+import { Translate } from '../../../Components/Translate'
+import { talentTemplate } from '../SheetUtil'
+const tr = (strKey: string) => <Translate ns="char_zhongli_gen" key18={strKey} />
 const conditionals: IConditionals = {
   sk: { // JadeShield (near)
     name: <span>Enemies near <b>Jade Shield</b></span>,
@@ -32,15 +35,15 @@ const conditionals: IConditionals = {
   }
 }
 const char: ICharacterSheet = {
-  name: "Zhongli",
+  name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   star: 5,
   elementKey: "geo",
   weaponTypeKey: "polearm",
   gender: "M",
-  constellationName: "Lapis Dei",
-  titles: ["Vago Mundo"],
+  constellationName: tr("constellationName"),
+  title: tr("title"),
   baseStat: data_gen.base,
   baseStatCurve: data_gen.curves,
   ascensions: data_gen.ascensions,
@@ -49,10 +52,10 @@ const char: ICharacterSheet = {
     conditionals,
     sheets: {
       auto: {
-        name: "Rain of Stone",
+        name: tr("auto.name"),
         img: normal,
         sections: [{
-          text: <span><strong>Normal Attack</strong> Performs up to 6 rapid strikes.</span>,
+          text: tr(`auto.fields.normal`),
           fields: [
             ...data.normal.hitArr.map((percentArr, i) => ({
               canShow: stats => stats.ascension < 4,
@@ -69,7 +72,7 @@ const char: ICharacterSheet = {
               variant: stats => getTalentStatKeyVariant("normal", stats),
             }))]
         }, {
-          text: <span><strong>Charged Attack</strong> Consumes a certain amount of Stamina to lunge forward, causing stone spears to fall along his path.</span>,
+          text: tr(`auto.fields.charged`),
           fields: [{
             canShow: stats => stats.ascension < 4,
             text: `Charged Attack DMG`,
@@ -87,7 +90,7 @@ const char: ICharacterSheet = {
             value: 25,
           }]
         }, {
-          text: <span><strong>Plunging Attack</strong> Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.</span>,
+          text: tr(`auto.fields.plunging`),
           fields: [{
             canShow: stats => stats.ascension < 4,
             text: `Plunge DMG`,
@@ -128,25 +131,10 @@ const char: ICharacterSheet = {
         }],
       },
       skill: {
-        name: "Dominus Lapidis",
+        name: tr("skill.name"),
         img: skill,
         sections: [{
-          text: <span>
-            <p className="mb-2">Every mountain, rock, and inch of land is filled with the power of Geo, but those who can wield such powers freely are few and far between.</p>
-            <p className="mb-2"><b>Press</b>: Commands the omnipresent power of the earth to solidify into a Stone Stele, standing 30 seconds, dealing <span className="text-geo">AoE Geo DMG</span> at the creation.</p>
-            <p className="mb-2"><b>Hold</b>: Causes nearby Geo energy to explode, causing the following effects:</p>
-            <ul className="mb-2">
-              <li>If their maximum number hasn't been reached, creates a Stone Stele.</li>
-              <li>Creates a shield of jade. The shield's DMG Absorption scales based on Zhongli's Max HP. Possesses 150% DMG Absorption against all Elemental and Physical DMG.</li>
-              <li>Deals <span className="text-geo">AoE Geo DMG</span>.</li>
-              <li>If there are nearby targets with the <span className="text-geo">Geo element</span>, it will drain a large amount of <span className="text-geo">Geo element</span> from a maximum of 2 such targets. This effect does not cause DMG.</li>
-            </ul>
-            <p className="mb-0"><b>Stone Stele</b>: When created, deals <span className="text-geo">AoE Geo DMG</span>. Additionally, every 2 seconds, it will resonate with other nearby <span className="text-geo">Geo Constructs</span>, dealing <span className="text-geo">Geo DMG</span> to surrounding opponents. Stele creation and Resonance generate <b>0.5</b> elemental particles.</p>
-            <p className="mb-0">The Stone Stele is considered a <span className="text-geo">Geo Construct</span> that can both be climbed and used to block attacks.</p>
-            <p className="mb-2">Only one Stele created by Zhongli himself may initially exist at any one time.</p>
-            <p className="mb-0"><b>Jade Shield</b>: Possesses 150% DMG Absorption against all Elemental and Physical DMG.</p>
-            <p className="mb-2">Characters protected by the Jade Shield will decrease the Elemental RES and Physical RES of opponents in a small AoE by 20%. This effect cannot be stacked.</p>
-          </span>,
+          text: tr("skill.description"),
           fields: [{
             canShow: stats => stats.ascension < 4,
             text: "Stone Stele DMG",
@@ -204,13 +192,10 @@ const char: ICharacterSheet = {
         }],
       },
       burst: {
-        name: "Planet Befall",
+        name: tr("burst.name"),
         img: burst,
         sections: [{
-          text: <span>
-            <p className="mb-2">Brings a falling meteor down to earth, dealing massive <span className="text-geo">Geo DMG</span> to opponents caught in its AoE and applying the <span className="text-geo">Petrification</span> status to them.</p>
-            <p className="mb-0"><b>Petrification</b>: Opponents affected by the <span className="text-geo">Petrification</span> status cannot move.</p>
-          </span>,
+          text: tr("burst.description"),
           fields: [{
             canShow: stats => stats.ascension < 4,
             text: "Skill DMG",
@@ -240,70 +225,25 @@ const char: ICharacterSheet = {
         }],
       },
       passive1: {
-        name: "Resonant Waves",
+        name: tr("passive1.name"),
         img: passive1,
         sections: [{
-          text: <span>
-            <p className="mb-2">When the Jade Shield takes DMG, it will Fortify:</p>
-            <ul className="mb-2">
-              <li>Fortified characters have 5% increased Shield Strength.</li>
-              <li>Can stack up to 5 times, and lasts until the Jade Shield disappears.</li>
-            </ul>
-          </span>,
+          text: tr("passive1.description"),
           conditional: conditionals.p1
         }],
       },
-      passive2: {
-        name: "Dominance of Earth",
-        img: passive2,
-        sections: [{
-          text: <span>
-            <p className="mb-2">Zhongli deals bonus DMG based on his Max HP:</p>
-            <ul className="mb-2">
-              <li><b>Normal Attack</b>, <b>Charged Attack</b>, and <b>Plunging Attack</b> DMG is increased by 1.39% of Max HP.</li>
-              <li><b>Dominus Lapidis</b> Stone Stele, resonance, and hold DMG is increased by 1.9% of Max HP.</li>
-              <li><b>Planet Befall</b> deals additional DMG equal to 33% of Zhongli's Max HP.</li>
-            </ul>
-          </span>
-        }],
-      },
-      passive3: {
-        name: "Arcanum of Crystal",
-        img: passive3,
-        sections: [{ text: <span>Refunds 15% of the ores used when crafting Polearm-type weapons.</span> }],
-      },
-      constellation1: {
-        name: "Rock, the Backbone of Earth",
-        img: c1,
-        sections: [{ text: <span>Increases the maximum number of Stone Steles created by <b>Dominus Lapidis</b> that may exist simultaneously to 2.</span> }],
-      },
-      constellation2: {
-        name: "Stone, the Cradle of Jade",
-        img: c2,
-        sections: [{ text: <span><b>Planet Befall</b> grants nearby characters on the field a Jade Shield when it descends.</span> }],
-      },
-      constellation3: {
-        name: "Jade, Shimmering through Darkness",
-        img: c3,
-        sections: [{ text: <span>Increases the Level of <b>Dominus Lapidis</b> by 3. Maximum upgrade level is 15.</span> }],
-        stats: { skillBoost: 3 }
-      },
-      constellation4: {
-        name: "Topaz, Unbreakable and Fearless",
-        img: c4,
-        sections: [{ text: <span>Increases <b>Planet Befall</b>'s AoE by 20% and increases the duration of <b>Planet Befall</b>'s Petrification effect by 2s.</span> }],
-      },
-      constellation5: {
-        name: "Lazuli, Herald of the Order",
-        img: c5,
-        sections: [{ text: <span>Increases the Level of <b>Planet Befall</b> by 3. Maximum upgrade level is 15.</span> }],
-        stats: { burstBoost: 3 }
-      },
+      passive2: talentTemplate("passive2", tr, passive2),
+      passive3: talentTemplate("passive3", tr, passive3),
+      constellation1: talentTemplate("constellation1", tr, c1),
+      constellation2: talentTemplate("constellation2", tr, c2),
+      constellation3: talentTemplate("constellation3", tr, c3, { skillBoost: 3 }),
+      constellation4: talentTemplate("constellation4", tr, c4),
+      constellation5: talentTemplate("constellation5", tr, c5, { burstBoost: 3 }),
       constellation6: {
-        name: "Chrysos, Bounty of Dominator",
+        name: tr("constellation6.name"),
         img: c6,
         sections: [{
-          text: <span>When the <b>Jade Shield</b> takes DMG, 40% of that incoming DMG is converted to HP for the current character. A single instance of regeneration cannot exceed 8% of that character's Max HP.</span>,
+          text: tr("constellation6.description"),
           fields: [{
             canShow: stats => stats.constellation >= 6,
             text: "Maximum Health Regen",

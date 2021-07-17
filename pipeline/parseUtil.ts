@@ -58,8 +58,18 @@ function plungeUtil(lang, string, low) {
   }
   return string
 }
+const paragraph = string => {
+  let parsed = string.split("\\n").map(s => s || "<br/>")
+  while (parsed[parsed.length - 1] === "<br/>")
+    parsed.pop()
+  return { ...parseBulletPoints(parsed) }
+}
+const autoFields = string => {
+  const strings = string.split("\\n\\n")
+  return strings.map(s => ({ ...paragraph(s) }))
+}
 
-export const parsingFunctions: { [key: string]: (lang: Language, string: string) => string } = {
+export const parsingFunctions: { [key: string]: (lang: Language, string: string, keys?: string[]) => any } = {
   autoName: (lang, string) => {
     //starts with Normal Attack: ______ in english
     if (string.includes("·")) {
@@ -74,16 +84,25 @@ export const parsingFunctions: { [key: string]: (lang: Language, string: string)
     if (!string) throw (`${lang} has invalid "name"`)
     return string
   },
-  autoFields: (lang, string) => {
-    const [normal, charged, plunging] = string.split("\\n\\n").map(s => s.trim().replace(/\\n/g, " "))
-    string = { normal, charged, plunging } as any
-    return string
+  autoFields: (lang, string, keys) => {
+    const strings = autoFields(string)
+    if (strings.length === 3) {
+      const [normal, charged, plunging] = strings
+      return { normal, charged, plunging } as any
+    } else if (strings.length === 4) {//for childe or kazuha
+      const [, charkey] = keys
+      if (charkey === "kaedeharakazuha") {
+        const [normal, charged, plunging, plunging_midare] = strings
+        return { normal, charged, plunging, plunging_midare } as any
+      }
+      if (charkey === "tartaglia") {
+        const [normal, charged, riptide, plunging] = strings
+        return { normal, charged, riptide, plunging } as any
+      }
+    }
+    throw `parsing fields error: ${string}`
   },
-  paragraph: (lang, string) => {
-    let parsed = string.split("\\n").map(s => s || "<br/>")
-    string = { ...parseBulletPoints(parsed) } as any
-    return string
-  },
+  paragraph: (lang, string) => paragraph(string),
   skillParam: (lang, string) => {
     string = string.split('|')[0]
     return string

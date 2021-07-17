@@ -12,13 +12,15 @@ import burst from './Talent_Glacial_Waltz.png'
 import passive1 from './Talent_Cold-Blooded_Strike.png'
 import passive2 from './Talent_Heart_of_the_Abyss.png'
 import passive3 from './Talent_Hidden_Strength.png'
-import DisplayPercent from '../../../Components/DisplayPercent'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { IConditionals } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
+import { Translate } from '../../../Components/Translate'
+import { chargedHitsDocSection, normalDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
+const tr = (strKey: string) => <Translate ns="char_kaeya_gen" key18={strKey} />
 const conditionals: IConditionals = {
   c1: { // ColdBloodedStrike
     canShow: stats => stats.constellation >= 1,
@@ -30,15 +32,15 @@ const conditionals: IConditionals = {
   }
 }
 const char: ICharacterSheet = {
-  name: "Kaeya",
+  name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   star: 4,
   elementKey: "cryo",
   weaponTypeKey: "sword",
   gender: "M",
-  constellationName: "Pavo Ocellus",
-  titles: ["Cavalry Captain", "Quartermaster", "Frostblade"],
+  constellationName: tr("constellationName"),
+  title: tr("title"),
   baseStat: data_gen.base,
   baseStatCurve: data_gen.curves,
   ascensions: data_gen.ascensions,
@@ -47,58 +49,19 @@ const char: ICharacterSheet = {
     conditionals,
     sheets: {
       auto: {
-        name: "Ceremonial Bladework",
+        name: tr("auto.name"),
         img: normal,
-        sections: [{
-          text: <span><strong>Normal Attack</strong> Perform up to 5 rapid strikes.</span>,
-          fields: data.normal.hitArr.map((percentArr, i) =>
-          ({
-            text: `${i + 1}-Hit DMG`,
-            formulaText: stats => <span>{percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
-            formula: formula.normal[i],
-            variant: stats => getTalentStatKeyVariant("normal", stats),
-          }))
-        }, {
-          text: <span><strong>Charged Attack</strong> Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.</span>,
-          fields: [{
-            text: `Charged 1-Hit DMG`,
-            formulaText: stats => <span>{data.charged.atk1[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
-            formula: formula.charged.atk1,
-            variant: stats => getTalentStatKeyVariant("charged", stats),
-          }, {
-            text: `Charged 2-Hit DMG`,
-            formulaText: stats => <span>{data.charged.atk2[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
-            formula: formula.charged.atk2,
-            variant: stats => getTalentStatKeyVariant("charged", stats),
-          }, {
-            text: `Stamina Cost`,
-            value: `20`,
-          }]
-        }, {
-          text: <span><strong>Plunging Attack</strong> Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.</span>,
-          fields: [{
-            text: `Plunge DMG`,
-            formulaText: stats => <span>{data.plunging.dmg[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-            formula: formula.plunging.dmg,
-            variant: stats => getTalentStatKeyVariant("plunging", stats),
-          }, {
-            text: `Low Plunge DMG`,
-            formulaText: stats => <span>{data.plunging.low[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-            formula: formula.plunging.low,
-            variant: stats => getTalentStatKeyVariant("plunging", stats),
-          }, {
-            text: `High Plunge DMG`,
-            formulaText: stats => <span>{data.plunging.high[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-            formula: formula.plunging.high,
-            variant: stats => getTalentStatKeyVariant("plunging", stats),
-          }]
-        },],
+        sections: [
+          normalDocSection(tr, formula, data),
+          chargedHitsDocSection(tr, formula, data),
+          plungeDocSection(tr, formula, data)
+        ],
       },
       skill: {
-        name: "Frostgnaw",
+        name: tr("skill.name"),
         img: skill,
         sections: [{
-          text: <span>Unleashes a frigid blast, dealing <span className="text-cryo">Cryo DMG</span> to opponents in front of Kaeya.</span>,
+          text: tr("skill.description"),
           fields: [{
             text: "Skill DMG",
             formulaText: stats => <span>{data.skill.dmg[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats) + "_multi", stats)}</span>,
@@ -111,10 +74,10 @@ const char: ICharacterSheet = {
         }],
       },
       burst: {
-        name: "Glacial Waltz",
+        name: tr("burst.name"),
         img: burst,
         sections: [{
-          text: <span>Coalescing the frost in the air, Kaeya summons 3 icicles that revolve around him. These icicles will follow the character around and deal <span className="text-cryo">Cryo DMG</span> to opponents in their path for the ability's duration.</span>,
+          text: tr("burst.description"),
           fields: [{
             text: "Icicles DMG",
             formulaText: stats => <span>{data.burst.dmg[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
@@ -136,10 +99,10 @@ const char: ICharacterSheet = {
         }],
       },
       passive1: {
-        name: "Cold-Blooded Strike",
+        name: tr("passive1.name"),
         img: passive1,
         sections: [{
-          text: stats => <span>Every hit with <b>Frostgnaw</b> regenerates HP for Kaeya equal to 15% of his ATK.{DisplayPercent(15, stats, "finalATK")}</span>,
+          text: tr("passive1.description"),
           fields: [{
             text: "Healing",
             formulaText: stats => <span>15% {Stat.printStat("finalATK", stats)} * {Stat.printStat("heal_multi", stats)}</span>,
@@ -148,45 +111,23 @@ const char: ICharacterSheet = {
           }],
         }],
       },
-      passive2: {
-        name: "Glacial Heart",
-        img: passive2,
-        sections: [{
-          text: <span>Opponents Frozen by <b>Frostgnaw</b> will drop additional Elemental Particles. <b>Frostgnaw</b> may only produce a maximum of 2 additional Elemental Particles per use.</span>,
-        }],
-      },
-      passive3: {
-        name: "Hidden Strength",
-        img: passive3,
-        sections: [{
-          text: <span>Decreases sprinting Stamina consumption for your own party members by 20%. Not stackable with Passive Talents that provide the exact same effects.</span>
-        }],
-        stats: { staminaSprintDec_: 20 }
-      },
+      passive2: talentTemplate("passive2", tr, passive2),
+      passive3: talentTemplate("passive3", tr, passive3, { staminaSprintDec_: 20 }),
       constellation1: {
-        name: "Excellent Blood",
+        name: tr("constellation1.name"),
         img: c1,
         sections: [{
-          text: <span>The CRIT Rate of Kaeya's <b>Normal</b> and <b>Charged Attacks</b> against opponents affected by <span className="text-cryo">Cryo</span> is increased by 15%.</span>,
+          text: tr("constellation1.description"),
           conditional: conditionals.c1
         }]
       },
-      constellation2: {
-        name: "Never-Ending Performance",
-        img: c2,
-        sections: [{ text: <span>Every time <b>Glacial Waltz</b> defeats an opponent during its duration, its duration is increased by 2.5s, up to a maximum of 15s.</span> }],
-      },
-      constellation3: {
-        name: "Dance of Frost",
-        img: c3,
-        sections: [{ text: <span>Increases the Level of <b>Frostgnaw</b> by 3. Maximum upgrade level is 15.</span> }],
-        stats: { skillBoost: 3 }
-      },
+      constellation2: talentTemplate("constellation2", tr, c2),
+      constellation3: talentTemplate("constellation3", tr, c3, { skillBoost: 3 }),
       constellation4: {
-        name: "Frozen Kiss",
+        name: tr("constellation4.name"),
         img: c4,
         sections: [{
-          text: stats => <span>Triggers automatically when Kaeya's HP falls below 20%: Creates a shield that absorbs damage equal to 30% of Kaeya's Max HP{DisplayPercent(30, stats, "finalHP")}. Lasts for 20s. This shield absorbs <span className="text-cryo">Cryo DMG</span> with 250% efficiency. Can only occur once every 60s.</span>,
+          text: tr("constellation4.description"),
           fields: [{
             canShow: stats => stats.constellation >= 4,
             text: <span className="text-cryo">Shield DMG Absorption</span>,
@@ -209,17 +150,8 @@ const char: ICharacterSheet = {
           }]
         }]
       },
-      constellation5: {
-        name: "Frostbiting Embrace",
-        img: c5,
-        sections: [{ text: <span>Increases the Level of <b>Glacial Waltz</b> by 3. Maximum upgrade level is 15.</span> }],
-        stats: { burstBoost: 3 }
-      },
-      constellation6: {
-        name: "Glacial Whirlwind",
-        img: c6,
-        sections: [{ text: <span><b>Glacial Waltz</b> will generate 1 additional icicle, and will regenerate 15 Energy when cast.</span> }]
-      }
+      constellation5: talentTemplate("constellation5", tr, c5, { burstBoost: 3 }),
+      constellation6: talentTemplate("constellation6", tr, c6),
     },
   },
 };

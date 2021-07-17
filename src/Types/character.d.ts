@@ -13,7 +13,7 @@ interface ICharacterSheetBase {
   weaponTypeKey: WeaponTypeKey
   gender: string,
   constellationName: Displayable,
-  titles: Array<string>,
+  title: Displayable,
   baseStat: IBaseStat
   baseStatCurve: IBaseStatCurve
   ascensions: ascension[],

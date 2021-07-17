@@ -16,6 +16,31 @@ export const normalDocSection = (tr, formula, data) => ({
     variant: stats => getTalentStatKeyVariant("normal", stats),
   }))
 })
+export const chargedDocSection = (tr, formula, data, stamina = 25) => ({
+  text: tr(`auto.fields.charged`),
+  fields: [{
+    text: sgt(`charged.dmg`),
+    formulaText: stats => <span>{data.charged.dmg[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
+    formula: formula.charged.dmg,
+    variant: stats => getTalentStatKeyVariant("charged", stats),
+  }, {
+    text: sgt("charged.stamina"),
+    value: stamina,
+  }]
+})
+export const chargedHitsDocSection = (tr, formula, data, stamina = 20) => ({
+  text: tr(`auto.fields.charged`),
+  fields: [...data.charged.hitArr.map((percentArr, i) =>
+  ({
+    text: sgt(`normal.hit${i + 1}`),
+    formulaText: stats => <span>{percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
+    formula: formula.charged[i],
+    variant: stats => getTalentStatKeyVariant("charged", stats),
+  })), {
+    test: sgt("charged.stamina"),
+    value: stamina
+  }]
+})
 export const plungeDocSection = (tr, formula, data) => ({
   text: tr`auto.fields.plunging`,
   fields: [{

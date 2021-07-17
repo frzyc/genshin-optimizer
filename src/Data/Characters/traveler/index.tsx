@@ -4,16 +4,17 @@ import data_gen from './data_anemo_gen.json'
 import { ICharacterSheet } from '../../../Types/character';
 import anemoTalent from './anemoTalentSheet'
 import geoTalent from './geoTalentSheet'
-
+import { Translate } from '../../../Components/Translate'
+const tr = (strKey: string) => <Translate ns="char_traveler_anemo_gen" key18={strKey} />
 const char: ICharacterSheet = {
-  name: "Traveler",
+  name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   star: 5,
   weaponTypeKey: "sword",
   gender: "F/M",
-  constellationName: "Viatrix",//female const
-  titles: ["Outlander", "Honorary Knight"],
+  constellationName: tr("constellationName"),
+  title: tr("title"),
   baseStat: data_gen.base,
   baseStatCurve: data_gen.curves,
   ascensions: data_gen.ascensions,

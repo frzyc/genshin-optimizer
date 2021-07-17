@@ -18,6 +18,9 @@ import data_gen from './data_gen.json';
 import { getTalentStatKey, getTalentStatKeyVariant } from "../../../Build/Build";
 import { ICharacterSheet } from '../../../Types/character'
 import { IConditionals } from '../../../Types/IConditional'
+import { Translate } from '../../../Components/Translate'
+import { normalDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
+const tr = (strKey: string) => <Translate ns="char_xinyan_gen" key18={strKey} />
 const conditionals: IConditionals = {
   a4s: { // NowThatsRockNRoll
     canShow: stats => stats.ascension >= 4,
@@ -40,15 +43,15 @@ const conditionals: IConditionals = {
   }
 }
 const char: ICharacterSheet = {
-  name: "Xinyan",
+  name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   star: 4,
   elementKey: "pyro",
   weaponTypeKey: "claymore",
   gender: "F",
-  constellationName: "Fila Ignium",
-  titles: ["Blazing Riff", "Rock 'n' Roll Musician"],
+  constellationName: tr("constellationName"),
+  title: tr("title"),
   baseStat: data_gen.base,
   baseStatCurve: data_gen.curves,
   ascensions: data_gen.ascensions,
@@ -57,94 +60,57 @@ const char: ICharacterSheet = {
     conditionals,
     sheets: {
       auto: {
-        name: "Dance on Fire",
+        name: tr("auto.name"),
         img: normal,
-        sections: [{
-          text: <span><strong>Normal Attack</strong> Performs up to 4 consecutive strikes.</span>,
-          fields: data.normal.hitArr.map((percentArr, i) => ({
-            text: `${i + 1}-Hit DMG`,
-            formulaText: stats =>
-              <span>{percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
-            formula: formula.normal[i],
-            variant: stats => getTalentStatKeyVariant("normal", stats)
-          }))
-        }, {
-          text: <span><strong>Charged Attack</strong> Drains Stamina over time to perform continuous spinning attacks against all nearby opponents.</span>,
-          fields: [{
-            canShow: stats => stats.constellation <= 5,
-            text: `Spinning DMG`,
-            formulaText: stats => <span>{data.charged.spinning[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
-            formula: formula.charged.spinning,
-            variant: stats => getTalentStatKeyVariant("charged", stats)
-          }, {
-            canShow: stats => stats.constellation > 5,
-            text: `Spinning DMG`,
-            formulaText: stats => <span>{data.charged.spinning[stats.tlvl.auto]}% ( {Stat.printStat("finalATK", stats)} + 50% {Stat.printStat("finalDEF", stats)} ) * {Stat.printStat(getTalentStatKey("charged", stats) + "_multi", stats)}</span>,
-            formula: formula.charged.spinningDEF,
-            variant: stats => getTalentStatKeyVariant("charged", stats)
-          }, {
-            canShow: stats => stats.constellation <= 5,
-            text: `Spinning Final DMG`,
-            formulaText: stats => <span>{data.charged.final[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
-            formula: formula.charged.final,
-            variant: stats => getTalentStatKeyVariant("charged", stats)
-          }, {
-            canShow: stats => stats.constellation > 5,
-            text: `Spinning Final DMG`,
-            formulaText: stats => <span>{data.charged.final[stats.tlvl.auto]}% ( {Stat.printStat("finalATK", stats)} + 50% {Stat.printStat("finalDEF", stats)} ) * {Stat.printStat(getTalentStatKey("charged", stats) + "_multi", stats)}</span>,
-            formula: formula.charged.finalDEF,
-            variant: stats => getTalentStatKeyVariant("charged", stats)
-          }, {
-            canShow: stats => stats.constellation <= 5,
-            text: `Stamina Cost`,
-            value: "40/s",
-          }, {
-            canShow: stats => stats.constellation > 5,
-            text: `Stamina Cost`,
-            value: "40/s - 30%",
-          }, {
-            text: `Max Duration`,
-            value: "5s",
-          }],
-        }, {
-          text: <span><strong>Plunging Attack</strong> Plunges from mid-air to strike the ground, damaging enemies along the path and dealing AoE DMG upon impact.</span>,
-          fields: [{
-            text: `Plunge DMG`,
-            formulaText: stats => <span>{data.plunging.dmg[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-            formula: formula.plunging.dmg,
-            variant: stats => getTalentStatKeyVariant("plunging", stats),
-          }, {
-            text: `Low Plunge DMG`,
-            formulaText: stats => <span>{data.plunging.low[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-            formula: formula.plunging.low,
-            variant: stats => getTalentStatKeyVariant("plunging", stats),
-          }, {
-            text: `High Plunge DMG`,
-            formulaText: stats => <span>{data.plunging.high[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-            formula: formula.plunging.high,
-            variant: stats => getTalentStatKeyVariant("plunging", stats),
-          }],
-        }],
+        sections: [
+          normalDocSection(tr, formula, data),
+          {
+            text: tr(`auto.fields.charged`),
+            fields: [{
+              canShow: stats => stats.constellation <= 5,
+              text: `Spinning DMG`,
+              formulaText: stats => <span>{data.charged.spinning[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
+              formula: formula.charged.spinning,
+              variant: stats => getTalentStatKeyVariant("charged", stats)
+            }, {
+              canShow: stats => stats.constellation > 5,
+              text: `Spinning DMG`,
+              formulaText: stats => <span>{data.charged.spinning[stats.tlvl.auto]}% ( {Stat.printStat("finalATK", stats)} + 50% {Stat.printStat("finalDEF", stats)} ) * {Stat.printStat(getTalentStatKey("charged", stats) + "_multi", stats)}</span>,
+              formula: formula.charged.spinningDEF,
+              variant: stats => getTalentStatKeyVariant("charged", stats)
+            }, {
+              canShow: stats => stats.constellation <= 5,
+              text: `Spinning Final DMG`,
+              formulaText: stats => <span>{data.charged.final[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
+              formula: formula.charged.final,
+              variant: stats => getTalentStatKeyVariant("charged", stats)
+            }, {
+              canShow: stats => stats.constellation > 5,
+              text: `Spinning Final DMG`,
+              formulaText: stats => <span>{data.charged.final[stats.tlvl.auto]}% ( {Stat.printStat("finalATK", stats)} + 50% {Stat.printStat("finalDEF", stats)} ) * {Stat.printStat(getTalentStatKey("charged", stats) + "_multi", stats)}</span>,
+              formula: formula.charged.finalDEF,
+              variant: stats => getTalentStatKeyVariant("charged", stats)
+            }, {
+              canShow: stats => stats.constellation <= 5,
+              text: `Stamina Cost`,
+              value: "40/s",
+            }, {
+              canShow: stats => stats.constellation > 5,
+              text: `Stamina Cost`,
+              value: "40/s - 30%",
+            }, {
+              text: `Max Duration`,
+              value: "5s",
+            }],
+          },
+          plungeDocSection(tr, formula, data),
+        ],
       },
       skill: {
-        name: "Sweeping Fervor",
+        name: tr("skill.name"),
         img: skill,
         sections: [{
-          text: stats => <span>
-            <p className="mb-0">Xinyan brandishes her instrument, dealing <span className="text-pyro">Pyro DMG</span> on nearby opponents, forming a shield made out of her audience's passion.</p>
-            <p className="mb-2">The shield's DMG Absorption scales based on Xinyan's DEF and on the number of opponents hit.</p>
-            <ul className="mb-1">
-              <li>Hitting 0-1 opponents grants Shield Level 1: Ad Lib.</li>
-              <li>Hitting 2{stats.ascension >= 1 && <span className="text-success"> (-1)</span>} opponents grants Shield Level 2: Lead-In.</li>
-              <li>Hitting 3{stats.ascension >= 1 && <span className="text-success"> (-1)</span>} or more opponents grants Shield Level 3: Rave, which will also deal intermittent <span
-                className="text-pyro">Pyro DMG</span> to nearby opponents.</li>
-            </ul>
-            <p className="mb-2">The shield has the following special properties:</p>
-            <ul className="mb-1">
-              <li>When unleashed, it infuses Xinyan with <span className="text-pyro">Pyro</span>.</li>
-              <li>It has 250% DMG Absorption effectiveness against <span className="text-pyro">Pyro DMG</span>.</li>
-            </ul>
-          </span>,
+          text: tr("skill.description"),
           fields: [{
             text: "Swing DMG",
             formulaText: stats => <span>{data.skill.dmg[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
@@ -177,14 +143,10 @@ const char: ICharacterSheet = {
         }],
       },
       burst: {
-        name: "Riff Revolution",
+        name: tr("burst.name"),
         img: burst,
         sections: [{
-          text: stats => <span>
-            <p className="mb-2">Strumming rapidly, Xinyan launches nearby opponents and deals Physical DMG to them, hyping up the crowd.</p>
-            <p className="mb-0">The sheer intensity of the atmosphere will cause explosions that deal <span className="text-pyro">Pyro DMG</span> to nearby opponents.</p>
-            {stats.constellation >= 2 && <small>The <b>Burst DMG</b> will always CRIT.</small>}
-          </span>,
+          text: tr("burst.description"),
           fields: [{
             text: "Burst DMG",
             formulaText: stats =>
@@ -209,76 +171,45 @@ const char: ICharacterSheet = {
           }, {
             canShow: stats => stats.constellation >= 2,
             text: "Form a shield at Level 3: Rave when cast"
+          }, {
+            canShow: stats => stats.constellation >= 2,
+            text: "The Burst DMG will always CRIT."
           }],
         }]
       },
-      passive1: {
-        name: "\"The Show Goes On, Even Without an Audience...\"",
-        img: passive1,
-        sections: [{
-          text: <span>
-            <p className="mb-2">Decreases the number of opponents <b>Sweeping Fervor</b> must hit to trigger each level of shielding.</p>
-            <ul className="mb-0">
-              <li>Shield Level 2: Lead-In requirement reduced to 1 opponent hit.</li>
-              <li>Shield Level 3: Rave requirement reduced to 2 opponents hit or more.</li>
-            </ul>
-          </span>,
-        }],
-      },
+      passive1: talentTemplate("passive1", tr, passive1),
       passive2: {
-        name: "\"...Now That's Rock 'N' Roll!\"",
+        name: tr("passive2.name"),
         img: passive2,
         sections: [{
-          text: <span>Characters shielded by <b>Sweeping Fervor</b> deal 15% increased Physical DMG.</span>,
+          text: tr("passive2.description"),
           conditional: conditionals.a4s
         }],
       },
-      passive3: {
-        name: "A Rad Recipe",
-        img: passive3,
-        sections: [{ text: <span>When a Perfect Cooking is achieved on a DEF-boosting dish, Xinyan has a 12% chance to obtain double the product.</span>, }],
-      },
+      passive3: talentTemplate("passive3", tr, passive3),
       constellation1: {
-        name: "Fatal Acceleration",
+        name: tr("constellation1.name"),
         img: c1,
         sections: [{
-          text: <span>Upon scoring a CRIT hit, increases ATK SPD of Xinyan's <b>Normal and Charged Attacks</b> by 12% for 5s. Can only occur once every 5s.</span>,
+          text: tr("constellation1.description"),
           conditional: conditionals.a1
         }],
       },
-      constellation2: {
-        name: "Impromptu Opening",
-        img: c2,
-        sections: [{ text: <span><b>Riff Revolution</b> Physical DMG has its Crit rate increased by 100%, and will form a shield at Shield Level 3: Rave when cast.</span>, }],
-      },
-      constellation3: {
-        name: "Double-Stop",
-        img: c3,
-        sections: [{
-          text: <span>Increases the Level of <b>Sweeping Fervor</b> by 3. Maximum upgrade level is 15.</span>,
-        }],
-        stats: { skillBoost: 3 }
-      },
+      constellation2: talentTemplate("constellation2", tr, c2),
+      constellation3: talentTemplate("constellation3", tr, c3, { skillBoost: 3 }),
       constellation4: {
-        name: "Wildfire Rhythm",
+        name: tr("constellation4.name"),
         img: c4,
         sections: [{
-          text: <span><b>Sweeping Fervor</b>'s swing DMG decreases opponent's Physical RES by 15% for 12s.</span>,
+          text: tr("constellation4.description"),
           conditional: conditionals.a4
         }],
       },
-      constellation5: {
-        name: "Screamin' for an Encore",
-        img: c5,
-        sections: [{
-          text: <span>Increases the Level of <b>Riff Revolution</b> by 3. Maximum upgrade level is 15.</span>,
-        }],
-        stats: { burstBoost: 3 }
-      },
+      constellation5: talentTemplate("constellation5", tr, c5, { burstBoost: 3 }),
       constellation6: {
-        name: "Rockin' in a Flaming World",
+        name: tr("constellation6.name"),
         img: c6,
-        sections: [{ text: <span>Decrease the Stamina Consumption of Xinyan <b>Charged Attacks</b> by 30%. Additionally, Xinyan's <b>Charged Attacks</b> gain an ATK bonus equal to 50% of her DEF.</span>, }],
+        sections: [{ text: tr("constellation6.description"), }],
         stats: stats => stats.constellation >= 6 && {
           staminaChargedDec_: 30
         }

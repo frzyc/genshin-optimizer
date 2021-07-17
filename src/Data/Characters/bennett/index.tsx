@@ -18,9 +18,12 @@ import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { ICharacterSheet } from '../../../Types/character'
 import { IConditionals } from '../../../Types/IConditional'
+import { Translate } from '../../../Components/Translate'
+import { chargedHitsDocSection, normalDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
+const tr = (strKey: string) => <Translate ns="char_bennett_gen" key18={strKey} />
 const conditionals: IConditionals = {
   q: { // Fantastic Voyage
-    name: "Fantastic Voyage",
+    name: tr("burst.name"),
     stats: stats => ({
       modifiers: { finalATK: { baseATK: (data.burst.atkRatio[stats.tlvl.burst] + (stats.constellation < 1 ? 0 : 20)) / 100, } },
     }),
@@ -40,15 +43,15 @@ const conditionals: IConditionals = {
   }
 }
 const char: ICharacterSheet = {
-  name: "Bennett",
+  name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   star: 4,
   elementKey: "pyro",
   weaponTypeKey: "sword",
   gender: "M",
-  constellationName: "Rota Calamitas",
-  titles: ["Trial by Fire", "Leader of Benny's Adventure Team"],
+  constellationName: tr("constellationName"),
+  title: tr("title"),
   baseStat: data_gen.base,
   baseStatCurve: data_gen.curves,
   ascensions: data_gen.ascensions,
@@ -57,66 +60,19 @@ const char: ICharacterSheet = {
     conditionals,
     sheets: {
       auto: {
-        name: "Strike of Fortune",
+        name: tr("auto.name"),
         img: normal,
-        sections: [{
-          text: <span><strong>Normal Attack</strong> Performs up to 5 rapid strikes.</span>,
-          fields: data.normal.hitArr.map((percentArr, i) =>
-          ({
-            text: `${i + 1}-Hit DMG`,
-            formulaText: stats => <span>{percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
-            formula: formula.normal[i],
-            variant: stats => getTalentStatKeyVariant("normal", stats),
-          }))
-        }, {
-          text: <span><strong>Charged Attack</strong> Consumes a certain amount of Stamina to unleash 2 rapid sword swings.</span>,
-          fields: [{
-            text: `Charged 1-Hit DMG`,
-            formulaText: stats => <span>{data.charged.atk1[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
-            formula: formula.charged.atk1,
-            variant: stats => getTalentStatKeyVariant("charged", stats),
-          }, {
-            text: `Charged 2-Hit DMG`,
-            formulaText: stats => <span>{data.charged.atk2[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
-            formula: formula.charged.atk2,
-            variant: stats => getTalentStatKeyVariant("charged", stats),
-          }, {
-            text: `Stamina Cost`,
-            value: 20,
-          }]
-        }, {
-          text: <span><strong>Plunging Attack</strong> Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.</span>,
-          fields: [{
-            text: `Plunge DMG`,
-            formulaText: stats => <span>{data.plunging.dmg[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-            formula: formula.plunging.dmg,
-            variant: stats => getTalentStatKeyVariant("plunging", stats),
-          }, {
-            text: `Low Plunge DMG`,
-            formulaText: stats => <span>{data.plunging.low[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-            formula: formula.plunging.low,
-            variant: stats => getTalentStatKeyVariant("plunging", stats),
-          }, {
-            text: `High Plunge DMG`,
-            formulaText: stats => <span>{data.plunging.high[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-            formula: formula.plunging.high,
-            variant: stats => getTalentStatKeyVariant("plunging", stats),
-          }]
-        }],
+        sections: [
+          normalDocSection(tr, formula, data),
+          chargedHitsDocSection(tr, formula, data),
+          plungeDocSection(tr, formula, data)
+        ],
       },
       skill: {
-        name: "Passion Overload",
+        name: tr("skill.name"),
         img: skill,
         sections: [{
-          text: <span>
-            <p className="mb-2">Bennett concentrates the spirit of Adventure and <span className="text-pyro">Pyro</span> into his blade. Depending on how long he charges for, different effects occur.</p>
-            <p className="mb-2"><b>Tap:</b> A single, swift flame strike that deals <span className="text-pyro">Pyro DMG</span>.</p>
-            <p className="mb-2"><b>Hold (Short):</b> Charges up, resulting in different effects when unleashed based on the Charge Level</p>
-            <ul className="mb-2">
-              <li>Level 1: Strikes twice, dealing Pyro DMG and launching opponents.</li>
-              <li>Level 2: Unleashes 3 consecutive attacks that deal impressive <span className="text-pyro">Pyro DMG</span>, but the last attack triggers an explosion that launches both Bennett and the enemy. Bennett takes no damage from being launched, but can take fall damage if he falls down a cliff.</li>
-            </ul>
-          </span>,
+          text: tr("skill.description"),
           fields: [
             ...[["press", "Press DMG"], ["lvl1hit1", "Lvl 1 1st Hit DMG"], ["lvl1hit2", "Lvl 1 2nd Hit DMG"], ["lvl2hit1", "Lvl 2 1st Hit DMG"], ["lvl2hit2", "Lvl 2 2nd Hit DMG"], ["explosion", "Explosion DMG"]].map(([key, text]) => ({
               text,
@@ -133,18 +89,10 @@ const char: ICharacterSheet = {
         }],
       },
       burst: {
-        name: "Fantastic Voyage",
+        name: tr("burst.name"),
         img: burst,
         sections: [{
-          text: <span>
-            <p className="mb-2">Bennett performs a jumping attack that deals <span className="text-pyro">Pyro DMG</span>, creating an Inspiration Field for 12 seconds.</p>
-            <p className="mb-2"><b>Inspiration Field:</b></p>
-            <ul className="mb-2">
-              <li>If the health of a character within the AoE is equal to or falls below 70%, their health will regenerate each second. The amount of HP restores scales off Bennett's Max HP.</li>
-              <li>If the health of a character within the AoE is higher than 70%, they gain an ATK Bonus that scales based on Bennett's Base ATK.</li>
-              <li>Imbues characters within the AoE with <span className="text-pyro">Pyro</span>.</li>
-            </ul>
-          </span>,
+          text: tr("burst.description"),
           fields: [{
             text: "Skill DMG",
             formulaText: stats => <span>{data.burst.dmg[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
@@ -172,59 +120,15 @@ const char: ICharacterSheet = {
           conditional: conditionals.q
         }],
       },
-      passive1: {
-        name: "Rekindle",
-        img: passive1,
-        sections: [{ text: <span>Decreases <b>Passion Overload</b>'s CD by 20%.</span> }],
-      },
-      passive2: {
-        name: "Fearnaught",
-        img: passive2,
-        sections: [{ text: <span>When inside <b>Fantastic Voyage</b>'s circle, Passion Overload's CD is decreased by 50% and Bennett cannot be launched by this skill's explosion.</span> }],
-      },
-      passive3: {
-        name: "It Should Be Safe...",
-        img: passive3,
-        sections: [{ text: <span>When dispatched on an expedition in <b>Mondstadt</b>, time consumed is reduced by 25%.</span> }],
-      },
-      constellation1: {
-        name: "Grand Expectation",
-        img: c1,
-        sections: [{ text: <span><b>Fantastic Voyage</b>'s ATK increase no longer has an HP restriction, and gains an additional 20% of Bennett's Base ATK. (Additive increase)</span> }],
-      },
-      constellation2: {
-        name: "Impasse Conqueror",
-        img: c2,
-        sections: [{
-          text: <span>When HP falls below 70%, increases Energy Recharge by 30%.</span>,
-          conditional: conditionals.c2
-        }],
-      },
-      constellation3: {
-        name: "Unstoppable Fervor",
-        img: c3,
-        sections: [{ text: <span>Increases <b>Passion Overload</b>'s skill level by 3. Maximum upgrade level is 15.</span> }],
-        stats: { skillBoost: 3 }
-      },
-      constellation4: {
-        name: "Unexpected Odyssey",
-        img: c4,
-        sections: [{ text: <span>Short hold to release <b>Passion Overload</b> as a two-stage attack. Press the attack button to perform an additional falling attack.</span> }],
-      },
-      constellation5: {
-        name: "True Explorer",
-        img: c5,
-        sections: [{ text: <span>Increases <b>Fantastic Voyage</b>'s skill level by 3. Maximum upgrade level is 15.</span> }],
-        stats: { burstBoost: 3 }
-      },
-      constellation6: {
-        name: "Fire Ventures with Me",
-        img: c6,
-        sections: [{
-          text: <span>Sword, Claymore, or Polearm-wielding characters inside Fantastic Voyage's radius gain a 15% Pyro DMG Bonus and their weapons are infused with <span className="text-pyro">Pyro</span>.</span>,
-          conditional: conditionals.c6
-        }],
-      }
+      passive1: talentTemplate("passive1", tr, passive1),
+      passive2: talentTemplate("passive2", tr, passive2),
+      passive3: talentTemplate("passive3", tr, passive3),
+      constellation1: talentTemplate("constellation1", tr, c1),
+      constellation2: talentTemplate("constellation2", tr, c2),
+      constellation3: talentTemplate("constellation3", tr, c3, { skillBoost: 3 }),
+      constellation4: talentTemplate("constellation4", tr, c4),
+      constellation5: talentTemplate("constellation5", tr, c5, { burstBoost: 3 }),
+      constellation6: talentTemplate("constellation6", tr, c6),
     },
   },
 };

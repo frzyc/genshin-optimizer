@@ -2,15 +2,6 @@ import { IFormulaSheet } from "../../../Types/character"
 import { basicDMGFormula } from "../../../Util/FormulaUtil"
 
 const data = {
-  baseStat: {
-    characterHP: [802, 2061, 2661, 3985, 4411, 5074, 5642, 6305, 6731, 7393, 7818, 8481, 8907, 9570],
-    characterATK: [18, 46, 59, 88, 98, 113, 125, 140, 149, 164, 174, 188, 198, 212],
-    characterDEF: [50, 129, 167, 250, 277, 318, 354, 396, 422, 464, 491, 532, 559, 601]
-  },
-  specializeStat: {
-    key: "cryo_dmg_",
-    value: [0, 0, 0, 0, 6, 6, 12, 12, 12, 12, 18, 18, 24, 24]
-  },
   normal: {
     hitArr: [
       [36.12, 39.06, 42, 46.2, 49.14, 52.5, 57.12, 61.74, 66.36, 71.4, 77.18, 83.97, 90.76, 97.55, 104.96],
@@ -21,8 +12,8 @@ const data = {
     ],
   },
   charged: {
-    aimedShot: [43.86, 47.43, 51, 56.1, 59.67, 63.75, 69.36, 74.97, 80.58, 86.7, 93.71, 101.96, 110.21, 118.45, 127.45],
-    fullAimedShot: [124, 133.3, 142.6, 155, 164.3, 173.6, 186, 198.4, 210.8, 223.2, 236.1, 252.96, 269.82, 286.69, 303.55]
+    hit: [43.86, 47.43, 51, 56.1, 59.67, 63.75, 69.36, 74.97, 80.58, 86.7, 93.71, 101.96, 110.21, 118.45, 127.45],
+    full: [124, 133.3, 142.6, 155, 164.3, 173.6, 186, 198.4, 210.8, 223.2, 236.1, 252.96, 269.82, 286.69, 303.55]
   },
   plunging: {
     dmg: [56.83, 61.45, 66.08, 72.69, 77.31, 82.6, 89.87, 97.14, 104.41, 112.34, 120.27, 128.2, 136.12, 144.05, 151.98],
@@ -47,8 +38,8 @@ const formula: IFormulaSheet = {
   normal: Object.fromEntries(data.normal.hitArr.map((percentArr, i) => [i, stats =>
     basicDMGFormula(percentArr[stats.tlvl.auto], stats, "normal")])),
   charged: {
-    aimShot: stats => basicDMGFormula(data.charged.aimedShot[stats.tlvl.auto], stats, "charged"),
-    fullAimedShot: stats => basicDMGFormula(data.charged.fullAimedShot[stats.tlvl.auto], stats, "charged", "cryo"),
+    hit: stats => basicDMGFormula(data.charged.hit[stats.tlvl.auto], stats, "charged"),
+    full: stats => basicDMGFormula(data.charged.full[stats.tlvl.auto], stats, "charged", "cryo"),
   },
   plunging: Object.fromEntries(Object.entries(data.plunging).map(([key, arr]) => [key, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "plunging")])),
   skill: {

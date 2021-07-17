@@ -116,7 +116,7 @@ const char: ICharacterSheet = {
   weaponTypeKey: "claymore",
   gender: "F",
   constellationName: tr("constellationName"),
-  titles: [],
+  title: tr("title"),
   baseStat: data_gen.base,
   baseStatCurve: data_gen.curves,
   ascensions: data_gen.ascensions,
