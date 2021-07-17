@@ -19,7 +19,7 @@ import { Stars } from '../Components/StarDisplay';
 import Formula from '../Formula';
 import InfoComponent from '../Components/InfoComponent';
 import Stat from '../Stat';
-import { ArtifactsBySlot, BuildSetting } from '../Types/Build';
+import { ArtifactsBySlot, Build, BuildSetting } from '../Types/Build';
 import { ICharacter } from '../Types/character';
 import { allSlotKeys, ArtifactSetKey, CharacterKey, SetNum, SlotKey } from '../Types/consts';
 import ICalculatedStats from '../Types/ICalculatedStats';
@@ -31,6 +31,7 @@ import WeaponSheet from '../Weapon/WeaponSheet';
 import { calculateTotalBuildNumber } from './Build';
 import SlotNameWithIcon, { artifactSlotIcon } from '../Artifact/Component/SlotNameWIthIcon';
 import { database } from '../Database/Database';
+import { StatKey } from '../Types/artifact';
 const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
 
 //lazy load the character display
@@ -211,8 +212,8 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
       })
     })
     //generate the key dependencies for the formula
-    const minFilters = Object.fromEntries(Object.entries(statFilters).map(([statKey, { min }]) => [statKey, min]).filter(([, min]) => typeof min === "number"))
-    const maxFilters = Object.fromEntries(Object.entries(statFilters).map(([statKey, { max }]) => [statKey, max]).filter(([, max]) => typeof max === "number"))
+    const minFilters: Dict<StatKey, number> = Object.fromEntries(Object.entries(statFilters).map(([statKey, { min }]) => [statKey, min]).filter(([, min]) => typeof min === "number"))
+    const maxFilters: Dict<StatKey, number> = Object.fromEntries(Object.entries(statFilters).map(([statKey, { max }]) => [statKey, max]).filter(([, max]) => typeof max === "number"))
     //create an obj with app the artifact set effects to pass to buildworker.
     const data = {
       splitArtifacts, initialStats, artifactSetEffects,
@@ -234,7 +235,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
         value: e.data.timing,
         label: totBuildNumber.toString()
       })
-      const builds = e.data.builds.map(obj =>
+      const builds = (e.data.builds as Build[]).map(obj =>
         Character.calculateBuildwithArtifact(initialStats, obj.artifacts, artifactSheets))
       setbuilds(builds)
       setgeneratingBuilds(false)

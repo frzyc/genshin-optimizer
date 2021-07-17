@@ -5,8 +5,9 @@ import { GetDependencies } from '../StatDependency';
 import Formula from '../Formula';
 import { IArtifact } from '../Types/artifact';
 import { ArtifactSetKey } from '../Types/consts';
+import { Build, BuildRequest } from '../Types/Build';
 
-onmessage = async (e) => {
+onmessage = async (e: { data: BuildRequest }) => {
   const t1 = performance.now()
   const { splitArtifacts, setFilters, minFilters = {}, maxFilters = {}, initialStats: stats, artifactSetEffects, maxBuildsToShow, optimizationTarget, ascending, turbo = false } = e.data
 
@@ -45,14 +46,14 @@ onmessage = async (e) => {
 
       if (newCount < 1) {
         // over-pruned, try not to prune the set-filter
-        prunedArtifacts = prune(setFilters.map(set => set.key))
+        prunedArtifacts = prune(setFilters.map(set => set.key) as any)
         newCount = calculateTotalBuildNumber(prunedArtifacts, setFilters)
       }
     }
   }
 
   let { initialStats, formula } = PreprocessFormulas(dependencies, stats)
-  let builds: { buildFilterVal: number, artifacts: { [key: string]: IArtifact } }[] = [], threshold = -Infinity
+  let builds: Build[] = [], threshold = -Infinity
   let buildCount = 0, skipped = oldCount - newCount
 
   const gc = () => {

@@ -17,3 +17,22 @@ export interface BuildSetting {
 }
 export type MinMaxFilter = Dict<StatKey, { min: number, max: number }>
 export type ArtifactsBySlot = Dict<SlotKey, IArtifact[]>
+
+export interface BuildRequest {
+  splitArtifacts: ArtifactsBySlot,
+  setFilters: SetFilter,
+  minFilters: Dict<StatKey, Number>,
+  maxFilters: Dict<StatKey, Number>,
+  initialStats: ICalculatedStats,
+  artifactSetEffects: ArtifactSetEffects,
+  maxBuildsToShow: number,
+  optimizationTarget: string | string[],
+  ascending: boolean,
+  turbo: boolean
+}
+export interface Build {
+  buildFilterVal: number,
+  artifacts: {
+    [key: string]: IArtifact
+  }
+}
