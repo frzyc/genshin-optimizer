@@ -16,7 +16,7 @@ export default interface ICalculatedStats {
   },
   conditionalValues: ConditionalValues
   mainStatAssumptionLevel: number
-  modifiers?: object
+  modifiers?: Modifier
   equippedArtifacts?: StrictDict<SlotKey, string>
   setToSlots: object // TODO: type
   weaponType: string
@@ -31,4 +31,10 @@ type ConditionalValues = {
   artifact?: any
   character?: any
   weapon?: any
+}
+
+interface Modifier {
+  [key: string]: {
+    [key: string]: number
+  }
 }

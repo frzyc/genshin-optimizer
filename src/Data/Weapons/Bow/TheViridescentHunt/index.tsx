@@ -1,7 +1,7 @@
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../../Build/Build'
 import { IWeaponSheet } from '../../../../Types/weapon'
 import img from './Weapon_The_Viridescent_Hunt.png'
-import formula, { data } from './TheViridescentHuntData'
+import formula, { data } from './data'
 import Stat from '../../../../Stat'
 import { Translate } from '../../../../Components/Translate'
 const tr = (strKey: string) => <Translate ns="weapon_TheViridescentHunt_gen" key18={strKey} />

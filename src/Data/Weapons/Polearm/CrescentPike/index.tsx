@@ -2,7 +2,7 @@ import { getTalentStatKey, getTalentStatKeyVariant } from '../../../../Build/Bui
 import Stat from '../../../../Stat'
 import { IWeaponSheet } from '../../../../Types/weapon'
 import img from './Weapon_Crescent_Pike.png'
-import formula, { data } from './CrescentPikeData'
+import formula, { data } from './data'
 import { Translate, TransWrapper } from '../../../../Components/Translate'
 const tr = (strKey: string) => <Translate ns="weapon_CrescentPike_gen" key18={strKey} />
 const weapon: IWeaponSheet = {

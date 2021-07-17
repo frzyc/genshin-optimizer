@@ -1,5 +1,6 @@
 import { clamp } from "./Util/Util";
 import { hitTypes, hitMoves, hitElements, transformativeReactions, amplifyingReactions, transformativeReactionLevelMultipliers, crystalizeLevelMultipliers } from "./StatConstants"
+import ICalculatedStats from "./Types/ICalculatedStats";
 
 export interface StatItem {
   name: string, pretty?: string, const?: boolean, default?: any, variant?: string,
@@ -85,7 +86,7 @@ const StatData: { [stat: string]: StatItem } = {
   skillBoost: { name: "Ele. Skill Level Boost", const: true, },
   burstBoost: { name: "Ele. Burst Level Boost", const: true, },
 }
-const Formulas = {
+const Formulas: Dict<string, (s, c) => number> = {
   // Basic Stats
   baseATK: (s, c) => c.characterATK + c.weaponATK,
   finalATK: (s, c) => c.baseATK * (1 + s.atk_ / 100) + s.atk,
@@ -212,26 +213,26 @@ Object.entries(amplifyingReactions).forEach(([reaction, { name, variants }]) => 
 if (process.env.NODE_ENV === "development") console.log(StatData)
 
 //assume all the dependency for the modifiers are part of the dependencyKeys as well
-function PreprocessFormulas(dependencyKeys, stats, debug = false) {
+function PreprocessFormulas(dependencyKeys: string[], stats: ICalculatedStats, debug = false) {
   const { modifiers = {} } = stats, initialStats = {}, constData = {}
   const formulaList = dependencyKeys.map(key => {
     const modifier = modifiers[key] ?? {}
-    const constModifier = Object.entries(modifier).filter(([k]: any) => StatData[k]?.const)
-    const dynamicModifier = Object.entries(modifier).filter(([k]: any) => !(StatData[k]?.const))
-    const constFunc = (s, c) => constModifier.reduce((accu, [k, m]: any) => accu + c[k] * (m as any), 0)
-    const dynamicFunc = (s, c) => dynamicModifier.reduce((accu, [k, m]: any) => accu + s[k] * (m as any), 0)
+    const constModifier = Object.entries(modifier).filter(([k]) => StatData[k]?.const)
+    const dynamicModifier = Object.entries(modifier).filter(([k]) => !(StatData[k]?.const))
+    const constFunc = (s, c) => constModifier.reduce((accu, [k, m]) => accu + c[k] * m, 0)
+    const dynamicFunc = (s, c) => dynamicModifier.reduce((accu, [k, m]) => accu + s[k] * m, 0)
 
     let funcIndicator = 0
     if (constModifier.length) funcIndicator += 1
     if (dynamicModifier.length) funcIndicator += 2
     if (!Formulas[key]) funcIndicator += StatData[key]?.const ? 4 : 8
 
-    let tmp
+    let tmp: (s, c) => number
     switch (funcIndicator) {
-      case 0: tmp = Formulas[key]; break
-      case 1: tmp = (s, c) => Formulas[key](s, c) + constFunc(s, c); break
-      case 2: tmp = (s, c) => Formulas[key](s, c) + dynamicFunc(s, c); break
-      case 3: tmp = (s, c) => Formulas[key](s, c) + constFunc(s, c) + dynamicFunc(s, c); break
+      case 0: tmp = Formulas[key]!; break
+      case 1: tmp = (s, c) => Formulas[key]!(s, c) + constFunc(s, c); break
+      case 2: tmp = (s, c) => Formulas[key]!(s, c) + dynamicFunc(s, c); break
+      case 3: tmp = (s, c) => Formulas[key]!(s, c) + constFunc(s, c) + dynamicFunc(s, c); break
       case 4: tmp = (s, c) => c[key]; break
       case 5: tmp = (s, c) => c[key] + constFunc(s, c); break
       case 6: tmp = (s, c) => c[key] + dynamicFunc(s, c); break
@@ -254,14 +255,14 @@ function PreprocessFormulas(dependencyKeys, stats, debug = false) {
       stats[key] = constData[key]
       if (dynamicModifier.length)
         console.error(`Constant key ${key} depends on a dynamic modifer ${dynamicModifier}. The result will be incorrect.`)
-      return null
+      return undefined
     }
 
     if (!(key in Formulas))
       initialStats[key] = stats[key]
 
     return [key, func]
-  }).filter((func) => func)
+  }).filter(x => x) as [string, (s, c) => number][]
 
   if (debug) console.log(initialStats, constData)
 
