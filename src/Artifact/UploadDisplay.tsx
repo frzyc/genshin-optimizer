@@ -288,6 +288,7 @@ export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactShee
   const relevantSetKey = [...new Set<ArtifactSetKey>([...textSetKeys, "Adventurer", "ArchaicPetra"])]
 
   let bestScore = -1, bestArtifacts: IArtifact[] = [{
+    id: "",
     setKey: "Adventurer", numStars: 3, level: 0, slotKey: "flower", mainStatKey: "hp", substats: [],
     location: "", lock: false,
   }]
@@ -334,7 +335,7 @@ export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactShee
               if (score > bestScore) bestArtifacts = []
               bestScore = score
               bestArtifacts.push({
-                setKey, numStars, level, slotKey, mainStatKey, substats: [], location: "", lock: false
+                id: "", setKey, numStars, level, slotKey, mainStatKey, substats: [], location: "", lock: false
               })
             }
           }
@@ -347,7 +348,7 @@ export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactShee
             if (score > bestScore) bestArtifacts = []
             bestScore = score
             bestArtifacts.push({
-              setKey, numStars, level, slotKey, mainStatKey, substats: [], location: "", lock: false
+              id: "", setKey, numStars, level, slotKey, mainStatKey, substats: [], location: "", lock: false
             })
           }
         }

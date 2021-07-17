@@ -1,16 +1,15 @@
 import { characters, artifacts, flexObj, oldURL } from './FlexUtil.test.data'
 import { createFlexObj, parseFlexObj } from './FlexUtil'
-import { DatabaseInitAndVerify } from '../Database/DatabaseUtil'
-import { saveToLocalStorage } from '../Util/Util'
+import { database } from '../Database/Database'
 
-function setupLS() {
-  characters.map(char => saveToLocalStorage(`char_${char.characterKey}`, char))
-  Object.entries(artifacts).map(([id, art]) => saveToLocalStorage(id, art))
-}
 describe('flex import export', () => {
   beforeEach(() => {
-    setupLS()
-    DatabaseInitAndVerify()
+    database.clear()
+    characters.map(char => database.updateChar(char))
+    Object.values(artifacts).map(art => {
+      database.updateArt(art)
+      database.setLocation(art.id, art.location)
+    })
   })
   afterEach(() => localStorage.clear())
 

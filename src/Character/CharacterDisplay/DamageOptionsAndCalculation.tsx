@@ -43,12 +43,11 @@ type ReactionToggleProps = {
   characterDispatch: (any) => void,
   className: string
 }
-export function ReactionToggle({ character: { reactionMode = "none", infusionAura }, build, characterDispatch, className }: ReactionToggleProps) {
-  if (reactionMode === null) reactionMode = "none"
+export function ReactionToggle({ character: { reactionMode = null, infusionAura }, build, characterDispatch, className }: ReactionToggleProps) {
   const charEleKey = build.characterEle
   if (!["pyro", "hydro", "cryo"].includes(charEleKey) && !["pyro", "hydro", "cryo"].includes(infusionAura)) return null
   return <ToggleButtonGroup className={className} type="radio" name="reactionMode" value={reactionMode} onChange={val => characterDispatch({ reactionMode: val === "none" ? null : val })}>
-    <ToggleButton value={"none"} variant={reactionMode === "none" ? "success" : "primary"}>No Reactions</ToggleButton >
+    <ToggleButton value={"none"} variant={reactionMode ? "primary" : "success"}>No Reactions</ToggleButton >
     {(charEleKey === "pyro" || infusionAura === "pyro") && <ToggleButton value={"pyro_vaporize"} variant={reactionMode === "pyro_vaporize" ? "success" : "primary"}>
       <span className="text-vaporize">Vaporize(Pyro) <Image src={Assets.elements.hydro} className="inline-icon" />+<Image src={Assets.elements.pyro} className="inline-icon" /></span>
     </ToggleButton >}

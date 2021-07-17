@@ -1,5 +1,4 @@
-import ArtifactDatabase from "../Database/ArtifactDatabase"
-import CharacterDatabase from "../Database/CharacterDatabase"
+import { database } from "../Database/Database"
 import { IArtifact } from "../Types/artifact"
 import { allSlotKeys, SlotKey } from "../Types/consts"
 import WeaponSheet from "../Weapon/WeaponSheet"
@@ -22,10 +21,10 @@ describe('Character.mergeStats()', () => {
 describe('Character.getDisplayStatKeys()', () => {
   const characterKey = "noelle"
 
-  beforeEach(() => CharacterDatabase.update({ characterKey, levelKey: "L60A", weapon: { key: "Whiteblind" } } as any))
+  beforeEach(() => database.updateChar({ characterKey, levelKey: "L60A", weapon: { key: "Whiteblind" } } as any))
   afterEach(() => localStorage.clear())
   test('should get statKeys for characters with finished talent page', async () => {
-    const character = CharacterDatabase.get(characterKey)
+    const character = database._getChar(characterKey)
     const characterSheet = await CharacterSheet.get(characterKey)
     expect(character).toBeTruthy()
     if (!character) return
@@ -41,15 +40,14 @@ describe('Character.getDisplayStatKeys()', () => {
 
 describe('Equipment functions', () => {
   let a: IArtifact, b: IArtifact, c: IArtifact, d: IArtifact, e: IArtifact,
-    aID: string, bID: string, cID: string, dID: string, eID: string,
     abcde: StrictDict<SlotKey, string>, empty: StrictDict<SlotKey, "">
   let noelle, ningguang
   beforeEach(() => {
-    ArtifactDatabase.clearDatabase()
-    CharacterDatabase.clearDatabase()
+    database.clear()
     localStorage.clear()
 
     a = {
+      id: "",
       setKey: "GladiatorsFinale",
       numStars: 5,
       level: 20,
@@ -63,30 +61,23 @@ describe('Equipment functions', () => {
     c = { ...a, slotKey: "sands", location: "noelle" }
     d = { ...a, slotKey: "goblet", location: "noelle" }
     e = { ...a, slotKey: "circlet", location: "noelle" }
-    aID = ArtifactDatabase.update(a)
-    bID = ArtifactDatabase.update(b)
-    cID = ArtifactDatabase.update(c)
-    dID = ArtifactDatabase.update(d)
-    eID = ArtifactDatabase.update(e)
+    a.id = database.updateArt(a)
+    b.id = database.updateArt(b)
+    c.id = database.updateArt(c)
+    d.id = database.updateArt(d)
+    e.id = database.updateArt(e)
     abcde = {
-      flower: aID,
-      plume: bID,
-      sands: cID,
-      goblet: dID,
-      circlet: eID
+      flower: a.id,
+      plume: b.id,
+      sands: c.id,
+      goblet: d.id,
+      circlet: e.id,
     }
     empty = Object.fromEntries(allSlotKeys.map(sk => [sk, ""])) as StrictDict<SlotKey, "">
 
-    ArtifactDatabase.update(a)
     noelle = {
       characterKey: "noelle",
-      equippedArtifacts: {
-        flower: "",
-        plume: "",
-        sands: cID,
-        goblet: dID,
-        circlet: eID
-      },
+      equippedArtifacts: empty,
       levelKey: "lvl"
     }
     ningguang = {
@@ -94,34 +85,16 @@ describe('Equipment functions', () => {
       equippedArtifacts: empty,
       levelKey: "lvl"
     }
-    CharacterDatabase.update(noelle)
-    CharacterDatabase.update(ningguang)
-  })
-  describe('Character.equipArtifacts', () => {
-    test('unequip from one character to another', () => {
-      //finish setup, time to test!
-      Character.equipArtifacts("ningguang", abcde)
-
-      const ningguangDB = CharacterDatabase.get("ningguang")
-      expect(ningguangDB?.equippedArtifacts).toEqual(abcde)
-
-      const noelleDB = CharacterDatabase.get("noelle")
-      expect(noelleDB?.equippedArtifacts).toEqual(empty)
-
-      Object.values(abcde).forEach(id => expect(ArtifactDatabase.get(id)?.location).toBe("ningguang"))
-    })
-    test(`unequip`, () => {
-      Character.equipArtifacts("noelle", empty)
-      const noelleDB = CharacterDatabase.get("noelle")
-      expect(noelleDB?.equippedArtifacts).toEqual(empty)
-      Object.values(abcde).forEach(id => expect(ArtifactDatabase.get(id)?.location).toBe(""))
-    })
+    database.updateChar(noelle)
+    database.updateChar(ningguang)
+    database.setLocation(c.id, noelle.characterKey)
+    database.setLocation(d.id, noelle.characterKey)
+    database.setLocation(e.id, noelle.characterKey)
   })
   test(`Character.remove`, () => {
-    Character.remove("noelle")
-    const noelleDB = CharacterDatabase.get("noelle")
+    database.removeChar("noelle")
+    const noelleDB = database._getChar("noelle")
     expect(noelleDB).toBe(undefined)
-    Object.values(abcde).forEach(id => expect(ArtifactDatabase.get(id)?.location).toBe(""))
+    Object.values(abcde).forEach(id => expect(database._getArt(id)?.location).toBe(""))
   })
-
 })

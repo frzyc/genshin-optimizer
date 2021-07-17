@@ -1,4 +1,3 @@
-import { CurrentDatabaseVersion } from "../Database/DatabaseUtil"
 import { IArtifact } from "../Types/artifact"
 import { ICharacter } from "../Types/character"
 
@@ -146,6 +145,7 @@ export const characters: [ICharacter] = [{
 }]
 export const artifacts: Dict<string, IArtifact> = {
   artifact_1: {
+    id: "artifact_1",
     setKey: 'GladiatorsFinale',
     numStars: 5,
     level: 20,
@@ -161,6 +161,7 @@ export const artifacts: Dict<string, IArtifact> = {
     lock: false,
   },
   artifact_2: {
+    id: "artifact_2",
     setKey: 'CrimsonWitchOfFlames',
     numStars: 5,
     level: 20,
@@ -176,6 +177,7 @@ export const artifacts: Dict<string, IArtifact> = {
     lock: false,
   },
   artifact_5: {
+    id: "artifact_5",
     setKey: 'CrimsonWitchOfFlames',
     numStars: 5,
     level: 20,
@@ -191,6 +193,7 @@ export const artifacts: Dict<string, IArtifact> = {
     lock: false,
   },
   artifact_10: {
+    id: "artifact_10",
     setKey: 'GladiatorsFinale',
     numStars: 5,
     level: 20,
@@ -206,6 +209,7 @@ export const artifacts: Dict<string, IArtifact> = {
     lock: false,
   },
   artifact_11: {
+    id: "artifact_11",
     setKey: 'ThunderingFury',
     numStars: 5,
     level: 16,

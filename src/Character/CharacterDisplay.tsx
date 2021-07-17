@@ -5,15 +5,14 @@ import { Button, ButtonGroup, Card, Col, Container, Image, Row, Spinner, ToggleB
 import ReactGA from 'react-ga';
 import { Link } from 'react-router-dom';
 import Assets from '../Assets/Assets';
-import CharacterDatabase from '../Database/CharacterDatabase';
 import InfoComponent from '../Components/InfoComponent';
 import { allElements, allWeaponTypeKeys, CharacterKey } from '../Types/consts';
 import { useForceUpdate, usePromise } from '../Util/ReactUtil';
 import { loadFromLocalStorage, saveToLocalStorage } from '../Util/Util';
-import Character from './Character';
 import CharacterCard from './CharacterCard';
 import CharacterSheet from './CharacterSheet';
 import i18next from 'i18next';
+import { database } from '../Database/Database';
 const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
 
 //lazy load the character display
@@ -48,18 +47,18 @@ export default function CharacterDisplay(props) {
       allElements.includes(elementalFilter) && elementalFilterDispatch(elementalFilter)
       allWeaponTypeKeys.includes(weaponFilter) && weaponFilterDispatch(weaponFilter)
     }
-    return CharacterDatabase.registerListener(forceUpdate)
+    return database.followAnyChar(forceUpdate)
   }, [forceUpdate])
   const allCharacterSheets = usePromise(CharacterSheet.getAll(), []) ?? {}
   const sortingFunc = {
-    level: (ck) => CharacterDatabase.get(ck)?.level ?? 0,
+    level: (ck) => database._getChar(ck)?.level ?? 0,
     rarity: (ck) => allCharacterSheets[ck]?.star
   }
   useEffect(() => {
     const save = { charIdToEdit, sortBy, elementalFilter, weaponFilter }
     saveToLocalStorage("CharacterDisplay.state", save)
   }, [charIdToEdit, sortBy, elementalFilter, weaponFilter])
-  const deleteCharacter = useCallback(async id => {
+  const deleteCharacter = useCallback(async (id: CharacterKey) => {
     const chararcterSheet = await CharacterSheet.get(id)
     let name = chararcterSheet?.name
     //use translated string
@@ -67,7 +66,7 @@ export default function CharacterDisplay(props) {
       name = i18next.t(`char_${id}_gen:name`)
 
     if (!window.confirm(`Are you sure you want to remove ${name}?`)) return
-    Character.remove(id)
+    database.removeChar(id)
     if (charIdToEdit === id)
       setcharIdToEdit("")
   }, [charIdToEdit, setcharIdToEdit])
@@ -84,7 +83,7 @@ export default function CharacterDisplay(props) {
     setnewCharacter(false)
   }, [setcharIdToEdit])
 
-  const charKeyList = CharacterDatabase.getCharacterKeyList().filter(cKey => {
+  const charKeyList = database._getCharKeys().filter(cKey => {
     if (elementalFilter && elementalFilter !== allCharacterSheets[cKey]?.elementKey) return false
     if (weaponFilter && weaponFilter !== allCharacterSheets[cKey]?.weaponTypeKey) return false
     return true

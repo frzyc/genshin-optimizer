@@ -1,7 +1,6 @@
 import { Alert, Button, Card, Container, Form, InputGroup, Toast } from "react-bootstrap";
 import { Redirect, useLocation } from "react-router-dom";
 import CharacterDisplayCard from "../Character/CharacterDisplayCard";
-import { CurrentDatabaseVersion } from '../Database/DatabaseUtil';
 import '../StatDependency'
 import { createFlexObj, parseFlexObj, _createFlexObj } from "./FlexUtil";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -35,8 +34,7 @@ function Display({ character }) {
     navigator.clipboard.writeText(url)
     settoast(true)
   }
-  const { databaseVersion = 0 } = character
-  const isUpToDate = databaseVersion < CurrentDatabaseVersion
+  const isUpToDate = false
   return <Container className="my-2">
     <Toast onClose={() => settoast(false)} show={toast} delay={3000} autohide style={{
       position: 'absolute',

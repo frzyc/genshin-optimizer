@@ -1,11 +1,9 @@
 import { ArtifactMainStatsData, ArtifactSlotsData, ArtifactStarsData, ArtifactSubstatMaxRollEfficiency, ArtifactSubstatMaxRolls, ArtifactSubstatsData } from '../Data/ArtifactData';
-import ArtifactDatabase from '../Database/ArtifactDatabase';
-import CharacterDatabase from '../Database/CharacterDatabase';
 import { ArtifactSubstatLookupTable } from '../Data/ArtifactLookupTable';
 import Stat from '../Stat';
 import { clampPercent, deepClone, evalIfFunc } from '../Util/Util';
 import { allSubstats, CompressMainStatKey, IArtifact, MainStatKey, StatDict, SubstatKey } from '../Types/artifact';
-import { SlotKey, Rarity, ArtifactSetKey, allSlotKeys, SetNum, CharacterKey } from '../Types/consts';
+import { SlotKey, Rarity, ArtifactSetKey, allSlotKeys, SetNum } from '../Types/consts';
 import ICalculatedStats from '../Types/ICalculatedStats';
 import { ArtifactSheet } from './ArtifactSheet';
 import Conditional from '../Conditional/Conditional';
@@ -45,9 +43,9 @@ export default class Artifact {
     return result
   }
 
-  static splitArtifactsBySlot = (databaseObj: Dict<string, IArtifact>): Dict<SlotKey, IArtifact[]> =>
+  static splitArtifactsBySlot = (databaseObj: IArtifact[]): Dict<SlotKey, IArtifact[]> =>
     Object.fromEntries(allSlotKeys.map(slotKey =>
-      [slotKey, Object.values(databaseObj).filter(art => art.slotKey === slotKey)]))
+      [slotKey, databaseObj.filter(art => art.slotKey === slotKey)]))
 
   //MAIN STATS
   static mainStatValues = (numStar: Rarity, statKey: MainStatKey): readonly number[] => {
@@ -191,37 +189,5 @@ export default class Artifact {
       else setToSlots[art.setKey] = [key]
     })
     return setToSlots
-  }
-
-  //database manipulation
-  static equipArtifactOnChar(artifactId: string | undefined, characterKey: CharacterKey | "") {
-    if (!characterKey) return this.unequipArtifact(artifactId)
-    let art = ArtifactDatabase.get(artifactId)
-    if (!art) return
-    let currentLocation = art.location;
-    let intendedLocation = (characterKey || "")
-    if (currentLocation === intendedLocation) return
-    let slotKey = art.slotKey
-    let artifactToSwapWithid = CharacterDatabase.getArtifactIDFromSlot(intendedLocation, slotKey)
-    let artifactToSwapWith = ArtifactDatabase.get(artifactToSwapWithid)
-
-    //update artifact
-    if (artifactToSwapWith) ArtifactDatabase.swapLocations(art, artifactToSwapWith)
-    else ArtifactDatabase.moveToNewLocation(art.id, intendedLocation)
-
-    //update Character
-    if (intendedLocation)
-      CharacterDatabase.equipArtifactOnSlot(intendedLocation, art.slotKey, art.id!)
-
-    if (currentLocation) {
-      CharacterDatabase.equipArtifactOnSlot(currentLocation, slotKey, artifactToSwapWith?.id ?? "")
-    }
-  }
-  static unequipArtifact(artifactId: string | undefined) {
-    const art = ArtifactDatabase.get(artifactId)
-    if (!art?.location) return
-    const location = art.location, slotKey = art.slotKey
-    CharacterDatabase.equipArtifactOnSlot(location, slotKey, "")
-    ArtifactDatabase.moveToNewLocation(artifactId)
   }
 }

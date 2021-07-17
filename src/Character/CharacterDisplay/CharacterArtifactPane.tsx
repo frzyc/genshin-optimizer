@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 import ArtifactCard from '../../Artifact/ArtifactCard';
 import { ArtifactSheet } from '../../Artifact/ArtifactSheet';
 import SetEffectDisplay from '../../Artifact/Component/SetEffectDisplay';
+import { database } from '../../Database/Database';
 import { ICharacter } from '../../Types/character';
 import { allSlotKeys, SlotKey } from '../../Types/consts';
 import ICalculatedStats from '../../Types/ICalculatedStats';
@@ -40,13 +41,13 @@ function CharacterArtifactPane({ characterSheet, weaponSheet, character, charact
   const equipArts = useCallback(() => {
     if (!window.confirm("Do you want to equip this artifact build to this character?")) return
     if (!newBuild) return
-    newBuild.equippedArtifacts && Character.equipArtifacts(characterKey, newBuild.equippedArtifacts)
+    newBuild.equippedArtifacts && database.equipArtifacts(characterKey, newBuild.equippedArtifacts)
     characterDispatch?.({ type: "fromDB" })
   }, [characterKey, newBuild, characterDispatch])
 
   const unequipArts = useCallback(() => {
     if (!window.confirm("Do you want to move all the artifacts equipped to inventory?")) return
-    Character.equipArtifacts(characterKey, Object.fromEntries(allSlotKeys.map(sKey => [sKey, ""])) as StrictDict<SlotKey, string>)
+    database.equipArtifacts(characterKey, Object.fromEntries(allSlotKeys.map(sKey => [sKey, ""])) as StrictDict<SlotKey, string>)
     characterDispatch?.({ type: "fromDB" })
   }, [characterKey, characterDispatch])
   if (!stats) return null

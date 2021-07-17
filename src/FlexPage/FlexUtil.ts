@@ -1,5 +1,4 @@
-import ArtifactDatabase from "../Database/ArtifactDatabase";
-import CharacterDatabase from "../Database/CharacterDatabase";
+import { database } from "../Database/Database";
 import { IArtifact } from "../Types/artifact";
 import { ICharacter } from "../Types/character";
 import { CharacterKey } from "../Types/consts";
@@ -7,12 +6,12 @@ import { decode, encode } from "./CodingUtil";
 import { schemas } from "./Schemas";
 
 export function createFlexObj(characterKey: CharacterKey) {
-  const character = CharacterDatabase.get(characterKey)
+  const character = database._getChar(characterKey)
   if (!character) return null
 
   const artifacts = Object.values(character.equippedArtifacts)
     .filter(art => art)
-    .map(id => ArtifactDatabase.get(id)!)
+    .map(id => database._getArt(id)!)
 
   return _createFlexObj(character, artifacts)
 }

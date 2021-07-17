@@ -22,24 +22,31 @@ export interface SetEffectEntry {
 export type StatArr = { key: StatKey, value: number }[]
 export type StatDict = Dict<StatKey, number>
 
-export interface IArtifact {
-  id?: string,
-  setKey: ArtifactSetKey,
-  numStars: Rarity,
+export interface IFlexArtifact {
+  id: string
+  setKey: ArtifactSetKey
+  numStars: Rarity
   level: number,
   slotKey: SlotKey,
   mainStatKey: MainStatKey,
+  substats: IFlexSubstat[],
+
+  location: CharacterKey | "",
+  lock: boolean,
+}
+export interface IArtifact extends IFlexArtifact {
   mainStatVal?: number,
   substats: Substat[],
-  location: CharacterKey | "",
 
+  location: CharacterKey | "",
   lock: boolean,
 }
 
-export interface Substat {
-  key: SubstatKey | "",
-  value: number,
-
+export interface IFlexSubstat {
+  key: SubstatKey | ""
+  value: number
+}
+export interface Substat extends IFlexSubstat {
   rolls?: number[],
   efficiency?: number,
 }

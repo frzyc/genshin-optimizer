@@ -5,13 +5,15 @@ import { Alert, Badge, Button, ButtonGroup, Card, Col, Dropdown, DropdownButton,
 import { Trans, useTranslation } from 'react-i18next';
 import CustomFormControl from '../Components/CustomFormControl';
 import { Stars } from '../Components/StarDisplay';
-import ArtifactDatabase from '../Database/ArtifactDatabase';
+import { database } from '../Database/Database';
+import { validateFlexArtifact } from '../Database/validation';
 import Stat from '../Stat';
-import { allSubstats, IArtifact, Substat, SubstatKey } from '../Types/artifact';
-import { allArtifactSets, Rarity, SlotKey } from '../Types/consts';
+import { allSubstats, IArtifact, Substat } from '../Types/artifact';
+import { Rarity, SlotKey } from '../Types/consts';
+import { randomizeArtifact } from '../Util/ArtifactUtil';
 import { usePromise } from '../Util/ReactUtil';
 import { valueString } from '../Util/UIUtil';
-import { clamp, deepClone, getRandomElementFromArray, getRandomIntInclusive } from '../Util/Util';
+import { clamp, deepClone } from '../Util/Util';
 import Artifact from './Artifact';
 import ArtifactCard from './ArtifactCard';
 import { ArtifactSheet } from './ArtifactSheet';
@@ -33,7 +35,7 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: Artifac
 
   useEffect(() => {
     if (artifactIdToEdit && artifactIdToEdit !== artifact?.id) {
-      const databaseArtifact = ArtifactDatabase.get(artifactIdToEdit)
+      const databaseArtifact = database._getArt(artifactIdToEdit)
       if (databaseArtifact)
         artifactDispatch({ type: "overwrite", artifact: deepClone(databaseArtifact) })
     }
@@ -73,6 +75,7 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: Artifac
   const setSubstat = useCallback((index: number, substat: Substat) => {
     artifactDispatch({ type: "substat", index, substat })
   }, [artifactDispatch])
+  const isValid = artifact ? !validateFlexArtifact(artifact).errors.length : false
   const canClearArtifact = (): boolean => window.confirm(t`editor.clearPrompt` as string)
   const { dupId, isDup } = useMemo(() => checkDuplicate(artifact), [artifact])
   const { numStars = 5, level = 0, slotKey = "flower" } = artifact ?? {}
@@ -237,12 +240,12 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: Artifac
         </Col>}
       </Row></Card.Body>
     <Card.Footer>
-      <Button className="mr-2" onClick={() => { saveArtifact(artifact!, artifact!.id); reset() }} disabled={ArtifactDatabase.isInvalid(artifact) || errMsgs.length} variant={dupId ? "warning" : "primary"}>
+      <Button className="mr-2" onClick={() => { saveArtifact(artifact!, artifact!.id); reset() }} disabled={!isValid} variant={dupId ? "warning" : "primary"}>
         {artifact?.id ? t`editor.btnSave` : t`editor.btnAdd`}
       </Button>
       <Button className="mr-2" disabled={!artifactInEditor} onClick={() => { canClearArtifact() && reset() }} variant="success">{t`editor.btnClear`}</Button>
       {process.env.NODE_ENV === "development" && <Button variant="info" onClick={async () => artifactDispatch({ type: "overwrite", artifact: await randomizeArtifact() })}>{t`editor.btnRandom`}</Button>}
-      {Boolean(dupId) && <Button className="float-right" onClick={() => { saveArtifact(artifact!, dupId); reset() }} disabled={ArtifactDatabase.isInvalid(artifact) || errMsgs.length} variant="success">{t`editor.btnUpdate`}</Button>}
+      {Boolean(dupId) && <Button className="float-right" onClick={() => { saveArtifact(artifact!, dupId); reset() }} disabled={!isValid} variant="success">{t`editor.btnUpdate`}</Button>}
     </Card.Footer>
   </Card >
 }
@@ -342,7 +345,7 @@ function checkDuplicate(editorArt: IArtifact | undefined): { dupId?: string, isD
   const { id, setKey, numStars, level, slotKey, mainStatKey, substats } = editorArt
   if (id) return { isDup: false }
 
-  const candidates = Object.values(ArtifactDatabase.getArtifactDatabase()).filter(candidate =>
+  const candidates = database._getArts().filter(candidate =>
     setKey === candidate.setKey &&
     numStars === candidate.numStars &&
     slotKey === candidate.slotKey &&
@@ -385,50 +388,7 @@ function checkDuplicate(editorArt: IArtifact | undefined): { dupId?: string, isD
   return { dupId, isDup: duplicated.length > 0 }
 }
 
-async function randomizeArtifact(): Promise<IArtifact> {
-  const set = getRandomElementFromArray(allArtifactSets)
-  const sheet = await ArtifactSheet.get(set)!
-  const rarity = getRandomElementFromArray(sheet.rarity)
-  const slot = getRandomElementFromArray(Object.keys(sheet.slotNames))
-  const mainStatKey = getRandomElementFromArray(Artifact.slotMainStats(slot))
-  const level = getRandomIntInclusive(0, rarity * 4)
-  const substats: Substat[] = [0, 1, 2, 3].map(i => ({ key: "", value: 0 }))
-
-  const { low, high } = Artifact.rollInfo(rarity)
-  const totRolls = Math.floor(level / 4) + getRandomIntInclusive(low, high)
-  const numOfInitialSubstats = Math.min(totRolls, 4)
-  const numUpgradesOrUnlocks = totRolls - numOfInitialSubstats
-
-  const RollStat = (substat: SubstatKey): number =>
-    getRandomElementFromArray(Artifact.getSubstatRollData(substat, rarity))
-
-  let remainingSubstats = allSubstats.filter(key => mainStatKey !== key)
-  for (const substat of substats.slice(0, numOfInitialSubstats)) {
-    substat.key = getRandomElementFromArray(remainingSubstats)
-    substat.value = RollStat(substat.key)
-    remainingSubstats = remainingSubstats.filter(key => key !== substat.key)
-  }
-  for (let i = 0; i < numUpgradesOrUnlocks; i++) {
-    let substat = getRandomElementFromArray(substats)
-    substat.value += RollStat(substat.key as any)
-  }
-  for (const substat of substats)
-    if (substat.key)
-      substat.value = parseFloat(valueString(substat.value, Stat.getStatUnit(substat.key)))
-
-  return {
-    setKey: set, numStars: rarity, slotKey: slot, mainStatKey, level, substats, location: "", lock: false
-  }
-}
-
 const saveArtifact = (artifact: IArtifact, id: string | undefined) => {
-  const artToSave = deepClone(artifact)
-  if (id) {
-    const art = ArtifactDatabase.get(id)
-    if (art) {
-      artToSave.id = art.id
-      artToSave.location = art.location
-    }
-  }
-  ArtifactDatabase.update(artToSave)
+  artifact.id = id ?? ""
+  database.updateArt(artifact)
 }

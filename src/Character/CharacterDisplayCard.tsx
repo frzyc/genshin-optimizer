@@ -12,7 +12,7 @@ import CustomFormControl from '../Components/CustomFormControl';
 import { ascensionMaxLevel } from '../Data/CharacterData';
 import ElementalData from '../Data/ElementalData';
 import { WeaponLevelKeys } from '../Data/WeaponData';
-import CharacterDatabase from '../Database/CharacterDatabase';
+import { database } from '../Database/Database';
 import { ICharacter } from '../Types/character';
 import { allCharacterKeys, allSlotKeys, CharacterKey } from '../Types/consts';
 import ICalculatedStats from '../Types/ICalculatedStats';
@@ -50,7 +50,7 @@ const initialCharacter = (characterKey): ICharacter => ({
   ascension: 0,
   hitMode: "avgHit",
   reactionMode: null,
-  equippedArtifacts: Object.fromEntries(allSlotKeys.map(sKey => [sKey, ""])),
+  equippedArtifacts: Object.fromEntries(allSlotKeys.map(sKey => [sKey, ""])) as any,
   conditionalValues: {},
   baseStatOverrides: {},//overriding the baseStat
   weapon: {
@@ -67,7 +67,6 @@ const initialCharacter = (characterKey): ICharacter => ({
   },
   infusionAura: "",
   constellation: 0,
-  buildSettings: {}//use to reset when changing to a new character, so it would not copy from old character.
 })
 
 type characterReducerOverwrite = {
@@ -91,7 +90,7 @@ function characterReducer(state: ICharacter, action: characterReducerOverwriteAc
     case "overwrite":
       return { ...state, ...action.character }
     case "fromDB": // for equipping artifacts, that makes the changes in DB instead of in state.
-      return { ...state, ...CharacterDatabase.get(state.characterKey) ?? {} }
+      return { ...state, ...database._getChar(state.characterKey) ?? {} }
     case "statOverride": {
       const { statKey, value, characterSheet, weaponSheet, } = action
       const baseStatOverrides = state.baseStatOverrides
@@ -129,7 +128,7 @@ export default function CharacterDisplayCard({ characterKey: propCharacterKey = 
 
   useEffect(() => {
     if (!propCharacterKey) return
-    const char = { ...initialCharacter(propCharacterKey), ...CharacterDatabase.get(propCharacterKey) ?? {} }
+    const char = { ...initialCharacter(propCharacterKey), ...database._getChar(propCharacterKey) ?? {} }
     characterDispatch({ type: "overwrite", character: char })
   }, [propCharacterKey])
 
@@ -146,7 +145,7 @@ export default function CharacterDisplayCard({ characterKey: propCharacterKey = 
       return
     }
     //save character to DB
-    editable && CharacterDatabase.update(character)
+    editable && database.updateChar(character)
   }, [character, editable])
 
   //callback for when switching to a new character, and need to initiate a weapon.
@@ -168,7 +167,7 @@ export default function CharacterDisplayCard({ characterKey: propCharacterKey = 
   const setCharacterKey = useCallback(
     newCKey => {
       let state = initialCharacter(newCKey)
-      const char = CharacterDatabase.get(newCKey)
+      const char = database._getChar(newCKey)
       if (char) state = { ...state, ...char }
       characterDispatch({ type: "overwrite", character: state })
       if (newCKey !== characterKey)

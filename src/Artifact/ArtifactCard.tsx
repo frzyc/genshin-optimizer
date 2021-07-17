@@ -14,7 +14,7 @@ import Tooltip from 'react-bootstrap/Tooltip';
 import CharacterSheet from '../Character/CharacterSheet';
 import { CharacterSelectionDropdownList } from '../Components/CharacterSelection';
 import { Stars } from '../Components/StarDisplay';
-import ArtifactDatabase from '../Database/ArtifactDatabase';
+import { database } from '../Database/Database';
 import Stat from '../Stat';
 import { allSubstats, IArtifact, Substat, SubstatKey } from '../Types/artifact';
 import { CharacterKey } from '../Types/consts';
@@ -31,10 +31,10 @@ const allSubstatFilter = new Set(allSubstats)
 export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete, mainStatAssumptionLevel = 0, effFilter = allSubstatFilter }: Data): JSX.Element | null {
   const [databaseArtifact, updateDatabaseArtifact] = useState(undefined as IArtifact | undefined)
   useEffect(() =>
-    ArtifactDatabase.registerArtListener(artifactId, updateDatabaseArtifact),
+    artifactId ? database.followArt(artifactId, updateDatabaseArtifact) : undefined,
     [artifactId, updateDatabaseArtifact])
-  const sheet = usePromise(ArtifactSheet.get((artifactObj ?? (artifactId ? ArtifactDatabase.get(artifactId) : undefined))?.setKey), [artifactObj, artifactId])
-  const equipOnChar = (charKey: CharacterKey | "") => Artifact.equipArtifactOnChar(artifactId, charKey)
+  const sheet = usePromise(ArtifactSheet.get((artifactObj ?? (artifactId ? database._getArt(artifactId) : undefined))?.setKey), [artifactObj, artifactId])
+  const equipOnChar = (charKey: CharacterKey | "") => database.setLocation(artifactId!, charKey)
 
   const editable = !artifactObj // dont allow edit for flex artifacts
   const art = artifactObj ?? databaseArtifact
@@ -105,7 +105,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
             {editable ? <OverlayTrigger placement="top"
               overlay={<Tooltip id="lock-artifact-tip">Locking a artifact will prevent the build generator from picking it for builds.</Tooltip>}>
               <span className="d-inline-block">
-                <Button size="sm" onClick={() => ArtifactDatabase.setLocked(id, !lock)}>
+                <Button size="sm" onClick={() => database.lockArtifact(id, !lock)}>
                   <FontAwesomeIcon icon={lock ? faLock : faLockOpen} className="fa-fw" />
                 </Button>
               </span>

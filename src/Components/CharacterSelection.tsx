@@ -1,10 +1,10 @@
 import Dropdown from "react-bootstrap/Dropdown";
 import CharacterSheet from "../Character/CharacterSheet";
-import CharacterDatabase from "../Database/CharacterDatabase";
+import { database } from "../Database/Database";
 import { usePromise } from "../Util/ReactUtil";
 
 function CharacterSelectionDropdownList({ onSelect }) {
-  return <>{CharacterDatabase.getCharacterKeyList().sort(((a, b) => {
+  return <>{database._getCharKeys().sort(((a, b) => {
     if (a < b) return -1;
     if (a > b) return 1;
     // names must be equal

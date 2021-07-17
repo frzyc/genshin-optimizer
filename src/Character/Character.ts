@@ -3,14 +3,13 @@ import { ArtifactSheet } from "../Artifact/ArtifactSheet";
 import Conditional from "../Conditional/Conditional";
 import { ascensionMaxLevel, characterStatBase } from "../Data/CharacterData";
 import ElementalData from "../Data/ElementalData";
-import ArtifactDatabase from "../Database/ArtifactDatabase";
-import CharacterDatabase from "../Database/CharacterDatabase";
+import { database } from "../Database/Database";
 import Formula from "../Formula";
 import { ElementToReactionKeys, PreprocessFormulas } from "../StatData";
 import { GetDependencies } from "../StatDependency";
 import { IArtifact } from "../Types/artifact";
 import { ICharacter } from "../Types/character";
-import { allElements, allSlotKeys, ArtifactSetKey, CharacterKey, ElementKey, SlotKey } from "../Types/consts";
+import { allElements, ArtifactSetKey, ElementKey, SlotKey } from "../Types/consts";
 import ICalculatedStats from "../Types/ICalculatedStats";
 import { IFieldDisplay } from "../Types/IFieldDisplay";
 import { deepClone, evalIfFunc } from "../Util/Util";
@@ -58,42 +57,12 @@ export default class Character {
     else return Character.getBaseStatValue(character, characterSheet, weaponSheet, statKey)
   }
 
-  //equipment, with consideration on swapping equipped.
-  static equipArtifacts = (characterKey: CharacterKey | "", artIds: StrictDict<SlotKey, string>) => {
-    const character = CharacterDatabase.get(characterKey)
-    if (!character) return
-    const artIdsOnCharacter = character.equippedArtifacts;
-
-    //swap, by slot
-    allSlotKeys.forEach(slotKey => {
-      const artNotOnChar = ArtifactDatabase.get(artIds[slotKey])
-      if (artNotOnChar?.location === characterKey) return; //it is already equipped
-      const artOnChar = ArtifactDatabase.get(artIdsOnCharacter?.[slotKey])
-      const notCharLoc = (artNotOnChar?.location ?? "")
-      //move current art to other char
-      if (artOnChar) ArtifactDatabase.moveToNewLocation(artOnChar.id, notCharLoc)
-      //move current art to other char
-      if (notCharLoc) CharacterDatabase.equipArtifactOnSlot(notCharLoc, slotKey, artOnChar?.id ?? "")
-      //move other art to current char
-      if (artNotOnChar) ArtifactDatabase.moveToNewLocation(artNotOnChar.id, characterKey)
-    })
-    //move other art to current char
-    CharacterDatabase.equipArtifactBuild(characterKey, artIds);
-  }
-  static remove(characterKey: CharacterKey | ""): void {
-    const character = CharacterDatabase.get(characterKey)
-    if (!character) return
-    Object.values(character.equippedArtifacts).forEach(artid =>
-      ArtifactDatabase.moveToNewLocation(artid, ""))
-    CharacterDatabase.remove(characterKey)
-  }
-
   static calculateBuild = (character: ICharacter, characterSheet: CharacterSheet, weaponSheet: WeaponSheet, artifactSheets: StrictDict<ArtifactSetKey, ArtifactSheet>, mainStatAssumptionLevel = 0): ICalculatedStats => {
     let artifacts
     if (character.artifacts) // from flex
       artifacts = Object.fromEntries(character.artifacts.map((art, i) => [i, art]))
     else if (character.equippedArtifacts)
-      artifacts = Object.fromEntries(Object.entries(character.equippedArtifacts).map(([key, artid]) => [key, ArtifactDatabase.get(artid)]))
+      artifacts = Object.fromEntries(Object.entries(character.equippedArtifacts).map(([key, artid]) => [key, database._getArt(artid)]))
     const initialStats = Character.createInitialStats(character, characterSheet, weaponSheet)
     initialStats.mainStatAssumptionLevel = mainStatAssumptionLevel
     return Character.calculateBuildwithArtifact(initialStats, artifacts, artifactSheets)

@@ -11,7 +11,7 @@ import { ArtifactSheet } from '../Artifact/ArtifactSheet';
 import Assets from '../Assets/Assets';
 import { Stars } from '../Components/StarDisplay';
 import { StatIconEle } from '../Components/StatIcon';
-import CharacterDatabase from '../Database/CharacterDatabase';
+import { database } from '../Database/Database';
 import Stat from '../Stat';
 import { ICharacter } from '../Types/character';
 import { CharacterKey } from '../Types/consts';
@@ -24,7 +24,7 @@ type CharacterCardProps = { characterKey: CharacterKey | "", onEdit?: (any) => v
 export default function CharacterCard({ characterKey, onEdit, onDelete, cardClassName = "", bg = "", header, footer = false }: CharacterCardProps) {
   const [databaseCharacter, updateDatabaseCharacter] = useState(undefined as ICharacter | undefined)
   useEffect(() =>
-    CharacterDatabase.registerCharListener(characterKey, updateDatabaseCharacter),
+    characterKey ? database.followChar(characterKey, updateDatabaseCharacter) : undefined,
     [characterKey, updateDatabaseCharacter])
 
   const artifactSheets = usePromise(ArtifactSheet.getAll(), [])
