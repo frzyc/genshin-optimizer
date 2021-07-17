@@ -1,5 +1,6 @@
 import { IArtifact, MainStatKey, StatArr, StatDict, StatKey } from "./artifact"
 import { ArtifactSetKey, SetNum, SlotKey } from "./consts"
+import ICalculatedStats from "./ICalculatedStats"
 
 export type ArtifactsBySlot = Dict<SlotKey, IArtifact[]>
 export type PrunedArtifactSetEffects = Dict<ArtifactSetKey | "other", Dict<SetNum, StatDict>>
