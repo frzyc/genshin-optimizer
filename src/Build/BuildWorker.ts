@@ -11,7 +11,7 @@ onmessage = async (e: { data: BuildRequest }) => {
   const t1 = performance.now()
   const { splitArtifacts, setFilters, minFilters = {}, maxFilters = {}, initialStats: stats, artifactSetEffects, maxBuildsToShow, optimizationTarget, ascending, turbo = false } = e.data
 
-  let target, targetKeys
+  let target: (stats) => number, targetKeys: string[]
   if (typeof optimizationTarget === "string") {
     target = (stats) => stats[optimizationTarget]
     targetKeys = [optimizationTarget]

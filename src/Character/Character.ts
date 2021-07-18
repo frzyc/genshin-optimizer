@@ -191,8 +191,8 @@ export default class Character {
     if (!transReactions.includes("shattered_hit") && weaponTypeKey === "claymore") transReactions.push("shattered_hit")
     const charFormulas = {}
     const talentSheet = characterSheet.getTalent(eleKey)
-    talentSheet && Object.entries(talentSheet.formula).forEach(([talentKey, formulas]: any) => {
-      Object.values(formulas as any).forEach((formula: any) => {
+    talentSheet && Object.entries(talentSheet.formula).forEach(([talentKey, formulas]) => {
+      Object.values(formulas).forEach((formula: any) => {
         if (!formula.field.canShow(stats)) return
         if (talentKey === "normal" || talentKey === "charged" || talentKey === "plunging") talentKey = "auto"
         const formKey = `talentKey_${talentKey}`
