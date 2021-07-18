@@ -5,6 +5,7 @@ import { allMainStatKeys, allSubstats, IArtifact, IFlexArtifact, IFlexSubstat, S
 import { ICharacter, IFlexCharacter } from "../Types/character";
 import { allArtifactSets, allCharacterKeys, allElements, allHitModes, allRarities, allReactionModes, allSlotKeys, allWeaponKeys } from "../Types/consts";
 
+/// Returns the closest (not necessarily valid) artifact, including errors as necessary
 export function validateFlexArtifact(flex: IFlexArtifact): { artifact: IArtifact, errors: string[] } {
     const { id, location, lock, setKey, slotKey, numStars, mainStatKey } = flex
     const level = Math.round(Math.min(Math.max(0, flex.level), numStars >= 3 ? numStars * 4 : 4))
@@ -89,6 +90,7 @@ export function validateFlexArtifact(flex: IFlexArtifact): { artifact: IArtifact
 
     return { artifact: validated, errors }
 }
+/// Returns the closest flex artifact, or undefined if it's not recoverable
 export function validateDBArtifact(obj: any, key: string): IFlexArtifact | undefined {
     if (typeof obj !== "object") return
 
@@ -109,6 +111,7 @@ export function validateDBArtifact(obj: any, key: string): IFlexArtifact | undef
     if (!allCharacterKeys.includes(location)) location = ""
     return { id: key, setKey, numStars, level, slotKey, mainStatKey, substats, location, lock }
 }
+/// Return a new flex artifact from given artifact. All extra keys are removed
 export function extractFlexArtifact(artifact: IArtifact): IFlexArtifact {
     const { id, setKey, numStars, level, slotKey, mainStatKey, substats, location, lock } = artifact
     return { id, setKey, numStars, level, slotKey, mainStatKey, substats: substats.map(substat => ({ key: substat.key, value: substat.value })), location, lock }
@@ -126,6 +129,15 @@ function validateSubstats(obj: any): IFlexSubstat[] {
 
     return substats
 }
+/// Returns the closest character
+export function validateFlexCharacter(flex: IFlexCharacter): ICharacter {
+    // TODO: Add more validations to make sure the returned value is a "valid" character
+    return {
+        ...flex,
+        equippedArtifacts: Object.fromEntries(allSlotKeys.map(slot => [slot, ""])) as any
+    }
+}
+/// Returns the closest flex character, or undefined if it's not recoverable
 export function validateDBCharacter(obj: any, key: string): IFlexCharacter | undefined {
     if (typeof obj !== "object") return
 
@@ -187,12 +199,7 @@ export function validateDBCharacter(obj: any, key: string): IFlexCharacter | und
         baseStatOverrides, weapon, talentLevelKeys, infusionAura, constellation, buildSettings,
     }
 }
-export function validateFlexCharacter(flex: IFlexCharacter): ICharacter {
-    return {
-        ...flex,
-        equippedArtifacts: Object.fromEntries(allSlotKeys.map(slot => [slot, ""])) as any
-    }
-}
+/// Return a new flex character from given character. All extra keys are removed
 export function extractFlexCharacter(char: ICharacter): IFlexCharacter {
     const {
         characterKey, level, ascension, hitMode, elementKey, reactionMode, conditionalValues,
