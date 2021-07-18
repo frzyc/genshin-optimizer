@@ -136,7 +136,7 @@ export function validateDBCharacter(obj: any, key: string): IFlexCharacter | und
 
     if (key !== `char_${characterKey}` ||
         !allCharacterKeys.includes(characterKey) ||
-        typeof level !== "number" || level < 0 || level >= 90 ||
+        typeof level !== "number" || level < 0 || level > 90 ||
         typeof weapon !== "object" || !allWeaponKeys.includes(weapon.key))
         return // non-recoverable
 
