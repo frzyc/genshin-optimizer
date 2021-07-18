@@ -45,26 +45,26 @@ import SkywardSpine from './Polearm/SkywardSpine/data'
 
 // import BlackcliffSlasher from './Claymore/BlackcliffSlasher/data'
 // import BloodtaintedGreatsword from './Claymore/BloodtaintedGreatsword/data'
-// import DebateClub from './Claymore/DebateClub/data'
+import DebateClub from './Claymore/DebateClub/data'
 // import FavoniusGreatsword from './Claymore/FavoniusGreatsword/data'
 // import FerrousShadow from './Claymore/FerrousShadow/data'
 // import LithicBlade from './Claymore/LithicBlade/data'
 // import OldMercsPal from './Claymore/OldMercsPal/data'
-// import PrototypeAminus from './Claymore/PrototypeAminus/data'
+import PrototypeAminus from './Claymore/PrototypeAminus/data'
 // import Quartz from './Claymore/Quartz/data'
 // import Rainslasher from './Claymore/Rainslasher/data'
 // import RoyalGreatsword from './Claymore/RoyalGreatsword/data'
 // import SacrificialGreatsword from './Claymore/SacrificialGreatsword/data'
 // import SerpentSpine from './Claymore/SerpentSpine/data'
 // import SkyriderGreatsword from './Claymore/SkyriderGreatsword/data'
-// import SkywardPride from './Claymore/SkywardPride/data'
-// import SnowTombedStarsilver from './Claymore/SnowTombedStarsilver/data'
+import SkywardPride from './Claymore/SkywardPride/data'
+import SnowTombedStarsilver from './Claymore/SnowTombedStarsilver/data'
 // import SongOfBrokenPines from './Claymore/SongOfBrokenPines/data'
-// import TheBell from './Claymore/TheBell/data'
+import TheBell from './Claymore/TheBell/data'
 // import TheUnforged from './Claymore/TheUnforged/data'
 // import WasterGreatsword from './Claymore/WasterGreatsword/data'
 // import Whiteblind from './Claymore/Whiteblind/data'
-// import WhiteIronGreatsword from './Claymore/WhiteIronGreatsword/data'
+import WhiteIronGreatsword from './Claymore/WhiteIronGreatsword/data'
 // import WolfsGravestone from './Claymore/WolfsGravestone/data'
 
 // import ApprenticesNotes from './Catalyst/ApprenticesNotes/data'
@@ -191,26 +191,26 @@ const catalyst = {
 const claymore = {
   // BlackcliffSlasher,
   // BloodtaintedGreatsword,
-  // DebateClub,
+  DebateClub,
   // FavoniusGreatsword,
   // FerrousShadow,
   // LithicBlade,
   // OldMercsPal,
-  // PrototypeAminus,
+  PrototypeAminus,
   // Quartz,
   // Rainslasher,
   // RoyalGreatsword,
   // SacrificialGreatsword,
   // SerpentSpine,
   // SkyriderGreatsword,
-  // SkywardPride,
-  // SnowTombedStarsilver,
+  SkywardPride,
+  SnowTombedStarsilver,
   // SongOfBrokenPines,
-  // TheBell,
+  TheBell,
   // TheUnforged,
   // WasterGreatsword,
   // Whiteblind,
-  // WhiteIronGreatsword,
+  WhiteIronGreatsword,
   // WolfsGravestone,
 }
 

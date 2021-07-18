@@ -4,8 +4,8 @@ import { IWeaponSheet } from '../../../../Types/weapon'
 import data_gen from './data_gen.json'
 import img from './Weapon_The_Unforged.png'
 
-const refinementVals = [20, 25, 30, 35, 40]
-const refinementAtkVals = [4, 5, 6, 7, 8]
+const shield_ = [20, 25, 30, 35, 40]
+const atk_s = [4, 5, 6, 7, 8]
 const conditionals: IConditionals = {
   gm: {
     name: "Hits",
@@ -14,14 +14,14 @@ const conditionals: IConditionals = {
         name: "Without shield",
         maxStack: 5,
         stats: stats => ({
-          atk_: refinementAtkVals[stats.weapon.refineIndex]
+          atk_: atk_s[stats.weapon.refineIndex]
         })
       },
       w: {
         name: "With shield",
         maxStack: 5,
         stats: stats => ({
-          atk_: 2 * refinementAtkVals[stats.weapon.refineIndex]
+          atk_: 2 * atk_s[stats.weapon.refineIndex]
         })
       }
     }
@@ -31,8 +31,11 @@ const weapon: IWeaponSheet = {
   ...data_gen as WeaponData,
   img,
   stats: stats => ({
-    powShield_: refinementVals[stats.weapon.refineIndex]
+    powShield_: shield_[stats.weapon.refineIndex]
   }),
-  conditionals
+  conditionals,
+  document: [{
+    conditional: conditionals.gm
+  }],
 }
 export default weapon

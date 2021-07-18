@@ -4,13 +4,12 @@ import { IWeaponSheet } from '../../../../Types/weapon'
 import data_gen from './data_gen.json'
 import img from './Weapon_Quartz.png'
 
-const refinementVals = [20, 25, 30, 35, 40]
+const atk_s = [20, 25, 30, 35, 40]
 const conditionals: IConditionals = {
   rh: {
     name: "After Pyro-related Reactions",
-    maxStack: 1,
     stats: stats => ({
-      atk_: refinementVals[stats.weapon.refineIndex]
+      atk_: atk_s[stats.weapon.refineIndex]
     })
   }
 }
@@ -18,5 +17,8 @@ const weapon: IWeaponSheet = {
   ...data_gen as WeaponData,
   img,
   conditionals,
+  document: [{
+    conditional: conditionals.rh
+  }],
 }
 export default weapon

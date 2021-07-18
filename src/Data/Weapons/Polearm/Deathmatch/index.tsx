@@ -30,7 +30,7 @@ const weapon: IWeaponSheet = {
   img,
   conditionals,
   document: [{
-    conditional: conditionals.spf
+    conditional: conditionals.g
   }],
 }
 export default weapon

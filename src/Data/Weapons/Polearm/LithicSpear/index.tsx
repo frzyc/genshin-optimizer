@@ -21,7 +21,7 @@ const weapon: IWeaponSheet = {
   img,
   conditionals,
   document: [{
-    conditional: conditionals.spf
+    conditional: conditionals.lau
   }],
 }
 export default weapon

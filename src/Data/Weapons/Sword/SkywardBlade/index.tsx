@@ -33,9 +33,9 @@ const weapon: IWeaponSheet = {
   stats: stats => ({
     critRate_: refinementVals[stats.weapon.refineIndex]
   }),
+  conditionals,
   document: [{
     conditional: conditionals.spf
   }],
-  conditionals,
 }
 export default weapon

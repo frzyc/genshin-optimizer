@@ -22,6 +22,9 @@ const weapon: IWeaponSheet = {
   stats: stats => ({
     atk_: atk_[stats.weapon.refineIndex]
   }),
-  conditionals
+  conditionals,
+  document: [{
+    conditional: conditionals.r
+  }],
 }
 export default weapon

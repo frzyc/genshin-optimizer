@@ -4,19 +4,22 @@ import { IWeaponSheet } from '../../../../Types/weapon'
 import data_gen from './data_gen.json'
 import img from './Weapon_Bloodtainted_Greatsword.png'
 
-const refinementVals = [12, 15, 18, 21, 24]
+const dmg_s = [12, 15, 18, 21, 24]
 const conditionals: IConditionals = {
   bft: {
     name: "Against Opponents affected by Pyro/Electro",
     maxStack: 1,
     stats: stats => ({
-      dmg_: refinementVals[stats.weapon.refineIndex]
+      dmg_: dmg_s[stats.weapon.refineIndex]
     })
   }
 }
 const weapon: IWeaponSheet = {
   ...data_gen as WeaponData,
   img,
-  conditionals
+  conditionals,
+  document: [{
+    conditional: conditionals.bft
+  }],
 }
 export default weapon
