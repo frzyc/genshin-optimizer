@@ -1,6 +1,5 @@
 {
   "dmg": "DMG",
-  "baseDMG": "Base DMG",
   "hits": "{{count}} Hit",
   "hits_plural": "{{count}} Hits",
   "lessPercentHP": "< {{percent}}% HP",

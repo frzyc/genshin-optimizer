@@ -11,11 +11,12 @@ import passives from './DataminedModules/character/passives'
 import skillDepot from './DataminedModules/character/skillDepot'
 import talents from './DataminedModules/character/talents'
 import weaponData from './DataminedModules/weapon/weapon'
-import WeaponAscensionData from './DataminedModules/weapon/weaponAscension'
+import WeaponRefinementData from './DataminedModules/weapon/weaponRefinement'
 import weaponExpCurve, { WeaponGrowCurveKey } from './DataminedModules/weapon/weaponExpCurve'
 import { extrapolateFloat } from './extrapolateFloat'
 import { parsingFunctions, preprocess } from './parseUtil'
 import { crawlObject, dumpFile, layeredAssignment } from './Util'
+import weaponAscensionData from './DataminedModules/weapon/weaponAscension'
 const fs = require('fs')
 
 const languageMap = {
@@ -93,13 +94,22 @@ type WeaponProp = {
 }
 export type WeaponData = {
   weaponType: WeaponTypeKey
-  rarity: number
+  rarity: 1 | 2 | 3 | 4 | 5
   mainStat: WeaponProp
   subStat?: WeaponProp
+  addProps: Array<Partial<Record<StatKey, number>>>
+  ascension: Array<{
+    addStats: Partial<Record<StatKey, number>>
+  }>
 }
 const weaponDataDump = Object.fromEntries(Object.entries(weaponData).filter(([weaponid, weaponData]) => weaponid in weaponIdMap).map(([weaponid, weaponData]) => {
-  const { WeaponType, RankLevel, WeaponProp } = weaponData
+  const { WeaponType, RankLevel, WeaponProp, SkillAffix, WeaponPromoteId } = weaponData
   const [main, sub] = WeaponProp
+  const [refinementDataId,] = SkillAffix
+  const refData = refinementDataId && WeaponRefinementData[refinementDataId]
+
+  const ascData = weaponAscensionData[WeaponPromoteId]
+
   const result: WeaponData = {
     weaponType: weaponMap[WeaponType],
     rarity: RankLevel,
@@ -112,7 +122,19 @@ const weaponDataDump = Object.fromEntries(Object.entries(weaponData).filter(([we
       type: propTypeMap[sub.PropType],
       base: extrapolateFloat(sub.InitValue),
       curve: sub.Type
-    } : undefined
+    } : undefined,
+    addProps: refData ? refData.map(asc =>
+      Object.fromEntries(asc.AddProps.filter(ap => ap.Value).map(ap =>
+        [propTypeMap[ap.PropType], extrapolateFloat(ap.Value)]))
+    ) : undefined,
+    ascension: ascData.map(asd => {
+      if (!asd) return { addStats: {} }
+      return {
+        addStats: Object.fromEntries(asd.AddProps.filter(a => a.Value && a.PropType).map(a => [
+          propTypeMap[a.PropType], extrapolateFloat(a.Value)
+        ]))
+      }
+    }) as any
   }
   return [weaponIdMap[weaponid], result]
 })) as Record<WeaponKey, WeaponData>
@@ -133,13 +155,13 @@ dumpFile('../src/Artifact/artifact_main_gen.json', artifactMainstatData)
 Object.entries(weaponData).filter(([weaponid,]) => weaponid in weaponIdMap).map(([weaponid, weaponData]) => {
   const { NameTextMapHash, DescTextMapHash, SkillAffix } = weaponData
   const [ascensionDataId,] = SkillAffix
-  const ascData = ascensionDataId && WeaponAscensionData[ascensionDataId]
+  const ascData = ascensionDataId && WeaponRefinementData[ascensionDataId]
 
   mapHashData.weapon[weaponIdMap[weaponid]] = {
     name: NameTextMapHash,
     description: DescTextMapHash,
     passiveName: ascData ? ascData[0].NameTextMapHash : 0,
-    passiveDescription: ascData ? ascData.map(asc => asc.DescTextMapHash) : [0, 0, 0, 0, 0]
+    passiveDescription: ascData ? ascData.map(asc => asc.DescTextMapHash) : [0, 0, 0, 0, 0],
   }
 })
 

@@ -1,6 +1,5 @@
 import Artifact from "../Artifact/Artifact";
 import { ascensionMaxLevel } from "../Data/CharacterData";
-import { WeaponLevelKeys } from "../Data/WeaponData";
 import Stat from "../Stat";
 import { allMainStatKeys, allSubstats, IArtifact, IFlexArtifact, IFlexSubstat, Substat } from "../Types/artifact";
 import { ICharacter, IFlexCharacter } from "../Types/character";
@@ -161,12 +160,11 @@ export function validateDBCharacter(obj: any, key: string): IFlexCharacter | und
         talentLevelKeys = { auto, skill, burst }
     }
     {
-        let { key, levelKey, refineIndex, overrideMainVal, overrideSubVal } = weapon
-        if (!WeaponLevelKeys.includes(levelKey)) levelKey = "L1"
+        let { key, level, ascension, refineIndex } = weapon
+        if (typeof level !== "number" || level < 1 || level > 90) level = 1
+        if (typeof ascension !== "number" || ascension < 0 || ascension > 6) ascension = 0
         if (typeof refineIndex !== "number" || refineIndex < 0 || refineIndex > 5) refineIndex = 0
-        if (typeof overrideMainVal !== "number") overrideMainVal = 0
-        if (typeof overrideSubVal !== "number") overrideSubVal = 0
-        weapon = { key, levelKey, refineIndex, overrideMainVal, overrideSubVal }
+        weapon = { key, level, ascension, refineIndex }
     }
     {
         if (typeof buildSettings !== "object") buildSettings = {}

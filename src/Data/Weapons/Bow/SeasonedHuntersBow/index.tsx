@@ -1,17 +1,10 @@
 import { IWeaponSheet } from '../../../../Types/weapon'
 import img from './Weapon_Seasoned_Hunter\'s_Bow.png'
 
+import data_gen from './data_gen.json'
+import { WeaponData } from 'pipeline'
 const weapon: IWeaponSheet = {
-  name: "Seasoned Hunter’s Bow",
-  weaponType: "bow",
+  ...data_gen as unknown as WeaponData,
   img,
-  rarity: 2,
-  passiveName: "",
-  passiveDescription: () => ``,
-  description: "A bow that has been well-polished by time and meticulously cared for by its owner. It feels almost like an extension of the archer's arm.",
-  baseStats: {
-    main: [33, 43, 55, 68, 80, 91, 103, 115, 127, 139, 151, 162, 174, 186, 197, 209, 220, 232, 243],
-    substatKey: "",
-  }
 }
 export default weapon

@@ -1,5 +1,7 @@
 //exp curve
 
+import { extrapolateFloat } from "../../extrapolateFloat"
+
 type AvatarCurveExcelConfigData = {
   "Level": number//2,
   "CurveInfos": [
@@ -44,7 +46,7 @@ const characterExpCurve = {} as CharacterExpCurveData
 characterExpCurveSrc.forEach(({ Level, CurveInfos }) =>
   CurveInfos.forEach(({ Type, Value }) => {
     if (!characterExpCurve[Type]) characterExpCurve[Type] = {}
-    characterExpCurve[Type][Level] = Value
+    characterExpCurve[Type][Level] = extrapolateFloat(Value)
   }))
 
 export default characterExpCurve

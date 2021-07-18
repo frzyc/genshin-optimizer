@@ -1,6 +1,7 @@
 import { CharacterExpCurveData } from "./DataminedModules/character/characterExpCurve";
 import { WeaponExpCurveData } from "./DataminedModules/weapon/weaponExpCurve";
-export { CharacterExpCurveData, WeaponExpCurveData }
+import { WeaponData } from './main'
+export { CharacterExpCurveData, WeaponExpCurveData, WeaponData }
 
 export const tagColor = {
   "FFD780FF": "strong",

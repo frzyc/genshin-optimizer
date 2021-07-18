@@ -56,12 +56,14 @@ export default function StatDisplay({ characterSheet, weaponSheet, character, eq
         const invalid = "invalid" //can't use undeinfed as the defVal, since I want undefined for invalid numbers.
         oldVal = Character.getStatValueWithOverride(character, characterSheet, weaponSheet, statKey) ?? invalid
         oldVal === invalid && (oldVal = undefined)
-        if (statKey === "finalHP")
-          oldVal = Character.getStatValueWithOverride(character, characterSheet, weaponSheet, "characterHP")
-        else if (statKey === "finalDEF")
-          oldVal = Character.getStatValueWithOverride(character, characterSheet, weaponSheet, "characterDEF")
-        else if (statKey === "finalATK")
-          oldVal = Character.getStatValueWithOverride(character, characterSheet, weaponSheet, "characterATK") + Character.getStatValueWithOverride(character, characterSheet, weaponSheet, "weaponATK")
+        if (build) {
+          if (statKey === "finalHP")
+            oldVal = build.characterHP
+          else if (statKey === "finalDEF")
+            oldVal = build.characterDEF
+          else if (statKey === "finalATK")
+            oldVal = build.characterATK + build.weaponATK
+        }
       }
       unit = Stat.getStatUnit(statKey)
       fixed = Stat.fixedUnit(statKey)

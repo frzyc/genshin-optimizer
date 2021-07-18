@@ -2,7 +2,7 @@ import { DWeaponTypeKey } from "../.."
 
 type WeaponExcelConfigData = {
   "WeaponType": DWeaponTypeKey// "WEAPON_CLAYMORE",
-  "RankLevel": number//4,
+  "RankLevel": 1 | 2 | 3 | 4 | 5 //4,
   "WeaponBaseExp": number//50000,
   "SkillAffix": number[]
   // [

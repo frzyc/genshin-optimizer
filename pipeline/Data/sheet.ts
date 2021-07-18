@@ -66,5 +66,5 @@ const data = {
     //CD (Hold)
     cd: [824598127, "skillParam"],
   }
-}
+} as const
 export default data

@@ -1,5 +1,7 @@
 //exp curve
 
+import { extrapolateFloat } from "../../extrapolateFloat"
+
 type WeaponCurveExcelConfigData = {
   "Level": 1,
   "CurveInfos": [
@@ -107,7 +109,7 @@ const weaponExpCurve = {} as WeaponExpCurveData
 weaponExpCurveSrc.forEach(({ Level, CurveInfos }) =>
   CurveInfos.forEach(({ Type, Value }) => {
     if (!weaponExpCurve[Type]) weaponExpCurve[Type] = {}
-    weaponExpCurve[Type][Level] = Value
+    weaponExpCurve[Type][Level] = extrapolateFloat(Value)
   }))
 
 export default weaponExpCurve

@@ -1,17 +1,10 @@
 import { IWeaponSheet } from '../../../../Types/weapon'
 import img from './Weapon_Silver_Sword.png'
 
+import data_gen from './data_gen.json'
+import { WeaponData } from 'pipeline'
 const weapon: IWeaponSheet = {
-  name: "Silver Sword",
-  weaponType: "sword",
+  ...data_gen as unknown as WeaponData,
   img,
-  rarity: 2,
-  passiveName: "",
-  passiveDescription: () => "",
-  description: "A sword for exorcising demons. Everyone knows it's made of a silver alloy, not pure silver.",
-  baseStats: {
-    main: [33, 43, 55, 68, 80, 91, 103, 115, 127, 139, 151, 162, 174, 186, 197, 209, 220, 232, 243],
-    substatKey: "",
-  },
 }
 export default weapon

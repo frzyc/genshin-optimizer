@@ -9,9 +9,8 @@ import DropdownItem from 'react-bootstrap/esm/DropdownItem';
 import Row from 'react-bootstrap/Row';
 import { ArtifactSheet } from '../Artifact/ArtifactSheet';
 import CustomFormControl from '../Components/CustomFormControl';
-import { ascensionMaxLevel } from '../Data/CharacterData';
+import { ascensionMaxLevel, milestoneLevels } from '../Data/CharacterData';
 import ElementalData from '../Data/ElementalData';
-import { WeaponLevelKeys } from '../Data/WeaponData';
 import { database } from '../Database/Database';
 import { ICharacter } from '../Types/character';
 import { allCharacterKeys, allSlotKeys, CharacterKey } from '../Types/consts';
@@ -55,10 +54,9 @@ const initialCharacter = (characterKey): ICharacter => ({
   baseStatOverrides: {},//overriding the baseStat
   weapon: {
     key: "" as any,
-    levelKey: WeaponLevelKeys[0],
+    level: 1,
+    ascension: 0,
     refineIndex: 0,
-    overrideMainVal: 0,
-    overrideSubVal: 0,
   },
   talentLevelKeys: {
     auto: 0,
@@ -260,22 +258,6 @@ export default function CharacterDisplayCard({ characterKey: propCharacterKey = 
   </Card>)
 }
 
-const levelSelector = [
-  [90, 6],
-  [80, 6],
-  [80, 5],
-  [70, 5],
-  [70, 4],
-  [60, 4],
-  [60, 3],
-  [50, 3],
-  [50, 2],
-  [40, 2],
-  [40, 1],
-  [20, 1],
-  [20, 0],
-  [1, 0]
-] as const
 type CharSelectDropdownProps = {
   characterSheet?: CharacterSheet,
   weaponSheet?: WeaponSheet,
@@ -334,7 +316,7 @@ function CharSelectDropdown({ characterSheet, weaponSheet, character, character:
       <Dropdown as={ButtonGroup}>
         <Dropdown.Toggle as={Button}>Select Level</Dropdown.Toggle>
         <Dropdown.Menu>
-          {levelSelector.map(([lv, as]) => {
+          {milestoneLevels.map(([lv, as]) => {
             const sameLevel = lv === ascensionMaxLevel[as]
             const lvlstr = sameLevel ? `Lv. ${lv}` : `Lv. ${lv}/${ascensionMaxLevel[as]}`
             return <DropdownItem key={`${lv}/${as}`} onClick={() => characterDispatch({ level: lv, ascension: as })}>{lvlstr}</DropdownItem>

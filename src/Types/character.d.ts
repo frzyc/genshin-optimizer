@@ -1,4 +1,3 @@
-import { WeaponLevel } from "../Data/WeaponData";
 import { BuildSetting } from "./Build";
 import { CharacterKey, ElementKey, HitModeKey, ReactionModeKey, SlotKey, WeaponKey, WeaponTypeKey } from "./consts";
 import ICalculatedStats from "./ICalculatedStats";
@@ -56,10 +55,9 @@ export interface IFlexCharacter {
   baseStatOverrides: object, //overriding the baseStat
   weapon: {
     key: WeaponKey
-    levelKey: WeaponLevel
+    level: number,
+    ascension: number,
     refineIndex: number
-    overrideMainVal: number
-    overrideSubVal: number
   },
   talentLevelKeys: {
     auto: number

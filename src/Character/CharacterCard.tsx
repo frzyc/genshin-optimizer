@@ -16,7 +16,6 @@ import Stat from '../Stat';
 import { ICharacter } from '../Types/character';
 import { CharacterKey } from '../Types/consts';
 import { usePromise } from '../Util/ReactUtil';
-import Weapon from '../Weapon/Weapon';
 import WeaponSheet from '../Weapon/WeaponSheet';
 import Character from './Character';
 import CharacterSheet from './CharacterSheet';
@@ -35,15 +34,16 @@ export default function CharacterCard({ characterKey, onEdit, onDelete, cardClas
   if (!character || !characterSheet || !weaponSheet || !stats) return null;
 
   const { weapon, constellation } = character
+  const { level, ascension } = weapon
   const { tlvl } = stats
   const name = characterSheet.name
   const elementKey = stats.characterEle
   const weaponTypeKey = characterSheet.weaponTypeKey
   const weaponName = weaponSheet?.name
-  const weaponMainVal = Weapon.getWeaponMainStatValWithOverride(weapon, weaponSheet)
-  const weaponSubKey = Weapon.getWeaponSubstatKey(weaponSheet)
-  const weaponSubVal = Weapon.getWeaponSubstatValWithOverride(weapon, weaponSheet)
-  const weaponLevelName = Weapon.getLevelName(weapon.levelKey)
+  const weaponMainVal = weaponSheet.getMainStatValue(level, ascension).toFixed(Stat.fixedUnit("atk"))
+  const weaponSubKey = weaponSheet.getSubStatKey()
+  const weaponSubVal = weaponSheet.getSubStatValue(level, ascension).toFixed(Stat.fixedUnit(weaponSubKey))
+  const weaponLevelName = WeaponSheet.getLevelString(weapon)
   const weaponPassiveName = weaponSheet?.passiveName
   const statkeys = ["finalHP", "finalATK", "finalDEF", "eleMas", "critRate_", "critDMG_", "enerRech_",]
 
@@ -85,7 +85,7 @@ export default function CharacterCard({ characterKey, onEdit, onDelete, cardClas
       </Row>
       <Row className="mb-2">
         <Col>
-          <h6 className="mb-0">{weaponName}{weaponPassiveName && `(${weapon.refineIndex + 1})`} {weaponLevelName}</h6>
+          <h6 className="mb-0">{weaponName}{weaponPassiveName && <Badge variant="info" className="ml-1">{weapon.refineIndex + 1}</Badge>} {weaponLevelName}</h6>
           <span>ATK: {weaponMainVal}  {weaponPassiveName && <span>{Stat.getStatName(weaponSubKey)}: {weaponSubVal}{Stat.getStatUnit(weaponSubKey)}</span>}</span>
         </Col>
       </Row>

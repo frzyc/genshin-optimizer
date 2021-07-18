@@ -2,43 +2,63 @@ import { PropTypeKey, WeaponId } from "../.."
 import { layeredAssignment } from "../../Util"
 
 type EquipAffixExcelConfigData = {
-  "AffixId": number//1125034,
-  "Id": WeaponId//112503,
-  "Level"?: number//4,
-  "NameTextMapHash": number//2433755451,
-  "DescTextMapHash": number//3899169753,
-  "OpenConfig": string//"Weapon_Claymore_Widsith",
-  "AddProps": Array<{
-    "PropType"?: PropTypeKey//"FIGHT_PROP_ATTACK_PERCENT",
-    "Value"?: number//0.3199999928474426
+  "WeaponPromoteId": number//12406,
+  "PromoteLevel": number//6,
+  "CostItems": Array<{
+    "Id": number,
+    "Count": number
   }>
   // [
   //   {
-  //     "PropType": "FIGHT_PROP_ATTACK_PERCENT",
-  //     "Value": 0.3199999928474426
+  //     "Id": 114024,
+  //     "Count": 4
   //   },
-  //   {},
-  //   {}
+  //   {
+  //     "Id": 112043,
+  //     "Count": 18
+  //   },
+  //   {
+  //     "Id": 112007,
+  //     "Count": 12
+  //   }
   // ],
-  "ParamList": number[]
+  "CoinCost": number,
+  "AddProps": Array<{
+    "PropType": PropTypeKey
+    "Value": number
+  }>
   // [
-  //   0.3199999928474426,
-  //   0.30000001192092896,
-  //   12.0,
-  //   0.23999999463558197,
-  //   0.4000000059604645,
-  //   20.0,
-  //   0.0,
-  //   0.0
-  // ]
+  //   {
+  //     "PropType": "FIGHT_PROP_BASE_ATTACK",
+  //     "Value": 155.60000610351562
+  //   },
+  //   {
+  //     "PropType": "FIGHT_PROP_CRITICAL"
+  //   },
+  //   {
+  //     "PropType": "FIGHT_PROP_CRITICAL_HURT"
+  //   },
+  //   {
+  //     "PropType": "FIGHT_PROP_CHARGE_EFFICIENCY"
+  //   },
+  //   {
+  //     "PropType": "FIGHT_PROP_ELEMENT_MASTERY"
+  //   }
+  // ],
+  "UnlockMaxLevel": number//90,
+  "RequiredPlayerLevel": number//50
 }
-const WeaponAscensionDataSrc = require('../../GenshinData/ExcelBinOutput/EquipAffixExcelConfigData.json') as EquipAffixExcelConfigData[]
+const weaponAscensionDataSrc = require('../../GenshinData/ExcelBinOutput/WeaponPromoteExcelConfigData.json') as EquipAffixExcelConfigData[]
 
-const WeaponAscensionData = {} as Record<number, Array<EquipAffixExcelConfigData>>
-WeaponAscensionDataSrc.forEach(data => {
-  const { Id, Level = 0 } = data
-  if (!WeaponAscensionData[Id]) WeaponAscensionData[Id] = []
-  layeredAssignment(WeaponAscensionData, [Id, Level], data)
+const weaponAscensionData = {} as Record<number, Array<EquipAffixExcelConfigData>>
+
+weaponAscensionDataSrc.forEach(data => {
+
+  const { WeaponPromoteId = 0, PromoteLevel = 0 } = data
+  if (!WeaponPromoteId || !PromoteLevel) return
+
+  if (!weaponAscensionData[WeaponPromoteId]) weaponAscensionData[WeaponPromoteId] = [null]//fill in first item, to help with processing
+  layeredAssignment(weaponAscensionData, [WeaponPromoteId, PromoteLevel], data)
 })
 
-export default WeaponAscensionData //
+export default weaponAscensionData //

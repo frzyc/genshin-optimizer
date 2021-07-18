@@ -1,5 +1,7 @@
+import { WeaponData } from 'pipeline'
 import { IConditionals } from '../../../../Types/IConditional'
 import { IWeaponSheet } from '../../../../Types/weapon'
+import data_gen from './data_gen.json'
 import img from './Weapon_Iron_Sting.png'
 
 const refinementVals = [6, 7.5, 9, 10.5, 12]
@@ -13,18 +15,11 @@ const conditionals: IConditionals = {
   }
 }
 const weapon: IWeaponSheet = {
-  name: "Iron Sting",
-  weaponType: "sword",
+  ...data_gen as unknown as WeaponData,
   img,
-  rarity: 4,
-  passiveName: "Infusion Stinger",
-  passiveDescription: stats => `Dealing Elemental DMG increases all DMG by ${refinementVals[stats.weapon.refineIndex]}% for 6s. Max 2 stacks. Can occur once every 1s.`,
-  description: "An exotic long-bladed rapier that somehow found its way into Liyue via foreign traders. It is light, agile, and sharp.",
-  baseStats: {
-    main: [42, 56, 74, 91, 109, 135, 152, 170, 187, 205, 231, 248, 266, 292, 309, 327, 353, 370, 388, 414, 431, 449, 475, 492, 510],
-    substatKey: "eleMas",
-    sub: [36, 42, 49, 56, 64, 64, 71, 78, 85, 93, 93, 100, 107, 107, 115, 122, 122, 129, 136, 136, 144, 151, 151, 158, 165],
-  },
   conditionals,
+  document: [{
+    conditional: conditionals.is
+  }],
 }
 export default weapon

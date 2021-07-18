@@ -1,4 +1,3 @@
-// import AmberCatalyst from './Catalyst/AmberCatalyst'
 import ApprenticesNotes from './ApprenticesNotes'
 import BlackcliffAgate from './BlackcliffAgate'
 import DodocoTales from './DodocoTales'
@@ -22,7 +21,6 @@ import ThrillingTalesOfDragonSlayers from './ThrillingTalesOfDragonSlayers'
 import TwinNephrite from './TwinNephrite'
 import WineAndSong from './WineAndSong'
 const catalyst = {
-  // AmberCatalyst,
   ApprenticesNotes,
   BlackcliffAgate,
   DodocoTales,

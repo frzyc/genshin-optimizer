@@ -13,7 +13,6 @@ import { allElements, ArtifactSetKey, ElementKey, SlotKey } from "../Types/const
 import ICalculatedStats from "../Types/ICalculatedStats";
 import { IFieldDisplay } from "../Types/IFieldDisplay";
 import { deepClone, evalIfFunc } from "../Util/Util";
-import Weapon from "../Weapon/Weapon";
 import WeaponSheet from "../Weapon/WeaponSheet";
 import CharacterSheet from "./CharacterSheet";
 
@@ -42,14 +41,9 @@ export default class Character {
   }
 
   static getBaseStatValue = (character: ICharacter, characetSheet: CharacterSheet, weaponSheet: WeaponSheet, statKey: string): number => {
-    if (statKey === "specializedStatVal") return characetSheet.getSpecializedStatVal(character.ascension)
-    if (statKey === "weaponATK") return Weapon.getWeaponMainStatValWithOverride(character?.weapon, weaponSheet)
     if (statKey === "enemyLevel") return character.level
     if (statKey.includes("enemyRes_")) return 10
     if (statKey in characterStatBase) return characterStatBase[statKey]
-    if (statKey === "characterDEF") return characetSheet.getBase("def", character.level, character.ascension)
-    if (statKey === "characterATK") return characetSheet.getBase("atk", character.level, character.ascension)
-    if (statKey === "characterHP") return characetSheet.getBase("hp", character.level, character.ascension)
     return 0
   }
   static getStatValueWithOverride = (character: ICharacter, characterSheet: CharacterSheet, weaponSheet: WeaponSheet, statKey: string) => {
@@ -114,11 +108,14 @@ export default class Character {
 
   static createInitialStats = (character: ICharacter, characterSheet: CharacterSheet, weaponSheet: WeaponSheet): ICalculatedStats => {
     character = deepClone(character)
-    const { characterKey, elementKey, level, ascension, hitMode, infusionAura, reactionMode, talentLevelKeys, constellation, equippedArtifacts, conditionalValues = {}, weapon = { key: "", refineIndex: 0 } } = character
+    const { characterKey, elementKey, level, ascension, hitMode, infusionAura, reactionMode, talentLevelKeys, constellation, equippedArtifacts, conditionalValues = {}, weapon } = character
 
     //generate the initalStats obj with data from Character & overrides
-    const statKeys = ["characterHP", "characterATK", "characterDEF", "weaponATK", "enemyLevel", "physical_enemyRes_", "physical_enemyImmunity", ...Object.keys(characterStatBase)]
+    const statKeys = ["enemyLevel", ...Object.keys(characterStatBase)]
     const initialStats = Object.fromEntries(statKeys.map(key => [key, Character.getStatValueWithOverride(character, characterSheet, weaponSheet, key)])) as ICalculatedStats
+    initialStats.characterHP = characterSheet.getBase("hp", level, ascension)
+    initialStats.characterDEF = characterSheet.getBase("def", level, ascension)
+    initialStats.characterATK = characterSheet.getBase("atk", level, ascension)
     initialStats.characterLevel = level
     initialStats.characterEle = characterSheet.elementKey ?? elementKey ?? "anemo";
     initialStats.characterKey = characterKey
@@ -130,8 +127,7 @@ export default class Character {
     initialStats.tlvl = talentLevelKeys;
     initialStats.constellation = constellation
     initialStats.ascension = ascension
-    const { key: weapon_key, refineIndex: weapon_refineIndex } = weapon
-    initialStats.weapon = { key: weapon_key, refineIndex: weapon_refineIndex }
+    initialStats.weapon = deepClone(weapon)
     initialStats.equippedArtifacts = equippedArtifacts;
 
     //enemy stuff
@@ -145,14 +141,16 @@ export default class Character {
     //all the rest of the overrides
     let overrides = character?.baseStatOverrides || {}
     Object.entries(overrides).forEach(([statKey, val]: any) => {
-      if (statKey === "specializedStatKey" || statKey === "specializedStatVal") return
       if (!initialStats.hasOwnProperty(statKey)) initialStats[statKey] = val
     })
 
     //add specialized stat
-    let specializedStatVal = Character.getStatValueWithOverride(character, characterSheet, weaponSheet, "specializedStatVal")
-    let specialStatKey = Character.getStatValueWithOverride(character, characterSheet, weaponSheet, "specializedStatKey")
-    Character.mergeStats(initialStats, { [specialStatKey]: specializedStatVal })
+    const specialStatKey = characterSheet.getSpecializedStat(ascension)
+    if (specialStatKey) {
+      const specializedStatVal = characterSheet.getSpecializedStatVal(ascension)
+      Character.mergeStats(initialStats, { [specialStatKey]: specializedStatVal })
+    }
+
 
     //add stats from all talents
     characterSheet.getTalentStatsAll(initialStats as ICalculatedStats, initialStats.characterEle).forEach(s => Character.mergeStats(initialStats, s))
@@ -162,8 +160,10 @@ export default class Character {
       initialStats.tlvl[key] += initialStats[`${key}Boost`] ?? 0
 
     //add stats from weapons
-    const weaponSubKey = Weapon.getWeaponSubstatKey(weaponSheet)
-    if (weaponSubKey) Character.mergeStats(initialStats, { [weaponSubKey]: Weapon.getWeaponSubstatValWithOverride(character?.weapon, weaponSheet) })
+    const weaponATK = weaponSheet.getMainStatValue(weapon.level, weapon.ascension)
+    initialStats.weaponATK = weaponATK
+    const weaponSubKey = weaponSheet.getSubStatKey()
+    if (weaponSubKey) Character.mergeStats(initialStats, { [weaponSubKey]: weaponSheet.getSubStatValue(weapon.level, weapon.ascension) })
     Character.mergeStats(initialStats, weaponSheet.stats(initialStats as ICalculatedStats))
 
 

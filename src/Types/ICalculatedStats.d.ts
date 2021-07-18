@@ -24,7 +24,11 @@ export default interface ICalculatedStats {
   reactionMode: reactionModeKey | null
   infusionAura: ElementKey | ""
   infusionSelf?: ElementKey
-  finalHP: number
+  finalHP: number,
+  characterHP: number,
+  characterDEF: number,
+  characterATK: number,
+  weaponATK: number,
 }
 
 type ConditionalValues = {
