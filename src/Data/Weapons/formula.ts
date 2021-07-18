@@ -30,9 +30,9 @@ import TravelersHandySword from './Sword/TravelersHandySword/data'
 import CrescentPike from './Polearm/CrescentPike/data'
 // import Deathmatch from './Polearm/Deathmatch/data'
 // import DragonsBane from './Polearm/DragonsBane/data'
-// import DragonspineSpear from './Polearm/DragonspineSpear/data'
+import DragonspineSpear from './Polearm/DragonspineSpear/data'
 // import FavoniusLance from './Polearm/FavoniusLance/data'
-// import Halberd from './Polearm/Halberd/data'
+import Halberd from './Polearm/Halberd/data'
 // import IronPoint from './Polearm/IronPoint/data'
 // import LithicSpear from './Polearm/LithicSpear/data'
 // import PrimordialJadeWingedSpear from './Polearm/PrimordialJadeWingedSpear/data'
@@ -149,9 +149,9 @@ const polearm = {
   CrescentPike,
   // Deathmatch,
   // DragonsBane,
-  // DragonspineSpear,
+  DragonspineSpear,
   // FavoniusLance,
-  // Halberd,
+  Halberd,
   // IronPoint,
   // LithicSpear,
   // PrimordialJadeWingedSpear,

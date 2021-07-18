@@ -2,7 +2,7 @@ import { WeaponData } from 'pipeline'
 import { IConditionals } from '../../../../Types/IConditional'
 import { IWeaponSheet } from '../../../../Types/weapon'
 import data_gen from './data_gen.json'
-import Deathmatch from './Weapon_Deathmatch.png'
+import img from './Weapon_Deathmatch.png'
 const refinementVals = [16, 20, 24, 28, 32]
 const refinementSoloVals = [24, 30, 36, 42, 48]
 const conditionals: IConditionals = {
@@ -27,6 +27,10 @@ const conditionals: IConditionals = {
 }
 const weapon: IWeaponSheet = {
   ...data_gen as WeaponData,
-  img: Deathmatch, conditionals
+  img,
+  conditionals,
+  document: [{
+    conditional: conditionals.spf
+  }],
 }
 export default weapon
