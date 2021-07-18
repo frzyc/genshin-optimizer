@@ -8,7 +8,7 @@ import data_gen from './data_gen.json'
 import img from './Weapon_Aquila_Favonia.png'
 const atk_ = [20, 25, 30, 35, 40]
 const weapon: IWeaponSheet = {
-  ...data_gen as unknown as WeaponData,
+  ...data_gen as WeaponData,
   img,
   stats: stats => ({
     atk_: atk_[stats.weapon.refineIndex]

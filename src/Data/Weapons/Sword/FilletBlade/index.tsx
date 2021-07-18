@@ -8,7 +8,7 @@ import data_gen from './data_gen.json'
 import img from './Weapon_Fillet_Blade.png'
 const cds = [15, 14, 13, 12, 11]
 const weapon: IWeaponSheet = {
-  ...data_gen as unknown as WeaponData,
+  ...data_gen as WeaponData,
   img,
   document: [{
     fields: [{

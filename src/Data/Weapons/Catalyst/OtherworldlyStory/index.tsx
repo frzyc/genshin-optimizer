@@ -5,7 +5,7 @@ import img from './Weapon_Otherworldly_Story.png'
 
 const refinementVals = [1, 1.25, 1.5, 1.75, 2]
 const weapon: IWeaponSheet = {
-  ...data_gen as unknown as WeaponData,
+  ...data_gen as WeaponData,
   img,
 }
 export default weapon

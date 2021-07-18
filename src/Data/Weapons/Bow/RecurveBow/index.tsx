@@ -5,7 +5,7 @@ import img from './Weapon_Recurve_Bow.png'
 
 const refinementVals = [8, 10, 12, 14, 16]
 const weapon: IWeaponSheet = {
-  ...data_gen as unknown as WeaponData,
+  ...data_gen as WeaponData,
   img,
 }
 export default weapon

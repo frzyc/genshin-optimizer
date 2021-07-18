@@ -5,7 +5,7 @@ import img from './Weapon_Messenger.png'
 
 const refinementVals = [100, 125, 150, 175, 200]
 const weapon: IWeaponSheet = {
-  ...data_gen as unknown as WeaponData,
+  ...data_gen as WeaponData,
   img,
 }
 export default weapon

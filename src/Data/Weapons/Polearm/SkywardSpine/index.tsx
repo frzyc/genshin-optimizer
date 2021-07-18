@@ -9,7 +9,7 @@ import img from './Weapon_Skyward_Spine.png'
 
 const crit_ = [8, 10, 12, 14, 16]
 const weapon: IWeaponSheet = {
-  ...data_gen as unknown as WeaponData,
+  ...data_gen as WeaponData,
   img,
   stats: stats => ({
     critRate_: crit_[stats.weapon.refineIndex],

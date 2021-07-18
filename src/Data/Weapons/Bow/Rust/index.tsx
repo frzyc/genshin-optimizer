@@ -5,7 +5,7 @@ import img from './Weapon_Rust.png'
 
 const refinementVals = [40, 50, 60, 70, 80]
 const weapon: IWeaponSheet = {
-  ...data_gen as unknown as WeaponData,
+  ...data_gen as WeaponData,
   img,
   stats: stats => ({
     normal_dmg_: refinementVals[stats.weapon.refineIndex],

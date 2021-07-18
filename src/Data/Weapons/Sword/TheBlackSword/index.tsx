@@ -6,7 +6,7 @@ import data_gen from './data_gen.json'
 import { WeaponData } from 'pipeline'
 import Stat from '../../../../Stat'
 const weapon: IWeaponSheet = {
-  ...data_gen as unknown as WeaponData,
+  ...data_gen as WeaponData,
   img,
   stats: stats => ({
     normal_dmg_: data.dmg_[stats.weapon.refineIndex],

@@ -17,7 +17,7 @@ const conditionals: IConditionals = {
   }
 }
 const weapon: IWeaponSheet = {
-  ...data_gen as unknown as WeaponData,
+  ...data_gen as WeaponData,
   img,
   stats: stats => ({
     normal_dmg_: refinementVals[stats.weapon.refineIndex],

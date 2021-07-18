@@ -5,7 +5,7 @@ import img from './Weapon_Halberd.png'
 
 const refinementVals = [160, 200, 240, 280, 320]
 const weapon: IWeaponSheet = {
-  ...data_gen as unknown as WeaponData,
+  ...data_gen as WeaponData,
   img,
 }
 export default weapon

@@ -7,7 +7,7 @@ import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import img from './Weapon_The_Viridescent_Hunt.png'
 const weapon: IWeaponSheet = {
-  ...data_gen as unknown as WeaponData,
+  ...data_gen as WeaponData,
   img,
   document: [{
     fields: [{

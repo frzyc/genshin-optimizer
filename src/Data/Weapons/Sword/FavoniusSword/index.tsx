@@ -4,7 +4,7 @@ import data_gen from './data_gen.json'
 import img from './Weapon_Favonius_Sword.png'
 
 const weapon: IWeaponSheet = {
-  ...data_gen as unknown as WeaponData,
+  ...data_gen as WeaponData,
   img,
   document: []
 }

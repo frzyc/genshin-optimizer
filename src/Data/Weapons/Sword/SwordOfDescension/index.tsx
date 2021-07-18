@@ -7,7 +7,7 @@ import formula from './data'
 import data_gen from './data_gen.json'
 import img from './Weapon_Sword_of_Descension.png'
 const weapon: IWeaponSheet = {
-  ...data_gen as unknown as WeaponData,
+  ...data_gen as WeaponData,
   img,
   stats: stats => stats.characterKey.startsWith("traveler") && {
     atk: 66

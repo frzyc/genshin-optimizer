@@ -6,7 +6,7 @@ import img from './Weapon_Skyward_Pride.png'
 const refinementVals = [8, 10, 12, 14, 16]
 const refinementDmgVals = [80, 100, 120, 140, 160]
 const weapon: IWeaponSheet = {
-  ...data_gen as unknown as WeaponData,
+  ...data_gen as WeaponData,
   img,
   stats: stats => ({
     dmg_: refinementVals[stats.weapon.refineIndex]

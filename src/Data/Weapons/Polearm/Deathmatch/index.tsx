@@ -26,7 +26,7 @@ const conditionals: IConditionals = {
   }
 }
 const weapon: IWeaponSheet = {
-  ...data_gen as unknown as WeaponData,
-    img: Deathmatch,  conditionals
+  ...data_gen as WeaponData,
+  img: Deathmatch, conditionals
 }
 export default weapon

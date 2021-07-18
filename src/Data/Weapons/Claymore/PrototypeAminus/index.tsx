@@ -5,7 +5,7 @@ import img from './Weapon_Prototype_Aminus.png'
 
 const refinementVals = [240, 300, 360, 420, 480]
 const weapon: IWeaponSheet = {
-  ...data_gen as unknown as WeaponData,
+  ...data_gen as WeaponData,
   img,
 }
 export default weapon

@@ -6,7 +6,7 @@ import img from './Weapon_Skyward_Atlas.png'
 const refinementVals = [12, 15, 18, 21, 24]
 const refinementDmgVals = [160, 200, 240, 280, 320]
 const weapon: IWeaponSheet = {
-  ...data_gen as unknown as WeaponData,
+  ...data_gen as WeaponData,
   img,
   stats: stats => ({
     anemo_dmg_: refinementVals[stats.weapon.refineIndex],
