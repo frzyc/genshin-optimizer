@@ -307,14 +307,14 @@ function CharSelectDropdown({ characterSheet, weaponSheet, character, character:
     </InputGroup.Prepend>
 
     <InputGroup.Append>
-      <CustomFormControl placeholder={undefined} className="h-100" onChange={setLevel} value={level} min={1} max={90} />
+      <CustomFormControl placeholder={undefined} className="h-100" onChange={setLevel} value={level} min={1} max={90} disabled={!characterSheet} />
     </InputGroup.Append>
     <InputGroup.Append>
-      <Button disabled={!ambiguousLevel} onClick={setAscension}><strong>/ {ascensionMaxLevel[ascension]}</strong></Button>
+      <Button disabled={!ambiguousLevel || !characterSheet} onClick={setAscension}><strong>/ {ascensionMaxLevel[ascension]}</strong></Button>
     </InputGroup.Append>
     <ButtonGroup as={InputGroup.Append}>
-      <Dropdown as={ButtonGroup}>
-        <Dropdown.Toggle as={Button}>Select Level</Dropdown.Toggle>
+      <Dropdown as={ButtonGroup} >
+        <Dropdown.Toggle as={Button} disabled={!characterSheet}>Select Level</Dropdown.Toggle>
         <Dropdown.Menu>
           {milestoneLevels.map(([lv, as]) => {
             const sameLevel = lv === ascensionMaxLevel[as]
