@@ -10,9 +10,11 @@ import { evalIfFunc } from '../Util/Util';
 import expCurveJSON from './expCurve_gen.json'
 const expCurve = expCurveJSON as WeaponExpCurveData
 
-export const weaponImport = import('../Data/Weapons').then(imp =>
-  Object.fromEntries(Object.entries(imp.default).map(([weaponKey, value]) =>
-    [weaponKey, new WeaponSheet(weaponKey, value)])) as unknown as StrictDict<WeaponKey, WeaponSheet>)
+export const weaponImport = import(/* webpackChunkName: 'WeaponData' */ '../Data/Weapons').then(async imp => {
+  await import(/* webpackChunkName: 'WeaponFormula' */ '../Data/formula') // TODO: remove this once we can ensure that formula is properly initiated everytime the weapon sheets are loaded
+  return Object.fromEntries(Object.entries(imp.default).map(([weaponKey, value]) =>
+    [weaponKey, new WeaponSheet(weaponKey, value)])) as unknown as StrictDict<WeaponKey, WeaponSheet>
+})
 
 const loadWeaponSheet = Object.fromEntries(allWeaponKeys.map(set =>
   [set, weaponImport.then(sheets => sheets[set])])) as StrictDict<WeaponKey, Promise<WeaponSheet>>

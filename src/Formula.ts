@@ -1,7 +1,7 @@
 import ICalculatedStats from './Types/ICalculatedStats';
 import { objPathValue } from './Util/Util';
 
-export const formulaImport = import('./Data/formula').then(imp => {
+export const formulaImport = import(/* webpackChunkName: 'FormulaData' */ './Data/formula').then(imp => {
   Formula.formulas = imp.default
   return imp.default
 })

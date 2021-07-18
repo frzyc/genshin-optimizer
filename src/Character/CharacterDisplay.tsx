@@ -13,10 +13,10 @@ import CharacterCard from './CharacterCard';
 import CharacterSheet from './CharacterSheet';
 import i18next from 'i18next';
 import { database } from '../Database/Database';
-const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
+const InfoDisplay = React.lazy(() => import(/* webpackChunkName: 'CharDisplayInfo' */ './InfoDisplay'));
 
 //lazy load the character display
-const CharacterDisplayCard = lazy(() => import('./CharacterDisplayCard'))
+const CharacterDisplayCard = lazy(() => import(/* webpackChunkName: 'CharDisplayCard' */ './CharacterDisplayCard'))
 const toggle = {
   level: "Level",
   rarity: "Rarity",

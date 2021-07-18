@@ -4,7 +4,7 @@ import ICalculatedStats from "../Types/ICalculatedStats";
 import { IConditionals } from "../Types/IConditional";
 import { deepClone, evalIfFunc } from "../Util/Util";
 
-export const artifactImport = import("../Data/Artifacts").then(imp =>
+export const artifactImport = import(/* webpackChunkName: 'SheetData' */ "../Data/Artifacts").then(imp =>
   Object.fromEntries(Object.entries(imp.default).map(([set, value]) =>
     [set, new ArtifactSheet(value)])) as StrictDict<ArtifactSetKey, ArtifactSheet>)
 const promiseSheets = Object.fromEntries(allArtifactSets.map(set =>

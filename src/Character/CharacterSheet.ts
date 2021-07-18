@@ -8,8 +8,8 @@ import Stat from '../Stat'
 
 const expCurve = expCurveJSON as CharacterExpCurveData
 
-export const charImport = import('../Data/Characters').then(async imp => {
-  await import('../Data/formula') // TODO: remove this once we can ensure that formula is properly initiated everytime the weapon sheets are loaded
+export const charImport = import(/* webpackChunkName: 'CharSheetData' */ '../Data/Characters').then(async imp => {
+  await import(/* webpackChunkName: 'CharSheedFormula' */ '../Data/formula') // TODO: remove this once we can ensure that formula is properly initiated everytime the weapon sheets are loaded
   return Object.fromEntries(Object.entries(imp.default).map(([charKey, value]) =>
     [charKey, new CharacterSheet(value)])) as unknown as StrictDict<CharacterKey, CharacterSheet>
 })

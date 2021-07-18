@@ -24,7 +24,7 @@ import { ArtifactSheet } from './ArtifactSheet';
 import SlotNameWithIcon from './Component/SlotNameWIthIcon';
 import { database } from '../Database/Database';
 
-const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
+const InfoDisplay = React.lazy(() => import(/* webpackChunkName: 'ArtifactInfo' */ './InfoDisplay'));
 const sortKeys = ["quality", "level", "efficiency", "mefficiency"]
 
 const initialFilter = () => ({
