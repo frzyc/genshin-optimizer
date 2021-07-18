@@ -23,6 +23,11 @@ const conditionals: IConditionals = {
 const weapon: IWeaponSheet = {
   ...data_gen as WeaponData,
   img,
-  conditionals
+  conditionals,
+  document: [{
+    conditional: conditionals.a
+  }, {
+    conditional: conditionals.c
+  }],
 }
 export default weapon

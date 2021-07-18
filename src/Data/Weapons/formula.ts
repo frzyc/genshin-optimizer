@@ -71,19 +71,19 @@ import WhiteIronGreatsword from './Claymore/WhiteIronGreatsword/data'
 // import BlackcliffAgate from './Catalyst/BlackcliffAgate/data'
 // import DodocoTales from './Catalyst/DodocoTales/data'
 // import EmeraldOrb from './Catalyst/EmeraldOrb/data'
-// import EyeOfPerception from './Catalyst/EyeOfPerception/data'
+import EyeOfPerception from './Catalyst/EyeOfPerception/data'
 // import FavoniusCodex from './Catalyst/FavoniusCodex/data'
-// import Frostbearer from './Catalyst/Frostbearer/data'
+import Frostbearer from './Catalyst/Frostbearer/data'
 // import LostPrayerToTheSacredWinds from './Catalyst/LostPrayerToTheSacredWinds/data'
 // import MagicGuide from './Catalyst/MagicGuide/data'
 // import MappaMare from './Catalyst/MappaMare/data'
 // import MemoryOfDust from './Catalyst/MemoryOfDust/data'
-// import OtherworldlyStory from './Catalyst/OtherworldlyStory/data'
+import OtherworldlyStory from './Catalyst/OtherworldlyStory/data'
 // import PocketGrimoire from './Catalyst/PocketGrimoire/data'
-// import PrototypeMalice from './Catalyst/PrototypeMalice/data'
+import PrototypeMalice from './Catalyst/PrototypeMalice/data'
 // import RoyalGrimoire from './Catalyst/RoyalGrimoire/data'
 // import SacrificialFragments from './Catalyst/SacrificialFragments/data'
-// import SkywardAtlas from './Catalyst/SkywardAtlas/data'
+import SkywardAtlas from './Catalyst/SkywardAtlas/data'
 // import SolarPearl from './Catalyst/SolarPearl/data'
 // import TheWidsith from './Catalyst/TheWidsith/data'
 // import ThrillingTalesOfDragonSlayers from './Catalyst/ThrillingTalesOfDragonSlayers/data'
@@ -168,19 +168,19 @@ const catalyst = {
   // BlackcliffAgate,
   // DodocoTales,
   // EmeraldOrb,
-  // EyeOfPerception,
+  EyeOfPerception,
   // FavoniusCodex,
-  // Frostbearer,
+  Frostbearer,
   // LostPrayerToTheSacredWinds,
   // MagicGuide,
   // MappaMare,
   // MemoryOfDust,
-  // OtherworldlyStory,
+  OtherworldlyStory,
   // PocketGrimoire,
-  // PrototypeMalice,
+  PrototypeMalice,
   // RoyalGrimoire,
   // SacrificialFragments,
-  // SkywardAtlas,
+  SkywardAtlas,
   // SolarPearl,
   // TheWidsith,
   // ThrillingTalesOfDragonSlayers,

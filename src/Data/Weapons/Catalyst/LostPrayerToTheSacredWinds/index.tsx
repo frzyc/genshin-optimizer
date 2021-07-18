@@ -26,5 +26,8 @@ const weapon: IWeaponSheet = {
     moveSPD_: 10
   }),
   conditionals,
+  document: [{
+    conditional: conditionals.bb
+  }],
 }
 export default weapon

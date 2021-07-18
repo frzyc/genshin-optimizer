@@ -1,13 +1,27 @@
 import { WeaponData } from 'pipeline'
+import { getTalentStatKey, getTalentStatKeyVariant } from '../../../../Build/Build'
+import { TransWrapper } from '../../../../Components/Translate'
+import Stat from '../../../../Stat'
 import { IWeaponSheet } from '../../../../Types/weapon'
+import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import img from './Weapon_Frostbearer.png'
 
-const refinementChanceVals = [60, 70, 80, 90, 100]
-const refinementDmgVals = [80, 95, 110, 125, 140]
-const refinementDmgCryoVals = [200, 240, 280, 320, 360]
 const weapon: IWeaponSheet = {
   ...data_gen as WeaponData,
   img,
+  document: [{
+    fields: [{
+      text: <TransWrapper ns="sheet" key18="dmg" />,
+      formulaText: stats => <span>{data.dmg[stats.weapon.refineIndex]}% {Stat.printStat(getTalentStatKey("physical", stats), stats)}</span>,
+      formula: formula.dmg,
+      variant: stats => getTalentStatKeyVariant("physical", stats),
+    }, {
+      text: "Opponents affected by Cryo",
+      formulaText: stats => <span>{data.dmgc[stats.weapon.refineIndex]}% {Stat.printStat(getTalentStatKey("physical", stats), stats)}</span>,
+      formula: formula.dmgc,
+      variant: stats => getTalentStatKeyVariant("physical", stats),
+    }]
+  }]
 }
 export default weapon

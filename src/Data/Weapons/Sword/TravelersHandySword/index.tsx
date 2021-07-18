@@ -13,7 +13,7 @@ const weapon: IWeaponSheet = {
     fields: [{
       text: <TransWrapper ns="sheet_gen" key18="healing" />,
       formulaText: stats => <span>{data.heal[stats.weapon.refineIndex]}% {Stat.printStat("finalHP", stats)} * {Stat.printStat("heal_multi", stats)}</span>,
-      formula: formula.regen,
+      formula: formula.heal,
       variant: "success"
     }]
   }]

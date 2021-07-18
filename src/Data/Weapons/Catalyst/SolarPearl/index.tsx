@@ -35,6 +35,9 @@ const refinementVals = [20, 25, 30, 35, 40]
 const weapon: IWeaponSheet = {
   ...data_gen as WeaponData,
   img,
-  conditionals
+  conditionals,
+  document: [{
+    conditional: conditionals.ss
+  }],
 }
 export default weapon

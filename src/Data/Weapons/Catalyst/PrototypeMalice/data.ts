@@ -1,7 +1,7 @@
 import { ISubFormula } from "../../../../Types/character";
 
 export const data = {
-  heal: [1, 1.25, 1.5, 1.75, 2]
+  heal: [4, 4.5, 5, 5.5, 6]
 }
 const formula: ISubFormula = {
   heal: stats => {
