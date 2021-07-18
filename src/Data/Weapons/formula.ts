@@ -98,17 +98,17 @@ import SkywardAtlas from './Catalyst/SkywardAtlas/data'
 // import ElegyForTheEnd from './Bow/ElegyForTheEnd/data'
 // import FavoniusWarbow from './Bow/FavoniusWarbow/data'
 // import HuntersBow from './Bow/HuntersBow/data'
-// import Messenger from './Bow/Messenger/data'
+import Messenger from './Bow/Messenger/data'
 // import MitternachtsWaltz from './Bow/MitternachtsWaltz/data'
 // import PrototypeCrescent from './Bow/PrototypeCrescent/data'
 // import RavenBow from './Bow/RavenBow/data'
-// import RecurveBow from './Bow/RecurveBow/data'
+import RecurveBow from './Bow/RecurveBow/data'
 // import RoyalBow from './Bow/RoyalBow/data'
 // import Rust from './Bow/Rust/data'
 // import SacrificialBow from './Bow/SacrificialBow/data'
 // import SeasonedHuntersBow from './Bow/SeasonedHuntersBow/data'
 // import SharpshootersOath from './Bow/SharpshootersOath/data'
-// import SkywardHarp from './Bow/SkywardHarp/data'
+import SkywardHarp from './Bow/SkywardHarp/data'
 // import Slingshot from './Bow/Slingshot/data'
 // import TheStringless from './Bow/TheStringless/data'
 import TheViridescentHunt from './Bow/TheViridescentHunt/data'
@@ -223,17 +223,17 @@ const bow = {
   // ElegyForTheEnd,
   // FavoniusWarbow,
   // HuntersBow,
-  // Messenger,
+  Messenger,
   // MitternachtsWaltz,
   // PrototypeCrescent,
   // RavenBow,
-  // RecurveBow,
+  RecurveBow,
   // RoyalBow,
   // Rust,
   // SacrificialBow,
   // SeasonedHuntersBow,
   // SharpshootersOath,
-  // SkywardHarp,
+  SkywardHarp,
   // Slingshot,
   // TheStringless,
   TheViridescentHunt,

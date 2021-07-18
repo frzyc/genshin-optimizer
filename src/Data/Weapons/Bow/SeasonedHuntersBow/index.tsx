@@ -6,5 +6,6 @@ import { WeaponData } from 'pipeline'
 const weapon: IWeaponSheet = {
   ...data_gen as WeaponData,
   img,
+  document: [],
 }
 export default weapon

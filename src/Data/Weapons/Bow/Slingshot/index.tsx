@@ -22,5 +22,8 @@ const weapon: IWeaponSheet = {
     dmg_: -10
   }),
   conditionals,
+  document: [{
+    conditional: conditionals.s
+  }],
 }
 export default weapon

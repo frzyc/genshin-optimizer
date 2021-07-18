@@ -10,6 +10,7 @@ const weapon: IWeaponSheet = {
   stats: stats => ({
     normal_dmg_: refinementVals[stats.weapon.refineIndex],
     charged_dmg_: -10
-  })
+  }),
+  document: [],
 }
 export default weapon

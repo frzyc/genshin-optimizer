@@ -10,6 +10,7 @@ const weapon: IWeaponSheet = {
   stats: stats => ({
     skill_dmg_: refinementVals[stats.weapon.refineIndex],
     burst_dmg_: refinementVals[stats.weapon.refineIndex]
-  })
+  }),
+  document: [],
 }
 export default weapon

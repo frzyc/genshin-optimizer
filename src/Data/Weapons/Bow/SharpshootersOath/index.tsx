@@ -9,6 +9,7 @@ const weapon: IWeaponSheet = {
   img,
   stats: stats => ({
     weakspotDMG_: refinementVals[stats.weapon.refineIndex]
-  })
+  }),
+  document: [],
 }
 export default weapon

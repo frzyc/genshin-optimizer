@@ -24,5 +24,8 @@ const weapon: IWeaponSheet = {
     charged_dmg_: refinementVals[stats.weapon.refineIndex]
   }),
   conditionals,
+  document: [{
+    conditional: conditionals.sw
+  }],
 }
 export default weapon

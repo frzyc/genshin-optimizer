@@ -12,5 +12,5 @@ export interface IWeaponSheet extends WeaponData {
   img: string;
   stats?: object | ((stats: ICalculatedStats) => object | false)
   conditionals?: IConditionals
-  document?: DocumentSection[],//TODO: not optional?
+  document: DocumentSection[],
 }

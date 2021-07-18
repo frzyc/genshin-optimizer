@@ -19,5 +19,8 @@ const weapon: IWeaponSheet = {
   ...data_gen as WeaponData,
   img,
   conditionals,
+  document: [{
+    conditional: conditionals.d
+  }],
 }
 export default weapon

@@ -8,5 +8,6 @@ import img from './Weapon_Favonius_Lance.png'
 const weapon: IWeaponSheet = {
   ...data_gen as WeaponData,
   img,
+  document: [],
 }
 export default weapon
