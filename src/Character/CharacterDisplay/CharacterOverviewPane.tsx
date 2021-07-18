@@ -269,7 +269,7 @@ function MainStatsCards({ characterSheet, weaponSheet, editable, character, char
     "dmg_", "moveSPD_", "atkSPD_", "weakspotDMG_"]
 
   const specializedStatKey = characterSheet.getSpecializedStat(character.ascension)
-  const specializedStatVal = Character.getStatValueWithOverride(character, characterSheet, weaponSheet, "specializedStatVal");
+  const specializedStatVal = characterSheet.getSpecializedStatVal(character.ascension)
   const specializedStatUnit = Stat.getStatUnit(specializedStatKey)
 
   const displayNewBuildProps = { character, equippedBuild, newBuild, editable }
@@ -310,8 +310,8 @@ function MainStatsCards({ characterSheet, weaponSheet, editable, character, char
           <Row className="mb-2">
             {displayStatKeys.map(statKey => <Col xs={12} lg={6} key={statKey} ><StatDisplay characterSheet={characterSheet} weaponSheet={weaponSheet} statKey={statKey} {...displayNewBuildProps} /></Col>)}
             <Col lg={6} xs={12}>
-              <span><b>Specialized:</b> <span className={Character.hasOverride(character, "specializedStatKey") ? "text-warning" : ""}>{Stat.getStatName(specializedStatKey)}</span></span>
-              <span className={`float-right ${Character.hasOverride(character, "specializedStatVal") ? "text-warning" : ""}`}>{`${specializedStatVal.toFixed(Stat.fixedUnit(specializedStatKey))}${specializedStatUnit}`}</span>
+              <span><b>Specialized:</b> <span>{Stat.getStatName(specializedStatKey)}</span></span>
+              <span className={`float-right`}>{`${specializedStatVal.toFixed(Stat.fixedUnit(specializedStatKey))}${specializedStatUnit}`}</span>
             </Col>
           </Row>
         </Card.Body>
