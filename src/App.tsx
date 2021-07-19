@@ -18,14 +18,14 @@ import './Database/Database';
 import './i18n';
 import { LanguageDropdown } from './Settings/SettingsDisplay';
 
-const Home = lazy(() => import(/* webpackChunkName: 'AppHome' */ './Home/HomeDisplay'))
-const ArtifactDisplay = lazy(() => import(/* webpackChunkName: 'AppArtifact' */ './Artifact/ArtifactDisplay'))
-const CharacterDisplay = lazy(() => import(/* webpackChunkName: 'AppCharacter' */ './Character/CharacterDisplay'))
-const BuildDisplay = lazy(() => import(/* webpackChunkName: 'AppBuild' */ './Build/BuildDisplay'))
-const Planner = lazy(() => import(/* webpackChunkName: 'AppPlanner' */ './Planner/PlannerDisplay'))
-const TestDisplay = lazy(() => import(/* webpackChunkName: 'AppTest' */ './TestPage/TestDisplay'))
-const FlexDisplay = lazy(() => import(/* webpackChunkName: 'AppFlex' */ './FlexPage/FlexDisplay'))
-const SettingsDisplay = lazy(() => import(/* webpackChunkName: 'AppSettings' */ './Settings/SettingsDisplay'))
+const Home = lazy(() => import('./Home/HomeDisplay'))
+const ArtifactDisplay = lazy(() => import('./Artifact/ArtifactDisplay'))
+const CharacterDisplay = lazy(() => import('./Character/CharacterDisplay'))
+const BuildDisplay = lazy(() => import('./Build/BuildDisplay'))
+const Planner = lazy(() => import('./Planner/PlannerDisplay'))
+const TestDisplay = lazy(() => import('./TestPage/TestDisplay'))
+const FlexDisplay = lazy(() => import('./FlexPage/FlexDisplay'))
+const SettingsDisplay = lazy(() => import('./Settings/SettingsDisplay'))
 
 function App() {
   return <Suspense fallback={<Container><LoadingCard /></Container>}>

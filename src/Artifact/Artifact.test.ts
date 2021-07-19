@@ -2,7 +2,7 @@ import Artifact from "./Artifact";
 import { ArtifactSheet } from "./ArtifactSheet";
 
 //post-load the artifact data
-// beforeAll(() => Artifact.getDataImport());
+// beforeAll(() => Artifact.getDataimport());
 
 
 describe('Substat Rolls/efficiency', () => {

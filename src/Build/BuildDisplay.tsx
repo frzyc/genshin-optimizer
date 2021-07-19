@@ -32,10 +32,10 @@ import { calculateTotalBuildNumber } from './Build';
 import SlotNameWithIcon, { artifactSlotIcon } from '../Artifact/Component/SlotNameWIthIcon';
 import { database } from '../Database/Database';
 import { StatKey } from '../Types/artifact';
-const InfoDisplay = React.lazy(() => import(/* webpackChunkName: 'BuildInfo' */ './InfoDisplay'));
+const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
 
 //lazy load the character display
-const CharacterDisplayCard = lazy(() => import(/* webpackChunkName: 'BuildChar' */ '../Character/CharacterDisplayCard'))
+const CharacterDisplayCard = lazy(() => import('../Character/CharacterDisplayCard'))
 
 const warningBuildNumber = 10000000
 const maxBuildsToShowList = [50, 25, 10, 5]
