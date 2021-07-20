@@ -42,7 +42,7 @@ const char: ICharacterSheet = {
   weaponTypeKey: "claymore",
   gender: "F",
   constellationName: tr("constellationName"),
-  titles: ["Chivalric Blossom", "Maid of Favonius"],
+  title: tr("title"),
   baseStat: data_gen.base,
   baseStatCurve: data_gen.curves,
   ascensions: data_gen.ascensions,

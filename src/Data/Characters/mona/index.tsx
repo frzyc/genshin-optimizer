@@ -19,6 +19,9 @@ import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { IConditionals } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
+import { Translate } from '../../../Components/Translate'
+import { chargedDocSection, normalDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
+const tr = (strKey: string) => <Translate ns="char_mona_gen" key18={strKey} />
 const conditionals: IConditionals = {
   q: { // StellarisPhantasm
     name: "Stellaris Phantasm",
@@ -57,15 +60,15 @@ const conditionals: IConditionals = {
   },
 }
 const char: ICharacterSheet = {
-  name: "Mona",
+  name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   star: 5,
   elementKey: "hydro",
   weaponTypeKey: "catalyst",
   gender: "F",
-  constellationName: "Astrolabos",
-  titles: ["Astral Reflection", "Enigmatic Astrologer"],
+  constellationName: tr("constellationName"),
+  title: tr("title"),
   baseStat: data_gen.base,
   baseStatCurve: data_gen.curves,
   ascensions: data_gen.ascensions,
@@ -74,62 +77,19 @@ const char: ICharacterSheet = {
     conditionals,
     sheets: {
       auto: {
-        name: "Ripple of Fate",
+        name: tr("auto.name"),
         img: normal,
-        sections: [{
-          text: <span><strong>Normal Attack</strong> Perform up to 4 water splash attacks that deal <span className="text-hydro">Hydro DMG</span>.</span>,
-          fields: data.normal.hitArr.map((percentArr, i) =>
-          ({
-            text: `${i + 1}-Hit DMG`,
-            formulaText: stats => <span>{percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
-            formula: formula.normal[i],
-            variant: stats => getTalentStatKeyVariant("normal", stats),
-          }))
-        }, {
-          text: <span><strong>Charged Attack</strong> Consumes a certain amount of Stamina to deal <span className="text-hydro">AoE Hydro DMG</span> after a short casting time.</span>,
-          fields: [{
-            text: `Charged Attack DMG`,
-            formulaText: stats => <span>{data.charged.hit[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
-            formula: formula.charged.hit,
-            variant: stats => getTalentStatKeyVariant("charged", stats),
-          }, {
-            text: `Stamina Cost`,
-            value: 50,
-          }]
-        }, {
-          text: <span><strong>Plunging Attack</strong> Gathering the might of Hydro, Mona plunges towards the ground from mid-air, damaging all opponents in her path. Deals <span className="text-hydro">AoE Hydro DMG</span> upon impact with the ground.</span>,
-          fields: [{
-            text: `Plunge DMG`,
-            formulaText: stats => <span>{data.plunging.dmg[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-            formula: formula.plunging.dmg,
-            variant: stats => getTalentStatKeyVariant("plunging", stats),
-          }, {
-            text: `Low Plunge DMG`,
-            formulaText: stats => <span>{data.plunging.low[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-            formula: formula.plunging.low,
-            variant: stats => getTalentStatKeyVariant("plunging", stats),
-          }, {
-            text: `High Plunge DMG`,
-            formulaText: stats => <span>{data.plunging.high[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-            formula: formula.plunging.high,
-            variant: stats => getTalentStatKeyVariant("plunging", stats),
-          }]
-        }],
+        sections: [
+          normalDocSection(tr, formula, data),
+          chargedDocSection(tr, formula, data, 50),
+          plungeDocSection(tr, formula, data),
+        ],
       },
       skill: {
-        name: "Mirror Reflection of Doom",
+        name: tr("skill.name"),
         img: skill,
         sections: [{
-          text: <span>
-            <p className="mb-2">Creates an illusory Phantom of fate from coalesced waterspouts.</p>
-            <p className="mb-2">The <b>Phantom</b> has the following special properties:</p>
-            <ul className="mb-2">
-              <li>Continuously taunts nearby opponents, attracting their fire.</li>
-              <li>Each second, 4 times, deals <span className="text-hydro">AoE Hydro DMG</span>.</li>
-              <li>When its duration expires, the Phantom explodes, dealing <span className="text-hydro">AoE Hydro DMG</span>.</li>
-            </ul>
-            <p className="mb-2"><b>Hold:</b> Utilizes water currents to move backwards swiftly before conjuring a Phantom. Only one Phantom created by Mirror Reflection of Doom can exist at any time. When the Phantom explodes and hits at least one opponent, it generates 3 elemental particles.</p>
-          </span>,
+          text: tr("skill.description"),
           fields: [{
             text: "DoT",
             formulaText: stats => <span>{data.skill.dot[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
@@ -147,18 +107,10 @@ const char: ICharacterSheet = {
         }],
       },
       burst: {
-        name: "Stellaris Phantasm",
+        name: tr("burst.name"),
         img: burst,
         sections: [{
-          text: <span>
-            <p className="mb-2">Mona summons the sparkling waves and creates a reflection of the starry sky, applying the Illusory Bubble status to the opponents in a large AoE.</p>
-            <p className="mb-2"><b>Illusory Bubble:</b> Traps opponents inside a pocket of destiny and also makes them <span className="text-hydro">Wet</span>. Renders weaker opponents immobile. When an opponent affected by Illusory Bubble sustains DMG, it has the following effects:</p>
-            <ul className="mb-2">
-              <li>Applies an <b>Omen</b> to the opponent, which gives a DMG Bonus, also increasing the DMG of the attack that causes it.</li>
-              <li>Removes the Illusory Bubble, dealing <span className="text-hydro">Hydro DMG</span> in the process.</li>
-            </ul>
-            <p className="mb-2"><b>Omen:</b> During its duration, increases DMG taken by opponents.</p>
-          </span>,
+          text: tr("burst.description"),
           fields: [{
             text: "Illusory Bubble Duration",
             value: "8s",
@@ -178,13 +130,10 @@ const char: ICharacterSheet = {
         }],
       },
       sprint: {
-        name: "Illusory Torrent",
+        name: tr("sprint.name"),
         img: sprint,
         sections: [{
-          text: <span>
-            <p className="mb-2">Mona cloaks herself within the water's flow, consuming stamina to move rapidly.</p>
-            <p className="mb-2">When under the effect of Illusory Torrent, Mona can move at high speed on water. Applies the <span className="text-hydro">Wet</span> status to nearby opponents when she reappears.</p>
-          </span>,
+          text: tr("sprint.description"),
           fields: [{
             text: "Activation Stamina Consumption",
             value: 10,
@@ -195,13 +144,10 @@ const char: ICharacterSheet = {
         }],
       },
       passive1: {
-        name: "Come 'n' Get Me, Hag!",
+        name: tr("passive1.name"),
         img: passive1,
         sections: [{
-          text: <span>
-            <p className="mb-2">After she has used <b>Illusory Torrent</b> for 2s, if there are any opponents nearby, Mona will automatically create a Phantom.</p>
-            <p className="mb-2">A Phantom created in this manner lasts for 2s, and its explosion DMG is equal to 50% of <b>Mirror Reflection of Doom</b>.</p>
-          </span>,
+          text: tr("passive1.description"),
           fields: [{
             canShow: stats => stats.ascension >= 1,
             text: "Explosion DMG",
@@ -216,63 +162,31 @@ const char: ICharacterSheet = {
         }],
       },
       passive2: {
-        name: "Waterborne Destiny",
+        name: tr("passive2.name"),
         img: passive2,
-        sections: [{ text: <span>Increases Mona's <span className="text-hydro">Hydro DMG Bonus</span> by a degree equivalent to 20% of her Energy Recharge rate.</span>, }],
+        sections: [{ text: tr("passive2.description"), }],
         stats: stats => stats.ascension >= 4 && {
           modifiers: { hydro_dmg_: { enerRech_: 0.2 } },
         }
       },
-      passive3: {
-        name: "Principium of Astrology",
-        img: passive3,
-        sections: [{ text: <span>When Mona crafts Weapon Ascension Materials, she has a 25% chance to refund one count of one material out of all the crafting materials used.</span> }],
-      },
-      constellation1: {
-        name: "Prophecy of Submersion",
-        img: c1,
-        sections: [{
-          text: <span>
-            <p className="mb-2">The effects of <span className="text-hydro">Hydro-related Elemental Reactions</span> are enhanced for 8s after any of your characters in the party hit an opponent affected by an <b>Omen</b>:</p>
-            <ul className="mb-2">
-              <li><span className="text-electrocharged">Electro-Charged DMG</span> is increased by 15%.</li>
-              <li><span className="text-vaporize">Vaporize DMG</span> is increased by 15%.</li>
-              <li><span className="text-hydro">Hydro</span> <span className="text-swirl">Swirl DMG</span> is increased by 15%.</li>
-              <li>The duration for which enemies are <span className="text-cryo">Frozen</span> is increased by 15%.</li>
-            </ul>
-          </span>
-        }],
-      },
-      constellation2: {
-        name: "Lunar Chain",
-        img: c2,
-        sections: [{ text: <span>When a <b>Normal Attack</b> hits, there is a 20% chance that it will be automatically followed by a <b>Charged Attack</b>. This effect can only occur once every 5s.</span> }],
-      },
-      constellation3: {
-        name: "Restless Revolution",
-        img: c3,
-        sections: [{ text: <span>Increases the Level of <b>Stellaris Phantasm</b> by 3. Maximum upgrade level is 15.</span> }],
-        stats: { burstBoost: 3 }
-      },
+      passive3: talentTemplate("passive3", tr, passive3),
+      constellation1: talentTemplate("constellation1", tr, c1),
+      constellation2: talentTemplate("constellation2", tr, c2),
+      constellation3: talentTemplate("constellation3", tr, c3, { burstBoost: 3 }),
       constellation4: {
-        name: "Prophecy of Oblivion",
+        name: tr("constellation4.name"),
         img: c4,
         sections: [{
-          text: <span>When any character in the party attacks an opponent affected by the <b>Omen</b> status effect, their CRIT Rate is increased by 15%.</span>,
+          text: tr("constellation4.description"),
           conditional: conditionals.c4
         }],
       },
-      constellation5: {
-        name: "Mockery of Fortuna",
-        img: c5,
-        sections: [{ text: <span>Increase the Level of <b>Mirror Reflection of Doom</b> by 3. Maximum upgrade level is 15.</span> }],
-        stats: { skillBoost: 3 }
-      },
+      constellation5: talentTemplate("constellation5", tr, c5, { skillBoost: 3 }),
       constellation6: {
-        name: "Rhetorics of Calamitas",
+        name: tr("constellation6.name"),
         img: c6,
         sections: [{
-          text: <span>Upon entering <b>Illusory Torrent</b>, Mona gains a 60% increase to the DMG her next Charged Attack per second of movement. A maximum DMG Bonus of 180% can be achieved in this manner. The effect lasts for no more than 8s.</span>,
+          text: tr("constellation6.description"),
           conditional: conditionals.c6
         }],
       }

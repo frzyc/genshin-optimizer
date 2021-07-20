@@ -13,12 +13,14 @@ import passive1 from './Talent_Evil_Conqueror_-_Tamer_of_Demons.png'
 import passive2 from './Talent_Dissolution_Eon_-_Heaven_Fall.png'
 import passive3 from './Talent_Transcension_-_Gravity_Defier.png'
 import Stat from '../../../Stat'
-import DisplayPercent from '../../../Components/DisplayPercent'
 import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from "../../../Build/Build"
 import { ICharacterSheet } from '../../../Types/character'
 import { IConditionals } from '../../../Types/IConditional'
+import { Translate } from '../../../Components/Translate'
+import { chargedDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
+const tr = (strKey: string) => <Translate ns="char_xiao_gen" key18={strKey} />
 const conditionals: IConditionals = {
   q: { // BaneOfAllEvil
     name: "Bane of All Evil",
@@ -53,15 +55,15 @@ const conditionals: IConditionals = {
   }
 }
 const char: ICharacterSheet = {
-  name: "Xiao",
+  name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   star: 5,
   elementKey: "anemo",
   weaponTypeKey: "polearm",
   gender: "M",
-  constellationName: "Alatus Nemeseos",
-  titles: ["Vigilant Yaksha", "Guardian Yaksha", "Nuo Dance of Evil Conquering", "Alatus, the Golden-Winged King", "Conqueror of Demons"],
+  constellationName: tr("constellationName"),
+  title: tr("title"),
   baseStat: data_gen.base,
   baseStatCurve: data_gen.curves,
   ascensions: data_gen.ascensions,
@@ -70,56 +72,28 @@ const char: ICharacterSheet = {
     conditionals,
     sheets: {
       auto: {
-        name: "Whirlwind Thrust",
+        name: tr("auto.name"),
         img: normal,
-        sections: [{
-          text: <span><strong>Normal Attack</strong> Performs up to 6 consecutive spear strikes.</span>,
-          fields: data.normal.hitArr.map((percentArr, i) =>
-          ({
-            text: `${i + 1}-Hit DMG`,
-            formulaText: stats => <span>{percentArr[stats.tlvl.auto]}%{(i === 0 || i === 3) ? " × 2" : ""} {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
-            formula: formula.normal[i],
-            variant: stats => getTalentStatKeyVariant("normal", stats),
-          }))
-        }, {
-          text: <span><strong>Charged Attack</strong> Consumes a certain amount of Stamina to perform an upward thrust.</span>,
-          fields: [{
-            text: `Charged Attack DMG`,
-            formulaText: stats => <span>{data.charged.hit[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
-            formula: formula.charged.hit,
-            variant: stats => getTalentStatKeyVariant("charged", stats),
-          }, {
-            text: `Stamina Cost`,
-            value: 25,
-          }]
-        }, {
-          text: <span><strong>Plunging Attack</strong> Plunges from mid-air to strike the ground from below, damaging opponents along the path and dealing AoE DMG upon impact. Xiao does not take DMG from performing Plunging Attacks.</span>,
-          fields: [{
-            text: `Plunge DMG`,
-            formulaText: stats => <span>{data.plunging.dmg[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-            formula: formula.plunging.dmg,
-            variant: stats => getTalentStatKeyVariant("plunging", stats),
-          }, {
-            text: `Low Plunge DMG`,
-            formulaText: stats => <span>{data.plunging.low[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-            formula: formula.plunging.low,
-            variant: stats => getTalentStatKeyVariant("plunging", stats),
-          }, {
-            text: `High Plunge DMG`,
-            formulaText: stats => <span>{data.plunging.high[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-            formula: formula.plunging.high,
-            variant: stats => getTalentStatKeyVariant("plunging", stats),
-          }]
-        }],
+        sections: [
+          {
+            text: tr("auto.fields.normal"),
+            fields: data.normal.hitArr.map((percentArr, i) =>
+            ({
+              text: `${i + 1}-Hit DMG`,
+              formulaText: stats => <span>{percentArr[stats.tlvl.auto]}%{(i === 0 || i === 3) ? " × 2" : ""} {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
+              formula: formula.normal[i],
+              variant: stats => getTalentStatKeyVariant("normal", stats),
+            }))
+          },
+          chargedDocSection(tr, formula, data, 25),
+          plungeDocSection(tr, formula, data)
+        ],
       },
       skill: {
-        name: "Lemniscatic Wind Cycling",
+        name: tr("skill.name"),
         img: skill,
         sections: [{
-          text: <span>
-            <p className="mb-2">Xiao lunges forward, dealing <span className="text-anemo">Anemo DMG</span> to opponents in his path.</p>
-            <p className="mb-2">Can be used in mid-air.<br />Starts with 2 charges.</p>
-          </span>,
+          text: tr("skill.description"),
           fields: [{
             text: "Skill DMG",
             formulaText: stats => <span>{data.skill.hit[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
@@ -135,19 +109,10 @@ const char: ICharacterSheet = {
         }],
       },
       burst: {
-        name: "Bane of All Evil",
+        name: tr("burst.name"),
         img: burst,
         sections: [{
-          text: <span>
-            <p className="mb-2">Xiao dons the Yaksha Mask that set gods and demons trembling millennia ago.</p>
-            <p className="mb-2"><b>Yaksha's Mask:</b></p>
-            <ul className="mb-2">
-              <li>Greatly increases Xiao's jumping ability.</li>
-              <li>Increases his attack AoE and attack DMG.</li>
-              <li>Converts attack DMG into <span className="text-anemo">Anemo DMG</span>, which cannot be overriden by any other elemental infusion.</li>
-            </ul>
-            <p className="mb-2">In this state, Xiao will continuously lose HP.<br />The effects of this skill end when Xiao leaves the field.</p>
-          </span>,
+          text: tr("burst.description"),
           fields: [{
             text: "Normal/Charged/Plunging Attack DMG Bonus",
             value: stats => <span>{data.burst.atk_bonus[stats.tlvl.burst]}%</span>,
@@ -165,66 +130,42 @@ const char: ICharacterSheet = {
         }],
       },
       passive1: {
-        name: "Evil Conqueror - Tamer of Demons",
+        name: tr("passive1.name"),
         img: passive1,
         sections: [{
-          text: <span>While under the effects of <b>Bane of All Evil</b>, all DMG dealt by Xiao increases by 5%. DMG increases by a further 5% for every 3s the ability persists. The maximum DMG Bonus is 25%.</span>,
+          text: tr("passive1.description"),
           conditional: conditionals.a1q
         }],
       },
       passive2: {
-        name: "Dissolution Eon - Heaven Fall",
+        name: tr("passive2.name"),
         img: passive2,
         sections: [{
-          text: <span>Using <b>Lemniscatic Wind Cycling</b> increases the DMG of subsequent uses of Lemniscatic Wind Cycling by 15%. This effect lasts for 7s, and has a maximum of 3 stacks. Gaining a new stack refreshes the effect's duration.</span>,
+          text: tr("passive2.description"),
           conditional: conditionals.a1
         }],
       },
-      passive3: {
-        name: "Transcension - Gravity Defier",
-        img: passive3,
-        sections: [{
-          text: <span>Decreases climbing Stamina consumption for your own party members by 20%.<br />Not stackable with Passive Talents that provide the exact same effects.</span>
-        }],
-      },
-      constellation1: {
-        name: "Dissolution Eon: Destroyer of Worlds",
-        img: c1,
-        sections: [{ text: <span>Increases <b>Lemniscatic Wind Cycling</b>'s charges by 1.</span> }],
-      },
+      passive3: talentTemplate("passive3", tr, passive3),
+      constellation1: talentTemplate("constellation1", tr, c1),
       constellation2: {
-        name: "Annihilation Eon: Blossom of Kaleidos",
+        name: tr("constellation2.name"),
         img: c2,
         sections: [{
-          text: <span>When in party but not on the field, Xiao's Energy Recharge is increased by 25%.</span>,
+          text: tr("constellation2.description"),
           conditional: conditionals.c2
         }],
       },
-      constellation3: {
-        name: "Conqueror of Evil: Wrath Deity",
-        img: c3,
-        sections: [{ text: <span>Increases the Level of <b>Lemniscatic Wind Cycling</b> by 3. Maximum upgrade level is 15.</span> }],
-        stats: { skillBoost: 3 }
-      },
+      constellation3: talentTemplate("constellation3", tr, c3, { skillBoost: 3 }),
       constellation4: {
-        name: "Transcension: Extinction of Suffering",
+        name: tr("constellation4.name"),
         img: c4,
         sections: [{
-          text: stats => <span>When Xiao's HP falls below 50%{DisplayPercent(50, stats, "finalHP")}, he gains a 100% DEF Bonus.</span>,
+          text: tr("constellation4.description"),
           conditional: conditionals.c4
         }],
       },
-      constellation5: {
-        name: "Evolution Eon: Origin of Ignorance",
-        img: c5,
-        sections: [{ text: <span>Increases the Level of <b>Bane of All Evil</b> by 3. Maximum upgrade level is 15.</span> }],
-        stats: { burstBoost: 3 }
-      },
-      constellation6: {
-        name: "Conqueror of Evil: Guardian Yaksha",
-        img: c6,
-        sections: [{ text: <span>While under the effects of <b>Bane of All Evil</b>, hitting at least 2 opponents with Xiao's Plunging Attack will immediately grant him 1 charge of <b>Lemniscatic Wind Cycling</b> and for the next 1s, he may use Lemniscatic Wind Cycling while ignoring its CD.</span> }],
-      }
+      constellation5: talentTemplate("constellation5", tr, c5, { burstBoost: 3 }),
+      constellation6: talentTemplate("constellation6", tr, c6),
     },
   },
 };

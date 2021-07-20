@@ -3,15 +3,6 @@ import { basicDMGFormula } from "../../../Util/FormulaUtil"
 import { absorbableEle } from "../dataUtil"
 
 export const data = {
-  baseStat: {
-    characterHP: [820, 2127, 2830, 4234, 4734, 5446, 6112, 6832, 7331, 8058, 8557, 9292, 9791, 10531],
-    characterATK: [20, 53, 71, 106, 118, 136, 153, 171, 183, 201, 214, 232, 245, 263],
-    characterDEF: [52, 135, 180, 269, 301, 346, 388, 434, 465, 512, 543, 590, 622, 669],
-  },
-  specializeStat: {
-    key: "enerRech_",
-    value: [0, 0, 0, 0, 8, 8, 16, 16, 16, 16, 24, 24, 32, 32],
-  },
   normal: {
     hitArr: [
       [20.38, 22.04, 23.7, 26.07, 27.73, 29.63, 32.23, 34.84, 37.45, 40.29, 43.55, 47.38, 51.21, 55.05, 59.23],//1

@@ -2,6 +2,7 @@ import ElementalData from "../Data/ElementalData"
 import { StatKey, StatDict, IArtifact, SubstatKey } from "../Types/artifact"
 import { ArtifactSetEffects, PrunedArtifactSetEffects, ArtifactsBySlot, SetFilter } from "../Types/Build"
 import { ArtifactSetKey, ElementKey } from "../Types/consts"
+import ICalculatedStats from "../Types/ICalculatedStats"
 
 /**
  * Remove artifacts that can never be used in optimized builds
@@ -33,15 +34,15 @@ export function pruneArtifacts(artifacts: IArtifact[], artifactSetEffects: Artif
 
   // array of artifacts, artifact stats, and set (may be "other")
   let tmp: { artifact: IArtifact, stats: Dict<StatKey, number>, set: ArtifactSetKey | "other" }[] = artifacts.map(artifact => {
-    let stats = {}, set: ArtifactSetKey | "other" = (artifact.setKey in prunedSetEffects) ? artifact.setKey : "other"
+    const stats: Dict<StatKey, number> = {}, set: ArtifactSetKey | "other" = (artifact.setKey in prunedSetEffects) ? artifact.setKey : "other"
     if (significantStats.has(artifact.mainStatKey as any))
       stats[artifact.mainStatKey] = artifact.mainStatVal!
     for (const { key, value } of artifact.substats)
-      if (significantStats.has(key as SubstatKey))
+      if (key && significantStats.has(key as SubstatKey))
         stats[key] = (stats[key] ?? 0) + value
     for (const key in stats)
       if (key.endsWith("enemyRes_"))
-        stats[key] = -stats[key]
+        stats[key as StatKey] = -stats[key as StatKey]!
     return { artifact, stats, set }
   })
 
@@ -88,8 +89,8 @@ export function artifactSetPermutations(artifactsBySlot: ArtifactsBySlot, setFil
   const slotKeys = Object.keys(artifactsBySlot)
 
   for (const slotKey of slotKeys) {
-    let artifactsBySet: { [setKey in ArtifactSetKey]?: IArtifact[] } = {}
-    for (const artifact of (artifactsBySlot[slotKey] as any)) {
+    let artifactsBySet: Dict<ArtifactSetKey, IArtifact[]> = {}
+    for (const artifact of (artifactsBySlot[slotKey] ?? [])) {
       if (setKeys.has(artifact.setKey)) {
         if (artifactsBySet[artifact.setKey]) artifactsBySet[artifact.setKey]!.push(artifact)
         else artifactsBySet[artifact.setKey] = [artifact]
@@ -191,10 +192,10 @@ function accumulate(slotKey, art: IArtifact, setCount, accu, stats, artifactSetE
 /**
   * Create statKey in the form of ${ele}_elemental_${type} for elemental DMG, ${ele}_${src}_${type} for talent DMG.
   * @param {string} skillKey - The DMG src. Can be "norm","skill". Use an elemental to specify a elemental hit "physical" -> physical_elemental_{type}. Use "elemental" here to specify a elemental hit of character's element/reactionMode
-  * @param {*} stats - The calcualted stats
+  * @param {*} stats - The calculated stats
   * @param {*} overwriteElement - Override the hit to be the character's elemental, that is not part of infusion.
   */
-export function getTalentStatKey(skillKey, stats, overwriteElement?: ElementKey | "physical") {
+export function getTalentStatKey(skillKey: string, stats: ICalculatedStats, overwriteElement?: ElementKey | "physical") {
   const { hitMode = "", infusionAura = "", infusionSelf = "", reactionMode = null, characterEle = "anemo", weaponType = "sword" } = stats
   if ((Object.keys(ElementalData) as any).includes(skillKey)) return `${skillKey}_elemental_${hitMode}`//elemental DMG
   if (!overwriteElement && weaponType === "catalyst") overwriteElement = characterEle
@@ -212,7 +213,7 @@ export function getTalentStatKey(skillKey, stats, overwriteElement?: ElementKey 
   return `${eleKey}_${skillKey}_${hitMode}`
 }
 
-export function getTalentStatKeyVariant(skillKey, stats, overwriteElement: ElementKey | "physical" | undefined | "" = "") {
+export function getTalentStatKeyVariant(skillKey: string, stats: ICalculatedStats, overwriteElement: ElementKey | "physical" | undefined | "" = "") {
   if ((Object.keys(ElementalData) as any).includes(skillKey)) return skillKey//elemental DMG
   const { infusionAura = "", infusionSelf = "", reactionMode = null, characterEle = "anemo", weaponType = "sword" } = stats
   if (!overwriteElement && weaponType === "catalyst") overwriteElement = characterEle

@@ -1,7 +1,9 @@
-import { CharacterKey, ElementKey, WeaponTypeKey } from "./consts";
+import { BuildSetting } from "./Build";
+import { CharacterKey, ElementKey, HitModeKey, ReactionModeKey, SlotKey, WeaponKey, WeaponTypeKey } from "./consts";
 import ICalculatedStats from "./ICalculatedStats";
 import IConditional, { IConditionals } from "./IConditional";
 import { IFieldDisplay } from "./IFieldDisplay";
+
 interface ICharacterSheetBase {
   name: Displayable,
   cardImg: string,
@@ -10,11 +12,10 @@ interface ICharacterSheetBase {
   weaponTypeKey: WeaponTypeKey
   gender: string,
   constellationName: Displayable,
-  titles: Array<string>,
+  title: Displayable,
   baseStat: IBaseStat
   baseStatCurve: IBaseStatCurve
   ascensions: ascension[],
-
 }
 interface ICharacterSheetTalent extends ICharacterSheetBase {
   elementKey: ElementKey
@@ -43,22 +44,20 @@ interface ascension {
   }
 }
 
-export interface ICharacter {
+export interface IFlexCharacter {
   characterKey: CharacterKey
   level: number,
   ascension: number,
   hitMode: HitModeKey
   elementKey?: ElementKey
-  reactionMode: reactionModeKey | null
-  equippedArtifacts: StrictDict<SlotKey, string>,
+  reactionMode: ReactionModeKey | null
   conditionalValues: any,
-  baseStatOverrides: {},//overriding the baseStat
+  baseStatOverrides: object, //overriding the baseStat
   weapon: {
-    key: string
-    levelKey: string
+    key: WeaponKey
+    level: number,
+    ascension: number,
     refineIndex: number
-    overrideMainVal: number
-    overrideSubVal: number
   },
   talentLevelKeys: {
     auto: number
@@ -67,8 +66,11 @@ export interface ICharacter {
   },
   infusionAura: ElementKey | ""
   constellation: number
-  artifacts?: any[]//from flex TODO: type
-  buildSettings?: object
+  buildSettings?: BuildSetting
+}
+export interface ICharacter extends IFlexCharacter {
+  equippedArtifacts: StrictDict<SlotKey, string>,
+  artifacts?: any[] //from flex TODO: type
 }
 
 export type TalentSheet = {

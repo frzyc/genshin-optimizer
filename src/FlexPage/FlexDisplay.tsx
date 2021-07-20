@@ -1,7 +1,6 @@
 import { Alert, Button, Card, Container, Form, InputGroup, Toast } from "react-bootstrap";
 import { Redirect, useLocation } from "react-router-dom";
 import CharacterDisplayCard from "../Character/CharacterDisplayCard";
-import { CurrentDatabaseVersion } from '../Database/DatabaseUtil';
 import '../StatDependency'
 import { createFlexObj, parseFlexObj, _createFlexObj } from "./FlexUtil";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -12,10 +11,12 @@ export default function TestDisplay() {
   const location = useLocation()
   const searchStr = location.search
   if (searchStr) {
-    const [character, version] = parseFlexObj(searchStr.substring(1))
-    if (!character) return <Redirect to={`/`} />
+    const flexResult = parseFlexObj(searchStr.substring(1))
+    if (!flexResult) return <Redirect to={`/`} />
+    const [{ character, artifacts }, version] = flexResult
+    character.artifacts = artifacts // TODO: Decouple artifacts and character
     if (version !== 2)
-      return <Redirect to={`/flex?${_createFlexObj(character, character.artifacts)}`} />
+      return <Redirect to={`/flex?${_createFlexObj(character, artifacts)}`} />
     return <Display character={character} />
   } else {
     const characterKey = (location as any).characterKey
@@ -33,8 +34,7 @@ function Display({ character }) {
     navigator.clipboard.writeText(url)
     settoast(true)
   }
-  const { databaseVersion = 0 } = character
-  const isUpToDate = databaseVersion < CurrentDatabaseVersion
+  const isUpToDate = false
   return <Container className="my-2">
     <Toast onClose={() => settoast(false)} show={toast} delay={3000} autohide style={{
       position: 'absolute',

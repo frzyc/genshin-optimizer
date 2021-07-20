@@ -1,25 +1,26 @@
 import { characters, artifacts, flexObj, oldURL } from './FlexUtil.test.data'
 import { createFlexObj, parseFlexObj } from './FlexUtil'
-import { DatabaseInitAndVerify } from '../Database/DatabaseUtil'
-import { saveToLocalStorage } from '../Util/Util'
+import { database } from '../Database/Database'
 
-function setupLS() {
-  characters.map(char => saveToLocalStorage(`char_${char.characterKey}`, char))
-  Object.entries(artifacts).map(([id, art]) => saveToLocalStorage(id, art))
-}
 describe('flex import export', () => {
   beforeEach(() => {
-    setupLS()
-    DatabaseInitAndVerify()
+    database.clear()
+    characters.map(char => database.updateChar(char))
+    Object.values(artifacts).map(art => {
+      database.updateArt(art)
+      database.setLocation(art.id, art.location)
+    })
   })
   afterEach(() => localStorage.clear())
 
   test('should support round tripping', () => {
-    expect(parseFlexObj(createFlexObj("hutao"))[0]).toEqual(flexObj)
+    expect(parseFlexObj(createFlexObj("hutao")!)![0]).toEqual(flexObj)
   })
   test('should support old format', () => {
-    let [obj] = parseFlexObj(oldURL.split("flex?")[1])
+    const [{ character, artifacts }] = parseFlexObj(oldURL.split("flex?")[1])!
     // We're dropping conditional values and infusion from old version
-    expect({ ...obj, conditionalValues: flexObj.conditionalValues, infusionAura: 'pyro' }).toEqual(flexObj)
+    character.conditionalValues = flexObj.character.conditionalValues
+    character.infusionAura = 'pyro'
+    expect({ character, artifacts }).toEqual(flexObj)
   })
 })

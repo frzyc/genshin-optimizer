@@ -43,12 +43,12 @@ type ReactionToggleProps = {
   characterDispatch: (any) => void,
   className: string
 }
-export function ReactionToggle({ character: { reactionMode = "none", infusionAura }, build, characterDispatch, className }: ReactionToggleProps) {
-  if (reactionMode === null) reactionMode = "none"
+export function ReactionToggle({ character: { reactionMode = null, infusionAura }, build, characterDispatch, className }: ReactionToggleProps) {
+  if (!build) return null
   const charEleKey = build.characterEle
   if (!["pyro", "hydro", "cryo"].includes(charEleKey) && !["pyro", "hydro", "cryo"].includes(infusionAura)) return null
   return <ToggleButtonGroup className={className} type="radio" name="reactionMode" value={reactionMode} onChange={val => characterDispatch({ reactionMode: val === "none" ? null : val })}>
-    <ToggleButton value={"none"} variant={reactionMode === "none" ? "success" : "primary"}>No Reactions</ToggleButton >
+    <ToggleButton value={"none"} variant={reactionMode ? "primary" : "success"}>No Reactions</ToggleButton >
     {(charEleKey === "pyro" || infusionAura === "pyro") && <ToggleButton value={"pyro_vaporize"} variant={reactionMode === "pyro_vaporize" ? "success" : "primary"}>
       <span className="text-vaporize">Vaporize(Pyro) <Image src={Assets.elements.hydro} className="inline-icon" />+<Image src={Assets.elements.pyro} className="inline-icon" /></span>
     </ToggleButton >}
@@ -72,7 +72,8 @@ export function HitModeToggle({ hitMode, characterDispatch, className }) {
 }
 
 function CalculationDisplay({ characterSheet, weaponSheet, build }: { characterSheet: CharacterSheet, weaponSheet: WeaponSheet, build: ICalculatedStats }) {
-  const displayStatKeys = useMemo(() => Character.getDisplayStatKeys(build, characterSheet), [build, characterSheet])
+  const displayStatKeys = useMemo(() => build && Character.getDisplayStatKeys(build, characterSheet), [build, characterSheet])
+  if (!build) return null
   return <div>
     {Object.entries(displayStatKeys).map(([sectionKey, fields]: [string, any]) => {
       const header = Character.getDisplayHeading(sectionKey, characterSheet, weaponSheet, build.characterEle)
@@ -203,9 +204,6 @@ export default function DamageOptionsAndCalculation({ characterSheet, weaponShee
                 <Row >
                   <Col xs={12} xl={6} className="mb-2">
                     <StatInput
-                      prependEle={undefined}
-                      disabled={undefined}
-                      percent={undefined}
                       name={<b>Enemy Level</b>}
                       value={Character.getStatValueWithOverride(character, characterSheet, weaponSheet, "enemyLevel")}
                       placeholder={Stat.getStatNameRaw("enemyLevel")}

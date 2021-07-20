@@ -16,11 +16,6 @@ const stats = [
 
 // Common schemas
 
-const bool = {
-  type: "uint", length: 1,
-  encode: (bool) => bool ? 1 : 0,
-  decode: (int) => int !== 0,
-}
 const uint = (length) => ({ type: "uint", length })
 const float = {
   type: "string",
@@ -135,6 +130,33 @@ const weaponV2 = object({
   refineIndex: uint(1),
   overrideMainVal: float,
   overrideSubVal: float,
+}, {
+  encode: value => {
+    const level = value.level
+    const ascIndex = ascensionMaxLevel.findIndex(maxLevel => level <= maxLevel)
+    const ascension = ascIndex < value.ascension ? "A" : ""
+    value.levelKey = `L${level}${ascension}`
+    value.overrideMainVal = 0
+    value.overrideSubVal = 0
+    return value
+  }, decode: object => {
+    const levelKey = object.levelKey
+    delete object.levelKey
+    delete object.overrideMainVal
+    delete object.overrideSubVal
+    const [, lvla] = levelKey.split("L")
+    const level = parseInt(lvla)
+    const ascension = ascensionMaxLevel.findIndex(maxLevel => level <= maxLevel)
+    const addAsc = lvla.includes("A")
+    if (level < 0 || level > 90 || ascension < 0) {
+      object.level = 1
+      object.ascension = 0
+    } else {
+      object.level = level
+      object.ascension = ascension + (addAsc ? 1 : 0)
+    }
+    return object
+  }
 })
 const characterV2 = object({
   characterKey,
@@ -154,9 +176,8 @@ const characterV2 = object({
     const roundedLevel = Math.round(value.level / 10) * 10 // Nearest level
     const maxLevel = ascensionMaxLevel[value.ascension]
     value.levelKey = `L${roundedLevel}${roundedLevel === maxLevel ? "" : "A"}`
-    if (roundedLevel !== value.level) {
-      value.baseStatOverrides.characterLevel = value.level
-    }
+    if (roundedLevel === value.level) value.overrideLevel = 0
+    else value.overrideLevel = value.level
 
     if (value.characterKey === "traveler")
       value.reserved = [elements.indexOf(value.elementKey)]
@@ -185,6 +206,14 @@ const characterV2 = object({
       value.level = value.baseStatOverrides.characterLevel
       delete value.baseStatOverrides.characterLevel
     }
+    if (value.baseStatOverrides.weaponLevel) {
+      value.weapon.level = value.baseStatOverrides.weaponLevel
+      delete value.baseStatOverrides.weaponLevel
+    }
+    if (value.overrideLevel) {
+      value.level = value.overrideLevel
+    }
+    delete value.overrideLevel
     delete value.levelKey
 
     if (value.characterKey === "traveler") {

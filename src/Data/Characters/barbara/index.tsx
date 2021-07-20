@@ -18,6 +18,9 @@ import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { IConditionals } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
+import { Translate } from '../../../Components/Translate'
+import { plungeDocSection, talentTemplate } from '../SheetUtil'
+const tr = (strKey: string) => <Translate ns="char_barbara_gen" key18={strKey} />
 const conditionals: IConditionals = {
   a1: { // Glorious Season
     canShow: stats => stats.ascension >= 1,
@@ -31,15 +34,15 @@ const conditionals: IConditionals = {
   }
 }
 const char: ICharacterSheet = {
-  name: "Barbara",
+  name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   star: 4,
   elementKey: "hydro",
   weaponTypeKey: "catalyst",
   gender: "F",
-  constellationName: "Crater",
-  titles: ["Shining Idol", "Deaconess"],
+  constellationName: tr("constellationName"),
+  title: tr("title"),
   baseStat: data_gen.base,
   baseStatCurve: data_gen.curves,
   ascensions: data_gen.ascensions,
@@ -48,10 +51,10 @@ const char: ICharacterSheet = {
     conditionals,
     sheets: {
       auto: {
-        name: "Whisper of Water",
+        name: tr("auto.name"),
         img: normal,
         sections: [{
-          text: <span><strong>Normal Attack</strong> Perform up to 4 water splash attacks that deal <span className="text-hydro">Hydro DMG</span>.</span>,
+          text: tr(`auto.fields.normal`),
           fields: data.normal.hitArr.map((percentArr, i) =>
           ({
             text: `${i + 1}-Hit DMG`,
@@ -60,7 +63,7 @@ const char: ICharacterSheet = {
             variant: stats => getTalentStatKeyVariant("normal", stats),
           }))
         }, {
-          text: <span><strong>Charged Attack</strong> Consumes a certain amount of Stamina to deal <span className="text-hydro">AoE Hydro DMG</span> after a short casting time.</span>,
+          text: tr("auto.fields.charged"),
           fields: [{
             text: `Charged Attack DMG`,
             formulaText: stats => <span>{data.charged.dmg[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
@@ -70,40 +73,14 @@ const char: ICharacterSheet = {
             text: `Stamina Cost`,
             value: `50`,
           }]
-        }, {
-          text: <span><strong>Plunging Attack</strong> Gathering the might of Hydro, Barbara plunges towards the ground from mid-air, damaging all enemies in her path. Deals <span className="text-hydro">AoE Hydro DMG</span> upon impact with the ground.</span>,
-          fields: [{
-            text: `Plunge DMG`,
-            formulaText: stats => <span>{data.plunging.dmg[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-            formula: formula.plunging.dmg,
-            variant: stats => getTalentStatKeyVariant("plunging", stats),
-          }, {
-            text: `Low Plunge DMG`,
-            formulaText: stats => <span>{data.plunging.low[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-            formula: formula.plunging.low,
-            variant: stats => getTalentStatKeyVariant("plunging", stats),
-          }, {
-            text: `High Plunge DMG`,
-            formulaText: stats => <span>{data.plunging.high[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-            formula: formula.plunging.high,
-            variant: stats => getTalentStatKeyVariant("plunging", stats),
-          }]
-        }],
+        },
+        plungeDocSection(tr, formula, data)],
       },
       skill: {
-        name: "Let the Show Begin",
+        name: tr("skill.name"),
         img: skill,
         sections: [{
-          text: <span>
-            <p className="mb-2">Summons water droplets resembling musical notes that form a Melody Loop, dealing <span className="text-hydro">Hydro DMG</span> to surrounding enemies and afflicting them with the <span className="text-hydro">Wet</span> status.</p>
-            <h6>Melody Loop:</h6>
-            <ul className="mb-0">
-              <li>Barbara's Normal Attacks heal your characters in the party and nearby allied characters for a certain amount of HP, which scales with Barbara's Max HP.</li>
-              <li>Her Charged Attack generates 4 times the amount of healing.</li>
-              <li>Regenerates a certain amount of HP at regular intervals for your active character.</li>
-              <li>Applies the <span className="text-hydro">Wet</span> status to the character and enemies who come in contact with them.</li>
-            </ul>
-          </span>,
+          text: tr("skill.description"),
           fields: [{
             text: "HP Regeneration Per Hit",
             formulaText: stats => <span>( {data.skill.hp[stats.tlvl.skill]}% {Stat.printStat("finalHP", stats)} + {data.skill.hpFlat[stats.tlvl.skill]} ) * {Stat.printStat("heal_multi", stats)}</span>,
@@ -134,10 +111,10 @@ const char: ICharacterSheet = {
 
       },
       burst: {
-        name: "Shining Miracle",
+        name: tr("burst.name"),
         img: burst,
         sections: [{
-          text: <span>Heals nearby allied characters and your characters in the party for a large amount of HP that scales with Barbara's Max HP.</span>,
+          text: tr("burst.description"),
           fields: [{
             text: "Regeneration",
             formulaText: stats => <span>( {data.burst.hp[stats.tlvl.burst]}% {Stat.printStat("finalHP", stats)} + {data.burst.flat[stats.tlvl.burst]} ) * {Stat.printStat("heal_multi", stats)}</span>,
@@ -152,62 +129,15 @@ const char: ICharacterSheet = {
           }]
         }],
       },
-      passive1: {
-        name: "Glorious Season",
-        img: passive1,
-        sections: [{ text: <span>The Stamina Consumption of characters within <b>Let the Show Begin</b>'s Melody Loop is reduced by 12%.</span> }],
-      },
-      passive2: {
-        name: "Encore",
-        img: passive2,
-        sections: [{ text: <span>When your active character gains an Elemental Orb/Particle, the duration of <b>Let the Show Begin</b>'s Melody Loop is extended by 1s. The maximum extension is 5s.</span> }],
-      },
-      passive3: {
-        name: "With My Whole Heart",
-        img: passive3,
-        sections: [{ text: <span>When a Perfect Cooking is achieved on a dish with restorative effects, Barbara has a 12% chance to obtain double the product.</span> }],
-      },
-      constellation1: {
-        name: "Gleeful Songs",
-        img: c1,
-        sections: [{ text: <span>Barbara regenerates 1 Energy every 10s.</span> }],
-      },
-      constellation2: {
-        name: "Vitality Burst",
-        img: c2,
-        sections: [{ text: <span>Decreases the CD of <b>Let the Show Begin</b> by 15%. During the ability's duration, your active character gains 15% <span className="text-hydro">Hydro DMG Bonus</span>.</span> }],
-      },
-      constellation3: {
-        name: "Star of Tomorrow",
-        img: c3,
-        sections: [{ text: <span>Increases the level of <b>Shining Miracle</b> by 3. Maximum upgrade level is 15.</span> }],
-        stats: { burstBoost: 3 }
-      },
-      constellation4: {
-        name: "Attentiveness be My Power",
-        img: c4,
-        sections: [{ text: <span>Every enemy Barbara hits with her <b>Charged Attack</b> regenerates 1 Energy for her. A maximum of 5 energy can be regenerated in this manner with any one Charged Attack.</span> }],
-      },
-      constellation5: {
-        name: "The Purest Companionship",
-        img: c5,
-        sections: [{ text: <span>Increases the level of <b>Let the Show Begin</b> by 3. Maximum upgrade level is 15.</span> }],
-        stats: { skillBoost: 3 }
-      },
-      constellation6: {
-        name: "Dedicating Everything to You",
-        img: c6,
-        sections: [{
-          text: <span>
-            <p className="mb-2">When Barbara is not on the field, and one of your characters in the party falls:</p>
-            <ul className="mb-0">
-              <li>Automatically revives this character.</li>
-              <li>Fully regenerates this character's HP to 100%.</li>
-              <li>This effect can only occur once every 15 mins.</li>
-            </ul>
-          </span>
-        }],
-      },
+      passive1: talentTemplate("passive1", tr, passive1),
+      passive2: talentTemplate("passive2", tr, passive2),
+      passive3: talentTemplate("passive3", tr, passive3),
+      constellation1: talentTemplate("constellation1", tr, c1),
+      constellation2: talentTemplate("constellation2", tr, c2),
+      constellation3: talentTemplate("constellation3", tr, c3, { burstBoost: 3 }),
+      constellation4: talentTemplate("constellation4", tr, c4),
+      constellation5: talentTemplate("constellation5", tr, c5, { skillBoost: 3 }),
+      constellation6: talentTemplate("constellation6", tr, c6),
     },
   },
 };

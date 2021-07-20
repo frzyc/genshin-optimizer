@@ -18,6 +18,9 @@ import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { IConditionals } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
+import { Translate } from '../../../Components/Translate'
+import { claymoreChargedDocSection, normalDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
+const tr = (strKey: string) => <Translate ns="char_chongyun_gen" key18={strKey} />
 const conditionals: IConditionals = {
   a4: { // Rimechaser Blade
     canShow: stats => stats.ascension >= 4,
@@ -35,15 +38,15 @@ const conditionals: IConditionals = {
   }
 }
 const char: ICharacterSheet = {
-  name: "Chongyun",
+  name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   star: 4,
   elementKey: "cryo",
   weaponTypeKey: "claymore",
   gender: "M",
-  constellationName: "Nubis Caesor",
-  titles: ["Frozen Ardor", "Banisher of Evil and Rumors Thereof"],
+  constellationName: tr("constellationName"),
+  title: tr("title"),
   baseStat: data_gen.base,
   baseStatCurve: data_gen.curves,
   ascensions: data_gen.ascensions,
@@ -52,64 +55,19 @@ const char: ICharacterSheet = {
     conditionals,
     sheets: {
       auto: {
-        name: "Demonbane",
+        name: tr("auto.name"),
         img: normal,
-        sections: [{
-          text: <span><strong>Normal Attack</strong> Perform up to 4 consecutive strikes.</span>,
-          fields: data.normal.hitArr.map((percentArr, i) =>
-          ({
-            text: `${i + 1}-Hit DMG`,
-            formulaText: stats => <span>{percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
-            formula: formula.normal[i],
-            variant: stats => getTalentStatKeyVariant("normal", stats),
-          }))
-        }, {
-          text: <span><strong>Charged Attack</strong> Drains Stamina over time to perform continuous spinning attacks against all nearby opponents. At end of the sequence, perform a more powerful slash.</span>,
-          fields: [{
-            text: `Spinning DMG`,
-            formulaText: stats => <span>{data.charged.spinning[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
-            formula: formula.charged.spinning,
-            variant: stats => getTalentStatKeyVariant("charged", stats),
-          }, {
-            text: `Spinning Final DMG`,
-            formulaText: stats => <span>{data.charged.finalATK[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
-            formula: formula.charged.finalATK,
-            variant: stats => getTalentStatKeyVariant("charged", stats),
-          }, {
-            text: `Stamina Cost`,
-            value: `40/s`,
-          }, {
-            text: `Max Duration`,
-            value: `5s`,
-          }]
-        }, {
-          text: <span><strong>Plunging Attack</strong> Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.</span>,
-          fields: [{
-            text: `Plunge DMG`,
-            formulaText: stats => <span>{data.plunging.dmg[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-            formula: formula.plunging.dmg,
-            variant: stats => getTalentStatKeyVariant("plunging", stats),
-          }, {
-            text: `Low Plunge DMG`,
-            formulaText: stats => <span>{data.plunging.low[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-            formula: formula.plunging.low,
-            variant: stats => getTalentStatKeyVariant("plunging", stats),
-          }, {
-            text: `High Plunge DMG`,
-            formulaText: stats => <span>{data.plunging.high[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-            formula: formula.plunging.high,
-            variant: stats => getTalentStatKeyVariant("plunging", stats),
-          }]
-        }],
+        sections: [
+          normalDocSection(tr, formula, data),
+          claymoreChargedDocSection(tr, formula, data),
+          plungeDocSection(tr, formula, data)
+        ],
       },
       skill: {
-        name: "Spirit Blade: Chonghua's Layered Frost",
+        name: tr("skill.name"),
         img: skill,
         sections: [{
-          text: <span>
-            <p className="mb-2">Chongyun strikes the ground with his greatsword, causing a Cryo explosion in a circular AoE in front of him that deals <span className="text-cryo">Cryo DMG</span>.</p>
-            <p className="mb-2">After a short delay, the cold air created by the Cryo explosion will coalesce into a Chonghua Frost Field, within which all Sword, Claymore and Polearm-wielding characters' weapons will be infused with <span className="text-cryo">Cryo</span>.</p>
-          </span>,
+          text: tr("skill.description"),
           fields: [{
             text: "Skill DMG",
             formulaText: stats => <span>{data.skill.dmg[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
@@ -129,13 +87,10 @@ const char: ICharacterSheet = {
         }],
       },
       burst: {
-        name: "Spirit Blade: Cloud-Parting Star",
+        name: tr("burst.name"),
         img: burst,
         sections: [{
-          text: <span>
-            <p className="mb-2">Performing the secret hand seals, Chongyun summons 3 giant spirit blades in mid-air that fall to the earth one by one after a short delay, exploding as they hit the ground.</p>
-            <p className="mb-2">When the spirit blades explode, they will deal <span className="text-cryo">AoE Cryo DMG</span> and launch opponents.</p>
-          </span>,
+          text: tr("burst.description"),
           fields: [{
             text: "Skill DMG",
             formulaText: stats => <span>{data.burst.dmg[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
@@ -154,19 +109,12 @@ const char: ICharacterSheet = {
           conditional: conditionals.c6
         }],
       },
-      passive1: {
-        name: "Steady Breathing",
-        img: passive1,
-        sections: [{ text: <span>Sword, Claymore, or Polearm-wielding characters within the field created by <b>Spirit Blade: Chonghua's Layered Frost</b> have their Normal ATK SPD increased by 8%.</span> }],
-      },
+      passive1: talentTemplate("passive1", tr, passive1),
       passive2: {
-        name: "Rimechaser Blade",
+        name: tr("passive2.name"),
         img: passive2,
         sections: [{
-          text: <span>
-            <p className="mb-2">When the field created by <b>Spirit Blade: Chonghua's Layered Frost</b> disappears, another spirit blade will be summoned to strike nearby opponents, dealing 100% of Chonghua's Layered Frost's Skill DMG as <span className="text-cryo">AoE Cryo DMG</span>.</p>
-            <p className="mb-2">Opponents hit by this blade will have their <span className="text-cryo">Cryo RES</span> decreased by 10% for 8s.</p>
-          </span>,
+          text: tr("passive2.description"),
           fields: [{
             canShow: stats => stats.ascension >= 4,
             text: "Summoned Sword DMG",
@@ -176,18 +124,12 @@ const char: ICharacterSheet = {
           }]
         }],
       },
-      passive3: {
-        name: "Gallant Journey",
-        img: passive3,
-        sections: [{
-          text: <span>When dispatched on an expedition in Liyue, time consumed is reduced by 25%.</span>
-        }],
-      },
+      passive3: talentTemplate("passive3", tr, passive3),
       constellation1: {
-        name: "Ice Unleashed",
+        name: tr("constellation1.name"),
         img: c1,
         sections: [{
-          text: <span>The last attack of Chongyun's Normal Attack combo releases 3 ice blades. Each blade deals 50% of Chongyun's ATK as <span className="text-cryo">Cryo DMG</span> to all opponents in its path.</span>,
+          text: tr("constellation1.description"),
           fields: [{
             canShow: stats => stats.constellation >= 1,
             text: "Ice Blade DMG",
@@ -197,43 +139,11 @@ const char: ICharacterSheet = {
           }]
         }]
       },
-      constellation2: {
-        name: "Atmospheric Revolution",
-        img: c2,
-        sections: [{ text: <span>Elemental Skills and Elemental Bursts cast within the Frost Field created by <b>Spirit Blade: Chonghua's Layered Frost</b> have their CD time decreased by 15%.</span> }],
-      },
-      constellation3: {
-        name: "Cloudburst",
-        img: c3,
-        sections: [{ text: <span>Increases the level of <b>Spirit Blade: Cloud-parting Star</b> by 3. Maximum upgrade level is 15.</span> }],
-        stats: { burstBoost: 3 }
-      },
-      constellation4: {
-        name: "Frozen Skies",
-        img: c4,
-        sections: [{
-          text: <span>
-            <p className="mb-2">Chongyun regenerates 1 Energy every time he hits an opponent affected by <span className="text-cryo">Cryo</span>.</p>
-            <p className="mb-2">This effect can only occur once every 2s.</p>
-          </span>
-        }],
-      },
-      constellation5: {
-        name: "The True Path",
-        img: c5,
-        sections: [{ text: <span>Increases the level of <b>Spirit Blade: Chonghua's Layered Frost</b> by 3. Maximum upgrade level is 15.</span> }],
-        stats: { skillBoost: 3 }
-      },
-      constellation6: {
-        name: "Rally of Four Blades",
-        img: c6,
-        sections: [{
-          text: <span>
-            <p className="mb-2"><b>Spirit Blade: Cloud-parting Star</b> deals 15% more DMG to opponents with a lower percentage of their Max HP remaining than Chongyun.</p>
-            <p className="mb-2">This skill will also summon 1 additional spirit blade.</p>
-          </span>
-        }],
-      },
+      constellation2: talentTemplate("constellation2", tr, c2),
+      constellation3: talentTemplate("constellation3", tr, c3, { burstBoost: 3 }),
+      constellation4: talentTemplate("constellation4", tr, c4),
+      constellation5: talentTemplate("constellation5", tr, c5, { skillBoost: 3 }),
+      constellation6: talentTemplate("constellation6", tr, c6),
     },
   },
 };

@@ -14,7 +14,7 @@ import { version } from "../package.json";
 import './App.scss';
 import './Assets/Image.scss';
 import LoadingCard from './Components/LoadingCard';
-import { DatabaseInitAndVerify } from './Database/DatabaseUtil';
+import './Database/Database';
 import './i18n';
 import { LanguageDropdown } from './Settings/SettingsDisplay';
 
@@ -26,7 +26,7 @@ const Planner = lazy(() => import('./Planner/PlannerDisplay'))
 const TestDisplay = lazy(() => import('./TestPage/TestDisplay'))
 const FlexDisplay = lazy(() => import('./FlexPage/FlexDisplay'))
 const SettingsDisplay = lazy(() => import('./Settings/SettingsDisplay'))
-DatabaseInitAndVerify()
+
 function App() {
   return <Suspense fallback={<Container><LoadingCard /></Container>}>
     <AppInner />

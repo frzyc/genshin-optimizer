@@ -11,8 +11,6 @@ import CharacterSheet from '../Character/CharacterSheet';
 import { CharacterSelectionDropdownList } from '../Components/CharacterSelection';
 import CustomFormControl from '../Components/CustomFormControl';
 import { Stars } from '../Components/StarDisplay';
-import ArtifactDatabase from '../Database/ArtifactDatabase';
-import CharacterDatabase from '../Database/CharacterDatabase';
 import InfoComponent from '../Components/InfoComponent';
 import Stat from '../Stat';
 import { allMainStatKeys, allSubstats, IArtifact, SubstatKey } from '../Types/artifact';
@@ -24,6 +22,7 @@ import ArtifactCard from './ArtifactCard';
 import ArtifactEditor from './ArtifactEditor';
 import { ArtifactSheet } from './ArtifactSheet';
 import SlotNameWithIcon from './Component/SlotNameWIthIcon';
+import { database } from '../Database/Database';
 
 const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
 const sortKeys = ["quality", "level", "efficiency", "mefficiency"]
@@ -63,12 +62,7 @@ export default function ArtifactDisplay(props) {
   const artifactSheets = usePromise(ArtifactSheet.getAll(), [])
   const effFilterSet = useMemo(() => new Set(effFilter), [effFilter]) as Set<SubstatKey>
   const deleteArtifact = useCallback(
-    id => {
-      const art = ArtifactDatabase.get(id);
-      if (art && art.location)
-        CharacterDatabase.equipArtifactOnSlot(art.location, art.slotKey, "");
-      ArtifactDatabase.removeArtifactById(id)
-    }, [])
+    (id: string) => database.removeArt(id), [])
   const editArtifact = useCallback(
     id => {
       setartToEditId(id);
@@ -78,8 +72,7 @@ export default function ArtifactDisplay(props) {
 
   useEffect(() => {
     ReactGA.pageview('/artifact')
-    ArtifactDatabase.registerListener(forceUpdate)
-    return () => ArtifactDatabase.unregisterListener(forceUpdate)
+    return database.followAnyArt(forceUpdate)
   }, [forceUpdate])
 
   useEffect(() => {
@@ -88,8 +81,8 @@ export default function ArtifactDisplay(props) {
 
   const { artifacts, totalArtNum, numUnequip, numUnlock, numLock } = useMemo(() => {
     const { filterArtSetKey, filterSlotKey, filterMainStatKey, filterStars, filterLevelLow, filterLevelHigh, filterSubstats = initialFilter().filterSubstats, filterLocation = "", filterLocked = "", sortType = sortKeys[0], ascending = false } = filters
-    const artifactDB = ArtifactDatabase.getArtifactDatabase() || {}
-    const artifacts: IArtifact[] = Object.values(artifactDB).filter(art => {
+    const allArtifacts = database._getArts()
+    const artifacts: IArtifact[] = allArtifacts.filter(art => {
       if (filterLocked) {
         if (filterLocked === "locked" && !art.lock) return false
         if (filterLocked === "unlocked" && art.lock) return false
@@ -113,7 +106,7 @@ export default function ArtifactDisplay(props) {
         case "quality": return { value: [art.numStars], art }
         case "level": return { value: [art.level, art.numStars], art }
         case "efficiency": return { value: [Artifact.getArtifactEfficiency(art, effFilterSet).currentEfficiency], art }
-        case "mefficiency": return { value: [Artifact.getArtifactEfficiency(art, effFilterSet).maximumEfficiency], art }
+        case "mefficiency": return { value: [Artifact.getArtifactEfficiency(art, effFilterSet).maxEfficiency], art }
       }
       return { value: [0], art }
     }).sort((a, b) => {
@@ -127,7 +120,7 @@ export default function ArtifactDisplay(props) {
     const numUnlock = artifacts.reduce((a, art) => a + (art.lock ? 1 : 0), 0)
     const numLock = artifacts.length - numUnlock
 
-    return { artifacts, totalArtNum: Object.keys(artifactDB)?.length || 0, numUnequip, numUnlock, numLock, ...dbDirty }//use dbDirty to shoo away warnings!
+    return { artifacts, totalArtNum: allArtifacts.length, numUnequip, numUnlock, numLock, ...dbDirty }//use dbDirty to shoo away warnings!
   }, [filters, dbDirty, effFilterSet])
 
   const { filterArtSetKey, filterSlotKey, filterMainStatKey, filterStars, filterLevelLow, filterLevelHigh, filterSubstats = initialFilter().filterSubstats, maxNumArtifactsToDisplay, filterLocation = "", filterLocked = "", sortType = sortKeys[0], ascending = false } = filters
@@ -152,19 +145,19 @@ export default function ArtifactDisplay(props) {
 
   const unequipArtifacts = () =>
     window.confirm(`Are you sure you want to unequip ${numUnequip} artifacts currently equipped on characters?`) &&
-    artifacts.map(art => Artifact.unequipArtifact(art.id))
+    artifacts.map(art => database.setLocation(art.id!, ""))
 
   const deleteArtifacts = () =>
     window.confirm(`Are you sure you want to delete ${artifacts.length} artifacts?`) &&
-    artifacts.map(art => ArtifactDatabase.removeArtifactById(art.id))
+    artifacts.map(art => database.removeArt(art.id!))
 
   const lockArtifacts = () =>
     window.confirm(`Are you sure you want to lock ${numLock} artifacts?`) &&
-    artifacts.map(art => ArtifactDatabase.setLocked(art.id, true))
+    artifacts.map(art => database.lockArtifact(art.id))
 
   const unlockArtifacts = () =>
     window.confirm(`Are you sure you want to unlock ${numUnlock} artifacts?`) &&
-    artifacts.map(art => ArtifactDatabase.setLocked(art.id, false))
+    artifacts.map(art => database.lockArtifact(art.id, false))
 
   const paginationCard = useMemo(() => {
     const showingValue = artifacts.length !== totalArtNum ? `${artifacts.length}/${totalArtNum}` : `${totalArtNum}`

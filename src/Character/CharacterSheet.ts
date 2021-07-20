@@ -2,12 +2,17 @@ import { ICharacterSheet, TalentSheet } from "../Types/character";
 import { allCharacterKeys, CharacterKey, ElementKey } from "../Types/consts";
 import ICalculatedStats from "../Types/ICalculatedStats";
 import { evalIfFunc } from "../Util/Util";
-import expCurve from './expCurve_gen.json'
+import { CharacterExpCurveData } from "pipeline";
+import expCurveJSON from './expCurve_gen.json'
 import Stat from '../Stat'
 
-export const charImport = import('../Data/Characters').then(imp =>
-  Object.fromEntries(Object.entries(imp.default).map(([charKey, value]) =>
-    [charKey, new CharacterSheet(value)])) as unknown as StrictDict<CharacterKey, CharacterSheet>)
+const expCurve = expCurveJSON as CharacterExpCurveData
+
+export const charImport = import('../Data/Characters').then(async imp => {
+  await import('../Data/formula') // TODO: remove this once we can ensure that formula is properly initiated everytime the weapon sheets are loaded
+  return Object.fromEntries(Object.entries(imp.default).map(([charKey, value]) =>
+    [charKey, new CharacterSheet(value)])) as unknown as StrictDict<CharacterKey, CharacterSheet>
+})
 
 const loadCharacterSheet = Object.fromEntries(allCharacterKeys.map(set =>
   [set, charImport.then(sheets => sheets[set])])) as StrictDict<CharacterKey, Promise<CharacterSheet>>
@@ -26,9 +31,9 @@ export default class CharacterSheet {
   get constellationName() { return this.sheet.constellationName }
   get isAutoElemental() { return this.sheet.weaponTypeKey === "catalyst" }
   getBase = (statKey: "hp" | "def" | "atk", level = 1, ascensionLvl = 0) =>
-    this.sheet.baseStat[statKey] * expCurve[this.sheet.baseStatCurve[statKey]][level] + this.sheet.ascensions[ascensionLvl].props[statKey]
-  getSpecializedStat = (ascensionLvl = 0) => Object.keys(this.sheet.ascensions[ascensionLvl].props).find(k => k !== "hp" && k !== "def" && k !== "atk")
-  getSpecializedStatVal = (ascensionLvl = 0) => {
+    this.sheet.baseStat[statKey] * (expCurve[this.sheet.baseStatCurve[statKey] as any])[level] + this.sheet.ascensions[ascensionLvl].props[statKey]
+  getSpecializedStat = (ascensionLvl = 0): string | undefined => Object.keys(this.sheet.ascensions[ascensionLvl].props).find(k => k !== "hp" && k !== "def" && k !== "atk")
+  getSpecializedStatVal = (ascensionLvl = 0): number => {
     const statKey = this.getSpecializedStat(ascensionLvl)
     if (!statKey) return 0
     const value = this.sheet.ascensions[ascensionLvl].props[statKey] ?? 0

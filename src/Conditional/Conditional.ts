@@ -24,7 +24,7 @@ export default class Conditional {
   constructor() { if (this instanceof Conditional) throw Error('A static class cannot be instantiated.'); }
   static processed = processed
   static conditionals = { artifact: {}, character: {}, weapon: {} } //where all the conditionals are stored
-  static canShow = (conditional, stats) => conditional?.canShow(stats)
+  static canShow = (conditional, stats) => conditional?.canShow?.(stats)
   static resolve = (conditional, stats, conditionalValue, defVal = { stats: {}, fields: [], conditionalValue: [] }) => {
     if (!conditionalValue) conditionalValue = objPathValue(stats.conditionalValues, conditional.keys)
     const [stacks, stateKey] = (conditionalValue ?? [])

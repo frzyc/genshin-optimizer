@@ -2,15 +2,6 @@ import { FormulaItem, IFormulaSheet } from "../../../Types/character"
 import { basicDMGFormula } from "../../../Util/FormulaUtil"
 
 export const data = {
-  baseStat: {
-    characterHP: [1030, 2671, 3554, 5317, 5944, 6839, 7675, 8579, 9207, 10119, 10746, 11669, 12296, 13226],
-    characterATK: [27, 69, 92, 138, 154, 177, 198, 222, 238, 262, 278, 302, 318, 342],
-    characterDEF: [58, 152, 202, 302, 337, 388, 436, 487, 523, 574, 610, 662, 698, 751]
-  },
-  specializeStat: {
-    key: "critDMG_",
-    value: [0, 0, 0, 0, 9.6, 9.6, 19.2, 19.2, 19.2, 19.2, 28.8, 28.8, 38.4, 38.4]
-  },
   normal: {
     hitArr: [
       [89.73, 97.04, 104.34, 114.77, 122.08, 130.43, 141.9, 153.38, 164.86, 177.38, 191.72, 208.6, 225.47, 242.34, 260.75],

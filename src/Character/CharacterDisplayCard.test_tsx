@@ -1,6 +1,5 @@
-import { getAllByText, render, waitFor } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
-import { allCharacterKeys, CharacterKey } from "../Types/consts";
+import { render, waitFor } from "@testing-library/react";
+import { allCharacterKeys, } from "../Types/consts";
 import CharacterDisplayCard from "./CharacterDisplayCard";
 import CharacterSheet from "./CharacterSheet";
 

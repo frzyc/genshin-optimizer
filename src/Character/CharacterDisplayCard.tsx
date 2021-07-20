@@ -9,12 +9,11 @@ import DropdownItem from 'react-bootstrap/esm/DropdownItem';
 import Row from 'react-bootstrap/Row';
 import { ArtifactSheet } from '../Artifact/ArtifactSheet';
 import CustomFormControl from '../Components/CustomFormControl';
-import { ascensionMaxLevel } from '../Data/CharacterData';
+import { ascensionMaxLevel, milestoneLevels } from '../Data/CharacterData';
 import ElementalData from '../Data/ElementalData';
-import { WeaponLevelKeys } from '../Data/WeaponData';
-import CharacterDatabase from '../Database/CharacterDatabase';
+import { database } from '../Database/Database';
 import { ICharacter } from '../Types/character';
-import { allCharacterKeys, allSlotKeys } from '../Types/consts';
+import { allCharacterKeys, allSlotKeys, CharacterKey } from '../Types/consts';
 import ICalculatedStats from '../Types/ICalculatedStats';
 import { usePromise } from '../Util/ReactUtil';
 import { clamp, deepClone } from '../Util/Util';
@@ -50,15 +49,14 @@ const initialCharacter = (characterKey): ICharacter => ({
   ascension: 0,
   hitMode: "avgHit",
   reactionMode: null,
-  equippedArtifacts: Object.fromEntries(allSlotKeys.map(sKey => [sKey, ""])),
+  equippedArtifacts: Object.fromEntries(allSlotKeys.map(sKey => [sKey, ""])) as any,
   conditionalValues: {},
   baseStatOverrides: {},//overriding the baseStat
   weapon: {
-    key: "",
-    levelKey: WeaponLevelKeys[0],
+    key: "" as any,
+    level: 1,
+    ascension: 0,
     refineIndex: 0,
-    overrideMainVal: 0,
-    overrideSubVal: 0,
   },
   talentLevelKeys: {
     auto: 0,
@@ -67,7 +65,6 @@ const initialCharacter = (characterKey): ICharacter => ({
   },
   infusionAura: "",
   constellation: 0,
-  buildSettings: {}//use to reset when changing to a new character, so it would not copy from old character.
 })
 
 type characterReducerOverwrite = {
@@ -90,8 +87,8 @@ function characterReducer(state: ICharacter, action: characterReducerOverwriteAc
   if ("type" in action) switch (action?.type) {
     case "overwrite":
       return { ...state, ...action.character }
-    case "fromDB"://for equipping artifacts, that makes the changes in DB instead of in state.
-      return { ...state, ...CharacterDatabase.get(state.characterKey) ?? {} }
+    case "fromDB": // for equipping artifacts, that makes the changes in DB instead of in state.
+      return { ...state, ...database._getChar(state.characterKey) ?? {} }
     case "statOverride": {
       const { statKey, value, characterSheet, weaponSheet, } = action
       const baseStatOverrides = state.baseStatOverrides
@@ -108,7 +105,7 @@ function characterReducer(state: ICharacter, action: characterReducerOverwriteAc
   return { ...state, ...action }
 }
 type CharacterDisplayCardProps = {
-  characterKey?: string,
+  characterKey?: CharacterKey | "",
   character?: ICharacter,
   setCharacterKey?: (any) => void
   footer?: JSX.Element
@@ -117,7 +114,7 @@ type CharacterDisplayCardProps = {
   onClose?: (any) => void,
   tabName?: string
 }
-export default function CharacterDisplayCard({ characterKey: propCharacterKey, character: propCharacter, setCharacterKey: propSetCharacterKey, footer, newBuild: propNewBuild, editable = false, onClose, tabName }: CharacterDisplayCardProps) {
+export default function CharacterDisplayCard({ characterKey: propCharacterKey = "", character: propCharacter, setCharacterKey: propSetCharacterKey, footer, newBuild: propNewBuild, editable = false, onClose, tabName }: CharacterDisplayCardProps) {
   const [character, characterDispatch] = useReducer(characterReducer, initialCharacter(propCharacterKey))
   const [compareAgainstEquipped, setcompareAgainstEquipped] = useState(false)
   const firstUpdate = useRef(true)
@@ -129,7 +126,7 @@ export default function CharacterDisplayCard({ characterKey: propCharacterKey, c
 
   useEffect(() => {
     if (!propCharacterKey) return
-    const char = { ...initialCharacter(propCharacterKey), ...CharacterDatabase.get(propCharacterKey) ?? {} }
+    const char = { ...initialCharacter(propCharacterKey), ...database._getChar(propCharacterKey) ?? {} }
     characterDispatch({ type: "overwrite", character: char })
   }, [propCharacterKey])
 
@@ -146,7 +143,7 @@ export default function CharacterDisplayCard({ characterKey: propCharacterKey, c
       return
     }
     //save character to DB
-    editable && CharacterDatabase.update(character)
+    editable && database.updateChar(character)
   }, [character, editable])
 
   //callback for when switching to a new character, and need to initiate a weapon.
@@ -168,7 +165,7 @@ export default function CharacterDisplayCard({ characterKey: propCharacterKey, c
   const setCharacterKey = useCallback(
     newCKey => {
       let state = initialCharacter(newCKey)
-      const char = CharacterDatabase.get(newCKey)
+      const char = database._getChar(newCKey)
       if (char) state = { ...state, ...char }
       characterDispatch({ type: "overwrite", character: state })
       if (newCKey !== characterKey)
@@ -261,22 +258,6 @@ export default function CharacterDisplayCard({ characterKey: propCharacterKey, c
   </Card>)
 }
 
-const levelSelector = [
-  [90, 6],
-  [80, 6],
-  [80, 5],
-  [70, 5],
-  [70, 4],
-  [60, 4],
-  [60, 3],
-  [50, 3],
-  [50, 2],
-  [40, 2],
-  [40, 1],
-  [20, 1],
-  [20, 0],
-  [1, 0]
-] as const
 type CharSelectDropdownProps = {
   characterSheet?: CharacterSheet,
   weaponSheet?: WeaponSheet,
@@ -326,16 +307,16 @@ function CharSelectDropdown({ characterSheet, weaponSheet, character, character:
     </InputGroup.Prepend>
 
     <InputGroup.Append>
-      <CustomFormControl placeholder={undefined} className="h-100" onChange={setLevel} value={level} min={1} max={90} />
+      <CustomFormControl placeholder={undefined} className="h-100" onChange={setLevel} value={level} min={1} max={90} disabled={!characterSheet} />
     </InputGroup.Append>
     <InputGroup.Append>
-      <Button disabled={!ambiguousLevel} onClick={setAscension}><strong>/ {ascensionMaxLevel[ascension]}</strong></Button>
+      <Button disabled={!ambiguousLevel || !characterSheet} onClick={setAscension}><strong>/ {ascensionMaxLevel[ascension]}</strong></Button>
     </InputGroup.Append>
     <ButtonGroup as={InputGroup.Append}>
-      <Dropdown as={ButtonGroup}>
-        <Dropdown.Toggle as={Button}>Select Level</Dropdown.Toggle>
+      <Dropdown as={ButtonGroup} >
+        <Dropdown.Toggle as={Button} disabled={!characterSheet}>Select Level</Dropdown.Toggle>
         <Dropdown.Menu>
-          {levelSelector.map(([lv, as]) => {
+          {milestoneLevels.map(([lv, as]) => {
             const sameLevel = lv === ascensionMaxLevel[as]
             const lvlstr = sameLevel ? `Lv. ${lv}` : `Lv. ${lv}/${ascensionMaxLevel[as]}`
             return <DropdownItem key={`${lv}/${as}`} onClick={() => characterDispatch({ level: lv, ascension: as })}>{lvlstr}</DropdownItem>

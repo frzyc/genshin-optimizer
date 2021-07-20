@@ -18,6 +18,9 @@ import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { IConditionals } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
+import { Translate } from '../../../Components/Translate'
+import { plungeDocSection, talentTemplate } from '../SheetUtil'
+const tr = (strKey: string) => <Translate ns="char_ningguang_gen" key18={strKey} />
 const conditionals: IConditionals = {
   a4: { // StrategicReserve
     canShow: stats => stats.ascension >= 4,
@@ -38,15 +41,15 @@ const conditionals: IConditionals = {
   }
 }
 const char: ICharacterSheet = {
-  name: "Ningguang",
+  name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   star: 4,
   elementKey: "geo",
   weaponTypeKey: "catalyst",
   gender: "F",
-  constellationName: "Opus Aequilibrium",
-  titles: ["Eclipsing Star", "Lady of the Jade Chamber", "Tianquan of the Liyue Qixing"],
+  constellationName: tr("constellationName"),
+  title: tr("title"),
   baseStat: data_gen.base,
   baseStatCurve: data_gen.curves,
   ascensions: data_gen.ascensions,
@@ -55,70 +58,45 @@ const char: ICharacterSheet = {
     conditionals,
     sheets: {
       auto: {
-        name: "Sparkling Scatter",
+        name: tr("auto.name"),
         img: normal,
-        sections: [{
-          text: stats => <span><strong>Normal Attack</strong> Shoots gems that deal <span className="text-geo">{stats.constellation >= 1 ? "AoE " : ""}Geo DMG</span>. Upon hit, this grants Ningguang 1 Star Jade.</span>,
-          fields: [{
-            text: `Normal Attack DMG`,
-            formulaText: stats => <span>{data.normal.hit[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
-            formula: formula.normal.hit,
-            variant: stats => getTalentStatKeyVariant("normal", stats),
-          }]
-        }, {
-          text: <span><strong>Charged Attack</strong> Consumes a certain amount of stamina to fire off a giant gem that deals <span className="text-geo">Geo DMG</span>. If Ningguang has any Star Jades, unleashing a Charged Attack will cause the Star Jades to be fired at the enemy as well, dealing additional DMG.</span>,
-          fields: [{
-            text: `Charged Attack DMG`,
-            formulaText: stats => <span>{data.charged.dmg[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
-            formula: formula.charged.dmg,
-            variant: stats => getTalentStatKeyVariant("charged", stats),
+        sections: [
+          {
+            text: stats => <span><strong>Normal Attack</strong> Shoots gems that deal <span className="text-geo">{stats.constellation >= 1 ? "AoE " : ""}Geo DMG</span>. Upon hit, this grants Ningguang 1 Star Jade.</span>,
+            fields: [{
+              text: `Normal Attack DMG`,
+              formulaText: stats => <span>{data.normal.hit[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
+              formula: formula.normal.hit,
+              variant: stats => getTalentStatKeyVariant("normal", stats),
+            }, {
+              canShow: stats => stats.constellation >= 1,
+              text: <span>Gems do <span className="text-geo">AoE Geo DMG</span></span>,
+            }]
           }, {
-            text: `DMG per Star Jade`,
-            formulaText: stats => <span>{data.charged.jade[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
-            formula: formula.charged.jade,
-            variant: stats => getTalentStatKeyVariant("charged", stats),
-          }, {
-            text: `Stamina Cost`,
-            value: stats => <span>50{(stats.ascension >= 1 ? <span>; With <b>Star Jade</b>: 0</span> : "")}</span>,
-          }]
-        }, {
-          text: <span><strong>Plunging Attack</strong> Gathering the might of Geo, Ningguang plunges toward the ground from mid-air, damaging all opponents in her path. Deals <span className="text-geo">AoE Geo DMG</span> upon impact with the ground.</span>,
-          fields: [{
-            text: `Plunge DMG`,
-            formulaText: stats => <span>{data.plunging.dmg[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-            formula: formula.plunging.dmg,
-            variant: stats => getTalentStatKeyVariant("plunging", stats),
-          }, {
-            text: `Low Plunge DMG`,
-            formulaText: stats => <span>{data.plunging.low[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-            formula: formula.plunging.low,
-            variant: stats => getTalentStatKeyVariant("plunging", stats),
-          }, {
-            text: `High Plunge DMG`,
-            formulaText: stats => <span>{data.plunging.high[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-            formula: formula.plunging.high,
-            variant: stats => getTalentStatKeyVariant("plunging", stats),
-          }]
-        }],
+            text: <span><strong>Charged Attack</strong> Consumes a certain amount of stamina to fire off a giant gem that deals <span className="text-geo">Geo DMG</span>. If Ningguang has any Star Jades, unleashing a Charged Attack will cause the Star Jades to be fired at the enemy as well, dealing additional DMG.</span>,
+            fields: [{
+              text: `Charged Attack DMG`,
+              formulaText: stats => <span>{data.charged.dmg[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
+              formula: formula.charged.dmg,
+              variant: stats => getTalentStatKeyVariant("charged", stats),
+            }, {
+              text: `DMG per Star Jade`,
+              formulaText: stats => <span>{data.charged.jade[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
+              formula: formula.charged.jade,
+              variant: stats => getTalentStatKeyVariant("charged", stats),
+            }, {
+              text: `Stamina Cost`,
+              value: stats => <span>50{(stats.ascension >= 1 ? <span>; With <b>Star Jade</b>: 0</span> : "")}</span>,
+            }]
+          },
+          plungeDocSection(tr, formula, data),
+        ],
       },
       skill: {
-        name: "Jade Screen",
+        name: tr("skill.name"),
         img: skill,
         sections: [{
-          text: <span>
-            <p className="mb-2">
-              Ningguang creates a Jade Screen out of gold, obsidian and her great opulence, dealing <span className="text-geo">AoE Geo DMG</span>.
-          </p>
-            <h6>Jade Screen</h6>
-            <ul className="mb-1">
-              <li>Blocks opponents' projectiles.</li>
-              <li>Endurance scales based on Ningguang's Max HP.</li>
-            </ul>
-            <p>
-              Jade Screen is considered a <span className="text-geo">Geo Construct</span> and can be used to block certain attacks, but cannot be climbed. Only one Jade Screen may exist at a time.
-            Generates 3 elemental particles when it hits at least 1 target.
-          </p>
-          </span>,
+          text: tr("skill.description"),
           fields: [{
             text: "Inherited HP",
             formulaText: stats => <span>{data.skill.inheri_hp[stats.tlvl.skill]}% {Stat.printStat("finalHP", stats)}</span>,
@@ -138,13 +116,10 @@ const char: ICharacterSheet = {
         }],
       },
       burst: {
-        name: "Starshatter",
+        name: tr("burst.name"),
         img: burst,
         sections: [{
-          text: <span>
-            Gathering a great number of gems, Ningguang scatters them all at once, sending homing projectiles at her opponents that deal massive <span className="text-geo">Geo DMG</span>.
-          If Starshatter is cast when a <b>Jade Screen</b> is nearby, the Jade Screen will fire additional gem projectiles at the same time.
-        </span>,
+          text: tr("burst.description"),
           fields: [{
             text: "DMG Per Gem",
             formulaText: stats => <span>{data.burst.dmg_per_gem[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
@@ -163,59 +138,29 @@ const char: ICharacterSheet = {
           }]
         }],
       },
-      passive1: {
-        name: "Backup Plan",
-        img: passive1,
-        sections: [{ text: <span>When Ningguang is in possession of <b>Star Jades</b>, her <b>Charged Attack</b> does not consume Stamina.</span> }],
-      },
+      passive1: talentTemplate("passive1", tr, passive1),
       passive2: {
-        name: "Strategic Reserve",
+        name: tr("passive2.name"),
         img: passive2,
         sections: [{
-          text: <span>A character that passes through the <b>Jade Screen</b> will gain a 12% <span className="text-geo">Geo DMG Bonus</span> for 10s.</span>,
+          text: tr("passive2.description"),
           conditional: conditionals.a4
         }],
       },
-      passive3: {
-        name: "Trove of Marvelous Treasures",
-        img: passive3,
-        sections: [{ text: <span>Displays the location of nearby ore veins (Iron Ore, White Iron Ore, Crystal Ore, Magical Crystal Ore, and Starsilver) on the mini-map.</span> }],
-      },
-      constellation1: {
-        name: "Piercing Fragments",
-        img: c1,
-        sections: [{ text: <span>When a <b>Normal Attack</b> hits, it deals AoE DMG.</span> }],
-      },
-      constellation2: {
-        name: "Shock Effect",
-        img: c2,
-        sections: [{ text: <span>	When <b>Jade Screen</b> is shattered, its CD will reset. This effect can only take place every 6 seconds.</span> }],
-      },
-      constellation3: {
-        name: "Majesty be the Array of Stars",
-        img: c3,
-        sections: [{ text: <span>	Increases Starshatter's skill level by 3. Max level is 15.</span> }],
-        stats: { burstBoost: 3 }
-      },
+      ive3: talentTemplate("passive3", tr, passive3),
+      constellation1: talentTemplate("constellation1", tr, c1),
+      constellation2: talentTemplate("constellation2", tr, c2),
+      constellation3: talentTemplate("constellation3", tr, c3, { burstBoost: 3 }),
       constellation4: {
-        name: "Exquisite be the Jade, Outshining All Beneath",
+        name: tr("constellation4.name"),
         img: c4,
         sections: [{
-          text: <span>Allies within a 10m radius of the Jade Screen take 10% less Elemental DMG.</span>,
+          text: tr("constellation4.description"),
           conditional: conditionals.c4
         }],
       },
-      constellation5: {
-        name: "Invincible be the Jade Screen",
-        img: c5,
-        sections: [{ text: <span>Increases <b>Jade Screen</b>'s skill level by 3. Max level is 15.</span> }],
-        stats: { skillBoost: 3 }
-      },
-      constellation6: {
-        name: "Grandeur be the Seven Stars",
-        img: c6,
-        sections: [{ text: <span>When Starshatter is used, Ningguang gains 7 Star Jades.</span> }],
-      }
+      constellation5: talentTemplate("constellation5", tr, c5, { skillBoost: 3 }),
+      constellation6: talentTemplate("constellation6", tr, c6),
     },
   },
 };

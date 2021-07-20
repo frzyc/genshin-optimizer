@@ -18,6 +18,9 @@ import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { ICharacterSheet } from '../../../Types/character'
 import { IConditionals } from '../../../Types/IConditional'
+import { Translate } from '../../../Components/Translate'
+import { bowChargedDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
+const tr = (strKey: string) => <Translate ns="char_amber_gen" key18={strKey} />
 const conditionals: IConditionals = {
   c6: { // Wildfire
     canShow: stats => stats.constellation >= 6,
@@ -44,15 +47,15 @@ const conditionals: IConditionals = {
   }
 }
 const char: ICharacterSheet = {
-  name: "Amber",
+  name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   star: 4,
   elementKey: "pyro",
   weaponTypeKey: "bow",
   gender: "F",
-  constellationName: "Lepus",
-  titles: ["Outrider", "Champion Glider"],
+  constellationName: tr("constellationName"),
+  title: tr("title"),
   baseStat: data_gen.base,
   baseStatCurve: data_gen.curves,
   ascensions: data_gen.ascensions,
@@ -61,7 +64,7 @@ const char: ICharacterSheet = {
     conditionals,
     sheets: {
       auto: {
-        name: "Sharpshooter",
+        name: tr("auto.name"),
         img: normal,
         sections: [{
           text: <span><strong>Normal Attack</strong> Perform up to 5 consecutive shots with a bow.</span>,
@@ -72,54 +75,14 @@ const char: ICharacterSheet = {
             formula: formula.normal[i],
             variant: stats => getTalentStatKeyVariant("normal", stats),
           }))
-        }, {
-          text: <span><strong>Charged Attack </strong> Perform a more precise Aimed Shot with increased DMG. While aiming, flames will accumulate on the arrowhead. A fully charged flaming arrow will deal <span className="text-pyro">Pyro DMG</span>.</span>,
-          fields: [{
-            text: `Aimed Shot DMG`,
-            formulaText: stats => <span>{data.charged.aimedShot[stats.tlvl.auto]} % {Stat.printStat(getTalentStatKey("charged", stats), stats)} </span>,
-            formula: formula.charged.aimShot,
-            variant: stats => getTalentStatKeyVariant("charged", stats),
-          }, {
-            text: <span>Fully - Charged Aimed Shot DMG</span>,
-            formulaText: stats => <span>{data.charged.fullAimedShot[stats.tlvl.auto]} % {Stat.getStatName(getTalentStatKey("charged", stats, "pyro"))} </span>,
-            formula: formula.charged.fullAimedShot,
-            variant: stats => getTalentStatKeyVariant("charged", stats, "pyro"),
-          }]
-        }, {
-          text: <span><strong>Plunging Attack </strong> Fires off a shower of arrows in mid-air before falling an striking the ground, dealing AoE DMG upon impact.</span>,
-          fields: [{
-            text: `Plunge DMG`,
-            formulaText: stats => <span>{data.plunging.dmg[stats.tlvl.auto]} % {Stat.printStat(getTalentStatKey("plunging", stats), stats)} </span>,
-            formula: formula.plunging.dmg,
-            variant: stats => getTalentStatKeyVariant("plunging", stats),
-          }, {
-            text: `Low Plunge DMG`,
-            formulaText: stats => <span>{data.plunging.low[stats.tlvl.auto]} % {Stat.printStat(getTalentStatKey("plunging", stats), stats)} </span>,
-            formula: formula.plunging.low,
-            variant: stats => getTalentStatKeyVariant("plunging", stats),
-          }, {
-            text: `High Plunge DMG`,
-            formulaText: stats => <span>{data.plunging.high[stats.tlvl.auto]} % {Stat.printStat(getTalentStatKey("plunging", stats), stats)} </span>,
-            formula: formula.plunging.high,
-            variant: stats => getTalentStatKeyVariant("plunging", stats),
-          }]
-        }],
+        }, bowChargedDocSection(tr, formula, data, "pyro"),
+        plungeDocSection(tr, formula, data)],
       },
       skill: {
-        name: "Explosive Puppet",
+        name: tr("skill.name"),
         img: skill,
         sections: [{
-          text: <span>
-            <p className="mb-2"> The ever- reliable Baron Bunny takes the stage.</p>
-            < h6> Baron Bunny: </h6>
-            < ul className="mb-2">
-              <li>Continuously taunts the enemy, drawing their fire.</li>
-              < li> Baron Bunny's HP scales with Amber's Max HP.</li>
-              < li> When destroyed or when its timer expires, Baron Bunny explodes, dealing AoE < span className="text-pyro"> Pyro DMG </span>.</li>
-              <li>Generate 4 elemental particles when it hit at least 1 target.</li>
-            </ul>
-            < p className="mb-0"> <strong>Hold: </strong> Adjusts the throwing direction of Baron Bunny. The longer the button is held, the further the throw.</p>
-          </span>,
+          text: tr("skill.description"),
           fields: [{
             text: "Inherited HP",
             formulaText: stats => <span>{data.skill.hp[stats.tlvl.skill]} % {Stat.printStat("finalHP", stats)} </span>,
@@ -146,10 +109,10 @@ const char: ICharacterSheet = {
         }],
       },
       burst: {
-        name: "Fiery Rain",
+        name: tr("burst.name"),
         img: burst,
         sections: [{
-          text: <span>Fires off a shower of arrows, dealing continuous<span className="text-pyro">AoE Pyro DMG</span>.</span>,
+          text: tr("burst.description"),
           fields: [{
             text: "DMG Per Wave",
             formulaText: stats => <span>{data.burst.dmgPerWave[stats.tlvl.burst]} % {Stat.printStat(getTalentStatKey("burst", stats), stats)} </span>,
@@ -184,74 +147,31 @@ const char: ICharacterSheet = {
           burst_critRate_: 10
         }) : null,
       },
-      passive1: {
-        name: "Every Arrow Finds Its Target",
-        img: passive1,
-        sections: [{ text: <span>Increases the CRIT Rate of<b>Fiery Rain</b> by 10 % and widens its AoE by 30 %.</span> }],
-      },
+      passive1: talentTemplate("passive1", tr, passive1),
       passive2: {
-        name: "Precise Shot",
+        name: tr("passive2.name"),
         img: passive2,
         sections: [{
-          text: <span>Aimed Shot hits on weak spots increase ATK by 15% for 10s.</span>,
+          text: tr("passive2.description"),
           conditional: conditionals.a4
         }],
       },
       passive3: {
-        name: "Gliding Champion",
+        name: tr("passive3.name"),
         img: passive3,
         sections: [{
-          text: <span>
-            Decreases gliding Stamina consumption for your own party members by 20%.
-            Not stackable with Passive Talents that provide the exact same effects.
-      </span>
+          text: tr("passive3.description"),
         }],
         stats: {
           staminaGlidingDec_: 20,
         }
       },
-      constellation1: {
-        name: "One Arrow to Rule Them All",
-        img: c1,
-        sections: [{
-          text: <span>
-            Fires 2 arrows per<b>Aimed Shot</b>.The second arrow deals 20 % of the first arrow's DMG.
-        The second arrow is fired 10 degrees vertically below actual aiming, has separate critical, and also makes the primary shot travel further before it starts dropping down.
-      </span>
-        }],
-      },
-      constellation2: {
-        name: "Bunny Triggered",
-        img: c2,
-        sections: [{
-          text: <span>
-            Baron Bunny, new and improved! Hitting<b>Baron Bunny</b> 's foot with a fully-charged <b>Aimed Shot</b> manually detonates it.
-          Explosion via manual detonation deals 200 % additional DMG.
-        </span>
-        }]
-      },
-      constellation3: {
-        name: "It Burns!",
-        img: c3,
-        sections: [{ text: <span>Increases the level of<b>Fiery Rain</b> by 3. Maximum upgrade level is 15. </span> }],
-        stats: { burstBoost: 3 }
-      },
-      constellation4: {
-        name: "It's Not Just Any Doll...",
-        img: c4,
-        sections: [{ text: <span>Decreases < b> Explosive Puppet</b>'s CD by 20%. Adds 1 additional charge.</span> }]
-      },
-      constellation5: {
-        name: "It's Baron Bunny!",
-        img: c5,
-        sections: [{ text: <span>Increases the level of<b>Explosive Puppet</b> by 3. Maximum upgrade level is 15. </span> }],
-        stats: { skillBoost: 3 }
-      },
-      constellation6: {
-        name: "Wildfire",
-        img: c6,
-        sections: [{ text: <span><b>Fiery Rain</b> increases the entire party's Movement SPD by 15% and ATK by 15% for 10s.</span> }]
-      },
+      constellation1: talentTemplate("constellation1", tr, c1),
+      constellation2: talentTemplate("constellation2", tr, c2),
+      constellation3: talentTemplate("constellation3", tr, c3, { burstBoost: 3 }),
+      constellation4: talentTemplate("constellation4", tr, c4),
+      constellation5: talentTemplate("constellation5", tr, c5, { skillBoost: 3 }),
+      constellation6: talentTemplate("constellation6", tr, c6),
     },
   },
 };

@@ -1,29 +1,29 @@
-import { faEdit, faGavel, faQuoteLeft, faSave, faUndo } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import React, { useState } from "react"
-import { Badge, Button, Card, Col, Dropdown, DropdownButton, Image, InputGroup, ListGroup, Row } from "react-bootstrap"
-import Assets from "../../Assets/Assets"
-import ConditionalDisplay from "../../Components/ConditionalDisplay"
-import CustomFormControl from "../../Components/CustomFormControl"
-import DocumentDisplay from "../../Components/DocumentDisplay"
-import FieldDisplay from "../../Components/FieldDisplay"
-import { Stars } from "../../Components/StarDisplay"
-import StatDisplay from "../../Components/StatDisplay"
-import { StatIconEle } from "../../Components/StatIcon"
-import Conditional from "../../Conditional/Conditional"
-import { LevelNameData } from "../../Data/WeaponData"
-import Stat from "../../Stat"
-import { ICharacter } from "../../Types/character"
-import { allElements, characterSpecializedStatKeys } from "../../Types/consts"
-import ICalculatedStats from "../../Types/ICalculatedStats"
-import { IConditionals } from "../../Types/IConditional"
-import statsToFields from "../../Util/FieldUtil"
-import { usePromise } from "../../Util/ReactUtil"
-import Weapon from "../../Weapon/Weapon"
-import WeaponSheet from "../../Weapon/WeaponSheet"
-import Character from "../Character"
-import CharacterSheet from "../CharacterSheet"
-import StatInput from "../StatInput"
+import { faEdit, faQuoteLeft, faSave } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useCallback, useState } from "react";
+import { Badge, Button, ButtonGroup, Card, Col, Dropdown, Image, InputGroup, ListGroup, Row } from "react-bootstrap";
+import Assets from "../../Assets/Assets";
+import ConditionalDisplay from "../../Components/ConditionalDisplay";
+import CustomFormControl from '../../Components/CustomFormControl';
+import DocumentDisplay from "../../Components/DocumentDisplay";
+import FieldDisplay from "../../Components/FieldDisplay";
+import { Stars } from "../../Components/StarDisplay";
+import StatDisplay from "../../Components/StatDisplay";
+import { StatIconEle } from "../../Components/StatIcon";
+import Conditional from "../../Conditional/Conditional";
+import { ascensionMaxLevel, milestoneLevels } from "../../Data/CharacterData";
+import Stat from "../../Stat";
+import { ICharacter } from "../../Types/character";
+import { allElements, allRarities } from "../../Types/consts";
+import ICalculatedStats from "../../Types/ICalculatedStats";
+import { IConditionals } from "../../Types/IConditional";
+import statsToFields from "../../Util/FieldUtil";
+import { usePromise } from "../../Util/ReactUtil";
+import { clamp } from "../../Util/Util";
+import WeaponSheet from "../../Weapon/WeaponSheet";
+import Character from "../Character";
+import CharacterSheet from "../CharacterSheet";
+import StatInput from "../StatInput";
 type CharacterOverviewPaneProps = {
   characterSheet: CharacterSheet;
   weaponSheet: WeaponSheet
@@ -84,22 +84,26 @@ function WeaponStatsCard({ title, statsVals = {}, stats }: { title: Displayable,
   </Card>
 }
 
-
-function WeaponStatsEditorCardWeaponDropdown({ weaponSheet, weaponTypeKey, setStateWeapon }: { weaponSheet: WeaponSheet, weaponTypeKey: string, setStateWeapon: (key: any, value: any) => void }) {
+function WeaponDropdown({ weaponSheet, weaponTypeKey, setStateWeapon }: { weaponSheet: WeaponSheet, weaponTypeKey: string, setStateWeapon: (key: any, value: any) => void }) {
   const weaponSheets = usePromise(WeaponSheet.getAll(), [])
   if (!weaponSheets) return null
 
-  return <DropdownButton title={weaponSheet.name}>
-    {[...Array(5).keys()].reverse().map(key => key + 1).map((star, i, arr) => <React.Fragment key={star}>
-      <Dropdown.ItemText key={"star" + star}><Stars stars={star} /></Dropdown.ItemText>
-      {Object.entries(WeaponSheet.getWeaponsOfType(weaponSheets, weaponTypeKey)).filter(([, weaponObj]: any) => weaponObj.rarity === star).map(([key, weaponObj]: any) =>
-        <Dropdown.Item key={key} onClick={() => setStateWeapon("key", key)}>
-          {weaponObj.name}
-        </Dropdown.Item>
-      )}
-      {(i !== arr.length - 1) && < Dropdown.Divider />}
-    </React.Fragment>)}
-  </DropdownButton>
+  return <Dropdown as={ButtonGroup}>
+    <Dropdown.Toggle as={Button}>
+      {weaponSheet.name}
+    </Dropdown.Toggle>
+    <Dropdown.Menu>
+      {allRarities.map((stars, i, arr) => <React.Fragment key={stars}>
+        <Dropdown.ItemText key={"star" + stars}><Stars stars={stars} /></Dropdown.ItemText>
+        {Object.entries(WeaponSheet.getWeaponsOfType(weaponSheets, weaponTypeKey)).filter(([, weaponObj]: any) => weaponObj.rarity === stars).map(([key, weaponObj]: any) =>
+          <Dropdown.Item key={key} onClick={() => setStateWeapon("key", key)}>
+            {weaponObj.name}
+          </Dropdown.Item>
+        )}
+        {(i !== arr.length - 1) && < Dropdown.Divider />}
+      </React.Fragment>)}
+    </Dropdown.Menu>
+  </Dropdown>
 }
 
 type WeaponStatsEditorCardProps = {
@@ -112,13 +116,10 @@ type WeaponStatsEditorCardProps = {
   newBuild?: ICalculatedStats
 }
 function WeaponStatsEditorCard({ characterSheet, weaponSheet, editable, character, character: { weapon }, characterDispatch, equippedBuild, newBuild }: WeaponStatsEditorCardProps) {
-  const [editing, SetEditing] = useState(false)
-  const [showDescription, setShowDescription] = useState(false)
   //choose which one to display stats for
   const build = newBuild ? newBuild : equippedBuild
-  if (!build) return null
-
-  const setStateWeapon = (key, value) => {
+  const { level, ascension } = weapon
+  const setStateWeapon = useCallback((key, value) => {
     if (key === "key") {
       if (value === weapon.key) return
       else {
@@ -128,13 +129,30 @@ function WeaponStatsEditorCard({ characterSheet, weaponSheet, editable, characte
         characterDispatch({ conditionalValues })
       }
     }
-    character.weapon[key] = value
-    characterDispatch({ weapon: character.weapon })
-  }
-  const substatKey = Weapon.getWeaponSubstatKey(weaponSheet)
+    weapon[key] = value
+    characterDispatch({ weapon: weapon })
+  }, [character, weapon, characterDispatch])
+
+  const setLevel = useCallback((newLevel) => {
+    newLevel = clamp(newLevel, 1, 90)
+    const ascension = ascensionMaxLevel.findIndex(ascenML => newLevel <= ascenML)
+    setStateWeapon("level", newLevel)
+    setStateWeapon("ascension", ascension)
+  }, [setStateWeapon])
+
+  const ambiguousLevel = ascensionMaxLevel.findIndex(ascenML => level === ascenML) > 0
+  const setAscension = useCallback(() => {
+    const lowerAscension = ascensionMaxLevel.findIndex(ascenML => level === ascenML)
+    if (ascension === lowerAscension) setStateWeapon("ascension", ascension + 1)
+    else setStateWeapon("ascension", lowerAscension)
+  }, [setStateWeapon, ascension, level])
+
+  if (!build) return null
+
+  const substatKey = weaponSheet.getSubStatKey()
   const weaponTypeKey = characterSheet.weaponTypeKey
-  const weaponDisplayMainVal = weapon.overrideMainVal || Weapon.getWeaponMainStatVal(weaponSheet, weapon.levelKey)
-  const weaponDisplaySubVal = weapon.overrideSubVal || Weapon.getWeaponSubstatVal(weaponSheet, weapon.levelKey)
+  const weaponDisplayMainVal = weaponSheet.getMainStatValue(level, ascension)
+  const weaponDisplaySubVal = weaponSheet.getSubStatValue(level, ascension)
   const weaponPassiveName = weaponSheet.passiveName
   const weaponBonusStats = weaponSheet.stats(build)
   const conditionals = Conditional.conditionals.weapon[weapon.key] as IConditionals
@@ -143,94 +161,68 @@ function WeaponStatsEditorCard({ characterSheet, weaponSheet, editable, characte
     <Card.Header>
       <Row>
         <Col>
-          <span>Weapon</span>
+          {editable ? <InputGroup >
+            <ButtonGroup as={InputGroup.Prepend}>
+              <WeaponDropdown weaponSheet={weaponSheet} weaponTypeKey={weaponTypeKey} setStateWeapon={setStateWeapon} />
+              <Dropdown as={ButtonGroup}>
+                <Dropdown.Toggle as={Button}>Refinement {weapon.refineIndex + 1}</Dropdown.Toggle>
+                <Dropdown.Menu>
+                  <Dropdown.ItemText>
+                    <span>Select Weapon Refinement</span>
+                  </Dropdown.ItemText>
+                  <Dropdown.Divider />
+                  {[...Array(5).keys()].map(key =>
+                    <Dropdown.Item key={key} onClick={() => setStateWeapon("refineIndex", key)}>
+                      {`Refinement ${key + 1}`}
+                    </Dropdown.Item>)}
+                </Dropdown.Menu>
+              </Dropdown>
+            </ButtonGroup>
+            <InputGroup.Prepend>
+              <InputGroup.Text><strong>Lvl. </strong></InputGroup.Text>
+            </InputGroup.Prepend>
+            <InputGroup.Append>
+              <CustomFormControl placeholder={undefined} onChange={setLevel} value={level} min={1} max={90} />
+            </InputGroup.Append>
+            <InputGroup.Append>
+              <Button disabled={!ambiguousLevel} onClick={setAscension}><strong>/ {ascensionMaxLevel[ascension]}</strong></Button>
+            </InputGroup.Append>
+            <ButtonGroup as={InputGroup.Append}>
+              <Dropdown as={ButtonGroup}>
+                <Dropdown.Toggle as={Button}>Select Level</Dropdown.Toggle>
+                <Dropdown.Menu>
+                  {milestoneLevels.map(([lv, as]) => {
+                    const sameLevel = lv === ascensionMaxLevel[as]
+                    const lvlstr = sameLevel ? `Lv. ${lv}` : `Lv. ${lv}/${ascensionMaxLevel[as]}`
+                    return <Dropdown.Item key={`${lv}/${as}`} onClick={() => { setStateWeapon("level", lv); setStateWeapon("ascension", as) }}>{lvlstr}</Dropdown.Item>
+                  })}
+                </Dropdown.Menu>
+              </Dropdown>
+            </ButtonGroup>
+          </InputGroup> : <span>Weapon</span>}
         </Col>
-        <Col xs="auto">
-          <Button variant="info" size="sm" onClick={() => setShowDescription(!showDescription)}>
-            <span><FontAwesomeIcon icon={faQuoteLeft} /> {showDescription ? "Hide Desc." : "Show Desc."}</span>
-          </Button>
-        </Col>
-        {editable ? <Col xs="auto" >
-          <Button variant={editing ? "danger" : "info"} onClick={() => SetEditing(!editing)} size="sm">
-            <span><FontAwesomeIcon icon={editing ? faSave : faEdit} /> {editing ? "EXIT" : "EDIT"}</span>
-          </Button>
-        </Col> : null}
       </Row>
     </Card.Header>
     <Card.Body >
       <Row className="mb-n2">
         <Col xs={12} md={3} lg={4}>
           <Image src={weaponSheet.img} className={`w-100 h-auto grad-${weaponSheet.rarity}star`} thumbnail />
+          <small>{weaponSheet.description}</small>
         </Col>
-        {editing ? <Col>
-          <Row>
-            <Col lg="auto" xs={6} className="mb-2 pr-0">
-              <WeaponStatsEditorCardWeaponDropdown weaponSheet={weaponSheet} weaponTypeKey={weaponTypeKey} setStateWeapon={setStateWeapon} />
-            </Col>
-            <Col lg="auto" xs={6} className="mb-2 pr-0">
-              <DropdownButton title={Weapon.getLevelName(weapon.levelKey)}>
-                <Dropdown.ItemText>
-                  <span>Select Weapon Level</span>
-                </Dropdown.ItemText>
-                {Object.entries(LevelNameData).reverse().map(([key, name]) =>
-                  <Dropdown.Item key={key} onClick={() => setStateWeapon("levelKey", key)}>
-                    {name}
-                  </Dropdown.Item>)}
-              </DropdownButton>
-            </Col>
-            {weaponPassiveName && <Col lg="auto" xs={6} className="mb-2">
-              <DropdownButton title={`Refinement ${weapon.refineIndex + 1}`} className="w-100">
-                <Dropdown.ItemText>
-                  <span>Select Weapon Refinement</span>
-                </Dropdown.ItemText>
-                <Dropdown.Divider />
-                {[...Array(5).keys()].map(key =>
-                  <Dropdown.Item key={key} onClick={() => setStateWeapon("refineIndex", key)}>
-                    {`Refinement ${key + 1}`}
-                  </Dropdown.Item>)}
-              </DropdownButton>
-            </Col>}
-            <Col xs={12} className="mb-2">
-              <StatInput
-                prependEle={undefined}
-                disabled={undefined}
-                name={<span><FontAwesomeIcon icon={faGavel} className="mr-2" />ATK</span>}
-                placeholder="Weapon Attack"
-                value={weaponDisplayMainVal}
-                percent={false}
-                onValueChange={(value) => setStateWeapon("overrideMainVal", value)}
-                defaultValue={Weapon.getWeaponMainStatVal(weaponSheet, weapon.levelKey)}
-              />
-            </Col>
-            {substatKey && <Col xs={12} className="mb-2">
-              <StatInput
-                prependEle={undefined}
-                disabled={undefined}
-                name={<span><span className="mr-2">{StatIconEle(substatKey)}</span>{Stat.getStatName(substatKey)}</span>}
-                placeholder="Weapon Substat"
-                value={weaponDisplaySubVal}
-                percent={Stat.getStatUnit(substatKey) === "%"}
-                onValueChange={(value) => setStateWeapon("overrideSubVal", value)}
-                defaultValue={Weapon.getWeaponSubstatVal(weaponSheet, weapon.levelKey)}
-              />
-            </Col>}
-          </Row>
-        </Col> :
-          <Col>
-            <h5 className="mb-0">{weaponSheet.name} {Weapon.getLevelName(weapon.levelKey)} {weaponPassiveName && `(Refinement ${weapon.refineIndex + 1})`}</h5>
-            <div className="mb-2"><Stars stars={weaponSheet.rarity} /></div>
-            <h6>{weaponPassiveName}</h6>
-            <div className="mb-2">{weaponPassiveName && weaponSheet.passiveDescription(build)}</div>
-            <WeaponStatsCard title={"Main Stats"} statsVals={{ atk: weaponDisplayMainVal, [substatKey]: weaponDisplaySubVal }} stats={build} />
-            <WeaponStatsCard title={"Bonus Stats"} statsVals={weaponBonusStats} stats={build} />
-            {/* TODO: remove conditionals display here in lieu of document once sheets are converted*/}
-            {Boolean(conditionals) && Object.entries(conditionals).map(([stateKey, conditional]) =>
-              <ConditionalDisplay key={stateKey as any} {...{ conditional, equippedBuild, newBuild, characterDispatch, editable }} fieldClassName="py-2 px-3" />)}
+        <Col>
+          <h5 className="mb-0">{weaponSheet.name} Lv. {WeaponSheet.getLevelString(weapon)} {weaponPassiveName && <Badge variant="info">Refinement {weapon.refineIndex + 1}</Badge>}</h5>
+          <div className="mb-2"><Stars stars={weaponSheet.rarity} /></div>
+          <h6>{weaponPassiveName}</h6>
+          <div className="mb-2">{weaponPassiveName && weaponSheet.passiveDescription(build)}</div>
+          <WeaponStatsCard title={"Main Stats"} statsVals={{ atk: weaponDisplayMainVal, [substatKey]: substatKey ? weaponDisplaySubVal : undefined }} stats={build} />
+          <WeaponStatsCard title={"Bonus Stats"} statsVals={weaponBonusStats} stats={build} />
+          {/* TODO: remove conditionals display here in lieu of document once sheets are converted*/}
+          {!Boolean(document) && Boolean(conditionals) && Object.entries(conditionals).map(([stateKey, conditional]) =>
+            <ConditionalDisplay key={stateKey as any} {...{ conditional, equippedBuild, newBuild, characterDispatch, editable }} fieldClassName="py-2 px-3" />)}
 
-            {document ? <DocumentDisplay {...{ sections: document, equippedBuild, newBuild, characterDispatch, editable }} /> : null}
-          </Col>}
+          {document ? <DocumentDisplay {...{ sections: document, equippedBuild, newBuild, characterDispatch, editable }} /> : null}
+        </Col>
       </Row>
-      {showDescription && <small>{weaponSheet.description}</small>}
     </Card.Body>
   </Card>
 }
@@ -265,15 +257,14 @@ function MainStatsCards({ characterSheet, weaponSheet, editable, character, char
   const miscStatkeys = [
     "normal_dmg_", "normal_critRate_",
     "charged_dmg_", "charged_critRate_",
+    "plunging_dmg_", "plunging_critRate_",
     "skill_dmg_", "skill_critRate_",
     "burst_dmg_", "burst_critRate_",
     "dmg_", "moveSPD_", "atkSPD_", "weakspotDMG_"]
 
-  const specializedStatKey = Character.getStatValueWithOverride(character, characterSheet, weaponSheet, "specializedStatKey")
-  const specializedStatVal = Character.getStatValueWithOverride(character, characterSheet, weaponSheet, "specializedStatVal");
+  const specializedStatKey = characterSheet.getSpecializedStat(character.ascension)
+  const specializedStatVal = characterSheet.getSpecializedStatVal(character.ascension)
   const specializedStatUnit = Stat.getStatUnit(specializedStatKey)
-
-  const isPercentSpecialStatSelect = Stat.getStatUnit(specializedStatKey) === "%"
 
   const displayNewBuildProps = { character, equippedBuild, newBuild, editable }
   return <>
@@ -307,44 +298,14 @@ function MainStatsCards({ characterSheet, weaponSheet, editable, character, char
                   defaultValue={Character.getBaseStatValue(character, characterSheet, weaponSheet, statKey)}
                 />
               </Col>)}
-
-            <Col lg={6} xs={12}>
-              <InputGroup>
-                <DropdownButton
-                  title={Stat.getStatNameWithPercent(specializedStatKey, "Specialized Stat")}
-                  as={InputGroup.Prepend}
-                >
-                  <Dropdown.ItemText>Select Specialized Stat </Dropdown.ItemText>
-                  {characterSpecializedStatKeys.map(key =>
-                    <Dropdown.Item key={key} onClick={() => characterDispatch({ type: "statOverride", statKey: "specializedStatKey", value: key, characterSheet, weaponSheet })} >
-                      {Stat.getStatNameWithPercent(key)}
-                    </Dropdown.Item>)}
-                </DropdownButton>
-                <CustomFormControl float={isPercentSpecialStatSelect}
-                  placeholder="Character Special Stat"
-                  value={Character.getStatValueWithOverride(character, characterSheet, weaponSheet, "specializedStatVal")}
-                  onChange={value => characterDispatch({ type: "statOverride", statKey: "specializedStatVal", value, characterSheet, weaponSheet })} />
-                <InputGroup.Append>
-                  {isPercentSpecialStatSelect && <InputGroup.Text>%</InputGroup.Text>}
-                  <Button onClick={() => {
-                    characterDispatch({ type: "statOverride", statKey: "specializedStatKey", value: Character.getBaseStatValue(character, characterSheet, weaponSheet, "specializedStatKey"), characterSheet, weaponSheet })
-                    characterDispatch({ type: "statOverride", statKey: "specializedStatVal", value: Character.getBaseStatValue(character, characterSheet, weaponSheet, "specializedStatVal"), characterSheet, weaponSheet })
-                  }}
-                    disabled={!Character.hasOverride(character, "specializedStatKey") && !Character.hasOverride(character, "specializedStatVal")}
-                  >
-                    <FontAwesomeIcon icon={faUndo} />
-                  </Button>
-                </InputGroup.Append>
-              </InputGroup>
-            </Col>
           </Row>
         </Card.Body> :
         <Card.Body>
           <Row className="mb-2">
             {displayStatKeys.map(statKey => <Col xs={12} lg={6} key={statKey} ><StatDisplay characterSheet={characterSheet} weaponSheet={weaponSheet} statKey={statKey} {...displayNewBuildProps} /></Col>)}
             <Col lg={6} xs={12}>
-              <span><b>Specialized:</b> <span className={Character.hasOverride(character, "specializedStatKey") ? "text-warning" : ""}>{Stat.getStatName(specializedStatKey)}</span></span>
-              <span className={`float-right ${Character.hasOverride(character, "specializedStatVal") ? "text-warning" : ""}`}>{`${specializedStatVal.toFixed(Stat.fixedUnit(specializedStatKey))}${specializedStatUnit}`}</span>
+              <span><b>Specialized:</b> <span>{Stat.getStatName(specializedStatKey)}</span></span>
+              <span className={`float-right`}>{`${specializedStatVal.toFixed(Stat.fixedUnit(specializedStatKey))}${specializedStatUnit}`}</span>
             </Col>
           </Row>
         </Card.Body>
@@ -369,8 +330,6 @@ function MainStatsCards({ characterSheet, weaponSheet, editable, character, char
             {otherStatKeys.map(statKey =>
               <Col lg={6} xs={12} key={statKey}>
                 <StatInput
-                  prependEle={undefined}
-                  disabled={undefined}
                   className="mb-2"
                   name={<span>{StatIconEle(statKey)} {Stat.getStatName(statKey)}</span>}
                   placeholder={`Base ${Stat.getStatNameRaw(statKey)}`}
@@ -406,9 +365,6 @@ function MainStatsCards({ characterSheet, weaponSheet, editable, character, char
             {miscStatkeys.map(statKey =>
               <Col xl={6} xs={12} key={statKey}>
                 <StatInput
-                  prependEle={undefined}
-                  disabled={undefined
-                  }
                   className="mb-2"
                   name={<span>{StatIconEle(statKey)} {Stat.getStatName(statKey)}</span>}
                   placeholder={`Base ${Stat.getStatNameRaw(statKey)}`}

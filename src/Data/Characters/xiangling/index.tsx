@@ -18,6 +18,9 @@ import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { ICharacterSheet } from '../../../Types/character'
 import { IConditionals } from '../../../Types/IConditional'
+import { Translate } from '../../../Components/Translate'
+import { chargedDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
+const tr = (strKey: string) => <Translate ns="char_xiangling_gen" key18={strKey} />
 const conditionals: IConditionals = {
   c1: { // CrispyOutsideTenderInside
     canShow: stats => stats.constellation >= 1,
@@ -44,15 +47,15 @@ const conditionals: IConditionals = {
   }
 }
 const char: ICharacterSheet = {
-  name: "Xiangling",
+  name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   star: 4,
   elementKey: "pyro",
   weaponTypeKey: "polearm",
   gender: "F",
-  constellationName: "Trulla",
-  titles: ["Exquisite Delicacy", "Chef de Cuisine"],
+  constellationName: tr("constellationName"),
+  title: tr("title"),
   baseStat: data_gen.base,
   baseStatCurve: data_gen.curves,
   ascensions: data_gen.ascensions,
@@ -61,55 +64,28 @@ const char: ICharacterSheet = {
     conditionals,
     sheets: {
       auto: {
-        name: "Dough-Fu",
+        name: tr("auto.name"),
         img: normal,
-        sections: [{
-          text: <span><strong>Normal Attack</strong> Performs up to five consecutive spear strikes. <small><i>Note: the 3th attack hits twice, the 4th hits four times.</i></small></span>,
-          fields: data.normal.hitArr.map((percentArr, i) =>
-          ({
-            text: `${i + 1}-Hit DMG ${i === 2 ? " (2 Hits)" : i === 3 ? " (4 Hits)" : ""}`,
-            formulaText: stats => <span>{percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
-            formula: formula.normal[i],
-            variant: stats => getTalentStatKeyVariant("normal", stats),
-          }))
-        }, {
-          text: <span><strong>Charged Attack</strong> Consumes a certain amount of Stamina to lunge forward, dealing damage to opponents along the way.</span>,
-          fields: [{
-            text: `Charged Attack`,
-            formulaText: stats => <span>{data.charged.dmg[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
-            formula: formula.charged.dmg,
-            variant: stats => getTalentStatKeyVariant("charged", stats),
-          }, {
-            text: `Stamina Cost`,
-            value: 25,
-          }]
-        }, {
-          text: <span><strong>Plunging Attack</strong> Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.</span>,
-          fields: [{
-            text: `Plunge DMG`,
-            formulaText: stats => <span>{data.plunging.dmg[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-            formula: formula.plunging.dmg,
-            variant: stats => getTalentStatKeyVariant("plunging", stats),
-          }, {
-            text: `Low Plunge DMG`,
-            formulaText: stats => <span>{data.plunging.low[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-            formula: formula.plunging.low,
-            variant: stats => getTalentStatKeyVariant("plunging", stats),
-          }, {
-            text: `High Plunge DMG`,
-            formulaText: stats => <span>{data.plunging.high[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-            formula: formula.plunging.high,
-            variant: stats => getTalentStatKeyVariant("plunging", stats),
-          }]
-        }],
+        sections: [
+          {
+            text: <span>{tr(`auto.fields.normal`)} <small><i>Note: the 3th attack hits twice, the 4th hits four times.</i></small></span>,
+            fields: data.normal.hitArr.map((percentArr, i) =>
+            ({
+              text: `${i + 1}-Hit DMG ${i === 2 ? " (2 Hits)" : i === 3 ? " (4 Hits)" : ""}`,
+              formulaText: stats => <span>{percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
+              formula: formula.normal[i],
+              variant: stats => getTalentStatKeyVariant("normal", stats),
+            }))
+          },
+          chargedDocSection(tr, formula, data, 25),
+          plungeDocSection(tr, formula, data),
+        ],
       },
       skill: {
-        name: "Guoba Attack",
+        name: tr("skill.name"),
         img: skill,
         sections: [{
-          text: <span>
-            <p className="mb-2">Summons Guoba the Panda. Guoba continuously breathes fire at opponents, dealing <span className="text-pyro">AoE Pyro DMG</span>.</p>
-          </span>,
+          text: tr("skill.description"),
           fields: [{
             text: "Flame DMG",
             formulaText: stats => <span>{data.skill.dmg[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
@@ -123,12 +99,10 @@ const char: ICharacterSheet = {
         }],
       },
       burst: {
-        name: "Pyronado",
+        name: tr("burst.name"),
         img: burst,
         sections: [{
-          text: <span>
-            <p className="mb-2">Displaying her mastery over both fire and polearms, Xiangling sends a Pyronado whirling around her. The Pyronado will move with your character for the ability's duration, dealing <span className="text-pyro">Pyro DMG</span> to all opponents in its path.</p>
-          </span>,
+          text: tr("burst.description"),
           fields: [{
             text: "1-Hit Swing DMG",
             formulaText: stats => <span>{data.burst.hit1[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
@@ -162,34 +136,22 @@ const char: ICharacterSheet = {
           conditional: conditionals.c6
         }],
       },
-      passive1: {
-        name: "Crossfire",
-        img: passive1,
-        sections: [{ text: <span>Increases the flame range of Guoba by 20%.</span> }],
-      },
+      passive1: talentTemplate("passive1", tr, passive1),
       passive2: {
-        name: "Beware, It's Super Hot!",
+        name: tr("passive2.name"),
         img: passive2,
         sections: [{
-          text: <span>When Guoba Attack's effect ends, Guoba leaves a chili pepper on the spot where it disappeared. Picking up a chili pepper increases ATK by 10% for 10s.</span>,
+          text: tr("passive2.description"),
           conditional: conditionals.a4
         }],
       },
-      passive3: {
-        name: "Chef de Cuisine",
-        img: passive3,
-        sections: [{ text: <span>When Xiangling cooks an ATK-boosting dish perfectly, she has a 12% chance to receive double the product.</span> }],
-      },
-      constellation1: {
-        name: "Crispy Outside, Tender Inside",
-        img: c1,
-        sections: [{ text: <span>Opponents hit by Guoba's attacks have their Pyro RES reduced by 15% for 6s.</span> }],
-      },
+      passive3: talentTemplate("passive3", tr, passive3),
+      constellation1: talentTemplate("constellation1", tr, c1),
       constellation2: {
-        name: "Oil Meets Fire",
+        name: tr("constellation2.name"),
         img: c2,
         sections: [{
-          text: <span>The last attack in a Normal Attack sequence applies the Implode status onto the opponent for 2s. An explosion will occur once this duration ends, dealing 75% of Xiangling's ATK as <span className="text-pyro">AoE Pyro DMG</span>.</span>,
+          text: tr("constellation2.description"),
           fields: [{
             canShow: stats => stats.constellation >= 2,
             text: "Explosion DMG",
@@ -199,28 +161,10 @@ const char: ICharacterSheet = {
           }]
         }],
       },
-      constellation3: {
-        name: "Deepfry",
-        img: c3,
-        sections: [{ text: <span>	Increases the level of <b>Pyronado</b> by 3. Maximum upgrade level is 15.</span> }],
-        stats: { burstBoost: 3 }
-      },
-      constellation4: {
-        name: "Slowbake",
-        img: c4,
-        sections: [{ text: <span><b>Pyronado</b>'s duration is increased by 40%.</span> }],
-      },
-      constellation5: {
-        name: "Guoba Mad",
-        img: c5,
-        sections: [{ text: <span>Increases the level of <b>Guoba Attack</b> by 3. Maximum upgrade level is 15.</span> }],
-        stats: { skillBoost: 3 }
-      },
-      constellation6: {
-        name: "Condensed Pyronado",
-        img: c6,
-        sections: [{ text: <span>For the duration of <b>Pyronado</b>, all party members receive a 15% <span className="text-pyro">Pyro DMG Bonus</span>.</span> }],
-      }
+      constellation3: talentTemplate("constellation3", tr, c3, { burstBoost: 3 }),
+      constellation4: talentTemplate("constellation4", tr, c4),
+      constellation5: talentTemplate("constellation5", tr, c5, { skillBoost: 3 }),
+      constellation6: talentTemplate("constellation6", tr, c6),
     },
   },
 };

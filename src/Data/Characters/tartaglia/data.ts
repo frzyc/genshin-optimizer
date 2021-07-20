@@ -2,15 +2,6 @@ import { IFormulaSheet } from "../../../Types/character"
 import { basicDMGFormula } from "../../../Util/FormulaUtil"
 
 export const data = {
-  baseStat: {
-    characterHP: [1020, 2646, 3521, 5268, 5889, 6776, 7604, 8500, 9121, 10025, 10647, 11561, 12182, 13103],
-    characterATK: [23, 61, 81, 121, 135, 156, 175, 195, 210, 231, 245, 266, 280, 301],
-    characterDEF: [63, 165, 219, 328, 366, 421, 473, 528, 567, 623, 662, 719, 757, 815]
-  },
-  specializeStat: {
-    key: "hydro_dmg_",
-    value: [0, 0, 0, 0, 7.2, 7.2, 14.4, 14.4, 14.4, 14.4, 21.6, 21.6, 28.8, 28.8]
-  },
   normal: {
     hitArr: [
       [41.28, 44.64, 48, 52.8, 56.16, 60, 65.28, 70.56, 75.84, 81.6, 87.36, 93.12, 98.88, 104.64, 110.4],//1
@@ -22,8 +13,8 @@ export const data = {
     ],
   },
   charged: {
-    aimedShot: [43.86, 47.43, 51, 56.1, 59.67, 63.75, 69.36, 74.97, 80.58, 86.7, 92.82, 98.94, 105.06, 111.18, 117.3],
-    fullAimedShot: [124, 133.3, 142.6, 155, 164.3, 173.6, 186, 198.4, 210.8, 223.2, 235.6, 248, 263.5, 279, 294.5],
+    hit: [43.86, 47.43, 51, 56.1, 59.67, 63.75, 69.36, 74.97, 80.58, 86.7, 92.82, 98.94, 105.06, 111.18, 117.3],
+    full: [124, 133.3, 142.6, 155, 164.3, 173.6, 186, 198.4, 210.8, 223.2, 235.6, 248, 263.5, 279, 294.5],
   },
   plunging: {
     dmg: [63.93, 69.14, 74.34, 81.77, 86.98, 92.93, 101.1, 109.28, 117.46, 126.38, 135.3, 144.22, 153.14, 162.06, 170.98],
@@ -64,8 +55,8 @@ const formula: IFormulaSheet = {
     burst: stats => basicDMGFormula(data.riptide.burst[stats.tlvl.auto], stats, "normal", "hydro"),
   },
   charged: {
-    aimedShot: stats => basicDMGFormula(data.charged.aimedShot[stats.tlvl.auto], stats, "charged"),
-    fullAimedShot: stats => basicDMGFormula(data.charged.fullAimedShot[stats.tlvl.auto], stats, "charged", "hydro"),
+    hit: stats => basicDMGFormula(data.charged.hit[stats.tlvl.auto], stats, "charged"),
+    full: stats => basicDMGFormula(data.charged.full[stats.tlvl.auto], stats, "charged", "hydro"),
   },
   plunging: Object.fromEntries(Object.entries(data.plunging).map(([key, arr]) => [key, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "plunging")])),
   skill: {

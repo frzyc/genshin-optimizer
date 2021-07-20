@@ -94,7 +94,7 @@ const char: ICharacterSheet = {
   weaponTypeKey: "bow",
   gender: "M",
   constellationName: tr("constellationName"),
-  titles: ["Windborne Bard", "Tone-Deaf Bard"],
+  title: tr("title"),
   baseStat: data_gen.base,
   baseStatCurve: data_gen.curves,
   ascensions: data_gen.ascensions,
@@ -103,7 +103,7 @@ const char: ICharacterSheet = {
     conditionals,
     sheets: {
       auto: {
-        name: tr(`auto.name`),
+        name: tr("auto.name"),
         img: normal,
         sections: [{
           text: tr(`auto.fields.normal`),

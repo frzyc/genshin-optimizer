@@ -1,3 +1,7 @@
+// @ts-nocheck
+// The *type* of these data are in schema and so are unknown at compile time.
+// Type annotation here will only amount to adding `any` everywhere
+
 /// Schema keys
 /// Common {
 ///   encode?: A function that transform encoding object into the specified format
@@ -116,13 +120,13 @@ function decodeArray(stream, schema) {
 }
 
 function encodeString(string, schema) {
-  if (!string.match(/^[a-z0-9\-_]+$/i))
+  if (!string.match(/^[a-z0-9\-_]*$/i))
     throw new Error(`Cannot encode string ${string}: not alphanumeric or -_`)
   return encodeLength(string.length) + string
 }
 function decodeString(stream, schema) {
   const string = stream.take(decodeLength(stream))
-  if (!string.match(/^[a-z0-9\-_]+$/i))
+  if (!string.match(/^[a-z0-9\-_]*$/i))
     throw new Error(`Cannot decode string ${string}: not alphanumeric or -_`)
   return string
 }

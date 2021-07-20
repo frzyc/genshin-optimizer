@@ -18,6 +18,9 @@ import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { IConditionals } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
+import { Translate } from '../../../Components/Translate'
+import { chargedDocSection, plungeDocSection, sgt, talentTemplate } from '../SheetUtil'
+const tr = (strKey: string) => <Translate ns="char_hutao_gen" key18={strKey} />
 const conditionals: IConditionals = {
   e: { // GuideToAfterlife
     name: "Guide to Afterlife Voyage",
@@ -56,15 +59,15 @@ const conditionals: IConditionals = {
   }
 }
 const char: ICharacterSheet = {
-  name: "Hu Tao",
+  name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   star: 5,
   elementKey: "pyro",
   weaponTypeKey: "polearm",
   gender: "F",
-  constellationName: "Papilio Charontis",
-  titles: ["Fragrance in Thaw", "77th-Generation Director of the Wangsheng Funeral Parlor", "Director Hu", "Liyue Harbor's \"Versemonger of the Darkest Alleys\""],
+  constellationName: tr("constellationName"),
+  title: tr("title"),
   baseStat: data_gen.base,
   baseStatCurve: data_gen.curves,
   ascensions: data_gen.ascensions,
@@ -73,67 +76,29 @@ const char: ICharacterSheet = {
     conditionals,
     sheets: {
       auto: {
-        name: "Secret Spear of Wangsheng",
+        name: tr("auto.name"),
         img: normal,
-        sections: [{
-          text: <span><strong>Normal Attack</strong> Perform up to 6 rapid strikes. <small><i>Note: the 5th attack hits twice.</i></small></span>,
-          fields: data.normal.hitArr.map((percentArr, i) =>
-          ({
-            text: `${i + (i < 5 ? 1 : 0)}-Hit DMG`,
-            formulaText: stats => <span>{percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
-            formula: formula.normal[i],
-            variant: stats => getTalentStatKeyVariant("normal", stats),
-          }))
-        }, {
-          text: <span><strong>Charged Attack</strong> Consumes a certain amount of Stamina to lunge forward, dealing damage to enemies along the way.</span>,
-          fields: [{
-            text: `Charged Attack`,
-            formulaText: stats => <span>{data.charged.dmg[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
-            formula: formula.charged.dmg,
-            variant: stats => getTalentStatKeyVariant("charged", stats),
-          }, {
-            text: `Stamina Cost`,
-            value: 25,
-          }]
-        }, {
-          text: <span><strong>Plunging Attack</strong> Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.</span>,
-          fields: [{
-            text: `Plunge DMG`,
-            formulaText: stats => <span>{data.plunging.dmg[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-            formula: formula.plunging.dmg,
-            variant: stats => getTalentStatKeyVariant("plunging", stats),
-          }, {
-            text: `Low Plunge DMG`,
-            formulaText: stats => <span>{data.plunging.low[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-            formula: formula.plunging.low,
-            variant: stats => getTalentStatKeyVariant("plunging", stats),
-          }, {
-            text: `High Plunge DMG`,
-            formulaText: stats => <span>{data.plunging.high[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-            formula: formula.plunging.high,
-            variant: stats => getTalentStatKeyVariant("plunging", stats),
-          }]
-        }],
+        sections: [
+          {
+            text: <span>{tr(`auto.fields.normal`)} <small><i>Note: the 5th attack hits twice.</i></small></span>,
+            fields: data.normal.hitArr.map((percentArr, i) =>
+            ({
+              text: sgt(`normal.hit${i + (i < 5 ? 1 : 0)}`),
+              formulaText: stats => <span>{percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
+              formula: formula.normal[i],
+              variant: stats => getTalentStatKeyVariant("normal", stats),
+            }))
+          },
+          chargedDocSection(tr, formula, data),
+          plungeDocSection(tr, formula, data)
+        ],
       },
       skill: {
-        name: "Guide to Afterlife",
+        name: tr("skill.name"),
         img: skill,
         sections: [{
           text: <span>
-            <p className="mb-2">Hu Tao consumes a part of her HP, knocking nearby enemies back and entering the <b>Paramita Papilio State</b>.</p>
-            <h6>Paramita Papilio State:</h6>
-            <ul className="mb-1">
-              <li>Increases Hu Tao's ATK based on her Max HP at the time of entering this state. ATK Bonus gained this way cannot exceed 400% of Hu Tao's Base ATK. Hu Tao's attack DMG is converted to <span className="text-pyro">Pyro DMG</span>, which cannot be overridden by any other elemental infusion.</li>
-              <li>Increases Hu Tao's resistance to interruption.</li>
-              <li>Paramita Papilio ends when its duration is over, or when Hu Tao has left the battlefield or fallen.</li>
-              <li>In the Paramita Papilio state, Hu Tao's Charged Attacks apply the <b>Blood Blossom</b> effect to enemies it hits.</li>
-            </ul>
-            <h6>Blood Blossom Effect:</h6>
-            <ul className="mb-1">
-              <li>Enemies affected by <b>Blood Blossom</b> will take <span className="text-pyro">Pyro DMG</span> every 4s.</li>
-              <li>This DMG is considered Elemental Skill DMG.</li>
-              <li>Each enemy can be affected by only one Blood Blossom effect at a time, and its duration may only be refreshed by Hu Tao herself.</li>
-            </ul>
+            {tr("skill.description")}
             <small>Note: The 400% base ATK limit is not currently being applied. Optimizers beware.</small>
           </span>,
           fields: [{
@@ -170,13 +135,10 @@ const char: ICharacterSheet = {
         }],
       },
       burst: {
-        name: "Spirit Soother",
+        name: tr("burst.name"),
         img: burst,
         sections: [{
-          text: <span>
-            <p className="mb-2">Hu Tao commands a blazing spirit to deal Pyro DMG in a large AoE. Upon striking the enemy, regenerates a percentage of Hu Tao's Max HP. This effect can be triggered up to 5 times based on the number of enemies hit.</p>
-            <p className="mb-2">If Hu Tao's HP is below or equal to 50% when the enemy is hit, both the DMG and HP Regeneration are increased.</p>
-          </span>,
+          text: tr("burst.description"),
           fields: [{
             text: "Skill DMG",
             formulaText: stats => <span>{data.burst.dmg[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
@@ -209,70 +171,26 @@ const char: ICharacterSheet = {
           }]
         }],
       },
-      passive1: {
-        name: "Flutter By",
-        img: passive1,
-        sections: [{ text: <span>When a <b>Paramita Papilio</b> state activated by <b>Guide to Afterlife</b> ends, all allies in the party (excluding Hu Tao herself) will have their CRIT Rate increased by 12% for 8s.</span> }],
-        //TODO: party buff
-      },
+      passive1: talentTemplate("passive1", tr, passive1),//TODO: party buff
       passive2: {
-        name: "Sanguine Rouge",
+        name: tr("passive2.name"),
         img: passive2,
         sections: [{
-          text: <span>When Hu Tao's HP is equal to or less than 50%, her <span className="text-pyro">Pyro DMG Bonus</span> is increased by 33%.</span>,
+          text: tr("passive2.description"),
           conditional: conditionals.a4
         }],
       },
-      passive3: {
-        name: "The More the Merrier",
-        img: passive3,
-        sections: [{ text: <span>When Hu Tao cooks a dish perfectly, she has a 18% chance to receive an additional "Suspicious" dish of the same type.</span> }],
-      },
-      constellation1: {
-        name: "Crimson Bouquet",
-        img: c1,
-        sections: [{ text: <span>While in a <b>Paramita Papilio</b> state activated by <b>Guide to Afterlife</b>, Hu Tao's Charge Attacks do not consume Stamina.</span> }],
-      },
-      constellation2: {
-        name: "Ominous Rainfall",
-        img: c2,
-        sections: [{
-          text: <span>
-            <p className="mb-2">Increases the <b>Blood Blossom</b> DMG by an amount equal to 10% of Hu Tao's Max HP at the time the effect is applied.</p>
-            <p className="mb-2">Additionally, <b>Spirit Soother</b> will also apply the <b>Blood Blossom</b> effect.</p>
-          </span>
-        }],
-      },
-      constellation3: {
-        name: "Lingering Carmine",
-        img: c3,
-        sections: [{ text: <span>Increases the Level of <b>Guide to Afterlife</b> by 3. Maximum upgrade level is 15.</span> }],
-        stats: { skillBoost: 3 }
-      },
-      constellation4: {
-        name: "Garden of Eternal Rest",
-        img: c4,
-        sections: [{ text: <span>Upon defeating an enemy affected by a <b>Blood Blossom</b> that Hu Tao applied herself, all nearby allies in the party (excluding Hu Tao herself) will have their CRIT Rate increased by 12% for 15s.</span> }],
-        //TODO: party buff
-      },
-      constellation5: {
-        name: "Floral Incense",
-        img: c5,
-        sections: [{ text: <span>Increases the Level of <b>Spirit Soother</b> by 3. Maximum upgrade level is 15.</span> }],
-        stats: { burstBoost: 3 }
-      },
+      passive3: talentTemplate("passive3", tr, passive3),
+      constellation1: talentTemplate("constellation1", tr, c1),
+      constellation2: talentTemplate("constellation2", tr, c2),
+      constellation3: talentTemplate("constellation3", tr, c3, { skillBoost: 3 }),
+      constellation4: talentTemplate("constellation4", tr, c4),//TODO: party buff
+      constellation5: talentTemplate("constellation5", tr, c5, { burstBoost: 3 }),
       constellation6: {
-        name: "Butterfly's Embrace",
+        name: tr("constellation6.name"),
         img: c6,
         sections: [{
-          text: <span>
-            <p className="mb-2">Triggers when Hu Tao's HP drops below 25%, or when she suffers a lethal strike:</p>
-            <ul className="mb-1">
-              <li>Hu Tao will not fall as a result of the DMG sustained. Additionally, for the next 10s, all of her Elemental and <span className="text-physical">Physical RES</span> is increased by 200%, her CRIT Rate is increased by 100%, and her resistance to interruption is greatly increased.</li>
-              <li>This effect triggers automatically when Hu Tao has 1 HP left.</li>
-              <li>Can only occur once every 60s.</li>
-            </ul>
-          </span>,
+          text: tr("constellation6.description"),
           conditional: conditionals.c6
         }],
       }

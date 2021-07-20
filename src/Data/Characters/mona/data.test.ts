@@ -47,7 +47,7 @@ describe("Testing Mona's Formulas", () => {
       test("hits", () => {
         const stats = computeAllStats(setupStats)
         expect(formula.normal[0](stats)[0](stats)).toApproximate(483)
-        expect(formula.charged.hit(stats)[0](stats)).toApproximate(1926)
+        expect(formula.charged.dmg(stats)[0](stats)).toApproximate(1926)
         expect(formula.skill.dot(stats)[0](stats)).toApproximate(441)
       })
 
@@ -57,7 +57,7 @@ describe("Testing Mona's Formulas", () => {
         test("hits", () => {
           const stats = computeAllStats(setupStats)
           expect(formula.normal[0](stats)[0](stats)).toApproximate(1155)
-          expect(formula.charged.hit(stats)[0](stats)).toApproximate(4599)
+          expect(formula.charged.dmg(stats)[0](stats)).toApproximate(4599)
         })
       })
     })
@@ -75,7 +75,7 @@ describe("Testing Mona's Formulas", () => {
         test("hits", () => {
           const stats = computeAllStats(setupStats)
           expect(formula.normal[0](stats)[0](stats)).toApproximate(2398)
-          expect(formula.charged.hit(stats)[0](stats)).toApproximate(9552)
+          expect(formula.charged.dmg(stats)[0](stats)).toApproximate(9552)
         })
       })
     })

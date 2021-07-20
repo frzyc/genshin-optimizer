@@ -1,6 +1,6 @@
 import { faEdit, faLock, faLockOpen, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Badge from 'react-bootstrap/Badge';
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
@@ -14,10 +14,11 @@ import Tooltip from 'react-bootstrap/Tooltip';
 import CharacterSheet from '../Character/CharacterSheet';
 import { CharacterSelectionDropdownList } from '../Components/CharacterSelection';
 import { Stars } from '../Components/StarDisplay';
-import ArtifactDatabase from '../Database/ArtifactDatabase';
+import { database } from '../Database/Database';
 import Stat from '../Stat';
 import { allSubstats, IArtifact, Substat, SubstatKey } from '../Types/artifact';
-import { useForceUpdate, usePromise } from '../Util/ReactUtil';
+import { CharacterKey } from '../Types/consts';
+import { usePromise } from '../Util/ReactUtil';
 import { valueString } from '../Util/UIUtil';
 import Artifact from './Artifact';
 import { ArtifactSheet } from './ArtifactSheet';
@@ -28,16 +29,15 @@ type Data = { artifactId?: string, artifactObj?: IArtifact, onEdit?: () => void,
 const allSubstatFilter = new Set(allSubstats)
 
 export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete, mainStatAssumptionLevel = 0, effFilter = allSubstatFilter }: Data): JSX.Element | null {
-  const [, forceUpdateHook] = useForceUpdate()
-  useEffect(() => {
-    artifactId && ArtifactDatabase.registerArtListener(artifactId, forceUpdateHook)
-    return () => { artifactId && ArtifactDatabase.unregisterArtListener(artifactId, forceUpdateHook) }
-  }, [artifactId, forceUpdateHook])
-  const sheet = usePromise(ArtifactSheet.get((artifactObj ?? (artifactId ? ArtifactDatabase.get(artifactId) : undefined))?.setKey), [artifactObj, artifactId])
-  const equipOnChar = (charKey) => Artifact.equipArtifactOnChar(artifactId, charKey)
+  const [databaseArtifact, updateDatabaseArtifact] = useState(undefined as IArtifact | undefined)
+  useEffect(() =>
+    artifactId ? database.followArt(artifactId, updateDatabaseArtifact) : undefined,
+    [artifactId, updateDatabaseArtifact])
+  const sheet = usePromise(ArtifactSheet.get((artifactObj ?? (artifactId ? database._getArt(artifactId) : undefined))?.setKey), [artifactObj, artifactId])
+  const equipOnChar = (charKey: CharacterKey | "") => database.setLocation(artifactId!, charKey)
 
   const editable = !artifactObj // dont allow edit for flex artifacts
-  const art = artifactObj ?? ArtifactDatabase.get(artifactId);
+  const art = artifactObj ?? databaseArtifact
   const characterSheet = usePromise(CharacterSheet.get(art?.location ?? ""), [art?.location])
   if (!art) return null
   if (art.substats[0].rolls === undefined) Artifact.substatsValidation(art)
@@ -45,8 +45,8 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
   const { id, slotKey, numStars, level, mainStatKey, substats, lock } = art
   const mainStatLevel = Math.max(Math.min(mainStatAssumptionLevel, numStars * 4), level)
   const mainStatVal = <span className={mainStatLevel !== level ? "text-orange" : ""}>{Artifact.mainStatValue(mainStatKey, numStars, mainStatLevel) ?? ""}{Stat.getStatUnit(mainStatKey)}</span>
-  const { currentEfficiency, maximumEfficiency } = Artifact.getArtifactEfficiency(art, effFilter)
-  const artifactValid = maximumEfficiency !== 0
+  const { currentEfficiency, maxEfficiency } = Artifact.getArtifactEfficiency(art, effFilter)
+  const artifactValid = maxEfficiency !== 0
   const locationName = characterSheet?.name ?? "Inventory"
   return (<Card className="h-100" border={`${numStars}star`} bg="lightcontent" text={"lightfont" as any}>
     <Card.Header className="p-0">
@@ -84,7 +84,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
       </Row>
       <Row className="mt-auto">
         <Col>Current SS Eff.: <PercentBadge value={currentEfficiency} valid={artifactValid} {...{ className: "float-right" }} /></Col>
-        {currentEfficiency !== maximumEfficiency && <Col className="text-right">Max SS Eff.: <PercentBadge value={maximumEfficiency} valid={artifactValid} /></Col>}
+        {currentEfficiency !== maxEfficiency && <Col className="text-right">Max SS Eff.: <PercentBadge value={maxEfficiency} valid={artifactValid} /></Col>}
       </Row>
     </Card.Body>
 
@@ -105,7 +105,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
             {editable ? <OverlayTrigger placement="top"
               overlay={<Tooltip id="lock-artifact-tip">Locking a artifact will prevent the build generator from picking it for builds.</Tooltip>}>
               <span className="d-inline-block">
-                <Button size="sm" onClick={() => ArtifactDatabase.setLocked(id, !lock)}>
+                <Button size="sm" onClick={() => database.lockArtifact(id, !lock)}>
                   <FontAwesomeIcon icon={lock ? faLock : faLockOpen} className="fa-fw" />
                 </Button>
               </span>

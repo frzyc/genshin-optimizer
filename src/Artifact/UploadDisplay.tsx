@@ -38,7 +38,7 @@ const schedulers = new BorrowManager(async (language): Promise<Scheduler> => {
   value.then(value => value.terminate())
 })
 
-export default function UploadDisplay({ setState, setReset, artifactInEditor }) {
+export default function UploadDisplay({ setState, setReset, artifactInEditor }: { setState: (art: IArtifact) => void, setReset: (reset: () => void) => void, artifactInEditor: boolean }) {
   const [modalShow, setModalShow] = useState(false)
 
   const [{ processed, outstanding }, dispatchQueue] = useReducer(queueReducer, { processed: [], outstanding: [] })
@@ -78,7 +78,7 @@ export default function UploadDisplay({ setState, setReset, artifactInEditor }) 
   const clearQueue = useCallback(() => dispatchQueue({ type: "clear" }), [dispatchQueue])
 
   useEffect(() => {
-    const pasteFunc = e => uploadFiles(e.clipboardData.files)
+    const pasteFunc = (e: any) => uploadFiles(e.clipboardData.files)
     window.addEventListener('paste', pasteFunc);
     setReset?.(removeCurrent);
     return () =>
@@ -140,7 +140,7 @@ export default function UploadDisplay({ setState, setReset, artifactInEditor }) 
     </Col>
   </Row >)
 }
-function ExplainationModal({ modalShow, hide }) {
+function ExplainationModal({ modalShow, hide }: { modalShow: boolean, hide: () => void }) {
   return <Modal show={modalShow} onHide={hide} size="xl" variant="success" contentClassName="bg-transparent">
     <Card bg="darkcontent" text={"lightfont" as any} >
       <Card.Header>
@@ -288,6 +288,7 @@ export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactShee
   const relevantSetKey = [...new Set<ArtifactSetKey>([...textSetKeys, "Adventurer", "ArchaicPetra"])]
 
   let bestScore = -1, bestArtifacts: IArtifact[] = [{
+    id: "",
     setKey: "Adventurer", numStars: 3, level: 0, slotKey: "flower", mainStatKey: "hp", substats: [],
     location: "", lock: false,
   }]
@@ -334,7 +335,7 @@ export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactShee
               if (score > bestScore) bestArtifacts = []
               bestScore = score
               bestArtifacts.push({
-                setKey, numStars, level, slotKey, mainStatKey, substats: [], location: "", lock: false
+                id: "", setKey, numStars, level, slotKey, mainStatKey, substats: [], location: "", lock: false
               })
             }
           }
@@ -347,7 +348,7 @@ export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactShee
             if (score > bestScore) bestArtifacts = []
             bestScore = score
             bestArtifacts.push({
-              setKey, numStars, level, slotKey, mainStatKey, substats: [], location: "", lock: false
+              id: "", setKey, numStars, level, slotKey, mainStatKey, substats: [], location: "", lock: false
             })
           }
         }

@@ -36,8 +36,8 @@ describe("Testing Tartaglia's Formulas (Blakeblaze#2916)", () => {
         expect(formula.normal[3](stats)[0](stats)).toApproximate(257)
         expect(formula.normal[4](stats)[0](stats)).toApproximate(275)
         expect(formula.normal[5](stats)[0](stats)).toApproximate(328)
-        expect(formula.charged.aimedShot(stats)[0](stats)).toApproximate(198)
-        expect(formula.charged.fullAimedShot(stats)[0](stats)).toApproximate(3035)
+        expect(formula.charged.hit(stats)[0](stats)).toApproximate(198)
+        expect(formula.charged.full(stats)[0](stats)).toApproximate(3035)
         expect(formula.plunging.dmg(stats)[0](stats)).toApproximate(288)
         expect(formula.plunging.low(stats)[0](stats)).toApproximate(577)
         expect(formula.plunging.high(stats)[0](stats)).toApproximate(721)
@@ -81,8 +81,8 @@ describe("Testing Tartaglia's Formulas (Blakeblaze#2916)", () => {
         expect(formula.normal[3](stats)[0](stats)).toApproximate(578)
         expect(formula.normal[4](stats)[0](stats)).toApproximate(617)
         expect(formula.normal[5](stats)[0](stats)).toApproximate(738)
-        expect(formula.charged.aimedShot(stats)[0](stats)).toApproximate(445)
-        // expect(formula.charged.fullAimedShot(stats)[0](stats)).toApproximate(3817)//number is really off... should be 6817?
+        expect(formula.charged.hit(stats)[0](stats)).toApproximate(445)
+        // expect(formula.charged.full(stats)[0](stats)).toApproximate(3817)//number is really off... should be 6817?
         expect(formula.plunging.dmg(stats)[0](stats)).toApproximate(648)
         expect(formula.plunging.low(stats)[0](stats)).toApproximate(1297)
         expect(formula.plunging.high(stats)[0](stats)).toApproximate(1620)

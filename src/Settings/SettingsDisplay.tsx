@@ -2,13 +2,10 @@ import { useState } from "react"
 import { Alert, Badge, Button, Card, Col, Container, Dropdown, Form, Row } from "react-bootstrap"
 import ReactGA from 'react-ga'
 import { Trans, useTranslation } from "react-i18next"
-import ArtifactDatabase from "../Database/ArtifactDatabase"
-import CharacterDatabase from "../Database/CharacterDatabase"
-import { clearDatabase, createDatabaseObj, DatabaseInitAndVerify, loadDatabaseObj } from "../Database/DatabaseUtil"
+import { database } from "../Database/Database"
 import { languageCodeList } from "../i18n"
 import { useForceUpdate } from "../Util/ReactUtil"
 
-DatabaseInitAndVerify()
 export default function SettingsDisplay() {
   const { t } = useTranslation(["settings"]);
   const [, forceUpdate] = useForceUpdate()
@@ -83,16 +80,16 @@ function download(JSONstr, filename = "data.json") {
 
 function deleteDatabase(t) {
   if (!window.confirm(t("settings:dialog.delete-database"))) return
-  clearDatabase()
+  database.clear()
 }
 function copyToClipboard() {
-  navigator.clipboard.writeText(JSON.stringify(createDatabaseObj()))
+  navigator.clipboard.writeText(JSON.stringify(database.exportStorage()))
   alert("Copied database to clipboard.")
 }
 function DownloadCard({ forceUpdate }) {
   const { t } = useTranslation(["settings"]);
-  const numChar = CharacterDatabase.getIdList().length
-  const numArt = ArtifactDatabase.getIdList().length
+  const numChar = database._getCharKeys().length
+  const numArt = database._getArts().length
   const downloadValid = Boolean(numChar || numArt)
   const deleteDB = () => {
     deleteDatabase(t);
@@ -109,7 +106,7 @@ function DownloadCard({ forceUpdate }) {
     </Card.Body>
     <Card.Footer>
       <Row>
-        <Col xs="auto"><Button disabled={!downloadValid} onClick={() => download(JSON.stringify(createDatabaseObj()))}><Trans t={t} i18nKey="downloadCard.button.download" /></Button></Col>
+        <Col xs="auto"><Button disabled={!downloadValid} onClick={() => download(JSON.stringify(database.exportStorage()))}><Trans t={t} i18nKey="downloadCard.button.download" /></Button></Col>
         <Col ><Button disabled={!downloadValid} variant="info" onClick={copyToClipboard}><Trans t={t} i18nKey="downloadCard.button.copy" /></Button></Col>
         <Col xs="auto"><Button disabled={!downloadValid} variant="danger" onClick={deleteDB} ><Trans t={t} i18nKey="downloadCard.button.delete" /></Button></Col>
       </Row>
@@ -126,7 +123,7 @@ async function readFile(file, cb) {
 }
 function replaceDatabase(obj, cb = () => { }) {
   if (!window.confirm("Are you sure you want to replace your database? All existing characters and artifacts will be deleted before replacement.")) return
-  loadDatabaseObj(obj)
+  database.importStorage(obj)
   cb()
 }
 function UploadCard({ forceUpdate }) {

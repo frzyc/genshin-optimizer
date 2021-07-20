@@ -3,15 +3,6 @@ import { basicDMGFormula } from "../../../Util/FormulaUtil";
 import { absorbableEle } from "../dataUtil";
 
 export const data = {
-  baseStat: {
-    characterHP: [775, 1991, 2570, 3850, 4261, 4901, 5450, 6090, 6501, 7141, 7552, 8192, 8604, 9244],
-    characterATK: [14, 37, 47, 71, 78, 90, 100, 112, 120, 131, 139, 151, 158, 170],
-    characterDEF: [59, 151, 195, 293, 324, 373, 414, 463, 494, 543, 574, 623, 654, 703]
-  },
-  specializeStat: {
-    key: "anemo_dmg_",
-    value: [0, 0, 0, 0, 6, 6, 12, 12, 12, 12, 18, 18, 24, 24]
-  },
   normal: {
     hitArr: [
       [33.46, 35.97, 38.48, 41.83, 44.34, 46.85, 50.2, 53.54, 56.89, 60.24, 63.58, 66.93, 71.11, 75.29, 79.48], // 1
@@ -21,7 +12,7 @@ export const data = {
     ]
   },
   charged: {
-    hit: [120.16, 129.17, 138.18, 150.2, 159.21, 168.22, 180.24, 192.26, 204.27, 216.29, 228.3, 240.32, 255.34, 270.36, 285.38],
+    dmg: [120.16, 129.17, 138.18, 150.2, 159.21, 168.22, 180.24, 192.26, 204.27, 216.29, 228.3, 240.32, 255.34, 270.36, 285.38],
   },
   plunging: {
     dmg: [56.83, 61.45, 66.08, 72.69, 77.31, 82.6, 89.87, 97.14, 104.41, 112.34, 120.27, 128.2, 136.12, 144.05, 151.98],
@@ -39,9 +30,8 @@ export const data = {
 const formula: IFormulaSheet = {
   normal: Object.fromEntries(data.normal.hitArr.map((arr, i) =>
     [i, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "normal")])),
-  charged: {
-    hit: stats => basicDMGFormula(data.charged.hit[stats.tlvl.auto], stats, "charged"),
-  },
+  charged: Object.fromEntries(Object.entries(data.charged).map(([name, arr]) =>
+    [name, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "charged")])),
   plunging: Object.fromEntries(Object.entries(data.plunging).map(([name, arr]) =>
     [name, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "plunging")])),
   skill: Object.fromEntries(Object.entries(data.skill).map(([name, arr]) =>

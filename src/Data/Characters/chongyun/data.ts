@@ -2,15 +2,6 @@ import { IFormulaSheet } from "../../../Types/character"
 import { basicDMGFormula } from "../../../Util/FormulaUtil"
 
 const data = {
-  baseStat: {
-    characterHP: [921, 2366, 3054, 4574, 5063, 5824, 6475, 7236, 7725, 8485, 8974, 9734, 10223, 10984],
-    characterATK: [19, 48, 62, 93, 103, 118, 131, 147, 157, 172, 182, 198, 208, 223],
-    characterDEF: [54, 140, 180, 270, 299, 344, 382, 427, 456, 501, 530, 575, 603, 648]
-  },
-  specializeStat: {
-    key: "atk_",
-    value: [0, 0, 0, 0, 6, 6, 12, 12, 12, 12, 18, 18, 24, 24]
-  },
   normal: {
     hitArr: [
       [70, 75.7, 81.4, 89.54, 95.24, 101.75, 110.7, 119.66, 128.61, 138.38, 148.15, 157.92, 167.68, 177.45, 187.22],
@@ -21,7 +12,7 @@ const data = {
   },
   charged: {
     spinning: [56.29, 60.87, 65.45, 71.99, 76.57, 81.81, 89.01, 96.21, 103.41, 111.26, 119.12, 126.97, 134.82, 142.68, 150.53],
-    finalATK: [101.78, 110.07, 118.35, 130.19, 138.47, 147.94, 160.96, 173.97, 186.99, 201.2, 215.4, 229.6, 243.8, 258, 272.21]
+    final: [101.78, 110.07, 118.35, 130.19, 138.47, 147.94, 160.96, 173.97, 186.99, 201.2, 215.4, 229.6, 243.8, 258, 272.21]
   },
   plunging: {
     dmg: [74.59, 80.66, 86.73, 95.40, 101.47, 108.41, 117.95, 127.49, 137.03, 147.44, 157.85, 168.26, 178.66, 189.07, 199.48],
@@ -39,10 +30,8 @@ const data = {
 const formula: IFormulaSheet = {
   normal: Object.fromEntries(data.normal.hitArr.map((arr, i) =>
     [i, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "normal")])),
-  charged: {
-    spinning: stats => basicDMGFormula(data.charged.spinning[stats.tlvl.auto], stats, "charged"),
-    finalATK: stats => basicDMGFormula(data.charged.finalATK[stats.tlvl.auto], stats, "charged"),
-  },
+  charged: Object.fromEntries(Object.entries(data.charged).map(([name, arr]) =>
+    [name, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "charged")])),
   plunging: Object.fromEntries(Object.entries(data.plunging).map(([name, arr]) =>
     [name, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "plunging")])),
   skill: {

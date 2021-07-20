@@ -1,6 +1,6 @@
 import { faCheckSquare, faSortAmountDownAlt, faSortAmountUp, faSquare, faTimes, faTrash, faUndo } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { lazy, useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'react';
+import React, { lazy, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Alert, Badge, Button, ButtonGroup, Card, Col, Container, Dropdown, DropdownButton, Image, InputGroup, ListGroup, Modal, OverlayTrigger, ProgressBar, Row, Tooltip } from 'react-bootstrap';
 import ReactGA from 'react-ga';
 // eslint-disable-next-line
@@ -16,12 +16,10 @@ import CharacterSheet from '../Character/CharacterSheet';
 import { CharacterSelectionDropdownList } from '../Components/CharacterSelection';
 import CustomFormControl from '../Components/CustomFormControl';
 import { Stars } from '../Components/StarDisplay';
-import ArtifactDatabase from '../Database/ArtifactDatabase';
-import CharacterDatabase from '../Database/CharacterDatabase';
 import Formula from '../Formula';
 import InfoComponent from '../Components/InfoComponent';
 import Stat from '../Stat';
-import { ArtifactsBySlot, BuildSetting } from '../Types/Build';
+import { ArtifactsBySlot, Build, BuildSetting } from '../Types/Build';
 import { ICharacter } from '../Types/character';
 import { allSlotKeys, ArtifactSetKey, CharacterKey, SetNum, SlotKey } from '../Types/consts';
 import ICalculatedStats from '../Types/ICalculatedStats';
@@ -32,6 +30,8 @@ import { crawlObject, deepClone, loadFromLocalStorage, saveToLocalStorage } from
 import WeaponSheet from '../Weapon/WeaponSheet';
 import { calculateTotalBuildNumber } from './Build';
 import SlotNameWithIcon, { artifactSlotIcon } from '../Artifact/Component/SlotNameWIthIcon';
+import { database } from '../Database/Database';
+import { StatKey } from '../Types/artifact';
 const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
 
 //lazy load the character display
@@ -46,7 +46,7 @@ const initialBuildSettings = (): BuildSetting => ({
   setFilters: [{ key: "", num: 0 }, { key: "", num: 0 }, { key: "", num: 0 }],
   statFilters: {},
   mainStatKeys: ["", "", ""],
-  optimizationTarget: "finalATK",//TODO need to validate
+  optimizationTarget: "finalATK",
   mainStatAssumptionLevel: 0,
   useLockedArts: false,
   useEquippedArts: false,
@@ -73,13 +73,11 @@ function buildSettingsReducer(state: BuildSetting, action): BuildSetting {
 
 export default function BuildDisplay({ location: { characterKey: propCharacterKey } }) {
   const [characterKey, setcharacterKey] = useState("" as CharacterKey | "")
-  const [buildSettings, buildSettingsDispatch] = useReducer(buildSettingsReducer, initialBuildSettings())
-  const { setFilters, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useLockedArts, useEquippedArts, ascending, } = buildSettings
 
   const [builds, setbuilds] = useState([] as any[])
   const [maxBuildsToShow, setmaxBuildsToShow] = useState(maxBuildsToShowDefault)
 
-  const [modalBuild, setmodalBuild] = useState(null)//the newBuild that is being displayed in the character modal
+  const [modalBuild, setmodalBuild] = useState(null) // the newBuild that is being displayed in the character modal
   const [showArtCondModal, setshowArtCondModal] = useState(false)
   const [showCharacterModal, setshowCharacterModal] = useState(false)
 
@@ -99,6 +97,14 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
 
   type characterDataType = { character?: ICharacter, characterSheet?: CharacterSheet, weaponSheet?: WeaponSheet, initialStats?: ICalculatedStats, statsDisplayKeys?: { basicKeys: any, [key: string]: any } }
   const [{ character, characterSheet, weaponSheet, initialStats, statsDisplayKeys }, setCharacterData] = useState({} as characterDataType)
+  const buildSettings = character?.buildSettings ?? initialBuildSettings()
+  const { setFilters, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useLockedArts, useEquippedArts, ascending, } = buildSettings
+
+  const buildSettingsDispatch = useCallback((action) => {
+    if (!character) return
+    character.buildSettings = buildSettingsReducer(buildSettings as any, action)
+    database.updateChar(character)
+  }, [character, buildSettings])
 
   useEffect(() => ReactGA.pageview('/build'), [])
 
@@ -106,7 +112,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   useEffect(() => {
     (async () => {
       if (!characterKey) return
-      const character = CharacterDatabase.get(characterKey)
+      const character = database._getChar(characterKey)
       if (!character) return
       const characterSheet = await CharacterSheet.get(characterKey)
       const weaponSheet = await WeaponSheet.get(character.weapon.key)
@@ -118,17 +124,14 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   }, [charDirty, characterKey])
 
   //register changes in artifact database
-  useEffect(() => {
-    ArtifactDatabase.registerListener(setArtsDirty)
-    return () => { ArtifactDatabase.unregisterListener(setArtsDirty) }
-  }, [setArtsDirty])
+  useEffect(() =>
+    database.followAnyArt(setArtsDirty),
+    [setArtsDirty])
 
   //register changes in character in db
-  useEffect(() => {
-    if (!characterKey) return
-    CharacterDatabase.registerCharListener(characterKey, setCharDirty)
-    return () => CharacterDatabase.unregisterCharListener(characterKey, setCharDirty)
-  }, [characterKey, setCharDirty])
+  useEffect(() =>
+    characterKey ? database.followChar(characterKey, setCharDirty) : undefined,
+    [characterKey, setCharDirty])
 
   //terminate worker when component unmounts
   useEffect(() => () => worker.current?.terminate(), [])
@@ -137,7 +140,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   const selectCharacter = useCallback((cKey = "") => {
     if (characterKey === cKey) return
     setcharacterKey(cKey)
-    buildSettingsDispatch({ ...initialBuildSettings(), ...(CharacterDatabase.get(cKey)?.buildSettings ?? {}) })
+    buildSettingsDispatch({ ...initialBuildSettings(), ...(database._getChar(cKey)?.buildSettings ?? {}) })
     setbuilds([])
     setCharDirty()
     setCharacterData({})
@@ -147,18 +150,10 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   useEffect(() => {//startup load from localStorage
     if (!("BuildsDisplay.state" in localStorage)) return
     const { characterKey = "", maxBuildsToShow = maxBuildsToShowDefault } = loadFromLocalStorage("BuildsDisplay.state") ?? {}
-    if (characterKey && CharacterDatabase.get(characterKey)) selectCharacter(characterKey)
+    if (characterKey && database._getChar(characterKey)) selectCharacter(characterKey)
     setmaxBuildsToShow(maxBuildsToShow)
   }, [])// eslint-disable-line react-hooks/exhaustive-deps
   useEffect(() => propCharacterKey && selectCharacter(propCharacterKey), [propCharacterKey, selectCharacter])//update when props update
-
-  //save build settings to character when buildSettings change, 
-  useEffect(() => {
-    if (!character) return
-    character.buildSettings = buildSettings
-    CharacterDatabase.update(character, false)
-    //will cause infinite loop if add 'character' to dependency array
-  }, [buildSettings]) // eslint-disable-line react-hooks/exhaustive-deps
 
   //save to BuildsDisplay.state on change
   useEffect(() => {
@@ -176,18 +171,18 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
         if (JSON.stringify(keys) === JSON.stringify(optimizationTarget)) return
     }
     buildSettingsDispatch({ optimizationTarget: initialBuildSettings().optimizationTarget })
-  }, [optimizationTarget, statsDisplayKeys])
+  }, [optimizationTarget, statsDisplayKeys, buildSettingsDispatch])
 
   const { split, totBuildNumber } = useMemo(() => {
     if (!characterKey) // Make sure we have all slotKeys
       return { split: Object.fromEntries(allSlotKeys.map(slotKey => [slotKey, []])) as ArtifactsBySlot, totBuildNumber: 0 }
-    const artifactDatabase = deepClone(ArtifactDatabase.getArtifactDatabase())
-    Object.entries(artifactDatabase).forEach(([key, art]) => {
+    const artifactDatabase = database._getArts().filter(art => {
       //if its equipped on the selected character, bypass the check
-      if (art.location === characterKey) return
+      if (art.location === characterKey) return true
 
-      if (art.lock && !useLockedArts) delete artifactDatabase[key]
-      else if (art.location && !useEquippedArts) delete artifactDatabase[key]
+      if (art.lock && !useLockedArts) return false
+      if (art.location && !useEquippedArts) return false
+      return true
     })
     const split = Artifact.splitArtifactsBySlot(artifactDatabase);
     //filter the split slots on the mainstats selected.
@@ -217,8 +212,8 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
       })
     })
     //generate the key dependencies for the formula
-    const minFilters = Object.fromEntries(Object.entries(statFilters).map(([statKey, { min }]) => [statKey, min]).filter(([, min]) => typeof min === "number"))
-    const maxFilters = Object.fromEntries(Object.entries(statFilters).map(([statKey, { max }]) => [statKey, max]).filter(([, max]) => typeof max === "number"))
+    const minFilters: Dict<StatKey, number> = Object.fromEntries(Object.entries(statFilters).map(([statKey, { min }]) => [statKey, min]).filter(([, min]) => typeof min === "number"))
+    const maxFilters: Dict<StatKey, number> = Object.fromEntries(Object.entries(statFilters).map(([statKey, { max }]) => [statKey, max]).filter(([, max]) => typeof max === "number"))
     //create an obj with app the artifact set effects to pass to buildworker.
     const data = {
       splitArtifacts, initialStats, artifactSetEffects,
@@ -240,7 +235,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
         value: e.data.timing,
         label: totBuildNumber.toString()
       })
-      const builds = e.data.builds.map(obj =>
+      const builds = (e.data.builds as Build[]).map(obj =>
         Character.calculateBuildwithArtifact(initialStats, obj.artifacts, artifactSheets))
       setbuilds(builds)
       setgeneratingBuilds(false)
@@ -299,7 +294,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     return count
   }, [initialStats?.conditionalValues])
   //rudimentary dispatcher, definitely not the same API as the real characterDispatch.
-  const characterDispatch = useCallback(val => CharacterDatabase.update({ ...character, ...val }), [character])
+  const characterDispatch = useCallback(val => database.updateChar({ ...character, ...val }), [character])
 
   const hasMinFilters = Object.entries(statFilters).some(([statKey, { min }]) => typeof min === "number")
   const hasMaxFilters = Object.entries(statFilters).some(([statKey, { max }]) => typeof max === "number")
@@ -346,7 +341,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
                   </Card.Body></Card>
                 </Col>
                 {/* Artifact set picker */}
-                {setFilters.map(({ key: setKey, num: setNum }: { key: ArtifactSetKey, num: number }, index) => <Col className="mb-2" key={index} xs={12}>
+                {setFilters.map(({ key: setKey, num: setNum }, index) => <Col className="mb-2" key={index} xs={12}>
                   <Card className="h-100" bg="lightcontent" text={"lightfont" as any}>
                     <Card.Header>
                       <ButtonGroup>
@@ -510,7 +505,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
           {/* Build List */}
           <ListGroup>
             {builds.map((build, index) =>
-              index < maxBuildsToShow && characterSheet && weaponSheet && <ArtifactDisplayItem characterSheet={characterSheet} weaponSheet={weaponSheet} build={build} characterKey={characterKey} index={index} key={index} statsDisplayKeys={statsDisplayKeys} onClick={() => setmodalBuild(build as any)} />
+              index < maxBuildsToShow && characterSheet && weaponSheet && <ArtifactDisplayItem characterSheet={characterSheet} weaponSheet={weaponSheet} build={build} characterKey={characterKey as CharacterKey} index={index} key={index} statsDisplayKeys={statsDisplayKeys} onClick={() => setmodalBuild(build as any)} />
             )}
           </ListGroup>
         </Card>
@@ -645,9 +640,9 @@ function StatFilterItem({ statKey, statKeys = [], min, max, close, setFilter }: 
 }
 
 function HitModeCard({ characterSheet, character, build, className }: { characterSheet: CharacterSheet, character: ICharacter, build: ICalculatedStats, className: string }) {
-  const setHitmode = useCallback(({ hitMode }) => CharacterDatabase.update({ ...character, hitMode }), [character])
-  const setReactionMode = useCallback(({ reactionMode }) => CharacterDatabase.update({ ...character, reactionMode }), [character])
-  const setInfusionAura = useCallback(({ infusionAura }) => CharacterDatabase.update({ ...character, infusionAura }), [character])
+  const setHitmode = useCallback(({ hitMode }) => database.updateChar({ ...character, hitMode }), [character])
+  const setReactionMode = useCallback(({ reactionMode }) => database.updateChar({ ...character, reactionMode }), [character])
+  const setInfusionAura = useCallback(({ infusionAura }) => database.updateChar({ ...character, infusionAura }), [character])
   if (!character) return null
   return <Card bg="lightcontent" text={"lightfont" as any} className={className}>
     <Card.Header>
@@ -684,11 +679,11 @@ function StatFilterCard({ statKeys = [], statFilters = {}, setStatFilters, class
   </Card>
 }
 
-type ArtifactDisplayItemProps = { characterSheet: CharacterSheet, weaponSheet: WeaponSheet, index: number, characterKey: string, build: ICalculatedStats, statsDisplayKeys: any, onClick: () => void }
+type ArtifactDisplayItemProps = { characterSheet: CharacterSheet, weaponSheet: WeaponSheet, index: number, characterKey: CharacterKey, build: ICalculatedStats, statsDisplayKeys: any, onClick: () => void }
 //for displaying each artifact build
 function ArtifactDisplayItem({ characterSheet, weaponSheet, index, characterKey, build, statsDisplayKeys, onClick }: ArtifactDisplayItemProps) {
   const sheets = usePromise(ArtifactSheet.getAll(), [])
-  const character = CharacterDatabase.get(characterKey)
+  const character = database._getChar(characterKey)
   if (!character) return null
   const { equippedArtifacts } = character
   const currentlyEquipped = allSlotKeys.every(slotKey => equippedArtifacts[slotKey] === build.equippedArtifacts?.[slotKey])

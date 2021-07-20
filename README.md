@@ -13,7 +13,7 @@ In the project directory, you can run:
 ### `npm install`
 Install all dependencies/modules to build the site.
 
-`postinstall:` Pulls the [GenshinData repo](https://github.com/Dimbreath/GenshinData) into `localization/GenshinData`.
+`postinstall:` Pulls the [GenshinData repo](https://github.com/Dimbreath/GenshinData) into `pipeline/GenshinData`.
 
 ### `npm start`
 `prestart: npm run gen-files`
@@ -31,6 +31,7 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 ### `npm run build`
 `prebuild: npm run gen-files`
+
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
@@ -50,20 +51,20 @@ To view graphically the size/structure of the built bundles. For optimizing payl
 ### `npm run testserver`
 To create a "production" server
 
-### `npm run localization-main`
+### `npm run localization-gen-main`
 Combine all english translation as a single JSON to be uploaded to translation site.
 Will generate the JSON as `/public/locales/en/main_gen.json`.
 
 ### `npm run localization-load`
 Load the translated JSON into each locale, and separate them into namespaces.
-Load the translations from [POEditor](https://poeditor.com/projects/view?id=439583) into `/src/localization/Translated`.
+Load the translations from [POEditor](https://poeditor.com/projects/view?id=439583) into `/src/pipeline/Translated`.
 
-### `npm run localization-datamined`
-Generate localization from data from datamined data in `localization/GenshinData` from the repo [Dimbreath/GenshinData](https://github.com/Dimbreath/GenshinData)
+### `npm run pipeline-datamined`
+Generate localization & data from datamined data in `pipeline/GenshinData` from the repo [Dimbreath/GenshinData](https://github.com/Dimbreath/GenshinData)
 This will create localization files in `/public/locales/...` with in-game translated text.
 
 ### `npm run gen-files`
-`npm run localization-datamined && npm run localization-load`
+`npm run pipeline-datamined && npm run localization-load`
 
 ### `npm run eject`
 

@@ -18,6 +18,9 @@ import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { IConditionals } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
+import { Translate } from '../../../Components/Translate'
+import { claymoreChargedDocSection, normalDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
+const tr = (strKey: string) => <Translate ns="char_diluc_gen" key18={strKey} />
 const conditionals: IConditionals = {
   b: {//Dawn
     name: <b>Dawn</b>,
@@ -62,15 +65,15 @@ const conditionals: IConditionals = {
   }
 }
 const char: ICharacterSheet = {
-  name: "Diluc",
+  name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   star: 5,
   elementKey: "pyro",
   weaponTypeKey: "claymore",
   gender: "M",
-  constellationName: "Noctua",
-  titles: ["The Dark Side of Dawn", "Darknight Hero", "The Uncrowned King of Mondstadt"],
+  constellationName: tr("constellationName"),
+  title: tr("title"),
   baseStat: data_gen.base,
   baseStatCurve: data_gen.curves,
   ascensions: data_gen.ascensions,
@@ -79,64 +82,19 @@ const char: ICharacterSheet = {
     conditionals,
     sheets: {
       auto: {
-        name: "Tempered Sword",
+        name: tr("auto.name"),
         img: normal,
-        sections: [{
-          text: <span><strong>Normal Attack</strong> Perform up to 4 consecutive strikes.</span>,
-          fields: data.normal.hitArr.map((percentArr, i) =>
-          ({
-            text: `${i + 1}-Hit DMG`,
-            formulaText: stats => <span>{percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
-            formula: formula.normal[i],
-            variant: stats => getTalentStatKeyVariant("normal", stats)
-          }))
-        }, {
-          text: <span><strong>Charged Attack</strong> Drains Stamina over time to perform continuous slashes. At the end of the sequence, perform a more powerful slash.</span>,
-          fields: [{
-            text: `Spinning DMG`,
-            formulaText: stats => <span>{data.charged.spinning[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
-            formula: formula.charged.spinning,
-            variant: stats => getTalentStatKeyVariant("charged", stats)
-          }, {
-            text: `Spinning Final DMG`,
-            formulaText: stats => <span>{data.charged.final[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
-            formula: formula.charged.final,
-            variant: stats => getTalentStatKeyVariant("charged", stats)
-          }, {
-            text: `Stamina Cost`,
-            value: stats => "40/s" + (stats.ascension >= 1 ? " - 20/s" : ""),
-          }, {
-            text: `Max Duration`,
-            value: stats => "5s" + (stats.ascension >= 1 ? " + 3s" : ""),
-          }]
-        }, {
-          text: <span><strong>Plunging Attack</strong> Plunges from mid-air to strike the ground, damaging enemies along the path and dealing AoE DMG upon impact.</span>,
-          fields: [{
-            text: `Plunge DMG`,
-            formulaText: stats => <span>{data.plunging.dmg[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-            formula: formula.plunging.dmg,
-            variant: stats => getTalentStatKeyVariant("plunging", stats),
-          }, {
-            text: `Low Plunge DMG`,
-            formulaText: stats => <span>{data.plunging.low[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-            formula: formula.plunging.low,
-            variant: stats => getTalentStatKeyVariant("plunging", stats),
-          }, {
-            text: `High Plunge DMG`,
-            formulaText: stats => <span>{data.plunging.high[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-            formula: formula.plunging.high,
-            variant: stats => getTalentStatKeyVariant("plunging", stats),
-          }]
-        }],
+        sections: [
+          normalDocSection(tr, formula, data),
+          claymoreChargedDocSection(tr, formula, data),
+          plungeDocSection(tr, formula, data)
+        ],
       },
       skill: {
-        name: "Searing Onslaught",
+        name: tr("skill.name"),
         img: skill,
         sections: [{
-          text: <span>
-            <p className="mb-2">Performs a forward slash that deals <span className="text-pyro">Pyro DMG</span>.</p>
-            <p className="mb-0">This skill can be used 3 times consecutively. Enters CD if not cast again within a short period (5s).</p>
-          </span>,
+          text: tr("skill.description"),
           fields: [
             ...[["hit1", "1-Hit DMG"], ["hit2", "2-Hit DMG"], ["hit3", "3-Hit DMG"]].map(([key, text]) => ({
               text,
@@ -165,10 +123,10 @@ const char: ICharacterSheet = {
         }],
       },
       burst: {
-        name: "Dawn",
+        name: tr("burst.name"),
         img: burst,
         sections: [{
-          text: <span>Releases intense flames to knock nearby opponents back, dealing <span className="text-pyro">Pyro DMG</span>. The flames then converge into the weapon, summoning a Phoenix that flies forward and deals massive <span className="text-pyro">Pyro DMG</span> to all opponents in its path. The Phoenix explodes upon reaching its destination, causing a large amount of <span className="text-pyro">AoE Pyro DMG</span>. The searing flames that run down his blade cause it to be infused with <span className="text-pyro">Pyro</span>.</span>,
+          text: tr("burst.description"),
           fields: [
             ...[["slashing", "Slashing DMG"], ["dot", "DoT"], ["explosion", "Explosion DMG"]].map(([key, text]) => ({
               text,
@@ -186,72 +144,29 @@ const char: ICharacterSheet = {
           conditional: conditionals.b
         }],
       },
-      passive1: {
-        name: "Relentless",
-        img: passive1,
-        sections: [{ text: <span>Diluc's <b>Charged Attack</b> Stamina Cost is decreased by 50%, and its duration is increased by 3s.</span> }],
-      },
-      passive2: {
-        name: "Blessing of Phoenix",
-        img: passive2,
-        sections: [{ text: <span>The <span className="text-pyro">Pyro Enchantment</span> provided by <b>Dawn</b> lasts for 4s longer. Additionally. Diluc gains 20% <span className="text-pyro">Pyro DMG Bonus</span> during the duration of this effect.</span> }],
-      },
-      passive3: {
-        name: "Tradition of the Dawn Knight",
-        img: passive3,
-        sections: [{ text: <span>Refunds 15% of the ores used when crafting Claymore-type weapons.</span> }],
-      },
+      passive1: talentTemplate("passive1", tr, passive1),
+      passive2: talentTemplate("passive2", tr, passive2),
+      passive3: talentTemplate("passive3", tr, passive3),
       constellation1: {
-        name: "Conviction",
+        name: tr("constellation1.name"),
         img: c1,
         sections: [{
-          text: <span>	Diluc deals 15% more DMG to enemies whose HP is above 50%.</span>,
+          text: tr("constellation1.description"),
           conditional: conditionals.c1
         }],
       },
       constellation2: {
-        name: "Searing Ember",
+        name: tr("constellation2.name"),
         img: c2,
         sections: [{
-          text: <span>
-            <p className="mb-2">When Diluc takes DMG, his ATK increases by 10%, and his ATK SPD increases by 5%. Last for 10s.</p>
-            <p className="mb-0">This effect can stack up to 3 times and can only occur once every 1.5s.</p>
-          </span>,
+          text: tr("constellation2.description"),
           conditional: conditionals.c2
         }],
       },
-      constellation3: {
-        name: "Fire and Steel",
-        img: c3,
-        sections: [{ text: <span>Increases <b>Searing Onslaught</b>'s skill level by 3. Maximum upgrade level is 15.</span> }],
-        stats: { skillBoost: 3 }
-      },
-      constellation4: {
-        name: "Flowing Flame",
-        img: c4,
-        sections: [{
-          text: <span>
-            <p className="mb-2">Casting <b>Searing Onslaught</b> in sequence greatly increases damage dealt.</p>
-            <p className="mb-0">Within 2s of using Searing Onslaught, casting the next Searing Onslaught in the combo deals 40% additional DMG. This effect lasts for the next 2s.</p>
-          </span>
-        }],
-      },
-      constellation5: {
-        name: "Phoenix, Harbinger of Dawn",
-        img: c5,
-        sections: [{ text: <span>Increases <b>Dawn</b>'s skill level by 3. Maximum upgrade level is 15.</span> }],
-        stats: { burstBoost: 3 }
-      },
-      constellation6: {
-        name: "Flaming Sword, Nemesis of Dark",
-        img: c6,
-        sections: [{
-          text: <span>
-            <p className="mb-2">After casting <b>Searing Onslaught</b>, the next 2 Normal Attacks within the next 6s will have their DMG and ATK SPD increased by 30%.</p>
-            <p className="mb-0">Additionally, <b>Searing Onslaught</b> will not interrupt the Normal Attack combo.</p>
-          </span>
-        }],
-      }
+      constellation3: talentTemplate("constellation3", tr, c3, { skillBoost: 3 }),
+      constellation4: talentTemplate("constellation4", tr, c4),
+      constellation5: talentTemplate("constellation5", tr, c5, { burstBoost: 3 }),
+      constellation6: talentTemplate("constellation6", tr, c6),
     },
   },
 };

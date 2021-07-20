@@ -18,6 +18,9 @@ import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { IConditionals } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
+import { Translate } from '../../../Components/Translate'
+import { bowChargedDocSection, normalDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
+const tr = (strKey: string) => <Translate ns="char_diona_gen" key18={strKey} />
 const conditionals: IConditionals = {
   c4: { // IcyPawsShield
     canShow: stats => stats.constellation >= 4,
@@ -39,15 +42,15 @@ const conditionals: IConditionals = {
   }
 }
 const char: ICharacterSheet = {
-  name: "Diona",
+  name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   star: 4,
   elementKey: "cryo",
   weaponTypeKey: "bow",
   gender: "F",
-  constellationName: "Feles",
-  titles: ["Kätzlein Cocktail", "Wine Industry Slayer (Self-proclaimed)"],
+  constellationName: tr("constellationName"),
+  title: tr("title"),
   baseStat: data_gen.base,
   baseStatCurve: data_gen.curves,
   ascensions: data_gen.ascensions,
@@ -56,63 +59,19 @@ const char: ICharacterSheet = {
     conditionals,
     sheets: {
       auto: {
-        name: "Kätzlein Style",
+        name: tr("auto.name"),
         img: normal,
-        sections: [{
-          text: <span><strong>Normal Attack</strong> Perform up to 5 consecutive shots with a bow.</span>,
-          fields: data.normal.hitArr.map((percentArr, i) =>
-          ({
-            text: `${i + 1}-Hit DMG`,
-            formulaText: stats => <span>{percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
-            formula: formula.normal[i],
-            variant: stats => getTalentStatKeyVariant("normal", stats),
-          }))
-        }, {
-          text: <span><strong>Charged Attack</strong> Perform a more precise Aimed Shot with increased DMG. While aiming, biting frost will accumulate on the arrowhead. A fully charged frost arrow will deal <span className="text-cryo">Cryo DMG</span>.</span>,
-          fields: [{
-            text: `Aimed Shot DMG`,
-            formulaText: stats => <span>{data.charged.aimedShot[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
-            formula: formula.charged.aimShot,
-            variant: stats => getTalentStatKeyVariant("charged", stats),
-          }, {
-            text: `Fully-Charged Aimed Shot DMG`,
-            formulaText: stats => <span>{data.charged.fullAimedShot[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats, "cryo"), stats)}</span>,
-            formula: formula.charged.fullAimedShot,
-            variant: stats => getTalentStatKeyVariant("charged", stats, "cryo"),
-          }, {
-            canShow: stats => stats.constellation >= 4,
-            text: "Charge time reduced by 60% in Burst zone"
-          }]
-        }, {
-          text: <span><strong>Plunging Attack</strong> Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.</span>,
-          fields: [{
-            text: `Plunge DMG`,
-            formulaText: stats => <span>{data.plunging.dmg[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-            formula: formula.plunging.dmg,
-            variant: stats => getTalentStatKeyVariant("plunging", stats),
-          }, {
-            text: `Low Plunge DMG`,
-            formulaText: stats => <span>{data.plunging.low[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-            formula: formula.plunging.low,
-            variant: stats => getTalentStatKeyVariant("plunging", stats),
-          }, {
-            text: `High Plunge DMG`,
-            formulaText: stats => <span>{data.plunging.high[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-            formula: formula.plunging.high,
-            variant: stats => getTalentStatKeyVariant("plunging", stats),
-          }]
-        }],
+        sections: [
+          normalDocSection(tr, formula, data),
+          bowChargedDocSection(tr, formula, data, "cryo"),
+          plungeDocSection(tr, formula, data)
+        ]
       },
       skill: {
-        name: "Icy Paws",
+        name: tr("skill.name"),
         img: skill,
         sections: [{
-          text: <span>
-            <p className="mb-2">Fires an Icy Paw that deals <span className="text-cryo">Cryo DMG</span> to opponents and forms a shield on hit.The shield's DMG Absorption scales based on Diona's Max HP, and its duration scales off the number of Icy Paws that hit their target.</p>
-            <p className="mb-2"><strong>Press:</strong> Rapidly fires off 2 Icy Paws.</p>
-            <p className="mb-2"><strong>Hold:</strong> ashes back quickly before firing five Icy Paws.</p>
-            <p className="mb-2">The shield created by a Hold attack will gain a 75% DMG Absorption Bonus.The shield has a 250% <span className="text-cryo">Cryo DMG</span> Absorption Bonus, and will cause your active character to become affected by <span className="text-cryo">Cryo</span> at the point of formation for a short duration.</p>
-          </span>,
+          text: tr("skill.description"),
           fields: [{
             text: <span className="text-cryo">Shield DMG Absorption</span>,
             formulaText: stats => <span>( {data.skill.shieldHp[stats.tlvl.skill]}% {Stat.printStat("finalHP", stats)} + {data.skill.shieldFlat[stats.tlvl.skill]} ) * (100% + {Stat.printStat("powShield_", stats)}) * (250% <span className="text-cryo">Cryo Absorption</span>){stats.constellation >= 2 ? " * 115%" : ""}</span>,
@@ -150,15 +109,10 @@ const char: ICharacterSheet = {
         }]
       },
       burst: {
-        name: "Signature Mix",
+        name: tr("burst.name"),
         img: burst,
         sections: [{
-          text: <span>
-            <p className="mb-2">Tosses out a special cold brew that deals <span className="text-cryo">AoE Cryo DMG</span> and creates a Drunken Mist in an AoE.</p>
-            <p className="mb-2"><strong>Drunken Mist</strong></p>
-            <p className="mb-1">Deals continuous <span className="text-cryo">Cryo DMG</span> to opponents within the AoE.</p>
-            <p className="mb-1">Continuously regenerates the HP of characters within the AoE.</p>
-          </span>,
+          text: tr("burst.description"),
           fields: [{
             text: "Skill DMG",
             formulaText: stats => <span>{data.burst.dmg[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
@@ -189,63 +143,20 @@ const char: ICharacterSheet = {
           conditional: conditionals.c6f
         }],
       },
-      passive1: {
-        name: "Cat's Tail Secret Menu",
-        img: passive1,
-        sections: [{ text: <span>Characters shielded by <b>Icy Paws</b> have their Movement SPD increased by 10% and their Stamina Consumption decreased by 10%.</span> }],
-      },
-      passive2: {
-        name: "Drunkards' Farce",
-        img: passive2,
-        sections: [{ text: <span>Opponents who enter the AoE of Signature Mix have 10% decreased ATK for 15s.</span> }],//TODO: enemy atk decrease
-      },
-      passive3: {
-        name: "Complimentary Bar Food",
-        img: passive3,
-        sections: [{ text: <span>When a Perfect Cooking is achieved on a dish with restorative effects, there is a 12% chance to obtain double the product.</span> }],
-      },
-      constellation1: {
-        name: "A Lingering Flavor",
-        img: c1,
-        sections: [{ text: <span>Regenerates 15 Energy for Diona after the effects of Signature Mix end.</span> }],
-      },
+      passive1: talentTemplate("passive1", tr, passive1),
+      passive2: talentTemplate("passive2", tr, passive2),//TODO: enemy atk decrease
+      passive3: talentTemplate("passive3", tr, passive3),
+      constellation1: talentTemplate("constellation1", tr, c1),
       constellation2: {
-        name: "Shaken, Not Purred",
+        name: tr("constellation2.name"),
         img: c2,
-        sections: [{ text: <span>Increases Icy Paws' DMG by 15%, and increases its shield's DMG Absorption by 15%. Additionally, when paws hit their targets, creates a shield for other nearby characters on the field with 50% of the Icy Paws shield's DMG Absorption for 5s.</span> }],
-        stats: stats => stats.constellation >= 2 && {
-          skill_dmg_: 15
-        }
+        sections: [{ text: tr("constellation2.description"), }],
+        stats: stats => stats.constellation >= 2 && { skill_dmg_: 15 }
       },
-      constellation3: {
-        name: "A—Another Round?",
-        img: c3,
-        sections: [{ text: <span> Increases the Level of <b>Signature Mix</b> by 3. Maximum upgrade level is 15.</span> }],
-        stats: { burstBoost: 3 }
-      },
-      constellation4: {
-        name: "Wine Industry Slayer",
-        img: c4,
-        sections: [{ text: <span>Within the radius of <b>Signature Mix</b>, Diona's charge time for aimed shots is reduced by 60%</span> }],
-      },
-      constellation5: {
-        name: "Double Shot, On The Rocks",
-        img: c5,
-        sections: [{ text: <span>Increases the Level of <b>Icy Paws</b> by 3. Maximum upgrade level is 15.</span> }],
-        stats: { skillBoost: 3 }
-      },
-      constellation6: {
-        name: "Cat's Tail Closing Time",
-        img: c6,
-        sections: [{
-          text: <span>Characters within Signature Mix's radius will gain the following effects based on their HP amounts:
-          <ul className="mb-2">
-              <li>Increases Incoming Healing Bonus by 30% when HP falls below or is equal to 50%.</li>
-              <li>Elemental Mastery increased by 200 when HP is above 50%.</li>
-            </ul>
-          </span>
-        }],
-      }
+      constellation3: talentTemplate("constellation3", tr, c3, { burstBoost: 3 }),
+      constellation4: talentTemplate("constellation4", tr, c4),
+      constellation5: talentTemplate("constellation5", tr, c5, { skillBoost: 3 }),
+      constellation6: talentTemplate("constellation6", tr, c6),
     },
   },
 };

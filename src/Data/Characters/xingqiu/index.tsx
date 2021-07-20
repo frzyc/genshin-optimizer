@@ -13,12 +13,14 @@ import passive1 from './Talent_Hydropathic.png'
 import passive2 from './Talent_Blades_Amidst_Raindrops.png'
 import passive3 from './Talent_Flash_of_Genius.png'
 import Stat from '../../../Stat'
-import DisplayPercent from '../../../Components/DisplayPercent'
 import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from "../../../Build/Build"
 import { ICharacterSheet } from '../../../Types/character'
 import { IConditionals } from '../../../Types/IConditional'
+import { Translate } from '../../../Components/Translate'
+import { talentTemplate } from '../SheetUtil'
+const tr = (strKey: string) => <Translate ns="char_xingqiu_gen" key18={strKey} />
 const conditionals: IConditionals = {
   c2: { // RainbowUponTheAzureSky
     canShow: stats => stats.constellation >= 2,
@@ -27,15 +29,15 @@ const conditionals: IConditionals = {
   },
 }
 const char: ICharacterSheet = {
-  name: "Xingqiu",
+  name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   star: 4,
   elementKey: "hydro",
   weaponTypeKey: "sword",
   gender: "M",
-  constellationName: "Fabulae Textile",
-  titles: ["Juvenile Galant", "Guhua Guru of Feiyun Fame", "Guhua Geek"],
+  constellationName: tr("constellationName"),
+  title: tr("title"),
   baseStat: data_gen.base,
   baseStatCurve: data_gen.curves,
   ascensions: data_gen.ascensions,
@@ -44,7 +46,7 @@ const char: ICharacterSheet = {
     conditionals,
     sheets: {
       auto: {
-        name: "Guhua Style",
+        name: tr("auto.name"),
         img: normal,
         sections: [{
           text: <span><strong>Normal Attack</strong> Perform up to 5 rapid strikes. <small><i>Note: the 3rd attack hits twice.</i></small></span>,
@@ -92,20 +94,10 @@ const char: ICharacterSheet = {
         }],
       },
       skill: {
-        name: "Guhua Sword: Fatal Rainscreen",
+        name: tr("skill.name"),
         img: skill,
         sections: [{
-          text: <span>
-            <p className="mb-2">Xingqiu performs twin strikes with his sword, dealing <span className="text-hydro">Hydro DMG</span>. At the same time, this ability creates the maximum number of Rain Swords, which will orbit your active character.</p>
-            <p className="mb-2">The Rain Swords have the following properties:</p>
-            <ul className="mb-2">
-              <li>When a character takes DMG, the Rain Sword will shatter, reducing the amount of DMG taken.</li>
-              <li>Increase the character's resistance to interruption.</li>
-              <li>20% of Xingqiu's <span className="text-hydro">Hydro DMG Bonus</span> will be converted to additional DMG Reduction for the Rain Swords. The maximum amount of additional DMG Reduction that can be gained this way is 24%.</li>
-              <li>The initial maximum number of Rain Swords is 3.</li>
-              <li>Using this ability applies the <span className="text-hydro">Wet</span> status onto the character.</li>
-            </ul>
-          </span>,
+          text: tr("skill.description"),
           fields: [{
             text: "Skill 1-Hit DMG",
             formulaText: stats => <span>{data.skill.hit1[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
@@ -146,18 +138,10 @@ const char: ICharacterSheet = {
         }],
       },
       burst: {
-        name: "Guhua Sword: Raincutter",
+        name: tr("burst.name"),
         img: burst,
         sections: [{
-          text: <span>
-            <p className="mb-2">Initiate Rainbow Bladework and fight using an illusory sword rain, while creating the maximum number of Rain Swords.</p>
-            <h6>Rainbow Bladework:</h6>
-            <ul className="mb-2">
-              <li>Your active character's Normal Attacks will trigger consecutive sword rain attacks, dealing <span className="text-hydro">Hydro DMG</span>.</li>
-              <li>Rain Swords will remain at the maximum number throughout the ability's duration.</li>
-              <li>These effects carry over to other characters.</li>
-            </ul>
-          </span>,
+          text: tr("burst.description"),
           fields: [{
             text: "Sword Rain DMG",
             formulaText: stats => <span>{data.burst.dmg[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
@@ -175,64 +159,29 @@ const char: ICharacterSheet = {
           }]
         }],
       },
-      passive1: {
-        name: "Hydropathic",
-        img: passive1,
-        sections: [{ text: stats => <span>When a <b>Rain Sword</b> is shattered or when its duration expires, it regenerates the current character's HP based on 6% of Xingqiu's Max HP{DisplayPercent(6, stats, "finalHP")}.</span> }],
-      },
+      passive1: talentTemplate("passive1", tr, passive1),
       passive2: {
-        name: "Blades Amidst Raindrops",
+        name: tr("passive2.name"),
         img: passive2,
-        sections: [{ text: <span>Xingqiu gains a 20% <span className="text-hydro">Hydro DMG Bonus</span>.</span> }],
+        sections: [{ text: tr("passive2.description"), }],
         stats: stats => stats.ascension >= 4 && {
           hydro_dmg_: 20,
         }
       },
-      passive3: {
-        name: "Flash of Genius",
-        img: passive3,
-        sections: [{ text: <span>When Xingqiu crafts Character Talent Materials, he has a 25% chance to refund a portion of the crafting materials used.</span> }],
-      },
-      constellation1: {
-        name: "The Scent Remained",
-        img: c1,
-        sections: [{ text: <span>Increases the maximum number of <b>Rain Swords</b> by 1.</span> }],
-      },
+      passive3: talentTemplate("passive3", tr, passive3),
+      constellation1: talentTemplate("constellation1", tr, c1),
       constellation2: {
-        name: "Rainbow Upon the Azure Sky",
+        name: tr("constellation2.name"),
         img: c2,
         sections: [{
-          text: <span>Extends the duration of <b>Guhua Sword: Raincutter</b> by 3s. Decreases the <span className="text-hydro">Hydro RES</span> of opponents hit by sword rain by 15% for 4s.</span>,
+          text: tr("constellation2.description"),
           conditional: conditionals.c2
         }],
       },
-      constellation3: {
-        name: "Weaver of Verses",
-        img: c3,
-        sections: [{ text: <span>	Increases the level of <b>Guhua Sword: Raincutter</b> by 3. Maximum upgrade level is 15.</span> }],
-        stats: { burstBoost: 3 }
-      },
-      constellation4: {
-        name: "Evilsoother",
-        img: c4,
-        sections: [{ text: <span>Throughout the duration of <b>Guhua Sword: Raincutter</b>, the DMG dealt by <b>Guhua Sword: Fatal Rainscreen</b> is increased by 50%.</span> }],
-      },
-      constellation5: {
-        name: "Embrace of Rain",
-        img: c5,
-        sections: [{ text: <span>Increases the level of <b>Guhua Sword: Fatal Rainscreen</b> by 3. Maximum upgrade level is 15.</span> }],
-        stats: { skillBoost: 3 }
-      },
-      constellation6: {
-        name: "Hence, Call Them My Own Verses",
-        img: c6,
-        sections: [{
-          text: <span>
-            <p className="mb-2">Activating 2 of <b>Guhua Sword: Raincutter</b>'s sword rain attacks greatly increases the DMG of the third. Xingqiu regenerates 3 Energy when sword rain attacks hit opponents.</p>
-            <small>Note: this increase the amount of swords in the combo, but does not increase the individual sword DMG.</small>
-          </span>
-        }],
-      }
+      constellation3: talentTemplate("constellation3", tr, c3, { burstBoost: 3 }),
+      constellation4: talentTemplate("constellation4", tr, c4),
+      constellation5: talentTemplate("constellation5", tr, c5, { skillBoost: 3 }),
+      constellation6: talentTemplate("constellation6", tr, c6),
     },
   },
 };

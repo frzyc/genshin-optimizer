@@ -18,6 +18,8 @@ import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { IConditionals } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
+import { Translate } from '../../../Components/Translate'
+const tr = (strKey: string) => <Translate ns="char_keqing_gen" key18={strKey} />
 const conditionals: IConditionals = {
   a1: {
     canShow: stats => stats.ascension >= 4,
@@ -60,15 +62,15 @@ const conditionals: IConditionals = {
   }
 }
 const char: ICharacterSheet = {
-  name: "Keqing",
+  name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   star: 5,
   elementKey: "electro",
   weaponTypeKey: "sword",
   gender: "F",
-  constellationName: "Trulla Cementarii",
-  titles: ["Driving Thunder", "Yuheng of the Liyue Qixing"],
+  constellationName: tr("constellationName"),
+  title: tr("title"),
   baseStat: data_gen.base,
   baseStatCurve: data_gen.curves,
   ascensions: data_gen.ascensions,
@@ -77,7 +79,7 @@ const char: ICharacterSheet = {
     conditionals,
     sheets: {
       auto: {
-        name: "Yunlai Swordsmanship",
+        name: tr("auto.name"),
         img: normal,
         sections: [{
           text: <span><strong>Normal Attack</strong> Perform up to 5 rapid strikes.</span>,
@@ -125,21 +127,10 @@ const char: ICharacterSheet = {
         }],
       },
       skill: {
-        name: "Stellar Restoration",
+        name: tr("skill.name"),
         img: skill,
         sections: [{
-          text: <span>
-            <p className="mb-2">Hurls a Lightning Stiletto that annihilates her enemies like the swift thunder. When the Stiletto hits its target, it deals <span className="text-electro">Electro DMG</span> to enemies in a small AoE, and places a Stiletto Mark on the spot hit.</p>
-            <p className="mb-2"><strong>Hold:</strong> Hold to adjust the direction in which the Stiletto shall be thrown. Stilettos thrown by the Hold attack mode can be suspended in mid-air, allowing Keqing to jump to them when using Stellar Restoration a second time.</p>
-            <p className="mb-2"><strong>Lightning Stiletto:</strong> If Keqing uses Stellar Restoration again or uses a Charged Attack while its duration lasts, it will clear the Stiletto Mark and produce different effects:</p>
-            <ul>
-              <li>If she uses Stellar Restoration again, she will blink to the location of the Mark and unleash one slashing attack that deals <span className="text-electro">AoE Electro DMG</span>. When blinking to a Stiletto that was thrown from a Holding attack, Keqing can leap across obstructing terrain.</li>
-              <li>
-                <p className="mb-0">If Keqing uses a Charged Attack, she will ignite a series of thundering cuts at the Mark's location, dealing <span className="text-electro">AoE Electro DMG</span>.</p>
-                <small><b>Thunderclap Slash</b> will hit twice.</small>
-              </li>
-            </ul>
-          </span>,
+          text: tr("skill.description"),
           fields: [{
             text: "Lightning Stiletto DMG",
             formulaText: stats => <span>{data.skill.stilleto[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
@@ -162,12 +153,11 @@ const char: ICharacterSheet = {
         }],
       },
       burst: {
-        name: "Starward Sword",
+        name: tr("burst.name"),
         img: burst,
         sections: [{
           text: <span>
-            <p className="mb-2">Keqing unleashes the power of lightning, dealing <span className="text-electro">Electro DMG</span> in an AoE.</p>
-            <p className="mb-2">She then blends into the shadow of her blade, striking a series of thunderclap-blows to nearby enemies simultaneously that deal multiple instances of <span className="text-electro">Electro DMG</span>. The final attack deals massive <span className="text-electro">AoE Electro DMG</span>.</p>
+            {tr("burst.description")}
             <small>The <b>consecutive slashes</b> hits 8 times.</small>
           </span>,
           fields: [{

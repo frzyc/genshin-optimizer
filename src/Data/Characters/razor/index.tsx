@@ -18,6 +18,9 @@ import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant, } from "../../../Build/Build"
 import { IConditionals } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
+import { Translate } from '../../../Components/Translate'
+import { claymoreChargedDocSection, normalDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
+const tr = (strKey: string) => <Translate ns="char_razor_gen" key18={strKey} />
 const conditionals: IConditionals = {
   e: { // ElectroSigil
     name: "Electro Sigil",
@@ -64,15 +67,15 @@ const conditionals: IConditionals = {
   },
 }
 const char: ICharacterSheet = {
-  name: "Razor",
+  name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   star: 4,
   elementKey: "electro",
   weaponTypeKey: "claymore",
   gender: "M",
-  constellationName: "Lupus Minor",
-  titles: ["Legend of Wolvendom", "Wolf Boy"],
+  constellationName: tr("constellationName"),
+  title: tr("title"),
   baseStat: data_gen.base,
   baseStatCurve: data_gen.curves,
   ascensions: data_gen.ascensions,
@@ -81,64 +84,19 @@ const char: ICharacterSheet = {
     conditionals,
     sheets: {
       auto: {
-        name: "Steel Fang",
+        name: tr("auto.name"),
         img: normal,
-        sections: [{
-          text: <span><strong>Normal Attack</strong> Perform up to 4 consecutive strikes.</span>,
-          fields: data.normal.hitArr.map((percentArr, i) => ({
-            text: `${i + 1}-Hit DMG`,
-            formulaText: stats => <span>{percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
-            formula: formula.normal[i],
-            variant: stats => getTalentStatKeyVariant("normal", stats),
-          })),
-        }, {
-          text: <span><strong>Charged Attack</strong> Drains Stamina over time to perform continuous spinning attacks against all nearby opponents. At end of the sequence, perform a more powerful slash.</span>,
-          fields: [{
-            text: `Spinning DMG`,
-            formulaText: stats => <span>{data.charged.spinning[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
-            formula: formula.charged.spinning,
-            variant: stats => getTalentStatKeyVariant("charged", stats),
-          }, {
-            text: `Spinning Final DMG`,
-            formulaText: stats => <span>{data.charged.final[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
-            formula: formula.charged.final,
-            variant: stats => getTalentStatKeyVariant("charged", stats),
-          }, {
-            text: `Stamina Cost`,
-            value: "40/s",
-          }, {
-            text: `Max Duration`,
-            value: "5s",
-          }],
-        }, {
-          text: <span><strong>Plunging Attack</strong> Plunges from mid-air to strike the ground, damaging enemies along the path and dealing AoE DMG upon impact.</span>,
-          fields: [{
-            text: `Plunge DMG`,
-            formulaText: stats => <span>{data.plunging.dmg[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-            formula: formula.plunging.dmg,
-            variant: stats => getTalentStatKeyVariant("plunging", stats),
-          }, {
-            text: `Low Plunge DMG`,
-            formulaText: stats => <span>{data.plunging.low[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-            formula: formula.plunging.low,
-            variant: stats => getTalentStatKeyVariant("plunging", stats),
-          }, {
-            text: `High Plunge DMG`,
-            formulaText: stats => <span>{data.plunging.high[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-            formula: formula.plunging.high,
-            variant: stats => getTalentStatKeyVariant("plunging", stats),
-          }],
-        }],
+        sections: [
+          normalDocSection(tr, formula, data),
+          claymoreChargedDocSection(tr, formula, data),
+          plungeDocSection(tr, formula, data),
+        ],
       },
       skill: {
-        name: "Claw and Thunder",
+        name: tr("skill.name"),
         img: skill,
         sections: [{
-          text: <span>
-            <p className="mb-2">Hunts his prey using the techniques taught to him by his master and his Lupical.</p>
-            <p className="mb-2"><strong>Press:</strong> Swings the Thunder Wolf Claw, dealing <span className="text-electro">Electro DMG</span> to opponents in front of Razor. Upon striking an opponent, Razor will gain an Electro Sigil, which increases his Energy Recharge rate. Razor can have up to 3 Electro Sigils simultaneously, and gaining a new Electro Sigil refreshes their duration.</p>
-            <p className="mb-2"><strong>Hold:</strong> Gathers Electro energy to unleash a lightning storm over a small AoE, causing massive <span className="text-electro">Electro DMG</span>, and clears all of Razor's Electro Sigils. Each Electro Sigil cleared in this manner will be converted into Energy for Razor. </p>
-          </span>,
+          text: tr("skill.description"),
           fields: [{
             text: "Press DMG",
             formulaText: stats => <span>{data.skill.press[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
@@ -169,23 +127,10 @@ const char: ICharacterSheet = {
         }],
       },
       burst: {
-        name: "Lightning Fang",
+        name: tr("burst.name"),
         img: burst,
         sections: [{
-          text: (
-            <span>
-              <p className="mb-2">Summons the Wolf Within which deals <span className="text-electro">Electro DMG</span> to all nearby opponents. This clears all of Razor's Electro Sigils, which will be converted into elemental energy for him. The Wolf Within will fight alongside Razor for the skill's duration.</p>
-              <h6>The Wolf Within</h6>
-              <ul className="mb-2">
-                <li>Strikes alongside Razor's normal attacks, dealing <span className="text-electro">Electro DMG</span>.</li>
-                <li>Raises Razor's ATK SPD and <span className="text-electro">Electro RES</span>.</li>
-                <li>Causes Razor to be immune to DMG inflicted by the Electro-Charged status.</li>
-                <li>Disables Razor's Charged Attacks.</li>
-                <li>Increases Razor's resistance to interruption.</li>
-              </ul>
-              <p className="mb-2">These effects end when Razor leaves the battlefield. When Razor leaves the field, a maximum of 10 Energy will be returned to him based off the duration remaining on this skill.</p>
-            </span>
-          ),
+          text: tr("burst.description"),
           fields: [{
             text: "Elemental Burst DMG",
             formulaText: stats => <span>{data.burst.summon[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
@@ -209,67 +154,48 @@ const char: ICharacterSheet = {
           }],
           conditional: conditionals.q
         }],
-
       },
-      passive1: {
-        name: "Awakening",
-        img: passive1,
-        sections: [{ text: <span>Decreases <b>Claw and Thunder</b>'s CD by 18%. Using <b>Lightning Fang</b> resets the CD of <b>Claw and Thunder</b>.</span>, }],
-      },
+      passive1: talentTemplate("passive1", tr, passive1),
       passive2: {
-        name: "Hunger",
+        name: tr("passive2.name"),
         img: passive2,
         sections: [{
-          text: <span>When Razor's Energy is below 50%, increases Energy Recharge by 30%.</span>,
+          text: tr("passive2.description"),
           conditional: conditionals.a4
         }],
       },
-      passive3: {
-        name: "Wolvensprint",
-        img: passive3,
-        sections: [{ text: <span>Decreases sprinting Stamina consumption for your own party members by 20%. Not stackable with Passive Talents that provide the exact same effects.</span>, }],//TODO: team buff
-      },
+      passive3: talentTemplate("passive3", tr, passive3),
       constellation1: {
-        name: "Wolf's Instinct",
+        name: tr("constellation1.name"),
         img: c1,
         sections: [{
-          text: <span>Picking up an Elemental Orb or Particle increases Razor's DMG by 10% for 8s.</span>,
+          text: tr("constellation1.description"),
           conditional: conditionals.c1
         }],
       },
       constellation2: {
-        name: "Suppression",
+        name: tr("constellation2.name"),
         img: c2,
         sections: [{
-          text: <span>Increases CRIT Rate against opponents with less than 30% HP by 10%.</span>,
+          text: tr("constellation2.description"),
           conditional: conditionals.c2
         }],
       },
-      constellation3: {
-        name: "Soul Companion",
-        img: c3,
-        sections: [{ text: <span>Increases <b>Lightning Fang</b>'s skill level by 3. Maximum upgrade level is 15.</span>, }],
-        stats: { burstBoost: 3 },
-      },
+      constellation3: talentTemplate("constellation3", tr, c3, { burstBoost: 3 }),
       constellation4: {
-        name: "Bite",
+        name: tr("constellation4.name"),
         img: c4,
         sections: [{
-          text: <span>When casting <b>Claw and Thunder</b> (Press), opponents hit will have their DEF decreased by 15% for 7s.</span>,
+          text: tr("constellation4.description"),
           conditional: conditionals.c4
         }],
       },
-      constellation5: {
-        name: "Sharpened Claws",
-        img: c5,
-        sections: [{ text: <span>Increases <b>Claw and Thunder</b>'s skill level by 3. Maximum upgrade level is 15.</span> }],
-        stats: { skillBoost: 3 },
-      },
+      constellation5: talentTemplate("constellation5", tr, c5, { skillBoost: 3 }),
       constellation6: {
-        name: "Lupus Fulguris",
+        name: tr("constellation6.name"),
         img: c6,
         sections: [{
-          text: <span>Every 10s, Razor's sword charges up, causing the next Normal Attack to release lightning that deals 100% of Razor's ATK as <span className="text-electro">Electro DMG</span>. When Razor is not using <b>Lightning Fang</b>, a lightning strike on an opponent will grant Razor an Electro Sigil for <b>Claw and Thunder</b>.</span>,
+          text: tr("constellation6.description"),
           fields: [{
             canShow: stats => stats.constellation >= 6,
             text: "Lupus Fulguris DMG",

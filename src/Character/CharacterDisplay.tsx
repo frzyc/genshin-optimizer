@@ -5,16 +5,14 @@ import { Button, ButtonGroup, Card, Col, Container, Image, Row, Spinner, ToggleB
 import ReactGA from 'react-ga';
 import { Link } from 'react-router-dom';
 import Assets from '../Assets/Assets';
-import CharacterDatabase from '../Database/CharacterDatabase';
 import InfoComponent from '../Components/InfoComponent';
-import { allElements } from '../Types/consts';
+import { allElements, allWeaponTypeKeys, CharacterKey } from '../Types/consts';
 import { useForceUpdate, usePromise } from '../Util/ReactUtil';
 import { loadFromLocalStorage, saveToLocalStorage } from '../Util/Util';
-import Weapon from '../Weapon/Weapon';
-import Character from './Character';
 import CharacterCard from './CharacterCard';
 import CharacterSheet from './CharacterSheet';
 import i18next from 'i18next';
+import { database } from '../Database/Database';
 const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
 
 //lazy load the character display
@@ -32,7 +30,7 @@ function filterReducer(oldFilter, newFilter) {
 }
 
 export default function CharacterDisplay(props) {
-  const [charIdToEdit, setcharIdToEdit] = useState("")
+  const [charIdToEdit, setcharIdToEdit] = useState("" as CharacterKey | "")
   const [sortBy, setsortBy] = useState(() => Object.keys(toggle)[0])
   const [elementalFilter, elementalFilterDispatch] = useReducer(filterReducer, "")
   const [weaponFilter, weaponFilterDispatch] = useReducer(filterReducer, "")
@@ -47,21 +45,20 @@ export default function CharacterDisplay(props) {
       setcharIdToEdit(charIdToEdit)
       setsortBy(sortBy)
       allElements.includes(elementalFilter) && elementalFilterDispatch(elementalFilter)
-      Weapon.getWeaponTypeKeys().includes(weaponFilter) && weaponFilterDispatch(weaponFilter)
+      allWeaponTypeKeys.includes(weaponFilter) && weaponFilterDispatch(weaponFilter)
     }
-    CharacterDatabase.registerListener(forceUpdate)
-    return () => CharacterDatabase.unregisterListener(forceUpdate)
+    return database.followAnyChar(forceUpdate)
   }, [forceUpdate])
   const allCharacterSheets = usePromise(CharacterSheet.getAll(), []) ?? {}
   const sortingFunc = {
-    level: (ck) => CharacterDatabase.get(ck)?.level ?? 0,
+    level: (ck) => database._getChar(ck)?.level ?? 0,
     rarity: (ck) => allCharacterSheets[ck]?.star
   }
   useEffect(() => {
     const save = { charIdToEdit, sortBy, elementalFilter, weaponFilter }
     saveToLocalStorage("CharacterDisplay.state", save)
   }, [charIdToEdit, sortBy, elementalFilter, weaponFilter])
-  const deleteCharacter = useCallback(async id => {
+  const deleteCharacter = useCallback(async (id: CharacterKey) => {
     const chararcterSheet = await CharacterSheet.get(id)
     let name = chararcterSheet?.name
     //use translated string
@@ -69,7 +66,7 @@ export default function CharacterDisplay(props) {
       name = i18next.t(`char_${id}_gen:name`)
 
     if (!window.confirm(`Are you sure you want to remove ${name}?`)) return
-    Character.remove(id)
+    database.removeChar(id)
     if (charIdToEdit === id)
       setcharIdToEdit("")
   }, [charIdToEdit, setcharIdToEdit])
@@ -86,7 +83,7 @@ export default function CharacterDisplay(props) {
     setnewCharacter(false)
   }, [setcharIdToEdit])
 
-  const charKeyList = CharacterDatabase.getCharacterKeyList().filter(cKey => {
+  const charKeyList = database._getCharKeys().filter(cKey => {
     if (elementalFilter && elementalFilter !== allCharacterSheets[cKey]?.elementKey) return false
     if (weaponFilter && weaponFilter !== allCharacterSheets[cKey]?.weaponTypeKey) return false
     return true
@@ -148,7 +145,7 @@ export default function CharacterDisplay(props) {
           </Col>
           <Col>
             <ButtonGroup >
-              {Weapon.getWeaponTypeKeys().map(weaponType =>
+              {allWeaponTypeKeys.map(weaponType =>
                 <Button key={weaponType} variant={(!weaponFilter || weaponFilter === weaponType) ? "success" : "primary"} className="py-1 px-2" onClick={() => weaponFilterDispatch(weaponType)}><h4 className="mb-0"><Image src={Assets.weaponTypes?.[weaponType]} className="inline-icon" /></h4></Button>)}
             </ButtonGroup>
           </Col>

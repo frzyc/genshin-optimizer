@@ -37,8 +37,8 @@ describe("Testing Diona's Formulas (VoidAssassin#9930)", () => {
         expect(formula.normal[3](stats)[0](stats)).toApproximate(66)
         expect(formula.normal[4](stats)[0](stats)).toApproximate(83)
 
-        expect(formula.charged.aimShot(stats)[0](stats)).toApproximate(67)
-        expect(formula.charged.fullAimedShot(stats)[0](stats)).toApproximate(695)
+        expect(formula.charged.hit(stats)[0](stats)).toApproximate(67)
+        expect(formula.charged.full(stats)[0](stats)).toApproximate(695)
         // expect(formula.plunging.dmg(stats)[0](stats)).toApproximate()
         // expect(formula.plunging.low(stats)[0](stats)).toApproximate()
         // expect(formula.plunging.high(stats)[0](stats)).toApproximate()
@@ -72,8 +72,8 @@ describe("Testing Diona's Formulas (VoidAssassin#9930)", () => {
         expect(formula.normal[3](stats)[0](stats)).toApproximate(112)
         expect(formula.normal[4](stats)[0](stats)).toApproximate(140)
 
-        expect(formula.charged.aimShot(stats)[0](stats)).toApproximate(114)
-        expect(formula.charged.fullAimedShot(stats)[0](stats)).toApproximate(1173)
+        expect(formula.charged.hit(stats)[0](stats)).toApproximate(114)
+        expect(formula.charged.full(stats)[0](stats)).toApproximate(1173)
         // expect(formula.plunging.dmg(stats)[0](stats)).toApproximate()
         // expect(formula.plunging.low(stats)[0](stats)).toApproximate()
         // expect(formula.plunging.high(stats)[0](stats)).toApproximate()
