@@ -1,12 +1,41 @@
 {
+  "burst": {
+    "name": "Kazuha Slash",
+    "description": {
+      "0": "Ilmu pedang Garyu terkuat — sebuah tebasan pedang yang membawa badai dan mengakibatkan <anemo>Anemo DMG Area</anemo>.",
+      "1": "Tebasan pedang ini akan menyisakan sebuah area yang disebut \"Autumn Whirlwind\" dan mengakibatkan <anemo>Anemo DMG Area</anemo> setiap beberapa saat ke musuh di dalamnya.",
+      "2": "<br/>",
+      "3": "<strong>Elemental Absorption</strong>",
+      "4": "Jika Autumn Whirlwind bersentuhan dengan <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, maka Autumn Whirlwind akan mengakibatkan DMG elemental tambahan yang sesuai dengan elemen tersebut.",
+      "5": "Elemental Absorption hanya dapat terpicu sekali setiap penggunaan.",
+      "6": "<br/>",
+      "7": "<i>\"Aku dapat melihat keabadian yang berlalu dalam satu kedipan mata, dalam selembar daun yang telah melewati ribuan musim gugur. Biarkan pedangku memotong lembaran daun ini, dan mempertanyakan jalannya sang waktu——\"</i>"
+    },
+    "slashdmg": "DMG Tebasan"
+  },
   "name": "Kaedehara Kazuha",
+  "title": "Scarlet Leaves Pursue Wild Waves",
+  "description": "Seorang samurai pengembara dari Inazuma yang saat ini bergabung bersama dengan armada Crux Fleet Liyue. Di dalam jiwanya yang lembut dan riang, terdapat hati yang menyembunyikan banyak beban.",
   "constellationName": "Acer Palmatum",
   "auto": {
     "name": "Garyuu Bladework",
     "fields": {
-      "normal": "<strong>Normal Attack</strong> Melancarkan maks. 5 tebasan pedang berturut-turut.",
-      "charged": "<strong>Charged Attack</strong> Mengonsumsi sejumlah Stamina untuk melancarkan dua tebasan pedang.",
-      "plunging": "<strong>Plunging Attack</strong> Menerjang dari udara untuk menghantam tanah, menyerang semua musuh di jalurnya dan mengakibatkan DMG area saat mendarat. Jika serangan Plunging Attack terpicu dengan menggunakan Chihayaburu, maka Plunging Attack akan berubah menjadi Plunging Attack: Midare Ranzan."
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Melancarkan maks. 5 tebasan pedang berturut-turut."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk melancarkan dua tebasan pedang."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah, menyerang semua musuh di jalurnya dan mengakibatkan DMG area saat mendarat. Jika serangan Plunging Attack terpicu dengan menggunakan Chihayaburu, maka Plunging Attack akan berubah menjadi Plunging Attack: Midare Ranzan."
+      },
+      "plunging_midare": {
+        "0": "<strong>Plunging Attack: Midare Ranzan</strong>",
+        "1": "Saat Plunging Attack dilakukan dengan menggunakan efek Elemental Skill Chihayaburu, maka DMG dari Plunging Attack akan berubah menjadi <anemo>Anemo DMG</anemo> dan akan menciptakan arus angin kecil yang menarik musuh dan benda di sekitarnya."
+      }
     }
   },
   "skill": {
@@ -29,20 +58,6 @@
       "14": "karena masa dewa-dewa dan manusia telah lama berlalu",
       "15": "bagaikan gunung merah di musim gugur.\"</i>"
     }
-  },
-  "burst": {
-    "name": "Kazuha Slash",
-    "description": {
-      "0": "Ilmu pedang Garyu terkuat — sebuah tebasan pedang yang membawa badai dan mengakibatkan <anemo>Anemo DMG Area</anemo>.",
-      "1": "Tebasan pedang ini akan menyisakan sebuah area yang disebut \"Autumn Whirlwind\" dan mengakibatkan <anemo>Anemo DMG Area</anemo> setiap beberapa saat ke musuh di dalamnya.",
-      "2": "<br/>",
-      "3": "<strong>Elemental Absorption</strong>",
-      "4": "Jika Autumn Whirlwind bersentuhan dengan <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, maka Autumn Whirlwind akan mengakibatkan DMG elemental tambahan yang sesuai dengan elemen tersebut.",
-      "5": "Elemental Absorption hanya dapat terpicu sekali setiap penggunaan.",
-      "6": "<br/>",
-      "7": "<i>\"Aku dapat melihat keabadian yang berlalu dalam satu kedipan mata, dalam selembar daun yang telah melewati ribuan musim gugur. Biarkan pedangku memotong lembaran daun ini, dan mempertanyakan jalannya sang waktu——\"</i>"
-    },
-    "slashdmg": "DMG Tebasan"
   },
   "passive1": {
     "name": "Soumon Swordmanship",
@@ -102,8 +117,7 @@
   "constellation5": {
     "name": "Wisdom of Bansei",
     "description": {
-      "0": "Mengurangi 10% CD <strong>Chihayaburu</strong>.",
-      "1": "Menggunakan <strong>Kazuha Slash</strong> akan langsung menyelesaikan CD <strong>Chihayaburu</strong>."
+      "0": "Meningkatkan 3 level skill <strong>Kazuha Slash</strong>. Max. Lv: 15."
     }
   },
   "constellation6": {

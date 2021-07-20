@@ -1,15 +1,6 @@
 {
-  "name": "Noelle",
-  "constellationName": "Hộ Tâm",
-  "auto": {
-    "name": "Tây Phong Kiếm Thuật - Hầu Gái",
-    "fields": {
-      "normal": "<strong>Tấn Công Thường</strong> Thực hiện tối đa 4 lần chém liên tiếp.",
-      "charged": "<strong>Trọng Kích</strong> Tiêu hao thể lực để xoay kiếm tấn công địch xung quanh. Khi ngừng quay, sẽ bổ một nhát cực mạnh.",
-      "plunging": "<strong>Tấn Công Khi Đáp</strong> Đáp xuống đất từ trên không, tấn công kẻ địch trên đuờng và gây sát thương phạm vi khi chạm đất."
-    }
-  },
   "skill": {
+    "triggerChance": "Tỷ lệ kích hoạt trị liệu",
     "name": "Giáp Hộ Tâm",
     "description": {
       "0": "Gọi ra giáp Nham bảo vệ bản thân, gây <geo>sát thương Nguyên Tố Nham</geo> cho kẻ địch xung quanh và hình thành khiên, lượng sát thương hấp thu dựa theo phòng ngự của Noelle.",
@@ -22,10 +13,10 @@
       "5": "Lượng trị liệu dựa trên phòng ngự của Noelle.",
       "6": "<br/>",
       "7": "<i>Noelle tuy là hầu gái nhưng cũng là một kỵ sĩ kiên cường.</i>"
-    },
-    "triggerChance": "Tỷ lệ kích hoạt trị liệu"
+    }
   },
   "burst": {
+    "atkBonus": "Tấn Công Tăng",
     "name": "Quét Sạch",
     "description": {
       "0": "Ngưng tụ sức mạnh của đá lên vũ khí, càn quét phạm vi lớn đối với địch xung quanh, gây <geo>sát thương nguyên tố Nham</geo>.",
@@ -37,16 +28,31 @@
       ],
       "3": "<br/>",
       "4": "<i>Đôi lúc không chỉ có bụi bẩn mới cần quét dọn...</i>"
-    },
-    "atkBonus": "Tấn Công Tăng"
-  },
-  "passive1": {
-    "name": "Thái Độ Của Hầu Gái",
-    "description": {
-      "0": "Nấu hoàn mỹ món ăn thuộc loại phòng ngự, có tỷ lệ 12% x2 sản lượng."
     }
   },
-  "passive2": {
+  "name": "Noelle",
+  "title": "Đóa Hoa Chưa Vinh Danh",
+  "description": "Hầu gái đáng tin cậy của Đội Kỵ Sĩ Tây Phong, mơ ước một ngày nào đó sẽ trở thành kỵ sĩ chính thức.",
+  "constellationName": "Hộ Tâm",
+  "auto": {
+    "name": "Tây Phong Kiếm Thuật - Hầu Gái",
+    "fields": {
+      "normal": {
+        "0": "<strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 4 lần chém liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao thể lực để xoay kiếm tấn công địch xung quanh.",
+        "2": "Khi ngừng quay, sẽ bổ một nhát cực mạnh."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đuờng và gây sát thương phạm vi khi chạm đất."
+      }
+    }
+  },
+  "passive1": {
     "name": "Toàn Tâm Toàn Ý",
     "description": {
       "0": "Nếu Noelle ở trạng thái chờ mà nhân vật của bản thân đang chiến đấu có HP thấp hơn 30% sẽ tự động kích hoạt:",
@@ -57,11 +63,17 @@
       "3": "Hiệu quả này mỗi 60s chỉ kích hoạt 1 lần."
     }
   },
-  "passive3": {
+  "passive2": {
     "name": "Gọn Gàng",
     "description": {
       "0": "Nếu tấn công thường hoặc trọng kích đánh trúng 4 lần, sẽ giảm CD của <strong>Giáp Hộ Tâm</strong> 1s.",
       "1": "Nếu đánh trúng nhiều kẻ địch cùng một lúc thì chỉ được tính là 1 lần đánh trúng."
+    }
+  },
+  "passive3": {
+    "name": "Thái Độ Của Hầu Gái",
+    "description": {
+      "0": "Nấu hoàn mỹ món ăn thuộc loại phòng ngự, có tỷ lệ 12% x2 sản lượng."
     }
   },
   "constellation1": {

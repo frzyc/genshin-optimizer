@@ -1,0 +1,8 @@
+{
+  "name": "Sword of Descension",
+  "description": "Sebilah pedang dengan bentuk yang unik, sepertinya bukan berasal dari dunia ini.",
+  "passiveName": "Descension",
+  "passiveDescription": {
+    "0": "Saat mengenai, Normal dan Charged Attack memiliki <cryo>50%</cryo> persentase untuk mengakibatkan DMG area sebesar <cryo>200%</cryo> ATK dalam radius kecil. Efek ini dapat terpicu setiap 10 detik. Saat Traveler menggunakan Sword of Descension, ATK meningkat <cryo>66</cryo>."
+  }
+}

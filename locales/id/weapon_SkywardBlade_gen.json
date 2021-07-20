@@ -1,0 +1,12 @@
+{
+  "name": "Skyward Blade",
+  "description": "Pedang Knight yang melambangkan kemuliaan Dvalin yang sudah terpulihkan. Berkat Archon Anemo berinar di atas mata pedangnya, memberikan kekuatan langit dan angin.",
+  "passiveName": "Sky-Piercer Fang",
+  "passiveDescription": {
+    "0": "Saat melakukan Elemental Burst akan meningkatkan CRIT Rate sebesar <cryo>4%</cryo>, meningkatkan Movement SPD sebesar <cryo>10%</cryo>, dan ATK SPD sebesar <cryo>10%</cryo>. Lalu saat Normal dan Charged Attack mengenai target, akan mendapatkan tambahan DMG <cryo>20%</cryo> ATK selama 12 detik.",
+    "1": "Saat melakukan Elemental Burst akan meningkatkan CRIT Rate sebesar <cryo>5%</cryo>, meningkatkan Movement SPD sebesar <cryo>10%</cryo>, dan ATK SPD sebesar <cryo>10%</cryo>. Lalu saat Normal dan Charged Attack mengenai target, akan mendapatkan tambahan DMG <cryo>25%</cryo> ATK selama 12 detik.",
+    "2": "Saat melakukan Elemental Burst akan meningkatkan CRIT Rate sebesar <cryo>6%</cryo>, meningkatkan Movement SPD sebesar <cryo>10%</cryo>, dan ATK SPD sebesar <cryo>10%</cryo>. Lalu saat Normal dan Charged Attack mengenai target, akan mendapatkan tambahan DMG <cryo>30%</cryo> ATK selama 12 detik.",
+    "3": "Saat melakukan Elemental Burst akan meningkatkan CRIT Rate sebesar <cryo>7%</cryo>, meningkatkan Movement SPD sebesar <cryo>10%</cryo>, dan ATK SPD sebesar <cryo>10%</cryo>. Lalu saat Normal dan Charged Attack mengenai target, akan mendapatkan tambahan DMG <cryo>35%</cryo> ATK selama 12 detik.",
+    "4": "Saat melakukan Elemental Burst akan meningkatkan CRIT Rate sebesar <cryo>8%</cryo>, meningkatkan Movement SPD sebesar <cryo>10%</cryo>, dan ATK SPD sebesar <cryo>10%</cryo>. Lalu saat Normal dan Charged Attack mengenai target, akan mendapatkan tambahan DMG <cryo>40%</cryo> ATK selama 12 detik."
+  }
+}

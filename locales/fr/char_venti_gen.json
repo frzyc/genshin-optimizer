@@ -1,12 +1,24 @@
 {
   "name": "Venti",
+  "title": "Barde itinérant",
+  "description": "Un des nombreux bardes de Mondstadt, qui aime à se promener dans tous les recoins de la cité.",
   "constellationName": "Carmen Dei",
   "auto": {
     "name": "Archerie divine",
     "fields": {
-      "normal": "<strong>Attaque normale</strong> Enchaîne jusqu'à 6 tirs consécutifs.",
-      "charged": "<strong>Attaque chargée</strong> Effectue un <strong>tir visé</strong> plus précis infligeant davantage de DGT. Lors de la visée, la flèche se charge en élément Anémo, infligeant de considérables <anemo>DGT Anémo</anemo> quand elle est complètement chargée.",
-      "plunging": "<strong>Attaque plongeante</strong> Tire une pluie de flèches depuis les airs et plonge au sol, infligeant des DGT de zone à l'impact."
+      "normal": {
+        "0": "<strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 6 tirs consécutifs. "
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Effectue un <strong>tir visé</strong> plus précis infligeant davantage de DGT.",
+        "2": "Lors de la visée, la flèche se charge en élément Anémo, infligeant de considérables <anemo>DGT Anémo</anemo> quand elle est complètement chargée."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Tire une pluie de flèches depuis les airs et plonge au sol, infligeant des DGT de zone à l'impact."
+      }
     }
   },
   "skill": {

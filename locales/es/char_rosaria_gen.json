@@ -1,12 +1,23 @@
 {
   "name": "Rosaria",
+  "title": "la Beata Impía",
+  "description": "Una monja que, aparte de por su ropa, nadie diría que pertenece al clero. Su frialdad hacia todo la hace extremadamente incisiva y siempre actúa en solitario.",
   "constellationName": "Spinea Corona",
   "auto": {
     "name": "Lanza eclesiástica",
     "fields": {
-      "normal": "<strong>Ataque Normal</strong> Realiza hasta 5 ataques rápidos con lanza.",
-      "charged": "<strong>Ataque Cargado</strong> Consume una cierta cantidad de Aguante para lanzarse al frente, infligiendo daño a los enemigos en el camino.",
-      "plunging": "<strong>Ataque Descendente</strong> Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto."
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 5 ataques rápidos con lanza."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume una cierta cantidad de Aguante para lanzarse al frente, infligiendo daño a los enemigos en el camino."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto."
+      }
     }
   },
   "skill": {

@@ -1,0 +1,12 @@
+{
+  "name": "Sharpshooter's Oath",
+  "description": "Busur kuat yang pernah dimiliki oleh seorang pemanah terbaik. Tetapi aura kuat yang terpancar dari busur ini membuatnya tidak cocok dipakai untuk berburu.",
+  "passiveName": "Precise",
+  "passiveDescription": {
+    "0": "Meningkatkan <cryo>24%</cryo> DMG serangan yang mengenai titik kelemahan musuh.",
+    "1": "Meningkatkan <cryo>30%</cryo> DMG serangan yang mengenai titik kelemahan musuh.",
+    "2": "Meningkatkan <cryo>36%</cryo> DMG serangan yang mengenai titik kelemahan musuh.",
+    "3": "Meningkatkan <cryo>42%</cryo> DMG serangan yang mengenai titik kelemahan musuh.",
+    "4": "Meningkatkan <cryo>48%</cryo> DMG serangan yang mengenai titik kelemahan musuh."
+  }
+}

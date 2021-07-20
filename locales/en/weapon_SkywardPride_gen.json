@@ -1,0 +1,12 @@
+{
+  "name": "Skyward Pride",
+  "description": "A claymore that symbolizes the pride of Dvalin soaring through the skies. When swung, it emits a deep hum as the full force of Dvalin's command of the sky and the wind is unleashed.",
+  "passiveName": "Sky-ripping Dragon Spine",
+  "passiveDescription": {
+    "0": "Increases all DMG by <cryo>8%</cryo>. After using an Elemental Burst, Normal or Charged Attack, on hit, creates a vacuum blade that does <cryo>80%</cryo> of ATK as DMG to opponents along its path. Lasts for 20s or 8 vacuum blades.",
+    "1": "Increases all DMG by <cryo>10%</cryo>. After using an Elemental Burst, Normal or Charged Attack, on hit, creates a vacuum blade that does <cryo>100%</cryo> of ATK as DMG to opponents along its path. Lasts for 20s or 8 vacuum blades.",
+    "2": "Increases all DMG by <cryo>12%</cryo>. After using an Elemental Burst, Normal or Charged Attack, on hit, creates a vacuum blade that does <cryo>120%</cryo> of ATK as DMG to opponents along its path. Lasts for 20s or 8 vacuum blades.",
+    "3": "Increases all DMG by <cryo>14%</cryo>. After using an Elemental Burst, Normal or Charged Attack, on hit, creates a vacuum blade that does <cryo>140%</cryo> of ATK as DMG to opponents along its path. Lasts for 20s or 8 vacuum blades.",
+    "4": "Increases all DMG by <cryo>16%</cryo>. After using an Elemental Burst, Normal or Charged Attack, on hit, creates a vacuum blade that does <cryo>160%</cryo> of ATK as DMG to opponents along its path. Lasts for 20s or 8 vacuum blades."
+  }
+}

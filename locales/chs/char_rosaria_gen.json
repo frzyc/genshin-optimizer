@@ -1,12 +1,23 @@
 {
   "name": "罗莎莉亚",
+  "title": "棘冠恩典",
+  "description": "除了打扮哪里都不像神职人员的修女。冷淡的言行中透着锐利。总是单独行动。",
   "constellationName": "荆冠座",
   "auto": {
     "name": "教会枪术",
     "fields": {
-      "normal": "<strong>普通攻击</strong> 进行至多五段的连续枪击。",
-      "charged": "<strong>重击</strong> 消耗一定体力，向前方突进，对路径上的敌人造成伤害。",
-      "plunging": "<strong>下落攻击</strong> 从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成范围伤害。"
+      "normal": {
+        "0": "<strong>普通攻击</strong>",
+        "1": "进行至多五段的连续枪击。"
+      },
+      "charged": {
+        "0": "<strong>重击</strong>",
+        "1": "消耗一定体力，向前方突进，对路径上的敌人造成伤害。"
+      },
+      "plunging": {
+        "0": "<strong>下落攻击</strong>",
+        "1": "从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成范围伤害。"
+      }
     }
   },
   "skill": {

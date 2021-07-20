@@ -1,0 +1,12 @@
+{
+  "name": "Ebony Bow",
+  "description": "A longbow made of ebony wood with stiffer limbs than ordinary bows. It is also a far more powerful weapon.",
+  "passiveName": "Decimate",
+  "passiveDescription": {
+    "0": "Increases DMG against mechanoid Ruin opponents by <cryo>40%</cryo>.",
+    "1": "Increases DMG against mechanoid Ruin opponents by <cryo>50%</cryo>.",
+    "2": "Increases DMG against mechanoid Ruin opponents by <cryo>60%</cryo>.",
+    "3": "Increases DMG against mechanoid Ruin opponents by <cryo>70%</cryo>.",
+    "4": "Increases DMG against mechanoid Ruin opponents by <cryo>80%</cryo>."
+  }
+}

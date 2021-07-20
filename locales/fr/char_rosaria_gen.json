@@ -1,12 +1,23 @@
 {
   "name": "Rosalia",
+  "title": "Rogue bienfaisance",
+  "description": "Une religieuse qui n'en a que l'apparence. Ses paroles sont acérées et son comportement, froid. Elle agit toujours seule.",
   "constellationName": "Spinea Corona",
   "auto": {
     "name": "Lance expiatoire",
     "fields": {
-      "normal": "<strong>Attaque normale</strong> Enchaîne jusqu'à 5 coups de lance.",
-      "charged": "<strong>Attaque chargée</strong> Charge en ligne droite et inflige des DGT aux ennemis sur sa route ; cette attaque consomme de l'endurance.",
-      "plunging": "<strong>Attaque plongeante</strong> Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis sur la route et des DGT de zone à l'impact."
+      "normal": {
+        "0": "<strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 5 coups de lance."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Charge en ligne droite et inflige des DGT aux ennemis sur sa route ; cette attaque consomme de l'endurance."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis sur la route et des DGT de zone à l'impact."
+      }
     }
   },
   "skill": {

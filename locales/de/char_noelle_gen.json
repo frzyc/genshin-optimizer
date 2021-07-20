@@ -1,15 +1,6 @@
 {
-  "name": "Noelle",
-  "constellationName": "Parma Cordis",
-  "auto": {
-    "name": "Favonius-Schwertkunst – Magd",
-    "fields": {
-      "normal": "<strong>Standardangriff</strong> Führt bis zu 4 Schwünge mit dem Schwert aus.",
-      "charged": "<strong>Heftiger Schlag</strong> Verbraucht fortlaufend Ausdauer, wirbelt das Großschwert und greift Gegner in der Umgebung an. Schwingt das Schwert am Ende mit besonders großer Wucht.",
-      "plunging": "<strong>Angriff aus dem Fall</strong> Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden."
-    }
-  },
   "skill": {
+    "triggerChance": "Wahrscheinlichkeit der Heilung",
     "name": "Brustpanzer",
     "description": {
       "0": "Erschafft einen Geo-Panzer, der Gegnern in der Umgebung <geo>Geo-Schaden</geo>zufügt, sowie einen Schutzschild, der Schaden basierend auf Noelles VTD abhält.",
@@ -20,10 +11,10 @@
       "5": "Heilkraft basiert auf Noelles VTD.",
       "6": "<br/>",
       "7": "<i>Noelle ist eine hingebungsvolle Magd, aber auch ein zielstrebiger Ritter.</i>"
-    },
-    "triggerChance": "Wahrscheinlichkeit der Heilung"
+    }
   },
   "burst": {
+    "atkBonus": "ANG-Bonus",
     "name": "Großreinigung",
     "description": {
       "0": "Konzentriert die Kraft der Felsen auf ihrer Waffe, greift Gegner in der Umgebung mit hoher Reichweite an und verursacht <geo>Geo-Schaden</geo>.",
@@ -33,16 +24,31 @@
       "4": "- Erhöht Noelles ANG basierend auf Noelles VTD.",
       "5": "<br/>",
       "6": "<i>Was gesäubert werden muss, ist nicht immer nur einfacher Dreck ...</i>"
-    },
-    "atkBonus": "ANG-Bonus"
-  },
-  "passive1": {
-    "name": "Hingabe einer Magd",
-    "description": {
-      "0": "Stellt bei der perfekten Zubereitung eines Gerichts mit defensiver Funktion mit einer Wahrscheinlichkeit von 12 % den 2-fachen Ertrag her."
     }
   },
-  "passive2": {
+  "name": "Noelle",
+  "title": "Knospe des Rittertums",
+  "description": "Eine verlässliche Magd des Ordo Favonius, die eines Tages gern ein richtiger Ritter werden will.",
+  "constellationName": "Parma Cordis",
+  "auto": {
+    "name": "Favonius-Schwertkunst – Magd",
+    "fields": {
+      "normal": {
+        "0": "<strong>Standardangriff</strong>",
+        "1": "Führt bis zu 4 Schwünge mit dem Schwert aus."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht fortlaufend Ausdauer, wirbelt das Großschwert und greift Gegner in der Umgebung an.",
+        "2": "Schwingt das Schwert am Ende mit besonders großer Wucht."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden."
+      }
+    }
+  },
+  "passive1": {
     "name": "Ernsthaftigkeit",
     "description": {
       "0": "Effekte, wenn Noelle inaktiv in der Truppe ist und die aktuelle eigene Figur weniger als 30 % LP hat:",
@@ -51,11 +57,17 @@
       "3": "60 s Abklingzeit."
     }
   },
-  "passive3": {
+  "passive2": {
     "name": "Sauber und geschwind",
     "description": {
       "0": "Verringert die Abklingzeit von <strong>Brustpanzer</strong> alle vier Treffer mit Standardangriffen oder heftigen Schlägen um 1 s.",
       "1": "Das gleichzeitige Treffen mehrerer Gegner zählt als ein Treffer."
+    }
+  },
+  "passive3": {
+    "name": "Hingabe einer Magd",
+    "description": {
+      "0": "Stellt bei der perfekten Zubereitung eines Gerichts mit defensiver Funktion mit einer Wahrscheinlichkeit von 12 % den 2-fachen Ertrag her."
     }
   },
   "constellation1": {

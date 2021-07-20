@@ -1,12 +1,24 @@
 {
   "name": "Venti",
+  "title": "Windborne Bard",
+  "description": "Salah satu penyair Mondstadt yang dengan bebas berkeliling di antara lorong-lorong Mondstadt.",
   "constellationName": "Carmen Dei",
   "auto": {
     "name": "Divine Marksmanship",
     "fields": {
-      "normal": "<strong>Normal Attack</strong> Melancarkan maks. 6 serangan berturut-turut menggunakan busur.",
-      "charged": "<strong>Charged Attack</strong> Melancarkan sebuah <strong>Serangan Membidik</strong> yang lebih akurat untuk mengakibatkan DMG lebih besar. Saat membidik, angin akan berkumpul di ujung anak panah. Panah dengan angin yang terkumpul penuh akan mengakibatkan <anemo>Anemo DMG</anemo>.",
-      "plunging": "<strong>Plunging DMG</strong> Melancarkan hujan panah dari udara dan menerjang tanah dengan kecepatan tinggi, mengakibatkan DMG area saat mendarat."
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Melancarkan maks. 6 serangan berturut-turut menggunakan busur."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Melancarkan sebuah <strong>Serangan Membidik</strong> yang lebih akurat untuk mengakibatkan DMG lebih besar.",
+        "2": "Saat membidik, angin akan berkumpul di ujung anak panah. Panah dengan angin yang terkumpul penuh akan mengakibatkan <anemo>Anemo DMG</anemo>."
+      },
+      "plunging": {
+        "0": "<strong>Plunging DMG</strong>",
+        "1": "Melancarkan hujan panah dari udara dan menerjang tanah dengan kecepatan tinggi, mengakibatkan DMG area saat mendarat."
+      }
     }
   },
   "skill": {

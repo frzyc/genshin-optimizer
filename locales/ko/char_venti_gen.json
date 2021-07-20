@@ -1,12 +1,24 @@
 {
   "name": "벤티",
+  "title": "바람의 시인",
+  "description": "몬드성의 수많은 음유시인 중 한 명. 자유롭게 몬드의 구석구석을 드나든다",
   "constellationName": "가선자리",
   "auto": {
     "name": "신성한 사격술",
     "fields": {
-      "normal": "<strong>일반 공격</strong> 활로 최대 6번 공격한다.",
-      "charged": "<strong>강공격</strong> 피해가 더 크고 정확한 <strong>조준 사격</strong>을 한다. 조준 시 천지를 보살피는 바람이 화살 촉에 계속해서 모인다. 바람의 힘이 가득 찬 화살은 <anemo>바람 원소 피해</anemo>를 준다.",
-      "plunging": "<strong>낙하 공격</strong> 공중에서 화살비를 쏜 후 빠른 속도로 땅에 착지한다. 땅에 닿으면 범위 피해를 준다"
+      "normal": {
+        "0": "<strong>일반 공격</strong>",
+        "1": "활로 최대 6번 공격한다."
+      },
+      "charged": {
+        "0": "<strong>강공격</strong>",
+        "1": "피해가 더 크고 정확한 <strong>조준 사격</strong>을 한다.",
+        "2": "조준 시 천지를 보살피는 바람이 화살 촉에 계속해서 모인다. 바람의 힘이 가득 찬 화살은 <anemo>바람 원소 피해</anemo>를 준다."
+      },
+      "plunging": {
+        "0": "<strong>낙하 공격</strong>",
+        "1": "공중에서 화살비를 쏜 후 빠른 속도로 땅에 착지한다. 땅에 닿으면 범위 피해를 준다"
+      }
     }
   },
   "skill": {

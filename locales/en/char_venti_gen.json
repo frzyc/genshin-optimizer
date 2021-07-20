@@ -1,12 +1,24 @@
 {
   "name": "Venti",
+  "title": "Windborne Bard",
+  "description": "One of the many bards of Mondstadt, who freely wanders the city's streets and alleys.",
   "constellationName": "Carmen Dei",
   "auto": {
     "name": "Divine Marksmanship",
     "fields": {
-      "normal": "<strong>Normal Attack</strong> Perform up to 6 consecutive shots with a bow.",
-      "charged": "<strong>Charged Attack</strong> Perform a more precise <strong>Aimed Shot</strong> with increased DMG. While aiming, favorable winds will accumulate on the arrowhead. A fully charged wind arrow will deal <anemo>Anemo DMG</anemo>.",
-      "plunging": "<strong>Plunging Attack</strong> Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact."
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Perform up to 6 consecutive shots with a bow."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Perform a more precise <strong>Aimed Shot</strong> with increased DMG.",
+        "2": "While aiming, favorable winds will accumulate on the arrowhead. A fully charged wind arrow will deal <anemo>Anemo DMG</anemo>."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact."
+      }
     }
   },
   "skill": {

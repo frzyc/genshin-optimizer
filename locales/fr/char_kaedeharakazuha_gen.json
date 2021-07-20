@@ -1,12 +1,41 @@
 {
+  "burst": {
+    "name": "Coupure de mille feuilles",
+    "description": {
+      "0": "Déclenche la technique ultime de Garyuu, une coupure unique semblable à une tempête grondante qui inflige des <anemo>DGT Anémo de zone</anemo>.",
+      "1": "Le trajet de la lame laissera derrière lui un champ appelé « Vent d'automne » qui inflige des <anemo>DGT Anémo</anemo> de façon intermittente aux ennemis à l'intérieur.",
+      "2": "<br/>",
+      "3": "<strong>Absorption élémentaire</strong>",
+      "4": "Le Vent d'automne absorbe les éléments <hydro>Hydro</hydro>, <pyro>Pyro</pyro>, <cryo>Cryo</cryo> et <electro>Électro</electro> avec lesquels il entre en contact ; ceux-ci lui confèrent leurs attributs, et infligent un bonus de DGT de l'élément correspondant.",
+      "5": "Un seul élément peut être absorbé à la fois.",
+      "6": "<br/>",
+      "7": "<i>« Je vois passer l'éternité en un instant, les automnes de plusieurs années d'une seule feuille ; ainsi je trancherai cet érable en un éclair, et je poserai la question des âges... »</i>"
+    },
+    "slashdmg": "DGT entaille"
+  },
   "name": "Kaedehara Kazuha",
+  "title": "Tourbillon de feuilles écarlates",
+  "description": "Un samouraï errant d'Inazuma qui fait actuellement partie de la Flotte du Crux. Une âme douce et insouciante dont le cœur cache de nombreuses blessures enfouies.",
   "constellationName": "Acer Palmatum",
   "auto": {
     "name": "Escrime de Garyuu",
     "fields": {
-      "normal": "<strong>Attaque normale</strong> Enchaîne jusqu'à 5 coups d'épée.",
-      "charged": "<strong>Attaque chargée</strong> Consomme de l'endurance pour déclencher deux coups d'épée rapides.",
-      "plunging": "<strong>Attaque plongeante</strong> Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact. Si une attaque plongeante est effectuée pendant « Véhémence divine », elle se transforme en « Attaque plongeante : Contrôle du chaos »."
+      "normal": {
+        "0": "<strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 5 coups d'épée."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour déclencher deux coups d'épée rapides."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact. Si une attaque plongeante est effectuée pendant « Véhémence divine », elle se transforme en « Attaque plongeante : Contrôle du chaos »."
+      },
+      "plunging_midare": {
+        "0": "<strong>Attaque plongeante : Contrôle du chaos</strong>",
+        "1": "Lorsqu'une attaque plongeante est déclenchée en utilisant les effets de la compétence élémentaire « Véhémence divine », ses DGT sont convertis en <anemo>DGT Anémo</anemo> et un petit tunnel venteux est créé à l'atterrissage à l'aide d'une technique d'épée secrète pour attirer les objets et les ennemis proches."
+      }
     }
   },
   "skill": {
@@ -27,20 +56,6 @@
       "12": "<br/>",
       "13": "<i>« Les vents dans les érables pleurent, pour les dieux et les hommes du passé, comme des montagnes rouges d'automne. »</i>"
     }
-  },
-  "burst": {
-    "name": "Coupure de mille feuilles",
-    "description": {
-      "0": "Déclenche la technique ultime de Garyuu, une coupure unique semblable à une tempête grondante qui inflige des <anemo>DGT Anémo de zone</anemo>.",
-      "1": "Le trajet de la lame laissera derrière lui un champ appelé « Vent d'automne » qui inflige des <anemo>DGT Anémo</anemo> de façon intermittente aux ennemis à l'intérieur.",
-      "2": "<br/>",
-      "3": "<strong>Absorption élémentaire</strong>",
-      "4": "Le Vent d'automne absorbe les éléments <hydro>Hydro</hydro>, <pyro>Pyro</pyro>, <cryo>Cryo</cryo> et <electro>Électro</electro> avec lesquels il entre en contact ; ceux-ci lui confèrent leurs attributs, et infligent un bonus de DGT de l'élément correspondant.",
-      "5": "Un seul élément peut être absorbé à la fois.",
-      "6": "<br/>",
-      "7": "<i>« Je vois passer l'éternité en un instant, les automnes de plusieurs années d'une seule feuille ; ainsi je trancherai cet érable en un éclair, et je poserai la question des âges... »</i>"
-    },
-    "slashdmg": "DGT entaille"
   },
   "passive1": {
     "name": "Lame d'érosion",
@@ -101,8 +116,8 @@
   "constellation5": {
     "name": "Collection ancestrale",
     "description": {
-      "0": "Réduit le TdR de <strong>Véhémence divine</strong> de 10 %.",
-      "1": "<strong>Coupure de mille feuilles</strong> réinitialise le TdR de <strong>Véhémence divine</strong> lorsqu'elle est activée."
+      "0": "Niveau d'aptitude <strong>Coupure de mille feuilles</strong> +3.",
+      "1": "Niveau max : 15"
     }
   },
   "constellation6": {

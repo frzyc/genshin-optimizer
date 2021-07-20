@@ -1,12 +1,24 @@
 {
   "name": "温迪",
+  "title": "风色诗人",
+  "description": "蒙德城诸多吟游诗人中的一位，自由自在地穿行在街头巷尾。",
   "constellationName": "歌仙座",
   "auto": {
     "name": "神代射术",
     "fields": {
-      "normal": "<strong>普通攻击</strong> 进行至多六段的连续弓箭射击。",
-      "charged": "<strong>重击</strong> 进行伤害更高、更为精准的<strong>瞄准射击</strong>。 瞄准时，眷顾天地的风会在箭矢上持续积聚。聚满了风之力的箭矢会造成<anemo>风元素伤害</anemo>。",
-      "plunging": "<strong>下落攻击</strong> 从空中射出箭雨，并迅速下坠冲击地面，在落地时造成范围伤害。"
+      "normal": {
+        "0": "<strong>普通攻击</strong>",
+        "1": "进行至多六段的连续弓箭射击。"
+      },
+      "charged": {
+        "0": "<strong>重击</strong>",
+        "1": "进行伤害更高、更为精准的<strong>瞄准射击</strong>。",
+        "2": "瞄准时，眷顾天地的风会在箭矢上持续积聚。聚满了风之力的箭矢会造成<anemo>风元素伤害</anemo>。"
+      },
+      "plunging": {
+        "0": "<strong>下落攻击</strong>",
+        "1": "从空中射出箭雨，并迅速下坠冲击地面，在落地时造成范围伤害。"
+      }
     }
   },
   "skill": {

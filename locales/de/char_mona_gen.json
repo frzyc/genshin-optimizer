@@ -1,0 +1,132 @@
+{
+  "name": "Mona",
+  "title": "Abbildung der Sterne im Wasser",
+  "description": "Eine geheimnisvolle Astrologin, die sich selbst als „Große Astrologin Mona“ bezeichnet. Doch nicht nur ihr Name macht einiges her. Ihre Stärke und ihr Wissen sind beeindruckend.",
+  "constellationName": "Astrolabos",
+  "auto": {
+    "name": "Unumgängliches Schicksal",
+    "fields": {
+      "normal": {
+        "0": "<strong>Standardangriff</strong>",
+        "1": "Führt bis zu 4 Spritzwasser-Angriffe aus und verursacht <hydro>Hydro-Schaden</hydro>."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht eine gewisse Menge Ausdauer und verursacht nach kurzer Aufladezeit <hydro>Hydro-Flächenschaden</hydro>."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Konzentriert die Kraft des Wassers, schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen <hydro>Hydro-Flächenschaden</hydro>."
+      }
+    }
+  },
+  "skill": {
+    "name": "Trugbilder im Wasser",
+    "description": {
+      "0": "Erschafft aus vielen Wassertropfen ein Trugbild des Schicksals.",
+      "1": "<br/>",
+      "2": "<strong>Trugbild</strong>",
+      "3": "Merkmale:",
+      "4": "- Verspottet Gegner in der Umgebung fortlaufend und zieht ihre Angriffe auf sich.",
+      "5": "- Fügt Gegnern in der Nähe fortlaufend <hydro>Hydro-Schaden</hydro> zu.",
+      "6": "- Birst nach Ablauf der Wirkungsdauer und verursacht <hydro>Hydro-Flächenschaden</hydro>.",
+      "7": "<br/>",
+      "8": "<strong>Gedrückt halten</strong>",
+      "9": "Nutzt die Kraft des fließenden Wassers, um schnell zurückzuweichen und ein Trugbild zu erschaffen.",
+      "10": "<br/>",
+      "11": "Zu einem Zeitpunkt kann nur ein Trugbild existieren, das mit Trugbilder im Wasser erschaffen wurde.",
+      "12": "<br/>",
+      "13": "<i>Große Gelehrte der Astrologie versuchen seit jeher, ein Trugbild von sich zu schaffen, um Übel von sich selbst abzuwenden. Mona muss wohl die erste sein, die das Schicksal tatsächlich auf diese Weise austrickst.</i>"
+    }
+  },
+  "burst": {
+    "name": "Vorbestimmte Laufbahn",
+    "description": {
+      "0": "Ruft hohe Wellen herbei, reflektiert damit den Sternenhimmel und fügt Gegnern mit hoher Reichweite den Zustand Blasenschatten zu.",
+      "1": "<br/>",
+      "2": "<strong>Blasenschatten</strong>",
+      "3": "Umschließt Gegner in sternförmigen Blasen und fügt ihnen den Zustand <hydro>Nass</hydro> zu. Hält schwächere Gegner in den Blasenschatten gefangen, sodass sie sich nicht bewegen können.",
+      "4": "Effekte, wenn Gegner in Blasenschatten Schaden erleiden:",
+      "5": "- Fügt Gegnern den Zustand Omen zu, der den diesmal erlittenen Schaden erhöht.",
+      "6": "- Entfernt den Effekt der Blasenschatten und verursacht zusätzlichen <hydro>Hydro-Schaden</hydro>.",
+      "7": "<br/>",
+      "8": "<strong>Omen</strong>",
+      "9": "Erhöht den während der Wirkungsdauer erlittenen Schaden.",
+      "10": "<br/>",
+      "11": "<i>Nachdem die Götter einen Blick auf das himmlische Licht erhascht hatten, war das Schicksal als solches geboren.</i>"
+    }
+  },
+  "sprint": {
+    "name": "Irreführende Strömung",
+    "description": {
+      "0": "<strong>Ersetzt Rennen</strong>",
+      "1": "Verbraucht Ausdauer und bewegt sich so schnell wie ein reißender Strom.",
+      "2": "<br/>",
+      "3": "Mona kann sich während der Wirkungsdauer von Irreführende Strömung mit hoher Geschwindigkeit auf der Wasseroberfläche fortbewegen.",
+      "4": "Fügt Gegnern in der Umgebung beim Erscheinen am Ende von Irreführende Strömung den Zustand <hydro>Nass</hydro> zu.",
+      "5": "<br/>",
+      "6": "<i>Obwohl ihr Meister dazu nicht in der Lage ist, hat Mona diese Fähigkeit erlernt. Schließlich kümmert ihr Meister sich nicht um Dinge, die nichts mit Göttlichen Augen der Hydro-Kraft zu tun haben.</i>"
+    }
+  },
+  "passive1": {
+    "name": "„Die Alte kriegt mich nicht!“",
+    "description": {
+      "0": "Erschafft bei Anwesenheit von Gegnern in der Nähe 2 s nach Anwendung von <strong>Irreführende Strömung</strong> ein Trugbild.",
+      "1": "Auf diese Weise erschaffene Trugbilder halten 2 s und verursachen bei ihrer Explosion 50 % des Schadens von <strong>Trugbilder im Wasser</strong>."
+    }
+  },
+  "passive2": {
+    "name": "„Lass das Schicksal entscheiden!“",
+    "description": {
+      "0": "Erhöht Monas <hydro>Hydro-Schaden</hydro> zusätzlich um 20 % ihrer Aufladerate."
+    }
+  },
+  "passive3": {
+    "name": "Grundsätze der Astrologie",
+    "description": {
+      "0": "Gibt beim Zusammensetzen von Material zum Aufstieg von Waffen mit einer Wahrscheinlichkeit von 25 % einen Teil der Materialien zurück."
+    }
+  },
+  "constellation1": {
+    "name": "Prophezeiung des Untergangs",
+    "description": {
+      "0": "Verstärkt den Effekt von <hydro>Hydro-Elementarreaktionen</hydro>, wenn eine eigene Figur in der Truppe Gegner im Zustand Omen trifft, 8 s lang:",
+      "1": "- Erhöht den mit der Reaktion Unter Strom verursachten Schaden um 15 %, den mit der Reaktion Verdampfen verursachten Schaden um 15 % und den mit der Reaktion Hydro-Verwirbelung verursachten Schaden um 15 %.",
+      "2": "- Verlängert die Wirkungsdauer von Gefroren um 15 %."
+    }
+  },
+  "constellation2": {
+    "name": "Sternenkette",
+    "description": {
+      "0": "Löst bei Treffern mit Standardangriffen mit einer Wahrscheinlichkeit von 20 % automatisch einen heftigen Schlag aus.",
+      "1": "5 s Abklingzeit."
+    }
+  },
+  "constellation3": {
+    "name": "Im ewigen Umlauf",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Vorbestimmte Laufbahn</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Prophezeiung der Ausrottung",
+    "description": {
+      "0": "Erhöht die KT bei Angriffen aller Truppenmitglieder auf Gegner im Zustand Omen um 15 %."
+    }
+  },
+  "constellation5": {
+    "name": "Verspottung des Schicksals",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Trugbilder im Wasser</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Rhetorik des Unglücks",
+    "description": {
+      "0": "Erhöht den Schaden des nächsten heftigen Schlags für jede Sekunde, die sich Mona im Zustand <strong>Irreführende Strömung</strong> bewegt, um 60 %.",
+      "1": "Auf diese Weise kann der Schaden heftiger Schläge um bis zu 180 % erhöht werden und hält bis zu 8 s lang."
+    }
+  }
+}

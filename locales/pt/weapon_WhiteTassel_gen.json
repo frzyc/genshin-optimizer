@@ -1,0 +1,12 @@
+{
+  "name": "Borla Branca",
+  "description": "Uma arma padrão dos soldados de Millelith. Tem uma ponta bastante afida e resistente. É uma arma confiável.",
+  "passiveName": "Acume",
+  "passiveDescription": {
+    "0": "O Dano causado pelo Ataque Normal aumenta <cryo>24%</cryo>.",
+    "1": "O Dano causado pelo Ataque Normal aumenta <cryo>30%</cryo>.",
+    "2": "O Dano causado pelo Ataque Normal aumenta <cryo>36%</cryo>.",
+    "3": "O Dano causado pelo Ataque Normal aumenta <cryo>42%</cryo>.",
+    "4": "O Dano causado pelo Ataque Normal aumenta <cryo>48%</cryo>."
+  }
+}

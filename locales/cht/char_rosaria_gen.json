@@ -1,12 +1,23 @@
 {
   "name": "蘿莎莉亞",
+  "title": "棘冠恩典",
+  "description": "只有穿著像神職人員的修女。冷淡的言行中透著銳利。總是單獨行動。",
   "constellationName": "荊冠座",
   "auto": {
     "name": "教會槍術",
     "fields": {
-      "normal": "<strong>普通攻擊</strong> 進行至多五段的連續槍擊。",
-      "charged": "<strong>重擊</strong> 消耗一定體力，向前方突進，對路徑上的敵人造成傷害。",
-      "plunging": "<strong>下落攻擊</strong> 從空中下墜衝擊地面，攻擊下落路徑上的敵人，並在落地時造成範圍傷害。"
+      "normal": {
+        "0": "<strong>普通攻擊</strong>",
+        "1": "進行至多五段的連續槍擊。"
+      },
+      "charged": {
+        "0": "<strong>重擊</strong>",
+        "1": "消耗一定體力，向前方突進，對路徑上的敵人造成傷害。"
+      },
+      "plunging": {
+        "0": "<strong>下落攻擊</strong>",
+        "1": "從空中下墜衝擊地面，攻擊下落路徑上的敵人，並在落地時造成範圍傷害。"
+      }
     }
   },
   "skill": {

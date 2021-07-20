@@ -1,0 +1,12 @@
+{
+  "name": "Borla Blanca",
+  "description": "Un arma estándar de la Geoarmada. Tiene un eje firme y una punta de lanza afilada. Es un arma muy fiable.",
+  "passiveName": "Afilado",
+  "passiveDescription": {
+    "0": "El daño de Ataque Normal aumenta en un <cryo>24%</cryo>.",
+    "1": "El daño de Ataque Normal aumenta en un <cryo>30%</cryo>.",
+    "2": "El daño de Ataque Normal aumenta en un <cryo>36%</cryo>.",
+    "3": "El daño de Ataque Normal aumenta en un <cryo>42%</cryo>.",
+    "4": "El daño de Ataque Normal aumenta en un <cryo>48%</cryo>."
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "name": "Ningguang",
+  "title": "Eclipsing Star",
+  "description": "Seorang \"Tianquan\" dari \"Liyue Qixing\", kekayaannya tidak tertandingi di seluruh Teyvat.",
+  "constellationName": "Opus Aequilibrium",
+  "auto": {
+    "name": "Sparkling Scatter",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Menembakkan batu mutiara yang mengakibatkan <geo>Geo DMG</geo>.",
+        "2": "Saat mengenai musuh, Ningguang mendapatkan 1 Star Jade."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk menembakkan batu mutiara raksasa yang mengakibatkan <geo>Geo DMG</geo>.",
+        "2": "Jika Ningguang memiliki Star Jade, melancarkan Charged Attack juga akan menembakkan Star Jade ke musuh untuk mengakibatkan DMG tambahan."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Mengumpulkan kekuatan Geo dan menerjang tanah, mengakibatkan DMG pada musuh di jalur terjangan dan mengakibatkan <electro>Geo DMG area</electro> saat mendarat."
+      }
+    }
+  },
+  "skill": {
+    "name": "Jade Screen",
+    "description": {
+      "0": "Ningguang membentuk sebuah perisai Geo yang terbuat dari emas, obsidian, dan kekayaannya untuk mengakibatkan <geo>Geo DMG area</geo>.",
+      "1": "<br/>",
+      "2": "<strong>Jade Screen</strong>",
+      "3": [
+        "Menghalangi proyektil musuh.",
+        "Ketahanannya meningkat berdasarkan Max HP Ningguang."
+      ],
+      "4": "<br/>",
+      "5": "Jade Screen dianggap sebagai sebuah <geo>Geo Construct</geo> dan dapat digunakan untuk menghalang beberapa jenis serangan, tapi tidak dapat dipanjat. Ningguang hanya dapat memiliki satu Jade Screen di satu waktu.",
+      "6": "<br/>",
+      "7": "<i>Kanvas bintang-bintang terukir di atas layar giok ini.</i>"
+    }
+  },
+  "burst": {
+    "name": "Starshatter",
+    "description": {
+      "0": "Ningguang mengumpulkan batu mutiara di sekeliling dirinya dan menyebarkan semuanya sekaligus untuk dilontarkan ke musuh, mengakibatkan <geo>Geo DMG</geo> yang besar.",
+      "1": "Jika Starshatter digunakan saat Jade Screen berada di dekatnya, Jade Screen juga akan menembakkan tambahan batu mutiara pada saat bersamaan.",
+      "2": "<br/>",
+      "3": "<i>Bintang-bintang terpecah, namun keheningan tidak terpecahkan.</i>"
+    }
+  },
+  "passive1": {
+    "name": "Backup Plan",
+    "description": {
+      "0": "Charged Attack Ningguang tidak mengonsumsi Stamina saat Ningguang memiliki Star Jade."
+    }
+  },
+  "passive2": {
+    "name": "Strategic Reserve",
+    "description": {
+      "0": "Karakter yang melewati <strong>Jade Screen</strong> akan mendapatkan 12% <geo>Geo DMG Bonus</geo> selama 10 detik."
+    }
+  },
+  "passive3": {
+    "name": "Trove of Marvelous Treasures",
+    "description": {
+      "0": "Memperlihatkan lokasi <strong>tambang mineral</strong> (Iron Ore, White Iron Ore, Crystal Ore, Magical Crystal Ore, dan Starsilver) terdekat di mini-map."
+    }
+  },
+  "constellation1": {
+    "name": "Piercing Fragments",
+    "description": {
+      "0": "Saat Normal Attack mengenai musuh, mengakibatkan DMG Area."
+    }
+  },
+  "constellation2": {
+    "name": "Shock Effect",
+    "description": {
+      "0": "Saat <strong>Jade Screen</strong> pecah, CD skill akan selesai.",
+      "1": "Dapat terpicu setiap 6 detik."
+    }
+  },
+  "constellation3": {
+    "name": "Majesty be the Array of Stars",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Starshatter</strong>.",
+      "1": "Level maksimum adalah level 15."
+    }
+  },
+  "constellation4": {
+    "name": "Exquisite be the Jade, Outshining All Beneath",
+    "description": {
+      "0": "<strong>Jade Screen</strong> meningkatkan Elemental RES karakter di sekitar sebanyak 10%."
+    }
+  },
+  "constellation5": {
+    "name": "Invincible be the Jade Screen",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Jade Screen</strong>.",
+      "1": "Level maksimum adalah level 15."
+    }
+  },
+  "constellation6": {
+    "name": "Grandeur be the Seven Stars",
+    "description": {
+      "0": "Ningguang akan mendapatkan 7 Star Jade ketika <strong>Starshatter</strong> digunakan."
+    }
+  }
+}

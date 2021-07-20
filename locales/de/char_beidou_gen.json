@@ -1,0 +1,117 @@
+{
+  "name": "Beidou",
+  "title": "Ungekrönte Königin der Meere",
+  "description": "Die Anführerin der bewaffneten Flotte „Crux“, freimütig und draufgängerisch.",
+  "constellationName": "Victor Mare",
+  "auto": {
+    "name": "Vorstoß aus der Brandung",
+    "fields": {
+      "normal": {
+        "0": "<strong>Standardangriff</strong>",
+        "1": "Führt bis zu 5 Schwünge mit dem Schwert aus."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht fortlaufend Ausdauer und führt mehrere Hiebe aus.",
+        "2": "Schwingt das Schwert am Ende mit besonders großer Wucht."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden."
+      }
+    }
+  },
+  "skill": {
+    "name": "Wellenfänger",
+    "description": {
+      "0": "Es gibt nichts zu befürchten. Denn sollte es jemand wagen, ihr zu nahe zu kommen, wird sie es ihm zehnfach mit ihrem Schwert und ihrer Elektro-Kraft zurückzahlen.",
+      "1": "<br/>",
+      "2": "<strong>Drücken</strong>",
+      "3": "Konzentriert die Elektro-Kraft, wirbelt das Großschwert wild nach vorn und verursacht <electro>Elektro-Schaden</electro>.",
+      "4": "<br/>",
+      "5": "<strong>Gedrückt halten</strong>",
+      "6": "Hebt die Waffe an, um sie als Schutzschild zu verwenden und Schaden basierend auf Beidous max. LP abzuhalten.",
+      "7": "Wirbelt das Großschwert bei Loslassen oder Ablauf der Dauer mit der angestauten Kraft, schlägt zu und verursacht <electro>Elektro-Schaden</electro>. Erhöht den beim Zuschlagen verursachten Schaden je nach Anzahl erlittener Angriffe während der Wirkungsdauer. Erreicht nach 2 Anwendungen den höchsten SCH-Bonus.",
+      "8": "Effekte des Schildes:",
+      "9": "- Hält bei <electro>Elektro-Schaden</electro> 250 % ab.",
+      "10": "- Verleiht Beidou beim Zuschlagen das <electro>Elektro-Attribut</electro>.",
+      "11": "<br/>",
+      "12": "<i>Reite auf den Wellen und ergreife die Blitze.</i>"
+    }
+  },
+  "burst": {
+    "name": "Blitzbrecher",
+    "description": {
+      "0": "Ruft die Erinnerung an den Kampf gegen das Ungeheuer, das Meere und Berge teilte, und somit die Kraft des Ungeheuers und des Donners hervor, um einen kreisenden Donnerschild zu erschaffen und Gegnern in der Umgebung <electro>Elektro-Schaden</electro> zuzufügen.",
+      "1": "<br/>",
+      "2": "<strong>Donnerschild</strong>",
+      "3": "- Erschafft bei Treffern mit Standardangriffen und heftigen Schlägen einen Kettenblitz, der zwischen den Gegnern umherspringt und <electro>Elektro-Schaden</electro> verursacht.",
+      "4": "- Erhöht den Unterbrechungs-WDS der Figur und verringert den erlittenen Schaden.",
+      "5": "<br/>",
+      "6": "Max. 1 Kettenblitz pro Sekunde möglich.",
+      "7": "<br/>",
+      "8": "<i>Trommelnder Donner bricht herein und teilt Meere und Berge.</i>"
+    }
+  },
+  "passive1": {
+    "name": "Augenblick der Vergeltung",
+    "description": {
+      "0": "<strong>Wellenfänger</strong> verursacht bei Anwendung als Gegenschlag im Augenblick des Erleidens eines Angriffs maximalen Schaden."
+    }
+  },
+  "passive2": {
+    "name": "Donnern am Firmament",
+    "description": {
+      "0": "Effekte bis 10 s nach Anwendung von <strong>Wellenfänger</strong> mit höchstem SCH-Bonus:",
+      "1": "- Erhöht den mit Standardangriffen und heftigen Schlägen verursachten Schaden um 15 % und die Angriffs-GSW um 15 %.",
+      "2": "- Verringert die Vorbereitungszeit für heftige Schläge enorm."
+    }
+  },
+  "passive3": {
+    "name": "Gebieter über die Gezeiten",
+    "description": {
+      "0": "Verringert die beim Schwimmen verbrauchte Ausdauer aller eigenen Truppenmitglieder um 20 %.",
+      "1": "Nicht mit passiven Talenten mit völlig gleichen Effekten stapelbar."
+    }
+  },
+  "constellation1": {
+    "name": "Untergang der Ungeheuer",
+    "description": {
+      "0": "Effekte bei Anwendung von <strong>Blitzbrecher</strong>:",
+      "1": "Erstellt einen Schutzschild, der Schaden in Höhe von 16 % der max. LP abhält, hält 15 s.",
+      "2": "Hält bei <electro>Elektro-Schaden</electro> 250 % ab."
+    }
+  },
+  "constellation2": {
+    "name": "Aufziehendes Unwetter",
+    "description": {
+      "0": "Kettenblitze von <strong>Blitzbrecher</strong> springen auf 2 zusätzliche Gegner über."
+    }
+  },
+  "constellation3": {
+    "name": "Spontane Induktion",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Wellenfänger</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Überwältigender Gegenschlag",
+    "description": {
+      "0": "Beidous Standardangriffe verursachen nach dem Erleiden von Schaden 10 s lang 20 % zusätzlichen <electro>Elektro-SCH</electro>."
+    }
+  },
+  "constellation5": {
+    "name": "Gezeitenwanderer",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Blitzbrecher</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Schrecken des Bösen",
+    "description": {
+      "0": "Verringert während der Wirkungsdauer von <strong>Blitzbrecher</strong> den <electro>Elektro-WDS</electro> von Gegnern in der Umgebung um 15 %."
+    }
+  }
+}

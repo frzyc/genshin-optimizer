@@ -1,0 +1,12 @@
+{
+  "name": "Reflexbogen",
+  "description": "Mit diesem Jagdbogen soll man selbst einen Adler im Flug aus dem Himmel holen können. Das hängt aber doch sehr stark von der Kunst des Schützen ab.",
+  "passiveName": "Lebensentzug",
+  "passiveDescription": {
+    "0": "Stellt beim Besiegen eines Gegners <cryo>8 %</cryo> LP wieder her.",
+    "1": "Stellt beim Besiegen eines Gegners <cryo>10 %</cryo> LP wieder her.",
+    "2": "Stellt beim Besiegen eines Gegners <cryo>12 %</cryo> LP wieder her.",
+    "3": "Stellt beim Besiegen eines Gegners <cryo>14 %</cryo> LP wieder her.",
+    "4": "Stellt beim Besiegen eines Gegners <cryo>16 %</cryo> LP wieder her."
+  }
+}

@@ -1,15 +1,6 @@
 {
-  "name": "Noelle",
-  "constellationName": "Parma Cordis",
-  "auto": {
-    "name": "Favonius Bladework - Maid",
-    "fields": {
-      "normal": "<strong>Normal Attack</strong> Perform up to 4 consecutive strikes.",
-      "charged": "<strong>Charged Attack</strong> Drains Stamina over time to perform continuous spinning attacks against all nearby opponents. At the end of the sequence, perform a more powerful slash.",
-      "plunging": "<strong>Plunging Attack</strong> Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact."
-    }
-  },
   "skill": {
+    "triggerChance": "Healing Triggering Chance",
     "name": "Breastplate",
     "description": {
       "0": "Summons protective stone armor, dealing <geo>Geo DMG</geo> to surrounding opponents and creating a shield. The shield's DMG Absorption scales based on Noelle's DEF.",
@@ -22,10 +13,10 @@
       "4": "The amount of HP healed when regeneration is triggered scales based on Noelle's DEF.",
       "5": "<br/>",
       "6": "<i>Noelle is both a dutiful maid and a valiant knight.</i>"
-    },
-    "triggerChance": "Healing Triggering Chance"
+    }
   },
   "burst": {
+    "atkBonus": "ATK Bonus",
     "name": "Sweeping Time",
     "description": {
       "0": "Gathering the strength of stone around her weapon, Noelle strikes the opponents surrounding her within a large AoE, dealing <geo>Geo DMG</geo>.",
@@ -37,16 +28,31 @@
       ],
       "3": "<br/>",
       "4": "<i>Sometimes, it's not just dust that needs sweeping...</i>"
-    },
-    "atkBonus": "ATK Bonus"
-  },
-  "passive1": {
-    "name": "Maid's Knighthood",
-    "description": {
-      "0": "When a Perfect Cooking is achieved on a DEF-boosting dish, Noelle has a 12% chance to obtain double the product."
     }
   },
-  "passive2": {
+  "name": "Noelle",
+  "title": "Chivalric Blossom",
+  "description": "A maid who faithfully serves the Knights of Favonius. She dreams of joining their ranks someday.",
+  "constellationName": "Parma Cordis",
+  "auto": {
+    "name": "Favonius Bladework - Maid",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Perform up to 4 consecutive strikes."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Drains Stamina over time to perform continuous spinning attacks against all nearby opponents.",
+        "2": "At the end of the sequence, perform a more powerful slash. "
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact."
+      }
+    }
+  },
+  "passive1": {
     "name": "Devotion",
     "description": {
       "0": "When Noelle is in the party but not on the field, this ability triggers automatically when your active character's HP falls below 30%:",
@@ -55,11 +61,17 @@
       "3": "This effect can only occur once every 60s."
     }
   },
-  "passive3": {
+  "passive2": {
     "name": "Nice and Clean",
     "description": {
       "0": "Every 4 Normal or Charged Attack hits will decrease the CD of <strong>Breastplate</strong> by 1s.",
       "1": "Hitting multiple opponents with a single attack is only counted as 1 hit."
+    }
+  },
+  "passive3": {
+    "name": "Maid's Knighthood",
+    "description": {
+      "0": "When a Perfect Cooking is achieved on a DEF-boosting dish, Noelle has a 12% chance to obtain double the product."
     }
   },
   "constellation1": {

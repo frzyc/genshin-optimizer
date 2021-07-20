@@ -1,0 +1,12 @@
+{
+  "name": "Arco de Ébano",
+  "description": "Um arco longo feito de madeira ébano sendo mais resistente com os arcos comuns. É muito mais poderoso também.",
+  "passiveName": "Dizimar",
+  "passiveDescription": {
+    "0": "Aumenta o Dano contra os inimigos das Ruínas em <cryo>40%</cryo>.",
+    "1": "Aumenta o Dano contra os inimigos das Ruínas em <cryo>50%</cryo>.",
+    "2": "Aumenta o Dano contra os inimigos das Ruínas em <cryo>60%</cryo>.",
+    "3": "Aumenta o Dano contra os inimigos das Ruínas em <cryo>70%</cryo>.",
+    "4": "Aumenta o Dano contra os inimigos das Ruínas em <cryo>80%</cryo>."
+  }
+}

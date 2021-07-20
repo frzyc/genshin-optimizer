@@ -1,0 +1,12 @@
+{
+  "name": "Thrilling Tales of Dragon Slayers",
+  "description": "A fictional story of a band of five heroes who go off on a dragon hunt. It is poorly written and structurally incoherent. Its value lies in the many lessons that can be learned from failure.",
+  "passiveName": "Heritage",
+  "passiveDescription": {
+    "0": "When switching characters, the new character taking the field has their ATK increased by <cryo>24%</cryo> for 10s. This effect can only occur once every 20s.",
+    "1": "When switching characters, the new character taking the field has their ATK increased by <cryo>30%</cryo> for 10s. This effect can only occur once every 20s.",
+    "2": "When switching characters, the new character taking the field has their ATK increased by <cryo>36%</cryo> for 10s. This effect can only occur once every 20s.",
+    "3": "When switching characters, the new character taking the field has their ATK increased by <cryo>42%</cryo> for 10s. This effect can only occur once every 20s.",
+    "4": "When switching characters, the new character taking the field has their ATK increased by <cryo>48%</cryo> for 10s. This effect can only occur once every 20s."
+  }
+}

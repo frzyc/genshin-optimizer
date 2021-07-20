@@ -1,0 +1,12 @@
+{
+  "name": "Weißes Eisengroßschwert",
+  "description": "Ein aus weißem Eisen geschmiedeter Zweihänder, dessen Vorteile Gewicht und Stärke sind. Obwohl selbst mittelmäßig trainierte Menschen damit umgehen können, erhöht sich seine Wirksamkeit mit der Kraft des Anwenders.",
+  "passiveName": "Lebensentzug",
+  "passiveDescription": {
+    "0": "Stellt beim Besiegen eines Gegners <cryo>8 %</cryo> LP wieder her.",
+    "1": "Stellt beim Besiegen eines Gegners <cryo>10 %</cryo> LP wieder her.",
+    "2": "Stellt beim Besiegen eines Gegners <cryo>12 %</cryo> LP wieder her.",
+    "3": "Stellt beim Besiegen eines Gegners <cryo>14 %</cryo> LP wieder her.",
+    "4": "Stellt beim Besiegen eines Gegners <cryo>16 %</cryo> LP wieder her."
+  }
+}

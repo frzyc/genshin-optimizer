@@ -1,0 +1,12 @@
+{
+  "name": "Épée du voyageur",
+  "description": "Une épée en acier facile à manier. Une paire de ciseaux, une loupe et d'autres gadgets se trouvent dans son fourreau.",
+  "passiveName": "Voyage",
+  "passiveDescription": {
+    "0": "Chaque orbe ou particule élémentaire obtenu(e) restaure <cryo>1 %</cryo> des PV.",
+    "1": "Chaque orbe ou particule élémentaire obtenu(e) restaure <cryo>1,25 %</cryo> des PV.",
+    "2": "Chaque orbe ou particule élémentaire obtenu(e) restaure <cryo>1,5 %</cryo> des PV.",
+    "3": "Chaque orbe ou particule élémentaire obtenu(e) restaure <cryo>1,75 %</cryo> des PV.",
+    "4": "Chaque orbe ou particule élémentaire obtenu(e) restaure <cryo>2 %</cryo> des PV."
+  }
+}

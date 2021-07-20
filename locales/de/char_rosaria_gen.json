@@ -1,12 +1,23 @@
 {
   "name": "Rosaria",
+  "title": "Dornige Gnade",
+  "description": "Eine Ordensschwester, die vielleicht so aussieht, sich aber überhaupt nicht so verhält wie eine. Sie ist bekannt für ihre kalten Worte und ihre abweisende Art. Außerdem arbeitet sie ausschließlich allein.",
   "constellationName": "Spinea Corona",
   "auto": {
     "name": "Speer der Kathedrale",
     "fields": {
-      "normal": "<strong>Standardangriff</strong> Führt bis zu 5 Lanzenstiche aus.",
-      "charged": "<strong>Heftiger Schlag</strong> Verbraucht eine gewisse Menge Ausdauer, sticht geschwind nach vorn und fügt den Gegnern in der Bahn Schaden zu.",
-      "plunging": "<strong>Angriff aus dem Fall</strong> Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden."
+      "normal": {
+        "0": "<strong>Standardangriff</strong>",
+        "1": "Führt bis zu 5 Lanzenstiche aus."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht eine gewisse Menge Ausdauer, sticht geschwind nach vorn und fügt den Gegnern in der Bahn Schaden zu."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden."
+      }
     }
   },
   "skill": {

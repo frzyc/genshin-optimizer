@@ -1,0 +1,12 @@
+{
+  "name": "Kiếm Sắt Đen",
+  "description": "Kiếm sắt hơi bị đen một chút",
+  "passiveName": "Quá Tải",
+  "passiveDescription": {
+    "0": "Sau khi kích hoạt phản ứng quá tải, siêu dẫn, điện cảm hoặc khuếch tán Nguyên Tố Lôi, tăng <cryo>20%</cryo> tấn công trong 12s.",
+    "1": "Sau khi kích hoạt phản ứng quá tải, siêu dẫn, điện cảm hoặc khuếch tán Nguyên Tố Lôi, tăng <cryo>25%</cryo> tấn công trong 12s.",
+    "2": "Sau khi kích hoạt phản ứng quá tải, siêu dẫn, điện cảm hoặc khuếch tán Nguyên Tố Lôi, tăng <cryo>30%</cryo> tấn công trong 12s.",
+    "3": "Sau khi kích hoạt phản ứng quá tải, siêu dẫn, điện cảm hoặc khuếch tán Nguyên Tố Lôi, tăng <cryo>35%</cryo> tấn công trong 12s.",
+    "4": "Sau khi kích hoạt phản ứng quá tải, siêu dẫn, điện cảm hoặc khuếch tán Nguyên Tố Lôi, tăng <cryo>40%</cryo> tấn công trong 12s."
+  }
+}

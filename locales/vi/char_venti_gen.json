@@ -1,12 +1,24 @@
 {
   "name": "Venti",
+  "title": "Nhà Thơ Có Màu Của Gió",
+  "description": "Một trong các nhà thơ thành Mondstadt, tự do tự tại đi khắp hang cùng ngõ hẻm.",
   "constellationName": "Ca Tiên",
   "auto": {
     "name": "Xạ Thuật Của Thần",
     "fields": {
-      "normal": "<strong>Tấn Công Thường</strong> Thực hiện tối đa 6 lần bắn tên liên tiếp.",
-      "charged": "<strong>Trọng Kích</strong> Sát thương càng cao, <strong>ngắm bắn</strong> càng chuẩn. Khi ngắm bắn, gió sẽ tích tụ trên mũi tên. Mũi tên đầy gió sẽ gây <anemo>Sát Thương Nguyên Tố Phong</anemo>.",
-      "plunging": "<strong>Tấn Công Khi Đáp</strong> Bắn mưa tên liên tiếp xuống mặt đất, gây sát thương phạm vi khi chạm đất."
+      "normal": {
+        "0": "<strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 6 lần bắn tên liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Sát thương càng cao, <strong>ngắm bắn</strong> càng chuẩn.",
+        "2": "Khi ngắm bắn, gió sẽ tích tụ trên mũi tên. Mũi tên đầy gió sẽ gây <anemo>Sát Thương Nguyên Tố Phong</anemo>."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Bắn mưa tên liên tiếp xuống mặt đất, gây sát thương phạm vi khi chạm đất."
+      }
     }
   },
   "skill": {

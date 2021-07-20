@@ -1,12 +1,23 @@
 {
   "name": "Rosaria",
+  "title": "Ân Điển Mũ Gai",
+  "description": "Một tu nữ ngoại trừ cách ăn mặc thì không có điểm nào giống với người trong tu viện. Trong hành vi và lời nói lãnh đạm thoảng qua chút sắc sảo. Lúc nào cũng hành động một mình.",
   "constellationName": "Cung Kinh Quán",
   "auto": {
     "name": "Thương Thuật Giáo Hội",
     "fields": {
-      "normal": "<strong>Tấn Công Thường</strong> Thực hiện tối đa 5 lần đánh liên tiếp.",
-      "charged": "<strong>Trọng Kích</strong> Tiêu hao thể lực nhất định, xông về phía trước, gây sát thương cho địch trên đường đi.",
-      "plunging": "<strong>Tấn Công Khi Đáp</strong> Đáp xuống đất từ trên không, tấn công kẻ địch trên đuờng và gây sát thương phạm vi khi chạm đất."
+      "normal": {
+        "0": "<strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 5 lần đánh liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao thể lực nhất định, xông về phía trước, gây sát thương cho địch trên đường đi."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đuờng và gây sát thương phạm vi khi chạm đất."
+      }
     }
   },
   "skill": {

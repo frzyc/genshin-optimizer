@@ -1,0 +1,12 @@
+{
+  "name": "Gran Espada Sangrienta",
+  "description": "Una espada de acero que se dice que ha sido vestida con sangre de dragón, haciéndola invulnerable al daño. Sin embargo, este efecto no se extiende a su portador.",
+  "passiveName": "Perdición del fuego y el trueno",
+  "passiveDescription": {
+    "0": "Aumenta en un <cryo>12%</cryo> el daño contra los enemigos afectados por Pyro o Electro.",
+    "1": "Aumenta en un <cryo>15%</cryo> el daño contra los enemigos afectados por Pyro o Electro.",
+    "2": "Aumenta en un <cryo>18%</cryo> el daño contra los enemigos afectados por Pyro o Electro.",
+    "3": "Aumenta en un <cryo>21%</cryo> el daño contra los enemigos afectados por Pyro o Electro.",
+    "4": "Aumenta en un <cryo>24%</cryo> el daño contra los enemigos afectados por Pyro o Electro."
+  }
+}

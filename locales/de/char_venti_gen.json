@@ -1,12 +1,24 @@
 {
   "name": "Venti",
+  "title": "Wandernder Barde",
+  "description": "Einer der vielen Barden in Mondstadt, der frei und wohlgemut durch die Gassen schlendert.",
   "constellationName": "Carmen Dei",
   "auto": {
     "name": "Göttliche Schießkunst",
     "fields": {
-      "normal": "<strong>Standardangriff</strong> Führt bis zu 6 Pfeilschüsse aus.",
-      "charged": "<strong>Heftiger Schlag</strong> Führt einen <strong>gezielten Schuss</strong> mit höherem Schaden und höherer Genauigkeit aus. Konzentriert den die Welt schützenden Wind während des Zielens an der Pfeilspitze, die voll aufgeladen <anemo>Anemo-Schaden</anemo> verursacht.",
-      "plunging": "<strong>Angriff aus dem Fall</strong> Schießt in der Luft einen Pfeilregen ab, trifft schnell auf dem Boden auf und verursacht dort Flächenschaden."
+      "normal": {
+        "0": "<strong>Standardangriff</strong>",
+        "1": "Führt bis zu 6 Pfeilschüsse aus."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Führt einen <strong>gezielten Schuss</strong> mit höherem Schaden und höherer Genauigkeit aus.",
+        "2": "Konzentriert den die Welt schützenden Wind während des Zielens an der Pfeilspitze, die voll aufgeladen <anemo>Anemo-Schaden</anemo> verursacht."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schießt in der Luft einen Pfeilregen ab, trifft schnell auf dem Boden auf und verursacht dort Flächenschaden."
+      }
     }
   },
   "skill": {

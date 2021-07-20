@@ -1,15 +1,6 @@
 {
-  "name": "Noëlle",
-  "constellationName": "Parma Cordis",
-  "auto": {
-    "name": "Escrime de Favonius - Servante",
-    "fields": {
-      "normal": "<strong>Attaque normale</strong> Enchaîne jusqu'à 4 coups d'épée.",
-      "charged": "<strong>Attaque chargée</strong> Exécute une succession d'attaques tournoyantes ; cette attaque consomme de l'endurance de façon continue. L'attaque chargée se termine sur un coup puissant.",
-      "plunging": "<strong>Attaque plongeante</strong> Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact."
-    }
-  },
   "skill": {
+    "triggerChance": "Chance de soins",
     "name": "Armure de cœur",
     "description": {
       "0": "Invoque une armure de roche qui inflige des <geo>DGT Géo</geo> aux ennemis proches et génère un bouclier absorbant une quantité de DGT proportionnelle à la DÉF de Noëlle.",
@@ -22,10 +13,10 @@
       "4": "Les soins reçus sont proportionnels à la DÉF de Noëlle.",
       "5": "<br/>",
       "6": "<i>Noëlle est à la fois une servante fidèle et un chevalier vaillant.</i>"
-    },
-    "triggerChance": "Chance de soins"
+    }
   },
   "burst": {
+    "atkBonus": "Bonus ATQ",
     "name": "Grand ménage",
     "description": {
       "0": "Concentrant le pouvoir de la roche sur son arme, Noëlle exécute une puissante attaque circulaire qui inflige des <geo>DGT Géo</geo> aux ennemis proches.",
@@ -37,16 +28,31 @@
       ],
       "3": "<br/>",
       "4": "<i>Parfois, la poussière n'est pas la seule chose qu'il faut balayer... </i>"
-    },
-    "atkBonus": "Bonus ATQ"
-  },
-  "passive1": {
-    "name": "À votre service",
-    "description": {
-      "0": "12 % de chances d'obtenir un plat supplémentaire lorsque vous cuisinez un plat parfait qui renforce la DÉF."
     }
   },
-  "passive2": {
+  "name": "Noëlle",
+  "title": "Fleur chevaleresque",
+  "description": "Une jeune fille travaillant comme servante à l'Ordre de Favonius. Elle a toujours rêvé de devenir un jour chevalier.",
+  "constellationName": "Parma Cordis",
+  "auto": {
+    "name": "Escrime de Favonius - Servante",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 4 coups d'épée."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Exécute une succession d'attaques tournoyantes ; cette attaque consomme de l'endurance de façon continue.",
+        "2": "L'attaque chargée se termine sur un coup puissant."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact."
+      }
+    }
+  },
+  "passive1": {
     "name": "Dévotion ultime",
     "description": {
       "0": "Lorsque Noëlle fait partie de l'équipe et n'est pas déployée, l'effet suivant se déclenche automatiquement si les PV du personnage déployé tombent en dessous de 30 % :",
@@ -57,11 +63,17 @@
       ]
     }
   },
-  "passive3": {
+  "passive2": {
     "name": "Clair et net",
     "description": {
       "0": "Le TdR d'<strong>Armure de cœur</strong> est réduit de 1 s tous les 4 coups d'attaques normales et chargées.",
       "1": "Toucher simultanément plusieurs ennemis compte comme un seul coup."
+    }
+  },
+  "passive3": {
+    "name": "À votre service",
+    "description": {
+      "0": "12 % de chances d'obtenir un plat supplémentaire lorsque vous cuisinez un plat parfait qui renforce la DÉF."
     }
   },
   "constellation1": {

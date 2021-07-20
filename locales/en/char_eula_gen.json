@@ -1,15 +1,7 @@
 {
-  "name": "Eula",
-  "constellationName": "Aphros Delos",
-  "auto": {
-    "name": "Favonius Bladework - Edel",
-    "fields": {
-      "normal": "<strong>Normal Attack</strong> Perform up to 5 consecutive strikes.",
-      "charged": "<strong>Charged Attack</strong> Drains Stamina over time to perform continuous slashes. At the end of the sequence, perform a more powerful slash.",
-      "plunging": "<strong>Plunging Attack</strong> Plunges from mid-air to strike the ground, damaging opponents along the path and dealing AoE DMG upon impact."
-    }
-  },
   "skill": {
+    "brandDMG": "Icewhirl Brand DMG",
+    "grimheartDuration": "Grimheart Duration",
     "name": "Icetide Vortex",
     "description": {
       "0": "Sharp frost, swift blade.",
@@ -27,9 +19,29 @@
       "12": "Each consumed stack of Grimheart will be converted into an Icewhirl Brand that deals <cryo>Cryo DMG</cryo> to nearby opponents.",
       "13": "<br/>",
       "14": "<i>\"So the waves roiled, swallowing the crown of the nobles. And ever after did each drop amidst the icy waves reflect a golden crown, each and every droplet of the spray shining with its light.\"</i>"
-    },
-    "brandDMG": "Icewhirl Brand DMG",
-    "grimheartDuration": "Grimheart Duration"
+    }
+  },
+  "name": "Eula",
+  "title": "Dance of the Shimmering Wave",
+  "description": "The Spindrift Knight, a scion of the old aristocracy, and the Captain of the Knights of Favonius Reconnaissance Company. The reason for which a descendant of the ancient nobles might join the Knights remains a great mystery in Mondstadt to this very day.",
+  "constellationName": "Aphros Delos",
+  "auto": {
+    "name": "Favonius Bladework - Edel",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Perform up to 5 consecutive strikes."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Drains Stamina over time to perform continuous slashes.",
+        "2": "At the end of the sequence, perform a more powerful slash."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Plunges from mid-air to strike the ground, damaging opponents along the path and dealing AoE DMG upon impact."
+      }
+    }
   },
   "burst": {
     "name": "Glacial Illumination",

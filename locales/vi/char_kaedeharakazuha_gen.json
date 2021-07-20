@@ -1,12 +1,41 @@
 {
+  "burst": {
+    "name": "Kazuha Nhất Đao Trảm",
+    "description": {
+      "0": "Thi triển bí thuật, chém ra một luồng kiếm khí, gây <anemo>sát thương phạm vi nguyên tố Phong</anemo>.",
+      "1": "Kỹ năng sẽ để lại một khu vực mang tên \"Một Khắc Gió Thu\", gây <anemo>sát thương nguyên tố Phong</anemo> ngắt quãng cho kẻ địch trong đó.",
+      "2": "<br/>",
+      "3": "<strong>Chuyển hóa nguyên tố</strong>",
+      "4": "Trong thời gian Một Khắc Gió Thu tồn tại, nếu tiếp xúc <hydro>Nguyên Tố Thủy</hydro>/<pyro>Nguyên Tố Hỏa</pyro>/<cryo>Nguyên Tố Băng</cryo>/<electro>Nguyên Tố Lôi</electro>, sẽ nhận được thuộc tính nguyên tố tương ứng, gây thêm sát thương kèm theo của nguyên tố này.",
+      "5": "Loại chuyển hóa này chỉ phát sinh một lần trong thời gian duy trì kỹ năng.",
+      "6": "<br/>",
+      "7": "<i>\"Vạn thế trôi qua trong nháy mắt, chỉ cần một chiếc lá cũng biết được mùa thu. Ta muốn cắt đứt lá phong này, đặt câu hỏi khẩn thiết về vạn thế!\"</i>"
+    },
+    "slashdmg": "Sát Thương Chém"
+  },
   "name": "Kaedehara Kazuha",
+  "title": "Lá Đỏ Đuổi Sóng",
+  "description": "Ronin Samurai đến từ Inazuma, nay đã gia nhập đội thuyền \"Nam Thập Tự\" Liyue. Tính tình ôn hòa, hào sảng, trong lòng chất chứa nhiều chuyện xưa.",
   "constellationName": "Cung Phong Đỏ",
   "auto": {
     "name": "Kiếm Thuật Garyuu",
     "fields": {
-      "normal": "<strong>Tấn Công Thường</strong> Thực hiện tối đa 5 lần đánh kiếm liên tiếp.",
-      "charged": "<strong>Trọng Kích</strong> Tiêu hao thể lực nhất định, đánh ra hai kiếm về phía trước trong chớp mắt.",
-      "plunging": "<strong>Tấn Công Khi Đáp</strong> Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất. Nếu lần tấn công khi đáp này được thi triển từ Chihayaburu, thì sẽ chuyển thành Tấn Công Khi Đáp - Xua Tan Mây Mù."
+      "normal": {
+        "0": "<strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 5 lần đánh kiếm liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao thể lực nhất định, đánh ra hai kiếm về phía trước trong chớp mắt."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất. Nếu lần tấn công khi đáp này được thi triển từ Chihayaburu, thì sẽ chuyển thành Tấn Công Khi Đáp - Xua Tan Mây Mù."
+      },
+      "plunging_midare": {
+        "0": "<strong>Tấn Công Khi Đáp - Xua Tan Mây Mù</strong>",
+        "1": "Sát thương gây ra bởi tấn công khi đáp khi thi triển thông qua Kỹ Năng Nguyên Tố - Chihayaburu sẽ chuyển thành <anemo>Sát Thương Nguyên Tố Phong</anemo>, và khi chạm đất, thi triển bí kiếm tạo ra một hang gió nhỏ kéo các vật thể và địch ở gần vào."
+      }
     }
   },
   "skill": {
@@ -27,20 +56,6 @@
       "12": "<br/>",
       "13": "<i>\"Gió buồn trên tay áo, thần vạn kiếp người trăm năm, núi mùa thu nhuốm đỏ màu lá.\"</i>"
     }
-  },
-  "burst": {
-    "name": "Kazuha Nhất Đao Trảm",
-    "description": {
-      "0": "Thi triển bí thuật, chém ra một luồng kiếm khí, gây <anemo>sát thương phạm vi nguyên tố Phong</anemo>.",
-      "1": "Kỹ năng sẽ để lại một khu vực mang tên \"Một Khắc Gió Thu\", gây <anemo>sát thương nguyên tố Phong</anemo> ngắt quãng cho kẻ địch trong đó.",
-      "2": "<br/>",
-      "3": "<strong>Chuyển hóa nguyên tố</strong>",
-      "4": "Trong thời gian Một Khắc Gió Thu tồn tại, nếu tiếp xúc <hydro>Nguyên Tố Thủy</hydro>/<pyro>Nguyên Tố Hỏa</pyro>/<cryo>Nguyên Tố Băng</cryo>/<electro>Nguyên Tố Lôi</electro>, sẽ nhận được thuộc tính nguyên tố tương ứng, gây thêm sát thương kèm theo của nguyên tố này.",
-      "5": "Loại chuyển hóa này chỉ phát sinh một lần trong thời gian duy trì kỹ năng.",
-      "6": "<br/>",
-      "7": "<i>\"Vạn thế trôi qua trong nháy mắt, chỉ cần một chiếc lá cũng biết được mùa thu. Ta muốn cắt đứt lá phong này, đặt câu hỏi khẩn thiết về vạn thế!\"</i>"
-    },
-    "slashdmg": "Sát Thương Chém"
   },
   "passive1": {
     "name": "Kiếm Pháp Soumon",
@@ -100,8 +115,8 @@
   "constellation5": {
     "name": "Trí Tuệ Bansei",
     "description": {
-      "0": "Thời gian CD <strong>Chihayaburu</strong> giảm 10%.",
-      "1": "Khi thi triển <strong>Kazuha Nhất Đao Trảm</strong>, làm mới thời gian CD <strong>Chihayaburu</strong>."
+      "0": "Cấp kỹ năng <strong>Kazuha Nhất Đao Trảm</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
     }
   },
   "constellation6": {

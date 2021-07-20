@@ -1,15 +1,7 @@
 {
-  "name": "Eula",
-  "constellationName": "Aphros Delos",
-  "auto": {
-    "name": "Técnica da Espada de Favonius - Nobreza",
-    "fields": {
-      "normal": "<strong>Ataque Normal</strong> Realiza até 5 golpes consecutivos.",
-      "charged": "<strong>Ataque Carregado</strong> Drena Stamina ao longo do tempo para realizar cortes contínuos. Ao final da sequência, realiza um corte ainda mais poderoso.",
-      "plunging": "<strong>Ataque Imersivo</strong> Mergulha em pleno ar para golpear o chão, danificando inimigos em seu caminho e infligindo dano em uma AdE durante o impacto."
-    }
-  },
   "skill": {
+    "brandDMG": "Dano da Espada do Vórtice do Gelo",
+    "grimheartDuration": "Duração do Coração Impassível",
     "name": "Vórtice Gelado",
     "description": {
       "0": "Um frio glacial e uma dança ágil de espadas.",
@@ -26,9 +18,29 @@
       "11": "Caso o efeito do Coração Impassível seja consumido, irá diminuir a RES Física  e <cryo>RES Cryo</cryo> dos inimigos acertados. Cada Coração Impassível se converterá em uma Espada do Vórtice de Gelo, causando <cryo>Dano Cryo</cryo> nos inimigos ao redor.",
       "12": "<br/>",
       "13": "<i>\"As ondas enrolam dessa forma e engolem as coroas nobres. Depois, cada gota de espuma que cai voando das ondas congelantes reflete uma coroa dourada, cada gota de espuma do mar brilha gloriosamente.\"</i>"
-    },
-    "brandDMG": "Dano da Espada do Vórtice do Gelo",
-    "grimheartDuration": "Duração do Coração Impassível"
+    }
+  },
+  "name": "Eula",
+  "title": "Dança da Onda Quebradora",
+  "description": "A Cavaleira das Ondas, uma descendente da antiga aristocracia, e a Capitã de Reconhecimento dos Cavaleiros de Favonius. A razão pela qual uma descendente dos antigos nobres poderia se juntar aos Cavaleiros permanece um grande mistério em Mondstadt até os dias de hoje.",
+  "constellationName": "Aphros Delos",
+  "auto": {
+    "name": "Técnica da Espada de Favonius - Nobreza",
+    "fields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Realiza até 5 golpes consecutivos."
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Drena Stamina ao longo do tempo para realizar cortes contínuos.",
+        "2": "Ao final da sequência, realiza um corte ainda mais poderoso."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Mergulha em pleno ar para golpear o chão, danificando inimigos em seu caminho e infligindo dano em uma AdE durante o impacto."
+      }
+    }
   },
   "burst": {
     "name": "Espada das Ondas Congeladas",

@@ -1,15 +1,7 @@
 {
-  "name": "Eula",
-  "constellationName": "Aphros Delos",
-  "auto": {
-    "name": "Técnica de espada Favonius - Nobleza",
-    "fields": {
-      "normal": "<strong>Ataque Normal</strong> Realiza hasta 5 tajos rápidos.",
-      "charged": "<strong>Ataque Cargado</strong> Consume Aguante de manera constante para realizar golpes de espada continuos. Cuando termina el Ataque Cargado, hará un movimiento final de dos cortes más poderosos.",
-      "plunging": "<strong>Ataque Descendente</strong> Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto."
-    }
-  },
   "skill": {
+    "brandDMG": "Daño de crioespada de vacío",
+    "grimheartDuration": "Duración de corazón impasible",
     "name": "Vórtice helado",
     "description": {
       "0": "Un hielo estremecedor y una diestra danza con la espada.",
@@ -27,9 +19,29 @@
       "12": "Cada carga de corazón impasible consumida se convertirá en una crioespada de vacío que inflige <cryo>Daño Cryo</cryo> a los enemigos cercanos.",
       "13": "<br/>",
       "14": "<i>“Así se daba la vuelta la espuma del mar, engullendo la corona de la aristocracia a su paso. Entonces, en todas y cada una de las gotas de agua que salieron despedidas de la gélida marea se reflejó una corona dorada, y cada gota de espuma emitía un glorioso brillo”.</i>"
-    },
-    "brandDMG": "Daño de crioespada de vacío",
-    "grimheartDuration": "Duración de corazón impasible"
+    }
+  },
+  "name": "Eula",
+  "title": "la Bailarina de las Olas",
+  "description": "La Caballera de la Marea, procedente de una familia con un gran linaje y Capitana del Equipo de Reconocimiento de los Caballeros de Favonius. Aunque es descendiente de la antigua aristocracia, se unió a los Caballeros de Favonius, sus archienemigos, algo que sigue siendo un gran enigma para todo Mondstadt hasta hoy en día.",
+  "constellationName": "Aphros Delos",
+  "auto": {
+    "name": "Técnica de espada Favonius - Nobleza",
+    "fields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 5 ataques consecutivos."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume Aguante de manera constante para realizar golpes de espada continuos.",
+        "2": "Cuando termina el Ataque Cargado, hará un golpe aún más poderoso."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto."
+      }
+    }
   },
   "burst": {
     "name": "Fulgor glacial",

@@ -1,15 +1,7 @@
 {
-  "name": "Eula",
-  "constellationName": "Cung Lãng Mạt",
-  "auto": {
-    "name": "Tây Phong Kiếm - Tông Thất",
-    "fields": {
-      "normal": "<strong>Tấn Công Thường</strong> Thực hiện tối đa 5 lần chém liên tiếp.",
-      "charged": "<strong>Trọng Kích</strong> Duy trì tiêu hao thể lực, chém nhanh liên tiếp. Sau khi Trọng Kích kết thúc, sẽ bổ một nhát cực mạnh.",
-      "plunging": "<strong>Tấn Công Khi Đáp</strong> Đáp xuống đất từ trên không, tấn công kẻ địch trên đuờng, đồng thời gây sát thương phạm vi khi chạm đất."
-    }
-  },
   "skill": {
+    "brandDMG": "Sát Thương Băng Vũ Kiếm",
+    "grimheartDuration": "Thời gian Trái Tim Băng Giá kéo dài",
     "name": "Lốc Xoáy Băng Hàn",
     "description": {
       "0": "Cực hàn băng khí, cực tốc kiếm vũ.",
@@ -27,9 +19,29 @@
       "12": "Mỗi một tầng Trái Tim Băng Giá bị tiêu hao sẽ chuyển hóa thành 1 thanh Băng Vũ Kiếm, gây <cryo>Sát Thương Nguyên Tố Băng</cryo> cho địch xung quanh.",
       "13": "<br/>",
       "14": "<i>\"Những con sóng cuộn trào nuốt chửng chiếc vương miện của quý tộc. Và mãi đến sau này, mỗi bọt nước giữa những con sóng băng giá lại phản chiếu ra một chiếc vương miện vàng, mỗi bọt nước đều tỏa sáng lấp lánh.\"</i>"
-    },
-    "brandDMG": "Sát Thương Băng Vũ Kiếm",
-    "grimheartDuration": "Thời gian Trái Tim Băng Giá kéo dài"
+    }
+  },
+  "name": "Eula",
+  "title": "Vũ Điệu Bọt Biển",
+  "description": "\"Kỵ Sĩ Sóng Nước\" xuất thân từ gia tộc cổ xưa, đội trưởng tiểu đội du kích thuộc Đội Kỵ Sĩ Tây Phong. Là hậu duệ của quý tộc cũ nhưng lại gia nhập Đội Kỵ Sĩ Tây Phong - kẻ thù không đội trời chung, sự việc này đến nay vẫn là một ẩn số lớn của Mondstadt.",
+  "constellationName": "Cung Lãng Mạt",
+  "auto": {
+    "name": "Tây Phong Kiếm - Tông Thất",
+    "fields": {
+      "normal": {
+        "0": "<strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 5 lần chém liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Duy trì tiêu hao thể lực, chém nhanh liên tiếp.",
+        "2": "Sau khi Trọng Kích kết thúc, sẽ bổ một nhát cực mạnh."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đuờng, đồng thời gây sát thương phạm vi khi chạm đất."
+      }
+    }
   },
   "burst": {
     "name": "Thanh Kiếm Sóng Nước",

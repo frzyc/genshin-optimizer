@@ -1,0 +1,12 @@
+{
+  "name": "Último Acorde",
+  "description": "Um arco que serviu como um instrumento extraordinário. Não é mais capaz de fazer pessoas dançarem.",
+  "passiveName": "Canção Sem Flechas",
+  "passiveDescription": {
+    "0": "Aumenta o Dano da Habilidade Elemental e do Supremo em <cryo>24%</cryo>.",
+    "1": "Aumenta o Dano da Habilidade Elemental e do Supremo em <cryo>30%</cryo>.",
+    "2": "Aumenta o Dano da Habilidade Elemental e do Supremo em <cryo>36%</cryo>.",
+    "3": "Aumenta o Dano da Habilidade Elemental e do Supremo em <cryo>42%</cryo>.",
+    "4": "Aumenta o Dano da Habilidade Elemental e do Supremo em <cryo>48%</cryo>."
+  }
+}

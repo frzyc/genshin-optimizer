@@ -1,15 +1,6 @@
 {
-  "name": "Noelle",
-  "constellationName": "Parma Cordis",
-  "auto": {
-    "name": "Técnica de Espada de Favonius - Empregada",
-    "fields": {
-      "normal": "<strong>Ataque Normal</strong> Realiza até 4 golpes consecutivos.",
-      "charged": "<strong>Ataque Carregado</strong> Drena Stamina ao longo do tempo para realizar um ataque giratório contínuo contra todos os inimigos próximos. Ao final da sequência, realiza um corte poderoso.",
-      "plunging": "<strong>Ataque Imersivo</strong> Mergulha em pleno ar para golpear o chão, danificando inimigos em seu caminho e infligindo Dano em uma AdE durante o impacto."
-    }
-  },
   "skill": {
+    "triggerChance": "Probabilidade de Cura",
     "name": "Guardião do Coração",
     "description": {
       "0": "Invoca uma armadura protetora, infligindo <geo>Dano Geo</geo> nos inimigos próximos e criando um escudo. A Absorção de Dano do escudo aumenta baseado na DEF de Noelle.",
@@ -20,10 +11,10 @@
       "5": "A quantidade de Vida curada quando a recuperação é desencadeada é baseada na DEF de Noelle.",
       "6": "<br/>",
       "7": "<i>Noelle é ao mesmo tempo uma empregada dedicada e uma cavaleira corajosa.</i>"
-    },
-    "triggerChance": "Probabilidade de Cura"
+    }
   },
   "burst": {
+    "atkBonus": "Aumento de ATQ",
     "name": "Grande Limpeza",
     "description": {
       "0": "Reunindo a força da pedra em sua arma, Noelle ataca os inimigos ao seu redor com uma grande AdE, causando <geo>Dano Geo</geo>.",
@@ -35,16 +26,31 @@
       ],
       "3": "<br/>",
       "4": "<i>Às vezes, não é apenas poeira que precisa ser varrida...</i>"
-    },
-    "atkBonus": "Aumento de ATQ"
-  },
-  "passive1": {
-    "name": "Dedicação da Empregada",
-    "description": {
-      "0": "Quando uma Culinária Perfeita é feita em uma comida de aumento de DEF, Noelle tem uma chance de 12% de receber o dobro de produção."
     }
   },
-  "passive2": {
+  "name": "Noelle",
+  "title": "Flor da Cavalaria",
+  "description": "Uma empregada em serviço dos Cavaleiros de Favonius que sonha em se juntar aos cavaleiros um dia.",
+  "constellationName": "Parma Cordis",
+  "auto": {
+    "name": "Técnica de Espada de Favonius - Empregada",
+    "fields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Realiza até 4 golpes consecutivos."
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Drena Stamina ao longo do tempo para realizar um ataque giratório contínuo contra todos os inimigos próximos.",
+        "2": "Ao final da sequência, realiza um corte poderoso."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Mergulha em pleno ar para golpear o chão, danificando inimigos em seu caminho e infligindo Dano em uma AdE durante o impacto."
+      }
+    }
+  },
+  "passive1": {
     "name": "Devoção",
     "description": {
       "0": "Quando Noelle não estiver em combate, e a Vida do personagem selecionado cair para menos de 30%, o seguinte efeito acontecerá automaticamente:",
@@ -55,11 +61,17 @@
       "3": "Este efeito só pode ocorrer uma vez a cada 60s."
     }
   },
-  "passive3": {
+  "passive2": {
     "name": "Limpo e Eficaz",
     "description": {
       "0": "Cada 4 Ataques Normais ou Carregados aumentam a Recarga de <strong>Guardião do Coração</strong> em 1s.",
       "1": "Atingindo múltiplos inimigos com um único ataque apenas conta como 1 golpe."
+    }
+  },
+  "passive3": {
+    "name": "Dedicação da Empregada",
+    "description": {
+      "0": "Quando uma Culinária Perfeita é feita em uma comida de aumento de DEF, Noelle tem uma chance de 12% de receber o dobro de produção."
     }
   },
   "constellation1": {

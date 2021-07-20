@@ -1,12 +1,23 @@
 {
   "name": "Rosaria",
+  "title": "Thorny Benevolence",
+  "description": "A sister of the church, though you wouldn't know it if it weren't for her attire. Known for her sharp, cold words and manner, she often works alone.",
   "constellationName": "Spinea Corona",
   "auto": {
     "name": "Spear of the Church",
     "fields": {
-      "normal": "<strong>Normal Attack</strong> Performs up to five consecutive spear strikes.",
-      "charged": "<strong>Charged Attack</strong> Consumes a certain amount of Stamina to lunge forward, dealing damage to opponents along the way.",
-      "plunging": "<strong>Plunging Attack</strong> Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact."
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Performs up to five consecutive spear strikes."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Consumes a certain amount of Stamina to lunge forward, dealing damage to opponents along the way."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact."
+      }
     }
   },
   "skill": {

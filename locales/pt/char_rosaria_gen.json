@@ -1,12 +1,23 @@
 {
   "name": "Rosaria",
+  "title": "Benevolência Espinhosa",
+  "description": "Uma freira que, além das suas vestes, não se parece em nada com uma pessoa do clero. Conhecida por seus modos e palavras diretos e frios, ela costuma trabalhar sozinha.",
   "constellationName": "Spinea Corona",
   "auto": {
     "name": "Lança Eclesiástica",
     "fields": {
-      "normal": "<strong>Ataque Normal</strong> Realiza até 5 golpes com a lança.",
-      "charged": "<strong>Ataque Carregado</strong> Consome uma certa quantidade de Stamina para se lançar para frente, infligindo Dano em seu trajeto.",
-      "plunging": "<strong>Ataque Imersivo</strong> Mergulha em pleno ar para golpear o chão, causando dano aos inimigos ao longo do caminho e infligindo Dano em uma AdE durante o impacto."
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Realiza até 5 golpes com a lança."
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Consome uma certa quantidade de Stamina para se lançar para frente, infligindo Dano em seu trajeto."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Mergulha em pleno ar para golpear o chão, causando dano aos inimigos ao longo do caminho e infligindo Dano em uma AdE durante o impacto."
+      }
     }
   },
   "skill": {

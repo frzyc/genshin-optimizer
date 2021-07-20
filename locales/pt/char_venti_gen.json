@@ -1,12 +1,24 @@
 {
   "name": "Venti",
+  "title": "Bardo Itinerante",
+  "description": "Um dos muitos bardos de Mondstadt que vagueia livremente pelas ruas e becos da cidade.",
   "constellationName": "Carmen Dei",
   "auto": {
     "name": "Tiro com Arco Divino",
     "fields": {
-      "normal": "<strong>Ataque Normal</strong> Realiza até 6 tiros consecutivos com o arco.",
-      "charged": "<strong>Ataque Carregado</strong> Realiza um <strong>Tiro com Mira</strong> mais preciso com Dano aumentado. Enquanto estiver mirando, ventos favoráveis irão se acumular na ponta da flecha. Uma flecha completamente carregada com o vento irá infligir <anemo>Dano Anemo</anemo>.",
-      "plunging": "<strong>Ataque Imersivo</strong> Dispara uma chuva de flechas em pleno ar antes de atingir o chão, infligindo Dano em uma AdE durante o impacto."
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Realiza até 6 tiros consecutivos com o arco."
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Realiza um <strong>Tiro com Mira</strong> mais preciso com Dano aumentado.",
+        "2": "Enquanto estiver mirando, ventos favoráveis irão se acumular na ponta da flecha. Uma flecha completamente carregada com o vento irá infligir <anemo>Dano Anemo</anemo>."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Dispara uma chuva de flechas em pleno ar antes de atingir o chão, infligindo Dano em uma AdE durante o impacto."
+      }
     }
   },
   "skill": {

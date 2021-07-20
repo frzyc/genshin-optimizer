@@ -1,5 +1,6 @@
 {
   "name": "Mondpike",
+  "description": "Diese fremdländische Lanze hat eine lange und schmale Spitze sowie eine halbmondförmige Klinge am anderen Ende. Ihren Weg fand sie auf Handelsrouten nach Liyue. Mit etwas Übung kann man mit ihr eine überragende Angriffskraft entfalten.",
   "passiveName": "Energieschubnadel",
   "passiveDescription": {
     "0": "Verursacht nach dem Erhalten von Elementarteilchen oder Elementarkristallen 5 s lang zusätzlichen Schaden in Höhe von <cryo>20</cryo> % ANG mit Standardangriffen und heftigen Schlägen.",
@@ -7,6 +8,5 @@
     "2": "Verursacht nach dem Erhalten von Elementarteilchen oder Elementarkristallen 5 s lang zusätzlichen Schaden in Höhe von <cryo>30</cryo> % ANG mit Standardangriffen und heftigen Schlägen.",
     "3": "Verursacht nach dem Erhalten von Elementarteilchen oder Elementarkristallen 5 s lang zusätzlichen Schaden in Höhe von <cryo>35</cryo> % ANG mit Standardangriffen und heftigen Schlägen.",
     "4": "Verursacht nach dem Erhalten von Elementarteilchen oder Elementarkristallen 5 s lang zusätzlichen Schaden in Höhe von <cryo>40</cryo> % ANG mit Standardangriffen und heftigen Schlägen."
-  },
-  "description": "Diese fremdländische Lanze hat eine lange und schmale Spitze sowie eine halbmondförmige Klinge am anderen Ende. Ihren Weg fand sie auf Handelsrouten nach Liyue. Mit etwas Übung kann man mit ihr eine überragende Angriffskraft entfalten."
+  }
 }

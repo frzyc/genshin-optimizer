@@ -1,15 +1,7 @@
 {
-  "name": "Eula",
-  "constellationName": "Aspergine Maris",
-  "auto": {
-    "name": "Escrime de Favonius - Aristocratie",
-    "fields": {
-      "normal": "<strong>Attaque normale</strong> Enchaîne jusqu'à 5 coups d'épée.",
-      "charged": "<strong>Attaque chargée</strong> Exécute une succession d'entailles aussi rapides que tranchantes ; cette attaque consomme de l'endurance de façon continue. L'attaque chargée se termine sur un coup puissant.",
-      "plunging": "<strong>Attaque plongeante</strong> Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact."
-    }
-  },
   "skill": {
+    "brandDMG": "DGT épée vortex de glace",
+    "grimheartDuration": "Durée de Cœur de glace",
     "name": "Vortex des mers glacées",
     "description": {
       "0": "Givre coupant et lame dansante.",
@@ -27,9 +19,29 @@
       "12": "Chaque charge de Cœur de glace est convertie en épée vortex de glace, qui inflige des <cryo>DGT Cryo</cryo> aux ennemis proches.",
       "13": "<br/>",
       "14": "<i>Ainsi roula l'écume des vagues, engloutissant dans son sillage la couronne de la royauté. Et chaque embrun de cette marée glaciale étincela de sa lumineuse clarté.</i>"
-    },
-    "brandDMG": "DGT épée vortex de glace",
-    "grimheartDuration": "Durée de Cœur de glace"
+    }
+  },
+  "name": "Eula",
+  "title": "Vague déferlante",
+  "description": "Le « Chevalier aux Embruns », né de l'ancien clan Lawrence, capitaine de l'unité de reconnaissance des chevaliers de l'Ordre de Favonius de Mondstadt. Que cette descendante de la noblesse d'antan ait rejoint les chevaliers de l'Ordre, l'ennemi jusqu'alors juré de la famille, demeure un mystère aux yeux de beaucoup.",
+  "constellationName": "Aspergine Maris",
+  "auto": {
+    "name": "Escrime de Favonius - Aristocratie",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 5 coups d'épée."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Exécute une succession d'entailles aussi rapides que tranchantes ; cette attaque consomme de l'endurance de façon continue.",
+        "2": "L'attaque chargée se termine sur un coup puissant."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact."
+      }
+    }
   },
   "burst": {
     "name": "Lame de fond",

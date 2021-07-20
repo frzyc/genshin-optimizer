@@ -1,15 +1,7 @@
 {
-  "name": "Eula",
-  "constellationName": "Aphros Delos",
-  "auto": {
-    "name": "Favonius Bladework - Edel",
-    "fields": {
-      "normal": "<strong>Normal Attack</strong> Melancarkan maks. 5 serangan berturut-turut.",
-      "charged": "<strong>Charged Attack</strong> Terus menguras Stamina untuk melancarkan tebasan berkelanjutan. Diakhiri dengan sebuah tebasan yang kuat.",
-      "plunging": "<strong>Plunging Attack</strong> Menerjang dari udara untuk menghantam tanah, menyerang semua musuh di jalurnya dan mengakibatkan DMG area saat mendarat."
-    }
-  },
   "skill": {
+    "brandDMG": "DMG Icewhirl Brand",
+    "grimheartDuration": "Durasi Grimheart",
     "name": "Icetide Vortex",
     "description": {
       "0": "Es yang tajam, pedang yang lincah.",
@@ -27,9 +19,29 @@
       "12": "Setiap lapis Grimheart akan berubah menjadi Icewhirl Brand yang mengakibatkan <cryo>Cryo DMG</cryo> pada musuh di sekitar.",
       "13": "<br/>",
       "14": "<i>\"Ombak-ombak pun bergulung, menelan mahkota para bangsawan. Setelah itu, setiap tetesan di antara gulungan ombak es akan memantulkan mahkota emas, dan setiap tetesan busa ombak akan memancarkan cahayanya.</i>"
-    },
-    "brandDMG": "DMG Icewhirl Brand",
-    "grimheartDuration": "Durasi Grimheart"
+    }
+  },
+  "name": "Eula",
+  "title": "Dance of the Shimmering Wave",
+  "description": "Sang Spindrift Knight, keturunan keluarga bangsawan dan Kapten dari Pasukan Gerilya Knights of Favonius. Alasan kenapa seorang keturunan bangsawan kuno ingin bergabung dengan para Knight masih menjadi misteri bagi Mondstadt sampai saat ini.",
+  "constellationName": "Aphros Delos",
+  "auto": {
+    "name": "Favonius Bladework - Edel",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Melancarkan maks. 5 serangan berturut-turut."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Terus menguras Stamina untuk melancarkan tebasan berkelanjutan.",
+        "2": "Diakhiri dengan sebuah tebasan yang kuat."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah, menyerang semua musuh di jalurnya dan mengakibatkan DMG area saat mendarat."
+      }
+    }
   },
   "burst": {
     "name": "Glacial Illumination",

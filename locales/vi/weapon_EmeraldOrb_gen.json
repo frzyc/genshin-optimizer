@@ -1,0 +1,12 @@
+{
+  "name": "Quả Cầu Ngọc",
+  "description": "Pháp khí được điêu khắc từ bảo ngọc Tuyệt Vân Gián phía bắc Liyue. Nhỏ nhắn xinh xắn, được mệnh danh là Phỉ Ngọc Hoàn.",
+  "passiveName": "Kích Lưu",
+  "passiveDescription": {
+    "0": "Sau khi kích hoạt phản ứng bốc hơi, điện cảm, đóng băng hoặc khuếch tán Nguyên Tố Thủy, trong 12s tăng tấn công <cryo>20%</cryo>.",
+    "1": "Sau khi kích hoạt phản ứng bốc hơi, điện cảm, đóng băng hoặc khuếch tán Nguyên Tố Thủy, trong 12s tăng tấn công <cryo>25%</cryo>.",
+    "2": "Sau khi kích hoạt phản ứng bốc hơi, điện cảm, đóng băng hoặc khuếch tán Nguyên Tố Thủy, trong 12s tăng tấn công <cryo>30%</cryo>.",
+    "3": "Sau khi kích hoạt phản ứng bốc hơi, điện cảm, đóng băng hoặc khuếch tán Nguyên Tố Thủy, trong 12s tăng tấn công <cryo>35%</cryo>.",
+    "4": "Sau khi kích hoạt phản ứng bốc hơi, điện cảm, đóng băng hoặc khuếch tán Nguyên Tố Thủy, trong 12s tăng tấn công <cryo>40%</cryo>."
+  }
+}

@@ -1,15 +1,7 @@
 {
-  "name": "Eula",
-  "constellationName": "Aphros Delos",
-  "auto": {
-    "name": "Favonius-Schwertkunst – Adelshaus",
-    "fields": {
-      "normal": "<strong>Standardangriff</strong> Führt bis zu 5 Schwünge mit dem Schwert aus.",
-      "charged": "<strong>Heftiger Schlag</strong> Verbraucht fortlaufend Ausdauer und führt mehrere Hiebe aus. Schwingt das Schwert am Ende mit besonders großer Wucht.",
-      "plunging": "<strong>Angriff aus dem Fall</strong> Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden."
-    }
-  },
   "skill": {
+    "brandDMG": "SCH von Schwert des Eisstrudel",
+    "grimheartDuration": "Dauer von Kaltes Herz",
     "name": "Eisiger Strudel",
     "description": {
       "0": "Extreme Kälte und geschwinder Schwerttanz.",
@@ -27,9 +19,29 @@
       "12": "Jede verbrauchte Stapelung von Kaltes Herz wandelt sich in ein Eisstrudelschwert um, das den Gegnern in der Umgebung <cryo>Kryo-Schaden</cryo> zufügt.",
       "13": "<br/>",
       "14": "<i>„So wird die Krone der Aristokraten in den Strudel hineingerissen. In jedem eiskalten Tröpfchen ist der Widerschein der goldenen Krone zu sehen. Der stiebende Schaum glänzt.“</i>"
-    },
-    "brandDMG": "SCH von Schwert des Eisstrudel",
-    "grimheartDuration": "Dauer von Kaltes Herz"
+    }
+  },
+  "name": "Eula",
+  "title": "Wirbeltanz der Gischt",
+  "description": "Sie ist die „Gischtritterin“ aus einer uralten Familie und Truppenführerin der Freischärler des Ordo Favonius. Als ein Nachkomme der Aristokraten ist sie aber dem Ritterorden, dem Erzfeind der Aristokratie beigetreten. Warum sie solch eine Entscheidung getroffen hat, bleibt eins der größten Rätsel von Mondstadt.",
+  "constellationName": "Aphros Delos",
+  "auto": {
+    "name": "Favonius-Schwertkunst – Adelshaus",
+    "fields": {
+      "normal": {
+        "0": "<strong>Standardangriff</strong>",
+        "1": "Führt bis zu 5 Schwünge mit dem Schwert aus."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht fortlaufend Ausdauer und führt schnell mehrere Hiebe aus.",
+        "2": "Schwingt das Schwert am Ende mit besonders großer Wucht."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden."
+      }
+    }
   },
   "burst": {
     "name": "Schwert der Brandung",

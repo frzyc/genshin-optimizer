@@ -1,0 +1,12 @@
+{
+  "name": "Tai Ương Của Rồng",
+  "description": "Thương dài có rồng cuộn quanh, sắc bén khôn lường. Có thể dễ dàng diệt rồng.",
+  "passiveName": "Diệt Hỏa Ngưng Thủy",
+  "passiveDescription": {
+    "0": "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi Nguyên Tố Thủy hoặc Hỏa tăng <cryo>20%</cryo>.",
+    "1": "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi nguyên tố Thủy hoặc Hỏa tăng <cryo>24%</cryo>.",
+    "2": "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi nguyên tố Thủy hoặc Hỏa tăng <cryo>28%</cryo>.",
+    "3": "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi nguyên tố Thủy hoặc Hỏa tăng <cryo>32%</cryo>.",
+    "4": "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi nguyên tố Thủy hoặc Hỏa tăng <cryo>36%</cryo>."
+  }
+}

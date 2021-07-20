@@ -1,0 +1,12 @@
+{
+  "name": "Illustrationen von Landen und Wassern",
+  "description": "Eine sehr detailreiche Seekarte mit den Gewässern rund um Teyvat. Es gehört zu den wundersamen Dokumenten, die über Handelswege nach Liyue gelangt sind.",
+  "passiveName": "Energieschubspule",
+  "passiveDescription": {
+    "0": "Erhöht den Elementar-SCH beim Auslösen von Elementarreaktionen 10 s lang um <cryo>8 %</cryo>. 2-fach stapelbar.",
+    "1": "Erhöht den Elementar-SCH beim Auslösen von Elementareffekten 10 s lang um <cryo>10 %</cryo>. 2-fach stapelbar.",
+    "2": "Erhöht den Elementar-SCH beim Auslösen von Elementarreaktionen 10 s lang um <cryo>12 %</cryo>. 2-fach stapelbar.",
+    "3": "Erhöht den Elementar-SCH beim Auslösen von Elementarreaktionen 10 s lang um <cryo>14 %</cryo>. 2-fach stapelbar.",
+    "4": "Erhöht den Elementar-SCH beim Auslösen von Elementarreaktionen 10 s lang um <cryo>16 %</cryo>. 2-fach stapelbar."
+  }
+}

@@ -1,15 +1,6 @@
 {
-  "name": "Noelle",
-  "constellationName": "Parma Cordis",
-  "auto": {
-    "name": "Favonius Bladework - Maid",
-    "fields": {
-      "normal": "<strong>Normal Attack</strong> Melancarkan maks. 4 tebasan berturut-turut.",
-      "charged": "<strong>Charged Attack</strong> Terus menguras Stamina untuk melancarkan serangan berputar yang mengakibatkan DMG ke musuh di sekitar. Diakhiri dengan sebuah tebasan yang kuat.",
-      "plunging": "<strong>Plunging Attack</strong> Menerjang dari udara untuk menghantam tanah, mengakibatkan DMG pada musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat."
-    }
-  },
   "skill": {
+    "triggerChance": "Persentase Pemulihan Terpicu",
     "name": "Breastplate",
     "description": {
       "0": "Menciptakan zirah batu yang mengakibatkan <geo>Geo DMG</geo> pada musuh di sekitar dan membentuk perisai. DMG yang ditahan perisai berdasarkan DEF Noelle.",
@@ -22,10 +13,10 @@
       "4": "Jumlah HP yang dipulihkan meningkat berdasarkan DEF Noelle.",
       "5": "<br/>",
       "6": "<i>Noelle adalah seorang pelayan yang sangat sigap, dan juga seorang Knight yang sangat gagah.</i>"
-    },
-    "triggerChance": "Persentase Pemulihan Terpicu"
+    }
   },
   "burst": {
+    "atkBonus": "Peningkatan ATK",
     "name": "Sweeping Time",
     "description": {
       "0": "Mengumpulkan kekuatan Geo di sekitar senjatanya, Noelle menghantam musuh di sekitarnya dengan serangan dalam area besar, mengakibatkan <geo>Geo DMG</geo>.",
@@ -37,16 +28,30 @@
       ],
       "3": "<br/>",
       "4": "<i>Terkadang, bukan hanya debu yang harus dibersihkan...</i>"
-    },
-    "atkBonus": "Peningkatan ATK"
-  },
-  "passive1": {
-    "name": "Maid's Knighthood",
-    "description": {
-      "0": "Saat masakan jenis pertahanan dimasak dengan sempurna, terdapat 12% kemungkinan mendapatkan hasil 2 kali lipat."
     }
   },
-  "passive2": {
+  "name": "Noelle",
+  "title": "Chivalric Blossom",
+  "description": "Seorang pelayan yang bekerja di Knights of Favonius, memiliki impian untuk menjadi seorang Knight suatu hari kelak.",
+  "constellationName": "Parma Cordis",
+  "auto": {
+    "name": "Favonius Bladework - Maid",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong> Melancarkan maks. 4 tebasan berturut-turut."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Terus menguras Stamina untuk melancarkan serangan berputar yang mengakibatkan DMG ke musuh di sekitar.",
+        "2": "Diakhiri dengan sebuah tebasan yang kuat."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah, mengakibatkan DMG pada musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat."
+      }
+    }
+  },
+  "passive1": {
     "name": "Devotion",
     "description": {
       "0": "Saat Noelle berada dalam party, tetapi tidak sedang bertarung, skill ini akan terpicu secara otomatis ketika HP karakter yang sedang digunakan kurang dari 30%:",
@@ -55,11 +60,17 @@
       "3": "Efek ini dapat terpicu setiap 60 detik."
     }
   },
-  "passive3": {
+  "passive2": {
     "name": "Nice and Clean",
     "description": {
       "0": "Mengurangi 1 detik CD skill <strong>Breastplate</strong> setiap 4 Normal atau Charged Attack yang mengenai musuh.",
       "1": "Serangan yang mengenai beberapa musuh sekaligus tetap terhitung sebagai 1 serangan."
+    }
+  },
+  "passive3": {
+    "name": "Maid's Knighthood",
+    "description": {
+      "0": "Saat masakan jenis pertahanan dimasak dengan sempurna, terdapat 12% kemungkinan mendapatkan hasil 2 kali lipat."
     }
   },
   "constellation1": {

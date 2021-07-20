@@ -1,12 +1,43 @@
 {
+  "burst": {
+    "name": "Lâmina de Kazuha",
+    "description": {
+      "0": "A derradeira técnica de Garyuu - um simples corte semelhante a uma tempestade que se avizinha que causa <anemo>Dano em uma AdE Anemo</anemo>.",
+      "1": "A passagem da lâmina deixa um campo chamado \"Redemoinho do Outono\" que causa <anemo>Dano Anemo</anemo> intermitente aos inimigos nela.",
+      "2": "<br/>",
+      "3": "<strong>Absorção Elemental</strong>",
+      "4": "Se o Redemoinho do Outono entrar em contato com os elementos<hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, ele irá causar Dano elemental adicional daquele tipo.",
+      "5": "Absorção Elemental pode ocorrer apenas uma vez por uso.",
+      "6": "<br/>",
+      "7": "Esta conversão só ocorre uma vez durante a duração da habilidade.",
+      "8": "<br/>",
+      "9": "<i>\"Eu vejo a eternidade desvanecer em um piscar de olhos, vejo os outonos de muitos anos em apenas uma folha. Por isso, desejo cortar essa árvore e perguntar ao tempo...\"</i>"
+    },
+    "slashdmg": "Dano do Corte"
+  },
   "name": "Kaedehara Kazuha",
+  "title": "Folhas Escarlate Procuram Ondas Selvagens",
+  "description": "Um samurai errante de Inazuma que atualmente está com a Frota Crux de Liyue. Uma alma gentil e livre cujo coração esconde muitas feridas.",
   "constellationName": "Acer Palmatum",
   "auto": {
     "name": "Técnica da Espada de Garyuu",
     "fields": {
-      "normal": "<strong>Ataque Normal</strong> Realiza até 5 golpes rápidos.",
-      "charged": "<strong>Ataque Carregado</strong> Consome uma certa quantidade de Stamina para desferir 2 golpes rápidos com a espada.",
-      "plunging": "<strong>Ataque Imersivo</strong> Mergulha em pleno ar para golpear o chão, causando dano aos inimigos ao longo do caminho e infligindo Dano em uma AdE durante o impacto. Caso o Ataque Imersivo seja lançado por Chihayaburu, infligirá um Ataque Imersivo - Ranzan Aéreo."
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Realiza até 5 golpes rápidos."
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Consome uma certa quantidade de Stamina para desferir 2 golpes rápidos com a espada."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Mergulha em pleno ar para golpear o chão, causando dano aos inimigos ao longo do caminho e infligindo Dano em uma AdE durante o impacto. Caso o Ataque Imersivo seja lançado por Chihayaburu, infligirá um Ataque Imersivo - Ranzan Aéreo."
+      },
+      "plunging_midare": {
+        "0": "<strong>Ataque Imersivo - Ranzan Aéreo</strong>",
+        "1": "Quando Chihayaburu lança um Ataque Imersivo com habilidade elemental, o Dano causado pelo Ataque Imersivo será convertido em <anemo>Dano Anemo</anemo>, e quando cair no chão irá criar uma pequena corrente de vento com uma técnica secreta, atraindo os objetos e inimigos ao redor."
+      }
     }
   },
   "skill": {
@@ -29,22 +60,6 @@
       "14": "Por deuses e homens que já se foram",
       "15": "Como montanhas vermelhas do outono.\"</i>"
     }
-  },
-  "burst": {
-    "name": "Lâmina de Kazuha",
-    "description": {
-      "0": "A derradeira técnica de Garyuu - um simples corte semelhante a uma tempestade que se avizinha que causa <anemo>Dano em uma AdE Anemo</anemo>.",
-      "1": "A passagem da lâmina deixa um campo chamado \"Redemoinho do Outono\" que causa <anemo>Dano Anemo</anemo> intermitente aos inimigos nela.",
-      "2": "<br/>",
-      "3": "<strong>Absorção Elemental</strong>",
-      "4": "Se o Redemoinho do Outono entrar em contato com os elementos<hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, ele irá causar Dano elemental adicional daquele tipo.",
-      "5": "Absorção Elemental pode ocorrer apenas uma vez por uso.",
-      "6": "<br/>",
-      "7": "Esta conversão só ocorre uma vez durante a duração da habilidade.",
-      "8": "<br/>",
-      "9": "<i>\"Eu vejo a eternidade desvanecer em um piscar de olhos, vejo os outonos de muitos anos em apenas uma folha. Por isso, desejo cortar essa árvore e perguntar ao tempo...\"</i>"
-    },
-    "slashdmg": "Dano do Corte"
   },
   "passive1": {
     "name": "Esgrima Soumon",
@@ -104,8 +119,8 @@
   "constellation5": {
     "name": "Sabedoria de Bansei",
     "description": {
-      "0": "Reduz o Tempo de Recarga de <strong>Chihayaburu</strong> em 10%.",
-      "1": "Ao lançar <strong>Lâmina de Kazuha</strong>, redefine o Tempo de Recarga de <strong>Chihayaburu</strong>."
+      "0": "Aumenta o nível da Habilidade <strong>Lâmina de Kazuha</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
     }
   },
   "constellation6": {

@@ -1,0 +1,8 @@
+{
+  "name": "Espada del Descenso",
+  "description": "Una espada con una forma única. No parece pertenecer a este mundo.",
+  "passiveName": "Descenso",
+  "passiveDescription": {
+    "0": "Atacar a los enemigos con Ataques Normales y Cargados otorga un <cryo>50%</cryo> de probabilidad de infligir un <cryo>200%</cryo> de ATQ como daño en una pequeña AdE. Este efecto solo puede ocurrir una vez cada 10 s. Además, si {F#la viajera}{M#el viajero} lleva la Espada del Descenso equipada, su ATQ aumenta en <cryo>66</cryo> pts."
+  }
+}

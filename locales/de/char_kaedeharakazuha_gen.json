@@ -1,12 +1,41 @@
 {
+  "burst": {
+    "name": "Kazuha-Schlag",
+    "description": {
+      "0": "Entfaltet die ultimative von Kazuha selbst entwickelte Technik, teilt einen einzigen Schwerthieb aus, der wie ein Sturm drischt, und verursacht <anemo>Anemo-Flächenschaden</anemo>.",
+      "1": "Hinterlässt ein Feld namens „wirbelndes Herbstfeld“, das Gegnern darin in bestimmten zeitlichen Abständen <anemo>Anemo-Schaden</anemo> zufügt.",
+      "2": "<br/>",
+      "3": "<strong>Elementarumwandlung</strong>",
+      "4": "Verleiht dem wirbelnden Herbstfeld beim Treffen auf <hydro>Hydro</hydro>-, <pyro>Pyro</pyro>-, <cryo>Kryo</cryo>- oder <electro>Elektro</electro>-Effekte während der Wirkungsdauer das jeweilige Element und verursacht dementsprechend zusätzlichen Schaden.",
+      "5": "Elementarumwandlung nur einmal während der Wirkungsdauer möglich.",
+      "6": "<br/>",
+      "7": "<i>„Die Ewigkeit zieht im Nu an mir vorbei, wie ein Blatt vom Baume fällt und derweil tausende Herbste vergehen. So fälle ich diesen Ahorn, um die Antwort auf alle Fragen zu erhalten.“</i>"
+    },
+    "slashdmg": "Schwerthieb-SCH"
+  },
   "name": "Kaedehara Kazuha",
+  "title": "Tiefrote Blätter jagen wilde Wellen",
+  "description": "Ein wandernder Samurai aus Inazuma, der momentan mit Liyues Crux unterwegs ist. Eine sanfte und sorglose Seele, dessen Herz schwer wiegt, von vielen großen Bürden aus der Vergangenheit.",
   "constellationName": "Acer Palmatum",
   "auto": {
     "name": "Garyuu-Schwertkunst",
     "fields": {
-      "normal": "<strong>Standardangriff</strong> Führt bis zu 5 Schwerthiebe aus.",
-      "charged": "<strong>Heftiger Schlag</strong> Verbraucht eine gewisse Menge Ausdauer und schwingt das Schwert zweimal schnell nach vorn.",
-      "plunging": "<strong>Angriff aus dem Fall</strong> Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden. Löst, wenn dieser Angriff aus dem Fall durch Chihayaburu ausgelöst wird, stattdessen den Angriff aus dem Fall: Midare Ranzan aus."
+      "normal": {
+        "0": "<strong>Standardangriff</strong>",
+        "1": "Führt bis zu 5 Schwerthiebe aus."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht eine gewisse Menge Ausdauer und schwingt das Schwert zweimal schnell nach vorn."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden. Löst, wenn dieser Angriff aus dem Fall durch Chihayaburu ausgelöst wird, stattdessen den Angriff aus dem Fall: Midare Ranzan aus."
+      },
+      "plunging_midare": {
+        "0": "<strong>Angriff aus dem Fall: Midare Ranzan</strong>",
+        "1": "Wandelt den mit Angriffen aus dem Fall, die durch die Elementarfähigkeit Chihayaburu ausgelöst werden, verursachten Schaden in <anemo>Anemo-Schaden</anemo> um, wenn sich Kazuha davor aufgrund von Chihayaburu in der Luft befindet, und erzeugt beim Aufkommen mit einer geheimen Technik einen kleinen Windtunnel, der Objekte und Gegner in der Nähe anzieht."
+      }
     }
   },
   "skill": {
@@ -27,20 +56,6 @@
       "12": "<br/>",
       "13": "<i>„Trübseliger Wind pfeift durch den Ahorn, während Götter und Menschen altern und sich die Berge in herbstlichem Rot kleiden.“<i>"
     }
-  },
-  "burst": {
-    "name": "Kazuha-Schlag",
-    "description": {
-      "0": "Entfaltet die ultimative von Kazuha selbst entwickelte Technik, teilt einen einzigen Schwerthieb aus, der wie ein Sturm drischt, und verursacht <anemo>Anemo-Flächenschaden</anemo>.",
-      "1": "Hinterlässt ein Feld namens „wirbelndes Herbstfeld“, das Gegnern darin in bestimmten zeitlichen Abständen <anemo>Anemo-Schaden</anemo> zufügt.",
-      "2": "<br/>",
-      "3": "<strong>Elementarumwandlung</strong>",
-      "4": "Verleiht dem wirbelnden Herbstfeld beim Treffen auf <hydro>Hydro</hydro>-, <pyro>Pyro</pyro>-, <cryo>Kryo</cryo>- oder <electro>Elektro</electro>-Effekte während der Wirkungsdauer das jeweilige Element und verursacht dementsprechend zusätzlichen Schaden.",
-      "5": "Elementarumwandlung nur einmal während der Wirkungsdauer möglich.",
-      "6": "<br/>",
-      "7": "<i>„Die Ewigkeit zieht im Nu an mir vorbei, wie ein Blatt vom Baume fällt und derweil tausende Herbste vergehen. So fälle ich diesen Ahorn, um die Antwort auf alle Fragen zu erhalten.“</i>"
-    },
-    "slashdmg": "Schwerthieb-SCH"
   },
   "passive1": {
     "name": "Soumon-Schwertkunst",
@@ -96,8 +111,8 @@
   "constellation5": {
     "name": "Weisheit von Bansei",
     "description": {
-      "0": "Verkürzt die Abklingzeit von <strong>Chihayaburu</strong> um 10 %.",
-      "1": "Überspringt bei Anwendung von <strong>Kazuha-Schlag</strong> die Abklingzeit von <strong>Chihayaburu</strong>."
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Kazuha-Schlag</strong> um 3.",
+      "1": "Höchststufe 15."
     }
   },
   "constellation6": {

@@ -1,0 +1,131 @@
+{
+  "name": "Zhongli",
+  "title": "Andarilho do Reino Mortal",
+  "description": "Um convidado misterioso da Funerária Wangsheng. É um erudito que tem um profundo conhecimento sobre todos os tipos de coisa.",
+  "constellationName": "???",
+  "auto": {
+    "name": "Chuva de Pedras",
+    "fields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Realiza até 6 golpes consecutivos com a lança."
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Consome uma certa quantidade de Stamina para se lançar para frente, fazendo com que lanças de pedras caiam em seu trajeto."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Mergulha em pleno ar para golpear o chão, causando dano a inimigos ao longo do caminho e infligindo Dano em uma AdE durante o impacto."
+      }
+    }
+  },
+  "skill": {
+    "name": "Dominus Lapidis",
+    "description": {
+      "0": "O Poder Geo cobre todas as montanhas, terras e rochas. Mas poucas são as pessoas que o podem usar livremente.",
+      "1": "<br/>",
+      "2": "<strong>Pressionar</strong>",
+      "3": "Ordena que o elemento Geo na terra se una em Estela de Pedra.",
+      "4": "<br/>",
+      "5": "<strong>Manter Pressionado</strong>",
+      "6": "Ordena que elementos Geo ao redor explodam, causando o seguinte efeito:",
+      "7": [
+        "Se o número de Estelas de Pedra não alcançou o máximo, cria outra Estela de Pedra;",
+        "Forma um Escudo de Jade, que absorve o Dano com base na Vida Máxima de Zhongli;",
+        "Causa <geo>Dano Geo AdE</geo>;",
+        "Se houver alvos com <geo>Elemento Geo</geo> nas proximidades, absorverá o <geo>Elemento Geo</geo> de até dois alvos. Esse efeito não causa dano."
+      ],
+      "8": "<br/>",
+      "9": "<strong>Estela de Pedra</strong>",
+      "10": "Ao ser criada, causa <geo>Dano Geo AdE</geo>.",
+      "11": "Além disso, enquanto existir, ressoará com <geo>Construções Geo</geo> próximas, causando <geo>Dano Geo</geo> aos inimigos próximos.",
+      "12": "A Estela de Pedra é considerada uma <geo>Construção Geo</geo>, pode parar ataques, e pode ser escalada.",
+      "13": "Só é possível existir uma Estela de Pedra ao mesmo tempo.",
+      "14": "<br/>",
+      "15": "<strong>Escudo de Jade</strong>",
+      "16": "Absorve 150% de todos os Danos Elementais e Danos Físicos.",
+      "17": "Os personagens sob a proteção do Escudo de Jade, diminuem a RES Elemental e RES Física de todos os inimigos em uma pequena área em redor.",
+      "18": "<br/>",
+      "19": "<i>Um verdadeiro mestre da pedra pode entalhar jade e dar forma ao ouro. </i>"
+    }
+  },
+  "burst": {
+    "name": "Chuva Estelar",
+    "description": {
+      "0": "Traz uma estrela cadente em direção à terra, infligindo <geo>Dano Geo</geo> massivo nos inimigos pegos em sua AdE e aplicando o efeito <geo>Petrificante</geo>",
+      "1": "<br/>",
+      "2": " <strong>Petrificação</strong>",
+      "3": "Inimigos afetados pelo efeito <geo>Petrificante</geo> não podem se mover.",
+      "4": "<br/>",
+      "5": "<i>O meteorito caído pune os injustos.</i>"
+    }
+  },
+  "passive1": {
+    "name": "Ondas de Ressonância",
+    "description": {
+      "0": "Quando o Escudo de Jade receber dano, terá os seguintes efeitos de fortificação:",
+      "1": [
+        "Os Personagens que estiverem sendo protegidos pelo Escudo de Jade terão um aumento de Força do Escudo de 5%;",
+        "Esse efeito pode ser acumulado até 5 vezes, e dura até o Escudo de Jade se dissipar."
+      ]
+    }
+  },
+  "passive2": {
+    "name": "Domínio da Terra",
+    "description": {
+      "0": "Os ataques de Zhongli terão os seguintes aumentos de Dano de acordo com sua Vida Máxima:",
+      "1": [
+        "Ataque Normal, Ataque Carregado e Ataque Imersivo terão seu dano aumentado para 1.39% da Vida Máxima",
+        "O Dano da Estela de Pedra, Dano de ressonância Geo e Dano de Manter Pressionado de <strong>Dominis Lapidis</strong> aumentarão para 1.9% da Vida Máxima",
+        "O Dano de <strong>Chuva Estelar</strong> aumentará para 33% da Vida Máxima"
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Cristal do Destino",
+    "description": {
+      "0": "Retorna 15% dos Minérios usados ao criar armas de tipo Lança."
+    }
+  },
+  "constellation1": {
+    "name": "Pedra, a Espinha Vertebral da Terra",
+    "description": {
+      "0": "Aumenta o número máximo de Espirais de Pedra criados pelo <strong>Dominus Lapidis</strong> que podem existir simultaneamente para 2."
+    }
+  },
+  "constellation2": {
+    "name": "Pedra, a Vela de Jade",
+    "description": {
+      "0": "Quando a <strong>Chuva Estelar</strong> cair, dará um Escudo de Jade para os personagens ao redor em campo próximos."
+    }
+  },
+  "constellation3": {
+    "name": "Jade, Cintilando na Escuridão",
+    "description": {
+      "0": "Aumenta o nível do <strong>Dominus Lapidis</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation4": {
+    "name": "Topázio, Inquebrável e Destemido",
+    "description": {
+      "0": "Aumenta a AdE da <strong>Chuva Estelar</strong> em 20%.",
+      "1": "Além disso, o efeito de Petrificação da Chuva Estelar é prolongado em 2s."
+    }
+  },
+  "constellation5": {
+    "name": "Lazuli, Heraldo da Ordem",
+    "description": {
+      "0": "Aumenta o nível da <strong>Chuva Estelar</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation6": {
+    "name": "Chrysos, Recompensa do Dominador",
+    "description": {
+      "0": "Quando o Escudo de Jade recebe dano, 40% do Dano recebido é convertido em Vida para o personagem atual.",
+      "1": "A regeneração não pode exceder 8% da Vida Máxima do personagem por vez."
+    }
+  }
+}

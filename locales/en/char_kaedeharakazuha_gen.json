@@ -1,12 +1,41 @@
 {
+  "burst": {
+    "name": "Kazuha Slash",
+    "description": {
+      "0": "The signature technique of Kazuha's self-styled bladework — a single slash that strikes with the force of the first winds of autumn, dealing <anemo>AoE Anemo DMG</anemo>.",
+      "1": "The blade's passage will leave behind a field named \"Autumn Whirlwind\" that periodically deals <anemo>AoE Anemo DMG</anemo> to opponents within its range.",
+      "2": "<br/>",
+      "3": "<strong>Elemental Absorption</strong>",
+      "4": "If Autumn Whirlwind comes into contact with <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, it will deal additional elemental DMG of that type.",
+      "5": "Elemental Absorption may only occur once per use.",
+      "6": "<br/>",
+      "7": "<i>\"I see eternity go by in an instant, the autumns of many years from a single leaf. Thus I shall slice this maple in a flash, and ask a question of the ages.\"</i>"
+    },
+    "slashdmg": "Slashing DMG"
+  },
   "name": "Kaedehara Kazuha",
+  "title": "Scarlet Leaves Pursue Wild Waves",
+  "description": "A wandering samurai from Inazuma who is currently with Liyue's Crux Fleet. A gentle and carefree soul whose heart hides a great many burdens from the past.",
   "constellationName": "Acer Palmatum",
   "auto": {
     "name": "Garyuu Bladework",
     "fields": {
-      "normal": "<strong>Normal Attack</strong> Perform up to 5 rapid strikes.",
-      "charged": "<strong>Charged Attack</strong> Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.",
-      "plunging": "<strong>Plunging Attack</strong> Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact. If this Plunging Attack is triggered by Chihayaburu, it will be converted to Plunging Attack: Midare Ranzan."
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Perform up to 5 rapid strikes."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Consumes a certain amount of Stamina to unleash 2 rapid sword strikes."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact. If this Plunging Attack is triggered by Chihayaburu, it will be converted to Plunging Attack: Midare Ranzan."
+      },
+      "plunging_midare": {
+        "0": "<strong>Plunging Attack: Midare Ranzan</strong>",
+        "1": "When a Plunging Attack is performed using the effects of the Elemental Skill Chihayaburu, Plunging Attack DMG is converted to <anemo>Anemo DMG</anemo> and will create a small wind tunnel via a secret blade technique that pulls in nearby objects and opponents."
+      }
     }
   },
   "skill": {
@@ -29,20 +58,6 @@
       "14": "Bygone ages, gods of old",
       "15": "Withered autumn leaves\"</i>"
     }
-  },
-  "burst": {
-    "name": "Kazuha Slash",
-    "description": {
-      "0": "The signature technique of Kazuha's self-styled bladework — a single slash that strikes with the force of the first winds of autumn, dealing <anemo>AoE Anemo DMG</anemo>.",
-      "1": "The blade's passage will leave behind a field named \"Autumn Whirlwind\" that periodically deals <anemo>AoE Anemo DMG</anemo> to opponents within its range.",
-      "2": "<br/>",
-      "3": "<strong>Elemental Absorption</strong>",
-      "4": "If Autumn Whirlwind comes into contact with <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, it will deal additional elemental DMG of that type.",
-      "5": "Elemental Absorption may only occur once per use.",
-      "6": "<br/>",
-      "7": "<i>\"I see eternity go by in an instant, the autumns of many years from a single leaf. Thus I shall slice this maple in a flash, and ask a question of the ages.\"</i>"
-    },
-    "slashdmg": "Slashing DMG"
   },
   "passive1": {
     "name": "Soumon Swordsmanship",
@@ -103,8 +118,8 @@
   "constellation5": {
     "name": "Wisdom of Bansei",
     "description": {
-      "0": "Decreases <strong>Chihayaburu</strong>'s CD by 10%.",
-      "1": "Using <strong>Kazuha Slash</strong> resets the CD of <strong>Chihayaburu</strong>."
+      "0": "Increases the Level of <strong>Kazuha Slash</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
     }
   },
   "constellation6": {
