@@ -64,7 +64,7 @@ export type CharacterData = {
 //parse baseStat/ascension/basic data
 const characterDataDump = Object.fromEntries(Object.entries(characterData).filter(([charid, charData]) => charid in characterIdMap).map(([charid, charData]) => {
   const { WeaponType, QualityType, AvatarPromoteId, HpBase, AttackBase, DefenseBase, PropGrowCurves } = charData
-  const curves = Object.fromEntries(PropGrowCurves.map(({ Type, GrowCurve }) => [propTypeMap[Type], GrowCurve])) as any //TODO: typing
+  const curves = Object.fromEntries(PropGrowCurves.map(({ Type, GrowCurve }) => [propTypeMap[Type], GrowCurve])) as CharacterData["curves"]
   const { InfoBirthDay, InfoBirthMonth, } = characterInfo[charid]
   const result: CharacterData = {
     weaponTypeKey: weaponMap[WeaponType],
@@ -244,8 +244,8 @@ Object.entries(languageData).forEach(([lang, data]) => {
   if (!fs.existsSync(fileDir)) fs.mkdirSync(fileDir)
 
   Object.entries(data).forEach(([type, typeData]) => {
-    //general sheet
-    if (type === "sheet")
+    //general manual localiation namespaces
+    if (type === "sheet" || type === "weaponKey")
       return dumpFile(`${fileDir}/${type}_gen.json`, typeData)
 
     //weapons/character

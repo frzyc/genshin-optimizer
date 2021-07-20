@@ -29,13 +29,9 @@ type AvatarSkillDepotExcelConfigData = {
   ],*/
   "SkillDepotAbilityGroup": string//""
 }
-const skillDepotSrc = require('../../GenshinData/ExcelBinOutput/AvatarSkillDepotExcelConfigData.json') as AvatarSkillDepotExcelConfigData[]
-const skillDepot = Object.fromEntries(skillDepotSrc.map(skill => [skill.Id, skill])) as { [id: number]: AvatarSkillDepotExcelConfigData }
-
-export default skillDepot
-
 
 /**
+ * sources for different talents:
  * auto       AvatarSkillExcelConfigData
  * skill      AvatarSkillExcelConfigData
  * burst      AvatarSkillExcelConfigData
@@ -44,3 +40,8 @@ export default skillDepot
  * passive3   ProudSkillExcelConfigData
  * const#     AvatarSkillExcelConfigData
  */
+
+const skillDepotSrc = require('../../GenshinData/ExcelBinOutput/AvatarSkillDepotExcelConfigData.json') as AvatarSkillDepotExcelConfigData[]
+const skillDepot = Object.fromEntries(skillDepotSrc.map(skill => [skill.Id, skill])) as { [id: number]: AvatarSkillDepotExcelConfigData }
+
+export default skillDepot

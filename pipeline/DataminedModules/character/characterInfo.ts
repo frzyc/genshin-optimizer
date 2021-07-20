@@ -27,10 +27,8 @@ type FetterInfoExcelConfigData = {
   // ]
 }
 const characterInfoSrc = require('../../GenshinData/ExcelBinOutput/FetterInfoExcelConfigData.json') as FetterInfoExcelConfigData[]
-//TODO: use this to extract talent strings for localization
-const characterInfo = Object.fromEntries(characterInfoSrc.map(data => {
-  const { AvatarId } = data
-  return [AvatarId, data]
-})) as Record<CharacterId, FetterInfoExcelConfigData>
+
+const characterInfo = Object.fromEntries(characterInfoSrc.map(data =>
+  [data.AvatarId, data])) as Record<CharacterId, FetterInfoExcelConfigData>
 
 export default characterInfo

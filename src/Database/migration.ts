@@ -104,7 +104,7 @@ function migrateV4ToV5(storage: Storage) {
   }
 }
 
-// Present
+// v5.12.0 - Present
 function migrateV5ToV6(storage: Storage) {
   for (const key in storage) {
     if (key.startsWith("char_")) {

@@ -116,7 +116,6 @@ type WeaponStatsEditorCardProps = {
   newBuild?: ICalculatedStats
 }
 function WeaponStatsEditorCard({ characterSheet, weaponSheet, editable, character, character: { weapon }, characterDispatch, equippedBuild, newBuild }: WeaponStatsEditorCardProps) {
-  const [showDescription, setShowDescription] = useState(false)
   //choose which one to display stats for
   const build = newBuild ? newBuild : equippedBuild
   const { level, ascension } = weapon
@@ -202,17 +201,13 @@ function WeaponStatsEditorCard({ characterSheet, weaponSheet, editable, characte
             </ButtonGroup>
           </InputGroup> : <span>Weapon</span>}
         </Col>
-        <Col xs="auto">
-          <Button variant="info" size="sm" onClick={() => setShowDescription(!showDescription)}>
-            <span><FontAwesomeIcon icon={faQuoteLeft} /> {showDescription ? "Hide Desc." : "Show Desc."}</span>
-          </Button>
-        </Col>
       </Row>
     </Card.Header>
     <Card.Body >
       <Row className="mb-n2">
         <Col xs={12} md={3} lg={4}>
           <Image src={weaponSheet.img} className={`w-100 h-auto grad-${weaponSheet.rarity}star`} thumbnail />
+          <small>{weaponSheet.description}</small>
         </Col>
         <Col>
           <h5 className="mb-0">{weaponSheet.name} Lv. {WeaponSheet.getLevelString(weapon)} {weaponPassiveName && <Badge variant="info">Refinement {weapon.refineIndex + 1}</Badge>}</h5>
@@ -228,7 +223,6 @@ function WeaponStatsEditorCard({ characterSheet, weaponSheet, editable, characte
           {document ? <DocumentDisplay {...{ sections: document, equippedBuild, newBuild, characterDispatch, editable }} /> : null}
         </Col>
       </Row>
-      {showDescription && <small>{weaponSheet.description}</small>}
     </Card.Body>
   </Card>
 }

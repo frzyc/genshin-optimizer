@@ -1,4 +1,4 @@
-import { PropTypeKey, WeaponId } from "../.."
+import { PropTypeKey } from "../.."
 import { layeredAssignment } from "../../Util"
 
 type EquipAffixExcelConfigData = {

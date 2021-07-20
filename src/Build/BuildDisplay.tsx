@@ -46,7 +46,7 @@ const initialBuildSettings = (): BuildSetting => ({
   setFilters: [{ key: "", num: 0 }, { key: "", num: 0 }, { key: "", num: 0 }],
   statFilters: {},
   mainStatKeys: ["", "", ""],
-  optimizationTarget: "finalATK",//TODO need to validate
+  optimizationTarget: "finalATK",
   mainStatAssumptionLevel: 0,
   useLockedArts: false,
   useEquippedArts: false,
