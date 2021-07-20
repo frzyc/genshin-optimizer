@@ -130,6 +130,31 @@ const weaponV2 = object({
   refineIndex: uint(1),
   overrideMainVal: float,
   overrideSubVal: float,
+}, {
+  encode: value => {
+    const level = value.level
+    const ascIndex = ascensionMaxLevel.findIndex(maxLevel => level <= maxLevel)
+    const ascension = ascIndex < value.ascension ? "A" : ""
+    value.levelKey = `L${level}${ascension}`
+    value.overrideMainVal = 0
+    value.overrideSubVal = 0
+    return value
+  }, decode: object => {
+    const levelKey = object.levelKey
+    delete object.levelKey
+    const [, lvla] = levelKey.split("L")
+    const level = parseInt(lvla)
+    const ascension = ascensionMaxLevel.findIndex(maxLevel => level <= maxLevel)
+    const addAsc = lvla.includes("A")
+    if (level < 0 || level > 90 || ascension < 0) {
+      object.level = 1
+      object.ascension = 0
+    } else {
+      object.level = level
+      object.ascension = ascension + (addAsc ? 1 : 0)
+    }
+    return object
+  }
 })
 const characterV2 = object({
   characterKey,
@@ -179,6 +204,10 @@ const characterV2 = object({
     if (value.baseStatOverrides.characterLevel) {
       value.level = value.baseStatOverrides.characterLevel
       delete value.baseStatOverrides.characterLevel
+    }
+    if (value.baseStatOverrides.weaponLevel) {
+      value.weapon.level = value.baseStatOverrides.weaponLevel
+      delete value.baseStatOverrides.weaponLevel
     }
     delete value.levelKey
 
