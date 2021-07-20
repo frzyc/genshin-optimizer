@@ -142,6 +142,8 @@ const weaponV2 = object({
   }, decode: object => {
     const levelKey = object.levelKey
     delete object.levelKey
+    delete object.overrideMainVal
+    delete object.overrideSubVal
     const [, lvla] = levelKey.split("L")
     const level = parseInt(lvla)
     const ascension = ascensionMaxLevel.findIndex(maxLevel => level <= maxLevel)
@@ -174,9 +176,8 @@ const characterV2 = object({
     const roundedLevel = Math.round(value.level / 10) * 10 // Nearest level
     const maxLevel = ascensionMaxLevel[value.ascension]
     value.levelKey = `L${roundedLevel}${roundedLevel === maxLevel ? "" : "A"}`
-    if (roundedLevel !== value.level) {
-      value.baseStatOverrides.characterLevel = value.level
-    }
+    if (roundedLevel === value.level) value.overrideLevel = 0
+    else value.overrideLevel = value.level
 
     if (value.characterKey === "traveler")
       value.reserved = [elements.indexOf(value.elementKey)]
@@ -209,6 +210,10 @@ const characterV2 = object({
       value.weapon.level = value.baseStatOverrides.weaponLevel
       delete value.baseStatOverrides.weaponLevel
     }
+    if (value.overrideLevel) {
+      value.level = value.overrideLevel
+    }
+    delete value.overrideLevel
     delete value.levelKey
 
     if (value.characterKey === "traveler") {

@@ -1,9 +1,9 @@
-import { IArtifact } from "../Types/artifact"
-import { ICharacter } from "../Types/character"
+import { IArtifact, IFlexArtifact } from "../Types/artifact"
+import { ICharacter, IFlexCharacter } from "../Types/character"
 
 export const oldURL = "https://frzyc.github.io/genshin-optimizer/#/flex?v=2&d=565k01043N09F18W04R165k03141Y79W0aa37G0p5g07242o21074W05l095k0j347E03z02c292195k09443j08111HbaV3a122003L9005551echaracterLevel289bStaffOfHoma3L900101000"
 
-export const flexObj = {
+export const flexObj: { artifacts: any[], character: IFlexCharacter } = {
   artifacts: [{
     setKey: 'CrimsonWitchOfFlames',
     numStars: 5,
@@ -75,7 +75,6 @@ export const flexObj = {
     hitMode: 'avgHit',
     reactionMode: 'pyro_vaporize',
     constellation: 2,
-    overrideLevel: 0,
     level: 89,
     ascension: 6,
     infusionAura: 'pyro',
@@ -97,10 +96,9 @@ export const flexObj = {
     },
     weapon: {
       key: 'StaffOfHoma',
-      levelKey: 'L90',
+      level: 90,
+      ascension: 6,
       refineIndex: 0,
-      overrideMainVal: 0,
-      overrideSubVal: 0,
     }
   }
 }
@@ -137,10 +135,9 @@ export const characters: [ICharacter] = [{
   },
   weapon: {
     key: 'StaffOfHoma',
-    levelKey: 'L90',
+    level: 90,
+    ascension: 6,
     refineIndex: 0,
-    overrideMainVal: 0,
-    overrideSubVal: 0,
   }
 }]
 export const artifacts: Dict<string, IArtifact> = {
