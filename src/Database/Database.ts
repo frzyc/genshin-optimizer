@@ -47,15 +47,15 @@ export class Database {
 
                 // Update relations
                 const { location, slotKey } = flex
-                if (this.chars.data[location]?.[slotKey] === "")
-                    this.chars.data[location][slotKey] = key // equiped on `location`
-                else flex.location = ""
+                if (location && this.chars.data[location]?.equippedArtifacts[slotKey] === "") {
+                    this.chars.data[location]!.equippedArtifacts[slotKey] = key // equiped on `location`
+                } else flex.location = ""
 
                 const { artifact } = validateFlexArtifact(flex)
 
                 this.arts.set(artifact.id, artifact)
                 // Save migrated version back to db
-                if (migrated) save(this.storage, key, artifact)
+                if (migrated) save(this.storage, key, flex)
             }
         }
     }

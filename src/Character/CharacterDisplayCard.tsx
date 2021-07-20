@@ -276,9 +276,9 @@ function CharSelectDropdown({ characterSheet, weaponSheet, character, character:
     const ascension = ascensionMaxLevel.findIndex(ascenML => level <= ascenML)
     characterDispatch({ level, ascension })
   }, [characterDispatch])
-  const ambiguousLevel = ascensionMaxLevel.findIndex(ascenML => level === ascenML) > 0
+  const ambiguousLevel = ascensionMaxLevel.findIndex(ascenML => level !== 90 && level === ascenML) > 0
   const setAscension = useCallback(() => {
-    const lowerAscension = ascensionMaxLevel.findIndex(ascenML => level === ascenML)
+    const lowerAscension = ascensionMaxLevel.findIndex(ascenML => level !== 90 && level === ascenML)
     if (ascension === lowerAscension) characterDispatch({ ascension: ascension + 1 })
     else characterDispatch({ ascension: lowerAscension })
   }, [characterDispatch, ascension, level])

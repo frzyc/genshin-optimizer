@@ -1,4 +1,4 @@
-import { faEdit, faQuoteLeft, faSave } from "@fortawesome/free-solid-svg-icons";
+import { faEdit, faSave } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useCallback, useState } from "react";
 import { Badge, Button, ButtonGroup, Card, Col, Dropdown, Image, InputGroup, ListGroup, Row } from "react-bootstrap";
@@ -140,9 +140,9 @@ function WeaponStatsEditorCard({ characterSheet, weaponSheet, editable, characte
     setStateWeapon("ascension", ascension)
   }, [setStateWeapon])
 
-  const ambiguousLevel = ascensionMaxLevel.findIndex(ascenML => level === ascenML) > 0
+  const ambiguousLevel = ascensionMaxLevel.findIndex(ascenML => level !== 90 && level === ascenML) > 0
   const setAscension = useCallback(() => {
-    const lowerAscension = ascensionMaxLevel.findIndex(ascenML => level === ascenML)
+    const lowerAscension = ascensionMaxLevel.findIndex(ascenML => level !== 90 && level === ascenML)
     if (ascension === lowerAscension) setStateWeapon("ascension", ascension + 1)
     else setStateWeapon("ascension", lowerAscension)
   }, [setStateWeapon, ascension, level])
