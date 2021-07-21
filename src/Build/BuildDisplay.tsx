@@ -140,11 +140,10 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   const selectCharacter = useCallback((cKey = "") => {
     if (characterKey === cKey) return
     setcharacterKey(cKey)
-    buildSettingsDispatch({ ...initialBuildSettings(), ...(database._getChar(cKey)?.buildSettings ?? {}) })
     setbuilds([])
     setCharDirty()
     setCharacterData({})
-  }, [setCharDirty, setcharacterKey, buildSettingsDispatch, characterKey])
+  }, [setCharDirty, setcharacterKey, characterKey])
 
   //load saved stat from DB. will cause infinite loop if add 'selectCharacter' to dependency array
   useEffect(() => {//startup load from localStorage
