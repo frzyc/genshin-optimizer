@@ -52,7 +52,7 @@
   "passive2": {
     "name": "Frenzied Rockslide",
     "description": {
-      "0": "The final hit of a Normal Attack combo triggers a collapse, dealing 60% of ATK as <undefined>AoE Geo DMG</undefined>."
+      "0": "The final hit of a Normal Attack combo triggers a collapse, dealing 60% of ATK as <geo>AoE Geo DMG</geo>."
     }
   },
   "constellation1": {

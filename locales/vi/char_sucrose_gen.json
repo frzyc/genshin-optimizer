@@ -8,11 +8,11 @@
     "fields": {
       "normal": {
         "0": "<strong>Tấn Công Thường</strong>",
-        "1": "Thực hiện tối đa 4 lần tấn công phong linh, gây <anemo>Sát Thương Nguyên Tố Phong</anemo>。"
+        "1": "Thực hiện tối đa 4 lần tấn công phong linh, gây <anemo>Sát Thương Nguyên Tố Phong</anemo>."
       },
       "charged": {
         "0": "<strong>Trọng Kích</strong>",
-        "1": "Tiêu hao thể lực nhất định, sau tiếng ngân, gây <anemo>Sát Thương Phạm Vi Nguyên Tố Phong</anemo>。"
+        "1": "Tiêu hao thể lực nhất định, sau tiếng ngân, gây <anemo>Sát Thương Phạm Vi Nguyên Tố Phong</anemo>."
       },
       "plunging": {
         "0": "<strong>Tấn Công Khi Đáp</strong>",

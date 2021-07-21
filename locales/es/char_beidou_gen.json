@@ -103,7 +103,7 @@
   "constellation4": {
     "name": "Venganza súbita",
     "description": {
-      "0": "Tras recibir daño, los Ataques Normales de Beidou obtienen un 20% de <electro>Daño Electro</electro> adicional durante 10 s."
+      "0": "Tras ser atacada, los Ataques Normales de Beidou obtienen un 20% de <electro>Daño Electro</electro> adicional durante 10 s."
     }
   },
   "constellation5": {

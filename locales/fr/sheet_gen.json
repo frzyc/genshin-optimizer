@@ -10,10 +10,10 @@
   "charged": {
     "dmg": "DGT attaque chargée",
     "spinning": "DGT enchaînement attaque chargée",
-    "final": "DGT attaque chargée finale",
-    "stamina": "Endurance attaque chargée",
+    "final": "DGT coup final attaque chargée",
+    "stamina": "Coût d'endurance attaque chargée",
     "aimed": "DGT tir visé",
-    "fullyAimed": "DGT tir visé (Pleine charge)"
+    "fullyAimed": "DGT tir visé (pleine charge)"
   },
   "plunging": {
     "dmg": "DGT durant la chute",

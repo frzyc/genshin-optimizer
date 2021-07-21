@@ -34,7 +34,7 @@
     "name": "Posture du démon : Marée déchaînée",
     "description": {
       "0": "Tartaglia invoque un arsenal d'armes exploitant la puissance de l'eau pure et infligeant des <hydro>DGT Hydro</hydro> aux ennemis proches ; Tartaglia entre en état de mêlée.",
-      "1": "En état de mêlée, les attaques normales et chargées de Tartaglia sont converties en <hydro>DGT Hydro</hydro> ne pouvant pas être enchantés，et changent :",
+      "1": "En état de mêlée, les attaques normales et chargées de Tartaglia sont converties en <hydro>DGT Hydro</hydro> ne pouvant pas être enchantésm, et changent :",
       "2": "<br/>",
       "3": "<strong>Attaque normale</strong>",
       "4": "Enchaîne jusqu'à 6 entailles <hydro>Hydro</hydro> consécutives.",
@@ -57,7 +57,7 @@
       "0": "Tartaglia effectue différentes attaques selon l'état dans lequel il se trouve :",
       "1": "<br/>",
       "2": "<strong>État à distance : Éclair de balle maléfique</strong>",
-      "3": "Tire rapidement devant lui une flèche gorgée de magie Hydro, qui inflige des <hydro>DGT Hydro de zone </hydro> ainsi que l'effet Contre-courant aux ennemis en face.",
+      "3": "Tire rapidement devant lui une flèche gorgée de magie Hydro, infligeant des <hydro>DGT Hydro de zone </hydro> ainsi que l'effet Contre-courant aux ennemis en face.",
       "4": "Restaure une partie de l'énergie élémentaire à la fin de l'attaque.",
       "5": "<br/>",
       "6": "<strong>État de mêlée : Lumière d'élimination</strong>",

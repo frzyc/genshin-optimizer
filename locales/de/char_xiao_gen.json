@@ -12,7 +12,7 @@
       },
       "charged": {
         "0": "<strong>Heftiger Schlag</strong>",
-        "1": "Verbraucht eine gewisse Menge Ausdauer und führt einen Angriff aus dem Sprung aus."
+        "1": "Verbraucht eine gewisse Menge Ausdauer und führt einen nach oben gerichteten Angriff aus."
       },
       "plunging": {
         "0": "<strong>Angriff aus dem Fall</strong>",

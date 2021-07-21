@@ -13,10 +13,10 @@
     "static/js/5.b48d7baf.chunk.js": "/genshin-optimizer/static/js/5.b48d7baf.chunk.js",
     "static/js/5.b48d7baf.chunk.js.map": "/genshin-optimizer/static/js/5.b48d7baf.chunk.js.map",
     "main.css": "/genshin-optimizer/static/css/main.9a133fa7.chunk.css",
-    "main.js": "/genshin-optimizer/static/js/main.ac84334c.chunk.js",
-    "main.js.map": "/genshin-optimizer/static/js/main.ac84334c.chunk.js.map",
-    "runtime-main.js": "/genshin-optimizer/static/js/runtime-main.c374b139.js",
-    "runtime-main.js.map": "/genshin-optimizer/static/js/runtime-main.c374b139.js.map",
+    "main.js": "/genshin-optimizer/static/js/main.3a624ba5.chunk.js",
+    "main.js.map": "/genshin-optimizer/static/js/main.3a624ba5.chunk.js.map",
+    "runtime-main.js": "/genshin-optimizer/static/js/runtime-main.42145f36.js",
+    "runtime-main.js.map": "/genshin-optimizer/static/js/runtime-main.42145f36.js.map",
     "static/js/8.099bec05.chunk.js": "/genshin-optimizer/static/js/8.099bec05.chunk.js",
     "static/js/8.099bec05.chunk.js.map": "/genshin-optimizer/static/js/8.099bec05.chunk.js.map",
     "static/js/9.025a96c6.chunk.js": "/genshin-optimizer/static/js/9.025a96c6.chunk.js",
@@ -35,8 +35,8 @@
     "static/js/15.1972c0d7.chunk.js.map": "/genshin-optimizer/static/js/15.1972c0d7.chunk.js.map",
     "static/js/16.2d304270.chunk.js": "/genshin-optimizer/static/js/16.2d304270.chunk.js",
     "static/js/16.2d304270.chunk.js.map": "/genshin-optimizer/static/js/16.2d304270.chunk.js.map",
-    "static/js/17.a55fdf60.chunk.js": "/genshin-optimizer/static/js/17.a55fdf60.chunk.js",
-    "static/js/17.a55fdf60.chunk.js.map": "/genshin-optimizer/static/js/17.a55fdf60.chunk.js.map",
+    "static/js/17.78241dd7.chunk.js": "/genshin-optimizer/static/js/17.78241dd7.chunk.js",
+    "static/js/17.78241dd7.chunk.js.map": "/genshin-optimizer/static/js/17.78241dd7.chunk.js.map",
     "static/js/18.380d64f8.chunk.js": "/genshin-optimizer/static/js/18.380d64f8.chunk.js",
     "static/js/18.380d64f8.chunk.js.map": "/genshin-optimizer/static/js/18.380d64f8.chunk.js.map",
     "static/js/19.08a69c31.chunk.js": "/genshin-optimizer/static/js/19.08a69c31.chunk.js",
@@ -840,9 +840,9 @@
     "static/media/tools.2724d338.png": "/genshin-optimizer/static/media/tools.2724d338.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.c374b139.js",
+    "static/js/runtime-main.42145f36.js",
     "static/js/8.099bec05.chunk.js",
     "static/css/main.9a133fa7.chunk.css",
-    "static/js/main.ac84334c.chunk.js"
+    "static/js/main.3a624ba5.chunk.js"
   ]
 }

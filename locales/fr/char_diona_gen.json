@@ -8,7 +8,7 @@
     "fields": {
       "normal": {
         "0": "<strong>Attaque normale</strong>",
-        "1": "Enchaîne jusqu'à 5 tirs consécutifs. "
+        "1": "Enchaîne jusqu'à 5 tirs consécutifs."
       },
       "charged": {
         "0": "<strong>Attaque chargée</strong>",
@@ -42,7 +42,7 @@
   "burst": {
     "name": "Cuvée spéciale",
     "description": {
-      "0": "Diona lance un cocktail gelé de sa fabrication, qui inflige des <cryo>DGT Cryo de zone</cryo>, et génère un champ de vapeur d'alcool.",
+      "0": "Diona lance un cocktail gelé de sa fabrication, infligeant des <cryo>DGT Cryo de zone</cryo>, et génère un champ de vapeur d'alcool.",
       "1": "<br/>",
       "2": "<strong>Champ de vapeur d'alcool</strong>",
       "3": [

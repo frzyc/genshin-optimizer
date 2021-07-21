@@ -52,7 +52,7 @@
   "passive2": {
     "name": "Roca turbulenta",
     "description": {
-      "0": "El último golpe del Ataque Normal provoca una destrucción, infligiendo un 60% de <undefined>Daño Geo</undefined> a los enemigos dentro del AdE."
+      "0": "El último golpe del Ataque Normal provoca una destrucción, infligiendo un 60% de <geo>Daño Geo</geo> a los enemigos dentro del AdE."
     }
   },
   "constellation1": {

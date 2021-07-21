@@ -16,7 +16,7 @@
       },
       "plunging": {
         "0": "<strong>Tấn Công Khi Đáp</strong>",
-        "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đuờng và gây sát thương phạm vi khi chạm đất."
+        "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất."
       }
     }
   },
@@ -52,7 +52,7 @@
   "passive2": {
     "name": "Phiến Đá Hoảng Loạn",
     "description": {
-      "0": "Chiêu cuối tấn công thường gây sụp đổ, gây <undefined>sát thương Nguyên Tố Nham</undefined> bằng 60% lực tấn công cho địch xung quanh."
+      "0": "Chiêu cuối tấn công thường gây sụp đổ, gây <geo>sát thương Nguyên Tố Nham</geo> bằng 60% lực tấn công cho địch xung quanh."
     }
   },
   "constellation1": {

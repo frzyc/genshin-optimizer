@@ -24,7 +24,7 @@
     "name": "Épée Guhua : Pluie battante",
     "description": {
       "0": "Lance une succession de 2 coups d'épée qui infligent des <hydro>DGT Hydro</hydro> aux ennemis en face. Dans le même temps, le personnage déployé s'entoure du nombre maximum d'épées de pluie.",
-      "1": "Les épées de pluie ont les propriétés suivantes : ",
+      "1": "Les épées de pluie ont les propriétés suivantes :",
       "2": [
         " Les épées se brisent lorsque Xingqiu subit des DGT et ce faisant réduisent les DGT subis.",
         " Augmentent la RÉS à l'interruption du personnage."

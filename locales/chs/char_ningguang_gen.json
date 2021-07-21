@@ -62,7 +62,7 @@
   "passive3": {
     "name": "奇石珠宝录",
     "description": {
-      "0": "在小地图上显示周围的<strong>矿脉</strong>（铁矿、白铁矿、水晶矿、魔晶矿、星银矿）的位置。"
+      "0": "在小地图上显示周围能产出<strong>锻造用矿石的矿脉</strong>位置。"
     }
   },
   "constellation1": {

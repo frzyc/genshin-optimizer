@@ -62,7 +62,7 @@
   "passive3": {
     "name": "Trove of Marvelous Treasures",
     "description": {
-      "0": "Memperlihatkan lokasi <strong>tambang mineral</strong> (Iron Ore, White Iron Ore, Crystal Ore, Magical Crystal Ore, dan Starsilver) terdekat di mini-map."
+      "0": "Memperlihatkan lokasi <strong>tambang ore untuk Forge</strong> di peta kecil."
     }
   },
   "constellation1": {

@@ -44,13 +44,13 @@
   "passive1": {
     "name": "Conversión de catalizador",
     "description": {
-      "0": "Cuando Sacarosa cause una reacción de Torbellino, aumentará en 50 pts. la Maestría Elemental de todos los miembros del equipo (sin incluir a Sacarosa) cuyo tipo elemental coincida con el elemento contra el que provocó dicho Torbellino. Este efecto tiene una duración de 8 s."
+      "0": "Cuando Sacarosa cause una reacción de Torbellino, aumentará en 50 pts. la Maestría Elemental de todos los miembros del equipo (a excepción de Sacarosa) cuyo tipo elemental coincida con el elemento contra el que provocó dicho Torbellino. Este efecto tiene una duración de 8 s."
     }
   },
   "passive2": {
     "name": "Mollis Favonius",
     "description": {
-      "0": "Cuando Sacarosa ataca a un enemigo con <strong>Creación del espíritu del viento: Experimento 6308</strong> o <strong>Creación prohibida del espíritu del viento: Isomorfo 75 tipo II</strong>, aumenta durante 8 s la Maestría Elemental de todos los miembros del equipo (sin incluir a Sacarosa) en proporción al 20% de la Maestría Elemental de Sacarosa."
+      "0": "Cuando Sacarosa ataca a un enemigo con <strong>Creación del espíritu del viento: Experimento 6308</strong> o <strong>Creación prohibida del espíritu del viento: Isomorfo 75 tipo II</strong>, aumenta durante 8 s la Maestría Elemental de todos los miembros del equipo (a excepción de Sacarosa) en proporción al 20% de la Maestría Elemental de Sacarosa."
     }
   },
   "passive3": {

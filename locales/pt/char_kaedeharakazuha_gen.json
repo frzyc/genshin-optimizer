@@ -6,7 +6,7 @@
       "1": "A passagem da lâmina deixa um campo chamado \"Redemoinho do Outono\" que causa <anemo>Dano Anemo</anemo> intermitente aos inimigos nela.",
       "2": "<br/>",
       "3": "<strong>Absorção Elemental</strong>",
-      "4": "Se o Redemoinho do Outono entrar em contato com os elementos<hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, ele irá causar Dano elemental adicional daquele tipo.",
+      "4": "Se o Redemoinho do Outono entrar em contato com os elementos <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, ele irá causar Dano elemental adicional daquele tipo.",
       "5": "Absorção Elemental pode ocorrer apenas uma vez por uso.",
       "6": "<br/>",
       "7": "Esta conversão só ocorre uma vez durante a duração da habilidade.",
@@ -16,7 +16,7 @@
     "slashdmg": "Dano do Corte"
   },
   "name": "Kaedehara Kazuha",
-  "title": "Folhas Escarlate Procuram Ondas Selvagens",
+  "title": "Folhas Escarlates Procuram Ondas Selvagens",
   "description": "Um samurai errante de Inazuma que atualmente está com a Frota Crux de Liyue. Uma alma gentil e livre cujo coração esconde muitas feridas.",
   "constellationName": "Acer Palmatum",
   "auto": {

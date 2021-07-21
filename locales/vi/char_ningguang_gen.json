@@ -62,7 +62,7 @@
   "passive3": {
     "name": "Bộ Sưu Tập Đá Quý",
     "description": {
-      "0": "Hiển thị vị trí <strong>mạch khoáng</strong> (Quặng Sắt, Mỏ Sắt Trắng, Mỏ Thủy Tinh, Mỏ Ma Tinh, Quặng Tinh Ngân) trên bản đồ nhỏ."
+      "0": "Hiển thị vị trí <strong>mạch khoáng có thể sản xuất Quặng Đúc</strong> trên bản đồ nhỏ."
     }
   },
   "constellation1": {

@@ -43,7 +43,7 @@
   "burst": {
     "name": "Voie divine",
     "description": {
-      "0": "Mona invoque des vagues chatoyantes pour créer un reflet du ciel étoilé, qui inflige l'état Bulle nocturne aux ennemis dans une large zone d'effet.",
+      "0": "Mona invoque des vagues chatoyantes pour créer un reflet du ciel étoilé, infligeant l'état Bulle nocturne aux ennemis dans un large rayon.",
       "1": "<br/>",
       "2": "<strong>Bulle nocturne</strong>",
       "3": "Emprisonne les ennemis, et les <hydro>trempe</hydro>. Les ennemis les plus faibles sont immobilisés.",
@@ -104,7 +104,7 @@
     "name": "Chaîne lunaire",
     "description": {
       "0": "Les attaques normales ont 20 % de chances d'être suivies par une attaquée chargée.",
-      "1": " Cet effet peut être déclenché une fois toutes les 5 s."
+      "1": "Cet effet peut être déclenché une fois toutes les 5 s."
     }
   },
   "constellation3": {

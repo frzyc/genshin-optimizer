@@ -8,7 +8,7 @@
     "fields": {
       "normal": {
         "0": "<strong>Attaque normale</strong>",
-        "1": "Enchaîne jusqu'à 5 tirs consécutifs. "
+        "1": "Enchaîne jusqu'à 5 tirs consécutifs."
       },
       "charged": {
         "0": "<strong>Attaque chargée</strong>",

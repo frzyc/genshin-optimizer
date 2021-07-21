@@ -62,7 +62,7 @@
   "passive3": {
     "name": "奇石珠寶錄",
     "description": {
-      "0": "在小地圖上顯示週圍的<strong>礦脈</strong>（鐵礦、白鐵礦、水晶礦、魔晶礦、星銀礦）的位置。"
+      "0": "在小地圖上顯示周圍能產出<strong>鍛造用礦石的礦脈</strong>位置。"
     }
   },
   "constellation1": {

@@ -62,7 +62,7 @@
   "passive3": {
     "name": "Corne d'abondance",
     "description": {
-      "0": "Affiche l'emplacement des <strong>filons de minerai</strong> (fer, fer blanc, cristal, cristal magique et argétoile) sur la mini-carte."
+      "0": "Affiche la localisation des <strong>filons de minerai utilisables en forge</strong> proches sur la carte."
     }
   },
   "constellation1": {
@@ -88,7 +88,7 @@
   "constellation4": {
     "name": "Exquis soit le Jade, éclatant de toutes parts",
     "description": {
-      "0": "<strong>Paravent d'astrolabe</strong> augmente la RÉS élementaires des personnages à proximité de 10 %."
+      "0": "<strong>Paravent d'astrolabe</strong> augmente les RÉS élementaires des personnages à proximité de 10 %."
     }
   },
   "constellation5": {

@@ -52,7 +52,7 @@
   "passive2": {
     "name": "Roche turbulente",
     "description": {
-      "0": "Le dernier coup d'attaque normale provoque un effondrement, qui inflige une quantité de <undefined>DGT Géo</undefined> équivalant à 60 % de l'ATQ aux ennemis dans la zone."
+      "0": "Le dernier coup d'attaque normale provoque un effondrement, qui inflige une quantité de <geo>DGT Géo</geo> équivalant à 60 % de l'ATQ aux ennemis dans la zone."
     }
   },
   "constellation1": {

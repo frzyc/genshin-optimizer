@@ -52,7 +52,7 @@
   "passive2": {
     "name": "Rocha Turbulenta",
     "description": {
-      "0": "O golpe final de um combo de Ataque Normal ativa um colapso, causando <undefined>Dano AdE Geo</undefined> de 60% do ATQ."
+      "0": "O golpe final de um combo de Ataque Normal ativa um colapso, causando <geo>Dano AdE Geo</geo> de 60% do ATQ."
     }
   },
   "constellation1": {

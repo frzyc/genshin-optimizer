@@ -60,7 +60,7 @@
   "passive3": {
     "name": "Registro de tesoros maravillosos",
     "description": {
-      "0": "Muestra la ubicación de los <strong>minerales</strong> cercanos en el minimapa (hierro, hierro blanco, cristal, cristal mágico y argento estelar)."
+      "0": "Muestra la ubicación de los <strong>minerales utilizados para forjar</strong> cercanos en el minimapa."
     }
   },
   "constellation1": {

@@ -17,8 +17,8 @@
   },
   "plunging": {
     "dmg": "Dano Durante a Queda",
-    "low": "Dano de Queda de Alta Altitude",
-    "high": "Dano de Queda de Baixa Altitude"
+    "low": "Dano de Queda de Baixa Altitude",
+    "high": "Dano de Queda de Alta Altitude"
   },
   "maxDuration": "Duração Máxima",
   "maxStacks": "Limite de Recargas de Energia",

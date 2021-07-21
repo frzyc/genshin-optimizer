@@ -98,7 +98,7 @@
   "constellation4": {
     "name": "Überwältigender Gegenschlag",
     "description": {
-      "0": "Beidous Standardangriffe verursachen nach dem Erleiden von Schaden 10 s lang 20 % zusätzlichen <electro>Elektro-SCH</electro>."
+      "0": "Beidous Standardangriffe verursachen nach dem Erleiden von Angriffen 10 s lang zusätzlich 20 % <electro>Elektro-SCH</electro>."
     }
   },
   "constellation5": {

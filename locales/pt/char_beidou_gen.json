@@ -98,7 +98,7 @@
   "constellation4": {
     "name": "Vingança Impressionante",
     "description": {
-      "0": "Após 10s depois de receber Dano, os Ataques Normais de Beidou ganham 20% de <electro>Dano Electro</electro> adicional."
+      "0": "Após ser atacada, os Ataques Normais de Beidou ganham 20% de <electro>Dano Electro</electro> adicional por 10s."
     }
   },
   "constellation5": {

@@ -16,7 +16,7 @@
       },
       "plunging": {
         "0": "<strong>Tấn Công Khi Đáp</strong>",
-        "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đuờng và gây sát thương phạm vi khi chạm đất."
+        "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất."
       }
     }
   },
@@ -62,7 +62,7 @@
     }
   },
   "constellation1": {
-    "name": "Gió Giận Giữ",
+    "name": "Gió Giận Dữ",
     "description": {
       "0": "<strong>Kiếm Gió Lốc</strong> có thể khiến địch và vật thể trong phạm vi 5m bị dẫn đến trước mặt nhân vật."
     }

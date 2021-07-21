@@ -96,7 +96,7 @@
   "constellation6": {
     "name": "¡Klee a la carga!",
     "description": {
-      "0": "Mientras las <strong>Chispas explosivas</strong> estén activas, Klee hará que todos los miembros del equipo (sin incluir al personaje en uso) recuperen 3 pts. de Energía Elemental cada 3 s.",
+      "0": "Mientras las <strong>Chispas explosivas</strong> estén activas, Klee hará que todos los miembros del equipo (a excepción de Klee) recuperen 3 pts. de Energía Elemental cada 3 s.",
       "1": "Después de activar <strong>Chispas explosivas</strong>, todos los miembros del equipo reciben un 10% de <pyro>Bono de Daño Pyro</pyro> durante 25 s."
     }
   }

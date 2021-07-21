@@ -15,7 +15,7 @@
   },
   "name": "Kaedehara Kazuha",
   "title": "Tiefrote Blätter jagen wilde Wellen",
-  "description": "Ein wandernder Samurai aus Inazuma, der momentan mit Liyues Crux unterwegs ist. Eine sanfte und sorglose Seele, dessen Herz schwer wiegt, von vielen großen Bürden aus der Vergangenheit.",
+  "description": "Ein wandernder Samurai aus Inazuma, der momentan mit der Crux von Liyue unterwegs ist. Eine sanfte und sorglose Seele, deren Herz schwer wiegt, von vielen großen Bürden aus der Vergangenheit.",
   "constellationName": "Acer Palmatum",
   "auto": {
     "name": "Garyuu-Schwertkunst",
@@ -54,7 +54,7 @@
       "10": "Wandelt den mit Angriffen aus dem Fall, die durch die Elementarfähigkeit ausgelöst werden, verursachten Schaden in <anemo>Anemo-Schaden</anemo> um, wenn sich Kazuha davor aufgrund von Chihayaburu in der Luft befindet, und erzeugt beim Aufkommen mit einer geheimen Technik einen kleinen Windtunnel, der Objekte und Gegner in der Nähe anzieht.",
       "11": "Der mit Midare Ranzan verursachte Schaden gilt als Schaden von Angriffen aus dem Fall.",
       "12": "<br/>",
-      "13": "<i>„Trübseliger Wind pfeift durch den Ahorn, während Götter und Menschen altern und sich die Berge in herbstlichem Rot kleiden.“<i>"
+      "13": "<i>„Trübseliger Wind pfeift durch den Ahorn, während Götter und Menschen altern und sich die Berge in herbstlichem Rot kleiden.“</i>"
     }
   },
   "passive1": {
@@ -66,7 +66,7 @@
   "passive2": {
     "name": "Poesie von Fuubutsu",
     "description": {
-      "0": "Erhöht den jeweiligen Elementarschaden aller Truppenmitglieder nach dem Auslösen einer Verwirbelung durch Kaedehara Kazuha für jeden Punkt Elementarkunde von Kaedehara Kazuha 8 s lang um 0,04 %. Mehrere auf diese Weise erhaltene Schadensboni unterschiedlicher Elemente können gleichzeitig existieren."
+      "0": "Erhöht den der Verwirbelung entsprechenden Elementarschaden aller Truppenmitglieder nach dem Auslösen einer Verwirbelung durch Kaedehara Kazuha für jeden Punkt Elementarkunde von Kaedehara Kazuha 8 s lang um 0,04 %. Mehrere auf diese Weise erhaltene Schadensboni unterschiedlicher Elemente können gleichzeitig existieren."
     }
   },
   "passive3": {

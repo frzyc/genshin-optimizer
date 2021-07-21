@@ -62,7 +62,7 @@
   "passive3": {
     "name": "기석 보물록",
     "description": {
-      "0": "미니맵에 주위의 <strong>광맥</strong>(철광, 백철, 수정, 마법 수정, 성은 광석) 위치가 나타난다"
+      "0": "미니맵에 주위의 <strong>단조용 광석의 광맥</strong> 위치가 나타난다"
     }
   },
   "constellation1": {

@@ -60,7 +60,7 @@
   "passive3": {
     "name": "Registro dos Tesouros Maravilhosos",
     "description": {
-      "0": "Mostra a localização de uma <strong>jazida de minerais</strong> (Ferro, Ferro Branco, Cristal e Cristal mágico, Minério de Prata Estrelada) no mapa."
+      "0": "Mostra a localização de <strong>veias de minério utilizadas na forja</strong> no mapa."
     }
   },
   "constellation1": {

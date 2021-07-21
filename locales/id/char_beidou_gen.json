@@ -105,7 +105,7 @@
   "constellation4": {
     "name": "Stunning Revenge",
     "description": {
-      "0": "Saat diserang, Normal Attack Beidou mengakibatkan 20% <electro>Electro DMG</electro> selama 10 detik."
+      "0": "Setelah terkena serangan, Normal Attack Beidou memperoleh 20% <electro>Electro DMG</electro> tambahan selama 10 detik."
     }
   },
   "constellation5": {

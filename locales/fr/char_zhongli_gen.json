@@ -53,7 +53,7 @@
   "burst": {
     "name": "Chute de météore",
     "description": {
-      "0": "Zhongli fait tomber des cieux un gigantesque météore, qui inflige d'importants <geo>DGT Géo</geo> à l'impact et <geo>pétrifie</geo> les ennemis.",
+      "0": "Zhongli fait tomber des cieux un gigantesque météore, infligeant d'importants <geo>DGT Géo</geo> à l'impact et <geo>pétrifie</geo> les ennemis.",
       "1": "<br/>",
       "2": "<strong>Pétrification</strong>",
       "3": "Les ennemis <geo>pétrifiés</geo> sont immobilisés.",

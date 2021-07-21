@@ -8,7 +8,7 @@
     "fields": {
       "normal": {
         "0": "<strong>Attaque normale</strong>",
-        "1": "Enchaîne jusqu'à 6 tirs consécutifs. "
+        "1": "Enchaîne jusqu'à 6 tirs consécutifs."
       },
       "charged": {
         "0": "<strong>Attaque chargée</strong>",
@@ -27,10 +27,10 @@
       "0": "Le vent porteur de chants et de mélodies vient faire voler les êtres foulant cette terre.",
       "1": "<br/>",
       "2": "<strong>Appui simple</strong>",
-      "3": "Venti invoque une bourrasque sur la position de l'ennemi, qui inflige des <anemo>DGT Anémo de zone</anemo> et projette les ennemis en l'air.",
+      "3": "Venti invoque une bourrasque sur la position de l'ennemi, infligeant des <anemo>DGT Anémo de zone</anemo> et projette les ennemis en l'air.",
       "4": "<br/>",
       "5": "<strong>Appui long</strong>",
-      "6": "Venti invoque une bourrasque plus puissante sur sa position, qui inflige des <anemo>DGT Anémo de zone</anemo> et projette les ennemis proches en l'air.",
+      "6": "Venti invoque une bourrasque plus puissante sur sa position, infligeant des <anemo>DGT Anémo de zone</anemo> et projette les ennemis proches en l'air.",
       "7": "L'appui long permet à Venti de voler dans les airs.",
       "8": "<br/>",
       "9": "Les ennemis projetés en l'air retombent lentement au sol.",

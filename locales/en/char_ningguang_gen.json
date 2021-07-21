@@ -62,7 +62,7 @@
   "passive3": {
     "name": "Trove of Marvelous Treasures",
     "description": {
-      "0": "Displays the location of nearby <strong>ore veins</strong> (Iron Ore, White Iron Ore, Crystal Ore, Magical Crystal Ore, and Starsilver) on the mini-map."
+      "0": "Displays the location of nearby <strong>ore veins used in forging</strong> on the mini-map."
     }
   },
   "constellation1": {

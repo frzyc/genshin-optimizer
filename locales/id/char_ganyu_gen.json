@@ -15,8 +15,8 @@
         "1": "Melancarkan sebuah <strong>Serangan Membidik</strong> yang lebih akurat untuk mengakibatkan DMG lebih besar.",
         "2": "Saat membidik, es akan berkumpul di ujung anak panah. Memiliki efek yang berbeda tergantung dari lama serangannya ditahan:",
         "3": [
-          "Charge Level 1: Menembakkan panah es yang mengakibatkan <cryo>Cryo DMG</cryo>.",
-          "Charge Level 2: Menembakkan Frostflake Arrow yang mengakibatkan <cryo>Cryo DMG</cryo>. Frostflake Arrow akan mengembang setelah mengenai target untuk mengakibatkan <cryo>Cryo DMG area</cryo>."
+          "Charge Tahap 1: Menembakkan panah es yang mengakibatkan <cryo>Cryo DMG</cryo>.",
+          "Charge Tahap 2: Menembakkan Frostflake Arrow yang mengakibatkan <cryo>Cryo DMG</cryo>. Frostflake Arrow akan mengembang setelah mengenai target untuk mengakibatkan <cryo>Cryo DMG area</cryo>."
         ]
       },
       "plunging": {
@@ -70,8 +70,8 @@
   "constellation1": {
     "name": "Dew-Drinker",
     "description": {
-      "0": "Mengurangi 15% <cryo>Cryo RES</cryo> musuh yang terkena Frostflake Arrow Charge Level 2 atau Frostflake Arrow Bloom selama 6 detik.",
-      "1": "Serangan ini juga akan memulihkan 2 Energy Ganyu. Efek pemulihan Energy terpicu maksimum 1 kali dalam 1 serangan, tak peduli musuh terkena Frostflake Arrow Charge Level 2 atau ledakan Frostflake Arrow Bloom."
+      "0": "Mengurangi 15% <cryo>Cryo RES</cryo> musuh yang terkena Frostflake Arrow Charge Tahap 2 atau Frostflake Arrow Bloom selama 6 detik.",
+      "1": "Serangan ini juga akan memulihkan 2 Energy Ganyu. Efek pemulihan Energy terpicu maksimum 1 kali dalam 1 serangan, tak peduli musuh terkena Frostflake Arrow Charge Tahap 2 atau ledakan Frostflake Arrow Bloom."
     }
   },
   "constellation2": {

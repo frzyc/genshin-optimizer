@@ -55,7 +55,7 @@
     }
   },
   "passive2": {
-    "name": "\"... Isso sim é Rock 'n Roll!\"",
+    "name": "\"...Isso sim é Rock 'n' Roll!\"",
     "description": {
       "0": "Personagens protegidos por <strong>Fervor Arrebatador</strong> causam 15% mais Dano Físico."
     }

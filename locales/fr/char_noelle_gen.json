@@ -20,7 +20,7 @@
     "name": "Grand ménage",
     "description": {
       "0": "Concentrant le pouvoir de la roche sur son arme, Noëlle exécute une puissante attaque circulaire qui inflige des <geo>DGT Géo</geo> aux ennemis proches.",
-      "1": "Noëlle bénéficie ensuite des effets suivants : ",
+      "1": "Noëlle bénéficie ensuite des effets suivants :",
       "2": [
         " Portée d'attaque augmentée.",
         " DGT d'attaque convertis en <geo>DGT Géo</geo> ne pouvant pas être enchantés.",
@@ -43,7 +43,7 @@
       },
       "charged": {
         "0": "<strong>Attaque chargée</strong>",
-        "1": "Exécute une succession d'attaques tournoyantes ; cette attaque consomme de l'endurance de façon continue.",
+        "1": "Exécute une succession d'attaques tournoyantes contre les ennemis proches ; cette attaque consomme de l'endurance de façon continue.",
         "2": "L'attaque chargée se termine sur un coup puissant."
       },
       "plunging": {

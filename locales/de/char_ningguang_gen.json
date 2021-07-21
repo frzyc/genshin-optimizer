@@ -60,7 +60,7 @@
   "passive3": {
     "name": "Edelsteinhort",
     "description": {
-      "0": "Zeigt alle <strong>Erzadern</strong> (Eisenerz, weißes Eisenerz, Kristallerz, magisches Kristallerz, Sternsilbererz) in der Nähe auf der Minikarte an."
+      "0": "Zeigt alle <strong>Erzadern mit zum Schmieden geeignetem Erz</strong> in der Nähe auf der Minikarte an."
     }
   },
   "constellation1": {

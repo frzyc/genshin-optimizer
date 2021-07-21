@@ -104,7 +104,7 @@
   "constellation4": {
     "name": "Stunning Revenge",
     "description": {
-      "0": "Within 10s of taking DMG, Beidou's Normal Attacks gain 20% additional <electro>Electro DMG</electro>."
+      "0": "Upon being attacked, Beidou's Normal Attacks gain an additional instance of 20% <electro>Electro DMG</electro> for 10s."
     }
   },
   "constellation5": {

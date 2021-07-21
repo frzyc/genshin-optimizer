@@ -31,7 +31,7 @@
       "4": "<br/>",
       "5": "<strong>Appui long</strong>",
       "6": "Beidou brandit son arme, qu'elle utilise comme bouclier. La quantité de DGT absorbés est proportionnelle aux PV max de Beidou.",
-      "7": "Lorsque vous relâchez la compétence ou que celle-ci prend fin, Beidou brandit sa longue épée et effectue une contre-attaque libérant toute l'énergie accumulée, qui inflige des <electro>DGT Électro</electro>.",
+      "7": "Lorsque vous relâchez la compétence ou que celle-ci prend fin, Beidou brandit sa longue épée et effectue une contre-attaque libérant toute l'énergie accumulée, infligeant des <electro>DGT Électro</electro>.",
       "8": "Les DGT infligés augmentent en fonction du nombre d'attaques subies par Beidou pendant la durée de la compétence. Le bonus de DGT maximum est atteint lorsque l'effet est déclenché deux fois.",
       "9": "Le bouclier a les propriétés suivantes :",
       "10": [
@@ -104,7 +104,7 @@
   "constellation4": {
     "name": "Vengeance étonnante",
     "description": {
-      "0": "Les attaques normales de Beidou infligent 20 % de <electro>DGT Électro</electro> supplémentaires pendant 10 s quand elle est touchée."
+      "0": "Après avoir subi une attaque, les attaques normales de Beidou infligent 20 % de <electro>DGT Électro</electro> supplémentaires pendant 10 s."
     }
   },
   "constellation5": {

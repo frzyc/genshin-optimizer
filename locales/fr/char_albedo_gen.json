@@ -23,7 +23,7 @@
   "skill": {
     "name": "Genèse : Aura solaire",
     "description": {
-      "0": "Génère une Aura solaire, qui inflige des <geo>DGT Géo de zone</geo>.",
+      "0": "Génère une Aura solaire, infligeant des <geo>DGT Géo de zone</geo>.",
       "1": "<br/>",
       "2": "<strong>Aura solaire</strong>",
       "3": [

@@ -17,7 +17,7 @@
       },
       "plunging": {
         "0": "<strong>Tấn Công Khi Đáp</strong>",
-        "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đuờng và gây sát thương phạm vi khi chạm đất."
+        "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất."
       }
     }
   },
@@ -101,7 +101,7 @@
     }
   },
   "constellation6": {
-    "name": "Nanh Sư Tử chăm lo muôn dân!",
+    "name": "Nanh Sư Tử Chăm Lo Muôn Dân!",
     "description": {
       "0": "Trong <strong>Gió Bồ Công Anh</strong> sát thương phải nhận giảm 35%.",
       "1": "Rời khỏi vùng đất, hiệu quả này sẽ biến mất sau 3 lần tấn công hoặc sau 10S."

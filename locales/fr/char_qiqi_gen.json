@@ -23,17 +23,16 @@
   "skill": {
     "name": "Arcane d'Adepte : Héraut de givre",
     "description": {
-      "0": "Utilise un talisman formé de glace et de sang pour invoquer un Héraut de givre, infligeant des <cryo>DGT Cryo</cryo> aux ennemis à proximité.",
+      "0": "Utilise un talisman infusé de glace et de sang pour invoquer un Héraut de givre, infligeant des <cryo>DGT Cryo</cryo> aux ennemis à proximité.",
       "1": "<br/>",
       "2": "<strong>Héraut de givre</strong>",
       "3": [
-        " Les attaques normales et chargées de Qiqi restaurent les PV de vos personnages dans l'équipe ainsi que des alliés proches lorsqu'elles touchent. La quantité de PV restaurée est proportionnelle à l'ATQ de Qiqi.",
-        " Régénère les PV de votre personnage déployé à intervalles réguliers.",
-        " Le héraut restaure à intervalles réguliers les PV de Qiqi.",
-        " Le héraut se déplace en suivant Qiqi et inflige des <cryo>DGT Cryo</cryo> aux ennemis sur sa route."
+        " Les attaques normales et chargées de Qiqi restaurent les PV de vos personnages ainsi que des alliés proches lorsqu'elles touchent. La quantité de PV restaurée est proportionnelle à l'ATQ de Qiqi.",
+        " Régénère les PV du personnage déployé à intervalles réguliers.",
+        " Le héraut suit le personnage déployé et inflige des <cryo>DGT Cryo</cryo> aux ennemis sur sa route."
       ],
       "4": "<br/>",
-      "5": "<i>« C'est parfait pour prévenir la pourriture de la chair... C'est ça, je parle bien des fameuses herbes de M. Baishu ! »</i>"
+      "5": "<i>« Je l'utilise pour empêcher le réchauffement et la pourriture... des précieux ingrédients de M. Baishu, bien sûr. »</i>"
     }
   },
   "burst": {
@@ -42,10 +41,10 @@
       "0": "Qiqi libère le pouvoir d'Adepte scellé en elle et marque les ennemis d'un talisman qui leur inflige des <cryo>DGT Cryo</cryo>.",
       "1": "<br/>",
       "2": "<strong>Talisman</strong>",
-      "3": "Les personnages récupèrent des PV équivalents aux DGT subis par les ennemis marqués.",
+      "3": "Les personnages récupèrent des PV équivalant aux DGT subis par les ennemis marqués.",
       "4": "<br/>",
       "5": "<i>« Je suis l'envoyée de la Providence, le symbole de la renaissance. »</i>",
-      "6": "<i>—— Qiqi est bien incapable de se souvenir de cette phrase.</i>"
+      "6": "<i>— Qiqi est bien incapable de se rappeler de ces mots.</i>"
     }
   },
   "passive1": {

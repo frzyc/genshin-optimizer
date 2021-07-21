@@ -52,7 +52,7 @@
   "passive2": {
     "name": "Rasanter Erdrutsch",
     "description": {
-      "0": "Verursacht beim letzten Schlag des Standardangriffs einen Zusammenbruch und fügt Gegnern im Wirkungsbereich <undefined>Geo-Schaden</undefined> in Höhe von 60 % ANG zu."
+      "0": "Verursacht beim letzten Schlag des Standardangriffs einen Zusammenbruch und fügt Gegnern im Wirkungsbereich <geo>Geo-Schaden</geo> in Höhe von 60 % ANG zu."
     }
   },
   "constellation1": {

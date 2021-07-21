@@ -31,8 +31,8 @@
       "5": "<strong>Tahan (Sesaat)</strong>",
       "6": "Saat ditahan, menghasilkan efek berbeda saat dilepaskan berdasarkan Level Charge.",
       "7": [
-        "Level 1: Mengayun dua kali, mengakibatkan <pyro>Pyro DMG</pyro> dan menghempas musuh.",
-        "Level 2: Mengayunkan pedang 3 kali untuk mengakibatkan <pyro>Pyro DMG</pyro> yang besar, tapi serangan terakhir akan memicu ledakan yang menghempas musuh dan Bennett."
+        "Charge Tahap 1: Mengayun dua kali, mengakibatkan <pyro>Pyro DMG</pyro> dan menghempas musuh.",
+        "Charge Tahap 2: Mengayunkan pedang 3 kali untuk mengakibatkan <pyro>Pyro DMG</pyro> yang besar, tapi serangan terakhir akan memicu ledakan yang menghempas musuh dan Bennett."
       ],
       "8": "Bennett tidak menerima DMG dari hempasan.",
       "9": "<br/>",

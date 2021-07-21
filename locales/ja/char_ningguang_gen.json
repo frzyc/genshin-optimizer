@@ -62,7 +62,7 @@
   "passive3": {
     "name": "奇石宝物録",
     "description": {
-      "0": "ミニマップで周囲の<strong>鉱脈</strong>（鉄鉱、白鉄鉱、水晶鉱、魔晶鉱、星銀鉱）の位置を表示する。"
+      "0": "ミニマップで周囲の<strong>鍛造に使われる鉱石の鉱脈</strong>の位置を表示する。"
     }
   },
   "constellation1": {
