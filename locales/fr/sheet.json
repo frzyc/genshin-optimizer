@@ -11,7 +11,6 @@
     "skill": "Compétence Élémentaire touche des ennemis",
     "burst": "Déchaînement Élémentaire touche des ennemis"
   },
-  "baseDMG": "DGT de base",
   "hits_plural": "{{count}} coups",
   "eleAbsor": "Absorption Élémentaire",
   "absorDot": "Absorption DoT"

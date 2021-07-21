@@ -25,5 +25,6 @@
   "rightsDisclaimer": "Genshin Optimizer no está afiliado ni respaldado por miHoYo.",
   "appVersion": "$t(pageTitle) Versión: {{version}}",
   "underConstruction": "En construcción",
-  "error": "Error"
+  "error": "Error",
+  "reset": "Restablecer"
 }

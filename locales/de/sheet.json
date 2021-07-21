@@ -10,5 +10,8 @@
     "plunging": "Treffer gegen Gegnern aus dem Fall",
     "skill": "Treffer gegen Gegner durch Elementarfähigkeit",
     "burst": "Treffer gegen Gegner durch Elementarfähigkeit"
-  }
+  },
+  "hits_plural": "{{count}} Treffer",
+  "eleAbsor": "Elementarumwandlung",
+  "absorDot": "Fortlaufender Umwandlungs-Schaden"
 }

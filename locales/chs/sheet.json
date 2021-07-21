@@ -1,6 +1,6 @@
 {
   "dmg": "伤害",
-  "hits": "({{hits}} 段)",
+  "hits": "{{count}} 段",
   "lessPercentHP": "< {{percent}}% 生命值",
   "stack": "{{count}} 层数",
   "stack_plural": "{{count}} 层数",
@@ -11,7 +11,6 @@
     "skill": "元素技能命中对手",
     "burst": "元素技能命中对手"
   },
-  "baseDMG": "基础攻击力",
   "hits_plural": "{{count}} 段",
   "eleAbsor": "元素转化",
   "absorDot": "元素转化持续伤害"

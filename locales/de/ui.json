@@ -25,5 +25,6 @@
   "rightsDisclaimer": "Genshin Optimizer ist kein Teil von miHoYo und wird nicht davon unterstützt.",
   "appVersion": "$t(pageTitle) Version: {{version}}",
   "underConstruction": "In Arbeit",
-  "error": "Fehler"
+  "error": "Fehler",
+  "reset": "Zurücksetzen"
 }

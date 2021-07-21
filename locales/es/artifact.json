@@ -89,5 +89,9 @@
     "mefficiency": "Ef. Máxima de Substat."
   },
   "showingNum": "Mostrando <1>{{count}}</1> de {{value}} Artefacto",
-  "showingNum_plural": "Mostrando <1>{{count}}</1> de {{value}} Artefactos"
+  "showingNum_plural": "Mostrando <1>{{count}}</1> de {{value}} Artefactos",
+  "efficiencyFilter": {
+    "title": "Substats a utilizar en el cálculo de la eficiencia"
+  },
+  "resetFilters": "Restablecer Filtros"
 }
