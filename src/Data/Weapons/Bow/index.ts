@@ -5,6 +5,7 @@ import CompoundBow from './CompoundBow'
 import EbonyBow from './EbonyBow'
 import ElegyForTheEnd from './ElegyForTheEnd'
 import FavoniusWarbow from './FavoniusWarbow'
+import Hamayumi from './Hamayumi'
 import HuntersBow from './HuntersBow'
 import Messenger from './Messenger'
 import MitternachtsWaltz from './MitternachtsWaltz'
@@ -20,6 +21,7 @@ import SkywardHarp from './SkywardHarp'
 import Slingshot from './Slingshot'
 import TheStringless from './TheStringless'
 import TheViridescentHunt from './TheViridescentHunt'
+import ThunderingPulse from './ThunderingPulse'
 import WindblumeOde from './WindblumeOde'
 const bow = {
   AlleyHunter,
@@ -29,6 +31,7 @@ const bow = {
   EbonyBow,
   ElegyForTheEnd,
   FavoniusWarbow,
+  Hamayumi,
   HuntersBow,
   Messenger,
   MitternachtsWaltz,
@@ -44,6 +47,7 @@ const bow = {
   Slingshot,
   TheStringless,
   TheViridescentHunt,
+  ThunderingPulse,
   WindblumeOde,
 }
 export default bow

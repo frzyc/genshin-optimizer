@@ -5,6 +5,7 @@ import EmeraldOrb from './EmeraldOrb'
 import EyeOfPerception from './EyeOfPerception'
 import FavoniusCodex from './FavoniusCodex'
 import Frostbearer from './Frostbearer'
+import HakushinRing from './HakushinRing'
 import LostPrayerToTheSacredWinds from './LostPrayerToTheSacredWinds'
 import MagicGuide from './MagicGuide'
 import MappaMare from './MappaMare'
@@ -28,6 +29,7 @@ const catalyst = {
   EyeOfPerception,
   FavoniusCodex,
   Frostbearer,
+  HakushinRing,
   LostPrayerToTheSacredWinds,
   MagicGuide,
   MappaMare,

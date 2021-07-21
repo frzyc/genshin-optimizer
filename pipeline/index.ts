@@ -20,7 +20,7 @@ export type Language = typeof langKeys[number]
 export const characterIdMap = {
   //10000000: Kate
   //10000001: Kate
-  10000002:"kamisatoayaka",
+  10000002: "kamisatoayaka",
   10000003: "jean",
   10000005: "traveler_geo",
   10000006: "lisa",
@@ -91,6 +91,7 @@ export const weaponIdMap = {
   // 11411: "",
   11412: "SwordOfDescension",
   11413: "FesteringDesire",
+  11414: "AmenomaKageuchi",
   11501: "AquilaFavonia",
   11502: "SkywardBlade",
   11503: "FreedomSworn",
@@ -99,6 +100,7 @@ export const weaponIdMap = {
   // 11506: "PrimordialJadeCutter",
   // 11507: "One Side",//new weapon?
   // 11508: "",
+  11509: "MistsplitterReforged",
 
   //claymore
   12101: "WasterGreatsword",
@@ -120,6 +122,7 @@ export const weaponIdMap = {
   12409: "SerpentSpine",
   12410: "LithicBlade",
   12411: "SnowTombedStarsilver",
+  12414: "KatsuragikiriNagamasa",
   12501: "SkywardPride",
   12502: "WolfsGravestone",
   12503: "SongOfBrokenPines",
@@ -144,6 +147,7 @@ export const weaponIdMap = {
   13407: "FavoniusLance",
   13408: "RoyalSpear",
   13409: "DragonspineSpear",
+  13414: "KitainCrossSpear",
   13501: "StaffOfHoma",
   13502: "SkywardSpine",
   // 13503: "",
@@ -174,6 +178,7 @@ export const weaponIdMap = {
   // 14411: "",
   14412: "Frostbearer",
   14413: "DodocoTales",
+  14414: "HakushinRing",
   14501: "SkywardAtlas",
   14502: "LostPrayerToTheSacredWinds",
   // 14503: "Lost Ballade",
@@ -204,6 +209,7 @@ export const weaponIdMap = {
   // 15411: "",
   15412: "MitternachtsWaltz",
   15413: "WindblumeOde",
+  15414: "Hamayumi",
   15501: "SkywardHarp",
   15502: "AmosBow",
   15503: "ElegyForTheEnd",
@@ -211,6 +217,7 @@ export const weaponIdMap = {
   // 15505: "Primordial Jade Vista",
   // 15506: "Mirror Breaker",
   // 15508: "",
+  15509: "ThunderingPulse",
 
 } as const
 export type WeaponId = keyof typeof weaponIdMap

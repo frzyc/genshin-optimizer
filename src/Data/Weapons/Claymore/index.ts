@@ -3,6 +3,7 @@ import BloodtaintedGreatsword from './BloodtaintedGreatsword'
 import DebateClub from './DebateClub'
 import FavoniusGreatsword from './FavoniusGreatsword'
 import FerrousShadow from './FerrousShadow'
+import KatsuragikiriNagamasa from './KatsuragikiriNagamasa'
 import LithicBlade from './LithicBlade'
 import OldMercsPal from './OldMercsPal'
 import PrototypeAminus from './PrototypeAminus'
@@ -27,6 +28,7 @@ const claymore = {
   DebateClub,
   FavoniusGreatsword,
   FerrousShadow,
+  KatsuragikiriNagamasa,
   LithicBlade,
   OldMercsPal,
   PrototypeAminus,

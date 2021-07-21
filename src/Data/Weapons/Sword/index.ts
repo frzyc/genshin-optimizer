@@ -1,3 +1,4 @@
+import AmenomaKageuchi from './AmenomaKageuchi'
 import AquilaFavonia from './AquilaFavonia'
 import BlackcliffLongsword from './BlackcliffLongsword'
 import CoolSteel from './CoolSteel'
@@ -10,6 +11,7 @@ import FreedomSworn from './FreedomSworn'
 import HarbingerOfDawn from './HarbingerOfDawn'
 import IronSting from './IronSting'
 import LionsRoar from './LionsRoar'
+import MistsplitterReforged from './MistsplitterReforged'
 import PrimordialJadeCutter from './PrimordialJadeCutter'
 import PrototypeRancour from './PrototypeRancour'
 import RoyalLongsword from './RoyalLongsword'
@@ -24,6 +26,7 @@ import TheBlackSword from './TheBlackSword'
 import TheFlute from './TheFlute'
 import TravelersHandySword from './TravelersHandySword'
 const sword = {
+  AmenomaKageuchi,
   AquilaFavonia,
   BlackcliffLongsword,
   CoolSteel,
@@ -36,6 +39,7 @@ const sword = {
   HarbingerOfDawn,
   IronSting,
   LionsRoar,
+  MistsplitterReforged,
   PrimordialJadeCutter,
   PrototypeRancour,
   RoyalLongsword,

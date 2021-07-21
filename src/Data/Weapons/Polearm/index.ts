@@ -8,6 +8,7 @@ import DragonspineSpear from './DragonspineSpear'
 import FavoniusLance from './FavoniusLance'
 import Halberd from './Halberd'
 import IronPoint from './IronPoint'
+import KitainCrossSpear from './KitainCrossSpear'
 import LithicSpear from './LithicSpear'
 import PrimordialJadeWingedSpear from './PrimordialJadeWingedSpear'
 import PrototypeGrudge from './PrototypeGrudge'
@@ -27,6 +28,7 @@ const polearm = {
   FavoniusLance,
   Halberd,
   IronPoint,
+  KitainCrossSpear,
   LithicSpear,
   PrimordialJadeWingedSpear,
   PrototypeGrudge,
