@@ -57,7 +57,7 @@ const formula: IFormulaSheet = {
   },
   burst: {
     burst_dmg: stats => basicDMGFormula(data.burst.burst_dmg[stats.tlvl.burst], stats, "burst"),
-    skill_dmg: stats => basicDMGFormula(data.burst.skill_dmg[stats.tlvl.skill], stats, "skill"),
+    skill_dmg: stats => basicDMGFormula(data.burst.skill_dmg[stats.tlvl.burst], stats, "burst"),
     bonus: stats => {
       const val = (data.burst.bonus[stats.tlvl.burst] + (stats.constellation >= 6 ? 50 : 0)) / 100
       return [s => val * s.finalDEF, ["finalDEF"]]

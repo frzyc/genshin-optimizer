@@ -13,6 +13,7 @@ import hutao from './hutao/data'
 import jean from './jean/data'
 import kaedeharakazuha from './kaedeharakazuha/data'
 import kaeya from './kaeya/data'
+import kamisatoayaka from './kamisatoayaka/data'
 import keqing from './keqing/data'
 import klee from './klee/data'
 import lisa from './lisa/data'
@@ -52,6 +53,7 @@ const formula: IFormulaSheets = {
   jean,
   kaedeharakazuha,
   kaeya,
+  kamisatoayaka,
   keqing,
   klee,
   lisa,

@@ -19,7 +19,8 @@ export type Language = typeof langKeys[number]
 
 export const characterIdMap = {
   //10000000: Kate
-  //10000001: Ayaka
+  //10000001: Kate
+  10000002:"kamisatoayaka",
   10000003: "jean",
   10000005: "traveler_geo",
   10000006: "lisa",

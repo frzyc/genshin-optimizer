@@ -25,6 +25,12 @@ const char = {
     },
   },
   // kaeya,
+  kamisatoayaka: {
+    burst: {
+      cutting: [373269062, "skillParam"],
+      bloom: [2543020158, "skillParam"],
+    }
+  },
   // keqing,
   // klee,
   // lisa,
