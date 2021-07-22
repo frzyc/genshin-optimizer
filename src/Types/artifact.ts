@@ -14,7 +14,7 @@ export interface IArtifactSheet {
 }
 export interface SetEffectEntry {
   text: (Displayable | ((stats: ICalculatedStats) => Displayable)),
-  stats?: StatDict | ((arg0: ICalculatedStats) => (StatDict | false))
+  stats?: object | ((stats: ICalculatedStats) => object);//TODO: too strict StatDict | ((arg0: ICalculatedStats) => (StatDict | false))
   conditional?: (IConditional | IConditionalComplex),
   conditionals?: IConditionals,
 }

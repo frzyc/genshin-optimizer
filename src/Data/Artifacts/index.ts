@@ -6,6 +6,7 @@ import BloodstainedChivalry from './BloodstainedChivalry/BloodstainedChivalry'
 import BraveHeart from './BraveHeart/BraveHeart'
 import CrimsonWitchOfFlames from './CrimsonWitchOfFlames/CrimsonWitchOfFlames'
 import DefendersWill from './DefendersWill/DefendersWill'
+import EmblemOfSeveredFate from './EmblemOfSeveredFate/EmblemOfSeveredFate'
 import Gambler from './Gambler/Gambler'
 import GladiatorsFinale from './GladiatorsFinale/GladiatorsFinale'
 import HeartOfDepth from './HeartOfDepth/HeartOfDepth'
@@ -23,6 +24,7 @@ import PrayersToSpringtime from './PrayersToSpringtime/PrayersToSpringtime'
 import ResolutionOfSojourner from './ResolutionOfSojourner/ResolutionOfSojourner'
 import RetracingBolide from './RetracingBolide/RetracingBolide'
 import Scholar from './Scholar/Scholar'
+import ShimenawasReminiscence from './ShimenawasReminiscence/ShimenawasReminiscence'
 import TenacityOfTheMillelith from './TenacityOfTheMillelith/TenacityOfTheMillelith'
 import TheExile from './TheExile/TheExile'
 import ThunderingFury from './ThunderingFury/ThunderingFury'
@@ -41,6 +43,7 @@ let artifacts: IArtifactSheets = {
   BraveHeart,
   CrimsonWitchOfFlames,
   DefendersWill,
+  EmblemOfSeveredFate,
   Gambler,
   GladiatorsFinale,
   HeartOfDepth,
@@ -58,6 +61,7 @@ let artifacts: IArtifactSheets = {
   ResolutionOfSojourner,
   RetracingBolide,
   Scholar,
+  ShimenawasReminiscence,
   TenacityOfTheMillelith,
   TheExile,
   ThunderingFury,

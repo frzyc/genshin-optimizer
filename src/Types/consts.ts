@@ -18,7 +18,7 @@ export const allArtifactSets = [
   "MartialArtist", "NoblesseOblige", "PrayersForDestiny", "PrayersForIllumination", "PrayersForWisdom",
   "PrayersToSpringtime", "ResolutionOfSojourner", "RetracingBolide", "Scholar", "TheExile",
   "ThunderingFury", "Thundersoother", "TinyMiracle", "TravelingDoctor", "ViridescentVenerer",
-  "WanderersTroupe", "TenacityOfTheMillelith", "PaleFlame",
+  "WanderersTroupe", "TenacityOfTheMillelith", "PaleFlame", "EmblemOfSeveredFate", "ShimenawasReminiscence",
 ] as const
 export const allCharacterKeys = [
   "albedo", "amber", "barbara", "beidou", "bennett", "chongyun", "diluc", "diona", "fischl", "ganyu",
