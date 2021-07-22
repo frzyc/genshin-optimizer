@@ -1,4 +1,4 @@
-import { useCallback, useMemo } from 'react';
+import { useCallback, useEffect, useMemo } from 'react';
 import { Alert, Button, Card, Col, Row } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import ArtifactCard from '../../Artifact/ArtifactCard';
@@ -8,7 +8,7 @@ import { database } from '../../Database/Database';
 import { ICharacter } from '../../Types/character';
 import { allSlotKeys, SlotKey } from '../../Types/consts';
 import ICalculatedStats from '../../Types/ICalculatedStats';
-import { usePromise } from '../../Util/ReactUtil';
+import { useForceUpdate, usePromise } from '../../Util/ReactUtil';
 import WeaponSheet from '../../Weapon/WeaponSheet';
 import Character from "../Character";
 import CharacterSheet from '../CharacterSheet';
@@ -37,6 +37,10 @@ function CharacterArtifactPane({ characterSheet, weaponSheet, character, charact
       artToEditId: artid
     } as any), [history])
   const artifactSheets = usePromise(ArtifactSheet.getAll(), [])
+
+  // TODO: We can also listen only to equipped artifacts
+  const [, updateArt] = useForceUpdate()
+  useEffect(() => database.followAnyArt(updateArt))
 
   const equipArts = useCallback(() => {
     if (!window.confirm("Do you want to equip this artifact build to this character?")) return
