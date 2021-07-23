@@ -9,16 +9,16 @@ import skill from './Talent_Palm_Vortex.png'
 import burst from './Talent_Gust_Surge.png'
 import passive1 from './Talent_Slitting_Wind.png'
 import passive2 from './Talent_Second_Wind.png'
-import ElementalData from '../../ElementalData'
-import Stat from '../../../Stat'
-import formula, { data } from './anemoData'
-import { getTalentStatKey, getTalentStatKeyVariant } from "../../../Build/Build"
-import { TalentSheet } from '../../../Types/character';
-import { IConditionals, IConditionalValue } from '../../../Types/IConditional'
-import { absorbableEle } from '../dataUtil'
-import { Translate } from '../../../Components/Translate'
-import { normalDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
-const tr = (strKey: string) => <Translate ns="char_traveler_anemo_gen" key18={strKey} />
+import ElementalData from '../../../ElementalData'
+import Stat from '../../../../Stat'
+import formula, { data } from './data'
+import { getTalentStatKey, getTalentStatKeyVariant } from "../../../../Build/Build"
+import { TalentSheet } from '../../../../Types/character';
+import { IConditionals, IConditionalValue } from '../../../../Types/IConditional'
+import { absorbableEle } from '../../dataUtil'
+import { Translate } from '../../../../Components/Translate'
+import { normalDocSection, plungeDocSection, talentTemplate } from '../../SheetUtil'
+const tr = (strKey: string) => <Translate ns="char_traveler_gen" key18={`anemo.${strKey}`} />
 const conditionals: IConditionals = {
   q: { // Absorption
     name: "Elemental Absorption",

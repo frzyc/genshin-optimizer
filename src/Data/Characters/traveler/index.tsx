@@ -1,11 +1,12 @@
 import card from './Traveler_Female_Card.jpg'
 import thumb from './Character_Traveler_Thumb.png'
-import data_gen from './data_anemo_gen.json'
+import data_gen from './data_gen.json'
 import { ICharacterSheet } from '../../../Types/character';
-import anemoTalent from './anemoTalentSheet'
-import geoTalent from './geoTalentSheet'
+import anemo from './anemo'
+import geo from './geo'
+import electro from './electro'
 import { Translate } from '../../../Components/Translate'
-const tr = (strKey: string) => <Translate ns="char_traveler_anemo_gen" key18={strKey} />
+const tr = (strKey: string) => <Translate ns="char_traveler_gen" key18={strKey} />
 const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
@@ -18,6 +19,6 @@ const char: ICharacterSheet = {
   baseStat: data_gen.base,
   baseStatCurve: data_gen.curves,
   ascensions: data_gen.ascensions,
-  talents: { anemo: anemoTalent, geo: geoTalent }
+  talents: { anemo, geo, electro }
 };
 export default char;

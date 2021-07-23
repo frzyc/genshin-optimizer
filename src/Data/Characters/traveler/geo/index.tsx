@@ -9,14 +9,14 @@ import skill from './Talent_Starfell_Sword.png'
 import burst from './Talent_Wake_of_Earth.png'
 import passive1 from './Talent_Shattered_Darkrock.png'
 import passive2 from './Talent_Frenzied_Rockslide.png'
-import Stat from '../../../Stat'
-import formula, { data } from './geoData'
-import { getTalentStatKey, getTalentStatKeyVariant } from "../../../Build/Build"
-import { TalentSheet } from '../../../Types/character';
-import { IConditionals } from '../../../Types/IConditional'
-import { Translate } from '../../../Components/Translate'
-import { normalDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
-const tr = (strKey: string) => <Translate ns="char_traveler_geo_gen" key18={strKey} />
+import Stat from '../../../../Stat'
+import formula, { data } from './data'
+import { getTalentStatKey, getTalentStatKeyVariant } from "../../../../Build/Build"
+import { TalentSheet } from '../../../../Types/character';
+import { IConditionals } from '../../../../Types/IConditional'
+import { Translate } from '../../../../Components/Translate'
+import { normalDocSection, plungeDocSection, talentTemplate } from '../../SheetUtil'
+const tr = (strKey: string) => <Translate ns="char_traveler_gen" key18={`geo.${strKey}`} />
 const conditionals: IConditionals = {
   c1: { // InvincibleStonewall
     canShow: stats => stats.constellation >= 1,

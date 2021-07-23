@@ -1,6 +1,6 @@
 import { CharacterId } from "../.."
 
-type AvatarSkillDepotExcelConfigData = {
+export type AvatarSkillDepotExcelConfigData = {
   "Id": number//3401,
   "EnergySkill": number//10343, //burst
   "Skills": number[]// [10341, 10342, 0, 0], //[normal, skill]

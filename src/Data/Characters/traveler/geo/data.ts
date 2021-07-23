@@ -1,6 +1,6 @@
-import { IFormulaSheet } from "../../../Types/character"
-import { basicDMGFormula } from "../../../Util/FormulaUtil"
-import { absorbableEle } from "../dataUtil"
+import { IFormulaSheet } from "../../../../Types/character"
+import { basicDMGFormula } from "../../../../Util/FormulaUtil"
+
 export const data = {
   normal: {
     hitArr: [
@@ -24,14 +24,10 @@ export const data = {
     high: [159.68, 172.67, 185.67, 204.24, 217.23, 232.09, 252.51, 272.93, 293.36, 315.64, 337.92, 360.2, 382.48, 404.76, 427.04]
   },
   skill: {
-    initial_dmg: [12, 12.9, 13.8, 15, 15.9, 16.8, 18, 19.2, 20.4, 21.6, 22.8, 24, 25.5, 27, 28.5],
-    initial_max: [16.8, 18.06, 19.32, 21, 22.26, 23.52, 25.2, 26.88, 28.56, 30.24, 31.92, 33.6, 35.7, 37.8, 39.9],
-    storm_dmg: [176, 189.2, 202.4, 220, 233.2, 246.4, 264, 281.6, 299.2, 316.8, 334.4, 352, 374, 396, 418],
-    storm_max: [192, 206.4, 220.8, 240, 254.4, 268.8, 288, 307.2, 326.4, 345.6, 364.8, 384, 408, 432, 456],
+    dmg: [248, 266.6, 285.2, 310, 328.6, 347.2, 372, 396.8, 421.6, 446.4, 471.2, 496, 527, 558, 589],
   },
   burst: {
-    dmg: [80.8, 86.86, 92.92, 101, 107.06, 113.12, 121.2, 129.28, 137.36, 145.44, 153.52, 161.6, 171.7, 181.8, 191.9],
-    dmg_: [24.8, 26.66, 28.52, 31, 32.86, 34.72, 37.2, 39.68, 42.16, 44.64, 47.12, 49.6, 52.7, 55.8, 58.9],
+    dmg: [148, 159.1, 170.2, 185, 196.1, 207.2, 222, 236.8, 251.6, 266.4, 281.2, 296, 314.5, 333, 351.5],
   }
 }
 
@@ -41,18 +37,14 @@ const formula: IFormulaSheet = {
   charged: Object.fromEntries(data.charged.hitArr.map((percentArr, i) => [i, stats =>
     basicDMGFormula(percentArr[stats.tlvl.auto], stats, "charged")])),
   plunging: Object.fromEntries(Object.entries(data.plunging).map(([key, arr]) => [key, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "plunging")])),
-  skill: Object.fromEntries(Object.entries(data.skill).map(([name, arr]) =>
-    [name, stats => basicDMGFormula(arr[stats.tlvl.skill], stats, "skill")])),
-  burst: {
-    dmg: stats => basicDMGFormula(data.burst.dmg[stats.tlvl.burst], stats, "burst"),
-    ...Object.fromEntries(absorbableEle.map(eleKey =>
-      [eleKey, stats => basicDMGFormula(data.burst.dmg_[stats.tlvl.burst], stats, "burst", eleKey)]))
+  skill: {
+    dmg: stats => basicDMGFormula(data.skill.dmg[stats.tlvl.skill], stats, "skill"),
+    exp: stats => basicDMGFormula(data.skill.dmg[stats.tlvl.skill], stats, "skill")
   },
+  burst: Object.fromEntries(Object.entries(data.burst).map(([name, arr]) =>
+    [name, stats => basicDMGFormula(arr[stats.tlvl.burst], stats, "burst")])),//not optimizationTarget, dont need to precompute
   passive2: {
-    heal: stats => [s => 0.02 * s.finalHP * s.heal_multi, ["finalHP", "heal_multi"]],
-  },
-  passive1: {
-    windAuto: stats => basicDMGFormula(60, stats, "normal", "anemo"),
+    geoAuto: stats => basicDMGFormula(60, stats, "normal", "geo"),
   }
 }
 export default formula

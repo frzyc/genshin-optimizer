@@ -49,8 +49,17 @@ const char = {
   // rosaria,
   // sucrose,
   // tartaglia,
-  // traveler_anemo,
-  // traveler_geo,
+  traveler: {
+    electro: {
+      skill: {
+        enerRegen: [2165261751, "skillParam"],
+        enerRechInc: [3328414367, "skillParam"],
+      },
+      burst: {
+        thunderDMG: [3560985918, "skillParam"]
+      }
+    }
+  }
   // venti,
   // xiao,
   // xiangling,

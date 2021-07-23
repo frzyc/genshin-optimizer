@@ -22,9 +22,9 @@ export const characterIdMap = {
   //10000001: Kate
   10000002: "kamisatoayaka",
   10000003: "jean",
-  10000005: "traveler_geo",
+  // 10000005: "traveler_geo",// travler_male
   10000006: "lisa",
-  10000007: "traveler_anemo",
+  10000007: "traveler",// traveler_female
   10000014: "barbara",
   10000015: "kaeya",
   10000016: "diluc",
@@ -55,14 +55,21 @@ export const characterIdMap = {
   10000046: "hutao",
   10000047: "kaedeharakazuha",
   10000048: "yanfei",
-  // 10000049: "TEMPLATE",
+  // 10000049: "TEMPLATE", Yoimiya
   // 10000050: "TEMPLATE",
   10000051: "eula",
-  // 10000053: "TEMPLATE",
+  // 10000052: "TEMPLATE",
+  // 10000053: "TEMPLATE", Sayu
+  // 10000054: "TEMPLATE",
   // 11000008: "TEMPLATE",
   // 11000009: "TEMPLATE",
   // 11000010: "TEMPLATE",
   // 11000011: "TEMPLATE",
+  // 11000025: "TEMPLATE", Akuliya
+  // 11000026: "TEMPLATE", Yaoyao
+  // 11000028: "TEMPLATE", Shiro Maiden
+  // 11000030: "TEMPLATE", Greatsword Maiden
+  // 11000035: "TEMPLATE", Lance Warrioress  
 } as const
 export type CharacterId = keyof typeof characterIdMap
 export type CharacterKey = typeof characterIdMap[keyof typeof characterIdMap]

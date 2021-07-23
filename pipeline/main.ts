@@ -8,7 +8,7 @@ import characterExpCurve, { CharacterGrowCurveKey } from './DataminedModules/cha
 import characterInfo from './DataminedModules/character/characterInfo'
 import constellations from './DataminedModules/character/constellations'
 import passives from './DataminedModules/character/passives'
-import skillDepot from './DataminedModules/character/skillDepot'
+import skillDepot, { AvatarSkillDepotExcelConfigData } from './DataminedModules/character/skillDepot'
 import talents from './DataminedModules/character/talents'
 import weaponData from './DataminedModules/weapon/weapon'
 import WeaponRefinementData from './DataminedModules/weapon/weaponRefinement'
@@ -170,13 +170,7 @@ Object.entries(characterData).filter(([charid,]) => charid in characterIdMap).fo
   const { NameTextMapHash, DescTextMapHash, SkillDepotId, CandSkillDepotIds } = charData
   const { AvatarTitleTextMapHash, AvatarConstellationBeforTextMapHash } = characterInfo[charid]
   let skillDepotId = SkillDepotId
-  if (CandSkillDepotIds.length) {
-    if (parseInt(charid) === 10000005)//traveler_geo
-      skillDepotId = 506
-    if (parseInt(charid) === 10000007)//traveler_anemo
-      skillDepotId = 504
-  }
-  const { EnergySkill: burst, Skills: [normal, skill, sprint], Talents, InherentProudSkillOpens: [passive1, passive2, passive3] } = skillDepot[skillDepotId]
+
 
   const keys = ["char", characterIdMap[charid]]
   layeredAssignment(mapHashData, [...keys, "name"], NameTextMapHash)
@@ -184,37 +178,47 @@ Object.entries(characterData).filter(([charid,]) => charid in characterIdMap).fo
   layeredAssignment(mapHashData, [...keys, "description"], DescTextMapHash)
   // layeredAssignment(mapHashData, [...keys, "descriptionDetail"], AvatarDetailTextMapHash)
   layeredAssignment(mapHashData, [...keys, "constellationName"], AvatarConstellationBeforTextMapHash)
+  function genTalentHash(keys: string[], depot: AvatarSkillDepotExcelConfigData) {
+    const { EnergySkill: burst, Skills: [normal, skill, sprint], Talents, InherentProudSkillOpens: [passive1, passive2, passive3] } = depot
+    layeredAssignment(mapHashData, [...keys, "auto", "name"], [talents[normal].NameTextMapHash, "autoName"])
+    layeredAssignment(mapHashData, [...keys, "auto", "fields"], [talents[normal].DescTextMapHash, "autoFields"])
 
-  layeredAssignment(mapHashData, [...keys, "auto", "name"], [talents[normal].NameTextMapHash, "autoName"])
-  layeredAssignment(mapHashData, [...keys, "auto", "fields"], [talents[normal].DescTextMapHash, "autoFields"])
+    layeredAssignment(mapHashData, [...keys, "skill", "name"], talents[skill].NameTextMapHash)
+    layeredAssignment(mapHashData, [...keys, "skill", "description"], [talents[skill].DescTextMapHash, "paragraph"])
 
-  layeredAssignment(mapHashData, [...keys, "skill", "name"], talents[skill].NameTextMapHash)
-  layeredAssignment(mapHashData, [...keys, "skill", "description"], [talents[skill].DescTextMapHash, "paragraph"])
+    layeredAssignment(mapHashData, [...keys, "burst", "name"], talents[burst].NameTextMapHash)
+    layeredAssignment(mapHashData, [...keys, "burst", "description"], [talents[burst].DescTextMapHash, "paragraph"])
 
-  layeredAssignment(mapHashData, [...keys, "burst", "name"], talents[burst].NameTextMapHash)
-  layeredAssignment(mapHashData, [...keys, "burst", "description"], [talents[burst].DescTextMapHash, "paragraph"])
+    if (sprint) {
+      layeredAssignment(mapHashData, [...keys, "sprint", "name"], talents[sprint].NameTextMapHash)
+      layeredAssignment(mapHashData, [...keys, "sprint", "description"], [talents[sprint].DescTextMapHash, "paragraph"])
+    }
 
-  if (sprint) {
-    layeredAssignment(mapHashData, [...keys, "sprint", "name"], talents[sprint].NameTextMapHash)
-    layeredAssignment(mapHashData, [...keys, "sprint", "description"], [talents[sprint].DescTextMapHash, "paragraph"])
+    layeredAssignment(mapHashData, [...keys, "passive1", "name"], passives[passive1.ProudSkillGroupId].NameTextMapHash)
+    layeredAssignment(mapHashData, [...keys, "passive1", "description"], [passives[passive1.ProudSkillGroupId].DescTextMapHash, "paragraph"])
+
+    layeredAssignment(mapHashData, [...keys, "passive2", "name"], passives[passive2.ProudSkillGroupId].NameTextMapHash)
+    layeredAssignment(mapHashData, [...keys, "passive2", "description"], [passives[passive2.ProudSkillGroupId].DescTextMapHash, "paragraph"])
+
+    if (passive3?.ProudSkillGroupId) {
+      layeredAssignment(mapHashData, [...keys, "passive3", "name"], passives[passive3.ProudSkillGroupId].NameTextMapHash)
+      layeredAssignment(mapHashData, [...keys, "passive3", "description"], [passives[passive3.ProudSkillGroupId].DescTextMapHash, "paragraph"])
+    }
+
+    Talents.forEach((skId, i) => {
+      layeredAssignment(mapHashData, [...keys, `constellation${i + 1}`, "name"], constellations[skId].NameTextMapHash)
+      layeredAssignment(mapHashData, [...keys, `constellation${i + 1}`, "description"], [constellations[skId].DescTextMapHash, "paragraph"])
+    })
   }
 
-  layeredAssignment(mapHashData, [...keys, "passive1", "name"], passives[passive1.ProudSkillGroupId].NameTextMapHash)
-  layeredAssignment(mapHashData, [...keys, "passive1", "description"], [passives[passive1.ProudSkillGroupId].DescTextMapHash, "paragraph"])
-
-  layeredAssignment(mapHashData, [...keys, "passive2", "name"], passives[passive2.ProudSkillGroupId].NameTextMapHash)
-  layeredAssignment(mapHashData, [...keys, "passive2", "description"], [passives[passive2.ProudSkillGroupId].DescTextMapHash, "paragraph"])
-
-  if (passive3?.ProudSkillGroupId) {
-    layeredAssignment(mapHashData, [...keys, "passive3", "name"], passives[passive3.ProudSkillGroupId].NameTextMapHash)
-    layeredAssignment(mapHashData, [...keys, "passive3", "description"], [passives[passive3.ProudSkillGroupId].DescTextMapHash, "paragraph"])
+  if (CandSkillDepotIds.length) { //traveler
+    //this will be 504,506... for male
+    genTalentHash([...keys, "anemo"], skillDepot[704])
+    genTalentHash([...keys, "geo"], skillDepot[706])
+    genTalentHash([...keys, "electro"], skillDepot[707])
+  } else {
+    genTalentHash(keys, skillDepot[skillDepotId])
   }
-
-  Talents.forEach((skId, i) => {
-    layeredAssignment(mapHashData, [...keys, `constellation${i + 1}`, "name"], constellations[skId].NameTextMapHash)
-    layeredAssignment(mapHashData, [...keys, `constellation${i + 1}`, "description"], [constellations[skId].DescTextMapHash, "paragraph"])
-  })
-
 })
 
 //Main localization dumping

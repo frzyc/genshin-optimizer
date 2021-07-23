@@ -1,9 +1,11 @@
-export const baseStat = {
-  characterHP: [912, 2342, 3024, 4529, 5013, 5766, 6411, 7164, 7648, 8401, 8885, 9638, 10122, 10875],
-  characterATK: [18, 46, 60, 88, 98, 112, 126, 140, 149, 164, 174, 188, 198, 213],
-  characterDEF: [57, 147, 190, 284, 315, 362, 405, 450, 480, 527, 558, 605, 635, 682]
+
+import anemo from './anemo/data'
+import geo from './geo/data'
+import electro from './electro/data'
+
+const data = {
+  anemo,
+  geo,
+  electro,
 }
-export const specializeStat = {
-  key: "atk_",
-  value: [0, 0, 0, 0, 6, 6, 12, 12, 12, 12, 18, 18, 24, 24]
-}
+export default data
