@@ -172,6 +172,7 @@ export default class Character {
 
     //handle conditionals. only the conditional applicable to the equipped weapon is parsed.
     Conditional.parseConditionalValues({ ...weapon.key && { weapon: { [weapon.key]: weaponCond?.[weapon.key] } }, ...otherCond }, (conditional, conditionalValue, keys) => {
+      if (keys[0] === "character" && keys[3] === "talents" && keys[4] !== elementKey) return //fix for traveler, make sure conditionals match element.
       if (!Conditional.canShow(conditional, initialStats)) return
       const { stats: condStats } = Conditional.resolve(conditional, initialStats, conditionalValue)
       Character.mergeStats(initialStats, condStats)
