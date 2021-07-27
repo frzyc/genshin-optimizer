@@ -68,7 +68,7 @@ export default class Character {
 
     let stats = deepClone(initialStats)
     //add artifact and artifactsets
-    Object.values(artifacts).forEach((art: any) => {
+    Object.values(artifacts).forEach(art => {
       if (!art) return
       //main stats
       stats[art.mainStatKey] = (stats[art.mainStatKey] || 0) + Artifact.mainStatValue(art.mainStatKey, art.numStars, Math.max(Math.min(stats.mainStatAssumptionLevel, art.numStars * 4), art.level))
@@ -77,13 +77,15 @@ export default class Character {
         substat && substat.key && (stats[substat.key] = (stats[substat.key] || 0) + substat.value))
     })
     //setEffects
-    artifactSetEffectsStats.forEach(stat => stats[stat.key] = (stats[stat.key] || 0) + stat.value)
+    artifactSetEffectsStats.forEach(stat => Character.mergeStats(stats, { [stat.key]: stat.value }))
     //setEffects conditionals
     Conditional.parseConditionalValues({ artifact: stats?.conditionalValues?.artifact }, (conditional, conditionalValue, [, setKey]) => {
       const { setNumKey } = conditional
       if (parseInt(setNumKey) > (setToSlots?.[setKey]?.length ?? 0)) return
       const { stats: condStats } = Conditional.resolve(conditional, stats, conditionalValue)
-      Object.entries(condStats).forEach(([statKey, val]) => stats[statKey as any] = (stats[statKey] || 0) + val)
+      Object.entries(condStats).forEach(([statKey, val]) => {
+        Character.mergeStats(stats, { [statKey]: val })
+      })
     })
 
     stats.equippedArtifacts = Object.fromEntries(Object.entries(artifacts).map(([key, val]: any) => [key, val?.id]))
@@ -150,7 +152,6 @@ export default class Character {
       const specializedStatVal = characterSheet.getSpecializedStatVal(ascension)
       Character.mergeStats(initialStats, { [specialStatKey]: specializedStatVal })
     }
-
 
     //add stats from all talents
     characterSheet.getTalentStatsAll(initialStats as ICalculatedStats, initialStats.characterEle).forEach(s => Character.mergeStats(initialStats, s))
