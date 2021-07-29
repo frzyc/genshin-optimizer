@@ -1,4 +1,4 @@
-import ArtifactDatabase from './ArtifactDatabase';
+import { database } from './Database';
 import Artifact from '../Artifact/Artifact';
 import { checkDuplicate } from '../Artifact/ArtifactEditor';
 import { IArtifact, Substat, MainStatKey, SubstatKey } from '../Types/artifact';
@@ -8,7 +8,9 @@ type GenshinArtVersion = "1";
 
 const DefaultVersion: GenshinArtVersion = "1";
 
-// map is referencing https://wormtql.gitbook.io/mona-uranai/
+// map is referencing https://wormtql.gitbook.io/mona-uranai/ (they don't seem to update this anymore...)
+// backup 0: https://github.com/wormtql/genshin_artifact/blob/main/src/assets/artifacts/data/*/index.js
+// backup 1: https://github.com/YuehaiTeam/cocogoat/blob/main/src/App/export/Mona.ts
 
 const ArtifactSlotKeyMap = new Map<string, SlotKey>([
   ["flower", "flower"],
@@ -52,6 +54,8 @@ const ArtifactSetKeyMap = new Map<string, ArtifactSetKey>([
   ["wandererTroupe", "WanderersTroupe"],
   ["tenacityOfTheMillelith", "TenacityOfTheMillelith"],
   ["paleFlame", "PaleFlame"],
+  ["emblemOfSeveredFate", "EmblemOfSeveredFate"],
+  ["shimenawaReminiscence", "ShimenawasReminiscence"],
 ]);
 
 const ArtifactMainStatKeyMap = new Map<string, MainStatKey>([
@@ -116,13 +120,13 @@ function GetConvertedArtifactsVersion1(dataObj: any) {
       const { setName, star, level, position, mainTag } = genshinArtArtifact;
       const mainStatKey = tryGetFromMap(ArtifactMainStatKeyMap, mainTag.name);
       let artifact: IArtifact = {
+        id: "",
         setKey: tryGetFromMap(ArtifactSetKeyMap, setName),
         numStars: star,
         level: level,
         slotKey: tryGetFromMap(ArtifactSlotKeyMap, position),
         mainStatKey: mainStatKey,
         substats: [],
-        mainStatVal: Artifact.mainStatValues(star, mainStatKey)[level],
         location: "",
         lock: false,
       };
@@ -180,12 +184,12 @@ function GenshinArtImport(dataObj: any, deleteExisting: boolean, detectDupe: boo
     // return importResult;
   }
 
-  let artifactIdsToRemove = new Set(ArtifactDatabase.getIdList());
+  let artifactIdsToRemove = new Set(database.arts.keys);
   for (const artifact of importedArtifacts) {
     const { dupId, isDup } = checkDuplicate(artifact);
     if (!dupId) {
       importResult.new++;
-      ArtifactDatabase.update(artifact);
+      database.updateArt(artifact);
       continue;
     }
 
@@ -197,16 +201,16 @@ function GenshinArtImport(dataObj: any, deleteExisting: boolean, detectDupe: boo
     }
 
     importResult.upgraded++;
-    const oldArtifact = ArtifactDatabase.get(dupId)!;
+    const oldArtifact = database.arts.get(dupId)!;
     artifact.id = dupId;
     artifact.location = oldArtifact.location;
     artifact.lock = oldArtifact.lock;
-    ArtifactDatabase.update(artifact);
+    database.updateArt(artifact);
   }
 
   if (deleteExisting) {
     for (const artifactId of artifactIdsToRemove) {
-      ArtifactDatabase.removeArtifactById(artifactId);
+      database.removeArt(artifactId);
     }
     importResult.deleted = artifactIdsToRemove.size;
   }
