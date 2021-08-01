@@ -47,5 +47,5 @@ const claymore = {
   Whiteblind,
   WhiteIronGreatsword,
   WolfsGravestone,
-}
+} as const
 export default claymore

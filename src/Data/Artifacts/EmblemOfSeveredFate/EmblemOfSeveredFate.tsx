@@ -52,7 +52,7 @@ const artifact: IArtifactSheet = {
       stats: { enerRech_: 20 }
     },
     4: {
-      text: <span>Increases Elemental Burst DMG by 25% of Energy Recharge. A maximum of 75% bonus DMG can be obtained in this way. <small className="text-danger"><strong>Caution:</strong> this bonus is not currently applied in character/builer. You need to manually add the Ele. Burst DMG in Character Editor.</small></span>,
+      text: <span>Increases Elemental Burst DMG by 25% of Energy Recharge. A maximum of 75% bonus DMG can be obtained in this way. <small className="text-danger"><strong>Caution:</strong> this bonus is not currently applied when generating buils.</small></span>,
       stats: {
         modifiers: { burst_dmg_: { enerRech_: 0.25, } },
       }
