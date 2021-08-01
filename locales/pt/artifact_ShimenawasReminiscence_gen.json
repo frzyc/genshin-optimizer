@@ -1,0 +1,29 @@
+{
+  "setName": "Reminescência Nostálgica",
+  "setEffects": {
+    "2": "ATQ +18%.",
+    "4": "Quando lança uma Habilidade Elemental, se o Personagem tiver 15 ou mais de Energia Elemental, eles perdem 15 dessa Energia e o Dano de seus Ataques Normais/Carregados/Imersivos é aumentado em 50% por 10s."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Flor Envolvente",
+      "desc": "Um ornamento e fino Omamori, dizem que tem o poder de tornar os desejos em realidade."
+    },
+    "feather": {
+      "name": "Flecha das Memórias Ponderativas",
+      "desc": "Uma flecha mágica quebrada de forma um tanto antiquada. Parece ter sido guardada cuidadosamente por alguma pessoa."
+    },
+    "sands": {
+      "name": "Relógio da Alvorada",
+      "desc": "Um relógio de bolso de bronze ornamentado com água e pequenos sinos. O tempo que marca sempre para em algum alvorecer de um dia de outono."
+    },
+    "goblet": {
+      "name": "Coração da Esperança",
+      "desc": "Um tubo de adivinhação especial. O mecanismo na sua parte inferior permite que as pessoas facilmente removam todas as previsões indesejadas."
+    },
+    "circlet": {
+      "name": "Máscara das Mutações",
+      "desc": "Uma máscara de raposa utilizada em cerimônias bem conservada. Ela possui um eterno e misterioso sorriso leve."
+    }
+  }
+}
