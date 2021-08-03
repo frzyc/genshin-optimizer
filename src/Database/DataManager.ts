@@ -1,51 +1,51 @@
 export class DataManager<Key extends string | number, Value> {
-    static readonly allKeys = {} as const
+  static readonly allKeys = {} as const
 
-    data: Dict<Key, Value> = {}
-    listeners: Dict<Key, Callback<Value | undefined>[]> = {}
-    anyListeners: Callback<Key | typeof DataManager.allKeys>[] = []
+  data: Dict<Key, Value> = {}
+  listeners: Dict<Key, Callback<Value | undefined>[]> = {}
+  anyListeners: Callback<Key | typeof DataManager.allKeys>[] = []
 
-    followAny(callback: Callback<Key | typeof DataManager.allKeys>): () => void {
-        this.anyListeners.push(callback)
-        return () => {
-            this.anyListeners = this.anyListeners.filter(cb => cb !== callback)
-        }
+  followAny(callback: Callback<Key | typeof DataManager.allKeys>): () => void {
+    this.anyListeners.push(callback)
+    return () => {
+      this.anyListeners = this.anyListeners.filter(cb => cb !== callback)
     }
-    follow(key: Key, callback: Callback<Value | undefined>) {
-        const value = this.get(key)
-        callback(value)
-        if (this.listeners[key]) this.listeners[key]!.push(callback)
-        else this.listeners[key] = [callback]
-        return () => {
-            this.listeners[key] = this.listeners[key]?.filter(cb => cb !== callback)
-            if (!this.listeners[key]?.length) delete this.listeners[key]
-        }
+  }
+  follow(key: Key, callback: Callback<Value | undefined>) {
+    const value = this.get(key)
+    callback(value)
+    if (this.listeners[key]) this.listeners[key]!.push(callback)
+    else this.listeners[key] = [callback]
+    return () => {
+      this.listeners[key] = this.listeners[key]?.filter(cb => cb !== callback)
+      if (!this.listeners[key]?.length) delete this.listeners[key]
     }
+  }
 
-    get keys() { return Object.keys(this.data) }
-    get values() { return Object.values(this.data) }
-    get(key: Key): Value | undefined { return this.data[key] }
-    set(key: Key, value: Value) {
-        this.data[key] = value
+  get keys() { return Object.keys(this.data) }
+  get values() { return Object.values(this.data) }
+  get(key: Key): Value | undefined { return this.data[key] }
+  set(key: Key, value: Value) {
+    this.data[key] = value
 
-        this.listeners[key]?.forEach(cb => cb(value))
-        this.anyListeners.forEach(cb => cb(key))
-    }
-    remove(key: Key) {
-        delete this.data[key]
+    this.listeners[key]?.forEach(cb => cb(value))
+    this.anyListeners.forEach(cb => cb(key))
+  }
+  remove(key: Key) {
+    delete this.data[key]
 
-        this.listeners[key]?.forEach(cb => cb(undefined))
-        this.anyListeners.forEach(cb => cb(key))
-        delete this.listeners[key]
-    }
-    removeAll() {
-        this.data = {}
+    this.listeners[key]?.forEach(cb => cb(undefined))
+    this.anyListeners.forEach(cb => cb(key))
+    delete this.listeners[key]
+  }
+  removeAll() {
+    this.data = {}
 
-        Object.values(this.listeners).forEach(listeners => listeners.forEach(listener => listener(undefined)))
-        this.anyListeners.forEach(listener => listener(DataManager.allKeys))
-        this.listeners = {}
-        this.anyListeners = []
-    }
+    Object.values(this.listeners).forEach(listeners => listeners.forEach(listener => listener(undefined)))
+    this.anyListeners.forEach(listener => listener(DataManager.allKeys))
+    this.listeners = {}
+    this.anyListeners = []
+  }
 }
 
 type Callback<Arg> = (arg: Arg) => void

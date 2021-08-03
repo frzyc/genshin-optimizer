@@ -407,21 +407,21 @@ export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactShee
   addText("slotKey", slotKeys, "Slot", (value) => <>{Artifact.slotName(value)}</>)
   addText("mainStatKey", mainStatKeys, "Main Stat", (value) => <>{Stat.getStatNameRaw(value)}</>)
   texts.substats = <>{result.substats.filter(substat => substat.key !== "").map((substat, i) =>
-    <div key={i}>{detectedText(substat, "Sub Stat", (value) => <>{Stat.getStatNameRaw(value.key)}+{value.value}{Stat.getStatUnit(value.key) === "%" ? "%" : ""}</>)}</div>)
+    <div key={i}>{detectedText(substat, "Sub Stat", (value) => <>{Stat.getStatNameRaw(value.key)}+{valueString(value.value, Stat.getStatUnit(value.key))}</>)}</div>)
   }</>
 
   const unit = Stat.getStatUnit(result.mainStatKey)
   if (mainStatValues.find(value => value.mainStatValue === resultMainStatVal)) {
     if (mainStatKeys.has(result.mainStatKey)) {
       texts.level = detectedText(result.level, "Level", (value) => "+" + value)
-      texts.mainStatVal = detectedText(resultMainStatVal, "Main Stat value", (value) => <>{valueString(value, unit)}{unit === "%" ? "%" : ""}</>)
+      texts.mainStatVal = detectedText(resultMainStatVal, "Main Stat value", (value) => <>{valueString(value, unit)}</>)
     } else {
       texts.level = inferredText(result.level, "Level", (value) => "+" + value)
-      texts.mainStatVal = inferredText(resultMainStatVal, "Main Stat value", (value) => <>{valueString(value, unit)}{unit === "%" ? "%" : ""}</>)
+      texts.mainStatVal = inferredText(resultMainStatVal, "Main Stat value", (value) => <>{valueString(value, unit)}</>)
     }
   } else {
     texts.level = unknownText(result.level, "Level", (value) => "+" + value)
-    texts.mainStatVal = unknownText(resultMainStatVal, "Main Stat value", (value) => <>{valueString(value, unit)}{unit === "%" ? "%" : ""}</>)
+    texts.mainStatVal = unknownText(resultMainStatVal, "Main Stat value", (value) => <>{valueString(value, unit)}</>)
   }
 
   return [result, texts]
