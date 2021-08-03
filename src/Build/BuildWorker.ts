@@ -108,5 +108,5 @@ onmessage = async (e: { data: BuildRequest }) => {
 function canApply(set: ArtifactSetKey, num: SetNum, setBySlot: Dict<SlotKey, Set<ArtifactSetKey>>, filters: SetFilter): boolean {
   const otherNum = filters.reduce((accu, { key, num }) => key === set ? accu : accu + num, 0)
   const artNum = Object.values(setBySlot).filter(sets => sets.has(set)).length
-  return otherNum + num <= 5 && num >= artNum
+  return otherNum + num <= 5 && num <= artNum
 }
