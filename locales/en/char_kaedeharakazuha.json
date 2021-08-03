@@ -1,9 +1,13 @@
 {
   "a4": {
     "name": "Upon triggering a Swirl reaction",
-    "text": "Teammate Elemental DMG Bonus"
+    "text": "Teammate Elemental DMG Bonus",
+    "bonus": "Elemental DMG Bonus"
   },
   "c1": "Using <strong>Kazuha Slash</strong> resets CD",
   "c2": "In Autumn Whilelwind field",
-  "c6": "After using <strong>Chihayaburu</strong> or <strong>Kazuha Slash</strong>"
+  "c6": {
+    "after": "After using <strong>Chihayaburu</strong> or <strong>Kazuha Slash</strong>",
+    "bonus": "Normal, Charged and Plunging DMG Bonus"
+  }
 }
