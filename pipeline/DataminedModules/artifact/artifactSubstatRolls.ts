@@ -2,8 +2,8 @@ import artifactSubstatData from "./artifactSubstat";
 
 const rollsForRarity = { 3: 2, 4: 4, 5: 6, }
 
-function roll(currentRolls: number[], possibleRolls: number[], remaining: number, output: { [value: string]: number[][] }) {
-  const value = Math.round(currentRolls.reduce((a, b) => a + possibleRolls[b], 0))
+function roll(currentRolls: number[], sum: number, possibleRolls: number[], remaining: number, output: { [value: string]: number[][] }) {
+  const value = Math.round(sum)
   if (value in output) {
     if (!output[value].find((x) => x.length === currentRolls.length))
       output[value].push([...currentRolls])
@@ -17,15 +17,15 @@ function roll(currentRolls: number[], possibleRolls: number[], remaining: number
     if (index < lastRoll) return
 
     currentRolls.push(index)
-    roll(currentRolls, possibleRolls, remaining - 1, output)
+    roll(currentRolls, Math.fround(sum + possibleRolls[index]), possibleRolls, remaining - 1, output)
     currentRolls.pop()
   })
 }
 function getRolls(key: string, possibleRolls: number[], maxRolls: number): { [value: number]: number[][] } {
   const output: { [value: string]: number[][] } = {}
   if (key.endsWith('_')) // TODO: % CONVERSION
-    roll([], possibleRolls.map(k => k * 1000), maxRolls, output)
-  else roll([], possibleRolls, maxRolls, output)
+    roll([], 0, possibleRolls.map(k => Math.fround(k * 1000)), maxRolls, output)
+  else roll([], 0, possibleRolls.map(k => Math.fround(k)), maxRolls, output)
   delete output["0"]
   return output
 }

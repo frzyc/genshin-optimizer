@@ -2,6 +2,10 @@
  * Extrapolate the single-precision number `float` to a double-precision number 
  * by assuming that the *actual* value has the fewest number of digits amongst
  * numbers that are rounded to `float`.
+ * 
+ * REF: This is inspired by
+ * Section 3.1 in Printing Floating-Point Numbers: An Always Correct Method
+ * (https://cseweb.ucsd.edu/~lerner/papers/fp-printing-popl16.pdf)
  * */
 export function extrapolateFloat(float: number): number {
   if (Math.fround(float) !== float) {

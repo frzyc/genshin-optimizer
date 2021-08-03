@@ -69,7 +69,7 @@ export default class Artifact {
   }
 
   static maxSubstatRollEfficiency = Object.fromEntries(allRarities.map(rarity =>
-    [rarity, Math.max(...allSubstats.map(substat =>
+    [rarity, 100 * Math.max(...allSubstats.map(substat =>
       Artifact.maxSubstatValues(substat, rarity) /
       Artifact.maxSubstatValues(substat, maxStar)))]))
   static getSubstatKeys = (): readonly SubstatKey[] =>
