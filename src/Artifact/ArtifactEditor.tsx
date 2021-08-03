@@ -17,6 +17,7 @@ import { clamp, deepClone } from '../Util/Util';
 import Artifact from './Artifact';
 import ArtifactCard from './ArtifactCard';
 import { ArtifactSheet } from './ArtifactSheet';
+import ArtifactSetDropDownMenuFragment from './Component/ArtifactSetDropDownMenuFragment';
 import SlotNameWithIcon from './Component/SlotNameWIthIcon';
 import PercentBadge from './PercentBadge';
 import UploadDisplay from './UploadDisplay';
@@ -57,7 +58,7 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: Artifac
 
     if (newValue.setKey) {
       newValue.numStars = pick(artifact?.numStars, newSheet.rarity, Math.max(...newSheet.rarity) as Rarity)
-      newValue.slotKey = pick(artifact?.slotKey, Object.keys(newSheet.slotNames))
+      newValue.slotKey = pick(artifact?.slotKey, newSheet.slots)
     }
     if (newValue.numStars)
       newValue.level = artifact?.level ?? 0
@@ -95,15 +96,7 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: Artifac
                 {sheet?.name ?? t`editor.set.artifactSet`}
               </Dropdown.Toggle>
               <Dropdown.Menu>
-                {artifactSheets && ArtifactSheet.namesByMaxRarities(artifactSheets).map(([rarity, sets], i) =>
-                  <React.Fragment key={rarity}>
-                    {i > 0 && <Dropdown.Divider />}
-                    <Dropdown.ItemText><Trans t={t} i18nKey="editor.set.maxRarity">Max Rarity <Stars stars={rarity} /></Trans></Dropdown.ItemText>
-                    {sets.map(([setKey, name]) =>
-                      <Dropdown.Item key={setKey} onClick={() => update({ setKey })}>
-                        {name}
-                      </Dropdown.Item >)}
-                  </React.Fragment>)}
+                <ArtifactSetDropDownMenuFragment sheets={artifactSheets} click={(setKey => update({ setKey }))} />
               </Dropdown.Menu>
             </Dropdown>
             {/* rarity dropdown */}
@@ -128,21 +121,17 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: Artifac
           </InputGroup>
 
           {/* slot */}
-          <InputGroup className="mb-2">
+          <InputGroup className="mb-2 w-100 d-flex flex-row">
             <DropdownButton
               title={<SlotNameWithIcon slotKey={slotKey} />}
               disabled={!sheet}
               variant={artifact ? "success" : "primary"}
               as={InputGroup.Prepend}
             >
-              {Object.keys(sheet?.slotNames ?? {}).map((sKey: SlotKey) =>
+              {sheet?.slots?.map((sKey: SlotKey) =>
                 <Dropdown.Item key={sKey as any} onClick={() => update({ slotKey: sKey })} ><SlotNameWithIcon slotKey={sKey} /></Dropdown.Item>)}
             </DropdownButton>
-            <FormControl
-              value={sheet?.slotNames[artifact!.slotKey] ?? t`editor.unknownPieceName` as any}
-              disabled
-              readOnly
-            />
+            <InputGroup.Text as={InputGroup.Append} className="flex-grow-1">{sheet?.getSlotName(artifact!.slotKey) ?? t`editor.unknownPieceName` as any}</InputGroup.Text>
           </InputGroup>
 
           {/* main stat */}
@@ -160,7 +149,7 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: Artifac
                 </Dropdown.Item>)}
             </DropdownButton>
             <FormControl
-              value={artifact ? `${Artifact.mainStatValue(artifact.mainStatKey, numStars, level)}${Stat.getStatUnit(artifact.mainStatKey)}` : t`mainStat` as any}
+              value={artifact ? `${valueString(Artifact.mainStatValue(artifact.mainStatKey, numStars, level), Stat.getStatUnit(artifact.mainStatKey))}` : t`mainStat` as any}
               disabled
               readOnly
             />

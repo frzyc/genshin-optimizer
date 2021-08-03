@@ -49,5 +49,5 @@ const bow = {
   TheViridescentHunt,
   ThunderingPulse,
   WindblumeOde,
-}
+} as const
 export default bow

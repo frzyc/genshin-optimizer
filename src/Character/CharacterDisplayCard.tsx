@@ -14,7 +14,7 @@ import ElementalData from '../Data/ElementalData';
 import { database } from '../Database/Database';
 import { ICharacter } from '../Types/character';
 import { allCharacterKeys, allSlotKeys, CharacterKey } from '../Types/consts';
-import ICalculatedStats from '../Types/ICalculatedStats';
+import { ICalculatedStats } from '../Types/stats';
 import { usePromise } from '../Util/ReactUtil';
 import { clamp, deepClone } from '../Util/Util';
 import WeaponSheet from '../Weapon/WeaponSheet';
@@ -184,11 +184,11 @@ export default function CharacterDisplayCard({ characterKey: propCharacterKey = 
 
   const mainStatAssumptionLevel = newBuild?.mainStatAssumptionLevel ?? 0
   const equippedBuild = useMemo(() => characterSheet && weaponSheet && artifactSheets && Character.calculateBuild(character, characterSheet, weaponSheet, artifactSheets, mainStatAssumptionLevel), [character, characterSheet, weaponSheet, artifactSheets, mainStatAssumptionLevel])
-
+  const sheets = useMemo(() => characterSheet && weaponSheet && artifactSheets && { characterSheet, weaponSheet, artifactSheets }, [characterSheet, weaponSheet, artifactSheets])
   const commonPaneProps = { character, newBuild, equippedBuild: (!newBuild || compareAgainstEquipped) ? equippedBuild : undefined, editable, characterDispatch, compareAgainstEquipped }
   if (flexArts) (commonPaneProps as any).artifacts = flexArts//from flex
   // main CharacterDisplayCard
-  const DamageOptionsAndCalculationEle = characterSheet && weaponSheet && <DamageOptionsAndCalculation {...{ characterSheet, weaponSheet, character, characterDispatch, newBuild, equippedBuild }} className="mb-2" />
+  const DamageOptionsAndCalculationEle = sheets && <DamageOptionsAndCalculation {...{ sheets, weaponSheet, character, characterDispatch, newBuild, equippedBuild }} className="mb-2" />
   return (<Card bg="darkcontent" text={"lightfont" as any} >
     <Card.Header>
       <Row>
@@ -214,7 +214,7 @@ export default function CharacterDisplayCard({ characterKey: propCharacterKey = 
         </Col>}
       </Row>
     </Card.Header>
-    {characterKey && characterSheet && weaponSheet && <Card.Body>
+    {characterKey && sheets && characterSheet && weaponSheet && <Card.Body>
       <compareAgainstEquippedContext.Provider value={compareAgainstEquipped as any}>
         <Tab.Container defaultActiveKey={tabName ? tabName : (newBuild ? "newartifacts" : "character")} mountOnEnter={true} unmountOnExit={true}>
           <Nav variant="pills" className="mb-2 mx-0" fill>
@@ -238,11 +238,11 @@ export default function CharacterDisplayCard({ characterKey: propCharacterKey = 
             </Tab.Pane>
             <Tab.Pane eventKey="artifacts" >
               {DamageOptionsAndCalculationEle}
-              <CharacterArtifactPane characterSheet={characterSheet} weaponSheet={weaponSheet} artifacts={undefined} {...{ ...commonPaneProps, newBuild: undefined, equippedBuild, }} />
+              <CharacterArtifactPane sheets={sheets} artifacts={undefined} {...{ ...commonPaneProps, newBuild: undefined, equippedBuild, }} />
             </Tab.Pane>
             {newBuild ? <Tab.Pane eventKey="newartifacts" >
               {DamageOptionsAndCalculationEle}
-              <CharacterArtifactPane characterSheet={characterSheet} weaponSheet={weaponSheet} artifacts={undefined} {...commonPaneProps} />
+              <CharacterArtifactPane sheets={sheets} artifacts={undefined} {...commonPaneProps} />
             </Tab.Pane> : null}
             <Tab.Pane eventKey="talent">
               {DamageOptionsAndCalculationEle}

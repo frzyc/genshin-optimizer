@@ -4,7 +4,7 @@ import React from 'react';
 import Badge from 'react-bootstrap/Badge';
 import Button from 'react-bootstrap/Button';
 import Dropdown from 'react-bootstrap/Dropdown';
-import ICalculatedStats from '../Types/ICalculatedStats';
+import { ICalculatedStats } from '../Types/stats';
 import IConditional, { IConditionalValue } from '../Types/IConditional';
 import { evalIfFunc } from '../Util/Util';
 

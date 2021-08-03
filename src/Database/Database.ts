@@ -1,11 +1,11 @@
-import { IArtifact } from "../Types/artifact";
-import { ICharacter } from "../Types/character";
+import { IArtifact, IFlexArtifact } from "../Types/artifact";
+import { ICharacter, IFlexCharacter } from "../Types/character";
 import { allSlotKeys, CharacterKey, SlotKey } from "../Types/consts";
 import { deepClone, getRandomInt } from "../Util/Util";
 import { load, save, remove, getDBVersion, setDBVersion } from "./utils";
 import { DataManager } from "./DataManager";
 import { migrate } from "./migration";
-import { validateFlexArtifact, validateDBCharacter, validateDBArtifact, extractFlexArtifact, validateFlexCharacter } from "./validation";
+import { validateFlexArtifact, validateDBCharacter, validateDBArtifact, extractFlexArtifact, validateFlexCharacter, extractFlexCharacter } from "./validation";
 
 export class Database {
   storage: Storage
@@ -194,7 +194,10 @@ export class Database {
   }
 
   exportStorage() {
-    const characterDatabase = this.chars.data, artifactDatabase = this.arts.data
+    const characterDatabase = Object.fromEntries(Object.entries(this.chars.data).map(([key, value]) =>
+      [key, extractFlexCharacter(value)]))
+    const artifactDatabase = Object.fromEntries(Object.entries(this.arts.data).map(([key, value]) =>
+      [key, extractFlexArtifact(value)]))
     const version = getDBVersion(this.storage)
     const artifactDisplay = load(this.storage, "ArtifactDisplay.state") ?? {}
     const characterDisplay = load(this.storage, "CharacterDisplay.state") ?? {}
@@ -246,8 +249,8 @@ export class Database {
 
 type DatabaseObj = {
   version: number,
-  characterDatabase: Dict<CharacterKey, ICharacter>
-  artifactDatabase: Dict<string, IArtifact>
+  characterDatabase: Dict<CharacterKey, IFlexCharacter>
+  artifactDatabase: Dict<string, IFlexArtifact>
   artifactDisplay: any
   characterDisplay: any
   buildsDisplay: any

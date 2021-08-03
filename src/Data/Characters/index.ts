@@ -72,7 +72,7 @@ const characters: StrictDict<CharacterKey, ICharacterSheet> = {
   xinyan,
   yanfei,
   zhongli
-};
+} as const
 
 Object.values(characters).forEach(char => {
   if ("talent" in char)

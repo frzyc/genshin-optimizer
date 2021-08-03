@@ -22,7 +22,7 @@ import Stat from '../Stat';
 import { ArtifactsBySlot, Build, BuildSetting } from '../Types/Build';
 import { ICharacter } from '../Types/character';
 import { allSlotKeys, ArtifactSetKey, CharacterKey, SetNum, SlotKey } from '../Types/consts';
-import ICalculatedStats from '../Types/ICalculatedStats';
+import { ICalculatedStats } from '../Types/stats';
 import { IFieldDisplay } from '../Types/IFieldDisplay';
 import { useForceUpdate, usePromise } from '../Util/ReactUtil';
 import { timeStringMs } from '../Util/TimeUtil';
@@ -32,6 +32,7 @@ import { calculateTotalBuildNumber } from './Build';
 import SlotNameWithIcon, { artifactSlotIcon } from '../Artifact/Component/SlotNameWIthIcon';
 import { database } from '../Database/Database';
 import { StatKey } from '../Types/artifact';
+import { getFormulaTargetsDisplayHeading } from '../Character/CharacterUtil';
 const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
 
 //lazy load the character display
@@ -111,17 +112,18 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   //load the character data as a whole
   useEffect(() => {
     (async () => {
-      if (!characterKey) return
+      if (!characterKey || !artifactSheets) return
       const character = database._getChar(characterKey)
       if (!character) return
       const characterSheet = await CharacterSheet.get(characterKey)
       const weaponSheet = await WeaponSheet.get(character.weapon.key)
       if (!characterSheet || !weaponSheet) return
       const initialStats = Character.createInitialStats(character, characterSheet, weaponSheet)
-      const statsDisplayKeys = Character.getDisplayStatKeys(initialStats, characterSheet)
+      //NOTE: since initialStats are used, there are no inclusion of artifact formulas here.
+      const statsDisplayKeys = Character.getDisplayStatKeys(initialStats, { characterSheet, weaponSheet, artifactSheets })
       setCharacterData({ character, characterSheet, weaponSheet, initialStats, statsDisplayKeys })
     })()
-  }, [charDirty, characterKey])
+  }, [charDirty, characterKey, artifactSheets])
 
   //register changes in artifact database
   useEffect(() =>
@@ -462,7 +464,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
                     <Dropdown.Menu align="right" style={{ minWidth: "40rem" }} >
                       <Row>
                         {!!statsDisplayKeys && Object.entries(statsDisplayKeys).map(([sectionKey, fields]: [string, any]) => {
-                          const header = (characterSheet && weaponSheet) ? Character.getDisplayHeading(sectionKey, characterSheet, weaponSheet, initialStats?.characterEle) : sectionKey
+                          const header = (characterSheet && weaponSheet && artifactSheets) ? getFormulaTargetsDisplayHeading(sectionKey, { characterSheet, weaponSheet, artifactSheets }, initialStats?.characterEle) : sectionKey
                           return <Col xs={12} md={6} key={sectionKey}>
                             <Dropdown.Header style={{ overflow: "hidden", textOverflow: "ellipsis" }}><b>{header}</b></Dropdown.Header>
                             {fields.map((target, i) => {
@@ -504,7 +506,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
           {/* Build List */}
           <ListGroup>
             {builds.map((build, index) =>
-              index < maxBuildsToShow && characterSheet && weaponSheet && <ArtifactDisplayItem characterSheet={characterSheet} weaponSheet={weaponSheet} build={build} characterKey={characterKey as CharacterKey} index={index} key={index} statsDisplayKeys={statsDisplayKeys} onClick={() => setmodalBuild(build as any)} />
+              index < maxBuildsToShow && characterSheet && weaponSheet && artifactSheets && <ArtifactDisplayItem sheets={{ characterSheet, weaponSheet, artifactSheets }} build={build} characterKey={characterKey as CharacterKey} index={index} key={index} statsDisplayKeys={statsDisplayKeys} onClick={() => setmodalBuild(build as any)} />
             )}
           </ListGroup>
         </Card>
@@ -546,7 +548,7 @@ function ArtConditionalModal({ showArtCondModal, setshowArtCondModal, initialSta
   const closeArtCondModal = useCallback(() => setshowArtCondModal(false), [setshowArtCondModal])
   const artifactSheets = usePromise(ArtifactSheet.getAll(), [])
   if (!artifactSheets) return null
-  const artSetKeyList = ArtifactSheet.namesByMaxRarities(artifactSheets).flatMap(([, items]) => items.map(([key]) => [key, artifactSheets[key]] as const))
+  const artSetKeyList = Object.entries(ArtifactSheet.setKeysByRarities(artifactSheets)).reverse().flatMap(([, sets]) => sets)
   return <Modal show={showArtCondModal} onHide={closeArtCondModal} size="xl" contentClassName="bg-transparent">
     <Card bg="darkcontent" text={"lightfont" as any}>
       <Card.Header>
@@ -568,7 +570,8 @@ function ArtConditionalModal({ showArtCondModal, setshowArtCondModal, initialSta
       </Card.Header>
       <Card.Body>
         <Row>
-          {artSetKeyList.map(([setKey, sheet]) => {
+          {artSetKeyList.map(setKey => {
+            const sheet = artifactSheets[setKey]
             let icon = Object.values(sheet.slotIcons)[0]
             let numStars = [...sheet.rarity][0]
             return <Col className="mb-2" key={setKey} xs={12} lg={6} xl={4}>
@@ -678,10 +681,20 @@ function StatFilterCard({ statKeys = [], statFilters = {}, setStatFilters, class
   </Card>
 }
 
-type ArtifactDisplayItemProps = { characterSheet: CharacterSheet, weaponSheet: WeaponSheet, index: number, characterKey: CharacterKey, build: ICalculatedStats, statsDisplayKeys: any, onClick: () => void }
+type ArtifactDisplayItemProps = {
+  sheets: {
+    characterSheet: CharacterSheet
+    weaponSheet: WeaponSheet,
+    artifactSheets: StrictDict<ArtifactSetKey, ArtifactSheet>
+  },
+  index: number,
+  characterKey: CharacterKey,
+  build: ICalculatedStats,
+  statsDisplayKeys: any,
+  onClick: () => void
+}
 //for displaying each artifact build
-function ArtifactDisplayItem({ characterSheet, weaponSheet, index, characterKey, build, statsDisplayKeys, onClick }: ArtifactDisplayItemProps) {
-  const sheets = usePromise(ArtifactSheet.getAll(), [])
+function ArtifactDisplayItem({ sheets, sheets: { artifactSheets }, index, characterKey, build, statsDisplayKeys, onClick }: ArtifactDisplayItemProps) {
   const character = database._getChar(characterKey)
   if (!character) return null
   const { equippedArtifacts } = character
@@ -697,11 +710,11 @@ function ArtifactDisplayItem({ characterSheet, weaponSheet, index, characterKey,
         </Col>
         <Col xs="auto">{(Object.entries(build.setToSlots) as [ArtifactSetKey, SlotKey[]][]).sort(([key1, slotarr1], [key2, slotarr2]) => slotarr2.length - slotarr1.length).map(([key, slotarr]) =>
           <Badge key={key} variant={currentlyEquipped ? "success" : "primary"} className="mr-2">
-            {slotarr.map(slotKey => artifactSlotIcon(slotKey))} {sheets?.[key].name ?? ""}
+            {slotarr.map(slotKey => artifactSlotIcon(slotKey))} {artifactSheets?.[key].name ?? ""}
           </Badge>
         )}</Col>
       </Row></h5>
-      <StatDisplayComponent editable={false} {...{ characterSheet, weaponSheet, character, newBuild: build, statsDisplayKeys, cardbg: (index % 2 ? "lightcontent" : "darkcontent") }} />
+      <StatDisplayComponent editable={false} {...{ sheets, character, newBuild: build, statsDisplayKeys, cardbg: (index % 2 ? "lightcontent" : "darkcontent") }} />
     </ListGroup.Item>
   </div>)
 }

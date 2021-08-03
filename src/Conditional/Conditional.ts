@@ -6,18 +6,8 @@ import { weaponImport } from "../Weapon/WeaponSheet";
 
 const processed = Promise.all([
   charImport.then(sheets => addConditional(sheets, "character")), //attach character conditionals to Conditional
-  weaponImport.then(sheets => {
-    addConditional(sheets, "weapon");
-  }),//attach weapon conditionals to Conditional
-  artifactImport.then(sheets => {
-    addConditional(sheets, "artifact")
-    //attach metadata prop setNumKey to the conditional
-    Object.values(sheets).forEach(setObj =>
-      Object.entries(setObj.setEffects).forEach(([setNumKey, setNumObj]) => {
-        if (setNumObj.conditional) (setNumObj.conditional as any).setNumKey = setNumKey // TODO, typechecker says there's no `setNumKey`
-        if (setNumObj.conditionals) Object.values(setNumObj.conditionals).forEach((c: any) => c.setNumKey = setNumKey)
-      }))
-  })
+  weaponImport.then(sheets => addConditional(sheets, "weapon")), //attach weapon conditionals to Conditional
+  artifactImport.then(sheets => addConditional(sheets, "artifact")) //attach artifact conditionals to Conditional
 ])
 
 export default class Conditional {

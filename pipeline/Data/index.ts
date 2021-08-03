@@ -3,6 +3,7 @@ import sheet from './sheet'
 const mapHashData = {
   char,
   weapon: {},//will be populated from datamine parsing pipeline
+  artifact:{},
   sheet,
   weaponKey: {
     sword: 1338971918,

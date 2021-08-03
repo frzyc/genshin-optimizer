@@ -1,6 +1,6 @@
 import { ICharacterSheet, TalentSheet } from "../Types/character";
 import { allCharacterKeys, CharacterKey, ElementKey } from "../Types/consts";
-import ICalculatedStats from "../Types/ICalculatedStats";
+import { ICalculatedStats } from "../Types/stats";
 import { evalIfFunc } from "../Util/Util";
 import { CharacterExpCurveData } from "pipeline";
 import expCurveJSON from './expCurve_gen.json'

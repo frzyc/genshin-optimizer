@@ -4,7 +4,7 @@ import { ascensionMaxLevel } from '../Data/CharacterData';
 import Stat from '../Stat';
 import { ICharacter } from '../Types/character';
 import { allWeaponKeys, WeaponKey } from '../Types/consts';
-import ICalculatedStats from '../Types/ICalculatedStats';
+import { ICalculatedStats } from '../Types/stats';
 import { IWeaponSheet } from '../Types/weapon';
 import { evalIfFunc } from '../Util/Util';
 import expCurveJSON from './expCurve_gen.json'

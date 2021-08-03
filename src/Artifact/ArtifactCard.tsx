@@ -44,7 +44,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
 
   const { id, slotKey, numStars, level, mainStatKey, substats, lock } = art
   const mainStatLevel = Math.max(Math.min(mainStatAssumptionLevel, numStars * 4), level)
-  const mainStatVal = <span className={mainStatLevel !== level ? "text-orange" : ""}>{Artifact.mainStatValue(mainStatKey, numStars, mainStatLevel) ?? ""}{Stat.getStatUnit(mainStatKey)}</span>
+  const mainStatVal = <span className={mainStatLevel !== level ? "text-orange" : ""}>{valueString(Artifact.mainStatValue(mainStatKey, numStars, mainStatLevel) ?? 0, Stat.getStatUnit(mainStatKey))}</span>
   const { currentEfficiency, maxEfficiency } = Artifact.getArtifactEfficiency(art, effFilter)
   const artifactValid = maxEfficiency !== 0
   const locationName = characterSheet?.name ?? "Inventory"
@@ -55,7 +55,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
           <Image src={sheet?.slotIcons[slotKey] ?? ""} className={`w-100 h-auto grad-${numStars}star m-1`} thumbnail />
         </Col>
         <Col className="pt-3">
-          <h6><b>{sheet?.slotNames[slotKey] ?? "Unknown Piece Name"}</b></h6>
+          <h6><b>{sheet?.getSlotName(slotKey) ?? "Unknown Piece Name"}</b></h6>
           <div><SlotNameWithIcon slotKey={slotKey} />{` +${level}`}</div>
         </Col>
       </Row>
@@ -77,7 +77,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
           let statName = Stat.getStatName(stat.key)
           return (<Col key={i} xs={12}>
             <Badge variant={numRolls ? `${numRolls}roll` : "danger"} className="text-darkcontent"><b>{numRolls ? numRolls : "?"}</b></Badge>{" "}
-            <span className={`text-${numRolls}roll`}>{statName}{`+${valueString(stat.value, Stat.getStatUnit(stat.key))}${Stat.getStatUnit(stat.key)}`}</span>
+            <span className={`text-${numRolls}roll`}>{statName}{`+${valueString(stat.value, Stat.getStatUnit(stat.key))}`}</span>
             <span className="float-right" style={{ opacity: effOpacity }}>{stat.key && effFilter.has(stat.key) ? valueString(efficiency, "eff") : "-"}</span>
           </Col>)
         })}

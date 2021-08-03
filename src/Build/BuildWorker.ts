@@ -3,9 +3,11 @@ import { PreprocessFormulas } from "../StatData";
 import { artifactSetPermutations, artifactPermutations, pruneArtifacts, calculateTotalBuildNumber } from "./Build"
 import { GetDependencies } from '../StatDependency';
 import Formula from '../Formula';
-import { IArtifact } from '../Types/artifact';
-import { ArtifactSetKey } from '../Types/consts';
-import { Build, BuildRequest } from '../Types/Build';
+import { IArtifact, StatKey } from '../Types/artifact';
+import { ArtifactSetKey, SetNum, SlotKey } from '../Types/consts';
+import { Build, BuildRequest, SetFilter } from '../Types/Build';
+import { BonusStats, ICalculatedStats } from '../Types/stats';
+import { mergeStats } from '../Util/StatUtil';
 
 onmessage = async (e: { data: BuildRequest }) => {
   const t1 = performance.now()
@@ -31,7 +33,19 @@ onmessage = async (e: { data: BuildRequest }) => {
     }
   }
 
-  const dependencies = GetDependencies(stats.modifiers, [...targetKeys, ...Object.keys(minFilters), ...Object.keys(maxFilters)]) as any
+  const artifactSetBySlot = Object.fromEntries(Object.entries(splitArtifacts).map(([key, artifacts]) =>
+    [key, new Set(artifacts.map(artifact => artifact.setKey))]
+  ))
+  // modifierStats contains all modifiers that are applicable to the current build
+  const modifierStats: BonusStats = {}
+  Object.entries(artifactSetEffects).forEach(([set, effects]) =>
+    Object.entries(effects).filter(([setNum, stats]) =>
+      ("modifiers" in stats) && canApply(set, parseInt(setNum) as SetNum, artifactSetBySlot, setFilters)
+    ).forEach(bonus => mergeStats(modifierStats, bonus[1]))
+  )
+  mergeStats(modifierStats, { modifiers: stats.modifiers ?? {} })
+
+  const dependencies = GetDependencies(stats, modifierStats.modifiers, [...targetKeys, ...Object.keys(minFilters), ...Object.keys(maxFilters)]) as StatKey[]
   const oldCount = calculateTotalBuildNumber(splitArtifacts, setFilters)
 
   let prunedArtifacts = splitArtifacts, newCount = oldCount
@@ -61,11 +75,11 @@ onmessage = async (e: { data: BuildRequest }) => {
     builds.splice(maxBuildsToShow)
   }
 
-  const callback = (accu, stats) => {
+  const callback = (accu: StrictDict<SlotKey, IArtifact>, stats: ICalculatedStats) => {
     if (!(++buildCount % 10000)) postMessage({ progress: buildCount, timing: performance.now() - t1, skipped }, undefined as any)
     formula(stats)
-    if (Object.entries(minFilters).some(([key, minimum]: any) => stats[key] < (minimum as number))) return
-    if (Object.entries(maxFilters).some(([key, maximum]: any) => stats[key] > (maximum as number))) return
+    if (Object.entries(minFilters).some(([key, minimum]) => stats[key] < minimum)) return
+    if (Object.entries(maxFilters).some(([key, maximum]) => stats[key] > maximum)) return
     let buildFilterVal = ascending ? -target(stats) : target(stats)
     if (buildFilterVal >= threshold) {
       builds.push({ buildFilterVal, artifacts: { ...accu } })
@@ -89,4 +103,10 @@ onmessage = async (e: { data: BuildRequest }) => {
   let t2 = performance.now()
   postMessage({ progress: buildCount, timing: t2 - t1, skipped }, undefined as any)
   postMessage({ builds, timing: t2 - t1, skipped }, undefined as any)
+}
+
+function canApply(set: ArtifactSetKey, num: SetNum, setBySlot: Dict<SlotKey, Set<ArtifactSetKey>>, filters: SetFilter): boolean {
+  const otherNum = filters.reduce((accu, { key, num }) => key === set ? accu : accu + num, 0)
+  const artNum = Object.values(setBySlot).filter(sets => sets.has(set)).length
+  return otherNum + num <= 5 && num >= artNum
 }

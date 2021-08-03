@@ -14,7 +14,7 @@ export function layeredAssignment(obj, keys, value) {
   return obj
 }
 
-export function dumpFile(filename, obj, print = true) {
+export function dumpFile(filename, obj, print = false) {
   const fileStr = JSON.stringify(obj, null, 2)
   fs.writeFile(filename, fileStr, () => print && console.log("Generated JSON at", filename))
 }

@@ -53,5 +53,5 @@ const sword = {
   TheBlackSword,
   TheFlute,
   TravelersHandySword,
-}
+} as const
 export default sword

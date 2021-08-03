@@ -3,20 +3,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useCallback, useState } from "react";
 import { Badge, Button, ButtonGroup, Card, Col, Dropdown, Image, InputGroup, ListGroup, Row } from "react-bootstrap";
 import Assets from "../../Assets/Assets";
-import ConditionalDisplay from "../../Components/ConditionalDisplay";
 import CustomFormControl from '../../Components/CustomFormControl';
 import DocumentDisplay from "../../Components/DocumentDisplay";
 import FieldDisplay from "../../Components/FieldDisplay";
 import { Stars } from "../../Components/StarDisplay";
 import StatDisplay from "../../Components/StatDisplay";
 import { StatIconEle } from "../../Components/StatIcon";
-import Conditional from "../../Conditional/Conditional";
 import { ascensionMaxLevel, milestoneLevels } from "../../Data/CharacterData";
 import Stat from "../../Stat";
 import { ICharacter } from "../../Types/character";
 import { allElements, allRarities } from "../../Types/consts";
-import ICalculatedStats from "../../Types/ICalculatedStats";
-import { IConditionals } from "../../Types/IConditional";
+import { ICalculatedStats } from "../../Types/stats";
 import statsToFields from "../../Util/FieldUtil";
 import { usePromise } from "../../Util/ReactUtil";
 import { clamp } from "../../Util/Util";
@@ -155,7 +152,6 @@ function WeaponStatsEditorCard({ characterSheet, weaponSheet, editable, characte
   const weaponDisplaySubVal = weaponSheet.getSubStatValue(level, ascension)
   const weaponPassiveName = weaponSheet.passiveName
   const weaponBonusStats = weaponSheet.stats(build)
-  const conditionals = Conditional.conditionals.weapon[weapon.key] as IConditionals
   const document = weaponSheet.document
   return <Card bg="lightcontent" text={"lightfont" as any} className="mb-2">
     <Card.Header>
@@ -216,10 +212,6 @@ function WeaponStatsEditorCard({ characterSheet, weaponSheet, editable, characte
           <div className="mb-2">{weaponPassiveName && weaponSheet.passiveDescription(build)}</div>
           <WeaponStatsCard title={"Main Stats"} statsVals={{ atk: weaponDisplayMainVal, [substatKey]: substatKey ? weaponDisplaySubVal : undefined }} stats={build} />
           <WeaponStatsCard title={"Bonus Stats"} statsVals={weaponBonusStats} stats={build} />
-          {/* TODO: remove conditionals display here in lieu of document once sheets are converted*/}
-          {!Boolean(document) && Boolean(conditionals) && Object.entries(conditionals).map(([stateKey, conditional]) =>
-            <ConditionalDisplay key={stateKey as any} {...{ conditional, equippedBuild, newBuild, characterDispatch, editable }} fieldClassName="py-2 px-3" />)}
-
           {document ? <DocumentDisplay {...{ sections: document, equippedBuild, newBuild, characterDispatch, editable }} /> : null}
         </Col>
       </Row>

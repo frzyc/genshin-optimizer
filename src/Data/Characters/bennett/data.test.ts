@@ -1,3 +1,5 @@
+import { KeyPath } from "../../../Util/KeyPathUtil"
+import { FormulaPathBase } from "../../formula"
 import { applyArtifacts, computeAllStats, createProxiedStats, parseTestFlexObject } from "../TestUtils"
 import formula, { data } from "./data"
 
@@ -55,7 +57,7 @@ describe("Testing Bennett's Formulas (Mabmab#6492)", () => {
     describe("no crit burst hit", () => {
       beforeEach(() => {
         setupStats.hitMode = "hit"
-        setupStats.modifiers = { finalATK: { baseATK: (data.burst.atkRatio[4 - 1] + 20) / 100, } }
+        setupStats.modifiers = { finalATK: [KeyPath<FormulaPathBase, any>().character.bennett.burst.atkBonus()] }
       })
       test("hit", () => {
         const stats = computeAllStats(setupStats)
@@ -103,7 +105,7 @@ describe("Testing Bennett's Formulas (Mabmab#6492)", () => {
     describe("crit burst hit", () => {
       beforeEach(() => {
         setupStats.hitMode = "critHit"
-        setupStats.modifiers = { finalATK: { baseATK: (data.burst.atkRatio[4 - 1] + 20) / 100, } }
+        setupStats.modifiers = { finalATK: [KeyPath<FormulaPathBase, any>().character.bennett.burst.atkBonus()] }
       })
       test("hit", () => {
         const stats = computeAllStats(setupStats)

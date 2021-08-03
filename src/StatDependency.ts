@@ -1,12 +1,12 @@
-import { Formulas, StatData } from "./StatData"
-import { Modifier } from "./Types/ICalculatedStats"
+import Formula from "./Formula"
+import { Formulas, getStage, StatData } from "./StatData"
+import { IBaseStat } from "./Types/character"
+import { Modifier } from "./Types/stats"
 
 // Generate a statKey dependency, to reduce build generation calculation on a single stat.
-function GetFormulaDependency(formula: (s, c) => number) {
+function GetFormulaDependency(formula: (s) => number) {
   const dependency: Set<string> = new Set()
-  formula(
-    new Proxy({}, { get: (target, prop, receiver) => { dependency.add(prop.toString()) } }),
-    new Proxy({}, { get: (target, prop, receiver) => { dependency.add(prop.toString()) } }))
+  formula(new Proxy({}, { get: (target, prop, receiver) => { dependency.add(prop.toString()) } }))
   return [...dependency]
 }
 const formulaKeyDependency = Object.freeze(Object.fromEntries(
@@ -28,25 +28,25 @@ if (process.env.NODE_ENV === "development") {
   )
 }
 
-function GetDependencies(modifiers: Modifier = {}, keys = Object.keys(StatData)) {
-  let dependencies: Set<string> = new Set()
-  keys.forEach(key => InsertDependencies(key, modifiers, dependencies))
-  return [...dependencies]
+function GetDependencies(baseStat: IBaseStat, modifiers: Modifier = {}, keys = Object.keys(StatData)): Dependencies {
+  const found = new Set<string>()
+  const dependencies = [new Set<string>(), new Set<string>()]
+  keys.forEach(key => InsertDependencies(baseStat, key, modifiers, dependencies, found))
+  return dependencies.flatMap(dep => [...dep])
 }
-function InsertDependencies(key: string, modifiers: Modifier, dependencies: Set<string>) {
-  if (dependencies.has(key)) return
-  formulaKeyDependency[key]?.forEach(k => InsertDependencies(k, modifiers, dependencies))
-  Object.keys(modifiers[key] ?? {}).forEach(k => InsertDependencies(k, modifiers, dependencies))
-  dependencies.add(key)
+function InsertDependencies(baseStat: IBaseStat, key: string, modifiers: Modifier, dependencies: Set<string>[], found: Set<string>) {
+  if (found.has(key)) return
+  found.add(key)
+
+  formulaKeyDependency[key]?.forEach(k => InsertDependencies(baseStat, k, modifiers, dependencies, found));
+  (modifiers[key] ?? []).forEach(path => Formula.getCurrent(path, baseStat)[1].forEach(k =>
+    InsertDependencies(baseStat, k, modifiers, dependencies, found)))
+  dependencies[getStage(key)].add(key)
 }
 
-//if the optimizationTarget is in the form of {dmg:0.6}, it can be reduced to "dmg" for the purpose to build generation.
-const reduceOptimizationTarget = (optimizationTarget) =>
-  (typeof optimizationTarget === "object" && Object.keys(optimizationTarget).length === 1 && typeof optimizationTarget[Object.keys(optimizationTarget)[0] as any] === "number") ? Object.keys(optimizationTarget)[0] : optimizationTarget
-
+type Dependencies = string[]
 
 export {
   GetFormulaDependency,
   GetDependencies,
-  reduceOptimizationTarget,
 }

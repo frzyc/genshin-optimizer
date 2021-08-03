@@ -431,7 +431,7 @@ function parseSetKeys(texts: string[], sheets): Set<ArtifactSetKey> {
   const results = new Set<ArtifactSetKey>([])
   for (const text of texts)
     for (const key of allArtifactSets)
-      if (hammingDistance(text.replace(/\W/g, ''), sheets[key].name.replace(/\W/g, '')) <= 2)
+      if (hammingDistance(text.replace(/\W/g, ''), sheets[key].nameRaw.replace(/\W/g, '')) <= 2)
         results.add(key)
   return results
 }

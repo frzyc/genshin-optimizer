@@ -4,7 +4,7 @@ import React, { useContext, useMemo } from 'react';
 import { ListGroup, OverlayTrigger, Tooltip } from "react-bootstrap";
 import Character from "../Character/Character";
 import { compareAgainstEquippedContext } from "../Character/CharacterDisplayCard";
-import ICalculatedStats from "../Types/ICalculatedStats";
+import { ICalculatedStats } from "../Types/stats";
 import { IFieldDisplay } from "../Types/IFieldDisplay";
 
 export default function FieldDisplay({ field, index, equippedBuild, newBuild, className = "p-2" }: { field: IFieldDisplay, index: number, equippedBuild?: ICalculatedStats, newBuild?: ICalculatedStats, className?: string }) {

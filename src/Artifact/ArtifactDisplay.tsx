@@ -23,6 +23,7 @@ import ArtifactEditor from './ArtifactEditor';
 import { ArtifactSheet } from './ArtifactSheet';
 import SlotNameWithIcon from './Component/SlotNameWIthIcon';
 import { database } from '../Database/Database';
+import ArtifactSetDropDownMenuFragment from './Component/ArtifactSetDropDownMenuFragment';
 
 const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
 const sortKeys = ["quality", "level", "efficiency", "mefficiency"]
@@ -212,16 +213,8 @@ export default function ArtifactDisplay(props) {
               </Dropdown.Toggle>
               <Dropdown.Menu>
                 <Dropdown.Item onClick={() => filterDispatch({ filterArtSetKey: "" })}><Trans t={t} i18nKey="ui:unselect" >Unselect</Trans></Dropdown.Item>
-                {artifactSheets && ArtifactSheet.namesByMaxRarities(artifactSheets).map(([star, sets]) =>
-                  <React.Fragment key={star}>
-                    <Dropdown.Divider />
-                    <Dropdown.ItemText>Max Rarity <Stars stars={star} /></Dropdown.ItemText>
-                    {sets.map(([key, name]) =>
-                      <Dropdown.Item key={key} onClick={() => filterDispatch({ filterArtSetKey: key })}>
-                        {name}
-                      </Dropdown.Item>)}
-                  </React.Fragment>
-                )}
+                <Dropdown.Divider />
+                <ArtifactSetDropDownMenuFragment sheets={artifactSheets} click={(filterArtSetKey => filterDispatch({ filterArtSetKey }))} />
               </Dropdown.Menu>
             </Dropdown>
 

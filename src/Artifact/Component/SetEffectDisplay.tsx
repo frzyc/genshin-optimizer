@@ -1,21 +1,30 @@
 import { Badge, Card, ListGroup } from "react-bootstrap"
-import ConditionalDisplay from "../../Components/ConditionalDisplay"
+import DocumentDisplay from "../../Components/DocumentDisplay"
 import FieldDisplay from "../../Components/FieldDisplay"
 import { ArtifactSetKey, SetNum } from "../../Types/consts"
-import ICalculatedStats from "../../Types/ICalculatedStats"
+import { ICalculatedStats } from "../../Types/stats"
 import statsToFields from "../../Util/FieldUtil"
 import { usePromise } from "../../Util/ReactUtil"
 import { ArtifactSheet } from "../ArtifactSheet"
+
+type Data = {
+  setKey: ArtifactSetKey,
+  setNumKey: SetNum,
+  editable: boolean,
+  newBuild?: ICalculatedStats,
+  equippedBuild?: ICalculatedStats
+  characterDispatch: (arg0: any) => void,
+}
 
 export default function SetEffectDisplay({ setKey, setNumKey, equippedBuild, newBuild, editable, characterDispatch }: Data) {
   const sheet = usePromise(ArtifactSheet.get(setKey), [setKey])
   if (!sheet) return null
 
   const stats = newBuild ?? equippedBuild!
-  const setEffectText = sheet.setEffectTexts(setNumKey, stats)
+  const setEffectText = sheet.setEffectDesc(setNumKey)
   const setStats = sheet.setNumStats(setNumKey, stats)
   const setStatsFields = statsToFields(setStats, stats)
-  const conditionals = sheet.setEffectConditionals(setNumKey, stats)
+  const document = sheet.setEffectDocument(setNumKey)
   return <>
     <Card bg="darkcontent" text={"lightfont" as any} className="mb-2 w-100" >
       <Card.Header className="p-2">
@@ -25,15 +34,6 @@ export default function SetEffectDisplay({ setKey, setNumKey, equippedBuild, new
         {setStatsFields.map((field, i) => <FieldDisplay key={i} index={i} {...{ field, equippedBuild, newBuild }} />)}
       </ListGroup>
     </Card>
-    {Boolean(conditionals) && Object.entries(conditionals!).map(([ckey, conditional]) => <ConditionalDisplay key={ckey as any} {...{ conditional, equippedBuild, newBuild, characterDispatch, editable }} />)}
+    {document ? <DocumentDisplay {...{ sections: document, equippedBuild, newBuild, characterDispatch, editable }} /> : null}
   </>
-}
-
-type Data = {
-  setKey: ArtifactSetKey,
-  setNumKey: SetNum,
-  editable: boolean,
-  newBuild?: ICalculatedStats,
-  equippedBuild?: ICalculatedStats
-  characterDispatch: (arg0: any) => void,
 }

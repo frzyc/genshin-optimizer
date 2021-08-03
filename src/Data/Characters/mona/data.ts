@@ -1,3 +1,4 @@
+import { IFormulaSheet } from "../../../Types/character"
 import { basicDMGFormula } from "../../../Util/FormulaUtil"
 
 export const data = {
@@ -27,7 +28,7 @@ export const data = {
     omen_duration: [4, 4, 4, 4.5, 4.5, 4.5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
   }
 }
-const formula = {
+const formula: IFormulaSheet = {
   normal: Object.fromEntries(data.normal.hitArr.map((arr, i) =>
     [i, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "normal")])),
   charged: Object.fromEntries(Object.entries(data.charged).map(([name, arr]) =>
@@ -41,6 +42,9 @@ const formula = {
   },
   passive1: {
     dmg: stats => basicDMGFormula(data.skill.dmg[stats.tlvl.skill] / 2, stats, "skill"),
+  },
+  passive2: {
+    bonus: stats => [s => s.enerRech_ * 0.2, ["enerRech_"]]
   }
 }
 export default formula

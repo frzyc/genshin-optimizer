@@ -2,9 +2,9 @@ import Artifact from "../../Artifact/Artifact"
 import { parseFlexObj } from "../../FlexPage/FlexUtil"
 import { PreprocessFormulas, StatData } from "../../StatData"
 import { GetDependencies } from "../../StatDependency"
+import { ICalculatedStats } from "../../Types/stats"
 
-
-export const createProxiedStats = (baseStats) => new Proxy({ ...baseStats }, {
+export const createProxiedStats = (baseStats: Partial<ICalculatedStats>) => new Proxy({ ...baseStats }, {
   get: (target, property: string) => {
     if (!(property in StatData) && !(property in target)) throw property
     return target[property] ?? StatData[property].default ?? 0
@@ -18,8 +18,9 @@ export function applyArtifacts(stats, artifacts) {
 }
 export function computeAllStats(baseStats) {
   const stats = { ...baseStats }
-  PreprocessFormulas(GetDependencies(stats.modifiers), stats).formula(stats)
-  return stats
+  const { initialStats, formula } = PreprocessFormulas(GetDependencies(stats, stats.modifiers), stats)
+  formula(initialStats)
+  return { ...stats, ...initialStats }
 }
 
 export function parseTestFlexObject(url) {

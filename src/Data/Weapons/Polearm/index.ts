@@ -37,5 +37,5 @@ const polearm = {
   StaffOfHoma,
   VortexVanquisher,
   WhiteTassel,
-}
+} as const
 export default polearm

@@ -20,9 +20,10 @@ describe('Substat Rolls/efficiency', () => {
       expect(Artifact.getSubstatRolls("def_", 11.1, 4)).toEqual([[5.25, 5.83]])
     })
     test('should get multiple rolls with multiple options', () => {
-      expect(Artifact.getSubstatRolls("critDMG_", 32.6, 5)).toEqual(expect.arrayContaining([
-        [5.44, 6.22, 6.99, 6.99, 6.99], [5.44, 5.44, 5.44, 5.44, 5.44, 5.44]
-      ]))
+      const rolls = Artifact.getSubstatRolls("critDMG_", 32.6, 5)
+      expect(rolls.length).toBeGreaterThan(1)
+      rolls.forEach(roll =>
+        expect(roll.reduce((a, b) => a + b).toFixed(1)).toEqual("32.6"))
     })
     test('should reject close rolls', () => {
       // 31.9 - 32.6
@@ -42,8 +43,8 @@ describe('Substat Rolls/efficiency', () => {
   })
   describe('Artifact.getSubstatEfficiency()', () => {
     test('should deal with one roll', () => {
-      expect(Artifact.getSubstatEfficiency("def_", [7.29])).toEqual(100)
-      expect(Artifact.getSubstatEfficiency("def_", [7.29 / 2])).toEqual(100 / 2)
+      expect(Artifact.getSubstatEfficiency("def_", [0.0729 * 100])).toEqual(100)
+      expect(Artifact.getSubstatEfficiency("def_", [0.0729 * 100 / 2])).toEqual(100 / 2)
     })
     test('should deal with invalids', () => {
       expect(Artifact.getSubstatEfficiency("def_", [9999])).toEqual(100)
@@ -57,6 +58,6 @@ test('getAllArtifactSetEffectsObj', async () => {
   const sheets = await ArtifactSheet.getAll()
   const stats1 = {}
   expect(Artifact.setEffectsObjs(sheets, stats1 as any).RetracingBolide).toEqual({ 2: { powShield_: 35 } })
-  const stats2 = { conditionalValues: { artifact: { RetracingBolide: { set4: [1] } } } }
+  const stats2 = { conditionalValues: { artifact: { RetracingBolide: { 4: [1] } } } }
   expect(Artifact.setEffectsObjs(sheets, stats2 as any).RetracingBolide).toEqual({ 2: { powShield_: 35 }, 4: { normal_dmg_: 40, charged_dmg_: 40 } })
 })

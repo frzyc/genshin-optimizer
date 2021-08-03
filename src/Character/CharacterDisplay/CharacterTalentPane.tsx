@@ -8,7 +8,7 @@ import FieldDisplay from "../../Components/FieldDisplay";
 import Stat from "../../Stat";
 import { ElementToReactionKeys } from "../../StatData";
 import { ICharacter } from "../../Types/character";
-import ICalculatedStats from "../../Types/ICalculatedStats";
+import { ICalculatedStats } from "../../Types/stats";
 import statsToFields from "../../Util/FieldUtil";
 import CharacterSheet from "../CharacterSheet";
 type CharacterTalentPaneProps = {

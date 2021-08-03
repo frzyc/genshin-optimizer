@@ -1,5 +1,8 @@
 import { StatData } from "./StatData"
 import { hitTypes, hitMoves, hitElements, transformativeReactions, amplifyingReactions } from "./StatConstants"
+import { usePromise } from "./Util/ReactUtil";
+import { evalIfFunc } from "./Util/Util";
+import Formula from "./Formula";
 
 export default class Stat {
   //do not instantiate.
@@ -29,37 +32,50 @@ export default class Stat {
     let unit = Stat.getStatUnit(key)
     return unit === "%" ? 1 : 0
   }
-  static printStat = (statKey, stats) =>
-    f({ stats, expand: false }, statKey)
+  static printStat = (statKey, stats, premod = false) =>
+    f({ stats, expand: false, premod }, statKey)
 
   static getPrintableFormulaStatKeyList = (statList: any[] = [], modifiers = {}) => {
     let keys = new Set([...Object.keys(FormulaText), ...Object.keys(modifiers)])
     return statList.filter(key => keys.has(key))
   }
-
-  static printFormula = (statKey, stats, modifiers = {}, expand = true) => {
-    const modifierText = Object.entries(modifiers?.[statKey] ?? []).map(([mkey, multiplier]) =>
-      <span key={statKey + mkey} className="text-nowrap"> + {Stat.printStat(mkey, stats)} * {(multiplier as any)?.toFixed?.(3) ?? multiplier}</span>)
-    if (typeof FormulaText?.[statKey] === "function")
-      return <span>{FormulaText[statKey]({ stats, expand })}{modifierText}</span>
-    else
-      return <span>Basic Stats from artifacts/weapon{modifierText}</span>
-  }
 }
 //generate html tags based on tagged variants of the statData
 const htmlStatsData = Object.fromEntries(Object.entries(StatData).filter(([key, obj]) => obj.variant).map(([key, obj]) => [key, (<span className={`text-${obj.variant} text-nowrap`}>{obj.name}</span>)]))
 
+const ModFormula = ({ path, stats }) => {
+  const formula = usePromise(Formula.get(path), [path]) as any
+  if (!formula?.field?.formulaText) return null
+  const ret = evalIfFunc(formula.field.formulaText, stats) as JSX.Element
+  return ret
+}
+export function FormulaDisplay({ statKey, stats, modifiers = {}, expand = true }) {
+  if (modifiers[statKey]) {
+    const modifierText = (modifiers?.[statKey] ?? []).map(path =>
+      <span key={path.join()}> + <ModFormula path={path} stats={stats} /></span>)
+    if (typeof FormulaText?.[statKey] === "function")
+      return <span>{FormulaText[statKey]({ stats, expand, premod: true })}{modifierText} </span>
+    else
+      return <span>{f({ stats, premod: true }, statKey)}{modifierText} </span>
+  }
+
+  if (typeof FormulaText?.[statKey] === "function")
+    return FormulaText[statKey]({ stats, expand })
+  else return null
+}
+
 function f(options, statKey) {
-  let { stats, expand = true } = options
+  let { stats, expand = true, premod = false } = options
   if (!stats) return
   if (expand && FormulaText?.[statKey])
     return <span>( {FormulaText[statKey](options)} )</span>
   let statName = Stat.getStatNamePretty(statKey)
   let statUnit = Stat.getStatUnit(statKey)
   let fixedUnit = Stat.fixedUnit(statKey)
-  let value = stats?.[statKey]?.toFixed?.(fixedUnit) || stats?.[statKey]
+  const value = (premod ? stats?.premod?.[statKey] : undefined) ?? stats?.[statKey]
+  const printValue = value?.toFixed?.(fixedUnit) || value
   const debug = process.env.NODE_ENV === "development" ? <code className="text-warning"> {statKey}</code> : null
-  return <span className="text-nowrap"><b>{statName}</b>{debug} <span className="text-info">{value}{statUnit}</span></span>
+  return <span className="text-nowrap"><b>{statName}</b>{debug} <span className="text-info">{printValue}{statUnit}</span></span>
 }
 
 export const FormulaText = {

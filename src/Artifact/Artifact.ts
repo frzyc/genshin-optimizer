@@ -1,12 +1,16 @@
-import { ArtifactMainStatsData, ArtifactSlotsData, ArtifactStarsData, ArtifactSubstatMaxRollEfficiency, ArtifactSubstatMaxRolls, ArtifactSubstatsData } from '../Data/ArtifactData';
-import { ArtifactSubstatLookupTable } from '../Data/ArtifactLookupTable';
+import { ArtifactSlotsData, ArtifactStarsData } from '../Data/ArtifactData';
 import Stat from '../Stat';
 import { clampPercent, deepClone, evalIfFunc } from '../Util/Util';
-import { allSubstats, CompressMainStatKey, IArtifact, MainStatKey, StatDict, SubstatKey } from '../Types/artifact';
-import { SlotKey, Rarity, ArtifactSetKey, allSlotKeys, SetNum } from '../Types/consts';
-import ICalculatedStats from '../Types/ICalculatedStats';
+import { allSubstats, IArtifact, MainStatKey, SubstatKey } from '../Types/artifact';
+import { SlotKey, Rarity, ArtifactSetKey, allSlotKeys, SetNum, allRarities } from '../Types/consts';
+import { BonusStats, ICalculatedStats } from '../Types/stats';
 import { ArtifactSheet } from './ArtifactSheet';
 import Conditional from '../Conditional/Conditional';
+import { ArtifactSetEffects } from '../Types/Build';
+import { mergeStats } from '../Util/StatUtil';
+import ArtifactMainStatsData from './artifact_main_gen.json'
+import ArtifactSubstatsData from './artifact_sub_gen.json'
+import ArtifactSubstatLookupTable from './artifact_sub_rolls_gen.json'
 
 const maxStar: Rarity = 5
 
@@ -20,25 +24,23 @@ export default class Artifact {
   static slotMainStats = (slotKey: SlotKey): readonly MainStatKey[] =>
     ArtifactSlotsData[slotKey].stats
 
-  static setEffectsObjs = (artifactSheets: StrictDict<ArtifactSetKey, ArtifactSheet>, stats: ICalculatedStats): Dict<ArtifactSetKey, Dict<SetNum, StatDict>> => {
-    const result: Dict<ArtifactSetKey, Dict<SetNum, StatDict>> = {};
+  static setEffectsObjs = (artifactSheets: StrictDict<ArtifactSetKey, ArtifactSheet>, stats: ICalculatedStats): ArtifactSetEffects => {
+    const result: ArtifactSetEffects = {};
     //accumulate the non-conditional stats
     Object.entries(artifactSheets).forEach(([setKey, setObj]) => {
-      const setEffect: Dict<SetNum, StatDict> = {}
-      Object.entries(setObj.setEffects).forEach(([setNumKey, setEffectObj]) => {
-        const setStats = evalIfFunc(setEffectObj.stats, stats)
+      const setEffect: Dict<SetNum, BonusStats> = {}
+      Object.entries(setObj.setEffects).forEach(([setNumKey, entry]) => {
+        const setStats = evalIfFunc(entry.stats, stats)
         if (setStats) setEffect[setNumKey] = deepClone(setStats)
       })
       if (Object.keys(setEffect).length > 0)
         result[setKey] = setEffect;
     })
-    Conditional.parseConditionalValues({ artifact: stats.conditionalValues?.artifact }, (conditional, conditionalValue, [, setKey]) => {
-      const { setNumKey } = conditional
+    Conditional.parseConditionalValues({ artifact: stats.conditionalValues?.artifact }, (conditional, conditionalValue, [, setKey, setNumKey]) => {
       const { stats: condStats } = Conditional.resolve(conditional, stats, conditionalValue)
       result[setKey] ?? (result[setKey] = {})
       result[setKey][setNumKey] ?? (result[setKey][setNumKey] = {})
-      Object.entries(condStats).forEach(([statKey, value]) =>
-        result[setKey][setNumKey][statKey] = (result[setKey][setNumKey][statKey] ?? 0) + value)
+      mergeStats(result[setKey][setNumKey], condStats)
     })
     return result
   }
@@ -49,9 +51,9 @@ export default class Artifact {
 
   //MAIN STATS
   static mainStatValues = (numStar: Rarity, statKey: MainStatKey): readonly number[] => {
-    if (statKey.endsWith("_dmg_") && statKey !== "physical_dmg_")
-      return ArtifactMainStatsData[numStar]["ele_dmg_"]
-    return ArtifactMainStatsData[numStar][statKey as CompressMainStatKey]
+    if (statKey.endsWith('_')) // TODO: % CONVERSION
+      return ArtifactMainStatsData[numStar][statKey].map(k => k * 100)
+    return ArtifactMainStatsData[numStar][statKey]
   }
   static mainStatValue = (key: MainStatKey, numStars: Rarity, level: number): number =>
     Artifact.mainStatValues(numStars, key)[level]
@@ -60,22 +62,34 @@ export default class Artifact {
   static rollInfo = (rarity: Rarity): { low: number, high: number, numUpgrades: number } =>
     ArtifactStarsData[rarity]
 
-  static maxSubstatValues = (statKey: SubstatKey, numStars = maxStar): number =>
-    ArtifactSubstatMaxRolls[numStars][statKey]
-  static maxSubstatRollEfficiency = (numStar: Rarity): number =>
-    ArtifactSubstatMaxRollEfficiency[numStar]
+  static maxSubstatValues = (substatKey: SubstatKey, numStars = maxStar): number => {
+    if (substatKey.endsWith("_")) // TODO: % CONVERSION
+      return Math.max(...ArtifactSubstatsData[numStars][substatKey]) * 100
+    return Math.max(...ArtifactSubstatsData[numStars][substatKey])
+  }
+
+  static maxSubstatRollEfficiency = Object.fromEntries(allRarities.map(rarity =>
+    [rarity, Math.max(...allSubstats.map(substat =>
+      Artifact.maxSubstatValues(substat, rarity) /
+      Artifact.maxSubstatValues(substat, maxStar)))]))
   static getSubstatKeys = (): readonly SubstatKey[] =>
     allSubstats
   static totalPossibleRolls = (numStars: Rarity): number =>
     ArtifactStarsData[numStars].high + ArtifactStarsData[numStars].numUpgrades
   static rollsRemaining = (level: number, numStars: Rarity) =>
     Math.ceil((numStars * 4 - level) / 4)
-  static getSubstatRollData = (substatKey: SubstatKey, numStars: Rarity) =>
-    ArtifactSubstatsData[substatKey][numStars]!
+  static getSubstatRollData = (substatKey: SubstatKey, numStars: Rarity) => {
+    if (substatKey.endsWith("_")) // TODO: % CONVERSION
+      return ArtifactSubstatsData[numStars][substatKey].map(v => v * 100)
+    return ArtifactSubstatsData[numStars][substatKey]
+  }
+
   static getSubstatRolls = (substatKey: SubstatKey, substatValue: number, numStars: Rarity): number[][] => {
     const rollData = Artifact.getSubstatRollData(substatKey, numStars)
-    const table = ArtifactSubstatLookupTable[substatKey][numStars]
-    const lookupValue = substatValue.toFixed(1)
+    const table = ArtifactSubstatLookupTable[numStars][substatKey]
+    const lookupValue = Math.round(substatKey.endsWith('_')
+      ? (substatValue * 10) // TODO: % CONVERSION
+      : substatValue)
     return table[lookupValue]?.map(roll => roll.map(i => rollData[i])) ?? []
   }
   static getSubstatEfficiency = (substatKey: SubstatKey | "", rolls: number[]): number => {
@@ -171,8 +185,8 @@ export default class Artifact {
     const matchedSlotCount = substats.filter(s => s.key && filter.has(s.key)).length
     const unusedFilterCount = filter.size - matchedSlotCount
     let maximum
-    if (emptySlotCount && unusedFilterCount) maximum = current + Artifact.maxSubstatRollEfficiency(numStars) * rollsRemaining // Rolls into good empty slot
-    else if (matchedSlotCount) maximum = current + Artifact.maxSubstatRollEfficiency(numStars) * (rollsRemaining - emptySlotCount) // Rolls into existing matched slot
+    if (emptySlotCount && unusedFilterCount) maximum = current + Artifact.maxSubstatRollEfficiency[numStars] * rollsRemaining // Rolls into good empty slot
+    else if (matchedSlotCount) maximum = current + Artifact.maxSubstatRollEfficiency[numStars] * (rollsRemaining - emptySlotCount) // Rolls into existing matched slot
     else maximum = current // No possible roll
 
     const currentEfficiency = current / totalRolls

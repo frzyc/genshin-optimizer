@@ -10,7 +10,7 @@ export async function randomizeArtifact(): Promise<IArtifact> {
     const set = getRandomElementFromArray(allArtifactSets)
     const sheet = await ArtifactSheet.get(set)!
     const rarity = getRandomElementFromArray(sheet.rarity)
-    const slot = getRandomElementFromArray(Object.keys(sheet.slotNames))
+    const slot = getRandomElementFromArray(sheet.slots)
     const mainStatKey = getRandomElementFromArray(Artifact.slotMainStats(slot))
     const level = getRandomIntInclusive(0, rarity * 4)
     const substats: Substat[] = [0, 1, 2, 3].map(i => ({ key: "", value: 0 }))

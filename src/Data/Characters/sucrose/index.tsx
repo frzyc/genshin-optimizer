@@ -42,6 +42,19 @@ const conditionals: IConditionals = {
         variant: eleKey
       }]
     }]))
+  },
+  a4: {
+    name: "When Skill hits opponent",
+    fields: [{
+      text: "Elemental Mastery Bonus",
+      formulaText: stats => <span>20% {Stat.printStat("eleMas", stats, true)}</span>,
+      formula: formula.passive2.em
+    }, {
+      text: <span className="text-warning">Does not apply to Sucrose</span>
+    }, {
+      text: "Duration",
+      value: "8s"
+    }]
   }
 }
 const char: ICharacterSheet = {
@@ -110,7 +123,14 @@ const char: ICharacterSheet = {
         }]
       },
       passive1: talentTemplate("passive1", tr, passive1),
-      passive2: talentTemplate("passive2", tr, passive2),
+      passive2: {
+        name: tr("passive2.name"),
+        img: passive2,
+        sections: [{
+          text: tr("passive2.description"),
+          conditional: conditionals.a4
+        }]
+      },
       passive3: talentTemplate("passive3", tr, passive3),
       constellation1: talentTemplate("constellation1", tr, c1),
       constellation2: talentTemplate("constellation2", tr, c2),

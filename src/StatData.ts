@@ -1,6 +1,8 @@
 import { clamp } from "./Util/Util";
 import { hitTypes, hitMoves, hitElements, transformativeReactions, amplifyingReactions, transformativeReactionLevelMultipliers, crystalizeLevelMultipliers } from "./StatConstants"
-import ICalculatedStats from "./Types/ICalculatedStats";
+import { ICalculatedStats } from "./Types/stats";
+import { mergeStats } from "./Util/StatUtil";
+import Formula from "./Formula";
 
 export interface StatItem {
   name: string, pretty?: string, const?: boolean, default?: any, variant?: string,
@@ -86,27 +88,27 @@ const StatData: { [stat: string]: StatItem } = {
   skillBoost: { name: "Ele. Skill Level Boost", const: true, },
   burstBoost: { name: "Ele. Burst Level Boost", const: true, },
 }
-const Formulas: Dict<string, (s, c) => number> = {
+const Formulas: Dict<string, (s: ICalculatedStats) => number> = {
   // Basic Stats
-  baseATK: (s, c) => c.characterATK + c.weaponATK,
-  finalATK: (s, c) => c.baseATK * (1 + s.atk_ / 100) + s.atk,
-  finalHP: (s, c) => c.characterHP * (1 + s.hp_ / 100) + s.hp,
-  finalDEF: (s, c) => c.characterDEF * (1 + s.def_ / 100) + s.def,
+  baseATK: (s) => s.characterATK + s.weaponATK,
+  finalATK: (s) => s.baseATK * (1 + s.atk_ / 100) + s.atk,
+  finalHP: (s) => s.characterHP * (1 + s.hp_ / 100) + s.hp,
+  finalDEF: (s) => s.characterDEF * (1 + s.def_ / 100) + s.def,
 
   critHit_base_multi: (s) => (1 + s.critDMG_ / 100),
 
-  enemyLevel_multi: (s, c) => (100 + c.characterLevel) / ((100 + c.characterLevel) + (100 + c.enemyLevel) * (1 - c.enemyDEFRed_ / 100)),
+  enemyLevel_multi: (s) => (100 + s.characterLevel) / ((100 + s.characterLevel) + (100 + s.enemyLevel) * (1 - s.enemyDEFRed_ / 100)),
 
   heal_multi: (s) => (1 + s.heal_ / 100 + s.incHeal_ / 100),
 
   // Reactions
-  transformative_level_multi: (s, c) => transformativeReactionLevelMultipliers[c.characterLevel],
+  transformative_level_multi: (s) => transformativeReactionLevelMultipliers[s.characterLevel],
   amplificative_dmg_: (s) => 2500 / 9 * s.eleMas / (1400 + s.eleMas),
   transformative_dmg_: (s) => 1600 * s.eleMas / (2000 + s.eleMas),
 
   crystalize_eleMas_: (s) => 4000 / 9 * s.eleMas / (1400 + s.eleMas),
-  crystalize_multi: (s, c) => crystalizeLevelMultipliers[c.characterLevel],
-  crystalize_hit: (s, c) => (100 + s.crystalize_dmg_ + s.crystalize_eleMas_) / 100 * c.crystalize_multi,
+  crystalize_multi: (s) => crystalizeLevelMultipliers[s.characterLevel],
+  crystalize_hit: (s) => (100 + s.crystalize_dmg_ + s.crystalize_eleMas_) / 100 * s.crystalize_multi,
 };
 
 ["pyro", "cryo", "electro", "hydro"].forEach(ele => {
@@ -152,7 +154,7 @@ Object.entries(hitElements).forEach(([ele, { name: eleName }]) => {
   StatData[`${ele}_enemyRes_multi`] = { name: `Enemy ${eleName} RES Multiplier`, unit: "multi", ...opt }
   StatData[`${ele}_bonus_multi`] = { name: `${eleName} Attack Bonus DMG Multiplier`, unit: "multi", ...opt }
 
-  Formulas[`${ele}_enemyRes_multi`] = (s, c) => c[`${ele}_enemyImmunity`] ? 0 : resMultiplier(s[`${ele}_enemyRes_`])
+  Formulas[`${ele}_enemyRes_multi`] = (s) => s[`${ele}_enemyImmunity`] ? 0 : resMultiplier(s[`${ele}_enemyRes_`])
 })
 
 Object.entries(hitMoves).forEach(([move, moveName]) => {
@@ -161,14 +163,14 @@ Object.entries(hitMoves).forEach(([move, moveName]) => {
   Object.entries(hitElements).forEach(([ele, { name: eleName }]) => {
     const opt = { variant: ele }
     StatData[`${ele}_${move}_hit_base_multi`] = { name: `${moveName} Base Multiplier`, unit: "multi", ...opt }
-    Formulas[`${ele}_${move}_hit_base_multi`] = (s, c) => (100 + s.dmg_ + s[`${ele}_dmg_`] + s[`${move}_dmg_`]) / 100
+    Formulas[`${ele}_${move}_hit_base_multi`] = (s) => (100 + s.dmg_ + s[`${ele}_dmg_`] + s[`${move}_dmg_`]) / 100
     Object.entries(hitTypes).forEach(([type, typeName]) => {
       StatData[`${ele}_${move}_${type}`] = { name: `${moveName} ${typeName}`, ...opt }
       Formulas[`${ele}_${move}_${type}`] = (s) => s.finalATK * s[`${ele}_${move}_${type}_multi`]
       StatData[`${ele}_${move}_${type}_multi`] = { name: `${moveName} ${typeName} Multiplier`, unit: "multi", ...opt }
     })
 
-    Formulas[`${ele}_${move}_hit_multi`] = (s, c) => s[`${ele}_${move}_hit_base_multi`] * c.enemyLevel_multi * s[`${ele}_enemyRes_multi`]
+    Formulas[`${ele}_${move}_hit_multi`] = (s) => s[`${ele}_${move}_hit_base_multi`] * s.enemyLevel_multi * s[`${ele}_enemyRes_multi`]
     Formulas[`${ele}_${move}_critHit_multi`] = (s) => s[`${ele}_${move}_hit_multi`] * s[`critHit_base_multi`]
     Formulas[`${ele}_${move}_avgHit_multi`] = (s) => s[`${ele}_${move}_hit_multi`] * s[`${move}_avgHit_base_multi`]
   })
@@ -178,17 +180,17 @@ Object.entries(transformativeReactions).forEach(([reaction, { name, multi, varia
   const opt = { variant: reaction }
   StatData[`${reaction}_dmg_`] = { name: `${name} DMG Bonus`, unit: "%", ...opt }
   StatData[`${reaction}_multi`] = { name: `${name} Multiplier`, unit: "multi", const: true, ...opt }
-  Formulas[`${reaction}_multi`] = (s, c) => multi * c.transformative_level_multi
+  Formulas[`${reaction}_multi`] = (s) => multi * s.transformative_level_multi
   if (variants.length === 1) {
     const [ele] = variants, opt = { variant: reaction }
     StatData[`${reaction}_hit`] = { name: `${name} DMG`, ...opt }
-    Formulas[`${reaction}_hit`] = (s, c) => (100 + s.transformative_dmg_ + s[`${reaction}_dmg_`]) / 100 * c[`${reaction}_multi`] * s[`${ele}_enemyRes_multi`]
+    Formulas[`${reaction}_hit`] = (s) => (100 + s.transformative_dmg_ + s[`${reaction}_dmg_`]) / 100 * s[`${reaction}_multi`] * s[`${ele}_enemyRes_multi`]
   } else {
     variants.forEach(ele => {
       const opt = { variant: ele }
 
       StatData[`${ele}_${reaction}_hit`] = { name: `${hitElements[ele].name} ${name} DMG`, ...opt }
-      Formulas[`${ele}_${reaction}_hit`] = (s, c) => (100 + s.transformative_dmg_ + s[`${reaction}_dmg_`]) / 100 * c[`${reaction}_multi`] * s[`${ele}_enemyRes_multi`]
+      Formulas[`${ele}_${reaction}_hit`] = (s) => (100 + s.transformative_dmg_ + s[`${reaction}_dmg_`]) / 100 * s[`${reaction}_multi`] * s[`${ele}_enemyRes_multi`]
     })
   }
 })
@@ -212,68 +214,59 @@ Object.entries(amplifyingReactions).forEach(([reaction, { name, variants }]) => 
 })
 if (process.env.NODE_ENV === "development") console.log(StatData)
 
+type KeyedFormula = [string, (s: ICalculatedStats) => number]
 //assume all the dependency for the modifiers are part of the dependencyKeys as well
-function PreprocessFormulas(dependencyKeys: string[], stats: ICalculatedStats, debug = false) {
-  const { modifiers = {} } = stats, initialStats = {}, constData = {}
-  const formulaList = dependencyKeys.map(key => {
-    const modifier = modifiers[key] ?? {}
-    const constModifier = Object.entries(modifier).filter(([k]) => StatData[k]?.const)
-    const dynamicModifier = Object.entries(modifier).filter(([k]) => !(StatData[k]?.const))
-    const constFunc = (s, c) => constModifier.reduce((accu, [k, m]) => accu + c[k] * m, 0)
-    const dynamicFunc = (s, c) => dynamicModifier.reduce((accu, [k, m]) => accu + s[k] * m, 0)
+function PreprocessFormulas(dependencyKeys: string[], stats: ICalculatedStats) {
+  const { modifiers = {} } = stats, initialStats = {} as ICalculatedStats
 
-    let funcIndicator = 0
-    if (constModifier.length) funcIndicator += 1
-    if (dynamicModifier.length) funcIndicator += 2
-    if (!Formulas[key]) funcIndicator += StatData[key]?.const ? 4 : 8
+  const preModFormulaList = dependencyKeys.map(key => {
+    if (getStage(key) !== 0)
+      return ["", () => 0] as KeyedFormula
 
-    let tmp: (s, c) => number
-    switch (funcIndicator) {
-      case 0: tmp = Formulas[key]!; break
-      case 1: tmp = (s, c) => Formulas[key]!(s, c) + constFunc(s, c); break
-      case 2: tmp = (s, c) => Formulas[key]!(s, c) + dynamicFunc(s, c); break
-      case 3: tmp = (s, c) => Formulas[key]!(s, c) + constFunc(s, c) + dynamicFunc(s, c); break
-      case 4: tmp = (s, c) => c[key]; break
-      case 5: tmp = (s, c) => c[key] + constFunc(s, c); break
-      case 6: tmp = (s, c) => c[key] + dynamicFunc(s, c); break
-      case 7: tmp = (s, c) => c[key] + constFunc(s, c) + dynamicFunc(s, c); break
-      case 8: tmp = (s, c) => s[key]; break
-      case 9: tmp = (s, c) => s[key] + constFunc(s, c); break
-      case 10: tmp = (s, c) => s[key] + dynamicFunc(s, c); break
-      default: tmp = (s, c) => s[key] + constFunc(s, c) + dynamicFunc(s, c); break
-    }
-    const func = tmp
+    if (key in Formulas)
+      return [key, Formulas[key]] as KeyedFormula
+    initialStats[key] = stats[key] ?? StatData[key]?.default ?? 0
+    return ["", () => 0] as KeyedFormula
+  }).filter(x => x[0])
 
-    if (debug) console.log(StatData[key]?.const ? "Const" : "Dynamic", key, constModifier, dynamicModifier, "" + Formulas[key])
+  const modFormula = Formula.computeModifier(stats, Object.fromEntries(Object.entries(modifiers)
+    .filter(([key]) => dependencyKeys.includes(key)) // Keep only relevant keys
+  ))
 
-    if (!(key in Formulas))
-      stats[key] = stats[key] ?? StatData[key]?.default ?? 0
+  const postModFormulaList = dependencyKeys.map(key => {
+    if (getStage(key) !== 1)
+      return ["", () => 0] as KeyedFormula
+
+    const func = Formulas[key]!
 
     if (StatData[key]?.const) {
-      constData[key] = stats[key]
-      constData[key] = func(stats, constData)
-      stats[key] = constData[key]
-      if (dynamicModifier.length)
-        console.error(`Constant key ${key} depends on a dynamic modifer ${dynamicModifier}. The result will be incorrect.`)
-      return undefined
+      initialStats[key] = func(initialStats)
+      return ["", () => 0] as KeyedFormula
     }
 
-    if (!(key in Formulas))
-      initialStats[key] = stats[key]
-
-    return [key, func]
-  }).filter(x => x) as [string, (s, c) => number][]
-
-  if (debug) console.log(initialStats, constData)
+    return [key, func] as KeyedFormula
+  }).filter(x => x[0])
 
   return {
-    initialStats,
-    formula: s => {
-      formulaList.forEach(([key, formula]) => s[key] = formula(s, constData))
-      // TODO: we shouldn't need to copy *all* constData, only ones that are targets.
-      Object.assign(s, constData)
+    initialStats: initialStats as ICalculatedStats,
+    formula: (s: ICalculatedStats) => {
+      preModFormulaList.forEach(([key, formula]) => s[key] = formula(s))
+
+      const modStats = Formula.computeModifier(s, s.modifiers)(s) // late-binding modifiers (arts mod)
+      mergeStats(modStats, modFormula(s))
+      s.premod = Object.fromEntries(Object.keys(modifiers).map(key => [key, s[key]]))
+      // Apply modifiers
+      mergeStats(s, modStats)
+      mergeStats(s, { modifiers })
+
+      postModFormulaList.forEach(([key, formula]) => s[key] = formula(s))
     }
   }
+}
+export function getStage(key: string): number {
+  return ((key in Formulas) && key !== "baseATK" && key !== "finalATK" && key !== "finalHP" && key !== "finalDEF")
+    ? 1 // postmod
+    : 0 // premod
 }
 
 export {

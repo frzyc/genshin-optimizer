@@ -1,5 +1,6 @@
 // @ts-nocheck
 // We "mock" artifacts here, which definitely won't pass type checking
+import { ArtifactSetEffects } from "../Types/Build"
 import { artifactSetPermutations, calculateTotalBuildNumber, artifactPermutations, getTalentStatKey, getTalentStatKeyVariant, pruneArtifacts } from "./Build"
 
 const dummyArtifact = (setKey, value) => { return { setKey, mainStatKey: "x", mainStatVal: value, substats: [] } }
@@ -251,6 +252,85 @@ describe('pruneArtifacts', () => {
     }]
     const stats = new Set(['cryo_enemyRes_'])
     expect(pruneArtifacts([...goodArtifact, ...badArtifact], {}, stats)).toEqual(goodArtifact)
+  })
+  test('should not cross prune artifacts with significant modifiers', () => {
+    const modArtifact = [{
+      id: 0, setKey: "EmblemOfSeveredFate",
+      mainStatKey: "atk", mainStatVal: 10,
+      substats: []
+    }]
+    const nonModArtifact = [{
+      id: 1, setKey: "Adventurer",
+      mainStatKey: "atk", mainStatVal: 11,
+      substats: []
+    }]
+    const stats = new Set(["atk"])
+
+    const setEffects1: ArtifactSetEffects = {
+      EmblemOfSeveredFate: { 4: { modifiers: { atk: { b: 0 } } } }
+    }
+    expect(pruneArtifacts([...modArtifact, ...nonModArtifact], setEffects1, stats)).toEqual([...modArtifact, ...nonModArtifact])
+
+    // non-significant modifiers
+    const setEffects2: ArtifactSetEffects = {
+      EmblemOfSeveredFate: { 4: { modifiers: { dmg_: { b: 0 } } } }
+    }
+    expect(pruneArtifacts([...modArtifact, ...nonModArtifact], setEffects2, stats)).toEqual(nonModArtifact)
+
+  })
+  test('should prune artifacts with modifiers in the same set', () => {
+    const modArtifact = [{
+      id: 0, setKey: "EmblemOfSeveredFate",
+      mainStatKey: "atk", mainStatVal: 10,
+      substats: []
+    }]
+    const betterArtifact = [{
+      id: 1, setKey: "EmblemOfSeveredFate",
+      mainStatKey: "atk", mainStatVal: 11,
+      substats: []
+    }]
+    const setEffects1: ArtifactSetEffects = {
+      EmblemOfSeveredFate: { 4: { modifiers: { atk: { b: 0 } } } }
+    }
+    const stats = new Set(["atk"])
+    expect(pruneArtifacts([...modArtifact, ...betterArtifact], setEffects1, stats)).toEqual(betterArtifact)
+  })
+  test('should not prune artifacts with different modifiers', () => {
+    const modArtifact1 = [{
+      id: 0, setKey: "EmblemOfSeveredFate",
+      mainStatKey: "atk", mainStatVal: 10,
+      substats: []
+    }]
+    const modArtifact2 = [{
+      id: 1, setKey: "EmblemOfSeveredFate1",
+      mainStatKey: "atk", mainStatVal: 11,
+      substats: []
+    }]
+    const setEffects1 = {
+      EmblemOfSeveredFate: { 4: { modifiers: { atk: { b: 0 } } } },
+      EmblemOfSeveredFate1: { 4: { modifiers: { atk: { b: 0 } } } }
+    }
+    const stats = new Set(["atk"])
+    // We can't prune either artifact here. The set effects could go in any direction.
+    expect(pruneArtifacts([...modArtifact1, ...modArtifact2], setEffects1, stats)).toEqual([...modArtifact1, ...modArtifact2])
+  })
+  test('should not prune artifact with non-numerical set effects', () => {
+    const modArtifact = [{
+      id: 0, setKey: "EmblemOfSeveredFate",
+      mainStatKey: "atk", mainStatVal: 10,
+      substats: []
+    }]
+    const nonModArtifact = [{
+      id: 1, setKey: "Adventurer",
+      mainStatKey: "atk", mainStatVal: 11,
+      substats: []
+    }]
+    const stats = new Set(["atk", "infusionSelf"])
+
+    const setEffects1: ArtifactSetEffects = {
+      EmblemOfSeveredFate: { 4: { infusionSelf: "pyro" } }
+    }
+    expect(pruneArtifacts([...modArtifact, ...nonModArtifact], setEffects1, stats)).toEqual([...modArtifact, ...nonModArtifact])
   })
 })
 

@@ -1,20 +1,22 @@
+import { ArtifactSheet } from "../Artifact/ArtifactSheet"
 import { database } from "../Database/Database"
 import { IArtifact } from "../Types/artifact"
 import { allSlotKeys, SlotKey } from "../Types/consts"
+import { mergeStats } from "../Util/StatUtil"
 import WeaponSheet from "../Weapon/WeaponSheet"
 import Character from "./Character"
 import CharacterSheet from "./CharacterSheet"
 
-describe('Character.mergeStats()', () => {
+describe('mergeStats()', () => {
   test('should merge stats', () => {
     const initial = { a: 1, b: 1 }, stats = { b: 1, c: 3 }
-    Character.mergeStats(initial, stats)
+    mergeStats(initial as any, stats as any)
     expect(initial).toEqual({ a: 1, b: 2, c: 3 })
   })
   test('should merge modifiers', () => {
-    const initial = { modifiers: { a: { b: 1, c: 1 } } }, stats = { modifiers: { a: { b: 1 }, d: { e: 1 } } }
-    Character.mergeStats(initial, stats)
-    expect(initial).toEqual({ modifiers: { a: { b: 2, c: 1 }, d: { e: 1 } } })
+    const initial = { modifiers: { a: [['string', 'b']] } }, stats = { modifiers: { a: [['string', 'a']], d: [['path', 'b']] } }
+    mergeStats(initial as any, stats as any)
+    expect(initial).toEqual({ modifiers: { a: [['string', 'b'], ['string', 'a']], d: [['path', 'b']] } })
   })
 })
 
@@ -24,6 +26,7 @@ describe('Character.getDisplayStatKeys()', () => {
   beforeEach(() => database.updateChar({ characterKey, levelKey: "L60A", weapon: { key: "Whiteblind" } } as any))
   afterEach(() => localStorage.clear())
   test('should get statKeys for characters with finished talent page', async () => {
+    const artifactsheets = await ArtifactSheet.getAll()
     const character = database._getChar(characterKey)
     const characterSheet = await CharacterSheet.get(characterKey)
     expect(character).toBeTruthy()
@@ -31,9 +34,9 @@ describe('Character.getDisplayStatKeys()', () => {
     const weaponSheet = await WeaponSheet.get(character.weapon.key)
     expect(characterSheet).toBeInstanceOf(CharacterSheet)
     expect(weaponSheet).toBeInstanceOf(WeaponSheet)
-    if (!characterSheet || !weaponSheet) return
+    if (!characterSheet || !weaponSheet || !artifactsheets) return
     const initialStats = Character.createInitialStats(character, characterSheet, weaponSheet)
-    const keys = Character.getDisplayStatKeys(initialStats, characterSheet)
+    const keys = Character.getDisplayStatKeys(initialStats, { characterSheet, weaponSheet, artifactsheets })
     expect(keys).toHaveProperty("talentKey_auto")
   })
 })

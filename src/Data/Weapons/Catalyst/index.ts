@@ -45,5 +45,5 @@ const catalyst = {
   ThrillingTalesOfDragonSlayers,
   TwinNephrite,
   WineAndSong,
-}
+} as const
 export default catalyst

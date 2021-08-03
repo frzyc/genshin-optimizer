@@ -20,17 +20,27 @@ import { IConditionals } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
 import { Translate, TransWrapper } from '../../../Components/Translate'
 import { claymoreChargedDocSection, normalDocSection, plungeDocSection, sgt, talentTemplate } from '../SheetUtil'
+import { KeyPath } from '../../../Util/KeyPathUtil'
+import { FormulaPathBase } from '../../formula'
+
+const path = KeyPath<FormulaPathBase, any>().character.noelle
 const tr = (strKey: string) => <Translate ns="char_noelle_gen" key18={strKey} />
 const noelle = (strKey: string) => <TransWrapper ns="char_noelle" key18={strKey} />
 const conditionals: IConditionals = {
   q: { // Sweeping Time
     name: tr("burst.name"),
     maxStack: 1,
-    stats: stats => ({
-      modifiers: { finalATK: { finalDEF: (data.burst.bonus[stats.tlvl.burst] + (stats.constellation >= 6 ? 50 : 0)) / 100 } },
+    stats: {
+      modifiers: { finalATK: [path.burst.bonus()] },
       infusionSelf: "geo",
-    }),
-    fields: [{ text: noelle("qlarger") }]
+    },
+    fields: [{
+      text: noelle("qlarger")
+    }, {
+      text: tr("burst.atkBonus"),
+      formulaText: stats => <span>{data.burst.bonus[stats.tlvl.burst]}% {stats.constellation >= 6 ? "+50% " : ""}{Stat.printStat("finalDEF", stats, true)}</span>,
+      formula: formula.burst.bonus,
+    },]
   }
 }
 const char: ICharacterSheet = {
@@ -105,10 +115,6 @@ const char: ICharacterSheet = {
             formulaText: stats => <span>{data.burst.skill_dmg[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
             formula: formula.burst.skill_dmg,
             variant: stats => getTalentStatKeyVariant("burst", stats),
-          }, {
-            text: tr("burst.atkBonus"),
-            formulaText: stats => <span>{data.burst.bonus[stats.tlvl.burst]}% {stats.constellation >= 6 ? "+50% " : ""}{Stat.printStat("finalDEF", stats)}</span>,
-            formula: formula.burst.bonus,
           }, {
             text: sgt("duration"),
             value: stats => stats.constellation >= 6 ? noelle("c6duration") : "15s",

@@ -16,37 +16,32 @@ import { TalentSheet } from '../../../../Types/character';
 import { IConditionals } from '../../../../Types/IConditional'
 import { Translate, TransWrapper } from '../../../../Components/Translate'
 import { normalDocSection, plungeDocSection, sgt, talentTemplate } from '../../SheetUtil'
+import { KeyPath } from '../../../../Util/KeyPathUtil'
+import { FormulaPathBase } from '../../../formula'
+const path = KeyPath<FormulaPathBase, any>().character.traveler.electro
 const tr = (strKey: string) => <Translate ns="char_traveler_gen" key18={`electro.${strKey}`} />
 const charTr = (strKey: string) => <TransWrapper ns="char_traveler" key18={`electro.${strKey}`} />
 const conditionals: IConditionals = {
   sk: {
     name: charTr("skill.absorb"),
-    stats: stats => ({ //TODO: party buff + modifiers self-dependency
-      // enerRech_: 20,
-      // ... (stats.ascension < 4 ? {} : {
-      //   modifiers: {
-      //     enerRech_: { enerRech_: 0.1 }
-      //   }
-      // })
-    }),
+    stats: { //TODO: party buff 
+      modifiers: { enerRech_: [path.skill.enerRechInc()] },
+    },
     fields: [{
       text: tr("skill.enerRegen"),
       value: stats => {
         if (stats.constellation < 4) return data.skill.enerRegen[stats.tlvl.skill]
         return <span>{data.skill.enerRegen[stats.tlvl.skill]} / {data.skill.enerRegen[stats.tlvl.skill] * 2}</span>
-
       }
     }, {
       text: tr("skill.enerRechInc"),
       formulaText: stats => {
         if (stats.ascension < 4) return <span>20%</span>;
-        return <span>20% + ( 10% * {Stat.printStat("enerRech_", stats)} )</span>
+        return <span>20% + ( 10% * {Stat.printStat("enerRech_", stats, true)} )</span>
       },
       formula: formula.skill.enerRechInc,
       unit: "%",
       fixed: 1
-    }, {
-      text: <span><small className="text-danger">Caution: This buff is not being applied right now.</small></span>
     }, {
       text: sgt("duration"),
       value: "6s"

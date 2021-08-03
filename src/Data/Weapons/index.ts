@@ -12,6 +12,6 @@ const WeaponData: IWeaponSheets = {
   ...polearm,
   ...bow,
   ...catalyst
-}
+} as const
 Object.values(WeaponData).forEach(weapon => weapon.document && documentSectionsProcessing(weapon.document))
 export default WeaponData

@@ -20,14 +20,23 @@ import { IConditionals } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
 import { Translate } from '../../../Components/Translate'
 import { chargedDocSection, plungeDocSection, sgt, talentTemplate } from '../SheetUtil'
+import { KeyPath } from '../../../Util/KeyPathUtil'
+import { FormulaPathBase } from '../../formula'
+
+const path = KeyPath<FormulaPathBase, any>().character.hutao
 const tr = (strKey: string) => <Translate ns="char_hutao_gen" key18={strKey} />
 const conditionals: IConditionals = {
   e: { // GuideToAfterlife
     name: "Guide to Afterlife Voyage",
-    stats: stats => ({
-      modifiers: { finalATK: { finalHP: data.skill.atk_inc[stats.tlvl.skill] / 100, } },
+    stats: {
+      modifiers: { finalATK: [path.skill.atk_inc()] },
       infusionSelf: "pyro",
-    }),
+    },
+    fields: [{
+      text: "ATK Increase",
+      formulaText: stats => <span>min( {data.skill.atk_inc[stats.tlvl.skill]}% {Stat.printStat("finalHP", stats, true)}, 400% {Stat.printStat("baseATK", stats, true)} )</span>,
+      formula: formula.skill.atk_inc,
+    },]
   },
   a4: { // SanguineRouge
     canShow: stats => stats.ascension >= 4,
@@ -99,16 +108,10 @@ const char: ICharacterSheet = {
         sections: [{
           text: <span>
             {tr("skill.description")}
-            <small>Note: The 400% base ATK limit is not currently being applied. Optimizers beware.</small>
           </span>,
           fields: [{
             text: "Activation Cost",
             value: "30% Current HP",
-          }, {
-            // TODO Add 400% baseATK CAP text
-            text: "ATK Increase",
-            formulaText: stats => <span>{data.skill.atk_inc[stats.tlvl.skill]}% {Stat.printStat("finalHP", stats)}</span>,
-            formula: formula.skill.atk_inc,
           }, {
             canShow: stats => stats.constellation < 2,
             text: "Blood Blossom DMG",

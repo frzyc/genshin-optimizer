@@ -10,7 +10,7 @@ import FilletBlade from './Sword/FilletBlade/data'
 // import HarbingerOfDawn from './Sword/HarbingerOfDawn/data'
 // import IronSting from './Sword/IronSting/data'
 // import LionsRoar from './Sword/LionsRoar/data'
-// import PrimordialJadeCutter from './Sword/PrimordialJadeCutter/data'
+import PrimordialJadeCutter from './Sword/PrimordialJadeCutter/data'
 // import PrototypeRancour from './Sword/PrototypeRancour/data'
 // import RoyalLongsword from './Sword/RoyalLongsword/data'
 // import SacrificialSword from './Sword/SacrificialSword/data'
@@ -39,7 +39,7 @@ import Halberd from './Polearm/Halberd/data'
 // import PrototypeGrudge from './Polearm/PrototypeGrudge/data'
 // import RoyalSpear from './Polearm/RoyalSpear/data'
 import SkywardSpine from './Polearm/SkywardSpine/data'
-// import StaffOfHoma from './Polearm/StaffOfHoma/data'
+import StaffOfHoma from './Polearm/StaffOfHoma/data'
 // import VortexVanquisher from './Polearm/VortexVanquisher/data'
 // import WhiteTassel from './Polearm/WhiteTassel/data'
 
@@ -127,7 +127,7 @@ const sword = {
   // HarbingerOfDawn,
   // IronSting,
   // LionsRoar,
-  // PrimordialJadeCutter,
+  PrimordialJadeCutter,
   // PrototypeRancour,
   // RoyalLongsword,
   // SacrificialSword,
@@ -158,7 +158,7 @@ const polearm = {
   // PrototypeGrudge,
   // RoyalSpear,
   SkywardSpine,
-  // StaffOfHoma,
+  StaffOfHoma,
   // VortexVanquisher,
   // WhiteTassel,
 }

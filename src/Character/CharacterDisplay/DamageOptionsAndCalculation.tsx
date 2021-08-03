@@ -5,17 +5,19 @@ import { Accordion, AccordionContext, Button, Card, Col, Dropdown, Image, Row, T
 import { useAccordionToggle } from 'react-bootstrap/AccordionToggle';
 import Assets from "../../Assets/Assets";
 import Formula from "../../Formula";
-import Stat from "../../Stat";
+import Stat, { FormulaDisplay } from "../../Stat";
 import { GetDependencies } from "../../StatDependency";
 import { ICharacter } from "../../Types/character";
-import { allElements } from "../../Types/consts";
-import ICalculatedStats from "../../Types/ICalculatedStats";
+import { allElements, ArtifactSetKey } from "../../Types/consts";
+import { ICalculatedStats } from "../../Types/stats";
 import { IFieldDisplay } from "../../Types/IFieldDisplay";
 import { usePromise } from "../../Util/ReactUtil";
 import WeaponSheet from "../../Weapon/WeaponSheet";
 import Character from "../Character";
 import CharacterSheet from "../CharacterSheet";
 import StatInput from "../StatInput";
+import { ArtifactSheet } from "../../Artifact/ArtifactSheet";
+import { getFormulaTargetsDisplayHeading } from "../CharacterUtil";
 const infusionVals = {
   "": <span>No External Infusion</span>,
   "pyro": <span >Pyro Infusion</span>,
@@ -71,12 +73,19 @@ export function HitModeToggle({ hitMode, characterDispatch, className }) {
   </ToggleButtonGroup>
 }
 
-function CalculationDisplay({ characterSheet, weaponSheet, build }: { characterSheet: CharacterSheet, weaponSheet: WeaponSheet, build: ICalculatedStats }) {
-  const displayStatKeys = useMemo(() => build && Character.getDisplayStatKeys(build, characterSheet), [build, characterSheet])
+function CalculationDisplay({ sheets, build }: {
+  sheets: {
+    characterSheet: CharacterSheet
+    weaponSheet: WeaponSheet,
+    artifactSheets: StrictDict<ArtifactSetKey, ArtifactSheet>
+  },
+  build: ICalculatedStats
+}) {
+  const displayStatKeys = useMemo(() => build && Character.getDisplayStatKeys(build, sheets), [build, sheets])
   if (!build) return null
   return <div>
     {Object.entries(displayStatKeys).map(([sectionKey, fields]: [string, any]) => {
-      const header = Character.getDisplayHeading(sectionKey, characterSheet, weaponSheet, build.characterEle)
+      const header = getFormulaTargetsDisplayHeading(sectionKey, sheets, build.characterEle)
       return <Card bg="darkcontent" text={"lightfont" as any} key={sectionKey} className="w-100 mb-2">
         <Card.Header>{header}</Card.Header>
         <Card.Body className="p-2">
@@ -85,7 +94,7 @@ function CalculationDisplay({ characterSheet, weaponSheet, build }: { characterS
               if (Array.isArray(field))
                 return <FormulaCalculationField key={fieldIndex} fieldKeys={field} build={build} fieldIndex={fieldIndex} />
               else if (typeof field === "string") {//simple statKey field
-                const subFormulaKeys: any[] = Stat.getPrintableFormulaStatKeyList(GetDependencies(build?.modifiers, [field]), build?.modifiers).reverse()
+                const subFormulaKeys: any[] = Stat.getPrintableFormulaStatKeyList(GetDependencies(build, build?.modifiers, [field]), build?.modifiers).reverse()
                 return Boolean(subFormulaKeys.length) && <Card key={fieldIndex} bg="lightcontent" text={"lightfont" as any} className="mb-2">
                   <Accordion.Toggle as={Card.Header} className="p-2 cursor-pointer" variant="link" eventKey={`field${fieldIndex}`}>
                     {Stat.printStat(field, build)}
@@ -94,7 +103,7 @@ function CalculationDisplay({ characterSheet, weaponSheet, build }: { characterS
                     <Card.Body className="p-2">
                       <div className="mb-n2">
                         {subFormulaKeys.map(subKey =>
-                          <p className="mb-2" key={subKey}>{Stat.printStat(subKey, build)} = <small>{Stat.printFormula(subKey, build, build.modifiers, false)}</small></p>
+                          <p className="mb-2" key={subKey}>{Stat.printStat(subKey, build)} = <small><FormulaDisplay statKey={subKey} stats={build} modifiers={build.modifiers} expand={false} /></small></p>
                         )}
                       </div>
                     </Card.Body>
@@ -116,20 +125,22 @@ function FormulaCalculationField({ fieldKeys, build, fieldIndex }: { fieldKeys: 
   const fieldText = Character.getTalentFieldValue(formulaField, "text", build)
   const fieldVariant = Character.getTalentFieldValue(formulaField, "variant", build)
   const fieldFormulaText = Character.getTalentFieldValue(formulaField, "formulaText", build)
+  const fieldFixed = Character.getTalentFieldValue(formulaField, "fixed", build) ?? 0
+  const fieldUnit = Character.getTalentFieldValue(formulaField, "unit", build) ?? ""
   const [fieldFormula, fieldFormulaDependency] = Character.getTalentFieldValue(formulaField, "formula", build, [] as any)
   if (!fieldFormula || !fieldFormulaDependency) return null
-  const fieldValue = fieldFormula?.(build)?.toFixed?.()
-  const subFormulaKeys = Stat.getPrintableFormulaStatKeyList(GetDependencies(build?.modifiers, fieldFormulaDependency), build?.modifiers).reverse()
+  const fieldValue = fieldFormula?.(build)?.toFixed?.(fieldFixed)
+  const subFormulaKeys = Stat.getPrintableFormulaStatKeyList(GetDependencies(build, build?.modifiers, fieldFormulaDependency), build?.modifiers).reverse()
   return <Card bg="lightcontent" text={"lightfont" as any} className="mb-2">
     <Accordion.Toggle as={Card.Header} className="p-2 cursor-pointer" variant="link" eventKey={`field${fieldIndex}`}>
-      <b className={`text-${fieldVariant}`}>{fieldText}</b> <span className="text-info">{fieldValue}</span>
+      <b className={`text-${fieldVariant}`}>{fieldText}</b> <span className="text-info">{fieldValue}{fieldUnit}</span>
     </Accordion.Toggle>
     <Accordion.Collapse eventKey={`field${fieldIndex}`}>
       <Card.Body className="p-2">
         <div className="mb-n2">
           <p className="mb-2"><b className={`text-${fieldVariant}`}>{fieldText}</b> <span className="text-info">{fieldValue}</span> = <small>{fieldFormulaText}</small></p>
           {subFormulaKeys.map(subKey =>
-            <p className="mb-2" key={subKey}>{Stat.printStat(subKey, build)} = <small>{Stat.printFormula(subKey, build, build.modifiers, false)}</small></p>
+            <p className="mb-2" key={subKey}>{Stat.printStat(subKey, build)} = <small><FormulaDisplay statKey={subKey} stats={build} modifiers={build.modifiers} expand={false} /></small></p>
           )}
         </div>
       </Card.Body>
@@ -153,15 +164,18 @@ const ContextAwareToggle = ({ eventKey, callback }) => {
 }
 
 type DamageOptionsAndCalculationProps = {
-  characterSheet: CharacterSheet
-  weaponSheet: WeaponSheet
+  sheets: {
+    characterSheet: CharacterSheet
+    weaponSheet: WeaponSheet,
+    artifactSheets: StrictDict<ArtifactSetKey, ArtifactSheet>
+  }
   character: ICharacter,
   characterDispatch: (any) => void,
   equippedBuild?: ICalculatedStats,
   newBuild?: ICalculatedStats,
   className: string
 }
-export default function DamageOptionsAndCalculation({ characterSheet, weaponSheet, character, character: { hitMode }, characterDispatch, newBuild, equippedBuild, className }: DamageOptionsAndCalculationProps) {
+export default function DamageOptionsAndCalculation({ sheets, sheets: { characterSheet, weaponSheet }, character, character: { hitMode }, characterDispatch, newBuild, equippedBuild, className }: DamageOptionsAndCalculationProps) {
   //choose which one to display stats for
   const build = newBuild ? newBuild : equippedBuild!
   return <div className={className}>
@@ -234,7 +248,7 @@ export default function DamageOptionsAndCalculation({ characterSheet, weaponShee
                 </Row>
               </Card.Body>
             </Card>
-            <CalculationDisplay characterSheet={characterSheet} weaponSheet={weaponSheet} build={build} />
+            <CalculationDisplay sheets={sheets} build={build} />
           </Card.Body>
         </Accordion.Collapse>
       </Card>

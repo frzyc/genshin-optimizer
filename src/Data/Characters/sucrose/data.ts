@@ -41,5 +41,8 @@ const formula: IFormulaSheet = {
     ...Object.fromEntries(absorbableEle.map(eleKey =>
       [eleKey, stats => basicDMGFormula(data.burst.dmg_[stats.tlvl.burst], stats, "burst", eleKey)]))
   },
+  passive2: {
+    em: stats => [s => s.eleMas * 0.2, ['eleMas']]
+  }
 }
 export default formula

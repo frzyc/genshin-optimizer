@@ -5,13 +5,18 @@ import { Card, Col, Row } from "react-bootstrap"
 import StatDisplay from "../../Components/StatDisplay"
 import { ICharacter } from "../../Types/character"
 import CharacterSheet from "../CharacterSheet"
-import ICalculatedStats from "../../Types/ICalculatedStats"
+import { ICalculatedStats } from "../../Types/stats"
 import WeaponSheet from "../../Weapon/WeaponSheet"
-import Character from "../Character"
+import { ArtifactSetKey } from "../../Types/consts"
+import { ArtifactSheet } from "../../Artifact/ArtifactSheet"
+import { getFormulaTargetsDisplayHeading } from "../CharacterUtil"
 
 type StatDisplayComponentProps = {
-  characterSheet: CharacterSheet
-  weaponSheet: WeaponSheet
+  sheets: {
+    characterSheet: CharacterSheet
+    weaponSheet: WeaponSheet,
+    artifactSheets: StrictDict<ArtifactSetKey, ArtifactSheet>
+  },
   character: ICharacter
   statsDisplayKeys: any,
   editable: boolean,
@@ -20,10 +25,10 @@ type StatDisplayComponentProps = {
   newBuild?: ICalculatedStats
 }
 
-export default function StatDisplayComponent({ characterSheet, weaponSheet, character, equippedBuild, newBuild, statsDisplayKeys, editable, cardbg = "darkcontent" }: StatDisplayComponentProps) {
+export default function StatDisplayComponent({ sheets, sheets: { characterSheet, weaponSheet }, character, equippedBuild, newBuild, statsDisplayKeys, editable, cardbg = "darkcontent" }: StatDisplayComponentProps) {
   const build = newBuild ? newBuild : equippedBuild
   return <Row className="mb-n2">{Object.entries(statsDisplayKeys).map(([sectionKey, sectionValues]: any) => {
-    const header = Character.getDisplayHeading(sectionKey, characterSheet, weaponSheet, build?.characterEle)
+    const header = getFormulaTargetsDisplayHeading(sectionKey, sheets, build?.characterEle)
     return <Col key={sectionKey} className="mb-2" xs={12} md={6} xl={4}>
       <Card bg={cardbg} text={"lightfont" as any} className="h-100">
         <Card.Header>{header}</Card.Header>

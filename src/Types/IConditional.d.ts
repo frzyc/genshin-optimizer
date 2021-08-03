@@ -1,24 +1,24 @@
-import ICalculatedStats from "./ICalculatedStats";
+import { BonusStats, BasicStats } from "./stats";
 import { IFieldDisplay } from "./IFieldDisplay";
 
 export interface IConditionalSimple {
-  canShow?: (stats: ICalculatedStats) => boolean;
+  canShow?: (stats: BasicStats) => boolean;
   name: Displayable;
-  stats?: object | ((stats: ICalculatedStats) => object);
+  stats?: BonusStats | ((stats: BasicStats) => BonusStats);
   fields?: Array<IFieldDisplay>;
-  maxStack?: number | ((stats: ICalculatedStats) => number);
+  maxStack?: number | ((stats: BasicStats) => number);
   keys?: string[]
 }
 
 export interface IConditionalComplex {
-  canShow?: (stats: ICalculatedStats) => boolean;
+  canShow?: (stats: BasicStats) => boolean;
   name: Displayable;
   states: {
     [key: string]: {
       name: Displayable;
-      stats?: object | ((stats: ICalculatedStats) => object);
+      stats?: BonusStats | ((stats: BasicStats) => BonusStats);
       fields?: Array<IFieldDisplay>;
-      maxStack?: number | ((stats: ICalculatedStats) => number);
+      maxStack?: number | ((stats: BasicStats) => number);
     }
   },
   keys?: string[]

@@ -1,3 +1,5 @@
+import { KeyPath } from "../../../Util/KeyPathUtil"
+import { FormulaPathBase } from "../../formula"
 import { applyArtifacts, computeAllStats, createProxiedStats } from "../TestUtils"
 import formula from "./data"
 
@@ -12,7 +14,7 @@ describe("Testing Mona's Formulas", () => {
       enemyLevel: 76,
 
       enerRech_: 100 + 24 + 37.9,
-      modifiers: Object.freeze({ hydro_dmg_: { enerRech_: 0.2 } }),
+      modifiers: Object.freeze({ hydro_dmg_: [KeyPath<FormulaPathBase, any>().character.mona.passive2.bonus()] }),
 
       tlvl: Object.freeze({ auto: 6 - 1, skill: 7 - 1, burst: 6 - 1 }),
     })

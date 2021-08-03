@@ -1,8 +1,9 @@
 import ElementalData from "../Data/ElementalData"
-import { StatKey, StatDict, IArtifact, SubstatKey } from "../Types/artifact"
-import { ArtifactSetEffects, PrunedArtifactSetEffects, ArtifactsBySlot, SetFilter } from "../Types/Build"
-import { ArtifactSetKey, ElementKey } from "../Types/consts"
-import ICalculatedStats from "../Types/ICalculatedStats"
+import { StatKey, IArtifact, SubstatKey } from "../Types/artifact"
+import { ArtifactSetEffects, ArtifactsBySlot, SetFilter } from "../Types/Build"
+import { ArtifactSetKey, ElementKey, SetNum, SlotKey } from "../Types/consts"
+import { BasicStats, BonusStats, ICalculatedStats } from "../Types/stats"
+import { mergeStats } from "../Util/StatUtil"
 
 /**
  * Remove artifacts that can never be used in optimized builds
@@ -13,9 +14,9 @@ import ICalculatedStats from "../Types/ICalculatedStats"
  * @param {Set.<setKey>} alwaysAccepted - The list of artifact sets that are always included
  */
 export function pruneArtifacts(artifacts: IArtifact[], artifactSetEffects: ArtifactSetEffects, significantStats: Set<StatKey>, ascending: boolean = false, alwaysAccepted: Set<ArtifactSetKey> = new Set()): IArtifact[] {
-  function shouldKeepFirst(first: StatDict, second: StatDict, preferFirst: boolean) {
-    let firstBetter = Object.entries(first).some(([k, v]) => v! > (second[k] ?? 0))
-    let secondBetter = Object.entries(second).some(([k, v]) => v! > (first[k] ?? 0))
+  function shouldKeepFirst(first: Dict<StatKey, number>, second: Dict<StatKey, number>, preferFirst: boolean) {
+    let firstBetter = Object.entries(first).some(([k, v]) => !isFinite(v) || v > (second[k] ?? 0))
+    let secondBetter = Object.entries(second).some(([k, v]) => !isFinite(v) || v > (first[k] ?? 0))
     if (ascending) [firstBetter, secondBetter] = [secondBetter, firstBetter]
     // Keep if first is strictly better, uncomparable, or equal + prefer first
     return firstBetter || (!secondBetter && preferFirst)
@@ -23,14 +24,27 @@ export function pruneArtifacts(artifacts: IArtifact[], artifactSetEffects: Artif
 
   // Prune unused set effects. Sets with no relevant effects are regrouped to "other"
   const prunedSetEffects: PrunedArtifactSetEffects = { "other": {} }
-  for (const set in artifactSetEffects)
-    for (const num in artifactSetEffects[set]) {
-      const effects = Object.entries(artifactSetEffects[set]![num]).filter(([key]) => significantStats.has(key as StatKey))
+  Object.entries(artifactSetEffects).forEach(([set, effect]) => {
+    Object.entries(effect).forEach(([num, item]) => {
+      const effects = Object.entries(item).filter(([key]) => significantStats.has(key as StatKey))
       if (effects.length > 0) {
         prunedSetEffects[set] = prunedSetEffects[set] ?? {}
         prunedSetEffects[set]![num] = Object.fromEntries(effects)
       }
-    }
+      const modifiers = item.modifiers
+      if (modifiers) {
+        // Modifiers are treated as infinite stats
+        prunedSetEffects[set] = prunedSetEffects[set] ?? {}
+        prunedSetEffects[set]![num] = prunedSetEffects[set]![num] ?? {}
+
+        Object.keys(modifiers)
+          .filter(key => significantStats.has(key as StatKey))
+          .forEach(key =>
+            prunedSetEffects[set]![num]![key] = Infinity
+          )
+      }
+    })
+  })
 
   // array of artifacts, artifact stats, and set (may be "other")
   let tmp: { artifact: IArtifact, stats: Dict<StatKey, number>, set: ArtifactSetKey | "other" }[] = artifacts.map(artifact => {
@@ -57,8 +71,8 @@ export function pruneArtifacts(artifacts: IArtifact[], artifactSetEffects: Artif
     tmp = tmp.filter(({ artifact: candidate, stats: candidateStats, set: candidateSet }) => {
       // Possible "additional stats" if a build equips `candidate` on an empty slot.
       let possibleStats = [...Object.values(prunedSetEffects[candidateSet]!), {}].map(c => {
-        const current: Dict<string, number> = { ...candidateStats }
-        Object.entries(c).forEach(([key, value]: any) => current[key] = (current[key] ?? 0) + (value ?? 0))
+        const current: BonusStats = { ...candidateStats }
+        mergeStats(current, c)
         return current
       })
       return tmp.every(({ artifact: other, stats: otherStats, set: otherSet }) => {
@@ -151,30 +165,30 @@ export function calculateTotalBuildNumber(artifactsBySlot: ArtifactsBySlot, setF
  * @param {Object.<setKey, Object.<number, Object.<statKey, statValue>>>} artifactSetEffects - the list of the set effects
  * @param {artifactCallback} callback - the functions called with each permutation
  */
-export function artifactPermutations(initialStats, artifactsBySlot: ArtifactsBySlot, artifactSetEffects, callback) {
-  const slotKeys = Object.keys(artifactsBySlot), setCount = {}, accu = {}
-  function slotPerm(index, stats) {
+export function artifactPermutations(initialStats: ICalculatedStats, artifactsBySlot: ArtifactsBySlot, artifactSetEffects: ArtifactSetEffects, callback) {
+  const slotKeys = Object.keys(artifactsBySlot), setCount: Dict<ArtifactSetKey, SetNum> = {}, accu = {}
+  function slotPerm(index: number, stats: ICalculatedStats) {
     if (index >= slotKeys.length) {
       callback(accu, stats)
       return
     }
 
-    let slotKey = slotKeys[index]
-    for (const artifact of (artifactsBySlot[slotKey] as any)) {
+    const slotKey = slotKeys[index]
+    for (const artifact of artifactsBySlot[slotKey] ?? []) {
       let newStats = { ...stats }
       accumulate(slotKey, artifact, setCount, accu, newStats, artifactSetEffects)
       slotPerm(index + 1, newStats)
-      setCount[artifact.setKey] -= 1
+      setCount[artifact.setKey]! -= 1
     }
   }
 
   slotPerm(0, initialStats)
 }
 
-function accumulate(slotKey, art: IArtifact, setCount, accu, stats, artifactSetEffects) {
-  let setKey = art.setKey
+function accumulate(slotKey: SlotKey, art: IArtifact, setCount: Dict<ArtifactSetKey, SetNum>, accu: Dict<SlotKey, IArtifact>, stats: ICalculatedStats, artifactSetEffects: ArtifactSetEffects) {
+  const setKey = art.setKey
   accu[slotKey] = art
-  setCount[setKey] = (setCount[setKey] ?? 0) + 1
+  setCount[setKey] = (setCount[setKey] ?? 0) + 1 as SetNum
 
   // Add artifact stats
   if (art.mainStatKey in stats) stats[art.mainStatKey] += art.mainStatVal!
@@ -183,10 +197,8 @@ function accumulate(slotKey, art: IArtifact, setCount, accu, stats, artifactSetE
   })
 
   // Add set effects
-  let setEffect = artifactSetEffects[setKey]?.[setCount[setKey]]
-  setEffect && Object.entries(setEffect).forEach(([statKey, val]: any) => {
-    if (statKey in stats) stats[statKey] += val
-  })
+  const setEffect = artifactSetEffects[setKey]?.[setCount[setKey]!]
+  setEffect && mergeStats(stats, setEffect) // TODO: This may slow down the computation
 }
 
 /**
@@ -195,7 +207,7 @@ function accumulate(slotKey, art: IArtifact, setCount, accu, stats, artifactSetE
   * @param {*} stats - The calculated stats
   * @param {*} overwriteElement - Override the hit to be the character's elemental, that is not part of infusion.
   */
-export function getTalentStatKey(skillKey: string, stats: ICalculatedStats, overwriteElement?: ElementKey | "physical") {
+export function getTalentStatKey(skillKey: string, stats: BasicStats, overwriteElement?: ElementKey | "physical") {
   const { hitMode = "", infusionAura = "", infusionSelf = "", reactionMode = null, characterEle = "anemo", weaponType = "sword" } = stats
   if ((Object.keys(ElementalData) as any).includes(skillKey)) return `${skillKey}_elemental_${hitMode}`//elemental DMG
   if (!overwriteElement && weaponType === "catalyst") overwriteElement = characterEle
@@ -213,7 +225,7 @@ export function getTalentStatKey(skillKey: string, stats: ICalculatedStats, over
   return `${eleKey}_${skillKey}_${hitMode}`
 }
 
-export function getTalentStatKeyVariant(skillKey: string, stats: ICalculatedStats, overwriteElement: ElementKey | "physical" | undefined | "" = "") {
+export function getTalentStatKeyVariant(skillKey: string, stats: BasicStats, overwriteElement: ElementKey | "physical" | undefined | "" = "") {
   if ((Object.keys(ElementalData) as any).includes(skillKey)) return skillKey//elemental DMG
   const { infusionAura = "", infusionSelf = "", reactionMode = null, characterEle = "anemo", weaponType = "sword" } = stats
   if (!overwriteElement && weaponType === "catalyst") overwriteElement = characterEle
@@ -235,3 +247,5 @@ export function getTalentStatKeyVariant(skillKey: string, stats: ICalculatedStat
   }
   return eleKey
 }
+
+export type PrunedArtifactSetEffects = Dict<ArtifactSetKey | "other", Dict<SetNum, Dict<StatKey, number>>>

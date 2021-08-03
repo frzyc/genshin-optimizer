@@ -1,7 +1,7 @@
 import { PropTypeKey } from "../.."
 import { layeredAssignment } from "../../Util"
 
-type EquipAffixExcelConfigData = {
+type WeaponPromoteExcelConfigData = {
   "WeaponPromoteId": number//12406,
   "PromoteLevel": number//6,
   "CostItems": Array<{
@@ -48,9 +48,9 @@ type EquipAffixExcelConfigData = {
   "UnlockMaxLevel": number//90,
   "RequiredPlayerLevel": number//50
 }
-const weaponAscensionDataSrc = require('../../GenshinData/ExcelBinOutput/WeaponPromoteExcelConfigData.json') as EquipAffixExcelConfigData[]
+const weaponAscensionDataSrc = require('../../GenshinData/ExcelBinOutput/WeaponPromoteExcelConfigData.json') as WeaponPromoteExcelConfigData[]
 
-const weaponAscensionData = {} as Record<number, Array<EquipAffixExcelConfigData>>
+const weaponAscensionData = {} as Record<number, Array<WeaponPromoteExcelConfigData>>
 
 weaponAscensionDataSrc.forEach(data => {
 

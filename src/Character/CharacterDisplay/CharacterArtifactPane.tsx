@@ -6,8 +6,8 @@ import { ArtifactSheet } from '../../Artifact/ArtifactSheet';
 import SetEffectDisplay from '../../Artifact/Component/SetEffectDisplay';
 import { database } from '../../Database/Database';
 import { ICharacter } from '../../Types/character';
-import { allSlotKeys, SlotKey } from '../../Types/consts';
-import ICalculatedStats from '../../Types/ICalculatedStats';
+import { allSlotKeys, ArtifactSetKey, SlotKey } from '../../Types/consts';
+import { ICalculatedStats } from '../../Types/stats';
 import { useForceUpdate, usePromise } from '../../Util/ReactUtil';
 import WeaponSheet from '../../Weapon/WeaponSheet';
 import Character from "../Character";
@@ -16,8 +16,11 @@ import StatDisplayComponent from './StatDisplayComponent';
 const artLayoutSize = { xs: 12, md: 6, lg: 4 }
 
 type CharacterArtifactPaneProps = {
-  characterSheet: CharacterSheet,
-  weaponSheet: WeaponSheet
+  sheets: {
+    characterSheet: CharacterSheet
+    weaponSheet: WeaponSheet,
+    artifactSheets: StrictDict<ArtifactSetKey, ArtifactSheet>
+  }
   character: ICharacter,
   equippedBuild?: ICalculatedStats,
   newBuild?: ICalculatedStats,
@@ -25,12 +28,12 @@ type CharacterArtifactPaneProps = {
   characterDispatch: (any) => void,
   artifacts?: any[]
 }
-function CharacterArtifactPane({ characterSheet, weaponSheet, character, character: { characterKey }, equippedBuild, newBuild, editable, characterDispatch, artifacts }: CharacterArtifactPaneProps) {
+function CharacterArtifactPane({ sheets, character, character: { characterKey }, equippedBuild, newBuild, editable, characterDispatch, artifacts }: CharacterArtifactPaneProps) {
   const history = useHistory()
   //choose which one to display stats for
   const stats = (newBuild ? newBuild : equippedBuild)
   const mainStatAssumptionLevel = stats?.mainStatAssumptionLevel ?? 0
-  const statKeys = useMemo(() => stats && Character.getDisplayStatKeys(stats, characterSheet), [stats, characterSheet])
+  const statKeys = useMemo(() => stats && Character.getDisplayStatKeys(stats, sheets), [stats, sheets])
   const edit = useCallback(
     artid => history.push({
       pathname: "/artifact",
@@ -58,7 +61,7 @@ function CharacterArtifactPane({ characterSheet, weaponSheet, character, charact
   return <>
     <Card className="h-100 mb-2" bg="lightcontent" text={"lightfont" as any}>
       <Card.Body>
-        <StatDisplayComponent {...{ characterSheet, weaponSheet, character, equippedBuild, newBuild, statsDisplayKeys: statKeys, editable }} />
+        <StatDisplayComponent {...{ sheets, character, equippedBuild, newBuild, statsDisplayKeys: statKeys, editable }} />
       </Card.Body>
       <Card.Footer>
         {newBuild ? <Button onClick={equipArts}>Equip all artifacts to current character</Button> : (editable && <Button onClick={unequipArts}>Unequip all artifacts</Button>)}

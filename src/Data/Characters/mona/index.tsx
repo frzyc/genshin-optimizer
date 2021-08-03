@@ -21,6 +21,10 @@ import { IConditionals } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
 import { Translate } from '../../../Components/Translate'
 import { chargedDocSection, normalDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
+import { KeyPath } from '../../../Util/KeyPathUtil'
+import { FormulaPathBase } from '../../formula'
+
+const path = KeyPath<FormulaPathBase, any>().character.mona
 const tr = (strKey: string) => <Translate ns="char_mona_gen" key18={strKey} />
 const conditionals: IConditionals = {
   q: { // StellarisPhantasm
@@ -164,10 +168,19 @@ const char: ICharacterSheet = {
       passive2: {
         name: tr("passive2.name"),
         img: passive2,
-        sections: [{ text: tr("passive2.description"), }],
         stats: stats => stats.ascension >= 4 && {
-          modifiers: { hydro_dmg_: { enerRech_: 0.2 } },
-        }
+          modifiers: { hydro_dmg_: [path.passive2.bonus()] },
+        },
+        sections: [{
+          text: tr("passive2.description"),
+          fields: [{
+            text: "Hydro DMG Bonus",
+            formulaText: stats => <span>20% {Stat.printStat("enerRech_", stats, true)}</span>,
+            formula: formula.passive2.bonus,
+            fixed: 1,
+            unit: "%"
+          }]
+        }],
       },
       passive3: talentTemplate("passive3", tr, passive3),
       constellation1: talentTemplate("constellation1", tr, c1),
