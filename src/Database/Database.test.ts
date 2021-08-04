@@ -1,10 +1,9 @@
-import { IArtifact, IArtifactSheets } from "../Types/artifact"
+import { IArtifact } from "../Types/artifact"
 import { ICharacter } from "../Types/character"
 import { randomizeArtifact } from "../Util/ArtifactUtil"
 import { deepClone, getArrLastElement } from "../Util/Util"
 import { database, Database } from "./Database"
 import * as data1 from "./Database.db1.test.json"
-import { validateFlexArtifact, validateFlexCharacter } from "./validation"
 
 const baseAlbedo: ICharacter = {
   characterKey: "albedo",

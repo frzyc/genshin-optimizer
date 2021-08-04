@@ -4,6 +4,7 @@ import { ArtifactSetEffects, ArtifactsBySlot, SetFilter } from "../Types/Build"
 import { ArtifactSetKey, ElementKey, SetNum, SlotKey } from "../Types/consts"
 import { BasicStats, BonusStats, ICalculatedStats } from "../Types/stats"
 import { mergeStats } from "../Util/StatUtil"
+import { deepClone } from "../Util/Util"
 
 /**
  * Remove artifacts that can never be used in optimized builds
@@ -175,7 +176,7 @@ export function artifactPermutations(initialStats: ICalculatedStats, artifactsBy
 
     const slotKey = slotKeys[index]
     for (const artifact of artifactsBySlot[slotKey] ?? []) {
-      let newStats = { ...stats }
+      const newStats = deepClone(stats)
       accumulate(slotKey, artifact, setCount, accu, newStats, artifactSetEffects)
       slotPerm(index + 1, newStats)
       setCount[artifact.setKey]! -= 1

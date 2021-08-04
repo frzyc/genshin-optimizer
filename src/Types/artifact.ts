@@ -6,7 +6,7 @@ import { DocumentSection } from "./character";
 export type IArtifactSheets = StrictDict<ArtifactSetKey, IArtifactSheet>
 
 export interface IArtifactSheet {
-  name: string,//only to stored the endlish name for OCR, otherwise, should come from localization pipeline
+  name: string, // only to stored the English name for OCR, otherwise, should come from localization pipeline
   rarity: readonly Rarity[],
   icons: Dict<SlotKey, string>,
   conditionals?: IConditionals,

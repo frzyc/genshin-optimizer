@@ -161,7 +161,7 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: Artifac
               <Row>
                 <Col className="text-center">{t`editor.curSubEff`}</Col>
                 <Col xs="auto">
-                  <PercentBadge valid={!errMsgs.length} value={errMsgs.length ? "ERR" : (currentEfficiency)} />
+                  <PercentBadge valid={!errMsgs.length} value={errMsgs.length ? "ERR" : currentEfficiency} />
                   <OverlayTrigger
                     placement="bottom"
                     overlay={<Popover id="current-efficiency">
@@ -182,7 +182,7 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: Artifac
               <Row>
                 <Col className="text-center">{t`editor.maxSubEff`}</Col>
                 <Col xs="auto">
-                  <PercentBadge valid={!errMsgs.length} value={errMsgs.length ? "ERR" : (maxEfficiency)} />
+                  <PercentBadge valid={!errMsgs.length} value={errMsgs.length ? "ERR" : maxEfficiency} />
                   <OverlayTrigger
                     placement="bottom"
                     overlay={<Popover id="max-efficiency">

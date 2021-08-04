@@ -1,4 +1,3 @@
-import { FormulaPath } from "../Data/formula";
 import { StatKey } from "./artifact";
 import { ArtifactSetKey, ElementKey, HitModeKey, ReactionModeKey, SlotKey } from "./consts";
 
