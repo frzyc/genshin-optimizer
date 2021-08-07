@@ -51,7 +51,7 @@
     "unlockArtifacts": "Artefakt entsperren"
   },
   "filterLevelFormat": "Level <1>Low</1>/<3>High</3> (Eingeschlossen)",
-  "buttonHint": "Hinweis: Die oberen Buttons gelten nur für <1>gefilterte Artefakte</1>",
+  "buttonHint": "Hinweis: Die oberen roten Buttons gelten nur für <1>gefilterte Artefakte</1>",
   "tipsOfTheDay": [
     "Die maximale Effizienz eines 4-Stern Artefakts liegt bei rund 60%.",
     "Die maximale Effizienz eines Artefakts singt meist durch das Verstärken von diesem. Dies ist absolut normal.",

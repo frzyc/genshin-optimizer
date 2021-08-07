@@ -119,11 +119,15 @@
   "char_kaedeharakazuha": {
     "a4": {
       "name": "Upon triggering a Swirl reaction",
-      "text": "Teammate Elemental DMG Bonus"
+      "text": "Teammate Elemental DMG Bonus",
+      "bonus": "Elemental DMG Bonus"
     },
     "c1": "Using <strong>Kazuha Slash</strong> resets CD",
     "c2": "In Autumn Whilelwind field",
-    "c6": "After using <strong>Chihayaburu</strong> or <strong>Kazuha Slash</strong>"
+    "c6": {
+      "after": "After using <strong>Chihayaburu</strong> or <strong>Kazuha Slash</strong>",
+      "bonus": "Normal, Charged and Plunging DMG Bonus"
+    }
   },
   "char_kamisatoayaka": {
     "afterSprint": "After Sprint",
@@ -149,6 +153,19 @@
     },
     "c1": "After CRIT Hit",
     "c6": "<strong>Rites of Termination<strong/> Attack on enemy"
+  },
+  "char_traveler": {
+    "electro": {
+      "skill": {
+        "absorb": "Absorbing an Abundance Amulet"
+      },
+      "c2": {
+        "thunderHit": "<strong>Falling THunder</strong> hits opponent"
+      },
+      "burst": {
+        "3rd": "3rd Falling Thunder DMG"
+      }
+    }
   },
   "char_venti": {
     "addAimed": "Additional Aimed Shot DMG",
@@ -275,7 +292,17 @@
   "weapon_FreedomSworn": {
     "name": "Millennial Movement: Song of Resistance"
   },
+  "weapon_Hamayumi": {
+    "ener": "100% energy"
+  },
+  "weapon_MistsplitterReforged": {
+    "ele": "Character Element",
+    "emblem": "Mistsplitter's Emblem"
+  },
   "weapon_SongOfBrokenPines": {
     "name": "Millennial Movement: Banner-Hymn"
+  },
+  "weapon_ThunderingPulse": {
+    "emblem": "Thunder Emblem"
   }
 }
