@@ -5,6 +5,7 @@ import { Badge, Button, ButtonGroup, Card, Col, Dropdown, Image, InputGroup, Lis
 import Assets from "../../Assets/Assets";
 import CustomFormControl from '../../Components/CustomFormControl';
 import DocumentDisplay from "../../Components/DocumentDisplay";
+import ElementalIcon from "../../Components/ElementalIcon";
 import FieldDisplay from "../../Components/FieldDisplay";
 import { Stars } from "../../Components/StarDisplay";
 import StatDisplay from "../../Components/StatDisplay";
@@ -42,7 +43,7 @@ export default function CharacterOverviewPane({ characterSheet, weaponSheet, edi
       <Card bg="lightcontent" text={"lightfont" as any} className="mb-2">
         <Card.Img src={characterSheet.cardImg} className="w-100 h-auto" />
         <Card.Body>
-          <h3>{characterSheet.name} <Image src={Assets.elements[elementKey]} className="inline-icon" /> <Image src={Assets.weaponTypes?.[weaponTypeKey]} className="inline-icon" /></h3>
+          <h3>{characterSheet.name} {ElementalIcon[elementKey]} <Image src={Assets.weaponTypes?.[weaponTypeKey]} className="inline-icon" /></h3>
           <h6><Stars stars={characterSheet.star} colored /></h6>
           <h5>Level: {Character.getLevelString(character)}</h5>
           <Row className="px-2 mb-2">

@@ -9,6 +9,7 @@ import Row from 'react-bootstrap/Row';
 import { Link } from 'react-router-dom';
 import { ArtifactSheet } from '../Artifact/ArtifactSheet';
 import Assets from '../Assets/Assets';
+import ElementalIcon from '../Components/ElementalIcon';
 import { Stars } from '../Components/StarDisplay';
 import { StatIconEle } from '../Components/StatIcon';
 import { database } from '../Database/Database';
@@ -80,7 +81,7 @@ export default function CharacterCard({ characterKey, onEdit, onDelete, cardClas
             <Badge variant="secondary"><strong className="mx-1">{tlvl.burst + 1}</strong></Badge>
           </h6>
           <h6 className="mb-0"><Stars stars={characterSheet.star} colored /></h6>
-          <h4 className="mb-0"><Image src={Assets.elements[elementKey]} className="inline-icon" /> <Image src={Assets.weaponTypes?.[weaponTypeKey]} className="inline-icon" /></h4>
+          <h3 className="mb-0">{ElementalIcon[elementKey]} <Image src={Assets.weaponTypes?.[weaponTypeKey]} className="inline-icon" /></h3>
         </Col>
       </Row>
       <Row className="mb-2">

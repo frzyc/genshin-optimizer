@@ -13,6 +13,7 @@ import CharacterCard from './CharacterCard';
 import CharacterSheet from './CharacterSheet';
 import i18next from 'i18next';
 import { database } from '../Database/Database';
+import { ElementalIconComponent } from '../Components/ElementalIcon';
 const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
 
 //lazy load the character display
@@ -139,21 +140,28 @@ export default function CharacterDisplay(props) {
         <Row>
           <Col xs="auto">
             <ButtonGroup>
-              {allElements.map(eleKey =>
-                <Button key={eleKey} variant={(!elementalFilter || elementalFilter === eleKey) ? "success" : "primary"} className="py-1 px-2" onClick={() => elementalFilterDispatch(eleKey)} ><h4 className="mb-0"><Image src={Assets.elements?.[eleKey]} className="inline-icon" /></h4></Button>)}
+              {allElements.map(eleKey => {
+                const EleComponent = ElementalIconComponent[eleKey]
+                return <Button key={eleKey} variant={(!elementalFilter || elementalFilter === eleKey) ? eleKey : "secondary"} className="py-1 px-2 text-white" onClick={() => elementalFilterDispatch(eleKey)} >
+                  <h3 className="mb-0"><EleComponent noColor /></h3>
+                </Button>
+              })}
             </ButtonGroup>
           </Col>
           <Col>
             <ButtonGroup >
               {allWeaponTypeKeys.map(weaponType =>
-                <Button key={weaponType} variant={(!weaponFilter || weaponFilter === weaponType) ? "success" : "primary"} className="py-1 px-2" onClick={() => weaponFilterDispatch(weaponType)}><h4 className="mb-0"><Image src={Assets.weaponTypes?.[weaponType]} className="inline-icon" /></h4></Button>)}
+                <Button key={weaponType} variant={(!weaponFilter || weaponFilter === weaponType) ? "success" : "secondary"} className="py-1 px-2" onClick={() => weaponFilterDispatch(weaponType)}>
+                  <h3 className="mb-0"><Image src={Assets.weaponTypes?.[weaponType]} className="inline-icon" /></h3></Button>)}
             </ButtonGroup>
           </Col>
           <Col xs="auto">
             <span>Sort by: </span>
             <ToggleButtonGroup type="radio" name="level" value={sortBy} onChange={setsortBy}>
               {Object.entries(toggle).map(([key, text]) =>
-                <ToggleButton key={key} value={key} variant={sortBy === key ? "success" : "primary"}>{text}</ToggleButton>)}
+                <ToggleButton key={key} value={key} variant={sortBy === key ? "success" : "primary"}>
+                  <h6 className="mb-0">{text}</h6>
+                </ToggleButton>)}
             </ToggleButtonGroup>
           </Col>
         </Row>

@@ -159,7 +159,7 @@ const char: ICharacterSheet = {
       },
       passive1: talentTemplate("passive1", tr, passive1),
       passive2: {
-        name: tr("passive1.name"),
+        name: tr("passive2.name"),
         img: passive2,
         sections: [{
           text: tr("passive2.description"),

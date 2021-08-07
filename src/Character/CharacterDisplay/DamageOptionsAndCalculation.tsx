@@ -1,27 +1,27 @@
 import { faCheckSquare, faSquare, faWindowMaximize, faWindowMinimize } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useContext, useMemo } from 'react';
-import { Accordion, AccordionContext, Button, Card, Col, Dropdown, Image, Row, ToggleButton, ToggleButtonGroup } from "react-bootstrap";
+import { Accordion, AccordionContext, Button, Card, Col, Dropdown, Row, ToggleButton, ToggleButtonGroup } from "react-bootstrap";
 import { useAccordionToggle } from 'react-bootstrap/AccordionToggle';
-import Assets from "../../Assets/Assets";
+import { ArtifactSheet } from "../../Artifact/ArtifactSheet";
+import { Cryo, Hydro, Pyro } from "../../Components/ElementalIcon";
 import Formula from "../../Formula";
 import Stat, { FormulaDisplay } from "../../Stat";
 import { GetDependencies } from "../../StatDependency";
 import { ICharacter } from "../../Types/character";
 import { allElements, ArtifactSetKey } from "../../Types/consts";
-import { ICalculatedStats } from "../../Types/stats";
 import { IFieldDisplay } from "../../Types/IFieldDisplay";
+import { ICalculatedStats } from "../../Types/stats";
 import { usePromise } from "../../Util/ReactUtil";
 import WeaponSheet from "../../Weapon/WeaponSheet";
 import Character from "../Character";
 import CharacterSheet from "../CharacterSheet";
-import StatInput from "../StatInput";
-import { ArtifactSheet } from "../../Artifact/ArtifactSheet";
 import { getFormulaTargetsDisplayHeading } from "../CharacterUtil";
+import StatInput from "../StatInput";
 const infusionVals = {
   "": <span>No External Infusion</span>,
-  "pyro": <span >Pyro Infusion</span>,
-  "cryo": <span >Cryo Infusion</span>,
+  "pyro": <span ><Pyro /> Pyro Infusion</span>,
+  "cryo": <span ><Cryo /> Cryo Infusion</span>,
 }
 type InfusionAuraDropdownProps = {
   characterSheet: CharacterSheet,
@@ -49,27 +49,29 @@ export function ReactionToggle({ character: { reactionMode = null, infusionAura 
   if (!build) return null
   const charEleKey = build.characterEle
   if (!["pyro", "hydro", "cryo"].includes(charEleKey) && !["pyro", "hydro", "cryo"].includes(infusionAura)) return null
+  const v = s => s ? "success" : "secondary"
   return <ToggleButtonGroup className={className} type="radio" name="reactionMode" value={reactionMode} onChange={val => characterDispatch({ reactionMode: val === "none" ? null : val })}>
-    <ToggleButton value={"none"} variant={reactionMode ? "primary" : "success"}>No Reactions</ToggleButton >
-    {(charEleKey === "pyro" || infusionAura === "pyro") && <ToggleButton value={"pyro_vaporize"} variant={reactionMode === "pyro_vaporize" ? "success" : "primary"}>
-      <span className="text-vaporize">Vaporize(Pyro) <Image src={Assets.elements.hydro} className="inline-icon" />+<Image src={Assets.elements.pyro} className="inline-icon" /></span>
+    <ToggleButton value={"none"} variant={v(!reactionMode)}>No Reactions</ToggleButton >
+    {(charEleKey === "pyro" || infusionAura === "pyro") && <ToggleButton value={"pyro_vaporize"} variant={v(reactionMode === "pyro_vaporize")}>
+      <span className="text-vaporize">Vaporize(Pyro) <Hydro />+<Pyro /></span>
     </ToggleButton >}
-    {(charEleKey === "pyro" || infusionAura === "pyro") && <ToggleButton value={"pyro_melt"} variant={reactionMode === "pyro_melt" ? "success" : "primary"}>
-      <span className="text-melt">Melt(Pyro) <Image src={Assets.elements.cryo} className="inline-icon" />+<Image src={Assets.elements.pyro} className="inline-icon" /></span>
+    {(charEleKey === "pyro" || infusionAura === "pyro") && <ToggleButton value={"pyro_melt"} variant={v(reactionMode === "pyro_melt")}>
+      <span className="text-melt">Melt(Pyro) <Cryo />+<Pyro /></span>
     </ToggleButton >}
-    {(charEleKey === "hydro" || infusionAura === "hydro") && <ToggleButton value={"hydro_vaporize"} variant={reactionMode === "hydro_vaporize" ? "success" : "primary"}>
-      <span className="text-vaporize">Vaporize(Hydro) <Image src={Assets.elements.pyro} className="inline-icon" />+<Image src={Assets.elements.hydro} className="inline-icon" /></span>
+    {(charEleKey === "hydro" || infusionAura === "hydro") && <ToggleButton value={"hydro_vaporize"} variant={v(reactionMode === "hydro_vaporize")}>
+      <span className="text-vaporize">Vaporize(Hydro) <Pyro />+<Hydro /></span>
     </ToggleButton >}
-    {(charEleKey === "cryo" || infusionAura === "cryo") && <ToggleButton value={"cryo_melt"} variant={reactionMode === "cryo_melt" ? "success" : "primary"}>
-      <span className="text-melt">Melt(Cryo) <Image src={Assets.elements.pyro} className="inline-icon" />+<Image src={Assets.elements.cryo} className="inline-icon" /></span>
+    {(charEleKey === "cryo" || infusionAura === "cryo") && <ToggleButton value={"cryo_melt"} variant={v(reactionMode === "cryo_melt")}>
+      <span className="text-melt">Melt(Cryo) <Pyro />+<Cryo /></span>
     </ToggleButton >}
   </ToggleButtonGroup>
 }
 export function HitModeToggle({ hitMode, characterDispatch, className }) {
+  const v = s => s ? "success" : "secondary"
   return <ToggleButtonGroup type="radio" value={hitMode} name="hitOptions" onChange={m => characterDispatch({ hitMode: m })} className={className}>
-    <ToggleButton value="avgHit" variant={hitMode === "avgHit" ? "success" : "primary"}>Avg. DMG</ToggleButton>
-    <ToggleButton value="hit" variant={hitMode === "hit" ? "success" : "primary"}>Non Crit DMG</ToggleButton>
-    <ToggleButton value="critHit" variant={hitMode === "critHit" ? "success" : "primary"}>Crit Hit DMG</ToggleButton>
+    <ToggleButton value="avgHit" variant={v(hitMode === "avgHit")}>Avg. DMG</ToggleButton>
+    <ToggleButton value="hit" variant={v(hitMode === "hit")}>Non Crit DMG</ToggleButton>
+    <ToggleButton value="critHit" variant={v(hitMode === "critHit")}>Crit Hit DMG</ToggleButton>
   </ToggleButtonGroup>
 }
 

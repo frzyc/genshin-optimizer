@@ -1,6 +1,16 @@
 import { faDice, faDiceD20, faFirstAid, faFistRaised, faMagic, faShieldAlt, faSync, faTint } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { allElements } from '../Types/consts'
 
+import { faAnemo, faGeo, faElectro, faHydro, faPyro, faCryo } from '../faIcons'
+const elefamap = {
+  anemo: faAnemo,
+  geo: faGeo,
+  electro: faElectro,
+  hydro: faHydro,
+  pyro: faPyro,
+  cryo: faCryo,
+}
 const StatIcon = {
   characterHP: faTint,
   finalHP: faTint,
@@ -23,6 +33,8 @@ const StatIcon = {
   critDMG_: faDiceD20,
   enerRech_: faSync,
   heal_: faFirstAid,
+
+  ...Object.fromEntries(allElements.flatMap(ele => [[`${ele}_dmg_`, elefamap[ele]], [`${ele}_res_`, elefamap[ele]]]))
 }
 
 const StatIconEle = (statKey) =>

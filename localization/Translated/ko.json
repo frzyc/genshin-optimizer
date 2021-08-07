@@ -256,8 +256,7 @@
             "text": "파티원에게 원소 피해 보너스"
         },
         "c1": "<strong>카즈하의 일도</strong> 사용 쿨다운 리셋",
-        "c2": "바람 부는 가을 들판",
-        "c6": "<strong>치하야부루</strong> 혹은 <strong>카즈하의 일도</strong> 발동 시"
+        "c2": "바람 부는 가을 들판"
     },
     "char_rosaria": {
         "a1": "뒤에서 공격 시",
@@ -268,5 +267,14 @@
         },
         "c1": "치명타 적중 시",
         "c6": "<strong>죽음의 성례</strong> 공격 적중"
+    },
+    "char_kamisatoayaka": {
+        "afterSprint": "대시 후",
+        "afterSkill": "<strong>카미사토류·얼음꽃</strong> 사용 후",
+        "afterSprintCryo": "대시 후 <cyro>얼음 원소<cyro> 부착",
+        "staminaRestore": "스태미나 10pt 회복",
+        "snowflakeDMG": "서리의 관문 피해",
+        "dmgBySnowflake": "<strong>카미사토류·멸망의 서리</strong>로 생성된 서리의 관문이 가하는 피해를 받은 대상",
+        "UsurashiButou": "살얼음의 춤"
     }
 }
