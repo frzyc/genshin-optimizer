@@ -1,4 +1,5 @@
-import { IFormulaSheet } from "../../../Types/character"
+import { FormulaItem, IFormulaSheet } from "../../../Types/character"
+import { BasicStats } from "../../../Types/stats"
 import { basicDMGFormula } from "../../../Util/FormulaUtil"
 
 const data = {
@@ -48,6 +49,23 @@ const formula: IFormulaSheet = {
   constellation6: {
     dmg: stats => basicDMGFormula(100, stats, "elemental"),
   }
+}
+
+formula.burstCombo = {
+  ...Object.fromEntries([0, 1, 2, 3].map((i) => {
+    const comboFormula = (stats: BasicStats): FormulaItem => {
+      const normalFormula = formula.normal[i](stats);
+      const burstFormula = formula.burst[i](stats);
+      
+      // Just add 'em together!
+      return [
+        (s) => (normalFormula[0](s) + burstFormula[0](s)),
+        [...normalFormula[1], ...burstFormula[1]]
+      ]
+    };
+
+    return [i, comboFormula];
+  }))
 }
 
 export default formula
