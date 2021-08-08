@@ -176,7 +176,11 @@ export function artifactPermutations(initialStats: ICalculatedStats, artifactsBy
 
     const slotKey = slotKeys[index]
     for (const artifact of artifactsBySlot[slotKey] ?? []) {
-      const newStats = deepClone(stats)
+      const newStats = { ...stats }
+
+      // Hand-pick costly copying
+      if (newStats.modifiers) newStats.modifiers = deepClone(newStats.modifiers)
+
       accumulate(slotKey, artifact, setCount, accu, newStats, artifactSetEffects)
       slotPerm(index + 1, newStats)
       setCount[artifact.setKey]! -= 1
