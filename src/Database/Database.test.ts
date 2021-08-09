@@ -4,6 +4,7 @@ import { randomizeArtifact } from "../Util/ArtifactUtil"
 import { deepClone, getArrLastElement } from "../Util/Util"
 import { database, Database } from "./Database"
 import * as data1 from "./Database.db1.test.json"
+import { validateFlexArtifact } from "./validation"
 
 const baseAlbedo: ICharacter = {
   characterKey: "albedo",
@@ -126,8 +127,8 @@ describe("Database", () => {
     database.clear()
     const albedo = deepClone(baseAlbedo)
     const amber = deepClone(baseAmber)
-    const art1 = await randomizeArtifact()
-    const art2 = await randomizeArtifact()
+    const art1 = validateFlexArtifact(await randomizeArtifact()).artifact
+    const art2 = validateFlexArtifact(await randomizeArtifact()).artifact
     art1.slotKey = "circlet"
     art2.slotKey = "circlet"
     albedo.talentLevelKeys.auto = 3
@@ -149,7 +150,7 @@ describe("Database", () => {
     const albedoCallback1 = jest.fn()
     const artifact1Callback1 = jest.fn()
     const albedoCallback1Cleanup = database.followChar("albedo", albedoCallback1)
-    const artifact1Callback1Cleanup = database.followArt(art1.id, artifact1Callback1)
+    /* const artifact1Callback1Cleanup = */ database.followArt(art1.id, artifact1Callback1)
     // Both should receive a callback for the current value
     expect(getArrLastElement(albedoCallback1.mock.calls)[0]).toEqual(albedo)
     expect(getArrLastElement(artifact1Callback1.mock.calls)[0]).toEqual(art1)

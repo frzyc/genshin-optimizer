@@ -1,4 +1,4 @@
-import { IArtifact } from "../Types/artifact"
+import { IFlexArtifact } from "../Types/artifact"
 import { allArtifactSets, allSlotKeys } from "../Types/consts"
 import Artifact from "./Artifact"
 import { ArtifactSheet } from "./ArtifactSheet"
@@ -10,7 +10,7 @@ beforeAll(async () => {
 })
 
 expect.extend({
-  toBeValidNewArtifact(artifact: Partial<IArtifact>): { message, pass } {
+  toBeValidNewArtifact(artifact: Partial<IFlexArtifact>): { message, pass } {
     if (artifact.id)
       return { message: () => `expect new artifact, found id ${this.utils.printReceived(artifact.id)}`, pass: false }
     if (artifact.location)
@@ -31,8 +31,6 @@ expect.extend({
       return { message: () => `expect valid slot key, found ${this.utils.printReceived(artifact.slotKey)}`, pass: false }
     if (!artifact.mainStatKey || !Artifact.slotMainStats(artifact.slotKey).includes(artifact.mainStatKey))
       return { message: () => `expect valid main stat key for slot ${this.utils.printExpected(artifact.slotKey)}, found ${this.utils.printReceived(artifact.mainStatKey)}`, pass: false }
-    if ("mainStatVal" in artifact)
-      return { message: () => `expect no main stat value, found ${this.utils.printReceived(artifact.mainStatVal)}`, pass: false }
 
     if (!artifact.substats || artifact.substats.length !== 4)
       return { message: () => `expect 4 substats, found ${this.utils.printReceived(artifact.substats?.length ?? 4)}`, pass: false }

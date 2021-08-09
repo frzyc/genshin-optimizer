@@ -59,7 +59,7 @@ export const characterIdMap = {
   // 10000050: "TEMPLATE",
   10000051: "eula",
   // 10000052: "TEMPLATE",
-  // 10000053: "TEMPLATE", Sayu
+  10000053: "sayu",
   // 10000054: "TEMPLATE",
   // 11000008: "TEMPLATE",
   // 11000009: "TEMPLATE",

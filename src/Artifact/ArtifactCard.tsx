@@ -19,7 +19,7 @@ import Stat from '../Stat';
 import { allSubstats, IArtifact, Substat, SubstatKey } from '../Types/artifact';
 import { CharacterKey } from '../Types/consts';
 import { usePromise } from '../Util/ReactUtil';
-import { valueString } from '../Util/UIUtil';
+import { valueStringWithUnit } from '../Util/UIUtil';
 import Artifact from './Artifact';
 import { ArtifactSheet } from './ArtifactSheet';
 import SlotNameWithIcon from './Component/SlotNameWIthIcon';
@@ -40,11 +40,10 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
   const art = artifactObj ?? databaseArtifact
   const characterSheet = usePromise(CharacterSheet.get(art?.location ?? ""), [art?.location])
   if (!art) return null
-  if (art.substats[0].rolls === undefined) Artifact.substatsValidation(art)
 
   const { id, slotKey, numStars, level, mainStatKey, substats, lock } = art
   const mainStatLevel = Math.max(Math.min(mainStatAssumptionLevel, numStars * 4), level)
-  const mainStatVal = <span className={mainStatLevel !== level ? "text-orange" : ""}>{valueString(Artifact.mainStatValue(mainStatKey, numStars, mainStatLevel) ?? 0, Stat.getStatUnit(mainStatKey))}</span>
+  const mainStatVal = <span className={mainStatLevel !== level ? "text-orange" : ""}>{valueStringWithUnit(Artifact.mainStatValue(mainStatKey, numStars, mainStatLevel) ?? 0, Stat.getStatUnit(mainStatKey))}</span>
   const { currentEfficiency, maxEfficiency } = Artifact.getArtifactEfficiency(art, effFilter)
   const artifactValid = maxEfficiency !== 0
   const locationName = characterSheet?.name ?? "Inventory"
@@ -77,8 +76,8 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
           let statName = Stat.getStatName(stat.key)
           return (<Col key={i} xs={12}>
             <Badge variant={numRolls ? `${numRolls}roll` : "danger"} className="text-darkcontent"><b>{numRolls ? numRolls : "?"}</b></Badge>{" "}
-            <span className={`text-${numRolls}roll`}>{statName}{`+${valueString(stat.value, Stat.getStatUnit(stat.key))}`}</span>
-            <span className="float-right" style={{ opacity: effOpacity }}>{stat.key && effFilter.has(stat.key) ? valueString(efficiency, "eff") : "-"}</span>
+            <span className={`text-${numRolls}roll`}>{statName}{`+${valueStringWithUnit(stat.value, Stat.getStatUnit(stat.key))}`}</span>
+            <span className="float-right" style={{ opacity: effOpacity }}>{stat.key && effFilter.has(stat.key) ? valueStringWithUnit(efficiency, "eff") : "-"}</span>
           </Col>)
         })}
       </Row>

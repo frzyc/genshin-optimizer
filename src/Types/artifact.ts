@@ -30,11 +30,8 @@ export interface IFlexArtifact {
   lock: boolean,
 }
 export interface IArtifact extends IFlexArtifact {
-  mainStatVal?: number,
+  mainStatVal: number,
   substats: Substat[],
-
-  location: CharacterKey | "",
-  lock: boolean,
 }
 
 export interface IFlexSubstat {

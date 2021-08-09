@@ -23,6 +23,7 @@ import noelle from './noelle/data'
 import qiqi from './qiqi/data'
 import razor from './razor/data'
 import rosaria from './rosaria/data'
+import sayu from './sayu/data'
 import sucrose from './sucrose/data'
 import tartaglia from './tartaglia/data'
 import traveler from './traveler/data'
@@ -62,6 +63,7 @@ const formula: IFormulaSheets = {
   qiqi,
   razor,
   rosaria,
+  sayu,
   sucrose,
   tartaglia,
   traveler,

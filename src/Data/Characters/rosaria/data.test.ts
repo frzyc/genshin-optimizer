@@ -11,7 +11,7 @@ describe("Testing Tartaglia's Formulas (Derpy#2132)", () => {
     setupStats = createProxiedStats({
       characterHP: 10040, characterATK: 625 - 429, characterDEF: 580,
       characterEle: "cryo", characterLevel: 70,
-      weaponType: "polearm", weaponATK: 429, physical_dmg_: 28.4, weapon: { refineIndex: 1 - 1 },//Crescent Pike Lvl. 70 (Refinement 1)
+      weaponType: "polearm", weaponATK: 429, physical_dmg_: 28.4, weapon: { refineIndex: 1 - 1 } as any,//Crescent Pike Lvl. 70 (Refinement 1)
       atk_: 18,//specialized
 
       enemyLevel: 85, physical_enemyRes_: 70, // Ruin Guard

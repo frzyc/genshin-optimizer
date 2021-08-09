@@ -10,7 +10,7 @@ import characterData from './DataminedModules/character/character'
 import characterExpCurve, { CharacterGrowCurveKey } from './DataminedModules/character/characterExpCurve'
 import characterInfo from './DataminedModules/character/characterInfo'
 import constellations from './DataminedModules/character/constellations'
-import passives from './DataminedModules/character/passives'
+import skillGroups, { ProudSkillExcelConfigData } from './DataminedModules/character/passives'
 import skillDepot, { AvatarSkillDepotExcelConfigData } from './DataminedModules/character/skillDepot'
 import talents from './DataminedModules/character/talents'
 import equipAffixDataData from './DataminedModules/common/equipAffix'
@@ -88,6 +88,72 @@ Object.entries(characterDataDump).forEach(([characterKey, data]) => {
     dumpFile(`../src/Data/Characters/${charKey}/data_${eleKey}_gen.json`, data)
   } else
     dumpFile(`../src/Data/Characters/${characterKey}/data_gen.json`, data)
+})
+
+
+const characterSkillParamDump = Object.fromEntries(Object.entries(characterData).filter(([charid, charData]) => charid in characterIdMap).map(([charid, charData]) => {
+  const { CandSkillDepotIds, SkillDepotId } = charData
+  const result = {}
+  let skillDepotId = SkillDepotId
+
+
+  function genTalentHash(keys: string[], depot: AvatarSkillDepotExcelConfigData) {
+    const { EnergySkill: burst, Skills: [normal, skill, sprint], Talents, InherentProudSkillOpens: [passive1, passive2, passive3] } = depot
+
+    function parseSkillParams(obj: object, keys: string[], skillArr: ProudSkillExcelConfigData[]) {
+      const skillParamBase = skillArr.map(proud => proud.ParamList)
+
+      //need to transpose the skillParam
+      const skillParamUntrimmed = []
+      skillParamBase.forEach((arr, i) => {
+        arr.forEach((value, j) => {
+          if (!skillParamUntrimmed[j]) skillParamUntrimmed[j] = []
+          //The assumption is that any value >10 is a "flat" value that is not a percent.
+          skillParamUntrimmed[j][i] = extrapolateFloat(value)
+        })
+      })
+      //filter out empty entries
+      const skillParam = skillParamUntrimmed.filter(arr => !arr.every(i => !i))
+      layeredAssignment(result, keys, skillParam)
+    }
+    parseSkillParams(result, [...keys, "auto"], skillGroups[talents[normal].ProudSkillGroupId])
+
+    parseSkillParams(result, [...keys, "skill"], skillGroups[talents[skill].ProudSkillGroupId])
+    parseSkillParams(result, [...keys, "burst"], skillGroups[talents[burst].ProudSkillGroupId])
+
+    if (sprint)
+      parseSkillParams(result, [...keys, "sprint"], skillGroups[talents[sprint].ProudSkillGroupId])
+
+    parseSkillParams(result, [...keys, "passive1"], skillGroups[passive1.ProudSkillGroupId])
+    parseSkillParams(result, [...keys, "passive2"], skillGroups[passive2.ProudSkillGroupId])
+    if (passive3?.ProudSkillGroupId)
+      parseSkillParams(result, [...keys, "passive3"], skillGroups[passive3.ProudSkillGroupId])
+
+    Talents.forEach((skId, i) =>
+      layeredAssignment(result, [...keys, `constellation${i + 1}`], constellations[skId].ParamList.filter(i => i).map(value => extrapolateFloat(value))))
+  }
+
+  const keys = []
+  if (CandSkillDepotIds.length) { //traveler
+    //this will be 504,506... for male
+    genTalentHash([...keys, "anemo"], skillDepot[704])
+    genTalentHash([...keys, "geo"], skillDepot[706])
+    genTalentHash([...keys, "electro"], skillDepot[707])
+  } else {
+    genTalentHash(keys, skillDepot[skillDepotId])
+  }
+
+
+  return [characterIdMap[charid], result]
+})) as Record<CharacterKey, CharacterData>
+
+//dump data file to respective character directory.
+Object.entries(characterSkillParamDump).forEach(([characterKey, data]) => {
+  if (characterKey.includes('_')) {//traveler, for multi element support
+    const [charKey, eleKey] = characterKey.split("_")
+    dumpFile(`../src/Data/Characters/${charKey}/${eleKey}/skillParam_gen.json`, data)
+  } else
+    dumpFile(`../src/Data/Characters/${characterKey}/skillParam_gen.json`, data)
 })
 
 type WeaponProp = {
@@ -217,27 +283,30 @@ Object.entries(characterData).filter(([charid,]) => charid in characterIdMap).fo
     const { EnergySkill: burst, Skills: [normal, skill, sprint], Talents, InherentProudSkillOpens: [passive1, passive2, passive3] } = depot
     layeredAssignment(mapHashData, [...keys, "auto", "name"], [talents[normal].NameTextMapHash, "autoName"])
     layeredAssignment(mapHashData, [...keys, "auto", "fields"], [talents[normal].DescTextMapHash, "autoFields"])
+    // layeredAssignment(mapHashData, [...keys, "auto", "skillParams"], skillGroups[talents[auto].ProudSkillGroupId][0].ParamDescList.map(id => [id, "skillParam"]))//TODO:
 
     layeredAssignment(mapHashData, [...keys, "skill", "name"], talents[skill].NameTextMapHash)
     layeredAssignment(mapHashData, [...keys, "skill", "description"], [talents[skill].DescTextMapHash, "paragraph"])
+    layeredAssignment(mapHashData, [...keys, "skill", "skillParams"], skillGroups[talents[skill].ProudSkillGroupId][0].ParamDescList.map(id => [id, "skillParam"]))
 
     layeredAssignment(mapHashData, [...keys, "burst", "name"], talents[burst].NameTextMapHash)
     layeredAssignment(mapHashData, [...keys, "burst", "description"], [talents[burst].DescTextMapHash, "paragraph"])
+    layeredAssignment(mapHashData, [...keys, "burst", "skillParams"], skillGroups[talents[burst].ProudSkillGroupId][0].ParamDescList.map(id => [id, "skillParam"]))
 
     if (sprint) {
       layeredAssignment(mapHashData, [...keys, "sprint", "name"], talents[sprint].NameTextMapHash)
       layeredAssignment(mapHashData, [...keys, "sprint", "description"], [talents[sprint].DescTextMapHash, "paragraph"])
     }
 
-    layeredAssignment(mapHashData, [...keys, "passive1", "name"], passives[passive1.ProudSkillGroupId].NameTextMapHash)
-    layeredAssignment(mapHashData, [...keys, "passive1", "description"], [passives[passive1.ProudSkillGroupId].DescTextMapHash, "paragraph"])
+    layeredAssignment(mapHashData, [...keys, "passive1", "name"], skillGroups[passive1.ProudSkillGroupId][0].NameTextMapHash)
+    layeredAssignment(mapHashData, [...keys, "passive1", "description"], [skillGroups[passive1.ProudSkillGroupId][0].DescTextMapHash, "paragraph"])
 
-    layeredAssignment(mapHashData, [...keys, "passive2", "name"], passives[passive2.ProudSkillGroupId].NameTextMapHash)
-    layeredAssignment(mapHashData, [...keys, "passive2", "description"], [passives[passive2.ProudSkillGroupId].DescTextMapHash, "paragraph"])
+    layeredAssignment(mapHashData, [...keys, "passive2", "name"], skillGroups[passive2.ProudSkillGroupId][0].NameTextMapHash)
+    layeredAssignment(mapHashData, [...keys, "passive2", "description"], [skillGroups[passive2.ProudSkillGroupId][0].DescTextMapHash, "paragraph"])
 
     if (passive3?.ProudSkillGroupId) {
-      layeredAssignment(mapHashData, [...keys, "passive3", "name"], passives[passive3.ProudSkillGroupId].NameTextMapHash)
-      layeredAssignment(mapHashData, [...keys, "passive3", "description"], [passives[passive3.ProudSkillGroupId].DescTextMapHash, "paragraph"])
+      layeredAssignment(mapHashData, [...keys, "passive3", "name"], skillGroups[passive3.ProudSkillGroupId][0].NameTextMapHash)
+      layeredAssignment(mapHashData, [...keys, "passive3", "description"], [skillGroups[passive3.ProudSkillGroupId][0].DescTextMapHash, "paragraph"])
     }
 
     Talents.forEach((skId, i) => {

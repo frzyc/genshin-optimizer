@@ -23,6 +23,7 @@ import noelle from './noelle'
 import qiqi from './qiqi'
 import razor from './razor'
 import rosaria from './rosaria'
+import sayu from './sayu'
 import sucrose from './sucrose'
 import tartaglia from './tartaglia'
 import traveler from './traveler'
@@ -62,6 +63,7 @@ const characters: StrictDict<CharacterKey, ICharacterSheet> = {
   qiqi,
   razor,
   rosaria,
+  sayu,
   sucrose,
   tartaglia,
   traveler,

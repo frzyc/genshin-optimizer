@@ -9,10 +9,10 @@ import Snippet from "./imgs/snippet.png";
 import Stat from '../Stat';
 import { clamp, hammingDistance } from '../Util/Util';
 import Artifact from './Artifact';
-import { allMainStatKeys, allSubstats, IArtifact, MainStatKey, Substat, SubstatKey } from '../Types/artifact';
+import { allMainStatKeys, allSubstats, IArtifact, IFlexArtifact, MainStatKey, Substat, SubstatKey } from '../Types/artifact';
 import { allArtifactRarities, allArtifactSets, allSlotKeys, ArtifactSetKey, Rarity, SlotKey } from '../Types/consts';
 import { ArtifactSheet } from './ArtifactSheet';
-import { valueString } from '../Util/UIUtil';
+import { valueStringWithUnit } from '../Util/UIUtil';
 import { usePromise } from '../Util/ReactUtil';
 import { BorrowManager } from '../Util/BorrowManager';
 
@@ -38,7 +38,7 @@ const schedulers = new BorrowManager(async (language): Promise<Scheduler> => {
   value.then(value => value.terminate())
 })
 
-export default function UploadDisplay({ setState, setReset, artifactInEditor }: { setState: (art: IArtifact) => void, setReset: (reset: () => void) => void, artifactInEditor: boolean }) {
+export default function UploadDisplay({ setState, setReset, artifactInEditor }: { setState: (art: IFlexArtifact) => void, setReset: (reset: () => void) => void, artifactInEditor: boolean }) {
   const [modalShow, setModalShow] = useState(false)
 
   const [{ processed, outstanding }, dispatchQueue] = useReducer(queueReducer, { processed: [], outstanding: [] })
@@ -284,10 +284,10 @@ async function textsFromImage(imageData: ImageData, options: object | undefined 
   return rec.data.lines.map(line => line.text)
 }
 
-export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactSheet>, rarities: Set<number>, textSetKeys: Set<ArtifactSetKey>, slotKeys: Set<SlotKey>, substats: Substat[], mainStatKeys: Set<MainStatKey>, mainStatValues: { mainStatValue: number, unit?: string }[]): [IArtifact, Dict<keyof IArtifact, Displayable>] {
+export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactSheet>, rarities: Set<number>, textSetKeys: Set<ArtifactSetKey>, slotKeys: Set<SlotKey>, substats: Substat[], mainStatKeys: Set<MainStatKey>, mainStatValues: { mainStatValue: number, unit?: string }[]): [IFlexArtifact, Dict<keyof IArtifact, Displayable>] {
   const relevantSetKey = [...new Set<ArtifactSetKey>([...textSetKeys, "Adventurer", "ArchaicPetra"])]
 
-  let bestScore = -1, bestArtifacts: IArtifact[] = [{
+  let bestScore = -1, bestArtifacts: IFlexArtifact[] = [{
     id: "",
     setKey: "Adventurer", numStars: 3, level: 0, slotKey: "flower", mainStatKey: "hp", substats: [],
     location: "", lock: false,
@@ -407,21 +407,21 @@ export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactShee
   addText("slotKey", slotKeys, "Slot", (value) => <>{Artifact.slotName(value)}</>)
   addText("mainStatKey", mainStatKeys, "Main Stat", (value) => <>{Stat.getStatNameRaw(value)}</>)
   texts.substats = <>{result.substats.filter(substat => substat.key !== "").map((substat, i) =>
-    <div key={i}>{detectedText(substat, "Sub Stat", (value) => <>{Stat.getStatNameRaw(value.key)}+{valueString(value.value, Stat.getStatUnit(value.key))}</>)}</div>)
+    <div key={i}>{detectedText(substat, "Sub Stat", (value) => <>{Stat.getStatNameRaw(value.key)}+{valueStringWithUnit(value.value, Stat.getStatUnit(value.key))}</>)}</div>)
   }</>
 
   const unit = Stat.getStatUnit(result.mainStatKey)
   if (mainStatValues.find(value => value.mainStatValue === resultMainStatVal)) {
     if (mainStatKeys.has(result.mainStatKey)) {
       texts.level = detectedText(result.level, "Level", (value) => "+" + value)
-      texts.mainStatVal = detectedText(resultMainStatVal, "Main Stat value", (value) => <>{valueString(value, unit)}</>)
+      texts.mainStatVal = detectedText(resultMainStatVal, "Main Stat value", (value) => <>{valueStringWithUnit(value, unit)}</>)
     } else {
       texts.level = inferredText(result.level, "Level", (value) => "+" + value)
-      texts.mainStatVal = inferredText(resultMainStatVal, "Main Stat value", (value) => <>{valueString(value, unit)}</>)
+      texts.mainStatVal = inferredText(resultMainStatVal, "Main Stat value", (value) => <>{valueStringWithUnit(value, unit)}</>)
     }
   } else {
     texts.level = unknownText(result.level, "Level", (value) => "+" + value)
-    texts.mainStatVal = unknownText(resultMainStatVal, "Main Stat value", (value) => <>{valueString(value, unit)}</>)
+    texts.mainStatVal = unknownText(resultMainStatVal, "Main Stat value", (value) => <>{valueStringWithUnit(value, unit)}</>)
   }
 
   return [result, texts]
@@ -545,7 +545,7 @@ function bandPass(pixelData: ImageData, color1: Color, color2: Color, options: {
 }
 
 type ProcessedEntry = {
-  fileName: string, imageURL: string, artifact: IArtifact, texts: Dict<keyof IArtifact, Displayable>
+  fileName: string, imageURL: string, artifact: IFlexArtifact, texts: Dict<keyof IArtifact, Displayable>
 }
 type OutstandingEntry = {
   file: File, fileName: string, imageURL?: Promise<string>, result?: Promise<{ file: File, result: ProcessedEntry }>

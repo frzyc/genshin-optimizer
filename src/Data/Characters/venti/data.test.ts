@@ -11,7 +11,7 @@ describe("Testing Venti's Formulas (Derpy#2132)", () => {
     setupStats = createProxiedStats({
       characterHP: 8557, characterATK: 663 - 449, characterDEF: 543,
       characterEle: "anemo", characterLevel: 70,
-      weaponType: "bow", weaponATK: 449, critRate_: 5 + 25.1, weapon: { refineIndex: 1 - 1 },//The Viridescent Hunt Lvl. 90 (Refinement 1)
+      weaponType: "bow", weaponATK: 449, critRate_: 5 + 25.1, weapon: { refineIndex: 1 - 1 } as any,//The Viridescent Hunt Lvl. 90 (Refinement 1)
       enerRech: 24,//specialized
 
       enemyLevel: 85, physical_enemyRes_: 70, // Ruin Guard

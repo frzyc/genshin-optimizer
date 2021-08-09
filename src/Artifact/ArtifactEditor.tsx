@@ -1,6 +1,6 @@
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useCallback, useEffect, useMemo, useReducer } from 'react';
+import { useCallback, useEffect, useMemo, useReducer } from 'react';
 import { Alert, Badge, Button, ButtonGroup, Card, Col, Dropdown, DropdownButton, FormControl, InputGroup, OverlayTrigger, Popover, Row } from 'react-bootstrap';
 import { Trans, useTranslation } from 'react-i18next';
 import CustomFormControl from '../Components/CustomFormControl';
@@ -8,7 +8,7 @@ import { Stars } from '../Components/StarDisplay';
 import { database } from '../Database/Database';
 import { validateFlexArtifact } from '../Database/validation';
 import Stat from '../Stat';
-import { allSubstats, IArtifact, Substat } from '../Types/artifact';
+import { allSubstats, IArtifact, IFlexArtifact, Substat } from '../Types/artifact';
 import { Rarity, SlotKey } from '../Types/consts';
 import { randomizeArtifact } from '../Util/ArtifactUtil';
 import { usePromise } from '../Util/ReactUtil';
@@ -28,8 +28,12 @@ const allSubstatFilter = new Set(allSubstats)
 let uploadDisplayReset: (() => void) | undefined
 export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: ArtifactEditorArgument) {
   const { t } = useTranslation("artifact")
-  const [artifact, artifactDispatch] = useReducer(artifactReducer, undefined)
+  const [flexArtifact, artifactDispatch] = useReducer(artifactReducer, undefined)
   const artifactSheets = usePromise(ArtifactSheet.getAll(), [])
+
+  const { artifact, errors } = useMemo(() =>
+    flexArtifact ? validateFlexArtifact(flexArtifact) : { artifact: undefined, errors: [] }
+    , [flexArtifact])
 
   const artifactInEditor = artifact !== undefined
   const sheet = artifact ? artifactSheets?.[artifact.setKey] : undefined
@@ -49,7 +53,7 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: Artifac
     uploadDisplayReset?.()
     artifactDispatch({ type: "reset" })
   }, [cancelEdit, artifactDispatch])
-  const update = useCallback((newValue: Partial<IArtifact>) => {
+  const update = useCallback((newValue: Partial<IFlexArtifact>) => {
     const newSheet = newValue.setKey ? artifactSheets![newValue.setKey] : sheet!
 
     function pick<T>(value: T | undefined, available: readonly T[], prefer?: T): T {
@@ -76,11 +80,10 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: Artifac
   const setSubstat = useCallback((index: number, substat: Substat) => {
     artifactDispatch({ type: "substat", index, substat })
   }, [artifactDispatch])
-  const isValid = artifact ? !validateFlexArtifact(artifact).errors.length : false
+  const isValid = !errors.length
   const canClearArtifact = (): boolean => window.confirm(t`editor.clearPrompt` as string)
   const { dupId, isDup } = useMemo(() => checkDuplicate(artifact), [artifact])
   const { numStars = 5, level = 0, slotKey = "flower" } = artifact ?? {}
-  const errMsgs = artifact ? Artifact.substatsValidation(artifact) : []
   const { currentEfficiency = 0, maxEfficiency = 0 } = artifact ? Artifact.getArtifactEfficiency(artifact, allSubstatFilter) : {}
   return <Card bg="darkcontent" text={"lightfont" as any}>
     <Card.Header><Trans t={t} i18nKey="editor.title" >Artifact Editor</Trans></Card.Header>
@@ -161,7 +164,7 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: Artifac
               <Row>
                 <Col className="text-center">{t`editor.curSubEff`}</Col>
                 <Col xs="auto">
-                  <PercentBadge valid={!errMsgs.length} value={errMsgs.length ? "ERR" : currentEfficiency} />
+                  <PercentBadge valid={isValid} value={isValid ? currentEfficiency : "ERR"} />
                   <OverlayTrigger
                     placement="bottom"
                     overlay={<Popover id="current-efficiency">
@@ -182,7 +185,7 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: Artifac
               <Row>
                 <Col className="text-center">{t`editor.maxSubEff`}</Col>
                 <Col xs="auto">
-                  <PercentBadge valid={!errMsgs.length} value={errMsgs.length ? "ERR" : maxEfficiency} />
+                  <PercentBadge valid={isValid} value={isValid ? maxEfficiency : "ERR"} />
                   <OverlayTrigger
                     placement="bottom"
                     overlay={<Popover id="max-efficiency">
@@ -224,8 +227,8 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: Artifac
           </Row>
         </Col>}
         {/* Error alert */}
-        {Boolean(errMsgs.length) && <Col xs={12} className="mb-2">
-          <Alert variant="danger" className="py-2 px-3 mb-0 ">{errMsgs.map((e, i) => <div key={i}>{e}</div>)}</Alert>
+        {!isValid && <Col xs={12} className="mb-2">
+          <Alert variant="danger" className="py-2 px-3 mb-0 ">{errors.map((e, i) => <div key={i}>{e}</div>)}</Alert>
         </Col>}
       </Row></Card.Body>
     <Card.Footer>
@@ -241,7 +244,7 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: Artifac
 
 function SubstatInput({ index, artifact, setSubstat, className }: { index: number, artifact: IArtifact | undefined, setSubstat: (index: number, substat: Substat) => void, className: string }) {
   const { t } = useTranslation("artifact")
-  const { mainStatKey = "", substats = [] } = artifact ?? {}
+  const { mainStatKey = "" } = artifact ?? {}
   const { key = "", value = 0, rolls = [], efficiency = 0 } = artifact?.substats[index] ?? {}
 
   const accurateValue = rolls.reduce((a, b) => a + b, 0)
@@ -285,7 +288,7 @@ function SubstatInput({ index, artifact, setSubstat, className }: { index: numbe
       >
         {Boolean(key) && <Dropdown.Item key={key} onClick={() => setSubstat(index, { key: "", value: 0 })}>{t`editor.substat.noSubstat`}</Dropdown.Item>}
         {allSubstats
-          .filter(key => mainStatKey !== key && substats.every(other => other.key !== key))
+          .filter(key => mainStatKey !== key)
           .map(key =>
             <Dropdown.Item key={key} onClick={() => setSubstat(index, { key, value: 0 })} >
               {Stat.getStatNameWithPercent(key)}
@@ -313,15 +316,20 @@ function SubstatInput({ index, artifact, setSubstat, className }: { index: numbe
 
 type ResetMessage = { type: "reset" }
 type SubstatMessage = { type: "substat", index: number, substat: Substat }
-type OverwriteMessage = { type: "overwrite", artifact: IArtifact }
-type UpdateMessage = { type: "update", artifact: Partial<IArtifact> }
+type OverwriteMessage = { type: "overwrite", artifact: IFlexArtifact }
+type UpdateMessage = { type: "update", artifact: Partial<IFlexArtifact> }
 type Message = ResetMessage | SubstatMessage | OverwriteMessage | UpdateMessage
-export function artifactReducer(state: IArtifact | undefined, action: Message): IArtifact | undefined {
+export function artifactReducer(state: IFlexArtifact | undefined, action: Message): IFlexArtifact | undefined {
   switch (action.type) {
     case "reset": return
     case "substat": {
       const { index, substat } = action
-      state!.substats[index] = substat
+      const oldIndex = substat.key ? state!.substats.findIndex(current => current.key === substat.key) : -1
+      if (oldIndex === -1 || oldIndex === index)
+        state!.substats[index] = substat
+      else  // Already in used, swap the items instead
+        [state!.substats[index], state!.substats[oldIndex]] =
+          [state!.substats[oldIndex], state!.substats[index]]
       return { ...state! }
     }
     case "overwrite": return action.artifact
@@ -329,7 +337,7 @@ export function artifactReducer(state: IArtifact | undefined, action: Message): 
   }
 }
 
-function checkDuplicate(editorArt: IArtifact | undefined): { dupId?: string, isDup: boolean } {
+function checkDuplicate(editorArt: IFlexArtifact | undefined): { dupId?: string, isDup: boolean } {
   if (!editorArt) return { isDup: false }
   const { id, setKey, numStars, level, slotKey, mainStatKey, substats } = editorArt
   if (id) return { isDup: false }

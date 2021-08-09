@@ -1,4 +1,4 @@
-type ProudSkillExcelConfigData = {
+export type ProudSkillExcelConfigData = {
   "ProudSkillId": number//342101,
   "ProudSkillGroupId": number//3421,
   "Level": number//1,
@@ -75,12 +75,11 @@ type ProudSkillExcelConfigData = {
 }
 const passivesSrc = require('../../GenshinData/ExcelBinOutput/ProudSkillExcelConfigData.json') as ProudSkillExcelConfigData[]
 
-// there will be dups, where one ProudSkillGroupId can have several entries. looks like none of them really matter for now...
-// const depotIds = passivesSrc.map(data => data.ProudSkillGroupId).sort()
-// for (let i = 1; i < depotIds.length; i++) 
-//   if (depotIds[i]===depotIds[i-1]) console.warn(`ProudSkillGroupId ${depotIds[i]} has dups`);
+const skillGroups = {} as { [id: number]: ProudSkillExcelConfigData[] }
 
-
-const passives = Object.fromEntries(passivesSrc.map(data => [data.ProudSkillGroupId, data])) as { [id: number]: ProudSkillExcelConfigData }
-
-export default passives
+passivesSrc.forEach(data => {
+  const { ProudSkillGroupId, Level } = data
+  if (!skillGroups[ProudSkillGroupId]) skillGroups[ProudSkillGroupId] = []
+  skillGroups[ProudSkillGroupId][Level - 1] = data
+})
+export default skillGroups

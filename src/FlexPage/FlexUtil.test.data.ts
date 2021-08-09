@@ -1,3 +1,4 @@
+import Artifact from "../Artifact/Artifact"
 import { IArtifact, IFlexArtifact } from "../Types/artifact"
 import { ICharacter, IFlexCharacter } from "../Types/character"
 
@@ -147,6 +148,7 @@ export const artifacts: Dict<string, IArtifact> = {
     numStars: 5,
     level: 20,
     mainStatKey: 'pyro_dmg_',
+    mainStatVal: Artifact.mainStatValue('pyro_dmg_', 5, 20),
     slotKey: 'goblet',
     substats: [
       { key: 'eleMas', value: 40 },
@@ -163,6 +165,7 @@ export const artifacts: Dict<string, IArtifact> = {
     numStars: 5,
     level: 20,
     mainStatKey: 'hp',
+    mainStatVal: Artifact.mainStatValue('hp', 5, 20),
     slotKey: 'flower',
     substats: [
       { key: 'atk', value: 49 },
@@ -179,6 +182,7 @@ export const artifacts: Dict<string, IArtifact> = {
     numStars: 5,
     level: 20,
     mainStatKey: 'atk',
+    mainStatVal: Artifact.mainStatValue('atk', 5, 20),
     slotKey: 'plume',
     substats: [
       { key: 'hp', value: 508 },
@@ -195,6 +199,7 @@ export const artifacts: Dict<string, IArtifact> = {
     numStars: 5,
     level: 20,
     mainStatKey: 'critRate_',
+    mainStatVal: Artifact.mainStatValue('critRate_', 5, 20),
     slotKey: 'circlet',
     substats: [
       { key: 'atk', value: 19 },
@@ -211,6 +216,7 @@ export const artifacts: Dict<string, IArtifact> = {
     numStars: 5,
     level: 16,
     mainStatKey: 'eleMas',
+    mainStatVal: Artifact.mainStatValue('eleMas', 5, 16),
     slotKey: 'sands',
     substats: [
       { key: 'hp_', value: 15.2 },

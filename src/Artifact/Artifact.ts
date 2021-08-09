@@ -1,5 +1,4 @@
 import { ArtifactSlotsData, ArtifactStarsData } from '../Data/ArtifactData';
-import Stat from '../Stat';
 import { clampPercent, deepClone, evalIfFunc } from '../Util/Util';
 import { allSubstats, IArtifact, MainStatKey, SubstatKey } from '../Types/artifact';
 import { SlotKey, Rarity, ArtifactSetKey, allSlotKeys, SetNum, allRarities } from '../Types/consts';
@@ -99,81 +98,6 @@ export default class Artifact {
   }
 
   //ARTIFACT IN GENERAL
-  static substatsValidation(state: IArtifact): string[] {
-    const { numStars, level, substats } = state, errors: string[] = []
-
-    const allSubstatRolls: { index: number, substatRolls: number[][] }[] = []
-    let total = 0
-    substats.forEach((substat, index) => {
-      const { key, value } = substat, substatRolls = key ? Artifact.getSubstatRolls(key, value, numStars) : []
-
-      if (substatRolls.length) {
-        const possibleLengths = new Set(substatRolls.map(roll => roll.length))
-        if (possibleLengths.size !== 1)
-          allSubstatRolls.push({ index, substatRolls })
-        else
-          total += substatRolls[0].length
-
-        substat.rolls = substatRolls[0]
-        substat.efficiency = Artifact.getSubstatEfficiency(key, substat.rolls)
-      } else {
-        if (substat.key)
-          errors.push(`Invalid substat ${Stat.getStatNameWithPercent(substat.key)}`)
-
-        substat.rolls = []
-        substat.efficiency = 0
-      }
-    })
-
-    if (errors.length) return errors
-    {
-      let substat = substats.find(substat => (substat.rolls?.length ?? 0) > 1)
-      if (substat && substats.some((substat) => !substat.rolls?.length))
-        return [`Substat ${Stat.getStatNameWithPercent(substat.key)} has > 1 roll, but not all substats are unlocked.`]
-    }
-
-    const { low } = Artifact.rollInfo(numStars)
-    const minimum = low + Math.floor(level / 4)
-    const remaining = Artifact.rollsRemaining(level, numStars);
-    const maximum = Artifact.totalPossibleRolls(numStars);
-
-    let minimumMaxRolls = Infinity
-    function tryAllSubstats(rolls: { index: number, roll: number[] }[], maxRolls: number, total: number) {
-      if (rolls.length === allSubstatRolls.length) {
-        if (total + remaining <= maximum && total >= minimum && maxRolls < minimumMaxRolls) {
-          minimumMaxRolls = maxRolls
-          for (const { index, roll } of rolls) {
-            const key = substats[index].key
-            substats[index].rolls = roll
-            substats[index].efficiency = Artifact.getSubstatEfficiency(key, roll)
-          }
-        }
-
-        return
-      }
-
-      const { index, substatRolls } = allSubstatRolls[rolls.length]
-      for (const roll of substatRolls) {
-        rolls.push({ index, roll })
-        tryAllSubstats(rolls, Math.max(maxRolls, roll.length), total + roll.length)
-        rolls.pop()
-      }
-    }
-
-    tryAllSubstats([], 0, total)
-
-    if (!isFinite(minimumMaxRolls)) {
-      // No build found
-      const total = substats.reduce((accu, current) => accu + (current.rolls?.length ?? 0), 0)
-      if (total < minimum)
-        errors.push(`${numStars}-star artifact (level ${level}) should have at least ${minimum} rolls. It currently has ${total} rolls.`)
-      else {
-        errors.push(`${numStars}-star artifact (level ${level}) should have no more than ${maximum - remaining} rolls. It currently has ${total} rolls.`)
-      }
-    }
-
-    return errors
-  }
   static getArtifactEfficiency(artifact: IArtifact, filter: Set<SubstatKey>): { currentEfficiency: number, maxEfficiency: number } {
     const { substats, numStars, level } = artifact
     // Relative to max star, so comparison between different * makes sense.

@@ -12,7 +12,7 @@ export function validateFlexArtifact(flex: IFlexArtifact): { artifact: IArtifact
   const mainStatVal = Artifact.mainStatValue(mainStatKey, numStars, level)!
 
   const errors: string[] = []
-  const substats: Substat[] = flex.substats.map(substat => ({ ...substat, rolls: [], efficiency: NaN }))
+  const substats: Substat[] = flex.substats.map(substat => ({ ...substat, rolls: [], efficiency: 0 }))
   const validated: IArtifact = { id, setKey, location, slotKey, lock, mainStatKey, numStars, level, substats, mainStatVal }
 
   const allSubstatRolls: { index: number, substatRolls: number[][] }[] = []
@@ -34,7 +34,7 @@ export function validateFlexArtifact(flex: IFlexArtifact): { artifact: IArtifact
       }
     } else if (substat.key) {
       substat.rolls = []
-      substat.efficiency = NaN
+      substat.efficiency = 0
       errors.push(`Invalid substat ${Stat.getStatNameWithPercent(substat.key)}`)
     }
   })
@@ -118,14 +118,14 @@ export function extractFlexArtifact(artifact: IArtifact): IFlexArtifact {
 }
 function validateSubstats(obj: any): IFlexSubstat[] {
   if (!Array.isArray(obj))
-    return new Array(4).map(_ => ({ key: "", value: NaN }))
+    return new Array(4).map(_ => ({ key: "", value: 0 }))
   const substats = obj.map(({ key = undefined, value = undefined }) => {
     if (!allSubstats.includes(key))
-      return { key: "", value: NaN }
-    return { key, value: typeof value === "number" && isFinite(value) ? value : NaN }
+      return { key: "", value: 0 }
+    return { key, value: typeof value === "number" && isFinite(value) ? value : 0 }
   })
   while (substats.length !== 4)
-    substats.push({ key: "", value: NaN })
+    substats.push({ key: "", value: 0 })
 
   return substats
 }

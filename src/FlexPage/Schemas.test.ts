@@ -1,6 +1,5 @@
-import { ArtifactSubstatsData } from "../Data/ArtifactData"
 import { amplifyingReactions } from "../StatConstants"
-import { allMainStatKeys } from "../Types/artifact"
+import { allMainStatKeys, allSubstats } from "../Types/artifact"
 import { characterSpecializedStatKeys } from "../Types/consts"
 import { constants } from "./Schemas"
 
@@ -18,7 +17,7 @@ describe('Export Import', () => {
 
     for (const mainStat of allMainStatKeys)
       expect(constants.stats).toContain(mainStat)
-    for (const substat in ArtifactSubstatsData)
+    for (const substat of allSubstats)
       expect(constants.stats).toContain(substat)
   })
 })
