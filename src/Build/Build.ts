@@ -49,7 +49,7 @@ export function pruneArtifacts(artifacts: IArtifact[], artifactSetEffects: Artif
 
   // array of artifacts, artifact stats, and set (may be "other")
   let tmp: { artifact: IArtifact, stats: Dict<StatKey, number>, set: ArtifactSetKey | "other" }[] = artifacts.map(artifact => {
-    const stats: Dict<StatKey, number> = {}, set: ArtifactSetKey | "other" = (artifact.setKey in prunedSetEffects) ? artifact.setKey : "other"
+    const stats: Dict<StatKey, number> = {}, set: ArtifactSetKey | "other" = (artifact.setKey in prunedSetEffects || alwaysAccepted.has(artifact.setKey)) ? artifact.setKey : "other"
     if (significantStats.has(artifact.mainStatKey as any))
       stats[artifact.mainStatKey] = artifact.mainStatVal!
     for (const { key, value } of artifact.substats)
@@ -70,6 +70,8 @@ export function pruneArtifacts(artifacts: IArtifact[], artifactSetEffects: Artif
   if (!ascending) {
     // Cross-check with different sets
     tmp = tmp.filter(({ artifact: candidate, stats: candidateStats, set: candidateSet }) => {
+      if (alwaysAccepted.has(candidate.setKey))
+        return true
       // Possible "additional stats" if a build equips `candidate` on an empty slot.
       let possibleStats = [...Object.values(prunedSetEffects[candidateSet]!), {}].map(c => {
         const current: BonusStats = { ...candidateStats }
@@ -86,11 +88,7 @@ export function pruneArtifacts(artifacts: IArtifact[], artifactSetEffects: Artif
       })
     })
   }
-  // Reinstate `alwaysAccepted`
-  return [
-    ...artifacts.filter(artifact => alwaysAccepted.has(artifact.setKey)),
-    ...tmp.map(tmp => tmp.artifact).filter(artifact => !alwaysAccepted.has(artifact.setKey)),
-  ]
+  return tmp.map(tmp => tmp.artifact)
 }
 
 /**

@@ -53,16 +53,11 @@ onmessage = async (e: { data: BuildRequest }) => {
     // Prune artifact with strictly inferior (relevant) stats.
     if (Object.keys(ascending ? minFilters : maxFilters).length === 0) {
       const prune = (alwaysAccepted: ArtifactSetKey[]) => Object.fromEntries(Object.entries(splitArtifacts).map(([key, values]) =>
-        [key, pruneArtifacts(values as IArtifact[], artifactSetEffects, new Set(dependencies), ascending, new Set(alwaysAccepted))]))
+        [key, pruneArtifacts(values, artifactSetEffects, new Set(dependencies), ascending, new Set(alwaysAccepted))]))
 
-      prunedArtifacts = prune([])
+      // Don't prune artifact sets that are filtered
+      prunedArtifacts = prune(setFilters.map(set => set.key) as any)
       newCount = calculateTotalBuildNumber(prunedArtifacts, setFilters)
-
-      if (newCount < 1) {
-        // over-pruned, try not to prune the set-filter
-        prunedArtifacts = prune(setFilters.map(set => set.key) as any)
-        newCount = calculateTotalBuildNumber(prunedArtifacts, setFilters)
-      }
     }
   }
 
