@@ -35,6 +35,24 @@
       "8": "Tem 250% de eficácia de absorção de Dano contra <pyro>Dano Pyro</pyro>.",
       "9": "<br/>",
       "10": "<i>Xinyan insiste que essas pirotecnias representam o ápice da arte da performance e que são fenômenos físicos que nada têm a ver com sua Visão.</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Balanço",
+      "1": "Absorção de Escudo Nv.1",
+      "2": "Absorção de Escudo Nv.2",
+      "3": "Absorção de Escudo Nv.3",
+      "4": "Dano Contínuo",
+      "5": "Duração do Escudo",
+      "6": "Recarga",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -44,6 +62,24 @@
       "1": "A pura intensidade da atmosfera causará explosões que causam <pyro>Dano Pyro</pyro> aos inimigos próximos.",
       "2": "<br/>",
       "3": "<i>Xinyan costumava terminar todas as suas performances com esse movimento. Ela não parou porque era perigoso, mas sim porque ela não tinha um final mais épico no caso de alguém gritar \"Mais!\".</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Dano Contínuo Pyro",
+      "2": "Duração",
+      "3": "Tempo de Recarga",
+      "4": "Energia Elemental",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

@@ -26,6 +26,24 @@
       "0": "Triệu hồi Guoba phun lửa, trong thời gian tồn tại, không ngừng phun lửa vào địch, gây <pyro>Sát Thương Phạm Vi Nguyên Tố Hỏa</pyro>.",
       "1": "<br/>",
       "2": "<i>Guoba thích ăn thực phẩm cay. Nhưng lại chịu không nổi thực phẩm cay như vậy.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Phun Lửa",
+      "1": "CD",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -35,6 +53,24 @@
       "1": "Trong thời gian tồn tại, Bánh Xe Lửa sẽ đi theo nhân vật, gây cho địch trên đường <pyro>Sát Thương Nguyên Tố Hỏa</pyro>.",
       "2": "<br/>",
       "3": "<i>Hỏa lực vĩnh viễn không đủ. Vĩnh viễn không đủ.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Chém Lần 1",
+      "1": "Sát Thương Chém Lần 2",
+      "2": "Sát Thương Chém Lần 3",
+      "3": "Sát Thương Bánh Xe Lửa",
+      "4": "Thời Gian Kéo Dài",
+      "5": "CD",
+      "6": "Năng Lượng Nguyên Tố",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

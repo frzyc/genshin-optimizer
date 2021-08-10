@@ -40,6 +40,24 @@
       ],
       "11": "<br/>",
       "12": "<i>À l'assaut des mers ! À la poursuite des vagues et de la tempête !</i>"
+    },
+    "skillParams": {
+      "0": "PV du bouclier",
+      "1": "DGT de base",
+      "2": "Bonus de DGT par coup",
+      "3": "Temps de recharge",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -54,6 +72,24 @@
       ],
       "4": "<br/>",
       "5": "Au maximum, une décharge par seconde peut être libérée.<i>Le plus puissant des éclairs peut fendre mers et montagnes.</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "DGT décharge",
+      "2": "Réduction DGT",
+      "3": "Durée",
+      "4": "Temps de recharge",
+      "5": "Énergie élémentaire",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

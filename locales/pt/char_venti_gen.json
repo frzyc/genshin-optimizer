@@ -36,6 +36,24 @@
       "9": "Inimigos atingidos pelo Soneto dos Céus cairão lentamente ao chão.",
       "10": "<br/>",
       "11": "<i>Nos dias em que deuses e homens andaram na terra juntos, os céus eram cheios de infinitas canções. Essa melodia foi esquecida há muito tempo.</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Toque",
+      "1": "Recarga de Toque",
+      "2": "Dano ao Manter Pressionado",
+      "3": "Recarga ao Manter Pressionado",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -48,6 +66,24 @@
       "4": "A Absorção Elemental pode ocorrer uma vez a cada uso.",
       "5": "<br/>",
       "6": "<i>Muitos hinos escritos para elogiar o Arconte Anemo não existem mais. Essa é a sua compreensão do vento.</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Contínuo",
+      "1": "Adição de Dano Elemental",
+      "2": "Duração",
+      "3": "Tempo de Recarga",
+      "4": "Energia Elemental",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

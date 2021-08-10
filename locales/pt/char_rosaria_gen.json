@@ -27,6 +27,24 @@
       "1": "Não é possível deslocar-se para trás de inimigos de tamanho maior com esta habilidade.",
       "2": "<br/>",
       "3": "<i>A Freira Rosaria não perdoa os pecados daqueles que não se confessam a ela. Todos os pecadores serão castigados com o frio penetrante de uma punição proporcional à gravidade de seus pecados.</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Tempo de Recarga",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -36,6 +54,24 @@
       "1": "Enquanto ativa, a Lança de Gelo emite ar frio de forma intermitente, infligindo <cryo>Dano Cryo</cryo> aos inimigos ao redor.",
       "2": "<br/>",
       "3": "<i>O julgamento é algo muito incômodo. Sugiro que pulemos isso e passemos diretamente para a Oração do Decesso. Devido à minha falta de devoção ao Arconte Anemo, é muito fácil fazer isso.</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Dano Contínuo da Lança de Gelo",
+      "2": "Duração",
+      "3": "Tempo de Recarga",
+      "4": "Energia Elemental",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

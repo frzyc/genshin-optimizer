@@ -38,6 +38,24 @@
       "7": "The longer the button is held, the further the throw.",
       "8": "<br/>",
       "9": "<i>Baron Bunny hails from a storied lineage, but Amber has stopped keeping count since Baron Bunny the 893rd.</i>"
+    },
+    "skillParams": {
+      "0": "Inherited HP",
+      "1": "Explosion DMG",
+      "2": "CD",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -46,6 +64,24 @@
       "0": "Fires off a shower of arrows, dealing continuous <pyro>AoE Pyro DMG</pyro>.",
       "1": "<br/>",
       "2": "<i>Amber's passion truly burns hot.</i>"
+    },
+    "skillParams": {
+      "0": "Fiery Rain DMG Per Wave",
+      "1": "Total Fiery Rain DMG",
+      "2": "Duration",
+      "3": "CD",
+      "4": "Energy Cost",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

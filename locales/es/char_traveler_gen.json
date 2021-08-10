@@ -16,6 +16,24 @@
         ],
         "6": "<br/>",
         "7": "<i>Hablaste con Paimon sobre los canales por los que circula la electricidad.</i>"
+      },
+      "skillParams": {
+        "0": "Daño de habilidad",
+        "1": "Energía Elemental regenerada",
+        "2": "Aumento de Rec. de Energía",
+        "3": "Duración",
+        "4": "Duración del abalorio de la profusión",
+        "5": "TdE",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": "",
+        "13": "",
+        "14": "",
+        "15": ""
       }
     },
     "burst": {
@@ -30,6 +48,24 @@
         "5": "Solo puede caer un rayo temible cada 0.5 s.",
         "6": "<br/>",
         "7": "<i>Investigaste con Paimon los destellos de luz que se crean entre las nubes.</i>"
+      },
+      "skillParams": {
+        "0": "Daño de habilidad",
+        "1": "Daño de rayo temible",
+        "2": "Energía Elemental regenerada",
+        "3": "Duración",
+        "4": "TdE",
+        "5": "Energía Elemental",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": "",
+        "13": "",
+        "14": "",
+        "15": ""
       }
     },
     "auto": {
@@ -136,6 +172,24 @@
         "8": "El cambio elemental solo puede ocurrir una vez durante la habilidad.",
         "9": "<br/>",
         "10": "<i>Hablaste con Paimon de cómo atrapar el viento sin forma.</i>"
+      },
+      "skillParams": {
+        "0": "Daño de corte inicial",
+        "1": "Daño de corte Máx.",
+        "2": "Daño de explosión inicial",
+        "3": "Daño de explosión de viento máx.",
+        "4": "TdE Básico",
+        "5": "TdE Recarga Máx.",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": "",
+        "13": "",
+        "14": "",
+        "15": ""
       }
     },
     "burst": {
@@ -148,6 +202,24 @@
         "4": "El cambio elemental solo puede ocurrir una vez durante la habilidad.",
         "5": "<br/>",
         "6": "<i>Investigaste con Paimon el aleteo de las mariposas</i>."
+      },
+      "skillParams": {
+        "0": "Daño de Tornado",
+        "1": "Daño Elemental adicional",
+        "2": "Duración",
+        "3": "TdE",
+        "4": "Energía Elemental",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": "",
+        "13": "",
+        "14": "",
+        "15": ""
       }
     },
     "passive1": {
@@ -231,6 +303,24 @@
         "4": "Ajusta la posición sobre la que se coloca la habilidad",
         "5": "<br/>",
         "6": "<i>Hablaste con Paimon sobre el destino final de las estrellas fugaces.</i>"
+      },
+      "skillParams": {
+        "0": "Daño de habilidad",
+        "1": "Duración del meteorito",
+        "2": "TdE",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": "",
+        "13": "",
+        "14": "",
+        "15": ""
       }
     },
     "burst": {
@@ -242,6 +332,24 @@
         "3": "La columna de piedra se considera una <geo>creación Geo</geo>, y puede usarse para bloquear ataques.",
         "4": "<br/>",
         "5": "<i>Investigaste con Paimon la vibración de las montañas</i>."
+      },
+      "skillParams": {
+        "0": "Daño por cada onda expansiva",
+        "1": "Duración del muro de piedra",
+        "2": "TdE",
+        "3": "Energía Elemental",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": "",
+        "13": "",
+        "14": "",
+        "15": ""
       }
     },
     "passive1": {

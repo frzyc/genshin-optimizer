@@ -32,6 +32,24 @@
       "5": "Karakter tidak dapat bergerak selama durasi skill.",
       "6": "<br/>",
       "7": "<i>Yang mengikuti Jean, pelindung berhati emas, adalah angin penjaga yang bisa menghalau bahaya dari rekan-rekannya.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Konsumsi Stamina",
+      "2": "Max Durasi",
+      "3": "Cooldown",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -48,6 +66,24 @@
       ],
       "5": "<br/>",
       "6": "<i>Berkat Anemo bagaikan dandelion yang terbang ke seluruh pelosok dunia. Inilah fondasi prinsip dan pendirian Jean.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Elemental Burst",
+      "1": "DMG Keluar Masuk Field",
+      "2": "Pemulihan Saat Talenta Dilancarkan",
+      "3": "Regenerasi HP/dtk",
+      "4": "Cooldown",
+      "5": "Energy",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

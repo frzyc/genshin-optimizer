@@ -32,6 +32,24 @@
       "5": "El personaje quedará inmóvil mientras dure la habilidad.",
       "6": "<br/>",
       "7": "<i>Eso que sigue a Jean, la defensora incondicional, es el viento guardián que ahuyenta al peligro que acecha a sus compañeros</i>."
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Coste de Aguante de ATQ Cargado",
+      "2": "Duración máx.",
+      "3": "TdE",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -47,6 +65,24 @@
       ],
       "5": "<br/>",
       "6": "<i>La magnanimidad de Jean es vasta como los campos de dientes de león, así como la raíz de su deseo de proteger a los demás.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de explosión",
+      "1": "Daño de entrada y salida del área",
+      "2": "Curación instantánea",
+      "3": "Curación continua",
+      "4": "TdE",
+      "5": "Energía Elemental",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

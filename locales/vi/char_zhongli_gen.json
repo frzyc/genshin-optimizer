@@ -48,6 +48,24 @@
       "17": "Nhân vật đang được Khiên Ngọc bảo vệ, sẽ giảm 20% tất cả kháng nguyên tố và kháng vật lý của kẻ địch trong phạm vi nhỏ, hiệu quả này không được cộng dồn.",
       "18": "<br/>",
       "19": "<i>Đá kiên cố có thể đánh ngọc khắc vàng.</i>"
+    },
+    "skillParams": {
+      "0": "ST Vách Đá/ST Cộng Hưởng",
+      "1": "CD Nhấn",
+      "2": "Sát Thương Nhấn Giữ",
+      "3": "Lượng hấp thu cơ bản của khiên",
+      "4": "Khiên hấp thụ thêm",
+      "5": "Thời Gian Khiên Kéo Dài",
+      "6": "CD Nhấn Giữ",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -59,6 +77,24 @@
       "3": "Địch ở trạng thái <geo>Hóa Thạch</geo> không thể chuyển động. ",
       "4": "<br/>",
       "5": "<i>Dùng ngôi sao trên cao soi sáng cho người đang mê muội.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Thời Gian Hóa Thạch",
+      "2": "CD",
+      "3": "Năng Lượng Nguyên Tố",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

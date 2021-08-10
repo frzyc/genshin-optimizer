@@ -36,6 +36,24 @@
       "10": " Se Keqing usa um Ataque Carregado, ela provocará uma série de cortes estrondosos na localização da Marca, causando <electro>Dano Electro em AdE</electro>.",
       "11": "<br/>",
       "12": "<i>“Humanos são como mariposas, buscando incessantemente a chama que chamamos de deuses e Adepti. Mas essa luz que tenho aqui é a minha.”</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Relâmpago Stiletto",
+      "1": "Dano do Corte",
+      "2": "Dano do Corte da Tormenta Elétrica",
+      "3": "Tempo de Recarga",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -45,6 +63,24 @@
       "1": "Ela então se mistura na sombra de sua espada, desferindo uma série de golpes trovejantes nos inimigos próximos que simultaneamente infligem múltiplos acertos de <electro>Dano Electro</electro>. O ataque final inflige um massivo <electro>Dano Electro em uma AdE</electro>.",
       "2": "<br/>",
       "3": "<i>A técnica mais veloz no arsenal pessoal de Keqing é rápida o suficiente para derrubar as estrelas ao chão.</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Dano de Corte",
+      "2": "Dano do Último Golpe",
+      "3": "Tempo de Recarga",
+      "4": "Energia Elemental",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

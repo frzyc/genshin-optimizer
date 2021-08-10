@@ -49,6 +49,24 @@
       "13": "Kéo dài sau 30s sẽ tự động trở về trạng thái đánh xa, kỹ năng cũng sẽ bước vào thời gian chờ lâu hơn",
       "14": "<br/>",
       "15": "<i>Để khắc phục nhược điểm dùng cung không tốt, anh đã chọn cung làm vũ khí. Nhưng khi chiến đấu thực sự, ắt sẽ lấy ra sức mạnh thực sự...</i>"
+    },
+    "skillParams": {
+      "0": "Trạng thái gây ra sát thương",
+      "1": "Sát Thương Lần 1",
+      "2": "Sát Thương Lần 2",
+      "3": "Sát Thương Lần 3",
+      "4": "Sát Thương Lần 4",
+      "5": "Sát Thương Lần 5",
+      "6": "Sát Thương Lần 6",
+      "7": "Sát Thương Trọng Kích",
+      "8": "Thể lực Trọng Kích tiêu hao",
+      "9": "Sát Thương Đoạn Lưu - Chém",
+      "10": "Thời Gian Kéo Dài Tối Đa",
+      "11": "CD",
+      "12": "CD sau khi dùng hết thời gian kéo dài",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -67,6 +85,24 @@
       "10": "Tận Diệt Thủy Quang đánh trúng địch trong trạng thái Đoạn Lưu sẽ tiêu hao hiệu quả Đoạn Lưu và tung tóe nước, gây <hydro>Sát Thương Phạm Vi Nguyên Tố Thủy</hydro>. Sát thương của Đoạn Lưu - Nổ được xem như sát thương kỹ năng nộ.",
       "11": "<br/>",
       "12": "<i>Dòng nước chảy vội, rất hiếm gặp trên quê hương được tuyết bao phủ của anh ấy. Có lẽ là do hiểu được sự quý giá của nó nên anh ấy có thể điều khiển nó.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng - Cận Chiến",
+      "1": "Sát Thương Kỹ Năng - Đánh Xa",
+      "2": "Sát Thương Đoạn Lưu - Nổ",
+      "3": "Kỹ năng trả lại năng lượng Nguyên Tố (đánh xa)",
+      "4": "CD",
+      "5": "Năng Lượng Nguyên Tố",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

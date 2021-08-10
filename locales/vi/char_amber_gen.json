@@ -38,6 +38,24 @@
       "7": "Khoảng cách ném sẽ tăng theo thời gian nhấn giữ.",
       "8": "<br/>",
       "9": "<i>Bá tước thỏ có dòng dõi lâu đời. Nhưng bắt đầu từ đời thỏ thứ 893, Amber đã ngừng tính số.</i>"
+    },
+    "skillParams": {
+      "0": "HP Kế Thừa",
+      "1": "Sát Thương Nổ",
+      "2": "CD",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -46,6 +64,24 @@
       "0": "Bắn ra cơn mưa tên lửa, duy trì gây <pyro>Sát Thương Phạm Vi Nguyên Tố Hỏa</pyro>.",
       "1": "<br/>",
       "2": "<i>Trái tim tràn đầy nhiệt huyết của Amber thật sự nóng bỏng.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương 1 lần Mưa Tên",
+      "1": "Tổng Sát Thương Mưa Tên",
+      "2": "Thời Gian Kéo Dài",
+      "3": "CD",
+      "4": "Năng Lượng Nguyên Tố",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

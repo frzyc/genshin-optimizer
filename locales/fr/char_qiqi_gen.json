@@ -33,6 +33,24 @@
       ],
       "4": "<br/>",
       "5": "<i>« Je l'utilise pour empêcher le réchauffement et la pourriture... des précieux ingrédients de M. Baishu, bien sûr. »</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "Soins équipe",
+      "2": "Soins continus",
+      "3": "DGT Héraut de givre",
+      "4": "Durée",
+      "5": "Temps de recharge",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -45,6 +63,24 @@
       "4": "<br/>",
       "5": "<i>« Je suis l'envoyée de la Providence, le symbole de la renaissance. »</i>",
       "6": "<i>— Qiqi est bien incapable de se rappeler de ces mots.</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "Soins",
+      "2": "Durée",
+      "3": "Temps de recharge",
+      "4": "Énergie élémentaire",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

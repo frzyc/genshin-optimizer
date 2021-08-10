@@ -32,6 +32,24 @@
       "5": "Jean ne peut pas se déplacer tant que l'attaque dure.",
       "6": "<br/>",
       "7": "<i>Idéale pour protéger ses alliés, cette technique accompagne Jean depuis longtemps.</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "Endurance",
+      "2": "Durée max",
+      "3": "Temps de recharge",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -48,6 +66,24 @@
       ],
       "5": "<br/>",
       "6": "<i>Semblable aux pissenlits bercés par le vent, la magnanimité de Jean n'a que l'horizon pour limite.</i>"
+    },
+    "skillParams": {
+      "0": "DGT explosion",
+      "1": "DGT entrée/sortie de zone",
+      "2": "Soins du champ",
+      "3": "Soins continus",
+      "4": "Temps de recharge",
+      "5": "Énergie élémentaire",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

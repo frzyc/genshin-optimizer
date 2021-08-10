@@ -32,6 +32,24 @@
       "5": "Bewegung während der Anwendung nicht möglich.",
       "6": "<br/>",
       "7": "<i>Ein Jean begleitender Wind des Schutzes, der Gefahren von ihr und ihren Kameraden fernhält.</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Ausdauerverbrauch",
+      "2": "Höchstdauer",
+      "3": "Abklingzeit",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -46,6 +64,24 @@
       "6": "- Fügt Gegnern beim Betreten und Verlassen des Wirkungsbereichs <anemo>Anemo-Schaden</anemo> zu.",
       "7": "<br/>",
       "8": "<i>Die Huld des Windes ist wie ein weites Löwenzahnfeld, die Quelle der Jean schützenden Kraft.</i>"
+    },
+    "skillParams": {
+      "0": "Spezialfähigkeits-SCH",
+      "1": "SCH beim Betreten und Verlassen",
+      "2": "Heilung bei Erstellen des Feldes",
+      "3": "Fortlaufende Heilung",
+      "4": "Abklingzeit",
+      "5": "Elementarenergie",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

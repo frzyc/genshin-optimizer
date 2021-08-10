@@ -36,6 +36,24 @@
       "10": "Wirkungsbereich der Fähigkeit kann angepasst werden.",
       "11": "<br/>",
       "12": "<i>Diese steinerne Blume hat ganz besondere Eigenschaften, die dem Zweck der Alchimie entsprechen. Sie entsteht in der Erde und strebt dennoch nach oben, um schließlich im Himmel zu einer Sonne zu werden.</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "SCH der Blüte der Vergänglichkeit",
+      "2": "Dauer",
+      "3": "Abklingzeit der Fähigkeit",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -47,6 +65,24 @@
       "3": "Der vor Albedo entstehende Schaden sowie der Schaden der Blüten der Sterblichkeit führen nicht zur Schaffung von Blüten der Vergänglichkeit.",
       "4": "<br/>",
       "5": "<i>Unter Führung des Kreideprinzen bewegt sich die Erde nach seinem Willen.</i>"
+    },
+    "skillParams": {
+      "0": "Spezialfähigkeits-SCH",
+      "1": "SCH von Blüten der Sterblichkeit",
+      "2": "Abklingzeit",
+      "3": "Elementarenergie",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

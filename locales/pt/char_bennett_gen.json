@@ -35,6 +35,24 @@
       "9": "Bennett não leva nenhum dano ao ser lançado.",
       "10": "<br/>",
       "11": "<i>Um ataque que combina os sonhos do Bennett e sua paixão por Pyro. Mas a paixão às vezes é muito ardente e Pyro acaba explodindo.</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Toque",
+      "1": "Dano da 1ª Energização",
+      "2": "Dano da 2ª Energização",
+      "3": "Dano de Explosão",
+      "4": "Tempo de Recarga",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -50,6 +68,24 @@
       ],
       "4": "<br/>",
       "5": "<i>A Equipe de Aventura de Benny sempre encontra perigos e acidentes quando parte para explorar. Apesar disso, Bennett prefere dizer que isso é \"uma jornada cheia de maravilhas, beleza e excitação\".</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Regeneração Contínua",
+      "2": "Taxa de Bônus de ATQ",
+      "3": "Duração",
+      "4": "Tempo de Recarga",
+      "5": "Energia Elemental",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

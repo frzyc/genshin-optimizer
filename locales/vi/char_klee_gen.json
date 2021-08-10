@@ -32,6 +32,24 @@
       "6": "Ban đầu có 2 lần sử dụng.",
       "7": "<br/>",
       "8": "<i>Bom nảy là \"người bạn thân\" với Klee... Klee luôn muốn giới thiệu chúng với mọi người xung quanh.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Bom Nảy",
+      "1": "Sát Thương Quỷ Lôi",
+      "2": "Thời Gian Quỷ Lôi Kéo Dài",
+      "3": "CD",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -40,6 +58,24 @@
       "0": "Klee phát huy toàn bộ hỏa lực! Trong thời gian duy trì, liên tục triệu hồi tia lửa mãnh liệt gây sát thương cho kẻ địch xung quanh, gây <pyro>Sát Thương Phạm Vi Nguyên Tố Hỏa</pyro>.",
       "1": "<br/>",
       "2": "<i>Đội Kỵ Sĩ tin rằng, Klee xưa nay chưa từng bị đả thương bởi đạn dược của mình là do ngôi sao may mắn luôn bảo vệ cô...</i>"
+    },
+    "skillParams": {
+      "0": "Sát thương Tia Lửa Mãnh Liệt",
+      "1": "Thời Gian Kéo Dài",
+      "2": "CD",
+      "3": "Năng Lượng Nguyên Tố",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

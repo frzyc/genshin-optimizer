@@ -39,6 +39,24 @@
       "6": "Le bouclier est efficace à 250 % contre les <pyro>DGT Pyro</pyro>.",
       "7": "<br/>",
       "8": "<i>Xinyan n'insiste jamais assez sur le fait que tous ces effets sont le pinacle de l'art de la scène, et qu'ils constituent un phénomène d'ordre physique n'ayant bien sûr rien à voir avec son œil divin.</i>"
+    },
+    "skillParams": {
+      "0": "DGT instrument",
+      "1": "Absorption Bouclier Niv.1",
+      "2": "Absorption bouclier Niv.2",
+      "3": "Absorption bouclier Niv.3",
+      "4": "DGT continus",
+      "5": "Durée du bouclier",
+      "6": "Temps de recharge",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -48,6 +66,24 @@
       "1": "L'ambiance se réchauffe tellement que des explosions ont lieu, infligeant aux ennemis proches des <pyro>DGT Pyro</pyro>.",
       "2": "<br/>",
       "3": "<i>Xinyan avait autrefois pour habitude de terminer toutes ses représentations de cette manière. Ce n'est pas à cause du danger qu'elle s'est arrêtée, mais parce qu'elle n'avait pas de final encore plus épique à proposer dans le cas d'un nouveau rappel.</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "DGT Pyro continus",
+      "2": "Durée",
+      "3": "Temps de recharge",
+      "4": "Énergie élémentaire",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

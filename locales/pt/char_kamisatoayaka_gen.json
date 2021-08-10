@@ -11,6 +11,24 @@
       "4": "Explode após sua duração encerrar, causando <cryo>Dano Cryo em uma AdE</cryo>.",
       "5": "<br/>",
       "6": "<i>\"A nevasca cobre os pensamentos da garça, cujo coração está inundado por compaixão\".</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Corte",
+      "1": "Dano do Desabrochamento",
+      "2": "Duração",
+      "3": "Tempo de Recarga",
+      "4": "Energia Elemental",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "name": "Kamisato Ayaka",
@@ -40,6 +58,24 @@
       "0": "Invoca uma flor gélida que lança os inimigos próximos para o ar, causando <cryo>Dano Cryo em uma AdE</cryo>.",
       "1": "<br/>",
       "2": "<i>\"As nuvens cobrem a noite iluminada pela lua. A saudade cai como uma névoa, enchendo a que está contida com o desejo de vaguear.\"</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Tempo de Recarga",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "sprint": {

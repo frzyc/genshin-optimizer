@@ -36,6 +36,24 @@
       "9": "Wurfweite erhöht sich mit der Dauer des Gedrückthaltens.",
       "10": "<br/>",
       "11": "<i>Graf von Hoppel ist der Abkömmling eines alten Adelsgeschlechts. Nach dem Tod des Grafen von Hoppel DCCCXCIII. hat Amber aber aufgehört zu zählen.</i>"
+    },
+    "skillParams": {
+      "0": "Erhaltene LP",
+      "1": "Explosions-SCH",
+      "2": "Abklingzeit",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -44,6 +62,24 @@
       "0": "Lässt einen Feuerpfeilregen fallen, der fortlaufend <pyro>Pyro-Flächenschaden</pyro> verursacht.",
       "1": "<br/>",
       "2": "<i>Amber ist voller feuriger Leidenschaft bei allem, was sie tut.</i>"
+    },
+    "skillParams": {
+      "0": "Einzel-SCH des Pfeilregens",
+      "1": "Gesamt-SCH des Pfeilregens",
+      "2": "Dauer",
+      "3": "Abklingzeit",
+      "4": "Elementarenergie",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

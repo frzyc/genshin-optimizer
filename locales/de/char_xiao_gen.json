@@ -29,6 +29,24 @@
       "2": "Kann anfänglich 2-mal angewendet werden.",
       "3": "<br/>",
       "4": "<i>In den Legenden fremder Länder würde die Welt von zwei riesigen Windrädern zermalmt werden. Xiao hat den Umgang mit der Lanze bereits perfektioniert und zerschneidet seine Gegner wie die beiden Windräder.</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Abklingzeit",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -45,6 +63,24 @@
       "8": "Effekt endet, wenn Xiao ausgewechselt wird.",
       "9": "<br/>",
       "10": "<i>Xiao setzt die Maske eines Dämons auf und nimmt die Gestalt des „Schützenden Yaksha“ an, der das Böse erstarren lässt und Geistwesen vertreibt. Er erhält damit große Kraft, aber auch große Schmerzen.</i>"
+    },
+    "skillParams": {
+      "0": "Bonus für Standardangriffe, heftige Schläge und Angriffe aus dem Fall",
+      "1": "LP-Verlust",
+      "2": "Dauer",
+      "3": "Abklingzeit",
+      "4": "Elementarenergie",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

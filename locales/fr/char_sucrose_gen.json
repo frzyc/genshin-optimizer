@@ -26,6 +26,24 @@
       "0": "Sucrose invoque un Esprit du vent de taille réduite, qui attire les ennemis et les objets proches à lui, projetant les ennemis dans les airs et leur infligeant des <anemo>DGT Anémo</anemo>.",
       "1": "<br/>",
       "2": "<i>C'est un peu embarrassant, mais il faut bien reconnaître que malgré leur courte durée de vie, les Esprits créés via ce procédé sont particulièrement utiles pour l'aventure. Comme quoi, même les expériences ratées peuvent servir.</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "Temps de recharge",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -39,6 +57,24 @@
       "5": "Un seul élément peut être absorbé à la fois.",
       "6": "<br/>",
       "7": "<i>Sucrose aime à donner des noms à ses Hypostases Anémo instables ; leur lignée est encore plus longue que celle du Baron Lapinou 893e du nom.</i>"
+    },
+    "skillParams": {
+      "0": "DGT continus",
+      "1": "Bonus DGT élémentaires",
+      "2": "Durée",
+      "3": "Temps de recharge",
+      "4": "Énergie élémentaire",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

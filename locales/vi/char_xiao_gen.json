@@ -29,6 +29,24 @@
       "2": "Ban đầu có 2 lần sử dụng.",
       "3": "<br/>",
       "4": "<i>Trong truyền thuyết của quê hương, thế giới sẽ bị nghiền nát bởi 2 bánh xe gió. Thương pháp của Xiao đã đạt trình độ siêu phàm, đi lại giống như 2 cỗ bánh xe gió xé nát địch.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "CD",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -47,6 +65,24 @@
       "6": "Hiệu quả sẽ mất khi Xiao rời trận.",
       "7": "<br/>",
       "8": "<i>Đeo lên mặt nạ Hàng Ma, Hộ Pháp Dạ Xoa xuất hiện khiến tất cả yêu ma run sợ, hàng ma diệt quái. Nhận được sức mạnh to lớn, cũng đem đến đau đớn cùng cực. Tên gọi là Vũ Điệu Trừ Yêu.</i>"
+    },
+    "skillParams": {
+      "0": "Tấn Công Thường/Trọng Kích/Sát thương tấn công khi đáp tăng",
+      "1": "Mất HP",
+      "2": "Thời Gian Kéo Dài",
+      "3": "CD",
+      "4": "Năng Lượng Nguyên Tố",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

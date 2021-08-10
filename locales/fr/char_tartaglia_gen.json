@@ -49,6 +49,24 @@
       "13": "L'état de mêlée ne peut excéder 30 s. Au bout de cette durée, Tartaglia repasse automatiquement à l'état de distance.",
       "14": "<br/>",
       "15": "<i>C'est pour venir à bout de ses difficultés avec cette arme que Tartaglia a choisi l'arc comme arme de prédilection. Mais... C'est sur le champ de bataille que sa vraie puissance se déchaîne.</i>"
+    },
+    "skillParams": {
+      "0": "DGT à l'activation",
+      "1": "DGT 1er coup",
+      "2": "DGT 2e coup",
+      "3": "DGT 3e coup",
+      "4": "DGT 4e coup",
+      "5": "DGT 5e coup",
+      "6": "DGT 6e coup",
+      "7": "DGT attaque chargée",
+      "8": "Coût d'endurance attaque chargée",
+      "9": "DGT Contre-courant - Entaille",
+      "10": "Durée max",
+      "11": "Temps de recharge",
+      "12": "Durée TdR réduite",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -67,6 +85,24 @@
       "10": "Lorsqu'elle touche un ennemi affecté par Contre-courant, Lumière d'élimination consomme cet effet et inflige des <hydro>DGT Hydro de zone</hydro>. Les DGT infligés par Contre-courant : Torrent sont considérés comme étant des DGT de déchaînement élémentaire.",
       "11": "<br/>",
       "12": "<i>L'eau qui coule n'est pas une vision courante dans son pays de neige ; peut-être que seul celui capable de saisir l'eau qui fuit entre les doigts est capable de comprendre comme elle est précieuse.</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence (mêlée)",
+      "1": "DGT compétence (à distance)",
+      "2": "DGT Contre-courant : Torrent",
+      "3": "Énergie élémentaire restaurée (distance)",
+      "4": "Temps de recharge",
+      "5": "Énergie élémentaire",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

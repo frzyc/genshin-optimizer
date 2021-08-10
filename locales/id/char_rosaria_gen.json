@@ -27,6 +27,24 @@
       "1": "Talenta ini tidak dapat digunakan untuk bergerak ke belakang musuh yang bertubuh lebih besar.",
       "2": "<br/>",
       "3": "<i>Mereka yang mengaku dosa pada Suster Rosaria tidak akan mendapat pengampunan. Sebaliknya, para pendosa akan menerima hukuman dingin yang menusuk tulang, masing-masing sebanding dengan berat dosa yang mereka lakukan.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Cooldown",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -36,6 +54,24 @@
       "1": "Saat Talenta ini aktif, Ice Lance akan mengeluarkan hawa dingin secara berkala, mengakibatkan <cryo>Cryo DMG</cryo> pada musuh di sekitar.",
       "2": "<br/>",
       "3": "<i> Penghakiman adalah pekerjaan yang merepotkan. Kusarankan sebaiknya kita lewatkan saja, dan langsung masuk ke tahap terakhir! Rosaria bukan seseorang yang taat pada Dewa Anemo, karena itu, menurut Rosaria, penghakiman adalah pekerjaan yang mudah.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "DMG berkelanjutan Ice Lance",
+      "2": "Durasi",
+      "3": "CD",
+      "4": "Konsumsi Energy",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

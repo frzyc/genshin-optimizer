@@ -11,7 +11,25 @@
       "6": "<br/>",
       "7": "<i>« Je vois passer l'éternité en un instant, les automnes de plusieurs années d'une seule feuille ; ainsi je trancherai cet érable en un éclair, et je poserai la question des âges... »</i>"
     },
-    "slashdmg": "DGT entaille"
+    "slashdmg": "DGT entaille",
+    "skillParams": {
+      "0": "DGT entaille",
+      "1": "DGT continus",
+      "2": "Bonus DGT élémentaires",
+      "3": "Durée",
+      "4": "Temps de recharge",
+      "5": "Énergie élémentaire",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
   },
   "name": "Kaedehara Kazuha",
   "title": "Tourbillon de feuilles écarlates",
@@ -55,6 +73,24 @@
       "11": "Les dégâts infligés par Contrôle du chaos sont considérés comme étant des DGT d'attaque plongeante.",
       "12": "<br/>",
       "13": "<i>« Les vents dans les érables pleurent, pour les dieux et les hommes du passé, comme des montagnes rouges d'automne. »</i>"
+    },
+    "skillParams": {
+      "0": "DGT appui simple",
+      "1": "TdR appui simple",
+      "2": "DGT appui long",
+      "3": "TdR appui long",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

@@ -38,6 +38,24 @@
       ],
       "6": "<br/>",
       "7": "<i>Xinyan menegaskan bahwa pyrotechnics ini adalah puncak dari seni performatif, dan itu adalah fenomena fisik yang tidak ada kaitannya dengan Vision yang dia miliki.</i>"
+    },
+    "skillParams": {
+      "0": "Swing DMG",
+      "1": "Pertahanan Perisai Level 1",
+      "2": "Pertahanan Perisai Level 2",
+      "3": "Pertahanan Perisai Level 3",
+      "4": "DMG Berkelanjutan",
+      "5": "Durasi Perisai",
+      "6": "Cooldown",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -47,6 +65,24 @@
       "1": "Intensitas atmosfer yang tipis akan menyebabkan ledakan yang mengakibatkan <pyro>Pyro DMG</pyro> ke musuh di sekitarnya.",
       "2": "<br/>",
       "3": "<i>Xinyan biasa mengakhiri rangkaian penampilannya dengan gerakan ini. Dia tidak berhenti karena itu berbahaya, tapi karena dia tidak memiliki penyelesaian yang lebih epik daripada seseorang yang akan berteriak \"Encore!\" </i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Pyro DMG Berkelanjutan",
+      "2": "Durasi",
+      "3": "Cooldown",
+      "4": "Energy",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

@@ -35,6 +35,24 @@
       "9": "Les ennemis affectés par Conductivité subissent des DGT supplémentaires proportionnels au nombre de cumuls.",
       "10": "<br/>",
       "11": "<i>La couleur de la foudre est aussi la couleur de la Sorcière à la rose.</i>"
+    },
+    "skillParams": {
+      "0": "DGT appui simple",
+      "1": "TdR appui simple",
+      "2": "DGT appui long",
+      "3": "DGT appui long (Conductivité : 1)",
+      "4": "DGT appui long (Conductivité : 2)",
+      "5": "DGT 3 cumuls de Conductivité (appui long)",
+      "6": "TdR appui long",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -44,6 +62,24 @@
       "1": "La rose de foudre envoie des décharges électriques qui infligent des <electro>DGT Électro</electro> aux ennemis proches tant qu'elle est active.",
       "2": "<br/>",
       "3": "<i>Cette rose est belle, mais possède des épines mortelles.</i>"
+    },
+    "skillParams": {
+      "0": "DGT décharge",
+      "1": "Durée",
+      "2": "Temps de recharge",
+      "3": "Énergie élémentaire",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

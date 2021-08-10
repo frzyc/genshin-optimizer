@@ -34,6 +34,24 @@
       "8": "Fügt Gegnern im Zustand Blitzleiter je nach gestapeltem Effekt zusätzlich hohen Schaden zu und entfernt den Effekt Blitzleiter von diesen Gegnern.",
       "9": "<br/>",
       "10": "<i>Die Farbe des Blitzes ist die Farbe der Rosenhexe.</i>"
+    },
+    "skillParams": {
+      "0": "SCH bei Drücken",
+      "1": "Abklingzeit für Drücken",
+      "2": "SCH bei Gedrückthalten ohne „Blitzleiter“",
+      "3": "SCH bei Gedrückthalten mit „Blitzleiter“ (1-fach)",
+      "4": "SCH bei Gedrückthalten mit „Blitzleiter“ (2-fach)",
+      "5": "SCH bei Gedrückthalten mit „Blitzleiter“ (3-fach)",
+      "6": "Abklingzeit für Gedrückthalten",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -43,6 +61,24 @@
       "1": "Erschafft während der Wirkungsdauer fortlaufend Blitze, die Gegner in der Nähe angreifen und <electro>Elektro-Schaden</electro> verursachen.",
       "2": "<br/>",
       "3": "<i>Die Schönheit dieser Rose wird von ihren Dornen nur hervorgehoben.</i>"
+    },
+    "skillParams": {
+      "0": "SCH der Blitze",
+      "1": "Dauer",
+      "2": "Abklingzeit",
+      "3": "Elementarenergie",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

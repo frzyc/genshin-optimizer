@@ -39,6 +39,24 @@
       ],
       "6": "<br/>",
       "7": "<i>Xinyan insists that these pyrotechnics are the apex of performative art, and that they are physical phenomena that have nothing to do with her Vision.</i>"
+    },
+    "skillParams": {
+      "0": "Swing DMG",
+      "1": "Shield Level 1 DMG Absorption",
+      "2": "Shield Level 2 DMG Absorption",
+      "3": "Shield Level 3 DMG Absorption",
+      "4": "DoT",
+      "5": "Shield Duration",
+      "6": "CD",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -48,6 +66,24 @@
       "1": "The sheer intensity of the atmosphere will cause explosions that deal <pyro>Pyro DMG</pyro> to nearby opponents.",
       "2": "<br/>",
       "3": "<i>Xinyan used to end all her performances with this move. She didn't stop because it was dangerous, however, but because she didn't have a more epic finale in case someone shouted \"Encore!\"</i>"
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "Pyro DoT",
+      "2": "Duration",
+      "3": "CD",
+      "4": "Energy Cost",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

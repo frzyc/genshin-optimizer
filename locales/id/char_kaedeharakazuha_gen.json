@@ -11,7 +11,25 @@
       "6": "<br/>",
       "7": "<i>\"Aku dapat melihat keabadian yang berlalu dalam satu kedipan mata, dalam selembar daun yang telah melewati ribuan musim gugur. Biarkan pedangku memotong lembaran daun ini, dan mempertanyakan jalannya sang waktu——\"</i>"
     },
-    "slashdmg": "DMG Tebasan"
+    "slashdmg": "DMG Tebasan",
+    "skillParams": {
+      "0": "DMG Tebasan",
+      "1": "DMG Berkelanjutan",
+      "2": "Tambahan Elemental DMG",
+      "3": "Durasi",
+      "4": "Cooldown",
+      "5": "Konsumsi Energy",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
   },
   "name": "Kaedehara Kazuha",
   "title": "Scarlet Leaves Pursue Wild Waves",
@@ -57,6 +75,24 @@
       "13": "<i>\"Dedaunan dihembus oleh angin kesedihan",
       "14": "karena masa dewa-dewa dan manusia telah lama berlalu",
       "15": "bagaikan gunung merah di musim gugur.\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG (Tekan)",
+      "1": "Cooldown (Tekan)",
+      "2": "DMG (Tahan)",
+      "3": "Cooldown (Tahan)",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

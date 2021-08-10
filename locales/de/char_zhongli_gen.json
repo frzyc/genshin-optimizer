@@ -46,6 +46,24 @@
       "20": "Verringert den WDS gegen alle Elemente sowie den physischen WDS von Gegnern in der Nähe von Jadeblöcken geschützer Figuren mit geringer Reichweite um 20 %, nicht stapelbar.",
       "21": "<br/>",
       "22": "<i>Der Fels ist hart und schleift rohe Jade zu wertvollen Edelsteinen.</i>"
+    },
+    "skillParams": {
+      "0": "Hügelkamm-SCH/Resonanz-SCH",
+      "1": "Abklingzeit für Drücken",
+      "2": "SCH bei Gedrückthalten",
+      "3": "Basisschildstärke",
+      "4": "Zusätzliche Schildstärke",
+      "5": "Schilddauer",
+      "6": "Abklingzeit für Gedrückthalten",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -57,6 +75,24 @@
       "3": "Gegner im Zustand <geo>Versteinert</geo> können sich nicht bewegen.",
       "4": "<br/>",
       "5": "<i>Ein aus dem Himmel fallender Meteorit hilft den Gerechten und bestraft die Unholde.</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Dauer der Versteinerung",
+      "2": "Abklingzeit",
+      "3": "Elementarenergie",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

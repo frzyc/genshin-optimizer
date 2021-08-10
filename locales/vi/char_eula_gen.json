@@ -19,6 +19,24 @@
       "12": "Mỗi một tầng Trái Tim Băng Giá bị tiêu hao sẽ chuyển hóa thành 1 thanh Băng Vũ Kiếm, gây <cryo>Sát Thương Nguyên Tố Băng</cryo> cho địch xung quanh.",
       "13": "<br/>",
       "14": "<i>\"Những con sóng cuộn trào nuốt chửng chiếc vương miện của quý tộc. Và mãi đến sau này, mỗi bọt nước giữa những con sóng băng giá lại phản chiếu ra một chiếc vương miện vàng, mỗi bọt nước đều tỏa sáng lấp lánh.\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Nhấn",
+      "1": "Sát Thương Nhấn Giữ",
+      "2": "Sát Thương Băng Vũ Kiếm",
+      "3": "Phòng Ngự Tăng",
+      "4": "Thời gian Trái Tim Băng Giá kéo dài",
+      "5": "Kháng Vật Lý Giảm",
+      "6": "Kháng Nguyên Tố Băng Giảm",
+      "7": "Thời Gian Giảm Kháng",
+      "8": "CD Nhấn",
+      "9": "CD Nhấn Giữ",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "name": "Eula",
@@ -53,6 +71,24 @@
       "4": "Khi Eula rời trận, Kiếm Ánh Sáng sẽ nổ ngay lập tức.",
       "5": "<br/>",
       "6": "<i>Đắm chìm là chuyện dễ dàng. Nhưng cho dù thế, cô ấy vẫn muốn đóng băng ngọn sóng đang ập đến.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Sát Thương Cơ Bản Kiếm Ánh Sáng",
+      "2": "Sát Thương Mỗi Tầng Năng Lượng",
+      "3": "Giới Hạn Số Tầng Năng Lượng",
+      "4": "CD",
+      "5": "Năng Lượng Nguyên Tố",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

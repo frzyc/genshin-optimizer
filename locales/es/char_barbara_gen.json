@@ -34,6 +34,24 @@
       ],
       "4": "<br/>",
       "5": "<i>La música de Bárbara es la magia que cura a sus compañeros.</i>"
+    },
+    "skillParams": {
+      "0": "Curación al atacar",
+      "1": "Curación continua",
+      "2": "Daño de gotas de agua",
+      "3": "Duración",
+      "4": "TdE",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -42,6 +60,24 @@
       "0": "Cura una cantidad considerable de Vida a los aliados cercanos y a todos los miembros de tu equipo. La curación aumenta en proporción a la Vida Máx. de Bárbara.",
       "1": "<br/>",
       "2": "<i>Los deseos sanadores de Bárbara refuerzan su voluntad de luchar y cantar.</i>"
+    },
+    "skillParams": {
+      "0": "Curación",
+      "1": "TdE",
+      "2": "Energía Elemental",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

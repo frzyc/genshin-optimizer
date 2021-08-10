@@ -13,7 +13,25 @@
       "8": "<br/>",
       "9": "<i>\"Eu vejo a eternidade desvanecer em um piscar de olhos, vejo os outonos de muitos anos em apenas uma folha. Por isso, desejo cortar essa árvore e perguntar ao tempo...\"</i>"
     },
-    "slashdmg": "Dano do Corte"
+    "slashdmg": "Dano do Corte",
+    "skillParams": {
+      "0": "Dano do Corte",
+      "1": "Dano Contínuo",
+      "2": "Dano Elemental adicional",
+      "3": "Duração",
+      "4": "Tempo de Recarga",
+      "5": "Energia Elemental",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
   },
   "name": "Kaedehara Kazuha",
   "title": "Folhas Escarlates Procuram Ondas Selvagens",
@@ -59,6 +77,24 @@
       "13": "<i>\"Vento e Bordo choram",
       "14": "Por deuses e homens que já se foram",
       "15": "Como montanhas vermelhas do outono.\"</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade de Pressionar",
+      "1": "Recarga de Toque",
+      "2": "Dano de Habilidade ao Manter Pressionado",
+      "3": "Recarga ao Manter Pressionado",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

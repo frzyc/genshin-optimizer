@@ -36,6 +36,24 @@
       "7": "Trong thời gian thi triển, tạo trạng thái <hydro>Ẩm Ướt</hydro> cho nhân vật.",
       "8": "<br/>",
       "9": "<i>\"Giao Long dễ trảm, mưa rơi khó vẽ\".</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Tỷ Lệ Miễn Thương",
+      "2": "Thời Gian Kéo Dài",
+      "3": "CD",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -50,6 +68,24 @@
       ],
       "4": "<br/>",
       "5": "<i>[Tài Vũ Pháp] là một trong những bí kíp của phái Cổ Hoa.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Mưa Kiếm",
+      "1": "Thời Gian Kéo Dài",
+      "2": "CD",
+      "3": "Năng Lượng Nguyên Tố",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

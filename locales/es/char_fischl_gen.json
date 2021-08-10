@@ -32,6 +32,24 @@
       "5": "<br/>",
       "6": "<i>“Ve, Oz. Cae sobre ellos e invoca tu relámpago del juicio para dar comienzo a la noche eterna”.</i>",
       "7": "<i>——«Flores para la princesa Fischl (IV): Adiós, Frau Welt».</i>"
+    },
+    "skillParams": {
+      "0": "Daño de ATQ de Oz",
+      "1": "Daño al invocar",
+      "2": "Duración de Oz",
+      "3": "TdE",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -47,6 +65,24 @@
       "4": "<br/>",
       "5": "<i>“... Entre las hordas de bestias que persiguen la sangre maldita, solo el Príncipe Cuervo de la Noche, que fue testigo de la extinción de mil mundos, conoce la verdadera grandeza de la Princesa. Así, las alas nocturnas que extiende son su eterna promesa de proteger a Su Alteza Real”.</i>",
       "6": "<i>—«Flores para la Princesa Fischl - Vol. I: El colapso del fin de los tiempos».</i>"
+    },
+    "skillParams": {
+      "0": "Daño de rayo",
+      "1": "TdE",
+      "2": "Energía Elemental",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

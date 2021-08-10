@@ -36,6 +36,24 @@
       "10": "- Schlägt bei Anwendung von heftigen Schlägen mit einer Reihe von Elektro-Hieben auf die markierte Stelle und verursacht mehrfachen <electro>Elektro-Flächenschaden</electro>.",
       "11": "<br/>",
       "12": "<i>„Menschen sind wie Motten, die nach dem Licht suchen, das die Götter und Adepten ausstrahlen. Doch dieses Licht hier stammt ganz von mir.“</i>"
+    },
+    "skillParams": {
+      "0": "Donnerkeil-SCH",
+      "1": "Schwerthieb-SCH",
+      "2": "SCH der Elektro-Hiebe",
+      "3": "Abklingzeit",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -45,6 +63,24 @@
       "1": "Versteckt sich danach im Schwertschatten und fügt den Gegnern in der Umgebung mit blitzartiger Geschwindigkeit eine Reihe von Hieben zu, die mehrstufigen <electro>Elektro-Schaden</electro> und beim letzten Hieb hohen <electro>Elektro-Flächenschaden</electro> verursachen.",
       "2": "<br/>",
       "3": "<i>Dies ist die schnellste Technik, die Keqing beherrscht. Damit kann sie sogar Sterne vom Himmel holen.</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "SCH der Hiebe",
+      "2": "SCH beim letzten Schlag",
+      "3": "Abklingzeit",
+      "4": "Elementarenergie",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

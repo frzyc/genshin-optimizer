@@ -36,6 +36,24 @@
       "7": "Menggunakan skill ini akan mengenakan efek <hydro>Wet</hydro> pada karakter.",
       "8": "<br/>",
       "9": "<i>\"Lebih mudah mengalahkan naga air daripada membelah air hujan.\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Perbandingan Pengurangan DMG",
+      "2": "Durasi",
+      "3": "CD",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -50,6 +68,24 @@
       ],
       "4": "<br/>",
       "5": "<i>\"Way of the Rain Cutter\" adalah salah satu ilmu rahasia Klan Guhua.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Sword Rain",
+      "1": "Durasi",
+      "2": "Cooldown",
+      "3": "Energy",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

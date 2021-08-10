@@ -47,6 +47,24 @@
       "13": "Aktiviert eine längere Abklingphase, wenn der Nahkampf 30 s lang aktiv war.",
       "14": "<br/>",
       "15": "<i>Allein um seinen ungeübten Umgang mit dem Bogen zu verbessern, wählt er diesen als seine Waffe. In gefährlichen Kämpfen aber zeigt er seine wahre Stärke.</i>"
+    },
+    "skillParams": {
+      "0": "SCH durch Modusänderung",
+      "1": "SCH Phase 1",
+      "2": "SCH Phase 2",
+      "3": "SCH Phase 3",
+      "4": "SCH Phase 4",
+      "5": "SCH Phase 5",
+      "6": "SCH Phase 6",
+      "7": "SCH heftiger Schläge",
+      "8": "Ausdauerverbrauch heftiger Schläge",
+      "9": "SCH durch Versiegen – Hieb",
+      "10": "Höchstdauer",
+      "11": "Abklingzeit",
+      "12": "Max. Abklingzeit",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -66,6 +84,24 @@
       "11": "Der mit Versiegen – Explosion verursachte Schaden gilt als Spezialfähigkeitsschaden.",
       "12": "<br/>",
       "13": "<i>Reißendes Wasser ist eine Seltenheit in seiner verschneiten Heimat. Vielleicht kann er die Hydro-Kräfte so gut kontrollieren, gerade weil er weiß, wie kostbar Wasser ist.</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH (Nahkampf)",
+      "1": "Fähigkeits-SCH (Fernkampf)",
+      "2": "SCH durch Versiegen – Explosion",
+      "3": "Elementarenergierückgabe der Fähigkeit (Fernkampf)",
+      "4": "Abklingzeit",
+      "5": "Elementarenergie",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

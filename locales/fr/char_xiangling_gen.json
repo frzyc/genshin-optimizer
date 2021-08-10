@@ -26,6 +26,24 @@
       "0": "Xiangling invoque le panda Gooba. Tant que Gooba est actif, il crache du feu sur les ennemis, leur infligeant des <pyro>DGT Pyro de zone</pyro>.",
       "1": "<br/>",
       "2": "<i>Gooba raffole des produits épicés ; mais même ça, c'est un peu trop pour lui.</i>"
+    },
+    "skillParams": {
+      "0": "DGT crachats de feu",
+      "1": "Temps de recharge",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -35,6 +53,24 @@
       "1": "La tornade suit le personnage tant qu'elle est active, infligeant des <pyro>DGT Pyro</pyro> aux ennemis sur sa route.",
       "2": "<br/>",
       "3": "<i>On n'a jamais assez d'explosif. JAMAIS.</i>"
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT tornade de feu",
+      "4": "Durée",
+      "5": "Temps de recharge",
+      "6": "Énergie élémentaire",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

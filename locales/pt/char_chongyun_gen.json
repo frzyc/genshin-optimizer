@@ -28,6 +28,24 @@
       "1": "Depois de um curto intervalo, o ar frio criado pela explosão Cryo se coalescerá em um Campo Gelado Chonghua, em que todos os personagens que usem Espada, Espadão ou Lança serão imbuídos com <cryo>Cryo</cryo>.",
       "2": "<br/>",
       "3": "<i>\"Um anel de cristal e tudo que se segue é o silêncio. Os rios não se movem, e as nuvens estão pesadas com o gelo. Os portões do altar se abrem, e o mal é banido.\"</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Duração do Encantamento",
+      "2": "Duração da Área",
+      "3": "Tempo de Recarga",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -37,6 +55,24 @@
       "1": "Quando as lâminas espirituais explodem, elas infligem <cryo>Dano Cryo em uma AdE</cryo> e lançam inimigos.",
       "2": "<br/>",
       "3": "<i>\"Assim como o frio atroz gera a geada congelante, minha lâmina transcendente estremece o céu e a terra. Ouça meu chamado e atenda ao meu apelo!\"</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Tempo de Recarga",
+      "2": "Energia Elemental",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

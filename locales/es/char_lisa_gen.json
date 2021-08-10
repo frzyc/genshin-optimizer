@@ -33,6 +33,24 @@
       "7": "Inflige grandes cantidades de daño adicional a los enemigos en proporción al número de cargas de conducción que tengan, tras lo que elimina este efecto.",
       "8": "<br/>",
       "9": "<i>El color de los rayos es el color preferido de la Bruja de las Rosas.</i>"
+    },
+    "skillParams": {
+      "0": "Daño al pulsar una vez",
+      "1": "TdE al pulsar una vez",
+      "2": "Daño de conducción al mantener pulsado (0 cargas)",
+      "3": "Daño de conducción al mantener pulsado (1 carga)",
+      "4": "Daño de conducción al mantener pulsado (2 cargas)",
+      "5": "Daño de conducción al mantener pulsado (3 cargas)",
+      "6": "TdE de mantener pulsado",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -42,6 +60,24 @@
       "1": "Durante su efecto, la rosa devastadora chispea periódicamente relámpagos para atacar a los oponentes cercanos, infligiendo <electro>Daño Electro</electro>.",
       "2": "<br/>",
       "3": "<i>Efectivamente, esta rosa es increíblemente bella, pero sus espinas pueden llegan a ser letales</i>."
+    },
+    "skillParams": {
+      "0": "Daño de descarga",
+      "1": "Duración",
+      "2": "TdE",
+      "3": "Energía Elemental",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

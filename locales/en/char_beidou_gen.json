@@ -39,6 +39,24 @@
       ],
       "10": "<br/>",
       "11": "<i>Conquer the high seas! Pursue the waves and chase the storm!</i>"
+    },
+    "skillParams": {
+      "0": "Shield DMG Absorption",
+      "1": "Base DMG",
+      "2": "DMG Bonus on Hit Taken",
+      "3": "CD",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -55,6 +73,24 @@
       "5": "A maximum of 1 lightning discharge can be triggered per second.",
       "6": "<br/>",
       "7": "<i>With a peal of thunder, Haishan is slain.</i>"
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "Lightning DMG",
+      "2": "DMG Reduction",
+      "3": "Duration",
+      "4": "CD",
+      "5": "Energy Cost",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

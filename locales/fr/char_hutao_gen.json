@@ -41,6 +41,24 @@
       "10": "L'état <strong>Paramita Papilio</strong> se termine à la fin de sa durée, lorsque Hu Tao quitte le champ de bataille ou lorsqu'elle est vaincue.",
       "11": "<br/>",
       "12": "<i>La technique de la lance secrète est basée sur plusieurs principes, dont le premier est : « la lance ouvre les portes de l'au-delà et les papillons forment un pont entre les deux mondes. »</i>"
+    },
+    "skillParams": {
+      "0": "PV consommés",
+      "1": "Bonus ATQ",
+      "2": "DGT Bourgeon de prune",
+      "3": "Durée Bourgeon de prune",
+      "4": "Durée",
+      "5": "Temps de recharge",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -51,6 +69,24 @@
       "2": "Les DGT infligés et les PV récupérés sont plus importants si les PV de Hu Tao sont inférieurs ou égaux à 50 % lorsque la compétence touche.",
       "3": "<br/>",
       "4": "<i>Le Funérarium Wangsheng ne voit pas d'un bon œil les âmes refusant de quitter ce monde. La crémation est pour Hu Tao le meilleur moyen d'avoir l'esprit tranquille – mais plus elle est anxieuse et plus son feu est puissant.</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "DGT si PV faibles",
+      "2": "PV récupérés",
+      "3": "PV récupérés si PV faibles",
+      "4": "Temps de recharge",
+      "5": "Énergie élémentaire",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

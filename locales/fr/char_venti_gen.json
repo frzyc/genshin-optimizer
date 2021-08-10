@@ -36,6 +36,24 @@
       "9": "Les ennemis projetés en l'air retombent lentement au sol.",
       "10": "<br/>",
       "11": "<i>Aux temps anciens où dieux et hommes se partageaient la terre, nombreux furent les chants qui atteignirent les cieux. Ce sonnet possède une mélodie oubliée depuis longtemps.</i>"
+    },
+    "skillParams": {
+      "0": "DGT appui simple",
+      "1": "TdR appui simple",
+      "2": "DGT appui long",
+      "3": "TdR appui long",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -47,6 +65,24 @@
       "3": "L'Œil de la tempête absorbe les éléments <hydro>Hydro</hydro>, <pyro>Pyro</pyro>, <cryo>Cryo</cryo> et <electro>Électro</electro> avec lesquels il entre en contact ; ceux-ci lui confèrent leurs attributs, et infligent un bonus de DGT de l'élément correspondant.",
       "4": "<br/>",
       "5": "<i>Nombre de poèmes chantant la gloire de l'Archon Anémo ont été perdus. Celui-ci raconte sa puissance, et la puissance des vents.</i>"
+    },
+    "skillParams": {
+      "0": "DGT continus",
+      "1": "Bonus DGT élémentaires",
+      "2": "Durée",
+      "3": "Temps de recharge",
+      "4": "Énergie élémentaire",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

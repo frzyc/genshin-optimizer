@@ -29,6 +29,24 @@
       "2": "Inicia com 2 cargas.",
       "3": "<br/>",
       "4": "<i>Segundo as lendas de outra terra, o mundo será um dia esmagado por duas grandes rodas de vento. O domínio de Xiao sobre as lanças é transcendente, destruindo seus inimigos como aquelas lendárias rodas de vento.</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Tempo de Recarga",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -47,6 +65,24 @@
       "6": "Os efeitos dessa habilidade terminam quando Xiao deixa o campo.",
       "7": "<br/>",
       "8": "<i>Colocando a máscara Yaksha, Xiao se transforma no Conquistador de Demônios. Mas esse grande poder também lhe trouxe grande sofrimento. Alguns lhe chamam de \"A Ruína de Todos os Males\".</i>"
+    },
+    "skillParams": {
+      "0": "Aumento de Ataque Normal/Ataque Carregado/Ataque Imersivo",
+      "1": "Vida consumida",
+      "2": "Duração",
+      "3": "Tempo de Recarga",
+      "4": "Energia Elemental",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

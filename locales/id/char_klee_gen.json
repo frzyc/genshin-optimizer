@@ -32,6 +32,24 @@
       "6": "Mulai dengan 2 jumlah penggunaan.",
       "7": "<br/>",
       "8": "<i>Jumpty Dumpty adalah teman baik Klee! Klee selalu tidak sabar untuk memperkenalkannya ke semua orang.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Jumpy Dumpty",
+      "1": "DMG Mine",
+      "2": "Durasi Mine",
+      "3": "Cooldown",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -40,6 +58,24 @@
       "0": "Kekuatan maksimum Klee! Selama durasi skill, Sparks 'n' Splash akan terus menyerang musuh-musuh di sekitar dan mengakibatkan <pyro>Pyro DMG area</pyro>.",
       "1": "<br/>",
       "2": "<i>Para Knight meyakini kalau Klee pasti memiliki sebuah bintang keberuntungan yang melindunginya karena dia tidak pernah terluka oleh bom miliknya sendiri...</i>"
+    },
+    "skillParams": {
+      "0": "DMG Sparks 'n' Splash",
+      "1": "Durasi",
+      "2": "Cooldown",
+      "3": "Energy",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

@@ -16,6 +16,24 @@
         ],
         "6": "<br/>",
         "7": "<i>You and Paimon discuss the paths by which electricity might flow.</i>"
+      },
+      "skillParams": {
+        "0": "Skill DMG",
+        "1": "Energy Regeneration",
+        "2": "Energy Recharge Increase",
+        "3": "Duration",
+        "4": "Abundance Amulet Duration",
+        "5": "CD",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": "",
+        "13": "",
+        "14": "",
+        "15": ""
       }
     },
     "burst": {
@@ -30,6 +48,24 @@
         "5": "One instance of Falling Thunder can be generated every 0.5s.",
         "6": "<br/>",
         "7": "<i>You and Paimon studied the light that flashes through the clouds.</i>"
+      },
+      "skillParams": {
+        "0": "Skill DMG",
+        "1": "Falling Thunder DMG",
+        "2": "Energy Regeneration",
+        "3": "Duration",
+        "4": "CD",
+        "5": "Energy Cost",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": "",
+        "13": "",
+        "14": "",
+        "15": ""
       }
     },
     "auto": {
@@ -136,6 +172,24 @@
         "8": "Elemental Absorption may only occur once per use.",
         "9": "<br/>",
         "10": "<i>You discussed the way to grasp the formless wind with Paimon.</i>"
+      },
+      "skillParams": {
+        "0": "Initial Cutting DMG",
+        "1": "Max Cutting DMG",
+        "2": "Initial Storm DMG",
+        "3": "Max Storm DMG",
+        "4": "Base CD",
+        "5": "Max Charging CD",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": "",
+        "13": "",
+        "14": "",
+        "15": ""
       }
     },
     "burst": {
@@ -148,6 +202,24 @@
         "4": "Elemental Absorption may only occur once per use.",
         "5": "<br/>",
         "6": "<i>You and Paimon studied the flapping of a butterfly's wings.</i>"
+      },
+      "skillParams": {
+        "0": "Tornado DMG",
+        "1": "Additional Elemental DMG",
+        "2": "Duration",
+        "3": "CD",
+        "4": "Energy Cost",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": "",
+        "13": "",
+        "14": "",
+        "15": ""
       }
     },
     "passive1": {
@@ -230,6 +302,24 @@
         "4": "This skill's positioning may be adjusted.",
         "5": "<br/>",
         "6": "<i>You spoke with Paimon about the final destination of falling stars.</i>"
+      },
+      "skillParams": {
+        "0": "Skill DMG",
+        "1": "Meteorite Duration",
+        "2": "CD",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": "",
+        "13": "",
+        "14": "",
+        "15": ""
       }
     },
     "burst": {
@@ -241,6 +331,24 @@
         "3": "The stone wall is considered a <geo>Geo Construct</geo>, and may be used to block attacks.",
         "4": "<br/>",
         "5": "<i>You and Paimon studied the pulse of the mountains.</i>"
+      },
+      "skillParams": {
+        "0": "DMG Per Shockwave",
+        "1": "Stonewall Duration",
+        "2": "CD",
+        "3": "Energy Cost",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": "",
+        "13": "",
+        "14": "",
+        "15": ""
       }
     },
     "passive1": {

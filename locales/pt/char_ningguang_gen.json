@@ -34,6 +34,24 @@
       "6": "Tela de Jade é considerada uma <geo>Construção Geo</geo> e pode ser usada para bloquear alguns ataques, mas não pode ser escalada. Apenas uma Tela de Jade pode existir ao mesmo tempo.",
       "7": "<br/>",
       "8": "<i>A tela das estrelas está escrita sobre essa Tela de Jade.</i>"
+    },
+    "skillParams": {
+      "0": "Vida Recebida",
+      "1": "Dano de Habilidade",
+      "2": "Tempo de Recarga",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -43,6 +61,24 @@
       "1": "Se o Quebrador de Estrelas é lançado enquanto a Tela de Jade está próxima, a Tela de Jade irá disparar projéteis de gemas perseguidoras adicionais ao mesmo tempo.",
       "2": "<br/>",
       "3": "<i>Estrelas quebram. O silêncio recai.</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Cada Gema",
+      "1": "Tempo de Recarga",
+      "2": "Energia Elemental",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

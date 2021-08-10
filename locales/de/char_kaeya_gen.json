@@ -26,6 +26,24 @@
       "0": "Verströmt augenblicklich eisige Kälte und fügt gegenüberstehenden Gegnern <cryo>Kryo-Schaden</cryo> zu.",
       "1": "<br/>",
       "2": "<i>Kaeya ist, obwohl er so freundlich erscheint, ein nicht schmelzen wollender Eisblock.</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Abklingzeit",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -35,6 +53,24 @@
       "1": "Die Eiszapfen folgen den Bewegungen der Figur und fügen den Gegnern in ihrer Bahn <cryo>Kryo-Schaden</cryo> zu.",
       "2": "<br/>",
       "3": "<i>Ein freundliches Lächeln und nette Worte verbergen Kaeyas unerbittliche Kälte und sind damit seine stärksten Waffen.</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Abklingzeit",
+      "2": "Dauer",
+      "3": "Elementarenergie",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

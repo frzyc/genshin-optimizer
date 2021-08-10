@@ -35,6 +35,24 @@
       "9": "<strong>Manter pressionado</strong> para designar a localização da habilidade.",
       "10": "<br/>",
       "11": "<i>Esta espécie de flor Geo tem uma propriedade incomum espelhada na mesma da alquimia. Para levantar-se da terra, elevar-se para o céu e tornar-se o sol.</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Dano das Flores Transitórias",
+      "2": "Duração",
+      "3": "Recarga da Habilidade",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -46,6 +64,24 @@
       "3": "O Dano causado pela explosão e da Flor Fatal não gerará Flores Transitórias.",
       "4": "<br/>",
       "5": "<i>Sob o comando do Príncipe do Giz, a maré tectônica da criação se infiltra na vida.</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Explosão",
+      "1": "Dano do Florescer Fatal",
+      "2": "Tempo de Recarga",
+      "3": "Energia Elemental",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

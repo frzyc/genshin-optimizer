@@ -29,6 +29,24 @@
       "2": "Xiao commence avec 2 charges.",
       "3": "<br/>",
       "4": "<i>La légende d'un lointain pays raconte qu'un jour, le monde périra entre deux roues à aubes. La maîtrise totale de la lance permet à Xiao d'écraser ses ennemis, à l'image des roues légendaires écrasant le monde.</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "Temps de recharge",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -48,6 +66,24 @@
       "7": "L'état prend fin lorsque Xiao quitte le champ de bataille.",
       "8": "<br/>",
       "9": "<i>En revêtant le Masque du Yaksha, Xiao prend la forme terrifiante du Gardien Yaksha Dompteur de démon. Mais un tel pouvoir a un prix ; aussi l'appelle-t-on : le Fléau du mal.</i>"
+    },
+    "skillParams": {
+      "0": "Bonus ATQ normale/chargée/plongeante",
+      "1": "PV consommés",
+      "2": "Durée",
+      "3": "Temps de recharge",
+      "4": "Énergie élémentaire",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

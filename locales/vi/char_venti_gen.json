@@ -36,6 +36,24 @@
       "9": "Địch bị Bài Ca Trời Cao đánh bay, trong thời gian ngắn sẽ rơi chậm.",
       "10": "<br/>",
       "11": "<i>Trong thời đại mà thần cùng con người cùng sống trên trái đất, có vô số bài hát truyền khắp bốn phương. Đây là giai điệu đã sớm bị lãng quên.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Nhấn",
+      "1": "CD Nhấn",
+      "2": "Sát Thương Nhấn Giữ",
+      "3": "CD Nhấn Giữ",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -48,6 +66,24 @@
       "4": "Chuyển hóa nguyên tố chỉ phát sinh 1 lần.",
       "5": "<br/>",
       "6": "<i>Có rất nhiều bài thơ ca ngợi Phong Thần đã biến mất. Trong đó bài thơ này miêu tả sức mạnh của ngài ấy cùng với gió.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kéo Dài",
+      "1": "Sát Thương Nguyên Tố Kèm Theo",
+      "2": "Thời Gian Kéo Dài",
+      "3": "CD",
+      "4": "Năng Lượng Nguyên Tố",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

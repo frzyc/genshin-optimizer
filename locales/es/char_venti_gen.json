@@ -36,6 +36,24 @@
       "9": "Los enemigos golpeados por Sonata celestial caerán al suelo lentamente.",
       "10": "<br/>",
       "11": "<i>En los días en que dioses y hombres caminaban juntos por la tierra, los cielos estaban llenos de innumerables canciones. Sin embargo, esta melodía fue olvidada hace mucho tiempo.</i>"
+    },
+    "skillParams": {
+      "0": "Daño al pulsar una vez",
+      "1": "TdE al pulsar una vez",
+      "2": "Daño de mantener pulsado",
+      "3": "TdE de mantener pulsado",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -48,6 +66,24 @@
       "4": "El cambio elemental solo puede ocurrir una vez por uso.",
       "5": "<br/>",
       "6": "<i>Muchos himnos escritos en alabanza al Arconte Anemo se han perdido en el tiempo. Este canta sobre su dominio del viento.</i>"
+    },
+    "skillParams": {
+      "0": "Daño continuo",
+      "1": "Daño Elemental adicional",
+      "2": "Duración",
+      "3": "TdE",
+      "4": "Energía Elemental",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

@@ -29,6 +29,24 @@
       "2": "Starts with 2 charges.",
       "3": "<br/>",
       "4": "<i>According to the legends of another land, the world will someday be crushed by two great wind wheels. Xiao's mastery over polearms is transcendent, ripping his foes apart like those legendary wind wheels.</i>"
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "CD",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -47,6 +65,24 @@
       "6": "The effects of this skill end when Xiao leaves the field.",
       "7": "<br/>",
       "8": "<i>Donning the Mask of the Yaksha, Xiao takes the terrifying, demon-conquering form of the Vigilant Yaksha. But this great power has also brought him great suffering. Some call him \"The Bane of All Evil.\"</i>"
+    },
+    "skillParams": {
+      "0": "Normal/Charged/Plunging Attack DMG Bonus",
+      "1": "Life Drain",
+      "2": "Duration",
+      "3": "CD",
+      "4": "Energy Cost",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

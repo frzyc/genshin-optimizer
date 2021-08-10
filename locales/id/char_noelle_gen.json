@@ -13,6 +13,24 @@
       "4": "Jumlah HP yang dipulihkan meningkat berdasarkan DEF Noelle.",
       "5": "<br/>",
       "6": "<i>Noelle adalah seorang pelayan yang sangat sigap, dan juga seorang Knight yang sangat gagah.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Penahanan DMG",
+      "2": "Pemulihan HP",
+      "3": "Persentase Pemulihan Terpicu",
+      "4": "Durasi",
+      "5": "CD",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -28,6 +46,24 @@
       ],
       "3": "<br/>",
       "4": "<i>Terkadang, bukan hanya debu yang harus dibersihkan...</i>"
+    },
+    "skillParams": {
+      "0": "DMG Elemental Burst",
+      "1": "DMG Skill",
+      "2": "Peningkatan ATK",
+      "3": "Durasi",
+      "4": "CD",
+      "5": "Energy",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "name": "Noelle",

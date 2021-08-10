@@ -16,6 +16,24 @@
         ],
         "6": "<br/>",
         "7": "<i>Kamu dan Paimon sempat mendiskusikan semua jalur yang mungkin dialiri listrik.</i>"
+      },
+      "skillParams": {
+        "0": "DMG Skill",
+        "1": "Pemulihan Energy",
+        "2": "Peningkatan Energy Recharge",
+        "3": "Durasi",
+        "4": "Durasi Abundance Amulet",
+        "5": "Cooldown",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": "",
+        "13": "",
+        "14": "",
+        "15": ""
       }
     },
     "burst": {
@@ -30,6 +48,24 @@
         "5": "Satu Falling Thunder dapat terpicu setiap 0,5 detik.",
         "6": "<br/>",
         "7": "<i>Kamu dan Paimon pernah mempelajari kilatan cahaya yang tiba-tiba menembus awan.</i>"
+      },
+      "skillParams": {
+        "0": "DMG Skill",
+        "1": "DMG Falling Thunder",
+        "2": "Pemulihan Energy",
+        "3": "Durasi",
+        "4": "Cooldown",
+        "5": "Konsumsi Energy",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": "",
+        "13": "",
+        "14": "",
+        "15": ""
       }
     },
     "auto": {
@@ -136,6 +172,24 @@
         "8": "Elemental Absorption hanya dapat terjadi sekali untuk setiap penggunaan skill.",
         "9": "<br/>",
         "10": "<i>Kamu berbincang dengan Paimon tentang cara menggenggam kekuatan angin yang tak terlihat.</i>"
+      },
+      "skillParams": {
+        "0": "DMG Tebasan Pertama",
+        "1": "DMG Tebasan Maksimum",
+        "2": "DMG Pusaran Pertama",
+        "3": "DMG Pusaran Maks.",
+        "4": "Cooldown Dasar",
+        "5": "Cooldown Menahan Maks.",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": "",
+        "13": "",
+        "14": "",
+        "15": ""
       }
     },
     "burst": {
@@ -148,6 +202,24 @@
         "4": "Elemental Absorption hanya dapat terjadi sekali untuk setiap penggunaan skill.",
         "5": "<br/>",
         "6": "<i>Kamu dan Paimon mempelajari kepakan sayap kupu-kupu.</i>"
+      },
+      "skillParams": {
+        "0": "DMG Tornado",
+        "1": "Tambahan Elemental DMG",
+        "2": "Durasi",
+        "3": "Cooldown",
+        "4": "Energy",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": "",
+        "13": "",
+        "14": "",
+        "15": ""
       }
     },
     "passive1": {
@@ -231,6 +303,24 @@
         "4": "Posisi skill ini dapat diubah.",
         "5": "<br/>",
         "6": "<i>Kamu berbincang dengan Paimon tentang tujuan terakhir bintang-bintang yang terjatuh.</i>"
+      },
+      "skillParams": {
+        "0": "DMG Skill",
+        "1": "Durasi Meteorite",
+        "2": "Cooldown",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": "",
+        "13": "",
+        "14": "",
+        "15": ""
       }
     },
     "burst": {
@@ -242,6 +332,24 @@
         "3": "Dinding batu ini dianggap sebagai sebuah <geo>Geo Construct</geo> dan dapat digunakan untuk memblokir serangan.",
         "4": "<br/>",
         "5": "<i>Kamu dan Paimon berdebat tentang detak gunung-gunung.</i>"
+      },
+      "skillParams": {
+        "0": "DMG Per Gelombang",
+        "1": "Durasi Stonewall",
+        "2": "Cooldown",
+        "3": "Energy",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": "",
+        "13": "",
+        "14": "",
+        "15": ""
       }
     },
     "passive1": {

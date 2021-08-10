@@ -29,6 +29,24 @@
       "2": "Esta habilidad puede utilizarse 3 veces consecutivas, pero entrará en TdE si no se activa tras un breve periodo de tiempo.",
       "3": "<br/>",
       "4": "<i>Los tres golpes de espada representan los valores de Diluc: la justicia, el valor y el deber.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "TdE",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -38,6 +56,24 @@
       "1": "Las llamas que quedan en el arma de Diluc la <pyro>imbuyen del elemento Pyro</pyro>.",
       "2": "<br/>",
       "3": "<i>La única razón para caminar en la oscuridad es iluminarla. Hela aquí, la luz fugitiva en la oscuridad de la noche, heraldo del próximo amanecer.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de corte",
+      "1": "Daño continuo",
+      "2": "Daño de explosión",
+      "3": "TdE",
+      "4": "Duración del elemento imbuido",
+      "5": "Energía Elemental",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

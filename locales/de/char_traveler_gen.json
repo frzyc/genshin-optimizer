@@ -14,6 +14,24 @@
         "6": "- Erhöht die Aufladerate während der Wirkungsdauer.",
         "7": "<br/>",
         "8": "<i>Du hast mit Paimon darüber gesprochen, wie sich Elektrizität ausbreitet.</i>"
+      },
+      "skillParams": {
+        "0": "Fähigkeits-SCH",
+        "1": "Elementarenergie-Wiederherstellung",
+        "2": "Aufladeratenbonus",
+        "3": "Dauer",
+        "4": "Vorhandensein von Amuletten des Überflusses",
+        "5": "Abklingzeit",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": "",
+        "13": "",
+        "14": "",
+        "15": ""
       }
     },
     "burst": {
@@ -28,6 +46,24 @@
         "5": "0,5 s Abklingzeit für grelle Blitzschläge.",
         "6": "<br/>",
         "7": "<i>Du hast mit Paimon die Lichter untersucht, die durch die Wolken zischen.</i>"
+      },
+      "skillParams": {
+        "0": "Fähigkeits-SCH",
+        "1": "SCH greller Blitzschläge",
+        "2": "Elementarenergie-Wiederherstellung",
+        "3": "Dauer",
+        "4": "Abklingzeit",
+        "5": "Elementarenergie",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": "",
+        "13": "",
+        "14": "",
+        "15": ""
       }
     },
     "auto": {
@@ -134,6 +170,24 @@
         "8": "Elementarumwandlung nur einmal während der Wirkungsdauer möglich.",
         "9": "<br/>",
         "10": "<i>Du hast mit Paimon darüber gesprochen, wie man formlosen Wind in der Hand halten kann.</i>"
+      },
+      "skillParams": {
+        "0": "Anfangs-SCH bei Anwendung",
+        "1": "Max. SCH bei Anwendung",
+        "2": "Anfangs-SCH bei Gedrückthalten",
+        "3": "Max. SCH bei Gedrückthalten",
+        "4": "Basisabklingzeit",
+        "5": "Abklingzeit bei vollem Aufladen",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": "",
+        "13": "",
+        "14": "",
+        "15": ""
       }
     },
     "burst": {
@@ -146,6 +200,24 @@
         "4": "Elementarumwandlung nur einmal während der Wirkungsdauer möglich.",
         "5": "<br/>",
         "6": "<i>Du hast mit Paimon den Flügelschlag von Schmetterlingen untersucht.</i>"
+      },
+      "skillParams": {
+        "0": "Tornado-SCH",
+        "1": "Zusätzlicher Elementar-SCH",
+        "2": "Dauer",
+        "3": "Abklingzeit",
+        "4": "Elementarenergie",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": "",
+        "13": "",
+        "14": "",
+        "15": ""
       }
     },
     "passive1": {
@@ -229,6 +301,24 @@
         "4": "Wirkungsbereich der Fähigkeit kann angepasst werden.",
         "5": "<br/>",
         "6": "<i>Du hast mit Paimon darüber gesprochen, wo Sternschnuppen wohl landen.</i>"
+      },
+      "skillParams": {
+        "0": "Fähigkeits-SCH",
+        "1": "Wirkungsdauer des gefallenen Sterns",
+        "2": "Abklingzeit",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": "",
+        "13": "",
+        "14": "",
+        "15": ""
       }
     },
     "burst": {
@@ -240,6 +330,24 @@
         "3": "Der Steinwall gilt als <geo>Geo-Objekt</geo> und blockiert Angriffe.",
         "4": "<br/>",
         "5": "<i>Du hast mit Paimon die Bewegungen der Erdplatten studiert.</i>"
+      },
+      "skillParams": {
+        "0": "SCH pro Druckwelle",
+        "1": "Wirkungsdauer des Steinwalls",
+        "2": "Abklingzeit",
+        "3": "Elementarenergie",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": "",
+        "13": "",
+        "14": "",
+        "15": ""
       }
     },
     "passive1": {

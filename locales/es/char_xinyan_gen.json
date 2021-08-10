@@ -39,6 +39,24 @@
       ],
       "6": "<br/>",
       "7": "<i>Xinyan insiste en que el uso de toda esta pirotecnia representa el punto álgido de una actuación artística, y que se trata nada más que de fenómenos físicos. No tiene nada que ver con su Visión.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de golpe de espada",
+      "1": "Absorción escudo Niv. 1",
+      "2": "Absorción escudo Niv. 2",
+      "3": "Absorción escudo Niv. 3",
+      "4": "Daño continuo",
+      "5": "Duración del escudo",
+      "6": "TdE",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -48,6 +66,24 @@
       "1": "El fervor del ambiente provocará explosiones que infligen <pyro>Daño Pyro</pyro> a los enemigos cercanos.",
       "2": "<br/>",
       "3": "<i>Xinyan solía terminar todas sus actuaciones con este movimiento. Sin embargo, la razón por la que dejó de hacerlo no fue porque fuera peligroso, sino porque no tenía un final más épico en caso de que su público gritara “¡Otra canción!”.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Daño Pyro continuo",
+      "2": "Duración",
+      "3": "TdE",
+      "4": "Energía Elemental",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

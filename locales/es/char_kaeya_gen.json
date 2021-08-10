@@ -26,6 +26,24 @@
       "0": "Lanza una ráfaga gélida que inflige <cryo>Daño Cryo</cryo> a los enemigos frente a Kaeya.",
       "1": "<br/>",
       "2": "<i>Kaeya parece amable, pero su naturaleza es la del hielo inderretible.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "TdE",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -35,6 +53,24 @@
       "1": "Estos carámbanos seguirán al personaje e infligirán <cryo>Daño Cryo</cryo> a los enemigos que se atraviesen.",
       "2": "<br/>",
       "3": "<i>Una sonrisa encantadora, palabras bondadosas y la despiadada escarcha que yace oculta... Esas son las armas de Kaeya.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "TdE",
+      "2": "Duración",
+      "3": "Energía Elemental",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

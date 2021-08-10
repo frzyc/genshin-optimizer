@@ -30,6 +30,24 @@
       "1": "Yanfei akan mendapatkan Scarlet Seal dalam jumlah maksimum saat Signed Edict mengenai musuh.",
       "2": "<br/>",
       "3": "<i>Selain dari penggunaan legalnya, segel Yanfei juga dilengkapi dengan syarat dan ketentuan tambahan yang disesuaikan. Bagaimanapun juga, Bagian Urusan Sipil tidak bisa mengubah hukum alam.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Cooldown",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -46,6 +64,24 @@
       ],
       "5": "<br/>",
       "6": "<i>\"Inilah daftar istilah lengkap untuk urusan hidup dan mati — maksudku adalah hidupku dan kematianmu!\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "",
+      "2": "Jeda Pemberian Scarlet Seal",
+      "3": "Peningkatan DMG Charged Attack",
+      "4": "Durasi",
+      "5": "CD",
+      "6": "Konsumsi Energy",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

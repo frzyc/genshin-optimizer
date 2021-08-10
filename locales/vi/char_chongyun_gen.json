@@ -28,6 +28,24 @@
       "1": "Sau khi gây ngưng trệ ngắn hạn, hàn khí tích tụ thành khu vực Sương Bạc Trùng Điệp, khiến cho nhân vật dùng kiếm đơn, đại kiếm, vũ khí cán dài nhận <cryo>Nguyên Tố Băng đính kèm</cryo>.",
       "2": "<br/>",
       "3": "<i>\"Ngọc vỡ chấn động, bốn bề im ắng. Sông nước bất động, mây trời ngưng tụ. Lập đàn thi pháp, tà ác rút lui.\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Thời Gian Đính Kèm Kéo Dài",
+      "2": "Thời Gian Khu Vực Kéo Dài",
+      "3": "CD",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -37,6 +55,24 @@
       "1": "Khi linh kiếm nổ sẽ gây <cryo>sát thương phạm vi nguyên tố băng</cryo> đồng thời đánh bay kẻ địch.",
       "2": "<br/>",
       "3": "<i>\"Trác kiếm thiên địa động, băng lăng sương hàn sinh. Như luật lệnh!\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "CD",
+      "2": "Năng Lượng Nguyên Tố",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

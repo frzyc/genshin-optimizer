@@ -38,6 +38,24 @@
       ],
       "10": "<br/>",
       "11": "<i>“Los humanos son como las polillas: persiguen a ciegas la claridad a la que llaman ‘dioses’ y ‘Adeptus’. En cambio, yo tengo mi luz propia”.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de cuña relámpago",
+      "1": "Daño de corte",
+      "2": "Daño de corte de tempestad eléctrica",
+      "3": "TdE",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -47,6 +65,24 @@
       "1": "Después, se funde en la sombra de su espada y ataca con una serie de golpes relámpago a los enemigos infligiendo <electro>Daño Electro</electro>. El ataque final inflige una gran cantidad de <electro>Daño Electro en el AdE</electro>.",
       "2": "<br/>",
       "3": "<i>La técnica más veloz en el arsenal personal de Keching es lo suficientemente rápida como para derribar estrellas.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Daño de corte continuo",
+      "2": "Daño del último golpe",
+      "3": "TdE",
+      "4": "Energía Elemental",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

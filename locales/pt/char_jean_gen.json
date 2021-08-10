@@ -32,6 +32,24 @@
       "5": "O personagem fica imóvel ao longo da duração da habilidade.",
       "6": "<br/>",
       "7": "<i>Aquilo que segue Jean, a defensora convicta, é um vento guardião que pode expulsar o perigo da presença de seus companheiros.</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Consumo de Stamina",
+      "2": "Duração Máxima",
+      "3": "Tempo de Recarga",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -45,6 +63,24 @@
       "5": "Causa <anemo>Dano Anemo</anemo> aos inimigos que entram ou saem do campo.",
       "6": "<br/>",
       "7": "<i> A magnanimidade de Jean é tão vasta quanto os Dandelions, e é a raiz de seu desejo de proteger os outros.</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Explosão",
+      "1": "Dano de Entrada e Saída da Área",
+      "2": "Cura de Ativação de Área",
+      "3": "Regeneração Contínua",
+      "4": "Tempo de Recarga",
+      "5": "Energia Elemental",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

@@ -11,6 +11,24 @@
       "4": "- Erschafft am Ende der Wirkungsdauer eine Blüte, die <cryo>Kryo-Flächenschaden</cryo> verursacht.",
       "5": "<br/>",
       "6": "<i>„Der Schneesturm bläst und erdrückt den Reiher, dass mein Geist friert und meine Brust mit Mitleid erfüllt wird.“</i>"
+    },
+    "skillParams": {
+      "0": "SCH beim Schlitzen",
+      "1": "SCH beim Erblühen",
+      "2": "Dauer",
+      "3": "Abklingzeit",
+      "4": "Elementarenergie",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "name": "Kamisato Ayaka",
@@ -40,6 +58,24 @@
       "0": "Beschwört eine aufgehende Eisblüte, die Gegner in der Nähe wegschleudert und und <cryo>Kryo-Flächenschaden</cryo> verursacht.",
       "1": "<br/>",
       "2": "<i>„Bei helle Wolken und in nebligen Mondnächten setzt sich Verlangen nieder wie Dunst und ein einsames Herz wird von der Lust zu wandern beseelt.“</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Abklingzeit",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "sprint": {

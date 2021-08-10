@@ -13,6 +13,24 @@
       ],
       "4": "<br/>",
       "5": "<i>\"Tuyết phủ thân hạc, vùi lấp tâm tư, tận đáy lòng nặng trĩu nỗi bi ai.\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Cắt",
+      "1": "Sát Thương Lan Tỏa",
+      "2": "Thời Gian Kéo Dài",
+      "3": "CD",
+      "4": "Năng Lượng Nguyên Tố",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "name": "Kamisato Ayaka",
@@ -42,6 +60,24 @@
       "0": "Đánh thức đóa hoa băng nở rộ, đánh bay kẻ địch bên cạnh và gây <cryo>sát thương phạm vi Nguyên Tố Băng</cryo>.",
       "1": "<br/>",
       "2": "<i>\"Mây lãng đãng, trăng nhạt nhòa, sương mù mờ ảo, trái tim say đắm miền rong ruổi.\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "CD",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "sprint": {

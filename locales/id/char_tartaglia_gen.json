@@ -49,6 +49,24 @@
       "13": "Bila Tartaglia kembali menjadi mode jarak jauh secara otomatis dalam waktu 30 detik, waktu cooldown skill akan menjadi semakin panjang lagi.",
       "14": "<br/>",
       "15": "<i>Tartaglia sengaja memilih busur sebagai senjatanya untuk mengatasi kelemahannya dalam menggunakan senjata tersebut. Tapi saat harus bertarung sungguh-sungguh, Tartaglia akan mengerahkan kemampuannya yang sebenarnya...</i>"
+    },
+    "skillParams": {
+      "0": "DMG Perubahan Mode Bertarung",
+      "1": "DMG Tahap 1",
+      "2": "DMG Tahap 2",
+      "3": "DMG Tahap 3",
+      "4": "DMG Tahap 4",
+      "5": "DMG Tahap 5",
+      "6": "DMG Tahap 6",
+      "7": "DMG Charged Attack",
+      "8": "Konsumsi Stamina Charged Attack",
+      "9": "Riptide Slash",
+      "10": "Durasi Maksimum",
+      "11": "Cooldown",
+      "12": "Cooldown Maks.",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -67,6 +85,24 @@
       "10": "Saat skill Havoc Obliteration mengenai musuh dengan status Riptide, status Riptide tersebut akan dihapuskan dan memicu ledakan Riptide Blast yang mengakibatkan <hydro>Hydro DMG area</hydro>. DMG dari Riptide Blast terhitung sebagai DMG Elemental Burst.",
       "11": "<br/>",
       "12": "<i>Aliran air yang deras sangat jarang ditemui di kampung halamannya yang penuh dengan salju. Kemampuan Tartaglia untuk mengendalikan air mungkin muncul dari pemahamannya tentang betapa berharganya air bagi kehidupan.</i>"
+    },
+    "skillParams": {
+      "0": "Skill DMG: Melee",
+      "1": "Skill DMG: Ranged",
+      "2": "Riptide Blast DMG",
+      "3": "Pengembalian Energy (Mode Jarak Jauh)",
+      "4": "CD",
+      "5": "Energy",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

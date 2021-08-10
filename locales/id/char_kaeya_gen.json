@@ -26,6 +26,24 @@
       "0": "Mengerahkan sebuah ledakan dingin yang mengakibatkan <cryo>Cryo DMG</cryo> ke musuh di depan Kaeya.",
       "1": "<br/>",
       "2": "<i>Kaeya tampaknya ramah, tapi sifatnya seperti es tak dapat dicairkan.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Cooldown",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -35,6 +53,24 @@
       "1": "Pilar-pilar ini akan mengikuti karakter dan mengakibatkan <cryo>Cryo DMG</cryo> ke musuh di jalurnya.",
       "2": "<br/>",
       "3": "<i>Senyum yang menawan, kata-kata ramah, dan embun beku tanpa ampun yang berada di balik itu semua... ini semua adalah senjata Kaeya.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Cooldown",
+      "2": "Durasi",
+      "3": "Energy",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

@@ -27,6 +27,24 @@
       "1": "No es posible desplazarse hasta detrás de enemigos de gran tamaño con este movimiento.",
       "2": "<br/>",
       "3": "<i>Rosaria no perdona los pecados de aquellos que se confiesan ante ella. Al contrario, cuanto más grave sea el pecado, más penetrante es el frío con el que los castiga.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "TdE",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -36,6 +54,24 @@
       "1": "Mientras esté activa, la lanza helada emitirá intermitentemente un aire helado que inflige <cryo>Daño Cryo</cryo> a los enemigos cercanos.",
       "2": "<br/>",
       "3": "<i>Juzgar es algo muy fastidioso, así que ¿por qué no saltarse ese paso y celebrar directamente la última ceremonia de rezo? Debido a la poca devoción de Rosaria hacia el Arconte Anemo, esto no le resulta nada complicado.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Daño continuo de lanza helada",
+      "2": "Duración",
+      "3": "TdE",
+      "4": "Energía Elemental",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

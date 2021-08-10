@@ -26,6 +26,24 @@
       "0": "Invoca Guoba, o Panda. Guoba continua exalando fogo contra o inimigo ,causando <pyro>Dano Pyro de AdE</pyro>.",
       "1": "<br/>",
       "2": "<i>Guoba ama comidas picantes. O problema é que seu estômago não suporta comida tão picante.</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Lança-Chamas",
+      "1": "Tempo de Recarga",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -35,6 +53,24 @@
       "1": "O Pyronado se moverá com o seu personagem enquanto a habilidade persistir, causando <pyro>Dano Pyro</pyro> a todos os inimigos em seu caminho.",
       "2": "<br/>",
       "3": "<i>O calor nunca será suficiente. Nunca!</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Balanço do 1° Golpe",
+      "1": "Dano de Balanço do 2° Golpe",
+      "2": "Dano de Balanço do 3° Golpe",
+      "3": "Dano do Pyronado",
+      "4": "Duração",
+      "5": "Tempo de Recarga",
+      "6": "Energia Elemental",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

@@ -30,6 +30,24 @@
       "3": "Nếu trong thời gian ngắn không thi triển, sẽ vào trạng thái chờ.",
       "4": "<br/>",
       "5": "<i>Tượng trưng cho chính nghĩa, can đảm và trách nhiệm của Diluc.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "CD",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -39,6 +57,24 @@
       "1": "Ngọn lửa trên vũ khí khiến Diluc nhận được <pyro>Nguyên Tố Hỏa đính kèm</pyro>.",
       "2": "<br/>",
       "3": "<i>Bước đi trong bóng tối là để mang lại ánh sáng. Nhìn vào ánh sáng xa xăm tỏa ra trong màn đêm tĩnh lặng, là điềm báo bình minh sẽ đến.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Chém",
+      "1": "Sát Thương Kéo Dài",
+      "2": "Sát Thương Nổ",
+      "3": "CD",
+      "4": "Thời Gian Đính Kèm Kéo Dài",
+      "5": "Năng Lượng Nguyên Tố",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

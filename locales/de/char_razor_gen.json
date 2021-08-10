@@ -36,6 +36,24 @@
       "9": "Erhöht Razors Elementarenergie für jedes entfernte Elektro-Siegel.",
       "10": "<br/>",
       "11": "<i>Siehst du gerade in Razors Augen, während der Blitzschlag eintrifft, erhaschst du vielleicht einen Blick auf den Wolf in seinem Innern, der auf die Jagd geht.</i>"
+    },
+    "skillParams": {
+      "0": "SCH bei Drücken",
+      "1": "SCH bei Gedrückthalten",
+      "2": "Aufladeratenbonus pro Elektro-Siegel",
+      "3": "Energiewiederherstellung pro Elektro-Siegel",
+      "4": "Elektro-Siegel-Dauer",
+      "5": "Abklingzeit für Drücken",
+      "6": "Abklingzeit für Gedrückthalten",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -55,6 +73,24 @@
       "11": "Gibt bis zu 10 Punkte Elementarenergie zurück, wenn Razor während der Dauer der Fähigkeit ausgewechselt wird.",
       "12": "<br/>",
       "13": "<i>Der Wolf ist erwacht. Die Zeit der Jagd ist gekommen.</i>"
+    },
+    "skillParams": {
+      "0": "Spezialfähigkeits-SCH",
+      "1": "Wolfsseelen-SCH",
+      "2": "Standardangriffs-GSW-Bonus",
+      "3": "Elektro-WDS-Bonus",
+      "4": "Dauer",
+      "5": "Abklingzeit",
+      "6": "Elementarenergie",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

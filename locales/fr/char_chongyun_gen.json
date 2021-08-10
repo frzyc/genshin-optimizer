@@ -28,6 +28,24 @@
       "1": "Après un court délai, les courants d'air froids de l'explosion se condensent en un champ de givre. Les DGT des attaques normales et chargées des personnages qui s'y trouvent et qui manient l'épée longue, à une main, ou une arme d'hast obtiennent un <cryo>enchantement Cryo</cryo>.",
       "2": "<br/>",
       "3": "<i>« Lorsque les cloches sonnent, tout est calme et silencieux. Les eaux des lacs et des rivières ne s'écoulent plus, et les nuages sont couverts de givre épais. Les portes de l'autel s'ouvrent, tous les maux sont éliminés. »</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "Durée enchantement",
+      "2": "Durée du champ",
+      "3": "Temps de recharge",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -37,6 +55,24 @@
       "1": "L'impact inflige des <cryo>DGT Cryo de zone</cryo> et projette les ennemis en l'air.",
       "2": "<br/>",
       "3": "<i>« Ô lame du ciel et de la terre qui gèle tous les démons du monde... Entends mon appel ! »</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "Temps de recharge",
+      "2": "Énergie élémentaire",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

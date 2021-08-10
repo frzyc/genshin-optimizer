@@ -33,6 +33,24 @@
       ],
       "4": "<br/>",
       "5": "<i>“Utilizo esto para evitar el aumento de la temperatura y la podredumbre de... las valiosas hierbas medicinales del Dr. Baizhu”</i>."
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Curación al atacar",
+      "2": "Curación continua",
+      "3": "Daño de Heraldo de la escarcha",
+      "4": "Duración",
+      "5": "TdE",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -45,6 +63,24 @@
       "4": "<br/>",
       "5": "<i>“Soy la Preservadora de la Fortuna, la Doncella de la Resurrección”.</i>",
       "6": "<i>—Qiqi no recuerda cuándo dijo estas palabras.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Curación",
+      "2": "Duración",
+      "3": "TdE",
+      "4": "Energía Elemental",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

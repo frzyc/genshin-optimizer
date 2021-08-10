@@ -26,6 +26,24 @@
       "0": "Invoca un pequeño espíritu del viento que atrae a enemigos y objetos al lugar de su ubicación, los lanza por los aires e inflige <anemo>Daño Anemo</anemo>.",
       "1": "<br/>",
       "2": "<i>Esto es un poco vergonzoso, pero aunque las formas de vida elementales que nacieron a través de este procedimiento se disipan muy rápidamente, son increíblemente útiles cuando vas de aventura. Incluso los experimentos fallidos pueden tener aplicaciones prácticas.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "TdE",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -39,6 +57,24 @@
       "5": "Solo puede ocurrir un cambio elemental en toda la duración de esta habilidad.",
       "6": "<br/>",
       "7": "<i>Sacarosa solía dar nombres a sus volátiles Hipostasis Anemo. Pero el linaje de Hipostasis creció tan rápido que acabó superando al Barón Bunny n.º 893.</i>"
+    },
+    "skillParams": {
+      "0": "Daño continuo",
+      "1": "Daño Elemental adicional",
+      "2": "Duración",
+      "3": "TdE",
+      "4": "Energía Elemental",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

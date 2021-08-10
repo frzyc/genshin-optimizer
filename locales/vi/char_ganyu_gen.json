@@ -38,6 +38,24 @@
       ],
       "4": "<br/>",
       "5": "<i>\"Bạn nhìn thấy tôi à? Chắc chỉ là ảo giác thôi, lúc đó tôi đang tăng ca mà.\"</i>"
+    },
+    "skillParams": {
+      "0": "HP Thừa Kế",
+      "1": "Sát Thương Kỹ Năng",
+      "2": "Thời Gian Kéo Dài",
+      "3": "CD",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -47,6 +65,24 @@
       "1": "Trong thời gian tồn tại, linh châu băng sẽ không ngừng giáng trụ băng xuống, tấn công kẻ địch trong phạm vi, gây <cryo>sát thương nguyên tố băng</cryo>.",
       "2": "<br/>",
       "3": "<i>Đương nhiên Ganyu có thể giáng cơn mưa mát lành xuống, nhưng đối với tà ma ngoại đạo, những thứ này đều sẽ hóa thành bông tuyết khổ đau.</i>"
+    },
+    "skillParams": {
+      "0": "Sát thương Nhũ Băng",
+      "1": "Thời Gian Kéo Dài",
+      "2": "CD",
+      "3": "Năng Lượng Nguyên Tố",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

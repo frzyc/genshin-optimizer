@@ -38,6 +38,24 @@
       "8": "Only one Phantom created by Mirror Reflection of Doom can exist at any time.",
       "9": "<br/>",
       "10": "<i>Skilled astrologers have always dreamed of using a phantom facsimile of themselves to ward off imminent ill fate, but Mona must be the first to make such a mockery of it in all of Teyvat.</i>"
+    },
+    "skillParams": {
+      "0": "DoT",
+      "1": "Explosion DMG",
+      "2": "CD",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -57,6 +75,24 @@
       "8": "During its duration, increases DMG taken by opponents.",
       "9": "<br/>",
       "10": "<i>It was from the time that gods first traced the lights in the heavens with their eyes that the notion of \"fate\" was born.</i>"
+    },
+    "skillParams": {
+      "0": "Illusory Bubble Duration",
+      "1": "Illusory Bubble Explosion DMG",
+      "2": "DMG Bonus",
+      "3": "Omen Duration",
+      "4": "CD",
+      "5": "Energy Cost",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "sprint": {

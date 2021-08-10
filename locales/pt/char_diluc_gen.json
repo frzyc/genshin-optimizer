@@ -29,6 +29,24 @@
       "2": "Esta habilidade pode ser usada 3x consecutivamente. Entra em Recarga se não for lançada novamente em um curto período de tempo.",
       "3": "<br/>",
       "4": "<i>Os cortes representam os valores de Diluc: um pela justiça, um pela coragem e outro pelo seus deveres.</i>"
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe",
+      "1": "Dano do 2° Golpe",
+      "2": "Dano do 3° golpe ",
+      "3": "Tempo de Recarga",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -39,6 +57,24 @@
       "2": "As chamas que correm de sua lâmina imbuem Diluc com <pyro>Pyro</pyro>.",
       "3": "<br/>",
       "4": "<i>A única razão para andar na escuridão é para a iluminar. Vejam, aquela luz no calar da noite é o arauto do amanhecer que está por vir.</i>"
+    },
+    "skillParams": {
+      "0": "Dano do Corte",
+      "1": "Dano Contínuo",
+      "2": "Dano de Explosão",
+      "3": "Tempo de Recarga",
+      "4": "Duração do Encantamento",
+      "5": "Energia Elemental",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

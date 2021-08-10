@@ -37,6 +37,24 @@
       "8": "Bennett tidak menerima DMG dari hempasan.",
       "9": "<br/>",
       "10": "<i>Serangan yang mengombinasikan impian dan gairah Bennett. Tapi gairah terkadang terlalu berlebihan, dan Pyro terkadang meledak.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Tekan",
+      "1": "DMG Charge Tahap 1",
+      "2": "DMG Charge Tahap 2",
+      "3": "DMG Ledakan",
+      "4": "Cooldown",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -52,6 +70,24 @@
       ],
       "4": "<br/>",
       "5": "<i>Regu Petualangan Benny selalu menemui bahaya yang tidak diduga saat bertualang. Bennett selalu berusaha meyakini para anggotanya bahwa itu adalah tanda \"petualangan seru yang penuh tantangan dan kejutan\".</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Regenerasi HP/dtk",
+      "2": "Rasio Bonus ATK",
+      "3": "Durasi",
+      "4": "Cooldown",
+      "5": "Energy",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

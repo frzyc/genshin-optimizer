@@ -26,6 +26,24 @@
       "0": "Summons Guoba the Panda. Guoba continuously breathes fire at opponents, dealing <pyro>AoE Pyro DMG</pyro>.",
       "1": "<br/>",
       "2": "<i>Guoba loves to eat spicy food. Problem is, his stomach can't handle something this spicy.</i>"
+    },
+    "skillParams": {
+      "0": "Flame DMG",
+      "1": "CD",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -35,6 +53,24 @@
       "1": "The Pyronado will move with your character for the ability's duration, dealing <pyro>Pyro DMG</pyro> to all opponents in its path.",
       "2": "<br/>",
       "3": "<i>There will never be enough heat. Never.</i>"
+    },
+    "skillParams": {
+      "0": "1-Hit Swing DMG",
+      "1": "2-Hit Swing DMG",
+      "2": "3-Hit Swing DMG",
+      "3": "Pyronado DMG",
+      "4": "Duration",
+      "5": "CD",
+      "6": "Energy Cost",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

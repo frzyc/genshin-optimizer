@@ -26,6 +26,24 @@
       "0": "Nhanh chóng tỏa ra khí lạnh, gây cho địch phía trước <cryo>Sát Thương Nguyên Tố Băng</cryo>.",
       "1": "<br/>",
       "2": "<i>Người có vẻ ngoài thân thiện như Kaeya lại là khối băng kiên cố không ai có thể làm tan chảy.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "CD",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -35,6 +53,24 @@
       "1": "Trong thời gian tồn tại, nhũ băng lạnh giá sẽ chuyển động theo nhân vật, gây cho địch trên đường <cryo>Sát Thương Nguyên Tố Băng</cryo>.",
       "2": "<br/>",
       "3": "<i>Ẩn giấu dưới nụ cười thân thiện, lời nói hòa nhã, lại là sự băng giá vô tình, tất cả đều là vũ khí của Kaeya.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "CD",
+      "2": "Thời Gian Kéo Dài",
+      "3": "Năng Lượng Nguyên Tố",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

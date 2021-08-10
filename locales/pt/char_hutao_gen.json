@@ -41,6 +41,24 @@
       "10": "<strong>Dança de Borboleta</strong> só se dissipará quando sua duração terminar ou quando Hutao for retirada do combate ou ser derrotada.",
       "11": "<br/>",
       "12": "<i>A primeira regra para se aprender a técnica secreta de Hutao é: \"A lança abre o caminho para a vida depois da morte, e as borboletas ligam este mundo e o próximo\".</i>"
+    },
+    "skillParams": {
+      "0": "Consumo da Habilidade",
+      "1": "Aumenta o ATQ",
+      "2": "Dano de Pétalas Sangrentas ",
+      "3": "Duração de Pétalas Sangrentas",
+      "4": "Duração",
+      "5": "Tempo de Recarga",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -51,6 +69,24 @@
       "2": "Ao acertar, se a Vida de Hutao for inferior ou igual a 50%, pode causar um maior Dano e Cura.",
       "3": "<br/>",
       "4": "<i>Se um falecido ainda está ativo no mundo mortal, a Funerária de Wangsheng poderia ficar inquieta. A cremação é uma maneira que pode acalmar Hutao, todavia, quanto mais preocupada ela fica, maior as suas chamas.</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Quando a Vida estiver baixa, Dano de Habilidade",
+      "2": "Regeneração de Habilidades",
+      "3": "Habilidade de Regeneração de Vida Baixa",
+      "4": "Tempo de Recarga",
+      "5": "Energia Elemental",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

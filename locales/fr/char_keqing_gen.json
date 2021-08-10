@@ -38,6 +38,24 @@
       ],
       "10": "<br/>",
       "11": "<i>« Les humains sont comme des papillons de nuit, attirés par la lumière des dieux et des Adeptes. Or seule la mienne guide mes ailes. »</i>"
+    },
+    "skillParams": {
+      "0": "DGT Lame de foudre",
+      "1": "DGT entaille",
+      "2": "DGT coup de tonnerre tranchant",
+      "3": "Temps de recharge",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -47,6 +65,24 @@
       "1": "Se fondant ensuite dans l'ombre de son épée, elle libère une série de coups tranchants rapides, infligeant aux ennemis proches des <electro>DGT Électro</electro>. Le coup final inflige d'importants <electro>DGT Électro de zone</electro>.",
       "2": "<br/>",
       "3": "<i>L'une des techniques les plus rapides de l'arsenal de Keqing, capable de faire tomber même les étoiles.</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "DGT coup tranchant",
+      "2": "DGT coup final",
+      "3": "Temps de recharge",
+      "4": "Énergie élémentaire",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

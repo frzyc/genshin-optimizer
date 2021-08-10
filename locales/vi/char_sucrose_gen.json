@@ -26,6 +26,24 @@
       "0": "Triệu hồi phong linh cỡ nhỏ, thu hút kẻ địch và các vật thể đến gần vị trí của phong linh, đánh bay kẻ địch trong phạm vi đồng thời tạo ra <anemo>sát thương nguyên tố Phong</anemo>. ",
       "1": "<br/>",
       "2": "<i>Nói ra thật ngại, tuy nguyên tố tan biến rất nhanh, nhưng kỹ năng này lại rất tiện lợi trong thám hiểm. Đây là một thí nghiệm thất bại nhưng lại thành công ở mặt khác</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "CD",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -39,6 +57,24 @@
       "5": "Loại chuyển hóa này chỉ phát sinh một lần trong thời gian duy trì kỹ năng.",
       "6": "<br/>",
       "7": "<i>Sucrose đôi khi cũng muốn đặt tên cho Phong Nguyên Bản. Nhưng số đời của chúng còn cao hơn Bá Tước Thỏ đến 893 đời.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kéo Dài",
+      "1": "Sát Thương Nguyên Tố Kèm Theo",
+      "2": "Thời Gian Kéo Dài",
+      "3": "CD",
+      "4": "Năng Lượng Nguyên Tố",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

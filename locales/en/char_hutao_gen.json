@@ -41,6 +41,24 @@
       "10": "<strong>Paramita Papilio</strong> ends when its duration is over, or Hu Tao has left the battlefield or fallen.",
       "11": "<br/>",
       "12": "<i>Hu Tao's Secret Spear technique is based on several rules, the first of which is: \"The spear opens the path to the afterlife, and the butterflies bridge this world and the next.\"</i>"
+    },
+    "skillParams": {
+      "0": "Activation Cost",
+      "1": "ATK Increase",
+      "2": "Blood Blossom DMG",
+      "3": "Blood Blossom Duration",
+      "4": "Duration",
+      "5": "CD",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -51,6 +69,24 @@
       "2": "If Hu Tao's HP is below or equal to 50% when the enemy is hit, both the DMG and HP Regeneration are increased.",
       "3": "<br/>",
       "4": "<i>Supernatural activity by those who have already left this world is a source of great anxiety for the Wangsheng Funeral Parlor. In such cases, cremation always lets Hu Tao find peace of mind. The more anxious she feels, the stronger the flame.</i>"
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "Low HP Skill DMG",
+      "2": "Skill HP Regeneration",
+      "3": "Low HP Skill Regeneration",
+      "4": "CD",
+      "5": "Energy Cost",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

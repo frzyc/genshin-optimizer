@@ -13,6 +13,24 @@
       ],
       "4": "<br/>",
       "5": "<i>La ventisca cubre de escarcha a la garza. Oh, cuánto pesar en su corazón.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de corte",
+      "1": "Daño de explosión",
+      "2": "Duración",
+      "3": "TdE",
+      "4": "Energía Elemental",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "name": "Kamisato Ayaka",
@@ -44,6 +62,24 @@
       "2": "<i>Las nubes tapan el brillo de la luna",
       "3": "Un anhelo desciende como la bruma",
       "4": "Y se apodera de mi melancólico corazón.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "TdE",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "sprint": {

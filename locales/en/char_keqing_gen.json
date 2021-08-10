@@ -38,6 +38,24 @@
       ],
       "10": "<br/>",
       "11": "<i>\"Humans are like moths, endlessly chasing the flame we call gods and adepti. But this light that I have here is my own.\"</i>"
+    },
+    "skillParams": {
+      "0": "Lightning Stiletto DMG",
+      "1": "Slashing DMG",
+      "2": "Thunderclap Slash DMG",
+      "3": "CD",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -47,6 +65,24 @@
       "1": "She then blends into the shadow of her blade, striking a series of thunderclap-blows to nearby opponents simultaneously that deal multiple instances of <electro>Electro DMG</electro>. The final attack deals massive <electro>AoE Electro DMG</electro>.",
       "2": "<br/>",
       "3": "<i>The swiftest technique in Keqing's personal arsenal is fast enough to bring stars crashing down.</i>"
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "Consecutive Slash DMG",
+      "2": "Last Attack DMG",
+      "3": "CD",
+      "4": "Energy Cost",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

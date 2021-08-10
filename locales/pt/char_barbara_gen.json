@@ -31,6 +31,24 @@
       "5": "Periodicamente regenera a Vida do seu próprio personagem ativo.",
       "6": "Aplica o estado <hydro>Molhado</hydro> ao personagem e aos oponentes que entram em contato com eles.",
       "7": "<i>A música da Barbara é a magia que cura seus companheiros.</i>"
+    },
+    "skillParams": {
+      "0": "Regeneração de Vida por Acerto",
+      "1": "Regeneração Contínua",
+      "2": "Dano de Gotas d'Água",
+      "3": "Duração",
+      "4": "Tempo de Recarga",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -39,6 +57,24 @@
       "0": "Cura todas as forças aliadas e seu próprio personagem em uma grande quantidade de Vida que aumenta com a Vida Máxima de Barbara.",
       "1": "<br/>",
       "2": "<i>O desejo de Barbara de curar fortalece sua vontade de lutar e cantar.</i>"
+    },
+    "skillParams": {
+      "0": "Regeneração",
+      "1": "Tempo de Recarga",
+      "2": "Energia Elemental",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

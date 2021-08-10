@@ -39,6 +39,24 @@
       ],
       "6": "<br/>",
       "7": "<i>Xinyan quả quyết những tia lửa này là sự biểu hiện của kỹ thuật trình diễn đỉnh cao, là hiện tượng vật lý, không liên quan đến Vision.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Chém",
+      "1": "Khiên Cấp 1 hấp thu",
+      "2": "Khiên Cấp 2 hấp thu",
+      "3": "Khiên Cấp 3 hấp thu",
+      "4": "Sát Thương Kéo Dài",
+      "5": "Thời Gian Khiên Kéo Dài",
+      "6": "CD",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -48,6 +66,24 @@
       "1": "Vì bầu không khí quá cháy bỏng, nên sẽ phát ra lửa, gây <pyro>sát thương nguyên tố hỏa</pyro> liên tục cho kẻ địch xung quanh.",
       "2": "<br/>",
       "3": "<i>Xưa kia mỗi lần diễn xong, Xinyan đều có màn kết như vậy. Sau này không làm vậy nữa, không phải do nguy hiểm, mà là vì, nếu như bị bắt phải \"diễn lại\", thì cô ấy không thể làm ra trận hạ màn bùng nổ hơn được.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Sát Thương Nguyên Tố Hỏa Kéo Dài",
+      "2": "Thời Gian Kéo Dài",
+      "3": "CD",
+      "4": "Năng Lượng Nguyên Tố",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

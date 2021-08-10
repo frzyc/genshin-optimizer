@@ -39,6 +39,24 @@
       ],
       "10": "<br/>",
       "11": "<i>¡Conquista el océano, persigue la tormenta e invoca las mareas!</i>"
+    },
+    "skillParams": {
+      "0": "Absorción de daño del escudo",
+      "1": "Daño base",
+      "2": "Bono de daño por golpe",
+      "3": "TdE",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -55,6 +73,24 @@
       "5": "Solo se puede provocar 1 descarga eléctrica por segundo.",
       "6": "<br/>",
       "7": "<i>Haishan fue asesinado con la caída de un trueno.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Daño de rayo",
+      "2": "Reducción de daño",
+      "3": "Duración",
+      "4": "TdE",
+      "5": "Energía Elemental",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

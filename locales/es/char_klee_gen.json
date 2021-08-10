@@ -32,6 +32,24 @@
       "6": "Puede ser usado 2 veces consecutivas.",
       "7": "<br/>",
       "8": "<i>La bomba saltarina es la nueva amiga de Klee... ¡Todos mueren por conocerla!</i>"
+    },
+    "skillParams": {
+      "0": "Daño de Bomba saltarina",
+      "1": "Daño de mina",
+      "2": "Duración de minas",
+      "3": "TdE",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -40,6 +58,24 @@
       "0": "¡Klee a la carga! Mientras dure la habilidad, invoca constantemente Chispas explosivas que hacen daño a los enemigos cercanos, infligiendo <pyro>Daño Pyro en el AdE</pyro>.",
       "1": "<br/>",
       "2": "<i>Los Caballeros de Favonius creen que si Klee nunca se ha hecho daño con sus propias bombas es porque debe tener una buena estrella que la protege...</i>"
+    },
+    "skillParams": {
+      "0": "Daño de Chispas explosivas",
+      "1": "Duración",
+      "2": "TdE",
+      "3": "Energía Elemental",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

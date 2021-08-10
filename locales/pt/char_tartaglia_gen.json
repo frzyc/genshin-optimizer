@@ -50,6 +50,24 @@
       "14": "Se o retorno a Posição À Distância acontecer automaticamente depois de 30s, o tempo de recarga é ainda maior.",
       "15": "<br/>",
       "16": "<i>Ele escolheu o arco como sua arma precisamente para superar sua deficiência com ele. Mas uma luta séria exige que ele fique sério...</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Mudança de Postura",
+      "1": "Dano do 1° Golpe",
+      "2": "Dano do 2° Golpe",
+      "3": "Dano do 3° Golpe",
+      "4": "Dano do 4° Golpe",
+      "5": "Dano do 5° Golpe",
+      "6": "Dano do 6° Golpe",
+      "7": "Dano de Ataque Carregado",
+      "8": "Consumo de Stamina de Ataque Carregado",
+      "9": "Dano da Interceptação de Fluxo·Corte{param11:P}",
+      "10": "Duração Máxima",
+      "11": "Tempo de Recarga",
+      "12": "Recarga Máx",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -69,6 +87,24 @@
       "11": "O dano de Interceptação de Fluxo·Explosão é tratado como um dano de Supremo.",
       "12": "<br/>",
       "13": "<i>Raramente são vistas águas turbulentas nesta terra cheia de neve. Talvez sua habilidade de comandar água seja pelo seu entendimento de quão preciosa ela é.</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade · Corpo a Corpo",
+      "1": "Dano de Habilidade · À Distância",
+      "2": "Interceptação de Fluxo · Dano de Explosão",
+      "3": "Recuperação de Energia Elemental (À distância)",
+      "4": "Tempo de Recarga",
+      "5": "Energia Elemental",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

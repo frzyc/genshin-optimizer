@@ -37,6 +37,24 @@
       "6": "<strong>Hold</strong> to designate the location of the skill.",
       "7": "<br/>",
       "8": "<i>This Geo bloom has an unusual property mirrored in the aim of alchemy. To rise from the earth, soar into the sky, and become the sun.</i>"
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "Transient Blossom DMG",
+      "2": "Duration",
+      "3": "Skill CD",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -48,6 +66,24 @@
       "3": "Tectonic Tide DMG and Fatal Blossom DMG will not generate Transient Blossoms.",
       "4": "<br/>",
       "5": "<i>Under the Kreideprinz's command, the tectonic tide of creation seethes into life.</i>"
+    },
+    "skillParams": {
+      "0": "Elemental Burst DMG",
+      "1": "Fatal Blossom DMG",
+      "2": "CD",
+      "3": "Energy Cost",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

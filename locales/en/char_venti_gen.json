@@ -36,6 +36,24 @@
       "9": "Opponents hit by Skyward Sonnet will fall to the ground slowly.",
       "10": "<br/>",
       "11": "<i>In the days when gods and men walked the earth together, the heavens were filled with countless songs. This melody has long since been forgotten.</i>"
+    },
+    "skillParams": {
+      "0": "Press DMG",
+      "1": "Press CD",
+      "2": "Hold DMG",
+      "3": "CD (hold)",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -48,6 +66,24 @@
       "4": "Elemental Absorption may only occur once per use.",
       "5": "<br/>",
       "6": "<i>Many hymns written in praise of the Anemo Archon have been lost to time. This one sings of his mastery over the wind.</i>"
+    },
+    "skillParams": {
+      "0": "DoT",
+      "1": "Additional Elemental DMG",
+      "2": "Duration",
+      "3": "CD",
+      "4": "Energy Cost",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

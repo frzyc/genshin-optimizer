@@ -32,6 +32,24 @@
       "5": "Character is immobile during skill duration.",
       "6": "<br/>",
       "7": "<i>That which follows Jean, the wholehearted defender, is a guardian wind that can banish danger from her comrades' presence.</i>"
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "Stamina Consumption",
+      "2": "Max Duration",
+      "3": "CD",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -47,6 +65,24 @@
       ],
       "5": "<br/>",
       "6": "<i>Jean's magnanimity is as vast as the dandelion fields, and it is the root of her wish to protect others.</i>"
+    },
+    "skillParams": {
+      "0": "Elemental Burst DMG",
+      "1": "Field Entering/Exiting DMG",
+      "2": "Field Activation Healing",
+      "3": "Continuous Regeneration",
+      "4": "CD",
+      "5": "Energy Cost",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

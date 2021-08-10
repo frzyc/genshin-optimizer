@@ -26,6 +26,24 @@
       "0": "Libère un blizzard gelant qui inflige des <cryo>DGT Cryo</cryo> aux ennemis en face.",
       "1": "<br/>",
       "2": "<i>Qui serait capable de faire fondre la glace qui se cache derrière ce masque aimable...</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "Temps de recharge",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -35,6 +53,24 @@
       "1": "Les stalactites suivent le personnage, et infligent des <cryo>DGT Cryo</cryo> aux ennemis sur leur route.",
       "2": "<br/>",
       "3": "<i>Ses dehors souriants, son ton agréable, et la glace qu'ils cachent : voici les armes de Kaeya.</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "Temps de recharge",
+      "2": "Durée",
+      "3": "Énergie élémentaire",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

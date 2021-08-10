@@ -38,6 +38,24 @@
       "9": "Solo puede existir una ilusión creada por Espejismo del agua a la vez.",
       "10": "<br/>",
       "11": "<i>Los astrólogos expertos siempre han soñado con usar una copia ilusoria de ellos mismos para protegerse de la inminente mala suerte, pero Mona debe ser la primera en burlarse de la mala suerte en todo Teyvat.</i>"
+    },
+    "skillParams": {
+      "0": "Daño continuo",
+      "1": "Daño de explosión",
+      "2": "TdE",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -57,6 +75,24 @@
       "8": "Mientras dura la habilidad, aumenta el daño que reciben los enemigos.",
       "9": "<br/>",
       "10": "<i>Fue en la época en la que los dioses dibujaron por primera vez luces en el cielo cuando el “destino” comenzó a ser llamado como tal.</i>"
+    },
+    "skillParams": {
+      "0": "Duración de Burbuja ilusoria",
+      "1": "Daño de explosión de Burbuja ilusoria",
+      "2": "Bono de Daño",
+      "3": "Duración de presagio",
+      "4": "TdE",
+      "5": "Energía Elemental",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "sprint": {

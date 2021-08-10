@@ -32,6 +32,24 @@
       "6": "Kann anfänglich 2-mal angewendet werden.",
       "7": "<br/>",
       "8": "<i>Diese Bombe ist ein „Freund“ von Klee, den sie anderen gern vorstellt.</i>"
+    },
+    "skillParams": {
+      "0": "SCH der Bimm-Bamm-Bombe",
+      "1": "SCH der Sprengfallen",
+      "2": "Dauer der Sprengfallen",
+      "3": "Abklingzeit",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -40,6 +58,24 @@
       "0": "Und Feuer! Beschwört während der Wirkungsdauer ununterbrochen Funkelfunken, die Gegner in der Nähe angreifen und <pyro>Pyro-Flächenschaden</pyro> verursachen.",
       "1": "<br/>",
       "2": "<i>Die Ritter glauben, dass Klee einen Schutzengel haben muss, weil sie sich noch nie mit einer ihrer Bomben selbst verletzt hat.</i>"
+    },
+    "skillParams": {
+      "0": "Funkelfunken-SCH",
+      "1": "Dauer",
+      "2": "Abklingzeit",
+      "3": "Elementarenergie",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

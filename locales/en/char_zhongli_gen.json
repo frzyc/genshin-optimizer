@@ -48,6 +48,24 @@
       "17": "Characters protected by the Jade Shield will decrease the Elemental RES and Physical RES of opponents in a small AoE by 20%. This effect cannot be stacked.",
       "18": "<br/>",
       "19": "<i>A true master of stone may carve jade and shape gold.</i>"
+    },
+    "skillParams": {
+      "0": "Stone Stele/Resonance DMG",
+      "1": "Press CD",
+      "2": "Hold DMG",
+      "3": "Shield Base Absorption",
+      "4": "Additional Shield Absorption",
+      "5": "Shield Duration",
+      "6": "CD (hold)",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -59,6 +77,24 @@
       "3": "Opponents affected by the <geo>Petrification</geo> status cannot move.",
       "4": "<br/>",
       "5": "<i>The falling meteor punishes the unjust.</i>"
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "Petrification Duration",
+      "2": "CD",
+      "3": "Energy Cost",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

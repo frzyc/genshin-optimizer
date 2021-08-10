@@ -37,6 +37,24 @@
       "6": "Ajusta la dirección de lanzamiento de Barón Bunny. Cuanto más tiempo mantengas apretado, más lejos se lanzará.",
       "7": "<br/>",
       "8": "<i>Barón Bunny proviene de un gran linaje histórico. De hecho, Amber dejó de contar los antepasados de Barón Bunny a partir del n.º 893.</i>"
+    },
+    "skillParams": {
+      "0": "Vida de Barón Bunny",
+      "1": "Daño de explosión",
+      "2": "TdE",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -45,6 +63,24 @@
       "0": "Dispara una lluvia de flechas, infligiendo <pyro>Daño Pyro en el AdE</pyro> continuo.",
       "1": "<br/>",
       "2": "<i>La pasión de Amber arde como el fuego.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de Lluvia ardiente (por golpe)",
+      "1": "Daño de Lluvia ardiente (total)",
+      "2": "Duración",
+      "3": "TdE",
+      "4": "Energía Elemental",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

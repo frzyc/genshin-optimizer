@@ -38,6 +38,24 @@
       ],
       "9": "<br/>",
       "10": "<i>\"Manusia itu bagaikan ngengat, mengejar api tiada henti yang sering kali disebut sebagai Dewa atau Adeptus. Tapi api yang kumiliki di sini adalah milikku sendiri.\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG Lightning Stiletto",
+      "1": "DMG Tebasan",
+      "2": "DMG Thunderclap Slash",
+      "3": "Cooldown",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -47,6 +65,24 @@
       "1": "Lalu dia akan menyatu dengan bayangan pedangnya, menyerang dengan serangkaian pukulan petir kepada musuh di sekitarnya secara bersamaan yang menghasilkan beberapa <electro>Electro DMG</electro>. Serangan terakhir menghasilkan <electro>Electro DMG area</electro> yang luar biasa.",
       "2": "<br/>",
       "3": "<i>Teknik tercepat dalam ilmu pedang adalah harus cukup cepat sampai dapat memotong bintang-bintang</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "DMG Tebasan Berkelanjutan",
+      "2": "DMG Serangan Terakhir",
+      "3": "Cooldown",
+      "4": "Energy",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

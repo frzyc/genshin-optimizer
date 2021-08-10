@@ -37,6 +37,24 @@
       "10": "Schilde halten bei <cryo>Kryo-Schaden</cryo> 250 % ab und verleihen der aktuellen Figur beim Entstehen für kurze Zeit das <cryo>Kryo-Attribut</cryo>.",
       "11": "<br/>",
       "12": "<i>Das Eis im Schnapps hatte bisher noch keinem Trunkenbold geschadet, bis Diona ihr Göttliches Auge erhielt und Eis herstellte, das einem die Zunge taub werden lässt. Einsame Spitze!</i>"
+    },
+    "skillParams": {
+      "0": "SCH pro Tatze",
+      "1": "Basisschildstärke",
+      "2": "Dauer",
+      "3": "Abklingzeit für Drücken",
+      "4": "Abklingzeit für Gedrückthalten",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -49,6 +67,24 @@
       "4": "- Stellt Figuren darin fortlaufend LP wieder her.",
       "5": "<br/>",
       "6": "<i>Dieses Gebräu hält Diona selbst sogar für unmenschlich. Deswegen bleibt der erste Eindruck nur ihren Gegnern überlassen. Der Nachgeschmack ist eher erquickend, ist aber nur in der Nase und auf der Haut zu spüren.</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Fortlaufender SCH im Feld",
+      "2": "Fortlaufende Heilung",
+      "3": "Dauer",
+      "4": "Abklingzeit",
+      "5": "Elementarenergie",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

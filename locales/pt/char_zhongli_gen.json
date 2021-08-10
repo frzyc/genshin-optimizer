@@ -48,6 +48,24 @@
       "17": "Os personagens sob a proteção do Escudo de Jade, diminuem a RES Elemental e RES Física de todos os inimigos em uma pequena área em redor.",
       "18": "<br/>",
       "19": "<i>Um verdadeiro mestre da pedra pode entalhar jade e dar forma ao ouro. </i>"
+    },
+    "skillParams": {
+      "0": "Dano de Cume da Pedra/Ressonância",
+      "1": "Recarga de Toque",
+      "2": "Dano ao Manter Pressionado",
+      "3": "Absorção Básica do Escudo",
+      "4": "Absorção Adicional de Escudo",
+      "5": "Duração do Escudo",
+      "6": "Tempo de Recarga ao Manter Pressionado",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -59,6 +77,24 @@
       "3": "Inimigos afetados pelo efeito <geo>Petrificante</geo> não podem se mover.",
       "4": "<br/>",
       "5": "<i>O meteorito caído pune os injustos.</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Duração de Petrificação",
+      "2": "Tempo de Recarga",
+      "3": "Energia Elemental",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

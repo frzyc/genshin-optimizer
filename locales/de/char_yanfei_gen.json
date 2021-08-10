@@ -30,6 +30,24 @@
       "1": "Bekommt beim Treffen von Gegnern die Höchstzahl an flammenden Siegeln.",
       "2": "<br/>",
       "3": "<i>Der Pakt des Feuers beinhaltet nicht nur die geltenden Gesetze, sondern auch die von Yanfei selbst formulierten Klauseln, denn der Rat für Allgemeine Angelegenheiten allein ist nicht in der Lage, die Naturgesetze zu ändern.</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Abklingzeit",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -44,6 +62,24 @@
       "6": "Endet, wenn Yanfei ausgewechselt wird.",
       "7": "<br/>",
       "8": "<i>„Der Pakt zwischen uns von Leben und Tod ist nun vollständig. Demgemäß wirst du sterben und ich werde weiterleben.“</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "",
+      "2": "Intervall der flammenden Siegel",
+      "3": "SCH-Bonus für heftige Schläge",
+      "4": "Dauer",
+      "5": "Abklingzeit",
+      "6": "Elementarenergie",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

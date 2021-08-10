@@ -19,6 +19,24 @@
       "12": "Setiap lapis Grimheart akan berubah menjadi Icewhirl Brand yang mengakibatkan <cryo>Cryo DMG</cryo> pada musuh di sekitar.",
       "13": "<br/>",
       "14": "<i>\"Ombak-ombak pun bergulung, menelan mahkota para bangsawan. Setelah itu, setiap tetesan di antara gulungan ombak es akan memantulkan mahkota emas, dan setiap tetesan busa ombak akan memancarkan cahayanya.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Tekan",
+      "1": "DMG Tahan",
+      "2": "DMG Icewhirl Brand",
+      "3": "Bonus DEF",
+      "4": "Durasi Grimheart",
+      "5": "Pengurangan Physical RES",
+      "6": "Pengurangan Cryo RES",
+      "7": "Durasi Pengurangan RES",
+      "8": "CD (Tekan)",
+      "9": "CD (Tahan)",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "name": "Eula",
@@ -52,6 +70,24 @@
       "3": "DMG ini akan meningkat sesuai dengan jumlah lapisan energi yang berhasil dikumpulkan Lightfall Sword. Lightfall Sword akan langsung meledak saat Eula meninggalkan medan pertempuran.",
       "4": "<br/>",
       "5": "<i>Mudah sekali bagi seseorang untuk tenggelam dalam arus ombak. Meski begitu, Eula lebih tertantang untuk membekukan arus yang datang.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "DMG Dasar Lightfall Sword",
+      "2": "Peningkatan DMG/Lapis",
+      "3": "Lapisan Maks.",
+      "4": "CD",
+      "5": "Konsumsi Energy",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

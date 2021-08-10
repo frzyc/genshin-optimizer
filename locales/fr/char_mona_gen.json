@@ -38,6 +38,24 @@
       "8": "Il ne peut exister qu'un seul mirage à la fois.",
       "9": "<br/>",
       "10": "<i>Les astromanciens les plus doués ont toujours rêvé de pouvoir créer un sosie d'eux-mêmes pour pouvoir faire face au danger ; mais Mona est sans doute la première à avoir réalisé ce tour de main.</i>"
+    },
+    "skillParams": {
+      "0": "DGT continus",
+      "1": "DGT explosion",
+      "2": "Temps de recharge",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -57,6 +75,24 @@
       "8": "Le présage augmente les DGT subis par l'ennemi tant qu'il est actif.",
       "9": "<br/>",
       "10": "<i>C'est lorsque le regard des dieux dessina les étoiles que la notion de « destin » naquit.</i>"
+    },
+    "skillParams": {
+      "0": "Durée Bulle Nocturne",
+      "1": "DGT Bulle nocturne",
+      "2": "Bonus de DGT",
+      "3": "Durée du présage",
+      "4": "Temps de recharge",
+      "5": "Énergie élémentaire",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "sprint": {

@@ -37,6 +37,24 @@
       "10": "The shield has a 250% <cryo>Cryo DMG</cryo> Absorption Bonus, and will cause your active character to become affected by <cryo>Cryo</cryo> at the point of formation for a short duration.",
       "11": "<br/>",
       "12": "<i>When she first started bartending, Diona found that no matter how much ice she put in her cocktails, it would never do a drunkard any harm. That all changed when she received her Vision — now she can form ice cold enough to cause severe brainfreeze. Five out of five stars!</i>"
+    },
+    "skillParams": {
+      "0": "Icy Paw DMG",
+      "1": "Base Shield DMG Absorption",
+      "2": "Duration",
+      "3": "Press CD",
+      "4": "Holding CD",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -51,6 +69,24 @@
       ],
       "4": "<br/>",
       "5": "<i>A horrific mix that even Diona considers inhumane. The horrifying foretaste should be left for one's opponents. It has a crisp aftertaste, but unfortunately, one can only feel it on one's nose and skin.</i>"
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "Continuous Field DMG",
+      "2": "HP Regeneration Over Time",
+      "3": "Duration",
+      "4": "CD",
+      "5": "Energy Cost",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

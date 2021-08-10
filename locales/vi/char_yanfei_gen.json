@@ -30,6 +30,24 @@
       "1": "Khi đánh trúng kẻ địch sẽ cung cấp số lượng Đan Hỏa Ấn tối đa cho Yanfei.",
       "2": "<br/>",
       "3": "<i>Ngoài hiệu lực pháp lý ra, ngọn lửa còn mang những điều khoản bổ sung riêng của Yanfei. Suy cho cùng thì quy luật tự nhiên sẽ không thể thay đổi bởi một mình tổng bộ.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "CD",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -46,6 +64,24 @@
       "5": "Hiệu ứng Bỏng Cháy sẽ mất khi Yanfei rời trận hoặc ngã xuống.",
       "6": "<br/>",
       "7": "<i>\"Điều khoản đã đủ, lập khế ước sinh tử nào. Đương nhiên, ta sống ngươi chết!\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "",
+      "2": "Giãn cách cung cấp Đan Hỏa Ấn",
+      "3": "Sát Thương Trọng Kích Tăng",
+      "4": "Thời Gian Kéo Dài",
+      "5": "CD",
+      "6": "Năng Lượng Nguyên Tố",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

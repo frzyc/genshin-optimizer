@@ -31,6 +31,24 @@
       "5": "<br/>",
       "6": "<i>\"Waktu kita terlalu berharga untuk dihabiskan bersama orang sepertimu... Pergilah, Oz, datangi mereka, dan lepaskan Rachsüchtig Blitz milikmu yang membelah malam terhadap mereka.\"</i>",
       "7": "<i>— Bunga untuk Putri Fischl (IV): Selamat Tinggal Frau Welt</i>"
+    },
+    "skillParams": {
+      "0": "DMG Serangan Oz",
+      "1": "Summoning DMG",
+      "2": "Durasi OZ",
+      "3": "CD",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -46,6 +64,24 @@
       "3": "<br/>",
       "4": "<i>\"...dari segerombolan hewan buas yang mengikuti darah terkutuk, hanya Pangeran Nachtraben, yang telah menyaksikan kepunahan ribuan dunia, mengetahui kekuatannya yang sesungguhnya. Karena itu, sayap malam yang dia bentangkan adalah janji abadinya untuk selalu melindungi sang ratu.\"</i>",
       "5": "<i>— Bunga untuk Putri Fischl (I): Akhir Waktu Zerzetsung.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Falling Thunder",
+      "1": "CD",
+      "2": "Energy",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

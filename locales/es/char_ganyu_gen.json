@@ -35,6 +35,24 @@
       ],
       "3": "<br/>",
       "4": "<i>“¿Dices que me viste? Debe haber sido un error. A esas horas estaba trabajando horas extras”</i>."
+    },
+    "skillParams": {
+      "0": "Vida del loto",
+      "1": "Daño de habilidad",
+      "2": "Duración",
+      "3": "TdE",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -44,6 +62,24 @@
       "1": "Mientras dure la habilidad, la perla hará llover continuamente fragmentos de hielo que golpean a los enemigos dentro de un AdE e infligen <cryo>Daño Cryo</cryo>.",
       "2": "<br/>",
       "3": "<i>Ganyu puede provocar una lluvia sin problemas. Pero contra los demonios y los herejes, esa lluvia se convierte en una helada y amarga nieve.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de carámbano",
+      "1": "Duración",
+      "2": "TdE",
+      "3": "Energía Elemental",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

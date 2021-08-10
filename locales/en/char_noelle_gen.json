@@ -13,6 +13,24 @@
       "4": "The amount of HP healed when regeneration is triggered scales based on Noelle's DEF.",
       "5": "<br/>",
       "6": "<i>Noelle is both a dutiful maid and a valiant knight.</i>"
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "DMG Absorption",
+      "2": "Healing",
+      "3": "Healing Triggering Chance",
+      "4": "Duration",
+      "5": "CD",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -28,6 +46,24 @@
       ],
       "3": "<br/>",
       "4": "<i>Sometimes, it's not just dust that needs sweeping...</i>"
+    },
+    "skillParams": {
+      "0": "Burst DMG",
+      "1": "Skill DMG",
+      "2": "ATK Bonus",
+      "3": "Duration",
+      "4": "CD",
+      "5": "Energy Cost",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "name": "Noelle",

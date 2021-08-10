@@ -36,6 +36,24 @@
       "7": "El uso de esta habilidad aplica el estado de <hydro>Mojado</hydro> sobre el personaje.",
       "8": "<br/>",
       "9": "<i>“Es más fácil degollar a un dragón que cortar la lluvia”</i>."
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Reducción de daño",
+      "2": "Duración",
+      "3": "TdE",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -50,6 +68,24 @@
       ],
       "4": "<br/>",
       "5": "<i>La técnica de corte de lluvia es uno de los secretos de la Academia Guhua.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de lluvia de espadas",
+      "1": "Duración",
+      "2": "TdE",
+      "3": "Energía Elemental",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

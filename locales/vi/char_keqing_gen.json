@@ -38,6 +38,24 @@
       ],
       "10": "<br/>",
       "11": "<i>\"Chân dung là bướm đêm, cứ nhảy bổ vào ánh lửa gọi là thần tiên. Nhưng ánh sáng này của tôi là tự tôi thắp sáng\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Đá Lôi",
+      "1": "Sát Thương Chém",
+      "2": "Sát Thương Lôi Bạo Chém Liên Tiếp",
+      "3": "CD",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -47,6 +65,24 @@
       "1": "Sau đó ẩn vào kiếm ảnh, gây liên trảm nhanh như sấm chớp cho kẻ địch xung quanh, gây nhiều lần <electro>sát thương nguyên tố lôi</electro> và ở đòn cuối cùng, gây thêm <electro>sát thương phạm vi nguyên tố lôi</electro>.",
       "2": "<br/>",
       "3": "<i>Chiêu nhanh nhất trong kiếm thuật có thể chém rơi tất cả ngôi sao trên trời.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Sát Thương Chém Liên Tiếp",
+      "2": "Sát Thương Kích Cuối Cùng",
+      "3": "CD",
+      "4": "Năng Lượng Nguyên Tố",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

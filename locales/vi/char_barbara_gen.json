@@ -34,6 +34,24 @@
       ],
       "4": "<br/>",
       "5": "<i>Âm nhạc của Barbara là phép thuật trị liệu cho mọi người.</i>"
+    },
+    "skillParams": {
+      "0": "Hồi HP khi đánh trúng địch",
+      "1": "Lượng trị liệu kéo dài",
+      "2": "Sát Thương Thủy Châu",
+      "3": "Thời Gian Kéo Dài",
+      "4": "CD",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -42,6 +60,24 @@
       "0": "Hồi lượng lớn HP cho các nhân vật của bản thân trong đội ở gần và tất cả nhân vật trong đội của bản thân, lượng hồi phụ thuộc vào giới hạn HP của Barbara.",
       "1": "<br/>",
       "2": "<i>Chữa lành trái tim cho mọi người là sức mạnh để Barbara chiến đấu và ca hát.</i>"
+    },
+    "skillParams": {
+      "0": "Lượng trị liệu ",
+      "1": "CD",
+      "2": "Năng Lượng Nguyên Tố",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

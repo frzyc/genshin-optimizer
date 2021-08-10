@@ -36,6 +36,24 @@
       "9": "Chaque sceau ainsi supprimé est converti en énergie élémentaire.",
       "10": "<br/>",
       "11": "<i>Parfois un malheureux peut apercevoir à la lueur de l'éclair le regard de prédateur de Razor.</i>"
+    },
+    "skillParams": {
+      "0": "DGT appui simple",
+      "1": "DGT appui long",
+      "2": "Bonus recharge d'énergie",
+      "3": "Énergie restaurée",
+      "4": "Durée sceau Électro",
+      "5": "TdR appui simple",
+      "6": "TdR appui long",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -57,6 +75,24 @@
       "7": "Le temps restant est converti en énergie élémentaire (10 pts max) lorsque Razor quitte le champ de bataille.",
       "8": "<br/>",
       "9": "<i>Le loup s'est réveillé. L'heure de la chasse a sonné.</i>"
+    },
+    "skillParams": {
+      "0": "DGT explosion",
+      "1": "DGT attaque",
+      "2": "Bonus VIT d'attaque",
+      "3": "Bonus RÉS Électro",
+      "4": "Durée",
+      "5": "Temps de recharge",
+      "6": "Énergie élémentaire",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

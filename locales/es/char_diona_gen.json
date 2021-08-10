@@ -37,6 +37,24 @@
       "10": "Este escudo tiene un 250% de bono de absorción de <cryo>Daño Cryo</cryo> y, al activarse, aplica el elemento <cryo>Cryo</cryo> sobre el personaje en uso.",
       "11": "<br/>",
       "12": "<i>Cuando empezó a ser cantinera, el hielo no le hacía ningún daño a los borrachos por mucha cantidad que hubiera en sus bebidas. Hasta que Diona obtuvo su Visión y creó un hielo tan frío como para congelarle el cerebro a cualquiera. ¡Vaya un hielo!</i>"
+    },
+    "skillParams": {
+      "0": "Daño de Zarpazo helado",
+      "1": "Absorción base de escudo",
+      "2": "Duración",
+      "3": "TdE al pulsar una vez",
+      "4": "TdE de mantener pulsado",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -51,6 +69,24 @@
       ],
       "4": "<br/>",
       "5": "<i>Un espantoso cóctel que incluso Diona considera inhumano. El primer trago debe dejarse para los enemigos. Deja un sabor muy fresco, pero, desafortunadamente, este solo se puede sentir en la nariz y en la piel.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Daño continuo del área",
+      "2": "Curación continua",
+      "3": "Duración",
+      "4": "TdE",
+      "5": "Energía Elemental",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

@@ -19,6 +19,24 @@
       "12": "Each consumed stack of Grimheart will be converted into an Icewhirl Brand that deals <cryo>Cryo DMG</cryo> to nearby opponents.",
       "13": "<br/>",
       "14": "<i>\"So the waves roiled, swallowing the crown of the nobles. And ever after did each drop amidst the icy waves reflect a golden crown, each and every droplet of the spray shining with its light.\"</i>"
+    },
+    "skillParams": {
+      "0": "Press DMG",
+      "1": "Hold DMG",
+      "2": "Icewhirl Brand DMG",
+      "3": "DEF Bonus",
+      "4": "Grimheart Duration",
+      "5": "Physical RES Decrease",
+      "6": "Cryo RES Decrease",
+      "7": "RES Decrease Duration",
+      "8": "Press CD",
+      "9": "CD (hold)",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "name": "Eula",
@@ -53,6 +71,24 @@
       "4": "If Eula leaves the field, the Lightfall Sword will explode immediately.",
       "5": "<br/>",
       "6": "<i>It is easy to sink. But even so, she desires to freeze this oncoming tide.</i>"
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "Lightfall Sword Base DMG",
+      "2": "DMG Per Stack",
+      "3": "Maximum Stacks",
+      "4": "CD",
+      "5": "Energy Cost",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

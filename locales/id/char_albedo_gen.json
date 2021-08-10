@@ -37,6 +37,24 @@
       "6": "<strong>Tahan</strong> untuk melancarkan skill pada lokasi tertentu.",
       "7": "<br/>",
       "8": "<i>Tumbuhan Geo ini memiliki sifat yang tidak biasa yang tercermin dalam tujuan alkimia. Bangkit dari bumi, membubung ke langit, dan menjadi matahari.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "DMG Transient Blossom",
+      "2": "Durasi",
+      "3": "CD Skill",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -48,6 +66,24 @@
       "3": "DMG Tectonic Tide dan DMG Fatal Blossom tidak akan menghasilkan Transient Blossom.",
       "4": "<br/>",
       "5": "<i>Di bawah perintah Kreideprinz, gelombang tektonik penciptaan akan menghasilkan kehidupan.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Elemental Burst",
+      "1": "DMG Fatal Blossom",
+      "2": "Cooldown",
+      "3": "Energy",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

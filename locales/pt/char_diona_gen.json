@@ -35,6 +35,24 @@
       "9": "O escudo tem um bônus de 250% de Absorção de <cryo>Dano Cryo</cryo>, e ao ser formado aplica o <cryo>Elemento Cryo</cryo> em seu próprio personagem por uma curta duração.",
       "10": "<br/>",
       "11": "<i>Normalmente, nenhuma quantidade de gelo no copo de um bêbado faria mal algum, até que Diona usou sua Visão para criar gelo frio o suficiente para congelar o cerébro. Nota 10!</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Garras do Gato",
+      "1": "Absorção Básica de Escudo",
+      "2": "Duração",
+      "3": "Recarga ao Pressionar",
+      "4": "Recarga ao Manter Pressionado",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -47,6 +65,24 @@
       "4": "Regenera continuamente a Vida dos personagens dentro da AdE.",
       "5": "<br/>",
       "6": "<i>Uma mistura horrível que até mesmo Diona considera desumana. O gosto horrível deve ser deixado apenas para os inimigos. Tem um sabor muito fresco, mas infelizmente só se pode sentir no nariz e na pele.</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Dano Contínuo de Área",
+      "2": "Cura Contínua",
+      "3": "Duração",
+      "4": "Tempo de Recarga",
+      "5": "Energia Elemental",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

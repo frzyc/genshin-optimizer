@@ -34,6 +34,24 @@
       ],
       "4": "<br/>",
       "5": "<i>Barbara's music is the magic that heals her companions.</i>"
+    },
+    "skillParams": {
+      "0": "HP Regeneration Per Hit",
+      "1": "Continuous Regeneration",
+      "2": "Droplet DMG",
+      "3": "Duration",
+      "4": "CD",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -42,6 +60,24 @@
       "0": "Heals your own party members and nearby teammates for a large amount of HP that scales with Barbara's Max HP.",
       "1": "<br/>",
       "2": "<i>Barbara's desire to heal strengthens her will to fight and sing.</i>"
+    },
+    "skillParams": {
+      "0": "Regeneration",
+      "1": "CD",
+      "2": "Energy Cost",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

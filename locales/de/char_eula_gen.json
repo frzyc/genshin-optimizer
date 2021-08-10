@@ -19,6 +19,24 @@
       "12": "Jede verbrauchte Stapelung von Kaltes Herz wandelt sich in ein Eisstrudelschwert um, das den Gegnern in der Umgebung <cryo>Kryo-Schaden</cryo> zufügt.",
       "13": "<br/>",
       "14": "<i>„So wird die Krone der Aristokraten in den Strudel hineingerissen. In jedem eiskalten Tröpfchen ist der Widerschein der goldenen Krone zu sehen. Der stiebende Schaum glänzt.“</i>"
+    },
+    "skillParams": {
+      "0": "SCH bei Drücken",
+      "1": "SCH bei Gedrückthalten",
+      "2": "SCH von Schwert des Eisstrudel",
+      "3": "VTD-Bonus",
+      "4": "Dauer von Kaltes Herz",
+      "5": "Verringerung des phys. WDS",
+      "6": "Verringert den Kryo-WDS um",
+      "7": "Dauer der WDS-Verringerung",
+      "8": "Abklingzeit für Drücken",
+      "9": "Abklingzeit für Gedrückthalten",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "name": "Eula",
@@ -53,6 +71,24 @@
       "4": "Wenn Eula ausgewechselt wird, explodiert das Schwert des Lichtfalls sofort.",
       "5": "<br/>",
       "6": "<i>Mit dem Sinken verhält es sich wie mit der Schwerkraft. Trotzdem will sie auf Biegen und Brechen die Strömung einfrieren.</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Basis-SCH von Schwert des Lichtfalls",
+      "2": "SCH pro Stapelung",
+      "3": "Max. Stapelungen der Energie",
+      "4": "Abklingzeit",
+      "5": "Elementarenergie",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

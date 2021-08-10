@@ -33,6 +33,24 @@
       ],
       "4": "<br/>",
       "5": "<i>\"Cái này dùng để ngăn thối rữa khi nhiệt độ lên cao... Ừm, ý tôi là số thảo dược quý của ngài Bai đó.\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Hồi HP khi đánh trúng địch",
+      "2": "Kéo dài trị liệu",
+      "3": "Sát thương Hàn Bệnh Quỷ Sai",
+      "4": "Thời Gian Kéo Dài",
+      "5": "CD",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -45,6 +63,24 @@
       "4": "<br/>",
       "5": "<i>\"Tên thật, cứu khổ độ ách chân quân, cải tử hoàn hài đồng tử\"</i>",
       "6": "<i>Qiqi không tài nào nhớ nổi câu này.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Lượng trị liệu",
+      "2": "Thời Gian Kéo Dài",
+      "3": "CD",
+      "4": "Năng Lượng Nguyên Tố",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

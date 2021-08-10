@@ -38,6 +38,24 @@
       "7": "Semakin lama tombolnya ditahan, semakin jauh lemparannya.",
       "8": "<br/>",
       "9": "<i>Baron Bunny datang dari keluarga dengan garis keturunan yang sangat panjang, tapi Amber sudah berhenti menghitungnya sejak Baron Bunny ke-893.</i>"
+    },
+    "skillParams": {
+      "0": "HP Terwariskan",
+      "1": "DMG Ledakan",
+      "2": "Cooldown",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -46,6 +64,24 @@
       "0": "Menembakkan hujan panah yang mengakibatkan <pyro>Pyro DMG area</pyro>.",
       "1": "<br/>",
       "2": "<i>Semangat Amber benar-benar membara.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Fiery Rain Per Gelombang",
+      "1": "DMG Total Fiery Rain",
+      "2": "Durasi",
+      "3": "Cooldown",
+      "4": "Energy",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

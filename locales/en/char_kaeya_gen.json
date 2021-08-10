@@ -26,6 +26,24 @@
       "0": "Unleashes a frigid blast, dealing <cryo>Cryo DMG</cryo> to opponents in front of Kaeya.",
       "1": "<br/>",
       "2": "<i>Kaeya seems affable, but his nature is that of unyielding ice.</i>"
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "CD",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -35,6 +53,24 @@
       "1": "These icicles will follow the character around and deal <cryo>Cryo DMG</cryo> to opponents in their path for the ability's duration.",
       "2": "<br/>",
       "3": "<i>A winsome smile, genial words, and the merciless hoarfrost that lies beneath... These are all Kaeya's weapons.</i>"
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "CD",
+      "2": "Duration",
+      "3": "Energy Cost",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

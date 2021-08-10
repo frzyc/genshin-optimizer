@@ -37,6 +37,24 @@
       "11": "Zu einem Zeitpunkt kann nur ein Trugbild existieren, das mit Trugbilder im Wasser erschaffen wurde.",
       "12": "<br/>",
       "13": "<i>Große Gelehrte der Astrologie versuchen seit jeher, ein Trugbild von sich zu schaffen, um Übel von sich selbst abzuwenden. Mona muss wohl die erste sein, die das Schicksal tatsächlich auf diese Weise austrickst.</i>"
+    },
+    "skillParams": {
+      "0": "Fortlaufender SCH",
+      "1": "Explosions-SCH",
+      "2": "Abklingzeit",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -54,6 +72,24 @@
       "9": "Erhöht den während der Wirkungsdauer erlittenen Schaden.",
       "10": "<br/>",
       "11": "<i>Nachdem die Götter einen Blick auf das himmlische Licht erhascht hatten, war das Schicksal als solches geboren.</i>"
+    },
+    "skillParams": {
+      "0": "Dauer der Blasenschatten",
+      "1": "SCH bei Explosion der Blasenschatten",
+      "2": "SCH-Bonus",
+      "3": "Dauer des Omens",
+      "4": "Abklingzeit",
+      "5": "Elementarenergie",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "sprint": {

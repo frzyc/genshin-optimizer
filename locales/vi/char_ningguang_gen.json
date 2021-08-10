@@ -36,6 +36,24 @@
       "5": "Vách Toàn Cơ được xem là <geo>vật tạo ra Nguyên Tố Nham</geo>, có thể ngăn chặn một phần tấn công, không thể leo trèo. Đồng thời chỉ có thể tồn tại 1 cái.",
       "6": "<br/>",
       "7": "<i>Những vì sao lấp lánh hợp thành Vách Toàn Cơ.</i>"
+    },
+    "skillParams": {
+      "0": "HP Kế Thừa",
+      "1": "Sát Thương Kỹ Năng",
+      "2": "CD",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -45,6 +63,24 @@
       "1": "Khi phóng Thiên Quyền Băng Ngọc, nếu xung quanh có Vách Toàn Cơ, Vách Toàn Cơ sẽ phóng thêm bảo thạch cùng tấn công.",
       "2": "<br/>",
       "3": "<i>Sao tản ngọc vỡ, phá hủy xấu xa.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Bảo Thạch",
+      "1": "CD",
+      "2": "Năng Lượng Nguyên Tố",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

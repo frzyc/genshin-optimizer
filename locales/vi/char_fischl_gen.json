@@ -32,6 +32,24 @@
       "5": "<br/>",
       "6": "<i>\"Sức mạnh của công chúa vốn là thứ đáng quý, không đáng để lãng phí trên người các người...Oz, hãy giúp ta giáng tia sét định tội, xé toạc màn đêm vĩnh hằng.\"</i>",
       "7": "<i>——\"Cổ tích về công chúa Fischl IV 'Vĩnh biệt quý cô của thế giới.'\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát thương tấn công Oz",
+      "1": "Sát thương triệu hồi",
+      "2": "Thời gian Oz tồn tại",
+      "3": "CD",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -47,6 +65,24 @@
       "3": "<br/>",
       "4": "<i>...Trong số những con thú mang dòng máu định tội bị nguyền rủa, chỉ có Thân Vương Quạ Đêm - người đã chứng kiến sự tuyệt chủng của một ngàn thế giới mới có thể hiểu được sự cao cả của cô. Vì vậy nó dang rộng đôi cánh bóng đêm bao lấy công chúa cao quý, và nguyện thề trọn đời bảo vệ cô.</i>",
       "5": "<i> \"Cổ tích về công chúa Fischl·I·'Về sự tan rã của ngày tận thế'\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Sét Đánh",
+      "1": "CD",
+      "2": "Năng Lượng Nguyên Tố",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

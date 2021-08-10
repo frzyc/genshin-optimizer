@@ -34,6 +34,24 @@
       ],
       "4": "<br/>",
       "5": "<i>La musique de Barbara est une magie capable de soigner chacun.</i>"
+    },
+    "skillParams": {
+      "0": "Soins équipe",
+      "1": "Soins continus",
+      "2": "DGT gouttelettes",
+      "3": "Durée",
+      "4": "Temps de recharge",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -42,6 +60,24 @@
       "0": "Restaure considérablement les PV des alliés et de vos personnages dans l'équipe ; la quantité de PV restaurés est proportionnelle aux PV max de Barbara.",
       "1": "<br/>",
       "2": "<i>Soigner le cœur de chacun, telle est la force du chant de Barbara.</i>"
+    },
+    "skillParams": {
+      "0": "Soins",
+      "1": "Temps de recharge",
+      "2": "Énergie élémentaire",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

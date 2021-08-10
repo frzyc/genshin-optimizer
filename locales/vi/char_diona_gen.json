@@ -37,6 +37,24 @@
       "10": "Khiên sẽ hấp thụ 250% <cryo>Sát Thương Nguyên Tố Băng</cryo>, và khi hình thành, sẽ tăng thêm cho nhân vật <cryo>Nguyên Tố Băng Kèm Theo</cryo>.",
       "11": "<br/>",
       "12": "<i>Có thêm bao nhiêu đá vào rượu cũng không thể làm tổn hại đến kẻ say, cho đến khi Diona có được Vision, và rồi những viên đá lạnh đến nỗi khiến người ta buốt óc bắt đầu xuất hiện. Hay!</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Vuốt Mèo",
+      "1": "Khiên hấp thu cơ bản",
+      "2": "Thời gian kéo dài",
+      "3": "CD Nhấn",
+      "4": "CD Nhấn Giữ",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -51,6 +69,24 @@
       ],
       "4": "<br/>",
       "5": "<i>Công thức kinh khủng khiến Diona cũng tự cảm thấy vô nhân đạo. Mùi vị đầu kinh khủng nên để cho kẻ địch trước, về sau thì thanh mát, tiếc rằng chỉ có thể dùng mũi và da để cảm nhận.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Sát thương duy trì trong khu vực",
+      "2": "Lượng trị liệu liên tục",
+      "3": "Thời Gian Kéo Dài",
+      "4": "CD",
+      "5": "Năng Lượng Nguyên Tố",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

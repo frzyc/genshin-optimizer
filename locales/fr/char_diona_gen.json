@@ -37,6 +37,24 @@
       "10": "Le bouclier est efficace à 250 % contre les <cryo>DGT Cryo</cryo>, et applique l'élément <cryo>Cryo</cryo> au personnage déployé pendant un court instant lorsque le bouclier est généré.",
       "11": "<br/>",
       "12": "<i>En théorie, la glace versée dans un breuvage est sans danger pour celui qui le boit. Ceci était exact jusqu'à ce que Diona utilise son œil divin pour créer une glace capable de geler jusqu'au cerveau... 5 étoiles !</i>"
+    },
+    "skillParams": {
+      "0": "DGT Griffes Cryo",
+      "1": "Absorption de base du bouclier",
+      "2": "Durée",
+      "3": "TdR appui simple",
+      "4": "TdR appui long",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -51,6 +69,24 @@
       ],
       "4": "<br/>",
       "5": "<i>Une recette que même Diona juge inhumaine. L'avant-goût terrifiant est mieux laissé aux ennemis ; nous ne parlerons pas de l'arrière-goût particulièrement frais qui en découle.</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "DGT de zone continus",
+      "2": "Soins continus",
+      "3": "Durée",
+      "4": "Temps de recharge",
+      "5": "Énergie élémentaire",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

@@ -38,6 +38,24 @@
       "10": "Bennett ne subit pas de DGT lorsqu'il est projeté.",
       "11": "<br/>",
       "12": "<i>Une attaque Pyro emplie de la passion et des espoirs de Bennett, mais passion débordante signifie surcharge, et qui dit surcharge dit explosion.</i>"
+    },
+    "skillParams": {
+      "0": "DGT appui simple",
+      "1": "DGT après 1 charge",
+      "2": "DGT après 2e charge",
+      "3": "DGT explosion",
+      "4": "Temps de recharge",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -53,6 +71,24 @@
       ],
       "4": "<br/>",
       "5": "<i>Malgré tous les dangers qui ne manquent jamais de venir ponctuer chaque périple de la Bande à Benny, Bennett, son unique membre, préfère continuer à dire qu'il n'y a rien de tel qu'un peu d'inattendu pour pimenter une aventure, bien sûr.</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "Soins continus",
+      "2": "Bonus d'ATQ",
+      "3": "Durée",
+      "4": "Temps de recharge",
+      "5": "Énergie élémentaire",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

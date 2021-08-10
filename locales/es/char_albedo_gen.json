@@ -38,6 +38,24 @@
       "7": "Controla la ubicación sobre la que tiene lugar la habilidad.",
       "8": "<br/>",
       "9": "<i>Esta especie de flor Geo, cuya meta es la misma que la de la alquimia, tiene una naturaleza muy particular. Brota de la tierra con miras a ascender a los cielos, donde se convertirá en un Sol</i>."
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Daño de flor fugaz",
+      "2": "Duración",
+      "3": "TdE de habilidad",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -49,6 +67,24 @@
       "3": "El daño causado por la explosión y las flores de la muerte no creará una flor fugaz.",
       "4": "<br/>",
       "5": "<i>Bajo las órdenes del Príncipe de la Roca Caliza, el mundo entero puede temblar</i>."
+    },
+    "skillParams": {
+      "0": "Daño de explosión",
+      "1": "Daño de flor de la muerte",
+      "2": "TdE",
+      "3": "Energía Elemental",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

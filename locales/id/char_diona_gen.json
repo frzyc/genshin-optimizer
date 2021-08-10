@@ -37,6 +37,24 @@
       "10": "Perisai ini memiliki bonus 250% penyerapan <cryo>Cryo DMG</cryo>. Saat perisai terbentuk, karakter yang sedang digunakan akan terpengaruh <cryo>Cryo</cryo> dalam waktu singkat.",
       "11": "<br/>",
       "12": "<i>Saat Diona baru menjadi bartender, sebanyak apa pun es yang dimasukkannya ke dalam koktail, tidak pernah ada seorang pun pemabuk yang terluka karena dingin. Tetapi setelah Diona mendapatkan Vision — kini dia bisa membuat minuman sangat dingin yang membuat para pemabuk kedinginan hingga sakit kepala. Hebat!</i>"
+    },
+    "skillParams": {
+      "0": "DMG Per Ice Paw",
+      "1": "Ketahanan Dasar Perisai",
+      "2": "Durasi Per Claw",
+      "3": "Cooldown One-tap",
+      "4": "Cooldown Menahan",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -51,6 +69,24 @@
       ],
       "4": "<br/>",
       "5": "<i> Racikan mengerikan yang bahkan dianggap tidak manusiawi oleh Diona. Rasa mengerikan yang muncul di awal kecapan harus disuguhkan kepada musuh. Sedangkan rasa dingin dan aroma manis yang muncul setelahnya... sayang sekali, hanya bisa dinikmati dengan hidung dan permukaan kulit saja.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "DMG Berkelanjutan di Area",
+      "2": "Regenerasi HP",
+      "3": "Durasi",
+      "4": "CD",
+      "5": "Energy",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

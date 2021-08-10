@@ -49,6 +49,24 @@
       "13": "Si el retorno a la posición de combate a distancia se produce automáticamente después de 30 s, el TdE será aún más largo.",
       "14": "<br/>",
       "15": "<i>Elige usar un arco para superar su torpe manejo de dicha arma. Cuando la ocasión lo requiere, usará su verdadera fuerza...</i>"
+    },
+    "skillParams": {
+      "0": "Daño por activación del estado",
+      "1": "Daño de 1er golpe",
+      "2": "Daño de 2.º golpe",
+      "3": "Daño de 3er golpe",
+      "4": "Daño de 4.º golpe",
+      "5": "Daño de 5.º golpe",
+      "6": "Daño de 6.º golpe",
+      "7": "Daño de ATQ Cargado",
+      "8": "Coste de Aguante de ATQ Cargado",
+      "9": "Daño de Obstrucción del flujo: Corte",
+      "10": "Duración máx.",
+      "11": "TdE",
+      "12": "TdE máx.",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -68,6 +86,24 @@
       "11": "El daño que inflige Obstrucción del flujo: Estallido se considera daño de Habilidad Definitiva.",
       "12": "<br/>",
       "13": "<i>Rara vez se ven aguas turbulentas en su nevada tierra natal. Tal vez su habilidad para controlar el agua se debe a su comprensión de lo preciada que es.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad cuerpo a cuerpo",
+      "1": "Daño de habilidad a distancia",
+      "2": "Daño de Obstrucción del flujo: Estallido",
+      "3": "Recuperación de Energía Elemental de Habilidad (a distancia)",
+      "4": "TdE",
+      "5": "Energía Elemental",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

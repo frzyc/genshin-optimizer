@@ -39,6 +39,24 @@
       "9": "Trong trận chỉ có thể đồng thời tồn tại một Hư Ảnh được tạo ra từ nước,",
       "10": "<br/>",
       "11": "<i>Thuật sĩ chiêm tinh tinh vi luôn muốn tạo ra hư ảnh của bản thân để gánh lấy tai ương sắp ập đến. Ở Teyvat, chắc chỉ có Mona là người đầu tiên chế giễu tai ương như thế.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kéo Dài",
+      "1": "Sát Thương Nổ",
+      "2": "CD",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -58,6 +76,24 @@
       "8": "Trong thời gian duy trì, tăng sát thương chịu phải.",
       "9": "<br/>",
       "10": "<i>Khi ánh mắt của Thần bắt đầu dẫn dắt ánh sáng trên bầu trời, thì kể từ đó vận mệnh đã được gọi tên là vận mệnh.</i>"
+    },
+    "skillParams": {
+      "0": "Thời Gian Bóng Nước Kéo Dài",
+      "1": "Sát Thương Bóng Nước Vỡ",
+      "2": "Sát Thương Thêm",
+      "3": "Thời Gian CD Tinh Dị",
+      "4": "CD",
+      "5": "Năng Lượng Nguyên Tố",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "sprint": {

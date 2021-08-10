@@ -28,6 +28,24 @@
       "1": "After a short delay, the cold air created by the Cryo explosion will coalesce into a Chonghua Frost Field, within which all Sword, Claymore and Polearm-wielding characters' weapons will be infused with <cryo>Cryo</cryo>.",
       "2": "<br/>",
       "3": "<i>\"A crystal-clear ring, and all is silent. The rivers move not, and the clouds are heavy with frost. The altar gates open, and evil is banished.\"</i>"
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "Infusion Duration",
+      "2": "Field Duration",
+      "3": "CD",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -37,6 +55,24 @@
       "1": "When the spirit blades explode, they will deal <cryo>AoE Cryo DMG</cryo> and launch opponents.",
       "2": "<br/>",
       "3": "<i>\"As ice doth give the biting frost birth, My transcendent blade shakes heaven and earth. Heed my summons and come hence!\"</i>"
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "CD",
+      "2": "Energy Cost",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

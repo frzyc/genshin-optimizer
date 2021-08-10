@@ -36,6 +36,24 @@
       "10": "Apenas um Fantasma criado pelo Espelho do Reflexo do Apocalipse pode existir a qualquer momento.",
       "11": "<br/>",
       "12": "<i>Astrólogos qualificados sempre sonharam em usar uma cópia de si mesmos para se prevenirem do destino cruel iminente, mas Mona deve ser a primeira a fazer tamanho escárnio de todos em Teyvat.</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Contínuo",
+      "1": "Dano de Explosão",
+      "2": "Tempo de Recarga",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -53,6 +71,24 @@
       "9": "Ao longo da duração, aumenta o Dano recebido pelos inimigos.",
       "10": "<br/>",
       "11": "<i>No momento em que os deuses traçaram pela primeira vez as luzes no céu com seus olhos, o \"destino\" nasceu.</i>"
+    },
+    "skillParams": {
+      "0": "Duração da Sombra de Bolha",
+      "1": "Dano de Explosão da Bolha Ilusória",
+      "2": "Dano Adicional",
+      "3": "Duração do Presságio",
+      "4": "Tempo de Recarga",
+      "5": "Energia Elemental",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "sprint": {

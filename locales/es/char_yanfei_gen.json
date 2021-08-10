@@ -30,6 +30,24 @@
       "1": "Al golpear con ellas a sus enemigos, Yanfei obtiene el máximo de sellos escarlatas.",
       "2": "<br/>",
       "3": "<i>Aparte de tener aplicaciones legales, los sellos de fuego de Yanfei también traen consigo sus propias cláusulas adicionales. Al fin y al cabo, el Ministerio de Asuntos Civiles no puede modificar las leyes naturales.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "TdE",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -46,6 +64,24 @@
       "5": "Resplandor se disipará cuando Yanfei se retire del combate o sea derrotada.",
       "6": "<br/>",
       "7": "<i>“Las cláusulas ya están redactadas. Así pues, por la presente, establezco este contrato de vida o muerte. ¡Yo vivo y tú mueres!”</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "",
+      "2": "Intervalo de obtención de sellos escarlatas",
+      "3": "Aumento de daño de ATQ Cargado",
+      "4": "Duración",
+      "5": "TdE",
+      "6": "Energía Elemental",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

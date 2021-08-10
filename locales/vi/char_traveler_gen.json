@@ -16,6 +16,24 @@
         ],
         "6": "<br/>",
         "7": "<i>Thảo luận với Paimon về tất cả những con đường mà dòng điện có thể đi qua.</i>"
+      },
+      "skillParams": {
+        "0": "Sát Thương Kỹ Năng",
+        "1": "Hồi Phục Năng Lượng Nguyên Tố",
+        "2": "Tăng Hiệu Quả Nạp Nguyên Tố",
+        "3": "Thời Gian Kéo Dài",
+        "4": "Thời Gian Khuyết Ngọc Dậy Sóng Tồn Tại",
+        "5": "CD",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": "",
+        "13": "",
+        "14": "",
+        "15": ""
       }
     },
     "burst": {
@@ -30,6 +48,24 @@
         "5": "Mỗi 0.5s tối đa sinh ra Sấm Sét Uy Vũ 1 lần.",
         "6": "<br/>",
         "7": "<i>Cùng Paimon nghiên cứu về ánh sáng xuyên qua những đám mây.</i>"
+      },
+      "skillParams": {
+        "0": "Sát Thương Kỹ Năng",
+        "1": "Sát thương Sấm Sét Uy Vũ",
+        "2": "Hồi Phục Năng Lượng Nguyên Tố",
+        "3": "Thời Gian Kéo Dài",
+        "4": "CD",
+        "5": "Năng Lượng Nguyên Tố",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": "",
+        "13": "",
+        "14": "",
+        "15": ""
       }
     },
     "auto": {
@@ -136,6 +172,24 @@
         "8": "Chuyển hóa nguyên tố chỉ phát sinh một lần trong thời gian duy trì kỹ năng.",
         "9": "<br/>",
         "10": "<i>Thảo luận với Paimon cách để nắm bắt ngọn gió vô hình.</i>"
+      },
+      "skillParams": {
+        "0": "Sát Thương Cắt Ban Đầu",
+        "1": "Sát Thương Cắt Lớn Nhất",
+        "2": "ST Bạo Phong Ban Đầu",
+        "3": "ST Bạo Phong Lớn Nhất",
+        "4": "CD Căn Bản",
+        "5": "CD Tụ Lực Tối Đa",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": "",
+        "13": "",
+        "14": "",
+        "15": ""
       }
     },
     "burst": {
@@ -148,6 +202,24 @@
         "4": "Loại chuyển hóa này chỉ phát sinh một lần trong thời gian duy trì kỹ năng.",
         "5": "<br/>",
         "6": "<i>Cùng Paimon nghiên cứu cách vỗ cánh của bướm.</i>"
+      },
+      "skillParams": {
+        "0": "Sát Thương Gió Lốc",
+        "1": "Sát Thương Nguyên Tố Kèm Theo",
+        "2": "Thời Gian Kéo Dài",
+        "3": "CD",
+        "4": "Năng Lượng Nguyên Tố",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": "",
+        "13": "",
+        "14": "",
+        "15": ""
       }
     },
     "passive1": {
@@ -231,6 +303,24 @@
         "4": "Có thể điều chỉnh vị trí hiệu quả của kỹ năng.",
         "5": "<br/>",
         "6": "<i>Cùng Paimon thảo luận điểm dừng của sao băng.</i>"
+      },
+      "skillParams": {
+        "0": "Sát Thương Kỹ Năng",
+        "1": "Thời Gian Thiên Thạch Tồn Tại",
+        "2": "CD",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": "",
+        "13": "",
+        "14": "",
+        "15": ""
       }
     },
     "burst": {
@@ -242,6 +332,24 @@
         "3": "Núi đá được xem là <geo>vật tạo ra Nguyên Tố Nham</geo>, có thể ngăn chặn tấn công.",
         "4": "<br/>",
         "5": "<i>Cùng Paimon nghiên cứu các mạch đập sâu trong núi.</i>"
+      },
+      "skillParams": {
+        "0": "Sát Thương 1 Lần Động Đất",
+        "1": "Thời Gian Núi Đá Tồn Tại",
+        "2": "CD",
+        "3": "Năng Lượng Nguyên Tố",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": "",
+        "13": "",
+        "14": "",
+        "15": ""
       }
     },
     "passive1": {

@@ -26,6 +26,24 @@
       "0": "Memanggil Guoba si Panda. Guoba terus menghembuskan api ke musuh, mengakibatkan <pyro>Pyro DMG area</pyro>.",
       "1": "<br/>",
       "2": "<i>Guoba suka makan yang pedas-pedas. Masalahnya, perutnya tidak tahan.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Flamethrower",
+      "1": "Cooldown",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -35,6 +53,24 @@
       "1": "Pyrnado akan bergerak mengikuti karaktermu selama durasinya dan mengakibatkan <pyro>Pyro DMG</pyro> ke semua musuh di jalurnya.",
       "2": "<br/>",
       "3": "<i>Tidak akan pernah ada panas yang cukup. Tidak pernah.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Tebasan Tahap 1",
+      "1": "DMG Tebasan Tahap 2",
+      "2": "DMG Tebasan Tahap 3",
+      "3": "DMG Pyronado",
+      "4": "Durasi",
+      "5": "Cooldown",
+      "6": "Energy",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

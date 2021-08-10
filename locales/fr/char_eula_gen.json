@@ -19,6 +19,24 @@
       "12": "Chaque charge de Cœur de glace est convertie en épée vortex de glace, qui inflige des <cryo>DGT Cryo</cryo> aux ennemis proches.",
       "13": "<br/>",
       "14": "<i>Ainsi roula l'écume des vagues, engloutissant dans son sillage la couronne de la royauté. Et chaque embrun de cette marée glaciale étincela de sa lumineuse clarté.</i>"
+    },
+    "skillParams": {
+      "0": "DGT appui simple",
+      "1": "DGT appui long",
+      "2": "DGT épée vortex de glace",
+      "3": "Bonus de DÉF",
+      "4": "Durée de Cœur de glace",
+      "5": "Baisse RÉS physique",
+      "6": "Baisse RÉS Cryo",
+      "7": "Durée de baisse de RÉS",
+      "8": "TdR appui simple",
+      "9": "TdR appui long",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "name": "Eula",
@@ -53,6 +71,24 @@
       "4": "L'épée explose immédiatement lorsqu'Eula quitte le champ de bataille.",
       "5": "<br/>",
       "6": "<i>Le naufrage est facile. Et pourtant, Eula insiste pour figer cette marée.</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "DGT de base épée de lumière",
+      "2": "DGT élémentaires par charge d'énergie",
+      "3": "Limite de charges d'énergie",
+      "4": "Temps de recharge",
+      "5": "Énergie élémentaire",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

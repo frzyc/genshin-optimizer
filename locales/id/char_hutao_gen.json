@@ -41,6 +41,24 @@
       "10": "<strong>Paramita Papilio</strong> berhenti saat durasi waktunya berakhir, atau saat Hu Tao telah meninggalkan medan pertempuran/gugur.",
       "11": "<br/>",
       "12": "<i>Teknik Secret Spear Hu Tao didasarkan pada beberapa aturan, di mana aturan yang pertama adalah: \"Tombak membuka jalan menuju akhirat, dan kupu-kupu menjembatani dunia sekarang dan dunia berikutnya.\"</i>"
+    },
+    "skillParams": {
+      "0": "Mengonsumsi",
+      "1": "ATK Meningkat",
+      "2": "DMG Blood Blossom",
+      "3": "Durasi Blood Blossom",
+      "4": "Durasi",
+      "5": "Cooldown",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -51,6 +69,24 @@
       "2": "Jika HP Hu Tao sama dengan atau kurang dari 50% saat skill ini mengenai musuh, maka DMG dan pemulihan HP akan meningkat.",
       "3": "<br/>",
       "4": "<i>Aktivitas supernatural dari roh-roh yang telah meninggalkan dunia ini adalah kecemasan terbesar Wangsheng Funeral Parlor. Tetapi kegiatan kremasi selalu bisa meredakan kecemasan Hu Tao, dan semakin cemas Hu Tao, semakin kuat juga api kremasi yang dia gunakan.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "DMG Skill HP Rendah",
+      "2": "Pemulihan HP",
+      "3": "Pemulihan HP Saat HP Rendah",
+      "4": "CD",
+      "5": "Energy",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

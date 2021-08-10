@@ -35,6 +35,24 @@
       "8": "Quanto mais tempo o botão for pressionado, mais distante é o lançamento.",
       "9": "<br/>",
       "10": "<i>Barão Coelho provém de uma histórica linhagem, mas Amber decidiu parar de contar desde o Barão Coelho 893.</i>"
+    },
+    "skillParams": {
+      "0": "Vida Recebida",
+      "1": "Dano de Explosão",
+      "2": "Tempo de Recarga",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -43,6 +61,24 @@
       "0": "Dispara uma chuva de flechas, causando <pyro>Dano AdE de Pyro</pyro> contínuo.",
       "1": "<br/>",
       "2": "<i>A paixão de Amber arde como o fogo.</i>"
+    },
+    "skillParams": {
+      "0": "Dano Único da Chuva Ardente",
+      "1": "Dano Total da Chuva Ardente",
+      "2": "Duração",
+      "3": "Tempo de Recarga",
+      "4": "Energia Elemental",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

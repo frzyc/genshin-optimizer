@@ -38,6 +38,24 @@
       "7": "Có thể điều chỉnh vị trí hiệu lực của kỹ năng.",
       "8": "<br/>",
       "9": "<i>Loại Nham hoa này có đặc tính kỳ lạ, cũng giống như thuật giả kim, sinh ra từ mặt đất nhưng lại luôn hy vọng vươn cao lên trời, hóa thành vầng thái dương.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "ST Hoa Khoảnh Khắc",
+      "2": "Thời Gian Kéo Dài",
+      "3": "CD Kỹ Năng",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -49,6 +67,24 @@
       "3": "Sát thương bạo phát và sát thương của Hoa Sinh Tử sẽ không tạo thành Hoa Khoảnh Khắc.",
       "4": "<br/>",
       "5": "<i>Dưới mệnh lệnh của Kreideprinz, dòng thủy triều của địa chất cuồn cuộn dâng trào.</i>"
+    },
+    "skillParams": {
+      "0": "ST Bạo Phát",
+      "1": "ST Hoa Sinh Tử",
+      "2": "CD",
+      "3": "Năng Lượng Nguyên Tố",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

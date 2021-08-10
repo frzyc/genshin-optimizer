@@ -36,6 +36,24 @@
       ],
       "4": "<br/>",
       "5": "<i>\"Você disse que me viu? Acho que você está enganad{F#a}{M#o}. Eu estava trabalhando horas extras\".</i>"
+    },
+    "skillParams": {
+      "0": "Vida Recebida",
+      "1": "Dano de Habilidade",
+      "2": "Duração",
+      "3": "Tempo de Recarga",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -45,6 +63,24 @@
       "1": "Ao longo da duração desta habilidade, a Gema Cryo Sagrada irá chover continuamente lascas de gelo, golpeando inimigos em uma AdE e infligindo <cryo>Dano Cryo</cryo>.",
       "2": "<br/>",
       "3": "<i>Ganyu pode trazer uma chuva agradável de forma natural. Mas contra demônios e hereges, elas viram uma desagradável neve congelante.</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Fragmento de Gelo",
+      "1": "Duração",
+      "2": "Tempo de Recarga",
+      "3": "Energia Elemental",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

@@ -13,6 +13,24 @@
       ],
       "4": "<br/>",
       "5": "<i>\"The blizzard veils the heron's thoughts, pity heavy in its heart.\"</i>"
+    },
+    "skillParams": {
+      "0": "Cutting DMG",
+      "1": "Bloom DMG",
+      "2": "Duration",
+      "3": "CD",
+      "4": "Energy Cost",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "name": "Kamisato Ayaka",
@@ -42,6 +60,24 @@
       "0": "Summons blooming ice to launch nearby opponents, dealing <cryo>AoE Cryo DMG</cryo>.",
       "1": "<br/>",
       "2": "<i>\"Clouds shroud the moonlit night. Longing descends like a fog, filling the one detained with wanderlust.\"</i>"
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "CD",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "sprint": {

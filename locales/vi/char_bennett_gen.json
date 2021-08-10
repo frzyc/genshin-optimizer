@@ -36,6 +36,24 @@
       ],
       "8": "<br/>",
       "9": "<i>Tụ hợp nhiệt huyết và đam mê vào đòn đánh Nguyên Tố Hỏa. Thế nhưng có lúc nhiệt huyết quá mức, Nguyên Tố Hỏa sẽ bùng nổ.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Nhấn",
+      "1": "Sát Thương Tụ Lực Lần 1",
+      "2": "Sát Thương Tụ Lực Lần 2",
+      "3": "Sát Thương Nổ",
+      "4": "CD",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -51,6 +69,24 @@
       ],
       "4": "<br/>",
       "5": "<i>Đoàn mạo hiểm Benny mỗi lần bắt đầu hành trình mạo hiểm đều đầy sự rủi ro. Chỉ duy nhất Bennett lại cho rằng đây là \"hành trình tuyệt vời, kịch tính và kì diệu\".</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Trị liệu kéo dài",
+      "2": "Tỷ Lệ Tăng Tấn Công",
+      "3": "Thời Gian Kéo Dài",
+      "4": "CD",
+      "5": "Năng Lượng Nguyên Tố",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

@@ -11,7 +11,25 @@
       "6": "<br/>",
       "7": "<i>\"Vạn thế trôi qua trong nháy mắt, chỉ cần một chiếc lá cũng biết được mùa thu. Ta muốn cắt đứt lá phong này, đặt câu hỏi khẩn thiết về vạn thế!\"</i>"
     },
-    "slashdmg": "Sát Thương Chém"
+    "slashdmg": "Sát Thương Chém",
+    "skillParams": {
+      "0": "Sát Thương Chém",
+      "1": "Sát Thương Kéo Dài",
+      "2": "Sát Thương Nguyên Tố Kèm Theo",
+      "3": "Thời Gian Kéo Dài",
+      "4": "CD",
+      "5": "Năng Lượng Nguyên Tố",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
   },
   "name": "Kaedehara Kazuha",
   "title": "Lá Đỏ Đuổi Sóng",
@@ -55,6 +73,24 @@
       "11": "Sát thương Xua Tan Mây Mù gây ra xem như sát thương tấn công khi đáp.",
       "12": "<br/>",
       "13": "<i>\"Gió buồn trên tay áo, thần vạn kiếp người trăm năm, núi mùa thu nhuốm đỏ màu lá.\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng Khi Nhấn",
+      "1": "CD Nhấn",
+      "2": "Sát Thương Nhấn Giữ Kỹ Năng",
+      "3": "CD Nhấn Giữ",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

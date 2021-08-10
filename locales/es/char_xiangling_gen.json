@@ -26,6 +26,24 @@
       "0": "Invoca al panda Guoba. Guoba escupe fuego continuamente contra los enemigos, infligiendo <pyro>Daño Pyro en el AdE</pyro>.",
       "1": "<br/>",
       "2": "<i>A Guoba le encanta el picante. El problema es que su estómago no aguanta la comida tan picante.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de lanzallamas",
+      "1": "TdE",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -35,6 +53,24 @@
       "1": "Mientras dure la habilidad, el tornado se moverá junto a tu personaje, infligiendo <pyro>Daño Pyro</pyro> a todos los enemigos en su camino.",
       "2": "<br/>",
       "3": "<i>Nunca hay suficiente fuego. Nunca.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2° golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de Pyronado",
+      "4": "Duración",
+      "5": "TdE",
+      "6": "Energía Elemental",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

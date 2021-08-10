@@ -36,6 +36,24 @@
       "9": "Each Electro Sigil cleared in this manner will be converted into Energy for Razor.",
       "10": "<br/>",
       "11": "<i>In the moment when lightning strikes, you can sometimes glimpse the look of a predator sizing up his prey deep within Razor's eyes.</i>"
+    },
+    "skillParams": {
+      "0": "Press Skill DMG",
+      "1": "Hold Skill DMG",
+      "2": "Energy Recharge Bonus",
+      "3": "Energy Regenerated",
+      "4": "Electro Sigil duration",
+      "5": "Press CD",
+      "6": "CD (hold)",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -57,6 +75,24 @@
       "7": "When Razor leaves the field, a maximum of 10 Energy will be returned to him based off the duration remaining on this skill.",
       "8": "<br/>",
       "9": "<i>The wolf has awoken. The hunt is on.</i>"
+    },
+    "skillParams": {
+      "0": "Elemental Burst DMG",
+      "1": "Soul Companion DMG",
+      "2": "Normal ATK SPD Bonus",
+      "3": "Electro RES Bonus",
+      "4": "Duration",
+      "5": "CD",
+      "6": "Energy Cost",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

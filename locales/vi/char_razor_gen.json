@@ -36,6 +36,24 @@
       "9": "Mỗi Ấn Lôi bị xóa bỏ, đều sẽ chuyển thành năng lượng nguyên tố của Razor.",
       "10": "<br/>",
       "11": "<i>Trong khoảnh khắc sét đánh xuống, thi thoảng thoáng thấy sâu trong linh hồn của Razor ẩn chứa ánh mắt của sói quan sát con mồi.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Nhấn Kỹ Năng",
+      "1": "Sát Thương Nhấn Giữ Kỹ Năng",
+      "2": "Tăng Hiệu Quả Nạp Ấn Lôi",
+      "3": "Ấn Lôi Hút Hấp Thụ Năng Lượng Hồi Phục",
+      "4": "Thời Gian Ấn Lôi Kéo Dài",
+      "5": "CD Nhấn",
+      "6": "CD Nhấn Giữ",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -57,6 +75,24 @@
       "7": "Khi rời khỏi trận, sẽ căn cứ theo thời gian còn để hoàn trả tối đa 10 điểm Năng Lượng Nguyên Tố.",
       "8": "<br/>",
       "9": "<i>Sói đã tỉnh lại. Giờ đi săn đến rồi.</i>"
+    },
+    "skillParams": {
+      "0": "ST Bạo Phát",
+      "1": "Sát Thương Lang Hồn",
+      "2": "Tăng Tốc Độ Tấn Công Thường",
+      "3": "Tăng Kháng Nguyên Tố Lôi",
+      "4": "Thời Gian Kéo Dài",
+      "5": "CD",
+      "6": "Năng Lượng Nguyên Tố",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

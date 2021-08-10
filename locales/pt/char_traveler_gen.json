@@ -16,6 +16,24 @@
         ],
         "6": "<br/>",
         "7": "<i>Você e Paimon falam sobre os caminhos pelos quais a energia flui.</i>"
+      },
+      "skillParams": {
+        "0": "Dano de Habilidade",
+        "1": "Regeneração de Energia Elemental",
+        "2": "Aumento de Recarga de Energia",
+        "3": "Duração",
+        "4": "Duração de Amuleto da Abundância",
+        "5": "Tempo de Recarga",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": "",
+        "13": "",
+        "14": "",
+        "15": ""
       }
     },
     "burst": {
@@ -30,6 +48,24 @@
         "5": "Um Relâmpago Poderoso pode ser ativado uma vez a cada 0.5s.",
         "6": "<br/>",
         "7": "<i>Você e Paimon estudaram a luz que ilumina por entre as nuvens.</i>"
+      },
+      "skillParams": {
+        "0": "Dano de Habilidade",
+        "1": "Dano do Relâmpago Poderoso",
+        "2": "Regeneração de Energia Elemental",
+        "3": "Duração",
+        "4": "Tempo de Recarga",
+        "5": "Energia Elemental",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": "",
+        "13": "",
+        "14": "",
+        "15": ""
       }
     },
     "auto": {
@@ -136,6 +172,24 @@
         "8": "Absorção Elemental pode ocorrer apenas uma vez por uso.",
         "9": "<br/>",
         "10": "<i>Você conversou com a Paimon sobre a maneira de agarrar o vento sem forma.</i>"
+      },
+      "skillParams": {
+        "0": "Dano de Corte Inicial",
+        "1": "Dano de Corte Máximo",
+        "2": "Dano de Explosão de Vento Inicial",
+        "3": "Dano de Explosão de Vento Máximo",
+        "4": "Tempo de Recarga Básico",
+        "5": "Recarga de Energização Máxima",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": "",
+        "13": "",
+        "14": "",
+        "15": ""
       }
     },
     "burst": {
@@ -148,6 +202,24 @@
         "4": "Absorção Elemental pode ocorrer apenas uma vez por uso.",
         "5": "<br/>",
         "6": "<i>Você e a Paimon estudaram o bater das asas de uma borboleta.</i>"
+      },
+      "skillParams": {
+        "0": "Dano de Tornado",
+        "1": "Adição de Dano Elemental",
+        "2": "Duração",
+        "3": "Tempo de Recarga",
+        "4": "Energia Elemental",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": "",
+        "13": "",
+        "14": "",
+        "15": ""
       }
     },
     "passive1": {
@@ -230,6 +302,24 @@
         "4": "O posicionamento dessa habilidade pode ser controlado.",
         "5": "<br/>",
         "6": "<i>Você conversou com a Paimon sobre o destino das estrelas cadentes.</i>"
+      },
+      "skillParams": {
+        "0": "Dano de Habilidade",
+        "1": "Duração do Meteorito",
+        "2": "Tempo de Recarga",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": "",
+        "13": "",
+        "14": "",
+        "15": ""
       }
     },
     "burst": {
@@ -241,6 +331,24 @@
         "3": "A parede de pedra é considerada uma <geo>Construção Geo</geo> e pode ser usada para bloquear ataques.",
         "4": "<br/>",
         "5": "<i>Você e Paimon investigaram a vibração das montanhas.</i>"
+      },
+      "skillParams": {
+        "0": "Dano Único de Onda Sísmica",
+        "1": "Duração da Parede de Pedras",
+        "2": "Tempo de Recarga",
+        "3": "Energia Elemental",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": "",
+        "13": "",
+        "14": "",
+        "15": ""
       }
     },
     "passive1": {

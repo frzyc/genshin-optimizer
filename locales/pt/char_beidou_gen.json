@@ -37,6 +37,24 @@
       "10": "Aplica o <electro>Elemento Electro</electro> para a Beidou ao ativar.",
       "11": "<br/>",
       "12": "<i>Conquistar o alto mar! Seguir as ondas e perseguir a tempestade!</i>"
+    },
+    "skillParams": {
+      "0": "Absorção de Dano de Escudo",
+      "1": "Dano Básico",
+      "2": "Aumenta o Dano ao ser Atacado",
+      "3": "Tempo de Recarga",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -51,6 +69,24 @@
       "6": "No máximo 1 descarga de relâmpago pode ser desencadeada por segundo.",
       "7": "<br/>",
       "8": "<i>Com o estrondo do trovão, Haishan foi derrotado.</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Dano de Relâmpago",
+      "2": "Redução de Dano",
+      "3": "Duração",
+      "4": "Tempo de Recarga",
+      "5": "Energia Elemental",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

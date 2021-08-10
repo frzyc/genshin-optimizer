@@ -38,6 +38,24 @@
       "7": "Ajuste la portée du jet.",
       "8": "<br/>",
       "9": "<i>La lignée de Baron Lapinou est impressionnante, mais Amber a décidé d'arrêter de compter à partir du 893e Baron Lapinou.</i>"
+    },
+    "skillParams": {
+      "0": "PV hérités",
+      "1": "DGT explosion",
+      "2": "Temps de recharge",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -46,6 +64,24 @@
       "0": "Tire une pluie de flèches qui inflige des <pyro>DGT Pyro continus</pyro>.",
       "1": "<br/>",
       "2": "<i>Amber est une fille chaleureuse et pleine de passion.</i>"
+    },
+    "skillParams": {
+      "0": "DGT pluie de flèches",
+      "1": "DGT totaux Pluie de flèches",
+      "2": "Durée",
+      "3": "Temps de recharge",
+      "4": "Énergie élémentaire",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

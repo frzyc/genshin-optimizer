@@ -30,6 +30,24 @@
       "1": "Opponents hit by the flames will grant Yanfei the maximum number of Scarlet Seals.",
       "2": "<br/>",
       "3": "<i>Apart from their legal uses, Yanfei's seals also come with her customized additional terms and conditions. Well, it's not as if the Ministry of Civil Affairs can change the laws of nature.</i>"
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "CD",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -46,6 +64,24 @@
       "5": "The effects of Brilliance will end if Yanfei leaves the field or falls in battle.",
       "6": "<br/>",
       "7": "<i>\"Here are the full terms for this matter of life and death — by which I mean my life and your death!\"</i>"
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "",
+      "2": "Scarlet Seal Grant Interval",
+      "3": "Charged Attack DMG Bonus",
+      "4": "Duration",
+      "5": "CD",
+      "6": "Energy Cost",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

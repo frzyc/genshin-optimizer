@@ -37,6 +37,24 @@
       "8": "Bennett takes no damage from being launched.",
       "9": "<br/>",
       "10": "<i>An attack that combines Bennett's dreams and passion with Pyro. But passion is sometimes overblown, and Pyro sometimes blows over.</i>"
+    },
+    "skillParams": {
+      "0": "Press DMG",
+      "1": "Charge Level 1 DMG",
+      "2": "Charge Level 2 DMG",
+      "3": "Explosion DMG",
+      "4": "CD",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -52,6 +70,24 @@
       ],
       "4": "<br/>",
       "5": "<i>Benny's Adventure Team's adventures are always fraught with unexpected danger. However, Bennett is more inclined to call them \"journeys full of wonder, excitement, and beauty.\"</i>"
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "Continuous Regeneration Per Sec",
+      "2": "ATK Bonus Ratio",
+      "3": "Duration",
+      "4": "CD",
+      "5": "Energy Cost",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

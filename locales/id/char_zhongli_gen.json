@@ -48,6 +48,24 @@
       "17": "Karakter yang berada dalam perlindungan Jade Shield akan menyebabkan semua Elemental RES dan Physical RES musuh di area kecil sekitarnya berkurang 20%. Efek tersebut tidak dapat ditumpuk.",
       "18": "<br/>",
       "19": "<i>Seorang ahli batu sejati dapat mengukir batu dan membentuk emas.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Batu/DMG Resonansi",
+      "1": "Cooldown One-tap",
+      "2": "DMG Menahan",
+      "3": "Ketahanan Dasar Perisai",
+      "4": "Bonus Ketahanan Perisai",
+      "5": "Durasi Perisai",
+      "6": "CD (Tahan)",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -59,6 +77,24 @@
       "3": "Musuh yang terkena efek <geo>Petrification</geo> tidak dapat bergerak.",
       "4": "<br/>",
       "5": "<i>Meteor yang jatuh untuk menghukum ketidakadilan.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Durasi Petrification",
+      "2": "Cooldown",
+      "3": "Energy",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

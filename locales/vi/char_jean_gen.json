@@ -32,6 +32,24 @@
       "5": "Trong khi sử dụng kỹ năng không thể di chuyển.",
       "6": "<br/>",
       "7": "<i>Đồng hành cùng với Jean, là cơn gió bảo vệ đồng đội khỏi nguy hiểm.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Tiêu Hao Thể Lực",
+      "2": "Thời Gian Tối Đa",
+      "3": "CD",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -48,6 +66,24 @@
       ],
       "5": "<br/>",
       "6": "<i>Ân trạch của gió như bồ công anh trải rộng, là căn nguyên và lòng tốt của sự thủ hộ từ Jean.</i>"
+    },
+    "skillParams": {
+      "0": "ST Bạo Phát",
+      "1": "Sát thương trong vùng đất",
+      "2": "Vùng đất phát động trị liệu",
+      "3": "Kéo dài trị liệu",
+      "4": "CD",
+      "5": "Năng Lượng Nguyên Tố",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

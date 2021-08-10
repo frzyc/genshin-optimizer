@@ -26,6 +26,24 @@
       "0": "Ruft den Feuer spuckenden Guoba herbei, der Gegner vor ihm während der Wirkungsdauer immer wieder mit Feuer bespuckt und <pyro>Pyro-Flächenschaden</pyro> verursacht.",
       "1": "<br/>",
       "2": "<i>Guoba mag sein Essen scharf. Ob er sein Essen so scharf verträgt, ist allerdings eine andere Sache.</i>"
+    },
+    "skillParams": {
+      "0": "Feuer-SCH",
+      "1": "Abklingzeit",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -35,6 +53,24 @@
       "1": "Das Feuerrad bewegt sich während der Wirkungsdauer mit Xiangling und fügt allen Gegnern in seiner Bahn <pyro>Pyro-Schaden</pyro> zu.",
       "2": "<br/>",
       "3": "<i>Das soll ein Feuer sein? Das ist höchstens ein Feuerchen!</i>"
+    },
+    "skillParams": {
+      "0": "Wirbel-SCH Phase 1",
+      "1": "Wirbel-SCH Phase 2",
+      "2": "Wirbel-SCH Phase 3",
+      "3": "Feuerrad-SCH",
+      "4": "Dauer",
+      "5": "Abklingzeit",
+      "6": "Elementarenergie",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

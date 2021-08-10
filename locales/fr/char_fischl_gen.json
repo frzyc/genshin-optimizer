@@ -32,6 +32,24 @@
       "5": "<br/>",
       "6": "<i>« Vous ne méritez pas que je gaspille mon pouvoir sur vous... Oz, fais pleuvoir les éclairs de la justice. »</i>",
       "7": "<i>—— « Fleurs pour la princesse Fischl - Tome IV : Adieu, maîtresse. »</i>"
+    },
+    "skillParams": {
+      "0": "DGT d'Oz",
+      "1": "DGT à l'invocation",
+      "2": "Durée d'Oz",
+      "3": "Temps de recharge",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -48,6 +66,24 @@
       "5": "<br/>",
       "6": "<i>« ... De toutes les bêtes suivant le sang maudit, seul le seigneur corbeau, dont les yeux ont été témoins de la destruction de mille mondes, était capable de comprendre sa grandeur. Et, la recouvrant d'un voile d'ébène, il fit le serment de la protéger à jamais. »</i>",
       "7": "<i>—— « Fleurs pour la princesse Fischl - Tome I : Apocalypse »</i>"
+    },
+    "skillParams": {
+      "0": "DGT foudre",
+      "1": "Temps de recharge",
+      "2": "Énergie élémentaire",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

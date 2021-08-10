@@ -37,6 +37,24 @@
       "6": "Ajuste la zone où la compétence sera lancée.",
       "7": "<br/>",
       "8": "<i>Cette étrange dispositif rocheux est semblable à l'art même de l'alchimie : né de la terre et aspirant au ciel.</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "DGT Germe éphémère",
+      "2": "Durée",
+      "3": "Temps de recharge",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -48,6 +66,24 @@
       "3": "Les DGT d'explosion et les DGT des Germes fatals ne génèrent pas de Germes éphémères.",
       "4": "<br/>",
       "5": "<i>Sous les commandes du Kreideprinz, les forces habitant le sol émergent en une marée implacable.</i>"
+    },
+    "skillParams": {
+      "0": "DGT explosion",
+      "1": "DGT Germe fatal",
+      "2": "Temps de recharge",
+      "3": "Énergie élémentaire",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

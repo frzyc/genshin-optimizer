@@ -28,6 +28,24 @@
       "1": "Konzentriert kurze Zeit nach der Explosion die verströmende Kälte zu einem Schichtfrostfeld, das Figuren mit Einhändern, Großschwertern und Stangenwaffen die <cryo>Kryo-Kraft</cryo> verleiht.",
       "2": "<br/>",
       "3": "<i>„Es knistert in sonst völliger Stille. Die Bäche sind zugefroren und dicke Schneewolken ziehen auf. Nach dem Öffnen der Tore zum Altar ergeht es dem Bösen schlecht.“</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Elementarumwandlungsdauer",
+      "2": "Dauer des Feldes",
+      "3": "Abklingzeit",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -37,6 +55,24 @@
       "1": "Beim Zerspringen verursachen die Seelenklingen <cryo>Kryo-Flächenschaden</cryo> und schleudern Gegner weg.",
       "2": "<br/>",
       "3": "<i>„Erhört meine Worte! Dieses Schwert lässt Himmel und Erde beben, auf dass sie die eisige Kälte erfahren!“</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Abklingzeit",
+      "2": "Elementarenergie",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

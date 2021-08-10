@@ -28,6 +28,24 @@
       "1": "Después de un breve periodo de tiempo, el aire frío creado por la explosión Cryo se concentra en un campo de estratos de escarcha, dentro del cual se <cryo>imbuye del elemento Cryo</cryo> a los personajes que usan espadas ligeras, mandobles y lanzas.",
       "2": "<br/>",
       "3": "<i>“Las joyas linlang resuenan en medio del silencio. Los ríos están quietos y las nubes se llenan de escarcha. Cuando las puertas del altar se abren, el mal es desterrado”.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Duración del elemento imbuido",
+      "2": "Duración del campo",
+      "3": "TdE",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -36,6 +54,24 @@
       "0": "Chongyun crea unos sellos con sus manos para invocar tres filos espirituales gigantes que caen a la tierra uno tras otro, explotando al impactar contra el suelo, infligiendo <cryo>Daño Cryo en el AdE</cryo> y lanzando por los aires a sus enemigos.",
       "1": "<br/>",
       "2": "<i>“Así como del hielo nace la escarcha, mi hoja trascendente sacude el cielo y la tierra. ¡Atiende a mi llamado y ven aquí!”.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "TdE",
+      "2": "Energía Elemental",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

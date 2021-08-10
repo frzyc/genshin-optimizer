@@ -27,6 +27,24 @@
       "1": "Không thể di chuyển nhanh đến phía sau kẻ địch có thể hình lớn.",
       "2": "<br/>",
       "3": "<i>Lời thú tội với nữ tu Rosaria sẽ không được tha thứ. Ngược lại, tội càng nặng thì hình phạt càng giá lạnh.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "CD",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -36,6 +54,24 @@
       "1": "Khi băng thương tồn tại, nó sẽ liên tục phát ra hơi lạnh, gây <cryo>Sát Thương Nguyên Tố Băng</cryo> cho kẻ địch gần đó.",
       "2": "<br/>",
       "3": "<i>Quá trình phán xử rất phiền phức, vì vậy cứ trực tiếp thực thi buổi lễ cho cái chết thôi. Rosaria vốn không tin vào Phong Thần nên vấn đề này rất dễ dàng với cô ấy.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Sát Thương Thương Băng Kéo Dài",
+      "2": "Thời Gian Kéo Dài",
+      "3": "CD",
+      "4": "Năng Lượng Nguyên Tố",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

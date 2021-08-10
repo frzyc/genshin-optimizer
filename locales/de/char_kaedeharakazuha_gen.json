@@ -11,7 +11,25 @@
       "6": "<br/>",
       "7": "<i>„Die Ewigkeit zieht im Nu an mir vorbei, wie ein Blatt vom Baume fällt und derweil tausende Herbste vergehen. So fälle ich diesen Ahorn, um die Antwort auf alle Fragen zu erhalten.“</i>"
     },
-    "slashdmg": "Schwerthieb-SCH"
+    "slashdmg": "Schwerthieb-SCH",
+    "skillParams": {
+      "0": "Schwerthieb-SCH",
+      "1": "Fortlaufender SCH",
+      "2": "Zusätzlicher Elementar-SCH",
+      "3": "Dauer",
+      "4": "Abklingzeit",
+      "5": "Elementarenergie",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
   },
   "name": "Kaedehara Kazuha",
   "title": "Tiefrote Blätter jagen wilde Wellen",
@@ -55,6 +73,24 @@
       "11": "Der mit Midare Ranzan verursachte Schaden gilt als Schaden von Angriffen aus dem Fall.",
       "12": "<br/>",
       "13": "<i>„Trübseliger Wind pfeift durch den Ahorn, während Götter und Menschen altern und sich die Berge in herbstlichem Rot kleiden.“</i>"
+    },
+    "skillParams": {
+      "0": "SCH bei Drücken",
+      "1": "Abklingzeit für Drücken",
+      "2": "SCH bei Gedrückthalten",
+      "3": "Abklingzeit für Gedrückthalten",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

@@ -36,6 +36,24 @@
       "5": "Le paravent d'astrolabe est une <geo>construction Géo</geo> qui peut bloquer certaines attaques mais ne peut pas être escaladée. Il ne peut exister qu'un seul paravent à la fois.",
       "6": "<br/>",
       "7": "<i>Les étoiles sont dispersées dans le ciel nocturne, les pions sont prêts sur l'échiquier divin. Alors, le paravent d'astrolabe commence à s'étendre.</i>"
+    },
+    "skillParams": {
+      "0": "PV hérités",
+      "1": "DGT compétence",
+      "2": "Temps de recharge",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -45,6 +63,24 @@
       "1": "Si le paravent d'astrolabe est actif lorsque cette attaque est exécutée, il l'accompagne de tirs de jade supplémentaires.",
       "2": "<br/>",
       "3": "<i>Éparses sont les ténèbres quand les étoiles sont éclatées.</i>"
+    },
+    "skillParams": {
+      "0": "DGT par gemme",
+      "1": "Temps de recharge",
+      "2": "Énergie élémentaire",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

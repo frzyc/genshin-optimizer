@@ -29,6 +29,24 @@
       "2": "Dimulai dengan 2 kali penggunaan.",
       "3": "<br/>",
       "4": "<i>Menurut legenda dari negara lain, dunia ini suatu hari akan dihancurkan oleh dua roda angin raksasa. Keahlian Xiao dalam menggunakan tombak tiada duanya dan dapat menebas musuh seperti dua roda angin raksasa dalam legenda.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Cooldown",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -47,6 +65,24 @@
       "6": "Efek dari skill berakhir saat Xiao keluar dari medan pertempuran.",
       "7": "<br/>",
       "8": "<i>Saat mengenakan topeng Yaksha, Xiao mengambil bentuk Vigilant Yaksha — sang penakluk iblis yang mengerikan. Dia memperoleh kekuatan yang sangat besar, namun peningkatan kekuatan tersebut harus dibayar dengan rasa sakit yang sama besarnya. Dia juga disebut \"The Bane of All Evil.\"</i>"
+    },
+    "skillParams": {
+      "0": "Bonus Normal/Charged/Plunging Attack",
+      "1": "Pengurangan HP",
+      "2": "Durasi",
+      "3": "Cooldown",
+      "4": "Energy",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

@@ -30,6 +30,24 @@
       "1": "Lorsque des ennemis sont touchés, Yanfei gagne le nombre maximum de sceaux écarlates.",
       "2": "<br/>",
       "3": "<i>En plus de leur valeur juridique, les sceaux de Yanfei présentent des conditions d'utilisation très personnalisées. Après tout, ce n'est pas comme si le Bureau des Affaires Civiles pouvait changer les lois de la nature.</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "Temps de recharge",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -46,6 +64,24 @@
       "5": "Les effets de Brillance se dissipent lorsque Yanfei quitte le champ de bataille ou qu'elle est vaincue.",
       "6": "<br/>",
       "7": "<i>« Veuillez trouver ici les termes de cette question de vie ou de mort, et par là j'entends ma vie et votre mort ! »</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "",
+      "2": "Intervalle entre les sceaux écarlates",
+      "3": "Bonus ATQ chargée",
+      "4": "Durée",
+      "5": "Temps de recharge",
+      "6": "Énergie élémentaire",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

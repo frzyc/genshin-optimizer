@@ -27,6 +27,24 @@
       "1": "Setelah jeda singkat, udara dingin yang diciptakan oleh ledakan Cryo akan bersatu menjadi sebuah Chonghua Frost Field, dan karakter lain yang menggunakan Sword, Claymore, dan Polearm akan menerima <cryo>Cryo Infusion</cryo>.",
       "2": "<br/>",
       "3": "<i>\"Dengan bunyi sejernih kristal, dan semua menjadi sunyi. Sungai tidak bergerak, dan awan-awan penuh dengan es. Gerbang altar terbuka, dan kejahatan dimusnahkan.\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Durasi Infusion",
+      "2": "Durasi Field",
+      "3": "Cooldown",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -36,6 +54,24 @@
       "1": "Pedangnya mengakibatkan <cryo>Cryo DMG area</cryo> dan menghempas musuh saat meledak.",
       "2": "<br/>",
       "3": "<i>\"Seiring dengan es yang melahirkan dingin membeku, pedangku menggetarkan langit dan bumi. Dengarkan panggilanku, wahai pedang jiwa!\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Cooldown",
+      "2": "Energy",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

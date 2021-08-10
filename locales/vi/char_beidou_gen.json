@@ -39,6 +39,24 @@
       ],
       "10": "<br/>",
       "11": "<i>Thuyền Meo Meo đuổi theo sóng biển.</i>"
+    },
+    "skillParams": {
+      "0": "Khiên hấp thụ",
+      "1": "Sát Thương Cơ Bản",
+      "2": "ST Tăng Sau Khi Nhận Tấn Công",
+      "3": "CD",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -55,6 +73,24 @@
       "5": "Mỗi giây tối đa kích hoạt 1 tia sét.",
       "6": "<br/>",
       "7": "<i>Sấm sét chói lọi, dời non lấp bể.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Sát Thương Sấm Sét",
+      "2": "Miễn Sát Thương",
+      "3": "Thời Gian Kéo Dài",
+      "4": "CD",
+      "5": "Năng Lượng Nguyên Tố",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

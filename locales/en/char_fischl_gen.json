@@ -32,6 +32,24 @@
       "5": "<br/>",
       "6": "<i>\"My time is most precious, and I shall not waste it on the likes of you... Go, Oz, fall upon them, and bring down upon them your Rachsüchtig Blitz, that which tears open the long night.\"</i>",
       "7": "<i>—Flowers for Princess Fischl (IV): Farewell Frau Welt</i>"
+    },
+    "skillParams": {
+      "0": "Oz's ATK DMG",
+      "1": "Summoning DMG",
+      "2": "Oz's Duration",
+      "3": "CD",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -47,6 +65,24 @@
       "3": "<br/>",
       "4": "<i>\"...In the hordes of beasts that follow the cursed blood, only Prince Nachtraben, who bore witness to the extinction of a thousand worlds, knows her true greatness. Thus the night wings he spreads are his eternal promise to protect Her Royal Highness.\"</i>",
       "5": "<i>—Flowers for Princess Fischl (I): End Time Zersetzung</i>"
+    },
+    "skillParams": {
+      "0": "Falling Thunder DMG",
+      "1": "CD",
+      "2": "Energy Cost",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

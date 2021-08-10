@@ -32,6 +32,24 @@
       "6": "Começa com 2 cargas.",
       "7": "<br/>",
       "8": "<i>A Bomba Saltitante é a melhor amiga de Klee! Ela não consegue deixar de apresentá-la a todos.</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Bomba Saltitante",
+      "1": "Dano da Mina",
+      "2": "Duração da Mina",
+      "3": "Tempo de Recarga",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -40,6 +58,24 @@
       "0": "Delícia Ardente de Klee! Ao longo da duração dessa habilidade, evoca continuamente os ataques de Faíscas Explosivas para atacar inimigos próximos, infligindo <pyro>Dano Pyro em uma AdE</pyro>.",
       "1": "<br/>",
       "2": "<i>Todos os cavaleiros acreditam que Klee deve ser uma estrela da sorte, tendo cuidado para nunca se machucarem com suas próprias bombas...</i>"
+    },
+    "skillParams": {
+      "0": "Dano das Faíscas Explosivas",
+      "1": "Duração",
+      "2": "Tempo de Recarga",
+      "3": "Energia Elemental",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

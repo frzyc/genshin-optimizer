@@ -26,6 +26,24 @@
       "0": "Menciptakan Wind Spirit kecil yang menarik musuh dan obyek ke lokasi Wind Spirit sebelum menghempas musuh di area tersebut; juga mengakibatkan <anemo>Anemo DMG</anemo>.",
       "1": "<br/>",
       "2": "<i>Ini sedikit memalukan, tetapi meskipun elemen kehidupan yang dilahirkan melalui prosedur ini menghilang dengan sangat cepat, mereka cukup berguna saat bertualang. Bahkan percobaan yang gagal pun dapat memiliki penggunaan yang praktis.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Cooldown",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -39,6 +57,24 @@
       "5": "Elemental Absorption hanya dapat muncul satu kali dalam sekali penggunaan.",
       "6": "<br/>",
       "7": "<i>Sucrose dulunya selalu memberikan nama kepada Anemo Hypostases miliknya. Namun mereka berkembang biak dengan cepat sampai melampaui Baron Bunny ke-893.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Berkelanjutan",
+      "1": "Tambahan Elemental DMG",
+      "2": "Durasi",
+      "3": "Cooldown",
+      "4": "Energy",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

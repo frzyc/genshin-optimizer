@@ -12,6 +12,24 @@
       "3": "La cantidad de Vida curada es proporcional a la DEF de Noelle.",
       "4": "<br/>",
       "5": "<i>Noelle es una fiel criada y, al mismo tiempo, una valiente caballera.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Absorción",
+      "2": "Curación",
+      "3": "Prob. de curación",
+      "4": "Duración",
+      "5": "TdE",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -27,6 +45,24 @@
       ],
       "3": "<br/>",
       "4": "<i>Lo que debe limpiarse a veces no es solo el polvo...</i>"
+    },
+    "skillParams": {
+      "0": "Daño de explosión",
+      "1": "Daño de habilidad",
+      "2": "Aumento de ATQ",
+      "3": "Duración",
+      "4": "TdE",
+      "5": "Energía Elemental",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "name": "Noelle",

@@ -34,6 +34,24 @@
       "8": "- Phase 2: Startet einen dreistufigen Angriff, der beachtlichen <pyro>Pyro-Schaden</pyro> und am Ende eine Explosion verursacht, bei der Bennett und seine Gegner weggeschleudert werden. Dabei erleidet Bennett jedoch keinen Schaden.",
       "9": "<br/>",
       "10": "<i>Bennett steckt seine ganze Leidenschaft und Träume in diesen Pyro-Angriff. Manchmal übertreibt er es aber damit und verursacht eine Explosion.</i>"
+    },
+    "skillParams": {
+      "0": "SCH bei Drücken",
+      "1": "SCH bei Aufladung (Phase 1)",
+      "2": "SCH bei Aufladung (Phase 2)",
+      "3": "Explosions-SCH",
+      "4": "Abklingzeit",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -47,6 +65,24 @@
       "5": "- Verleiht den Figuren auf dem Feld das <pyro>Pyro-Attribut</pyro>.",
       "6": "<br/>",
       "7": "<i>Bennys Abenteurergruppe gerät jedes Mal aufs Neue in Gefahr. Als einziges Mitglied findet Bennett aber, dass die Abenteuer dadurch überhaupt erst an Spaß und Spannung gewinnen.</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Fortlaufende Heilung",
+      "2": "ANG-Bonus-Rate",
+      "3": "Dauer",
+      "4": "Abklingzeit",
+      "5": "Elementarenergie",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

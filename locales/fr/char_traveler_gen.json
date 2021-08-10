@@ -14,6 +14,24 @@
         "6": "Sa recharge d'énergie élémentaire augmente.",
         "7": "<br/>",
         "8": "<i>Vous discutez des différents chemins que peut prendre l'électricité avec Paimon.</i>"
+      },
+      "skillParams": {
+        "0": "DGT compétence",
+        "1": "Restauration énergie élémentaire",
+        "2": "Bonus recharge d'énergie",
+        "3": "Durée",
+        "4": "Durée d'amulette d'abondance",
+        "5": "Temps de recharge",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": "",
+        "13": "",
+        "14": "",
+        "15": ""
       }
     },
     "burst": {
@@ -28,6 +46,24 @@
         "5": "Jusqu'à 1 Foudre majestueuse peut être déclenchée toutes les 0,5 s.",
         "6": "<br/>",
         "7": "<i>Vous et Paimon avez étudié la lumière qui traverse les nuages.</i>"
+      },
+      "skillParams": {
+        "0": "DGT compétence",
+        "1": "DGT Foudre majestueuse",
+        "2": "Restauration énergie élémentaire",
+        "3": "Durée",
+        "4": "Temps de recharge",
+        "5": "Énergie élémentaire",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": "",
+        "13": "",
+        "14": "",
+        "15": ""
       }
     },
     "auto": {
@@ -134,6 +170,24 @@
         "8": "Une seule réaction d'absorption élémentaire peut avoir lieu par utilisation.",
         "9": "<br/>",
         "10": "<i>Vous avez discuté de la maîtrise de vos nouveaux pouvoirs Anémo avec Paimon.</i>"
+      },
+      "skillParams": {
+        "0": "DGT de base",
+        "1": "DGT max",
+        "2": "DGT de base explosion",
+        "3": "DGT max explosion",
+        "4": "TdR de base",
+        "5": "TdR charge max",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": "",
+        "13": "",
+        "14": "",
+        "15": ""
       }
     },
     "burst": {
@@ -146,6 +200,24 @@
         "4": "Un seul élément peut être absorbé à la fois.",
         "5": "<br/>",
         "6": "<i>Vous avez étudié le battement des ailes du papillon avec Paimon.</i>"
+      },
+      "skillParams": {
+        "0": "DGT tornade",
+        "1": "Bonus DGT élémentaires",
+        "2": "Durée",
+        "3": "Temps de recharge",
+        "4": "Énergie élémentaire",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": "",
+        "13": "",
+        "14": "",
+        "15": ""
       }
     },
     "passive1": {
@@ -229,6 +301,24 @@
         "4": "Ajuste la zone où la compétence sera lancée.",
         "5": "<br/>",
         "6": "<i>Vous avez parlé avec Paimon de la destination finale des étoiles filantes.</i>"
+      },
+      "skillParams": {
+        "0": "DGT compétence",
+        "1": "Durée de météorite",
+        "2": "Temps de recharge",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": "",
+        "13": "",
+        "14": "",
+        "15": ""
       }
     },
     "burst": {
@@ -240,6 +330,24 @@
         "3": "Le mur de roche est une <geo>construction Géo</geo> qui bloque les attaques et peut être escaladé.",
         "4": "<br/>",
         "5": "<i>Vous avez étudié le pouls des montagnes avec Paimon.</i>"
+      },
+      "skillParams": {
+        "0": "DGT par secousse",
+        "1": "Durée du mur de roche",
+        "2": "Temps de recharge",
+        "3": "Énergie élémentaire",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "8": "",
+        "9": "",
+        "10": "",
+        "11": "",
+        "12": "",
+        "13": "",
+        "14": "",
+        "15": ""
       }
     },
     "passive1": {

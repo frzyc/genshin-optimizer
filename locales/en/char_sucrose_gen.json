@@ -26,6 +26,24 @@
       "0": "Creates a small Wind Spirit that pulls opponents and objects towards its location, launches opponents within its AoE, and deals <anemo>Anemo DMG</anemo>.",
       "1": "<br/>",
       "2": "<i>This is a little embarrassing, but though the elemental lifeforms birthed through this procedure dissipate very rapidly, they are incredibly useful when adventuring. Even failed experiments can have practical applications.</i>"
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "CD",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -39,6 +57,24 @@
       "5": "Elemental Absorption may only occur once per use.",
       "6": "<br/>",
       "7": "<i>Sucrose used to give names to her volatile Anemo Hypostases, but their line of heirs quickly grew to surpass Baron Bunny the 893rd.</i>"
+    },
+    "skillParams": {
+      "0": "DoT",
+      "1": "Additional Elemental DMG",
+      "2": "Duration",
+      "3": "CD",
+      "4": "Energy Cost",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

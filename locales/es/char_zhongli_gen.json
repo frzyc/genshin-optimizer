@@ -47,6 +47,24 @@
       "16": "Cuando un personaje se encuentra protegido por este escudo, todas las RES Elementales y la RES Física de los enemigos cercanos a él en una pequeña AdE se reducen en un 20%. Este efecto no puede acumularse.",
       "17": "<br/>",
       "18": "<i>Un verdadero maestro de la piedra puede tallar jade y dar forma al oro.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de cresta de piedra/Daño de resonancia",
+      "1": "TdE al pulsar una vez",
+      "2": "Daño al mantener pulsado",
+      "3": "Absorción base de escudo",
+      "4": "Absorción adicional del escudo",
+      "5": "Duración del escudo",
+      "6": "TdE de mantener pulsado",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -58,6 +76,24 @@
       "3": "Los enemigos bajo el efecto de <geo>Petrificación</geo> no pueden moverse.",
       "4": "<br/>",
       "5": "<i>El meteorito que cae castiga a los injustos.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Tiempo de petrificación",
+      "2": "TdE",
+      "3": "Energía Elemental",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

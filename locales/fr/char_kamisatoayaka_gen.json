@@ -13,6 +13,24 @@
       ],
       "4": "<br/>",
       "5": "<i>« Le blizzard dissimule les pensées du héron, au cœur rempli de pitié. »</i>"
+    },
+    "skillParams": {
+      "0": "DGT coupure",
+      "1": "DGT floraison",
+      "2": "Durée",
+      "3": "Temps de recharge",
+      "4": "Énergie élémentaire",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "name": "Kamisato Ayaka",
@@ -42,6 +60,24 @@
       "0": "Ayaka invoque une fleur glacée qui projette les ennemis proches, leur infligeant des <cryo>DGT Cryo de zone</cryo>.",
       "1": "<br/>",
       "2": "<i>« Les nuages enveloppent la lune, le désir descend tel un brouillard, emplissant le cœur du voyageur. »</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "Temps de recharge",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "sprint": {

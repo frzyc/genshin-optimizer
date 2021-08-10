@@ -41,6 +41,24 @@
       "10": "El estado de <strong>mariposa excelsa</strong> se disipará cuando su duración termine, o cuando Hu Tao se retire del combate o sea derrotada.",
       "11": "<br/>",
       "12": "<i>La primera regla para aprender la técnica de lanza de Hu Tao es: “Las lanzas abren el camino hacia el inframundo, mientras que las mariposas hacen de puente con él”.</i>"
+    },
+    "skillParams": {
+      "0": "Consumo de habilidad",
+      "1": "Aumento de ATQ",
+      "2": "Daño de pétalos sangrientos",
+      "3": "Duración de pétalos sangrientos",
+      "4": "Duración de habilidad",
+      "5": "TdE",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -51,6 +69,24 @@
       "2": "Si la Vida de Hu Tao es inferior o igual al 50% al atacar con esta habilidad, infligirá mayor daño y regenerará más Vida.",
       "3": "<br/>",
       "4": "<i>Si un alma que ya ha dejado este mundo sigue revoloteando por él a sus anchas, causará una gran preocupación a la Funeraria El Camino. La cremación es el método que más tranquiliza a Hu Tao, ya que cuanto más nerviosa está, más grandes son sus llamas.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Daño de habilidad con Vida baja",
+      "2": "Regeneración",
+      "3": "Regeneración con Vida baja",
+      "4": "TdE",
+      "5": "Energía Elemental",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

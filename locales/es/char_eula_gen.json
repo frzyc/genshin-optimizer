@@ -19,6 +19,24 @@
       "12": "Cada carga de corazón impasible consumida se convertirá en una crioespada de vacío que inflige <cryo>Daño Cryo</cryo> a los enemigos cercanos.",
       "13": "<br/>",
       "14": "<i>“Así se daba la vuelta la espuma del mar, engullendo la corona de la aristocracia a su paso. Entonces, en todas y cada una de las gotas de agua que salieron despedidas de la gélida marea se reflejó una corona dorada, y cada gota de espuma emitía un glorioso brillo”.</i>"
+    },
+    "skillParams": {
+      "0": "Daño al pulsar una vez",
+      "1": "Daño al mantener pulsado",
+      "2": "Daño de crioespada de vacío",
+      "3": "Aumento de DEF",
+      "4": "Duración de corazón impasible",
+      "5": "Reducción de RES Física",
+      "6": "Reducción de RES Cryo",
+      "7": "Duración de reducción de RES",
+      "8": "TdE al pulsar una vez",
+      "9": "TdE de mantener pulsado",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "name": "Eula",
@@ -53,6 +71,24 @@
       "4": "Cuando Eula se retire del combate, la espada luminosa estallará inmediatamente.",
       "5": "<br/>",
       "6": "<i>Hundirse es algo muy sencillo. Sin embargo, Eula prefiere congelar la marea que se aproxima.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Daño básico de espada luminosa",
+      "2": "Daño por cada carga",
+      "3": "Límite de cargas de energía",
+      "4": "TdE",
+      "5": "Energía Elemental",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

@@ -34,6 +34,24 @@
       "8": "Nếu địch đang trong trạng thái dẫn điện, sẽ căn cứ theo số tầng cộng dồn mà gây thêm lượng lớn sát thương, và xóa hiệu quả dẫn điện.",
       "9": "<br/>",
       "10": "<i>Màu sắc của lôi điện là màu sắc đầy mê hoặc của ma nữ tường vi.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Nhấn",
+      "1": "CD Nhấn",
+      "2": "Sát Thương Nhấn Giữ Không Dẫn Lôi",
+      "3": "Sát Thương Nhấn Giữ Dẫn Lôi Tầng 1",
+      "4": "Sát Thương Nhấn Giữ Dẫn Lôi Tầng 2",
+      "5": "Sát Thương Nhấn Giữ Dẫn Lôi Tầng 3",
+      "6": "CD Nhấn Giữ",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -43,6 +61,24 @@
       "1": "Trong thời gian tồn tại, Tường Vi Sấm Sét sẽ tiếp tục phóng điện công kích vào phạm vi công kích của địch, gây <electro>Sát Thương Nguyên Tố Lôi</electro>.",
       "2": "<br/>",
       "3": "<i>Đóa tường vi này thật đẹp, nhưng lại có gai chết người.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Phóng Điện",
+      "1": "Thời Gian Kéo Dài",
+      "2": "CD",
+      "3": "Năng Lượng Nguyên Tố",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

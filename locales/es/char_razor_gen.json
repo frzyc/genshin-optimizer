@@ -36,6 +36,24 @@
       "9": "Cada insignia Electro eliminada de esta manera se convertirá en Energía Elemental.",
       "10": "<br/>",
       "11": "<i>En el momento en que cae el rayo , a veces se puede ver en lo más profundo de los ojos de Razor la mirada de un depredador observando a su presa.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad al pulsar una vez",
+      "1": "Daño de habilidad al mantener pulsado",
+      "2": "Aumento de Rec. de Energía",
+      "3": "Energía recuperada",
+      "4": "Duración de insignia Electro",
+      "5": "TdE al pulsar una vez",
+      "6": "TdE de mantener pulsado",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -57,6 +75,24 @@
       "7": "Al hacerlo, obtendrá una cierta cantidad de Energía Elemental en proporción a la duración restante de la habilidad. Razor solo podrá recuperar un máximo de 10 pts. de Energía de esta manera.",
       "8": "<br/>",
       "9": "<i>El lobo se ha despertado. La cacería está en marcha.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de explosión",
+      "1": "Daño del espíritu del lobo",
+      "2": "Aumento de Vel. de ATQ Normal",
+      "3": "Aumento de RES Electro",
+      "4": "Duración",
+      "5": "TdE",
+      "6": "Energía Elemental",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

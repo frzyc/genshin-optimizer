@@ -37,6 +37,24 @@
       "10": "- Verleiht Beidou beim Zuschlagen das <electro>Elektro-Attribut</electro>.",
       "11": "<br/>",
       "12": "<i>Reite auf den Wellen und ergreife die Blitze.</i>"
+    },
+    "skillParams": {
+      "0": "Schildstärke ",
+      "1": "Basis-SCH",
+      "2": "SCH-Bonus bei erlittenem Angriff",
+      "3": "Abklingzeit",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -51,6 +69,24 @@
       "6": "Max. 1 Kettenblitz pro Sekunde möglich.",
       "7": "<br/>",
       "8": "<i>Trommelnder Donner bricht herein und teilt Meere und Berge.</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Kettenblitz-SCH",
+      "2": "SCH-Minderung",
+      "3": "Dauer",
+      "4": "Abklingzeit",
+      "5": "Elementarenergie",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

@@ -27,6 +27,24 @@
       "1": "This ability cannot be used to travel behind opponents of a larger build.",
       "2": "<br/>",
       "3": "<i>Those who confess to Sister Rosaria will be granted no absolution. All sinners shall be met with the piercing cold of punishment proportionate to the weight of their sins.</i>"
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "CD",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -36,6 +54,24 @@
       "1": "While active, the Ice Lance periodically releases a blast of cold air, dealing <cryo>Cryo DMG</cryo> to surrounding opponents.",
       "2": "<br/>",
       "3": "<i>Judgment is such a tedious ordeal — much easier to skip that phase and get straight to the last rites. Rosaria was never very devoted to the Anemo God anyway, which makes performing them all too easy.</i>"
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "Ice Lance DoT",
+      "2": "Duration",
+      "3": "CD",
+      "4": "Energy Cost",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

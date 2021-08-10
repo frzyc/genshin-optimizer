@@ -13,6 +13,24 @@
       "5": "Lượng trị liệu dựa trên phòng ngự của Noelle.",
       "6": "<br/>",
       "7": "<i>Noelle tuy là hầu gái nhưng cũng là một kỵ sĩ kiên cường.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Lượng hấp thu",
+      "2": "Lượng trị liệu",
+      "3": "Tỷ lệ kích hoạt trị liệu",
+      "4": "Thời Gian Kéo Dài",
+      "5": "CD",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -28,6 +46,24 @@
       ],
       "3": "<br/>",
       "4": "<i>Đôi lúc không chỉ có bụi bẩn mới cần quét dọn...</i>"
+    },
+    "skillParams": {
+      "0": "ST Bạo Phát",
+      "1": "Sát Thương Kỹ Năng",
+      "2": "Tấn Công Tăng",
+      "3": "Thời Gian Kéo Dài",
+      "4": "CD",
+      "5": "Năng Lượng Nguyên Tố",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "name": "Noelle",

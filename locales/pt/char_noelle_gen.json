@@ -11,6 +11,24 @@
       "5": "A quantidade de Vida curada quando a recuperação é desencadeada é baseada na DEF de Noelle.",
       "6": "<br/>",
       "7": "<i>Noelle é ao mesmo tempo uma empregada dedicada e uma cavaleira corajosa.</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Dano de Absorção",
+      "2": "Cura",
+      "3": "Probabilidade de Cura",
+      "4": "Duração",
+      "5": "Tempo de Recarga",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -26,6 +44,24 @@
       ],
       "3": "<br/>",
       "4": "<i>Às vezes, não é apenas poeira que precisa ser varrida...</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Explosão",
+      "1": "Dano de Habilidade",
+      "2": "Aumento de ATQ",
+      "3": "Duração",
+      "4": "Tempo de Recarga",
+      "5": "Energia Elemental",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "name": "Noelle",

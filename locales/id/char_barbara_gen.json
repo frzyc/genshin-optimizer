@@ -34,6 +34,24 @@
       ],
       "4": "<br/>",
       "5": "<i>Musik Barbara adalah sihir yang dapat menyembuhkan teman-temannya.</i>"
+    },
+    "skillParams": {
+      "0": "Pemulihan HP/Hit",
+      "1": "Regenerasi HP",
+      "2": "DMG Tetesan Air",
+      "3": "Durasi",
+      "4": "Cooldown",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -42,6 +60,24 @@
       "0": "Memulihkan HP karakter teman dan seluruh anggota party dalam jumlah besar, jumlah HP yang dipulihkan berdasarkan pada Max HP Barbara.",
       "1": "<br/>",
       "2": "<i>Keinginan Barbara untuk menyembuhkan adalah dorongan baginya untuk terus bertarung dan bernyanyi.</i>"
+    },
+    "skillParams": {
+      "0": "Pemulihan HP",
+      "1": "Cooldown",
+      "2": "Energy",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

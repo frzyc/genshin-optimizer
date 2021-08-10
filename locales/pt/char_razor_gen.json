@@ -36,6 +36,24 @@
       "9": "Cada Selo Electro removido dessa maneira será convertido em Energia para o Razor.",
       "10": "<br/>",
       "11": "<i>É quando relâmpagos caem que às vezes você pode ver de relance o olhar de um predador, analisando sua presa profundamente dentro dos olhos do Razor.</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade de Pressionar",
+      "1": "Dano de Habilidade ao Manter Pressionado",
+      "2": "Bônus de Recarga de Energia",
+      "3": "Energia Regenerada",
+      "4": "Duração do Selo Electro",
+      "5": "Recarga do Pressionar",
+      "6": "Recarga ao Manter Pressionado",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -53,6 +71,24 @@
       "9": "Quando Razor deixa o campo, um máximo de 10 de Energia irá ser retornada para ele baseado na duração restante da habilidade.",
       "10": "<br/>",
       "11": "<i>O lobo acordou. A caça começou.</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Explosão",
+      "1": "Dano do Espírito do Lobo",
+      "2": "Aumento da VEL de Ataque Normal",
+      "3": "Aumento da RES Electro",
+      "4": "Duração",
+      "5": "Tempo de Recarga",
+      "6": "Energia Elemental",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

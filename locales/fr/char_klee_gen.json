@@ -32,6 +32,24 @@
       "6": "Klee commence avec 2 charges.",
       "7": "<br/>",
       "8": "<i>La Bombe rebondissante est l'amie fidèle de Klee... Elle veut toujours la présenter à tout le monde.</i>"
+    },
+    "skillParams": {
+      "0": "DGT Bombe rebondissante",
+      "1": "DGT mine",
+      "2": "Durée mine",
+      "3": "Temps de recharge",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -40,6 +58,24 @@
       "0": "Klee s'enflamme ! Invoque une Fleur bombardier qui harcèle les ennemis, infligeant des <pyro>DGT Pyro de zone</pyro>.",
       "1": "<br/>",
       "2": "<i>Les membres de l'Ordre de Favonius sont convaincus qu'une bonne étoile veille sur Klee ; sinon, comment expliquer qu'elle ne se blesse jamais ?</i>"
+    },
+    "skillParams": {
+      "0": "DGT Fleur bombardier",
+      "1": "Durée",
+      "2": "Temps de recharge",
+      "3": "Énergie élémentaire",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

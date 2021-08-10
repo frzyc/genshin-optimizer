@@ -30,6 +30,24 @@
       "1": "Depois de atingir o inimigo, Yanfei obtém uma grande quantidade de Insígnias de Chamas.",
       "2": "<br/>",
       "3": "<i>Apesar de possuírem vínculo legal, as Insígnias de Chamas de Yanfei também têm suas próprias cláusulas adicionais. No final das contas, o Ministério dos Assuntos Civis não pode modificar as leis naturais sozinho.</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Tempo de Recarga",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -46,6 +64,24 @@
       "6": "O efeito de Clarão será eliminado quando Yanfei sair do combate ou for cair na batalha.",
       "7": "<br/>",
       "8": "<i>\"As cláusulas já estão escritas. Assim, por esse meio, estabeleço esse contrato de vida ou morte. É claro, eu vivo e você morre!\"</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "",
+      "2": "Intervalo de Obtenção de Insígnia de Chamas",
+      "3": "Aumenta Dano de Ataque Carregado",
+      "4": "Duração",
+      "5": "Tempo de Recarga",
+      "6": "Energia Elemental",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

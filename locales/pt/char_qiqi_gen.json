@@ -31,6 +31,24 @@
       "5": "Segue o personagem ao redor, causando <cryo>Dano Cryo</cryo> aos inimigos em seu caminho.",
       "6": "<br/>",
       "7": "<i>Eu uso isso para prevenir o aquecimento e a podridão... dos preciosos ingredientes do Dr. Bai.</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Regeneração de Vida por Acerto",
+      "2": "Regeneração Contínua",
+      "3": "Dano do Arauto da Floresta",
+      "4": "Duração",
+      "5": "Tempo de Recarga",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -43,6 +61,24 @@
       "4": "<br/>",
       "5": "<i>\"Eu sou a Preservadora da Fortuna, a Criada da Ressureição.\"</i>",
       "6": "<i>— Qiqi não lembra destas palavras.</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Cura",
+      "2": "Duração",
+      "3": "Tempo de Recarga",
+      "4": "Energia Elemental",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

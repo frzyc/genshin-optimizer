@@ -38,6 +38,24 @@
       ],
       "4": "<br/>",
       "5": "<i>« Vous m'avez aperçue ? Ça doit être une erreur, je suis restée tard au travail. »</i>"
+    },
+    "skillParams": {
+      "0": "PV hérités",
+      "1": "DGT compétence",
+      "2": "Durée",
+      "3": "Temps de recharge",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -47,6 +65,24 @@
       "1": "Tant qu'elle est active, la perle libère des éclats de glace de façon continue qui infligent des <cryo>DGT Cryo</cryo> aux ennemis dans la zone.",
       "2": "<br/>",
       "3": "<i>Ganyu sait bien sûr comment invoquer une bruine rafraîchissante ; mais quand il s'agit de combattre, la bruine se change en tempête de neige.</i>"
+    },
+    "skillParams": {
+      "0": "DGT éclats de glace",
+      "1": "Durée",
+      "2": "Temps de recharge",
+      "3": "Énergie élémentaire",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

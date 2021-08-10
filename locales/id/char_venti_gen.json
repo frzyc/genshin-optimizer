@@ -36,6 +36,24 @@
       "9": "Musuh yang terkena oleh Skyward Sonnet akan jatuh ke tanah dengan pelan.",
       "10": "<br/>",
       "11": "<i>Pada hari-hari ketika para Dewa dan manusia berjalan bersama-sama di bumi, surga dipenuhi dengan lagu-lagu yang tak terhitung jumlahnya. Melodi ini sudah lama dilupakan.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Tekan",
+      "1": "Cooldown One-tap",
+      "2": "DMG Menahan",
+      "3": "Cooldown Menahan",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -48,6 +66,24 @@
       "4": "Elemental Absorption hanya dapat terjadi sekali untuk setiap penggunaan skill.",
       "5": "<br/>",
       "6": "<i>Sebagian besar nyanyian pujian Archon Anemo telah hilang dalam waktu. Yang ini melantunkan keahilan dia menguasai angin.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Berkelanjutan",
+      "1": "Tambahan Elemental DMG",
+      "2": "Durasi",
+      "3": "Cooldown",
+      "4": "Energy",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

@@ -14,7 +14,25 @@
       "9": "Mas prefiero depender del viento que corta",
       "10": "Para ser aquel que a la eternidad interroga”.</i>"
     },
-    "slashdmg": "Daño de corte"
+    "slashdmg": "Daño de corte",
+    "skillParams": {
+      "0": "Daño de corte de tormenta",
+      "1": "Daño continuo",
+      "2": "Daño Elemental adicional",
+      "3": "Duración",
+      "4": "TdE",
+      "5": "Energía Elemental",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
   },
   "name": "Kaedehara Kazuha",
   "title": "el Mensajero del Viento",
@@ -60,6 +78,24 @@
       "13": "<i>“Viento que llora",
       "14": "Viejos dioses y gentes",
       "15": "Montañas rojas”.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad al pulsar una vez",
+      "1": "TdE al pulsar una vez",
+      "2": "Daño de habilidad al mantener pulsado",
+      "3": "TdE de mantener pulsado",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

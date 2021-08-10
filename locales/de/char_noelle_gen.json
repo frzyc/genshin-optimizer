@@ -11,6 +11,24 @@
       "5": "Heilkraft basiert auf Noelles VTD.",
       "6": "<br/>",
       "7": "<i>Noelle ist eine hingebungsvolle Magd, aber auch ein zielstrebiger Ritter.</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Stärke",
+      "2": "Heilung",
+      "3": "Wahrscheinlichkeit der Heilung",
+      "4": "Dauer",
+      "5": "Abklingzeit",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -24,6 +42,24 @@
       "4": "- Erhöht Noelles ANG basierend auf Noelles VTD.",
       "5": "<br/>",
       "6": "<i>Was gesäubert werden muss, ist nicht immer nur einfacher Dreck ...</i>"
+    },
+    "skillParams": {
+      "0": "Spezialfähigkeits-SCH",
+      "1": "Fähigkeits-SCH",
+      "2": "ANG-Bonus",
+      "3": "Dauer",
+      "4": "Abklingzeit",
+      "5": "Elementarenergie",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "name": "Noelle",

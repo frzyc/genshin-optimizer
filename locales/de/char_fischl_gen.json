@@ -32,6 +32,24 @@
       "5": "<br/>",
       "6": "<i>„Ihr seid nicht würdig, meine überragenden Kräfte in Aktion zu sehen ... Oz, bring ihnen den Blitz der Rachsucht, der die ewige Nacht aufreißt!“</i>",
       "7": "<i>- „Die Nacht der Prinzessin Fischl – Band 4: Lebe wohl, Frau Welt“</i>"
+    },
+    "skillParams": {
+      "0": "Angriffs-SCH von Oz",
+      "1": "Beschwörungs-SCH",
+      "2": "Vorhandensein von Oz",
+      "3": "Abklingzeit",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -45,6 +63,24 @@
       "5": "<br/>",
       "6": "<i>Unter den Horden der Bestien, die dem verfluchten Blut der Verurteilung folgten, befand sich nur einer, der ihre wahre Größe tatsächlich verstehen konnte, nämlich der Nachtrabenprinz, der Zeuge der Vernichtung tausender Welten war. So breitete er seine dunklen Flügel aus und schlang sie um die Prinzessin. Er schwor, sie auf ewig zu beschützen.</i>",
       "7": "<i>- „Die Nacht der Prinzessin Fischl – Band 1: Zersetzung am Ende der Zeit“</i>"
+    },
+    "skillParams": {
+      "0": "Blitz-SCH",
+      "1": "Abklingzeit",
+      "2": "Elementarenergie",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

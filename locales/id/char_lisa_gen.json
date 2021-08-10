@@ -34,6 +34,24 @@
       "8": "Mengakibatkan tambahan DMG yang besar ke musuh berdasarkan jumlah lapisan Conductive yang mereka miliki dan menghapusnya.",
       "9": "<br/>",
       "10": "<i>Warna Electro Purple adalah warna sang Rose Witch.</i>"
+    },
+    "skillParams": {
+      "0": "DMG One-tap",
+      "1": "CD (Tekan)",
+      "2": "DMG Menahan Non-Conductive",
+      "3": "DMG Menahan 1 Conductive",
+      "4": "DMG Menahan 2 Conductive",
+      "5": "DMG Menahan 3 Conductive",
+      "6": "Cooldown Menahan",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -43,6 +61,24 @@
       "1": "Lightning Rose akan terus memanggil petir untuk menghempas musuh dan mengakibatkan <electro>Electro DMG</electro> selama ia tetap ada.",
       "2": "<br/>",
       "3": "<i>Hati-hati dengan duri mematikan dari mawar yang cantik.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Pelepasan Listrik",
+      "1": "Durasi",
+      "2": "Cooldown",
+      "3": "Energy",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

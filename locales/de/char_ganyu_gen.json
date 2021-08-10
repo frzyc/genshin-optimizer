@@ -34,6 +34,24 @@
       "5": "- Erblüht bei Zerstörung oder Ablauf der Dauer und verursacht <cryo>Kryo-Flächenschaden</cryo>.",
       "6": "<br/>",
       "7": "<i>„Du willst mich gesehen haben? Das musst du dir eingebildet haben. Ich war zu der Zeit noch auf Arbeit.“</i>"
+    },
+    "skillParams": {
+      "0": "Erhaltene LP",
+      "1": "Fähigkeits-SCH",
+      "2": "Dauer",
+      "3": "Abklingzeit",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -43,6 +61,24 @@
       "1": "Die Eisseelenperle lässt während der Wirkungsdauer fortlaufend Eiszapfen fallen, die den Gegnern im Wirkungsbereich <cryo>Kryo-Schaden</cryo> zufügen.",
       "2": "<br/>",
       "3": "<i>Ohne Frage kann Ganyu einen erfrischenden Sommerregen fallen lassen. Für böse Kräfte jedoch zieht ein rauer Schneesturm auf.</i>"
+    },
+    "skillParams": {
+      "0": "Eiszapfen-SCH",
+      "1": "Dauer",
+      "2": "Abklingzeit",
+      "3": "Elementarenergie",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

@@ -26,6 +26,24 @@
       "0": "Cria um pequeno Espírito de Vento que puxa inimigos e objetos em direção a sua localização, lançando os inimigos em AdE e causando <anemo>Dano Anemo</anemo> neles.",
       "1": "<br/>",
       "2": "<i>Isso é um pouco vergonhoso, mas apesar de as formas de vida elementais nascidas através desse procedimento se dissiparem muito rapidamente, elas são incrivelmente úteis durante aventuras. Até mesmo experimentos falhos podem ter aplicações práticas.</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Tempo de Recarga",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -38,6 +56,24 @@
       "4": "Se o Espírito do Vento entrar em contato com os elementos <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, ele irá causar Dano elemental adicional baseado naquele tipo.",
       "5": "Absorção Elemental pode ocorrer apenas uma vez por uso.",
       "6": "<i>Sucrose costumava dar nomes ao seu volátil Anemo Hypostases. Mas a sua linha de herdeiros cresceu rapidamente até ultrapassar o Barão Coelho n° 893.</i>"
+    },
+    "skillParams": {
+      "0": "Dano Contínuo",
+      "1": "Adição de Dano Elemental",
+      "2": "Duração",
+      "3": "Tempo de Recarga",
+      "4": "Energia Elemental",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

@@ -34,6 +34,24 @@
       ],
       "3": "<br/>",
       "4": "<i>El lienzo de las estrellas está escrito en esta pantalla de jade.</i>"
+    },
+    "skillParams": {
+      "0": "Vida de la Pantalla de jade",
+      "1": "Daño de habilidad",
+      "2": "TdE",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -43,6 +61,24 @@
       "1": "Si Devastaestrellas se lanza cuando una Pantalla de jade está cerca, la Pantalla de jade disparará proyectiles de gemas adicionales al mismo tiempo.",
       "2": "<br/>",
       "3": "<i>Las estrellas caen. El silencio desciende.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de gemas",
+      "1": "TdE",
+      "2": "Energía Elemental",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

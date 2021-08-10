@@ -38,6 +38,24 @@
       ],
       "4": "<br/>",
       "5": "<i>\"Kamu melihatku? Pasti salah, aku sedang lembur saat itu.\"</i>"
+    },
+    "skillParams": {
+      "0": "HP Terwariskan",
+      "1": "DMG Skill",
+      "2": "Durasi",
+      "3": "Cooldown",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -47,6 +65,24 @@
       "1": "Selama durasi skill, Sacred Cryo Pearl akan terus menjatuhkan bongkahan es yang mengenai musuh dalam area dan mengakibatkan <cryo>Cryo DMG</cryo>.",
       "2": "<br/>",
       "3": "<i>Ganyu tentunya dapat membuat hujan manis, tapi terhadap iblis dan monster, hujannya menjadi salju yang dingin dan pahit.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Ice Shard",
+      "1": "Durasi",
+      "2": "Cooldown",
+      "3": "Energy",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

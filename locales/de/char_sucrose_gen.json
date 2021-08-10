@@ -26,6 +26,24 @@
       "0": "Beschwört eine kleine Windseele, die Gegner sowie Objekte anzieht und dann wegschleudert, und fügt den Gegnern im Wirkungsbereich <anemo>Anemo-Schaden</anemo> zu.",
       "1": "<br/>",
       "2": "<i>Es ist mir schon ein bisschen peinlich. Die bei diesem Verfahren entstehenden elementaren Lebensformen schwinden zwar nach kurzer Zeit, sind auf Abenteuern aber höchst nützlich. Fehlgeschlagene Experimente haben also auch ihren praktischen Nutzen.</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Abklingzeit",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -39,6 +57,24 @@
       "5": "Elementarumwandlung nur einmal während der Wirkungsdauer möglich.",
       "6": "<br/>",
       "7": "<i>Saccharose wollte ursprünglich jeder instabilen Anemo-Hypostase einen Namen geben. Dieses Vorhaben musste sie jedoch aufgeben, da bald mehr Hypostasen als Generationen von Graf von Hoppel zusammenkamen.</i>"
+    },
+    "skillParams": {
+      "0": "Fortlaufender SCH",
+      "1": "Zusätzlicher Elementar-SCH",
+      "2": "Dauer",
+      "3": "Abklingzeit",
+      "4": "Elementarenergie",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

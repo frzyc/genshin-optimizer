@@ -30,6 +30,24 @@
       "3": "Bei nicht fortgeführter Anwendung innerhalb kurzer Zeit beginnt eine Abklingphase.",
       "4": "<br/>",
       "5": "<i>Dilucs Angriff steht für Gerechtigkeit, Tapferkeit und Verantwortung.</i>"
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "Abklingzeit",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -39,6 +57,24 @@
       "1": "Die Flammen auf Dilucs Waffe verleihen ihm die <pyro>Pyro</pyro>-Kraft.",
       "2": "<br/>",
       "3": "<i>Man wandert durch die Finsternis, um das Licht zu verbreiten. Das Leuchten in der Ferne während einer dunklen Nacht ist das Vorzeichen für den Anbruch des Tages.</i>"
+    },
+    "skillParams": {
+      "0": "Schwerthieb-SCH",
+      "1": "Fortlaufender SCH",
+      "2": "Explosions-SCH",
+      "3": "Abklingzeit",
+      "4": "Elementarumwandlungsdauer",
+      "5": "Elementarenergie",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

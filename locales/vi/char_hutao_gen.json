@@ -41,6 +41,24 @@
       "10": "<strong>Bỉ Ngạn Điệp Vũ</strong> sẽ được giải trừ khi kết thúc thời gian duy trì kỹ năng, Hu Tao rời trận hoặc bị đánh bại.",
       "11": "<br/>",
       "12": "<i>Câu đầu tiên trong khẩu quyết của phương pháp bí truyền mà Hu Tao học được là: \"Thương trấn Hoàng Tuyền Lộ, bướm bay Cầu Lai Thế.\"</i>"
+    },
+    "skillParams": {
+      "0": "Kỹ năng tiêu hao",
+      "1": "Tăng Tấn Công",
+      "2": "ST Huyết Mai Hương",
+      "3": "Thời gian Huyết Mai Hương",
+      "4": "Thời Gian Kéo Dài",
+      "5": "CD",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -51,6 +69,24 @@
       "2": "Nếu HP của Hu Tao thấp hơn hoặc bằng 50% khi bị kỹ năng đánh trúng thì sẽ gây ra sát thương và lượng trị liệu cao hơn.",
       "3": "<br/>",
       "4": "<i>Thứ đã rời khỏi trần thế nếu vẫn còn tự do đi lại, sẽ khiến Vãng Sinh Đường vô cùng lo lắng. Hỏa táng là cách giúp Hu Tao yên tâm nhất. Hơn nữa, cô ấy càng lo thì lửa sẽ càng lớn.</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Sát thương kỹ năng khi HP thấp",
+      "2": "Kỹ năng hồi HP",
+      "3": "Kỹ năng hồi HP khi HP thấp",
+      "4": "CD",
+      "5": "Năng Lượng Nguyên Tố",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

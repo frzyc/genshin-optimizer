@@ -49,6 +49,24 @@
       "13": "If the return to a ranged stance occurs automatically after 30s, the CD is even longer.",
       "14": "<br/>",
       "15": "<i>He chose the bow as his weapon precisely to overcome his weakness with it. But a serious fight demands that he gets serious...</i>"
+    },
+    "skillParams": {
+      "0": "Stance Change DMG",
+      "1": "1-Hit DMG",
+      "2": "2-Hit DMG",
+      "3": "3-Hit DMG",
+      "4": "4-Hit DMG",
+      "5": "5-Hit DMG",
+      "6": "6-Hit DMG",
+      "7": "Charged Attack DMG",
+      "8": "Charged Attack Stamina Cost",
+      "9": "Riptide Slash",
+      "10": "Max Duration",
+      "11": "Preemptive CD",
+      "12": "Max CD",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -68,6 +86,24 @@
       "11": "DMG dealt in this way is considered Elemental Burst DMG.",
       "12": "<br/>",
       "13": "<i>Rushing waters are rarely seen in his snowy homeland. Perhaps his ability to command water is due to his understanding of just how precious it is.</i>"
+    },
+    "skillParams": {
+      "0": "Skill DMG: Melee",
+      "1": "Skill DMG: Ranged",
+      "2": "Riptide Blast DMG",
+      "3": "Energy Return (Ranged)",
+      "4": "CD",
+      "5": "Energy Cost",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

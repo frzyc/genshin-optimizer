@@ -35,6 +35,24 @@
       "9": "Setiap Electro Sigil yang digunakan dengan cara ini akan dikonversi menjadi Energy untuk Razor.",
       "10": "<br/>",
       "11": "<i>Pada saat petir menyambar, kamu dapat melihat mata Razor yang sedang mengamati mangsanya.</i>"
+    },
+    "skillParams": {
+      "0": "DMG One-tap",
+      "1": "DMG Menahan",
+      "2": "Peningkatan Energy Recharge per Sigil",
+      "3": "Pemulihan Energy per Electro Sigil",
+      "4": "Durasi Electro Sigil",
+      "5": "Cooldown One-tap",
+      "6": "Cooldown Menahan",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -55,6 +73,24 @@
       "7": "Saat Razor meninggalkan medan pertempuran, maks. 10 Energy akan dikembalikan kepadanya berdasarkan durasi yang tersisa dari skill ini.",
       "8": "<br/>",
       "9": "<i>Sang serigala telah terbangun, perburuan dimulai.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Elemental Burst",
+      "1": "DMG Spirit",
+      "2": "Peningkatan Normal Attack SPD",
+      "3": "Bonus Electro RES",
+      "4": "Durasi",
+      "5": "Cooldown",
+      "6": "Energy",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

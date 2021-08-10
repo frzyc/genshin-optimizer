@@ -11,7 +11,25 @@
       "6": "<br/>",
       "7": "<i>\"I see eternity go by in an instant, the autumns of many years from a single leaf. Thus I shall slice this maple in a flash, and ask a question of the ages.\"</i>"
     },
-    "slashdmg": "Slashing DMG"
+    "slashdmg": "Slashing DMG",
+    "skillParams": {
+      "0": "Slashing DMG",
+      "1": "DoT",
+      "2": "Additional Elemental DMG",
+      "3": "Duration",
+      "4": "CD",
+      "5": "Energy Cost",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
   },
   "name": "Kaedehara Kazuha",
   "title": "Scarlet Leaves Pursue Wild Waves",
@@ -57,6 +75,24 @@
       "13": "<i>\"Wind in branches grieves",
       "14": "Bygone ages, gods of old",
       "15": "Withered autumn leaves\"</i>"
+    },
+    "skillParams": {
+      "0": "Press Skill DMG",
+      "1": "Press CD",
+      "2": "Hold Skill DMG",
+      "3": "CD (hold)",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

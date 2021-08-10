@@ -34,6 +34,24 @@
       "6": "Der Jadeschirm gilt als <geo>Geo-Objekt</geo>, hält einen Teil Angriffe ab und kann nicht erklommen werden. Zu einem Zeitpunkt kann nur ein Jadeschirm existieren.",
       "7": "<br/>",
       "8": "<i>Leuchtend wie die Sterne am Himmel, zusammengesetzt aus wertvoller Jade.</i>"
+    },
+    "skillParams": {
+      "0": "Erhaltene LP",
+      "1": "Fähigkeits-SCH",
+      "2": "Abklingzeit",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -43,6 +61,24 @@
       "1": "Lässt einen eventuell anwesenden Jadeschirm in der Nähe bei Anwendung von Sternensplitter zusätzlich viele kleine Edelsteine abschießen.",
       "2": "<br/>",
       "3": "<i>Die Sterne zerbrechen in Tausende Teile.</i>"
+    },
+    "skillParams": {
+      "0": "SCH pro Edelstein",
+      "1": "Abklingzeit",
+      "2": "Elementarenergie",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

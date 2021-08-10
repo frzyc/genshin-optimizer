@@ -36,6 +36,24 @@
       "7": "Using this ability applies the <hydro>Wet</hydro> status onto the character.",
       "8": "<br/>",
       "9": "<i>\"Easier to slay a rain dragon than to sever the rain.\"</i>"
+    },
+    "skillParams": {
+      "0": "Skill DMG",
+      "1": "Damage Reduction Ratio",
+      "2": "Duration",
+      "3": "CD",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -50,6 +68,24 @@
       ],
       "4": "<br/>",
       "5": "<i>The \"Way of the Rain Cutter\" is one of the esoteric secret techniques of the Guhua Sect.</i>"
+    },
+    "skillParams": {
+      "0": "Sword Rain DMG",
+      "1": "Duration",
+      "2": "CD",
+      "3": "Energy Cost",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

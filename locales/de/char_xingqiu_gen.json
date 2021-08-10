@@ -34,6 +34,24 @@
       "8": "Verleiht der Figur bei Anwendung den Zustand <hydro>Nass</hydro> .",
       "9": "<br/>",
       "10": "<i>„Drachen sind einfacher zu zerteilen als der Regen.“</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "SCH-Minderungsrate",
+      "2": "Dauer",
+      "3": "Abklingzeit",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -46,6 +64,24 @@
       "4": "- Die Anzahl der Regenschwerter bleibt unverändert auf der höchsten Anzahl.",
       "5": "<br/>",
       "6": "<i>Die Regenschnittkunst ist eine geheime Technik der Guhua-Schule, die nicht an normale Schüler weitergegeben wird.</i>"
+    },
+    "skillParams": {
+      "0": "Schwertregen-SCH",
+      "1": "Dauer",
+      "2": "Abklingzeit",
+      "3": "Elementarenergie",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

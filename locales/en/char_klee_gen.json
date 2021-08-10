@@ -32,6 +32,24 @@
       "6": "Starts with 2 charges.",
       "7": "<br/>",
       "8": "<i>Jumpy Dumpty is Klee's good friend! She can't help but introduce him to everyone.</i>"
+    },
+    "skillParams": {
+      "0": "Jumpy Dumpty DMG",
+      "1": "Mine DMG",
+      "2": "Mine Duration",
+      "3": "CD",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -40,6 +58,24 @@
       "0": "Klee's Blazing Delight! For the duration of this ability, continuously summons Sparks 'n' Splash to attack nearby opponents, dealing <pyro>AoE Pyro DMG</pyro>.",
       "1": "<br/>",
       "2": "<i>The knights all believe that Klee must have a lucky star watching over her to have never been hurt by any of her own bombs...</i>"
+    },
+    "skillParams": {
+      "0": "Sparks 'n' Splash DMG",
+      "1": "Duration",
+      "2": "CD",
+      "3": "Energy Cost",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

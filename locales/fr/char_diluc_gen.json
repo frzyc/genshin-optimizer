@@ -29,6 +29,24 @@
       "2": "Elle entre en TdR si l'enchaînement n'est pas assez rapide.",
       "3": "<br/>",
       "4": "<i>Chacune de ces attaques représente les valeurs chères à Diluc : justice, courage et la responsabilité.</i>"
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "Temps de recharge",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -38,6 +56,24 @@
       "1": "Les flammes confèrent à l'arme de Diluc un <pyro>enchantement Pyro</pyro>.",
       "2": "<br/>",
       "3": "<i>Celui qui apporte la lumière doit marcher dans les ténèbres. Les flammes au loin ne sont que le prélude de l'aube à venir.</i>"
+    },
+    "skillParams": {
+      "0": "DGT entaille",
+      "1": "DGT continus",
+      "2": "DGT explosion",
+      "3": "Temps de recharge",
+      "4": "Durée enchantement",
+      "5": "Énergie élémentaire",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {

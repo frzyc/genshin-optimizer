@@ -34,6 +34,24 @@
       "8": "Deals great amounts of extra damage to opponents based on the number of Conductive stacks applied to them, and clears their Conductive status.",
       "9": "<br/>",
       "10": "<i>Electro Purple is the raiment of the Witch of Purple Rose.</i>"
+    },
+    "skillParams": {
+      "0": "Press DMG",
+      "1": "Press CD",
+      "2": "Non-Conductive Hold DMG",
+      "3": "Stack 1 Conductive Hold DMG",
+      "4": "Stack 2 Conductive Hold DMG",
+      "5": "Stack 3 Conductive Hold DMG",
+      "6": "Holding CD",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {
@@ -43,6 +61,24 @@
       "1": "The Lightning Rose will continuously emit lightning to knock back opponents and deal <electro>Electro DMG</electro> throughout the ability's duration.",
       "2": "<br/>",
       "3": "<i>This rose is beautiful, but beware its mortal thorns.</i>"
+    },
+    "skillParams": {
+      "0": "Discharge DMG",
+      "1": "Duration",
+      "2": "CD",
+      "3": "Energy Cost",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "passive1": {
