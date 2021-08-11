@@ -18,6 +18,24 @@
         "0": "<strong>Ataque Imersivo</strong>",
         "1": "Reunindo o poder do Pyro, Klee mergulha em direção ao chão em pleno ar, causando dano a todos os inimigos em seu caminho. Inflige <pyro>Dano Pyro em uma AdE</pyro> ao entrar em contato com o chão."
       }
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe",
+      "1": "Dano do 2° Golpe",
+      "2": "Dano do 3° Golpe",
+      "3": "Dano de Ataque Carregado",
+      "4": "Consumo de Stamina de Ataque Carregado",
+      "5": "Dano Durante a Queda",
+      "6": "Dano de Queda de Baixa/Alta Altitude",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "skill": {

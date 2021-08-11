@@ -19,6 +19,24 @@
         "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất.",
         "2": "Khi Xiao tiến hành tấn công khi đáp, sẽ không phải chịu sát thương rơi."
       }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Lần 4",
+      "4": "Sát Thương Lần 5",
+      "5": "Sát Thương Lần 6",
+      "6": "Trọng Kích Sát Thương",
+      "7": "Thể lực Trọng Kích tiêu hao",
+      "8": "Sát Thương Khi Rơi",
+      "9": "Sát Thương Khi Rơi Từ Độ Cao Thấp/Cao",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "skill": {

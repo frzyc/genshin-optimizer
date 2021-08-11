@@ -19,6 +19,24 @@
         "1": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
         "2": "Xiao does not take DMG from performing Plunging Attacks."
       }
+    },
+    "skillParams": {
+      "0": "1-Hit DMG",
+      "1": "2-Hit DMG",
+      "2": "3-Hit DMG",
+      "3": "4-Hit DMG",
+      "4": "5-Hit DMG",
+      "5": "6-Hit DMG",
+      "6": "Charged Attack DMG",
+      "7": "Charged Attack Stamina Cost",
+      "8": "Plunge DMG",
+      "9": "Low/High Plunge DMG",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "skill": {

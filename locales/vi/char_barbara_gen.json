@@ -18,6 +18,24 @@
         "0": "<strong>Tấn Công Khi Đáp</strong>",
         "1": "Ngưng tụ sức mạnh nguyên tố Thủy, từ trên trời tấn công xuống mặt đất, tấn công kẻ địch trên đường đi, gây <hydro>sát thương phạm vi Nguyên Tố Thủy</hydro> khi chạm đất."
       }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Lần 4",
+      "4": "Sát Thương Trọng Kích",
+      "5": "Thể lực Trọng Kích tiêu hao",
+      "6": "Sát Thương Khi Rơi",
+      "7": "Sát Thương Khi Rơi Từ Độ Cao Thấp/Cao",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "skill": {

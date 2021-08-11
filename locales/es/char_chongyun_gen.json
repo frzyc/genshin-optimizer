@@ -19,6 +19,24 @@
         "0": "<strong>Ataque Descendente</strong>",
         "1": "Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto."
       }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de 4.º golpe",
+      "4": "Daño de ATQ Cargado en ciclo",
+      "5": "Daño final de Ataque Cargado",
+      "6": "Coste de Aguante de ATQ Cargado",
+      "7": "Duración máx.",
+      "8": "Daño de Caída",
+      "9": "Daño de impacto de caída baja/alta",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "skill": {

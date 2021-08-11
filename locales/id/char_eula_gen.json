@@ -59,6 +59,24 @@
         "0": "<strong>Plunging Attack</strong>",
         "1": "Menerjang dari udara untuk menghantam tanah, menyerang semua musuh di jalurnya dan mengakibatkan DMG area saat mendarat."
       }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Tahap 5",
+      "5": "DMG Berputar Charged Attack",
+      "6": "DMG Akhir Charged Attack",
+      "7": "Konsumsi Stamina Charged Attack",
+      "8": "Durasi Maks.",
+      "9": "DMG Plunge",
+      "10": "DMG Plunging Attack Ketinggian Rendah/Tinggi",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "burst": {

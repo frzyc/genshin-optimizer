@@ -21,6 +21,24 @@
         "0": "<strong>Plunging Attack</strong>",
         "1": "Mengumpulkan kekuatan Pyro dan menerjang tanah, mengakibatkan DMG pada musuh di jalur terjangan dan mengakibatkan <pyro>Pyro DMG area</pyro> saat mendarat."
       }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Charged Attack",
+      "4": "Konsumsi Stamina Charged Attack",
+      "5": "Pengurangan Konsumsi Stamina Scarlet Seal",
+      "6": "Durasi Scarlet Seal",
+      "7": "DMG Plunging",
+      "8": "DMG Plunging Attack Ketinggian Rendah/Tinggi",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "skill": {

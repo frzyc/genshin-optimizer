@@ -19,6 +19,24 @@
         "0": "<strong>Tấn Công Khi Đáp</strong>",
         "1": "Bắn mưa tên liên tiếp xuống mặt đất, gây sát thương phạm vi khi chạm đất."
       }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Lần 4",
+      "4": "Sát Thương Lần 5",
+      "5": "Ngắm Bắn",
+      "6": "Tụ Lực Ngắm Bắn",
+      "7": "Sát Thương Khi Rơi",
+      "8": "Sát Thương Khi Rơi Từ Độ Cao Thấp/Cao",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "skill": {

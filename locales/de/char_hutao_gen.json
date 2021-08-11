@@ -18,6 +18,24 @@
         "0": "<strong>Angriff aus dem Fall</strong>",
         "1": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden."
       }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH Phase 4",
+      "4": "SCH Phase 5",
+      "5": "SCH Phase 6",
+      "6": "SCH heftiger Schläge",
+      "7": "Ausdauerverbrauch heftiger Schläge",
+      "8": "SCH beim Fallen",
+      "9": "SCH beim Fallen aus niedriger/großer Höhe",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "skill": {

@@ -20,6 +20,24 @@
         "0": "<strong>Plunging Attack</strong>",
         "1": "Gathering the might of Geo, Ningguang plunges towards the ground from mid-air, damaging all opponents in her path. Deals <geo>AoE Geo DMG</geo> upon impact with the ground."
       }
+    },
+    "skillParams": {
+      "0": "Normal Attack DMG",
+      "1": "Charged Attack DMG",
+      "2": "DMG per Star Jade",
+      "3": "Charged Attack Stamina Cost",
+      "4": "Plunge DMG",
+      "5": "Low/High Plunge DMG",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "skill": {

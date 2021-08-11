@@ -19,6 +19,24 @@
         "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact.",
         "2": "Xiao ne subit pas de DGT lorsqu'il exécute une attaque plongeante."
       }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT 5e coup",
+      "5": "DGT 6e coup",
+      "6": "DGT attaque chargée",
+      "7": "Coût d'endurance attaque chargée",
+      "8": "DGT durant la chute",
+      "9": "DGT chute basse/élevée",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "skill": {

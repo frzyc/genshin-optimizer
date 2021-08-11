@@ -54,6 +54,24 @@
         "0": "<strong>Plunging Attack: Midare Ranzan</strong>",
         "1": "Saat Plunging Attack dilakukan dengan menggunakan efek Elemental Skill Chihayaburu, maka DMG dari Plunging Attack akan berubah menjadi <anemo>Anemo DMG</anemo> dan akan menciptakan arus angin kecil yang menarik musuh dan benda di sekitarnya."
       }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Tahap 5",
+      "5": "DMG Charged Attack",
+      "6": "Konsumsi Stamina Charged Attack",
+      "7": "DMG Plunge",
+      "8": "DMG Plunging Attack Min./Maks.",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "skill": {

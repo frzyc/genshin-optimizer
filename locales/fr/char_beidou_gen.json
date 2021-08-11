@@ -19,6 +19,24 @@
         "0": "<strong>Attaque plongeante</strong>",
         "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact."
       }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT 5e coup",
+      "5": "DGT enchaînement attaque chargée",
+      "6": "DGT coup final attaque chargée",
+      "7": "Coût d'endurance attaque chargée",
+      "8": "Durée max",
+      "9": "DGT durant la chute",
+      "10": "DGT chute basse/élevée",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "skill": {

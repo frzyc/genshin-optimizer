@@ -18,6 +18,24 @@
         "0": "<strong>Ataque Descendente</strong>",
         "1": "Al acumular poder Pyro, Klee se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo <pyro>Daño Pyro en el AdE</pyro> en el momento del impacto."
       }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de ATQ Cargado",
+      "4": "Coste de Aguante de ATQ Cargado",
+      "5": "Daño de Caída",
+      "6": "Daño de impacto de caída baja/alta",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "skill": {

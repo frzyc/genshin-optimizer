@@ -28,6 +28,24 @@
         "1": "Dispara uma chuva de flechas no ar antes de cair e impactar o chão, causando dano AoE no impacto.",
         "2": "Se estiver no estado corpo a corpo em Legado do Mal - Ondas de Fúria, não pode apresentar o Ataque Imersivo."
       }
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe",
+      "1": "Dano do 2° Golpe",
+      "2": "Dano do 3° Golpe",
+      "3": "Dano do 4° Golpe",
+      "4": "Dano do 5° Golpe",
+      "5": "Dano do 6° Golpe",
+      "6": "Disparo com Mira",
+      "7": "Disparo com Mira com Energização Completa",
+      "8": "Dano da Interceptação de Fluxo·Instantâneo",
+      "9": "Interceptação de Fluxo {param10:F1P}",
+      "10": "Duração da Interceptação de Fluxo",
+      "11": "Dano Durante a Queda",
+      "12": "Dano de Queda de Baixa/Alta Altitude",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "skill": {

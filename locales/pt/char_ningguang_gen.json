@@ -20,6 +20,24 @@
         "0": "<strong>Ataque Imersivo</strong>",
         "1": "Reunindo o poder de Geo, Ningguang mergulha em direção ao solo no ar, causando Dano a todos os inimigos em seu caminho. Causa <geo>Dano Geo AdE</geo> com o impacto no solo."
       }
+    },
+    "skillParams": {
+      "0": "Dano de Ataque Normal",
+      "1": "Dano de Ataque Carregado",
+      "2": "Dano por Jade Estelar",
+      "3": "Consumo de Stamina de Ataque Carregado",
+      "4": "Dano Durante a Queda",
+      "5": "Dano de Queda de Baixa/Alta Altitude",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "skill": {

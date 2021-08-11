@@ -18,6 +18,24 @@
         "0": "<strong>Attaque plongeante</strong>",
         "1": "Plonge depuis les airs en concentrant ses pouvoirs Pyro, infligeant des DGT aux ennemis en chemin et des <pyro>DGT Pyro de zone</pyro> à l'impact."
       }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT attaque chargée",
+      "4": "Coût d'endurance attaque chargée",
+      "5": "DGT durant la chute",
+      "6": "DGT chute basse/élevée",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "skill": {

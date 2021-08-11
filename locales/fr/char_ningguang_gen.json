@@ -20,6 +20,24 @@
         "0": "<strong>Attaque plongeante</strong>",
         "1": "Plonge depuis les airs en concentrant ses pouvoirs Géo, infligeant des DGT aux ennemis en chemin et des <geo>DGT Géo de zone</geo> à l'impact."
       }
+    },
+    "skillParams": {
+      "0": "DGT attaque normale",
+      "1": "DGT attaque chargée",
+      "2": "DGT par Jade d'étoile",
+      "3": "Coût d'endurance attaque chargée",
+      "4": "DGT durant la chute",
+      "5": "DGT chute basse/élevée",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "skill": {

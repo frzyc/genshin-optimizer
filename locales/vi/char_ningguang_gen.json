@@ -20,6 +20,24 @@
         "0": "<strong>Tấn Công Khi Đáp</strong>",
         "1": "Ngưng tụ sức mạnh nham thạch, tấn công từ trên không xuống đất, tấn công kẻ địch trên đường, gây <geo>sát thương phạm vi Nguyên Tố Nham</geo> khi chạm đất."
       }
+    },
+    "skillParams": {
+      "0": "Sát thương tấn công thường",
+      "1": "Sát Thương Trọng Kích",
+      "2": "Sát thương Tinh Thạch",
+      "3": "Thể Lực Trọng Kích Tiêu Hao",
+      "4": "Sát Thương Khi Rơi",
+      "5": "Sát Thương Khi Rơi Từ Độ Cao Thấp/Cao",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "skill": {

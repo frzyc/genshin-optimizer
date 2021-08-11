@@ -54,6 +54,24 @@
         "0": "<strong>Tấn Công Khi Đáp - Xua Tan Mây Mù</strong>",
         "1": "Sát thương gây ra bởi tấn công khi đáp khi thi triển thông qua Kỹ Năng Nguyên Tố - Chihayaburu sẽ chuyển thành <anemo>Sát Thương Nguyên Tố Phong</anemo>, và khi chạm đất, thi triển bí kiếm tạo ra một hang gió nhỏ kéo các vật thể và địch ở gần vào."
       }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Lần 4",
+      "4": "Sát Thương Lần 5",
+      "5": "Sát Thương Trọng Kích",
+      "6": "Trọng Kích tiêu hao thể lực",
+      "7": "Sát Thương Khi Rơi",
+      "8": "Sát Thương Khi Rơi Từ Độ Cao Thấp/Cao",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "skill": {

@@ -54,6 +54,24 @@
         "0": "<strong>Attaque plongeante : Contrôle du chaos</strong>",
         "1": "Lorsqu'une attaque plongeante est déclenchée en utilisant les effets de la compétence élémentaire « Véhémence divine », ses DGT sont convertis en <anemo>DGT Anémo</anemo> et un petit tunnel venteux est créé à l'atterrissage à l'aide d'une technique d'épée secrète pour attirer les objets et les ennemis proches."
       }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT 5e coup",
+      "5": "DGT attaque chargée",
+      "6": "Coût d'endurance attaque chargée",
+      "7": "DGT durant la chute",
+      "8": "DGT chute basse/élevée",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "skill": {

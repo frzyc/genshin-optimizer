@@ -54,6 +54,24 @@
         "0": "<strong>Angriff aus dem Fall: Midare Ranzan</strong>",
         "1": "Wandelt den mit Angriffen aus dem Fall, die durch die Elementarfähigkeit Chihayaburu ausgelöst werden, verursachten Schaden in <anemo>Anemo-Schaden</anemo> um, wenn sich Kazuha davor aufgrund von Chihayaburu in der Luft befindet, und erzeugt beim Aufkommen mit einer geheimen Technik einen kleinen Windtunnel, der Objekte und Gegner in der Nähe anzieht."
       }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH Phase 4",
+      "4": "SCH Phase 5",
+      "5": "SCH heftiger Schläge",
+      "6": "Ausdauerverbrauch heftiger Schläge",
+      "7": "SCH beim Fallen",
+      "8": "SCH beim Fallen aus niedriger/großer Höhe",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "skill": {

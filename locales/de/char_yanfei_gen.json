@@ -21,6 +21,24 @@
         "0": "<strong>Angriff aus dem Fall</strong>",
         "1": "Konzentriert die Kraft des Feuers, schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen <pyro>Pyro-Flächenschaden</pyro>."
       }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH heftiger Schläge",
+      "4": "Ausdauerverbrauch heftiger Schläge",
+      "5": "Verringerung des Ausdauerverbrauchs für flammende Siegel",
+      "6": "Dauer der flammenden Siegel",
+      "7": "SCH beim Fallen",
+      "8": "SCH beim Fallen aus niedriger/großer Höhe",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "skill": {

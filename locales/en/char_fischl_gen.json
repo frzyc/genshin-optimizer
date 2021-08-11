@@ -19,6 +19,24 @@
         "0": "<strong>Plunging Attack</strong>",
         "1": "Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact."
       }
+    },
+    "skillParams": {
+      "0": "1-Hit DMG",
+      "1": "2-Hit DMG",
+      "2": "3-Hit DMG",
+      "3": "4-Hit DMG",
+      "4": "5-Hit DMG",
+      "5": "Aimed Shot",
+      "6": "Fully-Charged Aimed Shot",
+      "7": "Plunge DMG",
+      "8": "Low/High Plunge DMG",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "skill": {

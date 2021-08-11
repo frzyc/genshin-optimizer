@@ -57,6 +57,24 @@
         "0": "<strong>Ataque Descendente: Contención del caos</strong>",
         "1": "Al utilizar la Habilidad Elemental, Vehemencia estremecedora, para realizar un Ataque Descendente, el daño que inflige el Ataque Descendente se convertirá en <anemo>Daño Anemo</anemo> y, al aterrizar, creará un pequeño túnel de viento que atrae a los objetos y enemigos cercanos."
       }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de 4.º golpe",
+      "4": "Daño de 5.º golpe",
+      "5": "Ataque Cargado",
+      "6": "Coste de Aguante de ATQ Cargado",
+      "7": "Daño de Caída",
+      "8": "Daño de impacto de caída baja/alta",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "skill": {

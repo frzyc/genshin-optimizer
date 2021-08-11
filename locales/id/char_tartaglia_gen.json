@@ -28,6 +28,24 @@
         "1": "Melancarkan hujan panah dari udara dan menerjang tanah dengan kecepatan tinggi, mengakibatkan DMG area saat mendarat.",
         "2": "Saat Tartaglia sedang menggunakan mode jarak dekat Foul Legacy: Raging Tide, dia tidak bisa menggunakan Plunging Attack."
       }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Tahap 5",
+      "5": "DMG Tahap 6",
+      "6": "DMG Membidik",
+      "7": "DMG Membidik Penuh",
+      "8": "DMG Riptide Flash",
+      "9": "DMG Riptide Burst",
+      "10": "Durasi Riptide",
+      "11": "DMG Plunge",
+      "12": "DMG Plunging Attack Min./Maks.",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "skill": {

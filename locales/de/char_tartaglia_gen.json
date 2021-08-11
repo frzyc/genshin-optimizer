@@ -26,6 +26,24 @@
         "1": "Schießt in der Luft einen Pfeilregen ab, trifft schnell auf dem Boden auf und verursacht dort Flächenschaden.",
         "2": "Im Nahkampfmodus von Dämonengewand – Stürmische Gezeiten ist kein Angriff aus dem Fall möglich."
       }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH Phase 4",
+      "4": "SCH Phase 5",
+      "5": "SCH Phase 6",
+      "6": "Gezielte Schüsse",
+      "7": "Voll aufgeladene gezielte Schüsse",
+      "8": "SCH durch Versiegen – Blitz",
+      "9": "SCH durch Versiegen – Schwall",
+      "10": "Dauer von Versiegen",
+      "11": "SCH beim Fallen",
+      "12": "SCH beim Fallen aus niedriger/großer Höhe",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "skill": {

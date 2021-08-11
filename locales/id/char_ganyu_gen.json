@@ -23,6 +23,24 @@
         "0": "<strong>Plunging Attack</strong>",
         "1": "Melancarkan hujan panah dari udara dan menerjang tanah dengan kecepatan tinggi, mengakibatkan DMG area saat mendarat."
       }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Tahap 5",
+      "5": "DMG Tahap 6",
+      "6": "DMG Membidik",
+      "7": "Serangan Membidik Tahap 1",
+      "8": "DMG Frostflake Arrow",
+      "9": "DMG Frostflake Arrow Bloom",
+      "10": "DMG Plunge",
+      "11": "DMG Plunging Attack Min./Maks.",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "skill": {

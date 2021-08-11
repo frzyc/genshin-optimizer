@@ -21,6 +21,24 @@
         "0": "<strong>Tấn Công Khi Đáp</strong>",
         "1": "Ngưng tụ sức mạnh Nguyên Tố Hỏa, xung kích từ trên không xuống đất, tấn công kẻ địch trên đường đi, gây <pyro>sát thương phạm vi Nguyên Tố Hỏa</pyro> khi chạm đất."
       }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Trọng Kích",
+      "4": "Thể lực Trọng Kích tiêu hao",
+      "5": "Giảm tiêu hao thể lực Đan Hỏa Ấn",
+      "6": "Thời Gian Đan Hỏa Ấn Kéo Dài",
+      "7": "Sát Thương Khi Rơi",
+      "8": "Sát Thương Khi Rơi Từ Độ Cao Thấp/Cao",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "skill": {

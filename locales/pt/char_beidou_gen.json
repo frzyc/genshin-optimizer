@@ -19,6 +19,24 @@
         "0": "<strong>Ataque Imersivo</strong>",
         "1": "Mergulha em pleno ar para golpear o chão, danificando inimigos em seu caminho e infligindo dano em uma AdE durante o impacto."
       }
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe",
+      "1": "Dano do 2° Golpe",
+      "2": "Dano do 3° Golpe",
+      "3": "Dano do 4° Golpe",
+      "4": "Dano do 5° Golpe",
+      "5": "Dano de Loop de Ataque Carregado",
+      "6": "Dano Final de Ataque Carregado",
+      "7": "Consumo de Stamina de Ataque Carregado",
+      "8": "Duração Máxima",
+      "9": "Dano Durante a Queda",
+      "10": "Dano de Queda de Baixa/Alta Altitude",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "skill": {

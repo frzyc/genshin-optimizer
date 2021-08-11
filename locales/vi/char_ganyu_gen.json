@@ -23,6 +23,24 @@
         "0": "<strong>Tấn Công Khi Đáp</strong>",
         "1": "Bắn mưa tên liên tiếp xuống mặt đất, gây sát thương phạm vi khi chạm đất."
       }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Lần 4",
+      "4": "Sát Thương Lần 5",
+      "5": "Sát Thương Lần 6",
+      "6": "Ngắm Bắn",
+      "7": "Tụ lực Ngắm Bắn Lần 1",
+      "8": "Sát thương bắn trúng của Cung Sương Hoa",
+      "9": "ST Cung Sương Hoa: Sương Giá Tung Bay",
+      "10": "Sát Thương Khi Rơi",
+      "11": "Sát Thương Khi Rơi Từ Độ Cao Thấp/Cao",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "skill": {

@@ -21,6 +21,24 @@
         "0": "<strong>Angriff aus dem Fall</strong>",
         "1": "Schießt in der Luft einen Pfeilregen ab, trifft schnell auf dem Boden auf und verursacht dort Flächenschaden."
       }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH Phase 4",
+      "4": "SCH Phase 5",
+      "5": "SCH Phase 6",
+      "6": "Gezielte Schüsse",
+      "7": "Gezielte Schüsse Aufladephase 1",
+      "8": "SCH bei Treffern mit Frostblütenpfeilen",
+      "9": "SCH beim Erblühen von Frostblütenpfeilen",
+      "10": "SCH beim Fallen",
+      "11": "SCH beim Fallen aus niedriger/großer Höhe",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "skill": {

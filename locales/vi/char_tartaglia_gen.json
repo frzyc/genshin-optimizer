@@ -28,6 +28,24 @@
         "1": "Bắn mưa tên liên tiếp xuống mặt đất, gây sát thương phạm vi.",
         "2": "Khi ở trạng thái cận chiến Trang Phục Ma Vương - Thủy Triều, không thể thi triển tấn công khi đáp xuống."
       }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Lần 4",
+      "4": "Sát Thương Lần 5",
+      "5": "Sát Thương Lần 6",
+      "6": "Ngắm Bắn",
+      "7": "Tụ Lực Ngắm Bắn",
+      "8": "Sát Thương Đoạn Lưu - Né",
+      "9": "Sát Thương Đoạn Lưu - Phá",
+      "10": "Thời gian duy trì Đoạn Lưu",
+      "11": "Sát Thương Khi Rơi",
+      "12": "Sát Thương Khi Rơi Từ Độ Cao Thấp/Cao",
+      "13": "",
+      "14": "",
+      "15": ""
     }
   },
   "skill": {
