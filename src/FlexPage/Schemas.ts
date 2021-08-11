@@ -65,6 +65,12 @@ const artifact = object({
       }
     })
   )
+}, {
+  decode: art => {
+    art.id = ""
+    art.lock = false
+    return art
+  }
 })
 const conditionalValues = array(object({
   path: array(string), value: array(string)

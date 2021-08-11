@@ -9,7 +9,7 @@ import Snippet from "./imgs/snippet.png";
 import Stat from '../Stat';
 import { clamp, hammingDistance } from '../Util/Util';
 import Artifact from './Artifact';
-import { allMainStatKeys, allSubstats, IArtifact, IFlexArtifact, MainStatKey, Substat, SubstatKey } from '../Types/artifact';
+import { allMainStatKeys, allSubstats, IArtifact, IFlexArtifact, IFlexSubstat, MainStatKey, SubstatKey } from '../Types/artifact';
 import { allArtifactRarities, allArtifactSets, allSlotKeys, ArtifactSetKey, Rarity, SlotKey } from '../Types/consts';
 import { ArtifactSheet } from './ArtifactSheet';
 import { valueStringWithUnit } from '../Util/UIUtil';
@@ -284,7 +284,7 @@ async function textsFromImage(imageData: ImageData, options: object | undefined 
   return rec.data.lines.map(line => line.text)
 }
 
-export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactSheet>, rarities: Set<number>, textSetKeys: Set<ArtifactSetKey>, slotKeys: Set<SlotKey>, substats: Substat[], mainStatKeys: Set<MainStatKey>, mainStatValues: { mainStatValue: number, unit?: string }[]): [IFlexArtifact, Dict<keyof IArtifact, Displayable>] {
+export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactSheet>, rarities: Set<number>, textSetKeys: Set<ArtifactSetKey>, slotKeys: Set<SlotKey>, substats: IFlexSubstat[], mainStatKeys: Set<MainStatKey>, mainStatValues: { mainStatValue: number, unit?: string }[]): [IFlexArtifact, Dict<keyof IArtifact, Displayable>] {
   const relevantSetKey = [...new Set<ArtifactSetKey>([...textSetKeys, "Adventurer", "ArchaicPetra"])]
 
   let bestScore = -1, bestArtifacts: IFlexArtifact[] = [{
@@ -501,8 +501,8 @@ function parseMainStatValues(texts: string[]): { mainStatValue: number, unit?: s
   }
   return results
 }
-function parseSubstats(texts: string[]): Substat[] {
-  const matches: Substat[] = []
+function parseSubstats(texts: string[]): IFlexSubstat[] {
+  const matches: IFlexSubstat[] = []
   for (let text of texts) {
     text = text.replace(/^[\W]+/, "").replace(/\n/, "")
     //parse substats

@@ -39,8 +39,8 @@ export interface IFlexSubstat {
   value: number
 }
 export interface Substat extends IFlexSubstat {
-  rolls?: number[],
-  efficiency?: number,
+  rolls: number[],
+  efficiency: number,
 }
 export type StatKey = MainStatKey | SubstatKey | ReactionDMGStatKey | MoveDMGStatKey | ElementalRESStatKey | ElementalEnemyRESStatKey | SpecializedStatKey
 

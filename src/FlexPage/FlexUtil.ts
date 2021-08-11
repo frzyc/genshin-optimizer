@@ -1,6 +1,7 @@
 import { database } from "../Database/Database";
-import { IArtifact } from "../Types/artifact";
-import { ICharacter } from "../Types/character";
+import { validateFlexArtifact, validateFlexCharacter } from "../Database/validation";
+import { IArtifact, IFlexArtifact } from "../Types/artifact";
+import { ICharacter, IFlexCharacter } from "../Types/character";
 import { CharacterKey } from "../Types/consts";
 import { decode, encode } from "./CodingUtil";
 import { schemas } from "./Schemas";
@@ -43,7 +44,10 @@ export function parseFlexObj(string: string): [FlexObj, number] | undefined {
 }
 
 function parseFlexObjFromSchema(string: string, schema: any) {
-  const { character, artifacts } = decode(string, schema) as { character: ICharacter, artifacts: IArtifact[] }
+  const decoded = decode(string, schema) as { character: IFlexCharacter, artifacts: IFlexArtifact[] }
+  const character = validateFlexCharacter(decoded.character)
+  const artifacts = decoded.artifacts.map(art => validateFlexArtifact(art).artifact)
+
   artifacts.forEach(artifact => {
     artifact.location = character.characterKey
   })
