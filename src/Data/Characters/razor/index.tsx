@@ -20,6 +20,7 @@ import { IConditionals } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
 import { Translate } from '../../../Components/Translate'
 import { claymoreChargedDocSection, normalDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
+import { WeaponTypeKey } from '../../../Types/consts'
 const tr = (strKey: string) => <Translate ns="char_razor_gen" key18={strKey} />
 const conditionals: IConditionals = {
   e: { // ElectroSigil
@@ -70,9 +71,9 @@ const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
-  star: 4,
+  star: data_gen.star,
   elementKey: "electro",
-  weaponTypeKey: "claymore",
+  weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
   gender: "M",
   constellationName: tr("constellationName"),
   title: tr("title"),

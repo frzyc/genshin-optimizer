@@ -22,6 +22,7 @@ import { Translate } from '../../../Components/Translate'
 import { chargedHitsDocSection, normalDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
 import { KeyPath } from '../../../Util/KeyPathUtil'
 import { FormulaPathBase } from '../../formula'
+import { WeaponTypeKey } from '../../../Types/consts'
 
 const path = KeyPath<FormulaPathBase, any>().character.bennett
 const tr = (strKey: string) => <Translate ns="char_bennett_gen" key18={strKey} />
@@ -55,9 +56,9 @@ const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
-  star: 4,
+  star: data_gen.star,
   elementKey: "pyro",
-  weaponTypeKey: "sword",
+  weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
   gender: "M",
   constellationName: tr("constellationName"),
   title: tr("title"),

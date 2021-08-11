@@ -55,7 +55,7 @@ export const characterIdMap = {
   10000046: "hutao",
   10000047: "kaedeharakazuha",
   10000048: "yanfei",
-  // 10000049: "TEMPLATE", Yoimiya
+  10000049: "yoimiya", 
   // 10000050: "TEMPLATE",
   10000051: "eula",
   // 10000052: "TEMPLATE",

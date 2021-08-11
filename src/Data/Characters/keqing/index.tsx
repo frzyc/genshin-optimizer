@@ -19,6 +19,7 @@ import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { IConditionals } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
 import { Translate } from '../../../Components/Translate'
+import { WeaponTypeKey } from '../../../Types/consts'
 const tr = (strKey: string) => <Translate ns="char_keqing_gen" key18={strKey} />
 const conditionals: IConditionals = {
   a1: {
@@ -65,9 +66,9 @@ const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
-  star: 5,
+  star: data_gen.star,
   elementKey: "electro",
-  weaponTypeKey: "sword",
+  weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
   gender: "F",
   constellationName: tr("constellationName"),
   title: tr("title"),

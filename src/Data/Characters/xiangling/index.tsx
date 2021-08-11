@@ -20,6 +20,7 @@ import { ICharacterSheet } from '../../../Types/character'
 import { IConditionals } from '../../../Types/IConditional'
 import { Translate } from '../../../Components/Translate'
 import { chargedDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
+import { WeaponTypeKey } from '../../../Types/consts'
 const tr = (strKey: string) => <Translate ns="char_xiangling_gen" key18={strKey} />
 const conditionals: IConditionals = {
   c1: { // CrispyOutsideTenderInside
@@ -50,9 +51,9 @@ const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
-  star: 4,
+  star: data_gen.star,
   elementKey: "pyro",
-  weaponTypeKey: "polearm",
+  weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
   gender: "F",
   constellationName: tr("constellationName"),
   title: tr("title"),

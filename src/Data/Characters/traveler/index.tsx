@@ -6,13 +6,14 @@ import anemo from './anemo'
 import geo from './geo'
 import electro from './electro'
 import { Translate } from '../../../Components/Translate'
+import { WeaponTypeKey } from '../../../Types/consts';
 const tr = (strKey: string) => <Translate ns="char_traveler_gen" key18={strKey} />
 const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
-  star: 5,
-  weaponTypeKey: "sword",
+  star: data_gen.star,
+  weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
   gender: "F/M",
   constellationName: tr("constellationName"),
   title: tr("title"),

@@ -24,6 +24,7 @@ import ElementalData from '../../ElementalData'
 import { absorbableEle } from '../dataUtil'
 import { KeyPath } from '../../../Util/KeyPathUtil'
 import { FormulaPathBase } from '../../formula'
+import { WeaponTypeKey } from '../../../Types/consts'
 
 const path = KeyPath<FormulaPathBase, any>().character.kaedeharakazuha
 const tr = (strKey: string) => <Translate ns="char_kaedeharakazuha_gen" key18={strKey} />
@@ -117,9 +118,9 @@ const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
-  star: 5,
+  star: data_gen.star,
   elementKey: "anemo",
-  weaponTypeKey: "sword",
+  weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
   gender: "M",
   constellationName: tr("constellationName"),
   title: tr("title"),

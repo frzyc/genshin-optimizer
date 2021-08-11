@@ -20,6 +20,7 @@ import { IConditionals } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
 import { Translate, TransWrapper } from '../../../Components/Translate'
 import { claymoreChargedDocSection, plungeDocSection, sgt, st, talentTemplate } from '../SheetUtil'
+import { WeaponTypeKey } from '../../../Types/consts'
 const tr = (strKey: string) => <Translate ns="char_eula_gen" key18={strKey} />
 const eula = (strKey: string) => <TransWrapper ns="char_eula" key18={strKey} />
 const conditionals: IConditionals = {
@@ -111,9 +112,9 @@ const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
-  star: 5,
+  star: data_gen.star,
   elementKey: "cryo",
-  weaponTypeKey: "claymore",
+  weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
   gender: "F",
   constellationName: tr("constellationName"),
   title: tr("title"),

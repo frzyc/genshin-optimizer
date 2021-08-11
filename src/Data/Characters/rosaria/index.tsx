@@ -20,6 +20,7 @@ import { IConditionals } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
 import { Translate, TransWrapper } from '../../../Components/Translate'
 import { plungeDocSection, sgt, talentTemplate } from '../SheetUtil'
+import { WeaponTypeKey } from '../../../Types/consts'
 const tr = (strKey: string) => <Translate ns="char_rosaria_gen" key18={strKey} />
 const conditionals: IConditionals = {
   a1: { // ReginaProbationum
@@ -66,9 +67,9 @@ const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
-  star: 4,
+  star: data_gen.star,
   elementKey: "cryo",
-  weaponTypeKey: "polearm",
+  weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
   gender: "F",
   constellationName: tr("constellationName"),
   title: tr("title"),

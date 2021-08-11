@@ -22,6 +22,7 @@ import { Translate, TransWrapper } from '../../../Components/Translate'
 import { claymoreChargedDocSection, normalDocSection, plungeDocSection, sgt, talentTemplate } from '../SheetUtil'
 import { KeyPath } from '../../../Util/KeyPathUtil'
 import { FormulaPathBase } from '../../formula'
+import { WeaponTypeKey } from '../../../Types/consts'
 
 const path = KeyPath<FormulaPathBase, any>().character.noelle
 const tr = (strKey: string) => <Translate ns="char_noelle_gen" key18={strKey} />
@@ -47,9 +48,9 @@ const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
-  star: 4,
+  star: data_gen.star,
   elementKey: "geo",
-  weaponTypeKey: "claymore",
+  weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
   gender: "F",
   constellationName: tr("constellationName"),
   title: tr("title"),

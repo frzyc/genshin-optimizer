@@ -20,6 +20,7 @@ import { ICharacterSheet } from '../../../Types/character'
 import { IConditionals } from '../../../Types/IConditional'
 import { Translate } from '../../../Components/Translate'
 import { plungeDocSection, talentTemplate } from '../SheetUtil'
+import { WeaponTypeKey } from '../../../Types/consts'
 const tr = (strKey: string) => <Translate ns="char_albedo_gen" key18={strKey} />
 const conditionals: IConditionals = {
   a4: { // Homuncular Nature
@@ -48,9 +49,9 @@ const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
-  star: 5,
+  star: data_gen.star,
   elementKey: "geo",
-  weaponTypeKey: "sword",
+  weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
   gender: "M",
   constellationName: tr("constellationName"),
   title: tr("title"),

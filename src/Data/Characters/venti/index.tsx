@@ -22,6 +22,7 @@ import { ICharacterSheet } from '../../../Types/character'
 import { bowChargedDocSection, plungeDocSection, sgt, st, talentTemplate } from '../SheetUtil'
 import { Translate, TransWrapper } from '../../../Components/Translate'
 import { absorbableEle } from '../dataUtil'
+import { WeaponTypeKey } from '../../../Types/consts'
 const tr = (strKey: string) => <Translate ns="char_venti_gen" key18={strKey} />
 
 const conditionals: IConditionals = {
@@ -89,9 +90,9 @@ const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
-  star: 5,
+  star: data_gen.star,
   elementKey: "anemo",
-  weaponTypeKey: "bow",
+  weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
   gender: "M",
   constellationName: tr("constellationName"),
   title: tr("title"),

@@ -22,6 +22,7 @@ import { ICharacterSheet } from '../../../Types/character'
 import { absorbableEle } from '../dataUtil'
 import { Translate } from '../../../Components/Translate'
 import { chargedDocSection, normalDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
+import { WeaponTypeKey } from '../../../Types/consts'
 const tr = (strKey: string) => <Translate ns="char_sucrose_gen" key18={strKey} />
 const conditionals: IConditionals = {
   q: { // Absorption
@@ -61,9 +62,9 @@ const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
-  star: 4,
+  star: data_gen.star,
   elementKey: "anemo",
-  weaponTypeKey: "catalyst",
+  weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
   gender: "F",
   constellationName: tr("constellationName"),
   title: tr("title"),

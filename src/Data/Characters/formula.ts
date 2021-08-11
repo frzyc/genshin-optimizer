@@ -33,6 +33,7 @@ import xiangling from './xiangling/data'
 import xingqiu from './xingqiu/data'
 import xinyan from './xinyan/data'
 import yanfei from './yanfei/data'
+import yoimiya from './yoimiya/data'
 import zhongli from './zhongli/data'
 import { IFormulaSheet } from '../../Types/character'
 import { CharacterKey, ElementKey } from '../../Types/consts'
@@ -73,6 +74,7 @@ const formula: IFormulaSheets = {
   xingqiu,
   xinyan,
   yanfei,
+  yoimiya,
   zhongli
 };
 export default formula

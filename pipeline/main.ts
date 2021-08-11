@@ -283,7 +283,7 @@ Object.entries(characterData).filter(([charid,]) => charid in characterIdMap).fo
     const { EnergySkill: burst, Skills: [normal, skill, sprint], Talents, InherentProudSkillOpens: [passive1, passive2, passive3] } = depot
     layeredAssignment(mapHashData, [...keys, "auto", "name"], [talents[normal].NameTextMapHash, "autoName"])
     layeredAssignment(mapHashData, [...keys, "auto", "fields"], [talents[normal].DescTextMapHash, "autoFields"])
-    // layeredAssignment(mapHashData, [...keys, "auto", "skillParams"], skillGroups[talents[auto].ProudSkillGroupId][0].ParamDescList.map(id => [id, "skillParam"]))//TODO:
+    layeredAssignment(mapHashData, [...keys, "auto", "skillParams"], skillGroups[talents[normal].ProudSkillGroupId][0].ParamDescList.map(id => [id, "skillParam"]))
 
     layeredAssignment(mapHashData, [...keys, "skill", "name"], talents[skill].NameTextMapHash)
     layeredAssignment(mapHashData, [...keys, "skill", "description"], [talents[skill].DescTextMapHash, "paragraph"])
