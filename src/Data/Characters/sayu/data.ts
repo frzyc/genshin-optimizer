@@ -52,9 +52,9 @@ const formula: IFormulaSheet = {
     kick_press: stats => {
       const skillPercent = data.skill.kick_press[stats.tlvl.skill]
       if (stats.constellation < 2) return basicDMGFormula(skillPercent, stats, "skill")
-      const val = skillPercent / 100
-      const statKey = getTalentStatKey("skill", stats)
-      return [s => val * s[statKey] * 1.033, [statKey]]
+      const hitModeMultiKey = stats.hitMode === "avgHit" ? "skill_avgHit_base_multi" : stats.hitMode === "critHit" ? "critHit_base_multi" : ""
+      return [s => skillPercent / 100 * s.finalATK * (hitModeMultiKey ? s[hitModeMultiKey] : 1) * (s.anemo_skill_hit_base_multi + 0.033) * s.enemyLevel_multi * s.anemo_enemyRes_multi,
+      ["finalATK", ...(hitModeMultiKey ? [hitModeMultiKey] : []), "anemo_skill_hit_base_multi", "enemyLevel_multi", "anemo_enemyRes_multi"]]
     },
     kick_hold: stats => {
       const skillPercent = data.skill.kick_hold[stats.tlvl.skill]
@@ -64,14 +64,26 @@ const formula: IFormulaSheet = {
       const [num] = value ?? [0]
       if (!num) return basic()
 
-      const val = skillPercent / 100
-      const statKey = getTalentStatKey("skill", stats)
-      const multi = 1 + num * 0.033
-      return [s => val * s[statKey] * multi, [statKey]]
+      const multi = num * 0.033
+      const hitModeMultiKey = stats.hitMode === "avgHit" ? "skill_avgHit_base_multi" : stats.hitMode === "critHit" ? "critHit_base_multi" : ""
+      return [s => skillPercent / 100 * s.finalATK * (hitModeMultiKey ? s[hitModeMultiKey] : 1) * (s.anemo_skill_hit_base_multi + multi) * s.enemyLevel_multi * s.anemo_enemyRes_multi,
+      ["finalATK", ...(hitModeMultiKey ? [hitModeMultiKey] : []), "anemo_skill_hit_base_multi", "enemyLevel_multi", "anemo_enemyRes_multi"]]
     },
     ...Object.fromEntries([
       ...absorbableEle.map(eleKey => [eleKey, stats => basicDMGFormula(data.skill.ele_dmg[stats.tlvl.skill], stats, "skill", eleKey)]),
-      ...absorbableEle.map(eleKey => [`${eleKey}_kick`, stats => basicDMGFormula(data.skill.ele_kick[stats.tlvl.skill], stats, "skill", eleKey)])
+      ...absorbableEle.map(eleKey => [`${eleKey}_kick`, stats => {
+        const skillPercent = data.skill.ele_kick[stats.tlvl.skill]
+        const basic = () => basicDMGFormula(data.skill.ele_kick[stats.tlvl.skill], stats, "skill", eleKey)
+        if (stats.constellation < 2) return basic()
+        const value = stats.conditionalValues?.character?.sayu?.sheet?.talent?.c2 as IConditionalValue | undefined
+        const [num] = value ?? [0]
+        if (!num) return basic()
+
+        const multi = num * 0.033
+        const hitModeMultiKey = stats.hitMode === "avgHit" ? "skill_avgHit_base_multi" : stats.hitMode === "critHit" ? "critHit_base_multi" : ""
+        return [s => skillPercent / 100 * s.finalATK * (hitModeMultiKey ? s[hitModeMultiKey] : 1) * (s[`${eleKey}_skill_hit_base_multi`] + multi) * s.enemyLevel_multi * s[`${eleKey}_enemyRes_multi`],
+        ["finalATK", ...(hitModeMultiKey ? [hitModeMultiKey] : []), `${eleKey}_skill_hit_base_multi`, "enemyLevel_multi", `${eleKey}_enemyRes_multi`]]
+      }])
     ])
   },
   burst: {
@@ -81,11 +93,20 @@ const formula: IFormulaSheet = {
       const flat = data.burst.heal[stats.tlvl.burst]
       return [s => (atk * s.finalATK + flat) * s.heal_multi, ["finalATK", "heal_multi"]]
     },
-    muji_dmg: stats => basicDMGFormula(data.burst.muji_dmg[stats.tlvl.burst], stats, "burst"),
+    muji_dmg: stats => {
+      if (stats.constellation < 6)
+        return basicDMGFormula(data.burst.muji_dmg[stats.tlvl.burst], stats, "burst")
+      else {
+        const val = data.burst.muji_dmg[stats.tlvl.burst] / 100
+        const statKey = getTalentStatKey("burst", stats)
+        return [s => (val + Math.min(4, 0.002 * s.eleMas)) * s[statKey], [statKey, "eleMas"]]
+      }
+    },
     muji_heal: stats => {
       const atk = data.burst.muji_heal_[stats.tlvl.burst] / 100
       const flat = data.burst.muji_heal[stats.tlvl.burst]
-      return [s => (atk * s.finalATK + flat) * s.heal_multi, ["finalATK", "heal_multi"]]
+      if (stats.constellation < 6) return [s => (atk * s.finalATK + flat) * s.heal_multi, ["finalATK", "heal_multi"]]
+      else return [s => (atk * s.finalATK + flat + Math.min(6000, 3 * s.eleMas)) * s.heal_multi, ["finalATK", "heal_multi", "eleMas"]]
     },
   },
   passive1: {

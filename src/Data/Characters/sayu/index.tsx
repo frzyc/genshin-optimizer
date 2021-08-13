@@ -51,7 +51,17 @@ const conditionals: IConditionals = {
           return true
         },
         text: tr("skill.skillParams.4"),
-        formulaText: stats => basicDMGFormulaText(data.skill.ele_kick[stats.tlvl.skill], stats, "skill"),
+        formulaText: stats => {
+          const skillPercent = data.skill.ele_kick[stats.tlvl.skill]
+          const basic = () => basicDMGFormulaText(skillPercent, stats, "skill", eleKey)
+          if (stats.constellation < 2) return basic()
+          const value = stats.conditionalValues?.character?.sayu?.sheet?.talent?.c2 as IConditionalValue | undefined
+          const [num] = value ?? [0]
+          if (!num) return basic()
+
+          const hitModeMultiKey = stats.hitMode === "avgHit" ? "skill_avgHit_base_multi" : stats.hitMode === "critHit" ? "critHit_base_multi" : ""
+          return <span> {skillPercent} % {Stat.printStat("finalATK", stats)} {hitModeMultiKey ? <span>* {Stat.printStat(hitModeMultiKey, stats)} </span> : null}* ( {Stat.printStat(`${eleKey}_skill_hit_base_multi`, stats)} + 3.3% * <span className="text-info">{num}</span> stacks ) * {Stat.printStat("enemyLevel_multi", stats)} * {Stat.printStat(`${eleKey}_enemyRes_multi`, stats)}</span >
+        },
         formula: formula.skill[`${eleKey}_kick`],
         variant: eleKey
       }],
@@ -112,7 +122,8 @@ const char: ICharacterSheet = {
             formulaText: stats => {
               const skillPercent = data.skill.kick_press[stats.tlvl.skill]
               if (stats.constellation < 2) return basicDMGFormulaText(skillPercent, stats, "skill")
-              return <span> {skillPercent} % {Stat.printStat(getTalentStatKey("skill", stats), stats)} * 103.3%</span >
+              const hitModeMultiKey = stats.hitMode === "avgHit" ? "skill_avgHit_base_multi" : stats.hitMode === "critHit" ? "critHit_base_multi" : ""
+              return <span> {skillPercent} % {Stat.printStat("finalATK", stats)} {hitModeMultiKey ? <span>* {Stat.printStat(hitModeMultiKey, stats)} </span> : null}* ( {Stat.printStat("anemo_skill_hit_base_multi", stats)} + 3.3% ) * {Stat.printStat("enemyLevel_multi", stats)} * {Stat.printStat("anemo_enemyRes_multi", stats)}</span >
             },
             formula: formula.skill.kick_press,
             variant: stats => getTalentStatKeyVariant("skill", stats),
@@ -120,12 +131,14 @@ const char: ICharacterSheet = {
             text: tr("skill.skillParams.2"),
             formulaText: stats => {
               const skillPercent = data.skill.kick_hold[stats.tlvl.skill]
-              const basic = basicDMGFormulaText(skillPercent, stats, "skill")
-              if (stats.constellation < 2) return basic
+              const basic = () => basicDMGFormulaText(skillPercent, stats, "skill")
+              if (stats.constellation < 2) return basic()
               const value = stats.conditionalValues?.character?.sayu?.sheet?.talent?.c2 as IConditionalValue | undefined
               const [num] = value ?? [0]
-              if (!num) return basic
-              return <span> {skillPercent} % {Stat.printStat(getTalentStatKey("skill", stats), stats)} * ( 100% + {num} * 3.3% )</span >
+              if (!num) return basic()
+
+              const hitModeMultiKey = stats.hitMode === "avgHit" ? "skill_avgHit_base_multi" : stats.hitMode === "critHit" ? "critHit_base_multi" : ""
+              return <span> {skillPercent} % {Stat.printStat("finalATK", stats)} {hitModeMultiKey ? <span>* {Stat.printStat(hitModeMultiKey, stats)} </span> : null}* ( {Stat.printStat("anemo_skill_hit_base_multi", stats)} + 3.3% * <span className="text-info">{num}</span> stacks ) * {Stat.printStat("enemyLevel_multi", stats)} * {Stat.printStat("anemo_enemyRes_multi", stats)}</span>
             },
             formula: formula.skill.kick_hold,
             variant: stats => getTalentStatKeyVariant("skill", stats),
@@ -158,12 +171,18 @@ const char: ICharacterSheet = {
             variant: "success",
           }, {
             text: tr("burst.skillParams.2"),
-            formulaText: stats => basicDMGFormulaText(data.burst.muji_dmg[stats.tlvl.burst], stats, "burst"),
+            formulaText: stats => {
+              if (stats.constellation < 6) return basicDMGFormulaText(data.burst.muji_dmg[stats.tlvl.burst], stats, "burst")
+              else return <span>( {data.burst.muji_dmg[stats.tlvl.burst]}% + min( 400%, 0.2% {Stat.printStat("eleMas", stats)} )) * {Stat.printStat(getTalentStatKey("burst", stats), stats)} </span>
+            },
             formula: formula.burst.muji_dmg,
             variant: stats => getTalentStatKeyVariant("burst", stats),
           }, {
             text: tr("burst.skillParams.3"),
-            formulaText: stats => <span>( {data.burst.muji_heal_[stats.tlvl.burst]}% {Stat.printStat("finalATK", stats)} + {data.burst.muji_heal[stats.tlvl.burst]} ) * {Stat.printStat("heal_multi", stats)}</span>,
+            formulaText: stats => {
+              if (stats.constellation < 6) return <span>( {data.burst.muji_heal_[stats.tlvl.burst]}% {Stat.printStat("finalATK", stats)} + {data.burst.muji_heal[stats.tlvl.burst]} ) * {Stat.printStat("heal_multi", stats)}</span>
+              else return <span>( {data.burst.muji_heal_[stats.tlvl.burst]}% {Stat.printStat("finalATK", stats)} + {data.burst.muji_heal[stats.tlvl.burst]} + 3 * {Stat.printStat("eleMas", stats)} ) * {Stat.printStat("heal_multi", stats)}</span>
+            },
             formula: formula.burst.muji_heal,
             variant: "success",
           }, {
@@ -210,28 +229,11 @@ const char: ICharacterSheet = {
       },
       passive3: talentTemplate("passive3", tr, passive3),
       constellation1: talentTemplate("constellation1", tr, c1),
-      // constellation2: talentTemplate("constellation2", tr, c2),
-      constellation2: {
-        name: tr("constellation2.name"),
-        img: c2,
-        sections: [{
-          text: tr("constellation2.description"),
-        }],
-      },
+      constellation2: talentTemplate("constellation2", tr, c2),
       constellation3: talentTemplate("constellation3", tr, c3, { burstBoost: 3 }),
       constellation4: talentTemplate("constellation4", tr, c4),
       constellation5: talentTemplate("constellation5", tr, c5, { skillBoost: 3 }),
-      // constellation6: talentTemplate("constellation6", tr, c6),
-      constellation6: {
-        name: tr("constellation6.name"),
-        img: c6,
-        sections: [{
-          text: <span>
-            {tr("constellation6.description")}
-            <p><small className="text-danger">This Constellation needs further testing data to verify the formula.</small></p>
-          </span>,
-        }],
-      },
+      constellation6: talentTemplate("constellation6", tr, c6),
     },
   },
 };
