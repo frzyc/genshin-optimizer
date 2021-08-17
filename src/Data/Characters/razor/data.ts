@@ -1,4 +1,6 @@
-import { IFormulaSheet } from "../../../Types/character"
+import { getTalentStatKey } from "../../../Build/Build"
+import { FormulaItem, IFormulaSheet } from "../../../Types/character"
+import { BasicStats } from "../../../Types/stats"
 import { basicDMGFormula } from "../../../Util/FormulaUtil"
 
 const data = {
@@ -44,6 +46,14 @@ const formula: IFormulaSheet = {
     summon: stats => basicDMGFormula(data.burst.summon[stats.tlvl.burst], stats, "burst"),
     ...Object.fromEntries(data.normal.hitArr.map((percentArr, i) => [i, stats =>
       basicDMGFormula(data.burst.dmg[stats.tlvl.burst] * percentArr[stats.tlvl.auto] / 100, stats, "burst")])),
+    ...Object.fromEntries(data.normal.hitArr.map((percentArr, i) => [`c${i}`, stats => {
+      const normVal = percentArr[stats.tlvl.auto] /100
+      const normStatKey = getTalentStatKey("normal", stats)
+
+      const burstVal = data.burst.dmg[stats.tlvl.burst] * percentArr[stats.tlvl.auto] / 10000
+      const burstStatKey = getTalentStatKey("burst", stats)
+      return [s => normVal * s[normStatKey] + burstVal * s[burstStatKey], [normStatKey, burstStatKey]]
+    }])),
   },
   constellation6: {
     dmg: stats => basicDMGFormula(100, stats, "elemental"),

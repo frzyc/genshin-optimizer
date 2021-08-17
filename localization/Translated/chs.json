@@ -253,10 +253,15 @@
     "char_kaedeharakazuha": {
         "a4": {
             "name": "触发扩散反应后",
-            "text": "队伍中所有角色对应元素伤害加成"
+            "text": "队伍中所有角色对应元素伤害加成",
+            "bonus": "元素伤害加成"
         },
         "c1": "施放 <strong>万叶之一刀</strong>时，重置千早振的冷却时间",
-        "c2": "流风秋野领域内"
+        "c2": "流风秋野领域内",
+        "c6": {
+            "after": "使用<strong>千早振</strong> 或 <strong>万叶之一刀</strong>后",
+            "bonus": "普通攻击、重击、下落攻击伤害加成"
+        }
     },
     "char_rosaria": {
         "a1": "背后攻击后",
@@ -276,5 +281,28 @@
         "snowflakeDMG": "霜见雪关扉伤害",
         "dmgBySnowflake": "敌人受到<strong>神里流-霜灭</strong>的霜见雪关扉伤害后",
         "UsurashiButou": "薄冰舞蹈"
+    },
+    "char_traveler": {
+        "electro": {
+            "skill": {
+                "absorb": "吸收丰穰勾玉"
+            },
+            "c2": {
+                "thunderHit": "<strong>威光落雷</strong>命中敌人后"
+            },
+            "burst": {
+                "3rd": "第三下威光落雷伤害"
+            }
+        }
+    },
+    "weapon_Hamayumi": {
+        "ener": "元素能量100%时"
+    },
+    "weapon_MistsplitterReforged": {
+        "ele": "角色元素类型",
+        "emblem": "雾切之巴印"
+    },
+    "weapon_ThunderingPulse": {
+        "emblem": "飞雷之巴印"
     }
 }
