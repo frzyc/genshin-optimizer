@@ -1,7 +1,7 @@
 import { database } from './Database';
-import Artifact from '../Artifact/Artifact';
 import { checkDuplicate } from '../Artifact/ArtifactEditor';
-import { IArtifact, Substat, MainStatKey, SubstatKey } from '../Types/artifact';
+import { IFlexArtifact, IArtifact, IFlexSubstat, MainStatKey, SubstatKey } from '../Types/artifact';
+import { validateFlexArtifact } from '../Database/validation';
 import { ArtifactSetKey, SlotKey } from "../Types/consts";
 
 type GenshinArtVersion = "1";
@@ -119,7 +119,7 @@ function GetConvertedArtifactsVersion1(dataObj: any) {
     for (const genshinArtArtifact of dataObj[property]) {
       const { setName, star, level, position, mainTag } = genshinArtArtifact;
       const mainStatKey = tryGetFromMap(ArtifactMainStatKeyMap, mainTag.name);
-      let artifact: IArtifact = {
+      let flexArtifact: IFlexArtifact = {
         id: "",
         setKey: tryGetFromMap(ArtifactSetKeyMap, setName),
         numStars: star,
@@ -131,19 +131,19 @@ function GetConvertedArtifactsVersion1(dataObj: any) {
         lock: false,
       };
       for (const genshinArtSubstat of genshinArtArtifact.normalTags) {
-        let substat: Substat = {
+        let flexSubstat: IFlexSubstat = {
           key: tryGetFromMap(ArtifactSubStatKeyMap, genshinArtSubstat.name),
           value: genshinArtSubstat.value,
         };
-        if (substat.key.slice(-1) === "_") {
-          substat.value = Math.round(substat.value * 1000) / 10;  // decimal to percentage
+        if (flexSubstat.key.slice(-1) === "_") {
+          flexSubstat.value = Math.round(flexSubstat.value * 1000) / 10;  // decimal to percentage
         }
-        artifact.substats.push(substat);
+        flexArtifact.substats.push(flexSubstat);
       }
 
-      let errMsgs = Artifact.substatsValidation(artifact);
-      if (errMsgs.length) {
-        throw new Error(`id ${genshinArtArtifact.id}: ${errMsgs}`);
+      const { artifact, errors } = validateFlexArtifact(flexArtifact);
+      if (errors.length) {
+        throw new Error(`id ${genshinArtArtifact.id}: ${errors}`);
       }
 
       convertedArtifacts.push(artifact);
