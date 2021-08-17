@@ -18,7 +18,7 @@ import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant, } from "../../../Build/Build"
 import { IConditionals } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
-import { Translate } from '../../../Components/Translate'
+import { Translate, TransWrapper } from '../../../Components/Translate'
 import { claymoreChargedDocSection, normalDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
 const tr = (strKey: string) => <Translate ns="char_razor_gen" key18={strKey} />
@@ -143,7 +143,8 @@ const char: ICharacterSheet = {
             formulaText: stats => <span>{data.burst.dmg[stats.tlvl.burst]}% * {percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
             formula: formula.burst[i],
             variant: stats => getTalentStatKeyVariant("burst", stats),
-          })), {
+          })),
+          {
             text: "Duration",
             value: "15s",
           }, {
@@ -153,7 +154,21 @@ const char: ICharacterSheet = {
             text: "Energy Cost",
             value: 80,
           }],
-          conditional: conditionals.q
+        }, {
+          text: (
+            <TransWrapper ns="char_razor" key18="fullBurstDMG.text"><span>
+              <h6><strong>Full Elemental Burst DMG</strong></h6>
+              <p className="mb-2">This calculates the combined damage from Razor's normal attacks during his Elemental Burst.
+                It simply sums the Companion X-Hit DMG with the corresponding X-Hit DMG of the normal attack which triggers it.</p>
+            </span></TransWrapper>
+          ),
+          fields: data.normal.hitArr.map((percentArr, i) => ({
+            text: <TransWrapper ns="char_razor" key18="fullBurstDMG.label" values={{ hitNum: i + 1 }} />,
+            formulaText: stats => <span>
+              {percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}
+              + {data.burst.dmg[stats.tlvl.burst]}% * {percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
+            formula: formula.burst[`c${i}`],
+          })),
         }],
       },
       passive1: talentTemplate("passive1", tr, passive1),
