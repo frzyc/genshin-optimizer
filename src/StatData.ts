@@ -52,7 +52,7 @@ const StatData: { [stat: string]: StatItem } = {
   heal_: { name: "Healing Bonus", unit: "%" },
   incHeal_: { name: "Incoming Healing Bonus", unit: "%" },
   powShield_: { name: "Shield Strength", unit: "%" },
-  cdRed_: { name: "CD Red.", unit: "%" },
+  cdRed_: { name: "CD Reduction", unit: "%" },
   skillCDRed_: { name: "Ele. Skill CD Red.", unit: "%" },
   burstCDRed_: { name: "Ele. Burst CD Red.", unit: "%" },
   moveSPD_: { name: "Movement SPD", unit: "%" },

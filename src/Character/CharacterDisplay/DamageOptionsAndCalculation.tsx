@@ -4,7 +4,7 @@ import { useContext, useMemo } from 'react';
 import { Accordion, AccordionContext, Button, Card, Col, Dropdown, Row, ToggleButton, ToggleButtonGroup } from "react-bootstrap";
 import { useAccordionToggle } from 'react-bootstrap/AccordionToggle';
 import { ArtifactSheet } from "../../Artifact/ArtifactSheet";
-import { Cryo, Hydro, Pyro } from "../../Components/ElementalIcon";
+import StatIcon, { uncoloredEleIcons } from "../../Components/StatIcon";
 import Formula from "../../Formula";
 import Stat, { FormulaDisplay } from "../../Stat";
 import { GetDependencies } from "../../StatDependency";
@@ -20,8 +20,8 @@ import { getFormulaTargetsDisplayHeading } from "../CharacterUtil";
 import StatInput from "../StatInput";
 const infusionVals = {
   "": <span>No External Infusion</span>,
-  "pyro": <span ><Pyro /> Pyro Infusion</span>,
-  "cryo": <span ><Cryo /> Cryo Infusion</span>,
+  "pyro": <span >{uncoloredEleIcons.pyro} Pyro Infusion</span>,
+  "cryo": <span >{uncoloredEleIcons.cryo} Cryo Infusion</span>,
 }
 type InfusionAuraDropdownProps = {
   characterSheet: CharacterSheet,
@@ -53,16 +53,16 @@ export function ReactionToggle({ character: { reactionMode = null, infusionAura 
   return <ToggleButtonGroup className={className} type="radio" name="reactionMode" value={reactionMode} onChange={val => characterDispatch({ reactionMode: val === "none" ? null : val })}>
     <ToggleButton value={"none"} variant={v(!reactionMode)}>No Reactions</ToggleButton >
     {(charEleKey === "pyro" || infusionAura === "pyro") && <ToggleButton value={"pyro_vaporize"} variant={v(reactionMode === "pyro_vaporize")}>
-      <span className="text-vaporize">Vaporize(Pyro) <Hydro />+<Pyro /></span>
+      <span className="text-vaporize">Vaporize(Pyro) {StatIcon.hydro}+{StatIcon.pyro}</span>
     </ToggleButton >}
     {(charEleKey === "pyro" || infusionAura === "pyro") && <ToggleButton value={"pyro_melt"} variant={v(reactionMode === "pyro_melt")}>
-      <span className="text-melt">Melt(Pyro) <Cryo />+<Pyro /></span>
+      <span className="text-melt">Melt(Pyro) {StatIcon.cryo}+{StatIcon.pyro}</span>
     </ToggleButton >}
     {(charEleKey === "hydro" || infusionAura === "hydro") && <ToggleButton value={"hydro_vaporize"} variant={v(reactionMode === "hydro_vaporize")}>
-      <span className="text-vaporize">Vaporize(Hydro) <Pyro />+<Hydro /></span>
+      <span className="text-vaporize">Vaporize(Hydro) {StatIcon.pyro}+{StatIcon.hydro}</span>
     </ToggleButton >}
     {(charEleKey === "cryo" || infusionAura === "cryo") && <ToggleButton value={"cryo_melt"} variant={v(reactionMode === "cryo_melt")}>
-      <span className="text-melt">Melt(Cryo) <Pyro />+<Cryo /></span>
+      <span className="text-melt">Melt(Cryo) {StatIcon.pyro}+{StatIcon.cryo}</span>
     </ToggleButton >}
   </ToggleButtonGroup>
 }

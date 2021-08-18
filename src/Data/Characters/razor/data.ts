@@ -1,6 +1,5 @@
 import { getTalentStatKey } from "../../../Build/Build"
-import { FormulaItem, IFormulaSheet } from "../../../Types/character"
-import { BasicStats } from "../../../Types/stats"
+import { IFormulaSheet } from "../../../Types/character"
 import { basicDMGFormula } from "../../../Util/FormulaUtil"
 
 const data = {

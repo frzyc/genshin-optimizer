@@ -98,7 +98,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
 
   type characterDataType = { character?: ICharacter, characterSheet?: CharacterSheet, weaponSheet?: WeaponSheet, initialStats?: ICalculatedStats, statsDisplayKeys?: { basicKeys: any, [key: string]: any } }
   const [{ character, characterSheet, weaponSheet, initialStats, statsDisplayKeys }, setCharacterData] = useState({} as characterDataType)
-  const buildSettings = character?.buildSettings ?? initialBuildSettings()
+  const buildSettings = useMemo(() => character?.buildSettings ?? initialBuildSettings(), [character])
   const { setFilters, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useLockedArts, useEquippedArts, ascending, } = buildSettings
 
   const buildSettingsDispatch = useCallback((action) => {
@@ -154,6 +154,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     if (characterKey && database._getChar(characterKey)) selectCharacter(characterKey)
     setmaxBuildsToShow(maxBuildsToShow)
   }, [])// eslint-disable-line react-hooks/exhaustive-deps
+
   useEffect(() => propCharacterKey && selectCharacter(propCharacterKey), [propCharacterKey, selectCharacter])//update when props update
 
   //save to BuildsDisplay.state on change

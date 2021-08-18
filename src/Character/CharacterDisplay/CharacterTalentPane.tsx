@@ -3,8 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from 'react';
 import { Card, Col, Dropdown, DropdownButton, Image, ListGroup, OverlayTrigger, Row, Tooltip } from "react-bootstrap";
 import DocumentDisplay from "../../Components/DocumentDisplay";
-import { Anemo, Cryo, Electro, Geo, Hydro, Pyro } from "../../Components/ElementalIcon";
 import FieldDisplay from "../../Components/FieldDisplay";
+import StatIcon from "../../Components/StatIcon";
 import Stat from "../../Stat";
 import { ElementToReactionKeys } from "../../StatData";
 import { ICharacter } from "../../Types/character";
@@ -110,27 +110,27 @@ function ReactionDisplay({ characterSheet, newBuild, equippedBuild }: { characte
 function SuperConductCard({ stats }) {
   const sKey = "superconduct_hit"
   return <Card bg="darkcontent" text={"lightfont" as any}><Card.Body className="p-2">
-    <span className="text-superconduct">{Stat.getStatName(sKey)} <Electro />+<Cryo /> <strong>{stats[sKey]?.toFixed(Stat.fixedUnit(sKey))}</strong></span>
+    <span className="text-superconduct">{Stat.getStatName(sKey)} {StatIcon.electro}+{StatIcon.cryo} <strong>{stats[sKey]?.toFixed(Stat.fixedUnit(sKey))}</strong></span>
   </Card.Body></Card>
 }
 function ElectroChargedCard({ stats }) {
   const sKey = "electrocharged_hit"
   return <Card bg="darkcontent" text={"lightfont" as any}><Card.Body className="p-2">
-    <span className="text-electrocharged">{Stat.getStatName(sKey)} <Electro />+<Hydro /> <strong>{stats[sKey]?.toFixed(Stat.fixedUnit(sKey))}</strong></span>
+    <span className="text-electrocharged">{Stat.getStatName(sKey)} {StatIcon.electro}+{StatIcon.hydro} <strong>{stats[sKey]?.toFixed(Stat.fixedUnit(sKey))}</strong></span>
   </Card.Body></Card>
 }
 function OverloadedCard({ stats }) {
   const sKey = "overloaded_hit"
   return <Card bg="darkcontent" text={"lightfont" as any}><Card.Body className="p-2">
-    <span className="text-overloaded">{Stat.getStatName(sKey)} <Electro />+<Pyro /> <strong>{stats[sKey]?.toFixed(Stat.fixedUnit(sKey))}</strong></span>
+    <span className="text-overloaded">{Stat.getStatName(sKey)} {StatIcon.electro}+{StatIcon.pyro} <strong>{stats[sKey]?.toFixed(Stat.fixedUnit(sKey))}</strong></span>
   </Card.Body></Card>
 }
 
 const swirlEleToDisplay = {
-  "pyro": <span>{Stat.getStatName("pyro_swirl_hit")} <Pyro />+<Anemo /></span>,
-  "electro": <span>{Stat.getStatName("electro_swirl_hit")} <Electro />+<Anemo /></span>,
-  "cryo": <span>{Stat.getStatName("cryo_swirl_hit")} <Cryo />+<Anemo /></span>,
-  "hydro": <span>{Stat.getStatName("hydro_swirl_hit")} <Hydro />+<Anemo /></span>
+  "pyro": <span>{Stat.getStatName("pyro_swirl_hit")} {StatIcon.pyro}+{StatIcon.anemo}</span>,
+  "electro": <span>{Stat.getStatName("electro_swirl_hit")} {StatIcon.electro}+{StatIcon.anemo}</span>,
+  "cryo": <span>{Stat.getStatName("cryo_swirl_hit")} {StatIcon.cryo}+{StatIcon.anemo}</span>,
+  "hydro": <span>{Stat.getStatName("hydro_swirl_hit")} {StatIcon.hydro}+{StatIcon.anemo}</span>
 } as const
 function SwirlCard({ stats }) {
   const [ele, setele] = useState(Object.keys(swirlEleToDisplay)[0])
@@ -148,18 +148,18 @@ function ShatteredCard({ stats }) {
     placement="top"
     overlay={<Tooltip id="shatter-tooltip">Claymores, Plunging Attacks and <span className="text-geo">Geo DMG</span></Tooltip>}
   >
-    <FontAwesomeIcon icon={faQuestionCircle} className="ml-2" style={{ cursor: "help" }} />
+    <FontAwesomeIcon icon={faQuestionCircle} style={{ cursor: "help" }} />
   </OverlayTrigger>
   return <Card bg="darkcontent" text={"lightfont" as any}><Card.Body className="p-2">
-    <span className="text-shattered">{Stat.getStatName(sKey)} <Hydro />+<Cryo />+ <small className="text-physical">Heavy Attack{information} </small> <strong>{stats[sKey]?.toFixed(Stat.fixedUnit(sKey))}</strong></span>
+    <span className="text-shattered">{Stat.getStatName(sKey)} {StatIcon.hydro}+{StatIcon.cryo}+ <small className="text-physical">Heavy Attack{information} </small> <strong>{stats[sKey]?.toFixed(Stat.fixedUnit(sKey))}</strong></span>
   </Card.Body></Card>
 }
 const crystalizeEleToDisplay = {
-  "default": <span className="text-crystalize">{Stat.getStatName("crystalize_hit")} <Electro />/<Hydro />/<Pyro />/<Cryo />+<Geo /></span>,
-  "pyro": <span>{Stat.getStatName("pyro_crystalize_hit")} <Pyro />+<Geo /></span>,
-  "electro": <span>{Stat.getStatName("electro_crystalize_hit")} <Electro />+<Geo /></span>,
-  "cryo": <span>{Stat.getStatName("cryo_crystalize_hit")} <Cryo />+<Geo /></span>,
-  "hydro": <span>{Stat.getStatName("hydro_crystalize_hit")} <Hydro />+<Geo /></span>
+  "default": <span className="text-crystalize">{Stat.getStatName("crystalize_hit")} {StatIcon.electro}/{StatIcon.hydro}/{StatIcon.pyro}/{StatIcon.cryo}+{StatIcon.geo}</span>,
+  "pyro": <span>{Stat.getStatName("pyro_crystalize_hit")} {StatIcon.pyro}+{StatIcon.geo}</span>,
+  "electro": <span>{Stat.getStatName("electro_crystalize_hit")} {StatIcon.electro}+{StatIcon.geo}</span>,
+  "cryo": <span>{Stat.getStatName("cryo_crystalize_hit")} {StatIcon.cryo}+{StatIcon.geo}</span>,
+  "hydro": <span>{Stat.getStatName("hydro_crystalize_hit")} {StatIcon.hydro}+{StatIcon.geo}</span>
 } as const
 function CrystalizeCard({ stats }) {
   const [ele, setele] = useState(Object.keys(crystalizeEleToDisplay)[0])

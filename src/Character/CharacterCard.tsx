@@ -9,9 +9,8 @@ import Row from 'react-bootstrap/Row';
 import { Link } from 'react-router-dom';
 import { ArtifactSheet } from '../Artifact/ArtifactSheet';
 import Assets from '../Assets/Assets';
-import ElementalIcon from '../Components/ElementalIcon';
 import { Stars } from '../Components/StarDisplay';
-import { StatIconEle } from '../Components/StatIcon';
+import StatIcon from '../Components/StatIcon';
 import { database } from '../Database/Database';
 import Stat from '../Stat';
 import { ICharacter } from '../Types/character';
@@ -81,7 +80,7 @@ export default function CharacterCard({ characterKey, onEdit, onDelete, cardClas
             <Badge variant="secondary"><strong className="mx-1">{tlvl.burst + 1}</strong></Badge>
           </h6>
           <h6 className="mb-0"><Stars stars={characterSheet.star} colored /></h6>
-          <h3 className="mb-0">{ElementalIcon[elementKey]} <Image src={Assets.weaponTypes?.[weaponTypeKey]} className="inline-icon" /></h3>
+          <h3 className="mb-0">{StatIcon[elementKey]} <Image src={Assets.weaponTypes?.[weaponTypeKey]} className="inline-icon" /></h3>
         </Col>
       </Row>
       <Row className="mb-2">
@@ -104,7 +103,7 @@ export default function CharacterCard({ characterKey, onEdit, onDelete, cardClas
           let unit = Stat.getStatUnit(statKey)
           let statVal = stats[statKey]
           return <Col xs={12} key={statKey}>
-            <h6 className="d-inline">{StatIconEle(statKey)} {Stat.getStatName(statKey)}</h6>
+            <h6 className="d-inline">{StatIcon[statKey]} {Stat.getStatName(statKey)}</h6>
             <span className={`float-right`}>
               {statVal?.toFixed(Stat.fixedUnit(statKey)) + unit}
             </span>

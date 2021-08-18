@@ -1,14 +1,14 @@
-import { faBahai, faCrown, faFeatherAlt, faHourglass, faWineGlass, IconDefinition } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useTranslation } from "react-i18next"
+import { faCirclet, faFlower, faGoblet, faPlume, faSands } from '../../faIcons'
 import { SlotKey } from "../../Types/consts"
 
-const SlotIcon: StrictDict<SlotKey, IconDefinition> = {
-  flower: faBahai,
-  plume: faFeatherAlt,
-  sands: faHourglass,
-  goblet: faWineGlass,
-  circlet: faCrown
+const SlotIcon: StrictDict<SlotKey, any> = {
+  flower: faFlower,
+  plume: faPlume,
+  sands: faSands,
+  goblet: faGoblet,
+  circlet: faCirclet
 }
 
 export function artifactSlotIcon(slotKey: SlotKey) {
