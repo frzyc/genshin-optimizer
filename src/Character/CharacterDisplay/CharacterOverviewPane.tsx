@@ -5,11 +5,10 @@ import { Badge, Button, ButtonGroup, Card, Col, Dropdown, Image, InputGroup, Lis
 import Assets from "../../Assets/Assets";
 import CustomFormControl from '../../Components/CustomFormControl';
 import DocumentDisplay from "../../Components/DocumentDisplay";
-import ElementalIcon from "../../Components/ElementalIcon";
 import FieldDisplay from "../../Components/FieldDisplay";
 import { Stars } from "../../Components/StarDisplay";
 import StatDisplay from "../../Components/StatDisplay";
-import { StatIconEle } from "../../Components/StatIcon";
+import StatIcon from "../../Components/StatIcon";
 import { ascensionMaxLevel, milestoneLevels } from "../../Data/CharacterData";
 import Stat from "../../Stat";
 import { ICharacter } from "../../Types/character";
@@ -43,7 +42,7 @@ export default function CharacterOverviewPane({ characterSheet, weaponSheet, edi
       <Card bg="lightcontent" text={"lightfont" as any} className="mb-2">
         <Card.Img src={characterSheet.cardImg} className="w-100 h-auto" />
         <Card.Body>
-          <h3>{characterSheet.name} {ElementalIcon[elementKey]} <Image src={Assets.weaponTypes?.[weaponTypeKey]} className="inline-icon" /></h3>
+          <h3>{characterSheet.name} {StatIcon[elementKey]} <Image src={Assets.weaponTypes?.[weaponTypeKey]} className="inline-icon" /></h3>
           <h6><Stars stars={characterSheet.star} colored /></h6>
           <h5>Level: {Character.getLevelString(character)}</h5>
           <Row className="px-2 mb-2">
@@ -245,7 +244,7 @@ function MainStatsCards({ characterSheet, weaponSheet, editable, character, char
     otherStatKeys.push(`${ele}_dmg_`)
     otherStatKeys.push(`${ele}_res_`)
   })
-  otherStatKeys.push("stamina", "incHeal_", "powShield_")
+  otherStatKeys.push("stamina", "incHeal_", "powShield_", "cdRed_")
 
   const miscStatkeys = [
     "normal_dmg_", "normal_critRate_",
@@ -283,7 +282,7 @@ function MainStatsCards({ characterSheet, weaponSheet, editable, character, char
                   prependEle={undefined}
                   disabled={undefined}
                   className="mb-2"
-                  name={<span>{StatIconEle(statKey)} {Stat.getStatNamePretty(statKey)}</span>}
+                  name={<span>{StatIcon[statKey]} {Stat.getStatNamePretty(statKey)}</span>}
                   placeholder={`Base ${Stat.getStatName(statKey)}`}
                   value={Character.getStatValueWithOverride(character, characterSheet, weaponSheet, statKey)}
                   percent={Stat.getStatUnit(statKey) === "%"}
@@ -297,7 +296,7 @@ function MainStatsCards({ characterSheet, weaponSheet, editable, character, char
           <Row className="mb-2">
             {displayStatKeys.map(statKey => <Col xs={12} lg={6} key={statKey} ><StatDisplay characterSheet={characterSheet} weaponSheet={weaponSheet} statKey={statKey} {...displayNewBuildProps} /></Col>)}
             <Col lg={6} xs={12}>
-              <span><b>Specialized:</b> <span>{Stat.getStatName(specializedStatKey)}</span></span>
+              <span><b>Specialized:</b> <span>{specializedStatKey && StatIcon[specializedStatKey]} {Stat.getStatName(specializedStatKey)}</span></span>
               <span className={`float-right`}>{`${specializedStatVal.toFixed(Stat.fixedUnit(specializedStatKey))}${specializedStatUnit}`}</span>
             </Col>
           </Row>
@@ -324,7 +323,7 @@ function MainStatsCards({ characterSheet, weaponSheet, editable, character, char
               <Col lg={6} xs={12} key={statKey}>
                 <StatInput
                   className="mb-2"
-                  name={<span>{StatIconEle(statKey)} {Stat.getStatName(statKey)}</span>}
+                  name={<span>{StatIcon[statKey]} {Stat.getStatName(statKey)}</span>}
                   placeholder={`Base ${Stat.getStatNameRaw(statKey)}`}
                   value={Character.getStatValueWithOverride(character, characterSheet, weaponSheet, statKey)}
                   percent={Stat.getStatUnit(statKey) === "%"}
@@ -359,7 +358,7 @@ function MainStatsCards({ characterSheet, weaponSheet, editable, character, char
               <Col xl={6} xs={12} key={statKey}>
                 <StatInput
                   className="mb-2"
-                  name={<span>{StatIconEle(statKey)} {Stat.getStatName(statKey)}</span>}
+                  name={<span>{StatIcon[statKey]} {Stat.getStatName(statKey)}</span>}
                   placeholder={`Base ${Stat.getStatNameRaw(statKey)}`}
                   value={Character.getStatValueWithOverride(character, characterSheet, weaponSheet, statKey)}
                   percent={Stat.getStatUnit(statKey) === "%"}

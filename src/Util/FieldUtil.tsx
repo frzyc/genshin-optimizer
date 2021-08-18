@@ -1,4 +1,4 @@
-import { StatIconEle } from "../Components/StatIcon"
+import StatIcon from "../Components/StatIcon"
 import ElementalData from "../Data/ElementalData"
 import Stat from "../Stat"
 import { IFieldDisplay } from "../Types/IFieldDisplay"
@@ -13,7 +13,7 @@ export default function statsToFields(statVals, stats = {}): IFieldDisplay[] {
         }
       default:
         return {
-          text: <span>{StatIconEle(statKey)}{Stat.getStatName(statKey)}</span>,
+          text: <span>{StatIcon[statKey as any]} {Stat.getStatName(statKey)}</span>,
           variant: Stat.getStatVariant(statKey),
           canShow: () => true,
           value: statVal as number,

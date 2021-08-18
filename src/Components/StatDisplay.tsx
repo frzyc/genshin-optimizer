@@ -5,11 +5,11 @@ import CharacterSheet from "../Character/CharacterSheet"
 import Formula from "../Formula"
 import Stat from "../Stat"
 import { ICharacter } from "../Types/character"
-import { ICalculatedStats } from "../Types/stats"
 import { IFieldDisplay } from "../Types/IFieldDisplay"
+import { ICalculatedStats } from "../Types/stats"
 import { usePromise } from "../Util/ReactUtil"
 import WeaponSheet from "../Weapon/WeaponSheet"
-import { StatIconEle } from "./StatIcon"
+import StatIcon from "./StatIcon"
 
 function DisplayStatDiff({ label = "", val, oldVal, fixed = 0, unit = "", variant = "" }) {
   if (typeof oldVal === "undefined" && typeof val === "number") {//if only one value is filled, display that one.
@@ -67,7 +67,7 @@ export default function StatDisplay({ characterSheet, weaponSheet, character, eq
       }
       unit = Stat.getStatUnit(statKey)
       fixed = Stat.fixedUnit(statKey)
-      label = <span>{StatIconEle(statKey)} {Stat.getStatName(statKey)}</span>
+      label = <span>{StatIcon[statKey]} {Stat.getStatName(statKey)}</span>
     } else if (formula) {//Formula
       const build = newBuild ? newBuild : equippedBuild
       const field = (formula as any).field as IFieldDisplay //assume it is attached in post-processing

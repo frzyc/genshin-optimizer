@@ -1,19 +1,19 @@
 import { faLink, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import i18next from 'i18next';
 import React, { lazy, useCallback, useEffect, useReducer, useRef, useState } from 'react';
 import { Button, ButtonGroup, Card, Col, Container, Image, Row, Spinner, ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
 import ReactGA from 'react-ga';
 import { Link } from 'react-router-dom';
 import Assets from '../Assets/Assets';
 import InfoComponent from '../Components/InfoComponent';
+import { uncoloredEleIcons } from '../Components/StatIcon';
+import { database } from '../Database/Database';
 import { allElements, allWeaponTypeKeys, CharacterKey } from '../Types/consts';
 import { useForceUpdate, usePromise } from '../Util/ReactUtil';
 import { loadFromLocalStorage, saveToLocalStorage } from '../Util/Util';
 import CharacterCard from './CharacterCard';
 import CharacterSheet from './CharacterSheet';
-import i18next from 'i18next';
-import { database } from '../Database/Database';
-import { ElementalIconComponent } from '../Components/ElementalIcon';
 const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
 
 //lazy load the character display
@@ -140,12 +140,9 @@ export default function CharacterDisplay(props) {
         <Row>
           <Col xs="auto">
             <ButtonGroup>
-              {allElements.map(eleKey => {
-                const EleComponent = ElementalIconComponent[eleKey]
-                return <Button key={eleKey} variant={(!elementalFilter || elementalFilter === eleKey) ? eleKey : "secondary"} className="py-1 px-2 text-white" onClick={() => elementalFilterDispatch(eleKey)} >
-                  <h3 className="mb-0"><EleComponent noColor /></h3>
-                </Button>
-              })}
+              {allElements.map(eleKey => <Button key={eleKey} variant={(!elementalFilter || elementalFilter === eleKey) ? eleKey : "secondary"} className="py-1 px-2 text-white" onClick={() => elementalFilterDispatch(eleKey)} >
+                <h3 className="mb-0">{uncoloredEleIcons[eleKey]}</h3>
+              </Button>)}
             </ButtonGroup>
           </Col>
           <Col>
