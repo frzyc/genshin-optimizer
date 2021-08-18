@@ -154,41 +154,29 @@ function GetConvertedArtifactsVersion1(dataObj: any) {
 }
 
 interface IImportResult {
-  total: number,
-  new: number,
-  upgraded: number,
-  dupe: number,
-  deleted: number,
+  totalCount: number,
+  newCount: number,
+  upgradedCount: number,
+  dupeCount: number,
+  deletedCount: number,
 }
 
-function GenshinArtImport(dataObj: any, deleteExisting: boolean, detectDupe: boolean) {
-  if (deleteExisting && !detectDupe) {
-    throw new Error("GenshinArtImport: detectDupe should be enabled when deleteExisting is turned on");
-  }
-
+function GenshinArtImport(dataObj: any, deleteExisting: boolean) {
   const usingVersion: GenshinArtVersion = "version" in dataObj ? dataObj.version : DefaultVersion;
   let importedArtifacts = GetConvertedArtifactsOfVersion[usingVersion](dataObj);
   let importResult: IImportResult = {
-    total: importedArtifacts.length,
-    new: 0,
-    upgraded: 0,
-    dupe: 0,
-    deleted: 0,
-  }
-
-  if (!detectDupe) {
-    throw new Error("feature is disabled (who actually needs this?)");
-    // for (const artifact of importedArtifacts) {
-    //   ArtifactDatabase.update(artifact);
-    // }
-    // return importResult;
+    totalCount: importedArtifacts.length,
+    newCount: 0,
+    upgradedCount: 0,
+    dupeCount: 0,
+    deletedCount: 0,
   }
 
   let artifactIdsToRemove = new Set(database.arts.keys);
   for (const artifact of importedArtifacts) {
     const { dupId, isDup } = checkDuplicate(artifact);
     if (!dupId) {
-      importResult.new++;
+      importResult.newCount++;
       database.updateArt(artifact);
       continue;
     }
@@ -196,11 +184,11 @@ function GenshinArtImport(dataObj: any, deleteExisting: boolean, detectDupe: boo
     artifactIdsToRemove.delete(dupId);
 
     if (isDup) {
-      importResult.dupe++;
+      importResult.dupeCount++;
       continue;
     }
 
-    importResult.upgraded++;
+    importResult.upgradedCount++;
     const oldArtifact = database.arts.get(dupId)!;
     artifact.id = dupId;
     artifact.location = oldArtifact.location;
@@ -212,7 +200,7 @@ function GenshinArtImport(dataObj: any, deleteExisting: boolean, detectDupe: boo
     for (const artifactId of artifactIdsToRemove) {
       database.removeArt(artifactId);
     }
-    importResult.deleted = artifactIdsToRemove.size;
+    importResult.deletedCount = artifactIdsToRemove.size;
   }
 
   return importResult;

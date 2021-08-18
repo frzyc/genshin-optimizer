@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { Alert, Badge, Button, Card, Col, Container, Dropdown, Form, Row } from "react-bootstrap"
+import { Alert, Badge, Button, Card, Col, Container, Dropdown, Form, Row, OverlayTrigger, Popover } from "react-bootstrap"
 import ReactGA from 'react-ga'
 import { Trans, useTranslation } from "react-i18next"
 import { database } from "../Database/Database"
@@ -7,7 +7,7 @@ import { languageCodeList } from "../i18n"
 import { useForceUpdate } from "../Util/ReactUtil"
 import { GenshinArtDataCheckForError, GenshinArtGetCount, GenshinArtImport } from "../Database/GenshinArtConversion"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheckSquare, faSquare } from '@fortawesome/free-solid-svg-icons';
+import { faCheckSquare, faSquare, faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 
 export default function SettingsDisplay() {
   const { t } = useTranslation(["settings"]);
@@ -224,15 +224,15 @@ function GenshinArtCard({ forceUpdate }) {
       return;
     }
     try {
-      let successCount = GenshinArtImport(dataObj, deleteExistingArtifacts, true);
+      let successCount = GenshinArtImport(dataObj, deleteExistingArtifacts);
       let successMsg = t("settings:genshinArt.card.successMsg", {
-        totalCount: successCount.total,
-        newCount: successCount.new,
-        upgradeCount: successCount.upgraded,
-        dupCount: successCount.dupe
+        totalCount: successCount.totalCount,
+        newCount: successCount.newCount,
+        upgradeCount: successCount.upgradedCount,
+        dupCount: successCount.dupeCount
       });
       if (deleteExistingArtifacts) {
-        successMsg += t("settings:genshinArt.card.successMsgDeleteExistingAddon", { deleteCount: successCount.deleted });
+        successMsg += t("settings:genshinArt.card.successMsgDeleteExistingAddon", { deleteCount: successCount.deletedCount });
       }
       setSuccess(successMsg);
       setData("");
@@ -275,6 +275,13 @@ function GenshinArtCard({ forceUpdate }) {
       <Button variant={dataValid ? "success" : "danger"} disabled={!dataValid} onClick={() => importArtifacts()}><Trans t={t} i18nKey="settings:genshinArt:card.import" /></Button>
       <Button className="float-right text-right" variant={deleteExistingArtifacts ? "danger" : "primary"} onClick={() => setDeleteExistingArtifacts(value => !value)}>
         <span><FontAwesomeIcon icon={deleteExistingArtifacts ? faCheckSquare : faSquare} className="fa-fw" /> <Trans t={t} i18nKey="settings:genshinArt:card.deleteExistingButton" /></span>
+        <OverlayTrigger
+          overlay={<Popover id="deleting-explanation">
+            <Popover.Content><Trans t={t} i18nKey="settings:genshinArt:card.deleteExistingExplanation" /></Popover.Content>
+          </Popover>}
+        >
+          <FontAwesomeIcon icon={faQuestionCircle} className="ml-2" style={{ cursor: "help" }} />
+        </OverlayTrigger>
       </Button>
     </Card.Footer>
   </Card>
