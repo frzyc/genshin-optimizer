@@ -1,5 +1,5 @@
 import { faDiscord, faPatreon, faPaypal } from '@fortawesome/free-brands-svg-icons';
-import { faCog } from '@fortawesome/free-solid-svg-icons';
+import { faCalculator, faCog, faIdCard, faTools } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { lazy, Suspense } from 'react';
 import { Container } from 'react-bootstrap';
@@ -12,6 +12,7 @@ import { Trans, useTranslation } from 'react-i18next';
 import { HashRouter, Link, Route, Switch } from "react-router-dom";
 import { version } from "../package.json";
 import './App.scss';
+import { artifactSlotIcon } from './Artifact/Component/SlotNameWIthIcon';
 import './Assets/Image.scss';
 import LoadingCard from './Components/LoadingCard';
 import './Database/Database';
@@ -42,10 +43,10 @@ function AppInner() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
-              <Nav.Link as={Link} to="/artifact"><Trans t={t} i18nKey="ui:tabs.artifacts">Artifacts</Trans></Nav.Link>
-              <Nav.Link as={Link} to="/character"><Trans t={t} i18nKey="ui:tabs.characters">Character</Trans></Nav.Link>
-              <Nav.Link as={Link} to="/build"><Trans t={t} i18nKey="ui:tabs.builds">Builds</Trans></Nav.Link>
-              <Nav.Link as={Link} to="/tools"><Trans t={t} i18nKey="ui:tabs.tools">Tools</Trans></Nav.Link>
+              <Nav.Link as={Link} to="/artifact">{artifactSlotIcon("flower")} <Trans t={t} i18nKey="ui:tabs.artifacts">Artifacts</Trans></Nav.Link>
+              <Nav.Link as={Link} to="/character"><FontAwesomeIcon icon={faIdCard} className="fa-fw" /> <Trans t={t} i18nKey="ui:tabs.characters">Character</Trans></Nav.Link>
+              <Nav.Link as={Link} to="/build"><FontAwesomeIcon icon={faCalculator} className="fa-fw" /> <Trans t={t} i18nKey="ui:tabs.builds">Builds</Trans></Nav.Link>
+              <Nav.Link as={Link} to="/tools"><FontAwesomeIcon icon={faTools} className="fa-fw" /> <Trans t={t} i18nKey="ui:tabs.tools">Tools</Trans></Nav.Link>
               {process.env.NODE_ENV === "development" && <Nav.Link as={Link} to="/test">TEST</Nav.Link>}
             </Nav>
             <Nav>
@@ -59,7 +60,7 @@ function AppInner() {
               <Nav.Link href={process.env.REACT_APP_DISCORD_LINK} target="_blank" rel="noreferrer" onClick={() => ReactGA.outboundLink({ label: "discord" }, () => { })}>
                 <span><FontAwesomeIcon icon={faDiscord} className="fa-fw" /> <Trans t={t} i18nKey="ui:social.discord">Discord</Trans></span>
               </Nav.Link>
-              <Nav.Link as={Link} to="/setting"><FontAwesomeIcon icon={faCog} /></Nav.Link>
+              <Nav.Link as={Link} to="/setting"><FontAwesomeIcon icon={faCog} /> <Trans t={t} i18nKey="ui:tabs.database">Database</Trans></Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Navbar>

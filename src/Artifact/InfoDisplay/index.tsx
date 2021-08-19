@@ -24,8 +24,8 @@ export default function ArtifactInfoDisplay() {
           <h5>Substat Efficiency</h5>
           <p>The Efficiency of an subtat is a percentage of the current value over the highest potential 5<Stars stars={1} /> value. From the Image, the maximum roll value of CRIT DMG is 7.8%. In efficiency: <b>5.8/7.8 = 69.2%.</b></p>
 
-          <h5>Current efficiency vs. Maximum Potential efficiency</h5>
-          <p>When a 5<Stars stars={1} /> have 9(4+5) total rolls, with each of the rolls having the highest value, that is defined as a 100% efficient artifact. However, most of the artifacts are not this lucky. The <b>current efficiency</b> of an artifact is a percentage over that 100% artifact. The <b>maximum efficiency</b> is the maximum possible efficiency an artifact can achieve, if the remaining artifact rolls from upgrades are the hightest value.</p>
+          <h5>Current substats Efficiency vs. Maximum Substats Efficiency</h5>
+          <p>When a 5<Stars stars={1} /> have 9(4+5) total rolls, with each of the rolls having the highest value, that is defined as a 100% efficient artifact. However, most of the artifacts are not this lucky. The <b>Current substats Efficiency</b> of an artifact is a percentage over that 100% artifact. The <b>Maximum Substats Efficiency</b> is the maximum possible efficiency an artifact can achieve, if the remaining artifact rolls from upgrades are the hightest possible value.</p>
 
           <h5>Locking an artifact</h5>
           <p>By locking an artifact <FontAwesomeIcon icon={faLock} />, This artifact will not be picked up by the build generator for optimization. An equipped artifact is locked by default.</p>

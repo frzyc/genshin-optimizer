@@ -259,7 +259,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     const artsAccountedOther = setFilters.reduce((accu, cur, ind) => (cur.key && ind !== index) ? accu + cur.num : accu, 0)
     if (setsNumArr.every((num: any) => parseInt(num) + artsAccountedOther > 5)) return false;
     return (<Dropdown.Item key={setKey} onClick={() => buildSettingsDispatch({ type: 'setFilter', index, key: setKey, num: parseInt(setsNumArr[0] as any) ?? 0 })} >
-      {setobj.name}
+      {setobj.nameWithIcon}
     </Dropdown.Item>)
   }), [setFilters, buildSettingsDispatch, artifactSheets])
 
@@ -348,7 +348,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
                     <Card.Header>
                       <ButtonGroup>
                         {/* Artifact set */}
-                        <DropdownButton as={ButtonGroup} title={artifactSheets?.[setKey]?.name ?? "Artifact Set Filter"} disabled={generatingBuilds}>
+                        <DropdownButton as={ButtonGroup} title={artifactSheets?.[setKey]?.nameWithIcon ?? "Artifact Set Filter"} disabled={generatingBuilds}>
                           <Dropdown.Item onClick={() => buildSettingsDispatch({ type: 'setFilter', index, key: "" })}>Unselect Artifact</Dropdown.Item>
                           <Dropdown.ItemText>Max Rarity 🟊🟊🟊🟊🟊</Dropdown.ItemText>
                           {dropdownitemsForStar(5, index)}
@@ -574,7 +574,8 @@ function ArtConditionalModal({ showArtCondModal, setshowArtCondModal, initialSta
           {artSetKeyList.map(setKey => {
             const sheet = artifactSheets[setKey]
             let icon = Object.values(sheet.slotIcons)[0]
-            let numStars = [...sheet.rarity][0]
+            const rarity = sheet.rarity
+            const numStars = rarity[0]
             return <Col className="mb-2" key={setKey} xs={12} lg={6} xl={4}>
               <Card className="h-100" bg="lightcontent" text={"lightfont" as any}>
                 <Card.Header >
@@ -584,7 +585,7 @@ function ArtConditionalModal({ showArtCondModal, setshowArtCondModal, initialSta
                     </Col>
                     <Col >
                       <h6><b>{artifactSheets?.[setKey].name ?? ""}</b></h6>
-                      <span><Stars stars={numStars} /></span>
+                      <span>{rarity.map((ns, i) => <span key={ns}>{ns}<Stars stars={1} /> {i < (rarity.length - 1) ? "/ " : null}</span>)}</span>
                     </Col>
                   </Row>
                 </Card.Header>

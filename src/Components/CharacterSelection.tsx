@@ -3,7 +3,7 @@ import CharacterSheet from "../Character/CharacterSheet";
 import { database } from "../Database/Database";
 import { usePromise } from "../Util/ReactUtil";
 
-function CharacterSelectionDropdownList({ onSelect }) {
+export function CharacterSelectionDropdownList({ onSelect }) {
   return <>{database._getCharKeys().sort(((a, b) => {
     if (a < b) return -1;
     if (a > b) return 1;
@@ -14,11 +14,6 @@ function CharacterSelectionDropdownList({ onSelect }) {
 function DropDownItem({ characterKey, onSelect }) {
   const characterSheet = usePromise(CharacterSheet.get(characterKey), [characterKey])
   if (!characterSheet) return null
-  return <Dropdown.Item onClick={() => onSelect(characterKey)}>
-    {characterSheet.name}
-  </Dropdown.Item>
+  return <Dropdown.Item onClick={() => onSelect(characterKey)}>{characterSheet.nameWIthIcon}</Dropdown.Item>
 }
-export {
-  CharacterSelectionDropdownList,
-};
 

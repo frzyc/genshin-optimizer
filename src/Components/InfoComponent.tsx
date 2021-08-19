@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Suspense, useState } from "react"
 import { Button, Card, Col, Modal, Row, Spinner } from "react-bootstrap"
 import { getRandomElementFromArray, loadFromLocalStorage, saveToLocalStorage } from "../Util/Util"
+import { TransWrapper } from "./Translate"
 
 export default function InfoComponent({ pageKey = "", text = "", modalTitle = "", children }: { pageKey: string, text: Displayable | Displayable[], modalTitle: Displayable, children: JSX.Element }) {
   const [showInfoModal, setshowInfoModal] = useState(loadFromLocalStorage("infoShown")?.[pageKey] ?? true)
@@ -44,7 +45,7 @@ export default function InfoComponent({ pageKey = "", text = "", modalTitle = ""
         <Row>
           <Col><small>{displayText}</small></Col>
           <Col xs="auto">
-            <Button size="sm" variant="info" className="m-0 py-1" onClick={() => setshowInfoModal(true)}><FontAwesomeIcon icon={faQuestionCircle} /></Button>
+            <Button size="sm" variant="info" className="m-0 py-1" onClick={() => setshowInfoModal(true)}><TransWrapper ns="ui" key18="info" /> <FontAwesomeIcon icon={faQuestionCircle} /></Button>
           </Col>
         </Row>
       </Card.Body>
