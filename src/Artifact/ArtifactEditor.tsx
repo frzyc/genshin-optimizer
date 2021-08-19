@@ -96,7 +96,7 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: Artifac
             {/* Artifact Set */}
             <Dropdown as={InputGroup.Prepend} className="flex-grow-1">
               <Dropdown.Toggle className="w-100" variant={artifact ? "success" : "primary"}>
-                {sheet?.name ?? t`editor.set.artifactSet`}
+                {sheet?.nameWithIcon ?? t`editor.set.artifactSet`}
               </Dropdown.Toggle>
               <Dropdown.Menu>
                 <ArtifactSetDropDownMenuFragment sheets={artifactSheets} click={(setKey => update({ setKey }))} />
@@ -158,7 +158,7 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: Artifac
             />
           </InputGroup>
 
-          {/* Current Substat Efficiency */}
+          {/* Current Substats Efficiency */}
           <Card bg="lightcontent" text={"lightfont" as any} className="mb-2">
             <Card.Body className="py-1 px-2">
               <Row>
@@ -179,7 +179,7 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: Artifac
             </Card.Body>
           </Card>
 
-          {/* Maximum Substat Efficiency */}
+          {/* Maximum Substats Efficiency */}
           <Card bg="lightcontent" text={"lightfont" as any} className="mb-2">
             <Card.Body className="py-1 px-2">
               <Row>

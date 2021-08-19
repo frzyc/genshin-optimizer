@@ -1,4 +1,4 @@
-import { faCheckSquare, faLock, faLockOpen, faSortAmountDownAlt, faSortAmountUp, faSquare, faTrash, faUndo, faUserSlash } from '@fortawesome/free-solid-svg-icons';
+import { faBriefcase, faCheckSquare, faLock, faLockOpen, faSortAmountDownAlt, faSortAmountUp, faSquare, faTrash, faUndo, faUserShield, faUserSlash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import { Button, ButtonGroup, ButtonToolbar, Card, Dropdown, InputGroup, ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
@@ -10,8 +10,9 @@ import { Trans, useTranslation } from 'react-i18next';
 import CharacterSheet from '../Character/CharacterSheet';
 import { CharacterSelectionDropdownList } from '../Components/CharacterSelection';
 import CustomFormControl from '../Components/CustomFormControl';
-import { Stars } from '../Components/StarDisplay';
 import InfoComponent from '../Components/InfoComponent';
+import { Stars } from '../Components/StarDisplay';
+import { database } from '../Database/Database';
 import Stat from '../Stat';
 import { allMainStatKeys, allSubstats, IArtifact, SubstatKey } from '../Types/artifact';
 import { allArtifactRarities, allSlotKeys } from '../Types/consts';
@@ -21,9 +22,8 @@ import Artifact from './Artifact';
 import ArtifactCard from './ArtifactCard';
 import ArtifactEditor from './ArtifactEditor';
 import { ArtifactSheet } from './ArtifactSheet';
-import SlotNameWithIcon from './Component/SlotNameWIthIcon';
-import { database } from '../Database/Database';
 import ArtifactSetDropDownMenuFragment from './Component/ArtifactSetDropDownMenuFragment';
+import SlotNameWithIcon from './Component/SlotNameWIthIcon';
 
 const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
 const sortKeys = ["quality", "level", "efficiency", "mefficiency"]
@@ -134,10 +134,10 @@ export default function ArtifactDisplay(props) {
 
   const locationCharacterSheet = usePromise(CharacterSheet.get(filterLocation), [filterLocation])
   let locationDisplay
-  if (!filterLocation) locationDisplay = t("locationDisplay", { value: t("filterLocation.any") })
-  else if (filterLocation === "Inventory") locationDisplay = t("locationDisplay", { value: t("filterLocation.inventory") })
-  else if (filterLocation === "Equipped") locationDisplay = t("filterLocation.currentlyEquipped")
-  else locationDisplay = <b>{locationCharacterSheet?.name}</b>
+  if (!filterLocation) locationDisplay = t("filterLocation.any")
+  else if (filterLocation === "Inventory") locationDisplay = <span><FontAwesomeIcon icon={faBriefcase} /> {t("filterLocation.inventory")}</span>
+  else if (filterLocation === "Equipped") locationDisplay = <span><FontAwesomeIcon icon={faUserShield} /> {t("filterLocation.currentlyEquipped")}</span>
+  else locationDisplay = <b>{locationCharacterSheet?.nameWIthIcon}</b>
 
   let lockedDisplay
   if (filterLocked === "locked") lockedDisplay = <span><FontAwesomeIcon icon={faLock} /> {t`lock.locked`}</span>
@@ -303,8 +303,8 @@ export default function ArtifactDisplay(props) {
                   </Dropdown.Toggle>
                   <Dropdown.Menu>
                     <Dropdown.Item onClick={() => filterDispatch({ filterLocation: "" })}><Trans t={t} i18nKey="ui:unselect" >Unselect</Trans></Dropdown.Item>
-                    <Dropdown.Item onClick={() => filterDispatch({ filterLocation: "Inventory" })}><Trans t={t} i18nKey="filterLocation.inventory" >Inventory</Trans></Dropdown.Item>
-                    <Dropdown.Item onClick={() => filterDispatch({ filterLocation: "Equipped" })}><Trans t={t} i18nKey="filterLocation.currentlyEquipped" >Currently Equipped</Trans></Dropdown.Item>
+                    <Dropdown.Item onClick={() => filterDispatch({ filterLocation: "Inventory" })}><FontAwesomeIcon icon={faBriefcase} /> <Trans t={t} i18nKey="filterLocation.inventory" >Inventory</Trans></Dropdown.Item>
+                    <Dropdown.Item onClick={() => filterDispatch({ filterLocation: "Equipped" })}><FontAwesomeIcon icon={faUserShield} /> <Trans t={t} i18nKey="filterLocation.currentlyEquipped" >Currently Equipped</Trans></Dropdown.Item>
                     <Dropdown.Divider />
                     <CharacterSelectionDropdownList onSelect={cid => filterDispatch({ filterLocation: cid })} />
                   </Dropdown.Menu>

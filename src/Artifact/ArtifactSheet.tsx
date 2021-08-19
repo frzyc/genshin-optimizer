@@ -1,3 +1,4 @@
+import { Image } from "react-bootstrap";
 import { Translate } from "../Components/Translate";
 import { IArtifactSheet, SetEffectEntry } from "../Types/artifact";
 import { allArtifactSets, allSlotKeys, ArtifactSetKey, Rarity, SetNum, SlotKey } from "../Types/consts";
@@ -23,6 +24,10 @@ export class ArtifactSheet {
   }
 
   get name() { return tr(this.key, "setName") }
+  get nameWithIcon(){
+    const slotKey = this.slots[0]
+    return <span><Image src={this.slotIcons[slotKey]} className="inline-icon" /> {tr(this.key, "setName")}</span>
+  }
 
   //This is only for OCR, because we only scan in english right now.
   get nameRaw(): string { return this.data.name }
