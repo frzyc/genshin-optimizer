@@ -4,7 +4,8 @@
     "artifacts": "Artifacts",
     "characters": "Characters",
     "builds": "Builds",
-    "tools": "Tools"
+    "tools": "Tools",
+    "database": "Database"
   },
   "social": {
     "paypal": "Paypal",
@@ -26,5 +27,6 @@
   "appVersion": "$t(pageTitle) Version: {{version}}",
   "underConstruction": "Under Construction",
   "error": "Error",
-  "reset": "Reset"
+  "reset": "Reset",
+  "info": "INFO"
 }
