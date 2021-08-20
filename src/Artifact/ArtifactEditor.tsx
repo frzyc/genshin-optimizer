@@ -247,13 +247,13 @@ function SubstatInput({ index, artifact, setSubstat, className }: { index: numbe
   const { mainStatKey = "" } = artifact ?? {}
   const { key = "", value = 0, rolls = [], efficiency = 0 } = artifact?.substats[index] ?? {}
 
-  const accurateValue = rolls.reduce((a, b) => a + b, 0)
+  const accurateValue = rolls.reduce((a, b) => Math.fround(a + b), 0)
   const unit = Stat.getStatUnit(key), rollNum = rolls.length
 
   let error: string = "", rollData: readonly number[] = [], allowedRolls = 0, rollLabel: Displayable | null = null
 
   if (artifact) {
-    //account for the rolls it will to fill all 4 substates, +1 for its base roll
+    // Account for the rolls it will need to fill all 4 substates, +1 for its base roll
     const numStars = artifact.numStars
     const { numUpgrades, high } = Artifact.rollInfo(numStars)
     const maxRollNum = numUpgrades + high - 3;
@@ -305,7 +305,7 @@ function SubstatInput({ index, artifact, setSubstat, className }: { index: numbe
       />
       {<ButtonGroup size="sm" as={InputGroup.Append}>
         {rollData.map((v, i) => {
-          const newValue = valueString(accurateValue + v, unit)
+          const newValue = valueString(Math.fround(accurateValue + v), unit)
           return <Button key={i} variant={`${rollOffset + i}roll`} className="py-0 text-darkcontent" disabled={(value && !rollNum) || allowedRolls <= 0} onClick={() => setSubstat(index, { key, value: parseFloat(newValue) })}>{newValue}</Button>
         })}
       </ButtonGroup>}
