@@ -28,7 +28,6 @@ export interface BuildRequest {
   maxBuildsToShow: number,
   optimizationTarget: string | string[],
   ascending: boolean,
-  turbo: boolean
 }
 export interface Build {
   buildFilterVal: number,

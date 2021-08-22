@@ -47,6 +47,7 @@ function AppInner() {
               <Nav.Link as={Link} to="/character"><FontAwesomeIcon icon={faIdCard} className="fa-fw" /> <Trans t={t} i18nKey="ui:tabs.characters">Character</Trans></Nav.Link>
               <Nav.Link as={Link} to="/build"><FontAwesomeIcon icon={faCalculator} className="fa-fw" /> <Trans t={t} i18nKey="ui:tabs.builds">Builds</Trans></Nav.Link>
               <Nav.Link as={Link} to="/tools"><FontAwesomeIcon icon={faTools} className="fa-fw" /> <Trans t={t} i18nKey="ui:tabs.tools">Tools</Trans></Nav.Link>
+              <Nav.Link as={Link} to="/database"><FontAwesomeIcon icon={faCog} /> <Trans t={t} i18nKey="ui:tabs.database">Database</Trans></Nav.Link>
               {process.env.NODE_ENV === "development" && <Nav.Link as={Link} to="/test">TEST</Nav.Link>}
             </Nav>
             <Nav>
@@ -60,7 +61,6 @@ function AppInner() {
               <Nav.Link href={process.env.REACT_APP_DISCORD_LINK} target="_blank" rel="noreferrer" onClick={() => ReactGA.outboundLink({ label: "discord" }, () => { })}>
                 <span><FontAwesomeIcon icon={faDiscord} className="fa-fw" /> <Trans t={t} i18nKey="ui:social.discord">Discord</Trans></span>
               </Nav.Link>
-              <Nav.Link as={Link} to="/setting"><FontAwesomeIcon icon={faCog} /> <Trans t={t} i18nKey="ui:tabs.database">Database</Trans></Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
@@ -71,7 +71,7 @@ function AppInner() {
             <Route path="/build" component={BuildDisplay} />
             <Route path="/tools" component={Planner} />
             {process.env.NODE_ENV === "development" && <Route path="/test" component={TestDisplay} />}
-            <Route path="/setting" component={SettingsDisplay} />
+            <Route path="/database" component={SettingsDisplay} />
             <Route path="/flex" component={FlexDisplay} />
             <Route path="/" component={Home} />
           </Switch>

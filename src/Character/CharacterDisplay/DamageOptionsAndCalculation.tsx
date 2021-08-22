@@ -211,7 +211,7 @@ export default function DamageOptionsAndCalculation({ sheets, sheets: { characte
                   <Col>Enemy Editor</Col>
                   <Col xs="auto">
                     <Button variant="warning" size="sm">
-                      <a href="https://genshin-impact.fandom.com/wiki/Damage#Base_Enemy_Resistances" target="_blank" rel="noreferrer">To get the specific resistance values of enemies, please visit the wiki.</a>
+                      <a href="https://genshin-impact.fandom.com/wiki/Resistance#Base_Enemy_Resistances" target="_blank" rel="noreferrer">To get the specific resistance values of enemies, please visit the wiki.</a>
                     </Button >
                   </Col>
                 </Row>
