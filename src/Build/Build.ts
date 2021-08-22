@@ -7,19 +7,20 @@ import { mergeStats } from "../Util/StatUtil"
 import { deepClone } from "../Util/Util"
 
 /**
- * Remove artifacts that can never be used in optimized builds
+ * Remove artifacts that can never be used in optimized builds when trying to optimize for top `maxBuildsToShow` builds
  * @param {artifact[]} artifacts - List of artifacts of the same slot
  * @param {Object.<setKey, Object.<number, Object.<statKey, statValue>>>} artifactSetEffects - The list of the set effects
  * @param {Set.<statKey>} significantStats - A set of stats that pruning needs to take into consideration
  * @param {bool} ascending - Whether the sorting is ascending or descending
  * @param {Set.<setKey>} alwaysAccepted - The list of artifact sets that are always included
  */
-export function pruneArtifacts(artifacts: IArtifact[], artifactSetEffects: ArtifactSetEffects, significantStats: Set<StatKey>, ascending: boolean = false, alwaysAccepted: Set<ArtifactSetKey> = new Set()): IArtifact[] {
+export function pruneArtifacts(artifacts: IArtifact[], artifactSetEffects: ArtifactSetEffects, significantStats: Set<StatKey>, maxBuildsToShow: number = 1, ascending: boolean = false, alwaysAccepted: Set<ArtifactSetKey> = new Set()): IArtifact[] {
   function shouldKeepFirst(first: Dict<StatKey, number>, second: Dict<StatKey, number>, preferFirst: boolean) {
     let firstBetter = Object.entries(first).some(([k, v]) => !isFinite(v) || v > (second[k] ?? 0))
     let secondBetter = Object.entries(second).some(([k, v]) => !isFinite(v) || v > (first[k] ?? 0))
     if (ascending) [firstBetter, secondBetter] = [secondBetter, firstBetter]
-    // Keep if first is strictly better, uncomparable, or equal + prefer first
+    // Keep if first is strictly better, uncomparable, or equal + prefer first.
+    // That is, return false if second is strictly better, or equal + NOT prefer first
     return firstBetter || (!secondBetter && preferFirst)
   }
 
@@ -48,7 +49,7 @@ export function pruneArtifacts(artifacts: IArtifact[], artifactSetEffects: Artif
   })
 
   // array of artifacts, artifact stats, and set (may be "other")
-  let tmp: { artifact: IArtifact, stats: Dict<StatKey, number>, set: ArtifactSetKey | "other" }[] = artifacts.map(artifact => {
+  let tmp: { artifact: IArtifact, numberOfBetterSameSetArtifacts: number, stats: Dict<StatKey, number>, set: ArtifactSetKey | "other" }[] = artifacts.map(artifact => {
     const stats: Dict<StatKey, number> = {}, set: ArtifactSetKey | "other" = (artifact.setKey in prunedSetEffects || alwaysAccepted.has(artifact.setKey)) ? artifact.setKey : "other"
     if (significantStats.has(artifact.mainStatKey as any))
       stats[artifact.mainStatKey] = artifact.mainStatVal!
@@ -58,36 +59,48 @@ export function pruneArtifacts(artifacts: IArtifact[], artifactSetEffects: Artif
     for (const key in stats)
       if (key.endsWith("enemyRes_"))
         stats[key as StatKey] = -stats[key as StatKey]!
-    return { artifact, stats, set }
+    return { artifact, numberOfBetterSameSetArtifacts: 0, stats, set }
   })
 
   // Compare artifacts' base stats from the same set
-  tmp = tmp.filter(({ artifact: candidate, stats: candidateStats, set: candidateSet }) =>
-    tmp.every(({ artifact: other, stats: otherStats, set: otherSet }) =>
-      candidateSet !== otherSet || shouldKeepFirst(candidateStats, otherStats, candidate.id! <= other.id!)
-    ))
-
-  if (!ascending) {
-    // Cross-check with different sets
-    tmp = tmp.filter(({ artifact: candidate, stats: candidateStats, set: candidateSet }) => {
-      if (alwaysAccepted.has(candidate.setKey))
+  tmp = tmp.filter((first) => {
+    const { artifact: candidate, stats: candidateStats, set: candidateSet } = first
+    return tmp.every(({ artifact: other, stats: otherStats, set: otherSet }) => {
+      if (candidateSet !== otherSet || shouldKeepFirst(candidateStats, otherStats, candidate.id! <= other.id!)) {
         return true
-      // Possible "additional stats" if a build equips `candidate` on an empty slot.
-      let possibleStats = [...Object.values(prunedSetEffects[candidateSet]!), {}].map(c => {
-        const current: BonusStats = { ...candidateStats }
-        mergeStats(current, c)
-        return current
-      })
-      return tmp.every(({ artifact: other, stats: otherStats, set: otherSet }) => {
-        if (candidateSet === otherSet) return true // Already checked same-set
-
-        // Remove possibilities that shouldn't be kept
-        possibleStats = possibleStats.filter(current =>
-          shouldKeepFirst(current, otherStats, candidate.id! <= other.id!))
-        return possibleStats.length !== 0
-      })
+      } else {
+        first.numberOfBetterSameSetArtifacts += 1
+        return first.numberOfBetterSameSetArtifacts < maxBuildsToShow
+      }
     })
-  }
+  })
+
+  // Cross-check with different sets
+  tmp = tmp.filter(({ artifact: candidate, stats: candidateStats, set: candidateSet }) => {
+    if (alwaysAccepted.has(candidate.setKey))
+      return true
+    // Possible "additional stats" if a build equips `candidate` on an empty slot.
+    let possibleStats = [...Object.values(prunedSetEffects[candidateSet]!), {}].map(c => {
+      const current: BonusStats = { ...candidateStats }
+      mergeStats(current, c)
+      return { stat: current, numberOfBetterArtifacts: 0 }
+    })
+    return tmp.every(({ artifact: other, stats: otherStats, set: otherSet, numberOfBetterSameSetArtifacts }) => {
+      if (candidateSet === otherSet) return true // Already checked same-set
+
+      // Remove possibilities that shouldn't be kept
+      possibleStats = possibleStats.filter(current => {
+        if (shouldKeepFirst(current.stat, otherStats, candidate.id! <= other.id!)) {
+          return true
+        } else {
+          current.numberOfBetterArtifacts += 1
+          return current.numberOfBetterArtifacts + numberOfBetterSameSetArtifacts < maxBuildsToShow
+        }
+      })
+      return possibleStats.length !== 0
+    })
+  })
+
   return tmp.map(tmp => tmp.artifact)
 }
 
