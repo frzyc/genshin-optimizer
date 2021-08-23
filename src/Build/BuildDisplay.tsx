@@ -1,7 +1,7 @@
 import { faCheckSquare, faSortAmountDownAlt, faSortAmountUp, faSquare, faTimes, faTrash, faUndo } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { lazy, useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { Alert, Badge, Button, ButtonGroup, Card, Col, Container, Dropdown, DropdownButton, Image, InputGroup, ListGroup, Modal, OverlayTrigger, ProgressBar, Row, Tooltip } from 'react-bootstrap';
+import { Alert, Badge, Button, ButtonGroup, ButtonToolbar, Card, Col, Container, Dropdown, DropdownButton, Image, InputGroup, ListGroup, Modal, OverlayTrigger, ProgressBar, Row, ToggleButton, ToggleButtonGroup, Tooltip } from 'react-bootstrap';
 import ReactGA from 'react-ga';
 // eslint-disable-next-line
 import Worker from "worker-loader!./BuildWorker";
@@ -31,8 +31,9 @@ import WeaponSheet from '../Weapon/WeaponSheet';
 import { calculateTotalBuildNumber } from './Build';
 import SlotNameWithIcon, { artifactSlotIcon } from '../Artifact/Component/SlotNameWIthIcon';
 import { database } from '../Database/Database';
-import { StatKey } from '../Types/artifact';
+import { allSubstats, StatKey } from '../Types/artifact';
 import { getFormulaTargetsDisplayHeading } from '../Character/CharacterUtil';
+import StatIcon from '../Components/StatIcon';
 const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
 
 //lazy load the character display
@@ -46,7 +47,7 @@ const artifactsSlotsToSelectMainStats: SlotKey[] = ["sands", "goblet", "circlet"
 const initialBuildSettings = (): BuildSetting => ({
   setFilters: [{ key: "", num: 0 }, { key: "", num: 0 }, { key: "", num: 0 }],
   statFilters: {},
-  mainStatKeys: ["", "", ""],
+  mainStatKeys: [[], [], []],
   optimizationTarget: "finalATK",
   mainStatAssumptionLevel: 0,
   useLockedArts: false,
@@ -189,7 +190,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     const split = Artifact.splitArtifactsBySlot(artifactDatabase);
     //filter the split slots on the mainstats selected.
     artifactsSlotsToSelectMainStats.forEach((slotKey, index) =>
-      mainStatKeys[index] && (split[slotKey] = split[slotKey]?.filter((art) => art.mainStatKey === mainStatKeys[index])))
+      mainStatKeys[index] && mainStatKeys[index].length > 0 && (split[slotKey] = split[slotKey]?.filter((art) => mainStatKeys[index].includes(art.mainStatKey) )))
     const totBuildNumber = calculateTotalBuildNumber(split, setFilters)
     return artsDirty && { split, totBuildNumber }
   }, [characterKey, useLockedArts, useEquippedArts, mainStatKeys, setFilters, artsDirty])
@@ -301,6 +302,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   const hasMinFilters = Object.entries(statFilters).some(([statKey, { min }]) => typeof min === "number")
   const hasMaxFilters = Object.entries(statFilters).some(([statKey, { max }]) => typeof max === "number")
   const disabledTurbo = ascending ? hasMinFilters : hasMaxFilters
+  const mainStatFilterGroups = [3,2,2,2,2]
 
   return <Container className="mt-2">
     <InfoComponent
@@ -399,19 +401,24 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
                       </Row>
                     </Card.Header>
                     <Card.Body className="mb-n2">
-                      {artifactsSlotsToSelectMainStats.map((slotKey, index) =>
-                      (<div className="text-inline mb-1 d-flex justify-content-between" key={slotKey}>
-                        <h6 className="d-inline mb-0"><SlotNameWithIcon slotKey={slotKey} /></h6>
-                        <DropdownButton disabled={generatingBuilds} size="sm"
-                          title={mainStatKeys[index] ? Stat.getStatNameWithPercent(mainStatKeys[index]) : "Select a mainstat"}
-                          className="d-inline">
-                          <Dropdown.Item onClick={() => buildSettingsDispatch({ type: "mainStatKey", index, mainStatKey: "" })} >No MainStat</Dropdown.Item>
-                          {Artifact.slotMainStats(slotKey).map(mainStatKey =>
-                            <Dropdown.Item onClick={() => buildSettingsDispatch({ type: "mainStatKey", index, mainStatKey })} key={mainStatKey}>
-                              {Stat.getStatNameWithPercent(mainStatKey)}
-                            </Dropdown.Item>)}
-                        </DropdownButton>
-                      </div>))}
+                      {artifactsSlotsToSelectMainStats.map((slotKey, slotIndex) =>
+                      <div className="text-inline mb-1 d-flex justify-content-between" key={slotKey}>
+                      <ButtonToolbar className="w-100 mb-2">
+                      {mainStatFilterGroups.map((value, index, array) => {
+                        let start = array.slice(0,index).reduce((a,b)=>a+b,0)
+                        let end = start + value
+                        
+                        if(Artifact.slotMainStats(slotKey).length > start)
+                          return <ToggleButtonGroup key={`mainStat-${slotIndex}-${index}`} type="checkbox" value={mainStatKeys[slotIndex]} onChange={(selectedKeys) => buildSettingsDispatch({ type: "mainStatKey", index:slotIndex, mainStatKey:selectedKeys })} className="w-100 flex-grow-1 mb-0" size="sm">
+                            {index === 0 && <ToggleButton className="col-sm-6 rounded-0 " value={slotKey} disabled><SlotNameWithIcon slotKey={slotKey} /></ToggleButton>}
+                            {Artifact.slotMainStats(slotKey).slice(start,end).map(mainStatKey => 
+                            <ToggleButton className={`rounded-0  ${value===2?'w-50':''}`} key={mainStatKey} value={mainStatKey} variant={mainStatKeys[slotIndex] && mainStatKeys[slotIndex].includes(mainStatKey) ? "success" : "secondary"}>{StatIcon[mainStatKey.replace('_dmg_','')]} {Stat.getStatNameRaw(mainStatKey)}</ToggleButton>)}
+                          </ToggleButtonGroup>
+                        else
+                          return <></>
+                      })}
+                      </ButtonToolbar>
+                      </div>)}
                     </Card.Body>
                   </Card>
                 </Col>

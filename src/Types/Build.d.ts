@@ -8,7 +8,7 @@ export type SetFilter = { key: ArtifactSetKey | "", num: number }[]
 export interface BuildSetting {
   setFilters: SetFilter,
   statFilters: MinMaxFilter,
-  mainStatKeys: (MainStatKey | "")[],
+  mainStatKeys: (MainStatKey | "")[][],
   optimizationTarget: string[] | string,
   mainStatAssumptionLevel: number,
   useLockedArts: boolean,
