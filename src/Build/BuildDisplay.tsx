@@ -406,7 +406,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
                           return <ToggleButtonGroup key={`mainStat-${slotIndex}-${index}`} type="checkbox" value={mainStatKeys[slotIndex]} onChange={(selectedKeys) => buildSettingsDispatch({ type: "mainStatKey", index:slotIndex, mainStatKey:selectedKeys })} className="w-100 flex-grow-1 mb-0" size="sm">
                             {index === 0 && <ToggleButton className="col-sm-6 rounded-0 " value={slotKey} disabled><SlotNameWithIcon slotKey={slotKey} /></ToggleButton>}
                             {Artifact.slotMainStats(slotKey).slice(start,end).map(mainStatKey => 
-                            <ToggleButton className={`rounded-0  ${value===2?'w-50':''}`} key={mainStatKey} value={mainStatKey} variant={mainStatKeys[slotIndex] && mainStatKeys[slotIndex].includes(mainStatKey) ? "success" : "secondary"}>{StatIcon[mainStatKey.replace('_dmg_','')]} {Stat.getStatNameRaw(mainStatKey)}</ToggleButton>)}
+                            <ToggleButton className={`rounded-0  ${value===2?'w-50':''}`} key={mainStatKey} value={mainStatKey} variant={mainStatKeys[slotIndex] && mainStatKeys[slotIndex].includes(mainStatKey) ? "success" : "secondary"}>{StatIcon[mainStatKey]} {Stat.getStatNameRaw(mainStatKey)}</ToggleButton>)}
                           </ToggleButtonGroup>
                         else
                           return <></>
