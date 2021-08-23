@@ -91,7 +91,7 @@ export default function HomeDisplay(props: any) {
                   <li>Generator builds for specific characters using artifacts added by user.</li>
                   <li>Limit the builds by artifact sets, main stats...</li>
                   <li>Sort the generated builds by a specific stat for maximization.</li>
-                  <li>Generator will not pick up artifacts already equipped on a differnt character.</li>
+                  <li>Generator will not pick up artifacts already equipped on a different character.</li>
                   <li>Compare generated artifact build against artifact currently on character.</li>
                   <li>Use conditional stats from artifact sets, e.g. Gladitator's 4-set normal attack DMG Bonus, as part of the build calculations.</li>
                 </ul>

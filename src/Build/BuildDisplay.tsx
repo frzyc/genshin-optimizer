@@ -8,40 +8,40 @@ import Worker from "worker-loader!./BuildWorker";
 import Artifact from '../Artifact/Artifact';
 import { ArtifactSheet } from '../Artifact/ArtifactSheet';
 import SetEffectDisplay from '../Artifact/Component/SetEffectDisplay';
+import SlotNameWithIcon, { artifactSlotIcon } from '../Artifact/Component/SlotNameWIthIcon';
 import Character from '../Character/Character';
 import CharacterCard from '../Character/CharacterCard';
 import { HitModeToggle, InfusionAuraDropdown, ReactionToggle } from '../Character/CharacterDisplay/DamageOptionsAndCalculation';
 import StatDisplayComponent from '../Character/CharacterDisplay/StatDisplayComponent';
 import CharacterSheet from '../Character/CharacterSheet';
+import { getFormulaTargetsDisplayHeading } from '../Character/CharacterUtil';
 import { CharacterSelectionDropdownList } from '../Components/CharacterSelection';
 import CustomFormControl from '../Components/CustomFormControl';
-import { Stars } from '../Components/StarDisplay';
-import Formula from '../Formula';
 import InfoComponent from '../Components/InfoComponent';
+import { Stars } from '../Components/StarDisplay';
+import StatIcon from '../Components/StatIcon';
+import { database } from '../Database/Database';
+import Formula from '../Formula';
 import Stat from '../Stat';
+import { StatKey } from '../Types/artifact';
 import { ArtifactsBySlot, Build, BuildSetting } from '../Types/Build';
 import { ICharacter } from '../Types/character';
 import { allSlotKeys, ArtifactSetKey, CharacterKey, SetNum, SlotKey } from '../Types/consts';
-import { ICalculatedStats } from '../Types/stats';
 import { IFieldDisplay } from '../Types/IFieldDisplay';
+import { ICalculatedStats } from '../Types/stats';
 import { useForceUpdate, usePromise } from '../Util/ReactUtil';
 import { timeStringMs } from '../Util/TimeUtil';
 import { crawlObject, deepClone, loadFromLocalStorage, saveToLocalStorage } from '../Util/Util';
 import WeaponSheet from '../Weapon/WeaponSheet';
 import { calculateTotalBuildNumber } from './Build';
-import SlotNameWithIcon, { artifactSlotIcon } from '../Artifact/Component/SlotNameWIthIcon';
-import { database } from '../Database/Database';
-import { allSubstats, StatKey } from '../Types/artifact';
-import { getFormulaTargetsDisplayHeading } from '../Character/CharacterUtil';
-import StatIcon from '../Components/StatIcon';
 const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
 
 //lazy load the character display
 const CharacterDisplayCard = lazy(() => import('../Character/CharacterDisplayCard'))
 
 const warningBuildNumber = 10000000
-const maxBuildsToShowList = [50, 25, 10, 5]
-const maxBuildsToShowDefault = 25
+const maxBuildsToShowList = [1, 2, 3, 4, 5, 8, 10]
+const maxBuildsToShowDefault = 5
 const autoBuildGenLimit = 100
 const artifactsSlotsToSelectMainStats: SlotKey[] = ["sands", "goblet", "circlet"]
 const initialBuildSettings = (): BuildSetting => ({
@@ -153,7 +153,8 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     if (!("BuildsDisplay.state" in localStorage)) return
     const { characterKey = "", maxBuildsToShow = maxBuildsToShowDefault } = loadFromLocalStorage("BuildsDisplay.state") ?? {}
     if (characterKey && database._getChar(characterKey)) selectCharacter(characterKey)
-    setmaxBuildsToShow(maxBuildsToShow)
+    if (!maxBuildsToShowList.includes(maxBuildsToShow)) setmaxBuildsToShow(maxBuildsToShowDefault)
+    else setmaxBuildsToShow(maxBuildsToShow)
   }, [])// eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => propCharacterKey && selectCharacter(propCharacterKey), [propCharacterKey, selectCharacter])//update when props update
@@ -195,9 +196,8 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     return artsDirty && { split, totBuildNumber }
   }, [characterKey, useLockedArts, useEquippedArts, mainStatKeys, setFilters, artsDirty])
 
-  const generateBuilds = useCallback((turbo = false) => {
+  const generateBuilds = useCallback(() => {
     if (!initialStats || !artifactSheets) return
-    if (typeof turbo !== "boolean") turbo = false
     setbuilds([])
     setgeneratingBuilds(true)
     setgenerationDuration(0)
@@ -220,7 +220,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     //create an obj with app the artifact set effects to pass to buildworker.
     const data = {
       splitArtifacts, initialStats, artifactSetEffects,
-      setFilters, minFilters, maxFilters, maxBuildsToShow, optimizationTarget, ascending, turbo
+      setFilters, minFilters, maxFilters, maxBuildsToShow, optimizationTarget, ascending
     };
     worker.current?.terminate()
     worker.current = new Worker()
@@ -260,7 +260,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     const artsAccountedOther = setFilters.reduce((accu, cur, ind) => (cur.key && ind !== index) ? accu + cur.num : accu, 0)
     if (setsNumArr.every((num: any) => parseInt(num) + artsAccountedOther > 5)) return false;
     return (<Dropdown.Item key={setKey} onClick={() => buildSettingsDispatch({ type: 'setFilter', index, key: setKey, num: parseInt(setsNumArr[0] as any) ?? 0 })} >
-      {setobj.name}
+      {setobj.nameWithIcon}
     </Dropdown.Item>)
   }), [setFilters, buildSettingsDispatch, artifactSheets])
 
@@ -298,19 +298,13 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   }, [initialStats?.conditionalValues])
   //rudimentary dispatcher, definitely not the same API as the real characterDispatch.
   const characterDispatch = useCallback(val => database.updateChar({ ...character, ...val }), [character])
-
-  const hasMinFilters = Object.entries(statFilters).some(([statKey, { min }]) => typeof min === "number")
-  const hasMaxFilters = Object.entries(statFilters).some(([statKey, { max }]) => typeof max === "number")
-  const disabledTurbo = ascending ? hasMinFilters : hasMaxFilters
   const mainStatFilterGroups = [3,2,2,2,2]
-
   return <Container className="mt-2">
     <InfoComponent
       pageKey="buildPage"
       modalTitle="Character Management Page Guide"
       text={["For self-infused attacks, like Noelle's Sweeping Time, enable the skill in the talent page.",
         "You can compare the difference between equipped artifacts and generated builds.",
-        "TURBO mode can process millions of builds in seconds.",
         "The more complex the formula, the longer the generation time.",]}
     ><InfoDisplay /></InfoComponent>
     <BuildModal {...{ build: modalBuild, showCharacterModal, characterKey, selectCharacter, setmodalBuild, setshowCharacterModal }} />
@@ -350,7 +344,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
                     <Card.Header>
                       <ButtonGroup>
                         {/* Artifact set */}
-                        <DropdownButton as={ButtonGroup} title={artifactSheets?.[setKey]?.name ?? "Artifact Set Filter"} disabled={generatingBuilds}>
+                        <DropdownButton as={ButtonGroup} title={artifactSheets?.[setKey]?.nameWithIcon ?? "Artifact Set Filter"} disabled={generatingBuilds}>
                           <Dropdown.Item onClick={() => buildSettingsDispatch({ type: 'setFilter', index, key: "" })}>Unselect Artifact</Dropdown.Item>
                           <Dropdown.ItemText>Max Rarity 🟊🟊🟊🟊🟊</Dropdown.ItemText>
                           {dropdownitemsForStar(5, index)}
@@ -424,10 +418,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
                 </Col>
               </Row></Col>
             </Row>
-            <Row className="mb-2">
-              <Col>{!!characterKey && <BuildAlert {...{ totBuildNumber, generatingBuilds, generationSkipped, generationProgress, generationDuration, characterName, maxBuildsToShow }} />}</Col>
-            </Row>
-            <Row className="d-flex justify-content-between">
+            <Row className="d-flex justify-content-between mb-2">
               <Col xs="auto" >
                 <ButtonGroup>
                   <Button
@@ -435,16 +426,19 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
                     disabled={!characterKey || generatingBuilds}
                     variant={(characterKey && totBuildNumber <= warningBuildNumber) ? "success" : "warning"}
                     onClick={generateBuilds}
-                  ><span>Generate Builds</span></Button>
-                  {totBuildNumber > warningBuildNumber && <OverlayTrigger
-                    overlay={<Tooltip id="turbo-tooltip">
-                      <div>Dramatically speeds up build time.</div>
-                      <div>Yields only 1 build.</div>
-                      {Boolean(disabledTurbo) && <div className="mt-2">Does not work with <b>{Boolean(ascending) ? 'min' : 'max'}imum</b> stat filter when sorting by <b>{Boolean(ascending) ? 'as' : 'des'}cending</b></div>}
-                    </Tooltip>}
-                  ><span >
-                      <Button variant="success" disabled={disabledTurbo} className={`rounded-0 ${disabledTurbo ? "cursor-pointer" : ""}`} onClick={() => generateBuilds(true)}><strong>TURBO</strong></Button>
-                    </span></OverlayTrigger>}
+                  ><span>Generate</span></Button>
+                  <Dropdown as={ButtonGroup}>
+                    <OverlayTrigger
+                      overlay={<Tooltip id="max-build-tooltip">
+                        Decreasing the number of generated build will decrease build calculation time for large number of builds.
+                      </Tooltip>}
+                    >
+                      <Dropdown.Toggle ><b>{maxBuildsToShow}</b> {maxBuildsToShow === 1 ? "Build" : "Builds"}</Dropdown.Toggle>
+                    </OverlayTrigger>
+                    <Dropdown.Menu>
+                      {maxBuildsToShowList.map(v => <Dropdown.Item key={v} onClick={() => setmaxBuildsToShow(v)}>{v} {v === 1 ? "Build" : "Builds"}</Dropdown.Item>)}
+                    </Dropdown.Menu>
+                  </Dropdown>
                   <Button
                     className="h-100"
                     disabled={!generatingBuilds}
@@ -494,6 +488,9 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
                 </ButtonGroup >}
               </Col>
             </Row>
+            <Row className="">
+              <Col>{!!characterKey && <BuildAlert {...{ totBuildNumber, generatingBuilds, generationSkipped, generationProgress, generationDuration, characterName, maxBuildsToShow }} />}</Col>
+            </Row>
           </Card.Body>
         </Card>
       </Col>
@@ -504,11 +501,6 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
           <Card.Header>
             <Row>
               <Col>{characterKey ? <span>Showing <b>{builds.length}</b> Builds generated for {characterName}</span> : <span>Select a character to generate builds.</span>}</Col>
-              <Col xs="auto">
-                <DropdownButton title={<span>Max builds to show: <b>{maxBuildsToShow}</b></span>} size="sm">
-                  {maxBuildsToShowList.map(v => <Dropdown.Item key={v} onClick={() => setmaxBuildsToShow(v)}>{v}</Dropdown.Item>)}
-                </DropdownButton>
-              </Col>
             </Row>
           </Card.Header>
           {/* Build List */}
@@ -581,7 +573,8 @@ function ArtConditionalModal({ showArtCondModal, setshowArtCondModal, initialSta
           {artSetKeyList.map(setKey => {
             const sheet = artifactSheets[setKey]
             let icon = Object.values(sheet.slotIcons)[0]
-            let numStars = [...sheet.rarity][0]
+            const rarity = sheet.rarity
+            const numStars = rarity[0]
             return <Col className="mb-2" key={setKey} xs={12} lg={6} xl={4}>
               <Card className="h-100" bg="lightcontent" text={"lightfont" as any}>
                 <Card.Header >
@@ -591,7 +584,7 @@ function ArtConditionalModal({ showArtCondModal, setshowArtCondModal, initialSta
                     </Col>
                     <Col >
                       <h6><b>{artifactSheets?.[setKey].name ?? ""}</b></h6>
-                      <span><Stars stars={numStars} /></span>
+                      <span>{rarity.map((ns, i) => <span key={ns}>{ns}<Stars stars={1} /> {i < (rarity.length - 1) ? "/ " : null}</span>)}</span>
                     </Col>
                   </Row>
                 </Card.Header>

@@ -1,4 +1,4 @@
-import { faEdit, faLock, faLockOpen, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { faBriefcase, faEdit, faInfoCircle, faLock, faLockOpen, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useEffect, useState } from 'react';
 import Badge from 'react-bootstrap/Badge';
@@ -11,6 +11,7 @@ import Image from 'react-bootstrap/Image';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Row from 'react-bootstrap/Row';
 import Tooltip from 'react-bootstrap/Tooltip';
+import { useTranslation } from 'react-i18next';
 import CharacterSheet from '../Character/CharacterSheet';
 import { CharacterSelectionDropdownList } from '../Components/CharacterSelection';
 import { Stars } from '../Components/StarDisplay';
@@ -29,6 +30,7 @@ type Data = { artifactId?: string, artifactObj?: IArtifact, onEdit?: () => void,
 const allSubstatFilter = new Set(allSubstats)
 
 export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete, mainStatAssumptionLevel = 0, effFilter = allSubstatFilter }: Data): JSX.Element | null {
+  const { t } = useTranslation(["artifact"]);
   const [databaseArtifact, updateDatabaseArtifact] = useState(undefined as IArtifact | undefined)
   useEffect(() =>
     artifactId ? database.followArt(artifactId, updateDatabaseArtifact) : undefined,
@@ -46,23 +48,45 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
   const mainStatVal = <span className={mainStatLevel !== level ? "text-orange" : ""}>{valueStringWithUnit(Artifact.mainStatValue(mainStatKey, numStars, mainStatLevel) ?? 0, Stat.getStatUnit(mainStatKey))}</span>
   const { currentEfficiency, maxEfficiency } = Artifact.getArtifactEfficiency(art, effFilter)
   const artifactValid = maxEfficiency !== 0
-  const locationName = characterSheet?.name ?? "Inventory"
+  const locationName = characterSheet?.name ? characterSheet.nameWIthIcon : <span><FontAwesomeIcon icon={faBriefcase} /> {t`filterLocation.inventory`}</span>
+  const slotName = sheet?.getSlotName(slotKey) || "Unknown Piece Name"
+  const slotDesc = sheet?.getSlotDesc(slotKey)
+  const slotDescEle = slotDesc ? <OverlayTrigger
+    placement="top"
+    overlay={<Tooltip id="slotdesc-tooltip">{slotDesc}</Tooltip>}
+  >
+    <FontAwesomeIcon icon={faInfoCircle} />
+  </OverlayTrigger> : null
+  const setEffects = sheet?.setEffects
+  const setDesc = sheet && setEffects && <Tooltip id="setdesc-tooltop">
+    {Object.keys(setEffects).map(setNumKey => <span key={setNumKey} className="text-left">
+      <h6 className="mb-0"><Badge variant="success">{t(`setEffectNum`, { setNum: setNumKey })}</Badge></h6>
+      <p>{sheet.setEffectDesc(setNumKey as any)}</p>
+    </span>)}
+  </Tooltip>
+  const setDescEle = setDesc ? <OverlayTrigger
+    placement="top"
+    overlay={setDesc}
+  >
+    <FontAwesomeIcon icon={faInfoCircle} />
+  </OverlayTrigger> : null
+
   return (<Card className="h-100" border={`${numStars}star`} bg="lightcontent" text={"lightfont" as any}>
     <Card.Header className="p-0">
       <Row>
         <Col xs={2} md={3}>
           <Image src={sheet?.slotIcons[slotKey] ?? ""} className={`w-100 h-auto grad-${numStars}star m-1`} thumbnail />
         </Col>
-        <Col className="pt-3">
-          <h6><b>{sheet?.getSlotName(slotKey) ?? "Unknown Piece Name"}</b></h6>
-          <div><SlotNameWithIcon slotKey={slotKey} />{` +${level}`}</div>
+        <Col className="pt-2">
+          <h6><strong>{slotName} {slotDescEle}</strong></h6>
+          <div><SlotNameWithIcon slotKey={slotKey} /><strong>{` +${level}`}</strong></div>
+          <div><small><Stars stars={numStars} /></small></div>
         </Col>
       </Row>
     </Card.Header>
     <Card.Body className="d-flex flex-column py-2">
       <Card.Title>
-        <div>{sheet?.name ?? "Artifact Set"}</div>
-        <small className="text-halfsize"><Stars stars={numStars} /></small>
+        <div>{sheet?.name ?? "Artifact Set"} {setDescEle}</div>
       </Card.Title>
       <h5 className="mb-1">
         <b>{Stat.getStatName(mainStatKey)} {mainStatVal}</b>
@@ -81,10 +105,16 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
           </Col>)
         })}
       </Row>
-      <Row className="mt-auto">
-        <Col>Current SS Eff.: <PercentBadge value={currentEfficiency} valid={artifactValid} {...{ className: "float-right" }} /></Col>
-        {currentEfficiency !== maxEfficiency && <Col className="text-right">Max SS Eff.: <PercentBadge value={maxEfficiency} valid={artifactValid} /></Col>}
-      </Row>
+      <div className="mt-auto">
+        <Row>
+          <Col ><small>{t`editor.curSubEff`}</small></Col>
+          <Col xs="auto"><PercentBadge value={currentEfficiency} valid={artifactValid} /></Col>
+        </Row>
+        {currentEfficiency !== maxEfficiency && <Row>
+          <Col ><small>{t`editor.maxSubEff`}</small></Col>
+          <Col xs="auto"><PercentBadge value={maxEfficiency} valid={artifactValid} /></Col>
+        </Row>}
+      </div>
     </Card.Body>
 
     <Card.Footer className="pr-3">
@@ -93,7 +123,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
           <Dropdown>
             <Dropdown.Toggle size="sm" className="text-left">{locationName}</Dropdown.Toggle>
             <Dropdown.Menu>
-              <Dropdown.Item onClick={() => equipOnChar("")}>Inventory</Dropdown.Item>
+              <Dropdown.Item onClick={() => equipOnChar("")}><FontAwesomeIcon icon={faBriefcase} /> Inventory</Dropdown.Item>
               <Dropdown.Divider />
               <CharacterSelectionDropdownList onSelect={equipOnChar} />
             </Dropdown.Menu>
@@ -102,7 +132,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
         <Col xs="auto">
           <ButtonGroup>
             {editable ? <OverlayTrigger placement="top"
-              overlay={<Tooltip id="lock-artifact-tip">Locking a artifact will prevent the build generator from picking it for builds.</Tooltip>}>
+              overlay={<Tooltip id="lock-artifact-tip">{t`lockArtifactTip`}</Tooltip>}>
               <span className="d-inline-block">
                 <Button size="sm" onClick={() => database.lockArtifact(id, !lock)}>
                   <FontAwesomeIcon icon={lock ? faLock : faLockOpen} className="fa-fw" />
@@ -121,5 +151,5 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
         </Col>
       </Row>
     </Card.Footer>
-  </Card>)
+  </Card >)
 }

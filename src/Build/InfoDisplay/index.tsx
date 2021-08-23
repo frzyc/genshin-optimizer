@@ -12,7 +12,6 @@ export default function BuildInfoDisplay() {
    * main stat
    * Optimization Target
    * Genrate builds
-   * Turbo
    * builds
    * Compare
    * 
@@ -38,9 +37,9 @@ export default function BuildInfoDisplay() {
         <li><strong>Use Locked/Equipped Artifacts</strong>By default, the build genertor will not include locked or equipped artifacts from the GO inventory. These options can override this behaviour.</li>
         <li><strong>Level Assumption</strong> Assuming the artifact's main stat is leveled up to a specific level. The substats are not affected at all, this will only change the main stat value.</li>
         <li><strong>Artifact Main Stat</strong> Filter builds to have specific main stats on Sands, Goblet, Circlet.</li>
-        <li><strong>Build notice</strong> This will pre-calculate the amount of builds the generator will calculate. The larger the number, the longer the build generation process will take.</li>
         <li><strong>Optimization Target</strong> The metric to rank build results with. Any formula in the system can be an optimization syste, including DMG, shield, healing, etc. Some basic stats like HP and reactions can also be targets.</li>
-        <li><strong>Generate Builds/Turbo</strong> The <b>Generate Builds</b> button will calculate the optimization target for all the build combinations that passes the filters, and rank them in the results. The <Badge variant="success">TURBO</Badge> button will show up with great combinations of builds. It will prune less capabe builds which reduces a great percentage of the builds to calculate. The <Badge variant="success">TURBO</Badge> build will be substantially faster to arrive at a result, but generates only a singular top result.</li>
+        <li><strong>Generate Builds</strong> The <b>Generate</b> button will calculate the optimization target for build combinations that passes the filters, and rank them in the results. The number of build results can be lower to decrease the time it takes to generate the builds when the total build number is high.</li>
+        <li><strong>Build notice</strong> This will pre-calculate the amount of total amount of builds that can be  generated. The larger the number, the longer the build generation process will take.</li>
       </ol>
     </div>
     <div>

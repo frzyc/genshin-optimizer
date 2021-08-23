@@ -1,4 +1,4 @@
-import { faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { faCalculator, faEdit, faLink, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useEffect, useMemo, useState } from 'react';
 import { Badge, Image } from 'react-bootstrap';
@@ -112,10 +112,17 @@ export default function CharacterCard({ characterKey, onEdit, onDelete, cardClas
       </Row>
     </Card.Body>
     {footer && <Card.Footer>
-      <Button as={Link} to={{
-        pathname: "/build",
-        characterKey
-      } as any}>Generate Builds</Button>
+      <Row>
+        <Col><Button as={Link} to={{
+          pathname: "/build",
+          characterKey
+        } as any}><FontAwesomeIcon icon={faCalculator} /> Generate Builds</Button>
+        </Col>
+        <Col>
+          <Button variant="info" as={Link} to={{ pathname: "/flex", characterKey } as any}><FontAwesomeIcon icon={faLink} /> Share Character</Button>
+        </Col>
+      </Row>
+
     </Card.Footer>}
   </Card>)
 }

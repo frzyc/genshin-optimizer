@@ -96,7 +96,7 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: Artifac
             {/* Artifact Set */}
             <Dropdown as={InputGroup.Prepend} className="flex-grow-1">
               <Dropdown.Toggle className="w-100" variant={artifact ? "success" : "primary"}>
-                {sheet?.name ?? t`editor.set.artifactSet`}
+                {sheet?.nameWithIcon ?? t`editor.set.artifactSet`}
               </Dropdown.Toggle>
               <Dropdown.Menu>
                 <ArtifactSetDropDownMenuFragment sheets={artifactSheets} click={(setKey => update({ setKey }))} />
@@ -158,7 +158,7 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: Artifac
             />
           </InputGroup>
 
-          {/* Current Substat Efficiency */}
+          {/* Current Substats Efficiency */}
           <Card bg="lightcontent" text={"lightfont" as any} className="mb-2">
             <Card.Body className="py-1 px-2">
               <Row>
@@ -179,7 +179,7 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: Artifac
             </Card.Body>
           </Card>
 
-          {/* Maximum Substat Efficiency */}
+          {/* Maximum Substats Efficiency */}
           <Card bg="lightcontent" text={"lightfont" as any} className="mb-2">
             <Card.Body className="py-1 px-2">
               <Row>
@@ -247,13 +247,13 @@ function SubstatInput({ index, artifact, setSubstat, className }: { index: numbe
   const { mainStatKey = "" } = artifact ?? {}
   const { key = "", value = 0, rolls = [], efficiency = 0 } = artifact?.substats[index] ?? {}
 
-  const accurateValue = rolls.reduce((a, b) => a + b, 0)
+  const accurateValue = rolls.map(Math.fround).reduce((a, b) => Math.fround(a + b), 0)
   const unit = Stat.getStatUnit(key), rollNum = rolls.length
 
   let error: string = "", rollData: readonly number[] = [], allowedRolls = 0, rollLabel: Displayable | null = null
 
   if (artifact) {
-    //account for the rolls it will to fill all 4 substates, +1 for its base roll
+    // Account for the rolls it will need to fill all 4 substates, +1 for its base roll
     const numStars = artifact.numStars
     const { numUpgrades, high } = Artifact.rollInfo(numStars)
     const maxRollNum = numUpgrades + high - 3;
@@ -305,7 +305,7 @@ function SubstatInput({ index, artifact, setSubstat, className }: { index: numbe
       />
       {<ButtonGroup size="sm" as={InputGroup.Append}>
         {rollData.map((v, i) => {
-          const newValue = valueString(accurateValue + v, unit)
+          const newValue = valueString(Math.fround(accurateValue + Math.fround(v)), unit)
           return <Button key={i} variant={`${rollOffset + i}roll`} className="py-0 text-darkcontent" disabled={(value && !rollNum) || allowedRolls <= 0} onClick={() => setSubstat(index, { key, value: parseFloat(newValue) })}>{newValue}</Button>
         })}
       </ButtonGroup>}
