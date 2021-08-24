@@ -73,10 +73,17 @@ function buildSettingsReducer(state: BuildSetting, action): BuildSetting {
 }
 
 export default function BuildDisplay({ location: { characterKey: propCharacterKey } }) {
-  const [characterKey, setcharacterKey] = useState("" as CharacterKey | "")
+  const [characterKey, setcharacterKey] = useState(() => {
+    const { characterKey = "" } = loadFromLocalStorage("BuildsDisplay.state") ?? {}
+    //NOTE that propCharacterKey can override the selected character.
+    return (propCharacterKey ?? characterKey) as CharacterKey | ""
+  })
 
   const [builds, setbuilds] = useState([] as any[])
-  const [maxBuildsToShow, setmaxBuildsToShow] = useState(maxBuildsToShowDefault)
+  const [maxBuildsToShow, setmaxBuildsToShow] = useState(() => {
+    const { maxBuildsToShow = maxBuildsToShowDefault } = loadFromLocalStorage("BuildsDisplay.state") ?? {}
+    return maxBuildsToShow
+  })
 
   const [modalBuild, setmodalBuild] = useState(null) // the newBuild that is being displayed in the character modal
   const [showArtCondModal, setshowArtCondModal] = useState(false)
@@ -103,7 +110,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
 
   const buildSettingsDispatch = useCallback((action) => {
     if (!character) return
-    character.buildSettings = buildSettingsReducer(buildSettings as any, action)
+    character.buildSettings = buildSettingsReducer(buildSettings, action)
     database.updateChar(character)
   }, [character, buildSettings])
 
@@ -146,17 +153,6 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     setCharDirty()
     setCharacterData({})
   }, [setCharDirty, setcharacterKey, characterKey])
-
-  //load saved stat from DB. will cause infinite loop if add 'selectCharacter' to dependency array
-  useEffect(() => {//startup load from localStorage
-    if (!("BuildsDisplay.state" in localStorage)) return
-    const { characterKey = "", maxBuildsToShow = maxBuildsToShowDefault } = loadFromLocalStorage("BuildsDisplay.state") ?? {}
-    if (characterKey && database._getChar(characterKey)) selectCharacter(characterKey)
-    if (!maxBuildsToShowList.includes(maxBuildsToShow)) setmaxBuildsToShow(maxBuildsToShowDefault)
-    else setmaxBuildsToShow(maxBuildsToShow)
-  }, [])// eslint-disable-line react-hooks/exhaustive-deps
-
-  useEffect(() => propCharacterKey && selectCharacter(propCharacterKey), [propCharacterKey, selectCharacter])//update when props update
 
   //save to BuildsDisplay.state on change
   useEffect(() => {
