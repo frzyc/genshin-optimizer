@@ -52,6 +52,16 @@ const initialCharacter = (characterKey): ICharacter => ({
   equippedArtifacts: Object.fromEntries(allSlotKeys.map(sKey => [sKey, ""])) as any,
   conditionalValues: {},
   baseStatOverrides: {},//overriding the baseStat
+  buildSettings: {//blank settings, so a new character will not be copied over.
+    setFilters: [],
+    statFilters: {},
+    mainStatKeys: [],
+    optimizationTarget: "finalATK",
+    mainStatAssumptionLevel: 0,
+    useLockedArts: false,
+    useEquippedArts: false,
+    ascending: false,
+  },
   weapon: {
     key: "" as any,
     level: 1,
