@@ -11,7 +11,7 @@ import { mergeStats } from '../Util/StatUtil';
 
 onmessage = async (e: { data: BuildRequest }) => {
   const t1 = performance.now()
-  const { splitArtifacts, setFilters, minFilters = {}, maxFilters = {}, initialStats: stats, artifactSetEffects, maxBuildsToShow, optimizationTarget, ascending, turbo = false } = e.data
+  const { splitArtifacts, setFilters, minFilters = {}, maxFilters = {}, initialStats: stats, artifactSetEffects, maxBuildsToShow, optimizationTarget, ascending } = e.data
 
   let target: (stats) => number, targetKeys: string[]
   if (typeof optimizationTarget === "string") {
@@ -49,16 +49,16 @@ onmessage = async (e: { data: BuildRequest }) => {
   const oldCount = calculateTotalBuildNumber(splitArtifacts, setFilters)
 
   let prunedArtifacts = splitArtifacts, newCount = oldCount
-  if (turbo) {
-    // Prune artifact with strictly inferior (relevant) stats.
-    if (Object.keys(ascending ? minFilters : maxFilters).length === 0) {
-      const prune = (alwaysAccepted: ArtifactSetKey[]) => Object.fromEntries(Object.entries(splitArtifacts).map(([key, values]) =>
-        [key, pruneArtifacts(values, artifactSetEffects, new Set(dependencies), ascending, new Set(alwaysAccepted))]))
 
-      // Don't prune artifact sets that are filtered
-      prunedArtifacts = prune(setFilters.map(set => set.key) as any)
-      newCount = calculateTotalBuildNumber(prunedArtifacts, setFilters)
-    }
+  // Prune artifact with strictly inferior (relevant) stats.
+  // It does not work with ascending + min filter, or descending + max filter
+  if (Object.keys(ascending ? minFilters : maxFilters).length === 0) {
+    // Don't prune artifact sets that are filtered
+    const alwaysAccepted = setFilters.map(set => set.key) as any
+
+    prunedArtifacts = Object.fromEntries(Object.entries(splitArtifacts).map(([key, values]) =>
+      [key, pruneArtifacts(values, artifactSetEffects, new Set(dependencies), maxBuildsToShow, ascending, new Set(alwaysAccepted))]))
+    newCount = calculateTotalBuildNumber(prunedArtifacts, setFilters)
   }
 
   let { initialStats, formula } = PreprocessFormulas(dependencies, stats)
@@ -88,12 +88,6 @@ onmessage = async (e: { data: BuildRequest }) => {
     artifactPermutations(initialStats, artifactsBySlot, artifactSetEffects, callback)
 
   gc()
-
-  // We present ONLY the top build on turbo. Many assumptions
-  // break when we need to consider #2 and beyond.
-  if (turbo) {
-    builds = [builds[0]];
-  }
 
   let t2 = performance.now()
   postMessage({ progress: buildCount, timing: t2 - t1, skipped }, undefined as any)

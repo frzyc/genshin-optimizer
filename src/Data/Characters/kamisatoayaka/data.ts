@@ -39,7 +39,7 @@ const formula: IFormulaSheet = {
   },
   burst: {
     cutting: stats => basicDMGFormula(data.burst.cutting[stats.tlvl.burst], stats, "burst"),
-    bloom: stats => basicDMGFormula(data.burst.bloom[stats.tlvl.skill], stats, "burst"),
+    bloom: stats => basicDMGFormula(data.burst.bloom[stats.tlvl.burst], stats, "burst"),
   },
   constellation2: {
     dmg: stats => basicDMGFormula(data.burst.cutting[stats.tlvl.burst] / 5, stats, "burst"),

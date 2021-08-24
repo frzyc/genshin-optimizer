@@ -15,7 +15,7 @@ export default function ArtifactSetDropDownMenuFragment({ sheets, click }: Data)
       <React.Fragment key={star}>
         {i > 0 && <Dropdown.Divider />}
         <Dropdown.Header><Trans t={t} i18nKey="editor.set.maxRarity">Max Rarity <Stars stars={parseInt(star) as Rarity} /></Trans></Dropdown.Header>
-        {sets.map(setKey => <Dropdown.Item key={setKey} onClick={() => click(setKey)}>{sheets[setKey].name}</Dropdown.Item >)}
+        {sets.map(setKey => <Dropdown.Item key={setKey} onClick={() => click(setKey)}>{sheets[setKey].nameWithIcon}</Dropdown.Item >)}
       </React.Fragment>)}
   </React.Fragment>
 }

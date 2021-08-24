@@ -5,6 +5,7 @@ import { evalIfFunc } from "../Util/Util";
 import { CharacterExpCurveData } from "pipeline";
 import expCurveJSON from './expCurve_gen.json'
 import Stat from '../Stat'
+import { Image } from "react-bootstrap";
 
 const expCurve = expCurveJSON as CharacterExpCurveData
 
@@ -23,6 +24,7 @@ export default class CharacterSheet {
   static get = (charKey: CharacterKey | ""): Promise<CharacterSheet> | undefined => charKey ? loadCharacterSheet[charKey] : undefined
   static getAll = (): Promise<StrictDict<CharacterKey, CharacterSheet>> => charImport
   get name() { return this.sheet.name }
+  get nameWIthIcon() { return <span><Image src={this.thumbImg} className="inline-icon" /> {this.name}</span> }
   get cardImg() { return this.sheet.cardImg }
   get thumbImg() { return this.sheet.thumbImg }
   get star() { return this.sheet.star }

@@ -7,7 +7,7 @@ import { IArtifactSheet } from '../../../Types/artifact'
 
 const artifact: IArtifactSheet = {
   name: "Gladiator's Finale", rarity: [4, 5],
-    icons: {
+  icons: {
     flower,
     plume,
     sands,
@@ -16,10 +16,10 @@ const artifact: IArtifactSheet = {
   },
   setEffects: {
     2: {
-            stats: { atk_: 18 }
+      stats: { atk_: 18 }
     },
     4: {
-            stats: stats => (stats.weaponType === "sword" || stats.weaponType === "polearm" || stats.weaponType === "claymore") ? { normal_dmg_: 35 } : {}
+      stats: stats => (stats.weaponType === "sword" || stats.weaponType === "polearm" || stats.weaponType === "claymore") ? { normal_dmg_: 35 } : {}
     }
   }
 }
