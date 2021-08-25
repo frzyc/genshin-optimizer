@@ -108,12 +108,21 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
 
   useEffect(() => ReactGA.pageview('/build'), [])
 
+  //select a new character Key
+  const selectCharacter = useCallback((cKey = "") => {
+    if (characterKey === cKey) return
+    setcharacterKey(cKey)
+    setbuilds([])
+    setCharDirty()
+    setCharacterData({})
+  }, [setCharDirty, setcharacterKey, characterKey])
+
   //load the character data as a whole
   useEffect(() => {
     (async () => {
       if (!characterKey || !artifactSheets) return
       const character = database._getChar(characterKey)
-      if (!character) return
+      if (!character) return selectCharacter("")// character is prob deleted.
       const characterSheet = await CharacterSheet.get(characterKey)
       const weaponSheet = await WeaponSheet.get(character.weapon.key)
       if (!characterSheet || !weaponSheet) return
@@ -136,15 +145,6 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
 
   //terminate worker when component unmounts
   useEffect(() => () => worker.current?.terminate(), [])
-
-  //select a new character Key
-  const selectCharacter = useCallback((cKey = "") => {
-    if (characterKey === cKey) return
-    setcharacterKey(cKey)
-    setbuilds([])
-    setCharDirty()
-    setCharacterData({})
-  }, [setCharDirty, setcharacterKey, characterKey])
 
   //save to BuildsDisplay.state on change
   useEffect(() => {
