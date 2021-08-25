@@ -33,6 +33,7 @@ import { timeStringMs } from '../Util/TimeUtil';
 import { crawlObject, deepClone, loadFromLocalStorage, saveToLocalStorage } from '../Util/Util';
 import WeaponSheet from '../Weapon/WeaponSheet';
 import { calculateTotalBuildNumber } from './Build';
+import { initialBuildSettings } from './BuildSetting';
 const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
 
 //lazy load the character display
@@ -43,16 +44,6 @@ const maxBuildsToShowList = [1, 2, 3, 4, 5, 8, 10]
 const maxBuildsToShowDefault = 5
 const autoBuildGenLimit = 100
 const artifactsSlotsToSelectMainStats: SlotKey[] = ["sands", "goblet", "circlet"]
-const initialBuildSettings = (): BuildSetting => ({
-  setFilters: [{ key: "", num: 0 }, { key: "", num: 0 }, { key: "", num: 0 }],
-  statFilters: {},
-  mainStatKeys: ["", "", ""],
-  optimizationTarget: "finalATK",
-  mainStatAssumptionLevel: 0,
-  useLockedArts: false,
-  useEquippedArts: false,
-  ascending: false,
-})
 
 function buildSettingsReducer(state: BuildSetting, action): BuildSetting {
   switch (action.type) {
@@ -106,6 +97,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   type characterDataType = { character?: ICharacter, characterSheet?: CharacterSheet, weaponSheet?: WeaponSheet, initialStats?: ICalculatedStats, statsDisplayKeys?: { basicKeys: any, [key: string]: any } }
   const [{ character, characterSheet, weaponSheet, initialStats, statsDisplayKeys }, setCharacterData] = useState({} as characterDataType)
   const buildSettings = useMemo(() => character?.buildSettings ?? initialBuildSettings(), [character])
+  if (buildSettings.setFilters.length === 0) buildSettings.setFilters = initialBuildSettings().setFilters//hotfix for an issue with db. can be removed later.
   const { setFilters, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useLockedArts, useEquippedArts, ascending, } = buildSettings
 
   const buildSettingsDispatch = useCallback((action) => {

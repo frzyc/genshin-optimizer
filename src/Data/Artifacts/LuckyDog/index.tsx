@@ -6,7 +6,7 @@ import circlet from './Item_Lucky_Dog\'s_Silver_Circlet.png'
 import { IArtifactSheet } from '../../../Types/artifact'
 const artifact: IArtifactSheet = {
   name: "Lucky Dog", rarity: [3],
-    icons: {
+  icons: {
     flower,
     plume,
     sands,
@@ -15,10 +15,10 @@ const artifact: IArtifactSheet = {
   },
   setEffects: {
     2: {
-            stats: { def: 100 }
+      stats: { def: 100 }
     },
     4: {
-          }
+    }
   }
 }
 export default artifact
