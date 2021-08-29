@@ -1,6 +1,7 @@
 import Artifact from "../Artifact/Artifact"
 import { ArtifactSheet } from "../Artifact/ArtifactSheet"
 import { database } from "../Database/Database"
+import { dbStorage } from "../Database/DBStorage"
 import { IArtifact } from "../Types/artifact"
 import { allSlotKeys, SlotKey } from "../Types/consts"
 import { mergeStats } from "../Util/StatUtil"
@@ -47,8 +48,8 @@ describe('Equipment functions', () => {
     abcde: StrictDict<SlotKey, string>, empty: StrictDict<SlotKey, "">
   let noelle, ningguang
   beforeEach(() => {
-    database.clear()
-    localStorage.clear()
+    dbStorage.clear()
+    database.reloadStorage()
 
     a = {
       id: "",

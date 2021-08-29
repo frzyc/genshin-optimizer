@@ -7,8 +7,8 @@ import { ICharacter, IFlexCharacter } from "../Types/character";
 import { allArtifactSets, allCharacterKeys, allElements, allHitModes, allRarities, allReactionModes, allSlotKeys, allWeaponKeys } from "../Types/consts";
 
 /// Returns the closest (not necessarily valid) artifact, including errors as necessary
-export function validateFlexArtifact(flex: IFlexArtifact): { artifact: IArtifact, errors: string[] } {
-  const { id, location, lock, setKey, slotKey, numStars, mainStatKey } = flex
+export function validateFlexArtifact(flex: IFlexArtifact, id: string): { artifact: IArtifact, errors: string[] } {
+  const { location, lock, setKey, slotKey, numStars, mainStatKey } = flex
   const level = Math.round(Math.min(Math.max(0, flex.level), numStars >= 3 ? numStars * 4 : 4))
   const mainStatVal = Artifact.mainStatValue(mainStatKey, numStars, level)!
 
@@ -97,7 +97,7 @@ export function validateFlexArtifact(flex: IFlexArtifact): { artifact: IArtifact
   return { artifact: validated, errors }
 }
 /// Returns the closest flex artifact, or undefined if it's not recoverable
-export function validateDBArtifact(obj: any, key: string): IFlexArtifact | undefined {
+export function validateDBArtifact(obj: any): IFlexArtifact | undefined {
   if (typeof obj !== "object") return
 
   let {
@@ -115,12 +115,12 @@ export function validateDBArtifact(obj: any, key: string): IFlexArtifact | undef
   lock = !!lock
   level = Math.round(level)
   if (!allCharacterKeys.includes(location)) location = ""
-  return { id: key, setKey, numStars, level, slotKey, mainStatKey, substats, location, lock }
+  return { setKey, numStars, level, slotKey, mainStatKey, substats, location, lock }
 }
 /// Return a new flex artifact from given artifact. All extra keys are removed
 export function extractFlexArtifact(artifact: IArtifact): IFlexArtifact {
-  const { id, setKey, numStars, level, slotKey, mainStatKey, substats, location, lock } = artifact
-  return { id, setKey, numStars, level, slotKey, mainStatKey, substats: substats.map(substat => ({ key: substat.key, value: substat.value })), location, lock }
+  const { setKey, numStars, level, slotKey, mainStatKey, substats, location, lock } = artifact
+  return { setKey, numStars, level, slotKey, mainStatKey, substats: substats.map(substat => ({ key: substat.key, value: substat.value })), location, lock }
 }
 function validateSubstats(obj: any): IFlexSubstat[] {
   if (!Array.isArray(obj))

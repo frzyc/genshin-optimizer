@@ -1,8 +1,13 @@
-import { useState } from "react"
-import { Alert, Badge, Button, Card, Col, Container, Dropdown, Form, Row } from "react-bootstrap"
+import { faCheckSquare, faClipboard, faFileDownload, faFileUpload, faQuestionCircle, faSquare, faTrashAlt } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useMemo, useState } from "react"
+import { Alert, Badge, Button, Card, Col, Container, Dropdown, Form, OverlayTrigger, Popover, Row } from "react-bootstrap"
 import ReactGA from 'react-ga'
 import { Trans, useTranslation } from "react-i18next"
 import { database } from "../Database/Database"
+import { DBStorage, dbStorage } from '../Database/DBStorage'
+import { exportDB, importDB } from '../Database/exim/dbJSON'
+import { importMona } from '../Database/exim/mona'
 import { languageCodeList } from "../i18n"
 import { useForceUpdate } from "../Util/ReactUtil"
 
@@ -62,7 +67,7 @@ export function LanguageDropdown() {
   </Dropdown>
 }
 
-function download(JSONstr, filename = "data.json") {
+function download(JSONstr: string, filename = "data.json") {
   const contentType = "application/json;charset=utf-8"
   if (window?.navigator?.msSaveOrOpenBlob as any) { // TODO: Function is always defined, do we want to call it instead?
     const blob = new Blob([decodeURIComponent(encodeURI(JSONstr))], { type: contentType })
@@ -79,11 +84,12 @@ function download(JSONstr, filename = "data.json") {
 }
 
 function deleteDatabase(t) {
-  if (!window.confirm(t("settings:dialog.delete-database"))) return
-  database.clear()
+  if (!window.confirm(t("uploadCard.goUpload.deleteDatabasePrompt"))) return
+  dbStorage.clear()
+  database.reloadStorage()
 }
 function copyToClipboard() {
-  navigator.clipboard.writeText(JSON.stringify(database.exportStorage()))
+  navigator.clipboard.writeText(JSON.stringify(exportDB(dbStorage)))
   alert("Copied database to clipboard.")
 }
 function DownloadCard({ forceUpdate }) {
@@ -99,84 +105,186 @@ function DownloadCard({ forceUpdate }) {
     <Card.Header><Trans t={t} i18nKey="downloadCard.databaseDownload" /></Card.Header>
     <Card.Body>
       <Row className="mb-2">
-        <Col xs={12} md={6}><h6><Trans t={t} i18nKey="downloadCard.charsStored" count={numChar}><b>{{ count: numChar }}</b> Characters Stored</Trans></h6></Col>
-        <Col xs={12} md={6}><h6><Trans t={t} i18nKey="downloadCard.artisStored" count={numArt}><b>{{ count: numArt }}</b> Artifacts Stored</Trans></h6></Col>
+        <Col xs={12} md={6}><Trans t={t} i18nKey="count.chars" /> {numChar}</Col>
+        <Col xs={12} md={6}><Trans t={t} i18nKey="count.arts" /> {numArt}</Col>
       </Row>
       <small><Trans t={t} i18nKey="downloadCard.databaseDisclaimer" /></small>
     </Card.Body>
-    <Card.Footer>
-      <Row>
-        <Col xs="auto"><Button disabled={!downloadValid} onClick={() => download(JSON.stringify(database.exportStorage()))}><Trans t={t} i18nKey="downloadCard.button.download" /></Button></Col>
-        <Col ><Button disabled={!downloadValid} variant="info" onClick={copyToClipboard}><Trans t={t} i18nKey="downloadCard.button.copy" /></Button></Col>
-        <Col xs="auto"><Button disabled={!downloadValid} variant="danger" onClick={deleteDB} ><Trans t={t} i18nKey="downloadCard.button.delete" /></Button></Col>
-      </Row>
-    </Card.Footer>
+    <Card.Footer><Row>
+      <Col xs="auto"><Button disabled={!downloadValid} onClick={() => download(JSON.stringify(exportDB(dbStorage)))}><FontAwesomeIcon icon={faFileDownload} /> <Trans t={t} i18nKey="downloadCard.button.download" /></Button></Col>
+      <Col ><Button disabled={!downloadValid} variant="info" onClick={copyToClipboard}><FontAwesomeIcon icon={faClipboard} /> <Trans t={t} i18nKey="downloadCard.button.copy" /></Button></Col>
+      <Col xs="auto"><Button disabled={!downloadValid} variant="danger" onClick={deleteDB} ><FontAwesomeIcon icon={faTrashAlt} /> <Trans t={t} i18nKey="downloadCard.button.delete" /></Button></Col>
+    </Row></Card.Footer>
   </Card>
 }
-async function readFile(file, cb) {
-  if (!file) return
-  const reader = new FileReader()
-  reader.onload = () => {
-    cb(reader.result)
-  }
-  reader.readAsText(file)
-}
-function replaceDatabase(obj, cb = () => { }) {
-  if (!window.confirm("Are you sure you want to replace your database? All existing characters and artifacts will be deleted before replacement.")) return
-  database.importStorage(obj)
-  cb()
-}
+
 function UploadCard({ forceUpdate }) {
-  const { t } = useTranslation(["ui", "settings"]);
+  const { t } = useTranslation("settings");
   const [data, setdata] = useState("")
   const [filename, setfilename] = useState("")
-  let error = ""
-  let numChar, numArt, dataObj
-  if (data) {
+  const [errorMsg, setErrorMsg] = useState("") // TODO localize error msg
+  const dataObj: UploadData | undefined = useMemo(() => {
+    if (!data) return
+    let parsed: any
     try {
-      dataObj = JSON.parse(data)
-      const { characterDatabase, artifactDatabase } = dataObj
-      numChar = Object.keys(characterDatabase).length
-      numArt = Object.keys(artifactDatabase).length
+      parsed = JSON.parse(data)
+      if (!parsed) {
+        setErrorMsg("uploadCard.error.jsonParse")
+        return
+      }
     } catch (e) {
-      error = `Invalid JSON: ${e}`
+      setErrorMsg("uploadCard.error.jsonParse")
+      return
     }
-  }
-  const dataValid = Boolean(numChar || numArt)
-  const replaceDB = () => {
-    replaceDatabase(dataObj)
+    // Figure out the file format
+    if (parsed.version === "1" && ["flower", "feather", "sand", "cup", "head"].some(k => Object.keys(parsed).includes(k))) {
+      // Parse as mona format
+      const imported = importMona(parsed, database)
+      if (!imported) {
+        setErrorMsg("uploadCard.error.monaInvalid")
+        return
+      }
+      return { type: "Mona", ...imported }
+    } else if ("version" in parsed && "characterDatabase" in parsed && "artifactDatabase" in parsed) {
+      // Parse as GO format
+      const imported = importDB(parsed)
+      if (!imported) {
+        setErrorMsg("uploadCard.error.goInvalid")
+        return
+      }
+      return { type: "GO", ...imported }
+    }
+    setErrorMsg("uploadCard.error.unknown")
+    return
+  }, [data])
+
+  const reset = () => {
     setdata("")
     setfilename("")
     forceUpdate()
   }
-  const onUpload = e => {
+  const onUpload = async e => {
     const file = e.target.files[0]
-    e.target.value = null//reset the value so the same file can be uploaded again...
+    e.target.value = null // reset the value so the same file can be uploaded again...
     if (file) setfilename(file.name)
-    readFile(file, setdata)
+    const reader = new FileReader()
+    reader.onload = () => setdata(reader.result as string)
+    reader.readAsText(file)
   }
-  return <Card bg="lightcontent" text={"lightfont" as any}>
+  return <Card bg="lightcontent" text={"lightfont" as any} className="mb-3">
     <Card.Header><Trans t={t} i18nKey="settings:uploadCard.title" /></Card.Header>
     <Card.Body>
-      <Row className="mb-2">
-        <Form.File
-          className="mb-2"
-          label={filename ? filename : <Trans t={t} i18nKey="settings:uploadCard.hint" />}
-          onChange={onUpload}
-          custom
-          accept=".json"
-        />
-        <h6><Trans t={t} i18nKey="settings:uploadCard.hintPaste" /></h6>
-        <textarea className="w-100 text-monospace" value={data} onChange={e => setdata(e.target.value)} style={{ minHeight: "10em" }} />
-      </Row>
-      {dataValid && <Row>
-        <Col xs={12} md={6}><h6><Trans t={t} i18nKey="settings:uploadCard.numChar" /> <b>{numChar}</b></h6></Col>
-        <Col xs={12} md={6}><h6><Trans t={t} i18nKey="settings:uploadCard.numArt" /> <b>{numArt}</b></h6></Col>
-      </Row>}
-      {Boolean(data && (error || !dataValid)) && <Alert variant="danger">{error ? error : "Unable to parse character & artifact data from file."}</Alert>}
+      <Form.File
+        className="mb-2"
+        label={filename ? filename : <Trans t={t} i18nKey="settings:uploadCard.hint" />}
+        onChange={onUpload}
+        custom
+        accept=".json"
+      />
+      <h6><Trans t={t} i18nKey="settings:uploadCard.hintPaste" /></h6>
+      <textarea className="w-100 text-monospace mb-2" value={data} onChange={e => setdata(e.target.value)} style={{ minHeight: "10em" }} />
+      {dataObj?.type === "GO" ? <GOUploadInfo data={dataObj} /> :
+        dataObj?.type === "Mona" ? <MonaUploadInfo data={dataObj} /> :
+          errorMsg ? t(errorMsg) : undefined}
     </Card.Body>
-    <Card.Footer>
-      <Button variant={dataValid ? "success" : "danger"} disabled={!dataValid} onClick={replaceDB}><Trans t={t} i18nKey="settings:uploadCard.replaceDatabase" /></Button>
-    </Card.Footer>
+    {dataObj?.type === "GO" ? <GOUploadAction data={dataObj} reset={reset} /> :
+      dataObj?.type === "Mona" ? <MonaUploadAction data={dataObj} reset={reset} /> :
+        undefined}
   </Card>
 }
+
+function GOUploadInfo({ data: { charCount, artCount, migrated } }: { data: GOUploadData }) {
+  const { t } = useTranslation("settings")
+  return <Card bg="darkcontent" text={"lightfont" as any}>
+    <Card.Header><Trans t={t} i18nKey="uploadCard.goUpload.title" /></Card.Header>
+    <Card.Body><Row>
+      <Col xs={12} md={6}><Trans t={t} i18nKey="count.chars" /> {charCount}</Col>
+      <Col xs={12} md={6}><Trans t={t} i18nKey="count.arts" /> {artCount}</Col>
+      {migrated && <Col xs={12} ><Alert variant="warning" className="mb-0 mt-2"><Trans t={t} i18nKey="uploadCard.goUpload.migrate" /></Alert></Col>}
+    </Row></Card.Body>
+  </Card>
+
+}
+function GOUploadAction({ data: { storage, charCount, artCount }, reset }: { data: GOUploadData, reset: () => void }) {
+  const { t } = useTranslation("settings")
+  const dataValid = charCount || artCount
+  const replaceDB = () => {
+    if (!window.confirm(t`dialog.delete-database`)) return
+    dbStorage.clear()
+    dbStorage.copyFrom(storage)
+    database.reloadStorage()
+    reset()
+  }
+
+  return <Card.Footer>
+    <Button variant={dataValid ? "success" : "danger"} disabled={!dataValid} onClick={replaceDB}><FontAwesomeIcon icon={faFileUpload} /> <Trans t={t} i18nKey="settings:uploadCard.replaceDatabase" /></Button>
+  </Card.Footer>
+}
+function MonaUploadInfo({ data: { totalCount, newCount, upgradeCount, dupCount, oldIds, invalidCount, } }: { data: MonaUploadData }) {
+  const { t } = useTranslation("settings")
+  return <Card bg="darkcontent" text={"lightfont" as any}>
+    <Card.Header><Trans t={t} i18nKey="uploadCard.monaUpload.title" /></Card.Header>
+    <Card.Body>
+      <Row>
+        <Col xs={12} md={6}><Trans t={t} i18nKey="count.artsDup" /> <strong>{dupCount} / {totalCount}</strong></Col>
+        <Col xs={12} md={6}><Trans t={t} i18nKey="count.artsNew" /> <strong>{newCount} / {totalCount}</strong></Col>
+        <Col xs={12} md={6}><Trans t={t} i18nKey="count.artsUpg" /> <strong>{upgradeCount} / {totalCount}</strong></Col>
+        {!!invalidCount && <Col xs={12} md={6} className="text-danger"><Trans t={t} i18nKey="count.artsInvalid" /> <strong>{invalidCount}</strong></Col>}
+        <Col xs={12} md={6}><Trans t={t} i18nKey="count.artsFod" /> <strong>{oldIds.size}</strong></Col>
+      </Row>
+    </Card.Body>
+  </Card>
+}
+function MonaUploadAction({ data: { storage, oldIds, }, reset }: { data: MonaUploadData, reset: () => void }) {
+  const { t } = useTranslation("settings")
+  const [deleteExistingArtifacts, setDeleteExistingArtifacts] = useState(false);
+
+  const importArtifacts = () => {
+    if (deleteExistingArtifacts && !window.confirm(t`uploadCard.monaUpload.deleteExistingPrompt`)) {
+      setDeleteExistingArtifacts(false);
+      return;
+    }
+    if (deleteExistingArtifacts) {
+      // Since it wasn't decided whether to delete old entries when we create
+      // the Storage, we defer the deletion to here. This way, we can also
+      // share the Storage for both `delete` and `keep` options.
+      for (const id of oldIds)
+        storage.remove(id)
+    }
+
+    dbStorage.clear()
+    dbStorage.copyFrom(storage)
+    database.reloadStorage()
+    reset()
+  }
+
+  return <Card.Footer>
+    <Button variant={"success"} onClick={() => importArtifacts()}><FontAwesomeIcon icon={faFileUpload} /> <Trans t={t} i18nKey="uploadCard.monaUpload.import" /></Button>
+    <Button className="float-right text-right" variant={deleteExistingArtifacts ? "danger" : "primary"} onClick={() => setDeleteExistingArtifacts(value => !value)}>
+      <span><FontAwesomeIcon icon={deleteExistingArtifacts ? faCheckSquare : faSquare} className="fa-fw" /> <Trans t={t} i18nKey="uploadCard.monaUpload.deleteExistingButton" /></span>
+      <OverlayTrigger
+        overlay={<Popover id="deleting-explanation">
+          <Popover.Content><Trans t={t} i18nKey="uploadCard.monaUpload.deleteExistingExplanation" /></Popover.Content>
+        </Popover>} >
+        <FontAwesomeIcon icon={faQuestionCircle} className="ml-2" style={{ cursor: "help" }} />
+      </OverlayTrigger>
+    </Button>
+  </Card.Footer>
+}
+
+type GOUploadData = {
+  type: "GO", storage: DBStorage,
+  charCount: number,
+  artCount: number,
+  migrated: boolean,
+}
+type MonaUploadData = {
+  type: "Mona", storage: DBStorage,
+  totalCount: number,
+  newCount: number,
+  upgradeCount: number,
+  dupCount: number,
+  oldIds: Set<string>,
+  invalidCount: number,
+}
+type UploadData = GOUploadData | MonaUploadData

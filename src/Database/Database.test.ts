@@ -2,8 +2,10 @@ import { IArtifact } from "../Types/artifact"
 import { ICharacter } from "../Types/character"
 import { randomizeArtifact } from "../Util/ArtifactUtil"
 import { deepClone, getArrLastElement } from "../Util/Util"
-import { database, Database } from "./Database"
+import { database, ArtCharDatabase } from "./Database"
 import * as data1 from "./Database.db1.test.json"
+import { dbStorage } from "./DBStorage"
+import { exportDB, importDB } from "./exim/dbJSON"
 import { validateFlexArtifact } from "./validation"
 
 const baseAlbedo: ICharacter = {
@@ -49,42 +51,47 @@ const baseAmber: ICharacter = {
 
 describe("Database", () => {
   beforeEach(() => {
-    database.clear()
-    localStorage.clear()
+    dbStorage.clear()
+    database.reloadStorage()
   })
 
   test("Can initialize from and empty storage", () => {
-    // @ts-ignore use private constructor
-    new Database(localStorage)
+    new ArtCharDatabase(dbStorage)
   })
   test("Can clear database", () => {
-    database.importStorage(data1 as any)
+    dbStorage.copyFrom(importDB(data1)!.storage)
+    database.reloadStorage()
 
     // Not empty, yet
     expect(database.arts.data).not.toEqual({})
     expect(database.chars.data).not.toEqual({})
 
     // Empty, now
-    database.clear()
+    dbStorage.clear()
+    database.reloadStorage()
     expect(database.arts.data).toEqual({})
     expect(database.chars.data).toEqual({})
   })
   test("Can import valid old storage (dbv5)", () => {
-    database.importStorage(data1 as any)
+    dbStorage.copyFrom(importDB(data1)!.storage)
+    database.reloadStorage()
     expect(database._getArts().length).toEqual(149)
     expect(database._getCharKeys().length).toEqual(2)
   })
   test("Support roundtrip import-export", () => {
-    database.importStorage(data1 as any)
+    dbStorage.copyFrom(importDB(data1)!.storage)
+    database.reloadStorage()
     const arts = database.arts.data, chars = database.chars.data
-    const exported = JSON.stringify(database.exportStorage())
+    const exported = exportDB(dbStorage)
 
     // Clear, just to be sure there's no lingering data since we're using singleton
-    database.clear()
+    dbStorage.clear()
+    database.reloadStorage()
     expect(database.arts.data).toEqual({})
     expect(database.chars.data).toEqual({})
 
-    database.importStorage(JSON.parse(exported) as any)
+    dbStorage.copyFrom(importDB(data1)!.storage)
+    database.reloadStorage()
     expect(database.arts.data).toEqual(arts)
     expect(database.chars.data).toEqual(chars)
   })
@@ -92,7 +99,7 @@ describe("Database", () => {
     function tryStorage(setup: (storage: Storage) => void, verify: (storage: Storage) => void = () => { }) {
       localStorage.clear()
       // @ts-ignore use private constructor
-      new Database(localStorage)
+      new ArtCharDatabase(dbStorage)
       verify(localStorage)
     }
 
@@ -124,11 +131,12 @@ describe("Database", () => {
   })
   test("Support basic operations", async () => {
     // Add Character and Artifact
-    database.clear()
+    dbStorage.clear()
+    database.reloadStorage()
     const albedo = deepClone(baseAlbedo)
     const amber = deepClone(baseAmber)
-    const art1 = validateFlexArtifact(await randomizeArtifact()).artifact
-    const art2 = validateFlexArtifact(await randomizeArtifact()).artifact
+    const art1 = validateFlexArtifact(await randomizeArtifact(), "artifact_123").artifact
+    const art2 = validateFlexArtifact(await randomizeArtifact(), "artifact_456").artifact
     art1.slotKey = "circlet"
     art2.slotKey = "circlet"
     albedo.talentLevelKeys.auto = 3

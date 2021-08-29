@@ -46,7 +46,7 @@ export function parseFlexObj(string: string): [FlexObj, number] | undefined {
 function parseFlexObjFromSchema(string: string, schema: any) {
   const decoded = decode(string, schema) as { character: IFlexCharacter, artifacts: IFlexArtifact[] }
   const character = validateFlexCharacter(decoded.character)
-  const artifacts = decoded.artifacts.map(art => validateFlexArtifact(art).artifact)
+  const artifacts = decoded.artifacts.map((art, i) => validateFlexArtifact(art, ``).artifact)
 
   artifacts.forEach(artifact => {
     artifact.location = character.characterKey

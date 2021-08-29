@@ -5,8 +5,9 @@ import { Alert, Button, ButtonGroup, Card, Col, Container, Dropdown, DropdownBut
 import ReactGA from 'react-ga';
 import Assets from '../Assets/Assets';
 import CustomFormControl from '../Components/CustomFormControl';
+import { dbStorage } from '../Database/DBStorage';
 import { timeString } from '../Util/TimeUtil';
-import { clamp, deepClone, loadFromLocalStorage, saveToLocalStorage } from "../Util/Util";
+import { clamp, deepClone } from "../Util/Util";
 
 const SECOND_MS = 1000
 const MINUTE_MS = 60 * SECOND_MS
@@ -29,7 +30,7 @@ class ResinCounter extends React.Component {
 
   constructor(props) {
     super(props)
-    let savedState = loadFromLocalStorage("resinInfo")
+    let savedState = dbStorage.get("resinInfo")
     if (savedState) this.state = savedState
     else {
       this.state = {
@@ -81,7 +82,7 @@ class ResinCounter extends React.Component {
   }
   componentDidUpdate() {
     let state = deepClone(this.state)
-    saveToLocalStorage("resinInfo", state)
+    dbStorage.set("resinInfo", state)
   }
   render() {
     let { resin, date } = this.state as any
@@ -135,7 +136,7 @@ function TeyvatTime(props) {
   let [timeZoneKey, setTimeZoneKey] = useState(Object.keys(timeZones)[0])
   let [time, setTime] = useState(new Date(Date.now() + timeZones[timeZoneKey]))
   //load from localstorage
-  useEffect(() => setTimeZoneKey(loadFromLocalStorage("server_timezone") || Object.keys(timeZones)[0]), [])
+  useEffect(() => setTimeZoneKey(dbStorage.get("server_timezone") || Object.keys(timeZones)[0]), [])
   //set a timer. timer resets when timezone is changed.
   useEffect(() => {
     let setSecondTimeout = () => {
@@ -145,7 +146,7 @@ function TeyvatTime(props) {
       }, SECOND_MS - (Date.now() % SECOND_MS));
     }
     let interval = setSecondTimeout()
-    saveToLocalStorage("server_timezone", timeZoneKey)
+    dbStorage.set("server_timezone", timeZoneKey)
     return () => clearTimeout(interval)
   }, [timeZoneKey])
 
@@ -229,35 +230,35 @@ function EXPCalc(props) {
   let [mora, setMora] = useState(0)
 
   //load mora from localStorage
-  useEffect(() => setMora(loadFromLocalStorage("mora") || 0), [])
+  useEffect(() => setMora(dbStorage.get("mora") || 0), [])
   //save mora to localStorage
   useEffect(() => {
-    saveToLocalStorage("mora", mora)
+    dbStorage.set("mora", mora)
   }, [mora])
 
   //load mora from localStorage
-  useEffect(() => setLevel(loadFromLocalStorage("exp_calc_level") || 1), [])
+  useEffect(() => setLevel(dbStorage.get("exp_calc_level") || 1), [])
   //save mora to localStorage
   useEffect(() => {
-    saveToLocalStorage("exp_calc_level", level)
+    dbStorage.set("exp_calc_level", level)
   }, [level])
 
   //load mora from localStorage
-  useEffect(() => setCurExp(loadFromLocalStorage("exp_calc_cur_exp") || 0), [])
+  useEffect(() => setCurExp(dbStorage.get("exp_calc_cur_exp") || 0), [])
   //save mora to localStorage
   useEffect(() => {
-    saveToLocalStorage("exp_calc_cur_exp", curExp)
+    dbStorage.set("exp_calc_cur_exp", curExp)
   }, [curExp])
 
   //load exp_books from localStorage
   useEffect(() => {
-    let lsBookState = loadFromLocalStorage("exp_books") || {}
+    let lsBookState = dbStorage.get("exp_books") || {}
     let setBookStates = { advice: setAdvice, experience: setExperience, wit: setWit }
     Object.entries(lsBookState).forEach(([key, val]: any) => setBookStates[key]?.(val))
   }, [])
   //save exp_books to localStorage
   useEffect(() =>
-    saveToLocalStorage("exp_books", { advice, experience, wit }), [advice, experience, wit])
+    dbStorage.set("exp_books", { advice, experience, wit }), [advice, experience, wit])
 
   let milestoneLvl = milestone.find(lvl => lvl > level)!
   let expReq = -curExp
