@@ -1,7 +1,8 @@
+import { initialBuildSettings } from "../Build/BuildSetting"
 import { ascensionMaxLevel } from "../Data/CharacterData"
 import { getDBVersion, load, save, setDBVersion } from "./utils"
 
-const currentDBVersion = 6
+const currentDBVersion = 7
 
 export function migrate(storage: Storage): { migrated: boolean } {
   const version = getDBVersion(storage)
@@ -14,6 +15,7 @@ export function migrate(storage: Storage): { migrated: boolean } {
   if (version < 4) migrateV3ToV4(storage)
   if (version < 5) migrateV4ToV5(storage)
   if (version < 6) migrateV5ToV6(storage)
+  if (version < 7) migrateV6ToV7(storage)
 
   if (version < currentDBVersion) {
     report.migrated = true
@@ -104,7 +106,7 @@ function migrateV4ToV5(storage: Storage) {
   }
 }
 
-// v5.12.0 - Present
+// v5.12.0 - 5.19.14
 function migrateV5ToV6(storage: Storage) {
   for (const key in storage) {
     if (key.startsWith("char_")) {
@@ -123,6 +125,21 @@ function migrateV5ToV6(storage: Storage) {
         character.weapon.level = level
         character.weapon.ascension = ascension + (addAsc ? 1 : 0)
       }
+      save(storage, key, character)
+    }
+  }
+}
+
+// 5.20.0 - present
+function migrateV6ToV7(storage: Storage) {
+  for (const key in storage) {
+    if (key.startsWith("char_")) {
+      const character = load(storage, key)
+      const [sands, goblet, circlet] = character.buildSettings.mainStatKeys
+      character.buildSettings.mainStatKeys = initialBuildSettings().mainStatKeys
+      if (sands) character.buildSettings.mainStatKeys.sands = [sands]
+      if (goblet) character.buildSettings.mainStatKeys.goblet = [goblet]
+      if (circlet) character.buildSettings.mainStatKeys.circlet = [circlet]
       save(storage, key, character)
     }
   }

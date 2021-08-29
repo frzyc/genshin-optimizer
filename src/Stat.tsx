@@ -10,18 +10,10 @@ export default class Stat {
     if (this instanceof Stat)
       throw Error('A static class cannot be instantiated.');
   }
-  static getStatName = (key, defVal = "") =>
-    (htmlStatsData[key] || StatData[key]?.name) || defVal
-  static getStatNamePretty = (key, defVal = "") =>
-    (htmlStatsData[key] || StatData[key]?.pretty || StatData[key]?.name) || defVal
-  static getStatNameRaw = (key, defVal = "") =>
-    StatData[key]?.name || defVal
-  static getStatNameWithPercent = (key, defVal = "") => {
-    let name = Stat.getStatName(key, defVal) as any
-    if (name !== defVal && (key === "hp_" || key === "atk_" || key === "def_"))
-      name += "%"
-    return name;
-  }
+  static getStatName = (key, defVal = "") => <span className={`text-${StatData[key]?.variant} text-nowrap`}>{StatData[key]?.name ?? defVal}</span>
+
+  static getStatNameRaw = (key, defVal = "") => StatData[key]?.name || defVal
+  static getStatNameWithPercent = (key, defVal = "", variant = true) => <span className={`text-${variant && StatData[key]?.variant} text-nowrap`}>{StatData[key]?.name ?? defVal}{key?.endsWith('_') && "%"}</span>
   static getStatVariant = (key, defVal = "") =>
     StatData[key]?.variant || defVal
   static getStatUnit = (key, defVal = "") =>
@@ -40,8 +32,6 @@ export default class Stat {
     return statList.filter(key => keys.has(key))
   }
 }
-//generate html tags based on tagged variants of the statData
-const htmlStatsData = Object.fromEntries(Object.entries(StatData).filter(([key, obj]) => obj.variant).map(([key, obj]) => [key, (<span className={`text-${obj.variant} text-nowrap`}>{obj.name}</span>)]))
 
 const ModFormula = ({ path, stats }) => {
   const formula = usePromise(Formula.get(path), [path]) as any
@@ -69,7 +59,7 @@ function f(options, statKey) {
   if (!stats) return
   if (expand && FormulaText?.[statKey])
     return <span>( {FormulaText[statKey](options)} )</span>
-  let statName = Stat.getStatNamePretty(statKey)
+  let statName = Stat.getStatName(statKey)
   let statUnit = Stat.getStatUnit(statKey)
   let fixedUnit = Stat.fixedUnit(statKey)
   const value = (premod ? stats?.premod?.[statKey] : undefined) ?? stats?.[statKey]

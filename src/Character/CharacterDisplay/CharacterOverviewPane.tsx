@@ -282,7 +282,7 @@ function MainStatsCards({ characterSheet, weaponSheet, editable, character, char
                   prependEle={undefined}
                   disabled={undefined}
                   className="mb-2"
-                  name={<span>{StatIcon[statKey]} {Stat.getStatNamePretty(statKey)}</span>}
+                  name={<span>{StatIcon[statKey]} {Stat.getStatNameWithPercent(statKey)}</span>}
                   placeholder={`Base ${Stat.getStatName(statKey)}`}
                   value={Character.getStatValueWithOverride(character, characterSheet, weaponSheet, statKey)}
                   percent={Stat.getStatUnit(statKey) === "%"}

@@ -1,4 +1,5 @@
 import Artifact from "../Artifact/Artifact";
+import { initialBuildSettings } from "../Build/BuildSetting";
 import { ascensionMaxLevel } from "../Data/CharacterData";
 import Stat from "../Stat";
 import { allMainStatKeys, allSubstats, IArtifact, IFlexArtifact, IFlexSubstat, Substat, SubstatKey } from "../Types/artifact";
@@ -188,7 +189,18 @@ export function validateDBCharacter(obj: any, key: string): IFlexCharacter | und
     let { setFilters, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useLockedArts, useEquippedArts, ascending } = buildSettings ?? {}
     if (!Array.isArray(setFilters)) setFilters = [{ key: "", num: 0 }, { key: "", num: 0 }, { key: "", num: 0 }]
     if (typeof statFilters !== "object") statFilters = {}
-    if (!Array.isArray(mainStatKeys)) mainStatKeys = ["", "", ""]
+
+    if (!mainStatKeys.sands || !mainStatKeys.goblet || !mainStatKeys.circlet) {
+      const tempmainStatKeys = initialBuildSettings().mainStatKeys
+      if (!Array.isArray(mainStatKeys)) {
+        const [sands, goblet, circlet] = mainStatKeys
+        if (sands) tempmainStatKeys.sands = [sands]
+        if (goblet) tempmainStatKeys.goblet = [goblet]
+        if (circlet) tempmainStatKeys.circlet = [circlet]
+      }
+      mainStatKeys = tempmainStatKeys
+    }
+
     if (!optimizationTarget) optimizationTarget = "finalAtk"
     if (typeof mainStatAssumptionLevel !== "number" || mainStatAssumptionLevel < 0 || mainStatAssumptionLevel > 20)
       mainStatAssumptionLevel = 0

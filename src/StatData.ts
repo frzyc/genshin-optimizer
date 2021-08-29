@@ -5,7 +5,7 @@ import { mergeStats } from "./Util/StatUtil";
 import Formula from "./Formula";
 
 export interface StatItem {
-  name: string, pretty?: string, const?: boolean, default?: any, variant?: string,
+  name: string, const?: boolean, default?: any, variant?: string,
   unit?: "%" | "multi"
 }
 
@@ -13,31 +13,31 @@ const StatData: { [stat: string]: StatItem } = {
   flat: { name: "", default: 1 },
 
   // Character Stats
-  characterHP: { name: "HP", pretty: "Character Base HP", const: true },
-  characterDEF: { name: "DEF", pretty: "Character Base DEF", const: true },
-  characterATK: { name: "ATK", pretty: "Character Base ATK", const: true },
+  characterHP: { name: "Character Base HP", const: true },
+  characterDEF: { name: "Character Base DEF", const: true },
+  characterATK: { name: "Character Base ATK", const: true },
   characterEle: { name: "Character Element Key", default: "anemo", const: true },
   characterLevel: { name: "Character Level", default: 1, const: true },
 
   // Weapon Stats
-  weaponATK: { name: "Weapon ATK", pretty: "ATK Weapon", const: true },
+  weaponATK: { name: "Weapon ATK", const: true },
 
   // Character & Weapon Stats
-  baseATK: { name: "ATK", pretty: "ATK Base", const: true }, // characterATK + weaponATK
+  baseATK: { name: "ATK Base", const: true }, // characterATK + weaponATK
 
   // Weapon & Artifact Stats
-  hp: { name: "HP", pretty: "Flat HP" },//flat hp
-  hp_: { name: "HP", unit: "%", pretty: "HP Bonus" },
-  atk: { name: "ATK", pretty: "Flat ATK" },
-  atk_: { name: "ATK", unit: "%", pretty: "ATK Bonus" },
-  def: { name: "DEF", pretty: "Flat DEF" },
-  def_: { name: "DEF", unit: "%", pretty: "DEF Bonus" },
+  hp: { name: "HP" },//flat hp
+  hp_: { name: "HP", unit: "%" },
+  atk: { name: "ATK" },
+  atk_: { name: "ATK", unit: "%" },
+  def: { name: "DEF" },
+  def_: { name: "DEF", unit: "%" },
   dmg_: { name: "All DMG Bonus", unit: "%" },
 
   // Attack-related Character, Weapon & Artifact Stats
-  finalHP: { name: "HP", pretty: "HP" },
-  finalATK: { name: "ATK", pretty: "ATK" },
-  finalDEF: { name: "DEF", pretty: "DEF" },
+  finalHP: { name: "HP" },
+  finalATK: { name: "ATK" },
+  finalDEF: { name: "DEF" },
 
   critHit_base_multi: { name: `Crit Multiplier`, unit: "multi" },
 
