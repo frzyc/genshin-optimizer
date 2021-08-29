@@ -19,6 +19,7 @@ import { CharacterSelectionDropdownList } from '../Components/CharacterSelection
 import CustomFormControl from '../Components/CustomFormControl';
 import InfoComponent from '../Components/InfoComponent';
 import { Stars } from '../Components/StarDisplay';
+import StatIcon from '../Components/StatIcon';
 import { database } from '../Database/Database';
 import Formula from '../Formula';
 import Stat from '../Stat';
@@ -43,14 +44,19 @@ const warningBuildNumber = 10000000
 const maxBuildsToShowList = [1, 2, 3, 4, 5, 8, 10]
 const maxBuildsToShowDefault = 5
 const autoBuildGenLimit = 100
-const artifactsSlotsToSelectMainStats: SlotKey[] = ["sands", "goblet", "circlet"]
+const artifactsSlotsToSelectMainStats = ["sands", "goblet", "circlet"] as const
 
 function buildSettingsReducer(state: BuildSetting, action): BuildSetting {
   switch (action.type) {
     case 'mainStatKey': {
-      const { index, mainStatKey } = action
-      state.mainStatKeys[index] = mainStatKey
-      return { ...state, mainStatKeys: [...state.mainStatKeys] }//do this because this is a dependency, so needs to be a "new" array
+      const { slotKey, mainStatKey } = action
+      const mainStatKeys = { ...state.mainStatKeys }//create a new object to update react dependencies
+
+      if (state.mainStatKeys[slotKey].includes(mainStatKey))
+        mainStatKeys[slotKey] = mainStatKeys[slotKey].filter(k => k !== mainStatKey)
+      else
+        mainStatKeys[slotKey].push(mainStatKey)
+      return { ...state, mainStatKeys }
     }
     case `setFilter`: {
       const { index, key, num = 0 } = action
@@ -131,7 +137,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
       const statsDisplayKeys = Character.getDisplayStatKeys(initialStats, { characterSheet, weaponSheet, artifactSheets })
       setCharacterData({ character, characterSheet, weaponSheet, initialStats, statsDisplayKeys })
     })()
-  }, [charDirty, characterKey, artifactSheets])
+  }, [charDirty, characterKey, artifactSheets, selectCharacter])
 
   //register changes in artifact database
   useEffect(() =>
@@ -177,8 +183,8 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     })
     const split = Artifact.splitArtifactsBySlot(artifactDatabase);
     //filter the split slots on the mainstats selected.
-    artifactsSlotsToSelectMainStats.forEach((slotKey, index) =>
-      mainStatKeys[index] && (split[slotKey] = split[slotKey]?.filter((art) => art.mainStatKey === mainStatKeys[index])))
+    artifactsSlotsToSelectMainStats.forEach(slotKey =>
+      mainStatKeys[slotKey].length && (split[slotKey] = split[slotKey]?.filter((art) => mainStatKeys[slotKey].includes(art.mainStatKey))))
     const totBuildNumber = calculateTotalBuildNumber(split, setFilters)
     return artsDirty && { split, totBuildNumber }
   }, [characterKey, useLockedArts, useEquippedArts, mainStatKeys, setFilters, artsDirty])
@@ -272,7 +278,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
       } else if (type === "weapon") {
         return <b>{weaponSheet?.name}: <span className={`text-${variant}`}>{text}</span></b>
       }
-    } else return <b>Basic Stat: <span className={`text-${Stat.getStatVariant(optimizationTarget)}`}>{Stat.getStatNamePretty(optimizationTarget)}</span></b>
+    } else return <b>Basic Stat: <span className={`text-${Stat.getStatVariant(optimizationTarget)}`}>{Stat.getStatNameWithPercent(optimizationTarget)}</span></b>
     // return <Badge variant="danger">INVALID</Badge>
   }, [optimizationTarget, formula, initialStats, characterSheet, weaponSheet])
 
@@ -381,19 +387,26 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
                       </Row>
                     </Card.Header>
                     <Card.Body className="mb-n2">
-                      {artifactsSlotsToSelectMainStats.map((slotKey, index) =>
-                      (<div className="text-inline mb-1 d-flex justify-content-between" key={slotKey}>
-                        <h6 className="d-inline mb-0"><SlotNameWithIcon slotKey={slotKey} /></h6>
-                        <DropdownButton disabled={generatingBuilds} size="sm"
-                          title={mainStatKeys[index] ? Stat.getStatNameWithPercent(mainStatKeys[index]) : "Select a mainstat"}
-                          className="d-inline">
-                          <Dropdown.Item onClick={() => buildSettingsDispatch({ type: "mainStatKey", index, mainStatKey: "" })} >No MainStat</Dropdown.Item>
-                          {Artifact.slotMainStats(slotKey).map(mainStatKey =>
-                            <Dropdown.Item onClick={() => buildSettingsDispatch({ type: "mainStatKey", index, mainStatKey })} key={mainStatKey}>
-                              {Stat.getStatNameWithPercent(mainStatKey)}
-                            </Dropdown.Item>)}
-                        </DropdownButton>
-                      </div>))}
+                      {artifactsSlotsToSelectMainStats.map(slotKey => {
+                        const numSel = mainStatKeys[slotKey].length
+                        return <Card bg="darkcontent" text={"lightfont" as any} className="mb-2" key={slotKey}>
+                          <Card.Header className="p-2"><Row >
+                            <Col className="ml-2"><SlotNameWithIcon slotKey={slotKey} /></Col>
+                            <Col xs="auto"><Badge variant="info">{numSel ? `${numSel} Selected` : `Any`}</Badge></Col>
+                          </Row></Card.Header>
+                          <Card.Body className="p-0"><Row className="no-gutters">
+                            {Artifact.slotMainStats(slotKey).map((mainStatKey, i) => {
+                              const selected = mainStatKeys[slotKey].includes(mainStatKey)
+                              return <Col xs={i < 3 ? 4 : 6} key={mainStatKey}>
+                                <Button className="w-100 rounded-0" size="sm" variant={selected ? "success" : "secondary"}
+                                  onClick={() => buildSettingsDispatch({ type: "mainStatKey", slotKey, mainStatKey })}>
+                                  {StatIcon[mainStatKey]} {Stat.getStatNameWithPercent(mainStatKey, "", false)}
+                                </Button>
+                              </Col>
+                            })}
+                          </Row></Card.Body>
+                        </Card>
+                      })}
                     </Card.Body>
                   </Card>
                 </Col>
@@ -454,7 +467,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
                               if (Array.isArray(target))
                                 return <TargetSelectorDropdownItem key={i} {...{ target, buildSettingsDispatch, initialStats }} />
                               else if (typeof target === "string")
-                                return <Dropdown.Item key={i} onClick={() => buildSettingsDispatch({ optimizationTarget: target })}>{Stat.getStatNamePretty(target)}</Dropdown.Item>
+                                return <Dropdown.Item key={i} onClick={() => buildSettingsDispatch({ optimizationTarget: target })}>{Stat.getStatNameWithPercent(target)}</Dropdown.Item>
                               return null
                             })}
                           </Col>
@@ -610,10 +623,10 @@ function StatFilterItem({ statKey, statKeys = [], min, max, close, setFilter }: 
   return <InputGroup className="mb-2">
     <DropdownButton
       as={InputGroup.Prepend}
-      title={Stat.getStatNamePretty(statKey, "New Stat")}
+      title={Stat.getStatNameWithPercent(statKey, "New Stat")}
       id="input-group-dropdown-1"
     >
-      {statKeys.map(sKey => <Dropdown.Item key={sKey} onClick={() => { close?.(); setFilter(sKey, min, max) }}>{Stat.getStatNamePretty(sKey)}</Dropdown.Item>)}
+      {statKeys.map(sKey => <Dropdown.Item key={sKey} onClick={() => { close?.(); setFilter(sKey, min, max) }}>{Stat.getStatNameWithPercent(sKey)}</Dropdown.Item>)}
     </DropdownButton>
     <CustomFormControl {...minInputProps} />
     <CustomFormControl {...maxInputProps} />
