@@ -135,11 +135,14 @@ function migrateV6ToV7(storage: Storage) {
   for (const key in storage) {
     if (key.startsWith("char_")) {
       const character = load(storage, key)
-      const [sands, goblet, circlet] = character.buildSettings.mainStatKeys
-      character.buildSettings.mainStatKeys = initialBuildSettings().mainStatKeys
-      if (sands) character.buildSettings.mainStatKeys.sands = [sands]
-      if (goblet) character.buildSettings.mainStatKeys.goblet = [goblet]
-      if (circlet) character.buildSettings.mainStatKeys.circlet = [circlet]
+      if (!character.buildSettings) character.buildSettings = initialBuildSettings()
+      else {
+        const [sands, goblet, circlet] = (Array.isArray(character.buildSettings?.mainStatKeys) && character.buildSettings?.mainStatKeys) || []
+        character.buildSettings.mainStatKeys = initialBuildSettings().mainStatKeys
+        if (sands) character.buildSettings.mainStatKeys.sands = [sands]
+        if (goblet) character.buildSettings.mainStatKeys.goblet = [goblet]
+        if (circlet) character.buildSettings.mainStatKeys.circlet = [circlet]
+      }
       save(storage, key, character)
     }
   }
