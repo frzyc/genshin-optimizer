@@ -64,6 +64,10 @@ function importMona1(dataObj: any): { artifacts: IFlexArtifact[], invalidCount: 
 
     for (const genshinArtArtifact of dataObj[property]) {
       const { setName, star, level, position, mainTag } = genshinArtArtifact
+      if (star < 3) {
+        // invalidCount++//do not increment since its technically not an invalid artifact, just not part of our system.
+        continue
+      }
       const flex = validateDBArtifact({
         setKey: ArtifactSetKeyMap[setName],
         numStars: star,
