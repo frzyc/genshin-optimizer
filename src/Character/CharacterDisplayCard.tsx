@@ -8,6 +8,7 @@ import Col from 'react-bootstrap/Col';
 import DropdownItem from 'react-bootstrap/esm/DropdownItem';
 import Row from 'react-bootstrap/Row';
 import { ArtifactSheet } from '../Artifact/ArtifactSheet';
+import { initialBuildSettings } from '../Build/BuildSetting';
 import CustomFormControl from '../Components/CustomFormControl';
 import { ascensionMaxLevel, milestoneLevels } from '../Data/CharacterData';
 import ElementalData from '../Data/ElementalData';
@@ -52,6 +53,7 @@ const initialCharacter = (characterKey): ICharacter => ({
   equippedArtifacts: Object.fromEntries(allSlotKeys.map(sKey => [sKey, ""])) as any,
   conditionalValues: {},
   baseStatOverrides: {},//overriding the baseStat
+  buildSettings: initialBuildSettings(),
   weapon: {
     key: "" as any,
     level: 1,

@@ -34,6 +34,7 @@ import { timeStringMs } from '../Util/TimeUtil';
 import { crawlObject, deepClone, loadFromLocalStorage, saveToLocalStorage } from '../Util/Util';
 import WeaponSheet from '../Weapon/WeaponSheet';
 import { calculateTotalBuildNumber } from './Build';
+import { initialBuildSettings } from './BuildSetting';
 const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
 
 //lazy load the character display
@@ -44,16 +45,6 @@ const maxBuildsToShowList = [1, 2, 3, 4, 5, 8, 10]
 const maxBuildsToShowDefault = 5
 const autoBuildGenLimit = 100
 const artifactsSlotsToSelectMainStats: SlotKey[] = ["sands", "goblet", "circlet"]
-const initialBuildSettings = (): BuildSetting => ({
-  setFilters: [{ key: "", num: 0 }, { key: "", num: 0 }, { key: "", num: 0 }],
-  statFilters: {},
-  mainStatKeys: [[], [], []],
-  optimizationTarget: "finalATK",
-  mainStatAssumptionLevel: 0,
-  useLockedArts: false,
-  useEquippedArts: false,
-  ascending: false,
-})
 
 function buildSettingsReducer(state: BuildSetting, action): BuildSetting {
   switch (action.type) {
@@ -74,10 +65,17 @@ function buildSettingsReducer(state: BuildSetting, action): BuildSetting {
 }
 
 export default function BuildDisplay({ location: { characterKey: propCharacterKey } }) {
-  const [characterKey, setcharacterKey] = useState("" as CharacterKey | "")
+  const [characterKey, setcharacterKey] = useState(() => {
+    const { characterKey = "" } = loadFromLocalStorage("BuildsDisplay.state") ?? {}
+    //NOTE that propCharacterKey can override the selected character.
+    return (propCharacterKey ?? characterKey) as CharacterKey | ""
+  })
 
   const [builds, setbuilds] = useState([] as any[])
-  const [maxBuildsToShow, setmaxBuildsToShow] = useState(maxBuildsToShowDefault)
+  const [maxBuildsToShow, setmaxBuildsToShow] = useState(() => {
+    const { maxBuildsToShow = maxBuildsToShowDefault } = loadFromLocalStorage("BuildsDisplay.state") ?? {}
+    return maxBuildsToShow
+  })
 
   const [modalBuild, setmodalBuild] = useState(null) // the newBuild that is being displayed in the character modal
   const [showArtCondModal, setshowArtCondModal] = useState(false)
@@ -100,22 +98,32 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   type characterDataType = { character?: ICharacter, characterSheet?: CharacterSheet, weaponSheet?: WeaponSheet, initialStats?: ICalculatedStats, statsDisplayKeys?: { basicKeys: any, [key: string]: any } }
   const [{ character, characterSheet, weaponSheet, initialStats, statsDisplayKeys }, setCharacterData] = useState({} as characterDataType)
   const buildSettings = useMemo(() => character?.buildSettings ?? initialBuildSettings(), [character])
+  if (buildSettings.setFilters.length === 0) buildSettings.setFilters = initialBuildSettings().setFilters//hotfix for an issue with db. can be removed later.
   const { setFilters, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useLockedArts, useEquippedArts, ascending, } = buildSettings
 
   const buildSettingsDispatch = useCallback((action) => {
     if (!character) return
-    character.buildSettings = buildSettingsReducer(buildSettings as any, action)
+    character.buildSettings = buildSettingsReducer(buildSettings, action)
     database.updateChar(character)
   }, [character, buildSettings])
 
   useEffect(() => ReactGA.pageview('/build'), [])
+
+  //select a new character Key
+  const selectCharacter = useCallback((cKey = "") => {
+    if (characterKey === cKey) return
+    setcharacterKey(cKey)
+    setbuilds([])
+    setCharDirty()
+    setCharacterData({})
+  }, [setCharDirty, setcharacterKey, characterKey])
 
   //load the character data as a whole
   useEffect(() => {
     (async () => {
       if (!characterKey || !artifactSheets) return
       const character = database._getChar(characterKey)
-      if (!character) return
+      if (!character) return selectCharacter("")// character is prob deleted.
       const characterSheet = await CharacterSheet.get(characterKey)
       const weaponSheet = await WeaponSheet.get(character.weapon.key)
       if (!characterSheet || !weaponSheet) return
@@ -138,26 +146,6 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
 
   //terminate worker when component unmounts
   useEffect(() => () => worker.current?.terminate(), [])
-
-  //select a new character Key
-  const selectCharacter = useCallback((cKey = "") => {
-    if (characterKey === cKey) return
-    setcharacterKey(cKey)
-    setbuilds([])
-    setCharDirty()
-    setCharacterData({})
-  }, [setCharDirty, setcharacterKey, characterKey])
-
-  //load saved stat from DB. will cause infinite loop if add 'selectCharacter' to dependency array
-  useEffect(() => {//startup load from localStorage
-    if (!("BuildsDisplay.state" in localStorage)) return
-    const { characterKey = "", maxBuildsToShow = maxBuildsToShowDefault } = loadFromLocalStorage("BuildsDisplay.state") ?? {}
-    if (characterKey && database._getChar(characterKey)) selectCharacter(characterKey)
-    if (!maxBuildsToShowList.includes(maxBuildsToShow)) setmaxBuildsToShow(maxBuildsToShowDefault)
-    else setmaxBuildsToShow(maxBuildsToShow)
-  }, [])// eslint-disable-line react-hooks/exhaustive-deps
-
-  useEffect(() => propCharacterKey && selectCharacter(propCharacterKey), [propCharacterKey, selectCharacter])//update when props update
 
   //save to BuildsDisplay.state on change
   useEffect(() => {
