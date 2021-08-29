@@ -21,6 +21,7 @@ import InfoComponent from '../Components/InfoComponent';
 import { Stars } from '../Components/StarDisplay';
 import StatIcon from '../Components/StatIcon';
 import { database } from '../Database/Database';
+import { dbStorage } from '../Database/DBStorage';
 import Formula from '../Formula';
 import Stat from '../Stat';
 import { StatKey } from '../Types/artifact';
@@ -31,7 +32,7 @@ import { IFieldDisplay } from '../Types/IFieldDisplay';
 import { ICalculatedStats } from '../Types/stats';
 import { useForceUpdate, usePromise } from '../Util/ReactUtil';
 import { timeStringMs } from '../Util/TimeUtil';
-import { crawlObject, deepClone, loadFromLocalStorage, saveToLocalStorage } from '../Util/Util';
+import { crawlObject, deepClone } from '../Util/Util';
 import WeaponSheet from '../Weapon/WeaponSheet';
 import { calculateTotalBuildNumber } from './Build';
 import { initialBuildSettings } from './BuildSetting';
@@ -71,14 +72,14 @@ function buildSettingsReducer(state: BuildSetting, action): BuildSetting {
 
 export default function BuildDisplay({ location: { characterKey: propCharacterKey } }) {
   const [characterKey, setcharacterKey] = useState(() => {
-    const { characterKey = "" } = loadFromLocalStorage("BuildsDisplay.state") ?? {}
+    const { characterKey = "" } = dbStorage.get("BuildsDisplay.state") ?? {}
     //NOTE that propCharacterKey can override the selected character.
     return (propCharacterKey ?? characterKey) as CharacterKey | ""
   })
 
   const [builds, setbuilds] = useState([] as any[])
   const [maxBuildsToShow, setmaxBuildsToShow] = useState(() => {
-    const { maxBuildsToShow = maxBuildsToShowDefault } = loadFromLocalStorage("BuildsDisplay.state") ?? {}
+    const { maxBuildsToShow = maxBuildsToShowDefault } = dbStorage.get("BuildsDisplay.state") ?? {}
     return maxBuildsToShow
   })
 
@@ -154,7 +155,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
 
   //save to BuildsDisplay.state on change
   useEffect(() => {
-    if (isMounted.current) saveToLocalStorage("BuildsDisplay.state", { characterKey, maxBuildsToShow })
+    if (isMounted.current) dbStorage.set("BuildsDisplay.state", { characterKey, maxBuildsToShow })
     else isMounted.current = true
   }, [characterKey, maxBuildsToShow])
 

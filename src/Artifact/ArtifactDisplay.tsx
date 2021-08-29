@@ -13,11 +13,12 @@ import CustomFormControl from '../Components/CustomFormControl';
 import InfoComponent from '../Components/InfoComponent';
 import { Stars } from '../Components/StarDisplay';
 import { database } from '../Database/Database';
+import { dbStorage } from '../Database/DBStorage';
 import Stat from '../Stat';
 import { allMainStatKeys, allSubstats, IArtifact, SubstatKey } from '../Types/artifact';
 import { allArtifactRarities, allSlotKeys } from '../Types/consts';
 import { useForceUpdate, usePromise } from '../Util/ReactUtil';
-import { clamp, loadFromLocalStorage, saveToLocalStorage } from '../Util/Util';
+import { clamp } from '../Util/Util';
 import Artifact from './Artifact';
 import ArtifactCard from './ArtifactCard';
 import ArtifactEditor from './ArtifactEditor';
@@ -49,7 +50,7 @@ function filterReducer(state, action) {
   return { ...state, ...action }
 }
 function filterInit(initial = initialFilter()) {
-  return { ...initial, ...(loadFromLocalStorage("ArtifactDisplay.state") ?? {}) }
+  return { ...initial, ...(dbStorage.get("ArtifactDisplay.state") ?? {}) }
 }
 export default function ArtifactDisplay(props) {
   const { t } = useTranslation(["artifact", "ui"]);
@@ -77,7 +78,7 @@ export default function ArtifactDisplay(props) {
   }, [forceUpdate])
 
   useEffect(() => {
-    saveToLocalStorage("ArtifactDisplay.state", filters)
+    dbStorage.set("ArtifactDisplay.state", filters)
   }, [filters])
 
   const { artifacts, totalArtNum, numUnequip, numUnlock, numLock } = useMemo(() => {

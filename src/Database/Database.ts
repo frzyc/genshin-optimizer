@@ -1,29 +1,36 @@
 import { IArtifact, IFlexArtifact } from "../Types/artifact";
-import { ICharacter, IFlexCharacter } from "../Types/character";
+import { ICharacter } from "../Types/character";
 import { allSlotKeys, CharacterKey, SlotKey } from "../Types/consts";
 import { deepClone, getRandomInt } from "../Util/Util";
-import { load, save, remove, getDBVersion, setDBVersion } from "./utils";
 import { DataManager } from "./DataManager";
 import { migrate } from "./migration";
 import { validateFlexArtifact, validateDBCharacter, validateDBArtifact, extractFlexArtifact, validateFlexCharacter, extractFlexCharacter } from "./validation";
+import { DBStorage, dbStorage } from "./DBStorage";
 
-export class Database {
-  storage: Storage
+export class ArtCharDatabase {
+  storage: DBStorage
   arts = new DataManager<string, IArtifact>()
   chars = new DataManager<CharacterKey, ICharacter>()
 
-  private constructor(storage: Storage) {
+  constructor(storage: DBStorage) {
     this.storage = storage
+    this.reloadStorage()
+  }
 
+  /// Call this function when the underlying data changes without this instance's knowledge
+  reloadStorage() {
+    this.arts.removeAll()
+    this.chars.removeAll()
+    const storage = this.storage
     const { migrated } = migrate(storage)
 
     // Load into memory and verify database integrity
-    for (const key in storage) {
+    for (const key of storage.keys) {
       if (key.startsWith("char_")) {
-        const flex = validateDBCharacter(load(storage, key), key)
+        const flex = validateDBCharacter(storage.get(key), key)
         if (!flex) {
           // Non-recoverable
-          remove(storage, key)
+          storage.remove(key)
           continue
         }
         const character = validateFlexCharacter(flex)
@@ -32,16 +39,16 @@ export class Database {
 
         this.chars.set(flex.characterKey, character)
         // Save migrated version back to db
-        if (migrated) save(this.storage, `char_${flex.characterKey}`, flex)
+        if (migrated) this.storage.set(`char_${flex.characterKey}`, flex)
       }
     }
 
-    for (const key in storage) {
+    for (const key of storage.keys) {
       if (key.startsWith("artifact_")) {
-        const flex = validateDBArtifact(load(storage, key), key)
+        const flex = validateDBArtifact(storage.get(key))
         if (!flex) {
           // Non-recoverable
-          remove(storage, key)
+          storage.remove(key)
           continue
         }
 
@@ -51,21 +58,21 @@ export class Database {
           this.chars.data[location]!.equippedArtifacts[slotKey] = key // equiped on `location`
         } else flex.location = ""
 
-        const { artifact } = validateFlexArtifact(flex)
+        const { artifact } = validateFlexArtifact(flex, key)
 
         this.arts.set(artifact.id, artifact)
         // Save migrated version back to db
-        if (migrated) save(this.storage, key, flex)
+        if (migrated) this.storage.set(key, flex)
       }
     }
   }
 
   private saveArt(key: string, art: IArtifact) {
-    save(this.storage, key, extractFlexArtifact(art))
+    this.storage.set(key, extractFlexArtifact(art))
     this.arts.set(key, art)
   }
   private saveChar(key: CharacterKey, char: ICharacter) {
-    save(this.storage, `char_${key}`, char)
+    this.storage.set(`char_${key}`, extractFlexCharacter(char))
     this.chars.set(key, char)
   }
   // TODO: Make theses `_` functions private once we migrate to use `followXXX`,
@@ -132,7 +139,7 @@ export class Database {
       art.location = ""
       this.saveArt(artKey, art)
     }
-    remove(this.storage, `char_${key}`)
+    this.storage.remove(`char_${key}`)
     this.chars.remove(key)
   }
   removeArt(key: string) {
@@ -145,7 +152,7 @@ export class Database {
       char.equippedArtifacts[art.slotKey] = ""
       this.saveChar(charKey, char)
     }
-    remove(this.storage, key)
+    this.storage.remove(key)
     this.arts.remove(key)
   }
   setLocation(artKey: string, newCharKey: CharacterKey | "") {
@@ -193,67 +200,49 @@ export class Database {
     this.saveArt(key, art)
   }
 
-  exportStorage() {
-    const characterDatabase = Object.fromEntries(Object.entries(this.chars.data).map(([key, value]) =>
-      [key, extractFlexCharacter(value)]))
-    const artifactDatabase = Object.fromEntries(Object.entries(this.arts.data).map(([key, value]) =>
-      [key, extractFlexArtifact(value)]))
-    const version = getDBVersion(this.storage)
-    const artifactDisplay = load(this.storage, "ArtifactDisplay.state") ?? {}
-    const characterDisplay = load(this.storage, "CharacterDisplay.state") ?? {}
-    const buildsDisplay = load(this.storage, "BuildsDisplay.state") ?? {}
+  findDuplicates(editorArt: IFlexArtifact): { duplicated: string[], upgraded: string[] } {
+    const { setKey, numStars, level, slotKey, mainStatKey, substats } = editorArt
 
-    return {
-      version,
-      characterDatabase,
-      artifactDatabase,
-      artifactDisplay,
-      characterDisplay,
-      buildsDisplay,
-    }
+    const candidates = database._getArts().filter(candidate =>
+      setKey === candidate.setKey &&
+      numStars === candidate.numStars &&
+      slotKey === candidate.slotKey &&
+      mainStatKey === candidate.mainStatKey &&
+      level >= candidate.level &&
+      substats.every((substat, i) =>
+        !candidate.substats[i].key || // Candidate doesn't have anything on this slot
+        (substat.key === candidate.substats[i].key && // Or editor simply has better substat
+          substat.value >= candidate.substats[i].value)
+      )
+    )
+
+    // Strictly upgraded artifact
+    const upgraded = candidates.filter(candidate =>
+      level > candidate.level &&
+      (Math.floor(level / 4) === Math.floor(candidate.level / 4) ? // Check for extra rolls
+        substats.every((substat, i) => // Has no extra roll
+          substat.key === candidate.substats[i].key && substat.value === candidate.substats[i].value) :
+        substats.some((substat, i) => // Has extra rolls
+          candidate.substats[i].key ?
+            substat.value > candidate.substats[i].value : // Extra roll to existing substat
+            substat.key // Extra roll to new substat
+        )
+      )
+    )
+    // Strictly duplicated artifact
+    const duplicated = candidates.filter(candidate =>
+      level === candidate.level &&
+      substats.every(substat =>
+        !substat.key ||  // Empty slot
+        candidate.substats.some(candidateSubstat =>
+          substat.key === candidateSubstat.key && // Or same slot
+          substat.value === candidateSubstat.value
+        )))
+
+    return { duplicated: duplicated.map(({ id }) => id), upgraded: upgraded.map(({ id }) => id) }
   }
 
-  importStorage({ version, characterDatabase, artifactDatabase, artifactDisplay, characterDisplay, buildsDisplay }: DatabaseObj) {
-    this.clear()
-    const storage = this.storage
-
-    Object.entries(characterDatabase).forEach(([charKey, char]) => save(storage, `char_${charKey}`, char))
-    Object.entries(artifactDatabase).forEach(([id, art]) => save(storage, id, art))
-    //override version
-    setDBVersion(storage, version)
-    save(storage, "ArtifactDisplay.state", artifactDisplay)
-    save(storage, "CharacterDisplay.state", characterDisplay)
-    save(storage, "BuildsDisplay.state", buildsDisplay)
-
-    const newDatabase = new Database(storage)
-    this.arts = newDatabase.arts
-    this.chars = newDatabase.chars
-  }
-
-  clear() {
-    const storage = this.storage
-    Object.keys(storage)
-      .filter(key => key.startsWith("char_") || key.startsWith("artifact_"))
-      .forEach(id => remove(storage, id))
-    remove(storage, "db_ver")
-    remove(storage, "ArtifactDisplay.state")
-    remove(storage, "CharacterDisplay.state")
-    remove(storage, "BuildsDisplay.state")
-
-    this.arts.removeAll()
-    this.chars.removeAll()
-  }
-
-  static shared = new Database(localStorage)
-}
-
-type DatabaseObj = {
-  version: number,
-  characterDatabase: Dict<CharacterKey, IFlexCharacter>
-  artifactDatabase: Dict<string, IFlexArtifact>
-  artifactDisplay: any
-  characterDisplay: any
-  buildsDisplay: any
+  static shared = new ArtCharDatabase(dbStorage)
 }
 
 /// Get a random integer (converted to string) that is not in `keys`
@@ -267,4 +256,4 @@ function generateRandomArtID(keys: Set<string>): string {
 
 type Callback<Arg> = (arg: Arg | undefined) => void
 
-export const database = Database.shared
+export const database = ArtCharDatabase.shared

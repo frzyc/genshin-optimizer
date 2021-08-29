@@ -31,20 +31,18 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: Artifac
   const [flexArtifact, artifactDispatch] = useReducer(artifactReducer, undefined)
   const artifactSheets = usePromise(ArtifactSheet.getAll(), [])
 
-  const { artifact, errors } = useMemo(() =>
-    flexArtifact ? validateFlexArtifact(flexArtifact) : { artifact: undefined, errors: [] }
-    , [flexArtifact])
+  const { artifact, errors } = useMemo(() => {
+    return flexArtifact ? validateFlexArtifact(flexArtifact, artifactIdToEdit) : { artifact: undefined, errors: [] }
+  }, [flexArtifact, artifactIdToEdit])
 
   const artifactInEditor = artifact !== undefined
   const sheet = artifact ? artifactSheets?.[artifact.setKey] : undefined
 
   useEffect(() => {
-    if (artifactIdToEdit && artifactIdToEdit !== artifact?.id) {
-      const databaseArtifact = database._getArt(artifactIdToEdit)
-      if (databaseArtifact)
-        artifactDispatch({ type: "overwrite", artifact: deepClone(databaseArtifact) })
-    }
-  }, [artifactIdToEdit, artifact?.id])
+    const databaseArtifact = database._getArt(artifactIdToEdit)
+    if (databaseArtifact)
+      artifactDispatch({ type: "overwrite", artifact: deepClone(databaseArtifact) })
+  }, [artifactIdToEdit])
 
   const getUpdloadDisplayReset = (reset: () => void) => uploadDisplayReset = reset
 
@@ -82,7 +80,11 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: Artifac
   }, [artifactDispatch])
   const isValid = !errors.length
   const canClearArtifact = (): boolean => window.confirm(t`editor.clearPrompt` as string)
-  const { dupId, isDup } = useMemo(() => checkDuplicate(artifact), [artifact])
+  const { dupId, isDup } = useMemo(() => {
+    if (artifact === undefined || artifact.id) return { isDup: false }
+    const { duplicated, upgraded } = database.findDuplicates(artifact)
+    return { dupId: duplicated[0] ?? upgraded[0], isDup: duplicated.length !== 0 }
+  }, [artifact])
   const { numStars = 5, level = 0, slotKey = "flower" } = artifact ?? {}
   const { currentEfficiency = 0, maxEfficiency = 0 } = artifact ? Artifact.getArtifactEfficiency(artifact, allSubstatFilter) : {}
   return <Card bg="darkcontent" text={"lightfont" as any}>
@@ -335,54 +337,6 @@ export function artifactReducer(state: IFlexArtifact | undefined, action: Messag
     case "overwrite": return action.artifact
     case "update": return { ...state!, ...action.artifact }
   }
-}
-
-function checkDuplicate(editorArt: IFlexArtifact | undefined): { dupId?: string, isDup: boolean } {
-  if (!editorArt) return { isDup: false }
-  const { id, setKey, numStars, level, slotKey, mainStatKey, substats } = editorArt
-  if (id) return { isDup: false }
-
-  const candidates = database._getArts().filter(candidate =>
-    setKey === candidate.setKey &&
-    numStars === candidate.numStars &&
-    slotKey === candidate.slotKey &&
-    mainStatKey === candidate.mainStatKey &&
-    level >= candidate.level &&
-    substats.every((substat, i) =>
-      !candidate.substats[i].key || // Candidate doesn't have anything on this slot
-      (substat.key === candidate.substats[i].key && // Or editor simply has better substat
-        substat.value >= candidate.substats[i].value)
-    )
-  )
-
-  // Strictly upgraded artifact
-  const upgraded = candidates.filter(candidate =>
-    level > candidate.level &&
-    (Math.floor(level / 4) === Math.floor(candidate.level / 4) ? // Check for extra rolls
-      substats.every((substat, i) => // Has no extra roll
-        substat.key === candidate.substats[i].key && substat.value === candidate.substats[i].value) :
-      substats.some((substat, i) => // Has extra rolls
-        candidate.substats[i].key ?
-          substat.value > candidate.substats[i].value : // Extra roll to existing substat
-          substat.key // Extra roll to new substat
-      )
-    )
-  )
-  // Strictly duplicated artifact
-  const duplicated = candidates.filter(candidate =>
-    level === candidate.level &&
-    substats.every(substat =>
-      !substat.key ||  // Empty slot
-      candidate.substats.some(candidateSubstat =>
-        substat.key === candidateSubstat.key && // Or same slot
-        substat.value === candidateSubstat.value
-      )))
-
-  if (!duplicated.length && !upgraded.length)
-    return { isDup: false }
-
-  const dupId = duplicated[0]?.id! ?? upgraded[0].id!
-  return { dupId, isDup: duplicated.length > 0 }
 }
 
 const saveArtifact = (artifact: IArtifact, id: string | undefined) => {

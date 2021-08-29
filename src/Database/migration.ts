@@ -1,10 +1,11 @@
 import { initialBuildSettings } from "../Build/BuildSetting"
 import { ascensionMaxLevel } from "../Data/CharacterData"
-import { getDBVersion, load, save, setDBVersion } from "./utils"
+import { DBStorage } from "./DBStorage"
+import { getDBVersion, setDBVersion } from "./utils"
 
 const currentDBVersion = 7
 
-export function migrate(storage: Storage): { migrated: boolean } {
+export function migrate(storage: DBStorage): { migrated: boolean } {
   const version = getDBVersion(storage)
   const report = { migrated: false }
 
@@ -26,42 +27,42 @@ export function migrate(storage: Storage): { migrated: boolean } {
   return report
 }
 /// v4.0.0 - v4.23.2
-function migrateV2ToV3(storage: Storage) {
-  const state = load(storage, "CharacterDisplay.state")
+function migrateV2ToV3(storage: DBStorage) {
+  const state = storage.get("CharacterDisplay.state")
   if (state) {
     if (Array.isArray(state.elementalFilter)) state.elementalFilter = ""
     if (Array.isArray(state.weaponFilter)) state.weaponFilter = ""
-    save(storage, "CharacterDisplay.state", state)
+    storage.set("CharacterDisplay.state", state)
   }
 
   for (const key in storage) {
     if (key.startsWith("char_")) {
-      const value = load(storage, key)
+      const value = storage.get(key)
       if (!value) continue
       if (value.buildSetting) {
         const { artifactsAssumeFull = false, ascending = false, mainStat = ["", "", ""], setFilters = [{ key: "", num: 0 }, { key: "", num: 0 }, { key: "", num: 0 }], useLockedArts = false } = value.buildSetting ?? {}
         value.buildSettings = { mainStatAssumptionLevel: artifactsAssumeFull ? 20 : 0, ascending, mainStatKeys: mainStat, setFilters, useLockedArts }
       }
 
-      save(storage, key, value)
+      storage.set(key, value)
     }
   }
 }
 /// v5.0.0 - v5.7.15
-function migrateV3ToV4(storage: Storage) { // 
+function migrateV3ToV4(storage: DBStorage) { // 
   // Convert anemo traveler to traveler, and remove geo traveler
-  const traveler = load(storage, "char_traveler_anemo")
+  const traveler = storage.get("char_traveler_anemo")
   // Deletion of old travelers are handled during validation
 
   if (traveler) {
     traveler.elementKey = "anemo"
     traveler.characterKey = "traveler"
-    save(storage, "char_traveler", traveler)
+    storage.set("char_traveler", traveler)
   }
 
   for (const key in storage) {
     if (key.startsWith("artifact_")) {
-      const value = load(storage, key)
+      const value = storage.get(key)
       let requireUpdate = false
       if (value.location === "traveler_anemo") {
         value.location = "traveler"
@@ -72,15 +73,15 @@ function migrateV3ToV4(storage: Storage) { //
       }
 
       if (requireUpdate)
-        save(storage, key, value)
+        storage.set(key, value)
     }
   }
 }
 /// v5.8.0 - v5.11.5
-function migrateV4ToV5(storage: Storage) {
+function migrateV4ToV5(storage: DBStorage) {
   for (const key in storage) {
     if (key.startsWith("char_")) {
-      const value = load(storage, key)
+      const value = storage.get(key)
 
       const levelKey = value.levelKey ?? "L1"
       const [, lvla] = levelKey.split("L")
@@ -101,16 +102,16 @@ function migrateV4ToV5(storage: Storage) {
       delete value.baseStatOverrides?.characterATK
       delete value.baseStatOverrides?.characterDEF
 
-      save(storage, key, value)
+      storage.set(key, value)
     }
   }
 }
 
 // v5.12.0 - 5.19.14
-function migrateV5ToV6(storage: Storage) {
+function migrateV5ToV6(storage: DBStorage) {
   for (const key in storage) {
     if (key.startsWith("char_")) {
-      const character = load(storage, key)
+      const character = storage.get(key)
 
       //migrate character weapon levels
       const levelKey = character.weapon.levelKey ?? "L1"
@@ -125,16 +126,16 @@ function migrateV5ToV6(storage: Storage) {
         character.weapon.level = level
         character.weapon.ascension = ascension + (addAsc ? 1 : 0)
       }
-      save(storage, key, character)
+      storage.set(key, character)
     }
   }
 }
 
 // 5.20.0 - present
-function migrateV6ToV7(storage: Storage) {
+function migrateV6ToV7(storage: DBStorage) {
   for (const key in storage) {
     if (key.startsWith("char_")) {
-      const character = load(storage, key)
+      const character = storage.get(key)
       if (!character.buildSettings) character.buildSettings = initialBuildSettings()
       else {
         const [sands, goblet, circlet] = (Array.isArray(character.buildSettings?.mainStatKeys) && character.buildSettings?.mainStatKeys) || []
@@ -143,7 +144,7 @@ function migrateV6ToV7(storage: Storage) {
         if (goblet) character.buildSettings.mainStatKeys.goblet = [goblet]
         if (circlet) character.buildSettings.mainStatKeys.circlet = [circlet]
       }
-      save(storage, key, character)
+      storage.set(key, character)
     }
   }
 }

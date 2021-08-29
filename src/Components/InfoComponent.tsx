@@ -2,16 +2,17 @@ import { faQuestionCircle, faTimes } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Suspense, useState } from "react"
 import { Button, Card, Col, Modal, Row, Spinner } from "react-bootstrap"
-import { getRandomElementFromArray, loadFromLocalStorage, saveToLocalStorage } from "../Util/Util"
+import { dbStorage } from "../Database/DBStorage"
+import { getRandomElementFromArray } from "../Util/Util"
 import { TransWrapper } from "./Translate"
 
 export default function InfoComponent({ pageKey = "", text = "", modalTitle = "", children }: { pageKey: string, text: Displayable | Displayable[], modalTitle: Displayable, children: JSX.Element }) {
-  const [showInfoModal, setshowInfoModal] = useState(loadFromLocalStorage("infoShown")?.[pageKey] ?? true)
+  const [showInfoModal, setshowInfoModal] = useState(dbStorage.get("infoShown")?.[pageKey] ?? true)
   const [displayText,] = useState(Array.isArray(text) ? getRandomElementFromArray(text) : text)
   const closeModal = () => {
-    const infoShown = loadFromLocalStorage("infoShown") ?? {}
+    const infoShown = dbStorage.get("infoShown") ?? {}
     infoShown[pageKey] = false
-    saveToLocalStorage("infoShown", infoShown)
+    dbStorage.set("infoShown", infoShown)
     setshowInfoModal(false)
   }
   return <>

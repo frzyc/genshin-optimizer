@@ -38,6 +38,6 @@ export async function randomizeArtifact(): Promise<IFlexArtifact> {
       substat.value = parseFloat(valueStringWithUnit(substat.value, Stat.getStatUnit(substat.key)))
 
   return {
-    id: "", setKey: set, numStars: rarity, slotKey: slot, mainStatKey, level, substats, location: "", lock: false
+    setKey: set, numStars: rarity, slotKey: slot, mainStatKey, level, substats, location: "", lock: false
   }
 }

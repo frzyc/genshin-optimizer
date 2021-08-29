@@ -4,13 +4,18 @@
     "selectLanguage": "Select Language",
     "languageFormat": "Language: {{language}}"
   },
+  "count": {
+    "chars": "Characters:",
+    "arts": "Artifacts:",
+    "artsDup": "Duplicate Artifacts:",
+    "artsNew": "New Artifacts:",
+    "artsUpg": "Upgraded Artifacts:",
+    "artsInvalid": "Invalid Artifacts",
+    "artsFod": "Foddered Artifacts"
+  },
   "downloadCard": {
     "databaseDownload": "Database Download",
-    "charsStored": "<0>{{count}}</0> Character Stored",
-    "charsStored_plural": "<0>{{count}}</0> Characters Stored",
-    "artisStored": "<0>{{count}}</0> Artifact Stored",
-    "artisStored_plural": "<0>{{count}}</0> Artifacts Stored",
-    "databaseDisclaimer": "Notes: any data within the \"Tools\" page, e.g. Resin amount/timer, are not part of the downloaded database.",
+    "databaseDisclaimer": "Note: any data within the \"Tools\" page, e.g. Resin amount/timer, are not part of the downloaded database.",
     "button": {
       "download": "Download",
       "copy": "Copy to Clipboard",
@@ -22,10 +27,23 @@
     "replaceDatabase": "Replace Database",
     "hint": "Upload your JSON file here...",
     "hintPaste": "...or paste your data below.",
-    "numChar": "Number of Characters:",
-    "numArt": "Number of artifacts:"
-  },
-  "dialog": {
-    "delete-database": "Are you sure you want to delete your database? All existing characters and artifacts will be deleted."
+    "goUpload": {
+      "title": "<strong>Genshin Optimizer</strong> format",
+      "migrate": "Database will be migrated to a newer version. Please consider re-downloading the database after import.",
+      "deleteDatabasePrompt": "Are you sure you want to replace your database? All existing characters and artifacts will be deleted."
+    },
+    "monaUpload": {
+      "title": "<strong>mona-uranai</strong> format",
+      "import": "Import",
+      "deleteExistingButton": "Delete Foddered Artifacts",
+      "deleteExistingExplanation": "If you're doing a complete import, any artifacts not found in this import will be deleted.(foddered)<br>Upgraded artifacts will not be deleted, but updated accordingly.",
+      "deleteExistingPrompt": "Are you sure you want to delete all artifacts not found in the current import? (Upgraded artifacts will not be affected.)"
+    },
+    "error": {
+      "jsonParse": "Unable to parse JSON file.",
+      "unknown": "Unknown file format.",
+      "monaInvalid": "Invalid Mona-Uranai file format",
+      "goInvalid": "Invalid GO backup file format."
+    }
   }
 }

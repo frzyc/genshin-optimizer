@@ -18,9 +18,8 @@ export interface SetEffectEntry {
 }
 
 export interface IFlexArtifact {
-  id: string
-  setKey: ArtifactSetKey
-  numStars: Rarity
+  setKey: ArtifactSetKey,
+  numStars: Rarity,
   level: number,
   slotKey: SlotKey,
   mainStatKey: MainStatKey,
@@ -30,6 +29,7 @@ export interface IFlexArtifact {
   lock: boolean,
 }
 export interface IArtifact extends IFlexArtifact {
+  id: string,
   mainStatVal: number,
   substats: Substat[],
 }

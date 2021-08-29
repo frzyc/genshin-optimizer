@@ -9,9 +9,9 @@ import Assets from '../Assets/Assets';
 import InfoComponent from '../Components/InfoComponent';
 import { uncoloredEleIcons } from '../Components/StatIcon';
 import { database } from '../Database/Database';
+import { dbStorage } from '../Database/DBStorage';
 import { allElements, allWeaponTypeKeys, CharacterKey } from '../Types/consts';
 import { useForceUpdate, usePromise } from '../Util/ReactUtil';
-import { loadFromLocalStorage, saveToLocalStorage } from '../Util/Util';
 import CharacterCard from './CharacterCard';
 import CharacterSheet from './CharacterSheet';
 const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
@@ -40,7 +40,7 @@ export default function CharacterDisplay(props) {
   const scrollRef = useRef(null as any)
   useEffect(() => {
     ReactGA.pageview('/character')
-    const saved = loadFromLocalStorage("CharacterDisplay.state")
+    const saved = dbStorage.get("CharacterDisplay.state")
     if (saved) {
       const { charIdToEdit, sortBy, elementalFilter, weaponFilter } = saved
       setcharIdToEdit(charIdToEdit)
@@ -57,7 +57,7 @@ export default function CharacterDisplay(props) {
   }
   useEffect(() => {
     const save = { charIdToEdit, sortBy, elementalFilter, weaponFilter }
-    saveToLocalStorage("CharacterDisplay.state", save)
+    dbStorage.set("CharacterDisplay.state", save)
   }, [charIdToEdit, sortBy, elementalFilter, weaponFilter])
   const deleteCharacter = useCallback(async (id: CharacterKey) => {
     const chararcterSheet = await CharacterSheet.get(id)

@@ -4,16 +4,18 @@ import { database } from '../Database/Database'
 import { validateFlexArtifact, validateFlexCharacter } from '../Database/validation'
 import { deepClone } from '../Util/Util'
 import { allSlotKeys } from '../Types/consts'
+import { dbStorage } from '../Database/DBStorage'
 
 let flexObj: any
 
 describe('flex import export', () => {
   beforeEach(() => {
-    database.clear()
+    dbStorage.clear()
+    database.reloadStorage()
     database.updateChar(validateFlexCharacter(character))
-    Object.values(artifacts).map(art => {
-      database.updateArt(validateFlexArtifact(art).artifact)
-      database.setLocation(art.id, art.location)
+    Object.entries(artifacts).map(([id, art]) => {
+      database.updateArt(validateFlexArtifact(art, id).artifact)
+      database.setLocation(id, art.location)
     })
     const char = deepClone(database._getChar(character.characterKey)!)
     const arts = deepClone(Object.values(char.equippedArtifacts).map(id => database._getArt(id)!))

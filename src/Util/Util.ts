@@ -12,13 +12,6 @@ export function getRandomIntInclusive(min, max) {
 export function getRandomArbitrary(min, max) {
   return Math.random() * (max - min) + min;
 }
-export const loadFromLocalStorage = (key) => {
-  let data = localStorage.getItem(key)
-  if (!data) return null
-  return JSON.parse(data)
-}
-export const saveToLocalStorage = (key, obj) =>
-  localStorage.setItem(key, JSON.stringify(obj));
 export const deepClone = <T>(obj: T): T =>
   JSON.parse(JSON.stringify(obj))
 

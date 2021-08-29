@@ -11,8 +11,6 @@ beforeAll(async () => {
 
 expect.extend({
   toBeValidNewArtifact(artifact: Partial<IFlexArtifact>): { message, pass } {
-    if (artifact.id)
-      return { message: () => `expect new artifact, found id ${this.utils.printReceived(artifact.id)}`, pass: false }
     if (artifact.location)
       return { message: () => `expect unequiped artifact, found location ${this.utils.printReceived(artifact.location)}`, pass: false }
     if (artifact.lock)
