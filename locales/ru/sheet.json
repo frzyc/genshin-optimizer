@@ -2,8 +2,8 @@
   "dmg": "Урон",
   "hits": "{{count}} Удар",
   "lessPercentHP": "< {{percent}}% HP",
-  "stack": "{{count}} Сложение",
-  "stack_plural": "{{count}} Сложения",
+  "stack": "{{count}} Стак",
+  "stack_plural": "{{count}} Стак(а/ов)",
   "hitOp": {
     "normal": "Обычная атака попала по врагу",
     "charged": "Заряженная атака попала по врагу",

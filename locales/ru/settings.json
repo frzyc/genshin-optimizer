@@ -7,9 +7,9 @@
   "downloadCard": {
     "databaseDownload": "Скачать Данные",
     "charsStored": "<0>{{count}}</0> Персонаж Сохранён",
-    "charsStored_plural": "<0>{{count}}</0> Персонажей Сохранено",
+    "charsStored_plural": "<0>{{count}}</0> Персонаж(a/ей) Сохранено",
     "artisStored": "<0>{{count}}</0> Артефакт Сохранён",
-    "artisStored_plural": "<0>{{count}}</0> Артефактов Сохранено",
+    "artisStored_plural": "<0>{{count}}</0> Артефакт(a/ов) Сохранено",
     "databaseDisclaimer": "Примечание: все данные на странице \"Инструменты\", к примеру количество/таймер Смолы, не являются частью скачиваемой базы данных.",
     "button": {
       "download": "Скачать",
