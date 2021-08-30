@@ -190,7 +190,7 @@ export function validateDBCharacter(obj: any, key: string): IFlexCharacter | und
     if (!Array.isArray(setFilters)) setFilters = [{ key: "", num: 0 }, { key: "", num: 0 }, { key: "", num: 0 }]
     if (typeof statFilters !== "object") statFilters = {}
 
-    if (!mainStatKeys.sands || !mainStatKeys.goblet || !mainStatKeys.circlet) {
+    if (!mainStatKeys || !mainStatKeys.sands || !mainStatKeys.goblet || !mainStatKeys.circlet) {
       const tempmainStatKeys = initialBuildSettings().mainStatKeys
       if (!Array.isArray(mainStatKeys)) {
         const [sands, goblet, circlet] = mainStatKeys
