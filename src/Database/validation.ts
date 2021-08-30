@@ -192,7 +192,7 @@ export function validateDBCharacter(obj: any, key: string): IFlexCharacter | und
 
     if (!mainStatKeys || !mainStatKeys.sands || !mainStatKeys.goblet || !mainStatKeys.circlet) {
       const tempmainStatKeys = initialBuildSettings().mainStatKeys
-      if (!Array.isArray(mainStatKeys)) {
+      if (Array.isArray(mainStatKeys)) {
         const [sands, goblet, circlet] = mainStatKeys
         if (sands) tempmainStatKeys.sands = [sands]
         if (goblet) tempmainStatKeys.goblet = [goblet]
