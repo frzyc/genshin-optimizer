@@ -4,7 +4,7 @@ import artifactMainstatData from './DataminedModules/artifact/artifactMainstat'
 import artifactPiecesData from './DataminedModules/artifact/artifactPiecesData'
 import artifactSetData from './DataminedModules/artifact/artifactSets'
 import artifactSubstatData from './DataminedModules/artifact/artifactSubstat'
-import artifactSubstatRollData from './DataminedModules/artifact/artifactSubstatRolls'
+import { artifactSubstatRollData, artifactSubstatRollCorrection } from './DataminedModules/artifact/artifactSubstatRolls'
 import ascensionData from './DataminedModules/character/ascension'
 import characterData from './DataminedModules/character/character'
 import characterExpCurve, { CharacterGrowCurveKey } from './DataminedModules/character/characterExpCurve'
@@ -220,6 +220,7 @@ dumpFile(`../src/Character/expCurve_gen.json`, characterExpCurve)
 dumpFile('../src/Artifact/artifact_sub_gen.json', artifactSubstatData)
 dumpFile('../src/Artifact/artifact_main_gen.json', artifactMainstatData)
 dumpFile('../src/Artifact/artifact_sub_rolls_gen.json', artifactSubstatRollData)
+dumpFile('../src/Artifact/artifact_sub_rolls_correction_gen.json', artifactSubstatRollCorrection)
 
 //generate the MapHashes for localization for artifacts
 Object.entries(artifactSetData).forEach(([SetId, data]) => {

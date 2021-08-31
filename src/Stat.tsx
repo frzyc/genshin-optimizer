@@ -14,6 +14,7 @@ export default class Stat {
 
   static getStatNameRaw = (key, defVal = "") => StatData[key]?.name || defVal
   static getStatNameWithPercent = (key, defVal = "", variant = true) => <span className={`text-${variant && StatData[key]?.variant} text-nowrap`}>{StatData[key]?.name ?? defVal}{key?.endsWith('_') && "%"}</span>
+
   static getStatVariant = (key, defVal = "") =>
     StatData[key]?.variant || defVal
   static getStatUnit = (key, defVal = "") =>

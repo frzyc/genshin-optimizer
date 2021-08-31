@@ -1,4 +1,4 @@
-import { ArtifactSetKey, CharacterKey, ElementKey, Rarity, SetNum, SlotKey } from "./consts";
+import { ArtifactRarity, ArtifactSetKey, CharacterKey, ElementKey, SetNum, SlotKey } from "./consts";
 import { BonusStats, BasicStats } from "./stats";
 import { IConditionals } from "./IConditional";
 import { DocumentSection } from "./character";
@@ -7,7 +7,7 @@ export type IArtifactSheets = StrictDict<ArtifactSetKey, IArtifactSheet>
 
 export interface IArtifactSheet {
   name: string, // only to stored the English name for OCR, otherwise, should come from localization pipeline
-  rarity: readonly Rarity[],
+  rarity: readonly ArtifactRarity[],
   icons: Dict<SlotKey, string>,
   conditionals?: IConditionals,
   setEffects: Dict<SetNum, SetEffectEntry>
@@ -19,7 +19,7 @@ export interface SetEffectEntry {
 
 export interface IFlexArtifact {
   setKey: ArtifactSetKey,
-  numStars: Rarity,
+  numStars: ArtifactRarity,
   level: number,
   slotKey: SlotKey,
   mainStatKey: MainStatKey,

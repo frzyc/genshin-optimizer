@@ -1,7 +1,7 @@
 import { ArtifactSlotsData, ArtifactStarsData } from '../Data/ArtifactData';
 import { clampPercent, deepClone, evalIfFunc } from '../Util/Util';
 import { allSubstats, IArtifact, MainStatKey, SubstatKey } from '../Types/artifact';
-import { SlotKey, Rarity, ArtifactSetKey, allSlotKeys, SetNum, allRarities } from '../Types/consts';
+import { SlotKey, Rarity, ArtifactSetKey, allSlotKeys, SetNum, allRarities, ArtifactRarity } from '../Types/consts';
 import { BonusStats, ICalculatedStats } from '../Types/stats';
 import { ArtifactSheet } from './ArtifactSheet';
 import Conditional from '../Conditional/Conditional';
@@ -83,12 +83,12 @@ export default class Artifact {
     return ArtifactSubstatsData[numStars][substatKey]
   }
 
-  static getSubstatRolls = (substatKey: SubstatKey, substatValue: number, numStars: Rarity): number[][] => {
+  static getSubstatRolls = (substatKey: SubstatKey, substatValue: number, numStars: ArtifactRarity): number[][] => {
     const rollData = Artifact.getSubstatRollData(substatKey, numStars)
     const table = ArtifactSubstatLookupTable[numStars][substatKey]
-    const lookupValue = Math.round(substatKey.endsWith('_')
-      ? (substatValue * 10) // TODO: % CONVERSION
-      : substatValue)
+    const lookupValue = substatKey.endsWith('_')
+      ? substatValue.toFixed(1) // TODO: % conversion
+      : substatValue.toFixed(0)
     return table[lookupValue]?.map(roll => roll.map(i => rollData[i])) ?? []
   }
   static getSubstatEfficiency = (substatKey: SubstatKey | "", rolls: number[]): number => {

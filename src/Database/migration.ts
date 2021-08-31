@@ -12,15 +12,16 @@ export function migrate(storage: DBStorage): { migrated: boolean } {
   if (version > currentDBVersion)
     throw new Error("Database is not supported")
 
-  if (version < 3) migrateV2ToV3(storage)
-  if (version < 4) migrateV3ToV4(storage)
-  if (version < 5) migrateV4ToV5(storage)
-  if (version < 6) migrateV5ToV6(storage)
-  if (version < 7) migrateV6ToV7(storage)
+  // Update version upon each successful migration, so we don't
+  // need to migrate that part again if later parts fail.
+  if (version < 3) { migrateV2ToV3(storage); setDBVersion(storage, 3) }
+  if (version < 4) { migrateV3ToV4(storage); setDBVersion(storage, 4) }
+  if (version < 5) { migrateV4ToV5(storage); setDBVersion(storage, 5) }
+  if (version < 6) { migrateV5ToV6(storage); setDBVersion(storage, 6) }
+  if (version < 7) { migrateV6ToV7(storage); setDBVersion(storage, 7) }
 
-  if (version < currentDBVersion) {
+  if (version < currentDBVersion)
     report.migrated = true
-  }
 
   setDBVersion(storage, currentDBVersion)
 
@@ -35,7 +36,7 @@ function migrateV2ToV3(storage: DBStorage) {
     storage.set("CharacterDisplay.state", state)
   }
 
-  for (const key in storage) {
+  for (const key of storage.keys) {
     if (key.startsWith("char_")) {
       const value = storage.get(key)
       if (!value) continue
@@ -60,7 +61,7 @@ function migrateV3ToV4(storage: DBStorage) { //
     storage.set("char_traveler", traveler)
   }
 
-  for (const key in storage) {
+  for (const key of storage.keys) {
     if (key.startsWith("artifact_")) {
       const value = storage.get(key)
       let requireUpdate = false
@@ -79,7 +80,7 @@ function migrateV3ToV4(storage: DBStorage) { //
 }
 /// v5.8.0 - v5.11.5
 function migrateV4ToV5(storage: DBStorage) {
-  for (const key in storage) {
+  for (const key of storage.keys) {
     if (key.startsWith("char_")) {
       const value = storage.get(key)
 
@@ -109,7 +110,7 @@ function migrateV4ToV5(storage: DBStorage) {
 
 // v5.12.0 - 5.19.14
 function migrateV5ToV6(storage: DBStorage) {
-  for (const key in storage) {
+  for (const key of storage.keys) {
     if (key.startsWith("char_")) {
       const character = storage.get(key)
 
@@ -133,7 +134,7 @@ function migrateV5ToV6(storage: DBStorage) {
 
 // 5.20.0 - present
 function migrateV6ToV7(storage: DBStorage) {
-  for (const key in storage) {
+  for (const key of storage.keys) {
     if (key.startsWith("char_")) {
       const character = storage.get(key)
       if (!character.buildSettings) character.buildSettings = initialBuildSettings()
