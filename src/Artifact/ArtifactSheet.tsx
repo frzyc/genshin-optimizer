@@ -1,7 +1,7 @@
 import { Image } from "react-bootstrap";
 import { Translate } from "../Components/Translate";
 import { IArtifactSheet, SetEffectEntry } from "../Types/artifact";
-import { allArtifactSets, allSlotKeys, ArtifactSetKey, Rarity, SetNum, SlotKey } from "../Types/consts";
+import { allArtifactSets, allSlotKeys, ArtifactRarity, ArtifactSetKey, SetNum, SlotKey } from "../Types/consts";
 import { IConditionals } from "../Types/IConditional";
 import { BonusStats, ICalculatedStats } from "../Types/stats";
 import { mergeStats } from "../Util/StatUtil";
@@ -24,14 +24,14 @@ export class ArtifactSheet {
   }
 
   get name() { return tr(this.key, "setName") }
-  get nameWithIcon(){
+  get nameWithIcon() {
     const slotKey = this.slots[0]
     return <span><Image src={this.slotIcons[slotKey]} className="inline-icon" /> {tr(this.key, "setName")}</span>
   }
 
   //This is only for OCR, because we only scan in english right now.
   get nameRaw(): string { return this.data.name }
-  get rarity(): readonly Rarity[] { return this.data.rarity }
+  get rarity(): readonly ArtifactRarity[] { return this.data.rarity }
   get slots(): SlotKey[] {
     switch (this.key) {
       case "PrayersForDestiny":
@@ -55,17 +55,17 @@ export class ArtifactSheet {
   static getAll() { return artifactImport }
   static get(set: ArtifactSetKey | undefined): Promise<ArtifactSheet> | undefined { return set && promiseSheets[set] }
 
-  static setKeysByRarities(sheets: StrictDict<ArtifactSetKey, ArtifactSheet>): Dict<Rarity, ArtifactSetKey[]> {
-    const grouped: Dict<Rarity, ArtifactSetKey[]> = {}
+  static setKeysByRarities(sheets: StrictDict<ArtifactSetKey, ArtifactSheet>): Dict<ArtifactRarity, ArtifactSetKey[]> {
+    const grouped: Dict<ArtifactRarity, ArtifactSetKey[]> = {}
     Object.entries(sheets).forEach(([key, sheet]) => {
-      const rarity = Math.max(...sheet.rarity) as Rarity
+      const rarity = Math.max(...sheet.rarity) as ArtifactRarity
       if (grouped[rarity]) grouped[rarity]!.push(key)
       else grouped[rarity] = [key]
     })
     return grouped
   }
 
-  static setsWithMaxRarity(sheets: StrictDict<ArtifactSetKey, ArtifactSheet>, rarity: Rarity): [ArtifactSetKey, ArtifactSheet][] {
+  static setsWithMaxRarity(sheets: StrictDict<ArtifactSetKey, ArtifactSheet>, rarity: ArtifactRarity): [ArtifactSetKey, ArtifactSheet][] {
     return Object.entries(sheets).filter(([, sheet]) => Math.max(...sheet.rarity) === rarity)
   }
   static setEffectsStats(sheets: StrictDict<ArtifactSetKey, ArtifactSheet>, charStats: ICalculatedStats, setToSlots: Dict<ArtifactSetKey, SlotKey[]>): BonusStats {

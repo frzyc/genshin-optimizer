@@ -4,15 +4,15 @@ import { ascensionMaxLevel } from "../Data/CharacterData";
 import Stat from "../Stat";
 import { allMainStatKeys, allSubstats, IArtifact, IFlexArtifact, IFlexSubstat, Substat, SubstatKey } from "../Types/artifact";
 import { ICharacter, IFlexCharacter } from "../Types/character";
-import { allArtifactSets, allCharacterKeys, allElements, allHitModes, allRarities, allReactionModes, allSlotKeys, allWeaponKeys } from "../Types/consts";
+import { allArtifactRarities, allArtifactSets, allCharacterKeys, allElements, allHitModes, allReactionModes, allSlotKeys, allWeaponKeys } from "../Types/consts";
 
 /// Returns the closest (not necessarily valid) artifact, including errors as necessary
-export function validateFlexArtifact(flex: IFlexArtifact, id: string): { artifact: IArtifact, errors: string[] } {
+export function validateFlexArtifact(flex: IFlexArtifact, id: string): { artifact: IArtifact, errors: Displayable[] } {
   const { location, lock, setKey, slotKey, numStars, mainStatKey } = flex
   const level = Math.round(Math.min(Math.max(0, flex.level), numStars >= 3 ? numStars * 4 : 4))
   const mainStatVal = Artifact.mainStatValue(mainStatKey, numStars, level)!
 
-  const errors: string[] = []
+  const errors: Displayable[] = []
   const substats: Substat[] = flex.substats.map(substat => ({ ...substat, rolls: [], efficiency: 0 }))
   const validated: IArtifact = { id, setKey, location, slotKey, lock, mainStatKey, numStars, level, substats, mainStatVal }
 
@@ -20,7 +20,7 @@ export function validateFlexArtifact(flex: IFlexArtifact, id: string): { artifac
   let totalUnambiguousRolls = 0
 
   function efficiency(rolls: number[], key: SubstatKey): number {
-    return rolls.map(Math.fround).reduce((a, b) => Math.fround(a + b)) / Artifact.maxSubstatValues(key) * 100 / rolls.length
+    return rolls.reduce((a, b) => a + b, 0) / Artifact.maxSubstatValues(key) * 100 / rolls.length
   }
 
   substats.forEach((substat, index) => {
@@ -46,7 +46,7 @@ export function validateFlexArtifact(flex: IFlexArtifact, id: string): { artifac
     } else { // Invalid Substat
       substat.rolls = []
       substat.efficiency = 0
-      errors.push(`Invalid substat ${Stat.getStatNameWithPercent(substat.key)}`)
+      errors.push(<>Invalid substat {Stat.getStatNameWithPercent(substat.key)}</>)
     }
   })
 
@@ -91,7 +91,7 @@ export function validateFlexArtifact(flex: IFlexArtifact, id: string): { artifac
   if (substats.some((substat) => !substat.key)) {
     let substat = substats.find(substat => (substat.rolls?.length ?? 0) > 1)
     if (substat)
-      errors.push(`Substat ${Stat.getStatNameWithPercent(substat.key)} has > 1 roll, but not all substats are unlocked.`)
+      errors.push(<>Substat {Stat.getStatNameWithPercent(substat.key)} has {'>'} 1 roll, but not all substats are unlocked.</>)
   }
 
   return { artifact: validated, errors }
@@ -107,7 +107,7 @@ export function validateDBArtifact(obj: any): IFlexArtifact | undefined {
   if (!allArtifactSets.includes(setKey) ||
     !allSlotKeys.includes(slotKey) ||
     !allMainStatKeys.includes(mainStatKey) ||
-    !allRarities.includes(numStars) ||
+    !allArtifactRarities.includes(numStars) ||
     typeof level !== "number" || level < 0 || level > 20)
     return // non-recoverable
 

@@ -3,8 +3,9 @@ import { ArtifactSheet } from "../Artifact/ArtifactSheet"
 import Stat from "../Stat"
 import { allSubstats, IFlexArtifact, IFlexSubstat, SubstatKey } from "../Types/artifact"
 import { allArtifactSets } from "../Types/consts"
-import { valueStringWithUnit } from "./UIUtil"
+import { valueString } from "./UIUtil"
 import { getRandomElementFromArray, getRandomIntInclusive } from "./Util"
+import artifactSubstatRollCorrection from '../Artifact/artifact_sub_rolls_correction_gen.json'
 
 export async function randomizeArtifact(): Promise<IFlexArtifact> {
   const set = getRandomElementFromArray(allArtifactSets)
@@ -34,8 +35,10 @@ export async function randomizeArtifact(): Promise<IFlexArtifact> {
     substat.value += RollStat(substat.key as any)
   }
   for (const substat of substats)
-    if (substat.key)
-      substat.value = parseFloat(valueStringWithUnit(substat.value, Stat.getStatUnit(substat.key)))
+    if (substat.key) {
+      const value = valueString(substat.value, Stat.getStatUnit(substat.key))
+      substat.value = parseFloat(artifactSubstatRollCorrection[rarity]?.[substat.key]?.[value] ?? value)
+    }
 
   return {
     setKey: set, numStars: rarity, slotKey: slot, mainStatKey, level, substats, location: "", lock: false

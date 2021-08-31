@@ -9,7 +9,7 @@ import { database } from '../Database/Database';
 import { validateFlexArtifact } from '../Database/validation';
 import Stat from '../Stat';
 import { allSubstats, IArtifact, IFlexArtifact, IFlexSubstat } from '../Types/artifact';
-import { Rarity, SlotKey } from '../Types/consts';
+import { ArtifactRarity, SlotKey } from '../Types/consts';
 import { randomizeArtifact } from '../Util/ArtifactUtil';
 import { usePromise } from '../Util/ReactUtil';
 import { valueString } from '../Util/UIUtil';
@@ -21,6 +21,7 @@ import ArtifactSetDropDownMenuFragment from './Component/ArtifactSetDropDownMenu
 import SlotNameWithIcon from './Component/SlotNameWIthIcon';
 import PercentBadge from './PercentBadge';
 import UploadDisplay from './UploadDisplay';
+import artifactSubstatRollCorrection from './artifact_sub_rolls_correction_gen.json'
 
 type ArtifactEditorArgument = { artifactIdToEdit: string, cancelEdit: () => void }
 const allSubstatFilter = new Set(allSubstats)
@@ -59,7 +60,7 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: Artifac
     }
 
     if (newValue.setKey) {
-      newValue.numStars = pick(artifact?.numStars, newSheet.rarity, Math.max(...newSheet.rarity) as Rarity)
+      newValue.numStars = pick(artifact?.numStars, newSheet.rarity, Math.max(...newSheet.rarity) as ArtifactRarity)
       newValue.slotKey = pick(artifact?.slotKey, newSheet.slots)
     }
     if (newValue.numStars)
@@ -106,7 +107,7 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: Artifac
             </Dropdown>
             {/* rarity dropdown */}
             <DropdownButton as={InputGroup.Append} title={artifact ? <Stars stars={numStars} /> : t`editor.rarity`} disabled={!sheet} variant={artifact ? "success" : "primary"}>
-              {([5, 4, 3] as Rarity[]).map((numStars, index) => <Dropdown.Item key={index} disabled={!sheet?.rarity.includes(numStars)} onClick={() => update({ numStars })}>
+              {([5, 4, 3] as ArtifactRarity[]).map((numStars, index) => <Dropdown.Item key={index} disabled={!sheet?.rarity.includes(numStars)} onClick={() => update({ numStars })}>
                 {<Stars stars={numStars} />}
               </Dropdown.Item>)}
             </DropdownButton>
@@ -246,10 +247,10 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: Artifac
 
 function SubstatInput({ index, artifact, setSubstat, className }: { index: number, artifact: IArtifact | undefined, setSubstat: (index: number, substat: IFlexSubstat) => void, className: string }) {
   const { t } = useTranslation("artifact")
-  const { mainStatKey = "" } = artifact ?? {}
+  const { mainStatKey = "", numStars = 5 } = artifact ?? {}
   const { key = "", value = 0, rolls = [], efficiency = 0 } = artifact?.substats[index] ?? {}
 
-  const accurateValue = rolls.map(Math.fround).reduce((a, b) => Math.fround(a + b), 0)
+  const accurateValue = rolls.reduce((a, b) => a + b, 0)
   const unit = Stat.getStatUnit(key), rollNum = rolls.length
 
   let error: string = "", rollData: readonly number[] = [], allowedRolls = 0, rollLabel: Displayable | null = null
@@ -271,7 +272,7 @@ function SubstatInput({ index, artifact, setSubstat, className }: { index: numbe
     const rollBadge = <Badge variant={rollNum === 0 ? "secondary" : `${rollNum}roll`} className="text-darkcontent">
       {rollNum ? t("editor.substat.RollCount", { count: rollNum }) : t`editor.substat.noRoll`}
     </Badge>
-    const rollArr = rolls.map((val, i) =>
+    const rollArr = [...rolls].sort().map((val, i) =>
       <span key={i} className={`mr-2 text-${rollOffset + rollData.indexOf(val)}roll`}>{valueString(val, unit)}</span>)
 
     rollLabel = <Row>
@@ -307,7 +308,8 @@ function SubstatInput({ index, artifact, setSubstat, className }: { index: numbe
       />
       {<ButtonGroup size="sm" as={InputGroup.Append}>
         {rollData.map((v, i) => {
-          const newValue = valueString(Math.fround(accurateValue + Math.fround(v)), unit)
+          let newValue = valueString(accurateValue + v, unit)
+          newValue = artifactSubstatRollCorrection[numStars]?.[key]?.[newValue] ?? newValue
           return <Button key={i} variant={`${rollOffset + i}roll`} className="py-0 text-darkcontent" disabled={(value && !rollNum) || allowedRolls <= 0} onClick={() => setSubstat(index, { key, value: parseFloat(newValue) })}>{newValue}</Button>
         })}
       </ButtonGroup>}

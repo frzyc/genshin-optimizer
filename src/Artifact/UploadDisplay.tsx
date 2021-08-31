@@ -10,7 +10,7 @@ import Stat from '../Stat';
 import { clamp, hammingDistance } from '../Util/Util';
 import Artifact from './Artifact';
 import { allMainStatKeys, allSubstats, IArtifact, IFlexArtifact, IFlexSubstat, MainStatKey, SubstatKey } from '../Types/artifact';
-import { allArtifactRarities, allArtifactSets, allSlotKeys, ArtifactSetKey, Rarity, SlotKey } from '../Types/consts';
+import { ArtifactRarity, allArtifactRarities, allArtifactSets, allSlotKeys, ArtifactSetKey, Rarity, SlotKey } from '../Types/consts';
 import { ArtifactSheet } from './ArtifactSheet';
 import { valueStringWithUnit } from '../Util/UIUtil';
 import { usePromise } from '../Util/ReactUtil';
@@ -293,7 +293,7 @@ export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactShee
   }]
 
   // Rate each rarity
-  const rarityRates: Dict<Rarity, number> = Object.fromEntries(allArtifactRarities.map(rarity => {
+  const rarityRates: Dict<ArtifactRarity, number> = Object.fromEntries(allArtifactRarities.map(rarity => {
     let score = 0
     if (textSetKeys.size) {
       const count = [...textSetKeys].reduce((count, set) => count + (sheets[set].rarity.includes(rarity) ? 1 : 0), 0)
@@ -316,7 +316,7 @@ export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactShee
         .map(value => value.mainStatValue)
 
       for (const [numStarsString, rarityIndividualScore] of Object.entries(rarityRates)) {
-        const numStars = parseInt(numStarsString) as Rarity
+        const numStars = parseInt(numStarsString) as ArtifactRarity
         const setKeys = relevantSetKey.filter(setKey => sheets[setKey].rarity.includes(numStars))
         const rarityScore = mainStatScore + rarityIndividualScore
 
