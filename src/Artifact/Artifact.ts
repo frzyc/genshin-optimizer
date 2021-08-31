@@ -10,6 +10,7 @@ import { mergeStats } from '../Util/StatUtil';
 import ArtifactMainStatsData from './artifact_main_gen.json'
 import ArtifactSubstatsData from './artifact_sub_gen.json'
 import ArtifactSubstatLookupTable from './artifact_sub_rolls_gen.json'
+import { valueString } from '../Util/UIUtil';
 
 const maxStar: Rarity = 5
 
@@ -86,9 +87,7 @@ export default class Artifact {
   static getSubstatRolls = (substatKey: SubstatKey, substatValue: number, numStars: ArtifactRarity): number[][] => {
     const rollData = Artifact.getSubstatRollData(substatKey, numStars)
     const table = ArtifactSubstatLookupTable[numStars][substatKey]
-    const lookupValue = substatKey.endsWith('_')
-      ? substatValue.toFixed(1) // TODO: % conversion
-      : substatValue.toFixed(0)
+    const lookupValue = valueString(substatValue, substatKey.endsWith("_") ? "%" : "")
     return table[lookupValue]?.map(roll => roll.map(i => rollData[i])) ?? []
   }
   static getSubstatEfficiency = (substatKey: SubstatKey | "", rolls: number[]): number => {

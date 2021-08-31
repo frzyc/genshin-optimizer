@@ -25,9 +25,11 @@ function getRolls(key: string, possibleRolls: number[], maxRolls: number, rarity
       const fastValue = current.fastValue + fastPossibleRolls[i]
 
       const accurateString = key.endsWith("_")
-        ? extrapolateFloat(Math.fround(accurateValue * 100)).toFixed(1)
-        : extrapolateFloat(accurateValue).toFixed(0)
-      const fastString = fastValue.toFixed(key.endsWith("_") ? 1 : 0)
+        ? (Math.round(extrapolateFloat(Math.fround(Math.fround(accurateValue * 100) * 10))) / 10).toFixed(1)
+        : Math.round(accurateValue).toFixed(0)
+      const fastString = key.endsWith("_")
+        ? (Math.round(fastValue * 10) / 10).toFixed(1)
+        : Math.round(fastValue).toFixed(0)
 
       const newEntry: RollValue = {
         accurateValue, accurateString, fastValue, fastString, rolls: [...rolls, i], badChildCount: 0
