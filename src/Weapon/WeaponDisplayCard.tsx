@@ -203,7 +203,7 @@ export default function WeaponDisplayCard({
       })()}
     </Card.Body>
     <Card.Footer><Row>
-      <Col><EquipmentDropdown location={location} onEquip={cKey => database.setWeaponLocation(id, cKey)} weaponTypeKey={weaponSheet?.weaponType} disableUnequip={location} /></Col>
+      <Col><EquipmentDropdown location={location} onEquip={cKey => database.setWeaponLocation(id, cKey)} weaponTypeKey={weaponSheet?.weaponType} disableUnequip={location} editable={editable} /></Col>
       {!!onClose && <Col xs="auto"><Button variant="danger" onClick={onClose}>Close</Button></Col>}
     </Row></Card.Footer>
   </Card>

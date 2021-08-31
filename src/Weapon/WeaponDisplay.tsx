@@ -171,6 +171,7 @@ export default function WeaponDisplay(props) {
             onEdit={editCharacter}
             onClick={editCharacter}
             footer
+            editable
           />
         </Col>)}
     </Row>
