@@ -71,6 +71,7 @@ export interface IFlexCharacter {
 }
 export interface ICharacter extends IFlexCharacter {
   equippedArtifacts: StrictDict<SlotKey, string>,
+  equippedWeapon: string,
   artifacts?: any[] //from flex TODO: type
 }
 

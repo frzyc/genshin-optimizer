@@ -4,13 +4,15 @@ import { allSlotKeys, CharacterKey, SlotKey } from "../Types/consts";
 import { deepClone, getRandomInt } from "../Util/Util";
 import { DataManager } from "./DataManager";
 import { migrate } from "./migration";
-import { validateFlexArtifact, validateDBCharacter, validateDBArtifact, extractFlexArtifact, validateFlexCharacter, extractFlexCharacter } from "./validation";
+import { validateFlexArtifact, validateDBCharacter, validateDBArtifact, extractFlexArtifact, validateFlexCharacter, extractFlexCharacter, validateDBWeapon, validateFlexWeapon, extractFlexWeapon } from "./validation";
 import { DBStorage, dbStorage } from "./DBStorage";
+import { IWeapon } from "../Types/weapon";
 
 export class ArtCharDatabase {
   storage: DBStorage
   arts = new DataManager<string, IArtifact>()
   chars = new DataManager<CharacterKey, ICharacter>()
+  weapons = new DataManager<string, IWeapon>()
 
   constructor(storage: DBStorage) {
     this.storage = storage
@@ -21,6 +23,7 @@ export class ArtCharDatabase {
   reloadStorage() {
     this.arts.removeAll()
     this.chars.removeAll()
+    this.weapons.removeAll()
     const storage = this.storage
     const { migrated } = migrate(storage)
 
@@ -65,6 +68,28 @@ export class ArtCharDatabase {
         if (migrated) this.storage.set(key, flex)
       }
     }
+    for (const key of storage.keys) {
+      if (key.startsWith("weapon_")) {
+        const flex = validateDBWeapon(storage.get(key))
+        if (!flex) {
+          // Non-recoverable
+          storage.remove(key)
+          continue
+        }
+
+        // Update relations
+        const { location } = flex
+        if (location && this.chars.data[location]?.equippedWeapon === "") {
+          this.chars.data[location]!.equippedWeapon = key // equiped on `location`
+        } else flex.location = ""
+
+        const weapon = validateFlexWeapon(flex, key)
+
+        this.weapons.set(key, weapon)
+        // Save migrated version back to db
+        if (migrated) this.storage.set(key, flex)
+      }
+    }
   }
 
   private saveArt(key: string, art: IArtifact) {
@@ -75,12 +100,19 @@ export class ArtCharDatabase {
     this.storage.set(`char_${key}`, extractFlexCharacter(char))
     this.chars.set(key, char)
   }
+  private saveWeapon(key: string, weapon: IWeapon) {
+    console.log("saveWeapon", key, weapon, extractFlexWeapon(weapon));
+
+    this.storage.set(key, extractFlexWeapon(weapon))
+    this.weapons.set(key, weapon)
+  }
   // TODO: Make theses `_` functions private once we migrate to use `followXXX`,
   // or de-underscored it if we decide that these are to stay
   _getArt(key: string) { return this.arts.get(key) }
   _getChar(key: CharacterKey | "") { return key ? this.chars.get(key) : undefined }
   _getArts() { return this.arts.values }
   _getCharKeys(): CharacterKey[] { return this.chars.keys }
+  _getWeapon(key: string) { return this.weapons.get(key) }
 
   followChar(key: CharacterKey, cb: Callback<ICharacter>): (() => void) | undefined { return this.chars.follow(key, cb) }
   followArt(key: string, cb: Callback<IArtifact>): (() => void) | undefined {
@@ -88,8 +120,15 @@ export class ArtCharDatabase {
       return this.arts.follow(key, cb)
     cb(undefined)
   }
+  followWeapon(key: string, cb: Callback<IWeapon>): (() => void) | undefined {
+    if (this.weapons.get(key) !== undefined)
+      return this.weapons.follow(key, cb)
+    cb(undefined)
+  }
+
   followAnyChar(cb: (key: string | {}) => void): (() => void) | undefined { return this.chars.followAny(cb) }
   followAnyArt(cb: (key: CharacterKey | {}) => void): (() => void) | undefined { return this.arts.followAny(cb) }
+  followAnyWeapon(cb: (key: string | {}) => void): (() => void) | undefined { return this.weapons.followAny(cb) }
 
   /**
    * **Caution**: This does not update `equippedArtifacts`, use `equipArtifacts` instead
@@ -129,6 +168,28 @@ export class ArtCharDatabase {
       this.chars.set(newArt.location, deepClone(this.chars.get(newArt.location)!))
     return key
   }
+  /**
+   * **Caution** This does not update `location` use `setWeaponLocation` instead
+   */
+  updateWeapon(value: IWeapon): string {
+    const newWeapon = deepClone(value)
+    const key = newWeapon.id || generateRandomWeaponID(new Set(Object.keys(this.weapons.data)))
+    const oldWeapon = this.weapons.get(key)
+
+    if (!newWeapon.id)
+      newWeapon.id = key
+
+    if (oldWeapon) {
+      newWeapon.location = oldWeapon.location
+    } else {
+      newWeapon.location = ""
+    }
+
+    this.saveWeapon(key, newWeapon)
+    if (newWeapon.location)
+      this.chars.set(newWeapon.location, deepClone(this.chars.get(newWeapon.location)!))
+    return key
+  }
   removeChar(key: CharacterKey) {
     const char = this.chars.get(key)
     if (!char) return
@@ -155,6 +216,18 @@ export class ArtCharDatabase {
     this.storage.remove(key)
     this.arts.remove(key)
   }
+  removeWeapon(key: string) {
+    const weapon = this.weapons.get(key)
+    if (!weapon) return
+    const charKey = weapon.location
+    if (charKey) {
+      const char = this.chars.get(charKey)!
+      char.equippedWeapon = ""
+      this.saveChar(charKey, char)
+    }
+    this.storage.remove(key)
+    this.weapons.remove(key)
+  }
   setLocation(artKey: string, newCharKey: CharacterKey | "") {
     const newArt = deepClone(this.arts.get(artKey))
     if (!newArt) return
@@ -179,6 +252,33 @@ export class ArtCharDatabase {
     }
 
     this.saveArt(artKey, newArt)
+    if (newCharKey) this.saveChar(newCharKey, newChar!)
+    if (oldCharKey) this.saveChar(oldCharKey, oldChar!)
+  }
+  setWeaponLocation(weaponKey: string, newCharKey: CharacterKey | "") {
+    const newWeapon = deepClone(this.weapons.get(weaponKey))
+    if (!newWeapon) return
+
+    const oldCharKey = newWeapon.location
+    const newChar = newCharKey ? deepClone(this.chars.get(newCharKey))! : undefined
+    const oldChar = oldCharKey ? deepClone(this.chars.get(oldCharKey))! : undefined
+    newWeapon.location = newCharKey
+    if (oldChar) oldChar.equippedWeapon = ""//TODO when "unequipping an weapon from character, create a 1* weapon so character always have a weapon"
+
+    if (newChar) {
+      const oldWeaponKey = newChar?.equippedWeapon ?? ""
+      const oldWeapon = oldWeaponKey ? deepClone(this.weapons.get(oldWeaponKey))! : undefined
+      newChar.equippedWeapon = newWeapon.id!
+
+      if (oldChar && oldWeapon) {
+        oldChar.equippedWeapon = oldWeapon.id!
+        oldWeapon.location = oldChar.characterKey
+      } else if (oldWeapon) oldWeapon.location = ""
+
+      if (oldWeapon) this.saveWeapon(oldWeaponKey, oldWeapon)
+    }
+
+    this.saveWeapon(weaponKey, newWeapon)
     if (newCharKey) this.saveChar(newCharKey, newChar!)
     if (oldCharKey) this.saveChar(oldCharKey, oldChar!)
   }
@@ -250,6 +350,15 @@ function generateRandomArtID(keys: Set<string>): string {
   let candidate = ""
   do {
     candidate = `artifact_${getRandomInt(1, 2 * (keys.size + 1))}`
+  } while (keys.has(candidate))
+  return candidate
+}
+
+/// Get a random integer (converted to string) that is not in `keys`
+function generateRandomWeaponID(keys: Set<string>): string {
+  let candidate = ""
+  do {
+    candidate = `weapon_${getRandomInt(1, 2 * (keys.size + 1))}`
   } while (keys.has(candidate))
   return candidate
 }

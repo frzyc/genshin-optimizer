@@ -5,6 +5,8 @@ import Stat from "../Stat";
 import { allMainStatKeys, allSubstats, IArtifact, IFlexArtifact, IFlexSubstat, Substat, SubstatKey } from "../Types/artifact";
 import { ICharacter, IFlexCharacter } from "../Types/character";
 import { allArtifactRarities, allArtifactSets, allCharacterKeys, allElements, allHitModes, allReactionModes, allSlotKeys, allWeaponKeys } from "../Types/consts";
+import { IFlexWeapon, IWeapon } from "../Types/weapon";
+import { deepClone } from "../Util/Util";
 
 /// Returns the closest (not necessarily valid) artifact, including errors as necessary
 export function validateFlexArtifact(flex: IFlexArtifact, id: string): { artifact: IArtifact, errors: Displayable[] } {
@@ -139,8 +141,9 @@ function validateSubstats(obj: any): IFlexSubstat[] {
 export function validateFlexCharacter(flex: IFlexCharacter): ICharacter {
   // TODO: Add more validations to make sure the returned value is a "valid" character
   return {
+    equippedArtifacts: Object.fromEntries(allSlotKeys.map(slot => [slot, ""])) as any,
+    equippedWeapon: "",
     ...flex,
-    equippedArtifacts: Object.fromEntries(allSlotKeys.map(slot => [slot, ""])) as any
   }
 }
 /// Returns the closest flex character, or undefined if it's not recoverable
@@ -226,4 +229,18 @@ export function extractFlexCharacter(char: ICharacter): IFlexCharacter {
     characterKey, level, ascension, hitMode, elementKey, reactionMode, conditionalValues,
     baseStatOverrides, weapon, talentLevelKeys, infusionAura, constellation, buildSettings,
   }
+}
+
+export function validateFlexWeapon(flex: IWeapon, id: string): IWeapon {
+  //TODO: weapon validation
+  return { ...flex, id }
+}
+export function validateDBWeapon(obj: any): IWeapon | undefined {
+  //TODO: weapon validation
+  return obj
+}
+/// Return a new flex character from given character. All extra keys are removed
+export function extractFlexWeapon(weapon: IWeapon): IFlexWeapon {
+  const { id, ...flexWeapon } = deepClone(weapon)
+  return flexWeapon
 }

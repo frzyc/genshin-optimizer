@@ -51,6 +51,7 @@ const initialCharacter = (characterKey): ICharacter => ({
   hitMode: "avgHit",
   reactionMode: null,
   equippedArtifacts: Object.fromEntries(allSlotKeys.map(sKey => [sKey, ""])) as any,
+  equippedWeapon: "",
   conditionalValues: {},
   baseStatOverrides: {},//overriding the baseStat
   buildSettings: initialBuildSettings(),

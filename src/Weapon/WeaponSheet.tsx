@@ -5,7 +5,7 @@ import Stat from '../Stat';
 import { ICharacter } from '../Types/character';
 import { allWeaponKeys, WeaponKey } from '../Types/consts';
 import { ICalculatedStats } from '../Types/stats';
-import { IWeaponSheet } from '../Types/weapon';
+import { IWeapon, IWeaponSheet } from '../Types/weapon';
 import { evalIfFunc } from '../Util/Util';
 import expCurveJSON from './expCurve_gen.json'
 const expCurve = expCurveJSON as WeaponExpCurveData
@@ -29,7 +29,7 @@ export default class WeaponSheet {
   static get = (weaponKey: WeaponKey | string): Promise<WeaponSheet> | undefined => weaponKey ? loadWeaponSheet[weaponKey] : undefined
   static getAll = (): Promise<StrictDict<WeaponKey, WeaponSheet>> => weaponImport
   static getWeaponsOfType = (sheets: StrictDict<WeaponKey, WeaponSheet>, weaponType: string): Dict<WeaponKey, WeaponSheet> => Object.fromEntries(Object.entries(sheets).filter(([key, sheet]) => (sheet as WeaponSheet).weaponType === weaponType))
-  static getLevelString = (weapon: ICharacter["weapon"]): string => `${weapon.level}/${ascensionMaxLevel[weapon.ascension]}`
+  static getLevelString = (weapon: ICharacter["weapon"] | IWeapon): string => `${weapon.level}/${ascensionMaxLevel[weapon.ascension]}`
   tr = (strKey: string) => <Translate ns={`weapon_${this.key}_gen`} key18={strKey} />
   get name() { return this.tr("name") }
   //when there is no substat, assume there is no passive. 

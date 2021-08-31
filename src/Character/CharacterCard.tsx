@@ -15,6 +15,7 @@ import { database } from '../Database/Database';
 import Stat from '../Stat';
 import { ICharacter } from '../Types/character';
 import { CharacterKey } from '../Types/consts';
+import { IWeapon } from '../Types/weapon';
 import { usePromise } from '../Util/ReactUtil';
 import WeaponSheet from '../Weapon/WeaponSheet';
 import Character from './Character';
@@ -43,7 +44,7 @@ export default function CharacterCard({ characterKey, onEdit, onDelete, cardClas
   const weaponMainVal = weaponSheet.getMainStatValue(level, ascension).toFixed(Stat.fixedUnit("atk"))
   const weaponSubKey = weaponSheet.getSubStatKey()
   const weaponSubVal = weaponSheet.getSubStatValue(level, ascension).toFixed(Stat.fixedUnit(weaponSubKey))
-  const weaponLevelName = WeaponSheet.getLevelString(weapon)
+  const weaponLevelName = WeaponSheet.getLevelString(weapon as IWeapon)
   const weaponPassiveName = weaponSheet?.passiveName
   const statkeys = ["finalHP", "finalATK", "finalDEF", "eleMas", "critRate_", "critDMG_", "enerRech_",]
 

@@ -78,7 +78,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
           <Image src={sheet?.slotIcons[slotKey] ?? ""} className={`w-100 h-auto grad-${numStars}star m-1`} thumbnail />
         </Col>
         <Col className="pt-2">
-          <h6><strong>{slotName} {slotDescEle}</strong></h6>
+          <h6>{process.env.NODE_ENV === "development" && <span className="text-warning">{id || `""`} </span>}<strong>{slotName} {slotDescEle}</strong></h6>
           <div><SlotNameWithIcon slotKey={slotKey} /><strong>{` +${level}`}</strong></div>
           <div><small><Stars stars={numStars} /></small></div>
         </Col>
