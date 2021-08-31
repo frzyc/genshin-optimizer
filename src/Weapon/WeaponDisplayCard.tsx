@@ -1,7 +1,8 @@
 import { faExchangeAlt, faTimes } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import React, { useCallback, useEffect, useReducer } from "react"
-import { Badge, Button, ButtonGroup, Card, Col, Dropdown, Image, InputGroup, Row } from "react-bootstrap"
+import React, { useCallback, useEffect, useReducer, useState } from "react"
+import { Badge, Button, ButtonGroup, Card, Col, Dropdown, Image, InputGroup, Modal, Row } from "react-bootstrap"
+import Assets from "../Assets/Assets"
 import CharacterSheet from "../Character/CharacterSheet"
 import CustomFormControl from "../Components/CustomFormControl"
 import DocumentDisplay from "../Components/DocumentDisplay"
@@ -15,6 +16,7 @@ import { ICalculatedStats } from "../Types/stats"
 import { IWeapon } from "../Types/weapon"
 import { usePromise } from "../Util/ReactUtil"
 import { clamp } from "../Util/Util"
+import WeaponCard from "./WeaponCard"
 import WeaponDropdown from "./WeaponDropdown"
 import WeaponSheet from "./WeaponSheet"
 import WeaponStatsCard from "./WeaponStatsCard"
@@ -60,7 +62,6 @@ type WeaponStatsEditorCardProps = {
     characterDispatch: (any) => void
   }
   editable?: boolean
-  canSwap?: boolean
   onClose?: () => void
 }
 export default function WeaponDisplayCard({
@@ -75,7 +76,6 @@ export default function WeaponDisplayCard({
   // characterDispatch,
   // equippedBuild,
   // newBuild
-  canSwap = false,
   onClose
 }: WeaponStatsEditorCardProps) {
   const [weapon, weaponDispatch] = useReducer(weaponReducer, propWeaponId ? database._getWeapon(propWeaponId) : initialWeapon(weaponTypeKey ? defaultInitialWeaponKey(weaponTypeKey) : ""))
@@ -165,8 +165,9 @@ export default function WeaponDisplayCard({
           <Button variant="danger" onClick={onClose}>
             <FontAwesomeIcon icon={faTimes} /></Button>
         </Col>}
-        {!!canSwap && <Col xs="auto">
-          <Button variant="info" ><FontAwesomeIcon icon={faExchangeAlt} /> SWAP WEAPON</Button>
+        {!!charData && <Col xs="auto">
+          {/* <Button variant="info" ><FontAwesomeIcon icon={faExchangeAlt} /> SWAP WEAPON</Button> */}
+          <SwapBtn weaponTypeKey={weaponTypeKey} onChangeId={id => database.setWeaponLocation(id, charData.character.characterKey)} />
         </Col>
         }
       </Row>
@@ -202,8 +203,58 @@ export default function WeaponDisplayCard({
       })()}
     </Card.Body>
     <Card.Footer><Row>
-      <Col><EquipmentDropdown location={location} onEquip={cKey => database.setWeaponLocation(id, cKey)} /></Col>
+      <Col><EquipmentDropdown location={location} onEquip={cKey => database.setWeaponLocation(id, cKey)} weaponTypeKey={weaponSheet?.weaponType} disableUnequip={location} /></Col>
       {!!onClose && <Col xs="auto"><Button variant="danger" onClick={onClose}>Close</Button></Col>}
     </Row></Card.Footer>
   </Card>
+}
+function SwapBtn({ onChangeId, weaponTypeKey }) {
+  const [show, setShow] = useState(false)
+  const open = () => setShow(true)
+  const close = () => setShow(false)
+
+  const clickHandler = (id) => {
+    onChangeId(id)
+    close()
+  }
+
+  const weaponSheets = usePromise(WeaponSheet.getAll(), [])
+
+  const weaponIdList = database.weapons.keys.filter(wKey => {
+    const dbWeapon = database._getWeapon(wKey)
+    if (!dbWeapon) return false
+    if (weaponTypeKey && weaponTypeKey !== weaponSheets?.[dbWeapon.key]?.weaponType) return false
+    return true
+  })
+
+
+  return <>
+    <Button variant="info" onClick={open} ><FontAwesomeIcon icon={faExchangeAlt} /> SWAP WEAPON</Button>
+    <Modal show={show} size="xl" contentClassName="bg-transparent" onHide={close}>
+      <Card bg="lightcontent" text={"lightfont" as any}>
+        <Card.Header>
+          <Row>
+            <Col>{weaponTypeKey ? <Image src={Assets.weaponTypes[weaponTypeKey]} className="inline-icon" /> : null} <h5 className="mb-0 d-inline">Swap Weapon</h5></Col>
+            <Col xs="auto">
+              <Button onClick={close} variant="danger"><FontAwesomeIcon icon={faTimes} /></Button>
+            </Col>
+          </Row>
+        </Card.Header>
+        <Card.Body>
+          <Row>
+            {weaponIdList.map(weaponId =>
+              <Col key={weaponId} lg={4} md={6} className="mb-2">
+                <WeaponCard
+                  weaponId={weaponId}
+                  // header={undefined}
+                  cardClassName="h-100"
+                  // characterKey={charKey}
+                  onClick={clickHandler}
+                  footer
+                />
+              </Col>)}
+          </Row>
+        </Card.Body>
+      </Card>
+    </Modal></>
 }

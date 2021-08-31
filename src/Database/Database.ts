@@ -101,8 +101,6 @@ export class ArtCharDatabase {
     this.chars.set(key, char)
   }
   private saveWeapon(key: string, weapon: IWeapon) {
-    console.log("saveWeapon", key, weapon, extractFlexWeapon(weapon));
-
     this.storage.set(key, extractFlexWeapon(weapon))
     this.weapons.set(key, weapon)
   }
@@ -255,8 +253,8 @@ export class ArtCharDatabase {
     if (newCharKey) this.saveChar(newCharKey, newChar!)
     if (oldCharKey) this.saveChar(oldCharKey, oldChar!)
   }
-  setWeaponLocation(weaponKey: string, newCharKey: CharacterKey | "") {
-    const newWeapon = deepClone(this.weapons.get(weaponKey))
+  setWeaponLocation(weaponId: string, newCharKey: CharacterKey | "") {
+    const newWeapon = deepClone(this.weapons.get(weaponId))
     if (!newWeapon) return
 
     const oldCharKey = newWeapon.location
@@ -266,8 +264,8 @@ export class ArtCharDatabase {
     if (oldChar) oldChar.equippedWeapon = ""//TODO when "unequipping an weapon from character, create a 1* weapon so character always have a weapon"
 
     if (newChar) {
-      const oldWeaponKey = newChar?.equippedWeapon ?? ""
-      const oldWeapon = oldWeaponKey ? deepClone(this.weapons.get(oldWeaponKey))! : undefined
+      const oldWeaponId = newChar?.equippedWeapon ?? ""
+      const oldWeapon = oldWeaponId ? deepClone(this.weapons.get(oldWeaponId))! : undefined
       newChar.equippedWeapon = newWeapon.id!
 
       if (oldChar && oldWeapon) {
@@ -275,10 +273,10 @@ export class ArtCharDatabase {
         oldWeapon.location = oldChar.characterKey
       } else if (oldWeapon) oldWeapon.location = ""
 
-      if (oldWeapon) this.saveWeapon(oldWeaponKey, oldWeapon)
+      if (oldWeapon) this.saveWeapon(oldWeaponId, oldWeapon)
     }
 
-    this.saveWeapon(weaponKey, newWeapon)
+    this.saveWeapon(weaponId, newWeapon)
     if (newCharKey) this.saveChar(newCharKey, newChar!)
     if (oldCharKey) this.saveChar(oldCharKey, oldChar!)
   }

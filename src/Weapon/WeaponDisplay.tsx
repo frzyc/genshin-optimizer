@@ -169,6 +169,7 @@ export default function WeaponDisplay(props) {
             // characterKey={charKey}
             onDelete={deleteWeapon}
             onEdit={editCharacter}
+            onClick={editCharacter}
             footer
           />
         </Col>)}

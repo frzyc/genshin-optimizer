@@ -1,11 +1,9 @@
-import { faBriefcase, faEdit, faTrashAlt } from "@fortawesome/free-solid-svg-icons"
+import { faEdit, faTrashAlt } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useEffect, useState } from "react"
-import { Button, Card, Col, Dropdown, Image, Row } from "react-bootstrap"
-import { useTranslation } from "react-i18next"
+import { Button, Card, Col, Image, Row } from "react-bootstrap"
 import Assets from "../Assets/Assets"
-import CharacterSheet from "../Character/CharacterSheet"
-import { CharacterSelectionDropdownList } from "../Components/CharacterSelection"
+import EquipmentDropdown from "../Components/EquipmentDropdown"
 import { Stars } from "../Components/StarDisplay"
 import StatIcon from "../Components/StatIcon"
 import { database } from "../Database/Database"
@@ -15,9 +13,8 @@ import { IWeapon } from "../Types/weapon"
 import { usePromise } from "../Util/ReactUtil"
 import WeaponSheet from "./WeaponSheet"
 
-type CharacterCardProps = { weaponId: string, onEdit?: (weaponId: string) => void, onDelete?: (weaponId: string) => void, cardClassName: string, header?: JSX.Element, bg?: string, footer?: boolean }
-export default function WeaponCard({ weaponId, onEdit, onDelete, cardClassName = "", bg = "", header, footer = false }: CharacterCardProps) {
-  const { t } = useTranslation(["artifact"]);
+type CharacterCardProps = { weaponId: string, onEdit?: (weaponId: string) => void, onClick?: (weaponId: string) => void, onDelete?: (weaponId: string) => void, cardClassName: string, bg?: string, footer?: boolean, editable?: boolean }
+export default function WeaponCard({ weaponId, onEdit, onDelete, onClick, cardClassName = "", bg = "", footer = false, editable = false }: CharacterCardProps) {
   const [databaseWeapon, updateDatabaseWeapon] = useState(undefined as IWeapon | undefined)
   useEffect(() =>
     weaponId ? database.followWeapon(weaponId, updateDatabaseWeapon) : undefined,
@@ -26,12 +23,8 @@ export default function WeaponCard({ weaponId, onEdit, onDelete, cardClassName =
   const weapon = databaseWeapon
   const weaponSheet = usePromise(weapon?.key && WeaponSheet.get(weapon.key), [weapon?.key])
 
-  // const stats = useMemo(() => weapon && weaponSheet && weaponSheet && artifactSheets && Character.calculateBuild(weapon, weaponSheet, weaponSheet, artifactSheets), [weapon, weaponSheet, weaponSheet, artifactSheets])
-
-  const characterSheet = usePromise(CharacterSheet.get(weapon?.location), [weapon?.location])
   if (!weapon || !weaponSheet) return null;
   const { level, ascension, refineIndex, id } = weapon
-  const locationName = characterSheet?.name ? characterSheet.nameWIthIcon : <span><FontAwesomeIcon icon={faBriefcase} /> {t`filterLocation.inventory`}</span>
   const equipOnChar = (charKey: CharacterKey | "") => database.setWeaponLocation(weaponId, charKey)
 
   const weaponTypeKey = weaponSheet.weaponType
@@ -47,7 +40,7 @@ export default function WeaponCard({ weaponId, onEdit, onDelete, cardClassName =
     <Card.Header>
       <Image src={Assets.weaponTypes?.[weaponTypeKey]} className="inline-icon" /> {process.env.NODE_ENV === "development" && <span className="text-warning">{id || `""`} </span>}<h5 className="d-inline">{weaponSheet.name}</h5>
     </Card.Header>
-    <Card.Body onClick={() => onEdit?.(weaponId)} className={onEdit ? "cursor-pointer" : ""} >
+    <Card.Body onClick={() => onClick?.(weaponId)} className={onClick ? "cursor-pointer" : ""} >
       <Row>
         <Col xs="auto" className="pr-0">
           <Image src={weaponSheet.img} className={`thumb-big grad-${weaponSheet.rarity}star p-0`} thumbnail />
@@ -74,14 +67,7 @@ export default function WeaponCard({ weaponId, onEdit, onDelete, cardClassName =
     {footer && <Card.Footer>
       <Row>
         <Col >
-          <Dropdown>
-            <Dropdown.Toggle size="sm" className="text-left">{locationName}</Dropdown.Toggle>
-            <Dropdown.Menu>
-              <Dropdown.Item onClick={() => equipOnChar("")}><FontAwesomeIcon icon={faBriefcase} /> Inventory</Dropdown.Item>
-              <Dropdown.Divider />
-              <CharacterSelectionDropdownList onSelect={equipOnChar} />
-            </Dropdown.Menu>
-          </Dropdown>
+          <EquipmentDropdown location={weapon?.location} onEquip={equipOnChar} weaponTypeKey={weaponTypeKey} disableUnequip={weapon.location} editable={editable}/>
         </Col>
         <Col xs={"auto"}>
           <span className="float-right align-top ml-1">
@@ -90,6 +76,7 @@ export default function WeaponCard({ weaponId, onEdit, onDelete, cardClassName =
               <FontAwesomeIcon icon={faEdit} />
             </Button>}
             {onDelete && <Button variant="danger" size="sm"
+              disabled={weapon.location}
               onClick={() => onDelete(weaponId)}>
               <FontAwesomeIcon icon={faTrashAlt} />
             </Button>}

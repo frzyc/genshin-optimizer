@@ -139,6 +139,17 @@ export default function CharacterDisplayCard({ characterKey: propCharacterKey = 
     characterDispatch({ type: "overwrite", character: char })
   }, [propCharacter])
 
+  //FIXME: when swap weapon this will trigger finite loop?
+  //follow the update of changes of equipped weapon
+  // useEffect(() =>
+  //   characterKey ? database.followChar(characterKey, () => {
+  //     const charDB = database._getChar(characterKey)
+  //     if (!charDB) return
+  //     if (charDB.equippedWeapon !== character.equippedWeapon)
+  //       characterDispatch({ equippedWeapon: charDB.equippedWeapon })
+  //   }) : undefined,
+  //   [characterKey, characterDispatch, character.equippedWeapon])
+
   useEffect(() => {
     //skip saving on the first update, since those updates are from loading from DB
     if (firstUpdate.current) {

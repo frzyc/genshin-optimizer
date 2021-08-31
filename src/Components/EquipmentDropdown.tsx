@@ -3,21 +3,21 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Dropdown } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import CharacterSheet from "../Character/CharacterSheet";
-import { CharacterKey } from "../Types/consts";
+import { CharacterKey, WeaponTypeKey } from "../Types/consts";
 import { usePromise } from "../Util/ReactUtil";
 import { CharacterSelectionDropdownList } from "./CharacterSelection";
 
-export default function EquipmentDropdown({ location, onEquip }: { location: CharacterKey | "", onEquip: (charKey: CharacterKey | "") => void }) {
+export default function EquipmentDropdown({ location, onEquip, weaponTypeKey, disableUnequip = false, editable = false }: { location: CharacterKey | "", onEquip: (charKey: CharacterKey | "") => void, weaponTypeKey?: WeaponTypeKey, disableUnequip?: boolean, editable?: boolean }) {
   const { t } = useTranslation(["artifact"]);
   const characterSheet = usePromise(CharacterSheet.get(location), [location])
   const locationName = characterSheet?.name ? characterSheet.nameWIthIcon : <span><FontAwesomeIcon icon={faBriefcase} /> {t`filterLocation.inventory`}</span>
 
-  return <Dropdown>
+  return editable ? <Dropdown>
     <Dropdown.Toggle className="text-left">{locationName}</Dropdown.Toggle>
     <Dropdown.Menu>
-      <Dropdown.Item onClick={() => onEquip("")}><FontAwesomeIcon icon={faBriefcase} /> Inventory</Dropdown.Item>
-      <Dropdown.Divider />
-      <CharacterSelectionDropdownList onSelect={onEquip} />
+      {!disableUnequip && <><Dropdown.Item onClick={() => onEquip("")}><FontAwesomeIcon icon={faBriefcase} /> Inventory</Dropdown.Item>
+        <Dropdown.Divider /></>}
+      <CharacterSelectionDropdownList onSelect={onEquip} weaponTypeKey={weaponTypeKey} />
     </Dropdown.Menu>
-  </Dropdown>
+  </Dropdown> : locationName
 }
