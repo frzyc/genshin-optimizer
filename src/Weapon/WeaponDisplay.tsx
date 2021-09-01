@@ -118,6 +118,7 @@ export default function WeaponDisplay(props) {
         weaponId={weaponIdToEdit}
         // onDelete={deleteWeapon}
         editable
+        footer
         onClose={cancelEditCharacter}
       />
     </Col></Row> : null}

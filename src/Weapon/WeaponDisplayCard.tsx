@@ -62,6 +62,7 @@ type WeaponStatsEditorCardProps = {
     characterDispatch: (any) => void
   }
   editable?: boolean
+  footer?: boolean
   onClose?: () => void
 }
 export default function WeaponDisplayCard({
@@ -70,6 +71,7 @@ export default function WeaponDisplayCard({
   // characterSheet,
   // weaponSheet,
   editable = false,
+  footer = false,
   charData,
   // character,
   // character: { weapon },
@@ -202,10 +204,10 @@ export default function WeaponDisplayCard({
         </Row>
       })()}
     </Card.Body>
-    <Card.Footer><Row>
+    {footer && <Card.Footer><Row>
       <Col><EquipmentDropdown location={location} onEquip={cKey => database.setWeaponLocation(id, cKey)} weaponTypeKey={weaponSheet?.weaponType} disableUnequip={location} editable={editable} /></Col>
       {!!onClose && <Col xs="auto"><Button variant="danger" onClick={onClose}>Close</Button></Col>}
-    </Row></Card.Footer>
+    </Row></Card.Footer>}
   </Card>
 }
 function SwapBtn({ onChangeId, weaponTypeKey }) {
