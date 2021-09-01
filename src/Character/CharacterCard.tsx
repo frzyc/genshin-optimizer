@@ -30,11 +30,12 @@ export default function CharacterCard({ characterKey, onEdit, onDelete, cardClas
   const artifactSheets = usePromise(ArtifactSheet.getAll(), [])
   const character = databaseCharacter
   const characterSheet = usePromise(CharacterSheet.get(characterKey), [characterKey])
-  const weaponSheet = usePromise(character && WeaponSheet.get(character.weapon.key), [character])
+  const weapon = character?.equippedWeapon ? database._getWeapon(character.equippedWeapon) : undefined
+  const weaponSheet = usePromise(weapon ? WeaponSheet.get(weapon.key) : undefined, [weapon?.key])
   const stats = useMemo(() => character && characterSheet && weaponSheet && artifactSheets && Character.calculateBuild(character, characterSheet, weaponSheet, artifactSheets), [character, characterSheet, weaponSheet, artifactSheets])
-  if (!character || !characterSheet || !weaponSheet || !stats) return null;
+  if (!character || !weapon || !characterSheet || !weaponSheet || !stats) return null;
 
-  const { weapon, constellation } = character
+  const { constellation } = character
   const { level, ascension } = weapon
   const { tlvl } = stats
   const name = characterSheet.name

@@ -3,7 +3,7 @@ import { ascensionMaxLevel } from "../Data/CharacterData"
 import { DBStorage } from "./DBStorage"
 import { getDBVersion, setDBVersion } from "./utils"
 
-const currentDBVersion = 7
+const currentDBVersion = 8
 
 export function migrate(storage: DBStorage): { migrated: boolean } {
   const version = getDBVersion(storage)
@@ -19,6 +19,7 @@ export function migrate(storage: DBStorage): { migrated: boolean } {
   if (version < 5) { migrateV4ToV5(storage); setDBVersion(storage, 5) }
   if (version < 6) { migrateV5ToV6(storage); setDBVersion(storage, 6) }
   if (version < 7) { migrateV6ToV7(storage); setDBVersion(storage, 7) }
+  if (version < 8) { migrateV7ToV8(storage); setDBVersion(storage, 8) }
 
   if (version < currentDBVersion)
     report.migrated = true
@@ -132,7 +133,7 @@ function migrateV5ToV6(storage: DBStorage) {
   }
 }
 
-// 5.20.0 - present
+// 5.20.0 - 5.21.5
 function migrateV6ToV7(storage: DBStorage) {
   for (const key of storage.keys) {
     if (key.startsWith("char_")) {
@@ -146,6 +147,27 @@ function migrateV6ToV7(storage: DBStorage) {
         if (circlet) character.buildSettings.mainStatKeys.circlet = [circlet]
       }
       storage.set(key, character)
+    }
+  }
+}
+
+let keyInd = 1;
+function generateWeaponId(storage: DBStorage) {
+  let key = `weapon_${keyInd++}`
+  while (storage.keys.includes(key))
+    key = `weapon_${keyInd++}`
+  return key
+}
+// 5.22.0 - present
+function migrateV7ToV8(storage: DBStorage) {
+  for (const key of storage.keys) {
+    if (key.startsWith("char_")) {
+      const character = storage.get(key)
+      const { weapon, ...rest } = character
+      if (!weapon) continue
+      weapon.location = character.characterKey
+      storage.set(generateWeaponId(storage), weapon)
+      storage.set(key, rest)
     }
   }
 }

@@ -1,9 +1,8 @@
 import { BuildSetting } from "./Build";
-import { CharacterKey, ElementKey, HitModeKey, ReactionModeKey, SlotKey, WeaponKey, WeaponTypeKey } from "./consts";
-import { BasicStats, ICalculatedStats } from "./stats";
+import { CharacterKey, ElementKey, HitModeKey, ReactionModeKey, SlotKey, WeaponTypeKey } from "./consts";
 import IConditional, { IConditionals } from "./IConditional";
 import { IFieldDisplay } from "./IFieldDisplay";
-import { StatKey } from "./artifact";
+import { BasicStats, ICalculatedStats } from "./stats";
 
 interface ICharacterSheetBase {
   name: Displayable,
@@ -54,12 +53,6 @@ export interface IFlexCharacter {
   reactionMode: ReactionModeKey | null
   conditionalValues: any,
   baseStatOverrides: object, //overriding the baseStat
-  weapon: {
-    key: WeaponKey
-    level: number,
-    ascension: number,
-    refineIndex: number
-  },
   talentLevelKeys: {
     auto: number
     skill: number

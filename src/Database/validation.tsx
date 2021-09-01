@@ -4,7 +4,7 @@ import { ascensionMaxLevel } from "../Data/CharacterData";
 import Stat from "../Stat";
 import { allMainStatKeys, allSubstats, IArtifact, IFlexArtifact, IFlexSubstat, Substat, SubstatKey } from "../Types/artifact";
 import { ICharacter, IFlexCharacter } from "../Types/character";
-import { allArtifactRarities, allArtifactSets, allCharacterKeys, allElements, allHitModes, allReactionModes, allSlotKeys, allWeaponKeys } from "../Types/consts";
+import { allArtifactRarities, allArtifactSets, allCharacterKeys, allElements, allHitModes, allReactionModes, allSlotKeys } from "../Types/consts";
 import { IFlexWeapon, IWeapon } from "../Types/weapon";
 import { deepClone } from "../Util/Util";
 
@@ -152,13 +152,12 @@ export function validateDBCharacter(obj: any, key: string): IFlexCharacter | und
 
   let {
     characterKey, level, ascension, hitMode, elementKey, reactionMode, conditionalValues,
-    baseStatOverrides, weapon, talentLevelKeys, infusionAura, constellation, buildSettings,
+    baseStatOverrides, talentLevelKeys, infusionAura, constellation, buildSettings,
   } = obj
 
   if (key !== `char_${characterKey}` ||
     !allCharacterKeys.includes(characterKey) ||
-    typeof level !== "number" || level < 0 || level > 90 ||
-    typeof weapon !== "object" || !allWeaponKeys.includes(weapon.key))
+    typeof level !== "number" || level < 0 || level > 90)
     return // non-recoverable
 
   if (!allHitModes.includes(hitMode)) hitMode = "avgHit"
@@ -180,14 +179,7 @@ export function validateDBCharacter(obj: any, key: string): IFlexCharacter | und
     if (typeof burst !== "number" || burst < 0 || burst > 15) burst = 0
     talentLevelKeys = { auto, skill, burst }
   }
-  {
-    let { key, level, ascension, refineIndex } = weapon
-    if (typeof level !== "number" || level < 1 || level > 90) level = 1
-    if (typeof ascension !== "number" || ascension < 0 || ascension > 6) ascension = 0
-    if (typeof refineIndex !== "number" || refineIndex < 0 || refineIndex > 5) refineIndex = 0
-    weapon = { key, level, ascension, refineIndex }
-  }
-  {
+  {//buildSettings
     if (typeof buildSettings !== "object") buildSettings = {}
     let { setFilters, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useLockedArts, useEquippedArts, ascending } = buildSettings ?? {}
     if (!Array.isArray(setFilters)) setFilters = [{ key: "", num: 0 }, { key: "", num: 0 }, { key: "", num: 0 }]
@@ -216,18 +208,18 @@ export function validateDBCharacter(obj: any, key: string): IFlexCharacter | und
   // TODO: validate baseStatOverrides, conditionalValues
   return {
     characterKey, level, ascension, hitMode, elementKey, reactionMode, conditionalValues,
-    baseStatOverrides, weapon, talentLevelKeys, infusionAura, constellation, buildSettings,
+    baseStatOverrides, talentLevelKeys, infusionAura, constellation, buildSettings,
   }
 }
 /// Return a new flex character from given character. All extra keys are removed
 export function extractFlexCharacter(char: ICharacter): IFlexCharacter {
   const {
     characterKey, level, ascension, hitMode, elementKey, reactionMode, conditionalValues,
-    baseStatOverrides, weapon, talentLevelKeys, infusionAura, constellation, buildSettings,
+    baseStatOverrides, talentLevelKeys, infusionAura, constellation, buildSettings,
   } = char
   return {
     characterKey, level, ascension, hitMode, elementKey, reactionMode, conditionalValues,
-    baseStatOverrides, weapon, talentLevelKeys, infusionAura, constellation, buildSettings,
+    baseStatOverrides, talentLevelKeys, infusionAura, constellation, buildSettings,
   }
 }
 

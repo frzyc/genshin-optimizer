@@ -11,7 +11,7 @@ import { Stars } from "../Components/StarDisplay"
 import { ascensionMaxLevel, milestoneLevels } from "../Data/CharacterData"
 import { database } from "../Database/Database"
 import { ICharacter } from "../Types/character"
-import { WeaponKey, WeaponTypeKey } from "../Types/consts"
+import { WeaponTypeKey } from "../Types/consts"
 import { ICalculatedStats } from "../Types/stats"
 import { IWeapon } from "../Types/weapon"
 import { usePromise } from "../Util/ReactUtil"
@@ -20,33 +20,7 @@ import WeaponCard from "./WeaponCard"
 import WeaponDropdown from "./WeaponDropdown"
 import WeaponSheet from "./WeaponSheet"
 import WeaponStatsCard from "./WeaponStatsCard"
-
-export function defaultInitialWeaponKey(type: WeaponTypeKey): WeaponKey {
-  switch (type) {
-    case "sword":
-      return "DullBlade"
-    case "bow":
-      return "DullBlade"
-    case "claymore":
-      return "WasterGreatsword"
-    case "polearm":
-      return "BeginnersProtector"
-    case "catalyst":
-      return "ApprenticesNotes"
-
-    default:
-      return "DullBlade"
-  }
-}
-
-export const initialWeapon = (key): IWeapon => ({
-  id: "",
-  key: key ?? "",
-  level: 1,
-  ascension: 0,
-  refineIndex: 0,
-  location: ""
-})
+import { defaultInitialWeaponKey, initialWeapon } from "./WeaponUtil"
 
 function weaponReducer(state: IWeapon, action: any) {
   return { ...state, ...action }

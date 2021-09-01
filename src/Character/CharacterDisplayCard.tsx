@@ -1,6 +1,6 @@
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { createContext, useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'react';
+import React, { createContext, useCallback, useEffect, useMemo, useReducer, useState } from 'react';
 import { Alert, ButtonGroup, Dropdown, Image, InputGroup, Nav, Tab } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
@@ -19,6 +19,7 @@ import { ICalculatedStats } from '../Types/stats';
 import { usePromise } from '../Util/ReactUtil';
 import { clamp, deepClone } from '../Util/Util';
 import WeaponSheet from '../Weapon/WeaponSheet';
+import { defaultInitialWeaponKey, initialWeapon } from '../Weapon/WeaponUtil';
 import Character from './Character';
 import CharacterArtifactPane from './CharacterDisplay/CharacterArtifactPane';
 import CharacterOverviewPane from './CharacterDisplay/CharacterOverviewPane';
@@ -55,12 +56,6 @@ const initialCharacter = (characterKey): ICharacter => ({
   conditionalValues: {},
   baseStatOverrides: {},//overriding the baseStat
   buildSettings: initialBuildSettings(),
-  weapon: {
-    key: "" as any,
-    level: 1,
-    ascension: 0,
-    refineIndex: 0,
-  },
   talentLevelKeys: {
     auto: 0,
     skill: 0,
@@ -118,20 +113,35 @@ type CharacterDisplayCardProps = {
   tabName?: string
 }
 export default function CharacterDisplayCard({ characterKey: propCharacterKey = "", character: propCharacter, setCharacterKey: propSetCharacterKey, footer, newBuild: propNewBuild, editable = false, onClose, tabName }: CharacterDisplayCardProps) {
-  const [character, characterDispatch] = useReducer(characterReducer, initialCharacter(propCharacterKey))
+  const [character, characterDispatch] = useReducer(characterReducer, initialCharacter(""))
   const [compareAgainstEquipped, setcompareAgainstEquipped] = useState(false)
-  const firstUpdate = useRef(true)
-  const weaponSheets = usePromise(WeaponSheet.getAll(), [])
-  const characterKey = propCharacter?.characterKey ?? character.characterKey
+  const characterKey = propCharacter?.characterKey ?? propCharacterKey
   const characterSheet = usePromise(CharacterSheet.get(characterKey), [characterKey])
-  const weaponSheet = usePromise(WeaponSheet.get(character.weapon.key), [character.weapon.key])
+  const weapon = database._getWeapon(character.equippedWeapon)
+  const weaponSheet = usePromise(weapon ? WeaponSheet.get(weapon.key) : undefined, [weapon?.key])
   const artifactSheets = usePromise(ArtifactSheet.getAll(), [])
 
   useEffect(() => {
-    if (!propCharacterKey) return
-    const char = { ...initialCharacter(propCharacterKey), ...database._getChar(propCharacterKey) ?? {} }
-    characterDispatch({ type: "overwrite", character: char })
-  }, [propCharacterKey])
+    if (!characterKey) return
+    if (propCharacter) return
+    const dbChar = database._getChar(characterKey)
+    if (!dbChar) {
+      //create both a new character & a new weapon, and link them.
+      (async () => {
+        const newCharacter = initialCharacter(characterKey)
+        database.updateChar(newCharacter)
+        const characterSheet = await CharacterSheet.get(characterKey)
+        if (!characterSheet) return
+        const weapon = initialWeapon(defaultInitialWeaponKey(characterSheet.weaponTypeKey))
+        weapon.location = characterKey
+        const weaponId = database.updateWeapon(weapon)
+        database.setWeaponLocation(weaponId, characterKey)
+        characterDispatch({ type: "overwrite", character: { ...initialCharacter(characterKey), ...database._getChar(characterKey) } })
+      })()
+    } else
+      characterDispatch({ type: "overwrite", character: { ...initialCharacter(characterKey), ...dbChar } })
+
+  }, [characterKey, propCharacter])
 
   useEffect(() => {
     if (!propCharacter) return
@@ -151,25 +161,10 @@ export default function CharacterDisplayCard({ characterKey: propCharacterKey = 
   //   [characterKey, characterDispatch, character.equippedWeapon])
 
   useEffect(() => {
-    //skip saving on the first update, since those updates are from loading from DB
-    if (firstUpdate.current) {
-      firstUpdate.current = false
-      return
-    }
+    if (!editable || character.characterKey !== characterKey) return
     //save character to DB
-    editable && database.updateChar(character)
-  }, [character, editable])
-
-  //callback for when switching to a new character, and need to initiate a weapon.
-  useEffect(() => {
-    if (!character.weapon.key && weaponSheets && characterSheet) {
-      const possibleWeapons = WeaponSheet.getWeaponsOfType(weaponSheets, characterSheet.weaponTypeKey)
-      //sort the weapons to get the lowest rarity weapon.
-      const [weaponKey] = Object.entries(possibleWeapons).sort(([k1, ws1], [k2, ws2]) => ws1.rarity - ws2.rarity)[0]
-      character.weapon.key = weaponKey
-      characterDispatch({ weapon: character.weapon })
-    }
-  }, [characterSheet, weaponSheets])// eslint-disable-line react-hooks/exhaustive-deps
+    database.updateChar(character)
+  }, [character, editable, characterKey])
 
   useEffect(() => {//check for default value for traveler
     if (characterSheet && "talents" in characterSheet.sheet && !character.elementKey)
@@ -178,13 +173,9 @@ export default function CharacterDisplayCard({ characterKey: propCharacterKey = 
 
   const setCharacterKey = useCallback(
     newCKey => {
-      let state = initialCharacter(newCKey)
-      const char = database._getChar(newCKey)
-      if (char) state = { ...state, ...char }
-      characterDispatch({ type: "overwrite", character: state })
-      if (newCKey !== characterKey)
-        propSetCharacterKey?.(newCKey)
-    }, [characterKey, characterDispatch, propSetCharacterKey])
+      if (newCKey === characterKey) return
+      propSetCharacterKey?.(newCKey)
+    }, [characterKey, propSetCharacterKey])
 
   const newBuild = useMemo(() => {
     if (!propNewBuild) return

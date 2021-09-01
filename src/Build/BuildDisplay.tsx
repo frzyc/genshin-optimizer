@@ -131,7 +131,9 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
       const character = database._getChar(characterKey)
       if (!character) return selectCharacter("")// character is prob deleted.
       const characterSheet = await CharacterSheet.get(characterKey)
-      const weaponSheet = await WeaponSheet.get(character.weapon.key)
+      const weapon = database._getWeapon(character.equippedWeapon)
+      if (!weapon) return
+      const weaponSheet = await WeaponSheet.get(weapon.key)
       if (!characterSheet || !weaponSheet) return
       const initialStats = Character.createInitialStats(character, characterSheet, weaponSheet)
       //NOTE: since initialStats are used, there are no inclusion of artifact formulas here.
