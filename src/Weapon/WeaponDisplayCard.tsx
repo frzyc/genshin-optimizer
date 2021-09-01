@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useCallback, useContext, useEffect, useMemo, useState } from "react"
 import { Badge, Button, ButtonGroup, Card, Col, Dropdown, Image, InputGroup, Modal, Row } from "react-bootstrap"
 import Assets from "../Assets/Assets"
+import CharacterSheet from "../Character/CharacterSheet"
 import CustomFormControl from "../Components/CustomFormControl"
 import DocumentDisplay from "../Components/DocumentDisplay"
 import EquipmentDropdown from "../Components/EquipmentDropdown"
@@ -21,6 +22,13 @@ import WeaponStatsCard from "./WeaponStatsCard"
 type WeaponStatsEditorCardProps = {
   weaponId?: string | undefined
   weapon?: IWeapon | undefined
+  charData?: {
+    character: ICharacter,
+    characterSheet: CharacterSheet,
+    equippedBuild?: ICalculatedStats
+    newBuild?: ICalculatedStats
+    characterDispatch: (any) => void
+  }
   editable?: boolean
   footer?: boolean
   onClose?: () => void
@@ -28,6 +36,7 @@ type WeaponStatsEditorCardProps = {
 export default function WeaponDisplayCard({
   weaponId: propWeaponId,
   weapon: propWeapon,
+  charData,
   editable = false,
   footer = false,
   onClose
@@ -63,9 +72,7 @@ export default function WeaponDisplayCard({
     else weaponDispatch({ ascension: lowerAscension })
   }, [weaponDispatch, ascension, level])
 
-  // TODO: Fetch character and build from *database*. That's the only reliable
-  // source we have regardless of how we reach this card
-  const character: ICharacter | undefined = undefined, build: ICalculatedStats | undefined = undefined
+  const build = { ...(charData ? (charData.newBuild ?? charData.equippedBuild) : {}), weapon: { refineIndex, level, ascension } } as any
 
   return <Card bg="lightcontent" text={"lightfont" as any} className="mb-2">
     <Card.Header>
@@ -115,9 +122,9 @@ export default function WeaponDisplayCard({
           <Button variant="danger" onClick={onClose}>
             <FontAwesomeIcon icon={faTimes} /></Button>
         </Col>}
-        {!!location && <Col xs="auto">
+        {!!charData && <Col xs="auto">
           {/* <Button variant="info" ><FontAwesomeIcon icon={faExchangeAlt} /> SWAP WEAPON</Button> */}
-          <SwapBtn weaponTypeKey={weaponTypeKey} onChangeId={id => database.setWeaponLocation(id, location!)} />
+          <SwapBtn weaponTypeKey={weaponTypeKey} onChangeId={id => database.setWeaponLocation(id, charData.character.characterKey)} />
         </Col>
         }
       </Row>
@@ -129,7 +136,7 @@ export default function WeaponDisplayCard({
         const weaponDisplayMainVal = weaponSheet.getMainStatValue(level, ascension)
         const weaponDisplaySubVal = weaponSheet.getSubStatValue(level, ascension)
         const weaponPassiveName = weaponSheet.passiveName
-        const weaponBonusStats = build && weaponSheet.stats(build)
+        const weaponBonusStats = weaponSheet.stats(build)
         const sections = weaponSheet.document
 
         return <Row className="mb-n2">
@@ -146,10 +153,10 @@ export default function WeaponDisplayCard({
               <WeaponStatsCard title={"Main Stats"} statsVals={{ atk: weaponDisplayMainVal, [substatKey]: substatKey ? weaponDisplaySubVal : undefined }} stats={build} />
               <WeaponStatsCard title={"Bonus Stats"} statsVals={weaponBonusStats} stats={build} />
             </>}
-            {/* {sections ? (() => {
+            {charData && sections ? (() => {
               const { equippedBuild, newBuild, characterDispatch } = charData
               return < DocumentDisplay  {...{ sections, equippedBuild, newBuild, characterDispatch, editable }} />
-            })() : null} */}
+            })() : null}
           </Col>
         </Row>
       })()}
