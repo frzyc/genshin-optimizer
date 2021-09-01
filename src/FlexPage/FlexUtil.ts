@@ -10,6 +10,8 @@ export function createFlexObj(characterKey: CharacterKey) {
   const character = database._getChar(characterKey)
   if (!character) return null
 
+  character.weapon = database._getWeapon(character.equippedWeapon)
+
   const artifacts = Object.values(character.equippedArtifacts)
     .filter(art => art)
     .map(id => database._getArt(id)!)
