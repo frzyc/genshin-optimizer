@@ -7,19 +7,20 @@ import ReactGA from 'react-ga';
 import Assets from '../Assets/Assets';
 import { DatabaseContext } from '../Database/Database';
 import { dbStorage } from '../Database/DBStorage';
-import { allWeaponTypeKeys, CharacterKey } from '../Types/consts';
+import { allWeaponTypeKeys, CharacterKey, WeaponKey } from '../Types/consts';
 import { useForceUpdate, usePromise } from '../Util/ReactUtil';
 import WeaponCard from './WeaponCard';
+import { WeaponSelectionModal } from './WeaponSelection';
 import WeaponSheet from './WeaponSheet';
+import { initialWeapon } from './WeaponUtil';
 // const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
 
 //lazy load the character display
 const WeaponDisplayCard = lazy(() => import('./WeaponDisplayCard'))
 const toggle = {
   level: "Level",
-  rarity: "Rarity",
-  name: "Name"
-}
+  rarity: "Rarity"
+} as const
 
 function filterReducer(oldFilter, newFilter) {
   if (newFilter === oldFilter)
@@ -73,10 +74,14 @@ export default function WeaponDisplay(props) {
     }, 500);
   }, [setWeaponIdToEdit, scrollRef])
 
-  const cancelEditCharacter = useCallback(() => {
-    setWeaponIdToEdit("")
-    setnewCharacter(false)
-  }, [setWeaponIdToEdit])
+  const newWeapon = useCallback(
+    (weaponKey: WeaponKey) => {
+      const newWeapon = initialWeapon(weaponKey)
+      const weaponId = database.updateWeapon(newWeapon)
+      editCharacter(weaponId)
+    },
+    [database, editCharacter]
+  )
 
   const weaponIdList = database.weapons.keys.filter(wKey => {
     const dbWeapon = database._getWeapon(wKey)
@@ -84,12 +89,6 @@ export default function WeaponDisplay(props) {
     if (weaponFilter && weaponFilter !== allWeaponSheets[dbWeapon.key]?.weaponType) return false
     return true
   }).sort((a, b) => {
-    if (sortBy === "name") {
-      if (a < b) return -1;
-      if (a > b) return 1;
-      // names must be equal
-      return 0;
-    }
     if (sortBy === "level") {
       const diff = sortingFunc["level"](b) - sortingFunc["level"](a)
       if (diff) return diff
@@ -100,27 +99,15 @@ export default function WeaponDisplay(props) {
       return sortingFunc["level"](b) - sortingFunc["level"](a)
     }
   })
-  const showEditor = Boolean(weaponIdToEdit || newCharacter)
   return <Container ref={scrollRef} className="mt-2">
-    {/* <InfoComponent
-      pageKey="characterPage"
-      modalTitle="Character Management Page Guide"
-      text={["Every character will be tested with in-game numbers for maximum accuracy.",
-        "You can see the details of the calculations of every number.",
-        "You need to manually enable auto infusion for characters like Choungyun or Noelle.",
-        "You can change character constellations in both \"Character\" tab and in \"Talents\" tab.",
-        "Modified character Stats show up in yellow."]}
-    >
-      <InfoDisplay />
-    </InfoComponent> */}
     {/* editor/character detail display */}
-    {showEditor ? <Row className="mt-2"><Col>
+    {weaponIdToEdit ? <Row className="mt-2"><Col>
       <WeaponDisplayCard
         weaponId={weaponIdToEdit}
         // onDelete={deleteWeapon}
         editable
         footer
-        onClose={cancelEditCharacter}
+        onClose={() => setWeaponIdToEdit("")}
       />
     </Col></Row> : null}
     <Card bg="darkcontent" text={"lightfont" as any} className="mt-2">
@@ -146,7 +133,7 @@ export default function WeaponDisplay(props) {
       </Card.Body>
     </Card>
     <Row className="mt-2">
-      {!showEditor && <Col lg={4} md={6} className="mb-2">
+      {!weaponIdToEdit && <Col lg={4} md={6} className="mb-2">
         <Card className="h-100" bg="darkcontent" text={"lightfont" as any}>
           <Card.Header className="pr-2">
             <span>Add New Weapon</span>
@@ -157,6 +144,7 @@ export default function WeaponDisplay(props) {
                 <Button onClick={() => setnewCharacter(true)}>
                   <h1><FontAwesomeIcon icon={faPlus} className="fa-fw" /></h1>
                 </Button>
+                <WeaponSelectionModal show={newCharacter} onHide={() => setnewCharacter(false)} onSelect={newWeapon} />
               </Col>
             </Row>
           </Card.Body>

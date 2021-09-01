@@ -11,10 +11,12 @@ function defaultInitialWeaponKey(type: WeaponTypeKey): WeaponKey {
     default: return "DullBlade"
   }
 }
+export const defaultInitialWeapon = (type: WeaponTypeKey): IWeapon =>
+  initialWeapon(defaultInitialWeaponKey(type))
 
-export const initialWeapon = (type: WeaponTypeKey): IWeapon => ({
+export const initialWeapon = (key: WeaponKey): IWeapon => ({
   id: "",
-  key: defaultInitialWeaponKey(type),
+  key,
   level: 1,
   ascension: 0,
   refineIndex: 0,

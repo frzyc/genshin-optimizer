@@ -13,7 +13,7 @@ import Row from 'react-bootstrap/Row';
 import Tooltip from 'react-bootstrap/Tooltip';
 import { useTranslation } from 'react-i18next';
 import CharacterSheet from '../Character/CharacterSheet';
-import { CharacterSelectionDropdownList } from '../Components/CharacterSelection';
+import { CharacterSelectionDropdownList } from '../Character/CharacterSelection';
 import { Stars } from '../Components/StarDisplay';
 import { DatabaseContext } from '../Database/Database';
 import Stat from '../Stat';

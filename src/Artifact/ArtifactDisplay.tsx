@@ -8,7 +8,7 @@ import Row from 'react-bootstrap/Row';
 import ReactGA from 'react-ga';
 import { Trans, useTranslation } from 'react-i18next';
 import CharacterSheet from '../Character/CharacterSheet';
-import { CharacterSelectionDropdownList } from '../Components/CharacterSelection';
+import { CharacterSelectionDropdownList } from '../Character/CharacterSelection';
 import CustomFormControl from '../Components/CustomFormControl';
 import InfoComponent from '../Components/InfoComponent';
 import { Stars } from '../Components/StarDisplay';

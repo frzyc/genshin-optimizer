@@ -8,63 +8,28 @@ import Col from 'react-bootstrap/Col';
 import DropdownItem from 'react-bootstrap/esm/DropdownItem';
 import Row from 'react-bootstrap/Row';
 import { ArtifactSheet } from '../Artifact/ArtifactSheet';
-import { initialBuildSettings } from '../Build/BuildSetting';
 import CustomFormControl from '../Components/CustomFormControl';
 import { ascensionMaxLevel, milestoneLevels } from '../Data/CharacterData';
 import ElementalData from '../Data/ElementalData';
 import { DatabaseContext } from '../Database/Database';
 import { ICharacter } from '../Types/character';
-import { allCharacterKeys, allSlotKeys, CharacterKey } from '../Types/consts';
+import { CharacterKey } from '../Types/consts';
 import { ICalculatedStats } from '../Types/stats';
 import { IWeapon } from '../Types/weapon';
 import { useForceUpdate, usePromise } from '../Util/ReactUtil';
 import { clamp, deepClone } from '../Util/Util';
 import WeaponSheet from '../Weapon/WeaponSheet';
-import { initialWeapon } from '../Weapon/WeaponUtil';
+import { defaultInitialWeapon } from '../Weapon/WeaponUtil';
 import Character from './Character';
 import CharacterArtifactPane from './CharacterDisplay/CharacterArtifactPane';
 import CharacterOverviewPane from './CharacterDisplay/CharacterOverviewPane';
 import CharacterTalentPane from './CharacterDisplay/CharacterTalentPane';
 import DamageOptionsAndCalculation from './CharacterDisplay/DamageOptionsAndCalculation';
+import { CharSelectionButton } from './CharacterSelection';
 import CharacterSheet from './CharacterSheet';
+import { initialCharacter } from './CharacterUtil';
 
 export const compareAgainstEquippedContext = createContext(undefined)
-
-const CustomMenu = React.forwardRef(
-  ({ children, style, className, 'aria-labelledby': labeledBy }: any, ref: any) => {
-    return (
-      <div
-        ref={ref}
-        style={{ style, minWidth: "25rem" } as any}
-        className={className}
-        aria-labelledby={labeledBy}
-      >
-        <Row>
-          {React.Children.toArray(children).map((child, i) => <Col key={i} xs={6}>{child}</Col>)}
-        </Row>
-      </div>
-    );
-  },
-);
-const initialCharacter = (characterKey: CharacterKey): ICharacter => ({
-  characterKey, // the game character this is based off
-  level: 1,
-  ascension: 0,
-  hitMode: "avgHit",
-  reactionMode: null,
-  equippedArtifacts: Object.fromEntries(allSlotKeys.map(sKey => [sKey, ""])) as any,
-  equippedWeapon: "",
-  conditionalValues: {},
-  baseStatOverrides: {}, // overriding the baseStat
-  buildSettings: initialBuildSettings(),
-  talentLevelKeys: {
-    auto: 0,
-    skill: 0,
-    burst: 0,
-  },
-  infusionAura: "",
-  constellation: 0,
-})
 
 type characterEquipWeapon = {
   type: "weapon", id: string
@@ -145,7 +110,7 @@ export default function CharacterDisplayCard({ characterKey: propCharacterKey, c
     if (!weaponSheets || !characterSheet?.weaponTypeKey)
       return // Not fully loaded, we can't add default weapon, yet
 
-    const newWeapon: IWeapon = initialWeapon(characterSheet.weaponTypeKey)
+    const newWeapon: IWeapon = defaultInitialWeapon(characterSheet.weaponTypeKey)
     characterDispatch({ type: "weapon", id: database.updateWeapon(newWeapon) })
   }, [propCharacterKey, character.equippedWeapon, weaponSheets, characterSheet?.weaponTypeKey, characterDispatch, onDatabaseUpdate, database])
 
@@ -260,14 +225,7 @@ function CharSelectDropdown({ characterSheet, weaponSheet, character, character:
   }, [characterDispatch, ascension, level])
   return <>{editable ? <InputGroup >
     <ButtonGroup as={InputGroup.Prepend}>
-      <Dropdown as={ButtonGroup}>
-        <Dropdown.Toggle as={Button}>
-          {HeaderIconDisplay}
-        </Dropdown.Toggle>
-        <Dropdown.Menu as={CustomMenu}>
-          {[...new Set(allCharacterKeys)].sort().map(charKey => <CharDropdownItem key={charKey} characterKey={charKey} setCharacterKey={setCharacterKey} />)}
-        </Dropdown.Menu>
-      </Dropdown>
+      <CharSelectionButton characterSheet={characterSheet} onSelect={setCharacterKey} />
       {characterSheet?.sheet && "talents" in characterSheet?.sheet && <Dropdown as={ButtonGroup}>
         <Dropdown.Toggle as={Button} className={`text-${elementKey}`}>
           <strong>{ElementalData[elementKey].name}</strong>
@@ -301,14 +259,4 @@ function CharSelectDropdown({ characterSheet, weaponSheet, character, character:
       </Dropdown>
     </ButtonGroup>
   </InputGroup> : <span>{HeaderIconDisplay} {characterSheet && weaponSheet && Character.getLevelString(character)}</span>}</>
-}
-function CharDropdownItem({ characterKey, setCharacterKey }) {
-  const characterSheet = usePromise(CharacterSheet.get(characterKey), [characterKey])
-  if (!characterSheet) return null
-  return <Dropdown.Item onClick={() => setCharacterKey(characterKey)} className="pl-2 pr-0">
-    <Row>
-      <Col xs="auto"><Image src={characterSheet.thumbImg} className={`thumb-small p-0 m-n1 grad-${characterSheet.star}star`} thumbnail /></Col>
-      <Col>{characterSheet.name}</Col>
-    </Row>
-  </Dropdown.Item>
 }

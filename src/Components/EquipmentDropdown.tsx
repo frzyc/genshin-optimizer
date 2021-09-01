@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import CharacterSheet from "../Character/CharacterSheet";
 import { CharacterKey, WeaponTypeKey } from "../Types/consts";
 import { usePromise } from "../Util/ReactUtil";
-import { CharacterSelectionDropdownList } from "./CharacterSelection";
+import { CharacterSelectionDropdownList } from "../Character/CharacterSelection";
 
 export default function EquipmentDropdown({ location, onEquip, weaponTypeKey, disableUnequip = false, editable = false }: { location: CharacterKey | "", onEquip: (charKey: CharacterKey) => void, weaponTypeKey?: WeaponTypeKey, disableUnequip?: boolean, editable?: boolean }) {
   const { t } = useTranslation(["artifact"]);

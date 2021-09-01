@@ -15,7 +15,7 @@ import { ICalculatedStats } from "../Types/stats"
 import { IWeapon } from "../Types/weapon"
 import { useForceUpdate, usePromise } from "../Util/ReactUtil"
 import WeaponCard from "./WeaponCard"
-import WeaponDropdown from "./WeaponDropdown"
+import { WeaponSelectionButton } from "./WeaponSelection"
 import WeaponSheet from "./WeaponSheet"
 import WeaponStatsCard from "./WeaponStatsCard"
 
@@ -74,13 +74,15 @@ export default function WeaponDisplayCard({
 
   const build = { ...(charData ? (charData.newBuild ?? charData.equippedBuild) : {}), weapon: { refineIndex, level, ascension } } as any
 
+  const characterSheet = usePromise(location ? CharacterSheet.get(location) : undefined, [location])
+  const weaponFilter = characterSheet ? (ws) => ws.weaponType === characterSheet.weaponTypeKey : undefined
   return <Card bg="lightcontent" text={"lightfont" as any} className="mb-2">
     <Card.Header>
       <Row>
         <Col>
           {editable ? <InputGroup >
             <ButtonGroup as={InputGroup.Prepend}>
-              <WeaponDropdown weaponKey={key} setWeaponKey={k => weaponDispatch({ key: k })} weaponTypeKey={weaponTypeKey} />
+              <WeaponSelectionButton weaponSheet={weaponSheet} onSelect={k => weaponDispatch({ key: k })} filter={weaponFilter} />
               <Dropdown as={ButtonGroup}>
                 <Dropdown.Toggle as={Button}>Refinement {refineIndex + 1}</Dropdown.Toggle>
                 <Dropdown.Menu>
@@ -122,11 +124,9 @@ export default function WeaponDisplayCard({
           <Button variant="danger" onClick={onClose}>
             <FontAwesomeIcon icon={faTimes} /></Button>
         </Col>}
-        {!!charData && <Col xs="auto">
-          {/* <Button variant="info" ><FontAwesomeIcon icon={faExchangeAlt} /> SWAP WEAPON</Button> */}
+        {!!charData && editable && <Col xs="auto">
           <SwapBtn weaponTypeKey={weaponTypeKey} onChangeId={id => database.setWeaponLocation(id, charData.character.characterKey)} />
-        </Col>
-        }
+        </Col>}
       </Row>
     </Card.Header>
     <Card.Body >

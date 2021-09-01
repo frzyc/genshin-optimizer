@@ -1,6 +1,8 @@
 import { Badge } from "react-bootstrap"
 import { ArtifactSheet } from "../Artifact/ArtifactSheet"
-import { ArtifactSetKey, ElementKey } from "../Types/consts"
+import { initialBuildSettings } from "../Build/BuildSetting"
+import { ICharacter } from "../Types/character"
+import { allSlotKeys, ArtifactSetKey, CharacterKey, ElementKey } from "../Types/consts"
 import WeaponSheet from "../Weapon/WeaponSheet"
 import CharacterSheet from "./CharacterSheet"
 
@@ -19,4 +21,26 @@ export function getFormulaTargetsDisplayHeading(key: string, { characterSheet, w
     return <span>{artifactSheets[setKey]?.name} <Badge variant="success">{num}-Set</Badge></span>
   }
   return ""
+}
+
+export function initialCharacter(characterKey: CharacterKey): ICharacter {
+  return {
+    characterKey, // the game character this is based off
+    level: 1,
+    ascension: 0,
+    hitMode: "avgHit",
+    reactionMode: null,
+    equippedArtifacts: Object.fromEntries(allSlotKeys.map(sKey => [sKey, ""])) as any,
+    equippedWeapon: "",
+    conditionalValues: {},
+    baseStatOverrides: {}, // overriding the baseStat
+    buildSettings: initialBuildSettings(),
+    talentLevelKeys: {
+      auto: 0,
+      skill: 0,
+      burst: 0,
+    },
+    infusionAura: "",
+    constellation: 0,
+  }
 }

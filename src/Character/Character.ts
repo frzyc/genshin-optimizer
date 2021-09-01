@@ -15,7 +15,7 @@ import { deepClone, evalIfFunc } from "../Util/Util";
 import WeaponSheet from "../Weapon/WeaponSheet";
 import CharacterSheet from "./CharacterSheet";
 import { mergeStats } from "../Util/StatUtil";
-import { initialWeapon } from "../Weapon/WeaponUtil";
+import { defaultInitialWeapon } from "../Weapon/WeaponUtil";
 
 export default class Character {
   //do not instantiate.
@@ -97,7 +97,7 @@ export default class Character {
   static createInitialStats = (character: ICharacter, database: ArtCharDatabase, characterSheet: CharacterSheet, weaponSheet: WeaponSheet): ICalculatedStats => {
     character = deepClone(character)
     const { characterKey, elementKey, level, ascension, hitMode, infusionAura, reactionMode, talentLevelKeys, constellation, equippedArtifacts, conditionalValues = {}, equippedWeapon } = character
-    const weapon = database._getWeapon(equippedWeapon) ?? initialWeapon(characterSheet.weaponTypeKey) // need to ensure all characters have a weapon
+    const weapon = database._getWeapon(equippedWeapon) ?? defaultInitialWeapon(characterSheet.weaponTypeKey) // need to ensure all characters have a weapon
 
     //generate the initalStats obj with data from Character & overrides
     const statKeys = ["enemyLevel", ...Object.keys(characterStatBase)]

@@ -15,7 +15,7 @@ import { HitModeToggle, InfusionAuraDropdown, ReactionToggle } from '../Characte
 import StatDisplayComponent from '../Character/CharacterDisplay/StatDisplayComponent';
 import CharacterSheet from '../Character/CharacterSheet';
 import { getFormulaTargetsDisplayHeading } from '../Character/CharacterUtil';
-import { CharacterSelectionDropdownList } from '../Components/CharacterSelection';
+import { CharacterSelectionDropdownList } from '../Character/CharacterSelection';
 import CustomFormControl from '../Components/CustomFormControl';
 import InfoComponent from '../Components/InfoComponent';
 import { Stars } from '../Components/StarDisplay';
