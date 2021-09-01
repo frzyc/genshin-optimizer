@@ -15,6 +15,7 @@ import { ICalculatedStats } from "../../Types/stats";
 import { usePromise } from "../../Util/ReactUtil";
 import WeaponSheet from "../../Weapon/WeaponSheet";
 import Character from "../Character";
+import type { characterReducerAction } from "../CharacterDisplayCard";
 import CharacterSheet from "../CharacterSheet";
 import { getFormulaTargetsDisplayHeading } from "../CharacterUtil";
 import StatInput from "../StatInput";
@@ -26,7 +27,7 @@ const infusionVals = {
 type InfusionAuraDropdownProps = {
   characterSheet: CharacterSheet,
   character: ICharacter,
-  characterDispatch: (any) => void,
+  characterDispatch: (any: characterReducerAction) => void,
   className?: string
 }
 export function InfusionAuraDropdown({ characterSheet, character: { infusionAura = "", characterKey }, characterDispatch, className }: InfusionAuraDropdownProps) {
@@ -42,7 +43,7 @@ export function InfusionAuraDropdown({ characterSheet, character: { infusionAura
 type ReactionToggleProps = {
   character: ICharacter,
   build: ICalculatedStats,
-  characterDispatch: (any) => void,
+  characterDispatch: (any: characterReducerAction) => void,
   className: string
 }
 export function ReactionToggle({ character: { reactionMode = null, infusionAura }, build, characterDispatch, className }: ReactionToggleProps) {
@@ -172,7 +173,7 @@ type DamageOptionsAndCalculationProps = {
     artifactSheets: StrictDict<ArtifactSetKey, ArtifactSheet>
   }
   character: ICharacter,
-  characterDispatch: (any) => void,
+  characterDispatch: (any: characterReducerAction) => void,
   equippedBuild?: ICalculatedStats,
   newBuild?: ICalculatedStats,
   className: string
@@ -224,7 +225,7 @@ export default function DamageOptionsAndCalculation({ sheets, sheets: { characte
                       value={Character.getStatValueWithOverride(character, characterSheet, weaponSheet, "enemyLevel")}
                       placeholder={Stat.getStatNameRaw("enemyLevel")}
                       defaultValue={Character.getBaseStatValue(character, characterSheet, weaponSheet, "enemyLevel")}
-                      onValueChange={value => characterDispatch({ type: "statOverride", statKey: "enemyLevel", value, characterSheet, weaponSheet })}
+                      onValueChange={value => characterDispatch({ type: "statOverride", statKey: "enemyLevel", value })}
                     />
                   </Col>
                   {["physical", ...allElements].map(eleKey => {
@@ -233,14 +234,14 @@ export default function DamageOptionsAndCalculation({ sheets, sheets: { characte
                     let elementImmunity = Character.getStatValueWithOverride(character, characterSheet, weaponSheet, immunityStatKey)
                     return <Col xs={12} xl={6} key={eleKey} className="mb-2">
                       <StatInput
-                        prependEle={<Button variant={eleKey} onClick={() => characterDispatch({ type: "statOverride", statKey: immunityStatKey, value: !elementImmunity, characterSheet, weaponSheet })} className="text-darkcontent">
+                        prependEle={<Button variant={eleKey} onClick={() => characterDispatch({ type: "statOverride", statKey: immunityStatKey, value: !elementImmunity })} className="text-darkcontent">
                           <FontAwesomeIcon icon={elementImmunity ? faCheckSquare : faSquare} className="fa-fw" /> Immunity
                         </Button>}
                         name={<b>{Stat.getStatName(statKey)}</b>}
                         value={Character.getStatValueWithOverride(character, characterSheet, weaponSheet, statKey)}
                         placeholder={Stat.getStatNameRaw(statKey)}
                         defaultValue={Character.getBaseStatValue(character, characterSheet, weaponSheet, statKey)}
-                        onValueChange={value => characterDispatch({ type: "statOverride", statKey, value, characterSheet, weaponSheet })}
+                        onValueChange={value => characterDispatch({ type: "statOverride", statKey, value })}
                         disabled={elementImmunity}
                         percent
                       />

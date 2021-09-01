@@ -124,20 +124,23 @@ export class ArtCharDatabase {
     cb(undefined)
   }
 
-  followAnyChar(cb: (key: string | {}) => void): (() => void) | undefined { return this.chars.followAny(cb) }
-  followAnyArt(cb: (key: CharacterKey | {}) => void): (() => void) | undefined { return this.arts.followAny(cb) }
+  followAnyChar(cb: (key: CharacterKey | {}) => void): (() => void) | undefined { return this.chars.followAny(cb) }
+  followAnyArt(cb: (key: string | {}) => void): (() => void) | undefined { return this.arts.followAny(cb) }
   followAnyWeapon(cb: (key: string | {}) => void): (() => void) | undefined { return this.weapons.followAny(cb) }
 
   /**
    * **Caution**: This does not update `equippedArtifacts`, use `equipArtifacts` instead
+   * **Caution**: This does not update `equipedWeapon`, use `setWeaponLocation` instead
    */
   updateChar(value: ICharacter): void {
     const newChar = deepClone(value), key = newChar.characterKey, oldChar = this.chars.get(key)
 
     if (oldChar) {
       newChar.equippedArtifacts = oldChar.equippedArtifacts
+      newChar.equippedWeapon = oldChar.equippedWeapon
     } else {
       newChar.equippedArtifacts = Object.fromEntries(allSlotKeys.map(slot => ([slot, ""]))) as any
+      newChar.equippedWeapon = ""
     }
 
     this.saveChar(key, newChar)
@@ -253,7 +256,7 @@ export class ArtCharDatabase {
     if (newCharKey) this.saveChar(newCharKey, newChar!)
     if (oldCharKey) this.saveChar(oldCharKey, oldChar!)
   }
-  setWeaponLocation(weaponId: string, newCharKey: CharacterKey | "") {
+  setWeaponLocation(weaponId: string, newCharKey: CharacterKey) {
     const newWeapon = deepClone(this.weapons.get(weaponId))
     if (!newWeapon) return
 

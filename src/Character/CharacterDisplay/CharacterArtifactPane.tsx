@@ -11,6 +11,7 @@ import { ICalculatedStats } from '../../Types/stats';
 import { useForceUpdate, usePromise } from '../../Util/ReactUtil';
 import WeaponSheet from '../../Weapon/WeaponSheet';
 import Character from "../Character";
+import type { characterReducerAction } from '../CharacterDisplayCard';
 import CharacterSheet from '../CharacterSheet';
 import StatDisplayComponent from './StatDisplayComponent';
 const artLayoutSize = { xs: 12, md: 6, lg: 4 }
@@ -25,7 +26,7 @@ type CharacterArtifactPaneProps = {
   equippedBuild?: ICalculatedStats,
   newBuild?: ICalculatedStats,
   editable: boolean,
-  characterDispatch: (any) => void,
+  characterDispatch: (any: characterReducerAction) => void,
   artifacts?: any[]
 }
 function CharacterArtifactPane({ sheets, character, character: { characterKey }, equippedBuild, newBuild, editable, characterDispatch, artifacts }: CharacterArtifactPaneProps) {
@@ -49,14 +50,12 @@ function CharacterArtifactPane({ sheets, character, character: { characterKey },
     if (!window.confirm("Do you want to equip this artifact build to this character?")) return
     if (!newBuild) return
     newBuild.equippedArtifacts && database.equipArtifacts(characterKey, newBuild.equippedArtifacts)
-    characterDispatch?.({ type: "fromDB" })
-  }, [characterKey, newBuild, characterDispatch])
+  }, [characterKey, newBuild])
 
   const unequipArts = useCallback(() => {
     if (!window.confirm("Do you want to move all the artifacts equipped to inventory?")) return
     database.equipArtifacts(characterKey, Object.fromEntries(allSlotKeys.map(sKey => [sKey, ""])) as StrictDict<SlotKey, string>)
-    characterDispatch?.({ type: "fromDB" })
-  }, [characterKey, characterDispatch])
+  }, [characterKey])
   if (!stats) return null
   return <>
     <Card className="h-100 mb-2" bg="lightcontent" text={"lightfont" as any}>

@@ -25,7 +25,7 @@ export default function WeaponCard({ weaponId, onEdit, onDelete, onClick, cardCl
 
   if (!weapon || !weaponSheet) return null;
   const { level, ascension, refineIndex, id } = weapon
-  const equipOnChar = (charKey: CharacterKey | "") => database.setWeaponLocation(weaponId, charKey)
+  const equipOnChar = (charKey: CharacterKey) => database.setWeaponLocation(weaponId, charKey)
 
   const weaponTypeKey = weaponSheet.weaponType
   const weaponMainVal = weaponSheet.getMainStatValue(level, ascension).toFixed(Stat.fixedUnit("atk"))
@@ -67,7 +67,7 @@ export default function WeaponCard({ weaponId, onEdit, onDelete, onClick, cardCl
     {footer && <Card.Footer>
       <Row>
         <Col >
-          <EquipmentDropdown location={weapon?.location} onEquip={equipOnChar} weaponTypeKey={weaponTypeKey} disableUnequip={weapon.location} editable={editable}/>
+          <EquipmentDropdown location={weapon?.location} onEquip={equipOnChar} weaponTypeKey={weaponTypeKey} disableUnequip={weapon.location} editable={editable} />
         </Col>
         <Col xs={"auto"}>
           <span className="float-right align-top ml-1">

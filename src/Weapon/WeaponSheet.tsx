@@ -25,7 +25,7 @@ export default class WeaponSheet {
     this.key = key as WeaponKey
     this.sheet = weaponSheet
   }
-  static get = (weaponKey: WeaponKey | string): Promise<WeaponSheet> | undefined => weaponKey ? loadWeaponSheet[weaponKey] : undefined
+  static get = (weaponKey: WeaponKey | ""): Promise<WeaponSheet> | undefined => weaponKey ? loadWeaponSheet[weaponKey] : undefined
   static getAll = (): Promise<StrictDict<WeaponKey, WeaponSheet>> => weaponImport
   static getWeaponsOfType = (sheets: StrictDict<WeaponKey, WeaponSheet>, weaponType: string): Dict<WeaponKey, WeaponSheet> => Object.fromEntries(Object.entries(sheets).filter(([key, sheet]) => (sheet as WeaponSheet).weaponType === weaponType))
   static getLevelString = (weapon: IWeapon): string => `${weapon.level}/${ascensionMaxLevel[weapon.ascension]}`

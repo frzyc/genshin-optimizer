@@ -53,6 +53,12 @@ export interface IFlexCharacter {
   reactionMode: ReactionModeKey | null
   conditionalValues: any,
   baseStatOverrides: object, //overriding the baseStat
+  weapon?: { // Caution: Use this only for flex data, otherwise, load the db from `equippedWeapon` instead
+    key: WeaponKey
+    level: number,
+    ascension: number,
+    refineIndex: number
+  },
   talentLevelKeys: {
     auto: number
     skill: number

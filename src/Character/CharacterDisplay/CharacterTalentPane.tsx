@@ -10,12 +10,13 @@ import { ElementToReactionKeys } from "../../StatData";
 import { ICharacter } from "../../Types/character";
 import { ICalculatedStats } from "../../Types/stats";
 import statsToFields from "../../Util/FieldUtil";
+import type { characterReducerAction } from "../CharacterDisplayCard";
 import CharacterSheet from "../CharacterSheet";
 type CharacterTalentPaneProps = {
   characterSheet: CharacterSheet,
   character: ICharacter,
   editable: boolean,
-  characterDispatch: (any) => void,
+  characterDispatch: (any: characterReducerAction) => void,
   newBuild?: ICalculatedStats,
   equippedBuild?: ICalculatedStats
 }

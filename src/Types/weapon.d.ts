@@ -15,11 +15,11 @@ export interface IWeaponSheet extends WeaponData {
 }
 
 export interface IFlexWeapon {
-  key: WeaponKey //"CrescentPike"
-  level: number //1-90 inclusive
-  ascension: number //0-6 inclusive. need to disambiguate 80/90 or 80/80
-  refineIndex: number //0-4 inclusive
-  location: CharacterKey | "" //where "" means not equipped.
+  key: WeaponKey // "CrescentPike"
+  level: number // 1-90 inclusive
+  ascension: number // 0-6 inclusive. need to disambiguate 80/90 or 80/80
+  refineIndex: number // 0-4 inclusive
+  location: CharacterKey | "" // where "" means not equipped.
 }
 export interface IWeapon extends IFlexWeapon {
   id: string

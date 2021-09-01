@@ -13,6 +13,7 @@ import { ICalculatedStats } from "../../Types/stats";
 import WeaponDisplayCard from "../../Weapon/WeaponDisplayCard";
 import WeaponSheet from "../../Weapon/WeaponSheet";
 import Character from "../Character";
+import type { characterReducerAction } from "../CharacterDisplayCard";
 import CharacterSheet from "../CharacterSheet";
 import StatInput from "../StatInput";
 type CharacterOverviewPaneProps = {
@@ -20,7 +21,7 @@ type CharacterOverviewPaneProps = {
   weaponSheet: WeaponSheet
   editable: boolean;
   character: ICharacter
-  characterDispatch: (any) => void
+  characterDispatch: (any: characterReducerAction) => void
   equippedBuild?: ICalculatedStats
   newBuild?: ICalculatedStats
 }
@@ -58,7 +59,7 @@ export default function CharacterOverviewPane({ characterSheet, weaponSheet, edi
       </Card>
     </Col>
     <Col xs={12} md={9} >
-      <WeaponDisplayCard {...{ charData: { character, characterSheet, equippedBuild, newBuild, characterDispatch }, weaponSheet, editable, weaponId: character.equippedWeapon, weaponTypeKey: characterSheet.weaponTypeKey }} />
+      <WeaponDisplayCard {...{ editable, weaponId: character.equippedWeapon }} />
       <MainStatsCards {...{ characterSheet, weaponSheet, editable, character, characterDispatch, equippedBuild, newBuild }} />
     </Col>
   </Row >

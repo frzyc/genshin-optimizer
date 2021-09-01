@@ -1,9 +1,8 @@
 import { faExchangeAlt, faTimes } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import React, { useCallback, useEffect, useReducer, useState } from "react"
+import React, { useCallback, useEffect, useMemo, useState } from "react"
 import { Badge, Button, ButtonGroup, Card, Col, Dropdown, Image, InputGroup, Modal, Row } from "react-bootstrap"
 import Assets from "../Assets/Assets"
-import CharacterSheet from "../Character/CharacterSheet"
 import CustomFormControl from "../Components/CustomFormControl"
 import DocumentDisplay from "../Components/DocumentDisplay"
 import EquipmentDropdown from "../Components/EquipmentDropdown"
@@ -11,87 +10,62 @@ import { Stars } from "../Components/StarDisplay"
 import { ascensionMaxLevel, milestoneLevels } from "../Data/CharacterData"
 import { database } from "../Database/Database"
 import { ICharacter } from "../Types/character"
-import { WeaponTypeKey } from "../Types/consts"
 import { ICalculatedStats } from "../Types/stats"
 import { IWeapon } from "../Types/weapon"
-import { usePromise } from "../Util/ReactUtil"
-import { clamp } from "../Util/Util"
+import { useForceUpdate, usePromise } from "../Util/ReactUtil"
 import WeaponCard from "./WeaponCard"
 import WeaponDropdown from "./WeaponDropdown"
 import WeaponSheet from "./WeaponSheet"
 import WeaponStatsCard from "./WeaponStatsCard"
-import { defaultInitialWeaponKey, initialWeapon } from "./WeaponUtil"
 
-function weaponReducer(state: IWeapon, action: any) {
-  return { ...state, ...action }
-}
 type WeaponStatsEditorCardProps = {
-  weaponId?: string,
-  weaponTypeKey?: WeaponTypeKey
-  charData?: {
-    character: ICharacter,
-    characterSheet: CharacterSheet,
-    equippedBuild?: ICalculatedStats
-    newBuild?: ICalculatedStats,
-    characterDispatch: (any) => void
-  }
+  weaponId?: string
+  weapon?: IWeapon
   editable?: boolean
   footer?: boolean
   onClose?: () => void
 }
 export default function WeaponDisplayCard({
   weaponId: propWeaponId,
-  weaponTypeKey,
-  // characterSheet,
-  // weaponSheet,
+  weapon: propWeapon,
   editable = false,
   footer = false,
-  charData,
-  // character,
-  // character: { weapon },
-  // characterDispatch,
-  // equippedBuild,
-  // newBuild
   onClose
 }: WeaponStatsEditorCardProps) {
-  const [weapon, weaponDispatch] = useReducer(weaponReducer, propWeaponId ? database._getWeapon(propWeaponId) : initialWeapon(weaponTypeKey ? defaultInitialWeaponKey(weaponTypeKey) : ""))
+  console.log("here")
+  // Use databaseToken anywhere `database._get*` is used
+  // Use onDatabaseUpdate when `following` database entries
+  const [databaseToken, onDatabaseUpdate] = useForceUpdate()
+
+  const weaponId = propWeaponId || propWeapon!.id
+  const weapon = useMemo(() =>
+    databaseToken && (propWeapon ?? database._getWeapon(propWeaponId!)!),
+    [propWeapon, propWeaponId, databaseToken])
   const { key, level, refineIndex, location, ascension, id } = weapon
-  const weaponSheet = usePromise(WeaponSheet.get(key), [key])
+  const weaponSheet: WeaponSheet | undefined = usePromise(WeaponSheet.get(key), [key])
+  const weaponTypeKey = weaponSheet?.weaponType
 
-  //save weapons on edit
-  useEffect(() => {
-    if (weapon.key) {
-      const newId = database.updateWeapon(weapon)
-      if (newId !== weapon.id) weaponDispatch({ id: newId })
-    }
-  }, [weapon])
+  useEffect(() =>
+    weaponId ? database.followWeapon(weaponId, onDatabaseUpdate) : undefined,
+    [weaponId, onDatabaseUpdate])
 
-  //save weaponid if has charData
-  useEffect(() => {
-    if (charData && charData.character.equippedWeapon !== id)
-      database.setWeaponLocation(id, charData.character.characterKey)
-  }, [id, charData])
+  const weaponDispatch = useCallback((newWeapon: Partial<IWeapon>) => {
+    if (propWeapon) return // Don't touch flex weapon
 
-  useEffect(() => {
-    if (!propWeaponId) return
-    const weapon = { ...initialWeapon(""), ...database._getWeapon(propWeaponId) }
-    weaponDispatch(weapon)
-  }, [propWeaponId])
+    const oldWeapon = database._getWeapon(weaponId)
+    database.updateWeapon({ ...oldWeapon, ...newWeapon } as IWeapon)
+  }, [propWeapon, weaponId])
 
-  const setLevel = useCallback((newLevel) => {
-    newLevel = clamp(newLevel, 1, 90)
-    const ascension = ascensionMaxLevel.findIndex(ascenML => newLevel <= ascenML)
-    weaponDispatch({ level: newLevel, ascension })
-  }, [weaponDispatch])
-
-  const ambiguousLevel = ascensionMaxLevel.findIndex(ascenML => level !== 90 && level === ascenML) > 0
+  const ambiguousLevel = level !== 90 && ascensionMaxLevel.findIndex(ascenML => level === ascenML) > 0
   const setAscension = useCallback(() => {
     const lowerAscension = ascensionMaxLevel.findIndex(ascenML => level !== 90 && level === ascenML)
     if (ascension === lowerAscension) weaponDispatch({ ascension: ascension + 1 })
     else weaponDispatch({ ascension: lowerAscension })
   }, [weaponDispatch, ascension, level])
 
-  const build = { ...(charData ? (charData.newBuild ? charData.newBuild : charData.equippedBuild) : {}), weapon: { refineIndex: refineIndex, level, ascension } } as any
+  // TODO: Fetch character and build from *database*. That's the only reliable
+  // source we have regardless of how we reach this card
+  const character: ICharacter | undefined = undefined, build: ICalculatedStats | undefined = undefined
 
   return <Card bg="lightcontent" text={"lightfont" as any} className="mb-2">
     <Card.Header>
@@ -118,7 +92,7 @@ export default function WeaponDisplayCard({
               <InputGroup.Text><strong>Lvl. </strong></InputGroup.Text>
             </InputGroup.Prepend>
             <InputGroup.Append>
-              <CustomFormControl placeholder={undefined} onChange={setLevel} value={level} min={1} max={90} />
+              <CustomFormControl placeholder={undefined} onChange={level => weaponDispatch({ level })} value={level} min={1} max={90} />
             </InputGroup.Append>
             <InputGroup.Append>
               <Button disabled={!ambiguousLevel} onClick={setAscension}><strong>/ {ascensionMaxLevel[ascension]}</strong></Button>
@@ -141,9 +115,9 @@ export default function WeaponDisplayCard({
           <Button variant="danger" onClick={onClose}>
             <FontAwesomeIcon icon={faTimes} /></Button>
         </Col>}
-        {!!charData && <Col xs="auto">
+        {!!location && <Col xs="auto">
           {/* <Button variant="info" ><FontAwesomeIcon icon={faExchangeAlt} /> SWAP WEAPON</Button> */}
-          <SwapBtn weaponTypeKey={weaponTypeKey} onChangeId={id => database.setWeaponLocation(id, charData.character.characterKey)} />
+          <SwapBtn weaponTypeKey={weaponTypeKey} onChangeId={id => database.setWeaponLocation(id, location!)} />
         </Col>
         }
       </Row>
@@ -155,7 +129,7 @@ export default function WeaponDisplayCard({
         const weaponDisplayMainVal = weaponSheet.getMainStatValue(level, ascension)
         const weaponDisplaySubVal = weaponSheet.getSubStatValue(level, ascension)
         const weaponPassiveName = weaponSheet.passiveName
-        const weaponBonusStats = weaponSheet.stats(build)
+        const weaponBonusStats = build && weaponSheet.stats(build)
         const sections = weaponSheet.document
 
         return <Row className="mb-n2">
@@ -168,12 +142,14 @@ export default function WeaponDisplayCard({
             <div className="mb-2"><Stars stars={weaponSheet.rarity} /></div>
             <h6>{weaponPassiveName}</h6>
             <div className="mb-2">{weaponPassiveName && weaponSheet.passiveDescription({ weapon: { refineIndex: refineIndex } } as any)}</div>
-            <WeaponStatsCard title={"Main Stats"} statsVals={{ atk: weaponDisplayMainVal, [substatKey]: substatKey ? weaponDisplaySubVal : undefined }} stats={build} />
-            <WeaponStatsCard title={"Bonus Stats"} statsVals={weaponBonusStats} stats={build} />
-            {charData && sections ? (() => {
+            {build && <>
+              <WeaponStatsCard title={"Main Stats"} statsVals={{ atk: weaponDisplayMainVal, [substatKey]: substatKey ? weaponDisplaySubVal : undefined }} stats={build} />
+              <WeaponStatsCard title={"Bonus Stats"} statsVals={weaponBonusStats} stats={build} />
+            </>}
+            {/* {sections ? (() => {
               const { equippedBuild, newBuild, characterDispatch } = charData
               return < DocumentDisplay  {...{ sections, equippedBuild, newBuild, characterDispatch, editable }} />
-            })() : null}
+            })() : null} */}
           </Col>
         </Row>
       })()}
