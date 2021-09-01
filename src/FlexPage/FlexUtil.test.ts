@@ -28,7 +28,7 @@ describe('flex import export', () => {
   afterEach(() => localStorage.clear())
 
   test('should support round tripping', () => {
-    expect(parseFlexObj(createFlexObj(character.characterKey)!)![0]).toEqual(flexObj)
+    expect(parseFlexObj(createFlexObj(character.characterKey, database)!)![0]).toEqual(flexObj)
   })
   test('should support old format', () => {
     const [{ character, artifacts }] = parseFlexObj(oldURL.split("flex?")[1])!

@@ -1,6 +1,6 @@
 import { faBriefcase, faEdit, faInfoCircle, faLock, faLockOpen, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import Badge from 'react-bootstrap/Badge';
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
@@ -15,7 +15,7 @@ import { useTranslation } from 'react-i18next';
 import CharacterSheet from '../Character/CharacterSheet';
 import { CharacterSelectionDropdownList } from '../Components/CharacterSelection';
 import { Stars } from '../Components/StarDisplay';
-import { database } from '../Database/Database';
+import { DatabaseContext } from '../Database/Database';
 import Stat from '../Stat';
 import { allSubstats, IArtifact, Substat, SubstatKey } from '../Types/artifact';
 import { CharacterKey } from '../Types/consts';
@@ -31,10 +31,11 @@ const allSubstatFilter = new Set(allSubstats)
 
 export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete, mainStatAssumptionLevel = 0, effFilter = allSubstatFilter }: Data): JSX.Element | null {
   const { t } = useTranslation(["artifact"]);
+  const database = useContext(DatabaseContext)
   const [databaseArtifact, updateDatabaseArtifact] = useState(undefined as IArtifact | undefined)
   useEffect(() =>
     artifactId ? database.followArt(artifactId, updateDatabaseArtifact) : undefined,
-    [artifactId, updateDatabaseArtifact])
+    [artifactId, updateDatabaseArtifact, database])
   const sheet = usePromise(ArtifactSheet.get((artifactObj ?? (artifactId ? database._getArt(artifactId) : undefined))?.setKey), [artifactObj, artifactId])
   const equipOnChar = (charKey: CharacterKey | "") => database.setLocation(artifactId!, charKey)
 

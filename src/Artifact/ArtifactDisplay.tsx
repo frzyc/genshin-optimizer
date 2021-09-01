@@ -1,6 +1,6 @@
 import { faBriefcase, faCheckSquare, faLock, faLockOpen, faSortAmountDownAlt, faSortAmountUp, faSquare, faTrash, faUndo, faUserShield, faUserSlash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'react';
+import React, { useCallback, useContext, useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import { Button, ButtonGroup, ButtonToolbar, Card, Dropdown, InputGroup, ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
@@ -12,7 +12,7 @@ import { CharacterSelectionDropdownList } from '../Components/CharacterSelection
 import CustomFormControl from '../Components/CustomFormControl';
 import InfoComponent from '../Components/InfoComponent';
 import { Stars } from '../Components/StarDisplay';
-import { database } from '../Database/Database';
+import { DatabaseContext } from '../Database/Database';
 import { dbStorage } from '../Database/DBStorage';
 import Stat from '../Stat';
 import { allMainStatKeys, allSubstats, IArtifact, SubstatKey } from '../Types/artifact';
@@ -54,6 +54,7 @@ function filterInit(initial = initialFilter()) {
 }
 export default function ArtifactDisplay(props) {
   const { t } = useTranslation(["artifact", "ui"]);
+  const database = useContext(DatabaseContext)
   const [filters, filterDispatch] = useReducer(filterReducer, initialFilter(), filterInit)
   const { effFilter } = filters
   const [artToEditId, setartToEditId] = useState(props?.location?.artToEditId)
@@ -64,7 +65,7 @@ export default function ArtifactDisplay(props) {
   const artifactSheets = usePromise(ArtifactSheet.getAll(), [])
   const effFilterSet = useMemo(() => new Set(effFilter), [effFilter]) as Set<SubstatKey>
   const deleteArtifact = useCallback(
-    (id: string) => database.removeArt(id), [])
+    (id: string) => database.removeArt(id), [database])
   const editArtifact = useCallback(
     id => {
       setartToEditId(id);
@@ -75,7 +76,7 @@ export default function ArtifactDisplay(props) {
   useEffect(() => {
     ReactGA.pageview('/artifact')
     return database.followAnyArt(forceUpdate)
-  }, [forceUpdate])
+  }, [database, forceUpdate])
 
   useEffect(() => {
     dbStorage.set("ArtifactDisplay.state", filters)
@@ -123,7 +124,7 @@ export default function ArtifactDisplay(props) {
     const numLock = artifacts.length - numUnlock
 
     return { artifacts, totalArtNum: allArtifacts.length, numUnequip, numUnlock, numLock, ...dbDirty }//use dbDirty to shoo away warnings!
-  }, [filters, dbDirty, effFilterSet])
+  }, [filters, dbDirty, effFilterSet, database])
 
   const { filterArtSetKey, filterSlotKey, filterMainStatKey, filterStars, filterLevelLow, filterLevelHigh, filterSubstats = initialFilter().filterSubstats, maxNumArtifactsToDisplay, filterLocation = "", filterLocked = "", sortType = sortKeys[0], ascending = false } = filters
 

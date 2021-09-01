@@ -26,7 +26,8 @@ const baseAlbedo: ICharacter = {
     auto: 1, skill: 1, burst: 1,
   },
   infusionAura: "",
-  constellation: 0
+  constellation: 0,
+  equippedWeapon: "",
 } as const
 const baseAmber: ICharacter = {
   characterKey: "amber",
@@ -37,6 +38,8 @@ const baseAmber: ICharacter = {
   conditionalValues: {},
   baseStatOverrides: {},
   weapon: {
+    id: "",
+    location: "amber",
     key: "SkywardHarp",
     level: 10,
     refineIndex: 1,
@@ -46,7 +49,8 @@ const baseAmber: ICharacter = {
     auto: 1, skill: 1, burst: 1,
   },
   infusionAura: "",
-  constellation: 0
+  constellation: 0,
+  equippedWeapon: "",
 } as const
 
 describe("Database", () => {
@@ -65,6 +69,7 @@ describe("Database", () => {
     // Not empty, yet
     expect(database.arts.data).not.toEqual({})
     expect(database.chars.data).not.toEqual({})
+    expect(database.weapons.data).not.toEqual({})
 
     // Empty, now
     dbStorage.clear()
@@ -77,6 +82,7 @@ describe("Database", () => {
     database.reloadStorage()
     expect(database._getArts().length).toEqual(149)
     expect(database._getCharKeys().length).toEqual(2)
+    expect(database.weapons.keys.length).toEqual(2)
   })
   test("Support roundtrip import-export", () => {
     dbStorage.copyFrom(importDB(data1)!.storage)
@@ -89,6 +95,7 @@ describe("Database", () => {
     database.reloadStorage()
     expect(database.arts.data).toEqual({})
     expect(database.chars.data).toEqual({})
+    expect(database.weapons.data).toEqual({})
 
     dbStorage.copyFrom(importDB(data1)!.storage)
     database.reloadStorage()
@@ -98,35 +105,35 @@ describe("Database", () => {
   test("Does not crash from invalid storage", () => {
     function tryStorage(setup: (storage: Storage) => void, verify: (storage: Storage) => void = () => { }) {
       localStorage.clear()
-      // @ts-ignore use private constructor
+      setup(localStorage)
       new ArtCharDatabase(dbStorage)
       verify(localStorage)
     }
 
     tryStorage(storage => {
       storage.char_x = "{ test: \"test\" }"
-      storage.art_x = "{}"
+      storage.artifact_x = "{}"
     }, storage => {
-      expect(localStorage.getItem("char_x")).toBeNull()
+      expect(storage.getItem("char_x")).toBeNull()
     })
     for (let i = 2; i < 5; i++) {
       tryStorage(storage => {
         storage.db_ver = `${i}`
-        storage.char_x = "{ test: \"test\" }"
-        storage.art_x = "{}"
+        storage.char_x = "{ \"test\": \"test\" }"
+        storage.artifact_x = "{}"
         expect(storage.getItem("char_x")).not.toBeNull()
       }, storage => {
         expect(storage.getItem("char_x")).toBeNull()
-        expect(storage.getItem("art_x")).toBeNull()
+        expect(storage.getItem("artifact_x")).toBeNull()
       })
     }
     tryStorage(storage => {
       storage.char_x = "{ test: \"test\" }"
-      storage.art_x = "{}"
+      storage.artifact_x = "{}"
       expect(storage.getItem("char_x")).not.toBeNull()
     }, storage => {
       expect(storage.getItem("char_x")).toBeNull()
-      expect(storage.getItem("art_x")).toBeNull()
+      expect(storage.getItem("artifact_x")).toBeNull()
     })
   })
   test("Support basic operations", async () => {

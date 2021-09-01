@@ -37,7 +37,7 @@ describe('Character.getDisplayStatKeys()', () => {
     expect(characterSheet).toBeInstanceOf(CharacterSheet)
     expect(weaponSheet).toBeInstanceOf(WeaponSheet)
     if (!characterSheet || !weaponSheet || !artifactSheets) return
-    const initialStats = Character.createInitialStats(character, characterSheet, weaponSheet)
+    const initialStats = Character.createInitialStats(character, database, characterSheet, weaponSheet)
     const keys = Character.getDisplayStatKeys(initialStats, { characterSheet, weaponSheet, artifactSheets })
     expect(keys).toHaveProperty("talentKey_auto")
   })

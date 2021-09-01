@@ -1,6 +1,6 @@
 import { faCheckSquare, faSortAmountDownAlt, faSortAmountUp, faSquare, faTimes, faTrash, faUndo } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { lazy, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import React, { lazy, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { Alert, Badge, Button, ButtonGroup, Card, Col, Container, Dropdown, DropdownButton, Image, InputGroup, ListGroup, Modal, OverlayTrigger, ProgressBar, Row, Tooltip } from 'react-bootstrap';
 import ReactGA from 'react-ga';
 // eslint-disable-next-line
@@ -20,7 +20,7 @@ import CustomFormControl from '../Components/CustomFormControl';
 import InfoComponent from '../Components/InfoComponent';
 import { Stars } from '../Components/StarDisplay';
 import StatIcon from '../Components/StatIcon';
-import { database } from '../Database/Database';
+import { DatabaseContext } from '../Database/Database';
 import { dbStorage } from '../Database/DBStorage';
 import Formula from '../Formula';
 import Stat from '../Stat';
@@ -71,6 +71,7 @@ function buildSettingsReducer(state: BuildSetting, action): BuildSetting {
 }
 
 export default function BuildDisplay({ location: { characterKey: propCharacterKey } }) {
+  const database = useContext(DatabaseContext)
   const [characterKey, setcharacterKey] = useState(() => {
     const { characterKey = "" } = dbStorage.get("BuildsDisplay.state") ?? {}
     //NOTE that propCharacterKey can override the selected character.
@@ -111,7 +112,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     if (!character) return
     character.buildSettings = buildSettingsReducer(buildSettings, action)
     database.updateChar(character)
-  }, [character, buildSettings])
+  }, [character, buildSettings, database])
 
   useEffect(() => ReactGA.pageview('/build'), [])
 
@@ -135,22 +136,22 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
       if (!weapon) return
       const weaponSheet = await WeaponSheet.get(weapon.key)
       if (!characterSheet || !weaponSheet) return
-      const initialStats = Character.createInitialStats(character, characterSheet, weaponSheet)
+      const initialStats = Character.createInitialStats(character, database, characterSheet, weaponSheet)
       //NOTE: since initialStats are used, there are no inclusion of artifact formulas here.
       const statsDisplayKeys = Character.getDisplayStatKeys(initialStats, { characterSheet, weaponSheet, artifactSheets })
       setCharacterData({ character, characterSheet, weaponSheet, initialStats, statsDisplayKeys })
     })()
-  }, [charDirty, characterKey, artifactSheets, selectCharacter])
+  }, [charDirty, characterKey, artifactSheets, database, selectCharacter])
 
   //register changes in artifact database
   useEffect(() =>
     database.followAnyArt(setArtsDirty),
-    [setArtsDirty])
+    [setArtsDirty, database])
 
   //register changes in character in db
   useEffect(() =>
     characterKey ? database.followChar(characterKey, setCharDirty) : undefined,
-    [characterKey, setCharDirty])
+    [characterKey, setCharDirty, database])
 
   //terminate worker when component unmounts
   useEffect(() => () => worker.current?.terminate(), [])
@@ -190,7 +191,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
       mainStatKeys[slotKey].length && (split[slotKey] = split[slotKey]?.filter((art) => mainStatKeys[slotKey].includes(art.mainStatKey))))
     const totBuildNumber = calculateTotalBuildNumber(split, setFilters)
     return artsDirty && { split, totBuildNumber }
-  }, [characterKey, useLockedArts, useEquippedArts, mainStatKeys, setFilters, artsDirty])
+  }, [characterKey, useLockedArts, useEquippedArts, mainStatKeys, setFilters, artsDirty, database])
 
   const generateBuilds = useCallback(() => {
     if (!initialStats || !artifactSheets) return
@@ -293,7 +294,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     return count
   }, [initialStats?.conditionalValues])
   //rudimentary dispatcher, definitely not the same API as the real characterDispatch.
-  const characterDispatch = useCallback(val => database.updateChar({ ...character, ...val }), [character])
+  const characterDispatch = useCallback(val => database.updateChar({ ...character, ...val }), [character, database])
   return <Container className="mt-2">
     <InfoComponent
       pageKey="buildPage"
@@ -640,9 +641,10 @@ function StatFilterItem({ statKey, statKeys = [], min, max, close, setFilter }: 
 }
 
 function HitModeCard({ characterSheet, character, build, className }: { characterSheet: CharacterSheet, character: ICharacter, build: ICalculatedStats, className: string }) {
-  const setHitmode = useCallback(({ hitMode }) => database.updateChar({ ...character, hitMode }), [character])
-  const setReactionMode = useCallback(({ reactionMode }) => database.updateChar({ ...character, reactionMode }), [character])
-  const setInfusionAura = useCallback(({ infusionAura }) => database.updateChar({ ...character, infusionAura }), [character])
+  const database = useContext(DatabaseContext)
+  const setHitmode = useCallback(({ hitMode }) => database.updateChar({ ...character, hitMode }), [character, database])
+  const setReactionMode = useCallback(({ reactionMode }) => database.updateChar({ ...character, reactionMode }), [character, database])
+  const setInfusionAura = useCallback(({ infusionAura }) => database.updateChar({ ...character, infusionAura }), [character, database])
   if (!character) return null
   return <Card bg="lightcontent" text={"lightfont" as any} className={className}>
     <Card.Header>
@@ -693,6 +695,7 @@ type ArtifactDisplayItemProps = {
 }
 //for displaying each artifact build
 function ArtifactDisplayItem({ sheets, sheets: { artifactSheets }, index, characterKey, build, statsDisplayKeys, onClick }: ArtifactDisplayItemProps) {
+  const database = useContext(DatabaseContext)
   const character = database._getChar(characterKey)
   if (!character) return null
   const { equippedArtifacts } = character

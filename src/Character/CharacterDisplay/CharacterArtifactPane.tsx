@@ -1,10 +1,10 @@
-import { useCallback, useEffect, useMemo } from 'react';
+import { useCallback, useContext, useEffect, useMemo } from 'react';
 import { Alert, Button, Card, Col, Row } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import ArtifactCard from '../../Artifact/ArtifactCard';
 import { ArtifactSheet } from '../../Artifact/ArtifactSheet';
 import SetEffectDisplay from '../../Artifact/Component/SetEffectDisplay';
-import { database } from '../../Database/Database';
+import { DatabaseContext } from '../../Database/Database';
 import { ICharacter } from '../../Types/character';
 import { allSlotKeys, ArtifactSetKey, SlotKey } from '../../Types/consts';
 import { ICalculatedStats } from '../../Types/stats';
@@ -30,6 +30,7 @@ type CharacterArtifactPaneProps = {
   artifacts?: any[]
 }
 function CharacterArtifactPane({ sheets, character, character: { characterKey }, equippedBuild, newBuild, editable, characterDispatch, artifacts }: CharacterArtifactPaneProps) {
+  const database = useContext(DatabaseContext)
   const history = useHistory()
   //choose which one to display stats for
   const stats = (newBuild ? newBuild : equippedBuild)
@@ -50,12 +51,12 @@ function CharacterArtifactPane({ sheets, character, character: { characterKey },
     if (!window.confirm("Do you want to equip this artifact build to this character?")) return
     if (!newBuild) return
     newBuild.equippedArtifacts && database.equipArtifacts(characterKey, newBuild.equippedArtifacts)
-  }, [characterKey, newBuild])
+  }, [characterKey, newBuild, database])
 
   const unequipArts = useCallback(() => {
     if (!window.confirm("Do you want to move all the artifacts equipped to inventory?")) return
     database.equipArtifacts(characterKey, Object.fromEntries(allSlotKeys.map(sKey => [sKey, ""])) as StrictDict<SlotKey, string>)
-  }, [characterKey])
+  }, [characterKey, database])
   if (!stats) return null
   return <>
     <Card className="h-100 mb-2" bg="lightcontent" text={"lightfont" as any}>

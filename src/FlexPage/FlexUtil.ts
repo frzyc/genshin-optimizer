@@ -1,4 +1,4 @@
-import { database } from "../Database/Database";
+import { ArtCharDatabase } from "../Database/Database";
 import { validateFlexArtifact, validateFlexCharacter } from "../Database/validation";
 import { IArtifact, IFlexArtifact } from "../Types/artifact";
 import { ICharacter, IFlexCharacter } from "../Types/character";
@@ -6,7 +6,7 @@ import { CharacterKey } from "../Types/consts";
 import { decode, encode } from "./CodingUtil";
 import { schemas } from "./Schemas";
 
-export function createFlexObj(characterKey: CharacterKey) {
+export function createFlexObj(characterKey: CharacterKey, database: ArtCharDatabase) {
   const character = database._getChar(characterKey)
   if (!character) return null
 
@@ -49,6 +49,9 @@ function parseFlexObjFromSchema(string: string, schema: any) {
   const decoded = decode(string, schema) as { character: IFlexCharacter, artifacts: IFlexArtifact[] }
   const character = validateFlexCharacter(decoded.character)
   const artifacts = decoded.artifacts.map((art, i) => validateFlexArtifact(art, ``).artifact)
+
+  character.weapon!.id = ""
+  character.weapon!.location = character.characterKey
 
   artifacts.forEach(artifact => {
     artifact.location = character.characterKey

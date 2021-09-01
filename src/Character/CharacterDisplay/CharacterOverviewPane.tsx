@@ -59,7 +59,7 @@ export default function CharacterOverviewPane({ characterSheet, weaponSheet, edi
       </Card>
     </Col>
     <Col xs={12} md={9} >
-      <WeaponDisplayCard {...{ editable, weaponId: character.equippedWeapon }} />
+      <WeaponDisplayCard {...{ editable, weaponId: character.equippedWeapon, weapon: character.weapon }} />
       <MainStatsCards {...{ characterSheet, weaponSheet, editable, character, characterDispatch, equippedBuild, newBuild }} />
     </Col>
   </Row >

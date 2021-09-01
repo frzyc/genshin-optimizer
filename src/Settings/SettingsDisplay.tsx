@@ -1,10 +1,10 @@
 import { faCheckSquare, faClipboard, faFileDownload, faFileUpload, faQuestionCircle, faSquare, faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { useMemo, useState } from "react"
+import { useContext, useMemo, useState } from "react"
 import { Alert, Badge, Button, Card, Col, Container, Dropdown, Form, OverlayTrigger, Popover, Row } from "react-bootstrap"
 import ReactGA from 'react-ga'
 import { Trans, useTranslation } from "react-i18next"
-import { database } from "../Database/Database"
+import { ArtCharDatabase, DatabaseContext } from "../Database/Database"
 import { DBStorage, dbStorage } from '../Database/DBStorage'
 import { exportDB, importDB } from '../Database/exim/dbJSON'
 import { importMona } from '../Database/exim/mona'
@@ -83,7 +83,7 @@ function download(JSONstr: string, filename = "data.json") {
   }
 }
 
-function deleteDatabase(t) {
+function deleteDatabase(t, database: ArtCharDatabase) {
   if (!window.confirm(t("uploadCard.goUpload.deleteDatabasePrompt"))) return
   dbStorage.clear()
   database.reloadStorage()
@@ -93,12 +93,13 @@ function copyToClipboard() {
   alert("Copied database to clipboard.")
 }
 function DownloadCard({ forceUpdate }) {
+  const database = useContext(DatabaseContext)
   const { t } = useTranslation(["settings"]);
   const numChar = database._getCharKeys().length
   const numArt = database._getArts().length
   const downloadValid = Boolean(numChar || numArt)
   const deleteDB = () => {
-    deleteDatabase(t);
+    deleteDatabase(t, database);
     forceUpdate()
   }
   return <Card bg="lightcontent" text={"lightfont" as any} className="mb-3">
@@ -119,6 +120,7 @@ function DownloadCard({ forceUpdate }) {
 }
 
 function UploadCard({ forceUpdate }) {
+  const database = useContext(DatabaseContext)
   const { t } = useTranslation("settings");
   const [data, setdata] = useState("")
   const [filename, setfilename] = useState("")
@@ -156,7 +158,7 @@ function UploadCard({ forceUpdate }) {
     }
     setErrorMsg("uploadCard.error.unknown")
     return
-  }, [data])
+  }, [data, database])
 
   const reset = () => {
     setdata("")
@@ -206,6 +208,7 @@ function GOUploadInfo({ data: { charCount, artCount, migrated } }: { data: GOUpl
 
 }
 function GOUploadAction({ data: { storage, charCount, artCount }, reset }: { data: GOUploadData, reset: () => void }) {
+  const database = useContext(DatabaseContext)
   const { t } = useTranslation("settings")
   const dataValid = charCount || artCount
   const replaceDB = () => {
@@ -236,6 +239,7 @@ function MonaUploadInfo({ data: { totalCount, newCount, upgradeCount, dupCount, 
   </Card>
 }
 function MonaUploadAction({ data: { storage, oldIds, }, reset }: { data: MonaUploadData, reset: () => void }) {
+  const database = useContext(DatabaseContext)
   const { t } = useTranslation("settings")
   const [deleteExistingArtifacts, setDeleteExistingArtifacts] = useState(false);
 

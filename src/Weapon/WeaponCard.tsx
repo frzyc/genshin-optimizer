@@ -1,12 +1,12 @@
 import { faEdit, faTrashAlt } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { Button, Card, Col, Image, Row } from "react-bootstrap"
 import Assets from "../Assets/Assets"
 import EquipmentDropdown from "../Components/EquipmentDropdown"
 import { Stars } from "../Components/StarDisplay"
 import StatIcon from "../Components/StatIcon"
-import { database } from "../Database/Database"
+import { DatabaseContext } from "../Database/Database"
 import Stat from "../Stat"
 import { CharacterKey } from "../Types/consts"
 import { IWeapon } from "../Types/weapon"
@@ -15,10 +15,11 @@ import WeaponSheet from "./WeaponSheet"
 
 type CharacterCardProps = { weaponId: string, onEdit?: (weaponId: string) => void, onClick?: (weaponId: string) => void, onDelete?: (weaponId: string) => void, cardClassName: string, bg?: string, footer?: boolean, editable?: boolean }
 export default function WeaponCard({ weaponId, onEdit, onDelete, onClick, cardClassName = "", bg = "", footer = false, editable = false }: CharacterCardProps) {
+  const database = useContext(DatabaseContext)
   const [databaseWeapon, updateDatabaseWeapon] = useState(undefined as IWeapon | undefined)
   useEffect(() =>
     weaponId ? database.followWeapon(weaponId, updateDatabaseWeapon) : undefined,
-    [weaponId, updateDatabaseWeapon])
+    [weaponId, updateDatabaseWeapon, database])
 
   const weapon = databaseWeapon
   const weaponSheet = usePromise(weapon?.key && WeaponSheet.get(weapon.key), [weapon?.key])

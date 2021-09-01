@@ -1,11 +1,11 @@
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import i18next from 'i18next';
-import React, { lazy, useCallback, useEffect, useReducer, useRef, useState } from 'react';
+import React, { lazy, useCallback, useContext, useEffect, useReducer, useRef, useState } from 'react';
 import { Button, ButtonGroup, Card, Col, Container, Image, Row, ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
 import ReactGA from 'react-ga';
 import Assets from '../Assets/Assets';
-import { database } from '../Database/Database';
+import { DatabaseContext } from '../Database/Database';
 import { dbStorage } from '../Database/DBStorage';
 import { allWeaponTypeKeys, CharacterKey } from '../Types/consts';
 import { useForceUpdate, usePromise } from '../Util/ReactUtil';
@@ -28,6 +28,7 @@ function filterReducer(oldFilter, newFilter) {
 }
 
 export default function WeaponDisplay(props) {
+  const database = useContext(DatabaseContext)
   const [weaponIdToEdit, setWeaponIdToEdit] = useState("" as CharacterKey | "")
   const [sortBy, setsortBy] = useState(() => Object.keys(toggle)[0])
   const [weaponFilter, weaponFilterDispatch] = useReducer(filterReducer, "")
@@ -44,7 +45,7 @@ export default function WeaponDisplay(props) {
       allWeaponTypeKeys.includes(weaponFilter) && weaponFilterDispatch(weaponFilter)
     }
     return database.followAnyWeapon(forceUpdate)
-  }, [forceUpdate])
+  }, [forceUpdate, database])
   const allWeaponSheets = usePromise(WeaponSheet.getAll(), []) ?? {}
   const sortingFunc = {
     level: (wKey) => database._getWeapon(wKey)?.level ?? 0,
@@ -63,7 +64,7 @@ export default function WeaponDisplay(props) {
     database.removeWeapon(key)
     if (weaponIdToEdit === key)
       setWeaponIdToEdit("")
-  }, [weaponIdToEdit, setWeaponIdToEdit])
+  }, [weaponIdToEdit, setWeaponIdToEdit, database])
 
   const editCharacter = useCallback(key => {
     setWeaponIdToEdit(key)

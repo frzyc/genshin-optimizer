@@ -1,8 +1,10 @@
+import { IFlexArtifact } from "./artifact";
 import { BuildSetting } from "./Build";
 import { CharacterKey, ElementKey, HitModeKey, ReactionModeKey, SlotKey, WeaponTypeKey } from "./consts";
 import IConditional, { IConditionals } from "./IConditional";
 import { IFieldDisplay } from "./IFieldDisplay";
 import { BasicStats, ICalculatedStats } from "./stats";
+import { IWeapon } from "./weapon"
 
 interface ICharacterSheetBase {
   name: Displayable,
@@ -53,12 +55,6 @@ export interface IFlexCharacter {
   reactionMode: ReactionModeKey | null
   conditionalValues: any,
   baseStatOverrides: object, //overriding the baseStat
-  weapon?: { // Caution: Use this only for flex data, otherwise, load the db from `equippedWeapon` instead
-    key: WeaponKey
-    level: number,
-    ascension: number,
-    refineIndex: number
-  },
   talentLevelKeys: {
     auto: number
     skill: number
@@ -71,7 +67,10 @@ export interface IFlexCharacter {
 export interface ICharacter extends IFlexCharacter {
   equippedArtifacts: StrictDict<SlotKey, string>,
   equippedWeapon: string,
-  artifacts?: any[] //from flex TODO: type
+
+  // Caution: Use these only for flex data, otherwise, load data from the db instead
+  weapon?: IFlexWeapon,
+  artifacts?: IFlexArtifact[]
 }
 
 export type TalentSheet = {

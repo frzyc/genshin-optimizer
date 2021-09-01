@@ -1,14 +1,14 @@
 import { faLink, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import i18next from 'i18next';
-import React, { lazy, useCallback, useEffect, useReducer, useRef, useState } from 'react';
+import React, { lazy, useCallback, useContext, useEffect, useReducer, useRef, useState } from 'react';
 import { Button, ButtonGroup, Card, Col, Container, Image, Row, Spinner, ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
 import ReactGA from 'react-ga';
 import { Link } from 'react-router-dom';
 import Assets from '../Assets/Assets';
 import InfoComponent from '../Components/InfoComponent';
 import { uncoloredEleIcons } from '../Components/StatIcon';
-import { database } from '../Database/Database';
+import { DatabaseContext } from '../Database/Database';
 import { dbStorage } from '../Database/DBStorage';
 import { allElements, allWeaponTypeKeys, CharacterKey } from '../Types/consts';
 import { useForceUpdate, usePromise } from '../Util/ReactUtil';
@@ -31,6 +31,7 @@ function filterReducer(oldFilter, newFilter) {
 }
 
 export default function CharacterDisplay(props) {
+  const database = useContext(DatabaseContext)
   const [charIdToEdit, setcharIdToEdit] = useState("" as CharacterKey | "")
   const [sortBy, setsortBy] = useState(() => Object.keys(toggle)[0])
   const [elementalFilter, elementalFilterDispatch] = useReducer(filterReducer, "")
@@ -49,7 +50,7 @@ export default function CharacterDisplay(props) {
       allWeaponTypeKeys.includes(weaponFilter) && weaponFilterDispatch(weaponFilter)
     }
     return database.followAnyChar(forceUpdate)
-  }, [forceUpdate])
+  }, [forceUpdate, database])
   const allCharacterSheets = usePromise(CharacterSheet.getAll(), []) ?? {}
   const sortingFunc = {
     level: (ck) => database._getChar(ck)?.level ?? 0,
@@ -70,7 +71,7 @@ export default function CharacterDisplay(props) {
     database.removeChar(id)
     if (charIdToEdit === id)
       setcharIdToEdit("")
-  }, [charIdToEdit, setcharIdToEdit])
+  }, [charIdToEdit, setcharIdToEdit, database])
 
   const editCharacter = useCallback(id => {
     setcharIdToEdit(id)

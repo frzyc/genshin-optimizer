@@ -1,11 +1,11 @@
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useCallback, useEffect, useMemo, useReducer } from 'react';
+import { useCallback, useContext, useEffect, useMemo, useReducer } from 'react';
 import { Alert, Badge, Button, ButtonGroup, Card, Col, Dropdown, DropdownButton, FormControl, InputGroup, OverlayTrigger, Popover, Row } from 'react-bootstrap';
 import { Trans, useTranslation } from 'react-i18next';
 import CustomFormControl from '../Components/CustomFormControl';
 import { Stars } from '../Components/StarDisplay';
-import { database } from '../Database/Database';
+import { DatabaseContext } from '../Database/Database';
 import { validateFlexArtifact } from '../Database/validation';
 import Stat from '../Stat';
 import { allSubstats, IArtifact, IFlexArtifact, IFlexSubstat } from '../Types/artifact';
@@ -29,6 +29,7 @@ const allSubstatFilter = new Set(allSubstats)
 let uploadDisplayReset: (() => void) | undefined
 export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: ArtifactEditorArgument) {
   const { t } = useTranslation("artifact")
+  const database = useContext(DatabaseContext)
   const [flexArtifact, artifactDispatch] = useReducer(artifactReducer, undefined)
   const artifactSheets = usePromise(ArtifactSheet.getAll(), [])
 
@@ -43,7 +44,7 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: Artifac
     const databaseArtifact = database._getArt(artifactIdToEdit)
     if (databaseArtifact)
       artifactDispatch({ type: "overwrite", artifact: deepClone(databaseArtifact) })
-  }, [artifactIdToEdit])
+  }, [artifactIdToEdit, database])
 
   const getUpdloadDisplayReset = (reset: () => void) => uploadDisplayReset = reset
 
@@ -85,7 +86,7 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: Artifac
     if (artifact === undefined || artifact.id) return { isDup: false }
     const { duplicated, upgraded } = database.findDuplicates(artifact)
     return { dupId: duplicated[0] ?? upgraded[0], isDup: duplicated.length !== 0 }
-  }, [artifact])
+  }, [artifact, database])
   const { numStars = 5, level = 0, slotKey = "flower" } = artifact ?? {}
   const { currentEfficiency = 0, maxEfficiency = 0 } = artifact ? Artifact.getArtifactEfficiency(artifact, allSubstatFilter) : {}
   return <Card bg="darkcontent" text={"lightfont" as any}>
@@ -235,12 +236,12 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: Artifac
         </Col>}
       </Row></Card.Body>
     <Card.Footer>
-      <Button className="mr-2" onClick={() => { saveArtifact(artifact!, artifact!.id); reset() }} disabled={!isValid} variant={dupId ? "warning" : "primary"}>
+      <Button className="mr-2" onClick={() => { database.updateArt(artifact!); reset() }} disabled={!isValid} variant={dupId ? "warning" : "primary"}>
         {artifact?.id ? t`editor.btnSave` : t`editor.btnAdd`}
       </Button>
       <Button className="mr-2" disabled={!artifactInEditor} onClick={() => { canClearArtifact() && reset() }} variant="success">{t`editor.btnClear`}</Button>
       {process.env.NODE_ENV === "development" && <Button variant="info" onClick={async () => artifactDispatch({ type: "overwrite", artifact: await randomizeArtifact() })}>{t`editor.btnRandom`}</Button>}
-      {Boolean(dupId) && <Button className="float-right" onClick={() => { saveArtifact(artifact!, dupId); reset() }} disabled={!isValid} variant="success">{t`editor.btnUpdate`}</Button>}
+      {Boolean(dupId) && <Button className="float-right" onClick={() => { database.updateArt({ ...artifact!, id: dupId ?? "" }); reset() }} disabled={!isValid} variant="success">{t`editor.btnUpdate`}</Button>}
     </Card.Footer>
   </Card >
 }
@@ -339,9 +340,4 @@ export function artifactReducer(state: IFlexArtifact | undefined, action: Messag
     case "overwrite": return action.artifact
     case "update": return { ...state!, ...action.artifact }
   }
-}
-
-const saveArtifact = (artifact: IArtifact, id: string | undefined) => {
-  artifact.id = id ?? ""
-  database.updateArt(artifact)
 }

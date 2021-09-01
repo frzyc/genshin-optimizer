@@ -1,6 +1,6 @@
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { createContext, useCallback, useEffect, useMemo, useState } from 'react';
+import React, { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import { Alert, ButtonGroup, Dropdown, Image, InputGroup, Nav, Tab } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
@@ -12,7 +12,7 @@ import { initialBuildSettings } from '../Build/BuildSetting';
 import CustomFormControl from '../Components/CustomFormControl';
 import { ascensionMaxLevel, milestoneLevels } from '../Data/CharacterData';
 import ElementalData from '../Data/ElementalData';
-import { database } from '../Database/Database';
+import { DatabaseContext } from '../Database/Database';
 import { ICharacter } from '../Types/character';
 import { allCharacterKeys, allSlotKeys, CharacterKey } from '../Types/consts';
 import { ICalculatedStats } from '../Types/stats';
@@ -87,6 +87,7 @@ type CharacterDisplayCardProps = {
   tabName?: string
 }
 export default function CharacterDisplayCard({ characterKey: propCharacterKey, character: propCharacter, setCharacterKey = () => { }, footer, newBuild: propNewBuild, editable = false, onClose, tabName }: CharacterDisplayCardProps) {
+  const database = useContext(DatabaseContext)
   const [compareAgainstEquipped, setcompareAgainstEquipped] = useState(false)
   // Use databaseToken anywhere `database._get*` is used
   // Use onDatabaseUpdate when `following` database entries
@@ -101,10 +102,10 @@ export default function CharacterDisplayCard({ characterKey: propCharacterKey, c
   const characterKey = propCharacterKey || propCharacter!.characterKey
   const character = useMemo(() =>
     databaseToken && (propCharacter ?? database._getChar(characterKey) ?? initialCharacter(characterKey)),
-    [propCharacter, characterKey, databaseToken])
+    [propCharacter, characterKey, databaseToken, database])
   const weapon = useMemo(() =>
     databaseToken && (propCharacter?.weapon ?? database._getWeapon(character.equippedWeapon)),
-    [character.equippedWeapon, propCharacter?.weapon, databaseToken])
+    [character.equippedWeapon, propCharacter?.weapon, databaseToken, database])
 
   const characterSheet = characterSheets?.[characterKey]
   const weaponSheet = weapon ? weaponSheets?.[weapon.key] : undefined
@@ -131,11 +132,11 @@ export default function CharacterDisplayCard({ characterKey: propCharacterKey, c
       }
     } else
       database.updateChar({ ...database._getChar(characterKey)!, ...action }) // TODO: Validate this
-  }, [propCharacterKey, characterSheet, weaponSheet])
+  }, [propCharacterKey, characterSheet, weaponSheet, database])
 
   useEffect(() => {
     return propCharacterKey ? database.followChar(propCharacterKey, onDatabaseUpdate) : undefined
-  }, [propCharacterKey, onDatabaseUpdate])
+  }, [propCharacterKey, onDatabaseUpdate, database])
 
   useEffect(() => {
     if (!propCharacterKey) return // Don't do anything to flex weapon
@@ -146,7 +147,7 @@ export default function CharacterDisplayCard({ characterKey: propCharacterKey, c
 
     const newWeapon: IWeapon = initialWeapon(characterSheet.weaponTypeKey)
     characterDispatch({ type: "weapon", id: database.updateWeapon(newWeapon) })
-  }, [propCharacterKey, character.equippedWeapon, weaponSheets, characterSheet?.weaponTypeKey, characterDispatch, onDatabaseUpdate])
+  }, [propCharacterKey, character.equippedWeapon, weaponSheets, characterSheet?.weaponTypeKey, characterDispatch, onDatabaseUpdate, database])
 
   const newBuild = useMemo(() => {
     if (!propNewBuild) return
@@ -159,7 +160,7 @@ export default function CharacterDisplayCard({ characterKey: propCharacterKey, c
   const flexArts = character.artifacts
 
   const mainStatAssumptionLevel = newBuild?.mainStatAssumptionLevel ?? 0
-  const equippedBuild = useMemo(() => characterSheet && weaponSheet && artifactSheets && Character.calculateBuild(character, characterSheet, weaponSheet, artifactSheets, mainStatAssumptionLevel), [character, characterSheet, weaponSheet, artifactSheets, mainStatAssumptionLevel])
+  const equippedBuild = useMemo(() => characterSheet && weaponSheet && artifactSheets && Character.calculateBuild(character, database, characterSheet, weaponSheet, artifactSheets, mainStatAssumptionLevel), [character, characterSheet, weaponSheet, artifactSheets, mainStatAssumptionLevel, database])
   const commonPaneProps = { character, newBuild, equippedBuild: (!newBuild || compareAgainstEquipped) ? equippedBuild : undefined, editable, characterDispatch, compareAgainstEquipped }
   if (flexArts) (commonPaneProps as any).artifacts = flexArts // from flex
   // main CharacterDisplayCard

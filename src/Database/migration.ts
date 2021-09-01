@@ -116,6 +116,7 @@ function migrateV5ToV6(storage: DBStorage) {
       const character = storage.get(key)
 
       //migrate character weapon levels
+      if (!character.weapon) continue
       const levelKey = character.weapon.levelKey ?? "L1"
       const [, lvla] = levelKey.split("L")
       const level = parseInt(lvla)

@@ -3,7 +3,7 @@ import { ArtifactSheet } from "../Artifact/ArtifactSheet";
 import Conditional from "../Conditional/Conditional";
 import { ascensionMaxLevel, characterStatBase } from "../Data/CharacterData";
 import ElementalData from "../Data/ElementalData";
-import { database } from "../Database/Database";
+import { ArtCharDatabase } from "../Database/Database";
 import { ElementToReactionKeys, PreprocessFormulas } from "../StatData";
 import { GetDependencies } from "../StatDependency";
 import { IArtifact } from "../Types/artifact";
@@ -52,13 +52,13 @@ export default class Character {
     else return Character.getBaseStatValue(character, characterSheet, weaponSheet, statKey)
   }
 
-  static calculateBuild = (character: ICharacter, characterSheet: CharacterSheet, weaponSheet: WeaponSheet, artifactSheets: StrictDict<ArtifactSetKey, ArtifactSheet>, mainStatAssumptionLevel = 0): ICalculatedStats => {
+  static calculateBuild = (character: ICharacter, database: ArtCharDatabase, characterSheet: CharacterSheet, weaponSheet: WeaponSheet, artifactSheets: StrictDict<ArtifactSetKey, ArtifactSheet>, mainStatAssumptionLevel = 0): ICalculatedStats => {
     let artifacts
     if (character.artifacts) // from flex
       artifacts = Object.fromEntries(character.artifacts.map((art, i) => [i, art]))
     else if (character.equippedArtifacts)
       artifacts = Object.fromEntries(Object.entries(character.equippedArtifacts).map(([key, artid]) => [key, database._getArt(artid)]))
-    const initialStats = Character.createInitialStats(character, characterSheet, weaponSheet)
+    const initialStats = Character.createInitialStats(character, database, characterSheet, weaponSheet)
     initialStats.mainStatAssumptionLevel = mainStatAssumptionLevel
     return Character.calculateBuildwithArtifact(initialStats, artifacts, artifactSheets)
   }
@@ -94,7 +94,7 @@ export default class Character {
     return { ...stats, ...preprocessedStats }
   }
 
-  static createInitialStats = (character: ICharacter, characterSheet: CharacterSheet, weaponSheet: WeaponSheet): ICalculatedStats => {
+  static createInitialStats = (character: ICharacter, database: ArtCharDatabase, characterSheet: CharacterSheet, weaponSheet: WeaponSheet): ICalculatedStats => {
     character = deepClone(character)
     const { characterKey, elementKey, level, ascension, hitMode, infusionAura, reactionMode, talentLevelKeys, constellation, equippedArtifacts, conditionalValues = {}, equippedWeapon } = character
     const weapon = database._getWeapon(equippedWeapon) ?? initialWeapon(characterSheet.weaponTypeKey) // need to ensure all characters have a weapon

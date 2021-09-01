@@ -5,10 +5,12 @@ import '../StatDependency'
 import { createFlexObj, parseFlexObj, _createFlexObj } from "./FlexUtil";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLink } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { DatabaseContext } from "../Database/Database";
 
 export default function TestDisplay() {
   const location = useLocation()
+  const database = useContext(DatabaseContext)
   const searchStr = location.search
   if (searchStr) {
     const flexResult = parseFlexObj(searchStr.substring(1))
@@ -21,7 +23,7 @@ export default function TestDisplay() {
   } else {
     const characterKey = (location as any).characterKey
     if (!characterKey) return <Redirect to={`/`} />
-    const flexObj = createFlexObj(characterKey)
+    const flexObj = createFlexObj(characterKey, database)
     if (!flexObj) return <Redirect to={`/`} />
     window.scrollTo(0, 0)//sometimes the window isnt scrolled to the top on redirect.
     return <Redirect to={`/flex?${flexObj}`} />

@@ -1,6 +1,6 @@
 import { faExchangeAlt, faTimes } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import React, { useCallback, useEffect, useMemo, useState } from "react"
+import { useCallback, useContext, useEffect, useMemo, useState } from "react"
 import { Badge, Button, ButtonGroup, Card, Col, Dropdown, Image, InputGroup, Modal, Row } from "react-bootstrap"
 import Assets from "../Assets/Assets"
 import CustomFormControl from "../Components/CustomFormControl"
@@ -8,7 +8,7 @@ import DocumentDisplay from "../Components/DocumentDisplay"
 import EquipmentDropdown from "../Components/EquipmentDropdown"
 import { Stars } from "../Components/StarDisplay"
 import { ascensionMaxLevel, milestoneLevels } from "../Data/CharacterData"
-import { database } from "../Database/Database"
+import { DatabaseContext } from "../Database/Database"
 import { ICharacter } from "../Types/character"
 import { ICalculatedStats } from "../Types/stats"
 import { IWeapon } from "../Types/weapon"
@@ -19,8 +19,8 @@ import WeaponSheet from "./WeaponSheet"
 import WeaponStatsCard from "./WeaponStatsCard"
 
 type WeaponStatsEditorCardProps = {
-  weaponId?: string
-  weapon?: IWeapon
+  weaponId?: string | undefined
+  weapon?: IWeapon | undefined
   editable?: boolean
   footer?: boolean
   onClose?: () => void
@@ -32,29 +32,29 @@ export default function WeaponDisplayCard({
   footer = false,
   onClose
 }: WeaponStatsEditorCardProps) {
-  console.log("here")
+  const database = useContext(DatabaseContext)
   // Use databaseToken anywhere `database._get*` is used
   // Use onDatabaseUpdate when `following` database entries
   const [databaseToken, onDatabaseUpdate] = useForceUpdate()
 
-  const weaponId = propWeaponId || propWeapon!.id
   const weapon = useMemo(() =>
     databaseToken && (propWeapon ?? database._getWeapon(propWeaponId!)!),
-    [propWeapon, propWeaponId, databaseToken])
-  const { key, level, refineIndex, location, ascension, id } = weapon
+    [propWeapon, propWeaponId, databaseToken, database])
+  const { key, level, refineIndex, ascension } = weapon
+  const { location, id } = weapon as Partial<IWeapon>
   const weaponSheet: WeaponSheet | undefined = usePromise(WeaponSheet.get(key), [key])
   const weaponTypeKey = weaponSheet?.weaponType
 
   useEffect(() =>
-    weaponId ? database.followWeapon(weaponId, onDatabaseUpdate) : undefined,
-    [weaponId, onDatabaseUpdate])
+    propWeaponId ? database.followWeapon(propWeaponId, onDatabaseUpdate) : undefined,
+    [propWeaponId, onDatabaseUpdate, database])
 
   const weaponDispatch = useCallback((newWeapon: Partial<IWeapon>) => {
     if (propWeapon) return // Don't touch flex weapon
 
-    const oldWeapon = database._getWeapon(weaponId)
+    const oldWeapon = database._getWeapon(propWeaponId!)
     database.updateWeapon({ ...oldWeapon, ...newWeapon } as IWeapon)
-  }, [propWeapon, weaponId])
+  }, [propWeapon, propWeaponId, database])
 
   const ambiguousLevel = level !== 90 && ascensionMaxLevel.findIndex(ascenML => level === ascenML) > 0
   const setAscension = useCallback(() => {
@@ -154,13 +154,14 @@ export default function WeaponDisplayCard({
         </Row>
       })()}
     </Card.Body>
-    {footer && <Card.Footer><Row>
+    {footer && id && <Card.Footer><Row>
       <Col><EquipmentDropdown location={location} onEquip={cKey => database.setWeaponLocation(id, cKey)} weaponTypeKey={weaponSheet?.weaponType} disableUnequip={location} editable={editable} /></Col>
       {!!onClose && <Col xs="auto"><Button variant="danger" onClick={onClose}>Close</Button></Col>}
     </Row></Card.Footer>}
   </Card>
 }
 function SwapBtn({ onChangeId, weaponTypeKey }) {
+  const database = useContext(DatabaseContext)
   const [show, setShow] = useState(false)
   const open = () => setShow(true)
   const close = () => setShow(false)

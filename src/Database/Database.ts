@@ -7,6 +7,7 @@ import { migrate } from "./migration";
 import { validateFlexArtifact, validateDBCharacter, validateDBArtifact, extractFlexArtifact, validateFlexCharacter, extractFlexCharacter, validateDBWeapon, validateFlexWeapon, extractFlexWeapon } from "./validation";
 import { DBStorage, dbStorage } from "./DBStorage";
 import { IWeapon } from "../Types/weapon";
+import { createContext } from "react";
 
 export class ArtCharDatabase {
   storage: DBStorage
@@ -304,7 +305,7 @@ export class ArtCharDatabase {
   findDuplicates(editorArt: IFlexArtifact): { duplicated: string[], upgraded: string[] } {
     const { setKey, numStars, level, slotKey, mainStatKey, substats } = editorArt
 
-    const candidates = database._getArts().filter(candidate =>
+    const candidates = this._getArts().filter(candidate =>
       setKey === candidate.setKey &&
       numStars === candidate.numStars &&
       slotKey === candidate.slotKey &&
@@ -342,8 +343,6 @@ export class ArtCharDatabase {
 
     return { duplicated: duplicated.map(({ id }) => id), upgraded: upgraded.map(({ id }) => id) }
   }
-
-  static shared = new ArtCharDatabase(dbStorage)
 }
 
 /// Get a random integer (converted to string) that is not in `keys`
@@ -366,4 +365,5 @@ function generateRandomWeaponID(keys: Set<string>): string {
 
 type Callback<Arg> = (arg: Arg | undefined) => void
 
-export const database = ArtCharDatabase.shared
+export const database = new ArtCharDatabase(dbStorage)
+export const DatabaseContext = createContext(database)
