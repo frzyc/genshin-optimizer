@@ -1,5 +1,6 @@
 import { initialBuildSettings } from "../Build/BuildSetting"
 import { ascensionMaxLevel } from "../Data/CharacterData"
+import { allCharacterKeys } from "../Types/consts"
 import { DBStorage } from "./DBStorage"
 import { getDBVersion, setDBVersion } from "./utils"
 
@@ -111,6 +112,7 @@ function migrateV4ToV5(storage: DBStorage) {
 
 // v5.12.0 - 5.19.14
 function migrateV5ToV6(storage: DBStorage) {
+  debugger
   for (const key of storage.keys) {
     if (key.startsWith("char_")) {
       const character = storage.get(key)
@@ -161,14 +163,38 @@ function generateWeaponId(storage: DBStorage) {
 }
 // 5.22.0 - present
 function migrateV7ToV8(storage: DBStorage) {
+  const charMap = Object.fromEntries(allCharacterKeys.map(k => [k.toLowerCase(), k]))
+  const charDBKeyMap = Object.fromEntries(allCharacterKeys.map(k => [`char_${k.toLowerCase()}`, `char_${k}`]))
   for (const key of storage.keys) {
     if (key.startsWith("char_")) {
       const character = storage.get(key)
+      storage.remove(key)
+      //rename characterKey
+      character.characterKey = charMap[character.characterKey]
+      //rename conditionalValues for characterKey renaming
+      if (character.conditionalValues?.character?.[key]) {
+        character.conditionalValues.character[charMap[key]] = character.conditionalValues?.character?.[key]
+        delete character.conditionalValues?.character?.[key]
+      }
+
       const { weapon, ...rest } = character
       if (!weapon) continue
       weapon.location = character.characterKey
       storage.set(generateWeaponId(storage), weapon)
-      storage.set(key, rest)
+      storage.set(charDBKeyMap[key], rest)
     }
+  }
+  const BuildsDisplayState = storage.get("BuildsDisplay.state")
+  if (BuildsDisplayState) {
+    BuildsDisplayState.characterKey = charMap[BuildsDisplayState.characterKey] ?? ""
+    //limit maxBuildsToShow
+    BuildsDisplayState.maxBuildsToShow = BuildsDisplayState.maxBuildsToShow > 10 ? 5 : BuildsDisplayState.maxBuildsToShow
+    storage.set("BuildsDisplay.state", BuildsDisplayState)
+  }
+  const CharacterDisplayState = storage.get("CharacterDisplay.state")
+  if (CharacterDisplayState) {
+    CharacterDisplayState.characterKeyToEdit = charMap[CharacterDisplayState.charIdToEdit] ?? ""
+    delete CharacterDisplayState.charIdToEdit
+    storage.set("CharacterDisplay.state", CharacterDisplayState)
   }
 }

@@ -23,7 +23,7 @@ describe('mergeStats()', () => {
 })
 
 describe('Character.getDisplayStatKeys()', () => {
-  const characterKey = "noelle"
+  const characterKey = "Noelle"
 
   beforeEach(() => database.updateChar({ characterKey, levelKey: "L60A", weapon: { key: "Whiteblind" } } as any))
   afterEach(() => localStorage.clear())
@@ -46,7 +46,7 @@ describe('Character.getDisplayStatKeys()', () => {
 describe('Equipment functions', () => {
   let a: IArtifact, b: IArtifact, c: IArtifact, d: IArtifact, e: IArtifact,
     abcde: StrictDict<SlotKey, string>, empty: StrictDict<SlotKey, "">
-  let noelle, ningguang
+  let Noelle, Ningguang
   beforeEach(() => {
     dbStorage.clear()
     database.reloadStorage()
@@ -64,9 +64,9 @@ describe('Equipment functions', () => {
       lock: false
     }
     b = { ...a, slotKey: "plume" }
-    c = { ...a, slotKey: "sands", location: "noelle" }
-    d = { ...a, slotKey: "goblet", location: "noelle" }
-    e = { ...a, slotKey: "circlet", location: "noelle" }
+    c = { ...a, slotKey: "sands", location: "Noelle" }
+    d = { ...a, slotKey: "goblet", location: "Noelle" }
+    e = { ...a, slotKey: "circlet", location: "Noelle" }
     a.id = database.updateArt(a)
     b.id = database.updateArt(b)
     c.id = database.updateArt(c)
@@ -81,26 +81,26 @@ describe('Equipment functions', () => {
     }
     empty = Object.fromEntries(allSlotKeys.map(sk => [sk, ""])) as StrictDict<SlotKey, "">
 
-    noelle = {
-      characterKey: "noelle",
+    Noelle = {
+      characterKey: "Noelle",
       equippedArtifacts: empty,
       levelKey: "lvl"
     }
-    ningguang = {
-      characterKey: "ningguang",
+    Ningguang = {
+      characterKey: "Ningguang",
       equippedArtifacts: empty,
       levelKey: "lvl"
     }
-    database.updateChar(noelle)
-    database.updateChar(ningguang)
-    database.setLocation(c.id, noelle.characterKey)
-    database.setLocation(d.id, noelle.characterKey)
-    database.setLocation(e.id, noelle.characterKey)
+    database.updateChar(Noelle)
+    database.updateChar(Ningguang)
+    database.setLocation(c.id, Noelle.characterKey)
+    database.setLocation(d.id, Noelle.characterKey)
+    database.setLocation(e.id, Noelle.characterKey)
   })
   test(`Character.remove`, () => {
-    database.removeChar("noelle")
-    const noelleDB = database._getChar("noelle")
-    expect(noelleDB).toBe(undefined)
+    database.removeChar("Noelle")
+    const NoelleDB = database._getChar("Noelle")
+    expect(NoelleDB).toBe(undefined)
     Object.values(abcde).forEach(id => expect(database._getArt(id)?.location).toBe(""))
   })
 })

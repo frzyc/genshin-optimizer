@@ -185,7 +185,7 @@ const characterV2 = object({
     if (roundedLevel === value.level) value.overrideLevel = 0
     else value.overrideLevel = value.level
 
-    if (value.characterKey === "traveler")
+    if (value.characterKey === "Traveler")
       value.reserved = [elements.indexOf(value.elementKey)]
     else
       value.reserved = []
@@ -222,7 +222,7 @@ const characterV2 = object({
     delete value.overrideLevel
     delete value.levelKey
 
-    if (value.characterKey === "traveler") {
+    if (value.characterKey === "Traveler") {
       value.elementKey = elements[value.reserved[0]] ?? "anemo"
     }
     delete value.reserved

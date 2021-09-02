@@ -1,88 +1,88 @@
-import albedo from './albedo'
-import amber from './amber'
-import barbara from './barbara'
-import beidou from './beidou'
-import bennett from './bennett'
-import chongyun from './chongyun'
-import diluc from './diluc'
-import diona from './diona'
-import eula from './eula'
-import fischl from './fischl'
-import ganyu from './ganyu'
-import hutao from './hutao'
-import jean from './jean'
-import kaedeharakazuha from './kaedeharakazuha'
-import kaeya from './kaeya'
-import kamisatoayaka from './kamisatoayaka'
-import keqing from './keqing'
-import klee from './klee'
-import lisa from './lisa'
-import mona from './mona'
-import ningguang from './ningguang'
-import noelle from './noelle'
-import qiqi from './qiqi'
-import razor from './razor'
-import rosaria from './rosaria'
-import sayu from './sayu'
-import sucrose from './sucrose'
-import tartaglia from './tartaglia'
-import traveler from './traveler'
-import venti from './venti'
-import xiao from './xiao'
-import xiangling from './xiangling'
-import xingqiu from './xingqiu'
-import xinyan from './xinyan'
-import yanfei from './yanfei'
-import yoimiya from './yoimiya'
-import zhongli from './zhongli'
+import Albedo from './Albedo'
+import Amber from './Amber'
+import Barbara from './Barbara'
+import Beidou from './Beidou'
+import Bennett from './Bennett'
+import Chongyun from './Chongyun'
+import Diluc from './Diluc'
+import Diona from './Diona'
+import Eula from './Eula'
+import Fischl from './Fischl'
+import Ganyu from './Ganyu'
+import HuTao from './HuTao'
+import Jean from './Jean'
+import KaedeharaKazuha from './KaedeharaKazuha'
+import Kaeya from './Kaeya'
+import KamisatoAyaka from './KamisatoAyaka'
+import Keqing from './Keqing'
+import Klee from './Klee'
+import Lisa from './Lisa'
+import Mona from './Mona'
+import Ningguang from './Ningguang'
+import Noelle from './Noelle'
+import Qiqi from './Qiqi'
+import Razor from './Razor'
+import Rosaria from './Rosaria'
+import Sayu from './Sayu'
+import Sucrose from './Sucrose'
+import Tartaglia from './Tartaglia'
+import Traveler from './Traveler'
+import Venti from './Venti'
+import Xiao from './Xiao'
+import Xiangling from './Xiangling'
+import Xingqiu from './Xingqiu'
+import Xinyan from './Xinyan'
+import Yanfei from './Yanfei'
+import Yoimiya from './Yoimiya'
+import Zhongli from './Zhongli'
 import { CharacterKey } from '../../Types/consts'
 import { ICharacterSheet } from '../../Types/character'
 import { documentSectionsProcessing } from '../../Util/DocumentUtil'
 const characters: StrictDict<CharacterKey, ICharacterSheet> = {
-  albedo,
-  amber,
-  barbara,
-  beidou,
-  bennett,
-  chongyun,
-  diluc,
-  diona,
-  eula,
-  fischl,
-  ganyu,
-  hutao,
-  jean,
-  kaedeharakazuha,
-  kaeya,
-  kamisatoayaka,
-  keqing,
-  klee,
-  lisa,
-  mona,
-  ningguang,
-  noelle,
-  qiqi,
-  razor,
-  rosaria,
-  sayu,
-  sucrose,
-  tartaglia,
-  traveler,
-  venti,
-  xiao,
-  xiangling,
-  xingqiu,
-  xinyan,
-  yanfei,
-  yoimiya,
-  zhongli
+  Albedo,
+  Amber,
+  Barbara,
+  Beidou,
+  Bennett,
+  Chongyun,
+  Diluc,
+  Diona,
+  Eula,
+  Fischl,
+  Ganyu,
+  HuTao,
+  Jean,
+  KaedeharaKazuha,
+  Kaeya,
+  KamisatoAyaka,
+  Keqing,
+  Klee,
+  Lisa,
+  Mona,
+  Ningguang,
+  Noelle,
+  Qiqi,
+  Razor,
+  Rosaria,
+  Sayu,
+  Sucrose,
+  Tartaglia,
+  Traveler,
+  Venti,
+  Xiao,
+  Xiangling,
+  Xingqiu,
+  Xinyan,
+  Yanfei,
+  Yoimiya,
+  Zhongli
 } as const
 
 Object.values(characters).forEach(char => {
   if ("talent" in char)
     Object.values(char.talent.sheets).forEach(talentSheetElement =>
       documentSectionsProcessing(talentSheetElement.sections))
-  else //char.talents -> traveler
+  else //char.talents -> Traveler
     Object.values(char.talents).forEach(talentSheet =>
       Object.values(talentSheet.sheets).forEach(talentSheetElement =>
         documentSectionsProcessing(talentSheetElement.sections)))

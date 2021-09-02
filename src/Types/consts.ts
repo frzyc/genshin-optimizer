@@ -21,10 +21,10 @@ export const allArtifactSets = [
   "WanderersTroupe", "TenacityOfTheMillelith", "PaleFlame", "EmblemOfSeveredFate", "ShimenawasReminiscence",
 ] as const
 export const allCharacterKeys = [
-  "albedo", "amber", "barbara", "beidou", "bennett", "chongyun", "diluc", "diona", "fischl", "ganyu",
-  "hutao", "jean", "kaeya", "keqing", "klee", "lisa", "mona", "ningguang", "noelle", "qiqi",
-  "razor", "sucrose", "tartaglia", "traveler", "traveler", "venti", "xiao", "xiangling", "xingqiu", "xinyan",
-  "zhongli", "rosaria", "yanfei", "eula", "kaedeharakazuha", "kamisatoayaka", "sayu", "yoimiya"
+  "Albedo", "Amber", "Barbara", "Beidou", "Bennett", "Chongyun", "Diluc", "Diona", "Fischl", "Ganyu",
+  "HuTao", "Jean", "Kaeya", "Keqing", "Klee", "Lisa", "Mona", "Ningguang", "Noelle", "Qiqi",
+  "Razor", "Sucrose", "Tartaglia", "Traveler", "Traveler", "Venti", "Xiao", "Xiangling", "Xingqiu", "Xinyan",
+  "Zhongli", "Rosaria", "Yanfei", "Eula", "KaedeharaKazuha", "KamisatoAyaka", "Sayu", "Yoimiya"
 ] as const
 export const allWeaponKeys = [
   "DullBlade", "SilverSword", "CoolSteel", "DarkIronSword", "FilletBlade", "HarbingerOfDawn", "SkyriderSword",

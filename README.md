@@ -9,6 +9,7 @@ Genshin Optimize is a helper website for the online action-rpg gacha game [Gensh
 
 # Getting Started with Genshin Optimizer.
 This project is primarily bootstrapped with with [Create React App](https://github.com/facebook/create-react-app). Most of the original functions are retained.
+Note: you need to have git installed in your command line, since it pulls some git repos as dependency.
 
 ## Available Scripts
 

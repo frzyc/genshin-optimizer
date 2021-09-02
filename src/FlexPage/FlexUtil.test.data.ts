@@ -4,7 +4,7 @@ import { IFlexCharacter } from "../Types/character"
 export const oldURL = "https://frzyc.github.io/genshin-optimizer/#/flex?v=2&d=565k01043N09F18W04R165k03141Y79W0aa37G0p5g07242o21074W05l095k0j347E03z02c292195k09443j08111HbaV3a122003L9005551echaracterLevel289bStaffOfHoma3L900101000"
 
 export const character: IFlexCharacter = {
-  characterKey: 'hutao',
+  characterKey: 'HuTao',
   hitMode: 'avgHit',
   reactionMode: 'pyro_vaporize',
   constellation: 2,
@@ -16,7 +16,7 @@ export const character: IFlexCharacter = {
   conditionalValues: {
     artifact: {},
     character: {
-      hutao: {
+      HuTao: {
         SanguineRouge: [1],
         GuideToAfterlife: [1],
       }
@@ -47,7 +47,7 @@ export const artifacts: Dict<string, IFlexArtifact> = {
       { key: 'hp_', value: 14 },
       { key: 'critRate_', value: 6.6 }
     ],
-    location: 'hutao',
+    location: 'HuTao',
     lock: false,
   },
   artifact_2: {
@@ -62,7 +62,7 @@ export const artifacts: Dict<string, IFlexArtifact> = {
       { key: 'enerRech_', value: 5.8 },
       { key: 'atk_', value: 11.7 }
     ],
-    location: 'hutao',
+    location: 'HuTao',
     lock: false,
   },
   artifact_5: {
@@ -77,7 +77,7 @@ export const artifacts: Dict<string, IFlexArtifact> = {
       { key: 'critDMG_', value: 20.2 },
       { key: 'eleMas', value: 42 }
     ],
-    location: 'hutao',
+    location: 'HuTao',
     lock: false,
   },
   artifact_10: {
@@ -92,7 +92,7 @@ export const artifacts: Dict<string, IFlexArtifact> = {
       { key: 'hp', value: 747 },
       { key: 'critDMG_', value: 24.9 }
     ],
-    location: 'hutao',
+    location: 'HuTao',
     lock: false,
   },
   artifact_11: {
@@ -107,7 +107,7 @@ export const artifacts: Dict<string, IFlexArtifact> = {
       { key: 'atk_', value: 5.8 },
       { key: 'def', value: 21 }
     ],
-    location: 'hutao',
+    location: 'HuTao',
     lock: false,
   },
 }

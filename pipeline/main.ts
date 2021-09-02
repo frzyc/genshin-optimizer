@@ -83,7 +83,7 @@ const characterDataDump = Object.fromEntries(Object.entries(characterData).filte
 
 //dump data file to respective character directory.
 Object.entries(characterDataDump).forEach(([characterKey, data]) => {
-  if (characterKey.includes('_')) {//traveler, for multi element support
+  if (characterKey.includes('_')) {//Traveler, for multi element support
     const [charKey, eleKey] = characterKey.split("_")
     dumpFile(`../src/Data/Characters/${charKey}/data_${eleKey}_gen.json`, data)
   } else
@@ -134,7 +134,7 @@ const characterSkillParamDump = Object.fromEntries(Object.entries(characterData)
   }
 
   const keys = []
-  if (CandSkillDepotIds.length) { //traveler
+  if (CandSkillDepotIds.length) { //Traveler
     //this will be 504,506... for male
     genTalentHash([...keys, "anemo"], skillDepot[704])
     genTalentHash([...keys, "geo"], skillDepot[706])
@@ -149,7 +149,7 @@ const characterSkillParamDump = Object.fromEntries(Object.entries(characterData)
 
 //dump data file to respective character directory.
 Object.entries(characterSkillParamDump).forEach(([characterKey, data]) => {
-  if (characterKey.includes('_')) {//traveler, for multi element support
+  if (characterKey.includes('_')) {//Traveler, for multi element support
     const [charKey, eleKey] = characterKey.split("_")
     dumpFile(`../src/Data/Characters/${charKey}/${eleKey}/skillParam_gen.json`, data)
   } else
@@ -316,7 +316,7 @@ Object.entries(characterData).filter(([charid,]) => charid in characterIdMap).fo
     })
   }
 
-  if (CandSkillDepotIds.length) { //traveler
+  if (CandSkillDepotIds.length) { //Traveler
     //this will be 504,506... for male
     genTalentHash([...keys, "anemo"], skillDepot[704])
     genTalentHash([...keys, "geo"], skillDepot[706])

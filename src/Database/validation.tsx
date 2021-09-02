@@ -161,7 +161,7 @@ export function validateDBCharacter(obj: any, key: string): IFlexCharacter | und
     return // non-recoverable
 
   if (!allHitModes.includes(hitMode)) hitMode = "avgHit"
-  if (characterKey !== "traveler") elementKey = undefined
+  if (characterKey !== "Traveler") elementKey = undefined
   else if (!allElements.includes(elementKey)) elementKey = "anemo"
   if (!allReactionModes.includes(reactionMode)) reactionMode = null
   if (!allElements.includes(infusionAura)) infusionAura = ""

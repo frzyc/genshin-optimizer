@@ -183,7 +183,7 @@
         "error": "错误",
         "reset": "重置"
     },
-    "char_eula": {
+    "char_Eula": {
         "skillC": {
             "name": "冷酷之心",
             "consumed": "消耗的冷酷之心",
@@ -203,13 +203,13 @@
         },
         "passive1": "残缺光降之剑伤害"
     },
-    "char_noelle": {
+    "char_Noelle": {
         "p4cd": "24秒CD，每4次普通攻击或重击减少1秒CD",
         "c1chance": "(同时处于<strong>大扫除</strong> and <strong>护心铠</strong> 状态时，几率提升至100%)",
         "c6duration": "15秒，每打倒1个敌人，延长1秒，不会超过10秒",
         "qlarger": "提高攻击范围"
     },
-    "char_venti": {
+    "char_Venti": {
         "addAimed": "额外瞄准射击伤害",
         "addFullAimed": "额外满蓄力瞄准射击伤害",
         "upcurrentDuration": "上升气流持续",
@@ -249,7 +249,7 @@
     "weapon_FreedomSworn": {
         "name": "千年的大乐章·抗争之歌"
     },
-    "char_kaedeharakazuha": {
+    "char_KaedeharaKazuha": {
         "a4": {
             "name": "触发扩散反应后",
             "text": "队伍中所有角色对应元素伤害加成",
@@ -262,7 +262,7 @@
             "bonus": "普通攻击、重击、下落攻击伤害加成"
         }
     },
-    "char_rosaria": {
+    "char_Rosaria": {
         "a1": "背后攻击后",
         "a4": {
             "name": "施放 <strong>终命的圣礼<strong/>后",
@@ -272,7 +272,7 @@
         "c1": "攻击造成暴击后",
         "c6": "<strong>终命的圣礼<strong/>对敌人的攻击"
     },
-    "char_kamisatoayaka": {
+    "char_KamisatoAyaka": {
         "afterSprint": "冲刺之后",
         "afterSkill": "使用<strong>神里流-冰华</strong>后",
         "afterSprintCryo": "冲刺后对敌人施加<cryo>冰元素</cryo>附着",
@@ -281,7 +281,7 @@
         "dmgBySnowflake": "敌人受到<strong>神里流-霜灭</strong>的霜见雪关扉伤害后",
         "UsurashiButou": "薄冰舞蹈"
     },
-    "char_traveler": {
+    "char_Traveler": {
         "electro": {
             "skill": {
                 "absorb": "吸收丰穰勾玉"
@@ -304,13 +304,13 @@
     "weapon_ThunderingPulse": {
         "emblem": "飞雷之巴印"
     },
-    "char_razor": {
+    "char_Razor": {
         "fullBurstDMG": {
             "text": "<0><0><0>全元素爆发伤害</0></0><1>此计算包括了雷泽的元素爆发期间的普通攻击伤害. 即简单合计了第X下攻击的伤害及触发此伤害的第X下普攻伤害。</1></0>",
             "label": "普攻 + 雷狼攻击伤害{{hitNum}}"
         }
     },
-    "char_yoimiya": {
+    "char_Yoimiya": {
         "c1": "攻击受 <strong>琉金火光</strong>影响的敌人",
         "c2": "<pyro>火元素伤害</pyro>造成暴击后",
         "p2": "全队攻击加成"

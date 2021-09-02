@@ -183,7 +183,7 @@
         "error": "Error",
         "reset": "Restablecer"
     },
-    "char_eula": {
+    "char_Eula": {
         "skillC": {
             "name": "corazón impasible",
             "consumed": "corazón impasible Consumido",
@@ -203,13 +203,13 @@
         },
         "passive1": "Daño de fragmento de espada luminosa"
     },
-    "char_noelle": {
+    "char_Noelle": {
         "p4cd": "24s, -1s Cada 4 golpes",
         "c1chance": "(100% estando bajo los efectos de <strong>Hora de Limpiar</strong> y <strong>Guardiana del corazón</strong>)",
         "c6duration": "15s, +1s por enemigo derrotado, hasta un máximo de 10s",
         "qlarger": "Aumenta el alcance de su ataque."
     },
-    "char_venti": {
+    "char_Venti": {
         "addAimed": "Daño Adicional de Disparo Preciso",
         "addFullAimed": "Daño Adicional de Disparo Preciso (carga completa)",
         "upcurrentDuration": "Duración de corrientes de viento ascendentes",
@@ -249,7 +249,7 @@
     "weapon_FreedomSworn": {
         "name": "Gran concierto milenario: Canción de la resistencia"
     },
-    "char_kaedeharakazuha": {
+    "char_KaedeharaKazuha": {
         "a4": {
             "name": "Al provocar una reacción de torbellino",
             "text": "Bono de Daño Elemental a los miembros del equipo"
@@ -257,7 +257,7 @@
         "c1": "Al usar <strong>Filo de las diez mil hojas</strong> el TdE de esta habilidad se reiniciará",
         "c2": "Dentro del área de viento del otoño"
     },
-    "char_rosaria": {
+    "char_Rosaria": {
         "a1": "Luego de golpe por la espalda",
         "a4": {
             "name": "Luego de usar <strong>Extremaunción<strong/>",

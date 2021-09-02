@@ -183,7 +183,7 @@
         "error": "Fehler",
         "reset": "Zurücksetzen"
     },
-    "char_eula": {
+    "char_Eula": {
         "skillC": {
             "name": "Kaltes Herz",
             "consumed": "Stapelungen verbraucht",
@@ -203,13 +203,13 @@
         },
         "passive1": "Schaden von fragmentarischem Schwert des Lichtfalls"
     },
-    "char_noelle": {
+    "char_Noelle": {
         "p4cd": "24s, -1s pro 4 Treffer",
         "c1chance": "(100%, wenn sowohl <strong>Großreinigung</strong> als auch <strong>Brustpanzer</strong> aktiv sind)",
         "c6duration": "15s, +1s pro besiegtem Gegner, bis zu 10s",
         "qlarger": "Erhöhte Angriffsreichweite"
     },
-    "char_venti": {
+    "char_Venti": {
         "addAimed": "Zusätzlicher Schaden durch gezielte Schüsse",
         "addFullAimed": "Zusätzlicher Schaden durch voll aufgeladene gezielte Schüsse",
         "upcurrentDuration": "Dauer der Luftströmung",
@@ -249,7 +249,7 @@
     "weapon_FreedomSworn": {
         "name": "Bewegung des Jahrtausends – Lied der Revolution"
     },
-    "char_kaedeharakazuha": {
+    "char_KaedeharaKazuha": {
         "a4": {
             "name": "Nach dem Auslösen einer Verwirbelung",
             "text": "Erhöhung des Elementarschadens aller Truppenmitglieder"
@@ -257,7 +257,7 @@
         "c1": "Überspringt die Abklingzeit bei Anwendung von <strong>Kazuha-Schlag</strong>",
         "c2": "Innerhalb des wirbelnden Herbstfeldes"
     },
-    "char_rosaria": {
+    "char_Rosaria": {
         "a1": "Bei Angriffen von hinten",
         "a4": {
             "name": "Bei Anwendung von <strong>Letzte Salbung<strong/>",
@@ -267,7 +267,7 @@
         "c1": "Nach Auslösen eines KT",
         "c6": "Mit Angriffen von <strong>Letze Salbung<strong/>"
     },
-    "char_kamisatoayaka": {
+    "char_KamisatoAyaka": {
         "afterSprint": "Nach dem Sprinten",
         "afterSkill": "Nach der Anwendung von <strong>Kamisato-Stil: Hyouka</strong>",
         "afterSprintCryo": "Erhält <cryo>Cryo</cryo> nach dem Sprint",

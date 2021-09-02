@@ -183,7 +183,7 @@
         "error": "오류",
         "reset": "리셋"
     },
-    "char_eula": {
+    "char_Eula": {
         "skillC": {
             "name": "냉혹한 마음",
             "consumed": "소모된 냉혹한 마음",
@@ -203,13 +203,13 @@
         },
         "passive1": "부서진 빛의 검 데미지"
     },
-    "char_noelle": {
+    "char_Noelle": {
         "p4cd": "24초, 매 4회 타격시 -1초",
         "c1chance": "(<strong>대청소</strong>와 <strong>호심경</strong>이 동시에 발동했을 때 100%)",
         "c6duration": "15초, 적 처치 시 +1초, 최대 10초",
         "qlarger": "노엘의 공격 범위가 증가한다"
     },
-    "char_venti": {
+    "char_Venti": {
         "addAimed": "분열된 화살 데미지",
         "addFullAimed": "풀차지 분열된 화살 데미지",
         "upcurrentDuration": "상승 기류 지속시간",
@@ -249,7 +249,7 @@
     "weapon_FreedomSworn": {
         "name": "천년의 대악장: 투쟁의 노래"
     },
-    "char_kaedeharakazuha": {
+    "char_KaedeharaKazuha": {
         "a4": {
             "name": "확산 반응 시",
             "text": "파티원에게 원소 피해 보너스"
@@ -257,7 +257,7 @@
         "c1": "<strong>카즈하의 일도</strong> 사용 쿨다운 리셋",
         "c2": "바람 부는 가을 들판"
     },
-    "char_rosaria": {
+    "char_Rosaria": {
         "a1": "뒤에서 공격 시",
         "a4": {
             "name": "<strong>죽음의 성례</strong> 발동 시",
@@ -267,7 +267,7 @@
         "c1": "치명타 적중 시",
         "c6": "<strong>죽음의 성례</strong> 공격 적중"
     },
-    "char_kamisatoayaka": {
+    "char_KamisatoAyaka": {
         "afterSprint": "대시 후",
         "afterSkill": "<strong>카미사토류·얼음꽃</strong> 사용 후",
         "afterSprintCryo": "대시 후 <cyro>얼음 원소<cyro> 부착",

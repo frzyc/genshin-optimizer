@@ -65,10 +65,10 @@ describe('Testing StatDependency', () => {
     })
     test('should add modifiers if keys exists', () => {
       const keys = ["dmg_"]
-      let modifiers = { dmg_: [KeyPath<FormulaPathBase, any>().character.mona.passive2.bonus() /* enerRech_ */] } as any
+      let modifiers = { dmg_: [KeyPath<FormulaPathBase, any>().character.Mona.passive2.bonus() /* enerRech_ */] } as any
       //should add enerRech_ to dependency
       expect(GetDependencies({} as any, modifiers, keys)).toBeDependent({ dmg_: ["enerRech_"] })
-      modifiers = { atk: [KeyPath<FormulaPathBase, any>().character.mona.passive2.bonus() /* enerRech_ */] }
+      modifiers = { atk: [KeyPath<FormulaPathBase, any>().character.Mona.passive2.bonus() /* enerRech_ */] }
       //should not add enerRech_ to dependency, since its not part of the original dependency
       expect(GetDependencies({} as any, modifiers, keys)).toEqual(expect.not.arrayContaining(["atk"]))
     })

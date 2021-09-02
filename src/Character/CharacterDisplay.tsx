@@ -46,9 +46,9 @@ export default function CharacterDisplay(props) {
     ReactGA.pageview('/character')
     const saved = dbStorage.get("CharacterDisplay.state")
     if (saved) {
-      const { charIdToEdit, sortBy, elementalFilter, weaponFilter } = saved
-      setCharacterKeyToEdit(charIdToEdit)
-      setsortBy(sortBy)
+      const { characterKeyToEdit, sortBy, elementalFilter, weaponFilter } = saved
+      characterKeyToEdit && setCharacterKeyToEdit(characterKeyToEdit)
+      sortBy && setsortBy(sortBy)
       allElements.includes(elementalFilter) && elementalFilterDispatch(elementalFilter)
       allWeaponTypeKeys.includes(weaponFilter) && weaponFilterDispatch(weaponFilter)
     }
@@ -60,7 +60,7 @@ export default function CharacterDisplay(props) {
     rarity: (ck) => allCharacterSheets[ck]?.star
   }
   useEffect(() => {
-    const save = { charIdToEdit: characterKeyToEdit, sortBy, elementalFilter, weaponFilter }
+    const save = { characterKeyToEdit, sortBy, elementalFilter, weaponFilter }
     dbStorage.set("CharacterDisplay.state", save)
   }, [characterKeyToEdit, sortBy, elementalFilter, weaponFilter])
   const deleteCharacter = useCallback(async (cKey: CharacterKey) => {
