@@ -1,16 +1,16 @@
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useContext, useState } from "react";
-import { Badge, Button, ButtonGroup, Card, Col, Image, Modal, Row } from "react-bootstrap";
+import { useContext, useReducer, useState } from "react";
+import { Badge, Button, ButtonGroup, Card, Col, Image, Modal, Row, ToggleButton, ToggleButtonGroup } from "react-bootstrap";
 import Dropdown from "react-bootstrap/Dropdown";
 import Assets from "../Assets/Assets";
 import CharacterSheet from "./CharacterSheet";
 import { DatabaseContext } from "../Database/Database";
 import { ICharacter } from "../Types/character";
-import { allCharacterKeys, CharacterKey, WeaponTypeKey } from "../Types/consts";
+import { allCharacterKeys, allElements, allWeaponTypeKeys, CharacterKey, WeaponTypeKey } from "../Types/consts";
 import { usePromise } from "../Util/ReactUtil";
 import { Stars } from "../Components/StarDisplay";
-import StatIcon from "../Components/StatIcon";
+import StatIcon, { uncoloredEleIcons } from "../Components/StatIcon";
 import Character from './Character'
 
 export function CharacterSelectionDropdownList({ onSelect, weaponTypeKey }: { onSelect: (ckey: CharacterKey) => void, weaponTypeKey?: WeaponTypeKey }) {
@@ -40,6 +40,19 @@ export function CharSelectionButton({ characterSheet, onSelect, filter }: { char
   </>
 }
 
+const toggle = {
+  rarity: "Rarity",
+  level: "Level",
+  name: "Name"
+} as const
+
+function filterReducer(oldFilter, newFilter) {
+  if (newFilter === oldFilter)
+    return ""
+  return newFilter
+}
+
+
 type CharacterSelectionModalProps = {
   show: boolean,
   onHide: () => void,
@@ -49,16 +62,69 @@ type CharacterSelectionModalProps = {
 
 export function CharacterSelectionModal({ show, onHide, onSelect, filter = () => true }: CharacterSelectionModalProps) {
   const database = useContext(DatabaseContext)
+
+  const [sortBy, setsortBy] = useState(() => Object.keys(toggle)[0])
+  const [elementalFilter, elementalFilterDispatch] = useReducer(filterReducer, "")
+  const [weaponFilter, weaponFilterDispatch] = useReducer(filterReducer, "")
+
   const characterSheets = usePromise(CharacterSheet.getAll(), [])
 
-  const characterKeyList = characterSheets ? [...new Set(allCharacterKeys)].filter(cKey => filter(database._getChar(cKey), characterSheets[cKey])) : []
+  const sortingFunc = {
+    level: (ck) => database._getChar(ck)?.level ?? 0,
+    rarity: (ck) => characterSheets?.[ck]?.star,
+    name: (ck) => characterSheets?.[ck]?.name
+  }
+
+  const characterKeyList = !characterSheets ? [] : [...new Set(allCharacterKeys)].filter(cKey => filter(database._getChar(cKey), characterSheets[cKey])).filter(cKey => {
+    if (elementalFilter && elementalFilter !== characterSheets?.[cKey]?.elementKey) return false
+    if (weaponFilter && weaponFilter !== characterSheets?.[cKey]?.weaponTypeKey) return false
+    return true
+  }).sort((a, b) => {
+    if (sortBy === "name") {
+      if (a < b) return -1;
+      if (a > b) return 1;
+      // names must be equal
+      return 0;
+    }
+    if (sortBy === "level") {
+      const diff = sortingFunc["level"](b) - sortingFunc["level"](a)
+      if (diff) return diff
+      return sortingFunc["rarity"](b) - sortingFunc["rarity"](a)
+    } else {
+      const diff = sortingFunc["rarity"](b) - sortingFunc["rarity"](a)
+      if (diff) return diff
+      return sortingFunc["level"](b) - sortingFunc["level"](a)
+    }
+  })
 
   if (!characterSheets) return null
   return <Modal show={show} size="xl" contentClassName="bg-transparent" onHide={onHide}>
     <Card bg="lightcontent" text={"lightfont" as any}>
       <Card.Header>
         <Row>
-          <Col><h5 className="mb-0 d-inline">Select Character</h5></Col>
+          <Col xs="auto">
+            <ButtonGroup>
+              {allElements.map(eleKey => <Button key={eleKey} variant={(!elementalFilter || elementalFilter === eleKey) ? eleKey : "secondary"} className="py-1 px-2 text-white" onClick={() => elementalFilterDispatch(eleKey)} >
+                <h3 className="mb-0">{uncoloredEleIcons[eleKey]}</h3>
+              </Button>)}
+            </ButtonGroup>
+          </Col>
+          <Col>
+            <ButtonGroup >
+              {allWeaponTypeKeys.map(weaponType =>
+                <Button key={weaponType} variant={(!weaponFilter || weaponFilter === weaponType) ? "success" : "secondary"} className="py-1 px-2" onClick={() => weaponFilterDispatch(weaponType)}>
+                  <h3 className="mb-0"><Image src={Assets.weaponTypes?.[weaponType]} className="inline-icon" /></h3></Button>)}
+            </ButtonGroup>
+          </Col>
+          <Col xs="auto">
+            <span>Sort by: </span>
+            <ToggleButtonGroup type="radio" name="level" value={sortBy} onChange={setsortBy}>
+              {Object.entries(toggle).map(([key, text]) =>
+                <ToggleButton key={key} value={key} variant={sortBy === key ? "success" : "primary"}>
+                  <h6 className="mb-0">{text}</h6>
+                </ToggleButton>)}
+            </ToggleButtonGroup>
+          </Col>
           <Col xs="auto">
             <Button onClick={onHide} variant="danger"><FontAwesomeIcon icon={faTimes} /></Button>
           </Col>

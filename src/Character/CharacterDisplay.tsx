@@ -79,7 +79,6 @@ export default function CharacterDisplay(props) {
   const editCharacter = useCallback(cKey => {
     if (!database._getChar(cKey))
       (async () => {
-        console.log("NEW CHAR", cKey);
         //Create a new character + weapon, with linking.
         const newChar = initialCharacter(cKey)
         database.updateChar(newChar)
