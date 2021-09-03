@@ -116,7 +116,7 @@ function migrateV5ToV6(storage: DBStorage) {
     if (key.startsWith("char_")) {
       const character = storage.get(key)
 
-      //migrate character weapon levels
+      // Migrate character weapon levels
       if (!character.weapon) continue
       const levelKey = character.weapon.levelKey ?? "L1"
       const [, lvla] = levelKey.split("L")
@@ -164,16 +164,18 @@ function migrateV7ToV8(storage: DBStorage) {
   }
 
   const charMap = Object.fromEntries(allCharacterKeys.map(k => [k.toLowerCase(), k]))
-  const charDBKeyMap = Object.fromEntries(allCharacterKeys.map(k => [`char_${k.toLowerCase()}`, `char_${k}`]))
   for (const key of storage.keys) {
     if (key.startsWith("char_")) {
       const character = storage.get(key), characterKey = character.characterKey
-      storage.remove(key)
-      //rename characterKey
+      // We delete old key upon validation
+
+      const newCharacterKey = charMap[characterKey]
+
+      // Rename characterKey
       character.characterKey = charMap[character.characterKey]
-      //rename conditionalValues for characterKey renaming
+      // Rename conditionalValues with characterKey
       if (character.conditionalValues?.character?.[characterKey]) {
-        character.conditionalValues.character[charMap[characterKey]] = character.conditionalValues?.character?.[characterKey]
+        character.conditionalValues.character[newCharacterKey] = character.conditionalValues?.character?.[characterKey]
         delete character.conditionalValues?.character?.[characterKey]
       }
 
@@ -181,13 +183,13 @@ function migrateV7ToV8(storage: DBStorage) {
       if (!weapon) continue
       weapon.location = character.characterKey
       storage.set(generateWeaponId(storage), weapon)
-      storage.set(charDBKeyMap[key], rest)
+      storage.set(`char_${newCharacterKey}`, rest)
     }
   }
   const BuildsDisplayState = storage.get("BuildsDisplay.state")
   if (BuildsDisplayState) {
     BuildsDisplayState.characterKey = charMap[BuildsDisplayState.characterKey] ?? ""
-    //limit maxBuildsToShow
+    // Limit maxBuildsToShow
     BuildsDisplayState.maxBuildsToShow = BuildsDisplayState.maxBuildsToShow > 10 ? 5 : BuildsDisplayState.maxBuildsToShow
     storage.set("BuildsDisplay.state", BuildsDisplayState)
   }
