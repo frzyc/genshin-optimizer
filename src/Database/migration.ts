@@ -112,7 +112,6 @@ function migrateV4ToV5(storage: DBStorage) {
 
 // v5.12.0 - 5.19.14
 function migrateV5ToV6(storage: DBStorage) {
-  debugger
   for (const key of storage.keys) {
     if (key.startsWith("char_")) {
       const character = storage.get(key)
