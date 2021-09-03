@@ -515,7 +515,7 @@ function parseSubstats(texts: string[]): IFlexSubstat[] {
         matches.push({ key, value: parseFloat(match[1].replace(/,/g, ".").replace(/\.{2,}/g, ".")) })
     })
   }
-  return matches
+  return matches.slice(0, 4)
 }
 
 function bandPass(pixelData: ImageData, color1: Color, color2: Color, options: { region?: "top" | "bot" | "all", mode?: "bw" | "color" | "invert" }) {
