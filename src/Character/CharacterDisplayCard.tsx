@@ -11,7 +11,7 @@ import { ArtifactSheet } from '../Artifact/ArtifactSheet';
 import CustomFormControl from '../Components/CustomFormControl';
 import { ascensionMaxLevel, milestoneLevels } from '../Data/CharacterData';
 import ElementalData from '../Data/ElementalData';
-import { DatabaseContext } from '../Database/Database';
+import { database as localDatabase, DatabaseContext } from '../Database/Database';
 import { ICharacter } from '../Types/character';
 import { CharacterKey } from '../Types/consts';
 import { ICalculatedStats } from '../Types/stats';
@@ -42,8 +42,7 @@ type characterReducerStatOverride = {
 export type characterReducerAction = characterEquipWeapon | characterReducerStatOverride | Partial<ICharacter>
 
 type CharacterDisplayCardProps = {
-  characterKey?: CharacterKey | "",
-  character?: ICharacter,
+  characterKey: CharacterKey,
   setCharacterKey?: (any: CharacterKey) => void
   footer?: JSX.Element
   newBuild?: ICalculatedStats,
@@ -51,7 +50,7 @@ type CharacterDisplayCardProps = {
   onClose?: (any) => void,
   tabName?: string
 }
-export default function CharacterDisplayCard({ characterKey: propCharacterKey, character: propCharacter, setCharacterKey = () => { }, footer, newBuild: propNewBuild, editable = false, onClose, tabName }: CharacterDisplayCardProps) {
+export default function CharacterDisplayCard({ characterKey, setCharacterKey = () => { }, footer, newBuild: propNewBuild, editable = false, onClose, tabName }: CharacterDisplayCardProps) {
   const database = useContext(DatabaseContext)
   const [compareAgainstEquipped, setcompareAgainstEquipped] = useState(false)
   // Use databaseToken anywhere `database._get*` is used
@@ -64,20 +63,18 @@ export default function CharacterDisplayCard({ characterKey: propCharacterKey, c
   const characterSheets = usePromise(CharacterSheet.getAll(), [])
   const artifactSheets = usePromise(ArtifactSheet.getAll(), [])
 
-  const characterKey = propCharacterKey || propCharacter!.characterKey
   const character = useMemo(() =>
-    databaseToken && (propCharacter ?? database._getChar(characterKey) ?? initialCharacter(characterKey)),
-    [propCharacter, characterKey, databaseToken, database])
+    databaseToken && (database._getChar(characterKey) ?? initialCharacter(characterKey)),
+    [characterKey, databaseToken, database])
   const weapon = useMemo(() =>
-    databaseToken && (propCharacter?.weapon ?? database._getWeapon(character.equippedWeapon)),
-    [character.equippedWeapon, propCharacter?.weapon, databaseToken, database])
+    databaseToken && database._getWeapon(character.equippedWeapon),
+    [character.equippedWeapon, databaseToken, database])
 
   const characterSheet = characterSheets?.[characterKey]
   const weaponSheet = weapon ? weaponSheets?.[weapon.key] : undefined
   const sheets = characterSheet && weaponSheet && artifactSheets && { characterSheet, weaponSheet, artifactSheets }
 
   const characterDispatch = useCallback((action: characterReducerAction): void => {
-    const characterKey = propCharacterKey
     if (!characterKey) return
 
     if ("type" in action) switch (action.type) {
@@ -97,14 +94,14 @@ export default function CharacterDisplayCard({ characterKey: propCharacterKey, c
       }
     } else
       database.updateChar({ ...database._getChar(characterKey)!, ...action }) // TODO: Validate this
-  }, [propCharacterKey, characterSheet, weaponSheet, database])
+  }, [characterKey, characterSheet, weaponSheet, database])
 
   useEffect(() => {
-    return propCharacterKey ? database.followChar(propCharacterKey, onDatabaseUpdate) : undefined
-  }, [propCharacterKey, onDatabaseUpdate, database])
+    return database.followChar(characterKey, onDatabaseUpdate)
+  }, [characterKey, onDatabaseUpdate, database])
 
   useEffect(() => {
-    if (!propCharacterKey) return // Don't do anything to flex weapon
+    if (database !== localDatabase) return // Don't do anything to flex weapon
     if (character.equippedWeapon) return database.followWeapon(character.equippedWeapon, onDatabaseUpdate)
 
     if (!weaponSheets || !characterSheet?.weaponTypeKey)
@@ -112,7 +109,7 @@ export default function CharacterDisplayCard({ characterKey: propCharacterKey, c
 
     const newWeapon: IWeapon = defaultInitialWeapon(characterSheet.weaponTypeKey)
     characterDispatch({ type: "weapon", id: database.updateWeapon(newWeapon) })
-  }, [propCharacterKey, character.equippedWeapon, weaponSheets, characterSheet?.weaponTypeKey, characterDispatch, onDatabaseUpdate, database])
+  }, [character.equippedWeapon, weaponSheets, characterSheet?.weaponTypeKey, characterDispatch, onDatabaseUpdate, database])
 
   const newBuild = useMemo(() => {
     if (!propNewBuild) return
@@ -122,12 +119,9 @@ export default function CharacterDisplayCard({ characterKey: propCharacterKey, c
     return newBuild
   }, [propNewBuild, character.hitMode, character.reactionMode])
 
-  const flexArts = character.artifacts
-
   const mainStatAssumptionLevel = newBuild?.mainStatAssumptionLevel ?? 0
   const equippedBuild = useMemo(() => characterSheet && weaponSheet && artifactSheets && Character.calculateBuild(character, database, characterSheet, weaponSheet, artifactSheets, mainStatAssumptionLevel), [character, characterSheet, weaponSheet, artifactSheets, mainStatAssumptionLevel, database])
   const commonPaneProps = { character, newBuild, equippedBuild: (!newBuild || compareAgainstEquipped) ? equippedBuild : undefined, editable, characterDispatch, compareAgainstEquipped }
-  if (flexArts) (commonPaneProps as any).artifacts = flexArts // from flex
   // main CharacterDisplayCard
   const DamageOptionsAndCalculationEle = sheets && <DamageOptionsAndCalculation {...{ sheets, weaponSheet, character, characterDispatch, newBuild, equippedBuild }} className="mb-2" />
   return (<Card bg="darkcontent" text={"lightfont" as any} >

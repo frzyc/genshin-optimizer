@@ -154,27 +154,28 @@ function migrateV6ToV7(storage: DBStorage) {
   }
 }
 
-let keyInd = 1;
-function generateWeaponId(storage: DBStorage) {
-  let key = `weapon_${keyInd++}`
-  while (storage.keys.includes(key))
-    key = `weapon_${keyInd++}`
-  return key
-}
 // 5.22.0 - present
 function migrateV7ToV8(storage: DBStorage) {
+  let keyInd = 1;
+  function generateWeaponId(storage: DBStorage) {
+    let key = `weapon_${keyInd++}`
+    while (storage.keys.includes(key))
+      key = `weapon_${keyInd++}`
+    return key
+  }
+
   const charMap = Object.fromEntries(allCharacterKeys.map(k => [k.toLowerCase(), k]))
   const charDBKeyMap = Object.fromEntries(allCharacterKeys.map(k => [`char_${k.toLowerCase()}`, `char_${k}`]))
   for (const key of storage.keys) {
     if (key.startsWith("char_")) {
-      const character = storage.get(key)
+      const character = storage.get(key), characterKey = character.characterKey
       storage.remove(key)
       //rename characterKey
       character.characterKey = charMap[character.characterKey]
       //rename conditionalValues for characterKey renaming
-      if (character.conditionalValues?.character?.[key]) {
-        character.conditionalValues.character[charMap[key]] = character.conditionalValues?.character?.[key]
-        delete character.conditionalValues?.character?.[key]
+      if (character.conditionalValues?.character?.[characterKey]) {
+        character.conditionalValues.character[charMap[characterKey]] = character.conditionalValues?.character?.[characterKey]
+        delete character.conditionalValues?.character?.[characterKey]
       }
 
       const { weapon, ...rest } = character

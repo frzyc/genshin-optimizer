@@ -140,7 +140,6 @@ export default function CharacterDisplay(props) {
         <Card.Body><h3 className="text-center">Loading... <Spinner animation="border" variant="primary" /></h3></Card.Body>
       </Card>}>
         <CharacterDisplayCard
-          character={undefined}
           newBuild={undefined}
           tabName={undefined}
           editable

@@ -530,7 +530,6 @@ function BuildModal({ build, showCharacterModal, characterKey, selectCharacter, 
   return <Modal show={Boolean(showCharacterModal || build)} onHide={closeModal} size="xl" contentClassName="bg-transparent">
     <React.Suspense fallback={<span>Loading...</span>}>
       <CharacterDisplayCard
-        character={undefined}
         tabName={undefined}
         characterKey={characterKey}
         setCharacterKey={cKey => selectCharacter(cKey)}
