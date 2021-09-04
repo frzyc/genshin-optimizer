@@ -16,6 +16,7 @@ import PrototypeGrudge from './PrototypeGrudge'
 import RoyalSpear from './RoyalSpear'
 import SkywardSpine from './SkywardSpine'
 import StaffOfHoma from './StaffOfHoma'
+import TheCatch from './TheCatch'
 import VortexVanquisher from './VortexVanquisher'
 import WhiteTassel from './WhiteTassel'
 const polearm = {
@@ -37,6 +38,7 @@ const polearm = {
   RoyalSpear,
   SkywardSpine,
   StaffOfHoma,
+  TheCatch,
   VortexVanquisher,
   WhiteTassel,
 } as const

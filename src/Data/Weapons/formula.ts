@@ -50,6 +50,7 @@ import DebateClub from './Claymore/DebateClub/data'
 // import FavoniusGreatsword from './Claymore/FavoniusGreatsword/data'
 // import FerrousShadow from './Claymore/FerrousShadow/data'
 // import LithicBlade from './Claymore/LithicBlade/data'
+import LuxuriousSeaLord from './Claymore/LuxuriousSeaLord/data'
 // import OldMercsPal from './Claymore/OldMercsPal/data'
 import PrototypeAminus from './Claymore/PrototypeAminus/data'
 // import Quartz from './Claymore/Quartz/data'
@@ -72,6 +73,7 @@ import WhiteIronGreatsword from './Claymore/WhiteIronGreatsword/data'
 // import BlackcliffAgate from './Catalyst/BlackcliffAgate/data'
 // import DodocoTales from './Catalyst/DodocoTales/data'
 // import EmeraldOrb from './Catalyst/EmeraldOrb/data'
+import EverlastingMoonglow from './Catalyst/EverlastingMoonglow/data'
 import EyeOfPerception from './Catalyst/EyeOfPerception/data'
 // import FavoniusCodex from './Catalyst/FavoniusCodex/data'
 import Frostbearer from './Catalyst/Frostbearer/data'
@@ -170,6 +172,7 @@ const catalyst = {
   // BlackcliffAgate,
   // DodocoTales,
   // EmeraldOrb,
+  EverlastingMoonglow,
   EyeOfPerception,
   // FavoniusCodex,
   Frostbearer,
@@ -197,6 +200,7 @@ const claymore = {
   // FavoniusGreatsword,
   // FerrousShadow,
   // LithicBlade,
+  LuxuriousSeaLord,
   // OldMercsPal,
   PrototypeAminus,
   // Quartz,
