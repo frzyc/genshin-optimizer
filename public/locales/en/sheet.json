@@ -12,6 +12,13 @@
     "skill": "Elemental Skill hits on oppoents",
     "burst": "Elemental Burst hits on oppoents"
   },
+  "afterUse": {
+    "skill": "After using Elemental Skill",
+    "burst": "After using Elemental Burst"
+  },
+  "increase": {
+    "atk": "ATK Increase"
+  },
   "eleAbsor": "Elemental Absorption",
-  "absorDot":"Absorption DoT"
+  "absorDot": "Absorption DoT"
 }

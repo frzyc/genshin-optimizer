@@ -41,8 +41,8 @@
         },
         "artifactFilter": "Bộ lọc Thánh Di Vật",
         "filterLocation": {
-            "inventory": "Túi",
-            "currentlyEquipped": "Đã trang bị",
+            "inventory": "Kho đồ",
+            "currentlyEquipped": "Đang trang bị",
             "any": "Bất kỳ"
         },
         "button": {
@@ -101,7 +101,7 @@
         "paragraphTools": "<0>Công cụ khác</0><1><0>thời gian của sever, cùng với bộ đếm ngược.</0><1>Bộ đếm nhựa.</1><2>Bộ tính điểm kinh nghiệm để tối ưu hóa.</2><3><0>Đang hoàn thiện</0> Bộ chuyển đổi tài nguyên, dành cho những nguyên liệu phiền phức x3.</3><4><0>Đang hoàn thiện</0> Danh sách những việc cần làm để nói cho bạn biết những gì cần làm mỗi ngày</4></1>",
         "paragraphFuture": "<0>Những điều sẽ có ở tương lai?</0><1><0>Đầy đủ thiên phú/cung mệnh cho tất cả những nhân vật đã ra mắt.</0><1>Lưu trữ nhiều bộ thánh di vật cho mỗi nhân vật để so sánh.</1><2>Food buffs, team buffs.</2><3>Tính toán tài nguyên sẽ sử dụng để nâng cấp nhân vật/vũ khí/ thánh di vật.</3><4>Bảng phân tính, thống kê dữ liệu thánh di vật của bạn.</4></1><2>Để biết thêm chi tiết và những gì đang đc thực hiện hãy cùng tham gia <1>discord.</1></2>",
         "paragraphHelpDevelopment": "<0>Bạn muốn giúp đỡ nhà phát triển?</0><1>Genshin Optimizer đã được xây dựng dựa trên nhiều đêm thức trắng nhiều ngày không ngủ và nhà phát triển vẫn đang hoạt động và cố gắng phát triển, hoàn thiện công cụ này. Nếu muốn cho chùng tôi feedback, đề nghị tính năng nào đó hay báo bug, lỗi hãy cùng tham gia <1>discord.</1></1><2>Nếu bạn muốn ủng hộ về tài chính, hãy đô nết ở đây <1>Paypal</1> or <3>Patreon</3>.</2>",
-        "paragraphCredits": "<0>Credit where credit is due</0><p>GO sẽ không được như này hôm nay nếu không có những sự giúp đỡ. Đã đến lúc cảm ơn họ rồi.</p><2><0>Cảm ơn tất cả mọi người trong cộng đồng, và đặc biệt là những người ở trong <1>discord</1> đã cho tôi những feedback, và giúp đỡ tôi hoàn thiện công cụ này.</0><1>Cảm ơn tói <1>Honey Impact</1>, đã cung cấp nguồn dữ liệu đáng tin cây và nhất quán. Tất cả những công thức ở đây sẽ gây tranh luận nếu không có chúng .</1><2>Một số lượng lớn ảnh ở đây là từ<1>The Genshin Impact Wiki</1>, cảm ơn tới họ.</2><3>Đặc biệt cảm ơn tới thành viên của cộng đồng đã giữ những dữ liệu và giúp đỡ kiểm tra dữ liệu trong game cũng như những người đã giúp đỡ chúng tôi với mã nguồn.</3><4>Cảm ơn tất cả những người khác đã chia sẻ công cụ này đến cho nhiều người sử dụng hơn nữa..</4><5>Cuối cùng và quan trọng nhất, cảm ơn tới <1>BẠN</1> chính bạn, đã sử dụng GO.</5></2>"
+        "paragraphCredits": "<0>Credit where credit is due</0><p>GO sẽ không được như này hôm nay nếu không có những sự giúp đỡ. Đã đến lúc cảm ơn họ rồi.</p><2><0>Cảm ơn tất cả mọi người trong cộng đồng, và đặc biệt là những người ở trong <1>discord</1> đã cho tôi những feedback, và giúp đỡ tôi hoàn thiện công cụ này.</0><1>Cảm ơn tói <1>Dimbreath</1>, đã cung cấp nguồn dữ liệu đáng tin cây và nhất quán. Tất cả những công thức ở đây sẽ gây tranh luận nếu không có chúng .</1><2>Một số lượng lớn ảnh ở đây là từ<1>The Genshin Impact Wiki</1>, cảm ơn tới họ.</2><3>Đặc biệt cảm ơn tới thành viên của cộng đồng đã giữ những dữ liệu và giúp đỡ kiểm tra dữ liệu trong game cũng như những người đã giúp đỡ chúng tôi với mã nguồn.</3><4>Cảm ơn tất cả những người khác đã chia sẻ công cụ này đến cho nhiều người sử dụng hơn nữa..</4><5>Cuối cùng và quan trọng nhất, cảm ơn tới <1>BẠN</1> chính bạn, đã sử dụng GO.</5></2>"
     },
     "languages": {
         "chs": "Tiếng Trung (giản thể)",
@@ -126,10 +126,6 @@
         },
         "downloadCard": {
             "databaseDownload": "Tải dữ liệu",
-            "charsStored": "<0>{{count}}</0> Nhân vật lưu trữ",
-            "charsStored_plural": "<0>{{count}}</0>Nhân vật lưu trữ",
-            "artisStored": "<0>{{count}}</0> Thánh di vật đã lưu trữ",
-            "artisStored_plural": "<0>{{count}}</0> Thánh di vật đã lưu trữ",
             "databaseDisclaimer": "Ghi chú: bất kỳ thông tin nào trong trang \"công cụ\", ví dụ: số lượng Nhựa, thời gian hồi không thuộc dữ liệu có thể tải xuống",
             "button": {
                 "download": "Tải xuống",
@@ -141,12 +137,7 @@
             "title": "Tải dữ liệu",
             "replaceDatabase": "Thay thế dữ liệu",
             "hint": "Tải lên tệp JSON ở đây",
-            "hintPaste": "...hoặc dán thông tin của bạn bên dưới",
-            "numChar": "Số lượng nhân vật:",
-            "numArt": "Số lượng thánh di vật:"
-        },
-        "dialog": {
-            "delete-database": "Bạn có chắc muốn xóa dữ liệu? Tất cả nhân vật và thánh di vật hiện tại sẽ bị xóa."
+            "hintPaste": "...hoặc dán thông tin của bạn bên dưới"
         }
     },
     "ui": {

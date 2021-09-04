@@ -21,6 +21,7 @@ import mona from './mona/data'
 import ningguang from './ningguang/data'
 import noelle from './noelle/data'
 import qiqi from './qiqi/data'
+import raidenshogun from './raidenshogun/data'
 import razor from './razor/data'
 import rosaria from './rosaria/data'
 import sayu from './sayu/data'
@@ -62,6 +63,7 @@ const formula: IFormulaSheets = {
   ningguang,
   noelle,
   qiqi,
+  raidenshogun,
   razor,
   rosaria,
   sayu,

@@ -75,7 +75,7 @@ export const FormulaText = {
   finalHP: (o) => <span>{f(o, "characterHP")} * ( 100% + {f(o, "hp_")} ) + {f(o, "hp")}</span>,
   finalDEF: (o) => <span>{f(o, "characterDEF")} * ( 100% + {f(o, "def_")} ) + {f(o, "def")}</span>,
 
-  enemyLevel_multi: (o) => <span>( 100 + {f(o, "characterLevel")} ) / ( ( 100 + {f(o, "characterLevel")} ) + ( 100 + {f(o, "enemyLevel")} ) * ( 100% - {f(o, "enemyDEFRed_")} ) )</span>,
+  enemyLevel_multi: (o) => <span>( 100 + {f(o, "characterLevel")} ) / ( ( 100 + {f(o, "characterLevel")} ) + ( 100 + {f(o, "enemyLevel")} ) * ( 100% - Min( {f(o, "enemyDEFRed_")} , 90% ) ) )</span>,
 
   heal_multi: (o) => <span>( 100% + {f(o, "heal_")} + {f(o, "incHeal_")} )</span>,
 

@@ -31,6 +31,7 @@ import CrescentPike from './Polearm/CrescentPike/data'
 // import Deathmatch from './Polearm/Deathmatch/data'
 // import DragonsBane from './Polearm/DragonsBane/data'
 import DragonspineSpear from './Polearm/DragonspineSpear/data'
+import EngulfingLightning from './Polearm/EngulfingLightning/data'
 // import FavoniusLance from './Polearm/FavoniusLance/data'
 import Halberd from './Polearm/Halberd/data'
 // import IronPoint from './Polearm/IronPoint/data'
@@ -150,6 +151,7 @@ const polearm = {
   // Deathmatch,
   // DragonsBane,
   DragonspineSpear,
+  EngulfingLightning,
   // FavoniusLance,
   Halberd,
   // IronPoint,
