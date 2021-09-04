@@ -30,7 +30,9 @@ export const data = {
   skill: {
     skillDMG: toTalentPercent(skillParam_gen.skill[0]),
     coorDMG: toTalentPercent(skillParam_gen.skill[1]),
+    duration: skillParam_gen.skill[2][0],
     eleBurConv: toTalentPercent(skillParam_gen.skill[3]),
+    cd:skillParam_gen.skill[4][0],
   },
   burst: {
     dmg: toTalentPercent(skillParam_gen.burst[0]),
@@ -67,8 +69,8 @@ const formula: IFormulaSheet = {
     coorDMG: stats => basicDMGFormula(data.skill.coorDMG[stats.tlvl.skill], stats, "skill"),
     eleBurConv: stats => {
       const val = data.skill.eleBurConv[stats.tlvl.skill]
-      const stam = data.burst.stam
-      return [s => val * stam, []]
+      const enerCost = data.burst.enerCost
+      return [s => val * enerCost, []]
     },
     ...Object.fromEntries(energyCosts.map(c => [c, stats => {
       const val = data.skill.eleBurConv[stats.tlvl.skill]
@@ -110,8 +112,10 @@ function burstDMG(percent: number, stats: BasicStats, intial = false): FormulaIt
     const statKey = getTalentStatKey("burst", stats)
     return [s => multi * s[statKey], [statKey]]
   }
-  const enemyLevelMulti = (100 + stats.characterLevel) / ((100 + stats.characterLevel) + (100 + stats.enemyLevel) * (1 - Math.min(stats.enemyDEFRed_ + 60, 90) / 100))
   const hitModeMultiKey = stats.hitMode === "avgHit" ? "burst_avgHit_base_multi" : stats.hitMode === "critHit" ? "critHit_base_multi" : ""
-  return [s => multi * s.finalATK * (hitModeMultiKey ? s[hitModeMultiKey] : 1) * s.electro_burst_hit_base_multi * enemyLevelMulti * s.electro_enemyRes_multi, ["finalATK", ...(hitModeMultiKey ? [hitModeMultiKey] : []), "electro_burst_hit_base_multi", "electro_enemyRes_multi"]]
+  return [s => {
+    const enemyLevelMulti = (100 + s.characterLevel) / ((100 + s.characterLevel) + (100 + s.enemyLevel) * (1 - Math.min(s.enemyDEFRed_ + 60, 90) / 100))
+    return multi * s.finalATK * (hitModeMultiKey ? s[hitModeMultiKey] : 1) * s.electro_burst_hit_base_multi * enemyLevelMulti * s.electro_enemyRes_multi
+  }, ["finalATK", ...(hitModeMultiKey ? [hitModeMultiKey] : []), "electro_burst_hit_base_multi", "characterLevel", "enemyLevel", "enemyDEFRed_", "electro_enemyRes_multi"]]
 }
 export default formula

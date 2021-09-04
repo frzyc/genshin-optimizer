@@ -23,13 +23,13 @@ const weapon: IWeaponSheet = {
   ...data_gen as WeaponData,
   img,
   stats: {
-    modifiers: { finalATK: [path.conv()] }
+    modifiers: { atk_: [path.conv()] }
   },
   conditionals,
   document: [{
     fields: [{
       text: st("increase.atk"),
-      formulaText: stats => <span>Min( {data.enerRechConv[stats.weapon.refineIndex]}% {Stat.printStat("enerRech_", stats, true)} , {data.enerRechMax[stats.weapon.refineIndex]} )</span>,
+      formulaText: stats => <span>Min( {data.enerRechConv[stats.weapon.refineIndex]}% * ( {Stat.printStat("enerRech_", stats, true)} - 100% ) , {data.enerRechMax[stats.weapon.refineIndex]}% )</span>,
       formula: formula.conv,
       fixed: 1,
       unit: "%"

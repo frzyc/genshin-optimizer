@@ -49,7 +49,7 @@ const conditionals: IConditionals = {
     },
     fields: [{
       text: tr("skill.skillParams.3"),
-      formulaText: stats => <span>{data.skill.eleBurConv[stats.tlvl.skill] * 100}% * {data.burst.stam}</span>,
+      formulaText: stats => <span>{data.skill.eleBurConv[stats.tlvl.skill] * 100}% * {data.burst.enerCost}</span>,
       formula: formula.skill.eleBurConv,
       fixed: 1,
       unit: "%"
@@ -133,10 +133,10 @@ const char: ICharacterSheet = {
             variant: stats => getTalentStatKeyVariant("skill", stats),
           }, {
             text: tr("skill.skillParams.2"),
-            value: "10s"
+            value: data.skill.duration
           }, {
             text: tr("skill.skillParams.4"),
-            value: "18s",
+            value: data.skill.cd
           }],
           conditional: conditionals.sk,
         }, {
