@@ -48,7 +48,7 @@
     "fields": {
       "normal": {
         "0": "<strong>Normal Attack</strong>",
-        "1": "Melancarkan maks. 5 serangan berturut-turut."
+        "1": "Melancarkan hingga 5 serangan berturut-turut."
       },
       "charged": {
         "0": "<strong>Charged Attack</strong>",
@@ -70,7 +70,7 @@
       "6": "DMG Akhir Charged Attack",
       "7": "Konsumsi Stamina Charged Attack",
       "8": "Durasi Maks.",
-      "9": "DMG Plunge",
+      "9": "DMG Selama Plunging",
       "10": "DMG Plunging Attack Ketinggian Rendah/Tinggi",
       "11": "",
       "12": "",
@@ -82,7 +82,7 @@
   "burst": {
     "name": "Glacial Illumination",
     "description": {
-      "0": "Eula mengayunkan pedang besarnya dan mengakibatkan <cryo>Cryo DMG</cryo> terhadap musuh di sekitar, serta menciptakan Lightfall Sword yang mengikutinya selama maks. 7 detik.",
+      "0": "Eula mengayunkan pedang besarnya dan mengakibatkan <cryo>Cryo DMG</cryo> terhadap musuh di sekitar, serta menciptakan Lightfall Sword yang mengikutinya selama hingga 7 detik.",
       "1": "Selama aktif, Lightfall Sword akan meningkatkan ketahanan Eula terhadap interupsi. Saat Normal Attack, Elemental Skill, dan Elemental Burst Eula mengakibatkan DMG terhadap musuh, energi Lightfall Sword akan terisi. 1 lapisan energi hanya dapat terisi setiap 0,1 detik.",
       "2": "Setelah durasinya berakhir, Lightfall Sword akan meledak hebat dan mengakibatkan Physical DMG terhadap musuh di sekitarnya.",
       "3": "DMG ini akan meningkat sesuai dengan jumlah lapisan energi yang berhasil dikumpulkan Lightfall Sword. Lightfall Sword akan langsung meledak saat Eula meninggalkan medan pertempuran.",
@@ -143,7 +143,7 @@
     "name": "Lawrence Pedigree",
     "description": {
       "0": "Meningkatkan 3 level <strong>Glacial Illumination</strong>.",
-      "1": "Level maksimum adalah level 15."
+      "1": "Maksimum: Lv. 15."
     }
   },
   "constellation4": {
@@ -156,7 +156,7 @@
     "name": "Chivalric Quality",
     "description": {
       "0": "Meningkatkan 3 level <strong>Icetide Vortex</strong>.",
-      "1": "Level maksimum adalah level 15."
+      "1": "Maksimum: Lv. 15."
     }
   },
   "constellation6": {

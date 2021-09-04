@@ -148,7 +148,7 @@
     "constellation6": {
       "name": "Erschütternde Blitze",
       "description": {
-        "0": "Erhöht den mit jedem dritten grellen Blitzschlag von <strong>Rollender Donner</strong> verursachten Schaden um 100 % und stellt der aktuellen Figur zusätzlich 1 Punkt Elementarenergie wieder her."
+        "0": "Erhöht den mit jedem dritten grellen Blitzschlag von <strong>Rollender Donner</strong> verursachten Schaden enorm, verursacht damit 200 % des ursprünglichen Schadens und stellt der aktuellen Figur zusätzlich 1 Punkt Elementarenergie wieder her."
       }
     }
   },

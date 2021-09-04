@@ -8,7 +8,7 @@
     "fields": {
       "normal": {
         "0": "<strong>Normal Attack</strong>",
-        "1": "Melancarkan maks. 5 serangan berturut-turut menggunakan busur."
+        "1": "Melancarkan hingga 5 serangan berturut-turut menggunakan busur."
       },
       "charged": {
         "0": "<strong>Charged Attack</strong>",
@@ -28,7 +28,7 @@
       "4": "DMG Tahap 5",
       "5": "DMG Membidik",
       "6": "DMG Membidik Penuh",
-      "7": "DMG Plunge",
+      "7": "DMG Selama Plunging",
       "8": "DMG Plunging Attack Min./Maks.",
       "9": "",
       "10": "",
@@ -94,7 +94,7 @@
       "2": "Regenerasi HP",
       "3": "Durasi",
       "4": "CD",
-      "5": "Energy",
+      "5": "Konsumsi Energy",
       "6": "",
       "7": "",
       "8": "",
@@ -142,7 +142,7 @@
     "name": "A—Another Round?",
     "description": {
       "0": "Meningkatkan 3 level <strong>Signature Mix</strong>.",
-      "1": "Level maksimum adalah level 15."
+      "1": "Maksimum: Lv. 15."
     }
   },
   "constellation4": {
@@ -155,7 +155,7 @@
     "name": "Double Shot, On The Rocks",
     "description": {
       "0": "Meningkatkan 3 level <strong>Icy Paws</strong>.",
-      "1": "Level maksimum adalah level 15."
+      "1": "Maksimum: Lv. 15."
     }
   },
   "constellation6": {

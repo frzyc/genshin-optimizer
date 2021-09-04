@@ -113,7 +113,7 @@
     }
   },
   "passive2": {
-    "name": "ขอสายลมจงนำพาคุณไป",
+    "name": "Let the Wind Lead",
     "description": {
       "0": "หลังจากใช้ <strong>Dandelion Breeze</strong> จะฟื้นฟูพลังงานธาตุ 20%"
     }

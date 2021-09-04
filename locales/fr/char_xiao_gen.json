@@ -122,7 +122,7 @@
     "name": "Transcendance : Contrôleur de gravité",
     "description": {
       "0": "Réduit la consommation d'endurance de vos personnages dans l'équipe de 20 % lors de l'escalade.",
-      "1": "Ne peut pas être cumulé avec d'autres attitudes passives aux effets identiques."
+      "1": "Ne peut pas être cumulé avec d'autres aptitudes passives aux effets identiques."
     }
   },
   "constellation1": {

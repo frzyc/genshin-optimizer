@@ -2,7 +2,7 @@
   "setName": "Dòng Hồi Ức Bất Tận",
   "setEffects": {
     "2": "Tấn công tăng 18%",
-    "4": "Khi thi triển Kỹ Năng Nguyên Tố, nhân vật có Năng Lượng Nguyên Tố cao hơn hoặc bằng 15 điểm thì sẽ mất đi 15 điểm để tăng 50% sát thương tấn công thường, trọng kích và tấn công khi đáp trong 10 giây."
+    "4": "Khi thi triển Kỹ Năng Nguyên Tố, nhân vật có Năng Lượng Nguyên Tố cao hơn hoặc bằng 15 điểm thì sẽ mất đi 15 điểm để tăng 50% sát thương tấn công thường, trọng kích và tấn công khi đáp trong 10 giây tiếp theo, trong thời gian duy trì, hiệu quả này sẽ không kích hoạt lần nữa."
   },
   "pieces": {
     "flower": {

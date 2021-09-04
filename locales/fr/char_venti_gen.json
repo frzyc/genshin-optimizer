@@ -120,7 +120,7 @@
     "name": "Chevaucheur du vent",
     "description": {
       "0": "Réduit la consommation d'endurance de vos personnages dans l'équipe de 20 % lors du planage.",
-      "1": "Ne peut pas être cumulé avec d'autres attitudes passives aux effets identiques."
+      "1": "Ne peut pas être cumulé avec d'autres aptitudes passives aux effets identiques."
     }
   },
   "constellation1": {

@@ -7,7 +7,7 @@
     "name": "Steel Fang",
     "fields": {
       "normal": {
-        "0": "<strong>Normal Attack</strong> Melancarkan maks. 4 tebasan berturut-turut."
+        "0": "<strong>Normal Attack</strong> Melancarkan hingga 4 tebasan berturut-turut."
       },
       "charged": {
         "0": "<strong>Charged Attack</strong>",
@@ -28,7 +28,7 @@
       "5": "DMG Akhir Charged Attack",
       "6": "Konsumsi Stamina Charged Attack",
       "7": "Durasi Maks.",
-      "8": "DMG Plunge",
+      "8": "DMG Selama Plunging",
       "9": "DMG Plunging Attack Min./Maks.",
       "10": "",
       "11": "",
@@ -88,7 +88,7 @@
       ],
       "5": "<br/>",
       "6": "Efek-efek ini berakhir saat Razor meninggalkan medan pertempuran.",
-      "7": "Saat Razor meninggalkan medan pertempuran, maks. 10 Energy akan dikembalikan kepadanya berdasarkan durasi yang tersisa dari skill ini.",
+      "7": "Saat Razor meninggalkan medan pertempuran, hingga 10 Energy akan dikembalikan kepadanya berdasarkan durasi yang tersisa dari skill ini.",
       "8": "<br/>",
       "9": "<i>Sang serigala telah terbangun, perburuan dimulai.</i>"
     },
@@ -99,7 +99,7 @@
       "3": "Bonus Electro RES",
       "4": "Durasi",
       "5": "Cooldown",
-      "6": "Energy",
+      "6": "Konsumsi Energy",
       "7": "",
       "8": "",
       "9": "",
@@ -147,7 +147,7 @@
     "name": "Soul Companion",
     "description": {
       "0": "Meningkatkan 3 level <strong>Lightning Fang</strong>.",
-      "1": "Level maksimum adalah level 15."
+      "1": "Maksimum: Lv. 15."
     }
   },
   "constellation4": {
@@ -160,7 +160,7 @@
     "name": "Sharpened Claws",
     "description": {
       "0": "Meningkatkan 3 level <strong>Claw and Thunder</strong>.",
-      "1": "Level maksimum adalah level 15."
+      "1": "Maksimum: Lv. 15."
     }
   },
   "constellation6": {

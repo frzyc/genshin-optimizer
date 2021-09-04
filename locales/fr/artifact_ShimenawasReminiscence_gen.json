@@ -2,7 +2,7 @@
   "setName": "Réminiscence nostalgique",
   "setEffects": {
     "2": "Augmente l'ATQ de 18 %.",
-    "4": "Lorsque le personnage possède au minimum 15 pts d'énergie élémentaire, libérer sa compétence élémentaire entraîne une perte de 15 pts d'énergie, mais les DGT infligés par son attaque normale, chargée et plongeante augmentent de 50 % pendant 10 s."
+    "4": "Lorsque le personnage possède au minimum 15 pts d'énergie élémentaire, libérer une compétence élémentaire entraîne une perte de 15 pts d'énergie, mais les DGT infligés par son attaque normale, chargée et plongeante augmentent de 50 % pendant 10 s. Cet effet ne se déclenchera plus pendant cette durée."
   },
   "pieces": {
     "flower": {

@@ -8,7 +8,7 @@
     "fields": {
       "normal": {
         "0": "<strong>Normal Attack</strong>",
-        "1": "Melancarkan maks. 5 serangan berturut-turut."
+        "1": "Melancarkan hingga 5 serangan berturut-turut."
       },
       "charged": {
         "0": "<strong>Charged Attack</strong>",
@@ -27,7 +27,7 @@
       "4": "DMG Tahap 5",
       "5": "DMG Charged Attack",
       "6": "Konsumsi Stamina Charged Attack",
-      "7": "DMG Plunge",
+      "7": "DMG Selama Plunging",
       "8": "DMG Plunging Attack Min./Maks.",
       "9": "",
       "10": "",
@@ -89,7 +89,7 @@
       "0": "DMG Elemental Burst",
       "1": "DMG Fatal Blossom",
       "2": "Cooldown",
-      "3": "Energy",
+      "3": "Konsumsi Energy",
       "4": "",
       "5": "",
       "6": "",
@@ -143,7 +143,7 @@
     "name": "Grace of Helios",
     "description": {
       "0": "Meningkatkan 3 level <strong>Abiogenesis: Solar Isotoma</strong>.",
-      "1": "Level maksimum adalah level 15."
+      "1": "Maksimum: Lv. 15."
     }
   },
   "constellation4": {
@@ -155,8 +155,8 @@
   "constellation5": {
     "name": "Tide of Hadean",
     "description": {
-      "0": "Meningkatkan level skill <strong>Rite of Progeniture: Tectonic Tide</strong>.",
-      "1": "Level maksimum adalah level 15."
+      "0": "Meningkatkan 3 level <strong>Rite of Progeniture: Tectonic Tide</strong>.",
+      "1": "Maksimum: Lv. 15."
     }
   },
   "constellation6": {

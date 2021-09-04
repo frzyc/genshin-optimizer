@@ -26,7 +26,7 @@
       "1": "DMG Charged Attack",
       "2": "DMG Per Star Jade",
       "3": "Konsumsi Stamina Charged Attack",
-      "4": "DMG Plunge",
+      "4": "DMG Selama Plunging",
       "5": "DMG Plunging Attack Min./Maks.",
       "6": "",
       "7": "",
@@ -85,7 +85,7 @@
     "skillParams": {
       "0": "DMG Per Gem",
       "1": "Cooldown",
-      "2": "Energy",
+      "2": "Konsumsi Energy",
       "3": "",
       "4": "",
       "5": "",
@@ -136,7 +136,7 @@
     "name": "Majesty be the Array of Stars",
     "description": {
       "0": "Meningkatkan 3 level <strong>Starshatter</strong>.",
-      "1": "Level maksimum adalah level 15."
+      "1": "Maksimum: Lv. 15."
     }
   },
   "constellation4": {
@@ -149,7 +149,7 @@
     "name": "Invincible be the Jade Screen",
     "description": {
       "0": "Meningkatkan 3 level <strong>Jade Screen</strong>.",
-      "1": "Level maksimum adalah level 15."
+      "1": "Maksimum: Lv. 15."
     }
   },
   "constellation6": {

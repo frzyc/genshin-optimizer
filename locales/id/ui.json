@@ -1,0 +1,32 @@
+{
+  "pageTitle": "Genshin Optimizer",
+  "tabs": {
+    "artifacts": "Artefak",
+    "characters": "Karakter",
+    "builds": "Build",
+    "tools": "Alat",
+    "database": "Database"
+  },
+  "social": {
+    "paypal": "Paypal",
+    "patreon": "Patreon",
+    "discord": "Discord"
+  },
+  "game": {
+    "minLevel": "Level Min",
+    "maxLevel": "Level Max",
+    "rarity": "Kualitas",
+    "level": "Level"
+  },
+  "unselect": "Batal pilih",
+  "ascending": "Naik",
+  "descending": "Menurun",
+  "sortByFormat": "Urut Berdasarkan: {{value}}",
+  "loading": "Memuat...",
+  "rightsDisclaimer": "Genshin Optimizer tidak berafiliasi dengan ataupun didukung oleh miHoYo.",
+  "appVersion": "$t(halamanJudul) Versi: {{version}}",
+  "underConstruction": "Sedang Dibangun",
+  "error": "Error",
+  "reset": "Hapus",
+  "info": "INFO"
+}

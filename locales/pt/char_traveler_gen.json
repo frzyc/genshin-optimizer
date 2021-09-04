@@ -150,7 +150,7 @@
     "constellation6": {
       "name": "Agitador de Mundos",
       "description": {
-        "0": "A cada 2 ataques do Relâmpago Poderoso desencadeados pelo <strong>Rugido do Trovão</strong> aumentará o Dano causado pelo próximo Relâmpago Poderoso em 100%, e recupera energia adicional de 1 de Energia Elemental para o personagem atual."
+        "0": "A cada 2 Relâmpagos Poderosos desencadeados pelo <strong>Rugido do Trovão</strong>, o Dano do próximo Relâmpago Poderoso será aumentado consideravelmente, fazendo com que cause 200% do seu Dano original, e restaurará 1 ponto de Energia Elemental adicional para o personagem atual."
       }
     }
   },

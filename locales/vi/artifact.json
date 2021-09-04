@@ -40,8 +40,8 @@
   },
   "artifactFilter": "Bộ lọc Thánh Di Vật",
   "filterLocation": {
-    "inventory": "Túi",
-    "currentlyEquipped": "Đã trang bị",
+    "inventory": "Kho đồ",
+    "currentlyEquipped": "Đang trang bị",
     "any": "Bất kỳ"
   },
   "button": {

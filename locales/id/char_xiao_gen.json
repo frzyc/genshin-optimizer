@@ -8,7 +8,7 @@
     "fields": {
       "normal": {
         "0": "<strong>Normal Attack</strong>",
-        "1": "Melancarkan maks. 6 serangan berturut-turut."
+        "1": "Melancarkan hingga 6 serangan berturut-turut."
       },
       "charged": {
         "0": "<strong>Charged Attack</strong>",
@@ -29,7 +29,7 @@
       "5": "DMG Tahap 6",
       "6": "DMG Charged Attack",
       "7": "Konsumsi Stamina Charged Attack",
-      "8": "DMG Plunging Attack",
+      "8": "DMG Selama Plunging",
       "9": "DMG Plunging Attack Min./Maks.",
       "10": "",
       "11": "",
@@ -89,7 +89,7 @@
       "1": "Pengurangan HP",
       "2": "Durasi",
       "3": "Cooldown",
-      "4": "Energy",
+      "4": "Konsumsi Energy",
       "5": "",
       "6": "",
       "7": "",
@@ -140,7 +140,7 @@
     "name": "Conqueror of Evil: Wrath Deity",
     "description": {
       "0": "Meningkatkan 3 level <strong>Lemniscatic Wind Cycling</strong>.",
-      "1": "Level maksimum adalah level 15."
+      "1": "Maksimum: Lv. 15."
     }
   },
   "constellation4": {
@@ -153,7 +153,7 @@
     "name": "Evolution Eon: Origin of Ignorance",
     "description": {
       "0": "Meningkatkan 3 level <strong>Bane of All Evil</strong>.",
-      "1": "Level maksimum adalah level 15."
+      "1": "Maksimum: Lv. 15."
     }
   },
   "constellation6": {

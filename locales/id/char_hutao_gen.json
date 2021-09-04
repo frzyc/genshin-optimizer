@@ -8,7 +8,7 @@
     "fields": {
       "normal": {
         "0": "<strong>Normal Attack</strong>",
-        "1": "Melancarkan maks. 6 serangan berturut-turut."
+        "1": "Melancarkan hingga 6 serangan berturut-turut."
       },
       "charged": {
         "0": "<strong>Charged Attack</strong>",
@@ -28,7 +28,7 @@
       "5": "DMG Tahap 6",
       "6": "DMG Charged Attack",
       "7": "Konsumsi Stamina Charged Attack",
-      "8": "DMG Plunge",
+      "8": "DMG Selama Plunging",
       "9": "DMG Plunging Attack Min./Maks.",
       "10": "",
       "11": "",
@@ -94,7 +94,7 @@
       "2": "Pemulihan HP",
       "3": "Pemulihan HP Saat HP Rendah",
       "4": "CD",
-      "5": "Energy",
+      "5": "Konsumsi Energy",
       "6": "",
       "7": "",
       "8": "",
@@ -141,8 +141,8 @@
   "constellation3": {
     "name": "Lingering Carmine",
     "description": {
-      "0": "Meningkatkan level skill <strong>Guide to Afterlife</strong> sebanyak 3 level.",
-      "1": "Max. Lv: 15."
+      "0": "Meningkatkan 3 level <strong>Guide to Afterlife</strong>.",
+      "1": "Maksimum: Lv. 15."
     }
   },
   "constellation4": {
@@ -154,8 +154,8 @@
   "constellation5": {
     "name": "Floral Incense",
     "description": {
-      "0": "Meningkatkan level skill <strong>Spirit Soother</strong> sebanyak 3 level.",
-      "1": "Max. Lv: 15."
+      "0": "Meningkatkan 3 level <strong>Spirit Soother</strong>.",
+      "1": "Maksimum: Lv. 15."
     }
   },
   "constellation6": {

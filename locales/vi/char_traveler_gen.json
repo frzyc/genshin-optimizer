@@ -150,7 +150,7 @@
     "constellation6": {
       "name": "Thần Lôi Chấn Thế",
       "description": {
-        "0": "Mỗi khi <strong>Xung Điện Sấm Rền</strong> tạo ra 2 lần Sấm Sét Uy Vũ sẽ tăng 100% sát thương do Sấm Sét Uy Vũ gây ra ở lần sau, đồng thời hồi thêm 1 điểm Năng Lượng Nguyên Tố cho nhân vật hiện tại."
+        "0": "Mỗi khi <strong>Xung Điện Sấm Rền</strong> tạo ra 2 lần Sấm Sét Uy Vũ, thì Sấm Sét Uy Vũ lần sau sẽ gây 200% sát thương so với ban đầu, đồng thời hồi thêm 1 điểm Năng Lượng Nguyên Tố cho nhân vật hiện tại."
       }
     }
   },

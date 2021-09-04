@@ -8,7 +8,7 @@
     "fields": {
       "normal": {
         "0": "<strong>Normal Attack</strong>",
-        "1": "Melancarkan maks. 6 serangan berturut-turut menggunakan busur."
+        "1": "Melancarkan hingga 6 serangan berturut-turut menggunakan busur."
       },
       "charged": {
         "0": "<strong>Charged Attack</strong>",
@@ -29,7 +29,7 @@
       "5": "DMG Tahap 6",
       "6": "DMG Membidik",
       "7": "DMG Membidik Penuh",
-      "8": "DMG Plunge",
+      "8": "DMG Selama Plunging",
       "9": "DMG Plunging Attack Min./Maks.",
       "10": "",
       "11": "",
@@ -90,7 +90,7 @@
       "1": "Tambahan Elemental DMG",
       "2": "Durasi",
       "3": "Cooldown",
-      "4": "Energy",
+      "4": "Konsumsi Energy",
       "5": "",
       "6": "",
       "7": "",
@@ -141,7 +141,7 @@
     "name": "Ode to Thousand Winds",
     "description": {
       "0": "Meningkatkan 3 level <strong>Wind's Grand Ode</strong>.",
-      "1": "Level maksimum adalah level 15."
+      "1": "Maksimum: Lv. 15."
     }
   },
   "constellation4": {
@@ -153,8 +153,8 @@
   "constellation5": {
     "name": "Concerto dal Cielo",
     "description": {
-      "0": "Meningkatkan 3 level skill <strong>Skyward Sonnet</strong>.",
-      "1": "Level maksimum adalah level 15."
+      "0": "Meningkatkan 3 level <strong>Skyward Sonnet</strong>.",
+      "1": "Maksimum: Lv. 15."
     }
   },
   "constellation6": {

@@ -1,0 +1,13 @@
+{
+  "a4": {
+    "name": "Setelah memicu reaksi Swirl",
+    "text": "Bonus Elemental DMG Party",
+    "bonus": "Bonus Elemental DMG"
+  },
+  "c1": "Menggunanakan <strong>Kazuha Slash</strong> me-reset CD",
+  "c2": "Dalam area Autumn Whilelwind",
+  "c6": {
+    "after": "Setelah menggunakan <strong>Chihayaburu</strong> atau <strong>Kazuha Slash</strong>",
+    "bonus": "DMG Normal, Charged dan Plunging"
+  }
+}

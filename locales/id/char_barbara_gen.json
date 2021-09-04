@@ -8,7 +8,7 @@
     "fields": {
       "normal": {
         "0": "<strong>Normal Attack</strong>",
-        "1": "Melancarkan maks. 4 serangan air yang mengakibatkan <hydro>Hydro DMG</hydro>."
+        "1": "Melancarkan hingga 4 serangan air yang mengakibatkan <hydro>Hydro DMG</hydro>."
       },
       "charged": {
         "0": "<strong>Charged Attack</strong>",
@@ -26,7 +26,7 @@
       "3": "DMG Tahap 4",
       "4": "DMG Charged Attack",
       "5": "Konsumsi Stamina Charged Attack",
-      "6": "DMG Plunge",
+      "6": "DMG Selama Plunging",
       "7": "DMG Plunging Attack Min./Maks.",
       "8": "",
       "9": "",
@@ -82,7 +82,7 @@
     "skillParams": {
       "0": "Pemulihan HP",
       "1": "Cooldown",
-      "2": "Energy",
+      "2": "Konsumsi Energy",
       "3": "",
       "4": "",
       "5": "",
@@ -134,7 +134,7 @@
     "name": "Star of Tomorrow",
     "description": {
       "0": "Meningkatkan 3 level <strong>Shining Miracle♪</strong>.",
-      "1": "Level maksimum adalah level 15."
+      "1": "Maksimum: Lv. 15."
     }
   },
   "constellation4": {
@@ -148,7 +148,7 @@
     "name": "The Purest Companionship",
     "description": {
       "0": "Meningkatkan 3 level <strong>Let the Show Begin♪</strong>.",
-      "1": "Level maksimum adalah level 15."
+      "1": "Maksimum: Lv. 15."
     }
   },
   "constellation6": {

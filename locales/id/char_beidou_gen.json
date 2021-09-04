@@ -8,7 +8,7 @@
     "fields": {
       "normal": {
         "0": "<strong>Normal Attack</strong>",
-        "1": "Melancarkan maks. 5 serangan berturut-turut."
+        "1": "Melancarkan hingga 5 serangan berturut-turut."
       },
       "charged": {
         "0": "<strong>Charged Attack</strong>",
@@ -30,7 +30,7 @@
       "6": "DMG Akhir Charged Attack",
       "7": "Konsumsi Stamina Charged Attack",
       "8": "Durasi Maks.",
-      "9": "DMG Plunge",
+      "9": "DMG Selama Plunging",
       "10": "DMG Plunging Attack Min./Maks.",
       "11": "",
       "12": "",
@@ -99,7 +99,7 @@
       "2": "Pengurangan DMG",
       "3": "Durasi",
       "4": "CD",
-      "5": "Energy",
+      "5": "Konsumsi Energy",
       "6": "",
       "7": "",
       "8": "",
@@ -131,8 +131,8 @@
   "passive3": {
     "name": "Conqueror of Tides",
     "description": {
-      "0": "Mengurangi 20% konsumsi Stamina karakter sendiri saat berenang.",
-      "1": "Efek tidak dapat ditumpuk dengan Talenta Pasif lain yang memiliki efek yang sama."
+      "0": "Mengurangi 20% konsumsi Stamina Karakter sendiri saat berenang.",
+      "1": "Efek tidak dapat ditumpuk dengan Talenta Pasif lain dengan efek yang sama."
     }
   },
   "constellation1": {
@@ -153,7 +153,7 @@
     "name": "Summoner of Storm",
     "description": {
       "0": "Meningkatkan 3 level <strong>Tidecaller</strong>.",
-      "1": "Level maksimum adalah level 15."
+      "1": "Maksimum: Lv. 15."
     }
   },
   "constellation4": {
@@ -166,7 +166,7 @@
     "name": "Crimson Tidewalker",
     "description": {
       "0": "Meningkatkan 3 level <strong>Stormbreaker</strong>.",
-      "1": "Level maksimum adalah level 15."
+      "1": "Maksimum: Lv. 15."
     }
   },
   "constellation6": {

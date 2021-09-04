@@ -8,7 +8,7 @@
     "fields": {
       "normal": {
         "0": "<strong>Normal Attack</strong>",
-        "1": "Melancarkan maks. 5 serangan berturut-turut menggunakan busur."
+        "1": "Melancarkan hingga 5 serangan berturut-turut menggunakan busur."
       },
       "charged": {
         "0": "<strong>Charged Attack</strong>",
@@ -28,7 +28,7 @@
       "4": "DMG Tahap 5",
       "5": "DMG Membidik",
       "6": "DMG Membidik Penuh",
-      "7": "DMG Plunge",
+      "7": "DMG Selama Plunging",
       "8": "DMG Plunging Attack Min./Maks.",
       "9": "",
       "10": "",
@@ -88,7 +88,7 @@
       "1": "DMG Total Fiery Rain",
       "2": "Durasi",
       "3": "Cooldown",
-      "4": "Energy",
+      "4": "Konsumsi Energy",
       "5": "",
       "6": "",
       "7": "",
@@ -137,7 +137,8 @@
   "constellation3": {
     "name": "It Burns!",
     "description": {
-      "0": "Meningkatkan level skill <strong>Fiery Rain</strong> sebanyak 3 level. Max. Lv: 15."
+      "0": "Meningkatkan 3 level <strong>Fiery Rain</strong>.",
+      "1": "Maksimum: Lv. 15."
     }
   },
   "constellation4": {
@@ -150,7 +151,7 @@
     "name": "It's Baron Bunny!",
     "description": {
       "0": "Meningkatkan 3 level <strong>Explosive Puppet</strong>.",
-      "1": "Level maksimum adalah level 15."
+      "1": "Maksimum: Lv. 15."
     }
   },
   "constellation6": {

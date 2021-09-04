@@ -40,7 +40,7 @@
     "fields": {
       "normal": {
         "0": "<strong>Normal Attack</strong>",
-        "1": "Melancarkan maks. 5 tebasan pedang berturut-turut."
+        "1": "Melancarkan hingga 5 tebasan pedang berturut-turut."
       },
       "charged": {
         "0": "<strong>Charged Attack</strong>",
@@ -63,7 +63,7 @@
       "4": "DMG Tahap 5",
       "5": "DMG Charged Attack",
       "6": "Konsumsi Stamina Charged Attack",
-      "7": "DMG Plunge",
+      "7": "DMG Selama Plunging",
       "8": "DMG Plunging Attack Min./Maks.",
       "9": "",
       "10": "",
@@ -155,7 +155,7 @@
   "constellation3": {
     "name": "Maple Monogatari",
     "description": {
-      "0": "Meningkatkan 3 level <strong>Chihayaburu</strong>. Max. Lv: 15."
+      "0": "Meningkatkan 3 level <strong>Chihayaburu</strong>. Maksimum: Lv. 15."
     }
   },
   "constellation4": {
@@ -171,7 +171,7 @@
   "constellation5": {
     "name": "Wisdom of Bansei",
     "description": {
-      "0": "Meningkatkan 3 level skill <strong>Kazuha Slash</strong>. Max. Lv: 15."
+      "0": "Meningkatkan 3 level <strong>Kazuha Slash</strong>. Maksimum: Lv. 15."
     }
   },
   "constellation6": {

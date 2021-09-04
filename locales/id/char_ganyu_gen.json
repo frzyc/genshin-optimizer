@@ -8,7 +8,7 @@
     "fields": {
       "normal": {
         "0": "<strong>Normal Attack</strong>",
-        "1": "Melancarkan maks. 6 serangan berturut-turut dengan busur."
+        "1": "Melancarkan hingga 6 serangan berturut-turut dengan busur."
       },
       "charged": {
         "0": "<strong>Charged Attack</strong>",
@@ -35,7 +35,7 @@
       "7": "Serangan Membidik Tahap 1",
       "8": "DMG Frostflake Arrow",
       "9": "DMG Frostflake Arrow Bloom",
-      "10": "DMG Plunge",
+      "10": "DMG Selama Pluging",
       "11": "DMG Plunging Attack Min./Maks.",
       "12": "",
       "13": "",
@@ -88,7 +88,7 @@
       "0": "DMG Ice Shard",
       "1": "Durasi",
       "2": "Cooldown",
-      "3": "Energy",
+      "3": "Konsumsi Energy",
       "4": "",
       "5": "",
       "6": "",
@@ -138,7 +138,7 @@
     "name": "Cloud-Strider",
     "description": {
       "0": "Meningkatkan 3 level <strong>Celestial Shower</strong>.",
-      "1": "Level maksimum adalah level 15."
+      "1": "Maksimum: Lv. 15."
     }
   },
   "constellation4": {
@@ -153,7 +153,7 @@
     "name": "The Merciful",
     "description": {
       "0": "Meningkatkan 3 level <strong>Trail of the Qilin</strong>.",
-      "1": "Level maksimum adalah level 15."
+      "1": "Maksimum: Lv. 15."
     }
   },
   "constellation6": {

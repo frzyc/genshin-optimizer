@@ -15,7 +15,7 @@
         "1": "Effectue un <strong>tir visé</strong> plus précis et infligeant davantage de DGT.",
         "2": "En visant, des flammes viennent se concentrer sur le carreau de la flèche avant d'être tirées lors de l'attaque. L'effet varie selon le nombre de charges :",
         "3": [
-          " 1 charge : Tire une flèche enflammée qui inflige des <cryo>DGT Pyro</cryo>.",
+          " 1 charge : Tire une flèche enflammée qui inflige des <pyro>DGT Pyro</pyro>.",
           " 2 charges : Génère jusqu'à 3 flèches chercheuses en fonction du temps de charge, qui sont libérées lors du tir visé. Les flèches suivent les ennemis proches, et infligent lorsqu'elles touchent des <pyro>DGT Pyro</pyro>."
         ]
       },
@@ -115,7 +115,7 @@
   "passive2": {
     "name": "Aube d'une nuit d'été",
     "description": {
-      "0": "Lorsque Yoimiya libère <strong>Saxifrage Ryuukin</strong>, l'ATQ de tous les autres personnages de l'équipe (hormis Yoimiya) augmente de 10 % pendant 15 s. De plus, chaque cumul de l'aptitude passive « Tour de passe-passe » que Yoimiyo possède lorsqu'elle exécute <strong>Saxifrage d'or</strong> augmente ce bonus d'ATQ de 1 %."
+      "0": "Lorsque Yoimiya libère <strong>Saxifrage Ryuukin</strong>, l'ATQ de tous les autres personnages de l'équipe (hormis Yoimiya) augmente de 10 % pendant 15 s. De plus, chaque cumul de l'aptitude passive « Tour de passe-passe » que Yoimiya possède lorsqu'elle exécute <strong>Saxifrage d'or</strong> augmente ce bonus d'ATQ de 1 %."
     }
   },
   "passive3": {

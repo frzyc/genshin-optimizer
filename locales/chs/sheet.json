@@ -9,7 +9,7 @@
     "charged": "重击命中对手",
     "plunging": "下落攻击命中对手",
     "skill": "元素技能命中对手",
-    "burst": "元素技能命中对手"
+    "burst": "元素爆发命中敌人"
   },
   "hits_plural": "{{count}} 段",
   "eleAbsor": "元素转化",

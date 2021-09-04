@@ -8,7 +8,7 @@
     "fields": {
       "normal": {
         "0": "<strong>Normal Attack</strong>",
-        "1": "Melancarkan maks. 3 serangan bola api yang mengakibatkan <pyro>Pyro DMG</pyro>.",
+        "1": "Melancarkan hingga 3 serangan bola api yang mengakibatkan <pyro>Pyro DMG</pyro>.",
         "2": "Ketika Normal Attack Yanfei mengenai musuh, Yanfei akan mendapatkan 1 Scarlet Seal. Scarlet Seal maksimum yang bisa dikumpulkan Yanfei adalah 3 buah. Setiap kali efek ini terpicu, durasi dari Scarlet Seal yang telah terkumpul akan diperbarui.",
         "3": "Setiap Scarlet Seal akan mengurangi konsumsi Stamina Yanfei dan akan menghilang jika Yanfei meninggalkan medan pertempuran."
       },
@@ -30,7 +30,7 @@
       "4": "Konsumsi Stamina Charged Attack",
       "5": "Pengurangan Konsumsi Stamina Scarlet Seal",
       "6": "Durasi Scarlet Seal",
-      "7": "DMG Plunging",
+      "7": "DMG Selama Plunging",
       "8": "DMG Plunging Attack Ketinggian Rendah/Tinggi",
       "9": "",
       "10": "",
@@ -136,7 +136,7 @@
     "name": "Samadhi Fire-Forged",
     "description": {
       "0": "Meningkatkan 3 level <strong>Signed Edict</strong>.",
-      "1": "Level maksimum adalah level 15."
+      "1": "Maksimum: Lv. 15."
     }
   },
   "constellation4": {
@@ -151,7 +151,7 @@
     "name": "Abiding Affidavit",
     "description": {
       "0": "Meningkatkan 3 level <strong>Done Deal</strong>.",
-      "1": "Level maksimum adalah level 15."
+      "1": "Maksimum: Lv. 15."
     }
   },
   "constellation6": {

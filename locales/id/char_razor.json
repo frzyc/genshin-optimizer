@@ -1,0 +1,6 @@
+{
+  "fullBurstDMG": {
+    "text": "<0><0><0>Full Elemental Burst DMG</0></0><1>Ini menghitung kombinasi damage dari normal attack Razor selama Elemental Burst. Ini hanya menambahkan DMG X-Hit dari Serigala bersamaan dengan DMG X-Hit dari nromal attack yang memicunya.</1></0>",
+    "label": "Normal + Wolf Hit DMG {{hitNum}}"
+  }
+}

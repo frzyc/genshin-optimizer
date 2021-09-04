@@ -148,7 +148,7 @@
     "constellation6": {
       "name": "Secousse céleste",
       "description": {
-        "0": "Toutes les 2 Foudres majestueuses déclenchées par <strong>Tonnerre hurlant</strong>, les DGT de la Foudre majestueuse suivante augmentent de 100 %, et le personnage actuel récupère 1 pt d'énergie élémentaire supplémentaire."
+        "0": "Toutes les 2 Foudres majestueuses déclenchées par <strong>Tonnerre hurlant</strong>, la Foudre majestueuse suivante inflige 200 % de ses DGT d'origine et le personnage actuel récupère 1 pt d'énergie élémentaire supplémentaire."
       }
     }
   },

@@ -128,7 +128,7 @@
     "name": "Vent d'aube",
     "description": {
       "0": "Réduit la consommation d'endurance des personnages de l'équipe de 20 % lors du sprint.",
-      "1": "Ne peut pas être cumulé avec d'autres attitudes passives aux effets identiques."
+      "1": "Ne peut pas être cumulé avec d'autres aptitudes passives aux effets identiques."
     }
   },
   "constellation1": {

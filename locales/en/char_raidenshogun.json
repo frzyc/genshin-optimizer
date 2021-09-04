@@ -1,0 +1,13 @@
+{
+  "skill": {
+    "eye": "Eye of Stormy Judgement",
+    "partyCost": "Energy Cost (party)"
+  },
+  "burst": {
+    "resolves": "Resolve Stacks"
+  },
+  "a4": {
+    "enerRest": "Energy restoration from <strong>Musou Isshin</strong>",
+    "eleDMG": "Electro DMG Bonus"
+  }
+}

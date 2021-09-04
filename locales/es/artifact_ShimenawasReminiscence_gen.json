@@ -2,7 +2,7 @@
   "setName": "Reminiscencia de la Purificación",
   "setEffects": {
     "2": "ATQ +18%.",
-    "4": "Si el personaje tiene 15 pts. de Energía Elemental o más, perderá 15 pts. al realizar una Habilidad Elemental y el daño infligido con los Ataques Normales, Cargados y Descendentes aumentará en un 50% durante 10 s."
+    "4": "Si el personaje tiene 15 pts. de Energía Elemental o más, perderá 15 pts. al realizar una Habilidad Elemental y el daño infligido con los Ataques Normales, Cargados y Descendentes aumentará en un 50% durante 10 s. Este efecto no puede activarse más de una vez simultáneamente."
   },
   "pieces": {
     "flower": {

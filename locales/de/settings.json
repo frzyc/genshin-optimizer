@@ -6,10 +6,6 @@
   },
   "downloadCard": {
     "databaseDownload": "Datenbank exportieren",
-    "charsStored": "<0>{{count}}</0> Figur gespeichert",
-    "charsStored_plural": "<0>{{count}}</0> Figur gespeichert",
-    "artisStored": "<0>{{count}}</0> Artefakt gespeichert",
-    "artisStored_plural": "<0>{{count}}</0> Artefakte gespeichert",
     "databaseDisclaimer": "Hinweis: Alle Daten aus der \"Extras\" Rubrik, wie z.B. Anzahl/Timer für Ursprüngliches Harz, sind nicht teil der exportieren Datenbank.",
     "button": {
       "download": "Herunterladen",
@@ -21,11 +17,6 @@
     "title": "Datenbank importieren",
     "replaceDatabase": "Datenbank ersetzen",
     "hint": "Lade die JSON-Datei hier hoch...",
-    "hintPaste": "... oder kopiere den Text hierhin.",
-    "numChar": "Anzahl Figuren:",
-    "numArt": "Anzahl Artefakte:"
-  },
-  "dialog": {
-    "delete-database": "Datenbank wirklich löschen? Alle existierenden Figuren und Artefakte werden dadurch gelöscht."
+    "hintPaste": "... oder kopiere den Text hierhin."
   }
 }

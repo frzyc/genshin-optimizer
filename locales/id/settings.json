@@ -1,0 +1,49 @@
+{
+  "title": "Pengaturan",
+  "languageCard": {
+    "selectLanguage": "Pilih Bahasa",
+    "languageFormat": "Bahasa: {{language}}"
+  },
+  "downloadCard": {
+    "databaseDownload": "Unduh Database",
+    "databaseDisclaimer": "Catatan: data apa pun dalam halaman \"Alat\", mis. Jumlah resin/timer, bukan bagian dari database yang diunduh.",
+    "button": {
+      "download": "Unduh",
+      "copy": "Salin ke Papan klip",
+      "delete": "Hapus Database"
+    }
+  },
+  "uploadCard": {
+    "title": "Unggah Database",
+    "replaceDatabase": "Ganti Database",
+    "hint": "Unggah file JSON disini...",
+    "hintPaste": "...atau tempel datamu dibawah.",
+    "goUpload": {
+      "title": "<strong>Genshin Optimizer</strong> format",
+      "migrate": "Database akan dipindahkan ke versi terbaru. Harap pertimbangkan untuk mengunduh ulang database setelah mengimpor.",
+      "deleteDatabasePrompt": "Apakah kamu yakin ingin mengganti database mu? Semua karakter dan artefak yang ada akan dihapus."
+    },
+    "monaUpload": {
+      "title": "<strong>mona-uranai</strong> format",
+      "import": "Impor",
+      "deleteExistingButton": "Hapus Artefak Makanan",
+      "deleteExistingExplanation": "Jika Anda melakukan impor lengkap, semua artefak yang tidak ditemukan dalam impor ini akan dihapus.(foddered)<br>Artefak yang ditingkatkan tidak akan dihapus, tetapi diperbarui sesuai dengan itu.",
+      "deleteExistingPrompt": "Apakah kamu yakin ingin menghapus semua artefak yang tidak ditemukan dalam impor saat ini? (Artefak yang ditingkatkan tidak akan terpengaruh.)"
+    },
+    "error": {
+      "jsonParse": "Tidak dapat mengurai file JSON.",
+      "unknown": "Format file tidak dikenal.",
+      "monaInvalid": "Format file Mona-Uranai tidak valid",
+      "goInvalid": "Format file cadangan GO tidak valid."
+    }
+  },
+  "count": {
+    "chars": "Karakter:",
+    "arts": "Artefak:",
+    "artsDup": "Artefak Ganda:",
+    "artsNew": "Artefak Baru:",
+    "artsUpg": "Artefak Ditingkatkan:",
+    "artsInvalid": "Artefak Invalid",
+    "artsFod": "Artefak Makanan"
+  }
+}

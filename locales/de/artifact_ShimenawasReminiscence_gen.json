@@ -2,7 +2,7 @@
   "setName": "Gedenken an Shimenawa",
   "setEffects": {
     "2": "Erhöht den ANG um 18 %.",
-    "4": "Verringert bei Anwendung einer Elementarfähigkeit die Elementarenergie um 15 Punkte, wenn die Figur mindestens 15 Punkte Elementarenergie besitzt. Erhöht daraufhin den mit Standardangriffen, heftigen Schlägen und Angriffen aus dem Fall verursachten Schaden 10 s lang um 50 %."
+    "4": "Verringert bei Anwendung einer Elementarfähigkeit die Elementarenergie um 15 Punkte, wenn die Figur mindestens 15 Punkte Elementarenergie besitzt. Erhöht daraufhin den mit Standardangriffen, heftigen Schlägen und Angriffen aus dem Fall verursachten Schaden 10 s lang um 50 %. Dieser Effekt wird während der Wirkungsdauer nicht erneut ausgelöst."
   },
   "pieces": {
     "flower": {

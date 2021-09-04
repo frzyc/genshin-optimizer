@@ -2,7 +2,7 @@
   "setName": "Emblem of Severed Fate",
   "setEffects": {
     "2": "Energy Recharge +20%.",
-    "4": "Meningkatkan Elemental Burst DMG sebesar 25% dari Energy Recharge. Dengan cara ini Karakter bisa mendapatkan peningkatan DMG maksimal hingga 75%."
+    "4": "Meningkatkan DMG Elemental Burst sebesar 25% dari Energy Recharge. Peningkatan DMG Elemental Burst maksimum yang bisa didapatkan dengan cara ini adalah 75%."
   },
   "pieces": {
     "flower": {

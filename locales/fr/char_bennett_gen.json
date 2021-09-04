@@ -153,8 +153,8 @@
   "constellation4": {
     "name": "Enthousiasme éternel",
     "description": {
-      "0": "Une attaque supplémentaire est permise lorsque le deuxième coup de <strong>Surpassion</strong> en 1ère charge est une attaque normale.",
-      "1": "Celle-ci inflige 135 % des DGT du deuxième coup."
+      "0": "L'utilisation d'une attaque normale lors de l'exécution de la deuxième attaque du niveau 1 de charge de <strong>Surpassion</strong> permet d'effectuer une attaque supplémentaire.",
+      "1": "Celle-ci inflige 135 % des DGT de la deuxième attaque."
     }
   },
   "constellation5": {

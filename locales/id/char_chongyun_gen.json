@@ -7,7 +7,7 @@
     "name": "Demonbane",
     "fields": {
       "normal": {
-        "0": "<strong>Normal Attack</strong> Melancarkan maks. 4 tebasan berturut-turut."
+        "0": "<strong>Normal Attack</strong> Melancarkan hingga 4 tebasan berturut-turut."
       },
       "charged": {
         "0": "<strong>Charged Attack</strong>",
@@ -28,7 +28,7 @@
       "5": "DMG Akhir Charged Attack",
       "6": "Konsumsi Stamina Charged Attack",
       "7": "Durasi Maks.",
-      "8": "DMG Plunge",
+      "8": "DMG Selama Plunging",
       "9": "DMG Plunging Attack Min./Maks.",
       "10": "",
       "11": "",
@@ -76,7 +76,7 @@
     "skillParams": {
       "0": "DMG Skill",
       "1": "Cooldown",
-      "2": "Energy",
+      "2": "Konsumsi Energy",
       "3": "",
       "4": "",
       "5": "",
@@ -126,7 +126,7 @@
     "name": "Cloudburst",
     "description": {
       "0": "Meningkatkan 3 level <strong>Spirit Blade: Cloud-parting Star</strong>.",
-      "1": "Level maksimum adalah level 15."
+      "1": "Maksimum: Lv. 15."
     }
   },
   "constellation4": {
@@ -140,7 +140,7 @@
     "name": "The True Path",
     "description": {
       "0": "Meningkatkan 3 level <strong>Spirit Blade: Chonghua's Layered Frost</strong>.",
-      "1": "Level maksimum adalah level 15."
+      "1": "Maksimum: Lv. 15."
     }
   },
   "constellation6": {

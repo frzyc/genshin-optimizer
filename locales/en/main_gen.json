@@ -145,6 +145,19 @@
     "c6duration": "15s, +1s per kill, up to 10s",
     "qlarger": "Larger attack AOE"
   },
+  "char_raidenshogun": {
+    "skill": {
+      "eye": "Eye of Stormy Judgement",
+      "partyCost": "Energy Cost (party)"
+    },
+    "burst": {
+      "resolves": "Resolve Stacks"
+    },
+    "a4": {
+      "enerRest": "Energy restoration from <strong>Musou Isshin</strong>",
+      "eleDMG": "Electro DMG Bonus"
+    }
+  },
   "char_razor": {
     "fullBurstDMG": {
       "text": "<0><0><0>Full Elemental Burst DMG</0></0><1>This calculates the combined damage from Razor's normal attacks during his Elemental Burst. It simply sums the Companion X-Hit DMG with the corresponding X-Hit DMG of the normal attack which triggers it.</1></0>",
@@ -206,7 +219,7 @@
     "paragraphTools": "<0>Tools and Doodads</0><1><0>Server time, with countdown to reset.</0><1>Resin Counter.</1><2>Experience Calculator, to optimize EXP. books usage.</2><3><0>$t(ui:underConstruction)</0> Resource Converter, for all those pesky x3 tiered resources.</3><4><0>$t(ui:underConstruction)</0> To-Do list: a dynamic to-do list to tell you what to grind for every day</4></1>",
     "paragraphFuture": "<0>What's for the future?</0><1><0>Full talent/constellation calculations for every released character.</0><1>Saving multiple artifact builds per character, for comparasion.</1><2>Food buffs, team buffs.</2><3>Resource planning to see artifact/character/weapon commitment costs.</3><4>Artifact Analytics, graphs to show your artifact data.</4></1><2>For more, and to check on what is being worked on, join our <1>discord.</1></2>",
     "paragraphHelpDevelopment": "<0>Want to help the developer?</0><1>Genshin Optimizer has been the manifestation of many days and weeks of sleepless nights, and the developer is still actively trying to improve and add features. If you want to give feedback, request a feature, report a bug, please join our <1>discord.</1></1><2>If you want to fiancially support the developer, please either donate via <1>Paypal</1> or <3>Patreon</3>.</2>",
-    "paragraphCredits": "<0>Credit where credit is due</0><p>GO would not be where it is without all these sources/people. Time to take a bow and thank them.</p><2><0>Thanks to everyone in the community, and especially people on our <1>discord</1> for providing feedback and helping me improve this tool.</0><1>Thanks to <1>Honey Impact</1>, for giving us a reliable, consistent source for data and numbers. All our calculations would be moot without them.</1><2>A healthy percent of our Genshin images are yoinked from <1>The Genshin Impact Wiki</1>, so a serendipitous thanks for them.</2><3>Special thanks to members of our community who has gone the extra file, and has been helping us test formulas by recording in-game data, and people who has helped us with source code contributions.</3><4>Thanks for everyone else, for sharing this tool, and getting more people to use this tool.</4><5>Lastly, and most importantly, thank <1>YOU</1>, for using GO right now.</5></2>"
+    "paragraphCredits": "<0>Credit where credit is due</0><p>GO would not be where it is without all these sources/people. Time to take a bow and thank them.</p><2><0>Thanks to everyone in the community, and especially people on our <1>discord</1> for providing feedback and helping me improve this tool.</0><1>Thanks to <1>Dimbreath</1>, for giving us a reliable, consistent source for data and numbers. All our calculations would be moot without them.</1><2>A healthy percent of our Genshin images are yoinked from <1>The Genshin Impact Wiki</1>, so a serendipitous thanks for them.</2><3>Special thanks to members of our community who has gone the extra file, and has been helping us test formulas by recording in-game data, and people who has helped us with source code contributions.</3><4>Thanks for everyone else, for sharing this tool, and getting more people to use this tool.</4><5>Lastly, and most importantly, thank <1>YOU</1>, for using GO right now.</5></2>"
   },
   "languages": {
     "chs": "Chinese (Simplified)",
@@ -285,6 +298,13 @@
       "plunging": "Plunging Attack hits on oppoents",
       "skill": "Elemental Skill hits on oppoents",
       "burst": "Elemental Burst hits on oppoents"
+    },
+    "afterUse": {
+      "skill": "After using Elemental Skill",
+      "burst": "After using Elemental Burst"
+    },
+    "increase": {
+      "atk": "ATK Increase"
     },
     "eleAbsor": "Elemental Absorption",
     "absorDot": "Absorption DoT"

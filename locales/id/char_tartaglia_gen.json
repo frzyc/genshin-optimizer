@@ -8,7 +8,7 @@
     "fields": {
       "normal": {
         "0": "<strong>Normal Attack</strong>",
-        "1": "Melancarkan maks. 6 serangan berturut-turut dengan menggunakan busur."
+        "1": "Melancarkan hingga 6 serangan berturut-turut dengan menggunakan busur."
       },
       "charged": {
         "0": "<strong>Charged Attack</strong>",
@@ -41,7 +41,7 @@
       "8": "DMG Riptide Flash",
       "9": "DMG Riptide Burst",
       "10": "Durasi Riptide",
-      "11": "DMG Plunge",
+      "11": "DMG Selama Pluging",
       "12": "DMG Plunging Attack Min./Maks.",
       "13": "",
       "14": "",
@@ -55,7 +55,7 @@
       "1": "Dalam Mode ini, Normal Attack dan Charged Attack milik Tartaglia berubah menjadi <hydro>Hydro DMG</hydro> yang tidak dapat ditimpa oleh Elemental Infusion lain dan efek berikut akan muncul:",
       "2": "<br/>",
       "3": "<strong>Normal Attack</strong>",
-      "4": "Melakukan maks. 6 serangan <hydro>Hydro</hydro> berturut-turut.",
+      "4": "Melakukan hingga 6 serangan <hydro>Hydro</hydro> berturut-turut.",
       "5": "<br/>",
       "6": "<strong>Charged Attack</strong>",
       "7": "Mengonsumsi sejumlah Stamina untuk melancarkan dua tebasan silang yang mengakibatkan <hydro>Hydro DMG</hydro>.",
@@ -110,7 +110,7 @@
       "2": "Riptide Blast DMG",
       "3": "Pengembalian Energy (Mode Jarak Jauh)",
       "4": "CD",
-      "5": "Energy",
+      "5": "Konsumsi Energy",
       "6": "",
       "7": "",
       "8": "",
@@ -157,7 +157,7 @@
     "name": "Abyssal Mayhem: Vortex of Turmoil",
     "description": {
       "0": "Meningkatkan 3 level <strong>Foul Legacy: Raging Tide</strong>.",
-      "1": "Level maksimum adalah level 15."
+      "1": "Maksimum: Lv. 15."
     }
   },
   "constellation4": {
@@ -171,7 +171,7 @@
     "name": "Havoc: Formless Blade",
     "description": {
       "0": "Meningkatkan 3 level <strong>Havoc - Obliteration</strong>.",
-      "1": "Level maksimum adalah level 15."
+      "1": "Maksimum: Lv. 15."
     }
   },
   "constellation6": {

@@ -8,7 +8,7 @@
     "fields": {
       "normal": {
         "0": "<strong>Normal Attack</strong>",
-        "1": "Melancarkan maks. 4 serangan air yang mengakibatkan <hydro>Hydro DMG</hydro>."
+        "1": "Melancarkan hingga 4 serangan air yang mengakibatkan <hydro>Hydro DMG</hydro>."
       },
       "charged": {
         "0": "<strong>Charged Attack</strong>",
@@ -26,7 +26,7 @@
       "3": "DMG Tahap 4",
       "4": "DMG Charged Attack",
       "5": "Konsumsi Stamina Charged Attack",
-      "6": "DMG Plunge",
+      "6": "DMG Selama Plunging",
       "7": "DMG Plunging Attack Min./Maks.",
       "8": "",
       "9": "",
@@ -102,7 +102,7 @@
       "2": "Bonus DMG",
       "3": "Durasi Omen",
       "4": "CD",
-      "5": "Energy",
+      "5": "Konsumsi Energy",
       "6": "",
       "7": "",
       "8": "",
@@ -169,7 +169,7 @@
     "name": "Restless Revolution",
     "description": {
       "0": "Meningkatkan 3 level <strong>Stellaris Phantasm</strong>.",
-      "1": "Level maksimum adalah level 15."
+      "1": "Maksimum: Lv. 15."
     }
   },
   "constellation4": {
@@ -182,7 +182,7 @@
     "name": "Mockery of Fortuna",
     "description": {
       "0": "Meningkatkan 3 level <strong>Mirror Reflection of Doom</strong>.",
-      "1": "Level maksimum adalah level 15."
+      "1": "Maksimum: Lv. 15."
     }
   },
   "constellation6": {

@@ -13,10 +13,10 @@
       "charged": {
         "0": "<strong>Charged Attack</strong>",
         "1": "Melancarkan <strong>Serangan Membidik</strong> yang lebih akurat dan mengakibatkan DMG lebih tinggi.",
-        "2": "Saat membidik, kobaran api akan terus berkumpul di ujung panah dan mengikuti lesatan panah yang dilepas. Dapat menyebabkan beragam efek berikut berdasarkan durasi tombol skill ditahan.",
+        "2": "Saat membidik, kobaran api akan terus berkumpul di ujung panah dan mengikuti lesatan panah yang dilepas. Dapat menyebabkan beragam efek berikut berdasarkan durasi tombol serangan ditahan.",
         "3": [
-          "Tahap 1: Menembakkan panah api yang mengakibatkan <pyro>Pyro DMG</pyro>;",
-          "Tahap 2: Menghasilkan hingga 3 Kindling Arrow berdasarkan durasi tombol skill ditahan, dan dilepas bersamaan seiring Serangan Membidik Yoimiya. Kindling Arrow akan memburu musuh di sekitar secara otomatis dan mengakibatkan <pyro>Pyro DMG</pyro> pada musuh yang terkena."
+          "Charge Tahap 1: Menembakkan panah api yang mengakibatkan <pyro>Pyro DMG</pyro>;",
+          "Charge Tahap 2: Menghasilkan hingga 3 Kindling Arrow berdasarkan durasi tombol serangan ditahan, dan dilepas bersamaan seiring Serangan Membidik Yoimiya. Kindling Arrow akan memburu musuh di sekitar secara otomatis dan mengakibatkan <pyro>Pyro DMG</pyro> pada musuh yang terkena."
         ]
       },
       "plunging": {
@@ -34,7 +34,7 @@
       "6": "DMG Membidik Penuh",
       "7": "DMG Kindling Arrow",
       "8": "DMG Selama Plunging",
-      "9": "DMG Plunging Attack Min./Maks.",
+      "9": "DMG Plunging Attack Rendah/Tinggi",
       "10": "",
       "11": "",
       "12": "",
@@ -49,7 +49,7 @@
       "0": "Dengan sebuah kembang api, sebuah lingkaran yang mengandung bubuk mesiu muncul mengelilingi Yoimiya.",
       "1": "<br/>",
       "2": "<strong>Niwabi Enshou</strong>",
-      "3": "Selama durasi skill, panah dari Normal Attack Yoimiya akan menjadi Blazing Arrow dan DMG yang diakibatkan akan meningkat dan menjadi <pyro>Pyro DMG</pyro>; Normal Attack: Firework Flare-Up Tahap 2 tidak akan menghasilkan Kindling Arrow selama durasi skill.",
+      "3": "Selama durasi skill, panah dari Normal Attack Yoimiya akan menjadi Blazing Arrow dan DMG yang diakibatkan akan meningkat dan menjadi <pyro>Pyro DMG</pyro>; Charge Tahap 2 dari Normal Attack: Firework Flare-Up tidak akan menghasilkan Kindling Arrow selama durasi skill.",
       "4": "<br/>",
       "5": "Efek ini akan menghilang ketika Yoimiya meninggalkan medan tempur.",
       "6": "<br/>",

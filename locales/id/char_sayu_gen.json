@@ -7,7 +7,7 @@
     "name": "Shuumatsuban Ninja Blade",
     "fields": {
       "normal": {
-        "0": "<strong>Normal Attack</strong> Melancarkan maks. 4 tebasan berturut-turut."
+        "0": "<strong>Normal Attack</strong> Melancarkan hingga 4 tebasan berturut-turut."
       },
       "charged": {
         "0": "<strong>Charged Attack</strong>",
@@ -29,7 +29,7 @@
       "6": "Konsumsi Stamina Charged Attack",
       "7": "Durasi Maks.",
       "8": "DMG Selama Plunging",
-      "9": "DMG Plunging Attack Min./Maks.",
+      "9": "DMG Plunging Attack Rendah/Tinggi",
       "10": "",
       "11": "",
       "12": "",
@@ -50,13 +50,13 @@
       "6": "<strong>Tahan</strong>",
       "7": "Memasuki status Fuufuu Windwheel dan berputar terus menerus seperti roda, yang meningkatkan ketahanan Sayu terhadap interupsi selama berputar.",
       "8": "Selama durasi, Sayu dapat mengontrol arah putaran dan dapat menggunakan skill ini sekali lagi untuk mengakhiri status Fuufuu Windwheel, yang mana akan melancarkan serangan Fuufuu Whirlwind Kick yang lebih kuat.",
-      "9": "Skill yang ditahan ini dapat memicu Elemental Absorption.",
+      "9": "Dalam mode Tahan, skill ini dapat memicu Elemental Absorption.",
       "10": "<br/>",
-      "11": "Maksimum durasi skill 10 detik, dan skill ini akan segera memasuki CD setelah efeknya berakhir. Semakin lama Sayu berada dalam status Fuufuu Windwheel, maka semakin lama durasi CD skill ini.",
+      "11": "Durasi skill maksimum adalah 10 detik, dan skill ini akan segera memasuki CD setelah efeknya berakhir. Semakin lama Sayu berada dalam status Fuufuu Windwheel, maka semakin lama durasi CD skill ini.",
       "12": "<br/>",
       "13": "<strong>Elemental Absorption</strong>",
       "14": "Selama berada dalam status Fuufuu Windwheel, jika Sayu bersentuhan dengan <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, maka Sayu akan mengakibatkan DMG elemental tambahan yang sesuai dengan elemen tersebut.",
-      "15": "Elemental Absorption hanya dapat terpicu sekali setiap skill digunakan.",
+      "15": "Elemental Absorption hanya dapat terpicu sekali setiap kali skill digunakan.",
       "16": "<br/>",
       "17": "<i>Sayu dapat melakukan skill ini dengan mata tertutup. Teknik ini awalnya diciptakan untuk melarikan diri. Namun dengan Vision yang dimilikinya sekarang, Sayu akhirnya dapat berputar dan membuat musuh-musuhnya tak berkutik.</i>"
     },
@@ -101,7 +101,7 @@
       "3": "Pemulihan Muji-Muji Daruma",
       "4": "Durasi",
       "5": "Cooldown",
-      "6": "Energy",
+      "6": "Konsumsi Energy",
       "7": "",
       "8": "",
       "9": "",

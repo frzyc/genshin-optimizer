@@ -8,7 +8,7 @@
     "fields": {
       "normal": {
         "0": "<strong>Normal Attack</strong>",
-        "1": "Melancarkan maks. 4 serangan berturut-turut."
+        "1": "Melancarkan hingga 4 serangan berturut-turut."
       },
       "charged": {
         "0": "<strong>Charged Attack</strong>",
@@ -29,7 +29,7 @@
       "5": "DMG Akhir Charged Attack",
       "6": "Konsumsi Stamina Charged Attack",
       "7": "Durasi Maks.",
-      "8": "DMG Plunge",
+      "8": "DMG Selama Plunging",
       "9": "DMG Plunging Attack Min./Maks.",
       "10": "",
       "11": "",
@@ -81,7 +81,7 @@
       "2": "DMG Ledakan",
       "3": "Cooldown",
       "4": "Durasi Infusion",
-      "5": "Energy",
+      "5": "Konsumsi Energy",
       "6": "",
       "7": "",
       "8": "",
@@ -128,7 +128,8 @@
   "constellation3": {
     "name": "Fire and Steel",
     "description": {
-      "0": "Meningkatkan level skill <strong>Searing Onslaught</strong> sebanyak 3 level. Max. Lv: 15."
+      "0": "Meningkatkan 3 level <strong>Searing Onslaught</strong>.",
+      "1": "Maksimum: Lv. 15."
     }
   },
   "constellation4": {
@@ -142,7 +143,7 @@
     "name": "Phoenix, Harbinger of Dawn",
     "description": {
       "0": "Meningkatkan 3 level <strong>Dawn</strong>.",
-      "1": "Level maksimum adalah level 15."
+      "1": "Maksimum: Lv. 15."
     }
   },
   "constellation6": {

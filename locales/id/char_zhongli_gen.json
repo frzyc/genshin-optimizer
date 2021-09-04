@@ -8,7 +8,7 @@
     "fields": {
       "normal": {
         "0": "<strong>Normal Attack</strong>",
-        "1": "Melancarkan maks. 6 serangan tombak beruntun."
+        "1": "Melancarkan hingga 6 serangan tombak beruntun."
       },
       "charged": {
         "0": "<strong>Charged Attack</strong>",
@@ -28,7 +28,7 @@
       "5": "DMG Tahap 6",
       "6": "DMG Charged Attack",
       "7": "Konsumsi Stamina Charged Attack",
-      "8": "DMG Plunge",
+      "8": "DMG Selama Plunging",
       "9": "DMG Plunging Attack Min./Maks.",
       "10": "",
       "11": "",
@@ -100,7 +100,7 @@
       "0": "DMG Skill",
       "1": "Durasi Petrification",
       "2": "Cooldown",
-      "3": "Energy",
+      "3": "Konsumsi Energy",
       "4": "",
       "5": "",
       "6": "",
@@ -158,7 +158,7 @@
     "name": "Jade, Shimmering through Darkness",
     "description": {
       "0": "Meningkatkan 3 level <strong>Dominus Lapidis</strong>.",
-      "1": "Level maksimum adalah level 15."
+      "1": "Maksimum: Lv. 15."
     }
   },
   "constellation4": {
@@ -171,7 +171,7 @@
     "name": "Lazuli, Herald of the Order!",
     "description": {
       "0": "Meningkatkan 3 level <strong>Planet Befall</strong>.",
-      "1": "Level maksimum adalah level 15."
+      "1": "Maksimum: Lv. 15."
     }
   },
   "constellation6": {

@@ -73,7 +73,7 @@
       "fields": {
         "normal": {
           "0": "<strong>Normal Attack</strong>",
-          "1": "Melancarkan maks. 5 serangan berturut-turut."
+          "1": "Melancarkan hingga 5 serangan pedang berturut-turut."
         },
         "charged": {
           "0": "<strong>Charged Attack</strong>",
@@ -81,7 +81,7 @@
         },
         "plunging": {
           "0": "<strong>Plunging Attack</strong>",
-          "1": "Menerjang dari udara untuk menghantam tanah, mengakibatkan DMG pada musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat."
+          "1": "Menerjang dari udara untuk menghantam tanah di bawahnya, mengakibatkan DMG pada musuh di jalurnya dan mengakibatkan DMG area saat mendarat."
         }
       },
       "skillParams": {
@@ -93,7 +93,7 @@
         "5": "DMG Charged Attack",
         "6": "Konsumsi Stamina Charged Attack",
         "7": "DMG Selama Plunging",
-        "8": "DMG Plunging Attack Min./Maks.",
+        "8": "DMG Plunging Attack Rendah/Tinggi",
         "9": "",
         "10": "",
         "11": "",
@@ -150,7 +150,7 @@
     "constellation6": {
       "name": "World-Shaker",
       "description": {
-        "0": "Setiap 2 serangan Falling Thunder yang terpicu dari <strong>Bellowing Thunder</strong> akan meningkatkan DMG Falling Thunder selanjutnya sebesar 100% dan memulihkan 1 Energy tambahan untuk Karakter yang sedang bertarung."
+        "0": "Setiap 2 serangan Falling Thunder yang terpicu dari <strong>Bellowing Thunder</strong> akan meningkatkan DMG Falling Thunder selanjutnya secara drastis, mengakibatkan DMG sebesar 200% dari DMG aslinya dan memulihkan 1 Energy tambahan untuk Karakter saat ini."
       }
     }
   },
@@ -164,7 +164,7 @@
       "fields": {
         "normal": {
           "0": "<strong>Normal Attack</strong>",
-          "1": "Melancarkan maks. 5 serangan berturut-turut."
+          "1": "Melancarkan hingga 5 serangan berturut-turut."
         },
         "charged": {
           "0": "<strong>Charged Attack</strong>",
@@ -183,7 +183,7 @@
         "4": "DMG Tahap 5",
         "5": "DMG Charged Attack",
         "6": "Konsumsi Stamina Charged Attack",
-        "7": "DMG Plunge",
+        "7": "DMG Selama Plunging",
         "8": "DMG Plunging Attack Min./Maks.",
         "9": "",
         "10": "",
@@ -244,7 +244,7 @@
         "1": "Tambahan Elemental DMG",
         "2": "Durasi",
         "3": "Cooldown",
-        "4": "Energy",
+        "4": "Konsumsi Energy",
         "5": "",
         "6": "",
         "7": "",
@@ -287,7 +287,7 @@
       "name": "Sweeping Gust",
       "description": {
         "0": "Meningkatkan 3 level <strong>Gust Surge</strong>.",
-        "1": "Level maksimum adalah level 15."
+        "1": "Maksimum: Lv. 15."
       }
     },
     "constellation4": {
@@ -300,7 +300,7 @@
       "name": "Vortex Stellaris",
       "description": {
         "0": "Meningkatkan 3 level <strong>Palm Vortex</strong>.",
-        "1": "Level maksimum adalah level 15."
+        "1": "Maksimum: Lv. 15."
       }
     },
     "constellation6": {
@@ -317,7 +317,7 @@
       "fields": {
         "normal": {
           "0": "<strong>Normal Attack</strong>",
-          "1": "Melancarkan maks. 5 serangan berturut-turut."
+          "1": "Melancarkan hingga 5 serangan berturut-turut."
         },
         "charged": {
           "0": "<strong>Charged Attack</strong>",
@@ -336,7 +336,7 @@
         "4": "DMG Tahap 5",
         "5": "DMG Charged Attack",
         "6": "Konsumsi Stamina Charged Attack",
-        "7": "DMG Plunge",
+        "7": "DMG Selama Plunging",
         "8": "DMG Plunging Attack Min./Maks.",
         "9": "",
         "10": "",
@@ -391,7 +391,7 @@
         "0": "DMG Per Gelombang",
         "1": "Durasi Stonewall",
         "2": "Cooldown",
-        "3": "Energy",
+        "3": "Konsumsi Energy",
         "4": "",
         "5": "",
         "6": "",
@@ -434,7 +434,7 @@
       "name": "Will of the Rock",
       "description": {
         "0": "Meningkatkan 3 level <strong>Wake of Earth</strong>.",
-        "1": "Level maksimum adalah level 15."
+        "1": "Maksimum: Lv. 15."
       }
     },
     "constellation4": {
@@ -448,7 +448,7 @@
       "name": "Meteorite Impact",
       "description": {
         "0": "Meningkatkan 3 level <strong>Starfell Sword</strong>.",
-        "1": "Level maksimum adalah level 15."
+        "1": "Maksimum: Lv. 15."
       }
     },
     "constellation6": {

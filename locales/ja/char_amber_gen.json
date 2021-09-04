@@ -8,7 +8,7 @@
     "fields": {
       "normal": {
         "0": "<strong>通常攻撃</strong>",
-        "1": "最高5段の連続射撃を行う。"
+        "1": "最大5段の連続射撃を行う。"
       },
       "charged": {
         "0": "<strong>重撃</strong>",

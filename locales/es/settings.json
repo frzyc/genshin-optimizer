@@ -6,10 +6,6 @@
   },
   "downloadCard": {
     "databaseDownload": "Descarga Base de Datos",
-    "charsStored": "Personaje Almacenado <0>{{count}}</0>",
-    "charsStored_plural": "<0>{{count}}</0> Personajes Almacenados",
-    "artisStored": "<0>{{count}}</0> Artefacto Almacenado",
-    "artisStored_plural": "<0>{{count}}</0> Artefactos Almacenados",
     "databaseDisclaimer": "Notas: los datos de la página \"Herramientas\", por ejemplo, la cantidad/temporizador de resina, no forman parte de la base de datos descargada.",
     "button": {
       "download": "Descargar",
@@ -21,11 +17,6 @@
     "title": "Carga Base de Datos",
     "replaceDatabase": "Reemplazar Base de Datos",
     "hint": "Cargue su archivo JSON aquí...",
-    "hintPaste": "... o pegue sus datos a continuación.",
-    "numChar": "Número de personajes:",
-    "numArt": "Número de artefactos:"
-  },
-  "dialog": {
-    "delete-database": "¿Estás seguro de que quieres borrar tu base de datos? Se borrarán todos los personajes y artefactos existentes."
+    "hintPaste": "... o pegue sus datos a continuación."
   }
 }

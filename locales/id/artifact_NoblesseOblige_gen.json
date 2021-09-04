@@ -2,7 +2,7 @@
   "setName": "Noblesse Oblige",
   "setEffects": {
     "2": "Meningkatkan 20% DMG Elemental Burst.",
-    "4": "Setelah melancarkan Elemental Burst, meningkatkan ATK 20% semua anggota party selama 12 detik. Efek ini tidak dapat ditumpuk."
+    "4": "Setelah melancarkan Elemental Burst, meningkatkan 20% ATK semua anggota party selama 12 detik. Efek ini tidak dapat ditumpuk."
   },
   "pieces": {
     "flower": {

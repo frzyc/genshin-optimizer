@@ -8,7 +8,7 @@
     "fields": {
       "normal": {
         "0": "<strong>Normal Attack</strong>",
-        "1": "Melancarkan maks. 5 serangan berturut-turut menggunakan busur."
+        "1": "Melancarkan hingga 5 serangan berturut-turut menggunakan busur."
       },
       "charged": {
         "0": "<strong>Charged Attack</strong>",
@@ -27,7 +27,7 @@
       "4": "DMG Tahap 5",
       "5": "DMG Membidik",
       "6": "DMG Membidik Penuh",
-      "7": "DMG Plunge",
+      "7": "DMG Selama Plunging",
       "8": "DMG Plunging Attack Min./Maks.",
       "9": "",
       "10": "",
@@ -86,7 +86,7 @@
     "skillParams": {
       "0": "DMG Falling Thunder",
       "1": "CD",
-      "2": "Energy",
+      "2": "Konsumsi Energy",
       "3": "",
       "4": "",
       "5": "",
@@ -135,8 +135,8 @@
   "constellation3": {
     "name": "Wings of Nightmare",
     "description": {
-      "0": "Meningkatkan 3 level skill <strong>Nightrider</strong>.",
-      "1": "Level maksimum adalah level 15."
+      "0": "Meningkatkan 3 level <strong>Nightrider</strong>.",
+      "1": "Maksimum: Lv. 15."
     }
   },
   "constellation4": {
@@ -150,7 +150,7 @@
     "name": "Against the Fleeing Light",
     "description": {
       "0": "Meningkatkan 3 level <strong>Midnight Phantasmagoria</strong>.",
-      "1": "Level maksimum adalah level 15."
+      "1": "Maksimum: Lv. 15."
     }
   },
   "constellation6": {

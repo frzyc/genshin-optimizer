@@ -53,7 +53,7 @@
       "2": "Peningkatan ATK",
       "3": "Durasi",
       "4": "CD",
-      "5": "Energy",
+      "5": "Konsumsi Energy",
       "6": "",
       "7": "",
       "8": "",
@@ -74,7 +74,7 @@
     "name": "Favonius Bladework - Maid",
     "fields": {
       "normal": {
-        "0": "<strong>Normal Attack</strong> Melancarkan maks. 4 tebasan berturut-turut."
+        "0": "<strong>Normal Attack</strong> Melancarkan hingga 4 tebasan berturut-turut."
       },
       "charged": {
         "0": "<strong>Charged Attack</strong>",
@@ -95,7 +95,7 @@
       "5": "DMG Akhir Charged Attack",
       "6": "Konsumsi Stamina Charged Attack",
       "7": "Durasi Maks.",
-      "8": "DMG Plunge",
+      "8": "DMG Selama Plunging",
       "9": "DMG Plunging Attack Min./Maks.",
       "10": "",
       "11": "",
@@ -143,7 +143,7 @@
     "name": "Invulnerable Maid",
     "description": {
       "0": "Meningkatkan 3 level <strong>Breastplate</strong>.",
-      "1": "Level maksimum adalah level 15."
+      "1": "Maksimum: Lv. 15."
     }
   },
   "constellation4": {
@@ -156,14 +156,14 @@
     "name": "Favonius Sweeper Master",
     "description": {
       "0": "Meningkatkan 3 level <strong>Sweeping Time</strong>.",
-      "1": "Level maksimum adalah level 15."
+      "1": "Maksimum: Lv. 15."
     }
   },
   "constellation6": {
     "name": "Must Be Spotless",
     "description": {
       "0": "<strong>Sweeping Time</strong> meningkatkan ATK Noelle dengan tambahan 50% dari DEF Noelle.",
-      "1": "Durasi skill meningkat 1 detik setiap mengalahkan musuh saat skill masih aktif, maks. 10 detik."
+      "1": "Durasi skill meningkat 1 detik setiap mengalahkan musuh saat skill masih aktif, hingga 10 detik."
     }
   }
 }

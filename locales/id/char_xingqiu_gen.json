@@ -8,7 +8,7 @@
     "fields": {
       "normal": {
         "0": "<strong>Normal Attack</strong>",
-        "1": "Melancarkan maks. 5 serangan berturut-turut."
+        "1": "Melancarkan hingga 5 serangan berturut-turut."
       },
       "charged": {
         "0": "<strong>Charged Attack</strong>",
@@ -27,7 +27,7 @@
       "4": "DMG Tahap 5",
       "5": "DMG Charged Attack",
       "6": "Konsumsi Stamina Charged Attack",
-      "7": "DMG Plunge",
+      "7": "DMG Selama Pluging",
       "8": "DMG Plunging Attack Min./Maks.",
       "9": "",
       "10": "",
@@ -91,7 +91,7 @@
       "0": "DMG Sword Rain",
       "1": "Durasi",
       "2": "Cooldown",
-      "3": "Energy",
+      "3": "Konsumsi Energy",
       "4": "",
       "5": "",
       "6": "",
@@ -140,7 +140,8 @@
   "constellation3": {
     "name": "Weaver of Verses",
     "description": {
-      "0": "Meningkatkan level skill <strong>Guhua Sword: Raincutter</strong> sebanyak 3 level. Max. Lv: 15."
+      "0": "Meningkatkan 3 level <strong>Guhua Sword: Raincutter</strong>.",
+      "1": "Maksimum: Lv. 15."
     }
   },
   "constellation4": {
@@ -152,7 +153,8 @@
   "constellation5": {
     "name": "Embrace of Rain",
     "description": {
-      "0": "Meningkatkan level skill <strong>Guhua Sword: Fatal Rainscreen</strong> sebanyak 3 level. Max. Lv: 15."
+      "0": "Meningkatkan 3 level <strong>Guhua Sword: Fatal Rainscreen</strong>.",
+      "1": "Maksimum: Lv. 15."
     }
   },
   "constellation6": {

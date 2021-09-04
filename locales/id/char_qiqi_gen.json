@@ -8,7 +8,7 @@
     "fields": {
       "normal": {
         "0": "<strong>Normal Attack</strong>",
-        "1": "Melancarkan maks. 5 serangan berturut-turut."
+        "1": "Melancarkan hingga 5 serangan berturut-turut."
       },
       "charged": {
         "0": "<strong>Charged Attack</strong>",
@@ -27,7 +27,7 @@
       "4": "DMG Tahap 5",
       "5": "DMG Charged Attack",
       "6": "Konsumsi Stamina Charged Attack",
-      "7": "DMG Plunge",
+      "7": "DMG Selama Plunging",
       "8": "DMG Plunging Attack Min./Maks.",
       "9": "",
       "10": "",
@@ -87,7 +87,7 @@
       "1": "Pemulihan HP",
       "2": "Durasi",
       "3": "CD",
-      "4": "Energy",
+      "4": "Konsumsi Energy",
       "5": "",
       "6": "",
       "7": "",
@@ -135,7 +135,7 @@
     "name": "Ascendant Praise",
     "description": {
       "0": "Meningkatkan 3 level <strong>Adeptus Art: Preserver of Fortune</strong>.",
-      "1": "Level maksimum adalah level 15."
+      "1": "Maksimum: Lv. 15."
     }
   },
   "constellation4": {
@@ -148,7 +148,7 @@
     "name": "Crimson Lotus Bloom",
     "description": {
       "0": "Meningkatkan 3 level <strong>Adeptus Art: Herald of Frost</strong>.",
-      "1": "Level maksimum adalah level 15."
+      "1": "Maksimum: Lv. 15."
     }
   },
   "constellation6": {

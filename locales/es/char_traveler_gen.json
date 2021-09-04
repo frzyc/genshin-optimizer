@@ -150,14 +150,14 @@
     "constellation6": {
       "name": "Sacudida celestial",
       "description": {
-        "0": "Tras provocar dos rayos temibles con <strong>Estallido atronador</strong>, el daño del siguiente rayo temible aumentará en un 100% y regenerará 1 pt. adicional de Energía Elemental para el personaje en uso."
+        "0": "Tras provocar dos rayos temibles con <strong>Estallido atronador</strong>, el daño del siguiente rayo temible aumentará considerablemente para infligir un 200% del daño original y, además, regenerará 1 pt. adicional de Energía Elemental para el personaje en uso."
       }
     }
   },
   "name": "Viajera",
   "title": "",
   "description": "{F#Una viajera}{M#Un viajero} de otro mundo {F#a la}{M#al} que arrebataron su única familia, y que se vio obligad{F#a}{M#o} a embarcarse en un viaje en busca de Los Siete.",
-  "constellationName": "Viator",
+  "constellationName": "Viatrix",
   "anemo": {
     "auto": {
       "name": "Viento metálico extranjero",
