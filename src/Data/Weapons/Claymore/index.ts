@@ -5,6 +5,7 @@ import FavoniusGreatsword from './FavoniusGreatsword'
 import FerrousShadow from './FerrousShadow'
 import KatsuragikiriNagamasa from './KatsuragikiriNagamasa'
 import LithicBlade from './LithicBlade'
+import LuxuriousSeaLord from './LuxuriousSeaLord'
 import OldMercsPal from './OldMercsPal'
 import PrototypeAminus from './PrototypeAminus'
 import Quartz from './Quartz'
@@ -30,6 +31,7 @@ const claymore = {
   FerrousShadow,
   KatsuragikiriNagamasa,
   LithicBlade,
+  LuxuriousSeaLord,
   OldMercsPal,
   PrototypeAminus,
   Quartz,

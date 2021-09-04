@@ -2,6 +2,7 @@ import ApprenticesNotes from './ApprenticesNotes'
 import BlackcliffAgate from './BlackcliffAgate'
 import DodocoTales from './DodocoTales'
 import EmeraldOrb from './EmeraldOrb'
+import EverlastingMoonglow from './EverlastingMoonglow'
 import EyeOfPerception from './EyeOfPerception'
 import FavoniusCodex from './FavoniusCodex'
 import Frostbearer from './Frostbearer'
@@ -26,6 +27,7 @@ const catalyst = {
   BlackcliffAgate,
   DodocoTales,
   EmeraldOrb,
+  EverlastingMoonglow,
   EyeOfPerception,
   FavoniusCodex,
   Frostbearer,
