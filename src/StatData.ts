@@ -97,7 +97,7 @@ const Formulas: Dict<string, (s: ICalculatedStats) => number> = {
 
   critHit_base_multi: (s) => (1 + s.critDMG_ / 100),
 
-  enemyLevel_multi: (s) => (100 + s.characterLevel) / ((100 + s.characterLevel) + (100 + s.enemyLevel) * (1 - s.enemyDEFRed_ / 100)),
+  enemyLevel_multi: (s) => (100 + s.characterLevel) / ((100 + s.characterLevel) + (100 + s.enemyLevel) * (1 - Math.min(s.enemyDEFRed_, 90) / 100)),
 
   heal_multi: (s) => (1 + s.heal_ / 100 + s.incHeal_ / 100),
 

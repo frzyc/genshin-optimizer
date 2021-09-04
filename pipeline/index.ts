@@ -55,10 +55,10 @@ export const characterIdMap = {
   10000046: "hutao",
   10000047: "kaedeharakazuha",
   10000048: "yanfei",
-  10000049: "yoimiya", 
+  10000049: "yoimiya",
   // 10000050: "TEMPLATE",
   10000051: "eula",
-  // 10000052: "TEMPLATE",
+  10000052: "raidenshogun",
   10000053: "sayu",
   // 10000054: "TEMPLATE",
   // 11000008: "TEMPLATE",
@@ -162,6 +162,7 @@ export const weaponIdMap = {
   13505: "PrimordialJadeWingedSpear",
   // 13506: "Deicide",
   // 13507: "",
+  13509: "EngulfingLightning",
 
   //catalyst
   14101: "ApprenticesNotes",

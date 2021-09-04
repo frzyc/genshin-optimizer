@@ -211,10 +211,11 @@ function SkillDisplayCard({ characterSheet, character: { elementKey, talentLevel
     }
   }
   const talentStats = characterSheet.getTalentStats(talentKey, build)
-  const statsEle = talentStats && <Row><Col>
+  const talentStatsFields = talentStats && statsToFields(talentStats, build)
+  const statsEle = talentStatsFields && !!talentStatsFields.length && <Row><Col>
     <Card bg="darkcontent" text={"lightfont" as any} className="mb-2">
       <ListGroup className="text-white" variant="flush">
-        {statsToFields(talentStats, build).map((field, i) =>
+        {talentStatsFields.map((field, i) =>
           <FieldDisplay key={i} index={i} {...{ field, equippedBuild, newBuild }} />)}
       </ListGroup>
     </Card>

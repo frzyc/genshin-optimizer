@@ -19,7 +19,7 @@ import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { IConditionals } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
 import { Translate } from '../../../Components/Translate'
-import { chargedDocSection, plungeDocSection, sgt, talentTemplate } from '../SheetUtil'
+import { chargedDocSection, plungeDocSection, sgt, st, talentTemplate } from '../SheetUtil'
 import { KeyPath } from '../../../Util/KeyPathUtil'
 import { FormulaPathBase } from '../../formula'
 import { WeaponTypeKey } from '../../../Types/consts'
@@ -34,7 +34,7 @@ const conditionals: IConditionals = {
       infusionSelf: "pyro",
     },
     fields: [{
-      text: "ATK Increase",
+      text: st("increase.atk"),
       formulaText: stats => <span>min( {data.skill.atk_inc[stats.tlvl.skill]}% {Stat.printStat("finalHP", stats, true)}, 400% {Stat.printStat("baseATK", stats, true)} )</span>,
       formula: formula.skill.atk_inc,
     },]
