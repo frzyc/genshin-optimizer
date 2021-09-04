@@ -58,7 +58,7 @@ export const characterIdMap = {
   10000049: "Yoimiya", 
   // 10000050: "TEMPLATE",
   10000051: "Eula",
-  // 10000052: "TEMPLATE",
+  10000052: "raidenshogun",
   10000053: "Sayu",
   // 10000054: "TEMPLATE",
   // 11000008: "TEMPLATE",
@@ -162,6 +162,7 @@ export const weaponIdMap = {
   13505: "PrimordialJadeWingedSpear",
   // 13506: "Deicide",
   // 13507: "",
+  13509: "EngulfingLightning",
 
   //catalyst
   14101: "ApprenticesNotes",

@@ -21,6 +21,7 @@ import Mona from './Mona'
 import Ningguang from './Ningguang'
 import Noelle from './Noelle'
 import Qiqi from './Qiqi'
+import raidenshogun from './raidenshogun'
 import Razor from './Razor'
 import Rosaria from './Rosaria'
 import Sayu from './Sayu'
@@ -62,6 +63,7 @@ const characters: StrictDict<CharacterKey, ICharacterSheet> = {
   Ningguang,
   Noelle,
   Qiqi,
+  raidenshogun,
   Razor,
   Rosaria,
   Sayu,

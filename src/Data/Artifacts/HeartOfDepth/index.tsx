@@ -5,9 +5,10 @@ import goblet from './Item_Goblet_of_Thundering_Deep.png'
 import circlet from './Item_Wine-Stained_Tricorne.png'
 import { IArtifactSheet } from '../../../Types/artifact'
 import { IConditionals } from '../../../Types/IConditional'
+import { st } from '../../Characters/SheetUtil'
 const conditionals: IConditionals = {
   4: {
-    name: "After using Elemental Skill",
+    name: st("afterUse.skill"),
     stats: {
       normal_dmg_: 30,
       charged_dmg_: 30

@@ -75,7 +75,7 @@ export function deletePropPath(obj, path) {
   const tempPath = [...path]
   const lastKey = tempPath.pop()
   const objPathed = objPathValue(obj, tempPath)
-  delete objPathed[lastKey];
+  delete objPathed?.[lastKey];
 }
 
 export function objClearEmpties(o) {

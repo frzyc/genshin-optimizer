@@ -5,9 +5,10 @@ import goblet from './Item_Instructor\'s_Tea_Cup.png'
 import circlet from './Item_Instructor\'s_Cap.png'
 import { IArtifactSheet } from '../../../Types/artifact'
 import { IConditionals } from '../../../Types/IConditional'
+import { st } from '../../Characters/SheetUtil'
 const conditionals: IConditionals = {
   4: {
-    name: "After using Elemental Skill",
+    name: st("afterUse.skill"),
     stats: { eleMas: 120 }//TODO: party buff
   }
 }

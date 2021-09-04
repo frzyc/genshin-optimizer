@@ -23,7 +23,7 @@ export const allArtifactSets = [
 export const allCharacterKeys = [
   "Albedo", "Amber", "Barbara", "Beidou", "Bennett", "Chongyun", "Diluc", "Diona", "Fischl", "Ganyu",
   "HuTao", "Jean", "Kaeya", "Keqing", "Klee", "Lisa", "Mona", "Ningguang", "Noelle", "Qiqi",
-  "Razor", "Sucrose", "Tartaglia", "Traveler", "Traveler", "Venti", "Xiao", "Xiangling", "Xingqiu", "Xinyan",
+  "Razor", "Sucrose", "Tartaglia", "Traveler", "raidenshogun", "Venti", "Xiao", "Xiangling", "Xingqiu", "Xinyan",
   "Zhongli", "Rosaria", "Yanfei", "Eula", "KaedeharaKazuha", "KamisatoAyaka", "Sayu", "Yoimiya"
 ] as const
 export const allWeaponKeys = [
@@ -40,7 +40,7 @@ export const allWeaponKeys = [
   "SkywardSpine", "HuntersBow", "SeasonedHuntersBow", "EbonyBow", "Messenger", "RavenBow", "RecurveBow",
   "SharpshootersOath", "Slingshot", "TheStringless", "AlleyHunter", "BlackcliffWarbow", "CompoundBow",
   "FavoniusWarbow", "PrototypeCrescent", "RoyalBow", "Rust", "SacrificialBow", "TheViridescentHunt", "SkywardHarp",
-  "AmosBow", "ElegyForTheEnd", "WindblumeOde", "ApprenticesNotes", "PocketGrimoire", "DullBlade", "EmeraldOrb", //TODO: AmberCatalyst => DullBlade, replace with another weaponKey
+  "AmosBow", "ElegyForTheEnd", "WindblumeOde", "ApprenticesNotes", "PocketGrimoire", "EngulfingLightning", "EmeraldOrb",
   "MagicGuide", "OtherworldlyStory", "ThrillingTalesOfDragonSlayers", "TwinNephrite", "BlackcliffAgate",
   "FavoniusCodex", "MappaMare", "PrototypeMalice", "RoyalGrimoire", "SacrificialFragments", "SolarPearl", "TheWidsith",
   "WineAndSong", "EyeOfPerception", "Frostbearer", "LostPrayerToTheSacredWinds", "SkywardAtlas", "MemoryOfDust",

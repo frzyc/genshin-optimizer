@@ -6,6 +6,7 @@ import data_gen from './data_gen.json'
 import img from './Weapon_Primordial_Jade_Cutter.png'
 import formula, { data } from './data'
 import Stat from '../../../../Stat'
+import { st } from '../../../Characters/SheetUtil'
 
 const path = KeyPath<FormulaPathBase>().weapon.PrimordialJadeCutter
 const refinementVals_hp = [20, 25, 30, 35, 40]
@@ -18,7 +19,7 @@ const weapon: IWeaponSheet = {
   }),
   document: [{
     fields: [{
-      text: "ATK Increase",
+      text: st("increase.atk"),
       formulaText: stats => <span>{data.hp_atk[stats.weapon.refineIndex]}% {Stat.printStat("finalHP", stats, true)}</span>,
       formula: formula.bonus,
     }]

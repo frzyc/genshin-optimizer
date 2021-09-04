@@ -7,6 +7,7 @@ import { FormulaPathBase } from '../../../formula'
 import data_gen from './data_gen.json'
 import img from './Weapon_Staff_of_Homa.png'
 import formula, { data } from './data'
+import { st } from '../../../Characters/SheetUtil'
 
 const path = KeyPath<FormulaPathBase>().weapon.StaffOfHoma
 const refinementVals_hp = [20, 25, 30, 35, 40]
@@ -18,7 +19,7 @@ const conditionals: IConditionals = {
       modifiers: { finalATK: [path.esjadd()] }
     },
     fields: [{
-      text: "ATK Increase",
+      text: st("increase.atk"),
       formulaText: stats => <span>{data.hp_atk_add[stats.weapon.refineIndex]}% {Stat.printStat("finalHP", stats, true)}</span>,
       formula: formula.esjadd,
     }],
@@ -34,7 +35,7 @@ const weapon: IWeaponSheet = {
   conditionals,
   document: [{
     fields: [{
-      text: "ATK Increase",
+      text: st("increase.atk"),
       formulaText: stats => <span>{data.hp_atk[stats.weapon.refineIndex]}% {Stat.printStat("finalHP", stats, true)}</span>,
       formula: formula.esj,
     }],

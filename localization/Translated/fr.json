@@ -105,7 +105,7 @@
         "paragraphTools": "<0>Outils et autres</0><1><0>Heure du serveur, avec compte à rebours jusqu'au reset.</0><1>Compteur de Résine.</1><2>Calculateur d'expérience, pour optimiser l'utilisation des livres d'EXP.</2><3><0>$t(ui:underConstruction)</0> Convertisseur de Ressources, pour toutes les ressources synthétisables x3 par tier.</3><4><0>$t(ui:underConstruction)</0> To-Do List: une liste des choses à faire dynamique pour vous dire quoi farmer chaque jour</4></1>",
         "paragraphFuture": "<0>Quoi de prévu à l'avenir ?</0><1><0>Calculs complets des talents / constellations pour chaque personnage disponible.</0><1>Enregistrement de plusieurs builds d'artéfacts par personnage, à des fins de comparaison.</1><2>Buffs via nourriture, buffs via team.</2><3>Planification des ressources pour voir les coûts d'amélioration des artéfacts / personnages / armes.</3><4>Artifact Analytics, des graphiques pour afficher vos données d'artéfact.</4></1><2>Pour en savoir plus et pour vérifier ce qui est en cours de travail, rejoignez notre <1>Discord.</1></2>",
         "paragraphHelpDevelopment": "<0>Vous voulez aider le développeur ?</0><1>Genshin Optimizer a été la manifestation de plusieurs jours et semaines de nuits blanches, et le développeur essaie toujours activement d'améliorer et d'ajouter des fonctionnalités. Si vous souhaitez donner votre avis, demander une fonctionnalité, signaler un bug, s'il vous plaît rejoignez notre <1>Discord.</1></1><2>Si vous souhaitez soutenir financièrement le développeur, veuillez faire un don via <1>Paypal</1> ou <3>Patreon</3>.</2>",
-        "paragraphCredits": "<0>Crédit où le crédit est dû</0><p>Genshin Optimizer n'en serait pas là où il est sans toutes ces sources / personnes. Il est temps de saluer et de les remercier.</p><2><0>Merci à tous les membres de la communauté, et en particulier aux personnes de notre <1>Discord</1> pour m'avoir fait part de vos commentaires et m'avoir aidé à améliorer cet outil.</0><1>Merci à <1>Honey Impact</1>, pour nous avoir fourni une source fiable et cohérente de données et de chiffres. Tous nos calculs seraient discutables sans eux.</1><2>Un pourcentage sain de nos images Genshin sont issues de <1>The Genshin Impact Wiki</1>, donc un heureux merci pour eux.</2><3>Un merci spécial aux membres de notre communauté qui ont utilisé le fichier supplémentaire et nous ont aidés à tester des formules en enregistrant des données dans le jeu, et aux personnes qui nous ont aidés avec les contributions au code source.</3><4>Merci à tous les autres, d'avoir partagé cet outil et d'avoir permis à plus de gens d'utiliser cet outil.</4><5>Enfin, et surtout, merci à <1>VOUS</1> d'utiliser Genshin Optimizer actuellement.</5></2>"
+        "paragraphCredits": "<0>Crédit où le crédit est dû</0><p>Genshin Optimizer n'en serait pas là où il est sans toutes ces sources / personnes. Il est temps de saluer et de les remercier.</p><2><0>Merci à tous les membres de la communauté, et en particulier aux personnes de notre <1>Discord</1> pour m'avoir fait part de vos commentaires et m'avoir aidé à améliorer cet outil.</0><1>Merci à <1>Dimbreath</1>, pour nous avoir fourni une source fiable et cohérente de données et de chiffres. Tous nos calculs seraient discutables sans eux.</1><2>Un pourcentage sain de nos images Genshin sont issues de <1>The Genshin Impact Wiki</1>, donc un heureux merci pour eux.</2><3>Un merci spécial aux membres de notre communauté qui ont utilisé le fichier supplémentaire et nous ont aidés à tester des formules en enregistrant des données dans le jeu, et aux personnes qui nous ont aidés avec les contributions au code source.</3><4>Merci à tous les autres, d'avoir partagé cet outil et d'avoir permis à plus de gens d'utiliser cet outil.</4><5>Enfin, et surtout, merci à <1>VOUS</1> d'utiliser Genshin Optimizer actuellement.</5></2>"
     },
     "languages": {
         "chs": "Chinois (Simplifié)",
@@ -130,10 +130,6 @@
         },
         "downloadCard": {
             "databaseDownload": "Téléchargement des Données",
-            "charsStored": "<0>{{count}}</0> Personnage Stocké",
-            "charsStored_plural": "<0>{{count}}</0> Personnages Stockés",
-            "artisStored": "<0>{{count}}</0> Artéfact Stocké",
-            "artisStored_plural": "<0>{{count}}</0> Artéfacts Stockés",
             "databaseDisclaimer": "Note: toute donnée de la page \"Outils\", par exemple les calculs de Résine, ne font pas partie de la base de donnée téléchargée.",
             "button": {
                 "download": "Télécharger",
@@ -145,12 +141,7 @@
             "title": "Téléverser la base de données",
             "replaceDatabase": "Remplacer la base de données",
             "hint": "Téléverser votre fichier JSON ici...",
-            "hintPaste": "...ou coller vos données ci-dessous.",
-            "numChar": "Nombre de Personnages:",
-            "numArt": "Nombre d'artéfacts:"
-        },
-        "dialog": {
-            "delete-database": "Êtes-vous sûr de vouloir supprimer votre base de données ? Tous les personnages et artéfacts existants seront supprimés."
+            "hintPaste": "...ou coller vos données ci-dessous."
         }
     },
     "ui": {

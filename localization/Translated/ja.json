@@ -76,10 +76,6 @@
         },
         "downloadCard": {
             "databaseDownload": "データーベースをダウンロード",
-            "charsStored": "<0>{{count}}</0>",
-            "charsStored_plural": "<0>{{count}}</0>人が保存している",
-            "artisStored": "<0>{{count}}</0>個の聖遺物が保存している",
-            "artisStored_plural": "<0>{{count}}</0>個の聖遺物が保存している",
             "button": {
                 "download": "ダウンロード",
                 "copy": "クリップボードにコピーする",
@@ -90,12 +86,7 @@
             "title": "データベースをアップロード",
             "replaceDatabase": "データベースを入れ替え",
             "hint": "こちらでJSONファイルをアップロードするか...",
-            "hintPaste": "...下記欄に張り付けてください。",
-            "numChar": "キャラ数:",
-            "numArt": "聖遺物数:"
-        },
-        "dialog": {
-            "delete-database": "データベースを削除しますか?すべての既存のキャラクター・聖遺物は削除されます。"
+            "hintPaste": "...下記欄に張り付けてください。"
         }
     },
     "ui": {
