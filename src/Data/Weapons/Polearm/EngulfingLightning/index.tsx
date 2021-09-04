@@ -32,7 +32,10 @@ const weapon: IWeaponSheet = {
       formulaText: stats => <span>Min( {data.enerRechConv[stats.weapon.refineIndex]}% * ( {Stat.printStat("enerRech_", stats, true)} - 100% ) , {data.enerRechMax[stats.weapon.refineIndex]}% )</span>,
       formula: formula.conv,
       fixed: 1,
-      unit: "%"
+      unit: "%",
+      variant:"danger"
+    },{
+      text:<span className="text-warning">WARNING: The ATK% bonus above is currently not being added in the system. You need to manually add it to the character.</span>
     }],
     conditional: conditionals.e
   }],
