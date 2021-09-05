@@ -1,4 +1,5 @@
 import albedo from './albedo/data'
+import aloy from './aloy/data'
 import amber from './amber/data'
 import barbara from './barbara/data'
 import beidou from './beidou/data'
@@ -42,6 +43,7 @@ import { CharacterKey, ElementKey } from '../../Types/consts'
 type IFormulaSheets = StrictDict<CharacterKey, IFormulaSheet | Dict<ElementKey, IFormulaSheet>>
 const formula: IFormulaSheets = {
   albedo,
+  aloy,
   amber,
   barbara,
   beidou,

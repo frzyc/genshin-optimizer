@@ -9,7 +9,7 @@ export type IWeaponSheets = Record<WeaponKey, IWeaponSheet>
 
 export interface IWeaponSheet extends WeaponData {
   img: string;
-  stats?: BonusStats | ((stats: BasicStats) => BonusStats)
+  stats?: BonusStats | ((stats: BasicStats) => BonusStats | undefined)
   conditionals?: IConditionals
   document: DocumentSection[],
 }

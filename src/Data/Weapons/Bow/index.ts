@@ -9,6 +9,7 @@ import Hamayumi from './Hamayumi'
 import HuntersBow from './HuntersBow'
 import Messenger from './Messenger'
 import MitternachtsWaltz from './MitternachtsWaltz'
+import Predator from './Predator'
 import PrototypeCrescent from './PrototypeCrescent'
 import RavenBow from './RavenBow'
 import RecurveBow from './RecurveBow'
@@ -35,6 +36,7 @@ const bow = {
   HuntersBow,
   Messenger,
   MitternachtsWaltz,
+  Predator,
   PrototypeCrescent,
   RavenBow,
   RecurveBow,
