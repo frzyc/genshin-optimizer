@@ -214,7 +214,8 @@ const char: ICharacterSheet = {
           },
           {
             text: tr("burst.skillParams.12"),
-            value: stats => data.burst.enerGen[stats.tlvl.burst]
+            value: stats => data.burst.enerGen[stats.tlvl.burst],
+            fixed: 1
           }, {
             text: tr("burst.skillParams.13"),
             value: data.burst.duration,
