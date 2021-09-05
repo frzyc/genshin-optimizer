@@ -61,6 +61,8 @@ export const characterIdMap = {
   10000052: "raidenshogun",
   10000053: "Sayu",
   // 10000054: "TEMPLATE",
+  10000056: "kujousara",
+  // 10000062: "aloy",
   // 11000008: "TEMPLATE",
   // 11000009: "TEMPLATE",
   // 11000010: "TEMPLATE",
