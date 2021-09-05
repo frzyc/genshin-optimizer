@@ -98,7 +98,7 @@ function MainStatsCards({ characterSheet, weaponSheet, editable, character, char
     "plunging_dmg_", "plunging_critRate_",
     "skill_dmg_", "skill_critRate_",
     "burst_dmg_", "burst_critRate_",
-    "dmg_", "moveSPD_", "atkSPD_", "weakspotDMG_"]
+    "dmg_", "enemyDEFRed_", "moveSPD_", "atkSPD_", "weakspotDMG_"]
 
   const specializedStatKey = characterSheet.getSpecializedStat(character.ascension)
   const specializedStatVal = characterSheet.getSpecializedStatVal(character.ascension)

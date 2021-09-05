@@ -6,11 +6,11 @@ const skillParam_gen = skillParam_gen_pre as any
 export const data = {
   normal: {
     hitArr: [
-      toTalentPercent(skillParam_gen.auto[0]),//x2
-      toTalentPercent(skillParam_gen.auto[1]),
-      toTalentPercent(skillParam_gen.auto[2]),
-      toTalentPercent(skillParam_gen.auto[3]),//x2
-      toTalentPercent(skillParam_gen.auto[4]),
+      toTalentPercent(skillParam_gen.auto[0]),//1.1
+      toTalentPercent(skillParam_gen.auto[1]),//1.2
+      toTalentPercent(skillParam_gen.auto[2]),//2
+      toTalentPercent(skillParam_gen.auto[3]),//3
+      toTalentPercent(skillParam_gen.auto[4]),//4
     ]
   },
   charged: {
@@ -24,15 +24,23 @@ export const data = {
   },
   skill: {
     dmg: toTalentPercent(skillParam_gen.skill[0]),
-    atkRatio: toTalentPercent(skillParam_gen.skill[1]),
-    duration: skillParam_gen.skill[2][0],
-    cd: skillParam_gen.skill[3][0]
+    bomblet: toTalentPercent(skillParam_gen.skill[1]),
+    atkDec: toTalentPercent(skillParam_gen.skill[2]),
+    atkDecDur: skillParam_gen.skill[3][0],
+    coil1: toTalentPercent(skillParam_gen.skill[4]),
+    coil2: toTalentPercent(skillParam_gen.skill[5]),
+    coil3: toTalentPercent(skillParam_gen.skill[6]),
+    coil4: toTalentPercent(skillParam_gen.skill[7]),
+    rushDur: skillParam_gen.skill[8][0],
+    cd: skillParam_gen.skill[8][0],
   },
   burst: {
     dmg: toTalentPercent(skillParam_gen.burst[0]),
-    cluster: toTalentPercent(skillParam_gen.burst[1]),
-    cd: skillParam_gen.burst[2][0],
-    cost: skillParam_gen.burst[3][0],
+    cd: skillParam_gen.burst[1][0],
+    cost: skillParam_gen.burst[2][0],
+  },
+  a1: {
+    duration: skillParam_gen.passive1[1],
   }
 } as const
 const formula: IFormulaSheet = {
@@ -44,17 +52,10 @@ const formula: IFormulaSheet = {
     [name, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "plunging")])),
   skill: {
     dmg: stats => basicDMGFormula(data.skill.dmg[stats.tlvl.skill], stats, "skill"),
-    atkBonus: stats => {
-      const percent = (data.skill.atkRatio[stats.tlvl.skill]) / 100
-      return [s => percent * s.baseATK, ["baseATK"]]
-    }
+    bomblet: stats => basicDMGFormula(data.skill.bomblet[stats.tlvl.skill], stats, "skill"),
   },
   burst: {
     dmg: stats => basicDMGFormula(data.burst.dmg[stats.tlvl.burst], stats, "burst"),
-    cluster: stats => basicDMGFormula(data.burst.cluster[stats.tlvl.burst], stats, "burst")
-  },
-  c2: {
-    dmg: stats => basicDMGFormula(0.3 * data.skill.dmg[stats.tlvl.skill], stats, "skill"),
   }
 } as const
 export default formula
