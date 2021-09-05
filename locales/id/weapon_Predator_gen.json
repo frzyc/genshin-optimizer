@@ -1,0 +1,8 @@
+{
+  "name": "Predator",
+  "description": "Busur dengan desain unik. Seharusnya senjata ini bukan berasal dari dunia ini.",
+  "passiveName": "Strong Strike",
+  "passiveDescription": {
+    "0": "<undefined>Hanya efektif saat bermain di plaftorm:</undefined>\\n<undefined>\"PlayStation Network\"</undefined>\\nSetelah mengakibatkan Cryo DMG pada musuh, DMG Normal dan Charged Attack akan meningkat 10% selama 6 detik, dapat ditumpuk sampai 2 lapis. Selain itu, jika Aloy yang mengenakan Predator, ATK-nya akan meningkat sebesar 66."
+  }
+}

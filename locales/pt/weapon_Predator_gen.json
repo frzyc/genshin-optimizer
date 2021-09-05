@@ -1,0 +1,8 @@
+{
+  "name": "Predador",
+  "description": "Um arco com um design único. Isto não deve pertencer a este mundo.",
+  "passiveName": "Ataque Poderoso",
+  "passiveDescription": {
+    "0": "<cryo>Efetivo somente na plataforma abaixo:</cryo>\\n<cryo>\"PlayStation Network\"</cryo>\\nCausar Dano Cryo aos oponentes aumenta o Dano do Ataque Normal e Carregado deste personagem em 10% por 6s. Este efeito pode ter 2 acúmulos. Adicionalmente, quando Aloy equipa o Predador, seu ATQ é aumentado em 66."
+  }
+}
