@@ -8,7 +8,7 @@ import { faLink } from "@fortawesome/free-solid-svg-icons";
 import { useContext, useState } from "react";
 import { DatabaseContext } from "../Database/Database";
 
-export default function TestDisplay() {
+export default function FlexDisplay() {
   const location = useLocation()
   const database = useContext(DatabaseContext)
   const searchStr = location.search
@@ -18,7 +18,7 @@ export default function TestDisplay() {
     const [database, charKey, version] = flexResult
     if (version !== 2)
       return <Redirect to={`/flex?${createFlexObj(charKey, database)}`} />
-    return <DatabaseContext.Provider value={database}> <Display characterKey={charKey} /> </DatabaseContext.Provider>
+    return <DatabaseContext.Provider value={database}><Display characterKey={charKey} /></DatabaseContext.Provider>
   } else {
     const characterKey = (location as any).characterKey
     if (!characterKey) return <Redirect to={`/`} />
