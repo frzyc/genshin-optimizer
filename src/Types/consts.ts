@@ -24,7 +24,7 @@ export const allCharacterKeys = [
   "albedo", "amber", "barbara", "beidou", "bennett", "chongyun", "diluc", "diona", "fischl", "ganyu",
   "hutao", "jean", "kaeya", "keqing", "klee", "lisa", "mona", "ningguang", "noelle", "qiqi",
   "razor", "sucrose", "tartaglia", "traveler", "raidenshogun", "venti", "xiao", "xiangling", "xingqiu", "xinyan",
-  "zhongli", "rosaria", "yanfei", "eula", "kaedeharakazuha", "kamisatoayaka", "sayu", "yoimiya", "kujousara",
+  "zhongli", "rosaria", "yanfei", "eula", "kaedeharakazuha", "kamisatoayaka", "sayu", "yoimiya", "kujousara", "aloy"
 ] as const
 export const allWeaponKeys = [
   "DullBlade", "SilverSword", "CoolSteel", "DarkIronSword", "FilletBlade", "HarbingerOfDawn", "SkyriderSword",
@@ -46,7 +46,7 @@ export const allWeaponKeys = [
   "WineAndSong", "EyeOfPerception", "Frostbearer", "LostPrayerToTheSacredWinds", "SkywardAtlas", "MemoryOfDust",
   "SongOfBrokenPines", "DodocoTales", "MitternachtsWaltz", "FreedomSworn", "AmenomaKageuchi", "MistsplitterReforged",
   "KatsuragikiriNagamasa", "KitainCrossSpear", "ThunderingPulse", "Hamayumi", "HakushinRing", "TheCatch",
-  "EverlastingMoonglow", "LuxuriousSeaLord"
+  "EverlastingMoonglow", "LuxuriousSeaLord", "Predator"
 ] as const
 export const characterSpecializedStatKeys = ["hp_", "atk_", "def_", "eleMas", "enerRech_", "heal_", "critRate_", "critDMG_", "physical_dmg_", "anemo_dmg_", "geo_dmg_", "electro_dmg_", "hydro_dmg_", "pyro_dmg_", "cryo_dmg_"] as const
 

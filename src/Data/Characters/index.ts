@@ -1,4 +1,5 @@
 import albedo from './albedo'
+import aloy from './aloy'
 import amber from './amber'
 import barbara from './barbara'
 import beidou from './beidou'
@@ -42,6 +43,7 @@ import { ICharacterSheet } from '../../Types/character'
 import { documentSectionsProcessing } from '../../Util/DocumentUtil'
 const characters: StrictDict<CharacterKey, ICharacterSheet> = {
   albedo,
+  aloy,
   amber,
   barbara,
   beidou,
