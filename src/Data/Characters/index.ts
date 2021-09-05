@@ -16,6 +16,7 @@ import kaeya from './kaeya'
 import kamisatoayaka from './kamisatoayaka'
 import keqing from './keqing'
 import klee from './klee'
+import kujousara from './kujousara'
 import lisa from './lisa'
 import mona from './mona'
 import ningguang from './ningguang'
@@ -58,6 +59,7 @@ const characters: StrictDict<CharacterKey, ICharacterSheet> = {
   kamisatoayaka,
   keqing,
   klee,
+  kujousara,
   lisa,
   mona,
   ningguang,

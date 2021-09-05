@@ -16,6 +16,7 @@ import kaeya from './kaeya/data'
 import kamisatoayaka from './kamisatoayaka/data'
 import keqing from './keqing/data'
 import klee from './klee/data'
+import kujousara from './kujousara/data'
 import lisa from './lisa/data'
 import mona from './mona/data'
 import ningguang from './ningguang/data'
@@ -58,6 +59,7 @@ const formula: IFormulaSheets = {
   kamisatoayaka,
   keqing,
   klee,
+  kujousara,
   lisa,
   mona,
   ningguang,
