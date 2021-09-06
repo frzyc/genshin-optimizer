@@ -19,17 +19,19 @@
     "i18next": "^20.3.2",
     "i18next-browser-languagedetector": "^6.1.2",
     "i18next-http-backend": "^1.2.6",
+    "pipeline": "file:./pipeline",
     "react": "^17.0.2",
     "react-bootstrap": "^1.6.1",
+    "react-code-blocks": "0.0.9-0",
     "react-dom": "^17.0.2",
     "react-ga": "^3.3.0",
     "react-i18next": "^11.11.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^4.0.3",
     "source-map-explorer": "^2.5.2",
+    "styled-components": "^5.3.1",
     "tesseract.js": "^2.1.1",
-    "web-vitals": "^0.2.4",
-    "pipeline": "file:./pipeline"
+    "web-vitals": "^0.2.4"
   },
   "scripts": {
     "gen-files": "npm run pipeline-datamined && npm run localization-load",

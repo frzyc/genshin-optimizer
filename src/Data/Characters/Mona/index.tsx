@@ -175,6 +175,7 @@ const char: ICharacterSheet = {
         sections: [{
           text: tr("passive2.description"),
           fields: [{
+            canShow: stats => stats.ascension >= 4,
             text: "Hydro DMG Bonus",
             formulaText: stats => <span>20% {Stat.printStat("enerRech_", stats, true)}</span>,
             formula: formula.passive2.bonus,

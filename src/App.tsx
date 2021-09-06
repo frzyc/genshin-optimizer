@@ -1,5 +1,5 @@
 import { faDiscord, faPatreon, faPaypal } from '@fortawesome/free-brands-svg-icons';
-import { faCalculator, faCog, faGavel, faIdCard, faTools } from '@fortawesome/free-solid-svg-icons';
+import { faBook, faCalculator, faCog, faGavel, faIdCard, faTools } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { lazy, Suspense } from 'react';
 import { Container } from 'react-bootstrap';
@@ -28,6 +28,7 @@ const TestDisplay = lazy(() => import('./TestPage/TestDisplay'))
 const FlexDisplay = lazy(() => import('./FlexPage/FlexDisplay'))
 const SettingsDisplay = lazy(() => import('./Settings/SettingsDisplay'))
 const WeaponDisplay = lazy(() => import('./Weapon/WeaponDisplay'))
+const DocumentationDisplay = lazy(() => import('./DocumentationPage/DocumentationDisplay'))
 
 function App() {
   return <Suspense fallback={<Container><LoadingCard /></Container>}>
@@ -50,6 +51,7 @@ function AppInner() {
               <Nav.Link as={Link} to="/build"><FontAwesomeIcon icon={faCalculator} className="fa-fw" /> <Trans t={t} i18nKey="ui:tabs.builds">Builds</Trans></Nav.Link>
               <Nav.Link as={Link} to="/tools"><FontAwesomeIcon icon={faTools} className="fa-fw" /> <Trans t={t} i18nKey="ui:tabs.tools">Tools</Trans></Nav.Link>
               <Nav.Link as={Link} to="/database"><FontAwesomeIcon icon={faCog} /> <Trans t={t} i18nKey="ui:tabs.database">Database</Trans></Nav.Link>
+              <Nav.Link as={Link} to="/doc"><FontAwesomeIcon icon={faBook} /> <Trans t={t} i18nKey="ui:tabs.doc">Documentation</Trans></Nav.Link>
               {process.env.NODE_ENV === "development" && <Nav.Link as={Link} to="/test">TEST</Nav.Link>}
             </Nav>
             <Nav>
@@ -75,6 +77,7 @@ function AppInner() {
             <Route path="/tools" component={Planner} />
             {process.env.NODE_ENV === "development" && <Route path="/test" component={TestDisplay} />}
             <Route path="/database" component={SettingsDisplay} />
+            <Route path="/doc" component={DocumentationDisplay} />
             <Route path="/flex" component={FlexDisplay} />
             <Route path="/" component={Home} />
           </Switch>
