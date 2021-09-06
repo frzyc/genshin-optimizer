@@ -27,10 +27,10 @@ export default function HomeDisplay(props: any) {
                 <Card.Body>
                   <Nav defaultActiveKey="/" className="flex-column">
                     <Nav.Link as={Link} to="/doc/">Overview</Nav.Link>
-                    <Nav.Link as={Link} to="/doc/IArtifact"><code>IArtifact</code></Nav.Link>
+                    <Nav.Link as={Link} to="/doc/ICachedArtifact"><code>ICachedArtifact</code></Nav.Link>
                     <Nav.Link as={Link} to="/doc/statKey"><code>statKey</code></Nav.Link>
                     <Nav.Link as={Link} to="/doc/ArtifactSetKey"><code>ArtifactSetKey</code></Nav.Link>
-                    <Nav.Link as={Link} to="/doc/ICharacter"><code>ICharacter</code></Nav.Link>
+                    <Nav.Link as={Link} to="/doc/ICachedCharacter"><code>ICachedCharacter</code></Nav.Link>
                     <Nav.Link as={Link} to="/doc/CharacterKey"><code>CharacterKey</code></Nav.Link>
                   </Nav>
                 </Card.Body>
@@ -67,12 +67,12 @@ const goodCode = `Interface IGOOD {
   format: "GOOD" //A way for people to recognize this format.
   version: number //API version.
   source: string //the app that generates this data.
-  characters: ICharacter[]
-  artifacts: IArtifact[]
-  weapons: IWeapon[]
+  characters: ICachedCharacter[]
+  artifacts: ICachedArtifact[]
+  weapons: ICachedWeapon[]
 }`
 
-const artifactCode = `Interface IArtifact {
+const artifactCode = `Interface ICachedArtifact {
   setKey: SetKey //e.g. "GladiatorsFinale"
   slotKey: SlotKey //e.g. "plume"
   level: number //0-20 inclusive
@@ -109,12 +109,12 @@ function Overview() {
   </>
 }
 function CodeBlock({ text }) {
-  const lines = text.split(/\r\n|\r|\n/).length+1
+  const lines = text.split(/\r\n|\r|\n/).length + 1
   const lineNums = Array.from(Array(lines).keys()).map(i => i + 1).join('\n')
   console.log(lineNums);
 
   return <div className="d-flex flex-row">
-    <textarea className="code text-secondary" disabled={true} spellCheck="false" aria-label='Code Sample' rows={lines} style={{ width: "2em", overflow: "hidden", userSelect: "none" }} value={lineNums} unselectable="off"/>
+    <textarea className="code text-secondary" disabled={true} spellCheck="false" aria-label='Code Sample' rows={lines} style={{ width: "2em", overflow: "hidden", userSelect: "none" }} value={lineNums} unselectable="off" />
     <textarea className="code w-100 text-info flex-grow-1 " disabled={true} spellCheck="false" aria-label='Code Sample' rows={lines}>
       {text}
     </textarea>

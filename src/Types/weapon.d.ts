@@ -14,13 +14,13 @@ export interface IWeaponSheet extends WeaponData {
   document: DocumentSection[],
 }
 
-export interface IFlexWeapon {
+export interface IWeapon {
   key: WeaponKey // "CrescentPike"
   level: number // 1-90 inclusive
   ascension: number // 0-6 inclusive. need to disambiguate 80/90 or 80/80
   refine: number // 1-5 inclusive
   location: CharacterKey | "" // where "" means not equipped.
 }
-export interface IWeapon extends IFlexWeapon {
+export interface ICachedWeapon extends IWeapon {
   id: string
 }

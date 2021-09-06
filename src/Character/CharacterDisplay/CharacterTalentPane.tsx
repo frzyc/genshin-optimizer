@@ -7,14 +7,14 @@ import FieldDisplay from "../../Components/FieldDisplay";
 import StatIcon from "../../Components/StatIcon";
 import Stat from "../../Stat";
 import { ElementToReactionKeys } from "../../StatData";
-import { ICharacter } from "../../Types/character";
+import { ICachedCharacter } from "../../Types/character";
 import { ICalculatedStats } from "../../Types/stats";
 import statsToFields from "../../Util/FieldUtil";
 import type { characterReducerAction } from "../CharacterDisplayCard";
 import CharacterSheet from "../CharacterSheet";
 type CharacterTalentPaneProps = {
   characterSheet: CharacterSheet,
-  character: ICharacter,
+  character: ICachedCharacter,
   editable: boolean,
   characterDispatch: (any: characterReducerAction) => void,
   newBuild?: ICalculatedStats,
@@ -176,7 +176,7 @@ function CrystalizeCard({ stats }) {
 const talentLimits = [1, 1, 2, 4, 6, 8, 10]
 type SkillDisplayCardProps = {
   characterSheet: CharacterSheet
-  character: ICharacter,
+  character: ICachedCharacter,
   characterDispatch: (any) => void,
   talentKey: string,
   subtitle: string,

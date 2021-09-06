@@ -1,5 +1,5 @@
-import { IArtifact } from "../Types/artifact"
-import { ICharacter } from "../Types/character"
+import { ICachedArtifact } from "../Types/artifact"
+import { ICachedCharacter } from "../Types/character"
 import { randomizeArtifact } from "../Util/ArtifactUtil"
 import { deepClone, getArrLastElement } from "../Util/Util"
 import { database, ArtCharDatabase } from "./Database"
@@ -8,7 +8,7 @@ import { dbStorage } from "./DBStorage"
 import { exportDB, importDB } from "./exim/dbJSON"
 import { validateFlexArtifact } from "./validation"
 
-const baseAlbedo: ICharacter = {
+const baseAlbedo: ICachedCharacter = {
   characterKey: "Albedo",
   equippedArtifacts: { flower: "", plume: "", sands: "", goblet: "", circlet: "" },
   level: 1, ascension: 0,
@@ -29,7 +29,7 @@ const baseAlbedo: ICharacter = {
   constellation: 0,
   equippedWeapon: "",
 } as const
-const baseAmber: ICharacter = {
+const baseAmber: ICachedCharacter = {
   characterKey: "Amber",
   equippedArtifacts: { flower: "", plume: "", sands: "", goblet: "", circlet: "" },
   level: 1, ascension: 0,
@@ -180,16 +180,16 @@ describe("Database", () => {
     expect(database._getChar("Albedo")).toEqual(Albedo)
     expect(database._getArt(art1.id)).toEqual(art1)
     // And receive its callback
-    expect(getArrLastElement(AlbedoCallback1.mock.calls)[0] as ICharacter).toEqual(Albedo)
-    expect(getArrLastElement(artifact1Callback1.mock.calls)[0] as IArtifact).toEqual(art1)
+    expect(getArrLastElement(AlbedoCallback1.mock.calls)[0] as ICachedCharacter).toEqual(Albedo)
+    expect(getArrLastElement(artifact1Callback1.mock.calls)[0] as ICachedArtifact).toEqual(art1)
 
     // If we set another artifact to the same location
     art2.id = database.updateArt(art2)
     database.equipArtifacts("Albedo", { circlet: art2.id, flower: "", sands: "", goblet: "", plume: "" })
     // We should again receive the callbacks
     art1.location = ""
-    expect((getArrLastElement(AlbedoCallback1.mock.calls)[0] as ICharacter).equippedArtifacts).toEqual({ circlet: art2.id, flower: "", sands: "", goblet: "", plume: "" })
-    expect(getArrLastElement(artifact1Callback1.mock.calls)[0] as IArtifact).toEqual(art1)
+    expect((getArrLastElement(AlbedoCallback1.mock.calls)[0] as ICachedCharacter).equippedArtifacts).toEqual({ circlet: art2.id, flower: "", sands: "", goblet: "", plume: "" })
+    expect(getArrLastElement(artifact1Callback1.mock.calls)[0] as ICachedArtifact).toEqual(art1)
     // And art2 should have proper location
     art2.location = "Albedo"
     expect(database._getArt(art2.id)).toEqual(art2)
@@ -223,7 +223,7 @@ describe("Database", () => {
     expect(database._getChar("Albedo")).toEqual(Albedo)
     expect(database._getArt(art1.id)).toBeUndefined()
     // It should also trigger callback on the removing artifact
-    expect(getArrLastElement(artifact1Callback1.mock.calls)[0] as IArtifact | undefined).toBeUndefined
+    expect(getArrLastElement(artifact1Callback1.mock.calls)[0] as ICachedArtifact | undefined).toBeUndefined
 
     // And if we remove a char
     database.removeChar("Amber")

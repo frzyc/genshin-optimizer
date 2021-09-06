@@ -1,6 +1,6 @@
 import { ArtifactSlotsData, ArtifactStarsData } from '../Data/ArtifactData';
 import { clampPercent, deepClone, evalIfFunc } from '../Util/Util';
-import { allSubstats, IArtifact, MainStatKey, SubstatKey } from '../Types/artifact';
+import { allSubstats, ICachedArtifact, MainStatKey, SubstatKey } from '../Types/artifact';
 import { SlotKey, Rarity, ArtifactSetKey, allSlotKeys, SetNum, allRarities, ArtifactRarity } from '../Types/consts';
 import { BonusStats, ICalculatedStats } from '../Types/stats';
 import { ArtifactSheet } from './ArtifactSheet';
@@ -45,7 +45,7 @@ export default class Artifact {
     return result
   }
 
-  static splitArtifactsBySlot = (databaseObj: IArtifact[]): Dict<SlotKey, IArtifact[]> =>
+  static splitArtifactsBySlot = (databaseObj: ICachedArtifact[]): Dict<SlotKey, ICachedArtifact[]> =>
     Object.fromEntries(allSlotKeys.map(slotKey =>
       [slotKey, databaseObj.filter(art => art.slotKey === slotKey)]))
 
@@ -97,7 +97,7 @@ export default class Artifact {
   }
 
   //ARTIFACT IN GENERAL
-  static getArtifactEfficiency(artifact: IArtifact, filter: Set<SubstatKey>): { currentEfficiency: number, maxEfficiency: number } {
+  static getArtifactEfficiency(artifact: ICachedArtifact, filter: Set<SubstatKey>): { currentEfficiency: number, maxEfficiency: number } {
     const { substats, numStars, level } = artifact
     // Relative to max star, so comparison between different * makes sense.
     const totalRolls = Artifact.totalPossibleRolls(maxStar);
@@ -118,7 +118,7 @@ export default class Artifact {
   }
 
   //start with {slotKey:art} end with {setKey:[slotKey]}
-  static setToSlots = (artifacts: Dict<SlotKey, IArtifact>): Dict<ArtifactSetKey, SlotKey[]> => {
+  static setToSlots = (artifacts: Dict<SlotKey, ICachedArtifact>): Dict<ArtifactSetKey, SlotKey[]> => {
     const setToSlots: Dict<ArtifactSetKey, SlotKey[]> = {};
     Object.entries(artifacts).forEach(([key, art]) => {
       if (!art) return

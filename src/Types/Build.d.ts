@@ -1,8 +1,8 @@
-import { IArtifact, MainStatKey, StatKey } from "./artifact"
+import { ICachedArtifact, MainStatKey, StatKey } from "./artifact"
 import { ArtifactSetKey, SetNum, SlotKey } from "./consts"
 import { BonusStats, ICalculatedStats } from "./stats"
 
-export type ArtifactsBySlot = Dict<SlotKey, IArtifact[]>
+export type ArtifactsBySlot = Dict<SlotKey, ICachedArtifact[]>
 export type ArtifactSetEffects = Dict<ArtifactSetKey, Dict<SetNum, BonusStats>>
 export type SetFilter = { key: ArtifactSetKey | "", num: number }[]
 export interface BuildSetting {
@@ -20,7 +20,7 @@ export interface BuildSetting {
   ascending: boolean
 }
 export type MinMaxFilter = Dict<StatKey, { min: number, max: number }>
-export type ArtifactsBySlot = Dict<SlotKey, IArtifact[]>
+export type ArtifactsBySlot = Dict<SlotKey, ICachedArtifact[]>
 
 export interface BuildRequest {
   splitArtifacts: ArtifactsBySlot,
@@ -36,6 +36,6 @@ export interface BuildRequest {
 export interface Build {
   buildFilterVal: number,
   artifacts: {
-    [key: string]: IArtifact
+    [key: string]: ICachedArtifact
   }
 }

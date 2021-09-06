@@ -1,19 +1,19 @@
-import { IArtifact, IFlexArtifact } from "../Types/artifact";
-import { ICharacter } from "../Types/character";
+import { ICachedArtifact, IArtifact } from "../Types/artifact";
+import { ICachedCharacter } from "../Types/character";
 import { allSlotKeys, CharacterKey, SlotKey } from "../Types/consts";
 import { deepClone, getRandomInt } from "../Util/Util";
 import { DataManager } from "./DataManager";
 import { migrate } from "./migration";
 import { validateFlexArtifact, validateDBCharacter, validateDBArtifact, extractFlexArtifact, validateFlexCharacter, extractFlexCharacter, validateDBWeapon, validateFlexWeapon, extractFlexWeapon } from "./validation";
 import { DBStorage, dbStorage } from "./DBStorage";
-import { IWeapon } from "../Types/weapon";
+import { ICachedWeapon } from "../Types/weapon";
 import { createContext } from "react";
 
 export class ArtCharDatabase {
   storage: DBStorage
-  arts = new DataManager<string, IArtifact>()
-  chars = new DataManager<CharacterKey, ICharacter>()
-  weapons = new DataManager<string, IWeapon>()
+  arts = new DataManager<string, ICachedArtifact>()
+  chars = new DataManager<CharacterKey, ICachedCharacter>()
+  weapons = new DataManager<string, ICachedWeapon>()
 
   constructor(storage: DBStorage) {
     this.storage = storage
@@ -93,15 +93,15 @@ export class ArtCharDatabase {
     }
   }
 
-  private saveArt(key: string, art: IArtifact) {
+  private saveArt(key: string, art: ICachedArtifact) {
     this.storage.set(key, extractFlexArtifact(art))
     this.arts.set(key, art)
   }
-  private saveChar(key: CharacterKey, char: ICharacter) {
+  private saveChar(key: CharacterKey, char: ICachedCharacter) {
     this.storage.set(`char_${key}`, extractFlexCharacter(char))
     this.chars.set(key, char)
   }
-  private saveWeapon(key: string, weapon: IWeapon) {
+  private saveWeapon(key: string, weapon: ICachedWeapon) {
     this.storage.set(key, extractFlexWeapon(weapon))
     this.weapons.set(key, weapon)
   }
@@ -113,13 +113,13 @@ export class ArtCharDatabase {
   _getCharKeys(): CharacterKey[] { return this.chars.keys }
   _getWeapon(key: string) { return this.weapons.get(key) }
 
-  followChar(key: CharacterKey, cb: Callback<ICharacter>): (() => void) | undefined { return this.chars.follow(key, cb) }
-  followArt(key: string, cb: Callback<IArtifact>): (() => void) | undefined {
+  followChar(key: CharacterKey, cb: Callback<ICachedCharacter>): (() => void) | undefined { return this.chars.follow(key, cb) }
+  followArt(key: string, cb: Callback<ICachedArtifact>): (() => void) | undefined {
     if (this.arts.get(key) !== undefined)
       return this.arts.follow(key, cb)
     cb(undefined)
   }
-  followWeapon(key: string, cb: Callback<IWeapon>): (() => void) | undefined {
+  followWeapon(key: string, cb: Callback<ICachedWeapon>): (() => void) | undefined {
     if (this.weapons.get(key) !== undefined)
       return this.weapons.follow(key, cb)
     cb(undefined)
@@ -133,7 +133,7 @@ export class ArtCharDatabase {
    * **Caution**: This does not update `equippedArtifacts`, use `equipArtifacts` instead
    * **Caution**: This does not update `equipedWeapon`, use `setWeaponLocation` instead
    */
-  updateChar(value: ICharacter): void {
+  updateChar(value: ICachedCharacter): void {
     const newChar = deepClone(value), key = newChar.characterKey, oldChar = this.chars.get(key)
 
     if (oldChar) {
@@ -149,7 +149,7 @@ export class ArtCharDatabase {
   /**
    * **Caution** This does not update `location` and `lock`, use `setLocation` or `lockArtifact` instead
    */
-  updateArt(value: IArtifact): string {
+  updateArt(value: ICachedArtifact): string {
     const newArt = deepClone(value)
     const key = newArt.id || generateRandomArtID(new Set(Object.keys(this.arts.data)))
     const oldArt = this.arts.get(key)
@@ -173,7 +173,7 @@ export class ArtCharDatabase {
   /**
    * **Caution** This does not update `location` use `setWeaponLocation` instead
    */
-  updateWeapon(value: IWeapon): string {
+  updateWeapon(value: ICachedWeapon): string {
     const newWeapon = deepClone(value)
     const key = newWeapon.id || generateRandomWeaponID(new Set(Object.keys(this.weapons.data)))
     const oldWeapon = this.weapons.get(key)
@@ -302,7 +302,7 @@ export class ArtCharDatabase {
     this.saveArt(key, art)
   }
 
-  findDuplicates(editorArt: IFlexArtifact): { duplicated: string[], upgraded: string[] } {
+  findDuplicates(editorArt: IArtifact): { duplicated: string[], upgraded: string[] } {
     const { setKey, numStars, level, slotKey, mainStatKey, substats } = editorArt
 
     const candidates = this._getArts().filter(candidate =>

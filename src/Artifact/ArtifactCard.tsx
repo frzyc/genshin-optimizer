@@ -17,7 +17,7 @@ import { CharacterSelectionDropdownList } from '../Character/CharacterSelection'
 import { Stars } from '../Components/StarDisplay';
 import { DatabaseContext } from '../Database/Database';
 import Stat from '../Stat';
-import { allSubstats, IArtifact, Substat, SubstatKey } from '../Types/artifact';
+import { allSubstats, ICachedArtifact, Substat, SubstatKey } from '../Types/artifact';
 import { CharacterKey } from '../Types/consts';
 import { usePromise } from '../Util/ReactUtil';
 import { valueStringWithUnit } from '../Util/UIUtil';
@@ -26,13 +26,13 @@ import { ArtifactSheet } from './ArtifactSheet';
 import SlotNameWithIcon from './Component/SlotNameWIthIcon';
 import PercentBadge from './PercentBadge';
 
-type Data = { artifactId?: string, artifactObj?: IArtifact, onEdit?: () => void, onDelete?: () => void, mainStatAssumptionLevel?: number, effFilter?: Set<SubstatKey> }
+type Data = { artifactId?: string, artifactObj?: ICachedArtifact, onEdit?: () => void, onDelete?: () => void, mainStatAssumptionLevel?: number, effFilter?: Set<SubstatKey> }
 const allSubstatFilter = new Set(allSubstats)
 
 export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete, mainStatAssumptionLevel = 0, effFilter = allSubstatFilter }: Data): JSX.Element | null {
   const { t } = useTranslation(["artifact"]);
   const database = useContext(DatabaseContext)
-  const [databaseArtifact, updateDatabaseArtifact] = useState(undefined as IArtifact | undefined)
+  const [databaseArtifact, updateDatabaseArtifact] = useState(undefined as ICachedArtifact | undefined)
   useEffect(() =>
     artifactId ? database.followArt(artifactId, updateDatabaseArtifact) : undefined,
     [artifactId, updateDatabaseArtifact, database])

@@ -5,7 +5,7 @@ import ArtifactCard from '../../Artifact/ArtifactCard';
 import { ArtifactSheet } from '../../Artifact/ArtifactSheet';
 import SetEffectDisplay from '../../Artifact/Component/SetEffectDisplay';
 import { DatabaseContext } from '../../Database/Database';
-import { ICharacter } from '../../Types/character';
+import { ICachedCharacter } from '../../Types/character';
 import { allSlotKeys, ArtifactSetKey, SlotKey } from '../../Types/consts';
 import { ICalculatedStats } from '../../Types/stats';
 import { useForceUpdate, usePromise } from '../../Util/ReactUtil';
@@ -22,7 +22,7 @@ type CharacterArtifactPaneProps = {
     weaponSheet: WeaponSheet,
     artifactSheets: StrictDict<ArtifactSetKey, ArtifactSheet>
   }
-  character: ICharacter,
+  character: ICachedCharacter,
   equippedBuild?: ICalculatedStats,
   newBuild?: ICalculatedStats,
   editable: boolean,

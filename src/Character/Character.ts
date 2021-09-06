@@ -6,8 +6,8 @@ import ElementalData from "../Data/ElementalData";
 import { ArtCharDatabase } from "../Database/Database";
 import { ElementToReactionKeys, PreprocessFormulas } from "../StatData";
 import { GetDependencies } from "../StatDependency";
-import { IArtifact } from "../Types/artifact";
-import { ICharacter } from "../Types/character";
+import { ICachedArtifact } from "../Types/artifact";
+import { ICachedCharacter } from "../Types/character";
 import { allElements, ArtifactSetKey, ElementKey, SlotKey } from "../Types/consts";
 import { ICalculatedStats } from "../Types/stats";
 import { IFieldDisplay } from "../Types/IFieldDisplay";
@@ -23,7 +23,7 @@ export default class Character {
 
   static getElementalName = (elementalKey: ElementKey | "physical"): string =>
     ElementalData[elementalKey].name
-  static getLevelString = (character: ICharacter): string =>
+  static getLevelString = (character: ICachedCharacter): string =>
     `${character.level}/${ascensionMaxLevel[character.ascension]}`
 
   static getTalentFieldValue = (field: IFieldDisplay, key: keyof IFieldDisplay, stats = {}, defVal = ""): any => {
@@ -31,7 +31,7 @@ export default class Character {
     return evalIfFunc(field[key] as any, stats!)
   }
 
-  static hasOverride = (character: ICharacter, statKey): boolean => {
+  static hasOverride = (character: ICachedCharacter, statKey): boolean => {
     if (statKey === "finalHP")
       return Character.hasOverride(character, "hp") || Character.hasOverride(character, "hp_") || Character.hasOverride(character, "characterHP")
     if (statKey === "finalDEF")
@@ -41,18 +41,18 @@ export default class Character {
     return character?.baseStatOverrides ? (statKey in character.baseStatOverrides) : false;
   }
 
-  static getBaseStatValue = (character: ICharacter, characetSheet: CharacterSheet, weaponSheet: WeaponSheet, statKey: string): number => {
+  static getBaseStatValue = (character: ICachedCharacter, characetSheet: CharacterSheet, weaponSheet: WeaponSheet, statKey: string): number => {
     if (statKey === "enemyLevel") return character.level
     if (statKey.includes("enemyRes_")) return 10
     if (statKey in characterStatBase) return characterStatBase[statKey]
     return 0
   }
-  static getStatValueWithOverride = (character: ICharacter, characterSheet: CharacterSheet, weaponSheet: WeaponSheet, statKey: string) => {
+  static getStatValueWithOverride = (character: ICachedCharacter, characterSheet: CharacterSheet, weaponSheet: WeaponSheet, statKey: string) => {
     if (Character.hasOverride(character, statKey)) return character.baseStatOverrides?.[statKey] ?? 0
     else return Character.getBaseStatValue(character, characterSheet, weaponSheet, statKey)
   }
 
-  static calculateBuild = (character: ICharacter, database: ArtCharDatabase, characterSheet: CharacterSheet, weaponSheet: WeaponSheet, artifactSheets: StrictDict<ArtifactSetKey, ArtifactSheet>, mainStatAssumptionLevel = 0): ICalculatedStats => {
+  static calculateBuild = (character: ICachedCharacter, database: ArtCharDatabase, characterSheet: CharacterSheet, weaponSheet: WeaponSheet, artifactSheets: StrictDict<ArtifactSetKey, ArtifactSheet>, mainStatAssumptionLevel = 0): ICalculatedStats => {
     let artifacts
     if (character.artifacts) // from flex
       artifacts = Object.fromEntries(character.artifacts.map((art, i) => [i, art]))
@@ -63,7 +63,7 @@ export default class Character {
     return Character.calculateBuildwithArtifact(initialStats, artifacts, artifactSheets)
   }
 
-  static calculateBuildwithArtifact = (initialStats: ICalculatedStats, artifacts: Dict<SlotKey, IArtifact>, artifactSheets: StrictDict<ArtifactSetKey, ArtifactSheet>): ICalculatedStats => {
+  static calculateBuildwithArtifact = (initialStats: ICalculatedStats, artifacts: Dict<SlotKey, ICachedArtifact>, artifactSheets: StrictDict<ArtifactSetKey, ArtifactSheet>): ICalculatedStats => {
     const setToSlots = Artifact.setToSlots(artifacts)
     const artifactSetEffectsStats = ArtifactSheet.setEffectsStats(artifactSheets, initialStats, setToSlots)
 
@@ -94,7 +94,7 @@ export default class Character {
     return { ...stats, ...preprocessedStats }
   }
 
-  static createInitialStats = (character: ICharacter, database: ArtCharDatabase, characterSheet: CharacterSheet, weaponSheet: WeaponSheet): ICalculatedStats => {
+  static createInitialStats = (character: ICachedCharacter, database: ArtCharDatabase, characterSheet: CharacterSheet, weaponSheet: WeaponSheet): ICalculatedStats => {
     character = deepClone(character)
     const { characterKey, elementKey, level, ascension, hitMode, infusionAura, reactionMode, talent, constellation, equippedArtifacts, conditionalValues = {}, equippedWeapon } = character
     const weapon = database._getWeapon(equippedWeapon) ?? defaultInitialWeapon(characterSheet.weaponTypeKey) // need to ensure all characters have a weapon

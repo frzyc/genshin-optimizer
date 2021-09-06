@@ -1,10 +1,10 @@
-import { IFlexArtifact } from "./artifact";
+import { IArtifact } from "./artifact";
 import { BuildSetting } from "./Build";
 import { CharacterKey, ElementKey, HitModeKey, ReactionModeKey, SlotKey, WeaponTypeKey } from "./consts";
 import IConditional, { IConditionals } from "./IConditional";
 import { IFieldDisplay } from "./IFieldDisplay";
 import { BasicStats, ICalculatedStats } from "./stats";
-import { IWeapon } from "./weapon"
+import { ICachedWeapon } from "./weapon"
 
 interface ICharacterSheetBase {
   name: Displayable,
@@ -46,7 +46,7 @@ interface ascension {
   }
 }
 
-export interface IFlexCharacter {
+export interface ICharacter {
   characterKey: CharacterKey
   level: number,
   ascension: number,
@@ -64,13 +64,13 @@ export interface IFlexCharacter {
   constellation: number
   buildSettings?: BuildSetting
 }
-export interface ICharacter extends IFlexCharacter {
+export interface ICachedCharacter extends ICharacter {
   equippedArtifacts: StrictDict<SlotKey, string>,
   equippedWeapon: string,
 
   // Caution: Use these only for flex data, otherwise, load data from the db instead
-  weapon?: IFlexWeapon,
-  artifacts?: IFlexArtifact[]
+  weapon?: IWeapon,
+  artifacts?: IArtifact[]
 }
 
 export type TalentSheet = {

@@ -4,7 +4,7 @@ import Character from "../Character/Character"
 import CharacterSheet from "../Character/CharacterSheet"
 import Formula from "../Formula"
 import Stat from "../Stat"
-import { ICharacter } from "../Types/character"
+import { ICachedCharacter } from "../Types/character"
 import { IFieldDisplay } from "../Types/IFieldDisplay"
 import { ICalculatedStats } from "../Types/stats"
 import { usePromise } from "../Util/ReactUtil"
@@ -31,7 +31,7 @@ function DisplayStatDiff({ label = "", val, oldVal, fixed = 0, unit = "", varian
 type StatDisplayProps = {
   characterSheet: CharacterSheet,
   weaponSheet: WeaponSheet
-  character: ICharacter,
+  character: ICachedCharacter,
   equippedBuild?: ICalculatedStats,
   newBuild?: ICalculatedStats,
   editable: boolean,

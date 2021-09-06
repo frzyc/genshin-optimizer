@@ -13,9 +13,9 @@ import { Stars } from '../Components/StarDisplay';
 import StatIcon from '../Components/StatIcon';
 import { DatabaseContext } from '../Database/Database';
 import Stat from '../Stat';
-import { ICharacter } from '../Types/character';
+import { ICachedCharacter } from '../Types/character';
 import { CharacterKey } from '../Types/consts';
-import { IWeapon } from '../Types/weapon';
+import { ICachedWeapon } from '../Types/weapon';
 import { usePromise } from '../Util/ReactUtil';
 import WeaponSheet from '../Weapon/WeaponSheet';
 import Character from './Character';
@@ -23,7 +23,7 @@ import CharacterSheet from './CharacterSheet';
 type CharacterCardProps = { characterKey: CharacterKey | "", onEdit?: (any) => void, onDelete?: (any) => void, cardClassName: string, header?: JSX.Element, bg?: string, footer?: boolean }
 export default function CharacterCard({ characterKey, onEdit, onDelete, cardClassName = "", bg = "", header, footer = false }: CharacterCardProps) {
   const database = useContext(DatabaseContext)
-  const [databaseCharacter, updateDatabaseCharacter] = useState(undefined as ICharacter | undefined)
+  const [databaseCharacter, updateDatabaseCharacter] = useState(undefined as ICachedCharacter | undefined)
   useEffect(() =>
     characterKey ? database.followChar(characterKey, updateDatabaseCharacter) : undefined,
     [characterKey, updateDatabaseCharacter, database])
@@ -46,7 +46,7 @@ export default function CharacterCard({ characterKey, onEdit, onDelete, cardClas
   const weaponMainVal = weaponSheet.getMainStatValue(level, ascension).toFixed(Stat.fixedUnit("atk"))
   const weaponSubKey = weaponSheet.getSubStatKey()
   const weaponSubVal = weaponSheet.getSubStatValue(level, ascension).toFixed(Stat.fixedUnit(weaponSubKey))
-  const weaponLevelName = WeaponSheet.getLevelString(weapon as IWeapon)
+  const weaponLevelName = WeaponSheet.getLevelString(weapon as ICachedWeapon)
   const weaponPassiveName = weaponSheet?.passiveName
   const statkeys = ["finalHP", "finalATK", "finalDEF", "eleMas", "critRate_", "critDMG_", "enerRech_",]
 

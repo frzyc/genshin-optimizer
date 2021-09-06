@@ -15,7 +15,7 @@ import { Stars } from '../Components/StarDisplay';
 import { DatabaseContext } from '../Database/Database';
 import { dbStorage } from '../Database/DBStorage';
 import Stat from '../Stat';
-import { allMainStatKeys, allSubstats, IArtifact, SubstatKey } from '../Types/artifact';
+import { allMainStatKeys, allSubstats, ICachedArtifact, SubstatKey } from '../Types/artifact';
 import { allArtifactRarities, allSlotKeys } from '../Types/consts';
 import { useForceUpdate, usePromise } from '../Util/ReactUtil';
 import { clamp } from '../Util/Util';
@@ -85,7 +85,7 @@ export default function ArtifactDisplay(props) {
   const { artifacts, totalArtNum, numUnequip, numUnlock, numLock } = useMemo(() => {
     const { filterArtSetKey, filterSlotKey, filterMainStatKey, filterStars, filterLevelLow, filterLevelHigh, filterSubstats = initialFilter().filterSubstats, filterLocation = "", filterLocked = "", sortType = sortKeys[0], ascending = false } = filters
     const allArtifacts = database._getArts()
-    const artifacts: IArtifact[] = allArtifacts.filter(art => {
+    const artifacts: ICachedArtifact[] = allArtifacts.filter(art => {
       if (filterLocked) {
         if (filterLocked === "locked" && !art.lock) return false
         if (filterLocked === "unlocked" && art.lock) return false

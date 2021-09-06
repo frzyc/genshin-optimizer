@@ -1,9 +1,9 @@
 import { ArtCharDatabase } from "../Database/Database";
 import { SandboxStorage } from "../Database/DBStorage";
-import { IFlexArtifact } from "../Types/artifact";
-import { IFlexCharacter } from "../Types/character";
+import { IArtifact } from "../Types/artifact";
+import { ICharacter } from "../Types/character";
 import { CharacterKey } from "../Types/consts";
-import { IFlexWeapon } from "../Types/weapon";
+import { IWeapon } from "../Types/weapon";
 import { decode, encode } from "./CodingUtil";
 import { schemas } from "./Schemas";
 
@@ -42,7 +42,7 @@ export function parseFlexObj(string: string): [ArtCharDatabase, CharacterKey, nu
 }
 
 function parseFlexObjFromSchema(string: string, schema: any): [ArtCharDatabase, CharacterKey] {
-  const decoded = decode(string, schema) as { character: IFlexCharacter & { weapon: IFlexWeapon }, artifacts: IFlexArtifact[] }
+  const decoded = decode(string, schema) as { character: ICharacter & { weapon: IWeapon }, artifacts: IArtifact[] }
   const { character: { weapon, characterKey }, character, artifacts } = decoded
 
   const storage = new SandboxStorage()

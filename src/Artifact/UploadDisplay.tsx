@@ -9,7 +9,7 @@ import Snippet from "./imgs/snippet.png";
 import Stat from '../Stat';
 import { clamp, hammingDistance } from '../Util/Util';
 import Artifact from './Artifact';
-import { allMainStatKeys, allSubstats, IArtifact, IFlexArtifact, IFlexSubstat, MainStatKey, SubstatKey } from '../Types/artifact';
+import { allMainStatKeys, allSubstats, ICachedArtifact, IArtifact, IFlexSubstat, MainStatKey, SubstatKey } from '../Types/artifact';
 import { ArtifactRarity, allArtifactRarities, allArtifactSets, allSlotKeys, ArtifactSetKey, Rarity, SlotKey } from '../Types/consts';
 import { ArtifactSheet } from './ArtifactSheet';
 import { valueStringWithUnit } from '../Util/UIUtil';
@@ -38,7 +38,7 @@ const schedulers = new BorrowManager(async (language): Promise<Scheduler> => {
   value.then(value => value.terminate())
 })
 
-export default function UploadDisplay({ setState, setReset, artifactInEditor }: { setState: (art: IFlexArtifact) => void, setReset: (reset: () => void) => void, artifactInEditor: boolean }) {
+export default function UploadDisplay({ setState, setReset, artifactInEditor }: { setState: (art: IArtifact) => void, setReset: (reset: () => void) => void, artifactInEditor: boolean }) {
   const [modalShow, setModalShow] = useState(false)
 
   const [{ processed, outstanding }, dispatchQueue] = useReducer(queueReducer, { processed: [], outstanding: [] })
@@ -284,10 +284,10 @@ async function textsFromImage(imageData: ImageData, options: object | undefined 
   return rec.data.lines.map(line => line.text)
 }
 
-export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactSheet>, rarities: Set<number>, textSetKeys: Set<ArtifactSetKey>, slotKeys: Set<SlotKey>, substats: IFlexSubstat[], mainStatKeys: Set<MainStatKey>, mainStatValues: { mainStatValue: number, unit?: string }[]): [IFlexArtifact, Dict<keyof IArtifact, Displayable>] {
+export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactSheet>, rarities: Set<number>, textSetKeys: Set<ArtifactSetKey>, slotKeys: Set<SlotKey>, substats: IFlexSubstat[], mainStatKeys: Set<MainStatKey>, mainStatValues: { mainStatValue: number, unit?: string }[]): [IArtifact, Dict<keyof ICachedArtifact, Displayable>] {
   const relevantSetKey = [...new Set<ArtifactSetKey>([...textSetKeys, "Adventurer", "ArchaicPetra"])]
 
-  let bestScore = -1, bestArtifacts: IFlexArtifact[] = [{
+  let bestScore = -1, bestArtifacts: IArtifact[] = [{
     setKey: "Adventurer", numStars: 3, level: 0, slotKey: "flower", mainStatKey: "hp", substats: [],
     location: "", lock: false,
   }]
@@ -355,10 +355,10 @@ export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactShee
     }
   }
 
-  const texts = {} as Dict<keyof IArtifact, Displayable>
+  const texts = {} as Dict<keyof ICachedArtifact, Displayable>
   const chosen = {
     setKey: new Set(), numStars: new Set(), level: new Set(), slotKey: new Set(), mainStatKey: new Set(), mainStatVal: new Set(),
-  } as Dict<keyof IArtifact, Set<string>>
+  } as Dict<keyof ICachedArtifact, Set<string>>
 
   const result = bestArtifacts[0], resultMainStatVal = Artifact.mainStatValue(result.mainStatKey, result.numStars, result.level)!
   result.substats = substats.filter((substat, i) =>
@@ -389,7 +389,7 @@ export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactShee
     return <>Inferred {name} <span className="text-warning">{text(value)}</span></>
   }
 
-  function addText(key: keyof IArtifact, available: Set<any>, name: Displayable, text: (value) => Displayable) {
+  function addText(key: keyof ICachedArtifact, available: Set<any>, name: Displayable, text: (value) => Displayable) {
     const recommended = new Set([...chosen[key]!].filter(value => available.has(value)))
     if (recommended.size > 1)
       texts[key] = ambiguousText(result[key], [...available], name, text)
@@ -544,7 +544,7 @@ function bandPass(pixelData: ImageData, color1: Color, color2: Color, options: {
 }
 
 type ProcessedEntry = {
-  fileName: string, imageURL: string, artifact: IFlexArtifact, texts: Dict<keyof IArtifact, Displayable>
+  fileName: string, imageURL: string, artifact: IArtifact, texts: Dict<keyof ICachedArtifact, Displayable>
 }
 type OutstandingEntry = {
   file: File, fileName: string, imageURL?: Promise<string>, result?: Promise<{ file: File, result: ProcessedEntry }>

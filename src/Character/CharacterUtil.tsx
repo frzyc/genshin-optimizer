@@ -1,7 +1,7 @@
 import { Badge } from "react-bootstrap"
 import { ArtifactSheet } from "../Artifact/ArtifactSheet"
 import { initialBuildSettings } from "../Build/BuildSetting"
-import { ICharacter } from "../Types/character"
+import { ICachedCharacter } from "../Types/character"
 import { allSlotKeys, ArtifactSetKey, CharacterKey, ElementKey } from "../Types/consts"
 import WeaponSheet from "../Weapon/WeaponSheet"
 import CharacterSheet from "./CharacterSheet"
@@ -23,7 +23,7 @@ export function getFormulaTargetsDisplayHeading(key: string, { characterSheet, w
   return ""
 }
 
-export function initialCharacter(characterKey: CharacterKey): ICharacter {
+export function initialCharacter(characterKey: CharacterKey): ICachedCharacter {
   return {
     characterKey, // the game character this is based off
     level: 1,

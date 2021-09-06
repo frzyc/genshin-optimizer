@@ -1,5 +1,5 @@
-import { IFlexArtifact } from "../../Types/artifact";
-import { IFlexCharacter } from "../../Types/character";
+import { IArtifact } from "../../Types/artifact";
+import { ICharacter } from "../../Types/character";
 import { CharacterKey } from "../../Types/consts";
 import { ArtCharDatabase } from "../Database";
 import { DBStorage, SandboxStorage } from "../DBStorage";
@@ -41,8 +41,8 @@ export function exportDB(storage: DBStorage): DatabaseObj {
 
 type DatabaseObj = {
   version: number,
-  characterDatabase: Dict<CharacterKey, IFlexCharacter>
-  artifactDatabase: Dict<string, IFlexArtifact>
+  characterDatabase: Dict<CharacterKey, ICharacter>
+  artifactDatabase: Dict<string, IArtifact>
   artifactDisplay: any
   characterDisplay: any
   buildsDisplay: any

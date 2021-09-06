@@ -1,13 +1,13 @@
 import Artifact from "../Artifact/Artifact"
 import { ArtifactSheet } from "../Artifact/ArtifactSheet"
 import Stat from "../Stat"
-import { allSubstats, IFlexArtifact, IFlexSubstat, SubstatKey } from "../Types/artifact"
+import { allSubstats, IArtifact, IFlexSubstat, SubstatKey } from "../Types/artifact"
 import { allArtifactSets } from "../Types/consts"
 import { valueString } from "./UIUtil"
 import { getRandomElementFromArray, getRandomIntInclusive } from "./Util"
 import artifactSubstatRollCorrection from '../Artifact/artifact_sub_rolls_correction_gen.json'
 
-export async function randomizeArtifact(): Promise<IFlexArtifact> {
+export async function randomizeArtifact(): Promise<IArtifact> {
   const set = getRandomElementFromArray(allArtifactSets)
   const sheet = await ArtifactSheet.get(set)!
   const rarity = getRandomElementFromArray(sheet.rarity)

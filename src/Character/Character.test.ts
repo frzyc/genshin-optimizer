@@ -2,7 +2,7 @@ import Artifact from "../Artifact/Artifact"
 import { ArtifactSheet } from "../Artifact/ArtifactSheet"
 import { database } from "../Database/Database"
 import { dbStorage } from "../Database/DBStorage"
-import { IArtifact } from "../Types/artifact"
+import { ICachedArtifact } from "../Types/artifact"
 import { allSlotKeys, SlotKey } from "../Types/consts"
 import { mergeStats } from "../Util/StatUtil"
 import WeaponSheet from "../Weapon/WeaponSheet"
@@ -44,7 +44,7 @@ describe('Character.getDisplayStatKeys()', () => {
 })
 
 describe('Equipment functions', () => {
-  let a: IArtifact, b: IArtifact, c: IArtifact, d: IArtifact, e: IArtifact,
+  let a: ICachedArtifact, b: ICachedArtifact, c: ICachedArtifact, d: ICachedArtifact, e: ICachedArtifact,
     abcde: StrictDict<SlotKey, string>, empty: StrictDict<SlotKey, "">
   let Noelle, Ningguang
   beforeEach(() => {

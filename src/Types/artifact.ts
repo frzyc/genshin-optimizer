@@ -17,7 +17,7 @@ export interface SetEffectEntry {
   document?: DocumentSection[],
 }
 
-export interface IFlexArtifact {
+export interface IArtifact {
   setKey: ArtifactSetKey,
   numStars: ArtifactRarity,
   level: number,
@@ -28,7 +28,7 @@ export interface IFlexArtifact {
   location: CharacterKey | "",
   lock: boolean,
 }
-export interface IArtifact extends IFlexArtifact {
+export interface ICachedArtifact extends IArtifact {
   id: string,
   mainStatVal: number,
   substats: Substat[],

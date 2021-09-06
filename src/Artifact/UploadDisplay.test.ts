@@ -1,4 +1,4 @@
-import { IFlexArtifact } from "../Types/artifact"
+import { IArtifact } from "../Types/artifact"
 import { allArtifactSets, allSlotKeys } from "../Types/consts"
 import Artifact from "./Artifact"
 import { ArtifactSheet } from "./ArtifactSheet"
@@ -10,7 +10,7 @@ beforeAll(async () => {
 })
 
 expect.extend({
-  toBeValidNewArtifact(artifact: Partial<IFlexArtifact>): { message, pass } {
+  toBeValidNewArtifact(artifact: Partial<IArtifact>): { message, pass } {
     if (artifact.location)
       return { message: () => `expect unequiped artifact, found location ${this.utils.printReceived(artifact.location)}`, pass: false }
     if (artifact.lock)

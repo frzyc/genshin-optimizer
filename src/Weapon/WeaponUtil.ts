@@ -1,5 +1,5 @@
 import { WeaponKey, WeaponTypeKey } from "../Types/consts"
-import { IWeapon } from "../Types/weapon"
+import { ICachedWeapon } from "../Types/weapon"
 
 function defaultInitialWeaponKey(type: WeaponTypeKey): WeaponKey {
   switch (type) {
@@ -11,10 +11,10 @@ function defaultInitialWeaponKey(type: WeaponTypeKey): WeaponKey {
     default: return "DullBlade"
   }
 }
-export const defaultInitialWeapon = (type: WeaponTypeKey): IWeapon =>
+export const defaultInitialWeapon = (type: WeaponTypeKey): ICachedWeapon =>
   initialWeapon(defaultInitialWeaponKey(type))
 
-export const initialWeapon = (key: WeaponKey): IWeapon => ({
+export const initialWeapon = (key: WeaponKey): ICachedWeapon => ({
   id: "",
   key,
   level: 1,

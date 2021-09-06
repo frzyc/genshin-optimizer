@@ -8,7 +8,7 @@ import { Stars } from '../Components/StarDisplay';
 import { DatabaseContext } from '../Database/Database';
 import { validateFlexArtifact } from '../Database/validation';
 import Stat from '../Stat';
-import { allSubstats, IArtifact, IFlexArtifact, IFlexSubstat } from '../Types/artifact';
+import { allSubstats, ICachedArtifact, IArtifact, IFlexSubstat } from '../Types/artifact';
 import { ArtifactRarity, SlotKey } from '../Types/consts';
 import { randomizeArtifact } from '../Util/ArtifactUtil';
 import { usePromise } from '../Util/ReactUtil';
@@ -53,7 +53,7 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: Artifac
     uploadDisplayReset?.()
     artifactDispatch({ type: "reset" })
   }, [cancelEdit, artifactDispatch])
-  const update = useCallback((newValue: Partial<IFlexArtifact>) => {
+  const update = useCallback((newValue: Partial<IArtifact>) => {
     const newSheet = newValue.setKey ? artifactSheets![newValue.setKey] : sheet!
 
     function pick<T>(value: T | undefined, available: readonly T[], prefer?: T): T {
@@ -246,7 +246,7 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: Artifac
   </Card >
 }
 
-function SubstatInput({ index, artifact, setSubstat, className }: { index: number, artifact: IArtifact | undefined, setSubstat: (index: number, substat: IFlexSubstat) => void, className: string }) {
+function SubstatInput({ index, artifact, setSubstat, className }: { index: number, artifact: ICachedArtifact | undefined, setSubstat: (index: number, substat: IFlexSubstat) => void, className: string }) {
   const { t } = useTranslation("artifact")
   const { mainStatKey = "", numStars = 5 } = artifact ?? {}
   const { key = "", value = 0, rolls = [], efficiency = 0 } = artifact?.substats[index] ?? {}
@@ -321,10 +321,10 @@ function SubstatInput({ index, artifact, setSubstat, className }: { index: numbe
 
 type ResetMessage = { type: "reset" }
 type SubstatMessage = { type: "substat", index: number, substat: IFlexSubstat }
-type OverwriteMessage = { type: "overwrite", artifact: IFlexArtifact }
-type UpdateMessage = { type: "update", artifact: Partial<IFlexArtifact> }
+type OverwriteMessage = { type: "overwrite", artifact: IArtifact }
+type UpdateMessage = { type: "update", artifact: Partial<IArtifact> }
 type Message = ResetMessage | SubstatMessage | OverwriteMessage | UpdateMessage
-export function artifactReducer(state: IFlexArtifact | undefined, action: Message): IFlexArtifact | undefined {
+export function artifactReducer(state: IArtifact | undefined, action: Message): IArtifact | undefined {
   switch (action.type) {
     case "reset": return
     case "substat": {

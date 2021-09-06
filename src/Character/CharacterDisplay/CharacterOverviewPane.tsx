@@ -7,7 +7,7 @@ import { Stars } from "../../Components/StarDisplay";
 import StatDisplay from "../../Components/StatDisplay";
 import StatIcon from "../../Components/StatIcon";
 import Stat from "../../Stat";
-import { ICharacter } from "../../Types/character";
+import { ICachedCharacter } from "../../Types/character";
 import { allElements } from "../../Types/consts";
 import { ICalculatedStats } from "../../Types/stats";
 import WeaponDisplayCard from "../../Weapon/WeaponDisplayCard";
@@ -20,7 +20,7 @@ type CharacterOverviewPaneProps = {
   characterSheet: CharacterSheet;
   weaponSheet: WeaponSheet
   editable: boolean;
-  character: ICharacter
+  character: ICachedCharacter
   characterDispatch: (any: characterReducerAction) => void
   equippedBuild?: ICalculatedStats
   newBuild?: ICalculatedStats
@@ -69,7 +69,7 @@ type MainStatsCardsProps = {
   characterSheet: CharacterSheet,
   weaponSheet: WeaponSheet,
   editable: boolean,
-  character: ICharacter,
+  character: ICachedCharacter,
   characterDispatch: (any) => void,
   equippedBuild?: ICalculatedStats,
   newBuild?: ICalculatedStats

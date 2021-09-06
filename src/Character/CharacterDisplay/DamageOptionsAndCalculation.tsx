@@ -8,7 +8,7 @@ import StatIcon, { uncoloredEleIcons } from "../../Components/StatIcon";
 import Formula from "../../Formula";
 import Stat, { FormulaDisplay } from "../../Stat";
 import { GetDependencies } from "../../StatDependency";
-import { ICharacter } from "../../Types/character";
+import { ICachedCharacter } from "../../Types/character";
 import { allElements, ArtifactSetKey } from "../../Types/consts";
 import { IFieldDisplay } from "../../Types/IFieldDisplay";
 import { ICalculatedStats } from "../../Types/stats";
@@ -26,7 +26,7 @@ const infusionVals = {
 }
 type InfusionAuraDropdownProps = {
   characterSheet: CharacterSheet,
-  character: ICharacter,
+  character: ICachedCharacter,
   characterDispatch: (any: characterReducerAction) => void,
   className?: string
 }
@@ -41,7 +41,7 @@ export function InfusionAuraDropdown({ characterSheet, character: { infusionAura
 }
 
 type ReactionToggleProps = {
-  character: ICharacter,
+  character: ICachedCharacter,
   build: ICalculatedStats,
   characterDispatch: (any: characterReducerAction) => void,
   className: string
@@ -172,7 +172,7 @@ type DamageOptionsAndCalculationProps = {
     weaponSheet: WeaponSheet,
     artifactSheets: StrictDict<ArtifactSetKey, ArtifactSheet>
   }
-  character: ICharacter,
+  character: ICachedCharacter,
   characterDispatch: (any: characterReducerAction) => void,
   equippedBuild?: ICalculatedStats,
   newBuild?: ICalculatedStats,

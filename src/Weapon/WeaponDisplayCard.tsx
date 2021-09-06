@@ -10,9 +10,9 @@ import EquipmentDropdown from "../Components/EquipmentDropdown"
 import { Stars } from "../Components/StarDisplay"
 import { ascensionMaxLevel, milestoneLevels } from "../Data/CharacterData"
 import { DatabaseContext } from "../Database/Database"
-import { ICharacter } from "../Types/character"
+import { ICachedCharacter } from "../Types/character"
 import { ICalculatedStats } from "../Types/stats"
-import { IWeapon } from "../Types/weapon"
+import { ICachedWeapon } from "../Types/weapon"
 import { useForceUpdate, usePromise } from "../Util/ReactUtil"
 import WeaponCard from "./WeaponCard"
 import { WeaponSelectionButton } from "./WeaponSelection"
@@ -21,9 +21,9 @@ import WeaponStatsCard from "./WeaponStatsCard"
 
 type WeaponStatsEditorCardProps = {
   weaponId?: string | undefined
-  weapon?: IWeapon | undefined
+  weapon?: ICachedWeapon | undefined
   charData?: {
-    character: ICharacter,
+    character: ICachedCharacter,
     characterSheet: CharacterSheet,
     equippedBuild?: ICalculatedStats
     newBuild?: ICalculatedStats
@@ -50,7 +50,7 @@ export default function WeaponDisplayCard({
     databaseToken && (propWeapon ?? database._getWeapon(propWeaponId!)!),
     [propWeapon, propWeaponId, databaseToken, database])
   const { key, level, refine, ascension } = weapon
-  const { location, id } = weapon as Partial<IWeapon>
+  const { location, id } = weapon as Partial<ICachedWeapon>
   const weaponSheet: WeaponSheet | undefined = usePromise(WeaponSheet.get(key), [key])
   const weaponTypeKey = weaponSheet?.weaponType
 
@@ -58,11 +58,11 @@ export default function WeaponDisplayCard({
     propWeaponId ? database.followWeapon(propWeaponId, onDatabaseUpdate) : undefined,
     [propWeaponId, onDatabaseUpdate, database])
 
-  const weaponDispatch = useCallback((newWeapon: Partial<IWeapon>) => {
+  const weaponDispatch = useCallback((newWeapon: Partial<ICachedWeapon>) => {
     if (propWeapon) return // Don't touch flex weapon
 
     const oldWeapon = database._getWeapon(propWeaponId!)
-    database.updateWeapon({ ...oldWeapon, ...newWeapon } as IWeapon)
+    database.updateWeapon({ ...oldWeapon, ...newWeapon } as ICachedWeapon)
   }, [propWeapon, propWeaponId, database])
 
   const ambiguousLevel = level !== 90 && ascensionMaxLevel.findIndex(ascenML => level === ascenML) > 0

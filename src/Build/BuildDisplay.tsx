@@ -26,7 +26,7 @@ import Formula from '../Formula';
 import Stat from '../Stat';
 import { StatKey } from '../Types/artifact';
 import { ArtifactsBySlot, Build, BuildSetting } from '../Types/Build';
-import { ICharacter } from '../Types/character';
+import { ICachedCharacter } from '../Types/character';
 import { allSlotKeys, ArtifactSetKey, CharacterKey, SetNum, SlotKey } from '../Types/consts';
 import { IFieldDisplay } from '../Types/IFieldDisplay';
 import { ICalculatedStats } from '../Types/stats';
@@ -102,7 +102,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
 
   const worker = useRef(null as Worker | null)
 
-  type characterDataType = { character?: ICharacter, characterSheet?: CharacterSheet, weaponSheet?: WeaponSheet, initialStats?: ICalculatedStats, statsDisplayKeys?: { basicKeys: any, [key: string]: any } }
+  type characterDataType = { character?: ICachedCharacter, characterSheet?: CharacterSheet, weaponSheet?: WeaponSheet, initialStats?: ICalculatedStats, statsDisplayKeys?: { basicKeys: any, [key: string]: any } }
   const [{ character, characterSheet, weaponSheet, initialStats, statsDisplayKeys }, setCharacterData] = useState({} as characterDataType)
   const buildSettings = useMemo(() => character?.buildSettings ?? initialBuildSettings(), [character])
   if (buildSettings.setFilters.length === 0) buildSettings.setFilters = initialBuildSettings().setFilters//hotfix for an issue with db. can be removed later.
@@ -639,7 +639,7 @@ function StatFilterItem({ statKey, statKeys = [], min, max, close, setFilter }: 
   </InputGroup>
 }
 
-function HitModeCard({ characterSheet, character, build, className }: { characterSheet: CharacterSheet, character: ICharacter, build: ICalculatedStats, className: string }) {
+function HitModeCard({ characterSheet, character, build, className }: { characterSheet: CharacterSheet, character: ICachedCharacter, build: ICalculatedStats, className: string }) {
   const database = useContext(DatabaseContext)
   const setHitmode = useCallback(({ hitMode }) => database.updateChar({ ...character, hitMode }), [character, database])
   const setReactionMode = useCallback(({ reactionMode }) => database.updateChar({ ...character, reactionMode }), [character, database])

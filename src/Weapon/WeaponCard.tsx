@@ -9,14 +9,14 @@ import StatIcon from "../Components/StatIcon"
 import { DatabaseContext } from "../Database/Database"
 import Stat from "../Stat"
 import { CharacterKey } from "../Types/consts"
-import { IWeapon } from "../Types/weapon"
+import { ICachedWeapon } from "../Types/weapon"
 import { usePromise } from "../Util/ReactUtil"
 import WeaponSheet from "./WeaponSheet"
 
 type CharacterCardProps = { weaponId: string, onEdit?: (weaponId: string) => void, onClick?: (weaponId: string) => void, onDelete?: (weaponId: string) => void, cardClassName: string, bg?: string, footer?: boolean, editable?: boolean }
 export default function WeaponCard({ weaponId, onEdit, onDelete, onClick, cardClassName = "", bg = "", footer = false, editable = false }: CharacterCardProps) {
   const database = useContext(DatabaseContext)
-  const [databaseWeapon, updateDatabaseWeapon] = useState(undefined as IWeapon | undefined)
+  const [databaseWeapon, updateDatabaseWeapon] = useState(undefined as ICachedWeapon | undefined)
   useEffect(() =>
     weaponId ? database.followWeapon(weaponId, updateDatabaseWeapon) : undefined,
     [weaponId, updateDatabaseWeapon, database])

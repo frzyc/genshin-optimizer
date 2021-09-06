@@ -6,7 +6,7 @@ import Dropdown from "react-bootstrap/Dropdown";
 import Assets from "../Assets/Assets";
 import CharacterSheet from "./CharacterSheet";
 import { DatabaseContext } from "../Database/Database";
-import { ICharacter } from "../Types/character";
+import { ICachedCharacter } from "../Types/character";
 import { allCharacterKeys, allElements, allWeaponTypeKeys, CharacterKey, WeaponTypeKey } from "../Types/consts";
 import { usePromise } from "../Util/ReactUtil";
 import { Stars } from "../Components/StarDisplay";
@@ -26,7 +26,7 @@ function DropDownItem({ characterKey, onSelect }) {
   return <Dropdown.Item onClick={() => onSelect(characterKey)}>{characterSheet.nameWIthIcon}</Dropdown.Item>
 }
 
-type characterFilter = (character: ICharacter | undefined, sheet: CharacterSheet) => boolean
+type characterFilter = (character: ICachedCharacter | undefined, sheet: CharacterSheet) => boolean
 
 export function CharSelectionButton({ characterSheet, onSelect, filter }: { characterSheet?: CharacterSheet, onSelect: (cKey: CharacterKey) => void, filter?: characterFilter }) {
   const [show, setshow] = useState(false)

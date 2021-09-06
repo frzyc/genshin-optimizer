@@ -12,10 +12,10 @@ import CustomFormControl from '../Components/CustomFormControl';
 import { ascensionMaxLevel, milestoneLevels } from '../Data/CharacterData';
 import ElementalData from '../Data/ElementalData';
 import { database as localDatabase, DatabaseContext } from '../Database/Database';
-import { ICharacter } from '../Types/character';
+import { ICachedCharacter } from '../Types/character';
 import { CharacterKey } from '../Types/consts';
 import { ICalculatedStats } from '../Types/stats';
-import { IWeapon } from '../Types/weapon';
+import { ICachedWeapon } from '../Types/weapon';
 import { useForceUpdate, usePromise } from '../Util/ReactUtil';
 import { clamp, deepClone } from '../Util/Util';
 import WeaponSheet from '../Weapon/WeaponSheet';
@@ -39,7 +39,7 @@ type characterReducerStatOverride = {
   statKey: string
   value: any | undefined
 }
-export type characterReducerAction = characterEquipWeapon | characterReducerStatOverride | Partial<ICharacter>
+export type characterReducerAction = characterEquipWeapon | characterReducerStatOverride | Partial<ICachedCharacter>
 
 type CharacterDisplayCardProps = {
   characterKey: CharacterKey,
@@ -107,7 +107,7 @@ export default function CharacterDisplayCard({ characterKey, setCharacterKey = (
     if (!weaponSheets || !characterSheet?.weaponTypeKey)
       return // Not fully loaded, we can't add default weapon, yet
 
-    const newWeapon: IWeapon = defaultInitialWeapon(characterSheet.weaponTypeKey)
+    const newWeapon: ICachedWeapon = defaultInitialWeapon(characterSheet.weaponTypeKey)
     characterDispatch({ type: "weapon", id: database.updateWeapon(newWeapon) })
   }, [character.equippedWeapon, weaponSheets, characterSheet?.weaponTypeKey, characterDispatch, onDatabaseUpdate, database])
 
@@ -196,7 +196,7 @@ export default function CharacterDisplayCard({ characterKey, setCharacterKey = (
 type CharSelectDropdownProps = {
   characterSheet?: CharacterSheet,
   weaponSheet?: WeaponSheet,
-  character: ICharacter
+  character: ICachedCharacter
   editable: boolean
   characterDispatch: (any: characterReducerAction) => void
   setCharacterKey: (any: CharacterKey) => void
