@@ -37,7 +37,7 @@ function App() {
 }
 function AppInner() {
   const { t } = useTranslation("ui")
-  return <HashRouter>
+  return <HashRouter basename="/">
     <div className="h-100 d-flex flex-column" id="mainContainer">
       <div id="content" className="flex-grow-1">
         <Navbar bg="dark" variant="dark" expand="md">

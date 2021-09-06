@@ -154,5 +154,6 @@ $dropdown-header-color: $gray-100;
 $thumbnail-border-color: $gray-800;
 
 @import "~bootstrap/scss/bootstrap";
+@include list-group-item-variant("customlight", $lightbg, $lightfontcolor);
 @include list-group-item-variant("customdark", $contentbg, $lightfontcolor);
 @include list-group-item-variant("customdarker", theme-color-level("darkcontent", 2), $lightfontcolor);

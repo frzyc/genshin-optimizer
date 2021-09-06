@@ -19,7 +19,7 @@ import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { IConditionals, IConditionalValue } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
 import { Translate } from '../../../Components/Translate'
-import { bowChargedDocSection, plungeDocSection, sgt, st, talentTemplate } from '../SheetUtil'
+import { bowChargedDocSection, plungeDocSection, sgt, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
 import { basicDMGFormulaText } from '../../../Util/FormulaTextUtil'
 const tr = (strKey: string) => <Translate ns="char_Aloy_gen" key18={strKey} />
@@ -80,7 +80,7 @@ const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
-  star: 4,//data_gen.star,
+  star: 5,//data_gen.star, TODO: not in datamine
   elementKey: "cryo",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
   gender: "F",
@@ -170,7 +170,7 @@ const char: ICharacterSheet = {
           if (stats.ascension < 1) return null
           const value = stats.conditionalValues?.character?.Aloy?.sheet?.talent?.e as IConditionalValue | undefined
           if (!value) return null
-          const [num, condEleKey] = value
+          const [num,] = value
           if (!num) return null
           return {
             atk_: 16
@@ -183,7 +183,7 @@ const char: ICharacterSheet = {
               if (stats.ascension < 1) return false
               const value = stats.conditionalValues?.character?.Aloy?.sheet?.talent?.e as IConditionalValue | undefined
               if (!value) return false
-              const [num, condEleKey] = value
+              const [num,] = value
               if (!num) return false
               return true
             },
