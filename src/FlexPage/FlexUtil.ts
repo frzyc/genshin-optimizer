@@ -3,7 +3,7 @@ import { SandboxStorage } from "../Database/DBStorage";
 import { IFlexArtifact } from "../Types/artifact";
 import { IFlexCharacter } from "../Types/character";
 import { CharacterKey } from "../Types/consts";
-import { IWeapon } from "../Types/weapon";
+import { IFlexWeapon } from "../Types/weapon";
 import { decode, encode } from "./CodingUtil";
 import { schemas } from "./Schemas";
 
@@ -42,10 +42,15 @@ export function parseFlexObj(string: string): [ArtCharDatabase, CharacterKey, nu
 }
 
 function parseFlexObjFromSchema(string: string, schema: any): [ArtCharDatabase, CharacterKey] {
-  const decoded = decode(string, schema) as { character: IFlexCharacter & { weapon: IWeapon }, artifacts: IFlexArtifact[] }
+  const decoded = decode(string, schema) as { character: IFlexCharacter & { weapon: IFlexWeapon }, artifacts: IFlexArtifact[] }
   const { character: { weapon, characterKey }, character, artifacts } = decoded
 
   const storage = new SandboxStorage()
+  // DON'T CHANGE THIS.
+  // Flex v2 (decoding) scheme won't be updated even when newer
+  // db versions come along. So the object created from the url
+  // will remain a valid dbv8. The actual migration happens
+  // together with the validation down below.
   storage.setString("db_ver", "8")
 
   weapon.location = characterKey

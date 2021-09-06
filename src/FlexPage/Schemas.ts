@@ -179,9 +179,9 @@ const characterV2 = object({
   reserved: array(uint(1)),
 }, {
   encode: (value) => {
-    const roundedLevel = Math.round(value.level / 10) * 10 // Nearest level
-    const maxLevel = ascensionMaxLevel[value.ascension]
-    value.levelKey = `L${roundedLevel}${roundedLevel === maxLevel ? "" : "A"}`
+    const roundedLevel = Math.max(Math.round(value.level / 10) * 10, 1) // Nearest level, or 1 if the nearest is 0
+    const prevMaxLevel = ascensionMaxLevel[value.ascension - 1] ?? 0
+    value.levelKey = `L${roundedLevel}${roundedLevel === prevMaxLevel ? "A" : ""}`
     if (roundedLevel === value.level) value.overrideLevel = 0
     else value.overrideLevel = value.level
 
