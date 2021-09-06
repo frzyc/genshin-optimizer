@@ -53,11 +53,7 @@ export default class Character {
   }
 
   static calculateBuild = (character: ICachedCharacter, database: ArtCharDatabase, characterSheet: CharacterSheet, weaponSheet: WeaponSheet, artifactSheets: StrictDict<ArtifactSetKey, ArtifactSheet>, mainStatAssumptionLevel = 0): ICalculatedStats => {
-    let artifacts
-    if (character.artifacts) // from flex
-      artifacts = Object.fromEntries(character.artifacts.map((art, i) => [i, art]))
-    else if (character.equippedArtifacts)
-      artifacts = Object.fromEntries(Object.entries(character.equippedArtifacts).map(([key, artid]) => [key, database._getArt(artid)]))
+    const artifacts = Object.fromEntries(Object.entries(character.equippedArtifacts).map(([key, artid]) => [key, database._getArt(artid)]))
     const initialStats = Character.createInitialStats(character, database, characterSheet, weaponSheet)
     initialStats.mainStatAssumptionLevel = mainStatAssumptionLevel
     return Character.calculateBuildwithArtifact(initialStats, artifacts, artifactSheets)

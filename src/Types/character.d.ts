@@ -67,10 +67,6 @@ export interface ICharacter {
 export interface ICachedCharacter extends ICharacter {
   equippedArtifacts: StrictDict<SlotKey, string>,
   equippedWeapon: string,
-
-  // Caution: Use these only for flex data, otherwise, load data from the db instead
-  weapon?: IWeapon,
-  artifacts?: IArtifact[]
 }
 
 export type TalentSheet = {

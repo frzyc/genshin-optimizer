@@ -33,7 +33,7 @@ describe('Character.getDisplayStatKeys()', () => {
     const characterSheet = await CharacterSheet.get(characterKey)
     expect(character).toBeTruthy()
     if (!character) return
-    const weaponSheet = await WeaponSheet.get(character.weapon.key)
+    const weaponSheet = await WeaponSheet.get("Whiteblind")
     expect(characterSheet).toBeInstanceOf(CharacterSheet)
     expect(weaponSheet).toBeInstanceOf(WeaponSheet)
     if (!characterSheet || !weaponSheet || !artifactSheets) return

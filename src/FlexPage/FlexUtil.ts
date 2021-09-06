@@ -9,9 +9,9 @@ import { schemas } from "./Schemas";
 
 export function createFlexObj(characterKey: CharacterKey, database: ArtCharDatabase): string | null {
   const character = database._getChar(characterKey)
-  if (!character) return null
+  if (!character) return null;
 
-  character.weapon = database._getWeapon(character.equippedWeapon)
+  (character as any).weapon = database._getWeapon(character.equippedWeapon)
 
   const artifacts = Object.values(character.equippedArtifacts)
     .filter(art => art)

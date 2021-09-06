@@ -16,12 +16,6 @@ const baseAlbedo: ICachedCharacter = {
   reactionMode: null,
   conditionalValues: {},
   baseStatOverrides: {},
-  weapon: {
-    key: "DullBlade",
-    level: 10,
-    refineIndex: 1,
-    ascension: 0,
-  },
   talent: {
     auto: 2, skill: 2, burst: 2,
   },
@@ -37,14 +31,6 @@ const baseAmber: ICachedCharacter = {
   reactionMode: null,
   conditionalValues: {},
   baseStatOverrides: {},
-  weapon: {
-    id: "",
-    location: "Amber",
-    key: "SkywardHarp",
-    level: 10,
-    refineIndex: 1,
-    ascension: 0,
-  },
   talent: {
     auto: 2, skill: 2, burst: 2,
   },
