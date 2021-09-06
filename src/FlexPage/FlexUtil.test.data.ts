@@ -12,7 +12,7 @@ export const character: IFlexCharacter = {
   level: 89,
   ascension: 6,
   infusionAura: 'pyro',
-  talentLevelKeys: { auto: 5, skill: 5, burst: 5 },
+  talent: { auto: 6, skill: 6, burst: 6 },
   baseStatOverrides: {},
   conditionalValues: {
     artifact: {},
@@ -53,7 +53,7 @@ export const weapon: IFlexWeapon = {
   key: 'StaffOfHoma',
   level: 90,
   ascension: 6,
-  refineIndex: 0,
+  refine: 1,
 }
 export const artifacts: IFlexArtifact[] = [{
   setKey: 'GladiatorsFinale',

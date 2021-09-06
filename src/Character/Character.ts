@@ -96,7 +96,7 @@ export default class Character {
 
   static createInitialStats = (character: ICharacter, database: ArtCharDatabase, characterSheet: CharacterSheet, weaponSheet: WeaponSheet): ICalculatedStats => {
     character = deepClone(character)
-    const { characterKey, elementKey, level, ascension, hitMode, infusionAura, reactionMode, talentLevelKeys, constellation, equippedArtifacts, conditionalValues = {}, equippedWeapon } = character
+    const { characterKey, elementKey, level, ascension, hitMode, infusionAura, reactionMode, talent, constellation, equippedArtifacts, conditionalValues = {}, equippedWeapon } = character
     const weapon = database._getWeapon(equippedWeapon) ?? defaultInitialWeapon(characterSheet.weaponTypeKey) // need to ensure all characters have a weapon
 
     //generate the initalStats obj with data from Character & overrides
@@ -113,10 +113,10 @@ export default class Character {
     initialStats.reactionMode = reactionMode;
     initialStats.conditionalValues = conditionalValues
     initialStats.weaponType = characterSheet.weaponTypeKey
-    initialStats.tlvl = talentLevelKeys;
+    initialStats.tlvl = Object.fromEntries(Object.entries(talent ?? {}).map(([key, value]) => [key, value - 1])) as any;
     initialStats.constellation = constellation
     initialStats.ascension = ascension
-    initialStats.weapon = deepClone(weapon)
+    initialStats.weapon = { key: weapon.key, refineIndex: weapon.refine - 1 }
     initialStats.equippedArtifacts = equippedArtifacts;
 
     //enemy stuff

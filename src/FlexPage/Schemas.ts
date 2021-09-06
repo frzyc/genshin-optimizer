@@ -144,6 +144,7 @@ const weaponV2 = object({
     value.levelKey = `L${level}${ascension}`
     value.overrideMainVal = 0
     value.overrideSubVal = 0
+    value.refineIndex = value.refine - 1
     return value
   }, decode: object => {
     const levelKey = object.levelKey
@@ -189,6 +190,7 @@ const characterV2 = object({
       value.reserved = [elements.indexOf(value.elementKey)]
     else
       value.reserved = []
+    value.talentLevelKeys = Object.fromEntries(Object.entries(value.talent).map(([key, value]: any[]) => [key, value - 1]))
     return value
   },
   decode: (value) => {

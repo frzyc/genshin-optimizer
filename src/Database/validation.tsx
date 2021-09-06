@@ -4,7 +4,7 @@ import { ascensionMaxLevel } from "../Data/CharacterData";
 import Stat from "../Stat";
 import { allMainStatKeys, allSubstats, IArtifact, IFlexArtifact, IFlexSubstat, Substat, SubstatKey } from "../Types/artifact";
 import { ICharacter, IFlexCharacter } from "../Types/character";
-import { allArtifactRarities, allArtifactSets, allCharacterKeys, allElements, allHitModes, allReactionModes, allSlotKeys } from "../Types/consts";
+import { allArtifactRarities, allArtifactSets, allCharacterKeys, allElements, allHitModes, allReactionModes, allSlotKeys, allWeaponKeys } from "../Types/consts";
 import { IFlexWeapon, IWeapon } from "../Types/weapon";
 import { deepClone } from "../Util/Util";
 
@@ -152,7 +152,7 @@ export function validateDBCharacter(obj: any, key: string): IFlexCharacter | und
 
   let {
     characterKey, level, ascension, hitMode, elementKey, reactionMode, conditionalValues,
-    baseStatOverrides, talentLevelKeys, infusionAura, constellation, buildSettings,
+    baseStatOverrides, talent, infusionAura, constellation, buildSettings,
   } = obj
 
   if (key !== `char_${characterKey}` ||
@@ -171,13 +171,13 @@ export function validateDBCharacter(obj: any, key: string): IFlexCharacter | und
     level > ascensionMaxLevel[ascension] ||
     level < (ascensionMaxLevel[ascension - 1] ?? 0))
     ascension = ascensionMaxLevel.findIndex(maxLvl => level <= maxLvl)
-  if (typeof talentLevelKeys !== "object") talentLevelKeys = { auto: 0, skill: 0, burst: 0 }
+  if (typeof talent !== "object") talent = { auto: 1, skill: 1, burst: 1 }
   else {
-    let { auto = 0, skill = 0, burst = 0 } = talentLevelKeys
-    if (typeof auto !== "number" || auto < 0 || auto > 15) auto = 0
-    if (typeof skill !== "number" || skill < 0 || skill > 15) skill = 0
-    if (typeof burst !== "number" || burst < 0 || burst > 15) burst = 0
-    talentLevelKeys = { auto, skill, burst }
+    let { auto, skill, burst } = talent
+    if (typeof auto !== "number" || auto < 1 || auto > 15) auto = 1
+    if (typeof skill !== "number" || skill < 1 || skill > 15) skill = 1
+    if (typeof burst !== "number" || burst < 1 || burst > 15) burst = 1
+    talent = { auto, skill, burst }
   }
   {//buildSettings
     if (typeof buildSettings !== "object") buildSettings = {}
@@ -208,18 +208,18 @@ export function validateDBCharacter(obj: any, key: string): IFlexCharacter | und
   // TODO: validate baseStatOverrides, conditionalValues
   return {
     characterKey, level, ascension, hitMode, elementKey, reactionMode, conditionalValues,
-    baseStatOverrides, talentLevelKeys, infusionAura, constellation, buildSettings,
+    baseStatOverrides, talent, infusionAura, constellation, buildSettings,
   }
 }
 /// Return a new flex character from given character. All extra keys are removed
 export function extractFlexCharacter(char: ICharacter): IFlexCharacter {
   const {
     characterKey, level, ascension, hitMode, elementKey, reactionMode, conditionalValues,
-    baseStatOverrides, talentLevelKeys, infusionAura, constellation, buildSettings,
+    baseStatOverrides, talent, infusionAura, constellation, buildSettings,
   } = char
   return {
     characterKey, level, ascension, hitMode, elementKey, reactionMode, conditionalValues,
-    baseStatOverrides, talentLevelKeys, infusionAura, constellation, buildSettings,
+    baseStatOverrides, talent, infusionAura, constellation, buildSettings,
   }
 }
 
@@ -227,12 +227,21 @@ export function validateFlexWeapon(flex: IWeapon, id: string): IWeapon {
   //TODO: weapon validation
   return { ...flex, id }
 }
-export function validateDBWeapon(obj: any): IWeapon | undefined {
-  //TODO: weapon validation
-  return obj
+export function validateDBWeapon(obj: any): IFlexWeapon | undefined {
+  if (typeof obj !== "object") return
+
+  let { key, level, ascension, refine, location, } = obj
+  if (!allWeaponKeys.includes(key)) return
+  if (typeof level !== "number" || level < 1 || level > 90) level = 1
+  if (typeof ascension !== "number" || ascension < 0 || ascension > 6) ascension = 0
+  // TODO: Check if level-ascension matches
+  if (typeof refine !== "number" || refine < 1 || refine > 5) refine = 1
+  if (!allCharacterKeys.includes(location)) location = ""
+
+  return { key, level, ascension, refine, location, }
 }
 /// Return a new flex character from given character. All extra keys are removed
 export function extractFlexWeapon(weapon: IWeapon): IFlexWeapon {
-  const { id, ...flexWeapon } = deepClone(weapon)
-  return flexWeapon
+  const { key, level, ascension, refine, location, } = weapon
+  return { key, level, ascension, refine, location, }
 }

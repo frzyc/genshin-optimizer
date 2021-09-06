@@ -55,7 +55,7 @@ export interface IFlexCharacter {
   reactionMode: ReactionModeKey | null
   conditionalValues: any,
   baseStatOverrides: object, //overriding the baseStat
-  talentLevelKeys: {
+  talent: {
     auto: number
     skill: number
     burst: number

@@ -88,7 +88,7 @@ export default function CharacterCard({ characterKey, onEdit, onDelete, cardClas
       </Row>
       <Row className="mb-2">
         <Col>
-          <h6 className="mb-0">{weaponName}{weaponPassiveName && <Badge variant="info" className="ml-1">{weapon.refineIndex + 1}</Badge>} {weaponLevelName}</h6>
+          <h6 className="mb-0">{weaponName}{weaponPassiveName && <Badge variant="info" className="ml-1">{weapon.refine}</Badge>} {weaponLevelName}</h6>
           <span>ATK: {weaponMainVal}  {weaponPassiveName && <span>{Stat.getStatName(weaponSubKey)}: {weaponSubVal}{Stat.getStatUnit(weaponSubKey)}</span>}</span>
         </Col>
       </Row>

@@ -19,6 +19,6 @@ export const initialWeapon = (key: WeaponKey): IWeapon => ({
   key,
   level: 1,
   ascension: 0,
-  refineIndex: 0,
+  refine: 1,
   location: ""
 })

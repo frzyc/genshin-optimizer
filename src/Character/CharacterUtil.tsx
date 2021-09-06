@@ -35,10 +35,10 @@ export function initialCharacter(characterKey: CharacterKey): ICharacter {
     conditionalValues: {},
     baseStatOverrides: {}, // overriding the baseStat
     buildSettings: initialBuildSettings(),
-    talentLevelKeys: {
-      auto: 0,
-      skill: 0,
-      burst: 0,
+    talent: {
+      auto: 1,
+      skill: 1,
+      burst: 1,
     },
     infusionAura: "",
     constellation: 0,

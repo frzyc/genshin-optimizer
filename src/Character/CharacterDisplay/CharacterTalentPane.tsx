@@ -186,29 +186,27 @@ type SkillDisplayCardProps = {
   editable: boolean,
   onClickTitle?: (any) => any
 }
-function SkillDisplayCard({ characterSheet, character: { elementKey, talentLevelKeys, }, characterDispatch, talentKey, subtitle, ascension, equippedBuild, newBuild, editable, onClickTitle }: SkillDisplayCardProps) {
+function SkillDisplayCard({ characterSheet, character: { elementKey, talent, }, characterDispatch, talentKey, subtitle, ascension, equippedBuild, newBuild, editable, onClickTitle }: SkillDisplayCardProps) {
   let build = newBuild ? newBuild : equippedBuild
   if (!build) return null
   let header: Displayable | null = null
 
-  let talentLvlKey = 0
-  if (talentKey in talentLevelKeys) {
-    const talentLvlKeyRaw = talentLevelKeys[talentKey]
+  if (talentKey in talent) {
     const levelBoost: number = build[`${talentKey}Boost`] ?? 0
-    talentLvlKey = talentLvlKeyRaw + levelBoost
+    const talentLvlKey = talent[talentKey] + levelBoost
     if (editable) {
       const setTalentLevel = (tKey, newTalentLevelKey) => {
-        talentLevelKeys[tKey] = newTalentLevelKey
-        characterDispatch({ talentLevelKeys })
+        talent[tKey] = newTalentLevelKey
+        characterDispatch({ talent })
       }
       header = <Card.Header>
-        <DropdownButton title={`Talent Lv. ${talentLvlKey + 1}`}>
+        <DropdownButton title={`Talent Lv. ${talentLvlKey}`}>
           {[...Array(talentLimits[ascension] + (talentKey === "auto" && !levelBoost ? 1 : 0)).keys()].map(i => //spcial consideration for Tartaglia
-            <Dropdown.Item key={i} onClick={() => setTalentLevel(talentKey, i)}>Talent Lv. {i + levelBoost + 1}</Dropdown.Item>)}
+            <Dropdown.Item key={i} onClick={() => setTalentLevel(talentKey, i + 1)}>Talent Lv. {i + levelBoost + 1}</Dropdown.Item>)}
         </DropdownButton>
       </Card.Header>
     } else {
-      header = <Card.Header>{`Talent Level: ${talentLvlKey + 1}`}</Card.Header>
+      header = <Card.Header>{`Talent Level: ${talentLvlKey}`}</Card.Header>
     }
   }
   const talentStats = characterSheet.getTalentStats(talentKey, build)

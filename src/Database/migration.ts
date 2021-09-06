@@ -4,14 +4,8 @@ import { allCharacterKeys } from "../Types/consts"
 import { DBStorage } from "./DBStorage"
 import { getDBVersion, setDBVersion } from "./utils"
 
-const currentDBVersion = 8
-
 export function migrate(storage: DBStorage): { migrated: boolean } {
   const version = getDBVersion(storage)
-  const report = { migrated: false }
-
-  if (version > currentDBVersion)
-    throw new Error("Database is not supported")
 
   // Update version upon each successful migration, so we don't
   // need to migrate that part again if later parts fail.
@@ -21,14 +15,13 @@ export function migrate(storage: DBStorage): { migrated: boolean } {
   if (version < 6) { migrateV5ToV6(storage); setDBVersion(storage, 6) }
   if (version < 7) { migrateV6ToV7(storage); setDBVersion(storage, 7) }
   if (version < 8) { migrateV7ToV8(storage); setDBVersion(storage, 8) }
+  if (version < 9) { migrateV8ToV9(storage); setDBVersion(storage, 9) }
 
-  if (version < currentDBVersion)
-    report.migrated = true
+  if (version > 9) throw new Error(`Database version ${version} is not supported`)
 
-  setDBVersion(storage, currentDBVersion)
-
-  return report
+  return { migrated: version < getDBVersion(storage) }
 }
+
 /// v4.0.0 - v4.23.2
 function migrateV2ToV3(storage: DBStorage) {
   const state = storage.get("CharacterDisplay.state")
@@ -51,6 +44,7 @@ function migrateV2ToV3(storage: DBStorage) {
     }
   }
 }
+
 /// v5.0.0 - v5.7.15
 function migrateV3ToV4(storage: DBStorage) { // 
   // Convert anemo traveler to traveler, and remove geo traveler
@@ -80,6 +74,7 @@ function migrateV3ToV4(storage: DBStorage) { //
     }
   }
 }
+
 /// v5.8.0 - v5.11.5
 function migrateV4ToV5(storage: DBStorage) {
   for (const key of storage.keys) {
@@ -153,7 +148,7 @@ function migrateV6ToV7(storage: DBStorage) {
   }
 }
 
-// 5.22.0 - present
+// 5.22.0 - ???
 function migrateV7ToV8(storage: DBStorage) {
   let keyInd = 1;
   function generateWeaponId(storage: DBStorage) {
@@ -198,5 +193,24 @@ function migrateV7ToV8(storage: DBStorage) {
     CharacterDisplayState.characterKeyToEdit = charMap[CharacterDisplayState.charIdToEdit] ?? ""
     delete CharacterDisplayState.charIdToEdit
     storage.set("CharacterDisplay.state", CharacterDisplayState)
+  }
+}
+
+// ??? - present
+function migrateV8ToV9(storage: DBStorage) {
+  for (const key of storage.keys) {
+    if (key.startsWith("weapon_")) {
+      const weapon = storage.get(key)
+      weapon.refine = weapon.refineIndex + 1
+      storage.set(key, weapon)
+    } else if (key.startsWith("char_")) {
+      const character = storage.get(key)
+      if (character.talentLevelKeys && typeof character.talentLevelKeys === "object") {
+        character.talent = Object.fromEntries(
+          Object.entries(character.talentLevelKeys)
+            .map(([key, value]: [any, any]) => [key, value + 1]))
+        storage.set(key, character)
+      }
+    }
   }
 }

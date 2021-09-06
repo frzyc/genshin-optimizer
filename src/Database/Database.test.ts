@@ -22,8 +22,8 @@ const baseAlbedo: ICharacter = {
     refineIndex: 1,
     ascension: 0,
   },
-  talentLevelKeys: {
-    auto: 1, skill: 1, burst: 1,
+  talent: {
+    auto: 2, skill: 2, burst: 2,
   },
   infusionAura: "",
   constellation: 0,
@@ -45,8 +45,8 @@ const baseAmber: ICharacter = {
     refineIndex: 1,
     ascension: 0,
   },
-  talentLevelKeys: {
-    auto: 1, skill: 1, burst: 1,
+  talent: {
+    auto: 2, skill: 2, burst: 2,
   },
   infusionAura: "",
   constellation: 0,
@@ -146,7 +146,7 @@ describe("Database", () => {
     const art2 = validateFlexArtifact(await randomizeArtifact(), "artifact_456").artifact
     art1.slotKey = "circlet"
     art2.slotKey = "circlet"
-    Albedo.talentLevelKeys.auto = 3
+    Albedo.talent.auto = 4
     Albedo.equippedArtifacts.flower = "1234"
     art1.location = "Albedo"
     database.updateChar(Albedo)
