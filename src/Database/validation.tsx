@@ -6,7 +6,6 @@ import { allMainStatKeys, allSubstats, ICachedArtifact, IArtifact, IFlexSubstat,
 import { ICachedCharacter, ICharacter } from "../Types/character";
 import { allArtifactRarities, allArtifactSets, allCharacterKeys, allElements, allHitModes, allReactionModes, allSlotKeys, allWeaponKeys } from "../Types/consts";
 import { IWeapon, ICachedWeapon } from "../Types/weapon";
-import { deepClone } from "../Util/Util";
 
 /// Returns the closest (not necessarily valid) artifact, including errors as necessary
 export function validateFlexArtifact(flex: IArtifact, id: string): { artifact: ICachedArtifact, errors: Displayable[] } {

@@ -9,7 +9,7 @@ import DocumentDisplay from "../Components/DocumentDisplay"
 import EquipmentDropdown from "../Components/EquipmentDropdown"
 import { Stars } from "../Components/StarDisplay"
 import { ascensionMaxLevel, milestoneLevels } from "../Data/CharacterData"
-import { DatabaseContext, database as localDatabase } from "../Database/Database"
+import { DatabaseContext } from "../Database/Database"
 import { ICachedCharacter } from "../Types/character"
 import { ICalculatedStats } from "../Types/stats"
 import { ICachedWeapon } from "../Types/weapon"
@@ -57,8 +57,6 @@ export default function WeaponDisplayCard({
     [propWeaponId, onDatabaseUpdate, database])
 
   const weaponDispatch = useCallback((newWeapon: Partial<ICachedWeapon>) => {
-    if (database === localDatabase) return // Don't touch flex weapon
-
     const oldWeapon = database._getWeapon(propWeaponId!)
     database.updateWeapon({ ...oldWeapon, ...newWeapon } as ICachedWeapon)
   }, [propWeaponId, database])
