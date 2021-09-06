@@ -134,6 +134,17 @@ $theme-colors: (
   "orange": #ff6600,
 );
 
+textarea.code {
+  overflow-y: auto;
+  overflow-x: auto;
+  font-family: monospace;
+  border: none;
+  // padding: 1em;
+  white-space:pre;
+  background-color: transparent;
+  resize: none;
+}
+
 //convert dropdown to dark
 $dropdown-bg: $dark;
 $dropdown-link-color: $light;

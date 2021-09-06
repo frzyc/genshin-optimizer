@@ -3,7 +3,6 @@ import ReactGA from 'react-ga'
 
 import { Trans, useTranslation } from 'react-i18next';
 import { HashRouter, Link, Route, Switch } from "react-router-dom";
-import { CodeBlock } from 'react-code-blocks';
 
 export default function HomeDisplay(props: any) {
   const { t } = useTranslation("documentation")
@@ -64,16 +63,16 @@ export default function HomeDisplay(props: any) {
   </Container >
 }
 
-const goodCode = `interface IGOOD {
+const goodCode = `Interface IGOOD {
   format: "GOOD" //A way for people to recognize this format.
   version: number //API version.
-  source: string //the app that generates this data. Only if you want to use a tool's data that is not defined in this API.
+  source: string //the app that generates this data.
   characters: ICharacter[]
   artifacts: IArtifact[]
   weapons: IWeapon[]
 }`
 
-const artifactCode = `interface IArtifact {
+const artifactCode = `Interface IArtifact {
   setKey: SetKey //e.g. "GladiatorsFinale"
   slotKey: SlotKey //e.g. "plume"
   level: number //0-20 inclusive
@@ -96,12 +95,29 @@ function Overview() {
       <p><strong>GOOD</strong> is a data format description to map Genshin Data into a parsable JSON. This is intended to be a standardized format to allow Genshin developers/programmers to transfer data without needing manual conversion.</p>
       <Card bg="darkcontent" text={"lightfont" as any}>
         <Card.Body>
-          <code>{goodCode}</code>
+          <CodeBlock text={goodCode} />
+
         </Card.Body>
       </Card>
-      <CodeBlock language="TypeScript" showLineNumbers text={goodCode} />
     </div>
-    <h4>Arifact data representation</h4>
-    <CodeBlock language="TypeScript" showLineNumbers text={artifactCode} />
+    <h4>Artifact data representation</h4>
+    <Card bg="darkcontent" text={"lightfont" as any}>
+      <Card.Body>
+        <CodeBlock text={artifactCode} />
+      </Card.Body>
+    </Card>
   </>
+}
+function CodeBlock({ text }) {
+  const lines = text.split(/\r\n|\r|\n/).length+1
+  const lineNums = Array.from(Array(lines).keys()).map(i => i + 1).join('\n')
+  console.log(lineNums);
+
+  return <div className="d-flex flex-row">
+    <textarea className="code text-secondary" disabled={true} spellCheck="false" aria-label='Code Sample' rows={lines} style={{ width: "2em", overflow: "hidden", userSelect: "none" }} value={lineNums} unselectable="off"/>
+    <textarea className="code w-100 text-info flex-grow-1 " disabled={true} spellCheck="false" aria-label='Code Sample' rows={lines}>
+      {text}
+    </textarea>
+  </div>
+
 }

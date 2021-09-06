@@ -22,7 +22,6 @@
     "pipeline": "file:./pipeline",
     "react": "^17.0.2",
     "react-bootstrap": "^1.6.1",
-    "react-code-blocks": "0.0.9-0",
     "react-dom": "^17.0.2",
     "react-ga": "^3.3.0",
     "react-i18next": "^11.11.0",
