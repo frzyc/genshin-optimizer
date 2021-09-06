@@ -44,7 +44,7 @@ export type AvatarSkillDepotExcelConfigData = {
 const skillDepotSrc = require('../../GenshinData/ExcelBinOutput/AvatarSkillDepotExcelConfigData.json') as AvatarSkillDepotExcelConfigData[]
 
 const skillDepot = Object.fromEntries(skillDepotSrc.map(skill => {
-  //FIXME: custom processing because there are empty objects in here. for raidenshogun only...
+  //FIXME: custom processing because there are empty objects in here. for RaidenShogun only...
   if (skill.Id === 5201) {
     const [k1, k2, k3, k4, k5] = skill.InherentProudSkillOpens
     skill.InherentProudSkillOpens = [k1, k2, k5]

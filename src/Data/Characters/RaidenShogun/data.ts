@@ -100,7 +100,7 @@ const formula: IFormulaSheet = {
 
 function burstDMG(percent: number, stats: BasicStats, intial = false): FormulaItem {
   let resolveStack = 0
-  const value = stats.conditionalValues?.character?.raidenshogun?.sheet?.talent?.res as IConditionalValue | undefined
+  const value = stats.conditionalValues?.character?.RaidenShogun?.sheet?.talent?.res as IConditionalValue | undefined
   if (value) {
     const [num, condEleKey] = value
     if (num && condEleKey) resolveStack = parseInt(condEleKey)

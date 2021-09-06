@@ -24,7 +24,7 @@ const weapon: IWeaponSheet = {
   ...data_gen as WeaponData,
   img,
   stats: stats => {
-    if (stats.characterKey === "aloy") return {
+    if (stats.characterKey === "Aloy") return {
       atk: 66
     }
     return undefined

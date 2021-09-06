@@ -1,5 +1,5 @@
 import Albedo from './Albedo/data'
-import aloy from './aloy/data'
+import Aloy from './Aloy/data'
 import Amber from './Amber/data'
 import Barbara from './Barbara/data'
 import Beidou from './Beidou/data'
@@ -17,13 +17,13 @@ import Kaeya from './Kaeya/data'
 import KamisatoAyaka from './KamisatoAyaka/data'
 import Keqing from './Keqing/data'
 import Klee from './Klee/data'
-import kujousara from './kujousara/data'
+import KujouSara from './KujouSara/data'
 import Lisa from './Lisa/data'
 import Mona from './Mona/data'
 import Ningguang from './Ningguang/data'
 import Noelle from './Noelle/data'
 import Qiqi from './Qiqi/data'
-import raidenshogun from './raidenshogun/data'
+import RaidenShogun from './RaidenShogun/data'
 import Razor from './Razor/data'
 import Rosaria from './Rosaria/data'
 import Sayu from './Sayu/data'
@@ -43,7 +43,7 @@ import { CharacterKey, ElementKey } from '../../Types/consts'
 type IFormulaSheets = StrictDict<CharacterKey, IFormulaSheet | Dict<ElementKey, IFormulaSheet>>
 const formula: IFormulaSheets = {
   Albedo,
-  aloy,
+  Aloy,
   Amber,
   Barbara,
   Beidou,
@@ -61,13 +61,13 @@ const formula: IFormulaSheets = {
   KamisatoAyaka,
   Keqing,
   Klee,
-  kujousara,
+  KujouSara,
   Lisa,
   Mona,
   Ningguang,
   Noelle,
   Qiqi,
-  raidenshogun,
+  RaidenShogun,
   Razor,
   Rosaria,
   Sayu,

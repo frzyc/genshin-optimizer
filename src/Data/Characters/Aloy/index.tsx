@@ -22,8 +22,8 @@ import { Translate } from '../../../Components/Translate'
 import { bowChargedDocSection, plungeDocSection, sgt, st, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
 import { basicDMGFormulaText } from '../../../Util/FormulaTextUtil'
-const tr = (strKey: string) => <Translate ns="char_aloy_gen" key18={strKey} />
-const charTr = (strKey: string) => <Translate ns="char_aloy" key18={strKey} />
+const tr = (strKey: string) => <Translate ns="char_Aloy_gen" key18={strKey} />
+const charTr = (strKey: string) => <Translate ns="char_Aloy" key18={strKey} />
 const conditionals: IConditionals = {
   e: { //Gengu StormCall
     name: charTr("skill.coil"),
@@ -63,7 +63,7 @@ const conditionals: IConditionals = {
   a4: {
     canShow: stats => {
       if (stats.ascension < 4) return false
-      const value = stats.conditionalValues?.character?.aloy?.sheet?.talent?.e as IConditionalValue | undefined
+      const value = stats.conditionalValues?.character?.Aloy?.sheet?.talent?.e as IConditionalValue | undefined
       if (!value) return false
       const [num, condEleKey] = value
       if (!num || condEleKey !== "c4") return false
@@ -168,7 +168,7 @@ const char: ICharacterSheet = {
         img: passive1,
         stats: stats => {
           if (stats.ascension < 1) return null
-          const value = stats.conditionalValues?.character?.aloy?.sheet?.talent?.e as IConditionalValue | undefined
+          const value = stats.conditionalValues?.character?.Aloy?.sheet?.talent?.e as IConditionalValue | undefined
           if (!value) return null
           const [num, condEleKey] = value
           if (!num) return null
@@ -181,7 +181,7 @@ const char: ICharacterSheet = {
           fields: [{
             canShow: stats => {
               if (stats.ascension < 1) return false
-              const value = stats.conditionalValues?.character?.aloy?.sheet?.talent?.e as IConditionalValue | undefined
+              const value = stats.conditionalValues?.character?.Aloy?.sheet?.talent?.e as IConditionalValue | undefined
               if (!value) return false
               const [num, condEleKey] = value
               if (!num) return false

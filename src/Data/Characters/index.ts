@@ -1,5 +1,5 @@
 import Albedo from './Albedo'
-import aloy from './aloy'
+import Aloy from './Aloy'
 import Amber from './Amber'
 import Barbara from './Barbara'
 import Beidou from './Beidou'
@@ -17,13 +17,13 @@ import Kaeya from './Kaeya'
 import KamisatoAyaka from './KamisatoAyaka'
 import Keqing from './Keqing'
 import Klee from './Klee'
-import kujousara from './kujousara'
+import KujouSara from './KujouSara'
 import Lisa from './Lisa'
 import Mona from './Mona'
 import Ningguang from './Ningguang'
 import Noelle from './Noelle'
 import Qiqi from './Qiqi'
-import raidenshogun from './raidenshogun'
+import RaidenShogun from './RaidenShogun'
 import Razor from './Razor'
 import Rosaria from './Rosaria'
 import Sayu from './Sayu'
@@ -43,7 +43,7 @@ import { ICharacterSheet } from '../../Types/character'
 import { documentSectionsProcessing } from '../../Util/DocumentUtil'
 const characters: StrictDict<CharacterKey, ICharacterSheet> = {
   Albedo,
-  aloy,
+  Aloy,
   Amber,
   Barbara,
   Beidou,
@@ -61,13 +61,13 @@ const characters: StrictDict<CharacterKey, ICharacterSheet> = {
   KamisatoAyaka,
   Keqing,
   Klee,
-  kujousara,
+  KujouSara,
   Lisa,
   Mona,
   Ningguang,
   Noelle,
   Qiqi,
-  raidenshogun,
+  RaidenShogun,
   Razor,
   Rosaria,
   Sayu,

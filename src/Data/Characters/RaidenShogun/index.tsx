@@ -24,9 +24,9 @@ import { WeaponTypeKey } from '../../../Types/consts'
 import { basicDMGFormulaText } from '../../../Util/FormulaTextUtil'
 import { FormulaPathBase } from '../../formula'
 import { KeyPath } from '../../../Util/KeyPathUtil'
-const path = KeyPath<FormulaPathBase, any>().character.raidenshogun
-const tr = (strKey: string) => <Translate ns="char_raidenshogun_gen" key18={strKey} />
-const charTr = (strKey: string) => <Translate ns="char_raidenshogun" key18={strKey} />
+const path = KeyPath<FormulaPathBase, any>().character.RaidenShogun
+const tr = (strKey: string) => <Translate ns="char_RaidenShogun_gen" key18={strKey} />
+const charTr = (strKey: string) => <Translate ns="char_RaidenShogun" key18={strKey} />
 
 const conditionals: IConditionals = {
   skp: {
@@ -64,7 +64,7 @@ const conditionals: IConditionals = {
 }
 function burstDMGFormulaText(percent, stats, intial = false) {
   let resolveStack = 0
-  const value = stats.conditionalValues?.character?.raidenshogun?.sheet?.talent?.res as IConditionalValue | undefined
+  const value = stats.conditionalValues?.character?.RaidenShogun?.sheet?.talent?.res as IConditionalValue | undefined
   if (value) {
     const [num, condEleKey] = value
     if (num && condEleKey) resolveStack = parseInt(condEleKey)
