@@ -11,7 +11,7 @@ import { ArtifactSheet } from '../Artifact/ArtifactSheet';
 import CustomFormControl from '../Components/CustomFormControl';
 import { ascensionMaxLevel, milestoneLevels } from '../Data/CharacterData';
 import ElementalData from '../Data/ElementalData';
-import { DatabaseContext } from '../Database/Database';
+import { DatabaseContext, database as localDatabase } from '../Database/Database';
 import { ICachedCharacter } from '../Types/character';
 import { CharacterKey } from '../Types/consts';
 import { ICalculatedStats } from '../Types/stats';
@@ -117,10 +117,10 @@ export default function CharacterDisplayCard({ characterKey, setCharacterKey = (
   return (<Card bg="darkcontent" text={"lightfont" as any} >
     <Card.Header>
       <Row>
-        <Col xs={"auto"} className="mr-auto">
+        {database === localDatabase && <Col xs={"auto"} className="mr-auto">
           {/* character selecter/display */}
           <CharSelectDropdown characterSheet={characterSheet} character={character} weaponSheet={weaponSheet} editable={editable} characterDispatch={characterDispatch} setCharacterKey={setCharacterKey} />
-        </Col>
+        </Col>}
         {Boolean(mainStatAssumptionLevel) && <Col xs="auto"><Alert className="mb-0 py-1 h-100" variant="orange" ><b>Assume Main Stats are Level {mainStatAssumptionLevel}</b></Alert></Col>}
         {/* Compare against new build toggle */}
         {newBuild ? <Col xs="auto">
