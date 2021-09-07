@@ -33,8 +33,8 @@
   "button": {
     "unequipArtifacts": "聖遺物を外す",
     "deleteArtifacts": "聖遺物を消す",
-    "lockArtifacts": "聖遺物をロック",
-    "unlockArtifacts": "聖遺物をアンロック"
+    "excludeArtifacts": "聖遺物をロック",
+    "includeArtifacts": "聖遺物をアンロック"
   },
   "mainStat": "メインオプション",
   "slot": "スロット",
