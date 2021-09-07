@@ -138,7 +138,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
               <FontAwesomeIcon icon={faEdit} className="fa-fw" />
             </Button>}
             <OverlayTrigger placement="top"
-              overlay={<Tooltip id="exclude-artifact-tip">{t`lockArtifactTip`}</Tooltip>}>
+              overlay={<Tooltip id="exclude-artifact-tip">{t`excludeArtifactTip`}</Tooltip>}>
               <span className="d-inline-block">
                 <Button size="sm" onClick={() => database.updateArt({ exclude: !exclude }, id)} className="rounded-0" variant={exclude ? "danger" : "success"}>
                   <FontAwesomeIcon icon={exclude ? faBan : faChartLine} className="fa-fw" />

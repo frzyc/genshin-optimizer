@@ -48,8 +48,8 @@
         "button": {
             "unequipArtifacts": "Desequipar Artefatos",
             "deleteArtifacts": "Excluir Artefatos",
-            "lockArtifacts": "Bloquear Artefatos",
-            "unlockArtifacts": "Desbloquear Artefatos"
+            "excludeArtifacts": "Bloquear Artefatos",
+            "includeArtifacts": "Desbloquear Artefatos"
         },
         "filterLevelFormat": "Nível <1>Mín</1>/<3>Máx</3>",
         "buttonHint": "Nota: Os botões acima só se aplicam a <1>artefatos filtrados</1>",
@@ -76,7 +76,7 @@
             "section2": "<0>Editor de Artefatos</0><1>Um editor de artefato completo, que pode aceitar qualquer artefato de 3<1></1> até 5<3></3>. Quando um subatributo é inserido, ele pode calcular os valores de sorteio exatos e a partir dele, a eficiência. Ele também garantirá que você tenha o número correto de sorteios no artefato de acordo com o nível, junto com outras métricas de validação.</1><2>Digitalizar capturas de tela</2><3>A entrada de dados manual não é sua preferência? Você pode digitalizar seus artefatos com capturas de tela! No Editor de Artefatos, clique no botão <1>Mostre-me como!</1> para aprender mais.</3><4>Detecção de artefatos Duplicados/Atualizados</4><5>Você sabia que o GO pode detectar se você está adicionando um artefato <1>duplicado</1> que já existe? Ele também pode detectar se o artefato atual no editor é uma <3>atualização</3> de um artefato existente também. Assim que um artefato duplicado/atualizado é detectado, uma visualização permitirá que você compare os dois artefatos em questão (veja a imagem).</5>",
             "section3": "<0>Inventário de Artefatos</0><p>Todos os seus artefatos que você adicionou ao GO são exibidos aqui. Os filtros permitem que você refine ainda mais sua visão de seus artefatos. </p><2>Exemplo: Encontrando Artefatos para Experiência</2><p>Ao utilizar o filtro e os cálculos de eficiência, você pode encontrar rapidamente um candidato para usar como experiência para outros artefatos.</p><4>Neste exemplo, os filtros são definidos desta forma: </4><5><0>Artefatos desbloqueados no inventário.</0><1>Com subatributos: ATK puro e DEF pura.</1><2>Ordenado por Eficiência Máxima Crescente.</2></5><6>Uma vez que os artefatos são utilizados como experiência, clique em <1>Excluir Artefatos</1> para excluir os artefatos filtrados atualmente.</6>"
         },
-        "lockDisplay": "Bloqueado: {{value}}",
+        "exclusionDisplay": "Bloqueado: {{value}}",
         "lock": {
             "any": "Qualquer",
             "locked": "Bloqueado",

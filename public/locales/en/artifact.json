@@ -65,8 +65,8 @@
   "button": {
     "unequipArtifacts": "Unequip Artifacts",
     "deleteArtifacts": "Delete Artifacts",
-    "lockArtifacts": "Exclude Artifacts",
-    "unlockArtifacts": "Include Artifacts"
+    "excludeArtifacts": "Exclude Artifacts",
+    "includeArtifacts": "Include Artifacts"
   },
   "filterLevelFormat": "Level <1>Low</1>/<3>High</3> (Inclusive)",
   "buttonHint": "Note: the red buttons above only applies to <1>filtered artifacts</1>",
@@ -78,11 +78,11 @@
     "Click on \"Details\" when you are upgrading your artifacts in game to scan as you upgrade.",
     "You can now upload mutiple artifact screenshots to scan!"
   ],
-  "lockDisplay": "Exclusion: {{value}}",
-  "lock": {
+  "exclusionDisplay": "Exclusion: {{value}}",
+  "exclusion": {
     "any": "Any",
-    "locked": "Excluded",
-    "unlocked": "Included"
+    "excluded": "Excluded",
+    "included": "Included"
   },
   "sortMap": {
     "quality": "Quality",
@@ -94,5 +94,5 @@
   "showingNum": "Showing <1>{{count}}</1> out of {{value}} Artifact",
   "showingNum_plural": "Showing <1>{{count}}</1> out of {{value}} Artifacts",
   "resetFilters": "Reset Filters",
-  "lockArtifactTip": "Excluding an artifact will prevent the build generator from picking it for builds."
+  "excludeArtifactTip": "Excluding an artifact will prevent the build generator from picking it for builds."
 }
