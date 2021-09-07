@@ -289,7 +289,7 @@ export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactShee
 
   let bestScore = -1, bestArtifacts: IArtifact[] = [{
     setKey: "Adventurer", numStars: 3, level: 0, slotKey: "flower", mainStatKey: "hp", substats: [],
-    location: "", lock: false,
+    location: "", lock: false, exclude: false,
   }]
 
   // Rate each rarity
@@ -334,7 +334,7 @@ export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactShee
               if (score > bestScore) bestArtifacts = []
               bestScore = score
               bestArtifacts.push({
-                setKey, numStars, level, slotKey, mainStatKey, substats: [], location: "", lock: false
+                setKey, numStars, level, slotKey, mainStatKey, substats: [], location: "", lock: false, exclude: false,
               })
             }
           }
@@ -347,7 +347,7 @@ export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactShee
             if (score > bestScore) bestArtifacts = []
             bestScore = score
             bestArtifacts.push({
-              setKey, numStars, level, slotKey, mainStatKey, substats: [], location: "", lock: false
+              setKey, numStars, level, slotKey, mainStatKey, substats: [], location: "", lock: false, exclude: false
             })
           }
         }

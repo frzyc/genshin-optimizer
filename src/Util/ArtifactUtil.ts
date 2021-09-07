@@ -41,6 +41,6 @@ export async function randomizeArtifact(): Promise<IArtifact> {
     }
 
   return {
-    setKey: set, numStars: rarity, slotKey: slot, mainStatKey, level, substats, location: "", lock: false
+    setKey: set, numStars: rarity, slotKey: slot, mainStatKey, level, substats, location: "", lock: false, exclude: false,
   }
 }

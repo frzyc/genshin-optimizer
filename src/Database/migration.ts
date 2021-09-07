@@ -211,6 +211,10 @@ function migrateV8ToV9(storage: DBStorage) {
             .map(([key, value]: [any, any]) => [key, value + 1]))
         storage.set(key, character)
       }
+    } else if (key.startsWith("artifact_")) {
+      const artifact = storage.get(key)
+      artifact.exclude = artifact.lock
+      storage.set(key, artifact)
     }
   }
 }

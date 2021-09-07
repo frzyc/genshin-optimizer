@@ -61,7 +61,8 @@ describe('Equipment functions', () => {
       slotKey: "flower",
       substats: [],
       location: "",
-      lock: false
+      lock: false,
+      exclude: false,
     }
     b = { ...a, slotKey: "plume" }
     c = { ...a, slotKey: "sands", location: "Noelle" }

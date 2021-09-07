@@ -27,6 +27,7 @@ export interface IArtifact {
 
   location: CharacterKey | "",
   lock: boolean,
+  exclude: boolean,
 }
 export interface ICachedArtifact extends IArtifact {
   id: string,

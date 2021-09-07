@@ -69,6 +69,7 @@ export const artifacts: IArtifact[] = [{
   ],
   location: 'HuTao',
   lock: false,
+  exclude: false,
 }, {
   setKey: 'CrimsonWitchOfFlames',
   numStars: 5,
@@ -83,6 +84,7 @@ export const artifacts: IArtifact[] = [{
   ],
   location: 'HuTao',
   lock: false,
+  exclude: false,
 }, {
   setKey: 'CrimsonWitchOfFlames',
   numStars: 5,
@@ -97,6 +99,7 @@ export const artifacts: IArtifact[] = [{
   ],
   location: 'HuTao',
   lock: false,
+  exclude: false,
 }, {
   setKey: 'GladiatorsFinale',
   numStars: 5,
@@ -111,6 +114,7 @@ export const artifacts: IArtifact[] = [{
   ],
   location: 'HuTao',
   lock: false,
+  exclude: false,
 }, {
   setKey: 'ThunderingFury',
   numStars: 5,
@@ -125,5 +129,6 @@ export const artifacts: IArtifact[] = [{
   ],
   location: 'HuTao',
   lock: false,
+  exclude: false,
 },
 ]
