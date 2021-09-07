@@ -91,11 +91,11 @@ export const parsingFunctions: { [key: string]: (lang: Language, string: string,
       return { normal, charged, plunging } as any
     } else if (strings.length === 4) {//for childe or kazuha
       const [, charkey] = keys
-      if (charkey === "kaedeharakazuha") {
+      if (charkey === "KaedeharaKazuha") {
         const [normal, charged, plunging, plunging_midare] = strings
         return { normal, charged, plunging, plunging_midare } as any
       }
-      if (charkey === "tartaglia") {
+      if (charkey === "Tartaglia") {
         const [normal, charged, riptide, plunging] = strings
         return { normal, charged, riptide, plunging } as any
       }

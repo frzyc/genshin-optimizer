@@ -1,9 +1,10 @@
+import { IArtifact } from "./artifact";
 import { BuildSetting } from "./Build";
-import { CharacterKey, ElementKey, HitModeKey, ReactionModeKey, SlotKey, WeaponKey, WeaponTypeKey } from "./consts";
-import { BasicStats, ICalculatedStats } from "./stats";
+import { CharacterKey, ElementKey, HitModeKey, ReactionModeKey, SlotKey, WeaponTypeKey } from "./consts";
 import IConditional, { IConditionals } from "./IConditional";
 import { IFieldDisplay } from "./IFieldDisplay";
-import { StatKey } from "./artifact";
+import { BasicStats, ICalculatedStats } from "./stats";
+import { ICachedWeapon } from "./weapon"
 
 interface ICharacterSheetBase {
   name: Displayable,
@@ -45,8 +46,8 @@ interface ascension {
   }
 }
 
-export interface IFlexCharacter {
-  characterKey: CharacterKey
+export interface ICharacter {
+  key: CharacterKey
   level: number,
   ascension: number,
   hitMode: HitModeKey
@@ -54,13 +55,7 @@ export interface IFlexCharacter {
   reactionMode: ReactionModeKey | null
   conditionalValues: any,
   baseStatOverrides: object, //overriding the baseStat
-  weapon: {
-    key: WeaponKey
-    level: number,
-    ascension: number,
-    refineIndex: number
-  },
-  talentLevelKeys: {
+  talent: {
     auto: number
     skill: number
     burst: number
@@ -69,9 +64,9 @@ export interface IFlexCharacter {
   constellation: number
   buildSettings?: BuildSetting
 }
-export interface ICharacter extends IFlexCharacter {
+export interface ICachedCharacter extends ICharacter {
   equippedArtifacts: StrictDict<SlotKey, string>,
-  artifacts?: any[] //from flex TODO: type
+  equippedWeapon: string,
 }
 
 export type TalentSheet = {

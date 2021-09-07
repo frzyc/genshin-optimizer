@@ -37,7 +37,7 @@ import Halberd from './Polearm/Halberd/data'
 // import IronPoint from './Polearm/IronPoint/data'
 // import LithicSpear from './Polearm/LithicSpear/data'
 // import PrimordialJadeWingedSpear from './Polearm/PrimordialJadeWingedSpear/data'
-// import PrototypeGrudge from './Polearm/PrototypeGrudge/data'
+// import PrototypeStarglitter from './Polearm/PrototypeStarglitter/data'
 // import RoyalSpear from './Polearm/RoyalSpear/data'
 import SkywardSpine from './Polearm/SkywardSpine/data'
 import StaffOfHoma from './Polearm/StaffOfHoma/data'
@@ -52,7 +52,7 @@ import DebateClub from './Claymore/DebateClub/data'
 // import LithicBlade from './Claymore/LithicBlade/data'
 import LuxuriousSeaLord from './Claymore/LuxuriousSeaLord/data'
 // import OldMercsPal from './Claymore/OldMercsPal/data'
-import PrototypeAminus from './Claymore/PrototypeAminus/data'
+import PrototypeArchaic from './Claymore/PrototypeArchaic/data'
 // import Quartz from './Claymore/Quartz/data'
 // import Rainslasher from './Claymore/Rainslasher/data'
 // import RoyalGreatsword from './Claymore/RoyalGreatsword/data'
@@ -83,7 +83,7 @@ import Frostbearer from './Catalyst/Frostbearer/data'
 // import MemoryOfDust from './Catalyst/MemoryOfDust/data'
 import OtherworldlyStory from './Catalyst/OtherworldlyStory/data'
 // import PocketGrimoire from './Catalyst/PocketGrimoire/data'
-import PrototypeMalice from './Catalyst/PrototypeMalice/data'
+import PrototypeAmber from './Catalyst/PrototypeAmber/data'
 // import RoyalGrimoire from './Catalyst/RoyalGrimoire/data'
 // import SacrificialFragments from './Catalyst/SacrificialFragments/data'
 import SkywardAtlas from './Catalyst/SkywardAtlas/data'
@@ -159,7 +159,7 @@ const polearm = {
   // IronPoint,
   // LithicSpear,
   // PrimordialJadeWingedSpear,
-  // PrototypeGrudge,
+  // PrototypeStarglitter,
   // RoyalSpear,
   SkywardSpine,
   StaffOfHoma,
@@ -182,7 +182,7 @@ const catalyst = {
   // MemoryOfDust,
   OtherworldlyStory,
   // PocketGrimoire,
-  PrototypeMalice,
+  PrototypeAmber,
   // RoyalGrimoire,
   // SacrificialFragments,
   SkywardAtlas,
@@ -202,7 +202,7 @@ const claymore = {
   // LithicBlade,
   LuxuriousSeaLord,
   // OldMercsPal,
-  PrototypeAminus,
+  PrototypeArchaic,
   // Quartz,
   // Rainslasher,
   // RoyalGreatsword,

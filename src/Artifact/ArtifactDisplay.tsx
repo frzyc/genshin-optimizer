@@ -1,21 +1,21 @@
-import { faBriefcase, faCheckSquare, faLock, faLockOpen, faSortAmountDownAlt, faSortAmountUp, faSquare, faTrash, faUndo, faUserShield, faUserSlash } from '@fortawesome/free-solid-svg-icons';
+import { faBan, faBriefcase, faChartLine, faCheckSquare, faLock, faLockOpen, faSortAmountDownAlt, faSortAmountUp, faSquare, faTrash, faUndo, faUserShield, faUserSlash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'react';
+import React, { useCallback, useContext, useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import { Button, ButtonGroup, ButtonToolbar, Card, Dropdown, InputGroup, ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import ReactGA from 'react-ga';
 import { Trans, useTranslation } from 'react-i18next';
+import { CharacterSelectionDropdownList } from '../Character/CharacterSelection';
 import CharacterSheet from '../Character/CharacterSheet';
-import { CharacterSelectionDropdownList } from '../Components/CharacterSelection';
 import CustomFormControl from '../Components/CustomFormControl';
 import InfoComponent from '../Components/InfoComponent';
 import { Stars } from '../Components/StarDisplay';
-import { database } from '../Database/Database';
+import { DatabaseContext } from '../Database/Database';
 import { dbStorage } from '../Database/DBStorage';
 import Stat from '../Stat';
-import { allMainStatKeys, allSubstats, IArtifact, SubstatKey } from '../Types/artifact';
+import { allMainStatKeys, allSubstats, ICachedArtifact, SubstatKey } from '../Types/artifact';
 import { allArtifactRarities, allSlotKeys } from '../Types/consts';
 import { useForceUpdate, usePromise } from '../Util/ReactUtil';
 import { clamp } from '../Util/Util';
@@ -38,7 +38,7 @@ const initialFilter = () => ({
   filterMainStatKey: "",
   filterSubstats: ["", "", "", ""],
   filterLocation: "",
-  filterLocked: "",
+  filterExcluded: "",
   ascending: false,
   sortType: sortKeys[0],
   maxNumArtifactsToDisplay: 50,
@@ -54,6 +54,7 @@ function filterInit(initial = initialFilter()) {
 }
 export default function ArtifactDisplay(props) {
   const { t } = useTranslation(["artifact", "ui"]);
+  const database = useContext(DatabaseContext)
   const [filters, filterDispatch] = useReducer(filterReducer, initialFilter(), filterInit)
   const { effFilter } = filters
   const [artToEditId, setartToEditId] = useState(props?.location?.artToEditId)
@@ -64,7 +65,7 @@ export default function ArtifactDisplay(props) {
   const artifactSheets = usePromise(ArtifactSheet.getAll(), [])
   const effFilterSet = useMemo(() => new Set(effFilter), [effFilter]) as Set<SubstatKey>
   const deleteArtifact = useCallback(
-    (id: string) => database.removeArt(id), [])
+    (id: string) => database.removeArt(id), [database])
   const editArtifact = useCallback(
     id => {
       setartToEditId(id);
@@ -75,19 +76,19 @@ export default function ArtifactDisplay(props) {
   useEffect(() => {
     ReactGA.pageview('/artifact')
     return database.followAnyArt(forceUpdate)
-  }, [forceUpdate])
+  }, [database, forceUpdate])
 
   useEffect(() => {
     dbStorage.set("ArtifactDisplay.state", filters)
   }, [filters])
 
-  const { artifacts, totalArtNum, numUnequip, numUnlock, numLock } = useMemo(() => {
-    const { filterArtSetKey, filterSlotKey, filterMainStatKey, filterStars, filterLevelLow, filterLevelHigh, filterSubstats = initialFilter().filterSubstats, filterLocation = "", filterLocked = "", sortType = sortKeys[0], ascending = false } = filters
+  const { artifacts, totalArtNum, numUnequip, numInclude, numExclude } = useMemo(() => {
+    const { filterArtSetKey, filterSlotKey, filterMainStatKey, filterStars, filterLevelLow, filterLevelHigh, filterSubstats = initialFilter().filterSubstats, filterLocation = "", filterExcluded = "", sortType = sortKeys[0], ascending = false } = filters
     const allArtifacts = database._getArts()
-    const artifacts: IArtifact[] = allArtifacts.filter(art => {
-      if (filterLocked) {
-        if (filterLocked === "locked" && !art.lock) return false
-        if (filterLocked === "unlocked" && art.lock) return false
+    const artifacts: ICachedArtifact[] = allArtifacts.filter(art => {
+      if (filterExcluded) {
+        if (filterExcluded === "exclude" && !art.exclude) return false
+        if (filterExcluded === "include" && art.exclude) return false
       }
       if (filterLocation === "Inventory") {
         if (art.location) return false;
@@ -99,14 +100,14 @@ export default function ArtifactDisplay(props) {
       if (filterSlotKey && filterSlotKey !== art.slotKey) return false
       if (filterMainStatKey && filterMainStatKey !== art.mainStatKey) return false
       if (art.level < filterLevelLow || art.level > filterLevelHigh) return false;
-      if (!filterStars.includes(art.numStars)) return false;
+      if (!filterStars.includes(art.rarity)) return false;
       for (const filterKey of filterSubstats)
         if (filterKey && !art.substats.some(substat => substat.key === filterKey)) return false;
       return true
     }).map((art) => {
       switch (sortType) {
-        case "quality": return { value: [art.numStars], art }
-        case "level": return { value: [art.level, art.numStars], art }
+        case "quality": return { value: [art.rarity], art }
+        case "level": return { value: [art.level, art.rarity], art }
         case "efficiency": return { value: [Artifact.getArtifactEfficiency(art, effFilterSet).currentEfficiency], art }
         case "mefficiency": return { value: [Artifact.getArtifactEfficiency(art, effFilterSet).maxEfficiency], art }
       }
@@ -119,13 +120,13 @@ export default function ArtifactDisplay(props) {
       return 0
     }).map(item => item.art)
     const numUnequip = artifacts.reduce((a, art) => a + (art.location ? 1 : 0), 0)
-    const numUnlock = artifacts.reduce((a, art) => a + (art.lock ? 1 : 0), 0)
-    const numLock = artifacts.length - numUnlock
+    const numExclude = artifacts.reduce((a, art) => a + (art.exclude ? 1 : 0), 0)
+    const numInclude = artifacts.length - numExclude
 
-    return { artifacts, totalArtNum: allArtifacts.length, numUnequip, numUnlock, numLock, ...dbDirty }//use dbDirty to shoo away warnings!
-  }, [filters, dbDirty, effFilterSet])
+    return { artifacts, totalArtNum: allArtifacts.length, numInclude, numExclude, numUnequip, ...dbDirty }//use dbDirty to shoo away warnings!
+  }, [filters, dbDirty, effFilterSet, database])
 
-  const { filterArtSetKey, filterSlotKey, filterMainStatKey, filterStars, filterLevelLow, filterLevelHigh, filterSubstats = initialFilter().filterSubstats, maxNumArtifactsToDisplay, filterLocation = "", filterLocked = "", sortType = sortKeys[0], ascending = false } = filters
+  const { filterArtSetKey, filterSlotKey, filterMainStatKey, filterStars, filterLevelLow, filterLevelHigh, filterSubstats = initialFilter().filterSubstats, maxNumArtifactsToDisplay, filterLocation = "", filterExcluded = "", sortType = sortKeys[0], ascending = false } = filters
 
   const { artifactsToShow, numPages, currentPageIndex } = useMemo(() => {
     const numPages = Math.ceil(artifacts.length / maxNumArtifactsToDisplay)
@@ -140,26 +141,26 @@ export default function ArtifactDisplay(props) {
   else if (filterLocation === "Equipped") locationDisplay = <span><FontAwesomeIcon icon={faUserShield} /> {t("filterLocation.currentlyEquipped")}</span>
   else locationDisplay = <b>{locationCharacterSheet?.nameWIthIcon}</b>
 
-  let lockedDisplay
-  if (filterLocked === "locked") lockedDisplay = <span><FontAwesomeIcon icon={faLock} /> {t`lock.locked`}</span>
-  else if (filterLocked === "unlocked") lockedDisplay = <span><FontAwesomeIcon icon={faLockOpen} /> {t`lock.unlocked`}</span>
-  else lockedDisplay = t("lockDisplay", { value: t("lock.any") })
+  let excludedDisplay
+  if (filterExcluded === "excluded") excludedDisplay = <span><FontAwesomeIcon icon={faBan} /> {t`exclusion.excluded`}</span>
+  else if (filterExcluded === "included") excludedDisplay = <span><FontAwesomeIcon icon={faChartLine} /> {t`exclusion.included`}</span>
+  else excludedDisplay = t("exclusionDisplay", { value: t("exclusion.any") })
 
   const unequipArtifacts = () =>
     window.confirm(`Are you sure you want to unequip ${numUnequip} artifacts currently equipped on characters?`) &&
-    artifacts.map(art => database.setLocation(art.id!, ""))
+    artifacts.map(art => database.setArtLocation(art.id!, ""))
 
   const deleteArtifacts = () =>
     window.confirm(`Are you sure you want to delete ${artifacts.length} artifacts?`) &&
     artifacts.map(art => database.removeArt(art.id!))
 
-  const lockArtifacts = () =>
-    window.confirm(`Are you sure you want to lock ${numLock} artifacts?`) &&
-    artifacts.map(art => database.lockArtifact(art.id))
+  const excludeArtifacts = () =>
+    window.confirm(`Are you sure you want to exclude ${numInclude} artifacts from build generations?`) &&
+    artifacts.map(art => database.updateArt({ exclude: true }, art.id))
 
-  const unlockArtifacts = () =>
-    window.confirm(`Are you sure you want to unlock ${numUnlock} artifacts?`) &&
-    artifacts.map(art => database.lockArtifact(art.id, false))
+  const includeArtifacts = () =>
+    window.confirm(`Are you sure you want to include ${numExclude} artifacts in build generations?`) &&
+    artifacts.map(art => database.updateArt({ exclude: false }, art.id))
 
   const paginationCard = useMemo(() => {
     const showingValue = artifacts.length !== totalArtNum ? `${artifacts.length}/${totalArtNum}` : `${totalArtNum}`
@@ -313,13 +314,13 @@ export default function ArtifactDisplay(props) {
 
                 {/* locked state */}
                 <Dropdown className="flex-grow-1 mb-2" >
-                  <Dropdown.Toggle className="w-100" variant={filterLocked ? "success" : "primary"} >
-                    {lockedDisplay}
+                  <Dropdown.Toggle className="w-100" variant={filterExcluded ? "success" : "primary"} >
+                    {excludedDisplay}
                   </Dropdown.Toggle>
                   <Dropdown.Menu>
-                    <Dropdown.Item onClick={() => filterDispatch({ filterLocked: "" })}><Trans t={t} i18nKey="lock.any" >Any</Trans></Dropdown.Item>
-                    <Dropdown.Item onClick={() => filterDispatch({ filterLocked: "locked" })}><span><FontAwesomeIcon icon={faLock} /> <Trans t={t} i18nKey="lock.locked" >Locked</Trans></span></Dropdown.Item>
-                    <Dropdown.Item onClick={() => filterDispatch({ filterLocked: "unlocked" })}><span><FontAwesomeIcon icon={faLockOpen} /> <Trans t={t} i18nKey="lock.unlocked" >Unlocked</Trans></span></Dropdown.Item>
+                    <Dropdown.Item onClick={() => filterDispatch({ filterExcluded: "" })}><Trans t={t} i18nKey="exclusion.any" >Any</Trans></Dropdown.Item>
+                    <Dropdown.Item onClick={() => filterDispatch({ filterExcluded: "excluded" })}><span><FontAwesomeIcon icon={faBan} /> <Trans t={t} i18nKey="exclusion.excluded" >Excluded</Trans></span></Dropdown.Item>
+                    <Dropdown.Item onClick={() => filterDispatch({ filterExcluded: "included" })}><span><FontAwesomeIcon icon={faChartLine} /> <Trans t={t} i18nKey="exclusion.included" >Included</Trans></span></Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>
               </Col>
@@ -356,8 +357,8 @@ export default function ArtifactDisplay(props) {
         <Row className="mb-n2">
           <Col xs={6} lg={3} className="mb-2"><Button className="w-100" variant="danger" disabled={!numUnequip} onClick={unequipArtifacts}><FontAwesomeIcon icon={faUserSlash} /> <Trans t={t} i18nKey="button.unequipArtifacts" >Unequip Artifacts</Trans></Button></Col>
           <Col xs={6} lg={3} className="mb-2"><Button className="w-100" variant="danger" disabled={!artifacts.length} onClick={deleteArtifacts}><FontAwesomeIcon icon={faTrash} /> <Trans t={t} i18nKey="button.deleteArtifacts" >Delete Artifacts</Trans></Button></Col>
-          <Col xs={6} lg={3} className="mb-2"><Button className="w-100" variant="danger" disabled={!numLock} onClick={lockArtifacts}><FontAwesomeIcon icon={faLock} /> <Trans t={t} i18nKey="button.lockArtifacts" >Lock Artifacts</Trans></Button></Col>
-          <Col xs={6} lg={3} className="mb-2"><Button className="w-100" variant="danger" disabled={!numUnlock} onClick={unlockArtifacts}><FontAwesomeIcon icon={faLockOpen} /> <Trans t={t} i18nKey="button.unlockArtifacts" >Unlock Artifacts</Trans></Button></Col>
+          <Col xs={6} lg={3} className="mb-2"><Button className="w-100" variant="danger" disabled={!numInclude} onClick={excludeArtifacts}><FontAwesomeIcon icon={faLock} /> <Trans t={t} i18nKey="button.excludeArtifacts" >Lock Artifacts</Trans></Button></Col>
+          <Col xs={6} lg={3} className="mb-2"><Button className="w-100" variant="danger" disabled={!numExclude} onClick={includeArtifacts}><FontAwesomeIcon icon={faLockOpen} /> <Trans t={t} i18nKey="button.includeArtifacts" >Unlock Artifacts</Trans></Button></Col>
           <Col xs={12} className="mt-n2"><small><Trans t={t} i18nKey="buttonHint">Note: the above buttons only applies to <b>filtered artifacts</b></Trans></small></Col>
         </Row>
       </Card.Body>

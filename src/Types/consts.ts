@@ -21,10 +21,10 @@ export const allArtifactSets = [
   "WanderersTroupe", "TenacityOfTheMillelith", "PaleFlame", "EmblemOfSeveredFate", "ShimenawasReminiscence",
 ] as const
 export const allCharacterKeys = [
-  "albedo", "amber", "barbara", "beidou", "bennett", "chongyun", "diluc", "diona", "fischl", "ganyu",
-  "hutao", "jean", "kaeya", "keqing", "klee", "lisa", "mona", "ningguang", "noelle", "qiqi",
-  "razor", "sucrose", "tartaglia", "traveler", "raidenshogun", "venti", "xiao", "xiangling", "xingqiu", "xinyan",
-  "zhongli", "rosaria", "yanfei", "eula", "kaedeharakazuha", "kamisatoayaka", "sayu", "yoimiya", "kujousara", "aloy"
+  "Albedo", "Amber", "Barbara", "Beidou", "Bennett", "Chongyun", "Diluc", "Diona", "Fischl", "Ganyu",
+  "HuTao", "Jean", "Kaeya", "Keqing", "Klee", "Lisa", "Mona", "Ningguang", "Noelle", "Qiqi",
+  "Razor", "Sucrose", "Tartaglia", "Traveler", "RaidenShogun", "Venti", "Xiao", "Xiangling", "Xingqiu", "Xinyan",
+  "Zhongli", "Rosaria", "Yanfei", "Eula", "KaedeharaKazuha", "KamisatoAyaka", "Sayu", "Yoimiya", "KujouSara", "Aloy"
 ] as const
 export const allWeaponKeys = [
   "DullBlade", "SilverSword", "CoolSteel", "DarkIronSword", "FilletBlade", "HarbingerOfDawn", "SkyriderSword",
@@ -32,17 +32,17 @@ export const allWeaponKeys = [
   "PrototypeRancour", "RoyalLongsword", "SacrificialSword", "TheAlleyFlash", "TheBlackSword", "TheFlute",
   "SwordOfDescension", "FesteringDesire", "AquilaFavonia", "SkywardBlade", "SummitShaper", "WasterGreatsword",
   "OldMercsPal", "BloodtaintedGreatsword", "DebateClub", "FerrousShadow", "Quartz", "SkyriderGreatsword",
-  "WhiteIronGreatsword", "BlackcliffSlasher", "FavoniusGreatsword", "LithicBlade", "PrototypeAminus", "Rainslasher",
+  "WhiteIronGreatsword", "BlackcliffSlasher", "FavoniusGreatsword", "LithicBlade", "PrototypeArchaic", "Rainslasher",
   "RoyalGreatsword", "SerpentSpine", "TheBell", "Whiteblind", "SacrificialGreatsword", "SnowTombedStarsilver",
   "SkywardPride", "WolfsGravestone", "TheUnforged", "BeginnersProtector", "IronPoint", "BlackTassel", "Halberd",
-  "WhiteTassel", "BlackcliffPole", "CrescentPike", "Deathmatch", "DragonsBane", "LithicSpear", "PrototypeGrudge",
+  "WhiteTassel", "BlackcliffPole", "CrescentPike", "Deathmatch", "DragonsBane", "LithicSpear", "PrototypeStarglitter",
   "FavoniusLance", "RoyalSpear", "DragonspineSpear", "VortexVanquisher", "PrimordialJadeWingedSpear", "StaffOfHoma",
   "SkywardSpine", "HuntersBow", "SeasonedHuntersBow", "EbonyBow", "Messenger", "RavenBow", "RecurveBow",
   "SharpshootersOath", "Slingshot", "TheStringless", "AlleyHunter", "BlackcliffWarbow", "CompoundBow",
   "FavoniusWarbow", "PrototypeCrescent", "RoyalBow", "Rust", "SacrificialBow", "TheViridescentHunt", "SkywardHarp",
   "AmosBow", "ElegyForTheEnd", "WindblumeOde", "ApprenticesNotes", "PocketGrimoire", "EngulfingLightning", "EmeraldOrb",
   "MagicGuide", "OtherworldlyStory", "ThrillingTalesOfDragonSlayers", "TwinNephrite", "BlackcliffAgate",
-  "FavoniusCodex", "MappaMare", "PrototypeMalice", "RoyalGrimoire", "SacrificialFragments", "SolarPearl", "TheWidsith",
+  "FavoniusCodex", "MappaMare", "PrototypeAmber", "RoyalGrimoire", "SacrificialFragments", "SolarPearl", "TheWidsith",
   "WineAndSong", "EyeOfPerception", "Frostbearer", "LostPrayerToTheSacredWinds", "SkywardAtlas", "MemoryOfDust",
   "SongOfBrokenPines", "DodocoTales", "MitternachtsWaltz", "FreedomSworn", "AmenomaKageuchi", "MistsplitterReforged",
   "KatsuragikiriNagamasa", "KitainCrossSpear", "ThunderingPulse", "Hamayumi", "HakushinRing", "TheCatch",

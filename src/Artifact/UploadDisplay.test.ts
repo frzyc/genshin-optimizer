@@ -1,4 +1,4 @@
-import { IFlexArtifact } from "../Types/artifact"
+import { IArtifact } from "../Types/artifact"
 import { allArtifactSets, allSlotKeys } from "../Types/consts"
 import Artifact from "./Artifact"
 import { ArtifactSheet } from "./ArtifactSheet"
@@ -10,20 +10,20 @@ beforeAll(async () => {
 })
 
 expect.extend({
-  toBeValidNewArtifact(artifact: Partial<IFlexArtifact>): { message, pass } {
+  toBeValidNewArtifact(artifact: Partial<IArtifact>): { message, pass } {
     if (artifact.location)
       return { message: () => `expect unequiped artifact, found location ${this.utils.printReceived(artifact.location)}`, pass: false }
-    if (artifact.lock)
-      return { message: () => `expect unlocked artifact, but artifact is locked`, pass: false }
+    if (artifact.exclude)
+      return { message: () => `expect excluded artifact, but artifact is not excluded`, pass: false }
 
     if (!artifact.setKey || !allArtifactSets.includes(artifact.setKey))
       return { message: () => `expect valid set key, found ${this.utils.printReceived(artifact.setKey)}`, pass: false }
     const sheet = sheets[artifact.setKey]
 
-    if (!artifact.numStars || !sheet.rarity.includes(artifact.numStars))
-      return { message: () => `expect valid rarity for artifact of set ${this.utils.printExpected(artifact.setKey)}, found ${this.utils.printReceived(artifact.numStars)}`, pass: false }
-    if (artifact.level === undefined || artifact.level < 0 || artifact.level > artifact.numStars * 4)
-      return { message: () => `expect valid level for rarity ${this.utils.printExpected(artifact.numStars)}, found ${this.utils.printReceived(artifact.level)}`, pass: false }
+    if (!artifact.rarity || !sheet.rarity.includes(artifact.rarity))
+      return { message: () => `expect valid rarity for artifact of set ${this.utils.printExpected(artifact.setKey)}, found ${this.utils.printReceived(artifact.rarity)}`, pass: false }
+    if (artifact.level === undefined || artifact.level < 0 || artifact.level > artifact.rarity * 4)
+      return { message: () => `expect valid level for rarity ${this.utils.printExpected(artifact.rarity)}, found ${this.utils.printReceived(artifact.level)}`, pass: false }
 
     if (!artifact.slotKey || !allSlotKeys.includes(artifact.slotKey))
       return { message: () => `expect valid slot key, found ${this.utils.printReceived(artifact.slotKey)}`, pass: false }
@@ -61,7 +61,7 @@ describe('findBestArtifact', () => {
     expect(artifact).toBeValidNewArtifact()
     expect(artifact.slotKey).toEqual('plume')
     expect(artifact.level).toEqual(13)
-    expect(artifact.numStars).toEqual(4)
+    expect(artifact.rarity).toEqual(4)
   })
   test('can filter substats with duplicated keys', () => {
     const [artifact] = findBestArtifact(sheets, new Set(), new Set(), new Set(['flower']), [{ key: 'hp', value: 0 }, { key: 'atk_', value: 2 }, { key: 'atk_', value: 3 }], new Set(), [])

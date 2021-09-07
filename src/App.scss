@@ -134,6 +134,17 @@ $theme-colors: (
   "orange": #ff6600,
 );
 
+textarea.code {
+  overflow-y: auto;
+  overflow-x: auto;
+  font-family: monospace;
+  border: none;
+  // padding: 1em;
+  white-space:pre;
+  background-color: transparent;
+  resize: none;
+}
+
 //convert dropdown to dark
 $dropdown-bg: $dark;
 $dropdown-link-color: $light;
@@ -143,5 +154,6 @@ $dropdown-header-color: $gray-100;
 $thumbnail-border-color: $gray-800;
 
 @import "~bootstrap/scss/bootstrap";
+@include list-group-item-variant("customlight", $lightbg, $lightfontcolor);
 @include list-group-item-variant("customdark", $contentbg, $lightfontcolor);
 @include list-group-item-variant("customdarker", theme-color-level("darkcontent", 2), $lightfontcolor);

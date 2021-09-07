@@ -11,7 +11,8 @@
     "artsNew": "New Artifacts:",
     "artsUpg": "Upgraded Artifacts:",
     "artsInvalid": "Invalid Artifacts",
-    "artsFod": "Foddered Artifacts"
+    "artsFod": "Foddered Artifacts",
+    "weapons":"Weapons:"
   },
   "downloadCard": {
     "databaseDownload": "Database Download",
@@ -27,10 +28,14 @@
     "replaceDatabase": "Replace Database",
     "hint": "Upload your JSON file here...",
     "hintPaste": "...or paste your data below.",
+    "dbSource": "Data source:",
     "goUpload": {
       "title": "<strong>Genshin Optimizer</strong> format",
       "migrate": "Database will be migrated to a newer version. Please consider re-downloading the database after import.",
       "deleteDatabasePrompt": "Are you sure you want to replace your database? All existing characters and artifacts will be deleted."
+    },
+    "goodUpload": {
+      "title": "<strong>Genshin Open Object Description</strong> (GOOD) format"
     },
     "monaUpload": {
       "title": "<strong>mona-uranai</strong> format",

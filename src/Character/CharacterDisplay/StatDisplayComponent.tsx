@@ -3,7 +3,7 @@
 
 import { Card, Col, Row } from "react-bootstrap"
 import StatDisplay from "../../Components/StatDisplay"
-import { ICharacter } from "../../Types/character"
+import { ICachedCharacter } from "../../Types/character"
 import CharacterSheet from "../CharacterSheet"
 import { ICalculatedStats } from "../../Types/stats"
 import WeaponSheet from "../../Weapon/WeaponSheet"
@@ -17,7 +17,7 @@ type StatDisplayComponentProps = {
     weaponSheet: WeaponSheet,
     artifactSheets: StrictDict<ArtifactSetKey, ArtifactSheet>
   },
-  character: ICharacter
+  character: ICachedCharacter
   statsDisplayKeys: any,
   editable: boolean,
   cardbg?: string

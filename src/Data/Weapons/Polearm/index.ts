@@ -12,7 +12,7 @@ import IronPoint from './IronPoint'
 import KitainCrossSpear from './KitainCrossSpear'
 import LithicSpear from './LithicSpear'
 import PrimordialJadeWingedSpear from './PrimordialJadeWingedSpear'
-import PrototypeGrudge from './PrototypeGrudge'
+import PrototypeStarglitter from './PrototypeStarglitter'
 import RoyalSpear from './RoyalSpear'
 import SkywardSpine from './SkywardSpine'
 import StaffOfHoma from './StaffOfHoma'
@@ -34,7 +34,7 @@ const polearm = {
   KitainCrossSpear,
   LithicSpear,
   PrimordialJadeWingedSpear,
-  PrototypeGrudge,
+  PrototypeStarglitter,
   RoyalSpear,
   SkywardSpine,
   StaffOfHoma,

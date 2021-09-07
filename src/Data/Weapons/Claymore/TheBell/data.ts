@@ -6,7 +6,7 @@ export const data = {
 const formula: ISubFormula = {
   shield: stats => {
     const hpMulti = data.shield[stats.weapon.refineIndex] / 100
-    return [s => hpMulti * s.finalHP * (1 + s.powShield_ / 100) * 1.5, ["finalHP", "powShield_"]]
+    return [s => hpMulti * s.finalHP * (1 + s.shield_ / 100) * 1.5, ["finalHP", "shield_"]]
   }
 }
 export default formula

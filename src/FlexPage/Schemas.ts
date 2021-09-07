@@ -1,5 +1,5 @@
 import { ascensionMaxLevel } from "../Data/CharacterData"
-import { allSlotKeys, allElements, allArtifactSets, allHitModes, allReactionModes, allCharacterKeys } from "../Types/consts"
+import { allSlotKeys, allElements, allArtifactSets, allHitModes, allReactionModes, allCharacterKeys, CharacterKey } from "../Types/consts"
 import { crawlObject } from "../Util/Util"
 import { uintToString, stringToUInt } from "./CodingUtil"
 
@@ -8,7 +8,6 @@ import { uintToString, stringToUInt } from "./CodingUtil"
 // The index of items in this list is used to
 // compress the exported data. Removing an item
 // from this list will shift subsequent entries.
-const elements = ['', ...allElements] as const
 const stats = [
   "", "hp", "hp_", "atk", "atk_", "def", "def_", "eleMas", "enerRech_", "critRate_", "critDMG_", "heal_",
   "physical_dmg_", "anemo_dmg_", "cryo_dmg_", "dendro_dmg_", "electro_dmg_", "geo_dmg_", "hydro_dmg_", "pyro_dmg_",
@@ -27,8 +26,13 @@ const array = (defaultSchema, other = {}) => ({ type: "array", defaultSchema, ..
 const object = (schemas, other = {}) => ({ type: "object", schemas, ...other })
 const sparse = (keySchema, valueSchema, keys = null) => ({ type: "sparse", keys, keySchema, valueSchema })
 
-// Fixed schema
+// Util schema
 
+const optional = (list, defaultValue: any = undefined, length = 1) => ({
+  type: "uint", length,
+  encode: item => list.indexOf(item) + 1,
+  decode: index => list[index - 1] ?? defaultValue,
+})
 const fixed = (list, length = 1) => ({
   type: "uint", length,
   encode: (item) => list.indexOf(item),
@@ -40,36 +44,21 @@ const slot = fixed(allSlotKeys)
 const characterKey = fixed(allCharacterKeys)
 const hitMode = fixed(allHitModes)
 const reactionMode = fixed([null, ...allReactionModes])
-const element = fixed(elements)
+const element = optional(allElements, '')
 
-// Complex schemas
+// Complex schema
 
-const artifact = object({
-  setKey: artifactSet,
-  numStars: uint(1),
-  level: uint(2),
-  mainStatKey: stat,
-  slotKey: slot,
-  substats: array(
-    object({
-      key: stat,
-      value: uint(2),
-    }, {
-      encode: ({ key, value }) => {
-        let factor = key.endsWith("_") ? 10 : 1 // one decimal place for percentage
-        return { key, value: value * factor }
-      },
-      decode: ({ key, value }) => {
-        let factor = key.endsWith("_") ? 10 : 1 // one decomal place for percentage
-        return { key, value: value / factor }
-      }
-    })
-  )
+const substat = object({
+  key: stat,
+  value: uint(2),
 }, {
-  decode: art => {
-    art.id = ""
-    art.lock = false
-    return art
+  encode: ({ key, value }) => {
+    let factor = key.endsWith("_") ? 10 : 1 // one decimal place for percentage
+    return { key, value: value * factor }
+  },
+  decode: ({ key, value }) => {
+    let factor = key.endsWith("_") ? 10 : 1 // one decomal place for percentage
+    return { key, value: value / factor }
   }
 })
 const conditionalValues = array(object({
@@ -130,6 +119,23 @@ const conditionalValues = array(object({
     return conditionalValues
   }
 })
+
+// V2
+
+const artifactV2 = object({
+  setKey: artifactSet,
+  numStars: uint(1),
+  level: uint(2),
+  mainStatKey: stat,
+  slotKey: slot,
+  substats: array(substat)
+}, {
+  decode: art => {
+    art.id = ""
+    art.lock = false
+    return art
+  }
+})
 const weaponV2 = object({
   key: string,
   levelKey: string,
@@ -137,15 +143,7 @@ const weaponV2 = object({
   overrideMainVal: float,
   overrideSubVal: float,
 }, {
-  encode: value => {
-    const level = value.level
-    const ascIndex = ascensionMaxLevel.findIndex(maxLevel => level <= maxLevel)
-    const ascension = ascIndex < value.ascension ? "A" : ""
-    value.levelKey = `L${level}${ascension}`
-    value.overrideMainVal = 0
-    value.overrideSubVal = 0
-    return value
-  }, decode: object => {
+  decode: object => {
     const levelKey = object.levelKey
     delete object.levelKey
     delete object.overrideMainVal
@@ -178,19 +176,6 @@ const characterV2 = object({
   conditionalValues,
   reserved: array(uint(1)),
 }, {
-  encode: (value) => {
-    const roundedLevel = Math.round(value.level / 10) * 10 // Nearest level
-    const maxLevel = ascensionMaxLevel[value.ascension]
-    value.levelKey = `L${roundedLevel}${roundedLevel === maxLevel ? "" : "A"}`
-    if (roundedLevel === value.level) value.overrideLevel = 0
-    else value.overrideLevel = value.level
-
-    if (value.characterKey === "traveler")
-      value.reserved = [elements.indexOf(value.elementKey)]
-    else
-      value.reserved = []
-    return value
-  },
   decode: (value) => {
     const isAscended = value.levelKey.slice(-1) === "A"
     const levelString = isAscended ? value.levelKey.slice(1, -1) : value.levelKey.slice(1)
@@ -222,8 +207,8 @@ const characterV2 = object({
     delete value.overrideLevel
     delete value.levelKey
 
-    if (value.characterKey === "traveler") {
-      value.elementKey = elements[value.reserved[0]] ?? "anemo"
+    if (value.characterKey === "Traveler") {
+      value.elementKey = allElements[value.reserved[0] - 1] ?? "anemo"
     }
     delete value.reserved
     return value
@@ -231,12 +216,100 @@ const characterV2 = object({
 })
 
 const flexV2 = object({
-  artifacts: array(artifact),
+  artifacts: array(artifactV2),
   character: characterV2,
 })
 
+// V3
+
+const artifactV3 = object({
+  setKey: artifactSet,
+  // numStars
+  level: uint(2),
+  // slotKey
+  mainStatKey: stat,
+  substats: array(substat),
+  location: optional(allCharacterKeys),
+
+  // Mixed
+  raritySlotKey: uint(1),
+}, {
+  encode: value => {
+    value.raritySlotKey = allSlotKeys.indexOf(value.slotKey) * 8 + value.rarity
+    return value
+  },
+  decode: value => {
+    value.rarity = value.raritySlotKey % 8
+    value.slotKey = allSlotKeys[(value.raritySlotKey - value.rarity) / 8]
+    return value
+  }
+})
+const weaponV3 = object({
+  key: string,
+  // level, ascension, refine
+  location: optional(allCharacterKeys),
+
+  // Mixed
+  ascensionRefine: uint(1),
+  levelDiff: uint(1),
+}, {
+  encode: object => {
+    object.ascensionRefine = object.ascension * 8 + object.refine
+    object.levelDiff = ascensionMaxLevel[object.ascension] - object.level
+    return object
+  },
+  decode: object => {
+    object.refine = object.ascensionRefine % 8
+    object.ascension = (object.ascensionRefine - object.refine) / 8
+    object.level = ascensionMaxLevel[object.ascension] - object.levelDiff
+    return object
+  }
+})
+const characterV3 = object({
+  key: characterKey,
+  // level, ascension
+  hitMode,
+  // elementKey
+  reactionMode,
+  conditionalValues,
+  baseStatOverrides: sparse(string, float),
+  talent: object({ auto: uint(1), skill: uint(1), burst: uint(1) }),
+  infusionAura: element,
+  // constellation
+
+  // Mixed
+  levelDiff: uint(1),
+  ascensionConstellation: uint(1),
+  reserved: array(uint(1)),
+}, {
+  encode: (value) => {
+    value.levelDiff = ascensionMaxLevel[value.ascension] - value.level
+    value.ascensionConstellation = value.ascension * 8 + value.constellation
+
+    if ((value.characterKey as CharacterKey) !== "Traveler") value.reserved = []
+    else value.reserved = [allElements.indexOf(value.elementKey)]
+
+    return value
+  },
+  decode: (value) => {
+    value.constellation = value.ascensionConstellation % 8
+    value.ascension = (value.ascensionConstellation - value.constellation) / 8
+    value.level = ascensionMaxLevel[value.ascension] - value.levelDiff
+
+    if ((value.characterKey as CharacterKey) === "Traveler")
+      value.elementKey = allElements[value.reserved[0]] ?? "anemo"
+    return value
+  },
+})
+
+const flexV3 = object({
+  characters: array(characterV3),
+  artifacts: array(artifactV3),
+  weapons: array(weaponV3),
+})
+
 export const schemas = {
-  flexV2
+  flexV2, flexV3
 }
 // For testing purpose only, no need to maintain strict ordering
 export const constants = {

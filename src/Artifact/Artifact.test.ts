@@ -84,7 +84,7 @@ describe('Substat Rolls/efficiency', () => {
 test('getAllArtifactSetEffectsObj', async () => {
   const sheets = await ArtifactSheet.getAll()
   const stats1 = {}
-  expect(Artifact.setEffectsObjs(sheets, stats1 as any).RetracingBolide).toEqual({ 2: { powShield_: 35 } })
+  expect(Artifact.setEffectsObjs(sheets, stats1 as any).RetracingBolide).toEqual({ 2: { shield_: 35 } })
   const stats2 = { conditionalValues: { artifact: { RetracingBolide: { 4: [1] } } } }
-  expect(Artifact.setEffectsObjs(sheets, stats2 as any).RetracingBolide).toEqual({ 2: { powShield_: 35 }, 4: { normal_dmg_: 40, charged_dmg_: 40 } })
+  expect(Artifact.setEffectsObjs(sheets, stats2 as any).RetracingBolide).toEqual({ 2: { shield_: 35 }, 4: { normal_dmg_: 40, charged_dmg_: 40 } })
 })

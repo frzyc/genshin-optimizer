@@ -1,16 +1,11 @@
 import { initialBuildSettings } from "../Build/BuildSetting"
 import { ascensionMaxLevel } from "../Data/CharacterData"
+import { allCharacterKeys } from "../Types/consts"
 import { DBStorage } from "./DBStorage"
 import { getDBVersion, setDBVersion } from "./utils"
 
-const currentDBVersion = 7
-
 export function migrate(storage: DBStorage): { migrated: boolean } {
   const version = getDBVersion(storage)
-  const report = { migrated: false }
-
-  if (version > currentDBVersion)
-    throw new Error("Database is not supported")
 
   // Update version upon each successful migration, so we don't
   // need to migrate that part again if later parts fail.
@@ -19,14 +14,13 @@ export function migrate(storage: DBStorage): { migrated: boolean } {
   if (version < 5) { migrateV4ToV5(storage); setDBVersion(storage, 5) }
   if (version < 6) { migrateV5ToV6(storage); setDBVersion(storage, 6) }
   if (version < 7) { migrateV6ToV7(storage); setDBVersion(storage, 7) }
+  if (version < 8) { migrateV7ToV8(storage); setDBVersion(storage, 8) }
 
-  if (version < currentDBVersion)
-    report.migrated = true
+  if (version > 8) throw new Error(`Database version ${version} is not supported`)
 
-  setDBVersion(storage, currentDBVersion)
-
-  return report
+  return { migrated: version < getDBVersion(storage) }
 }
+
 /// v4.0.0 - v4.23.2
 function migrateV2ToV3(storage: DBStorage) {
   const state = storage.get("CharacterDisplay.state")
@@ -41,14 +35,15 @@ function migrateV2ToV3(storage: DBStorage) {
       const value = storage.get(key)
       if (!value) continue
       if (value.buildSetting) {
-        const { artifactsAssumeFull = false, ascending = false, mainStat = ["", "", ""], setFilters = [{ key: "", num: 0 }, { key: "", num: 0 }, { key: "", num: 0 }], useLockedArts = false } = value.buildSetting ?? {}
-        value.buildSettings = { mainStatAssumptionLevel: artifactsAssumeFull ? 20 : 0, ascending, mainStatKeys: mainStat, setFilters, useLockedArts }
+        const { artifactsAssumeFull = false, ascending = false, mainStat = ["", "", ""], setFilters = [{ key: "", num: 0 }, { key: "", num: 0 }, { key: "", num: 0 }], useExcludedArts = false } = value.buildSetting ?? {}
+        value.buildSettings = { mainStatAssumptionLevel: artifactsAssumeFull ? 20 : 0, ascending, mainStatKeys: mainStat, setFilters, useExcludedArts }
       }
 
       storage.set(key, value)
     }
   }
 }
+
 /// v5.0.0 - v5.7.15
 function migrateV3ToV4(storage: DBStorage) { // 
   // Convert anemo traveler to traveler, and remove geo traveler
@@ -78,6 +73,7 @@ function migrateV3ToV4(storage: DBStorage) { //
     }
   }
 }
+
 /// v5.8.0 - v5.11.5
 function migrateV4ToV5(storage: DBStorage) {
   for (const key of storage.keys) {
@@ -114,7 +110,8 @@ function migrateV5ToV6(storage: DBStorage) {
     if (key.startsWith("char_")) {
       const character = storage.get(key)
 
-      //migrate character weapon levels
+      // Migrate character weapon levels
+      if (!character.weapon) continue
       const levelKey = character.weapon.levelKey ?? "L1"
       const [, lvla] = levelKey.split("L")
       const level = parseInt(lvla)
@@ -132,7 +129,7 @@ function migrateV5ToV6(storage: DBStorage) {
   }
 }
 
-// 5.20.0 - present
+// 5.20.0 - 6.0.0
 function migrateV6ToV7(storage: DBStorage) {
   for (const key of storage.keys) {
     if (key.startsWith("char_")) {
@@ -147,5 +144,80 @@ function migrateV6ToV7(storage: DBStorage) {
       }
       storage.set(key, character)
     }
+  }
+}
+
+// 6.0.0 - present
+function migrateV7ToV8(storage: DBStorage) {
+  const weaponKeyChangeMap = {
+    "PrototypeAminus": "PrototypeArchaic",
+    "PrototypeGrudge": "PrototypeStarglitter",
+    "PrototypeMalice": "PrototypeAmber"
+  } as const
+  let keyInd = 1;
+  function generateWeaponId(storage: DBStorage) {
+    let key = `weapon_${keyInd++}`
+    while (storage.keys.includes(key))
+      key = `weapon_${keyInd++}`
+    return key
+  }
+
+  const charMap = Object.fromEntries(allCharacterKeys.map(k => [k.toLowerCase(), k]))
+  for (const key of storage.keys) {
+    if (key.startsWith("char_")) {
+      const character = storage.get(key), characterKey = character.characterKey
+      // We delete old key upon validation
+
+      const newCharacterKey = charMap[characterKey]
+
+      // Rename characterKey
+      character.key = newCharacterKey
+      // Rename conditionalValues with characterKey
+      if (character.conditionalValues?.character?.[characterKey]) {
+        character.conditionalValues.character[newCharacterKey] = character.conditionalValues?.character?.[characterKey]
+        delete character.conditionalValues?.character?.[characterKey]
+      }
+
+      // Convert base-0 `talentLevelKeys` to base-1 `talent`
+      if (typeof character.talentLevelKeys === "object") {
+        character.talent = Object.fromEntries(
+          Object.entries(character.talentLevelKeys)
+            .map(([key, value]: [any, any]) => [key, value + 1]))
+      }
+
+      //rename buildSettings.useLockedArts to buildSettings.useExcludedArts
+      if (character.buildSettings?.useLockedArts !== undefined) {
+        character.buildSettings.useExcludedArts = character.buildSettings.useLockedArts
+        delete character.buildSettings.useLockedArts
+      }
+
+      const { weapon, ...rest } = character
+      if (!weapon) continue
+      if (weaponKeyChangeMap[weapon.key])
+        weapon.key = weaponKeyChangeMap[weapon.key]
+      weapon.location = newCharacterKey
+      weapon.refine = weapon.refineIndex + 1
+      storage.set(generateWeaponId(storage), weapon)
+      storage.set(`char_${newCharacterKey}`, rest)
+    } else if (key.startsWith("artifact_")) {
+      const artifact = storage.get(key)
+      artifact.location = charMap[artifact.location]
+      artifact.exclude = artifact.lock
+      artifact.rarity = artifact.numStars
+      storage.set(key, artifact)
+    }
+  }
+  const BuildsDisplayState = storage.get("BuildsDisplay.state")
+  if (BuildsDisplayState) {
+    BuildsDisplayState.characterKey = charMap[BuildsDisplayState.characterKey] ?? ""
+    // Limit maxBuildsToShow
+    BuildsDisplayState.maxBuildsToShow = BuildsDisplayState.maxBuildsToShow > 10 ? 5 : BuildsDisplayState.maxBuildsToShow
+    storage.set("BuildsDisplay.state", BuildsDisplayState)
+  }
+  const CharacterDisplayState = storage.get("CharacterDisplay.state")
+  if (CharacterDisplayState) {
+    CharacterDisplayState.characterKeyToEdit = charMap[CharacterDisplayState.charIdToEdit] ?? ""
+    delete CharacterDisplayState.charIdToEdit
+    storage.set("CharacterDisplay.state", CharacterDisplayState)
   }
 }

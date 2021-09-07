@@ -2,19 +2,20 @@ import Artifact from "../Artifact/Artifact";
 import { initialBuildSettings } from "../Build/BuildSetting";
 import { ascensionMaxLevel } from "../Data/CharacterData";
 import Stat from "../Stat";
-import { allMainStatKeys, allSubstats, IArtifact, IFlexArtifact, IFlexSubstat, Substat, SubstatKey } from "../Types/artifact";
-import { ICharacter, IFlexCharacter } from "../Types/character";
+import { allMainStatKeys, allSubstats, ICachedArtifact, IArtifact, ICachedSubstat, ISubstat, SubstatKey } from "../Types/artifact";
+import { ICachedCharacter, ICharacter } from "../Types/character";
 import { allArtifactRarities, allArtifactSets, allCharacterKeys, allElements, allHitModes, allReactionModes, allSlotKeys, allWeaponKeys } from "../Types/consts";
+import { IWeapon, ICachedWeapon } from "../Types/weapon";
 
 /// Returns the closest (not necessarily valid) artifact, including errors as necessary
-export function validateFlexArtifact(flex: IFlexArtifact, id: string): { artifact: IArtifact, errors: Displayable[] } {
-  const { location, lock, setKey, slotKey, numStars, mainStatKey } = flex
-  const level = Math.round(Math.min(Math.max(0, flex.level), numStars >= 3 ? numStars * 4 : 4))
-  const mainStatVal = Artifact.mainStatValue(mainStatKey, numStars, level)!
+export function validateArtifact(flex: IArtifact, id: string): { artifact: ICachedArtifact, errors: Displayable[] } {
+  const { location, exclude, lock, setKey, slotKey, rarity, mainStatKey } = flex
+  const level = Math.round(Math.min(Math.max(0, flex.level), rarity >= 3 ? rarity * 4 : 4))
+  const mainStatVal = Artifact.mainStatValue(mainStatKey, rarity, level)!
 
   const errors: Displayable[] = []
-  const substats: Substat[] = flex.substats.map(substat => ({ ...substat, rolls: [], efficiency: 0 }))
-  const validated: IArtifact = { id, setKey, location, slotKey, lock, mainStatKey, numStars, level, substats, mainStatVal }
+  const substats: ICachedSubstat[] = flex.substats.map(substat => ({ ...substat, rolls: [], efficiency: 0 }))
+  const validated: ICachedArtifact = { id, setKey, location, slotKey, exclude, lock, mainStatKey, rarity, level, substats, mainStatVal }
 
   const allPossibleRolls: { index: number, substatRolls: number[][] }[] = []
   let totalUnambiguousRolls = 0
@@ -30,7 +31,7 @@ export function validateFlexArtifact(flex: IFlexArtifact, id: string): { artifac
       return
     }
 
-    const possibleRolls = Artifact.getSubstatRolls(key, value, numStars)
+    const possibleRolls = Artifact.getSubstatRolls(key, value, rarity)
 
     if (possibleRolls.length) { // Valid Substat
       const possibleLengths = new Set(possibleRolls.map(roll => roll.length))
@@ -52,7 +53,7 @@ export function validateFlexArtifact(flex: IFlexArtifact, id: string): { artifac
 
   if (errors.length) return { artifact: validated, errors }
 
-  const { low, high } = Artifact.rollInfo(numStars), lowerBound = low + Math.floor(level / 4), upperBound = high + Math.floor(level / 4)
+  const { low, high } = Artifact.rollInfo(rarity), lowerBound = low + Math.floor(level / 4), upperBound = high + Math.floor(level / 4)
 
   let highestScore = -Infinity // -Max(substats.rolls[i].length) over ambiguous rolls
   const tryAllSubstats = (rolls: { index: number, roll: number[] }[], currentScore: number, total: number) => {
@@ -84,9 +85,9 @@ export function validateFlexArtifact(flex: IFlexArtifact, id: string): { artifac
   const totalRolls = substats.reduce((accu, { rolls }) => accu + rolls.length, 0)
 
   if (totalRolls > upperBound)
-    errors.push(`${numStars}-star artifact (level ${level}) should have no more than ${upperBound} rolls. It currently has ${totalRolls} rolls.`)
+    errors.push(`${rarity}-star artifact (level ${level}) should have no more than ${upperBound} rolls. It currently has ${totalRolls} rolls.`)
   else if (totalRolls < lowerBound)
-    errors.push(`${numStars}-star artifact (level ${level}) should have at least ${lowerBound} rolls. It currently has ${totalRolls} rolls.`)
+    errors.push(`${rarity}-star artifact (level ${level}) should have at least ${lowerBound} rolls. It currently has ${totalRolls} rolls.`)
 
   if (substats.some((substat) => !substat.key)) {
     let substat = substats.find(substat => (substat.rolls?.length ?? 0) > 1)
@@ -97,32 +98,33 @@ export function validateFlexArtifact(flex: IFlexArtifact, id: string): { artifac
   return { artifact: validated, errors }
 }
 /// Returns the closest flex artifact, or undefined if it's not recoverable
-export function validateDBArtifact(obj: any): IFlexArtifact | undefined {
+export function parseArtifact(obj: any): IArtifact | undefined {
   if (typeof obj !== "object") return
 
   let {
-    setKey, numStars, level, slotKey, mainStatKey, substats, location, lock,
+    setKey, rarity, level, slotKey, mainStatKey, substats, location, exclude, lock,
   } = obj ?? {}
 
   if (!allArtifactSets.includes(setKey) ||
     !allSlotKeys.includes(slotKey) ||
     !allMainStatKeys.includes(mainStatKey) ||
-    !allArtifactRarities.includes(numStars) ||
+    !allArtifactRarities.includes(rarity) ||
     typeof level !== "number" || level < 0 || level > 20)
     return // non-recoverable
 
-  substats = validateSubstats(substats)
+  substats = parseSubstats(substats)
   lock = !!lock
+  exclude = !!exclude
   level = Math.round(level)
   if (!allCharacterKeys.includes(location)) location = ""
-  return { setKey, numStars, level, slotKey, mainStatKey, substats, location, lock }
+  return { setKey, rarity, level, slotKey, mainStatKey, substats, location, exclude, lock }
 }
 /// Return a new flex artifact from given artifact. All extra keys are removed
-export function extractFlexArtifact(artifact: IArtifact): IFlexArtifact {
-  const { setKey, numStars, level, slotKey, mainStatKey, substats, location, lock } = artifact
-  return { setKey, numStars, level, slotKey, mainStatKey, substats: substats.map(substat => ({ key: substat.key, value: substat.value })), location, lock }
+export function removeArtifactCache(artifact: ICachedArtifact): IArtifact {
+  const { setKey, rarity, level, slotKey, mainStatKey, substats, location, exclude, lock } = artifact
+  return { setKey, rarity, level, slotKey, mainStatKey, substats: substats.map(substat => ({ key: substat.key, value: substat.value })), location, exclude, lock }
 }
-function validateSubstats(obj: any): IFlexSubstat[] {
+function parseSubstats(obj: any): ISubstat[] {
   if (!Array.isArray(obj))
     return new Array(4).map(_ => ({ key: "", value: 0 }))
   const substats = obj.map(({ key = undefined, value = undefined }) => {
@@ -136,30 +138,30 @@ function validateSubstats(obj: any): IFlexSubstat[] {
   return substats
 }
 /// Returns the closest character
-export function validateFlexCharacter(flex: IFlexCharacter): ICharacter {
+export function validateCharacter(flex: ICharacter): ICachedCharacter {
   // TODO: Add more validations to make sure the returned value is a "valid" character
   return {
+    equippedArtifacts: Object.fromEntries(allSlotKeys.map(slot => [slot, ""])) as any,
+    equippedWeapon: "",
     ...flex,
-    equippedArtifacts: Object.fromEntries(allSlotKeys.map(slot => [slot, ""])) as any
   }
 }
 /// Returns the closest flex character, or undefined if it's not recoverable
-export function validateDBCharacter(obj: any, key: string): IFlexCharacter | undefined {
+export function parseCharacter(obj: any, key: string): ICharacter | undefined {
   if (typeof obj !== "object") return
 
   let {
-    characterKey, level, ascension, hitMode, elementKey, reactionMode, conditionalValues,
-    baseStatOverrides, weapon, talentLevelKeys, infusionAura, constellation, buildSettings,
+    key: characterKey, level, ascension, hitMode, elementKey, reactionMode, conditionalValues,
+    baseStatOverrides, talent, infusionAura, constellation, buildSettings,
   } = obj
 
   if (key !== `char_${characterKey}` ||
     !allCharacterKeys.includes(characterKey) ||
-    typeof level !== "number" || level < 0 || level > 90 ||
-    typeof weapon !== "object" || !allWeaponKeys.includes(weapon.key))
+    typeof level !== "number" || level < 0 || level > 90)
     return // non-recoverable
 
   if (!allHitModes.includes(hitMode)) hitMode = "avgHit"
-  if (characterKey !== "traveler") elementKey = undefined
+  if (characterKey !== "Traveler") elementKey = undefined
   else if (!allElements.includes(elementKey)) elementKey = "anemo"
   if (!allReactionModes.includes(reactionMode)) reactionMode = null
   if (!allElements.includes(infusionAura)) infusionAura = ""
@@ -169,24 +171,17 @@ export function validateDBCharacter(obj: any, key: string): IFlexCharacter | und
     level > ascensionMaxLevel[ascension] ||
     level < (ascensionMaxLevel[ascension - 1] ?? 0))
     ascension = ascensionMaxLevel.findIndex(maxLvl => level <= maxLvl)
-  if (typeof talentLevelKeys !== "object") talentLevelKeys = { auto: 0, skill: 0, burst: 0 }
+  if (typeof talent !== "object") talent = { auto: 1, skill: 1, burst: 1 }
   else {
-    let { auto = 0, skill = 0, burst = 0 } = talentLevelKeys
-    if (typeof auto !== "number" || auto < 0 || auto > 15) auto = 0
-    if (typeof skill !== "number" || skill < 0 || skill > 15) skill = 0
-    if (typeof burst !== "number" || burst < 0 || burst > 15) burst = 0
-    talentLevelKeys = { auto, skill, burst }
+    let { auto, skill, burst } = talent
+    if (typeof auto !== "number" || auto < 1 || auto > 15) auto = 1
+    if (typeof skill !== "number" || skill < 1 || skill > 15) skill = 1
+    if (typeof burst !== "number" || burst < 1 || burst > 15) burst = 1
+    talent = { auto, skill, burst }
   }
-  {
-    let { key, level, ascension, refineIndex } = weapon
-    if (typeof level !== "number" || level < 1 || level > 90) level = 1
-    if (typeof ascension !== "number" || ascension < 0 || ascension > 6) ascension = 0
-    if (typeof refineIndex !== "number" || refineIndex < 0 || refineIndex > 5) refineIndex = 0
-    weapon = { key, level, ascension, refineIndex }
-  }
-  {
+  {//buildSettings
     if (typeof buildSettings !== "object") buildSettings = {}
-    let { setFilters, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useLockedArts, useEquippedArts, ascending } = buildSettings ?? {}
+    let { setFilters, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, ascending } = buildSettings ?? {}
     if (!Array.isArray(setFilters)) setFilters = [{ key: "", num: 0 }, { key: "", num: 0 }, { key: "", num: 0 }]
     if (typeof statFilters !== "object") statFilters = {}
 
@@ -204,26 +199,53 @@ export function validateDBCharacter(obj: any, key: string): IFlexCharacter | und
     if (!optimizationTarget) optimizationTarget = "finalAtk"
     if (typeof mainStatAssumptionLevel !== "number" || mainStatAssumptionLevel < 0 || mainStatAssumptionLevel > 20)
       mainStatAssumptionLevel = 0
-    useLockedArts = !!useLockedArts
+    useExcludedArts = !!useExcludedArts
     useEquippedArts = !!useEquippedArts
     ascending = !!ascending
-    buildSettings = { setFilters, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useLockedArts, useEquippedArts, ascending }
+    buildSettings = { setFilters, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, ascending }
   }
 
   // TODO: validate baseStatOverrides, conditionalValues
-  return {
-    characterKey, level, ascension, hitMode, elementKey, reactionMode, conditionalValues,
-    baseStatOverrides, weapon, talentLevelKeys, infusionAura, constellation, buildSettings,
+  const result: ICharacter = {
+    key: characterKey, level, ascension, hitMode, reactionMode, conditionalValues,
+    baseStatOverrides, talent, infusionAura, constellation, buildSettings,
   }
+  if (elementKey) result.elementKey = elementKey
+  return result
 }
 /// Return a new flex character from given character. All extra keys are removed
-export function extractFlexCharacter(char: ICharacter): IFlexCharacter {
+export function removeCharacterCache(char: ICachedCharacter): ICharacter {
   const {
-    characterKey, level, ascension, hitMode, elementKey, reactionMode, conditionalValues,
-    baseStatOverrides, weapon, talentLevelKeys, infusionAura, constellation, buildSettings,
+    key: characterKey, level, ascension, hitMode, elementKey, reactionMode, conditionalValues,
+    baseStatOverrides, talent, infusionAura, constellation, buildSettings,
   } = char
-  return {
-    characterKey, level, ascension, hitMode, elementKey, reactionMode, conditionalValues,
-    baseStatOverrides, weapon, talentLevelKeys, infusionAura, constellation, buildSettings,
+  const result: ICharacter = {
+    key: characterKey, level, ascension, hitMode, reactionMode, conditionalValues,
+    baseStatOverrides, talent, infusionAura, constellation, buildSettings,
   }
+  if (elementKey) result.elementKey = elementKey
+  return result
+}
+
+export function validateWeapon(flex: IWeapon, id: string): ICachedWeapon {
+  //TODO: weapon validation
+  return { ...flex, id }
+}
+export function parseWeapon(obj: any): IWeapon | undefined {
+  if (typeof obj !== "object") return
+
+  let { key, level, ascension, refine, location, } = obj
+  if (!allWeaponKeys.includes(key)) return
+  if (typeof level !== "number" || level < 1 || level > 90) level = 1
+  if (typeof ascension !== "number" || ascension < 0 || ascension > 6) ascension = 0
+  // TODO: Check if level-ascension matches
+  if (typeof refine !== "number" || refine < 1 || refine > 5) refine = 1
+  if (!allCharacterKeys.includes(location)) location = ""
+
+  return { key, level, ascension, refine, location, }
+}
+/// Return a new flex character from given character. All extra keys are removed
+export function removeWeaponCache(weapon: ICachedWeapon): IWeapon {
+  const { key, level, ascension, refine, location, } = weapon
+  return { key, level, ascension, refine, location, }
 }

@@ -18,7 +18,6 @@ type ConditionalDisplayProps = {
 
 export default function ConditionalDisplay({ conditional, equippedBuild, newBuild, characterDispatch, editable, fieldClassName }: ConditionalDisplayProps) {
   const stats = newBuild ? newBuild : equippedBuild
-  if (!stats) debugger
   const canShow = useMemo(() => Conditional.canShow(conditional, stats), [conditional, stats])
   const { stats: conditionalStats = {}, fields: conditionalFields = [], conditionalValue } = useMemo(() => canShow && Conditional.resolve(conditional, stats, undefined), [canShow, conditional, stats])
   const displayFields = useMemo(() => canShow && [...statsToFields(conditionalStats, stats), ...conditionalFields], [canShow, conditionalStats, stats, conditionalFields])

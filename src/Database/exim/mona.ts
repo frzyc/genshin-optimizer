@@ -1,11 +1,11 @@
 import { ArtCharDatabase } from '../Database';
-import { IFlexArtifact, MainStatKey, SubstatKey } from '../../Types/artifact';
-import { validateDBArtifact, validateFlexArtifact } from '../../Database/validation';
+import { IArtifact, MainStatKey, SubstatKey } from '../../Types/artifact';
+import { parseArtifact } from '../../Database/validation';
 import { ArtifactSetKey, SlotKey } from "../../Types/consts";
 import { DBStorage, SandboxStorage } from '../DBStorage';
 
 const DefaultVersion = "1";
-const GetConvertedArtifactsOfVersion: Dict<string, (data: any) => { artifacts: IFlexArtifact[], invalidCount: number }> = {
+const GetConvertedArtifactsOfVersion: Dict<string, (data: any) => { artifacts: IArtifact[], invalidCount: number }> = {
   "1": importMona1
 };
 
@@ -41,7 +41,7 @@ export function importMona(dataObj: any, oldDatabase: ArtCharDatabase): IImportR
     artifactIdsToRemove.delete(id)
 
     if (!duplicated.length)
-      newDatabase.updateArt(validateFlexArtifact(artifact, id).artifact)
+      newDatabase.updateArt(artifact, id)
 
     if (duplicated.length) result.dupCount++
     else if (upgraded.length) result.upgradeCount++
@@ -54,9 +54,9 @@ export function importMona(dataObj: any, oldDatabase: ArtCharDatabase): IImportR
 // backup 0: https://github.com/wormtql/genshin_artifact/blob/main/src/assets/artifacts/data/*/index.js
 // backup 1: https://github.com/YuehaiTeam/cocogoat/blob/main/src/App/export/Mona.ts
 
-function importMona1(dataObj: any): { artifacts: IFlexArtifact[], invalidCount: number } {
+function importMona1(dataObj: any): { artifacts: IArtifact[], invalidCount: number } {
   let invalidCount = 0
-  const artifacts: IFlexArtifact[] = []
+  const artifacts: IArtifact[] = []
 
   for (const property in dataObj) {
     if (!(property in ArtifactSlotKeyMap))
@@ -68,9 +68,9 @@ function importMona1(dataObj: any): { artifacts: IFlexArtifact[], invalidCount: 
         // invalidCount++//do not increment since its technically not an invalid artifact, just not part of our system.
         continue
       }
-      const flex = validateDBArtifact({
+      const flex = parseArtifact({
         setKey: ArtifactSetKeyMap[setName],
-        numStars: star,
+        rarity: star,
         level,
         slotKey: ArtifactSlotKeyMap[position],
         mainStatKey: ArtifactMainStatKeyMap[mainTag.name],
