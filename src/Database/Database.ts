@@ -4,7 +4,7 @@ import { allSlotKeys, CharacterKey, SlotKey } from "../Types/consts";
 import { deepClone, getRandomInt } from "../Util/Util";
 import { DataManager } from "./DataManager";
 import { migrate } from "./migration";
-import { validateFlexArtifact, validateDBCharacter, validateDBArtifact, extractFlexArtifact, validateFlexCharacter, extractFlexCharacter, validateDBWeapon, validateFlexWeapon, extractFlexWeapon } from "./validation";
+import { validateArtifact, parseCharacter, parseArtifact, removeArtifactCache, validateCharacter, removeCharacterCache, parseWeapon, validateWeapon, removeWeaponCache } from "./validation";
 import { DBStorage, dbStorage } from "./DBStorage";
 import { ICachedWeapon } from "../Types/weapon";
 import { createContext } from "react";
@@ -31,13 +31,13 @@ export class ArtCharDatabase {
     // Load into memory and verify database integrity
     for (const key of storage.keys) {
       if (key.startsWith("char_")) {
-        const flex = validateDBCharacter(storage.get(key), key)
+        const flex = parseCharacter(storage.get(key), key)
         if (!flex) {
           // Non-recoverable
           storage.remove(key)
           continue
         }
-        const character = validateFlexCharacter(flex)
+        const character = validateCharacter(flex)
         // Use relations from artifact
         character.equippedArtifacts = Object.fromEntries(allSlotKeys.map(slot => [slot, ""])) as any
 
@@ -49,7 +49,7 @@ export class ArtCharDatabase {
 
     for (const key of storage.keys) {
       if (key.startsWith("artifact_")) {
-        const flex = validateDBArtifact(storage.get(key))
+        const flex = parseArtifact(storage.get(key))
         if (!flex) {
           // Non-recoverable
           storage.remove(key)
@@ -62,7 +62,7 @@ export class ArtCharDatabase {
           this.chars.data[location]!.equippedArtifacts[slotKey] = key // equiped on `location`
         } else flex.location = ""
 
-        const { artifact } = validateFlexArtifact(flex, key)
+        const { artifact } = validateArtifact(flex, key)
 
         this.arts.set(artifact.id, artifact)
         // Save migrated version back to db
@@ -71,7 +71,7 @@ export class ArtCharDatabase {
     }
     for (const key of storage.keys) {
       if (key.startsWith("weapon_")) {
-        const flex = validateDBWeapon(storage.get(key))
+        const flex = parseWeapon(storage.get(key))
         if (!flex) {
           // Non-recoverable
           storage.remove(key)
@@ -84,7 +84,7 @@ export class ArtCharDatabase {
           this.chars.data[location]!.equippedWeapon = key // equiped on `location`
         } else flex.location = ""
 
-        const weapon = validateFlexWeapon(flex, key)
+        const weapon = validateWeapon(flex, key)
 
         this.weapons.set(key, weapon)
         // Save migrated version back to db
@@ -94,15 +94,15 @@ export class ArtCharDatabase {
   }
 
   private saveArt(key: string, art: ICachedArtifact) {
-    this.storage.set(key, extractFlexArtifact(art))
+    this.storage.set(key, removeArtifactCache(art))
     this.arts.set(key, art)
   }
   private saveChar(key: CharacterKey, char: ICachedCharacter) {
-    this.storage.set(`char_${key}`, extractFlexCharacter(char))
+    this.storage.set(`char_${key}`, removeCharacterCache(char))
     this.chars.set(key, char)
   }
   private saveWeapon(key: string, weapon: ICachedWeapon) {
-    this.storage.set(key, extractFlexWeapon(weapon))
+    this.storage.set(key, removeWeaponCache(weapon))
     this.weapons.set(key, weapon)
   }
   // TODO: Make theses `_` functions private once we migrate to use `followXXX`,

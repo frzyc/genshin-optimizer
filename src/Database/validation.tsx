@@ -8,7 +8,7 @@ import { allArtifactRarities, allArtifactSets, allCharacterKeys, allElements, al
 import { IWeapon, ICachedWeapon } from "../Types/weapon";
 
 /// Returns the closest (not necessarily valid) artifact, including errors as necessary
-export function validateFlexArtifact(flex: IArtifact, id: string): { artifact: ICachedArtifact, errors: Displayable[] } {
+export function validateArtifact(flex: IArtifact, id: string): { artifact: ICachedArtifact, errors: Displayable[] } {
   const { location, exclude, lock, setKey, slotKey, numStars, mainStatKey } = flex
   const level = Math.round(Math.min(Math.max(0, flex.level), numStars >= 3 ? numStars * 4 : 4))
   const mainStatVal = Artifact.mainStatValue(mainStatKey, numStars, level)!
@@ -98,7 +98,7 @@ export function validateFlexArtifact(flex: IArtifact, id: string): { artifact: I
   return { artifact: validated, errors }
 }
 /// Returns the closest flex artifact, or undefined if it's not recoverable
-export function validateDBArtifact(obj: any): IArtifact | undefined {
+export function parseArtifact(obj: any): IArtifact | undefined {
   if (typeof obj !== "object") return
 
   let {
@@ -112,7 +112,7 @@ export function validateDBArtifact(obj: any): IArtifact | undefined {
     typeof level !== "number" || level < 0 || level > 20)
     return // non-recoverable
 
-  substats = validateSubstats(substats)
+  substats = parseSubstats(substats)
   lock = !!lock
   exclude = !!exclude
   level = Math.round(level)
@@ -120,11 +120,11 @@ export function validateDBArtifact(obj: any): IArtifact | undefined {
   return { setKey, numStars, level, slotKey, mainStatKey, substats, location, exclude, lock }
 }
 /// Return a new flex artifact from given artifact. All extra keys are removed
-export function extractFlexArtifact(artifact: ICachedArtifact): IArtifact {
+export function removeArtifactCache(artifact: ICachedArtifact): IArtifact {
   const { setKey, numStars, level, slotKey, mainStatKey, substats, location, exclude, lock } = artifact
   return { setKey, numStars, level, slotKey, mainStatKey, substats: substats.map(substat => ({ key: substat.key, value: substat.value })), location, exclude, lock }
 }
-function validateSubstats(obj: any): IFlexSubstat[] {
+function parseSubstats(obj: any): IFlexSubstat[] {
   if (!Array.isArray(obj))
     return new Array(4).map(_ => ({ key: "", value: 0 }))
   const substats = obj.map(({ key = undefined, value = undefined }) => {
@@ -138,7 +138,7 @@ function validateSubstats(obj: any): IFlexSubstat[] {
   return substats
 }
 /// Returns the closest character
-export function validateFlexCharacter(flex: ICharacter): ICachedCharacter {
+export function validateCharacter(flex: ICharacter): ICachedCharacter {
   // TODO: Add more validations to make sure the returned value is a "valid" character
   return {
     equippedArtifacts: Object.fromEntries(allSlotKeys.map(slot => [slot, ""])) as any,
@@ -147,7 +147,7 @@ export function validateFlexCharacter(flex: ICharacter): ICachedCharacter {
   }
 }
 /// Returns the closest flex character, or undefined if it's not recoverable
-export function validateDBCharacter(obj: any, key: string): ICharacter | undefined {
+export function parseCharacter(obj: any, key: string): ICharacter | undefined {
   if (typeof obj !== "object") return
 
   let {
@@ -212,7 +212,7 @@ export function validateDBCharacter(obj: any, key: string): ICharacter | undefin
   }
 }
 /// Return a new flex character from given character. All extra keys are removed
-export function extractFlexCharacter(char: ICachedCharacter): ICharacter {
+export function removeCharacterCache(char: ICachedCharacter): ICharacter {
   const {
     characterKey, level, ascension, hitMode, elementKey, reactionMode, conditionalValues,
     baseStatOverrides, talent, infusionAura, constellation, buildSettings,
@@ -223,11 +223,11 @@ export function extractFlexCharacter(char: ICachedCharacter): ICharacter {
   }
 }
 
-export function validateFlexWeapon(flex: IWeapon, id: string): ICachedWeapon {
+export function validateWeapon(flex: IWeapon, id: string): ICachedWeapon {
   //TODO: weapon validation
   return { ...flex, id }
 }
-export function validateDBWeapon(obj: any): IWeapon | undefined {
+export function parseWeapon(obj: any): IWeapon | undefined {
   if (typeof obj !== "object") return
 
   let { key, level, ascension, refine, location, } = obj
@@ -241,7 +241,7 @@ export function validateDBWeapon(obj: any): IWeapon | undefined {
   return { key, level, ascension, refine, location, }
 }
 /// Return a new flex character from given character. All extra keys are removed
-export function extractFlexWeapon(weapon: ICachedWeapon): IWeapon {
+export function removeWeaponCache(weapon: ICachedWeapon): IWeapon {
   const { key, level, ascension, refine, location, } = weapon
   return { key, level, ascension, refine, location, }
 }

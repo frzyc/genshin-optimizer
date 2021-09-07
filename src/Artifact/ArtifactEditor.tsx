@@ -6,7 +6,7 @@ import { Trans, useTranslation } from 'react-i18next';
 import CustomFormControl from '../Components/CustomFormControl';
 import { Stars } from '../Components/StarDisplay';
 import { DatabaseContext } from '../Database/Database';
-import { validateFlexArtifact } from '../Database/validation';
+import { validateArtifact } from '../Database/validation';
 import Stat from '../Stat';
 import { allSubstats, ICachedArtifact, IArtifact, IFlexSubstat } from '../Types/artifact';
 import { ArtifactRarity, SlotKey } from '../Types/consts';
@@ -34,7 +34,7 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: Artifac
   const artifactSheets = usePromise(ArtifactSheet.getAll(), [])
 
   const { artifact, errors } = useMemo(() => {
-    return flexArtifact ? validateFlexArtifact(flexArtifact, artifactIdToEdit) : { artifact: undefined, errors: [] }
+    return flexArtifact ? validateArtifact(flexArtifact, artifactIdToEdit) : { artifact: undefined, errors: [] }
   }, [flexArtifact, artifactIdToEdit])
 
   const artifactInEditor = artifact !== undefined

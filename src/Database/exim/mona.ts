@@ -1,6 +1,6 @@
 import { ArtCharDatabase } from '../Database';
 import { IArtifact, MainStatKey, SubstatKey } from '../../Types/artifact';
-import { validateDBArtifact, validateFlexArtifact } from '../../Database/validation';
+import { parseArtifact, validateArtifact } from '../../Database/validation';
 import { ArtifactSetKey, SlotKey } from "../../Types/consts";
 import { DBStorage, SandboxStorage } from '../DBStorage';
 
@@ -41,7 +41,7 @@ export function importMona(dataObj: any, oldDatabase: ArtCharDatabase): IImportR
     artifactIdsToRemove.delete(id)
 
     if (!duplicated.length)
-      newDatabase.updateArt(validateFlexArtifact(artifact, id).artifact)
+      newDatabase.updateArt(validateArtifact(artifact, id).artifact)
 
     if (duplicated.length) result.dupCount++
     else if (upgraded.length) result.upgradeCount++
@@ -68,7 +68,7 @@ function importMona1(dataObj: any): { artifacts: IArtifact[], invalidCount: numb
         // invalidCount++//do not increment since its technically not an invalid artifact, just not part of our system.
         continue
       }
-      const flex = validateDBArtifact({
+      const flex = parseArtifact({
         setKey: ArtifactSetKeyMap[setName],
         numStars: star,
         level,

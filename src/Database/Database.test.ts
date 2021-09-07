@@ -6,7 +6,7 @@ import { database, ArtCharDatabase } from "./Database"
 import * as data1 from "./Database.db1.test.json"
 import { dbStorage } from "./DBStorage"
 import { exportDB, importDB } from "./exim/dbJSON"
-import { validateFlexArtifact } from "./validation"
+import { validateArtifact } from "./validation"
 
 const baseAlbedo: ICachedCharacter = {
   characterKey: "Albedo",
@@ -128,8 +128,8 @@ describe("Database", () => {
     database.reloadStorage()
     const Albedo = deepClone(baseAlbedo)
     const Amber = deepClone(baseAmber)
-    const art1 = validateFlexArtifact(await randomizeArtifact(), "artifact_123").artifact
-    const art2 = validateFlexArtifact(await randomizeArtifact(), "artifact_456").artifact
+    const art1 = validateArtifact(await randomizeArtifact(), "artifact_123").artifact
+    const art2 = validateArtifact(await randomizeArtifact(), "artifact_456").artifact
     art1.slotKey = "circlet"
     art2.slotKey = "circlet"
     Albedo.talent.auto = 4

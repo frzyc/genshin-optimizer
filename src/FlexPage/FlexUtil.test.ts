@@ -2,7 +2,7 @@ import { character, artifacts, weapon, oldURL } from './FlexUtil.test.data'
 import { createFlexObj, parseFlexObj } from './FlexUtil'
 import { ArtCharDatabase } from '../Database/Database'
 import { SandboxStorage } from '../Database/DBStorage'
-import { extractFlexArtifact, extractFlexCharacter, extractFlexWeapon } from '../Database/validation'
+import { removeArtifactCache, removeCharacterCache, removeWeaponCache } from '../Database/validation'
 
 const storage = new SandboxStorage()
 storage.setString("db_ver", "8")
@@ -19,10 +19,10 @@ describe('flex import export', () => {
     const flexArtifacts = Object.values(flexCharacter.equippedArtifacts)
       .filter(id => id).map(id => database._getArt(id)!)
 
-    expect(extractFlexCharacter(flexCharacter)).toEqual(character)
-    expect(extractFlexWeapon(flexWeapon)).toEqual(weapon)
+    expect(removeCharacterCache(flexCharacter)).toEqual(character)
+    expect(removeWeaponCache(flexWeapon)).toEqual(weapon)
     expect(flexArtifacts.length).toEqual(artifacts.length)
-    expect(flexArtifacts.map(extractFlexArtifact)).toEqual(expect.arrayContaining(artifacts))
+    expect(flexArtifacts.map(removeArtifactCache)).toEqual(expect.arrayContaining(artifacts))
   })
   test('should support old format', () => {
     const [flexDatabase, flexCharacterKey] = parseFlexObj(oldURL.split("flex?")[1])!
@@ -35,9 +35,9 @@ describe('flex import export', () => {
     flexCharacter.conditionalValues = character.conditionalValues
     flexCharacter.infusionAura = 'pyro'
 
-    expect(extractFlexCharacter(flexCharacter)).toEqual(character)
-    expect(extractFlexWeapon(flexWeapon)).toEqual(weapon)
+    expect(removeCharacterCache(flexCharacter)).toEqual(character)
+    expect(removeWeaponCache(flexWeapon)).toEqual(weapon)
     expect(flexArtifacts.length).toEqual(artifacts.length)
-    expect(flexArtifacts.map(extractFlexArtifact)).toEqual(expect.arrayContaining(artifacts))
+    expect(flexArtifacts.map(removeArtifactCache)).toEqual(expect.arrayContaining(artifacts))
   })
 })
