@@ -1,4 +1,4 @@
-import { faBriefcase, faCheckSquare, faLock, faLockOpen, faSortAmountDownAlt, faSortAmountUp, faSquare, faToiletPaper, faToiletPaperSlash, faTrash, faUndo, faUserShield, faUserSlash } from '@fortawesome/free-solid-svg-icons';
+import { faBan, faBriefcase, faChartLine, faCheckSquare, faLock, faLockOpen, faSortAmountDownAlt, faSortAmountUp, faSquare, faTrash, faUndo, faUserShield, faUserSlash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useCallback, useContext, useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import { Button, ButtonGroup, ButtonToolbar, Card, Dropdown, InputGroup, ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
@@ -7,8 +7,8 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import ReactGA from 'react-ga';
 import { Trans, useTranslation } from 'react-i18next';
-import CharacterSheet from '../Character/CharacterSheet';
 import { CharacterSelectionDropdownList } from '../Character/CharacterSelection';
+import CharacterSheet from '../Character/CharacterSheet';
 import CustomFormControl from '../Components/CustomFormControl';
 import InfoComponent from '../Components/InfoComponent';
 import { Stars } from '../Components/StarDisplay';
@@ -142,9 +142,9 @@ export default function ArtifactDisplay(props) {
   else locationDisplay = <b>{locationCharacterSheet?.nameWIthIcon}</b>
 
   let excludedDisplay
-  if (filterExcluded === "excluded") excludedDisplay = <span><FontAwesomeIcon icon={faToiletPaperSlash} /> {t`lock.locked`}</span>
-  else if (filterExcluded === "included") excludedDisplay = <span><FontAwesomeIcon icon={faToiletPaper} /> {t`lock.unlocked`}</span>
-  else excludedDisplay = t("excludeDisplay", { value: t("exclude.any") })
+  if (filterExcluded === "excluded") excludedDisplay = <span><FontAwesomeIcon icon={faBan} /> {t`lock.locked`}</span>
+  else if (filterExcluded === "included") excludedDisplay = <span><FontAwesomeIcon icon={faChartLine} /> {t`lock.unlocked`}</span>
+  else excludedDisplay = t("lockDisplay", { value: t("lock.any") })
 
   const unequipArtifacts = () =>
     window.confirm(`Are you sure you want to unequip ${numUnequip} artifacts currently equipped on characters?`) &&
@@ -319,8 +319,8 @@ export default function ArtifactDisplay(props) {
                   </Dropdown.Toggle>
                   <Dropdown.Menu>
                     <Dropdown.Item onClick={() => filterDispatch({ filterExcluded: "" })}><Trans t={t} i18nKey="lock.any" >Any</Trans></Dropdown.Item>
-                    <Dropdown.Item onClick={() => filterDispatch({ filterExcluded: "excluded" })}><span><FontAwesomeIcon icon={faToiletPaperSlash} /> <Trans t={t} i18nKey="lock.excluded" >Locked</Trans></span></Dropdown.Item>
-                    <Dropdown.Item onClick={() => filterDispatch({ filterExcluded: "included" })}><span><FontAwesomeIcon icon={faToiletPaper} /> <Trans t={t} i18nKey="lock.included" >Unlocked</Trans></span></Dropdown.Item>
+                    <Dropdown.Item onClick={() => filterDispatch({ filterExcluded: "excluded" })}><span><FontAwesomeIcon icon={faBan} /> <Trans t={t} i18nKey="lock.locked" >Excluded</Trans></span></Dropdown.Item>
+                    <Dropdown.Item onClick={() => filterDispatch({ filterExcluded: "included" })}><span><FontAwesomeIcon icon={faChartLine} /> <Trans t={t} i18nKey="lock.unlocked" >Included</Trans></span></Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>
               </Col>

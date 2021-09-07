@@ -8,7 +8,7 @@ import img from './Weapon_Prototype_Grudge.png'
 const dmg_ = [8, 10, 12, 14, 16]
 const conditionals: IConditionals = {
   ma: {
-    name: st("afterUse.burst"),
+    name: st("afterUse.skill"),
     maxStack: 2,
     stats: stats => ({
       normal_dmg_: dmg_[stats.weapon.refineIndex],

@@ -1,4 +1,4 @@
-import { faBriefcase, faEdit, faInfoCircle, faLock, faLockOpen, faToiletPaper, faToiletPaperSlash, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { faBan, faBriefcase, faChartLine, faEdit, faInfoCircle, faLock, faLockOpen, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useContext, useEffect, useState } from 'react';
 import Badge from 'react-bootstrap/Badge';
@@ -139,8 +139,8 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
             {editable ? <OverlayTrigger placement="top"
               overlay={<Tooltip id="exclude-artifact-tip">{t`lockArtifactTip`}</Tooltip>}>
               <span className="d-inline-block">
-                <Button size="sm" onClick={() => database.excludeArtifact(id, !exclude)} className="rounded-0">
-                  <FontAwesomeIcon icon={exclude ? faToiletPaperSlash : faToiletPaper} className="fa-fw" />
+                <Button size="sm" onClick={() => database.excludeArtifact(id, !exclude)} className="rounded-0" variant={exclude ? "danger" : "success"}>
+                  <FontAwesomeIcon icon={exclude ? faBan : faChartLine} className="fa-fw" />
                 </Button>
               </span>
             </OverlayTrigger> : null}
