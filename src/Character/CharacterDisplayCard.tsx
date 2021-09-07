@@ -1,6 +1,6 @@
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
+import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import { Alert, ButtonGroup, Dropdown, Image, InputGroup, Nav, Tab } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
@@ -11,15 +11,13 @@ import { ArtifactSheet } from '../Artifact/ArtifactSheet';
 import CustomFormControl from '../Components/CustomFormControl';
 import { ascensionMaxLevel, milestoneLevels } from '../Data/CharacterData';
 import ElementalData from '../Data/ElementalData';
-import { database as localDatabase, DatabaseContext } from '../Database/Database';
+import { DatabaseContext } from '../Database/Database';
 import { ICachedCharacter } from '../Types/character';
 import { CharacterKey } from '../Types/consts';
 import { ICalculatedStats } from '../Types/stats';
-import { ICachedWeapon } from '../Types/weapon';
 import { useForceUpdate, usePromise } from '../Util/ReactUtil';
 import { clamp, deepClone } from '../Util/Util';
 import WeaponSheet from '../Weapon/WeaponSheet';
-import { defaultInitialWeapon } from '../Weapon/WeaponUtil';
 import Character from './Character';
 import CharacterArtifactPane from './CharacterDisplay/CharacterArtifactPane';
 import CharacterOverviewPane from './CharacterDisplay/CharacterOverviewPane';
@@ -100,16 +98,8 @@ export default function CharacterDisplayCard({ characterKey, setCharacterKey = (
     return database.followChar(characterKey, onDatabaseUpdate)
   }, [characterKey, onDatabaseUpdate, database])
 
-  useEffect(() => {
-    if (database !== localDatabase) return // Don't do anything to flex weapon
-    if (character.equippedWeapon) return database.followWeapon(character.equippedWeapon, onDatabaseUpdate)
-
-    if (!weaponSheets || !characterSheet?.weaponTypeKey)
-      return // Not fully loaded, we can't add default weapon, yet
-
-    const newWeapon: ICachedWeapon = defaultInitialWeapon(characterSheet.weaponTypeKey)
-    characterDispatch({ type: "weapon", id: database.updateWeapon(newWeapon) })
-  }, [character.equippedWeapon, weaponSheets, characterSheet?.weaponTypeKey, characterDispatch, onDatabaseUpdate, database])
+  useEffect(() => database.followWeapon(character.equippedWeapon, onDatabaseUpdate),
+    [character.equippedWeapon, onDatabaseUpdate, database])
 
   const newBuild = useMemo(() => {
     if (!propNewBuild) return

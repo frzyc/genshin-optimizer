@@ -267,30 +267,24 @@ export class ArtCharDatabase {
   }
   setWeaponLocation(weaponId: string, newCharKey: CharacterKey) {
     const newWeapon = deepClone(this.weapons.get(weaponId))
-    if (!newWeapon) return
+    const newChar = newCharKey ? deepClone(this.chars.get(newCharKey)) : undefined
+    if (!newWeapon || !newChar) return
 
     const oldCharKey = newWeapon.location
-    const newChar = newCharKey ? deepClone(this.chars.get(newCharKey))! : undefined
-    const oldChar = oldCharKey ? deepClone(this.chars.get(oldCharKey))! : undefined
+    const oldChar = oldCharKey ? deepClone(this.chars.get(oldCharKey)) : undefined
+    const oldWeaponId = newChar.equippedWeapon ?? ""
+    const oldWeapon = oldWeaponId ? deepClone(this.weapons.get(oldWeaponId)) : undefined
+
     newWeapon.location = newCharKey
-    if (oldChar) oldChar.equippedWeapon = ""//TODO when "unequipping an weapon from character, create a 1* weapon so character always have a weapon"
+    newChar.equippedWeapon = newWeapon.id
 
-    if (newChar) {
-      const oldWeaponId = newChar?.equippedWeapon ?? ""
-      const oldWeapon = oldWeaponId ? deepClone(this.weapons.get(oldWeaponId))! : undefined
-      newChar.equippedWeapon = newWeapon.id!
-
-      if (oldChar && oldWeapon) {
-        oldChar.equippedWeapon = oldWeapon.id!
-        oldWeapon.location = oldChar.key
-      } else if (oldWeapon) oldWeapon.location = ""
-
-      if (oldWeapon) this.saveWeapon(oldWeaponId, oldWeapon)
-    }
+    if (oldChar) oldChar.equippedWeapon = oldWeaponId // TODO when "unequipping an weapon from character, create a 1* weapon so character always have a weapon"
+    if (oldWeapon) oldWeapon.location = oldCharKey
 
     this.saveWeapon(weaponId, newWeapon)
-    if (newCharKey) this.saveChar(newCharKey, newChar!)
-    if (oldCharKey) this.saveChar(oldCharKey, oldChar!)
+    this.saveChar(newCharKey, newChar)
+    if (oldWeapon) this.saveWeapon(oldWeaponId, oldWeapon)
+    if (oldChar) this.saveChar(oldCharKey as any, oldChar)
   }
   equipArtifacts(charKey: CharacterKey, newArts: StrictDict<SlotKey, string>) {
     const char = this.chars.get(charKey)
