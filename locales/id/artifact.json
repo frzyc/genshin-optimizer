@@ -74,10 +74,10 @@
     "section3": "<0>Tas Artefak</0><p>Semua artefakmu yang telah kamu tambahkan ke GO ditampilkan di sini. Filter di sini memungkinkan kamu untuk lebih menyempurnakan tampilan artefakmu. </p><2>Contoh: Menentukan Artefak Makanan</2><p>Dengan memanfaatkan filter artefak, dan perhitungan efisiensi artefak, kamu dapat dengan cepat menentukan artefak untuk dijadikan makanan.</p><4>Dalam contoh ini, filter diatur sebagai berikut: </4><5><0>Batasi level hingga 0-8.</0><1>Buka artifefak dalam Tas</1><2>Menghilangkan kontribusi flat HP, flat DEF, dan Energy Recharge untuk perhitungan efisiensi.</2><3>Diurutkan berdasarkan Efisiensi Maks Naik.</3></5><p>Ini akan memfilter Tas artefak dengan artefak efisiensi terendah, untuk substat yang diinginkan.</p>"
   },
   "exclusionDisplay": "Terkunci: {{value}}",
-  "lock": {
+  "exclusion": {
     "any": "Apapun",
-    "locked": "Terkunci",
-    "unlocked": "Terbuka"
+    "excluded": "Terkunci",
+    "included": "Terbuka"
   },
   "sortMap": {
     "quality": "Kualitas",

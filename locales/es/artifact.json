@@ -76,10 +76,10 @@
     "section3": "<0>Inventario de artefactos</0><p>Aquí se muestran todos los artefactos que has añadido a GO. Los filtros aquí le permiten refinar aún más la vista de sus artefactos. </p><2>Ejemplo: Encontrar Artefactos de Forraje</2><p>Utilizando el filtro de artefactos, y los cálculos de eficiencia de los artefactos, puede encontrar rápidamente artefactos para usar como experiencia.</p><4>En este ejemplo, los filtros se establecen así: </4><5><0>Artefactos desbloqueados en el Inventario.</0><1>Con substats: ATQ plano y DEF plana.</1><2>Ordenados por Eficiencia Máxima Ascendente.</2></5><6>Una vez que los artefactos son usados como experiencia, haz clic en <1>Eliminar Artefactos</1> para eliminar los artefactos filtrados actuales.</6>"
   },
   "exclusionDisplay": "Bloqueado: {{value}}",
-  "lock": {
+  "exclusion": {
     "any": "Cualquiera",
-    "locked": "Bloqueado",
-    "unlocked": "Desbloqueado"
+    "excluded": "Bloqueado",
+    "included": "Desbloqueado"
   },
   "sortMap": {
     "quality": "Calidad",

@@ -76,10 +76,10 @@
     "section3": "<0>Inventário de Artefatos</0><p>Todos os seus artefatos que você adicionou ao GO são exibidos aqui. Os filtros permitem que você refine ainda mais sua visão de seus artefatos. </p><2>Exemplo: Encontrando Artefatos para Experiência</2><p>Ao utilizar o filtro e os cálculos de eficiência, você pode encontrar rapidamente um candidato para usar como experiência para outros artefatos.</p><4>Neste exemplo, os filtros são definidos desta forma: </4><5><0>Artefatos desbloqueados no inventário.</0><1>Com subatributos: ATK puro e DEF pura.</1><2>Ordenado por Eficiência Máxima Crescente.</2></5><6>Uma vez que os artefatos são utilizados como experiência, clique em <1>Excluir Artefatos</1> para excluir os artefatos filtrados atualmente.</6>"
   },
   "exclusionDisplay": "Bloqueado: {{value}}",
-  "lock": {
+  "exclusion": {
     "any": "Qualquer",
-    "locked": "Bloqueado",
-    "unlocked": "Desbloqueado"
+    "excluded": "Bloqueado",
+    "included": "Desbloqueado"
   },
   "sortMap": {
     "quality": "Qualidade",

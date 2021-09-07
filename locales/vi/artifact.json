@@ -76,10 +76,10 @@
     "section3": "<0>Túi thánh di vật</0><p>Tất cả những thánh di vật đã thêm vào của bạn được hiển thị ở đây. Bộ lọc ở đây cho phép bạn tìm kiếm thánh di vật dễ hơn. </p><2>Ví dụ: Tìm thánh di vật làm food</2><p>Bằng bộ lọc bạn có thể tìm kiếm thánh di vật làm food nhanh hơn.</p><4>Ở ví dụ này, bộ được thiết lập như này: </4><5><0>Thánh di vật không khóa trong túi.</0><1>Với chỉ số phụ: Tấn công và phòng ngự.</1><2>Xếp theo thứ tự hiệu suất tối đa tăng dần</2></5><6>Một khi thánh di vật đã được đem làm food, bấm vào <1>Xóa thánh di vật</1> để xóa thánh di vật vừa được lọc.</6>"
   },
   "exclusionDisplay": "Khóa: {{value}}",
-  "lock": {
+  "exclusion": {
     "any": "Bất kỳ",
-    "locked": "Đã khóa",
-    "unlocked": "Chưa khóa"
+    "excluded": "Đã khóa",
+    "included": "Chưa khóa"
   },
   "sortMap": {
     "quality": "Chất lượng",

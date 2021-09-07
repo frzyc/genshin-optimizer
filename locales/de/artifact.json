@@ -76,10 +76,10 @@
     "section3": "<0>Artefakt Inventar</0><p>Hier sind alle Artefakte zu sehen, die zum Genshin Optimizer hinzugefügt wurden. Mit den Filtern kannst du die Auswahl an angezeigten Artefakte weiter verfeinern.</p><2>Beispiel: Finding Fodder Artifacts</2><p>Durch die Verwendung von Filtern und Effizenz-Berechnungen können schnell Artefakte gefunden werden, die zur Aufwertung anderer Artefakte verwendet werden können.</p><4>In diesem Beispiel sind die Filter wie folgt gesetzt: </4><5><0>Level zwischen 0 und 8.</0><1>Nicht gesperrte im Inventar.</1><2>Ausschluss von LP, VTD und Aufladerate aus der Berechnung der Effizienz.</2><3>Aufsteigend sortiert nach maximaler Effizienz.</3></5><p>Dies sortiert die Artefakte nach geringster Effizienz für die gewählten Bonusattribute.</p>"
   },
   "exclusionDisplay": "Gesperrt: {{value}}",
-  "lock": {
+  "exclusion": {
     "any": "Beides",
-    "locked": "Gesperrt",
-    "unlocked": "Entsperrt"
+    "excluded": "Gesperrt",
+    "included": "Entsperrt"
   },
   "sortMap": {
     "quality": "Qualität",

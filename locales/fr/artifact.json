@@ -76,10 +76,10 @@
     "section3": "<0>Inventaire d'Artéfacts</0><p>Tous les artefacts que vous avez ajoutés à Genshin Optimizer sont affichés ici. Les filtres ici vous permettent d'affiner davantage votre vision de vos artéfacts. </p><2>Exemple : Trouver des artéfacts à feed</2><p>En utilisant le filtre d'artéfact et les calculs d'efficacité des artéfacts, vous pouvez rapidement trouver des artéfacts à feed.</p><4>Dans cet exemple, les filtres sont définis ainsi : </4><5><0>Niveau limité à 0-8.</0><1>Artéfacts débloqués dans l'inventaire.</1><2>Suppression de la contribution des PV Flat, DEF Flat et Recharge d'Énergie aux calculs d'efficacité.</2><3>Trié par efficacité maximale croissante.</3></5><p>Cela filtrera l'inventaire d'artéfacts par efficacité d'artéfacts les plus bas, pour les substats souhaitées. </p>"
   },
   "exclusionDisplay": "Verrouillé: {{value}}",
-  "lock": {
+  "exclusion": {
     "any": "N'importe quel",
-    "locked": "Verrouillé",
-    "unlocked": "Déverrouillé"
+    "excluded": "Verrouillé",
+    "included": "Déverrouillé"
   },
   "sortMap": {
     "quality": "Qualité",

@@ -13,5 +13,12 @@
   },
   "hits_plural": "{{count}} 段",
   "eleAbsor": "元素转化",
-  "absorDot": "元素转化持续伤害"
+  "absorDot": "元素转化持续伤害",
+  "afterUse": {
+    "skill": "使用元素战技后",
+    "burst": "使用元素爆发后"
+  },
+  "increase": {
+    "atk": "攻击加成"
+  }
 }
