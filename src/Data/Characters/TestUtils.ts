@@ -27,12 +27,12 @@ export function parseTestFlexObject(url) {
   const [database, charKey] = parseFlexObj(url.split("flex?")[1])!
   const character = database._getChar(charKey)!
   const artifacts = Object.values(character.equippedArtifacts).filter(id => id).map(id => {
-    const { numStars, level, mainStatKey, substats } = database._getArt(id)!
+    const { rarity, level, mainStatKey, substats } = database._getArt(id)!
     return {
       ...Object.fromEntries(substats
         .filter(s => s.key != "")
         .map(({ key, value }) => [key, value])),
-      [mainStatKey]: Artifact.mainStatValue(mainStatKey, numStars, level)
+      [mainStatKey]: Artifact.mainStatValue(mainStatKey, rarity, level)
     }
   })
   return { character, artifacts }

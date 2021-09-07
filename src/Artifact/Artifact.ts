@@ -55,17 +55,17 @@ export default class Artifact {
       return ArtifactMainStatsData[numStar][statKey].map(k => k * 100)
     return ArtifactMainStatsData[numStar][statKey]
   }
-  static mainStatValue = (key: MainStatKey, numStars: Rarity, level: number): number =>
-    Artifact.mainStatValues(numStars, key)[level]
+  static mainStatValue = (key: MainStatKey, rarity: Rarity, level: number): number =>
+    Artifact.mainStatValues(rarity, key)[level]
 
   //SUBSTATS
   static rollInfo = (rarity: Rarity): { low: number, high: number, numUpgrades: number } =>
     ArtifactStarsData[rarity]
 
-  static maxSubstatValues = (substatKey: SubstatKey, numStars = maxStar): number => {
+  static maxSubstatValues = (substatKey: SubstatKey, rarity = maxStar): number => {
     if (substatKey.endsWith("_")) // TODO: % CONVERSION
-      return Math.max(...ArtifactSubstatsData[numStars][substatKey]) * 100
-    return Math.max(...ArtifactSubstatsData[numStars][substatKey])
+      return Math.max(...ArtifactSubstatsData[rarity][substatKey]) * 100
+    return Math.max(...ArtifactSubstatsData[rarity][substatKey])
   }
 
   static maxSubstatRollEfficiency = Object.fromEntries(allRarities.map(rarity =>
@@ -74,19 +74,19 @@ export default class Artifact {
       Artifact.maxSubstatValues(substat, maxStar)))]))
   static getSubstatKeys = (): readonly SubstatKey[] =>
     allSubstats
-  static totalPossibleRolls = (numStars: Rarity): number =>
-    ArtifactStarsData[numStars].high + ArtifactStarsData[numStars].numUpgrades
-  static rollsRemaining = (level: number, numStars: Rarity) =>
-    Math.ceil((numStars * 4 - level) / 4)
-  static getSubstatRollData = (substatKey: SubstatKey, numStars: Rarity) => {
+  static totalPossibleRolls = (rarity: Rarity): number =>
+    ArtifactStarsData[rarity].high + ArtifactStarsData[rarity].numUpgrades
+  static rollsRemaining = (level: number, rarity: Rarity) =>
+    Math.ceil((rarity * 4 - level) / 4)
+  static getSubstatRollData = (substatKey: SubstatKey, rarity: Rarity) => {
     if (substatKey.endsWith("_")) // TODO: % CONVERSION
-      return ArtifactSubstatsData[numStars][substatKey].map(v => v * 100)
-    return ArtifactSubstatsData[numStars][substatKey]
+      return ArtifactSubstatsData[rarity][substatKey].map(v => v * 100)
+    return ArtifactSubstatsData[rarity][substatKey]
   }
 
-  static getSubstatRolls = (substatKey: SubstatKey, substatValue: number, numStars: ArtifactRarity): number[][] => {
-    const rollData = Artifact.getSubstatRollData(substatKey, numStars)
-    const table = ArtifactSubstatLookupTable[numStars][substatKey]
+  static getSubstatRolls = (substatKey: SubstatKey, substatValue: number, rarity: ArtifactRarity): number[][] => {
+    const rollData = Artifact.getSubstatRollData(substatKey, rarity)
+    const table = ArtifactSubstatLookupTable[rarity][substatKey]
     const lookupValue = valueString(substatValue, substatKey.endsWith("_") ? "%" : "")
     return table[lookupValue]?.map(roll => roll.map(i => rollData[i])) ?? []
   }
@@ -98,18 +98,18 @@ export default class Artifact {
 
   //ARTIFACT IN GENERAL
   static getArtifactEfficiency(artifact: ICachedArtifact, filter: Set<SubstatKey>): { currentEfficiency: number, maxEfficiency: number } {
-    const { substats, numStars, level } = artifact
+    const { substats, rarity, level } = artifact
     // Relative to max star, so comparison between different * makes sense.
     const totalRolls = Artifact.totalPossibleRolls(maxStar);
     const current = substats.filter(({ key }) => key && filter.has(key)).reduce((sum, { rolls, efficiency }) => sum + ((efficiency ?? 0) * (rolls?.length ?? 0)), 0)
 
-    const rollsRemaining = Artifact.rollsRemaining(level, numStars);
+    const rollsRemaining = Artifact.rollsRemaining(level, rarity);
     const emptySlotCount = substats.filter(s => !s.key).length
     const matchedSlotCount = substats.filter(s => s.key && filter.has(s.key)).length
     const unusedFilterCount = filter.size - matchedSlotCount
     let maximum
-    if (emptySlotCount && unusedFilterCount) maximum = current + Artifact.maxSubstatRollEfficiency[numStars] * rollsRemaining // Rolls into good empty slot
-    else if (matchedSlotCount) maximum = current + Artifact.maxSubstatRollEfficiency[numStars] * (rollsRemaining - emptySlotCount) // Rolls into existing matched slot
+    if (emptySlotCount && unusedFilterCount) maximum = current + Artifact.maxSubstatRollEfficiency[rarity] * rollsRemaining // Rolls into good empty slot
+    else if (matchedSlotCount) maximum = current + Artifact.maxSubstatRollEfficiency[rarity] * (rollsRemaining - emptySlotCount) // Rolls into existing matched slot
     else maximum = current // No possible roll
 
     const currentEfficiency = current / totalRolls

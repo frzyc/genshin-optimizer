@@ -8,8 +8,8 @@ import { getRandomElementFromArray, getRandomIntInclusive } from "./Util"
 import artifactSubstatRollCorrection from '../Artifact/artifact_sub_rolls_correction_gen.json'
 
 export async function randomizeArtifact(): Promise<IArtifact> {
-  const set = getRandomElementFromArray(allArtifactSets)
-  const sheet = await ArtifactSheet.get(set)!
+  const setKey = getRandomElementFromArray(allArtifactSets)
+  const sheet = await ArtifactSheet.get(setKey)!
   const rarity = getRandomElementFromArray(sheet.rarity)
   const slot = getRandomElementFromArray(sheet.slots)
   const mainStatKey = getRandomElementFromArray(Artifact.slotMainStats(slot))
@@ -41,6 +41,6 @@ export async function randomizeArtifact(): Promise<IArtifact> {
     }
 
   return {
-    setKey: set, numStars: rarity, slotKey: slot, mainStatKey, level, substats, location: "", lock: false, exclude: false,
+    setKey, rarity, slotKey: slot, mainStatKey, level, substats, location: "", lock: false, exclude: false,
   }
 }

@@ -61,13 +61,13 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: Artifac
     }
 
     if (newValue.setKey) {
-      newValue.numStars = pick(artifact?.numStars, newSheet.rarity, Math.max(...newSheet.rarity) as ArtifactRarity)
+      newValue.rarity = pick(artifact?.rarity, newSheet.rarity, Math.max(...newSheet.rarity) as ArtifactRarity)
       newValue.slotKey = pick(artifact?.slotKey, newSheet.slots)
     }
-    if (newValue.numStars)
+    if (newValue.rarity)
       newValue.level = artifact?.level ?? 0
     if (newValue.level)
-      newValue.level = clamp(newValue.level, 0, 4 * (newValue.numStars ?? artifact!.numStars))
+      newValue.level = clamp(newValue.level, 0, 4 * (newValue.rarity ?? artifact!.rarity))
     if (newValue.slotKey)
       newValue.mainStatKey = pick(artifact?.mainStatKey, Artifact.slotMainStats(newValue.slotKey))
 
@@ -87,7 +87,7 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: Artifac
     const { duplicated, upgraded } = database.findDuplicates(artifact)
     return { dupId: duplicated[0] ?? upgraded[0], isDup: duplicated.length !== 0 }
   }, [artifact, database])
-  const { numStars = 5, level = 0, slotKey = "flower" } = artifact ?? {}
+  const { rarity = 5, level = 0, slotKey = "flower" } = artifact ?? {}
   const { currentEfficiency = 0, maxEfficiency = 0 } = artifact ? Artifact.getArtifactEfficiency(artifact, allSubstatFilter) : {}
   return <Card bg="darkcontent" text={"lightfont" as any}>
     <Card.Header><Trans t={t} i18nKey="editor.title" >Artifact Editor</Trans></Card.Header>
@@ -107,9 +107,9 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: Artifac
               </Dropdown.Menu>
             </Dropdown>
             {/* rarity dropdown */}
-            <DropdownButton as={InputGroup.Append} title={artifact ? <Stars stars={numStars} /> : t`editor.rarity`} disabled={!sheet} variant={artifact ? "success" : "primary"}>
-              {([5, 4, 3] as ArtifactRarity[]).map((numStars, index) => <Dropdown.Item key={index} disabled={!sheet?.rarity.includes(numStars)} onClick={() => update({ numStars })}>
-                {<Stars stars={numStars} />}
+            <DropdownButton as={InputGroup.Append} title={artifact ? <Stars stars={rarity} /> : t`editor.rarity`} disabled={!sheet} variant={artifact ? "success" : "primary"}>
+              {([5, 4, 3] as ArtifactRarity[]).map((rarity, index) => <Dropdown.Item key={index} disabled={!sheet?.rarity.includes(rarity)} onClick={() => update({ rarity })}>
+                {<Stars stars={rarity} />}
               </Dropdown.Item>)}
             </DropdownButton>
           </InputGroup>
@@ -119,11 +119,11 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: Artifac
             <InputGroup.Prepend>
               <InputGroup.Text>{t`editor.level`}</InputGroup.Text>
             </InputGroup.Prepend>
-            <CustomFormControl value={level} disabled={!sheet} placeholder={`0~${numStars * 4}`} onChange={l => update({ level: l })} />
+            <CustomFormControl value={level} disabled={!sheet} placeholder={`0~${rarity * 4}`} onChange={l => update({ level: l })} />
             <InputGroup.Append>
               <Button onClick={() => update({ level: level - 1 })} disabled={!sheet || level === 0}>-</Button>
-              {numStars ? [...Array(numStars + 1).keys()].map(i => 4 * i).map(i => <Button key={i} onClick={() => update({ level: i })} disabled={!sheet || level === i}>{i}</Button>) : null}
-              <Button onClick={() => update({ level: level + 1 })} disabled={!sheet || level === (numStars * 4)}>+</Button>
+              {rarity ? [...Array(rarity + 1).keys()].map(i => 4 * i).map(i => <Button key={i} onClick={() => update({ level: i })} disabled={!sheet || level === i}>{i}</Button>) : null}
+              <Button onClick={() => update({ level: level + 1 })} disabled={!sheet || level === (rarity * 4)}>+</Button>
             </InputGroup.Append>
           </InputGroup>
 
@@ -156,7 +156,7 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: Artifac
                 </Dropdown.Item>)}
             </DropdownButton>
             <FormControl
-              value={artifact ? `${valueString(Artifact.mainStatValue(artifact.mainStatKey, numStars, level), Stat.getStatUnit(artifact.mainStatKey))}` : t`mainStat` as any}
+              value={artifact ? `${valueString(Artifact.mainStatValue(artifact.mainStatKey, rarity, level), Stat.getStatUnit(artifact.mainStatKey))}` : t`mainStat` as any}
               disabled
               readOnly
             />
@@ -248,7 +248,7 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: Artifac
 
 function SubstatInput({ index, artifact, setSubstat, className }: { index: number, artifact: ICachedArtifact | undefined, setSubstat: (index: number, substat: ISubstat) => void, className: string }) {
   const { t } = useTranslation("artifact")
-  const { mainStatKey = "", numStars = 5 } = artifact ?? {}
+  const { mainStatKey = "", rarity = 5 } = artifact ?? {}
   const { key = "", value = 0, rolls = [], efficiency = 0 } = artifact?.substats[index] ?? {}
 
   const accurateValue = rolls.reduce((a, b) => a + b, 0)
@@ -258,11 +258,11 @@ function SubstatInput({ index, artifact, setSubstat, className }: { index: numbe
 
   if (artifact) {
     // Account for the rolls it will need to fill all 4 substates, +1 for its base roll
-    const numStars = artifact.numStars
-    const { numUpgrades, high } = Artifact.rollInfo(numStars)
+    const rarity = artifact.rarity
+    const { numUpgrades, high } = Artifact.rollInfo(rarity)
     const maxRollNum = numUpgrades + high - 3;
     allowedRolls = maxRollNum - rollNum
-    rollData = key ? Artifact.getSubstatRollData(key, numStars) : []
+    rollData = key ? Artifact.getSubstatRollData(key, rarity) : []
   }
   const rollOffset = 7 - rollData.length
 
@@ -310,7 +310,7 @@ function SubstatInput({ index, artifact, setSubstat, className }: { index: numbe
       {<ButtonGroup size="sm" as={InputGroup.Append}>
         {rollData.map((v, i) => {
           let newValue = valueString(accurateValue + v, unit)
-          newValue = artifactSubstatRollCorrection[numStars]?.[key]?.[newValue] ?? newValue
+          newValue = artifactSubstatRollCorrection[rarity]?.[key]?.[newValue] ?? newValue
           return <Button key={i} variant={`${rollOffset + i}roll`} className="py-0 text-darkcontent" disabled={(value && !rollNum) || allowedRolls <= 0} onClick={() => setSubstat(index, { key, value: parseFloat(newValue) })}>{newValue}</Button>
         })}
       </ButtonGroup>}

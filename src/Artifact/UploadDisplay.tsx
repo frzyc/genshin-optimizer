@@ -131,7 +131,7 @@ export default function UploadDisplay({ setState, setReset, artifactInEditor }: 
         <div>{texts.slotKey}</div>
         <div>{texts.mainStatKey}</div>
         <div>{texts.mainStatVal}</div>
-        <div>{texts.numStars}</div>
+        <div>{texts.rarity}</div>
         <div>{texts.level}</div>
         <div>{texts.substats}</div>
         <div>{texts.setKey}</div>
@@ -288,7 +288,7 @@ export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactShee
   const relevantSetKey = [...new Set<ArtifactSetKey>([...textSetKeys, "Adventurer", "ArchaicPetra"])]
 
   let bestScore = -1, bestArtifacts: IArtifact[] = [{
-    setKey: "Adventurer", numStars: 3, level: 0, slotKey: "flower", mainStatKey: "hp", substats: [],
+    setKey: "Adventurer", rarity: 3, level: 0, slotKey: "flower", mainStatKey: "hp", substats: [],
     location: "", lock: false, exclude: false,
   }]
 
@@ -315,15 +315,15 @@ export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactShee
         .filter(value => value.unit !== "%" || Stat.getStatUnit(mainStatKey) === "%") // Ignore "%" text if key isn't "%"
         .map(value => value.mainStatValue)
 
-      for (const [numStarsString, rarityIndividualScore] of Object.entries(rarityRates)) {
-        const numStars = parseInt(numStarsString) as ArtifactRarity
-        const setKeys = relevantSetKey.filter(setKey => sheets[setKey].rarity.includes(numStars))
+      for (const [rarityString, rarityIndividualScore] of Object.entries(rarityRates)) {
+        const rarity = parseInt(rarityString) as ArtifactRarity
+        const setKeys = relevantSetKey.filter(setKey => sheets[setKey].rarity.includes(rarity))
         const rarityScore = mainStatScore + rarityIndividualScore
 
         if (rarityScore + 2 < bestScore) continue // Early bail out
 
         for (const minimumMainStatValue of relevantMainStatValues) {
-          const values = Artifact.mainStatValues(numStars, mainStatKey)
+          const values = Artifact.mainStatValues(rarity, mainStatKey)
           const level = Math.max(0, values.findIndex(level => level >= minimumMainStatValue))
           const mainStatVal = values[level]
           const mainStatValScore = rarityScore + (mainStatVal === minimumMainStatValue ? 1 : 0)
@@ -334,7 +334,7 @@ export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactShee
               if (score > bestScore) bestArtifacts = []
               bestScore = score
               bestArtifacts.push({
-                setKey, numStars, level, slotKey, mainStatKey, substats: [], location: "", lock: false, exclude: false,
+                setKey, rarity, level, slotKey, mainStatKey, substats: [], location: "", lock: false, exclude: false,
               })
             }
           }
@@ -347,7 +347,7 @@ export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactShee
             if (score > bestScore) bestArtifacts = []
             bestScore = score
             bestArtifacts.push({
-              setKey, numStars, level, slotKey, mainStatKey, substats: [], location: "", lock: false, exclude: false
+              setKey, rarity, level, slotKey, mainStatKey, substats: [], location: "", lock: false, exclude: false
             })
           }
         }
@@ -357,10 +357,10 @@ export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactShee
 
   const texts = {} as Dict<keyof ICachedArtifact, Displayable>
   const chosen = {
-    setKey: new Set(), numStars: new Set(), level: new Set(), slotKey: new Set(), mainStatKey: new Set(), mainStatVal: new Set(),
+    setKey: new Set(), rarity: new Set(), level: new Set(), slotKey: new Set(), mainStatKey: new Set(), mainStatVal: new Set(),
   } as Dict<keyof ICachedArtifact, Set<string>>
 
-  const result = bestArtifacts[0], resultMainStatVal = Artifact.mainStatValue(result.mainStatKey, result.numStars, result.level)!
+  const result = bestArtifacts[0], resultMainStatVal = Artifact.mainStatValue(result.mainStatKey, result.rarity, result.level)!
   result.substats = substats.filter((substat, i) =>
     substat.key !== result.mainStatKey &&
     substats.slice(0, i).every(other => other.key !== substat.key))
@@ -369,7 +369,7 @@ export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactShee
 
   for (const other of bestArtifacts) {
     chosen.setKey!.add(other.setKey)
-    chosen.numStars!.add(other.numStars as any)
+    chosen.rarity!.add(other.rarity as any)
     chosen.level!.add(other.level as any)
     chosen.slotKey!.add(other.slotKey)
     chosen.mainStatKey!.add(other.mainStatKey)
@@ -402,7 +402,7 @@ export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactShee
   }
 
   addText("setKey", textSetKeys, "Set", (value) => sheets[value].name)
-  addText("numStars", rarities, "Rarity", (value) => <>{value} {value !== 1 ? "Stars" : "Star"}</>)
+  addText("rarity", rarities, "Rarity", (value) => <>{value} {value !== 1 ? "Stars" : "Star"}</>)
   addText("slotKey", slotKeys, "Slot", (value) => <>{Artifact.slotName(value)}</>)
   addText("mainStatKey", mainStatKeys, "Main Stat", (value) => <>{Stat.getStatNameRaw(value)}</>)
   texts.substats = <>{result.substats.filter(substat => substat.key !== "").map((substat, i) =>

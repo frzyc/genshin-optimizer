@@ -9,13 +9,13 @@ import { IWeapon, ICachedWeapon } from "../Types/weapon";
 
 /// Returns the closest (not necessarily valid) artifact, including errors as necessary
 export function validateArtifact(flex: IArtifact, id: string): { artifact: ICachedArtifact, errors: Displayable[] } {
-  const { location, exclude, lock, setKey, slotKey, numStars, mainStatKey } = flex
-  const level = Math.round(Math.min(Math.max(0, flex.level), numStars >= 3 ? numStars * 4 : 4))
-  const mainStatVal = Artifact.mainStatValue(mainStatKey, numStars, level)!
+  const { location, exclude, lock, setKey, slotKey, rarity, mainStatKey } = flex
+  const level = Math.round(Math.min(Math.max(0, flex.level), rarity >= 3 ? rarity * 4 : 4))
+  const mainStatVal = Artifact.mainStatValue(mainStatKey, rarity, level)!
 
   const errors: Displayable[] = []
   const substats: ICachedSubstat[] = flex.substats.map(substat => ({ ...substat, rolls: [], efficiency: 0 }))
-  const validated: ICachedArtifact = { id, setKey, location, slotKey, exclude, lock, mainStatKey, numStars, level, substats, mainStatVal }
+  const validated: ICachedArtifact = { id, setKey, location, slotKey, exclude, lock, mainStatKey, rarity, level, substats, mainStatVal }
 
   const allPossibleRolls: { index: number, substatRolls: number[][] }[] = []
   let totalUnambiguousRolls = 0
@@ -31,7 +31,7 @@ export function validateArtifact(flex: IArtifact, id: string): { artifact: ICach
       return
     }
 
-    const possibleRolls = Artifact.getSubstatRolls(key, value, numStars)
+    const possibleRolls = Artifact.getSubstatRolls(key, value, rarity)
 
     if (possibleRolls.length) { // Valid Substat
       const possibleLengths = new Set(possibleRolls.map(roll => roll.length))
@@ -53,7 +53,7 @@ export function validateArtifact(flex: IArtifact, id: string): { artifact: ICach
 
   if (errors.length) return { artifact: validated, errors }
 
-  const { low, high } = Artifact.rollInfo(numStars), lowerBound = low + Math.floor(level / 4), upperBound = high + Math.floor(level / 4)
+  const { low, high } = Artifact.rollInfo(rarity), lowerBound = low + Math.floor(level / 4), upperBound = high + Math.floor(level / 4)
 
   let highestScore = -Infinity // -Max(substats.rolls[i].length) over ambiguous rolls
   const tryAllSubstats = (rolls: { index: number, roll: number[] }[], currentScore: number, total: number) => {
@@ -85,9 +85,9 @@ export function validateArtifact(flex: IArtifact, id: string): { artifact: ICach
   const totalRolls = substats.reduce((accu, { rolls }) => accu + rolls.length, 0)
 
   if (totalRolls > upperBound)
-    errors.push(`${numStars}-star artifact (level ${level}) should have no more than ${upperBound} rolls. It currently has ${totalRolls} rolls.`)
+    errors.push(`${rarity}-star artifact (level ${level}) should have no more than ${upperBound} rolls. It currently has ${totalRolls} rolls.`)
   else if (totalRolls < lowerBound)
-    errors.push(`${numStars}-star artifact (level ${level}) should have at least ${lowerBound} rolls. It currently has ${totalRolls} rolls.`)
+    errors.push(`${rarity}-star artifact (level ${level}) should have at least ${lowerBound} rolls. It currently has ${totalRolls} rolls.`)
 
   if (substats.some((substat) => !substat.key)) {
     let substat = substats.find(substat => (substat.rolls?.length ?? 0) > 1)
@@ -102,13 +102,13 @@ export function parseArtifact(obj: any): IArtifact | undefined {
   if (typeof obj !== "object") return
 
   let {
-    setKey, numStars, level, slotKey, mainStatKey, substats, location, exclude, lock,
+    setKey, rarity, level, slotKey, mainStatKey, substats, location, exclude, lock,
   } = obj ?? {}
 
   if (!allArtifactSets.includes(setKey) ||
     !allSlotKeys.includes(slotKey) ||
     !allMainStatKeys.includes(mainStatKey) ||
-    !allArtifactRarities.includes(numStars) ||
+    !allArtifactRarities.includes(rarity) ||
     typeof level !== "number" || level < 0 || level > 20)
     return // non-recoverable
 
@@ -117,12 +117,12 @@ export function parseArtifact(obj: any): IArtifact | undefined {
   exclude = !!exclude
   level = Math.round(level)
   if (!allCharacterKeys.includes(location)) location = ""
-  return { setKey, numStars, level, slotKey, mainStatKey, substats, location, exclude, lock }
+  return { setKey, rarity, level, slotKey, mainStatKey, substats, location, exclude, lock }
 }
 /// Return a new flex artifact from given artifact. All extra keys are removed
 export function removeArtifactCache(artifact: ICachedArtifact): IArtifact {
-  const { setKey, numStars, level, slotKey, mainStatKey, substats, location, exclude, lock } = artifact
-  return { setKey, numStars, level, slotKey, mainStatKey, substats: substats.map(substat => ({ key: substat.key, value: substat.value })), location, exclude, lock }
+  const { setKey, rarity, level, slotKey, mainStatKey, substats, location, exclude, lock } = artifact
+  return { setKey, rarity, level, slotKey, mainStatKey, substats: substats.map(substat => ({ key: substat.key, value: substat.value })), location, exclude, lock }
 }
 function parseSubstats(obj: any): ISubstat[] {
   if (!Array.isArray(obj))

@@ -19,7 +19,7 @@ export interface SetEffectEntry {
 
 export interface IArtifact {
   setKey: ArtifactSetKey,
-  numStars: ArtifactRarity,
+  rarity: ArtifactRarity,
   level: number,
   slotKey: SlotKey,
   mainStatKey: MainStatKey,

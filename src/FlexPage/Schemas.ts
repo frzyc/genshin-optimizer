@@ -232,15 +232,15 @@ const artifactV3 = object({
   location: optional(allCharacterKeys),
 
   // Mixed
-  numStarsSlotKey: uint(1),
+  raritySlotKey: uint(1),
 }, {
   encode: value => {
-    value.numStarsSlotKey = allSlotKeys.indexOf(value.slotKey) * 8 + value.numStars
+    value.raritySlotKey = allSlotKeys.indexOf(value.slotKey) * 8 + value.rarity
     return value
   },
   decode: value => {
-    value.numStars = value.numStarsSlotKey % 8
-    value.slotKey = allSlotKeys[(value.numStarsSlotKey - value.numStars) / 8]
+    value.rarity = value.raritySlotKey % 8
+    value.slotKey = allSlotKeys[(value.raritySlotKey - value.rarity) / 8]
     return value
   }
 })

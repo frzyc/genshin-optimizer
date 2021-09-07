@@ -70,7 +70,7 @@ function importMona1(dataObj: any): { artifacts: IArtifact[], invalidCount: numb
       }
       const flex = parseArtifact({
         setKey: ArtifactSetKeyMap[setName],
-        numStars: star,
+        rarity: star,
         level,
         slotKey: ArtifactSlotKeyMap[position],
         mainStatKey: ArtifactMainStatKeyMap[mainTag.name],

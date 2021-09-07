@@ -68,7 +68,7 @@ export default class Character {
     Object.values(artifacts).forEach(art => {
       if (!art) return
       //main stats
-      stats[art.mainStatKey] = (stats[art.mainStatKey] || 0) + Artifact.mainStatValue(art.mainStatKey, art.numStars, Math.max(Math.min(stats.mainStatAssumptionLevel, art.numStars * 4), art.level))
+      stats[art.mainStatKey] = (stats[art.mainStatKey] || 0) + Artifact.mainStatValue(art.mainStatKey, art.rarity, Math.max(Math.min(stats.mainStatAssumptionLevel, art.rarity * 4), art.level))
       //substats
       art.substats.forEach((substat) =>
         substat && substat.key && (stats[substat.key] = (stats[substat.key] || 0) + substat.value))

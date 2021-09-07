@@ -54,7 +54,7 @@ describe('Equipment functions', () => {
     a = {
       id: "",
       setKey: "GladiatorsFinale",
-      numStars: 5,
+      rarity: 5,
       level: 20,
       mainStatKey: "eleMas",
       mainStatVal: Artifact.mainStatValue('eleMas', 5, 20),

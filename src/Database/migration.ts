@@ -197,6 +197,7 @@ function migrateV7ToV8(storage: DBStorage) {
       const artifact = storage.get(key)
       artifact.location = charMap[artifact.location]
       artifact.exclude = artifact.lock
+      artifact.rarity = artifact.numStars
       storage.set(key, artifact)
     }
   }

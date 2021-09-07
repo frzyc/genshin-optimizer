@@ -58,7 +58,7 @@ export const weapon: IWeapon = {
 }
 export const artifacts: IArtifact[] = [{
   setKey: 'GladiatorsFinale',
-  numStars: 5,
+  rarity: 5,
   level: 20,
   mainStatKey: 'pyro_dmg_',
   slotKey: 'goblet',
@@ -73,7 +73,7 @@ export const artifacts: IArtifact[] = [{
   exclude: false,
 }, {
   setKey: 'CrimsonWitchOfFlames',
-  numStars: 5,
+  rarity: 5,
   level: 20,
   mainStatKey: 'hp',
   slotKey: 'flower',
@@ -88,7 +88,7 @@ export const artifacts: IArtifact[] = [{
   exclude: false,
 }, {
   setKey: 'CrimsonWitchOfFlames',
-  numStars: 5,
+  rarity: 5,
   level: 20,
   mainStatKey: 'atk',
   slotKey: 'plume',
@@ -103,7 +103,7 @@ export const artifacts: IArtifact[] = [{
   exclude: false,
 }, {
   setKey: 'GladiatorsFinale',
-  numStars: 5,
+  rarity: 5,
   level: 20,
   mainStatKey: 'critRate_',
   slotKey: 'circlet',
@@ -118,7 +118,7 @@ export const artifacts: IArtifact[] = [{
   exclude: false,
 }, {
   setKey: 'ThunderingFury',
-  numStars: 5,
+  rarity: 5,
   level: 16,
   mainStatKey: 'eleMas',
   slotKey: 'sands',

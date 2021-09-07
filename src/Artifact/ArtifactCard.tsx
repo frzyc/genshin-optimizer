@@ -44,10 +44,10 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
   const characterSheet = usePromise(CharacterSheet.get(art?.location ?? ""), [art?.location])
   if (!art) return null
 
-  const { id, lock, slotKey, numStars, level, mainStatKey, substats, exclude } = art
-  const mainStatLevel = Math.max(Math.min(mainStatAssumptionLevel, numStars * 4), level)
+  const { id, lock, slotKey, rarity, level, mainStatKey, substats, exclude } = art
+  const mainStatLevel = Math.max(Math.min(mainStatAssumptionLevel, rarity * 4), level)
   const levelVariant = (Math.floor(Math.max(level - 1, 0) / 4) + 1) + "roll"
-  const mainStatVal = <span className={mainStatLevel !== level ? "text-orange" : ""}>{valueStringWithUnit(Artifact.mainStatValue(mainStatKey, numStars, mainStatLevel) ?? 0, Stat.getStatUnit(mainStatKey))}</span>
+  const mainStatVal = <span className={mainStatLevel !== level ? "text-orange" : ""}>{valueStringWithUnit(Artifact.mainStatValue(mainStatKey, rarity, mainStatLevel) ?? 0, Stat.getStatUnit(mainStatKey))}</span>
   const { currentEfficiency, maxEfficiency } = Artifact.getArtifactEfficiency(art, effFilter)
   const artifactValid = maxEfficiency !== 0
   const locationName = characterSheet?.name ? characterSheet.nameWIthIcon : <span><FontAwesomeIcon icon={faBriefcase} /> {t`filterLocation.inventory`}</span>
@@ -73,16 +73,16 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
     <FontAwesomeIcon icon={faInfoCircle} />
   </OverlayTrigger> : null
 
-  return (<Card className="h-100" border={`${numStars}star`} bg="lightcontent" text={"lightfont" as any}>
+  return (<Card className="h-100" border={`${rarity}star`} bg="lightcontent" text={"lightfont" as any}>
     <Card.Header className="p-0">
       <Row>
         <Col xs={2} md={3}>
-          <Image src={sheet?.slotIcons[slotKey] ?? ""} className={`w-100 h-auto grad-${numStars}star m-1`} thumbnail />
+          <Image src={sheet?.slotIcons[slotKey] ?? ""} className={`w-100 h-auto grad-${rarity}star m-1`} thumbnail />
         </Col>
         <Col className="pt-2">
           <h6><strong>{slotName} {slotDescEle}</strong></h6>
           <div><SlotNameWithIcon slotKey={slotKey} /> <span className="float-right mr-4"> <Button size="sm" onClick={() => database.lockArtifact(id, !lock)}><FontAwesomeIcon icon={lock ? faLock : faLockOpen} className="fa-fw" /></Button></span></div>
-          <div><small><Stars stars={numStars} /></small></div>
+          <div><small><Stars stars={rarity} /></small></div>
         </Col>
       </Row>
     </Card.Header>

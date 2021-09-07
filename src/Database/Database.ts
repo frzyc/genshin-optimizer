@@ -312,11 +312,11 @@ export class ArtCharDatabase {
   }
 
   findDuplicates(editorArt: IArtifact): { duplicated: string[], upgraded: string[] } {
-    const { setKey, numStars, level, slotKey, mainStatKey, substats } = editorArt
+    const { setKey, rarity: rarity, level, slotKey, mainStatKey, substats } = editorArt
 
     const candidates = this._getArts().filter(candidate =>
       setKey === candidate.setKey &&
-      numStars === candidate.numStars &&
+      rarity === candidate.rarity &&
       slotKey === candidate.slotKey &&
       mainStatKey === candidate.mainStatKey &&
       level >= candidate.level &&

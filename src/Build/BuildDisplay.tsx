@@ -208,7 +208,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     //add mainStatVal to each artifact
     Object.values(splitArtifacts).forEach(artArr => {
       artArr!.forEach(art => {
-        art.mainStatVal = Artifact.mainStatValue(art.mainStatKey, art.numStars, Math.max(Math.min(mainStatAssumptionLevel, art.numStars * 4), art.level)) ?? 0;
+        art.mainStatVal = Artifact.mainStatValue(art.mainStatKey, art.rarity, Math.max(Math.min(mainStatAssumptionLevel, art.rarity * 4), art.level)) ?? 0;
       })
     })
     //generate the key dependencies for the formula
@@ -570,18 +570,18 @@ function ArtConditionalModal({ showArtCondModal, setshowArtCondModal, initialSta
           {artSetKeyList.map(setKey => {
             const sheet = artifactSheets[setKey]
             let icon = Object.values(sheet.slotIcons)[0]
-            const rarity = sheet.rarity
-            const numStars = rarity[0]
+            const rarities = sheet.rarity
+            const rarity = rarities[0]
             return <Col className="mb-2" key={setKey} xs={12} lg={6} xl={4}>
               <Card className="h-100" bg="lightcontent" text={"lightfont" as any}>
                 <Card.Header >
                   <Row>
                     <Col xs="auto" className="ml-n3 my-n2">
-                      <Image src={icon} className={`thumb-mid grad-${numStars}star m-1`} thumbnail />
+                      <Image src={icon} className={`thumb-mid grad-${rarity}star m-1`} thumbnail />
                     </Col>
                     <Col >
                       <h6><b>{artifactSheets?.[setKey].name ?? ""}</b></h6>
-                      <span>{rarity.map((ns, i) => <span key={ns}>{ns}<Stars stars={1} /> {i < (rarity.length - 1) ? "/ " : null}</span>)}</span>
+                      <span>{rarities.map((ns, i) => <span key={ns}>{ns}<Stars stars={1} /> {i < (rarities.length - 1) ? "/ " : null}</span>)}</span>
                     </Col>
                   </Row>
                 </Card.Header>

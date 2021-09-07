@@ -100,14 +100,14 @@ export default function ArtifactDisplay(props) {
       if (filterSlotKey && filterSlotKey !== art.slotKey) return false
       if (filterMainStatKey && filterMainStatKey !== art.mainStatKey) return false
       if (art.level < filterLevelLow || art.level > filterLevelHigh) return false;
-      if (!filterStars.includes(art.numStars)) return false;
+      if (!filterStars.includes(art.rarity)) return false;
       for (const filterKey of filterSubstats)
         if (filterKey && !art.substats.some(substat => substat.key === filterKey)) return false;
       return true
     }).map((art) => {
       switch (sortType) {
-        case "quality": return { value: [art.numStars], art }
-        case "level": return { value: [art.level, art.numStars], art }
+        case "quality": return { value: [art.rarity], art }
+        case "level": return { value: [art.level, art.rarity], art }
         case "efficiency": return { value: [Artifact.getArtifactEfficiency(art, effFilterSet).currentEfficiency], art }
         case "mefficiency": return { value: [Artifact.getArtifactEfficiency(art, effFilterSet).maxEfficiency], art }
       }
