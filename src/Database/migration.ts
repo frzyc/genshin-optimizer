@@ -149,6 +149,11 @@ function migrateV6ToV7(storage: DBStorage) {
 
 // ??? - present
 function migrateV7ToV8(storage: DBStorage) {
+  const weaponKeyChangeMap = {
+    "PrototypeAminus": "PrototypeArchaic",
+    "PrototypeGrudge": "PrototypeStarglitter",
+    "PrototypeMalice": "PrototypeAmber"
+  } as const
   let keyInd = 1;
   function generateWeaponId(storage: DBStorage) {
     let key = `weapon_${keyInd++}`
@@ -182,6 +187,8 @@ function migrateV7ToV8(storage: DBStorage) {
 
       const { weapon, ...rest } = character
       if (!weapon) continue
+      if (weaponKeyChangeMap[weapon.key])
+        weapon.key = weaponKeyChangeMap[weapon.key]
       weapon.location = character.characterKey
       weapon.refine = weapon.refineIndex + 1
       storage.set(generateWeaponId(storage), weapon)

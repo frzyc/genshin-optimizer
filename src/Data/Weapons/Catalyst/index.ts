@@ -13,7 +13,7 @@ import MappaMare from './MappaMare'
 import MemoryOfDust from './MemoryOfDust'
 import OtherworldlyStory from './OtherworldlyStory'
 import PocketGrimoire from './PocketGrimoire'
-import PrototypeMalice from './PrototypeMalice'
+import PrototypeAmber from './PrototypeAmber'
 import RoyalGrimoire from './RoyalGrimoire'
 import SacrificialFragments from './SacrificialFragments'
 import SkywardAtlas from './SkywardAtlas'
@@ -38,7 +38,7 @@ const catalyst = {
   MemoryOfDust,
   OtherworldlyStory,
   PocketGrimoire,
-  PrototypeMalice,
+  PrototypeAmber,
   RoyalGrimoire,
   SacrificialFragments,
   SkywardAtlas,

@@ -7,7 +7,7 @@ import KatsuragikiriNagamasa from './KatsuragikiriNagamasa'
 import LithicBlade from './LithicBlade'
 import LuxuriousSeaLord from './LuxuriousSeaLord'
 import OldMercsPal from './OldMercsPal'
-import PrototypeAminus from './PrototypeAminus'
+import PrototypeArchaic from './PrototypeArchaic'
 import Quartz from './Quartz'
 import Rainslasher from './Rainslasher'
 import RoyalGreatsword from './RoyalGreatsword'
@@ -33,7 +33,7 @@ const claymore = {
   LithicBlade,
   LuxuriousSeaLord,
   OldMercsPal,
-  PrototypeAminus,
+  PrototypeArchaic,
   Quartz,
   Rainslasher,
   RoyalGreatsword,

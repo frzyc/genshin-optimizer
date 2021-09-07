@@ -5,7 +5,7 @@ import Stat from '../../../../Stat'
 import { IWeaponSheet } from '../../../../Types/weapon'
 import formula, { data } from './data'
 import data_gen from './data_gen.json'
-import img from './Weapon_Prototype_Aminus.png'
+import img from './Weapon_Prototype_Archaic.png'
 const weapon: IWeaponSheet = {
   ...data_gen as WeaponData,
   img,
