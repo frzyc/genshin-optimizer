@@ -143,7 +143,7 @@ export default function WeaponDisplayCard({
             <h5 className="mb-0">{process.env.NODE_ENV === "development" && <span className="text-warning">{id || `""`} </span>}{weaponSheet.name} Lv. {WeaponSheet.getLevelString(weapon)} {weaponPassiveName && <Badge variant="info">Refinement {refine}</Badge>}</h5>
             <div className="mb-2"><Stars stars={weaponSheet.rarity} /></div>
             <h6>{weaponPassiveName}</h6>
-            <div className="mb-2">{weaponPassiveName && weaponSheet.passiveDescription({ weapon: { refine } } as any)}</div>
+            <div className="mb-2">{weaponPassiveName && weaponSheet.passiveDescription({ weapon: { refineIndex: refine - 1 } } as any)}</div>
             {build && <>
               <WeaponStatsCard title={"Main Stats"} statsVals={{ atk: weaponDisplayMainVal, [substatKey]: substatKey ? weaponDisplaySubVal : undefined }} stats={build} />
               <WeaponStatsCard title={"Bonus Stats"} statsVals={weaponBonusStats} stats={build} />
