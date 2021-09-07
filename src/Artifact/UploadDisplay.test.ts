@@ -13,8 +13,8 @@ expect.extend({
   toBeValidNewArtifact(artifact: Partial<IArtifact>): { message, pass } {
     if (artifact.location)
       return { message: () => `expect unequiped artifact, found location ${this.utils.printReceived(artifact.location)}`, pass: false }
-    if (artifact.lock)
-      return { message: () => `expect unlocked artifact, but artifact is locked`, pass: false }
+    if (artifact.exclude)
+      return { message: () => `expect excluded artifact, but artifact is not excluded`, pass: false }
 
     if (!artifact.setKey || !allArtifactSets.includes(artifact.setKey))
       return { message: () => `expect valid set key, found ${this.utils.printReceived(artifact.setKey)}`, pass: false }

@@ -106,7 +106,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   const [{ character, characterSheet, weaponSheet, initialStats, statsDisplayKeys }, setCharacterData] = useState({} as characterDataType)
   const buildSettings = useMemo(() => character?.buildSettings ?? initialBuildSettings(), [character])
   if (buildSettings.setFilters.length === 0) buildSettings.setFilters = initialBuildSettings().setFilters//hotfix for an issue with db. can be removed later.
-  const { setFilters, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useLockedArts, useEquippedArts, ascending, } = buildSettings
+  const { setFilters, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useLockedArts: useExcludedArts, useEquippedArts, ascending, } = buildSettings
 
   const buildSettingsDispatch = useCallback((action) => {
     if (!character) return
@@ -181,7 +181,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
       //if its equipped on the selected character, bypass the check
       if (art.location === characterKey) return true
 
-      if (art.lock && !useLockedArts) return false
+      if (art.exclude && !useExcludedArts) return false
       if (art.location && !useEquippedArts) return false
       return true
     })
@@ -191,7 +191,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
       mainStatKeys[slotKey].length && (split[slotKey] = split[slotKey]?.filter((art) => mainStatKeys[slotKey].includes(art.mainStatKey))))
     const totBuildNumber = calculateTotalBuildNumber(split, setFilters)
     return artsDirty && { split, totBuildNumber }
-  }, [characterKey, useLockedArts, useEquippedArts, mainStatKeys, setFilters, artsDirty, database])
+  }, [characterKey, useExcludedArts, useEquippedArts, mainStatKeys, setFilters, artsDirty, database])
 
   const generateBuilds = useCallback(() => {
     if (!initialStats || !artifactSheets) return
@@ -376,8 +376,8 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
                     <Button className="w-100 mb-2" onClick={() => buildSettingsDispatch({ useEquippedArts: !useEquippedArts })} disabled={generatingBuilds}>
                       <span><FontAwesomeIcon icon={useEquippedArts ? faCheckSquare : faSquare} /> Use Equipped Artifacts</span>
                     </Button>
-                    <Button className="w-100 mb-2" onClick={() => buildSettingsDispatch({ useLockedArts: !useLockedArts })} disabled={generatingBuilds}>
-                      <span><FontAwesomeIcon icon={useLockedArts ? faCheckSquare : faSquare} /> Use Locked Artifacts</span>
+                    <Button className="w-100 mb-2" onClick={() => buildSettingsDispatch({ useLockedArts: !useExcludedArts })} disabled={generatingBuilds}>
+                      <span><FontAwesomeIcon icon={useExcludedArts ? faCheckSquare : faSquare} /> Use Locked Artifacts</span>
                     </Button>
                   </Card.Body></Card>
                 </Col>

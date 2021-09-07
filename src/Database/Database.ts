@@ -147,7 +147,7 @@ export class ArtCharDatabase {
     this.saveChar(key, newChar)
   }
   /**
-   * **Caution** This does not update `location` and `lock`, use `setLocation` or `lockArtifact` instead
+   * **Caution** This does not update `location`, `exclude` and `lock`, use `setLocation` or `excludeArtifact` instead
    */
   updateArt(value: ICachedArtifact): string {
     const newArt = deepClone(value)
@@ -159,9 +159,11 @@ export class ArtCharDatabase {
 
     if (oldArt) {
       newArt.location = oldArt.location
+      newArt.exclude = oldArt.exclude
       newArt.lock = oldArt.lock
     } else {
       newArt.location = ""
+      newArt.exclude = false
       newArt.lock = false
     }
 
@@ -294,11 +296,11 @@ export class ArtCharDatabase {
       else if (oldArts[slot]) this.setLocation(oldArts[slot], "")
     }
   }
-  lockArtifact(key: string, lock = true) {
+  excludeArtifact(key: string, exclude = true) {
     const art = this.arts.get(key)
-    if (!art || art.lock === lock) return
+    if (!art || art.exclude === exclude) return
 
-    art.lock = lock
+    art.exclude = exclude
     this.saveArt(key, art)
   }
 

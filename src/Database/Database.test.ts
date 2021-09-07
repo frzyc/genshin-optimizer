@@ -206,9 +206,9 @@ describe("Database", () => {
     // Recap, we should now have unequiped art2 and Albedo
 
     // BTW, setting locks should work
-    database.lockArtifact(art2.id)
-    expect(database._getArt(art2.id)?.lock).toEqual(true)
-    database.lockArtifact(art2.id, false)
-    expect(database._getArt(art2.id)?.lock).toEqual(false)
+    database.excludeArtifact(art2.id)
+    expect(database._getArt(art2.id)?.exclude).toEqual(true)
+    database.excludeArtifact(art2.id, false)
+    expect(database._getArt(art2.id)?.exclude).toEqual(false)
   })
 })

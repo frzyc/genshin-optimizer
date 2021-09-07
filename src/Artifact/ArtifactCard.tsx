@@ -44,7 +44,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
   const characterSheet = usePromise(CharacterSheet.get(art?.location ?? ""), [art?.location])
   if (!art) return null
 
-  const { id, slotKey, numStars, level, mainStatKey, substats, lock } = art
+  const { id, slotKey, numStars, level, mainStatKey, substats, exclude } = art
   const mainStatLevel = Math.max(Math.min(mainStatAssumptionLevel, numStars * 4), level)
   const levelVariant = (Math.floor(Math.max(level - 1, 0) / 4) + 1) + "roll"
   const mainStatVal = <span className={mainStatLevel !== level ? "text-orange" : ""}>{valueStringWithUnit(Artifact.mainStatValue(mainStatKey, numStars, mainStatLevel) ?? 0, Stat.getStatUnit(mainStatKey))}</span>
@@ -81,7 +81,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
         </Col>
         <Col className="pt-2">
           <h6>{process.env.NODE_ENV === "development" && <span className="text-warning">{id || `""`} </span>}<strong>{slotName} {slotDescEle}</strong></h6>
-          <div><SlotNameWithIcon slotKey={slotKey} /> <span className="float-right mr-4"><FontAwesomeIcon icon={lock ? faLock : faLockOpen} className="fa-fw" /></span></div>
+          <div><SlotNameWithIcon slotKey={slotKey} /> <span className="float-right mr-4"><FontAwesomeIcon icon={exclude ? faLock : faLockOpen} className="fa-fw" /></span></div>
           <div><small><Stars stars={numStars} /></small></div>
         </Col>
       </Row>
@@ -139,8 +139,8 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
             {editable ? <OverlayTrigger placement="top"
               overlay={<Tooltip id="exclude-artifact-tip">{t`lockArtifactTip`}</Tooltip>}>
               <span className="d-inline-block">
-                <Button size="sm" onClick={() => database.lockArtifact(id, !lock)} className="rounded-0">
-                  <FontAwesomeIcon icon={lock ? faToiletPaperSlash : faToiletPaper} className="fa-fw" />
+                <Button size="sm" onClick={() => database.excludeArtifact(id, !exclude)} className="rounded-0">
+                  <FontAwesomeIcon icon={exclude ? faToiletPaperSlash : faToiletPaper} className="fa-fw" />
                 </Button>
               </span>
             </OverlayTrigger> : null}
