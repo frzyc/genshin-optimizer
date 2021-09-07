@@ -191,6 +191,7 @@ const characterV2 = object({
     else
       value.reserved = []
     value.talentLevelKeys = Object.fromEntries(Object.entries(value.talent).map(([key, value]: any[]) => [key, value - 1]))
+    value.characterKey = value.key
     return value
   },
   decode: (value) => {

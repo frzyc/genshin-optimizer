@@ -25,7 +25,7 @@ describe('mergeStats()', () => {
 describe('Character.getDisplayStatKeys()', () => {
   const characterKey = "Noelle"
 
-  beforeEach(() => database.updateChar({ characterKey, levelKey: "L60A", weapon: { key: "Whiteblind" } } as any))
+  beforeEach(() => database.updateChar({ key: characterKey, levelKey: "L60A", weapon: { key: "Whiteblind" } } as any))
   afterEach(() => localStorage.clear())
   test('should get statKeys for characters with finished talent page', async () => {
     const artifactSheets = await ArtifactSheet.getAll()
@@ -83,20 +83,20 @@ describe('Equipment functions', () => {
     empty = Object.fromEntries(allSlotKeys.map(sk => [sk, ""])) as StrictDict<SlotKey, "">
 
     Noelle = {
-      characterKey: "Noelle",
+      key: "Noelle",
       equippedArtifacts: empty,
       levelKey: "lvl"
     }
     Ningguang = {
-      characterKey: "Ningguang",
+      key: "Ningguang",
       equippedArtifacts: empty,
       levelKey: "lvl"
     }
     database.updateChar(Noelle)
     database.updateChar(Ningguang)
-    database.setLocation(c.id, Noelle.characterKey)
-    database.setLocation(d.id, Noelle.characterKey)
-    database.setLocation(e.id, Noelle.characterKey)
+    database.setLocation(c.id, Noelle.key)
+    database.setLocation(d.id, Noelle.key)
+    database.setLocation(e.id, Noelle.key)
   })
   test(`Character.remove`, () => {
     database.removeChar("Noelle")

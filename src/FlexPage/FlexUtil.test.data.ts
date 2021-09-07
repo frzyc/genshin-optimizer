@@ -5,7 +5,7 @@ import { IWeapon } from "../Types/weapon"
 export const oldURL = "https://frzyc.github.io/genshin-optimizer/#/flex?v=2&d=565k01043N09F18W04R165k03141Y79W0aa37G0p5g07242o21074W05l095k0j347E03z02c292195k09443j08111HbaV3a122003L9005551echaracterLevel289bStaffOfHoma3L900101000"
 
 export const character: ICharacter = {
-  characterKey: 'HuTao',
+  key: 'HuTao',
   hitMode: 'avgHit',
   reactionMode: 'pyro_vaporize',
   constellation: 2,

@@ -6,14 +6,14 @@ import { removeArtifactCache, removeCharacterCache, removeWeaponCache } from '..
 
 const storage = new SandboxStorage()
 storage.setString("db_ver", "8")
-storage.set(`char_${character.characterKey}`, character)
+storage.set(`char_${character.key}`, character)
 storage.set("weapon_1", weapon)
 artifacts.map((art, id) => storage.set(`artifact_${id + 1}`, art))
 const database = new ArtCharDatabase(storage)
 
 describe('flex import export', () => {
   test('should support round tripping', () => {
-    const [flexDatabase, flexCharacterKey] = parseFlexObj(createFlexObj(character.characterKey, database)!)!
+    const [flexDatabase, flexCharacterKey] = parseFlexObj(createFlexObj(character.key, database)!)!
     const flexCharacter = flexDatabase._getChar(flexCharacterKey)!
     const flexWeapon = flexDatabase._getWeapon(flexCharacter.equippedWeapon)!
     const flexArtifacts = Object.values(flexCharacter.equippedArtifacts)

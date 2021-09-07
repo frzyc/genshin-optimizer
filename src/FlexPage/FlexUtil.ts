@@ -42,7 +42,7 @@ export function parseFlexObj(string: string): [ArtCharDatabase, CharacterKey, nu
 }
 
 function parseFlexObjFromSchema(string: string, schema: any): [ArtCharDatabase, CharacterKey] {
-  const decoded = decode(string, schema) as { character: ICharacter & { weapon: IWeapon }, artifacts: IArtifact[] }
+  const decoded = decode(string, schema) as { character: any, artifacts: IArtifact[] }
   const { character, artifacts } = decoded, newCharacterKey = character.characterKey, characterKey = newCharacterKey.toLowerCase() as CharacterKey
   character.characterKey = characterKey
 

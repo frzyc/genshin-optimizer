@@ -20,7 +20,7 @@ function importGOOD1(data: IGOOD): ImportResult {
   // DO NOT CHANGE THE DB VERSION
   // GOODv1 matches dbv8.
   setDBVersion(storage, 8)
-  characters.forEach((char) => storage.set(`char_${char.characterKey}`, char))
+  characters.forEach((char) => storage.set(`char_${char.key}`, char))
   artifacts.forEach((art, id) => storage.set(`artifact_${id}`, art))
   weapons.forEach((weapon, id) => storage.set(`weapon_${id}`, weapon))
 

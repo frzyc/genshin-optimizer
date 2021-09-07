@@ -121,7 +121,7 @@ export default function WeaponDisplayCard({
             <FontAwesomeIcon icon={faTimes} /></Button>
         </Col>}
         {!!charData && editable && <Col xs="auto">
-          <SwapBtn weaponTypeKey={weaponTypeKey} onChangeId={id => database.setWeaponLocation(id, charData.character.characterKey)} />
+          <SwapBtn weaponTypeKey={weaponTypeKey} onChangeId={id => database.setWeaponLocation(id, charData.character.key)} />
         </Col>}
       </Row>
     </Card.Header>

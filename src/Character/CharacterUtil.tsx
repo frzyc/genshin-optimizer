@@ -23,9 +23,9 @@ export function getFormulaTargetsDisplayHeading(key: string, { characterSheet, w
   return ""
 }
 
-export function initialCharacter(characterKey: CharacterKey): ICachedCharacter {
+export function initialCharacter(key: CharacterKey): ICachedCharacter {
   return {
-    characterKey, // the game character this is based off
+    key, // the game character this is based off
     level: 1,
     ascension: 0,
     hitMode: "avgHit",

@@ -29,7 +29,7 @@ type CharacterArtifactPaneProps = {
   characterDispatch: (any: characterReducerAction) => void,
   artifacts?: any[]
 }
-function CharacterArtifactPane({ sheets, character, character: { characterKey }, equippedBuild, newBuild, editable, characterDispatch, artifacts }: CharacterArtifactPaneProps) {
+function CharacterArtifactPane({ sheets, character, character: { key: characterKey }, equippedBuild, newBuild, editable, characterDispatch, artifacts }: CharacterArtifactPaneProps) {
   const database = useContext(DatabaseContext)
   const history = useHistory()
   //choose which one to display stats for

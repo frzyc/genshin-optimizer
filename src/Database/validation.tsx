@@ -151,7 +151,7 @@ export function parseCharacter(obj: any, key: string): ICharacter | undefined {
   if (typeof obj !== "object") return
 
   let {
-    characterKey, level, ascension, hitMode, elementKey, reactionMode, conditionalValues,
+    key: characterKey, level, ascension, hitMode, elementKey, reactionMode, conditionalValues,
     baseStatOverrides, talent, infusionAura, constellation, buildSettings,
   } = obj
 
@@ -207,18 +207,18 @@ export function parseCharacter(obj: any, key: string): ICharacter | undefined {
 
   // TODO: validate baseStatOverrides, conditionalValues
   return {
-    characterKey, level, ascension, hitMode, elementKey, reactionMode, conditionalValues,
+    key: characterKey, level, ascension, hitMode, elementKey, reactionMode, conditionalValues,
     baseStatOverrides, talent, infusionAura, constellation, buildSettings,
   }
 }
 /// Return a new flex character from given character. All extra keys are removed
 export function removeCharacterCache(char: ICachedCharacter): ICharacter {
   const {
-    characterKey, level, ascension, hitMode, elementKey, reactionMode, conditionalValues,
+    key: characterKey, level, ascension, hitMode, elementKey, reactionMode, conditionalValues,
     baseStatOverrides, talent, infusionAura, constellation, buildSettings,
   } = char
   return {
-    characterKey, level, ascension, hitMode, elementKey, reactionMode, conditionalValues,
+    key: characterKey, level, ascension, hitMode, elementKey, reactionMode, conditionalValues,
     baseStatOverrides, talent, infusionAura, constellation, buildSettings,
   }
 }

@@ -30,7 +30,7 @@ type InfusionAuraDropdownProps = {
   characterDispatch: (any: characterReducerAction) => void,
   className?: string
 }
-export function InfusionAuraDropdown({ characterSheet, character: { infusionAura = "", characterKey }, characterDispatch, className }: InfusionAuraDropdownProps) {
+export function InfusionAuraDropdown({ characterSheet, character: { infusionAura = "" }, characterDispatch, className }: InfusionAuraDropdownProps) {
   if (!characterSheet.isMelee()) return null
   return <Dropdown className={className}>
     <Dropdown.Toggle variant={infusionAura || "secondary"}>{infusionVals[infusionAura]}</Dropdown.Toggle>

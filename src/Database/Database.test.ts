@@ -10,7 +10,7 @@ import { importGOOD, exportGOOD } from "./exim/good"
 import { validateArtifact } from "./validation"
 
 const baseAlbedo: ICachedCharacter = {
-  characterKey: "Albedo",
+  key: "Albedo",
   equippedArtifacts: { flower: "", plume: "", sands: "", goblet: "", circlet: "" },
   level: 1, ascension: 0,
   hitMode: "hit",
@@ -25,7 +25,7 @@ const baseAlbedo: ICachedCharacter = {
   equippedWeapon: "",
 } as const
 const baseAmber: ICachedCharacter = {
-  characterKey: "Amber",
+  key: "Amber",
   equippedArtifacts: { flower: "", plume: "", sands: "", goblet: "", circlet: "" },
   level: 1, ascension: 0,
   hitMode: "hit",

@@ -47,7 +47,7 @@ interface ascension {
 }
 
 export interface ICharacter {
-  characterKey: CharacterKey
+  key: CharacterKey
   level: number,
   ascension: number,
   hitMode: HitModeKey

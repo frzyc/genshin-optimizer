@@ -171,7 +171,7 @@ function migrateV7ToV8(storage: DBStorage) {
       const newCharacterKey = charMap[characterKey]
 
       // Rename characterKey
-      character.characterKey = charMap[character.characterKey]
+      character.key = newCharacterKey
       // Rename conditionalValues with characterKey
       if (character.conditionalValues?.character?.[characterKey]) {
         character.conditionalValues.character[newCharacterKey] = character.conditionalValues?.character?.[characterKey]
@@ -189,7 +189,7 @@ function migrateV7ToV8(storage: DBStorage) {
       if (!weapon) continue
       if (weaponKeyChangeMap[weapon.key])
         weapon.key = weaponKeyChangeMap[weapon.key]
-      weapon.location = character.characterKey
+      weapon.location = newCharacterKey
       weapon.refine = weapon.refineIndex + 1
       storage.set(generateWeaponId(storage), weapon)
       storage.set(`char_${newCharacterKey}`, rest)

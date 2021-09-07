@@ -41,9 +41,9 @@ export class ArtCharDatabase {
         // Use relations from artifact
         character.equippedArtifacts = Object.fromEntries(allSlotKeys.map(slot => [slot, ""])) as any
 
-        this.chars.set(flex.characterKey, character)
+        this.chars.set(flex.key, character)
         // Save migrated version back to db
-        if (migrated) this.storage.set(`char_${flex.characterKey}`, flex)
+        if (migrated) this.storage.set(`char_${flex.key}`, flex)
       }
     }
 
@@ -134,7 +134,7 @@ export class ArtCharDatabase {
    * **Caution**: This does not update `equipedWeapon`, use `setWeaponLocation` instead
    */
   updateChar(value: ICachedCharacter): void {
-    const newChar = deepClone(value), key = newChar.characterKey, oldChar = this.chars.get(key)
+    const newChar = deepClone(value), key = newChar.key, oldChar = this.chars.get(key)
 
     if (oldChar) {
       newChar.equippedArtifacts = oldChar.equippedArtifacts
@@ -249,7 +249,7 @@ export class ArtCharDatabase {
 
       if (oldChar && oldArt) {
         oldChar.equippedArtifacts[slot] = oldArt.id!
-        oldArt.location = oldChar.characterKey
+        oldArt.location = oldChar.key
       } else if (oldArt) oldArt.location = ""
 
       if (oldArt) this.saveArt(oldArtKey, oldArt)
@@ -276,7 +276,7 @@ export class ArtCharDatabase {
 
       if (oldChar && oldWeapon) {
         oldChar.equippedWeapon = oldWeapon.id!
-        oldWeapon.location = oldChar.characterKey
+        oldWeapon.location = oldChar.key
       } else if (oldWeapon) oldWeapon.location = ""
 
       if (oldWeapon) this.saveWeapon(oldWeaponId, oldWeapon)
