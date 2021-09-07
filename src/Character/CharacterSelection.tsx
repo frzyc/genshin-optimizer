@@ -145,9 +145,9 @@ export function CharacterSelectionModal({ show, onHide, onSelect, filter = () =>
                   {character ? <>
                     <h5 className="mb-0">Lv. {Character.getLevelString(character)} {`C${character.constellation}`}</h5>
                     <h6 className="mb-0">
-                      <Badge variant="secondary"><strong className="mx-1">{character.talent.auto}</strong></Badge>{` `}
-                      <Badge variant="secondary"><strong className="mx-1">{character.talent.skill}</strong></Badge>{` `}
-                      <Badge variant="secondary"><strong className="mx-1">{character.talent.burst}</strong></Badge>
+                      <Badge variant="info"><strong className="mx-1">{character.talent.auto}</strong></Badge>{` `}
+                      <Badge variant="info"><strong className="mx-1">{character.talent.skill}</strong></Badge>{` `}
+                      <Badge variant="info"><strong className="mx-1">{character.talent.burst}</strong></Badge>
                     </h6>
                   </> : <>
                     <h4><Badge variant="primary">NEW</Badge></h4>
