@@ -16,7 +16,7 @@ export default function FlexDisplay() {
     const flexResult = parseFlexObj(searchStr.substring(1))
     if (!flexResult) return <Redirect to={`/`} />
     const [database, charKey, version] = flexResult
-    if (version !== 2)
+    if (version !== 3)
       return <Redirect to={`/flex?${createFlexObj(charKey, database)}`} />
     return <DatabaseContext.Provider value={database}><Display characterKey={charKey} /></DatabaseContext.Provider>
   } else {

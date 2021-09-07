@@ -1,4 +1,4 @@
-import { character, artifacts, weapon, oldURL } from './FlexUtil.test.data'
+import { character, artifacts, weapon, urlV2, urlV3 } from './FlexUtil.test.data'
 import { createFlexObj, parseFlexObj } from './FlexUtil'
 import { ArtCharDatabase } from '../Database/Database'
 import { SandboxStorage } from '../Database/DBStorage'
@@ -17,19 +17,19 @@ describe('flex import export', () => {
     const flexCharacter = flexDatabase._getChar(flexCharacterKey)!
     const flexWeapon = flexDatabase._getWeapon(flexCharacter.equippedWeapon)!
     const flexArtifacts = Object.values(flexCharacter.equippedArtifacts)
-      .filter(id => id).map(id => database._getArt(id)!)
+      .filter(id => id).map(id => flexDatabase._getArt(id)!)
 
     expect(removeCharacterCache(flexCharacter)).toEqual(character)
     expect(removeWeaponCache(flexWeapon)).toEqual(weapon)
     expect(flexArtifacts.length).toEqual(artifacts.length)
     expect(flexArtifacts.map(removeArtifactCache)).toEqual(expect.arrayContaining(artifacts))
   })
-  test('should support old format', () => {
-    const [flexDatabase, flexCharacterKey] = parseFlexObj(oldURL.split("flex?")[1])!
+  test('should support flex v2', () => {
+    const [flexDatabase, flexCharacterKey] = parseFlexObj(urlV2.split("flex?")[1])!
     const flexCharacter = flexDatabase._getChar(flexCharacterKey)!
     const flexWeapon = flexDatabase._getWeapon(flexCharacter.equippedWeapon)!
     const flexArtifacts = Object.values(flexCharacter.equippedArtifacts)
-      .filter(id => id).map(id => database._getArt(id)!)
+      .filter(id => id).map(id => flexDatabase._getArt(id)!)
 
     // We're dropping conditional values and infusion from old version
     flexCharacter.conditionalValues = character.conditionalValues
@@ -40,4 +40,21 @@ describe('flex import export', () => {
     expect(flexArtifacts.length).toEqual(artifacts.length)
     expect(flexArtifacts.map(removeArtifactCache)).toEqual(expect.arrayContaining(artifacts))
   })
+  test('should support flex v3', () => {
+    const [flexDatabase, flexCharacterKey] = parseFlexObj(urlV3.split("flex?")[1])!
+    const flexCharacter = flexDatabase._getChar(flexCharacterKey)!
+    const flexWeapon = flexDatabase._getWeapon(flexCharacter.equippedWeapon)!
+    const flexArtifacts = Object.values(flexCharacter.equippedArtifacts)
+      .filter(id => id).map(id => flexDatabase._getArt(id)!)
+
+    // We're dropping conditional values and infusion from old version
+    flexCharacter.conditionalValues = character.conditionalValues
+    flexCharacter.infusionAura = 'pyro'
+
+    expect(removeCharacterCache(flexCharacter)).toEqual(character)
+    expect(removeWeaponCache(flexWeapon)).toEqual(weapon)
+    expect(flexArtifacts.length).toEqual(artifacts.length)
+    expect(flexArtifacts.map(removeArtifactCache)).toEqual(expect.arrayContaining(artifacts))
+  })
+
 })
