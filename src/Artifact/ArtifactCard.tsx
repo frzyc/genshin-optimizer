@@ -1,4 +1,4 @@
-import { faBriefcase, faEdit, faInfoCircle, faLock, faLockOpen, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { faBriefcase, faEdit, faInfoCircle, faLock, faLockOpen, faToiletPaper, faToiletPaperSlash, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useContext, useEffect, useState } from 'react';
 import Badge from 'react-bootstrap/Badge';
@@ -81,7 +81,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
         </Col>
         <Col className="pt-2">
           <h6>{process.env.NODE_ENV === "development" && <span className="text-warning">{id || `""`} </span>}<strong>{slotName} {slotDescEle}</strong></h6>
-          <div><SlotNameWithIcon slotKey={slotKey} /></div>
+          <div><SlotNameWithIcon slotKey={slotKey} /> <span className="float-right mr-4"><FontAwesomeIcon icon={lock ? faLock : faLockOpen} className="fa-fw" /></span></div>
           <div><small><Stars stars={numStars} /></small></div>
         </Col>
       </Row>
@@ -133,18 +133,17 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
         </Col> : <Col xs="auto"><b>{locationName}</b></Col>}
         <Col xs="auto">
           <ButtonGroup>
+            {!!onEdit && <Button variant="info" size="sm" onClick={onEdit}>
+              <FontAwesomeIcon icon={faEdit} className="fa-fw" />
+            </Button>}
             {editable ? <OverlayTrigger placement="top"
-              overlay={<Tooltip id="lock-artifact-tip">{t`lockArtifactTip`}</Tooltip>}>
+              overlay={<Tooltip id="exclude-artifact-tip">{t`lockArtifactTip`}</Tooltip>}>
               <span className="d-inline-block">
-                <Button size="sm" onClick={() => database.lockArtifact(id, !lock)}>
-                  <FontAwesomeIcon icon={lock ? faLock : faLockOpen} className="fa-fw" />
+                <Button size="sm" onClick={() => database.lockArtifact(id, !lock)} className="rounded-0">
+                  <FontAwesomeIcon icon={lock ? faToiletPaperSlash : faToiletPaper} className="fa-fw" />
                 </Button>
               </span>
             </OverlayTrigger> : null}
-            {!!onEdit && <Button variant="info" size="sm"
-              onClick={onEdit}>
-              <FontAwesomeIcon icon={faEdit} className="fa-fw" />
-            </Button>}
             {!!onDelete && <Button variant="danger" size="sm"
               onClick={onDelete}>
               <FontAwesomeIcon icon={faTrashAlt} className="fa-fw" />
