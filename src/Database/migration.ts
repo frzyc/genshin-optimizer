@@ -15,9 +15,8 @@ export function migrate(storage: DBStorage): { migrated: boolean } {
   if (version < 6) { migrateV5ToV6(storage); setDBVersion(storage, 6) }
   if (version < 7) { migrateV6ToV7(storage); setDBVersion(storage, 7) }
   if (version < 8) { migrateV7ToV8(storage); setDBVersion(storage, 8) }
-  if (version < 9) { migrateV8ToV9(storage); setDBVersion(storage, 9) }
 
-  if (version > 9) throw new Error(`Database version ${version} is not supported`)
+  if (version > 8) throw new Error(`Database version ${version} is not supported`)
 
   return { migrated: version < getDBVersion(storage) }
 }
@@ -130,7 +129,7 @@ function migrateV5ToV6(storage: DBStorage) {
   }
 }
 
-// 5.20.0 - 5.21.5
+// 5.20.0 - ???
 function migrateV6ToV7(storage: DBStorage) {
   for (const key of storage.keys) {
     if (key.startsWith("char_")) {
@@ -148,7 +147,7 @@ function migrateV6ToV7(storage: DBStorage) {
   }
 }
 
-// 5.22.0 - ???
+// ??? - present
 function migrateV7ToV8(storage: DBStorage) {
   let keyInd = 1;
   function generateWeaponId(storage: DBStorage) {
@@ -174,11 +173,23 @@ function migrateV7ToV8(storage: DBStorage) {
         delete character.conditionalValues?.character?.[characterKey]
       }
 
+      // Convert base-0 `talentLevelKeys` to base-1 `talent`
+      if (typeof character.talentLevelKeys === "object") {
+        character.talent = Object.fromEntries(
+          Object.entries(character.talentLevelKeys)
+            .map(([key, value]: [any, any]) => [key, value + 1]))
+      }
+
       const { weapon, ...rest } = character
       if (!weapon) continue
       weapon.location = character.characterKey
+      weapon.refine = weapon.refineIndex + 1
       storage.set(generateWeaponId(storage), weapon)
       storage.set(`char_${newCharacterKey}`, rest)
+    } else if (key.startsWith("artifact_")) {
+      const artifact = storage.get(key)
+      artifact.exclude = artifact.lock
+      storage.set(key, artifact)
     }
   }
   const BuildsDisplayState = storage.get("BuildsDisplay.state")
@@ -193,28 +204,5 @@ function migrateV7ToV8(storage: DBStorage) {
     CharacterDisplayState.characterKeyToEdit = charMap[CharacterDisplayState.charIdToEdit] ?? ""
     delete CharacterDisplayState.charIdToEdit
     storage.set("CharacterDisplay.state", CharacterDisplayState)
-  }
-}
-
-// ??? - present
-function migrateV8ToV9(storage: DBStorage) {
-  for (const key of storage.keys) {
-    if (key.startsWith("weapon_")) {
-      const weapon = storage.get(key)
-      weapon.refine = weapon.refineIndex + 1
-      storage.set(key, weapon)
-    } else if (key.startsWith("char_")) {
-      const character = storage.get(key)
-      if (character.talentLevelKeys && typeof character.talentLevelKeys === "object") {
-        character.talent = Object.fromEntries(
-          Object.entries(character.talentLevelKeys)
-            .map(([key, value]: [any, any]) => [key, value + 1]))
-        storage.set(key, character)
-      }
-    } else if (key.startsWith("artifact_")) {
-      const artifact = storage.get(key)
-      artifact.exclude = artifact.lock
-      storage.set(key, artifact)
-    }
   }
 }
