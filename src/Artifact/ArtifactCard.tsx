@@ -88,7 +88,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
     </Card.Header>
     <Card.Body className="d-flex flex-column py-2">
       <Card.Title>
-        <Badge variant={levelVariant} className="text-black"><strong>{` +${level}`}</strong></Badge> {sheet?.name ?? "Artifact Set"} {setDescEle}
+        <Badge variant={levelVariant} ><strong className="text-dark">{` +${level}`}</strong></Badge> {sheet?.name ?? "Artifact Set"} {setDescEle}
       </Card.Title>
       <h5 className="mb-1">
         <b>{Stat.getStatName(mainStatKey)} {mainStatVal}</b>
