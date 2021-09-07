@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import ArtifactCard from '../../Artifact/ArtifactCard';
 import { ArtifactSheet } from '../../Artifact/ArtifactSheet';
 import SetEffectDisplay from '../../Artifact/Component/SetEffectDisplay';
-import { DatabaseContext } from '../../Database/Database';
+import { DatabaseContext, database as localDatabase } from '../../Database/Database';
 import { ICachedCharacter } from '../../Types/character';
 import { allSlotKeys, ArtifactSetKey, SlotKey } from '../../Types/consts';
 import { ICalculatedStats } from '../../Types/stats';
@@ -64,7 +64,7 @@ function CharacterArtifactPane({ sheets, character, character: { key: characterK
         <StatDisplayComponent {...{ sheets, character, equippedBuild, newBuild, statsDisplayKeys: statKeys, editable }} />
       </Card.Body>
       <Card.Footer>
-        {newBuild ? <Button onClick={equipArts}>Equip all artifacts to current character</Button> : (editable && <Button onClick={unequipArts}>Unequip all artifacts</Button>)}
+        {newBuild ? <Button onClick={equipArts}>Equip all artifacts to current character</Button> : (editable && database === localDatabase && <Button onClick={unequipArts}>Unequip all artifacts</Button>)}
         {Boolean(mainStatAssumptionLevel) && <Alert className="float-right text-right mb-0 py-2" variant="orange" ><b>Assume Main Stats are Level {mainStatAssumptionLevel}</b></Alert>}
       </Card.Footer>
     </Card>

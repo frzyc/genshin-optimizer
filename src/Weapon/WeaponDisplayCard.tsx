@@ -9,7 +9,7 @@ import DocumentDisplay from "../Components/DocumentDisplay"
 import EquipmentDropdown from "../Components/EquipmentDropdown"
 import { Stars } from "../Components/StarDisplay"
 import { ascensionMaxLevel, milestoneLevels } from "../Data/CharacterData"
-import { DatabaseContext } from "../Database/Database"
+import { DatabaseContext, database as localDatabase } from "../Database/Database"
 import { ICachedCharacter } from "../Types/character"
 import { ICalculatedStats } from "../Types/stats"
 import { ICachedWeapon } from "../Types/weapon"
@@ -119,7 +119,7 @@ export default function WeaponDisplayCard({
           <Button variant="danger" onClick={onClose}>
             <FontAwesomeIcon icon={faTimes} /></Button>
         </Col>}
-        {!!charData && editable && <Col xs="auto">
+        {!!charData && editable && database === localDatabase && <Col xs="auto">
           <SwapBtn weaponTypeKey={weaponTypeKey} onChangeId={id => database.setWeaponLocation(id, charData.character.key)} />
         </Col>}
       </Row>
