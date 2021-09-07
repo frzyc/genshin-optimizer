@@ -296,7 +296,7 @@ export class ArtCharDatabase {
       else if (oldArts[slot]) this.setLocation(oldArts[slot], "")
     }
   }
-  lockArtifact(key: string, lock = false){
+  lockArtifact(key: string, lock = false) {
     const art = this.arts.get(key)
     if (!art || art.lock === lock) return
 

@@ -69,7 +69,6 @@ const artifact = object({
   decode: art => {
     art.id = ""
     art.lock = false
-    art.exclude = false
     return art
   }
 })

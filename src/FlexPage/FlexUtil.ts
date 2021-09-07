@@ -43,18 +43,17 @@ export function parseFlexObj(string: string): [ArtCharDatabase, CharacterKey, nu
 
 function parseFlexObjFromSchema(string: string, schema: any): [ArtCharDatabase, CharacterKey] {
   const decoded = decode(string, schema) as { character: ICharacter & { weapon: IWeapon }, artifacts: IArtifact[] }
-  const { character: { weapon, characterKey }, character, artifacts } = decoded
+  const { character, artifacts } = decoded, newCharacterKey = character.characterKey, characterKey = newCharacterKey.toLowerCase() as CharacterKey
+  character.characterKey = characterKey
 
   const storage = new SandboxStorage()
   // DON'T CHANGE THIS.
   // Flex v2 (decoding) scheme won't be updated even when newer
   // db versions come along. So the object created from the url
-  // will remain a valid dbv8. The actual migration happens
+  // will remain a valid dbv7. The actual migration happens
   // together with the validation down below.
-  storage.setString("db_ver", "8")
+  storage.setString("db_ver", "7")
 
-  weapon.location = characterKey
-  storage.set("weapon_1", weapon)
   storage.set(`char_${characterKey}`, character)
   artifacts.forEach((artifact, i) => {
     artifact.location = characterKey
@@ -63,7 +62,7 @@ function parseFlexObjFromSchema(string: string, schema: any): [ArtCharDatabase, 
 
   const database = new ArtCharDatabase(storage) // Validate storage
 
-  if (!database._getChar(characterKey))
+  if (!database._getChar(newCharacterKey))
     throw new Error(`Invalid flex object`)
-  return [database, characterKey]
+  return [database, newCharacterKey]
 }

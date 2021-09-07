@@ -195,6 +195,7 @@ function migrateV7ToV8(storage: DBStorage) {
       storage.set(`char_${newCharacterKey}`, rest)
     } else if (key.startsWith("artifact_")) {
       const artifact = storage.get(key)
+      artifact.location = charMap[artifact.location]
       artifact.exclude = artifact.lock
       storage.set(key, artifact)
     }
