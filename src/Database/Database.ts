@@ -58,7 +58,7 @@ export class ArtCharDatabase {
 
         // Update relations
         const { location, slotKey } = flex
-        if (location && this.chars.data[location]?.equippedArtifacts[slotKey] === "") {
+        if (this.chars.data[location] && this.chars.data[location]?.equippedArtifacts[slotKey] === "") {
           this.chars.data[location]!.equippedArtifacts[slotKey] = key // equiped on `location`
         } else flex.location = ""
 
@@ -80,7 +80,7 @@ export class ArtCharDatabase {
 
         // Update relations
         const { location } = flex
-        if (location && this.chars.data[location]?.equippedWeapon === "") {
+        if (this.chars.data[location] && this.chars.data[location]?.equippedWeapon === "") {
           this.chars.data[location]!.equippedWeapon = key // equiped on `location`
         } else flex.location = ""
 
