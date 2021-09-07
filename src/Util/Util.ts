@@ -13,7 +13,7 @@ export function getRandomArbitrary(min, max) {
   return Math.random() * (max - min) + min;
 }
 export const deepClone = <T>(obj: T): T =>
-  JSON.parse(JSON.stringify(obj))
+  obj && JSON.parse(JSON.stringify(obj))
 
 export const clamp = (val, low, high) => {
   if (val < low) return low;

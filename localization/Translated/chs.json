@@ -48,8 +48,8 @@
         "button": {
             "unequipArtifacts": "卸除圣遗物",
             "deleteArtifacts": "删除圣遗物",
-            "lockArtifacts": "锁定圣遗物",
-            "unlockArtifacts": "解锁圣遗物"
+            "excludeArtifacts": "锁定圣遗物",
+            "includeArtifacts": "解锁圣遗物"
         },
         "filterLevelFormat": "等级<1>低值</1>/<3>高值</3> (包含)",
         "buttonHint": "注意:红色选项仅用于 <1>筛选后的圣遗物</1>",
@@ -76,11 +76,11 @@
             "section2": "<0>圣遗物编辑器</0><1>支持任意3<1></1> 到 5<3></3>圣遗物的全功能编辑器。输入副词条后，能自动计算升级次数并评分。同时编辑器会确保你的升级次数与圣遗物等级匹配。</1><2>截图扫描</2><3>如果你不想手动输入圣遗物，可以通过截图扫描的方式识别输入圣遗物。在圣遗物编辑器界面，点击 <1>Show Me How!</1> 可见使用方法。</3><4>自动圣遗物扫描仪</4><5>如果你在PC上玩原神, 你可以下载使用圣遗物自动扫描工具，并在在导入进GO的 <1></1> Database。这里有一个推荐使用的工具: <3>「天目」-- Amenoma</3>.</5><6>可以检测重复/更新后的圣遗物</6><7>GO可以自动检测你添加的 <1>重复</1> 圣遗物哦！同时也会检测当前正在添加的圣遗物是否是已有圣遗物的 <3>升级后</3> 版本。当检测到重复/更新的圣遗物，会出现一个预览界面帮助你比较更新这些存疑的圣遗物（如图）。</7>",
             "section3": "<0>圣遗物背包</0><p>所有被添加到GO的圣遗物会在此显示。筛选器可以帮助你更好浏览你拥有的圣遗物。 </p><2>例如：精确找狗粮</2><p>使用圣遗物筛选器及圣遗物评分，你可以快速地确定狗粮圣遗物。</p><4>例如，这样设置你的筛选：</4><5><0>限制圣遗物等级0-8.</0><1>未锁定的圣遗物</1><2>副词条: 小攻击 和 小防御。</1><2>按照最高评分升序排列</2></5><6>狗粮被吃之后，单击 <1>删除圣遗物</1> 就可以删除这些被筛选后的圣遗物啦。</6>"
         },
-        "lockDisplay": "已锁定： {{value}}",
-        "lock": {
+        "exclusionDisplay": "已锁定： {{value}}",
+        "exclusion": {
             "any": "任意",
-            "locked": "已锁定",
-            "unlocked": "已解锁"
+            "excluded": "已锁定",
+            "included": "已解锁"
         },
         "sortMap": {
             "quality": "稀有度",
@@ -95,7 +95,7 @@
         },
         "resetFilters": "重置过滤条件",
         "setEffectNum": "{{setNum}}件套",
-        "lockArtifactTip": "锁定圣遗物会使得配装计算器不使用它进行配装"
+        "excludeArtifactTip": "锁定圣遗物会使得配装计算器不使用它进行配装"
     },
     "home": {
         "welcome": "欢迎使用Genshin Optimizer！",
@@ -205,7 +205,7 @@
         "reset": "重置",
         "info": "重要提示"
     },
-    "char_eula": {
+    "char_Eula": {
         "skillC": {
             "name": "冷酷之心",
             "consumed": "消耗的冷酷之心",
@@ -225,13 +225,13 @@
         },
         "passive1": "残缺光降之剑伤害"
     },
-    "char_noelle": {
+    "char_Noelle": {
         "p4cd": "24秒CD，每4次普通攻击或重击减少1秒CD",
         "c1chance": "(同时处于<strong>大扫除</strong> and <strong>护心铠</strong> 状态时，几率提升至100%)",
         "c6duration": "15秒，每打倒1个敌人，延长1秒，不会超过10秒",
         "qlarger": "提高攻击范围"
     },
-    "char_venti": {
+    "char_Venti": {
         "addAimed": "额外瞄准射击伤害",
         "addFullAimed": "额外满蓄力瞄准射击伤害",
         "upcurrentDuration": "上升气流持续",
@@ -263,7 +263,14 @@
         },
         "hits_plural": "{{count}} 段",
         "eleAbsor": "元素转化",
-        "absorDot": "元素转化持续伤害"
+        "absorDot": "元素转化持续伤害",
+        "afterUse": {
+            "skill": "使用元素战技后",
+            "burst": "使用元素爆发后"
+        },
+        "increase": {
+            "atk": "攻击加成"
+        }
     },
     "weapon_SongOfBrokenPines": {
         "name": "揭旗的叛逆之歌"
@@ -271,7 +278,7 @@
     "weapon_FreedomSworn": {
         "name": "千年的大乐章·抗争之歌"
     },
-    "char_kaedeharakazuha": {
+    "char_KaedeharaKazuha": {
         "a4": {
             "name": "触发扩散反应后",
             "text": "队伍中所有角色对应元素伤害加成",
@@ -284,7 +291,7 @@
             "bonus": "普通攻击、重击、下落攻击伤害加成"
         }
     },
-    "char_rosaria": {
+    "char_Rosaria": {
         "a1": "背后攻击后",
         "a4": {
             "name": "施放 <strong>终命的圣礼<strong/>后",
@@ -294,7 +301,7 @@
         "c1": "攻击造成暴击后",
         "c6": "<strong>终命的圣礼<strong/>对敌人的攻击"
     },
-    "char_kamisatoayaka": {
+    "char_KamisatoAyaka": {
         "afterSprint": "冲刺之后",
         "afterSkill": "使用<strong>神里流-冰华</strong>后",
         "afterSprintCryo": "冲刺后对敌人施加<cryo>冰元素</cryo>附着",
@@ -303,7 +310,7 @@
         "dmgBySnowflake": "敌人受到<strong>神里流-霜灭</strong>的霜见雪关扉伤害后",
         "UsurashiButou": "薄冰舞蹈"
     },
-    "char_traveler": {
+    "char_Traveler": {
         "electro": {
             "skill": {
                 "absorb": "吸收丰穰勾玉"
@@ -326,15 +333,28 @@
     "weapon_ThunderingPulse": {
         "emblem": "飞雷之巴印"
     },
-    "char_razor": {
+    "char_Razor": {
         "fullBurstDMG": {
             "text": "<0><0><0>全元素爆发伤害</0></0><1>此计算包括了雷泽的元素爆发期间的普通攻击伤害. 即简单合计了第X下攻击的伤害及触发此伤害的第X下普攻伤害。</1></0>",
             "label": "普攻 + 雷狼攻击伤害{{hitNum}}"
         }
     },
-    "char_yoimiya": {
+    "char_Yoimiya": {
         "c1": "攻击受 <strong>琉金火光</strong>影响的敌人",
         "c2": "<pyro>火元素伤害</pyro>造成暴击后",
         "p2": "全队攻击加成"
+    },
+    "char_RaidenShogun": {
+        "skill": {
+            "eye": "雷罚恶曜之眼",
+            "partyCost": "Energy Cost (队友)"
+        },
+        "burst": {
+            "resolves": "积攒愿力层数"
+        },
+        "a4": {
+            "enerRest": "<strong>梦想一心</strong>恢复的元素能量",
+            "eleDMG": "雷元素伤害加成"
+        }
     }
 }

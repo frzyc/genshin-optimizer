@@ -3,7 +3,7 @@ import { PreprocessFormulas } from "../StatData";
 import { artifactSetPermutations, artifactPermutations, pruneArtifacts, calculateTotalBuildNumber } from "./Build"
 import { GetDependencies } from '../StatDependency';
 import Formula from '../Formula';
-import { IArtifact, StatKey } from '../Types/artifact';
+import { ICachedArtifact, StatKey } from '../Types/artifact';
 import { ArtifactSetKey, SetNum, SlotKey } from '../Types/consts';
 import { Build, BuildRequest, SetFilter } from '../Types/Build';
 import { BonusStats, ICalculatedStats } from '../Types/stats';
@@ -70,7 +70,7 @@ onmessage = async (e: { data: BuildRequest }) => {
     builds.splice(maxBuildsToShow)
   }
 
-  const callback = (accu: StrictDict<SlotKey, IArtifact>, stats: ICalculatedStats) => {
+  const callback = (accu: StrictDict<SlotKey, ICachedArtifact>, stats: ICalculatedStats) => {
     if (!(++buildCount % 10000)) postMessage({ progress: buildCount, timing: performance.now() - t1, skipped }, undefined as any)
     formula(stats)
     if (Object.entries(minFilters).some(([key, minimum]) => stats[key] < minimum)) return

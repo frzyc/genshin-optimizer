@@ -1,19 +1,22 @@
 import { faLink, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import i18next from 'i18next';
-import React, { lazy, useCallback, useEffect, useReducer, useRef, useState } from 'react';
+import React, { lazy, useCallback, useContext, useEffect, useReducer, useRef, useState } from 'react';
 import { Button, ButtonGroup, Card, Col, Container, Image, Row, Spinner, ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
 import ReactGA from 'react-ga';
 import { Link } from 'react-router-dom';
 import Assets from '../Assets/Assets';
+import { CharacterSelectionModal } from './CharacterSelection';
 import InfoComponent from '../Components/InfoComponent';
 import { uncoloredEleIcons } from '../Components/StatIcon';
-import { database } from '../Database/Database';
+import { DatabaseContext } from '../Database/Database';
 import { dbStorage } from '../Database/DBStorage';
 import { allElements, allWeaponTypeKeys, CharacterKey } from '../Types/consts';
 import { useForceUpdate, usePromise } from '../Util/ReactUtil';
+import { defaultInitialWeapon } from '../Weapon/WeaponUtil';
 import CharacterCard from './CharacterCard';
 import CharacterSheet from './CharacterSheet';
+import { initialCharacter } from './CharacterUtil';
 const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
 
 //lazy load the character display
@@ -22,7 +25,7 @@ const toggle = {
   level: "Level",
   rarity: "Rarity",
   name: "Name"
-}
+} as const
 
 function filterReducer(oldFilter, newFilter) {
   if (newFilter === oldFilter)
@@ -31,7 +34,8 @@ function filterReducer(oldFilter, newFilter) {
 }
 
 export default function CharacterDisplay(props) {
-  const [charIdToEdit, setcharIdToEdit] = useState("" as CharacterKey | "")
+  const database = useContext(DatabaseContext)
+  const [characterKeyToEdit, setCharacterKeyToEdit] = useState("" as CharacterKey | "")
   const [sortBy, setsortBy] = useState(() => Object.keys(toggle)[0])
   const [elementalFilter, elementalFilterDispatch] = useReducer(filterReducer, "")
   const [weaponFilter, weaponFilterDispatch] = useReducer(filterReducer, "")
@@ -42,47 +46,60 @@ export default function CharacterDisplay(props) {
     ReactGA.pageview('/character')
     const saved = dbStorage.get("CharacterDisplay.state")
     if (saved) {
-      const { charIdToEdit, sortBy, elementalFilter, weaponFilter } = saved
-      setcharIdToEdit(charIdToEdit)
-      setsortBy(sortBy)
+      const { characterKeyToEdit, sortBy, elementalFilter, weaponFilter } = saved
+      characterKeyToEdit && setCharacterKeyToEdit(characterKeyToEdit)
+      sortBy && setsortBy(sortBy)
       allElements.includes(elementalFilter) && elementalFilterDispatch(elementalFilter)
       allWeaponTypeKeys.includes(weaponFilter) && weaponFilterDispatch(weaponFilter)
     }
     return database.followAnyChar(forceUpdate)
-  }, [forceUpdate])
+  }, [forceUpdate, database])
   const allCharacterSheets = usePromise(CharacterSheet.getAll(), []) ?? {}
   const sortingFunc = {
     level: (ck) => database._getChar(ck)?.level ?? 0,
     rarity: (ck) => allCharacterSheets[ck]?.star
   }
   useEffect(() => {
-    const save = { charIdToEdit, sortBy, elementalFilter, weaponFilter }
+    const save = { characterKeyToEdit, sortBy, elementalFilter, weaponFilter }
     dbStorage.set("CharacterDisplay.state", save)
-  }, [charIdToEdit, sortBy, elementalFilter, weaponFilter])
-  const deleteCharacter = useCallback(async (id: CharacterKey) => {
-    const chararcterSheet = await CharacterSheet.get(id)
+  }, [characterKeyToEdit, sortBy, elementalFilter, weaponFilter])
+  const deleteCharacter = useCallback(async (cKey: CharacterKey) => {
+    const chararcterSheet = await CharacterSheet.get(cKey)
     let name = chararcterSheet?.name
     //use translated string
     if (typeof name === "object")
-      name = i18next.t(`char_${id}_gen:name`)
+      name = i18next.t(`char_${cKey}_gen:name`)
 
     if (!window.confirm(`Are you sure you want to remove ${name}?`)) return
-    database.removeChar(id)
-    if (charIdToEdit === id)
-      setcharIdToEdit("")
-  }, [charIdToEdit, setcharIdToEdit])
+    database.removeChar(cKey)
+    if (characterKeyToEdit === cKey)
+      setCharacterKeyToEdit("")
+  }, [characterKeyToEdit, setCharacterKeyToEdit, database])
 
-  const editCharacter = useCallback(id => {
-    setcharIdToEdit(id)
+  const editCharacter = useCallback(cKey => {
+    if (!database._getChar(cKey))
+      (async () => {
+        //Create a new character + weapon, with linking.
+        const newChar = initialCharacter(cKey)
+        database.updateChar(newChar)
+        const characterSheet = await CharacterSheet.get(cKey)
+        if (!characterSheet) return
+        const weapon = defaultInitialWeapon(characterSheet.weaponTypeKey)
+        const weaponId = database.createWeapon(weapon)
+        database.setWeaponLocation(weaponId, cKey)
+        setCharacterKeyToEdit(cKey)
+      })()
+    else
+      setCharacterKeyToEdit(cKey)
     setTimeout(() => {
       scrollRef.current?.scrollIntoView({ behavior: "smooth" })
     }, 500);
-  }, [setcharIdToEdit, scrollRef])
+  }, [setCharacterKeyToEdit, scrollRef, database])
 
   const cancelEditCharacter = useCallback(() => {
-    setcharIdToEdit("")
+    setCharacterKeyToEdit("")
     setnewCharacter(false)
-  }, [setcharIdToEdit])
+  }, [setCharacterKeyToEdit])
 
   const charKeyList = database._getCharKeys().filter(cKey => {
     if (elementalFilter && elementalFilter !== allCharacterSheets[cKey]?.elementKey) return false
@@ -105,7 +122,6 @@ export default function CharacterDisplay(props) {
       return sortingFunc["level"](b) - sortingFunc["level"](a)
     }
   })
-  const showEditor = Boolean(charIdToEdit || newCharacter)
   return <Container ref={scrollRef} className="mt-2">
     <InfoComponent
       pageKey="characterPage"
@@ -119,19 +135,18 @@ export default function CharacterDisplay(props) {
       <InfoDisplay />
     </InfoComponent>
     {/* editor/character detail display */}
-    {showEditor ? <Row className="mt-2"><Col>
+    {!!characterKeyToEdit ? <Row className="mt-2"><Col>
       <React.Suspense fallback={<Card bg="darkcontent" text={"lightfont" as any} >
         <Card.Body><h3 className="text-center">Loading... <Spinner animation="border" variant="primary" /></h3></Card.Body>
       </Card>}>
         <CharacterDisplayCard
-          character={undefined}
           newBuild={undefined}
           tabName={undefined}
           editable
           setCharacterKey={editCharacter}
-          characterKey={charIdToEdit}
+          characterKey={characterKeyToEdit}
           onClose={cancelEditCharacter}
-          footer={<CharDisplayFooter onClose={cancelEditCharacter} characterKey={charIdToEdit} />}
+          footer={<CharDisplayFooter onClose={cancelEditCharacter} characterKey={characterKeyToEdit} />}
         />
       </React.Suspense>
     </Col></Row> : null}
@@ -165,7 +180,7 @@ export default function CharacterDisplay(props) {
       </Card.Body>
     </Card>
     <Row className="mt-2">
-      {!showEditor && <Col lg={4} md={6} className="mb-2">
+      {!characterKeyToEdit && <Col lg={4} md={6} className="mb-2">
         <Card className="h-100" bg="darkcontent" text={"lightfont" as any}>
           <Card.Header className="pr-2">
             <span>Add New Character</span>
@@ -176,6 +191,7 @@ export default function CharacterDisplay(props) {
                 <Button onClick={() => setnewCharacter(true)}>
                   <h1><FontAwesomeIcon icon={faPlus} className="fa-fw" /></h1>
                 </Button>
+                <CharacterSelectionModal show={newCharacter} onHide={() => setnewCharacter(false)} onSelect={editCharacter} />
               </Col>
             </Row>
           </Card.Body>

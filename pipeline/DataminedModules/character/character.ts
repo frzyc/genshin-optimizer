@@ -25,7 +25,7 @@ type AvatarExcelConfigData = {
   "CutsceneShow": string//"",
   "SkillDepotId": number//3401,
   "StaminaRecoverSpeed": number//25.0,
-  "CandSkillDepotIds": any[]//[], used by traveler?
+  "CandSkillDepotIds": any[]//[], used by Traveler?
   "ManekinJsonConfigHashSuffix": number//4186788044,
   "ManekinJsonConfigHashPre": number//152,
   "ManekinMotionConfig": number//103,

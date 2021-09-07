@@ -2,32 +2,33 @@ import { Alert, Button, Card, Container, Form, InputGroup, Toast } from "react-b
 import { Redirect, useLocation } from "react-router-dom";
 import CharacterDisplayCard from "../Character/CharacterDisplayCard";
 import '../StatDependency'
-import { createFlexObj, parseFlexObj, _createFlexObj } from "./FlexUtil";
+import { createFlexObj, parseFlexObj } from "./FlexUtil";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLink } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { DatabaseContext } from "../Database/Database";
 
-export default function TestDisplay() {
+export default function FlexDisplay() {
   const location = useLocation()
+  const database = useContext(DatabaseContext)
   const searchStr = location.search
   if (searchStr) {
     const flexResult = parseFlexObj(searchStr.substring(1))
     if (!flexResult) return <Redirect to={`/`} />
-    const [{ character, artifacts }, version] = flexResult
-    character.artifacts = artifacts // TODO: Decouple artifacts and character
-    if (version !== 2)
-      return <Redirect to={`/flex?${_createFlexObj(character, artifacts)}`} />
-    return <Display character={character} />
+    const [database, charKey, version] = flexResult
+    if (version !== 3)
+      return <Redirect to={`/flex?${createFlexObj(charKey, database)}`} />
+    return <DatabaseContext.Provider value={database}><Display characterKey={charKey} /></DatabaseContext.Provider>
   } else {
     const characterKey = (location as any).characterKey
     if (!characterKey) return <Redirect to={`/`} />
-    const flexObj = createFlexObj(characterKey)
+    const flexObj = createFlexObj(characterKey, database)
     if (!flexObj) return <Redirect to={`/`} />
     window.scrollTo(0, 0)//sometimes the window isnt scrolled to the top on redirect.
     return <Redirect to={`/flex?${flexObj}`} />
   }
 }
-function Display({ character }) {
+function Display({ characterKey }) {
   const [toast, settoast] = useState(false)
   const url = window.location.href
   const copyToClipboard = () => {
@@ -57,6 +58,6 @@ function Display({ character }) {
         {isUpToDate && <Alert variant="warning" className="py-2 mt-2 mb-0">This URL is generated on an older database version of Genshin Optimizer. The character data below might not be displayed as intended.</Alert>}
       </Card.Body>
     </Card>
-    <CharacterDisplayCard character={character} />
+    <CharacterDisplayCard characterKey={characterKey} editable={true} />
   </Container>
 }

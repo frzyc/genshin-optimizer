@@ -24,7 +24,7 @@ const weapon: IWeaponSheet = {
   document: [{
     fields: [{
       text: "Shield Absorption",
-      formulaText: stats => <span>{data.shield[stats.weapon.refineIndex]}% {Stat.printStat("finalHP", stats)} * (100% + {Stat.printStat("powShield_", stats)})</span>,
+      formulaText: stats => <span>{data.shield[stats.weapon.refineIndex]}% {Stat.printStat("finalHP", stats)} * (100% + {Stat.printStat("shield_", stats)})</span>,
       formula: formula.shield,
     }],
     conditional: conditionals.rg

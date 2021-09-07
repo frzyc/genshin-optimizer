@@ -31,7 +31,7 @@ const weapon: IWeaponSheet = {
   ...data_gen as WeaponData,
   img,
   stats: stats => ({
-    powShield_: refinementVals[stats.weapon.refineIndex]
+    shield_: refinementVals[stats.weapon.refineIndex]
   }),
   conditionals,
   document: [{

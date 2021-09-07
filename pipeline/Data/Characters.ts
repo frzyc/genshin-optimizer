@@ -1,42 +1,42 @@
 const char = {
-  // albedo,
-  // amber,
-  // barbara,
-  // beidou,
-  // bennett,
-  // chongyun,
-  // diluc,
-  // diona,
-  eula: {
+  // Albedo,
+  // Amber,
+  // Barbara,
+  // Beidou,
+  // Bennett,
+  // Chongyun,
+  // Diluc,
+  // Diona,
+  Eula: {
     skill: {
       brandDMG: [3765549071, "skillParam"],
       grimheartDuration: [164817062, "skillParam"],
     }
   },
-  // fischl,
-  // ganyu,
-  // hutao,
-  // jean,
-  kaedeharakazuha: {
+  // Fischl,
+  // Ganyu,
+  // HuTao,
+  // Jean,
+  KaedeharaKazuha: {
     burst: {
       name: 2015878197,
       description: [1543060392, "paragraph"],
       slashdmg: [439659606, "skillParam"],
     },
   },
-  // kaeya,
-  kamisatoayaka: {
+  // Kaeya,
+  KamisatoAyaka: {
     burst: {
       cutting: [373269062, "skillParam"],
       bloom: [2543020158, "skillParam"],
     }
   },
-  // keqing,
-  // klee,
-  // lisa,
-  // mona,
-  // ningguang,
-  noelle: {
+  // Keqing,
+  // Klee,
+  // Lisa,
+  // Mona,
+  // Ningguang,
+  Noelle: {
     skill: {
       triggerChance: [3971383039, "skillParam"],
     },
@@ -44,12 +44,12 @@ const char = {
       atkBonus: [4151293863, "skillParam"]
     },
   },
-  // qiqi,
-  // razor,
-  // rosaria,
-  // sucrose,
-  // tartaglia,
-  traveler: {
+  // Qiqi,
+  // Razor,
+  // Rosaria,
+  // Sucrose,
+  // Tartaglia,
+  Traveler: {
     electro: {
       skill: {
         enerRegen: [2165261751, "skillParam"],
@@ -60,12 +60,12 @@ const char = {
       }
     }
   }
-  // venti,
-  // xiao,
-  // xiangling,
-  // xingqiu,
-  // xinyan,
-  // yanfei,
-  // zhongli
+  // Venti,
+  // Xiao,
+  // Xiangling,
+  // Xingqiu,
+  // Xinyan,
+  // Yanfei,
+  // Zhongli
 } as const
 export default char

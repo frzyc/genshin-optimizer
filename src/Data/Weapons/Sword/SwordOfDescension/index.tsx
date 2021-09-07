@@ -9,7 +9,7 @@ import img from './Weapon_Sword_of_Descension.png'
 const weapon: IWeaponSheet = {
   ...data_gen as WeaponData,
   img,
-  stats: stats => stats.characterKey.startsWith("traveler") ? {
+  stats: stats => stats.characterKey.startsWith("Traveler") ? {
     atk: 66
   } : {},
   document: [{

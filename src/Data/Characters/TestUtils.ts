@@ -24,14 +24,15 @@ export function computeAllStats(baseStats) {
 }
 
 export function parseTestFlexObject(url) {
-  const [{ character, artifacts: flexArts }] = parseFlexObj(url.split("flex?")[1])!
-  let artifacts = flexArts.map(artifact => {
-    let { numStars, level, mainStatKey, substats } = artifact
+  const [database, charKey] = parseFlexObj(url.split("flex?")[1])!
+  const character = database._getChar(charKey)!
+  const artifacts = Object.values(character.equippedArtifacts).filter(id => id).map(id => {
+    const { rarity, level, mainStatKey, substats } = database._getArt(id)!
     return {
       ...Object.fromEntries(substats
         .filter(s => s.key != "")
         .map(({ key, value }) => [key, value])),
-      [mainStatKey]: Artifact.mainStatValue(mainStatKey, numStars, level)
+      [mainStatKey]: Artifact.mainStatValue(mainStatKey, rarity, level)
     }
   })
   return { character, artifacts }

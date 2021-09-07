@@ -3,11 +3,11 @@ import { ArtifactSheet } from "../Artifact/ArtifactSheet";
 import Conditional from "../Conditional/Conditional";
 import { ascensionMaxLevel, characterStatBase } from "../Data/CharacterData";
 import ElementalData from "../Data/ElementalData";
-import { database } from "../Database/Database";
+import { ArtCharDatabase } from "../Database/Database";
 import { ElementToReactionKeys, PreprocessFormulas } from "../StatData";
 import { GetDependencies } from "../StatDependency";
-import { IArtifact } from "../Types/artifact";
-import { ICharacter } from "../Types/character";
+import { ICachedArtifact } from "../Types/artifact";
+import { ICachedCharacter } from "../Types/character";
 import { allElements, ArtifactSetKey, ElementKey, SlotKey } from "../Types/consts";
 import { ICalculatedStats } from "../Types/stats";
 import { IFieldDisplay } from "../Types/IFieldDisplay";
@@ -15,6 +15,7 @@ import { deepClone, evalIfFunc } from "../Util/Util";
 import WeaponSheet from "../Weapon/WeaponSheet";
 import CharacterSheet from "./CharacterSheet";
 import { mergeStats } from "../Util/StatUtil";
+import { defaultInitialWeapon } from "../Weapon/WeaponUtil";
 
 export default class Character {
   //do not instantiate.
@@ -22,7 +23,7 @@ export default class Character {
 
   static getElementalName = (elementalKey: ElementKey | "physical"): string =>
     ElementalData[elementalKey].name
-  static getLevelString = (character: ICharacter): string =>
+  static getLevelString = (character: ICachedCharacter): string =>
     `${character.level}/${ascensionMaxLevel[character.ascension]}`
 
   static getTalentFieldValue = (field: IFieldDisplay, key: keyof IFieldDisplay, stats = {}, defVal = ""): any => {
@@ -30,7 +31,7 @@ export default class Character {
     return evalIfFunc(field[key] as any, stats!)
   }
 
-  static hasOverride = (character: ICharacter, statKey): boolean => {
+  static hasOverride = (character: ICachedCharacter, statKey): boolean => {
     if (statKey === "finalHP")
       return Character.hasOverride(character, "hp") || Character.hasOverride(character, "hp_") || Character.hasOverride(character, "characterHP")
     if (statKey === "finalDEF")
@@ -40,29 +41,25 @@ export default class Character {
     return character?.baseStatOverrides ? (statKey in character.baseStatOverrides) : false;
   }
 
-  static getBaseStatValue = (character: ICharacter, characetSheet: CharacterSheet, weaponSheet: WeaponSheet, statKey: string): number => {
+  static getBaseStatValue = (character: ICachedCharacter, characetSheet: CharacterSheet, weaponSheet: WeaponSheet, statKey: string): number => {
     if (statKey === "enemyLevel") return character.level
     if (statKey.includes("enemyRes_")) return 10
     if (statKey in characterStatBase) return characterStatBase[statKey]
     return 0
   }
-  static getStatValueWithOverride = (character: ICharacter, characterSheet: CharacterSheet, weaponSheet: WeaponSheet, statKey: string) => {
+  static getStatValueWithOverride = (character: ICachedCharacter, characterSheet: CharacterSheet, weaponSheet: WeaponSheet, statKey: string) => {
     if (Character.hasOverride(character, statKey)) return character.baseStatOverrides?.[statKey] ?? 0
     else return Character.getBaseStatValue(character, characterSheet, weaponSheet, statKey)
   }
 
-  static calculateBuild = (character: ICharacter, characterSheet: CharacterSheet, weaponSheet: WeaponSheet, artifactSheets: StrictDict<ArtifactSetKey, ArtifactSheet>, mainStatAssumptionLevel = 0): ICalculatedStats => {
-    let artifacts
-    if (character.artifacts) // from flex
-      artifacts = Object.fromEntries(character.artifacts.map((art, i) => [i, art]))
-    else if (character.equippedArtifacts)
-      artifacts = Object.fromEntries(Object.entries(character.equippedArtifacts).map(([key, artid]) => [key, database._getArt(artid)]))
-    const initialStats = Character.createInitialStats(character, characterSheet, weaponSheet)
+  static calculateBuild = (character: ICachedCharacter, database: ArtCharDatabase, characterSheet: CharacterSheet, weaponSheet: WeaponSheet, artifactSheets: StrictDict<ArtifactSetKey, ArtifactSheet>, mainStatAssumptionLevel = 0): ICalculatedStats => {
+    const artifacts = Object.fromEntries(Object.entries(character.equippedArtifacts).map(([key, artid]) => [key, database._getArt(artid)]))
+    const initialStats = Character.createInitialStats(character, database, characterSheet, weaponSheet)
     initialStats.mainStatAssumptionLevel = mainStatAssumptionLevel
     return Character.calculateBuildwithArtifact(initialStats, artifacts, artifactSheets)
   }
 
-  static calculateBuildwithArtifact = (initialStats: ICalculatedStats, artifacts: Dict<SlotKey, IArtifact>, artifactSheets: StrictDict<ArtifactSetKey, ArtifactSheet>): ICalculatedStats => {
+  static calculateBuildwithArtifact = (initialStats: ICalculatedStats, artifacts: Dict<SlotKey, ICachedArtifact>, artifactSheets: StrictDict<ArtifactSetKey, ArtifactSheet>): ICalculatedStats => {
     const setToSlots = Artifact.setToSlots(artifacts)
     const artifactSetEffectsStats = ArtifactSheet.setEffectsStats(artifactSheets, initialStats, setToSlots)
 
@@ -71,7 +68,7 @@ export default class Character {
     Object.values(artifacts).forEach(art => {
       if (!art) return
       //main stats
-      stats[art.mainStatKey] = (stats[art.mainStatKey] || 0) + Artifact.mainStatValue(art.mainStatKey, art.numStars, Math.max(Math.min(stats.mainStatAssumptionLevel, art.numStars * 4), art.level))
+      stats[art.mainStatKey] = (stats[art.mainStatKey] || 0) + Artifact.mainStatValue(art.mainStatKey, art.rarity, Math.max(Math.min(stats.mainStatAssumptionLevel, art.rarity * 4), art.level))
       //substats
       art.substats.forEach((substat) =>
         substat && substat.key && (stats[substat.key] = (stats[substat.key] || 0) + substat.value))
@@ -93,9 +90,10 @@ export default class Character {
     return { ...stats, ...preprocessedStats }
   }
 
-  static createInitialStats = (character: ICharacter, characterSheet: CharacterSheet, weaponSheet: WeaponSheet): ICalculatedStats => {
+  static createInitialStats = (character: ICachedCharacter, database: ArtCharDatabase, characterSheet: CharacterSheet, weaponSheet: WeaponSheet): ICalculatedStats => {
     character = deepClone(character)
-    const { characterKey, elementKey, level, ascension, hitMode, infusionAura, reactionMode, talentLevelKeys, constellation, equippedArtifacts, conditionalValues = {}, weapon } = character
+    const { key: characterKey, elementKey, level, ascension, hitMode, infusionAura, reactionMode, talent, constellation, equippedArtifacts, conditionalValues = {}, equippedWeapon } = character
+    const weapon = database._getWeapon(equippedWeapon) ?? defaultInitialWeapon(characterSheet.weaponTypeKey) // need to ensure all characters have a weapon
 
     //generate the initalStats obj with data from Character & overrides
     const statKeys = ["enemyLevel", ...Object.keys(characterStatBase)]
@@ -111,10 +109,10 @@ export default class Character {
     initialStats.reactionMode = reactionMode;
     initialStats.conditionalValues = conditionalValues
     initialStats.weaponType = characterSheet.weaponTypeKey
-    initialStats.tlvl = talentLevelKeys;
+    initialStats.tlvl = Object.fromEntries(Object.entries(talent ?? {}).map(([key, value]) => [key, value - 1])) as any;
     initialStats.constellation = constellation
     initialStats.ascension = ascension
-    initialStats.weapon = deepClone(weapon)
+    initialStats.weapon = { key: weapon.key, refineIndex: weapon.refine - 1 }
     initialStats.equippedArtifacts = equippedArtifacts;
 
     //enemy stuff
@@ -158,7 +156,7 @@ export default class Character {
 
     //handle conditionals. only the conditional applicable to the equipped weapon is parsed.
     Conditional.parseConditionalValues({ ...weapon.key && { weapon: { [weapon.key]: weaponCond?.[weapon.key] } }, ...otherCond }, (conditional, conditionalValue, keys) => {
-      if (keys[0] === "character" && keys[3] === "talents" && keys[4] !== elementKey) return //fix for traveler, make sure conditionals match element.
+      if (keys[0] === "character" && keys[3] === "talents" && keys[4] !== elementKey) return //fix for Traveler, make sure conditionals match element.
       if (!Conditional.canShow(conditional, initialStats)) return
       const { stats: condStats } = Conditional.resolve(conditional, initialStats, conditionalValue)
       mergeStats(initialStats, condStats)

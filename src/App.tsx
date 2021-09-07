@@ -1,5 +1,5 @@
 import { faDiscord, faPatreon, faPaypal } from '@fortawesome/free-brands-svg-icons';
-import { faCalculator, faCog, faIdCard, faTools } from '@fortawesome/free-solid-svg-icons';
+import { faBook, faCalculator, faCog, faGavel, faIdCard, faTools } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { lazy, Suspense } from 'react';
 import { Container } from 'react-bootstrap';
@@ -27,6 +27,8 @@ const Planner = lazy(() => import('./Planner/PlannerDisplay'))
 const TestDisplay = lazy(() => import('./TestPage/TestDisplay'))
 const FlexDisplay = lazy(() => import('./FlexPage/FlexDisplay'))
 const SettingsDisplay = lazy(() => import('./Settings/SettingsDisplay'))
+const WeaponDisplay = lazy(() => import('./Weapon/WeaponDisplay'))
+const DocumentationDisplay = lazy(() => import('./DocumentationPage/DocumentationDisplay'))
 
 function App() {
   return <Suspense fallback={<Container><LoadingCard /></Container>}>
@@ -35,7 +37,7 @@ function App() {
 }
 function AppInner() {
   const { t } = useTranslation("ui")
-  return <HashRouter>
+  return <HashRouter basename="/">
     <div className="h-100 d-flex flex-column" id="mainContainer">
       <div id="content" className="flex-grow-1">
         <Navbar bg="dark" variant="dark" expand="md">
@@ -44,10 +46,12 @@ function AppInner() {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
               <Nav.Link as={Link} to="/artifact">{artifactSlotIcon("flower")} <Trans t={t} i18nKey="ui:tabs.artifacts">Artifacts</Trans></Nav.Link>
+              <Nav.Link as={Link} to="/weapon"><FontAwesomeIcon icon={faGavel} className="fa-fw" /> <Trans t={t} i18nKey="ui:tabs.weapons">Weapons</Trans></Nav.Link>
               <Nav.Link as={Link} to="/character"><FontAwesomeIcon icon={faIdCard} className="fa-fw" /> <Trans t={t} i18nKey="ui:tabs.characters">Character</Trans></Nav.Link>
               <Nav.Link as={Link} to="/build"><FontAwesomeIcon icon={faCalculator} className="fa-fw" /> <Trans t={t} i18nKey="ui:tabs.builds">Builds</Trans></Nav.Link>
               <Nav.Link as={Link} to="/tools"><FontAwesomeIcon icon={faTools} className="fa-fw" /> <Trans t={t} i18nKey="ui:tabs.tools">Tools</Trans></Nav.Link>
               <Nav.Link as={Link} to="/database"><FontAwesomeIcon icon={faCog} /> <Trans t={t} i18nKey="ui:tabs.database">Database</Trans></Nav.Link>
+              <Nav.Link as={Link} to="/doc"><FontAwesomeIcon icon={faBook} /> <Trans t={t} i18nKey="ui:tabs.doc">Documentation</Trans></Nav.Link>
               {process.env.NODE_ENV === "development" && <Nav.Link as={Link} to="/test">TEST</Nav.Link>}
             </Nav>
             <Nav>
@@ -67,11 +71,13 @@ function AppInner() {
         <Suspense fallback={<Container><LoadingCard /></Container>}>
           <Switch>
             <Route path="/artifact" component={ArtifactDisplay} />
+            <Route path="/weapon" component={WeaponDisplay} />
             <Route path="/character" component={CharacterDisplay} />
             <Route path="/build" component={BuildDisplay} />
             <Route path="/tools" component={Planner} />
             {process.env.NODE_ENV === "development" && <Route path="/test" component={TestDisplay} />}
             <Route path="/database" component={SettingsDisplay} />
+            <Route path="/doc" component={DocumentationDisplay} />
             <Route path="/flex" component={FlexDisplay} />
             <Route path="/" component={Home} />
           </Switch>

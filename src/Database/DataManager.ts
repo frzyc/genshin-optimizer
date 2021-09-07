@@ -24,7 +24,7 @@ export class DataManager<Key extends string | number, Value> {
 
   get keys() { return Object.keys(this.data) }
   get values() { return Object.values(this.data) }
-  get(key: Key): Value | undefined { return this.data[key] }
+  get(key: Key | "" | undefined): Value | undefined { return key ? this.data[key] : undefined }
   set(key: Key, value: Value) {
     this.data[key] = value
 

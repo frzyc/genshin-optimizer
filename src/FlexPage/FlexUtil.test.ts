@@ -1,40 +1,60 @@
-import { character, artifacts, oldURL } from './FlexUtil.test.data'
+import { character, artifacts, weapon, urlV2, urlV3 } from './FlexUtil.test.data'
 import { createFlexObj, parseFlexObj } from './FlexUtil'
-import { database } from '../Database/Database'
-import { validateFlexArtifact, validateFlexCharacter } from '../Database/validation'
-import { deepClone } from '../Util/Util'
-import { allSlotKeys } from '../Types/consts'
-import { dbStorage } from '../Database/DBStorage'
+import { ArtCharDatabase } from '../Database/Database'
+import { SandboxStorage } from '../Database/DBStorage'
+import { removeArtifactCache, removeCharacterCache, removeWeaponCache } from '../Database/validation'
 
-let flexObj: any
+const storage = new SandboxStorage()
+storage.setString("db_ver", "8")
+storage.set(`char_${character.key}`, character)
+storage.set("weapon_1", weapon)
+artifacts.map((art, id) => storage.set(`artifact_${id + 1}`, art))
+const database = new ArtCharDatabase(storage)
 
 describe('flex import export', () => {
-  beforeEach(() => {
-    dbStorage.clear()
-    database.reloadStorage()
-    database.updateChar(validateFlexCharacter(character))
-    Object.entries(artifacts).map(([id, art]) => {
-      database.updateArt(validateFlexArtifact(art, id).artifact)
-      database.setLocation(id, art.location)
-    })
-    const char = deepClone(database._getChar(character.characterKey)!)
-    const arts = deepClone(Object.values(char.equippedArtifacts).map(id => database._getArt(id)!))
-    // unequipped everything
-    char.equippedArtifacts = Object.fromEntries(allSlotKeys.map(slot => [slot, ""])) as any
-    // unbind ids
-    arts.forEach(art => art.id = "")
-    flexObj = { character: char, artifacts: arts }
-  })
-  afterEach(() => localStorage.clear())
-
   test('should support round tripping', () => {
-    expect(parseFlexObj(createFlexObj(character.characterKey)!)![0]).toEqual(flexObj)
+    const [flexDatabase, flexCharacterKey] = parseFlexObj(createFlexObj(character.key, database)!)!
+    const flexCharacter = flexDatabase._getChar(flexCharacterKey)!
+    const flexWeapon = flexDatabase._getWeapon(flexCharacter.equippedWeapon)!
+    const flexArtifacts = Object.values(flexCharacter.equippedArtifacts)
+      .filter(id => id).map(id => flexDatabase._getArt(id)!)
+
+    expect(removeCharacterCache(flexCharacter)).toEqual(character)
+    expect(removeWeaponCache(flexWeapon)).toEqual(weapon)
+    expect(flexArtifacts.length).toEqual(artifacts.length)
+    expect(flexArtifacts.map(removeArtifactCache)).toEqual(expect.arrayContaining(artifacts))
   })
-  test('should support old format', () => {
-    const [{ character, artifacts }] = parseFlexObj(oldURL.split("flex?")[1])!
+  test('should support flex v2', () => {
+    const [flexDatabase, flexCharacterKey] = parseFlexObj(urlV2.split("flex?")[1])!
+    const flexCharacter = flexDatabase._getChar(flexCharacterKey)!
+    const flexWeapon = flexDatabase._getWeapon(flexCharacter.equippedWeapon)!
+    const flexArtifacts = Object.values(flexCharacter.equippedArtifacts)
+      .filter(id => id).map(id => flexDatabase._getArt(id)!)
+
     // We're dropping conditional values and infusion from old version
-    character.conditionalValues = flexObj.character.conditionalValues
-    character.infusionAura = 'pyro'
-    expect({ character, artifacts }).toEqual(flexObj)
+    flexCharacter.conditionalValues = character.conditionalValues
+    flexCharacter.infusionAura = 'pyro'
+
+    expect(removeCharacterCache(flexCharacter)).toEqual(character)
+    expect(removeWeaponCache(flexWeapon)).toEqual(weapon)
+    expect(flexArtifacts.length).toEqual(artifacts.length)
+    expect(flexArtifacts.map(removeArtifactCache)).toEqual(expect.arrayContaining(artifacts))
   })
+  test('should support flex v3', () => {
+    const [flexDatabase, flexCharacterKey] = parseFlexObj(urlV3.split("flex?")[1])!
+    const flexCharacter = flexDatabase._getChar(flexCharacterKey)!
+    const flexWeapon = flexDatabase._getWeapon(flexCharacter.equippedWeapon)!
+    const flexArtifacts = Object.values(flexCharacter.equippedArtifacts)
+      .filter(id => id).map(id => flexDatabase._getArt(id)!)
+
+    // We're dropping conditional values and infusion from old version
+    flexCharacter.conditionalValues = character.conditionalValues
+    flexCharacter.infusionAura = 'pyro'
+
+    expect(removeCharacterCache(flexCharacter)).toEqual(character)
+    expect(removeWeaponCache(flexWeapon)).toEqual(weapon)
+    expect(flexArtifacts.length).toEqual(artifacts.length)
+    expect(flexArtifacts.map(removeArtifactCache)).toEqual(expect.arrayContaining(artifacts))
+  })
+
 })

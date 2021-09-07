@@ -1,20 +1,20 @@
 import Artifact from "../Artifact/Artifact"
 import { ArtifactSheet } from "../Artifact/ArtifactSheet"
 import Stat from "../Stat"
-import { allSubstats, IFlexArtifact, IFlexSubstat, SubstatKey } from "../Types/artifact"
+import { allSubstats, IArtifact, ISubstat, SubstatKey } from "../Types/artifact"
 import { allArtifactSets } from "../Types/consts"
 import { valueString } from "./UIUtil"
 import { getRandomElementFromArray, getRandomIntInclusive } from "./Util"
 import artifactSubstatRollCorrection from '../Artifact/artifact_sub_rolls_correction_gen.json'
 
-export async function randomizeArtifact(): Promise<IFlexArtifact> {
-  const set = getRandomElementFromArray(allArtifactSets)
-  const sheet = await ArtifactSheet.get(set)!
+export async function randomizeArtifact(): Promise<IArtifact> {
+  const setKey = getRandomElementFromArray(allArtifactSets)
+  const sheet = await ArtifactSheet.get(setKey)!
   const rarity = getRandomElementFromArray(sheet.rarity)
   const slot = getRandomElementFromArray(sheet.slots)
   const mainStatKey = getRandomElementFromArray(Artifact.slotMainStats(slot))
   const level = getRandomIntInclusive(0, rarity * 4)
-  const substats: IFlexSubstat[] = [0, 1, 2, 3].map(i => ({ key: "", value: 0 }))
+  const substats: ISubstat[] = [0, 1, 2, 3].map(i => ({ key: "", value: 0 }))
 
   const { low, high } = Artifact.rollInfo(rarity)
   const totRolls = Math.floor(level / 4) + getRandomIntInclusive(low, high)
@@ -41,6 +41,6 @@ export async function randomizeArtifact(): Promise<IFlexArtifact> {
     }
 
   return {
-    setKey: set, numStars: rarity, slotKey: slot, mainStatKey, level, substats, location: "", lock: false
+    setKey, rarity, slotKey: slot, mainStatKey, level, substats, location: "", lock: false, exclude: false,
   }
 }

@@ -27,7 +27,7 @@ const artifact: IArtifactSheet = {
   conditionals,
   setEffects: {
     2: {
-      stats: { powShield_: 35 }
+      stats: { shield_: 35 }
     },
     4: {
       document: [{

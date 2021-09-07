@@ -6,7 +6,7 @@ export const initialBuildSettings = (): BuildSetting => ({
   mainStatKeys: { sands: [], goblet: [], circlet: [] },
   optimizationTarget: "finalATK",
   mainStatAssumptionLevel: 0,
-  useLockedArts: false,
+  useExcludedArts: false,
   useEquippedArts: false,
   ascending: false,
 })

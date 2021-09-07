@@ -9,7 +9,7 @@ import Snippet from "./imgs/snippet.png";
 import Stat from '../Stat';
 import { clamp, hammingDistance } from '../Util/Util';
 import Artifact from './Artifact';
-import { allMainStatKeys, allSubstats, IArtifact, IFlexArtifact, IFlexSubstat, MainStatKey, SubstatKey } from '../Types/artifact';
+import { allMainStatKeys, allSubstats, ICachedArtifact, IArtifact, ISubstat, MainStatKey, SubstatKey } from '../Types/artifact';
 import { ArtifactRarity, allArtifactRarities, allArtifactSets, allSlotKeys, ArtifactSetKey, Rarity, SlotKey } from '../Types/consts';
 import { ArtifactSheet } from './ArtifactSheet';
 import { valueStringWithUnit } from '../Util/UIUtil';
@@ -38,7 +38,7 @@ const schedulers = new BorrowManager(async (language): Promise<Scheduler> => {
   value.then(value => value.terminate())
 })
 
-export default function UploadDisplay({ setState, setReset, artifactInEditor }: { setState: (art: IFlexArtifact) => void, setReset: (reset: () => void) => void, artifactInEditor: boolean }) {
+export default function UploadDisplay({ setState, setReset, artifactInEditor }: { setState: (art: IArtifact) => void, setReset: (reset: () => void) => void, artifactInEditor: boolean }) {
   const [modalShow, setModalShow] = useState(false)
 
   const [{ processed, outstanding }, dispatchQueue] = useReducer(queueReducer, { processed: [], outstanding: [] })
@@ -131,7 +131,7 @@ export default function UploadDisplay({ setState, setReset, artifactInEditor }: 
         <div>{texts.slotKey}</div>
         <div>{texts.mainStatKey}</div>
         <div>{texts.mainStatVal}</div>
-        <div>{texts.numStars}</div>
+        <div>{texts.rarity}</div>
         <div>{texts.level}</div>
         <div>{texts.substats}</div>
         <div>{texts.setKey}</div>
@@ -284,12 +284,12 @@ async function textsFromImage(imageData: ImageData, options: object | undefined 
   return rec.data.lines.map(line => line.text)
 }
 
-export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactSheet>, rarities: Set<number>, textSetKeys: Set<ArtifactSetKey>, slotKeys: Set<SlotKey>, substats: IFlexSubstat[], mainStatKeys: Set<MainStatKey>, mainStatValues: { mainStatValue: number, unit?: string }[]): [IFlexArtifact, Dict<keyof IArtifact, Displayable>] {
+export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactSheet>, rarities: Set<number>, textSetKeys: Set<ArtifactSetKey>, slotKeys: Set<SlotKey>, substats: ISubstat[], mainStatKeys: Set<MainStatKey>, mainStatValues: { mainStatValue: number, unit?: string }[]): [IArtifact, Dict<keyof ICachedArtifact, Displayable>] {
   const relevantSetKey = [...new Set<ArtifactSetKey>([...textSetKeys, "Adventurer", "ArchaicPetra"])]
 
-  let bestScore = -1, bestArtifacts: IFlexArtifact[] = [{
-    setKey: "Adventurer", numStars: 3, level: 0, slotKey: "flower", mainStatKey: "hp", substats: [],
-    location: "", lock: false,
+  let bestScore = -1, bestArtifacts: IArtifact[] = [{
+    setKey: "Adventurer", rarity: 3, level: 0, slotKey: "flower", mainStatKey: "hp", substats: [],
+    location: "", lock: false, exclude: false,
   }]
 
   // Rate each rarity
@@ -315,15 +315,15 @@ export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactShee
         .filter(value => value.unit !== "%" || Stat.getStatUnit(mainStatKey) === "%") // Ignore "%" text if key isn't "%"
         .map(value => value.mainStatValue)
 
-      for (const [numStarsString, rarityIndividualScore] of Object.entries(rarityRates)) {
-        const numStars = parseInt(numStarsString) as ArtifactRarity
-        const setKeys = relevantSetKey.filter(setKey => sheets[setKey].rarity.includes(numStars))
+      for (const [rarityString, rarityIndividualScore] of Object.entries(rarityRates)) {
+        const rarity = parseInt(rarityString) as ArtifactRarity
+        const setKeys = relevantSetKey.filter(setKey => sheets[setKey].rarity.includes(rarity))
         const rarityScore = mainStatScore + rarityIndividualScore
 
         if (rarityScore + 2 < bestScore) continue // Early bail out
 
         for (const minimumMainStatValue of relevantMainStatValues) {
-          const values = Artifact.mainStatValues(numStars, mainStatKey)
+          const values = Artifact.mainStatValues(rarity, mainStatKey)
           const level = Math.max(0, values.findIndex(level => level >= minimumMainStatValue))
           const mainStatVal = values[level]
           const mainStatValScore = rarityScore + (mainStatVal === minimumMainStatValue ? 1 : 0)
@@ -334,7 +334,7 @@ export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactShee
               if (score > bestScore) bestArtifacts = []
               bestScore = score
               bestArtifacts.push({
-                setKey, numStars, level, slotKey, mainStatKey, substats: [], location: "", lock: false
+                setKey, rarity, level, slotKey, mainStatKey, substats: [], location: "", lock: false, exclude: false,
               })
             }
           }
@@ -347,7 +347,7 @@ export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactShee
             if (score > bestScore) bestArtifacts = []
             bestScore = score
             bestArtifacts.push({
-              setKey, numStars, level, slotKey, mainStatKey, substats: [], location: "", lock: false
+              setKey, rarity, level, slotKey, mainStatKey, substats: [], location: "", lock: false, exclude: false
             })
           }
         }
@@ -355,12 +355,12 @@ export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactShee
     }
   }
 
-  const texts = {} as Dict<keyof IArtifact, Displayable>
+  const texts = {} as Dict<keyof ICachedArtifact, Displayable>
   const chosen = {
-    setKey: new Set(), numStars: new Set(), level: new Set(), slotKey: new Set(), mainStatKey: new Set(), mainStatVal: new Set(),
-  } as Dict<keyof IArtifact, Set<string>>
+    setKey: new Set(), rarity: new Set(), level: new Set(), slotKey: new Set(), mainStatKey: new Set(), mainStatVal: new Set(),
+  } as Dict<keyof ICachedArtifact, Set<string>>
 
-  const result = bestArtifacts[0], resultMainStatVal = Artifact.mainStatValue(result.mainStatKey, result.numStars, result.level)!
+  const result = bestArtifacts[0], resultMainStatVal = Artifact.mainStatValue(result.mainStatKey, result.rarity, result.level)!
   result.substats = substats.filter((substat, i) =>
     substat.key !== result.mainStatKey &&
     substats.slice(0, i).every(other => other.key !== substat.key))
@@ -369,7 +369,7 @@ export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactShee
 
   for (const other of bestArtifacts) {
     chosen.setKey!.add(other.setKey)
-    chosen.numStars!.add(other.numStars as any)
+    chosen.rarity!.add(other.rarity as any)
     chosen.level!.add(other.level as any)
     chosen.slotKey!.add(other.slotKey)
     chosen.mainStatKey!.add(other.mainStatKey)
@@ -389,7 +389,7 @@ export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactShee
     return <>Inferred {name} <span className="text-warning">{text(value)}</span></>
   }
 
-  function addText(key: keyof IArtifact, available: Set<any>, name: Displayable, text: (value) => Displayable) {
+  function addText(key: keyof ICachedArtifact, available: Set<any>, name: Displayable, text: (value) => Displayable) {
     const recommended = new Set([...chosen[key]!].filter(value => available.has(value)))
     if (recommended.size > 1)
       texts[key] = ambiguousText(result[key], [...available], name, text)
@@ -402,7 +402,7 @@ export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactShee
   }
 
   addText("setKey", textSetKeys, "Set", (value) => sheets[value].name)
-  addText("numStars", rarities, "Rarity", (value) => <>{value} {value !== 1 ? "Stars" : "Star"}</>)
+  addText("rarity", rarities, "Rarity", (value) => <>{value} {value !== 1 ? "Stars" : "Star"}</>)
   addText("slotKey", slotKeys, "Slot", (value) => <>{Artifact.slotName(value)}</>)
   addText("mainStatKey", mainStatKeys, "Main Stat", (value) => <>{Stat.getStatNameRaw(value)}</>)
   texts.substats = <>{result.substats.filter(substat => substat.key !== "").map((substat, i) =>
@@ -500,8 +500,8 @@ function parseMainStatValues(texts: string[]): { mainStatValue: number, unit?: s
   }
   return results
 }
-function parseSubstats(texts: string[]): IFlexSubstat[] {
-  const matches: IFlexSubstat[] = []
+function parseSubstats(texts: string[]): ISubstat[] {
+  const matches: ISubstat[] = []
   for (let text of texts) {
     text = text.replace(/^[\W]+/, "").replace(/\n/, "")
     //parse substats
@@ -515,7 +515,7 @@ function parseSubstats(texts: string[]): IFlexSubstat[] {
         matches.push({ key, value: parseFloat(match[1].replace(/,/g, ".").replace(/\.{2,}/g, ".")) })
     })
   }
-  return matches
+  return matches.slice(0, 4)
 }
 
 function bandPass(pixelData: ImageData, color1: Color, color2: Color, options: { region?: "top" | "bot" | "all", mode?: "bw" | "color" | "invert" }) {
@@ -544,7 +544,7 @@ function bandPass(pixelData: ImageData, color1: Color, color2: Color, options: {
 }
 
 type ProcessedEntry = {
-  fileName: string, imageURL: string, artifact: IFlexArtifact, texts: Dict<keyof IArtifact, Displayable>
+  fileName: string, imageURL: string, artifact: IArtifact, texts: Dict<keyof ICachedArtifact, Displayable>
 }
 type OutstandingEntry = {
   file: File, fileName: string, imageURL?: Promise<string>, result?: Promise<{ file: File, result: ProcessedEntry }>

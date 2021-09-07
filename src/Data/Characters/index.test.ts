@@ -56,7 +56,7 @@ test('validate character sheet', () => {
           section.fields?.forEach?.((field, fieldIndex) => {
             expect(field).toBeValidField(`${characterKey}.${talentKey}.sections[${sectionIndex}].fields[${fieldIndex}]`)
           })))
-    else //char.talents -> traveler
+    else //char.talents -> Traveler
       Object.entries(char.talents).forEach(([eleKey, talentSheet]) =>
         Object.entries(talentSheet.sheets).forEach(([talentKey, talent]) =>
           talent.sections.forEach((section, sectionIndex) =>

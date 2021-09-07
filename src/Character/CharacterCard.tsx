@@ -1,6 +1,6 @@
 import { faCalculator, faEdit, faLink, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useEffect, useMemo, useState } from 'react';
+import { useContext, useEffect, useMemo, useState } from 'react';
 import { Badge, Image } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
@@ -11,29 +11,32 @@ import { ArtifactSheet } from '../Artifact/ArtifactSheet';
 import Assets from '../Assets/Assets';
 import { Stars } from '../Components/StarDisplay';
 import StatIcon from '../Components/StatIcon';
-import { database } from '../Database/Database';
+import { DatabaseContext } from '../Database/Database';
 import Stat from '../Stat';
-import { ICharacter } from '../Types/character';
+import { ICachedCharacter } from '../Types/character';
 import { CharacterKey } from '../Types/consts';
+import { ICachedWeapon } from '../Types/weapon';
 import { usePromise } from '../Util/ReactUtil';
 import WeaponSheet from '../Weapon/WeaponSheet';
 import Character from './Character';
 import CharacterSheet from './CharacterSheet';
 type CharacterCardProps = { characterKey: CharacterKey | "", onEdit?: (any) => void, onDelete?: (any) => void, cardClassName: string, header?: JSX.Element, bg?: string, footer?: boolean }
 export default function CharacterCard({ characterKey, onEdit, onDelete, cardClassName = "", bg = "", header, footer = false }: CharacterCardProps) {
-  const [databaseCharacter, updateDatabaseCharacter] = useState(undefined as ICharacter | undefined)
+  const database = useContext(DatabaseContext)
+  const [databaseCharacter, updateDatabaseCharacter] = useState(undefined as ICachedCharacter | undefined)
   useEffect(() =>
     characterKey ? database.followChar(characterKey, updateDatabaseCharacter) : undefined,
-    [characterKey, updateDatabaseCharacter])
+    [characterKey, updateDatabaseCharacter, database])
 
   const artifactSheets = usePromise(ArtifactSheet.getAll(), [])
   const character = databaseCharacter
   const characterSheet = usePromise(CharacterSheet.get(characterKey), [characterKey])
-  const weaponSheet = usePromise(character && WeaponSheet.get(character.weapon.key), [character])
-  const stats = useMemo(() => character && characterSheet && weaponSheet && artifactSheets && Character.calculateBuild(character, characterSheet, weaponSheet, artifactSheets), [character, characterSheet, weaponSheet, artifactSheets])
-  if (!character || !characterSheet || !weaponSheet || !stats) return null;
+  const weapon = character?.equippedWeapon ? database._getWeapon(character.equippedWeapon) : undefined
+  const weaponSheet = usePromise(weapon ? WeaponSheet.get(weapon.key) : undefined, [weapon?.key])
+  const stats = useMemo(() => character && characterSheet && weaponSheet && artifactSheets && Character.calculateBuild(character, database, characterSheet, weaponSheet, artifactSheets), [character, characterSheet, weaponSheet, artifactSheets, database])
+  if (!character || !weapon || !characterSheet || !weaponSheet || !stats) return null;
 
-  const { weapon, constellation } = character
+  const { constellation } = character
   const { level, ascension } = weapon
   const { tlvl } = stats
   const name = characterSheet.name
@@ -43,7 +46,7 @@ export default function CharacterCard({ characterKey, onEdit, onDelete, cardClas
   const weaponMainVal = weaponSheet.getMainStatValue(level, ascension).toFixed(Stat.fixedUnit("atk"))
   const weaponSubKey = weaponSheet.getSubStatKey()
   const weaponSubVal = weaponSheet.getSubStatValue(level, ascension).toFixed(Stat.fixedUnit(weaponSubKey))
-  const weaponLevelName = WeaponSheet.getLevelString(weapon)
+  const weaponLevelName = WeaponSheet.getLevelString(weapon as ICachedWeapon)
   const weaponPassiveName = weaponSheet?.passiveName
   const statkeys = ["finalHP", "finalATK", "finalDEF", "eleMas", "critRate_", "critDMG_", "enerRech_",]
 
@@ -85,7 +88,7 @@ export default function CharacterCard({ characterKey, onEdit, onDelete, cardClas
       </Row>
       <Row className="mb-2">
         <Col>
-          <h6 className="mb-0">{weaponName}{weaponPassiveName && <Badge variant="info" className="ml-1">{weapon.refineIndex + 1}</Badge>} {weaponLevelName}</h6>
+          <h6 className="mb-0">{weaponName}{weaponPassiveName && <Badge variant="info" className="ml-1">{weapon.refine}</Badge>} {weaponLevelName}</h6>
           <span>ATK: {weaponMainVal}  {weaponPassiveName && <span>{Stat.getStatName(weaponSubKey)}: {weaponSubVal}{Stat.getStatUnit(weaponSubKey)}</span>}</span>
         </Col>
       </Row>
