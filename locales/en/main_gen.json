@@ -97,7 +97,7 @@
     "resetFilters": "Reset Filters",
     "excludeArtifactTip": "Excluding an artifact will prevent the build generator from picking it for builds."
   },
-  "char_aloy": {
+  "char_Aloy": {
     "skill": {
       "coil": "Coil",
       "coil1": "Coil Stack 1",
@@ -149,7 +149,7 @@
     "dmgBySnowflake": "Opponents damaged by <strong>Kamisato Art: Soumetsu</strong>'s Frostflake Seki no To",
     "UsurashiButou": "Usurahi Butou"
   },
-  "char_kujousara": {
+  "char_KujouSara": {
     "skill": {
       "ambush": "Tengu Juurai: Ambush"
     }
