@@ -15,7 +15,7 @@ import { useTranslation } from 'react-i18next';
 import CharacterSheet from '../Character/CharacterSheet';
 import { CharacterSelectionDropdownList } from '../Character/CharacterSelection';
 import { Stars } from '../Components/StarDisplay';
-import { DatabaseContext } from '../Database/Database';
+import { DatabaseContext, database as localDatabase } from '../Database/Database';
 import Stat from '../Stat';
 import { allSubstats, ICachedArtifact, ICachedSubstat, SubstatKey } from '../Types/artifact';
 import { CharacterKey } from '../Types/consts';
@@ -39,7 +39,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
   const sheet = usePromise(ArtifactSheet.get((artifactObj ?? (artifactId ? database._getArt(artifactId) : undefined))?.setKey), [artifactObj, artifactId])
   const equipOnChar = (charKey: CharacterKey | "") => database.setArtLocation(artifactId!, charKey)
 
-  const editable = !artifactObj // dont allow edit for flex artifacts
+  const editable = !artifactObj && database === localDatabase // dont allow edit for flex artifacts
   const art = artifactObj ?? databaseArtifact
   const characterSheet = usePromise(CharacterSheet.get(art?.location ?? ""), [art?.location])
   if (!art) return null
@@ -81,7 +81,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
         </Col>
         <Col className="pt-2">
           <h6><strong>{slotName} {slotDescEle}</strong></h6>
-          <div><SlotNameWithIcon slotKey={slotKey} /> <span className="float-right mr-4"> <Button size="sm" onClick={() => database.updateArt({ lock: !lock }, id)}><FontAwesomeIcon icon={lock ? faLock : faLockOpen} className="fa-fw" /></Button></span></div>
+          <div><SlotNameWithIcon slotKey={slotKey} /> <span className="float-right mr-4"> <Button size="sm" disabled={!editable} onClick={() => database.updateArt({ lock: !lock }, id)}><FontAwesomeIcon icon={lock ? faLock : faLockOpen} className="fa-fw" /></Button></span></div>
           <div><small><Stars stars={rarity} /></small></div>
         </Col>
       </Row>
@@ -133,23 +133,23 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
           </Dropdown>
         </Col> : <Col xs="auto"><b>{locationName}</b></Col>}
         <Col xs="auto">
-          <ButtonGroup>
+          {editable && <ButtonGroup>
             {!!onEdit && <Button variant="info" size="sm" onClick={onEdit}>
               <FontAwesomeIcon icon={faEdit} className="fa-fw" />
             </Button>}
-            {editable ? <OverlayTrigger placement="top"
+            <OverlayTrigger placement="top"
               overlay={<Tooltip id="exclude-artifact-tip">{t`lockArtifactTip`}</Tooltip>}>
               <span className="d-inline-block">
                 <Button size="sm" onClick={() => database.updateArt({ exclude: !exclude }, id)} className="rounded-0" variant={exclude ? "danger" : "success"}>
                   <FontAwesomeIcon icon={exclude ? faBan : faChartLine} className="fa-fw" />
                 </Button>
               </span>
-            </OverlayTrigger> : null}
+            </OverlayTrigger>
             {!!onDelete && <Button variant="danger" size="sm"
               onClick={onDelete}>
               <FontAwesomeIcon icon={faTrashAlt} className="fa-fw" />
             </Button>}
-          </ButtonGroup>
+          </ButtonGroup>}
         </Col>
       </Row>
     </Card.Footer>
