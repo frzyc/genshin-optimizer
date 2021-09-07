@@ -44,7 +44,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
   const characterSheet = usePromise(CharacterSheet.get(art?.location ?? ""), [art?.location])
   if (!art) return null
 
-  const { id, slotKey, numStars, level, mainStatKey, substats, exclude } = art
+  const { id, lock, slotKey, numStars, level, mainStatKey, substats, exclude } = art
   const mainStatLevel = Math.max(Math.min(mainStatAssumptionLevel, numStars * 4), level)
   const levelVariant = (Math.floor(Math.max(level - 1, 0) / 4) + 1) + "roll"
   const mainStatVal = <span className={mainStatLevel !== level ? "text-orange" : ""}>{valueStringWithUnit(Artifact.mainStatValue(mainStatKey, numStars, mainStatLevel) ?? 0, Stat.getStatUnit(mainStatKey))}</span>
@@ -80,8 +80,8 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
           <Image src={sheet?.slotIcons[slotKey] ?? ""} className={`w-100 h-auto grad-${numStars}star m-1`} thumbnail />
         </Col>
         <Col className="pt-2">
-          <h6>{process.env.NODE_ENV === "development" && <span className="text-warning">{id || `""`} </span>}<strong>{slotName} {slotDescEle}</strong></h6>
-          <div><SlotNameWithIcon slotKey={slotKey} /> <span className="float-right mr-4"><FontAwesomeIcon icon={exclude ? faLock : faLockOpen} className="fa-fw" /></span></div>
+          <h6><strong>{slotName} {slotDescEle}</strong></h6>
+          <div><SlotNameWithIcon slotKey={slotKey} /> <span className="float-right mr-4"> <Button size="sm" onClick={() => database.lockArtifact(id, !lock)}><FontAwesomeIcon icon={lock ? faLock : faLockOpen} className="fa-fw" /></Button></span></div>
           <div><small><Stars stars={numStars} /></small></div>
         </Col>
       </Row>
@@ -117,6 +117,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
           <Col xs="auto"><PercentBadge value={maxEfficiency} valid={artifactValid} /></Col>
         </Row>}
       </div>
+      {process.env.NODE_ENV === "development" && <span className="text-warning">{id || `""`} </span>}
     </Card.Body>
 
     <Card.Footer className="pr-3">
