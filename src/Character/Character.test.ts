@@ -1,13 +1,16 @@
 import Artifact from "../Artifact/Artifact"
 import { ArtifactSheet } from "../Artifact/ArtifactSheet"
+import { ascensionMaxLevel } from "../Data/CharacterData"
 import { database } from "../Database/Database"
 import { dbStorage } from "../Database/DBStorage"
 import { ICachedArtifact } from "../Types/artifact"
 import { allSlotKeys, SlotKey } from "../Types/consts"
 import { mergeStats } from "../Util/StatUtil"
 import WeaponSheet from "../Weapon/WeaponSheet"
+import { initialWeapon } from "../Weapon/WeaponUtil"
 import Character from "./Character"
 import CharacterSheet from "./CharacterSheet"
+import { initialCharacter } from "./CharacterUtil"
 
 describe('mergeStats()', () => {
   test('should merge stats', () => {
@@ -25,7 +28,11 @@ describe('mergeStats()', () => {
 describe('Character.getDisplayStatKeys()', () => {
   const characterKey = "Noelle"
 
-  beforeEach(() => database.updateChar({ key: characterKey, levelKey: "L60A", weapon: { key: "Whiteblind" } } as any))
+  beforeEach(() => {
+    const weaponId = database.createWeapon(initialWeapon("Whiteblind"))
+    database.updateChar({ ...initialCharacter(characterKey), level: 60, ascension: 4 })
+    database.setWeaponLocation(weaponId, characterKey)
+  })
   afterEach(() => localStorage.clear())
   test('should get statKeys for characters with finished talent page', async () => {
     const artifactSheets = await ArtifactSheet.getAll()
@@ -68,11 +75,11 @@ describe('Equipment functions', () => {
     c = { ...a, slotKey: "sands", location: "Noelle" }
     d = { ...a, slotKey: "goblet", location: "Noelle" }
     e = { ...a, slotKey: "circlet", location: "Noelle" }
-    a.id = database.updateArt(a)
-    b.id = database.updateArt(b)
-    c.id = database.updateArt(c)
-    d.id = database.updateArt(d)
-    e.id = database.updateArt(e)
+    a.id = database.createArt(a)
+    b.id = database.createArt(b)
+    c.id = database.createArt(c)
+    d.id = database.createArt(d)
+    e.id = database.createArt(e)
     abcde = {
       flower: a.id,
       plume: b.id,
@@ -94,9 +101,9 @@ describe('Equipment functions', () => {
     }
     database.updateChar(Noelle)
     database.updateChar(Ningguang)
-    database.setLocation(c.id, Noelle.key)
-    database.setLocation(d.id, Noelle.key)
-    database.setLocation(e.id, Noelle.key)
+    database.setArtLocation(c.id, Noelle.key)
+    database.setArtLocation(d.id, Noelle.key)
+    database.setArtLocation(e.id, Noelle.key)
   })
   test(`Character.remove`, () => {
     database.removeChar("Noelle")

@@ -236,12 +236,12 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: Artifac
         </Col>}
       </Row></Card.Body>
     <Card.Footer>
-      <Button className="mr-2" onClick={() => { database.updateArt(artifact!); reset() }} disabled={!isValid} variant={dupId ? "warning" : "primary"}>
+      <Button className="mr-2" onClick={() => { artifact?.id ? database.updateArt(artifact!, artifact.id) : database.createArt(artifact!); reset() }} disabled={!isValid} variant={dupId ? "warning" : "primary"}>
         {artifact?.id ? t`editor.btnSave` : t`editor.btnAdd`}
       </Button>
       <Button className="mr-2" disabled={!artifactInEditor} onClick={() => { canClearArtifact() && reset() }} variant="success">{t`editor.btnClear`}</Button>
       {process.env.NODE_ENV === "development" && <Button variant="info" onClick={async () => artifactDispatch({ type: "overwrite", artifact: await randomizeArtifact() })}>{t`editor.btnRandom`}</Button>}
-      {Boolean(dupId) && <Button className="float-right" onClick={() => { database.updateArt({ ...artifact!, id: dupId ?? "" }); reset() }} disabled={!isValid} variant="success">{t`editor.btnUpdate`}</Button>}
+      {!!dupId && <Button className="float-right" onClick={() => { database.updateArt(artifact!, dupId!); reset() }} disabled={!isValid} variant="success">{t`editor.btnUpdate`}</Button>}
     </Card.Footer>
   </Card >
 }

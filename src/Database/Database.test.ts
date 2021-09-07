@@ -1,44 +1,16 @@
+import { initialCharacter } from "../Character/CharacterUtil"
 import { ICachedArtifact } from "../Types/artifact"
 import { ICachedCharacter } from "../Types/character"
+import { CharacterKey, WeaponTypeKey } from "../Types/consts"
 import { randomizeArtifact } from "../Util/ArtifactUtil"
 import { deepClone, getArrLastElement } from "../Util/Util"
+import { defaultInitialWeapon, initialWeapon } from "../Weapon/WeaponUtil"
 import { database, ArtCharDatabase } from "./Database"
 import * as data1 from "./Database.db1.test.json"
-import { dbStorage } from "./DBStorage"
+import { dbStorage, SandboxStorage } from "./DBStorage"
 import { importGO } from "./exim/go"
 import { importGOOD, exportGOOD } from "./exim/good"
-import { validateArtifact } from "./validation"
-
-const baseAlbedo: ICachedCharacter = {
-  key: "Albedo",
-  equippedArtifacts: { flower: "", plume: "", sands: "", goblet: "", circlet: "" },
-  level: 1, ascension: 0,
-  hitMode: "hit",
-  reactionMode: null,
-  conditionalValues: {},
-  baseStatOverrides: {},
-  talent: {
-    auto: 2, skill: 2, burst: 2,
-  },
-  infusionAura: "",
-  constellation: 0,
-  equippedWeapon: "",
-} as const
-const baseAmber: ICachedCharacter = {
-  key: "Amber",
-  equippedArtifacts: { flower: "", plume: "", sands: "", goblet: "", circlet: "" },
-  level: 1, ascension: 0,
-  hitMode: "hit",
-  reactionMode: null,
-  conditionalValues: {},
-  baseStatOverrides: {},
-  talent: {
-    auto: 2, skill: 2, burst: 2,
-  },
-  infusionAura: "",
-  constellation: 0,
-  equippedWeapon: "",
-} as const
+import { removeCharacterCache, validateArtifact, validateCharacter } from "./validation"
 
 describe("Database", () => {
   beforeEach(() => {
@@ -71,8 +43,38 @@ describe("Database", () => {
     expect(database._getCharKeys().length).toEqual(2)
     expect(database.weapons.keys.length).toEqual(2)
   })
-  test("Support roundtrip import-export", () => {
-    // TODO: 
+  test("Support roundtrip import-export", async () => {
+    const albedo = initialCharacter("Albedo"), amber = initialCharacter("Amber")
+    const albedoWeapon = defaultInitialWeapon("sword"), amberWeapon = defaultInitialWeapon("bow")
+
+    const art1 = validateArtifact(await randomizeArtifact(), "").artifact, art2 = validateArtifact(await randomizeArtifact(), "").artifact
+    art1.slotKey = "circlet"
+    albedo.talent.auto = 4
+
+    albedo.equippedWeapon = database.createWeapon(albedoWeapon)
+    amber.equippedWeapon = database.createWeapon(amberWeapon)
+    database.updateChar(albedo)
+    database.updateChar(amber)
+    database.setWeaponLocation(albedo.equippedWeapon, "Albedo")
+    database.setWeaponLocation(amber.equippedWeapon, "Amber")
+
+    art1.id = database.createArt(art1)
+    art2.id = database.createArt(art2)
+    database.setArtLocation(art1.id, "Albedo")
+    art1.location = "Albedo"
+
+    const { storage } = importGOOD(exportGOOD(database.storage)) ?? { storage: new SandboxStorage() }
+    const result = new ArtCharDatabase(storage)
+
+    albedo.equippedArtifacts.circlet = result._getChar("Albedo")!.equippedArtifacts.circlet
+    art1.id = albedo.equippedArtifacts.circlet
+    albedo.equippedWeapon = result._getChar("Albedo")!.equippedWeapon
+    amber.equippedWeapon = result._getChar("Amber")!.equippedWeapon
+
+    expect(result.chars.keys).toEqual(expect.arrayContaining(["Albedo", "Amber"]))
+    expect(result._getChar("Albedo")).toEqual(albedo)
+    expect(result._getChar("Amber")).toEqual(amber)
+    expect(result._getArt(art1.id)).toEqual(art1)
   })
   test("Does not crash from invalid storage", () => {
     function tryStorage(setup: (storage: Storage) => void, verify: (storage: Storage) => void = () => { }) {
@@ -110,28 +112,42 @@ describe("Database", () => {
   })
   test("Support basic operations", async () => {
     // Add Character and Artifact
-    dbStorage.clear()
-    database.reloadStorage()
-    const Albedo = deepClone(baseAlbedo)
-    const Amber = deepClone(baseAmber)
-    const art1 = validateArtifact(await randomizeArtifact(), "artifact_123").artifact
-    const art2 = validateArtifact(await randomizeArtifact(), "artifact_456").artifact
+    const albedo = initialCharacter("Albedo"), amber = initialCharacter("Amber")
+    const albedoWeapon = defaultInitialWeapon("sword"), amberWeapon = defaultInitialWeapon("bow")
+
+    const art1 = validateArtifact(await randomizeArtifact(), "").artifact, art2 = validateArtifact(await randomizeArtifact(), "").artifact
     art1.slotKey = "circlet"
     art2.slotKey = "circlet"
-    Albedo.talent.auto = 4
-    Albedo.equippedArtifacts.flower = "1234"
+    albedo.talent.auto = 4
+
+    // Sabotage
     art1.location = "Albedo"
-    database.updateChar(Albedo)
-    database.updateChar(Amber)
-    art1.id = database.updateArt(art1)
+    albedo.equippedArtifacts.flower = "1234"
+
+    const albedoWeaponId = database.createWeapon(albedoWeapon)
+    const amberWeaponId = database.createWeapon(amberWeapon)
+    database.updateChar(albedo)
+    database.updateChar(amber)
+    database.setWeaponLocation(albedoWeaponId, "Albedo")
+    database.setWeaponLocation(amberWeaponId, "Amber")
+    albedo.equippedWeapon = albedoWeaponId
+    amber.equippedWeapon = amberWeaponId
+
+    art1.id = database.createArt(art1)
+    art2.id = database.createArt(art2)
+    database.updateChar(amber)
+    database.createArt(art1)
+    database.updateChar(albedo)
+    database.updateChar(amber)
+
     // Ignoring equipedArtifact data
     expect(database._getChar("Albedo")?.equippedArtifacts.flower).toEqual("")
     expect(database._getArt(art1.id)?.location).toEqual("")
     // But keep all other data
-    Albedo.equippedArtifacts.flower = ""
+    albedo.equippedArtifacts.flower = ""
     art1.location = ""
-    expect(database._getChar("Albedo")).toEqual(Albedo)
-    expect(database._getArt(art1.id)).toEqual(art1)
+    expect(removeCharacterCache(database._getChar("Albedo")!)).toEqual(removeCharacterCache(albedo))
+    expect(database._getArt(art1.id)).toEqual(validateArtifact(art1, art1.id).artifact)
 
     // Setup callback
     const AlbedoCallback1 = jest.fn()
@@ -139,24 +155,24 @@ describe("Database", () => {
     const AlbedoCallback1Cleanup = database.followChar("Albedo", AlbedoCallback1)
     /* const artifact1Callback1Cleanup = */ database.followArt(art1.id, artifact1Callback1)
     // Both should receive a callback for the current value
-    expect(getArrLastElement(AlbedoCallback1.mock.calls)[0]).toEqual(Albedo)
+    expect(getArrLastElement(AlbedoCallback1.mock.calls)[0]).toEqual(albedo)
     expect(getArrLastElement(artifact1Callback1.mock.calls)[0]).toEqual(art1)
 
     // Set location
-    database.setLocation(art1.id, "Albedo")
+    database.setArtLocation(art1.id, "Albedo")
     expect(database._getArt(art1.id)?.location).toEqual("Albedo")
     expect(database._getChar("Albedo")?.equippedArtifacts[art1.slotKey]).toEqual(art1.id)
     // (Update later so that we're sure it's not referential)
-    Albedo.equippedArtifacts[art1.slotKey] = art1.id
+    albedo.equippedArtifacts[art1.slotKey] = art1.id
     art1.location = "Albedo"
-    expect(database._getChar("Albedo")).toEqual(Albedo)
+    expect(database._getChar("Albedo")).toEqual(albedo)
     expect(database._getArt(art1.id)).toEqual(art1)
     // And receive its callback
-    expect(getArrLastElement(AlbedoCallback1.mock.calls)[0] as ICachedCharacter).toEqual(Albedo)
+    expect(getArrLastElement(AlbedoCallback1.mock.calls)[0] as ICachedCharacter).toEqual(albedo)
     expect(getArrLastElement(artifact1Callback1.mock.calls)[0] as ICachedArtifact).toEqual(art1)
 
     // If we set another artifact to the same location
-    art2.id = database.updateArt(art2)
+    database.updateArt(art2, art2.id)
     database.equipArtifacts("Albedo", { circlet: art2.id, flower: "", sands: "", goblet: "", plume: "" })
     // We should again receive the callbacks
     art1.location = ""
@@ -170,18 +186,18 @@ describe("Database", () => {
     const lastCount = AlbedoCallback1.mock.calls.length
     AlbedoCallback1Cleanup?.()
     // We should no longer receive any new calls
-    database.setLocation(art1.id, "Amber")
+    database.setArtLocation(art1.id, "Amber")
     expect(AlbedoCallback1.mock.calls.length).toEqual(lastCount)
 
     // Right now, we would have (Amber, art1) and (Albedo, art2), so if we set location of either
-    database.setLocation(art2.id, "Amber")
+    database.setArtLocation(art2.id, "Amber")
     // art1 and art2 should swap locations, while, of course retaining other values
-    Albedo.equippedArtifacts.circlet = art1.id
-    Amber.equippedArtifacts.circlet = art2.id
+    albedo.equippedArtifacts.circlet = art1.id
+    amber.equippedArtifacts.circlet = art2.id
     art1.location = "Albedo"
     art2.location = "Amber"
-    expect(database._getChar("Amber")).toEqual(Amber)
-    expect(database._getChar("Albedo")).toEqual(Albedo)
+    expect(database._getChar("Amber")).toEqual(amber)
+    expect(database._getChar("Albedo")).toEqual(albedo)
     expect(database._getArt(art1.id)).toEqual(art1)
     expect(database._getArt(art2.id)).toEqual(art2)
 
@@ -190,9 +206,9 @@ describe("Database", () => {
     // It should properly handle other char's info
     expect(database._getChar("Albedo")?.equippedArtifacts.circlet).toEqual("")
     // And transmitted a proper info
-    expect(database._getChar("Albedo")).not.toEqual(Albedo)
-    Albedo.equippedArtifacts.circlet = ""
-    expect(database._getChar("Albedo")).toEqual(Albedo)
+    expect(database._getChar("Albedo")).not.toEqual(albedo)
+    albedo.equippedArtifacts.circlet = ""
+    expect(database._getChar("Albedo")).toEqual(albedo)
     expect(database._getArt(art1.id)).toBeUndefined()
     // It should also trigger callback on the removing artifact
     expect(getArrLastElement(artifact1Callback1.mock.calls)[0] as ICachedArtifact | undefined).toBeUndefined
@@ -206,9 +222,9 @@ describe("Database", () => {
     // Recap, we should now have unequiped art2 and Albedo
 
     // BTW, setting locks should work
-    database.excludeArtifact(art2.id)
+    database.updateArt({ exclude: true }, art2.id)
     expect(database._getArt(art2.id)?.exclude).toEqual(true)
-    database.excludeArtifact(art2.id, false)
+    database.updateArt({ exclude: false }, art2.id)
     expect(database._getArt(art2.id)?.exclude).toEqual(false)
   })
 })

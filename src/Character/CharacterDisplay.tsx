@@ -85,7 +85,7 @@ export default function CharacterDisplay(props) {
         const characterSheet = await CharacterSheet.get(cKey)
         if (!characterSheet) return
         const weapon = defaultInitialWeapon(characterSheet.weaponTypeKey)
-        const weaponId = database.updateWeapon(weapon)
+        const weaponId = database.createWeapon(weapon)
         database.setWeaponLocation(weaponId, cKey)
         setCharacterKeyToEdit(cKey)
       })()

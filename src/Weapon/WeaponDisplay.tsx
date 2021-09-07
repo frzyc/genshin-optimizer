@@ -76,12 +76,9 @@ export default function WeaponDisplay(props) {
 
   const newWeapon = useCallback(
     (weaponKey: WeaponKey) => {
-      const newWeapon = initialWeapon(weaponKey)
-      const weaponId = database.updateWeapon(newWeapon)
-      editCharacter(weaponId)
+      editCharacter(database.createWeapon(initialWeapon(weaponKey)))
     },
-    [database, editCharacter]
-  )
+    [database, editCharacter])
 
   const weaponIdList = database.weapons.keys.filter(wKey => {
     const dbWeapon = database._getWeapon(wKey)

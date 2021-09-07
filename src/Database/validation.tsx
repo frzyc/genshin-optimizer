@@ -206,10 +206,12 @@ export function parseCharacter(obj: any, key: string): ICharacter | undefined {
   }
 
   // TODO: validate baseStatOverrides, conditionalValues
-  return {
-    key: characterKey, level, ascension, hitMode, elementKey, reactionMode, conditionalValues,
+  const result: ICharacter = {
+    key: characterKey, level, ascension, hitMode, reactionMode, conditionalValues,
     baseStatOverrides, talent, infusionAura, constellation, buildSettings,
   }
+  if (elementKey) result.elementKey = elementKey
+  return result
 }
 /// Return a new flex character from given character. All extra keys are removed
 export function removeCharacterCache(char: ICachedCharacter): ICharacter {
@@ -217,10 +219,12 @@ export function removeCharacterCache(char: ICachedCharacter): ICharacter {
     key: characterKey, level, ascension, hitMode, elementKey, reactionMode, conditionalValues,
     baseStatOverrides, talent, infusionAura, constellation, buildSettings,
   } = char
-  return {
-    key: characterKey, level, ascension, hitMode, elementKey, reactionMode, conditionalValues,
+  const result: ICharacter = {
+    key: characterKey, level, ascension, hitMode, reactionMode, conditionalValues,
     baseStatOverrides, talent, infusionAura, constellation, buildSettings,
   }
+  if (elementKey) result.elementKey = elementKey
+  return result
 }
 
 export function validateWeapon(flex: IWeapon, id: string): ICachedWeapon {

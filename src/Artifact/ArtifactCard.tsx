@@ -37,7 +37,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
     artifactId ? database.followArt(artifactId, updateDatabaseArtifact) : undefined,
     [artifactId, updateDatabaseArtifact, database])
   const sheet = usePromise(ArtifactSheet.get((artifactObj ?? (artifactId ? database._getArt(artifactId) : undefined))?.setKey), [artifactObj, artifactId])
-  const equipOnChar = (charKey: CharacterKey | "") => database.setLocation(artifactId!, charKey)
+  const equipOnChar = (charKey: CharacterKey | "") => database.setArtLocation(artifactId!, charKey)
 
   const editable = !artifactObj // dont allow edit for flex artifacts
   const art = artifactObj ?? databaseArtifact
@@ -81,7 +81,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
         </Col>
         <Col className="pt-2">
           <h6><strong>{slotName} {slotDescEle}</strong></h6>
-          <div><SlotNameWithIcon slotKey={slotKey} /> <span className="float-right mr-4"> <Button size="sm" onClick={() => database.lockArtifact(id, !lock)}><FontAwesomeIcon icon={lock ? faLock : faLockOpen} className="fa-fw" /></Button></span></div>
+          <div><SlotNameWithIcon slotKey={slotKey} /> <span className="float-right mr-4"> <Button size="sm" onClick={() => database.updateArt({ lock: !lock }, id)}><FontAwesomeIcon icon={lock ? faLock : faLockOpen} className="fa-fw" /></Button></span></div>
           <div><small><Stars stars={rarity} /></small></div>
         </Col>
       </Row>
@@ -140,7 +140,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
             {editable ? <OverlayTrigger placement="top"
               overlay={<Tooltip id="exclude-artifact-tip">{t`lockArtifactTip`}</Tooltip>}>
               <span className="d-inline-block">
-                <Button size="sm" onClick={() => database.excludeArtifact(id, !exclude)} className="rounded-0" variant={exclude ? "danger" : "success"}>
+                <Button size="sm" onClick={() => database.updateArt({ exclude: !exclude }, id)} className="rounded-0" variant={exclude ? "danger" : "success"}>
                   <FontAwesomeIcon icon={exclude ? faBan : faChartLine} className="fa-fw" />
                 </Button>
               </span>

@@ -148,7 +148,7 @@ export default function ArtifactDisplay(props) {
 
   const unequipArtifacts = () =>
     window.confirm(`Are you sure you want to unequip ${numUnequip} artifacts currently equipped on characters?`) &&
-    artifacts.map(art => database.setLocation(art.id!, ""))
+    artifacts.map(art => database.setArtLocation(art.id!, ""))
 
   const deleteArtifacts = () =>
     window.confirm(`Are you sure you want to delete ${artifacts.length} artifacts?`) &&
@@ -156,11 +156,11 @@ export default function ArtifactDisplay(props) {
 
   const excludeArtifacts = () =>
     window.confirm(`Are you sure you want to exclude ${numInclude} artifacts from build generations?`) &&
-    artifacts.map(art => database.excludeArtifact(art.id))
+    artifacts.map(art => database.updateArt({ exclude: true }, art.id))
 
   const includeArtifacts = () =>
     window.confirm(`Are you sure you want to include ${numExclude} artifacts in build generations?`) &&
-    artifacts.map(art => database.excludeArtifact(art.id, false))
+    artifacts.map(art => database.updateArt({ exclude: false }, art.id))
 
   const paginationCard = useMemo(() => {
     const showingValue = artifacts.length !== totalArtNum ? `${artifacts.length}/${totalArtNum}` : `${totalArtNum}`

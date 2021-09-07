@@ -57,8 +57,7 @@ export default function WeaponDisplayCard({
     [propWeaponId, onDatabaseUpdate, database])
 
   const weaponDispatch = useCallback((newWeapon: Partial<ICachedWeapon>) => {
-    const oldWeapon = database._getWeapon(propWeaponId!)
-    database.updateWeapon({ ...oldWeapon, ...newWeapon } as ICachedWeapon)
+    database.updateWeapon(newWeapon, propWeaponId)
   }, [propWeaponId, database])
 
   const ambiguousLevel = level !== 90 && ascensionMaxLevel.findIndex(ascenML => level === ascenML) > 0

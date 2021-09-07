@@ -1,6 +1,6 @@
 import { ArtCharDatabase } from '../Database';
 import { IArtifact, MainStatKey, SubstatKey } from '../../Types/artifact';
-import { parseArtifact, validateArtifact } from '../../Database/validation';
+import { parseArtifact } from '../../Database/validation';
 import { ArtifactSetKey, SlotKey } from "../../Types/consts";
 import { DBStorage, SandboxStorage } from '../DBStorage';
 
@@ -41,7 +41,7 @@ export function importMona(dataObj: any, oldDatabase: ArtCharDatabase): IImportR
     artifactIdsToRemove.delete(id)
 
     if (!duplicated.length)
-      newDatabase.updateArt(validateArtifact(artifact, id).artifact)
+      newDatabase.updateArt(artifact, id)
 
     if (duplicated.length) result.dupCount++
     else if (upgraded.length) result.upgradeCount++

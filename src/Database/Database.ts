@@ -1,12 +1,12 @@
 import { ICachedArtifact, IArtifact } from "../Types/artifact";
-import { ICachedCharacter } from "../Types/character";
+import { ICachedCharacter, ICharacter } from "../Types/character";
 import { allSlotKeys, CharacterKey, SlotKey } from "../Types/consts";
 import { deepClone, getRandomInt } from "../Util/Util";
 import { DataManager } from "./DataManager";
 import { migrate } from "./migration";
 import { validateArtifact, parseCharacter, parseArtifact, removeArtifactCache, validateCharacter, removeCharacterCache, parseWeapon, validateWeapon, removeWeaponCache } from "./validation";
 import { DBStorage, dbStorage } from "./DBStorage";
-import { ICachedWeapon } from "../Types/weapon";
+import { ICachedWeapon, IWeapon } from "../Types/weapon";
 import { createContext } from "react";
 
 export class ArtCharDatabase {
@@ -137,80 +137,69 @@ export class ArtCharDatabase {
    * **Caution**: This does not update `equippedArtifacts`, use `equipArtifacts` instead
    * **Caution**: This does not update `equipedWeapon`, use `setWeaponLocation` instead
    */
-  updateChar(value: ICachedCharacter): void {
-    const newChar = deepClone(value), key = newChar.key, oldChar = this.chars.get(key)
+  updateChar(value: Partial<ICharacter>): void {
+    const key = value.key!
+    const oldChar = this._getChar(key)
+    const parsedChar = parseCharacter({ ...oldChar, ...(value as ICharacter) }, `char_${key}`)
+    if (!parsedChar) return
 
-    if (oldChar) {
-      newChar.equippedArtifacts = oldChar.equippedArtifacts
-      newChar.equippedWeapon = oldChar.equippedWeapon
-    } else {
-      newChar.equippedArtifacts = Object.fromEntries(allSlotKeys.map(slot => ([slot, ""]))) as any
-      newChar.equippedWeapon = ""
-    }
-
+    const newChar = validateCharacter({ ...oldChar, ...parsedChar })
     this.saveChar(key, newChar)
   }
+
   /**
-   * **Caution** This does not update `location`, `exclude` and `lock`, use `setLocation` or `excludeArtifact` instead
+   * **Caution** This does not update `location`, use `setLocation` instead
    */
-  updateArt(value: ICachedArtifact): string {
-    const newArt = deepClone(value)
-    const key = newArt.id || generateRandomArtID(new Set(Object.keys(this.arts.data)))
-    const oldArt = this.arts.get(key)
+  updateArt(value: Partial<IArtifact>, id: string) {
+    const oldArt = this.arts.get(id)
+    const parsedArt = parseArtifact({ ...oldArt, ...(value as IArtifact) })
+    if (!parsedArt) return
 
-    if (!newArt.id)
-      newArt.id = key
-
-    if (oldArt) {
-      newArt.location = oldArt.location
-      newArt.exclude = oldArt.exclude
-      newArt.lock = oldArt.lock
-    } else {
-      newArt.location = ""
-      newArt.exclude = false
-      newArt.lock = false
-    }
-
-    this.saveArt(key, newArt)
+    const newArt = validateArtifact({ ...oldArt, ...parsedArt }, id).artifact
+    this.saveArt(id, newArt)
     if (newArt.location)
       this.chars.set(newArt.location, deepClone(this.chars.get(newArt.location)!))
-    return key
   }
   /**
    * **Caution** This does not update `location` use `setWeaponLocation` instead
    */
-  updateWeapon(value: ICachedWeapon): string {
-    const newWeapon = deepClone(value)
-    const key = newWeapon.id || generateRandomWeaponID(new Set(Object.keys(this.weapons.data)))
-    const oldWeapon = this.weapons.get(key)
+  updateWeapon(value: Partial<IWeapon>, id: string) {
+    const oldWeapon = this.weapons.get(id)
+    const parsedWeapon = parseWeapon({ ...oldWeapon, ...(value as IWeapon) })
+    if (!parsedWeapon) return
 
-    if (!newWeapon.id)
-      newWeapon.id = key
-
-    if (oldWeapon) {
-      newWeapon.location = oldWeapon.location
-    } else {
-      newWeapon.location = ""
-    }
-
-    this.saveWeapon(key, newWeapon)
+    const newWeapon = validateWeapon({ ...oldWeapon, ...parsedWeapon }, id)
+    this.saveWeapon(id, newWeapon)
     if (newWeapon.location)
       this.chars.set(newWeapon.location, deepClone(this.chars.get(newWeapon.location)!))
-    return key
   }
+
+  createArt(value: IArtifact): string {
+    const id = generateRandomArtID(new Set(this.arts.keys))
+    const newArt = validateArtifact(parseArtifact({ ...value, location: "" })!, id).artifact
+    this.saveArt(id, newArt)
+    return id
+  }
+  createWeapon(value: IWeapon): string {
+    const id = generateRandomWeaponID(new Set(this.weapons.keys))
+    const newWeapon = validateWeapon(parseWeapon({ ...value, location: "" })!, id)
+    this.saveWeapon(id, newWeapon)
+    return id
+  }
+
   removeChar(key: CharacterKey) {
     const char = this.chars.get(key)
     if (!char) return
 
     for (const artKey of Object.values(char.equippedArtifacts)) {
       const art = this.arts.get(artKey)
-      if (art) {
+      if (art && art.location === key) {
         art.location = ""
         this.saveArt(artKey, art)
       }
     }
     const weapon = this.weapons.get(char.equippedWeapon)
-    if (weapon) {
+    if (weapon && weapon.location === key) {
       weapon.location = ""
       this.saveWeapon(char.equippedWeapon, weapon)
     }
@@ -223,7 +212,7 @@ export class ArtCharDatabase {
     if (!art) return
 
     const char = art.location && this.chars.get(art.location)
-    if (char) {
+    if (char && char.equippedArtifacts[art.slotKey] === key) {
       char.equippedArtifacts[art.slotKey] = ""
       this.saveChar(char.key, char)
     }
@@ -238,53 +227,44 @@ export class ArtCharDatabase {
     this.storage.remove(key)
     this.weapons.remove(key)
   }
-  setLocation(artKey: string, newCharKey: CharacterKey | "") {
-    const newArt = deepClone(this.arts.get(artKey))
-    if (!newArt) return
+  setArtLocation(artKey: string, newCharKey: CharacterKey | "") {
+    const art1 = this.arts.get(artKey)
+    if (!art1 || art1.location === newCharKey) return
 
-    const slot = newArt.slotKey, oldCharKey = newArt.location
-    const newChar = newCharKey ? deepClone(this.chars.get(newCharKey))! : undefined
-    const oldChar = oldCharKey ? deepClone(this.chars.get(oldCharKey))! : undefined
-    newArt.location = newCharKey
-    if (oldChar) oldChar.equippedArtifacts[slot] = ""
+    const slotKey = art1.slotKey
+    const char1 = this.chars.get(newCharKey)
+    const art2 = this.arts.get(char1?.equippedArtifacts[slotKey])
+    const char2 = this.chars.get(art1.location)
 
-    if (newChar) {
-      const oldArtKey = newChar?.equippedArtifacts[slot] ?? ""
-      const oldArt = oldArtKey ? deepClone(this.arts.get(oldArtKey))! : undefined
-      newChar.equippedArtifacts[slot] = newArt.id!
+    // Currently art1 <-> char2 & art2 <-> char1
+    // Swap to art1 <-> char1 & art2 <-> char2
 
-      if (oldChar && oldArt) {
-        oldChar.equippedArtifacts[slot] = oldArt.id!
-        oldArt.location = oldChar.key
-      } else if (oldArt) oldArt.location = ""
-
-      if (oldArt) this.saveArt(oldArtKey, oldArt)
-    }
-
-    this.saveArt(artKey, newArt)
-    if (newCharKey) this.saveChar(newCharKey, newChar!)
-    if (oldCharKey) this.saveChar(oldCharKey, oldChar!)
+    this.saveArt(art1.id, { ...art1, location: char1?.key ?? "" })
+    if (art2)
+      this.saveArt(art2.id, { ...art2, location: char2?.key ?? "" })
+    if (char1)
+      this.saveChar(char1.key, { ...char1, equippedArtifacts: { ...char1.equippedArtifacts, [slotKey]: art1.id } })
+    if (char2)
+      this.saveChar(char2.key, { ...char2, equippedArtifacts: { ...char2.equippedArtifacts, [slotKey]: art2?.id ?? "" } })
   }
   setWeaponLocation(weaponId: string, newCharKey: CharacterKey) {
-    const newWeapon = deepClone(this.weapons.get(weaponId))
-    const newChar = newCharKey ? deepClone(this.chars.get(newCharKey)) : undefined
-    if (!newWeapon || !newChar) return
+    const weapon1 = this.weapons.get(weaponId)
+    const char1 = this.chars.get(newCharKey)
+    if (!weapon1 || !char1 || weapon1.location === newCharKey) return
 
-    const oldCharKey = newWeapon.location
-    const oldChar = oldCharKey ? deepClone(this.chars.get(oldCharKey)) : undefined
-    const oldWeaponId = newChar.equippedWeapon ?? ""
-    const oldWeapon = oldWeaponId ? deepClone(this.weapons.get(oldWeaponId)) : undefined
+    const weapon2 = this.weapons.get(char1.equippedWeapon)!
+    const char2 = this.chars.get(weapon1.location)
 
-    newWeapon.location = newCharKey
-    newChar.equippedWeapon = newWeapon.id
+    // Currently weapon1 <-> char2 & weapon2 <-> char1
+    // Swap to weapon1 <-> char1 & weapon2 <-> char2
 
-    if (oldChar) oldChar.equippedWeapon = oldWeaponId // TODO when "unequipping an weapon from character, create a 1* weapon so character always have a weapon"
-    if (oldWeapon) oldWeapon.location = oldCharKey
+    this.saveWeapon(weapon1.id, { ...weapon1, location: char1.key })
+    this.saveChar(char1.key, { ...char1, equippedWeapon: weapon1.id })
 
-    this.saveWeapon(weaponId, newWeapon)
-    this.saveChar(newCharKey, newChar)
-    if (oldWeapon) this.saveWeapon(oldWeaponId, oldWeapon)
-    if (oldChar) this.saveChar(oldCharKey as any, oldChar)
+    if (weapon2)
+      this.saveWeapon(weapon2.id, { ...weapon2, location: char2?.key ?? "" })
+    if (char2)
+      this.saveChar(char2.key, { ...char2, equippedWeapon: weapon2.id })
   }
   equipArtifacts(charKey: CharacterKey, newArts: StrictDict<SlotKey, string>) {
     const char = this.chars.get(charKey)
@@ -292,23 +272,9 @@ export class ArtCharDatabase {
 
     const oldArts = char.equippedArtifacts
     for (const [slot, newArt] of Object.entries(newArts)) {
-      if (newArt) this.setLocation(newArt, charKey)
-      else if (oldArts[slot]) this.setLocation(oldArts[slot], "")
+      if (newArt) this.setArtLocation(newArt, charKey)
+      else if (oldArts[slot]) this.setArtLocation(oldArts[slot], "")
     }
-  }
-  lockArtifact(key: string, lock = false) {
-    const art = this.arts.get(key)
-    if (!art || art.lock === lock) return
-
-    art.lock = lock
-    this.saveArt(key, art)
-  }
-  excludeArtifact(key: string, exclude = true) {
-    const art = this.arts.get(key)
-    if (!art || art.exclude === exclude) return
-
-    art.exclude = exclude
-    this.saveArt(key, art)
   }
 
   findDuplicates(editorArt: IArtifact): { duplicated: string[], upgraded: string[] } {
