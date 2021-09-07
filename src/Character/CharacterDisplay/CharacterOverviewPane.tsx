@@ -90,7 +90,7 @@ function MainStatsCards({ characterSheet, weaponSheet, editable, character, char
     otherStatKeys.push(`${ele}_dmg_`)
     otherStatKeys.push(`${ele}_res_`)
   })
-  otherStatKeys.push("stamina", "incHeal_", "powShield_", "cdRed_")
+  otherStatKeys.push("stamina", "incHeal_", "shield_", "cdRed_")
 
   const miscStatkeys = [
     "normal_dmg_", "normal_critRate_",

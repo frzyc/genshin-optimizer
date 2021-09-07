@@ -9,7 +9,7 @@ import { IArtifactSheet } from '../../../Types/artifact'
 const conditionals: IConditionals = {
   4: {
     name: "Elemental Skill hits an opponent",
-    stats: { atk_: 20, powShield_: 30 }
+    stats: { atk_: 20, shield_: 30 }
   }
 }
 const artifact: IArtifactSheet = {

@@ -59,7 +59,7 @@ const StatIcon = {
 
 	cdRed_: <CdRedIcon />,
 
-	powShield_: <FontAwesomeIcon icon={faShieldStrength as any} />,
+	shield_: <FontAwesomeIcon icon={faShieldStrength as any} />,
 	stamina: <FontAwesomeIcon icon={faMaxStamina as any} />,
 
 	...coloredEleIcon,

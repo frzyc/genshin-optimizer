@@ -47,25 +47,25 @@ const formula: IFormulaSheet = {
       const hp = data.skill.shieldHp[stats.tlvl.skill] / 100
       const flat = data.skill.shieldFlat[stats.tlvl.skill]
       const shdStr = 2.5 * (stats.constellation >= 2 ? 1.15 : 1)
-      return [s => (hp * s.finalHP + flat) * (1 + s.powShield_ / 100) * shdStr, ["finalHP", "powShield_"]]
+      return [s => (hp * s.finalHP + flat) * (1 + s.shield_ / 100) * shdStr, ["finalHP", "shield_"]]
     },
     shield: stats => {
       const hp = data.skill.shieldHp[stats.tlvl.skill] / 100
       const flat = data.skill.shieldFlat[stats.tlvl.skill]
       const shdStr = (stats.constellation >= 2 ? 1.15 : 1)
-      return [s => (hp * s.finalHP + flat) * (1 + s.powShield_ / 100) * shdStr, ["finalHP", "powShield_"]]
+      return [s => (hp * s.finalHP + flat) * (1 + s.shield_ / 100) * shdStr, ["finalHP", "shield_"]]
     },
     shieldHoldCryo: stats => {
       const hp = data.skill.shieldHp[stats.tlvl.skill] / 100
       const flat = data.skill.shieldFlat[stats.tlvl.skill]
       const shdStr = 2.5 * 1.75 * (stats.constellation >= 2 ? 1.15 : 1)
-      return [s => (hp * s.finalHP + flat) * (1 + s.powShield_ / 100) * shdStr, ["finalHP", "powShield_"]]
+      return [s => (hp * s.finalHP + flat) * (1 + s.shield_ / 100) * shdStr, ["finalHP", "shield_"]]
     },
     shieldHold: stats => {
       const hp = data.skill.shieldHp[stats.tlvl.skill] / 100
       const flat = data.skill.shieldFlat[stats.tlvl.skill]
       const shdStr = 1.75 * (stats.constellation >= 2 ? 1.15 : 1)
-      return [s => (hp * s.finalHP + flat) * (1 + s.powShield_ / 100) * shdStr, ["finalHP", "powShield_"]]
+      return [s => (hp * s.finalHP + flat) * (1 + s.shield_ / 100) * shdStr, ["finalHP", "shield_"]]
     },
     dmg: stats => basicDMGFormula(data.skill.dmgPerPaw[stats.tlvl.skill], stats, "skill"),
   },

@@ -32,7 +32,7 @@ const conditionals: IConditionals = {
     canShow: stats => stats.ascension >= 1,
     name: <span>When the <b>Jade Shield</b> takes DMG</span>,
     maxStack: 5,
-    stats: { powShield_: 5 },
+    stats: { shield_: 5 },
   }
 }
 const char: ICharacterSheet = {
@@ -180,7 +180,7 @@ const char: ICharacterSheet = {
             variant: stats => getTalentStatKeyVariant("skill", stats),
           }, {
             text: "Shield Absorption",
-            formulaText: stats => <span>( {data.skill.shieldBase[stats.tlvl.skill]} + {data.skill.shieldMaxHP[stats.tlvl.skill]}% {Stat.printStat("finalHP", stats)} ) * (100% + {Stat.printStat("powShield_", stats)}) * 150% All DMG Absorption</span>,
+            formulaText: stats => <span>( {data.skill.shieldBase[stats.tlvl.skill]} + {data.skill.shieldMaxHP[stats.tlvl.skill]}% {Stat.printStat("finalHP", stats)} ) * (100% + {Stat.printStat("shield_", stats)}) * 150% All DMG Absorption</span>,
             formula: formula.skill.shield,
           }, {
             text: "Shield Duration",

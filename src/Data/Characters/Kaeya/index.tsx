@@ -132,13 +132,13 @@ const char: ICharacterSheet = {
           fields: [{
             canShow: stats => stats.constellation >= 4,
             text: <span className="text-cryo">Shield DMG Absorption</span>,
-            formulaText: stats => <span>30% {Stat.printStat("finalHP", stats)} * (100% + {Stat.printStat("powShield_", stats)}) * (250% <span className="text-cryo">Cryo Absorption</span>)</span>,
+            formulaText: stats => <span>30% {Stat.printStat("finalHP", stats)} * (100% + {Stat.printStat("shield_", stats)}) * (250% <span className="text-cryo">Cryo Absorption</span>)</span>,
             formula: formula.constellation4.shieldCryo,
             variant: "cryo"
           }, {
             canShow: stats => stats.constellation >= 4,
             text: "Shield DMG Absorption",
-            formulaText: stats => <span>30% {Stat.printStat("finalHP", stats)} * (100% + {Stat.printStat("powShield_", stats)})</span>,
+            formulaText: stats => <span>30% {Stat.printStat("finalHP", stats)} * (100% + {Stat.printStat("shield_", stats)})</span>,
             formula: formula.constellation4.shield,
           }, {
             canShow: stats => stats.constellation >= 4,

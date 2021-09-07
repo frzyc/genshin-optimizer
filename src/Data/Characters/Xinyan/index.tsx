@@ -120,12 +120,12 @@ const char: ICharacterSheet = {
           },
           ...[...Array(3)].map((_, i) => i + 1).flatMap(i => [{
             text: <span className="text-pyro">Shield Level {i} DMG Absorption</span>,
-            formulaText: stats => <span>( {data.skill[`def${i}`][stats.tlvl.skill]}% {Stat.printStat("finalDEF", stats)} + {data.skill[`flat${i}`][stats.tlvl.skill]} ) * (100% + {Stat.printStat("powShield_", stats)}) * (250% <span className="text-pyro">Pyro Absorption</span>)</span>,
+            formulaText: stats => <span>( {data.skill[`def${i}`][stats.tlvl.skill]}% {Stat.printStat("finalDEF", stats)} + {data.skill[`flat${i}`][stats.tlvl.skill]} ) * (100% + {Stat.printStat("shield_", stats)}) * (250% <span className="text-pyro">Pyro Absorption</span>)</span>,
             formula: formula.skill[`shield${i}Pyro`],
             variant: "pyro"
           }, {
             text: `Shield Level ${i} DMG Absorption`,
-            formulaText: stats => <span>( {data.skill[`def${i}`][stats.tlvl.skill]}% {Stat.printStat("finalDEF", stats)} + {data.skill[`flat${i}`][stats.tlvl.skill]} ) * (100% + {Stat.printStat("powShield_", stats)})</span>,
+            formulaText: stats => <span>( {data.skill[`def${i}`][stats.tlvl.skill]}% {Stat.printStat("finalDEF", stats)} + {data.skill[`flat${i}`][stats.tlvl.skill]} ) * (100% + {Stat.printStat("shield_", stats)})</span>,
             formula: formula.skill[`shield${i}`],
           }]),
           {

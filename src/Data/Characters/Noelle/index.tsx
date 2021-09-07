@@ -82,7 +82,7 @@ const char: ICharacterSheet = {
             variant: stats => getTalentStatKeyVariant("skill", stats),
           }, {
             text: sgt("dmgAbsorption"),
-            formulaText: stats => <span>( {data.skill.shield_def[stats.tlvl.skill]}% {Stat.printStat("finalDEF", stats)} + {data.skill.shield_flat[stats.tlvl.skill]} ) * (100% + {Stat.printStat("powShield_", stats)}) * 150% All DMG Absorption</span>,
+            formulaText: stats => <span>( {data.skill.shield_def[stats.tlvl.skill]}% {Stat.printStat("finalDEF", stats)} + {data.skill.shield_flat[stats.tlvl.skill]} ) * (100% + {Stat.printStat("shield_", stats)}) * 150% All DMG Absorption</span>,
             formula: formula.skill.shield,
           }, {
             text: sgt("healing"),
@@ -137,7 +137,7 @@ const char: ICharacterSheet = {
           fields: [{
             canShow: stats => stats.ascension >= 1,
             text: sgt("dmgAbsorption"),
-            formulaText: stats => <span>400% {Stat.printStat("finalDEF", stats)} * (100% + {Stat.printStat("powShield_", stats)}) * 150% All DMG Absorption</span>,
+            formulaText: stats => <span>400% {Stat.printStat("finalDEF", stats)} * (100% + {Stat.printStat("shield_", stats)}) * 150% All DMG Absorption</span>,
             formula: formula.passive1.hp,
           }, {
             canShow: stats => stats.ascension >= 1,

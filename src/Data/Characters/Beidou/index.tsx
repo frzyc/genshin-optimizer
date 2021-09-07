@@ -77,12 +77,12 @@ const char: ICharacterSheet = {
           text: tr("skill.description"),
           fields: [{
             text: <span className="text-electro">Shield DMG Absorption</span>,
-            formulaText: stats => <span>( {data.skill.hp[stats.tlvl.skill]}% {Stat.printStat("finalHP", stats)} + {data.skill.flat[stats.tlvl.skill]} ) * (100% + {Stat.printStat("powShield_", stats)}) * (250% <span className="text-electro">Electro Absorption</span>)</span>,
+            formulaText: stats => <span>( {data.skill.hp[stats.tlvl.skill]}% {Stat.printStat("finalHP", stats)} + {data.skill.flat[stats.tlvl.skill]} ) * (100% + {Stat.printStat("shield_", stats)}) * (250% <span className="text-electro">Electro Absorption</span>)</span>,
             formula: formula.skill.shieldElectro,
             variant: "electro"
           }, {
             text: "Shield DMG Absorption",
-            formulaText: stats => <span>( {data.skill.hp[stats.tlvl.skill]}% {Stat.printStat("finalHP", stats)} + {data.skill.flat[stats.tlvl.skill]} ) * (100% + {Stat.printStat("powShield_", stats)})</span>,
+            formulaText: stats => <span>( {data.skill.hp[stats.tlvl.skill]}% {Stat.printStat("finalHP", stats)} + {data.skill.flat[stats.tlvl.skill]} ) * (100% + {Stat.printStat("shield_", stats)})</span>,
             formula: formula.skill.shield,
           }, {
             text: "Base DMG",
@@ -148,13 +148,13 @@ const char: ICharacterSheet = {
           fields: [{
             canShow: stats => stats.constellation >= 1,
             text: <span className="text-electro">Shield DMG Absorption</span>,
-            formulaText: stats => <span>16% {Stat.printStat("finalHP", stats)} * (100% + {Stat.printStat("powShield_", stats)}) * (250% <span className="text-electro">Electro Absorption</span>)</span>,
+            formulaText: stats => <span>16% {Stat.printStat("finalHP", stats)} * (100% + {Stat.printStat("shield_", stats)}) * (250% <span className="text-electro">Electro Absorption</span>)</span>,
             formula: formula.constellation1.shieldElectro,
             variant: "electro"
           }, {
             canShow: stats => stats.constellation >= 1,
             text: "Shield DMG Absorption",
-            formulaText: stats => <span>16% {Stat.printStat("finalHP", stats)} * (100% + {Stat.printStat("powShield_", stats)})</span>,
+            formulaText: stats => <span>16% {Stat.printStat("finalHP", stats)} * (100% + {Stat.printStat("shield_", stats)})</span>,
             formula: formula.constellation1.shield,
           },]
         }],

@@ -54,7 +54,7 @@ export const allMainStatKeys = ["hp", "hp_", "atk", "atk_", "def_", "eleMas", "e
 export const allSubstats = ["hp", "hp_", "atk", "atk_", "def_", "def", "eleMas", "enerRech_", "critRate_", "critDMG_",] as const
 
 // TODO: Check if these actually applies
-type SpecializedStatKey = "normal_critRate_" | "charged_critRate_" | "plunging_dmg_" | "powShield_" | "enemyDEFRed_" | "skillCDRed_" | "incHeal_" | "weakspotDMG_" | "dmg_" | "moveSPD_" | "staminaDec_" | "atkSPD_" | "cdRed_" | "finalHP" | "finalATK" | "finalDEF"
+type SpecializedStatKey = "normal_critRate_" | "charged_critRate_" | "plunging_dmg_" | "shield_" | "enemyDEFRed_" | "skillCDRed_" | "incHeal_" | "weakspotDMG_" | "dmg_" | "moveSPD_" | "staminaDec_" | "atkSPD_" | "cdRed_" | "finalHP" | "finalATK" | "finalDEF"
 
 export type MainStatKey = typeof allMainStatKeys[number]
 export type SubstatKey = typeof allSubstats[number]

@@ -44,12 +44,12 @@ const formula: IFormulaSheet = {
     shield: stats => {
       const percent = data.skill.hp[stats.tlvl.skill] / 100
       const flat = data.skill.flat[stats.tlvl.skill]
-      return [s => (percent * s.finalHP + flat) * (1 + s.powShield_ / 100), ["finalHP", "powShield_"]]
+      return [s => (percent * s.finalHP + flat) * (1 + s.shield_ / 100), ["finalHP", "shield_"]]
     },
     shieldElectro: stats => {
       const percent = data.skill.hp[stats.tlvl.skill] / 100
       const flat = data.skill.flat[stats.tlvl.skill]
-      return [s => (percent * s.finalHP + flat) * (1 + s.powShield_ / 100) * 2.5, ["finalHP", "powShield_"]]
+      return [s => (percent * s.finalHP + flat) * (1 + s.shield_ / 100) * 2.5, ["finalHP", "shield_"]]
     },
     dmg: stats => basicDMGFormula(data.skill.dmg[stats.tlvl.skill], stats, "skill"),
     hit1: stats => basicDMGFormula(data.skill.dmg[stats.tlvl.skill] + data.skill.onHit[stats.tlvl.skill], stats, "skill"),
@@ -60,8 +60,8 @@ const formula: IFormulaSheet = {
     lightningDMG: stats => basicDMGFormula(data.burst.lightningDMG[stats.tlvl.burst], stats, "burst"),
   },
   constellation1: {
-    shield: stats => [s => 0.16 * s.finalHP * (1 + s.powShield_ / 100), ["finalHP", "powShield_"]],
-    shieldElectro: stats => [s => 0.16 * s.finalHP * (1 + s.powShield_ / 100) * 2.5, ["finalHP", "powShield_"]],
+    shield: stats => [s => 0.16 * s.finalHP * (1 + s.shield_ / 100), ["finalHP", "shield_"]],
+    shieldElectro: stats => [s => 0.16 * s.finalHP * (1 + s.shield_ / 100) * 2.5, ["finalHP", "shield_"]],
   },
   constellation4: {
     dmg: stats => basicDMGFormula(20, stats, "electro"),
