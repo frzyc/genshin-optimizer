@@ -147,7 +147,11 @@ function UploadCard({ forceUpdate }) {
         return
       }
       return { type: "Mona", ...imported }
-    } else if ("version" in parsed && "characterDatabase" in parsed && "artifactDatabase" in parsed) {
+    } else if ("version" in parsed &&
+      (
+        ("characterDatabase" in parsed && "artifactDatabase" in parsed) ||
+        ("characters" in parsed && "artifacts" in parsed)
+      )) {
       // Parse as GO format
       const imported = importDB(parsed)
       if (!imported) {
