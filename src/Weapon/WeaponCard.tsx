@@ -69,7 +69,7 @@ export default function WeaponCard({ weaponId, onEdit, onDelete, onClick, cardCl
     {footer && <Card.Footer>
       <Row>
         <Col >
-          <EquipmentDropdown location={weapon?.location} onEquip={equipOnChar} weaponTypeKey={weaponTypeKey} disableUnequip={weapon.location} editable={editable} />
+          <EquipmentDropdown location={weapon?.location} onEquip={equipOnChar} weaponTypeKey={weaponTypeKey} disableUnequip={!!weapon.location} editable={editable} />
         </Col>
         <Col xs={"auto"}>
           <span className="float-right align-top ml-1">
@@ -78,7 +78,7 @@ export default function WeaponCard({ weaponId, onEdit, onDelete, onClick, cardCl
               <FontAwesomeIcon icon={faEdit} />
             </Button>}
             {onDelete && <Button variant="danger" size="sm"
-              disabled={weapon.location}
+              disabled={!!weapon.location}
               onClick={() => onDelete(weaponId)}>
               <FontAwesomeIcon icon={faTrashAlt} />
             </Button>}

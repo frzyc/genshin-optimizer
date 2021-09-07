@@ -1,7 +1,7 @@
 import { WeaponData } from "../../pipeline";
 import { SubstatKey } from "./artifact";
 import { DocumentSection } from "./character";
-import { Rarity, WeaponKey, WeaponTypeKey } from "./consts";
+import { CharacterKey, Rarity, WeaponKey, WeaponTypeKey } from "./consts";
 import { BasicStats, BonusStats } from "./stats";
 import { IConditionals } from "./IConditional";
 

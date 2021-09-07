@@ -48,7 +48,7 @@ export default function WeaponDisplayCard({
     databaseToken && database._getWeapon(propWeaponId!)!,
     [propWeaponId, databaseToken, database])
   const { key, level, refine, ascension } = weapon
-  const { location, id } = weapon as Partial<ICachedWeapon>
+  const { location = "", id } = weapon as Partial<ICachedWeapon>
   const weaponSheet: WeaponSheet | undefined = usePromise(WeaponSheet.get(key), [key])
   const weaponTypeKey = weaponSheet?.weaponType
 
@@ -158,7 +158,7 @@ export default function WeaponDisplayCard({
       })()}
     </Card.Body>
     {footer && id && <Card.Footer><Row>
-      <Col><EquipmentDropdown location={location} onEquip={cKey => database.setWeaponLocation(id, cKey)} weaponTypeKey={weaponSheet?.weaponType} disableUnequip={location} editable={editable} /></Col>
+      <Col><EquipmentDropdown location={location} onEquip={cKey => database.setWeaponLocation(id, cKey)} weaponTypeKey={weaponSheet?.weaponType} disableUnequip={!!weapon.location} editable={editable} /></Col>
       {!!onClose && <Col xs="auto"><Button variant="danger" onClick={onClose}>Close</Button></Col>}
     </Row></Card.Footer>}
   </Card>

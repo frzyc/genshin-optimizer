@@ -91,6 +91,10 @@ export class ArtCharDatabase {
         if (migrated) this.storage.set(key, flex)
       }
     }
+    for (const [charKey, char] of Object.entries(this.chars.data)) {
+      if (!char.equippedWeapon)
+        this.removeChar(charKey) // Remove characters w/o weapons
+    }
   }
 
   private saveArt(key: string, art: ICachedArtifact) {
@@ -199,11 +203,18 @@ export class ArtCharDatabase {
     if (!char) return
 
     for (const artKey of Object.values(char.equippedArtifacts)) {
-      if (!artKey) continue
-      const art = this.arts.get(artKey)!
-      art.location = ""
-      this.saveArt(artKey, art)
+      const art = this.arts.get(artKey)
+      if (art) {
+        art.location = ""
+        this.saveArt(artKey, art)
+      }
     }
+    const weapon = this.weapons.get(char.equippedWeapon)
+    if (weapon) {
+      weapon.location = ""
+      this.saveWeapon(char.equippedWeapon, weapon)
+    }
+
     this.storage.remove(`char_${key}`)
     this.chars.remove(key)
   }
@@ -211,24 +222,19 @@ export class ArtCharDatabase {
     const art = this.arts.get(key)
     if (!art) return
 
-    const charKey = art.location
-    if (charKey) {
-      const char = this.chars.get(charKey)!
+    const char = art.location && this.chars.get(art.location)
+    if (char) {
       char.equippedArtifacts[art.slotKey] = ""
-      this.saveChar(charKey, char)
+      this.saveChar(char.key, char)
     }
     this.storage.remove(key)
     this.arts.remove(key)
   }
   removeWeapon(key: string) {
     const weapon = this.weapons.get(key)
-    if (!weapon) return
-    const charKey = weapon.location
-    if (charKey) {
-      const char = this.chars.get(charKey)!
-      char.equippedWeapon = ""
-      this.saveChar(charKey, char)
-    }
+    if (!weapon || weapon.location)
+      return // Can't delete equipped weapon here
+
     this.storage.remove(key)
     this.weapons.remove(key)
   }
@@ -312,7 +318,7 @@ export class ArtCharDatabase {
   }
 
   findDuplicates(editorArt: IArtifact): { duplicated: string[], upgraded: string[] } {
-    const { setKey, rarity: rarity, level, slotKey, mainStatKey, substats } = editorArt
+    const { setKey, rarity, level, slotKey, mainStatKey, substats } = editorArt
 
     const candidates = this._getArts().filter(candidate =>
       setKey === candidate.setKey &&
