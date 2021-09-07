@@ -39,7 +39,7 @@ export default function WeaponCard({ weaponId, onEdit, onDelete, onClick, cardCl
 
   return (<Card className={cardClassName} bg={bg ? bg : "darkcontent"} text={"lightfont" as any}>
     <Card.Header>
-      <Image src={Assets.weaponTypes?.[weaponTypeKey]} className="inline-icon" /> {process.env.NODE_ENV === "development" && <span className="text-warning">{id || `""`} </span>}<h5 className="d-inline">{weaponSheet.name}</h5>
+      <Image src={Assets.weaponTypes?.[weaponTypeKey]} className="inline-icon" /> <h5 className="d-inline">{weaponSheet.name}</h5>
     </Card.Header>
     <Card.Body onClick={() => onClick?.(weaponId)} className={onClick ? "cursor-pointer" : ""} >
       <Row>
@@ -64,6 +64,7 @@ export default function WeaponCard({ weaponId, onEdit, onDelete, onClick, cardCl
           </Col>
         })}
       </Row>
+      {process.env.NODE_ENV === "development" && <span className="text-warning">{id || `""`} </span>}
     </Card.Body>
     {footer && <Card.Footer>
       <Row>
