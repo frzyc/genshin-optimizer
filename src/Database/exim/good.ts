@@ -5,6 +5,8 @@ import { ArtCharDatabase } from "../Database";
 import { DBStorage, SandboxStorage } from "../DBStorage";
 import { setDBVersion } from "../utils";
 
+const GOSource = "Genshin Optimizer" as const
+
 export function importGOOD(data: IGOOD): ImportResult {
   switch (data.version) {
     case 1: return importGOOD1(data)
@@ -16,13 +18,13 @@ function importGOOD1(data: IGOOD): ImportResult {
   const { source, characters, artifacts, weapons } = data
 
   // DO NOT CHANGE THE DB VERSION
-  // GOODv1 matches dbv9.
-  setDBVersion(storage, 9)
+  // GOODv1 matches dbv8.
+  setDBVersion(storage, 8)
   characters.forEach((char) => storage.set(`char_${char.characterKey}`, char))
   artifacts.forEach((art, id) => storage.set(`artifact_${id}`, art))
   weapons.forEach((weapon, id) => storage.set(`weapon_${id}`, weapon))
 
-  if (source === "GO") {
+  if (source === GOSource) {
     const { artifactDisplay, characterDisplay, buildsDisplay } = data as unknown as IGO
     artifactDisplay && storage.set("ArtifactDisplay.state", artifactDisplay)
     characterDisplay && storage.set("CharacterDisplay.state", characterDisplay)
@@ -37,7 +39,7 @@ function importGOOD1(data: IGOOD): ImportResult {
 export function exportGOOD(storage: DBStorage): IGOOD & IGO {
   return {
     format: "GOOD",
-    source: "GO",
+    source: GOSource,
     version: 1,
     characters: storage.entries
       .filter(([key]) => key.startsWith("char_"))
@@ -65,7 +67,7 @@ type IGOOD = {
 }
 
 type IGO = {
-  source: "GO"
+  source: typeof GOSource
   artifactDisplay: any
   characterDisplay: any
   buildsDisplay: any
