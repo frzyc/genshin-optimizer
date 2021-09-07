@@ -8,7 +8,7 @@ import { Stars } from '../Components/StarDisplay';
 import { DatabaseContext } from '../Database/Database';
 import { validateArtifact } from '../Database/validation';
 import Stat from '../Stat';
-import { allSubstats, ICachedArtifact, IArtifact, IFlexSubstat } from '../Types/artifact';
+import { allSubstats, ICachedArtifact, IArtifact, ISubstat } from '../Types/artifact';
 import { ArtifactRarity, SlotKey } from '../Types/consts';
 import { randomizeArtifact } from '../Util/ArtifactUtil';
 import { usePromise } from '../Util/ReactUtil';
@@ -77,7 +77,7 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: Artifac
     }
     artifactDispatch({ type: "update", artifact: newValue })
   }, [artifact, artifactSheets, sheet, artifactDispatch])
-  const setSubstat = useCallback((index: number, substat: IFlexSubstat) => {
+  const setSubstat = useCallback((index: number, substat: ISubstat) => {
     artifactDispatch({ type: "substat", index, substat })
   }, [artifactDispatch])
   const isValid = !errors.length
@@ -246,7 +246,7 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: Artifac
   </Card >
 }
 
-function SubstatInput({ index, artifact, setSubstat, className }: { index: number, artifact: ICachedArtifact | undefined, setSubstat: (index: number, substat: IFlexSubstat) => void, className: string }) {
+function SubstatInput({ index, artifact, setSubstat, className }: { index: number, artifact: ICachedArtifact | undefined, setSubstat: (index: number, substat: ISubstat) => void, className: string }) {
   const { t } = useTranslation("artifact")
   const { mainStatKey = "", numStars = 5 } = artifact ?? {}
   const { key = "", value = 0, rolls = [], efficiency = 0 } = artifact?.substats[index] ?? {}
@@ -320,7 +320,7 @@ function SubstatInput({ index, artifact, setSubstat, className }: { index: numbe
 }
 
 type ResetMessage = { type: "reset" }
-type SubstatMessage = { type: "substat", index: number, substat: IFlexSubstat }
+type SubstatMessage = { type: "substat", index: number, substat: ISubstat }
 type OverwriteMessage = { type: "overwrite", artifact: IArtifact }
 type UpdateMessage = { type: "update", artifact: Partial<IArtifact> }
 type Message = ResetMessage | SubstatMessage | OverwriteMessage | UpdateMessage

@@ -2,7 +2,7 @@ import Artifact from "../Artifact/Artifact";
 import { initialBuildSettings } from "../Build/BuildSetting";
 import { ascensionMaxLevel } from "../Data/CharacterData";
 import Stat from "../Stat";
-import { allMainStatKeys, allSubstats, ICachedArtifact, IArtifact, IFlexSubstat, Substat, SubstatKey } from "../Types/artifact";
+import { allMainStatKeys, allSubstats, ICachedArtifact, IArtifact, ICachedSubstat, ISubstat, SubstatKey } from "../Types/artifact";
 import { ICachedCharacter, ICharacter } from "../Types/character";
 import { allArtifactRarities, allArtifactSets, allCharacterKeys, allElements, allHitModes, allReactionModes, allSlotKeys, allWeaponKeys } from "../Types/consts";
 import { IWeapon, ICachedWeapon } from "../Types/weapon";
@@ -14,7 +14,7 @@ export function validateArtifact(flex: IArtifact, id: string): { artifact: ICach
   const mainStatVal = Artifact.mainStatValue(mainStatKey, numStars, level)!
 
   const errors: Displayable[] = []
-  const substats: Substat[] = flex.substats.map(substat => ({ ...substat, rolls: [], efficiency: 0 }))
+  const substats: ICachedSubstat[] = flex.substats.map(substat => ({ ...substat, rolls: [], efficiency: 0 }))
   const validated: ICachedArtifact = { id, setKey, location, slotKey, exclude, lock, mainStatKey, numStars, level, substats, mainStatVal }
 
   const allPossibleRolls: { index: number, substatRolls: number[][] }[] = []
@@ -124,7 +124,7 @@ export function removeArtifactCache(artifact: ICachedArtifact): IArtifact {
   const { setKey, numStars, level, slotKey, mainStatKey, substats, location, exclude, lock } = artifact
   return { setKey, numStars, level, slotKey, mainStatKey, substats: substats.map(substat => ({ key: substat.key, value: substat.value })), location, exclude, lock }
 }
-function parseSubstats(obj: any): IFlexSubstat[] {
+function parseSubstats(obj: any): ISubstat[] {
   if (!Array.isArray(obj))
     return new Array(4).map(_ => ({ key: "", value: 0 }))
   const substats = obj.map(({ key = undefined, value = undefined }) => {

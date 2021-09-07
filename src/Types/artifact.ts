@@ -23,7 +23,7 @@ export interface IArtifact {
   level: number,
   slotKey: SlotKey,
   mainStatKey: MainStatKey,
-  substats: IFlexSubstat[],
+  substats: ISubstat[],
 
   location: CharacterKey | "",
   lock: boolean,
@@ -32,14 +32,14 @@ export interface IArtifact {
 export interface ICachedArtifact extends IArtifact {
   id: string,
   mainStatVal: number,
-  substats: Substat[],
+  substats: ICachedSubstat[],
 }
 
-export interface IFlexSubstat {
+export interface ISubstat {
   key: SubstatKey | ""
   value: number
 }
-export interface Substat extends IFlexSubstat {
+export interface ICachedSubstat extends ISubstat {
   rolls: number[],
   efficiency: number,
 }

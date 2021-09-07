@@ -17,7 +17,7 @@ import { CharacterSelectionDropdownList } from '../Character/CharacterSelection'
 import { Stars } from '../Components/StarDisplay';
 import { DatabaseContext } from '../Database/Database';
 import Stat from '../Stat';
-import { allSubstats, ICachedArtifact, Substat, SubstatKey } from '../Types/artifact';
+import { allSubstats, ICachedArtifact, ICachedSubstat, SubstatKey } from '../Types/artifact';
 import { CharacterKey } from '../Types/consts';
 import { usePromise } from '../Util/ReactUtil';
 import { valueStringWithUnit } from '../Util/UIUtil';
@@ -94,7 +94,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
         <b>{Stat.getStatName(mainStatKey)} {mainStatVal}</b>
       </h5>
       <Row className="mb-0">
-        {substats.map((stat: Substat, i) => {
+        {substats.map((stat: ICachedSubstat, i) => {
           if (!stat.value) return null
           let numRolls = stat.rolls?.length ?? 0
           let efficiency = stat.efficiency ?? 0

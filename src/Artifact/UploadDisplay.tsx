@@ -9,7 +9,7 @@ import Snippet from "./imgs/snippet.png";
 import Stat from '../Stat';
 import { clamp, hammingDistance } from '../Util/Util';
 import Artifact from './Artifact';
-import { allMainStatKeys, allSubstats, ICachedArtifact, IArtifact, IFlexSubstat, MainStatKey, SubstatKey } from '../Types/artifact';
+import { allMainStatKeys, allSubstats, ICachedArtifact, IArtifact, ISubstat, MainStatKey, SubstatKey } from '../Types/artifact';
 import { ArtifactRarity, allArtifactRarities, allArtifactSets, allSlotKeys, ArtifactSetKey, Rarity, SlotKey } from '../Types/consts';
 import { ArtifactSheet } from './ArtifactSheet';
 import { valueStringWithUnit } from '../Util/UIUtil';
@@ -284,7 +284,7 @@ async function textsFromImage(imageData: ImageData, options: object | undefined 
   return rec.data.lines.map(line => line.text)
 }
 
-export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactSheet>, rarities: Set<number>, textSetKeys: Set<ArtifactSetKey>, slotKeys: Set<SlotKey>, substats: IFlexSubstat[], mainStatKeys: Set<MainStatKey>, mainStatValues: { mainStatValue: number, unit?: string }[]): [IArtifact, Dict<keyof ICachedArtifact, Displayable>] {
+export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactSheet>, rarities: Set<number>, textSetKeys: Set<ArtifactSetKey>, slotKeys: Set<SlotKey>, substats: ISubstat[], mainStatKeys: Set<MainStatKey>, mainStatValues: { mainStatValue: number, unit?: string }[]): [IArtifact, Dict<keyof ICachedArtifact, Displayable>] {
   const relevantSetKey = [...new Set<ArtifactSetKey>([...textSetKeys, "Adventurer", "ArchaicPetra"])]
 
   let bestScore = -1, bestArtifacts: IArtifact[] = [{
@@ -500,8 +500,8 @@ function parseMainStatValues(texts: string[]): { mainStatValue: number, unit?: s
   }
   return results
 }
-function parseSubstats(texts: string[]): IFlexSubstat[] {
-  const matches: IFlexSubstat[] = []
+function parseSubstats(texts: string[]): ISubstat[] {
+  const matches: ISubstat[] = []
   for (let text of texts) {
     text = text.replace(/^[\W]+/, "").replace(/\n/, "")
     //parse substats
