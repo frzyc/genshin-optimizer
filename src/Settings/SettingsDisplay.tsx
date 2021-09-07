@@ -216,7 +216,7 @@ function GOUploadAction({ data: { storage, charCount, artCount }, reset }: { dat
   const { t } = useTranslation("settings")
   const dataValid = charCount || artCount
   const replaceDB = () => {
-    if (!window.confirm(t`dialog.delete-database`)) return
+    if (!window.confirm(t`uploadCard.goUpload.deleteDatabasePrompt`)) return
     dbStorage.clear()
     dbStorage.copyFrom(storage)
     database.reloadStorage()
