@@ -3,7 +3,7 @@ import ReactGA from 'react-ga';
 import { useTranslation } from 'react-i18next';
 import { HashRouter, Link, matchPath, Route, Switch, useLocation } from "react-router-dom";
 import { StatData } from "../StatData";
-import { allCharacterKeys, allWeaponKeys } from "../Types/consts";
+import { allArtifactSets, allCharacterKeys, allWeaponKeys } from "../Types/consts";
 
 
 function MenuItem({ text, path = '' }) {
@@ -53,22 +53,11 @@ export default function HomeDisplay(props: any) {
                 <Card bg="lightcontent" text={"lightfont" as any} className="h-100">
                   <Card.Body>
                     <Switch>
+                      <Route path="/ArtifactSetKey" component={ArtifactSetKeyPane} />
                       <Route path="/WeaponKey" component={WeaponKeyPane} />
                       <Route path="/CharacterKey" component={CharacterKeyPane} />
                       <Route path="/StatKey" component={StatKeyPane} />
                       <Route path="/" component={Overview} />
-
-
-                      {/* 
-                  <Route path="/weapon" component={WeaponDisplay} />
-                  <Route path="/character" component={CharacterDisplay} />
-                  <Route path="/build" component={BuildDisplay} />
-                  <Route path="/tools" component={Planner} />
-                  {process.env.NODE_ENV === "development" && <Route path="/test" component={TestDisplay} />}
-                  <Route path="/database" component={SettingsDisplay} />
-                  <Route path="/doc" component={DocumentationDisplay} />
-                  <Route path="/flex" component={FlexDisplay} />
-                  <Route path="/" component={Home} /> */}
                     </Switch>
                   </Card.Body>
                 </Card>
@@ -85,9 +74,9 @@ const goodCode = `interface IGOOD {
   format: "GOOD" //A way for people to recognize this format.
   version: number //API version.
   source: string //the app that generates this data.
-  characters: ICachedCharacter[]
-  artifacts: ICachedArtifact[]
-  weapons: ICachedWeapon[]
+  characters: ICharacter[]
+  artifacts: IArtifact[]
+  weapons: IWeapon[]
 }`
 
 const artifactCode = `interface IArtifact {
@@ -172,11 +161,23 @@ function StatKeyPane() {
     </Card>
   </>
 }
+function ArtifactSetKeyPane() {
+  const { t } = useTranslation([...new Set(allArtifactSets)].map(k => `artifact_${k}_gen`))
+  const artSetKeysCode = `type ArtifactSetKey\n  = ${[...new Set(allArtifactSets)].sort().map(k => `"${k}" //${t(`artifact_${k}_gen:setName`)}`).join(`\n  | `)}`
+  return <>
+    <h4>ArtifactSetKey</h4>
+    <Card bg="darkcontent" text={"lightfont" as any}>
+      <Card.Body>
+        <CodeBlock text={artSetKeysCode} />
+      </Card.Body>
+    </Card>
+  </>
+}
 function CharacterKeyPane() {
   const { t } = useTranslation([...new Set(allCharacterKeys)].map(k => `char_${k}_gen`))
   const charKeysCode = `type CharacterKey\n  = ${[...new Set(allCharacterKeys)].sort().map(k => `"${k}" //${t(`char_${k}_gen:name`)}`).join(`\n  | `)}`
   return <>
-    <h4>statKey</h4>
+    <h4>CharacterKey</h4>
     <Card bg="darkcontent" text={"lightfont" as any}>
       <Card.Body>
         <CodeBlock text={charKeysCode} />
@@ -186,12 +187,12 @@ function CharacterKeyPane() {
 }
 function WeaponKeyPane() {
   const { t } = useTranslation([...new Set(allWeaponKeys)].map(k => `weapon_${k}_gen`))
-  const charKeysCode = `type WeaponKey\n  = ${[...new Set(allWeaponKeys)].sort().map(k => `"${k}" //${t(`weapon_${k}_gen:name`)}`).join(`\n  | `)}`
+  const weaponKeysCode = `type WeaponKey\n  = ${[...new Set(allWeaponKeys)].sort().map(k => `"${k}" //${t(`weapon_${k}_gen:name`)}`).join(`\n  | `)}`
   return <>
-    <h4>statKey</h4>
+    <h4>WeaponKey</h4>
     <Card bg="darkcontent" text={"lightfont" as any}>
       <Card.Body>
-        <CodeBlock text={charKeysCode} />
+        <CodeBlock text={weaponKeysCode} />
       </Card.Body>
     </Card>
   </>
