@@ -46,6 +46,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
 
   const { id, slotKey, numStars, level, mainStatKey, substats, lock } = art
   const mainStatLevel = Math.max(Math.min(mainStatAssumptionLevel, numStars * 4), level)
+  const levelVariant = (Math.floor(Math.max(level - 1, 0) / 4) + 1) + "roll"
   const mainStatVal = <span className={mainStatLevel !== level ? "text-orange" : ""}>{valueStringWithUnit(Artifact.mainStatValue(mainStatKey, numStars, mainStatLevel) ?? 0, Stat.getStatUnit(mainStatKey))}</span>
   const { currentEfficiency, maxEfficiency } = Artifact.getArtifactEfficiency(art, effFilter)
   const artifactValid = maxEfficiency !== 0
@@ -80,14 +81,14 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
         </Col>
         <Col className="pt-2">
           <h6>{process.env.NODE_ENV === "development" && <span className="text-warning">{id || `""`} </span>}<strong>{slotName} {slotDescEle}</strong></h6>
-          <div><SlotNameWithIcon slotKey={slotKey} /><strong>{` +${level}`}</strong></div>
+          <div><SlotNameWithIcon slotKey={slotKey} /></div>
           <div><small><Stars stars={numStars} /></small></div>
         </Col>
       </Row>
     </Card.Header>
     <Card.Body className="d-flex flex-column py-2">
       <Card.Title>
-        <div>{sheet?.name ?? "Artifact Set"} {setDescEle}</div>
+        <Badge variant={levelVariant} className="text-black"><strong>{` +${level}`}</strong></Badge> {sheet?.name ?? "Artifact Set"} {setDescEle}
       </Card.Title>
       <h5 className="mb-1">
         <b>{Stat.getStatName(mainStatKey)} {mainStatVal}</b>

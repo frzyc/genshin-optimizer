@@ -173,7 +173,7 @@ function StatKeyPane() {
   </>
 }
 function CharacterKeyPane() {
-  const { t } = useTranslation()
+  const { t } = useTranslation([...new Set(allCharacterKeys)].map(k => `char_${k}_gen`))
   const charKeysCode = `type CharacterKey\n  = ${[...new Set(allCharacterKeys)].sort().map(k => `"${k}" //${t(`char_${k}_gen:name`)}`).join(`\n  | `)}`
   return <>
     <h4>statKey</h4>
@@ -185,8 +185,8 @@ function CharacterKeyPane() {
   </>
 }
 function WeaponKeyPane() {
-  const { t } = useTranslation()
-  const charKeysCode = `type WeaponKey\n  = ${[...new Set(allWeaponKeys)].sort().map(k => `"${k}" //${t(`char_${k}_gen:name`)}`).join(`\n  | `)}`
+  const { t } = useTranslation([...new Set(allWeaponKeys)].map(k => `weapon_${k}_gen`))
+  const charKeysCode = `type WeaponKey\n  = ${[...new Set(allWeaponKeys)].sort().map(k => `"${k}" //${t(`weapon_${k}_gen:name`)}`).join(`\n  | `)}`
   return <>
     <h4>statKey</h4>
     <Card bg="darkcontent" text={"lightfont" as any}>

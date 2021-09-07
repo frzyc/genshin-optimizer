@@ -32,7 +32,7 @@ export const data = {
     coorDMG: toTalentPercent(skillParam_gen.skill[1]),
     duration: skillParam_gen.skill[2][0],
     eleBurConv: toTalentPercent(skillParam_gen.skill[3]),
-    cd:skillParam_gen.skill[4][0],
+    cd: skillParam_gen.skill[4][0],
   },
   burst: {
     dmg: toTalentPercent(skillParam_gen.burst[0]),
@@ -60,8 +60,9 @@ export const data = {
 const formula: IFormulaSheet = {
   normal: Object.fromEntries(data.normal.hitArr.map((arr, i) =>
     [i, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "normal")])),
-  charged: Object.fromEntries(Object.entries(data.charged).map(([name, arr]) =>
-    [name, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "charged")])),
+  charged: {
+    dmg: stats => basicDMGFormula(data.charged.dmg[stats.tlvl.auto], stats, "charged"),
+  },
   plunging: Object.fromEntries(Object.entries(data.plunging).map(([name, arr]) =>
     [name, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "plunging")])),
   skill: {
