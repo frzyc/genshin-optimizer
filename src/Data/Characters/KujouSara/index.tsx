@@ -24,9 +24,9 @@ import { WeaponTypeKey } from '../../../Types/consts'
 import { basicDMGFormulaText } from '../../../Util/FormulaTextUtil'
 import { KeyPath } from '../../../Util/KeyPathUtil'
 import { FormulaPathBase } from '../../formula'
-const path = KeyPath<FormulaPathBase, any>().character.kujousara
-const tr = (strKey: string) => <Translate ns="char_kujousara_gen" key18={strKey} />
-const charTr = (strKey: string) => <Translate ns="char_kujousara" key18={strKey} />
+const path = KeyPath<FormulaPathBase, any>().character.KujouSara
+const tr = (strKey: string) => <Translate ns="char_KujouSara_gen" key18={strKey} />
+const charTr = (strKey: string) => <Translate ns="char_KujouSara" key18={strKey} />
 const conditionals: IConditionals = {
   e: { //Gengu StormCall
     name: charTr("skill.ambush"),
