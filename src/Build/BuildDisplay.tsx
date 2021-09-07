@@ -377,7 +377,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
                       <span><FontAwesomeIcon icon={useEquippedArts ? faCheckSquare : faSquare} /> Use Equipped Artifacts</span>
                     </Button>
                     <Button className="w-100 mb-2" onClick={() => buildSettingsDispatch({ useLockedArts: !useExcludedArts })} disabled={generatingBuilds}>
-                      <span><FontAwesomeIcon icon={useExcludedArts ? faCheckSquare : faSquare} /> Use Locked Artifacts</span>
+                      <span><FontAwesomeIcon icon={useExcludedArts ? faCheckSquare : faSquare} /> Use Excluded Artifacts</span>
                     </Button>
                   </Card.Body></Card>
                 </Col>
@@ -741,7 +741,7 @@ function BuildAlert({ totBuildNumber, generatingBuilds, generationSkipped, gener
     </Alert>
   } else {
     return totBuildNumber === 0 ?
-      <Alert variant="warning" className="mb-0"><span>Current configuration will not generate any builds for <b>{characterName}</b>. Please change your Artifact configurations, or add/unlock more Artifacts.</span></Alert>
+      <Alert variant="warning" className="mb-0"><span>Current configuration will not generate any builds for <b>{characterName}</b>. Please change your Artifact configurations, or add/include more Artifacts.</span></Alert>
       : (totBuildNumber > warningBuildNumber ?
         <Alert variant="warning" className="mb-0"><span>Current configuration will generate <b>{totalBuildNumberString}</b> builds for <b>{characterName}</b>. This might take quite a while to generate...</span></Alert> :
         <Alert variant="success" className="mb-0"><span>Current configuration {totBuildNumber <= maxBuildsToShow ? "generated" : "will generate"} <b>{totalBuildNumberString}</b> builds for <b>{characterName}</b>.</span></Alert>)
