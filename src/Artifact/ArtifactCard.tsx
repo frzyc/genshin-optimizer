@@ -132,8 +132,8 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
             </Dropdown.Menu>
           </Dropdown>
         </Col> : <Col xs="auto"><b>{locationName}</b></Col>}
-        <Col xs="auto">
-          {editable && <ButtonGroup>
+        {editable && <Col xs="auto">
+          <ButtonGroup>
             {!!onEdit && <Button variant="info" size="sm" onClick={onEdit}>
               <FontAwesomeIcon icon={faEdit} className="fa-fw" />
             </Button>}
@@ -149,8 +149,8 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
               onClick={onDelete}>
               <FontAwesomeIcon icon={faTrashAlt} className="fa-fw" />
             </Button>}
-          </ButtonGroup>}
-        </Col>
+          </ButtonGroup>
+        </Col>}
       </Row>
     </Card.Footer>
   </Card >)
