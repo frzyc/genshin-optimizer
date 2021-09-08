@@ -236,7 +236,7 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: Artifac
         </Col>}
       </Row></Card.Body>
     <Card.Footer>
-      <Button className="mr-2" onClick={() => { artifact?.id ? database.updateArt(artifact!, artifact.id) : database.createArt(artifact!); reset() }} disabled={!isValid} variant={dupId ? "warning" : "primary"}>
+      <Button className="mr-2" onClick={() => { artifact?.id ? database.updateArt(artifact!, artifact.id) : database.createArt(artifact!); reset() }} disabled={!artifactInEditor || !isValid} variant={dupId ? "warning" : "primary"}>
         {artifact?.id ? t`editor.btnSave` : t`editor.btnAdd`}
       </Button>
       <Button className="mr-2" disabled={!artifactInEditor} onClick={() => { canClearArtifact() && reset() }} variant="success">{t`editor.btnClear`}</Button>
