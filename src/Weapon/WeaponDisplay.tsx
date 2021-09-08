@@ -50,7 +50,7 @@ export default function WeaponDisplay(props) {
   const allWeaponSheets = usePromise(WeaponSheet.getAll(), []) ?? {}
   const sortingFunc = {
     level: (wKey) => database._getWeapon(wKey)?.level ?? 0,
-    rarity: (wKey) => allWeaponSheets[database._getWeapon(wKey)?.key as any]?.star
+    rarity: (wKey) => allWeaponSheets[database._getWeapon(wKey)?.key as any]?.rarity
   }
   useEffect(() => {
     const save = { charIdToEdit: weaponIdToEdit, sortBy, weaponFilter }
