@@ -1,4 +1,4 @@
-import { faBan, faBriefcase, faChartLine, faCheckSquare, faLock, faLockOpen, faSortAmountDownAlt, faSortAmountUp, faSquare, faTrash, faUndo, faUserShield, faUserSlash } from '@fortawesome/free-solid-svg-icons';
+import { faBan, faBriefcase, faChartLine, faCheckSquare, faSortAmountDownAlt, faSortAmountUp, faSquare, faTrash, faUndo, faUserShield, faUserSlash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useCallback, useContext, useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import { Button, ButtonGroup, ButtonToolbar, Card, Dropdown, InputGroup, ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
@@ -357,8 +357,8 @@ export default function ArtifactDisplay(props) {
         <Row className="mb-n2">
           <Col xs={6} lg={3} className="mb-2"><Button className="w-100" variant="danger" disabled={!numUnequip} onClick={unequipArtifacts}><FontAwesomeIcon icon={faUserSlash} /> <Trans t={t} i18nKey="button.unequipArtifacts" >Unequip Artifacts</Trans></Button></Col>
           <Col xs={6} lg={3} className="mb-2"><Button className="w-100" variant="danger" disabled={!artifacts.length} onClick={deleteArtifacts}><FontAwesomeIcon icon={faTrash} /> <Trans t={t} i18nKey="button.deleteArtifacts" >Delete Artifacts</Trans></Button></Col>
-          <Col xs={6} lg={3} className="mb-2"><Button className="w-100" variant="danger" disabled={!numInclude} onClick={excludeArtifacts}><FontAwesomeIcon icon={faLock} /> <Trans t={t} i18nKey="button.excludeArtifacts" >Lock Artifacts</Trans></Button></Col>
-          <Col xs={6} lg={3} className="mb-2"><Button className="w-100" variant="danger" disabled={!numExclude} onClick={includeArtifacts}><FontAwesomeIcon icon={faLockOpen} /> <Trans t={t} i18nKey="button.includeArtifacts" >Unlock Artifacts</Trans></Button></Col>
+          <Col xs={6} lg={3} className="mb-2"><Button className="w-100" variant="danger" disabled={!numInclude} onClick={excludeArtifacts}><FontAwesomeIcon icon={faBan} /> <Trans t={t} i18nKey="button.excludeArtifacts" >Lock Artifacts</Trans></Button></Col>
+          <Col xs={6} lg={3} className="mb-2"><Button className="w-100" variant="danger" disabled={!numExclude} onClick={includeArtifacts}><FontAwesomeIcon icon={faChartLine} /> <Trans t={t} i18nKey="button.includeArtifacts" >Unlock Artifacts</Trans></Button></Col>
           <Col xs={12} className="mt-n2"><small><Trans t={t} i18nKey="buttonHint">Note: the above buttons only applies to <b>filtered artifacts</b></Trans></small></Col>
         </Row>
       </Card.Body>
