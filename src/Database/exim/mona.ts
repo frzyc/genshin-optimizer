@@ -40,8 +40,10 @@ export function importMona(dataObj: any, oldDatabase: ArtCharDatabase): IImportR
     const id = duplicated[0] ?? upgraded[0] ?? ""
     artifactIdsToRemove.delete(id)
 
-    if (!duplicated.length)
-      newDatabase.updateArt(artifact, id)
+    if (!duplicated.length) {
+      if (upgraded.length) newDatabase.updateArt(artifact, id)
+      else newDatabase.createArt(artifact)
+    }
 
     if (duplicated.length) result.dupCount++
     else if (upgraded.length) result.upgradeCount++
