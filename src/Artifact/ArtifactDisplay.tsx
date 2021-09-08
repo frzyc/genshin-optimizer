@@ -87,8 +87,8 @@ export default function ArtifactDisplay(props) {
     const allArtifacts = database._getArts()
     const artifacts: ICachedArtifact[] = allArtifacts.filter(art => {
       if (filterExcluded) {
-        if (filterExcluded === "exclude" && !art.exclude) return false
-        if (filterExcluded === "include" && art.exclude) return false
+        if (filterExcluded === "excluded" && !art.exclude) return false
+        if (filterExcluded === "included" && art.exclude) return false
       }
       if (filterLocation === "Inventory") {
         if (art.location) return false;
