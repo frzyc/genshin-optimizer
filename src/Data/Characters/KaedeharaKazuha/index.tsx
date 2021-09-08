@@ -49,6 +49,7 @@ const conditionals: IConditionals = {
     }]))
   },
   a1: {// Soumon Swordsmanship
+    canShow: stats => stats.ascension >= 1,
     name: st("eleAbsor"),
     states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
       name: <span className={`text-${eleKey}`}><b>{ElementalData[eleKey].name}</b></span>,
