@@ -74,9 +74,9 @@ const goodCode = `interface IGOOD {
   format: "GOOD" //A way for people to recognize this format.
   version: number //API version.
   source: string //the app that generates this data.
-  characters: ICharacter[]
-  artifacts: IArtifact[]
-  weapons: IWeapon[]
+  characters?: ICharacter[]
+  artifacts?: IArtifact[]
+  weapons?: IWeapon[]
 }`
 
 const artifactCode = `interface IArtifact {

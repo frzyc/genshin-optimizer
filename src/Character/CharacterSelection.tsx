@@ -135,7 +135,7 @@ export function CharacterSelectionModal({ show, onHide, onSelect, filter = () =>
           const characterSheet = characterSheets[characterKey]
           const character = database._getChar(characterKey)
           return <Col key={characterKey} lg={3} md={4} className="mb-2">
-            <Button className="w-100" variant="secondary" onClick={() => { onHide(); onSelect(characterKey) }}>
+            <Button className="w-100" variant="darkcontent" onClick={() => { onHide(); onSelect(characterKey) }}>
               <h5>{characterSheet.name}</h5>
               <Row>
                 <Col xs="auto" className="pr-0">

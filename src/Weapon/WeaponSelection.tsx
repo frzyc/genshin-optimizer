@@ -53,7 +53,7 @@ export function WeaponSelectionModal({ show, onHide, onSelect, filter = () => tr
           {weaponIdList.map(weaponKey => {
             const weaponSheet = weaponSheets[weaponKey]
             return <Col key={weaponKey} lg={3} md={4} className="mb-2">
-              <Button className="w-100 h-100 align-top" variant="secondary" onClick={() => { onHide(); onSelect(weaponKey) }}>
+              <Button className="w-100 h-100 align-top" variant="darkcontent" onClick={() => { onHide(); onSelect(weaponKey) }}>
                 <Row className="h-100">
                   <Col xs="auto" className="pr-0">
                     <Image src={weaponSheet.img} className={`thumb-big grad-${weaponSheet.rarity}star p-0`} thumbnail />
