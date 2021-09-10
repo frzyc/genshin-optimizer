@@ -30,7 +30,7 @@ const conditionals: IConditionals = {
   e: { // GuideToAfterlife
     name: "Guide to Afterlife Voyage",
     stats: {
-      modifiers: { finalATK: [path.skill.atk_inc()] },
+      modifiers: { atk: [path.skill.atk_inc()] },
       infusionSelf: "pyro",
     },
     fields: [{

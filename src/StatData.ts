@@ -35,9 +35,9 @@ const StatData: { [stat: string]: StatItem } = {
   dmg_: { name: "All DMG Bonus", unit: "%" },
 
   // Attack-related Character, Weapon & Artifact Stats
-  finalHP: { name: "HP" },
-  finalATK: { name: "ATK" },
-  finalDEF: { name: "DEF" },
+  finalHP: { name: "Total HP" },
+  finalATK: { name: "Total ATK" },
+  finalDEF: { name: "Total DEF" },
 
   critHit_base_multi: { name: `Crit Multiplier`, unit: "multi" },
 
@@ -220,6 +220,9 @@ function PreprocessFormulas(dependencyKeys: string[], stats: ICalculatedStats) {
   const { modifiers = {} } = stats, initialStats = {} as ICalculatedStats
 
   const preModFormulaList = dependencyKeys.map(key => {
+    if (Object.keys(modifiers))
+      if (key === "finalATK" || key === "finalDEF" || key === "finalHP")//these formulas bypass the modifier dependency system.
+        return [key, Formulas[key]] as KeyedFormula
     if (getStage(key) !== 0)
       return ["", () => 0] as KeyedFormula
 
@@ -264,7 +267,7 @@ function PreprocessFormulas(dependencyKeys: string[], stats: ICalculatedStats) {
   }
 }
 export function getStage(key: string): number {
-  return ((key in Formulas) && key !== "baseATK" && key !== "finalATK" && key !== "finalHP" && key !== "finalDEF")
+  return (key in Formulas)
     ? 1 // postmod
     : 0 // premod
 }

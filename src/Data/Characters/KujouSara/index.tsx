@@ -31,7 +31,7 @@ const conditionals: IConditionals = {
   e: { //Gengu StormCall
     name: charTr("skill.ambush"),
     stats: {
-      modifiers: { finalATK: [path.skill.atkBonus()] },
+      modifiers: { atk: [path.skill.atkBonus()] },
     },
     fields: [{
       text: st("increase.atk"),

@@ -16,7 +16,7 @@ const conditionals: IConditionals = {
     name: "HP < 50%",
     maxStack: 1,
     stats: {
-      modifiers: { finalATK: [path.esjadd()] }
+      modifiers: { atk: [path.esjadd()] }
     },
     fields: [{
       text: st("increase.atk"),
@@ -30,7 +30,7 @@ const weapon: IWeaponSheet = {
   img,
   stats: stats => ({
     hp_: refinementVals_hp[stats.weapon.refineIndex],
-    modifiers: { finalATK: [path.esj()] }
+    modifiers: { atk: [path.esj()] }
   }),
   conditionals,
   document: [{

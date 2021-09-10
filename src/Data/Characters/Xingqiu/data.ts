@@ -48,10 +48,10 @@ const formula: IFormulaSheet = {
   plunging: Object.fromEntries(Object.entries(data.plunging).map(([name, arr]) =>
     [name, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "plunging")])),
   skill: Object.fromEntries([
-    ...Object.entries(data.skill).filter(([name]) => name !== "dmgRed").map(([name, arr]) =>
-      [name, stats => basicDMGFormula(arr[stats.tlvl.skill], stats, "skill")]),
-    ...Object.entries(data.skill).filter(([name]) => name !== "dmgRed").map(([name, arr]) =>
-      [`${name}RainCutter`, stats => basicDMGFormula(1.5 * arr[stats.tlvl.skill], stats, "skill")]),
+    ...["hit1", "hit2"].map(name =>
+      [name, stats => basicDMGFormula(data.skill[name][stats.tlvl.skill], stats, "skill")]),
+    ...["hit1", "hit2"].map(name =>
+      [`${name}RainCutter`, stats => basicDMGFormula(1.5 * data.skill[name][stats.tlvl.skill], stats, "skill")]),
     ["dmgRed", stats => {
       const flat = data.skill.dmgRed[stats.tlvl.skill]
       return [s => (flat + Math.min(24, 0.2 * s.hydro_dmg_)), ["hydro_dmg_"]]

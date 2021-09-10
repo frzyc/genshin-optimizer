@@ -33,9 +33,6 @@ const weapon: IWeaponSheet = {
       formula: formula.conv,
       fixed: 1,
       unit: "%",
-      variant:"danger"
-    },{
-      text:<span className="text-warning">WARNING: The ATK% bonus above is currently not being added in the system. You need to manually add it to the character.</span>
     }],
     conditional: conditionals.e
   }],

@@ -30,7 +30,7 @@ const conditionals: IConditionals = {
   q: { // Fantastic Voyage
     name: tr("burst.name"),
     stats: {
-      modifiers: { finalATK: [path.burst.atkBonus()] },
+      modifiers: { atk: [path.burst.atkBonus()] },
     },
     fields: [{
       text: "ATK Bonus Ratio",
