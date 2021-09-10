@@ -91,7 +91,8 @@ function deleteDatabase(t, database: ArtCharDatabase) {
 }
 function copyToClipboard() {
   navigator.clipboard.writeText(JSON.stringify(exportGOOD(dbStorage)))
-  alert("Copied database to clipboard.")
+  .then(() => alert("Copied database to clipboard."))
+  .catch(console.error)
 }
 function DownloadCard({ forceUpdate }) {
   const database = useContext(DatabaseContext)
