@@ -20,6 +20,7 @@ import { IConditionals } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
 import { Translate } from '../../../Components/Translate'
 import { WeaponTypeKey } from '../../../Types/consts'
+import { talentTemplate } from '../SheetUtil'
 const tr = (strKey: string) => <Translate ns="char_Keqing_gen" key18={strKey} />
 const conditionals: IConditionals = {
   a1: {
@@ -46,7 +47,7 @@ const conditionals: IConditionals = {
   c4: { // Attunement
     canShow: stats => stats.constellation >= 4,
     name: "Trigger an Electro-related Elemental Reaction",
-    stats: { atk_: 25 },
+    stats: { atk_: data.constellation4.atk_ },
     fields: [{
       text: "Duration",
       value: "10s",
@@ -55,10 +56,11 @@ const conditionals: IConditionals = {
   c6: { // Initating
     canShow: stats => stats.constellation >= 6,
     name: "Initiating Normal/Charged Attack, Skill or Burst",
-    stats: { electro_dmg_: 6 },
+    stats: { electro_dmg_: data.constellation6.electro_ },
     fields: [{
       text: "Duration",
-      value: "8s",
+      value: data.constellation6.duration,
+      unit: "s"
     }]
   }
 }
@@ -105,7 +107,7 @@ const char: ICharacterSheet = {
             variant: stats => getTalentStatKeyVariant("charged", stats),
           }, {
             text: `Stamina Cost`,
-            value: `25`,
+            value: data.charged.stam,
           }]
         }, {
           text: <span><strong>Plunging Attack</strong> Plunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.</span>,
@@ -149,7 +151,9 @@ const char: ICharacterSheet = {
             variant: stats => getTalentStatKeyVariant("skill", stats),
           }, {
             text: "CD",
-            value: "7.5s",
+            value: data.skill.cd,
+            fixed: 1,
+            unit: "s"
           }]
         }],
       },
@@ -178,73 +182,54 @@ const char: ICharacterSheet = {
             variant: stats => getTalentStatKeyVariant("burst", stats),
           }, {
             text: "CD",
-            value: "15s",
+            value: data.burst.cd,
+            unit: "s"
           }, {
             text: "Energy Cost",
-            value: 60,
+            value: data.burst.cost,
           }],
           conditional: conditionals.a4
         }],
       },
       passive1: {
-        name: "Thundering Penance",
+        name: tr("passive1.name"),
         img: passive1,
         sections: [{
-          text: <span>After recasting <b>Stellar Restoration</b> while a Lightning Stiletto is present, Keqing's weapon gains an <span className="text-electro">Electro Infusion</span> for 5s.</span>,
+          text: tr("passive1.description"),
           conditional: conditionals.a1
         }],
       },
-      passive2: {
-        name: "Aristocratic Dignity",
-        img: passive2,
-        sections: [{ text: <span>When casting <b>Starward Sword</b>, Keqing's CRIT Rate is increased by 15%, and her Energy Recharge is increased by 15%. This effect lasts for 8s.</span> }],
-      },
-      passive3: {
-        name: "Land's Overseer",
-        img: passive3,
-        sections: [{ text: <span>When dispatched on an expedition in <b>Liyue</b>, time consumed is reduced by 25%.</span> }],
-      },
+      passive2: talentTemplate("passive2", tr, passive2),
+      passive3: talentTemplate("passive3", tr, passive3),
       constellation1: {
-        name: "Thundering Might",
+        name: tr("constellation1.name"),
         img: c1,
         sections: [{
-          text: stats => <span>Recasting <b>Stellar Restoration</b> while a Lightning Stiletto is present causes Keqing to deal 50% of her ATK as <span className="text-electro">AoE Electro DMG</span> at the start point and terminus of her Blink.</span>,
+          text: tr("constellation1.description"),
           fields: [{
             text: " Thundering Might DMG",
-            formulaText: stats => <span>50% {Stat.printStat(getTalentStatKey("elemental", stats), stats)}</span>,
+            formulaText: stats => <span>{data.constellation1.dmg}% {Stat.printStat(getTalentStatKey("elemental", stats), stats)}</span>,
             formula: formula.constellation1.dmg,
             variant: stats => getTalentStatKeyVariant("elemental", stats),
           }]
         }],
       },
-      constellation2: {
-        name: "Keen Extraction",
-        img: c2,
-        sections: [{ text: <span>When Keqing's Normal and Charged Attacks hit enemies affected by <span className="text-electro">Electro</span>, they have a 50% chance of producing an Elemental Particle. This effect can only occur once every 5s.</span> }],
-      },
-      constellation3: {
-        name: "Foreseen Reformation",
-        img: c3,
-        sections: [{ text: <span>Increases the level of <b>Starward Sword</b> by 3. Maximum upgrade level is 15.</span> }],
-        stats: { burstBoost: 3 }
-      },
+      constellation2: talentTemplate("constellation2", tr, c2),
+      constellation3: talentTemplate("constellation3", tr, c3, { burstBoost: 3 }),
       constellation4: {
-        name: "Attunement",
+        name: tr("constellation4.name"),
         img: c4,
-        sections: [{ text: <span>For 10s after Keqing triggers an <span className="text-electro">Electro-related Elemental Reaction</span>, her ATK is increased by 25%.</span> }, {
+        sections: [{
+          text: tr("constellation4.description"),
           conditional: conditionals.c4
         }],
       },
-      constellation5: {
-        name: "Beckoning Stars",
-        img: c5,
-        sections: [{ text: <span>Increases the level of <b>Stellar Restoration</b> by 3. Maximum upgrade level is 15.</span> }],
-        stats: { skillBoost: 3 }
-      },
+      constellation5: talentTemplate("constellation5", tr, c5, { skillBoost: 3 }),
       constellation6: {
-        name: "Tenacious Star",
+        name: tr("constellation6.name"),
         img: c6,
-        sections: [{ text: <span>When initiating a Normal Attack, a Charged Attack, Elemental Skill or Elemental Burst, Keqing gains a 6% <span className="text-electro">Electro DMG Bonus</span> for 8s. Effects triggered by Normal Attacks, Charged Attacks, Elemental Skills, and Elemental Bursts are considered independent entities.</span> }, {
+        sections: [{
+          text: tr("constellation6.description"),
           conditional: conditionals.c6
         }],
       },

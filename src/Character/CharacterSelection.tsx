@@ -1,6 +1,6 @@
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useContext, useReducer, useState } from "react";
+import { useContext, useMemo, useReducer, useState } from "react";
 import { Badge, Button, ButtonGroup, Card, Col, Image, Modal, Row, ToggleButton, ToggleButtonGroup } from "react-bootstrap";
 import Dropdown from "react-bootstrap/Dropdown";
 import Assets from "../Assets/Assets";
@@ -12,6 +12,8 @@ import { usePromise } from "../Util/ReactUtil";
 import { Stars } from "../Components/StarDisplay";
 import StatIcon, { uncoloredEleIcons } from "../Components/StatIcon";
 import Character from './Character'
+import WeaponSheet from "../Weapon/WeaponSheet";
+import { ArtifactSheet } from "../Artifact/ArtifactSheet";
 
 export function CharacterSelectionDropdownList({ onSelect, weaponTypeKey }: { onSelect: (ckey: CharacterKey) => void, weaponTypeKey?: WeaponTypeKey }) {
   const database = useContext(DatabaseContext)
@@ -131,35 +133,43 @@ export function CharacterSelectionModal({ show, onHide, onSelect, filter = () =>
         </Row>
       </Card.Header>
       <Card.Body><Row>
-        {characterKeyList.map(characterKey => {
-          const characterSheet = characterSheets[characterKey]
-          const character = database._getChar(characterKey)
-          return <Col key={characterKey} lg={3} md={4} className="mb-2">
-            <Button className="w-100" variant="darkcontent" onClick={() => { onHide(); onSelect(characterKey) }}>
-              <h5>{characterSheet.name}</h5>
-              <Row>
-                <Col xs="auto" className="pr-0">
-                  <Image src={characterSheet.thumbImg} className={`thumb-big grad-${characterSheet.star}star p-0`} thumbnail />
-                </Col>
-                <Col>
-                  {character ? <>
-                    <h5 className="mb-0">Lv. {Character.getLevelString(character)} {`C${character.constellation}`}</h5>
-                    <h6 className="mb-0">
-                      <Badge variant="info"><strong className="mx-1">{character.talent.auto}</strong></Badge>{` `}
-                      <Badge variant="info"><strong className="mx-1">{character.talent.skill}</strong></Badge>{` `}
-                      <Badge variant="info"><strong className="mx-1">{character.talent.burst}</strong></Badge>
-                    </h6>
-                  </> : <>
-                    <h4><Badge variant="primary">NEW</Badge></h4>
-                  </>}
-                  <h6 className="mb-0"><Stars stars={characterSheet.star} colored /></h6>
-                  <h3 className="mb-0">{characterSheet.elementKey && StatIcon[characterSheet.elementKey]} <Image src={Assets.weaponTypes?.[characterSheet.weaponTypeKey]} className="inline-icon" /></h3>
-                </Col>
-              </Row>
-            </Button>
-          </Col>
-        })}
+        {characterKeyList.map(characterKey => <CharacterBtn key={characterKey} characterKey={characterKey} onClick={() => { onHide(); onSelect(characterKey) }} />)}
       </Row></Card.Body>
     </Card>
   </Modal>
+}
+
+function CharacterBtn({ onClick, characterKey }) {
+  const database = useContext(DatabaseContext)
+  const character = database._getChar(characterKey)
+  const characterSheet = usePromise(CharacterSheet.get(characterKey), [characterKey])
+  const weapon = character?.equippedWeapon ? database._getWeapon(character.equippedWeapon) : undefined
+  const weaponSheet = usePromise(weapon ? WeaponSheet.get(weapon.key) : undefined, [weapon?.key])
+  const artifactSheets = usePromise(ArtifactSheet.getAll(), [])
+  const stats = useMemo(() => character && characterSheet && weaponSheet && artifactSheets && Character.calculateBuild(character, database, characterSheet, weaponSheet, artifactSheets), [character, characterSheet, weaponSheet, artifactSheets, database])
+  if (!characterSheet) return null
+  return <Col key={characterKey} lg={3} md={4} className="mb-2">
+    <Button className="w-100" variant="darkcontent" onClick={onClick}>
+      <h5>{characterSheet.name}</h5>
+      <Row>
+        <Col xs="auto" className="pr-0">
+          <Image src={characterSheet.thumbImg} className={`thumb-big grad-${characterSheet.star}star p-0`} thumbnail />
+        </Col>
+        <Col>
+          {stats && character ? <>
+            <h5 className="mb-0">Lv. {Character.getLevelString(character)} {`C${character.constellation}`}</h5>
+            <h6 className="mb-0">
+              <Badge variant="secondary"><strong className="mx-1">{stats.tlvl.auto + 1}</strong></Badge>{` `}
+              <Badge variant="secondary"><strong className="mx-1">{stats.tlvl.skill + 1}</strong></Badge>{` `}
+              <Badge variant="secondary"><strong className="mx-1">{stats.tlvl.burst + 1}</strong></Badge>
+            </h6>
+          </> : <>
+            <h4><Badge variant="primary">NEW</Badge></h4>
+          </>}
+          <h6 className="mb-0"><Stars stars={characterSheet.star} colored /></h6>
+          <h3 className="mb-0">{characterSheet.elementKey && StatIcon[characterSheet.elementKey]} <Image src={Assets.weaponTypes?.[characterSheet.weaponTypeKey]} className="inline-icon" /></h3>
+        </Col>
+      </Row>
+    </Button>
+  </Col>
 }

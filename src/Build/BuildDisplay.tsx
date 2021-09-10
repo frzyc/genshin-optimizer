@@ -322,9 +322,9 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
                     </Card.Header>
                   </Card>}
                 {/* Hit mode options */}
-                {characterSheet && character && initialStats && <HitModeCard build={initialStats} characterSheet={characterSheet} className="mb-2" character={character} />}
+                {characterSheet && character && initialStats && <HitModeCard build={initialStats} characterSheet={characterSheet} className="mb-2" character={character} disabled={generatingBuilds} />}
                 {/* Final Stat Filter */}
-                {Boolean(statsDisplayKeys) && <StatFilterCard className="mb-2" statFilters={statFilters} statKeys={statsDisplayKeys?.basicKeys as any} setStatFilters={sFs => buildSettingsDispatch({ statFilters: sFs })} />}
+                {Boolean(statsDisplayKeys) && <StatFilterCard className="mb-2" statFilters={statFilters} statKeys={statsDisplayKeys?.basicKeys as any} setStatFilters={sFs => buildSettingsDispatch({ statFilters: sFs })} disabled={generatingBuilds} />}
               </Col>
               <Col xs={12} lg={6}><Row>
                 <Col className="mb-2" xs={12}>
@@ -387,7 +387,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
                     <Card.Header>
                       <Row>
                         <Col>Artifact Main Stat</Col>
-                        <Col xs="auto"><AssumeFullLevelToggle mainStatAssumptionLevel={mainStatAssumptionLevel} setmainStatAssumptionLevel={v => buildSettingsDispatch({ mainStatAssumptionLevel: v })} /></Col>
+                        <Col xs="auto"><AssumeFullLevelToggle mainStatAssumptionLevel={mainStatAssumptionLevel} setmainStatAssumptionLevel={v => buildSettingsDispatch({ mainStatAssumptionLevel: v })} disabled={generatingBuilds} /></Col>
                       </Row>
                     </Card.Header>
                     <Card.Body className="mb-n2">
@@ -402,7 +402,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
                             {Artifact.slotMainStats(slotKey).map((mainStatKey, i) => {
                               const selected = mainStatKeys[slotKey].includes(mainStatKey)
                               return <Col xs={i < 3 ? 4 : 6} key={mainStatKey}>
-                                <Button className="w-100 rounded-0" size="sm" variant={selected ? "success" : "secondary"}
+                                <Button className="w-100 rounded-0" size="sm" variant={selected ? "success" : "secondary"} disabled={generatingBuilds}
                                   onClick={() => buildSettingsDispatch({ type: "mainStatKey", slotKey, mainStatKey })}>
                                   {StatIcon[mainStatKey]} {Stat.getStatNameWithPercent(mainStatKey, "", false)}
                                 </Button>
@@ -431,7 +431,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
                         Decreasing the number of generated build will decrease build calculation time for large number of builds.
                       </Tooltip>}
                     >
-                      <Dropdown.Toggle ><b>{maxBuildsToShow}</b> {maxBuildsToShow === 1 ? "Build" : "Builds"}</Dropdown.Toggle>
+                      <Dropdown.Toggle disabled={generatingBuilds}><b>{maxBuildsToShow}</b> {maxBuildsToShow === 1 ? "Build" : "Builds"}</Dropdown.Toggle>
                     </OverlayTrigger>
                     <Dropdown.Menu>
                       {maxBuildsToShowList.map(v => <Dropdown.Item key={v} onClick={() => setmaxBuildsToShow(v)}>{v} {v === 1 ? "Build" : "Builds"}</Dropdown.Item>)}
@@ -602,8 +602,8 @@ function ArtConditionalModal({ showArtCondModal, setshowArtCondModal, initialSta
   </Modal>
 }
 
-function StatFilterItem({ statKey, statKeys = [], min, max, close, setFilter }: {
-  statKey?, statKeys, min, max, close, setFilter
+function StatFilterItem({ statKey, statKeys = [], min, max, close, setFilter, disabled }: {
+  statKey?, statKeys, min, max, close, setFilter, disabled
 }) {
   const isFloat = Stat.getStatUnit(statKey) === "%"
   const inputProps = {
@@ -628,18 +628,19 @@ function StatFilterItem({ statKey, statKeys = [], min, max, close, setFilter }: 
       as={InputGroup.Prepend}
       title={Stat.getStatNameWithPercent(statKey, "New Stat")}
       id="input-group-dropdown-1"
+      disabled={disabled}
     >
       {statKeys.map(sKey => <Dropdown.Item key={sKey} onClick={() => { close?.(); setFilter(sKey, min, max) }}>{Stat.getStatNameWithPercent(sKey)}</Dropdown.Item>)}
     </DropdownButton>
     <CustomFormControl {...minInputProps} />
     <CustomFormControl {...maxInputProps} />
     {Boolean(close) && <InputGroup.Append>
-      <Button variant="danger" onClick={close}><FontAwesomeIcon icon={faTrash} /></Button>
+      <Button variant="danger" onClick={close} disabled={disabled}><FontAwesomeIcon icon={faTrash} /></Button>
     </InputGroup.Append>}
   </InputGroup>
 }
 
-function HitModeCard({ characterSheet, character, build, className }: { characterSheet: CharacterSheet, character: ICachedCharacter, build: ICalculatedStats, className: string }) {
+function HitModeCard({ characterSheet, character, build, className, disabled }: { characterSheet: CharacterSheet, character: ICachedCharacter, build: ICalculatedStats, className: string, disabled: boolean }) {
   const database = useContext(DatabaseContext)
   const setHitmode = useCallback(({ hitMode }) => database.updateChar({ ...character, hitMode }), [character, database])
   const setReactionMode = useCallback(({ reactionMode }) => database.updateChar({ ...character, reactionMode }), [character, database])
@@ -649,17 +650,17 @@ function HitModeCard({ characterSheet, character, build, className }: { characte
     <Card.Header>
       <Row>
         <Col>Hit Mode Options</Col>
-        <Col xs="auto"><InfusionAuraDropdown characterSheet={characterSheet} character={character} characterDispatch={setInfusionAura} /></Col>
+        <Col xs="auto"><InfusionAuraDropdown characterSheet={characterSheet} character={character} characterDispatch={setInfusionAura} disabled={disabled} /></Col>
       </Row>
     </Card.Header>
     <Card.Body className="mb-n2">
-      <HitModeToggle hitMode={character.hitMode} characterDispatch={setHitmode} className="w-100 mb-2" />
-      <ReactionToggle build={build} character={character} characterDispatch={setReactionMode} className="w-100 mb-2" />
+      <HitModeToggle hitMode={character.hitMode} characterDispatch={setHitmode} className="w-100 mb-2" disabled={disabled} />
+      <ReactionToggle build={build} character={character} characterDispatch={setReactionMode} className="w-100 mb-2" disabled={disabled} />
     </Card.Body>
   </Card >
 }
 
-function StatFilterCard({ statKeys = [], statFilters = {}, setStatFilters, className }) {
+function StatFilterCard({ statKeys = [], statFilters = {}, setStatFilters, className, disabled }) {
   const remainingKeys = statKeys.filter(key => !(Object.keys(statFilters) as any).some(k => k === key))
   const setFilter = (sKey, min, max) => setStatFilters({ ...statFilters, [sKey]: { min, max } })
   return <Card bg="lightcontent" text={"lightfont" as any} className={className}>
@@ -667,13 +668,13 @@ function StatFilterCard({ statKeys = [], statFilters = {}, setStatFilters, class
     <Card.Body>
       <Row className="mb-n2">
         {(Object.entries(statFilters) as [string, { min, max }][]).map(([statKey, { min, max }]) => {
-          return <Col xs={12} key={statKey} ><StatFilterItem statKey={statKey} statKeys={remainingKeys} setFilter={setFilter} min={min} max={max} close={() => {
+          return <Col xs={12} key={statKey} ><StatFilterItem statKey={statKey} statKeys={remainingKeys} setFilter={setFilter} disabled={disabled} min={min} max={max} close={() => {
             delete statFilters[statKey]
             setStatFilters({ ...statFilters })
           }} /></Col>
         })}
         <Col xs={12}>
-          <StatFilterItem min={undefined} max={undefined} close={undefined} statKeys={remainingKeys} setFilter={setFilter} />
+          <StatFilterItem min={undefined} max={undefined} close={undefined} statKeys={remainingKeys} setFilter={setFilter} disabled={disabled} />
         </Col>
       </Row>
     </Card.Body>
@@ -756,10 +757,10 @@ const levels = {
   16: <span>Assume at least level 16</span>,
   20: <span>Assume at least level 20</span>
 }
-function AssumeFullLevelToggle({ mainStatAssumptionLevel = 0, setmainStatAssumptionLevel }) {
-  return <OverlayTrigger overlay={<Tooltip id="assume-level-tooltip">Change Main Stat value to be at least a specific level. Does not change substats.</Tooltip>}  >
+function AssumeFullLevelToggle({ mainStatAssumptionLevel = 0, setmainStatAssumptionLevel, disabled }) {
+  return <OverlayTrigger overlay={<Tooltip id="assume-level-tooltip">Change Main Stat value to be at least a specific level. Does not change substats.</Tooltip>} >
     <Dropdown>
-      <Dropdown.Toggle variant={mainStatAssumptionLevel ? "orange" : "primary"}>{levels[mainStatAssumptionLevel]}</Dropdown.Toggle>
+      <Dropdown.Toggle variant={mainStatAssumptionLevel ? "orange" : "primary"} disabled={disabled}>{levels[mainStatAssumptionLevel]}</Dropdown.Toggle>
       <Dropdown.Menu>
         {Object.entries(levels).map(([key, text]) => <Dropdown.Item key={key} onClick={() => setmainStatAssumptionLevel(parseInt(key))}>{text}</Dropdown.Item>)}
       </Dropdown.Menu>

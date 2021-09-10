@@ -1,42 +1,62 @@
 import { IFormulaSheet } from "../../../Types/character"
+import { singleToTalentPercent, toTalentPercent } from "../../../Util/DataminedUtil"
 import { basicDMGFormula } from "../../../Util/FormulaUtil"
-
+import skillParam_gen_pre from './skillParam_gen.json'
+const skillParam_gen = skillParam_gen_pre as any
+let a = 0, s = 0, b = 0
 export const data = {
   normal: {
     hitArr: [
-      [41.02, 44.36, 47.7, 52.47, 55.81, 59.62, 64.87, 70.12, 75.37, 81.09, 86.81, 92.54, 98.26, 103.99, 109.71],//1
-      [41.02, 44.36, 47.7, 52.47, 55.81, 59.62, 64.87, 70.12, 75.37, 81.09, 86.81, 92.54, 98.26, 103.99, 109.71],//2
-      [54.44, 58.87, 63.3, 69.63, 74.06, 79.13, 86.09, 93.05, 100.01, 107.61, 115.21, 122.8, 130.4, 137.99, 145.59],//3
-      [31.48, 34.04, 36.6, 40.26, 42.82, 45.75, 49.78, 53.8, 57.83, 62.22, 66.61, 71, 75.4, 79.79, 84.18],//4.1
-      [34.4, 37.2, 40, 44, 46.8, 50, 54.4, 58.8, 63.2, 68, 72.8, 77.6, 82.4, 87.2, 92],//4.2
-      [66.99, 72.45, 77.9, 85.69, 91.14, 97.38, 105.94, 114.51, 123.08, 132.43, 141.78, 151.13, 160.47, 169.82, 179.17],//5
+      toTalentPercent(skillParam_gen.auto[a++]),//1
+      toTalentPercent(skillParam_gen.auto[a++]),//2
+      toTalentPercent(skillParam_gen.auto[a++]),//3
+      toTalentPercent(skillParam_gen.auto[a++]),//4.1
+      toTalentPercent(skillParam_gen.auto[a++]),//4.2
+      toTalentPercent(skillParam_gen.auto[a++]),//5
     ],
   },
   charged: {
-    hit1: [76.8, 83.05, 89.3, 98.23, 104.48, 111.63, 121.45, 131.27, 141.09, 151.81, 162.53, 173.24, 183.96, 194.67, 205.39],
-    hit2: [86, 93, 100, 110, 117, 125, 136, 147, 158, 170, 182, 194, 206, 218, 230],
+    hit1: toTalentPercent(skillParam_gen.auto[a++]),
+    hit2: toTalentPercent(skillParam_gen.auto[a++]),
+    stam: skillParam_gen.auto[a++][0],
   },
   plunging: {
-    dmg: [63.93, 69.14, 74.34, 81.77, 86.98, 92.93, 101.1, 109.28, 117.46, 126.38, 135.3, 144.22, 153.14, 162.06, 170.98],
-    low: [127.84, 138.24, 148.65, 163.51, 173.92, 185.81, 202.16, 218.51, 234.86, 252.7, 270.54, 288.38, 306.22, 324.05, 341.89],
-    high: [159.68, 172.67, 185.67, 204.24, 217.23, 232.09, 252.51, 272.93, 293.36, 315.64, 337.92, 360.2, 382.48, 404.76, 427.04],
+    dmg: toTalentPercent(skillParam_gen.auto[a++]),
+    low: toTalentPercent(skillParam_gen.auto[a++]),
+    high: toTalentPercent(skillParam_gen.auto[a++]),
   },
   skill: {
-    stilleto: [50.4, 54.18, 57.96, 63, 66.78, 70.56, 75.6, 80.64, 85.68, 90.72, 95.76, 100.8, 107.1, 113.4, 119.7],
-    slashing: [168, 180.6, 193.2, 210, 222.6, 235.2, 252, 268.8, 285.6, 302.4, 319.2, 336, 357, 378, 399],
-    thunderclasp_slash: [84, 90.3, 96.6, 105, 111.3, 117.6, 126, 134.4, 142.8, 151.2, 159.6, 168, 178.5, 189, 199.5],
+    stilleto: toTalentPercent(skillParam_gen.skill[s++]),
+    slashing: toTalentPercent(skillParam_gen.skill[s++]),
+    thunderclasp_slash: toTalentPercent(skillParam_gen.skill[s++]),
+    cd: skillParam_gen.skill[s++][0],
   },
   burst: {
-    skill: [88, 94.6, 101.2, 110, 116.6, 123.2, 132, 140.8, 149.6, 158.4, 167.2, 176, 187, 198, 209],
-    consec_slash: [24, 25.8, 27.6, 30, 31.8, 33.6, 36, 38.4, 40.8, 43.2, 45.6, 48, 51, 54, 57],
-    last: [188.8, 202.96, 217.12, 236, 250.16, 264.32, 283.2, 302.08, 320.96, 339.84, 358.72, 377.6, 401.2, 424.8, 448.4],
+    skill: toTalentPercent(skillParam_gen.burst[b++]),
+    consec_slash: toTalentPercent(skillParam_gen.burst[b++]),
+    last: toTalentPercent(skillParam_gen.burst[b++]),
+    cd: skillParam_gen.burst[b++][0],
+    cost: skillParam_gen.burst[b++][0],
+  },
+  constellation1: {
+    dmg: singleToTalentPercent(skillParam_gen.constellation1[0]),
+  },
+  constellation4: {
+    duration: skillParam_gen.constellation4[0],
+    atk_: singleToTalentPercent(skillParam_gen.constellation4[1]),
+  },
+  constellation6: {
+    electro_: singleToTalentPercent(skillParam_gen.constellation6[0]),
+    duration: skillParam_gen.constellation6[1],
   }
-}
+} as const
 const formula: IFormulaSheet = {
   normal: Object.fromEntries(data.normal.hitArr.map((arr, i) =>
     [i, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "normal")])),
-  charged: Object.fromEntries(Object.entries(data.charged).map(([name, arr]) =>
-    [name, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "charged")])),
+  charged: {
+    hit1: stats => basicDMGFormula(data.charged.hit1[stats.tlvl.auto], stats, "charged"),
+    hit2: stats => basicDMGFormula(data.charged.hit2[stats.tlvl.auto], stats, "charged"),
+  },
   plunging: Object.fromEntries(Object.entries(data.plunging).map(([name, arr]) =>
     [name, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "plunging")])),
   skill: {
@@ -50,7 +70,7 @@ const formula: IFormulaSheet = {
     last: stats => basicDMGFormula(data.burst.last[stats.tlvl.burst], stats, "burst"),
   },
   constellation1: {
-    dmg: stats => basicDMGFormula(50, stats, "elemental"),
+    dmg: stats => basicDMGFormula(data.constellation1.dmg, stats, "elemental"),
   }
-}
+} as const
 export default formula

@@ -8,3 +8,6 @@ export function toTalentPercent(arr: number[]): number[] {
 export function toTalentInt(arr: number[]): number[] {
   return arr.map(d => parseInt(d.toFixed()))
 }
+export function singleToTalentPercent(num) {
+  return parseFloat((num * 100).toFixed(2))
+}

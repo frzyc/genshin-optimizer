@@ -75,7 +75,7 @@ export function WeaponSelectionModal({ show, onHide, onSelect, filter = () => tr
 export function WeaponSelectionButton({ weaponSheet, onSelect, filter }: { weaponSheet?: WeaponSheet, onSelect: (wKey: WeaponKey) => void, filter?: (sheet: WeaponSheet) => boolean }) {
   const [show, setshow] = useState(false)
   return <>
-    <Button as={ButtonGroup} onClick={() => setshow(true)} >{weaponSheet?.name ?? "Select a Weapon"}</Button>
+    <Button as={ButtonGroup} onClick={() => setshow(true)} className="text-nowrap">{weaponSheet?.name ?? "Select a Weapon"}</Button>
     <WeaponSelectionModal show={show} onHide={() => setshow(false)} onSelect={onSelect} filter={filter} />
   </>
 }

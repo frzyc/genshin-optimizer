@@ -53,7 +53,7 @@ const char: ICharacterSheet = {
           text: <span><strong>Normal Attack</strong> Perform up to 5 rapid strikes. <small><i>Note: the 3rd attack hits twice.</i></small></span>,
           fields: data.normal.hitArr.map((percentArr, i) =>
           ({
-            text: `${i + 1}-Hit DMG ${i === 2 ? " (2 Hits)" : ""}`,
+            text: `${i + 1}-Hit DMG ${i === 2 || i === 4 ? " (2 Hits)" : ""}`,
             formulaText: stats => <span>{percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
             formula: formula.normal[i],
             variant: stats => getTalentStatKeyVariant("normal", stats),
@@ -72,7 +72,7 @@ const char: ICharacterSheet = {
             variant: stats => getTalentStatKeyVariant("charged", stats),
           }, {
             text: `Stamina Cost`,
-            value: 20,
+            value: data.charged.stam,
           }]
         }, {
           text: <span><strong>Plunging Attack</strong> Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.</span>,
@@ -122,19 +122,22 @@ const char: ICharacterSheet = {
             formula: formula.skill.hit2RainCutter,
             variant: stats => getTalentStatKeyVariant("skill", stats),
           }, {
-            text: "Damage Reduction Ratio(%)",
+            text: "Damage Reduction Ratio",
             formulaText: stats => <span>{data.skill.dmgRed[stats.tlvl.skill]}%  + min(24%, 20% * {Stat.printStat("hydro_dmg_", stats)} )</span>,
             formula: formula.skill.dmgRed,
-            fixed: 2
+            fixed: 2,
+            unit: "%"
           }, {
             text: "Sword Number",
             value: stats => stats.constellation >= 1 ? 4 : 3,
           }, {
             text: "Duration",
-            value: "15s",
+            value: data.skill.duration,
+            unit: ""
           }, {
             text: "CD",
-            value: "21s",
+            value: data.skill.cd,
+            unit: ""
           }]
         }],
       },
@@ -150,13 +153,15 @@ const char: ICharacterSheet = {
             variant: stats => getTalentStatKeyVariant("burst", stats),
           }, {
             text: "Duration",
-            value: stats => stats.constellation >= 2 ? "18s" : "15s",
+            value: stats => data.burst.duration + stats.constellation >= 2 ? 3 : 0,
+            unit: "s"
           }, {
             text: "CD",
-            value: "20s",
+            value: data.burst.cd,
+            unit: "s"
           }, {
             text: "Energy Cost",
-            value: 60,
+            value: data.burst.cost,
           }]
         }],
       },

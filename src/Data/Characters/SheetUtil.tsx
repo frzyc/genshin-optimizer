@@ -75,10 +75,10 @@ export const claymoreChargedDocSection = (tr, formula, data) => ({
     variant: stats => getTalentStatKeyVariant("charged", stats),
   }, {
     text: sgt("charged.stamina"),
-    value: `40/s`,
+    value: data.charged.stam ?? `40/s`,
   }, {
     text: sgt("maxDuration"),
-    value: `5s`,
+    value: data.charged.maxDuration ?? `5s`,
   }]
 })
 
