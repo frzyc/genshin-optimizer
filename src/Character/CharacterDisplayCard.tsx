@@ -9,7 +9,7 @@ import DropdownItem from 'react-bootstrap/esm/DropdownItem';
 import Row from 'react-bootstrap/Row';
 import { ArtifactSheet } from '../Artifact/ArtifactSheet';
 import CustomFormControl from '../Components/CustomFormControl';
-import { ascensionMaxLevel, milestoneLevels } from '../Data/CharacterData';
+import { ambiguousLevel, ascensionMaxLevel, milestoneLevels } from '../Data/CharacterData';
 import ElementalData from '../Data/ElementalData';
 import { DatabaseContext, database as localDatabase } from '../Database/Database';
 import { ICachedCharacter } from '../Types/character';
@@ -201,7 +201,6 @@ function CharSelectDropdown({ characterSheet, weaponSheet, character, character:
     const ascension = ascensionMaxLevel.findIndex(ascenML => level <= ascenML)
     characterDispatch({ level, ascension })
   }, [characterDispatch])
-  const ambiguousLevel = ascensionMaxLevel.findIndex(ascenML => level !== 90 && level === ascenML) > 0
   const setAscension = useCallback(() => {
     const lowerAscension = ascensionMaxLevel.findIndex(ascenML => level !== 90 && level === ascenML)
     if (ascension === lowerAscension) characterDispatch({ ascension: ascension + 1 })
@@ -228,7 +227,7 @@ function CharSelectDropdown({ characterSheet, weaponSheet, character, character:
       <CustomFormControl placeholder={undefined} className="h-100" onChange={setLevel} value={level} min={1} max={90} disabled={!characterSheet} />
     </InputGroup.Append>
     <InputGroup.Append>
-      <Button disabled={!ambiguousLevel || !characterSheet} onClick={setAscension}><strong>/ {ascensionMaxLevel[ascension]}</strong></Button>
+      <Button disabled={!ambiguousLevel(level) || !characterSheet} onClick={setAscension}><strong>/ {ascensionMaxLevel[ascension]}</strong></Button>
     </InputGroup.Append>
     <ButtonGroup as={InputGroup.Append}>
       <Dropdown as={ButtonGroup} >

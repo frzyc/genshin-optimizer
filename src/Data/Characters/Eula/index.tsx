@@ -153,7 +153,8 @@ const char: ICharacterSheet = {
             variant: stats => getTalentStatKeyVariant("skill", stats),
           }, {
             text: sgt("press.cd"),
-            value: "4s"
+            value: data.skill.cdPress,
+            unit: "s"
           }, {
             text: sgt("hold.dmg"),
             formulaText: stats => <span>{data.skill.holdDMG[stats.tlvl.skill]}% {Stat.printStat(getTalentStatKey("skill", stats), stats)}</span>,
@@ -161,7 +162,8 @@ const char: ICharacterSheet = {
             variant: stats => getTalentStatKeyVariant("skill", stats),
           }, {
             text: sgt("hold.cd"),
-            value: stats => stats.constellation >= 2 ? "4s" : "10s"
+            value: stats => stats.constellation >= 2 ? data.skill.cdPress : data.skill.cdHold,
+            unit: "s"
           },],
           conditional: conditionals.e
         }, {
@@ -185,13 +187,15 @@ const char: ICharacterSheet = {
             variant: stats => getTalentStatKeyVariant("burst", stats),
           }, {
             text: sgt("cd"),
-            value: "15s",
+            value: data.burst.cd,
+            unit: "s"
           }, {
             text: sgt("energyCost"),
-            value: 60,
+            value: data.burst.cost,
           }, {
             text: sgt("duration"),
-            value: "7s"
+            value: 7,
+            unit: "s"
           }],
           conditional: conditionals.q
         }],

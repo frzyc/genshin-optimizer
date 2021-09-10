@@ -29,11 +29,12 @@ type InfusionAuraDropdownProps = {
   character: ICachedCharacter,
   characterDispatch: (any: characterReducerAction) => void,
   className?: string
+  disabled?: boolean
 }
-export function InfusionAuraDropdown({ characterSheet, character: { infusionAura = "" }, characterDispatch, className }: InfusionAuraDropdownProps) {
+export function InfusionAuraDropdown({ characterSheet, character: { infusionAura = "" }, characterDispatch, className, disabled = false }: InfusionAuraDropdownProps) {
   if (!characterSheet.isMelee()) return null
   return <Dropdown className={className}>
-    <Dropdown.Toggle variant={infusionAura || "secondary"}>{infusionVals[infusionAura]}</Dropdown.Toggle>
+    <Dropdown.Toggle variant={infusionAura || "secondary"} disabled={disabled}>{infusionVals[infusionAura]}</Dropdown.Toggle>
     <Dropdown.Menu>
       {Object.entries(infusionVals).map(([key, text]) => <Dropdown.Item key={key} className={`text-${key}`} onClick={() => characterDispatch({ infusionAura: key })}>{text}</Dropdown.Item>)}
     </Dropdown.Menu>
@@ -45,34 +46,35 @@ type ReactionToggleProps = {
   build: ICalculatedStats,
   characterDispatch: (any: characterReducerAction) => void,
   className: string
+  disabled?: boolean
 }
-export function ReactionToggle({ character: { reactionMode = null, infusionAura }, build, characterDispatch, className }: ReactionToggleProps) {
+export function ReactionToggle({ character: { reactionMode = null, infusionAura }, build, characterDispatch, className, disabled = false }: ReactionToggleProps) {
   if (!build) return null
   const charEleKey = build.characterEle
   if (!["pyro", "hydro", "cryo"].includes(charEleKey) && !["pyro", "hydro", "cryo"].includes(infusionAura)) return null
   const v = s => s ? "success" : "secondary"
   return <ToggleButtonGroup className={className} type="radio" name="reactionMode" value={reactionMode} onChange={val => characterDispatch({ reactionMode: val === "none" ? null : val })}>
-    <ToggleButton value={"none"} variant={v(!reactionMode)}>No Reactions</ToggleButton >
-    {(charEleKey === "pyro" || infusionAura === "pyro") && <ToggleButton value={"pyro_vaporize"} variant={v(reactionMode === "pyro_vaporize")}>
+    <ToggleButton value={"none"} variant={v(!reactionMode)} disabled={disabled}>No Reactions</ToggleButton >
+    {(charEleKey === "pyro" || infusionAura === "pyro") && <ToggleButton value={"pyro_vaporize"} variant={v(reactionMode === "pyro_vaporize")} disabled={disabled}>
       <span className="text-vaporize">Vaporize(Pyro) {StatIcon.hydro}+{StatIcon.pyro}</span>
     </ToggleButton >}
-    {(charEleKey === "pyro" || infusionAura === "pyro") && <ToggleButton value={"pyro_melt"} variant={v(reactionMode === "pyro_melt")}>
+    {(charEleKey === "pyro" || infusionAura === "pyro") && <ToggleButton value={"pyro_melt"} variant={v(reactionMode === "pyro_melt")} disabled={disabled}>
       <span className="text-melt">Melt(Pyro) {StatIcon.cryo}+{StatIcon.pyro}</span>
     </ToggleButton >}
-    {(charEleKey === "hydro" || infusionAura === "hydro") && <ToggleButton value={"hydro_vaporize"} variant={v(reactionMode === "hydro_vaporize")}>
+    {(charEleKey === "hydro" || infusionAura === "hydro") && <ToggleButton value={"hydro_vaporize"} variant={v(reactionMode === "hydro_vaporize")} disabled={disabled}>
       <span className="text-vaporize">Vaporize(Hydro) {StatIcon.pyro}+{StatIcon.hydro}</span>
     </ToggleButton >}
-    {(charEleKey === "cryo" || infusionAura === "cryo") && <ToggleButton value={"cryo_melt"} variant={v(reactionMode === "cryo_melt")}>
+    {(charEleKey === "cryo" || infusionAura === "cryo") && <ToggleButton value={"cryo_melt"} variant={v(reactionMode === "cryo_melt")} disabled={disabled}>
       <span className="text-melt">Melt(Cryo) {StatIcon.pyro}+{StatIcon.cryo}</span>
     </ToggleButton >}
   </ToggleButtonGroup>
 }
-export function HitModeToggle({ hitMode, characterDispatch, className }) {
+export function HitModeToggle({ hitMode, characterDispatch, className, disabled = false }) {
   const v = s => s ? "success" : "secondary"
-  return <ToggleButtonGroup type="radio" value={hitMode} name="hitOptions" onChange={m => characterDispatch({ hitMode: m })} className={className}>
-    <ToggleButton value="avgHit" variant={v(hitMode === "avgHit")}>Avg. DMG</ToggleButton>
-    <ToggleButton value="hit" variant={v(hitMode === "hit")}>Non Crit DMG</ToggleButton>
-    <ToggleButton value="critHit" variant={v(hitMode === "critHit")}>Crit Hit DMG</ToggleButton>
+  return <ToggleButtonGroup type="radio" value={hitMode} name="hitOptions" onChange={m => characterDispatch({ hitMode: m })} className={className} >
+    <ToggleButton value="avgHit" variant={v(hitMode === "avgHit")} disabled={disabled} >Avg. DMG</ToggleButton>
+    <ToggleButton value="hit" variant={v(hitMode === "hit")} disabled={disabled} >Non Crit DMG</ToggleButton>
+    <ToggleButton value="critHit" variant={v(hitMode === "critHit")} disabled={disabled} >Crit Hit DMG</ToggleButton>
   </ToggleButtonGroup>
 }
 

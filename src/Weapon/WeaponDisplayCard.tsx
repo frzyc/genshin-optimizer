@@ -8,12 +8,13 @@ import CustomFormControl from "../Components/CustomFormControl"
 import DocumentDisplay from "../Components/DocumentDisplay"
 import EquipmentDropdown from "../Components/EquipmentDropdown"
 import { Stars } from "../Components/StarDisplay"
-import { ascensionMaxLevel, milestoneLevels } from "../Data/CharacterData"
+import { ambiguousLevel, ascensionMaxLevel, milestoneLevels } from "../Data/CharacterData"
 import { DatabaseContext, database as localDatabase } from "../Database/Database"
 import { ICachedCharacter } from "../Types/character"
 import { ICalculatedStats } from "../Types/stats"
 import { ICachedWeapon } from "../Types/weapon"
 import { useForceUpdate, usePromise } from "../Util/ReactUtil"
+import { clamp } from "../Util/Util"
 import WeaponCard from "./WeaponCard"
 import { WeaponSelectionButton } from "./WeaponSelection"
 import WeaponSheet from "./WeaponSheet"
@@ -60,7 +61,12 @@ export default function WeaponDisplayCard({
     database.updateWeapon(newWeapon, propWeaponId)
   }, [propWeaponId, database])
 
-  const ambiguousLevel = level !== 90 && ascensionMaxLevel.findIndex(ascenML => level === ascenML) > 0
+  const setLevel = useCallback(level => {
+    level = clamp(level, 1, 90)
+    const ascension = ascensionMaxLevel.findIndex(ascenML => level <= ascenML)
+    weaponDispatch({ level, ascension })
+  }, [weaponDispatch])
+
   const setAscension = useCallback(() => {
     const lowerAscension = ascensionMaxLevel.findIndex(ascenML => level !== 90 && level === ascenML)
     if (ascension === lowerAscension) weaponDispatch({ ascension: ascension + 1 })
@@ -74,47 +80,55 @@ export default function WeaponDisplayCard({
   return <Card bg="lightcontent" text={"lightfont" as any} className="mb-2">
     <Card.Header>
       <Row>
-        <Col>
-          {editable ? <InputGroup >
-            <ButtonGroup as={InputGroup.Prepend}>
-              <WeaponSelectionButton weaponSheet={weaponSheet} onSelect={k => weaponDispatch({ key: k })} filter={weaponFilter} />
-              <Dropdown as={ButtonGroup}>
-                <Dropdown.Toggle as={Button}>Refinement {refine}</Dropdown.Toggle>
-                <Dropdown.Menu>
-                  <Dropdown.ItemText>
-                    <span>Select Weapon Refinement</span>
-                  </Dropdown.ItemText>
-                  <Dropdown.Divider />
-                  {[...Array(5).keys()].map(key =>
-                    <Dropdown.Item key={key} onClick={() => weaponDispatch({ refine: key + 1 })}>
-                      {`Refinement ${key + 1}`}
-                    </Dropdown.Item>)}
-                </Dropdown.Menu>
-              </Dropdown>
-            </ButtonGroup>
-            <InputGroup.Prepend>
-              <InputGroup.Text><strong>Lvl. </strong></InputGroup.Text>
-            </InputGroup.Prepend>
-            <InputGroup.Append>
-              <CustomFormControl placeholder={undefined} onChange={level => weaponDispatch({ level })} value={level} min={1} max={90} />
-            </InputGroup.Append>
-            <InputGroup.Append>
-              <Button disabled={!ambiguousLevel} onClick={setAscension}><strong>/ {ascensionMaxLevel[ascension]}</strong></Button>
-            </InputGroup.Append>
-            <ButtonGroup as={InputGroup.Append}>
-              <Dropdown as={ButtonGroup}>
-                <Dropdown.Toggle as={Button}>Select Level</Dropdown.Toggle>
-                <Dropdown.Menu>
-                  {milestoneLevels.map(([lv, as]) => {
-                    const sameLevel = lv === ascensionMaxLevel[as]
-                    const lvlstr = sameLevel ? `Lv. ${lv}` : `Lv. ${lv}/${ascensionMaxLevel[as]}`
-                    return <Dropdown.Item key={`${lv}/${as}`} onClick={() => weaponDispatch({ level: lv, ascension: as })}>{lvlstr}</Dropdown.Item>
-                  })}
-                </Dropdown.Menu>
-              </Dropdown>
-            </ButtonGroup>
-          </InputGroup> : <span>Weapon</span>}
-        </Col>
+        {editable && <Col>
+          <Row className="mb-n2">
+            <Col className="mb-2">
+              <InputGroup >
+                <ButtonGroup as={InputGroup.Prepend}>
+                  <WeaponSelectionButton weaponSheet={weaponSheet} onSelect={k => weaponDispatch({ key: k })} filter={weaponFilter} />
+                  <Dropdown as={ButtonGroup}>
+                    <Dropdown.Toggle as={Button}>Refinement {refine}</Dropdown.Toggle>
+                    <Dropdown.Menu>
+                      <Dropdown.ItemText>
+                        <span>Select Weapon Refinement</span>
+                      </Dropdown.ItemText>
+                      <Dropdown.Divider />
+                      {[...Array(5).keys()].map(key =>
+                        <Dropdown.Item key={key} onClick={() => weaponDispatch({ refine: key + 1 })}>
+                          {`Refinement ${key + 1}`}
+                        </Dropdown.Item>)}
+                    </Dropdown.Menu>
+                  </Dropdown>
+                </ButtonGroup>
+              </InputGroup>
+            </Col>
+            <Col className="mb-2" xs="auto">
+              <InputGroup >
+                <InputGroup.Prepend>
+                  <InputGroup.Text><strong>Lvl. </strong></InputGroup.Text>
+                </InputGroup.Prepend>
+                <InputGroup.Append>
+                  <CustomFormControl placeholder={undefined} onChange={setLevel} value={level} min={1} max={90} />
+                </InputGroup.Append>
+                <InputGroup.Append>
+                  <Button disabled={!ambiguousLevel(level)} onClick={setAscension}><strong>/ {ascensionMaxLevel[ascension]}</strong></Button>
+                </InputGroup.Append>
+                <ButtonGroup as={InputGroup.Append}>
+                  <Dropdown as={ButtonGroup}>
+                    <Dropdown.Toggle as={Button}>Select Level</Dropdown.Toggle>
+                    <Dropdown.Menu>
+                      {milestoneLevels.map(([lv, as]) => {
+                        const sameLevel = lv === ascensionMaxLevel[as]
+                        const lvlstr = sameLevel ? `Lv. ${lv}` : `Lv. ${lv}/${ascensionMaxLevel[as]}`
+                        return <Dropdown.Item key={`${lv}/${as}`} onClick={() => weaponDispatch({ level: lv, ascension: as })}>{lvlstr}</Dropdown.Item>
+                      })}
+                    </Dropdown.Menu>
+                  </Dropdown>
+                </ButtonGroup>
+              </InputGroup>
+            </Col>
+          </Row>
+        </Col>}
         {!!onClose && <Col xs="auto" >
           <Button variant="danger" onClick={onClose}>
             <FontAwesomeIcon icon={faTimes} /></Button>
