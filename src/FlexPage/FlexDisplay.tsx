@@ -32,8 +32,7 @@ function Display({ characterKey }) {
   const [toast, settoast] = useState(false)
   const url = window.location.href
   const copyToClipboard = () => {
-    navigator.clipboard.writeText(url)
-    settoast(true)
+    navigator.clipboard.writeText(url).then(() => settoast(true)).catch(console.error)
   }
   const isUpToDate = false
   return <Container className="my-2">
