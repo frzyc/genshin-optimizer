@@ -57,7 +57,7 @@ describe("Testing Bennett's Formulas (Mabmab#6492)", () => {
     describe("no crit burst hit", () => {
       beforeEach(() => {
         setupStats.hitMode = "hit"
-        setupStats.modifiers = { finalATK: [KeyPath<FormulaPathBase, any>().character.Bennett.burst.atkBonus()] }
+        setupStats.modifiers = { atk: [KeyPath<FormulaPathBase, any>().character.Bennett.burst.atkBonus()] }
       })
       test("hit", () => {
         const stats = computeAllStats(setupStats)
@@ -105,7 +105,7 @@ describe("Testing Bennett's Formulas (Mabmab#6492)", () => {
     describe("crit burst hit", () => {
       beforeEach(() => {
         setupStats.hitMode = "critHit"
-        setupStats.modifiers = { finalATK: [KeyPath<FormulaPathBase, any>().character.Bennett.burst.atkBonus()] }
+        setupStats.modifiers = { atk: [KeyPath<FormulaPathBase, any>().character.Bennett.burst.atkBonus()] }
       })
       test("hit", () => {
         const stats = computeAllStats(setupStats)

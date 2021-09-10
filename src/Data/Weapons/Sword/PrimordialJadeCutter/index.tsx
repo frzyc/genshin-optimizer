@@ -15,7 +15,7 @@ const weapon: IWeaponSheet = {
   img,
   stats: stats => ({
     hp_: refinementVals_hp[stats.weapon.refineIndex],
-    modifiers: { finalATK: [path.bonus()] }
+    modifiers: { atk: [path.bonus()] }
   }),
   document: [{
     fields: [{

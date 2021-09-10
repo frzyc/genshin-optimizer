@@ -32,7 +32,7 @@ const conditionals: IConditionals = {
     name: tr("burst.name"),
     maxStack: 1,
     stats: {
-      modifiers: { finalATK: [path.burst.bonus()] },
+      modifiers: { atk: [path.burst.bonus()] },
       infusionSelf: "geo",
     },
     fields: [{
