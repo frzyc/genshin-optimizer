@@ -15,6 +15,7 @@ export default class Formula {
   static computeModifier(stat: IBaseStat, modifier: Modifier | undefined): (s: ICalculatedStats) => BonusStats {
     if (!modifier) return () => ({})
 
+    // Keep objs separate here, so that it won't need to be recomputed when the modifier is triggered
     const objs = Object.entries(modifier).map(([key, formulas]) =>
       [key, formulas.map(path => Formula.getCurrent(path, stat)[0])] as [string, ((s: ICalculatedStats) => number)[]])
 

@@ -219,41 +219,28 @@ type KeyedFormula = [string, (s: ICalculatedStats) => number]
 function PreprocessFormulas(dependencyKeys: string[], stats: ICalculatedStats) {
   const { modifiers = {} } = stats, initialStats = {} as ICalculatedStats
 
-  const preModFormulaList = dependencyKeys.map(key => {
-    if (Object.keys(modifiers))
-      if (key === "finalATK" || key === "finalDEF" || key === "finalHP")//these formulas bypass the modifier dependency system.
-        return [key, Formulas[key]] as KeyedFormula
-    if (getStage(key) !== 0)
-      return ["", () => 0] as KeyedFormula
-
-    if (key in Formulas)
-      return [key, Formulas[key]] as KeyedFormula
-    initialStats[key] = stats[key] ?? StatData[key]?.default ?? 0
-    return ["", () => 0] as KeyedFormula
-  }).filter(x => x[0])
+  const premodFormulaList: KeyedFormula[] = [], postmodFormulaList: KeyedFormula[] = []
+  for (const key of dependencyKeys) {
+    switch (getStage(key)) {
+      case 0: initialStats[key] = stats[key] ?? StatData[key]?.default ?? 0; break // Stat
+      case 1: initialStats[key] = Formulas[key]!(initialStats); break // Const Formula
+      case 2: premodFormulaList.push([key, Formulas[key]!]); break // Premod
+      case 3:  // Premod + Postmod
+        premodFormulaList.push([key, Formulas[key]!])
+        postmodFormulaList.push([key, Formulas[key]!])
+        break
+      case 4: postmodFormulaList.push([key, Formulas[key]!]); break // Postmod
+    }
+  }
 
   const modFormula = Formula.computeModifier(stats, Object.fromEntries(Object.entries(modifiers)
     .filter(([key]) => dependencyKeys.includes(key)) // Keep only relevant keys
   ))
 
-  const postModFormulaList = dependencyKeys.map(key => {
-    if (getStage(key) !== 1)
-      return ["", () => 0] as KeyedFormula
-
-    const func = Formulas[key]!
-
-    if (StatData[key]?.const) {
-      initialStats[key] = func(initialStats)
-      return ["", () => 0] as KeyedFormula
-    }
-
-    return [key, func] as KeyedFormula
-  }).filter(x => x[0])
-
   return {
     initialStats: initialStats as ICalculatedStats,
     formula: (s: ICalculatedStats) => {
-      preModFormulaList.forEach(([key, formula]) => s[key] = formula(s))
+      premodFormulaList.forEach(([key, formula]) => s[key] = formula(s))
 
       const modStats = Formula.computeModifier(s, s.modifiers)(s) // late-binding modifiers (arts mod)
       mergeStats(modStats, modFormula(s))
@@ -262,14 +249,17 @@ function PreprocessFormulas(dependencyKeys: string[], stats: ICalculatedStats) {
       mergeStats(s, modStats)
       mergeStats(s, { modifiers })
 
-      postModFormulaList.forEach(([key, formula]) => s[key] = formula(s))
+      postmodFormulaList.forEach(([key, formula]) => s[key] = formula(s))
     }
   }
 }
+export const numStages = 5
 export function getStage(key: string): number {
-  return (key in Formulas)
-    ? 1 // postmod
-    : 0 // premod
+  if (!(key in Formulas)) return 0 // Stat
+  if (StatData[key]?.const) return 1 // Const
+  // Premod (doesn't exist right now)
+  if (key === "finalATK" || key === "finalDEF" || key === "finalHP") return 3 // Premod + Postmod
+  return 4 // Postmod
 }
 
 export {

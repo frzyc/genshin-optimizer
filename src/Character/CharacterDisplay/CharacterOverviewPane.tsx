@@ -64,7 +64,8 @@ export default function CharacterOverviewPane({ characterSheet, weaponSheet, edi
     </Col>
   </Row >
 }
-
+const EDIT = "Edit Stats"
+const EXIT = "EXIT"
 type MainStatsCardsProps = {
   characterSheet: CharacterSheet,
   weaponSheet: WeaponSheet,
@@ -98,7 +99,11 @@ function MainStatsCards({ characterSheet, weaponSheet, editable, character, char
     "plunging_dmg_", "plunging_critRate_",
     "skill_dmg_", "skill_critRate_",
     "burst_dmg_", "burst_critRate_",
-    "dmg_", "enemyDEFRed_", "moveSPD_", "atkSPD_", "weakspotDMG_"]
+    "dmg_", "electrocharged_dmg_",
+    "vaporize_dmg_", "swirl_dmg_",
+    "enemyDEFRed_", "weakspotDMG_",
+    "moveSPD_", "atkSPD_",
+  ]
 
   const specializedStatKey = characterSheet.getSpecializedStat(character.ascension)
   const specializedStatVal = characterSheet.getSpecializedStatVal(character.ascension)
@@ -114,7 +119,7 @@ function MainStatsCards({ characterSheet, weaponSheet, editable, character, char
           </Col>
           {editable ? <Col xs="auto" >
             <Button variant={editing ? "danger" : "info"} onClick={() => SetEditing(!editing)} size="sm">
-              <span><FontAwesomeIcon icon={editing ? faSave : faEdit} /> {editing ? "EXIT" : "EDIT"}</span>
+              <span><FontAwesomeIcon icon={editing ? faSave : faEdit} /> {editing ? EXIT : EDIT}</span>
             </Button>
           </Col> : null}
         </Row>
@@ -157,7 +162,7 @@ function MainStatsCards({ characterSheet, weaponSheet, editable, character, char
           </Col>
           {editable && <Col xs="auto" >
             <Button variant={editingOther ? "danger" : "info"} onClick={() => SetEditingOther(!editingOther)} size="sm">
-              <span><FontAwesomeIcon icon={editingOther ? faSave : faEdit} /> {editingOther ? "EXIT" : "EDIT"}</span>
+              <span><FontAwesomeIcon icon={editingOther ? faSave : faEdit} /> {editingOther ? EXIT : EDIT}</span>
             </Button>
           </Col>}
         </Row>
@@ -192,7 +197,7 @@ function MainStatsCards({ characterSheet, weaponSheet, editable, character, char
           </Col>
           {editable && <Col xs="auto" >
             <Button variant={editingMisc ? "danger" : "info"} onClick={() => SetEditingMisc(!editingMisc)} size="sm">
-              <span><FontAwesomeIcon icon={editingMisc ? faSave : faEdit} /> {editingMisc ? "EXIT" : "EDIT"}</span>
+              <span><FontAwesomeIcon icon={editingMisc ? faSave : faEdit} /> {editingMisc ? EXIT : EDIT}</span>
             </Button>
           </Col>}
         </Row>

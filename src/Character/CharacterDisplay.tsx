@@ -1,4 +1,4 @@
-import { faLink, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faCalculator, faLink, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import i18next from 'i18next';
 import React, { lazy, useCallback, useContext, useEffect, useReducer, useRef, useState } from 'react';
@@ -213,8 +213,14 @@ export default function CharacterDisplay(props) {
 }
 function CharDisplayFooter({ onClose, characterKey }) {
   return <Row>
-    <Col>
+    <Col xs="auto">
       <Button variant="info" as={Link} to={{ pathname: "/flex", characterKey } as any}><FontAwesomeIcon icon={faLink} /> Share Character</Button>
+    </Col>
+    <Col>
+      <Button as={Link} to={{
+        pathname: "/build",
+        characterKey
+      } as any}><FontAwesomeIcon icon={faCalculator} /> Generate Builds</Button>
     </Col>
     <Col xs="auto">
       <Button variant="danger" onClick={onClose}>Close</Button>

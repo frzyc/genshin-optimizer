@@ -1,5 +1,5 @@
 import Formula from "./Formula"
-import { Formulas, getStage, StatData } from "./StatData"
+import { Formulas, getStage, numStages, StatData } from "./StatData"
 import { IBaseStat } from "./Types/character"
 import { Modifier } from "./Types/stats"
 
@@ -30,7 +30,7 @@ if (process.env.NODE_ENV === "development") {
 
 function GetDependencies(baseStat: IBaseStat, modifiers: Modifier = {}, keys = Object.keys(StatData)): Dependencies {
   const found = new Set<string>()
-  const dependencies = [new Set<string>(), new Set<string>()]
+  const dependencies = [...Array(numStages)].map(_ => new Set<string>())
   keys.forEach(key => InsertDependencies(baseStat, key, modifiers, dependencies, found))
   return dependencies.flatMap(dep => [...dep])
 }
