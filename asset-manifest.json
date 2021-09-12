@@ -11,8 +11,8 @@
     "static/js/4.7aeddacc.chunk.js": "/genshin-optimizer/static/js/4.7aeddacc.chunk.js",
     "static/js/4.7aeddacc.chunk.js.map": "/genshin-optimizer/static/js/4.7aeddacc.chunk.js.map",
     "main.css": "/genshin-optimizer/static/css/main.447d5ff8.chunk.css",
-    "main.js": "/genshin-optimizer/static/js/main.b16839e6.chunk.js",
-    "main.js.map": "/genshin-optimizer/static/js/main.b16839e6.chunk.js.map",
+    "main.js": "/genshin-optimizer/static/js/main.b7523edf.chunk.js",
+    "main.js.map": "/genshin-optimizer/static/js/main.b7523edf.chunk.js.map",
     "runtime-main.js": "/genshin-optimizer/static/js/runtime-main.576f5d6e.js",
     "runtime-main.js.map": "/genshin-optimizer/static/js/runtime-main.576f5d6e.js.map",
     "static/js/7.22e47a7f.chunk.js": "/genshin-optimizer/static/js/7.22e47a7f.chunk.js",
@@ -955,6 +955,6 @@
     "static/js/runtime-main.576f5d6e.js",
     "static/js/8.f538b59c.chunk.js",
     "static/css/main.447d5ff8.chunk.css",
-    "static/js/main.b16839e6.chunk.js"
+    "static/js/main.b7523edf.chunk.js"
   ]
 }
