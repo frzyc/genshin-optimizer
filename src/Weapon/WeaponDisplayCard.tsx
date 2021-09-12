@@ -110,10 +110,8 @@ export default function WeaponDisplayCard({
                 <InputGroup.Append>
                   <CustomFormControl placeholder={undefined} onChange={setLevel} value={level} min={1} max={90} />
                 </InputGroup.Append>
-                <InputGroup.Append>
-                  <Button disabled={!ambiguousLevel(level)} onClick={setAscension}><strong>/ {ascensionMaxLevel[ascension]}</strong></Button>
-                </InputGroup.Append>
                 <ButtonGroup as={InputGroup.Append}>
+                  <Button disabled={!ambiguousLevel(level)} onClick={setAscension}><strong>/ {ascensionMaxLevel[ascension]}</strong></Button>
                   <Dropdown as={ButtonGroup}>
                     <Dropdown.Toggle as={Button}>Select Level</Dropdown.Toggle>
                     <Dropdown.Menu>

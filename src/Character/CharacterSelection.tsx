@@ -30,14 +30,14 @@ function DropDownItem({ characterKey, onSelect }) {
 
 type characterFilter = (character: ICachedCharacter | undefined, sheet: CharacterSheet) => boolean
 
-export function CharSelectionButton({ characterSheet, onSelect, filter }: { characterSheet?: CharacterSheet, onSelect: (cKey: CharacterKey) => void, filter?: characterFilter }) {
+export function CharSelectionButton({ characterSheet, onSelect, filter }: { characterSheet?: CharacterSheet, onSelect?: (cKey: CharacterKey) => void, filter?: characterFilter }) {
   const [show, setshow] = useState(false)
   const HeaderIconDisplay = characterSheet ? <span >
     <Image src={characterSheet.thumbImg} className="thumb-small my-n1 ml-n2" roundedCircle />
     <h6 className="d-inline"> {characterSheet.name} </h6>
   </span> : <span>Select a Character</span>
   return <>
-    <Button as={ButtonGroup} onClick={() => setshow(true)} >{HeaderIconDisplay}</Button>
+    <Button disabled={!onSelect} onClick={() => setshow(true)} >{HeaderIconDisplay}</Button>
     <CharacterSelectionModal show={show} onHide={() => setshow(false)} onSelect={onSelect} filter={filter} />
   </>
 }
@@ -58,7 +58,7 @@ function filterReducer(oldFilter, newFilter) {
 type CharacterSelectionModalProps = {
   show: boolean,
   onHide: () => void,
-  onSelect: (ckey: CharacterKey) => void,
+  onSelect?: (ckey: CharacterKey) => void,
   filter?: characterFilter
 }
 
@@ -133,7 +133,7 @@ export function CharacterSelectionModal({ show, onHide, onSelect, filter = () =>
         </Row>
       </Card.Header>
       <Card.Body><Row>
-        {characterKeyList.map(characterKey => <CharacterBtn key={characterKey} characterKey={characterKey} onClick={() => { onHide(); onSelect(characterKey) }} />)}
+        {characterKeyList.map(characterKey => <CharacterBtn key={characterKey} characterKey={characterKey} onClick={() => { onHide(); onSelect?.(characterKey) }} />)}
       </Row></Card.Body>
     </Card>
   </Modal>
