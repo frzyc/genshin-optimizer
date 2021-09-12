@@ -17,9 +17,9 @@ function importGOOD1(data: IGOOD): ImportResult {
   const storage = new SandboxStorage()
   const { source, characters, artifacts, weapons } = data
 
-  characters.forEach((char) => storage.set(`char_${char.key}`, char))
-  artifacts.forEach((art, id) => storage.set(`artifact_${id}`, art))
-  weapons.forEach((weapon, id) => storage.set(`weapon_${id}`, weapon))
+  characters?.forEach((char) => storage.set(`char_${char.key}`, char))
+  artifacts?.forEach((art, id) => storage.set(`artifact_${id}`, art))
+  weapons?.forEach((weapon, id) => storage.set(`weapon_${id}`, weapon))
 
   if (source === GOSource) {
     const { dbVersion, artifactDisplay, characterDisplay, buildsDisplay } = data as unknown as IGO
@@ -65,9 +65,9 @@ type IGOOD = {
   format: "GOOD"
   source: string
   version: 1
-  characters: ICharacter[]
-  artifacts: IArtifact[]
-  weapons: IWeapon[]
+  characters?: ICharacter[]
+  artifacts?: IArtifact[]
+  weapons?: IWeapon[]
 }
 type IGO = {
   dbVersion: number
