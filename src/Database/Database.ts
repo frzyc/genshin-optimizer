@@ -22,10 +22,9 @@ export class ArtCharDatabase {
 
   /// Call this function when the underlying data changes without this instance's knowledge
   reloadStorage() {
-    const cause = "reload"
-    this.arts.removeAll(cause)
-    this.chars.removeAll(cause)
-    this.weapons.removeAll(cause)
+    this.arts.removeAll()
+    this.chars.removeAll()
+    this.weapons.removeAll()
     const storage = this.storage
     const { migrated } = migrate(storage)
 
@@ -42,7 +41,7 @@ export class ArtCharDatabase {
         // Use relations from artifact
         character.equippedArtifacts = Object.fromEntries(allSlotKeys.map(slot => [slot, ""])) as any
 
-        this.chars.set(flex.key, character, cause)
+        this.chars.set(flex.key, character)
         // Save migrated version back to db
         if (migrated) this.storage.set(`char_${flex.key}`, flex)
       }
@@ -65,7 +64,7 @@ export class ArtCharDatabase {
 
         const { artifact } = validateArtifact(flex, key)
 
-        this.arts.set(artifact.id, artifact, cause)
+        this.arts.set(artifact.id, artifact)
         // Save migrated version back to db
         if (migrated) this.storage.set(key, flex)
       }
@@ -87,28 +86,28 @@ export class ArtCharDatabase {
 
         const weapon = validateWeapon(flex, key)
 
-        this.weapons.set(key, weapon, cause)
+        this.weapons.set(key, weapon)
         // Save migrated version back to db
         if (migrated) this.storage.set(key, flex)
       }
     }
     for (const [charKey, char] of Object.entries(this.chars.data)) {
       if (!char.equippedWeapon)
-        this.removeChar(charKey, cause) // Remove characters w/o weapons
+        this.removeChar(charKey) // Remove characters w/o weapons
     }
   }
 
-  private saveArt(key: string, art: ICachedArtifact, cause: string) {
+  private saveArt(key: string, art: ICachedArtifact) {
     this.storage.set(key, removeArtifactCache(art))
-    this.arts.set(key, art, cause)
+    this.arts.set(key, art)
   }
-  private saveChar(key: CharacterKey, char: ICachedCharacter, cause: string) {
+  private saveChar(key: CharacterKey, char: ICachedCharacter) {
     this.storage.set(`char_${key}`, removeCharacterCache(char))
-    this.chars.set(key, char, cause)
+    this.chars.set(key, char)
   }
-  private saveWeapon(key: string, weapon: ICachedWeapon, cause: string) {
+  private saveWeapon(key: string, weapon: ICachedWeapon) {
     this.storage.set(key, removeWeaponCache(weapon))
-    this.weapons.set(key, weapon, cause)
+    this.weapons.set(key, weapon)
   }
   // TODO: Make theses `_` functions private once we migrate to use `followXXX`,
   // or de-underscored it if we decide that these are to stay
@@ -122,73 +121,73 @@ export class ArtCharDatabase {
   followArt(key: string, cb: Callback<ICachedArtifact>): (() => void) | undefined {
     if (this.arts.get(key) !== undefined)
       return this.arts.follow(key, cb)
-    cb(undefined, "n/a")
+    cb(undefined)
   }
   followWeapon(key: string, cb: Callback<ICachedWeapon>): (() => void) | undefined {
     if (this.weapons.get(key) !== undefined)
       return this.weapons.follow(key, cb)
-    cb(undefined, "n/a")
+    cb(undefined)
   }
 
-  followAnyChar(cb: (key: CharacterKey | {}, cause: string) => void): (() => void) | undefined { return this.chars.followAny(cb) }
-  followAnyArt(cb: (key: string | {}, cause: string) => void): (() => void) | undefined { return this.arts.followAny(cb) }
-  followAnyWeapon(cb: (key: string | {}, cause: string) => void): (() => void) | undefined { return this.weapons.followAny(cb) }
+  followAnyChar(cb: (key: CharacterKey | {}) => void): (() => void) | undefined { return this.chars.followAny(cb) }
+  followAnyArt(cb: (key: string | {}) => void): (() => void) | undefined { return this.arts.followAny(cb) }
+  followAnyWeapon(cb: (key: string | {}) => void): (() => void) | undefined { return this.weapons.followAny(cb) }
 
   /**
    * **Caution**: This does not update `equippedArtifacts`, use `equipArtifacts` instead
    * **Caution**: This does not update `equipedWeapon`, use `setWeaponLocation` instead
    */
-  updateChar(value: Partial<ICharacter>, cause: string = "update char"): void {
+  updateChar(value: Partial<ICharacter>): void {
     const key = value.key!
     const oldChar = this._getChar(key)
     const parsedChar = parseCharacter({ ...oldChar, ...(value as ICharacter) }, `char_${key}`)
     if (!parsedChar) return
 
     const newChar = validateCharacter({ ...oldChar, ...parsedChar })
-    this.saveChar(key, newChar, cause)
+    this.saveChar(key, newChar)
   }
 
   /**
    * **Caution** This does not update `location`, use `setLocation` instead
    */
-  updateArt(value: Partial<IArtifact>, id: string, cause: string = "update art") {
+  updateArt(value: Partial<IArtifact>, id: string) {
     const oldArt = this.arts.get(id)
     const parsedArt = parseArtifact({ ...oldArt, ...(value as IArtifact) })
     if (!parsedArt) return
 
     const newArt = validateArtifact({ ...oldArt, ...parsedArt }, id).artifact
-    this.saveArt(id, newArt, cause)
+    this.saveArt(id, newArt)
     if (newArt.location)
-      this.chars.set(newArt.location, deepClone(this.chars.get(newArt.location)!), cause)
+      this.chars.set(newArt.location, deepClone(this.chars.get(newArt.location)!))
   }
   /**
    * **Caution** This does not update `location` use `setWeaponLocation` instead
    */
-  updateWeapon(value: Partial<IWeapon>, id: string, cause: string = "update weapon") {
+  updateWeapon(value: Partial<IWeapon>, id: string) {
     const oldWeapon = this.weapons.get(id)
     const parsedWeapon = parseWeapon({ ...oldWeapon, ...(value as IWeapon) })
     if (!parsedWeapon) return
 
     const newWeapon = validateWeapon({ ...oldWeapon, ...parsedWeapon }, id)
-    this.saveWeapon(id, newWeapon, cause)
+    this.saveWeapon(id, newWeapon)
     if (newWeapon.location)
-      this.chars.set(newWeapon.location, deepClone(this.chars.get(newWeapon.location)!), cause)
+      this.chars.set(newWeapon.location, deepClone(this.chars.get(newWeapon.location)!))
   }
 
-  createArt(value: IArtifact, cause: string = "create"): string {
+  createArt(value: IArtifact): string {
     const id = generateRandomArtID(new Set(this.arts.keys))
     const newArt = validateArtifact(parseArtifact({ ...value, location: "" })!, id).artifact
-    this.saveArt(id, newArt, cause)
+    this.saveArt(id, newArt)
     return id
   }
-  createWeapon(value: IWeapon, cause: string = "create"): string {
+  createWeapon(value: IWeapon): string {
     const id = generateRandomWeaponID(new Set(this.weapons.keys))
     const newWeapon = validateWeapon(parseWeapon({ ...value, location: "" })!, id)
-    this.saveWeapon(id, newWeapon, cause)
+    this.saveWeapon(id, newWeapon)
     return id
   }
 
-  removeChar(key: CharacterKey, cause: string = "remove") {
+  removeChar(key: CharacterKey) {
     const char = this.chars.get(key)
     if (!char) return
 
@@ -196,39 +195,39 @@ export class ArtCharDatabase {
       const art = this.arts.get(artKey)
       if (art && art.location === key) {
         art.location = ""
-        this.saveArt(artKey, art, cause)
+        this.saveArt(artKey, art)
       }
     }
     const weapon = this.weapons.get(char.equippedWeapon)
     if (weapon && weapon.location === key) {
       weapon.location = ""
-      this.saveWeapon(char.equippedWeapon, weapon, cause)
+      this.saveWeapon(char.equippedWeapon, weapon)
     }
 
     this.storage.remove(`char_${key}`)
-    this.chars.remove(key, "remove")
+    this.chars.remove(key)
   }
-  removeArt(key: string, cause: string = "remove") {
+  removeArt(key: string) {
     const art = this.arts.get(key)
     if (!art) return
 
     const char = art.location && this.chars.get(art.location)
     if (char && char.equippedArtifacts[art.slotKey] === key) {
       char.equippedArtifacts[art.slotKey] = ""
-      this.saveChar(char.key, char, cause)
+      this.saveChar(char.key, char)
     }
     this.storage.remove(key)
-    this.arts.remove(key, "remove")
+    this.arts.remove(key)
   }
-  removeWeapon(key: string, cause: string = "remove") {
+  removeWeapon(key: string) {
     const weapon = this.weapons.get(key)
     if (!weapon || weapon.location)
       return // Can't delete equipped weapon here
 
     this.storage.remove(key)
-    this.weapons.remove(key, cause)
+    this.weapons.remove(key)
   }
-  setArtLocation(artKey: string, newCharKey: CharacterKey | "", cause: string = "relocate art") {
+  setArtLocation(artKey: string, newCharKey: CharacterKey | "") {
     const art1 = this.arts.get(artKey)
     if (!art1 || art1.location === newCharKey) return
 
@@ -240,15 +239,15 @@ export class ArtCharDatabase {
     // Currently art1 <-> char2 & art2 <-> char1
     // Swap to art1 <-> char1 & art2 <-> char2
 
-    this.saveArt(art1.id, { ...art1, location: char1?.key ?? "" }, cause)
+    this.saveArt(art1.id, { ...art1, location: char1?.key ?? "" })
     if (art2)
-      this.saveArt(art2.id, { ...art2, location: char2?.key ?? "" }, cause)
+      this.saveArt(art2.id, { ...art2, location: char2?.key ?? "" })
     if (char1)
-      this.saveChar(char1.key, { ...char1, equippedArtifacts: { ...char1.equippedArtifacts, [slotKey]: art1.id } }, cause)
+      this.saveChar(char1.key, { ...char1, equippedArtifacts: { ...char1.equippedArtifacts, [slotKey]: art1.id } })
     if (char2)
-      this.saveChar(char2.key, { ...char2, equippedArtifacts: { ...char2.equippedArtifacts, [slotKey]: art2?.id ?? "" } }, cause)
+      this.saveChar(char2.key, { ...char2, equippedArtifacts: { ...char2.equippedArtifacts, [slotKey]: art2?.id ?? "" } })
   }
-  setWeaponLocation(weaponId: string, newCharKey: CharacterKey, cause: string = "relocate weapon") {
+  setWeaponLocation(weaponId: string, newCharKey: CharacterKey) {
     const weapon1 = this.weapons.get(weaponId)
     const char1 = this.chars.get(newCharKey)
     if (!weapon1 || !char1 || weapon1.location === newCharKey) return
@@ -259,22 +258,22 @@ export class ArtCharDatabase {
     // Currently weapon1 <-> char2 & weapon2 <-> char1
     // Swap to weapon1 <-> char1 & weapon2 <-> char2
 
-    this.saveWeapon(weapon1.id, { ...weapon1, location: char1.key }, cause)
-    this.saveChar(char1.key, { ...char1, equippedWeapon: weapon1.id }, cause)
+    this.saveWeapon(weapon1.id, { ...weapon1, location: char1.key })
+    this.saveChar(char1.key, { ...char1, equippedWeapon: weapon1.id })
 
     if (weapon2)
-      this.saveWeapon(weapon2.id, { ...weapon2, location: char2?.key ?? "" }, cause)
+      this.saveWeapon(weapon2.id, { ...weapon2, location: char2?.key ?? "" })
     if (char2)
-      this.saveChar(char2.key, { ...char2, equippedWeapon: weapon2.id }, cause)
+      this.saveChar(char2.key, { ...char2, equippedWeapon: weapon2.id })
   }
-  equipArtifacts(charKey: CharacterKey, newArts: StrictDict<SlotKey, string>, cause: string = "equip art") {
+  equipArtifacts(charKey: CharacterKey, newArts: StrictDict<SlotKey, string>) {
     const char = this.chars.get(charKey)
     if (!char) return
 
     const oldArts = char.equippedArtifacts
     for (const [slot, newArt] of Object.entries(newArts)) {
-      if (newArt) this.setArtLocation(newArt, charKey, cause)
-      else if (oldArts[slot]) this.setArtLocation(oldArts[slot], "", cause)
+      if (newArt) this.setArtLocation(newArt, charKey)
+      else if (oldArts[slot]) this.setArtLocation(oldArts[slot], "")
     }
   }
 
@@ -339,7 +338,7 @@ function generateRandomWeaponID(keys: Set<string>): string {
   return candidate
 }
 
-type Callback<Arg> = (arg: Arg | undefined, cause: string) => void
+type Callback<Arg> = (arg: Arg | undefined) => void
 
 export const database = new ArtCharDatabase(dbStorage)
 export const DatabaseContext = createContext(database)

@@ -20,11 +20,11 @@ import CustomFormControl from '../Components/CustomFormControl';
 import InfoComponent from '../Components/InfoComponent';
 import { Stars } from '../Components/StarDisplay';
 import StatIcon from '../Components/StatIcon';
-import { ArtCharDatabase, DatabaseContext } from '../Database/Database';
-import { dbStorage, SandboxStorage } from '../Database/DBStorage';
+import { DatabaseContext } from '../Database/Database';
+import { dbStorage } from '../Database/DBStorage';
 import Formula from '../Formula';
 import Stat from '../Stat';
-import { ICachedArtifact, StatKey } from '../Types/artifact';
+import { StatKey } from '../Types/artifact';
 import { ArtifactsBySlot, Build, BuildSetting } from '../Types/Build';
 import { ICachedCharacter } from '../Types/character';
 import { allSlotKeys, ArtifactSetKey, CharacterKey, SetNum, SlotKey } from '../Types/consts';
@@ -36,8 +36,6 @@ import { crawlObject, deepClone } from '../Util/Util';
 import WeaponSheet from '../Weapon/WeaponSheet';
 import { calculateTotalBuildNumber } from './Build';
 import { initialBuildSettings } from './BuildSetting';
-import { IWeapon } from '../Types/weapon';
-import { setDBVersion } from '../Database/utils';
 const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
 
 //lazy load the character display
@@ -80,13 +78,13 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     return (propCharacterKey ?? characterKey) as CharacterKey | ""
   })
 
-  const [builds, setbuilds] = useState([] as ICalculatedStats[])
+  const [builds, setbuilds] = useState([] as any[])
   const [maxBuildsToShow, setmaxBuildsToShow] = useState(() => {
     const { maxBuildsToShow = maxBuildsToShowDefault } = dbStorage.get("BuildsDisplay.state") ?? {}
     return maxBuildsToShow
   })
 
-  const [modalBuild, setmodalBuild] = useState(null as ICalculatedStats | null) // the newBuild that is being displayed in the character modal
+  const [modalBuild, setmodalBuild] = useState(null) // the newBuild that is being displayed in the character modal
   const [showArtCondModal, setshowArtCondModal] = useState(false)
   const [showCharacterModal, setshowCharacterModal] = useState(false)
 
@@ -109,16 +107,6 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   const buildSettings = useMemo(() => character?.buildSettings ?? initialBuildSettings(), [character])
   if (buildSettings.setFilters.length === 0) buildSettings.setFilters = initialBuildSettings().setFilters//hotfix for an issue with db. can be removed later.
   const { setFilters, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, ascending, } = buildSettings
-
-  const modalBuildSandbox = useMemo(() =>
-    character && modalBuild &&
-    sandboxBuild(character,
-      database._getWeapon(character.equippedWeapon)!,
-      [
-        ...Object.values(modalBuild.equippedArtifacts!),
-        ...Object.values(character.equippedArtifacts),
-      ].filter(id => id).map(id => database._getArt(id)!)),
-    [character, modalBuild, database])
 
   const buildSettingsDispatch = useCallback((action) => {
     if (!character) return
@@ -157,12 +145,12 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
 
   //register changes in artifact database
   useEffect(() =>
-    database.followAnyArt((_, cause) => (cause !== "equip build") && setArtsDirty()),
+    database.followAnyArt(setArtsDirty),
     [setArtsDirty, database])
 
   //register changes in character in db
   useEffect(() =>
-    characterKey ? database.followChar(characterKey, (_, cause) => (cause !== "equip build") && setCharDirty()) : undefined,
+    characterKey ? database.followChar(characterKey, setCharDirty) : undefined,
     [characterKey, setCharDirty, database])
 
   //terminate worker when component unmounts
@@ -315,10 +303,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
         "You can compare the difference between equipped artifacts and generated builds.",
         "The more complex the formula, the longer the generation time.",]}
     ><InfoDisplay /></InfoComponent>
-    {modalBuildSandbox &&
-      <DatabaseContext.Provider value={modalBuildSandbox}>
-        <BuildModal {...{ build: modalBuild, showCharacterModal, characterKey, selectCharacter, setmodalBuild, setshowCharacterModal }} />
-      </DatabaseContext.Provider>}
+    <BuildModal {...{ build: modalBuild, showCharacterModal, characterKey, selectCharacter, setmodalBuild, setshowCharacterModal }} />
     {!!initialStats && <ArtConditionalModal {...{ showArtCondModal, setshowArtCondModal, initialStats, characterDispatch, artifactCondCount }} />}
     <Row className="mt-2 mb-2">
       <Col>
@@ -526,16 +511,6 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
       </Col>
     </Row>
   </Container >
-}
-
-function sandboxBuild(character: ICachedCharacter, weapon: IWeapon, artifacts: ICachedArtifact[]): ArtCharDatabase {
-  const storage = new SandboxStorage()
-  for (const artifact of artifacts)
-    storage.set(artifact.id, artifact)
-  storage.set(`char_${character.key}`, character)
-  storage.set(`weapon_1`, weapon)
-  setDBVersion(storage, 8)
-  return new ArtCharDatabase(storage)
 }
 
 function TargetSelectorDropdownItem({ target, buildSettingsDispatch, initialStats }) {
