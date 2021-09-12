@@ -13,7 +13,7 @@ export class DataManager<Key extends string | number, Value> {
   }
   follow(key: Key, callback: Callback<Value | undefined>) {
     const value = this.get(key)
-    callback(value, "follow")
+    callback(value)
     if (this.listeners[key]) this.listeners[key]!.push(callback)
     else this.listeners[key] = [callback]
     return () => {
@@ -25,27 +25,27 @@ export class DataManager<Key extends string | number, Value> {
   get keys() { return Object.keys(this.data) }
   get values() { return Object.values(this.data) }
   get(key: Key | "" | undefined): Value | undefined { return key ? this.data[key] : undefined }
-  set(key: Key, value: Value, cause: string) {
+  set(key: Key, value: Value) {
     this.data[key] = value
 
-    this.listeners[key]?.forEach(cb => cb(value, cause))
-    this.anyListeners.forEach(cb => cb(key, cause))
+    this.listeners[key]?.forEach(cb => cb(value))
+    this.anyListeners.forEach(cb => cb(key))
   }
-  remove(key: Key, cause: string) {
+  remove(key: Key) {
     delete this.data[key]
 
-    this.listeners[key]?.forEach(cb => cb(undefined, cause))
-    this.anyListeners.forEach(cb => cb(key, cause))
+    this.listeners[key]?.forEach(cb => cb(undefined))
+    this.anyListeners.forEach(cb => cb(key))
     delete this.listeners[key]
   }
-  removeAll(cause: string) {
+  removeAll() {
     this.data = {}
 
-    Object.values(this.listeners).forEach(listeners => listeners.forEach(listener => listener(undefined, cause)))
-    this.anyListeners.forEach(listener => listener(DataManager.allKeys, cause))
+    Object.values(this.listeners).forEach(listeners => listeners.forEach(listener => listener(undefined)))
+    this.anyListeners.forEach(listener => listener(DataManager.allKeys))
     this.listeners = {}
     this.anyListeners = []
   }
 }
 
-type Callback<Arg> = (arg: Arg, cause: string) => void
+type Callback<Arg> = (arg: Arg) => void
