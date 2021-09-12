@@ -11,7 +11,7 @@ import { ArtifactSheet } from '../Artifact/ArtifactSheet';
 import CustomFormControl from '../Components/CustomFormControl';
 import { ambiguousLevel, ascensionMaxLevel, milestoneLevels } from '../Data/CharacterData';
 import ElementalData from '../Data/ElementalData';
-import { DatabaseContext, database as localDatabase } from '../Database/Database';
+import { DatabaseContext } from '../Database/Database';
 import { ICachedCharacter } from '../Types/character';
 import { CharacterKey } from '../Types/consts';
 import { ICalculatedStats } from '../Types/stats';
@@ -48,7 +48,7 @@ type CharacterDisplayCardProps = {
   onClose?: (any) => void,
   tabName?: string
 }
-export default function CharacterDisplayCard({ characterKey, setCharacterKey = () => { }, footer, newBuild: propNewBuild, editable = false, onClose, tabName }: CharacterDisplayCardProps) {
+export default function CharacterDisplayCard({ characterKey, setCharacterKey, footer, newBuild: propNewBuild, editable = false, onClose, tabName }: CharacterDisplayCardProps) {
   const database = useContext(DatabaseContext)
   const [compareAgainstEquipped, setcompareAgainstEquipped] = useState(false)
   // Use databaseToken anywhere `database._get*` is used
@@ -117,10 +117,10 @@ export default function CharacterDisplayCard({ characterKey, setCharacterKey = (
   return (<Card bg="darkcontent" text={"lightfont" as any} >
     <Card.Header>
       <Row>
-        {database === localDatabase && <Col xs={"auto"} className="mr-auto">
+        <Col xs={"auto"} className="mr-auto">
           {/* character selecter/display */}
           <CharSelectDropdown characterSheet={characterSheet} character={character} weaponSheet={weaponSheet} editable={editable} characterDispatch={characterDispatch} setCharacterKey={setCharacterKey} />
-        </Col>}
+        </Col>
         {Boolean(mainStatAssumptionLevel) && <Col xs="auto"><Alert className="mb-0 py-1 h-100" variant="orange" ><b>Assume Main Stats are Level {mainStatAssumptionLevel}</b></Alert></Col>}
         {/* Compare against new build toggle */}
         {newBuild ? <Col xs="auto">
@@ -189,7 +189,7 @@ type CharSelectDropdownProps = {
   character: ICachedCharacter
   editable: boolean
   characterDispatch: (any: characterReducerAction) => void
-  setCharacterKey: (any: CharacterKey) => void
+  setCharacterKey?: (any: CharacterKey) => void
 }
 function CharSelectDropdown({ characterSheet, weaponSheet, character, character: { elementKey = "anemo", level = 1, ascension = 0 }, editable, characterDispatch, setCharacterKey }: CharSelectDropdownProps) {
   const HeaderIconDisplay = characterSheet ? <span >
@@ -226,10 +226,8 @@ function CharSelectDropdown({ characterSheet, weaponSheet, character, character:
     <InputGroup.Append>
       <CustomFormControl placeholder={undefined} className="h-100" onChange={setLevel} value={level} min={1} max={90} disabled={!characterSheet} />
     </InputGroup.Append>
-    <InputGroup.Append>
-      <Button disabled={!ambiguousLevel(level) || !characterSheet} onClick={setAscension}><strong>/ {ascensionMaxLevel[ascension]}</strong></Button>
-    </InputGroup.Append>
     <ButtonGroup as={InputGroup.Append}>
+      <Button disabled={!ambiguousLevel(level) || !characterSheet} onClick={setAscension}><strong>/ {ascensionMaxLevel[ascension]}</strong></Button>
       <Dropdown as={ButtonGroup} >
         <Dropdown.Toggle as={Button} disabled={!characterSheet}>Select Level</Dropdown.Toggle>
         <Dropdown.Menu>

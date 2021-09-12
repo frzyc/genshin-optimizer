@@ -66,8 +66,8 @@ const formula: IFormulaSheet = {
   plunging: Object.fromEntries(Object.entries(data.plunging).map(([name, arr]) =>
     [name, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "plunging")])),
   skill: {
-    skillDMG: stats => basicDMGFormula(data.skill.skillDMG[stats.tlvl.skill], stats, "skill"),
-    coorDMG: stats => basicDMGFormula(data.skill.coorDMG[stats.tlvl.skill], stats, "skill"),
+    skillDMG: stats => skillDMG(data.skill.skillDMG[stats.tlvl.skill], stats),
+    coorDMG: stats => skillDMG(data.skill.coorDMG[stats.tlvl.skill], stats),
     eleBurConv: stats => {
       const val = data.skill.eleBurConv[stats.tlvl.skill]
       const enerCost = data.burst.enerCost
@@ -99,13 +99,11 @@ const formula: IFormulaSheet = {
   }
 } as const
 
+function enemyLevelMultiC2(s) {
+  return (100 + s.characterLevel) / (100 + s.characterLevel + (100 + s.enemyLevel) * (Math.max((1 - s.enemyDEFRed_ / 100) * 0.4, 0.1)))
+}
 function burstDMG(percent: number, stats: BasicStats, intial = false): FormulaItem {
-  let resolveStack = 0
-  const value = stats.conditionalValues?.character?.RaidenShogun?.sheet?.talent?.res as IConditionalValue | undefined
-  if (value) {
-    const [num, condEleKey] = value
-    if (num && condEleKey) resolveStack = parseInt(condEleKey)
-  }
+  const resolveStack = getResolve(stats)
   const resolve = resolveStack ? ((intial ? data.burst.resolve[stats.tlvl.burst] : data.burst.resolve_[stats.tlvl.burst]) * resolveStack) / 100 : 0
   const multi = percent / 100 + resolve
 
@@ -114,9 +112,25 @@ function burstDMG(percent: number, stats: BasicStats, intial = false): FormulaIt
     return [s => multi * s[statKey], [statKey]]
   }
   const hitModeMultiKey = stats.hitMode === "avgHit" ? "burst_avgHit_base_multi" : stats.hitMode === "critHit" ? "critHit_base_multi" : ""
-  return [s => {
-    const enemyLevelMulti = (100 + s.characterLevel) / ((100 + s.characterLevel) + (100 + s.enemyLevel) * (1 - Math.min(s.enemyDEFRed_ + 60, 90) / 100))
-    return multi * s.finalATK * (hitModeMultiKey ? s[hitModeMultiKey] : 1) * s.electro_burst_hit_base_multi * enemyLevelMulti * s.electro_enemyRes_multi
-  }, ["finalATK", ...(hitModeMultiKey ? [hitModeMultiKey] : []), "electro_burst_hit_base_multi", "characterLevel", "enemyLevel", "enemyDEFRed_", "electro_enemyRes_multi"]]
+  return [s =>
+    multi * s.finalATK * (hitModeMultiKey ? s[hitModeMultiKey] : 1) * s.electro_burst_hit_base_multi * enemyLevelMultiC2(s) * s.electro_enemyRes_multi
+    , ["finalATK", ...(hitModeMultiKey ? [hitModeMultiKey] : []), "electro_burst_hit_base_multi", "characterLevel", "enemyLevel", "enemyDEFRed_", "electro_enemyRes_multi"]]
+}
+function skillDMG(percent: number, stats: BasicStats): FormulaItem {
+  const multi = percent / 100
+  if (stats.constellation < 2)
+    return basicDMGFormula(percent, stats, "skill")
+
+  const hitModeMultiKey = stats.hitMode === "avgHit" ? "skill_avgHit_base_multi" : stats.hitMode === "critHit" ? "critHit_base_multi" : ""
+  return [s =>
+    multi * s.finalATK * (hitModeMultiKey ? s[hitModeMultiKey] : 1) * s.electro_skill_hit_base_multi * enemyLevelMultiC2(s) * s.electro_enemyRes_multi
+    , ["finalATK", ...(hitModeMultiKey ? [hitModeMultiKey] : []), "electro_skill_hit_base_multi", "characterLevel", "enemyLevel", "enemyDEFRed_", "electro_enemyRes_multi"]]
+}
+export function getResolve(stats) {
+  const value = stats.conditionalValues?.character?.RaidenShogun?.sheet?.talent?.res as IConditionalValue | undefined
+  if (!value) return 0
+  const [num, condEleKey] = value
+  if (num && condEleKey) return parseInt(condEleKey)
+  return 0
 }
 export default formula

@@ -13,7 +13,7 @@ import passive1 from './Talent_Enlightened_One.png'
 import passive2 from './Talent_All-Preserver.png'
 import passive3 from './Talent_Wishes_Unnumbered.png'
 import Stat from '../../../Stat'
-import formula, { data, energyCosts, resolveStacks } from './data'
+import formula, { data, energyCosts, getResolve, resolveStacks } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { IConditionals, IConditionalValue } from '../../../Types/IConditional'
@@ -63,12 +63,7 @@ const conditionals: IConditionals = {
   }
 }
 function burstDMGFormulaText(percent, stats, intial = false) {
-  let resolveStack = 0
-  const value = stats.conditionalValues?.character?.RaidenShogun?.sheet?.talent?.res as IConditionalValue | undefined
-  if (value) {
-    const [num, condEleKey] = value
-    if (num && condEleKey) resolveStack = parseInt(condEleKey)
-  }
+  const resolveStack = getResolve(stats)
 
   const resolve = (intial ? data.burst.resolve[stats.tlvl.burst] : data.burst.resolve_[stats.tlvl.burst])
   let ratioText = <span>{percent}%</span>
@@ -77,9 +72,19 @@ function burstDMGFormulaText(percent, stats, intial = false) {
   if (stats.constellation < 2)
     return <span>{ratioText} {Stat.printStat(getTalentStatKey("burst", stats), stats)} </span>
 
-  const enemyLevelMulti = <span>( 100 + {Stat.printStat("characterLevel", stats)} ) / ( ( 100 + {Stat.printStat("characterLevel", stats)} ) + ( 100 + {Stat.printStat("enemyLevel", stats)} ) * ( 100% - Min( {Stat.printStat("enemyDEFRed_", stats)} + 60% , 90% ) ) )</span>
   const hitModeMultiKey = stats.hitMode === "avgHit" ? "burst_avgHit_base_multi" : stats.hitMode === "critHit" ? "critHit_base_multi" : ""
-  return <span>{ratioText} {Stat.printStat("finalATK", stats)} * {(hitModeMultiKey ? <span>{Stat.printStat(hitModeMultiKey, stats)} * </span> : null)}{Stat.printStat("electro_burst_hit_base_multi", stats)} * {enemyLevelMulti} * {Stat.printStat("electro_enemyRes_multi", stats)}</span>
+  return <span>{ratioText} {Stat.printStat("finalATK", stats)} * {(hitModeMultiKey ? <span>{Stat.printStat(hitModeMultiKey, stats)} * </span> : null)}{Stat.printStat("electro_burst_hit_base_multi", stats)} * {enemyLevelMultiC2(stats)} * {Stat.printStat("electro_enemyRes_multi", stats)}</span>
+}
+
+function skillDMGFormulaText(percent, stats) {
+  if (stats.constellation < 2)
+    return basicDMGFormulaText(percent, stats, "skill")
+
+  const hitModeMultiKey = stats.hitMode === "avgHit" ? "skill_avgHit_base_multi" : stats.hitMode === "critHit" ? "critHit_base_multi" : ""
+  return <span>{percent}% {Stat.printStat("finalATK", stats)} * {(hitModeMultiKey ? <span>{Stat.printStat(hitModeMultiKey, stats)} * </span> : null)}{Stat.printStat("electro_skill_hit_base_multi", stats)} * {enemyLevelMultiC2(stats)} * {Stat.printStat("electro_enemyRes_multi", stats)}</span>
+}
+function enemyLevelMultiC2(stats) {
+  return <span>( ( 100 + {Stat.printStat("characterLevel", stats)} ) / ( 100 + {Stat.printStat("characterLevel", stats)} + ( 100 + {Stat.printStat("enemyLevel", stats)} ) * Max( ( 100% - {Stat.printStat("enemyDEFRed_", stats)} ) * ( 100% - 60% ) , 10% ) ) )</span>
 }
 const char: ICharacterSheet = {
   name: tr("name"),
@@ -123,12 +128,12 @@ const char: ICharacterSheet = {
           text: tr("skill.description"),
           fields: [{
             text: tr("skill.skillParams.0"),
-            formulaText: stats => basicDMGFormulaText(data.skill.skillDMG[stats.tlvl.burst], stats, "skill"),
+            formulaText: stats => skillDMGFormulaText(data.skill.skillDMG[stats.tlvl.burst], stats),
             formula: formula.skill.skillDMG,
             variant: stats => getTalentStatKeyVariant("skill", stats),
           }, {
             text: tr("skill.skillParams.1"),
-            formulaText: stats => basicDMGFormulaText(data.skill.coorDMG[stats.tlvl.burst], stats, "skill"),
+            formulaText: stats => skillDMGFormulaText(data.skill.coorDMG[stats.tlvl.burst], stats),
             formula: formula.skill.coorDMG,
             variant: stats => getTalentStatKeyVariant("skill", stats),
           }, {

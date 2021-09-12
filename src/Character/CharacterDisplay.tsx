@@ -214,13 +214,13 @@ export default function CharacterDisplay(props) {
 function CharDisplayFooter({ onClose, characterKey }) {
   return <Row>
     <Col xs="auto">
-      <Button variant="info" as={Link} to={{ pathname: "/flex", characterKey } as any}><FontAwesomeIcon icon={faLink} /> Share Character</Button>
-    </Col>
-    <Col>
-      <Button as={Link} to={{
+    <Button as={Link} to={{
         pathname: "/build",
         characterKey
       } as any}><FontAwesomeIcon icon={faCalculator} /> Generate Builds</Button>
+    </Col>
+    <Col>
+    <Button variant="info" as={Link} to={{ pathname: "/flex", characterKey } as any}><FontAwesomeIcon icon={faLink} /> Share Character</Button>
     </Col>
     <Col xs="auto">
       <Button variant="danger" onClick={onClose}>Close</Button>
