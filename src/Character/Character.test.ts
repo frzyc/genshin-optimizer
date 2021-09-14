@@ -6,6 +6,7 @@ import { dbStorage } from "../Database/DBStorage"
 import { ICachedArtifact } from "../Types/artifact"
 import { allSlotKeys, SlotKey } from "../Types/consts"
 import { mergeStats } from "../Util/StatUtil"
+import { objectFromKeyMap } from "../Util/Util"
 import WeaponSheet from "../Weapon/WeaponSheet"
 import { initialWeapon } from "../Weapon/WeaponUtil"
 import Character from "./Character"
@@ -87,7 +88,7 @@ describe('Equipment functions', () => {
       goblet: d.id,
       circlet: e.id,
     }
-    empty = Object.fromEntries(allSlotKeys.map(sk => [sk, ""])) as StrictDict<SlotKey, "">
+    empty = objectFromKeyMap(allSlotKeys, () => "")
 
     Noelle = {
       key: "Noelle",

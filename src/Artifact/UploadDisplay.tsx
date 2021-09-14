@@ -7,7 +7,7 @@ import { createScheduler, createWorker, RecognizeResult, Scheduler } from 'tesse
 import scan_art_main from "./imgs/scan_art_main.png";
 import Snippet from "./imgs/snippet.png";
 import Stat from '../Stat';
-import { clamp, hammingDistance } from '../Util/Util';
+import { clamp, hammingDistance, objectFromKeyMap } from '../Util/Util';
 import Artifact from './Artifact';
 import { allMainStatKeys, allSubstats, ICachedArtifact, IArtifact, ISubstat, MainStatKey, SubstatKey } from '../Types/artifact';
 import { ArtifactRarity, allArtifactRarities, allArtifactSets, allSlotKeys, ArtifactSetKey, Rarity, SlotKey } from '../Types/consts';
@@ -293,7 +293,7 @@ export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactShee
   }]
 
   // Rate each rarity
-  const rarityRates: Dict<ArtifactRarity, number> = Object.fromEntries(allArtifactRarities.map(rarity => {
+  const rarityRates = objectFromKeyMap(allArtifactRarities, rarity => {
     let score = 0
     if (textSetKeys.size) {
       const count = [...textSetKeys].reduce((count, set) => count + (sheets[set].rarity.includes(rarity) ? 1 : 0), 0)
@@ -304,8 +304,8 @@ export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactShee
         count + (Artifact.getSubstatRolls(substat.key as SubstatKey, substat.value, rarity).length ? 1 : 0), 0)
       score += count / substats.length * 2
     }
-    return [rarity, score]
-  }))
+    return score
+  })
 
   // Test all *probable* combinations
   for (const slotKey of allSlotKeys) {

@@ -85,7 +85,7 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: Artifac
   const { dupId, isDup } = useMemo(() => {
     if (artifact === undefined || artifact.id) return { isDup: false }
     const { duplicated, upgraded } = database.findDuplicates(artifact)
-    return { dupId: duplicated[0] ?? upgraded[0], isDup: duplicated.length !== 0 }
+    return { dupId: (duplicated[0] ?? upgraded[0])?.id, isDup: duplicated.length !== 0 }
   }, [artifact, database])
   const { rarity = 5, level = 0, slotKey = "flower" } = artifact ?? {}
   const { currentEfficiency = 0, maxEfficiency = 0 } = artifact ? Artifact.getArtifactEfficiency(artifact, allSubstatFilter) : {}

@@ -1,13 +1,13 @@
-import { faCheckSquare, faClipboard, faFileDownload, faFileUpload, faQuestionCircle, faSquare, faTrashAlt } from '@fortawesome/free-solid-svg-icons'
+import { faClipboard, faFileDownload, faFileUpload, faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useContext, useMemo, useState } from "react"
-import { Alert, Badge, Button, Card, Col, Container, Dropdown, Form, OverlayTrigger, Popover, Row } from "react-bootstrap"
+import { Alert, Badge, Button, Card, Col, Container, Dropdown, Form, Row } from "react-bootstrap"
 import ReactGA from 'react-ga'
 import { Trans, useTranslation } from "react-i18next"
 import { ArtCharDatabase, DatabaseContext } from "../Database/Database"
-import { DBStorage, dbStorage } from '../Database/DBStorage'
-import { importGO } from '../Database/exim/go'
-import { exportGOOD, importGOOD } from '../Database/exim/good'
+import { dbStorage } from '../Database/DBStorage'
+import { importGO, ImportResult as GOImportResult } from '../Database/exim/go'
+import { ImportResultCounter, exportGOOD, importGOOD, ImportResult as GOODImportResult } from '../Database/exim/good'
 import { importMona } from '../Database/exim/mona'
 import { languageCodeList } from "../i18n"
 import { useForceUpdate } from "../Util/ReactUtil"
@@ -91,14 +91,15 @@ function deleteDatabase(t, database: ArtCharDatabase) {
 }
 function copyToClipboard() {
   navigator.clipboard.writeText(JSON.stringify(exportGOOD(dbStorage)))
-  .then(() => alert("Copied database to clipboard."))
-  .catch(console.error)
+    .then(() => alert("Copied database to clipboard."))
+    .catch(console.error)
 }
 function DownloadCard({ forceUpdate }) {
   const database = useContext(DatabaseContext)
   const { t } = useTranslation(["settings"]);
   const numChar = database._getCharKeys().length
   const numArt = database._getArts().length
+  const numWeapon = database._getWeapons().length
   const downloadValid = Boolean(numChar || numArt)
   const deleteDB = () => {
     deleteDatabase(t, database);
@@ -108,8 +109,9 @@ function DownloadCard({ forceUpdate }) {
     <Card.Header><Trans t={t} i18nKey="downloadCard.databaseDownload" /></Card.Header>
     <Card.Body>
       <Row className="mb-2">
-        <Col xs={12} md={6}><Trans t={t} i18nKey="count.chars" /> {numChar}</Col>
-        <Col xs={12} md={6}><Trans t={t} i18nKey="count.arts" /> {numArt}</Col>
+        <Col xs={6} md={4}><Trans t={t} i18nKey="count.chars" /> {numChar}</Col>
+        <Col xs={6} md={4}><Trans t={t} i18nKey="count.arts" /> {numArt}</Col>
+        <Col xs={6} md={4}><Trans t={t} i18nKey="count.weapons" /> {numWeapon}</Col>
       </Row>
       <small><Trans t={t} i18nKey="downloadCard.databaseDisclaimer" /></small>
     </Card.Body>
@@ -132,7 +134,7 @@ function UploadCard({ forceUpdate }) {
     let parsed: any
     try {
       parsed = JSON.parse(data)
-      if (!parsed) {
+      if (typeof parsed !== "object") {
         setErrorMsg("uploadCard.error.jsonParse")
         return
       }
@@ -148,7 +150,7 @@ function UploadCard({ forceUpdate }) {
         setErrorMsg("uploadCard.error.monaInvalid")
         return
       }
-      return { type: "Mona", ...imported }
+      return imported
     } else if ("version" in parsed && "characterDatabase" in parsed && "artifactDatabase" in parsed) {
       // Parse as GO format
       const imported = importGO(parsed)
@@ -156,15 +158,15 @@ function UploadCard({ forceUpdate }) {
         setErrorMsg("uploadCard.error.goInvalid")
         return
       }
-      return { type: "GO", ...imported }
+      return imported
     } else if (parsed.format === "GOOD") {
       // Parse as GOOD format
-      const imported = importGOOD(parsed)
+      const imported = importGOOD(parsed, database)
       if (!imported) {
         setErrorMsg("uploadCard.error.goInvalid")
         return
       }
-      return { type: "GOOD", ...imported }
+      return imported
     }
     setErrorMsg("uploadCard.error.unknown")
     return
@@ -205,32 +207,46 @@ function UploadInfo(data: UploadData | undefined) {
   switch (data?.type) {
     case "GO": return <GOUploadInfo data={data} />
     case "GOOD": return <GOODUploadInfo data={data} />
-    case "Mona": return <MonaUploadInfo data={data} />
   }
 }
 function UploadAction(data: UploadData | undefined, reset: () => void) {
   switch (data?.type) {
-    case "GO": return <GOUploadAction data={data} reset={reset} />
+    case "GO":
     case "GOOD": return <GOUploadAction data={data} reset={reset} />
-    case "Mona": return <MonaUploadAction data={data} reset={reset} />
   }
 }
 
-function GOODUploadInfo({ data: { source, charCount, artCount, weaponCount } }: { data: GOODUploadData }) {
+function GOODUploadInfo({ data: { source, artifacts, characters, weapons }, data }: { data: GOODImportResult }) {
   const { t } = useTranslation("settings")
   return <Card bg="darkcontent" text={"lightfont" as any}>
-    <Card.Header><Trans t={t} i18nKey="uploadCard.goodUpload.title" /> </Card.Header>
-    <Card.Body>
-      {!!source && <p><Trans t={t} i18nKey="uploadCard.dbSource" /> <strong>{source}</strong></p>}
-      <Row>
-        <Col xs={12} md={4}><Trans t={t} i18nKey="count.chars" /> {charCount}</Col>
-        <Col xs={12} md={4}><Trans t={t} i18nKey="count.arts" /> {artCount}</Col>
-        <Col xs={12} md={4}><Trans t={t} i18nKey="count.weapons" /> {weaponCount}</Col>
-      </Row>
+    <Card.Header><Trans t={t} i18nKey="uploadCard.dbSource" /> <strong>{source}</strong></Card.Header>
+    <Card.Body className="mb-n2">
+      <MergeResult result={artifacts} type="arts" />
+      <MergeResult result={weapons} type="weapons" />
+      <MergeResult result={characters} type="chars" />
     </Card.Body>
   </Card>
 }
-function GOUploadInfo({ data: { charCount, artCount } }: { data: GOUploadData }) {
+function MergeResult({ result, type }: { result?: ImportResultCounter, type: string }) {
+  const { t } = useTranslation("settings")
+  if (!result) return null
+  return <Card bg="lightcontent" text={"lightfont" as any} className="mb-2">
+    <Card.Header><Trans t={t} i18nKey={`count.${type}`} /> {result.total ?? 0}</Card.Header>
+    <Card.Body className="mb-n2">
+      <Row xs={12} md={4} className="mb-2">
+        <Col><Trans t={t} i18nKey="count.new" /> <strong>{result.new}</strong> / {result.total}</Col>
+        <Col><Trans t={t} i18nKey="count.updated" /> <strong>{result.updated}</strong> / {result.total}</Col>
+        <Col><Trans t={t} i18nKey="count.unchanged" /> <strong>{result.unchanged}</strong> / {result.total}</Col>
+        <Col className="text-warning"><Trans t={t} i18nKey="count.removed" /> <strong>{result.removed}</strong></Col>
+      </Row>
+      {!!result.invalid?.length && <div>
+        <h6 className="text-danger"><Trans t={t} i18nKey="count.invalid" /> <strong>{result.invalid.length}</strong> / {result.total}</h6>
+        <textarea className="w-100 text-monospace mb-2" value={JSON.stringify(result.invalid, undefined, 2)} disabled style={{ minHeight: "10em" }} />
+      </div>}
+    </Card.Body>
+  </Card>
+}
+function GOUploadInfo({ data: { charCount, artCount } }: { data: GOImportResult }) {
   const { t } = useTranslation("settings")
   return <Card bg="darkcontent" text={"lightfont" as any}>
     <Card.Header><Trans t={t} i18nKey="uploadCard.goUpload.title" /></Card.Header>
@@ -241,29 +257,14 @@ function GOUploadInfo({ data: { charCount, artCount } }: { data: GOUploadData })
     </Row></Card.Body>
   </Card>
 }
-function MonaUploadInfo({ data: { totalCount, newCount, upgradeCount, dupCount, oldIds, invalidCount, } }: { data: MonaUploadData }) {
-  const { t } = useTranslation("settings")
-  return <Card bg="darkcontent" text={"lightfont" as any}>
-    <Card.Header><Trans t={t} i18nKey="uploadCard.monaUpload.title" /></Card.Header>
-    <Card.Body>
-      <Row>
-        <Col xs={12} md={6}><Trans t={t} i18nKey="count.artsDup" /> <strong>{dupCount} / {totalCount}</strong></Col>
-        <Col xs={12} md={6}><Trans t={t} i18nKey="count.artsNew" /> <strong>{newCount} / {totalCount}</strong></Col>
-        <Col xs={12} md={6}><Trans t={t} i18nKey="count.artsUpg" /> <strong>{upgradeCount} / {totalCount}</strong></Col>
-        {!!invalidCount && <Col xs={12} md={6} className="text-danger"><Trans t={t} i18nKey="count.artsInvalid" /> <strong>{invalidCount}</strong></Col>}
-        <Col xs={12} md={6}><Trans t={t} i18nKey="count.artsFod" /> <strong>{oldIds.size}</strong></Col>
-      </Row>
-    </Card.Body>
-  </Card>
-}
 
-function GOUploadAction({ data: { storage, charCount, artCount }, reset }: { data: Omit<GOUploadData, "type">, reset: () => void }) {
+function GOUploadAction({ data: { storage }, data, reset }: { data: GOImportResult | GOODImportResult, reset: () => void }) {
   const database = useContext(DatabaseContext)
   const { t } = useTranslation("settings")
-  const dataValid = charCount || artCount
+  const dataValid = data.type === "GO" ? data.charCount || data.artCount : (data.characters?.total || data.artifacts?.total || data.weapons?.total)
   const replaceDB = () => {
     if (!window.confirm(t`uploadCard.goUpload.deleteDatabasePrompt`)) return
-    dbStorage.clear()
+    dbStorage.removeForKeys(k => k.startsWith("artifact_") || k.startsWith("char_") || k.startsWith("weapon_"))
     dbStorage.copyFrom(storage)
     database.reloadStorage()
     reset()
@@ -273,64 +274,5 @@ function GOUploadAction({ data: { storage, charCount, artCount }, reset }: { dat
     <Button variant={dataValid ? "success" : "danger"} disabled={!dataValid} onClick={replaceDB}><FontAwesomeIcon icon={faFileUpload} /> <Trans t={t} i18nKey="settings:uploadCard.replaceDatabase" /></Button>
   </Card.Footer>
 }
-function MonaUploadAction({ data: { storage, oldIds, }, reset }: { data: MonaUploadData, reset: () => void }) {
-  const database = useContext(DatabaseContext)
-  const { t } = useTranslation("settings")
-  const [deleteExistingArtifacts, setDeleteExistingArtifacts] = useState(false);
 
-  const importArtifacts = () => {
-    if (deleteExistingArtifacts && !window.confirm(t`uploadCard.monaUpload.deleteExistingPrompt`)) {
-      setDeleteExistingArtifacts(false);
-      return;
-    }
-    if (deleteExistingArtifacts) {
-      // Since it wasn't decided whether to delete old entries when we create
-      // the Storage, we defer the deletion to here. This way, we can also
-      // share the Storage for both `delete` and `keep` options.
-      for (const id of oldIds)
-        storage.remove(id)
-    }
-
-    dbStorage.clear()
-    dbStorage.copyFrom(storage)
-    database.reloadStorage()
-    reset()
-  }
-
-  return <Card.Footer>
-    <Button variant={"success"} onClick={() => importArtifacts()}><FontAwesomeIcon icon={faFileUpload} /> <Trans t={t} i18nKey="uploadCard.monaUpload.import" /></Button>
-    <Button className="float-right text-right" variant={deleteExistingArtifacts ? "danger" : "primary"} onClick={() => setDeleteExistingArtifacts(value => !value)}>
-      <span><FontAwesomeIcon icon={deleteExistingArtifacts ? faCheckSquare : faSquare} className="fa-fw" /> <Trans t={t} i18nKey="uploadCard.monaUpload.deleteExistingButton" /></span>
-      <OverlayTrigger
-        overlay={<Popover id="deleting-explanation">
-          <Popover.Content><Trans t={t} i18nKey="uploadCard.monaUpload.deleteExistingExplanation" /></Popover.Content>
-        </Popover>} >
-        <FontAwesomeIcon icon={faQuestionCircle} className="ml-2" style={{ cursor: "help" }} />
-      </OverlayTrigger>
-    </Button>
-  </Card.Footer>
-}
-
-type GOODUploadData = {
-  type: "GOOD", storage: DBStorage,
-  source: string,
-  charCount: number,
-  artCount: number,
-  weaponCount: number,
-  migrated: boolean
-}
-type GOUploadData = {
-  type: "GO", storage: DBStorage,
-  charCount: number,
-  artCount: number,
-}
-type MonaUploadData = {
-  type: "Mona", storage: DBStorage,
-  totalCount: number,
-  newCount: number,
-  upgradeCount: number,
-  dupCount: number,
-  oldIds: Set<string>,
-  invalidCount: number,
-}
-type UploadData = GOUploadData | GOODUploadData | MonaUploadData
+type UploadData = GOImportResult | GOODImportResult

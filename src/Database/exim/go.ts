@@ -5,7 +5,7 @@ import { ArtCharDatabase } from "../Database";
 import { DBStorage, SandboxStorage } from "../DBStorage";
 import { setDBVersion } from "../utils";
 
-export function importGO(data: any): { storage: DBStorage, charCount: number, artCount: number } | undefined {
+export function importGO(data: any): ImportResult | undefined {
   const storage = new SandboxStorage()
   const { version, characterDatabase, artifactDatabase, artifactDisplay, characterDisplay, buildsDisplay } = data as Partial<DatabaseObj>
   if (!version || !characterDatabase || !artifactDatabase)
@@ -21,7 +21,7 @@ export function importGO(data: any): { storage: DBStorage, charCount: number, ar
 
   const database = new ArtCharDatabase(storage) // validate storage entries
   //TODO: figure out the # of dups/upgrades/new/foddered, not just total char/art count below.
-  return { storage, charCount: database.chars.keys.length, artCount: database.arts.keys.length }
+  return { type: "GO", storage, charCount: database.chars.keys.length, artCount: database.arts.keys.length }
 }
 
 type DatabaseObj = {
@@ -32,3 +32,4 @@ type DatabaseObj = {
   characterDisplay: any
   buildsDisplay: any
 }
+export type ImportResult = { type: "GO", storage: DBStorage, charCount: number, artCount: number }

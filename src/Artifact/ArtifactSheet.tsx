@@ -5,13 +5,12 @@ import { allArtifactSets, allSlotKeys, ArtifactRarity, ArtifactSetKey, SetNum, S
 import { IConditionals } from "../Types/IConditional";
 import { BonusStats, ICalculatedStats } from "../Types/stats";
 import { mergeStats } from "../Util/StatUtil";
-import { deepClone, evalIfFunc } from "../Util/Util";
+import { deepClone, evalIfFunc, objectFromKeyMap } from "../Util/Util";
 
 export const artifactImport = import("../Data/Artifacts").then(imp =>
   Object.fromEntries(Object.entries(imp.default).map(([set, value]) =>
     [set, new ArtifactSheet(value, set)])) as StrictDict<ArtifactSetKey, ArtifactSheet>)
-const promiseSheets = Object.fromEntries(allArtifactSets.map(set =>
-  [set, artifactImport.then(sheets => sheets[set])])) as StrictDict<ArtifactSetKey, Promise<ArtifactSheet>>
+const promiseSheets = objectFromKeyMap(allArtifactSets, set => artifactImport.then(sheets => sheets[set]))
 
 const tr = (setKey: string, strKey: string) => <Translate ns={`artifact_${setKey}_gen`} key18={strKey} />
 

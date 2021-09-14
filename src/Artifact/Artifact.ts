@@ -1,5 +1,5 @@
 import { ArtifactSlotsData, ArtifactStarsData } from '../Data/ArtifactData';
-import { clampPercent, deepClone, evalIfFunc } from '../Util/Util';
+import { clampPercent, deepClone, evalIfFunc, objectFromKeyMap } from '../Util/Util';
 import { allSubstats, ICachedArtifact, MainStatKey, SubstatKey } from '../Types/artifact';
 import { SlotKey, Rarity, ArtifactSetKey, allSlotKeys, SetNum, allRarities, ArtifactRarity } from '../Types/consts';
 import { BonusStats, ICalculatedStats } from '../Types/stats';
@@ -45,9 +45,8 @@ export default class Artifact {
     return result
   }
 
-  static splitArtifactsBySlot = (databaseObj: ICachedArtifact[]): Dict<SlotKey, ICachedArtifact[]> =>
-    Object.fromEntries(allSlotKeys.map(slotKey =>
-      [slotKey, databaseObj.filter(art => art.slotKey === slotKey)]))
+  static splitArtifactsBySlot = (databaseObj: ICachedArtifact[]) =>
+    objectFromKeyMap(allSlotKeys, slotKey => databaseObj.filter(art => art.slotKey === slotKey))
 
   //MAIN STATS
   static mainStatValues = (numStar: Rarity, statKey: MainStatKey): readonly number[] => {
@@ -68,10 +67,10 @@ export default class Artifact {
     return Math.max(...ArtifactSubstatsData[rarity][substatKey])
   }
 
-  static maxSubstatRollEfficiency = Object.fromEntries(allRarities.map(rarity =>
-    [rarity, 100 * Math.max(...allSubstats.map(substat =>
+  static maxSubstatRollEfficiency = objectFromKeyMap(allRarities,
+    rarity => 100 * Math.max(...allSubstats.map(substat =>
       Artifact.maxSubstatValues(substat, rarity) /
-      Artifact.maxSubstatValues(substat, maxStar)))]))
+      Artifact.maxSubstatValues(substat, maxStar))))
   static getSubstatKeys = (): readonly SubstatKey[] =>
     allSubstats
   static totalPossibleRolls = (rarity: Rarity): number =>

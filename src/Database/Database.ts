@@ -1,13 +1,14 @@
 import { ICachedArtifact, IArtifact } from "../Types/artifact";
 import { ICachedCharacter, ICharacter } from "../Types/character";
 import { allSlotKeys, CharacterKey, SlotKey } from "../Types/consts";
-import { deepClone, getRandomInt } from "../Util/Util";
+import { deepClone, getRandomInt, objectFromKeyMap } from "../Util/Util";
 import { DataManager } from "./DataManager";
 import { migrate } from "./migration";
 import { validateArtifact, parseCharacter, parseArtifact, removeArtifactCache, validateCharacter, removeCharacterCache, parseWeapon, validateWeapon, removeWeaponCache } from "./validation";
 import { DBStorage, dbStorage } from "./DBStorage";
 import { ICachedWeapon, IWeapon } from "../Types/weapon";
 import { createContext } from "react";
+import { defaultInitialWeapon } from "../Weapon/WeaponUtil";
 
 export class ArtCharDatabase {
   storage: DBStorage
@@ -31,15 +32,15 @@ export class ArtCharDatabase {
     // Load into memory and verify database integrity
     for (const key of storage.keys) {
       if (key.startsWith("char_")) {
-        const flex = parseCharacter(storage.get(key), key)
-        if (!flex) {
+        const flex = parseCharacter(storage.get(key))
+        if (!flex || key !== `char_${flex.key}`) {
           // Non-recoverable
           storage.remove(key)
           continue
         }
         const character = validateCharacter(flex)
         // Use relations from artifact
-        character.equippedArtifacts = Object.fromEntries(allSlotKeys.map(slot => [slot, ""])) as any
+        character.equippedArtifacts = objectFromKeyMap(allSlotKeys, () => "")
 
         this.chars.set(flex.key, character)
         // Save migrated version back to db
@@ -91,9 +92,21 @@ export class ArtCharDatabase {
         if (migrated) this.storage.set(key, flex)
       }
     }
+    const weaponIds = new Set(this.weapons.keys)
     for (const [charKey, char] of Object.entries(this.chars.data)) {
-      if (!char.equippedWeapon)
-        this.removeChar(charKey) // Remove characters w/o weapons
+      if (!char.equippedWeapon) {
+        // A default "sword" should work well enough for this case.
+        // We'd have to pull the hefty character sheet otherwise.
+        const weapon = defaultInitialWeapon("sword")
+        const weaponId = generateRandomWeaponID(weaponIds)
+        weapon.location = charKey
+        char.equippedWeapon = weaponId
+
+        weaponIds.add(weaponId)
+        this.weapons.set(weaponId, weapon)
+        this.storage.set(weaponId, removeWeaponCache(weapon))
+        // No need to set anything on character side.
+      }
     }
   }
 
@@ -110,12 +123,13 @@ export class ArtCharDatabase {
     this.weapons.set(key, weapon)
   }
   // TODO: Make theses `_` functions private once we migrate to use `followXXX`,
-  // or de-underscored it if we decide that these are to stay
+  // or de-underscore it if we decide that these are to stay
   _getArt(key: string) { return this.arts.get(key) }
   _getChar(key: CharacterKey | "") { return key ? this.chars.get(key) : undefined }
   _getArts() { return this.arts.values }
   _getCharKeys(): CharacterKey[] { return this.chars.keys }
   _getWeapon(key: string) { return this.weapons.get(key) }
+  _getWeapons() { return this.weapons.values }
 
   followChar(key: CharacterKey, cb: Callback<ICachedCharacter>): (() => void) | undefined { return this.chars.follow(key, cb) }
   followArt(key: string, cb: Callback<ICachedArtifact>): (() => void) | undefined {
@@ -140,7 +154,7 @@ export class ArtCharDatabase {
   updateChar(value: Partial<ICharacter>): void {
     const key = value.key!
     const oldChar = this._getChar(key)
-    const parsedChar = parseCharacter({ ...oldChar, ...(value as ICharacter) }, `char_${key}`)
+    const parsedChar = parseCharacter({ ...oldChar, ...(value as ICharacter) })
     if (!parsedChar) return
 
     const newChar = validateCharacter({ ...oldChar, ...parsedChar })
@@ -277,7 +291,7 @@ export class ArtCharDatabase {
     }
   }
 
-  findDuplicates(editorArt: IArtifact): { duplicated: string[], upgraded: string[] } {
+  findDuplicates(editorArt: IArtifact): { duplicated: ICachedArtifact[], upgraded: ICachedArtifact[] } {
     const { setKey, rarity, level, slotKey, mainStatKey, substats } = editorArt
 
     const candidates = this._getArts().filter(candidate =>
@@ -315,8 +329,32 @@ export class ArtCharDatabase {
           substat.key === candidateSubstat.key && // Or same slot
           substat.value === candidateSubstat.value
         )))
+    return { duplicated, upgraded }
+  }
 
-    return { duplicated: duplicated.map(({ id }) => id), upgraded: upgraded.map(({ id }) => id) }
+  findDuplicateWeapons(weapon: IWeapon): { duplicated: ICachedWeapon[], upgraded: ICachedWeapon[] } {
+    const { key, level, ascension, refine } = weapon
+
+    const candidates = this._getWeapons().filter(candidate =>
+      key === candidate.key &&
+      level >= candidate.level &&
+      ascension >= candidate.ascension &&
+      refine >= candidate.refine
+    )
+
+    // Strictly upgraded weapons
+    const upgraded = candidates.filter(candidate =>
+      level > candidate.level ||
+      ascension > candidate.ascension ||
+      refine > candidate.refine
+    )
+    // Strictly duplicated weapons
+    const duplicated = candidates.filter(candidate =>
+      level === candidate.level &&
+      ascension === candidate.ascension &&
+      refine === candidate.refine
+    )
+    return { duplicated, upgraded }
   }
 }
 

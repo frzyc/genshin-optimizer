@@ -95,3 +95,7 @@ export const getObjectKeysRecursive = (obj) => typeof obj === "object" ? Object.
 export function evalIfFunc<T, X>(value: T | ((arg: X) => T), arg: X): T {
   return typeof value === "function" ? (value as any)(arg) : value
 }
+//fromEntries doesn't result in StrictDict, this is just a utility wrapper.
+export function objectFromKeyMap<K extends string | number, V>(keys: readonly K[], map: (key: K) => V): StrictDict<K, V> {
+  return Object.fromEntries(keys.map(k => [k, map(k)])) as any
+}

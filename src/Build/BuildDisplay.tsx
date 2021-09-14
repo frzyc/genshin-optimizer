@@ -32,7 +32,7 @@ import { IFieldDisplay } from '../Types/IFieldDisplay';
 import { ICalculatedStats } from '../Types/stats';
 import { useForceUpdate, usePromise } from '../Util/ReactUtil';
 import { timeStringMs } from '../Util/TimeUtil';
-import { crawlObject, deepClone } from '../Util/Util';
+import { crawlObject, deepClone, objectFromKeyMap } from '../Util/Util';
 import WeaponSheet from '../Weapon/WeaponSheet';
 import { buildContext, calculateTotalBuildNumber, maxBuildsToShowList } from './Build';
 import { initialBuildSettings } from './BuildSetting';
@@ -183,7 +183,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
 
   const { split, totBuildNumber } = useMemo(() => {
     if (!characterKey) // Make sure we have all slotKeys
-      return { split: Object.fromEntries(allSlotKeys.map(slotKey => [slotKey, []])) as ArtifactsBySlot, totBuildNumber: 0 }
+      return { split: objectFromKeyMap(allSlotKeys, () => []) as ArtifactsBySlot, totBuildNumber: 0 }
     const artifactDatabase = database._getArts().filter(art => {
       //if its equipped on the selected character, bypass the check
       if (art.location === characterKey) return true
