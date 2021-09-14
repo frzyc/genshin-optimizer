@@ -3,6 +3,7 @@ import { ArtifactSheet } from "../Artifact/ArtifactSheet"
 import { initialBuildSettings } from "../Build/BuildSetting"
 import { ICachedCharacter } from "../Types/character"
 import { allSlotKeys, ArtifactSetKey, CharacterKey, ElementKey } from "../Types/consts"
+import { objectFromKeyMap } from "../Util/Util"
 import WeaponSheet from "../Weapon/WeaponSheet"
 import CharacterSheet from "./CharacterSheet"
 
@@ -30,7 +31,7 @@ export function initialCharacter(key: CharacterKey): ICachedCharacter {
     ascension: 0,
     hitMode: "avgHit",
     reactionMode: null,
-    equippedArtifacts: Object.fromEntries(allSlotKeys.map(sKey => [sKey, ""])) as any,
+    equippedArtifacts: objectFromKeyMap(allSlotKeys, () => ""),
     equippedWeapon: "",
     conditionalValues: {},
     baseStatOverrides: {}, // overriding the baseStat

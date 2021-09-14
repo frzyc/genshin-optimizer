@@ -1,7 +1,7 @@
 import { ICharacterSheet, TalentSheet } from "../Types/character";
 import { allCharacterKeys, CharacterKey, ElementKey } from "../Types/consts";
 import { ICalculatedStats } from "../Types/stats";
-import { evalIfFunc } from "../Util/Util";
+import { evalIfFunc, objectFromKeyMap } from "../Util/Util";
 import { CharacterExpCurveData } from "pipeline";
 import expCurveJSON from './expCurve_gen.json'
 import Stat from '../Stat'
@@ -11,12 +11,10 @@ const expCurve = expCurveJSON as CharacterExpCurveData
 
 export const charImport = import('../Data/Characters').then(async imp => {
   await import('../Data/formula') // TODO: remove this once we can ensure that formula is properly initiated everytime the weapon sheets are loaded
-  return Object.fromEntries(Object.entries(imp.default).map(([charKey, value]) =>
-    [charKey, new CharacterSheet(value)])) as unknown as StrictDict<CharacterKey, CharacterSheet>
+  return objectFromKeyMap(Object.keys(imp.default), charKey => new CharacterSheet(imp.default[charKey]))
 })
 
-const loadCharacterSheet = Object.fromEntries(allCharacterKeys.map(set =>
-  [set, charImport.then(sheets => sheets[set])])) as StrictDict<CharacterKey, Promise<CharacterSheet>>
+const loadCharacterSheet = objectFromKeyMap(allCharacterKeys, set => charImport.then(sheets => sheets[set]))
 
 export default class CharacterSheet {
   sheet: ICharacterSheet;

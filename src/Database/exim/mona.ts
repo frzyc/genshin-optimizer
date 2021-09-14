@@ -2,63 +2,37 @@ import { ArtCharDatabase } from '../Database';
 import { IArtifact, MainStatKey, SubstatKey } from '../../Types/artifact';
 import { parseArtifact } from '../../Database/validation';
 import { ArtifactSetKey, SlotKey } from "../../Types/consts";
-import { DBStorage, SandboxStorage } from '../DBStorage';
+import { importGOOD, ImportResult } from './good';
 
 const DefaultVersion = "1";
-const GetConvertedArtifactsOfVersion: Dict<string, (data: any) => { artifacts: IArtifact[], invalidCount: number }> = {
+const GetConvertedArtifactsOfVersion: Dict<string, (data: any) => { artifacts: IArtifact[], invalid: any[] }> = {
   "1": importMona1
 };
 
-export function importMona(dataObj: any, oldDatabase: ArtCharDatabase): IImportResult | undefined {
+export function importMona(dataObj: any, oldDatabase: ArtCharDatabase): ImportResult | undefined {
   const version = dataObj.version ?? DefaultVersion
   const converted = GetConvertedArtifactsOfVersion[version]?.(dataObj)
 
   if (!converted)
     return // TODO: Maybe add failure reason, or throws here
 
-  const { artifacts, invalidCount } = converted
-  const result: IImportResult = {
-    storage: new SandboxStorage(oldDatabase.storage),
-    totalCount: artifacts.length + invalidCount,
-    newCount: 0,
-    upgradeCount: 0,
-    dupCount: 0,
-    oldIds: new Set(oldDatabase.arts.keys),
-    invalidCount,
-  }
-  const newDatabase = new ArtCharDatabase(result.storage) // validate storage entries
+  const { artifacts, invalid } = converted
 
-  const artifactIdsToRemove = result.oldIds
-  for (const artifact of artifacts) {
-    let { duplicated, upgraded } = oldDatabase.findDuplicates(artifact)
-
-    // Don't reuse dups/upgrades
-    duplicated = duplicated.filter(id => artifactIdsToRemove.has(id))
-    upgraded = upgraded.filter(id => artifactIdsToRemove.has(id))
-
-    // Prefer dups over upgrades
-    const id = duplicated[0] ?? upgraded[0] ?? ""
-    artifactIdsToRemove.delete(id)
-
-    if (!duplicated.length) {
-      if (upgraded.length) newDatabase.updateArt(artifact, id)
-      else newDatabase.createArt(artifact)
-    }
-
-    if (duplicated.length) result.dupCount++
-    else if (upgraded.length) result.upgradeCount++
-    else result.newCount++
-  }
-
+  const result = importGOOD({
+    format: "GOOD",
+    source: "mona-uranai",
+    version: 1,
+    artifacts: artifacts
+  }, oldDatabase)
+  result?.artifacts!.invalid.push(...invalid)
   return result
 }
 
 // backup 0: https://github.com/wormtql/genshin_artifact/blob/main/src/assets/artifacts/data/*/index.js
 // backup 1: https://github.com/YuehaiTeam/cocogoat/blob/main/src/App/export/Mona.ts
 
-function importMona1(dataObj: any): { artifacts: IArtifact[], invalidCount: number } {
-  let invalidCount = 0
-  const artifacts: IArtifact[] = []
+function importMona1(dataObj: any): { artifacts: IArtifact[], invalid: any[] } {
+  const invalid: any[] = [], artifacts: IArtifact[] = []
 
   for (const property in dataObj) {
     if (!(property in ArtifactSlotKeyMap))
@@ -66,11 +40,7 @@ function importMona1(dataObj: any): { artifacts: IArtifact[], invalidCount: numb
 
     for (const genshinArtArtifact of dataObj[property]) {
       const { setName, star, level, position, mainTag } = genshinArtArtifact
-      if (star < 3) {
-        // invalidCount++//do not increment since its technically not an invalid artifact, just not part of our system.
-        continue
-      }
-      const flex = parseArtifact({
+      const raw = {
         setKey: ArtifactSetKeyMap[setName],
         rarity: star,
         level,
@@ -85,10 +55,11 @@ function importMona1(dataObj: any): { artifacts: IArtifact[], invalidCount: numb
               value,
           }
         }),
-      })
+      }
+      const flex = parseArtifact(raw)
 
       if (!flex) {
-        invalidCount++
+        invalid.push(raw)
         continue
       }
 
@@ -96,17 +67,7 @@ function importMona1(dataObj: any): { artifacts: IArtifact[], invalidCount: numb
     }
   }
 
-  return { artifacts, invalidCount }
-}
-
-interface IImportResult {
-  storage: DBStorage
-  totalCount: number,
-  newCount: number,
-  upgradeCount: number,
-  dupCount: number,
-  oldIds: Set<string>,
-  invalidCount: number,
+  return { artifacts, invalid }
 }
 
 // Referencing https://wormtql.gitbook.io/mona-uranai/ (they don't seem to update this anymore...)

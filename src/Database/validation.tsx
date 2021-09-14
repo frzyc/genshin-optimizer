@@ -7,6 +7,7 @@ import { allMainStatKeys, allSubstats, ICachedArtifact, IArtifact, ICachedSubsta
 import { ICachedCharacter, ICharacter } from "../Types/character";
 import { allArtifactRarities, allArtifactSets, allCharacterKeys, allElements, allHitModes, allReactionModes, allSlotKeys, allWeaponKeys } from "../Types/consts";
 import { IWeapon, ICachedWeapon } from "../Types/weapon";
+import { objectFromKeyMap } from "../Util/Util";
 
 /// Returns the closest (not necessarily valid) artifact, including errors as necessary
 export function validateArtifact(flex: IArtifact, id: string): { artifact: ICachedArtifact, errors: Displayable[] } {
@@ -142,13 +143,13 @@ function parseSubstats(obj: any): ISubstat[] {
 export function validateCharacter(flex: ICharacter): ICachedCharacter {
   // TODO: Add more validations to make sure the returned value is a "valid" character
   return {
-    equippedArtifacts: Object.fromEntries(allSlotKeys.map(slot => [slot, ""])) as any,
+    equippedArtifacts: objectFromKeyMap(allSlotKeys, () => ""),
     equippedWeapon: "",
     ...flex,
   }
 }
 /// Returns the closest flex character, or undefined if it's not recoverable
-export function parseCharacter(obj: any, key: string): ICharacter | undefined {
+export function parseCharacter(obj: any): ICharacter | undefined {
   if (typeof obj !== "object") return
 
   let {
@@ -156,8 +157,7 @@ export function parseCharacter(obj: any, key: string): ICharacter | undefined {
     baseStatOverrides, talent, infusionAura, constellation, buildSettings,
   } = obj
 
-  if (key !== `char_${characterKey}` ||
-    !allCharacterKeys.includes(characterKey) ||
+  if (!allCharacterKeys.includes(characterKey) ||
     typeof level !== "number" || level < 0 || level > 90)
     return // non-recoverable
 

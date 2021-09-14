@@ -5,7 +5,7 @@ import Stat from '../Stat';
 import { allWeaponKeys, WeaponKey } from '../Types/consts';
 import { ICalculatedStats } from '../Types/stats';
 import { ICachedWeapon, IWeaponSheet } from '../Types/weapon';
-import { evalIfFunc } from '../Util/Util';
+import { evalIfFunc, objectFromKeyMap } from '../Util/Util';
 import expCurveJSON from './expCurve_gen.json';
 const expCurve = expCurveJSON as WeaponExpCurveData
 
@@ -15,8 +15,7 @@ export const weaponImport = import('../Data/Weapons').then(async imp => {
     [weaponKey, new WeaponSheet(weaponKey, value)])) as unknown as StrictDict<WeaponKey, WeaponSheet>
 })
 
-const loadWeaponSheet = Object.fromEntries(allWeaponKeys.map(set =>
-  [set, weaponImport.then(sheets => sheets[set])])) as StrictDict<WeaponKey, Promise<WeaponSheet>>
+const loadWeaponSheet = objectFromKeyMap(allWeaponKeys, set => weaponImport.then(sheets => sheets[set]))
 
 export default class WeaponSheet {
   sheet: IWeaponSheet;

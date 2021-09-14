@@ -7,8 +7,9 @@ import SetEffectDisplay from '../../Artifact/Component/SetEffectDisplay';
 import { buildContext } from '../../Build/Build';
 import { database as localDatabase, DatabaseContext } from '../../Database/Database';
 import { ICachedCharacter } from '../../Types/character';
-import { allSlotKeys, ArtifactSetKey, SlotKey } from '../../Types/consts';
+import { allSlotKeys, ArtifactSetKey } from '../../Types/consts';
 import { useForceUpdate, usePromise } from '../../Util/ReactUtil';
+import { objectFromKeyMap } from '../../Util/Util';
 import WeaponSheet from '../../Weapon/WeaponSheet';
 import Character from "../Character";
 import { characterReducerAction } from '../CharacterDisplayCard';
@@ -52,7 +53,7 @@ function CharacterArtifactPane({ sheets, character, character: { key: characterK
 
   const unequipArts = useCallback(() => {
     if (!window.confirm("Do you want to move all the artifacts equipped to inventory?")) return
-    database.equipArtifacts(characterKey, Object.fromEntries(allSlotKeys.map(sKey => [sKey, ""])) as StrictDict<SlotKey, string>)
+    database.equipArtifacts(characterKey, objectFromKeyMap(allSlotKeys, () => ""))
   }, [characterKey, database])
   if (!stats) return null
   return <>
