@@ -82,7 +82,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     return (propCharacterKey ?? characterKey) as CharacterKey | ""
   })
 
-  const [modalBuild, setmodalBuild] = useState(null) // the newBuild that is being displayed in the character modal
+  const [modalBuild, setmodalBuild] = useState(-1) // the index of the newBuild that is being displayed in the character modal,
   const [showArtCondModal, setshowArtCondModal] = useState(false)
   const [showCharacterModal, setshowCharacterModal] = useState(false)
 
@@ -109,7 +109,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     initialStats.mainStatAssumptionLevel = mainStatAssumptionLevel
 
   const buildStats = useMemo(() => {
-    if (!initialStats || !artifactSheets) return undefined
+    if (!initialStats || !artifactSheets) return []
     return builds.map(build => {
       const arts = Object.fromEntries(build.map(id => database._getArt(id)).map(art => [art?.slotKey, art]))
       return Character.calculateBuildwithArtifact(initialStats, arts, artifactSheets)
@@ -301,7 +301,12 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
         "You can compare the difference between equipped artifacts and generated builds.",
         "The more complex the formula, the longer the generation time.",]}
     ><InfoDisplay /></InfoComponent>
-    <BuildModal {...{ build: modalBuild, showCharacterModal, characterKey, selectCharacter, setmodalBuild, setshowCharacterModal }} />
+    <BuildModal {...{
+      build: buildStats[modalBuild], showCharacterModal, characterKey, selectCharacter, close: () => {
+        setmodalBuild(-1)
+        setshowCharacterModal(false)
+      }
+    }} />
     {!!initialStats && <ArtConditionalModal {...{ showArtCondModal, setshowArtCondModal, initialStats, characterDispatch, artifactCondCount }} />}
     <Row className="mt-2 mb-2">
       <Col>
@@ -502,7 +507,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
           {/* Build List */}
           <ListGroup>
             {buildStats?.map((build, index) =>
-              index < maxBuildsToShow && characterSheet && weaponSheet && artifactSheets && <ArtifactDisplayItem sheets={{ characterSheet, weaponSheet, artifactSheets }} build={build} characterKey={characterKey as CharacterKey} index={index} key={index} statsDisplayKeys={statsDisplayKeys} onClick={() => setmodalBuild(build as any)} />
+              characterSheet && weaponSheet && artifactSheets && <ArtifactDisplayItem sheets={{ characterSheet, weaponSheet, artifactSheets }} build={build} characterKey={characterKey as CharacterKey} index={index} key={index} statsDisplayKeys={statsDisplayKeys} onClick={() => setmodalBuild(index)} />
             )}
           </ListGroup>
         </Card>
@@ -520,20 +525,16 @@ function TargetSelectorDropdownItem({ target, buildSettingsDispatch, initialStat
   </Dropdown.Item>
 }
 
-function BuildModal({ build, showCharacterModal, characterKey, selectCharacter, setmodalBuild, setshowCharacterModal }) {
-  const closeModal = useCallback(() => {
-    setmodalBuild(null)
-    setshowCharacterModal(false)
-  }, [setmodalBuild, setshowCharacterModal])
-  return <Modal show={Boolean(showCharacterModal || build)} onHide={closeModal} size="xl" contentClassName="bg-transparent">
+function BuildModal({ build, showCharacterModal, characterKey, selectCharacter, close }) {
+  return <Modal show={Boolean(showCharacterModal || build)} onHide={close} size="xl" contentClassName="bg-transparent">
     <React.Suspense fallback={<span>Loading...</span>}>
       <CharacterDisplayCard
         tabName={undefined}
         characterKey={characterKey}
         setCharacterKey={cKey => selectCharacter(cKey)}
         newBuild={build}
-        onClose={closeModal}
-        footer={<Button variant="danger" onClick={closeModal}>Close</Button>} />
+        onClose={close}
+        footer={<Button variant="danger" onClick={close}>Close</Button>} />
     </React.Suspense>
   </Modal>
 }
