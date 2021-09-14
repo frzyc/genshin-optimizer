@@ -1,0 +1,13 @@
+{
+  "skill": {
+    "eye": "Eye of Stormy Judgement",
+    "partyCost": "Konsumsi Energi (party)"
+  },
+  "burst": {
+    "resolves": "Lapisan Resolve"
+  },
+  "a4": {
+    "enerRest": "Pemulihan energi dari <strong>Musou Isshin</strong>",
+    "eleDMG": "Electro DMG Bonus"
+  }
+}

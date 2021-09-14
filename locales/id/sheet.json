@@ -9,9 +9,22 @@
     "charged": "Charged Attack mengenai musuh",
     "plunging": "Plunging Attack mengenai musuh",
     "skill": "Elemental Skill mengenai musuh",
-    "burst": "Elemental Burst mengenai musuh"
+    "burst": "Elemental Burst mengenai musuh",
+    "geo": "Geo DMG mengenai musuh",
+    "anemo": "Anemo DMG mengenai musuh",
+    "hydro": "Hydro DMG mengenai musuh",
+    "cryo": "Cryo DMG mengenai musuh",
+    "pyro": "Pyro DMG mengenai musuh",
+    "electro": "Electro DMG mengenai musuh"
   },
   "hits_plural": "{{count}} Hit",
   "eleAbsor": "Elemental Absorption",
-  "absorDot": "DMG Berkelanjutan"
+  "absorDot": "DMG Berkelanjutan",
+  "afterUse": {
+    "skill": "Setelah menggunakan Elemental Skill",
+    "burst": "Setelah menggunakan Elemental Burst"
+  },
+  "increase": {
+    "atk": "ATK Meningkat"
+  }
 }

@@ -35,6 +35,10 @@
       "unknown": "未知的文件格式。",
       "monaInvalid": "不正确的莫娜占卜铺文件格式。",
       "goInvalid": "不正确的GO 备份文件格式。"
+    },
+    "dbSource": "数据来源：",
+    "goodUpload": {
+      "title": "<strong>Genshin Open Object Description</strong> (GOOD) 格式"
     }
   },
   "count": {
@@ -44,6 +48,7 @@
     "artsNew": "新圣遗物：",
     "artsUpg": "升级的圣遗物：",
     "artsInvalid": "不可靠的圣遗物：",
-    "artsFod": "狗粮："
+    "artsFod": "狗粮：",
+    "weapons": "武器："
   }
 }

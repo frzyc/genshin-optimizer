@@ -14,7 +14,7 @@
   },
   "c1C": {
     "name": "Mengkonsumsi lapis <strong>Grimheart</strong>",
-    "durationStack": "6s + 6s per lapis, hingga 18s"
+    "durationStack": "6 dtk + 6 dtk/lapis, maks 18 dtk"
   },
   "passive1": "DMG Shattered Lightfall Sword"
 }

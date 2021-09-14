@@ -19,14 +19,14 @@
     "level": "Level"
   },
   "unselect": "Batal pilih",
-  "ascending": "Naik",
+  "ascending": "Meningkat",
   "descending": "Menurun",
   "sortByFormat": "Urut Berdasarkan: {{value}}",
   "loading": "Memuat...",
-  "rightsDisclaimer": "Genshin Optimizer tidak berafiliasi dengan ataupun didukung oleh miHoYo.",
+  "rightsDisclaimer": "Genshin Optimizer tidak berafiliasi dengan miHoYo.",
   "appVersion": "$t(halamanJudul) Versi: {{version}}",
   "underConstruction": "Sedang Dibangun",
   "error": "Error",
-  "reset": "Hapus",
+  "reset": "Reset",
   "info": "INFO"
 }
