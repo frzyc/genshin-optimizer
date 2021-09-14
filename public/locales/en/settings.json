@@ -38,13 +38,6 @@
     "goodUpload": {
       "title": "<strong>Genshin Open Object Description</strong> (GOOD) format"
     },
-    "monaUpload": {
-      "title": "<strong>mona-uranai</strong> format",
-      "import": "Import",
-      "deleteExistingButton": "Delete Foddered Artifacts",
-      "deleteExistingExplanation": "If you're doing a complete import, any artifacts not found in this import will be deleted.(foddered)<br>Upgraded artifacts will not be deleted, but updated accordingly.",
-      "deleteExistingPrompt": "Are you sure you want to delete all artifacts not found in the current import? (Upgraded artifacts will not be affected.)"
-    },
     "error": {
       "jsonParse": "Unable to parse JSON file.",
       "unknown": "Unknown file format.",
