@@ -7,12 +7,13 @@
   "count": {
     "chars": "Characters:",
     "arts": "Artifacts:",
-    "artsDup": "Duplicate Artifacts:",
-    "artsNew": "New Artifacts:",
-    "artsUpg": "Upgraded Artifacts:",
-    "artsInvalid": "Invalid Artifacts",
-    "artsFod": "Foddered Artifacts",
-    "weapons":"Weapons:"
+    "weapons": "Weapons:",
+    "total": "Total:",
+    "new": "New:",
+    "updated": "Updated:",
+    "removed": "Removed:",
+    "unchanged": "Unchanged:",
+    "invalid": "Invalid:"
   },
   "downloadCard": {
     "databaseDownload": "Database Download",
