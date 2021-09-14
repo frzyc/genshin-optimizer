@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useCallback, useContext, useEffect, useMemo, useState } from "react"
 import { Badge, Button, ButtonGroup, Card, Col, Dropdown, Image, InputGroup, Modal, Row } from "react-bootstrap"
 import Assets from "../Assets/Assets"
+import { buildContext } from "../Build/Build"
 import CharacterSheet from "../Character/CharacterSheet"
 import CustomFormControl from "../Components/CustomFormControl"
 import DocumentDisplay from "../Components/DocumentDisplay"
@@ -29,14 +30,12 @@ type WeaponStatsEditorCardProps = {
     newBuild?: ICalculatedStats
     characterDispatch: (any) => void
   }
-  editable?: boolean
   footer?: boolean
   onClose?: () => void
 }
 export default function WeaponDisplayCard({
   weaponId: propWeaponId,
   charData,
-  editable = false,
   footer = false,
   onClose
 }: WeaponStatsEditorCardProps) {
@@ -45,6 +44,7 @@ export default function WeaponDisplayCard({
   // Use onDatabaseUpdate when `following` database entries
   const [databaseToken, onDatabaseUpdate] = useForceUpdate()
 
+  const buildContextObj = useContext(buildContext)
   const weapon = useMemo(() =>
     databaseToken && database._getWeapon(propWeaponId!)!,
     [propWeaponId, databaseToken, database])
@@ -80,7 +80,7 @@ export default function WeaponDisplayCard({
   return <Card bg="lightcontent" text={"lightfont" as any} className="mb-2">
     <Card.Header>
       <Row>
-        {editable && <Col>
+        <Col>
           <Row className="mb-n2">
             <Col className="mb-2">
               <InputGroup >
@@ -126,12 +126,12 @@ export default function WeaponDisplayCard({
               </InputGroup>
             </Col>
           </Row>
-        </Col>}
+        </Col>
         {!!onClose && <Col xs="auto" >
           <Button variant="danger" onClick={onClose}>
             <FontAwesomeIcon icon={faTimes} /></Button>
         </Col>}
-        {!!charData && editable && database === localDatabase && <Col xs="auto">
+        {!!charData && database === localDatabase && <Col xs="auto">
           <SwapBtn weaponTypeKey={weaponTypeKey} onChangeId={id => database.setWeaponLocation(id, charData.character.key)} />
         </Col>}
       </Row>
@@ -156,20 +156,20 @@ export default function WeaponDisplayCard({
             <div className="mb-2"><Stars stars={weaponSheet.rarity} /></div>
             <h6>{weaponPassiveName}</h6>
             <div className="mb-2">{weaponPassiveName && weaponSheet.passiveDescription(build)}</div>
-            {build && <>
+            {build && <buildContext.Provider value={charData ? buildContextObj : { equippedBuild: build, newBuild: undefined, compareBuild: false, setCompareBuild: undefined }}>
               <WeaponStatsCard title={"Main Stats"} statsVals={{ atk: weaponDisplayMainVal, [substatKey]: substatKey ? weaponDisplaySubVal : undefined }} stats={build} />
               <WeaponStatsCard title={"Bonus Stats"} statsVals={weaponBonusStats} stats={build} />
-            </>}
+            </buildContext.Provider>}
             {charData && sections ? (() => {
               const { equippedBuild, newBuild, characterDispatch } = charData
-              return < DocumentDisplay  {...{ sections, equippedBuild, newBuild, characterDispatch, editable }} />
+              return < DocumentDisplay  {...{ sections, equippedBuild, newBuild, characterDispatch }} />
             })() : null}
           </Col>
         </Row>
       })()}
     </Card.Body>
     {footer && id && <Card.Footer><Row>
-      <Col><EquipmentDropdown location={location} onEquip={cKey => database.setWeaponLocation(id, cKey)} weaponTypeKey={weaponSheet?.weaponType} disableUnequip={!!weapon.location} editable={editable} /></Col>
+      <Col><EquipmentDropdown location={location} onEquip={cKey => database.setWeaponLocation(id, cKey)} weaponTypeKey={weaponSheet?.weaponType} disableUnequip={!!weapon.location} disabled={database === localDatabase} /></Col>
       {!!onClose && <Col xs="auto"><Button variant="danger" onClick={onClose}>Close</Button></Col>}
     </Row></Card.Footer>}
   </Card>

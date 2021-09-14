@@ -1,4 +1,4 @@
-import { faCheckSquare, faSortAmountDownAlt, faSortAmountUp, faSquare, faTimes, faTrash, faUndo } from '@fortawesome/free-solid-svg-icons';
+import { faCheckSquare, faSquare, faTimes, faTrash, faUndo } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { lazy, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { Alert, Badge, Button, ButtonGroup, Card, Col, Container, Dropdown, DropdownButton, Image, InputGroup, ListGroup, Modal, OverlayTrigger, ProgressBar, Row, Tooltip } from 'react-bootstrap';
@@ -34,7 +34,7 @@ import { useForceUpdate, usePromise } from '../Util/ReactUtil';
 import { timeStringMs } from '../Util/TimeUtil';
 import { crawlObject, deepClone } from '../Util/Util';
 import WeaponSheet from '../Weapon/WeaponSheet';
-import { calculateTotalBuildNumber } from './Build';
+import { buildContext, calculateTotalBuildNumber, maxBuildsToShowList } from './Build';
 import { initialBuildSettings } from './BuildSetting';
 const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
 
@@ -42,9 +42,7 @@ const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
 const CharacterDisplayCard = lazy(() => import('../Character/CharacterDisplayCard'))
 
 const warningBuildNumber = 10000000
-const maxBuildsToShowList = [1, 2, 3, 4, 5, 8, 10]
-const maxBuildsToShowDefault = 5
-const autoBuildGenLimit = 100
+
 const artifactsSlotsToSelectMainStats = ["sands", "goblet", "circlet"] as const
 
 function buildSettingsReducer(state: BuildSetting, action): BuildSetting {
@@ -57,6 +55,12 @@ function buildSettingsReducer(state: BuildSetting, action): BuildSetting {
         mainStatKeys[slotKey] = mainStatKeys[slotKey].filter(k => k !== mainStatKey)
       else
         mainStatKeys[slotKey].push(mainStatKey)
+      return { ...state, mainStatKeys }
+    }
+    case 'mainStatKeyReset': {
+      const { slotKey } = action
+      const mainStatKeys = { ...state.mainStatKeys }//create a new object to update react dependencies
+      mainStatKeys[slotKey] = []
       return { ...state, mainStatKeys }
     }
     case `setFilter`: {
@@ -76,12 +80,6 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     const { characterKey = "" } = dbStorage.get("BuildsDisplay.state") ?? {}
     //NOTE that propCharacterKey can override the selected character.
     return (propCharacterKey ?? characterKey) as CharacterKey | ""
-  })
-
-  const [builds, setbuilds] = useState([] as any[])
-  const [maxBuildsToShow, setmaxBuildsToShow] = useState(() => {
-    const { maxBuildsToShow = maxBuildsToShowDefault } = dbStorage.get("BuildsDisplay.state") ?? {}
-    return maxBuildsToShow
   })
 
   const [modalBuild, setmodalBuild] = useState(null) // the newBuild that is being displayed in the character modal
@@ -105,8 +103,18 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   type characterDataType = { character?: ICachedCharacter, characterSheet?: CharacterSheet, weaponSheet?: WeaponSheet, initialStats?: ICalculatedStats, statsDisplayKeys?: { basicKeys: any, [key: string]: any } }
   const [{ character, characterSheet, weaponSheet, initialStats, statsDisplayKeys }, setCharacterData] = useState({} as characterDataType)
   const buildSettings = useMemo(() => character?.buildSettings ?? initialBuildSettings(), [character])
-  if (buildSettings.setFilters.length === 0) buildSettings.setFilters = initialBuildSettings().setFilters//hotfix for an issue with db. can be removed later.
-  const { setFilters, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, ascending, } = buildSettings
+  const { setFilters, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, builds, buildDate, maxBuildsToShow } = buildSettings
+
+  if (initialStats)
+    initialStats.mainStatAssumptionLevel = mainStatAssumptionLevel
+
+  const buildStats = useMemo(() => {
+    if (!initialStats || !artifactSheets) return undefined
+    return builds.map(build => {
+      const arts = Object.fromEntries(build.map(id => database._getArt(id)).map(art => [art?.slotKey, art]))
+      return Character.calculateBuildwithArtifact(initialStats, arts, artifactSheets)
+    }).filter(build => build)
+  }, [builds, database, initialStats, artifactSheets])
 
   const buildSettingsDispatch = useCallback((action) => {
     if (!character) return
@@ -120,7 +128,6 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   const selectCharacter = useCallback((cKey = "") => {
     if (characterKey === cKey) return
     setcharacterKey(cKey)
-    setbuilds([])
     setCharDirty()
     setCharacterData({})
   }, [setCharDirty, setcharacterKey, characterKey])
@@ -158,9 +165,9 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
 
   //save to BuildsDisplay.state on change
   useEffect(() => {
-    if (isMounted.current) dbStorage.set("BuildsDisplay.state", { characterKey, maxBuildsToShow })
+    if (isMounted.current) dbStorage.set("BuildsDisplay.state", { characterKey })
     else isMounted.current = true
-  }, [characterKey, maxBuildsToShow])
+  }, [characterKey])
 
   //validate optimizationTarget 
   useEffect(() => {
@@ -195,14 +202,12 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
 
   const generateBuilds = useCallback(() => {
     if (!initialStats || !artifactSheets) return
-    setbuilds([])
     setgeneratingBuilds(true)
     setgenerationDuration(0)
     setgenerationProgress(0)
     setgenerationSkipped(0)
     //get the formula for this target
 
-    initialStats.mainStatAssumptionLevel = mainStatAssumptionLevel
     const artifactSetEffects = Artifact.setEffectsObjs(artifactSheets, initialStats)
     const splitArtifacts = deepClone(split) as ArtifactsBySlot
     //add mainStatVal to each artifact
@@ -211,13 +216,10 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
         art.mainStatVal = Artifact.mainStatValue(art.mainStatKey, art.rarity, Math.max(Math.min(mainStatAssumptionLevel, art.rarity * 4), art.level)) ?? 0;
       })
     })
-    //generate the key dependencies for the formula
-    const minFilters: Dict<StatKey, number> = Object.fromEntries(Object.entries(statFilters).map(([statKey, { min }]) => [statKey, min]).filter(([, min]) => typeof min === "number"))
-    const maxFilters: Dict<StatKey, number> = Object.fromEntries(Object.entries(statFilters).map(([statKey, { max }]) => [statKey, max]).filter(([, max]) => typeof max === "number"))
     //create an obj with app the artifact set effects to pass to buildworker.
     const data = {
       splitArtifacts, initialStats, artifactSetEffects,
-      setFilters, minFilters, maxFilters, maxBuildsToShow, optimizationTarget, ascending
+      setFilters, minFilters: statFilters, maxBuildsToShow, optimizationTarget
     };
     worker.current?.terminate()
     worker.current = new Worker()
@@ -235,21 +237,16 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
         value: e.data.timing,
         label: totBuildNumber.toString()
       })
-      const builds = (e.data.builds as Build[]).map(obj =>
-        Character.calculateBuildwithArtifact(initialStats, obj.artifacts, artifactSheets))
-      setbuilds(builds)
+      const builds = (e.data.builds as Build[]).map(b => Object.values(b.artifacts).map(a => a.id))
+      buildSettingsDispatch({ builds, buildDate: Date.now() })
+
       setgeneratingBuilds(false)
       worker.current?.terminate()
       worker.current = null
     };
     worker.current.postMessage(data)
-  }, [artifactSheets, split, totBuildNumber, mainStatAssumptionLevel, ascending, initialStats, maxBuildsToShow, optimizationTarget, setFilters, statFilters])
+  }, [artifactSheets, split, totBuildNumber, mainStatAssumptionLevel, initialStats, maxBuildsToShow, optimizationTarget, setFilters, statFilters, buildSettingsDispatch])
 
-  //try to generate build when build numbers are low
-  useEffect(() => {
-    if (totBuildNumber && totBuildNumber <= autoBuildGenLimit) generateBuilds()
-    else setbuilds([])
-  }, [characterKey, split, totBuildNumber, buildSettings, generateBuilds])
 
   const dropdownitemsForStar = useCallback((star, index) => artifactSheets && ArtifactSheet.setsWithMaxRarity(artifactSheets, star).map(([setKey, setobj]) => {
     if (setFilters.some(filter => filter.key === setKey)) return false;
@@ -295,7 +292,8 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   }, [initialStats?.conditionalValues])
   //rudimentary dispatcher, definitely not the same API as the real characterDispatch.
   const characterDispatch = useCallback(val => database.updateChar({ ...character, ...val }), [character, database])
-  return <Container className="mt-2">
+  return <Container className="mt-2"> <buildContext.Provider value={{ equippedBuild: initialStats }}>
+
     <InfoComponent
       pageKey="buildPage"
       modalTitle="Character Management Page Guide"
@@ -323,8 +321,8 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
                   </Card>}
                 {/* Hit mode options */}
                 {characterSheet && character && initialStats && <HitModeCard build={initialStats} characterSheet={characterSheet} className="mb-2" character={character} disabled={generatingBuilds} />}
-                {/* Final Stat Filter */}
-                {Boolean(statsDisplayKeys) && <StatFilterCard className="mb-2" statFilters={statFilters} statKeys={statsDisplayKeys?.basicKeys as any} setStatFilters={sFs => buildSettingsDispatch({ statFilters: sFs })} disabled={generatingBuilds} />}
+                {/*Minimum Final Stat Filter */}
+                {!!statsDisplayKeys && <StatFilterCard className="mb-2" statFilters={statFilters} statKeys={statsDisplayKeys?.basicKeys as any} setStatFilters={sFs => buildSettingsDispatch({ statFilters: sFs })} disabled={generatingBuilds} />}
               </Col>
               <Col xs={12} lg={6}><Row>
                 <Col className="mb-2" xs={12}>
@@ -396,7 +394,13 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
                         return <Card bg="darkcontent" text={"lightfont" as any} className="mb-2" key={slotKey}>
                           <Card.Header className="p-2"><Row >
                             <Col className="ml-2"><SlotNameWithIcon slotKey={slotKey} /></Col>
-                            <Col xs="auto"><Badge variant="info">{numSel ? `${numSel} Selected` : `Any`}</Badge></Col>
+                            <Col xs="auto">
+                              <Badge variant="info">{numSel ? `${numSel} Selected` : `Any`}</Badge>
+                              <Button variant="danger" size="sm" className="py-0 px-1 ml-2" disabled={!mainStatKeys[slotKey].length}
+                                onClick={() => buildSettingsDispatch({ type: "mainStatKeyReset", slotKey })}>
+                                <FontAwesomeIcon icon={faUndo} />
+                              </Button>
+                            </Col>
                           </Row></Card.Header>
                           <Card.Body className="p-0"><Row className="no-gutters">
                             {Artifact.slotMainStats(slotKey).map((mainStatKey, i) => {
@@ -434,7 +438,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
                       <Dropdown.Toggle disabled={generatingBuilds}><b>{maxBuildsToShow}</b> {maxBuildsToShow === 1 ? "Build" : "Builds"}</Dropdown.Toggle>
                     </OverlayTrigger>
                     <Dropdown.Menu>
-                      {maxBuildsToShowList.map(v => <Dropdown.Item key={v} onClick={() => setmaxBuildsToShow(v)}>{v} {v === 1 ? "Build" : "Builds"}</Dropdown.Item>)}
+                      {maxBuildsToShowList.map(v => <Dropdown.Item key={v} onClick={() => buildSettingsDispatch({ maxBuildsToShow: v })}>{v} {v === 1 ? "Build" : "Builds"}</Dropdown.Item>)}
                     </Dropdown.Menu>
                   </Dropdown>
                   <Button
@@ -446,7 +450,6 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
                       worker.current.terminate();
                       worker.current = null
                       setgeneratingBuilds(false)
-                      setbuilds([])
                       setgenerationDuration(0)
                       setgenerationProgress(0)
                       setgenerationSkipped(0)
@@ -456,34 +459,28 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
               </Col>
               <Col xs="auto">
                 {/* Dropdown to select sorting value */}
-                {<ButtonGroup>
-                  <Dropdown as={ButtonGroup} drop="up">
-                    <Dropdown.Toggle disabled={generatingBuilds} variant="light" >
-                      <span>Optimization Target: {sortByText}</span>
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu align="right" style={{ minWidth: "40rem" }} >
-                      <Row>
-                        {!!statsDisplayKeys && Object.entries(statsDisplayKeys).map(([sectionKey, fields]: [string, any]) => {
-                          const header = (characterSheet && weaponSheet && artifactSheets) ? getFormulaTargetsDisplayHeading(sectionKey, { characterSheet, weaponSheet, artifactSheets }, initialStats?.characterEle) : sectionKey
-                          return <Col xs={12} md={6} key={sectionKey}>
-                            <Dropdown.Header style={{ overflow: "hidden", textOverflow: "ellipsis" }}><b>{header}</b></Dropdown.Header>
-                            {fields.map((target, i) => {
-                              if (Array.isArray(target))
-                                return <TargetSelectorDropdownItem key={i} {...{ target, buildSettingsDispatch, initialStats }} />
-                              else if (typeof target === "string")
-                                return <Dropdown.Item key={i} onClick={() => buildSettingsDispatch({ optimizationTarget: target })}>{Stat.getStatNameWithPercent(target)}</Dropdown.Item>
-                              return null
-                            })}
-                          </Col>
-                        })}
-                      </Row>
-                    </Dropdown.Menu>
-                  </Dropdown>
-                  <Button onClick={() => buildSettingsDispatch({ ascending: !buildSettings.ascending })} disabled={generatingBuilds} variant={ascending ? "danger" : "primary"}>
-                    <FontAwesomeIcon icon={ascending ? faSortAmountDownAlt : faSortAmountUp} className="fa-fw" />
-                    <span>{ascending ? "Ascending" : "Descending"}</span>
-                  </Button>
-                </ButtonGroup >}
+                {<Dropdown as={ButtonGroup} drop="up">
+                  <Dropdown.Toggle disabled={generatingBuilds} variant="light" >
+                    <span>Optimization Target: {sortByText}</span>
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu align="right" style={{ minWidth: "40rem" }} >
+                    <Row>
+                      {!!statsDisplayKeys && Object.entries(statsDisplayKeys).map(([sectionKey, fields]: [string, any]) => {
+                        const header = (characterSheet && weaponSheet && artifactSheets) ? getFormulaTargetsDisplayHeading(sectionKey, { characterSheet, weaponSheet, artifactSheets }, initialStats?.characterEle) : sectionKey
+                        return <Col xs={12} md={6} key={sectionKey}>
+                          <Dropdown.Header style={{ overflow: "hidden", textOverflow: "ellipsis" }}><b>{header}</b></Dropdown.Header>
+                          {fields.map((target, i) => {
+                            if (Array.isArray(target))
+                              return <TargetSelectorDropdownItem key={i} {...{ target, buildSettingsDispatch, initialStats }} />
+                            else if (typeof target === "string")
+                              return <Dropdown.Item key={i} onClick={() => buildSettingsDispatch({ optimizationTarget: target })}>{Stat.getStatNameWithPercent(target)}</Dropdown.Item>
+                            return null
+                          })}
+                        </Col>
+                      })}
+                    </Row>
+                  </Dropdown.Menu>
+                </Dropdown>}
               </Col>
             </Row>
             <Row className="">
@@ -498,19 +495,20 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
         <Card bg="darkcontent" text={"lightfont" as any}>
           <Card.Header>
             <Row>
-              <Col>{characterKey ? <span>Showing <b>{builds.length}</b> Builds generated for {characterName}</span> : <span>Select a character to generate builds.</span>}</Col>
+              <Col>{buildStats ? <span>Showing <strong>{buildStats.length}</strong> Builds generated for {characterName}. {!!buildDate && <span>Build generated on: <strong>{(new Date(buildDate)).toLocaleString()}</strong></span>}</span>
+                : <span>Select a character to generate builds.</span>}</Col>
             </Row>
           </Card.Header>
           {/* Build List */}
           <ListGroup>
-            {builds.map((build, index) =>
+            {buildStats?.map((build, index) =>
               index < maxBuildsToShow && characterSheet && weaponSheet && artifactSheets && <ArtifactDisplayItem sheets={{ characterSheet, weaponSheet, artifactSheets }} build={build} characterKey={characterKey as CharacterKey} index={index} key={index} statsDisplayKeys={statsDisplayKeys} onClick={() => setmodalBuild(build as any)} />
             )}
           </ListGroup>
         </Card>
       </Col>
     </Row>
-  </Container >
+  </buildContext.Provider></Container >
 }
 
 function TargetSelectorDropdownItem({ target, buildSettingsDispatch, initialStats }) {
@@ -535,7 +533,6 @@ function BuildModal({ build, showCharacterModal, characterKey, selectCharacter, 
         setCharacterKey={cKey => selectCharacter(cKey)}
         newBuild={build}
         onClose={closeModal}
-        editable={showCharacterModal}
         footer={<Button variant="danger" onClick={closeModal}>Close</Button>} />
     </React.Suspense>
   </Modal>
@@ -602,8 +599,8 @@ function ArtConditionalModal({ showArtCondModal, setshowArtCondModal, initialSta
   </Modal>
 }
 
-function StatFilterItem({ statKey, statKeys = [], min, max, close, setFilter, disabled }: {
-  statKey?, statKeys, min, max, close, setFilter, disabled
+function StatFilterItem({ statKey, statKeys = [], min, close, setFilter, disabled }: {
+  statKey?, statKeys, min, close, setFilter, disabled
 }) {
   const isFloat = Stat.getStatUnit(statKey) === "%"
   const inputProps = {
@@ -615,13 +612,7 @@ function StatFilterItem({ statKey, statKeys = [], min, max, close, setFilter, di
     ...inputProps,
     placeholder: "MIN",
     value: min,
-    onChange: (s) => setFilter(statKey, s, max)
-  }
-  const maxInputProps = {
-    ...inputProps,
-    placeholder: "MAX",
-    value: max,
-    onChange: (s) => setFilter(statKey, min, s)
+    onChange: (s) => setFilter(statKey, s)
   }
   return <InputGroup className="mb-2">
     <DropdownButton
@@ -630,10 +621,9 @@ function StatFilterItem({ statKey, statKeys = [], min, max, close, setFilter, di
       id="input-group-dropdown-1"
       disabled={disabled}
     >
-      {statKeys.map(sKey => <Dropdown.Item key={sKey} onClick={() => { close?.(); setFilter(sKey, min, max) }}>{Stat.getStatNameWithPercent(sKey)}</Dropdown.Item>)}
+      {statKeys.map(sKey => <Dropdown.Item key={sKey} onClick={() => { close?.(); setFilter(sKey, min) }}>{Stat.getStatNameWithPercent(sKey)}</Dropdown.Item>)}
     </DropdownButton>
     <CustomFormControl {...minInputProps} />
-    <CustomFormControl {...maxInputProps} />
     {Boolean(close) && <InputGroup.Append>
       <Button variant="danger" onClick={close} disabled={disabled}><FontAwesomeIcon icon={faTrash} /></Button>
     </InputGroup.Append>}
@@ -660,21 +650,21 @@ function HitModeCard({ characterSheet, character, build, className, disabled }: 
   </Card >
 }
 
-function StatFilterCard({ statKeys = [], statFilters = {}, setStatFilters, className, disabled }) {
+function StatFilterCard({ statKeys = [], statFilters = {}, setStatFilters, className, disabled }: { statKeys: StatKey[], statFilters: Dict<StatKey, number>, setStatFilters: (object) => void, className: string, disabled?: boolean }) {
   const remainingKeys = statKeys.filter(key => !(Object.keys(statFilters) as any).some(k => k === key))
-  const setFilter = (sKey, min, max) => setStatFilters({ ...statFilters, [sKey]: { min, max } })
+  const setFilter = (sKey, min) => setStatFilters({ ...statFilters, [sKey]: min })
   return <Card bg="lightcontent" text={"lightfont" as any} className={className}>
-    <Card.Header>Final Stat Filter</Card.Header>
+    <Card.Header>Minimum Final Stat Filter</Card.Header>
     <Card.Body>
       <Row className="mb-n2">
-        {(Object.entries(statFilters) as [string, { min, max }][]).map(([statKey, { min, max }]) => {
-          return <Col xs={12} key={statKey} ><StatFilterItem statKey={statKey} statKeys={remainingKeys} setFilter={setFilter} disabled={disabled} min={min} max={max} close={() => {
+        {Object.entries(statFilters).map(([statKey, min]) => {
+          return <Col xs={12} key={statKey} ><StatFilterItem statKey={statKey} statKeys={remainingKeys} setFilter={setFilter} disabled={disabled} min={min} close={() => {
             delete statFilters[statKey]
             setStatFilters({ ...statFilters })
           }} /></Col>
         })}
         <Col xs={12}>
-          <StatFilterItem min={undefined} max={undefined} close={undefined} statKeys={remainingKeys} setFilter={setFilter} disabled={disabled} />
+          <StatFilterItem min={undefined} close={undefined} statKeys={remainingKeys} setFilter={setFilter} disabled={disabled} />
         </Col>
       </Row>
     </Card.Body>
@@ -715,7 +705,7 @@ function ArtifactDisplayItem({ sheets, sheets: { artifactSheets }, index, charac
           </Badge>
         )}</Col>
       </Row></h5>
-      <StatDisplayComponent editable={false} {...{ sheets, character, newBuild: build, statsDisplayKeys, cardbg: (index % 2 ? "lightcontent" : "darkcontent") }} />
+      <StatDisplayComponent {...{ sheets, character, equippedBuild: build, statsDisplayKeys, cardbg: (index % 2 ? "lightcontent" : "darkcontent") }} />
     </ListGroup.Item>
   </div>)
 }

@@ -1,22 +1,20 @@
-import { useCallback, useMemo } from "react"
+import { useCallback, useContext, useMemo } from "react"
 import { Card, ListGroup } from "react-bootstrap"
+import { buildContext } from "../Build/Build"
 import Conditional from "../Conditional/Conditional"
 import ConditionalSelector from "../Conditional/ConditionalSelector"
-import { ICalculatedStats } from "../Types/stats"
 import IConditional from "../Types/IConditional"
 import statsToFields from "../Util/FieldUtil"
 import { deletePropPath, layeredAssignment, objClearEmpties } from "../Util/Util"
 import FieldDisplay from "./FieldDisplay"
 type ConditionalDisplayProps = {
   conditional: IConditional,
-  equippedBuild?: ICalculatedStats,
-  newBuild?: ICalculatedStats,
   characterDispatch: (any) => void,//TODO: characterDispatch type
-  editable: boolean,
   fieldClassName?: string
 }
 
-export default function ConditionalDisplay({ conditional, equippedBuild, newBuild, characterDispatch, editable, fieldClassName }: ConditionalDisplayProps) {
+export default function ConditionalDisplay({ conditional, characterDispatch, fieldClassName }: ConditionalDisplayProps) {
+  const { newBuild, equippedBuild } = useContext(buildContext)
   const stats = newBuild ? newBuild : equippedBuild
   const canShow = useMemo(() => Conditional.canShow(conditional, stats), [conditional, stats])
   const { stats: conditionalStats = {}, fields: conditionalFields = [], conditionalValue } = useMemo(() => canShow && Conditional.resolve(conditional, stats, undefined), [canShow, conditional, stats])
@@ -35,7 +33,7 @@ export default function ConditionalDisplay({ conditional, equippedBuild, newBuil
   if (!canShow || !stats) return null
   return <Card bg="darkcontent" text={"lightfont" as any} className="mb-2 w-100">
     <Card.Header className="p-2">
-      <ConditionalSelector disabled={!editable}
+      <ConditionalSelector
         conditional={conditional}
         conditionalValue={conditionalValue}
         setConditional={setConditional}
@@ -43,7 +41,7 @@ export default function ConditionalDisplay({ conditional, equippedBuild, newBuil
         stats={stats} />
     </Card.Header>
     <ListGroup className="text-white" variant="flush">
-      {displayFields.map((field, i) => <FieldDisplay key={i} index={i} {...{ field, equippedBuild, newBuild, className: fieldClassName }} />)}
+      {displayFields.map((field, i) => <FieldDisplay key={i} index={i} field={field} className={fieldClassName} />)}
     </ListGroup>
   </Card>
 }

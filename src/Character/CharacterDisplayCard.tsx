@@ -1,6 +1,6 @@
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
+import { useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import { Alert, ButtonGroup, Dropdown, Image, InputGroup, Nav, Tab } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
@@ -8,6 +8,7 @@ import Col from 'react-bootstrap/Col';
 import DropdownItem from 'react-bootstrap/esm/DropdownItem';
 import Row from 'react-bootstrap/Row';
 import { ArtifactSheet } from '../Artifact/ArtifactSheet';
+import { buildContext } from '../Build/Build';
 import CustomFormControl from '../Components/CustomFormControl';
 import { ambiguousLevel, ascensionMaxLevel, milestoneLevels } from '../Data/CharacterData';
 import ElementalData from '../Data/ElementalData';
@@ -27,8 +28,6 @@ import { CharSelectionButton } from './CharacterSelection';
 import CharacterSheet from './CharacterSheet';
 import { initialCharacter } from './CharacterUtil';
 
-export const compareAgainstEquippedContext = createContext(undefined)
-
 type characterEquipWeapon = {
   type: "weapon", id: string
 }
@@ -44,13 +43,12 @@ type CharacterDisplayCardProps = {
   setCharacterKey?: (any: CharacterKey) => void
   footer?: JSX.Element
   newBuild?: ICalculatedStats,
-  editable?: boolean,
   onClose?: (any) => void,
   tabName?: string
 }
-export default function CharacterDisplayCard({ characterKey, setCharacterKey, footer, newBuild: propNewBuild, editable = false, onClose, tabName }: CharacterDisplayCardProps) {
+export default function CharacterDisplayCard({ characterKey, setCharacterKey, footer, newBuild: propNewBuild, onClose, tabName }: CharacterDisplayCardProps) {
   const database = useContext(DatabaseContext)
-  const [compareAgainstEquipped, setcompareAgainstEquipped] = useState(false)
+  const [compareBuild, setCompareBuild] = useState(false)
   // Use databaseToken anywhere `database._get*` is used
   // Use onDatabaseUpdate when `following` database entries
   const [databaseToken, onDatabaseUpdate] = useForceUpdate()
@@ -102,37 +100,22 @@ export default function CharacterDisplayCard({ characterKey, setCharacterKey, fo
     [character.equippedWeapon, onDatabaseUpdate, database])
 
   const newBuild = useMemo(() => {
-    if (!propNewBuild) return
-    const newBuild = propNewBuild && deepClone(propNewBuild);
-    newBuild.hitMode = character.hitMode;
-    newBuild.reactionMode = character.reactionMode;
-    return newBuild
-  }, [propNewBuild, character.hitMode, character.reactionMode])
+    if (!propNewBuild) return undefined
+    return deepClone(propNewBuild)
+  }, [propNewBuild])
 
   const mainStatAssumptionLevel = newBuild?.mainStatAssumptionLevel ?? 0
   const equippedBuild = useMemo(() => characterSheet && weaponSheet && artifactSheets && Character.calculateBuild(character, database, characterSheet, weaponSheet, artifactSheets, mainStatAssumptionLevel), [character, characterSheet, weaponSheet, artifactSheets, mainStatAssumptionLevel, database])
-  const commonPaneProps = { character, newBuild, equippedBuild: (!newBuild || compareAgainstEquipped) ? equippedBuild : undefined, editable, characterDispatch, compareAgainstEquipped }
   // main CharacterDisplayCard
-  const DamageOptionsAndCalculationEle = sheets && <DamageOptionsAndCalculation {...{ sheets, weaponSheet, character, characterDispatch, newBuild, equippedBuild }} className="mb-2" />
+  const DamageOptionsAndCalculationEle = sheets && <DamageOptionsAndCalculation sheets={sheets} character={character} characterDispatch={characterDispatch} className="mb-2" />
   return (<Card bg="darkcontent" text={"lightfont" as any} >
     <Card.Header>
       <Row>
         <Col xs={"auto"} className="mr-auto">
           {/* character selecter/display */}
-          <CharSelectDropdown characterSheet={characterSheet} character={character} weaponSheet={weaponSheet} editable={editable} characterDispatch={characterDispatch} setCharacterKey={setCharacterKey} />
+          <CharSelectDropdown characterSheet={characterSheet} character={character} weaponSheet={weaponSheet} characterDispatch={characterDispatch} setCharacterKey={setCharacterKey} />
         </Col>
         {Boolean(mainStatAssumptionLevel) && <Col xs="auto"><Alert className="mb-0 py-1 h-100" variant="orange" ><b>Assume Main Stats are Level {mainStatAssumptionLevel}</b></Alert></Col>}
-        {/* Compare against new build toggle */}
-        {newBuild ? <Col xs="auto">
-          <ButtonGroup>
-            <Button variant={compareAgainstEquipped ? "primary" : "success"} disabled={!compareAgainstEquipped} onClick={() => setcompareAgainstEquipped(false)}>
-              <small>Show New artifact Stats</small>
-            </Button>
-            <Button variant={!compareAgainstEquipped ? "primary" : "success"} disabled={compareAgainstEquipped} onClick={() => setcompareAgainstEquipped(true)}>
-              <small>Compare against equipped artifacts</small>
-            </Button>
-          </ButtonGroup>
-        </Col> : null}
         {Boolean(onClose) && <Col xs="auto" >
           <Button variant="danger" onClick={onClose}>
             <FontAwesomeIcon icon={faTimes} /></Button>
@@ -140,8 +123,8 @@ export default function CharacterDisplayCard({ characterKey, setCharacterKey, fo
       </Row>
     </Card.Header>
     {characterKey && sheets && characterSheet && weaponSheet && <Card.Body>
-      <compareAgainstEquippedContext.Provider value={compareAgainstEquipped as any}>
-        <Tab.Container defaultActiveKey={tabName ? tabName : (newBuild ? "newartifacts" : "character")} mountOnEnter={true} unmountOnExit={true}>
+      <buildContext.Provider value={{ newBuild, equippedBuild, compareBuild, setCompareBuild }}>
+        <Tab.Container defaultActiveKey={tabName ? tabName : (newBuild ? "newartifacts" : "character")} mountOnEnter unmountOnExit>
           <Nav variant="pills" className="mb-2 mx-0" fill>
             <Nav.Item >
               <Nav.Link eventKey="character"><h5 className="mb-0">Character</h5></Nav.Link>
@@ -159,23 +142,25 @@ export default function CharacterDisplayCard({ characterKey, setCharacterKey, fo
           <Tab.Content>
             <Tab.Pane eventKey="character">
               {DamageOptionsAndCalculationEle}
-              <CharacterOverviewPane characterSheet={characterSheet} weaponSheet={weaponSheet} {...commonPaneProps} />
+              <CharacterOverviewPane characterSheet={characterSheet} weaponSheet={weaponSheet} character={character} characterDispatch={characterDispatch} />
             </Tab.Pane>
-            <Tab.Pane eventKey="artifacts" >
-              {DamageOptionsAndCalculationEle}
-              <CharacterArtifactPane sheets={sheets} artifacts={undefined} {...{ ...commonPaneProps, newBuild: undefined, equippedBuild, }} />
-            </Tab.Pane>
+            <buildContext.Provider value={{ newBuild: undefined, equippedBuild, compareBuild, setCompareBuild }}>
+              <Tab.Pane eventKey="artifacts" >
+                {DamageOptionsAndCalculationEle}
+                <CharacterArtifactPane sheets={sheets} character={character} characterDispatch={characterDispatch} />
+              </Tab.Pane>
+            </buildContext.Provider>
             {newBuild ? <Tab.Pane eventKey="newartifacts" >
               {DamageOptionsAndCalculationEle}
-              <CharacterArtifactPane sheets={sheets} artifacts={undefined} {...commonPaneProps} />
+              <CharacterArtifactPane sheets={sheets} character={character} characterDispatch={characterDispatch} />
             </Tab.Pane> : null}
             <Tab.Pane eventKey="talent">
               {DamageOptionsAndCalculationEle}
-              <CharacterTalentPane characterSheet={characterSheet} {...commonPaneProps} />
+              <CharacterTalentPane characterSheet={characterSheet} character={character} characterDispatch={characterDispatch} />
             </Tab.Pane>
           </Tab.Content>
         </Tab.Container>
-      </compareAgainstEquippedContext.Provider>
+      </buildContext.Provider>
     </Card.Body>}
     {footer && <Card.Footer>
       {footer}
@@ -187,11 +172,11 @@ type CharSelectDropdownProps = {
   characterSheet?: CharacterSheet,
   weaponSheet?: WeaponSheet,
   character: ICachedCharacter
-  editable: boolean
+  disabled?: boolean
   characterDispatch: (any: characterReducerAction) => void
   setCharacterKey?: (any: CharacterKey) => void
 }
-function CharSelectDropdown({ characterSheet, weaponSheet, character, character: { elementKey = "anemo", level = 1, ascension = 0 }, editable, characterDispatch, setCharacterKey }: CharSelectDropdownProps) {
+function CharSelectDropdown({ characterSheet, weaponSheet, character, character: { elementKey = "anemo", level = 1, ascension = 0 }, disabled, characterDispatch, setCharacterKey }: CharSelectDropdownProps) {
   const HeaderIconDisplay = characterSheet ? <span >
     <Image src={characterSheet.thumbImg} className="thumb-small my-n1 ml-n2" roundedCircle />
     <h6 className="d-inline"> {characterSheet.name} </h6>
@@ -206,7 +191,7 @@ function CharSelectDropdown({ characterSheet, weaponSheet, character, character:
     if (ascension === lowerAscension) characterDispatch({ ascension: ascension + 1 })
     else characterDispatch({ ascension: lowerAscension })
   }, [characterDispatch, ascension, level])
-  return <>{editable ? <InputGroup >
+  return <>{!disabled ? <InputGroup >
     <ButtonGroup as={InputGroup.Prepend}>
       <CharSelectionButton characterSheet={characterSheet} onSelect={setCharacterKey} />
       {characterSheet?.sheet && "talents" in characterSheet?.sheet && <Dropdown as={ButtonGroup}>

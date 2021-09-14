@@ -208,7 +208,7 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: Artifac
         {/* Right column */}
         <Col xs={12} lg={6}>
           {/* substat selections */}
-          {[0, 1, 2, 3].map((index) => <SubstatInput key={index} className="mb-2" {...{ index, artifact, setSubstat }} />)}
+          {[0, 1, 2, 3].map((index) => <SubstatInput key={index} className="mb-2" index={index} artifact={artifact} setSubstat={setSubstat} />)}
         </Col>
       </Row>
       <Row className="mb-n2">

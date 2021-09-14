@@ -13,8 +13,8 @@ import { ICachedWeapon } from "../Types/weapon"
 import { usePromise } from "../Util/ReactUtil"
 import WeaponSheet from "./WeaponSheet"
 
-type CharacterCardProps = { weaponId: string, onEdit?: (weaponId: string) => void, onClick?: (weaponId: string) => void, onDelete?: (weaponId: string) => void, cardClassName: string, bg?: string, footer?: boolean, editable?: boolean }
-export default function WeaponCard({ weaponId, onEdit, onDelete, onClick, cardClassName = "", bg = "", footer = false, editable = false }: CharacterCardProps) {
+type WeaponCardProps = { weaponId: string, onEdit?: (weaponId: string) => void, onClick?: (weaponId: string) => void, onDelete?: (weaponId: string) => void, cardClassName: string, bg?: string, footer?: boolean }
+export default function WeaponCard({ weaponId, onEdit, onDelete, onClick, cardClassName = "", bg = "", footer = false }: WeaponCardProps) {
   const database = useContext(DatabaseContext)
   const [databaseWeapon, updateDatabaseWeapon] = useState(undefined as ICachedWeapon | undefined)
   useEffect(() =>
@@ -69,7 +69,7 @@ export default function WeaponCard({ weaponId, onEdit, onDelete, onClick, cardCl
     {footer && <Card.Footer>
       <Row>
         <Col >
-          <EquipmentDropdown location={weapon?.location} onEquip={equipOnChar} weaponTypeKey={weaponTypeKey} disableUnequip={!!weapon.location} editable={editable} />
+          <EquipmentDropdown location={weapon?.location} onEquip={equipOnChar} weaponTypeKey={weaponTypeKey} disableUnequip={!!weapon.location} />
         </Col>
         <Col xs={"auto"}>
           <span className="float-right align-top ml-1">

@@ -10,13 +10,12 @@ import { ArtifactSheet } from "../ArtifactSheet"
 type Data = {
   setKey: ArtifactSetKey,
   setNumKey: SetNum,
-  editable: boolean,
   newBuild?: ICalculatedStats,
   equippedBuild?: ICalculatedStats
   characterDispatch: (arg0: any) => void,
 }
 
-export default function SetEffectDisplay({ setKey, setNumKey, equippedBuild, newBuild, editable, characterDispatch }: Data) {
+export default function SetEffectDisplay({ setKey, setNumKey, equippedBuild, newBuild, characterDispatch }: Data) {
   const sheet = usePromise(ArtifactSheet.get(setKey), [setKey])
   if (!sheet) return null
 
@@ -31,9 +30,9 @@ export default function SetEffectDisplay({ setKey, setNumKey, equippedBuild, new
         <Badge variant="success">{setNumKey}-Set</Badge> {setEffectText}
       </Card.Header>
       <ListGroup className="text-white" variant="flush">
-        {setStatsFields.map((field, i) => <FieldDisplay key={i} index={i} {...{ field, equippedBuild, newBuild }} />)}
+        {setStatsFields.map((field, i) => <FieldDisplay key={i} index={i} field={field} />)}
       </ListGroup>
     </Card>
-    {document ? <DocumentDisplay {...{ sections: document, equippedBuild, newBuild, characterDispatch, editable }} /> : null}
+    {document ? <DocumentDisplay sections={document} characterDispatch={characterDispatch} /> : null}
   </>
 }

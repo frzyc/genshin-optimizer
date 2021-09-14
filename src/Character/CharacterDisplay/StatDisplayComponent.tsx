@@ -19,13 +19,12 @@ type StatDisplayComponentProps = {
   },
   character: ICachedCharacter
   statsDisplayKeys: any,
-  editable: boolean,
   cardbg?: string
   equippedBuild?: ICalculatedStats
   newBuild?: ICalculatedStats
 }
 
-export default function StatDisplayComponent({ sheets, sheets: { characterSheet, weaponSheet }, character, equippedBuild, newBuild, statsDisplayKeys, editable, cardbg = "darkcontent" }: StatDisplayComponentProps) {
+export default function StatDisplayComponent({ sheets, sheets: { characterSheet, weaponSheet }, character, equippedBuild, newBuild, statsDisplayKeys, cardbg = "darkcontent" }: StatDisplayComponentProps) {
   const build = newBuild ? newBuild : equippedBuild
   return <Row className="mb-n2">{Object.entries(statsDisplayKeys).map(([sectionKey, sectionValues]: any) => {
     const header = getFormulaTargetsDisplayHeading(sectionKey, sheets, build?.characterEle)
@@ -33,7 +32,7 @@ export default function StatDisplayComponent({ sheets, sheets: { characterSheet,
       <Card bg={cardbg} text={"lightfont" as any} className="h-100">
         <Card.Header>{header}</Card.Header>
         <Card.Body>
-          <Row>{sectionValues.map(statKey => <StatDisplay key={JSON.stringify(statKey)} {...{ characterSheet, weaponSheet, character, equippedBuild, newBuild, editable, statKey }} />)}</Row>
+          <Row>{sectionValues.map(statKey => <StatDisplay key={JSON.stringify(statKey)} {...{ characterSheet, weaponSheet, character, equippedBuild, newBuild, statKey }} />)}</Row>
         </Card.Body>
       </Card>
     </Col>

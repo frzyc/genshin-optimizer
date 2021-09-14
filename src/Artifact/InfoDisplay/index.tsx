@@ -1,4 +1,4 @@
-import { faCog, faLock } from '@fortawesome/free-solid-svg-icons'
+import { faBan, faCog } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Badge, Col, Image, Row } from 'react-bootstrap'
 import { Trans, useTranslation } from 'react-i18next'
@@ -28,7 +28,7 @@ export default function ArtifactInfoDisplay() {
           <p>When a 5<Stars stars={1} /> have 9(4+5) total rolls, with each of the rolls having the highest value, that is defined as a 100% efficient artifact. However, most of the artifacts are not this lucky. The <b>Current substats Efficiency</b> of an artifact is a percentage over that 100% artifact. The <b>Maximum Substats Efficiency</b> is the maximum possible efficiency an artifact can achieve, if the remaining artifact rolls from upgrades are the hightest possible value.</p>
 
           <h5>Locking an artifact</h5>
-          <p>By locking an artifact <FontAwesomeIcon icon={faLock} />, This artifact will not be picked up by the build generator for optimization. An equipped artifact is locked by default.</p>
+          <p>By locking an artifact <FontAwesomeIcon icon={faBan} />, This artifact will not be picked up by the build generator for optimization. An equipped artifact is locked by default.</p>
         </Trans>
       </Col>
     </Row>

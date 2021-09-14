@@ -4,6 +4,7 @@ import { useContext, useMemo } from 'react';
 import { Accordion, AccordionContext, Button, Card, Col, Dropdown, Row, ToggleButton, ToggleButtonGroup } from "react-bootstrap";
 import { useAccordionToggle } from 'react-bootstrap/AccordionToggle';
 import { ArtifactSheet } from "../../Artifact/ArtifactSheet";
+import { buildContext } from "../../Build/Build";
 import StatIcon, { uncoloredEleIcons } from "../../Components/StatIcon";
 import Formula from "../../Formula";
 import Stat, { FormulaDisplay } from "../../Stat";
@@ -176,11 +177,10 @@ type DamageOptionsAndCalculationProps = {
   }
   character: ICachedCharacter,
   characterDispatch: (any: characterReducerAction) => void,
-  equippedBuild?: ICalculatedStats,
-  newBuild?: ICalculatedStats,
   className: string
 }
-export default function DamageOptionsAndCalculation({ sheets, sheets: { characterSheet, weaponSheet }, character, character: { hitMode }, characterDispatch, newBuild, equippedBuild, className }: DamageOptionsAndCalculationProps) {
+export default function DamageOptionsAndCalculation({ sheets, sheets: { characterSheet, weaponSheet }, character, character: { hitMode }, characterDispatch, className }: DamageOptionsAndCalculationProps) {
+  const { newBuild, equippedBuild } = useContext(buildContext)
   //choose which one to display stats for
   const build = newBuild ? newBuild : equippedBuild!
   return <div className={className}>

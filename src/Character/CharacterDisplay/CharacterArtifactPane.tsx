@@ -1,17 +1,17 @@
 import { useCallback, useContext, useEffect, useMemo } from 'react';
-import { Alert, Button, Card, Col, Row } from 'react-bootstrap';
+import { Alert, Button, ButtonGroup, Card, Col, Row } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import ArtifactCard from '../../Artifact/ArtifactCard';
 import { ArtifactSheet } from '../../Artifact/ArtifactSheet';
 import SetEffectDisplay from '../../Artifact/Component/SetEffectDisplay';
-import { DatabaseContext, database as localDatabase } from '../../Database/Database';
+import { buildContext } from '../../Build/Build';
+import { database as localDatabase, DatabaseContext } from '../../Database/Database';
 import { ICachedCharacter } from '../../Types/character';
 import { allSlotKeys, ArtifactSetKey, SlotKey } from '../../Types/consts';
-import { ICalculatedStats } from '../../Types/stats';
 import { useForceUpdate, usePromise } from '../../Util/ReactUtil';
 import WeaponSheet from '../../Weapon/WeaponSheet';
 import Character from "../Character";
-import type { characterReducerAction } from '../CharacterDisplayCard';
+import { characterReducerAction } from '../CharacterDisplayCard';
 import CharacterSheet from '../CharacterSheet';
 import StatDisplayComponent from './StatDisplayComponent';
 const artLayoutSize = { xs: 12, md: 6, lg: 4 }
@@ -23,13 +23,10 @@ type CharacterArtifactPaneProps = {
     artifactSheets: StrictDict<ArtifactSetKey, ArtifactSheet>
   }
   character: ICachedCharacter,
-  equippedBuild?: ICalculatedStats,
-  newBuild?: ICalculatedStats,
-  editable: boolean,
   characterDispatch: (any: characterReducerAction) => void,
-  artifacts?: any[]
 }
-function CharacterArtifactPane({ sheets, character, character: { key: characterKey }, equippedBuild, newBuild, editable, characterDispatch, artifacts }: CharacterArtifactPaneProps) {
+function CharacterArtifactPane({ sheets, character, character: { key: characterKey }, characterDispatch }: CharacterArtifactPaneProps) {
+  const { newBuild, equippedBuild, compareBuild, setCompareBuild } = useContext(buildContext)
   const database = useContext(DatabaseContext)
   const history = useHistory()
   //choose which one to display stats for
@@ -61,11 +58,24 @@ function CharacterArtifactPane({ sheets, character, character: { key: characterK
   return <>
     <Card className="h-100 mb-2" bg="lightcontent" text={"lightfont" as any}>
       <Card.Body>
-        <StatDisplayComponent {...{ sheets, character, equippedBuild, newBuild, statsDisplayKeys: statKeys, editable }} />
+        <StatDisplayComponent {...{ sheets, character, equippedBuild: (newBuild && !compareBuild) ? undefined : equippedBuild, newBuild, statsDisplayKeys: statKeys }} />
       </Card.Body>
       <Card.Footer>
-        {newBuild ? <Button onClick={equipArts}>Equip all artifacts to current character</Button> : (editable && database === localDatabase && <Button onClick={unequipArts}>Unequip all artifacts</Button>)}
-        {Boolean(mainStatAssumptionLevel) && <Alert className="float-right text-right mb-0 py-2" variant="orange" ><b>Assume Main Stats are Level {mainStatAssumptionLevel}</b></Alert>}
+        <Row>
+          <Col>
+            {newBuild ? <Button onClick={equipArts} className="mr-2">Equip artifacts</Button> : (database === localDatabase && <Button onClick={unequipArts}>Unequip all artifacts</Button>)}
+            {/* Compare against new build toggle */}
+            {!!newBuild && <ButtonGroup>
+              <Button variant={compareBuild ? "primary" : "success"} disabled={!compareBuild} onClick={() => setCompareBuild?.(false)}>
+                <small>Show New artifact Stats</small>
+              </Button>
+              <Button variant={!compareBuild ? "primary" : "success"} disabled={compareBuild} onClick={() => setCompareBuild?.(true)}>
+                <small>Compare against equipped artifacts</small>
+              </Button>
+            </ButtonGroup>}
+          </Col>
+          <Col xs="auto">{!!mainStatAssumptionLevel && <Alert className="mb-0 py-2" variant="orange" ><b>Assume Main Stats are Level {mainStatAssumptionLevel}</b></Alert>}</Col>
+        </Row>
       </Card.Footer>
     </Card>
     <Row className="mb-n2">
@@ -74,22 +84,16 @@ function CharacterArtifactPane({ sheets, character, character: { key: characterK
           <Card key={setKey} className="mb-2 flex-grow-1" bg="lightcontent" text={"lightfont" as any}>
             <Card.Header>{artifactSheets?.[setKey].name ?? ""}</Card.Header>
             <Card.Body className="p-2 mb-n2">
-              {(setNumKeyArr as any).map(setNumKey => <SetEffectDisplay key={setKey + setNumKey} {...{ setKey, setNumKey, equippedBuild, newBuild, characterDispatch, editable }} />)}
+              {(setNumKeyArr as any).map(setNumKey => <SetEffectDisplay key={setKey + setNumKey} {...{ setKey, setNumKey, equippedBuild, newBuild, characterDispatch }} />)}
             </Card.Body>
           </Card>
         )}
       </Col>
-      {artifacts ?
-        allSlotKeys.map(slotKey => {//from flex
-          const art = artifacts.find(art => art.slotKey === slotKey)
-          return Boolean(art) && <Col {...artLayoutSize} key={slotKey} className="mb-2">
-            <ArtifactCard artifactObj={art} />
-          </Col>
-        }) : allSlotKeys.map(slotKey =>
-          Boolean(stats?.equippedArtifacts?.[slotKey]) && <Col {...artLayoutSize} key={stats?.equippedArtifacts?.[slotKey]} className="mb-2">
-            <ArtifactCard artifactId={stats?.equippedArtifacts?.[slotKey]} mainStatAssumptionLevel={mainStatAssumptionLevel} onEdit={() => edit(stats?.equippedArtifacts?.[slotKey])} />
-          </Col>
-        )}
+      {allSlotKeys.map(slotKey =>
+        Boolean(stats?.equippedArtifacts?.[slotKey]) && <Col {...artLayoutSize} key={stats?.equippedArtifacts?.[slotKey]} className="mb-2">
+          <ArtifactCard artifactId={stats?.equippedArtifacts?.[slotKey]} mainStatAssumptionLevel={mainStatAssumptionLevel} onEdit={() => edit(stats?.equippedArtifacts?.[slotKey])} />
+        </Col>
+      )}
     </Row>
   </>
 }
