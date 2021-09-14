@@ -15,8 +15,9 @@ export function migrate(storage: DBStorage): { migrated: boolean } {
   if (version < 6) { migrateV5ToV6(storage); setDBVersion(storage, 6) }
   if (version < 7) { migrateV6ToV7(storage); setDBVersion(storage, 7) }
   if (version < 8) { migrateV7ToV8(storage); setDBVersion(storage, 8) }
+  if (version < 9) { migrateV8ToV9(storage); setDBVersion(storage, 9) }
 
-  if (version > 8) throw new Error(`Database version ${version} is not supported`)
+  if (version > 9) throw new Error(`Database version ${version} is not supported`)
 
   return { migrated: version < getDBVersion(storage) }
 }
@@ -219,5 +220,23 @@ function migrateV7ToV8(storage: DBStorage) {
     CharacterDisplayState.characterKeyToEdit = charMap[CharacterDisplayState.charIdToEdit] ?? ""
     delete CharacterDisplayState.charIdToEdit
     storage.set("CharacterDisplay.state", CharacterDisplayState)
+  }
+}
+
+function migrateV8ToV9(storage: DBStorage) {
+  for (const key of storage.keys) {
+    if (key.startsWith("char_")) {
+      const character = storage.get(key)
+      const { buildSettings = {} } = character
+      delete buildSettings.ascending
+      const { statFilters = {} } = buildSettings
+      for (const key in statFilters) {
+        if (statFilters[key]?.min)
+          statFilters[key] = statFilters[key].min
+        else
+          delete statFilters[key]
+      }
+      storage.set(key, character)
+    }
   }
 }

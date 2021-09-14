@@ -4,7 +4,7 @@
             "title": "Editor Artefak",
             "set": {
                 "artifactSet": "Set Artefak",
-                "maxRarity": "Kualitas Max <1></1>"
+                "maxRarity": "Kualitas Maks <1></1>"
             },
             "substat": {
                 "substatFormat": "Substat {{value}}",
@@ -22,15 +22,15 @@
             },
             "rarity": "Kualitas",
             "level": "Level",
-            "unknownPieceName": "Nama Bagian Tidak Diketahui",
+            "unknownPieceName": "Nama Bagian Artefak Tidak Diketahui",
             "mainSelect": "Pilih Stat Utama",
             "curSubEff": "Efisiensi Substat Saat Ini",
-            "curSubEffDesc": "Setiap 4 kali peningkatan artefak, kamu mendapatkan roll substat. <strong>Efisiensi Substat</strong> menghitung seberapa tinggi roll substat sebagai persentase.",
+            "curSubEffDesc": "Setiap 4 kali upgrade artefak, kamu mendapatkan roll substat. <strong>Efisiensi Substat</strong> menghitung seberapa tinggi roll substat tersebut sebagai persentase.",
             "maxSubEff": "Efisiensi Substat Maksimum",
-            "maxSubEffDesc": "<strong>Efisiensi Substat Maksimum</strong> dari sebuah artefak menghitung efisiensi jika peningkatan yang tersisa me-roll nilai maksimumnya.",
+            "maxSubEffDesc": "<strong>Efisiensi Substat Maksimum</strong> dari sebuah artefak menghitung efisiensinya jika upgrade yang tersisa mendapat nilai roll maksimum.",
             "preview": "Pratinjau Artefak",
-            "dupArt": "Artefak ganda terdeteksi.",
-            "upArt": "Artefak ditingkatkan terdeteksi.",
+            "dupArt": "Artefak duplikat terdeteksi.",
+            "upArt": "Artefak terupgrade terdeteksi.",
             "beforeEdit": "Sebelum Edit",
             "btnSave": "Simpan Artefak",
             "btnAdd": "Tambah Artefak",
@@ -43,23 +43,23 @@
         "filterLocation": {
             "inventory": "Tas",
             "currentlyEquipped": "Dikenakan",
-            "any": "Lokasi: Apapun"
+            "any": "Lokasi: Semua"
         },
         "button": {
             "unequipArtifacts": "Lepaskan Artefak",
             "deleteArtifacts": "Hapus Artefak",
-            "excludeArtifacts": "Kunci Artefak",
-            "includeArtifacts": "Buka Artefak"
+            "excludeArtifacts": "Eksklusif Artefak",
+            "includeArtifacts": "Inklusif Artefak"
         },
-        "filterLevelFormat": "Level <1>Rendah</1>/<3>Tinggi</3> (Inclusive)",
+        "filterLevelFormat": "Level <1>Rendah</1>/<3>Tinggi</3> (Inklusif)",
         "buttonHint": "Catatan: tombol merah diatas hanya berlaku untuk <1>artefak terfilter</1>",
         "tipsOfTheDay": [
             "Efisiensi maksimum dari artefak bintang 4 adalah sekitar 60%.",
-            "Efisiensi maksimum dari artefak biasanya akan berkurang semakin kamu tingkatkan. Itu sangat normal!",
+            "Efisiensi maksimum dari artefak biasanya akan berkurang setelah upgrade. Itu sangat normal!",
             "Substat dengan angka \"1\" adalah yang tersulit untuk dipindai dalam screenshot.",
-            "Jika seluruh rol(6) masuk ke satu substat, warnanya akan ungu!",
-            "Klik di \"Detail\" ketika kamu meningkatkan artefak mu dalam game untuk dipindai sekalian ditingkatkan.",
-            "Kamu bisa menggungah banyak screenshot artefak untuk dipindai!"
+            "Jika seluruh roll(6) masuk ke satu substat, warnanya akan menjadi ungu!",
+            "Klik di \"Rincian\" ketika kamu mengupgrade artefak-mu di dalam game untuk dipindai sekaligus di-upgrade.",
+            "Sekrang kamu bisa mengunggah banyak screenshot artefak untuk dipindai!"
         ],
         "mainStat": "Stat Utama",
         "slot": "Slot",
@@ -72,13 +72,15 @@
         },
         "info": {
             "title": "Panduan Edit/Manajemen Artefak",
-            "section3": "<0>Tas Artefak</0><p>Semua artefakmu yang telah kamu tambahkan ke GO ditampilkan di sini. Filter di sini memungkinkan kamu untuk lebih menyempurnakan tampilan artefakmu. </p><2>Contoh: Menentukan Artefak Makanan</2><p>Dengan memanfaatkan filter artefak, dan perhitungan efisiensi artefak, kamu dapat dengan cepat menentukan artefak untuk dijadikan makanan.</p><4>Dalam contoh ini, filter diatur sebagai berikut: </4><5><0>Batasi level hingga 0-8.</0><1>Buka artifefak dalam Tas</1><2>Menghilangkan kontribusi flat HP, flat DEF, dan Energy Recharge untuk perhitungan efisiensi.</2><3>Diurutkan berdasarkan Efisiensi Maks Naik.</3></5><p>Ini akan memfilter Tas artefak dengan artefak efisiensi terendah, untuk substat yang diinginkan.</p>"
+            "section1": "<0>Substat Roll</0><1> <1>Jumlah roll</1> yang dimiliki substat yang terletak di sebelah kiri substat. Semakin tinggi jumlahnya, substatnya akan semakin berwarna:<3></3>.</1><2>Substat Efisiensi</2><3>Efisiensi dari substat merupakan persentasi dari jumlah saat ini dari potensi jumlah 5<1></1> tertinggi. Dari gambar tersebut, jumlah roll maksimum dari CRIT DMG adalah 7.8%. Dalam efisiensinya: <3>5.8/7.8 = 69.2%.</3></3><4>Efisiensi Substat Saat Ini vs. Efisiensi Substat Maksimum</4><5>Ketika 5<1></1> memiliki total 9(4+5) roll, dengan tiap roll-nya memiliki jumlah tertinggi, itu dinamakan efisiensi 100% artefak. Namun, kebanyakan dari artefak yang ada tidak seberuntung ini. <3>Efisiensi Substat saat ini</3> dari sebuah artefak merupakan persentasi dari efisiensi 100% tersebut. <5>Efisiensi Substat Maksimum</5> merupakan jumlah maksimum dari artefak yang bisa dicapai, jika sisa roll artefak dari upgrade merupakan jumlah tertinggi yang bisa dicapai.</5><6>Eksklusif Artefak</6><7>Jika artefak tertentu ditandai dengan eksklusif <1></1>, maka artefak tersebut tidak akan dipilih oleh build generator untuk optimisasi. Artefak yang dikenakan karakter tereksklusif secara default.</7>",
+            "section2": "<0>Editor Artefak</0><1>Editor Artefak dengan fitur lengkap yang bisa menerima semua artefak 3<1></1> hingga 5<3></3>. Ketika substat diinput, editor ini bisa menghitung jumlah roll yang sesuai. Editor ini juga bisa memastikan bahwa jumlah roll yang didapat sesuai dengan levelnya bersama dengan metrik validasi lainnya.</1><2>Memindai Screenshot</2><3>Tidak suka menginput secara manual? Kamu bisa memindai artefakmu dengan screenshot! Dalam Artefak Editor, klik tombol <1>Show Me How!</1> untuk mempelajarinya lebih lanjut.</3><4>Pemindai Artefak Otomatis</4><5>Kalau kamu memainkan Genshin di PC, kamu bisa mengunduh alat yang bisa memindai semua artefakmu secara otomatis, lalu kamu bisa mengimpor data tersebut ke dalam <1></1> Database. Berikut adalah alat yang direkomendasikan: <3>「天目」-- Amenoma</3>.</5><6>Deteksi Artefak Duplikat/Upgrade</6><7>Tahukah kamu kalau GO bisa mendeteksi jika kamu menambah artefak <1>duplikat</1> yang sudah ada dalam sistem? Editor ini juga bisa mendeteksi apakah artefak yang ditambahkan merupakan <3>upgrade</3> dari artefak yang sudah ada. Ketika duplikasi/upgrade terdeteksi, pratinjau akan muncul agar kamu bisa membandingkan dua artefak tersebut(Lihat Gambar).</7>",
+            "section3": "<0>Tas Artefak</0><p>Semua artefakmu yang telah kamu tambahkan ke GO ditampilkan di sini. Filter di sini memungkinkan kamu untuk lebih menyempurnakan tampilan artefakmu. </p><2>Contoh: Menentukan Artefak Tumbal</2><p>Dengan memanfaatkan filter artefak, dan perhitungan efisiensi artefak, kamu dapat menentukan artefak untuk dijadikan tumbal dengan cepat.</p><4>Sebagai contoh, filter diatur sebagai berikut: </4><5><0>Batasi level hingga 0-8.</0><1>Sertakan artifefak dalam Tas.</1><2>Hilangkan kontribusi flat HP, flat DEF, dan Energy Recharge untuk perhitungan efisiensi.</2><3>Urutkan dengan menggunakan urutan meningkat untuk Eff. Substat Maksimum.</3></5><p>Ini akan memfilter Tas artefak dari artefak efisiensi terendah, untuk substat yang diinginkan.</p>"
         },
-        "exclusionDisplay": "Terkunci: {{value}}",
+        "exclusionDisplay": "Eksklusif: {{value}}",
         "exclusion": {
-            "any": "Apapun",
-            "excluded": "Terkunci",
-            "included": "Terbuka"
+            "any": "Semua",
+            "excluded": "Eksklusif",
+            "included": "Inklusif"
         },
         "sortMap": {
             "quality": "Kualitas",
@@ -89,27 +91,27 @@
         "showingNum": "Menampilkan <1>{{count}}</1> dari {{value}} Artefak",
         "showingNum_plural": "Menampilkan <1>{{count}}</1> dari {{value}} Artefak",
         "efficiencyFilter": {
-            "title": "Substat dipakai dalam perhitungan efisiensi"
+            "title": "Substat yang dipakai dalam perhitungan efisiensi"
         },
-        "resetFilters": "Hapus Filter",
+        "resetFilters": "Reset Filter",
         "setEffectNum": "{{setNum}}-Set",
-        "excludeArtifactTip": "Mengunci artefak akan mencegah build generator mengambilnya untuk build."
+        "excludeArtifactTip": "Eksklusif artefak akan mencegah build generator memilih artefak tersebut untuk di-build."
     },
     "home": {
         "welcome": "Selamat Datang di Genshin Optimizer!",
-        "paragraphIntro": "<0>Apa itu Genshin Optimizer?</0><1>Genshin Optimizer adalah alat untuk game action-rpg gacha <1><strong>Genshin Impact</strong></1>. Ini dimaksudkan untuk membantu mu menangani aspek permainan yang lebih kompleks: Artefak. Artefak adalah elemen berbasis RNG yang secara langsung berkontribusi pada seberapa efektif karaktermu dalam game. Alat ini berusaha untuk meringankan beberapa kerumitan yang terkait dengan efisiensi artefak, bersama dengan artefak mana yang harus dipilih pada karaktermu untuk memaksimalkan statistikmu.</1><p>Namun, alat ini dapat melakukan lebih banyak lagi. Ini akan memungkinkan perhitungan semua statistik kondisional dari artefak, senjata, buff tim, dan menghitung bagaimana statistik itu akan memengaruhi karaktermu dalam WAKTU NYATA.</p>",
-        "paragraphArtifactEditor": "<0>Editor Artefak</0><1><0>Editor artefak berfitur lengkap.</0><1>Tambahkan Artefak dengan memindai screenshot.</1><2>Secara otomatis menghitung nilai roll yang tepat dari setiap artefak.</2><3>Hitung efisiensi substat, menggunakan perhitungan roll. Gunakan satu nomor untuk menentukan apakah akan menyimpan atau membuang artefak!</3><4>Kenakan/lepaskan/tukar artefak di antara karaktermu, mencoba berbagai build.</4></1>",
-        "paragraphCharacterEditor": "<0>Editor Karakter</0><1><0>Editor Karakter berfitur lengkap</0><1>Secara otomatis mengisi stat karakter di setiap level/kenaikan ascension.</1><2>Stat yang dapat diedit sepenuhnya untuk penyesuaian.</2><3>Hitung stat saat ini berdasarkan senjata/artefak.</3><4>Senjata berfitur lengkap, dengan level/ascension</4><5>Terapkan pasif kondisional, mis. Bonus lapis ATK&DEF Whiteblind, ke stat karaktermu.</5><6>Terapkan pasif kondisional dari set Artefak juga!</6><7>Sedang dibuat perhitungan damage talenta.</7><8>Sedang dibuat memperbarui stat/talenta berdasarkan konstelasi.</8></1>",
-        "paragraphCharacterDamageCalculations": "<0>Perhitungan Damage Karakter</0><1><0>Semua detail untuk talenta setiap karakter.</0><1>Semua angka harus menyamai damage dalam game.</1><2>Stat kondisional dan modifikasi untuk setiap konstelasi harus diperhitungkan.</2><3>Memperlihatkan perhitungan untuk semua angka, bersama dengan rumusnya.</3><4>Editor musuh dengan level/resistensi untuk menyesuaikan perhitungan damage.</4><5>Memperhitungkan infusi elemen untuk normal/charged/plunging attacks.</5><6>Perhitungan damage secara langsung.</6></1>",
+        "paragraphIntro": "<0>Apa itu Genshin Optimizer?</0><1>Genshin Optimizer merupakan alat untuk game action-rpg gacha <1><strong>Genshin Impact</strong></1>. Alat ini dibuat untuk membantu kalian menangani aspek permainan yang lebih kompleks: Artefak. Artefak adalah elemen berbasis RNG yang menentukan seberapa efektif karaktermu dalam game. Alat ini berusaha untuk meringankan beberapa kompleksitas tersebut yang terkait dengan efisiensi artefak, bersama dengan pemilihan artefak untuk karaktermu untuk memaksimalkan statistiknya.</1><p>Bahkan, alat ini dapat melakukan lebih banyak lagi. Seperti memungkinkan perhitungan semua statistik kondisional dari artefak, senjata, buff tim, dan menghitung bagaimana statistik tersebut akan memengaruhi karaktermu dalam REAL TIME.</p>",
+        "paragraphArtifactEditor": "<0>Editor Artefak</0><1><0>Editor artefak berfitur lengkap.</0><1>Tambahkan Artefak dengan memindai screenshot.</1><2>Secara otomatis menghitung nilai roll yang tepat dari setiap artefak.</2><3>Hitung efisiensi substat, menggunakan perhitungan roll. Gunakan jumlah efisiensi untuk menentukan apakah kamu ingin menyimpan atau membuang artefak tersebut!</3><4>Kenakan/lepaskan/tukar artefak di antara karaktermu, mencoba berbagai build.</4></1>",
+        "paragraphCharacterEditor": "<0>Editor Karakter</0><1><0>Editor Karakter berfitur lengkap</0><1>Secara otomatis mengisi stat karakter di setiap milestone level/ascension.</1><2>Stat yang dapat diedit sepenuhnya untuk penyesuaian.</2><3>Menghitung stat berdasarkan senjata/artefak.</3><4>Senjata dengan fitur lengkap, dengan milestone level/ascension.</4><5>Terapkan pasif kondisional, mis. Bonus lapis ATK&DEF Whiteblind, ke stat karaktermu.</5><6>Terapkan pasif kondisional dari set Artefak juga!</6><7>[Sedang Dikembangkan] Perhitungan damage talenta.</7><8>[Sedang Dikembangkan] Memperbarui stat/talenta berdasarkan konstelasi.</8></1>",
+        "paragraphCharacterDamageCalculations": "<0>Perhitungan Damage Karakter</0><1><0>Semua detail untuk talenta setiap karakter.</0><1>Semua jumlah harusnya menyamai damage dalam game.</1><2>Stat kondisional dan modifikasi untuk setiap konstelasi harusnya diperhitungkan.</2><3>Memperlihatkan perhitungan untuk semua jumlah, bersama dengan rumusnya.</3><4>Editor musuh dengan level/resistensi untuk menyesuaikan perhitungan damage.</4><5>Memperhitungkan infusi elemen untuk normal/charged/plunging attacks.</5><6>Perhitungan damage secara real-time.</6></1>",
         "paragraphBuildGenerator": "<0>Build Generator</0><1><0>Generator build untuk karakter tertentu menggunakan artefak yang ditambahkan oleh pengguna.</0><1>Batasi build berdasarkan set artefak, stat utama...</1><2>Urutkan build yang dihasilkan berdasarkan stat tertentu untuk dimaksimalkan.</2><3>Generator tidak akan mengambil artefak yang sudah dipakai pada karakter yang berbeda.</3><4>Bandingkan build artefak yang dihasilkan dengan artefak yang saat ini ada di karakter.</4><5>Gunakan stat kondisional dari set artefak, e.g. Gladitator's 4-set Bonus DMG normal attack, sebagai bagian dari perhitungan build.</5></1>",
-        "paragraphTools": "<0>Alat dan </0><1><0>Waktu server, dengan hitung mundur setiap reset.</0><1>Resin Counter.</1><2>Kalkulator EXP, untuk mengoptimalkan pemakaian buku EXP.</2><3><0>$t(ui:underConstruction)</0> Konverter Sumber Daya, untuk semua sumber daya berjenjang x3 yang menyebalkan itu.</3><4><0>$t(ui:underConstruction)</0> To-Do list: sebuah to-do list dinamis untuk memberi tahu apa yang harus difarm setiap hari</4></1>",
-        "paragraphFuture": "<0>Apa untuk kedepannya?</0><1><0>Perhitungan talenta / konstelasi penuh untuk setiap karakter yang dirilis.</0><1>Menyimpan beberapa build artefak per karakter, untuk perbandingan.</1><2>Buff makanan, Buff tim.</2><3>Perencanaan sumber daya untuk melihat perkiraan biaya artefak/karakter/senjata.</3><4>Artefak Analitik, grafik untuk menampilkan data artefak mu.</4></1><2>Untuk lebih lanjut, dan melihat apa yang sedang dikerjakan, bergabunglah dengan <1>discord</1>kami.</2>",
+        "paragraphTools": "<0>Alat dan Fitur Lainnya</0><1><0>Waktu server, dilengkapi hitung mundur sampai waktu reset.</0><1>Resin Counter.</1><2>Kalkulator EXP, untuk mengoptimalkan pemakaian buku EXP.</2><3><0>$t(ui:underConstruction)</0> Konverter Sumber Daya, untuk semua sumber daya berjenjang x3 yang menyebalkan itu.</3><4><0>$t(ui:underConstruction)</0> To-Do list: sebuah to-do list dinamis untuk memberi tahu apa yang harus difarm setiap harinya.</4></1>",
+        "paragraphFuture": "<0>Apa untuk kedepannya?</0><1><0>Perhitungan talenta/konstelasi penuh untuk setiap karakter yang dirilis.</0><1>Menyimpan beberapa build artefak per karakter, untuk perbandingan.</1><2>Buff makanan, Buff tim.</2><3>Perencanaan sumber daya untuk melihat perkiraan biaya artefak/karakter/senjata.</3><4>Artefak Analitik, grafik untuk menampilkan data artefak mu.</4></1><2>Untuk lebih lanjut, dan melihat apa yang sedang dikerjakan, bergabunglah dengan <1>discord</1>kami.</2>",
         "paragraphHelpDevelopment": "<0>Mau bantu si developer?</0><1>Genshin Optimizer telah menjadi manifestasi dari begitu banyaknya hari dan malam tanpa tidur, dan developer masih secara aktif berusaha meningkatkan dan menambahkan fiturnya. Jika kamu ingin memberikan saran, meminta fitur, melaporkan bug, silakan bergabung dengan <1>discord</1>kami.</1><2>Jika kamu ingin mendukung developer secara finansial, silakan berdonasi melalui <1>Paypal</1> atau <3>Patreon</3>.</2>",
-        "paragraphCredits": "<0>Credit where credit is due</0><p>GO tidak akan menjadi seperti sekarang kalau bukan karena sumber/dukungan orang-orang ini. Waktunya untuk berterima kasih pada mereka.</p><2><0>Terima kasih untuk kalian semua yang ada di komunitas, terutama untuk mereka yang ada di <1>discord</1> kami karena telah menyajikan feedback dan membantu kami mengembangkan alat ini.</0><1>Ucapan terima kasih untuk <1>Dimbreath</1>, karena telah memberikan sumber yang konsisten dan dapat dipercaya untuk data dan angka. Semua kalkulasi kami bisa jadi bermasalah kalau bukan karena mereka.</1><2>Beberapa gambar Genshin kami diambil dari <1>The Genshin Impact Wiki</1>, jadi, terima kasih juga untuk mereka.</2><3>Ucapan terima kasih yang istimewa juga untuk komunitas kami yang sudah membantu menguji rumus-rumus dengan cara merekam data in-game dan juga membantu dengan kontribusi sumber kode.</3><4>Terima kasih juga untuk mereka yang sudah membagikan alat ini dan mengundang lebih banyak orang untuk menggunakannya.</4><5>Terakhir, dan paling penting, terima kasih untuk <1>KAMU</1>, karena menggunakan GO.</5>.</</2>"
+        "paragraphCredits": "<0>Credit where credit is due</0><p>GO tidak akan menjadi seperti sekarang kalau bukan karena sumber/dukungan orang-orang ini. Waktunya untuk berterima kasih pada mereka.</p><2><0>Terima kasih untuk kalian semua yang ada di komunitas, terutama untuk mereka yang ada di <1>discord</1> kami karena telah menyajikan feedback dan membantu kami mengembangkan alat ini.</0><1>Ucapan terima kasih untuk <1>Dimbreath</1>, karena telah memberikan sumber yang konsisten dan dapat dipercaya untuk data dan angka. Semua kalkulasi kami bisa jadi bermasalah kalau bukan karena mereka.</1><2>Beberapa gambar Genshin kami diambil dari <1>The Genshin Impact Wiki</1>, jadi, terima kasih juga untuk mereka.</2><3>Ucapan terima kasih yang istimewa juga untuk komunitas kami yang sudah membantu menguji rumus-rumus dengan cara merekam data in-game dan juga membantu dengan kontribusi sumber kode.</3><4>Terima kasih juga untuk mereka yang sudah membagikan alat ini dan mengundang lebih banyak orang untuk menggunakannya.</4><5>Terakhir, dan paling penting, terima kasih untuk <1>KAMU</1>, karena menggunakan GO.</5></</2>"
     },
     "languages": {
-        "chs": "Chinese (Simplified)",
-        "cht": "Chinese (Traditional)",
+        "chs": "Mandarin (Sederhana)",
+        "cht": "Mandarin (Tradisional)",
         "de": "Jerman",
         "en": "Inggris",
         "es": "Spanyol",
@@ -133,42 +135,47 @@
             "databaseDisclaimer": "Catatan: data apa pun dalam halaman \"Alat\", mis. Jumlah resin/timer, bukan bagian dari database yang diunduh.",
             "button": {
                 "download": "Unduh",
-                "copy": "Salin ke Papan klip",
+                "copy": "Salin ke Papan Klip",
                 "delete": "Hapus Database"
             }
         },
         "uploadCard": {
             "title": "Unggah Database",
             "replaceDatabase": "Ganti Database",
-            "hint": "Unggah file JSON disini...",
-            "hintPaste": "...atau tempel datamu dibawah.",
+            "hint": "Unggah file JSON di sini...",
+            "hintPaste": "...atau tempel datamu di bawah.",
             "goUpload": {
                 "title": "<strong>Genshin Optimizer</strong> format",
-                "migrate": "Database akan dipindahkan ke versi terbaru. Harap pertimbangkan untuk mengunduh ulang database setelah mengimpor.",
-                "deleteDatabasePrompt": "Apakah kamu yakin ingin mengganti database mu? Semua karakter dan artefak yang ada akan dihapus."
+                "migrate": "Database akan dipindahkan ke versi terbaru. Disarankan untuk mengunduh ulang database setelah mengimpor.",
+                "deleteDatabasePrompt": "Apakah kamu yakin ingin mengganti database-mu? Semua karakter dan artefak yang ada akan dihapus."
             },
             "monaUpload": {
                 "title": "<strong>mona-uranai</strong> format",
                 "import": "Impor",
-                "deleteExistingButton": "Hapus Artefak Makanan",
-                "deleteExistingExplanation": "Jika Anda melakukan impor lengkap, semua artefak yang tidak ditemukan dalam impor ini akan dihapus.(foddered)<br>Artefak yang ditingkatkan tidak akan dihapus, tetapi diperbarui sesuai dengan itu.",
-                "deleteExistingPrompt": "Apakah kamu yakin ingin menghapus semua artefak yang tidak ditemukan dalam impor saat ini? (Artefak yang ditingkatkan tidak akan terpengaruh.)"
+                "deleteExistingButton": "Hapus Artefak Tumbal",
+                "deleteExistingExplanation": "Jika Anda melakukan impor lengkap, semua artefak yang tidak ditemukan dalam impor ini akan dihapus.(ditumbal)<br>Artefak yang ter-upgrade tidak akan dihapus, tetapi diperbarui sesuai dengan itu.",
+                "deleteExistingPrompt": "Apakah kamu yakin ingin menghapus semua artefak yang tidak ditemukan dalam impor saat ini? (Artefak yang ter-upgrade tidak akan terpengaruh.)"
             },
             "error": {
                 "jsonParse": "Tidak dapat mengurai file JSON.",
                 "unknown": "Format file tidak dikenal.",
                 "monaInvalid": "Format file Mona-Uranai tidak valid",
                 "goInvalid": "Format file cadangan GO tidak valid."
+            },
+            "dbSource": "Sumber data:",
+            "goodUpload": {
+                "title": "<strong>Genshin Open Object Description</strong> (GOOD) format"
             }
         },
         "count": {
             "chars": "Karakter:",
             "arts": "Artefak:",
-            "artsDup": "Artefak Ganda:",
+            "artsDup": "Artefak Duplikat:",
             "artsNew": "Artefak Baru:",
-            "artsUpg": "Artefak Ditingkatkan:",
+            "artsUpg": "Artefak terupgrade:",
             "artsInvalid": "Artefak Invalid",
-            "artsFod": "Artefak Makanan"
+            "artsFod": "Artefak Tumbal",
+            "weapons": "Senjata:"
         }
     },
     "ui": {
@@ -192,15 +199,15 @@
             "level": "Level"
         },
         "unselect": "Batal pilih",
-        "ascending": "Naik",
+        "ascending": "Meningkat",
         "descending": "Menurun",
         "sortByFormat": "Urut Berdasarkan: {{value}}",
         "loading": "Memuat...",
-        "rightsDisclaimer": "Genshin Optimizer tidak berafiliasi dengan ataupun didukung oleh miHoYo.",
+        "rightsDisclaimer": "Genshin Optimizer tidak berafiliasi dengan miHoYo.",
         "appVersion": "$t(halamanJudul) Versi: {{version}}",
         "underConstruction": "Sedang Dibangun",
         "error": "Error",
-        "reset": "Hapus",
+        "reset": "Reset",
         "info": "INFO"
     },
     "char_Eula": {
@@ -219,23 +226,23 @@
         },
         "c1C": {
             "name": "Mengkonsumsi lapis <strong>Grimheart</strong>",
-            "durationStack": "6s + 6s per lapis, hingga 18s"
+            "durationStack": "6 dtk + 6 dtk/lapis, maks 18 dtk"
         },
         "passive1": "DMG Shattered Lightfall Sword"
     },
     "char_Noelle": {
-        "p4cd": "24s, -1s Setiap 4 hit",
-        "c1chance": "(100% ketika <strong>Sweeping Time</strong> dan <strong>Breastplate</strong> keduanya dalam efek)",
-        "c6duration": "15s, +1s per kill, sampai 10s",
-        "qlarger": "Serangan area lebih besar"
+        "p4cd": "24 dtk, -1 dtk Setiap 4 hit",
+        "c1chance": "(100% jika <strong>Sweeping Time</strong> dan <strong>Breastplate</strong> aktif bersamaan)",
+        "c6duration": "15 dtk, +1 dtk/kill, maks 10 dtk",
+        "qlarger": "Serangan area yang lebih besar"
     },
     "char_Venti": {
         "addAimed": "Tambahan DMG Membidik",
         "addFullAimed": "Tambahan DMG Membidik Penuh",
-        "upcurrentDuration": "Durasi Arus angin",
+        "upcurrentDuration": "Durasi Arus Angin",
         "regenEner": "Memulihkan 15 Energy ke Venti setelah efek berakhir",
         "fullBurstDMG": {
-            "text": "<0><0>DMG Elemental Burst Penuh</0><1>Ini menghitung total DMG Elemental Burst, termasuk swirl. Perhitungan ini mengasumsikan:</1><2><0>20 tick dari <1>DMG Burst</1></0><1>15 tick dari <1>DMG absorption</1></1><2>7 ticks of <1>Swirl</1>, untuk satu musuh, ATAU,</2><3>14 tick dari <1>Swirl</1>, untuk banyak musuh, yang Swirl satu sama lain.</3></2></0>",
+            "text": "<0><0>DMG Elemental Burst Penuh</0><1>Ini menghitung total DMG Elemental Burst, termasuk swirl. Perhitungan ini mengasumsikan:</1><2><0>20 tick dari <1>DMG Burst</1></0><1>15 tick dari <1>DMG absorption</1></1><2>7 ticks dari <1>Swirl</1>, untuk satu musuh, ATAU,</2><3>14 tick dari <1>Swirl</1>, untuk banyak musuh, yang Swirl satu sama lain.</3></2></0>",
             "dmg": "<0>DMG Total (<1>{{swirlTicks}} tick Swirl</1>)</0>"
         },
         "c6": "Target yang menerima DMG dari <strong>Wind's Grand Ode</strong>",
@@ -257,11 +264,24 @@
             "charged": "Charged Attack mengenai musuh",
             "plunging": "Plunging Attack mengenai musuh",
             "skill": "Elemental Skill mengenai musuh",
-            "burst": "Elemental Burst mengenai musuh"
+            "burst": "Elemental Burst mengenai musuh",
+            "geo": "Geo DMG mengenai musuh",
+            "anemo": "Anemo DMG mengenai musuh",
+            "hydro": "Hydro DMG mengenai musuh",
+            "cryo": "Cryo DMG mengenai musuh",
+            "pyro": "Pyro DMG mengenai musuh",
+            "electro": "Electro DMG mengenai musuh"
         },
         "hits_plural": "{{count}} Hit",
         "eleAbsor": "Elemental Absorption",
-        "absorDot": "DMG Berkelanjutan"
+        "absorDot": "DMG Berkelanjutan",
+        "afterUse": {
+            "skill": "Setelah menggunakan Elemental Skill",
+            "burst": "Setelah menggunakan Elemental Burst"
+        },
+        "increase": {
+            "atk": "ATK Meningkat"
+        }
     },
     "weapon_SongOfBrokenPines": {
         "name": "Millennial Movement: Banner-Hymn"
@@ -326,7 +346,7 @@
     },
     "char_Razor": {
         "fullBurstDMG": {
-            "text": "<0><0><0>Full Elemental Burst DMG</0></0><1>Ini menghitung kombinasi damage dari normal attack Razor selama Elemental Burst. Ini hanya menambahkan DMG X-Hit dari Serigala bersamaan dengan DMG X-Hit dari nromal attack yang memicunya.</1></0>",
+            "text": "<0><0><0>Full Elemental Burst DMG</0></0><1>Menghitung kombinasi damage dari normal attack Razor selama Elemental Burst. Dengan kata lain, menambahkan Wolf Hit DMG dengan DMG X-Hit dari normal attack yang memicunya.</1></0>",
             "label": "Normal + Wolf Hit DMG {{hitNum}}"
         }
     },
@@ -334,5 +354,33 @@
         "c1": "Musuh terkena efek <strong>Aurous Blaze</strong> dikalahkan",
         "c2": "Crit dari <pyro>Pyro DMG</pyro>",
         "p2": "Peningkatan ATK party"
+    },
+    "char_RaidenShogun": {
+        "skill": {
+            "eye": "Eye of Stormy Judgement",
+            "partyCost": "Konsumsi Energi (party)"
+        },
+        "burst": {
+            "resolves": "Lapisan Resolve"
+        },
+        "a4": {
+            "enerRest": "Pemulihan energi dari <strong>Musou Isshin</strong>",
+            "eleDMG": "Electro DMG Bonus"
+        }
+    },
+    "char_Aloy": {
+        "skill": {
+            "coil": "Coil",
+            "coil1": "Lapisan Coil 1",
+            "coil2": "Lapisan Coil 2",
+            "coil3": "Lapisan Coil 3",
+            "rush": "Rushing Ice",
+            "rushDur": "Durasi Rushing Ice"
+        }
+    },
+    "char_KujouSara": {
+        "skill": {
+            "ambush": "Tengu Juurai: Ambush"
+        }
     }
 }

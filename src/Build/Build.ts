@@ -1,3 +1,4 @@
+import { createContext } from "react"
 import ElementalData from "../Data/ElementalData"
 import { StatKey, ICachedArtifact, SubstatKey } from "../Types/artifact"
 import { ArtifactSetEffects, ArtifactsBySlot, SetFilter } from "../Types/Build"
@@ -5,6 +6,22 @@ import { ArtifactSetKey, ElementKey, SetNum, SlotKey } from "../Types/consts"
 import { BasicStats, BonusStats, ICalculatedStats } from "../Types/stats"
 import { mergeStats } from "../Util/StatUtil"
 import { deepClone } from "../Util/Util"
+
+type buildContextObj = {
+  newBuild?: ICalculatedStats,
+  equippedBuild?: ICalculatedStats,
+  compareBuild?: boolean,
+  setCompareBuild?: ((boolean) => void),
+}
+export const buildContext = createContext({
+  newBuild: undefined,
+  equippedBuild: undefined,
+  compareBuild: false,
+  setCompareBuild: undefined,
+} as buildContextObj)
+
+export const maxBuildsToShowList = [1, 2, 3, 4, 5, 8, 10] as const
+export const maxBuildsToShowDefault = 5
 
 /**
  * Remove artifacts that can never be used in optimized builds when trying to optimize for top `maxBuildsToShow` builds
@@ -14,11 +31,10 @@ import { deepClone } from "../Util/Util"
  * @param {bool} ascending - Whether the sorting is ascending or descending
  * @param {Set.<setKey>} alwaysAccepted - The list of artifact sets that are always included
  */
-export function pruneArtifacts(artifacts: ICachedArtifact[], artifactSetEffects: ArtifactSetEffects, significantStats: Set<StatKey>, maxBuildsToShow: number = 1, ascending: boolean = false, alwaysAccepted: Set<ArtifactSetKey> = new Set()): ICachedArtifact[] {
+export function pruneArtifacts(artifacts: ICachedArtifact[], artifactSetEffects: ArtifactSetEffects, significantStats: Set<StatKey>, maxBuildsToShow: number = 1, alwaysAccepted: Set<ArtifactSetKey> = new Set()): ICachedArtifact[] {
   function shouldKeepFirst(first: Dict<StatKey, number>, second: Dict<StatKey, number>, preferFirst: boolean) {
     let firstBetter = Object.entries(first).some(([k, v]) => !isFinite(v) || v > (second[k] ?? 0))
     let secondBetter = Object.entries(second).some(([k, v]) => !isFinite(v) || v > (first[k] ?? 0))
-    if (ascending) [firstBetter, secondBetter] = [secondBetter, firstBetter]
     // Keep if first is strictly better, uncomparable, or equal + prefer first.
     // That is, return false if second is strictly better, or equal + NOT prefer first
     return firstBetter || (!secondBetter && preferFirst)

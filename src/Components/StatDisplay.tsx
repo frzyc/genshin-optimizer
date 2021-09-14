@@ -34,10 +34,9 @@ type StatDisplayProps = {
   character: ICachedCharacter,
   equippedBuild?: ICalculatedStats,
   newBuild?: ICalculatedStats,
-  editable: boolean,
   statKey: string
 }
-export default function StatDisplay({ characterSheet, weaponSheet, character, equippedBuild, newBuild, editable, statKey }: StatDisplayProps) {
+export default function StatDisplay({ characterSheet, weaponSheet, character, equippedBuild, newBuild, statKey }: StatDisplayProps) {
   const formula = usePromise(Array.isArray(statKey) ? Formula.get(statKey) : undefined, [statKey])
 
   const { val, oldVal, fixed, unit, variant, label } = useMemo(() => {
@@ -79,9 +78,9 @@ export default function StatDisplay({ characterSheet, weaponSheet, character, eq
         oldVal = Character.getTalentFieldValue(field, "formula", equippedBuild)?.[0]?.(equippedBuild)
       }
     }
-    if (editable && Character.hasOverride(character, statKey)) variant = "warning"
+    if (Character.hasOverride(character, statKey)) variant = "warning"
     return { val, oldVal, fixed, unit, variant, label }
-  }, [character, characterSheet, weaponSheet, equippedBuild, newBuild, editable, statKey, formula])
+  }, [character, characterSheet, weaponSheet, equippedBuild, newBuild, statKey, formula])
 
   return <DisplayStatDiff {...{ val, oldVal, fixed, unit, variant, label: label as any }} />
 }

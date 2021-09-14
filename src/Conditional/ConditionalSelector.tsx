@@ -9,7 +9,7 @@ import IConditional, { IConditionalValue } from '../Types/IConditional';
 import { evalIfFunc } from '../Util/Util';
 
 export default function ConditionalSelector({ conditional, conditionalValue, setConditional, name, disabled, stats }:
-  { conditional: IConditional, conditionalValue: IConditionalValue, setConditional: (newCond: IConditionalValue) => void, name: Displayable, disabled: boolean, stats: ICalculatedStats }) {
+  { conditional: IConditional, conditionalValue: IConditionalValue, setConditional: (newCond: IConditionalValue) => void, name: Displayable, disabled?: boolean, stats: ICalculatedStats }) {
   const [conditionalNum = 0, conditionalStateKey] = conditionalValue
   if (!conditional) return name as JSX.Element
   if ("states" in conditional) {//complex conditional

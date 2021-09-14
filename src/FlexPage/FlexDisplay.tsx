@@ -57,6 +57,6 @@ function Display({ characterKey }) {
         {isUpToDate && <Alert variant="warning" className="py-2 mt-2 mb-0">This URL is generated on an older database version of Genshin Optimizer. The character data below might not be displayed as intended.</Alert>}
       </Card.Body>
     </Card>
-    <CharacterDisplayCard characterKey={characterKey} editable={true} />
+    <CharacterDisplayCard characterKey={characterKey} />
   </Container>
 }

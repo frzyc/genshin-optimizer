@@ -8,5 +8,7 @@ export const initialBuildSettings = (): BuildSetting => ({
   mainStatAssumptionLevel: 0,
   useExcludedArts: false,
   useEquippedArts: false,
-  ascending: false,
+  builds: [],
+  buildDate: 0,
+  maxBuildsToShow: 5
 })

@@ -7,7 +7,7 @@ export type ArtifactSetEffects = Dict<ArtifactSetKey, Dict<SetNum, BonusStats>>
 export type SetFilter = { key: ArtifactSetKey | "", num: number }[]
 export interface BuildSetting {
   setFilters: SetFilter,
-  statFilters: MinMaxFilter,
+  statFilters: Dict<StatKey, number>
   mainStatKeys: {
     sands: MainStatKey[],
     goblet: MainStatKey[],
@@ -17,21 +17,20 @@ export interface BuildSetting {
   mainStatAssumptionLevel: number,
   useExcludedArts: boolean,
   useEquippedArts: boolean,
-  ascending: boolean
+  builds: Array<string[]>,
+  buildDate: number,
+  maxBuildsToShow: number
 }
-export type MinMaxFilter = Dict<StatKey, { min: number, max: number }>
 export type ArtifactsBySlot = Dict<SlotKey, ICachedArtifact[]>
 
 export interface BuildRequest {
   splitArtifacts: ArtifactsBySlot,
   setFilters: SetFilter,
   minFilters: Dict<StatKey, Number>,
-  maxFilters: Dict<StatKey, Number>,
   initialStats: ICalculatedStats,
   artifactSetEffects: ArtifactSetEffects,
   maxBuildsToShow: number,
   optimizationTarget: string | string[],
-  ascending: boolean,
 }
 export interface Build {
   buildFilterVal: number,

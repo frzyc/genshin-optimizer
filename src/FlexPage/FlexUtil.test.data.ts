@@ -29,24 +29,6 @@ export const character: ICharacter = {
       }
     }
   },
-  buildSettings: {
-    ascending: false,
-    mainStatAssumptionLevel: 0,
-    mainStatKeys: {
-      circlet: [],
-      goblet: [],
-      sands: [],
-    },
-    optimizationTarget: "finalAtk",
-    setFilters: [
-      { key: "", num: 0, },
-      { key: "", num: 0, },
-      { key: "", num: 0, },
-    ],
-    statFilters: {},
-    useEquippedArts: false,
-    useExcludedArts: false,
-  },
 };
 
 export const weapon: IWeapon = {

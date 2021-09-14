@@ -87,7 +87,7 @@ export default function UploadDisplay({ setState, setReset, artifactInEditor }: 
 
   const img = image && <img src={image} className="w-100 h-auto" alt="Screenshot to parse for artifact values" />
   return (<Row>
-    <ExplainationModal {...{ modalShow, hide: () => setModalShow(false) }} />
+    <ExplainationModal modalShow={modalShow} hide={() => setModalShow(false)} />
     <Col xs={12} className="mb-2">
       <Row>
         <Col>

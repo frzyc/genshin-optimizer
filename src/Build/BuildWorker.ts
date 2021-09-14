@@ -11,7 +11,7 @@ import { mergeStats } from '../Util/StatUtil';
 
 onmessage = async (e: { data: BuildRequest }) => {
   const t1 = performance.now()
-  const { splitArtifacts, setFilters, minFilters = {}, maxFilters = {}, initialStats: stats, artifactSetEffects, maxBuildsToShow, optimizationTarget, ascending } = e.data
+  const { splitArtifacts, setFilters, minFilters = {}, initialStats: stats, artifactSetEffects, maxBuildsToShow, optimizationTarget } = e.data
 
   let target: (stats) => number, targetKeys: string[]
   if (typeof optimizationTarget === "string") {
@@ -45,19 +45,17 @@ onmessage = async (e: { data: BuildRequest }) => {
   )
   mergeStats(modifierStats, { modifiers: stats.modifiers ?? {} })
 
-  const dependencies = GetDependencies(stats, modifierStats.modifiers, [...targetKeys, ...Object.keys(minFilters), ...Object.keys(maxFilters)]) as StatKey[]
+  const dependencies = GetDependencies(stats, modifierStats.modifiers, [...targetKeys, ...Object.keys(minFilters)]) as StatKey[]
   const oldCount = calculateTotalBuildNumber(splitArtifacts, setFilters)
 
   let prunedArtifacts = splitArtifacts, newCount = oldCount
 
-  // Prune artifact with strictly inferior (relevant) stats.
-  // It does not work with ascending + min filter, or descending + max filter
-  if (Object.keys(ascending ? minFilters : maxFilters).length === 0) {
+  { // Prune artifact with strictly inferior (relevant) stats.
     // Don't prune artifact sets that are filtered
     const alwaysAccepted = setFilters.map(set => set.key) as any
 
     prunedArtifacts = Object.fromEntries(Object.entries(splitArtifacts).map(([key, values]) =>
-      [key, pruneArtifacts(values, artifactSetEffects, new Set(dependencies), maxBuildsToShow, ascending, new Set(alwaysAccepted))]))
+      [key, pruneArtifacts(values, artifactSetEffects, new Set(dependencies), maxBuildsToShow, new Set(alwaysAccepted))]))
     newCount = calculateTotalBuildNumber(prunedArtifacts, setFilters)
   }
 
@@ -74,8 +72,7 @@ onmessage = async (e: { data: BuildRequest }) => {
     if (!(++buildCount % 10000)) postMessage({ progress: buildCount, timing: performance.now() - t1, skipped }, undefined as any)
     formula(stats)
     if (Object.entries(minFilters).some(([key, minimum]) => stats[key] < minimum)) return
-    if (Object.entries(maxFilters).some(([key, maximum]) => stats[key] > maximum)) return
-    let buildFilterVal = ascending ? -target(stats) : target(stats)
+    let buildFilterVal = target(stats)
     if (buildFilterVal >= threshold) {
       builds.push({ buildFilterVal, artifacts: { ...accu } })
       if (builds.length >= 1000) {

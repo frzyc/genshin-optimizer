@@ -1,4 +1,5 @@
 import Artifact from "../Artifact/Artifact";
+import { maxBuildsToShowDefault, maxBuildsToShowList } from "../Build/Build";
 import { initialBuildSettings } from "../Build/BuildSetting";
 import { ascensionMaxLevel } from "../Data/CharacterData";
 import Stat from "../Stat";
@@ -179,10 +180,9 @@ export function parseCharacter(obj: any, key: string): ICharacter | undefined {
     if (typeof burst !== "number" || burst < 1 || burst > 15) burst = 1
     talent = { auto, skill, burst }
   }
-  {//buildSettings
-    if (typeof buildSettings !== "object") buildSettings = {}
-    let { setFilters, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, ascending } = buildSettings ?? {}
-    if (!Array.isArray(setFilters)) setFilters = [{ key: "", num: 0 }, { key: "", num: 0 }, { key: "", num: 0 }]
+  if (buildSettings && typeof buildSettings === "object") {//buildSettings
+    let { setFilters, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, builds, buildDate, maxBuildsToShow } = buildSettings ?? {}
+    if (!Array.isArray(setFilters)) setFilters = initialBuildSettings().setFilters
     if (typeof statFilters !== "object") statFilters = {}
 
     if (!mainStatKeys || !mainStatKeys.sands || !mainStatKeys.goblet || !mainStatKeys.circlet) {
@@ -201,15 +201,21 @@ export function parseCharacter(obj: any, key: string): ICharacter | undefined {
       mainStatAssumptionLevel = 0
     useExcludedArts = !!useExcludedArts
     useEquippedArts = !!useEquippedArts
-    ascending = !!ascending
-    buildSettings = { setFilters, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, ascending }
+    if (!Array.isArray(builds) || !builds.every(b => Array.isArray(b) && b.every(s => typeof s === "string"))) {
+      builds = []
+      buildDate = 0
+    }
+    if (!Number.isInteger(buildDate)) buildDate = 0
+    if (!maxBuildsToShowList.includes(maxBuildsToShow)) maxBuildsToShow = maxBuildsToShowDefault
+    buildSettings = { setFilters, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, builds, buildDate, maxBuildsToShow }
   }
 
   // TODO: validate baseStatOverrides, conditionalValues
   const result: ICharacter = {
     key: characterKey, level, ascension, hitMode, reactionMode, conditionalValues,
-    baseStatOverrides, talent, infusionAura, constellation, buildSettings,
+    baseStatOverrides, talent, infusionAura, constellation,
   }
+  if (buildSettings) result.buildSettings = buildSettings
   if (elementKey) result.elementKey = elementKey
   return result
 }

@@ -1,46 +1,46 @@
 import { faQuestionCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Card, Col, Dropdown, DropdownButton, Image, ListGroup, OverlayTrigger, Row, Tooltip } from "react-bootstrap";
+import { buildContext } from "../../Build/Build";
 import DocumentDisplay from "../../Components/DocumentDisplay";
 import FieldDisplay from "../../Components/FieldDisplay";
 import StatIcon from "../../Components/StatIcon";
 import Stat from "../../Stat";
 import { ElementToReactionKeys } from "../../StatData";
 import { ICachedCharacter } from "../../Types/character";
-import { ICalculatedStats } from "../../Types/stats";
 import statsToFields from "../../Util/FieldUtil";
 import type { characterReducerAction } from "../CharacterDisplayCard";
 import CharacterSheet from "../CharacterSheet";
 type CharacterTalentPaneProps = {
   characterSheet: CharacterSheet,
   character: ICachedCharacter,
-  editable: boolean,
   characterDispatch: (any: characterReducerAction) => void,
-  newBuild?: ICalculatedStats,
-  equippedBuild?: ICalculatedStats
 }
-export default function CharacterTalentPane(props: CharacterTalentPaneProps) {
-  const { characterSheet, character: { ascension, constellation }, editable, characterDispatch, newBuild, equippedBuild } = props
+export default function CharacterTalentPane({ characterSheet, character, character: { ascension, constellation }, characterDispatch }: CharacterTalentPaneProps) {
+  const { newBuild, equippedBuild } = useContext(buildContext)
   const skillBurstList = [["auto", "Normal/Charged Attack"], ["skill", "Elemental Skill"], ["burst", "Elemental Burst"]]
   const passivesList: Array<[tKey: string, tText: string, asc: number]> = [["passive1", "Unlocked at Ascension 1", 1], ["passive2", "Unlocked at Ascension 4", 4], ["passive3", "Unlocked by Default", 0]]
-  const skillDisplayProps = { ...props, ascension }
   const build = newBuild ? newBuild : equippedBuild
   return <>
-    <Row><Col><ReactionDisplay {...{ characterSheet, newBuild, equippedBuild }} /></Col></Row>
+    <Row><Col><ReactionDisplay characterSheet={characterSheet} /></Col></Row>
     <Row>
       {/* auto, skill, burst */}
       {skillBurstList.map(([tKey, tText]) =>
         <Col key={tKey} xs={12} md={6} lg={4} className="mb-2">
           <SkillDisplayCard
-            {...skillDisplayProps}
+            characterSheet={characterSheet}
+            character={character}
+            characterDispatch={characterDispatch}
             talentKey={tKey}
             subtitle={tText}
           />
         </Col>)}
       {!!characterSheet.getTalentOfKey("sprint", build?.characterEle) && <Col xs={12} md={6} lg={4} className="mb-2">
         <SkillDisplayCard
-          {...skillDisplayProps}
+          characterSheet={characterSheet}
+          character={character}
+          characterDispatch={characterDispatch}
           talentKey="sprint"
           subtitle="Alternative Sprint"
         />
@@ -53,7 +53,9 @@ export default function CharacterTalentPane(props: CharacterTalentPaneProps) {
         if (!characterSheet.getTalentOfKey(tKey, build?.characterEle)) return null
         return <Col key={tKey} style={{ opacity: enabled ? 1 : 0.5 }} xs={12} md={4} className="mb-2">
           <SkillDisplayCard
-            {...skillDisplayProps}
+            characterSheet={characterSheet}
+            character={character}
+            characterDispatch={characterDispatch}
             talentKey={tKey}
             subtitle={tText}
           />
@@ -72,10 +74,12 @@ export default function CharacterTalentPane(props: CharacterTalentPaneProps) {
         return <Col key={i} xs={12} md={4} className="mb-2"
           style={{ opacity: constellation > i ? 1 : 0.5 }}>
           <SkillDisplayCard
-            {...skillDisplayProps}
+            characterSheet={characterSheet}
+            character={character}
+            characterDispatch={characterDispatch}
             talentKey={tKey}
             subtitle={`Contellation Lv. ${i + 1}`}
-            onClickTitle={() => editable && characterDispatch({ constellation: (i + 1) === constellation ? i : i + 1 })}
+            onClickTitle={() => characterDispatch({ constellation: (i + 1) === constellation ? i : i + 1 })}
           />
         </Col>
       })}
@@ -90,7 +94,8 @@ const ReactionComponents = {
   shattered_hit: ShatteredCard,
   crystalize_hit: CrystalizeCard,
 }
-function ReactionDisplay({ characterSheet, newBuild, equippedBuild }: { characterSheet: CharacterSheet, newBuild?: ICalculatedStats, equippedBuild?: ICalculatedStats }) {
+function ReactionDisplay({ characterSheet }: { characterSheet: CharacterSheet }) {
+  const { newBuild, equippedBuild } = useContext(buildContext)
   const build = newBuild ? newBuild : equippedBuild
   if (!build) return null
   const charEleKey = build.characterEle
@@ -180,13 +185,10 @@ type SkillDisplayCardProps = {
   characterDispatch: (any) => void,
   talentKey: string,
   subtitle: string,
-  ascension: number,
-  equippedBuild?: ICalculatedStats,
-  newBuild?: ICalculatedStats,
-  editable: boolean,
   onClickTitle?: (any) => any
 }
-function SkillDisplayCard({ characterSheet, character: { elementKey, talent, }, characterDispatch, talentKey, subtitle, ascension, equippedBuild, newBuild, editable, onClickTitle }: SkillDisplayCardProps) {
+function SkillDisplayCard({ characterSheet, character: { talent, ascension }, characterDispatch, talentKey, subtitle, onClickTitle }: SkillDisplayCardProps) {
+  const { newBuild, equippedBuild } = useContext(buildContext)
   let build = newBuild ? newBuild : equippedBuild
   if (!build) return null
   let header: Displayable | null = null
@@ -194,20 +196,17 @@ function SkillDisplayCard({ characterSheet, character: { elementKey, talent, }, 
   if (talentKey in talent) {
     const levelBoost: number = build[`${talentKey}Boost`] ?? 0
     const talentLvlKey = talent[talentKey] + levelBoost
-    if (editable) {
-      const setTalentLevel = (tKey, newTalentLevelKey) => {
-        talent[tKey] = newTalentLevelKey
-        characterDispatch({ talent })
-      }
-      header = <Card.Header>
-        <DropdownButton title={`Talent Lv. ${talentLvlKey}`}>
-          {[...Array(talentLimits[ascension] + (talentKey === "auto" && !levelBoost ? 1 : 0)).keys()].map(i => //spcial consideration for Tartaglia
-            <Dropdown.Item key={i} onClick={() => setTalentLevel(talentKey, i + 1)}>Talent Lv. {i + levelBoost + 1}</Dropdown.Item>)}
-        </DropdownButton>
-      </Card.Header>
-    } else {
-      header = <Card.Header>{`Talent Level: ${talentLvlKey}`}</Card.Header>
+    const setTalentLevel = (tKey, newTalentLevelKey) => {
+      talent[tKey] = newTalentLevelKey
+      characterDispatch({ talent })
     }
+    header = <Card.Header>
+      <DropdownButton title={`Talent Lv. ${talentLvlKey}`}>
+        {[...Array(talentLimits[ascension] + (talentKey === "auto" && !levelBoost ? 1 : 0)).keys()].map(i => //spcial consideration for Tartaglia
+          <Dropdown.Item key={i} onClick={() => setTalentLevel(talentKey, i + 1)}>Talent Lv. {i + levelBoost + 1}</Dropdown.Item>)}
+      </DropdownButton>
+    </Card.Header>
+
   }
   const talentStats = characterSheet.getTalentStats(talentKey, build)
   const talentStatsFields = talentStats && statsToFields(talentStats, build)
@@ -215,7 +214,7 @@ function SkillDisplayCard({ characterSheet, character: { elementKey, talent, }, 
     <Card bg="darkcontent" text={"lightfont" as any} className="mb-2">
       <ListGroup className="text-white" variant="flush">
         {talentStatsFields.map((field, i) =>
-          <FieldDisplay key={i} index={i} {...{ field, equippedBuild, newBuild }} />)}
+          <FieldDisplay key={i} index={i} field={field} />)}
       </ListGroup>
     </Card>
   </Col></Row>
@@ -225,7 +224,7 @@ function SkillDisplayCard({ characterSheet, character: { elementKey, talent, }, 
   return <Card bg="lightcontent" text={"lightfont" as any} className="h-100">
     {header}
     <Card.Body className="mb-n2">
-      <Row className={`d-flex flex-row mb-2 ${(editable && onClickTitle) ? "cursor-pointer" : ""}`} onClick={onClickTitle} >
+      <Row className={`d-flex flex-row mb-2 ${onClickTitle ? "cursor-pointer" : ""}`} onClick={onClickTitle} >
         <Col xs="auto" className="flex-shrink-1 d-flex flex-column">
           <Image src={talentSheet?.img} className="thumb-mid" />
         </Col>
@@ -235,7 +234,7 @@ function SkillDisplayCard({ characterSheet, character: { elementKey, talent, }, 
         </Col>
       </Row>
       {/* Display document sections */}
-      {sections ? <DocumentDisplay {...{ sections, characterDispatch, equippedBuild, newBuild, editable }} /> : null}
+      {sections ? <DocumentDisplay {...{ sections, characterDispatch, equippedBuild, newBuild }} /> : null}
       {statsEle}
     </Card.Body>
   </Card>

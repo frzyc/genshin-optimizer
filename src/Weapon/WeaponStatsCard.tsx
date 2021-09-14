@@ -9,7 +9,7 @@ export default function WeaponStatsCard({ title, statsVals = {}, stats }: { titl
   return <Card bg="darkcontent" text={"lightfont" as any} className="mb-2">
     <Card.Header className="py-2 px-3">{title}</Card.Header>
     <ListGroup className="text-white" variant="flush">
-      {fields.map((field, i) => <FieldDisplay newBuild={undefined} key={i} index={i} {...{ field, equippedBuild: stats, className: "px-3 py-2" }} />)}
+      {fields.map((field, i) => <FieldDisplay key={i} index={i} field={field} className="px-3 py-2" />)}
     </ListGroup>
   </Card>
 }

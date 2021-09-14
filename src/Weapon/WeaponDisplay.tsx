@@ -101,8 +101,6 @@ export default function WeaponDisplay(props) {
     {weaponIdToEdit ? <Row className="mt-2"><Col>
       <WeaponDisplayCard
         weaponId={weaponIdToEdit}
-        // onDelete={deleteWeapon}
-        editable
         footer
         onClose={() => setWeaponIdToEdit("")}
       />
@@ -158,7 +156,6 @@ export default function WeaponDisplay(props) {
             onEdit={editCharacter}
             onClick={editCharacter}
             footer
-            editable
           />
         </Col>)}
     </Row>
