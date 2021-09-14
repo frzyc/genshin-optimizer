@@ -263,7 +263,6 @@ function GOUploadAction({ data: { storage }, data, reset }: { data: GOImportResu
   const { t } = useTranslation("settings")
   const dataValid = data.type === "GO" ? data.charCount || data.artCount : (data.characters?.total || data.artifacts?.total || data.weapons?.total)
   const replaceDB = () => {
-    if (!window.confirm(t`uploadCard.goUpload.deleteDatabasePrompt`)) return
     dbStorage.removeForKeys(k => k.startsWith("artifact_") || k.startsWith("char_") || k.startsWith("weapon_"))
     dbStorage.copyFrom(storage)
     database.reloadStorage()
