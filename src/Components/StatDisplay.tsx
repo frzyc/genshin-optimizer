@@ -73,6 +73,7 @@ export default function StatDisplay({ characterSheet, weaponSheet, character, eq
       const labelVariant = Character.getTalentFieldValue(field, "variant", build)
       label = <span className={`text-${labelVariant}`}>{Character.getTalentFieldValue(field, "text", build)}</span>
       fixed = Character.getTalentFieldValue(field, "fixed", build, 0 as any)
+      unit = Character.getTalentFieldValue(field, "unit", build,"")
       val = Character.getTalentFieldValue(field, "formula", build)?.[0]?.(build)
       if (newBuild && equippedBuild) {//comparable
         oldVal = Character.getTalentFieldValue(field, "formula", equippedBuild)?.[0]?.(equippedBuild)
