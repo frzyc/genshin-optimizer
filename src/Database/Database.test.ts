@@ -63,7 +63,7 @@ describe("Database", () => {
     database.setArtLocation(art1.id, "Albedo")
     art1.location = "Albedo"
 
-    const { storage } = importGOOD(exportGOOD(database.storage)) ?? { storage: new SandboxStorage() }
+    const { storage } = importGOOD(exportGOOD(database.storage), database) ?? { storage: new SandboxStorage() }
     const result = new ArtCharDatabase(storage)
 
     albedo.equippedArtifacts.circlet = result._getChar("Albedo")!.equippedArtifacts.circlet

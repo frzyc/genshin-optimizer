@@ -83,7 +83,7 @@ const artifactCode = `interface IArtifact {
   setKey: SetKey //e.g. "GladiatorsFinale"
   slotKey: SlotKey //e.g. "plume"
   level: number //0-20 inclusive
-  rarity: number //3-5 inclusive
+  rarity: number //1-5 inclusive
   mainStatKey: StatKey
   location: CharacterKey|"" //where "" means not equipped.
   lock: boolean //Whether the artifact is locked in game.

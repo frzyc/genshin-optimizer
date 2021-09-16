@@ -28,10 +28,8 @@ export function validateArtifact(flex: IArtifact, id: string): { artifact: ICach
 
   substats.forEach((substat, index) => {
     const { key, value } = substat
-    if (!key) {
-      substat.value = 0
-      return
-    }
+    if (!key) return substat.value = 0
+    substat.value = key.endsWith("_") ? parseFloat(value.toFixed(1)) : parseInt(value.toFixed())
 
     const possibleRolls = Artifact.getSubstatRolls(key, value, rarity)
 
