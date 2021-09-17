@@ -25,7 +25,7 @@ export default function WeaponCard({ weaponId, onEdit, onDelete, onClick, cardCl
   const weaponSheet = usePromise(weapon?.key && WeaponSheet.get(weapon.key), [weapon?.key])
 
   if (!weapon || !weaponSheet) return null;
-  const { level, ascension, refine, id } = weapon
+  const { level, ascension, refinement, id } = weapon
   const equipOnChar = (charKey: CharacterKey) => database.setWeaponLocation(weaponId, charKey)
 
   const weaponTypeKey = weaponSheet.weaponType
@@ -48,7 +48,7 @@ export default function WeaponCard({ weaponId, onEdit, onDelete, onClick, cardCl
         </Col>
         <Col>
           <h5 className="mb-0">Level {weaponLevelName} </h5>
-          <h5 >Refinement {refine}</h5>
+          <h5 >Refinement {refinement}</h5>
           <h6 className="mb-0"><Stars stars={weaponSheet.rarity} colored /></h6>
           {/* <h3 className="mb-0"></h3> */}
         </Col>

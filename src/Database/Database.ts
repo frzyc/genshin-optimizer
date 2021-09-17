@@ -333,26 +333,26 @@ export class ArtCharDatabase {
   }
 
   findDuplicateWeapons(weapon: IWeapon): { duplicated: ICachedWeapon[], upgraded: ICachedWeapon[] } {
-    const { key, level, ascension, refine } = weapon
+    const { key, level, ascension, refinement } = weapon
 
     const candidates = this._getWeapons().filter(candidate =>
       key === candidate.key &&
       level >= candidate.level &&
       ascension >= candidate.ascension &&
-      refine >= candidate.refine
+      refinement >= candidate.refinement
     )
 
     // Strictly upgraded weapons
     const upgraded = candidates.filter(candidate =>
       level > candidate.level ||
       ascension > candidate.ascension ||
-      refine > candidate.refine
+      refinement > candidate.refinement
     )
     // Strictly duplicated weapons
     const duplicated = candidates.filter(candidate =>
       level === candidate.level &&
       ascension === candidate.ascension &&
-      refine === candidate.refine
+      refinement === candidate.refinement
     )
     return { duplicated, upgraded }
   }

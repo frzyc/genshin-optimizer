@@ -39,6 +39,10 @@ function importGOOD1(data: IGOOD, oldDatabase: ArtCharDatabase): ImportResult | 
       const match = (duplicated[0] ?? upgraded[0]) as ICachedArtifact | undefined
       if (match) {
         idsToRemove.delete(match.id)
+        for (const key in match) {
+          if (!(key in artifact) && key !== "location")
+            artifact[key] = match[key]
+        }
         if (!hasLocations)
           artifact.location = match.location
       }
@@ -77,6 +81,10 @@ function importGOOD1(data: IGOOD, oldDatabase: ArtCharDatabase): ImportResult | 
       const match = (duplicated[0] ?? upgraded[0]) as ICachedWeapon | undefined
       if (match) {
         idsToRemove.delete(match.id)
+        for (const key in match) {
+          if (!(key in weapon) && key !== "location")
+            weapon[key] = match[key]
+        }
         if (!hasLocations)
           weapon.location = match.location
       }
@@ -103,6 +111,16 @@ function importGOOD1(data: IGOOD, oldDatabase: ArtCharDatabase): ImportResult | 
     })
     const newCharKeys = new Set(characters.map(x => x.key))
     const oldCharKeys = new Set(oldDatabase._getCharKeys())
+
+    for (const character of characters) {
+      const old = oldDatabase._getChar(character.key)
+      if (!old) continue
+
+      for (const key in old) {
+        if (!(key in character))
+          character[key] = old[key]
+      }
+    }
 
     result.characters = {
       total: data.characters!.length,

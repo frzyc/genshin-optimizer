@@ -246,7 +246,7 @@ const artifactV3 = object({
 })
 const weaponV3 = object({
   key: string,
-  // level, ascension, refine
+  // level, ascension, refinement
   location: optional(allCharacterKeys),
 
   // Mixed
@@ -254,13 +254,13 @@ const weaponV3 = object({
   levelDiff: uint(1),
 }, {
   encode: object => {
-    object.ascensionRefine = object.ascension * 8 + object.refine
+    object.ascensionRefine = object.ascension * 8 + object.refinement
     object.levelDiff = ascensionMaxLevel[object.ascension] - object.level
     return object
   },
   decode: object => {
-    object.refine = object.ascensionRefine % 8
-    object.ascension = (object.ascensionRefine - object.refine) / 8
+    object.refinement = object.ascensionRefine % 8
+    object.ascension = (object.ascensionRefine - object.refinement) / 8
     object.level = ascensionMaxLevel[object.ascension] - object.levelDiff
     return object
   }

@@ -48,7 +48,7 @@ export default function WeaponDisplayCard({
   const weapon = useMemo(() =>
     databaseToken && database._getWeapon(propWeaponId!)!,
     [propWeaponId, databaseToken, database])
-  const { key, level, refine, ascension } = weapon
+  const { key, level, refinement, ascension } = weapon
   const { location = "", id } = weapon as Partial<ICachedWeapon>
   const weaponSheet: WeaponSheet | undefined = usePromise(WeaponSheet.get(key), [key])
   const weaponTypeKey = weaponSheet?.weaponType
@@ -73,7 +73,7 @@ export default function WeaponDisplayCard({
     else weaponDispatch({ ascension: lowerAscension })
   }, [weaponDispatch, ascension, level])
 
-  const build = { ...(charData ? (charData.newBuild ?? charData.equippedBuild) : { weapon: { refineIndex: refine - 1, level, ascension } }) } as any
+  const build = { ...(charData ? (charData.newBuild ?? charData.equippedBuild) : { weapon: { refineIndex: refinement - 1, level, ascension } }) } as any
 
   const characterSheet = usePromise(location ? CharacterSheet.get(location) : undefined, [location])
   const weaponFilter = characterSheet ? (ws) => ws.weaponType === characterSheet.weaponTypeKey : undefined
@@ -87,14 +87,14 @@ export default function WeaponDisplayCard({
                 <ButtonGroup as={InputGroup.Prepend}>
                   <WeaponSelectionButton weaponSheet={weaponSheet} onSelect={k => weaponDispatch({ key: k })} filter={weaponFilter} />
                   <Dropdown as={ButtonGroup}>
-                    <Dropdown.Toggle as={Button}>Refinement {refine}</Dropdown.Toggle>
+                    <Dropdown.Toggle as={Button}>Refinement {refinement}</Dropdown.Toggle>
                     <Dropdown.Menu>
                       <Dropdown.ItemText>
                         <span>Select Weapon Refinement</span>
                       </Dropdown.ItemText>
                       <Dropdown.Divider />
                       {[...Array(5).keys()].map(key =>
-                        <Dropdown.Item key={key} onClick={() => weaponDispatch({ refine: key + 1 })}>
+                        <Dropdown.Item key={key} onClick={() => weaponDispatch({ refinement: key + 1 })}>
                           {`Refinement ${key + 1}`}
                         </Dropdown.Item>)}
                     </Dropdown.Menu>
@@ -152,7 +152,7 @@ export default function WeaponDisplayCard({
             <small>{weaponSheet.description}</small>
           </Col>
           <Col>
-            <h5 className="mb-0">{process.env.NODE_ENV === "development" && <span className="text-warning">{id || `""`} </span>}{weaponSheet.name} Lv. {WeaponSheet.getLevelString(weapon)} {weaponPassiveName && <Badge variant="info">Refinement {refine}</Badge>}</h5>
+            <h5 className="mb-0">{process.env.NODE_ENV === "development" && <span className="text-warning">{id || `""`} </span>}{weaponSheet.name} Lv. {WeaponSheet.getLevelString(weapon)} {weaponPassiveName && <Badge variant="info">Refinement {refinement}</Badge>}</h5>
             <div className="mb-2"><Stars stars={weaponSheet.rarity} /></div>
             <h6>{weaponPassiveName}</h6>
             <div className="mb-2">{weaponPassiveName && weaponSheet.passiveDescription(build)}</div>

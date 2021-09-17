@@ -112,7 +112,7 @@ export default class Character {
     initialStats.tlvl = Object.fromEntries(Object.entries(talent ?? {}).map(([key, value]) => [key, value - 1])) as any;
     initialStats.constellation = constellation
     initialStats.ascension = ascension
-    initialStats.weapon = { key: weapon.key, refineIndex: weapon.refine - 1 }
+    initialStats.weapon = { key: weapon.key, refineIndex: weapon.refinement - 1 }
     initialStats.equippedArtifacts = equippedArtifacts;
 
     //enemy stuff

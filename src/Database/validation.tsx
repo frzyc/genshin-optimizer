@@ -29,7 +29,6 @@ export function validateArtifact(flex: IArtifact, id: string): { artifact: ICach
   substats.forEach((substat, index) => {
     const { key, value } = substat
     if (!key) return substat.value = 0
-    substat.value = key.endsWith("_") ? parseFloat(value.toFixed(1)) : parseInt(value.toFixed())
 
     const possibleRolls = Artifact.getSubstatRolls(key, value, rarity)
 
@@ -127,12 +126,13 @@ export function removeArtifactCache(artifact: ICachedArtifact): IArtifact {
 function parseSubstats(obj: any): ISubstat[] {
   if (!Array.isArray(obj))
     return new Array(4).map(_ => ({ key: "", value: 0 }))
-  const substats = obj.map(({ key = undefined, value = undefined }) => {
-    if (!allSubstats.includes(key))
+  const substats = obj.slice(0, 4).map(({ key = undefined, value = undefined }) => {
+    if (!allSubstats.includes(key) || typeof value !== "number" || !isFinite(value))
       return { key: "", value: 0 }
-    return { key, value: typeof value === "number" && isFinite(value) ? value : 0 }
+    value = key.endsWith("_") ? parseFloat(value.toFixed(1)) : parseInt(value.toFixed())
+    return { key, value }
   })
-  while (substats.length !== 4)
+  while (substats.length < 4)
     substats.push({ key: "", value: 0 })
 
   return substats
@@ -238,18 +238,18 @@ export function validateWeapon(flex: IWeapon, id: string): ICachedWeapon {
 export function parseWeapon(obj: any): IWeapon | undefined {
   if (typeof obj !== "object") return
 
-  let { key, level, ascension, refine, location, } = obj
+  let { key, level, ascension, refinement, location, } = obj
   if (!allWeaponKeys.includes(key)) return
   if (typeof level !== "number" || level < 1 || level > 90) level = 1
   if (typeof ascension !== "number" || ascension < 0 || ascension > 6) ascension = 0
   // TODO: Check if level-ascension matches
-  if (typeof refine !== "number" || refine < 1 || refine > 5) refine = 1
+  if (typeof refinement !== "number" || refinement < 1 || refinement > 5) refinement = 1
   if (!allCharacterKeys.includes(location)) location = ""
 
-  return { key, level, ascension, refine, location, }
+  return { key, level, ascension, refinement, location, }
 }
 /// Return a new flex character from given character. All extra keys are removed
 export function removeWeaponCache(weapon: ICachedWeapon): IWeapon {
-  const { key, level, ascension, refine, location, } = weapon
-  return { key, level, ascension, refine, location, }
+  const { key, level, ascension, refinement, location, } = weapon
+  return { key, level, ascension, refinement, location, }
 }
