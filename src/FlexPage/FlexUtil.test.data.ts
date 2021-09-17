@@ -36,7 +36,7 @@ export const weapon: IWeapon = {
   key: 'StaffOfHoma',
   level: 90,
   ascension: 6,
-  refine: 1,
+  refinement: 1,
 }
 export const artifacts: IArtifact[] = [{
   setKey: 'GladiatorsFinale',

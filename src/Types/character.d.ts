@@ -7,21 +7,21 @@ import { BasicStats, ICalculatedStats } from "./stats";
 import { ICachedWeapon } from "./weapon"
 
 interface ICharacterSheetBase {
-  name: Displayable,
-  cardImg: string,
-  thumbImg: string,
-  star: Rarity,
+  name: Displayable
+  cardImg: string
+  thumbImg: string
+  star: Rarity
   weaponTypeKey: WeaponTypeKey
-  gender: string,
-  constellationName: Displayable,
-  title: Displayable,
+  gender: string
+  constellationName: Displayable
+  title: Displayable
   baseStat: IBaseStat
   baseStatCurve: IBaseStatCurve
-  ascensions: ascension[],
+  ascensions: ascension[]
 }
 interface ICharacterSheetTalent extends ICharacterSheetBase {
   elementKey: ElementKey
-  talent: TalentSheet,
+  talent: TalentSheet
 }
 interface ICharacterSheetTalents extends ICharacterSheetBase {
   talents: Dict<ElementKey, TalentSheet>
@@ -48,44 +48,46 @@ interface ascension {
 
 export interface ICharacter {
   key: CharacterKey
-  level: number,
-  ascension: number,
-  hitMode: HitModeKey
-  elementKey?: ElementKey
-  reactionMode: ReactionModeKey | null
-  conditionalValues: any,
-  baseStatOverrides: object, //overriding the baseStat
+  level: number
+  constellation: number
+  ascension: number
   talent: {
     auto: number
     skill: number
     burst: number
-  },
+  }
+
+  // GO-specific
+  hitMode: HitModeKey
+  elementKey?: ElementKey
+  reactionMode: ReactionModeKey | null
+  conditionalValues: any
+  baseStatOverrides: object //overriding the baseStat
   infusionAura: ElementKey | ""
-  constellation: number
   buildSettings?: BuildSetting
 }
 export interface ICachedCharacter extends ICharacter {
-  equippedArtifacts: StrictDict<SlotKey, string>,
-  equippedWeapon: string,
+  equippedArtifacts: StrictDict<SlotKey, string>
+  equippedWeapon: string
 }
 
 export type TalentSheet = {
-  formula: IFormulaSheet,
-  conditionals: IConditionals,
+  formula: IFormulaSheet
+  conditionals: IConditionals
   sheets: Dict<string, TalentSheetElement>
 }
 
 export interface TalentSheetElement {
-  name: Displayable, //talentName
-  img: string,
-  sections: Array<DocumentSection>,
-  stats?: object,
+  name: Displayable //talentName
+  img: string
+  sections: Array<DocumentSection>
+  stats?: object
 }
 export interface DocumentSection {
-  canShow?: (stats: BasicStats) => boolean,
-  text?: Displayable | ((stats: BasicStats) => Displayable),
-  fields?: Array<IFieldDisplay>,
-  conditional?: IConditional,
+  canShow?: (stats: BasicStats) => boolean
+  text?: Displayable | ((stats: BasicStats) => Displayable)
+  fields?: Array<IFieldDisplay>
+  conditional?: IConditional
 }
 
 export interface IFormulaSheet {

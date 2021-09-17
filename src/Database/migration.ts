@@ -16,8 +16,9 @@ export function migrate(storage: DBStorage): { migrated: boolean } {
   if (version < 7) { migrateV6ToV7(storage); setDBVersion(storage, 7) }
   if (version < 8) { migrateV7ToV8(storage); setDBVersion(storage, 8) }
   if (version < 9) { migrateV8ToV9(storage); setDBVersion(storage, 9) }
+  if (version < 10) { migrateV9ToV10(storage); setDBVersion(storage, 10) }
 
-  if (version > 9) throw new Error(`Database version ${version} is not supported`)
+  if (version > 10) throw new Error(`Database version ${version} is not supported`)
 
   return { migrated: version < getDBVersion(storage) }
 }
@@ -237,6 +238,18 @@ function migrateV8ToV9(storage: DBStorage) {
           delete statFilters[key]
       }
       storage.set(key, character)
+    }
+  }
+}
+
+function migrateV9ToV10(storage: DBStorage) {
+  for (const key of storage.keys) {
+    if (key.startsWith("weapon_")) {
+      const weapon = storage.get(key)
+      if (weapon.refine) {
+        weapon.refinement = weapon.refine
+        storage.set(key, weapon)
+      }
     }
   }
 }

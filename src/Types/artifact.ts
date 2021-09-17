@@ -19,14 +19,15 @@ export interface SetEffectEntry {
 
 export interface IArtifact {
   setKey: ArtifactSetKey,
-  rarity: ArtifactRarity,
-  level: number,
   slotKey: SlotKey,
+  level: number,
+  rarity: ArtifactRarity,
   mainStatKey: MainStatKey,
-  substats: ISubstat[],
-
   location: CharacterKey | "",
   lock: boolean,
+  substats: ISubstat[],
+
+  // GO-specific
   exclude: boolean,
 }
 export interface ICachedArtifact extends IArtifact {
