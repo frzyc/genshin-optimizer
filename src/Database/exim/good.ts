@@ -135,6 +135,19 @@ function importGOOD1(data: IGOOD, oldDatabase: ArtCharDatabase): ImportResult | 
     characters.forEach((c => storage.set(`char_${c.key}`, c)))
   }
 
+  // We invalidate build results here because we need to do
+  // it regardless of whether the file has character/art data.
+  for (const key of storage.keys) {
+    if (key.startsWith("char_")) {
+      const character = storage.get(key)
+      if (character.buildSettings) {
+        character.buildSettings.builds = []
+        character.buildSettings.buildDate = 0
+        storage.set(key, character)
+      }
+    }
+  }
+
   if (source === GOSource) {
     const { dbVersion, artifactDisplay, characterDisplay, buildsDisplay } = data as unknown as IGO
     if (dbVersion < 8) return // Something doesn't look right here
@@ -160,7 +173,15 @@ export function exportGOOD(storage: DBStorage): IGOOD & IGO {
     version: 1,
     characters: storage.entries
       .filter(([key]) => key.startsWith("char_"))
-      .map(([_, value]) => JSON.parse(value)),
+      .map(([_, value]) => {
+        // Invalidate build results since we won't use it on imports either
+        const result = JSON.parse(value)
+        if (result.buildSettings) {
+          result.buildSettings.builds = []
+          result.buildSettings.buildDate = 0
+        }
+        return result
+      }),
     artifacts: storage.entries
       .filter(([key]) => key.startsWith("artifact_"))
       .map(([_, value]) => JSON.parse(value)),
