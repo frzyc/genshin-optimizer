@@ -28,14 +28,17 @@ export class DataManager<Key extends string | number, Value> {
   set(key: Key, value: Value) {
     this.data[key] = value
 
+    this.trigger(key)
+  }
+  /** Trigger update event */
+  trigger(key: Key) {
+    const value = this.data[key]
     this.listeners[key]?.forEach(cb => cb(value))
     this.anyListeners.forEach(cb => cb(key))
   }
   remove(key: Key) {
     delete this.data[key]
-
-    this.listeners[key]?.forEach(cb => cb(undefined))
-    this.anyListeners.forEach(cb => cb(key))
+    this.trigger(key)
     delete this.listeners[key]
   }
   removeAll() {

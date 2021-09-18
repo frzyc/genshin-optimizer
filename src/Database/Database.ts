@@ -1,7 +1,7 @@
 import { ICachedArtifact, IArtifact } from "../Types/artifact";
 import { ICachedCharacter, ICharacter } from "../Types/character";
 import { allSlotKeys, CharacterKey, SlotKey } from "../Types/consts";
-import { deepClone, getRandomInt, objectFromKeyMap } from "../Util/Util";
+import { getRandomInt, objectFromKeyMap } from "../Util/Util";
 import { DataManager } from "./DataManager";
 import { migrate } from "./migration";
 import { validateArtifact, parseCharacter, parseArtifact, removeArtifactCache, validateCharacter, removeCharacterCache, parseWeapon, validateWeapon, removeWeaponCache } from "./validation";
@@ -154,10 +154,14 @@ export class ArtCharDatabase {
   updateChar(value: Partial<ICharacter>): void {
     const key = value.key!
     const oldChar = this._getChar(key)
-    const parsedChar = parseCharacter({ ...oldChar, ...(value as ICharacter) })
+    const parsedChar = parseCharacter({ ...oldChar, ...value })
     if (!parsedChar) return
 
     const newChar = validateCharacter({ ...oldChar, ...parsedChar })
+    if (oldChar) {
+      newChar.equippedArtifacts = oldChar.equippedArtifacts
+      newChar.equippedWeapon = oldChar.equippedWeapon
+    }
     this.saveChar(key, newChar)
   }
 
@@ -166,26 +170,29 @@ export class ArtCharDatabase {
    */
   updateArt(value: Partial<IArtifact>, id: string) {
     const oldArt = this.arts.get(id)
-    const parsedArt = parseArtifact({ ...oldArt, ...(value as IArtifact) })
+    const parsedArt = parseArtifact({ ...oldArt, ...value })
     if (!parsedArt) return
 
     const newArt = validateArtifact({ ...oldArt, ...parsedArt }, id).artifact
+    if (oldArt) {
+      newArt.location = oldArt.location
+    }
     this.saveArt(id, newArt)
     if (newArt.location)
-      this.chars.set(newArt.location, deepClone(this.chars.get(newArt.location)!))
+      this.arts.trigger(newArt.location)
   }
   /**
    * **Caution** This does not update `location` use `setWeaponLocation` instead
    */
   updateWeapon(value: Partial<IWeapon>, id: string) {
     const oldWeapon = this.weapons.get(id)
-    const parsedWeapon = parseWeapon({ ...oldWeapon, ...(value as IWeapon) })
+    const parsedWeapon = parseWeapon({ ...oldWeapon, ...value })
     if (!parsedWeapon) return
 
     const newWeapon = validateWeapon({ ...oldWeapon, ...parsedWeapon }, id)
     this.saveWeapon(id, newWeapon)
     if (newWeapon.location)
-      this.chars.set(newWeapon.location, deepClone(this.chars.get(newWeapon.location)!))
+      this.chars.trigger(newWeapon.location)
   }
 
   createArt(value: IArtifact): string {
