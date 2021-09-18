@@ -6,12 +6,12 @@ import { Trans, useTranslation } from 'react-i18next';
 import CustomFormControl from '../Components/CustomFormControl';
 import { Stars } from '../Components/StarDisplay';
 import { DatabaseContext } from '../Database/Database';
-import { validateArtifact } from '../Database/validation';
+import { parseArtifact, validateArtifact } from '../Database/validation';
 import Stat from '../Stat';
-import { allSubstats, ICachedArtifact, IArtifact, ISubstat } from '../Types/artifact';
-import { ArtifactRarity, SlotKey } from '../Types/consts';
+import { allSubstats, ICachedArtifact, IArtifact, ISubstat, MainStatKey } from '../Types/artifact';
+import { ArtifactRarity, ArtifactSetKey, SlotKey } from '../Types/consts';
 import { randomizeArtifact } from '../Util/ArtifactUtil';
-import { usePromise } from '../Util/ReactUtil';
+import { useForceUpdate, usePromise } from '../Util/ReactUtil';
 import { valueString } from '../Util/UIUtil';
 import { clamp, deepClone } from '../Util/Util';
 import Artifact from './Artifact';
@@ -29,25 +29,43 @@ const allSubstatFilter = new Set(allSubstats)
 let uploadDisplayReset: (() => void) | undefined
 export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: ArtifactEditorArgument) {
   const { t } = useTranslation("artifact")
-  const database = useContext(DatabaseContext)
-  const [flexArtifact, artifactDispatch] = useReducer(artifactReducer, undefined)
   const artifactSheets = usePromise(ArtifactSheet.getAll(), [])
 
-  const { artifact, errors } = useMemo(() => {
-    return flexArtifact ? validateArtifact(flexArtifact, artifactIdToEdit) : { artifact: undefined, errors: [] }
-  }, [flexArtifact, artifactIdToEdit])
+  const database = useContext(DatabaseContext)
+  const [dirtyDatabase, setDirtyDatabase] = useForceUpdate()
+  useEffect(() => database.followAnyArt(setDirtyDatabase), [database, setDirtyDatabase])
 
-  const artifactInEditor = artifact !== undefined
-  const sheet = artifact ? artifactSheets?.[artifact.setKey] : undefined
+  const [editorArtifact, artifactDispatch] = useReducer(artifactReducer, undefined)
+  const artifact = useMemo(() => editorArtifact && parseArtifact(editorArtifact), [editorArtifact])
 
+  const { old, oldType }: { old: ICachedArtifact | undefined, oldType: "edit" | "duplicate" | "upgrade" | "" } = useMemo(() => {
+    const databaseArtifact = dirtyDatabase && database._getArt(artifactIdToEdit)
+    if (databaseArtifact) return { old: databaseArtifact, oldType: "edit" }
+    if (artifact === undefined) return { old: undefined, oldType: "" }
+    const { duplicated, upgraded } = dirtyDatabase && database.findDuplicates(artifact)
+    return { old: duplicated[0] ?? upgraded[0], oldType: duplicated.length !== 0 ? "duplicate" : "upgrade" }
+  }, [artifact, artifactIdToEdit, database, dirtyDatabase])
+
+  const { artifact: cachedArtifact, errors } = useMemo(() => {
+    if (!artifact) return { artifact: undefined, errors: [] as Displayable[] }
+    const validated = validateArtifact(artifact, artifactIdToEdit)
+    if (old) {
+      validated.artifact.location = old.location
+      validated.artifact.exclude = old.exclude
+    }
+    return validated
+  }, [artifact, artifactIdToEdit, old])
+
+  // Overwriting using a different function from `databaseArtifact` because `useMemo` does not
+  // guarantee to trigger *only when* dependencies change, which is necessary in this case.
   useEffect(() => {
-    const databaseArtifact = database._getArt(artifactIdToEdit)
+    const databaseArtifact = dirtyDatabase && database._getArt(artifactIdToEdit)
     if (databaseArtifact)
       artifactDispatch({ type: "overwrite", artifact: deepClone(databaseArtifact) })
-  }, [artifactIdToEdit, database])
+  }, [artifactIdToEdit, database, dirtyDatabase])
 
+  const sheet = artifact ? artifactSheets?.[artifact.setKey] : undefined
   const getUpdloadDisplayReset = (reset: () => void) => uploadDisplayReset = reset
-
   const reset = useCallback(() => {
     cancelEdit?.();
     uploadDisplayReset?.()
@@ -82,13 +100,8 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: Artifac
   }, [artifactDispatch])
   const isValid = !errors.length
   const canClearArtifact = (): boolean => window.confirm(t`editor.clearPrompt` as string)
-  const { dupId, isDup } = useMemo(() => {
-    if (artifact === undefined || artifact.id) return { isDup: false }
-    const { duplicated, upgraded } = database.findDuplicates(artifact)
-    return { dupId: (duplicated[0] ?? upgraded[0])?.id, isDup: duplicated.length !== 0 }
-  }, [artifact, database])
   const { rarity = 5, level = 0, slotKey = "flower" } = artifact ?? {}
-  const { currentEfficiency = 0, maxEfficiency = 0 } = artifact ? Artifact.getArtifactEfficiency(artifact, allSubstatFilter) : {}
+  const { currentEfficiency = 0, maxEfficiency = 0 } = cachedArtifact ? Artifact.getArtifactEfficiency(cachedArtifact, allSubstatFilter) : {}
   return <Card bg="darkcontent" text={"lightfont" as any}>
     <Card.Header><Trans t={t} i18nKey="editor.title" >Artifact Editor</Trans></Card.Header>
     <Card.Body>
@@ -208,25 +221,25 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: Artifac
         {/* Right column */}
         <Col xs={12} lg={6}>
           {/* substat selections */}
-          {[0, 1, 2, 3].map((index) => <SubstatInput key={index} className="mb-2" index={index} artifact={artifact} setSubstat={setSubstat} />)}
+          {[0, 1, 2, 3].map((index) => <SubstatInput key={index} className="mb-2" index={index} artifact={cachedArtifact} setSubstat={setSubstat} />)}
         </Col>
       </Row>
       <Row className="mb-n2">
         {/* Image OCR */}
         <Col xs={12} className="mb-2">
           {/* TODO: artifactDispatch not overwrite */}
-          <UploadDisplay setState={state => artifactDispatch({ type: "overwrite", artifact: state })} setReset={getUpdloadDisplayReset} artifactInEditor={artifactInEditor} />
+          <UploadDisplay setState={state => artifactDispatch({ type: "overwrite", artifact: state })} setReset={getUpdloadDisplayReset} artifactInEditor={!!artifact} />
         </Col>
         {/* Duplicate/Updated/Edit UI */}
-        {(dupId || artifact?.id) && <Col xs={12} className="mb-2">
+        {old && <Col xs={12} className="mb-2">
           <Row className="d-flex justify-content-around mb-n2">
             <Col lg={4} md={6} className="mb-2">
               <h6 className="text-center">{t`editor.preview`}</h6>
-              <div><ArtifactCard artifactObj={artifact} /></div>
+              <div><ArtifactCard artifactObj={cachedArtifact} /></div>
             </Col>
             <Col lg={4} md={6} className="mb-2">
-              <h6 className="text-center">{dupId ? (isDup ? t`editor.dupArt` : t`editor.upArt`) : t`editor.beforeEdit`}</h6>
-              <div><ArtifactCard artifactId={dupId || artifact?.id} /></div>
+              <h6 className="text-center">{oldType !== "edit" ? (oldType === "duplicate" ? t`editor.dupArt` : t`editor.upArt`) : t`editor.beforeEdit`}</h6>
+              <div><ArtifactCard artifactObj={old} /></div>
             </Col>
           </Row>
         </Col>}
@@ -236,12 +249,16 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: Artifac
         </Col>}
       </Row></Card.Body>
     <Card.Footer>
-      <Button className="mr-2" onClick={() => { artifact?.id ? database.updateArt(artifact!, artifact.id) : database.createArt(artifact!); reset() }} disabled={!artifactInEditor || !isValid} variant={dupId ? "warning" : "primary"}>
-        {artifact?.id ? t`editor.btnSave` : t`editor.btnAdd`}
-      </Button>
-      <Button className="mr-2" disabled={!artifactInEditor} onClick={() => { canClearArtifact() && reset() }} variant="success">{t`editor.btnClear`}</Button>
+      {oldType === "edit" ?
+        <Button className="mr-2" onClick={() => { database.updateArt(editorArtifact!, old!.id); reset() }} disabled={!editorArtifact || !isValid} variant={"primary"}>
+          {t`editor.btnSave`}
+        </Button> :
+        <Button className="mr-2" onClick={() => { database.createArt(artifact!); reset() }} disabled={!artifact || !isValid} variant={oldType === "duplicate" ? "warning" : "primary"}>
+          {t`editor.btnAdd`}
+        </Button>}
+      <Button className="mr-2" disabled={!artifact} onClick={() => { canClearArtifact() && reset() }} variant="success">{t`editor.btnClear`}</Button>
       {process.env.NODE_ENV === "development" && <Button variant="info" onClick={async () => artifactDispatch({ type: "overwrite", artifact: await randomizeArtifact() })}>{t`editor.btnRandom`}</Button>}
-      {!!dupId && <Button className="float-right" onClick={() => { database.updateArt(artifact!, dupId!); reset() }} disabled={!isValid} variant="success">{t`editor.btnUpdate`}</Button>}
+      {old && oldType !== "edit" && <Button className="float-right" onClick={() => { database.updateArt(editorArtifact!, old.id); reset() }} disabled={!editorArtifact || !isValid} variant="success">{t`editor.btnUpdate`}</Button>}
     </Card.Footer>
   </Card >
 }
@@ -324,7 +341,15 @@ type SubstatMessage = { type: "substat", index: number, substat: ISubstat }
 type OverwriteMessage = { type: "overwrite", artifact: IArtifact }
 type UpdateMessage = { type: "update", artifact: Partial<IArtifact> }
 type Message = ResetMessage | SubstatMessage | OverwriteMessage | UpdateMessage
-export function artifactReducer(state: IArtifact | undefined, action: Message): IArtifact | undefined {
+interface IEditorArtifact {
+  setKey: ArtifactSetKey,
+  slotKey: SlotKey,
+  level: number,
+  rarity: ArtifactRarity,
+  mainStatKey: MainStatKey,
+  substats: ISubstat[],
+}
+export function artifactReducer(state: IEditorArtifact | undefined, action: Message): IEditorArtifact | undefined {
   switch (action.type) {
     case "reset": return
     case "substat": {
