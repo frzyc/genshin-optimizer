@@ -110,7 +110,7 @@ const char: ICharacterSheet = {
           fields: [
             ...data.normal.hitArr.map((percentArr, i) =>
             ({
-              text: <span>{sgt(`normal.hit${i + 1}`)} {(i === 0 || i === 2) ? <span>(<TransWrapper ns="sheet" key18="hits" values={{ count: 2 }} />)</span> : ""}</span>,
+              text: <span>{sgt(`normal.hit${i + 1}`)} {(i === 0 || i === 3) ? <span>(<TransWrapper ns="sheet" key18="hits" values={{ count: 2 }} />)</span> : ""}</span>,
               formulaText: stats => <span>{data.skill.dmg_[stats.tlvl.skill]}% * {percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats, "pyro"), stats)}</span>,
               formula: formula.skill[i],
               variant: stats => getTalentStatKeyVariant("normal", stats, "pyro"),

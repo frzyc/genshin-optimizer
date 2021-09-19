@@ -165,8 +165,19 @@ export function EnemyEditor({ character, character: { key: characterKey, }, bsPr
             />
           </Col>
         })}
+        <Col className="mb-2" {...bsProps}>
+          <StatInput
+            name={<b>{Stat.getStatName("enemyDEFRed_")}</b>}
+            value={Character.getStatValueWithBonus(character, "enemyDEFRed_")}
+            placeholder={Stat.getStatNameRaw("enemyDEFRed_")}
+            defaultValue={charBaseStats["enemyDEFRed_"]}
+            onValueChange={value => characterDispatch({ type: "bonusStats", statKey: "enemyDEFRed_", value })}
+            percent
+          />
+        </Col>
+
       </Row>
-      <small>Note: for negative resistances due to resistance shred like Zhongli's shield (e.g. 10% - 20% = -10%), enter the RAW value (-10). GO will half the value for you in the calculations.</small>
+      <small>Note: Genshin Impact halves resistance shred values below 0%. For the sake of calculations enter the RAW value and GO will do the rest. (e.g. 10% - 20% = -10%)</small>
     </Card.Body>
   </Card>
 }
@@ -261,6 +272,7 @@ export default function DamageOptionsAndCalculation({ sheets, sheets: { characte
           <Col><h4 className="mb-0">
             <Badge pill variant="success" className="mr-2">{Stat.getStatName("enemyLevel")} <strong>{Character.getStatValueWithBonus(character, "enemyLevel")}</strong></Badge>
             {["physical", ...allElements].map(element => <span key={element} className="mr-2"><EnemyResText element={element} character={character} /></span>)}
+            <span><h6 className={`d-inline`}>DEF Reduction {Character.getStatValueWithBonus(character, "enemyDEFRed_")}%</h6></span>
           </h4></Col>
           <Col xs="auto">
             <ContextAwareToggle callback={undefined} {...{ as: Button }} eventKey="enemyEditor" />

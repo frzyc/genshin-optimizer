@@ -50,7 +50,7 @@ const conditionals: IConditionals = {
     fields: [{ text: charTr("staminaRestore") }]
   },
   c4: {
-    name: charTr("afterSkill"),
+    name: charTr("afterBurst"),
     stats: { enemyDEFRed_: 30 },
     fields: [{
       text: sgt("duration"),
