@@ -62,7 +62,7 @@ export interface ICharacter {
   elementKey?: ElementKey
   reactionMode: ReactionModeKey | null
   conditionalValues: any
-  baseStatOverrides: object //overriding the baseStat
+  bonusStats: object
   infusionAura: ElementKey | ""
   buildSettings?: BuildSetting
 }

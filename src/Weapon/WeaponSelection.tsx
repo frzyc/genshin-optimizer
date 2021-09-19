@@ -4,8 +4,9 @@ import { useReducer, useState } from "react"
 import { Button, ButtonGroup, Card, Col, Image, Modal, Row } from "react-bootstrap"
 import Assets from "../Assets/Assets"
 import { Stars } from "../Components/StarDisplay"
+import usePromise from "../ReactHooks/usePromise"
 import { allWeaponKeys, allWeaponTypeKeys, WeaponKey } from "../Types/consts"
-import { usePromise } from "../Util/ReactUtil"
+
 import WeaponSheet from "./WeaponSheet"
 type WeaponSelectionModalProps = {
   show: boolean,

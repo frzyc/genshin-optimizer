@@ -1,10 +1,11 @@
 import { Badge, Card, ListGroup } from "react-bootstrap"
+import { CharacterKey } from "../../../pipeline"
 import DocumentDisplay from "../../Components/DocumentDisplay"
 import FieldDisplay from "../../Components/FieldDisplay"
+import usePromise from "../../ReactHooks/usePromise"
 import { ArtifactSetKey, SetNum } from "../../Types/consts"
 import { ICalculatedStats } from "../../Types/stats"
 import statsToFields from "../../Util/FieldUtil"
-import { usePromise } from "../../Util/ReactUtil"
 import { ArtifactSheet } from "../ArtifactSheet"
 
 type Data = {
@@ -12,10 +13,10 @@ type Data = {
   setNumKey: SetNum,
   newBuild?: ICalculatedStats,
   equippedBuild?: ICalculatedStats
-  characterDispatch: (arg0: any) => void,
+  characterKey: CharacterKey
 }
 
-export default function SetEffectDisplay({ setKey, setNumKey, equippedBuild, newBuild, characterDispatch }: Data) {
+export default function SetEffectDisplay({ setKey, setNumKey, equippedBuild, newBuild, characterKey }: Data) {
   const sheet = usePromise(ArtifactSheet.get(setKey), [setKey])
   if (!sheet) return null
 
@@ -33,6 +34,6 @@ export default function SetEffectDisplay({ setKey, setNumKey, equippedBuild, new
         {setStatsFields.map((field, i) => <FieldDisplay key={i} index={i} field={field} />)}
       </ListGroup>
     </Card>
-    {document ? <DocumentDisplay sections={document} characterDispatch={characterDispatch} /> : null}
+    {document ? <DocumentDisplay sections={document} characterKey={characterKey} /> : null}
   </>
 }

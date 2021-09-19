@@ -1,20 +1,24 @@
 import { useCallback, useContext, useMemo } from "react"
 import { Card, ListGroup } from "react-bootstrap"
+import { CharacterKey } from "../../pipeline"
 import { buildContext } from "../Build/Build"
 import Conditional from "../Conditional/Conditional"
 import ConditionalSelector from "../Conditional/ConditionalSelector"
+import useCharacterReducer from "../ReactHooks/useCharacterReducer"
 import IConditional from "../Types/IConditional"
 import statsToFields from "../Util/FieldUtil"
 import { deletePropPath, layeredAssignment, objClearEmpties } from "../Util/Util"
 import FieldDisplay from "./FieldDisplay"
+
 type ConditionalDisplayProps = {
   conditional: IConditional,
-  characterDispatch: (any) => void,//TODO: characterDispatch type
+  characterKey: CharacterKey
   fieldClassName?: string
 }
 
-export default function ConditionalDisplay({ conditional, characterDispatch, fieldClassName }: ConditionalDisplayProps) {
+export default function ConditionalDisplay({ conditional, characterKey, fieldClassName }: ConditionalDisplayProps) {
   const { newBuild, equippedBuild } = useContext(buildContext)
+  const characterDispatch = useCharacterReducer(characterKey)
   const stats = newBuild ? newBuild : equippedBuild
   const canShow = useMemo(() => Conditional.canShow(conditional, stats), [conditional, stats])
   const { stats: conditionalStats = {}, fields: conditionalFields = [], conditionalValue } = useMemo(() => canShow && Conditional.resolve(conditional, stats, undefined), [canShow, conditional, stats])

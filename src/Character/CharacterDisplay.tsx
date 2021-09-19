@@ -6,17 +6,19 @@ import { Button, ButtonGroup, Card, Col, Container, Image, Row, Spinner, ToggleB
 import ReactGA from 'react-ga';
 import { Link } from 'react-router-dom';
 import Assets from '../Assets/Assets';
-import { CharacterSelectionModal } from './CharacterSelection';
 import InfoComponent from '../Components/InfoComponent';
 import { uncoloredEleIcons } from '../Components/StatIcon';
 import { DatabaseContext } from '../Database/Database';
 import { dbStorage } from '../Database/DBStorage';
+import useForceUpdate from '../ReactHooks/useForceUpdate';
+import usePromise from '../ReactHooks/usePromise';
 import { allElements, allWeaponTypeKeys, CharacterKey } from '../Types/consts';
-import { useForceUpdate, usePromise } from '../Util/ReactUtil';
 import { defaultInitialWeapon } from '../Weapon/WeaponUtil';
 import CharacterCard from './CharacterCard';
+import { CharacterSelectionModal } from './CharacterSelection';
 import CharacterSheet from './CharacterSheet';
 import { initialCharacter } from './CharacterUtil';
+
 const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
 
 //lazy load the character display

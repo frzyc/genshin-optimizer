@@ -1,7 +1,7 @@
 import Artifact from "../Artifact/Artifact";
 import { maxBuildsToShowDefault, maxBuildsToShowList } from "../Build/Build";
 import { initialBuildSettings } from "../Build/BuildSetting";
-import { ascensionMaxLevel } from "../Data/CharacterData";
+import { ascensionMaxLevel } from "../Data/LevelData";
 import Stat from "../Stat";
 import { allMainStatKeys, allSubstats, ICachedArtifact, IArtifact, ICachedSubstat, ISubstat, SubstatKey } from "../Types/artifact";
 import { ICachedCharacter, ICharacter } from "../Types/character";
@@ -152,7 +152,7 @@ export function parseCharacter(obj: any): ICharacter | undefined {
 
   let {
     key: characterKey, level, ascension, hitMode, elementKey, reactionMode, conditionalValues,
-    baseStatOverrides, talent, infusionAura, constellation, buildSettings,
+    bonusStats, talent, infusionAura, constellation, buildSettings,
   } = obj
 
   if (!allCharacterKeys.includes(characterKey) ||
@@ -181,6 +181,10 @@ export function parseCharacter(obj: any): ICharacter | undefined {
   if (buildSettings && typeof buildSettings === "object") {//buildSettings
     let { setFilters, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, builds, buildDate, maxBuildsToShow } = buildSettings ?? {}
     if (!Array.isArray(setFilters)) setFilters = initialBuildSettings().setFilters
+
+    //move all the empty entries to the back
+    setFilters = [...setFilters.filter(s => s.key), ...setFilters.filter(s => !s.key)]
+
     if (typeof statFilters !== "object") statFilters = {}
 
     if (!mainStatKeys || !mainStatKeys.sands || !mainStatKeys.goblet || !mainStatKeys.circlet) {
@@ -208,10 +212,10 @@ export function parseCharacter(obj: any): ICharacter | undefined {
     buildSettings = { setFilters, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, builds, buildDate, maxBuildsToShow }
   }
 
-  // TODO: validate baseStatOverrides, conditionalValues
+  // TODO: validate bonusStats, conditionalValues
   const result: ICharacter = {
     key: characterKey, level, ascension, hitMode, reactionMode, conditionalValues,
-    baseStatOverrides, talent, infusionAura, constellation,
+    bonusStats, talent, infusionAura, constellation,
   }
   if (buildSettings) result.buildSettings = buildSettings
   if (elementKey) result.elementKey = elementKey
@@ -221,11 +225,11 @@ export function parseCharacter(obj: any): ICharacter | undefined {
 export function removeCharacterCache(char: ICachedCharacter): ICharacter {
   const {
     key: characterKey, level, ascension, hitMode, elementKey, reactionMode, conditionalValues,
-    baseStatOverrides, talent, infusionAura, constellation, buildSettings,
+    bonusStats, talent, infusionAura, constellation, buildSettings,
   } = char
   const result: ICharacter = {
     key: characterKey, level, ascension, hitMode, reactionMode, conditionalValues,
-    baseStatOverrides, talent, infusionAura, constellation, buildSettings,
+    bonusStats, talent, infusionAura, constellation, buildSettings,
   }
   if (elementKey) result.elementKey = elementKey
   return result

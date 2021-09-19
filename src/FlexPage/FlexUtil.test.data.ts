@@ -14,7 +14,7 @@ export const character: ICharacter = {
   ascension: 6,
   infusionAura: 'pyro',
   talent: { auto: 6, skill: 6, burst: 6 },
-  baseStatOverrides: {},
+  bonusStats: {},
   conditionalValues: {
     artifact: {},
     character: {

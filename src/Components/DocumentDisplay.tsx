@@ -2,15 +2,16 @@ import { useContext } from "react"
 import { ListGroup } from "react-bootstrap"
 import { buildContext } from "../Build/Build"
 import { DocumentSection } from "../Types/character"
+import { CharacterKey } from "../Types/consts"
 import { evalIfFunc } from "../Util/Util"
 import ConditionalDisplay from "./ConditionalDisplay"
 import FieldDisplay from "./FieldDisplay"
 
 type SkillDisplayCardProps = {
   sections: DocumentSection[],
-  characterDispatch: (any) => void,
+  characterKey: CharacterKey,
 }
-export default function DocumentDisplay({ sections, characterDispatch }: SkillDisplayCardProps) {
+export default function DocumentDisplay({ sections, characterKey }: SkillDisplayCardProps) {
   const { newBuild, equippedBuild } = useContext(buildContext)
   const build = newBuild ? newBuild : equippedBuild
   if (!build) return null
@@ -25,7 +26,7 @@ export default function DocumentDisplay({ sections, characterDispatch }: SkillDi
           {fields?.map?.((field, i) => <FieldDisplay key={i} index={i} field={field} />)}
         </ListGroup>}
       </div>
-      {!!section.conditional && <ConditionalDisplay conditional={section.conditional} characterDispatch={characterDispatch} />}
+      {!!section.conditional && <ConditionalDisplay conditional={section.conditional} characterKey={characterKey} />}
     </div>
   })}</div>
 }

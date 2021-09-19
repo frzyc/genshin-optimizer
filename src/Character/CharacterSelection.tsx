@@ -3,17 +3,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useContext, useMemo, useReducer, useState } from "react";
 import { Badge, Button, ButtonGroup, Card, Col, Image, Modal, Row, ToggleButton, ToggleButtonGroup } from "react-bootstrap";
 import Dropdown from "react-bootstrap/Dropdown";
+import { ArtifactSheet } from "../Artifact/ArtifactSheet";
 import Assets from "../Assets/Assets";
-import CharacterSheet from "./CharacterSheet";
-import { DatabaseContext } from "../Database/Database";
-import { ICachedCharacter } from "../Types/character";
-import { allCharacterKeys, allElements, allWeaponTypeKeys, CharacterKey, WeaponTypeKey } from "../Types/consts";
-import { usePromise } from "../Util/ReactUtil";
 import { Stars } from "../Components/StarDisplay";
 import StatIcon, { uncoloredEleIcons } from "../Components/StatIcon";
-import Character from './Character'
+import { DatabaseContext } from "../Database/Database";
+import usePromise from "../ReactHooks/usePromise";
+import { ICachedCharacter } from "../Types/character";
+import { allCharacterKeys, allElements, allWeaponTypeKeys, CharacterKey, WeaponTypeKey } from "../Types/consts";
 import WeaponSheet from "../Weapon/WeaponSheet";
-import { ArtifactSheet } from "../Artifact/ArtifactSheet";
+import Character from './Character';
+import CharacterSheet from "./CharacterSheet";
+
 
 export function CharacterSelectionDropdownList({ onSelect, weaponTypeKey }: { onSelect: (ckey: CharacterKey) => void, weaponTypeKey?: WeaponTypeKey }) {
   const database = useContext(DatabaseContext)

@@ -75,9 +75,9 @@ function parseFlexObjV3(string: string): [ArtCharDatabase, CharacterKey] {
   // DON'T CHANGE THIS.
   // Flex v3 (decoding) scheme won't be updated even when newer
   // db versions come along. So the object created from the url
-  // will remain a valid dbv8. The actual migration happens
+  // will remain a valid dbv11. The actual migration happens
   // together with the validation down below.
-  storage.setString("db_ver", "8")
+  storage.setString("db_ver", "11")
 
   characters.forEach(character => storage.set(`char_${character.key}`, character))
   artifacts.forEach((artifact, i) => storage.set(`artifact_${i}`, artifact))

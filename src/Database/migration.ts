@@ -1,5 +1,5 @@
 import { initialBuildSettings } from "../Build/BuildSetting"
-import { ascensionMaxLevel } from "../Data/CharacterData"
+import { ascensionMaxLevel } from "../Data/LevelData"
 import { allCharacterKeys } from "../Types/consts"
 import { DBStorage } from "./DBStorage"
 import { getDBVersion, setDBVersion } from "./utils"
@@ -17,8 +17,9 @@ export function migrate(storage: DBStorage): { migrated: boolean } {
   if (version < 8) { migrateV7ToV8(storage); setDBVersion(storage, 8) }
   if (version < 9) { migrateV8ToV9(storage); setDBVersion(storage, 9) }
   if (version < 10) { migrateV9ToV10(storage); setDBVersion(storage, 10) }
+  if (version < 11) { migrateV10ToV11(storage); setDBVersion(storage, 11) }
 
-  if (version > 10) throw new Error(`Database version ${version} is not supported`)
+  if (version > 11) throw new Error(`Database version ${version} is not supported`)
 
   return { migrated: version < getDBVersion(storage) }
 }
@@ -250,6 +251,22 @@ function migrateV9ToV10(storage: DBStorage) {
         weapon.refinement = weapon.refine
         storage.set(key, weapon)
       }
+    }
+  }
+}
+
+function migrateV10ToV11(storage: DBStorage) {
+  for (const key of storage.keys) {
+    if (key.startsWith("char_")) {
+      const character = storage.get(key)
+      const { baseStatOverrides = {} } = character
+      if (baseStatOverrides.critRate_) baseStatOverrides.critRate_ -= 5
+      if (baseStatOverrides.critDMG_) baseStatOverrides.critDMG_ -= 50
+      if (baseStatOverrides.enerRech_) baseStatOverrides.enerRech_ -= 100
+
+      character.bonusStats = baseStatOverrides
+      delete character.baseStatOverrides
+      storage.set(key, character)
     }
   }
 }

@@ -7,13 +7,13 @@ import ReactGA from 'react-ga';
 import Assets from '../Assets/Assets';
 import { DatabaseContext } from '../Database/Database';
 import { dbStorage } from '../Database/DBStorage';
+import useForceUpdate from '../ReactHooks/useForceUpdate';
+import usePromise from '../ReactHooks/usePromise';
 import { allWeaponTypeKeys, CharacterKey, WeaponKey } from '../Types/consts';
-import { useForceUpdate, usePromise } from '../Util/ReactUtil';
 import WeaponCard from './WeaponCard';
 import { WeaponSelectionModal } from './WeaponSelection';
 import WeaponSheet from './WeaponSheet';
 import { initialWeapon } from './WeaponUtil';
-// const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
 
 //lazy load the character display
 const WeaponDisplayCard = lazy(() => import('./WeaponDisplayCard'))

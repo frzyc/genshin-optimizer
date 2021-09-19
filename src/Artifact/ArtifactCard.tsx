@@ -19,12 +19,12 @@ import { DatabaseContext, database as localDatabase } from '../Database/Database
 import Stat from '../Stat';
 import { allSubstats, ICachedArtifact, ICachedSubstat, SubstatKey } from '../Types/artifact';
 import { CharacterKey } from '../Types/consts';
-import { usePromise } from '../Util/ReactUtil';
 import { valueStringWithUnit } from '../Util/UIUtil';
 import Artifact from './Artifact';
 import { ArtifactSheet } from './ArtifactSheet';
 import SlotNameWithIcon from './Component/SlotNameWIthIcon';
 import PercentBadge from './PercentBadge';
+import usePromise from '../ReactHooks/usePromise';
 
 type Data = { artifactId?: string, artifactObj?: ICachedArtifact, onEdit?: () => void, onDelete?: () => void, mainStatAssumptionLevel?: number, effFilter?: Set<SubstatKey> }
 const allSubstatFilter = new Set(allSubstats)

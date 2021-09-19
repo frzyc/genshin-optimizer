@@ -1,4 +1,4 @@
-import { ascensionMaxLevel } from "../Data/CharacterData"
+import { ascensionMaxLevel } from "../Data/LevelData"
 import { allSlotKeys, allElements, allArtifactSets, allHitModes, allReactionModes, allCharacterKeys, CharacterKey } from "../Types/consts"
 import { crawlObject } from "../Util/Util"
 import { uintToString, stringToUInt } from "./CodingUtil"
@@ -272,7 +272,7 @@ const characterV3 = object({
   // elementKey
   reactionMode,
   conditionalValues,
-  baseStatOverrides: sparse(string, float),
+  bonusStats: sparse(string, float),
   talent: object({ auto: uint(1), skill: uint(1), burst: uint(1) }),
   infusionAura: element,
   // constellation

@@ -10,7 +10,7 @@ import { importGO, ImportResult as GOImportResult } from '../Database/exim/go'
 import { ImportResultCounter, exportGOOD, importGOOD, ImportResult as GOODImportResult } from '../Database/exim/good'
 import { importMona } from '../Database/exim/mona'
 import { languageCodeList } from "../i18n"
-import { useForceUpdate } from "../Util/ReactUtil"
+import useForceUpdate from '../ReactHooks/useForceUpdate'
 
 export default function SettingsDisplay() {
   const { t } = useTranslation(["settings"]);
