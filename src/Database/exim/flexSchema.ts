@@ -1,7 +1,7 @@
-import { ascensionMaxLevel } from "../Data/LevelData"
-import { allSlotKeys, allElements, allArtifactSets, allHitModes, allReactionModes, allCharacterKeys, CharacterKey } from "../Types/consts"
-import { crawlObject } from "../Util/Util"
-import { uintToString, stringToUInt } from "./CodingUtil"
+import { ascensionMaxLevel } from "../../Data/LevelData"
+import { allSlotKeys, allElements, allArtifactSets, allHitModes, allReactionModes, allCharacterKeys, CharacterKey } from "../../Types/consts"
+import { crawlObject } from "../../Util/Util"
+import { uintToString, stringToUInt } from "./stringSerialization"
 
 // DO NOT REMOVE ITEMS FROM THESE LISTS
 //        ONLY APPEND NEW ENTRIES
@@ -307,6 +307,8 @@ const flexV3 = object({
   artifacts: array(artifactV3),
   weapons: array(weaponV3),
 })
+
+// MIGRATION STEP: Update ONLY the latest flex (currently v3) to match the current format
 
 export const schemas = {
   flexV2, flexV3

@@ -3,6 +3,7 @@ import { ICharacter } from "../../Types/character";
 import { ICachedWeapon, IWeapon } from "../../Types/weapon";
 import { ArtCharDatabase } from "../Database";
 import { DBStorage, SandboxStorage } from "../DBStorage";
+import { currentDBVersion } from "../migration";
 import { setDBVersion } from "../utils";
 import { parseArtifact, parseCharacter, parseWeapon } from "../validation";
 
@@ -168,7 +169,7 @@ function importGOOD1(data: IGOOD, oldDatabase: ArtCharDatabase): ImportResult | 
 export function exportGOOD(storage: DBStorage): IGOOD & IGO {
   return {
     format: "GOOD",
-    dbVersion: 8,
+    dbVersion: currentDBVersion,
     source: GOSource,
     version: 1,
     characters: storage.entries

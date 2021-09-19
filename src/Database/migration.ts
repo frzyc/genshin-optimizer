@@ -4,6 +4,14 @@ import { allCharacterKeys } from "../Types/consts"
 import { DBStorage } from "./DBStorage"
 import { getDBVersion, setDBVersion } from "./utils"
 
+// MIGRATION STEP
+// 0. DO NOT change old `migrateV<x>ToV<x+1>` code
+// 1. Add new `migrateV<x>ToV<x+1>`
+// 2. Call the added `migrateV<x>ToV<x+1>` from `migrate`
+// 3. Update `currentDBVersion`
+
+export const currentDBVersion = 11
+
 export function migrate(storage: DBStorage): { migrated: boolean } {
   const version = getDBVersion(storage)
 
@@ -19,7 +27,7 @@ export function migrate(storage: DBStorage): { migrated: boolean } {
   if (version < 10) { migrateV9ToV10(storage); setDBVersion(storage, 10) }
   if (version < 11) { migrateV10ToV11(storage); setDBVersion(storage, 11) }
 
-  if (version > 11) throw new Error(`Database version ${version} is not supported`)
+  if (version > currentDBVersion) throw new Error(`Database version ${version} is not supported`)
 
   return { migrated: version < getDBVersion(storage) }
 }

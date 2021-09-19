@@ -1,11 +1,12 @@
-import { ArtCharDatabase } from "../Database/Database";
-import { SandboxStorage } from "../Database/DBStorage";
-import { IArtifact } from "../Types/artifact";
-import { CharacterKey } from "../Types/consts";
-import { decode, encode } from "./CodingUtil";
-import { schemas } from "./Schemas";
+import { ArtCharDatabase } from "../Database";
+import { SandboxStorage } from "../DBStorage";
+import { currentDBVersion } from "../migration";
+import { IArtifact } from "../../Types/artifact";
+import { CharacterKey } from "../../Types/consts";
+import { decode, encode } from "./stringSerialization";
+import { schemas } from "./flexSchema";
 
-export function createFlexObj(characterKey: CharacterKey, database: ArtCharDatabase): string | null {
+export function exportFlex(characterKey: CharacterKey, database: ArtCharDatabase): string | null {
   const character = database._getChar(characterKey)
   if (!character) return null;
 
@@ -23,13 +24,13 @@ export function createFlexObj(characterKey: CharacterKey, database: ArtCharDatab
   }
 }
 
-export function parseFlexObj(string: string): [ArtCharDatabase, CharacterKey, number] | undefined {
+export function importFlex(string: string): [ArtCharDatabase, CharacterKey, number] | undefined {
   const parameters = Object.fromEntries(string.split('&').map(s => s.split('=')))
 
   try {
     switch (parseInt(parameters.v)) {
-      case 2: return [...parseFlexObjV2(parameters.d), 2]
-      case 3: return [...parseFlexObjV3(parameters.d), 3]
+      case 2: return [...importFlexV2(parameters.d), 2]
+      case 3: return [...importFlexV3(parameters.d), 3]
       default: return
     }
   } catch (error) {
@@ -39,7 +40,7 @@ export function parseFlexObj(string: string): [ArtCharDatabase, CharacterKey, nu
   }
 }
 
-function parseFlexObjV2(string: string): [ArtCharDatabase, CharacterKey] {
+function importFlexV2(string: string): [ArtCharDatabase, CharacterKey] {
   const schema = schemas.flexV2
   const decoded = decode(string, schema) as { character: any, artifacts: IArtifact[] }
   const { character, artifacts } = decoded, newCharacterKey = character.characterKey, characterKey = newCharacterKey.toLowerCase() as CharacterKey
@@ -66,18 +67,18 @@ function parseFlexObjV2(string: string): [ArtCharDatabase, CharacterKey] {
   return [database, newCharacterKey]
 }
 
-function parseFlexObjV3(string: string): [ArtCharDatabase, CharacterKey] {
+function importFlexV3(string: string): [ArtCharDatabase, CharacterKey] {
   const schema = schemas.flexV3
   const { characters, artifacts, weapons } = decode(string, schema) as { characters: { key: CharacterKey }[], artifacts: any[], weapons: any[] }
   const charKey = characters[0].key
 
   const storage = new SandboxStorage()
-  // DON'T CHANGE THIS.
-  // Flex v3 (decoding) scheme won't be updated even when newer
-  // db versions come along. So the object created from the url
-  // will remain a valid dbv11. The actual migration happens
-  // together with the validation down below.
-  storage.setString("db_ver", "11")
+  // MIGRATION STEP: When a new flex
+  // version comes along, fix this db_ver
+  // to the last version that exports flexV3.
+  // That way, all migration from flexV3 will
+  // be handled by db's automatic migration.
+  storage.setString("db_ver", `${currentDBVersion}`)
 
   characters.forEach(character => storage.set(`char_${character.key}`, character))
   artifacts.forEach((artifact, i) => storage.set(`artifact_${i}`, artifact))

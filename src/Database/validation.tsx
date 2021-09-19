@@ -9,6 +9,8 @@ import { allArtifactRarities, allArtifactSets, allCharacterKeys, allElements, al
 import { IWeapon, ICachedWeapon } from "../Types/weapon";
 import { objectFromKeyMap } from "../Util/Util";
 
+// MIGRATION STEP: Always keep validate/parse in sync with the latest format
+
 /// Returns the closest (not necessarily valid) artifact, including errors as necessary
 export function validateArtifact(flex: IArtifact, id: string): { artifact: ICachedArtifact, errors: Displayable[] } {
   const { location, exclude, lock, setKey, slotKey, rarity, mainStatKey } = flex
