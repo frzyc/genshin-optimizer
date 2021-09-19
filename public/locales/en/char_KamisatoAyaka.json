@@ -1,6 +1,7 @@
 {
   "afterSprint": "After Sprint",
   "afterSkill": "After using <strong>Kamisato Art: Hyouka</strong>",
+  "afterBurst": "After using <strong>Kamisato Art: Soumetsu</strong>",
   "afterSprintCryo": "Applying <cryo>Cryo</cryo> After Sprint",
   "staminaRestore": "Restores 10 Stamina",
   "snowflakeDMG": "Snowflake DMG",

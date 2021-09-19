@@ -355,7 +355,9 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
                     </Card.Header>
                     <Card.Body>
                       <Row className="mb-n2">
-                        {["physical", ...allElements].map(element => <Col xs={3} key={element}><EnemyResText element={element} character={character} /></Col>)}</Row>
+                        {["physical", ...allElements].map(element => <Col xs={3} key={element}><EnemyResText element={element} character={character} /></Col>)}
+                        <Col xs={4} ><span><h6 className={`d-inline`}>DEF Reduction {Character.getStatValueWithBonus(character, "enemyDEFRed_")}%</h6></span></Col>
+                      </Row>
                     </Card.Body>
                     <Accordion.Collapse eventKey="enemyEditor">
                       <Card.Body className="p-2">

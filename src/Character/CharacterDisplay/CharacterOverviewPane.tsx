@@ -99,8 +99,8 @@ function MainStatsCards({ characterSheet, weaponSheet, character, character: { k
     "burst_dmg_", "burst_critRate_",
     "dmg_", "electrocharged_dmg_",
     "vaporize_dmg_", "swirl_dmg_",
-    "enemyDEFRed_", "weakspotDMG_",
     "moveSPD_", "atkSPD_",
+    "weakspotDMG_",
   ]
 
   const specializedStatKey = characterSheet.getSpecializedStat(character.ascension)

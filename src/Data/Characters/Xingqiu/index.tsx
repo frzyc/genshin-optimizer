@@ -153,7 +153,7 @@ const char: ICharacterSheet = {
             variant: stats => getTalentStatKeyVariant("burst", stats),
           }, {
             text: "Duration",
-            value: stats => data.burst.duration + stats.constellation >= 2 ? 3 : 0,
+            value: stats => data.burst.duration + (stats.constellation >= 2 ? 3 : 0),
             unit: "s"
           }, {
             text: "CD",
