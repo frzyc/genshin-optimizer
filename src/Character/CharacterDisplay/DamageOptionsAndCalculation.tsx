@@ -166,7 +166,7 @@ export function EnemyEditor({ character, character: { key: characterKey, }, bsPr
           </Col>
         })}
       </Row>
-      <small>Note: for negative resistances due to resistance shred like Zhongli's shield (e.g. -10%), enter the RAW value (-10). GO will half the value for you in the calculations.</small>
+      <small>Note: for negative resistances due to resistance shred like Zhongli's shield (e.g. 10% - 20% = -10%), enter the RAW value (-10). GO will half the value for you in the calculations.</small>
     </Card.Body>
   </Card>
 }

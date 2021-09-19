@@ -1,7 +1,7 @@
-import { amplifyingReactions } from "../StatConstants"
-import { allMainStatKeys, allSubstats } from "../Types/artifact"
-import { characterSpecializedStatKeys } from "../Types/consts"
-import { constants } from "./Schemas"
+import { amplifyingReactions } from "../../StatConstants"
+import { allMainStatKeys, allSubstats } from "../../Types/artifact"
+import { characterSpecializedStatKeys } from "../../Types/consts"
+import { constants } from "./flexSchema"
 
 describe('Export Import', () => {
   test('support all reaction modes', () => {

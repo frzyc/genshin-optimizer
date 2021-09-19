@@ -1,5 +1,5 @@
 import Artifact from "../../Artifact/Artifact"
-import { parseFlexObj } from "../../FlexPage/FlexUtil"
+import { importFlex } from "../../Database/exim/flex"
 import { PreprocessFormulas, StatData } from "../../StatData"
 import { GetDependencies } from "../../StatDependency"
 import { ICalculatedStats } from "../../Types/stats"
@@ -24,7 +24,7 @@ export function computeAllStats(baseStats) {
 }
 
 export function parseTestFlexObject(url) {
-  const [database, charKey] = parseFlexObj(url.split("flex?")[1])!
+  const [database, charKey] = importFlex(url.split("flex?")[1])!
   const character = database._getChar(charKey)!
   const artifacts = Object.values(character.equippedArtifacts).filter(id => id).map(id => {
     const { rarity, level, mainStatKey, substats } = database._getArt(id)!

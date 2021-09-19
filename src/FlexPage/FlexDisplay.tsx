@@ -2,7 +2,7 @@ import { Alert, Button, Card, Container, Form, InputGroup, Toast } from "react-b
 import { Redirect, useLocation } from "react-router-dom";
 import CharacterDisplayCard from "../Character/CharacterDisplayCard";
 import '../StatDependency'
-import { createFlexObj, parseFlexObj } from "./FlexUtil";
+import { exportFlex, importFlex } from "../Database/exim/flex";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLink } from "@fortawesome/free-solid-svg-icons";
 import { useContext, useState } from "react";
@@ -13,16 +13,16 @@ export default function FlexDisplay() {
   const database = useContext(DatabaseContext)
   const searchStr = location.search
   if (searchStr) {
-    const flexResult = parseFlexObj(searchStr.substring(1))
+    const flexResult = importFlex(searchStr.substring(1))
     if (!flexResult) return <Redirect to={`/`} />
     const [database, charKey, version] = flexResult
     if (version !== 3)
-      return <Redirect to={`/flex?${createFlexObj(charKey, database)}`} />
+      return <Redirect to={`/flex?${exportFlex(charKey, database)}`} />
     return <DatabaseContext.Provider value={database}><Display characterKey={charKey} /></DatabaseContext.Provider>
   } else {
     const characterKey = (location as any).characterKey
     if (!characterKey) return <Redirect to={`/`} />
-    const flexObj = createFlexObj(characterKey, database)
+    const flexObj = exportFlex(characterKey, database)
     if (!flexObj) return <Redirect to={`/`} />
     window.scrollTo(0, 0)//sometimes the window isnt scrolled to the top on redirect.
     return <Redirect to={`/flex?${flexObj}`} />

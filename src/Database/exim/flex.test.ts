@@ -1,8 +1,8 @@
-import { character, artifacts, weapon, urlV2, urlV3 } from './FlexUtil.test.data'
-import { createFlexObj, parseFlexObj } from './FlexUtil'
-import { ArtCharDatabase } from '../Database/Database'
-import { SandboxStorage } from '../Database/DBStorage'
-import { removeArtifactCache, removeCharacterCache, removeWeaponCache } from '../Database/validation'
+import { character, artifacts, weapon, urlV2, urlV3 } from '../../FlexPage/FlexUtil.test.data'
+import { exportFlex, importFlex } from './flex'
+import { ArtCharDatabase } from '../Database'
+import { SandboxStorage } from '../DBStorage'
+import { removeArtifactCache, removeCharacterCache, removeWeaponCache } from '../validation'
 
 const storage = new SandboxStorage()
 storage.setString("db_ver", "8")
@@ -13,7 +13,7 @@ const database = new ArtCharDatabase(storage)
 
 describe('flex import export', () => {
   test('should support round tripping', () => {
-    const [flexDatabase, flexCharacterKey] = parseFlexObj(createFlexObj(character.key, database)!)!
+    const [flexDatabase, flexCharacterKey] = importFlex(exportFlex(character.key, database)!)!
     const flexCharacter = flexDatabase._getChar(flexCharacterKey)!
     const flexWeapon = flexDatabase._getWeapon(flexCharacter.equippedWeapon)!
     const flexArtifacts = Object.values(flexCharacter.equippedArtifacts)
@@ -25,7 +25,7 @@ describe('flex import export', () => {
     expect(flexArtifacts.map(removeArtifactCache)).toEqual(expect.arrayContaining(artifacts))
   })
   test('should support flex v2', () => {
-    const [flexDatabase, flexCharacterKey] = parseFlexObj(urlV2.split("flex?")[1])!
+    const [flexDatabase, flexCharacterKey] = importFlex(urlV2.split("flex?")[1])!
     const flexCharacter = flexDatabase._getChar(flexCharacterKey)!
     const flexWeapon = flexDatabase._getWeapon(flexCharacter.equippedWeapon)!
     const flexArtifacts = Object.values(flexCharacter.equippedArtifacts)
@@ -41,7 +41,7 @@ describe('flex import export', () => {
     expect(flexArtifacts.map(removeArtifactCache)).toEqual(expect.arrayContaining(artifacts))
   })
   test('should support flex v3', () => {
-    const [flexDatabase, flexCharacterKey] = parseFlexObj(urlV3.split("flex?")[1])!
+    const [flexDatabase, flexCharacterKey] = importFlex(urlV3.split("flex?")[1])!
     const flexCharacter = flexDatabase._getChar(flexCharacterKey)!
     const flexWeapon = flexDatabase._getWeapon(flexCharacter.equippedWeapon)!
     const flexArtifacts = Object.values(flexCharacter.equippedArtifacts)

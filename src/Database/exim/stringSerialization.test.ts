@@ -1,4 +1,4 @@
-import { encode, decode } from './CodingUtil'
+import { encode, decode } from './stringSerialization'
 
 describe('Export Import', () => {
   test('roundtrip sparse object', () => {
