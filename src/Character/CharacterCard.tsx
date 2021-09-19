@@ -12,14 +12,15 @@ import Assets from '../Assets/Assets';
 import { Stars } from '../Components/StarDisplay';
 import StatIcon from '../Components/StatIcon';
 import { DatabaseContext } from '../Database/Database';
+import usePromise from '../ReactHooks/usePromise';
 import Stat from '../Stat';
 import { ICachedCharacter } from '../Types/character';
 import { CharacterKey } from '../Types/consts';
 import { ICachedWeapon } from '../Types/weapon';
-import { usePromise } from '../Util/ReactUtil';
 import WeaponSheet from '../Weapon/WeaponSheet';
 import Character from './Character';
 import CharacterSheet from './CharacterSheet';
+
 type CharacterCardProps = { characterKey: CharacterKey | "", onEdit?: (any) => void, onDelete?: (any) => void, cardClassName: string, header?: JSX.Element, bg?: string, footer?: boolean }
 export default function CharacterCard({ characterKey, onEdit, onDelete, cardClassName = "", bg = "", header, footer = false }: CharacterCardProps) {
   const database = useContext(DatabaseContext)

@@ -2,6 +2,7 @@ import { faExchangeAlt, faTimes } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useCallback, useContext, useEffect, useMemo, useState } from "react"
 import { Badge, Button, ButtonGroup, Card, Col, Dropdown, Image, InputGroup, Modal, Row } from "react-bootstrap"
+import { CharacterKey } from "../../pipeline"
 import Assets from "../Assets/Assets"
 import { buildContext } from "../Build/Build"
 import CharacterSheet from "../Character/CharacterSheet"
@@ -9,12 +10,13 @@ import CustomFormControl from "../Components/CustomFormControl"
 import DocumentDisplay from "../Components/DocumentDisplay"
 import EquipmentDropdown from "../Components/EquipmentDropdown"
 import { Stars } from "../Components/StarDisplay"
-import { ambiguousLevel, ascensionMaxLevel, milestoneLevels } from "../Data/CharacterData"
-import { DatabaseContext, database as localDatabase } from "../Database/Database"
+import { ambiguousLevel, ascensionMaxLevel, milestoneLevels } from "../Data/LevelData"
+import { database as localDatabase, DatabaseContext } from "../Database/Database"
+import useForceUpdate from "../ReactHooks/useForceUpdate"
+import usePromise from "../ReactHooks/usePromise"
 import { ICachedCharacter } from "../Types/character"
 import { ICalculatedStats } from "../Types/stats"
 import { ICachedWeapon } from "../Types/weapon"
-import { useForceUpdate, usePromise } from "../Util/ReactUtil"
 import { clamp } from "../Util/Util"
 import WeaponCard from "./WeaponCard"
 import { WeaponSelectionButton } from "./WeaponSelection"
@@ -161,8 +163,9 @@ export default function WeaponDisplayCard({
               <WeaponStatsCard title={"Bonus Stats"} statsVals={weaponBonusStats} stats={build} />
             </buildContext.Provider>}
             {charData && sections ? (() => {
-              const { equippedBuild, newBuild, characterDispatch } = charData
-              return < DocumentDisplay  {...{ sections, equippedBuild, newBuild, characterDispatch }} />
+              const { equippedBuild, newBuild } = charData
+              const characterKey = (newBuild ? newBuild : equippedBuild)?.characterKey as CharacterKey | undefined
+              return !!characterKey && < DocumentDisplay  {...{ sections, equippedBuild, newBuild, characterKey }} />
             })() : null}
           </Col>
         </Row>
@@ -213,9 +216,7 @@ function SwapBtn({ onChangeId, weaponTypeKey }) {
               <Col key={weaponId} lg={4} md={6} className="mb-2">
                 <WeaponCard
                   weaponId={weaponId}
-                  // header={undefined}
                   cardClassName="h-100"
-                  // characterKey={charKey}
                   onClick={clickHandler}
                   footer
                 />

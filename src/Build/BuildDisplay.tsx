@@ -1,7 +1,7 @@
 import { faCheckSquare, faSquare, faTimes, faTrash, faUndo } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { lazy, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
-import { Alert, Badge, Button, ButtonGroup, Card, Col, Container, Dropdown, DropdownButton, Image, InputGroup, ListGroup, Modal, OverlayTrigger, ProgressBar, Row, Tooltip } from 'react-bootstrap';
+import { Accordion, Alert, Badge, Button, ButtonGroup, Card, Col, Container, Dropdown, DropdownButton, Image, InputGroup, ListGroup, Modal, OverlayTrigger, ProgressBar, Row, Tooltip } from 'react-bootstrap';
 import ReactGA from 'react-ga';
 // eslint-disable-next-line
 import Worker from "worker-loader!./BuildWorker";
@@ -11,7 +11,7 @@ import SetEffectDisplay from '../Artifact/Component/SetEffectDisplay';
 import SlotNameWithIcon, { artifactSlotIcon } from '../Artifact/Component/SlotNameWIthIcon';
 import Character from '../Character/Character';
 import CharacterCard from '../Character/CharacterCard';
-import { HitModeToggle, InfusionAuraDropdown, ReactionToggle } from '../Character/CharacterDisplay/DamageOptionsAndCalculation';
+import { ContextAwareToggle, EnemyEditor, EnemyResText, HitModeToggle, InfusionAuraDropdown, ReactionToggle } from '../Character/CharacterDisplay/DamageOptionsAndCalculation';
 import StatDisplayComponent from '../Character/CharacterDisplay/StatDisplayComponent';
 import CharacterSheet from '../Character/CharacterSheet';
 import { getFormulaTargetsDisplayHeading } from '../Character/CharacterUtil';
@@ -19,7 +19,7 @@ import { CharacterSelectionDropdownList } from '../Character/CharacterSelection'
 import CustomFormControl from '../Components/CustomFormControl';
 import InfoComponent from '../Components/InfoComponent';
 import { Stars } from '../Components/StarDisplay';
-import StatIcon from '../Components/StatIcon';
+import StatIcon, { uncoloredEleIcons } from '../Components/StatIcon';
 import { DatabaseContext } from '../Database/Database';
 import { dbStorage } from '../Database/DBStorage';
 import Formula from '../Formula';
@@ -27,15 +27,19 @@ import Stat from '../Stat';
 import { StatKey } from '../Types/artifact';
 import { ArtifactsBySlot, Build, BuildSetting } from '../Types/Build';
 import { ICachedCharacter } from '../Types/character';
-import { allSlotKeys, ArtifactSetKey, CharacterKey, SetNum, SlotKey } from '../Types/consts';
+import { allElements, allSlotKeys, ArtifactSetKey, CharacterKey, SetNum, SlotKey } from '../Types/consts';
 import { IFieldDisplay } from '../Types/IFieldDisplay';
 import { ICalculatedStats } from '../Types/stats';
-import { useForceUpdate, usePromise } from '../Util/ReactUtil';
 import { timeStringMs } from '../Util/TimeUtil';
 import { crawlObject, deepClone, objectFromKeyMap } from '../Util/Util';
 import WeaponSheet from '../Weapon/WeaponSheet';
 import { buildContext, calculateTotalBuildNumber, maxBuildsToShowList } from './Build';
 import { initialBuildSettings } from './BuildSetting';
+import useForceUpdate from '../ReactHooks/useForceUpdate';
+import usePromise from '../ReactHooks/usePromise';
+import useCharacterReducer from '../ReactHooks/useCharacterReducer';
+import statsToFields from '../Util/FieldUtil';
+import FieldDisplay from '../Components/FieldDisplay';
 const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
 
 //lazy load the character display
@@ -290,8 +294,6 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     crawlObject(initialStats?.conditionalValues?.artifact, [], v => Array.isArray(v), () => count++)
     return count
   }, [initialStats?.conditionalValues])
-  //rudimentary dispatcher, definitely not the same API as the real characterDispatch.
-  const characterDispatch = useCallback(val => database.updateChar({ ...character, ...val }), [character, database])
   return <Container className="mt-2"> <buildContext.Provider value={{ equippedBuild: initialStats }}>
 
     <InfoComponent
@@ -307,7 +309,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
         setshowCharacterModal(false)
       }
     }} />
-    {!!initialStats && <ArtConditionalModal {...{ showArtCondModal, setshowArtCondModal, initialStats, characterDispatch, artifactCondCount }} />}
+    {!!initialStats && !!characterKey && <ArtConditionalModal {...{ showArtCondModal, setshowArtCondModal, initialStats, characterKey, artifactCondCount }} />}
     <Row className="mt-2 mb-2">
       <Col>
         {/* Build Generator Editor */}
@@ -324,10 +326,48 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
                       {characterDropDown}
                     </Card.Header>
                   </Card>}
-                {/* Hit mode options */}
-                {characterSheet && character && initialStats && <HitModeCard build={initialStats} characterSheet={characterSheet} className="mb-2" character={character} disabled={generatingBuilds} />}
+                {/* Bonus Stats */}
+                {(() => {
+                  if (!character) return null
+                  const bonusStats = Object.fromEntries(Object.entries(character?.bonusStats).filter(([key]) =>
+                    !((key as string).endsWith("enemyImmunity") || (key as string).endsWith("enemyRes_") || key === "enemyLevel")))
+                  if (!Object.keys(bonusStats).length) return null
+                  const setStatsFields = statsToFields(bonusStats)
+                  return < Card bg="lightcontent" text={"lightfont" as any} className="mb-2 w-100" >
+                    <Card.Header >Bonus Stats</Card.Header>
+                    <Card.Body><ListGroup className="text-white" >
+                      {setStatsFields.map((field, i) => <FieldDisplay key={i} index={i} field={field} />)}
+                    </ListGroup></Card.Body>
+                  </Card>
+                })()}
+                {/* enemy editor */}
+                {!!character && <Accordion >
+                  <Card bg="lightcontent" text={"lightfont" as any} className="mb-2">
+                    <Card.Header>
+                      <Row>
+                        <Col>
+                          {Stat.getStatName("enemyLevel")} <strong>{Character.getStatValueWithBonus(character, "enemyLevel")}</strong>
+                        </Col>
+                        <Col xs="auto">
+                          <ContextAwareToggle callback={undefined} {...{ as: Button }} eventKey="enemyEditor" />
+                        </Col>
+                      </Row>
+                    </Card.Header>
+                    <Card.Body>
+                      <Row className="mb-n2">
+                        {["physical", ...allElements].map(element => <Col xs={3} key={element}><EnemyResText element={element} character={character} /></Col>)}</Row>
+                    </Card.Body>
+                    <Accordion.Collapse eventKey="enemyEditor">
+                      <Card.Body className="p-2">
+                        <EnemyEditor character={character} bsProps={{ xs: 12 }} />
+                      </Card.Body>
+                    </Accordion.Collapse>
+                  </Card>
+                </Accordion>}
                 {/*Minimum Final Stat Filter */}
                 {!!statsDisplayKeys && <StatFilterCard className="mb-2" statFilters={statFilters} statKeys={statsDisplayKeys?.basicKeys as any} setStatFilters={sFs => buildSettingsDispatch({ statFilters: sFs })} disabled={generatingBuilds} />}
+                {/* Hit mode options */}
+                {characterSheet && character && initialStats && <HitModeCard build={initialStats} characterSheet={characterSheet} className="mb-2" character={character} disabled={generatingBuilds} />}
               </Col>
               <Col xs={12} lg={6}><Row>
                 <Col className="mb-2" xs={12}>
@@ -338,42 +378,45 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
                   </Card.Body></Card>
                 </Col>
                 {/* Artifact set picker */}
-                {setFilters.map(({ key: setKey, num: setNum }, index) => <Col className="mb-2" key={index} xs={12}>
-                  <Card className="h-100" bg="lightcontent" text={"lightfont" as any}>
-                    <Card.Header>
-                      <ButtonGroup>
-                        {/* Artifact set */}
-                        <DropdownButton as={ButtonGroup} title={artifactSheets?.[setKey]?.nameWithIcon ?? "Artifact Set Filter"} disabled={generatingBuilds}>
-                          <Dropdown.Item onClick={() => buildSettingsDispatch({ type: 'setFilter', index, key: "" })}>Unselect Artifact</Dropdown.Item>
-                          <Dropdown.ItemText>Max Rarity 🟊🟊🟊🟊🟊</Dropdown.ItemText>
-                          {dropdownitemsForStar(5, index)}
-                          <Dropdown.Divider />
-                          <Dropdown.ItemText>Max Rarity 🟊🟊🟊🟊</Dropdown.ItemText>
-                          {dropdownitemsForStar(4, index)}
-                          <Dropdown.Divider />
-                          <Dropdown.ItemText>Max Rarity 🟊🟊🟊</Dropdown.ItemText>
-                          {dropdownitemsForStar(3, index)}
-                        </DropdownButton>
-                        {/* set number */}
-                        <DropdownButton as={ButtonGroup} title={`${setNum}-set`}
-                          disabled={generatingBuilds || !setKey || artsAccounted >= 5}
-                        >
-                          {!!initialStats && Object.keys(artifactSheets?.[setKey]?.setEffects ?? {}).map((num: any) => {
-                            let artsAccountedOther = setFilters.reduce((accu, cur) => (cur.key && cur.key !== setKey) ? accu + cur.num : accu, 0)
-                            return (parseInt(num) + artsAccountedOther <= 5) &&
-                              (<Dropdown.Item key={num} onClick={() => buildSettingsDispatch({ type: 'setFilter', index, key: setFilters[index].key, num: parseInt(num) })} >
-                                {`${num}-set`}
-                              </Dropdown.Item>)
-                          })}
-                        </DropdownButton>
-                      </ButtonGroup>
-                    </Card.Header>
-                    {setKey ? <Card.Body><Row className="mb-n2">
-                      {!!initialStats && Object.keys(artifactSheets?.[setKey].setEffects ?? {}).map(setNKey => parseInt(setNKey) as SetNum).filter(setNkey => setNkey <= setNum).map(setNumKey =>
-                        <SetEffectDisplay newBuild={undefined} key={setKey + setNumKey} {...{ setKey, setNumKey, equippedBuild: initialStats, characterDispatch, editable: true }} />)}
-                    </Row></Card.Body> : null}
-                  </Card>
-                </Col>)}
+                {(() => {
+                  const count = setFilters.filter(s => s.key).length
+                  return setFilters.map(({ key: setKey, num: setNum }, index) => index <= count && <Col className="mb-2" key={index} xs={12}>
+                    <Card className="h-100" bg="lightcontent" text={"lightfont" as any}>
+                      <Card.Header>
+                        <ButtonGroup>
+                          {/* Artifact set */}
+                          <DropdownButton as={ButtonGroup} title={artifactSheets?.[setKey]?.nameWithIcon ?? "Artifact Set Filter"} disabled={generatingBuilds}>
+                            <Dropdown.Item onClick={() => buildSettingsDispatch({ type: 'setFilter', index, key: "" })}>Unselect Artifact</Dropdown.Item>
+                            <Dropdown.ItemText>Max Rarity 🟊🟊🟊🟊🟊</Dropdown.ItemText>
+                            {dropdownitemsForStar(5, index)}
+                            <Dropdown.Divider />
+                            <Dropdown.ItemText>Max Rarity 🟊🟊🟊🟊</Dropdown.ItemText>
+                            {dropdownitemsForStar(4, index)}
+                            <Dropdown.Divider />
+                            <Dropdown.ItemText>Max Rarity 🟊🟊🟊</Dropdown.ItemText>
+                            {dropdownitemsForStar(3, index)}
+                          </DropdownButton>
+                          {/* set number */}
+                          <DropdownButton as={ButtonGroup} title={`${setNum}-set`}
+                            disabled={generatingBuilds || !setKey || artsAccounted >= 5}
+                          >
+                            {!!initialStats && Object.keys(artifactSheets?.[setKey]?.setEffects ?? {}).map((num: any) => {
+                              let artsAccountedOther = setFilters.reduce((accu, cur) => (cur.key && cur.key !== setKey) ? accu + cur.num : accu, 0)
+                              return (parseInt(num) + artsAccountedOther <= 5) &&
+                                (<Dropdown.Item key={num} onClick={() => buildSettingsDispatch({ type: 'setFilter', index, key: setFilters[index].key, num: parseInt(num) })} >
+                                  {`${num}-set`}
+                                </Dropdown.Item>)
+                            })}
+                          </DropdownButton>
+                        </ButtonGroup>
+                      </Card.Header>
+                      {setKey ? <Card.Body><Row className="mb-n2">
+                        {!!initialStats && !!characterKey && Object.keys(artifactSheets?.[setKey].setEffects ?? {}).map(setNKey => parseInt(setNKey) as SetNum).filter(setNkey => setNkey <= setNum).map(setNumKey =>
+                          <SetEffectDisplay newBuild={undefined} key={setKey + setNumKey} {...{ setKey, setNumKey, equippedBuild: initialStats, characterKey, editable: true }} />)}
+                      </Row></Card.Body> : null}
+                    </Card>
+                  </Col>)
+                })()}
                 <Col className="mb-2" xs={12}>
                   <Card bg="lightcontent" text={"lightfont" as any}><Card.Body className="mb-n2">
                     <Button className="w-100 mb-2" onClick={() => buildSettingsDispatch({ useEquippedArts: !useEquippedArts })} disabled={generatingBuilds}>
@@ -539,9 +582,12 @@ function BuildModal({ build, showCharacterModal, characterKey, selectCharacter, 
   </Modal>
 }
 
-function ArtConditionalModal({ showArtCondModal, setshowArtCondModal, initialStats, characterDispatch, artifactCondCount }) {
+function ArtConditionalModal({ showArtCondModal, setshowArtCondModal, initialStats, characterKey, artifactCondCount }: {
+  showArtCondModal, setshowArtCondModal, initialStats: ICalculatedStats, characterKey: CharacterKey, artifactCondCount
+}) {
   const closeArtCondModal = useCallback(() => setshowArtCondModal(false), [setshowArtCondModal])
   const artifactSheets = usePromise(ArtifactSheet.getAll(), [])
+  const characterDispatch = useCharacterReducer(characterKey)
   if (!artifactSheets) return null
   const artSetKeyList = Object.entries(ArtifactSheet.setKeysByRarities(artifactSheets)).reverse().flatMap(([, sets]) => sets)
   return <Modal show={showArtCondModal} onHide={closeArtCondModal} size="xl" contentClassName="bg-transparent">
@@ -585,7 +631,7 @@ function ArtConditionalModal({ showArtCondModal, setshowArtCondModal, initialSta
                 </Card.Header>
                 <Card.Body><Row className="mb-n2">
                   {Boolean(setKey) && Object.keys(sheet.setEffects).map(key => parseInt(key) as SetNum).map(setNumKey =>
-                    <SetEffectDisplay newBuild={undefined} key={setKey + setNumKey} {...{ setKey, setNumKey, equippedBuild: initialStats, editable: true, characterDispatch, }} />)}
+                    <SetEffectDisplay newBuild={undefined} key={setKey + setNumKey} {...{ setKey, setNumKey, equippedBuild: initialStats, editable: true, characterKey }} />)}
                 </Row></Card.Body>
               </Card>
             </Col>
@@ -631,22 +677,18 @@ function StatFilterItem({ statKey, statKeys = [], min, close, setFilter, disable
   </InputGroup>
 }
 
-function HitModeCard({ characterSheet, character, build, className, disabled }: { characterSheet: CharacterSheet, character: ICachedCharacter, build: ICalculatedStats, className: string, disabled: boolean }) {
-  const database = useContext(DatabaseContext)
-  const setHitmode = useCallback(({ hitMode }) => database.updateChar({ ...character, hitMode }), [character, database])
-  const setReactionMode = useCallback(({ reactionMode }) => database.updateChar({ ...character, reactionMode }), [character, database])
-  const setInfusionAura = useCallback(({ infusionAura }) => database.updateChar({ ...character, infusionAura }), [character, database])
+function HitModeCard({ characterSheet, character, character: { key: characterKey }, build, className, disabled }: { characterSheet: CharacterSheet, character: ICachedCharacter, build: ICalculatedStats, className: string, disabled: boolean }) {
   if (!character) return null
   return <Card bg="lightcontent" text={"lightfont" as any} className={className}>
     <Card.Header>
       <Row>
         <Col>Hit Mode Options</Col>
-        <Col xs="auto"><InfusionAuraDropdown characterSheet={characterSheet} character={character} characterDispatch={setInfusionAura} disabled={disabled} /></Col>
+        <Col xs="auto"><InfusionAuraDropdown characterSheet={characterSheet} character={character} disabled={disabled} /></Col>
       </Row>
     </Card.Header>
     <Card.Body className="mb-n2">
-      <HitModeToggle hitMode={character.hitMode} characterDispatch={setHitmode} className="w-100 mb-2" disabled={disabled} />
-      <ReactionToggle build={build} character={character} characterDispatch={setReactionMode} className="w-100 mb-2" disabled={disabled} />
+      <HitModeToggle characterKey={characterKey} hitMode={character.hitMode} className="w-100 mb-2" disabled={disabled} />
+      <ReactionToggle build={build} character={character} className="w-100 mb-2" disabled={disabled} />
     </Card.Body>
   </Card >
 }

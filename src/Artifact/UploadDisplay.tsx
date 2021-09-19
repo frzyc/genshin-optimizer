@@ -4,17 +4,17 @@ import { useCallback, useEffect, useReducer, useState } from 'react';
 import { Button, Card, Col, Form, Modal, ProgressBar, Row } from 'react-bootstrap';
 import ReactGA from 'react-ga';
 import { createScheduler, createWorker, RecognizeResult, Scheduler } from 'tesseract.js';
-import scan_art_main from "./imgs/scan_art_main.png";
-import Snippet from "./imgs/snippet.png";
+import usePromise from '../ReactHooks/usePromise';
 import Stat from '../Stat';
+import { allMainStatKeys, allSubstats, IArtifact, ICachedArtifact, ISubstat, MainStatKey, SubstatKey } from '../Types/artifact';
+import { allArtifactRarities, allArtifactSets, allSlotKeys, ArtifactRarity, ArtifactSetKey, Rarity, SlotKey } from '../Types/consts';
+import { BorrowManager } from '../Util/BorrowManager';
+import { valueStringWithUnit } from '../Util/UIUtil';
 import { clamp, hammingDistance, objectFromKeyMap } from '../Util/Util';
 import Artifact from './Artifact';
-import { allMainStatKeys, allSubstats, ICachedArtifact, IArtifact, ISubstat, MainStatKey, SubstatKey } from '../Types/artifact';
-import { ArtifactRarity, allArtifactRarities, allArtifactSets, allSlotKeys, ArtifactSetKey, Rarity, SlotKey } from '../Types/consts';
 import { ArtifactSheet } from './ArtifactSheet';
-import { valueStringWithUnit } from '../Util/UIUtil';
-import { usePromise } from '../Util/ReactUtil';
-import { BorrowManager } from '../Util/BorrowManager';
+import scan_art_main from "./imgs/scan_art_main.png";
+import Snippet from "./imgs/snippet.png";
 
 const starColor = { r: 255, g: 204, b: 50 } //#FFCC32
 const maxProcessingCount = 3, maxProcessedCount = 16, workerCount = 2

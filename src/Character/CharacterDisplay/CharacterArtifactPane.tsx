@@ -6,13 +6,13 @@ import { ArtifactSheet } from '../../Artifact/ArtifactSheet';
 import SetEffectDisplay from '../../Artifact/Component/SetEffectDisplay';
 import { buildContext } from '../../Build/Build';
 import { database as localDatabase, DatabaseContext } from '../../Database/Database';
+import useForceUpdate from '../../ReactHooks/useForceUpdate';
+import usePromise from '../../ReactHooks/usePromise';
 import { ICachedCharacter } from '../../Types/character';
 import { allSlotKeys, ArtifactSetKey } from '../../Types/consts';
-import { useForceUpdate, usePromise } from '../../Util/ReactUtil';
 import { objectFromKeyMap } from '../../Util/Util';
 import WeaponSheet from '../../Weapon/WeaponSheet';
 import Character from "../Character";
-import { characterReducerAction } from '../CharacterDisplayCard';
 import CharacterSheet from '../CharacterSheet';
 import StatDisplayComponent from './StatDisplayComponent';
 const artLayoutSize = { xs: 12, md: 6, lg: 4 }
@@ -24,9 +24,8 @@ type CharacterArtifactPaneProps = {
     artifactSheets: StrictDict<ArtifactSetKey, ArtifactSheet>
   }
   character: ICachedCharacter,
-  characterDispatch: (any: characterReducerAction) => void,
 }
-function CharacterArtifactPane({ sheets, character, character: { key: characterKey }, characterDispatch }: CharacterArtifactPaneProps) {
+function CharacterArtifactPane({ sheets, character, character: { key: characterKey } }: CharacterArtifactPaneProps) {
   const { newBuild, equippedBuild, compareBuild, setCompareBuild } = useContext(buildContext)
   const database = useContext(DatabaseContext)
   const history = useHistory()
@@ -85,7 +84,7 @@ function CharacterArtifactPane({ sheets, character, character: { key: characterK
           <Card key={setKey} className="mb-2 flex-grow-1" bg="lightcontent" text={"lightfont" as any}>
             <Card.Header>{artifactSheets?.[setKey].name ?? ""}</Card.Header>
             <Card.Body className="p-2 mb-n2">
-              {(setNumKeyArr as any).map(setNumKey => <SetEffectDisplay key={setKey + setNumKey} {...{ setKey, setNumKey, equippedBuild, newBuild, characterDispatch }} />)}
+              {(setNumKeyArr as any).map(setNumKey => <SetEffectDisplay key={setKey + setNumKey} {...{ setKey, setNumKey, equippedBuild, newBuild, characterKey }} />)}
             </Card.Body>
           </Card>
         )}

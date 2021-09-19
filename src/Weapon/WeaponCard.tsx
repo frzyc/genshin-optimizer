@@ -7,11 +7,12 @@ import EquipmentDropdown from "../Components/EquipmentDropdown"
 import { Stars } from "../Components/StarDisplay"
 import StatIcon from "../Components/StatIcon"
 import { DatabaseContext } from "../Database/Database"
+import usePromise from "../ReactHooks/usePromise"
 import Stat from "../Stat"
 import { CharacterKey } from "../Types/consts"
 import { ICachedWeapon } from "../Types/weapon"
-import { usePromise } from "../Util/ReactUtil"
 import WeaponSheet from "./WeaponSheet"
+
 
 type WeaponCardProps = { weaponId: string, onEdit?: (weaponId: string) => void, onClick?: (weaponId: string) => void, onDelete?: (weaponId: string) => void, cardClassName: string, bg?: string, footer?: boolean }
 export default function WeaponCard({ weaponId, onEdit, onDelete, onClick, cardClassName = "", bg = "", footer = false }: WeaponCardProps) {

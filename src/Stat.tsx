@@ -1,8 +1,8 @@
-import { StatData } from "./StatData"
-import { hitTypes, hitMoves, hitElements, transformativeReactions, amplifyingReactions } from "./StatConstants"
-import { usePromise } from "./Util/ReactUtil";
-import { evalIfFunc } from "./Util/Util";
 import Formula from "./Formula";
+import usePromise from "./ReactHooks/usePromise";
+import { amplifyingReactions, hitElements, hitMoves, hitTypes, transformativeReactions } from "./StatConstants";
+import { StatData } from "./StatData";
+import { evalIfFunc } from "./Util/Util";
 
 export default class Stat {
   //do not instantiate.

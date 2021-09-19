@@ -1,22 +1,23 @@
 import { faCheckSquare, faSquare, faWindowMaximize, faWindowMinimize } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useContext, useMemo } from 'react';
-import { Accordion, AccordionContext, Button, Card, Col, Dropdown, Row, ToggleButton, ToggleButtonGroup } from "react-bootstrap";
+import { Accordion, AccordionContext, Badge, Button, Card, Col, Dropdown, Row, ToggleButton, ToggleButtonGroup } from "react-bootstrap";
 import { useAccordionToggle } from 'react-bootstrap/AccordionToggle';
 import { ArtifactSheet } from "../../Artifact/ArtifactSheet";
 import { buildContext } from "../../Build/Build";
 import StatIcon, { uncoloredEleIcons } from "../../Components/StatIcon";
 import Formula from "../../Formula";
+import useCharacterReducer from "../../ReactHooks/useCharacterReducer";
+import usePromise from "../../ReactHooks/usePromise";
 import Stat, { FormulaDisplay } from "../../Stat";
 import { GetDependencies } from "../../StatDependency";
 import { ICachedCharacter } from "../../Types/character";
-import { allElements, ArtifactSetKey } from "../../Types/consts";
+import { allElements, ArtifactSetKey, CharacterKey } from "../../Types/consts";
 import { IFieldDisplay } from "../../Types/IFieldDisplay";
 import { ICalculatedStats } from "../../Types/stats";
-import { usePromise } from "../../Util/ReactUtil";
+import { characterBaseStats } from "../../Util/StatUtil";
 import WeaponSheet from "../../Weapon/WeaponSheet";
 import Character from "../Character";
-import type { characterReducerAction } from "../CharacterDisplayCard";
 import CharacterSheet from "../CharacterSheet";
 import { getFormulaTargetsDisplayHeading } from "../CharacterUtil";
 import StatInput from "../StatInput";
@@ -28,11 +29,11 @@ const infusionVals = {
 type InfusionAuraDropdownProps = {
   characterSheet: CharacterSheet,
   character: ICachedCharacter,
-  characterDispatch: (any: characterReducerAction) => void,
   className?: string
   disabled?: boolean
 }
-export function InfusionAuraDropdown({ characterSheet, character: { infusionAura = "" }, characterDispatch, className, disabled = false }: InfusionAuraDropdownProps) {
+export function InfusionAuraDropdown({ characterSheet, character: { infusionAura = "", key: characterKey }, className, disabled = false }: InfusionAuraDropdownProps) {
+  const characterDispatch = useCharacterReducer(characterKey)
   if (!characterSheet.isMelee()) return null
   return <Dropdown className={className}>
     <Dropdown.Toggle variant={infusionAura || "secondary"} disabled={disabled}>{infusionVals[infusionAura]}</Dropdown.Toggle>
@@ -45,11 +46,11 @@ export function InfusionAuraDropdown({ characterSheet, character: { infusionAura
 type ReactionToggleProps = {
   character: ICachedCharacter,
   build: ICalculatedStats,
-  characterDispatch: (any: characterReducerAction) => void,
   className: string
   disabled?: boolean
 }
-export function ReactionToggle({ character: { reactionMode = null, infusionAura }, build, characterDispatch, className, disabled = false }: ReactionToggleProps) {
+export function ReactionToggle({ character: { reactionMode = null, infusionAura, key: characterKey }, build, className, disabled = false }: ReactionToggleProps) {
+  const characterDispatch = useCharacterReducer(characterKey)
   if (!build) return null
   const charEleKey = build.characterEle
   if (!["pyro", "hydro", "cryo"].includes(charEleKey) && !["pyro", "hydro", "cryo"].includes(infusionAura)) return null
@@ -70,7 +71,8 @@ export function ReactionToggle({ character: { reactionMode = null, infusionAura 
     </ToggleButton >}
   </ToggleButtonGroup>
 }
-export function HitModeToggle({ hitMode, characterDispatch, className, disabled = false }) {
+export function HitModeToggle({ characterKey, hitMode, className, disabled = false }: { characterKey: CharacterKey, hitMode: string, className?: string, disabled?: boolean }) {
+  const characterDispatch = useCharacterReducer(characterKey)
   const v = s => s ? "success" : "secondary"
   return <ToggleButtonGroup type="radio" value={hitMode} name="hitOptions" onChange={m => characterDispatch({ hitMode: m })} className={className} >
     <ToggleButton value="avgHit" variant={v(hitMode === "avgHit")} disabled={disabled} >Avg. DMG</ToggleButton>
@@ -124,6 +126,50 @@ function CalculationDisplay({ sheets, build }: {
     })}
   </div>
 }
+
+export function EnemyEditor({ character, character: { key: characterKey, }, bsProps = { xs: 12, xl: 6 } }: { character: ICachedCharacter, bsProps?: object }) {
+  const characterDispatch = useCharacterReducer(characterKey)
+  const charBaseStats = characterBaseStats(character)
+  return <Card className="mb-2" bg="darkcontent" text={"lightfont" as any}>
+    <Card.Header><h6>Enemy Editor</h6></Card.Header>
+    <Card.Body className="p-2">
+      <Button variant="warning" size="sm" className="mb-2">
+        <a href="https://genshin-impact.fandom.com/wiki/Resistance#Base_Enemy_Resistances" target="_blank" rel="noreferrer">To get the specific resistance values of enemies, please visit the wiki.</a>
+      </Button >
+      <Row >
+        <Col className="mb-2" {...bsProps}>
+          <StatInput
+            name={<b>Enemy Level</b>}
+            value={Character.getStatValueWithBonus(character, "enemyLevel")}
+            placeholder={Stat.getStatNameRaw("enemyLevel")}
+            defaultValue={charBaseStats.enemyLevel}
+            onValueChange={value => characterDispatch({ type: "bonusStats", statKey: "enemyLevel", value })}
+          />
+        </Col>
+        {["physical", ...allElements].map(eleKey => {
+          let statKey = `${eleKey}_enemyRes_`
+          let immunityStatKey = `${eleKey}_enemyImmunity`
+          let elementImmunity = Character.getStatValueWithBonus(character, immunityStatKey)
+          return <Col key={eleKey} className="mb-2" {...bsProps}>
+            <StatInput
+              prependEle={<Button variant={eleKey} onClick={() => characterDispatch({ type: "bonusStats", statKey: immunityStatKey, value: !elementImmunity })} className="text-darkcontent">
+                <FontAwesomeIcon icon={elementImmunity ? faCheckSquare : faSquare} className="fa-fw" /> Immunity
+              </Button>}
+              name={<b>{Stat.getStatName(statKey)}</b>}
+              value={Character.getStatValueWithBonus(character, statKey)}
+              placeholder={Stat.getStatNameRaw(statKey)}
+              defaultValue={charBaseStats[statKey]}
+              onValueChange={value => characterDispatch({ type: "bonusStats", statKey, value })}
+              disabled={elementImmunity}
+              percent
+            />
+          </Col>
+        })}
+      </Row>
+      <small>Note: for negative resistances due to resistance shred like Zhongli's shield (e.g. -10%), enter the RAW value (-10). GO will half the value for you in the calculations.</small>
+    </Card.Body>
+  </Card>
+}
 function FormulaCalculationField({ fieldKeys, build, fieldIndex }: { fieldKeys: string[], build: ICalculatedStats, fieldIndex: number, }) {
   const formula = usePromise(Formula.get(fieldKeys), [fieldKeys])
   if (!formula) return null
@@ -154,7 +200,7 @@ function FormulaCalculationField({ fieldKeys, build, fieldIndex }: { fieldKeys: 
   </Card>
 }
 
-const ContextAwareToggle = ({ eventKey, callback }) => {
+export const ContextAwareToggle = ({ eventKey, callback }) => {
   const currentEventKey = useContext(AccordionContext);
   const decoratedOnClick = useAccordionToggle(
     eventKey,
@@ -162,7 +208,7 @@ const ContextAwareToggle = ({ eventKey, callback }) => {
   );
   const expanded = currentEventKey === eventKey;
   return (
-    <Button onClick={decoratedOnClick} variant="info">
+    <Button onClick={decoratedOnClick} variant="info" size="sm">
       <FontAwesomeIcon icon={expanded ? faWindowMinimize : faWindowMaximize} className={`fa-fw ${expanded ? "fa-rotate-180" : ""}`} />
       <span> </span>{expanded ? "Retract" : "Expand"}
     </Button>
@@ -176,31 +222,27 @@ type DamageOptionsAndCalculationProps = {
     artifactSheets: StrictDict<ArtifactSetKey, ArtifactSheet>
   }
   character: ICachedCharacter,
-  characterDispatch: (any: characterReducerAction) => void,
-  className: string
 }
-export default function DamageOptionsAndCalculation({ sheets, sheets: { characterSheet, weaponSheet }, character, character: { hitMode }, characterDispatch, className }: DamageOptionsAndCalculationProps) {
+export default function DamageOptionsAndCalculation({ sheets, sheets: { characterSheet, weaponSheet }, character, character: { hitMode, key: characterKey } }: DamageOptionsAndCalculationProps) {
   const { newBuild, equippedBuild } = useContext(buildContext)
   //choose which one to display stats for
   const build = newBuild ? newBuild : equippedBuild!
-  return <div className={className}>
+
+  return <div className="mb-2" >
     <Card bg="lightcontent" text={"lightfont" as any} className="mb-2">
       <Card.Header>
         <Row className="mb-n2">
-          <Col xs="auto"><InfusionAuraDropdown characterSheet={characterSheet} character={character} characterDispatch={characterDispatch} className="mb-2" /></Col>
-          <Col xs="auto"><HitModeToggle hitMode={hitMode} characterDispatch={characterDispatch} className="mb-2" /></Col>
-          <Col xs="auto"><ReactionToggle character={character} build={build} characterDispatch={characterDispatch} className="mb-2" /></Col>
+          <Col xs="auto"><InfusionAuraDropdown characterSheet={characterSheet} character={character} className="mb-2" /></Col>
+          <Col xs="auto"><HitModeToggle characterKey={characterKey} hitMode={hitMode} className="mb-2" /></Col>
+          <Col xs="auto"><ReactionToggle character={character} build={build} className="mb-2" /></Col>
         </Row>
       </Card.Header>
     </Card>
     <Accordion >
-      <Card bg="lightcontent" text={"lightfont" as any} >
+      <Card bg="lightcontent" text={"lightfont" as any} className="mb-2" >
         <Card.Header>
           <Row>
-            <Col>
-              <span className="d-block">Damage Calculation Options & Formulas</span>
-              <small>Expand below to edit enemy details and view calculation details.</small>
-            </Col>
+            <Col>Formulas {"&"} Calculations</Col>
             <Col xs="auto">
               <ContextAwareToggle callback={undefined} {...{ as: Button }} eventKey="details" />
             </Col>
@@ -208,55 +250,36 @@ export default function DamageOptionsAndCalculation({ sheets, sheets: { characte
         </Card.Header>
         <Accordion.Collapse eventKey="details">
           <Card.Body className="p-2">
-            <Card className="mb-2" bg="darkcontent" text={"lightfont" as any}>
-              <Card.Header>
-                <Row>
-                  <Col>Enemy Editor</Col>
-                  <Col xs="auto">
-                    <Button variant="warning" size="sm">
-                      <a href="https://genshin-impact.fandom.com/wiki/Resistance#Base_Enemy_Resistances" target="_blank" rel="noreferrer">To get the specific resistance values of enemies, please visit the wiki.</a>
-                    </Button >
-                  </Col>
-                </Row>
-              </Card.Header>
-              <Card.Body className="p-2">
-                <Row >
-                  <Col xs={12} xl={6} className="mb-2">
-                    <StatInput
-                      name={<b>Enemy Level</b>}
-                      value={Character.getStatValueWithOverride(character, characterSheet, weaponSheet, "enemyLevel")}
-                      placeholder={Stat.getStatNameRaw("enemyLevel")}
-                      defaultValue={Character.getBaseStatValue(character, characterSheet, weaponSheet, "enemyLevel")}
-                      onValueChange={value => characterDispatch({ type: "statOverride", statKey: "enemyLevel", value })}
-                    />
-                  </Col>
-                  {["physical", ...allElements].map(eleKey => {
-                    let statKey = `${eleKey}_enemyRes_`
-                    let immunityStatKey = `${eleKey}_enemyImmunity`
-                    let elementImmunity = Character.getStatValueWithOverride(character, characterSheet, weaponSheet, immunityStatKey)
-                    return <Col xs={12} xl={6} key={eleKey} className="mb-2">
-                      <StatInput
-                        prependEle={<Button variant={eleKey} onClick={() => characterDispatch({ type: "statOverride", statKey: immunityStatKey, value: !elementImmunity })} className="text-darkcontent">
-                          <FontAwesomeIcon icon={elementImmunity ? faCheckSquare : faSquare} className="fa-fw" /> Immunity
-                        </Button>}
-                        name={<b>{Stat.getStatName(statKey)}</b>}
-                        value={Character.getStatValueWithOverride(character, characterSheet, weaponSheet, statKey)}
-                        placeholder={Stat.getStatNameRaw(statKey)}
-                        defaultValue={Character.getBaseStatValue(character, characterSheet, weaponSheet, statKey)}
-                        onValueChange={value => characterDispatch({ type: "statOverride", statKey, value })}
-                        disabled={elementImmunity}
-                        percent
-                      />
-                    </Col>
-                  })}
-                  <Col xs={12}><small>Note: for negative resistances due to resistance shred like Zhongli's shield (e.g. -10%), enter the RAW value (-10). GO will half the value for you in the calculations.</small></Col>
-                </Row>
-              </Card.Body>
-            </Card>
             <CalculationDisplay sheets={sheets} build={build} />
           </Card.Body>
         </Accordion.Collapse>
       </Card>
     </Accordion>
+    <Accordion >
+      <Card bg="lightcontent" text={"lightfont" as any} className="mb-2">
+        <Card.Header><Row>
+          <Col><h4 className="mb-0">
+            <Badge pill variant="success" className="mr-2">{Stat.getStatName("enemyLevel")} <strong>{Character.getStatValueWithBonus(character, "enemyLevel")}</strong></Badge>
+            {["physical", ...allElements].map(element => <span key={element} className="mr-2"><EnemyResText element={element} character={character} /></span>)}
+          </h4></Col>
+          <Col xs="auto">
+            <ContextAwareToggle callback={undefined} {...{ as: Button }} eventKey="enemyEditor" />
+          </Col>
+        </Row></Card.Header>
+        <Accordion.Collapse eventKey="enemyEditor">
+          <Card.Body className="p-2">
+            <EnemyEditor character={character} />
+          </Card.Body>
+        </Accordion.Collapse>
+      </Card>
+    </Accordion>
   </div>
+}
+
+export function EnemyResText({ character, element }: { character: ICachedCharacter, element: string }) {
+  const immune = !!Character.getStatValueWithBonus(character, `${element}_enemyImmunity`)
+  const resKey = `${element}_enemyRes_`
+  const content = immune ? <span >{uncoloredEleIcons[element]} IMMUNE</span> :
+    <span >{uncoloredEleIcons[element]}RES <strong>{Character.getStatValueWithBonus(character, resKey)}%</strong></span>
+  return <h6 className={`text-${element} d-inline`}>{content}</h6>
 }

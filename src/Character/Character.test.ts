@@ -1,6 +1,5 @@
 import Artifact from "../Artifact/Artifact"
 import { ArtifactSheet } from "../Artifact/ArtifactSheet"
-import { ascensionMaxLevel } from "../Data/CharacterData"
 import { database } from "../Database/Database"
 import { dbStorage } from "../Database/DBStorage"
 import { ICachedArtifact } from "../Types/artifact"

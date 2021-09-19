@@ -1,6 +1,6 @@
 import { WeaponExpCurveData } from 'pipeline';
 import { Translate } from '../Components/Translate';
-import { ascensionMaxLevel } from '../Data/CharacterData';
+import { ascensionMaxLevel } from '../Data/LevelData';
 import Stat from '../Stat';
 import { allWeaponKeys, WeaponKey } from '../Types/consts';
 import { ICalculatedStats } from '../Types/stats';

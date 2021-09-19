@@ -6,19 +6,19 @@ import { buildContext } from "../../Build/Build";
 import DocumentDisplay from "../../Components/DocumentDisplay";
 import FieldDisplay from "../../Components/FieldDisplay";
 import StatIcon from "../../Components/StatIcon";
+import useCharacterReducer from "../../ReactHooks/useCharacterReducer";
 import Stat from "../../Stat";
 import { ElementToReactionKeys } from "../../StatData";
 import { ICachedCharacter } from "../../Types/character";
 import statsToFields from "../../Util/FieldUtil";
-import type { characterReducerAction } from "../CharacterDisplayCard";
 import CharacterSheet from "../CharacterSheet";
 type CharacterTalentPaneProps = {
   characterSheet: CharacterSheet,
   character: ICachedCharacter,
-  characterDispatch: (any: characterReducerAction) => void,
 }
-export default function CharacterTalentPane({ characterSheet, character, character: { ascension, constellation }, characterDispatch }: CharacterTalentPaneProps) {
+export default function CharacterTalentPane({ characterSheet, character, character: { ascension, constellation, key: characterKey } }: CharacterTalentPaneProps) {
   const { newBuild, equippedBuild } = useContext(buildContext)
+  const characterDispatch = useCharacterReducer(characterKey)
   const skillBurstList = [["auto", "Normal/Charged Attack"], ["skill", "Elemental Skill"], ["burst", "Elemental Burst"]]
   const passivesList: Array<[tKey: string, tText: string, asc: number]> = [["passive1", "Unlocked at Ascension 1", 1], ["passive2", "Unlocked at Ascension 4", 4], ["passive3", "Unlocked by Default", 0]]
   const build = newBuild ? newBuild : equippedBuild
@@ -187,7 +187,7 @@ type SkillDisplayCardProps = {
   subtitle: string,
   onClickTitle?: (any) => any
 }
-function SkillDisplayCard({ characterSheet, character: { talent, ascension }, characterDispatch, talentKey, subtitle, onClickTitle }: SkillDisplayCardProps) {
+function SkillDisplayCard({ characterSheet, character: { talent, ascension, key: characterKey }, characterDispatch, talentKey, subtitle, onClickTitle }: SkillDisplayCardProps) {
   const { newBuild, equippedBuild } = useContext(buildContext)
   let build = newBuild ? newBuild : equippedBuild
   if (!build) return null
@@ -234,7 +234,7 @@ function SkillDisplayCard({ characterSheet, character: { talent, ascension }, ch
         </Col>
       </Row>
       {/* Display document sections */}
-      {sections ? <DocumentDisplay {...{ sections, characterDispatch, equippedBuild, newBuild }} /> : null}
+      {sections ? <DocumentDisplay {...{ sections, characterKey, equippedBuild, newBuild }} /> : null}
       {statsEle}
     </Card.Body>
   </Card>

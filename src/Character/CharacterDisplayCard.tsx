@@ -10,13 +10,15 @@ import Row from 'react-bootstrap/Row';
 import { ArtifactSheet } from '../Artifact/ArtifactSheet';
 import { buildContext } from '../Build/Build';
 import CustomFormControl from '../Components/CustomFormControl';
-import { ambiguousLevel, ascensionMaxLevel, milestoneLevels } from '../Data/CharacterData';
+import { ambiguousLevel, ascensionMaxLevel, milestoneLevels } from '../Data/LevelData';
 import ElementalData from '../Data/ElementalData';
 import { DatabaseContext } from '../Database/Database';
+import useCharacterReducer from '../ReactHooks/useCharacterReducer';
+import useForceUpdate from '../ReactHooks/useForceUpdate';
+import usePromise from '../ReactHooks/usePromise';
 import { ICachedCharacter } from '../Types/character';
 import { CharacterKey } from '../Types/consts';
 import { ICalculatedStats } from '../Types/stats';
-import { useForceUpdate, usePromise } from '../Util/ReactUtil';
 import { clamp, deepClone } from '../Util/Util';
 import WeaponSheet from '../Weapon/WeaponSheet';
 import Character from './Character';
@@ -28,15 +30,6 @@ import { CharSelectionButton } from './CharacterSelection';
 import CharacterSheet from './CharacterSheet';
 import { initialCharacter } from './CharacterUtil';
 
-type characterEquipWeapon = {
-  type: "weapon", id: string
-}
-type characterReducerStatOverride = {
-  type: "statOverride",
-  statKey: string
-  value: any | undefined
-}
-export type characterReducerAction = characterEquipWeapon | characterReducerStatOverride | Partial<ICachedCharacter>
 
 type CharacterDisplayCardProps = {
   characterKey: CharacterKey,
@@ -70,28 +63,6 @@ export default function CharacterDisplayCard({ characterKey, setCharacterKey, fo
   const weaponSheet = weapon ? weaponSheets?.[weapon.key] : undefined
   const sheets = characterSheet && weaponSheet && artifactSheets && { characterSheet, weaponSheet, artifactSheets }
 
-  const characterDispatch = useCallback((action: characterReducerAction): void => {
-    if (!characterKey) return
-
-    if ("type" in action) switch (action.type) {
-      case "weapon":
-        database.setWeaponLocation(action.id, characterKey)
-        break
-      case "statOverride": {
-        const character = database._getChar(characterKey)!
-        if (!characterSheet || !weaponSheet) break
-        const { statKey, value } = action
-        const baseStatOverrides = character.baseStatOverrides
-        const baseStatVal = Character.getBaseStatValue(character, characterSheet, weaponSheet, statKey)
-        if (baseStatVal === value || baseStatVal === undefined) delete baseStatOverrides[statKey]
-        else baseStatOverrides[statKey] = value
-        database.updateChar({ ...character, baseStatOverrides }) // TODO: Validate this
-        break
-      }
-    } else
-      database.updateChar({ ...database._getChar(characterKey)!, ...action }) // TODO: Validate this
-  }, [characterKey, characterSheet, weaponSheet, database])
-
   useEffect(() => {
     return database.followChar(characterKey, onDatabaseUpdate)
   }, [characterKey, onDatabaseUpdate, database])
@@ -107,13 +78,13 @@ export default function CharacterDisplayCard({ characterKey, setCharacterKey, fo
   const mainStatAssumptionLevel = newBuild?.mainStatAssumptionLevel ?? 0
   const equippedBuild = useMemo(() => characterSheet && weaponSheet && artifactSheets && Character.calculateBuild(character, database, characterSheet, weaponSheet, artifactSheets, mainStatAssumptionLevel), [character, characterSheet, weaponSheet, artifactSheets, mainStatAssumptionLevel, database])
   // main CharacterDisplayCard
-  const DamageOptionsAndCalculationEle = sheets && <DamageOptionsAndCalculation sheets={sheets} character={character} characterDispatch={characterDispatch} className="mb-2" />
+  const DamageOptionsAndCalculationEle = sheets && <DamageOptionsAndCalculation sheets={sheets} character={character} />
   return (<Card bg="darkcontent" text={"lightfont" as any} >
     <Card.Header>
       <Row>
         <Col xs={"auto"} className="mr-auto">
           {/* character selecter/display */}
-          <CharSelectDropdown characterSheet={characterSheet} character={character} weaponSheet={weaponSheet} characterDispatch={characterDispatch} setCharacterKey={setCharacterKey} />
+          <CharSelectDropdown characterSheet={characterSheet} character={character} weaponSheet={weaponSheet} setCharacterKey={setCharacterKey} />
         </Col>
         {Boolean(mainStatAssumptionLevel) && <Col xs="auto"><Alert className="mb-0 py-1 h-100" variant="orange" ><b>Assume Main Stats are Level {mainStatAssumptionLevel}</b></Alert></Col>}
         {Boolean(onClose) && <Col xs="auto" >
@@ -142,21 +113,21 @@ export default function CharacterDisplayCard({ characterKey, setCharacterKey, fo
           <Tab.Content>
             <Tab.Pane eventKey="character">
               {DamageOptionsAndCalculationEle}
-              <CharacterOverviewPane characterSheet={characterSheet} weaponSheet={weaponSheet} character={character} characterDispatch={characterDispatch} />
+              <CharacterOverviewPane characterSheet={characterSheet} weaponSheet={weaponSheet} character={character} />
             </Tab.Pane>
             <buildContext.Provider value={{ newBuild: undefined, equippedBuild, compareBuild, setCompareBuild }}>
               <Tab.Pane eventKey="artifacts" >
                 {DamageOptionsAndCalculationEle}
-                <CharacterArtifactPane sheets={sheets} character={character} characterDispatch={characterDispatch} />
+                <CharacterArtifactPane sheets={sheets} character={character} />
               </Tab.Pane>
             </buildContext.Provider>
             {newBuild ? <Tab.Pane eventKey="newartifacts" >
               {DamageOptionsAndCalculationEle}
-              <CharacterArtifactPane sheets={sheets} character={character} characterDispatch={characterDispatch} />
+              <CharacterArtifactPane sheets={sheets} character={character} />
             </Tab.Pane> : null}
             <Tab.Pane eventKey="talent">
               {DamageOptionsAndCalculationEle}
-              <CharacterTalentPane characterSheet={characterSheet} character={character} characterDispatch={characterDispatch} />
+              <CharacterTalentPane characterSheet={characterSheet} character={character} />
             </Tab.Pane>
           </Tab.Content>
         </Tab.Container>
@@ -173,10 +144,10 @@ type CharSelectDropdownProps = {
   weaponSheet?: WeaponSheet,
   character: ICachedCharacter
   disabled?: boolean
-  characterDispatch: (any: characterReducerAction) => void
   setCharacterKey?: (any: CharacterKey) => void
 }
-function CharSelectDropdown({ characterSheet, weaponSheet, character, character: { elementKey = "anemo", level = 1, ascension = 0 }, disabled, characterDispatch, setCharacterKey }: CharSelectDropdownProps) {
+function CharSelectDropdown({ characterSheet, weaponSheet, character, character: { key: characterKey, elementKey = "anemo", level = 1, ascension = 0 }, disabled, setCharacterKey }: CharSelectDropdownProps) {
+  const characterDispatch = useCharacterReducer(characterKey)
   const HeaderIconDisplay = characterSheet ? <span >
     <Image src={characterSheet.thumbImg} className="thumb-small my-n1 ml-n2" roundedCircle />
     <h6 className="d-inline"> {characterSheet.name} </h6>

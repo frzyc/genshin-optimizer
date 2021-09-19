@@ -34,7 +34,7 @@ export function initialCharacter(key: CharacterKey): ICachedCharacter {
     equippedArtifacts: objectFromKeyMap(allSlotKeys, () => ""),
     equippedWeapon: "",
     conditionalValues: {},
-    baseStatOverrides: {}, // overriding the baseStat
+    bonusStats: {},
     buildSettings: initialBuildSettings(),
     talent: {
       auto: 1,

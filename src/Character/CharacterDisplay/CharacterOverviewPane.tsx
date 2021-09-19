@@ -7,6 +7,7 @@ import { buildContext } from "../../Build/Build";
 import { Stars } from "../../Components/StarDisplay";
 import StatDisplay from "../../Components/StatDisplay";
 import StatIcon from "../../Components/StatIcon";
+import useCharacterReducer from "../../ReactHooks/useCharacterReducer";
 import Stat from "../../Stat";
 import { ICachedCharacter } from "../../Types/character";
 import { allElements } from "../../Types/consts";
@@ -14,17 +15,16 @@ import { ICalculatedStats } from "../../Types/stats";
 import WeaponDisplayCard from "../../Weapon/WeaponDisplayCard";
 import WeaponSheet from "../../Weapon/WeaponSheet";
 import Character from "../Character";
-import type { characterReducerAction } from "../CharacterDisplayCard";
 import CharacterSheet from "../CharacterSheet";
 import StatInput from "../StatInput";
 type CharacterOverviewPaneProps = {
   characterSheet: CharacterSheet;
   weaponSheet: WeaponSheet
   character: ICachedCharacter
-  characterDispatch: (any: characterReducerAction) => void,
 }
-export default function CharacterOverviewPane({ characterSheet, weaponSheet, character, character: { constellation }, characterDispatch }: CharacterOverviewPaneProps) {
+export default function CharacterOverviewPane({ characterSheet, weaponSheet, character, character: { constellation, key: characterKey } }: CharacterOverviewPaneProps) {
   const { newBuild, equippedBuild } = useContext(buildContext)
+  const characterDispatch = useCharacterReducer(characterKey)
   const build = newBuild ? newBuild : equippedBuild
   if (!build) return null
   const { tlvl } = build
@@ -69,11 +69,11 @@ type MainStatsCardsProps = {
   characterSheet: CharacterSheet,
   weaponSheet: WeaponSheet,
   character: ICachedCharacter,
-  characterDispatch: (any) => void,
   equippedBuild?: ICalculatedStats,
   newBuild?: ICalculatedStats
 }
-function MainStatsCards({ characterSheet, weaponSheet, character, characterDispatch, equippedBuild, newBuild }: MainStatsCardsProps) {
+function MainStatsCards({ characterSheet, weaponSheet, character, character: { key: characterKey }, equippedBuild, newBuild }: MainStatsCardsProps) {
+  const characterDispatch = useCharacterReducer(characterKey)
   const [editing, SetEditing] = useState(false)
   const [editingOther, SetEditingOther] = useState(false)
   const [editingMisc, SetEditingMisc] = useState(false)
@@ -129,17 +129,16 @@ function MainStatsCards({ characterSheet, weaponSheet, character, characterDispa
                 disabled={undefined}
                 className="mb-2"
                 name={<span>{StatIcon[statKey]} {Stat.getStatNameWithPercent(statKey)}</span>}
-                placeholder={`Base ${Stat.getStatName(statKey)}`}
-                value={Character.getStatValueWithOverride(character, characterSheet, weaponSheet, statKey)}
+                placeholder={Stat.getStatNameRaw(statKey)}
+                value={character.bonusStats[statKey] ?? 0}
                 percent={Stat.getStatUnit(statKey) === "%"}
-                onValueChange={value => characterDispatch({ type: "statOverride", statKey, value, characterSheet, weaponSheet })}
-                defaultValue={Character.getBaseStatValue(character, characterSheet, weaponSheet, statKey)}
+                onValueChange={value => characterDispatch({ type: "bonusStats", statKey, value })}
               />
             </Col>)}
         </Row>
       </Card.Body> : <Card.Body>
         <Row className="mb-2">
-          {displayStatKeys.map(statKey => <Col xs={12} lg={6} key={statKey} ><StatDisplay characterSheet={characterSheet} weaponSheet={weaponSheet} statKey={statKey} {...displayNewBuildProps} /></Col>)}
+          {displayStatKeys.map(statKey => <Col xs={12} lg={6} key={statKey} ><StatDisplay statKey={statKey} {...displayNewBuildProps} /></Col>)}
           <Col lg={6} xs={12}>
             <span><b>Specialized:</b> <span>{specializedStatKey && StatIcon[specializedStatKey]} {Stat.getStatName(specializedStatKey)}</span></span>
             <span className={`float-right`}>{`${specializedStatVal.toFixed(Stat.fixedUnit(specializedStatKey))}${specializedStatUnit}`}</span>
@@ -167,16 +166,15 @@ function MainStatsCards({ characterSheet, weaponSheet, character, characterDispa
               <StatInput
                 className="mb-2"
                 name={<span>{StatIcon[statKey]} {Stat.getStatName(statKey)}</span>}
-                placeholder={`Base ${Stat.getStatNameRaw(statKey)}`}
-                value={Character.getStatValueWithOverride(character, characterSheet, weaponSheet, statKey)}
+                placeholder={Stat.getStatNameRaw(statKey)}
+                value={character.bonusStats[statKey] ?? 0}
                 percent={Stat.getStatUnit(statKey) === "%"}
-                onValueChange={value => characterDispatch({ type: "statOverride", statKey, value, characterSheet, weaponSheet })}
-                defaultValue={Character.getBaseStatValue(character, characterSheet, weaponSheet, statKey)}
+                onValueChange={value => characterDispatch({ type: "bonusStats", statKey, value })}
               />
             </Col>)}
         </Row>
       </Card.Body> : <Card.Body>
-        <Row className="mb-2">{otherStatKeys.map(statKey => <Col xs={12} lg={6} key={statKey} ><StatDisplay characterSheet={characterSheet} weaponSheet={weaponSheet} statKey={statKey} {...displayNewBuildProps} /></Col>)}</Row>
+        <Row className="mb-2">{otherStatKeys.map(statKey => <Col xs={12} lg={6} key={statKey} ><StatDisplay statKey={statKey} {...displayNewBuildProps} /></Col>)}</Row>
       </Card.Body>}
     </Card>
     <Card bg="lightcontent" text={"lightfont" as any} className="mb-2">
@@ -199,16 +197,15 @@ function MainStatsCards({ characterSheet, weaponSheet, character, characterDispa
               <StatInput
                 className="mb-2"
                 name={<span>{StatIcon[statKey]} {Stat.getStatName(statKey)}</span>}
-                placeholder={`Base ${Stat.getStatNameRaw(statKey)}`}
-                value={Character.getStatValueWithOverride(character, characterSheet, weaponSheet, statKey)}
+                placeholder={Stat.getStatNameRaw(statKey)}
+                value={character.bonusStats[statKey] ?? 0}
                 percent={Stat.getStatUnit(statKey) === "%"}
-                onValueChange={value => characterDispatch({ type: "statOverride", statKey, value, characterSheet, weaponSheet })}
-                defaultValue={Character.getBaseStatValue(character, characterSheet, weaponSheet, statKey)}
+                onValueChange={value => characterDispatch({ type: "bonusStats", statKey, value })}
               />
             </Col>)}
         </Row>
       </Card.Body> : <Card.Body>
-        <Row className="mb-2">{miscStatkeys.map(statKey => <Col xs={12} lg={6} key={statKey} ><StatDisplay characterSheet={characterSheet} weaponSheet={weaponSheet} statKey={statKey} {...displayNewBuildProps} /></Col>)}</Row>
+        <Row className="mb-2">{miscStatkeys.map(statKey => <Col xs={12} lg={6} key={statKey} ><StatDisplay statKey={statKey} {...displayNewBuildProps} /></Col>)}</Row>
       </Card.Body>}
     </Card>
   </>

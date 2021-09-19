@@ -1,14 +1,12 @@
 import { useMemo } from "react"
 import { Col, Row } from "react-bootstrap"
 import Character from "../Character/Character"
-import CharacterSheet from "../Character/CharacterSheet"
 import Formula from "../Formula"
+import usePromise from "../ReactHooks/usePromise"
 import Stat from "../Stat"
 import { ICachedCharacter } from "../Types/character"
 import { IFieldDisplay } from "../Types/IFieldDisplay"
 import { ICalculatedStats } from "../Types/stats"
-import { usePromise } from "../Util/ReactUtil"
-import WeaponSheet from "../Weapon/WeaponSheet"
 import StatIcon from "./StatIcon"
 
 function DisplayStatDiff({ label = "", val, oldVal, fixed = 0, unit = "", variant = "" }) {
@@ -29,14 +27,12 @@ function DisplayStatDiff({ label = "", val, oldVal, fixed = 0, unit = "", varian
   </Row></Col>
 }
 type StatDisplayProps = {
-  characterSheet: CharacterSheet,
-  weaponSheet: WeaponSheet
   character: ICachedCharacter,
   equippedBuild?: ICalculatedStats,
   newBuild?: ICalculatedStats,
   statKey: string
 }
-export default function StatDisplay({ characterSheet, weaponSheet, character, equippedBuild, newBuild, statKey }: StatDisplayProps) {
+export default function StatDisplay({ character, equippedBuild, newBuild, statKey }: StatDisplayProps) {
   const formula = usePromise(Array.isArray(statKey) ? Formula.get(statKey) : undefined, [statKey])
 
   const { val, oldVal, fixed, unit, variant, label } = useMemo(() => {
@@ -53,7 +49,7 @@ export default function StatDisplay({ characterSheet, weaponSheet, character, eq
         val = build?.[statKey] ?? 0
         //statvaluewith override -> old
         const invalid = "invalid" //can't use undeinfed as the defVal, since I want undefined for invalid numbers.
-        oldVal = Character.getStatValueWithOverride(character, characterSheet, weaponSheet, statKey) ?? invalid
+        oldVal = Character.getStatValueWithBonus(character, statKey) ?? invalid
         oldVal === invalid && (oldVal = undefined)
         if (build) {
           if (statKey === "finalHP")
@@ -73,7 +69,7 @@ export default function StatDisplay({ characterSheet, weaponSheet, character, eq
       const labelVariant = Character.getTalentFieldValue(field, "variant", build)
       label = <span className={`text-${labelVariant}`}>{Character.getTalentFieldValue(field, "text", build)}</span>
       fixed = Character.getTalentFieldValue(field, "fixed", build, 0 as any)
-      unit = Character.getTalentFieldValue(field, "unit", build,"")
+      unit = Character.getTalentFieldValue(field, "unit", build, "")
       val = Character.getTalentFieldValue(field, "formula", build)?.[0]?.(build)
       if (newBuild && equippedBuild) {//comparable
         oldVal = Character.getTalentFieldValue(field, "formula", equippedBuild)?.[0]?.(equippedBuild)
@@ -81,7 +77,7 @@ export default function StatDisplay({ characterSheet, weaponSheet, character, eq
     }
     if (Character.hasOverride(character, statKey)) variant = "warning"
     return { val, oldVal, fixed, unit, variant, label }
-  }, [character, characterSheet, weaponSheet, equippedBuild, newBuild, statKey, formula])
+  }, [character, equippedBuild, newBuild, statKey, formula])
 
   return <DisplayStatDiff {...{ val, oldVal, fixed, unit, variant, label: label as any }} />
 }

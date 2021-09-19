@@ -1,4 +1,3 @@
-// import characters from
 
 export const ascensionMaxLevel = [20, 40, 50, 60, 70, 80, 90] as const
 export const ambiguousLevel = (level) => level !== 90 && ascensionMaxLevel.includes(level)
@@ -18,10 +17,3 @@ export const milestoneLevels = [
   [20, 0],
   [1, 0]
 ] as const
-
-export const characterStatBase = {
-  critRate_: 5,
-  critDMG_: 50,
-  enerRech_: 100,
-  stamina: 100
-} as const
