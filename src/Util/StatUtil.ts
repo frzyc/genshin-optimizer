@@ -2,9 +2,11 @@ import { ICachedCharacter } from "../Types/character";
 import { allElements } from "../Types/consts"
 import { BonusStats, ICalculatedStats, Modifier } from "../Types/stats"
 
-export const overrideStatKeys = ["enemyLevel", ...["physical", ...allElements].flatMap(eleKey => [`${eleKey}_enemyRes_`, `${eleKey}_enemyImmunity`])] as const
+export const overrideStatKeys = ["enemyLevel", ...["physical", ...allElements].map(eleKey => `${eleKey}_enemyImmunity`)] as const
+//this is due to the UI being override instead of additive
+export const initialOverrideStatkeys = [...["physical", ...allElements].map(eleKey => `${eleKey}_enemyRes_`)]
 
-export function mergeStats(initialStats: BonusStats, stats: BonusStats | undefined) {
+export function mergeStats(initialStats: BonusStats, stats: BonusStats | undefined, overrideKeys: string[] = []) {
   if (!stats) return
   return Object.entries(stats).forEach(([key, val]: any) => {
     if (key === "modifiers") {
@@ -13,7 +15,7 @@ export function mergeStats(initialStats: BonusStats, stats: BonusStats | undefin
         initialStats.modifiers[key] = initialStats.modifiers[key] ?? []
         initialStats.modifiers[key].push(...paths)
       }
-    } else if (typeof val === "string" || overrideStatKeys.includes(key)) {
+    } else if (typeof val === "string" || overrideStatKeys.includes(key) || overrideKeys.includes(key)) {
       initialStats[key] = val
     } else {
       if (initialStats[key] === undefined) initialStats[key] = val
