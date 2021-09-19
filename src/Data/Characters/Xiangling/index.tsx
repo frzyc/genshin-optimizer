@@ -32,11 +32,12 @@ const conditionals: IConditionals = {
       value: "6s",
     }]
   },
-  c6: { // CondensedPyronado
-    canShow: stats => stats.constellation >= 6,
-    name: <span>During <b>Pyronado</b></span>,
-    stats: { pyro_dmg_: 15 },//TODO: party buff
-  },
+  //TODO: disabled because it only snapshots to the 3rd hit dmg, and not 1-2 or pyronado
+  // c6: { // CondensedPyronado
+  //   canShow: stats => stats.constellation >= 6,
+  //   name: <span>During <b>Pyronado</b></span>,
+  //   stats: { pyro_dmg_: 15 },//TODO: party buff
+  // },
   a4: { // BewareItsSuperHot
     canShow: stats => stats.ascension >= 4,
     name: "Pick up chili pepper",
@@ -134,7 +135,7 @@ const char: ICharacterSheet = {
             text: "Energy Cost",
             value: 80,
           }],
-          conditional: conditionals.c6
+          // conditional: conditionals.c6 
         }],
       },
       passive1: talentTemplate("passive1", tr, passive1),
