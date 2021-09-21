@@ -10,7 +10,7 @@ import { ICalculatedStats } from "../Types/stats"
 import { characterBaseStats } from "../Util/StatUtil"
 import StatIcon from "./StatIcon"
 
-function DisplayStatDiff({ label = "", val, oldVal, fixed = 0, unit = "", variant = "" }) {
+function DisplayStatDiff({ label = "", val, oldVal, fixed = 0, unit = "", hasBonus = false }) {
   if (typeof oldVal === "undefined" && typeof val === "number") {//if only one value is filled, display that one.
     oldVal = val
     val = undefined
@@ -19,12 +19,14 @@ function DisplayStatDiff({ label = "", val, oldVal, fixed = 0, unit = "", varian
   let oldText: Displayable = "", diffText: Displayable = ""
   if (oldVal || diff === 0) oldText = oldVal?.toFixed(fixed)
   else if (oldVal === undefined) oldText = val?.toFixed(fixed)//if oldval isnt defined, just display val.
-  if (oldText) oldText = <span className={`text-${variant}`}>{oldText}{unit}</span>
+  if (oldText) oldText = <span>{oldText}{unit}</span>
   if (diff !== 0) diffText = <span className={`text-${diff > 0 ? "success" : "danger"}`}>{diff > 0 ? "+" : ""}{diff?.toFixed(fixed)}{unit}</span>
-
+  const valueText = <>{oldText}{diffText}</>
   return <Col xs="12"><Row>
     <Col><b>{label}</b></Col>
-    <Col xs="auto">{oldText}{diff ? " " : ""}{diffText}</Col>
+    <Col xs="auto">
+      {hasBonus ? <strong>{valueText}</strong> : valueText}
+    </Col>
   </Row></Col>
 }
 type StatDisplayProps = {
@@ -36,8 +38,8 @@ type StatDisplayProps = {
 export default function StatDisplay({ character, equippedBuild, newBuild, statKey }: StatDisplayProps) {
   const formula = usePromise(Array.isArray(statKey) ? Formula.get(statKey) : undefined, [statKey])
 
-  const { val, oldVal, fixed, unit, variant, label } = useMemo(() => {
-    let val, oldVal, fixed, unit, variant, label: Displayable = ""
+  const { val, oldVal, fixed, unit, label, hasBonus } = useMemo(() => {
+    let val, oldVal, fixed, unit, label: Displayable = ""
     if (typeof statKey === "string") {//basic statKey
       if (newBuild && equippedBuild) {//comparable
         //newbuild -> val
@@ -49,9 +51,7 @@ export default function StatDisplay({ character, equippedBuild, newBuild, statKe
         //build ->val
         val = build?.[statKey] ?? 0
         //statvaluewith override -> old
-        const invalid = "invalid" //can't use undeinfed as the defVal, since I want undefined for invalid numbers.
-        oldVal = characterBaseStats(character)[statKey] ?? invalid
-        oldVal === invalid && (oldVal = undefined)
+        oldVal = characterBaseStats(character)[statKey] as number | undefined
         if (build) {
           if (statKey === "finalHP")
             oldVal = build.characterHP
@@ -76,9 +76,8 @@ export default function StatDisplay({ character, equippedBuild, newBuild, statKe
         oldVal = Character.getTalentFieldValue(field, "formula", equippedBuild)?.[0]?.(equippedBuild)
       }
     }
-    if (Character.hasOverride(character, statKey)) variant = "warning"
-    return { val, oldVal, fixed, unit, variant, label }
+    return { val, oldVal, fixed, unit, label, hasBonus: Character.hasBonusStats(character, statKey) }
   }, [character, equippedBuild, newBuild, statKey, formula])
 
-  return <DisplayStatDiff {...{ val, oldVal, fixed, unit, variant, label: label as any }} />
+  return <DisplayStatDiff {...{ val, oldVal, fixed, unit, label: label as any, hasBonus }} />
 }
