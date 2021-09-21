@@ -7,6 +7,7 @@ import Stat from "../Stat"
 import { ICachedCharacter } from "../Types/character"
 import { IFieldDisplay } from "../Types/IFieldDisplay"
 import { ICalculatedStats } from "../Types/stats"
+import { characterBaseStats } from "../Util/StatUtil"
 import StatIcon from "./StatIcon"
 
 function DisplayStatDiff({ label = "", val, oldVal, fixed = 0, unit = "", variant = "" }) {
@@ -49,7 +50,7 @@ export default function StatDisplay({ character, equippedBuild, newBuild, statKe
         val = build?.[statKey] ?? 0
         //statvaluewith override -> old
         const invalid = "invalid" //can't use undeinfed as the defVal, since I want undefined for invalid numbers.
-        oldVal = Character.getStatValueWithBonus(character, statKey) ?? invalid
+        oldVal = characterBaseStats(character)[statKey] ?? invalid
         oldVal === invalid && (oldVal = undefined)
         if (build) {
           if (statKey === "finalHP")
