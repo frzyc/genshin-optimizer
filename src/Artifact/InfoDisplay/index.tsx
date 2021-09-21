@@ -2,6 +2,7 @@ import { faBan, faCog } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Badge, Col, Image, Row } from 'react-bootstrap'
 import { Trans, useTranslation } from 'react-i18next'
+import { Link } from 'react-router-dom'
 import { Stars } from '../../Components/StarDisplay'
 import artifactcard from './artifactcard.png'
 import artifacteditor from './artifacteditor.png'
@@ -42,7 +43,7 @@ export default function ArtifactInfoDisplay() {
           <p>Manual input is not your cup of tea? You can scan in your artifacts with screenshots! On the Artifact Editor, click the <Badge variant="info">Show Me How!</Badge> button to learn more.</p>
 
           <h6>Automatic Artifact Scanner</h6>
-          <p>If you are playing Genshin on PC, you can download a tool that automatically scans all your artifacts for you, and you can then import that data in <FontAwesomeIcon icon={faCog} /> Database. Here is a recommended tool: <a href="https://github.com/daydreaming666/Amenoma/releases/" target="_blank" rel="noreferrer">「天目」-- Amenoma</a>.</p>
+          <p>If you are playing Genshin on PC, you can download a tool that automatically scans all your artifacts for you, and you can then import that data in <FontAwesomeIcon icon={faCog} /> Database. <Link to="/scanner">Click here</Link> for a list of scanners that are compatible with GO.</p>
 
           <h5>Duplicate/Upgrade artifact detection</h5>
           <p>Did you know GO can detect if you are adding a <b>duplicate</b> artifact that exists in the system? It can also detect if the current artifact in editor is an <b>upgrade</b> of an existing artifact as well. Once a duplicate/upgrade is detected, a preview will allow you to compare the two artifacts in question(See Image).</p>
