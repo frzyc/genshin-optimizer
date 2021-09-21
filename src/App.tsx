@@ -29,6 +29,7 @@ const FlexDisplay = lazy(() => import('./FlexPage/FlexDisplay'))
 const SettingsDisplay = lazy(() => import('./Settings/SettingsDisplay'))
 const WeaponDisplay = lazy(() => import('./Weapon/WeaponDisplay'))
 const DocumentationDisplay = lazy(() => import('./DocumentationPage/DocumentationDisplay'))
+const ScannerDisplay = lazy(() => import('./ScannerPage/ScannerDisplay'))
 
 function App() {
   return <Suspense fallback={<Container><LoadingCard /></Container>}>
@@ -79,6 +80,7 @@ function AppInner() {
             <Route path="/database" component={SettingsDisplay} />
             <Route path="/doc" component={DocumentationDisplay} />
             <Route path="/flex" component={FlexDisplay} />
+            <Route path="/scanner" component={ScannerDisplay} />
             <Route path="/" component={Home} />
           </Switch>
         </Suspense>
