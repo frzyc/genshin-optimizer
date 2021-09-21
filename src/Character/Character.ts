@@ -31,13 +31,13 @@ export default class Character {
     return evalIfFunc(field[key] as any, stats!)
   }
 
-  static hasOverride = (character: ICachedCharacter, statKey): boolean => {
+  static hasBonusStats = (character: ICachedCharacter, statKey): boolean => {
     if (statKey === "finalHP")
-      return Character.hasOverride(character, "hp") || Character.hasOverride(character, "hp_") || Character.hasOverride(character, "characterHP")
+      return Character.hasBonusStats(character, "hp") || Character.hasBonusStats(character, "hp_") || Character.hasBonusStats(character, "characterHP")
     if (statKey === "finalDEF")
-      return Character.hasOverride(character, "def") || Character.hasOverride(character, "def_") || Character.hasOverride(character, "characterDEF")
+      return Character.hasBonusStats(character, "def") || Character.hasBonusStats(character, "def_") || Character.hasBonusStats(character, "characterDEF")
     if (statKey === "finalATK")
-      return Character.hasOverride(character, "atk") || Character.hasOverride(character, "atk_") || Character.hasOverride(character, "characterATK")
+      return Character.hasBonusStats(character, "atk") || Character.hasBonusStats(character, "atk_") || Character.hasBonusStats(character, "characterATK")
     return character?.bonusStats ? (statKey in character.bonusStats) : false;
   }
 
