@@ -68,7 +68,7 @@ export default function ScannerDisplay(props: any) {
                 <p>Originally Chinese scanner that was ported to English. Has an overlay to scan individual artifacts. </p>
                 <p>Cocogoat also retains your scanned artifacts, where you can edit them individually, and you can use them in its built-in mona-uranai optimizer.(Currently a Chinese-only optimizer)</p>
                 <p>It is recommended to export in its "Mona's Divination Shop" format.</p>
-                <p><Button href="https://github.com/daydreaming666/Amenoma/releases/" target="_blank" ><FontAwesomeIcon icon={faDownload} /> Download link</Button></p>
+                <p><Button href="https://github.com/YuehaiTeam/cocogoat/releases" target="_blank" ><FontAwesomeIcon icon={faDownload} /> Download link</Button></p>
                 <p className="text-warning">WARNING: do not use the "Genshin Optimizer" export format. importing it will delete your character {"&"} weapon data.</p>
               </Trans>
             </Col>
