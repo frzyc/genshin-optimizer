@@ -76,7 +76,7 @@ export default function CharacterDisplayCard({ characterKey, setCharacterKey, fo
   }, [propNewBuild])
 
   const mainStatAssumptionLevel = newBuild?.mainStatAssumptionLevel ?? 0
-  const equippedBuild = useMemo(() => characterSheet && weaponSheet && artifactSheets && Character.calculateBuild(character, database, characterSheet, weaponSheet, artifactSheets, mainStatAssumptionLevel), [character, characterSheet, weaponSheet, artifactSheets, mainStatAssumptionLevel, database])
+  const equippedBuild = useMemo(() => databaseToken && characterSheet && weaponSheet && artifactSheets && Character.calculateBuild(character, database, characterSheet, weaponSheet, artifactSheets, mainStatAssumptionLevel), [databaseToken, character, characterSheet, weaponSheet, artifactSheets, mainStatAssumptionLevel, database])
   // main CharacterDisplayCard
   const DamageOptionsAndCalculationEle = sheets && <DamageOptionsAndCalculation sheets={sheets} character={character} />
   return (<Card bg="darkcontent" text={"lightfont" as any} >
