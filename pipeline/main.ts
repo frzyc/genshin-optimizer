@@ -98,7 +98,7 @@ const characterSkillParamDump = Object.fromEntries(Object.entries(characterData)
 
 
   function genTalentHash(keys: string[], depot: AvatarSkillDepotExcelConfigData) {
-    const { EnergySkill: burst, Skills: [normal, skill, sprint], Talents, InherentProudSkillOpens: [passive1, passive2, passive3] } = depot
+    const { EnergySkill: burst, Skills: [normal, skill, sprint], Talents, InherentProudSkillOpens: [passive1, passive2, passive3, , passive] } = depot
 
     function parseSkillParams(obj: object, keys: string[], skillArr: ProudSkillExcelConfigData[]) {
       const skillParamBase = skillArr.map(proud => proud.ParamList)
@@ -128,6 +128,9 @@ const characterSkillParamDump = Object.fromEntries(Object.entries(characterData)
     parseSkillParams(result, [...keys, "passive2"], skillGroups[passive2.ProudSkillGroupId])
     if (passive3?.ProudSkillGroupId)
       parseSkillParams(result, [...keys, "passive3"], skillGroups[passive3.ProudSkillGroupId])
+    //seems to be only used by SangonomiyaKokomi
+    if (passive?.ProudSkillGroupId)
+      parseSkillParams(result, [...keys, "passive"], skillGroups[passive.ProudSkillGroupId])
 
     Talents.forEach((skId, i) =>
       layeredAssignment(result, [...keys, `constellation${i + 1}`], constellations[skId].ParamList.filter(i => i).map(value => extrapolateFloat(value))))
@@ -281,7 +284,7 @@ Object.entries(characterData).filter(([charid,]) => charid in characterIdMap).fo
   // layeredAssignment(mapHashData, [...keys, "descriptionDetail"], AvatarDetailTextMapHash)
   layeredAssignment(mapHashData, [...keys, "constellationName"], AvatarConstellationBeforTextMapHash)
   function genTalentHash(keys: string[], depot: AvatarSkillDepotExcelConfigData) {
-    const { EnergySkill: burst, Skills: [normal, skill, sprint], Talents, InherentProudSkillOpens: [passive1, passive2, passive3] } = depot
+    const { EnergySkill: burst, Skills: [normal, skill, sprint], Talents, InherentProudSkillOpens: [passive1, passive2, passive3, , passive] } = depot
     layeredAssignment(mapHashData, [...keys, "auto", "name"], [talents[normal].NameTextMapHash, "autoName"])
     layeredAssignment(mapHashData, [...keys, "auto", "fields"], [talents[normal].DescTextMapHash, "autoFields"])
     layeredAssignment(mapHashData, [...keys, "auto", "skillParams"], skillGroups[talents[normal].ProudSkillGroupId][0].ParamDescList.map(id => [id, "skillParam"]))
@@ -308,6 +311,11 @@ Object.entries(characterData).filter(([charid,]) => charid in characterIdMap).fo
     if (passive3?.ProudSkillGroupId) {
       layeredAssignment(mapHashData, [...keys, "passive3", "name"], skillGroups[passive3.ProudSkillGroupId][0].NameTextMapHash)
       layeredAssignment(mapHashData, [...keys, "passive3", "description"], [skillGroups[passive3.ProudSkillGroupId][0].DescTextMapHash, "paragraph"])
+    }
+    //seems to be only used by SangonomiyaKokomi
+    if (passive?.ProudSkillGroupId) {
+      layeredAssignment(mapHashData, [...keys, "passive", "name"], skillGroups[passive.ProudSkillGroupId][0].NameTextMapHash)
+      layeredAssignment(mapHashData, [...keys, "passive", "description"], [skillGroups[passive.ProudSkillGroupId][0].DescTextMapHash, "paragraph"])
     }
 
     Talents.forEach((skId, i) => {

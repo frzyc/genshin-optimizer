@@ -26,6 +26,7 @@ import Qiqi from './Qiqi/data'
 import RaidenShogun from './RaidenShogun/data'
 import Razor from './Razor/data'
 import Rosaria from './Rosaria/data'
+import SangonomiyaKokomi from './SangonomiyaKokomi/data'
 import Sayu from './Sayu/data'
 import Sucrose from './Sucrose/data'
 import Tartaglia from './Tartaglia/data'
@@ -70,6 +71,7 @@ const formula: IFormulaSheets = {
   RaidenShogun,
   Razor,
   Rosaria,
+  SangonomiyaKokomi,
   Sayu,
   Sucrose,
   Tartaglia,

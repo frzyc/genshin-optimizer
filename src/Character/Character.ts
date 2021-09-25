@@ -11,7 +11,7 @@ import { ICachedCharacter } from "../Types/character";
 import { ArtifactSetKey, ElementKey, SlotKey } from "../Types/consts";
 import { IFieldDisplay } from "../Types/IFieldDisplay";
 import { ICalculatedStats } from "../Types/stats";
-import { characterBaseStats, initialOverrideStatkeys, mergeStats } from "../Util/StatUtil";
+import { characterBaseStats, UIOverrideStatkeys, mergeStats } from "../Util/StatUtil";
 import { deepClone, evalIfFunc } from "../Util/Util";
 import WeaponSheet from "../Weapon/WeaponSheet";
 import { defaultInitialWeapon } from "../Weapon/WeaponUtil";
@@ -89,7 +89,7 @@ export default class Character {
 
     //generate the initalStats obj with data from Character 
     const initialStats = characterBaseStats(character)
-    mergeStats(initialStats, bonusStats, initialOverrideStatkeys)
+    mergeStats(initialStats, bonusStats, UIOverrideStatkeys)
     initialStats.characterKey = characterKey
     initialStats.characterLevel = level
     initialStats.characterHP = characterSheet.getBase("hp", level, ascension)

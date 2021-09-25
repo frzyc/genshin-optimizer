@@ -88,7 +88,7 @@ export const FormulaText = {
 ["pyro", "cryo", "electro", "hydro"].map(ele => FormulaText[`${ele}_crystalize_hit`] = o => <span>250% * {f(o, `crystalize_hit`)}</span>)
 
 Object.entries(hitMoves).forEach(([move, moveName]) => {
-  FormulaText[`final_${move}_critRate_`] = (o) => <span>Min( {f(o, "critRate_")} + {f(o, `${move}_critRate_`)} , 100% )</span>
+  FormulaText[`final_${move}_critRate_`] = (o) => <span>clamp( {f(o, "critRate_")} + {f(o, `${move}_critRate_`)}, 0%, 100% )</span>
 })
 
 Object.entries(hitElements).forEach(([ele, { name: eleName }]) => {

@@ -26,7 +26,7 @@ const conditionals: IConditionals = {
   a1: { // LifeProlongingMethods
     canShow: stats => stats.ascension >= 1,
     name: <span>Character under the effects of <b>Adeptus Art: Herald of Frost</b> triggers an Elemental Reaction</span>,
-    stats: { heal_: 20, },
+    stats: { incHeal_: 20, },
     fields: [{
       text: "Duration",
       value: "8s",

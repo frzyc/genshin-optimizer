@@ -158,7 +158,7 @@ function migrateV6ToV7(storage: DBStorage) {
   }
 }
 
-// 6.0.0 - present
+// 6.0.0 - 6.0.17
 function migrateV7ToV8(storage: DBStorage) {
   const weaponKeyChangeMap = {
     "PrototypeAminus": "PrototypeArchaic",
@@ -232,7 +232,7 @@ function migrateV7ToV8(storage: DBStorage) {
     storage.set("CharacterDisplay.state", CharacterDisplayState)
   }
 }
-
+// 6.1.0 - 6.1.5
 function migrateV8ToV9(storage: DBStorage) {
   for (const key of storage.keys) {
     if (key.startsWith("char_")) {
@@ -251,6 +251,7 @@ function migrateV8ToV9(storage: DBStorage) {
   }
 }
 
+// 6.1.6 - 6.1.8
 function migrateV9ToV10(storage: DBStorage) {
   for (const key of storage.keys) {
     if (key.startsWith("weapon_")) {
@@ -263,6 +264,7 @@ function migrateV9ToV10(storage: DBStorage) {
   }
 }
 
+// 6.1.9 - present
 function migrateV10ToV11(storage: DBStorage) {
   for (const key of storage.keys) {
     if (key.startsWith("char_")) {

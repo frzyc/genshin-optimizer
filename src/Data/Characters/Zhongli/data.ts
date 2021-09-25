@@ -1,5 +1,6 @@
 import { getTalentStatKey } from "../../../Build/Build"
 import { FormulaItem, IFormulaSheet } from "../../../Types/character"
+import { BasicStats } from "../../../Types/stats"
 import { basicDMGFormula } from "../../../Util/FormulaUtil"
 
 const data = {
@@ -33,8 +34,9 @@ const data = {
     petriDur: [3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4, 4, 4, 4, 4, 4]
   }
 }
-function zliDMG(percent, hpMulti, stats, skillKey): FormulaItem {
+function hpDMGFormula(percent: number, hpPercent: number, stats: BasicStats, skillKey: string): FormulaItem {
   const val = percent / 100
+  const hpMulti = hpPercent / 100
   const statKey = getTalentStatKey(skillKey, stats) + "_multi"
   return [s => (val * s.finalATK + hpMulti * s.finalHP) * s[statKey], ["finalATK", "finalHP", statKey]]
 }
@@ -43,27 +45,27 @@ const formula: IFormulaSheet = {
     ...Object.fromEntries(data.normal.hitArr.map((percentArr, i) => [i, stats =>
       basicDMGFormula(percentArr[stats.tlvl.auto], stats, "normal")])),
     ...Object.fromEntries(data.normal.hitArr.map((percentArr, i) => [`${i}HP`, stats =>
-      zliDMG(percentArr[stats.tlvl.auto], 0.0139, stats, "normal")])),
+      hpDMGFormula(percentArr[stats.tlvl.auto], 1.39, stats, "normal")])),
   },
   charged: {
     dmg: stats => basicDMGFormula(data.charged.dmg[stats.tlvl.auto], stats, "charged"),
-    dmgHP: stats => zliDMG(data.charged.dmg[stats.tlvl.auto], 0.0139, stats, "charged")
+    dmgHP: stats => hpDMGFormula(data.charged.dmg[stats.tlvl.auto], 1.39, stats, "charged")
   },
   plunging: {
     dmg: stats => basicDMGFormula(data.plunging.dmg[stats.tlvl.auto], stats, "plunging"),
-    dmgHP: stats => zliDMG(data.plunging.dmg[stats.tlvl.auto], 0.0139, stats, "plunging"),
+    dmgHP: stats => hpDMGFormula(data.plunging.dmg[stats.tlvl.auto], 1.39, stats, "plunging"),
     low: stats => basicDMGFormula(data.plunging.low[stats.tlvl.auto], stats, "plunging"),
-    lowHP: stats => zliDMG(data.plunging.low[stats.tlvl.auto], 0.0139, stats, "plunging"),
+    lowHP: stats => hpDMGFormula(data.plunging.low[stats.tlvl.auto], 1.39, stats, "plunging"),
     high: stats => basicDMGFormula(data.plunging.high[stats.tlvl.auto], stats, "plunging"),
-    highHP: stats => zliDMG(data.plunging.high[stats.tlvl.auto], 0.0139, stats, "plunging"),
+    highHP: stats => hpDMGFormula(data.plunging.high[stats.tlvl.auto], 1.39, stats, "plunging"),
   },
   skill: {
     steeleDMG: stats => basicDMGFormula(data.skill.steeleDMG[stats.tlvl.skill], stats, "skill"),
-    steeleDMGHP: stats => zliDMG(data.skill.steeleDMG[stats.tlvl.skill], 0.019, stats, "skill"),
+    steeleDMGHP: stats => hpDMGFormula(data.skill.steeleDMG[stats.tlvl.skill], 1.9, stats, "skill"),
     resonanceDMG: stats => basicDMGFormula(data.skill.resonanceDMG[stats.tlvl.skill], stats, "skill"),
-    resonanceDMGHP: stats => zliDMG(data.skill.resonanceDMG[stats.tlvl.skill], 0.019, stats, "skill"),
+    resonanceDMGHP: stats => hpDMGFormula(data.skill.resonanceDMG[stats.tlvl.skill], 1.9, stats, "skill"),
     holdDMG: stats => basicDMGFormula(data.skill.holdDMG[stats.tlvl.skill], stats, "skill"),
-    holdDMGHP: stats => zliDMG(data.skill.holdDMG[stats.tlvl.skill], 0.019, stats, "skill"),
+    holdDMGHP: stats => hpDMGFormula(data.skill.holdDMG[stats.tlvl.skill], 1.9, stats, "skill"),
     shield: stats => {
       const base = data.skill.shieldBase[stats.tlvl.skill]
       const hpMulti = data.skill.shieldMaxHP[stats.tlvl.skill] / 100
@@ -72,7 +74,7 @@ const formula: IFormulaSheet = {
   },
   burst: {
     dmg: stats => basicDMGFormula(data.burst.dmg[stats.tlvl.burst], stats, "burst"),
-    dmgHP: stats => zliDMG(data.burst.dmg[stats.tlvl.burst], 0.33, stats, "burst"),
+    dmgHP: stats => hpDMGFormula(data.burst.dmg[stats.tlvl.burst], 33, stats, "burst"),
   }
 }
 

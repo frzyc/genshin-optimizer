@@ -19,7 +19,7 @@ export default function ScannerDisplay(props: any) {
           <Card bg="lightcontent" text={"lightfont" as any} className="mb-2"><Card.Body><Row ><Col>
             <Trans t={t} i18nKey="intro">
               <h5>Automatic Scanners</h5>
-              <p>Automatic Scanners are Genshin tools that can automatically scan in-game data by manipulating your mouse movements, taking screenshots of the game, and then scanning information from those screenshots. These are low-risk tools that can help you automate a lot of manual process with scanning artifacts for GO. As any tools that indirectly interact with the game, althought their usage is virtually undetectable, there could still be risk with using them. Users discretion is advised.
+              <p>Automatic Scanners are Genshin tools that can automatically scan in-game data by manipulating your mouse movements, taking screenshots of the game, and then scanning information from those screenshots. These are low-risk tools that can help you automate a lot of manual process with scanning artifacts for GO. As any tools that indirectly interact with the game, althought their usage is virtually undetectable, <a href="https://genshin.mihoyo.com/en/news/detail/5763" target="_blank" rel="noreferrer">there could still be risk with using them.</a> Users discretion is advised.
               </p>
               <p>The most important aspect of using these Scanners with GO is the output format:
               </p>

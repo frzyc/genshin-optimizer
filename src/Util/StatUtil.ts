@@ -2,9 +2,9 @@ import { ICachedCharacter } from "../Types/character";
 import { allElements } from "../Types/consts"
 import { BonusStats, ICalculatedStats, Modifier } from "../Types/stats"
 
-export const overrideStatKeys = ["enemyLevel", ...["physical", ...allElements].map(eleKey => `${eleKey}_enemyImmunity`)] as const
+export const overrideStatKeys = ["enemyLevel", ...["physical", ...allElements].map(eleKey => `${eleKey}_enemyImmunity`)]
 //this is due to the UI being override instead of additive
-export const initialOverrideStatkeys = [...["physical", ...allElements].map(eleKey => `${eleKey}_enemyRes_`)]
+export const UIOverrideStatkeys = [...overrideStatKeys, ...["physical", ...allElements].map(eleKey => `${eleKey}_enemyRes_`), "enemyDEFRed_", "stamina"]
 
 export function mergeStats(initialStats: BonusStats, stats: BonusStats | undefined, overrideKeys: string[] = []) {
   if (!stats) return
