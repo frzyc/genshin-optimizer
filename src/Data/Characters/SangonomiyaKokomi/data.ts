@@ -65,7 +65,7 @@ export const data = {
 function hpDMGFormula(percent: number, hpPercent: number, stats: BasicStats, skillKey: string): FormulaItem {
   const val = percent / 100
   const hpMulti = hpPercent / 100
-  const hasA4 = stats.ascension >= 4 && ["normal", "charaged"].includes(skillKey)
+  const hasA4 = stats.ascension >= 4 && ["normal", "charged"].includes(skillKey)
   const statKey = getTalentStatKey(skillKey, stats) + "_multi"
   const heal_ratio = data.p2.heal_ratio / 100
   return [s => (val * s.finalATK + (hpMulti + (hasA4 ? (heal_ratio * s.heal_ / 100) : 0)) * s.finalHP) * s[statKey], ["finalATK", "finalHP", ...(hasA4 ? ["heal_"] : []), statKey]]
