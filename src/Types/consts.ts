@@ -24,7 +24,8 @@ export const allCharacterKeys = [
   "Albedo", "Amber", "Barbara", "Beidou", "Bennett", "Chongyun", "Diluc", "Diona", "Fischl", "Ganyu",
   "HuTao", "Jean", "Kaeya", "Keqing", "Klee", "Lisa", "Mona", "Ningguang", "Noelle", "Qiqi",
   "Razor", "Sucrose", "Tartaglia", "Traveler", "RaidenShogun", "Venti", "Xiao", "Xiangling", "Xingqiu", "Xinyan",
-  "Zhongli", "Rosaria", "Yanfei", "Eula", "KaedeharaKazuha", "KamisatoAyaka", "Sayu", "Yoimiya", "KujouSara", "Aloy"
+  "Zhongli", "Rosaria", "Yanfei", "Eula", "KaedeharaKazuha", "KamisatoAyaka", "Sayu", "Yoimiya", "KujouSara", "Aloy",
+  "SangonomiyaKokomi"
 ] as const
 export const allWeaponKeys = [
   "DullBlade", "SilverSword", "CoolSteel", "DarkIronSword", "FilletBlade", "HarbingerOfDawn", "SkyriderSword",

@@ -2,7 +2,7 @@ import { useCallback, useContext } from "react";
 import { DatabaseContext } from "../Database/Database";
 import { ICachedCharacter } from "../Types/character";
 import { CharacterKey } from "../Types/consts";
-import { characterBaseStats, overrideStatKeys } from "../Util/StatUtil";
+import { characterBaseStats } from "../Util/StatUtil";
 
 type characterEquipWeapon = {
   type: "weapon", id: string
@@ -14,8 +14,8 @@ type characterReducerBonusStatsAction = {
 }
 export type characterReducerAction = characterEquipWeapon | characterReducerBonusStatsAction | Partial<ICachedCharacter>
 
-export default function useCharacterReducer(characterKey:CharacterKey){
-  const database = useContext(DatabaseContext) 
+export default function useCharacterReducer(characterKey: CharacterKey) {
+  const database = useContext(DatabaseContext)
 
   return useCallback((action: characterReducerAction): void => {
     if (!characterKey) return
@@ -29,9 +29,11 @@ export default function useCharacterReducer(characterKey:CharacterKey){
         const { statKey, value } = action
         const bonusStats = character.bonusStats
         if (bonusStats[statKey] === value) return
-        if (!value || (overrideStatKeys.includes(statKey) && characterBaseStats(character)[statKey] === value)) {
+
+        bonusStats[statKey] = value
+        if ((characterBaseStats(character)[statKey] ?? 0) === value)
           delete bonusStats[statKey]
-        } else bonusStats[statKey] = value
+
         database.updateChar({ ...character, bonusStats })
         break
       }

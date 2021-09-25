@@ -26,6 +26,7 @@ import Qiqi from './Qiqi'
 import RaidenShogun from './RaidenShogun'
 import Razor from './Razor'
 import Rosaria from './Rosaria'
+import SangonomiyaKokomi from './SangonomiyaKokomi'
 import Sayu from './Sayu'
 import Sucrose from './Sucrose'
 import Tartaglia from './Tartaglia'
@@ -70,6 +71,7 @@ const characters: StrictDict<CharacterKey, ICharacterSheet> = {
   RaidenShogun,
   Razor,
   Rosaria,
+  SangonomiyaKokomi,
   Sayu,
   Sucrose,
   Tartaglia,

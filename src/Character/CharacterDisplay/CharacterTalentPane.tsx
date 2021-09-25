@@ -45,6 +45,15 @@ export default function CharacterTalentPane({ characterSheet, character, charact
           subtitle="Alternative Sprint"
         />
       </Col>}
+      {!!characterSheet.getTalentOfKey("passive", build?.characterEle) && <Col xs={12} md={6} lg={4} className="mb-2">
+        <SkillDisplayCard
+          characterSheet={characterSheet}
+          character={character}
+          characterDispatch={characterDispatch}
+          talentKey="passive"
+          subtitle="Passive"
+        />
+      </Col>}
     </Row>
     <Row>
       {/* passives */}

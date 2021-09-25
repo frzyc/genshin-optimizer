@@ -167,8 +167,9 @@ function MainStatsCards({ characterSheet, weaponSheet, character, character: { k
                 className="mb-2"
                 name={<span>{StatIcon[statKey]} {Stat.getStatName(statKey)}</span>}
                 placeholder={Stat.getStatNameRaw(statKey)}
-                value={character.bonusStats[statKey] ?? 0}
+                value={character.bonusStats[statKey] ?? (statKey === "stamina" ? 100 : 0)}
                 percent={Stat.getStatUnit(statKey) === "%"}
+                defaultValue={statKey === "stamina" ? 100 : undefined}
                 onValueChange={value => characterDispatch({ type: "bonusStats", statKey, value })}
               />
             </Col>)}
