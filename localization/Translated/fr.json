@@ -7,7 +7,6 @@
                 "maxRarity": "Rareté Max <1></1>"
             },
             "substat": {
-                "substatFormat": "Substat {{value}}",
                 "noSubstat": "Pas de Substat",
                 "selectSub": "Sélectionner une Substat",
                 "error": {
@@ -15,8 +14,6 @@
                     "noOverRoll": "Une substat ne peut être roll plus de {{value}} fois."
                 },
                 "noRoll": "Aucun Roll",
-                "RollCount": "{{count}} Roll",
-                "RollCount_plural": "{{count}} Rolls",
                 "noStat": "Pas de valeur",
                 "eff": "Efficacité: <1></1>"
             },
@@ -61,7 +58,6 @@
             "Cliquez sur \"Détails\" quand vous améliorez vos artéfacts dans le jeu pour les analyser au fur et à mesure que vous les améliorez.",
             "Vous pouvez maintenant upload plusieurs captures d'écran d'artéfacts à analyser !"
         ],
-        "mainStat": "Main Stat",
         "slot": "Emplacement",
         "slotName": {
             "flower": "Fleur de la Vie",
@@ -94,18 +90,6 @@
             "title": "Substats à utiliser dans le calcul de l'efficacité"
         },
         "resetFilters": "Réinitialiser les filtres"
-    },
-    "home": {
-        "welcome": "Bienvenue sur Genshin Optimizer !",
-        "paragraphIntro": "<0>Qu'est-ce que Genshin Optimizer</0><1>Genshin Optimizer est un outil pour le jeu d'action - RPG Gacha <1><strong>Genshin Impact</strong></1>. Il est destiné à vous aider à gérer l'aspect le plus complexe du jeu : les artéfacts. Les Artéfacts sont des éléments fortement basé sur la RNG qui contribuent directement à l'efficacité de vos personnages en jeu. Cet outil cherche à alléger une partie de la complexité associée à l'efficacité des artéfacts, ainsi que l'artéfact à choisir pour votre personnage afin de maximiser vos stats.</1><p>Cependant, cet outil peut faire tellement plus. Il permettra le calcul de toutes les stats conditionnelles provenant des artéfacts, armes, buffs d'équipe, et calculera comment ces stats affectent votre personnage en TEMPS RÉEL.</p>",
-        "paragraphArtifactEditor": "<0>Éditeur d'artéfact</0><1><0>Éditeur complet d'artéfact.</0><1>Ajouter un artéfact en scannant une capture d'écran.</1><2>Calculer automatiquement la valeur exacte obtenue de chaque artéfact.</2><3>Calculer l'efficacité des artéfacts, en calculant les rolls. Utiliser un seul nombre pour déterminer s'il faut conserver ou supprimer un artéfact !</3><4>Équiper / déséquiper / échanger des artéfacts entre vos personnages, essayer différents builds.</4></1>",
-        "paragraphCharacterEditor": "<0>Éditeur de personnage</0><1><0>Éditeur complet de personnage.</0><1>Remplir automatiquement les statistiques des personnages à chaque niveau/ascension.</1><2>Statistiques entièrement modifiables pour la personnalisation.</2><3>Calculer les statistiques actuelles en fonction des armes/artéfacts.</3><4>Fonction arme complétée, aves les statistiques des niveaux/ascensions.</4><5>Appliquer des passifs conditionnels, par ex. Bonus supplémentaires ATK & DEF de Ombre immaculée, aux statistiques de votre personnage.</5><6>Appliquer également les passifs conditionnels des sets d'artéfacts !</6><7><0>$t(ui:underConstruction)</0> Calculs des dégâts des talents.</7><8><0>$t(ui:underConstruction)</0> Mise à jour des statistiques/talents des personnages en fonction des constellations.</8></1>",
-        "paragraphCharacterDamageCalculations": "<0>Calculs des DGTs des Personnages</0><1><0>Tous les détails pour chacun des talents des personnages.</0><1>Tous les chiffres devraient refléter les dégâts réels en jeu.</1><2>Statistiques conditionnelles et modifications de chaque constellation prises en compte.</2><3>Affiche les calculs pour tous les nombres, ainsi que les formules. Je montre mon travail.</3><4>Éditeur d'ennemis avec des champs de niveau/résistance pour personnaliser les calculs de DGTs.</4><5>Prise en compte de l'infusion élémentaire pour les attaques normales / chargées / plongées.</5><6>Calculs de DGTs en temps réel.</6></1>",
-        "paragraphBuildGenerator": "<0>Générateur de Build</0><1><0>Générateur de Build pour des personnages spécifiques utilisant les artéfacts ajoutés par l'utilisateur.</0><1>Limiter les builds par sets d'artéfact, main stats...</1><2>Trier les builds générés par une stat spécifique pour une maximisation.</2><3>Le générateur ne récupérera pas les artéfacts déjà équipés sur un autre personnage.</3><4>Comparer l'artéfact généré avec l'artéfact actuellement sur le personnage.</4><5>Utiliser les statistiques conditionnelles des sets d'artéfacts, par ex. Bonus de DMG d'attaque normale de Gladiateur en set 4 pièces, dans le cadre des calculs de construction.</5></1>",
-        "paragraphTools": "<0>Outils et autres</0><1><0>Heure du serveur, avec compte à rebours jusqu'au reset.</0><1>Compteur de Résine.</1><2>Calculateur d'expérience, pour optimiser l'utilisation des livres d'EXP.</2><3><0>$t(ui:underConstruction)</0> Convertisseur de Ressources, pour toutes les ressources synthétisables x3 par tier.</3><4><0>$t(ui:underConstruction)</0> To-Do List: une liste des choses à faire dynamique pour vous dire quoi farmer chaque jour</4></1>",
-        "paragraphFuture": "<0>Quoi de prévu à l'avenir ?</0><1><0>Calculs complets des talents / constellations pour chaque personnage disponible.</0><1>Enregistrement de plusieurs builds d'artéfacts par personnage, à des fins de comparaison.</1><2>Buffs via nourriture, buffs via team.</2><3>Planification des ressources pour voir les coûts d'amélioration des artéfacts / personnages / armes.</3><4>Artifact Analytics, des graphiques pour afficher vos données d'artéfact.</4></1><2>Pour en savoir plus et pour vérifier ce qui est en cours de travail, rejoignez notre <1>Discord.</1></2>",
-        "paragraphHelpDevelopment": "<0>Vous voulez aider le développeur ?</0><1>Genshin Optimizer a été la manifestation de plusieurs jours et semaines de nuits blanches, et le développeur essaie toujours activement d'améliorer et d'ajouter des fonctionnalités. Si vous souhaitez donner votre avis, demander une fonctionnalité, signaler un bug, s'il vous plaît rejoignez notre <1>Discord.</1></1><2>Si vous souhaitez soutenir financièrement le développeur, veuillez faire un don via <1>Paypal</1> ou <3>Patreon</3>.</2>",
-        "paragraphCredits": "<0>Crédit où le crédit est dû</0><p>Genshin Optimizer n'en serait pas là où il est sans toutes ces sources / personnes. Il est temps de saluer et de les remercier.</p><2><0>Merci à tous les membres de la communauté, et en particulier aux personnes de notre <1>Discord</1> pour m'avoir fait part de vos commentaires et m'avoir aidé à améliorer cet outil.</0><1>Merci à <1>Dimbreath</1>, pour nous avoir fourni une source fiable et cohérente de données et de chiffres. Tous nos calculs seraient discutables sans eux.</1><2>Un pourcentage sain de nos images Genshin sont issues de <1>The Genshin Impact Wiki</1>, donc un heureux merci pour eux.</2><3>Un merci spécial aux membres de notre communauté qui ont utilisé le fichier supplémentaire et nous ont aidés à tester des formules en enregistrant des données dans le jeu, et aux personnes qui nous ont aidés avec les contributions au code source.</3><4>Merci à tous les autres, d'avoir partagé cet outil et d'avoir permis à plus de gens d'utiliser cet outil.</4><5>Enfin, et surtout, merci à <1>VOUS</1> d'utiliser Genshin Optimizer actuellement.</5></2>"
     },
     "languages": {
         "chs": "Chinois (Simplifié)",
@@ -145,17 +129,10 @@
         }
     },
     "ui": {
-        "pageTitle": "Genshin Optimizer",
         "tabs": {
             "artifacts": "Artéfacts",
             "characters": "Personnages",
-            "builds": "Builds",
             "tools": "Outils"
-        },
-        "social": {
-            "paypal": "Paypal",
-            "patreon": "Patreon",
-            "discord": "Discord"
         },
         "game": {
             "minLevel": "Niveau Min",
@@ -169,7 +146,6 @@
         "sortByFormat": "Trier Par: {{value}}",
         "loading": "Chargement...",
         "rightsDisclaimer": "Genshin Optimizer n'est pas affilié ou approuvé par miHoYo",
-        "appVersion": "$t(pageTitle) Version: {{version}}",
         "underConstruction": "En Construction",
         "error": "Erreur",
         "reset": "Réinitialisation"
@@ -220,8 +196,6 @@
         "dmg": "DGT",
         "hits": "{{hits}} coup",
         "lessPercentHP": "< {{percent}}% PV",
-        "stack": "{{count}} Stack",
-        "stack_plural": "{{count}} Stacks",
         "hitOp": {
             "normal": "Attaque Normale touche des ennemis",
             "charged": "Attaque Chargée touche des ennemis",
@@ -230,8 +204,7 @@
             "burst": "Déchaînement Élémentaire touche des ennemis"
         },
         "hits_plural": "{{count}} coups",
-        "eleAbsor": "Absorption Élémentaire",
-        "absorDot": "Absorption DoT"
+        "eleAbsor": "Absorption Élémentaire"
     },
     "weapon_SongOfBrokenPines": {
         "name": "Concert du millénaire - Hymne du drapeau"

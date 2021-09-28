@@ -44,10 +44,7 @@ i18n
 
     // List all translation namespaces.
     ns: [
-      "artifact",
-      "home",
       "languages",
-      "settings",
       "ui",
     ],
     // Specify the default namespace.

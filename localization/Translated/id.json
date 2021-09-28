@@ -97,18 +97,6 @@
         "setEffectNum": "{{setNum}}-Set",
         "excludeArtifactTip": "Eksklusif artefak akan mencegah build generator memilih artefak tersebut untuk di-build."
     },
-    "home": {
-        "welcome": "Selamat Datang di Genshin Optimizer!",
-        "paragraphIntro": "<0>Apa itu Genshin Optimizer?</0><1>Genshin Optimizer merupakan alat untuk game action-rpg gacha <1><strong>Genshin Impact</strong></1>. Alat ini dibuat untuk membantu kalian menangani aspek permainan yang lebih kompleks: Artefak. Artefak adalah elemen berbasis RNG yang menentukan seberapa efektif karaktermu dalam game. Alat ini berusaha untuk meringankan beberapa kompleksitas tersebut yang terkait dengan efisiensi artefak, bersama dengan pemilihan artefak untuk karaktermu untuk memaksimalkan statistiknya.</1><p>Bahkan, alat ini dapat melakukan lebih banyak lagi. Seperti memungkinkan perhitungan semua statistik kondisional dari artefak, senjata, buff tim, dan menghitung bagaimana statistik tersebut akan memengaruhi karaktermu dalam REAL TIME.</p>",
-        "paragraphArtifactEditor": "<0>Editor Artefak</0><1><0>Editor artefak berfitur lengkap.</0><1>Tambahkan Artefak dengan memindai screenshot.</1><2>Secara otomatis menghitung nilai roll yang tepat dari setiap artefak.</2><3>Hitung efisiensi substat, menggunakan perhitungan roll. Gunakan jumlah efisiensi untuk menentukan apakah kamu ingin menyimpan atau membuang artefak tersebut!</3><4>Kenakan/lepaskan/tukar artefak di antara karaktermu, mencoba berbagai build.</4></1>",
-        "paragraphCharacterEditor": "<0>Editor Karakter</0><1><0>Editor Karakter berfitur lengkap</0><1>Secara otomatis mengisi stat karakter di setiap milestone level/ascension.</1><2>Stat yang dapat diedit sepenuhnya untuk penyesuaian.</2><3>Menghitung stat berdasarkan senjata/artefak.</3><4>Senjata dengan fitur lengkap, dengan milestone level/ascension.</4><5>Terapkan pasif kondisional, mis. Bonus lapis ATK&DEF Whiteblind, ke stat karaktermu.</5><6>Terapkan pasif kondisional dari set Artefak juga!</6><7>[Sedang Dikembangkan] Perhitungan damage talenta.</7><8>[Sedang Dikembangkan] Memperbarui stat/talenta berdasarkan konstelasi.</8></1>",
-        "paragraphCharacterDamageCalculations": "<0>Perhitungan Damage Karakter</0><1><0>Semua detail untuk talenta setiap karakter.</0><1>Semua jumlah harusnya menyamai damage dalam game.</1><2>Stat kondisional dan modifikasi untuk setiap konstelasi harusnya diperhitungkan.</2><3>Memperlihatkan perhitungan untuk semua jumlah, bersama dengan rumusnya.</3><4>Editor musuh dengan level/resistensi untuk menyesuaikan perhitungan damage.</4><5>Memperhitungkan infusi elemen untuk normal/charged/plunging attacks.</5><6>Perhitungan damage secara real-time.</6></1>",
-        "paragraphBuildGenerator": "<0>Build Generator</0><1><0>Generator build untuk karakter tertentu menggunakan artefak yang ditambahkan oleh pengguna.</0><1>Batasi build berdasarkan set artefak, stat utama...</1><2>Urutkan build yang dihasilkan berdasarkan stat tertentu untuk dimaksimalkan.</2><3>Generator tidak akan mengambil artefak yang sudah dipakai pada karakter yang berbeda.</3><4>Bandingkan build artefak yang dihasilkan dengan artefak yang saat ini ada di karakter.</4><5>Gunakan stat kondisional dari set artefak, e.g. Gladitator's 4-set Bonus DMG normal attack, sebagai bagian dari perhitungan build.</5></1>",
-        "paragraphTools": "<0>Alat dan Fitur Lainnya</0><1><0>Waktu server, dilengkapi hitung mundur sampai waktu reset.</0><1>Resin Counter.</1><2>Kalkulator EXP, untuk mengoptimalkan pemakaian buku EXP.</2><3><0>$t(ui:underConstruction)</0> Konverter Sumber Daya, untuk semua sumber daya berjenjang x3 yang menyebalkan itu.</3><4><0>$t(ui:underConstruction)</0> To-Do list: sebuah to-do list dinamis untuk memberi tahu apa yang harus difarm setiap harinya.</4></1>",
-        "paragraphFuture": "<0>Apa untuk kedepannya?</0><1><0>Perhitungan talenta/konstelasi penuh untuk setiap karakter yang dirilis.</0><1>Menyimpan beberapa build artefak per karakter, untuk perbandingan.</1><2>Buff makanan, Buff tim.</2><3>Perencanaan sumber daya untuk melihat perkiraan biaya artefak/karakter/senjata.</3><4>Artefak Analitik, grafik untuk menampilkan data artefak mu.</4></1><2>Untuk lebih lanjut, dan melihat apa yang sedang dikerjakan, bergabunglah dengan <1>discord</1>kami.</2>",
-        "paragraphHelpDevelopment": "<0>Mau bantu si developer?</0><1>Genshin Optimizer telah menjadi manifestasi dari begitu banyaknya hari dan malam tanpa tidur, dan developer masih secara aktif berusaha meningkatkan dan menambahkan fiturnya. Jika kamu ingin memberikan saran, meminta fitur, melaporkan bug, silakan bergabung dengan <1>discord</1>kami.</1><2>Jika kamu ingin mendukung developer secara finansial, silakan berdonasi melalui <1>Paypal</1> atau <3>Patreon</3>.</2>",
-        "paragraphCredits": "<0>Credit where credit is due</0><p>GO tidak akan menjadi seperti sekarang kalau bukan karena sumber/dukungan orang-orang ini. Waktunya untuk berterima kasih pada mereka.</p><2><0>Terima kasih untuk kalian semua yang ada di komunitas, terutama untuk mereka yang ada di <1>discord</1> kami karena telah menyajikan feedback dan membantu kami mengembangkan alat ini.</0><1>Ucapan terima kasih untuk <1>Dimbreath</1>, karena telah memberikan sumber yang konsisten dan dapat dipercaya untuk data dan angka. Semua kalkulasi kami bisa jadi bermasalah kalau bukan karena mereka.</1><2>Beberapa gambar Genshin kami diambil dari <1>The Genshin Impact Wiki</1>, jadi, terima kasih juga untuk mereka.</2><3>Ucapan terima kasih yang istimewa juga untuk komunitas kami yang sudah membantu menguji rumus-rumus dengan cara merekam data in-game dan juga membantu dengan kontribusi sumber kode.</3><4>Terima kasih juga untuk mereka yang sudah membagikan alat ini dan mengundang lebih banyak orang untuk menggunakannya.</4><5>Terakhir, dan paling penting, terima kasih untuk <1>KAMU</1>, karena menggunakan GO.</5></</2>"
-    },
     "languages": {
         "chs": "Mandarin (Sederhana)",
         "cht": "Mandarin (Tradisional)",
@@ -149,13 +137,6 @@
                 "migrate": "Database akan dipindahkan ke versi terbaru. Disarankan untuk mengunduh ulang database setelah mengimpor.",
                 "deleteDatabasePrompt": "Apakah kamu yakin ingin mengganti database-mu? Semua karakter dan artefak yang ada akan dihapus."
             },
-            "monaUpload": {
-                "title": "<strong>mona-uranai</strong> format",
-                "import": "Impor",
-                "deleteExistingButton": "Hapus Artefak Tumbal",
-                "deleteExistingExplanation": "Jika Anda melakukan impor lengkap, semua artefak yang tidak ditemukan dalam impor ini akan dihapus.(ditumbal)<br>Artefak yang ter-upgrade tidak akan dihapus, tetapi diperbarui sesuai dengan itu.",
-                "deleteExistingPrompt": "Apakah kamu yakin ingin menghapus semua artefak yang tidak ditemukan dalam impor saat ini? (Artefak yang ter-upgrade tidak akan terpengaruh.)"
-            },
             "error": {
                 "jsonParse": "Tidak dapat mengurai file JSON.",
                 "unknown": "Format file tidak dikenal.",
@@ -170,11 +151,6 @@
         "count": {
             "chars": "Karakter:",
             "arts": "Artefak:",
-            "artsDup": "Artefak Duplikat:",
-            "artsNew": "Artefak Baru:",
-            "artsUpg": "Artefak terupgrade:",
-            "artsInvalid": "Artefak Invalid",
-            "artsFod": "Artefak Tumbal",
             "weapons": "Senjata:"
         }
     },
