@@ -2,8 +2,6 @@
   "dmg": "DGT",
   "hits": "{{hits}} coup",
   "lessPercentHP": "< {{percent}}% PV",
-  "stack": "{{count}} Stack",
-  "stack_plural": "{{count}} Stacks",
   "hitOp": {
     "normal": "Attaque Normale touche des ennemis",
     "charged": "Attaque Chargée touche des ennemis",
@@ -12,6 +10,5 @@
     "burst": "Déchaînement Élémentaire touche des ennemis"
   },
   "hits_plural": "{{count}} coups",
-  "eleAbsor": "Absorption Élémentaire",
-  "absorDot": "Absorption DoT"
+  "eleAbsor": "Absorption Élémentaire"
 }

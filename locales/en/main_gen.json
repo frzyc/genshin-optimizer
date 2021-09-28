@@ -51,7 +51,7 @@
     "info": {
       "title": "Artifact Editing/Management Guide",
       "section1": "<0>Substat rolls</0><1>The <1>number of rolls</1> a substat has is shown to the left of the substat. As the number gets higher, the substat is more colorful:<3></3>.</1><2>Substat Efficiency</2><3>The Efficiency of an subtat is a percentage of the current value over the highest potential 5<1></1> value. From the Image, the maximum roll value of CRIT DMG is 7.8%. In efficiency: <3>5.8/7.8 = 69.2%.</3></3><4>Current substats Efficiency vs. Maximum Substats Efficiency</4><5>When a 5<1></1> have 9(4+5) total rolls, with each of the rolls having the highest value, that is defined as a 100% efficient artifact. However, most of the artifacts are not this lucky. The <3>Current substats Efficiency</3> of an artifact is a percentage over that 100% artifact. The <5>Maximum Substats Efficiency</5> is the maximum possible efficiency an artifact can achieve, if the remaining artifact rolls from upgrades are the hightest possible value.</5><6>Excluding an artifact</6><7>By excluding an artifact <1></1>, This artifact will not be picked up by the build generator for optimization. An equipped artifact is excluded by default.</7>",
-      "section2": "<0>Artifact Editor</0><1>A fully featured artifact editor, that can accept any 3<1></1> to 5<3></3> Artifact. When a substat is inputted, it can calculate the exact roll values, and from it, the efficiency. It will also make sure that you have the correct number of rolls in the artifact according to the level, along with other metrics of validation.</1><2>Scan screenshots</2><3>Manual input is not your cup of tea? You can scan in your artifacts with screenshots! On the Artifact Editor, click the <1>Show Me How!</1> button to learn more.</3><4>Automatic Artifact Scanner</4><5>If you are playing Genshin on PC, you can download a tool that automatically scans all your artifacts for you, and you can then import that data in <1></1> Database. Here is a recommended tool: <3>「天目」-- Amenoma</3>.</5><6>Duplicate/Upgrade artifact detection</6><7>Did you know GO can detect if you are adding a <1>duplicate</1> artifact that exists in the system? It can also detect if the current artifact in editor is an <3>upgrade</3> of an existing artifact as well. Once a duplicate/upgrade is detected, a preview will allow you to compare the two artifacts in question(See Image).</7>",
+      "section2": "<0>Artifact Editor</0><1>A fully featured artifact editor, that can accept any 3<1></1> to 5<3></3> Artifact. When a substat is inputted, it can calculate the exact roll values, and from it, the efficiency. It will also make sure that you have the correct number of rolls in the artifact according to the level, along with other metrics of validation.</1><2>Scan screenshots</2><3>Manual input is not your cup of tea? You can scan in your artifacts with screenshots! On the Artifact Editor, click the <1>Show Me How!</1> button to learn more.</3><4>Automatic Artifact Scanner</4><5>If you are playing Genshin on PC, you can download a tool that automatically scans all your artifacts for you, and you can then import that data in <1></1> Database. <3>Click here</3> for a list of scanners that are compatible with GO.</5><6>Duplicate/Upgrade artifact detection</6><7>Did you know GO can detect if you are adding a <1>duplicate</1> artifact that exists in the system? It can also detect if the current artifact in editor is an <3>upgrade</3> of an existing artifact as well. Once a duplicate/upgrade is detected, a preview will allow you to compare the two artifacts in question(See Image).</7>",
       "section3": "<0>Artifact Inventory</0><p>All your artifacts that you've added to GO is displayed here. The filters here allow you to further refine your view of your artifacts. </p><2>Example: Finding Fodder Artifacts</2><p>By utilizing the artifact filter, and the artifact efficiency calculations, you can quickly find artifacts to feed as food.</p><4>In this example, the filters are set thusly: </4><5><0>Limit level to 0-8.</0><1>Included artifacts in Inventory.</1><2>Removing the contribution of flat HP, flat DEF and Energy Recharge to efficiency calculations.</2><3>Sorted by Ascending Max Efficiency.</3></5><p>This will filter the artifact Inventory by the lowest efficiency artifacts, for desired substats.</p>"
     },
     "artifactFilter": "Artifact Filter",
@@ -143,6 +143,7 @@
   "char_KamisatoAyaka": {
     "afterSprint": "After Sprint",
     "afterSkill": "After using <strong>Kamisato Art: Hyouka</strong>",
+    "afterBurst": "After using <strong>Kamisato Art: Soumetsu</strong>",
     "afterSprintCryo": "Applying <cryo>Cryo</cryo> After Sprint",
     "staminaRestore": "Restores 10 Stamina",
     "snowflakeDMG": "Snowflake DMG",
@@ -189,13 +190,18 @@
     "c1": "After CRIT Hit",
     "c6": "<strong>Rites of Termination<strong/> Attack on enemy"
   },
+  "char_SangonomiyaKokomi": {
+    "burst": "Ceremonial Garment",
+    "c2": "Characters with 50% or less HP",
+    "c6": "After Normal and Charged Attacks heal a character with 80% or more HP"
+  },
   "char_Traveler": {
     "electro": {
       "skill": {
         "absorb": "Absorbing an Abundance Amulet"
       },
       "c2": {
-        "thunderHit": "<strong>Falling THunder</strong> hits opponent"
+        "thunderHit": "<strong>Falling Thunder</strong> hits opponent"
       },
       "burst": {
         "3rd": "3rd Falling Thunder DMG"
@@ -225,18 +231,6 @@
     "p2": "Party ATK increase"
   },
   "documentation": {},
-  "home": {
-    "welcome": "Welcome to Genshin Optimizer!",
-    "paragraphIntro": "<0>What is Genshin Optimizer?</0><1>Genshin Optimizer is a tool for the action-rpg gacha game <1><strong>Genshin Impact</strong></1>. It is intended to help you with dealing with the more complex aspect of the game: Artifacts. Artifacts are heavily RNG-based elements that directly contributes to how effective your characters are in the game. This tool seek to alleviate some of the complexity associated with artifact efficiency, along with which artifact to choose on your character to maximize your stats.</1><p>However, this tool can do so much more. It will allow calculations of all conditional stats from artifacts, weapons, teams buffs, and calculate how those stats will affect your character in REAL TIME.</p>",
-    "paragraphArtifactEditor": "<0>Artifact Editor</0><1><0>Full featured Artifact editor.</0><1>Add Artifacts by scanning a screenshot.</1><2>Automatically calculate the exact rolled value of each artifact.</2><3>Calculate substat efficiency, using the roll calculations. Use a single number to determine whether to keep or trash an artifact!</3><4>Equip/unequip/swap artifacts between your characters, try out different builds.</4></1>",
-    "paragraphCharacterEditor": "<0>Character Editor</0><1><0>Full featured Character editor.</0><1>Automatically populate character stats at every milestone level/ascension.</1><2>Fully editable stats for customization.</2><3>Calculate current stats based on weapon/artifacts.</3><4>Fully featured weapon, with milestone level/ascension stats</4><5>Apply conditional passives, e.g. Whiteblind's ATK&DEF stacking bonus, to your character stats.</5><6>Apply conditional passives from Artifacts sets as well!</6><7>Under Construction Talent damage calculations.</7><8>Under Construction Update character stats/talents based on constellation.</8></1>",
-    "paragraphCharacterDamageCalculations": "<0>Character Damage Calculations</0><1><0>All the details for every character's talents.</0><1>All numbers should reflect real in game damage.</1><2>Conditional stats and modifications from every Constellation accounted for.</2><3>Shows calculations for all the numbers, along with formulas. I show my work.</3><4>Enemy editor with level/ resistance fields to customize damage calcualtions.</4><5>Account for elemental infusion for normal/charged/plunging attacks.</5><6>Real time damage calculations.</6></1>",
-    "paragraphBuildGenerator": "<0>Build Generator</0><1><0>Generator builds for specific characters using artifacts added by user.</0><1>Limit the builds by artifact sets, main stats...</1><2>Sort the generated builds by a specific stat for maximization.</2><3>Generator will not pick up artifacts already equipped on a different character.</3><4>Compare generated artifact build against artifact currently on character.</4><5>Use conditional stats from artifact sets, e.g. Gladitator's 4-set normal attack DMG Bonus, as part of the build calculations.</5></1>",
-    "paragraphTools": "<0>Tools and Doodads</0><1><0>Server time, with countdown to reset.</0><1>Resin Counter.</1><2>Experience Calculator, to optimize EXP. books usage.</2><3><0>$t(ui:underConstruction)</0> Resource Converter, for all those pesky x3 tiered resources.</3><4><0>$t(ui:underConstruction)</0> To-Do list: a dynamic to-do list to tell you what to grind for every day</4></1>",
-    "paragraphFuture": "<0>What's for the future?</0><1><0>Full talent/constellation calculations for every released character.</0><1>Saving multiple artifact builds per character, for comparasion.</1><2>Food buffs, team buffs.</2><3>Resource planning to see artifact/character/weapon commitment costs.</3><4>Artifact Analytics, graphs to show your artifact data.</4></1><2>For more, and to check on what is being worked on, join our <1>discord.</1></2>",
-    "paragraphHelpDevelopment": "<0>Want to help the developer?</0><1>Genshin Optimizer has been the manifestation of many days and weeks of sleepless nights, and the developer is still actively trying to improve and add features. If you want to give feedback, request a feature, report a bug, please join our <1>discord.</1></1><2>If you want to fiancially support the developer, please either donate via <1>Paypal</1> or <3>Patreon</3>.</2>",
-    "paragraphCredits": "<0>Credit where credit is due</0><p>GO would not be where it is without all these sources/people. Time to take a bow and thank them.</p><2><0>Thanks to everyone in the community, and especially people on our <1>discord</1> for providing feedback and helping me improve this tool.</0><1>Thanks to <1>Dimbreath</1>, for giving us a reliable, consistent source for data and numbers. All our calculations would be moot without them.</1><2>A healthy percent of our Genshin images are yoinked from <1>The Genshin Impact Wiki</1>, so a serendipitous thanks for them.</2><3>Special thanks to members of our community who has gone the extra file, and has been helping us test formulas by recording in-game data, and people who has helped us with source code contributions.</3><4>Thanks for everyone else, for sharing this tool, and getting more people to use this tool.</4><5>Lastly, and most importantly, thank <1>YOU</1>, for using GO right now.</5></2>"
-  },
   "languages": {
     "chs": "Chinese (Simplified)",
     "cht": "Chinese (Traditional)",
@@ -252,6 +246,26 @@
     "th": "Thai",
     "vi": "Vietnamese"
   },
+  "page_home": {
+    "welcome": "Welcome to Genshin Optimizer!",
+    "intro": "<0>What is Genshin Optimizer?</0><1>Genshin Optimizer (GO) is an open-source fan-made website for the action-RPG gacha game <1><strong>Genshin Impact</strong></1>. It is mainly intended to help players with the complex aspect of the game: Artifact Optimization. Since artifacts are heavily RNG-based elements that directly contribute to how effective your characters are in the game, GO will try to find the best artifacts for your characters based on your current artifact inventory.</1><p>GO can keep track of your artifacts, and allows more ease in filtering/comparing artifacts, it serves as a tool to help user find good artifacts in their inventory to level up, and bad artifacts to use as fodder.</p><p>Since GO can replicate the exact stats of any character, along with calculate all their damage numbers to up 1% accuracy, it can also serve as a Damage calculator, and a tool for theory crafting.</p>",
+    "quickLinks": "<0>Quick Links</0><1>Do you want to automate some of the artifact input process?</1><2><0>Here is a list of compatible automatic scanners that can feed data into GO.</0> These programs will automatically scan artifacts from your game, and exporting that data into a file. This file can then be imported to GO.</2>",
+    "artifactEditor": "<0><0>Artifact Editor & Inventory</0></0><1><0>Full featured Artifact editor.</0><1>Add Artifacts by scanning a screenshot.</1><2>Automatically calculate the exact rolled value of each artifact.</2><3>Calculate substat efficiency, using the roll calculations. Use a single number to determine whether to keep or trash an artifact!</3><4>Maintains a completely sortable, filterable artifact inventory.</4><5>Imports artifact database from <1>3rd party automatic scanners</1>.</5></1>",
+    "characterEditor": "<0><0>Character & Weapon Editor</0></0><1><0>Full featured Character editor.</0><1>Automatically populate character stats at every milestone level/ascension.</1><2>Fully editable stats for customization.</2><3>Calculate current stats based on weapon/artifacts.</3><4>Fully featured weapon editor, with milestone level/ascension stats</4><5>Apply conditional passives, from talents & weapons & artifacts to accurately mimic in-game conditions. </5></1>",
+    "dmgCalculations": "<0><0>Character Damage Calculations</0></0><1><0>All the details for every character's talents.</0><1>All numbers should reflect real in game damage (within 1% error).</1><2>Conditional stats and modifications from every Constellation accounted for.</2><3>Shows calculations for all the numbers, along with formulas.</3><4>Enemy editor with level/ resistance fields to customize damage calculations.</4><5>Account for elemental infusion for normal/charged/plunging attacks.</5><6>Real time damage calculations.</6></1>",
+    "buildGenerator": "<0><0>Build Generator</0></0><1><0>Allows the maximization of character build based on specified optimization target.</0><1>Generates builds for specific characters using artifact inventory.</1><2>Limit the builds by artifact sets, main stats...</2><3>Fully featured build settings to fine-tune build results.</3><4>Compare generated artifact build against artifacts currently on character.</4><5>Use conditional stats from artifact sets, e.g. Gladiator's 4-set normal attack DMG Bonus, as part of the build calculations.</5></1>",
+    "tools": "<0><0>Tools and Gadgets</0></0><1><0>Server time, with countdown to reset.</0><1>Resin Counter.</1><2>Experience Calculator, to optimize EXP. books usage.</2></1>",
+    "helpDev": "<0>Want to help the developer?</0><p>Genshin Optimizer has been the manifestation of many days and weeks of sleepless nights, and the developers are still actively trying to improve/add features.</p><2>If you want to financially support the developer, please consider donating via <1><0></0> Paypal</1> or <3><0></0> Patreon</3>. GO does not host ads, and will not lock any features behind a paywall. </2><3>If you want to give feedback, request a feature or report a bug, join our <1><0></0> discord</1>. This is where you will find more GO-related information, and to check on what is being actively worked on.</3><p>If you want to help with localization/translation of GO to your native language, please join our discord as well.</p>",
+    "programmer": "<0>Are you a programmer?</0><1>GO is written in TypeScript, with React. Go is completely open source, and can be found on <1><0></0> Github</1></1><2>You can also join the <1><0></0> Genshin Dev discord</1> if you are interested in creating Genshin apps.</2><3>GO currently hosts the <1><0></0>Documentation</1> for the <strong>Genshin Open Object Description (GOOD)</strong> format. This is the format that GO uses to import/export its data. GOOD is an universal format intended for Genshin apps to transfer data between eachother.</3>",
+    "credits": "<0>Credit where credit is due</0><1>GO is the culmination of hundreds of hours of programming/designing by two maintainers, <1><0><0></0> frzyc</0></1> and <3><0><0></0> lantua</0></3>. There are also a ton of other resources that aid in the creation of this website. Time to take a bow and thank them.</1><2><0>Thanks to everyone in the community, and especially people on our <1>discord</1> for providing feedback and helping us improve this tool.</0><1>Thanks to <1>Dimbreath</1>, for giving us a reliable, consistent source for Genshin data and numbers. All our calculations would be moot without them.</1><2>Some of our Genshin images are directly yoinked from <1>The Genshin Impact Wiki</1>, so a serendipitous thanks for them.</2><3>Special thanks to members of our community who has gone the extra mile, and has been helping us with localization/translation of GO to other languages, help us test formulas by recording in-game data, and programmers who has helped us with source code contributions.</3><4>Thanks for everyone else, for sharing this tool, and getting more people to use this tool.</4><5>Lastly, and most importantly, thank <strong>YOU</strong>, for using GO right now.</5></2>"
+  },
+  "page_scanner": {
+    "intro": "<0>Automatic Scanners</0><1>Automatic Scanners are Genshin tools that can automatically scan in-game data by manipulating your mouse movements, taking screenshots of the game, and then scanning information from those screenshots. These are low-risk tools that can help you automate a lot of manual process with scanning artifacts for GO. As any tools that indirectly interact with the game, althought their usage is virtually undetectable, <1>there could still be risk with using them.</1> Users discretion is advised.</1><p>The most important aspect of using these Scanners with GO is the output format:</p><3><0>As of <1>v5.21.0</1>, GO can import artifact data in the <3>mona-uranai</3> format. </0><1>As of <1>v6.0.0</1>, GO can import data in the <3>Genshin Open Object Description (GOOD)</3> format.</1></3><p>Below are several scanners that have been tested with GO.</p><5>To upload the exported file, go to <1>Database</1> page, and upload your file in the \"Database Upload\" section.</5>",
+    "gis": "<0>Genshin Impact Scanner</0><p>This light-weight app will scan all your characters + weapons + artifacts in your inventory. Follow the instrutions in the app to set it up. This scanner only scans in english. </p><p>The app exports to GOOD format by default.</p><3><0></0> Download link</3>",
+    "amenoma": "<0>「天目」-- Amenoma</0><p>Scans all you artifacts in your inventory. Follow the instruction to capture the window and scan.</p><2>Has both Chinese and English version. (Download the <1>_EN.exe</1> version to scan in english)</2><3>Both the <1>mona-uranai</1> and <3>GOOD</3> format is accepted in GO. the <5>GOOD</5> format is recommended.</3><4><0><0></0> Download link</0></4><p>Please feel free to join their discord if you find any bugs. They are in need of more english testers.</p><6><0></0> Discord Invite</6>",
+    "cocogoat": "<0>cocogoat</0><p>Originally Chinese scanner that was ported to English. Has an overlay to scan individual artifacts. </p><p>Cocogoat also retains your scanned artifacts, where you can edit them individually, and you can use them in its built-in mona-uranai optimizer.(Currently a Chinese-only optimizer)</p><p>It is recommended to export in its \"Mona's Divination Shop\" format.</p><4><0><0></0> Download link</0></4><5>WARNING: do not use the \"Genshin Optimizer\" export format. importing it will delete your character & weapon data.</5>",
+    "backHome": "Go back to home page"
+  },
   "settings": {
     "title": "Settings",
     "languageCard": {
@@ -261,12 +275,13 @@
     "count": {
       "chars": "Characters:",
       "arts": "Artifacts:",
-      "artsDup": "Duplicate Artifacts:",
-      "artsNew": "New Artifacts:",
-      "artsUpg": "Upgraded Artifacts:",
-      "artsInvalid": "Invalid Artifacts",
-      "artsFod": "Foddered Artifacts",
-      "weapons": "Weapons:"
+      "weapons": "Weapons:",
+      "total": "Total:",
+      "new": "New:",
+      "updated": "Updated:",
+      "removed": "Removed:",
+      "unchanged": "Unchanged:",
+      "invalid": "Invalid:"
     },
     "downloadCard": {
       "databaseDownload": "Database Download",
@@ -290,13 +305,6 @@
       },
       "goodUpload": {
         "title": "<strong>Genshin Open Object Description</strong> (GOOD) format"
-      },
-      "monaUpload": {
-        "title": "<strong>mona-uranai</strong> format",
-        "import": "Import",
-        "deleteExistingButton": "Delete Foddered Artifacts",
-        "deleteExistingExplanation": "If you're doing a complete import, any artifacts not found in this import will be deleted.(foddered)<br>Upgraded artifacts will not be deleted, but updated accordingly.",
-        "deleteExistingPrompt": "Are you sure you want to delete all artifacts not found in the current import? (Upgraded artifacts will not be affected.)"
       },
       "error": {
         "jsonParse": "Unable to parse JSON file.",
@@ -339,11 +347,13 @@
   "ui": {
     "pageTitle": "Genshin Optimizer",
     "tabs": {
+      "weapons": "Weapons",
       "artifacts": "Artifacts",
       "characters": "Characters",
       "builds": "Builds",
       "tools": "Tools",
-      "database": "Database"
+      "database": "Database",
+      "doc": "Documentation"
     },
     "social": {
       "paypal": "Paypal",
@@ -367,6 +377,9 @@
     "error": "Error",
     "reset": "Reset",
     "info": "INFO"
+  },
+  "weapon_EverlastingMoonglow": {
+    "name": "Normal Attack DMG increase"
   },
   "weapon_FreedomSworn": {
     "name": "Millennial Movement: Song of Resistance"

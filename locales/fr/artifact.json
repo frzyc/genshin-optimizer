@@ -6,7 +6,6 @@
       "maxRarity": "Rareté Max <1></1>"
     },
     "substat": {
-      "substatFormat": "Substat {{value}}",
       "noSubstat": "Pas de Substat",
       "selectSub": "Sélectionner une Substat",
       "error": {
@@ -14,8 +13,6 @@
         "noOverRoll": "Une substat ne peut être roll plus de {{value}} fois."
       },
       "noRoll": "Aucun Roll",
-      "RollCount": "{{count}} Roll",
-      "RollCount_plural": "{{count}} Rolls",
       "noStat": "Pas de valeur",
       "eff": "Efficacité: <1></1>"
     },
@@ -60,7 +57,6 @@
     "Cliquez sur \"Détails\" quand vous améliorez vos artéfacts dans le jeu pour les analyser au fur et à mesure que vous les améliorez.",
     "Vous pouvez maintenant upload plusieurs captures d'écran d'artéfacts à analyser !"
   ],
-  "mainStat": "Main Stat",
   "slot": "Emplacement",
   "slotName": {
     "flower": "Fleur de la Vie",

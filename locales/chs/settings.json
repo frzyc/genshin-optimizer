@@ -23,13 +23,6 @@
       "migrate": "数据库将更新为新版本，请考虑在导入后重新下载数据库。",
       "deleteDatabasePrompt": "确定要替换数据库吗？所有已保存的角色和圣遗物会被删除。"
     },
-    "monaUpload": {
-      "title": "<strong>莫娜占卜铺</strong> 格式",
-      "import": "导入",
-      "deleteExistingButton": "删除狗粮",
-      "deleteExistingExplanation": "如果你在进行一次完整的导入，所有不在该导入数据中的圣遗物会被删除（狗粮化）<br>升级后的圣遗物不会被删除，且会被正常更新。",
-      "deleteExistingPrompt": "确定要删除没有在当前导入中找到的圣遗物吗？（不会影响升级后圣遗物的导入。）"
-    },
     "error": {
       "jsonParse": "JSON文件解析失败。",
       "unknown": "未知的文件格式。",
@@ -44,11 +37,6 @@
   "count": {
     "chars": "角色：",
     "arts": "圣遗物：",
-    "artsDup": "重复圣遗物：",
-    "artsNew": "新圣遗物：",
-    "artsUpg": "升级的圣遗物：",
-    "artsInvalid": "不可靠的圣遗物：",
-    "artsFod": "狗粮：",
     "weapons": "武器："
   }
 }

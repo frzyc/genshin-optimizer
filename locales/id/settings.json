@@ -23,13 +23,6 @@
       "migrate": "Database akan dipindahkan ke versi terbaru. Disarankan untuk mengunduh ulang database setelah mengimpor.",
       "deleteDatabasePrompt": "Apakah kamu yakin ingin mengganti database-mu? Semua karakter dan artefak yang ada akan dihapus."
     },
-    "monaUpload": {
-      "title": "<strong>mona-uranai</strong> format",
-      "import": "Impor",
-      "deleteExistingButton": "Hapus Artefak Tumbal",
-      "deleteExistingExplanation": "Jika Anda melakukan impor lengkap, semua artefak yang tidak ditemukan dalam impor ini akan dihapus.(ditumbal)<br>Artefak yang ter-upgrade tidak akan dihapus, tetapi diperbarui sesuai dengan itu.",
-      "deleteExistingPrompt": "Apakah kamu yakin ingin menghapus semua artefak yang tidak ditemukan dalam impor saat ini? (Artefak yang ter-upgrade tidak akan terpengaruh.)"
-    },
     "error": {
       "jsonParse": "Tidak dapat mengurai file JSON.",
       "unknown": "Format file tidak dikenal.",
@@ -44,11 +37,6 @@
   "count": {
     "chars": "Karakter:",
     "arts": "Artefak:",
-    "artsDup": "Artefak Duplikat:",
-    "artsNew": "Artefak Baru:",
-    "artsUpg": "Artefak terupgrade:",
-    "artsInvalid": "Artefak Invalid",
-    "artsFod": "Artefak Tumbal",
     "weapons": "Senjata:"
   }
 }
