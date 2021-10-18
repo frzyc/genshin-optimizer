@@ -1,5 +1,6 @@
 import card from './Character_Bennett_Card.jpg'
-import thumb from './Character_Bennett_Thumb.png'
+import thumb from './Icon.png'
+import thumbSide from './IconSide.png'
 import c1 from './Constellation_Grand_Expectation.png'
 import c2 from './Constellation_Impasse_Conqueror.png'
 import c3 from './Constellation_Unstoppable_Fervor.png'
@@ -58,6 +59,7 @@ const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
+  thumbImgSide: thumbSide,
   star: data_gen.star,
   elementKey: "pyro",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,

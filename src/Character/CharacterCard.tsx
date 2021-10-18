@@ -59,51 +59,50 @@ export default function CharacterCard({ characterKey, onEdit, onDelete, footer =
   return <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 350 }} />}>
     <CardLight sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
       <ConditionalWrapper condition={!!onEdit} wrapper={actionWrapperFunc}>
-        <Box className={`grad-${characterSheet.star}star`} width="100%" >
-          <Grid container sx={{ flexWrap: "nowrap" }}>
-            <Grid item flexGrow={1} sx={{ px: 2, pt: 1 }}>
-              <CardHeader title={characterSheet.name} titleTypographyProps={{ variant: "subtitle1" }} sx={{ p: 0 }}
-                avatar={<Typography variant="h5">{StatIcon[elementKey]}</Typography>} />
-              <Grid container spacing={1}>
-                <Grid item>
-                  <Typography component="span" variant="h6">Lv. {characterLevel}</Typography>
-                  <Typography component="span" variant="h6" color="text.secondary">/{ascensionMaxLevel[ascension]}</Typography>
-                </Grid>
-                <Grid item>
-                  <Typography variant="h6"><SqBadge>C{constellation}</SqBadge></Typography>
-                </Grid>
+        <Box display="flex" className={`grad-${characterSheet.star}star`} width="100%"  >
+          <Box flexGrow={1} sx={{ pl: 2, pt: 1 }}>
+            <CardHeader title={characterSheet.name} titleTypographyProps={{ variant: "subtitle1" }} sx={{ p: 0 }}
+              avatar={<Typography variant="h5">{StatIcon[elementKey]}</Typography>} />
+            <Grid container spacing={1} flexWrap="nowrap">
+              <Grid item>
+                <Typography component="span" variant="h5" whiteSpace="nowrap">Lv. {characterLevel}</Typography>
+                <Typography component="span" variant="h5" color="text.secondary">/{ascensionMaxLevel[ascension]}</Typography>
               </Grid>
+              <Grid item>
+                <Typography variant="h6"><SqBadge>C{constellation}</SqBadge></Typography>
+              </Grid>
+            </Grid>
 
-              <Grid container spacing={1}>
-                <Grid item>
-                  <Chip color="secondary" label={<strong >{tlvl.auto + 1}</strong>} />
-                </Grid>
-                <Grid item>
-                  <Chip color={stats.skillBoost ? "info" : "secondary"} label={<strong >{tlvl.skill + 1}</strong>} />
-                </Grid>
-                <Grid item>
-                  <Chip color={stats.burstBoost ? "info" : "secondary"} label={<strong >{tlvl.burst + 1}</strong>} />
-                </Grid>
+            <Grid container spacing={1} flexWrap="nowrap">
+              <Grid item>
+                <Chip color="secondary" label={<strong >{tlvl.auto + 1}</strong>} />
               </Grid>
-              {/* <Typography variant="h5">Refinement <strong>{refinement}</strong></Typography> */}
-              <Typography><Stars stars={characterSheet.star} colored /></Typography>
+              <Grid item>
+                <Chip color={stats.skillBoost ? "info" : "secondary"} label={<strong >{tlvl.skill + 1}</strong>} />
+              </Grid>
+              <Grid item>
+                <Chip color={stats.burstBoost ? "info" : "secondary"} label={<strong >{tlvl.burst + 1}</strong>} />
+              </Grid>
             </Grid>
-            {/* use flex-end here to align the image to the bottom. */}
-            <Grid item container xs={3} md={4} alignContent="flex-end">
-              <Box
-                component="img"
-                src={characterSheet.thumbImg}
-                width="100%"
-                height="auto"
-                sx={{ mt: "auto" }}
-              />
-            </Grid>
-          </Grid>
+            {/* <Typography variant="h5">Refinement <strong>{refinement}</strong></Typography> */}
+            <Typography><Stars stars={characterSheet.star} colored /></Typography>
+          </Box>
+          {/* use flex-end here to align the image to the bottom. */}
+          <Box flexShrink={1} maxWidth="45%" alignSelf="flex-end" display="flex" flexDirection="column">
+            <Box
+              component="img"
+              src={characterSheet.thumbImg}
+              width="100%"
+              height="auto"
+              maxWidth={256}
+              sx={{ mt: "auto" }}
+            />
+          </Box>
         </Box>
         <CardContent sx={{ pb: 0, width: "100%" }}>
           <CardDark sx={{ mb: 1 }}>
-            <Grid container sx={{ flexWrap: "nowrap" }}>
-              <Grid item container xs={3} md={4} alignContent="flex-end" className={`grad-${weaponSheet.rarity}star`} >
+            <Box display="flex" >
+              <Box flexShrink={1} maxWidth="35%" display="flex" flexDirection="column" alignContent="flex-end" className={`grad-${weaponSheet.rarity}star`} >
                 <Box
                   component="img"
                   src={weaponSheet.img}
@@ -111,17 +110,17 @@ export default function CharacterCard({ characterKey, onEdit, onDelete, footer =
                   height="auto"
                   sx={{ mt: "auto" }}
                 />
-              </Grid>
-              <Grid item flexGrow={1} sx={{ p: 1 }}>
+              </Box>
+              <Box flexGrow={1} sx={{ p: 1 }}>
                 <Typography><strong>{weaponName}</strong></Typography>
-                <Typography>
+                <Typography whiteSpace="nowrap">
                   <SqBadge color="primary" sx={{ mr: 1 }}>Lv. {weaponLevelName}</SqBadge>
                   {weaponPassiveName && <SqBadge color="info"> Refinement {weapon.refinement}</SqBadge>}
                 </Typography>
                 <Typography variant="subtitle2">ATK: {weaponMainVal}</Typography>
                 {weaponPassiveName && <Typography variant="subtitle2">{Stat.getStatName(weaponSubKey)}: {weaponSubVal}{Stat.getStatUnit(weaponSubKey)}</Typography>}
-              </Grid>
-            </Grid>
+              </Box>
+            </Box>
           </CardDark>
           <Grid container spacing={1} justifyContent="space-around">
             {artifactSheets && Object.entries(ArtifactSheet.setEffects(artifactSheets, stats.setToSlots)).map(([key, arr]) => {

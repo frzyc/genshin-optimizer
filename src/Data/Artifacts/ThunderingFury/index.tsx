@@ -1,8 +1,8 @@
-import flower from './Item_Thunderbird\'s_Mercy.png'
-import plume from './Item_Survivor_of_Catastrophe.png'
-import sands from './Item_Hourglass_of_Thunder.png'
-import goblet from './Item_Omen_of_Thunderstorm.png'
-import circlet from './Item_Thunder_Summoner\'s_Crown.png'
+import flower from './flower.png'
+import plume from './plume.png'
+import sands from './sands.png'
+import goblet from './goblet.png'
+import circlet from './circlet.png'
 import { IArtifactSheet } from '../../../Types/artifact'
 const artifact: IArtifactSheet = {
   name: "Thundering Fury", rarity: [4, 5],   icons: {

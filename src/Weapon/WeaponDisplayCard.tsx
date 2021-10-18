@@ -95,6 +95,7 @@ export default function WeaponDisplayCard({
     [weaponSheet],
   )
   const [showModal, setshowModal] = useState(false)
+  const img = ascension < 2 ? weaponSheet?.img : weaponSheet?.imgAwaken
   return <CardLight>
     <CardContent sx={{ py: 1 }}>
       <Grid container spacing={1}>
@@ -159,13 +160,12 @@ export default function WeaponDisplayCard({
         const weaponPassiveName = weaponSheet.passiveName
         const weaponBonusStats = weaponSheet.stats(build)
         const sections = weaponSheet.document
-
-        return <Grid container spacing={1} >
-          <Grid item xs={12} sm={6} md={3} lg={4}>
-            <Box component="img" src={weaponSheet.img} className={`grad-${weaponSheet.rarity}star`} sx={{ width: "100%", height: "auto", borderRadius: 1 }} />
+        return <Box display="flex" gap={{ xs: 1, md: 1.5, lg: 2 }} >
+          <Box sx={{ maxWidth: 256 }} flexShrink={1} minWidth="25%">
+            <Box component="img" src={img} className={`grad-${weaponSheet.rarity}star`} sx={{ maxWidth: 256, width: "100%", height: "auto", borderRadius: 1 }} />
             <Typography><small>{weaponSheet.description}</small></Typography>
-          </Grid>
-          <Grid item sx={{ mb: -1 }} xs={12} sm={6} md={9} lg={8} >
+          </Box>
+          <Box sx={{ mb: -1 }} flexGrow={1} >
             <Typography variant="h6" >{process.env.NODE_ENV === "development" && <ColorText color="warning">{id || `""`} </ColorText>}{weaponSheet.name} Lv. {WeaponSheet.getLevelString(weapon)} {weaponPassiveName && <SqBadge color="info">Refinement {refinement}</SqBadge>}</Typography>
             <Typography><Stars stars={weaponSheet.rarity} /></Typography>
             <Typography variant="subtitle1">{weaponPassiveName}</Typography>
@@ -179,8 +179,8 @@ export default function WeaponDisplayCard({
               const characterKey = (newBuild ? newBuild : equippedBuild)?.characterKey as CharacterKey | undefined
               return !!characterKey && < DocumentDisplay  {...{ sections, equippedBuild, newBuild, characterKey }} />
             })() : null}
-          </Grid>
-        </Grid>
+          </Box>
+        </Box>
       })()}
     </CardContent>
     {footer && id && <CardContent sx={{ py: 1 }}>
@@ -232,7 +232,7 @@ function SwapBtn({ onChangeId, weaponTypeKey }) {
         <CardContent>
           <Grid container spacing={1}>
             {weaponIdList.map(weaponId =>
-              <Grid item key={weaponId} lg={4} md={6} >
+              <Grid item key={weaponId} xs={6} sm={6} md={4} lg={3} >
                 <WeaponCard
                   weaponId={weaponId}
                   onClick={clickHandler}

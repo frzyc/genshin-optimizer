@@ -22,9 +22,10 @@ export default class CharacterSheet {
   static get = (charKey: CharacterKey | ""): Promise<CharacterSheet> | undefined => charKey ? loadCharacterSheet[charKey] : undefined
   static getAll = (): Promise<StrictDict<CharacterKey, CharacterSheet>> => charImport
   get name() { return this.sheet.name }
-  get nameWIthIcon() { return <span><ImgIcon src={this.thumbImg} /> {this.name}</span> }
+  get nameWIthIcon() { return <span><ImgIcon src={this.thumbImgSide} sx={{ height: "2em", marginTop: "-2em", marginLeft: "-0.5em" }} /> {this.name}</span> }
   get cardImg() { return this.sheet.cardImg }
   get thumbImg() { return this.sheet.thumbImg }
+  get thumbImgSide() { return this.sheet.thumbImgSide }
   /**
    * TODO rarity
    */

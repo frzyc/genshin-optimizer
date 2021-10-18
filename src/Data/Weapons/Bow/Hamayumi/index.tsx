@@ -1,5 +1,6 @@
 import { IWeaponSheet } from '../../../../Types/weapon'
-import img from './Weapon_Hamayumi.png'
+import icon from './Icon.png'
+import iconAwaken from './AwakenIcon.png'
 
 import data_gen from './data_gen.json'
 import { WeaponData } from 'pipeline'
@@ -18,7 +19,8 @@ const conditionals: IConditionals = {
 }
 const weapon: IWeaponSheet = {
   ...data_gen as WeaponData,
-  img,
+  icon,
+  iconAwaken,
   stats: stats => ({
     normal_dmg_: normal_dmg_s[stats.weapon.refineIndex],
     charged_dmg_: charged_dmg_s[stats.weapon.refineIndex]

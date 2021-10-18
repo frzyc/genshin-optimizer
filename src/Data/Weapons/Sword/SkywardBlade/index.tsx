@@ -6,7 +6,8 @@ import { IConditionals } from '../../../../Types/IConditional'
 import { IWeaponSheet } from '../../../../Types/weapon'
 import formula, { data } from './data'
 import data_gen from './data_gen.json'
-import img from './Weapon_Skyward_Blade.png'
+import icon from './Icon.png'
+import iconAwaken from './AwakenIcon.png'
 
 const refinementVals = [4, 5, 6, 7, 8]
 const refinementMoveSpdVals = [10, 10, 10, 10, 10]
@@ -29,7 +30,8 @@ const conditionals: IConditionals = {
 }
 const weapon: IWeaponSheet = {
   ...data_gen as WeaponData,
-  img,
+  icon,
+  iconAwaken,
   stats: stats => ({
     critRate_: refinementVals[stats.weapon.refineIndex]
   }),

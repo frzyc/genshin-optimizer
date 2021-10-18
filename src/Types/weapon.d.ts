@@ -8,7 +8,8 @@ import { IConditionals } from "./IConditional";
 export type IWeaponSheets = Record<WeaponKey, IWeaponSheet>
 
 export interface IWeaponSheet extends WeaponData {
-  img: string;
+  icon: string,
+  iconAwaken: string,
   stats?: BonusStats | ((stats: BasicStats) => BonusStats | undefined)
   conditionals?: IConditionals
   document: DocumentSection[],

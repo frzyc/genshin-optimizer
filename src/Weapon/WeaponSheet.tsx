@@ -35,7 +35,8 @@ export default class WeaponSheet {
   get description() { return this.tr("description") }
   passiveDescription = (stats: ICalculatedStats) => this.getSubStatKey() ? this.tr(`passiveDescription.${stats.weapon.refineIndex}`) : ""
   get weaponType() { return this.sheet.weaponType }
-  get img() { return this.sheet.img }
+  get img() { return this.sheet.icon }
+  get imgAwaken() { return this.sheet.iconAwaken }
   get rarity() { return this.sheet.rarity }
   stats = (build: ICalculatedStats): object | undefined => evalIfFunc(this.sheet.stats, build) || {}
   get conditionals() { return this.sheet.conditionals }

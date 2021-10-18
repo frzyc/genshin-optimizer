@@ -7,7 +7,7 @@ import { DatabaseContext } from "../../Database/Database";
 import usePromise from "../../ReactHooks/usePromise";
 import { CharacterKey } from "../../Types/consts";
 import DropdownButton, { DropdownButtonProps } from "../DropdownMenu/DropdownButton";
-import ImgIcon from "../Image/ImgIcon";
+import ThumbSide from "./ThumbSide";
 
 export type CharacterDropdownButtonProps = Omit<DropdownButtonProps, "title" | "onChange" | "children"> & {
   value: CharacterKey | ""
@@ -27,7 +27,7 @@ export default function CharacterDropdownButton({ value, onChange, inventory = f
     {...props}
     title={characterSheet?.name ?? (inventory ? t`inventory` : t`unselect`)}
     color={value ? "success" : "primary"}
-    startIcon={characterSheet?.thumbImg ? <ImgIcon src={characterSheet.thumbImg} /> : (inventory ? <BusinessCenter /> : <Replay />)}>
+    startIcon={characterSheet?.thumbImg ? <ThumbSide src={characterSheet.thumbImgSide} /> : (inventory ? <BusinessCenter /> : <Replay />)}>
     {!noUnselect && (inventory ? <MenuItem onClick={() => onChange("")} selected={value === ""} disabled={value === ""}>
       <ListItemIcon>
         <BusinessCenter />
@@ -53,7 +53,7 @@ export function CharacterMenuItemArray(characterSheets: StrictDict<CharacterKey,
   return characterKeys.map(characterKey =>
     <MenuItem onClick={() => onChange(characterKey)} key={characterKey} selected={selectedCharacterKey === characterKey} disabled={selectedCharacterKey === characterKey} >
       <ListItemIcon>
-        <ImgIcon src={characterSheets[characterKey].thumbImg} />
+        <ThumbSide src={characterSheets[characterKey].thumbImgSide} />
       </ListItemIcon>
       <Typography variant="inherit" noWrap>
         {characterSheets?.[characterKey]?.name}

@@ -99,3 +99,11 @@ export function evalIfFunc<T, X>(value: T | ((arg: X) => T), arg: X): T {
 export function objectFromKeyMap<K extends string | number, V>(keys: readonly K[], map: (key: K) => V): StrictDict<K, V> {
   return Object.fromEntries(keys.map(k => [k, map(k)])) as any
 }
+
+const rangeGen = function* (from, to) {
+  for (let i = from; i <= to; i++) yield i;
+};
+
+export function range(from, to) {
+  return [...rangeGen(from, to)]
+}

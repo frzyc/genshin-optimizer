@@ -1,5 +1,6 @@
 import { IWeaponSheet } from '../../../../Types/weapon'
-import img from './Weapon_Mistsplitter_Reforged.png'
+import icon from './Icon.png'
+import iconAwaken from './AwakenIcon.png'
 
 import data_gen from './data_gen.json'
 import { WeaponData } from 'pipeline'
@@ -48,7 +49,8 @@ const conditionals: IConditionals = {
 }
 const weapon: IWeaponSheet = {
   ...data_gen as WeaponData,
-  img,
+  icon,
+  iconAwaken,
   stats: stats => Object.fromEntries(allElements.map(ele => [`${ele}_dmg_`, ele_dmg_s[stats.weapon.refineIndex]])),
   conditionals,
   document: [{

@@ -1,5 +1,6 @@
 import { IWeaponSheet } from '../../../../Types/weapon'
-import img from './Weapon_The_Black_Sword.png'
+import icon from './Icon.png'
+import iconAwaken from './AwakenIcon.png'
 import formula, { data } from './data'
 import { TransWrapper } from "../../../../Components/Translate"
 import data_gen from './data_gen.json'
@@ -7,7 +8,8 @@ import { WeaponData } from 'pipeline'
 import Stat from '../../../../Stat'
 const weapon: IWeaponSheet = {
   ...data_gen as WeaponData,
-  img,
+  icon,
+  iconAwaken,
   stats: stats => ({
     normal_dmg_: data.dmg_[stats.weapon.refineIndex],
     charged_dmg_: data.dmg_[stats.weapon.refineIndex]

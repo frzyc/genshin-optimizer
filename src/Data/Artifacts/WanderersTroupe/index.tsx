@@ -1,8 +1,8 @@
-import flower from './Item_Troupe\'s_Dawnlight.png'
-import plume from './Item_Bard\'s_Arrow_Feather.png'
-import sands from './Item_Concert\'s_Final_Hour.png'
-import goblet from './Item_Wanderer\'s_String_Kettle.png'
-import circlet from './Item_Conductor\'s_Top_Hat.png'
+import flower from './flower.png'
+import plume from './plume.png'
+import sands from './sands.png'
+import goblet from './goblet.png'
+import circlet from './circlet.png'
 import { IArtifactSheet } from '../../../Types/artifact'
 
 const artifact: IArtifactSheet = {

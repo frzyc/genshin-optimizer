@@ -6,7 +6,8 @@ import { WeaponTypeKey } from '../../../Types/consts'
 import { IConditionals } from '../../../Types/IConditional'
 import { chargedDocSection, normalDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
 import card from './Character_Klee_Card.jpg'
-import thumb from './Character_Klee_Thumb.png'
+import thumb from './Icon.png'
+import thumbSide from './IconSide.png'
 import c6 from './Constellation_Blazing_Delight.png'
 import c1 from './Constellation_Chained_Reactions.png'
 import c2 from './Constellation_Explosive_Frags.png'
@@ -48,6 +49,7 @@ const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
+  thumbImgSide: thumbSide,
   star: data_gen.star,
   elementKey: "pyro",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,

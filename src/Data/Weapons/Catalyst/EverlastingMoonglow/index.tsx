@@ -6,13 +6,15 @@ import Stat from '../../../../Stat'
 import { IWeaponSheet } from '../../../../Types/weapon'
 import formula, { data } from './data'
 import data_gen from './data_gen.json'
-import img from './Weapon_Everlasting_Moonglow.png'
+import icon from './Icon.png'
+import iconAwaken from './AwakenIcon.png'
 
 const heal_ = [10, 12.5, 15, 17.5, 20]
 
 const weapon: IWeaponSheet = {
   ...data_gen as WeaponData,
-  img,
+  icon,
+  iconAwaken,
   stats: stats => ({
     heal_: heal_[stats.weapon.refineIndex],
   }),

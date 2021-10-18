@@ -32,7 +32,7 @@ const talentSheet: TalentSheet = {
   conditionals,
   sheets: {
     auto: {
-      name: "Foreign Rockblade",
+      name: tr("auto.name"),
       img: normal,
       sections: [
         normalDocSection(tr, formula, data),

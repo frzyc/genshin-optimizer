@@ -1,5 +1,6 @@
 import { IWeaponSheet } from '../../../../Types/weapon'
-import img from './Weapon_Traveler\'s_Handy_Sword.png'
+import icon from './Icon.png'
+import iconAwaken from './AwakenIcon.png'
 import { TransWrapper } from "../../../../Components/Translate"
 import formula, { data } from './data'
 import Stat from '../../../../Stat'
@@ -8,7 +9,8 @@ import data_gen from './data_gen.json'
 import { WeaponData } from 'pipeline'
 const weapon: IWeaponSheet = {
   ...data_gen as WeaponData,
-  img,
+  icon,
+  iconAwaken,
   document: [{
     fields: [{
       text: <TransWrapper ns="sheet_gen" key18="healing" />,

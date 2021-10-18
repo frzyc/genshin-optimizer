@@ -1,8 +1,8 @@
-import flower from './Item_Snowswept_Memory.png'
-import plume from './Item_Icebreaker\'s_Resolve.png'
-import sands from './Item_Frozen_Homeland\'s_Demise.png'
-import goblet from './Item_Frost-Weaved_Dignity.png'
-import circlet from './Item_Broken_Rime\'s_Echo.png'
+import flower from './flower.png'
+import plume from './plume.png'
+import sands from './sands.png'
+import goblet from './goblet.png'
+import circlet from './circlet.png'
 import { IArtifactSheet } from '../../../Types/artifact'
 import { IConditionals } from '../../../Types/IConditional'
 const conditionals: IConditionals = {

@@ -1,6 +1,7 @@
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../../Build/Build'
 import { IWeaponSheet } from '../../../../Types/weapon'
-import img from './Weapon_The_Flute.png'
+import icon from './Icon.png'
+import iconAwaken from './AwakenIcon.png'
 import formula, { data } from './data'
 import { TransWrapper } from '../../../../Components/Translate'
 import Stat from '../../../../Stat'
@@ -8,7 +9,8 @@ import data_gen from './data_gen.json'
 import { WeaponData } from 'pipeline'
 const weapon: IWeaponSheet = {
   ...data_gen as WeaponData,
-  img,
+  icon,
+  iconAwaken,
   document: [{
     fields: [{
       text: <TransWrapper ns="sheet" key18="dmg" />,

@@ -1,10 +1,10 @@
 import { IArtifactSheet } from '../../../Types/artifact'
 import { IConditionals } from '../../../Types/IConditional'
-import sands from './Item_Witch\'s_End_Time.png'
-import plume from './Item_Witch\'s_Ever-Burning_Plume.png'
-import flower from './Item_Witch\'s_Flower_of_Blaze.png'
-import goblet from './Item_Witch\'s_Heart_Flames.png'
-import circlet from './Item_Witch\'s_Scorching_Hat.png'
+import sands from './sands.png'
+import plume from './plume.png'
+import flower from './flower.png'
+import goblet from './goblet.png'
+import circlet from './circlet.png'
 const conditionals: IConditionals = {
   4: {
     name: "Using an Elemental Skill",

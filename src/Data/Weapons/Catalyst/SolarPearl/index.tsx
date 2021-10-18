@@ -2,7 +2,8 @@ import { WeaponData } from 'pipeline'
 import { IConditionals } from '../../../../Types/IConditional'
 import { IWeaponSheet } from '../../../../Types/weapon'
 import data_gen from './data_gen.json'
-import img from './Weapon_Solar_Pearl.png'
+import icon from './Icon.png'
+import iconAwaken from './AwakenIcon.png'
 const conditionals: IConditionals = {
   ss: {
     name: "Hits",
@@ -34,7 +35,8 @@ const conditionals: IConditionals = {
 const refinementVals = [20, 25, 30, 35, 40]
 const weapon: IWeaponSheet = {
   ...data_gen as WeaponData,
-  img,
+  icon,
+  iconAwaken,
   conditionals,
   document: [{
     conditional: conditionals.ss

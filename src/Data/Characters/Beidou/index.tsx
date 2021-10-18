@@ -1,5 +1,6 @@
 import card from './Character_Beidou_Card.jpg'
-import thumb from './Character_Beidou_Thumb.png'
+import thumb from './Icon.png'
+import thumbSide from './IconSide.png'
 import c1 from './Constellation_Sea_Beast\'s_Scourge.png'
 import c2 from './Constellation_Upon_the_Turbulent_Sea,_the_Thunder_Arises.png'
 import c3 from './Constellation_Summoner_of_Storm.png'
@@ -49,6 +50,7 @@ const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
+  thumbImgSide: thumbSide,
   star: data_gen.star,
   elementKey: "electro",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,

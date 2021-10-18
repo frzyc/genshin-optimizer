@@ -1,8 +1,8 @@
-import flower from './Item_Maiden\'s_Distant_Love.png'
-import plume from './Item_Maiden\'s_Heart-stricken_Infatuation.png'
-import sands from './Item_Maiden\'s_Passing_Youth.png'
-import goblet from './Item_Maiden\'s_Fleeting_Leisure.png'
-import circlet from './Item_Maiden\'s_Fading_Beauty.png'
+import flower from './flower.png'
+import plume from './plume.png'
+import sands from './sands.png'
+import goblet from './goblet.png'
+import circlet from './circlet.png'
 import { IArtifactSheet } from '../../../Types/artifact'
 import { IConditionals } from '../../../Types/IConditional'
 const conditionals: IConditionals = {

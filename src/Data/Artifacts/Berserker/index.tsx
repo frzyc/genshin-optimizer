@@ -1,8 +1,8 @@
-import flower from './Item_Berserker\'s_Rose.png'
-import plume from './Item_Berserker\'s_Indigo_Feather.png'
-import sands from './Item_Berserker\'s_Timepiece.png'
-import goblet from './Item_Berserker\'s_Bone_Goblet.png'
-import circlet from './Item_Berserker\'s_Battle_Mask.png'
+import flower from './flower.png'
+import plume from './plume.png'
+import sands from './sands.png'
+import goblet from './goblet.png'
+import circlet from './circlet.png'
 import { IArtifactSheet } from '../../../Types/artifact'
 import { IConditionals } from '../../../Types/IConditional'
 const conditionals: IConditionals = {

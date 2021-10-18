@@ -67,9 +67,9 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
     <CardLight sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
       <CardContent className={`grad-${rarity}star`} sx={{ py: 1 }}>
         <Box component="div" sx={{ display: "flex", alignItems: "center" }}>
-          <Chip label={<strong>{` +${level}`}</strong>} color={levelVariant as any} />
+          <Chip size="small" label={<strong>{` +${level}`}</strong>} color={levelVariant as any} />
           <Typography sx={{ pl: 1, flexGrow: 1 }}>{slotName} {slotDescTooltip}</Typography>
-          <IconButton color="secondary" disabled={!editable} onClick={() => database.updateArt({ lock: !lock }, id)}>
+          <IconButton color="primary" disabled={!editable} onClick={() => database.updateArt({ lock: !lock }, id)}>
             {lock ? <Lock /> : <LockOpen />}
           </IconButton>
         </Box>

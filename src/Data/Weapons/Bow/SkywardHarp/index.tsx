@@ -5,12 +5,14 @@ import Stat from '../../../../Stat'
 import { IWeaponSheet } from '../../../../Types/weapon'
 import formula from './data'
 import data_gen from './data_gen.json'
-import img from './Weapon_Skyward_Harp.png'
+import icon from './Icon.png'
+import iconAwaken from './AwakenIcon.png'
 
 const critd_s = [20, 25, 30, 35, 40]
 const weapon: IWeaponSheet = {
   ...data_gen as WeaponData,
-  img,
+  icon,
+  iconAwaken,
   stats: stats => ({
     critDMG_: critd_s[stats.weapon.refineIndex]
   }),

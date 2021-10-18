@@ -1,8 +1,8 @@
-import flower from './Item_Guardian\'s_Flower.png'
-import plume from './Item_Guardian\'s_Sigil.png'
-import sands from './Item_Guardian\'s_Clock.png'
-import goblet from './Item_Guardian\'s_Vessel.png'
-import circlet from './Item_Guardian\'s_Band.png'
+import flower from './flower.png'
+import plume from './plume.png'
+import sands from './sands.png'
+import goblet from './goblet.png'
+import circlet from './circlet.png'
 import { IArtifactSheet } from '../../../Types/artifact'
 import { IConditionals } from '../../../Types/IConditional'
 const conditionals: IConditionals = {

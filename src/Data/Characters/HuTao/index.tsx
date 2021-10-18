@@ -1,5 +1,6 @@
 import card from './Character_Hu_Tao_Card.jpg'
-import thumb from './Character_Hu_Tao_Thumb.png'
+import thumb from './Icon.png'
+import thumbSide from './IconSide.png'
 import c1 from './Constellation_Crimson_Bouquet.png'
 import c2 from './Constellation_Ominous_Rainfall.png'
 import c3 from './Constellation_Lingering_Carmine.png'
@@ -72,6 +73,7 @@ const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
+  thumbImgSide: thumbSide,
   star: data_gen.star,
   elementKey: "pyro",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,

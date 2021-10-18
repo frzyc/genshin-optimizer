@@ -84,7 +84,7 @@ function CharacterArtifactPane({ sheets, character, character: { key: characterK
       </CardContent>
     </CardLight>
     <Grid container spacing={1}>
-      <Grid item xs={6} md={4} >
+      <Grid item xs={12} sm={6} md={4} >
         <CardLight sx={{ height: "100%" }} ><CardContent sx={{ height: "100%" }}><Grid container spacing={2} flexDirection="column" height="100%" >
           {artifactSheets && Object.entries(ArtifactSheet.setEffects(artifactSheets, stats.setToSlots)).map(([setKey, setNumKeyArr]) =>
             <Grid item key={setKey}>

@@ -1,5 +1,6 @@
 import card from './Character_Diluc_Card.jpg'
-import thumb from './Character_Diluc_Thumb.png'
+import thumb from './Icon.png'
+import thumbSide from './IconSide.png'
 import c1 from './Constellation_Conviction.png'
 import c2 from './Constellation_Searing_Ember.png'
 import c3 from './Constellation_Fire_and_Steel.png'
@@ -69,6 +70,7 @@ const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
+  thumbImgSide: thumbSide,
   star: data_gen.star,
   elementKey: "pyro",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,

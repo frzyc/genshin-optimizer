@@ -1,5 +1,6 @@
 import card from './Traveler_Female_Card.jpg'
-import thumb from './Character_Traveler_Thumb.png'
+import thumb from './Icon.png'
+import thumbSide from './IconSide.png'
 import data_gen from './data_gen.json'
 import { ICharacterSheet } from '../../../Types/character';
 import anemo from './anemo'
@@ -12,6 +13,7 @@ const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
+  thumbImgSide: thumbSide,
   star: data_gen.star,
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
   gender: "F/M",

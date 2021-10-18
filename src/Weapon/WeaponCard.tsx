@@ -52,35 +52,34 @@ export default function WeaponCard({ weaponId, onClick, onEdit, onDelete, canEqu
   const weaponPassiveName = weaponSheet?.passiveName
   const statMap = [["weaponATK", weaponMainVal]]
   weaponPassiveName && statMap.push([weaponSubKey, weaponSubVal])
+  const img = ascension < 2 ? weaponSheet?.img : weaponSheet?.imgAwaken
 
   return <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 300 }} />}>
     <ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc}>
       <CardLight sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
         <div className={`grad-${weaponSheet.rarity}star`} >
           <CardHeader title={weaponSheet.name} avatar={<ImgIcon sx={{ fontSize: "2em" }} src={Assets.weaponTypes?.[weaponTypeKey]} />} titleTypographyProps={{ variant: "h6" }}
-            action={!onClick && <IconButton color="secondary" onClick={() => database.updateWeapon({ lock: !lock }, id)}>
+            action={!onClick && <IconButton color="primary" onClick={() => database.updateWeapon({ lock: !lock }, id)}>
               {lock ? <Lock /> : <LockOpen />}
             </IconButton>} />
-          <Box sx={{ px: 2 }}>
-            <Grid container sx={{ flexWrap: "nowrap" }}>
-              <Grid item flexGrow={1}>
-                <Typography component="span" variant="h4">Lv. {level}</Typography>
-                <Typography component="span" variant="h4" color="text.secondary">/{ascensionMaxLevel[ascension]}</Typography>
-                <Typography variant="h5">Refinement <strong>{refinement}</strong></Typography>
-                <Typography><Stars stars={weaponSheet.rarity} colored /></Typography>
-              </Grid>
-              {/* use flex-end here to align the image to the bottom. */}
-              <Grid item container xs={3} md={4} alignContent="flex-end">
-                <Box
-                  component="img"
-                  src={weaponSheet.img}
-                  width="100%"
-                  height="auto"
-                  sx={{ mt: "auto" }}
-                />
-              </Grid>
+          <Grid container sx={{ flexWrap: "nowrap", pl: 2 }}>
+            <Grid item flexGrow={1}>
+              <Typography component="span" variant="h4">Lv. {level}</Typography>
+              <Typography component="span" variant="h4" color="text.secondary">/{ascensionMaxLevel[ascension]}</Typography>
+              <Typography variant="h6">Refinement <strong>{refinement}</strong></Typography>
+              <Typography><Stars stars={weaponSheet.rarity} colored /></Typography>
             </Grid>
-          </Box>
+            {/* use flex-end here to align the image to the bottom. */}
+            <Grid item container xs={4} alignContent="flex-end">
+              <Box
+                component="img"
+                src={img}
+                width="100%"
+                height="auto"
+                sx={{ mt: "auto" }}
+              />
+            </Grid>
+          </Grid>
         </div>
         <CardContent>
           {statMap.map(([statKey, statVal]) => {
@@ -93,22 +92,25 @@ export default function WeaponCard({ weaponId, onClick, onEdit, onDelete, canEqu
         </CardContent>
         {/* grow to fill the 100% heigh */}
         <Box flexGrow={1} />
-        <Grid container sx={{ flexWrap: "nowrap", py: 1, px: 2 }} >
-          <Grid item xs="auto" flexShrink={1}>
-            {canEquip ? <CharacterDropdownButton size="small" noUnselect inventory value={location} onChange={equipOnChar} filter={filter} /> : <LocationName location={location} />}
+        <CardContent sx={{ py: 1 }}>
+          <Grid container sx={{ flexWrap: "nowrap" }} >
+            <Grid item xs="auto" flexShrink={1}>
+              {canEquip ? <CharacterDropdownButton size="small" noUnselect inventory value={location} onChange={equipOnChar} filter={filter} /> : <LocationName location={location} />}
+            </Grid>
+            <Grid item flexGrow={1} sx={{ mr: 1 }} />
+            <Grid item xs="auto">
+              <ButtonGroup sx={{ height: "100%" }}>
+                {!!onEdit && <Button color="info" size="small" onClick={() => onEdit(id)} >
+                  <FontAwesomeIcon icon={faEdit} className="fa-fw" />
+                </Button>}
+                {!!onDelete && <Button color="error" size="small" onClick={() => onDelete(id)} disabled={!!location || lock} >
+                  <FontAwesomeIcon icon={faTrashAlt} className="fa-fw" />
+                </Button>}
+              </ButtonGroup>
+            </Grid>
           </Grid>
-          <Grid item flexGrow={1} sx={{ mr: 1 }} />
-          <Grid item xs="auto">
-            <ButtonGroup sx={{ height: "100%" }}>
-              {!!onEdit && <Button color="info" size="small" onClick={() => onEdit(id)} >
-                <FontAwesomeIcon icon={faEdit} className="fa-fw" />
-              </Button>}
-              {!!onDelete && <Button color="error" size="small" onClick={() => onDelete(id)} disabled={!!location || lock} >
-                <FontAwesomeIcon icon={faTrashAlt} className="fa-fw" />
-              </Button>}
-            </ButtonGroup>
-          </Grid>
-        </Grid>
+        </CardContent>
+
       </CardLight>
     </ConditionalWrapper>
   </Suspense>

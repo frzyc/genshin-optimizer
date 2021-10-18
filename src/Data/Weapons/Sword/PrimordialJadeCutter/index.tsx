@@ -3,7 +3,8 @@ import { IWeaponSheet } from '../../../../Types/weapon'
 import { KeyPath } from '../../../../Util/KeyPathUtil'
 import { FormulaPathBase } from '../../../formula'
 import data_gen from './data_gen.json'
-import img from './Weapon_Primordial_Jade_Cutter.png'
+import icon from './Icon.png'
+import iconAwaken from './AwakenIcon.png'
 import formula, { data } from './data'
 import Stat from '../../../../Stat'
 import { st } from '../../../Characters/SheetUtil'
@@ -12,7 +13,8 @@ const path = KeyPath<FormulaPathBase>().weapon.PrimordialJadeCutter
 const refinementVals_hp = [20, 25, 30, 35, 40]
 const weapon: IWeaponSheet = {
   ...data_gen as WeaponData,
-  img,
+  icon,
+  iconAwaken,
   stats: stats => ({
     hp_: refinementVals_hp[stats.weapon.refineIndex],
     modifiers: { atk: [path.bonus()] }

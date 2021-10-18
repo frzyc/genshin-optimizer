@@ -1,3 +1,4 @@
+import Akuoumaru from './Akuoumaru'
 import BlackcliffSlasher from './BlackcliffSlasher'
 import BloodtaintedGreatsword from './BloodtaintedGreatsword'
 import DebateClub from './DebateClub'
@@ -8,7 +9,6 @@ import LithicBlade from './LithicBlade'
 import LuxuriousSeaLord from './LuxuriousSeaLord'
 import OldMercsPal from './OldMercsPal'
 import PrototypeArchaic from './PrototypeArchaic'
-import Quartz from './Quartz'
 import Rainslasher from './Rainslasher'
 import RoyalGreatsword from './RoyalGreatsword'
 import SacrificialGreatsword from './SacrificialGreatsword'
@@ -24,6 +24,7 @@ import Whiteblind from './Whiteblind'
 import WhiteIronGreatsword from './WhiteIronGreatsword'
 import WolfsGravestone from './WolfsGravestone'
 const claymore = {
+  Akuoumaru,
   BlackcliffSlasher,
   BloodtaintedGreatsword,
   DebateClub,
@@ -34,7 +35,6 @@ const claymore = {
   LuxuriousSeaLord,
   OldMercsPal,
   PrototypeArchaic,
-  Quartz,
   Rainslasher,
   RoyalGreatsword,
   SacrificialGreatsword,

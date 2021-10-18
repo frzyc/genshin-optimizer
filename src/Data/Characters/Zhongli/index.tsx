@@ -1,5 +1,6 @@
 import card from './Character_Zhongli_Card.png'
-import thumb from './Character_Zhongli_Thumb.png'
+import thumb from './Icon.png'
+import thumbSide from './IconSide.png'
 import c1 from './Constellation_Rock,_the_Backbone_of_Earth.png'
 import c2 from './Constellation_Stone,_the_Cradle_of_Jade.png'
 import c3 from './Constellation_Jade,_Shimmering_through_Darkness.png'
@@ -39,6 +40,7 @@ const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
+  thumbImgSide: thumbSide,
   star: data_gen.star,
   elementKey: "geo",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,

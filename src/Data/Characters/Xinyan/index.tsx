@@ -1,5 +1,6 @@
 import card from './Character_Xinyan_Card.jpg'
-import thumb from './Character_Xinyan_Thumb.png'
+import thumb from './Icon.png'
+import thumbSide from './IconSide.png'
 import c1 from './Constellation_Fatal_Acceleration.png'
 import c2 from './Constellation_Impromptu_Opening.png'
 import c3 from './Constellation_Double-Stop.png'
@@ -48,6 +49,7 @@ const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
+  thumbImgSide: thumbSide,
   star: data_gen.star,
   elementKey: "pyro",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,

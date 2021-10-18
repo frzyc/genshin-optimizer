@@ -4,11 +4,13 @@ import Stat from '../../../../Stat'
 import { IWeaponSheet } from '../../../../Types/weapon'
 import formula, { data } from './data'
 import data_gen from './data_gen.json'
-import img from './Weapon_White_Iron_Greatsword.png'
+import icon from './Icon.png'
+import iconAwaken from './AwakenIcon.png'
 
 const weapon: IWeaponSheet = {
   ...data_gen as WeaponData,
-  img,
+  icon,
+  iconAwaken,
   document: [{
     fields: [{
       text: <TransWrapper ns="sheet_gen" key18="healing" />,

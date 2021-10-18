@@ -1,5 +1,6 @@
 import card from './Character_Kujou_Sara_Card.jpg'
-import thumb from './Character_Kujou_Sara_Thumb.png'
+import thumb from './Icon.png'
+import thumbSide from './IconSide.png'
 import c1 from './Constellation_Crow\'s_Eye.png'
 import c2 from './Constellation_Dark_Wings.png'
 import c3 from './Constellation_The_War_Within.png'
@@ -45,6 +46,7 @@ const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
+  thumbImgSide: thumbSide,
   star: data_gen.star,
   elementKey: "electro",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,

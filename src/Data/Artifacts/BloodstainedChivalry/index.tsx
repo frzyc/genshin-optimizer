@@ -1,8 +1,8 @@
-import flower from './Item_Bloodstained_Flower_of_Iron.png'
-import plume from './Item_Bloodstained_Black_Plume.png'
-import sands from './Item_Bloodstained_Final_Hour.png'
-import goblet from './Item_Bloodstained_Chevalier\'s_Goblet.png'
-import circlet from './Item_Bloodstained_Iron_Mask.png'
+import flower from './flower.png'
+import plume from './plume.png'
+import sands from './sands.png'
+import goblet from './goblet.png'
+import circlet from './circlet.png'
 import { IArtifactSheet } from '../../../Types/artifact'
 import { IConditionals } from '../../../Types/IConditional'
 const conditionals: IConditionals = {

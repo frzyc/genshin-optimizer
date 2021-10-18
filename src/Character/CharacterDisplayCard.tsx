@@ -5,6 +5,7 @@ import { buildContext } from '../Build/Build';
 import CardDark from '../Components/Card/CardDark';
 import CardLight from '../Components/Card/CardLight';
 import { CharacterSelectionModal } from '../Components/Character/CharacterSelectionModal';
+import ThumbSide from '../Components/Character/ThumbSide';
 import CloseButton from '../Components/CloseButton';
 import CustomNumberInput, { CustomNumberInputButtonGroupWrapper } from '../Components/CustomNumberInput';
 import DropdownButton from '../Components/DropdownMenu/DropdownButton';
@@ -190,7 +191,7 @@ function CharSelectDropdown({ characterSheet, weaponSheet, character, character:
   return <>{!disabled ? <>
     <CharacterSelectionModal show={showModal} onHide={() => setshowModal(false)} onSelect={setCharacterKey} />
     <ButtonGroup sx={{ bgcolor: t => t.palette.contentDark.main }} >
-      <Button disabled={!setCharacterKey} onClick={() => setshowModal(true)} startIcon={<ImgIcon src={characterSheet?.thumbImg} />} >{characterSheet?.name ?? "Select a Character"}</Button>
+      <Button disabled={!setCharacterKey} onClick={() => setshowModal(true)} startIcon={<ThumbSide src={characterSheet?.thumbImgSide} />} >{characterSheet?.name ?? "Select a Character"}</Button>
       {characterSheet?.sheet && "talents" in characterSheet?.sheet && <DropdownButton title={ElementalData[elementKey].name}>
         {Object.keys(characterSheet.sheet.talents).map(eleKey =>
           <MenuItem key={eleKey} selected={elementKey === eleKey} disabled={elementKey === eleKey} onClick={() => characterDispatch({ elementKey: eleKey })}>

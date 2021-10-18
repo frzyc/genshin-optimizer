@@ -2,7 +2,8 @@ import { WeaponData } from 'pipeline'
 import { IConditionals } from '../../../../Types/IConditional'
 import { IWeaponSheet } from '../../../../Types/weapon'
 import data_gen from './data_gen.json'
-import img from './Weapon_Elegy_for_the_End.png'
+import icon from './Icon.png'
+import iconAwaken from './AwakenIcon.png'
 
 const refinementEM = [60, 75, 90, 105, 120]
 const eleMass = [100, 125, 150, 175, 200]
@@ -18,7 +19,8 @@ const conditionals: IConditionals = {
 }
 const weapon: IWeaponSheet = {
   ...data_gen as WeaponData,
-  img,
+  icon,
+  iconAwaken,
   stats: stats => ({
     eleMas: refinementEM[stats.weapon.refineIndex],
   }),
