@@ -7,7 +7,7 @@
     "builds": "Builds",
     "tools": "Tools",
     "database": "Database",
-    "doc": "Documentation"
+    "doc": "Docs"
   },
   "social": {
     "paypal": "Paypal",
@@ -21,14 +21,24 @@
     "level": "Level"
   },
   "unselect": "Unselect",
+  "inventory": "Inventory",
   "ascending": "Ascending",
   "descending": "Descending",
   "sortByFormat": "Sort By: {{value}}",
   "loading": "Loading...",
   "rightsDisclaimer": "Genshin Optimizer is not affiliated with or endorsed by miHoYo.",
-  "appVersion": "$t(pageTitle) Version: {{version}}",
+  "appVersion": "$t(pageTitle) Version: <1>{{version}}</1>",
   "underConstruction": "Under Construction",
   "error": "Error",
   "reset": "Reset",
-  "info": "INFO"
+  "info": "INFO",
+  "close": "Close",
+  "sortMap": {
+    "new": "New",
+    "name": "Name",
+    "level": "Level",
+    "rarity": "Rarity",
+    "efficiency": "Current Substat Eff.",
+    "mefficiency": "Maximum Substat Eff."
+  }
 }

@@ -1,6 +1,6 @@
 {
   "fullBurstDMG": {
-    "text": "<0><0><0>Full Elemental Burst DMG</0></0><1>This calculates the combined damage from Razor's normal attacks during his Elemental Burst. It simply sums the Companion X-Hit DMG with the corresponding X-Hit DMG of the normal attack which triggers it.</1></0>",
+    "text": "<0><strong>Full Elemental Burst DMG</strong></0><1>This calculates the combined damage from Razor's normal attacks during his Elemental Burst. It simply sums the Companion X-Hit DMG with the corresponding X-Hit DMG of the normal attack which triggers it.</1>",
     "label": "Normal + Wolf Hit DMG {{hitNum}}"
   }
 }
