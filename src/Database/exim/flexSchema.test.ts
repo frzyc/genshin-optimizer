@@ -5,7 +5,7 @@ import { constants } from "./flexSchema"
 
 describe('Export Import', () => {
   test('support all reaction modes', () => {
-    expect(constants.reactionModes).toContain(null)
+    expect(constants.reactionModes).toContain("")
 
     for (const [reaction, { variants }] of Object.entries(amplifyingReactions))
       for (const variant in variants)

@@ -23,6 +23,8 @@ import { bowChargedDocSection, plungeDocSection, sgt, st, talentTemplate } from 
 import { Translate, TransWrapper } from '../../../Components/Translate'
 import { absorbableEle } from '../dataUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
+import ColorText from '../../../Components/ColoredText'
+import { Typography } from '@mui/material'
 const tr = (strKey: string) => <Translate ns="char_Venti_gen" key18={strKey} />
 
 const conditionals: IConditionals = {
@@ -194,14 +196,16 @@ const char: ICharacterSheet = {
             const [num, eleKey] = value
             if (!num) return ""
             return <TransWrapper ns="char_Venti" key18="fullBurstDMG.text"><span>
-              <h6>Full Elemental Burst DMG</h6>
-              <p className="mb-2">This calculates the total Elemental Burst DMG, including swirl. This calculation assumes:</p>
-              <ul>
-                <li>20 ticks of <span className="text-anemo">Burst DMG</span></li>
-                <li>15 ticks of <span className={`text-${eleKey}`}>absorption DMG</span></li>
-                <li>7 ticks of <span className={`text-${eleKey}`}>Swirl</span>, for one enemy, OR,</li>
-                <li>14 ticks of <span className={`text-${eleKey}`}>Swirl</span>, for multiple enemy, that Swirls eachother.</li>
-              </ul>
+              <Typography variant="h6">Full Elemental Burst DMG</Typography>
+              <Typography gutterBottom>This calculates the total Elemental Burst DMG, including swirl. This calculation assumes:</Typography>
+              <Typography component="div">
+                <ul>
+                  <li>20 ticks of <ColorText color="anemo">Burst DMG</ColorText></li>
+                  <li>15 ticks of <ColorText color={eleKey}>absorption DMG</ColorText></li>
+                  <li>7 ticks of <ColorText color={eleKey}>Swirl</ColorText>, for one enemy, OR,</li>
+                  <li>14 ticks of <ColorText color={eleKey}>Swirl</ColorText>, for multiple enemy, that Swirls eachother.</li>
+                </ul>
+              </Typography>
             </span></TransWrapper>
           },
           fields: absorbableEle.flatMap(eleKey => ([7, 14].map(swirlTicks => ({

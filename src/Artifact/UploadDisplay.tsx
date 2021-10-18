@@ -1,9 +1,12 @@
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { PhotoCamera } from '@mui/icons-material';
+import { Alert, Box, Button, CardContent, CircularProgress, Divider, Grid, IconButton, styled, Typography } from '@mui/material';
 import { useCallback, useEffect, useReducer, useState } from 'react';
-import { Button, Card, Col, Form, Modal, ProgressBar, Row } from 'react-bootstrap';
 import ReactGA from 'react-ga';
 import { createScheduler, createWorker, RecognizeResult, Scheduler } from 'tesseract.js';
+import CardDark from '../Components/Card/CardDark';
+import CloseButton from '../Components/CloseButton';
+import ColorText from '../Components/ColoredText';
+import ModalWrapper from '../Components/ModalWrapper';
 import usePromise from '../ReactHooks/usePromise';
 import Stat from '../Stat';
 import { allMainStatKeys, allSubstats, IArtifact, ICachedArtifact, ISubstat, MainStatKey, SubstatKey } from '../Types/artifact';
@@ -38,6 +41,10 @@ const schedulers = new BorrowManager(async (language): Promise<Scheduler> => {
   value.then(value => value.terminate())
 })
 
+const InputInvis = styled('input')({
+  display: 'none',
+});
+
 export default function UploadDisplay({ setState, setReset, artifactInEditor }: { setState: (art: IArtifact) => void, setReset: (reset: () => void) => void, artifactInEditor: boolean }) {
   const [modalShow, setModalShow] = useState(false)
 
@@ -52,7 +59,7 @@ export default function UploadDisplay({ setState, setReset, artifactInEditor }: 
 
   const image = firstProcessed?.imageURL ?? processingImageURL
   const { artifact, texts } = firstProcessed ?? {}
-  const fileName = firstProcessed?.fileName ?? firstOutstanding?.fileName ?? "Click here to upload Artifact screenshot files"
+  // const fileName = firstProcessed?.fileName ?? firstOutstanding?.fileName ?? "Click here to upload Artifact screenshot files"
 
   useEffect(() => {
     if (!artifactInEditor && artifact)
@@ -85,114 +92,132 @@ export default function UploadDisplay({ setState, setReset, artifactInEditor }: 
       window.removeEventListener('paste', pasteFunc)
   }, [setReset, removeCurrent, uploadFiles])
 
-  const img = image && <img src={image} className="w-100 h-auto" alt="Screenshot to parse for artifact values" />
-  return (<Row>
+  const onUpload = useCallback(
+    e => {
+      uploadFiles(e.target.files)
+      e.target.value = null // reset the value so the same file can be uploaded again...
+    },
+    [uploadFiles],
+  )
+
+  return (<>
     <ExplainationModal modalShow={modalShow} hide={() => setModalShow(false)} />
-    <Col xs={12} className="mb-2">
-      <Row>
-        <Col>
-          <h6 className="mb-0">Parse Artifact by Uploading Image</h6>
-        </Col>
-        <Col xs="auto"><Button variant="info" size="sm" onClick={() => {
+    <Grid container spacing={1} alignItems="center">
+      <Grid item>
+        <label htmlFor="icon-button-file">
+          <InputInvis accept="image/*" id="icon-button-file" multiple type="file" onChange={onUpload} />
+          <IconButton color="primary" aria-label="upload picture" component="span">
+            <PhotoCamera />
+          </IconButton>
+        </label>
+      </Grid>
+      <Grid item flexGrow={1}>
+        <label htmlFor="contained-button-file">
+          <InputInvis accept="image/*" id="contained-button-file" multiple type="file" onChange={onUpload} />
+          <Button component="span">
+            Parse Artifact by Uploading Image (or Ctrl-v here)
+          </Button>
+        </label>
+      </Grid>
+      <Grid item>
+        <Button color="info" onClick={() => {
           setModalShow(true)
           ReactGA.modalview('/artifact/how-to-upload')
-        }}>Show Me How!</Button></Col>
-      </Row>
-    </Col>
-    {remaining > 0 && <Col xs={12}>
-      <Card bg="lightcontent" text={"lightfont" as any} className="mb-2">
-        <Row>
-          <Col className="p-1 ml-2">Screenshots in file-queue: <b>{remaining}</b>{process.env.NODE_ENV === "development" &&
-            ` (Debug: Processed ${processed.length}/${maxProcessedCount}, Processing: ${outstanding.filter(entry => entry.result).length}/${maxProcessingCount}, Outstanding: ${outstanding.length})`}</Col>
-          <Col xs="auto"><Button size="sm" variant="danger" onClick={clearQueue}>Clear file-queue</Button></Col>
-        </Row>
-      </Card>
-    </Col>}
-    <Col xs={8} lg={image ? 4 : 0}>{img}</Col>
-    <Col xs={12} lg={image ? 8 : 12}>
-      {!firstProcessed && firstOutstanding &&
-        <div className="mb-2">
-          <h6 className="mb-0">Scanning current artifact</h6>
-          <ProgressBar animated now={100} />
+        }}>Show Me How!</Button>
+      </Grid>
+    </Grid>
+    {remaining > 0 && <CardDark sx={{ mt: 1, pl: 2 }} ><Grid container spacing={1} alignItems="center" >
+      <Grid item flexGrow={1}>
+        <Typography>
+          <span>
+            Screenshots in file-queue: <b>{remaining}</b>
+            {process.env.NODE_ENV === "development" && ` (Debug: Processed ${processed.length}/${maxProcessedCount}, Processing: ${outstanding.filter(entry => entry.result).length}/${maxProcessingCount}, Outstanding: ${outstanding.length})`}
+          </span>
+        </Typography>
+      </Grid>
+      <Grid item>
+        <Button size="small" color="error" onClick={clearQueue}>Clear file-queue</Button>
+      </Grid>
+    </Grid></CardDark>}
+    {image && <Grid container mt={1} spacing={1}>
+      <Grid item xs={6} lg={4}>
+        <Box component="img" src={image} width="100%" height="auto" alt="Screenshot to parse for artifact values" />
+      </Grid>
+      <Grid item xs={6} lg={8}>
+        {!firstProcessed && firstOutstanding && <Grid container spacing={1} alignItems="center">
+          <Grid item>
+            <CircularProgress size="1.5em" />
+          </Grid>
+          <Grid item flexGrow={1} >
+            <Typography variant="h6">Scanning current artifact</Typography>
+          </Grid>
+        </Grid>}
+        {texts && <div>
+          <div>{texts.slotKey}</div>
+          <div>{texts.mainStatKey}</div>
+          <div>{texts.mainStatVal}</div>
+          <div>{texts.rarity}</div>
+          <div>{texts.level}</div>
+          <div>{texts.substats}</div>
+          <div>{texts.setKey}</div>
         </div>}
-      <Form.File
-        type="file"
-        className="mb-0"
-        label={fileName}
-        onChange={e => {
-          uploadFiles(e.target.files)
-          e.target.value = null // reset the value so the same file can be uploaded again...
-        }}
-        accept="image/*"
-        custom
-        multiple
-      />
-      {texts && <div className="mb-2">
-        <div>{texts.slotKey}</div>
-        <div>{texts.mainStatKey}</div>
-        <div>{texts.mainStatVal}</div>
-        <div>{texts.rarity}</div>
-        <div>{texts.level}</div>
-        <div>{texts.substats}</div>
-        <div>{texts.setKey}</div>
-      </div>}
-      {Boolean(!image) && <Form.Label className="mb-0">Please Select an Image, or paste a screenshot here (Ctrl+V)</Form.Label>}
-    </Col>
-  </Row >)
+      </Grid>
+    </Grid>}
+  </ >)
 }
 function ExplainationModal({ modalShow, hide }: { modalShow: boolean, hide: () => void }) {
-  return <Modal show={modalShow} onHide={hide} size="xl" variant="success" contentClassName="bg-transparent">
-    <Card bg="darkcontent" text={"lightfont" as any} >
-      <Card.Header>
-        <Row>
-          <Col><Card.Title>How do Upload Screenshots for parsing</Card.Title></Col>
-          <Col xs="auto">
-            <Button variant="danger" onClick={hide} >
-              <FontAwesomeIcon icon={faTimes} /></Button>
-          </Col>
-        </Row>
-      </Card.Header>
-      <Card.Body>
-        <h5 className="text-warning">NOTE: Artifact Scanning currently only work for ENGLISH artifacts.</h5>
-        <Row>
-          <Col xs={8} md={4}>
-            <img alt="snippet of the screen to take" src={Snippet} className="w-100 h-auto" />
-          </Col>
-          <Col xs={12} md={8}>
-            <p>Using screenshots can dramatically decrease the amount of time you manually input in stats on the Genshin Optimizer.</p>
-            <h5>Where to snip the screenshot.</h5>
-            <p>In game, Open your bag, and navigate to the artifacts tab. Select the artifact you want to scan with Genshin Optimizer. <b>Only artifact from this screen can be scanned.</b></p>
-            <h6>Single artifact</h6>
-            <p>To take a screenshot, in Windows, the shortcut is <strong>Shift + WindowsKey + S</strong>. Once you selected the region, the image is automatically included in your clipboard.</p>
-            <h6>Multiple artifacts</h6>
-            <p>To take advantage of batch uploads, you can use a tool like <a href="https://picpick.app/" target="_blank" rel="noreferrer">PicPick</a> to create a macro to easily to screenshot a region to screenshot multiple artifacts at once.</p>
-            <h5>What to include in the screenshot.</h5>
-            <p>As shown in the Image, starting from the top with the artifact name, all the way to the set name(the text in green). </p>
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            <h5>Adding Screenshot to Genshin Optimizer</h5>
-            <p>At this point, you should have the artifact snippet either saved to your harddrive, or in your clipboard.</p>
-            <p className="mb-0">You can click on the box next to "Browse" to browse the files in your harddrive for multiple screenshots.</p>
-            <p>For single screenshots from the snippets, just press <strong>Ctrl + V</strong> to paste from your clipboard.</p>
-            <p>You should be able to see a Preview of your artifact snippet, and after waiting a few seconds, the artifact set and the substats will be filled in in the <b>Artifact Editor</b>.
-            </p>
-          </Col>
-          <Col xs={12}>
-            <h5>Finishing the Artifact</h5>
-            <p>Unfortunately, computer vision is not 100%. There will always be cases where something is not scanned properly. You should always double check the scanned artifact values! Once the artifact has been filled, Click on <strong>Add Artifact</strong> to finish editing the artifact.</p>
-            <img alt="main screen after importing stats" src={scan_art_main} className="w-75 h-auto" />
-          </Col>
-        </Row>
-      </Card.Body>
-      <Card.Footer>
-        <Button variant="danger" onClick={hide}>
-          <span>Close</span>
-        </Button>
-      </Card.Footer>
-    </Card>
-  </Modal>
+  return <ModalWrapper open={modalShow} onClose={hide} >
+    <CardDark>
+      <CardContent sx={{ py: 1 }}>
+        <Grid container>
+          <Grid item flexGrow={1}>
+            <Typography variant="subtitle1">How do Upload Screenshots for parsing</Typography>
+          </Grid>
+          <Grid item>
+            <CloseButton onClick={hide} />
+          </Grid>
+        </Grid>
+      </CardContent>
+      <Divider />
+      <CardContent>
+        <Alert variant="outlined" severity="warning">
+          NOTE: Artifact Scanning currently only work for <strong>ENGLISH</strong> artifacts.
+        </Alert>
+        <Grid container spacing={1} mt={1}>
+          <Grid item xs={8} md={4}>
+            <Box component="img" alt="snippet of the screen to take" src={Snippet} width="100%" height="auto" />
+          </Grid>
+          <Grid item xs={12} md={8}>
+            <Typography gutterBottom>Using screenshots can dramatically decrease the amount of time you manually input in stats on the Genshin Optimizer.</Typography>
+            <Typography variant="h5">Where to snip the screenshot.</Typography>
+            <Typography gutterBottom>In game, Open your bag, and navigate to the artifacts tab. Select the artifact you want to scan with Genshin Optimizer. <b>Only artifact from this screen can be scanned.</b></Typography>
+            <Typography variant="h6">Single artifact</Typography>
+            <Typography gutterBottom>To take a screenshot, in Windows, the shortcut is <strong>Shift + WindowsKey + S</strong>. Once you selected the region, the image is automatically included in your clipboard.</Typography>
+            <Typography variant="h6">Multiple artifacts</Typography>
+            <Typography gutterBottom>To take advantage of batch uploads, you can use a tool like <a href="https://picpick.app/" target="_blank" rel="noreferrer">PicPick</a> to create a macro to easily to screenshot a region to screenshot multiple artifacts at once.</Typography>
+            <Typography variant="h5">What to include in the screenshot.</Typography>
+            <Typography>As shown in the Image, starting from the top with the artifact name, all the way to the set name(the text in green). </Typography>
+          </Grid>
+          <Grid item xs={12} md={7}>
+            <Typography variant="h5">Adding Screenshot to Genshin Optimizer</Typography>
+            <Typography>At this point, you should have the artifact snippet either saved to your harddrive, or in your clipboard.</Typography>
+            <Typography gutterBottom>You can click on the box next to "Browse" to browse the files in your harddrive for multiple screenshots.</Typography>
+            <Typography>For single screenshots from the snippets, just press <strong>Ctrl + V</strong> to paste from your clipboard.</Typography>
+            <Typography gutterBottom>You should be able to see a Preview of your artifact snippet, and after waiting a few seconds, the artifact set and the substats will be filled in in the <b>Artifact Editor</b>.</Typography>
+            <Typography variant="h5">Finishing the Artifact</Typography>
+            <Typography>Unfortunately, computer vision is not 100%. There will always be cases where something is not scanned properly. You should always double check the scanned artifact values! Once the artifact has been filled, Click on <strong>Add Artifact</strong> to finish editing the artifact.</Typography>
+          </Grid>
+          <Grid item xs={8} md={5}>
+            <Box component="img" alt="main screen after importing stats" src={scan_art_main} width="100%" height="auto" />
+          </Grid>
+        </Grid>
+      </CardContent>
+      <Divider />
+      <CardContent sx={{ py: 1 }}>
+        <CloseButton large onClick={hide} />
+      </CardContent>
+    </CardDark>
+  </ModalWrapper>
 }
 
 const queueReducer = (queue: Queue, message: UploadMessage | ProcessingMessage | ProcessedMessage | PopMessage | ClearMessage): Queue => {
@@ -376,17 +401,17 @@ export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactShee
   }
 
   function unknownText<T>(value: T, name: Displayable, text: (arg: T) => Displayable) {
-    return <>Unknown {name} : Set to <span className="text-danger">{text(value)}</span></>
+    return <>Unknown {name} : Set to <ColorText color="error">{text(value)}</ColorText></>
   }
   function ambiguousText<T>(value: T, available: T[], name: Displayable, text: (arg: T) => Displayable) {
-    return <>Ambiguous {name} <span className="text-danger">{text(value)}</span> : May also be {
-      available.filter(v => v !== value).map((value, index) => <><b>{index > 0 ? "/" : ""}</b><span className="text-warning">{text(value)}</span></>)}</>
+    return <>Ambiguous {name} <ColorText color="error">{text(value)}</ColorText> : May also be {
+      available.filter(v => v !== value).map((value, index) => <><b>{index > 0 ? "/" : ""}</b><ColorText color="warning">{text(value)}</ColorText></>)}</>
   }
   function detectedText<T>(value: T, name: Displayable, text: (arg: T) => Displayable) {
-    return <>Detected {name} <span className="text-success">{text(value)}</span></>
+    return <>Detected {name} <ColorText color="success">{text(value)}</ColorText></>
   }
   function inferredText<T>(value: T, name: Displayable, text: (arg: T) => Displayable) {
-    return <>Inferred {name} <span className="text-warning">{text(value)}</span></>
+    return <>Inferred {name} <ColorText color="warning">{text(value)}</ColorText></>
   }
 
   function addText(key: keyof ICachedArtifact, available: Set<any>, name: Displayable, text: (value) => Displayable) {

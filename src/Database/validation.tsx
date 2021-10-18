@@ -164,7 +164,7 @@ export function parseCharacter(obj: any): ICharacter | undefined {
   if (!allHitModes.includes(hitMode)) hitMode = "avgHit"
   if (characterKey !== "Traveler") elementKey = undefined
   else if (!allElements.includes(elementKey)) elementKey = "anemo"
-  if (!allReactionModes.includes(reactionMode)) reactionMode = null
+  if (!allReactionModes.includes(reactionMode)) reactionMode = ""
   if (!allElements.includes(infusionAura)) infusionAura = ""
   if (typeof constellation !== "number" && constellation < 0 && constellation > 6) constellation = 0
   if (typeof ascension !== "number" ||
@@ -244,7 +244,7 @@ export function validateWeapon(flex: IWeapon, id: string): ICachedWeapon {
 export function parseWeapon(obj: any): IWeapon | undefined {
   if (typeof obj !== "object") return
 
-  let { key, level, ascension, refinement, location, } = obj
+  let { key, level, ascension, refinement, location, lock } = obj
   if (!allWeaponKeys.includes(key)) return
   if (typeof level !== "number" || level < 1 || level > 90) level = 1
   if (typeof ascension !== "number" || ascension < 0 || ascension > 6) ascension = 0
@@ -252,10 +252,10 @@ export function parseWeapon(obj: any): IWeapon | undefined {
   if (typeof refinement !== "number" || refinement < 1 || refinement > 5) refinement = 1
   if (!allCharacterKeys.includes(location)) location = ""
 
-  return { key, level, ascension, refinement, location, }
+  return { key, level, ascension, refinement, location, lock }
 }
 /// Return a new flex character from given character. All extra keys are removed
 export function removeWeaponCache(weapon: ICachedWeapon): IWeapon {
-  const { key, level, ascension, refinement, location, } = weapon
-  return { key, level, ascension, refinement, location, }
+  const { key, level, ascension, refinement, location, lock } = weapon
+  return { key, level, ascension, refinement, location, lock }
 }

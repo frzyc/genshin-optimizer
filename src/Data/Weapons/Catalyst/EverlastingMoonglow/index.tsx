@@ -1,5 +1,6 @@
 import { WeaponData } from 'pipeline'
 import { getTalentStatKey } from '../../../../Build/Build'
+import ColorText from '../../../../Components/ColoredText'
 import { TransWrapper } from '../../../../Components/Translate'
 import Stat from '../../../../Stat'
 import { IWeaponSheet } from '../../../../Types/weapon'
@@ -24,7 +25,7 @@ const weapon: IWeaponSheet = {
         variant: stats => stats.characterEle
       },
       {
-        text: <span className="text-warning">The normal damage increase is not currently being added to the character's normal damage as a singular damage number.</span>
+        text: <ColorText color="warning">The normal damage increase is not currently being added to the character's normal damage as a singular damage number.</ColorText>
       }
     ],
   }],

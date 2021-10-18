@@ -21,6 +21,7 @@ import { ICharacterSheet } from '../../../Types/character'
 import { Translate } from '../../../Components/Translate'
 import { plungeDocSection, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
+import ColorText from '../../../Components/ColoredText'
 const tr = (strKey: string) => <Translate ns="char_Ningguang_gen" key18={strKey} />
 const conditionals: IConditionals = {
   a4: { // StrategicReserve
@@ -63,7 +64,7 @@ const char: ICharacterSheet = {
         img: normal,
         sections: [
           {
-            text: stats => <span><strong>Normal Attack</strong> Shoots gems that deal <span className="text-geo">{stats.constellation >= 1 ? "AoE " : ""}Geo DMG</span>. Upon hit, this grants Ningguang 1 Star Jade.</span>,
+            text: stats => <span><strong>Normal Attack</strong> Shoots gems that deal <ColorText color="geo">{stats.constellation >= 1 ? "AoE " : ""}Geo DMG</ColorText>. Upon hit, this grants Ningguang 1 Star Jade.</span>,
             fields: [{
               text: `Normal Attack DMG`,
               formulaText: stats => <span>{data.normal.hit[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
@@ -71,10 +72,10 @@ const char: ICharacterSheet = {
               variant: stats => getTalentStatKeyVariant("normal", stats),
             }, {
               canShow: stats => stats.constellation >= 1,
-              text: <span>Gems do <span className="text-geo">AoE Geo DMG</span></span>,
+              text: <span>Gems do <ColorText color="geo">AoE Geo DMG</ColorText></span>,
             }]
           }, {
-            text: <span><strong>Charged Attack</strong> Consumes a certain amount of stamina to fire off a giant gem that deals <span className="text-geo">Geo DMG</span>. If Ningguang has any Star Jades, unleashing a Charged Attack will cause the Star Jades to be fired at the enemy as well, dealing additional DMG.</span>,
+            text: <span><strong>Charged Attack</strong> Consumes a certain amount of stamina to fire off a giant gem that deals <ColorText color="geo">Geo DMG</ColorText>. If Ningguang has any Star Jades, unleashing a Charged Attack will cause the Star Jades to be fired at the enemy as well, dealing additional DMG.</span>,
             fields: [{
               text: `Charged Attack DMG`,
               formulaText: stats => <span>{data.charged.dmg[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,

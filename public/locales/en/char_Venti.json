@@ -4,7 +4,7 @@
   "upcurrentDuration": "Upcurrent Duration",
   "regenEner": "Regen 15 Energy to Venti after effect ends",
   "fullBurstDMG": {
-    "text": "<0><0>Full Elemental Burst DMG</0><1>This calculates the total Elemental Burst DMG, including swirl. This calculation assumes:</1><2><0>20 ticks of <1>Burst DMG</1></0><1>15 ticks of <1>absorption DMG</1></1><2>7 ticks of <1>Swirl</1>, for one enemy, OR,</2><3>14 ticks of <1>Swirl</1>, for multiple enemy, that Swirls eachother.</3></2></0>",
+    "text": "<0><0>Full Elemental Burst DMG</0><1>This calculates the total Elemental Burst DMG, including swirl. This calculation assumes:</1><2><0><0>20 ticks of <1>Burst DMG</1></0><1>15 ticks of <1>absorption DMG</1></1><2>7 ticks of <1>Swirl</1>, for one enemy, OR,</2><3>14 ticks of <1>Swirl</1>, for multiple enemy, that Swirls eachother.</3></0></2></0>",
     "dmg": "<0>Total DMG (<1>{{swirlTicks}} Swirl ticks</1>)</0>"
   },
   "c6": "Targets who take DMG from <strong>Wind's Grand Ode</strong>",

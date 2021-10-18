@@ -1,3 +1,5 @@
+import { Box } from "@mui/material";
+import ColorText from "./Components/ColoredText";
 import Formula from "./Formula";
 import usePromise from "./ReactHooks/usePromise";
 import { amplifyingReactions, hitElements, hitMoves, hitTypes, transformativeReactions } from "./StatConstants";
@@ -10,10 +12,11 @@ export default class Stat {
     if (this instanceof Stat)
       throw Error('A static class cannot be instantiated.');
   }
-  static getStatName = (key, defVal = "") => <span className={`text-${StatData[key]?.variant} text-nowrap`}>{StatData[key]?.name ?? defVal}</span>
+  static getStatName = (key, defVal = "") => <ColorText color={StatData[key]?.variant} >{StatData[key]?.name ?? defVal}</ColorText>
 
   static getStatNameRaw = (key, defVal = "") => StatData[key]?.name || defVal
-  static getStatNameWithPercent = (key, defVal = "", variant = true) => <span className={`text-${variant && StatData[key]?.variant} text-nowrap`}>{StatData[key]?.name ?? defVal}{key?.endsWith('_') && "%"}</span>
+  static getStatNameWithPercent = (key, defVal = "", variant = true) =>
+    <ColorText color={variant ? StatData[key]?.variant : undefined}  >{StatData[key]?.name ?? defVal}{key?.endsWith('_') && "%"}</ColorText>
 
   static getStatVariant = (key, defVal = "") =>
     StatData[key]?.variant || defVal
@@ -65,8 +68,8 @@ function f(options, statKey) {
   let fixedUnit = Stat.fixedUnit(statKey)
   const value = (premod ? stats?.premod?.[statKey] : undefined) ?? stats?.[statKey]
   const printValue = value?.toFixed?.(fixedUnit) || value
-  const debug = process.env.NODE_ENV === "development" ? <code className="text-warning"> {statKey}</code> : null
-  return <span className="text-nowrap"><b>{statName}</b>{debug} <span className="text-info">{printValue}{statUnit}</span></span>
+  const debug = process.env.NODE_ENV === "development" ? <Box component="code" color="warning.main"> {statKey}</Box> : null
+  return <Box component="span" sx={{ whiteSpace: "nowrap" }}><b>{statName}</b>{debug} <ColorText color="info">{printValue}{statUnit}</ColorText></Box>
 }
 
 export const FormulaText = {

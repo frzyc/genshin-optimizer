@@ -1,17 +1,19 @@
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useCallback, useContext, useEffect, useMemo, useState } from 'react';
-import { Alert, ButtonGroup, Dropdown, Image, InputGroup, Nav, Tab } from 'react-bootstrap';
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-import Col from 'react-bootstrap/Col';
-import DropdownItem from 'react-bootstrap/esm/DropdownItem';
-import Row from 'react-bootstrap/Row';
+import { Button, ButtonGroup, Card, CardContent, Divider, Grid, MenuItem, Skeleton, Tab, Tabs, Typography } from '@mui/material';
+import { Suspense, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import { ArtifactSheet } from '../Artifact/ArtifactSheet';
 import { buildContext } from '../Build/Build';
-import CustomFormControl from '../Components/CustomFormControl';
-import { ambiguousLevel, ascensionMaxLevel, milestoneLevels } from '../Data/LevelData';
+import CardDark from '../Components/Card/CardDark';
+import CardLight from '../Components/Card/CardLight';
+import { CharacterSelectionModal } from '../Components/Character/CharacterSelectionModal';
+import CloseButton from '../Components/CloseButton';
+import CustomNumberInput, { CustomNumberInputButtonGroupWrapper } from '../Components/CustomNumberInput';
+import DropdownButton from '../Components/DropdownMenu/DropdownButton';
+import { EnemyExpandCard } from '../Components/EnemyEditor';
+import FormulaCalcCard from '../Components/FormulaCalcCard';
+import { DamageOptionsCard } from '../Components/HitModeEditor';
+import ImgIcon from '../Components/Image/ImgIcon';
 import ElementalData from '../Data/ElementalData';
+import { ambiguousLevel, ascensionMaxLevel, milestoneLevels } from '../Data/LevelData';
 import { DatabaseContext } from '../Database/Database';
 import useCharacterReducer from '../ReactHooks/useCharacterReducer';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
@@ -25,11 +27,29 @@ import Character from './Character';
 import CharacterArtifactPane from './CharacterDisplay/CharacterArtifactPane';
 import CharacterOverviewPane from './CharacterDisplay/CharacterOverviewPane';
 import CharacterTalentPane from './CharacterDisplay/CharacterTalentPane';
-import DamageOptionsAndCalculation from './CharacterDisplay/DamageOptionsAndCalculation';
-import { CharSelectionButton } from './CharacterSelection';
 import CharacterSheet from './CharacterSheet';
 import { initialCharacter } from './CharacterUtil';
 
+interface TabPanelProps {
+  children?: React.ReactNode;
+  value: string;
+  current: string | boolean;
+}
+
+function TabPanel({ children, current, value, ...other }: TabPanelProps) {
+  if (value !== current) return null
+  return <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={1000} />}>
+    <div
+      role="tabpanel"
+      hidden={value !== current}
+      id={`simple-tabpanel-${value}`}
+      aria-labelledby={`simple-tab-${value}`}
+      {...other}
+    >
+      {children}
+    </div>
+  </Suspense>
+}
 
 type CharacterDisplayCardProps = {
   characterKey: CharacterKey,
@@ -75,68 +95,72 @@ export default function CharacterDisplayCard({ characterKey, setCharacterKey, fo
     return deepClone(propNewBuild)
   }, [propNewBuild])
 
+  // set initial state to false, because it fails to check validity of the tab values on 1st load
+  const [tab, settab] = useState<string | boolean>(tabName ? tabName : (newBuild ? "newartifacts" : "character"))
+
+  const onTab = useCallback((e, v) => settab(v), [settab])
+
   const mainStatAssumptionLevel = newBuild?.mainStatAssumptionLevel ?? 0
-  const equippedBuild = useMemo(() => databaseToken && characterSheet && weaponSheet && artifactSheets && Character.calculateBuild(character, database, characterSheet, weaponSheet, artifactSheets, mainStatAssumptionLevel), [databaseToken, character, characterSheet, weaponSheet, artifactSheets, mainStatAssumptionLevel, database])
+  const equippedBuild = useMemo(() => databaseToken && characterSheet && weaponSheet && artifactSheets &&
+    Character.calculateBuild(character, database, characterSheet, weaponSheet, artifactSheets, mainStatAssumptionLevel),
+    [databaseToken, character, characterSheet, weaponSheet, artifactSheets, mainStatAssumptionLevel, database])
+
   // main CharacterDisplayCard
-  const DamageOptionsAndCalculationEle = sheets && <DamageOptionsAndCalculation sheets={sheets} character={character} />
-  return (<Card bg="darkcontent" text={"lightfont" as any} >
-    <Card.Header>
-      <Row>
-        <Col xs={"auto"} className="mr-auto">
-          {/* character selecter/display */}
-          <CharSelectDropdown characterSheet={characterSheet} character={character} weaponSheet={weaponSheet} setCharacterKey={setCharacterKey} />
-        </Col>
-        {Boolean(mainStatAssumptionLevel) && <Col xs="auto"><Alert className="mb-0 py-1 h-100" variant="orange" ><b>Assume Main Stats are Level {mainStatAssumptionLevel}</b></Alert></Col>}
-        {Boolean(onClose) && <Col xs="auto" >
-          <Button variant="danger" onClick={onClose}>
-            <FontAwesomeIcon icon={faTimes} /></Button>
-        </Col>}
-      </Row>
-    </Card.Header>
-    {characterKey && sheets && characterSheet && weaponSheet && <Card.Body>
-      <buildContext.Provider value={{ newBuild, equippedBuild, compareBuild, setCompareBuild }}>
-        <Tab.Container defaultActiveKey={tabName ? tabName : (newBuild ? "newartifacts" : "character")} mountOnEnter unmountOnExit>
-          <Nav variant="pills" className="mb-2 mx-0" fill>
-            <Nav.Item >
-              <Nav.Link eventKey="character"><h5 className="mb-0">Character</h5></Nav.Link>
-            </Nav.Item>
-            {newBuild ? <Nav.Item>
-              <Nav.Link eventKey="newartifacts"><h5 className="mb-0">New Artifacts</h5></Nav.Link>
-            </Nav.Item> : null}
-            <Nav.Item>
-              <Nav.Link eventKey="artifacts"><h5 className="mb-0">{newBuild ? "Current Artifacts" : "Artifacts"}</h5></Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link eventKey="talent"><h5 className="mb-0">Talents</h5></Nav.Link>
-            </Nav.Item>
-          </Nav>
-          <Tab.Content>
-            <Tab.Pane eventKey="character">
-              {DamageOptionsAndCalculationEle}
-              <CharacterOverviewPane characterSheet={characterSheet} weaponSheet={weaponSheet} character={character} />
-            </Tab.Pane>
-            <buildContext.Provider value={{ newBuild: undefined, equippedBuild, compareBuild, setCompareBuild }}>
-              <Tab.Pane eventKey="artifacts" >
-                {DamageOptionsAndCalculationEle}
-                <CharacterArtifactPane sheets={sheets} character={character} />
-              </Tab.Pane>
-            </buildContext.Provider>
-            {newBuild ? <Tab.Pane eventKey="newartifacts" >
-              {DamageOptionsAndCalculationEle}
-              <CharacterArtifactPane sheets={sheets} character={character} />
-            </Tab.Pane> : null}
-            <Tab.Pane eventKey="talent">
-              {DamageOptionsAndCalculationEle}
-              <CharacterTalentPane characterSheet={characterSheet} character={character} />
-            </Tab.Pane>
-          </Tab.Content>
-        </Tab.Container>
-      </buildContext.Provider>
-    </Card.Body>}
-    {footer && <Card.Footer>
-      {footer}
-    </Card.Footer>}
-  </Card>)
+  return <CardDark >
+    <buildContext.Provider value={{ newBuild, equippedBuild, compareBuild, setCompareBuild }}>
+      <CardContent sx={{
+        "> div:not(:last-child)": { mb: 1 },
+      }}>
+        <Grid container spacing={1}>
+          <Grid item flexGrow={1}>
+            <CharSelectDropdown characterSheet={characterSheet} character={character} weaponSheet={weaponSheet} setCharacterKey={setCharacterKey} />
+          </Grid>
+          {!!mainStatAssumptionLevel && <Grid item><Card sx={{ p: 1, bgcolor: t => t.palette.warning.dark }}><Typography><strong>Assume Main Stats are Level {mainStatAssumptionLevel}</strong></Typography></Card></Grid>}
+          {!!onClose && <Grid item>
+            <CloseButton onClick={onClose} />
+          </Grid>}
+        </Grid>
+        <CardLight>
+          <Tabs
+            onChange={onTab}
+            value={tab}
+            variant="fullWidth"
+          >
+            <Tab value="character" label="Character" />
+            {!!newBuild && <Tab value="newartifacts" label="New Artifacts" />}
+            <Tab value="artifacts" label={newBuild ? "Current Artifacts" : "Artifacts"} />
+            <Tab value="talent" label="Talents" />
+          </Tabs>
+        </CardLight>
+        <DamageOptionsCard character={character} />
+        {!!sheets && <FormulaCalcCard sheets={sheets} />}
+        <EnemyExpandCard character={character} />
+
+        {/* Character Panel */}
+        {characterSheet && weaponSheet && <TabPanel value="character" current={tab}>
+          <CharacterOverviewPane characterSheet={characterSheet} weaponSheet={weaponSheet} character={character} />
+        </TabPanel >}
+        {/* Artifacts Panel */}
+        {sheets && <buildContext.Provider value={{ newBuild: undefined, equippedBuild, compareBuild, setCompareBuild }}>
+          <TabPanel value="artifacts" current={tab} >
+            <CharacterArtifactPane sheets={sheets} character={character} />
+          </TabPanel >
+        </buildContext.Provider>}
+        {/* new build panel */}
+        {newBuild && sheets && <TabPanel value="newartifacts" current={tab} >
+          <CharacterArtifactPane sheets={sheets} character={character} />
+        </TabPanel >}
+        {/* talent panel */}
+        {characterSheet && <TabPanel value="talent" current={tab}>
+          <CharacterTalentPane characterSheet={characterSheet} character={character} />
+        </TabPanel >}
+      </CardContent>
+      {!!footer && <Divider />}
+      {footer && <CardContent sx={{ py: 1 }}>
+        {footer}
+      </CardContent>}
+    </buildContext.Provider>
+  </CardDark>
 }
 
 type CharSelectDropdownProps = {
@@ -147,10 +171,11 @@ type CharSelectDropdownProps = {
   setCharacterKey?: (any: CharacterKey) => void
 }
 function CharSelectDropdown({ characterSheet, weaponSheet, character, character: { key: characterKey, elementKey = "anemo", level = 1, ascension = 0 }, disabled, setCharacterKey }: CharSelectDropdownProps) {
+  const [showModal, setshowModal] = useState(false)
   const characterDispatch = useCharacterReducer(characterKey)
   const HeaderIconDisplay = characterSheet ? <span >
-    <Image src={characterSheet.thumbImg} className="thumb-small my-n1 ml-n2" roundedCircle />
-    <h6 className="d-inline"> {characterSheet.name} </h6>
+    <ImgIcon src={characterSheet.thumbImg} sx={{ mr: 1 }} />
+    {characterSheet.name}
   </span> : <span>Select a Character</span>
   const setLevel = useCallback((level) => {
     level = clamp(level, 1, 90)
@@ -162,38 +187,31 @@ function CharSelectDropdown({ characterSheet, weaponSheet, character, character:
     if (ascension === lowerAscension) characterDispatch({ ascension: ascension + 1 })
     else characterDispatch({ ascension: lowerAscension })
   }, [characterDispatch, ascension, level])
-  return <>{!disabled ? <InputGroup >
-    <ButtonGroup as={InputGroup.Prepend}>
-      <CharSelectionButton characterSheet={characterSheet} onSelect={setCharacterKey} />
-      {characterSheet?.sheet && "talents" in characterSheet?.sheet && <Dropdown as={ButtonGroup}>
-        <Dropdown.Toggle as={Button} className={`text-${elementKey}`}>
-          <strong>{ElementalData[elementKey].name}</strong>
-        </Dropdown.Toggle>
-        <Dropdown.Menu >
-          {Object.keys(characterSheet.sheet.talents).map(eleKey =>
-            <Dropdown.Item key={eleKey} className={`text-${eleKey}`} onClick={() => characterDispatch({ elementKey: eleKey })}><strong>{ElementalData[eleKey].name}</strong></Dropdown.Item>)}
-        </Dropdown.Menu>
-      </Dropdown>}
+  return <>{!disabled ? <>
+    <CharacterSelectionModal show={showModal} onHide={() => setshowModal(false)} onSelect={setCharacterKey} />
+    <ButtonGroup sx={{ bgcolor: t => t.palette.contentDark.main }} >
+      <Button disabled={!setCharacterKey} onClick={() => setshowModal(true)} startIcon={<ImgIcon src={characterSheet?.thumbImg} />} >{characterSheet?.name ?? "Select a Character"}</Button>
+      {characterSheet?.sheet && "talents" in characterSheet?.sheet && <DropdownButton title={ElementalData[elementKey].name}>
+        {Object.keys(characterSheet.sheet.talents).map(eleKey =>
+          <MenuItem key={eleKey} selected={elementKey === eleKey} disabled={elementKey === eleKey} onClick={() => characterDispatch({ elementKey: eleKey })}>
+            <strong>{ElementalData[eleKey].name}</strong></MenuItem>)}
+      </DropdownButton>}
+      <CustomNumberInputButtonGroupWrapper >
+        <CustomNumberInput onChange={setLevel} value={level}
+          startAdornment="Lvl. "
+          inputProps={{ min: 1, max: 90, sx: { textAlign: "center" } }}
+          sx={{ width: "100%", height: "100%", pl: 2 }}
+          disabled={!characterSheet} />
+      </CustomNumberInputButtonGroupWrapper>
+      <Button sx={{ pl: 1 }} disabled={!ambiguousLevel(level) || !characterSheet} onClick={setAscension}><strong>/ {ascensionMaxLevel[ascension]}</strong></Button>
+      <DropdownButton title={"Select Level"} disabled={!characterSheet}>
+        {milestoneLevels.map(([lv, as]) => {
+          const sameLevel = lv === ascensionMaxLevel[as]
+          const lvlstr = sameLevel ? `Lv. ${lv}` : `Lv. ${lv}/${ascensionMaxLevel[as]}`
+          const selected = lv === level && as === ascension
+          return <MenuItem key={`${lv}/${as}`} selected={selected} disabled={selected} onClick={() => characterDispatch({ level: lv, ascension: as })}>{lvlstr}</MenuItem>
+        })}
+      </DropdownButton>
     </ButtonGroup>
-    <InputGroup.Prepend>
-      <InputGroup.Text><strong>Lvl. </strong></InputGroup.Text>
-    </InputGroup.Prepend>
-
-    <InputGroup.Append>
-      <CustomFormControl placeholder={undefined} className="h-100" onChange={setLevel} value={level} min={1} max={90} disabled={!characterSheet} />
-    </InputGroup.Append>
-    <ButtonGroup as={InputGroup.Append}>
-      <Button disabled={!ambiguousLevel(level) || !characterSheet} onClick={setAscension}><strong>/ {ascensionMaxLevel[ascension]}</strong></Button>
-      <Dropdown as={ButtonGroup} >
-        <Dropdown.Toggle as={Button} disabled={!characterSheet}>Select Level</Dropdown.Toggle>
-        <Dropdown.Menu>
-          {milestoneLevels.map(([lv, as]) => {
-            const sameLevel = lv === ascensionMaxLevel[as]
-            const lvlstr = sameLevel ? `Lv. ${lv}` : `Lv. ${lv}/${ascensionMaxLevel[as]}`
-            return <DropdownItem key={`${lv}/${as}`} onClick={() => characterDispatch({ level: lv, ascension: as })}>{lvlstr}</DropdownItem>
-          })}
-        </Dropdown.Menu>
-      </Dropdown>
-    </ButtonGroup>
-  </InputGroup> : <span>{HeaderIconDisplay} {characterSheet && weaponSheet && Character.getLevelString(character)}</span>}</>
+  </> : <Typography variant="h6">{HeaderIconDisplay} {characterSheet && weaponSheet && Character.getLevelString(character)}</Typography>}</>
 }

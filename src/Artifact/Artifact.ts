@@ -71,6 +71,10 @@ export default class Artifact {
     rarity => 100 * Math.max(...allSubstats.map(substat =>
       Artifact.maxSubstatValues(substat, rarity) /
       Artifact.maxSubstatValues(substat, maxStar))))
+  /**
+   * @deprecated just use the global
+   * @returns 
+   */
   static getSubstatKeys = (): readonly SubstatKey[] =>
     allSubstats
   static totalPossibleRolls = (rarity: Rarity): number =>

@@ -1,6 +1,6 @@
-import { Badge } from "react-bootstrap"
 import { ArtifactSheet } from "../Artifact/ArtifactSheet"
 import { initialBuildSettings } from "../Build/BuildSetting"
+import SqBadge from "../Components/SqBadge"
 import { ICachedCharacter } from "../Types/character"
 import { allSlotKeys, ArtifactSetKey, CharacterKey, ElementKey } from "../Types/consts"
 import { objectFromKeyMap } from "../Util/Util"
@@ -19,7 +19,7 @@ export function getFormulaTargetsDisplayHeading(key: string, { characterSheet, w
     return (weaponSheet?.name ?? subkey)
   } else if (key.startsWith("artifact_")) {
     const [, setKey, num] = key.split('_')
-    return <span>{artifactSheets[setKey]?.name} <Badge variant="success">{num}-Set</Badge></span>
+    return <span>{artifactSheets[setKey]?.name} <SqBadge color="success">{num}-Set</SqBadge></span>
   }
   return ""
 }
@@ -30,7 +30,7 @@ export function initialCharacter(key: CharacterKey): ICachedCharacter {
     level: 1,
     ascension: 0,
     hitMode: "avgHit",
-    reactionMode: null,
+    reactionMode: "",
     equippedArtifacts: objectFromKeyMap(allSlotKeys, () => ""),
     equippedWeapon: "",
     conditionalValues: {},

@@ -10,7 +10,7 @@ import { getDBVersion, setDBVersion } from "./utils"
 // 2. Call the added `migrateV<x>ToV<x+1>` from `migrate`
 // 3. Update `currentDBVersion`
 
-export const currentDBVersion = 11
+export const currentDBVersion = 12
 
 export function migrate(storage: DBStorage): { migrated: boolean } {
   const version = getDBVersion(storage)
@@ -26,6 +26,7 @@ export function migrate(storage: DBStorage): { migrated: boolean } {
   if (version < 9) { migrateV8ToV9(storage); setDBVersion(storage, 9) }
   if (version < 10) { migrateV9ToV10(storage); setDBVersion(storage, 10) }
   if (version < 11) { migrateV10ToV11(storage); setDBVersion(storage, 11) }
+  if (version < 12) { migrateV11ToV12(storage); setDBVersion(storage, 12) }
 
   if (version > currentDBVersion) throw new Error(`Database version ${version} is not supported`)
 
@@ -264,7 +265,7 @@ function migrateV9ToV10(storage: DBStorage) {
   }
 }
 
-// 6.1.9 - present
+// 6.1.9 - 6.2.3
 function migrateV10ToV11(storage: DBStorage) {
   for (const key of storage.keys) {
     if (key.startsWith("char_")) {
@@ -277,6 +278,21 @@ function migrateV10ToV11(storage: DBStorage) {
       character.bonusStats = baseStatOverrides
       delete character.baseStatOverrides
       storage.set(key, character)
+    }
+  }
+}
+
+// 7.0.0 - present
+function migrateV11ToV12(storage: DBStorage) {
+  //UI was changed quite a lot, deleting state should be easiest for migration.
+  storage.remove("CharacterDisplay.state")
+  storage.remove("WeaponDisplay.state")
+
+  for (const key of storage.keys) {
+    if (key.startsWith("weapon_")) {
+      const weapon = storage.get(key)
+      if (weapon.lock === undefined) weapon.lock = false
+      storage.set(key, weapon)
     }
   }
 }

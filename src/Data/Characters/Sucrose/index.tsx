@@ -23,12 +23,13 @@ import { absorbableEle } from '../dataUtil'
 import { Translate } from '../../../Components/Translate'
 import { chargedDocSection, normalDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
+import ColorText from '../../../Components/ColoredText'
 const tr = (strKey: string) => <Translate ns="char_Sucrose_gen" key18={strKey} />
 const conditionals: IConditionals = {
   q: { // Absorption
     name: "Elemental Absorption",
     states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
-      name: <span className={`text-${eleKey}`}><b>{ElementalData[eleKey].name}</b></span>,
+      name: <ColorText color={eleKey}><b>{ElementalData[eleKey].name}</b></ColorText>,
       fields: [{
         canShow: stats => {
           const value = stats.conditionalValues?.character?.Sucrose?.sheet?.talent?.q as IConditionalValue | undefined
@@ -51,7 +52,7 @@ const conditionals: IConditionals = {
       formulaText: stats => <span>20% {Stat.printStat("eleMas", stats, true)}</span>,
       formula: formula.passive2.em
     }, {
-      text: <span className="text-warning">Does not apply to Sucrose</span>
+      text: <ColorText color="warning">Does not apply to Sucrose</ColorText>
     }, {
       text: "Duration",
       value: "8s"

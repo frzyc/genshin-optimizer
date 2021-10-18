@@ -1,61 +1,68 @@
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Box, Button, CardContent, Grid, Pagination, Skeleton, ToggleButton, Typography } from '@mui/material';
 import i18next from 'i18next';
-import React, { lazy, useCallback, useContext, useEffect, useReducer, useRef, useState } from 'react';
-import { Button, ButtonGroup, Card, Col, Container, Image, Row, ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
+import React, { lazy, Suspense, useCallback, useContext, useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import ReactGA from 'react-ga';
-import Assets from '../Assets/Assets';
+import CardDark from '../Components/Card/CardDark';
+import SolidToggleButtonGroup from '../Components/SolidToggleButtonGroup';
+import SortByButton from '../Components/SortByButton';
+import { Stars } from '../Components/StarDisplay';
+import WeaponToggle from '../Components/ToggleButton/WeaponToggle';
 import { DatabaseContext } from '../Database/Database';
 import { dbStorage } from '../Database/DBStorage';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
 import usePromise from '../ReactHooks/usePromise';
-import { allWeaponTypeKeys, CharacterKey, WeaponKey } from '../Types/consts';
+import { allRarities, WeaponKey, WeaponTypeKey } from '../Types/consts';
+import SortByFilters from '../Util/SortByFilters';
+import { clamp } from '../Util/Util';
+import WeaponSortOptions, { sortKeys } from '../Util/WeaponSort';
 import WeaponCard from './WeaponCard';
-import { WeaponSelectionModal } from './WeaponSelection';
+import WeaponSelectionModal from '../Components/Weapon/WeaponSelectionModal';
 import WeaponSheet from './WeaponSheet';
 import { initialWeapon } from './WeaponUtil';
 
-//lazy load the character display
+//lazy load the weapon display
 const WeaponDisplayCard = lazy(() => import('./WeaponDisplayCard'))
-const toggle = {
-  level: "Level",
-  rarity: "Rarity"
-} as const
 
-function filterReducer(oldFilter, newFilter) {
-  if (newFilter === oldFilter)
-    return ""
-  return newFilter
+const initialState = () => ({
+  editWeaponId: "",
+  sortType: sortKeys[0],
+  ascending: false,
+  rarity: [5, 4],
+  weaponType: "" as WeaponTypeKey | "",
+  maxNumToDisplay: 30,
+})
+export type stateType = ReturnType<typeof initialState>
+
+function filterReducer(state: stateType, action): stateType {
+  return { ...state, ...action }
+}
+function filterInit(initial = initialState()): stateType {
+  return { ...initial, ...(dbStorage.get("WeaponDisplay.state") ?? {}) }
 }
 
 export default function WeaponDisplay(props) {
   const database = useContext(DatabaseContext)
-  const [weaponIdToEdit, setWeaponIdToEdit] = useState("" as CharacterKey | "")
-  const [sortBy, setsortBy] = useState(() => Object.keys(toggle)[0])
-  const [weaponFilter, weaponFilterDispatch] = useReducer(filterReducer, "")
-  const [newCharacter, setnewCharacter] = useState(false)
-  const [, forceUpdate] = useForceUpdate()
-  const scrollRef = useRef(null as any)
+  const [state, stateDisplatch] = useReducer(filterReducer, initialState(), filterInit)
+  const [newWeaponModalShow, setnewWeaponModalShow] = useState(false)
+  const [dbDirty, forceUpdate] = useForceUpdate()
+  const scrollRef = useRef<HTMLDivElement>(null)
+  const invScrollRef = useRef<HTMLDivElement>(null)
+  const [pageIdex, setpageIdex] = useState(0)
+  //set follow, should run only once
   useEffect(() => {
     ReactGA.pageview('/weapon')
-    const saved = dbStorage.get("WeaponDisplay.state")
-    if (saved) {
-      const { charIdToEdit, sortBy, weaponFilter } = saved
-      setWeaponIdToEdit(charIdToEdit)
-      setsortBy(sortBy)
-      allWeaponTypeKeys.includes(weaponFilter) && weaponFilterDispatch(weaponFilter)
-    }
     return database.followAnyWeapon(forceUpdate)
   }, [forceUpdate, database])
-  const allWeaponSheets = usePromise(WeaponSheet.getAll(), []) ?? {}
-  const sortingFunc = {
-    level: (wKey) => database._getWeapon(wKey)?.level ?? 0,
-    rarity: (wKey) => allWeaponSheets[database._getWeapon(wKey)?.key as any]?.rarity
-  }
+
+  //save to db
   useEffect(() => {
-    const save = { charIdToEdit: weaponIdToEdit, sortBy, weaponFilter }
-    dbStorage.set("WeaponDisplay.state", save)
-  }, [weaponIdToEdit, sortBy, weaponFilter])
+    dbStorage.set("WeaponDisplay.state", state)
+  }, [state])
+
+  const allWeaponSheets = usePromise(WeaponSheet.getAll(), [])
+
   const deleteWeapon = useCallback(async (key) => {
     const weapon = database._getWeapon(key)
     if (!weapon) return
@@ -63,101 +70,133 @@ export default function WeaponDisplay(props) {
 
     if (!window.confirm(`Are you sure you want to remove ${name}?`)) return
     database.removeWeapon(key)
-    if (weaponIdToEdit === key)
-      setWeaponIdToEdit("")
-  }, [weaponIdToEdit, setWeaponIdToEdit, database])
+    if (state.editWeaponId === key)
+      stateDisplatch({ editWeaponId: "" })
+  }, [state.editWeaponId, stateDisplatch, database])
 
-  const editCharacter = useCallback(key => {
-    setWeaponIdToEdit(key)
+  const editWeapon = useCallback(key => {
+    stateDisplatch({ editWeaponId: key })
     setTimeout(() => {
       scrollRef.current?.scrollIntoView({ behavior: "smooth" })
     }, 500);
-  }, [setWeaponIdToEdit, scrollRef])
+  }, [stateDisplatch, scrollRef])
 
   const newWeapon = useCallback(
     (weaponKey: WeaponKey) => {
-      editCharacter(database.createWeapon(initialWeapon(weaponKey)))
+      editWeapon(database.createWeapon(initialWeapon(weaponKey)))
     },
-    [database, editCharacter])
+    [database, editWeapon])
 
-  const weaponIdList = database.weapons.keys.filter(wKey => {
-    const dbWeapon = database._getWeapon(wKey)
-    if (!dbWeapon) return false
-    if (weaponFilter && weaponFilter !== allWeaponSheets[dbWeapon.key]?.weaponType) return false
-    return true
-  }).sort((a, b) => {
-    if (sortBy === "level") {
-      const diff = sortingFunc["level"](b) - sortingFunc["level"](a)
-      if (diff) return diff
-      return sortingFunc["rarity"](b) - sortingFunc["rarity"](a)
-    } else {
-      const diff = sortingFunc["rarity"](b) - sortingFunc["rarity"](a)
-      if (diff) return diff
-      return sortingFunc["level"](b) - sortingFunc["level"](a)
-    }
-  })
-  return <Container ref={scrollRef} className="mt-2">
+  const sortOptions = useMemo(() => allWeaponSheets && WeaponSortOptions(database, allWeaponSheets), [database, allWeaponSheets])
+
+  const { weaponIdList, totalWeaponNum } = useMemo(() => {
+    const keys = database.weapons.keys
+    if (!sortOptions) return { weaponIdList: [], totalWeaponNum: keys.length }
+    const weaponIdList = keys.filter(wKey => {
+      const dbWeapon = database._getWeapon(wKey)
+      if (!dbWeapon) return false
+      if (state.weaponType && state.weaponType !== allWeaponSheets?.[dbWeapon.key]?.weaponType) return false
+      if (!state.rarity.includes(allWeaponSheets?.[dbWeapon.key]?.rarity as any)) return false
+      return true
+    }).sort(SortByFilters(state.sortType, state.ascending, sortOptions));
+    return dbDirty && { weaponIdList, totalWeaponNum: keys.length }
+  }, [dbDirty, allWeaponSheets, database, sortOptions, state.sortType, state.ascending, state.rarity, state.weaponType])
+
+  const { weaponIdsToShow, numPages, currentPageIndex } = useMemo(() => {
+    const numPages = Math.ceil(weaponIdList.length / state.maxNumToDisplay)
+    const currentPageIndex = clamp(pageIdex, 0, numPages - 1)
+    return { weaponIdsToShow: weaponIdList.slice(currentPageIndex * state.maxNumToDisplay, (currentPageIndex + 1) * state.maxNumToDisplay), numPages, currentPageIndex }
+  }, [weaponIdList, pageIdex, state.maxNumToDisplay])
+
+  //for pagination
+  const totalShowing = weaponIdList.length !== totalWeaponNum ? `${weaponIdList.length}/${totalWeaponNum}` : `${totalWeaponNum}`
+  const setPage = useCallback(
+    (e, value) => {
+      invScrollRef.current?.scrollIntoView({ behavior: "smooth" })
+      setpageIdex(value - 1);
+    },
+    [setpageIdex, invScrollRef],
+  )
+
+  const resetEditWeapon = useCallback(() => stateDisplatch({ editWeaponId: "" }), [stateDisplatch])
+
+  const { editWeaponId } = state
+  return <Box sx={{
+    mt: 1,
+    // select all excluding last
+    "> div": { mb: 1 },
+  }}>
     {/* editor/character detail display */}
-    {weaponIdToEdit ? <Row className="mt-2"><Col>
+    {!!editWeaponId && <Box ref={scrollRef} >
       <WeaponDisplayCard
-        weaponId={weaponIdToEdit}
+        weaponId={editWeaponId}
         footer
-        onClose={() => setWeaponIdToEdit("")}
+        onClose={resetEditWeapon}
       />
-    </Col></Row> : null}
-    <Card bg="darkcontent" text={"lightfont" as any} className="mt-2">
-      <Card.Body className="p-2">
-        <Row>
-          <Col>
-            <ButtonGroup >
-              {allWeaponTypeKeys.map(weaponType =>
-                <Button key={weaponType} variant={(!weaponFilter || weaponFilter === weaponType) ? "success" : "secondary"} className="py-1 px-2" onClick={() => weaponFilterDispatch(weaponType)}>
-                  <h3 className="mb-0"><Image src={Assets.weaponTypes?.[weaponType]} className="inline-icon" /></h3></Button>)}
-            </ButtonGroup>
-          </Col>
-          <Col xs="auto">
-            <span>Sort by: </span>
-            <ToggleButtonGroup type="radio" name="level" value={sortBy} onChange={setsortBy}>
-              {Object.entries(toggle).map(([key, text]) =>
-                <ToggleButton key={key} value={key} variant={sortBy === key ? "success" : "primary"}>
-                  <h6 className="mb-0">{text}</h6>
-                </ToggleButton>)}
-            </ToggleButtonGroup>
-          </Col>
-        </Row>
-      </Card.Body>
-    </Card>
-    <Row className="mt-2">
-      {!weaponIdToEdit && <Col lg={4} md={6} className="mb-2">
-        <Card className="h-100" bg="darkcontent" text={"lightfont" as any}>
-          <Card.Header className="pr-2">
-            <span>Add New Weapon</span>
-          </Card.Header>
-          <Card.Body className="d-flex flex-column justify-content-center">
-            <Row className="d-flex flex-row justify-content-center">
-              <Col xs="auto">
-                <Button onClick={() => setnewCharacter(true)}>
-                  <h1><FontAwesomeIcon icon={faPlus} className="fa-fw" /></h1>
-                </Button>
-                <WeaponSelectionModal show={newCharacter} onHide={() => setnewCharacter(false)} onSelect={newWeapon} />
-              </Col>
-            </Row>
-          </Card.Body>
-        </Card>
-      </Col>}
-      {weaponIdList.map(weaponId =>
-        <Col key={weaponId} lg={4} md={6} className="mb-2">
-          <WeaponCard
-            weaponId={weaponId}
-            // header={undefined}
-            cardClassName="h-100"
-            // characterKey={charKey}
-            onDelete={deleteWeapon}
-            onEdit={editCharacter}
-            onClick={editCharacter}
-            footer
+    </Box>}
+    <CardDark ref={invScrollRef} sx={{ p: 2, pb: 1 }}>
+      <Grid container spacing={1} sx={{ mb: 1 }}>
+        <Grid item>
+          <WeaponToggle sx={{ height: "100%" }} onChange={weaponType => stateDisplatch({ weaponType })} value={state.weaponType} size="small" />
+        </Grid>
+        <Grid item flexGrow={1}>
+          <SolidToggleButtonGroup sx={{ height: "100%" }} onChange={(e, newVal) => stateDisplatch({ rarity: newVal })} value={state.rarity} size="small">
+            {allRarities.map(star => <ToggleButton key={star} value={star}><strong>{star}{' '}</strong><Stars stars={1} /></ToggleButton>)}
+          </SolidToggleButtonGroup>
+        </Grid>
+        <Grid item >
+          <SortByButton sx={{ height: "100%" }} sortKeys={sortKeys}
+            value={state.sortType} onChange={sortType => stateDisplatch({ sortType })}
+            ascending={state.ascending} onChangeAsc={ascending => stateDisplatch({ ascending })}
           />
-        </Col>)}
-    </Row>
-  </Container>
+        </Grid>
+      </Grid>
+      <Grid container alignItems="flex-end">
+        <Grid item flexGrow={1}>
+          <Pagination count={numPages} page={currentPageIndex + 1} onChange={setPage} />
+        </Grid>
+        <Grid item>
+          <Typography color="text.secondary">
+            {/* <Trans t={t} i18nKey="showingNum" count={numShowing} value={total} > */}
+            Showing <b>{weaponIdsToShow.length}</b> out of {totalShowing} Weapons
+            {/* </Trans> */}
+          </Typography>
+        </Grid>
+      </Grid>
+    </CardDark>
+    <Grid container spacing={1}>
+      <Suspense fallback={<Grid item xs={12}><Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 500 }} /></Grid>}>
+        {!editWeaponId && <Grid item xs={6} md={4} lg={4} xl={3}>
+          <CardDark sx={{ height: "100%", width: "100%", minHeight: 300, display: "flex", flexDirection: "column" }}>
+            <CardContent>
+              <Typography sx={{ textAlign: "center" }}>Add New Weapon</Typography>
+            </CardContent>
+            <WeaponSelectionModal show={newWeaponModalShow} onHide={() => setnewWeaponModalShow(false)} onSelect={newWeapon} />
+            <Box sx={{
+              flexGrow: 1,
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center"
+            }}
+            >
+              <Button onClick={() => setnewWeaponModalShow(true)} sx={{
+                borderRadius: "1em"
+              }}>
+                <Typography variant="h1"><FontAwesomeIcon icon={faPlus} className="fa-fw" /></Typography>
+              </Button>
+            </Box>
+          </CardDark>
+        </Grid>}
+        {weaponIdsToShow.map(weaponId =>
+          <Grid item key={weaponId} xs={12} sm={6} md={4} lg={4} xl={3} >
+            <WeaponCard
+              weaponId={weaponId}
+              onDelete={deleteWeapon}
+              onEdit={editWeapon}
+              canEquip
+            />
+          </Grid>)}
+      </Suspense>
+    </Grid>
+  </Box>
 }

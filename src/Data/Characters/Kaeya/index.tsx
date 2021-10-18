@@ -21,11 +21,12 @@ import { ICharacterSheet } from '../../../Types/character'
 import { Translate } from '../../../Components/Translate'
 import { chargedHitsDocSection, normalDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
+import ColorText from '../../../Components/ColoredText'
 const tr = (strKey: string) => <Translate ns="char_Kaeya_gen" key18={strKey} />
 const conditionals: IConditionals = {
   c1: { // ColdBloodedStrike
     canShow: stats => stats.constellation >= 1,
-    name: <span>Opponent affected by <span className="text-cryo">Cryo</span></span>,
+    name: <span>Opponent affected by <ColorText color="cryo">Cryo</ColorText></span>,
     stats: {
       normal_critRate_: 15,
       charged_critRate_: 15
@@ -131,8 +132,8 @@ const char: ICharacterSheet = {
           text: tr("constellation4.description"),
           fields: [{
             canShow: stats => stats.constellation >= 4,
-            text: <span className="text-cryo">Shield DMG Absorption</span>,
-            formulaText: stats => <span>30% {Stat.printStat("finalHP", stats)} * (100% + {Stat.printStat("shield_", stats)}) * (250% <span className="text-cryo">Cryo Absorption</span>)</span>,
+            text: <ColorText color="cryo">Shield DMG Absorption</ColorText>,
+            formulaText: stats => <span>30% {Stat.printStat("finalHP", stats)} * (100% + {Stat.printStat("shield_", stats)}) * (250% <ColorText color="cryo">Cryo Absorption</ColorText>)</span>,
             formula: formula.constellation4.shieldCryo,
             variant: "cryo"
           }, {

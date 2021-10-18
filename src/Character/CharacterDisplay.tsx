@@ -1,21 +1,26 @@
 import { faCalculator, faLink, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Box, Button, CardContent, Grid, Skeleton, Typography } from '@mui/material';
 import i18next from 'i18next';
-import React, { lazy, useCallback, useContext, useEffect, useReducer, useRef, useState } from 'react';
-import { Button, ButtonGroup, Card, Col, Container, Image, Row, Spinner, ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
+import React, { lazy, Suspense, useCallback, useContext, useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import ReactGA from 'react-ga';
 import { Link } from 'react-router-dom';
-import Assets from '../Assets/Assets';
+import CardDark from '../Components/Card/CardDark';
+import CloseButton from '../Components/CloseButton';
 import InfoComponent from '../Components/InfoComponent';
-import { uncoloredEleIcons } from '../Components/StatIcon';
+import SortByButton from '../Components/SortByButton';
+import ElementToggle from '../Components/ToggleButton/ElementToggle';
+import WeaponToggle from '../Components/ToggleButton/WeaponToggle';
 import { DatabaseContext } from '../Database/Database';
 import { dbStorage } from '../Database/DBStorage';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
 import usePromise from '../ReactHooks/usePromise';
-import { allElements, allWeaponTypeKeys, CharacterKey } from '../Types/consts';
+import { CharacterKey, ElementKey, WeaponTypeKey } from '../Types/consts';
+import characterSortOptions, { sortKeys } from '../Util/CharacterSort';
+import SortByFilters from '../Util/SortByFilters';
 import { defaultInitialWeapon } from '../Weapon/WeaponUtil';
 import CharacterCard from './CharacterCard';
-import { CharacterSelectionModal } from './CharacterSelection';
+import { CharacterSelectionModal } from '../Components/Character/CharacterSelectionModal';
 import CharacterSheet from './CharacterSheet';
 import { initialCharacter } from './CharacterUtil';
 
@@ -23,48 +28,41 @@ const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
 
 //lazy load the character display
 const CharacterDisplayCard = lazy(() => import('./CharacterDisplayCard'))
-const toggle = {
-  level: "Level",
-  rarity: "Rarity",
-  name: "Name"
-} as const
 
-function filterReducer(oldFilter, newFilter) {
-  if (newFilter === oldFilter)
-    return ""
-  return newFilter
+const initialState = () => ({
+  characterKeyToEdit: "" as CharacterKey | "",
+  sortType: sortKeys[0],
+  ascending: false,
+  weaponType: "" as WeaponTypeKey | "",
+  element: "" as ElementKey | "",
+})
+export type stateType = ReturnType<typeof initialState>
+
+function filterReducer(state: stateType, action): stateType {
+  return { ...state, ...action }
+}
+function filterInit(initial = initialState()): stateType {
+  return { ...initial, ...(dbStorage.get("CharacterDisplay.state") ?? {}) }
 }
 
 export default function CharacterDisplay(props) {
   const database = useContext(DatabaseContext)
-  const [characterKeyToEdit, setCharacterKeyToEdit] = useState("" as CharacterKey | "")
-  const [sortBy, setsortBy] = useState(() => Object.keys(toggle)[0])
-  const [elementalFilter, elementalFilterDispatch] = useReducer(filterReducer, "")
-  const [weaponFilter, weaponFilterDispatch] = useReducer(filterReducer, "")
+  const [state, stateDisplatch] = useReducer(filterReducer, initialState(), filterInit)
   const [newCharacter, setnewCharacter] = useState(false)
-  const [, forceUpdate] = useForceUpdate()
+  const [dbDirty, forceUpdate] = useForceUpdate()
   const scrollRef = useRef(null as any)
+  //set follow, should run only once
   useEffect(() => {
     ReactGA.pageview('/character')
-    const saved = dbStorage.get("CharacterDisplay.state")
-    if (saved) {
-      const { characterKeyToEdit, sortBy, elementalFilter, weaponFilter } = saved
-      characterKeyToEdit && setCharacterKeyToEdit(characterKeyToEdit)
-      sortBy && setsortBy(sortBy)
-      allElements.includes(elementalFilter) && elementalFilterDispatch(elementalFilter)
-      allWeaponTypeKeys.includes(weaponFilter) && weaponFilterDispatch(weaponFilter)
-    }
     return database.followAnyChar(forceUpdate)
   }, [forceUpdate, database])
-  const allCharacterSheets = usePromise(CharacterSheet.getAll(), []) ?? {}
-  const sortingFunc = {
-    level: (ck) => database._getChar(ck)?.level ?? 0,
-    rarity: (ck) => allCharacterSheets[ck]?.star
-  }
+
+  const allCharacterSheets = usePromise(CharacterSheet.getAll(), [])
+  //save to db
   useEffect(() => {
-    const save = { characterKeyToEdit, sortBy, elementalFilter, weaponFilter }
-    dbStorage.set("CharacterDisplay.state", save)
-  }, [characterKeyToEdit, sortBy, elementalFilter, weaponFilter])
+    dbStorage.set("CharacterDisplay.state", state)
+  }, [state])
+
   const deleteCharacter = useCallback(async (cKey: CharacterKey) => {
     const chararcterSheet = await CharacterSheet.get(cKey)
     let name = chararcterSheet?.name
@@ -74,9 +72,9 @@ export default function CharacterDisplay(props) {
 
     if (!window.confirm(`Are you sure you want to remove ${name}?`)) return
     database.removeChar(cKey)
-    if (characterKeyToEdit === cKey)
-      setCharacterKeyToEdit("")
-  }, [characterKeyToEdit, setCharacterKeyToEdit, database])
+    if (state.characterKeyToEdit === cKey)
+      stateDisplatch({ characterKeyToEdit: "" })
+  }, [state.characterKeyToEdit, stateDisplatch, database])
 
   const editCharacter = useCallback(cKey => {
     if (!database._getChar(cKey))
@@ -89,42 +87,29 @@ export default function CharacterDisplay(props) {
         const weapon = defaultInitialWeapon(characterSheet.weaponTypeKey)
         const weaponId = database.createWeapon(weapon)
         database.setWeaponLocation(weaponId, cKey)
-        setCharacterKeyToEdit(cKey)
+        stateDisplatch({ characterKeyToEdit: cKey })
       })()
     else
-      setCharacterKeyToEdit(cKey)
+      stateDisplatch({ characterKeyToEdit: cKey })
     setTimeout(() => {
       scrollRef.current?.scrollIntoView({ behavior: "smooth" })
     }, 500);
-  }, [setCharacterKeyToEdit, scrollRef, database])
+  }, [stateDisplatch, scrollRef, database])
 
   const cancelEditCharacter = useCallback(() => {
-    setCharacterKeyToEdit("")
+    stateDisplatch({ characterKeyToEdit: "" })
     setnewCharacter(false)
-  }, [setCharacterKeyToEdit])
+  }, [stateDisplatch])
 
-  const charKeyList = database._getCharKeys().filter(cKey => {
-    if (elementalFilter && elementalFilter !== allCharacterSheets[cKey]?.elementKey) return false
-    if (weaponFilter && weaponFilter !== allCharacterSheets[cKey]?.weaponTypeKey) return false
+  const sortOptions = useMemo(() => allCharacterSheets && characterSortOptions(database, allCharacterSheets), [database, allCharacterSheets])
+
+  const charKeyList = useMemo(() => sortOptions && dbDirty && database._getCharKeys().filter(cKey => {
+    if (state.element && state.element !== allCharacterSheets?.[cKey]?.elementKey) return false
+    if (state.weaponType && state.weaponType !== allCharacterSheets?.[cKey]?.weaponTypeKey) return false
     return true
-  }).sort((a, b) => {
-    if (sortBy === "name") {
-      if (a < b) return -1;
-      if (a > b) return 1;
-      // names must be equal
-      return 0;
-    }
-    if (sortBy === "level") {
-      const diff = sortingFunc["level"](b) - sortingFunc["level"](a)
-      if (diff) return diff
-      return sortingFunc["rarity"](b) - sortingFunc["rarity"](a)
-    } else {
-      const diff = sortingFunc["rarity"](b) - sortingFunc["rarity"](a)
-      if (diff) return diff
-      return sortingFunc["level"](b) - sortingFunc["level"](a)
-    }
-  })
-  return <Container ref={scrollRef} className="mt-2">
+  }).sort(SortByFilters(state.sortType, state.ascending, sortOptions) as (a: CharacterKey, b: CharacterKey) => number),
+    [dbDirty, database, sortOptions, allCharacterSheets, state.element, state.weaponType, state.sortType, state.ascending])
+  return <Box sx={{ mt: 1, "> div": { mb: 1 }, }}>
     <InfoComponent
       pageKey="characterPage"
       modalTitle="Character Management Page Guide"
@@ -132,97 +117,89 @@ export default function CharacterDisplay(props) {
         "You can see the details of the calculations of every number.",
         "You need to manually enable auto infusion for characters like Choungyun or Noelle.",
         "You can change character constellations in both \"Character\" tab and in \"Talents\" tab.",
-        "Modified character Stats show up in yellow."]}
+        "Modified character Stats are bolded."]}
     >
       <InfoDisplay />
     </InfoComponent>
     {/* editor/character detail display */}
-    {!!characterKeyToEdit ? <Row className="mt-2"><Col>
-      <React.Suspense fallback={<Card bg="darkcontent" text={"lightfont" as any} >
-        <Card.Body><h3 className="text-center">Loading... <Spinner animation="border" variant="primary" /></h3></Card.Body>
-      </Card>}>
+    {!!state.characterKeyToEdit ? <Box ref={scrollRef}>
+      <React.Suspense fallback={<Skeleton variant="rectangular" width="100%" height={1000} />}>
         <CharacterDisplayCard
           setCharacterKey={editCharacter}
-          characterKey={characterKeyToEdit}
+          characterKey={state.characterKeyToEdit}
           onClose={cancelEditCharacter}
-          footer={<CharDisplayFooter onClose={cancelEditCharacter} characterKey={characterKeyToEdit} />}
+          footer={<CharDisplayFooter onClose={cancelEditCharacter} characterKey={state.characterKeyToEdit} />}
         />
       </React.Suspense>
-    </Col></Row> : null}
-    <Card bg="darkcontent" text={"lightfont" as any} className="mt-2">
-      <Card.Body className="p-2">
-        <Row>
-          <Col xs="auto">
-            <ButtonGroup>
-              {allElements.map(eleKey => <Button key={eleKey} variant={(!elementalFilter || elementalFilter === eleKey) ? eleKey : "secondary"} className="py-1 px-2 text-white" onClick={() => elementalFilterDispatch(eleKey)} >
-                <h3 className="mb-0">{uncoloredEleIcons[eleKey]}</h3>
-              </Button>)}
-            </ButtonGroup>
-          </Col>
-          <Col>
-            <ButtonGroup >
-              {allWeaponTypeKeys.map(weaponType =>
-                <Button key={weaponType} variant={(!weaponFilter || weaponFilter === weaponType) ? "success" : "secondary"} className="py-1 px-2" onClick={() => weaponFilterDispatch(weaponType)}>
-                  <h3 className="mb-0"><Image src={Assets.weaponTypes?.[weaponType]} className="inline-icon" /></h3></Button>)}
-            </ButtonGroup>
-          </Col>
-          <Col xs="auto">
-            <span>Sort by: </span>
-            <ToggleButtonGroup type="radio" name="level" value={sortBy} onChange={setsortBy}>
-              {Object.entries(toggle).map(([key, text]) =>
-                <ToggleButton key={key} value={key} variant={sortBy === key ? "success" : "primary"}>
-                  <h6 className="mb-0">{text}</h6>
-                </ToggleButton>)}
-            </ToggleButtonGroup>
-          </Col>
-        </Row>
-      </Card.Body>
-    </Card>
-    <Row className="mt-2">
-      {!characterKeyToEdit && <Col lg={4} md={6} className="mb-2">
-        <Card className="h-100" bg="darkcontent" text={"lightfont" as any}>
-          <Card.Header className="pr-2">
-            <span>Add New Character</span>
-          </Card.Header>
-          <Card.Body className="d-flex flex-column justify-content-center">
-            <Row className="d-flex flex-row justify-content-center">
-              <Col xs="auto">
-                <Button onClick={() => setnewCharacter(true)}>
-                  <h1><FontAwesomeIcon icon={faPlus} className="fa-fw" /></h1>
-                </Button>
-                <CharacterSelectionModal show={newCharacter} onHide={() => setnewCharacter(false)} onSelect={editCharacter} />
-              </Col>
-            </Row>
-          </Card.Body>
-        </Card>
-      </Col>}
-      {charKeyList.map(charKey =>
-        <Col key={charKey} lg={4} md={6} className="mb-2">
-          <CharacterCard
-            header={undefined}
-            cardClassName="h-100"
-            characterKey={charKey}
-            onDelete={deleteCharacter}
-            onEdit={editCharacter}
-            footer
-          />
-        </Col>)}
-    </Row>
-  </Container>
+    </Box> : null}
+    <CardDark sx={{ p: 2 }}>
+      <Grid container spacing={1}>
+        <Grid item>
+          <WeaponToggle sx={{ height: "100%" }} onChange={weaponType => stateDisplatch({ weaponType })} value={state.weaponType} size="small" />
+        </Grid>
+        <Grid item flexGrow={1}>
+          <ElementToggle sx={{ height: "100%" }} onChange={element => stateDisplatch({ element })} value={state.element} size="small" />
+        </Grid>
+        <Grid item >
+          <SortByButton sx={{ height: "100%" }}
+            sortKeys={sortKeys} value={state.sortType} onChange={sortType => stateDisplatch({ sortType })}
+            ascending={state.ascending} onChangeAsc={ascending => stateDisplatch({ ascending })} />
+        </Grid>
+      </Grid>
+    </CardDark>
+    <Grid container spacing={1}>
+      <Suspense fallback={<Grid item xs={12}><Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 5000 }} /></Grid>}>
+        {!state.characterKeyToEdit && <Grid item xs={12} sm={6} md={4} lg={3} >
+          <CardDark sx={{ height: "100%", minHeight: 400, width: "100%", display: "flex", flexDirection: "column" }}>
+            <CardContent>
+              <Typography sx={{ textAlign: "center" }}>Add New Character</Typography>
+            </CardContent>
+            <CharacterSelectionModal newFirst show={newCharacter} onHide={() => setnewCharacter(false)} onSelect={editCharacter} />
+            <Box sx={{
+              flexGrow: 1,
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center"
+            }}
+            >
+              <Button onClick={() => setnewCharacter(true)} sx={{
+                borderRadius: "1em"
+              }}>
+                <Typography variant="h1"><FontAwesomeIcon icon={faPlus} className="fa-fw" /></Typography>
+              </Button>
+            </Box>
+          </CardDark>
+        </Grid>}
+        {!!charKeyList && charKeyList.map(charKey =>
+          <Grid item key={charKey} xs={12} sm={6} md={4} lg={3} >
+            <CharacterCard
+              characterKey={charKey}
+              onDelete={deleteCharacter}
+              onEdit={editCharacter}
+              footer
+            />
+          </Grid>)}
+      </Suspense>
+    </Grid>
+  </Box>
 }
 function CharDisplayFooter({ onClose, characterKey }) {
-  return <Row>
-    <Col xs="auto">
-    <Button as={Link} to={{
+  return <Grid container spacing={1}>
+    <Grid item>
+      <Button component={Link} to={{
         pathname: "/build",
         characterKey
-      } as any}><FontAwesomeIcon icon={faCalculator} /> Generate Builds</Button>
-    </Col>
-    <Col>
-    <Button variant="info" as={Link} to={{ pathname: "/flex", characterKey } as any}><FontAwesomeIcon icon={faLink} /> Share Character</Button>
-    </Col>
-    <Col xs="auto">
-      <Button variant="danger" onClick={onClose}>Close</Button>
-    </Col>
-  </Row>
+      } as any}
+        startIcon={<FontAwesomeIcon icon={faCalculator} />}
+      >Generate Builds</Button>
+    </Grid>
+    <Grid item flexGrow={1}>
+      <Button color="info" component={Link} to={{ pathname: "/flex", characterKey } as any}
+        startIcon={<FontAwesomeIcon icon={faLink} />}
+      >Share Character</Button>
+    </Grid>
+    <Grid item xs="auto">
+      <CloseButton large onClick={onClose} />
+    </Grid>
+  </Grid>
 }

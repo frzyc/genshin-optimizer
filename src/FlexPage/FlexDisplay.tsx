@@ -1,12 +1,14 @@
-import { Alert, Button, Card, Container, Form, InputGroup, Toast } from "react-bootstrap";
+import { faLink } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Alert, Box, Button, ButtonGroup, Snackbar } from "@mui/material";
+import { useCallback, useContext, useState } from "react";
 import { Redirect, useLocation } from "react-router-dom";
 import CharacterDisplayCard from "../Character/CharacterDisplayCard";
-import '../StatDependency'
-import { exportFlex, importFlex } from "../Database/exim/flex";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLink } from "@fortawesome/free-solid-svg-icons";
-import { useContext, useState } from "react";
+import CardDark from "../Components/Card/CardDark";
+import { CustomNumberInputButtonGroupWrapper, StyledInputBase } from "../Components/CustomNumberInput";
 import { DatabaseContext } from "../Database/Database";
+import { exportFlex, importFlex } from "../Database/exim/flex";
+import '../StatDependency';
 
 export default function FlexDisplay() {
   const location = useLocation()
@@ -29,34 +31,37 @@ export default function FlexDisplay() {
   }
 }
 function Display({ characterKey }) {
-  const [toast, settoast] = useState(false)
-  const url = window.location.href
-  const copyToClipboard = () => {
-    navigator.clipboard.writeText(url).then(() => settoast(true)).catch(console.error)
-  }
+  const [open, setOpen] = useState(false);
+  const handleClick = useCallback(() => setOpen(true), [setOpen],)
+  const handleClose = useCallback(
+    (event?: React.SyntheticEvent, reason?: string) => {
+      if (reason === 'clickaway') return;
+      setOpen(false);
+    }, [setOpen])
+  const copyToClipboard = useCallback(() => {
+    const url = window.location.href
+    navigator.clipboard.writeText(url).then(handleClick).catch(console.error)
+  }, [handleClick])
   const isUpToDate = false
-  return <Container className="my-2">
-    <Toast onClose={() => settoast(false)} show={toast} delay={3000} autohide style={{
-      position: 'absolute',
-      top: 50,
-      right: 50,
-    }}>
-      <Toast.Header><b className="mr-auto">Genshin Optimizer</b></Toast.Header>
-      <Toast.Body>URL copied to clipboard.</Toast.Body>
-    </Toast>
-    <Card bg="darkcontent" text={"lightfont" as any} className="mb-2">
-      <Card.Body className="p-2">
-        <InputGroup className="mb-0">
-          <InputGroup.Prepend>
-            <Button onClick={copyToClipboard}>
-              <span><FontAwesomeIcon icon={faLink} /> Copy URL to clipboard</span>
-            </Button>
-          </InputGroup.Prepend>
-          <Form.Control readOnly value={window.location.href} onClick={e => e.target.select()} />
-        </InputGroup>
-        {isUpToDate && <Alert variant="warning" className="py-2 mt-2 mb-0">This URL is generated on an older database version of Genshin Optimizer. The character data below might not be displayed as intended.</Alert>}
-      </Card.Body>
-    </Card>
+  return <Box display="flex" flexDirection="column" gap={theme => theme.spacing(1)} mt={1} mb={1}>
+    <Snackbar open={open} autoHideDuration={5000} onClose={handleClose}>
+      <Alert variant="filled" onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+        URL copied to clipboard.
+      </Alert>
+    </Snackbar>
+    <CardDark>
+      <ButtonGroup sx={{ width: "100%" }}>
+        <Button color="info" onClick={copyToClipboard} startIcon={<FontAwesomeIcon icon={faLink} />}>Copy URL to clipboard</Button>
+        <CustomNumberInputButtonGroupWrapper sx={{ flexBasis: 30, flexGrow: 1 }}>
+          <StyledInputBase readOnly value={window.location.href} onClick={e => {
+            const target = e.target as HTMLInputElement;
+            target.selectionStart = 0;
+            target.selectionEnd = target.value.length;
+          }} sx={{ px: 2 }} />
+        </CustomNumberInputButtonGroupWrapper>
+      </ButtonGroup>
+      {!!isUpToDate && <Alert variant="outlined" sx={{ m: 1, mt: 2 }} severity="warning" >This URL is generated on an older database version of Genshin Optimizer. The character data below might not be displayed as intended.</Alert>}
+    </CardDark>
     <CharacterDisplayCard characterKey={characterKey} />
-  </Container>
+  </Box>
 }

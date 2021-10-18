@@ -20,5 +20,6 @@ export const initialWeapon = (key: WeaponKey): ICachedWeapon => ({
   level: 1,
   ascension: 0,
   refinement: 1,
-  location: ""
+  location: "",
+  lock: false,
 })

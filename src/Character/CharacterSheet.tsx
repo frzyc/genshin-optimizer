@@ -1,11 +1,11 @@
+import { CharacterExpCurveData } from "pipeline";
+import ImgIcon from "../Components/Image/ImgIcon";
+import Stat from '../Stat';
 import { ICharacterSheet, TalentSheet } from "../Types/character";
 import { allCharacterKeys, CharacterKey, ElementKey } from "../Types/consts";
 import { ICalculatedStats } from "../Types/stats";
 import { evalIfFunc, objectFromKeyMap } from "../Util/Util";
-import { CharacterExpCurveData } from "pipeline";
-import expCurveJSON from './expCurve_gen.json'
-import Stat from '../Stat'
-import { Image } from "react-bootstrap";
+import expCurveJSON from './expCurve_gen.json';
 
 const expCurve = expCurveJSON as CharacterExpCurveData
 
@@ -22,9 +22,12 @@ export default class CharacterSheet {
   static get = (charKey: CharacterKey | ""): Promise<CharacterSheet> | undefined => charKey ? loadCharacterSheet[charKey] : undefined
   static getAll = (): Promise<StrictDict<CharacterKey, CharacterSheet>> => charImport
   get name() { return this.sheet.name }
-  get nameWIthIcon() { return <span><Image src={this.thumbImg} className="inline-icon" /> {this.name}</span> }
+  get nameWIthIcon() { return <span><ImgIcon src={this.thumbImg} /> {this.name}</span> }
   get cardImg() { return this.sheet.cardImg }
   get thumbImg() { return this.sheet.thumbImg }
+  /**
+   * TODO rarity
+   */
   get star() { return this.sheet.star }
   get elementKey() { return "elementKey" in this.sheet ? this.sheet.elementKey : undefined }
   get weaponTypeKey() { return this.sheet.weaponTypeKey }

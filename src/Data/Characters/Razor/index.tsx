@@ -21,6 +21,7 @@ import { ICharacterSheet } from '../../../Types/character'
 import { Translate, TransWrapper } from '../../../Components/Translate'
 import { claymoreChargedDocSection, normalDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
+import { Typography } from '@mui/material'
 const tr = (strKey: string) => <Translate ns="char_Razor_gen" key18={strKey} />
 const conditionals: IConditionals = {
   e: { // ElectroSigil
@@ -156,11 +157,11 @@ const char: ICharacterSheet = {
           }],
         }, {
           text: (
-            <TransWrapper ns="char_Razor" key18="fullBurstDMG.text"><span>
-              <h6><strong>Full Elemental Burst DMG</strong></h6>
-              <p className="mb-2">This calculates the combined damage from Razor's normal attacks during his Elemental Burst.
-                It simply sums the Companion X-Hit DMG with the corresponding X-Hit DMG of the normal attack which triggers it.</p>
-            </span></TransWrapper>
+            <TransWrapper ns="char_Razor" key18="fullBurstDMG.text">
+              <Typography variant="h6"><strong>Full Elemental Burst DMG</strong></Typography>
+              <Typography>This calculates the combined damage from Razor's normal attacks during his Elemental Burst.
+                It simply sums the Companion X-Hit DMG with the corresponding X-Hit DMG of the normal attack which triggers it.</Typography>
+            </TransWrapper>
           ),
           fields: data.normal.hitArr.map((percentArr, i) => ({
             text: <TransWrapper ns="char_Razor" key18="fullBurstDMG.label" values={{ hitNum: i + 1 }} />,

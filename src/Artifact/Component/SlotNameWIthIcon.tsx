@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next"
 import { faCirclet, faFlower, faGoblet, faPlume, faSands } from '../../faIcons'
 import { SlotKey } from "../../Types/consts"
 
-const SlotIcon: StrictDict<SlotKey, any> = {
+export const SlotIconSVG: StrictDict<SlotKey, any> = {
   flower: faFlower,
   plume: faPlume,
   sands: faSands,
@@ -12,8 +12,9 @@ const SlotIcon: StrictDict<SlotKey, any> = {
 }
 
 export function artifactSlotIcon(slotKey: SlotKey) {
-  return <FontAwesomeIcon icon={SlotIcon[slotKey]} key={slotKey} className="fa-fw" />
+  return <FontAwesomeIcon icon={SlotIconSVG[slotKey]} key={slotKey} className="fa-fw" />
 }
+
 export default function SlotNameWithIcon({ slotKey }: { slotKey: SlotKey }) {
   const { t } = useTranslation("artifact")
   const icon = artifactSlotIcon(slotKey)

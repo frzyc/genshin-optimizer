@@ -1,14 +1,12 @@
-
-//take the new statsDisplayKeys, and display the stats.
-
-import { Card, Col, Row } from "react-bootstrap"
+import { CardContent, Divider, Grid, Typography } from "@mui/material"
+import { ArtifactSheet } from "../../Artifact/ArtifactSheet"
+import CardDark from "../../Components/Card/CardDark"
 import StatDisplay from "../../Components/StatDisplay"
 import { ICachedCharacter } from "../../Types/character"
-import CharacterSheet from "../CharacterSheet"
+import { ArtifactSetKey } from "../../Types/consts"
 import { ICalculatedStats } from "../../Types/stats"
 import WeaponSheet from "../../Weapon/WeaponSheet"
-import { ArtifactSetKey } from "../../Types/consts"
-import { ArtifactSheet } from "../../Artifact/ArtifactSheet"
+import CharacterSheet from "../CharacterSheet"
 import { getFormulaTargetsDisplayHeading } from "../CharacterUtil"
 
 type StatDisplayComponentProps = {
@@ -19,22 +17,22 @@ type StatDisplayComponentProps = {
   },
   character: ICachedCharacter
   statsDisplayKeys: any,
-  cardbg?: string
   equippedBuild?: ICalculatedStats
   newBuild?: ICalculatedStats
 }
 
-export default function StatDisplayComponent({ sheets, sheets: { characterSheet, weaponSheet }, character, equippedBuild, newBuild, statsDisplayKeys, cardbg = "darkcontent" }: StatDisplayComponentProps) {
+export default function StatDisplayComponent({ sheets, sheets: { characterSheet, weaponSheet }, character, equippedBuild, newBuild, statsDisplayKeys }: StatDisplayComponentProps) {
   const build = newBuild ? newBuild : equippedBuild
-  return <Row className="mb-n2">{Object.entries(statsDisplayKeys).map(([sectionKey, sectionValues]: any) => {
+  return <Grid container spacing={1}>{Object.entries(statsDisplayKeys).map(([sectionKey, sectionValues]: any) => {
     const header = getFormulaTargetsDisplayHeading(sectionKey, sheets, build?.characterEle)
-    return <Col key={sectionKey} className="mb-2" xs={12} md={6} xl={4}>
-      <Card bg={cardbg} text={"lightfont" as any} className="h-100">
-        <Card.Header>{header}</Card.Header>
-        <Card.Body>
-          <Row>{sectionValues.map(statKey => <StatDisplay key={JSON.stringify(statKey)} {...{ characterSheet, weaponSheet, character, equippedBuild, newBuild, statKey }} />)}</Row>
-        </Card.Body>
-      </Card>
-    </Col>
-  })}</Row>
+    return <Grid item key={sectionKey} xs={12} sm={6} md={4} lg={4}>
+      <CardDark sx={{ height: "100%", }}>
+        <CardContent>
+          <Typography variant="subtitle1" gutterBottom>{header}</Typography>
+          <Divider sx={{ mb: 1, mx: -2 }} />
+          {sectionValues.map(statKey => <StatDisplay key={JSON.stringify(statKey)} {...{ characterSheet, weaponSheet, character, equippedBuild, newBuild, statKey }} />)}
+        </CardContent>
+      </CardDark>
+    </Grid>
+  })}</Grid>
 }

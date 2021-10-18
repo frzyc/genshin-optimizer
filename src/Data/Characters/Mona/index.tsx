@@ -24,6 +24,7 @@ import { chargedDocSection, normalDocSection, plungeDocSection, talentTemplate }
 import { KeyPath } from '../../../Util/KeyPathUtil'
 import { FormulaPathBase } from '../../formula'
 import { WeaponTypeKey } from '../../../Types/consts'
+import ColorText from '../../../Components/ColoredText'
 
 const path = KeyPath<FormulaPathBase, any>().character.Mona
 const tr = (strKey: string) => <Translate ns="char_Mona_gen" key18={strKey} />
@@ -40,7 +41,7 @@ const conditionals: IConditionals = {
     }),
     fields: [{
       canShow: stats => stats.constellation >= 1,
-      text: <span><span className="text-cryo">Frozen</span> Duration Increase</span>,
+      text: <span><ColorText color="cryo">Frozen</ColorText> Duration Increase</span>,
       value: "15.0%",
       variant: "cryo",
     }, {
