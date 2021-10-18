@@ -118,7 +118,7 @@
   "constellation1": {
     "name": "Bombardement continu",
     "description": {
-      "0": "Les attaques et aptitudes ont une chance de générer des étincelles qui bombardent les ennemis, infligeant 120 % des DGT de <strong>Fleur bombardier</strong>."
+      "0": "Les attaques et compétences ont une chance de générer des étincelles qui bombardent les ennemis, infligeant 120 % des DGT de <strong>Fleur bombardier</strong>."
     }
   },
   "constellation2": {

@@ -144,7 +144,7 @@
   "constellation2": {
     "name": "Steelbreaker",
     "description": {
-      "0": "<strong>Secret Art: Musou Shinsetsu</strong>'s Musou no Hitotachi and Musou Isshin attacks will ignore 60% of opponents' DEF."
+      "0": "While using Musou no Hitotachi and in the Musou Isshin state applied by <strong>Secret Art: Musou Shinsetsu</strong>, the Raiden Shogun's attacks ignore 60% of opponents' DEF."
     }
   },
   "constellation3": {

@@ -135,7 +135,8 @@
   "constellation4": {
     "name": "Alchémania",
     "description": {
-      "0": "Réduit le TdR d'<strong>Esprit du vent : Sujet 6308</strong> de 1 à 7 s toutes les 7 attaques normales et chargées que Sucrose inflige."
+      "0": "Sucrose diminue le TdR d'<strong>Esprit du vent : Sujet 6308</strong> de 1 à 7 s tous les 7 coups d'attaque normale ou chargée qu'elle inflige à un ennemi.",
+      "1": "Un coup peut être compté toutes les 0,1 s."
     }
   },
   "constellation5": {
@@ -148,7 +149,7 @@
   "constellation6": {
     "name": "Théorie de l'entropie",
     "description": {
-      "0": "En cas d'absorption élémentaire, <strong>Esprit du vent : Isomorphe 75 Type II</strong> confère à tous les personnages de l'équipe un bonus de DGT élémentaires de 20 % tant que la compétence est active."
+      "0": "En cas d'absorption élémentaire, <strong>Esprit du vent : Isomorphe 75 Type II</strong> confère à tous les personnages de l'équipe un bonus de DGT élémentaires de 20 % pour l'élément absorbé tant que la compétence est active."
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "Sangonomiya Kokomi",
-  "title": "la Perla de la Sabiduría",
+  "title": "La Perla de la Sabiduría",
   "description": "La Sacerdotisa Divina y quien controla todos los asuntos de la Isla Watatsumi.",
   "constellationName": "Dracaena Somnolenta",
   "auto": {
@@ -171,7 +171,7 @@
   "constellation6": {
     "name": "Corazón del coral",
     "description": {
-      "0": "Cuando Sangonomiya Kokomi cura a un personaje que tiene un 80% o más de Vida con Ataques Normales o Cargados mientras está bajo los efectos del manto ceremonial de <strong>Encarnación de las nereidas</strong>, obtiene un 40% de <hydro>Bono de Daño Hydro</hydro> durante 4 s."
+      "0": "Mientras está bajo los efectos del manto ceremonial de <strong>Encarnación de las nereidas</strong>, cuando Sangonomiya Kokomi realiza un Ataque Normal o Cargado que tiene efectos curativos con el fin de curar a un personaje con un 80% o más de Vida, obtiene un 40% de <hydro>Bono de Daño Hydro</hydro> durante 4 s."
     }
   }
 }

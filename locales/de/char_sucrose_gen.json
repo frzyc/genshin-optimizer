@@ -135,7 +135,8 @@
   "constellation4": {
     "name": "Besessenheit",
     "description": {
-      "0": "Verkürzt die Abklingzeit von <strong>Windseelenschaffung – Experiment 6308</strong> alle 7 Standardangriffe oder heftige Schläge von Saccharose zufällig um 1 bis 7 s."
+      "0": "Verkürzt die Abklingzeit von <strong>Windseelenschaffung – Experiment 6308</strong> alle 7 Standardangriffe oder heftige Schläge, die Saccharose bei Gegnern erzielt, um 1 bis 7 s.",
+      "1": "Ein Treffer kann alle 0,1 s gezählt werden."
     }
   },
   "constellation5": {

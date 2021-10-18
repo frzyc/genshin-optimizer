@@ -1,8 +1,8 @@
 {
   "name": "Sangonomiya Kokomi",
   "title": "Pearl of Wisdom",
-  "description": "Sang Pendeta Suci di Pulau Watatsumi. Semua permasalahan di pulau tersebut ada dalam genggaman nona muda ini.",
-  "constellationName": "Draco Dormiens",
+  "description": "Sang Pemimpin Suci di Pulau Watatsumi. Semua permasalahan di pulau tersebut ada dalam genggaman nona muda ini.",
+  "constellationName": "Dracaena Somnolenta",
   "auto": {
     "name": "The Shape of Water",
     "fields": {
@@ -169,7 +169,7 @@
   "constellation6": {
     "name": "Sango Isshin",
     "description": {
-      "0": "Saat mengenakan Ceremonial Garment dari skill <strong>Nereid's Ascension</strong>, setelah Normal atau Charged Attack Sangonomiya Kokomi memulihkan Karakter dengan HP 80% atau lebih, Sangonomiya Kokomi akan mendapatkan 40% <hydro>Hydro DMG Bonus</hydro> selama 4 detik."
+      "0": "Saat mengenakan Ceremonial Garment dari skill <strong>Nereid's Ascension</strong>, dan ketika Normal atau Charged Attack Sangonomiya Kokomi melakukan pemulihan atau berusaha memulihkan HP Karakter di dalam party dengan HP 80% atau lebih, maka Sangonomiya Kokomi akan mendapatkan 40% <hydro>Hydro DMG Bonus</hydro> selama 4 detik."
     }
   }
 }

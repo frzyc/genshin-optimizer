@@ -2,7 +2,7 @@
   "name": "Sangonomiya Kokomi",
   "title": "Perle der Weisheit",
   "description": "Die göttliche Priesterin und das höchste Oberhaupt von Watatsumi.",
-  "constellationName": "Drakaina Somnolenta",
+  "constellationName": "Dracaena Somnolenta",
   "auto": {
     "name": "Standardangriff – Form des Wassers",
     "fields": {
@@ -75,7 +75,7 @@
       "1": "<br/>",
       "2": "<strong>Rituelles Federkleid</strong>",
       "3": "- Erhöht den mit Sangonomiya Kokomis Standardangriffen, heftigen Schlägen und dem „Bakekurage“ ihrer Elementarfähigkeit verursachten Schaden basierend auf ihren max. LP.",
-      "4": "- Stellt allen Truppenmitgliedern in der Nähe beim Treffen von Gegnern mit Standardangrifffen und heftigen Schlägen LP basierend auf Sangonomiya Kokomis max. LP wieder her.",
+      "4": "- Stellt allen Truppenmitgliedern in der Nähe beim Treffen von Gegnern mit Standardangriffen und heftigen Schlägen LP basierend auf Sangonomiya Kokomis max. LP wieder her.",
       "5": "- Erhöht Sangonomiya Kokomis Unterbrechungs-WDS und ermöglicht es ihr, sich auf Wasseroberflächen zu bewegen.",
       "6": "<br/>",
       "7": "Effekt endet, wenn Sangonomiya Kokomi ausgewechselt wird.",
@@ -165,7 +165,7 @@
   "constellation6": {
     "name": "Sango Isshin",
     "description": {
-      "0": "Gewährt Sangonomiya Kokomi im Zustand Rituelles Federkleid von <strong>Nereidenaufstieg</strong> 4 s lang einen <hydro>Hydro-SCH-Bonus</hydro> von 40 %, wenn die Standardangriffe und heftigen Schläge von Sangonomiya Kokomi die LP von Figuren mit 80 % oder mehr LP wiederherstellen."
+      "0": "Gewährt Sangonomiya Kokomi im Zustand Rituelles Federkleid von <strong>Nereidenaufstieg</strong> 4 s lang einen <hydro>Hydro-SCH-Bonus</hydro> von 40 %, wenn die Standardangriffe und heftigen Schläge von Sangonomiya Kokomi Figuren mit 80 % oder mehr LP heilen."
     }
   }
 }

@@ -66,7 +66,7 @@
     }
   },
   "name": "Noelle",
-  "title": "la Heroína no Reconocida",
+  "title": "La Heroína no Reconocida",
   "description": "La criada de confianza de los Caballeros de Favonius. Sueña con convertirse algún día en una de ellos.",
   "constellationName": "Parma Cordis",
   "auto": {
@@ -119,8 +119,8 @@
   "passive2": {
     "name": "Pulcra y eficaz",
     "description": {
-      "0": "Cuando Noelle inflige daño a los enemigos con Ataques Normales o Cargados, el TdE de <strong>Guardiana del corazón</strong> se reducirá 1 s cada 4 golpes.",
-      "1": "Infligir daño a varios enemigos al mismo tiempo se considera un solo movimiento de ataque."
+      "0": "Por cada 4 veces consecutivas que Noelle golpee a un enemigo con sus Ataques Normales o Cargados, el TdE de <strong>Guardiana del corazón</strong> se reduce en 1 s.",
+      "1": "Como máximo, cada golpe solo puede ocurrir una vez cada 0.1 s."
     }
   },
   "passive3": {

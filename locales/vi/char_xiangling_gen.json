@@ -118,7 +118,7 @@
   "constellation2": {
     "name": "Thêm Dầu Vào Lửa",
     "description": {
-      "0": "Chiêu cuối tấn công thường có hiệu quả khiến kẻ địch nổ tung trong vòng 2s, khi kết thúc sẽ gây ra vụ nổ, tạo thành 75% <pyro>sát thương phạm vi Nguyên Tố Hoả </pyro>."
+      "0": "Đòn tấn công thường cuối cùng có hiệu quả khiến kẻ địch nổ tung trong vòng 2s, khi kết thúc sẽ gây ra vụ nổ, tạo thành 75% <pyro>sát thương phạm vi Nguyên Tố Hoả </pyro>."
     }
   },
   "constellation3": {

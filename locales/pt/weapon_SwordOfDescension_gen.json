@@ -3,6 +3,6 @@
   "description": "Uma espada de artesanato único. Não parece pertencer a este mundo.",
   "passiveName": "Descensão",
   "passiveDescription": {
-    "0": "<cryo>Efetivosomente na plataforma abaixo: </cryo>\\n<cryo>\"PlayStation Network\"</cryo>\\nAcertar oponentes com Ataques Normais e Carregados concede uma chance de <cryo>50%</cryo> de causar <cryo>200%</cryo> do Ataque como Dano em uma AdE pequena. Esse efeito pode ocorrer uma vez a cada 10s. Adicionalmente, se {F#a}{M#o} Viajante equipar a Espada do Advento, seu Ataque é aumentado em <cryo>66</cryo> pontos."
+    "0": "<cryo>Efetivo apenas para jogadores da seguinte plataforma:</cryo>\\n<cryo>\"PlayStation Network\"</cryo>\\nAcertar oponentes com um Ataque Normal ou Carregado concede <cryo>50%</cryo> de chance de causar <cryo>200%</cryo> do ATQ como Dano em uma pequena AdE. Este efeito pode ocorrer apenas uma vez a cada 10s. Adicionalmente, se {M#o}{F#a} Viajante equipar a Espada do Advento, seu ATQ é aumentado em <cryo>66</cryo>."
   }
 }

@@ -135,7 +135,8 @@
   "constellation4": {
     "name": "Alchemania",
     "description": {
-      "0": "Setiap 7 Normal dan Charged Attack, CD <strong>Astable Anemohypostasis Creation - 6308</strong> milik Sucrose akan berkurang 1-7 detik."
+      "0": "Saat Normal Attack atau Charged Attack Sucrose mengenai musuh 7 kali, maka CD skill <strong>Astable Anemohypostasis Creation - 6308</strong> akan berkurang 1-7 detik secara acak.",
+      "1": "Serangan Sucrose dapat dihitung sebagai 1 kali setiap 0,1 detik."
     }
   },
   "constellation5": {

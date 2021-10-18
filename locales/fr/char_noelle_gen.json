@@ -120,8 +120,8 @@
   "passive2": {
     "name": "Clair et net",
     "description": {
-      "0": "Le TdR d'<strong>Armure de cœur</strong> est réduit de 1 s tous les 4 coups d'attaques normales et chargées.",
-      "1": "Toucher simultanément plusieurs ennemis compte comme un seul coup."
+      "0": "Noëlle diminue le TdR d'<strong>Armure de cœur</strong> de 1 s tous les 4 coups d'attaque normale ou chargée qu'elle inflige à un ennemi.",
+      "1": "Un coup peut être compté toutes les 0,1 s."
     }
   },
   "passive3": {

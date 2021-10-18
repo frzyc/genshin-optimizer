@@ -1,7 +1,7 @@
 {
   "name": "Tartaglia",
   "title": "Jeune Sire",
-  "description": "Le 11ème Exécuteur des Fatui, appelé « Tartaglia ». Il s'est fait connaître pour avoir gagné des milliers de combats.",
+  "description": "Le 11e Exécuteur des Fatui, appelé « Tartaglia ». Il s'est fait connaître pour avoir gagné des milliers de combats.",
   "constellationName": "Monoceros Caeli",
   "auto": {
     "name": "Taille du torrent",
@@ -51,8 +51,8 @@
   "skill": {
     "name": "Posture du démon : Marée déchaînée",
     "description": {
-      "0": "Tartaglia invoque un arsenal d'armes exploitant la puissance de l'eau pure et infligeant des <hydro>DGT Hydro</hydro> aux ennemis proches ; Tartaglia entre en état de mêlée.",
-      "1": "En état de mêlée, les attaques normales et chargées de Tartaglia sont converties en <hydro>DGT Hydro</hydro> ne pouvant pas être enchantésm, et changent :",
+      "0": "Tartaglia invoque des armes qui exploitent la puissance de l'eau pure et infligent des <hydro>DGT Hydro</hydro> aux ennemis proches ; Tartaglia entre en état de mêlée.",
+      "1": "En état de mêlée, les attaques normales et chargées de Tartaglia sont converties en <hydro>DGT Hydro</hydro> ne pouvant pas être enchantés, et changent de la manière suivante :",
       "2": "<br/>",
       "3": "<strong>Attaque normale</strong>",
       "4": "Enchaîne jusqu'à 6 entailles <hydro>Hydro</hydro> consécutives.",
@@ -126,7 +126,7 @@
   "passive1": {
     "name": "Fin infinie",
     "description": {
-      "0": "L'effet Contre-courant est prolongé de 8 s."
+      "0": "Prolonge la durée de l'effet Contre-courant de 8 s."
     }
   },
   "passive2": {

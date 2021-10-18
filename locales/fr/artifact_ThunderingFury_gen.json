@@ -6,16 +6,16 @@
   },
   "pieces": {
     "flower": {
-      "name": "Compassion de l'Oiseau de tonnerre",
+      "name": "Compassion de l'Oiselle du tonnerre",
       "desc": "Une fleur imprégnée de foudre, qui réussit à survivre aux piétinements et à la furie du feu violet, en faisant la seule survivante d'une certaine catastrophe."
     },
     "plume": {
       "name": "Survivant de la catastrophe",
-      "desc": "Une plume électrique qui scelle le jugement cruel de l'Oiseau de tonnerre. On peut encore sentir sa colère en émaner."
+      "desc": "Une plume électrique qui scelle le jugement cruel de l'Oiselle du tonnerre. On peut encore sentir sa colère en émaner."
     },
     "sands": {
       "name": "Sablier de tonnerre",
-      "desc": "Un sablier utilisé autrefois pour compter le temps séparant de l'arrivée de l'Oiseau de tonnerre. Il est désormais silencieux, le clan auquel il appartenait ayant disparu."
+      "desc": "Un sablier utilisé autrefois pour compter le temps séparant de l'arrivée de l'Oiselle du tonnerre. Il est désormais silencieux, le clan auquel il appartenait ayant disparu."
     },
     "goblet": {
       "name": "Présage de tombée du tonnerre",
@@ -23,7 +23,7 @@
     },
     "circlet": {
       "name": "Diadème de l'Invocateur de tonnerre",
-      "desc": "Un diadème porté autrefois par un shaman adorateur de l'Oiseau de tonnerre. L'oiseau maléfique demeura insensible à la dévotion du shaman."
+      "desc": "Un diadème porté autrefois par un shaman adorateur de l'Oiselle du tonnerre. L'oiseau maléfique demeura insensible à la dévotion du shaman."
     }
   }
 }

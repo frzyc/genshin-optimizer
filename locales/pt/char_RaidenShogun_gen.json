@@ -78,7 +78,7 @@
       "0": "Reunindo verdades não numeradas e desejos incontados, a Shogun Raiden liberta o Musou no Hitotachi e causa <electro>Dano Electro em uma AdE</electro>, usando Musou Isshin em combate por um certo tempo depois. De acordo com o número de acúmulos da Determinação consumida pelo Shogan Byakugen no Rin quando esta habilidade é utilizada, aumenta Musou no Hitotachi e o dano causado pelos ataques do Musou Isshin.",
       "1": "<br/>",
       "2": "<strong>Musou Isshin</strong>",
-      "3": "Enquanto estiver neste estado, a Shogun Raiden usará sua tachi em batalha, enquanto seus ataques Normais, Carregados e Imersivos serão infundidos com <electro>Dano Electro</electro>, que não pode ser substituído. Quando tais ataques atingem os oponentes, ela irá regenerar a energia para todos os membros da equipe mais próxima. A energia pode ser restaurada desta forma a cada ？？？s, e este efeito pode ser acionado ？？？vezes durante toda a duração desta habilidade.",
+      "3": "Enquanto estiver neste estado, a Shogun Raiden usará sua tachi em batalha, enquanto seus ataques Normais, Carregados e Imersivos serão infundidos com <electro>Dano Electro</electro>, que não pode ser substituído. Quando tais ataques atingem os oponentes, ela irá regenerar a energia para todos os membros da equipe mais próxima. A energia pode ser restaurada desta forma a cada 1s, e este efeito pode ser acionado 5 vezes durante toda a duração desta habilidade.",
       "4": "Enquanto neste estado, a resistência da Shogun Raiden à interrupção é aumentada, e ela fica imune a Dano de reações de <electro>Eletricamente Carregado</electro>.",
       "5": "No estado de Musou Isshin, os danos do Ataque Normal, Ataque Carregado e Ataque Imersivo é visto como Dano de Supremo.",
       "6": "<br/>",
@@ -143,7 +143,7 @@
   "constellation2": {
     "name": "Quebra-aço",
     "description": {
-      "0": "Os ataques Musou no Hitotachi e Musou Isshin, aplicados pela <strong>Arte Secreta: Musou Shinsetsu</strong>, ignoram 60% da DEF dos oponentes."
+      "0": "Sob o estado de Musou no Hitotachi e Musou Isshin, os ataques da Shogun Raiden, aplicados pela <strong>Arte Secreta: Musou Shinsetsu</strong>, ignoram 60% da DEF dos oponentes."
     }
   },
   "constellation3": {
@@ -169,7 +169,7 @@
   "constellation6": {
     "name": "Portador de Desejos",
     "description": {
-      "0": "Durante o estado de <strong>Musou Isshin</strong> aplicado pela <strong>Arte Secreta: Musou Shinsetsu</strong>, quando o ataque que é visto como dano de Supremo da Shogun Raiden atingir o inimigo, irá reduzir o Tempo de Recarga do Supremo de todos os membros da equipe próximo em 1s.",
+      "0": "Durante o estado de <strong>Musou Isshin</strong> aplicado pela <strong>Arte Secreta: Musou Shinsetsu</strong>, quando o Supremo da Shogun Raiden atinge um inimigo irá reduzir o Tempo de Recarga do Supremo de todos os membros da equipe próximo em 1s.",
       "1": "Este efeito pode ser desencadeado uma vez a cada 1s, e pode ser desencadeado em um total de 5 vezes durante a duração deste estado."
     }
   }

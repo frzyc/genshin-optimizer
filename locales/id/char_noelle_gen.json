@@ -117,8 +117,8 @@
   "passive2": {
     "name": "Nice and Clean",
     "description": {
-      "0": "Mengurangi 1 detik CD skill <strong>Breastplate</strong> setiap 4 Normal atau Charged Attack yang mengenai musuh.",
-      "1": "Serangan yang mengenai beberapa musuh sekaligus tetap terhitung sebagai 1 serangan."
+      "0": "Saat Normal Attack atau Charged Attack Noelle mengenai musuh 4 kali, CD skill <strong>Breastplate</strong> akan berkurang 1 detik.",
+      "1": "Serangan Noelle dapat dihitung sebagai 1 kali setiap 0,1 detik."
     }
   },
   "passive3": {

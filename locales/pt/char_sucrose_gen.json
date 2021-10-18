@@ -134,7 +134,8 @@
   "constellation4": {
     "name": "Alquimania",
     "description": {
-      "0": "A cada 7 Ataques Normais e Carregados, Sucrose irá reduzir o Tempo de Recarga do <strong>Criação do Espírito do Vento: Experimento 6308</strong> em 1-7 segundos."
+      "0": "Quando os Ataques Normais e Ataques Carregados de Sucrose atingirem o inimigo cumulativamente sete vezes, o Tempo de Recarga de <strong>Criação do Espírito do Vento: Experimento 6308</strong> será reduzido entre 1-7s.",
+      "1": "É possível acumular uma vez a cada 0.1s."
     }
   },
   "constellation5": {

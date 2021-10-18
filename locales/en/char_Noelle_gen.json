@@ -118,8 +118,8 @@
   "passive2": {
     "name": "Nice and Clean",
     "description": {
-      "0": "Every 4 Normal or Charged Attack hits will decrease the CD of <strong>Breastplate</strong> by 1s.",
-      "1": "Hitting multiple opponents with a single attack is only counted as 1 hit."
+      "0": "Noelle will decrease the CD of <strong>Breastplate</strong> by 1s for every 4 Normal or Charged Attack hits she scores on opponents.",
+      "1": "One hit may be counted every 0.1s."
     }
   },
   "passive3": {

@@ -135,7 +135,8 @@
   "constellation4": {
     "name": "Alchemania",
     "description": {
-      "0": "Every 7 Normal and Charged Attacks, Sucrose will reduce the CD of <strong>Astable Anemohypostasis Creation - 6308</strong> by 1-7s."
+      "0": "Sucrose will reduce the CD of <strong>Astable Anemohypostasis Creation - 6308</strong> by 1-7s for every 7 Normal or Charged Attack hits she scores against opponents.",
+      "1": "One hit may be counted every 0.1s."
     }
   },
   "constellation5": {

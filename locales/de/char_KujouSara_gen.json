@@ -13,7 +13,7 @@
       "charged": {
         "0": "<strong>Heftiger Schlag</strong>",
         "1": "Führt einen <strong>gezielten Schuss</strong> mit höherem Schaden und höherer Genauigkeit aus.",
-        "2": "Konzentriert die Kraft der Blitze während des Zielens an der Pfeilsptize, die voll aufgeladen beim Treffen von Gegnern <electro>Elektro-Schaden</electro> verursacht.",
+        "2": "Konzentriert die Kraft der Blitze während des Zielens an der Pfeilspitze, die voll aufgeladen beim Treffen von Gegnern <electro>Elektro-Schaden</electro> verursacht.",
         "3": "Jeder voll aufgeladene Pfeil hinterlässt im Zustand „Krähenfederhaube“ beim Treffen von Gegnern eine „Krähenfeder“."
       },
       "plunging": {
@@ -43,7 +43,7 @@
   "skill": {
     "name": "Tengu-Sturmbeschwörung",
     "description": {
-      "0": "Zieht sich schnell mit der Schnelligkeit eines Tengu zurück und beschwört den Schutz der Krähenfedern.",
+      "0": "Zieht sich geschwind mit der Schnelligkeit eines Tengu zurück und beschwört den Schutz der Krähenfedern.",
       "1": "Erhält eine 18 s anhaltende „Krähenfederhaube“. Sobald Kujou Sara einen voll aufgeladenen Pfeil abschießt, verbraucht sie die Krähenfederhaube und hinterlässt an der Stelle des Treffers des Pfeils eine Krähenfeder.",
       "2": "Krähenfedern lösen nach kurzer Zeit Tengu Juurai – Hinterhalt aus, fügen allen Gegnern im Wirkungsbereich <electro>Elektro-Schaden</electro> zu und erhöhen den Angriff aktueller Figuren im Wirkungsbereich basierend auf Kujou Saras Basis-ANG.",
       "3": "<br/>",

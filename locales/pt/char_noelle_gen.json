@@ -118,8 +118,8 @@
   "passive2": {
     "name": "Limpo e Eficaz",
     "description": {
-      "0": "Cada 4 Ataques Normais ou Carregados aumentam a Recarga de <strong>Guardião do Coração</strong> em 1s.",
-      "1": "Atingindo múltiplos inimigos com um único ataque apenas conta como 1 golpe."
+      "0": "Quando o Ataque Normal e Carregado de Noelle atingir o inimigo cumulativamente 4 vezes, o tempo de Recarga do<strong> Guardião do Coração </strong>serão reduzido em 1s",
+      "1": "É possível acumular uma vez a cada 0.1s."
     }
   },
   "passive3": {

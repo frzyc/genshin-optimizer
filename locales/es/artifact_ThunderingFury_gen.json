@@ -6,16 +6,16 @@
   },
   "pieces": {
     "flower": {
-      "name": "Misericordia del Pájaro del Trueno",
+      "name": "Misericordia del Ave del Trueno",
       "desc": "Una flor del trueno que sobrevivió al furioso pisoteo y a las llamas abrasadoras de una catástrofe destructiva del pasado."
     },
     "plume": {
       "name": "Superviviente de la Catástrofe",
-      "desc": "Una pluma eléctrica dejada por el Pájaro del Trueno como venganza. Aun hoy en día sigue lanzando rayos y truenos llenos de furia."
+      "desc": "Una pluma eléctrica dejada por el Ave del Trueno como venganza. Aun hoy en día sigue lanzando rayos y truenos llenos de furia."
     },
     "sands": {
       "name": "Reloj de Arena del Trueno",
-      "desc": "El reloj de arena utilizado por la tribu que adoraba al Pájaro del Trueno para predecir su llegada. Cuando la tribu dejó de existir, el reloj cayó en el olvido."
+      "desc": "El reloj de arena utilizado por la tribu que adoraba al Ave del Trueno para predecir su llegada. Cuando la tribu dejó de existir, el reloj cayó en el olvido."
     },
     "goblet": {
       "name": "Presagio de la Tormenta",
@@ -23,7 +23,7 @@
     },
     "circlet": {
       "name": "Corona del Invocador de Truenos",
-      "desc": "Una corona usada en la antigüedad por los chamanes que adoraban al Pájaro del Trueno. Por desgracia, ni siquiera la fe más devota podía impresionar a la violenta bestia."
+      "desc": "Una corona usada en la antigüedad por los chamanes que adoraban al Ave del Trueno. Por desgracia, ni siquiera la fe más devota podía impresionar a la violenta bestia."
     }
   }
 }

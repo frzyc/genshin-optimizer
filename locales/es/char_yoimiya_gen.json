@@ -1,6 +1,6 @@
 {
   "name": "Yoimiya",
-  "title": "la Maestra de las Llamas",
+  "title": "La Maestra de las Llamas",
   "description": "La dueña de la tienda Pirotecnia Naganohara y Reina del Festival de Verano. Deposita los deseos de la gente en sus artesanales fuegos artificiales.",
   "constellationName": "Carassius Auratus",
   "auto": {
@@ -121,7 +121,7 @@
   "passive3": {
     "name": "Ornamentación flagrante",
     "description": {
-      "0": "Al fabricar decoraciones, artículos decorativos y decoraciones de paisaje, hay una probabilidad del 100% de recuperar parte de los materiales usados."
+      "0": "Al fabricar decoraciones, artículos decorativos y de paisaje, se recuperan parte de los materiales."
     }
   },
   "constellation1": {

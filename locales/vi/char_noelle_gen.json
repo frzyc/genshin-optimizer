@@ -120,8 +120,8 @@
   "passive2": {
     "name": "Gọn Gàng",
     "description": {
-      "0": "Nếu tấn công thường hoặc trọng kích đánh trúng 4 lần, sẽ giảm CD của <strong>Giáp Hộ Tâm</strong> 1s.",
-      "1": "Nếu đánh trúng nhiều kẻ địch cùng một lúc thì chỉ được tính là 1 lần đánh trúng."
+      "0": "Tấn công thường hoặc trọng kích của Noelle tích lũy đánh trúng kẻ địch 4 lần sẽ giảm 1s CD của <strong>Giáp Hộ Tâm</strong>.",
+      "1": "Mỗi 0.1s tối đa tính 1 lần."
     }
   },
   "passive3": {

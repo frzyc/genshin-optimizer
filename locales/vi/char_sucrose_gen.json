@@ -135,7 +135,8 @@
   "constellation4": {
     "name": "Ảo Tưởng Giả Kim",
     "description": {
-      "0": "Sucrose mỗi khi tấn công thường hoặc trọng kích 7 lần, CD <strong>Gió Thần Sáng Tạo 6308</strong> sẽ giảm ngẫu nhiên từ 1-7s."
+      "0": "Tấn công thường hoặc trọng kích của Sucrose tích lũy đánh trúng kẻ địch 7 lần, CD của <strong>Gió Thần Sáng Tạo 6308</strong> sẽ giảm ngẫu nhiên 1-7s.",
+      "1": "Mỗi 0.1s tối đa tính 1 lần."
     }
   },
   "constellation5": {

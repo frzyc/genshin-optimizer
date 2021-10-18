@@ -1,6 +1,6 @@
 {
   "name": "Prototype Starglitter",
-  "description": "A grudge discovered in the Blackcliff Forge. The glimmers along the sharp edge are like stars in the night.",
+  "description": "A hooked spear discovered hidden away in the Blackcliff Forge. The glimmers along the sharp edge are like stars in the night.",
   "passiveName": "Magic Affinity",
   "passiveDescription": {
     "0": "After using an Elemental Skill, increases Normal and Charged Attack DMG by <cryo>8%</cryo> for 12s. Max 2 stacks.",

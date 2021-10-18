@@ -1,6 +1,6 @@
 {
   "name": "Beidou",
-  "title": "la Reina del Océano sin Corona",
+  "title": "La Reina del Océano sin Corona",
   "description": "Líder de la Flota Crux Meridianam. Es una jefa bastante desenfadada y franca.",
   "constellationName": "Victor Mare",
   "auto": {
@@ -84,7 +84,7 @@
       "1": "<br/>",
       "2": "<strong>Escudo del trueno</strong>",
       "3": [
-        "Los Ataques Normales y Ataques Cargados crean una descarga eléctrica que salta entre enemigos, infligiendo <electro>Daño Electro </electro>.",
+        "Al golpear a un enemigo con Ataques Normales y Cargados, crea una descarga eléctrica que salta entre enemigos e inflige <electro>Daño Electro</electro>.",
         "Aumenta la RES a interrupción del personaje y reduce el daño recibido."
       ],
       "4": "<br/>",

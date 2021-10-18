@@ -135,7 +135,8 @@
   "constellation4": {
     "name": "Alchemania",
     "description": {
-      "0": "การโจมตีปกติหรือชาร์จโจมตี ของ Sucrose ทุก 7 ครั้ง จะลดเวลาคูลดาวน์ <strong>Astable Anemohypostasis Creation - 6308</strong> ลง 1-7 วินาที"
+      "0": "เมื่อการโจมตีปกติหรือชาร์จโจมตีของ Sucrose ถูกศัตรูทุก ๆ 7 ครั้ง จะสุ่มลดเวลาคูลดาวน์ของ <strong>Astable Anemohypostasis Creation - 6308</strong> ลง 1-7 วินาที",
+      "1": "ซึ่งเอฟเฟกต์นี้จะเกิดขึ้นมากสุดหนึ่งครั้ง ในทุก 0.1 วินาที"
     }
   },
   "constellation5": {

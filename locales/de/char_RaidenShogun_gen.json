@@ -46,7 +46,7 @@
       "2": "<strong>Unheilvolles Auge der Blitzstrafe</strong>",
       "3": [
         " Das unheilvolle Auge der Blitzstrafe greift gemeinsam an, wenn die Angriffe der Figuren mit dem unheilvollen Auge der Blitzstrafe den Gegnern Schaden zufügen, und verursacht an der Stelle der Gegner <electro>Elektro-Flächenschaden</electro>.",
-        " Erhöht während der Wirkungsdauer den mit Spezialfähigkeiten der Figuren mit dem unheilvollen Auge der Blitzstrafe verursachten Schaden, basierend auf die Elementarenergie der Spezialfähigkeiten."
+        " Erhöht während der Wirkungsdauer den mit Spezialfähigkeiten der Figuren mit dem unheilvollen Auge der Blitzstrafe verursachten Schaden basierend auf der Elementarenergie der Spezialfähigkeiten."
       ],
       "4": "<br/>",
       "5": "Das unheilvolle Auge der Blitzstrafe jeder Truppe kann alle 0,9 s höchstens einen abgestimmten Angriff ausführen.",
@@ -142,7 +142,7 @@
   "constellation2": {
     "name": "Stahlbrecher",
     "description": {
-      "0": "Lässt die Angriffe von Musou no Hitotachi und Musou Isshin von <strong>Geheime Kunst – Musou Shinsetsu</strong> 60 % der VTD von Gegnern ignorieren."
+      "0": "Wenn Shougun Raiden Musou no Hitotachi einsetzt und durch <strong>Geheime Kunst – Musou Shinsetsu</strong> in den Zustand Musou Isshin versetzt wird, ignorieren die Angriffe von Shougun Raiden 60 % der VTD von Gegnern."
     }
   },
   "constellation3": {

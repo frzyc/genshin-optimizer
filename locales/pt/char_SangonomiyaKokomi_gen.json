@@ -8,7 +8,7 @@
     "fields": {
       "normal": {
         "0": "<strong>Ataque Normal</strong>",
-        "1": "Realiza até 3 ataques com peixes Hydro que infligem <hydro>Dano Hydro</hydro>."
+        "1": "Realiza até 3 ataques consecutivos que assumem a forma de peixes nadando, infligindo <hydro>Dano Hydro</hydro>."
       },
       "charged": {
         "0": "<strong>Ataque Carregado</strong>",
@@ -45,7 +45,7 @@
       "1": "Usar essa habilidade irá aplicar o efeito <hydro>Molhado</hydro> à Sangonomiya Kokomi.",
       "2": "<br/>",
       "3": "<strong>Bake-Kurage</strong>",
-      "4": "Causará <hydro>Dano Hydro</hydro> para inimigos próximos em intervalos de tempo e cura os personagens ativos próximos baseados na Vida Máxima de Sangonomiya Kokomi.",
+      "4": "Causa <hydro>Dano Hydro</hydro> nos inimigos próximos e cura os personagens ativos ao redor com base na Vida Máxima de Sangonomiya Kokomi em intervalos de tempo.",
       "5": "<br/>",
       "6": "<i>Kokomi precisa de um \"refresco\" pontual a fim de manter a eficiência ideal de trabalho.</i>"
     },

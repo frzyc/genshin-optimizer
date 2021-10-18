@@ -55,7 +55,7 @@
       "8": "<i>Les êtres d'une grande divinité peuvent affecter tout ce qui les entoure, et l'Archon Électro peut manipuler les étoiles menaçantes pour protéger ses partisans et infliger une sentence fulgurante à ses ennemis.</i>"
     },
     "skillParams": {
-      "0": "DGT aptitude",
+      "0": "DGT compétence",
       "1": "DGT attaque coordonnée",
       "2": "Durée",
       "3": "Bonus DGT déchaînement élémentaire",
@@ -120,7 +120,7 @@
     }
   },
   "passive2": {
-    "name": "Transcendance",
+    "name": "L'illuminée",
     "description": {
       "0": "Tous les 1 % de recharge d'énergie au-dessus de 100 %, la Shogun Raiden bénéficie des effets suivants :",
       "1": [
@@ -144,7 +144,7 @@
   "constellation2": {
     "name": "Brise-acier",
     "description": {
-      "0": "Les attaques de Kendo d'idéal et d'Harmonie d'idéal d'<strong>Art secret : Dogme d'idéal</strong> ignorent 60 % de la DÉF des ennemis."
+      "0": "Lorsqu'elles bénéficient de l'état d'Harmonie d'idéal accordé par <strong>Art secret : Dogme d'idéal</strong>, les attaques de la Shogun Raiden ignorent 60 % de la DÉF des ennemis."
     }
   },
   "constellation3": {
@@ -170,7 +170,7 @@
   "constellation6": {
     "name": "Porteur de souhaits",
     "description": {
-      "0": "En bénéficiant de l'état d'<strong>Harmonie d'idéal</strong> accordé par <strong>Art secret : Dogme d'idéal</strong>, les attaques de la Shogun Raiden qui sont considérées comme faisant partie de son déchaînement élémentaire diminuent le TdR des déchaînements élémentaires de tous les membres de l'équipe à proximité (hormis la Shogun Raiden) de 1 s lorsqu'elles touchent un ennemi.",
+      "0": "Lorsqu'elles bénéficient de l'état d'<strong>Harmonie d'idéal</strong> accordé par <strong>Art secret : Dogme d'idéal</strong>, les attaques de la Shogun Raiden qui sont considérées comme faisant partie de son déchaînement élémentaire diminuent le TdR des déchaînements élémentaires de tous les membres de l'équipe à proximité (hormis la Shogun Raiden) de 1 s.",
       "1": "Cet effet peut être déclenché une fois toutes les secondes, et un maximum de 5 fois pendant la durée de cet état."
     }
   }

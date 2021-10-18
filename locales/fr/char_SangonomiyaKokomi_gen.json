@@ -2,7 +2,7 @@
   "name": "Sangonomiya Kokomi",
   "title": "Perle de connaissance",
   "description": "La Prêtresse divine de l'Île de Watatsumi, une jeune femme gérant toutes les affaires de l'île.",
-  "constellationName": "Drakaina Somnolenta",
+  "constellationName": "Dracaena Somnolenta",
   "auto": {
     "name": "Forme de l'eau",
     "fields": {
@@ -85,7 +85,7 @@
       "7": "<i>Une lumière claire se fond dans les robes autour de Son Altesse Sangonomiya Kokomi, reflétant sa forme magnifique.</i>"
     },
     "skillParams": {
-      "0": "DGT aptitude",
+      "0": "DGT compétence",
       "1": "Bonus ATQ normale",
       "2": "Bonus ATQ chargée",
       "3": "Bonus ATQ méduse fantôme",
@@ -170,7 +170,7 @@
   "constellation6": {
     "name": "Sango Isshin",
     "description": {
-      "0": "Lorsque Kokomi revêt la parure cérémoniale créée par <strong>Ascension de la néréide</strong>, elle bénéficie d'un <hydro>bonus de DGT Hydro</hydro> de 40 % pendant 4 s après avoir soigné un personnage ayant 80 % de PV ou plus grâce à son attaque normale ou chargée."
+      "0": "Lorsque Kokomi revêt la parure cérémoniale créée par <strong>Ascension de la néréide</strong>, elle bénéficie d'un <hydro>bonus de DGT Hydro</hydro> de 40 % pendant 4 s après avoir effectué un soin sur un personnage ayant 80 % de PV ou plus grâce à son attaque normale ou chargée."
     }
   }
 }

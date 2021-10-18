@@ -1,7 +1,7 @@
 {
   "name": "Xiao",
   "title": "Gardien Yaksha",
-  "description": "Un des Adeptes de Liyue, aussi connu sous le nom de « Dompteur de démons » et « Général des Yakshas ».",
+  "description": "Un des Adeptes de Liyue, aussi connu sous le nom de «{NON_BREAK_SPACE}Dompteur de démons{NON_BREAK_SPACE}» et «{NON_BREAK_SPACE}Général des Yakshas{NON_BREAK_SPACE}».",
   "constellationName": "Alatus Nemeseos",
   "auto": {
     "name": "Coup de tourbillon",
@@ -107,7 +107,7 @@
   "passive1": {
     "name": "Dompteur de démons : Conquérant du mal",
     "description": {
-      "0": "Xiao inflige 5 % de DGT supplémentaires tant que <strong>Fléau du mal</strong> est actif. Un cumul de 5 % de DGT supplémentaires est ensuite appliqué toutes les 3 s tant que dure l'aptitude.",
+      "0": "Xiao inflige 5 % de DGT supplémentaires tant que <strong>Fléau du mal</strong> est actif. Un cumul de 5 % de DGT supplémentaires est ensuite appliqué toutes les 3 s tant que dure la compétence.",
       "1": "Cumul max : 25 % de DGT supplémentaires."
     }
   },

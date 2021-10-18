@@ -114,8 +114,8 @@
   "passive2": {
     "name": "Sauber und geschwind",
     "description": {
-      "0": "Verringert die Abklingzeit von <strong>Brustpanzer</strong> alle vier Treffer mit Standardangriffen oder heftigen Schlägen um 1 s.",
-      "1": "Das gleichzeitige Treffen mehrerer Gegner zählt als ein Treffer."
+      "0": "Noelle verringert alle vier Treffer mit Standardangriffen oder heftigen Schlägen, die sie bei Gegnern erzielt, die Abklingzeit von <strong>Brustpanzer</strong> um 1 s.",
+      "1": "Ein Treffer kann alle 0,1 s gezählt werden."
     }
   },
   "passive3": {

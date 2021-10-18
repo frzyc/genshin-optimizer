@@ -75,7 +75,7 @@
       "1": "<br/>",
       "2": "<strong>Lễ Phục Nghi Thức</strong>",
       "3": [
-        "Giúp Sangonomiya Kokomi tăng sát thương tấn công thường, trọng kích và sát thương do kỹ năng nguyên tố Lễ Phục Nghi Thức gây ra, mức gia tăng sẽ dựa vào giới hạn HP của Kokomi;",
+        "Giúp Sangonomiya Kokomi tăng sát thương tấn công thường, trọng kích và sát thương do kỹ năng nguyên tố \"Vầng Trăng Biển\" gây ra, mức gia tăng sẽ dựa vào giới hạn HP của Kokomi;",
         "Khi tấn công thường và trọng kích trúng kẻ địch sẽ hồi HP cho tất cả nhân vật trong đội gần đó, lượng hồi phục sẽ dựa vào giới hạn HP của Kokomi;",
         "Tăng khả năng kháng gián đoạn của Sangonomiya Kokomi, đồng thời khiến cô ấy có thể di chuyển trên mặt nước."
       ],
@@ -169,7 +169,7 @@
   "constellation6": {
     "name": "Trái Tim San Hô",
     "description": {
-      "0": "Khi trong trạng thái Lễ Phục Nghi Thức của <strong>Nghi Lễ Nereid</strong>, sau khi tấn công thường hoặc trọng kích của Sangonomiya Kokomi hồi HP cho nhân vật có HP trên hoặc bằng 80%, sẽ nhận được thêm 40% <hydro>Sát Thương Nguyên Tố Thủy</hydro>, duy trì 4s."
+      "0": "Khi trong trạng thái Lễ Phục Nghi Thức của <strong>Nghi Lễ Nereid</strong>, lúc đòn tấn công thường và trọng kích của Sangonomiya Kokomi trị liệu cho nhân vật có HP từ 80% trở lên, sẽ nhận 40% <hydro>buff sát thương Nguyên Tố Thủy</hydro>, kéo dài 4s."
     }
   }
 }

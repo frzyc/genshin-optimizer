@@ -146,7 +146,7 @@
   "constellation2": {
     "name": "Steelbreaker",
     "description": {
-      "0": "Serangan Musou no Hitotachi dan Musou Isshin dari skill <strong>Secret Art: Musou Shinsetsu</strong> akan mengabaikan 60% DEF musuh."
+      "0": "Saat menggunakan Musou no Hitotachi dan berada dalam status Musou Isshin yang diperoleh dari skill <strong>Secret Art: Musou Shinsetsu</strong>, serangan Raiden Shogun akan mengabaikan 60% DEF musuh."
     }
   },
   "constellation3": {
@@ -172,7 +172,7 @@
   "constellation6": {
     "name": "Wishbearer",
     "description": {
-      "0": "Saat berada dalam status <strong>Musou Isshin</strong> yang diperoleh dari <strong>Secret Art: Musou Shinsetsu</strong>, serangan Raiden Shogun yang dianggap sebagai Elemental Burst yang mengenai musuh akan mengurangi 1 detik CD Elemental Burst seluruh anggota party di sekitar (kecuali Raiden Shogun sendiri).",
+      "0": "Saat berada dalam status <strong>Musou Isshin</strong> yang diperoleh dari <strong>Secret Art: Musou Shinsetsu</strong>, DMG Elemental Burst Raiden Shogun yang mengenai musuh akan mengurangi 1 detik CD Elemental Burst seluruh anggota party di sekitar (kecuali Raiden Shogun sendiri).",
       "1": "Efek ini dapat terpicu setiap 1 detik, dan dapat terpicu maksimum 5 kali selama durasi status."
     }
   }

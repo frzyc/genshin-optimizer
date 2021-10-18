@@ -1,6 +1,6 @@
 {
   "name": "Royal Grimoire",
-  "description": "A book that once belonged to a royal mage of Mondstadt. It contains faithful and comprehensive historical accounts as well as magic spells.",
+  "description": "A book that once belonged to a court mage of Mondstadt who served the nobility. It contains faithful and comprehensive historical accounts as well as magic spells.",
   "passiveName": "Focus",
   "passiveDescription": {
     "0": "Upon damaging an opponent, increases CRIT Rate by <cryo>8%</cryo>. Max 5 stacks. A CRIT Hit removes all stacks.",

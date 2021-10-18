@@ -1,6 +1,6 @@
 {
   "name": "Sacarosa",
-  "title": "la Dulzura Inofensiva",
+  "title": "La Dulzura Inofensiva",
   "description": "Una alquimista e investigadora de la escuela de bioalquimia que siente curiosidad por todo.",
   "constellationName": "Ampulla",
   "auto": {
@@ -135,7 +135,8 @@
   "constellation4": {
     "name": "Alquemanía",
     "description": {
-      "0": "Por cada 7 Ataques Normales y Cargados de Sacarosa, el TdE de <strong>Creación del espíritu del viento: Experimento 6308</strong> se reduce entre 1 y 7 s."
+      "0": "Por cada 7 veces consecutivas que Sacarosa golpee a un enemigo con sus Ataques Normales o Cargados, el TdE de <strong>Creación del espíritu del viento: Experimento 6308</strong> se reduce entre 1 y 7 s.",
+      "1": "Como máximo, cada golpe solo puede ocurrir una vez cada 0.1 s."
     }
   },
   "constellation5": {
