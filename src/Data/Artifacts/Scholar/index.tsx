@@ -1,8 +1,8 @@
-import flower from './Item_Scholar\'s_Bookmark.png'
-import plume from './Item_Scholar\'s_Quill_Pen.png'
-import sands from './Item_Scholar\'s_Clock.png'
-import goblet from './Item_Scholar\'s_Ink_Cup.png'
-import circlet from './Item_Scholar\'s_Lens.png'
+import flower from './flower.png'
+import plume from './plume.png'
+import sands from './sands.png'
+import goblet from './goblet.png'
+import circlet from './circlet.png'
 import { IArtifactSheet } from '../../../Types/artifact'
 const artifact: IArtifactSheet = {
   name: "Scholar", rarity: [3, 4],

@@ -2,7 +2,8 @@ import { WeaponData } from 'pipeline'
 import { IConditionals } from '../../../../Types/IConditional'
 import { IWeaponSheet } from '../../../../Types/weapon'
 import data_gen from './data_gen.json'
-import img from './Weapon_Whiteblind.png'
+import icon from './Icon.png'
+import iconAwaken from './AwakenIcon.png'
 const atk_def_s = [6, 7.5, 9, 10.5, 12]
 const conditionals: IConditionals = {
   infusionBlade: {
@@ -20,7 +21,8 @@ const conditionals: IConditionals = {
 }
 const weapon: IWeaponSheet = {
   ...data_gen as WeaponData,
-  img,
+  icon,
+  iconAwaken,
   conditionals,
   document: [{
     conditional: conditionals.infusionBlade

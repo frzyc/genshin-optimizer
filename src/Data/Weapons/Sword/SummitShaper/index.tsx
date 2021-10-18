@@ -2,7 +2,8 @@ import { WeaponData } from 'pipeline'
 import { IConditionals } from '../../../../Types/IConditional'
 import { IWeaponSheet } from '../../../../Types/weapon'
 import data_gen from './data_gen.json'
-import img from './Weapon_Summit_Shaper.png'
+import icon from './Icon.png'
+import iconAwaken from './AwakenIcon.png'
 
 const refinementVals = [20, 25, 30, 35, 40]
 const refinementAtkVals = [4, 5, 6, 7, 8]
@@ -29,7 +30,8 @@ const conditionals: IConditionals = {
 }
 const weapon: IWeaponSheet = {
   ...data_gen as WeaponData,
-  img,
+  icon,
+  iconAwaken,
   stats: stats => ({
     shield_: refinementVals[stats.weapon.refineIndex]
   }),

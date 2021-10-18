@@ -67,6 +67,7 @@ Load the translations from [POEditor](https://poeditor.com/projects/view?id=4395
 ### `npm run pipeline-datamined`
 Generate localization & data from datamined data in `pipeline/GenshinData` from the repo [Dimbreath/GenshinData](https://github.com/Dimbreath/GenshinData)
 This will create localization files in `/public/locales/...` with in-game translated text.
+This will also try to populate the arifact/weapon/character images from a `pipeline/Texture2D/` directory. This is optional.
 
 ### `npm run gen-files`
 `npm run pipeline-datamined && npm run localization-load`

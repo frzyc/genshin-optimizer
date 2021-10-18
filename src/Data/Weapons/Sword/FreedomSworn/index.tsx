@@ -3,7 +3,8 @@ import { TransWrapper } from '../../../../Components/Translate'
 import { IConditionals } from '../../../../Types/IConditional'
 import { IWeaponSheet } from '../../../../Types/weapon'
 import data_gen from './data_gen.json'
-import img from './Weapon_Freedom-Sworn.png'
+import icon from './Icon.png'
+import iconAwaken from './AwakenIcon.png'
 const dmg_ = [10, 12.5, 15, 17.5, 20]
 const auto = [16, 20, 24, 28, 32]
 const atk_ = [20, 25, 30, 35, 40]
@@ -20,7 +21,8 @@ const conditionals: IConditionals = {
 }
 const weapon: IWeaponSheet = {
   ...data_gen as WeaponData,
-  img,
+  icon,
+  iconAwaken,
   stats: stats => ({
     dmg_: dmg_[stats.weapon.refineIndex]
   }),

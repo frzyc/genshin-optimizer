@@ -95,6 +95,9 @@ type MainStatsCardsProps = {
   equippedBuild?: ICalculatedStats,
   newBuild?: ICalculatedStats
 }
+const statBreakpoint = {
+  xs: 12, sm: 6, md: 6, lg: 4,
+} as const
 function MainStatsCards({ characterSheet, character, character: { key: characterKey }, equippedBuild, newBuild }: MainStatsCardsProps) {
   const characterDispatch = useCharacterReducer(characterKey)
 
@@ -131,11 +134,11 @@ function MainStatsCards({ characterSheet, character, character: { key: character
   return <>
     <StatDisplayCard
       title="Main Base Stats"
-      content={<Grid container columnSpacing={2} rowSpacing={1}>
-        {displayStatKeys.map(statKey => <Grid item key={statKey} xs={12} lg={6} >
+      content={<Grid container columnSpacing={{ xs: 2, lg: 3 }} rowSpacing={1}>
+        {displayStatKeys.map(statKey => <Grid item key={statKey} {...statBreakpoint} >
           <StatDisplay statKey={statKey} {...displayNewBuildProps} />
         </Grid>)}
-        <Grid item xs={12} lg={6} display="flex" flexDirection="row" justifyContent="space-between">
+        <Grid item {...statBreakpoint} display="flex" flexDirection="row" justifyContent="space-between">
           <span><b>Specialized:</b> <span>{specializedStatKey && StatIcon[specializedStatKey]} {Stat.getStatName(specializedStatKey)}</span></span>
           <span >{`${specializedStatVal.toFixed(Stat.fixedUnit(specializedStatKey))}${specializedStatUnit}`}</span>
         </Grid>
@@ -157,7 +160,7 @@ function MainStatsCards({ characterSheet, character, character: { key: character
     <StatDisplayCard
       title="Other Stats"
       content={<Grid container columnSpacing={2} rowSpacing={1}>
-        {otherStatKeys.map(statKey => <Grid item xs={12} lg={6} key={statKey} ><StatDisplay statKey={statKey} {...displayNewBuildProps} /></Grid>)}
+        {otherStatKeys.map(statKey => <Grid item {...statBreakpoint} key={statKey} ><StatDisplay statKey={statKey} {...displayNewBuildProps} /></Grid>)}
       </Grid>}
       editContent={<Grid container columnSpacing={2} rowSpacing={1}>
         {otherStatKeys.map(statKey =>
@@ -176,7 +179,7 @@ function MainStatsCards({ characterSheet, character, character: { key: character
     <StatDisplayCard
       title="Misc Stats"
       content={<Grid container columnSpacing={2} rowSpacing={1}>
-        {miscStatkeys.map(statKey => <Grid item xs={12} lg={6} key={statKey} ><StatDisplay statKey={statKey} {...displayNewBuildProps} /></Grid>)}
+        {miscStatkeys.map(statKey => <Grid item {...statBreakpoint} key={statKey} ><StatDisplay statKey={statKey} {...displayNewBuildProps} /></Grid>)}
       </Grid>}
       editContent={<Grid container columnSpacing={2} rowSpacing={1}>
         {miscStatkeys.map(statKey =>

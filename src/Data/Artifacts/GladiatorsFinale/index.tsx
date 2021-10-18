@@ -1,8 +1,8 @@
-import flower from './Item_Gladiator\'s_Nostalgia.png'
-import plume from './Item_Gladiator\'s_Destiny.png'
-import sands from './Item_Gladiator\'s_Longing.png'
-import goblet from './Item_Gladiator\'s_Intoxication.png'
-import circlet from './Item_Gladiator\'s_Triumphus.png'
+import flower from './flower.png'
+import plume from './plume.png'
+import sands from './sands.png'
+import goblet from './goblet.png'
+import circlet from './circlet.png'
 import { IArtifactSheet } from '../../../Types/artifact'
 
 const artifact: IArtifactSheet = {

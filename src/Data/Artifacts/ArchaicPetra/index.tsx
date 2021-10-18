@@ -1,8 +1,8 @@
-import flower from './Item_Flower_of_Creviced_Cliff.png'
-import plume from './Item_Feather_of_Jagged_Peaks.png'
-import sands from './Item_Sundial_of_Enduring_Jade.png'
-import goblet from './Item_Goblet_of_Chiseled_Crag.png'
-import circlet from './Item_Mask_of_Solitude_Basalt.png'
+import flower from './flower.png'
+import plume from './plume.png'
+import sands from './sands.png'
+import goblet from './goblet.png'
+import circlet from './circlet.png'
 import { IArtifactSheet } from '../../../Types/artifact'
 import { IConditionals } from '../../../Types/IConditional'
 const conditionals: IConditionals = {//TODO: all party conditional

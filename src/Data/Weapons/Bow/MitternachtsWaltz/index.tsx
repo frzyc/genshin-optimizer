@@ -3,7 +3,8 @@ import { Translate } from '../../../../Components/Translate'
 import { IConditionals } from '../../../../Types/IConditional'
 import { IWeaponSheet } from '../../../../Types/weapon'
 import data_gen from './data_gen.json'
-import img from './Weapon_Mitternachts_Waltz.png'
+import icon from './Icon.png'
+import iconAwaken from './AwakenIcon.png'
 const skill_ = [20, 25, 30, 35, 40]
 const normal_ = [20, 25, 30, 35, 40]
 const conditionals: IConditionals = {
@@ -22,7 +23,8 @@ const conditionals: IConditionals = {
 }
 const weapon: IWeaponSheet = {
   ...data_gen as WeaponData,
-  img,
+  icon,
+  iconAwaken,
   conditionals,
   document: [{
     conditional: conditionals.a

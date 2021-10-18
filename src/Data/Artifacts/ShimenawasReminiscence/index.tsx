@@ -1,8 +1,8 @@
-import flower from './Item_Entangling_Bloom.png'
-import plume from './Item_Shaft_of_Remembrance.png'
-import sands from './Item_Morning_Dew\'s_Moment.png'
-import goblet from './Item_Hopeful_Heart.png'
-import circlet from './Item_Capricious_Visage.png'
+import flower from './flower.png'
+import plume from './plume.png'
+import sands from './sands.png'
+import goblet from './goblet.png'
+import circlet from './circlet.png'
 import { IConditionals } from '../../../Types/IConditional'
 import { IArtifactSheet } from '../../../Types/artifact'
 

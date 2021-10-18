@@ -1,9 +1,9 @@
 import char from './Characters'
 import sheet from './sheet'
-const mapHashData = {
+export const mapHashData = {
   char,
   weapon: {},//will be populated from datamine parsing pipeline
-  artifact:{},
+  artifact: {},
   sheet,
   weaponKey: {
     sword: 1338971918,
@@ -13,4 +13,20 @@ const mapHashData = {
     catalyst: 43479985
   }
 }
-export default mapHashData
+type WeaponIcon = { Icon: string, AwakenIcon: string }
+type WeaponIconData = { [key: string]: WeaponIcon }
+
+type CharacterIcon = { Icon: string, IconSide: string }
+type CharacterIconData = { [key: string]: CharacterIcon }
+//An object to store all the asset related data.
+export const AssetData = {
+  weapon: {
+    sword: {} as WeaponIconData,
+    bow: {} as WeaponIconData,
+    catalyst: {} as WeaponIconData,
+    claymore: {} as WeaponIconData,
+    polearm: {} as WeaponIconData,
+  },
+  artifact: {},
+  char: {} as CharacterIconData,
+}

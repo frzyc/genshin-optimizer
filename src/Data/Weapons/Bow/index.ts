@@ -2,13 +2,13 @@ import AlleyHunter from './AlleyHunter'
 import AmosBow from './AmosBow'
 import BlackcliffWarbow from './BlackcliffWarbow'
 import CompoundBow from './CompoundBow'
-import EbonyBow from './EbonyBow'
 import ElegyForTheEnd from './ElegyForTheEnd'
 import FavoniusWarbow from './FavoniusWarbow'
 import Hamayumi from './Hamayumi'
 import HuntersBow from './HuntersBow'
 import Messenger from './Messenger'
 import MitternachtsWaltz from './MitternachtsWaltz'
+import PolarStar from './PolarStar'
 import Predator from './Predator'
 import PrototypeCrescent from './PrototypeCrescent'
 import RavenBow from './RavenBow'
@@ -29,13 +29,13 @@ const bow = {
   AmosBow,
   BlackcliffWarbow,
   CompoundBow,
-  EbonyBow,
   ElegyForTheEnd,
   FavoniusWarbow,
   Hamayumi,
   HuntersBow,
   Messenger,
   MitternachtsWaltz,
+  PolarStar,
   Predator,
   PrototypeCrescent,
   RavenBow,

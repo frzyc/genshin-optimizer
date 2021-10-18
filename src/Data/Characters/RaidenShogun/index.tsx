@@ -1,5 +1,6 @@
 import card from './Character_Raiden_Shogun_Card.png'
-import thumb from './Character_Raiden_Shogun_Thumb.png'
+import thumb from './Icon.png'
+import thumbSide from './IconSide.png'
 import c1 from './Constellation_Ominous_Inscription.png'
 import c2 from './Constellation_Steelbreaker.png'
 import c3 from './Constellation_Shinkage_Bygones.png'
@@ -90,6 +91,7 @@ const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
+  thumbImgSide: thumbSide,
   star: data_gen.star,
   elementKey: "electro",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,

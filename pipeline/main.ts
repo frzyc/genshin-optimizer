@@ -1,10 +1,10 @@
 import { artifactIdMap, artifactSlotMap, characterIdMap, CharacterKey, DWeaponTypeKey, Language, propTypeMap, QualityTypeMap, StatKey, weaponIdMap, WeaponKey, weaponMap, WeaponTypeKey } from '.'
-import mapHashData from './Data'
+import { mapHashData } from './Data'
 import artifactMainstatData from './DataminedModules/artifact/artifactMainstat'
 import artifactPiecesData from './DataminedModules/artifact/artifactPiecesData'
 import artifactSetData from './DataminedModules/artifact/artifactSets'
 import artifactSubstatData from './DataminedModules/artifact/artifactSubstat'
-import { artifactSubstatRollData, artifactSubstatRollCorrection } from './DataminedModules/artifact/artifactSubstatRolls'
+import { artifactSubstatRollCorrection, artifactSubstatRollData } from './DataminedModules/artifact/artifactSubstatRolls'
 import ascensionData from './DataminedModules/character/ascension'
 import characterData from './DataminedModules/character/character'
 import characterExpCurve, { CharacterGrowCurveKey } from './DataminedModules/character/characterExpCurve'
@@ -18,9 +18,12 @@ import weaponData from './DataminedModules/weapon/weapon'
 import weaponAscensionData from './DataminedModules/weapon/weaponAscension'
 import weaponExpCurve, { WeaponGrowCurveKey } from './DataminedModules/weapon/weaponExpCurve'
 import { extrapolateFloat } from './extrapolateFloat'
+import loadImages from './loadImages'
 import { parsingFunctions, preprocess } from './parseUtil'
 import { crawlObject, dumpFile, layeredAssignment } from './Util'
 const fs = require('fs')
+
+loadImages();
 
 const languageMap = {
   chs: require('./GenshinData/TextMap/TextMapCHS.json'),
@@ -226,8 +229,7 @@ dumpFile('../src/Artifact/artifact_sub_rolls_gen.json', artifactSubstatRollData)
 dumpFile('../src/Artifact/artifact_sub_rolls_correction_gen.json', artifactSubstatRollCorrection)
 
 //generate the MapHashes for localization for artifacts
-Object.entries(artifactSetData).forEach(([SetId, data]) => {
-  if (SetId === "15004" || SetId === "15012") return // "Glacier and Snowfield"  "Prayers to the Firmament"
+Object.entries(artifactSetData).filter(([SetId, data]) => SetId in artifactIdMap).forEach(([SetId, data]) => {
   const { EquipAffixId, SetNeedNum, ContainsList } = data
   if (!EquipAffixId) return
 

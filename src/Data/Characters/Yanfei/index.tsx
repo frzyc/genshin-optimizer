@@ -1,5 +1,6 @@
 import card from './Character_Yanfei_Card.png'
-import thumb from './Character_Yanfei_Thumb.png'
+import thumb from './Icon.png'
+import thumbSide from './IconSide.png'
 import c1 from './Constellation_The_Law_Knows_No_Kindness.png'
 import c2 from './Constellation_Right_of_Final_Interpretation.png'
 import c3 from './Constellation_Samadhi_Fire-Forged.png'
@@ -55,6 +56,7 @@ const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
+  thumbImgSide: thumbSide,
   star: data_gen.star,
   elementKey: "pyro",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,

@@ -1,9 +1,9 @@
 
-import flower from './Item_Summer_Night\'s_Bloom.png'
-import plume from './Item_Summer_Night\'s_Finale.png'
-import circlet from './Item_Summer_Night\'s_Mask.png'
-import sands from './Item_Summer_Night\'s_Moment.png'
-import goblet from './Item_Summer_Night\'s_Waterballoon.png'
+import flower from './flower.png'
+import plume from './plume.png'
+import circlet from './circlet.png'
+import sands from './sands.png'
+import goblet from './goblet.png'
 import { IArtifactSheet } from '../../../Types/artifact'
 import { IConditionals } from '../../../Types/IConditional'
 const conditionals: IConditionals = {

@@ -1,5 +1,6 @@
 import card from './Character_Yoimiya_Card.png'
-import thumb from './Character_Yoimiya_Thumb.png'
+import thumb from './Icon.png'
+import thumbSide from './IconSide.png'
 import c1 from './Constellation_Agate_Ryuukin.png'
 import c2 from './Constellation_A_Procession_of_Bonfires.png'
 import c3 from './Constellation_Trickster\'s_Flare.png'
@@ -54,6 +55,7 @@ const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
+  thumbImgSide: thumbSide,
   star: data_gen.star,
   elementKey: "pyro",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
@@ -154,7 +156,7 @@ const char: ICharacterSheet = {
       },
       passive1: talentTemplate("passive1", tr, passive1),
       passive2: {
-        name: tr("passive1.name"),
+        name: tr("passive2.name"),
         img: passive2,
         sections: [{
           text: tr("passive2.description"),

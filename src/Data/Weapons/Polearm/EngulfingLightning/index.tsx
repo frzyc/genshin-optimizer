@@ -4,7 +4,8 @@ import { IWeaponSheet } from '../../../../Types/weapon'
 import { KeyPath } from '../../../../Util/KeyPathUtil'
 import { FormulaPathBase } from '../../../formula'
 import data_gen from './data_gen.json'
-import img from './Weapon_Engulfing_Lightning.png'
+import icon from './Icon.png'
+import iconAwaken from './AwakenIcon.png'
 import formula, { data } from './data'
 import Stat from '../../../../Stat'
 import { st } from '../../../Characters/SheetUtil'
@@ -21,7 +22,8 @@ const conditionals: IConditionals = {
 }
 const weapon: IWeaponSheet = {
   ...data_gen as WeaponData,
-  img,
+  icon,
+  iconAwaken,
   stats: {
     modifiers: { atk_: [path.conv()] }
   },

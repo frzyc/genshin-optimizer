@@ -1,5 +1,6 @@
 import card from './Character_Sangonomiya_Kokomi_Card.jpg'
-import thumb from './Character_Sangonomiya_Kokomi_Thumb.png'
+import thumb from './Icon.png'
+import thumbSide from './IconSide.png'
 import c1 from './Constellation_At_Water\'s_Edge.png'
 import c2 from './Constellation_The_Clouds_Like_Waves_Rippling.png'
 import c3 from './Constellation_The_Moon,_A_Ship_O\'er_the_Seas.png'
@@ -84,6 +85,7 @@ const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
+  thumbImgSide: thumbSide,
   star: data_gen.star,
   elementKey: "hydro",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,

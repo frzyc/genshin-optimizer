@@ -3,7 +3,8 @@ import { IConditionals } from '../../../../Types/IConditional'
 import { IWeaponSheet } from '../../../../Types/weapon'
 import { sgt, st } from '../../../Characters/SheetUtil'
 import data_gen from './data_gen.json'
-import img from './Weapon_Predator.png'
+import icon from './Icon.png'
+import iconAwaken from './AwakenIcon.png'
 
 const conditionals: IConditionals = {
   ss: {
@@ -22,7 +23,8 @@ const conditionals: IConditionals = {
 }
 const weapon: IWeaponSheet = {
   ...data_gen as WeaponData,
-  img,
+  icon,
+  iconAwaken,
   stats: stats => {
     if (stats.characterKey === "Aloy") return {
       atk: 66

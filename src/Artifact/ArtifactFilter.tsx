@@ -2,7 +2,7 @@ import { faBan, faChartLine, faTrash, faUserShield, faUserSlash } from "@fortawe
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { BusinessCenter, Replay } from "@mui/icons-material"
 import { Button, CardContent, Divider, Grid, ListItemIcon, ListItemText, MenuItem, Skeleton, Slider, ToggleButton, Typography } from "@mui/material"
-import { Suspense, useContext, useMemo } from "react"
+import { Suspense, useCallback, useContext, useEffect, useMemo, useState } from "react"
 import { Trans, useTranslation } from "react-i18next"
 import CharacterSheet from "../Character/CharacterSheet"
 import ArtifactSetDropdown from "../Components/Artifact/ArtifactSetDropdown"
@@ -66,6 +66,17 @@ export default function ArtifactFilter({ artifacts, filters, filterDispatch, ...
     window.confirm(`Are you sure you want to include ${numExclude} artifacts in build generations?`) &&
     artifacts.map(art => database.updateArt({ exclude: false }, art.id))
 
+  const [sliderLow, setsliderLow] = useState(filterLevelLow)
+  const [sliderHigh, setsliderHigh] = useState(filterLevelHigh)
+  const setSlider = useCallback(
+    (e, [l, h]) => {
+      setsliderLow(l)
+      setsliderHigh(h)
+    },
+    [setsliderLow, setsliderHigh])
+  useEffect(() => setsliderLow(filterLevelLow), [filterLevelLow, setsliderLow])
+
+  useEffect(() => setsliderHigh(filterLevelHigh), [setsliderHigh, filterLevelHigh])
   return <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={300} />}>
     <CardDark {...props} >
       <CardContent>
@@ -102,8 +113,9 @@ export default function ArtifactFilter({ artifacts, filters, filterDispatch, ...
               />
               <Slider sx={{ width: 100, flexGrow: 1, mx: 2 }}
                 getAriaLabel={() => 'Arifact Level Range'}
-                value={[filterLevelLow, filterLevelHigh]}
-                onChange={(e, value) => filterDispatch({ filterLevelLow: value[0] ?? value, filterLevelHigh: value[1] ?? value })}
+                value={[sliderLow, sliderHigh]}
+                onChange={setSlider}
+                onChangeCommitted={(e, value) => filterDispatch({ filterLevelLow: value[0] ?? value, filterLevelHigh: value[1] ?? value })}
                 valueLabelDisplay="auto"
                 min={0} max={20} step={1} marks
               />

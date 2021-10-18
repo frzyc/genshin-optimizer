@@ -32,7 +32,7 @@ export const data = {
     coil3: toTalentPercent(skillParam_gen.skill[6]),
     coil4: toTalentPercent(skillParam_gen.skill[7]),
     rushDur: skillParam_gen.skill[8][0],
-    cd: skillParam_gen.skill[8][0],
+    cd: skillParam_gen.skill[9][0],
   },
   burst: {
     dmg: toTalentPercent(skillParam_gen.burst[0]),

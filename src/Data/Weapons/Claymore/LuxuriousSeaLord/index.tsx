@@ -5,12 +5,14 @@ import Stat from '../../../../Stat'
 import { IWeaponSheet } from '../../../../Types/weapon'
 import formula, { data } from './data'
 import data_gen from './data_gen.json'
-import img from './Weapon_Luxurious_Sea-Lord.png'
+import icon from './Icon.png'
+import iconAwaken from './AwakenIcon.png'
 
 const burst_ = [12, 15, 18, 21, 24]
 const weapon: IWeaponSheet = {
   ...data_gen as WeaponData,
-  img,
+  icon,
+  iconAwaken,
   stats: stats => ({
     burst_dmg_: burst_[stats.weapon.refineIndex]
   }),

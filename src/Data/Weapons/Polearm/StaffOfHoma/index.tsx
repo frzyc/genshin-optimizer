@@ -5,7 +5,8 @@ import { IWeaponSheet } from '../../../../Types/weapon'
 import { KeyPath } from '../../../../Util/KeyPathUtil'
 import { FormulaPathBase } from '../../../formula'
 import data_gen from './data_gen.json'
-import img from './Weapon_Staff_of_Homa.png'
+import icon from './Icon.png'
+import iconAwaken from './AwakenIcon.png'
 import formula, { data } from './data'
 import { st } from '../../../Characters/SheetUtil'
 
@@ -27,7 +28,8 @@ const conditionals: IConditionals = {
 }
 const weapon: IWeaponSheet = {
   ...data_gen as WeaponData,
-  img,
+  icon,
+  iconAwaken,
   stats: stats => ({
     hp_: refinementVals_hp[stats.weapon.refineIndex],
     modifiers: { atk: [path.esj()] }

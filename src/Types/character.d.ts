@@ -10,6 +10,7 @@ interface ICharacterSheetBase {
   name: Displayable
   cardImg: string
   thumbImg: string
+  thumbImgSide: string
   star: Rarity
   weaponTypeKey: WeaponTypeKey
   gender: string
