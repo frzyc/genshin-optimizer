@@ -19,7 +19,7 @@ const FlexButtonGroup = styled(ButtonGroup)({
 })
 
 export default function StatInput({ name, children, value, placeholder, defaultValue = 0, onValueChange, percent = false, disabled = false, ...restProps }: StatInputInput) {
-  return <FlexButtonGroup {...restProps} disabled={disabled}>
+  return <FlexButtonGroup {...restProps} >
     {children}
     <TextButton sx={{ whiteSpace: "nowrap" }} >
       {name}

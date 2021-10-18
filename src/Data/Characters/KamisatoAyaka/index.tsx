@@ -34,6 +34,7 @@ const conditionals: IConditionals = {
     }]
   },
   p1: {//After using Kamisato Art: Hyouka
+    canShow: stats => stats.ascension >= 1,
     name: charTr("afterSkill"),
     stats: {
       normal_dmg_: 30,
@@ -45,11 +46,13 @@ const conditionals: IConditionals = {
     }]
   },
   p2: { //sprint
+    canShow: stats => stats.ascension >= 4,
     name: charTr("afterSprintCryo"),
     stats: { cryo_dmg_: 18 },
     fields: [{ text: charTr("staminaRestore") }]
   },
   c4: {
+    canShow: stats => stats.constellation >= 4,
     name: charTr("afterBurst"),
     stats: { enemyDEFRed_: 30 },
     fields: [{
@@ -58,6 +61,7 @@ const conditionals: IConditionals = {
     }]
   },
   c6: {
+    canShow: stats => stats.constellation >= 6,
     name: charTr("afterSkill"),
     stats: { charged_dmg_: 298 },
     fields: [{
