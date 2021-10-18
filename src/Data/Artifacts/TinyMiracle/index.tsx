@@ -5,32 +5,33 @@ import goblet from './Item_Tiny_Miracle\'s_Goblet.png'
 import circlet from './Item_Tiny_Miracle\'s_Earrings.png'
 import { IArtifactSheet } from '../../../Types/artifact'
 import { IConditionals } from '../../../Types/IConditional'
+import ColorText from '../../../Components/ColoredText'
 const conditionals: IConditionals = {
   4: {
     name: "Incoming DMG",
     states: {
       anemo: {
-        name: <span className="text-anemo">Anemo</span>,
+        name: <ColorText color="anemo">Anemo</ColorText>,
         stats: { anemo_res_: 30 }//TODO: party conditional
       },
       geo: {
-        name: <span className="text-geo">Geo</span>,
+        name: <ColorText color="geo">Geo</ColorText>,
         stats: { geo_res_: 30 }//TODO: party conditional
       },
       electro: {
-        name: <span className="text-electro">Electro</span>,
+        name: <ColorText color="electro">Electro</ColorText>,
         stats: { electro_res_: 30 }//TODO: party conditional
       },
       hydro: {
-        name: <span className="text-hydro">Hydro</span>,
+        name: <ColorText color="hydro">Hydro</ColorText>,
         stats: { hydro_res_: 30 }//TODO: party conditional
       },
       pyro: {
-        name: <span className="text-pyro">Pyro</span>,
+        name: <ColorText color="pyro">Pyro</ColorText>,
         stats: { pyro_res_: 30 }//TODO: party conditional
       },
       cryo: {
-        name: <span className="text-cryo">Cryo</span>,
+        name: <ColorText color="cryo">Cryo</ColorText>,
         stats: { cryo_res_: 30 }//TODO: party conditional
       }
     },

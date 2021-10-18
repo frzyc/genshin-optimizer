@@ -21,6 +21,7 @@ import { ICharacterSheet } from '../../../Types/character'
 import { Translate } from '../../../Components/Translate'
 import { bowChargedDocSection, normalDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
+import ColorText from '../../../Components/ColoredText'
 const tr = (strKey: string) => <Translate ns="char_Diona_gen" key18={strKey} />
 const conditionals: IConditionals = {
   c4: { // IcyPawsShield
@@ -74,8 +75,8 @@ const char: ICharacterSheet = {
         sections: [{
           text: tr("skill.description"),
           fields: [{
-            text: <span className="text-cryo">Shield DMG Absorption</span>,
-            formulaText: stats => <span>( {data.skill.shieldHp[stats.tlvl.skill]}% {Stat.printStat("finalHP", stats)} + {data.skill.shieldFlat[stats.tlvl.skill]} ) * (100% + {Stat.printStat("shield_", stats)}) * (250% <span className="text-cryo">Cryo Absorption</span>){stats.constellation >= 2 ? " * 115%" : ""}</span>,
+            text: <ColorText color="cryo">Shield DMG Absorption</ColorText>,
+            formulaText: stats => <span>( {data.skill.shieldHp[stats.tlvl.skill]}% {Stat.printStat("finalHP", stats)} + {data.skill.shieldFlat[stats.tlvl.skill]} ) * (100% + {Stat.printStat("shield_", stats)}) * (250% <ColorText color="cryo">Cryo Absorption</ColorText>){stats.constellation >= 2 ? " * 115%" : ""}</span>,
             formula: formula.skill.shieldCryo,
             variant: "cryo"
           }, {
@@ -83,8 +84,8 @@ const char: ICharacterSheet = {
             formulaText: stats => <span>( {data.skill.shieldHp[stats.tlvl.skill]}% {Stat.printStat("finalHP", stats)} + {data.skill.shieldFlat[stats.tlvl.skill]} ) * (100% + {Stat.printStat("shield_", stats)}){stats.constellation >= 2 ? " * 115%" : ""}</span>,
             formula: formula.skill.shield,
           }, {
-            text: <span className="text-cryo">Hold Shield DMG Absorption</span>,
-            formulaText: stats => <span>( {data.skill.shieldHp[stats.tlvl.skill]}% {Stat.printStat("finalHP", stats)} + {data.skill.shieldFlat[stats.tlvl.skill]} ) * (100% + {Stat.printStat("shield_", stats)}) * (250% <span className="text-cryo">Cryo Absorption</span>) * 175%{stats.constellation >= 2 ? " * 115%" : ""}</span>,
+            text: <ColorText color="cryo">Hold Shield DMG Absorption</ColorText>,
+            formulaText: stats => <span>( {data.skill.shieldHp[stats.tlvl.skill]}% {Stat.printStat("finalHP", stats)} + {data.skill.shieldFlat[stats.tlvl.skill]} ) * (100% + {Stat.printStat("shield_", stats)}) * (250% <ColorText color="cryo">Cryo Absorption</ColorText>) * 175%{stats.constellation >= 2 ? " * 115%" : ""}</span>,
             formula: formula.skill.shieldHoldCryo,
             variant: "cryo"
           }, {

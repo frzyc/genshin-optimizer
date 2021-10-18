@@ -23,15 +23,17 @@ import { chargedHitsDocSection, normalDocSection, plungeDocSection, talentTempla
 import { KeyPath } from '../../../Util/KeyPathUtil'
 import { FormulaPathBase } from '../../formula'
 import { WeaponTypeKey } from '../../../Types/consts'
+import ColorText from '../../../Components/ColoredText'
 
 const path = KeyPath<FormulaPathBase, any>().character.Bennett
 const tr = (strKey: string) => <Translate ns="char_Bennett_gen" key18={strKey} />
 const conditionals: IConditionals = {
   q: { // Fantastic Voyage
     name: tr("burst.name"),
-    stats: {
+    stats: stats => ({
       modifiers: { atk: [path.burst.atkBonus()] },
-    },
+      ...(stats.constellation >= 6 ? { infusionSelf: "pyro" } : {})
+    }),
     fields: [{
       text: "ATK Bonus Ratio",
       formulaText: stats => <span>{stats.constellation < 1 ? data.burst.atkRatio[stats.tlvl.burst] : `(${data.burst.atkRatio[stats.tlvl.burst]} + 20)`}% {Stat.printStat("baseATK", stats, true)}</span>,
@@ -48,7 +50,7 @@ const conditionals: IConditionals = {
     name: "Sword, Claymore, or Polearm-wielding characters inside Fantastic Voyage's radius",
     stats: { pyro_dmg_: 15 },
     fields: [{
-      text: <span className="text-pyro">Pyro infusion</span>,//TODO: infusion as a stat
+      text: <ColorText color="pyro">Pyro infusion</ColorText>,//TODO: infusion as a stat
     }]
   }
 }
@@ -134,7 +136,14 @@ const char: ICharacterSheet = {
       constellation3: talentTemplate("constellation3", tr, c3, { skillBoost: 3 }),
       constellation4: talentTemplate("constellation4", tr, c4),
       constellation5: talentTemplate("constellation5", tr, c5, { burstBoost: 3 }),
-      constellation6: talentTemplate("constellation6", tr, c6),
+      constellation6: {
+        name: tr("constellation6.name"),
+        img: c6,
+        sections: [{
+          text: tr("constellation6.description"),
+          conditional: conditionals.c6
+        }],
+      },
     },
   },
 };

@@ -21,6 +21,7 @@ import { IConditionals } from '../../../Types/IConditional'
 import { Translate } from '../../../Components/Translate'
 import { normalDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
+import ColorText from '../../../Components/ColoredText'
 const tr = (strKey: string) => <Translate ns="char_Xinyan_gen" key18={strKey} />
 const conditionals: IConditionals = {
   a4s: { // NowThatsRockNRoll
@@ -119,8 +120,8 @@ const char: ICharacterSheet = {
             variant: stats => getTalentStatKeyVariant("skill", stats),
           },
           ...[...Array(3)].map((_, i) => i + 1).flatMap(i => [{
-            text: <span className="text-pyro">Shield Level {i} DMG Absorption</span>,
-            formulaText: stats => <span>( {data.skill[`def${i}`][stats.tlvl.skill]}% {Stat.printStat("finalDEF", stats)} + {data.skill[`flat${i}`][stats.tlvl.skill]} ) * (100% + {Stat.printStat("shield_", stats)}) * (250% <span className="text-pyro">Pyro Absorption</span>)</span>,
+            text: <ColorText color="pyro">Shield Level {i} DMG Absorption</ColorText>,
+            formulaText: stats => <span>( {data.skill[`def${i}`][stats.tlvl.skill]}% {Stat.printStat("finalDEF", stats)} + {data.skill[`flat${i}`][stats.tlvl.skill]} ) * (100% + {Stat.printStat("shield_", stats)}) * (250% <ColorText color="pyro">Pyro Absorption</ColorText>)</span>,
             formula: formula.skill[`shield${i}Pyro`],
             variant: "pyro"
           }, {

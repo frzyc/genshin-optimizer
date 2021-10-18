@@ -1,8 +1,8 @@
-import bow from './Weapon-class-bow-icon.png'
-import catalyst from './Weapon-class-catalyst-icon.png'
-import claymore from './Weapon-class-claymore-icon.png'
-import polearm from './Weapon-class-polearm-icon.png'
-import sword from './Weapon-class-sword-icon.png'
+import bow from './icon_bow.png'
+import catalyst from './icon_catalyst.png'
+import claymore from './icon_claymore.png'
+import polearm from './icon_polearm.png'
+import sword from './icon_sword.png'
 
 import fragile from './Item_Fragile_Resin.png'
 import condensed from './Item_Condensed_Resin.png'

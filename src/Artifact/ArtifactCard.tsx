@@ -1,32 +1,29 @@
-import { faBan, faBriefcase, faChartLine, faEdit, faInfoCircle, faLock, faLockOpen, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { faBan, faChartLine, faEdit, faInfoCircle, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useContext, useEffect, useState } from 'react';
-import Badge from 'react-bootstrap/Badge';
-import Button from 'react-bootstrap/Button';
-import ButtonGroup from 'react-bootstrap/ButtonGroup';
-import Card from 'react-bootstrap/Card';
-import Col from 'react-bootstrap/Col';
-import Dropdown from 'react-bootstrap/Dropdown';
-import Image from 'react-bootstrap/Image';
-import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
-import Row from 'react-bootstrap/Row';
-import Tooltip from 'react-bootstrap/Tooltip';
+import { Lock, LockOpen } from '@mui/icons-material';
+import { Box, Button, ButtonGroup, CardActions, CardContent, CardMedia, Chip, Grid, IconButton, Skeleton, Tooltip, Typography } from '@mui/material';
+import React, { Suspense, useContext, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import CharacterSheet from '../Character/CharacterSheet';
-import { CharacterSelectionDropdownList } from '../Character/CharacterSelection';
+import BootstrapTooltip from '../Components/BootstrapTooltip';
+import CardLight from '../Components/Card/CardLight';
+import CharacterDropdownButton from '../Components/Character/CharacterDropdownButton';
+import LocationName from '../Components/Character/LocationName';
+import ColorText from '../Components/ColoredText';
+import SqBadge from '../Components/SqBadge';
 import { Stars } from '../Components/StarDisplay';
-import { DatabaseContext, database as localDatabase } from '../Database/Database';
+import { database as localDatabase, DatabaseContext } from '../Database/Database';
+import usePromise from '../ReactHooks/usePromise';
 import Stat from '../Stat';
 import { allSubstats, ICachedArtifact, ICachedSubstat, SubstatKey } from '../Types/artifact';
 import { CharacterKey } from '../Types/consts';
 import { valueStringWithUnit } from '../Util/UIUtil';
+import { clamp } from '../Util/Util';
 import Artifact from './Artifact';
 import { ArtifactSheet } from './ArtifactSheet';
 import SlotNameWithIcon from './Component/SlotNameWIthIcon';
 import PercentBadge from './PercentBadge';
-import usePromise from '../ReactHooks/usePromise';
 
-type Data = { artifactId?: string, artifactObj?: ICachedArtifact, onEdit?: () => void, onDelete?: () => void, mainStatAssumptionLevel?: number, effFilter?: Set<SubstatKey> }
+type Data = { artifactId?: string, artifactObj?: ICachedArtifact, onEdit?: (string) => void, onDelete?: (string) => void, mainStatAssumptionLevel?: number, effFilter?: Set<SubstatKey> }
 const allSubstatFilter = new Set(allSubstats)
 
 export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete, mainStatAssumptionLevel = 0, effFilter = allSubstatFilter }: Data): JSX.Element | null {
@@ -41,117 +38,116 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
 
   const editable = !artifactObj && database === localDatabase // dont allow edit for flex artifacts
   const art = artifactObj ?? databaseArtifact
-  const characterSheet = usePromise(CharacterSheet.get(art?.location ?? ""), [art?.location])
   if (!art) return null
 
-  const { id, lock, slotKey, rarity, level, mainStatKey, substats, exclude } = art
+  const { id, lock, slotKey, rarity, level, mainStatKey, substats, exclude, location = "" } = art
   const mainStatLevel = Math.max(Math.min(mainStatAssumptionLevel, rarity * 4), level)
-  const levelVariant = (Math.floor(Math.max(level - 1, 0) / 4) + 1) + "roll"
-  const mainStatVal = <span className={mainStatLevel !== level ? "text-orange" : ""}>{valueStringWithUnit(Artifact.mainStatValue(mainStatKey, rarity, mainStatLevel) ?? 0, Stat.getStatUnit(mainStatKey))}</span>
+  const levelVariant = "roll" + (Math.floor(Math.max(level, 0) / 4) + 1)
+  const mainStatVal = <ColorText color={mainStatLevel !== level ? "warning" : undefined}>{valueStringWithUnit(Artifact.mainStatValue(mainStatKey, rarity, mainStatLevel) ?? 0, Stat.getStatUnit(mainStatKey))}</ColorText>
   const { currentEfficiency, maxEfficiency } = Artifact.getArtifactEfficiency(art, effFilter)
   const artifactValid = maxEfficiency !== 0
-  const locationName = characterSheet?.name ? characterSheet.nameWIthIcon : <span><FontAwesomeIcon icon={faBriefcase} /> {t`filterLocation.inventory`}</span>
   const slotName = sheet?.getSlotName(slotKey) || "Unknown Piece Name"
   const slotDesc = sheet?.getSlotDesc(slotKey)
-  const slotDescEle = slotDesc ? <OverlayTrigger
-    placement="top"
-    overlay={<Tooltip id="slotdesc-tooltip">{slotDesc}</Tooltip>}
-  >
-    <FontAwesomeIcon icon={faInfoCircle} />
-  </OverlayTrigger> : null
+  const slotDescTooltip = slotDesc && <BootstrapTooltip placement="top" title={<Typography>{slotDesc}</Typography>}>
+    <span><FontAwesomeIcon icon={faInfoCircle} /></span>
+  </BootstrapTooltip>
   const setEffects = sheet?.setEffects
-  const setDesc = sheet && setEffects && <Tooltip id="setdesc-tooltop">
-    {Object.keys(setEffects).map(setNumKey => <span key={setNumKey} className="text-left">
-      <h6 className="mb-0"><Badge variant="success">{t(`setEffectNum`, { setNum: setNumKey })}</Badge></h6>
-      <p>{sheet.setEffectDesc(setNumKey as any)}</p>
-    </span>)}
-  </Tooltip>
-  const setDescEle = setDesc ? <OverlayTrigger
-    placement="top"
-    overlay={setDesc}
-  >
-    <FontAwesomeIcon icon={faInfoCircle} />
-  </OverlayTrigger> : null
+  const setDescTooltip = sheet && setEffects && <BootstrapTooltip placement="top" title={
+    <span>
+      {Object.keys(setEffects).map(setNumKey => <span key={setNumKey}>
+        <Typography variant="h6"><SqBadge color="success">{t(`setEffectNum`, { setNum: setNumKey })}</SqBadge></Typography>
+        <Typography>{sheet.setEffectDesc(setNumKey as any)}</Typography>
+      </span>)}
+    </span>
+  }>
+    <span><FontAwesomeIcon icon={faInfoCircle} /></span>
+  </BootstrapTooltip>
 
-  return (<Card className="h-100" border={`${rarity}star`} bg="lightcontent" text={"lightfont" as any}>
-    <Card.Header className="p-0">
-      <Row>
-        <Col xs={2} md={3}>
-          <Image src={sheet?.slotIcons[slotKey] ?? ""} className={`w-100 h-auto grad-${rarity}star m-1`} thumbnail />
-        </Col>
-        <Col className="pt-2">
-          <h6><strong>{slotName} {slotDescEle}</strong></h6>
-          <div><SlotNameWithIcon slotKey={slotKey} /> <span className="float-right mr-4"> <Button size="sm" disabled={!editable} onClick={() => database.updateArt({ lock: !lock }, id)}><FontAwesomeIcon icon={lock ? faLock : faLockOpen} className="fa-fw" /></Button></span></div>
-          <div><small><Stars stars={rarity} /></small></div>
-        </Col>
-      </Row>
-    </Card.Header>
-    <Card.Body className="d-flex flex-column py-2">
-      <Card.Title>
-        <Badge variant={levelVariant} ><strong className="text-dark">{` +${level}`}</strong></Badge> {sheet?.name ?? "Artifact Set"} {setDescEle}
-      </Card.Title>
-      <h5 className="mb-1">
-        <b>{Stat.getStatName(mainStatKey)} {mainStatVal}</b>
-      </h5>
-      <Row className="mb-0">
+  return <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 350 }} />}>
+    <CardLight sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
+      <CardContent className={`grad-${rarity}star`} sx={{ py: 1 }}>
+        <Box component="div" sx={{ display: "flex", alignItems: "center" }}>
+          <Chip label={<strong>{` +${level}`}</strong>} color={levelVariant as any} />
+          <Typography sx={{ pl: 1, flexGrow: 1 }}>{slotName} {slotDescTooltip}</Typography>
+          <IconButton color="secondary" disabled={!editable} onClick={() => database.updateArt({ lock: !lock }, id)}>
+            {lock ? <Lock /> : <LockOpen />}
+          </IconButton>
+        </Box>
+        <Grid container sx={{ flexWrap: "nowrap" }}>
+          <Grid item flexGrow={1}>
+            <Typography color="text.secondary" variant="body2">
+              <SlotNameWithIcon slotKey={slotKey} />
+            </Typography>
+            <Typography variant="h6">
+              {Stat.getStatName(mainStatKey)}
+            </Typography>
+            <Typography variant="h5">
+              <strong>{mainStatVal}</strong>
+            </Typography>
+            <Stars stars={rarity} colored />
+            {/* {process.env.NODE_ENV === "development" && <Typography color="common.black">{id || `""`} </Typography>} */}
+          </Grid>
+          <Grid item xs={3} md={4}>
+            <CardMedia
+              component="img"
+              image={sheet?.slotIcons[slotKey] ?? ""}
+              width="100%"
+              height="auto"
+            />
+          </Grid>
+        </Grid>
+      </CardContent>
+      <CardContent sx={{ flexGrow: 1, display: "flex", flexDirection: "column", pt: 1, pb: 0 }}>
         {substats.map((stat: ICachedSubstat, i) => {
           if (!stat.value) return null
-          let numRolls = stat.rolls?.length ?? 0
-          let efficiency = stat.efficiency ?? 0
-          let effOpacity = 0.3 + efficiency * 0.7
-          let statName = Stat.getStatName(stat.key)
-          return (<Col key={i} xs={12}>
-            <Badge variant={numRolls ? `${numRolls}roll` : "danger"} className="text-darkcontent"><b>{numRolls ? numRolls : "?"}</b></Badge>{" "}
-            <span className={`text-${numRolls}roll`}>{statName}{`+${valueStringWithUnit(stat.value, Stat.getStatUnit(stat.key))}`}</span>
-            <span className="float-right" style={{ opacity: effOpacity }}>{stat.key && effFilter.has(stat.key) ? valueStringWithUnit(efficiency, "eff") : "-"}</span>
-          </Col>)
+          const numRolls = stat.rolls?.length ?? 0
+          const rollColor = `roll${clamp(numRolls, 1, 6)}`
+          const efficiency = stat.efficiency ?? 0
+          const effOpacity = 0.3 + (efficiency / 100) * 0.7
+          const statName = Stat.getStatName(stat.key)
+          return (<Box key={i} sx={{ display: "flex" }}>
+            <Box sx={{ flexGrow: 1 }}>
+              <SqBadge color={(numRolls ? rollColor : "error") as any} sx={{ mr: 1 }}><strong>{numRolls ? numRolls : "?"}</strong></SqBadge>
+              <Typography color={(numRolls ? `${rollColor}.main` : "error.main") as any} component="span">{statName}{`+${valueStringWithUnit(stat.value, Stat.getStatUnit(stat.key))}`}</Typography>
+            </Box>
+            <Typography sx={{ opacity: effOpacity }}>{stat.key && effFilter.has(stat.key) ? valueStringWithUnit(efficiency, "eff") : "-"}</Typography>
+          </Box>)
         })}
-      </Row>
-      <div className="mt-auto">
-        <Row>
-          <Col ><small>{t`editor.curSubEff`}</small></Col>
-          <Col xs="auto"><PercentBadge value={currentEfficiency} valid={artifactValid} /></Col>
-        </Row>
-        {currentEfficiency !== maxEfficiency && <Row>
-          <Col ><small>{t`editor.maxSubEff`}</small></Col>
-          <Col xs="auto"><PercentBadge value={maxEfficiency} valid={artifactValid} /></Col>
-        </Row>}
-      </div>
-      {process.env.NODE_ENV === "development" && <span className="text-warning">{id || `""`} </span>}
-    </Card.Body>
-
-    <Card.Footer className="pr-3">
-      <Row className="d-flex justify-content-between no-gutters">
-        {editable ? <Col xs="auto">
-          <Dropdown>
-            <Dropdown.Toggle size="sm" className="text-left">{locationName}</Dropdown.Toggle>
-            <Dropdown.Menu>
-              <Dropdown.Item onClick={() => equipOnChar("")}><FontAwesomeIcon icon={faBriefcase} /> Inventory</Dropdown.Item>
-              <Dropdown.Divider />
-              <CharacterSelectionDropdownList onSelect={equipOnChar} />
-            </Dropdown.Menu>
-          </Dropdown>
-        </Col> : <Col xs="auto"><b>{locationName}</b></Col>}
-        {editable && <Col xs="auto">
-          <ButtonGroup>
-            {!!onEdit && <Button variant="info" size="sm" onClick={onEdit}>
-              <FontAwesomeIcon icon={faEdit} className="fa-fw" />
-            </Button>}
-            <OverlayTrigger placement="top"
-              overlay={<Tooltip id="exclude-artifact-tip">{t`excludeArtifactTip`}</Tooltip>}>
-              <span className="d-inline-block">
-                <Button size="sm" onClick={() => database.updateArt({ exclude: !exclude }, id)} className="rounded-0" variant={exclude ? "danger" : "success"}>
+        <Box sx={{ display: "flex", my: 1 }}>
+          <Typography color="text.secondary" component="span" variant="caption" sx={{ flexGrow: 1 }}>{t`editor.curSubEff`}</Typography>
+          <PercentBadge value={currentEfficiency} valid={artifactValid} />
+        </Box>
+        {currentEfficiency !== maxEfficiency && <Box sx={{ display: "flex", mb: 1 }}>
+          <Typography color="text.secondary" component="span" variant="caption" sx={{ flexGrow: 1 }}>{t`editor.maxSubEff`}</Typography>
+          <PercentBadge value={maxEfficiency} valid={artifactValid} />
+        </Box>}
+        <Box flexGrow={1} />
+        <Typography color="success.main">{sheet?.name ?? "Artifact Set"} {setDescTooltip}</Typography>
+      </CardContent>
+      <CardActions>
+        <Grid container sx={{ flexWrap: "nowrap" }}>
+          <Grid item xs="auto" flexShrink={1}>
+            {editable ?
+              <CharacterDropdownButton size="small" inventory value={location} onChange={equipOnChar} /> : <LocationName location={location} />}
+          </Grid>
+          <Grid item flexGrow={1} sx={{ mr: 1 }} />
+          {editable && <Grid item xs="auto">
+            <ButtonGroup sx={{ height: "100%" }}>
+              {!!onEdit && <Button color="info" onClick={() => onEdit(id)} size="small">
+                <FontAwesomeIcon icon={faEdit} className="fa-fw" />
+              </Button>}
+              <Tooltip title={<Typography>{t`excludeArtifactTip`}</Typography>} placement="top" arrow>
+                <Button onClick={() => database.updateArt({ exclude: !exclude }, id)} color={exclude ? "error" : "success"} size="small">
                   <FontAwesomeIcon icon={exclude ? faBan : faChartLine} className="fa-fw" />
                 </Button>
-              </span>
-            </OverlayTrigger>
-            {!!onDelete && <Button variant="danger" size="sm"
-              onClick={onDelete}>
-              <FontAwesomeIcon icon={faTrashAlt} className="fa-fw" />
-            </Button>}
-          </ButtonGroup>
-        </Col>}
-      </Row>
-    </Card.Footer>
-  </Card >)
+              </Tooltip>
+              {!!onDelete && <Button color="error" size="small" onClick={() => onDelete(id)} disabled={lock}>
+                <FontAwesomeIcon icon={faTrashAlt} className="fa-fw" />
+              </Button>}
+            </ButtonGroup>
+          </Grid>}
+        </Grid>
+      </CardActions>
+    </CardLight >
+  </Suspense>
 }

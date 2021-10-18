@@ -1,13 +1,13 @@
 import { StatKey } from "./artifact";
-import { ArtifactSetKey, ElementKey, HitModeKey, ReactionModeKey, SlotKey } from "./consts";
+import { ArtifactSetKey, CharacterKey, ElementKey, HitModeKey, ReactionModeKey, SlotKey } from "./consts";
 
 type Flat = number
 type Percent = number
 
 /** Stats that are not affected by artifacts */
 export interface BasicStats {
-  characterKey: string, weaponType: string
-  hitMode: HitModeKey, reactionMode: ReactionModeKey | null
+  characterKey: CharacterKey, weaponType: string
+  hitMode: HitModeKey, reactionMode: ReactionModeKey | ""
   weapon: {
     key: string;
     refineIndex: number;

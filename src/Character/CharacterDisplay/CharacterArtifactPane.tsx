@@ -1,10 +1,12 @@
+import { Button, Card, CardContent, Divider, Grid, ToggleButton, Typography } from '@mui/material';
 import { useCallback, useContext, useEffect, useMemo } from 'react';
-import { Alert, Button, ButtonGroup, Card, Col, Row } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import ArtifactCard from '../../Artifact/ArtifactCard';
 import { ArtifactSheet } from '../../Artifact/ArtifactSheet';
 import SetEffectDisplay from '../../Artifact/Component/SetEffectDisplay';
 import { buildContext } from '../../Build/Build';
+import CardLight from '../../Components/Card/CardLight';
+import SolidToggleButtonGroup from '../../Components/SolidToggleButtonGroup';
 import { database as localDatabase, DatabaseContext } from '../../Database/Database';
 import useForceUpdate from '../../ReactHooks/useForceUpdate';
 import usePromise from '../../ReactHooks/usePromise';
@@ -15,7 +17,6 @@ import WeaponSheet from '../../Weapon/WeaponSheet';
 import Character from "../Character";
 import CharacterSheet from '../CharacterSheet';
 import StatDisplayComponent from './StatDisplayComponent';
-const artLayoutSize = { xs: 12, md: 6, lg: 4 }
 
 type CharacterArtifactPaneProps = {
   sheets: {
@@ -56,45 +57,49 @@ function CharacterArtifactPane({ sheets, character, character: { key: characterK
   }, [characterKey, database])
   if (!stats) return null
   return <>
-    <Card className="h-100 mb-2" bg="lightcontent" text={"lightfont" as any}>
-      <Card.Body>
+    <CardLight sx={{ mb: 1 }}>
+      <CardContent>
         <StatDisplayComponent {...{ sheets, character, equippedBuild: (newBuild && !compareBuild) ? undefined : equippedBuild, newBuild, statsDisplayKeys: statKeys }} />
-      </Card.Body>
-      <Card.Footer>
-        <Row>
-          <Col>
-            {newBuild ? <Button onClick={equipArts} className="mr-2">Equip artifacts</Button> : (database === localDatabase && <Button onClick={unequipArts}>Unequip all artifacts</Button>)}
+      </CardContent>
+      <Divider />
+      <CardContent sx={{ py: 1 }}>
+        <Grid container spacing={1}>
+          <Grid item>
+            {newBuild ? <Button onClick={equipArts} className="mr-2">Equip artifacts</Button> : (database === localDatabase && <Button color="error" onClick={unequipArts}>Unequip all artifacts</Button>)}
+          </Grid>
+          <Grid item>
             {/* Compare against new build toggle */}
-            {!!newBuild && <ButtonGroup>
-              <Button variant={compareBuild ? "primary" : "success"} disabled={!compareBuild} onClick={() => setCompareBuild?.(false)}>
+            {!!newBuild && <SolidToggleButtonGroup exclusive value={compareBuild} onChange={(e, v) => setCompareBuild?.(v)} size="small">
+              <ToggleButton value={false} >
                 <small>Show New artifact Stats</small>
-              </Button>
-              <Button variant={!compareBuild ? "primary" : "success"} disabled={compareBuild} onClick={() => setCompareBuild?.(true)}>
+              </ToggleButton>
+              <ToggleButton value={true} >
                 <small>Compare against equipped artifacts</small>
-              </Button>
-            </ButtonGroup>}
-          </Col>
-          <Col xs="auto">{!!mainStatAssumptionLevel && <Alert className="mb-0 py-2" variant="orange" ><b>Assume Main Stats are Level {mainStatAssumptionLevel}</b></Alert>}</Col>
-        </Row>
-      </Card.Footer>
-    </Card>
-    <Row className="mb-n2">
-      <Col {...artLayoutSize} className="d-flex flex-column">
-        {artifactSheets && Object.entries(ArtifactSheet.setEffects(artifactSheets, stats.setToSlots)).map(([setKey, setNumKeyArr]) =>
-          <Card key={setKey} className="mb-2 flex-grow-1" bg="lightcontent" text={"lightfont" as any}>
-            <Card.Header>{artifactSheets?.[setKey].name ?? ""}</Card.Header>
-            <Card.Body className="p-2 mb-n2">
+              </ToggleButton>
+            </SolidToggleButtonGroup>}
+          </Grid>
+          <Grid item flexGrow={1}></Grid>
+          <Grid item>{!!mainStatAssumptionLevel && <Card sx={{ p: 1, bgcolor: t => t.palette.warning.dark }}><Typography><strong>Assume Main Stats are Level {mainStatAssumptionLevel}</strong></Typography></Card>}</Grid>
+        </Grid>
+      </CardContent>
+    </CardLight>
+    <Grid container spacing={1}>
+      <Grid item xs={6} md={4} >
+        <CardLight sx={{ height: "100%" }} ><CardContent sx={{ height: "100%" }}><Grid container spacing={2} flexDirection="column" height="100%" >
+          {artifactSheets && Object.entries(ArtifactSheet.setEffects(artifactSheets, stats.setToSlots)).map(([setKey, setNumKeyArr]) =>
+            <Grid item key={setKey}>
+              <Typography variant="subtitle1" gutterBottom>{artifactSheets?.[setKey].name ?? ""}</Typography>
               {(setNumKeyArr as any).map(setNumKey => <SetEffectDisplay key={setKey + setNumKey} {...{ setKey, setNumKey, equippedBuild, newBuild, characterKey }} />)}
-            </Card.Body>
-          </Card>
-        )}
-      </Col>
+            </Grid>
+          )}
+        </Grid></CardContent></CardLight>
+      </Grid>
       {allSlotKeys.map(slotKey =>
-        Boolean(stats?.equippedArtifacts?.[slotKey]) && <Col {...artLayoutSize} key={stats?.equippedArtifacts?.[slotKey]} className="mb-2">
+        !!stats?.equippedArtifacts?.[slotKey] && <Grid item xs={6} md={4} key={stats?.equippedArtifacts?.[slotKey]} >
           <ArtifactCard artifactId={stats?.equippedArtifacts?.[slotKey]} mainStatAssumptionLevel={mainStatAssumptionLevel} onEdit={() => edit(stats?.equippedArtifacts?.[slotKey])} />
-        </Col>
+        </Grid>
       )}
-    </Row>
+    </Grid>
   </>
 }
 export default CharacterArtifactPane

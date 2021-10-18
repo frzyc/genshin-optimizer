@@ -1,3 +1,4 @@
+import ColorText from "../Components/ColoredText"
 import StatIcon from "../Components/StatIcon"
 import ElementalData from "../Data/ElementalData"
 import Stat from "../Stat"
@@ -8,7 +9,7 @@ export default function statsToFields(statVals, stats = {}): IFieldDisplay[] {
     switch (statKey) {
       case "infusionSelf":
         return {
-          text: <span className={`text-${statVal}`}>{ElementalData[statVal as any]?.name} Infusion</span>,
+          text: <ColorText color={statVal as any}>{ElementalData[statVal as any]?.name} Infusion</ColorText>,
           canShow: () => true,
         }
       default:

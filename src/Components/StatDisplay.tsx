@@ -1,5 +1,5 @@
+import { Box, Typography } from "@mui/material"
 import { useMemo } from "react"
-import { Col, Row } from "react-bootstrap"
 import Character from "../Character/Character"
 import Formula from "../Formula"
 import usePromise from "../ReactHooks/usePromise"
@@ -8,6 +8,7 @@ import { ICachedCharacter } from "../Types/character"
 import { IFieldDisplay } from "../Types/IFieldDisplay"
 import { ICalculatedStats } from "../Types/stats"
 import { characterBaseStats } from "../Util/StatUtil"
+import ColorText from "./ColoredText"
 import StatIcon from "./StatIcon"
 
 function DisplayStatDiff({ label = "", val, oldVal, fixed = 0, unit = "", hasBonus = false }) {
@@ -20,14 +21,14 @@ function DisplayStatDiff({ label = "", val, oldVal, fixed = 0, unit = "", hasBon
   if (oldVal || diff === 0) oldText = oldVal?.toFixed(fixed)
   else if (oldVal === undefined) oldText = val?.toFixed(fixed)//if oldval isnt defined, just display val.
   if (oldText) oldText = <span>{oldText}{unit}</span>
-  if (diff !== 0) diffText = <span className={`text-${diff > 0 ? "success" : "danger"}`}>{diff > 0 ? "+" : ""}{diff?.toFixed(fixed)}{unit}</span>
+  if (diff !== 0) diffText = <ColorText color={diff > 0 ? "success" : "error"}>{diff > 0 ? "+" : ""}{diff?.toFixed(fixed)}{unit}</ColorText>
   const valueText = <>{oldText}{diffText}</>
-  return <Col xs="12"><Row>
-    <Col><b>{label}</b></Col>
-    <Col xs="auto">
+  return <Box display="flex" justifyContent="space-between" >
+    <Typography>{label}</Typography>
+    <Typography>
       {hasBonus ? <strong>{valueText}</strong> : valueText}
-    </Col>
-  </Row></Col>
+    </Typography>
+  </Box>
 }
 type StatDisplayProps = {
   character: ICachedCharacter,
@@ -68,7 +69,7 @@ export default function StatDisplay({ character, equippedBuild, newBuild, statKe
       const build = newBuild ? newBuild : equippedBuild
       const field = (formula as any).field as IFieldDisplay //assume it is attached in post-processing
       const labelVariant = Character.getTalentFieldValue(field, "variant", build)
-      label = <span className={`text-${labelVariant}`}>{Character.getTalentFieldValue(field, "text", build)}</span>
+      label = <ColorText color={labelVariant} >{Character.getTalentFieldValue(field, "text", build)}</ColorText>
       fixed = Character.getTalentFieldValue(field, "fixed", build, 0 as any)
       unit = Character.getTalentFieldValue(field, "unit", build, "")
       val = Character.getTalentFieldValue(field, "formula", build)?.[0]?.(build)

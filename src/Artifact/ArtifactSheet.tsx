@@ -1,4 +1,4 @@
-import { Image } from "react-bootstrap";
+import ImgIcon from "../Components/Image/ImgIcon";
 import { Translate } from "../Components/Translate";
 import { IArtifactSheet, SetEffectEntry } from "../Types/artifact";
 import { allArtifactSets, allSlotKeys, ArtifactRarity, ArtifactSetKey, SetNum, SlotKey } from "../Types/consts";
@@ -23,9 +23,17 @@ export class ArtifactSheet {
   }
 
   get name() { return tr(this.key, "setName") }
+  get defIconSrc() {
+    const slotKey = this.slots[0]
+    if (!this.slotIcons[slotKey]) return undefined
+    return this.slotIcons[slotKey]
+  }
+  /**
+   * @deprecated use src directly
+   */
   get nameWithIcon() {
     const slotKey = this.slots[0]
-    return <span><Image src={this.slotIcons[slotKey]} className="inline-icon" /> {tr(this.key, "setName")}</span>
+    return <span><ImgIcon src={this.slotIcons[slotKey]} /> {tr(this.key, "setName")}</span>
   }
 
   //This is only for OCR, because we only scan in english right now.
@@ -64,9 +72,6 @@ export class ArtifactSheet {
     return grouped
   }
 
-  static setsWithMaxRarity(sheets: StrictDict<ArtifactSetKey, ArtifactSheet>, rarity: ArtifactRarity): [ArtifactSetKey, ArtifactSheet][] {
-    return Object.entries(sheets).filter(([, sheet]) => Math.max(...sheet.rarity) === rarity)
-  }
   static setEffectsStats(sheets: StrictDict<ArtifactSetKey, ArtifactSheet>, charStats: ICalculatedStats, setToSlots: Dict<ArtifactSetKey, SlotKey[]>): BonusStats {
     const artifactSetEffect: BonusStats = {}
     Object.entries(setToSlots).forEach(([set, slots]) =>

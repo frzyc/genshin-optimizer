@@ -1,25 +1,26 @@
+import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
+import { Translate } from '../../../Components/Translate'
+import Stat from '../../../Stat'
+import { ICharacterSheet } from '../../../Types/character'
+import { WeaponTypeKey } from '../../../Types/consts'
+import { IConditionals } from '../../../Types/IConditional'
+import { chargedDocSection, normalDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
 import card from './Character_Klee_Card.jpg'
 import thumb from './Character_Klee_Thumb.png'
+import c6 from './Constellation_Blazing_Delight.png'
 import c1 from './Constellation_Chained_Reactions.png'
 import c2 from './Constellation_Explosive_Frags.png'
 import c3 from './Constellation_Exquisite_Compound.png'
-import c4 from './Constellation_Sparkly_Explosion.png'
 import c5 from './Constellation_Nova_Burst.png'
-import c6 from './Constellation_Blazing_Delight.png'
-import normal from './Talent_Kaboom.png'
-import skill from './Talent_Jumpy_Dumpty.png'
-import burst from './Talent_Sparks_\'n\'_Splash.png'
-import passive1 from './Talent_Pounding_Surprise.png'
-import passive2 from './Talent_Sparkling_Burst.png'
-import passive3 from './Talent_All_Of_My_Treasures.png'
-import Stat from '../../../Stat'
+import c4 from './Constellation_Sparkly_Explosion.png'
 import formula, { data } from './data'
 import data_gen from './data_gen.json'
-import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-import { ICharacterSheet } from '../../../Types/character'
-import { IConditionals } from '../../../Types/IConditional'
-import { Translate } from '../../../Components/Translate'
-import { WeaponTypeKey } from '../../../Types/consts'
+import passive3 from './Talent_All_Of_My_Treasures.png'
+import skill from './Talent_Jumpy_Dumpty.png'
+import normal from './Talent_Kaboom.png'
+import passive1 from './Talent_Pounding_Surprise.png'
+import passive2 from './Talent_Sparkling_Burst.png'
+import burst from './Talent_Sparks_\'n\'_Splash.png'
 const tr = (strKey: string) => <Translate ns="char_Klee_gen" key18={strKey} />
 const conditionals: IConditionals = {
   a1: { // PoundingSurprise
@@ -63,45 +64,11 @@ const char: ICharacterSheet = {
       auto: {
         name: tr("auto.name"),
         img: normal,
-        sections: [{
-          text: <span><strong>Normal Attack</strong> Throws things that go boom when they hit things! Perform up to 3 explosive attacks, dealing <span className="text-pyro">AoE Pyro DMG</span>.</span>,
-          fields: data.normal.hitArr.map((percentArr, i) =>
-          ({
-            text: `${i + 1}-Hit DMG`,
-            formulaText: stats => <span>{percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
-            formula: formula.normal[i],
-            variant: stats => getTalentStatKeyVariant("normal", stats),
-          }))
-        }, {
-          text: <span><strong>Charged Attack</strong> Consumes a certain amount of Stamina and deals <span className="text-pyro">AoE Pyro DMG</span> to opponents after a short casting time.</span>,
-          fields: [{
-            text: `Charged Attack DMG`,
-            formulaText: stats => <span>{data.charged.dmg[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
-            formula: formula.charged.dmg,
-            variant: stats => getTalentStatKeyVariant("charged", stats),
-          }, {
-            text: `Stamina Cost`,
-            value: 50,
-          }],
-        }, {
-          text: <span><strong>Plunging Attack</strong> Gathering the power of <span className="text-pyro">Pyro</span>, Klee plunges towards the ground from mid-air, damaging all opponents in her path. Deals <span className="text-pyro">AoE Pyro DMG</span> upon impact with the ground.</span>,
-          fields: [{
-            text: `Plunge DMG`,
-            formulaText: stats => <span>{data.plunging.dmg[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-            formula: formula.plunging.dmg,
-            variant: stats => getTalentStatKeyVariant("plunging", stats),
-          }, {
-            text: `Low Plunge DMG`,
-            formulaText: stats => <span>{data.plunging.low[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-            formula: formula.plunging.low,
-            variant: stats => getTalentStatKeyVariant("plunging", stats),
-          }, {
-            text: `High Plunge DMG`,
-            formulaText: stats => <span>{data.plunging.high[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("plunging", stats), stats)}</span>,
-            formula: formula.plunging.high,
-            variant: stats => getTalentStatKeyVariant("plunging", stats),
-          }]
-        }],
+        sections: [
+          normalDocSection(tr, formula, data),
+          chargedDocSection(tr, formula, data, 50),
+          plungeDocSection(tr, formula, data),
+        ],
       },
       skill: {
         name: tr("skill.name"),
@@ -150,28 +117,20 @@ const char: ICharacterSheet = {
         }],
       },
       passive1: {
-        name: "Pounding Surprise",
+        name: tr("passive1.name"),
         img: passive1,
         sections: [{
-          text: <span>When <b>Jumpy Dumpty</b> and <b>Normal Attacks</b> deal DMG, Klee has a 50% chance to obtain an Explosive Spark. This Explosive Spark is consumed by the next Charged Attack, which costs no Stamina and deals 50% increased DMG.</span>,
+          text: tr("passive1.description"),
           conditional: conditionals.a1
         }],
       },
-      passive2: {
-        name: "Sparkling Burst",
-        img: passive2,
-        sections: [{ text: <span>When Klee's <b>Charged Attack</b> results in a CRIT, all party members gain 2 Elemental Energy.</span> }],//TODO: party buff
-      },
-      passive3: {
-        name: "All Of My Treasures!",
-        img: passive3,
-        sections: [{ text: <span>Displays the location of nearby resources unique to Mondstadt on the mini-map.</span> }],
-      },
+      passive2: talentTemplate("passive2", tr, passive2),
+      passive3: talentTemplate("passive3", tr, passive3),
       constellation1: {
-        name: "Chained Reactions",
+        name: tr("constellation1.name"),
         img: c1,
         sections: [{
-          text: <span>Attacks and Skills have a certain chance to summon sparks that bombard opponents, dealing DMG equal to 120% of Sparks 'n' Splash's DMG.</span>,
+          text: tr("constellation1.description"),
           fields: [{
             canShow: stats => stats.constellation >= 1,
             text: "Chained Reactions DMG",
@@ -182,24 +141,19 @@ const char: ICharacterSheet = {
         }],
       },
       constellation2: {
-        name: "Explosive Frags",
+        name: tr("constellation2.name"),
         img: c2,
         sections: [{
-          text: <span>Being hit by <b>Jumpy Dumpty</b>'s mines decreases opponents' DEF by 23% for 10s.</span>,
+          text: tr("constellation2.description"),
           conditional: conditionals.c2
         }],
       },
-      constellation3: {
-        name: "Exquisite Compound",
-        img: c3,
-        sections: [{ text: <span>Increases the level of <b>Jumpy Dumpty</b> by 3. Maximum level is 15.</span> }],
-        stats: { skillBoost: 3 }
-      },
+      constellation3: talentTemplate("constellation3", tr, c3, { skillBoost: 3 }),
       constellation4: {
-        name: "Sparkly Explosion",
+        name: tr("constellation4.name"),
         img: c4,
         sections: [{
-          text: <span>If Klee leaves the field during the duration of <b>Sparks 'n' Splash</b>, her departure triggers an explosion that deals 555% of her ATK as <span className="text-pyro">AoE Pyro DMG</span>.</span>,
+          text: tr("constellation4.description"),
           fields: [{
             text: "Sparkly Explosion DMG",
             formulaText: stats => <span>555% {Stat.printStat(getTalentStatKey("elemental", stats), stats)}</span>,
@@ -208,23 +162,15 @@ const char: ICharacterSheet = {
           }]
         }],
       },
-      constellation5: {
-        name: "Nova Burst",
-        img: c5,
-        sections: [{ text: <span>Increases the level of <b>Sparks 'n' Splash</b> by 3. Maximum level is 15.</span> }],
-        stats: { burstBoost: 3 }
-      },
+      constellation5: talentTemplate("constellation5", tr, c5, { burstBoost: 3 }),
       constellation6: {
-        name: "Blazing Delight",
+        name: tr("constellation6.name"),
         img: c6,
         sections: [{
-          text: <span>
-            <p className="mb-2">While under the effects of <b>Sparks 'n' Splash</b>, other members of the party will continuously regenerate Energy.</p>
-            <p className="mb-0">When <b>Sparks 'n' Splash</b> is used, all party members will gain a 10% <span className="text-pyro">Pyro DMG Bonus</span> for 25s.</p>
-          </span>,
+          text: tr("constellation6.description"),
           conditional: conditionals.c6
         }],
-      }
+      },
     },
   },
 };

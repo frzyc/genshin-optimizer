@@ -24,6 +24,7 @@ import { basicDMGFormulaText } from '../../../Util/FormulaTextUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
 import { absorbableEle } from '../dataUtil'
 import ElementalData from '../../ElementalData'
+import ColorText from '../../../Components/ColoredText'
 const tr = (strKey: string) => <Translate ns="char_Sayu_gen" key18={strKey} />
 const conditionals: IConditionals = {
   e: { // Absorption
@@ -60,7 +61,7 @@ const conditionals: IConditionals = {
           if (!num) return basic()
 
           const hitModeMultiKey = stats.hitMode === "avgHit" ? "skill_avgHit_base_multi" : stats.hitMode === "critHit" ? "critHit_base_multi" : ""
-          return <span> {skillPercent} % {Stat.printStat("finalATK", stats)} {hitModeMultiKey ? <span>* {Stat.printStat(hitModeMultiKey, stats)} </span> : null}* ( {Stat.printStat(`${eleKey}_skill_hit_base_multi`, stats)} + 3.3% * <span className="text-info">{num}</span> stacks ) * {Stat.printStat("enemyLevel_multi", stats)} * {Stat.printStat(`${eleKey}_enemyRes_multi`, stats)}</span >
+          return <span> {skillPercent} % {Stat.printStat("finalATK", stats)} {hitModeMultiKey ? <span>* {Stat.printStat(hitModeMultiKey, stats)} </span> : null}* ( {Stat.printStat(`${eleKey}_skill_hit_base_multi`, stats)} + 3.3% * <ColorText color="info">{num}</ColorText> stacks ) * {Stat.printStat("enemyLevel_multi", stats)} * {Stat.printStat(`${eleKey}_enemyRes_multi`, stats)}</span >
         },
         formula: formula.skill[`${eleKey}_kick`],
         variant: eleKey
@@ -138,7 +139,7 @@ const char: ICharacterSheet = {
               if (!num) return basic()
 
               const hitModeMultiKey = stats.hitMode === "avgHit" ? "skill_avgHit_base_multi" : stats.hitMode === "critHit" ? "critHit_base_multi" : ""
-              return <span> {skillPercent} % {Stat.printStat("finalATK", stats)} {hitModeMultiKey ? <span>* {Stat.printStat(hitModeMultiKey, stats)} </span> : null}* ( {Stat.printStat("anemo_skill_hit_base_multi", stats)} + 3.3% * <span className="text-info">{num}</span> stacks ) * {Stat.printStat("enemyLevel_multi", stats)} * {Stat.printStat("anemo_enemyRes_multi", stats)}</span>
+              return <span> {skillPercent} % {Stat.printStat("finalATK", stats)} {hitModeMultiKey ? <span>* {Stat.printStat(hitModeMultiKey, stats)} </span> : null}* ( {Stat.printStat("anemo_skill_hit_base_multi", stats)} + 3.3% * <ColorText color="info">{num}</ColorText> stacks ) * {Stat.printStat("enemyLevel_multi", stats)} * {Stat.printStat("anemo_enemyRes_multi", stats)}</span>
             },
             formula: formula.skill.kick_hold,
             variant: stats => getTalentStatKeyVariant("skill", stats),

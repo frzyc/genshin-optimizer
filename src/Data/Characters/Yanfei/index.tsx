@@ -21,6 +21,7 @@ import { ICharacterSheet } from '../../../Types/character'
 import { Translate } from '../../../Components/Translate'
 import { plungeDocSection, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
+import ColorText from '../../../Components/ColoredText'
 const tr = (strKey: string) => <Translate ns="char_Yanfei_gen" key18={strKey} />
 const conditionals: IConditionals = {
   q: {
@@ -187,8 +188,8 @@ const char: ICharacterSheet = {
           text: tr("constellation4.description"),
           fields: [{
             canShow: stats => stats.constellation >= 4,
-            text: <span className="text-pyro">Shield DMG Absorption</span>,
-            formulaText: stats => <span>45% {Stat.printStat("finalHP", stats)} * (100% + {Stat.printStat("shield_", stats)}) * (250% <span className="text-pyro">Pyro Absorption</span>)</span>,
+            text: <ColorText color="pyro">Shield DMG Absorption</ColorText>,
+            formulaText: stats => <span>45% {Stat.printStat("finalHP", stats)} * (100% + {Stat.printStat("shield_", stats)}) * (250% <ColorText color="pyro">Pyro Absorption</ColorText>)</span>,
             formula: formula.constellation4.shieldCryo,
             variant: "pyro"
           }, {

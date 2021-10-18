@@ -1,13 +1,18 @@
-import { faClipboard, faFileDownload, faFileUpload, faTrashAlt } from '@fortawesome/free-solid-svg-icons'
+import { faArrowLeft, faClipboard, faFileCode, faFileUpload, faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Download, Upload } from '@mui/icons-material'
+import { Alert, Box, Button, CardContent, Divider, Grid, MenuItem, styled, Typography } from '@mui/material'
 import { useContext, useMemo, useState } from "react"
-import { Alert, Badge, Button, Card, Col, Container, Dropdown, Form, Row } from "react-bootstrap"
 import ReactGA from 'react-ga'
 import { Trans, useTranslation } from "react-i18next"
+import CardDark from '../Components/Card/CardDark'
+import CardLight from '../Components/Card/CardLight'
+import DropdownButton from '../Components/DropdownMenu/DropdownButton'
+import SqBadge from '../Components/SqBadge'
 import { ArtCharDatabase, DatabaseContext } from "../Database/Database"
 import { dbStorage } from '../Database/DBStorage'
 import { importGO, ImportResult as GOImportResult } from '../Database/exim/go'
-import { ImportResultCounter, exportGOOD, importGOOD, ImportResult as GOODImportResult } from '../Database/exim/good'
+import { exportGOOD, importGOOD, ImportResult as GOODImportResult, ImportResultCounter } from '../Database/exim/good'
 import { importMona } from '../Database/exim/mona'
 import { languageCodeList } from "../i18n"
 import useForceUpdate from '../ReactHooks/useForceUpdate'
@@ -17,26 +22,35 @@ export default function SettingsDisplay() {
   const [, forceUpdate] = useForceUpdate()
   ReactGA.pageview('/setting')
 
-  return <Container>
-    <Card bg="darkcontent" text={"lightfont" as any} className="mt-2">
-      <Card.Header><Trans t={t} i18nKey="title" /></Card.Header>
-      <Card.Body>
-        <LanguageCard />
-        <DownloadCard forceUpdate={forceUpdate} />
-        <UploadCard forceUpdate={forceUpdate} />
-      </Card.Body>
-    </Card>
-  </Container >
+  return <CardDark sx={{ my: 1 }}>
+    <CardContent sx={{ py: 1 }}>
+      <Typography variant="subtitle1">
+        <Trans t={t} i18nKey="title" />
+      </Typography>
+    </CardContent>
+    <Divider />
+    <CardContent sx={{
+      // select all excluding last
+      "> div:nth-last-of-type(n+2)": { mb: 2 }
+    }}>
+      <LanguageCard />
+      <DownloadCard forceUpdate={forceUpdate} />
+      <UploadCard forceUpdate={forceUpdate} />
+    </CardContent>
+  </CardDark>
 }
 
 function LanguageCard() {
   const { t } = useTranslation();
-  return <Card bg="lightcontent" text={"lightfont" as any} className="mb-3">
-    <Card.Header>{t("settings:languageCard.selectLanguage")} <Badge variant="warning">{t("ui:underConstruction")}</Badge></Card.Header>
-    <Card.Body>
+  return <CardLight>
+    <CardContent sx={{ py: 1 }}>
+      {t("settings:languageCard.selectLanguage")} <SqBadge color="warning">{t("ui:underConstruction")}</SqBadge>
+    </CardContent>
+    <Divider />
+    <CardContent>
       <LanguageDropdown />
-    </Card.Body>
-  </Card>
+    </CardContent>
+  </CardLight>
 }
 
 const nativeLanguages = {
@@ -58,30 +72,20 @@ export function LanguageDropdown() {
   const { t, i18n } = useTranslation(["ui", "settings"]);
   const onSetLanguage = (lang) => () => i18n.changeLanguage(lang);
   const currentLang = i18n.languages[0];
-  return <Dropdown className="flex-grow-1 mb-2">
-    <Dropdown.Toggle className="w-100" variant="primary">
-      {t('settings:languageCard.languageFormat', { language: t(`languages:${currentLang}`) })}
-    </Dropdown.Toggle>
-    <Dropdown.Menu>
-      {languageCodeList.map((lang) => <Dropdown.Item key={lang} onClick={onSetLanguage(lang)}><Trans i18nKey={`languages:${lang}`} />{lang !== currentLang ? ` (${nativeLanguages[lang]})` : ""}</Dropdown.Item>)}
-    </Dropdown.Menu>
-  </Dropdown>
+  return <DropdownButton fullWidth title={t('settings:languageCard.languageFormat', { language: t(`languages:${currentLang}`) })}>
+    {languageCodeList.map((lang) => <MenuItem key={lang} selected={currentLang === lang} disabled={currentLang === lang} onClick={onSetLanguage(lang)}><Trans i18nKey={`languages:${lang}`} />{lang !== currentLang ? ` (${nativeLanguages[lang]})` : ""}</MenuItem>)}
+  </DropdownButton>
 }
 
 function download(JSONstr: string, filename = "data.json") {
   const contentType = "application/json;charset=utf-8"
-  if (window?.navigator?.msSaveOrOpenBlob as any) { // TODO: Function is always defined, do we want to call it instead?
-    const blob = new Blob([decodeURIComponent(encodeURI(JSONstr))], { type: contentType })
-    navigator.msSaveOrOpenBlob(blob, filename)
-  } else {
-    const a = document.createElement('a');
-    a.download = filename
-    a.href = `data:${contentType},${encodeURIComponent(JSONstr)}`
-    a.target = "_blank"
-    document.body.appendChild(a)
-    a.click()
-    document.body.removeChild(a)
-  }
+  const a = document.createElement('a');
+  a.download = filename
+  a.href = `data:${contentType},${encodeURIComponent(JSONstr)}`
+  a.target = "_blank"
+  document.body.appendChild(a)
+  a.click()
+  document.body.removeChild(a)
 }
 
 function deleteDatabase(t, database: ArtCharDatabase) {
@@ -105,23 +109,35 @@ function DownloadCard({ forceUpdate }) {
     deleteDatabase(t, database);
     forceUpdate()
   }
-  return <Card bg="lightcontent" text={"lightfont" as any} className="mb-3">
-    <Card.Header><Trans t={t} i18nKey="downloadCard.databaseDownload" /></Card.Header>
-    <Card.Body>
-      <Row className="mb-2">
-        <Col xs={6} md={4}><Trans t={t} i18nKey="count.chars" /> {numChar}</Col>
-        <Col xs={6} md={4}><Trans t={t} i18nKey="count.arts" /> {numArt}</Col>
-        <Col xs={6} md={4}><Trans t={t} i18nKey="count.weapons" /> {numWeapon}</Col>
-      </Row>
-      <small><Trans t={t} i18nKey="downloadCard.databaseDisclaimer" /></small>
-    </Card.Body>
-    <Card.Footer><Row>
-      <Col xs="auto"><Button disabled={!downloadValid} onClick={() => download(JSON.stringify(exportGOOD(dbStorage)))}><FontAwesomeIcon icon={faFileDownload} /> <Trans t={t} i18nKey="downloadCard.button.download" /></Button></Col>
-      <Col ><Button disabled={!downloadValid} variant="info" onClick={copyToClipboard}><FontAwesomeIcon icon={faClipboard} /> <Trans t={t} i18nKey="downloadCard.button.copy" /></Button></Col>
-      <Col xs="auto"><Button disabled={!downloadValid} variant="danger" onClick={deleteDB} ><FontAwesomeIcon icon={faTrashAlt} /> <Trans t={t} i18nKey="downloadCard.button.delete" /></Button></Col>
-    </Row></Card.Footer>
-  </Card>
+  return <CardLight>
+    <CardContent sx={{ py: 1 }}>
+      <Typography variant="subtitle1">
+        <Trans t={t} i18nKey="downloadCard.databaseDownload" />
+      </Typography>
+    </CardContent>
+    <Divider />
+    <CardContent>
+      <Grid container mb={2} spacing={2}>
+        <Grid item xs={6} md={4}><Typography><Trans t={t} i18nKey="count.chars" /> {numChar}</Typography></Grid>
+        <Grid item xs={6} md={4}><Typography><Trans t={t} i18nKey="count.arts" /> {numArt}</Typography></Grid>
+        <Grid item xs={6} md={4}><Typography><Trans t={t} i18nKey="count.weapons" /> {numWeapon}</Typography></Grid>
+      </Grid>
+      <Typography variant="caption"><Trans t={t} i18nKey="downloadCard.databaseDisclaimer" /></Typography>
+    </CardContent>
+    <Divider />
+    <CardContent sx={{ py: 1 }}>
+      <Grid container spacing={2}>
+        <Grid item><Button disabled={!downloadValid} onClick={() => download(JSON.stringify(exportGOOD(dbStorage)))} startIcon={<Download />}><Trans t={t} i18nKey="downloadCard.button.download" /></Button></Grid>
+        <Grid item flexGrow={1} ><Button disabled={!downloadValid} color="info" onClick={copyToClipboard} startIcon={<FontAwesomeIcon icon={faClipboard} />}><Trans t={t} i18nKey="downloadCard.button.copy" /></Button></Grid>
+        <Grid item><Button disabled={!downloadValid} color="error" onClick={deleteDB} startIcon={<FontAwesomeIcon icon={faTrashAlt} />}><Trans t={t} i18nKey="downloadCard.button.delete" /></Button></Grid>
+      </Grid>
+    </CardContent>
+  </CardLight>
 }
+
+const InvisInput = styled('input')({
+  display: 'none',
+});
 
 function UploadCard({ forceUpdate }) {
   const database = useContext(DatabaseContext)
@@ -185,22 +201,28 @@ function UploadCard({ forceUpdate }) {
     reader.onload = () => setdata(reader.result as string)
     reader.readAsText(file)
   }
-  return <Card bg="lightcontent" text={"lightfont" as any} className="mb-3">
-    <Card.Header><Trans t={t} i18nKey="settings:uploadCard.title" /></Card.Header>
-    <Card.Body>
-      <Form.File
-        className="mb-2"
-        label={filename ? filename : <Trans t={t} i18nKey="settings:uploadCard.hint" />}
-        onChange={onUpload}
-        custom
-        accept=".json"
-      />
-      <h6><Trans t={t} i18nKey="settings:uploadCard.hintPaste" /></h6>
-      <textarea className="w-100 text-monospace mb-2" value={data} onChange={e => setdata(e.target.value)} style={{ minHeight: "10em" }} />
+  return <CardLight>
+    <CardContent sx={{ py: 1 }}><Trans t={t} i18nKey="settings:uploadCard.title" /></CardContent>
+    <CardContent>
+      <Grid container spacing={2} sx={{ mb: 1 }}>
+        <Grid item>
+          <label htmlFor="icon-button-file">
+            <InvisInput accept=".json" id="icon-button-file" type="file" onChange={onUpload} />
+            <Button component="span" startIcon={<Upload />}>Upload</Button>
+          </label>
+        </Grid>
+        <Grid item flexGrow={1}>
+          <CardDark sx={{ px: 2, py: 1 }}>
+            <Typography>{filename ? <span><FontAwesomeIcon icon={faFileCode} /> {filename}</span> : <span><FontAwesomeIcon icon={faArrowLeft} /> <Trans t={t} i18nKey="settings:uploadCard.hint" /></span>}</Typography>
+          </CardDark>
+        </Grid>
+      </Grid>
+      <Typography gutterBottom variant="caption"><Trans t={t} i18nKey="settings:uploadCard.hintPaste" /></Typography>
+      <Box component="textarea" sx={{ width: "100%", fontFamily: "monospace", minHeight: "10em", mb: 2, resize: "vertical" }} value={data} onChange={e => setdata(e.target.value)} />
       {UploadInfo(dataObj) ?? errorMsg}
-    </Card.Body>
+    </CardContent>
     {UploadAction(dataObj, reset)}
-  </Card>
+  </CardLight>
 }
 
 function UploadInfo(data: UploadData | undefined) {
@@ -218,44 +240,63 @@ function UploadAction(data: UploadData | undefined, reset: () => void) {
 
 function GOODUploadInfo({ data: { source, artifacts, characters, weapons }, data }: { data: GOODImportResult }) {
   const { t } = useTranslation("settings")
-  return <Card bg="darkcontent" text={"lightfont" as any}>
-    <Card.Header><Trans t={t} i18nKey="uploadCard.dbSource" /> <strong>{source}</strong></Card.Header>
-    <Card.Body className="mb-n2">
-      <MergeResult result={artifacts} type="arts" />
-      <MergeResult result={weapons} type="weapons" />
-      <MergeResult result={characters} type="chars" />
-    </Card.Body>
-  </Card>
+  return <CardDark>
+    <CardContent sx={{ py: 1 }}>
+      <Typography>
+        <Trans t={t} i18nKey="uploadCard.dbSource" /><strong> {source}</strong>
+      </Typography>
+    </CardContent>
+    <Divider />
+    <CardContent >
+      <Grid container spacing={2}>
+        <Grid item flexGrow={1}>
+          <MergeResult result={artifacts} type="arts" />
+        </Grid>
+        <Grid item flexGrow={1}>
+          <MergeResult result={weapons} type="weapons" />
+        </Grid>
+        <Grid item flexGrow={1}>
+          <MergeResult result={characters} type="chars" />
+        </Grid>
+      </Grid>
+    </CardContent>
+  </CardDark>
 }
 function MergeResult({ result, type }: { result?: ImportResultCounter, type: string }) {
   const { t } = useTranslation("settings")
   if (!result) return null
-  return <Card bg="lightcontent" text={"lightfont" as any} className="mb-2">
-    <Card.Header><Trans t={t} i18nKey={`count.${type}`} /> {result.total ?? 0}</Card.Header>
-    <Card.Body className="mb-n2">
-      <Row xs={12} md={4} className="mb-2">
-        <Col><Trans t={t} i18nKey="count.new" /> <strong>{result.new}</strong> / {result.total}</Col>
-        <Col><Trans t={t} i18nKey="count.updated" /> <strong>{result.updated}</strong> / {result.total}</Col>
-        <Col><Trans t={t} i18nKey="count.unchanged" /> <strong>{result.unchanged}</strong> / {result.total}</Col>
-        <Col className="text-warning"><Trans t={t} i18nKey="count.removed" /> <strong>{result.removed}</strong></Col>
-      </Row>
+  return <CardLight >
+    <CardContent sx={{ py: 1 }}>
+      <Typography>
+        <Trans t={t} i18nKey={`count.${type}`} /> {result.total ?? 0}
+      </Typography>
+    </CardContent>
+    <Divider />
+    <CardContent>
+      <Typography><Trans t={t} i18nKey="count.new" /> <strong>{result.new}</strong> / {result.total}</Typography>
+      <Typography><Trans t={t} i18nKey="count.updated" /> <strong>{result.updated}</strong> / {result.total}</Typography>
+      <Typography><Trans t={t} i18nKey="count.unchanged" /> <strong>{result.unchanged}</strong> / {result.total}</Typography>
+      <Typography color="warning.main"><Trans t={t} i18nKey="count.removed" /> <strong>{result.removed}</strong></Typography>
       {!!result.invalid?.length && <div>
-        <h6 className="text-danger"><Trans t={t} i18nKey="count.invalid" /> <strong>{result.invalid.length}</strong> / {result.total}</h6>
-        <textarea className="w-100 text-monospace mb-2" value={JSON.stringify(result.invalid, undefined, 2)} disabled style={{ minHeight: "10em" }} />
+        <Typography color="error.main"><Trans t={t} i18nKey="count.invalid" /> <strong>{result.invalid.length}</strong> / {result.total}</Typography>
+        <Box component="textarea" sx={{ width: "100%", fontFamily: "monospace", minHeight: "10em", resize: "vertical" }} value={JSON.stringify(result.invalid, undefined, 2)} disabled />
       </div>}
-    </Card.Body>
-  </Card>
+    </CardContent>
+  </CardLight>
 }
 function GOUploadInfo({ data: { charCount, artCount } }: { data: GOImportResult }) {
   const { t } = useTranslation("settings")
-  return <Card bg="darkcontent" text={"lightfont" as any}>
-    <Card.Header><Trans t={t} i18nKey="uploadCard.goUpload.title" /></Card.Header>
-    <Card.Body><Row>
-      <Col xs={12} md={6}><Trans t={t} i18nKey="count.chars" /> {charCount}</Col>
-      <Col xs={12} md={6}><Trans t={t} i18nKey="count.arts" /> {artCount}</Col>
-      {<Col xs={12} ><Alert variant="warning" className="mb-0 mt-2"><Trans t={t} i18nKey="uploadCard.goUpload.migrate" /></Alert></Col>}
-    </Row></Card.Body>
-  </Card>
+  return <CardDark>
+    <CardContent sx={{ py: 1 }}>
+      <Trans t={t} i18nKey="uploadCard.goUpload.title" />
+    </CardContent>
+    <Divider />
+    <CardContent><Grid container spacing={1}>
+      <Grid item xs={12} md={6}> <Typography><Trans t={t} i18nKey="count.chars" /> {charCount}</Typography></Grid>
+      <Grid item xs={12} md={6}> <Typography><Trans t={t} i18nKey="count.arts" /> {artCount}</Typography></Grid>
+      {<Grid item xs={12} ><Alert severity="warning" ><Trans t={t} i18nKey="uploadCard.goUpload.migrate" /></Alert></Grid>}
+    </Grid></CardContent>
+  </CardDark>
 }
 
 function GOUploadAction({ data: { storage }, data, reset }: { data: GOImportResult | GOODImportResult, reset: () => void }) {
@@ -269,9 +310,9 @@ function GOUploadAction({ data: { storage }, data, reset }: { data: GOImportResu
     reset()
   }
 
-  return <Card.Footer>
-    <Button variant={dataValid ? "success" : "danger"} disabled={!dataValid} onClick={replaceDB}><FontAwesomeIcon icon={faFileUpload} /> <Trans t={t} i18nKey="settings:uploadCard.replaceDatabase" /></Button>
-  </Card.Footer>
+  return <><Divider /><CardContent sx={{ py: 1 }}>
+    <Button color={dataValid ? "success" : "error"} disabled={!dataValid} onClick={replaceDB} startIcon={<FontAwesomeIcon icon={faFileUpload} />}><Trans t={t} i18nKey="settings:uploadCard.replaceDatabase" /></Button>
+  </CardContent></>
 }
 
 type UploadData = GOImportResult | GOODImportResult

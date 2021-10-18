@@ -268,7 +268,7 @@ export class ArtCharDatabase {
     if (char2)
       this.saveChar(char2.key, { ...char2, equippedArtifacts: { ...char2.equippedArtifacts, [slotKey]: art2?.id ?? "" } })
   }
-  setWeaponLocation(weaponId: string, newCharKey: CharacterKey) {
+  setWeaponLocation(weaponId: string, newCharKey: CharacterKey | "") {
     const weapon1 = this.weapons.get(weaponId)
     const char1 = this.chars.get(newCharKey)
     if (!weapon1 || !char1 || weapon1.location === newCharKey) return

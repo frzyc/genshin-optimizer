@@ -21,6 +21,7 @@ import { IConditionals } from '../../../Types/IConditional'
 import { Translate } from '../../../Components/Translate'
 import { normalDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
+import ColorText from '../../../Components/ColoredText'
 const tr = (strKey: string) => <Translate ns="char_Fischl_gen" key18={strKey} />
 const conditionals: IConditionals = {}
 
@@ -60,7 +61,7 @@ const char: ICharacterSheet = {
               variant: stats => getTalentStatKeyVariant("charged", stats, "electro"),
             }, {
               canShow: stats => stats.ascension >= 1,
-              text: <span>Full Aimed Shot on Oz <span className="text-electro">AoE</span></span>,
+              text: <span>Full Aimed Shot on Oz <ColorText color="electro">AoE</ColorText></span>,
               formulaText: stats => <span>152.7% * {data.charged.fullAimedShot[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats, "electro"), stats)}</span>,
               formula: formula.charged.fullAimedShotOz,
               variant: stats => getTalentStatKeyVariant("charged", stats, "electro"),

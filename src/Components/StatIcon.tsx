@@ -2,6 +2,7 @@ import { faDiceD20 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAnemo, faAtk, faCdReductionPrimary, faCdReductionSecondary, faCritRate, faCryo, faDef, faDendro, faElectro, faElementalMastery, faEnergyRechargePrimary, faEnergyRechargeSecondary, faGeo, faHealingBonus, faHpPrimary, faHpSecondary, faHydro, faMaxStamina, faPhysicalDmgBonus, faPyro, faShieldStrength } from '../faIcons'
 import { objectFromKeyMap } from '../Util/Util'
+import ColorText from './ColoredText'
 
 export function HPIcon() {
 	return <span className="fa-layers ">
@@ -33,7 +34,7 @@ export const uncoloredEleIcons = {
 	dendro: <FontAwesomeIcon icon={faDendro as any} />,
 	physical: <FontAwesomeIcon icon={faPhysicalDmgBonus as any} />,
 } as const
-const coloredEleIcon = objectFromKeyMap(Object.keys(uncoloredEleIcons), key => <span className={`text-${key}`}>{uncoloredEleIcons[key]}</span>)
+const coloredEleIcon = objectFromKeyMap(Object.keys(uncoloredEleIcons), key => <ColorText color={key} >{uncoloredEleIcons[key]}</ColorText>)
 
 const StatIcon = {
 	characterHP: <HPIcon />,

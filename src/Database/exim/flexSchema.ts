@@ -43,7 +43,7 @@ const artifactSet = fixed(allArtifactSets)
 const slot = fixed(allSlotKeys)
 const characterKey = fixed(allCharacterKeys)
 const hitMode = fixed(allHitModes)
-const reactionMode = fixed([null, ...allReactionModes])
+const reactionMode = fixed(["", ...allReactionModes])
 const element = optional(allElements, '')
 
 // Complex schema
@@ -315,5 +315,5 @@ export const schemas = {
 }
 // For testing purpose only, no need to maintain strict ordering
 export const constants = {
-  reactionModes: [null, ...allReactionModes], stats
+  reactionModes: ["", ...allReactionModes], stats
 }

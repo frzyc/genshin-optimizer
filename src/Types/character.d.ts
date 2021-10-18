@@ -60,7 +60,7 @@ export interface ICharacter {
   // GO-specific
   hitMode: HitModeKey
   elementKey?: ElementKey
-  reactionMode: ReactionModeKey | null
+  reactionMode: ReactionModeKey | ""
   conditionalValues: any
   bonusStats: object
   infusionAura: ElementKey | ""

@@ -21,6 +21,7 @@ import { ICharacterSheet } from '../../../Types/character'
 import { Translate } from '../../../Components/Translate'
 import { claymoreChargedDocSection, normalDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
+import ColorText from '../../../Components/ColoredText'
 const tr = (strKey: string) => <Translate ns="char_Beidou_gen" key18={strKey} />
 const conditionals: IConditionals = {
   a4: { // Lightning Storm
@@ -76,8 +77,8 @@ const char: ICharacterSheet = {
         sections: [{
           text: tr("skill.description"),
           fields: [{
-            text: <span className="text-electro">Shield DMG Absorption</span>,
-            formulaText: stats => <span>( {data.skill.hp[stats.tlvl.skill]}% {Stat.printStat("finalHP", stats)} + {data.skill.flat[stats.tlvl.skill]} ) * (100% + {Stat.printStat("shield_", stats)}) * (250% <span className="text-electro">Electro Absorption</span>)</span>,
+            text: <ColorText color="electro">Shield DMG Absorption</ColorText>,
+            formulaText: stats => <span>( {data.skill.hp[stats.tlvl.skill]}% {Stat.printStat("finalHP", stats)} + {data.skill.flat[stats.tlvl.skill]} ) * (100% + {Stat.printStat("shield_", stats)}) * (250% <ColorText color="electro">Electro Absorption</ColorText>)</span>,
             formula: formula.skill.shieldElectro,
             variant: "electro"
           }, {
@@ -147,8 +148,8 @@ const char: ICharacterSheet = {
           text: tr("constellation1.description"),
           fields: [{
             canShow: stats => stats.constellation >= 1,
-            text: <span className="text-electro">Shield DMG Absorption</span>,
-            formulaText: stats => <span>16% {Stat.printStat("finalHP", stats)} * (100% + {Stat.printStat("shield_", stats)}) * (250% <span className="text-electro">Electro Absorption</span>)</span>,
+            text: <ColorText color="electro">Shield DMG Absorption</ColorText>,
+            formulaText: stats => <span>16% {Stat.printStat("finalHP", stats)} * (100% + {Stat.printStat("shield_", stats)}) * (250% <ColorText color="electro">Electro Absorption</ColorText>)</span>,
             formula: formula.constellation1.shieldElectro,
             variant: "electro"
           }, {

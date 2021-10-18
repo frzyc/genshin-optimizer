@@ -5,9 +5,10 @@ import goblet from './Item_Lavawalker\'s_Epiphany.png'
 import circlet from './Item_Lavawalker\'s_Wisdom.png'
 import { IArtifactSheet } from '../../../Types/artifact'
 import { IConditionals } from '../../../Types/IConditional'
+import ColorText from '../../../Components/ColoredText'
 const conditionals: IConditionals = {
   4: {
-    name: <span>Enemies that are Burning or affected by <span className="text-pyro">Pyro</span></span>,
+    name: <span>Enemies that are <ColorText color="burning">Burning</ColorText> or affected by <ColorText color="pyro">Pyro</ColorText></span>,
     stats: { dmg_: 35 }
   }
 }

@@ -5,9 +5,10 @@ import goblet from './Item_Thundersoother\'s_Goblet.png'
 import circlet from './Item_Thundersoother\'s_Diadem.png'
 import { IArtifactSheet } from '../../../Types/artifact'
 import { IConditionals } from '../../../Types/IConditional'
+import ColorText from '../../../Components/ColoredText'
 const conditionals: IConditionals = {
   4: {
-    name: <span>Enemies affected by <span className="text-electro">Electro</span></span>,
+    name: <span>Enemies affected by <ColorText color="electro">Electro</ColorText></span>,
     stats: { dmg_: 35 }
   }
 }

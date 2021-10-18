@@ -24,6 +24,7 @@ import { WeaponTypeKey } from '../../../Types/consts'
 import { basicDMGFormulaText } from '../../../Util/FormulaTextUtil'
 import { KeyPath } from '../../../Util/KeyPathUtil'
 import { FormulaPathBase } from '../../formula'
+import { Typography } from '@mui/material'
 const path = KeyPath<FormulaPathBase, any>().character.KujouSara
 const tr = (strKey: string) => <Translate ns="char_KujouSara_gen" key18={strKey} />
 const charTr = (strKey: string) => <Translate ns="char_KujouSara" key18={strKey} />
@@ -140,7 +141,10 @@ const char: ICharacterSheet = {
         img: c6,
         sections: [{
           text: stats => stats.constellation < 6 ? tr("constellation6.description") :
-            <span>{tr("constellation6.description")}<p className="mb-0 text-warning">This skill needs more theory-crafting before it can be implemented.</p></span>,
+            <span>
+              {tr("constellation6.description")}
+              <Typography color="warning.main">This skill needs more theory-crafting before it can be implemented.</Typography>
+            </span>,
         }],
       },
     },
