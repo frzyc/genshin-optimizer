@@ -40,7 +40,7 @@ export default function ArtifactSetPicker({ index, setFilters, onChange, initial
       <ButtonGroup>
         {/* Artifact set */}
         {artifactSheets && <ArtifactSetDropdown hasUnselect selectedSetKey={setKey} artifactSetsByRarity={artifactSetsByRarity as any}
-          onChange={setKey => onChange(index, setKey as ArtifactSetKey, parseInt(Object.keys(artifactSheets[setKey]?.setEffects ?? {})[0] as string) as number)} />}
+          onChange={setKey => onChange(index, setKey as ArtifactSetKey, parseInt(Object.keys(artifactSheets[setKey]?.setEffects ?? {})[0] as string) ?? 0)} />}
         {/* set number */}
         <DropdownButton title={`${setNum}-set`}
           disabled={disabled || !setKey || artsAccounted >= 5}
@@ -48,7 +48,7 @@ export default function ArtifactSetPicker({ index, setFilters, onChange, initial
           {!!initialStats && Object.keys(artifactSheets?.[setKey]?.setEffects ?? {}).map((num: any) => {
             let artsAccountedOther = setFilters.reduce((accu, cur) => (cur.key && cur.key !== setKey) ? accu + cur.num : accu, 0)
             return (parseInt(num) + artsAccountedOther <= 5) &&
-              (<MenuItem key={num} onClick={() => onChange(index, setFilters[index].key, parseInt(num))} >
+              (<MenuItem key={num} onClick={() => onChange(index, setFilters[index].key, parseInt(num) ?? 0)} >
                 {`${num}-set`}
               </MenuItem>)
           })}

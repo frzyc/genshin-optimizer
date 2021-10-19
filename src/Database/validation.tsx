@@ -187,6 +187,12 @@ export function parseCharacter(obj: any): ICharacter | undefined {
     //move all the empty entries to the back
     setFilters = [...setFilters.filter(s => s.key), ...setFilters.filter(s => !s.key)]
 
+    //make sure set effects are all numbers
+    setFilters = setFilters.map(({ key, num }) => {
+      if (Number.isInteger(num)) return { key, num }
+      return { key: "", num: 0 }
+    })
+
     if (typeof statFilters !== "object") statFilters = {}
 
     if (!mainStatKeys || !mainStatKeys.sands || !mainStatKeys.goblet || !mainStatKeys.circlet) {
