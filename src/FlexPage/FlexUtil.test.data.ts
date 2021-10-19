@@ -37,6 +37,7 @@ export const weapon: IWeapon = {
   level: 90,
   ascension: 6,
   refinement: 1,
+  lock: false,
 }
 export const artifacts: IArtifact[] = [{
   setKey: 'GladiatorsFinale',

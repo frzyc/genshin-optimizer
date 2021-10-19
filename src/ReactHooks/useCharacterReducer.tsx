@@ -2,13 +2,13 @@ import { useCallback, useContext } from "react";
 import { DatabaseContext } from "../Database/Database";
 import { ICachedCharacter } from "../Types/character";
 import { CharacterKey } from "../Types/consts";
-import { characterBaseStats } from "../Util/StatUtil";
+import { characterBaseStats, overrideStatKeys } from "../Util/StatUtil";
 
 type characterEquipWeapon = {
   type: "weapon", id: string
 }
 type characterReducerBonusStatsAction = {
-  type: "bonusStats",
+  type: "editStats",
   statKey: string
   value: any | undefined
 }
@@ -24,16 +24,24 @@ export default function useCharacterReducer(characterKey: CharacterKey) {
       case "weapon":
         database.setWeaponLocation(action.id, characterKey)
         break
-      case "bonusStats": {
+      case "editStats": {
         const character = database._getChar(characterKey)!
         const { statKey, value } = action
+
         const bonusStats = character.bonusStats
+
         if (bonusStats[statKey] === value) return
-
-        bonusStats[statKey] = value
-        if ((characterBaseStats(character)[statKey] ?? 0) === value)
-          delete bonusStats[statKey]
-
+        if (overrideStatKeys.includes(statKey)) {
+          if ((characterBaseStats(character)[statKey] ?? 0) === value)
+            delete bonusStats[statKey]
+          else
+            bonusStats[statKey] = value
+        } else {
+          if (value)
+            bonusStats[statKey] = value
+          else
+            delete bonusStats[statKey]
+        }
         database.updateChar({ ...character, bonusStats })
         break
       }
