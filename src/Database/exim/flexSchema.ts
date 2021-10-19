@@ -262,6 +262,7 @@ const weaponV3 = object({
     object.refinement = object.ascensionRefine % 8
     object.ascension = (object.ascensionRefine - object.refinement) / 8
     object.level = ascensionMaxLevel[object.ascension] - object.levelDiff
+    object.lock = false
     return object
   }
 })

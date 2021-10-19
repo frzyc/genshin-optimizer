@@ -81,7 +81,7 @@ export function EnemyEditor({ character, character: { key: characterKey, }, bsPr
         value={Character.getStatValueWithBonus(character, "enemyLevel")}
         placeholder={Stat.getStatNameRaw("enemyLevel")}
         defaultValue={charBaseStats.enemyLevel}
-        onValueChange={value => characterDispatch({ type: "bonusStats", statKey: "enemyLevel", value })}
+        onValueChange={value => characterDispatch({ type: "editStats", statKey: "enemyLevel", value })}
       />
     </Grid>
     {(["physical", ...allElements] as Array<ElementKey | "physical">).map(eleKey => {
@@ -95,11 +95,11 @@ export function EnemyEditor({ character, character: { key: characterKey, }, bsPr
           value={Character.getStatValueWithBonus(character, statKey)}
           placeholder={Stat.getStatNameRaw(statKey)}
           defaultValue={charBaseStats[statKey]}
-          onValueChange={value => characterDispatch({ type: "bonusStats", statKey, value })}
+          onValueChange={value => characterDispatch({ type: "editStats", statKey, value })}
           disabled={elementImmunity}
           percent
         >
-          <Button color={eleKey} onClick={() => characterDispatch({ type: "bonusStats", statKey: immunityStatKey, value: !elementImmunity })} >
+          <Button color={eleKey} onClick={() => characterDispatch({ type: "editStats", statKey: immunityStatKey, value: !elementImmunity })} >
             <FontAwesomeIcon icon={elementImmunity ? faCheckSquare : faSquare} className="fa-fw" /> Immunity
           </Button>
         </StatInput>
@@ -112,7 +112,7 @@ export function EnemyEditor({ character, character: { key: characterKey, }, bsPr
         value={Character.getStatValueWithBonus(character, "enemyDEFRed_")}
         placeholder={Stat.getStatNameRaw("enemyDEFRed_")}
         defaultValue={charBaseStats["enemyDEFRed_"]}
-        onValueChange={value => characterDispatch({ type: "bonusStats", statKey: "enemyDEFRed_", value })}
+        onValueChange={value => characterDispatch({ type: "editStats", statKey: "enemyDEFRed_", value })}
         percent
       />
     </Grid>

@@ -11,7 +11,7 @@ import { ICachedCharacter } from "../Types/character";
 import { ArtifactSetKey, ElementKey, SlotKey } from "../Types/consts";
 import { IFieldDisplay } from "../Types/IFieldDisplay";
 import { ICalculatedStats } from "../Types/stats";
-import { characterBaseStats, UIOverrideStatkeys, mergeStats } from "../Util/StatUtil";
+import { characterBaseStats, mergeStats, overrideStatKeys } from "../Util/StatUtil";
 import { deepClone, evalIfFunc } from "../Util/Util";
 import WeaponSheet from "../Weapon/WeaponSheet";
 import { defaultInitialWeapon } from "../Weapon/WeaponUtil";
@@ -42,7 +42,10 @@ export default class Character {
   }
 
   static getStatValueWithBonus = (character: ICachedCharacter, statKey: string) => {
-    return character.bonusStats?.[statKey] ?? characterBaseStats(character)[statKey] ?? 0
+    if (overrideStatKeys.includes(statKey))
+      return character.bonusStats?.[statKey] ?? characterBaseStats(character)[statKey] ?? 0
+    else
+      return character.bonusStats?.[statKey] ?? 0
   }
 
   static calculateBuild = (character: ICachedCharacter, database: ArtCharDatabase, characterSheet: CharacterSheet, weaponSheet: WeaponSheet, artifactSheets: StrictDict<ArtifactSetKey, ArtifactSheet>, mainStatAssumptionLevel = 0): ICalculatedStats => {
@@ -87,9 +90,10 @@ export default class Character {
     const { key: characterKey, bonusStats = {}, elementKey, level, ascension, hitMode, infusionAura, reactionMode, talent, constellation, equippedArtifacts, conditionalValues = {}, equippedWeapon } = character
     const weapon = database._getWeapon(equippedWeapon) ?? defaultInitialWeapon(characterSheet.weaponTypeKey) // need to ensure all characters have a weapon
 
+    const overrideStats = Object.fromEntries(Object.entries(bonusStats).filter(([s]) => overrideStatKeys.includes(s)))
+    const additionalStats = Object.fromEntries(Object.entries(bonusStats).filter(([s]) => !overrideStatKeys.includes(s)))
     //generate the initalStats obj with data from Character 
-    const initialStats = characterBaseStats(character)
-    mergeStats(initialStats, bonusStats, UIOverrideStatkeys)
+    const initialStats = { ...characterBaseStats(character), ...overrideStats }
     initialStats.characterKey = characterKey
     initialStats.characterLevel = level
     initialStats.characterHP = characterSheet.getBase("hp", level, ascension)
@@ -106,7 +110,7 @@ export default class Character {
     initialStats.ascension = ascension
     initialStats.weapon = { key: weapon.key, refineIndex: weapon.refinement - 1 }
     initialStats.equippedArtifacts = equippedArtifacts;
-
+    mergeStats(initialStats, additionalStats)
     //add specialized stat
     const specialStatKey = characterSheet.getSpecializedStat(ascension)
     if (specialStatKey) {

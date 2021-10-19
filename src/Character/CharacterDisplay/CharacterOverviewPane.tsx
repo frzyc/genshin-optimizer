@@ -152,7 +152,7 @@ function MainStatsCards({ characterSheet, character, character: { key: character
               placeholder={Stat.getStatNameRaw(statKey)}
               value={character.bonusStats[statKey] ?? 0}
               percent={Stat.getStatUnit(statKey) === "%"}
-              onValueChange={value => characterDispatch({ type: "bonusStats", statKey, value })}
+              onValueChange={value => characterDispatch({ type: "editStats", statKey, value })}
             />
           </Grid>)}
       </Grid>}
@@ -171,7 +171,7 @@ function MainStatsCards({ characterSheet, character, character: { key: character
               value={character.bonusStats[statKey] ?? (statKey === "stamina" ? 100 : 0)}
               percent={Stat.getStatUnit(statKey) === "%"}
               defaultValue={statKey === "stamina" ? 100 : undefined}
-              onValueChange={value => characterDispatch({ type: "bonusStats", statKey, value })}
+              onValueChange={value => characterDispatch({ type: "editStats", statKey, value })}
             />
           </Grid>)}
       </Grid>}
@@ -189,7 +189,7 @@ function MainStatsCards({ characterSheet, character, character: { key: character
               placeholder={Stat.getStatNameRaw(statKey)}
               value={character.bonusStats[statKey] ?? 0}
               percent={Stat.getStatUnit(statKey) === "%"}
-              onValueChange={value => characterDispatch({ type: "bonusStats", statKey, value })}
+              onValueChange={value => characterDispatch({ type: "editStats", statKey, value })}
             />
           </Grid>)}
       </Grid>}
@@ -199,17 +199,13 @@ function MainStatsCards({ characterSheet, character, character: { key: character
 function StatDisplayCard({ title, content, editContent }) {
   const [edit, setedit] = useState(false)
   return <CardLight>
-    <CardContent>
-      <Grid container>
-        <Grid item flexGrow={1}>
-          <Typography variant="subtitle1">{title}</Typography>
-        </Grid>
-        <Grid item>
-          <Button size="small" color={edit ? "error" : "info"} onClick={() => setedit(!edit)} >
-            <span><FontAwesomeIcon icon={edit ? faSave : faEdit} /> {edit ? EXIT : EDIT}</span>
-          </Button>
-        </Grid>
-      </Grid>
+    <CardContent sx={{ py: 1 }}>
+      <Box display="flex" justifyContent="space-between">
+        <Typography variant="subtitle1">{title}</Typography>
+        <Button size="small" color={edit ? "error" : "info"} onClick={() => setedit(!edit)} >
+          <span><FontAwesomeIcon icon={edit ? faSave : faEdit} /> {edit ? EXIT : EDIT}</span>
+        </Button>
+      </Box>
     </CardContent>
     <Divider />
     <CardContent>
