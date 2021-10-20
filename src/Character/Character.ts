@@ -93,12 +93,12 @@ export default class Character {
     const overrideStats = Object.fromEntries(Object.entries(bonusStats).filter(([s]) => overrideStatKeys.includes(s)))
     const additionalStats = Object.fromEntries(Object.entries(bonusStats).filter(([s]) => !overrideStatKeys.includes(s)))
     //generate the initalStats obj with data from Character 
-    const initialStats = { ...characterBaseStats(character), ...overrideStats }
+    let initialStats = characterBaseStats(character)
     initialStats.characterKey = characterKey
     initialStats.characterLevel = level
-    initialStats.characterHP = characterSheet.getBase("hp", level, ascension)
-    initialStats.characterDEF = characterSheet.getBase("def", level, ascension)
-    initialStats.characterATK = characterSheet.getBase("atk", level, ascension)
+    initialStats.characterHP = characterSheet.getBase("characterHP", level, ascension)
+    initialStats.characterDEF = characterSheet.getBase("characterDEF", level, ascension)
+    initialStats.characterATK = characterSheet.getBase("characterATK", level, ascension)
     initialStats.characterEle = characterSheet.elementKey ?? elementKey ?? "anemo";
     initialStats.hitMode = hitMode;
     initialStats.infusionAura = infusionAura
@@ -110,6 +110,7 @@ export default class Character {
     initialStats.ascension = ascension
     initialStats.weapon = { key: weapon.key, refineIndex: weapon.refinement - 1 }
     initialStats.equippedArtifacts = equippedArtifacts;
+    initialStats = { ...initialStats, ...overrideStats }
     mergeStats(initialStats, additionalStats)
     //add specialized stat
     const specialStatKey = characterSheet.getSpecializedStat(ascension)

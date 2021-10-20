@@ -4,10 +4,10 @@ import CardLight from '../../Components/Card/CardLight';
 import FieldDisplay, { FieldDisplayList } from '../../Components/FieldDisplay';
 import { ICachedCharacter } from '../../Types/character';
 import statsToFields from '../../Util/FieldUtil';
-import { overrideStatKeys } from '../../Util/StatUtil';
+import { enemyEditorKeys } from '../../Util/StatUtil';
 export default function BonusStatsCard({ character }: { character: ICachedCharacter }) {
   const bonusStats = Object.fromEntries(Object.entries(character?.bonusStats).filter(([key]) =>
-    !overrideStatKeys.includes(key)))
+    !enemyEditorKeys.includes(key)))
   if (!Object.keys(bonusStats).length) return null
   const setStatsFields = statsToFields(bonusStats)
   return <CardLight>

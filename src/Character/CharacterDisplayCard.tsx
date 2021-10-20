@@ -114,7 +114,7 @@ export default function CharacterDisplayCard({ characterKey, setCharacterKey, fo
       }}>
         <Grid container spacing={1}>
           <Grid item flexGrow={1}>
-            <CharSelectDropdown characterSheet={characterSheet} character={character} weaponSheet={weaponSheet} setCharacterKey={setCharacterKey} />
+            <CharSelectDropdown characterSheet={characterSheet} character={character} setCharacterKey={setCharacterKey} />
           </Grid>
           {!!mainStatAssumptionLevel && <Grid item><Card sx={{ p: 1, bgcolor: t => t.palette.warning.dark }}><Typography><strong>Assume Main Stats are Level {mainStatAssumptionLevel}</strong></Typography></Card></Grid>}
           {!!onClose && <Grid item>
@@ -138,8 +138,8 @@ export default function CharacterDisplayCard({ characterKey, setCharacterKey, fo
         <EnemyExpandCard character={character} />
 
         {/* Character Panel */}
-        {characterSheet && weaponSheet && <TabPanel value="character" current={tab}>
-          <CharacterOverviewPane characterSheet={characterSheet} weaponSheet={weaponSheet} character={character} />
+        {characterSheet && <TabPanel value="character" current={tab}>
+          <CharacterOverviewPane characterSheet={characterSheet} character={character} />
         </TabPanel >}
         {/* Artifacts Panel */}
         {sheets && <buildContext.Provider value={{ newBuild: undefined, equippedBuild, compareBuild, setCompareBuild }}>
@@ -166,12 +166,11 @@ export default function CharacterDisplayCard({ characterKey, setCharacterKey, fo
 
 type CharSelectDropdownProps = {
   characterSheet?: CharacterSheet,
-  weaponSheet?: WeaponSheet,
   character: ICachedCharacter
   disabled?: boolean
   setCharacterKey?: (any: CharacterKey) => void
 }
-function CharSelectDropdown({ characterSheet, weaponSheet, character, character: { key: characterKey, elementKey = "anemo", level = 1, ascension = 0 }, disabled, setCharacterKey }: CharSelectDropdownProps) {
+function CharSelectDropdown({ characterSheet, character, character: { key: characterKey, elementKey = "anemo", level = 1, ascension = 0 }, disabled, setCharacterKey }: CharSelectDropdownProps) {
   const [showModal, setshowModal] = useState(false)
   const characterDispatch = useCharacterReducer(characterKey)
   const HeaderIconDisplay = characterSheet ? <span >
@@ -214,5 +213,5 @@ function CharSelectDropdown({ characterSheet, weaponSheet, character, character:
         })}
       </DropdownButton>
     </ButtonGroup>
-  </> : <Typography variant="h6">{HeaderIconDisplay} {characterSheet && weaponSheet && Character.getLevelString(character)}</Typography>}</>
+  </> : <Typography variant="h6">{HeaderIconDisplay} {characterSheet && Character.getLevelString(character)}</Typography>}</>
 }

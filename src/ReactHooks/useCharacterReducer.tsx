@@ -12,7 +12,11 @@ type characterReducerBonusStatsAction = {
   statKey: string
   value: any | undefined
 }
-export type characterReducerAction = characterEquipWeapon | characterReducerBonusStatsAction | Partial<ICachedCharacter>
+type characterReducerResetStatsAction = {
+  type: "resetStats",
+  statKey: string
+}
+export type characterReducerAction = characterEquipWeapon | characterReducerBonusStatsAction | characterReducerResetStatsAction | Partial<ICachedCharacter>
 
 export default function useCharacterReducer(characterKey: CharacterKey) {
   const database = useContext(DatabaseContext)
@@ -42,6 +46,16 @@ export default function useCharacterReducer(characterKey: CharacterKey) {
           else
             delete bonusStats[statKey]
         }
+        database.updateChar({ ...character, bonusStats })
+        break
+      }
+      case "resetStats": {
+        const character = database._getChar(characterKey)!
+        const { statKey } = action
+
+        const bonusStats = character.bonusStats
+        delete bonusStats[statKey]
+
         database.updateChar({ ...character, bonusStats })
         break
       }

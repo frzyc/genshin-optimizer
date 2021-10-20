@@ -184,14 +184,13 @@ export function parseCharacter(obj: any): ICharacter | undefined {
     let { setFilters, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, builds, buildDate, maxBuildsToShow } = buildSettings ?? {}
     if (!Array.isArray(setFilters)) setFilters = initialBuildSettings().setFilters
 
-    //move all the empty entries to the back
-    setFilters = [...setFilters.filter(s => s.key), ...setFilters.filter(s => !s.key)]
-
     //make sure set effects are all numbers
     setFilters = setFilters.map(({ key, num }) => {
       if (Number.isInteger(num)) return { key, num }
       return { key: "", num: 0 }
     })
+    //move all the empty entries to the back
+    setFilters = [...setFilters.filter(s => s.key), ...setFilters.filter(s => !s.key)]
 
     if (typeof statFilters !== "object") statFilters = {}
 

@@ -13,12 +13,14 @@ type StatInputInput = ButtonGroupProps & {
   onValueChange: (newValue: number | undefined) => void,
   percent?: boolean,
   disabled?: boolean,
+  onReset?: () => void
 }
 const FlexButtonGroup = styled(ButtonGroup)({
   display: "flex"
 })
 
-export default function StatInput({ name, children, value, placeholder, defaultValue = 0, onValueChange, percent = false, disabled = false, ...restProps }: StatInputInput) {
+export default function StatInput({ name, children, value, placeholder, defaultValue = 0, onValueChange, percent = false, disabled = false, onReset, ...restProps }: StatInputInput) {
+
   return <FlexButtonGroup {...restProps} >
     {children}
     <TextButton sx={{ whiteSpace: "nowrap" }} >
@@ -38,7 +40,7 @@ export default function StatInput({ name, children, value, placeholder, defaultV
         endAdornment={percent ? "%" : undefined}
       />
     </CustomNumberInputButtonGroupWrapper>
-    <Button onClick={() => onValueChange(defaultValue)} disabled={disabled || value === defaultValue} >
+    <Button onClick={() => onReset ? onReset() : onValueChange(defaultValue)} disabled={disabled || value === defaultValue} >
       <Replay />
     </Button>
   </FlexButtonGroup>
