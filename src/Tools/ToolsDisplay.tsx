@@ -107,7 +107,7 @@ class ResinCounter extends React.Component {
           <Grid item>
             <Typography variant="h2">
               <ImgIcon src={Assets.resin.fragile} />
-              <InputBase type="number" sx={{ width: "2em", fontSize: "4rem" }} value={resin} inputProps={{ min: 0, max: 999 }} onChange={(e => this.setResin(e.target.value))} />
+              <InputBase type="number" sx={{ width: "2em", fontSize: "4rem" }} value={resin} inputProps={{ min: 0, max: 999, sx: { textAlign: "right" } }} onChange={(e => this.setResin(e.target.value))} />
               <span>/{RESIN_MAX}</span>
             </Typography>
           </Grid>

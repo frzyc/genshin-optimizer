@@ -23,7 +23,10 @@ const weapon: IWeaponSheet = {
   ...data_gen as WeaponData,
   icon,
   iconAwaken,
-  stats: stats => ({ atk_: ele_dmg[stats.weapon.refineIndex] }),
+  stats: stats => ({
+    skill_dmg_: ele_dmg[stats.weapon.refineIndex],
+    burst_dmg_: ele_dmg[stats.weapon.refineIndex]
+  }),
   conditionals,
   document: [{
     conditional: conditionals.a

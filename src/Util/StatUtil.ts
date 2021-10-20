@@ -1,9 +1,9 @@
 import { ICachedCharacter } from "../Types/character";
 import { allElements } from "../Types/consts"
 import { BonusStats, ICalculatedStats, Modifier } from "../Types/stats"
-
-export const overrideStatKeys = ["enemyLevel", ...["physical", ...allElements].map(eleKey => `${eleKey}_enemyImmunity`), ...["physical", ...allElements].map(eleKey => `${eleKey}_enemyRes_`), "enemyDEFRed_"]
-
+export const characterStatKeys = ["characterATK", "characterHP", "characterDEF",] as const
+export const enemyEditorKeys = ["enemyLevel", ...["physical", ...allElements].map(eleKey => `${eleKey}_enemyImmunity`), ...["physical", ...allElements].map(eleKey => `${eleKey}_enemyRes_`), "enemyDEFRed_"]
+export const overrideStatKeys = [...enemyEditorKeys, ...characterStatKeys]
 export function mergeStats(initialStats: BonusStats, stats: BonusStats | undefined) {
   if (!stats) return
   return Object.entries(stats).forEach(([key, val]: any) => {

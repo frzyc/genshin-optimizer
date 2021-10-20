@@ -14,17 +14,16 @@ import Stat from "../../Stat";
 import { ICachedCharacter } from "../../Types/character";
 import { allElements } from "../../Types/consts";
 import { ICalculatedStats } from "../../Types/stats";
+import { characterStatKeys } from "../../Util/StatUtil";
 import WeaponDisplayCard from "../../Weapon/WeaponDisplayCard";
-import WeaponSheet from "../../Weapon/WeaponSheet";
 import Character from "../Character";
 import CharacterSheet from "../CharacterSheet";
 import StatInput from "../StatInput";
 type CharacterOverviewPaneProps = {
   characterSheet: CharacterSheet;
-  weaponSheet: WeaponSheet
   character: ICachedCharacter
 }
-export default function CharacterOverviewPane({ characterSheet, weaponSheet, character, character: { constellation, key: characterKey } }: CharacterOverviewPaneProps) {
+export default function CharacterOverviewPane({ characterSheet, character, character: { constellation, key: characterKey } }: CharacterOverviewPaneProps) {
   const { newBuild, equippedBuild } = useContext(buildContext)
   const characterDispatch = useCharacterReducer(characterKey)
   const build = newBuild ? newBuild : equippedBuild
@@ -89,6 +88,37 @@ export default function CharacterOverviewPane({ characterSheet, weaponSheet, cha
 }
 const EDIT = "Edit Stats"
 const EXIT = "EXIT"
+
+const additionalKeys = ["eleMas", "critRate_", "critDMG_", "enerRech_", "heal_"]
+const displayStatKeys = ["characterATK", "finalATK", "finalHP", "finalDEF"]
+displayStatKeys.push(...additionalKeys)
+const editStatKeys = ["hp", "hp_", "def", "def_", "atk", "atk_"]
+editStatKeys.push(...additionalKeys)
+const otherStatKeys: any[] = [];
+
+["physical", ...allElements].forEach(ele => {
+  otherStatKeys.push(`${ele}_dmg_`)
+  otherStatKeys.push(`${ele}_res_`)
+})
+otherStatKeys.push("stamina", "incHeal_", "shield_", "cdRed_")
+
+const miscStatkeys = [
+  "normal_dmg_", "normal_critRate_",
+  "charged_dmg_", "charged_critRate_",
+  "plunging_dmg_", "plunging_critRate_",
+  "skill_dmg_", "skill_critRate_",
+  "burst_dmg_", "burst_critRate_",
+  "dmg_", "electrocharged_dmg_",
+  "vaporize_dmg_", "swirl_dmg_",
+  "moveSPD_", "atkSPD_",
+  "weakspotDMG_",
+]
+
+const resetString = {
+  "characterATK": "Override Base ATK",
+  "characterHP": "Override Base HP",
+  "characterDEF": "Override Base DEF"
+}
 type MainStatsCardsProps = {
   characterSheet: CharacterSheet,
   character: ICachedCharacter,
@@ -98,42 +128,20 @@ type MainStatsCardsProps = {
 const statBreakpoint = {
   xs: 12, sm: 6, md: 6, lg: 4,
 } as const
-function MainStatsCards({ characterSheet, character, character: { key: characterKey }, equippedBuild, newBuild }: MainStatsCardsProps) {
+
+
+function MainStatsCards({ characterSheet, character, character: { key: characterKey, level, ascension }, equippedBuild, newBuild }: MainStatsCardsProps) {
   const characterDispatch = useCharacterReducer(characterKey)
-
-  const additionalKeys = ["eleMas", "critRate_", "critDMG_", "enerRech_", "heal_"]
-  const displayStatKeys = ["finalHP", "finalATK", "finalDEF"]
-  displayStatKeys.push(...additionalKeys)
-  const editStatKeys = ["hp", "hp_", "def", "def_", "atk", "atk_"]
-  editStatKeys.push(...additionalKeys)
-  const otherStatKeys: any[] = [];
-
-  ["physical", ...allElements].forEach(ele => {
-    otherStatKeys.push(`${ele}_dmg_`)
-    otherStatKeys.push(`${ele}_res_`)
-  })
-  otherStatKeys.push("stamina", "incHeal_", "shield_", "cdRed_")
-
-  const miscStatkeys = [
-    "normal_dmg_", "normal_critRate_",
-    "charged_dmg_", "charged_critRate_",
-    "plunging_dmg_", "plunging_critRate_",
-    "skill_dmg_", "skill_critRate_",
-    "burst_dmg_", "burst_critRate_",
-    "dmg_", "electrocharged_dmg_",
-    "vaporize_dmg_", "swirl_dmg_",
-    "moveSPD_", "atkSPD_",
-    "weakspotDMG_",
-  ]
 
   const specializedStatKey = characterSheet.getSpecializedStat(character.ascension)
   const specializedStatVal = characterSheet.getSpecializedStatVal(character.ascension)
   const specializedStatUnit = Stat.getStatUnit(specializedStatKey)
 
   const displayNewBuildProps = { character, equippedBuild, newBuild }
+
   return <>
     <StatDisplayCard
-      title="Main Base Stats"
+      title="Main Stats"
       content={<Grid container columnSpacing={{ xs: 2, lg: 3 }} rowSpacing={1}>
         {displayStatKeys.map(statKey => <Grid item key={statKey} {...statBreakpoint} >
           <StatDisplay statKey={statKey} {...displayNewBuildProps} />
@@ -144,10 +152,23 @@ function MainStatsCards({ characterSheet, character, character: { key: character
         </Grid>
       </Grid>}
       editContent={<Grid container columnSpacing={2} rowSpacing={1}>
+        {characterStatKeys.map(statKey => {
+          const defVal = Math.round(characterSheet.getBase(statKey, level, ascension))
+          return <Grid item xs={12} lg={6} key={statKey}>
+            <StatInput
+              name={<span>{StatIcon[statKey]} {resetString[statKey]}</span>}
+              placeholder={Stat.getStatNameRaw(statKey)}
+              value={character.bonusStats[statKey] ?? defVal}
+              defaultValue={defVal}
+              percent={Stat.getStatUnit(statKey) === "%"}
+              onValueChange={value => characterDispatch({ type: "editStats", statKey, value })}
+              onReset={() => characterDispatch({ type: "resetStats", statKey })}
+            />
+          </Grid>
+        })}
         {editStatKeys.map(statKey =>
           <Grid item xs={12} lg={6} key={statKey}>
             <StatInput
-              disabled={undefined}
               name={<span>{StatIcon[statKey]} {Stat.getStatNameWithPercent(statKey)}</span>}
               placeholder={Stat.getStatNameRaw(statKey)}
               value={character.bonusStats[statKey] ?? 0}
