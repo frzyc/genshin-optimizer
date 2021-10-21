@@ -1,6 +1,7 @@
 import card from './Character_Ningguang_Card.jpg'
 import thumb from './Icon.png'
 import thumbSide from './IconSide.png'
+import banner from './Banner.png'
 import c1 from './Constellation_Piercing_Fragments.png'
 import c2 from './Constellation_Shock_Effect.png'
 import c3 from './Constellation_Majesty_be_the_Array_of_Stars.png'
@@ -48,6 +49,7 @@ const char: ICharacterSheet = {
   cardImg: card,
   thumbImg: thumb,
   thumbImgSide: thumbSide,
+  bannerImg: banner,
   star: data_gen.star,
   elementKey: "geo",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,

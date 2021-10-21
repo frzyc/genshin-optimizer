@@ -1,6 +1,7 @@
 import card from './Character_Diona_Card.png'
 import thumb from './Icon.png'
 import thumbSide from './IconSide.png'
+import banner from './Banner.png'
 import c1 from './Constellation_A_Lingering_Flavor.png'
 import c2 from './Constellation_Shaken,_Not_Purred.png'
 import c3 from './Constellation_A-Another_Round_.png'
@@ -49,6 +50,7 @@ const char: ICharacterSheet = {
   cardImg: card,
   thumbImg: thumb,
   thumbImgSide: thumbSide,
+  bannerImg: banner,
   star: data_gen.star,
   elementKey: "cryo",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,

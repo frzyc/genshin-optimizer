@@ -1,6 +1,7 @@
 import card from './Character_Kamisato_Ayaka_Card.png'
 import thumb from './Icon.png'
 import thumbSide from './IconSide.png'
+import banner from './Banner.png'
 import c1 from './Constellation_Snowswept_Sakura.png'
 import c2 from './Constellation_Blizzard_Blade_Seki_no_To.png'
 import c3 from './Constellation_Frostbloom_Kamifubuki.png'
@@ -76,6 +77,7 @@ const char: ICharacterSheet = {
   cardImg: card,
   thumbImg: thumb,
   thumbImgSide: thumbSide,
+  bannerImg: banner,
   star: data_gen.star,
   elementKey: "cryo",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,

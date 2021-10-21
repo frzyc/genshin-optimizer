@@ -80,6 +80,23 @@ declare module "@mui/material/Button" {
     anemo: true;
     physical: true;
   }
+  interface ChipPropsColorOverrides {
+    warning: true;
+    roll1: true;
+    roll2: true;
+    roll3: true;
+    roll4: true;
+    roll5: true;
+    roll6: true;
+    geo: true;
+    dendro: true;
+    pyro: true;
+    hydro: true;
+    cryo: true;
+    electro: true;
+    anemo: true;
+    physical: true;
+  }
 }
 
 const defaultTheme = createTheme({
@@ -159,7 +176,7 @@ export const theme = createTheme({
       name: "roll6"
     }),
     geo: defaultTheme.palette.augmentColor({
-      color: { main: "#f8ba4e", },
+      color: { main: "#f8ba4e", contrastText: "#fff" },
       name: "geo"
     }),
     dendro: defaultTheme.palette.augmentColor({
@@ -175,7 +192,7 @@ export const theme = createTheme({
       name: "hydro"
     }),
     cryo: defaultTheme.palette.augmentColor({
-      color: { main: "#77a2e6", },
+      color: { main: "#77a2e6", contrastText: "#fff" },
       name: "cryo"
     }),
     electro: defaultTheme.palette.augmentColor({
@@ -183,7 +200,7 @@ export const theme = createTheme({
       name: "electro"
     }),
     anemo: defaultTheme.palette.augmentColor({
-      color: { main: "#61dbbb", },
+      color: { main: "#61dbbb", contrastText: "#fff" },
       name: "anemo"
     }),
     physical: defaultTheme.palette.augmentColor({

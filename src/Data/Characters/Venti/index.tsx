@@ -1,6 +1,7 @@
 import card from './Character_Venti_Card.jpg'
 import thumb from './Icon.png'
 import thumbSide from './IconSide.png'
+import banner from './Banner.png'
 import c1 from './Constellation_Splitting_Gales.png'
 import c2 from './Constellation_Breeze_of_Reminiscence.png'
 import c3 from './Constellation_Ode_to_Thousand_Winds.png'
@@ -94,6 +95,7 @@ const char: ICharacterSheet = {
   cardImg: card,
   thumbImg: thumb,
   thumbImgSide: thumbSide,
+  bannerImg: banner,
   star: data_gen.star,
   elementKey: "anemo",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,

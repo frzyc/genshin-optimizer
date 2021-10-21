@@ -1,6 +1,7 @@
 import card from './Character_Fischl_Card.jpg'
 import thumb from './Icon.png'
 import thumbSide from './IconSide.png'
+import banner from './Banner.png'
 import c1 from './Constellation_Gaze_of_the_Deep.png'
 import c2 from './Constellation_Devourer_of_All_Sins.png'
 import c3 from './Constellation_Wings_of_Nightmare.png'
@@ -31,6 +32,7 @@ const char: ICharacterSheet = {
   cardImg: card,
   thumbImg: thumb,
   thumbImgSide: thumbSide,
+  bannerImg: banner,
   star: data_gen.star,
   elementKey: "electro",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,

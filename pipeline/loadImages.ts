@@ -3,6 +3,9 @@ import { AssetData } from './Data'
 import artifactPiecesData from './DataminedModules/artifact/artifactPiecesData'
 import artifactSetData from './DataminedModules/artifact/artifactSets'
 import characterData from './DataminedModules/character/character'
+import fetterCharacterCardExcelConfigData from './DataminedModules/character/FetterCharacterCardExcelConfigData'
+import materialExcelConfigData from './DataminedModules/character/MaterialExcelConfigData'
+import rewardExcelConfigData from './DataminedModules/character/RewardExcelConfigData'
 import weaponData from './DataminedModules/weapon/weapon'
 const fs = require('fs')
 
@@ -57,14 +60,28 @@ export default function loadImages() {
   // parse baseStat/ascension/basic data for non travelr.
   Object.entries(characterData).filter(([charid, charData]) => charid in characterIdMap).map(([charid, charData]) => {
     const { IconName, SideIconName } = charData
+
+    let Banner, Bar;
+    if (fetterCharacterCardExcelConfigData[charid]) {
+      const { RewardId } = fetterCharacterCardExcelConfigData[charid]
+      const { RewardItemList } = rewardExcelConfigData[RewardId]
+      const { ItemId } = RewardItemList[0];
+      ({ UseParam: [Bar, Banner] } = materialExcelConfigData[ItemId]);
+    }
     AssetData.char[characterIdMap[charid]] = {
       Icon: IconName,
-      IconSide: SideIconName
+      IconSide: SideIconName,
+      Banner,
+      Bar
     }
   })
-  Object.entries(AssetData.char).forEach(([characterKey, { Icon, IconSide }]) => {
+  Object.entries(AssetData.char).forEach(([characterKey, { Icon, IconSide, Banner, Bar }]) => {
     copyFile(`./Texture2D/${Icon}.png`, `../src/Data/Characters/${characterKey}/Icon.png`)
     copyFile(`./Texture2D/${IconSide}.png`, `../src/Data/Characters/${characterKey}/IconSide.png`)
+    if (Banner)
+      copyFile(`./Texture2D/${Banner}.png`, `../src/Data/Characters/${characterKey}/Banner.png`)
+    if (Bar)
+      copyFile(`./Texture2D/${Bar}.png`, `../src/Data/Characters/${characterKey}/Bar.png`)
   })
 
   // dump out the data for testing

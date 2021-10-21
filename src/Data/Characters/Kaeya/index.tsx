@@ -1,6 +1,7 @@
 import card from './Character_Kaeya_Card.jpg'
 import thumb from './Icon.png'
 import thumbSide from './IconSide.png'
+import banner from './Banner.png'
 import c1 from './Constellation_Excellent_Blood.png'
 import c2 from './Constellation_Never-Ending_Performance.png'
 import c3 from './Constellation_Dance_of_Frost.png'
@@ -39,6 +40,7 @@ const char: ICharacterSheet = {
   cardImg: card,
   thumbImg: thumb,
   thumbImgSide: thumbSide,
+  bannerImg: banner,
   star: data_gen.star,
   elementKey: "cryo",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,

@@ -123,9 +123,9 @@ export default function EXPCalc(props) {
       <Grid container spacing={1}>
         <Grid item>
           <Typography>
-            <span>This calcualtor tries to calculate the amount of exp books required to get to the next milestone level. </span>
+            <span>This calculator tries to calculate the amount of exp books required to get to the next milestone level. </span>
             {goUnder ? "It will try to get as close to the milestone level as possible, so you can grind the rest of the exp without any waste." :
-              "It will try to calculate the amount of books needed to minize as much exp loss as possible."}
+              "It will try to calculate the amount of books needed to minimize as much exp loss as possible."}
           </Typography>
         </Grid>
         <Grid item xs={6} md={3} >

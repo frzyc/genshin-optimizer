@@ -1,6 +1,7 @@
 import card from './Character_Amber_Card.jpg'
 import thumb from './Icon.png'
 import thumbSide from './IconSide.png'
+import banner from './Banner.png'
 import c1 from './Constellation_One_Arrow_to_Rule_Them_All.png'
 import c2 from './Constellation_Bunny_Triggered.png'
 import c3 from './Constellation_It_Burns.png'
@@ -53,6 +54,7 @@ const char: ICharacterSheet = {
   cardImg: card,
   thumbImg: thumb,
   thumbImgSide: thumbSide,
+  bannerImg: banner,
   star: data_gen.star,
   elementKey: "pyro",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,

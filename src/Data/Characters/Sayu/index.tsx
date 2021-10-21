@@ -1,6 +1,7 @@
 import card from './Character_Sayu_Card.png'
 import thumb from './Icon.png'
 import thumbSide from './IconSide.png'
+import banner from './Banner.png'
 import c1 from './Constellation_Multi-Task_no_Jutsu.png'
 import c2 from './Constellation_Egress_Prep.png'
 import c3 from './Constellation_Eh,_the_Bunshin_Can_Handle_It.png'
@@ -79,6 +80,7 @@ const char: ICharacterSheet = {
   cardImg: card,
   thumbImg: thumb,
   thumbImgSide: thumbSide,
+  bannerImg: banner,
   star: data_gen.star,
   elementKey: "anemo",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,

@@ -1,6 +1,7 @@
 import card from './Character_Aloy_Card.png'
 import thumb from './Icon.png'
 import thumbSide from './IconSide.png'
+import banner from './Banner.png'
 import c1 from './Constellation_Star_of_Another_World.png'
 import c2 from './Constellation_Star_of_Another_World.png'
 import c3 from './Constellation_Star_of_Another_World.png'
@@ -82,6 +83,7 @@ const char: ICharacterSheet = {
   cardImg: card,
   thumbImg: thumb,
   thumbImgSide: thumbSide,
+  bannerImg: banner,
   star: 5,//data_gen.star, TODO: not in datamine
   elementKey: "cryo",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
