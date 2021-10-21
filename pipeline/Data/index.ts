@@ -16,7 +16,12 @@ export const mapHashData = {
 type WeaponIcon = { Icon: string, AwakenIcon: string }
 type WeaponIconData = { [key: string]: WeaponIcon }
 
-type CharacterIcon = { Icon: string, IconSide: string }
+type CharacterIcon = {
+  Icon: string,
+  IconSide: string,
+  Banner: string,
+  Bar: string
+}
 type CharacterIconData = { [key: string]: CharacterIcon }
 //An object to store all the asset related data.
 export const AssetData = {

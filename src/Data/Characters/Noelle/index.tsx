@@ -1,6 +1,7 @@
 import card from './Character_Noelle_Card.jpg'
 import thumb from './Icon.png'
 import thumbSide from './IconSide.png'
+import banner from './Banner.png'
 import c1 from './Constellation_I_Got_Your_Back.png'
 import c2 from './Constellation_Combat_Maid.png'
 import c3 from './Constellation_Invulnerable_Maid.png'
@@ -50,6 +51,7 @@ const char: ICharacterSheet = {
   cardImg: card,
   thumbImg: thumb,
   thumbImgSide: thumbSide,
+  bannerImg: banner,
   star: data_gen.star,
   elementKey: "geo",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,

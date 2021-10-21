@@ -1,6 +1,7 @@
 import card from './Character_Tartaglia_Card.png'
 import thumb from './Icon.png'
 import thumbSide from './IconSide.png'
+import banner from './Banner.png'
 import c1 from './Constellation_Foul_Legacy_Tide_Withholder.png'
 import c2 from './Constellation_Foul_Legacy_Understream.png'
 import c3 from './Constellation_Abyssal_Mayhem_Vortex_of_Turmoil.png'
@@ -29,6 +30,7 @@ const char: ICharacterSheet = {
   cardImg: card,
   thumbImg: thumb,
   thumbImgSide: thumbSide,
+  bannerImg: banner,
   star: data_gen.star,
   elementKey: "hydro",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,

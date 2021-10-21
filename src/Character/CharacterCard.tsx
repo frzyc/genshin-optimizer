@@ -1,6 +1,6 @@
 import { faCalculator, faLink, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Box, Button, CardActionArea, CardContent, CardHeader, Chip, Grid, Skeleton, Typography } from '@mui/material';
+import { Box, Button, CardActionArea, CardContent, Chip, Grid, Skeleton, Typography } from '@mui/material';
 import { Suspense, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArtifactSheet } from '../Artifact/ArtifactSheet';
@@ -59,20 +59,41 @@ export default function CharacterCard({ characterKey, onEdit, onDelete, footer =
   return <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 350 }} />}>
     <CardLight sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
       <ConditionalWrapper condition={!!onEdit} wrapper={actionWrapperFunc}>
-        <Box display="flex" className={`grad-${characterSheet.star}star`} width="100%"  >
-          <Box flexGrow={1} sx={{ pl: 2, pt: 1 }}>
-            <CardHeader title={characterSheet.name} titleTypographyProps={{ variant: "subtitle1" }} sx={{ p: 0 }}
-              avatar={<Typography variant="h5">{StatIcon[elementKey]}</Typography>} />
+        <Box display="flex"
+          position="relative"
+          className={`grad-${characterSheet.star}star`}
+          sx={{
+            "&::before": {
+              content: '""',
+              display: "block", position: "absolute",
+              left: 0, top: 0,
+              width: "100%", height: "100%",
+              opacity: 0.7,
+              backgroundImage: `url(${characterSheet.bannerImg})`, backgroundPosition: "center", backgroundSize: "cover",
+            }
+          }}
+          width="100%" >
+          <Box flexShrink={1} sx={{ maxWidth: { xs:"40%", lg:"40%" } }} alignSelf="flex-end" display="flex" flexDirection="column" zIndex={1}>
+            <Box
+              component="img"
+              src={characterSheet.thumbImg}
+              width="100%"
+              height="auto"
+              maxWidth={256}
+              sx={{ mt: "auto" }}
+            />
+          </Box>
+          <Box flexGrow={1} sx={{ p: 1 }} display="flex" flexDirection="column" zIndex={1}>
+            <Chip label={<Typography variant="subtitle1">{characterSheet.name}</Typography>} size="small" color={elementKey as any} />
             <Grid container spacing={1} flexWrap="nowrap">
-              <Grid item>
-                <Typography component="span" variant="h5" whiteSpace="nowrap">Lv. {characterLevel}</Typography>
-                <Typography component="span" variant="h5" color="text.secondary">/{ascensionMaxLevel[ascension]}</Typography>
+              <Grid item sx={{ textShadow: "0 0 5px gray" }}>
+                <Typography component="span" variant="h6" whiteSpace="nowrap" >Lv. {characterLevel}</Typography>
+                <Typography component="span" variant="h6" color="text.secondary">/{ascensionMaxLevel[ascension]}</Typography>
               </Grid>
               <Grid item>
                 <Typography variant="h6"><SqBadge>C{constellation}</SqBadge></Typography>
               </Grid>
             </Grid>
-
             <Grid container spacing={1} flexWrap="nowrap">
               <Grid item>
                 <Chip color="secondary" label={<strong >{tlvl.auto + 1}</strong>} />
@@ -84,19 +105,7 @@ export default function CharacterCard({ characterKey, onEdit, onDelete, footer =
                 <Chip color={stats.burstBoost ? "info" : "secondary"} label={<strong >{tlvl.burst + 1}</strong>} />
               </Grid>
             </Grid>
-            {/* <Typography variant="h5">Refinement <strong>{refinement}</strong></Typography> */}
-            <Typography><Stars stars={characterSheet.star} colored /></Typography>
-          </Box>
-          {/* use flex-end here to align the image to the bottom. */}
-          <Box flexShrink={1} maxWidth="45%" alignSelf="flex-end" display="flex" flexDirection="column">
-            <Box
-              component="img"
-              src={characterSheet.thumbImg}
-              width="100%"
-              height="auto"
-              maxWidth={256}
-              sx={{ mt: "auto" }}
-            />
+            <Typography mt={1} ><Stars stars={characterSheet.star} colored /></Typography>
           </Box>
         </Box>
         <CardContent sx={{ pb: 0, width: "100%" }}>
@@ -112,13 +121,13 @@ export default function CharacterCard({ characterKey, onEdit, onDelete, footer =
                 />
               </Box>
               <Box flexGrow={1} sx={{ p: 1 }}>
-                <Typography><strong>{weaponName}</strong></Typography>
-                <Typography whiteSpace="nowrap">
+                <Typography variant="body2"><strong>{weaponName}</strong></Typography>
+                <Typography whiteSpace="nowrap" lineHeight={1}>
                   <SqBadge color="primary" sx={{ mr: 1 }}>Lv. {weaponLevelName}</SqBadge>
                   {weaponPassiveName && <SqBadge color="info"> Refinement {weapon.refinement}</SqBadge>}
                 </Typography>
-                <Typography variant="subtitle2">ATK: {weaponMainVal}</Typography>
-                {weaponPassiveName && <Typography variant="subtitle2">{Stat.getStatName(weaponSubKey)}: {weaponSubVal}{Stat.getStatUnit(weaponSubKey)}</Typography>}
+                <Typography variant="subtitle1">ATK: {weaponMainVal}</Typography>
+                {weaponPassiveName && <Typography variant="subtitle2" lineHeight={1}>{Stat.getStatName(weaponSubKey)}: {weaponSubVal}{Stat.getStatUnit(weaponSubKey)}</Typography>}
               </Box>
             </Box>
           </CardDark>

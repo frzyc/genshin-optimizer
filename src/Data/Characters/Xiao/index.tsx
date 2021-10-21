@@ -1,6 +1,7 @@
 import card from './Character_Xiao_Card.jpg'
 import thumb from './Icon.png'
 import thumbSide from './IconSide.png'
+import banner from './Banner.png'
 import c1 from './Constellation_Dissolution_Eon_-_Destroyer_of_Worlds.png'
 import c2 from './Constellation_Annihilation_Eon_-_Blossom_of_Kaleidos.png'
 import c3 from './Constellation_Conqueror_of_Evil_-_Wrath_Deity.png'
@@ -61,6 +62,7 @@ const char: ICharacterSheet = {
   cardImg: card,
   thumbImg: thumb,
   thumbImgSide: thumbSide,
+  bannerImg: banner,
   star: data_gen.star,
   elementKey: "anemo",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,

@@ -8,6 +8,7 @@ import { chargedDocSection, normalDocSection, plungeDocSection, talentTemplate }
 import card from './Character_Klee_Card.jpg'
 import thumb from './Icon.png'
 import thumbSide from './IconSide.png'
+import banner from './Banner.png'
 import c6 from './Constellation_Blazing_Delight.png'
 import c1 from './Constellation_Chained_Reactions.png'
 import c2 from './Constellation_Explosive_Frags.png'
@@ -50,6 +51,7 @@ const char: ICharacterSheet = {
   cardImg: card,
   thumbImg: thumb,
   thumbImgSide: thumbSide,
+  bannerImg: banner,
   star: data_gen.star,
   elementKey: "pyro",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,

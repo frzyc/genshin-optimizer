@@ -1,6 +1,7 @@
 import card from './Character_Lisa_Card.jpg'
 import thumb from './Icon.png'
 import thumbSide from './IconSide.png'
+import banner from './Banner.png'
 import c1 from './Constellation_Infinite_Circuit.png'
 import c2 from './Constellation_Electromagnetic_Field.png'
 import c3 from './Constellation_Resonant_Thunder.png'
@@ -45,6 +46,7 @@ const char: ICharacterSheet = {
   cardImg: card,
   thumbImg: thumb,
   thumbImgSide: thumbSide,
+  bannerImg: banner,
   star: data_gen.star,
   elementKey: "electro",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,

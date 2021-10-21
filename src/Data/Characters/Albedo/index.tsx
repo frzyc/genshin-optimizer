@@ -1,6 +1,7 @@
 import card from './Character_Albedo_Card.png'
 import thumb from './Icon.png'
 import thumbSide from './IconSide.png'
+import banner from './Banner.png'
 import c1 from './Constellation_Flower_of_Eden.png'
 import c2 from './Constellation_Opening_of_Phanerozoic.png'
 import c3 from './Constellation_Grace_of_Helios.png'
@@ -51,6 +52,7 @@ const char: ICharacterSheet = {
   cardImg: card,
   thumbImg: thumb,
   thumbImgSide: thumbSide,
+  bannerImg: banner,
   star: data_gen.star,
   elementKey: "geo",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,

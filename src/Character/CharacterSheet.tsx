@@ -26,6 +26,7 @@ export default class CharacterSheet {
   get cardImg() { return this.sheet.cardImg }
   get thumbImg() { return this.sheet.thumbImg }
   get thumbImgSide() { return this.sheet.thumbImgSide }
+  get bannerImg() { return this.sheet.bannerImg }
   /**
    * TODO rarity
    */
