@@ -1,7 +1,7 @@
 import { Download, Info } from '@mui/icons-material';
 import { Button, CardContent, Collapse, Divider, Grid, MenuItem, styled, Tooltip, Typography } from '@mui/material';
 import { useMemo, useState } from 'react';
-import { CartesianGrid, ComposedChart, Line, ResponsiveContainer, Scatter, XAxis, YAxis, ZAxis } from 'recharts';
+import { CartesianGrid, ComposedChart, Legend, Line, ResponsiveContainer, Scatter, XAxis, YAxis, ZAxis } from 'recharts';
 import CardDark from '../Components/Card/CardDark';
 import CardLight from '../Components/Card/CardLight';
 import DropdownButton from '../Components/DropdownMenu/DropdownButton';
@@ -30,10 +30,12 @@ export default function ChartCard({ data, plotBase, setPlotBase, statKeys, disab
       return displayData[i].minTarget = ele.optimizationTarget
     })
     displayData.sort((a, b) => a.plotBase - b.plotBase)
+    const minimum = displayData.filter(a => a.minTarget).map(({ plotBase, minTarget }) => [plotBase, minTarget])
+    //Add another point to min for the beginning to make the lines connect
     displayData[0].minTarget = init.optimizationTarget
 
     const downloadData = {
-      minimum: displayData.filter(a => a.minTarget).map(({ plotBase, minTarget }) => [plotBase, minTarget]),
+      minimum,
       allData: displayData.filter(a => a.optimizationTarget).map(({ plotBase, optimizationTarget }) => [plotBase, optimizationTarget]),
     }
     return { displayData, downloadData }
@@ -55,7 +57,7 @@ export default function ChartCard({ data, plotBase, setPlotBase, statKeys, disab
           </DropdownButton>
         </Grid>
         <Grid item flexGrow={1}>
-          <Tooltip placement="top" title="Using data from the builder, this will generate a graph to visualize Optimization Target vs. a selected stat. The graph will show the maximum Optimization Target value per 0.01 of the selected stat. The minimum stat for each Optimized value is also outlined as a line above the scatter plot. ">
+          <Tooltip placement="top" title="Using data from the builder, this will generate a graph to visualize Optimization Target vs. a selected stat. The graph will show the maximum Optimization Target value per 0.01 of the selected stat.">
             <Info />
           </Tooltip>
         </Grid>
@@ -77,7 +79,7 @@ export default function ChartCard({ data, plotBase, setPlotBase, statKeys, disab
           </CardContent>
         </CardDark>
       </Collapse>
-      <Chart data={displayData} />
+      <Chart data={displayData} plotBase={plotBase} />
     </CardContent>}
   </CardLight >
 }
@@ -94,16 +96,17 @@ function DataDisplay({ data }: { data?: object }) {
     target.selectionEnd = target.value.length;
   }} />
 }
-function Chart({ data }) {
+function Chart({ data, plotBase }) {
   if (!data) return null
   return <ResponsiveContainer width="100%" height={600}>
     <ComposedChart data={data}>
       <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="plotBase" name="ER" unit="%" scale="linear" domain={['dataMin', 'dataMax']} allowDecimals={false} tick={{ fill: 'white' }} />
+      <XAxis dataKey="plotBase" name="ER" unit={Stat.getStatUnit(plotBase, undefined)} scale="linear" allowDecimals={false} tick={{ fill: 'white' }} />
       <YAxis name="DMG" domain={["auto", "auto"]} allowDecimals={false} tick={{ fill: 'white' }} />
-      <ZAxis range={[7, 7]} />
-      <Scatter name="A school" dataKey="optimizationTarget" fill="#8884d8" line lineType="fitting" />
-      <Line dataKey="minTarget" stroke="#ff7300" type="stepBefore" dot={false} connectNulls strokeWidth={2} />
+      <ZAxis dataKey="optimizationTarget" range={[3, 25]} />
+      <Legend />
+      <Scatter name="Optimization Target" dataKey="optimizationTarget" fill="#8884d8" line lineType="fitting" />
+      <Line name="Minimum Stat Requirement Threshold" dataKey="minTarget" stroke="#ff7300" type="stepBefore" connectNulls strokeWidth={2} />
     </ComposedChart >
   </ResponsiveContainer>
 }
