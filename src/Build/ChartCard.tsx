@@ -1,4 +1,4 @@
-import { Download, Info } from '@mui/icons-material';
+import { CheckBox, CheckBoxOutlineBlank, Download, Info } from '@mui/icons-material';
 import { Button, CardContent, Collapse, Divider, Grid, MenuItem, styled, Tooltip, Typography } from '@mui/material';
 import { useMemo, useState } from 'react';
 import { CartesianGrid, ComposedChart, Legend, Line, ResponsiveContainer, Scatter, XAxis, YAxis, ZAxis } from 'recharts';
@@ -16,6 +16,7 @@ type ChartCardProps = {
 }
 export default function ChartCard({ data, plotBase, setPlotBase, statKeys, disabled = false }: ChartCardProps) {
   const [showDownload, setshowDownload] = useState(false)
+  const [showMin, setshowMin] = useState(true)
   const { displayData, downloadData } = useMemo(() => {
     if (!data) return { displayData: null, downloadData: null }
     const displayData = [...data] as Array<{ plotBase: number, optimizationTarget: number, minTarget?: number }>
@@ -61,9 +62,13 @@ export default function ChartCard({ data, plotBase, setPlotBase, statKeys, disab
             <Info />
           </Tooltip>
         </Grid>
-
         {!!downloadData && <Grid item>
-          <Button startIcon={<Download />} onClick={() => setshowDownload(!showDownload)}>Download Data</Button>
+          <Button startIcon={showMin ? <CheckBox /> : <CheckBoxOutlineBlank />}
+            color={showMin ? "success" : "secondary"}
+            onClick={() => setshowMin(!showMin)}>Show Min Stat Threshold</Button>
+        </Grid>}
+        {!!downloadData && <Grid item>
+          <Button color="info" startIcon={<Download />} onClick={() => setshowDownload(!showDownload)}>Download Data</Button>
         </Grid>}
       </Grid>
     </CardContent>
@@ -79,7 +84,7 @@ export default function ChartCard({ data, plotBase, setPlotBase, statKeys, disab
           </CardContent>
         </CardDark>
       </Collapse>
-      <Chart data={displayData} plotBase={plotBase} />
+      <Chart data={displayData} plotBase={plotBase} showMin={showMin} />
     </CardContent>}
   </CardLight >
 }
@@ -89,14 +94,14 @@ const TextArea = styled("textarea")({
   resize: "vertical",
   minHeight: "5em"
 })
-function DataDisplay({ data }: { data?: object }) {
+function DataDisplay({ data, }: { data?: object }) {
   return <TextArea readOnly value={JSON.stringify(data)} onClick={e => {
     const target = e.target as HTMLTextAreaElement;
     target.selectionStart = 0;
     target.selectionEnd = target.value.length;
   }} />
 }
-function Chart({ data, plotBase }) {
+function Chart({ data, plotBase, showMin }) {
   if (!data) return null
   return <ResponsiveContainer width="100%" height={600}>
     <ComposedChart data={data}>
@@ -106,7 +111,7 @@ function Chart({ data, plotBase }) {
       <ZAxis dataKey="optimizationTarget" range={[3, 25]} />
       <Legend />
       <Scatter name="Optimization Target" dataKey="optimizationTarget" fill="#8884d8" line lineType="fitting" />
-      <Line name="Minimum Stat Requirement Threshold" dataKey="minTarget" stroke="#ff7300" type="stepBefore" connectNulls strokeWidth={2} />
+      {showMin && <Line name="Minimum Stat Requirement Threshold" dataKey="minTarget" stroke="#ff7300" type="stepBefore" connectNulls strokeWidth={2} />}
     </ComposedChart >
   </ResponsiveContainer>
 }

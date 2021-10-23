@@ -62,11 +62,20 @@ onmessage = async (e: { data: BuildRequest & { plotBase?: StatKey } }) => {
   let { initialStats, formula } = PreprocessFormulas(dependencies, stats)
   let buildCount = 0, skipped = oldCount - newCount
   let builds: Build[] = [], threshold = -Infinity
-  const plotDataMap: Dict<string, number> = {}, decimalPoint = 2
+  const plotDataMap: Dict<string, number> = {}
+  let decimalPoint = 2
 
   const cleanupBuilds = () => {
     builds.sort((a, b) => (b.buildFilterVal - a.buildFilterVal))
     builds.splice(maxBuildsToShow)
+  }
+
+  function downSamplePlot(number) {
+    Object.entries(plotDataMap).forEach(([key, val]) => {
+      const newKey = parseFloat(key).toFixed(number)
+      plotDataMap[newKey] = Math.max(plotDataMap[newKey] ?? -Infinity, val)
+      delete plotDataMap[key]
+    })
   }
 
   const callback = (accu: StrictDict<SlotKey, ICachedArtifact>, stats: ICalculatedStats) => {
@@ -76,6 +85,13 @@ onmessage = async (e: { data: BuildRequest & { plotBase?: StatKey } }) => {
     let buildFilterVal = target(stats)
 
     if (plotBase) {
+      // check if downsampling is needed
+      if (!(buildCount % 10000) && decimalPoint >= 1 && Object.keys(plotDataMap).length > 5000) {
+        decimalPoint--
+        downSamplePlot(decimalPoint)
+      }
+
+      // add too plot data
       const key = stats[plotBase].toFixed(decimalPoint)
       plotDataMap[key] = Math.max(plotDataMap[key] ?? -Infinity, buildFilterVal)
     }
@@ -100,7 +116,6 @@ onmessage = async (e: { data: BuildRequest & { plotBase?: StatKey } }) => {
   const plotData = plotBase ? Object.entries(plotDataMap)
     .map(([key, value]) => ({ plotBase: parseFloat(key), optimizationTarget: value }))
     .sort((a, b) => a.plotBase - b.plotBase) : undefined
-  console.log("PLOTBASE", plotBase, { builds, plotData, timing: t2 - t1, skipped })
   postMessage({ builds, plotData, timing: t2 - t1, skipped }, undefined as any)
 }
 
