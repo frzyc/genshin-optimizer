@@ -19,7 +19,8 @@ export interface BuildSetting {
   useEquippedArts: boolean,
   builds: Array<string[]>,
   buildDate: number,
-  maxBuildsToShow: number
+  maxBuildsToShow: number,
+  plotBase: StatKey | ""
 }
 export type ArtifactsBySlot = Dict<SlotKey, ICachedArtifact[]>
 
@@ -31,6 +32,7 @@ export interface BuildRequest {
   artifactSetEffects: ArtifactSetEffects,
   maxBuildsToShow: number,
   optimizationTarget: string | string[],
+  plotBase: StatKey | ""
 }
 export interface Build {
   buildFilterVal: number,

@@ -39,7 +39,7 @@ export default function ArtifactSetPicker({ index, setFilters, onChange, initial
     <CardContent sx={{ py: 1 }}>
       <ButtonGroup>
         {/* Artifact set */}
-        {artifactSheets && <ArtifactSetDropdown hasUnselect selectedSetKey={setKey} artifactSetsByRarity={artifactSetsByRarity as any}
+        {artifactSheets && <ArtifactSetDropdown hasUnselect selectedSetKey={setKey} artifactSetsByRarity={artifactSetsByRarity as any} disabled={disabled}
           onChange={setKey => onChange(index, setKey as ArtifactSetKey, parseInt(Object.keys(artifactSheets[setKey]?.setEffects ?? {})[0] as string) ?? 0)} />}
         {/* set number */}
         <DropdownButton title={`${setNum}-set`}

@@ -53,7 +53,7 @@ export default function MainStatSelectionCard({ mainStatAssumptionLevel, mainSta
               <SqBadge color="info">{numSel ? `${numSel} Selected` : `Any`}</SqBadge>
             </Grid>
             <Grid item>
-              <Button color="error" size="small" disabled={!mainStatKeys[slotKey].length}
+              <Button color="error" size="small" disabled={!mainStatKeys[slotKey].length || disabled}
                 onClick={() => onChangeMainStatKey(slotKey)}>
                 <Replay />
               </Button>
