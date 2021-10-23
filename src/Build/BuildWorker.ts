@@ -26,7 +26,7 @@ onmessage = async (e: { data: BuildRequest & { plotBase?: StatKey } }) => {
       postMessage({ builds: [], timing: 0 }, undefined as any)
       return
     }
-    if (targetKeys.length === 1) {
+    if (targetKeys.length === 1 && !plotBase) {
       // CAUTION: This optimization works only with monotonic dependencies
       const key = targetKeys[0]
       target = (stats) => stats[key]

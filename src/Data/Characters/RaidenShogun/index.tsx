@@ -11,9 +11,9 @@ import c6 from './Constellation_Wishbearer.png'
 import normal from './Talent_Origin.png'
 import skill from './Talent_Transcendence_Baleful_Omen.png'
 import burst from './Talent_Secret_Art_Musou_Shinsetsu.png'
-import passive1 from './Talent_Enlightened_One.png'
-import passive2 from './Talent_All-Preserver.png'
-import passive3 from './Talent_Wishes_Unnumbered.png'
+import passive1 from './Talent_Wishes_Unnumbered.png'
+import passive2 from './Talent_Enlightened_One.png'
+import passive3 from './Talent_All-Preserver.png'
 import Stat from '../../../Stat'
 import formula, { data, energyCosts, getResolve, resolveStacks } from './data'
 import data_gen from './data_gen.json'
@@ -242,7 +242,7 @@ const char: ICharacterSheet = {
       },
       passive1: talentTemplate("passive1", tr, passive1),
       passive2: {
-        name: tr("passive1.name"),
+        name: tr("passive2.name"),
         img: passive2,
         sections: [{
           text: tr("passive2.description"),

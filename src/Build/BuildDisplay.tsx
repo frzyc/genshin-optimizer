@@ -138,6 +138,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     setcharacterKey(cKey)
     setCharDirty()
     setCharacterData({})
+    setchartData(undefined)
   }, [setCharDirty, setcharacterKey, characterKey])
 
   //load the character data as a whole
@@ -272,7 +273,10 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     },
     [setmodalBuild, setshowCharacterModal],
   )
-  const setPlotBase = useCallback(plotBase => buildSettingsDispatch({ plotBase }), [buildSettingsDispatch])
+  const setPlotBase = useCallback(plotBase => {
+    buildSettingsDispatch({ plotBase })
+    setchartData(undefined)
+  }, [buildSettingsDispatch])
   return <buildContext.Provider value={{ equippedBuild: initialStats }}>
     <Box display="flex" flexDirection="column" gap={1} sx={{ my: 1 }}>
       <InfoComponent
