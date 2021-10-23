@@ -1,6 +1,6 @@
-import { faCalculator, faCheckSquare, faSquare } from '@fortawesome/free-solid-svg-icons';
+import { faCalculator } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Close } from '@mui/icons-material';
+import { CheckBox, CheckBoxOutlineBlank, Close } from '@mui/icons-material';
 import { Alert, Box, Button, ButtonGroup, CardContent, Divider, Grid, Link, MenuItem, Skeleton, Typography } from '@mui/material';
 import React, { lazy, Suspense, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import ReactGA from 'react-ga';
@@ -20,9 +20,10 @@ import InfoComponent from '../Components/InfoComponent';
 import ModalWrapper from '../Components/ModalWrapper';
 import { DatabaseContext } from '../Database/Database';
 import { dbStorage } from '../Database/DBStorage';
+import { GlobalSettingsContext } from '../GlobalSettings';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
 import usePromise from '../ReactHooks/usePromise';
-import { ArtifactsBySlot, Build, BuildSetting } from '../Types/Build';
+import { ArtifactsBySlot, Build, BuildRequest, BuildSetting } from '../Types/Build';
 import { ICachedCharacter } from '../Types/character';
 import { allSlotKeys, CharacterKey } from '../Types/consts';
 import { ICalculatedStats } from '../Types/stats';
@@ -30,6 +31,7 @@ import { deepClone, objectFromKeyMap } from '../Util/Util';
 import WeaponSheet from '../Weapon/WeaponSheet';
 import { buildContext, calculateTotalBuildNumber, maxBuildsToShowList } from './Build';
 import { initialBuildSettings } from './BuildSetting';
+import ChartCard from './ChartCard';
 import ArtifactBuildDisplayItem from './Components/ArtifactBuildDisplayItem';
 import ArtifactConditionalCard from './Components/ArtifactConditionalCard';
 import ArtifactSetPicker from './Components/ArtifactSetPicker';
@@ -76,13 +78,13 @@ function buildSettingsReducer(state: BuildSetting, action): BuildSetting {
 }
 
 export default function BuildDisplay({ location: { characterKey: propCharacterKey } }) {
+  const { globalSettings: { tcMode } } = useContext(GlobalSettingsContext)
   const database = useContext(DatabaseContext)
   const [characterKey, setcharacterKey] = useState(() => {
     const { characterKey = "" } = dbStorage.get("BuildsDisplay.state") ?? {}
     //NOTE that propCharacterKey can override the selected character.
     return (propCharacterKey ?? characterKey) as CharacterKey | ""
   })
-
   const [modalBuild, setmodalBuild] = useState(-1) // the index of the newBuild that is being displayed in the character modal,
 
   const [showCharacterModal, setshowCharacterModal] = useState(false)
@@ -91,6 +93,8 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   const [generationProgress, setgenerationProgress] = useState(0)
   const [generationDuration, setgenerationDuration] = useState(0)//in ms
   const [generationSkipped, setgenerationSkipped] = useState(0)
+
+  const [chartData, setchartData] = useState(undefined as any)
 
   const [charDirty, setCharDirty] = useForceUpdate()
   const artifactSheets = usePromise(ArtifactSheet.getAll(), [])
@@ -104,7 +108,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   type characterDataType = { character?: ICachedCharacter, characterSheet?: CharacterSheet, weaponSheet?: WeaponSheet, initialStats?: ICalculatedStats, statsDisplayKeys?: { basicKeys: any, [key: string]: any } }
   const [{ character, characterSheet, weaponSheet, initialStats, statsDisplayKeys }, setCharacterData] = useState({} as characterDataType)
   const buildSettings = useMemo(() => character?.buildSettings ?? initialBuildSettings(), [character])
-  const { setFilters, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, builds, buildDate, maxBuildsToShow } = buildSettings
+  const { plotBase, setFilters, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, builds, buildDate, maxBuildsToShow } = buildSettings
 
   if (initialStats)
     initialStats.mainStatAssumptionLevel = mainStatAssumptionLevel
@@ -212,6 +216,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   const generateBuilds = useCallback(() => {
     if (!initialStats || !artifactSheets) return
     setgeneratingBuilds(true)
+    setchartData(undefined)
     setgenerationDuration(0)
     setgenerationProgress(0)
     setgenerationSkipped(0)
@@ -226,9 +231,10 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
       })
     })
     //create an obj with app the artifact set effects to pass to buildworker.
-    const data = {
+    const data: BuildRequest = {
       splitArtifacts, initialStats, artifactSetEffects,
-      setFilters, minFilters: statFilters, maxBuildsToShow, optimizationTarget
+      setFilters, minFilters: statFilters, maxBuildsToShow, optimizationTarget,
+      plotBase: tcMode ? plotBase : ""
     };
     worker.current?.terminate()
     worker.current = new Worker()
@@ -248,13 +254,14 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
       })
       const builds = (e.data.builds as Build[]).map(b => Object.values(b.artifacts).map(a => a.id))
       buildSettingsDispatch({ builds, buildDate: Date.now() })
+      setchartData(e.data.plotData)
 
       setgeneratingBuilds(false)
       worker.current?.terminate()
       worker.current = null
     };
     worker.current.postMessage(data)
-  }, [artifactSheets, split, totBuildNumber, mainStatAssumptionLevel, initialStats, maxBuildsToShow, optimizationTarget, setFilters, statFilters, buildSettingsDispatch])
+  }, [artifactSheets, split, totBuildNumber, mainStatAssumptionLevel, initialStats, maxBuildsToShow, optimizationTarget, setFilters, statFilters, plotBase, tcMode, buildSettingsDispatch])
 
   const characterName = characterSheet?.name ?? "Character Name"
 
@@ -265,7 +272,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     },
     [setmodalBuild, setshowCharacterModal],
   )
-
+  const setPlotBase = useCallback(plotBase => buildSettingsDispatch({ plotBase }), [buildSettingsDispatch])
   return <buildContext.Provider value={{ equippedBuild: initialStats }}>
     <Box display="flex" flexDirection="column" gap={1} sx={{ my: 1 }}>
       <InfoComponent
@@ -323,13 +330,13 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
               {characterKey && <CardLight><CardContent>
                 <Grid container spacing={1}>
                   <Grid item flexGrow={1}>
-                    <Button fullWidth onClick={() => buildSettingsDispatch({ useEquippedArts: !useEquippedArts })} disabled={generatingBuilds}>
-                      <span><FontAwesomeIcon icon={useEquippedArts ? faCheckSquare : faSquare} /> Use Equipped Artifacts</span>
+                    <Button fullWidth onClick={() => buildSettingsDispatch({ useEquippedArts: !useEquippedArts })} disabled={generatingBuilds} startIcon={useEquippedArts ? <CheckBox /> : <CheckBoxOutlineBlank />}>
+                      Use Equipped Artifacts
                     </Button>
                   </Grid>
                   <Grid item flexGrow={1}>
-                    <Button fullWidth onClick={() => buildSettingsDispatch({ useExcludedArts: !useExcludedArts })} disabled={generatingBuilds}>
-                      <span><FontAwesomeIcon icon={useExcludedArts ? faCheckSquare : faSquare} /> Use Excluded Artifacts</span>
+                    <Button fullWidth onClick={() => buildSettingsDispatch({ useExcludedArts: !useExcludedArts })} disabled={generatingBuilds} startIcon={useExcludedArts ? <CheckBox /> : <CheckBoxOutlineBlank />}>
+                      Use Excluded Artifacts
                     </Button>
                   </Grid>
                 </Grid>
@@ -395,7 +402,9 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
           {!!characterKey && <Box sx={{ mt: 1 }} >
             <BuildAlert {...{ totBuildNumber, generatingBuilds, generationSkipped, generationProgress, generationDuration, characterName, maxBuildsToShow }} />
           </Box>}
-
+          {tcMode && statsDisplayKeys && <Box sx={{ mt: 1 }} >
+            <ChartCard disabled={generatingBuilds} data={chartData} plotBase={plotBase} setPlotBase={setPlotBase} statKeys={statsDisplayKeys?.basicKeys} />
+          </Box>}
         </CardContent>
       </CardDark>
       <CardDark>

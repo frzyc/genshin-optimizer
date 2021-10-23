@@ -9,7 +9,7 @@ const CharacterDisplayCard = lazy(() => import('../../Character/CharacterDisplay
 
 export default function CharacterSelectionCard({ characterKey, disabled, selectCharacter }) {
   const [open, setOpen] = useState(false)
-  const onOpen = useCallback(() => !disabled && setOpen(true), [setOpen, disabled])
+  const onOpen = useCallback(() => disabled ? undefined : setOpen(true), [setOpen, disabled])
   const onClose = useCallback(() => setOpen(false), [setOpen])
   return <Box>
     <CharacterCard characterKey={characterKey} onEdit={onOpen} />

@@ -10,5 +10,6 @@ export const initialBuildSettings = (): BuildSetting => ({
   useEquippedArts: false,
   builds: [],
   buildDate: 0,
-  maxBuildsToShow: 5
+  maxBuildsToShow: 5,
+  plotBase: ""
 })
