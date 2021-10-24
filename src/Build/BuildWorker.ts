@@ -62,7 +62,7 @@ onmessage = async (e: { data: BuildRequest & { plotBase?: StatKey } }) => {
   let { initialStats, formula } = PreprocessFormulas(dependencies, stats)
   let buildCount = 0, skipped = oldCount - newCount
   let builds: Build[] = [], threshold = -Infinity
-  const plotDataMap: Dict<string, number> = {}
+  const plotDataMap: Dict<string, [number, number]> = {}
   let decimalPoint = 2
 
   const cleanupBuilds = () => {
@@ -71,9 +71,10 @@ onmessage = async (e: { data: BuildRequest & { plotBase?: StatKey } }) => {
   }
 
   function downSamplePlot(number) {
-    Object.entries(plotDataMap).forEach(([key, val]) => {
+    Object.entries(plotDataMap).forEach(([key, [base, val]]) => {
       const newKey = parseFloat(key).toFixed(number)
-      plotDataMap[newKey] = Math.max(plotDataMap[newKey] ?? -Infinity, val)
+      if (val > (plotDataMap[newKey]?.[1] ?? -Infinity))
+        plotDataMap[newKey] = [base, val]
       delete plotDataMap[key]
     })
   }
@@ -93,7 +94,8 @@ onmessage = async (e: { data: BuildRequest & { plotBase?: StatKey } }) => {
 
       // add too plot data
       const key = stats[plotBase].toFixed(decimalPoint)
-      plotDataMap[key] = Math.max(plotDataMap[key] ?? -Infinity, buildFilterVal)
+      if (buildFilterVal > (plotDataMap[key]?.[1] ?? -Infinity))
+        plotDataMap[key] = [stats[plotBase], buildFilterVal]
     }
 
     if (buildFilterVal >= threshold) {
@@ -107,14 +109,20 @@ onmessage = async (e: { data: BuildRequest & { plotBase?: StatKey } }) => {
 
   for (const artifactsBySlot of artifactSetPermutations(prunedArtifacts, setFilters))
     artifactPermutations(initialStats, artifactsBySlot, artifactSetEffects, callback)
-
-
   cleanupBuilds()
   const t2 = performance.now()
   postMessage({ progress: buildCount, timing: t2 - t1, skipped }, undefined as any)
 
-  const plotData = plotBase ? Object.entries(plotDataMap)
-    .map(([key, value]) => ({ plotBase: parseFloat(key), optimizationTarget: value }))
+  if (Object.keys(plotDataMap).length > 5000) {
+    Object.entries(plotDataMap).forEach(([key, [base, val]]) => {
+      const newKey = Math.round(base / 10) * 10
+      if (val > (plotDataMap[newKey]?.[1] ?? -Infinity))
+        plotDataMap[newKey] = [base, val]
+      delete plotDataMap[key]
+    })
+  }
+  const plotData = plotBase ? Object.values(plotDataMap)
+    .map(([plotBase, optimizationTarget]) => ({ plotBase, optimizationTarget }))
     .sort((a, b) => a.plotBase - b.plotBase) : undefined
   postMessage({ builds, plotData, timing: t2 - t1, skipped }, undefined as any)
 }
