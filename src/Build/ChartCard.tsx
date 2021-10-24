@@ -18,7 +18,7 @@ export default function ChartCard({ data, plotBase, setPlotBase, statKeys, disab
   const [showDownload, setshowDownload] = useState(false)
   const [showMin, setshowMin] = useState(true)
   const { displayData, downloadData } = useMemo(() => {
-    if (!data) return { displayData: null, downloadData: null }
+    if (!data || !data.length) return { displayData: null, downloadData: null }
     const displayData = [...data] as Array<{ plotBase: number, optimizationTarget: number, minTarget?: number }>
     let lastIndice = 0
     displayData.sort((a, b) => b.optimizationTarget - a.optimizationTarget)
@@ -102,15 +102,17 @@ function DataDisplay({ data, }: { data?: object }) {
   }} />
 }
 function Chart({ data, plotBase, showMin }) {
+  // Round here because the XAxis refuse to do allowDecimals={false}
+  const displayData = useMemo(() => data && data.map(({ plotBase, ...rest }) => ({ plotBase: Math.round(plotBase), ...rest })), [data])
   if (!data) return null
   return <ResponsiveContainer width="100%" height={600}>
-    <ComposedChart data={data}>
+    <ComposedChart data={displayData}>
       <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="plotBase" name="ER" unit={Stat.getStatUnit(plotBase, undefined)} scale="linear" allowDecimals={false} tick={{ fill: 'white' }} />
-      <YAxis name="DMG" domain={["auto", "auto"]} allowDecimals={false} tick={{ fill: 'white' }} />
+      <XAxis dataKey="plotBase" scale="linear" allowDecimals={false} domain={["auto", "auto"]} tick={{ fill: 'white' }} type="number" />
+      <YAxis name="DMG" domain={["auto", "auto"]} allowDecimals={false} tick={{ fill: 'white' }} type="number" />
       <ZAxis dataKey="optimizationTarget" range={[3, 25]} />
       <Legend />
-      <Scatter name="Optimization Target" dataKey="optimizationTarget" fill="#8884d8" line lineType="fitting" />
+      <Scatter name="Optimization Target" dataKey="optimizationTarget" fill="#8884d8" line lineType="fitting" isAnimationActive={false} />
       {showMin && <Line name="Minimum Stat Requirement Threshold" dataKey="minTarget" stroke="#ff7300" type="stepBefore" connectNulls strokeWidth={2} />}
     </ComposedChart >
   </ResponsiveContainer>
