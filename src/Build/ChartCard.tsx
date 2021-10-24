@@ -102,13 +102,11 @@ function DataDisplay({ data, }: { data?: object }) {
   }} />
 }
 function Chart({ data, plotBase, showMin }) {
-  // Round here because the XAxis refuse to do allowDecimals={false}
-  const displayData = useMemo(() => data && data.map(({ plotBase, ...rest }) => ({ plotBase: Math.round(plotBase), ...rest })), [data])
   if (!data) return null
   return <ResponsiveContainer width="100%" height={600}>
-    <ComposedChart data={displayData}>
+    <ComposedChart data={data}>
       <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="plotBase" scale="linear" allowDecimals={false} domain={["auto", "auto"]} tick={{ fill: 'white' }} type="number" />
+      <XAxis dataKey="plotBase" scale="linear" unit={Stat.getStatUnit(plotBase)} domain={["auto", "auto"]} tick={{ fill: 'white' }} type="number" tickFormatter={n => n > 10000 ? n.toFixed() : n.toFixed(1)} />
       <YAxis name="DMG" domain={["auto", "auto"]} allowDecimals={false} tick={{ fill: 'white' }} type="number" />
       <ZAxis dataKey="optimizationTarget" range={[3, 25]} />
       <Legend />
