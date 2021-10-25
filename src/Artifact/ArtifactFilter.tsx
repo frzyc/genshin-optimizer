@@ -21,13 +21,15 @@ import usePromise from "../ReactHooks/usePromise"
 import Stat from "../Stat"
 import { allMainStatKeys, allSubstats } from "../Types/artifact"
 import { allArtifactRarities } from "../Types/consts"
+import { sortKeys } from "../Util/ArtifactSort"
 import { clamp } from "../Util/Util"
-import { initialFilter, sortKeys } from "./ArtifactFilterUtil"
+import { initialFilter } from "./ArtifactFilterUtil"
 
-export default function ArtifactFilter({ artifacts, filters, filterDispatch, ...props }) {
+export default function ArtifactFilter({ artifactIds, filters, filterDispatch, ...props }) {
   const { t } = useTranslation(["artifact", "ui"]);
   const database = useContext(DatabaseContext)
   const { numDelete, numUnequip, numExclude, numInclude, numUnlock, numLock } = useMemo(() => {
+    const artifacts = artifactIds.map(id => database._getArt(id))
     const numUnlock = artifacts.reduce((a, art) => a + (art.lock ? 0 : 1), 0)
     const numLock = artifacts.length - numUnlock
     const numDelete = numUnlock
@@ -36,7 +38,7 @@ export default function ArtifactFilter({ artifacts, filters, filterDispatch, ...
     const numInclude = artifacts.length - numExclude
 
     return { numDelete, numUnequip, numExclude, numInclude, numUnlock, numLock }
-  }, [artifacts])
+  }, [artifactIds, database])
 
   const { filterArtSetKey, filterSlotKey, filterMainStatKey, filterStars, filterLevelLow, filterLevelHigh, filterSubstats = initialFilter().filterSubstats,
     filterLocation = "", filterExcluded = "", sortType = sortKeys[0], ascending = false } = filters
@@ -55,27 +57,27 @@ export default function ArtifactFilter({ artifacts, filters, filterDispatch, ...
 
   const unequipArtifacts = () =>
     window.confirm(`Are you sure you want to unequip ${numUnequip} artifacts currently equipped on characters?`) &&
-    artifacts.map(art => database.setArtLocation(art.id!, ""))
+    artifactIds.map(id => database.setArtLocation(id, ""))
 
   const deleteArtifacts = () =>
     window.confirm(`Are you sure you want to delete ${numDelete} artifacts?`) &&
-    artifacts.map(art => !art.lock && database.removeArt(art.id!))
+    artifactIds.map(id => !database._getArt(id)?.lock && database.removeArt(id))
 
   const excludeArtifacts = () =>
     window.confirm(`Are you sure you want to exclude ${numInclude} artifacts from build generations?`) &&
-    artifacts.map(art => database.updateArt({ exclude: true }, art.id))
+    artifactIds.map(id => database.updateArt({ exclude: true }, id))
 
   const includeArtifacts = () =>
     window.confirm(`Are you sure you want to include ${numExclude} artifacts in build generations?`) &&
-    artifacts.map(art => database.updateArt({ exclude: false }, art.id))
+    artifactIds.map(id => database.updateArt({ exclude: false }, id))
 
   const lockArtifacts = () =>
     window.confirm(`Are you sure you want to lock ${numLock} artifacts?`) &&
-    artifacts.map(art => database.updateArt({ lock: true }, art.id))
+    artifactIds.map(id => database.updateArt({ lock: true }, id))
 
   const unlockArtifacts = () =>
     window.confirm(`Are you sure you want to unlock ${numUnlock} artifacts?`) &&
-    artifacts.map(art => database.updateArt({ lock: false }, art.id))
+    artifactIds.map(id => database.updateArt({ lock: false }, id))
 
   const [sliderLow, setsliderLow] = useState(filterLevelLow)
   const [sliderHigh, setsliderHigh] = useState(filterLevelHigh)

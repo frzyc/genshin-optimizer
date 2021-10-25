@@ -1,6 +1,5 @@
 import { allSubstats } from "../Types/artifact"
-
-export const sortKeys = ["rarity", "level", "efficiency", "mefficiency"]
+import { sortKeys } from "../Util/ArtifactSort"
 export const initialFilter = () => ({
   filterArtSetKey: "",
   filterStars: [3, 4, 5],
