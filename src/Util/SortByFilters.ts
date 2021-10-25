@@ -11,10 +11,10 @@ export default function SortByFilters(sortby: string, ascending: boolean, option
     const aV = filterOption.getValue(a)
     const bV = filterOption.getValue(b)
     let diff = 0
-    if (typeof aV === "string" && typeof aV === "string")
-      diff = a.localeCompare(b)
+    if (typeof aV === "string" && typeof bV === "string")
+      diff = aV.localeCompare(bV)
     else
-      diff = ((bV as number) - aV)
+      diff = ((bV as number) - (aV as number))
     return (ascending ? -1 : 1) * diff
   }
   return (a: string, b: string) => {

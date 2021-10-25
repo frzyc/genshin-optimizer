@@ -10,14 +10,17 @@ import SolidToggleButtonGroup from '../Components/SolidToggleButtonGroup';
 import { DatabaseContext } from '../Database/Database';
 import { dbStorage } from '../Database/DBStorage';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
+import usePromise from '../ReactHooks/usePromise';
 import Stat from '../Stat';
-import { allSubstats, ICachedArtifact, SubstatKey } from '../Types/artifact';
+import { allSubstats, SubstatKey } from '../Types/artifact';
+import ArtifactSortOptions, { sortKeys } from '../Util/ArtifactSort';
+import SortByFilters from '../Util/SortByFilters';
 import { clamp } from '../Util/Util';
-import Artifact from './Artifact';
 import ArtifactCard from './ArtifactCard';
 import ArtifactEditor from './ArtifactEditor';
 import ArtifactFilter from './ArtifactFilter';
-import { initialFilter, sortKeys } from './ArtifactFilterUtil';
+import { initialFilter } from './ArtifactFilterUtil';
+import { ArtifactSheet } from './ArtifactSheet';
 
 const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
 
@@ -57,13 +60,16 @@ export default function ArtifactDisplay(props) {
   }, [filters])
 
   const noArtifact = useMemo(() => !database._getArts().length, [database])
+  const artifactSheets = usePromise(ArtifactSheet.getAll(), [])
+  const sortOptions = useMemo(() => artifactSheets && ArtifactSortOptions(database, artifactSheets, effFilterSet), [database, artifactSheets, effFilterSet])
 
-  const { artifacts, totalArtNum } = useMemo(() => {
+  const { artifactIds, totalArtNum } = useMemo(() => {
+    if (!sortOptions) return { artifactIds: [], totalArtNum: 0 }
     const { filterArtSetKey, filterSlotKey, filterMainStatKey, filterStars, filterLevelLow, filterLevelHigh,
       filterSubstats = initialFilter().filterSubstats, filterLocation = "",
       filterExcluded = "", sortType = sortKeys[0], ascending = false } = filters
     const allArtifacts = database._getArts()
-    const artifacts: ICachedArtifact[] = allArtifacts.filter(art => {
+    const artifactIds: string[] = allArtifacts.filter(art => {
       if (filterExcluded) {
         if (filterExcluded === "excluded" && !art.exclude) return false
         if (filterExcluded === "included" && art.exclude) return false
@@ -82,35 +88,20 @@ export default function ArtifactDisplay(props) {
       for (const filterKey of filterSubstats)
         if (filterKey && !art.substats.some(substat => substat.key === filterKey)) return false;
       return true
-    }).map((art) => {
-      switch (sortType) {
-        case "quality": return { value: [art.rarity], art }
-        case "level": return { value: [art.level, art.rarity], art }
-        case "efficiency": return { value: [Artifact.getArtifactEfficiency(art, effFilterSet).currentEfficiency], art }
-        case "mefficiency": return { value: [Artifact.getArtifactEfficiency(art, effFilterSet).maxEfficiency], art }
-      }
-      return { value: [0], art }
-    }).sort((a, b) => {
-      for (let i = 0; i < a.value.length; i++) {
-        if (a.value[i] !== b.value[i])
-          return (a.value[i] - b.value[i]) * (ascending ? 1 : -1)
-      }
-      return 0
-    }).map(item => item.art)
-
-    return { artifacts, totalArtNum: allArtifacts.length, ...dbDirty }//use dbDirty to shoo away warnings!
-  }, [filters, dbDirty, effFilterSet, database])
+    }).map((art) => art.id).sort(SortByFilters(sortType, ascending, sortOptions))
+    return { artifactIds, totalArtNum: allArtifacts.length, ...dbDirty }//use dbDirty to shoo away warnings!
+  }, [filters, sortOptions, dbDirty, database])
 
   const { maxNumArtifactsToDisplay } = filters
 
-  const { artifactsToShow, numPages, currentPageIndex } = useMemo(() => {
-    const numPages = Math.ceil(artifacts.length / maxNumArtifactsToDisplay)
+  const { artifactsToShow: artifactIdsToShow, numPages, currentPageIndex } = useMemo(() => {
+    const numPages = Math.ceil(artifactIds.length / maxNumArtifactsToDisplay)
     const currentPageIndex = clamp(pageIdex, 0, numPages - 1)
-    return { artifactsToShow: artifacts.slice(currentPageIndex * maxNumArtifactsToDisplay, (currentPageIndex + 1) * maxNumArtifactsToDisplay), numPages, currentPageIndex }
-  }, [artifacts, pageIdex, maxNumArtifactsToDisplay])
+    return { artifactsToShow: artifactIds.slice(currentPageIndex * maxNumArtifactsToDisplay, (currentPageIndex + 1) * maxNumArtifactsToDisplay), numPages, currentPageIndex }
+  }, [artifactIds, pageIdex, maxNumArtifactsToDisplay])
 
   //for pagination
-  const totalShowing = artifacts.length !== totalArtNum ? `${artifacts.length}/${totalArtNum}` : `${totalArtNum}`
+  const totalShowing = artifactIds.length !== totalArtNum ? `${artifactIds.length}/${totalArtNum}` : `${totalArtNum}`
   const setPage = useCallback(
     (e, value) => {
       invScrollRef.current?.scrollIntoView({ behavior: "smooth" })
@@ -139,7 +130,7 @@ export default function ArtifactDisplay(props) {
         cancelEdit={cancelEditArtifact}
       />
     </Box>
-    <ArtifactFilter artifacts={artifacts} filters={filters} filterDispatch={filterDispatch} />
+    <ArtifactFilter artifactIds={artifactIds} filters={filters} filterDispatch={filterDispatch} />
     <CardDark ref={invScrollRef}>
       <CardContent>
         <Grid container sx={{ mb: 1 }}>
@@ -151,13 +142,13 @@ export default function ArtifactDisplay(props) {
         <EfficiencyFilter selectedKeys={effFilter} onChange={n => filterDispatch({ effFilter: n })} />
       </CardContent>
     </CardDark>
-    <PaginationCard count={numPages} page={currentPageIndex + 1} onChange={setPage} numShowing={artifactsToShow.length} total={totalShowing} t={t} />
+    <PaginationCard count={numPages} page={currentPageIndex + 1} onChange={setPage} numShowing={artifactIdsToShow.length} total={totalShowing} t={t} />
     <Grid container spacing={1} >
       <Suspense fallback={<Grid item xs={12}><Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 5000 }} /></Grid>}>
-        {artifactsToShow.map((art, i) =>
+        {artifactIdsToShow.map((art, i) =>
           <Grid item key={i} xs={12} sm={6} md={4} lg={4} xl={3} >
             <ArtifactCard
-              artifactId={art.id}
+              artifactId={art}
               effFilter={effFilterSet}
               onDelete={deleteArtifact}
               onEdit={editArtifact}
@@ -166,7 +157,7 @@ export default function ArtifactDisplay(props) {
         )}
       </Suspense>
     </Grid>
-    {numPages > 1 && <PaginationCard count={numPages} page={currentPageIndex + 1} onChange={setPage} numShowing={artifactsToShow.length} total={totalShowing} t={t} />}
+    {numPages > 1 && <PaginationCard count={numPages} page={currentPageIndex + 1} onChange={setPage} numShowing={artifactIdsToShow.length} total={totalShowing} t={t} />}
   </Box >
 }
 
