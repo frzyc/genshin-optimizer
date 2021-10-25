@@ -18,9 +18,10 @@ export default function SortByFilters(sortby: string, ascending: boolean, option
     return (ascending ? -1 : 1) * diff
   }
   return (a: string, b: string) => {
+    if (!options[sortby]) return 0
     const filterOption = options[sortby]
     let diff = Sort(a, b, ascending, filterOption)
-    if (!diff && filterOption.tieBreaker)
+    if (!diff && filterOption.tieBreaker && options[filterOption.tieBreaker])
       diff = Sort(a, b, ascending, options[filterOption.tieBreaker])
     return diff
   }
