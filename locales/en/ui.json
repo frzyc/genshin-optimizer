@@ -38,6 +38,7 @@
     "name": "Name",
     "level": "Level",
     "rarity": "Rarity",
+    "artsetkey": "Artifact Set",
     "efficiency": "Current Substat Eff.",
     "mefficiency": "Maximum Substat Eff."
   }
