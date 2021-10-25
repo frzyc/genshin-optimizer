@@ -67,7 +67,9 @@
     "unequipArtifacts": "Unequip Artifacts",
     "deleteArtifacts": "Delete Artifacts",
     "excludeArtifacts": "Exclude Artifacts",
-    "includeArtifacts": "Include Artifacts"
+    "includeArtifacts": "Include Artifacts",
+    "lockArtifacts": "Lock Artifacts",
+    "unlockrtifacts": "Unlock Artifacts"
   },
   "filterLevelFormat": "Level <1>Low</1>/<3>High</3> (Inclusive)",
   "buttonHint": "Note: the red buttons above only applies to <1>filtered artifacts</1>",
