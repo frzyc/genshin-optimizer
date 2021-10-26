@@ -72,11 +72,11 @@ export default function ArtifactFilter({ artifactIds, filters, filterDispatch, .
     artifactIds.map(id => database.updateArt({ exclude: false }, id))
 
   const lockArtifacts = () =>
-    window.confirm(`Are you sure you want to lock ${numLock} artifacts?`) &&
+    window.confirm(`Are you sure you want to lock ${numUnlock} artifacts?`) &&
     artifactIds.map(id => database.updateArt({ lock: true }, id))
 
   const unlockArtifacts = () =>
-    window.confirm(`Are you sure you want to unlock ${numUnlock} artifacts?`) &&
+    window.confirm(`Are you sure you want to unlock ${numLock} artifacts?`) &&
     artifactIds.map(id => database.updateArt({ lock: false }, id))
 
   const [sliderLow, setsliderLow] = useState(filterLevelLow)

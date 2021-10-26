@@ -17,32 +17,41 @@ type ChartCardProps = {
 export default function ChartCard({ data, plotBase, setPlotBase, statKeys, disabled = false }: ChartCardProps) {
   const [showDownload, setshowDownload] = useState(false)
   const [showMin, setshowMin] = useState(true)
+
   const { displayData, downloadData } = useMemo(() => {
-    if (!data || !data.length) return { displayData: null, downloadData: null }
-    const displayData = [...data] as Array<{ plotBase: number, optimizationTarget: number, minTarget?: number }>
-    let lastIndice = 0
-    displayData.sort((a, b) => b.optimizationTarget - a.optimizationTarget)
-    const init = displayData[0]
-    displayData.map((ele, i) => {
-      if (i === lastIndice) return displayData[i].minTarget = ele.optimizationTarget
-      const last = displayData[lastIndice]
-      if (ele.plotBase < last.plotBase) return false
-      lastIndice = i
-      return displayData[i].minTarget = ele.optimizationTarget
-    })
-    displayData.sort((a, b) => a.plotBase - b.plotBase)
-    const minimum = displayData.filter(a => a.minTarget).map(({ plotBase, minTarget }) => [plotBase, minTarget])
-    //Add another point to min for the beginning to make the lines connect
-    displayData[0].minTarget = init.optimizationTarget
+    type Point = { x: number, y: number, min?: number }
+
+    if (!data?.length) return { displayData: null, downloadData: null }
+
+    const increasingX: Point[] = data.map(x => ({ x: x.plotBase, y: x.optimizationTarget })).sort((a, b) => a.x - b.x)
+    const minimumData: Point[] = []
+    for (const point of increasingX) {
+      let last: Point | undefined
+      while ((last = minimumData.pop())) {
+        if (last.y > point.y) {
+          minimumData.push(last)
+          break
+        }
+      }
+      minimumData.push(point)
+    }
+
+    // Note:
+    // We can also just use `minimumData` if the plotter supports multiple data sources.
+    // It could be faster too since there're no empty entries in `minimumData`.
+    if (minimumData[0].x !== increasingX[0].x)
+      increasingX[0].min = minimumData[0].y
+    minimumData.forEach(x => { x.min = x.y })
 
     const downloadData = {
-      minimum,
-      allData: displayData.filter(a => a.optimizationTarget).map(({ plotBase, optimizationTarget }) => [plotBase, optimizationTarget]),
+      minimum: minimumData.map(({ x, y }) => [x, y]),
+      allData: increasingX.map(({ x, y }) => [x, y]),
     }
-    return { displayData, downloadData }
+    return { displayData: increasingX, downloadData }
   }, [data])
+
   return <CardLight>
-    <CardContent >
+    <CardContent>
       <Grid container spacing={1} alignItems="center">
         <Grid item>
           <Typography variant="h6" >Optimization Target vs</Typography>
@@ -84,7 +93,7 @@ export default function ChartCard({ data, plotBase, setPlotBase, statKeys, disab
           </CardContent>
         </CardDark>
       </Collapse>
-      <Chart data={displayData} plotBase={plotBase} showMin={showMin} />
+      <Chart displayData={displayData} plotBase={plotBase} showMin={showMin} />
     </CardContent>}
   </CardLight >
 }
@@ -101,17 +110,16 @@ function DataDisplay({ data, }: { data?: object }) {
     target.selectionEnd = target.value.length;
   }} />
 }
-function Chart({ data, plotBase, showMin }) {
-  if (!data) return null
+function Chart({ displayData, plotBase, showMin }) {
   return <ResponsiveContainer width="100%" height={600}>
-    <ComposedChart data={data}>
+    <ComposedChart data={displayData}>
       <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="plotBase" scale="linear" unit={Stat.getStatUnit(plotBase)} domain={["auto", "auto"]} tick={{ fill: 'white' }} type="number" tickFormatter={n => n > 10000 ? n.toFixed() : n.toFixed(1)} />
+      <XAxis dataKey="x" scale="linear" unit={Stat.getStatUnit(plotBase)} domain={["auto", "auto"]} tick={{ fill: 'white' }} type="number" tickFormatter={n => n > 10000 ? n.toFixed() : n.toFixed(1)} />
       <YAxis name="DMG" domain={["auto", "auto"]} allowDecimals={false} tick={{ fill: 'white' }} type="number" />
-      <ZAxis dataKey="optimizationTarget" range={[3, 25]} />
+      <ZAxis dataKey="y" range={[3, 25]} />
       <Legend />
-      <Scatter name="Optimization Target" dataKey="optimizationTarget" fill="#8884d8" line lineType="fitting" isAnimationActive={false} />
-      {showMin && <Line name="Minimum Stat Requirement Threshold" dataKey="minTarget" stroke="#ff7300" type="stepBefore" connectNulls strokeWidth={2} />}
-    </ComposedChart >
+      <Scatter name="Optimization Target" dataKey="y" fill="#8884d8" line lineType="fitting" isAnimationActive={false} />
+      {showMin && <Line name="Minimum Stat Requirement Threshold" dataKey="min" stroke="#ff7300" type="stepBefore" connectNulls strokeWidth={2} isAnimationActive={false} />}
+    </ComposedChart>
   </ResponsiveContainer>
 }

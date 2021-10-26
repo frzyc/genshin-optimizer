@@ -9,6 +9,8 @@ import { Build, BuildRequest, SetFilter } from '../Types/Build';
 import { BonusStats, ICalculatedStats } from '../Types/stats';
 import { mergeStats } from '../Util/StatUtil';
 
+const plotMaxPoints = 1500
+
 onmessage = async (e: { data: BuildRequest & { plotBase?: StatKey } }) => {
   const t1 = performance.now()
   const { splitArtifacts, setFilters, minFilters = {}, initialStats: stats, artifactSetEffects, maxBuildsToShow, optimizationTarget, plotBase } = e.data
@@ -62,68 +64,64 @@ onmessage = async (e: { data: BuildRequest & { plotBase?: StatKey } }) => {
   let { initialStats, formula } = PreprocessFormulas(dependencies, stats)
   let buildCount = 0, skipped = oldCount - newCount
   let builds: Build[] = [], threshold = -Infinity
-  const plotDataMap: Dict<string, [number, number]> = {}
-  let decimalPoint = 2
+  const plotDataMap: Dict<string, number> = {}
+  let bucketSize = 0.01
 
   const cleanupBuilds = () => {
     builds.sort((a, b) => (b.buildFilterVal - a.buildFilterVal))
     builds.splice(maxBuildsToShow)
   }
 
-  function downSamplePlot(number) {
-    Object.entries(plotDataMap).forEach(([key, [base, val]]) => {
-      const newKey = parseFloat(key).toFixed(number)
-      if (val > (plotDataMap[newKey]?.[1] ?? -Infinity))
-        plotDataMap[newKey] = [base, val]
-      delete plotDataMap[key]
-    })
+  const cleanupPlots = () => {
+    let entries = Object.keys(plotDataMap)
+    while (entries.length > plotMaxPoints) {
+      const multiplier = Math.pow(2, Math.ceil(Math.log2(entries.length / plotMaxPoints)))
+      bucketSize *= multiplier
+      for (const [x, y] of Object.entries(plotDataMap)) {
+        delete plotDataMap[x]
+        const index = Math.round(parseInt(x) / multiplier)
+        plotDataMap[index] = Math.max(plotDataMap[index] ?? -Infinity, y)
+      }
+      entries = Object.keys(plotDataMap)
+    }
   }
 
   const callback = (accu: StrictDict<SlotKey, ICachedArtifact>, stats: ICalculatedStats) => {
-    if (!(++buildCount % 10000)) postMessage({ progress: buildCount, timing: performance.now() - t1, skipped }, undefined as any)
     formula(stats)
     if (Object.entries(minFilters).some(([key, minimum]) => stats[key] < minimum)) return
     let buildFilterVal = target(stats)
 
     if (plotBase) {
-      // check if downsampling is needed
-      if (!(buildCount % 10000) && decimalPoint >= 1 && Object.keys(plotDataMap).length > 5000) {
-        decimalPoint--
-        downSamplePlot(decimalPoint)
-      }
-
-      // add too plot data
-      const key = stats[plotBase].toFixed(decimalPoint)
-      if (buildFilterVal > (plotDataMap[key]?.[1] ?? -Infinity))
-        plotDataMap[key] = [stats[plotBase], buildFilterVal]
+      const index = Math.round(stats[plotBase] / bucketSize)
+      plotDataMap[index] = Math.max(buildFilterVal, plotDataMap[index] ?? -Infinity)
     }
 
-    if (buildFilterVal >= threshold) {
+    if (buildFilterVal >= threshold)
       builds.push({ buildFilterVal, artifacts: { ...accu } })
-      if (builds.length >= 1000) {
-        cleanupBuilds()
-        threshold = builds[builds.length - 1].buildFilterVal
-      }
+
+    if (!(++buildCount % 10000)) {
+      cleanupPlots()
+      cleanupBuilds()
+      threshold = builds[builds.length - 1].buildFilterVal
+      postMessage({ progress: buildCount, timing: performance.now() - t1, skipped }, undefined as any)
     }
   }
 
   for (const artifactsBySlot of artifactSetPermutations(prunedArtifacts, setFilters))
     artifactPermutations(initialStats, artifactsBySlot, artifactSetEffects, callback)
-  cleanupBuilds()
-  const t2 = performance.now()
-  postMessage({ progress: buildCount, timing: t2 - t1, skipped }, undefined as any)
 
-  if (Object.keys(plotDataMap).length > 5000) {
-    Object.entries(plotDataMap).forEach(([key, [base, val]]) => {
-      const newKey = Math.round(base / 10) * 10
-      if (val > (plotDataMap[newKey]?.[1] ?? -Infinity))
-        plotDataMap[newKey] = [base, val]
-      delete plotDataMap[key]
-    })
-  }
-  const plotData = plotBase ? Object.values(plotDataMap)
-    .map(([plotBase, optimizationTarget]) => ({ plotBase, optimizationTarget }))
-    .sort((a, b) => a.plotBase - b.plotBase) : undefined
+  cleanupBuilds()
+  cleanupPlots()
+
+  const t2 = performance.now()
+
+  const plotData = plotBase
+    ? Object.entries(plotDataMap)
+      .map(([plotBase, optimizationTarget]) => ({ plotBase: parseInt(plotBase) * bucketSize, optimizationTarget }))
+      .sort((a, b) => a.plotBase - b.plotBase)
+    : undefined
+
+  postMessage({ progress: buildCount, timing: t2 - t1, skipped }, undefined as any)
   postMessage({ builds, plotData, timing: t2 - t1, skipped }, undefined as any)
 }
 
