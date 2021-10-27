@@ -134,7 +134,7 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: Artifac
       }
       title={<Trans t={t} i18nKey="editor.title" >Artifact Editor</Trans>}
     />
-    <Collapse in={expanded} timeout="auto" unmountOnExit><CardContent sx={{ pt: 0 }}>
+    <Collapse in={expanded} timeout="auto" unmountOnExit={false}><CardContent sx={{ pt: 0 }}>
       <Grid container spacing={1} sx={{ mb: 1 }}>
         {/* Left column */}
         <Grid item xs={12} md={6} lg={6} sx={{
@@ -219,7 +219,7 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: Artifac
         <CardContent>
           {/* TODO: artifactDispatch not overwrite */}
           <Suspense fallback={<Skeleton width="100%" height="100" />}>
-            <UploadDisplay setState={state => artifactDispatch({ type: "overwrite", artifact: state })} setReset={getUpdloadDisplayReset} artifactInEditor={!!artifact} />
+            <UploadDisplay setState={state => artifactDispatch({ type: "overwrite", artifact: state })} setReset={getUpdloadDisplayReset} artifactInEditor={!!artifact} setExpanded={setExpanded}/>
           </Suspense>
         </CardContent>
       </CardLight>

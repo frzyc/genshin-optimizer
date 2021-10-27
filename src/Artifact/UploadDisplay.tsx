@@ -45,7 +45,7 @@ const InputInvis = styled('input')({
   display: 'none',
 });
 
-export default function UploadDisplay({ setState, setReset, artifactInEditor }: { setState: (art: IArtifact) => void, setReset: (reset: () => void) => void, artifactInEditor: boolean }) {
+export default function UploadDisplay({ setState, setReset, artifactInEditor, setExpanded }: { setState: (art: IArtifact) => void, setReset: (reset: () => void) => void, artifactInEditor: boolean, setExpanded: (expand: boolean) => void }) {
   const [modalShow, setModalShow] = useState(false)
 
   const [{ processed, outstanding }, dispatchQueue] = useReducer(queueReducer, { processed: [], outstanding: [] })
@@ -80,8 +80,10 @@ export default function UploadDisplay({ setState, setReset, artifactInEditor }: 
   }, [processingResult, dispatchQueue])
 
   const removeCurrent = useCallback(() => dispatchQueue({ type: "pop" }), [dispatchQueue])
-  const uploadFiles = useCallback((files: FileList) =>
-    dispatchQueue({ type: "upload", files: [...files].map(file => ({ file, fileName: file.name })) }), [dispatchQueue])
+  const uploadFiles = useCallback((files: FileList) => {
+    setExpanded(true)
+    dispatchQueue({ type: "upload", files: [...files].map(file => ({ file, fileName: file.name })) })
+  }, [dispatchQueue, setExpanded])
   const clearQueue = useCallback(() => dispatchQueue({ type: "clear" }), [dispatchQueue])
 
   useEffect(() => {
