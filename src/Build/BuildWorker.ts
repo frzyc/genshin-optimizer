@@ -73,23 +73,31 @@ onmessage = async (e: { data: BuildRequest & { plotBase?: StatKey } }) => {
   }
 
   const cleanupPlots = () => {
-    let entries = Object.keys(plotDataMap)
-    while (entries.length > plotMaxPoints) {
+    const entries = Object.entries(plotDataMap)
+    if (entries.length > plotMaxPoints) {
       const multiplier = Math.pow(2, Math.ceil(Math.log2(entries.length / plotMaxPoints)))
       bucketSize *= multiplier
-      for (const [x, y] of Object.entries(plotDataMap)) {
+      for (const [x, y] of entries) {
         delete plotDataMap[x]
         const index = Math.round(parseInt(x) / multiplier)
         plotDataMap[index] = Math.max(plotDataMap[index] ?? -Infinity, y)
       }
-      entries = Object.keys(plotDataMap)
     }
   }
 
   const callback = (accu: StrictDict<SlotKey, ICachedArtifact>, stats: ICalculatedStats) => {
+    if (!(++buildCount % 10000)) {
+      if (builds.length > 10000) {
+        cleanupBuilds()
+        threshold = builds[builds.length - 1].buildFilterVal
+      }
+      cleanupPlots()
+      postMessage({ progress: buildCount, timing: performance.now() - t1, skipped }, undefined as any)
+    }
+
     formula(stats)
     if (Object.entries(minFilters).some(([key, minimum]) => stats[key] < minimum)) return
-    let buildFilterVal = target(stats)
+    const buildFilterVal = target(stats)
 
     if (plotBase) {
       const index = Math.round(stats[plotBase] / bucketSize)
@@ -98,13 +106,6 @@ onmessage = async (e: { data: BuildRequest & { plotBase?: StatKey } }) => {
 
     if (buildFilterVal >= threshold)
       builds.push({ buildFilterVal, artifacts: { ...accu } })
-
-    if (!(++buildCount % 10000)) {
-      cleanupPlots()
-      cleanupBuilds()
-      threshold = builds[builds.length - 1].buildFilterVal
-      postMessage({ progress: buildCount, timing: performance.now() - t1, skipped }, undefined as any)
-    }
   }
 
   for (const artifactsBySlot of artifactSetPermutations(prunedArtifacts, setFilters))
