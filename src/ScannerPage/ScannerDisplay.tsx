@@ -12,7 +12,7 @@ import cocogoat from './cocogoat.png'
 import GIScanner from './GIScanner.png'
 
 export default function ScannerDisplay(props: any) {
-  const { t } = useTranslation('page_scannerd')
+  const { t } = useTranslation('page_scanner')
   ReactGA.pageview('/scanner')
   return <Box sx={{
     mt: 1,
@@ -31,7 +31,7 @@ export default function ScannerDisplay(props: any) {
           </ul>
         </Typography>
         <Typography gutterBottom>Below are several scanners that have been tested with GO.</Typography>
-        <Typography>To upload the exported file, go to <Link component={RouterLink} to="/database">Database</Link> page, and upload your file in the "Database Upload" section.</Typography>
+        <Typography>To upload the exported file, go to <Link component={RouterLink} to="/database">Database</Link> page, and upload your file in the <strong>Database Upload</strong> section.</Typography>
       </Trans>
     </CardContent></CardDark>
 
