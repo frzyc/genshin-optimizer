@@ -1,21 +1,19 @@
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Add, ExpandMore, Replay, Shuffle, Update } from '@mui/icons-material';
-import { Alert, Box, Button, ButtonGroup, CardContent, CardHeader, Collapse, Grid, MenuItem, Skeleton, Typography } from '@mui/material';
-import React, { lazy, Suspense, useCallback, useContext, useEffect, useMemo, useReducer, useState } from 'react';
+import { Add, ExpandMore, PhotoCamera, Replay, Shuffle, Update } from '@mui/icons-material';
+import { Alert, Box, Button, ButtonGroup, CardContent, CardHeader, CircularProgress, Collapse, Grid, MenuItem, Skeleton, styled, Typography } from '@mui/material';
+import React, { Suspense, useCallback, useContext, useEffect, useMemo, useReducer, useState } from 'react';
+import ReactGA from 'react-ga';
 import { Trans, useTranslation } from 'react-i18next';
 import ArtifactRarityDropdown from '../Components/Artifact/ArtifactRarityDropdown';
 import ArtifactSetDropdown from '../Components/Artifact/ArtifactSetDropdown';
 import ArtifactSlotDropdown from '../Components/Artifact/ArtifactSlotDropdown';
-import BootstrapTooltip from '../Components/BootstrapTooltip';
 import CardDark from '../Components/Card/CardDark';
 import CardLight from '../Components/Card/CardLight';
-import CustomNumberInput, { CustomNumberInputButtonGroupWrapper } from '../Components/CustomNumberInput';
 import CustomNumberTextField from '../Components/CustomNumberTextField';
 import DropdownButton from '../Components/DropdownMenu/DropdownButton';
 import ExpandButton from '../Components/ExpandButton';
 import ImgIcon from '../Components/Image/ImgIcon';
-import SqBadge from '../Components/SqBadge';
 import { DatabaseContext } from '../Database/Database';
 import { parseArtifact, validateArtifact } from '../Database/validation';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
@@ -28,17 +26,51 @@ import { valueString } from '../Util/UIUtil';
 import { clamp, deepClone } from '../Util/Util';
 import Artifact from './Artifact';
 import ArtifactCard from './ArtifactCard';
+import SubstatEfficiencyDisplayCard from './ArtifactEditor/Components/SubstatEfficiencyDisplayCard';
+import SubstatInput from './ArtifactEditor/Components/SubstatInput';
+import UploadExplainationModal from './ArtifactEditor/Components/UploadExplainationModal';
 import { ArtifactSheet } from './ArtifactSheet';
-import artifactSubstatRollCorrection from './artifact_sub_rolls_correction_gen.json';
-import PercentBadge from './PercentBadge';
-import TextButton from '../Components/TextButton';
+import { OutstandingEntry, ProcessedEntry, processEntry, queueReducer } from './ScanningUtil';
 
-const UploadDisplay = lazy(() => import('./UploadDisplay'))
+const maxProcessingCount = 3, maxProcessedCount = 16
 
 type ArtifactEditorArgument = { artifactIdToEdit: string, cancelEdit: () => void }
 const allSubstatFilter = new Set(allSubstats)
+type ResetMessage = { type: "reset" }
+type SubstatMessage = { type: "substat", index: number, substat: ISubstat }
+type OverwriteMessage = { type: "overwrite", artifact: IArtifact }
+type UpdateMessage = { type: "update", artifact: Partial<IArtifact> }
+type Message = ResetMessage | SubstatMessage | OverwriteMessage | UpdateMessage
+interface IEditorArtifact {
+  setKey: ArtifactSetKey,
+  slotKey: SlotKey,
+  level: number,
+  rarity: ArtifactRarity,
+  mainStatKey: MainStatKey,
+  substats: ISubstat[],
+}
+function artifactReducer(state: IEditorArtifact | undefined, action: Message): IEditorArtifact | undefined {
+  switch (action.type) {
+    case "reset": return
+    case "substat": {
+      const { index, substat } = action
+      const oldIndex = substat.key ? state!.substats.findIndex(current => current.key === substat.key) : -1
+      if (oldIndex === -1 || oldIndex === index)
+        state!.substats[index] = substat
+      else  // Already in used, swap the items instead
+        [state!.substats[index], state!.substats[oldIndex]] =
+          [state!.substats[oldIndex], state!.substats[index]]
+      return { ...state! }
+    }
+    case "overwrite": return action.artifact
+    case "update": return { ...state!, ...action.artifact }
+  }
+}
 
-let uploadDisplayReset: (() => void) | undefined
+const InputInvis = styled('input')({
+  display: 'none',
+});
+
 export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: ArtifactEditorArgument) {
   const { t } = useTranslation("artifact")
 
@@ -53,6 +85,60 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: Artifac
 
   const [editorArtifact, artifactDispatch] = useReducer(artifactReducer, undefined)
   const artifact = useMemo(() => editorArtifact && parseArtifact(editorArtifact), [editorArtifact])
+
+  const [modalShow, setModalShow] = useState(false)
+
+  const [{ processed, outstanding }, dispatchQueue] = useReducer(queueReducer, { processed: [], outstanding: [] })
+  const firstProcessed = processed[0] as ProcessedEntry | undefined
+  const firstOutstanding = outstanding[0] as OutstandingEntry | undefined
+
+  const processingImageURL = usePromise(firstOutstanding?.imageURL, [firstOutstanding?.imageURL])
+  const processingResult = usePromise(firstOutstanding?.result, [firstOutstanding?.result])
+
+  const remaining = processed.length + outstanding.length
+
+  const image = firstProcessed?.imageURL ?? processingImageURL
+  const { artifact: artifactProcessed, texts } = firstProcessed ?? {}
+  // const fileName = firstProcessed?.fileName ?? firstOutstanding?.fileName ?? "Click here to upload Artifact screenshot files"
+
+  useEffect(() => {
+    if (!artifact && artifactProcessed)
+      artifactDispatch({ type: "overwrite", artifact: artifactProcessed })
+  }, [artifact, artifactProcessed, artifactDispatch])
+
+  useEffect(() => {
+    const numProcessing = Math.min(maxProcessedCount - processed.length, maxProcessingCount, outstanding.length)
+    const processingCurrent = numProcessing && !outstanding[0].result
+    outstanding.slice(0, numProcessing).forEach(processEntry)
+    if (processingCurrent)
+      dispatchQueue({ type: "processing" })
+  }, [processed.length, outstanding])
+
+  useEffect(() => {
+    if (processingResult)
+      dispatchQueue({ type: "processed", ...processingResult })
+  }, [processingResult, dispatchQueue])
+
+  const uploadFiles = useCallback((files: FileList) => {
+    setExpanded(true)
+    dispatchQueue({ type: "upload", files: [...files].map(file => ({ file, fileName: file.name })) })
+  }, [dispatchQueue, setExpanded])
+  const clearQueue = useCallback(() => dispatchQueue({ type: "clear" }), [dispatchQueue])
+
+  useEffect(() => {
+    const pasteFunc = (e: any) => uploadFiles(e.clipboardData.files)
+    window.addEventListener('paste', pasteFunc);
+    return () =>
+      window.removeEventListener('paste', pasteFunc)
+  }, [uploadFiles])
+
+  const onUpload = useCallback(
+    e => {
+      uploadFiles(e.target.files)
+      e.target.value = null // reset the value so the same file can be uploaded again...
+    },
+    [uploadFiles],
+  )
 
   const { old, oldType }: { old: ICachedArtifact | undefined, oldType: "edit" | "duplicate" | "upgrade" | "" } = useMemo(() => {
     const databaseArtifact = dirtyDatabase && database._getArt(artifactIdToEdit)
@@ -83,10 +169,9 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: Artifac
   }, [artifactIdToEdit, database, dirtyDatabase])
 
   const sheet = artifact ? artifactSheets?.[artifact.setKey] : undefined
-  const getUpdloadDisplayReset = (reset: () => void) => uploadDisplayReset = reset
   const reset = useCallback(() => {
     cancelEdit?.();
-    uploadDisplayReset?.()
+    dispatchQueue({ type: "pop" })
     artifactDispatch({ type: "reset" })
   }, [cancelEdit, artifactDispatch])
   const update = useCallback((newValue: Partial<IArtifact>) => {
@@ -121,6 +206,7 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: Artifac
   const { rarity = 5, level = 0, slotKey = "flower" } = artifact ?? {}
   const { currentEfficiency = 0, maxEfficiency = 0 } = cachedArtifact ? Artifact.getArtifactEfficiency(cachedArtifact, allSubstatFilter) : {}
   return <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: expanded ? "100%" : 64 }} />}><CardDark >
+    <UploadExplainationModal modalShow={modalShow} hide={() => setModalShow(false)} />
     <CardHeader
       action={
         <ExpandButton
@@ -190,39 +276,78 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: Artifac
           <SubstatEfficiencyDisplayCard valid={isValid} efficiency={currentEfficiency} t={t} />
           {currentEfficiency !== maxEfficiency && <SubstatEfficiencyDisplayCard max valid={isValid} efficiency={maxEfficiency} t={t} />}
 
+          {/* Image OCR */}
+          <CardLight>
+            <CardContent sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+              {/* TODO: artifactDispatch not overwrite */}
+              <Suspense fallback={<Skeleton width="100%" height="100" />}>
+                <Grid container spacing={1} alignItems="center">
+                  <Grid item flexGrow={1}>
+                    <label htmlFor="contained-button-file">
+                      <InputInvis accept="image/*" id="contained-button-file" multiple type="file" onChange={onUpload} />
+                      <Button component="span" startIcon={<PhotoCamera />}>
+                        Upload Screenshot (or Ctrl-V)
+                      </Button>
+                    </label>
+                  </Grid>
+                  <Grid item>
+                    <Button color="info" sx={{ px: 2, minWidth: 0 }} onClick={() => {
+                      setModalShow(true)
+                      ReactGA.modalview('/artifact/how-to-upload')
+                    }}><Typography><FontAwesomeIcon icon={faQuestionCircle} /></Typography></Button>
+                  </Grid>
+                </Grid>
+                {image && <Box display="flex" justifyContent="center">
+                  <Box component="img" src={image} width="100%" maxWidth={350} height="auto" alt="Screenshot to parse for artifact values" />
+                </Box>}
+                {remaining > 0 && <CardDark sx={{ pl: 2 }} ><Grid container spacing={1} alignItems="center" >
+                  {!firstProcessed && firstOutstanding && <Grid item>
+                    <CircularProgress size="1em" />
+                  </Grid>}
+                  <Grid item flexGrow={1}>
+                    <Typography>
+                      <span>
+                        Screenshots in file-queue: <b>{remaining}</b>
+                        {/* {process.env.NODE_ENV === "development" && ` (Debug: Processed ${processed.length}/${maxProcessedCount}, Processing: ${outstanding.filter(entry => entry.result).length}/${maxProcessingCount}, Outstanding: ${outstanding.length})`} */}
+                      </span>
+                    </Typography>
+                  </Grid>
+                  <Grid item>
+                    <Button size="small" color="error" onClick={clearQueue}>Clear file-queue</Button>
+                  </Grid>
+                </Grid></CardDark>}
+              </Suspense>
+            </CardContent>
+          </CardLight>
         </Grid>
 
         {/* Right column */}
-        <Grid item xs={12} md={6} lg={6} sx={{
-          // select all excluding last
-          "> div:nth-last-of-type(n+2)": { mb: 1 }
-        }}>
+        <Grid item xs={12} md={6} lg={6} display="flex" flexDirection="column" gap={1}>
           {/* substat selections */}
           {[0, 1, 2, 3].map((index) => <SubstatInput key={index} index={index} artifact={cachedArtifact} setSubstat={setSubstat} />)}
+          {texts && <CardLight><CardContent>
+            <div>{texts.slotKey}</div>
+            <div>{texts.mainStatKey}</div>
+            <div>{texts.mainStatVal}</div>
+            <div>{texts.rarity}</div>
+            <div>{texts.level}</div>
+            <div>{texts.substats}</div>
+            <div>{texts.setKey}</div>
+          </CardContent></CardLight>}
         </Grid>
       </Grid>
 
       {/* Duplicate/Updated/Edit UI */}
-      {old && <Grid container sx={{ justifyContent: "space-around", my: 1 }} >
-        <Grid item lg={4} md={6} >
-          <Typography sx={{ textAlign: "center" }} variant="h6" color="text.secondary" >{t`editor.preview`}</Typography>
-          <div><ArtifactCard artifactObj={cachedArtifact} /></div>
-        </Grid>
-        <Grid item lg={4} md={6} >
-          <Typography sx={{ textAlign: "center" }} variant="h6" color="text.secondary" >{oldType !== "edit" ? (oldType === "duplicate" ? t`editor.dupArt` : t`editor.upArt`) : t`editor.beforeEdit`}</Typography>
-          <div><ArtifactCard artifactObj={old} /></div>
-        </Grid>
+      {old && <Grid container sx={{ justifyContent: "space-around", mb: 1 }} spacing={1} >
+        <Grid item lg={4} md={6} ><CardLight>
+          <Typography sx={{ textAlign: "center" }} py={1} variant="h6" color="text.secondary" >{t`editor.preview`}</Typography>
+          <ArtifactCard artifactObj={cachedArtifact} />
+        </CardLight></Grid>
+        <Grid item lg={4} md={6} ><CardLight>
+          <Typography sx={{ textAlign: "center" }} py={1} variant="h6" color="text.secondary" >{oldType !== "edit" ? (oldType === "duplicate" ? t`editor.dupArt` : t`editor.upArt`) : t`editor.beforeEdit`}</Typography>
+          <ArtifactCard artifactObj={old} />
+        </CardLight></Grid>
       </Grid>}
-
-      {/* Image OCR */}
-      <CardLight sx={{ mb: 1 }}>
-        <CardContent>
-          {/* TODO: artifactDispatch not overwrite */}
-          <Suspense fallback={<Skeleton width="100%" height="100" />}>
-            <UploadDisplay setState={state => artifactDispatch({ type: "overwrite", artifact: state })} setReset={getUpdloadDisplayReset} artifactInEditor={!!artifact} setExpanded={setExpanded}/>
-          </Suspense>
-        </CardContent>
-      </CardLight>
 
       {/* Error alert */}
       {!isValid && <Alert variant="filled" severity="error" sx={{ mb: 1 }}>{errors.map((e, i) => <div key={i}>{e}</div>)}</Alert>}
@@ -252,134 +377,3 @@ export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: Artifac
   </CardDark ></Suspense>
 }
 
-function SubstatEfficiencyDisplayCard({ efficiency, max = false, t, valid }) {
-  const eff = max ? "maxSubEff" : "curSubEff"
-  return <CardLight sx={{ py: 1, px: 2 }}>
-    <Grid container spacing={1}>
-      <Grid item>{t(`editor.${eff}`)}</Grid>
-      <Grid item flexGrow={1}>
-        <BootstrapTooltip placement="top" title={<span>
-          <Typography variant="h6">{t(`editor.${eff}`)}</Typography>
-          <Typography><Trans t={t} i18nKey={`editor.${eff}Desc`} /></Typography>
-        </span>}>
-          <span><Box component={FontAwesomeIcon} icon={faQuestionCircle} sx={{ cursor: "help" }} /></span>
-        </BootstrapTooltip>
-      </Grid>
-      <Grid item xs="auto">
-        <PercentBadge valid={valid} value={valid ? efficiency : "ERR"} />
-      </Grid>
-    </Grid>
-  </CardLight>
-}
-
-function SubstatInput({ index, artifact, setSubstat }: { index: number, artifact: ICachedArtifact | undefined, setSubstat: (index: number, substat: ISubstat) => void, }) {
-  const { t } = useTranslation("artifact")
-  const { mainStatKey = "", rarity = 5 } = artifact ?? {}
-  const { key = "", value = 0, rolls = [], efficiency = 0 } = artifact?.substats[index] ?? {}
-
-  const accurateValue = rolls.reduce((a, b) => a + b, 0)
-  const unit = Stat.getStatUnit(key), rollNum = rolls.length
-
-  let error: string = "", rollData: readonly number[] = [], allowedRolls = 0
-
-  if (artifact) {
-    // Account for the rolls it will need to fill all 4 substates, +1 for its base roll
-    const rarity = artifact.rarity
-    const { numUpgrades, high } = Artifact.rollInfo(rarity)
-    const maxRollNum = numUpgrades + high - 3;
-    allowedRolls = maxRollNum - rollNum
-    rollData = key ? Artifact.getSubstatRollData(key, rarity) : []
-  }
-  const rollOffset = 7 - rollData.length
-
-  if (!rollNum && key && value) error = error || t`editor.substat.error.noCalc`
-  if (allowedRolls < 0) error = error || t("editor.substat.error.noOverRoll", { value: allowedRolls + rollNum })
-
-  return <CardLight>
-    <Box sx={{ display: "flex" }}>
-      <ButtonGroup size="small" sx={{ width: "100%", display: "flex" }}>
-        <DropdownButton title={key ? Stat.getStatNameWithPercent(key) : t('editor.substat.substatFormat', { value: index + 1 })} disabled={!artifact} color={key ? "success" : "primary"} sx={{ whiteSpace: "nowrap" }}>
-          {key && <MenuItem onClick={() => setSubstat(index, { key: "", value: 0 })}>{t`editor.substat.noSubstat`}</MenuItem>}
-          {allSubstats.filter(key => mainStatKey !== key)
-            .map(k => <MenuItem key={k} selected={key === k} disabled={key === k} onClick={() => setSubstat(index, { key: k, value: 0 })} >
-              {Stat.getStatNameWithPercent(k)}
-            </MenuItem>)}
-        </DropdownButton>
-        <CustomNumberInputButtonGroupWrapper sx={{ flexBasis: 30, flexGrow: 1 }} >
-          <CustomNumberInput
-            float={unit === "%"}
-            placeholder={t`editor.substat.selectSub`}
-            value={key ? value : undefined}
-            onChange={value => setSubstat(index, { key, value: value ?? 0 })}
-            disabled={!key}
-            error={!!error}
-            sx={{
-              px: 1,
-            }}
-            inputProps={{
-              sx: { textAlign: "right" }
-            }}
-          />
-        </CustomNumberInputButtonGroupWrapper>
-        {!!rollData.length && <TextButton>{t`editor.substat.nextRolls`}</TextButton>}
-        {rollData.map((v, i) => {
-          let newValue = valueString(accurateValue + v, unit)
-          newValue = artifactSubstatRollCorrection[rarity]?.[key]?.[newValue] ?? newValue
-          return <Button key={i} color={`roll${clamp(rollOffset + i, 1, 6)}` as any} disabled={(value && !rollNum) || allowedRolls <= 0} onClick={() => setSubstat(index, { key, value: parseFloat(newValue) })}>{newValue}</Button>
-        })}
-      </ButtonGroup>
-    </Box>
-    <Box sx={{ p: 1, }}>
-      {error ? <SqBadge color="error">{t`ui:error`}</SqBadge> : <Grid container>
-        <Grid item>
-          <SqBadge color={rollNum === 0 ? "secondary" : `roll${clamp(rollNum, 1, 6)}`}>
-            {rollNum ? t("editor.substat.RollCount", { count: rollNum }) : t`editor.substat.noRoll`}
-          </SqBadge>
-        </Grid>
-        <Grid item flexGrow={1}>
-          {!!rolls.length && [...rolls].sort().map((val, i) =>
-            <Typography component="span" key={i} color={`roll${clamp(rollOffset + rollData.indexOf(val), 1, 6)}.main`} sx={{ ml: 1 }} >{valueString(val, unit)}</Typography>)}
-        </Grid>
-        <Grid item xs="auto" flexShrink={1}>
-          <Typography>
-            <Trans t={t} i18nKey="editor.substat.eff" color="text.secondary">
-              Efficiency: <PercentBadge valid={true} value={efficiency ? efficiency : t`editor.substat.noStat` as string} />
-            </Trans>
-          </Typography>
-        </Grid>
-      </Grid>}
-
-    </Box>
-  </CardLight >
-}
-
-type ResetMessage = { type: "reset" }
-type SubstatMessage = { type: "substat", index: number, substat: ISubstat }
-type OverwriteMessage = { type: "overwrite", artifact: IArtifact }
-type UpdateMessage = { type: "update", artifact: Partial<IArtifact> }
-type Message = ResetMessage | SubstatMessage | OverwriteMessage | UpdateMessage
-interface IEditorArtifact {
-  setKey: ArtifactSetKey,
-  slotKey: SlotKey,
-  level: number,
-  rarity: ArtifactRarity,
-  mainStatKey: MainStatKey,
-  substats: ISubstat[],
-}
-function artifactReducer(state: IEditorArtifact | undefined, action: Message): IEditorArtifact | undefined {
-  switch (action.type) {
-    case "reset": return
-    case "substat": {
-      const { index, substat } = action
-      const oldIndex = substat.key ? state!.substats.findIndex(current => current.key === substat.key) : -1
-      if (oldIndex === -1 || oldIndex === index)
-        state!.substats[index] = substat
-      else  // Already in used, swap the items instead
-        [state!.substats[index], state!.substats[oldIndex]] =
-          [state!.substats[oldIndex], state!.substats[index]]
-      return { ...state! }
-    }
-    case "overwrite": return action.artifact
-    case "update": return { ...state!, ...action.artifact }
-  }
-}

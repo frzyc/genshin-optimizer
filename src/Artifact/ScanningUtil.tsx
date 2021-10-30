@@ -1,13 +1,6 @@
-import { PhotoCamera } from '@mui/icons-material';
-import { Alert, Box, Button, CardContent, CircularProgress, Divider, Grid, IconButton, styled, Typography } from '@mui/material';
-import { useCallback, useEffect, useReducer, useState } from 'react';
-import ReactGA from 'react-ga';
+import React from 'react';
 import { createScheduler, createWorker, RecognizeResult, Scheduler } from 'tesseract.js';
-import CardDark from '../Components/Card/CardDark';
-import CloseButton from '../Components/CloseButton';
 import ColorText from '../Components/ColoredText';
-import ModalWrapper from '../Components/ModalWrapper';
-import usePromise from '../ReactHooks/usePromise';
 import Stat from '../Stat';
 import { allMainStatKeys, allSubstats, IArtifact, ICachedArtifact, ISubstat, MainStatKey, SubstatKey } from '../Types/artifact';
 import { allArtifactRarities, allArtifactSets, allSlotKeys, ArtifactRarity, ArtifactSetKey, Rarity, SlotKey } from '../Types/consts';
@@ -16,11 +9,9 @@ import { valueStringWithUnit } from '../Util/UIUtil';
 import { clamp, hammingDistance, objectFromKeyMap } from '../Util/Util';
 import Artifact from './Artifact';
 import { ArtifactSheet } from './ArtifactSheet';
-import scan_art_main from "./imgs/scan_art_main.png";
-import Snippet from "./imgs/snippet.png";
 
 const starColor = { r: 255, g: 204, b: 50 } //#FFCC32
-const maxProcessingCount = 3, maxProcessedCount = 16, workerCount = 2
+const workerCount = 2
 
 const schedulers = new BorrowManager(async (language): Promise<Scheduler> => {
   const scheduler = createScheduler()
@@ -41,188 +32,20 @@ const schedulers = new BorrowManager(async (language): Promise<Scheduler> => {
   value.then(value => value.terminate())
 })
 
-const InputInvis = styled('input')({
-  display: 'none',
-});
-
-export default function UploadDisplay({ setState, setReset, artifactInEditor, setExpanded }: { setState: (art: IArtifact) => void, setReset: (reset: () => void) => void, artifactInEditor: boolean, setExpanded: (expand: boolean) => void }) {
-  const [modalShow, setModalShow] = useState(false)
-
-  const [{ processed, outstanding }, dispatchQueue] = useReducer(queueReducer, { processed: [], outstanding: [] })
-  const firstProcessed = processed[0] as ProcessedEntry | undefined
-  const firstOutstanding = outstanding[0] as OutstandingEntry | undefined
-
-  const processingImageURL = usePromise(firstOutstanding?.imageURL, [firstOutstanding?.imageURL])
-  const processingResult = usePromise(firstOutstanding?.result, [firstOutstanding?.result])
-
-  const remaining = processed.length + outstanding.length
-
-  const image = firstProcessed?.imageURL ?? processingImageURL
-  const { artifact, texts } = firstProcessed ?? {}
-  // const fileName = firstProcessed?.fileName ?? firstOutstanding?.fileName ?? "Click here to upload Artifact screenshot files"
-
-  useEffect(() => {
-    if (!artifactInEditor && artifact)
-      setState(artifact)
-  }, [artifactInEditor, artifact, setState])
-
-  useEffect(() => {
-    const numProcessing = Math.min(maxProcessedCount - processed.length, maxProcessingCount, outstanding.length)
-    const processingCurrent = numProcessing && !outstanding[0].result
-    outstanding.slice(0, numProcessing).forEach(processEntry)
-    if (processingCurrent)
-      dispatchQueue({ type: "processing" })
-  }, [processed.length, outstanding])
-
-  useEffect(() => {
-    if (processingResult)
-      dispatchQueue({ type: "processed", ...processingResult })
-  }, [processingResult, dispatchQueue])
-
-  const removeCurrent = useCallback(() => dispatchQueue({ type: "pop" }), [dispatchQueue])
-  const uploadFiles = useCallback((files: FileList) => {
-    setExpanded(true)
-    dispatchQueue({ type: "upload", files: [...files].map(file => ({ file, fileName: file.name })) })
-  }, [dispatchQueue, setExpanded])
-  const clearQueue = useCallback(() => dispatchQueue({ type: "clear" }), [dispatchQueue])
-
-  useEffect(() => {
-    const pasteFunc = (e: any) => uploadFiles(e.clipboardData.files)
-    window.addEventListener('paste', pasteFunc);
-    setReset?.(removeCurrent);
-    return () =>
-      window.removeEventListener('paste', pasteFunc)
-  }, [setReset, removeCurrent, uploadFiles])
-
-  const onUpload = useCallback(
-    e => {
-      uploadFiles(e.target.files)
-      e.target.value = null // reset the value so the same file can be uploaded again...
-    },
-    [uploadFiles],
-  )
-
-  return (<>
-    <ExplainationModal modalShow={modalShow} hide={() => setModalShow(false)} />
-    <Grid container spacing={1} alignItems="center">
-      <Grid item>
-        <label htmlFor="icon-button-file">
-          <InputInvis accept="image/*" id="icon-button-file" multiple type="file" onChange={onUpload} />
-          <IconButton color="primary" aria-label="upload picture" component="span">
-            <PhotoCamera />
-          </IconButton>
-        </label>
-      </Grid>
-      <Grid item flexGrow={1}>
-        <label htmlFor="contained-button-file">
-          <InputInvis accept="image/*" id="contained-button-file" multiple type="file" onChange={onUpload} />
-          <Button component="span">
-            Parse Artifact by Uploading Image (or Ctrl-v here)
-          </Button>
-        </label>
-      </Grid>
-      <Grid item>
-        <Button color="info" onClick={() => {
-          setModalShow(true)
-          ReactGA.modalview('/artifact/how-to-upload')
-        }}>Show Me How!</Button>
-      </Grid>
-    </Grid>
-    {remaining > 0 && <CardDark sx={{ mt: 1, pl: 2 }} ><Grid container spacing={1} alignItems="center" >
-      <Grid item flexGrow={1}>
-        <Typography>
-          <span>
-            Screenshots in file-queue: <b>{remaining}</b>
-            {process.env.NODE_ENV === "development" && ` (Debug: Processed ${processed.length}/${maxProcessedCount}, Processing: ${outstanding.filter(entry => entry.result).length}/${maxProcessingCount}, Outstanding: ${outstanding.length})`}
-          </span>
-        </Typography>
-      </Grid>
-      <Grid item>
-        <Button size="small" color="error" onClick={clearQueue}>Clear file-queue</Button>
-      </Grid>
-    </Grid></CardDark>}
-    {image && <Grid container mt={1} spacing={1}>
-      <Grid item xs={6} lg={4}>
-        <Box component="img" src={image} width="100%" height="auto" alt="Screenshot to parse for artifact values" />
-      </Grid>
-      <Grid item xs={6} lg={8}>
-        {!firstProcessed && firstOutstanding && <Grid container spacing={1} alignItems="center">
-          <Grid item>
-            <CircularProgress size="1.5em" />
-          </Grid>
-          <Grid item flexGrow={1} >
-            <Typography variant="h6">Scanning current artifact</Typography>
-          </Grid>
-        </Grid>}
-        {texts && <div>
-          <div>{texts.slotKey}</div>
-          <div>{texts.mainStatKey}</div>
-          <div>{texts.mainStatVal}</div>
-          <div>{texts.rarity}</div>
-          <div>{texts.level}</div>
-          <div>{texts.substats}</div>
-          <div>{texts.setKey}</div>
-        </div>}
-      </Grid>
-    </Grid>}
-  </ >)
+export type ProcessedEntry = {
+  fileName: string, imageURL: string, artifact: IArtifact, texts: Dict<keyof ICachedArtifact, Displayable>
 }
-function ExplainationModal({ modalShow, hide }: { modalShow: boolean, hide: () => void }) {
-  return <ModalWrapper open={modalShow} onClose={hide} >
-    <CardDark>
-      <CardContent sx={{ py: 1 }}>
-        <Grid container>
-          <Grid item flexGrow={1}>
-            <Typography variant="subtitle1">How do Upload Screenshots for parsing</Typography>
-          </Grid>
-          <Grid item>
-            <CloseButton onClick={hide} />
-          </Grid>
-        </Grid>
-      </CardContent>
-      <Divider />
-      <CardContent>
-        <Alert variant="outlined" severity="warning">
-          NOTE: Artifact Scanning currently only work for <strong>ENGLISH</strong> artifacts.
-        </Alert>
-        <Grid container spacing={1} mt={1}>
-          <Grid item xs={8} md={4}>
-            <Box component="img" alt="snippet of the screen to take" src={Snippet} width="100%" height="auto" />
-          </Grid>
-          <Grid item xs={12} md={8}>
-            <Typography gutterBottom>Using screenshots can dramatically decrease the amount of time you manually input in stats on the Genshin Optimizer.</Typography>
-            <Typography variant="h5">Where to snip the screenshot.</Typography>
-            <Typography gutterBottom>In game, Open your bag, and navigate to the artifacts tab. Select the artifact you want to scan with Genshin Optimizer. <b>Only artifact from this screen can be scanned.</b></Typography>
-            <Typography variant="h6">Single artifact</Typography>
-            <Typography gutterBottom>To take a screenshot, in Windows, the shortcut is <strong>Shift + WindowsKey + S</strong>. Once you selected the region, the image is automatically included in your clipboard.</Typography>
-            <Typography variant="h6">Multiple artifacts</Typography>
-            <Typography gutterBottom>To take advantage of batch uploads, you can use a tool like <a href="https://picpick.app/" target="_blank" rel="noreferrer">PicPick</a> to create a macro to easily to screenshot a region to screenshot multiple artifacts at once.</Typography>
-            <Typography variant="h5">What to include in the screenshot.</Typography>
-            <Typography>As shown in the Image, starting from the top with the artifact name, all the way to the set name(the text in green). </Typography>
-          </Grid>
-          <Grid item xs={12} md={7}>
-            <Typography variant="h5">Adding Screenshot to Genshin Optimizer</Typography>
-            <Typography>At this point, you should have the artifact snippet either saved to your harddrive, or in your clipboard.</Typography>
-            <Typography gutterBottom>You can click on the box next to "Browse" to browse the files in your harddrive for multiple screenshots.</Typography>
-            <Typography>For single screenshots from the snippets, just press <strong>Ctrl + V</strong> to paste from your clipboard.</Typography>
-            <Typography gutterBottom>You should be able to see a Preview of your artifact snippet, and after waiting a few seconds, the artifact set and the substats will be filled in in the <b>Artifact Editor</b>.</Typography>
-            <Typography variant="h5">Finishing the Artifact</Typography>
-            <Typography>Unfortunately, computer vision is not 100%. There will always be cases where something is not scanned properly. You should always double check the scanned artifact values! Once the artifact has been filled, Click on <strong>Add Artifact</strong> to finish editing the artifact.</Typography>
-          </Grid>
-          <Grid item xs={8} md={5}>
-            <Box component="img" alt="main screen after importing stats" src={scan_art_main} width="100%" height="auto" />
-          </Grid>
-        </Grid>
-      </CardContent>
-      <Divider />
-      <CardContent sx={{ py: 1 }}>
-        <CloseButton large onClick={hide} />
-      </CardContent>
-    </CardDark>
-  </ModalWrapper>
+export type OutstandingEntry = {
+  file: File, fileName: string, imageURL?: Promise<string>, result?: Promise<{ file: File, result: ProcessedEntry }>
 }
-
-const queueReducer = (queue: Queue, message: UploadMessage | ProcessingMessage | ProcessedMessage | PopMessage | ClearMessage): Queue => {
+type Queue = { processed: ProcessedEntry[], outstanding: OutstandingEntry[] }
+type UploadMessage = { type: "upload", files: OutstandingEntry[] }
+type ProcessingMessage = { type: "processing" }
+type ProcessedMessage = { type: "processed", file: File, result: ProcessedEntry }
+type PopMessage = { type: "pop" }
+type ClearMessage = { type: "clear" }
+type Color = [number, number, number] // RGB
+export const queueReducer = (queue: Queue, message: UploadMessage | ProcessingMessage | ProcessedMessage | PopMessage | ClearMessage): Queue => {
   switch (message.type) {
     case "upload": return { processed: queue.processed, outstanding: [...queue.outstanding, ...message.files] }
     case "processing": // Processing `outstanding` head. Refresh
@@ -236,7 +59,7 @@ const queueReducer = (queue: Queue, message: UploadMessage | ProcessingMessage |
   }
 }
 
-function processEntry(entry: OutstandingEntry) {
+export function processEntry(entry: OutstandingEntry) {
   if (entry.result) return
 
   const { file, fileName } = entry
@@ -569,17 +392,3 @@ function bandPass(pixelData: ImageData, color1: Color, color2: Color, options: {
   }
   return new ImageData(d, pixelData.width, pixelData.height)
 }
-
-type ProcessedEntry = {
-  fileName: string, imageURL: string, artifact: IArtifact, texts: Dict<keyof ICachedArtifact, Displayable>
-}
-type OutstandingEntry = {
-  file: File, fileName: string, imageURL?: Promise<string>, result?: Promise<{ file: File, result: ProcessedEntry }>
-}
-type Queue = { processed: ProcessedEntry[], outstanding: OutstandingEntry[] }
-type UploadMessage = { type: "upload", files: OutstandingEntry[] }
-type ProcessingMessage = { type: "processing" }
-type ProcessedMessage = { type: "processed", file: File, result: ProcessedEntry }
-type PopMessage = { type: "pop" }
-type ClearMessage = { type: "clear" }
-type Color = [number, number, number] // RGB
