@@ -29,8 +29,8 @@
       "nextRolls": "Next rolls:"
     },
     "preview": "Artifact Preview",
-    "dupArt": "Duplicate artifact detected.",
-    "upArt": "Upgraded artifact detected.",
+    "dupArt": "Duplicate artifact detected",
+    "upArt": "Upgraded artifact detected",
     "beforeEdit": "Before Edit",
     "btnSave": "Save Artifact",
     "btnAdd": "Add Artifact",
