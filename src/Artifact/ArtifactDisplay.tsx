@@ -10,33 +10,48 @@ import SolidToggleButtonGroup from '../Components/SolidToggleButtonGroup';
 import { DatabaseContext } from '../Database/Database';
 import { dbStorage } from '../Database/DBStorage';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
-import usePromise from '../ReactHooks/usePromise';
 import Stat from '../Stat';
 import { allSubstats, SubstatKey } from '../Types/artifact';
-import ArtifactSortOptions, { sortKeys } from '../Util/ArtifactSort';
-import SortByFilters from '../Util/SortByFilters';
+import { artifactFilterConfigs, artifactSortConfigs, initialArtifactSortFilter, artifactSortKeys } from './ArtifactSort';
+import { filterFunction, sortFunction } from '../Util/SortByFilters';
 import { clamp } from '../Util/Util';
 import ArtifactCard from './ArtifactCard';
 import ArtifactEditor from './ArtifactEditor';
 import ArtifactFilter from './ArtifactFilter';
-import { initialFilter } from './ArtifactFilterUtil';
-import { ArtifactSheet } from './ArtifactSheet';
+import ProbabilityFilter from './ProbabilityFilter';
+import { GlobalSettingsContext } from '../GlobalSettings';
+import { probability } from './RollProbability';
 
 const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
+function intialState() {
+  return {
+    ...initialArtifactSortFilter(),
+    maxNumArtifactsToDisplay: 50,
+    effFilter: [...allSubstats] as SubstatKey[],
+    probabilityFilter: {} as Partial<Record<SubstatKey, number>>
+  }
+}
 
-function filterReducer(state, action) {
-  //reset all except the efficiency filter, since its a separate UI with its own reset
-  if (action.type === "reset") return { ...initialFilter(), effFilter: state.effFilter }
+type State = ReturnType<typeof intialState>
+
+function filterReducer(state: State, action: Partial<State>): State {
   return { ...state, ...action }
 }
-function filterInit(initial = initialFilter()) {
-  return { ...initial, ...(dbStorage.get("ArtifactDisplay.state") ?? {}) }
+function filterInit(): State {
+  return { ...intialState(), ...(dbStorage.get("ArtifactDisplay.state") ?? {}) }
 }
 export default function ArtifactDisplay(props) {
+  const { globalSettings: { tcMode } } = useContext(GlobalSettingsContext)
   const { t } = useTranslation(["artifact", "ui"]);
   const database = useContext(DatabaseContext)
-  const [filters, filterDispatch] = useReducer(filterReducer, initialFilter(), filterInit)
-  const { effFilter } = filters
+  const [state, stateDispatch] = useReducer(filterReducer, undefined, filterInit)
+
+  const { effFilter, filterOption, ascending, probabilityFilter, maxNumArtifactsToDisplay } = state
+  let { sortType } = state
+  const showProbability = tcMode && sortType === "probability"
+  //force the sortType back to a normal value after exiting TC mode
+  if (sortType === "probability" && !tcMode) stateDispatch({ sortType: artifactSortKeys[0] })
+
   const [artToEditId, setartToEditId] = useState(props?.location?.artToEditId)
   const [pageIdex, setpageIdex] = useState(0)
   const scrollRef = useRef<HTMLDivElement>(null)
@@ -56,43 +71,37 @@ export default function ArtifactDisplay(props) {
   }, [database, forceUpdate])
 
   useEffect(() => {
-    dbStorage.set("ArtifactDisplay.state", filters)
-  }, [filters])
+    dbStorage.set("ArtifactDisplay.state", state)
+  }, [state])
+
+  const filterOptionDispatch = useCallback((action) => {
+    stateDispatch({
+      filterOption: {
+        ...filterOption,
+        ...action
+      }
+    })
+  }, [stateDispatch, filterOption])
+
+  const setProbabilityFilter = useCallback(probabilityFilter => stateDispatch({ probabilityFilter }), [stateDispatch],)
 
   const noArtifact = useMemo(() => !database._getArts().length, [database])
-  const artifactSheets = usePromise(ArtifactSheet.getAll(), [])
-  const sortOptions = useMemo(() => artifactSheets && ArtifactSortOptions(database, artifactSheets, effFilterSet), [database, artifactSheets, effFilterSet])
-
+  const sortConfigs = useMemo(() => artifactSortConfigs(effFilterSet, probabilityFilter), [effFilterSet, probabilityFilter])
+  const filterConfigs = useMemo(() => artifactFilterConfigs(), [])
   const { artifactIds, totalArtNum } = useMemo(() => {
-    if (!sortOptions) return { artifactIds: [], totalArtNum: 0 }
-    const { filterArtSetKey, filterSlotKey, filterMainStatKey, filterStars, filterLevelLow, filterLevelHigh,
-      filterSubstats = initialFilter().filterSubstats, filterLocation = "",
-      filterExcluded = "", sortType = sortKeys[0], ascending = false } = filters
-    const allArtifacts = database._getArts()
-    const artifactIds: string[] = allArtifacts.filter(art => {
-      if (filterExcluded) {
-        if (filterExcluded === "excluded" && !art.exclude) return false
-        if (filterExcluded === "included" && art.exclude) return false
-      }
-      if (filterLocation === "Inventory") {
-        if (art.location) return false;
-      } else if (filterLocation === "Equipped") {
-        if (!art.location) return false;
-      } else if (filterLocation && filterLocation !== art.location) return false;
-
-      if (filterArtSetKey && filterArtSetKey !== art.setKey) return false;
-      if (filterSlotKey && filterSlotKey !== art.slotKey) return false
-      if (filterMainStatKey && filterMainStatKey !== art.mainStatKey) return false
-      if (art.level < filterLevelLow || art.level > filterLevelHigh) return false;
-      if (!filterStars.includes(art.rarity)) return false;
-      for (const filterKey of filterSubstats)
-        if (filterKey && !art.substats.some(substat => substat.key === filterKey)) return false;
-      return true
-    }).map((art) => art.id).sort(SortByFilters(sortType, ascending, sortOptions))
+    const { sortType = artifactSortKeys[0], ascending = false, filterOption } = state
+    let allArtifacts = database._getArts()
+    const filterFunc = filterFunction(filterOption, filterConfigs)
+    const sortFunc = sortFunction(sortType, ascending, sortConfigs)
+    //in probability mode, filter out the artifacts that already reach criteria
+    if (showProbability) {
+      allArtifacts.forEach(art => (art as any).prop = probability(art, probabilityFilter))
+      allArtifacts = allArtifacts.filter(art => (art as any).prop !== 1)
+    }
+    const artifactIds = allArtifacts.filter(filterFunc).sort(sortFunc).map(art => art.id)
     return { artifactIds, totalArtNum: allArtifacts.length, ...dbDirty }//use dbDirty to shoo away warnings!
-  }, [filters, sortOptions, dbDirty, database])
+  }, [state, dbDirty, database, sortConfigs, filterConfigs, probabilityFilter, showProbability])
 
-  const { maxNumArtifactsToDisplay } = filters
 
   const { artifactsToShow: artifactIdsToShow, numPages, currentPageIndex } = useMemo(() => {
     const numPages = Math.ceil(artifactIds.length / maxNumArtifactsToDisplay)
@@ -130,16 +139,17 @@ export default function ArtifactDisplay(props) {
         cancelEdit={cancelEditArtifact}
       />
     </Box>
-    <ArtifactFilter artifactIds={artifactIds} filters={filters} filterDispatch={filterDispatch} />
+    <ArtifactFilter artifactIds={artifactIds} filterOption={filterOption} filterOptionDispatch={filterOptionDispatch} filterDispatch={stateDispatch} sortType={sortType} ascending={ascending} />
+    {showProbability && <ProbabilityFilter probabilityFilter={probabilityFilter} setProbabilityFilter={setProbabilityFilter} />}
     <CardDark ref={invScrollRef}>
       <CardContent>
         <Grid container sx={{ mb: 1 }}>
           <Grid item flexGrow={1}><span><Trans t={t} i18nKey="efficiencyFilter.title">Substats to use in efficiency calculation</Trans></span></Grid>
           <Grid item>
-            <Button size="small" color="error" onClick={() => filterDispatch({ effFilter: [...allSubstats] })} startIcon={<Replay />}><Trans t={t} i18nKey="ui:reset" /></Button>
+            <Button size="small" color="error" onClick={() => stateDispatch({ effFilter: [...allSubstats] })} startIcon={<Replay />}><Trans t={t} i18nKey="ui:reset" /></Button>
           </Grid>
         </Grid>
-        <EfficiencyFilter selectedKeys={effFilter} onChange={n => filterDispatch({ effFilter: n })} />
+        <EfficiencyFilter selectedKeys={effFilter} onChange={n => stateDispatch({ effFilter: n })} />
       </CardContent>
     </CardDark>
     <PaginationCard count={numPages} page={currentPageIndex + 1} onChange={setPage} numShowing={artifactIdsToShow.length} total={totalShowing} t={t} />
@@ -152,6 +162,7 @@ export default function ArtifactDisplay(props) {
               effFilter={effFilterSet}
               onDelete={deleteArtifact}
               onEdit={editArtifact}
+              probabilityFilter={showProbability ? probabilityFilter : undefined}
             />
           </Grid>
         )}

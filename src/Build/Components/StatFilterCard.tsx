@@ -7,9 +7,10 @@ import CustomNumberInput, { CustomNumberInputButtonGroupWrapper } from '../../Co
 import DropdownButton from '../../Components/DropdownMenu/DropdownButton';
 import Stat from '../../Stat';
 import { StatKey } from '../../Types/artifact';
-export default function StatFilterCard({ statKeys = [], statFilters = {}, setStatFilters, disabled }: { statKeys: StatKey[], statFilters: Dict<StatKey, number>, setStatFilters: (object) => void, disabled?: boolean }) {
+export default function StatFilterCard({ statKeys = [], statFilters = {}, setStatFilters, disabled = false }:
+  { statKeys: StatKey[], statFilters: Partial<Record<StatKey, number>>, setStatFilters: (object: Partial<Record<StatKey, number>>) => void, disabled?: boolean }) {
   const remainingKeys = statKeys.filter(key => !(Object.keys(statFilters) as any).some(k => k === key))
-  const setFilter = (sKey, min) => setStatFilters({ ...statFilters, [sKey]: min })
+  const setFilter = useCallback((sKey, min) => setStatFilters({ ...statFilters, [sKey]: min }), [statFilters, setStatFilters],)
   return <CardLight>
     <CardContent sx={{ py: 1 }}>
       <Typography>Minimum Final Stat Filter</Typography>
@@ -31,7 +32,7 @@ export default function StatFilterCard({ statKeys = [], statFilters = {}, setSta
   </CardLight>
 }
 
-function StatFilterItem({ statKey, statKeys = [], value, close, setFilter, disabled = false }: {
+export function StatFilterItem({ statKey, statKeys = [], value = 0, close, setFilter, disabled = false }: {
   statKey?: string, statKeys: string[], value?: number, close?: () => void, setFilter: (statKey: string, value?: number) => void, disabled?: boolean
 }) {
   const isFloat = Stat.getStatUnit(statKey) === "%"

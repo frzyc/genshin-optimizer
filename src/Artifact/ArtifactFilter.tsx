@@ -19,17 +19,19 @@ import { Stars } from "../Components/StarDisplay"
 import { DatabaseContext } from "../Database/Database"
 import usePromise from "../ReactHooks/usePromise"
 import Stat from "../Stat"
-import { allMainStatKeys, allSubstats } from "../Types/artifact"
-import { allArtifactRarities } from "../Types/consts"
-import { sortKeys } from "../Util/ArtifactSort"
+import { allMainStatKeys, allSubstats, ICachedArtifact } from "../Types/artifact"
+import { allArtifactRarities, CharacterKey } from "../Types/consts"
+import { ArtifactSortKey, FilterOption, artifactSortKeys, artifactSortKeysTC } from "./ArtifactSort"
 import { clamp } from "../Util/Util"
-import { initialFilter } from "./ArtifactFilterUtil"
+import { GlobalSettingsContext } from "../GlobalSettings"
 
-export default function ArtifactFilter({ artifactIds, filters, filterDispatch, ...props }) {
+export default function ArtifactFilter({ artifactIds, filterOption, sortType, ascending, filterOptionDispatch, filterDispatch }:
+  { artifactIds: string[], filterOption: FilterOption, sortType: ArtifactSortKey, ascending: boolean, filterOptionDispatch: (any) => void, filterDispatch: (any) => void }) {
   const { t } = useTranslation(["artifact", "ui"]);
+  const { globalSettings: { tcMode } } = useContext(GlobalSettingsContext)
   const database = useContext(DatabaseContext)
   const { numDelete, numUnequip, numExclude, numInclude, numUnlock, numLock } = useMemo(() => {
-    const artifacts = artifactIds.map(id => database._getArt(id))
+    const artifacts = artifactIds.map(id => database._getArt(id)) as ICachedArtifact[]
     const numUnlock = artifacts.reduce((a, art) => a + (art.lock ? 0 : 1), 0)
     const numLock = artifacts.length - numUnlock
     const numDelete = numUnlock
@@ -40,19 +42,19 @@ export default function ArtifactFilter({ artifactIds, filters, filterDispatch, .
     return { numDelete, numUnequip, numExclude, numInclude, numUnlock, numLock }
   }, [artifactIds, database])
 
-  const { filterArtSetKey, filterSlotKey, filterMainStatKey, filterStars, filterLevelLow, filterLevelHigh, filterSubstats = initialFilter().filterSubstats,
-    filterLocation = "", filterExcluded = "", sortType = sortKeys[0], ascending = false } = filters
-  const locationCharacterSheet = usePromise(CharacterSheet.get(filterLocation), [filterLocation])
+  const { artSetKey, slotKey, mainStatKey, rarity, levelLow, levelHigh, substats,
+    location = "", excluded = "" } = filterOption
+  const locationCharacterSheet = usePromise(CharacterSheet.get(location as CharacterKey), [location])
 
   let locationDisplay
-  if (!filterLocation) locationDisplay = t("filterLocation.any")
-  else if (filterLocation === "Inventory") locationDisplay = <span><BusinessCenter /> {t("filterLocation.inventory")}</span>
-  else if (filterLocation === "Equipped") locationDisplay = <span><FontAwesomeIcon icon={faUserShield} /> {t("filterLocation.currentlyEquipped")}</span>
+  if (!location) locationDisplay = t("filterLocation.any")
+  else if (location === "Inventory") locationDisplay = <span><BusinessCenter /> {t("filterLocation.inventory")}</span>
+  else if (location === "Equipped") locationDisplay = <span><FontAwesomeIcon icon={faUserShield} /> {t("filterLocation.currentlyEquipped")}</span>
   else locationDisplay = <b>{locationCharacterSheet?.nameWIthIcon}</b>
 
   let excludedDisplay
-  if (filterExcluded === "excluded") excludedDisplay = <span><FontAwesomeIcon icon={faBan} /> {t`exclusion.excluded`}</span>
-  else if (filterExcluded === "included") excludedDisplay = <span><FontAwesomeIcon icon={faChartLine} /> {t`exclusion.included`}</span>
+  if (excluded === "excluded") excludedDisplay = <span><FontAwesomeIcon icon={faBan} /> {t`exclusion.excluded`}</span>
+  else if (excluded === "included") excludedDisplay = <span><FontAwesomeIcon icon={faChartLine} /> {t`exclusion.included`}</span>
   else excludedDisplay = t("exclusionDisplay", { value: t("exclusion.any") })
 
   const unequipArtifacts = () =>
@@ -79,19 +81,19 @@ export default function ArtifactFilter({ artifactIds, filters, filterDispatch, .
     window.confirm(`Are you sure you want to unlock ${numLock} artifacts?`) &&
     artifactIds.map(id => database.updateArt({ lock: false }, id))
 
-  const [sliderLow, setsliderLow] = useState(filterLevelLow)
-  const [sliderHigh, setsliderHigh] = useState(filterLevelHigh)
+  const [sliderLow, setsliderLow] = useState(levelLow)
+  const [sliderHigh, setsliderHigh] = useState(levelHigh)
   const setSlider = useCallback(
     (e, [l, h]) => {
       setsliderLow(l)
       setsliderHigh(h)
     },
     [setsliderLow, setsliderHigh])
-  useEffect(() => setsliderLow(filterLevelLow), [filterLevelLow, setsliderLow])
+  useEffect(() => setsliderLow(levelLow), [levelLow, setsliderLow])
 
-  useEffect(() => setsliderHigh(filterLevelHigh), [setsliderHigh, filterLevelHigh])
+  useEffect(() => setsliderHigh(levelHigh), [setsliderHigh, levelHigh])
   return <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={300} />}>
-    <CardDark {...props} >
+    <CardDark  >
       <CardContent>
         <Grid container sx={{ mb: 1 }}>
           <Grid item flexGrow={1}>
@@ -110,16 +112,16 @@ export default function ArtifactFilter({ artifactIds, filters, filterDispatch, .
             "> *:nth-last-of-type(n+2)": { mb: 1 }
           }}>
             {/* Artifact Set */}
-            <div><ArtifactSetDropdown hasUnselect selectedSetKey={filterArtSetKey} onChange={setKey => filterDispatch({ filterArtSetKey: setKey })} fullWidth /></div>
+            <div><ArtifactSetDropdown hasUnselect selectedSetKey={artSetKey} onChange={setKey => filterOptionDispatch({ artSetKey: setKey })} fullWidth /></div>
             {/* Artifact stars filter */}
-            <SolidToggleButtonGroup fullWidth onChange={(e, newVal) => filterDispatch({ filterStars: newVal })} value={filterStars} size="small">
+            <SolidToggleButtonGroup fullWidth onChange={(e, newVal) => filterOptionDispatch({ rarity: newVal })} value={rarity} size="small">
               {allArtifactRarities.map(star => <ToggleButton key={star} value={star}><Stars stars={star} /></ToggleButton>)}
             </SolidToggleButtonGroup>
             {/* Artiface level filter */}
             <CardLight sx={{ width: "100%", display: "flex", alignItems: "center" }}>
               <CustomNumberInput
-                value={sliderLow || filterLevelLow}
-                onChange={val => filterDispatch({ filterLevelLow: clamp(val, 0, filterLevelHigh) })}
+                value={sliderLow || levelLow}
+                onChange={val => filterOptionDispatch({ levelLow: clamp(val, 0, levelHigh) })}
                 sx={{ pl: 2, width: 100, }}
                 inputProps={{ sx: { textAlign: "center" } }}
                 startAdornment={"Level: "}
@@ -128,19 +130,19 @@ export default function ArtifactFilter({ artifactIds, filters, filterDispatch, .
                 getAriaLabel={() => 'Arifact Level Range'}
                 value={[sliderLow, sliderHigh]}
                 onChange={setSlider}
-                onChangeCommitted={(e, value) => filterDispatch({ filterLevelLow: value[0] ?? value, filterLevelHigh: value[1] ?? value })}
+                onChangeCommitted={(e, value) => filterOptionDispatch({ levelLow: value[0] ?? value, levelHigh: value[1] ?? value })}
                 valueLabelDisplay="auto"
                 min={0} max={20} step={1} marks
               />
               <CustomNumberInput
-                value={sliderHigh || filterLevelHigh}
-                onChange={val => filterDispatch({ filterLevelHigh: clamp(val, filterLevelLow, 20) })}
+                value={sliderHigh || levelHigh}
+                onChange={val => filterOptionDispatch({ levelHigh: clamp(val, levelLow, 20) })}
                 sx={{ px: 1, width: 50, }}
                 inputProps={{ sx: { textAlign: "center" } }}
               />
             </CardLight>
             {/* Sort */}
-            <SortByButton fullWidth sortKeys={sortKeys}
+            <SortByButton fullWidth sortKeys={[...artifactSortKeys.filter(key => (artifactSortKeysTC as unknown as string[]).includes(key) ? tcMode : true)]}
               value={sortType} onChange={sortType => filterDispatch({ sortType })}
               ascending={ascending} onChangeAsc={ascending => filterDispatch({ ascending })}
             />
@@ -153,10 +155,10 @@ export default function ArtifactFilter({ artifactIds, filters, filterDispatch, .
               "> *:nth-last-of-type(n+2)": { mb: 1 }
             }} >
               {/* Artifact Slot */}
-              <ArtifactSlotDropdown fullWidth hasUnselect slotKey={filterSlotKey} onChange={filterSlotKey => filterDispatch({ filterSlotKey })} />
+              <ArtifactSlotDropdown fullWidth hasUnselect slotKey={slotKey} onChange={slotKey => filterOptionDispatch({ slotKey })} />
               {/* Main Stat filter */}
-              <DropdownButton fullWidth title={Stat.getStatNameWithPercent(filterMainStatKey, t(`mainStat`))} color={filterMainStatKey ? "success" : "primary"}  >
-                <MenuItem selected={filterMainStatKey === ""} disabled={filterMainStatKey === ""} onClick={() => filterDispatch({ filterMainStatKey: "" })}>
+              <DropdownButton fullWidth title={Stat.getStatNameWithPercent(mainStatKey, t(`mainStat`))} color={mainStatKey ? "success" : "primary"}  >
+                <MenuItem selected={mainStatKey === ""} disabled={mainStatKey === ""} onClick={() => filterOptionDispatch({ mainStatKey: "" })}>
                   <ListItemIcon><Replay /></ListItemIcon>
                   <ListItemText>
                     <Trans t={t} i18nKey="ui:unselect" >Unselect</Trans>
@@ -164,16 +166,16 @@ export default function ArtifactFilter({ artifactIds, filters, filterDispatch, .
                 </MenuItem>
                 <Divider />
                 {allMainStatKeys.map(statKey =>
-                  <MenuItem key={statKey} selected={filterMainStatKey === statKey} disabled={filterMainStatKey === statKey} onClick={() => filterDispatch({ filterMainStatKey: statKey })} >
+                  <MenuItem key={statKey} selected={mainStatKey === statKey} disabled={mainStatKey === statKey} onClick={() => filterOptionDispatch({ mainStatKey: statKey })} >
                     {Stat.getStatNameWithPercent(statKey)}
                   </MenuItem>)}
               </DropdownButton>
               {/* location */}
-              <LocationDropdown dropdownProps={{ color: filterLocation ? "success" : "primary" }} title={locationDisplay} onChange={filterLocation => filterDispatch({ filterLocation })} selectedCharacterKey={filterLocation} />
+              <LocationDropdown dropdownProps={{ color: location ? "success" : "primary" }} title={locationDisplay} onChange={location => filterOptionDispatch({ location })} selectedCharacterKey={location} />
               {/* exclusion state */}
-              <DropdownButton fullWidth title={excludedDisplay} color={filterExcluded ? (filterExcluded === "included" ? "success" : "error") : "primary"}>
-                <MenuItem selected={filterExcluded === ""} disabled={filterExcluded === ""} onClick={() => filterDispatch({ filterExcluded: "" })}><Trans t={t} i18nKey="exclusion.any" >Any</Trans></MenuItem>
-                <MenuItem selected={filterExcluded === "excluded"} disabled={filterExcluded === "excluded"} onClick={() => filterDispatch({ filterExcluded: "excluded" })}>
+              <DropdownButton fullWidth title={excludedDisplay} color={excluded ? (excluded === "included" ? "success" : "error") : "primary"}>
+                <MenuItem selected={excluded === ""} disabled={excluded === ""} onClick={() => filterOptionDispatch({ excluded: "" })}><Trans t={t} i18nKey="exclusion.any" >Any</Trans></MenuItem>
+                <MenuItem selected={excluded === "excluded"} disabled={excluded === "excluded"} onClick={() => filterOptionDispatch({ excluded: "excluded" })}>
                   <ListItemIcon>
                     <FontAwesomeIcon icon={faBan} />
                   </ListItemIcon>
@@ -181,7 +183,7 @@ export default function ArtifactFilter({ artifactIds, filters, filterDispatch, .
                     <Trans t={t} i18nKey="exclusion.excluded" >Excluded</Trans>
                   </ListItemText>
                 </MenuItem>
-                <MenuItem selected={filterExcluded === "included"} disabled={filterExcluded === "included"} onClick={() => filterDispatch({ filterExcluded: "included" })}>
+                <MenuItem selected={excluded === "included"} disabled={excluded === "included"} onClick={() => filterOptionDispatch({ excluded: "included" })}>
                   <ListItemIcon>
                     <FontAwesomeIcon icon={faChartLine} />
                   </ListItemIcon>
@@ -197,14 +199,14 @@ export default function ArtifactFilter({ artifactIds, filters, filterDispatch, .
               "> *:nth-last-of-type(n+2)": { mb: 1 }
             }} >
               {/* substat filter */}
-              {filterSubstats.map((substatKey, index) =>
+              {substats.map((substatKey, index) =>
                 <DropdownButton fullWidth key={index} title={substatKey ? Stat.getStatNameWithPercent(substatKey) : t('editor.substat.substatFormat', { value: index + 1 })} color={substatKey ? "success" : "primary"}>
                   <MenuItem
                     selected={substatKey === ""}
                     disabled={substatKey === ""}
                     onClick={() => {
-                      filterSubstats[index] = ""
-                      filterDispatch({ filterSubstats })
+                      substats[index] = ""
+                      filterOptionDispatch({ substats })
                     }}
                   >
                     <ListItemIcon>
@@ -215,11 +217,11 @@ export default function ArtifactFilter({ artifactIds, filters, filterDispatch, .
                     </ListItemText>
                   </MenuItem>
                   <Divider />
-                  {allSubstats.filter(key => !filterSubstats.includes(key)).map(key =>
+                  {allSubstats.filter(key => !substats.includes(key)).map(key =>
                     <MenuItem key={key}
                       onClick={() => {
-                        filterSubstats[index] = key
-                        filterDispatch({ filterSubstats })
+                        substats[index] = key
+                        filterOptionDispatch({ substats })
                       }}
                     >{Stat.getStatNameWithPercent(key)}</MenuItem>
                   )}

@@ -1,5 +1,5 @@
 import { InputBase, InputProps, styled } from '@mui/material'
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 type props = Omit<InputProps, "onChange"> & {
   value?: number | undefined,
   onChange: (newValue: number | undefined) => void,
@@ -45,25 +45,33 @@ export const CustomNumberInputButtonGroupWrapper = styled("button", {
   },
 }))
 
-export default function CustomNumberInput({ value, onChange, disabled = false, float = false, ...props }: props) {
-  const [state, setState] = useState("")
-  const sendChange = useCallback(
+export default function CustomNumberInput({ value = 0, onChange, disabled = false, float = false, ...props }: props) {
+  const [number, setNumber] = useState(value)
+  const [focused, setFocus] = useState(false)
+  const parseFunc = useMemo(() => float ? parseFloat : parseInt, [float],)
+  const onBlur = useCallback(
     () => {
-      if (state === "") return onChange(0)
-      const parseFunc = float ? parseFloat : parseInt
-      onChange(parseFunc(state))
+      onChange(number)
+      setFocus(false)
     },
-    [onChange, state, float],
+    [onChange, number, setFocus],
   )
-  useEffect(() => setState(value?.toString() ?? ""), [value, setState]) // update value on value change
-  const onInputChange = useCallback(e => setState(e.target.value), [setState],)
-  const onKeyDOwn = useCallback(e => e.key === "Enter" && sendChange(), [sendChange],)
+  const onFocus = useCallback(
+    () => {
+      setFocus(true)
+    },
+    [setFocus],
+  )
+  useEffect(() => setNumber(value), [value, setNumber]) // update value on value change
+  const onInputChange = useCallback(e => setNumber(parseFunc(e.target.value) || 0), [setNumber, parseFunc],)
+  const onKeyDOwn = useCallback(e => e.key === "Enter" && onBlur(), [onBlur],)
   return <StyledInputBase
-    value={state}
+    value={(focused && !number) ? "" : number}
     aria-label="custom-input"
     type="number"
     onChange={onInputChange}
-    onBlur={sendChange}
+    onBlur={onBlur}
+    onFocus={onFocus}
     disabled={disabled}
     onKeyDown={onKeyDOwn}
     {...props}

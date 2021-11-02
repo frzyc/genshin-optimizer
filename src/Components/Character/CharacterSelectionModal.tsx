@@ -8,8 +8,8 @@ import { DatabaseContext } from "../../Database/Database";
 import usePromise from "../../ReactHooks/usePromise";
 import { ICachedCharacter } from "../../Types/character";
 import { allCharacterKeys, CharacterKey, ElementKey, WeaponTypeKey } from "../../Types/consts";
-import characterSortOptions from "../../Util/CharacterSort";
-import SortByFilters from "../../Util/SortByFilters";
+import { characterFilterConfigs, characterSortConfigs } from "../../Util/CharacterSort";
+import { filterFunction, sortFunction } from "../../Util/SortByFilters";
 import WeaponSheet from "../../Weapon/WeaponSheet";
 import CardDark from "../Card/CardDark";
 import CardLight from "../Card/CardLight";
@@ -46,13 +46,13 @@ export function CharacterSelectionModal({ show, onHide, onSelect, filter = () =>
 
   const characterSheets = usePromise(CharacterSheet.getAll(), [])
 
-  const sortOptions = useMemo(() => characterSheets && characterSortOptions(database, characterSheets), [database, characterSheets])
-  const characterKeyList = useMemo(() => characterSheets && sortOptions ? [...new Set(allCharacterKeys)].filter(cKey => filter(database._getChar(cKey), characterSheets[cKey])).filter(cKey => {
-    if (elementalFilter && elementalFilter !== characterSheets?.[cKey]?.elementKey) return false
-    if (weaponFilter && weaponFilter !== characterSheets?.[cKey]?.weaponTypeKey) return false
-    return true
-  }).sort(SortByFilters(sortBy, ascending, sortOptions) as (a: CharacterKey, b: CharacterKey) => number) : [],
-    [database, characterSheets, filter, elementalFilter, weaponFilter, sortBy, ascending, sortOptions])
+  const sortConfigs = useMemo(() => characterSheets && characterSortConfigs(database, characterSheets), [database, characterSheets])
+  const filterConfigs = useMemo(() => characterSheets && characterFilterConfigs(characterSheets), [characterSheets])
+  const characterKeyList = useMemo(() => (characterSheets && sortConfigs && filterConfigs) ?
+    [...new Set(allCharacterKeys)].filter(cKey => filter(database._getChar(cKey), characterSheets[cKey]))
+      .filter(filterFunction({ element: elementalFilter, weaponType: weaponFilter }, filterConfigs))
+      .sort(sortFunction(sortBy, ascending, sortConfigs) as (a: CharacterKey, b: CharacterKey) => number) : [],
+    [database, characterSheets, filter, elementalFilter, weaponFilter, sortBy, ascending, sortConfigs, filterConfigs])
 
   if (!characterSheets) return null
   return <ModalWrapper open={show} onClose={onHide} >

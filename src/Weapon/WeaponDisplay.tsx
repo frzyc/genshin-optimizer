@@ -9,16 +9,16 @@ import SolidToggleButtonGroup from '../Components/SolidToggleButtonGroup';
 import SortByButton from '../Components/SortByButton';
 import { Stars } from '../Components/StarDisplay';
 import WeaponToggle from '../Components/ToggleButton/WeaponToggle';
+import WeaponSelectionModal from '../Components/Weapon/WeaponSelectionModal';
 import { DatabaseContext } from '../Database/Database';
 import { dbStorage } from '../Database/DBStorage';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
 import usePromise from '../ReactHooks/usePromise';
 import { allRarities, WeaponKey, WeaponTypeKey } from '../Types/consts';
-import SortByFilters from '../Util/SortByFilters';
+import { filterFunction, sortFunction } from '../Util/SortByFilters';
 import { clamp } from '../Util/Util';
-import WeaponSortOptions, { sortKeys } from '../Util/WeaponSort';
+import { weaponFilterConfigs, weaponSortConfigs, weaponSortKeys } from '../Util/WeaponSort';
 import WeaponCard from './WeaponCard';
-import WeaponSelectionModal from '../Components/Weapon/WeaponSelectionModal';
 import WeaponSheet from './WeaponSheet';
 import { initialWeapon } from './WeaponUtil';
 
@@ -27,7 +27,7 @@ const WeaponDisplayCard = lazy(() => import('./WeaponDisplayCard'))
 
 const initialState = () => ({
   editWeaponId: "",
-  sortType: sortKeys[0],
+  sortType: weaponSortKeys[0],
   ascending: false,
   rarity: [5, 4],
   weaponType: "" as WeaponTypeKey | "",
@@ -61,7 +61,7 @@ export default function WeaponDisplay(props) {
     dbStorage.set("WeaponDisplay.state", state)
   }, [state])
 
-  const allWeaponSheets = usePromise(WeaponSheet.getAll(), [])
+  const weaponSheets = usePromise(WeaponSheet.getAll(), [])
 
   const deleteWeapon = useCallback(async (key) => {
     const weapon = database._getWeapon(key)
@@ -87,20 +87,17 @@ export default function WeaponDisplay(props) {
     },
     [database, editWeapon])
 
-  const sortOptions = useMemo(() => allWeaponSheets && WeaponSortOptions(database, allWeaponSheets), [database, allWeaponSheets])
-
+  const { sortType, ascending, weaponType, rarity } = state
+  const sortConfigs = useMemo(() => weaponSheets && weaponSortConfigs(weaponSheets), [weaponSheets])
+  const filterConfigs = useMemo(() => weaponSheets && weaponFilterConfigs(weaponSheets), [weaponSheets])
   const { weaponIdList, totalWeaponNum } = useMemo(() => {
-    const keys = database.weapons.keys
-    if (!sortOptions) return { weaponIdList: [], totalWeaponNum: keys.length }
-    const weaponIdList = keys.filter(wKey => {
-      const dbWeapon = database._getWeapon(wKey)
-      if (!dbWeapon) return false
-      if (state.weaponType && state.weaponType !== allWeaponSheets?.[dbWeapon.key]?.weaponType) return false
-      if (!state.rarity.includes(allWeaponSheets?.[dbWeapon.key]?.rarity as any)) return false
-      return true
-    }).sort(SortByFilters(state.sortType, state.ascending, sortOptions));
-    return dbDirty && { weaponIdList, totalWeaponNum: keys.length }
-  }, [dbDirty, allWeaponSheets, database, sortOptions, state.sortType, state.ascending, state.rarity, state.weaponType])
+    const weapons = database._getWeapons()
+    const totalWeaponNum = weapons.length
+    if (!sortConfigs || !filterConfigs) return { weaponIdList: [], totalWeaponNum }
+    const weaponIdList = weapons.filter(filterFunction({ weaponType, rarity }, filterConfigs))
+      .sort(sortFunction(sortType, ascending, sortConfigs)).map(weapon => weapon.id);
+    return dbDirty && { weaponIdList, totalWeaponNum }
+  }, [dbDirty, database, sortConfigs, filterConfigs, sortType, ascending, rarity, weaponType])
 
   const { weaponIdsToShow, numPages, currentPageIndex } = useMemo(() => {
     const numPages = Math.ceil(weaponIdList.length / state.maxNumToDisplay)
@@ -137,17 +134,17 @@ export default function WeaponDisplay(props) {
     <CardDark ref={invScrollRef} sx={{ p: 2, pb: 1 }}>
       <Grid container spacing={1} sx={{ mb: 1 }}>
         <Grid item>
-          <WeaponToggle sx={{ height: "100%" }} onChange={weaponType => stateDisplatch({ weaponType })} value={state.weaponType} size="small" />
+          <WeaponToggle sx={{ height: "100%" }} onChange={weaponType => stateDisplatch({ weaponType })} value={weaponType} size="small" />
         </Grid>
         <Grid item flexGrow={1}>
-          <SolidToggleButtonGroup sx={{ height: "100%" }} onChange={(e, newVal) => stateDisplatch({ rarity: newVal })} value={state.rarity} size="small">
+          <SolidToggleButtonGroup sx={{ height: "100%" }} onChange={(e, newVal) => stateDisplatch({ rarity: newVal })} value={rarity} size="small">
             {allRarities.map(star => <ToggleButton key={star} value={star}><strong>{star}{' '}</strong><Stars stars={1} /></ToggleButton>)}
           </SolidToggleButtonGroup>
         </Grid>
         <Grid item >
-          <SortByButton sx={{ height: "100%" }} sortKeys={sortKeys}
-            value={state.sortType} onChange={sortType => stateDisplatch({ sortType })}
-            ascending={state.ascending} onChangeAsc={ascending => stateDisplatch({ ascending })}
+          <SortByButton sx={{ height: "100%" }} sortKeys={weaponSortKeys}
+            value={sortType} onChange={sortType => stateDisplatch({ sortType })}
+            ascending={ascending} onChangeAsc={ascending => stateDisplatch({ ascending })}
           />
         </Grid>
       </Grid>

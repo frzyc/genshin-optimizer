@@ -6,6 +6,7 @@ import React, { lazy, Suspense, useCallback, useContext, useEffect, useMemo, use
 import ReactGA from 'react-ga';
 import { Link } from 'react-router-dom';
 import CardDark from '../Components/Card/CardDark';
+import { CharacterSelectionModal } from '../Components/Character/CharacterSelectionModal';
 import CloseButton from '../Components/CloseButton';
 import InfoComponent from '../Components/InfoComponent';
 import SortByButton from '../Components/SortByButton';
@@ -16,11 +17,10 @@ import { dbStorage } from '../Database/DBStorage';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
 import usePromise from '../ReactHooks/usePromise';
 import { CharacterKey, ElementKey, WeaponTypeKey } from '../Types/consts';
-import characterSortOptions, { sortKeys } from '../Util/CharacterSort';
-import SortByFilters from '../Util/SortByFilters';
+import { characterFilterConfigs, characterSortConfigs, characterSortKeys } from '../Util/CharacterSort';
+import { filterFunction, sortFunction } from '../Util/SortByFilters';
 import { defaultInitialWeapon } from '../Weapon/WeaponUtil';
 import CharacterCard from './CharacterCard';
-import { CharacterSelectionModal } from '../Components/Character/CharacterSelectionModal';
 import CharacterSheet from './CharacterSheet';
 import { initialCharacter } from './CharacterUtil';
 
@@ -31,7 +31,7 @@ const CharacterDisplayCard = lazy(() => import('./CharacterDisplayCard'))
 
 const initialState = () => ({
   characterKeyToEdit: "" as CharacterKey | "",
-  sortType: sortKeys[0],
+  sortType: characterSortKeys[0],
   ascending: false,
   weaponType: "" as WeaponTypeKey | "",
   element: "" as ElementKey | "",
@@ -57,7 +57,7 @@ export default function CharacterDisplay(props) {
     return database.followAnyChar(forceUpdate)
   }, [forceUpdate, database])
 
-  const allCharacterSheets = usePromise(CharacterSheet.getAll(), [])
+  const characterSheets = usePromise(CharacterSheet.getAll(), [])
   //save to db
   useEffect(() => {
     dbStorage.set("CharacterDisplay.state", state)
@@ -101,14 +101,13 @@ export default function CharacterDisplay(props) {
     setnewCharacter(false)
   }, [stateDisplatch])
 
-  const sortOptions = useMemo(() => allCharacterSheets && characterSortOptions(database, allCharacterSheets), [database, allCharacterSheets])
-
-  const charKeyList = useMemo(() => sortOptions && dbDirty && database._getCharKeys().filter(cKey => {
-    if (state.element && state.element !== allCharacterSheets?.[cKey]?.elementKey) return false
-    if (state.weaponType && state.weaponType !== allCharacterSheets?.[cKey]?.weaponTypeKey) return false
-    return true
-  }).sort(SortByFilters(state.sortType, state.ascending, sortOptions) as (a: CharacterKey, b: CharacterKey) => number),
-    [dbDirty, database, sortOptions, allCharacterSheets, state.element, state.weaponType, state.sortType, state.ascending])
+  const { element, weaponType } = state
+  const sortConfigs = useMemo(() => characterSheets && characterSortConfigs(database, characterSheets), [database, characterSheets])
+  const filterConfigs = useMemo(() => characterSheets && characterFilterConfigs(characterSheets), [characterSheets])
+  const charKeyList = useMemo(() => sortConfigs && filterConfigs && dbDirty &&
+    database._getCharKeys().filter(filterFunction({ element, weaponType }, filterConfigs))
+      .sort(sortFunction(state.sortType, state.ascending, sortConfigs)),
+    [dbDirty, database, sortConfigs, state.sortType, state.ascending, element, filterConfigs, weaponType])
   return <Box sx={{ mt: 1, "> div": { mb: 1 }, }}>
     <InfoComponent
       pageKey="characterPage"
@@ -142,7 +141,7 @@ export default function CharacterDisplay(props) {
         </Grid>
         <Grid item >
           <SortByButton sx={{ height: "100%" }}
-            sortKeys={sortKeys} value={state.sortType} onChange={sortType => stateDisplatch({ sortType })}
+            sortKeys={characterSortKeys} value={state.sortType} onChange={sortType => stateDisplatch({ sortType })}
             ascending={state.ascending} onChangeAsc={ascending => stateDisplatch({ ascending })} />
         </Grid>
       </Grid>

@@ -22,11 +22,19 @@ import Artifact from './Artifact';
 import { ArtifactSheet } from './ArtifactSheet';
 import SlotNameWithIcon from './Component/SlotNameWIthIcon';
 import PercentBadge from './PercentBadge';
+import { probability } from './RollProbability'
 
-type Data = { artifactId?: string, artifactObj?: ICachedArtifact, onEdit?: (string) => void, onDelete?: (string) => void, mainStatAssumptionLevel?: number, effFilter?: Set<SubstatKey> }
+type Data = {
+  artifactId?: string,
+  artifactObj?: ICachedArtifact,
+  onEdit?: (string) => void,
+  onDelete?: (string) => void, mainStatAssumptionLevel?: number,
+  effFilter?: Set<SubstatKey>,
+  probabilityFilter?: Partial<Record<SubstatKey, number>>
+}
 const allSubstatFilter = new Set(allSubstats)
 
-export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete, mainStatAssumptionLevel = 0, effFilter = allSubstatFilter }: Data): JSX.Element | null {
+export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete, mainStatAssumptionLevel = 0, effFilter = allSubstatFilter, probabilityFilter }: Data): JSX.Element | null {
   const { t } = useTranslation(["artifact"]);
   const database = useContext(DatabaseContext)
   const [databaseArtifact, updateDatabaseArtifact] = useState(undefined as ICachedArtifact | undefined)
@@ -122,6 +130,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
           <PercentBadge value={maxEfficiency} valid={artifactValid} />
         </Box>}
         <Box flexGrow={1} />
+        {probabilityFilter && <strong>Probability: {(probability(art, probabilityFilter) * 100).toFixed(2)}%</strong>}
         <Typography color="success.main">{sheet?.name ?? "Artifact Set"} {setDescTooltip}</Typography>
       </CardContent>
       <CardActions>
