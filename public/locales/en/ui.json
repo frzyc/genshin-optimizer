@@ -40,6 +40,7 @@
     "rarity": "Rarity",
     "artsetkey": "Artifact Set",
     "efficiency": "Current Substat Eff.",
-    "mefficiency": "Maximum Substat Eff."
+    "mefficiency": "Maximum Substat Eff.",
+    "probability": "Roll Probability"
   }
 }

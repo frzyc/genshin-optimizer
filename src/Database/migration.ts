@@ -10,7 +10,7 @@ import { getDBVersion, setDBVersion } from "./utils"
 // 2. Call the added `migrateV<x>ToV<x+1>` from `migrate`
 // 3. Update `currentDBVersion`
 
-export const currentDBVersion = 12
+export const currentDBVersion = 13
 
 export function migrate(storage: DBStorage): { migrated: boolean } {
   const version = getDBVersion(storage)
@@ -27,6 +27,7 @@ export function migrate(storage: DBStorage): { migrated: boolean } {
   if (version < 10) { migrateV9ToV10(storage); setDBVersion(storage, 10) }
   if (version < 11) { migrateV10ToV11(storage); setDBVersion(storage, 11) }
   if (version < 12) { migrateV11ToV12(storage); setDBVersion(storage, 12) }
+  if (version < 13) { migrateV12ToV13(storage); setDBVersion(storage, 13) }
 
   if (version > currentDBVersion) throw new Error(`Database version ${version} is not supported`)
 
@@ -282,7 +283,7 @@ function migrateV10ToV11(storage: DBStorage) {
   }
 }
 
-// 7.0.0 - present
+// 7.0.0 - 7.2.11
 function migrateV11ToV12(storage: DBStorage) {
   //UI was changed quite a lot, deleting state should be easiest for migration.
   storage.remove("CharacterDisplay.state")
@@ -295,4 +296,10 @@ function migrateV11ToV12(storage: DBStorage) {
       storage.set(key, weapon)
     }
   }
+}
+
+// 7.3.0 - present
+function migrateV12ToV13(storage: DBStorage) {
+  //UI was changed quite a lot, deleting state should be easiest for migration.
+  storage.remove("ArtifactDisplay.state")
 }
