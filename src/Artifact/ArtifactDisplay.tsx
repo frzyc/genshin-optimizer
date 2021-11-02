@@ -33,8 +33,12 @@ function intialState() {
 }
 
 type State = ReturnType<typeof intialState>
-
-function filterReducer(state: State, action: Partial<State>): State {
+type ResetAction = {
+  type: "reset"
+}
+function filterReducer(state: State, action: Partial<State> | ResetAction): State {
+  if ((action as any).type === "reset")
+    return { ...state, ...initialArtifactSortFilter() }
   return { ...state, ...action }
 }
 function filterInit(): State {

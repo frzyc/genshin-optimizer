@@ -77,12 +77,11 @@ export function artifactFilterConfigs(): FilterConfigs<keyof FilterOption, ICach
       return true
     },
     location: (art, filter) => {
-      if (filter === "Inventory") {
-        if (art.location) return false;
-      } else if (filter === "Equipped") {
-        if (!art.location) return false;
-      } else if (filter !== art.location) return false;
-      return true
+      if (!filter) return true
+      if (filter === "Inventory" && !art.location) return true
+      if (filter === "Equipped" && art.location) return true
+      if (filter === art.location) return true
+      return false
     },
     artSetKey: (art, filter) => !filter || filter === art.setKey,
     slotKey: (art, filter) => !filter || filter === art.slotKey,
