@@ -1,6 +1,6 @@
 import { getTalentStatKey } from "../../../Build/Build"
 import { IFormulaSheet } from "../../../Types/character"
-import { singleToTalentPercent, toTalentPercent } from "../../../Util/DataminedUtil"
+import { singleToTalentPercent, toTalentInt, toTalentPercent } from "../../../Util/DataminedUtil"
 import { basicDMGFormula } from "../../../Util/FormulaUtil"
 import skillParam_gen_pre from './skillParam_gen.json'
 const skillParam_gen = skillParam_gen_pre as any
@@ -26,17 +26,17 @@ export const data = {
   skill: {
     dmg: toTalentPercent(skillParam_gen.skill[s++]),
     shieldHp_: toTalentPercent(skillParam_gen.skill[s++]),
-    shieldHp: toTalentPercent(skillParam_gen.skill[s++]),
+    shieldHp: toTalentInt(skillParam_gen.skill[s++]),
     duration: skillParam_gen.skill[s++][0],
     maxShieldHp_: toTalentPercent(skillParam_gen.skill[s++]),
-    maxShieldHp: toTalentPercent(skillParam_gen.skill[s++]),
+    maxShieldHp: toTalentInt(skillParam_gen.skill[s++]),
     cd: skillParam_gen.skill[s++][0],
   },
   burst: {
     dmg: toTalentPercent(skillParam_gen.burst[b++]),
     dmgCollapse: toTalentPercent(skillParam_gen.burst[b++]),
     shieldHp_: toTalentPercent(skillParam_gen.burst[b++]),
-    shieldHp: toTalentPercent(skillParam_gen.burst[b++]),
+    shieldHp: toTalentInt(skillParam_gen.burst[b++]),
     shieldDuration: skillParam_gen.burst[b++][0],
     triggerDuration: skillParam_gen.burst[b++][0],
     duration: skillParam_gen.burst[b++][0],
