@@ -30,6 +30,7 @@ import SangonomiyaKokomi from './SangonomiyaKokomi'
 import Sayu from './Sayu'
 import Sucrose from './Sucrose'
 import Tartaglia from './Tartaglia'
+import Thoma from './Thoma'
 import Traveler from './Traveler'
 import Venti from './Venti'
 import Xiao from './Xiao'
@@ -75,6 +76,7 @@ const characters: StrictDict<CharacterKey, ICharacterSheet> = {
   Sayu,
   Sucrose,
   Tartaglia,
+  Thoma,
   Traveler,
   Venti,
   Xiao,

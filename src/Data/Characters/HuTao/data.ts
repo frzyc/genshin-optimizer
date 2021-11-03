@@ -50,7 +50,7 @@ const formula: IFormulaSheet = {
     dmgC2: stats => {
       const val = data.skill.dmg[stats.tlvl.skill] / 100
       const statKey = getTalentStatKey("skill", stats) + "_multi"
-      return [s => (val * s.finalATK + 0.1 * s.finalHP) * s[statKey], ["finalATK", statKey]]
+      return [s => (val * s.finalATK + 0.1 * s.finalHP) * s[statKey], ["finalHP", "finalATK", statKey]]
     }
   },
   burst: {

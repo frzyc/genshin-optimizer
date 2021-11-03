@@ -16,7 +16,8 @@ import { DatabaseContext } from '../Database/Database';
 import usePromise from '../ReactHooks/usePromise';
 import Stat from '../Stat';
 import { ICachedCharacter } from '../Types/character';
-import { CharacterKey } from '../Types/consts';
+import { CharacterKey, SlotKey } from '../Types/consts';
+import { ICalculatedStats } from '../Types/stats';
 import { ICachedWeapon } from '../Types/weapon';
 import WeaponSheet from '../Weapon/WeaponSheet';
 import Character from './Character';
@@ -73,7 +74,7 @@ export default function CharacterCard({ characterKey, onEdit, onDelete, footer =
             }
           }}
           width="100%" >
-          <Box flexShrink={1} sx={{ maxWidth: { xs:"40%", lg:"40%" } }} alignSelf="flex-end" display="flex" flexDirection="column" zIndex={1}>
+          <Box flexShrink={1} sx={{ maxWidth: { xs: "40%", lg: "40%" } }} alignSelf="flex-end" display="flex" flexDirection="column" zIndex={1}>
             <Box
               component="img"
               src={characterSheet.thumbImg}
@@ -131,16 +132,8 @@ export default function CharacterCard({ characterKey, onEdit, onDelete, footer =
               </Box>
             </Box>
           </CardDark>
-          <Grid container spacing={1} justifyContent="space-around">
-            {artifactSheets && Object.entries(ArtifactSheet.setEffects(artifactSheets, stats.setToSlots)).map(([key, arr]) => {
-              let artifactSetName = artifactSheets?.[key].name ?? ""
-              let highestNum = Math.max(...arr)
-              return <Grid item key={key} flexGrow={1}>
-                <Chip color="secondary" sx={{ width: "100%" }} icon={<ImgIcon src={artifactSheets?.[key].defIconSrc} size={2.5} />}
-                  label={<span>{artifactSetName} <SqBadge color="success">{highestNum}</SqBadge></span>} />
-              </Grid>
-            })}
-          </Grid>
+          {/* artifact display */}
+          <ArtifactDisplay stats={stats} />
         </CardContent>
         {/* grow to fill the 100% heigh */}
         <Box flexGrow={1} />
@@ -174,4 +167,21 @@ export default function CharacterCard({ characterKey, onEdit, onDelete, footer =
       </Grid>}
     </CardLight>
   </Suspense>
+}
+function ArtifactDisplay({ stats }: { stats?: ICalculatedStats }) {
+  const artifactSheets = usePromise(ArtifactSheet.getAll(), [])
+  const database = useContext(DatabaseContext)
+  if (!artifactSheets || !stats) return null
+  const { equippedArtifacts } = stats
+  return <Grid container spacing={1} >
+    {Object.entries(equippedArtifacts ?? {} as Partial<Record<SlotKey, string>>).map(([key, id]) => {
+      const art = database._getArt(id)
+      if (!art) return null
+      const { setKey, slotKey, mainStatKey } = art
+      return <Grid item key={key} flexGrow={1}>
+        <Chip color="secondary" sx={{ width: "100%" }} icon={<ImgIcon src={artifactSheets?.[setKey].slotIcons[slotKey]} size={2.5} />}
+          label={<span>{Stat.getStatNameWithPercent(mainStatKey)}</span>} />
+      </Grid>
+    })}
+  </Grid>
 }

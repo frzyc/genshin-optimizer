@@ -73,8 +73,8 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
 
   return <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 350 }} />}>
     <CardLight sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
-      <CardContent className={`grad-${rarity}star`} sx={{ py: 1 }}>
-        <Box component="div" sx={{ display: "flex", alignItems: "center" }}>
+      <CardContent className={`grad-${rarity}star`} sx={{ pt: 1, pb: 0, pr: 0 }}>
+        <Box component="div" sx={{ display: "flex", alignItems: "center", pr: 1 }}>
           <Chip size="small" label={<strong>{` +${level}`}</strong>} color={levelVariant as any} />
           <Typography sx={{ pl: 1, flexGrow: 1 }}>{slotName} {slotDescTooltip}</Typography>
           <IconButton color="primary" disabled={!editable} onClick={() => database.updateArt({ lock: !lock }, id)}>
@@ -95,7 +95,7 @@ export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete
             <Stars stars={rarity} colored />
             {/* {process.env.NODE_ENV === "development" && <Typography color="common.black">{id || `""`} </Typography>} */}
           </Grid>
-          <Grid item xs={3} md={4}>
+          <Grid item maxWidth="40%" sx={{ mt: -3, mb: -1, pl: -2 }} alignSelf="flex-end">
             <CardMedia
               component="img"
               image={sheet?.slotIcons[slotKey] ?? ""}
