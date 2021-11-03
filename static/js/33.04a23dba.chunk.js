@@ -1,0 +1,2 @@
+(this["webpackJsonpgenshin-optimizer"]=this["webpackJsonpgenshin-optimizer"]||[]).push([[33],{995:function(e,n,t){"use strict";t.r(n),t.d(n,"default",(function(){return s}));var r=t(221),i=t(1),a=t(0),c=Object(i.lazy)((function(){return Promise.all([t.e(0),t.e(1),t.e(3),t.e(2),t.e(15)]).then(t.bind(null,349))}));function s(){return Object(a.jsx)(r.a,{sx:{py:1},children:Object(a.jsx)(c,{characterKey:"Traveler",tabName:"talent"})})}}}]);
+//# sourceMappingURL=33.04a23dba.chunk.js.map
