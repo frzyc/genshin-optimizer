@@ -18,6 +18,7 @@ import SkywardSpine from './SkywardSpine'
 import StaffOfHoma from './StaffOfHoma'
 import TheCatch from './TheCatch'
 import VortexVanquisher from './VortexVanquisher'
+import WavebreakersFin from './WavebreakersFin'
 import WhiteTassel from './WhiteTassel'
 const polearm = {
   BeginnersProtector,
@@ -40,6 +41,7 @@ const polearm = {
   StaffOfHoma,
   TheCatch,
   VortexVanquisher,
+  WavebreakersFin,
   WhiteTassel,
 } as const
 export default polearm

@@ -70,14 +70,8 @@ export default function WeaponCard({ weaponId, onClick, onEdit, onDelete, canEqu
               <Typography><Stars stars={weaponSheet.rarity} colored /></Typography>
             </Grid>
             {/* use flex-end here to align the image to the bottom. */}
-            <Grid item container xs={4} alignContent="flex-end">
-              <Box
-                component="img"
-                src={img}
-                width="100%"
-                height="auto"
-                sx={{ mt: "auto" }}
-              />
+            <Grid item container maxWidth="40%" alignContent="flex-end" sx={{ mt: -3 }}>
+              <Box component="img" src={img} width="100%" height="auto" />
             </Grid>
           </Grid>
         </div>

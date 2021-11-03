@@ -267,7 +267,7 @@ export default function ArtifactFilter({ artifactIds, filterOption, sortType, as
               <SqBadge sx={{ ml: 1 }} color={numUnlock ? "success" : "secondary"}>{numUnlock}</SqBadge>
             </Button>
           </Grid>
-          <Grid item xs={12} sm={12} md={6}>
+          <Grid item xs={12} sm={12} md={6} display="flex" justifyContent="space-around">
             <Typography variant="caption" color="text.secondary"><Trans t={t} i18nKey="buttonHint">Note: the red buttons above only applies to <b>filtered artifacts</b></Trans></Typography>
           </Grid>
         </Grid>

@@ -30,6 +30,7 @@ import SangonomiyaKokomi from './SangonomiyaKokomi/data'
 import Sayu from './Sayu/data'
 import Sucrose from './Sucrose/data'
 import Tartaglia from './Tartaglia/data'
+import Thoma from './Thoma/data'
 import Traveler from './Traveler/data'
 import Venti from './Venti/data'
 import Xiao from './Xiao/data'
@@ -75,6 +76,7 @@ const formula: IFormulaSheets = {
   Sayu,
   Sucrose,
   Tartaglia,
+  Thoma,
   Traveler,
   Venti,
   Xiao,

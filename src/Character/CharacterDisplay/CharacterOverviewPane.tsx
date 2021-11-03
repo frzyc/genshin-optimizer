@@ -37,10 +37,10 @@ export default function CharacterOverviewPane({ characterSheet, character, chara
       <CardLight >
         <CardMedia src={characterSheet.cardImg} component="img" width="100%" height="auto" />
         <CardContent>
-          <Typography variant="h5" >{characterSheet.name} <ImgIcon src={Assets.weaponTypes?.[weaponTypeKey]} /> {StatIcon[elementKey]} </Typography>
-          <Typography><Stars stars={characterSheet.star} colored /></Typography>
-          <Typography variant="subtitle1">Lvl. {Character.getLevelString(character)}</Typography>
-          <Grid container spacing={1}>
+          <Typography variant="h4" >{characterSheet.name} <ImgIcon src={Assets.weaponTypes?.[weaponTypeKey]} /> {StatIcon[elementKey]} </Typography>
+          <Typography variant="h6"><Stars stars={characterSheet.star} colored /></Typography>
+          <Typography variant="h5">Lvl. {Character.getLevelString(character)}</Typography>
+          <Grid container spacing={1} mt={1}>
             {["auto", "skill", "burst"].map(tKey =>
               <Grid item xs={4} key={tKey}>
                 <Badge badgeContent={tlvl[tKey] + 1} color={((tKey === "skill" && build.skillBoost) || (tKey === "burst" && build.burstBoost)) ? "info" : "secondary"}

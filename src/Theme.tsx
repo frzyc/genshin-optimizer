@@ -80,6 +80,9 @@ declare module "@mui/material/Button" {
     anemo: true;
     physical: true;
   }
+}
+
+declare module "@mui/material/Chip" {
   interface ChipPropsColorOverrides {
     warning: true;
     roll1: true;
