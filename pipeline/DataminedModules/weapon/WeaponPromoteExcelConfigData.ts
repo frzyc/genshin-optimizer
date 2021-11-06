@@ -48,17 +48,17 @@ type WeaponPromoteExcelConfigData = {
   "UnlockMaxLevel": number//90,
   "RequiredPlayerLevel": number//50
 }
-const weaponAscensionDataSrc = require('../../GenshinData/ExcelBinOutput/WeaponPromoteExcelConfigData.json') as WeaponPromoteExcelConfigData[]
+const weaponPromoteExcelConfigDataSrc = require('../../GenshinData/ExcelBinOutput/WeaponPromoteExcelConfigData.json') as WeaponPromoteExcelConfigData[]
 
-const weaponAscensionData = {} as Record<number, Array<WeaponPromoteExcelConfigData>>
+const weaponPromoteExcelConfigData = {} as Record<number, Array<WeaponPromoteExcelConfigData>>
 
-weaponAscensionDataSrc.forEach(data => {
+weaponPromoteExcelConfigDataSrc.forEach(data => {
 
   const { WeaponPromoteId = 0, PromoteLevel = 0 } = data
   if (!WeaponPromoteId || !PromoteLevel) return
 
-  if (!weaponAscensionData[WeaponPromoteId]) weaponAscensionData[WeaponPromoteId] = [null]//fill in first item, to help with processing
-  layeredAssignment(weaponAscensionData, [WeaponPromoteId, PromoteLevel], data)
+  if (!weaponPromoteExcelConfigData[WeaponPromoteId]) weaponPromoteExcelConfigData[WeaponPromoteId] = [null]//fill in first item, to help with processing
+  layeredAssignment(weaponPromoteExcelConfigData, [WeaponPromoteId, PromoteLevel], data)
 })
 
-export default weaponAscensionData //
+export default weaponPromoteExcelConfigData //

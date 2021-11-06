@@ -1,4 +1,6 @@
 import { DWeaponTypeKey } from "../.."
+import { nameToKey, TextMapEN } from "../../TextMapUtil"
+import { dumpFile } from "../../Util"
 
 type WeaponExcelConfigData = {
   "WeaponType": DWeaponTypeKey// "WEAPON_CLAYMORE",
@@ -52,8 +54,11 @@ type WeaponExcelConfigData = {
   "Rank": 10,
   "GadgetId": 50012407
 }
-const weaponDataSrc = require('../../GenshinData/ExcelBinOutput/WeaponExcelConfigData.json') as WeaponExcelConfigData[]
-const weaponData = Object.fromEntries(weaponDataSrc.map(data =>
+const weaponExcelConfigDataSrc = require('../../GenshinData/ExcelBinOutput/WeaponExcelConfigData.json') as WeaponExcelConfigData[]
+const weaponExcelConfigData = Object.fromEntries(weaponExcelConfigDataSrc.map(data =>
   [data.Id, data]))
 
-export default weaponData
+dumpFile(`${__dirname}/WeaponExcelConfigData_idmap_gen.json`,
+  Object.fromEntries(weaponExcelConfigDataSrc.map(data => [data.Id, nameToKey(TextMapEN[data.NameTextMapHash])])))
+
+export default weaponExcelConfigData

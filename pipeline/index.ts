@@ -1,5 +1,5 @@
 import { CharacterExpCurveData } from "./DataminedModules/character/characterExpCurve";
-import { WeaponExpCurveData } from "./DataminedModules/weapon/weaponExpCurve";
+import { WeaponExpCurveData } from "./DataminedModules/weapon/WeaponCurveExcelConfigData";
 import { WeaponData } from './main'
 export { CharacterExpCurveData, WeaponExpCurveData, WeaponData }
 

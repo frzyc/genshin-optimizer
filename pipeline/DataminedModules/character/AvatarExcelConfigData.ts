@@ -1,3 +1,5 @@
+import { nameToKey, TextMapEN } from "../../TextMapUtil"
+import { dumpFile } from "../../Util"
 import { CharacterGrowCurveKey } from "./characterExpCurve"
 
 type AvatarExcelConfigData = {
@@ -70,9 +72,12 @@ type AvatarExcelConfigData = {
   "LODPatternName": string//""
 }
 
-const characterDataSrc = require('../../GenshinData/ExcelBinOutput/AvatarExcelConfigData.json') as AvatarExcelConfigData[]
+const avatarExcelConfigDataSrc = require('../../GenshinData/ExcelBinOutput/AvatarExcelConfigData.json') as AvatarExcelConfigData[]
 //character data
-const characterData = Object.fromEntries(characterDataSrc.map(data =>
+const avatarExcelConfigData = Object.fromEntries(avatarExcelConfigDataSrc.map(data =>
   [data.Id, data])) as { [charId: number]: AvatarExcelConfigData }
 
-export default characterData
+dumpFile(`${__dirname}/AvatarExcelConfigData_idmap_gen.json`,
+  Object.fromEntries(avatarExcelConfigDataSrc.map(data => [data.Id, nameToKey(TextMapEN[data.NameTextMapHash])])))
+
+export default avatarExcelConfigData

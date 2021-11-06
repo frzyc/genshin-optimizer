@@ -1,5 +1,6 @@
 import { PropTypeKey, WeaponId } from "../.."
-import { layeredAssignment } from "../../Util"
+import { nameToKey, TextMapEN } from "../../TextMapUtil"
+import { dumpFile, layeredAssignment } from "../../Util"
 
 type EquipAffixExcelConfigData = {
   "AffixId": number//1125034,
@@ -32,13 +33,16 @@ type EquipAffixExcelConfigData = {
   //   0.0
   // ]
 }
-const equipAffixDataDataSrc = require('../../GenshinData/ExcelBinOutput/EquipAffixExcelConfigData.json') as EquipAffixExcelConfigData[]
+const equipAffixExcelConfigDataSrc = require('../../GenshinData/ExcelBinOutput/EquipAffixExcelConfigData.json') as EquipAffixExcelConfigData[]
 
-const equipAffixDataData = {} as Record<number, Array<EquipAffixExcelConfigData>>
-equipAffixDataDataSrc.forEach(data => {
+const equipAffixExcelConfigData = {} as Record<number, Array<EquipAffixExcelConfigData>>
+equipAffixExcelConfigDataSrc.forEach(data => {
   const { Id, Level = 0 } = data
-  if (!equipAffixDataData[Id]) equipAffixDataData[Id] = []
-  layeredAssignment(equipAffixDataData, [Id, Level], data)
+  if (!equipAffixExcelConfigData[Id]) equipAffixExcelConfigData[Id] = []
+  layeredAssignment(equipAffixExcelConfigData, [Id, Level], data)
 })
 
-export default equipAffixDataData //
+dumpFile(`${__dirname}/EquipAffixExcelConfigData_idmap_gen.json`,
+  Object.fromEntries(equipAffixExcelConfigDataSrc.map(data => [data.Id, nameToKey(TextMapEN[data.NameTextMapHash])])))
+
+export default equipAffixExcelConfigData //

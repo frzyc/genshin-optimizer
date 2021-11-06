@@ -5,10 +5,9 @@ import goblet from './goblet.png'
 import circlet from './circlet.png'
 import { IArtifactSheet } from '../../../Types/artifact'
 import { IConditionals } from '../../../Types/IConditional'
-import { st } from '../../Characters/SheetUtil'
 const conditionals: IConditionals = {
   4: {
-    name: st("afterUse.skill"),
+    name: "Tiggering an Elemental Reaction",
     stats: { eleMas: 120 }//TODO: party buff
   }
 }
