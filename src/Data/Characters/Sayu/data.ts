@@ -110,7 +110,7 @@ const formula: IFormulaSheet = {
     },
   },
   passive1: {
-    heal: stats => [s => 1.2 * s.eleMas * s.heal_multi + 300, ["eleMas", "heal_multi"]],
+    heal: stats => [s => (1.2 * s.eleMas + 300) * s.heal_multi, ["eleMas", "heal_multi"]],
   },
   passive2: {
     heal: stats => {

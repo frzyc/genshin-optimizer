@@ -1,12 +1,12 @@
 import { artifactIdMap, artifactSlotMap, characterIdMap, weaponIdMap, weaponMap } from '.'
 import { AssetData } from './Data'
 import artifactPiecesData from './DataminedModules/artifact/artifactPiecesData'
-import artifactSetData from './DataminedModules/artifact/artifactSets'
-import characterData from './DataminedModules/character/character'
+import reliquarySetExcelConfigData from './DataminedModules/artifact/ReliquarySetExcelConfigData'
+import avatarExcelConfigData from './DataminedModules/character/AvatarExcelConfigData'
 import fetterCharacterCardExcelConfigData from './DataminedModules/character/FetterCharacterCardExcelConfigData'
 import materialExcelConfigData from './DataminedModules/character/MaterialExcelConfigData'
 import rewardExcelConfigData from './DataminedModules/character/RewardExcelConfigData'
-import weaponData from './DataminedModules/weapon/weapon'
+import weaponExcelConfigData from './DataminedModules/weapon/WeaponExcelConfigData'
 const fs = require('fs')
 
 export default function loadImages() {
@@ -22,7 +22,7 @@ export default function loadImages() {
   }
 
   // Get icons for each artifact piece
-  Object.entries(artifactSetData).filter(([SetId, data]) => SetId in artifactIdMap).forEach(([SetId, data]) => {
+  Object.entries(reliquarySetExcelConfigData).filter(([SetId, data]) => SetId in artifactIdMap).forEach(([SetId, data]) => {
     const { EquipAffixId, ContainsList } = data
     if (!EquipAffixId) return
 
@@ -41,7 +41,7 @@ export default function loadImages() {
 
 
   // Get the icon/awakened for each weapon
-  Object.entries(weaponData).filter(([weaponid, weaponData]) => weaponid in weaponIdMap).forEach(([weaponid, weaponData]) => {
+  Object.entries(weaponExcelConfigData).filter(([weaponid, weaponData]) => weaponid in weaponIdMap).forEach(([weaponid, weaponData]) => {
     const { Icon, AwakenIcon, WeaponType } = weaponData
     const weaponType = weaponMap[WeaponType]
     AssetData.weapon[weaponType][weaponIdMap[weaponid]] = {
@@ -58,7 +58,7 @@ export default function loadImages() {
 
 
   // parse baseStat/ascension/basic data for non travelr.
-  Object.entries(characterData).filter(([charid, charData]) => charid in characterIdMap).map(([charid, charData]) => {
+  Object.entries(avatarExcelConfigData).filter(([charid, charData]) => charid in characterIdMap).map(([charid, charData]) => {
     const { IconName, SideIconName } = charData
 
     let Banner, Bar;

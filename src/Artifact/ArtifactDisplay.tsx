@@ -99,8 +99,8 @@ export default function ArtifactDisplay(props) {
     const sortFunc = sortFunction(sortType, ascending, sortConfigs)
     //in probability mode, filter out the artifacts that already reach criteria
     if (showProbability) {
-      allArtifacts.forEach(art => (art as any).prop = probability(art, probabilityFilter))
-      allArtifacts = allArtifacts.filter(art => (art as any).prop !== 1)
+      allArtifacts.forEach(art => (art as any).probability = probability(art, probabilityFilter))
+      allArtifacts = allArtifacts.filter(art => (art as any).probability && (art as any).probability !== 1)
     }
     const artifactIds = allArtifacts.filter(filterFunc).sort(sortFunc).map(art => art.id)
     return { artifactIds, totalArtNum: allArtifacts.length, ...dbDirty }//use dbDirty to shoo away warnings!

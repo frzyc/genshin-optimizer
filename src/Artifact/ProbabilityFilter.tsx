@@ -30,7 +30,7 @@ export default function ProbabilityFilter({ probabilityFilter: statFilters = {},
               <Typography>
                 This UI only pops up when "Sort by" <strong>Probability</strong>.
                 In conjunction with the Artifact Filters above, this UI allows you to set a criteria for substats values, and it will sort the artifacts by those with the highest probability to roll into those criteria values.
-                <ColorText color="warning"> Artifacts that already reach the criteria are hidden.</ColorText>
+                <ColorText color="warning"> Artifacts that already reach the criteria(100%) or are at 0% are hidden.</ColorText>
               </Typography>
 
             </CardContent>

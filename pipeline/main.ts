@@ -2,44 +2,32 @@ import { artifactIdMap, artifactSlotMap, characterIdMap, CharacterKey, DWeaponTy
 import { mapHashData } from './Data'
 import artifactMainstatData from './DataminedModules/artifact/artifactMainstat'
 import artifactPiecesData from './DataminedModules/artifact/artifactPiecesData'
-import artifactSetData from './DataminedModules/artifact/artifactSets'
+import reliquarySetExcelConfigData from './DataminedModules/artifact/ReliquarySetExcelConfigData'
 import artifactSubstatData from './DataminedModules/artifact/artifactSubstat'
 import { artifactSubstatRollCorrection, artifactSubstatRollData } from './DataminedModules/artifact/artifactSubstatRolls'
 import ascensionData from './DataminedModules/character/ascension'
-import characterData from './DataminedModules/character/character'
+import avatarExcelConfigData from './DataminedModules/character/AvatarExcelConfigData'
 import characterExpCurve, { CharacterGrowCurveKey } from './DataminedModules/character/characterExpCurve'
 import characterInfo from './DataminedModules/character/characterInfo'
 import constellations from './DataminedModules/character/constellations'
 import skillGroups, { ProudSkillExcelConfigData } from './DataminedModules/character/passives'
 import skillDepot, { AvatarSkillDepotExcelConfigData } from './DataminedModules/character/skillDepot'
 import talents from './DataminedModules/character/talents'
-import equipAffixDataData from './DataminedModules/common/equipAffix'
-import weaponData from './DataminedModules/weapon/weapon'
-import weaponAscensionData from './DataminedModules/weapon/weaponAscension'
-import weaponExpCurve, { WeaponGrowCurveKey } from './DataminedModules/weapon/weaponExpCurve'
+import equipAffixExcelConfigData from './DataminedModules/common/EquipAffixExcelConfigData'
+import weaponExcelConfigData from './DataminedModules/weapon/WeaponExcelConfigData'
+import weaponPromoteExcelConfigData from './DataminedModules/weapon/WeaponPromoteExcelConfigData'
+import weaponCurveExcelConfigData, { WeaponGrowCurveKey } from './DataminedModules/weapon/WeaponCurveExcelConfigData'
 import { extrapolateFloat } from './extrapolateFloat'
 import loadImages from './loadImages'
 import { parsingFunctions, preprocess } from './parseUtil'
+import { languageMap } from './TextMapUtil'
 import { crawlObject, dumpFile, layeredAssignment } from './Util'
+
+// import './DataminedModules/food/CookRecipeExcelConfigData'
+// import './DataminedModules/material/MaterialExcelConfigData'
 const fs = require('fs')
 
 loadImages();
-
-const languageMap = {
-  chs: require('./GenshinData/TextMap/TextMapCHS.json'),
-  cht: require('./GenshinData/TextMap/TextMapCHT.json'),
-  de: require('./GenshinData/TextMap/TextMapDE.json'),
-  en: require('./GenshinData/TextMap/TextMapEN.json'),
-  es: require('./GenshinData/TextMap/TextMapES.json'),
-  fr: require('./GenshinData/TextMap/TextMapFR.json'),
-  id: require('./GenshinData/TextMap/TextMapID.json'),
-  ja: require('./GenshinData/TextMap/TextMapJP.json'),
-  ko: require('./GenshinData/TextMap/TextMapKR.json'),
-  pt: require('./GenshinData/TextMap/TextMapPT.json'),
-  ru: require('./GenshinData/TextMap/TextMapRU.json'),
-  th: require('./GenshinData/TextMap/TextMapTH.json'),
-  vi: require('./GenshinData/TextMap/TextMapVI.json')
-} as const
 
 /* ####################################################
  * # Importing data from datamined files.
@@ -68,7 +56,7 @@ export type CharacterData = {
   }
 }
 //parse baseStat/ascension/basic data
-const characterDataDump = Object.fromEntries(Object.entries(characterData).filter(([charid, charData]) => charid in characterIdMap).map(([charid, charData]) => {
+const characterDataDump = Object.fromEntries(Object.entries(avatarExcelConfigData).filter(([charid, charData]) => charid in characterIdMap).map(([charid, charData]) => {
   const { WeaponType, QualityType, AvatarPromoteId, HpBase, AttackBase, DefenseBase, PropGrowCurves } = charData
   const curves = Object.fromEntries(PropGrowCurves.map(({ Type, GrowCurve }) => [propTypeMap[Type], GrowCurve])) as CharacterData["curves"]
   const { InfoBirthDay, InfoBirthMonth, } = characterInfo[charid]
@@ -94,7 +82,7 @@ Object.entries(characterDataDump).forEach(([characterKey, data]) => {
 })
 
 
-const characterSkillParamDump = Object.fromEntries(Object.entries(characterData).filter(([charid, charData]) => charid in characterIdMap).map(([charid, charData]) => {
+const characterSkillParamDump = Object.fromEntries(Object.entries(avatarExcelConfigData).filter(([charid, charData]) => charid in characterIdMap).map(([charid, charData]) => {
   const { CandSkillDepotIds, SkillDepotId } = charData
   const result = {}
   let skillDepotId = SkillDepotId
@@ -177,13 +165,13 @@ export type WeaponData = {
     addStats: Partial<Record<StatKey, number>>
   }>
 }
-const weaponDataDump = Object.fromEntries(Object.entries(weaponData).filter(([weaponid, weaponData]) => weaponid in weaponIdMap).map(([weaponid, weaponData]) => {
+const weaponDataDump = Object.fromEntries(Object.entries(weaponExcelConfigData).filter(([weaponid, weaponData]) => weaponid in weaponIdMap).map(([weaponid, weaponData]) => {
   const { WeaponType, RankLevel, WeaponProp, SkillAffix, WeaponPromoteId } = weaponData
   const [main, sub] = WeaponProp
   const [refinementDataId,] = SkillAffix
-  const refData = refinementDataId && equipAffixDataData[refinementDataId]
+  const refData = refinementDataId && equipAffixExcelConfigData[refinementDataId]
 
-  const ascData = weaponAscensionData[WeaponPromoteId]
+  const ascData = weaponPromoteExcelConfigData[WeaponPromoteId]
 
   const result: WeaponData = {
     weaponType: weaponMap[WeaponType],
@@ -219,7 +207,7 @@ Object.entries(weaponDataDump).forEach(([weaponKey, data]) =>
   dumpFile(`../src/Data/Weapons/${data.weaponType[0].toUpperCase() + data.weaponType.slice(1)}/${weaponKey}/data_gen.json`, data))
 
 //exp curve to generate  stats at every level
-dumpFile(`../src/Weapon/expCurve_gen.json`, weaponExpCurve)
+dumpFile(`../src/Weapon/expCurve_gen.json`, weaponCurveExcelConfigData)
 dumpFile(`../src/Character/expCurve_gen.json`, characterExpCurve)
 
 //dump artifact data
@@ -229,12 +217,12 @@ dumpFile('../src/Artifact/artifact_sub_rolls_gen.json', artifactSubstatRollData)
 dumpFile('../src/Artifact/artifact_sub_rolls_correction_gen.json', artifactSubstatRollCorrection)
 
 //generate the MapHashes for localization for artifacts
-Object.entries(artifactSetData).filter(([SetId, data]) => SetId in artifactIdMap).forEach(([SetId, data]) => {
+Object.entries(reliquarySetExcelConfigData).filter(([SetId, data]) => SetId in artifactIdMap).forEach(([SetId, data]) => {
   const { EquipAffixId, SetNeedNum, ContainsList } = data
   if (!EquipAffixId) return
 
   const setEffects = Object.fromEntries(SetNeedNum.map((setNeed, i) => {
-    const equipAffixData = equipAffixDataData[EquipAffixId]?.[i]
+    const equipAffixData = equipAffixExcelConfigData[EquipAffixId]?.[i]
     if (!equipAffixData) throw `No data for EquipAffixId ${EquipAffixId} for setEffect ${setNeed}`
     return [setNeed, equipAffixData.DescTextMapHash]
   }))
@@ -249,7 +237,7 @@ Object.entries(artifactSetData).filter(([SetId, data]) => SetId in artifactIdMap
     }]
   }))
 
-  const setName = equipAffixDataData[EquipAffixId]?.[0]?.NameTextMapHash
+  const setName = equipAffixExcelConfigData[EquipAffixId]?.[0]?.NameTextMapHash
 
   mapHashData.artifact[artifactIdMap[SetId]] = {
     setName,
@@ -259,10 +247,10 @@ Object.entries(artifactSetData).filter(([SetId, data]) => SetId in artifactIdMap
 })
 
 //generate the MapHashes for localization for weapons
-Object.entries(weaponData).filter(([weaponid,]) => weaponid in weaponIdMap).forEach(([weaponid, weaponData]) => {
+Object.entries(weaponExcelConfigData).filter(([weaponid,]) => weaponid in weaponIdMap).forEach(([weaponid, weaponData]) => {
   const { NameTextMapHash, DescTextMapHash, SkillAffix } = weaponData
   const [ascensionDataId,] = SkillAffix
-  const ascData = ascensionDataId && equipAffixDataData[ascensionDataId]
+  const ascData = ascensionDataId && equipAffixExcelConfigData[ascensionDataId]
 
   mapHashData.weapon[weaponIdMap[weaponid]] = {
     name: NameTextMapHash,
@@ -273,7 +261,7 @@ Object.entries(weaponData).filter(([weaponid,]) => weaponid in weaponIdMap).forE
 })
 
 //generate the MapHashes for localization for characters
-Object.entries(characterData).filter(([charid,]) => charid in characterIdMap).forEach(([charid, charData]) => {
+Object.entries(avatarExcelConfigData).filter(([charid,]) => charid in characterIdMap).forEach(([charid, charData]) => {
   const { NameTextMapHash, DescTextMapHash, SkillDepotId, CandSkillDepotIds } = charData
   const { AvatarTitleTextMapHash, AvatarConstellationBeforTextMapHash } = characterInfo[charid]
   let skillDepotId = SkillDepotId

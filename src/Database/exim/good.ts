@@ -106,22 +106,13 @@ function importGOOD1(data: IGOOD, oldDatabase: ArtCharDatabase): ImportResult | 
   if (data.characters) {
     const invalid: any[] = []
     const characters = data.characters.flatMap(c => {
-      const parsed = parseCharacter(c)
+      const old = oldDatabase._getChar(c.key) ?? {}
+      const parsed = parseCharacter({ ...old, ...c })
       if (!parsed) invalid.push(c)
       return parsed ? [parsed] : []
     })
     const newCharKeys = new Set(characters.map(x => x.key))
     const oldCharKeys = new Set(oldDatabase._getCharKeys())
-
-    for (const character of characters) {
-      const old = oldDatabase._getChar(character.key)
-      if (!old) continue
-
-      for (const key in old) {
-        if (!(key in character))
-          character[key] = old[key]
-      }
-    }
 
     result.characters = {
       total: data.characters!.length,
