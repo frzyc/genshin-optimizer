@@ -1,33 +1,33 @@
 {
-  "name": "砂糖",
-  "title": "无害甜度",
-  "description": "对万物充满好奇的炼金术士，「生物炼金」学派的研究者。",
-  "constellationName": "烧瓶座",
+  "name": "Sucrose",
+  "title": "Harmless Sweetie",
+  "description": "An alchemist filled with curiosity about all things. She researches bio-alchemy.",
+  "constellationName": "Ampulla",
   "auto": {
-    "name": "简式风灵作成",
+    "name": "Wind Spirit Creation",
     "fields": {
       "normal": {
-        "0": "<strong>普通攻击</strong>",
-        "1": "进行至多四段的风灵攻击，造成<anemo>风元素伤害</anemo>。"
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Performs up to 4 attacks using Wind Spirits, dealing <anemo>Anemo DMG</anemo>."
       },
       "charged": {
-        "0": "<strong>重击</strong>",
-        "1": "消耗一定体力，短暂咏唱后，造成<anemo>风元素范围伤害</anemo>。"
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Consumes a certain amount of Stamina and deals <anemo>AoE Anemo DMG</anemo> after a short casting time."
       },
       "plunging": {
-        "0": "<strong>下落攻击</strong>",
-        "1": "凝聚风灵的力量，从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成<anemo>风元素范围伤害</anemo>。"
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Calling upon the power of her Wind Spirits, Sucrose plunges towards the ground from mid-air, damaging all opponents in her path. Deals <anemo>AoE Anemo DMG</anemo> upon impact with the ground."
       }
     },
     "skillParams": {
-      "0": "一段伤害",
-      "1": "二段伤害",
-      "2": "三段伤害",
-      "3": "四段伤害",
-      "4": "重击伤害",
-      "5": "重击体力消耗",
-      "6": "下坠期间伤害",
-      "7": "低空/高空坠地冲击伤害",
+      "0": "1-Hit DMG",
+      "1": "2-Hit DMG",
+      "2": "3-Hit DMG",
+      "3": "4-Hit DMG",
+      "4": "Charged Attack DMG",
+      "5": "Charged Attack Stamina Cost",
+      "6": "Plunge DMG",
+      "7": "Low/High Plunge DMG",
       "8": "",
       "9": "",
       "10": "",
@@ -39,15 +39,15 @@
     }
   },
   "skill": {
-    "name": "风灵作成·陆叁零捌",
+    "name": "Astable Anemohypostasis Creation - 6308",
     "description": {
-      "0": "召唤出小型风灵，将敌人与物体牵引至风灵所在位置，击飞范围内的敌人，并造成<anemo>风元素伤害</anemo>。",
+      "0": "Creates a small Wind Spirit that pulls opponents and objects towards its location, launches opponents within its AoE, and deals <anemo>Anemo DMG</anemo>.",
       "1": "<br/>",
-      "2": "<i>说来很不好意思，虽然术式里诞生的元素生命迅速就消散了，但是在冒险里真的很好用。失败的实验也会诞生实用技术。</i>"
+      "2": "<i>This is a little embarrassing, but though the elemental lifeforms birthed through this procedure dissipate very rapidly, they are incredibly useful when adventuring. Even failed experiments can have practical applications.</i>"
     },
     "skillParams": {
-      "0": "技能伤害",
-      "1": "冷却时间",
+      "0": "Skill DMG",
+      "1": "CD",
       "2": "",
       "3": "",
       "4": "",
@@ -65,23 +65,23 @@
     }
   },
   "burst": {
-    "name": "禁·风灵作成·柒伍同构贰型",
+    "name": "Forbidden Creation - Isomer 75 / Type II",
     "description": {
-      "0": "砂糖抛出不稳定的烧瓶，生成大型风灵。",
-      "1": "存在期间，大型风灵会持续牵引附近的敌人与物体，击飞附近的敌人，并造成<anemo>风元素伤害</anemo>。",
+      "0": "Sucrose hurls an unstable concoction that creates a Large Wind Spirit.",
+      "1": "While it persists, the Large Wind Spirit will continuously pull in surrounding opponents and objects, launch nearby opponents, and deal <anemo>Anemo DMG</anemo>.",
       "2": "<br/>",
-      "3": "<strong>元素转化</strong>",
-      "4": "若风灵在技能持续期间接触了<hydro>水元素</hydro>/<pyro>火元素</pyro>/<cryo>冰元素</cryo>/<electro>雷元素</electro>，则会获得对应元素属性，额外造成该元素的附加伤害。",
-      "5": "元素转化在技能持续期间仅会发生一次。",
+      "3": "<strong>Elemental Absorption</strong>",
+      "4": "If the Wind Spirit comes into contact with <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro> energy, it will deal additional elemental DMG of that type.",
+      "5": "Elemental Absorption may only occur once per use.",
       "6": "<br/>",
-      "7": "<i>砂糖也曾经想给每一个不稳态无相之风取名字。但是其世系迅速超过了兔兔伯爵的八百九十三世。</i>"
+      "7": "<i>Sucrose used to give names to her volatile Anemo Hypostases, but their line of heirs quickly grew to surpass Baron Bunny the 893rd.</i>"
     },
     "skillParams": {
-      "0": "持续伤害",
-      "1": "附加元素伤害",
-      "2": "持续时间",
-      "3": "冷却时间",
-      "4": "元素能量",
+      "0": "DoT",
+      "1": "Additional Elemental DMG",
+      "2": "Duration",
+      "3": "CD",
+      "4": "Energy Cost",
       "5": "",
       "6": "",
       "7": "",
@@ -96,60 +96,60 @@
     }
   },
   "passive1": {
-    "name": "触媒置换术",
+    "name": "Catalyst Conversion",
     "description": {
-      "0": "砂糖触发扩散反应时，使队伍中所有对应元素类型的角色（不包括砂糖自己）元素精通提升50，持续8秒。"
+      "0": "When Sucrose triggers a Swirl reaction, all characters in the party with the matching element (excluding Sucrose) have their Elemental Mastery increased by 50 for 8s."
     }
   },
   "passive2": {
-    "name": "小小的慧风",
+    "name": "Mollis Favonius",
     "description": {
-      "0": "<strong>风灵作成·陆叁零捌</strong>或<strong>禁·风灵作成·柒伍同构贰型</strong>命中敌人时，基于砂糖元素精通的20%，为队伍中所有角色（不包括砂糖自己）提供元素精通加成，持续8秒。"
+      "0": "When <strong>Astable Anemohypostasis Creation - 6308</strong> or <strong>Forbidden Creation - Isomer 75 / Type II</strong> hits an opponent, increases all party members' (excluding Sucrose) Elemental Mastery by an amount equal to 20% of Sucrose's Elemental Mastery for 8s."
     }
   },
   "passive3": {
-    "name": "不稳定发现",
+    "name": "Astable Invention",
     "description": {
-      "0": "合成角色与武器培养素材时，有10%概率获得2倍产出。"
+      "0": "When Sucrose crafts Character and Weapon Enhancement Materials, she has a 10% to obtain double the product."
     }
   },
   "constellation1": {
-    "name": "堆叠真空域",
+    "name": "Clustered Vacuum Field",
     "description": {
-      "0": "<strong>风灵作成·陆叁零捌</strong>的可使用次数增加1次。"
+      "0": "<strong>Astable Anemohypostasis Creation - 6308</strong> gains 1 additional charge."
     }
   },
   "constellation2": {
-    "name": "不羁型贝特",
+    "name": "Beth: Unbound Form",
     "description": {
-      "0": "<strong>禁·风灵作成·柒伍同构贰型</strong>的技能持续时间延长2秒。"
+      "0": "The duration of <strong>Forbidden Creation - Isomer 75 / Type II</strong> is increased by 2s."
     }
   },
   "constellation3": {
-    "name": "零失误少女",
+    "name": "Flawless Alchemistress",
     "description": {
-      "0": "<strong>风灵作成·陆叁零捌</strong>的技能等级提高3级。",
-      "1": "至多提升至15级。"
+      "0": "Increases the Level of <strong>Astable Anemohypostasis Creation - 6308</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
     }
   },
   "constellation4": {
-    "name": "炼金的偏执",
+    "name": "Alchemania",
     "description": {
-      "0": "砂糖的普通攻击或者重击累计命中敌人7次，<strong>风灵作成·陆叁零捌</strong>的冷却时间就会随机减少1-7秒。",
-      "1": "每0.1秒至多计数一次。"
+      "0": "Sucrose will reduce the CD of <strong>Astable Anemohypostasis Creation - 6308</strong> by 1-7s for every 7 Normal or Charged Attack hits she scores against opponents.",
+      "1": "One hit may be counted every 0.1s."
     }
   },
   "constellation5": {
-    "name": "认真普通瓶",
+    "name": "Caution: Standard Flask",
     "description": {
-      "0": "<strong>禁·风灵作成·柒伍同构贰型</strong>的技能等级提高3级。",
-      "1": "至多提升至15级。"
+      "0": "Increases the Level of <strong>Forbidden Creation - Isomer 75 / Type II</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
     }
   },
   "constellation6": {
-    "name": "混元熵增论",
+    "name": "Chaotic Entropy",
     "description": {
-      "0": "<strong>禁·风灵作成·柒伍同构贰型</strong>如果发生了元素转化，则使队伍中所有角色在技能持续时间内获得20%的对应元素伤害加成。"
+      "0": "If <strong>Forbidden Creation - Isomer 75 / Type II</strong> triggers an Elemental Absorption, all party members gain a 20% Elemental DMG Bonus for the corresponding absorbed element during its duration."
     }
   }
 }

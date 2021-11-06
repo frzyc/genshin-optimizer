@@ -1,24 +1,24 @@
 {
   "burst": {
-    "name": "万叶之一刀",
+    "name": "Kazuha Slash",
     "description": {
-      "0": "施展我流的奥义，斩出初岚般的一刀，造成<anemo>风元素范围伤害</anemo>。",
-      "1": "刀风会留下名为「流风秋野」的领域，对其中的敌人造成间歇的<anemo>风元素伤害</anemo>。",
+      "0": "The signature technique of Kazuha's self-styled bladework — a single slash that strikes with the force of the first winds of autumn, dealing <anemo>AoE Anemo DMG</anemo>.",
+      "1": "The blade's passage will leave behind a field named \"Autumn Whirlwind\" that periodically deals <anemo>AoE Anemo DMG</anemo> to opponents within its range.",
       "2": "<br/>",
-      "3": "<strong>元素转化</strong>",
-      "4": "若流风秋野在持续期间接触了<hydro>水元素</hydro>/<pyro>火元素</pyro>/<cryo>冰元素</cryo>/<electro>雷元素</electro>，则会获得对应元素属性，额外造成该元素附加伤害。",
-      "5": "这种转化在技能持续期间仅会发生一次。",
+      "3": "<strong>Elemental Absorption</strong>",
+      "4": "If Autumn Whirlwind comes into contact with <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, it will deal additional elemental DMG of that type.",
+      "5": "Elemental Absorption may only occur once per use.",
       "6": "<br/>",
-      "7": "<i>「须臾照见万世长，一叶便知天下秋。我欲凭切枫一闪，做万世之问叩——」</i>"
+      "7": "<i>\"I see eternity go by in an instant, the autumns of many years from a single leaf. Thus I shall slice this maple in a flash, and ask a question of the ages.\"</i>"
     },
-    "slashdmg": "斩击伤害",
+    "slashdmg": "Slashing DMG",
     "skillParams": {
-      "0": "斩击伤害",
-      "1": "持续伤害",
-      "2": "附加元素伤害",
-      "3": "持续时间",
-      "4": "冷却时间",
-      "5": "元素能量",
+      "0": "Slashing DMG",
+      "1": "DoT",
+      "2": "Additional Elemental DMG",
+      "3": "Duration",
+      "4": "CD",
+      "5": "Energy Cost",
       "6": "",
       "7": "",
       "8": "",
@@ -31,40 +31,40 @@
       "15": ""
     }
   },
-  "name": "枫原万叶",
-  "title": "红叶逐荒波",
-  "description": "来自稻妻的浪人武士，如今栖身于璃月船队「南十字」中。性情温和而洒脱，心中埋藏着许多往事。",
-  "constellationName": "枫红座",
+  "name": "Kaedehara Kazuha",
+  "title": "Scarlet Leaves Pursue Wild Waves",
+  "description": "A wandering samurai from Inazuma who is currently with Liyue's Crux Fleet. A gentle and carefree soul whose heart hides a great many burdens from the past.",
+  "constellationName": "Acer Palmatum",
   "auto": {
-    "name": "我流剑术",
+    "name": "Garyuu Bladework",
     "fields": {
       "normal": {
-        "0": "<strong>普通攻击</strong>",
-        "1": "进行至多五段的连续剑击。"
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Perform up to 5 rapid strikes."
       },
       "charged": {
-        "0": "<strong>重击</strong>",
-        "1": "消耗一定体力，瞬间向前方挥出两剑。"
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Consumes a certain amount of Stamina to unleash 2 rapid sword strikes."
       },
       "plunging": {
-        "0": "<strong>下落攻击</strong>",
-        "1": "从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成范围伤害。若这次下落攻击经由千早振施放，则会转为施放下落攻击·乱岚拨止。"
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact. If this Plunging Attack is triggered by Chihayaburu, it will be converted to Plunging Attack: Midare Ranzan."
       },
       "plunging_midare": {
-        "0": "<strong>下落攻击·乱岚拨止</strong>",
-        "1": "通过元素战技·千早振施放的下落攻击，造成的伤害将转化为<anemo>风元素伤害</anemo>，并在落地时施展秘剑产生小型的风穴，牵引附近的物体与敌人。"
+        "0": "<strong>Plunging Attack: Midare Ranzan</strong>",
+        "1": "When a Plunging Attack is performed using the effects of the Elemental Skill Chihayaburu, Plunging Attack DMG is converted to <anemo>Anemo DMG</anemo> and will create a small wind tunnel via a secret blade technique that pulls in nearby objects and opponents."
       }
     },
     "skillParams": {
-      "0": "一段伤害",
-      "1": "二段伤害",
-      "2": "三段伤害",
-      "3": "四段伤害",
-      "4": "五段伤害",
-      "5": "重击伤害",
-      "6": "重击体力消耗",
-      "7": "下坠期间伤害",
-      "8": "低空/高空坠地冲击伤害",
+      "0": "1-Hit DMG",
+      "1": "2-Hit DMG",
+      "2": "3-Hit DMG",
+      "3": "4-Hit DMG",
+      "4": "5-Hit DMG",
+      "5": "Charged Attack DMG",
+      "6": "Charged Attack Stamina Cost",
+      "7": "Plunge DMG",
+      "8": "Low/High Plunge DMG",
       "9": "",
       "10": "",
       "11": "",
@@ -75,28 +75,30 @@
     }
   },
   "skill": {
-    "name": "千早振",
+    "name": "Chihayaburu",
     "description": {
-      "0": "施展如同冲风般激昂的秘剑，将敌人与物体牵引至所在位置，击飞范围内的敌人，造成<anemo>风元素伤害</anemo>，并借由喷薄的气流如登泷般腾空而起。",
-      "1": "枫原万叶因元素战技·千早振而升空后的10秒内并持续处于空中时，若进行下落攻击，则会施展格外强劲的下落攻击·乱岚拨止。",
+      "0": "Unleashes a secret technique as fierce as the rushing wind that pulls objects and opponents towards Kazuha's current position before launching opponents within the AoE, dealing <anemo>Anemo DMG</anemo> and lifting Kazuha into the air on a rushing gust of wind.",
+      "1": "Within 10s of remaining airborne after casting Chihayaburu, Kazuha can unleash a powerful Plunging Attack known as Midare Ranzan.",
       "2": "<br/>",
-      "3": "<strong>点按</strong>",
-      "4": "可以在空中施放。",
+      "3": "<strong>Press</strong>",
+      "4": "Can be used in mid-air.",
       "5": "<br/>",
-      "6": "<strong>长按</strong>",
-      "7": "积蓄力量后施展，相对于点按，在更大的范围内造成更高的<anemo>风元素伤害</anemo>。",
+      "6": "<strong>Hold</strong>",
+      "7": "Charges up before unleashing greater <anemo>Anemo DMG</anemo> over a larger AoE than Press Mode.",
       "8": "<br/>",
-      "9": "<strong>下落攻击·乱岚拨止</strong>",
-      "10": "通过元素战技·千早振施放的下落攻击，造成的伤害将转化为<anemo>风元素伤害</anemo>，并在落地时施展秘剑产生小型的风穴，牵引附近的物体与敌人。",
-      "11": "乱岚拨止造成的伤害视为下落攻击伤害。",
+      "9": "<strong>Plunging Attack: Midare Ranzan</strong>",
+      "10": "When a Plunging Attack is performed using the effects of the Elemental Skill Chihayaburu, Plunging Attack DMG is converted to <anemo>Anemo DMG</anemo>. On landing, Kazuha creates a small wind tunnel via a secret blade technique that pulls in nearby objects and opponents.",
+      "11": "Midare Ranzan's DMG is considered Plunging Attack DMG.",
       "12": "<br/>",
-      "13": "<i>「枫袖起悲风，神代万世人百年，秋山落唐红。」</i>"
+      "13": "<i>\"Wind in branches grieves",
+      "14": "Bygone ages, gods of old",
+      "15": "Withered autumn leaves\"</i>"
     },
     "skillParams": {
-      "0": "点按技能伤害",
-      "1": "点按冷却时间",
-      "2": "长按技能伤害",
-      "3": "长按冷却时间",
+      "0": "Press Skill DMG",
+      "1": "Press CD",
+      "2": "Hold Skill DMG",
+      "3": "CD (hold)",
       "4": "",
       "5": "",
       "6": "",
@@ -112,71 +114,72 @@
     }
   },
   "passive1": {
-    "name": "相闻之剑法",
+    "name": "Soumon Swordsmanship",
     "description": {
-      "0": "<strong>千早振</strong>在施放时，如果接触了<hydro>水元素</hydro>/<pyro>火元素</pyro>/<cryo>冰元素</cryo>/<electro>雷元素</electro>，则会使这次<strong>千早振</strong>的下落攻击·乱岚拨止，发生元素转化，将附加200%攻击力的对应元素伤害，该伤害视为下落攻击伤害。每次<strong>千早振</strong>的技能效果中，元素转化仅会发生一次。"
+      "0": "If <strong>Chihayaburu</strong> comes into contact with <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro> when cast, <strong>Chihayaburu</strong> will absorb that element and if Plunging Attack: Midare Ranzan is used before the effect expires, it will deal an additional 200% ATK of the absorbed elemental type as DMG. This will be considered Plunging Attack DMG.",
+      "1": "Elemental Absorption may only occur once per use of <strong>Chihayaburu</strong>."
     }
   },
   "passive2": {
-    "name": "风物之诗咏",
+    "name": "Poetics of Fuubutsu",
     "description": {
-      "0": "枫原万叶触发扩散反应后，枫原万叶的每点元素精通，会为队伍中所有角色提供0.04%对应元素伤害加成，持续8秒。通过这种方式获得的不同元素伤害加成可以共存。"
+      "0": "Upon triggering a Swirl reaction, Kaedehara Kazuha will grant all party members a 0.04% Elemental DMG Bonus to the element absorbed by Swirl for every point of Elemental Mastery he has for 8s. Bonuses for different elements obtained through this method can co-exist."
     }
   },
   "passive3": {
-    "name": "松风霞立",
+    "name": "Cloud Strider",
     "description": {
-      "0": "队伍中自己的角色冲刺消耗的体力降低20%。",
-      "1": "无法与效果完全相同的固有天赋叠加。"
+      "0": "Decreases sprinting Stamina consumption for your own party members by 20%.",
+      "1": "Not stackable with Passive Talents that provide the exact same effects."
     }
   },
   "constellation1": {
-    "name": "千山红遍",
+    "name": "Scarlet Hills",
     "description": {
-      "0": "<strong>千早振</strong>的冷却时间减少10%。",
-      "1": "施放<strong>万叶之一刀</strong>时，重置<strong>千早振</strong>的冷却时间。"
+      "0": "Decreases <strong>Chihayaburu</strong>'s CD by 10%.",
+      "1": "Using <strong>Kazuha Slash</strong> resets the CD of <strong>Chihayaburu</strong>."
     }
   },
   "constellation2": {
-    "name": "山岚残芯",
+    "name": "Yamaarashi Tailwind",
     "description": {
-      "0": "<strong>万叶之一刀</strong>的流风秋野具有以下效果：",
+      "0": "The Autumn Whirlwind field created by <strong>Kazuha Slash</strong> has the following effects:",
       "1": [
-        "持续期间内，枫原万叶自己的元素精通提升200点；",
-        "其中的场上角色的元素精通提升200点。"
+        " Increases Kaedehara Kazuha's own Elemental Mastery by 200.",
+        " Increases the Elemental Mastery of characters within the field by 200."
       ],
       "2": "<br/>",
-      "3": "该命之座提供的元素精通提升效果无法叠加。"
+      "3": "The Elemental Mastery-increasing effects of this Constellation do not stack."
     }
   },
   "constellation3": {
-    "name": "枫袖奇谭",
+    "name": "Maple Monogatari",
     "description": {
-      "0": "<strong>千早振</strong>的技能等级提高3级。",
-      "1": "至多提升至15级。"
+      "0": "Increases the Level of <strong>Chihayaburu</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
     }
   },
   "constellation4": {
-    "name": "大空幻法",
+    "name": "Oozora Genpou",
     "description": {
-      "0": "当枫原万叶的元素能量低于45点时，具有如下效果：",
+      "0": "When Kaedehara Kazuha's Energy is lower than 45, he obtains the following effects:",
       "1": [
-        "点按、长按施放<strong>千早振</strong>时，将分别为枫原万叶恢复3、4点元素能量；",
-        "处于滑翔状态下时，每秒为枫原万叶恢复2点元素能量。"
+        "Pressing or Holding <strong>Chihayaburu</strong> regenerates 3 or 4 Energy for Kaedehara Kazuha, respectively.",
+        "When gliding, Kaedehara Kazuha regenerates 2 Energy per second."
       ]
     }
   },
   "constellation5": {
-    "name": "万世之集",
+    "name": "Wisdom of Bansei",
     "description": {
-      "0": "<strong>万叶之一刀</strong>的技能等级提高3级。",
-      "1": "至多提升至15级。"
+      "0": "Increases the Level of <strong>Kazuha Slash</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
     }
   },
   "constellation6": {
-    "name": "血赤叶红",
+    "name": "Crimson Momiji",
     "description": {
-      "0": "枫原万叶施放<strong>千早振</strong>或<strong>万叶之一刀</strong>后的5秒内，获得<anemo>风元素附魔</anemo>，并且枫原万叶的每点元素精通，都会使他的普通攻击、重击、下落攻击造成的伤害提高0.2%。"
+      "0": "After using <strong>Chihayaburu</strong> or <strong>Kazuha Slash</strong>, Kaedehara Kazuha gains an <anemo>Anemo Infusion</anemo> for 5s. Additionally, each point of Elemental Mastery will increase the DMG dealt by Kaedehara Kazuha's Normal, Charged, and Plunging Attack by 0.2%."
     }
   }
 }

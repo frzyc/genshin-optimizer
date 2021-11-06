@@ -1,12 +1,12 @@
 {
-  "name": "翡玉法球",
-  "description": "由璃月北郊绝云间出产的硬玉雕琢而成的法器。小巧轻盈，经久耐用，江湖人称「翡玉丸」。",
-  "passiveName": "激流",
+  "name": "Emerald Orb",
+  "description": "A catalyst carved out of the hard jade from Jueyun Karst north of Liyue. Small, light, and durable, it is known more colloquially as the \"jade ball.\"",
+  "passiveName": "Rapids",
   "passiveDescription": {
-    "0": "触发蒸发、感电、冰冻或水元素扩散反应后的12秒内，攻击力提高<cryo>20%</cryo>。",
-    "1": "触发蒸发、感电、冰冻或水元素扩散反应后的12秒内，攻击力提高<cryo>25%</cryo>。",
-    "2": "触发蒸发、感电、冰冻或水元素扩散反应后的12秒内，攻击力提高<cryo>30%</cryo>。",
-    "3": "触发蒸发、感电、冰冻或水元素扩散反应后的12秒内，攻击力提高<cryo>35%</cryo>。",
-    "4": "触发蒸发、感电、冰冻或水元素扩散反应后的12秒内，攻击力提高<cryo>40%</cryo>。"
+    "0": "Upon causing a Vaporize, Electro-Charged, Frozen, or a Hydro-infused Swirl reaction, increases ATK by <cryo>20%</cryo> for 12s.",
+    "1": "Upon causing a Vaporize, Electro-Charged, Frozen, or a Hydro-infused Swirl reaction, increases ATK by <cryo>25%</cryo> for 12s.",
+    "2": "Upon causing a Vaporize, Electro-Charged, Frozen, or a Hydro-infused Swirl reaction, increases ATK by <cryo>30%</cryo> for 12s.",
+    "3": "Upon causing a Vaporize, Electro-Charged, Frozen, or a Hydro-infused Swirl reaction, increases ATK by <cryo>35%</cryo> for 12s.",
+    "4": "Upon causing a Vaporize, Electro-Charged, Frozen, or a Hydro-infused Swirl reaction, increases ATK by <cryo>40%</cryo> for 12s."
   }
 }

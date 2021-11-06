@@ -1,12 +1,12 @@
 {
-  "name": "试作金珀",
-  "description": "黑岩厂中秘藏的金珀法器。其中黯黯绽放着日月星光。",
-  "passiveName": "炊金",
+  "name": "Prototype Amber",
+  "description": "A dully gilded catalyst secretly guarded in the Blackcliff Forge. It seems to glow with the very light from the sky.",
+  "passiveName": "Gilding",
   "passiveDescription": {
-    "0": "施放元素爆发后6秒内，每2秒恢复<cryo>4</cryo>点元素能量，队伍中的所有角色每2秒恢复<cryo>4%</cryo>生命值。",
-    "1": "施放元素爆发后6秒内，每2秒恢复<cryo>4.5</cryo>点元素能量，队伍中的所有角色每2秒恢复<cryo>4.5%</cryo>生命值。",
-    "2": "施放元素爆发后6秒内，每2秒恢复<cryo>5</cryo>点元素能量，队伍中的所有角色每2秒恢复<cryo>5%</cryo>生命值。",
-    "3": "施放元素爆发后6秒内，每2秒恢复<cryo>5.5</cryo>点元素能量，队伍中的所有角色每2秒恢复<cryo>5.5%</cryo>生命值。",
-    "4": "施放元素爆发后6秒内，每2秒恢复<cryo>6</cryo>点元素能量，队伍中的所有角色每2秒恢复<cryo>6%</cryo>生命值。"
+    "0": "Using an Elemental Burst regenerates <cryo>4</cryo> Energy every 2s for 6s. All party members will regenerate <cryo>4%</cryo> HP every 2s for this duration.",
+    "1": "Using an Elemental Burst regenerates <cryo>4.5</cryo> Energy every 2s for 6s. All party members will regenerate <cryo>4.5%</cryo> HP every 2s for this duration.",
+    "2": "Using an Elemental Burst regenerates <cryo>5</cryo> Energy every 2s for 6s. All party members will regenerate <cryo>5%</cryo> HP every 2s for this duration.",
+    "3": "Using an Elemental Burst regenerates <cryo>5.5</cryo> Energy every 2s for 6s. All party members will regenerate <cryo>5.5%</cryo> HP every 2s for this duration.",
+    "4": "Using an Elemental Burst regenerates <cryo>6</cryo> Energy every 2s for 6s. All party members will regenerate <cryo>6%</cryo> HP every 2s for this duration."
   }
 }

@@ -1,25 +1,25 @@
 {
   "burst": {
-    "cutting": "切割伤害",
-    "bloom": "绽放伤害",
-    "name": "神里流·霜灭",
+    "cutting": "Cutting DMG",
+    "bloom": "Bloom DMG",
+    "name": "Kamisato Art: Soumetsu",
     "description": {
-      "0": "以倾奇之姿汇聚寒霜，放出持续行进的霜见雪关扉。",
+      "0": "Summons forth a snowstorm with flawless poise, unleashing a Frostflake Seki no To that moves forward continuously.",
       "1": "<br/>",
-      "2": "<strong>霜见雪关扉</strong>",
+      "2": "<strong>Frostflake Seki no To</strong>",
       "3": [
-        "以刀锋般尖锐的霜风持续切割触及的敌人，造成<cryo>冰元素伤害</cryo>；",
-        "持续时间结束时绽放，造成<cryo>冰元素范围伤害</cryo>。"
+        "A storm of whirling icy winds that slashes repeatedly at every enemy it touches, dealing <cryo>Cryo DMG</cryo>.",
+        "The snowstorm explodes after its duration ends, dealing <cryo>AoE Cryo DMG</cryo>."
       ],
       "4": "<br/>",
-      "5": "<i>「吹雪濡鹭时，积思若霜，胸底思重焉哀怜。」</i>"
+      "5": "<i>\"The blizzard veils the heron's thoughts, pity heavy in its heart.\"</i>"
     },
     "skillParams": {
-      "0": "切割伤害",
-      "1": "绽放伤害",
-      "2": "持续时间",
-      "3": "冷却时间",
-      "4": "元素能量",
+      "0": "Cutting DMG",
+      "1": "Bloom DMG",
+      "2": "Duration",
+      "3": "CD",
+      "4": "Energy Cost",
       "5": "",
       "6": "",
       "7": "",
@@ -33,36 +33,36 @@
       "15": ""
     }
   },
-  "name": "神里绫华",
-  "title": "白鹭霜华",
-  "description": "稻妻「社奉行」神里家的大小姐。端庄而文雅，聪慧又坚韧。",
-  "constellationName": "雪鹤座",
+  "name": "Kamisato Ayaka",
+  "title": "Frostflake Heron",
+  "description": "Daughter of the Yashiro Commission's Kamisato Clan. Dignified and elegant, as well as wise and strong.",
+  "constellationName": "Grus Nivis",
   "auto": {
-    "name": "神里流·倾",
+    "name": "Kamisato Art - Kabuki",
     "fields": {
       "normal": {
-        "0": "<strong>普通攻击</strong>",
-        "1": "进行至多五段的连续剑击。"
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Performs up to 5 rapid strikes."
       },
       "charged": {
-        "0": "<strong>重击</strong>",
-        "1": "消耗一定体力，在居合中放出连续的剑风。"
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Consumes a certain amount of Stamina to unleash a flurry of sword ki."
       },
       "plunging": {
-        "0": "<strong>下落攻击</strong>",
-        "1": "从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成范围伤害。"
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Plunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact."
       }
     },
     "skillParams": {
-      "0": "一段伤害",
-      "1": "二段伤害",
-      "2": "三段伤害",
-      "3": "四段伤害",
-      "4": "五段伤害",
-      "5": "重击伤害",
-      "6": "重击体力消耗",
-      "7": "下坠期间伤害",
-      "8": "低空/高空坠地冲击伤害",
+      "0": "1-Hit DMG",
+      "1": "2-Hit DMG",
+      "2": "3-Hit DMG",
+      "3": "4-Hit DMG",
+      "4": "5-Hit DMG",
+      "5": "Charged Attack DMG",
+      "6": "Charged Attack Stamina Cost",
+      "7": "Plunge DMG",
+      "8": "Low/High Plunge DMG",
       "9": "",
       "10": "",
       "11": "",
@@ -73,15 +73,15 @@
     }
   },
   "skill": {
-    "name": "神里流·冰华",
+    "name": "Kamisato Art: Hyouka",
     "description": {
-      "0": "唤起盛开的冰之华，击飞身边的敌人并造成<cryo>冰元素范围伤害</cryo>。",
+      "0": "Summons blooming ice to launch nearby opponents, dealing <cryo>AoE Cryo DMG</cryo>.",
       "1": "<br/>",
-      "2": "<i>「晴云胧月夜，妄执如雾，心野凄迷恋羁旅。」</i>"
+      "2": "<i>\"Clouds shroud the moonlit night. Longing descends like a fog, filling the one detained with wanderlust.\"</i>"
     },
     "skillParams": {
-      "0": "技能伤害",
-      "1": "冷却时间",
+      "0": "Skill DMG",
+      "1": "CD",
       "2": "",
       "3": "",
       "4": "",
@@ -99,79 +99,79 @@
     }
   },
   "sprint": {
-    "name": "神里流·霰步",
+    "name": "Kamisato Art: Senho",
     "description": {
-      "0": "<strong>替代冲刺</strong>",
-      "1": "隐入碎冰，以消耗体力为代价，化为激流快速移动。",
+      "0": "<strong>Alternate Sprint</strong>",
+      "1": "Ayaka consumes Stamina and cloaks herself in a frozen fog that moves with her.",
       "2": "<br/>",
-      "3": "在霰步状态下，神里绫华可以在水面上高速移动。",
-      "4": "结束霰步现身时，将产生如下效果：",
+      "3": "In Senho form, she moves swiftly upon water.",
+      "4": "When she reappears, the following effects occur:",
       "5": [
-        "释放寒冰的力量，对周围的敌人施加<cryo>冰元素附着</cryo>；",
-        "将寒气凝聚在剑上，使神里绫华在短时间内获得<cryo>冰元素附魔</cryo>。"
+        "Ayaka unleashes frigid energy to apply <cryo>Cryo</cryo> on nearby opponents.",
+        "Coldness condenses around Ayaka's blade, infusing her attacks with <cryo>Cryo</cryo> for a brief period."
       ],
       "6": "<br/>",
-      "7": "<i>「滴雫濡羽瞬消无，白鹭踏水何可怨？」</i>"
+      "7": "<i>\"Feathers fleeting wet / the white heron treads water / a sight without flaw\"</i>"
     }
   },
   "passive1": {
-    "name": "天罪国罪镇词",
+    "name": "Amatsumi Kunitsumi Sanctification",
     "description": {
-      "0": "施放<strong>神里流·冰华</strong>后的6秒内，神里绫华的普通攻击与重击造成的伤害提升30%。"
+      "0": "After using <strong>Kamisato Art: Hyouka</strong>, Kamisato Ayaka's Normal and Charged Attacks deal 30% increased DMG for 6s."
     }
   },
   "passive2": {
-    "name": "寒天宣命祝词",
+    "name": "Kanten Senmyou Blessing",
     "description": {
-      "0": "<strong>神里流·霰步</strong>结束时释放的寒冰命中了敌人时，神里绫华将获得如下效果：",
+      "0": "When the Cryo application at the end of <strong>Kamisato Art: Senho</strong> hits an opponent, Kamisato Ayaka gains the following effects:",
       "1": [
-        "恢复10点体力；",
-        "获得18%<cryo>冰元素伤害加成</cryo>，持续10秒。"
+        "Restores 10 Stamina",
+        "Gains 18% <cryo>Cryo DMG Bonus</cryo> for 10s."
       ]
     }
   },
   "passive3": {
-    "name": "鉴查心得",
+    "name": "Fruits of Shinsa",
     "description": {
-      "0": "合成武器突破素材时，有10%概率获得2倍产出。"
+      "0": "When Ayaka crafts Weapon Ascension Materials, she has a 10% chance to receive double the product."
     }
   },
   "constellation1": {
-    "name": "霜杀墨染樱",
+    "name": "Snowswept Sakura",
     "description": {
-      "0": "神里绫华的普通攻击或重击对敌人造成<cryo>冰元素伤害</cryo>时，有50%的几率使<strong>神里流·冰华</strong>的冷却时间缩减0.3秒。该效果每0.1秒只能触发一次。"
+      "0": "When Kamisato Ayaka's Normal or Charged Attacks deal <cryo>Cryo DMG</cryo> to opponents, it has a 50% chance of decreasing the CD of <strong>Kamisato Art: Hyouka</strong> by 0.3s. This effect can occur once every 0.1s."
     }
   },
   "constellation2": {
-    "name": "三重雪关扉",
+    "name": "Blizzard Blade Seki no To",
     "description": {
-      "0": "施放<strong>神里流·霜灭</strong>时，会额外释放两股规模较小的霜见雪关扉，各自能造成原本20%的伤害。"
+      "0": "When casting <strong>Kamisato Art: Soumetsu</strong>, unleashes 2 smaller additional Frostflake Seki no To, each dealing 20% of the original storm's DMG."
     }
   },
   "constellation3": {
-    "name": "花白锦画纸吹雪",
+    "name": "Frostbloom Kamifubuki",
     "description": {
-      "0": "<strong>神里流·霜灭</strong>的技能等级提高3级。",
-      "1": "至多提升至15级。"
+      "0": "Increases the Level of <strong>Kamisato Art: Soumetsu</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
     }
   },
   "constellation4": {
-    "name": "盈缺流返",
+    "name": "Ebb and Flow",
     "description": {
-      "0": "敌人受到<strong>神里流·霜灭</strong>的霜见雪关扉造成的伤害后，防御力降低30%，持续6秒。"
+      "0": "Opponents damaged by <strong>Kamisato Art: Soumetsu</strong>'s Frostflake Seki no To will have their DEF decreased by 30% for 6s."
     }
   },
   "constellation5": {
-    "name": "花云钟入月",
+    "name": "Blossom Cloud Irutsuki",
     "description": {
-      "0": "<strong>神里流·冰华</strong>的技能等级提高3级。",
-      "1": "至多提升至15级。"
+      "0": "Increases the Level of <strong>Kamisato Art: Hyouka</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
     }
   },
   "constellation6": {
-    "name": "间水月",
+    "name": "Dance of Suigetsu",
     "description": {
-      "0": "每过10秒，神里绫华会获得「薄冰舞踏」，使重击造成的伤害提高298%。薄冰舞踏效果将在重击命中敌人的0.5秒后清除，并重新开始计算时间。"
+      "0": "Kamisato Ayaka gains Usurahi Butou every 10s, increasing her Charged Attack DMG by 298%. This buff will be cleared 0.5s after Ayaka's Charged ATK hits an opponent, after which the timer for this ability will restart."
     }
   }
 }

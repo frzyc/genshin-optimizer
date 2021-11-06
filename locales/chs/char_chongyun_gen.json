@@ -1,36 +1,36 @@
 {
-  "name": "重云",
-  "title": "雪融有踪",
-  "description": "驱邪世家的年轻方士，为压制自身的「纯阳之体」费尽心机。",
-  "constellationName": "乾坤锋座",
+  "name": "Chongyun",
+  "title": "Frozen Ardor",
+  "description": "A young exorcist from a family of exorcists. He does everything he can to suppress his abundance of yang energy.",
+  "constellationName": "Nubis Caesor",
   "auto": {
-    "name": "灭邪四式",
+    "name": "Demonbane",
     "fields": {
       "normal": {
-        "0": "<strong>普通攻击</strong>",
-        "1": "进行至多四段的连续挥砍。"
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Perform up to 4 consecutive strikes."
       },
       "charged": {
-        "0": "<strong>重击</strong>",
-        "1": "持续消耗体力，旋转大剑攻击周围的敌人。",
-        "2": "停止旋转时，会进行一次格外有力的挥砍。"
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Drains Stamina over time to perform continuous spinning attacks against all nearby opponents.",
+        "2": "At the end of the sequence, perform a more powerful slash. "
       },
       "plunging": {
-        "0": "<strong>下落攻击</strong>",
-        "1": "从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成范围伤害。"
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact."
       }
     },
     "skillParams": {
-      "0": "一段伤害",
-      "1": "二段伤害",
-      "2": "三段伤害",
-      "3": "四段伤害",
-      "4": "重击循环伤害",
-      "5": "重击终结伤害",
-      "6": "重击体力消耗",
-      "7": "最大持续时间",
-      "8": "下坠期间伤害",
-      "9": "低空/高空坠地冲击伤害",
+      "0": "1-Hit DMG",
+      "1": "2-Hit DMG",
+      "2": "3-Hit DMG",
+      "3": "4-Hit DMG",
+      "4": "Charged Attack Spinning DMG",
+      "5": "Charged Attack Final DMG",
+      "6": "Charged Attack Stamina Cost",
+      "7": "Max Duration",
+      "8": "Plunge DMG",
+      "9": "Low/High Plunge DMG",
       "10": "",
       "11": "",
       "12": "",
@@ -40,18 +40,18 @@
     }
   },
   "skill": {
-    "name": "灵刃·重华叠霜",
+    "name": "Spirit Blade: Chonghua's Layered Frost",
     "description": {
-      "0": "重云挥动巨剑猛击地面，在前方圆形范围内引发冰爆，并对敌人造成<cryo>冰元素伤害</cryo>。",
-      "1": "短暂延迟后，冰爆引发的寒气汇聚成重华叠霜领域，其中的单手剑、大剑、长柄武器角色获得<cryo>冰元素附魔</cryo>。",
+      "0": "Chongyun strikes the ground with his greatsword, causing a Cryo explosion in a circular AoE in front of him that deals <cryo>Cryo DMG</cryo>.",
+      "1": "After a short delay, the cold air created by the Cryo explosion will coalesce into a Chonghua Frost Field, within which all Sword, Claymore and Polearm-wielding characters' weapons will be infused with <cryo>Cryo</cryo>.",
       "2": "<br/>",
-      "3": "<i>「琳琅振响，十方静默。江河不动，重云凝霜。如法开坛，诸邪退散。」</i>"
+      "3": "<i>\"A crystal-clear ring, and all is silent. The rivers move not, and the clouds are heavy with frost. The altar gates open, and evil is banished.\"</i>"
     },
     "skillParams": {
-      "0": "技能伤害",
-      "1": "附魔持续时间",
-      "2": "领域持续时间",
-      "3": "冷却时间",
+      "0": "Skill DMG",
+      "1": "Infusion Duration",
+      "2": "Field Duration",
+      "3": "CD",
       "4": "",
       "5": "",
       "6": "",
@@ -67,17 +67,17 @@
     }
   },
   "burst": {
-    "name": "灵刃·云开星落",
+    "name": "Spirit Blade: Cloud-Parting Star",
     "description": {
-      "0": "重云结印，在前方半空中连续召唤出三柄巨大灵刃，短时间内依次落向地面并爆裂。",
-      "1": "灵刃爆裂时，会造成<cryo>冰元素范围伤害</cryo>，并击飞敌人。",
+      "0": "Performing the secret hand seals, Chongyun summons 3 giant spirit blades in mid-air that fall to the earth one by one after a short delay, exploding as they hit the ground.",
+      "1": "When the spirit blades explode, they will deal <cryo>AoE Cryo DMG</cryo> and launch opponents.",
       "2": "<br/>",
-      "3": "<i>「卓剑天地动，冰凌霜寒生。如律令！」</i>"
+      "3": "<i>\"As ice doth give the biting frost birth, My transcendent blade shakes heaven and earth. Heed my summons and come hence!\"</i>"
     },
     "skillParams": {
-      "0": "技能伤害",
-      "1": "冷却时间",
-      "2": "元素能量",
+      "0": "Skill DMG",
+      "1": "CD",
+      "2": "Energy Cost",
       "3": "",
       "4": "",
       "5": "",
@@ -94,61 +94,61 @@
     }
   },
   "passive1": {
-    "name": "吐纳真定",
+    "name": "Steady Breathing",
     "description": {
-      "0": "处在<strong>灵刃·重华叠霜</strong>领域内的单手剑、双手剑、长柄武器角色，普通攻击的攻击速度提升8%。"
+      "0": "Sword, Claymore, or Polearm-wielding characters within the field created by <strong>Spirit Blade: Chonghua's Layered Frost</strong> have their Normal ATK SPD increased by 8%."
     }
   },
   "passive2": {
-    "name": "追冰剑诀",
+    "name": "Rimechaser Blade",
     "description": {
-      "0": "<strong>灵刃·重华叠霜</strong>领域消失时，会唤出一柄灵刃自动攻击附近的敌人，造成相当于灵刃·重华叠霜技能伤害100%的<cryo>冰元素范围伤害</cryo>。被击中的敌人<cryo>冰元素抗性</cryo>降低10%，持续8秒。"
+      "0": "When the field created by <strong>Spirit Blade: Chonghua's Layered Frost</strong> disappears, another spirit blade will be summoned to strike nearby opponents, dealing 100% of Chonghua's Layered Frost's Skill DMG as <cryo>AoE Cryo DMG</cryo>. Opponents hit by this blade will have their <cryo>Cryo RES</cryo> decreased by 10% for 8s."
     }
   },
   "passive3": {
-    "name": "云游山海",
+    "name": "Gallant Journey",
     "description": {
-      "0": "在璃月执行探索派遣任务时，消耗的时间缩短25%。"
+      "0": "When dispatched on an expedition in Liyue, time consumed is reduced by 25%."
     }
   },
   "constellation1": {
-    "name": "释凌咏冰",
+    "name": "Ice Unleashed",
     "description": {
-      "0": "普通攻击的最后一击会向前方释放三道冰之刃，每道冰之刃对沿途的敌人造成重云50%攻击力的<cryo>冰元素伤害</cryo>。"
+      "0": "The last attack of Chongyun's Normal Attack combo releases 3 ice blades. Each blade deals 50% of Chongyun's ATK as <cryo>Cryo DMG</cryo> to all opponents in its path."
     }
   },
   "constellation2": {
-    "name": "周天运转",
+    "name": "Atmospheric Revolution",
     "description": {
-      "0": "在<strong>灵刃·重华叠霜</strong>领域内施放的元素战技与元素爆发的冷却时间减少15%。"
+      "0": "Elemental Skills and Elemental Bursts cast within the Frost Field created by <strong>Spirit Blade: Chonghua's Layered Frost</strong> have their CD time decreased by 15%."
     }
   },
   "constellation3": {
-    "name": "云尽光生",
+    "name": "Cloudburst",
     "description": {
-      "0": "<strong>灵刃·云开星落</strong>的技能等级提高3级。",
-      "1": "至多提升至15级。"
+      "0": "Increases the Level of <strong>Spirit Blade: Cloud-parting Star</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
     }
   },
   "constellation4": {
-    "name": "浮云霜天",
+    "name": "Frozen Skies",
     "description": {
-      "0": "重云的所有攻击命中受到<cryo>冰元素</cryo>影响的敌人时，自身将恢复1点元素能量。",
-      "1": "该效果每2秒最多触发一次。"
+      "0": "Chongyun regenerates 1 Energy every time he hits an opponent affected by <cryo>Cryo</cryo>.",
+      "1": "This effect can only occur once every 2s."
     }
   },
   "constellation5": {
-    "name": "真道正理",
+    "name": "The True Path",
     "description": {
-      "0": "<strong>灵刃·重华叠霜</strong>的技能等级提高3级。",
-      "1": "至多提升至15级。"
+      "0": "Increases the Level of <strong>Spirit Blade: Chonghua's Layered Frost</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
     }
   },
   "constellation6": {
-    "name": "四灵捧圣",
+    "name": "Rally of Four Blades",
     "description": {
-      "0": "<strong>灵刃·云开星落</strong>对生命值百分比低于重云的敌人造成伤害时，伤害提升15%；",
-      "1": "此外，施放时，会召唤一柄额外的灵刃。"
+      "0": "<strong>Spirit Blade: Cloud-parting Star</strong> deals 15% more DMG to opponents with a lower percentage of their Max HP remaining than Chongyun.",
+      "1": "This skill will also summon 1 additional spirit blade."
     }
   }
 }

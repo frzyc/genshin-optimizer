@@ -1,29 +1,29 @@
 {
-  "setName": "角斗士的终幕礼",
+  "setName": "Gladiator's Finale",
   "setEffects": {
-    "2": "攻击力提高18%。",
-    "4": "装备该圣遗物套装的角色为单手剑、双手剑、长柄武器角色时，角色普通攻击造成的伤害提高35%。"
+    "2": "ATK +18%.",
+    "4": "If the wielder of this artifact set uses a Sword, Claymore or Polearm, increases their Normal Attack DMG by 35%."
   },
   "pieces": {
     "flower": {
-      "name": "角斗士的留恋",
-      "desc": "无人知晓传奇的斗士为何始终将这朵小花戴在胸口，这是残酷的战士身上唯一的弱点。"
+      "name": "Gladiator's Nostalgia",
+      "desc": "No one knows why the legendary gladiator wore this flower on his chest. It was the brutal warrior's only weakness."
     },
     "plume": {
-      "name": "角斗士的归宿",
-      "desc": "如隼般自在的梦想之羽。在传奇生涯的终点，无羁的飞鸟在他的心口覆上了这根羽毛。"
+      "name": "Gladiator's Destiny",
+      "desc": "A feather of dreams that soars free like an eagle. At the end of the gladiator's legendary life, this parting gift was left upon his chest by a bird that knew true freedom."
     },
     "sands": {
-      "name": "角斗士的希冀",
-      "desc": "记录了角斗士血染剧场的年月的时计。之于其人，则象征着去往终获自由之日的道路。"
+      "name": "Gladiator's Longing",
+      "desc": "A timepiece that recorded the gladiator's days in the bloodstained Colosseum. To him, it counted down the days on his long road to freedom."
     },
     "goblet": {
-      "name": "角斗士的酣醉",
-      "desc": "古代的角斗士痛饮胜利之酒的金杯。直到他倒下的那一刻，酒杯被他自己的岁月灌满。"
+      "name": "Gladiator's Intoxication",
+      "desc": "The golden cup a champion gladiator drank from in ancient times. It brimmed with his glory for years until the fateful day of his fall."
     },
     "circlet": {
-      "name": "角斗士的凯旋",
-      "desc": "古代传奇角斗士的头盔，曾沾染了无数敌手的鲜血，也曾骄傲地接受无数观众的欢呼。"
+      "name": "Gladiator's Triumphus",
+      "desc": "The helmet of a legendary gladiator from ancient times, who would proudly stretch out his bloodied arms to welcome the thunderous applause of his audience."
     }
   }
 }

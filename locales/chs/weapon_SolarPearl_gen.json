@@ -1,12 +1,12 @@
 {
-  "name": "匣里日月",
-  "description": "材质难解的暗金宝珠，饱含日月天地的光辉，脉动着温暖的力量。",
-  "passiveName": "日月辉",
+  "name": "Solar Pearl",
+  "description": "A dull, golden pearl made of an unknown substance that harbors the light of the sun and the moon and pulses with a warm strength.",
+  "passiveName": "Solar Shine",
   "passiveDescription": {
-    "0": "普通攻击命中后的6秒内，元素战技与元素爆发的伤害提高<cryo>20%</cryo>；元素战技与元素爆发命中后的6秒内，普通攻击的伤害提高<cryo>20%</cryo>。",
-    "1": "普通攻击命中后的6秒内，元素战技与元素爆发的伤害提高<cryo>25%</cryo>；元素战技与元素爆发命中后的6秒内，普通攻击的伤害提高<cryo>25%</cryo>。",
-    "2": "普通攻击命中后的6秒内，元素战技与元素爆发的伤害提高<cryo>30%</cryo>；元素战技与元素爆发命中后的6秒内，普通攻击的伤害提高<cryo>30%</cryo>。",
-    "3": "普通攻击命中后的6秒内，元素战技与元素爆发的伤害提高<cryo>35%</cryo>；元素战技与元素爆发命中后的6秒内，普通攻击的伤害提高<cryo>35%</cryo>。",
-    "4": "普通攻击命中后的6秒内，元素战技与元素爆发的伤害提高<cryo>40%</cryo>；元素战技与元素爆发命中后的6秒内，普通攻击的伤害提高<cryo>40%</cryo>。"
+    "0": "Normal Attack hits increase Elemental Skill and Elemental Burst DMG by <cryo>20%</cryo> for 6s. Likewise, Elemental Skill or Elemental Burst hits increase Normal Attack DMG by <cryo>20%</cryo> for 6s.",
+    "1": "Normal Attack hits increase Elemental Skill and Elemental Burst DMG by <cryo>25%</cryo> for 6s. Likewise, Elemental Skill or Elemental Burst hits increase Normal Attack DMG by <cryo>25%</cryo> for 6s.",
+    "2": "Normal Attack hits increase Elemental Skill and Elemental Burst DMG by <cryo>30%</cryo> for 6s. Likewise, Elemental Skill or Elemental Burst hits increase Normal Attack DMG by <cryo>30%</cryo> for 6s.",
+    "3": "Normal Attack hits increase Elemental Skill and Elemental Burst DMG by <cryo>35%</cryo> for 6s. Likewise, Elemental Skill or Elemental Burst hits increase Normal Attack DMG by <cryo>35%</cryo> for 6s.",
+    "4": "Normal Attack hits increase Elemental Skill and Elemental Burst DMG by <cryo>40%</cryo> for 6s. Likewise, Elemental Skill or Elemental Burst hits increase Normal Attack DMG by <cryo>40%</cryo> for 6s."
   }
 }

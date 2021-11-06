@@ -1,29 +1,29 @@
 {
-  "setName": "染血的骑士道",
+  "setName": "Bloodstained Chivalry",
   "setEffects": {
-    "2": "造成的物理伤害提高25%。",
-    "4": "击败敌人后的10秒内，施放重击时不消耗体力，且重击造成的伤害提升50%。"
+    "2": "Physical DMG +25%",
+    "4": "After defeating an opponent, increases Charged Attack DMG by 50%, and reduces its Stamina cost to 0 for 10s."
   },
   "pieces": {
     "flower": {
-      "name": "染血的铁之心",
-      "desc": "被血染黑，变得如钢铁一般坚硬的干花。对故主而言，是某种纪念品吧。"
+      "name": "Bloodstained Flower of Iron",
+      "desc": "A dried flower stained black with blood and now as hard as steel. Probably some sort of a memento for its former master."
     },
     "plume": {
-      "name": "染血的黑之羽",
-      "desc": "黏在骑士斗篷上的鸦羽。因为反复沾染大量的黑血已经被彻底染成墨色。"
+      "name": "Bloodstained Black Plume",
+      "desc": "A raven feather pinned to a knight's cape. Countless bloodstains have dyed it pitch black."
     },
     "sands": {
-      "name": "骑士染血之时",
-      "desc": "骑士曾经使用过的时计。其中的液体已经完全凝结了，失去了计时功能。"
+      "name": "Bloodstained Final Hour",
+      "desc": "A timepiece once used by a knight. The liquid inside has dried up, rendering it useless."
     },
     "goblet": {
-      "name": "染血骑士之杯",
-      "desc": "染血骑士持有的黯淡金属杯皿。外壁因为烟熏与凝结的血变得漆黑如夜。"
+      "name": "Bloodstained Chevalier's Goblet",
+      "desc": "The dark metallic vessel owned by the Bloodstained Knight. Its exterior has been stained as black as the night by smoke and coagulated blood."
     },
     "circlet": {
-      "name": "染血的铁假面",
-      "desc": "骑士用来遮掩自己面目的铁面具，关于面具下的容貌几何曾有无数猜想。"
+      "name": "Bloodstained Iron Mask",
+      "desc": "The iron mask the knight used to conceal their identity. Many have speculated about the face behind the mask."
     }
   }
 }

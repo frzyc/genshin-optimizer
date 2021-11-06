@@ -1,36 +1,36 @@
 {
-  "name": "魈",
-  "title": "护法夜叉",
-  "description": "守护璃月的仙人，「夜叉」。美号「降魔大圣」，妙称「护法夜叉大将」。",
-  "constellationName": "金翅鹏王座",
+  "name": "Xiao",
+  "title": "Vigilant Yaksha",
+  "description": "A yaksha adeptus who defends Liyue. Also heralded as the \"Conqueror of Demons\" and \"Vigilant Yaksha.\"",
+  "constellationName": "Alatus Nemeseos",
   "auto": {
-    "name": "卷积微尘",
+    "name": "Whirlwind Thrust",
     "fields": {
       "normal": {
-        "0": "<strong>普通攻击</strong>",
-        "1": "进行至多六段的连续枪击。"
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Performs up to 6 consecutive spear strikes."
       },
       "charged": {
-        "0": "<strong>重击</strong>",
-        "1": "消耗一定体力，进行上挑攻击。"
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Consumes a certain amount of Stamina to perform an upward thrust."
       },
       "plunging": {
-        "0": "<strong>下落攻击</strong>",
-        "1": "从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成范围伤害。",
-        "2": "魈进行下落攻击时，不会承受坠落伤害。"
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+        "2": "Xiao does not take DMG from performing Plunging Attacks."
       }
     },
     "skillParams": {
-      "0": "一段伤害",
-      "1": "二段伤害",
-      "2": "三段伤害",
-      "3": "四段伤害",
-      "4": "五段伤害",
-      "5": "六段伤害",
-      "6": "重击伤害",
-      "7": "重击体力消耗",
-      "8": "下坠期间伤害",
-      "9": "低空/高空坠地冲击伤害",
+      "0": "1-Hit DMG",
+      "1": "2-Hit DMG",
+      "2": "3-Hit DMG",
+      "3": "4-Hit DMG",
+      "4": "5-Hit DMG",
+      "5": "6-Hit DMG",
+      "6": "Charged Attack DMG",
+      "7": "Charged Attack Stamina Cost",
+      "8": "Plunge DMG",
+      "9": "Low/High Plunge DMG",
       "10": "",
       "11": "",
       "12": "",
@@ -40,17 +40,17 @@
     }
   },
   "skill": {
-    "name": "风轮两立",
+    "name": "Lemniscatic Wind Cycling",
     "description": {
-      "0": "疾速突进，对路径上的敌人造成<anemo>风元素伤害</anemo>。",
-      "1": "可以在空中施放。",
-      "2": "初始拥有2次可使用次数。",
+      "0": "Xiao lunges forward, dealing <anemo>Anemo DMG</anemo> to opponents in his path.",
+      "1": "Can be used in mid-air.",
+      "2": "Starts with 2 charges.",
       "3": "<br/>",
-      "4": "<i>在他乡的传说里，世界会被两大风轮碾碎。魈的枪术已臻化境，来回之间仿佛两座风轮同时撕裂敌人。</i>"
+      "4": "<i>According to the legends of another land, the world will someday be crushed by two great wind wheels. Xiao's mastery over polearms is transcendent, ripping his foes apart like those legendary wind wheels.</i>"
     },
     "skillParams": {
-      "0": "技能伤害",
-      "1": "冷却时间",
+      "0": "Skill DMG",
+      "1": "CD",
       "2": "",
       "3": "",
       "4": "",
@@ -68,28 +68,28 @@
     }
   },
   "burst": {
-    "name": "靖妖傩舞",
+    "name": "Bane of All Evil",
     "description": {
-      "0": "展现数千年前令神魔精妖睹之胆颤的夜叉傩面。",
+      "0": "Xiao dons the Yaksha Mask that set gods and demons trembling millennia ago.",
       "1": "<br/>",
-      "2": "<strong>夜叉傩面</strong>",
+      "2": "<strong>Yaksha's Mask</strong>",
       "3": [
-        "大幅提升魈的跳跃能力；",
-        "提高攻击范围与攻击伤害；",
-        "将攻击伤害转为<anemo>风元素伤害</anemo>，该元素转化无法被附魔覆盖。"
+        "Greatly increases Xiao's jumping ability.",
+        "Increases his attack AoE and attack DMG.",
+        "Converts attack DMG into <anemo>Anemo DMG</anemo>, which cannot be overridden by any other elemental infusion."
       ],
       "4": "<br/>",
-      "5": "在这个状态下，魈会持续损失生命值。",
-      "6": "效果将在魈退场时解除。",
+      "5": "In this state, Xiao will continuously lose HP.",
+      "6": "The effects of this skill end when Xiao leaves the field.",
       "7": "<br/>",
-      "8": "<i>戴上降魔的傩面，现出令诸恶胆寒，除尽妖魔奸邪的「护法夜叉」之姿。获得强大的力量，也会引导出巨大的痛苦。其式既名「靖妖傩舞」。</i>"
+      "8": "<i>Donning the Mask of the Yaksha, Xiao takes the terrifying, demon-conquering form of the Vigilant Yaksha. But this great power has also brought him great suffering. Some call him \"The Bane of All Evil.\"</i>"
     },
     "skillParams": {
-      "0": "普通攻击/重击/下落攻击伤害提升",
-      "1": "生命流失",
-      "2": "持续时间",
-      "3": "冷却时间",
-      "4": "元素能量",
+      "0": "Normal/Charged/Plunging Attack DMG Bonus",
+      "1": "Life Drain",
+      "2": "Duration",
+      "3": "CD",
+      "4": "Energy Cost",
       "5": "",
       "6": "",
       "7": "",
@@ -104,62 +104,62 @@
     }
   },
   "passive1": {
-    "name": "降魔·平妖大圣",
+    "name": "Conqueror of Evil: Tamer of Demons",
     "description": {
-      "0": "在<strong>靖妖傩舞</strong>状态下，魈造成的所有伤害提高5%。此后，在技能持续时间内，每经过3秒，造成的伤害再额外提高5%。",
-      "1": "至多获得25%伤害加成。"
+      "0": "While under the effects of <strong>Bane of All Evil</strong>, all DMG dealt by Xiao increases by 5%. DMG increases by a further 5% for every 3s the ability persists.",
+      "1": "The maximum DMG Bonus is 25%."
     }
   },
   "passive2": {
-    "name": "坏劫·国土碾尘",
+    "name": "Dissolution Eon: Heaven Fall",
     "description": {
-      "0": "施放<strong>风轮两立</strong>会使之后7秒内的风轮两立造成的伤害提高15%。",
-      "1": "该效果持续7秒，最多叠加3次，叠加时刷新持续时间。"
+      "0": "Using <strong>Lemniscatic Wind Cycling</strong> increases the DMG of subsequent uses of Lemniscatic Wind Cycling by 15%.",
+      "1": "This effect lasts for 7s, and has a maximum of 3 stacks. Gaining a new stack refreshes the effect's duration."
     }
   },
   "passive3": {
-    "name": "神通·空中自在法",
+    "name": "Transcension: Gravity Defier",
     "description": {
-      "0": "队伍中自己的角色攀爬消耗的体力降低20%。",
-      "1": "无法与效果完全相同的固有天赋叠加。"
+      "0": "Decreases climbing Stamina consumption for your own party members by 20%.",
+      "1": "Not stackable with Passive Talents that provide the exact same effects."
     }
   },
   "constellation1": {
-    "name": "坏劫·毁坏三界",
+    "name": "Dissolution Eon: Destroyer of Worlds",
     "description": {
-      "0": "<strong>风轮两立</strong>的可使用次数增加1次。"
+      "0": "Increases <strong>Lemniscatic Wind Cycling</strong>'s charges by 1."
     }
   },
   "constellation2": {
-    "name": "空劫·虚空华开敷变",
+    "name": "Annihilation Eon: Blossom of Kaleidos",
     "description": {
-      "0": "处于队伍后台时，魈自己的元素充能效率提高25%。"
+      "0": "When in the party and not on the field, Xiao's Energy Recharge is increased by 25%."
     }
   },
   "constellation3": {
-    "name": "降魔·忿怒显相",
+    "name": "Conqueror of Evil: Wrath Deity",
     "description": {
-      "0": "<strong>风轮两立</strong>的技能等级提高3级。",
-      "1": "至多提升至15级。"
+      "0": "Increases the Level of <strong>Lemniscatic Wind Cycling</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
     }
   },
   "constellation4": {
-    "name": "神通·诸苦灭尽",
+    "name": "Transcension: Extinction of Suffering",
     "description": {
-      "0": "魈的生命值低于50%时，获得100%防御力提升。"
+      "0": "When Xiao's HP falls below 50%, he gains a 100% DEF Bonus."
     }
   },
   "constellation5": {
-    "name": "成劫·无明增长",
+    "name": "Evolution Eon: Origin of Ignorance",
     "description": {
-      "0": "<strong>靖妖傩舞</strong>的技能等级提高3级。",
-      "1": "至多提升至15级。"
+      "0": "Increases the Level of <strong>Bane of All Evil</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
     }
   },
   "constellation6": {
-    "name": "降魔·护法夜叉",
+    "name": "Conqueror of Evil: Guardian Yaksha",
     "description": {
-      "0": "在<strong>靖妖傩舞</strong>状态下，下落攻击命中至少2个敌人时，<strong>风轮两立</strong>立刻获得1次可使用次数，并且在接下来1秒内，可以无视冷却时间施放风轮两立。"
+      "0": "While under the effects of <strong>Bane of All Evil</strong>, hitting at least 2 opponents with Xiao's Plunging Attack will immediately grant him 1 charge of <strong>Lemniscatic Wind Cycling</strong>, and for the next 1s, he may use Lemniscatic Wind Cycling while ignoring its CD."
     }
   }
 }

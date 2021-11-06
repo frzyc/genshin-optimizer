@@ -1,29 +1,29 @@
 {
-  "setName": "渡过烈火的贤人",
+  "setName": "Lavawalker",
   "setEffects": {
-    "2": "火元素抗性提高40%。",
-    "4": "对处于火元素影响下的敌人造成的伤害提升35%。"
+    "2": "Pyro RES increased by 40%.",
+    "4": "Increases DMG against opponents affected by Pyro by 35%."
   },
   "pieces": {
     "flower": {
-      "name": "渡火者的决绝",
-      "desc": "在烈焰的簇拥下盛开的花朵，传说古代智者佩着它走进了火海。"
+      "name": "Lavawalker's Resolution",
+      "desc": "A flower that blooms amidst burning flames. It is said that long ago, a sage once wore it as he walked into a sea of fire."
     },
     "plume": {
-      "name": "渡火者的解脱",
-      "desc": "浴火的孤高之鸟的羽毛，似乎能从中听到野火里的振翅之声。"
+      "name": "Lavawalker's Salvation",
+      "desc": "The feather of a proud phoenix. You can almost hear the sound of its wings flapping in the scorching flames."
     },
     "sands": {
-      "name": "渡火者的煎熬",
-      "desc": "流淌着闪烁热砂的沙漏。流沙匆匆而去，从不留下任何烙印。"
+      "name": "Lavawalker's Torment",
+      "desc": "Burning sand flows within this hourglass. Despite the intense heat, the sand leave no mark upon the vessel that houses it."
     },
     "goblet": {
-      "name": "渡火者的醒悟",
-      "desc": "传说中是能耐流火高热的杯盏，如今其中空无一物仅有余温。"
+      "name": "Lavawalker's Epiphany",
+      "desc": "A legendary goblet that can withstand extremely high temperatures. It still retains a degree of warmth even though it is now empty."
     },
     "circlet": {
-      "name": "渡火者的智慧",
-      "desc": "渡过火海的智者之冠，曾经映照着在热浪中挺立的古老身影。"
+      "name": "Lavawalker's Wisdom",
+      "desc": "The circlet of a sage who traversed a sea of fire. It once shone brightly from their ancient silhouette as they stood strong amidst the flames."
     }
   }
 }

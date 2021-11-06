@@ -1,12 +1,12 @@
 {
-  "name": "万国诸海图谱",
-  "description": "详尽记载了大陆周边海流气候的海图，是从异国经由商路流落到璃月的奇异典籍。",
-  "passiveName": "注能之卷",
+  "name": "Mappa Mare",
+  "description": "A nautical chart featuring nearby currents and climates that somehow found its way into Liyue via foreign traders.",
+  "passiveName": "Infusion Scroll",
   "passiveDescription": {
-    "0": "触发元素反应后的10秒内，获得<cryo>8%</cryo>元素伤害加成，该效果最多可以叠加2层。",
-    "1": "触发元素反应后的10秒内，获得<cryo>10%</cryo>元素伤害加成，该效果最多可以叠加2层。",
-    "2": "触发元素反应后的10秒内，获得<cryo>12%</cryo>元素伤害加成，该效果最多可以叠加2层。",
-    "3": "触发元素反应后的10秒内，获得<cryo>14%</cryo>元素伤害加成，该效果最多可以叠加2层。",
-    "4": "触发元素反应后的10秒内，获得<cryo>16%</cryo>元素伤害加成，该效果最多可以叠加2层。"
+    "0": "Triggering an Elemental reaction grants a <cryo>8%</cryo> Elemental DMG Bonus for 10s. Max 2 stacks.",
+    "1": "Triggering an Elemental reaction grants a <cryo>10%</cryo> Elemental DMG Bonus for 10s. Max 2 stacks.",
+    "2": "Triggering an Elemental reaction grants a <cryo>12%</cryo> Elemental DMG Bonus for 10s. Max 2 stacks.",
+    "3": "Triggering an Elemental reaction grants a <cryo>14%</cryo> Elemental DMG Bonus for 10s. Max 2 stacks.",
+    "4": "Triggering an Elemental reaction grants a <cryo>16%</cryo> Elemental DMG Bonus for 10s. Max 2 stacks."
   }
 }

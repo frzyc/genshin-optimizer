@@ -1,12 +1,12 @@
 {
-  "name": "天空之傲",
-  "description": "象征风龙的骄傲广布长空的双手剑。挥舞时的低吟是风龙的气势，蕴含苍空与长风的力量。",
-  "passiveName": "斩裂晴空的龙脊",
+  "name": "Skyward Pride",
+  "description": "A claymore that symbolizes the pride of Dvalin soaring through the skies. When swung, it emits a deep hum as the full force of Dvalin's command of the sky and the wind is unleashed.",
+  "passiveName": "Sky-ripping Dragon Spine",
   "passiveDescription": {
-    "0": "造成的伤害提高<cryo>8%</cryo>；施放元素爆发后：普通攻击和重击命中时会发出真空刃，对路径上的敌人造成<cryo>80%</cryo>攻击力的伤害，持续20秒或直至发出8次真空刃。",
-    "1": "造成的伤害提高<cryo>10%</cryo>；施放元素爆发后：普通攻击和重击命中时会发出真空刃，对路径上的敌人造成<cryo>100%</cryo>攻击力的伤害，持续20秒或直至发出8次真空刃。",
-    "2": "造成的伤害提高<cryo>12%</cryo>；施放元素爆发后：普通攻击和重击命中时会发出真空刃，对路径上的敌人造成<cryo>120%</cryo>攻击力的伤害，持续20秒或直至发出8次真空刃。",
-    "3": "造成的伤害提高<cryo>14%</cryo>；施放元素爆发后：普通攻击和重击命中时会发出真空刃，对路径上的敌人造成<cryo>140%</cryo>攻击力的伤害，持续20秒或直至发出8次真空刃。",
-    "4": "造成的伤害提高<cryo>16%</cryo>；施放元素爆发后：普通攻击和重击命中时会发出真空刃，对路径上的敌人造成<cryo>160%</cryo>攻击力的伤害，持续20秒或直至发出8次真空刃。"
+    "0": "Increases all DMG by <cryo>8%</cryo>. After using an Elemental Burst, Normal or Charged Attack, on hit, creates a vacuum blade that does <cryo>80%</cryo> of ATK as DMG to opponents along its path. Lasts for 20s or 8 vacuum blades.",
+    "1": "Increases all DMG by <cryo>10%</cryo>. After using an Elemental Burst, Normal or Charged Attack, on hit, creates a vacuum blade that does <cryo>100%</cryo> of ATK as DMG to opponents along its path. Lasts for 20s or 8 vacuum blades.",
+    "2": "Increases all DMG by <cryo>12%</cryo>. After using an Elemental Burst, Normal or Charged Attack, on hit, creates a vacuum blade that does <cryo>120%</cryo> of ATK as DMG to opponents along its path. Lasts for 20s or 8 vacuum blades.",
+    "3": "Increases all DMG by <cryo>14%</cryo>. After using an Elemental Burst, Normal or Charged Attack, on hit, creates a vacuum blade that does <cryo>140%</cryo> of ATK as DMG to opponents along its path. Lasts for 20s or 8 vacuum blades.",
+    "4": "Increases all DMG by <cryo>16%</cryo>. After using an Elemental Burst, Normal or Charged Attack, on hit, creates a vacuum blade that does <cryo>160%</cryo> of ATK as DMG to opponents along its path. Lasts for 20s or 8 vacuum blades."
   }
 }

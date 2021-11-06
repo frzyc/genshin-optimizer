@@ -1,29 +1,29 @@
 {
-  "setName": "勇士之心",
+  "setName": "Brave Heart",
   "setEffects": {
-    "2": "攻击力提高18%。",
-    "4": "对生命值高于50%的敌人，造成的伤害增加30%。"
+    "2": "ATK +18%.",
+    "4": "Increases DMG by 30% against opponents with more than 50% HP."
   },
   "pieces": {
     "flower": {
-      "name": "勇士的勋章",
-      "desc": "别在胸前的朴实小花，是一次冒险后得到的纪念品。"
+      "name": "Medal of the Brave",
+      "desc": "A simple flower brooch that is a keepsake from someone's first adventure."
     },
     "plume": {
-      "name": "勇士的期许",
-      "desc": "明亮的鸣禽翎羽。能带来小小的勇气。"
+      "name": "Prospect of the Brave",
+      "desc": "A shimmering feather from a songbird that brings a nudge of courage to its wearer."
     },
     "sands": {
-      "name": "勇士的坚毅",
-      "desc": "老旧的微型沙漏，不具有实用性。与岁月一样不可捉摸。"
+      "name": "Fortitude of the Brave",
+      "desc": "A dated miniature hourglass that serves no practical purpose. It seems as elusive as time itself."
     },
     "goblet": {
-      "name": "勇士的壮行",
-      "desc": "木制的粗糙容器，其中空洞洞地盛满了回忆。"
+      "name": "Outset of the Brave",
+      "desc": "A crude wooden vessel filled only with memories."
     },
     "circlet": {
-      "name": "勇士的冠冕",
-      "desc": "粗略编成的草环。对一些人而言，就像王者的金冠一样贵重吧。"
+      "name": "Crown of the Brave",
+      "desc": "A rough-and-ready laurel wreath that seems as precious as a king's golden crown."
     }
   }
 }

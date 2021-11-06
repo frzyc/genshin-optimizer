@@ -1,12 +1,12 @@
 {
-  "name": "飞天大御剑",
-  "description": "可靠的大剑。传说著名的「御剑公子」曾试图借助它二度飞天。",
-  "passiveName": "勇气",
+  "name": "Skyrider Greatsword",
+  "description": "A reliable steel sword. The legendary Skyrider once tried to ride it as a flying sword... for the second time.",
+  "passiveName": "Courage",
   "passiveDescription": {
-    "0": "普通攻击和重击命中时，攻击力提高<cryo>6%</cryo>，持续6秒，最多叠加4层。该效果每0.5秒只能触发一次。",
-    "1": "普通攻击和重击命中时，攻击力提高<cryo>7%</cryo>，持续6秒，最多叠加4层。该效果每0.5秒只能触发一次。",
-    "2": "普通攻击和重击命中时，攻击力提高<cryo>8%</cryo>，持续6秒，最多叠加4层。该效果每0.5秒只能触发一次。",
-    "3": "普通攻击和重击命中时，攻击力提高<cryo>9%</cryo>，持续6秒，最多叠加4层。该效果每0.5秒只能触发一次。",
-    "4": "普通攻击和重击命中时，攻击力提高<cryo>10%</cryo>，持续6秒，最多叠加4层。该效果每0.5秒只能触发一次。"
+    "0": "On hit, Normal or Charged Attacks increase ATK by <cryo>6%</cryo> for 6s. Max 4 stacks. Can occur once every 0.5s.",
+    "1": "On hit, Normal or Charged Attacks increase ATK by <cryo>7%</cryo> for 6s. Max 4 stacks. Can occur once every 0.5s.",
+    "2": "On hit, Normal or Charged Attacks increase ATK by <cryo>8%</cryo> for 6s. Max 4 stacks. Can occur once every 0.5s.",
+    "3": "On hit, Normal or Charged Attacks increase ATK by <cryo>9%</cryo> for 6s. Max 4 stacks. Can occur once every 0.5s.",
+    "4": "On hit, Normal or Charged Attacks increase ATK by <cryo>10%</cryo> for 6s. Max 4 stacks. Can occur once every 0.5s."
   }
 }

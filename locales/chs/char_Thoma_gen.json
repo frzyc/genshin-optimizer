@@ -1,33 +1,33 @@
 {
-  "name": "托马",
-  "title": "渡来介者",
-  "description": "神里家的家政官，活跃在稻妻的「地头蛇」。",
-  "constellationName": "赤楯座",
+  "name": "Thoma",
+  "title": "Protector From Afar",
+  "description": "The Kamisato Clan's housekeeper. A well-known \"fixer\" in Inazuma.",
+  "constellationName": "Rubeum Scutum",
   "auto": {
-    "name": "迅破枪势",
+    "name": "Swiftshatter Spear",
     "fields": {
       "normal": {
-        "0": "<strong>普通攻击</strong>",
-        "1": "进行至多四段的连续枪击。"
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Performs up to four consecutive spear strikes."
       },
       "charged": {
-        "0": "<strong>重击</strong>",
-        "1": "消耗一定体力，向前方突进，对路径上的敌人造成伤害。"
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Consumes a certain amount of Stamina to lunge forward, dealing damage to opponents along the way."
       },
       "plunging": {
-        "0": "<strong>下落攻击</strong>",
-        "1": "从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成范围伤害。"
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact."
       }
     },
     "skillParams": {
-      "0": "一段伤害",
-      "1": "二段伤害",
-      "2": "三段伤害",
-      "3": "四段伤害",
-      "4": "重击伤害",
-      "5": "重击体力消耗",
-      "6": "下坠期间伤害",
-      "7": "低空/高空坠地冲击伤害",
+      "0": "1-Hit DMG",
+      "1": "2-Hit DMG",
+      "2": "3-Hit DMG",
+      "3": "4-Hit DMG",
+      "4": "Charged Attack DMG",
+      "5": "Charged Attack Stamina Cost",
+      "6": "Plunge DMG",
+      "7": "Low/High Plunge DMG",
       "8": "",
       "9": "",
       "10": "",
@@ -39,26 +39,26 @@
     }
   },
   "skill": {
-    "name": "烈烧佑命之侍护",
+    "name": "Blazing Blessing",
     "description": {
-      "0": "托马以枪尖刺地作为支点，倾注燃焰之力，向前迅猛踢击，造成<pyro>火元素范围伤害</pyro>，唤出护体的烈烧佑命护盾，并在施放的瞬间，为托马施加<pyro>火元素附着</pyro>。",
-      "1": "护盾的伤害吸收量受益于托马的生命值上限。",
-      "2": "烈烧佑命护盾具有如下特性：",
+      "0": "Thoma vaults forward with his polearm and delivers a flame-filled flying kick that deals <pyro>AoE Pyro DMG</pyro>, while also summoning a defensive Blazing Barrier. At the moment of casting, Thoma's Elemental Skill applies <pyro>Pyro</pyro> to himself.",
+      "1": "The DMG Absorption of the Blazing Barrier scales off Thoma's Max HP.",
+      "2": "The Blazing Barrier has the following traits:",
       "3": [
-        "对<pyro>火元素伤害</pyro>有250%的吸收效果；",
-        "护盾剩余的伤害吸收量在获取新的烈烧佑命护盾时将会叠加，并刷新持续时间。"
+        "Absorbs <pyro>Pyro DMG</pyro> 250% more effectively.",
+        "When a new Blazing Barrier is obtained, the remaining DMG Absorption of an existing Blazing Barrier will stack and its duration will be refreshed."
       ],
       "4": "<br/>",
-      "5": "护盾的伤害吸收量至多不超过托马生命值上限的一定比例。",
+      "5": "The maximum DMG Absorption of the Blazing Barrier will not exceed a certain percentage of Thoma's Max HP.",
       "6": "<br/>",
-      "7": "<i>作为异乡来客，唯有点燃最为炽烈的盛情之火，才能习得精湛且纯粹的稻妻枪术。而托马的成就远远不止于「最速学成出师」与「枪术豪杰」，有着「守护」信念的他，还将御敌的技巧与甲胄的特性融入了自己的枪术之中。</i>"
+      "7": "<i>As a guest from afar, only the most burning passion would allow one to master the pure and precise spear arts of Inazuma. Thoma's mastery, indeed, is not limited to being the \"swiftest-studying student\" or \"a master of the spear,\" but he has imbued his will to protect others and fend off foes into his art as well.</i>"
     },
     "skillParams": {
-      "0": "技能伤害",
-      "1": "护盾吸收量",
-      "2": "护盾持续时间",
-      "3": "护盾吸收量上限",
-      "4": "冷却时间",
+      "0": "Skill DMG",
+      "1": "Shield DMG Absorption",
+      "2": "Shield Duration",
+      "3": "Max Shield DMG Absorption",
+      "4": "CD",
       "5": "",
       "6": "",
       "7": "",
@@ -73,34 +73,34 @@
     }
   },
   "burst": {
-    "name": "真红炽火之大铠",
+    "name": "Crimson Ooyoroi",
     "description": {
-      "0": "托马旋转长枪，以炽烈的燃焰挥斩周围的敌人，造成<pyro>火元素范围伤害</pyro>，并产生炽火大铠。",
+      "0": "Thoma spins his polearm, slicing at his foes with roaring flames that deal <pyro>AoE Pyro DMG</pyro> and weave themselves into a Scorching Ooyoroi.",
       "1": "<br/>",
-      "2": "<strong>炽火大铠</strong>",
-      "3": "处于炽火大铠效果下的当前场上角色进行普通攻击时，将触发炽火崩破，造成<pyro>火元素范围伤害</pyro>，并唤出护体的烈烧佑命护盾。",
-      "4": "炽火崩破每1秒至多触发一次。",
+      "2": "<strong>Scorching Ooyoroi</strong>",
+      "3": "While Scorching Ooyoroi is in effect, the active character's Normal Attacks will trigger Fiery Collapse, dealing <pyro>AoE Pyro DMG</pyro> and summoning a Blazing Barrier.",
+      "4": "Fiery Collapse can be triggered once every 1s.",
       "5": "<br/>",
-      "6": "产生的护盾，除伤害吸收量以外，特性与元素战技「烈烧佑命之侍护」的护盾相同：",
+      "6": "Except for the amount of DMG they can absorb, the Blazing Barriers created in this way are identical to those created by Thoma's Elemental Skill, Blazing Blessing:",
       "7": [
-        "对<pyro>火元素伤害</pyro>有250%的吸收效果；",
-        "护盾剩余的伤害吸收量在获取新的烈烧佑命护盾时将会叠加，并刷新持续时间。"
+        "Absorbs <pyro>Pyro DMG</pyro> 250% more effectively.",
+        "When a new Blazing Barrier is obtained, the remaining DMG Absorption of an existing Blazing Barrier will stack and its duration will be refreshed."
       ],
       "8": "<br/>",
-      "9": "护盾的伤害吸收量至多不超过托马生命值上限的一定比例。",
+      "9": "The maximum DMG Absorption of the Blazing Barrier will not exceed a certain percentage of Thoma's Max HP.",
       "10": "<br/>",
-      "11": "托马倒下时，将会清除炽火大铠的效果。",
+      "11": "If Thoma falls, the effects of Scorching Ooyoroi will be cleared.",
       "12": "<br/>",
-      "13": "<i>「我绝不会忘记当初的承诺，所以这股烈火，必将守护我珍视的人，永不熄灭。」</i>"
+      "13": "<i>\"I will not forget my initial promise. Let this burning flame protect those I cherish, and may it never be extinguished.\"</i>"
     },
     "skillParams": {
-      "0": "技能伤害",
-      "1": "炽火崩破伤害",
-      "2": "护盾吸收量",
-      "3": "护盾持续时间",
-      "4": "炽火大铠持续时间",
-      "5": "冷却时间",
-      "6": "元素能量",
+      "0": "Skill DMG",
+      "1": "Fiery Collapse DMG",
+      "2": "Shield DMG Absorption",
+      "3": "Shield Duration",
+      "4": "Scorching Ooyoroi Duration",
+      "5": "CD",
+      "6": "Energy Cost",
       "7": "",
       "8": "",
       "9": "",
@@ -113,61 +113,61 @@
     }
   },
   "passive1": {
-    "name": "甲衣交叠",
+    "name": "Imbricated Armor",
     "description": {
-      "0": "当前场上自己的角色获取或刷新<strong>烈烧佑命护盾</strong>时，护盾强效提升5%，持续时间6秒。",
-      "1": "此效果每0.3秒至多触发一次，至多叠加5次。"
+      "0": "When your current active character obtains or refreshes a <strong>Blazing Barrier</strong>, this character's Shield Strength will increase by 5% for 6s.",
+      "1": "This effect can be triggered once every 0.3s seconds. Max 5 stacks."
     }
   },
   "passive2": {
-    "name": "烈火攻燔",
+    "name": "Flaming Assault",
     "description": {
-      "0": "<strong>真红炽火之大铠</strong>的炽火崩破造成的伤害提高，提高值相当于托马生命值上限的2.2%。"
+      "0": "DMG dealt by <strong>Crimson Ooyoroi</strong>'s Fiery Collapse is increased by 2.2% of Thoma's Max HP."
     }
   },
   "passive3": {
-    "name": "悬鲷狩",
+    "name": "Snap and Swing",
     "description": {
-      "0": "旅行者在稻妻成功<strong>钓鱼</strong>时，因为托马的帮助，有20%概率获得2倍产出。"
+      "0": "When you <strong>fish</strong> successfully in Inazuma, Thoma's help grants a 20% chance of scoring a double catch."
     }
   },
   "constellation1": {
-    "name": "同袍的义理",
+    "name": "A Comrade's Duty",
     "description": {
-      "0": "处于托马自己的<strong>烈烧佑命护盾</strong>庇护下的角色（除了托马自己）受到攻击时，托马自己的<strong>烈烧佑命之侍护</strong>的冷却时间减少3秒，<strong>真红炽火之大铠</strong>的冷却时间减少3秒。",
-      "1": "该效果每20秒至多触发一次。"
+      "0": "When a character protected by Thoma's own <strong>Blazing Barrier</strong> (Thoma excluded) is attacked, Thoma's own <strong>Blazing Blessing</strong> CD is decreased by 3s, while his own <strong>Crimson Ooyoroi</strong>'s CD is decreased by 3s.",
+      "1": "This effect can be triggered once every 20s."
     }
   },
   "constellation2": {
-    "name": "僚佐的才巧",
+    "name": "A Subordinate's Skills",
     "description": {
-      "0": "<strong>真红炽火之大铠</strong>的持续时间延长3秒。"
+      "0": "<strong>Crimson Ooyoroi</strong>'s duration is increased by 3s."
     }
   },
   "constellation3": {
-    "name": "御敌的执定",
+    "name": "Fortified Resolve",
     "description": {
-      "0": "<strong>烈烧佑命之侍护</strong>的技能等级提高3级。",
-      "1": "至多提升至15级。"
+      "0": "Increases the Level of <strong>Blazing Blessing</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
     }
   },
   "constellation4": {
-    "name": "用臣的久计",
+    "name": "Long-Term Planning",
     "description": {
-      "0": "施放<strong>真红炽火之大铠</strong>后，为托马恢复15点元素能量。"
+      "0": "After using <strong>Crimson Ooyoroi</strong>, 15 Energy will be restored to Thoma."
     }
   },
   "constellation5": {
-    "name": "野火的豪烈",
+    "name": "Raging Wildfire",
     "description": {
-      "0": "<strong>真红炽火之大铠</strong>的技能等级提高3级。",
-      "1": "至多提升至15级。"
+      "0": "Increases the Level of <strong>Crimson Ooyoroi</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
     }
   },
   "constellation6": {
-    "name": "炽烧的至心",
+    "name": "Burning Heart",
     "description": {
-      "0": "获取或刷新<strong>烈烧佑命护盾</strong>时，队伍中所有角色的普通攻击，重击与下落攻击造成的伤害提升15%，持续6秒。"
+      "0": "When a <strong>Blazing Barrier</strong> is obtained or refreshed, the DMG dealt by all party members' Normal, Charged, and Plunging Attacks is increased by 15% for 6s."
     }
   }
 }

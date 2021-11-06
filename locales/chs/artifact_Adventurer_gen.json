@@ -1,29 +1,29 @@
 {
-  "setName": "冒险家",
+  "setName": "Adventurer",
   "setEffects": {
-    "2": "生命值上限提高1000点。",
-    "4": "开启各类宝箱后的5秒内，持续恢复30%生命值。"
+    "2": "Max HP increased by 1000.",
+    "4": "Opening a chest regenerates 30% Max HP over 5s."
   },
   "pieces": {
     "flower": {
-      "name": "冒险家之花",
-      "desc": "从深邃的古都寻得的绝境求生的小花，被当做骄傲的勋章佩在胸前。"
+      "name": "Adventurer's Flower",
+      "desc": "A resilient flower that survived the harsh environment of an ancient city. It is now proudly worn like a medal."
     },
     "plume": {
-      "name": "冒险家尾羽",
-      "desc": "异国的奇妙鸟类的羽毛，在这片大陆上非常罕见。"
+      "name": "Adventurer's Tail Feather",
+      "desc": "The feather of an exotic bird rarely seen on this continent."
     },
     "sands": {
-      "name": "冒险家怀表",
-      "desc": "常在不见天日的巨渊还是失落的古都流连的冒险家，会经常忘记时间。"
+      "name": "Adventurer's Pocket Watch",
+      "desc": "It's easy to lose track of time when you're adventuring where the sun doesn't shine, whether that's the depths of the abyss or the ruins of a lost city."
     },
     "goblet": {
-      "name": "冒险家金杯",
-      "desc": "冒险家某次出征的战利品，虽然有缺口，仍然是值得骄傲的猎获。"
+      "name": "Adventurer's Golden Goblet",
+      "desc": "The spoils of one of an adventurer's many expeditions. Though a little damaged, it is still an excellent find."
     },
     "circlet": {
-      "name": "冒险家头带",
-      "desc": "束在额前的饰带，吸满了汗液、覆盖着尘土。但脏污难以遮掩冒险家的骄傲。"
+      "name": "Adventurer's Bandana",
+      "desc": "A cloth garment worn at the forehead. Though soaked in sweat and covered in dust, it still beams with an adventurer's pride."
     }
   }
 }

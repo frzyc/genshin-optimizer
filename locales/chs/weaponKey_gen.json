@@ -1,7 +1,7 @@
 {
-  "sword": "单手剑",
-  "polearm": "长柄",
-  "bow": "弓",
-  "claymore": "双手剑",
-  "catalyst": "法器"
+  "sword": "Sword",
+  "polearm": "Polearm",
+  "bow": "Bow",
+  "claymore": "Claymore",
+  "catalyst": "Catalyst"
 }

@@ -1,12 +1,12 @@
 {
-  "name": "异世界行记",
-  "description": "廉价的幻想小说，不具备参考价值。作为法器的力量当然也来自幻想。",
-  "passiveName": "能量沐浴",
+  "name": "Otherworldly Story",
+  "description": "A cheap fantasy novel with no value whatsoever. Any claim that it possesses the power of catalysis is also pure fantasy.",
+  "passiveName": "Energy Shower",
   "passiveDescription": {
-    "0": "获得元素微粒或元素晶球时，恢复<cryo>1%</cryo>生命值。",
-    "1": "获得元素微粒或元素晶球时，恢复<cryo>1.25%</cryo>生命值。",
-    "2": "获得元素微粒或元素晶球时，恢复<cryo>1.5%</cryo>生命值。",
-    "3": "获得元素微粒或元素晶球时，恢复<cryo>1.75%</cryo>生命值。",
-    "4": "获得元素微粒或元素晶球时，恢复<cryo>2%</cryo>生命值。"
+    "0": "Picking up an Elemental Energy Orb/Particle recovers <cryo>1%</cryo> HP.",
+    "1": "Each Elemental Orb or Particle collected restores <cryo>1.25%</cryo> HP.",
+    "2": "Each Elemental Orb or Particle collected restores <cryo>1.5%</cryo> HP.",
+    "3": "Each Elemental Orb or Particle collected restores <cryo>1.75%</cryo> HP.",
+    "4": "Each Elemental Orb or Particle collected restores <cryo>2%</cryo> HP."
   }
 }

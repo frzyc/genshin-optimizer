@@ -1,12 +1,12 @@
 {
-  "name": "千岩古剑",
-  "description": "以璃月的基岩为原料削凿成的厚重大剑。",
-  "passiveName": "千岩诀·同心",
+  "name": "Lithic Blade",
+  "description": "A greatsword carved and chiseled from the very bedrock of Liyue.",
+  "passiveName": "Lithic Axiom: Unity",
   "passiveDescription": {
-    "0": "队伍中每有一位璃月角色，装备该武器的角色便获得<cryo>7%</cryo>攻击力提升与<cryo>3%</cryo>暴击率提升。至多获得4层提升效果。",
-    "1": "队伍中每有一位璃月角色，装备该武器的角色便获得<cryo>8%</cryo>攻击力提升与<cryo>4%</cryo>暴击率提升。至多获得4层提升效果。",
-    "2": "队伍中每有一位璃月角色，装备该武器的角色便获得<cryo>9%</cryo>攻击力提升与<cryo>5%</cryo>暴击率提升。至多获得4层提升效果。",
-    "3": "队伍中每有一位璃月角色，装备该武器的角色便获得<cryo>10%</cryo>攻击力提升与<cryo>6%</cryo>暴击率提升。至多获得4层提升效果。",
-    "4": "队伍中每有一位璃月角色，装备该武器的角色便获得<cryo>11%</cryo>攻击力提升与<cryo>7%</cryo>暴击率提升。至多获得4层提升效果。"
+    "0": "For every character in the party who hails from Liyue, the character who equips this weapon gains a <cryo>7%</cryo> ATK increase and a <cryo>3%</cryo> CRIT Rate increase. This effect stacks up to 4 times.",
+    "1": "For every character in the party who hails from Liyue, the character who equips this weapon gains a <cryo>8%</cryo> ATK increase and a <cryo>4%</cryo> CRIT Rate increase. This effect stacks up to 4 times.",
+    "2": "For every character in the party who hails from Liyue, the character who equips this weapon gains a <cryo>9%</cryo> ATK increase and a <cryo>5%</cryo> CRIT Rate increase. This effect stacks up to 4 times.",
+    "3": "For every character in the party who hails from Liyue, the character who equips this weapon gains a <cryo>10%</cryo> ATK increase and a <cryo>6%</cryo> CRIT Rate increase. This effect stacks up to 4 times.",
+    "4": "For every character in the party who hails from Liyue, the character who equips this weapon gains a <cryo>11%</cryo> ATK increase and a <cryo>7%</cryo> CRIT Rate increase. This effect stacks up to 4 times."
   }
 }

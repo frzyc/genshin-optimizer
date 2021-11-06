@@ -1,29 +1,29 @@
 {
-  "setName": "流浪大地的乐团",
+  "setName": "Wanderer's Troupe",
   "setEffects": {
-    "2": "元素精通提高80点。",
-    "4": "装备该圣遗物套装的角色为法器、弓箭角色时，角色重击造成的伤害提高35%。"
+    "2": "Increases Elemental Mastery by 80.",
+    "4": "Increases Charged Attack DMG by 35% if the character uses a Catalyst or a Bow."
   },
   "pieces": {
     "flower": {
-      "name": "乐团的晨光",
-      "desc": "小小的花形徽章。侧耳细听的话，仿佛能听到悠扬的笛声和清新的歌唱声。"
+      "name": "Troupe's Dawnlight",
+      "desc": "A small flower-shaped insignia. If you listen carefully, you can almost hear a flute playing and voices singing."
     },
     "plume": {
-      "name": "琴师的箭羽",
-      "desc": "青蓝色的箭羽，并未在漫长岁月中褪色破碎。似乎带来了落珠流水的琴声。"
+      "name": "Bard's Arrow Feather",
+      "desc": "An azure arrow fletching that has neither faded nor splintered with the passage of time. The sound of running water seems to linger around it."
     },
     "sands": {
-      "name": "终幕的时计",
-      "desc": "为乐团的演奏计时的沙漏，曾发出利落的声响。如今他们的表演已经落幕。"
+      "name": "Concert's Final Hour",
+      "desc": "An hourglass used to keep time during a band performance. It once made a crisp sound, but their performance has since ended."
     },
     "goblet": {
-      "name": "吟游者之壶",
-      "desc": "外形奇妙的古代水壶，内侧安装着琴弦，随流水而奏出无旋律的奇妙乐声。"
+      "name": "Wanderer's String-Kettle",
+      "desc": "An ancient, strangely-shaped canteen. The interior is fitted with harp strings, which play a wondrous tune as the water flows out."
     },
     "circlet": {
-      "name": "指挥的礼帽",
-      "desc": "尽管饱经风霜，但依旧光彩照人的礼帽。其中似乎回荡着古老悠扬的乐声。"
+      "name": "Conductor's Top Hat",
+      "desc": "A top hat that has managed to retain its radiance despite braving the elements for time untold. An ancient tune still resonates within."
     }
   }
 }

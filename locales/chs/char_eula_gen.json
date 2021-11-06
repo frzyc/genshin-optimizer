@@ -1,36 +1,36 @@
 {
   "skill": {
-    "brandDMG": "冰涡之剑伤害",
-    "grimheartDuration": "冷酷之心持续时间",
-    "name": "冰潮的涡旋",
+    "brandDMG": "Icewhirl Brand DMG",
+    "grimheartDuration": "Grimheart Duration",
+    "name": "Icetide Vortex",
     "description": {
-      "0": "极寒的冰气、迅捷的剑舞。",
+      "0": "Sharp frost, swift blade.",
       "1": "<br/>",
-      "2": "<strong>点按</strong>",
-      "3": "快速挥斩，造成<cryo>冰元素伤害</cryo>。",
-      "4": "命中敌人时，优菈自己获得一层冷酷之心效果，最多叠加2次，每0.3秒内只能触发1次。",
+      "2": "<strong>Press</strong>",
+      "3": "Slashes swiftly, dealing <cryo>Cryo DMG</cryo>.",
+      "4": "When it hits an opponent, Eula gains a stack of Grimheart that stacks up to 2 times. These stacks can only be gained once every 0.3s.",
       "5": "<br/>",
-      "6": "<strong>冷酷之心</strong>",
-      "7": "提高优菈的抗打断能力和防御力。",
+      "6": "<strong>Grimheart</strong>",
+      "7": "Increases Eula's resistance to interruption and DEF.",
       "8": "<br/>",
-      "9": "<strong>长按</strong>",
-      "10": "消耗所有的冷酷之心效果，并挥舞大剑向前挥砍，对前方的敌人造成<cryo>冰元素范围伤害</cryo>。",
-      "11": "若消耗了冷酷之心效果，会使身边的敌人的物理抗性与<cryo>冰元素抗性</cryo>降低。",
-      "12": "每一层被消耗的冷酷之心会转化为一柄冰涡之剑，对附近的敌人造成<cryo>冰元素伤害</cryo>。",
+      "9": "<strong>Hold</strong>",
+      "10": "Wielding her sword, Eula consumes all the stacks of Grimheart and lashes forward, dealing <cryo>AoE Cryo DMG</cryo> to opponents in front of her.",
+      "11": "If Grimheart stacks are consumed, surrounding opponents will have their Physical RES and <cryo>Cryo RES</cryo> decreased.",
+      "12": "Each consumed stack of Grimheart will be converted into an Icewhirl Brand that deals <cryo>Cryo DMG</cryo> to nearby opponents.",
       "13": "<br/>",
-      "14": "<i>「浪花就是这样打着旋，吞没了高贵的头冠。随后，冰冷浪潮的每一滴飞沫里，都映着一个金冠；每一滴浪沫，都闪烁着光。」</i>"
+      "14": "<i>\"So the waves roiled, swallowing the crown of the nobles. And ever after did each drop amidst the icy waves reflect a golden crown, each and every droplet of the spray shining with its light.\"</i>"
     },
     "skillParams": {
-      "0": "点按伤害",
-      "1": "长按伤害",
-      "2": "冰涡之剑伤害",
-      "3": "防御力提升",
-      "4": "冷酷之心持续时间",
-      "5": "物理抗性降低",
-      "6": "冰元素抗性降低",
-      "7": "抗性降低时间",
-      "8": "点按冷却时间",
-      "9": "长按冷却时间",
+      "0": "Press DMG",
+      "1": "Hold DMG",
+      "2": "Icewhirl Brand DMG",
+      "3": "DEF Bonus",
+      "4": "Grimheart Duration",
+      "5": "Physical RES Decrease",
+      "6": "Cryo RES Decrease",
+      "7": "RES Decrease Duration",
+      "8": "Press CD",
+      "9": "CD (hold)",
       "10": "",
       "11": "",
       "12": "",
@@ -39,39 +39,39 @@
       "15": ""
     }
   },
-  "name": "优菈",
-  "title": "浪沫的旋舞",
-  "description": "古老家族出身的「浪花骑士」，西风骑士团游击小队队长。身为旧贵族后裔却加入了堪称死对头的西风骑士团，该事件至今仍是蒙德一大谜团。",
-  "constellationName": "浪沫座",
+  "name": "Eula",
+  "title": "Dance of the Shimmering Wave",
+  "description": "The Spindrift Knight, a scion of the old aristocracy, and the Captain of the Knights of Favonius Reconnaissance Company. The reason for which a descendant of the ancient nobles might join the Knights remains a great mystery in Mondstadt to this very day.",
+  "constellationName": "Aphros Delos",
   "auto": {
-    "name": "西风剑术·宗室",
+    "name": "Favonius Bladework - Edel",
     "fields": {
       "normal": {
-        "0": "<strong>普通攻击</strong>",
-        "1": "进行至多五段的连续挥砍。"
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Perform up to 5 consecutive strikes."
       },
       "charged": {
-        "0": "<strong>重击</strong>",
-        "1": "持续消耗体力，快速进行连续的斩击。",
-        "2": "重击结束时，会进行一次格外有力的挥砍。"
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Drains Stamina over time to perform continuous slashes.",
+        "2": "At the end of the sequence, perform a more powerful slash."
       },
       "plunging": {
-        "0": "<strong>下落攻击</strong>",
-        "1": "从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成范围伤害。"
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Plunges from mid-air to strike the ground, damaging opponents along the path and dealing AoE DMG upon impact."
       }
     },
     "skillParams": {
-      "0": "一段伤害",
-      "1": "二段伤害",
-      "2": "三段伤害",
-      "3": "四段伤害",
-      "4": "五段伤害",
-      "5": "重击循环伤害",
-      "6": "重击终结伤害",
-      "7": "重击体力消耗",
-      "8": "最大持续时间",
-      "9": "下坠期间伤害",
-      "10": "低空/高空坠地冲击伤害",
+      "0": "1-Hit DMG",
+      "1": "2-Hit DMG",
+      "2": "3-Hit DMG",
+      "3": "4-Hit DMG",
+      "4": "5-Hit DMG",
+      "5": "Charged Attack Spinning DMG",
+      "6": "Charged Attack Final DMG",
+      "7": "Charged Attack Stamina Cost",
+      "8": "Max Duration",
+      "9": "Plunge DMG",
+      "10": "Low/High Plunge DMG",
       "11": "",
       "12": "",
       "13": "",
@@ -80,23 +80,23 @@
     }
   },
   "burst": {
-    "name": "凝浪之光剑",
+    "name": "Glacial Illumination",
     "description": {
-      "0": "猛烈挥舞大剑，对周围的敌人造成<cryo>冰元素伤害</cryo>，并创造一柄跟随自己，至多持续存在7秒的光降之剑。",
-      "1": "在持续期间内，光降之剑会提高优菈自己的抗打断能力，并在优菈自己的普通攻击、元素战技或元素爆发对敌人造成伤害时，为光降之剑积蓄能量。每0.1秒只能积攒一层能量。",
-      "2": "持续时间结束后，光降之剑会降下并猛烈爆发，对周围的敌人造成物理伤害。",
-      "3": "此伤害受益于光降之剑积蓄的能量层数。",
-      "4": "优菈退场时，光降之剑会立即爆发。",
+      "0": "Brandishes her greatsword, dealing <cryo>Cryo DMG</cryo> to nearby opponents and creating a Lightfall Sword that follows her around for a duration of up to 7s.",
+      "1": "While present, the Lightfall Sword increases Eula's resistance to interruption. When Eula's own Normal Attack, Elemental Skill, and Elemental Burst deal DMG to opponents, they will charge the Lightfall Sword, which can gain an energy stack once every 0.1s.",
+      "2": "Once its duration ends, the Lightfall Sword will descend and explode violently, dealing Physical DMG to nearby opponents.",
+      "3": "This DMG scales on the number of energy stacks the Lightfall Sword has accumulated.",
+      "4": "If Eula leaves the field, the Lightfall Sword will explode immediately.",
       "5": "<br/>",
-      "6": "<i>沉沦是件很容易的事情。尽管如此，她仍想要冻结住这股潮流。</i>"
+      "6": "<i>It is easy to sink. But even so, she desires to freeze this oncoming tide.</i>"
     },
     "skillParams": {
-      "0": "技能伤害",
-      "1": "光降之剑基础伤害",
-      "2": "每层能量伤害",
-      "3": "能量层数上限",
-      "4": "冷却时间",
-      "5": "元素能量",
+      "0": "Skill DMG",
+      "1": "Lightfall Sword Base DMG",
+      "2": "DMG Per Stack",
+      "3": "Maximum Stacks",
+      "4": "CD",
+      "5": "Energy Cost",
       "6": "",
       "7": "",
       "8": "",
@@ -110,60 +110,60 @@
     }
   },
   "passive1": {
-    "name": "潮卷冰削",
+    "name": "Roiling Rime",
     "description": {
-      "0": "长按施放<strong>冰潮的涡旋</strong>时，若一次性消耗了2层冷酷之心效果，则创造会立即爆发的残缺光降之剑，造成相当于<strong>凝浪之光剑</strong>的光降之剑基础伤害50%的物理伤害。"
+      "0": "If 2 stacks of Grimheart are consumed upon unleashing the Holding Mode of <strong>Icetide Vortex</strong>, a Shattered Lightfall Sword will be created that will explode immediately, dealing 50% of the basic Physical DMG dealt by a Lightfall Sword created by <strong>Glacial Illumination</strong>."
     }
   },
   "passive2": {
-    "name": "战欲涌现",
+    "name": "Wellspring of War-Lust",
     "description": {
-      "0": "施放<strong>凝浪之光剑</strong>时，重置<strong>冰潮的涡旋</strong>的冷却时间，并为优菈赋予一层冷酷之心效果。"
+      "0": "When <strong>Glacial Illumination</strong> is cast, the CD of <strong>Icetide Vortex</strong> is reset and Eula gains 1 stack of Grimheart."
     }
   },
   "passive3": {
-    "name": "贵族的自省",
+    "name": "Aristocratic Introspection",
     "description": {
-      "0": "合成角色天赋素材时，有10%概率获得2倍产出。"
+      "0": "When Eula crafts Character Talent Materials, she has a 10% chance to receive double the product."
     }
   },
   "constellation1": {
-    "name": "光潮的幻象",
+    "name": "Tidal Illusion",
     "description": {
-      "0": "消耗<strong>冰潮的涡旋</strong>的冷酷之心效果后，优菈的物理伤害加成提高30%，持续6秒，",
-      "1": "每消耗一层冷酷之心，都会使这个效果的持续时间延长6秒，最多不会超过18秒。"
+      "0": "Every time <strong>Icetide Vortex</strong>'s Grimheart stacks are consumed, Eula's Physical DMG is increased by 30% for 6s.",
+      "1": "Each stack consumed will increase the duration of this effect by 6s up to a maximum of 18s."
     }
   },
   "constellation2": {
-    "name": "海沫的少女",
+    "name": "Lady of Seafoam",
     "description": {
-      "0": "缩短<strong>冰潮的涡旋</strong>长按的冷却时间，使其降低至与点按的冷却时间相同。"
+      "0": "Decreases the CD of <strong>Icetide Vortex</strong>'s Holding Mode, rendering it identical to Press CD."
     }
   },
   "constellation3": {
-    "name": "劳伦斯的血脉",
+    "name": "Lawrence Pedigree",
     "description": {
-      "0": "<strong>凝浪之光剑</strong>的技能等级提高3级。",
-      "1": "至多提升至15级。"
+      "0": "Increases the Level of <strong>Glacial Illumination</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
     }
   },
   "constellation4": {
-    "name": "自卑者的逞强",
+    "name": "The Obstinacy of One's Inferiors",
     "description": {
-      "0": "对生命值低于50%的敌人，光降之剑造成的伤害提高25%。"
+      "0": "Lightfall Swords deal 25% increased DMG against opponents with less than 50% HP."
     }
   },
   "constellation5": {
-    "name": "骑士的素质",
+    "name": "Chivalric Quality",
     "description": {
-      "0": "<strong>冰潮的涡旋</strong>的技能等级提高3级。",
-      "1": "至多提升至15级。"
+      "0": "Increases the Level of <strong>Icetide Vortex</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
     }
   },
   "constellation6": {
-    "name": "高贵者的义务",
+    "name": "Noble Obligation",
     "description": {
-      "0": "<strong>凝浪之光剑</strong>创造的光降之剑立即获得5层能量。普通攻击、元素战技或元素爆发造成伤害使其积蓄能量层数时，有50%的概率额外获得一层。"
+      "0": "Lightfall Swords created by <strong>Glacial Illumination</strong> start with 5 stacks of energy. Normal Attacks, Elemental Skills, and Elemental Bursts have a 50% chance to grant the Lightfall Sword an additional stack of energy."
     }
   }
 }

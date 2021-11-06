@@ -1,33 +1,33 @@
 {
-  "name": "莫娜",
-  "title": "星天水镜",
-  "description": "神秘的少女占星术士，声称自己是「伟大的占星术士莫娜」，拥有与名号相符的不俗实力，博学而高傲。",
-  "constellationName": "映天座",
+  "name": "Mona",
+  "title": "Astral Reflection",
+  "description": "A mysterious young astrologer who proclaims herself to be \"Astrologist Mona Megistus,\" and who possesses abilities to match the title. Erudite, but prideful.",
+  "constellationName": "Astrolabos",
   "auto": {
-    "name": "因果点破",
+    "name": "Ripple of Fate",
     "fields": {
       "normal": {
-        "0": "<strong>普通攻击</strong>",
-        "1": "进行至多四段的水花攻击，造成<hydro>水元素伤害</hydro>。"
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Perform up to 4 water splash attacks that deal <hydro>Hydro DMG</hydro>."
       },
       "charged": {
-        "0": "<strong>重击</strong>",
-        "1": "消耗一定体力，短暂咏唱后，造成<hydro>水元素范围伤害</hydro>。"
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Consumes a certain amount of Stamina to deal <hydro>AoE Hydro DMG</hydro> after a short casting time."
       },
       "plunging": {
-        "0": "<strong>下落攻击</strong>",
-        "1": "凝聚水元素的力量，从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成<hydro>水元素范围伤害</hydro>。"
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Gathering the might of Hydro, Mona plunges towards the ground from mid-air, damaging all opponents in her path. Deals <hydro>AoE Hydro DMG</hydro> upon impact with the ground."
       }
     },
     "skillParams": {
-      "0": "一段伤害",
-      "1": "二段伤害",
-      "2": "三段伤害",
-      "3": "四段伤害",
-      "4": "重击伤害",
-      "5": "重击体力消耗",
-      "6": "下坠期间伤害",
-      "7": "低空/高空坠地冲击伤害",
+      "0": "1-Hit DMG",
+      "1": "2-Hit DMG",
+      "2": "3-Hit DMG",
+      "3": "4-Hit DMG",
+      "4": "Charged Attack DMG",
+      "5": "Charged Attack Stamina Cost",
+      "6": "Plunge DMG",
+      "7": "Low/High Plunge DMG",
       "8": "",
       "9": "",
       "10": "",
@@ -39,29 +39,28 @@
     }
   },
   "skill": {
-    "name": "水中幻愿",
+    "name": "Mirror Reflection of Doom",
     "description": {
-      "0": "聚集水花汇成命运的虚影。",
+      "0": "Creates an illusory Phantom of Fate from coalesced waterspouts.",
       "1": "<br/>",
-      "2": "<strong>虚影</strong>",
-      "3": "具有如下特性：",
-      "4": [
-        "持续嘲讽周围的敌人，吸引火力；",
-        "持续对附近的敌人造成<hydro>水元素伤害</hydro>；",
-        "持续时间结束时，虚影破裂，造成<hydro>水元素范围伤害</hydro>。"
+      "2": "The <strong>Phantom</strong> has the following special properties:",
+      "3": [
+        "Continuously taunts nearby opponents, attracting their fire.",
+        "Continuously deals <hydro>Hydro DMG</hydro> to nearby opponents.",
+        "When its duration expires, the Phantom explodes, dealing <hydro>AoE Hydro DMG</hydro>."
       ],
-      "5": "<br/>",
-      "6": "<strong>长按</strong>",
-      "7": "借助水流之势迅速后退，并唤出虚影。",
-      "8": "<br/>",
-      "9": "场上同时只能存在一个通过水中幻愿创造的虚影。",
-      "10": "<br/>",
-      "11": "<i>高深的占星术士一直试图制造自身的虚影来转嫁将要到来的厄运。但是如此嘲讽厄运的人，莫娜应该是提瓦特第一个。</i>"
+      "4": "<br/>",
+      "5": "<strong>Hold</strong>",
+      "6": "Utilizes water currents to move backwards swiftly before conjuring a Phantom.",
+      "7": "<br/>",
+      "8": "Only one Phantom created by Mirror Reflection of Doom can exist at any time.",
+      "9": "<br/>",
+      "10": "<i>Skilled astrologers have always dreamed of using a phantom facsimile of themselves to ward off imminent ill fate, but Mona must be the first to make such a mockery of it in all of Teyvat.</i>"
     },
     "skillParams": {
-      "0": "持续伤害",
-      "1": "爆裂伤害",
-      "2": "冷却时间",
+      "0": "DoT",
+      "1": "Explosion DMG",
+      "2": "CD",
       "3": "",
       "4": "",
       "5": "",
@@ -78,30 +77,30 @@
     }
   },
   "burst": {
-    "name": "星命定轨",
+    "name": "Stellaris Phantasm",
     "description": {
-      "0": "凝聚粼粼的水波，倒映出虚幻星空，对大范围内的敌人施加泡影状态。",
+      "0": "Mona summons the sparkling waves and creates a reflection of the starry sky, applying the Illusory Bubble status to opponents in a large AoE.",
       "1": "<br/>",
-      "2": "<strong>泡影</strong>",
-      "3": "以星相的气泡包裹敌人，施加<hydro>潮湿</hydro>状态。较弱的敌人会被禁锢在泡影中，无法行动。",
-      "4": "处于泡影影响下的敌人受到伤害时，会产生以下效果：",
+      "2": "<strong>Illusory Bubble</strong>",
+      "3": "Traps opponents inside a pocket of destiny and also makes them <hydro>Wet</hydro>. Renders weaker opponents immobile.",
+      "4": "When an opponent affected by Illusory Bubble sustains DMG, it has the following effects:",
       "5": [
-        "对敌人施加星异的伤害加成效果，并以此提高这一次造成的伤害；",
-        "解除泡影效果，并额外造成一次<hydro>水元素伤害</hydro>。"
+        "Applies an Omen to the opponent, which gives a DMG Bonus, also increasing the DMG of the attack that causes it.",
+        "Removes the Illusory Bubble, dealing <hydro>Hydro</hydro> DMG in the process."
       ],
       "6": "<br/>",
-      "7": "<strong>星异</strong>",
-      "8": "持续时间内，提高受到的伤害。",
+      "7": "<strong>Omen</strong>",
+      "8": "During its duration, increases DMG taken by opponents.",
       "9": "<br/>",
-      "10": "<i>自从神的目光开始牵引着天上的光明，命运自此被称之为命运。</i>"
+      "10": "<i>It was from the time that gods first traced the lights in the heavens with their eyes that the notion of \"fate\" was born.</i>"
     },
     "skillParams": {
-      "0": "泡影持续时间",
-      "1": "泡影破裂伤害",
-      "2": "伤害加成",
-      "3": "星异持续时间",
-      "4": "冷却时间",
-      "5": "元素能量",
+      "0": "Illusory Bubble Duration",
+      "1": "Illusory Bubble Explosion DMG",
+      "2": "DMG Bonus",
+      "3": "Omen Duration",
+      "4": "CD",
+      "5": "Energy Cost",
       "6": "",
       "7": "",
       "8": "",
@@ -115,78 +114,80 @@
     }
   },
   "sprint": {
-    "name": "虚实流动",
+    "name": "Illusory Torrent",
     "description": {
-      "0": "<strong>替代冲刺</strong>",
-      "1": "隐入流水，以消耗体力为代价，化为激流快速移动。",
+      "0": "<strong>Alternate Sprint</strong>",
+      "1": "Mona cloaks herself within the water's flow, consuming Stamina to move rapidly.",
       "2": "<br/>",
-      "3": "在虚实流动状态下，莫娜可以在水面上高速移动。",
-      "4": "结束虚实流动现身时，对周围的敌人施加<hydro>潮湿</hydro>状态。",
+      "3": "When under the effect of Illusory Torrent, Mona can move at high speed on water.",
+      "4": "Applies the <hydro>Wet</hydro> status to nearby opponents when she reappears.",
       "5": "<br/>",
-      "6": "<i>这是莫娜能办到，她老师却办不到的事情。无关水元素神之眼，毕竟她老师又不会被追着教育。</i>"
+      "6": "<i>This is something that Mona can do, but her teacher cannot. Well, but it's not as if her teacher would pursue any matter concerning Hydro Visions anyway...</i>"
     }
   },
   "passive1": {
-    "name": "「老太婆来抓我啊！」",
+    "name": "\"Come 'n' Get Me, Hag!\"",
     "description": {
-      "0": "进入<strong>虚实流动</strong>状态2秒后，如果周围存在敌人，则自动凝聚一个虚影。",
-      "1": "通过这种方式产生的虚影持续2秒，造成的破裂伤害相当于<strong>水中幻愿</strong>伤害的50%。"
+      "0": "After she has used <strong>Illusory Torrent</strong> for 2s, if there are any opponents nearby, Mona will automatically create a Phantom.",
+      "1": "A Phantom created in this manner lasts for 2s, and its explosion DMG is equal to 50% of <strong>Mirror Reflection of Doom</strong>."
     }
   },
   "passive2": {
-    "name": "「托付于命运吧！」",
+    "name": "Waterborne Destiny",
     "description": {
-      "0": "莫娜的<hydro>水元素伤害加成</hydro>获得额外提升，提升程度相当于她的元素充能效率的20%。"
+      "0": "Increases Mona's <hydro>Hydro DMG Bonus</hydro> by a degree equivalent to 20% of her Energy Recharge rate."
     }
   },
   "passive3": {
-    "name": "运行原理",
+    "name": "Principium of Astrology",
     "description": {
-      "0": "合成武器突破素材时，有25%概率返还部分合成材料。"
+      "0": "When Mona crafts Weapon Ascension Materials, she has a 25% chance to refund a portion of the crafting materials used."
     }
   },
   "constellation1": {
-    "name": "沉没的预言",
+    "name": "Prophecy of Submersion",
     "description": {
-      "0": "队伍中自己的角色攻击命中处于星异状态下的敌人后的8秒内，<hydro>水元素相关反应</hydro>的效果提升：",
+      "0": "When any of your own party members hits an opponent affected by an Omen, the effects of <hydro>Hydro-related Elemental Reactions</hydro> are enhanced for 8s:",
       "1": [
-        "感电反应造成的伤害提升15%，蒸发反应造成的伤害提升15%，水元素扩散反应造成的伤害提升15%；",
-        "冻结反应的持续时间延长15%。"
+        "Electro-Charged DMG increases by 15%.",
+        "Vaporize DMG increases by 15%.",
+        "Hydro Swirl DMG increases by 15%.",
+        "Frozen duration is extended by 15%."
       ]
     }
   },
   "constellation2": {
-    "name": "星月的连珠",
+    "name": "Lunar Chain",
     "description": {
-      "0": "普通攻击命中时，有20%的几率自动施放一次重击。",
-      "1": "该效果每5秒只能触发一次。"
+      "0": "When a Normal Attack hits, there is a 20% chance that it will be automatically followed by a Charged Attack.",
+      "1": "This effect can only occur once every 5s."
     }
   },
   "constellation3": {
-    "name": "不休的天象",
+    "name": "Restless Revolution",
     "description": {
-      "0": "<strong>星命定轨</strong>的技能等级提高3级。",
-      "1": "至多提升至15级。"
+      "0": "Increases the Level of <strong>Stellaris Phantasm</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
     }
   },
   "constellation4": {
-    "name": "灭绝的预言",
+    "name": "Prophecy of Oblivion",
     "description": {
-      "0": "队伍中所有角色攻击处于星异状态下的敌人时，暴击率提升15%。"
+      "0": "When any party member attacks an opponent affected by an Omen, their CRIT Rate is increased by 15%."
     }
   },
   "constellation5": {
-    "name": "命运的嘲弄",
+    "name": "Mockery of Fortuna",
     "description": {
-      "0": "<strong>水中幻愿</strong>的技能等级提高3级。",
-      "1": "至多提升至15级。"
+      "0": "Increases the Level of <strong>Mirror Reflection of Doom</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
     }
   },
   "constellation6": {
-    "name": "厄运的修辞",
+    "name": "Rhetorics of Calamitas",
     "description": {
-      "0": "进入<strong>虚实流动</strong>状态后，每移动1秒，莫娜的下一次重击伤害就增加60%，",
-      "1": "通过这种方式至多可以获得180%重击伤害加成，该效果至多持续8秒。"
+      "0": "Upon entering <strong>Illusory Torrent</strong>, Mona gains a 60% increase to the DMG of her next Charged Attack per second of movement.",
+      "1": "A maximum DMG Bonus of 180% can be achieved in this manner. The effect lasts for no more than 8s."
     }
   }
 }

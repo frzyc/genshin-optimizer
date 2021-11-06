@@ -1,29 +1,29 @@
 {
-  "setName": "赌徒",
+  "setName": "Gambler",
   "setEffects": {
-    "2": "元素战技造成的伤害提升20%。",
-    "4": "击败敌人时，有100%概率清除元素战技的冷却时间。该效果每15秒至多触发一次。"
+    "2": "Increases Elemental Skill DMG by 20%.",
+    "4": "Defeating an opponent has a 100% chance to remove Elemental Skill CD. Can only occur once every 15s."
   },
   "pieces": {
     "flower": {
-      "name": "赌徒的胸花",
-      "desc": "华丽的大花朵，其中能藏得下自己事前准备好的骰子。"
+      "name": "Gambler's Brooch",
+      "desc": "A big, luxurious flower that can hide loaded dice."
     },
     "plume": {
-      "name": "赌徒的羽饰",
-      "desc": "大型鸟的尾羽，其中能藏得下能改天逆命的牌。"
+      "name": "Gambler's Feather Accessory",
+      "desc": "The tail feather of a large bird. Perfect for discretely concealing a trump card."
     },
     "sands": {
-      "name": "赌徒的怀表",
-      "desc": "破碎的怀表，曾经为它的主人挡下了致命的攻击。"
+      "name": "Gambler's Pocket Watch",
+      "desc": "A shattered pocket watch that once took a lethal hit for its owner."
     },
     "goblet": {
-      "name": "赌徒的骰盅",
-      "desc": "是特制的、用于单一用途的容器，但其中并没有欺诈用的机关。"
+      "name": "Gambler's Dice Cup",
+      "desc": "This vessel was specially made for a single purpose. It has absolutely no secret compartments built into it."
     },
     "circlet": {
-      "name": "赌徒的耳环",
-      "desc": "能让人冷静评估局势与风险，避免危机的翠蓝耳环。"
+      "name": "Gambler's Earrings",
+      "desc": "A pair of blue earrings that, when worn, calm the mind and encourage a rational assessment of risks."
     }
   }
 }

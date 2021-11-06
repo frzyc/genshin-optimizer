@@ -1,29 +1,29 @@
 {
-  "setName": "教官",
+  "setName": "Instructor",
   "setEffects": {
-    "2": "元素精通提高80点。",
-    "4": "触发元素反应后，队伍中所有角色的元素精通提高120点，持续8秒。"
+    "2": "Increases Elemental Mastery by 80.",
+    "4": "Upon triggering an Elemental Reaction, increases all party members' Elemental Mastery by 120 for 8s."
   },
   "pieces": {
     "flower": {
-      "name": "教官的胸花",
-      "desc": "教官的胸口别着这种花的时候，意味着今日不练兵。"
+      "name": "Instructor's Brooch",
+      "desc": "Whenever the instructor wore this brooch, it meant there would be no training sessions that day."
     },
     "plume": {
-      "name": "教官的羽饰",
-      "desc": "熟知如何化解攻击力道的教官，不会让这种羽饰被劲风吹掉。"
+      "name": "Instructor's Feather Accessory",
+      "desc": "Any instructor who has mastered the art of de-escalation knows to keep this accessory firmly in their grasp at all times."
     },
     "sands": {
-      "name": "教官的怀表",
-      "desc": "不能用来看时间的怀表，是完全奉献给训练的计时工具。"
+      "name": "Instructor's Pocket Watch",
+      "desc": "A stopwatch used not for general timekeeping but to measure the duration of a training session."
     },
     "goblet": {
-      "name": "教官的茶杯",
-      "desc": "虽然在外人看来只是普通的茶杯，但在学员眼里可是教官权力的象征。"
+      "name": "Instructor's Tea Cup",
+      "desc": "It may seem like an ordinary tea cup to most. But to students, it is the symbol of the instructor's authority."
     },
     "circlet": {
-      "name": "教官的帽子",
-      "desc": "制式的教官帽子。是拒绝了晋升的军官才能获得的殊荣。"
+      "name": "Instructor's Cap",
+      "desc": "A standard-issue honorary instructor's cap, only granted to those who turn down a promotion."
     }
   }
 }

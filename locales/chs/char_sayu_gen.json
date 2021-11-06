@@ -1,36 +1,36 @@
 {
-  "name": "早柚",
-  "title": "忍里之貉",
-  "description": "隶属于「终末番」的忍者。身形小巧，总像没睡饱一样。",
-  "constellationName": "小貉座",
+  "name": "Sayu",
+  "title": "Mujina Ninja",
+  "description": "A pint-sized ninja attached to the Shuumatsuban, who always seems sleep-deprived.",
+  "constellationName": "Nyctereutes Minor",
   "auto": {
-    "name": "忍刀·终末番",
+    "name": "Shuumatsuban Ninja Blade",
     "fields": {
       "normal": {
-        "0": "<strong>普通攻击</strong>",
-        "1": "进行至多四段的连续挥砍。"
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Performs up to 4 consecutive strikes."
       },
       "charged": {
-        "0": "<strong>重击</strong>",
-        "1": "持续消耗体力，旋转大剑攻击周围的敌人。",
-        "2": "停止旋转时，会进行一次格外有力的挥砍。"
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Drains Stamina over time to perform continuous spinning attacks against all nearby opponents.",
+        "2": "At the end of the sequence, perform a more powerful slash. "
       },
       "plunging": {
-        "0": "<strong>下落攻击</strong>",
-        "1": "从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成范围伤害。"
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact."
       }
     },
     "skillParams": {
-      "0": "一段伤害",
-      "1": "二段伤害",
-      "2": "三段伤害",
-      "3": "四段伤害",
-      "4": "重击循环伤害",
-      "5": "重击终结伤害",
-      "6": "重击体力消耗",
-      "7": "最大持续时间",
-      "8": "下坠期间伤害",
-      "9": "低空/高空坠地冲击伤害",
+      "0": "1-Hit DMG",
+      "1": "2-Hit DMG",
+      "2": "3-Hit DMG",
+      "3": "4-Hit DMG",
+      "4": "Charged Attack Spinning DMG",
+      "5": "Charged Attack Final DMG",
+      "6": "Charged Attack Stamina Cost",
+      "7": "Max Duration",
+      "8": "Plunge DMG",
+      "9": "Low/High Plunge DMG",
       "10": "",
       "11": "",
       "12": "",
@@ -40,35 +40,35 @@
     }
   },
   "skill": {
-    "name": "呜呼流·风隐急进",
+    "name": "Yoohoo Art: Fuuin Dash",
     "description": {
-      "0": "忍法·呜呼流的独创奥义！以风驰电掣之势席卷战场的绝技！",
-      "1": "蜷缩成高速滚动的风风轮，冲撞触及的敌人造成<anemo>风元素伤害</anemo>，并在结束时使出风风轮舞踢，造成<anemo>风元素范围伤害</anemo>。",
+      "0": "The special technique of the Yoohoo Ninja Arts!",
+      "1": "Sayu curls up into a rolling Fuufuu Windwheel and smashes into opponents at high speed, dealing <anemo>Anemo DMG</anemo>. When the duration ends, she unleashes a Fuufuu Whirlwind Kick, dealing <anemo>AoE Anemo DMG</anemo>.",
       "2": "<br/>",
-      "3": "<strong>点按</strong>",
-      "4": "进入风风轮状态，向前滚动一小段距离，并使出风风轮舞踢。",
+      "3": "<strong>Press</strong>",
+      "4": "Enters the Fuufuu Windwheel state, rolling forward a short distance before using the Fuufuu Whirlwind Kick.",
       "5": "<br/>",
-      "6": "<strong>长按</strong>",
-      "7": "以风风轮之姿持续滚动，并在该状态下提高早柚的抗打断能力。",
-      "8": "期间，早柚可以控制滚动的方向，并能通过再次施放技能，提前结束状态使出相比点按更为强大的风风轮舞踢。",
-      "9": "该技能通过长按施放时，能发生元素转化。",
+      "6": "<strong>Hold</strong>",
+      "7": "Rolls about continuously in the Fuufuu Windwheel state, increasing Sayu's resistance to interruption while within that state.",
+      "8": "During this time, Sayu can control the direction of her roll, and can use the skill again to end her Windwheel state early and unleash a stronger version of the Fuufuu Whirlwind Kick.",
+      "9": "The Hold version of this skill can trigger Elemental Absorption.",
       "10": "<br/>",
-      "11": "持续至多10秒。效果结束时，技能将进入冷却。在风风轮状态下持续的时间越长，冷却时间越长。",
+      "11": "This skill has a maximum duration of 10s and enters CD once its effects end. The longer Sayu remains in her Windwheel state, the longer the CD.",
       "12": "<br/>",
-      "13": "<strong>元素转化</strong>",
-      "14": "若早柚在风风轮状态下，接触了<hydro>水元素</hydro>/<pyro>火元素</pyro>/<cryo>冰元素</cryo>/<electro>雷元素</electro>，则会获得对应元素属性，使风风轮与风风轮舞踢额外造成该元素的附加伤害。",
-      "15": "元素转化在技能持续期间仅会发生一次。",
+      "13": "<strong>Elemental Absorption</strong>",
+      "14": "If Sayu comes into contact with <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro> while in her Windwheel state, she will deal additional elemental DMG of that type.",
+      "15": "Elemental Absorption may only occur once per use of this skill.",
       "16": "<br/>",
-      "17": "<i>早柚闭着眼睛都能熟练施展出来。原本用于逃跑，有了神之眼之后，终于能趁机让敌人吃些苦头了。</i>"
+      "17": "<i>Sayu can pull this skill off with her eyes closed. This technique was originally created for escaping, but now that she's got a Vision, might as well make her foes eat dirt while she's at it.</i>"
     },
     "skillParams": {
-      "0": "风风轮伤害",
-      "1": "风风轮舞踢点按伤害",
-      "2": "风风轮舞踢长按伤害",
-      "3": "风风轮附带元素伤害",
-      "4": "风风轮舞踢长按附带元素伤害",
-      "5": "长按最大持续时间",
-      "6": "冷却时间",
+      "0": "Fuufuu Windwheel DMG",
+      "1": "Fuufuu Whirlwind Kick Press DMG",
+      "2": "Fuufuu Whirlwind Kick Hold DMG",
+      "3": "Fuufuu Windwheel Elemental DMG",
+      "4": "Fuufuu Whirlwind Kick Elemental DMG",
+      "5": "Max Duration (Hold)",
+      "6": "CD",
       "7": "",
       "8": "",
       "9": "",
@@ -81,28 +81,28 @@
     }
   },
   "burst": {
-    "name": "呜呼流·影貉缭乱",
+    "name": "Yoohoo Art: Mujina Flurry",
     "description": {
-      "0": "忍法·呜呼流的另一个独创奥义！能创造出替早柚干活的帮手！",
-      "1": "对身边的敌人造成<anemo>风元素伤害</anemo>，为队伍中附近的所有角色恢复生命值，回复量受益于早柚的攻击力，并召唤出「不倒貉貉」。",
+      "0": "The other super special technique of the Yoohoo Ninja Arts! It summons a pair of helping hands for Sayu.",
+      "1": "Deals <anemo>Anemo DMG</anemo> to nearby opponents and heals all nearby party members. The amount of HP restored is based on Sayu's ATK. This skill then summons a Muji-Muji Daruma.",
       "2": "<br/>",
-      "3": "<strong>不倒貉貉</strong>",
-      "4": "周期性地根据附近的状况，采取其中一种行动：",
+      "3": "<strong>Muji-Muji Daruma</strong>",
+      "4": "At specific intervals, the Daruma will take one of several actions based on the situation around it:",
       "5": [
-        "附近的角色如果生命值均高于70%，不倒貉貉会攻击附近的一名敌人，造成<anemo>风元素伤害</anemo>；",
-        "附近场上如果存在生命值低于或等于70%的角色，会为附近场上生命值百分比最低的角色恢复生命值，回复量受益于早柚的攻击力。若附近不存在敌人，即使角色的生命值均高于70%，也会为角色恢复生命值。"
+        "If the HP of nearby characters is above 70%, it will attack a nearby opponent, dealing <anemo>Anemo DMG</anemo>.",
+        "If there are active characters with 70% or less HP nearby, it will heal the active character with the lowest percentage HP left. If there are no opponents nearby, it will heal active characters nearby even if they have 70% HP or more."
       ],
       "6": "<br/>",
-      "7": "<i>不懂忍术的人都非常希望早柚能多多展示一下这个，也有人试图找早柚学习。可早柚只想睡觉，不想被打扰。</i>"
+      "7": "<i>People who don't know the first thing about ninjutsu love to watch Sayu show off this skill, and some have tried to learn it from her. But Sayu just wants to sleep and not be disturbed.</i>"
     },
     "skillParams": {
-      "0": "技能发动伤害",
-      "1": "技能发动治疗量",
-      "2": "不倒貉貉伤害",
-      "3": "不倒貉貉治疗量",
-      "4": "持续时间",
-      "5": "冷却时间",
-      "6": "元素能量",
+      "0": "Skill Activation DMG",
+      "1": "Skill Activation Healing",
+      "2": "Muji-Muji Daruma DMG",
+      "3": "Muji-Muji Daruma Healing",
+      "4": "Duration",
+      "5": "CD",
+      "6": "Energy Cost",
       "7": "",
       "8": "",
       "9": "",
@@ -115,73 +115,73 @@
     }
   },
   "passive1": {
-    "name": "更加合适的人选",
+    "name": "Someone More Capable",
     "description": {
-      "0": "早柚在场上触发扩散反应时，为队伍中自己的角色以及附近的友方角色恢复300点生命值。除此之外，早柚的每点元素精通将额外恢复1.2点生命值。",
-      "1": "该效果每2秒只能触发一次。"
+      "0": "When Sayu triggers a Swirl reaction while active, she heals all your characters and nearby allies for 300 HP. She will also heal an additional 1.2 HP for every point of Elemental Mastery she has.",
+      "1": "This effect can be triggered once every 2s."
     }
   },
   "passive2": {
-    "name": "早柚不用工作啦",
+    "name": "No Work Today!",
     "description": {
-      "0": "<strong>呜呼流·影貉缭乱</strong>的不倒貉貉获得如下效果：",
+      "0": "The Muji-Muji Daruma created by <strong>Yoohoo Art: Mujina Flurry</strong> gains the following effects:",
       "1": [
-        "为角色恢复生命值时，将为该角色身边的其他场上角色恢复相当于回复量20%的生命值；",
-        "攻击敌人时，扩大造成伤害的范围。"
+        "When healing a character, it will also heal characters near that healed character for 20% the amount of HP.",
+        "Increases the AoE of its attack against opponents."
       ]
     }
   },
   "passive3": {
-    "name": "呜呼流·屏息秘传",
+    "name": "Yoohoo Art: Silencer's Secret",
     "description": {
-      "0": "早柚在队伍中时，队伍中自己的角色接近晶蝶等部分生物时，不会惊动它们。",
-      "1": "有效对象可参考图鉴中「生物志 / 野生动物」的「其他」分类。"
+      "0": "When Sayu is in the party, your characters will not startle Crystalflies and certain other animals when getting near them.",
+      "1": "Check the \"Other\" sub-category of the \"Living Beings / Wildlife\" section in the Archive for creatures this skill works on."
     }
   },
   "constellation1": {
-    "name": "一心二用之术",
+    "name": "Multi-Task no Jutsu",
     "description": {
-      "0": "<strong>呜呼流·影貉缭乱</strong>的不倒貉貉的行动将忽视生命值限制，能同时攻击附近的敌人并为角色恢复生命值。"
+      "0": "The Muji-Muji Daruma created by <strong>Yoohoo Art: Mujina Flurry</strong> will ignore HP limits and can simultaneously attack nearby opponents and heal characters."
     }
   },
   "constellation2": {
-    "name": "理清逃跑路线",
+    "name": "Egress Prep",
     "description": {
-      "0": "<strong>呜呼流·风隐急进</strong>获得如下效果：",
+      "0": "<strong>Yoohoo Art: Fuuin Dash</strong> gains the following effects:",
       "1": [
-        "点按施放时，风风轮舞踢造成的伤害提高3.3%；",
-        "处于长按施放后的风风轮状态下时，每0.5秒，就会使这次施展的风风轮舞踢造成的伤害提高3.3%。通过这种方式，风风轮舞踢造成的伤害至多可以提高66%。"
+        "DMG of Fuufuu Whirlwind Kick in Press Mode increased by 3.3%.",
+        "Every 0.5s in the Fuufuu Windwheel state will increase the DMG of this Fuufuu Whirlwind Kick by 3.3%. The maximum DMG increase possible through this method is 66%."
       ]
     }
   },
   "constellation3": {
-    "name": "都交给分身吧",
+    "name": "Eh, the Bunshin Can Handle It",
     "description": {
-      "0": "<strong>呜呼流·影貉缭乱</strong>的技能等级提高3级。",
-      "1": "至多提升至15级。"
+      "0": "Increases the Level of <strong>Yoohoo Art: Mujina Flurry</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
     }
   },
   "constellation4": {
-    "name": "偷懒的新方法",
+    "name": "Skiving: New and Improved",
     "description": {
-      "0": "早柚在场上触发扩散反应时，将恢复1.2点元素能量。",
-      "1": "该效果每2秒只能触发一次。"
+      "0": "Sayu recovers 1.2 Energy when she triggers a Swirl reaction.",
+      "1": "This effect occurs once every 2s."
     }
   },
   "constellation5": {
-    "name": "快是第一奥义",
+    "name": "Speed Comes First",
     "description": {
-      "0": "<strong>呜呼流·风隐急进</strong>的技能等级提高3级。",
-      "1": "至多提升至15级。"
+      "0": "Increases the Level of <strong>Yoohoo Art: Fuuin Dash</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
     }
   },
   "constellation6": {
-    "name": "呼呼大睡时间",
+    "name": "Sleep O'Clock",
     "description": {
-      "0": "早柚自己通过<strong>呜呼流·影貉缭乱</strong>召唤的不倒貉貉的攻击与回复量，受益于早柚的元素精通。早柚的每点元素精通，能产生如下效果：",
+      "0": "The Muji-Muji Daruma created by Sayu's <strong>Yoohoo Art: Mujina Flurry</strong> will now also benefit from her Elemental Mastery. Each point of Sayu's Elemental Mastery will produce the following effects:",
       "1": [
-        "使不倒貉貉的攻击额外造成0.2%攻击力的伤害。通过这种方式至多额外造成400%攻击力的伤害；",
-        "使不倒貉貉的回复量提高3点。通过这种方式，至多提高6000点回复量。"
+        "Increases the damage dealt by the Muji-Muji Daruma's attacks by 0.2% ATK. A maximum of 400% ATK can be gained via this method.",
+        "Increases the HP restored by the Muji-Muji Daruma by 3. A maximum of 6,000 additional HP can be restored in this manner."
       ]
     }
   }

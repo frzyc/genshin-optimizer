@@ -1,34 +1,34 @@
 {
-  "name": "凯亚",
-  "title": "寒风剑士",
-  "description": "异国面容的剑斗士，西风骑士团的头脑派人物。",
-  "constellationName": "孔雀羽座",
+  "name": "Kaeya",
+  "title": "Frostwind Swordsman",
+  "description": "An accomplished swordsman and a strategic thinker in the Knights of Favonius, rumored to hail from beyond Mondstadt.",
+  "constellationName": "Pavo Ocellus",
   "auto": {
-    "name": "仪典剑术",
+    "name": "Ceremonial Bladework",
     "fields": {
       "normal": {
-        "0": "<strong>普通攻击</strong>",
-        "1": "进行至多五段的连续剑击。"
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Perform up to 5 rapid strikes."
       },
       "charged": {
-        "0": "<strong>重击</strong>",
-        "1": "消耗一定体力，瞬间向前方挥出两剑。"
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Consumes a certain amount of Stamina to unleash 2 rapid sword strikes."
       },
       "plunging": {
-        "0": "<strong>下落攻击</strong>",
-        "1": "从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成范围伤害。"
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact."
       }
     },
     "skillParams": {
-      "0": "一段伤害",
-      "1": "二段伤害",
-      "2": "三段伤害",
-      "3": "四段伤害",
-      "4": "五段伤害",
-      "5": "重击伤害",
-      "6": "重击体力消耗",
-      "7": "下坠期间伤害",
-      "8": "低空/高空坠地冲击伤害",
+      "0": "1-Hit DMG",
+      "1": "2-Hit DMG",
+      "2": "3-Hit DMG",
+      "3": "4-Hit DMG",
+      "4": "5-Hit DMG",
+      "5": "Charged Attack DMG",
+      "6": "Charged Attack Stamina Cost",
+      "7": "Plunge DMG",
+      "8": "Low/High Plunge DMG",
       "9": "",
       "10": "",
       "11": "",
@@ -39,15 +39,15 @@
     }
   },
   "skill": {
-    "name": "霜袭",
+    "name": "Frostgnaw",
     "description": {
-      "0": "瞬间放出急冻的寒气，对前方的敌人造成<cryo>冰元素伤害</cryo>。",
+      "0": "Unleashes a frigid blast, dealing <cryo>Cryo DMG</cryo> to opponents in front of Kaeya.",
       "1": "<br/>",
-      "2": "<i>看上去如此亲切的凯亚，是谁也无法融化的坚冰。</i>"
+      "2": "<i>Kaeya seems affable, but his nature is that of unyielding ice.</i>"
     },
     "skillParams": {
-      "0": "技能伤害",
-      "1": "冷却时间",
+      "0": "Skill DMG",
+      "1": "CD",
       "2": "",
       "3": "",
       "4": "",
@@ -65,18 +65,18 @@
     }
   },
   "burst": {
-    "name": "凛冽轮舞",
+    "name": "Glacial Waltz",
     "description": {
-      "0": "凝聚空气中的寒霜，召唤3枚围绕自身旋转的寒冰之棱。",
-      "1": "存在期间内，寒冰之棱会跟随角色运动，对路径上的敌人造成<cryo>冰元素伤害</cryo>。",
+      "0": "Coalescing the frost in the air, Kaeya summons 3 icicles that revolve around him.",
+      "1": "These icicles will follow the character around and deal <cryo>Cryo DMG</cryo> to opponents in their path for the ability's duration.",
       "2": "<br/>",
-      "3": "<i>亲切的笑容、和善的话语，和潜藏在这两者之下的毫不留情的冰霜，都是凯亚的武器。</i>"
+      "3": "<i>A winsome smile, genial words, and the merciless hoarfrost that lies beneath... These are all Kaeya's weapons.</i>"
     },
     "skillParams": {
-      "0": "技能伤害",
-      "1": "冷却时间",
-      "2": "持续时间",
-      "3": "元素能量",
+      "0": "Skill DMG",
+      "1": "CD",
+      "2": "Duration",
+      "3": "Energy Cost",
       "4": "",
       "5": "",
       "6": "",
@@ -92,64 +92,64 @@
     }
   },
   "passive1": {
-    "name": "冷血之剑",
+    "name": "Cold-Blooded Strike",
     "description": {
-      "0": "<strong>霜袭</strong>每击中一个单位，便为凯亚恢复等同于攻击力15%的生命值。"
+      "0": "Every hit with <strong>Frostgnaw</strong> regenerates HP for Kaeya equal to 15% of his ATK."
     }
   },
   "passive2": {
-    "name": "冰渊之心",
+    "name": "Glacial Heart",
     "description": {
-      "0": "<strong>霜袭</strong>使敌人<cryo>冻结</cryo>时，被冻结的敌人会掉落额外的元素微粒。",
-      "1": "一次霜袭至多因此产生2个额外元素微粒。"
+      "0": "Opponents <cryo>Frozen</cryo> by <strong>Frostgnaw</strong> will drop additional Elemental Particles.",
+      "1": "Frostgnaw may only produce a maximum of 2 additional Elemental Particles per use."
     }
   },
   "passive3": {
-    "name": "隐藏的实力",
+    "name": "Hidden Strength",
     "description": {
-      "0": "队伍中自己的角色冲刺消耗的体力降低20%。",
-      "1": "无法与效果完全相同的固有天赋叠加。"
+      "0": "Decreases sprinting Stamina consumption for your own party members by 20%.",
+      "1": "Not stackable with Passive Talents that provide the exact same effects."
     }
   },
   "constellation1": {
-    "name": "卓越的血脉",
+    "name": "Excellent Blood",
     "description": {
-      "0": "对受到<cryo>冰元素</cryo>影响的敌人，凯亚的普通攻击与重击暴击率提升15%。"
+      "0": "The CRIT Rate of Kaeya's Normal and Charge Attacks against opponents affected by <cryo>Cryo</cryo> is increased by 15%."
     }
   },
   "constellation2": {
-    "name": "无尽的霜舞",
+    "name": "Never-Ending Performance",
     "description": {
-      "0": "在<strong>凛冽轮舞</strong>的持续时间内击败敌人时，持续时间延长2.5秒，最多不会超过15秒。"
+      "0": "Every time <strong>Glacial Waltz</strong> defeats an opponent during its duration, its duration is increased by 2.5s, up to a maximum of 15s."
     }
   },
   "constellation3": {
-    "name": "凛冽的冰戏",
+    "name": "Dance of Frost",
     "description": {
-      "0": "<strong>霜袭</strong>的技能等级提高3级。",
-      "1": "至多提升至15级。"
+      "0": "Increases the Level of <strong>Frostgnaw</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
     }
   },
   "constellation4": {
-    "name": "极寒的轻吻",
+    "name": "Frozen Kiss",
     "description": {
-      "0": "凯亚的生命值低于20%时自动触发：",
-      "1": "生成一个伤害吸收量等于生命值上限30%的护盾，持续20秒。",
-      "2": "该护盾对<cryo>冰元素伤害</cryo>有250%的吸收效果。",
-      "3": "该效果每60秒只能触发一次。"
+      "0": "Triggers automatically when Kaeya's HP falls below 20%:",
+      "1": "Creates a shield that absorbs damage equal to 30% of Kaeya's Max HP. Lasts for 20s.",
+      "2": "This shield absorbs <cryo>Cryo DMG</cryo> with 250% efficiency.",
+      "3": "Can only occur once every 60s."
     }
   },
   "constellation5": {
-    "name": "至冷的拥抱",
+    "name": "Frostbiting Embrace",
     "description": {
-      "0": "<strong>凛冽轮舞</strong>的技能等级提高3级。",
-      "1": "至多提升至15级。"
+      "0": "Increases the Level of <strong>Glacial Waltz</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
     }
   },
   "constellation6": {
-    "name": "轮旋的冰凌",
+    "name": "Glacial Whirlwind",
     "description": {
-      "0": "<strong>凛冽轮舞</strong>会产生一个额外的寒冰之棱，并在施放时返还15点元素能量。"
+      "0": "<strong>Glacial Waltz</strong> will generate 1 additional icicle, and will regenerate 15 Energy when cast."
     }
   }
 }

@@ -1,12 +1,12 @@
 {
-  "name": "鸦羽弓",
-  "description": "相传渡鸦是死的使者。将鸦羽装饰在弓臂上，射出的每一箭都宣告着猎物的终末。",
-  "passiveName": "踏火止水",
+  "name": "Raven Bow",
+  "description": "Ravens are known to be the ferrymen of the dead. This bow's limb is decorated with raven feathers, which forebode the imminent death of its target.",
+  "passiveName": "Bane of Flame and Water",
   "passiveDescription": {
-    "0": "对处于水元素或火元素影响下的敌人，造成的伤害提高<cryo>12%</cryo>。",
-    "1": "对处于水元素或火元素影响下的敌人，造成的伤害提高<cryo>15%</cryo>。",
-    "2": "对处于水元素或火元素影响下的敌人，造成的伤害提高<cryo>18%</cryo>。",
-    "3": "对处于水元素或火元素影响下的敌人，造成的伤害提高<cryo>21%</cryo>。",
-    "4": "对处于水元素或火元素影响下的敌人，造成的伤害提高<cryo>24%</cryo>。"
+    "0": "Increases DMG against opponents affected by Hydro or Pyro by <cryo>12%</cryo>.",
+    "1": "Increases DMG against opponents affected by Hydro or Pyro by <cryo>15%</cryo>.",
+    "2": "Increases DMG against opponents affected by Hydro or Pyro by <cryo>18%</cryo>.",
+    "3": "Increases DMG against opponents affected by Hydro or Pyro by <cryo>21%</cryo>.",
+    "4": "Increases DMG against opponents affected by Hydro or Pyro by <cryo>24%</cryo>."
   }
 }

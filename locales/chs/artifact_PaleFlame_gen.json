@@ -1,29 +1,29 @@
 {
-  "setName": "苍白之火",
+  "setName": "Pale Flame",
   "setEffects": {
-    "2": "造成的物理伤害提高25%。",
-    "4": "元素战技命中敌人后，攻击力提升9%。该效果持续7秒，至多叠加2层，每0.3秒至多触发一次。叠满2层时，2件套的效果提升100%。"
+    "2": "Physical DMG is increased by 25%.",
+    "4": "When an Elemental Skill hits an opponent, ATK is increased by 9% for 7s. This effect stacks up to 2 times and can be triggered once every 0.3s. Once 2 stacks are reached, the 2-set effect is increased by 100%."
   },
   "pieces": {
     "flower": {
-      "name": "无垢之花",
-      "desc": "湛蓝而坚硬，永不凋败、永不褪色的人造花朵。"
+      "name": "Stainless Bloom",
+      "desc": "A hard, blue artificial flower. Its petals shall never wither, nor shall its colors fade."
     },
     "plume": {
-      "name": "贤医之羽",
-      "desc": "边缘无比锐利的不祥翎羽，或许象征着异类的不羁。"
+      "name": "Wise Doctor's Pinion",
+      "desc": "An ominous pinion with edges of unsurpassed keenness. Perhaps it represents an unnaturally uninhibited nature."
     },
     "sands": {
-      "name": "停摆之刻",
-      "desc": "壳罩无法打开的怀表，会坚定地随着时光流逝而嘀嗒作响。"
+      "name": "Moment of Cessation",
+      "desc": "A pocket watch with a cover that cannot be opened. Yet it ticks and tocks away, following the inexorable flow of time."
     },
     "goblet": {
-      "name": "超越之盏",
-      "desc": "从外观无从断定经历了多少岁月的精致杯盏。"
+      "name": "Surpassing Cup",
+      "desc": "An intricately-made cup. Its appearance betrays nothing of its age to an observer."
     },
     "circlet": {
-      "name": "嗤笑之面",
-      "desc": "能将面目遮蔽，让人无从判断表情的面具。"
+      "name": "Mocking Mask",
+      "desc": "A mask that covers the face, hiding one's expression from others."
     }
   }
 }

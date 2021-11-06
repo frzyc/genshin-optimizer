@@ -1,36 +1,36 @@
 {
-  "name": "九条裟罗",
-  "title": "黑羽鸣镝",
-  "description": "「天领奉行」的大将，杀伐果断，骁勇善战。",
-  "constellationName": "羽团扇座",
+  "name": "Kujou Sara",
+  "title": "Crowfeather Kaburaya",
+  "description": "A general of the Tenryou Commission. Bold, decisive, and skilled in battle.",
+  "constellationName": "Flabellum",
   "auto": {
-    "name": "天狗传弓术",
+    "name": "Tengu Bowmanship",
     "fields": {
       "normal": {
-        "0": "<strong>普通攻击</strong>",
-        "1": "进行至多五段的连续弓箭射击。"
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Perform up to 5 consecutive shots with a bow."
       },
       "charged": {
-        "0": "<strong>重击</strong>",
-        "1": "进行伤害更高、更为精准的<strong>瞄准射击</strong>。",
-        "2": "瞄准时，雷霆的力量会汇聚到她的箭矢上。聚满了雷霆之力的箭矢在命中敌人时造成<electro>雷元素伤害</electro>。",
-        "3": "处于「乌羽护持」状态下时，蓄力完成的箭矢会在命中时留下「乌羽」。"
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Perform a more precise <strong>Aimed Shot</strong> with increased DMG.",
+        "2": "While aiming, crackling lightning will accumulate on the arrowhead. An arrow fully charged with the storm's might will deal <electro>Electro DMG</electro>.",
+        "3": "When in the Crowfeather Cover state, a fully-charged arrow will leave a Crowfeather behind after it hits."
       },
       "plunging": {
-        "0": "<strong>下落攻击</strong>",
-        "1": "从空中射出箭雨，并迅速下坠冲击地面，在落地时造成范围伤害。"
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact."
       }
     },
     "skillParams": {
-      "0": "一段伤害",
-      "1": "二段伤害",
-      "2": "三段伤害",
-      "3": "四段伤害",
-      "4": "五段伤害",
-      "5": "瞄准射击",
-      "6": "满蓄力瞄准射击",
-      "7": "下坠期间伤害",
-      "8": "低空/高空坠地冲击伤害",
+      "0": "1-Hit DMG",
+      "1": "2-Hit DMG",
+      "2": "3-Hit DMG",
+      "3": "4-Hit DMG",
+      "4": "5-Hit DMG",
+      "5": "Aimed Shot",
+      "6": "Fully-Charged Aimed Shot",
+      "7": "Plunge DMG",
+      "8": "Low/High Plunge DMG",
       "9": "",
       "10": "",
       "11": "",
@@ -41,22 +41,22 @@
     }
   },
   "skill": {
-    "name": "鸦羽天狗霆雷召咒",
+    "name": "Tengu Stormcall",
     "description": {
-      "0": "以天狗之神速向后转移，并唤来乌羽的加护。",
-      "1": "获得持续18秒的「乌羽护持」，当九条裟罗发射完成蓄力的箭矢时，会消耗「乌羽护持」，并在命中的位置留下「乌羽」。",
-      "2": "「乌羽」会在短时间后引发天狗咒雷·伏，对范围内敌人造成<electro>雷元素伤害</electro>，并使其范围内的当前场上角色基于九条裟罗的基础攻击力，以一定比例获得攻击力加成。",
+      "0": "Retreats rapidly with the speed of a tengu, summoning the protection of the Crowfeather.",
+      "1": "Gains Crowfeather Cover for 18s, and when Kujou Sara fires a fully-charged Aimed Shot, Crowfeather Cover will be consumed, and will leave a Crowfeather at the target location.",
+      "2": "Crowfeathers will trigger Tengu Juurai: Ambush after a short time, dealing <electro>Electro DMG</electro> and granting the active character within its AoE an ATK Bonus based on Kujou Sara's Base ATK.",
       "3": "<br/>",
-      "4": "各种天狗咒雷提供的攻击力提升不能叠加，效果与持续时间由后生效的为准。",
+      "4": "The ATK Bonuses from different Tengu Juurai will not stack, and their effects and duration will be determined by the last Tengu Juurai to take effect.",
       "5": "<br/>",
-      "6": "<i>天狗一族不乏获取雷元素神之眼的异士。只不过他们操作雷元素时，仍会习惯性诵咒，礼赞雷神。咒曰：</i>",
-      "7": "<i>「礼赞鸣神大权现，善信某甲，请祈黄雷。娑婆诃！」</i>"
+      "6": "<i>The tengu race have never lacked for exceptional talents who have received an Electro Vision. It's just that they often habitually chant praises to the Electro Archon while manipulating Electro. The chants go something like this</i>",
+      "7": "<i>\"Show forth your might, O praiseworthy Narukami, and grant this supplicant your thunderous might! Sowaka!\"</i>"
     },
     "skillParams": {
-      "0": "天狗咒雷·伏 伤害",
-      "1": "攻击力加成比例",
-      "2": "攻击力加成持续时间",
-      "3": "冷却时间",
+      "0": "Tengu Juurai: Ambush DMG",
+      "1": "ATK Bonus Ratio",
+      "2": "ATK Bonus Duration",
+      "3": "CD",
       "4": "",
       "5": "",
       "6": "",
@@ -72,20 +72,20 @@
     }
   },
   "burst": {
-    "name": "煌煌千道镇式",
+    "name": "Subjugation: Koukou Sendou",
     "description": {
-      "0": "在目标的位置降下天狗咒雷·金刚坏，造成<electro>雷元素范围伤害</electro>。此后，天狗咒雷·金刚坏将扩散转为4道连续的天狗咒雷·雷砾，造成<electro>雷元素范围伤害</electro>。",
-      "1": "天狗咒雷·金刚坏与天狗咒雷·雷砾会使其范围内的当前场上角色获得与元素战技「鸦羽天狗霆雷召咒」相同的攻击力加成。",
+      "0": "Casts down Tengu Juurai: Titanbreaker, dealing <electro>AoE Electro DMG</electro>. Afterwards, Tengu Juurai: Titanbreaker spreads out into 4 consecutive bouts of Tengu Juurai: Stormcluster, dealing <electro>AoE Electro DMG</electro>.",
+      "1": "Tengu Juurai: Titanbreaker and Tengu Juurai: Stormcluster can provide the active character within their AoE with the same ATK Bonus as given by the Elemental Skill, Tengu Stormcall.",
       "2": "<br/>",
-      "3": "各种天狗咒雷提供的攻击力提升不能叠加，效果与持续时间由后生效的为准。",
+      "3": "The ATK Bonus provided by various kinds of Tengu Juurai will not stack, and their effects and duration will be determined by the last Tengu Juurai to take effect.",
       "4": "<br/>",
-      "5": "<i>裟罗背离天狗之众，又短暂对天领奉行失去了信仰。在打破迷惘之后，这是她重新所找到的，属于自己的雷光。</i>"
+      "5": "<i>Sara departed from her people, the tengu, and also temporarily lost her faith in the Tenryou Commission. But once the clouds over her heart cleared, she found her own lightning anew.</i>"
     },
     "skillParams": {
-      "0": "天狗咒雷·金刚坏 伤害",
-      "1": "天狗咒雷·雷砾 伤害",
-      "2": "冷却时间",
-      "3": "元素能量",
+      "0": "Tengu Juurai: Titanbreaker DMG",
+      "1": "Tengu Juurai: Stormcluster DMG",
+      "2": "CD",
+      "3": "Energy Cost",
       "4": "",
       "5": "",
       "6": "",
@@ -101,60 +101,60 @@
     }
   },
   "passive1": {
-    "name": "不动心",
+    "name": "Immovable Will",
     "description": {
-      "0": "处于<strong>鸦羽天狗霆雷召咒</strong>的「乌羽护持」状态下时，瞄准射击的所需的蓄力时间减少60%。"
+      "0": "While in the Crowfeather Cover state provided by <strong>Tengu Stormcall</strong>, Aimed Shot charge times are decreased by 60%."
     }
   },
   "passive2": {
-    "name": "御公仪",
+    "name": "Decorum",
     "description": {
-      "0": "天狗咒雷·伏命中敌人后，将基于九条裟罗的元素充能效率，每100%为队伍中所有角色恢复1.2点元素能量。该效果每3秒至多触发一次。"
+      "0": "When Tengu Juurai: Ambush hits opponents, Kujou Sara will restore 1.2 Energy to all party members for every 100% Energy Recharge she has. This effect can be triggered once every 3s."
     }
   },
   "passive3": {
-    "name": "检地",
+    "name": "Land Survey",
     "description": {
-      "0": "在稻妻执行探索派遣任务时，消耗的时间缩短25%。"
+      "0": "When dispatched on an expedition in Inazuma, time consumed is reduced by 25%."
     }
   },
   "constellation1": {
-    "name": "乌眼",
+    "name": "Crow's Eye",
     "description": {
-      "0": "天狗咒雷为角色施加攻击力提升效果或命中敌人后，<strong>鸦羽天狗霆雷召咒</strong>的冷却时间减少1秒。",
-      "1": "该效果每3秒至多触发一次。"
+      "0": "When Tengu Juurai grant characters ATK Bonuses or hits opponents, the CD of <strong>Tengu Stormcall</strong> is decreased by 1s.",
+      "1": "This effect can be triggered once every 3s."
     }
   },
   "constellation2": {
-    "name": "鸦羽",
+    "name": "Dark Wings",
     "description": {
-      "0": "施放<strong>鸦羽天狗霆雷召咒</strong>时，会在九条裟罗原本的位置留下能引发一次较弱的天狗咒雷·伏的「乌羽」，造成原本30%的伤害。"
+      "0": "Unleashing <strong>Tengu Stormcall</strong> will leave a weaker Crowfeather at Kujou Sara's original position that will deal 30% of its original DMG."
     }
   },
   "constellation3": {
-    "name": "心魔",
+    "name": "The War Within",
     "description": {
-      "0": "<strong>煌煌千道镇式</strong>的技能等级提高3级。",
-      "1": "至多提升至15级。"
+      "0": "Increases the Level of <strong>Subjugation: Koukou Sendou</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
     }
   },
   "constellation4": {
-    "name": "彻证",
+    "name": "Conclusive Proof",
     "description": {
-      "0": "<strong>煌煌千道镇式</strong>释放的天狗咒雷·雷砾增加至6道。"
+      "0": "The number of Tengu Juurai: Stormcluster released by <strong>Subjugation: Koukou Sendou</strong> is increased to 6."
     }
   },
   "constellation5": {
-    "name": "咒咏",
+    "name": "Spellsinger",
     "description": {
-      "0": "<strong>鸦羽天狗霆雷召咒</strong>的技能等级提高3级。",
-      "1": "至多提升至15级。"
+      "0": "Increases the Level of <strong>Tengu Stormcall</strong> by 3.",
+      "1": "Maximum upgrade level is 15."
     }
   },
   "constellation6": {
-    "name": "我界",
+    "name": "Sin of Pride",
     "description": {
-      "0": "处于天狗咒雷带来的攻击力提升效果状态下的角色，其<electro>雷元素伤害</electro>的暴击伤害提高60%。"
+      "0": "The <electro>Electro DMG</electro> of characters who have had their ATK increased by Tengu Juurai has its Crit DMG increased by 60%."
     }
   }
 }
