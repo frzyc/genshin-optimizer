@@ -18,48 +18,19 @@ import Stat from '../../../Stat'
 import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-import { IConditionals } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
 import { Translate } from '../../../Components/Translate'
 import { plungeDocSection, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
 import ColorText from '../../../Components/ColoredText'
 const tr = (strKey: string) => <Translate ns="char_Yanfei_gen" key18={strKey} />
-const conditionals: IConditionals = {
-  q: {
-    name: <span>Brilliance</span>,
-    stats: stats => ({ charged_dmg_: data.burst.dmg_[stats.tlvl.burst] }),
-    fields: [{
-      text: "Duration",
-      value: "15s",
-    }, {
-      text: "Scarlet Seal Grant Interval",
-      value: "1s"
-    }]
-  },
-  p1: {
-    canShow: stats => stats.ascension >= 1,
-    name: <span>Consumes <b>Scarlet Seals</b> by using a Charged Attack</span>,
-    stats: { pyro_dmg_: 5 },
-    maxStack: stats => stats.constellation >= 6 ? 4 : 3,
-    fields: [{
-      text: "Duration",
-      value: "6s",
-    }]
-  },
-  c2: {
-    canShow: stats => stats.constellation >= 2,
-    name: "Against enemies below 50% HP",
-    stats: { charged_critRate_: 20 }
-  }
-}
 const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   thumbImgSide: thumbSide,
   bannerImg: banner,
-  star: data_gen.star,
+  rarity: data_gen.star,
   elementKey: "pyro",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
   gender: "F",
@@ -70,7 +41,6 @@ const char: ICharacterSheet = {
   ascensions: data_gen.ascensions,
   talent: {
     formula,
-    conditionals,
     sheets: {
       auto: {
         name: tr("auto.name"),
@@ -150,7 +120,18 @@ const char: ICharacterSheet = {
             text: "Energy Cost",
             value: 80,
           }]
-          , conditional: conditionals.q
+          , conditional: {
+            key: "q",
+            name: <span>Brilliance</span>,
+            stats: stats => ({ charged_dmg_: data.burst.dmg_[stats.tlvl.burst] }),
+            fields: [{
+              text: "Duration",
+              value: "15s",
+            }, {
+              text: "Scarlet Seal Grant Interval",
+              value: "1s"
+            }]
+          },
         }],
       },
       passive1: {
@@ -158,7 +139,17 @@ const char: ICharacterSheet = {
         img: passive1,
         sections: [{
           text: tr("passive1.description"),
-          conditional: conditionals.p1
+          conditional: {
+            key: "a1",
+            canShow: stats => stats.ascension >= 1,
+            name: <span>Consumes <b>Scarlet Seals</b> by using a Charged Attack</span>,
+            stats: { pyro_dmg_: 5 },
+            maxStack: stats => stats.constellation >= 6 ? 4 : 3,
+            fields: [{
+              text: "Duration",
+              value: "6s",
+            }]
+          },
         }],
       },
       passive2: {
@@ -181,10 +172,15 @@ const char: ICharacterSheet = {
         img: c2,
         sections: [{
           text: tr("constellation2.description"),
-          conditional: conditionals.c2
+          conditional: {
+            key: "c2",
+            canShow: stats => stats.constellation >= 2,
+            name: "Against enemies below 50% HP",
+            stats: { charged_critRate_: 20 }
+          }
         }],
       },
-      constellation3: talentTemplate("constellation3", tr, c3, { skillBoost: 3 }),
+      constellation3: talentTemplate("constellation3", tr, c3, "skillBoost"),
       constellation4: {
         name: tr("constellation4.name"),
         img: c4,
@@ -208,7 +204,7 @@ const char: ICharacterSheet = {
           },]
         }],
       },
-      constellation5: talentTemplate("constellation5", tr, c5, { burstBoost: 3 }),
+      constellation5: talentTemplate("constellation5", tr, c5, "burstBoost"),
       constellation6: talentTemplate("constellation6", tr, c6),
     },
   },

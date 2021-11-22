@@ -1,27 +1,28 @@
 import { IFormulaSheet } from "../../../Types/character"
-import { toTalentPercent } from "../../../Util/DataminedUtil"
+import { singleToTalentPercent, toTalentPercent } from "../../../Util/DataminedUtil"
 import { basicDMGFormula } from "../../../Util/FormulaUtil"
 import skillParam_gen_pre from './skillParam_gen.json'
 const skillParam_gen = skillParam_gen_pre as any
+let a = 0, p1 = 0
 export const data = {
   normal: {
     hitArr: [
-      toTalentPercent(skillParam_gen.auto[0]),//x2
-      toTalentPercent(skillParam_gen.auto[1]),
-      toTalentPercent(skillParam_gen.auto[2]),
-      toTalentPercent(skillParam_gen.auto[3]),//x2
-      toTalentPercent(skillParam_gen.auto[4]),
+      toTalentPercent(skillParam_gen.auto[a++]),//x2
+      toTalentPercent(skillParam_gen.auto[a++]),
+      toTalentPercent(skillParam_gen.auto[a++]),
+      toTalentPercent(skillParam_gen.auto[a++]),//x2
+      toTalentPercent(skillParam_gen.auto[a++]),
     ]
   },
   charged: {
-    hit: toTalentPercent(skillParam_gen.auto[5]),
-    full: toTalentPercent(skillParam_gen.auto[6]),
-    kindling: toTalentPercent(skillParam_gen.auto[7]),
+    hit: toTalentPercent(skillParam_gen.auto[a++]),
+    full: toTalentPercent(skillParam_gen.auto[a++]),
+    kindling: toTalentPercent(skillParam_gen.auto[a++]),
   },
   plunging: {
-    dmg: toTalentPercent(skillParam_gen.auto[8]),
-    low: toTalentPercent(skillParam_gen.auto[9]),
-    high: toTalentPercent(skillParam_gen.auto[10]),
+    dmg: toTalentPercent(skillParam_gen.auto[a++]),
+    low: toTalentPercent(skillParam_gen.auto[a++]),
+    high: toTalentPercent(skillParam_gen.auto[a++]),
   },
   skill: {
     dmg_: toTalentPercent(skillParam_gen.skill[3]),
@@ -29,8 +30,13 @@ export const data = {
   burst: {
     dmg: toTalentPercent(skillParam_gen.burst[0]),
     exp: toTalentPercent(skillParam_gen.burst[1]),
+  },
+  passive2: {
+    fixed_atk_: singleToTalentPercent(skillParam_gen.passive2[p1++][0]),
+    var_atk_: singleToTalentPercent(skillParam_gen.passive2[p1++][0]),
+    duration: skillParam_gen.passive2[p1++][0],
   }
-}
+} as const
 const formula: IFormulaSheet = {
   normal: Object.fromEntries(data.normal.hitArr.map((arr, i) =>
     [i, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "normal")])),

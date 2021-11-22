@@ -1,5 +1,4 @@
 import '../WorkerHack'
-import { PreprocessFormulas } from "../StatData";
 import { artifactSetPermutations, artifactPermutations, pruneArtifacts, calculateTotalBuildNumber } from "./Build"
 import { GetDependencies } from '../StatDependency';
 import Formula from '../Formula';
@@ -8,6 +7,7 @@ import { ArtifactSetKey, SetNum, SlotKey } from '../Types/consts';
 import { Build, BuildRequest, SetFilter } from '../Types/Build';
 import { BonusStats, ICalculatedStats } from '../Types/stats';
 import { mergeStats } from '../Util/StatUtil';
+import { PreprocessFormulas } from '../ProcessFormula';
 
 const plotMaxPoints = 1500
 

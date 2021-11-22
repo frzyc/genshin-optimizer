@@ -39,7 +39,6 @@ export default class WeaponSheet {
   get imgAwaken() { return this.sheet.iconAwaken }
   get rarity() { return this.sheet.rarity }
   stats = (build: ICalculatedStats): object | undefined => evalIfFunc(this.sheet.stats, build) || {}
-  get conditionals() { return this.sheet.conditionals }
   get document() { return this.sheet.document }
   getMainStatValue = (level = 1, ascension = 0) => {
     const { type, base, curve } = this.sheet.mainStat

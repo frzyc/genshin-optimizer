@@ -3,7 +3,6 @@ import { SubstatKey } from "./artifact";
 import { DocumentSection } from "./character";
 import { CharacterKey, Rarity, WeaponKey, WeaponTypeKey } from "./consts";
 import { BasicStats, BonusStats } from "./stats";
-import { IConditionals } from "./IConditional";
 
 export type IWeaponSheets = Record<WeaponKey, IWeaponSheet>
 
@@ -11,7 +10,6 @@ export interface IWeaponSheet extends WeaponData {
   icon: string,
   iconAwaken: string,
   stats?: BonusStats | ((stats: BasicStats) => BonusStats | undefined)
-  conditionals?: IConditionals
   document: DocumentSection[],
 }
 

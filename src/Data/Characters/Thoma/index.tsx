@@ -18,46 +18,19 @@ import Stat from '../../../Stat'
 import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-import { IConditionals } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
 import { Translate, TransWrapper } from '../../../Components/Translate'
 import { plungeDocSection, sgt, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
 import ColorText from '../../../Components/ColoredText'
 const tr = (strKey: string) => <Translate ns="char_Thoma_gen" key18={strKey} />
-console.log(data)
-const conditionals: IConditionals = {
-  a1: { // Imbricated Armor
-    canShow: stats => stats.ascension >= 1,
-    name: <TransWrapper ns="char_Thoma" key18="a1" />,
-    maxStack: data.passive1.maxStack,
-    stats: { shield_: data.passive1.shield_ },
-    fields: [{
-      text: sgt("duration"),
-      value: data.passive1.duration
-    }]
-  },
-  c6: { // Burning Heart
-    canShow: stats => stats.constellation >= 6,
-    name: <span><TransWrapper ns="char_Thoma" key18="c6" /></span>,
-    stats: {
-      normal_dmg_: data.constellation6.auto_,
-      charged_dmg_: data.constellation6.auto_,
-      plunging_dmg_: data.constellation6.auto_
-    },
-    fields: [{
-      text: sgt("duration"),
-      value: data.constellation6.duration
-    }]
-  }
-}
 const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   thumbImgSide: thumbSide,
   bannerImg: banner,
-  star: data_gen.star,
+  rarity: data_gen.star,
   elementKey: "pyro",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
   gender: "M",
@@ -68,7 +41,6 @@ const char: ICharacterSheet = {
   ascensions: data_gen.ascensions,
   talent: {
     formula,
-    conditionals,
     sheets: {
       auto: {
         name: tr("auto.name"),
@@ -184,22 +156,45 @@ const char: ICharacterSheet = {
         img: passive1,
         sections: [{
           text: tr("passive1.description"),
-          conditional: conditionals.a1
+          conditional: { // Imbricated Armor
+            key: "a1",
+            canShow: stats => stats.ascension >= 1,
+            name: <TransWrapper ns="char_Thoma" key18="a1" />,
+            maxStack: data.passive1.maxStack,
+            stats: { shield_: data.passive1.shield_ },
+            fields: [{
+              text: sgt("duration"),
+              value: data.passive1.duration
+            }]
+          },
         }],
       },
       passive2: talentTemplate("passive2", tr, passive2),
       passive3: talentTemplate("passive3", tr, passive3),
       constellation1: talentTemplate("constellation1", tr, c1),
       constellation2: talentTemplate("constellation2", tr, c2),
-      constellation3: talentTemplate("constellation3", tr, c3, { skillBoost: 3 }),
+      constellation3: talentTemplate("constellation3", tr, c3, "skillBoost"),
       constellation4: talentTemplate("constellation4", tr, c4),
-      constellation5: talentTemplate("constellation5", tr, c5, { burstBoost: 3 }),
+      constellation5: talentTemplate("constellation5", tr, c5, "burstBoost"),
       constellation6: {
         name: tr("constellation6.name"),
         img: c6,
         sections: [{
           text: tr("constellation6.description"),
-          conditional: conditionals.c6
+          conditional: { // Burning Heart
+            key: "c6",
+            canShow: stats => stats.constellation >= 6,
+            name: <span><TransWrapper ns="char_Thoma" key18="c6" /></span>,
+            stats: {
+              normal_dmg_: data.constellation6.auto_,
+              charged_dmg_: data.constellation6.auto_,
+              plunging_dmg_: data.constellation6.auto_
+            },
+            fields: [{
+              text: sgt("duration"),
+              value: data.constellation6.duration
+            }]
+          }
         }],
       }
     },

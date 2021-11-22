@@ -352,7 +352,7 @@ Object.entries(languageData).forEach(([lang, data]) => {
 
   Object.entries(data).forEach(([type, typeData]) => {
     //general manual localiation namespaces
-    if (type === "sheet" || type === "weaponKey")
+    if (["sheet", "weaponKey", "resonance"].includes(type))
       return dumpFile(`${fileDir}/${type}_gen.json`, typeData)
 
     //weapons/characters/artifacts

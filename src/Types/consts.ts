@@ -10,6 +10,7 @@ export const allRarities = [5, 4, 3, 2, 1] as const
 export const allArtifactRarities = [5, 4, 3] as const
 export const allSlotKeys = ["flower", "plume", "sands", "goblet", "circlet"] as const
 export const allElements = ['anemo', 'geo', 'electro', 'hydro', 'pyro', 'cryo'] as const
+export const allElementsWithPhy = ["physical", ...allElements] as const
 export const allWeaponTypeKeys = ['sword', 'claymore', 'polearm', 'bow', 'catalyst'] as const
 export const allArtifactSets = [
   "Adventurer", "ArchaicPetra", "Berserker", "BlizzardStrayer", "BloodstainedChivalry",
@@ -58,6 +59,7 @@ export type Rarity = typeof allRarities[number]
 export type ArtifactRarity = typeof allArtifactRarities[number]
 export type SlotKey = typeof allSlotKeys[number]
 export type ElementKey = typeof allElements[number]
+export type ElementKeyWithPhy = typeof allElementsWithPhy[number]
 export type ArtifactSetKey = typeof allArtifactSets[number]
 export type CharacterKey = typeof allCharacterKeys[number]
 export type WeaponKey = typeof allWeaponKeys[number]

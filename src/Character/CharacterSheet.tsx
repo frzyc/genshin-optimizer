@@ -1,10 +1,9 @@
 import { CharacterExpCurveData } from "pipeline";
 import ImgIcon from "../Components/Image/ImgIcon";
 import Stat from '../Stat';
-import { ICharacterSheet, TalentSheet } from "../Types/character";
+import { ICharacterSheet, TalentSheet, TalentSheetElementKey } from "../Types/character";
 import { allCharacterKeys, CharacterKey, ElementKey } from "../Types/consts";
-import { ICalculatedStats } from "../Types/stats";
-import { evalIfFunc, objectFromKeyMap } from "../Util/Util";
+import { objectFromKeyMap } from "../Util/Util";
 import expCurveJSON from './expCurve_gen.json';
 
 const expCurve = expCurveJSON as CharacterExpCurveData
@@ -27,10 +26,7 @@ export default class CharacterSheet {
   get thumbImg() { return this.sheet.thumbImg }
   get thumbImgSide() { return this.sheet.thumbImgSide }
   get bannerImg() { return this.sheet.bannerImg }
-  /**
-   * TODO rarity
-   */
-  get star() { return this.sheet.star }
+  get rarity() { return this.sheet.rarity }
   get elementKey() { return "elementKey" in this.sheet ? this.sheet.elementKey : undefined }
   get weaponTypeKey() { return this.sheet.weaponTypeKey }
   get constellationName() { return this.sheet.constellationName }
@@ -52,26 +48,12 @@ export default class CharacterSheet {
     const weaponTypeKey = this.sheet.weaponTypeKey
     return weaponTypeKey === "sword" || weaponTypeKey === "polearm" || weaponTypeKey === "claymore"
   }
-
+  get isTraveler() {
+    return "talents" in this.sheet
+  }
   getTalent = (eleKey: ElementKey = "anemo"): TalentSheet | undefined => {
     if ("talent" in this.sheet) return this.sheet.talent
     else return this.sheet.talents[eleKey]
   }
-  getTalentOfKey = (talentKey: string, eleKey: ElementKey = "anemo") => this.getTalent(eleKey)?.sheets[talentKey]
-
-  getTalentStats = (talentKey: string, stats: ICalculatedStats) => {
-    const [, constell] = talentKey.split("constellation")
-    if (parseInt(constell) > stats.constellation) return null
-    return evalIfFunc(this.getTalentOfKey(talentKey)?.stats, stats)
-  }
-  getTalentStatsAll = (stats: ICalculatedStats, eleKey: ElementKey = "anemo") => {
-    const talents = this.getTalent(eleKey)?.sheets
-    if (!talents) return []
-    const statsArr: any[] = []
-    Object.keys(talents).forEach(talentKey => {
-      const talentStats = this.getTalentStats(talentKey, stats)
-      if (talentStats) statsArr.push(talentStats)
-    })
-    return statsArr
-  }
+  getTalentOfKey = (talentKey: TalentSheetElementKey, eleKey: ElementKey = "anemo") => this.getTalent(eleKey)?.sheets[talentKey]
 }

@@ -2,7 +2,6 @@ import ImgIcon from "../Components/Image/ImgIcon";
 import { Translate } from "../Components/Translate";
 import { IArtifactSheet, SetEffectEntry } from "../Types/artifact";
 import { allArtifactSets, allSlotKeys, ArtifactRarity, ArtifactSetKey, SetNum, SlotKey } from "../Types/consts";
-import { IConditionals } from "../Types/IConditional";
 import { BonusStats, ICalculatedStats } from "../Types/stats";
 import { mergeStats } from "../Util/StatUtil";
 import { deepClone, evalIfFunc, objectFromKeyMap } from "../Util/Util";
@@ -50,7 +49,6 @@ export class ArtifactSheet {
   }
   get slotIcons(): Dict<SlotKey, string> { return this.data.icons }
   get setEffects(): Dict<SetNum, SetEffectEntry> { return this.data.setEffects }
-  get conditionals(): IConditionals | undefined { return this.data.conditionals }
   getSlotName = (slotKey: SlotKey) => tr(this.key, `pieces.${slotKey}.name`)
   getSlotDesc = (slotKey: SlotKey) => tr(this.key, `pieces.${slotKey}.desc`)
   setNumStats(num: SetNum, stats: ICalculatedStats): BonusStats {

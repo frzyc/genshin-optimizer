@@ -1,6 +1,7 @@
 import Artifact from "../../Artifact/Artifact"
 import { importFlex } from "../../Database/exim/flex"
-import { PreprocessFormulas, StatData } from "../../StatData"
+import { PreprocessFormulas } from "../../ProcessFormula"
+import { StatData } from "../../StatData"
 import { GetDependencies } from "../../StatDependency"
 import { ICalculatedStats } from "../../Types/stats"
 

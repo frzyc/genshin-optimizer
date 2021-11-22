@@ -18,105 +18,19 @@ import Stat from '../../../Stat'
 import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-import { IConditionals } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
 import { Translate, TransWrapper } from '../../../Components/Translate'
 import { claymoreChargedDocSection, plungeDocSection, sgt, st, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
 const tr = (strKey: string) => <Translate ns="char_Eula_gen" key18={strKey} />
 const Eula = (strKey: string) => <TransWrapper ns="char_Eula" key18={strKey} />
-const conditionals: IConditionals = {
-  e: {
-    name: Eula("skillC.name"),
-    states: {
-      g: {//grimheart
-        name: Eula("skillC.grimheart.name"),
-        stats: { def_: 30 },
-        fields: [{
-          text: Eula("skillC.grimheart.int"),
-        }, {
-          text: tr("skill.grimheartDuration"),
-          value: "18s"
-        }, {
-          text: sgt("maxStacks"),
-          value: 2
-        }]
-      },
-      c: {//consumed
-        name: Eula("skillC.consumed"),
-        stats: stats => ({
-          cryo_enemyRes_: -data.skill.cyroResDec[stats.tlvl.skill],
-          physical_enemyRes_: -data.skill.cyroResDec[stats.tlvl.skill],
-        }),
-        fields: [{
-          text: sgt("duration"),
-          value: "7s"
-        }]
-      }
-    }
-  },
-  q: {
-    name: Eula("burstC.name"),
-    states: Object.fromEntries([...Array(31).keys()].map(i =>
-      [i, {
-        name: i === 0 ? st("baseDMG") : <TransWrapper ns="sheet" key18="stack" values={{ count: i }} />,
-        fields: [{//above 50%
-          text: <span>{Eula("burstC.name")} {i === 0 ? sgt("baseDMG") : <TransWrapper ns="sheet" key18="stack" values={{ count: i }} />}</span>,
-          canShow: stats => {
-            if (i < 5 && stats.constellation >= 6) return false
-            const [stacks, stateKey] = (stats.conditionalValues?.character?.Eula?.sheet?.talent?.q ?? [])
-            return stacks && stateKey === i.toString()
-          },
-          formulaText: stats => {
-            const val = i === 0 ? <span>{data.burst.baseDMG[stats.tlvl.burst]}%</span> : <span>( {data.burst.baseDMG[stats.tlvl.burst]}% + {i} * {data.burst.stackDMG[stats.tlvl.burst]}% )</span>
-            const statKey = getTalentStatKey("burst", stats, "physical")
-            return <span>{val} {Stat.printStat(statKey, stats)}</span>
-          },
-          formula: formula.burst[i],
-          variant: stats => getTalentStatKeyVariant("burst", stats, "physical"),
-        }, {//below 50%
-          text: <span>{Eula("burstC.name")} {i === 0 ? sgt("baseDMG") : <TransWrapper ns="sheet" key18="stack" values={{ count: i }} />} <TransWrapper ns="sheet" key18="lessPercentHP" values={{ percent: 50 }} /></span>,
-          canShow: stats => {
-            if (stats.constellation < 4) return false
-            if (i < 5 && stats.constellation >= 6) return false
-            const [stacks, stateKey] = (stats.conditionalValues?.character?.Eula?.sheet?.talent?.q ?? [])
-            return stacks && stateKey === i.toString()
-          },
-          formulaText: stats => {
-            const val = i === 0 ? <span>{data.burst.baseDMG[stats.tlvl.burst]}%</span> : <span>( {data.burst.baseDMG[stats.tlvl.burst]}% + {i} * {data.burst.stackDMG[stats.tlvl.burst]}% )</span>
-            const hitModeMultiKey = stats.hitMode === "avgHit" ? "skill_avgHit_base_multi" : stats.hitMode === "critHit" ? "critHit_base_multi" : ""
-            return <span>{val} {Stat.printStat("finalATK", stats)} * {(hitModeMultiKey ? <span>{Stat.printStat(hitModeMultiKey, stats)} * </span> : "")}( {Stat.printStat("physical_burst_hit_base_multi", stats)} + 25%) * {Stat.printStat("enemyLevel_multi", stats)} * {Stat.printStat("physical_enemyRes_multi", stats)}</span>
-          },
-          formula: formula.burst[`${i}_50`],
-          variant: stats => getTalentStatKeyVariant("burst", stats, "physical"),
-        }, {
-          canShow: stats => stats.constellation >= 6,
-          text: Eula("burstC.start5")
-        }, {
-          canShow: stats => stats.constellation >= 6,
-          text: Eula("burstC.addStacks")
-        }]
-      }])),
-  },
-  c1: {
-    name: Eula("c1C.name"),
-    canShow: stats => stats.constellation >= 1,
-    stats: {
-      physical_dmg_: 30
-    },
-    fields: [{
-      text: sgt("duration"),
-      value: Eula("c1C.durationStack"),
-    }]
-  }
-}
 const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   thumbImgSide: thumbSide,
   bannerImg: banner,
-  star: data_gen.star,
+  rarity: data_gen.star,
   elementKey: "cryo",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
   gender: "F",
@@ -127,7 +41,6 @@ const char: ICharacterSheet = {
   ascensions: data_gen.ascensions,
   talent: {
     formula,
-    conditionals,
     sheets: {
       auto: {
         name: tr("auto.name"),
@@ -169,7 +82,36 @@ const char: ICharacterSheet = {
             value: stats => stats.constellation >= 2 ? data.skill.cdPress : data.skill.cdHold,
             unit: "s"
           },],
-          conditional: conditionals.e
+          conditional: {
+            key: "e",
+            name: Eula("skillC.name"),
+            states: {
+              g: {//grimheart
+                name: Eula("skillC.grimheart.name"),
+                stats: { def_: 30 },
+                fields: [{
+                  text: Eula("skillC.grimheart.int"),
+                }, {
+                  text: tr("skill.grimheartDuration"),
+                  value: "18s"
+                }, {
+                  text: sgt("maxStacks"),
+                  value: 2
+                }]
+              },
+              c: {//consumed
+                name: Eula("skillC.consumed"),
+                stats: stats => ({
+                  cryo_enemyRes_: -data.skill.cyroResDec[stats.tlvl.skill],
+                  physical_enemyRes_: -data.skill.cyroResDec[stats.tlvl.skill],
+                }),
+                fields: [{
+                  text: sgt("duration"),
+                  value: "7s"
+                }]
+              }
+            }
+          },
         }, {
           fields: [{
             text: tr("skill.brandDMG"),
@@ -201,7 +143,50 @@ const char: ICharacterSheet = {
             value: 7,
             unit: "s"
           }],
-          conditional: conditionals.q
+          conditional: {
+            key: "q",
+            name: Eula("burstC.name"),
+            states: Object.fromEntries([...Array(31).keys()].map(i =>
+              [i, {
+                name: i === 0 ? sgt("baseDMG") : <TransWrapper ns="sheet" key18="stack" values={{ count: i }} />,
+                fields: [{//above 50%
+                  text: <span>{Eula("burstC.name")} {i === 0 ? sgt("baseDMG") : <TransWrapper ns="sheet" key18="stack" values={{ count: i }} />}</span>,
+                  canShow: stats => {
+                    if (i < 5 && stats.constellation >= 6) return false
+                    const [stacks, stateKey] = stats.conditionalValues?.character?.Eula?.q ?? []
+                    return !!stacks && stateKey === i.toString()
+                  },
+                  formulaText: stats => {
+                    const val = i === 0 ? <span>{data.burst.baseDMG[stats.tlvl.burst]}%</span> : <span>( {data.burst.baseDMG[stats.tlvl.burst]}% + {i} * {data.burst.stackDMG[stats.tlvl.burst]}% )</span>
+                    const statKey = getTalentStatKey("burst", stats, "physical")
+                    return <span>{val} {Stat.printStat(statKey, stats)}</span>
+                  },
+                  formula: formula.burst[i],
+                  variant: stats => getTalentStatKeyVariant("burst", stats, "physical"),
+                }, {//below 50%
+                  text: <span>{Eula("burstC.name")} {i === 0 ? sgt("baseDMG") : <TransWrapper ns="sheet" key18="stack" values={{ count: i }} />} <TransWrapper ns="sheet" key18="lessPercentHP" values={{ percent: 50 }} /></span>,
+                  canShow: stats => {
+                    if (stats.constellation < 4) return false
+                    if (i < 5 && stats.constellation >= 6) return false
+                    const [stacks, stateKey] = stats.conditionalValues?.character?.Eula?.q ?? []
+                    return !!stacks && stateKey === i.toString()
+                  },
+                  formulaText: stats => {
+                    const val = i === 0 ? <span>{data.burst.baseDMG[stats.tlvl.burst]}%</span> : <span>( {data.burst.baseDMG[stats.tlvl.burst]}% + {i} * {data.burst.stackDMG[stats.tlvl.burst]}% )</span>
+                    const hitModeMultiKey = stats.hitMode === "avgHit" ? "skill_avgHit_base_multi" : stats.hitMode === "critHit" ? "critHit_base_multi" : ""
+                    return <span>{val} {Stat.printStat("finalATK", stats)} * {(hitModeMultiKey ? <span>{Stat.printStat(hitModeMultiKey, stats)} * </span> : "")}( {Stat.printStat("physical_burst_hit_base_multi", stats)} + 25%) * {Stat.printStat("enemyLevel_multi", stats)} * {Stat.printStat("physical_enemyRes_multi", stats)}</span>
+                  },
+                  formula: formula.burst[`${i}_50`],
+                  variant: stats => getTalentStatKeyVariant("burst", stats, "physical"),
+                }, {
+                  canShow: stats => stats.constellation >= 6,
+                  text: Eula("burstC.start5")
+                }, {
+                  canShow: stats => stats.constellation >= 6,
+                  text: Eula("burstC.addStacks")
+                }]
+              }])),
+          },
         }],
       },
       passive1: {
@@ -234,13 +219,24 @@ const char: ICharacterSheet = {
         img: c1,
         sections: [{
           text: tr("constellation1.description"),
-          conditional: conditionals.c1
+          conditional: {
+            key: "c1",
+            name: Eula("c1C.name"),
+            canShow: stats => stats.constellation >= 1,
+            stats: {
+              physical_dmg_: 30
+            },
+            fields: [{
+              text: sgt("duration"),
+              value: Eula("c1C.durationStack"),
+            }]
+          }
         }]
       },
       constellation2: talentTemplate("constellation2", tr, c2),
-      constellation3: talentTemplate("constellation3", tr, c3, { burstBoost: 3 }),
+      constellation3: talentTemplate("constellation3", tr, c3, "burstBoost"),
       constellation4: talentTemplate("constellation4", tr, c4),
-      constellation5: talentTemplate("constellation5", tr, c5, { skillBoost: 3 }),
+      constellation5: talentTemplate("constellation5", tr, c5, "skillBoost"),
       constellation6: talentTemplate("constellation6", tr, c6),
     }
   }

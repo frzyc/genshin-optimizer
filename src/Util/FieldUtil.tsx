@@ -1,7 +1,8 @@
 import ColorText from "../Components/ColoredText"
 import StatIcon from "../Components/StatIcon"
-import ElementalData from "../Data/ElementalData"
+import { sgt } from "../Data/Characters/SheetUtil"
 import Stat from "../Stat"
+import { ElementKey } from "../Types/consts"
 import { IFieldDisplay } from "../Types/IFieldDisplay"
 
 export default function statsToFields(statVals, stats = {}): IFieldDisplay[] {
@@ -9,7 +10,12 @@ export default function statsToFields(statVals, stats = {}): IFieldDisplay[] {
     switch (statKey) {
       case "infusionSelf":
         return {
-          text: <ColorText color={statVal as any}>{ElementalData[statVal as any]?.name} Infusion</ColorText>,
+          text: <ColorText color={statVal as ElementKey}>{sgt(`element.${statVal}`)} Infusion</ColorText>,
+          canShow: () => true,
+        }
+      case "infusionAura":
+        return {
+          text: <ColorText color={statVal as ElementKey}>{sgt(`element.${statVal}`)} Infusion Aura</ColorText>,
           canShow: () => true,
         }
       default:

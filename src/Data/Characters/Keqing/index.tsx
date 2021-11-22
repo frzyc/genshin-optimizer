@@ -18,61 +18,18 @@ import Stat from '../../../Stat'
 import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-import { IConditionals } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
 import { Translate } from '../../../Components/Translate'
 import { WeaponTypeKey } from '../../../Types/consts'
 import { talentTemplate } from '../SheetUtil'
 const tr = (strKey: string) => <Translate ns="char_Keqing_gen" key18={strKey} />
-const conditionals: IConditionals = {
-  a1: {
-    canShow: stats => stats.ascension >= 4,
-    name: <span>Recasting <b>Stellar Restoration</b> while a Lightning Stiletto is present</span>,
-    stats: { infusionSelf: "electro" },
-    fields: [{
-      text: "Duration",
-      value: "5s"
-    }]
-  },
-  a4: { // AristocraticDignity
-    canShow: stats => stats.ascension >= 4,
-    name: <span>Casting <b>Starward Sword</b></span>,
-    stats: {
-      critRate_: 15,
-      enerRech_: 15,
-    },
-    fields: [{
-      text: "Duration",
-      value: "8s",
-    }]
-  },
-  c4: { // Attunement
-    canShow: stats => stats.constellation >= 4,
-    name: "Trigger an Electro-related Elemental Reaction",
-    stats: { atk_: data.constellation4.atk_ },
-    fields: [{
-      text: "Duration",
-      value: "10s",
-    }]
-  },
-  c6: { // Initating
-    canShow: stats => stats.constellation >= 6,
-    name: "Initiating Normal/Charged Attack, Skill or Burst",
-    stats: { electro_dmg_: data.constellation6.electro_ },
-    fields: [{
-      text: "Duration",
-      value: data.constellation6.duration,
-      unit: "s"
-    }]
-  }
-}
 const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   thumbImgSide: thumbSide,
   bannerImg: banner,
-  star: data_gen.star,
+  rarity: data_gen.star,
   elementKey: "electro",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
   gender: "F",
@@ -83,7 +40,6 @@ const char: ICharacterSheet = {
   ascensions: data_gen.ascensions,
   talent: {
     formula,
-    conditionals,
     sheets: {
       auto: {
         name: tr("auto.name"),
@@ -192,7 +148,19 @@ const char: ICharacterSheet = {
             text: "Energy Cost",
             value: data.burst.cost,
           }],
-          conditional: conditionals.a4
+          conditional: { // AristocraticDignity
+            key: "a4",
+            canShow: stats => stats.ascension >= 4,
+            name: <span>Casting <b>Starward Sword</b></span>,
+            stats: {
+              critRate_: 15,
+              enerRech_: 15,
+            },
+            fields: [{
+              text: "Duration",
+              value: "8s",
+            }]
+          },
         }],
       },
       passive1: {
@@ -200,7 +168,16 @@ const char: ICharacterSheet = {
         img: passive1,
         sections: [{
           text: tr("passive1.description"),
-          conditional: conditionals.a1
+          conditional: {
+            key: "a1",
+            canShow: stats => stats.ascension >= 1,
+            name: <span>Recasting <b>Stellar Restoration</b> while a Lightning Stiletto is present</span>,
+            stats: { infusionSelf: "electro" },
+            fields: [{
+              text: "Duration",
+              value: "5s"
+            }]
+          },
         }],
       },
       passive2: talentTemplate("passive2", tr, passive2),
@@ -219,22 +196,41 @@ const char: ICharacterSheet = {
         }],
       },
       constellation2: talentTemplate("constellation2", tr, c2),
-      constellation3: talentTemplate("constellation3", tr, c3, { burstBoost: 3 }),
+      constellation3: talentTemplate("constellation3", tr, c3, "burstBoost"),
       constellation4: {
         name: tr("constellation4.name"),
         img: c4,
         sections: [{
           text: tr("constellation4.description"),
-          conditional: conditionals.c4
+          conditional: { // Attunement
+            key: "c4",
+            canShow: stats => stats.constellation >= 4,
+            name: "Trigger an Electro-related Elemental Reaction",
+            stats: { atk_: data.constellation4.atk_ },
+            fields: [{
+              text: "Duration",
+              value: "10s",
+            }]
+          },
         }],
       },
-      constellation5: talentTemplate("constellation5", tr, c5, { skillBoost: 3 }),
+      constellation5: talentTemplate("constellation5", tr, c5, "skillBoost"),
       constellation6: {
         name: tr("constellation6.name"),
         img: c6,
         sections: [{
           text: tr("constellation6.description"),
-          conditional: conditionals.c6
+          conditional: { // Initating
+            key: "c6",
+            canShow: stats => stats.constellation >= 6,
+            name: "Initiating Normal/Charged Attack, Skill or Burst",
+            stats: { electro_dmg_: data.constellation6.electro_ },
+            fields: [{
+              text: "Duration",
+              value: data.constellation6.duration,
+              unit: "s"
+            }]
+          }
         }],
       },
     },

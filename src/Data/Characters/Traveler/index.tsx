@@ -14,7 +14,7 @@ const char: ICharacterSheet = {
   cardImg: card,
   thumbImg: thumb,
   thumbImgSide: thumbSide,
-  star: data_gen.star,
+  rarity: data_gen.star,
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
   gender: "F/M",
   constellationName: tr("constellationName"),

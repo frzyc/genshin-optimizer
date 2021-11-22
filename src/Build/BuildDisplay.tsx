@@ -8,8 +8,8 @@ import { Link as RouterLink } from 'react-router-dom';
 // eslint-disable-next-line
 import Worker from "worker-loader!./BuildWorker";
 import Artifact from '../Artifact/Artifact';
-import { ArtifactSheet } from '../Artifact/ArtifactSheet';
 import Character from '../Character/Character';
+import CharacterCard from '../Character/CharacterCard';
 import CharacterSheet from '../Character/CharacterSheet';
 import CardDark from '../Components/Card/CardDark';
 import CardLight from '../Components/Card/CardLight';
@@ -21,14 +21,15 @@ import ModalWrapper from '../Components/ModalWrapper';
 import { DatabaseContext } from '../Database/Database';
 import { dbStorage } from '../Database/DBStorage';
 import { GlobalSettingsContext } from '../GlobalSettings';
+import finalStatProcess from '../ProcessFormula';
+import useCharSelectionCallback from '../ReactHooks/useCharSelectionCallback';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
-import usePromise from '../ReactHooks/usePromise';
+import useSheets from '../ReactHooks/useSheets';
 import { ArtifactsBySlot, Build, BuildRequest, BuildSetting } from '../Types/Build';
 import { ICachedCharacter } from '../Types/character';
 import { allSlotKeys, CharacterKey } from '../Types/consts';
 import { ICalculatedStats } from '../Types/stats';
 import { deepClone, objectFromKeyMap } from '../Util/Util';
-import WeaponSheet from '../Weapon/WeaponSheet';
 import { buildContext, calculateTotalBuildNumber, maxBuildsToShowList } from './Build';
 import { initialBuildSettings } from './BuildSetting';
 import ChartCard from './ChartCard';
@@ -37,7 +38,6 @@ import ArtifactConditionalCard from './Components/ArtifactConditionalCard';
 import ArtifactSetPicker from './Components/ArtifactSetPicker';
 import BonusStatsCard from './Components/BonusStatsCard';
 import BuildAlert, { warningBuildNumber } from './Components/BuildAlert';
-import CharacterSelectionCard from './Components/CharacterSelectionCard';
 import EnemyEditorCard from './Components/EnemyEditorCard';
 import HitModeCard from './Components/HitModeCard';
 import MainStatSelectionCard, { artifactsSlotsToSelectMainStats } from './Components/MainStatSelectionCard';
@@ -97,7 +97,8 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   const [chartData, setchartData] = useState(undefined as any)
 
   const [charDirty, setCharDirty] = useForceUpdate()
-  const artifactSheets = usePromise(ArtifactSheet.getAll(), [])
+  const sheets = useSheets()
+  const { artifactSheets } = sheets ?? {}
 
   const [artsDirty, setArtsDirty] = useForceUpdate()
 
@@ -105,8 +106,10 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
 
   const worker = useRef(null as Worker | null)
 
-  type characterDataType = { character?: ICachedCharacter, characterSheet?: CharacterSheet, weaponSheet?: WeaponSheet, initialStats?: ICalculatedStats, statsDisplayKeys?: { basicKeys: any, [key: string]: any } }
-  const [{ character, characterSheet, weaponSheet, initialStats, statsDisplayKeys }, setCharacterData] = useState({} as characterDataType)
+  const setCharacter = useCharSelectionCallback()
+
+  type characterDataType = { character?: ICachedCharacter, characterSheet?: CharacterSheet, initialStats?: ICalculatedStats, statsDisplayKeys?: { basicKeys: any, [key: string]: any } }
+  const [{ character, characterSheet, initialStats, statsDisplayKeys }, setCharacterData] = useState({} as characterDataType)
   const buildSettings = useMemo(() => character?.buildSettings ?? initialBuildSettings(), [character])
   const { plotBase, setFilters, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, builds, buildDate, maxBuildsToShow } = buildSettings
 
@@ -117,7 +120,8 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     if (!initialStats || !artifactSheets) return []
     return builds.map(build => {
       const arts = Object.fromEntries(build.map(id => database._getArt(id)).map(art => [art?.slotKey, art]))
-      return Character.calculateBuildwithArtifact(initialStats, arts, artifactSheets)
+      const stats = Character.calculateBuildwithArtifact(deepClone(initialStats), arts, artifactSheets)
+      return finalStatProcess(stats)
     }).filter(build => build)
   }, [builds, database, initialStats, artifactSheets])
 
@@ -144,20 +148,19 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   //load the character data as a whole
   useEffect(() => {
     (async () => {
-      if (!characterKey || !artifactSheets) return
+      if (!characterKey || !sheets) return
       const character = database._getChar(characterKey)
       if (!character) return selectCharacter("")// character is prob deleted.
-      const characterSheet = await CharacterSheet.get(characterKey)
+      const characterSheet = sheets.characterSheets[characterKey]
       const weapon = database._getWeapon(character.equippedWeapon)
       if (!weapon) return
-      const weaponSheet = await WeaponSheet.get(weapon.key)
-      if (!characterSheet || !weaponSheet) return
-      const initialStats = Character.createInitialStats(character, database, characterSheet, weaponSheet)
+      if (!characterSheet) return
+      const initialStats = Character.createInitialStats(character, database, sheets)
       //NOTE: since initialStats are used, there are no inclusion of artifact formulas here.
-      const statsDisplayKeys = Character.getDisplayStatKeys(initialStats, { characterSheet, weaponSheet, artifactSheets })
-      setCharacterData({ character, characterSheet, weaponSheet, initialStats, statsDisplayKeys })
+      const statsDisplayKeys = Character.getDisplayStatKeys(initialStats, sheets)
+      setCharacterData({ character, characterSheet, initialStats, statsDisplayKeys })
     })()
-  }, [charDirty, characterKey, artifactSheets, database, selectCharacter])
+  }, [charDirty, characterKey, sheets, database, selectCharacter])
 
   //register changes in artifact database
   useEffect(() =>
@@ -286,7 +289,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
           "You can compare the difference between equipped artifacts and generated builds.",
           "The more complex the formula, the longer the generation time.",]}
       ><InfoDisplay /></InfoComponent>
-      <BuildModal {...{ build: buildStats[modalBuild], showCharacterModal, characterKey, selectCharacter, onClose: closeBuildModal }} />
+      <BuildModal {...{ build: buildStats[modalBuild], showCharacterModal, characterKey, onClose: closeBuildModal }} />
       {noCharacter && <Alert severity="error" variant="filled"> Opps! It looks like you haven't added a character to GO yet! You should go to the <Link component={RouterLink} to="/character">Characters</Link> page and add some!</Alert>}
       {noArtifact && <Alert severity="warning" variant="filled"> Opps! It looks like you haven't added any artifacts to GO yet! You should go to the <Link component={RouterLink} to="/artifact">Artifacts</Link> page and add some!</Alert>}
       {/* Build Generator Editor */}
@@ -295,20 +298,18 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
           <Typography variant="h6">Build Generator</Typography>
         </CardContent>
         <Divider />
-        <CardContent>
+        <CardContent sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
           <Grid container spacing={1} >
             {/* Left half */}
-            <Grid item xs={12} md={6} lg={5} sx={{
-              // select all excluding last
-              "> div:nth-last-of-type(n+2)": { mb: 1 }
-            }}>
+            <Grid item xs={12} md={6} lg={5} display="flex" flexDirection="column" gap={1}>
               <CardLight>
                 <CardContent>
                   <CharacterDropdownButton fullWidth value={characterKey} onChange={selectCharacter} disabled={generatingBuilds} />
                 </CardContent>
               </CardLight>
-              {/* character selection */}
-              <CharacterSelectionCard characterKey={characterKey} disabled={generatingBuilds} selectCharacter={selectCharacter} />
+              {/* character card */}
+              <Box><CharacterCard characterKey={characterKey} onClick={setCharacter} /></Box>
+
               {!!character && <BonusStatsCard character={character} />}
               {/* Enemy Editor */}
               {!!character && <EnemyEditorCard character={character} />}
@@ -320,10 +321,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
             </Grid>
 
             {/* Right half */}
-            <Grid item xs={12} md={6} lg={7} sx={{
-              // select all excluding last
-              "> div:nth-last-of-type(n+2)": { mb: 1 }
-            }}>
+            <Grid item xs={12} md={6} lg={7} display="flex" flexDirection="column" gap={1}>
               {!!initialStats && <ArtifactConditionalCard disabled={generatingBuilds} initialStats={initialStats} />}
 
               {/* Artifact set pickers */}
@@ -362,7 +360,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
             </Grid>
           </Grid>
           {/* Footer */}
-          <Grid container spacing={1} sx={{ mt: 1 }}>
+          <Grid container spacing={1}>
             <Grid item flexGrow={1} >
               <ButtonGroup>
                 <Button
@@ -399,14 +397,14 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
               </ButtonGroup>
             </Grid>
             <Grid item>
-              {statsDisplayKeys && characterSheet && weaponSheet && initialStats && <OptimizationTargetSelector {...{ optimizationTarget, setTarget: target => buildSettingsDispatch({ optimizationTarget: target }), initialStats, characterSheet, weaponSheet, artifactSheets, statsDisplayKeys, disabled: !!generatingBuilds }} />}
+              {statsDisplayKeys && sheets && initialStats && <OptimizationTargetSelector {...{ optimizationTarget, setTarget: target => buildSettingsDispatch({ optimizationTarget: target }), initialStats, sheets, statsDisplayKeys, disabled: !!generatingBuilds }} />}
             </Grid>
           </Grid>
 
-          {!!characterKey && <Box sx={{ mt: 1 }} >
+          {!!characterKey && <Box >
             <BuildAlert {...{ totBuildNumber, generatingBuilds, generationSkipped, generationProgress, generationDuration, characterName, maxBuildsToShow }} />
           </Box>}
-          {tcMode && statsDisplayKeys && <Box sx={{ mt: 1 }} >
+          {tcMode && statsDisplayKeys && <Box >
             <ChartCard disabled={generatingBuilds} data={chartData} plotBase={plotBase} setPlotBase={setPlotBase} statKeys={statsDisplayKeys?.basicKeys} />
           </Box>}
         </CardContent>
@@ -422,18 +420,17 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
       <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={600} />}>
         {/* Build List */}
         {buildStats?.map((build, index) =>
-          characterSheet && weaponSheet && artifactSheets && <ArtifactBuildDisplayItem sheets={{ characterSheet, weaponSheet, artifactSheets }} build={build} characterKey={characterKey as CharacterKey} index={index} key={Object.values(build.equippedArtifacts ?? {}).join()} statsDisplayKeys={statsDisplayKeys} onClick={() => setmodalBuild(index)} />
+          sheets && <ArtifactBuildDisplayItem sheets={sheets} build={build} characterKey={characterKey as CharacterKey} index={index} key={Object.values(build.equippedArtifacts ?? {}).join()} statsDisplayKeys={statsDisplayKeys} onClick={() => setmodalBuild(index)} />
         )}
       </Suspense>
     </Box>
   </buildContext.Provider>
 }
 
-function BuildModal({ build, showCharacterModal, characterKey, selectCharacter, onClose }) {
+function BuildModal({ build, showCharacterModal, characterKey, onClose }) {
   return <ModalWrapper open={!!(showCharacterModal || build)} onClose={onClose} containerProps={{ maxWidth: "xl" }}>
     <CharacterDisplayCard
       characterKey={characterKey}
-      setCharacterKey={selectCharacter}
       newBuild={build}
       onClose={onClose}
       footer={<CloseButton large onClick={onClose} />} />

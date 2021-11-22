@@ -1,6 +1,5 @@
 import { getTalentStatKey } from "../../../Build/Build"
 import { IFormulaSheet } from "../../../Types/character"
-import { IConditionalValue } from "../../../Types/IConditional"
 import { toTalentInt, toTalentPercent } from "../../../Util/DataminedUtil"
 import { basicDMGFormula } from "../../../Util/FormulaUtil"
 import { absorbableEle } from "../dataUtil"
@@ -60,8 +59,7 @@ const formula: IFormulaSheet = {
       const skillPercent = data.skill.kick_hold[stats.tlvl.skill]
       const basic = () => basicDMGFormula(skillPercent, stats, "skill")
       if (stats.constellation < 2) return basic()
-      const value = stats.conditionalValues?.character?.Sayu?.sheet?.talent?.c2 as IConditionalValue | undefined
-      const [num] = value ?? [0]
+      const [num] = stats.conditionalValues?.character?.Sayu?.c2 ?? []
       if (!num) return basic()
 
       const multi = num * 0.033
@@ -75,8 +73,7 @@ const formula: IFormulaSheet = {
         const skillPercent = data.skill.ele_kick[stats.tlvl.skill]
         const basic = () => basicDMGFormula(data.skill.ele_kick[stats.tlvl.skill], stats, "skill", eleKey)
         if (stats.constellation < 2) return basic()
-        const value = stats.conditionalValues?.character?.Sayu?.sheet?.talent?.c2 as IConditionalValue | undefined
-        const [num] = value ?? [0]
+        const [num] = stats.conditionalValues?.character?.Sayu?.c2 ?? []
         if (!num) return basic()
 
         const multi = num * 0.033

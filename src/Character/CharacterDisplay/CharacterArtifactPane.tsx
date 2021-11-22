@@ -10,20 +10,15 @@ import SolidToggleButtonGroup from '../../Components/SolidToggleButtonGroup';
 import { database as localDatabase, DatabaseContext } from '../../Database/Database';
 import useForceUpdate from '../../ReactHooks/useForceUpdate';
 import usePromise from '../../ReactHooks/usePromise';
+import { Sheets } from '../../ReactHooks/useSheets';
 import { ICachedCharacter } from '../../Types/character';
-import { allSlotKeys, ArtifactSetKey } from '../../Types/consts';
+import { allSlotKeys } from '../../Types/consts';
 import { objectFromKeyMap } from '../../Util/Util';
-import WeaponSheet from '../../Weapon/WeaponSheet';
 import Character from "../Character";
-import CharacterSheet from '../CharacterSheet';
 import StatDisplayComponent from './StatDisplayComponent';
 
 type CharacterArtifactPaneProps = {
-  sheets: {
-    characterSheet: CharacterSheet
-    weaponSheet: WeaponSheet,
-    artifactSheets: StrictDict<ArtifactSetKey, ArtifactSheet>
-  }
+  sheets: Sheets
   character: ICachedCharacter,
 }
 function CharacterArtifactPane({ sheets, character, character: { key: characterKey } }: CharacterArtifactPaneProps) {
@@ -33,7 +28,7 @@ function CharacterArtifactPane({ sheets, character, character: { key: characterK
   //choose which one to display stats for
   const stats = (newBuild ? newBuild : equippedBuild)
   const mainStatAssumptionLevel = stats?.mainStatAssumptionLevel ?? 0
-  const statKeys = useMemo(() => stats && Character.getDisplayStatKeys(stats, sheets), [stats, sheets])
+  const statKeys = useMemo(() => stats && sheets && Character.getDisplayStatKeys(stats, sheets), [stats, sheets])
   const edit = useCallback(
     artid => history.push({
       pathname: "/artifact",
@@ -89,7 +84,7 @@ function CharacterArtifactPane({ sheets, character, character: { key: characterK
           {artifactSheets && Object.entries(ArtifactSheet.setEffects(artifactSheets, stats.setToSlots)).map(([setKey, setNumKeyArr]) =>
             <Grid item key={setKey}>
               <Typography variant="subtitle1" gutterBottom>{artifactSheets?.[setKey].name ?? ""}</Typography>
-              {(setNumKeyArr as any).map(setNumKey => <SetEffectDisplay key={setKey + setNumKey} {...{ setKey, setNumKey, equippedBuild, newBuild, characterKey }} />)}
+              {setNumKeyArr.map(setNumKey => <SetEffectDisplay key={setKey + setNumKey} {...{ setKey, setNumKey, equippedBuild, newBuild }} />)}
             </Grid>
           )}
         </Grid></CardContent></CardLight>

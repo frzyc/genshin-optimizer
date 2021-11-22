@@ -13,23 +13,11 @@ import Stat from '../../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from "../../../../Build/Build"
 import { TalentSheet } from '../../../../Types/character';
-import { IConditionals } from '../../../../Types/IConditional'
 import { Translate } from '../../../../Components/Translate'
 import { normalDocSection, plungeDocSection, talentTemplate } from '../../SheetUtil'
 const tr = (strKey: string) => <Translate ns="char_Traveler_gen" key18={`geo.${strKey}`} />
-const conditionals: IConditionals = {
-  c1: { // InvincibleStonewall
-    canShow: stats => stats.constellation >= 1,
-    name: <span>Party members within the radius of <b>Wake of Earth</b>.</span>,
-    stats: { critRate_: 10 },
-    fields: [{
-      text: "Increased resistance against interruption"
-    }]
-  }
-}
 const talentSheet: TalentSheet = {
   formula,
-  conditionals,
   sheets: {
     auto: {
       name: tr("auto.name"),
@@ -115,13 +103,21 @@ const talentSheet: TalentSheet = {
       img: c1,
       sections: [{
         text: tr("constellation1.description"),
-        conditional: conditionals.c1
+        conditional: { // InvincibleStonewall
+          key: "c1",
+          canShow: stats => stats.constellation >= 1,
+          name: <span>Party members within the radius of <b>Wake of Earth</b>.</span>,
+          stats: { critRate_: 10 },
+          fields: [{
+            text: "Increased resistance against interruption"
+          }]
+        }
       }]
     },
     constellation2: talentTemplate("constellation2", tr, c2),
-    constellation3: talentTemplate("constellation3", tr, c3, { burstBoost: 3 }),
+    constellation3: talentTemplate("constellation3", tr, c3, "burstBoost"),
     constellation4: talentTemplate("constellation4", tr, c4),
-    constellation5: talentTemplate("constellation5", tr, c5, { skillBoost: 3 }),
+    constellation5: talentTemplate("constellation5", tr, c5, "skillBoost"),
     constellation6: talentTemplate("constellation6", tr, c6),
   },
 }

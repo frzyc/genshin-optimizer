@@ -1,18 +1,32 @@
 import { BonusStats, BasicStats } from "./stats";
 import { IFieldDisplay } from "./IFieldDisplay";
 
-export interface IConditionalSimple {
+export interface IConditionalBase {
   canShow?: (stats: BasicStats) => boolean;
   name: Displayable;
+  header?: {
+    title: Displayable;
+    icon?: Displayable | ((stats: BasicStats) => Displayable);
+    action?: Displayable;
+  }
+  description?: Displayable | ((stats: BasicStats) => Displayable);
+  partyBuff?: "active" | "party" | "partyOnly"
+  key: string,
+  keys?: string[]
+}
+export interface IConditionalSimple extends IConditionalBase {
   stats?: BonusStats | ((stats: BasicStats) => BonusStats);
   fields?: Array<IFieldDisplay>;
   maxStack?: number | ((stats: BasicStats) => number);
-  keys?: string[]
+}
+export interface IConditionalConstant extends IConditionalBase {
+  stats?: BonusStats | ((stats: BasicStats) => BonusStats);
+  fields?: Array<IFieldDisplay>;
+  name?: Displayable,
+  maxStack: 0;
 }
 
-export interface IConditionalComplex {
-  canShow?: (stats: BasicStats) => boolean;
-  name: Displayable;
+export interface IConditionalComplex extends IConditionalBase {
   states: {
     [key: string]: {
       name: Displayable;
@@ -20,14 +34,33 @@ export interface IConditionalComplex {
       fields?: Array<IFieldDisplay>;
       maxStack?: number | ((stats: BasicStats) => number);
     }
-  },
-  keys?: string[]
+  }
 }
 
-type IConditional = IConditionalComplex | IConditionalSimple;
+type IConditional = IConditionalConstant | IConditionalComplex | IConditionalSimple;
 export default IConditional
-export interface IConditionals {
-  [key: string]: IConditional
-}
 
 export type IConditionalValue = [conditionalNum: number, stateKey?: string]
+
+export interface IConditionalValues<T> {
+  resonance?: {
+    [key in string]?: T
+  }
+  character?: {
+    [key in Exclude<CharacterKey, "Traveler"> | "Travler_anemo" | "Traveler_geo" | "Traveler_electro"]?: {
+      [key in string]?: T
+    }
+  },
+  weapon?: {
+    [key in WeaponKey]?: {
+      [key in string]?: T
+    }
+  },
+  artifact?: {
+    [key in ArtifactSetKey]?: {
+      [key in SetNum]?: {
+        [key in string]: T
+      }
+    }
+  },
+}

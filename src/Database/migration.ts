@@ -10,7 +10,7 @@ import { getDBVersion, setDBVersion } from "./utils"
 // 2. Call the added `migrateV<x>ToV<x+1>` from `migrate`
 // 3. Update `currentDBVersion`
 
-export const currentDBVersion = 13
+export const currentDBVersion = 14
 
 export function migrate(storage: DBStorage): { migrated: boolean } {
   const version = getDBVersion(storage)
@@ -28,6 +28,7 @@ export function migrate(storage: DBStorage): { migrated: boolean } {
   if (version < 11) { migrateV10ToV11(storage); setDBVersion(storage, 11) }
   if (version < 12) { migrateV11ToV12(storage); setDBVersion(storage, 12) }
   if (version < 13) { migrateV12ToV13(storage); setDBVersion(storage, 13) }
+  if (version < 14) { migrateV13ToV14(storage); setDBVersion(storage, 14) }
 
   if (version > currentDBVersion) throw new Error(`Database version ${version} is not supported`)
 
@@ -300,6 +301,19 @@ function migrateV11ToV12(storage: DBStorage) {
 
 // 7.3.0 - present
 function migrateV12ToV13(storage: DBStorage) {
-  //UI was changed quite a lot, deleting state should be easiest for migration.
+  // UI was changed quite a lot, deleting state should be easiest for migration.
   storage.remove("ArtifactDisplay.state")
+}
+
+function migrateV13ToV14(storage: DBStorage) {
+  // Remove conditionalValues due to keys changes
+  // TODO: actually migrate the conditionalValues?
+  for (const key of storage.keys) {
+    if (key.startsWith("char_")) {
+      const character = storage.get(key)
+      delete character.conditionalValues
+      character.team = ["", "", ""]
+      storage.set(key, character)
+    }
+  }
 }

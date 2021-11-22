@@ -1,5 +1,8 @@
 import { ElementKey } from "../Types/consts"
 
+/**
+ * @deprecated use the translated element keys
+ */
 const ElementalData: StrictDict<ElementKey | "physical", { name: string }> = {
   physical: { name: "Physical" },
   anemo: { name: "Anemo" },

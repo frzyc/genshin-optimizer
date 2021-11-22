@@ -18,62 +18,18 @@ import Stat from '../../../Stat'
 import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-import { IConditionals } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
 import { Translate } from '../../../Components/Translate'
 import { claymoreChargedDocSection, normalDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
 const tr = (strKey: string) => <Translate ns="char_Diluc_gen" key18={strKey} />
-const conditionals: IConditionals = {
-  b: {//Dawn
-    name: <b>Dawn</b>,
-    stats: stats => ({
-      infusionSelf: "pyro",
-      ...stats.ascension >= 4 && { pyro_dmg_: 20 } // Blessing of Phoenix
-    }),
-    fields: [{
-      text: "Infusion Duration",
-      value: stats => "8s" + (stats.ascension > 4 ? " + 4s" : ""),
-    }]
-  },
-  c6: { // Flaming Sword Nemesis of Dark
-    canShow: stats => stats.constellation >= 6,
-    name: <span>After casting <b>Searing Onslaught</b></span>,
-    stats: {
-      normal_dmg_: 30,
-      atkSPD_: 30,
-    },
-    fields: [{
-      text: "Next 2 Normal Attack within",
-      value: "6s",
-    }]
-  },
-  c1: { // Conviction
-    canShow: stats => stats.constellation >= 1,
-    name: "Enemies with >50% HP",
-    stats: { dmg_: 15 },
-  },
-  c2: { // SearingEmber
-    canShow: stats => stats.constellation >= 2,
-    name: "Take DMG",
-    maxStack: 3,
-    stats: {
-      atk_: 10,
-      atkSPD_: 5
-    },
-    fields: [{
-      text: "Duration",
-      value: "10s",
-    }]
-  }
-}
 const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   thumbImgSide: thumbSide,
   bannerImg: banner,
-  star: data_gen.star,
+  rarity: data_gen.star,
   elementKey: "pyro",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
   gender: "M",
@@ -84,7 +40,6 @@ const char: ICharacterSheet = {
   ascensions: data_gen.ascensions,
   talent: {
     formula,
-    conditionals,
     sheets: {
       auto: {
         name: tr("auto.name"),
@@ -124,7 +79,19 @@ const char: ICharacterSheet = {
               value: "12s",
             }]
         }, {
-          conditional: conditionals.c6
+          conditional: { // Flaming Sword Nemesis of Dark
+            key: "c6",
+            canShow: stats => stats.constellation >= 6,
+            name: <span>After casting <b>Searing Onslaught</b></span>,
+            stats: {
+              normal_dmg_: 30,
+              atkSPD_: 30,
+            },
+            fields: [{
+              text: "Next 2 Normal Attack within",
+              value: "6s",
+            }]
+          },
         }],
       },
       burst: {
@@ -146,7 +113,18 @@ const char: ICharacterSheet = {
               text: "Energy Cost",
               value: 40,
             }],
-          conditional: conditionals.b
+          conditional: {//Dawn
+            key: "q",
+            name: <b>Dawn</b>,
+            stats: stats => ({
+              infusionSelf: "pyro",
+              ...stats.ascension >= 4 && { pyro_dmg_: 20 } // Blessing of Phoenix
+            }),
+            fields: [{
+              text: "Infusion Duration",
+              value: stats => "8s" + (stats.ascension > 4 ? " + 4s" : ""),
+            }]
+          },
         }],
       },
       passive1: talentTemplate("passive1", tr, passive1),
@@ -157,7 +135,12 @@ const char: ICharacterSheet = {
         img: c1,
         sections: [{
           text: tr("constellation1.description"),
-          conditional: conditionals.c1
+          conditional: { // Conviction
+            key: "c1",
+            canShow: stats => stats.constellation >= 1,
+            name: "Enemies with >50% HP",
+            stats: { dmg_: 15 },
+          },
         }],
       },
       constellation2: {
@@ -165,12 +148,25 @@ const char: ICharacterSheet = {
         img: c2,
         sections: [{
           text: tr("constellation2.description"),
-          conditional: conditionals.c2
+          conditional: { // SearingEmber
+            key: "c2",
+            canShow: stats => stats.constellation >= 2,
+            name: "Take DMG",
+            maxStack: 3,
+            stats: {
+              atk_: 10,
+              atkSPD_: 5
+            },
+            fields: [{
+              text: "Duration",
+              value: "10s",
+            }]
+          }
         }],
       },
-      constellation3: talentTemplate("constellation3", tr, c3, { skillBoost: 3 }),
+      constellation3: talentTemplate("constellation3", tr, c3, "skillBoost"),
       constellation4: talentTemplate("constellation4", tr, c4),
-      constellation5: talentTemplate("constellation5", tr, c5, { burstBoost: 3 }),
+      constellation5: talentTemplate("constellation5", tr, c5, "burstBoost"),
       constellation6: talentTemplate("constellation6", tr, c6),
     },
   },

@@ -19,7 +19,7 @@ export function characterSortConfigs(database: ArtCharDatabase, characterSheets:
       tieBreaker: "rarity"
     },
     rarity: {
-      getValue: (ck) => characterSheets?.[ck]?.star,
+      getValue: (ck) => characterSheets?.[ck]?.rarity,
       tieBreaker: "level"
     }
   }

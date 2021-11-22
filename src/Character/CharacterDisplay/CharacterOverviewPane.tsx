@@ -11,8 +11,8 @@ import StatDisplay from "../../Components/StatDisplay";
 import StatIcon from "../../Components/StatIcon";
 import useCharacterReducer from "../../ReactHooks/useCharacterReducer";
 import Stat from "../../Stat";
-import { ICachedCharacter } from "../../Types/character";
-import { allElements } from "../../Types/consts";
+import { ICachedCharacter, TalentSheetElementKey } from "../../Types/character";
+import { allElementsWithPhy } from "../../Types/consts";
 import { ICalculatedStats } from "../../Types/stats";
 import { characterStatKeys } from "../../Util/StatUtil";
 import WeaponDisplayCard from "../../Weapon/WeaponDisplayCard";
@@ -38,10 +38,10 @@ export default function CharacterOverviewPane({ characterSheet, character, chara
         <CardMedia src={characterSheet.cardImg} component="img" width="100%" height="auto" />
         <CardContent>
           <Typography variant="h4" >{characterSheet.name} <ImgIcon src={Assets.weaponTypes?.[weaponTypeKey]} /> {StatIcon[elementKey]} </Typography>
-          <Typography variant="h6"><Stars stars={characterSheet.star} colored /></Typography>
+          <Typography variant="h6"><Stars stars={characterSheet.rarity} colored /></Typography>
           <Typography variant="h5">Lvl. {Character.getLevelString(character)}</Typography>
           <Grid container spacing={1} mt={1}>
-            {["auto", "skill", "burst"].map(tKey =>
+            {(["auto", "skill", "burst"] as TalentSheetElementKey[]).map(tKey =>
               <Grid item xs={4} key={tKey}>
                 <Badge badgeContent={tlvl[tKey] + 1} color={((tKey === "skill" && build.skillBoost) || (tKey === "burst" && build.burstBoost)) ? "info" : "secondary"}
                   overlap="circular"
@@ -66,7 +66,7 @@ export default function CharacterOverviewPane({ characterSheet, character, chara
           <Grid container spacing={1}>
             {[...Array(6).keys()].map(i =>
               <Grid item xs={4} key={i}>
-                <Box component="img" src={characterSheet.getTalentOfKey(`constellation${i + 1}`, build.characterEle)?.img}
+                <Box component="img" src={characterSheet.getTalentOfKey(`constellation${i + 1}` as TalentSheetElementKey, build.characterEle)?.img}
                   sx={{
                     cursor: "pointer",
                     ...(constellation > i ? {} : { filter: "brightness(50%)" })
@@ -96,7 +96,7 @@ const editStatKeys = ["hp", "hp_", "def", "def_", "atk", "atk_"]
 editStatKeys.push(...additionalKeys)
 const otherStatKeys: any[] = [];
 
-["physical", ...allElements].forEach(ele => {
+allElementsWithPhy.forEach(ele => {
   otherStatKeys.push(`${ele}_dmg_`)
   otherStatKeys.push(`${ele}_res_`)
 })

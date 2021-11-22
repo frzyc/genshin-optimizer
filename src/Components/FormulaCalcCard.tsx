@@ -1,36 +1,24 @@
 import { ExpandMore } from "@mui/icons-material"
 import { Accordion, AccordionDetails, AccordionSummary, Box, CardContent, Collapse, Divider, Grid, Skeleton, Typography } from "@mui/material"
 import { Suspense, useCallback, useContext, useMemo, useState } from "react"
-import { ArtifactSheet } from "../Artifact/ArtifactSheet"
 import { buildContext } from "../Build/Build"
 import Character from "../Character/Character"
-import CharacterSheet from "../Character/CharacterSheet"
 import { getFormulaTargetsDisplayHeading } from "../Character/CharacterUtil"
 import Formula from "../Formula"
 import usePromise from "../ReactHooks/usePromise"
+import { Sheets } from "../ReactHooks/useSheets"
 import Stat, { FormulaDisplay } from "../Stat"
 import { GetDependencies } from "../StatDependency"
-import { ArtifactSetKey } from "../Types/consts"
 import { IFieldDisplay } from "../Types/IFieldDisplay"
 import { ICalculatedStats } from "../Types/stats"
-import WeaponSheet from "../Weapon/WeaponSheet"
 import CardDark from "./Card/CardDark"
 import CardLight from "./Card/CardLight"
 import ColorText from "./ColoredText"
 import ExpandButton from "./ExpandButton"
 
-export default function FormulaCalcCard({ sheets }: {
-  sheets: {
-    characterSheet: CharacterSheet
-    weaponSheet: WeaponSheet,
-    artifactSheets: StrictDict<ArtifactSetKey, ArtifactSheet>
-  }
-}) {
+export default function FormulaCalcCard({ sheets }: { sheets: Sheets }) {
   const [expanded, setexpanded] = useState(false)
   const toggle = useCallback(() => setexpanded(!expanded), [setexpanded, expanded])
-  const { newBuild, equippedBuild } = useContext(buildContext)
-  //choose which one to display stats for
-  const build = newBuild ? newBuild : equippedBuild!
   return <CardLight>
     <CardContent>
       <Grid container>
@@ -52,25 +40,21 @@ export default function FormulaCalcCard({ sheets }: {
     </CardContent>
     <Collapse in={expanded} timeout="auto" unmountOnExit>
       <CardContent sx={{ pt: 0 }}>
-        <CalculationDisplay sheets={sheets} build={build} />
+        <CalculationDisplay sheets={sheets} />
       </CardContent>
     </Collapse>
   </CardLight>
 }
 
-function CalculationDisplay({ sheets, build }: {
-  sheets: {
-    characterSheet: CharacterSheet
-    weaponSheet: WeaponSheet,
-    artifactSheets: StrictDict<ArtifactSetKey, ArtifactSheet>
-  },
-  build: ICalculatedStats
-}) {
-  const displayStatKeys = useMemo(() => build && Character.getDisplayStatKeys(build, sheets), [build, sheets])
-  if (!build) return null
+function CalculationDisplay({ sheets }: { sheets: Sheets }) {
+  const { newBuild, equippedBuild } = useContext(buildContext)
+  //choose which one to display stats for
+  const build = (newBuild ? newBuild : equippedBuild)!
+  const displayStatKeys = useMemo(() => Character.getDisplayStatKeys(build, sheets), [build, sheets])
+  if (!build || !displayStatKeys) return null
   return <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={1000} />} >
     {Object.entries(displayStatKeys).map(([sectionKey, fields]: [string, any]) => {
-      const header = getFormulaTargetsDisplayHeading(sectionKey, sheets, build.characterEle)
+      const header = getFormulaTargetsDisplayHeading(sectionKey, sheets, build)
       return <CardDark key={sectionKey} sx={{ mb: 1 }}>
         <CardContent sx={{ pb: 1 }}>
           <Typography variant="h6">{header}</Typography>

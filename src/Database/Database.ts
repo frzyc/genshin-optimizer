@@ -135,12 +135,12 @@ export class ArtCharDatabase {
   followArt(key: string, cb: Callback<ICachedArtifact>): (() => void) | undefined {
     if (this.arts.get(key) !== undefined)
       return this.arts.follow(key, cb)
-    cb(undefined)
+    // cb(undefined)
   }
   followWeapon(key: string, cb: Callback<ICachedWeapon>): (() => void) | undefined {
     if (this.weapons.get(key) !== undefined)
       return this.weapons.follow(key, cb)
-    cb(undefined)
+    // cb(undefined)
   }
 
   followAnyChar(cb: (key: CharacterKey | {}) => void): (() => void) | undefined { return this.chars.followAny(cb) }

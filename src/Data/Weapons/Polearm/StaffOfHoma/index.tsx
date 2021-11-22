@@ -1,6 +1,5 @@
 import { WeaponData } from 'pipeline'
 import Stat from '../../../../Stat'
-import { IConditionals } from '../../../../Types/IConditional'
 import { IWeaponSheet } from '../../../../Types/weapon'
 import { KeyPath } from '../../../../Util/KeyPathUtil'
 import { FormulaPathBase } from '../../../formula'
@@ -9,23 +8,8 @@ import icon from './Icon.png'
 import iconAwaken from './AwakenIcon.png'
 import formula, { data } from './data'
 import { st } from '../../../Characters/SheetUtil'
-
 const path = KeyPath<FormulaPathBase>().weapon.StaffOfHoma
 const refinementVals_hp = [20, 25, 30, 35, 40]
-const conditionals: IConditionals = {
-  hp: {
-    name: "HP < 50%",
-    maxStack: 1,
-    stats: {
-      modifiers: { atk: [path.esjadd()] }
-    },
-    fields: [{
-      text: st("increase.atk"),
-      formulaText: stats => <span>{data.hp_atk_add[stats.weapon.refineIndex]}% {Stat.printStat("finalHP", stats, true)}</span>,
-      formula: formula.esjadd,
-    }],
-  }
-}
 const weapon: IWeaponSheet = {
   ...data_gen as WeaponData,
   icon,
@@ -34,14 +18,25 @@ const weapon: IWeaponSheet = {
     hp_: refinementVals_hp[stats.weapon.refineIndex],
     modifiers: { atk: [path.esj()] }
   }),
-  conditionals,
   document: [{
     fields: [{
       text: st("increase.atk"),
       formulaText: stats => <span>{data.hp_atk[stats.weapon.refineIndex]}% {Stat.printStat("finalHP", stats, true)}</span>,
       formula: formula.esj,
     }],
-    conditional: conditionals.hp
+    conditional: {
+      key: "hp",
+      name: "HP < 50%",
+      maxStack: 1,
+      stats: {
+        modifiers: { atk: [path.esjadd()] }
+      },
+      fields: [{
+        text: st("increase.atk"),
+        formulaText: stats => <span>{data.hp_atk_add[stats.weapon.refineIndex]}% {Stat.printStat("finalHP", stats, true)}</span>,
+        formula: formula.esjadd,
+      }],
+    }
   }],
 }
 export default weapon

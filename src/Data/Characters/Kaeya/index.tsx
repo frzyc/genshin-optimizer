@@ -18,30 +18,19 @@ import Stat from '../../../Stat'
 import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-import { IConditionals } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
 import { Translate } from '../../../Components/Translate'
-import { chargedHitsDocSection, normalDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
+import { chargedHitsDocSection, conditionalHeader, normalDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
 import ColorText from '../../../Components/ColoredText'
 const tr = (strKey: string) => <Translate ns="char_Kaeya_gen" key18={strKey} />
-const conditionals: IConditionals = {
-  c1: { // ColdBloodedStrike
-    canShow: stats => stats.constellation >= 1,
-    name: <span>Opponent affected by <ColorText color="cryo">Cryo</ColorText></span>,
-    stats: {
-      normal_critRate_: 15,
-      charged_critRate_: 15
-    }
-  }
-}
 const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   thumbImgSide: thumbSide,
   bannerImg: banner,
-  star: data_gen.star,
+  rarity: data_gen.star,
   elementKey: "cryo",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
   gender: "M",
@@ -52,7 +41,6 @@ const char: ICharacterSheet = {
   ascensions: data_gen.ascensions,
   talent: {
     formula,
-    conditionals,
     sheets: {
       auto: {
         name: tr("auto.name"),
@@ -118,17 +106,39 @@ const char: ICharacterSheet = {
         }],
       },
       passive2: talentTemplate("passive2", tr, passive2),
-      passive3: talentTemplate("passive3", tr, passive3, { staminaSprintDec_: 20 }),
+      passive3: {
+        name: tr("passive3.name"),
+        img: passive3,
+        sections: [{
+          conditional: {
+            key: "p3",
+            maxStack: 0,
+            partyBuff: "partyOnly",
+            header: conditionalHeader("passive3", tr, passive3),
+            description: tr("passive3.description"),
+            name: tr("passive3.name"),
+            stats: { staminaSprintDec_: 20 }
+          }
+        }],
+      },
       constellation1: {
         name: tr("constellation1.name"),
         img: c1,
         sections: [{
           text: tr("constellation1.description"),
-          conditional: conditionals.c1
+          conditional: { // ColdBloodedStrike
+            key: "c1",
+            canShow: stats => stats.constellation >= 1,
+            name: <span>Opponent affected by <ColorText color="cryo">Cryo</ColorText></span>,
+            stats: {
+              normal_critRate_: 15,
+              charged_critRate_: 15
+            }
+          }
         }]
       },
       constellation2: talentTemplate("constellation2", tr, c2),
-      constellation3: talentTemplate("constellation3", tr, c3, { skillBoost: 3 }),
+      constellation3: talentTemplate("constellation3", tr, c3, "skillBoost"),
       constellation4: {
         name: tr("constellation4.name"),
         img: c4,
@@ -156,7 +166,7 @@ const char: ICharacterSheet = {
           }]
         }]
       },
-      constellation5: talentTemplate("constellation5", tr, c5, { burstBoost: 3 }),
+      constellation5: talentTemplate("constellation5", tr, c5, "burstBoost"),
       constellation6: talentTemplate("constellation6", tr, c6),
     },
   },

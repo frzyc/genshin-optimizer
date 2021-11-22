@@ -56,11 +56,10 @@ export default function WeaponDisplayCard({
 
   const buildContextObj = useContext(buildContext)
   const weapon = useMemo(() =>
-    databaseToken && database._getWeapon(propWeaponId!)!,
+    databaseToken && database._getWeapon(propWeaponId!),
     [propWeaponId, databaseToken, database])
-  const { key, level, refinement, ascension, lock } = weapon
-  const { location = "", id } = weapon as Partial<ICachedWeapon>
-  const weaponSheet: WeaponSheet | undefined = usePromise(WeaponSheet.get(key), [key])
+  const { key = "", level, refinement = 0, ascension = 0, lock, location = "", id } = weapon ?? {}
+  const weaponSheet = usePromise(WeaponSheet.get(key), [key])
   const weaponTypeKey = weaponSheet?.weaponType
 
   useEffect(() =>
@@ -166,7 +165,7 @@ export default function WeaponDisplayCard({
             <Typography><small>{weaponSheet.description}</small></Typography>
           </Box>
           <Box sx={{ mb: -1 }} flexGrow={1} >
-            <Typography variant="h6" >{process.env.NODE_ENV === "development" && <ColorText color="warning">{id || `""`} </ColorText>}{weaponSheet.name} Lv. {WeaponSheet.getLevelString(weapon)} {weaponPassiveName && <SqBadge color="info">Refinement {refinement}</SqBadge>}</Typography>
+            <Typography variant="h6" >{process.env.NODE_ENV === "development" && <ColorText color="warning">{id || `""`} </ColorText>}{weaponSheet.name} Lv. {weapon && WeaponSheet.getLevelString(weapon)} {weaponPassiveName && <SqBadge color="info">Refinement {refinement}</SqBadge>}</Typography>
             <Typography><Stars stars={weaponSheet.rarity} /></Typography>
             <Typography variant="subtitle1">{weaponPassiveName}</Typography>
             <Typography gutterBottom>{weaponPassiveName && weaponSheet.passiveDescription(build)}</Typography>

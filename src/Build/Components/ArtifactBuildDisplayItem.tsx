@@ -1,22 +1,16 @@
 import { CardActionArea, CardContent, Grid, Skeleton, Typography } from '@mui/material';
 import React, { Suspense, useContext } from 'react';
-import { ArtifactSheet } from '../../Artifact/ArtifactSheet';
 import { artifactSlotIcon } from '../../Artifact/Component/SlotNameWIthIcon';
 import StatDisplayComponent from '../../Character/CharacterDisplay/StatDisplayComponent';
-import CharacterSheet from '../../Character/CharacterSheet';
 import CardLight from '../../Components/Card/CardLight';
 import SqBadge from '../../Components/SqBadge';
 import { DatabaseContext } from '../../Database/Database';
+import { Sheets } from '../../ReactHooks/useSheets';
 import { allSlotKeys, ArtifactSetKey, CharacterKey, SlotKey } from '../../Types/consts';
 import { ICalculatedStats } from '../../Types/stats';
-import WeaponSheet from '../../Weapon/WeaponSheet';
 
 type ArtifactBuildDisplayItemProps = {
-  sheets: {
-    characterSheet: CharacterSheet
-    weaponSheet: WeaponSheet,
-    artifactSheets: StrictDict<ArtifactSetKey, ArtifactSheet>
-  },
+  sheets: Sheets,
   index: number,
   characterKey: CharacterKey,
   build: ICalculatedStats,
