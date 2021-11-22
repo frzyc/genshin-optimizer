@@ -137,7 +137,7 @@ const char: ICharacterSheet = {
             </TransWrapper>
           ),
           fields: data.normal.hitArr.map((percentArr, i) => ({
-            text: <TransWrapper ns="char_Razor" key18="fullBurstDMG.label" values={{ hitNum: i + 1 }} />,
+            text: <Translate ns="char_Razor" key18="fullBurstDMG.label" values={{ hitNum: i + 1 }} />,
             formulaText: stats => <span>
               {percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}
               + {data.burst.dmg[stats.tlvl.burst]}% * {percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,

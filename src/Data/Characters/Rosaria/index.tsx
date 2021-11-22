@@ -19,7 +19,7 @@ import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { ICharacterSheet } from '../../../Types/character'
-import { Translate, TransWrapper } from '../../../Components/Translate'
+import { Translate } from '../../../Components/Translate'
 import { conditionalHeader, plungeDocSection, sgt, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
 import { KeyPath } from '../../../Util/KeyPathUtil'
@@ -51,7 +51,7 @@ const char: ICharacterSheet = {
           text: tr("auto.fields.normal"),
           fields: data.normal.hitArr.map((percentArr, i) =>
           ({
-            text: <span>{sgt(`normal.hit${i + (i < 5 ? 1 : 0)}`)} {i === 4 ? "(1)" : i === 5 ? "(2)" : i === 2 ? <span>(<TransWrapper ns="sheet" key18="hits" values={{ count: 2 }} />)</span> : ""}</span>,
+            text: <span>{sgt(`normal.hit${i + (i < 5 ? 1 : 0)}`)} {i === 4 ? "(1)" : i === 5 ? "(2)" : i === 2 ? <span>(<Translate ns="sheet" key18="hits" values={{ count: 2 }} />)</span> : ""}</span>,
             formulaText: stats => <span>{percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
             formula: formula.normal[i],
             variant: stats => getTalentStatKeyVariant("normal", stats),
@@ -131,7 +131,7 @@ const char: ICharacterSheet = {
           conditional: { // ReginaProbationum
             key: "a1",
             canShow: stats => stats.ascension >= 1,
-            name: <TransWrapper ns="char_Rosaria" key18="a1" />,
+            name: <Translate ns="char_Rosaria" key18="a1" />,
             stats: { critRate_: 12 },
             fields: [{
               text: sgt("duration"),
@@ -151,12 +151,12 @@ const char: ICharacterSheet = {
             partyBuff: "partyOnly",
             header: conditionalHeader("passive2", tr, passive2),
             description: tr("passive2.description"),
-            name: <TransWrapper ns="char_Rosaria" key18="a4.name" />,
+            name: <Translate ns="char_Rosaria" key18="a4.name" />,
             stats: {
               modifiers: { burst_dmg_: [path.passive2.critConv()] },
             },
             fields: [{
-              text: <TransWrapper ns="char_Rosaria" key18="a4.text" />,
+              text: <Translate ns="char_Rosaria" key18="a4.text" />,
               formulaText: stats => <span>15% * {Stat.printStat("critRate_", stats)}</span>,
               formula: formula.passive2.critConv,
               fixed: 1,
@@ -177,7 +177,7 @@ const char: ICharacterSheet = {
           conditional: { // UnholyRevelation
             key: "c1",
             canShow: stats => stats.constellation >= 1,
-            name: <TransWrapper ns="char_Rosaria" key18="c1" />,
+            name: <Translate ns="char_Rosaria" key18="c1" />,
             stats: { normal_dmg_: 10, atkSPD_: 10 },
             fields: [{
               text: sgt("duration"),
@@ -198,7 +198,7 @@ const char: ICharacterSheet = {
           conditional: { // DivineRetribution
             key: "c6",
             canShow: stats => stats.constellation >= 6,
-            name: <TransWrapper ns="char_Rosaria" key18="c6" />,
+            name: <Translate ns="char_Rosaria" key18="c6" />,
             stats: { physical_enemyRes_: -20 },
             fields: [{
               text: sgt("duration"),

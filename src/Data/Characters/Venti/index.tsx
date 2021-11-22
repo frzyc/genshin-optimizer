@@ -19,7 +19,7 @@ import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from "../../../Build/Build"
 import { ICharacterSheet } from '../../../Types/character'
-import { bowChargedDocSection, plungeDocSection, sgt, st, talentTemplate } from '../SheetUtil'
+import { bowChargedDocSection, conditionalHeader, plungeDocSection, sgt, st, talentTemplate } from '../SheetUtil'
 import { Translate, TransWrapper } from '../../../Components/Translate'
 import { absorbableEle } from '../dataUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
@@ -52,7 +52,7 @@ const char: ICharacterSheet = {
           text: tr(`auto.fields.normal`),
           fields: data.normal.hitArr.map((percentArr, i) =>
           ({
-            text: <span>{sgt(`normal.hit${i + 1}`)} {i === 0 || i === 3 ? <span>(<TransWrapper ns="sheet" key18="hits" values={{ count: 2 }} />)</span> : null}</span>,
+            text: <span>{sgt(`normal.hit${i + 1}`)} {i === 0 || i === 3 ? <span>(<Translate ns="sheet" key18="hits" values={{ count: 2 }} />)</span> : null}</span>,
             formulaText: stats => <span>{percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
             formula: formula.normal[i],
             variant: stats => getTalentStatKeyVariant("normal", stats),
@@ -61,12 +61,12 @@ const char: ICharacterSheet = {
           canShow: stats => stats.constellation >= 1,
           text: <strong>{tr("constellation1.name")}</strong>,
           fields: [{
-            text: <TransWrapper ns="char_Venti" key18="addAimed" />,
+            text: <Translate ns="char_Venti" key18="addAimed" />,
             formulaText: stats => <span>{(data.charged.hit[stats.tlvl.auto] * 0.33)?.toFixed(2)}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
             formula: formula.charged.hit_bonus,
             variant: stats => getTalentStatKeyVariant("charged", stats),
           }, {
-            text: <TransWrapper ns="char_Venti" key18="addFullAimed" />,
+            text: <Translate ns="char_Venti" key18="addFullAimed" />,
             formulaText: stats => <span>{(data.charged.full[stats.tlvl.auto] * 0.33)?.toFixed(2)}% {Stat.printStat(getTalentStatKey("charged", stats, "anemo"), stats)}</span>,
             formula: formula.charged.full_bonus,
             variant: stats => getTalentStatKeyVariant("charged", stats, "anemo"),
@@ -96,23 +96,25 @@ const char: ICharacterSheet = {
             value: "15s",
           }, {
             canShow: stats => stats.ascension >= 1,
-            text: <TransWrapper ns="char_Venti" key18="upcurrentDuration" />,
+            text: <Translate ns="char_Venti" key18="upcurrentDuration" />,
             value: "20s",
           }],
           conditional: { // BreezeOfReminiscence
             key: "c2",
+            header: conditionalHeader("constellation2", tr, c2),
+            description: tr("constellation2.description"),
             name: tr("skill.name"),
             canShow: stats => stats.constellation >= 2,
             states: {
               hit: {
-                name: <TransWrapper ns="char_Venti" key18="c2.hit" />,
+                name: <Translate ns="char_Venti" key18="c2.hit" />,
                 stats: {
                   anemo_enemyRes_: -12,
                   physical_enemyRes_: -12
                 },
               },
               launch: {
-                name: <TransWrapper ns="char_Venti" key18="c2.launched" />,
+                name: <Translate ns="char_Venti" key18="c2.launched" />,
                 stats: {
                   anemo_enemyRes_: -24,
                   physical_enemyRes_: -24
@@ -143,12 +145,12 @@ const char: ICharacterSheet = {
             value: 60,
           }, {
             canShow: stats => stats.ascension >= 4,
-            text: <TransWrapper ns="char_Venti" key18="regenEner" />,
+            text: <Translate ns="char_Venti" key18="regenEner" />,
           }],
           conditional: {// Storm of defiance
             key: "c6",
             canShow: stats => stats.constellation >= 6,
-            name: <TransWrapper ns="char_Venti" key18="c6" />,
+            name: <Translate ns="char_Venti" key18="c6" />,
             stats: { anemo_enemyRes_: -20 }
           }
         }, {
@@ -168,7 +170,7 @@ const char: ICharacterSheet = {
                 variant: eleKey
               }, {
                 canShow: stats => stats.ascension >= 4,
-                text: <TransWrapper ns="char_Venti" key18="q" />,
+                text: <Translate ns="char_Venti" key18="q" />,
               }],
               stats: stats => ({
                 ...stats.constellation >= 6 && { [`${eleKey}_enemyRes_`]: -20 }
@@ -229,7 +231,7 @@ const char: ICharacterSheet = {
           conditional: { // HurricaneOfFreedom
             key: "c4",
             canShow: stats => stats.constellation >= 4,
-            name: <TransWrapper ns="char_Venti" key18="c4" />,
+            name: <Translate ns="char_Venti" key18="c4" />,
             stats: { anemo_dmg_: 25 },
             fields: [{
               text: sgt("duration"),

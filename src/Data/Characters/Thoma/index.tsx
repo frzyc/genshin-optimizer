@@ -19,7 +19,7 @@ import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { ICharacterSheet } from '../../../Types/character'
-import { Translate, TransWrapper } from '../../../Components/Translate'
+import { Translate } from '../../../Components/Translate'
 import { plungeDocSection, sgt, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
 import ColorText from '../../../Components/ColoredText'
@@ -49,7 +49,7 @@ const char: ICharacterSheet = {
           text: tr("auto.fields.normal"),
           fields: data.normal.hitArr.map((percentArr, i) =>
           ({
-            text: <span>{sgt(`normal.hit${i + 1}`)} {i === 2 ? <span>(<TransWrapper ns="sheet" key18="hits" values={{ count: 2 }} />)</span> : ""}</span>,
+            text: <span>{sgt(`normal.hit${i + 1}`)} {i === 2 ? <span>(<Translate ns="sheet" key18="hits" values={{ count: 2 }} />)</span> : ""}</span>,
             formulaText: stats => <span>{percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
             formula: formula.normal[i],
             variant: stats => getTalentStatKeyVariant("normal", stats),
@@ -159,7 +159,7 @@ const char: ICharacterSheet = {
           conditional: { // Imbricated Armor
             key: "a1",
             canShow: stats => stats.ascension >= 1,
-            name: <TransWrapper ns="char_Thoma" key18="a1" />,
+            name: <Translate ns="char_Thoma" key18="a1" />,
             maxStack: data.passive1.maxStack,
             stats: { shield_: data.passive1.shield_ },
             fields: [{
@@ -184,7 +184,7 @@ const char: ICharacterSheet = {
           conditional: { // Burning Heart
             key: "c6",
             canShow: stats => stats.constellation >= 6,
-            name: <span><TransWrapper ns="char_Thoma" key18="c6" /></span>,
+            name: <span><Translate ns="char_Thoma" key18="c6" /></span>,
             stats: {
               normal_dmg_: data.constellation6.auto_,
               charged_dmg_: data.constellation6.auto_,

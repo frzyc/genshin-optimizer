@@ -4,7 +4,7 @@ import iconAwaken from './AwakenIcon.png'
 
 import data_gen from './data_gen.json'
 import { WeaponData } from 'pipeline'
-import { TransWrapper } from '../../../../Components/Translate'
+import { Translate } from '../../../../Components/Translate'
 const normal_dmg_s = [16, 20, 24, 28, 32]
 const charged_dmg_s = [12, 15, 18, 21, 24]
 const weapon: IWeaponSheet = {
@@ -18,7 +18,7 @@ const weapon: IWeaponSheet = {
   document: [{
     conditional: {//100% energy
       key: "e",
-      name: <TransWrapper ns="weapon_Hamayumi" key18="ener" />,
+      name: <Translate ns="weapon_Hamayumi" key18="ener" />,
       stats: stats => ({
         normal_dmg_: normal_dmg_s[stats.weapon.refineIndex],
         charged_dmg_: charged_dmg_s[stats.weapon.refineIndex]

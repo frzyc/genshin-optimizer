@@ -1,6 +1,6 @@
 import { WeaponData } from 'pipeline'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../../Build/Build'
-import { TransWrapper } from '../../../../Components/Translate'
+import { Translate } from '../../../../Components/Translate'
 import Stat from '../../../../Stat'
 import { IWeaponSheet } from '../../../../Types/weapon'
 import formula, { data } from './data'
@@ -14,7 +14,7 @@ const weapon: IWeaponSheet = {
   iconAwaken,
   document: [{
     fields: [{
-      text: <TransWrapper ns="sheet" key18="dmg" />,
+      text: <Translate ns="sheet" key18="dmg" />,
       formulaText: stats => <span>{data.dmg[stats.weapon.refineIndex]}% {Stat.printStat(getTalentStatKey("physical", stats), stats)}</span>,
       formula: formula.dmg,
       variant: stats => getTalentStatKeyVariant("physical", stats),

@@ -1,13 +1,13 @@
 import { getTalentStatKey, getTalentStatKeyVariant } from "../../Build/Build";
 import ImgIcon from "../../Components/Image/ImgIcon";
 import SqBadge from "../../Components/SqBadge";
-import { TransWrapper } from "../../Components/Translate";
+import { Translate } from "../../Components/Translate";
 import Stat from "../../Stat";
 import { TalentSheetElementKey } from "../../Types/character";
 import { ElementKey } from "../../Types/consts";
 import IConditional from "../../Types/IConditional";
-export const st = (strKey: string) => <TransWrapper ns="sheet" key18={strKey} />
-export const sgt = (strKey: string) => <TransWrapper ns="sheet_gen" key18={strKey} />
+export const st = (strKey: string) => <Translate ns="sheet" key18={strKey} />
+export const sgt = (strKey: string) => <Translate ns="sheet_gen" key18={strKey} />
 
 //this template only works if there is no variation in normal attacks.(no multi hits)
 export const normalDocSection = (tr, formula, data) => ({

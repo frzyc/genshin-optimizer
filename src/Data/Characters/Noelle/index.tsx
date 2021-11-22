@@ -19,7 +19,7 @@ import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { ICharacterSheet } from '../../../Types/character'
-import { Translate, TransWrapper } from '../../../Components/Translate'
+import { Translate } from '../../../Components/Translate'
 import { claymoreChargedDocSection, normalDocSection, plungeDocSection, sgt, talentTemplate } from '../SheetUtil'
 import { KeyPath } from '../../../Util/KeyPathUtil'
 import { FormulaPathBase } from '../../formula'
@@ -27,7 +27,7 @@ import { WeaponTypeKey } from '../../../Types/consts'
 
 const path = KeyPath<FormulaPathBase, any>().character.Noelle
 const tr = (strKey: string) => <Translate ns="char_Noelle_gen" key18={strKey} />
-const Noelle = (strKey: string) => <TransWrapper ns="char_Noelle" key18={strKey} />
+const Noelle = (strKey: string) => <Translate ns="char_Noelle" key18={strKey} />
 const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,

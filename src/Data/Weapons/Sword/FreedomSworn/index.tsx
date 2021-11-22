@@ -1,5 +1,5 @@
 import { WeaponData } from 'pipeline'
-import { Translate, TransWrapper } from '../../../../Components/Translate'
+import { Translate } from '../../../../Components/Translate'
 import { IWeaponSheet } from '../../../../Types/weapon'
 import data_gen from './data_gen.json'
 import icon from './Icon.png'
@@ -26,7 +26,7 @@ const weapon: IWeaponSheet = {
         icon: stats => <ImgIcon size={2} sx={{ m: -1 }} src={stats.ascension < 2 ? icon : iconAwaken} />,
       },
       description: stats => tr(`passiveDescription.${stats.weapon.refineIndex}`),
-      name: <TransWrapper ns="weapon_FreedomSworn" key18="name" />,
+      name: <Translate ns="weapon_FreedomSworn" key18="name" />,
       stats: stats => ({
         atk_: atk_[stats.weapon.refineIndex],
         normal_dmg_: auto[stats.weapon.refineIndex],

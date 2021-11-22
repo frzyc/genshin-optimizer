@@ -12,5 +12,8 @@ export function basicDMGFormula(percent: number, stats: BasicStats, skillKey: st
 }
 export function basicHealingFormula(percent: number, scaleStatKey: StatKey, flat: number = 0): FormulaItem {
   const ratio = percent / 100
-  return [s => ((ratio * s[scaleStatKey]) + flat) * s.heal_multi, [scaleStatKey, "heal_multi"]]
+  return [s => {
+    console.log(scaleStatKey, s[scaleStatKey], s)
+    return ((ratio * s[scaleStatKey]) + flat) * s.heal_multi
+  }, [scaleStatKey, "heal_multi"]]
 }

@@ -4,7 +4,7 @@ import iconAwaken from './AwakenIcon.png'
 
 import data_gen from './data_gen.json'
 import { WeaponData } from 'pipeline'
-import { TransWrapper } from '../../../../Components/Translate'
+import { Translate } from '../../../../Components/Translate'
 const atk_s = [20, 25, 30, 35, 40]
 const ele_dmg_ss = [
   [12, 24, 40],
@@ -21,9 +21,9 @@ const weapon: IWeaponSheet = {
   document: [{
     conditional: {
       key: "em",
-      name: <TransWrapper ns="weapon_ThunderingPulse" key18="emblem" />,
+      name: <Translate ns="weapon_ThunderingPulse" key18="emblem" />,
       states: Object.fromEntries([1, 2, 3].map(stacks => [stacks, {
-        name: <TransWrapper ns="sheet" key18="stack" values={{ count: stacks }} />,
+        name: <Translate ns="sheet" key18="stack" values={{ count: stacks }} />,
         stats: stats => {
           return {
             normal_dmg_: ele_dmg_ss[stats.weapon.refineIndex][stacks - 1]

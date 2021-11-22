@@ -13,13 +13,13 @@ import Stat from '../../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from "../../../../Build/Build"
 import { TalentSheet } from '../../../../Types/character';
-import { Translate, TransWrapper } from '../../../../Components/Translate'
+import { Translate } from '../../../../Components/Translate'
 import { conditionalHeader, normalDocSection, plungeDocSection, sgt, talentTemplate } from '../../SheetUtil'
 import { KeyPath } from '../../../../Util/KeyPathUtil'
 import { FormulaPathBase } from '../../../formula'
 const path = KeyPath<FormulaPathBase, any>().character.Traveler.electro
 const tr = (strKey: string) => <Translate ns="char_Traveler_gen" key18={`electro.${strKey}`} />
-const charTr = (strKey: string) => <TransWrapper ns="char_Traveler" key18={`electro.${strKey}`} />
+const charTr = (strKey: string) => <Translate ns="char_Traveler" key18={`electro.${strKey}`} />
 const talentSheet: TalentSheet = {
   formula,
   sheets: {

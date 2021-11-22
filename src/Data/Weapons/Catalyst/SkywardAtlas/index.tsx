@@ -1,13 +1,12 @@
 import { WeaponData } from 'pipeline'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../../Build/Build'
-import { TransWrapper } from '../../../../Components/Translate'
 import Stat from '../../../../Stat'
 import { IWeaponSheet } from '../../../../Types/weapon'
 import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import icon from './Icon.png'
 import iconAwaken from './AwakenIcon.png'
-
+import { st } from '../../../Characters/SheetUtil'
 
 const dmg_s = [12, 15, 18, 21, 24]
 const weapon: IWeaponSheet = {
@@ -24,7 +23,7 @@ const weapon: IWeaponSheet = {
   }),
   document: [{
     fields: [{
-      text: <TransWrapper ns="sheet" key18="dmg" />,
+      text: st("dmg"),
       formulaText: stats => <span>{data.dmg[stats.weapon.refineIndex]}% {Stat.printStat(getTalentStatKey("physical", stats), stats)}</span>,
       formula: formula.dmg,
       variant: stats => getTalentStatKeyVariant("physical", stats),

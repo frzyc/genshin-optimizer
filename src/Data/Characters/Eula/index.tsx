@@ -19,11 +19,11 @@ import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { ICharacterSheet } from '../../../Types/character'
-import { Translate, TransWrapper } from '../../../Components/Translate'
+import { Translate } from '../../../Components/Translate'
 import { claymoreChargedDocSection, plungeDocSection, sgt, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
 const tr = (strKey: string) => <Translate ns="char_Eula_gen" key18={strKey} />
-const Eula = (strKey: string) => <TransWrapper ns="char_Eula" key18={strKey} />
+const Eula = (strKey: string) => <Translate ns="char_Eula" key18={strKey} />
 const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
@@ -49,7 +49,7 @@ const char: ICharacterSheet = {
           text: tr("auto.fields.normal"),
           fields: data.normal.hitArr.map((percentArr, i) =>
           ({
-            text: <span>{sgt(`normal.hit${i + 1}`)} {i === 2 || i === 4 ? <span>(<TransWrapper ns="sheet" key18="hits" values={{ count: 2 }} />)</span> : ""}</span>,
+            text: <span>{sgt(`normal.hit${i + 1}`)} {i === 2 || i === 4 ? <span>(<Translate ns="sheet" key18="hits" values={{ count: 2 }} />)</span> : ""}</span>,
             formulaText: stats => <span>{percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
             formula: formula.normal[i],
             variant: stats => getTalentStatKeyVariant("normal", stats),
@@ -148,9 +148,9 @@ const char: ICharacterSheet = {
             name: Eula("burstC.name"),
             states: Object.fromEntries([...Array(31).keys()].map(i =>
               [i, {
-                name: i === 0 ? sgt("baseDMG") : <TransWrapper ns="sheet" key18="stack" values={{ count: i }} />,
+                name: i === 0 ? sgt("baseDMG") : <Translate ns="sheet" key18="stack" values={{ count: i }} />,
                 fields: [{//above 50%
-                  text: <span>{Eula("burstC.name")} {i === 0 ? sgt("baseDMG") : <TransWrapper ns="sheet" key18="stack" values={{ count: i }} />}</span>,
+                  text: <span>{Eula("burstC.name")} {i === 0 ? sgt("baseDMG") : <Translate ns="sheet" key18="stack" values={{ count: i }} />}</span>,
                   canShow: stats => {
                     if (i < 5 && stats.constellation >= 6) return false
                     const [stacks, stateKey] = stats.conditionalValues?.character?.Eula?.q ?? []
@@ -164,7 +164,7 @@ const char: ICharacterSheet = {
                   formula: formula.burst[i],
                   variant: stats => getTalentStatKeyVariant("burst", stats, "physical"),
                 }, {//below 50%
-                  text: <span>{Eula("burstC.name")} {i === 0 ? sgt("baseDMG") : <TransWrapper ns="sheet" key18="stack" values={{ count: i }} />} <TransWrapper ns="sheet" key18="lessPercentHP" values={{ percent: 50 }} /></span>,
+                  text: <span>{Eula("burstC.name")} {i === 0 ? sgt("baseDMG") : <Translate ns="sheet" key18="stack" values={{ count: i }} />} <Translate ns="sheet" key18="lessPercentHP" values={{ percent: 50 }} /></span>,
                   canShow: stats => {
                     if (stats.constellation < 4) return false
                     if (i < 5 && stats.constellation >= 6) return false
@@ -202,7 +202,7 @@ const char: ICharacterSheet = {
             variant: stats => getTalentStatKeyVariant("burst", stats, "physical")
           }, {//below 50% hp
             canShow: stats => stats.constellation >= 4,
-            text: <span>{Eula("passive1")} <TransWrapper ns="sheet" key18="lessPercentHP" values={{ percent: 50 }} /></span>,
+            text: <span>{Eula("passive1")} <Translate ns="sheet" key18="lessPercentHP" values={{ percent: 50 }} /></span>,
             formulaText: stats => {
               const hitModeMultiKey = stats.hitMode === "avgHit" ? "skill_avgHit_base_multi" : stats.hitMode === "critHit" ? "critHit_base_multi" : ""
               return <span>50% * {data.burst.baseDMG[stats.tlvl.burst]}% {Stat.printStat("finalATK", stats)} * {(hitModeMultiKey ? <span>{Stat.printStat(hitModeMultiKey, stats)} * </span> : "")}( {Stat.printStat("physical_burst_hit_base_multi", stats)} + 25%) * {Stat.printStat("enemyLevel_multi", stats)} * {Stat.printStat("physical_enemyRes_multi", stats)}</span>

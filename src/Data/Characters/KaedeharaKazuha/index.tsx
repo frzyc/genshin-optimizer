@@ -19,7 +19,7 @@ import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { DocumentSection, ICharacterSheet } from '../../../Types/character'
-import { Translate, TransWrapper } from '../../../Components/Translate'
+import { Translate } from '../../../Components/Translate'
 import { conditionalHeader, sgt, st, talentTemplate } from '../SheetUtil'
 import { absorbableEle } from '../dataUtil'
 import { KeyPath } from '../../../Util/KeyPathUtil'
@@ -55,7 +55,7 @@ const char: ICharacterSheet = {
           text: tr("auto.fields.normal"),
           fields: data.normal.hitArr.map((percentArr, i) =>
           ({
-            text: <span>{sgt(`normal.hit${i + (i < 5 ? 1 : 0)}`)} {i === 2 ? "(1)" : i === 3 ? "(2)" : i === 5 ? <span>(<TransWrapper ns="sheet" key18="hits" values={{ count: 3 }} />)</span> : ""}</span>,
+            text: <span>{sgt(`normal.hit${i + (i < 5 ? 1 : 0)}`)} {i === 2 ? "(1)" : i === 3 ? "(2)" : i === 5 ? <span>(<Translate ns="sheet" key18="hits" values={{ count: 3 }} />)</span> : ""}</span>,
             formulaText: stats => <span>{percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
             formula: formula.normal[i],
             variant: stats => getTalentStatKeyVariant("normal", stats),
@@ -119,7 +119,7 @@ const char: ICharacterSheet = {
             value: stat => stat.constellation >= 1 ? "9s - 10%" : "9s",
           }, {
             canShow: stat => stat.constellation >= 1,
-            text: <TransWrapper ns="char_KaedeharaKazuha" key18="c1" />,
+            text: <Translate ns="char_KaedeharaKazuha" key18="c1" />,
           }]
         }, {
           fields: [{
@@ -190,7 +190,7 @@ const char: ICharacterSheet = {
             partyBuff: "party",
             header: conditionalHeader("constellation2", tr, c2),
             description: tr("constellation2.description"),
-            name: <TransWrapper ns="char_KaedeharaKazuha" key18="c2" />,
+            name: <Translate ns="char_KaedeharaKazuha" key18="c2" />,
             stats: { eleMas: 200 }
           },
         }],
@@ -286,7 +286,7 @@ const char: ICharacterSheet = {
               infusionSelf: "anemo",
             },
             fields: [{
-              text: <TransWrapper ns="char_KaedeharaKazuha" key18="c6.bonus" />,
+              text: <Translate ns="char_KaedeharaKazuha" key18="c6.bonus" />,
               formulaText: stats => <span>0.2% {Stat.printStat("eleMas", stats, true)}</span>,
               formula: formula.constellation6.bonus,
               fixed: 1,

@@ -20,7 +20,7 @@ import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { ICharacterSheet } from '../../../Types/character'
-import { Translate, TransWrapper } from '../../../Components/Translate'
+import { Translate } from '../../../Components/Translate'
 import { plungeDocSection, sgt, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
 const tr = (strKey: string) => <Translate ns="char_KamisatoAyaka_gen" key18={strKey} />
@@ -50,7 +50,7 @@ const char: ICharacterSheet = {
           text: tr("auto.fields.normal"),
           fields: data.normal.hitArr.map((percentArr, i) =>
           ({
-            text: <span>{sgt(`normal.hit${i + 1}`)} {i === 3 ? <span>(<TransWrapper ns="sheet" key18="hits" values={{ count: 3 }} />)</span> : ""}</span>,
+            text: <span>{sgt(`normal.hit${i + 1}`)} {i === 3 ? <span>(<Translate ns="sheet" key18="hits" values={{ count: 3 }} />)</span> : ""}</span>,
             formulaText: stats => <span>{percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
             formula: formula.normal[i],
             variant: stats => getTalentStatKeyVariant("normal", stats),
@@ -58,7 +58,7 @@ const char: ICharacterSheet = {
         }, {
           text: tr("auto.fields.charged"),
           fields: [{
-            text: <span>{sgt("charged.dmg")} <span>(<TransWrapper ns="sheet" key18="hits" values={{ count: 3 }} />)</span></span>,
+            text: <span>{sgt("charged.dmg")} <span>(<Translate ns="sheet" key18="hits" values={{ count: 3 }} />)</span></span>,
             formulaText: stats => <span>{data.charged.hit[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
             formula: formula.charged.hit,
             variant: stats => getTalentStatKeyVariant("charged", stats),

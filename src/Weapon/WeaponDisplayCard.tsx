@@ -170,8 +170,10 @@ export default function WeaponDisplayCard({
             <Typography variant="subtitle1">{weaponPassiveName}</Typography>
             <Typography gutterBottom>{weaponPassiveName && weaponSheet.passiveDescription(build)}</Typography>
             {build && <buildContext.Provider value={charData ? buildContextObj : { equippedBuild: build, newBuild: undefined, compareBuild: false, setCompareBuild: undefined }}>
-              <WeaponStatsCard title={"Main Stats"} statsVals={{ atk: weaponDisplayMainVal, [substatKey]: substatKey ? weaponDisplaySubVal : undefined }} stats={build} />
-              <WeaponStatsCard title={"Bonus Stats"} statsVals={weaponBonusStats} stats={build} />
+              <Box display="flex" flexDirection="column" gap={1}>
+                <WeaponStatsCard title={"Main Stats"} statsVals={{ atk: weaponDisplayMainVal, [substatKey]: substatKey ? weaponDisplaySubVal : undefined }} stats={build} />
+                <WeaponStatsCard title={"Bonus Stats"} statsVals={weaponBonusStats} stats={build} />
+              </Box>
             </buildContext.Provider>}
             {charData && sections ? (() => {
               const { equippedBuild, newBuild } = charData
