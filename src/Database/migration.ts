@@ -1,6 +1,7 @@
 import { initialBuildSettings } from "../Build/BuildSetting"
 import { ascensionMaxLevel } from "../Data/LevelData"
 import { allCharacterKeys } from "../Types/consts"
+import { crawlObject, layeredAssignment } from "../Util/Util"
 import { DBStorage } from "./DBStorage"
 import { getDBVersion, setDBVersion } from "./utils"
 
@@ -299,19 +300,80 @@ function migrateV11ToV12(storage: DBStorage) {
   }
 }
 
-// 7.3.0 - present
+// 7.3.0 - 7.4.2
 function migrateV12ToV13(storage: DBStorage) {
   // UI was changed quite a lot, deleting state should be easiest for migration.
   storage.remove("ArtifactDisplay.state")
 }
 
+// 7.5.0 - Present
 function migrateV13ToV14(storage: DBStorage) {
-  // Remove conditionalValues due to keys changes
-  // TODO: actually migrate the conditionalValues?
+  console.log("MIGRATE")
+  // Migrate conditionalValues due to keys changes
   for (const key of storage.keys) {
     if (key.startsWith("char_")) {
       const character = storage.get(key)
-      delete character.conditionalValues
+      const newCondValues = {}
+      crawlObject(character.conditionalValues, [], c => Array.isArray(c), (conditionalValue, keys) => {
+        // debugger
+        const [type, subkey] = keys
+        if (type === "character") {
+          if (subkey === "Traveler") {
+            // character, traveler, sheet, talents, element, condKey
+            let [character, traveler, , , element, condKey] = keys
+            if (!condKey || !element) return
+            if (element === "electro" && condKey === "sk") condKey = "e"
+            layeredAssignment(newCondValues, [character, `${traveler}_${element}`, condKey], conditionalValue)
+          } else {
+            // character, charKey, sheet, talent, condKey
+            let [character, charKey, , , condKey] = keys
+            if (!condKey) return
+            switch (charKey) {
+              case "Diluc":
+                if (condKey === "b") condKey = "q"
+                break;
+              case "KamisatoAyaka":
+                if (condKey === "p1") condKey = "a1"
+                if (condKey === "p2") condKey = "a4"
+                break;
+              case "RaidenShogun":
+                if (condKey === "sk") condKey = "e"
+                if (condKey === "skp") condKey = "ep"
+                if (condKey === "res") condKey = "q"
+                break;
+              case "SangonomiyaKokomi":
+                if (condKey === "b") condKey = "q"
+                break;
+              case "Xiao":
+                if (condKey === "a1") condKey = "a4"
+                break;
+              case "Xinyan":
+                if (condKey === "a1") condKey = "c1"
+                break;
+              case "Yanfei":
+                if (condKey === "p1") condKey = "a1"
+                break;
+              case "Zhongli":
+                if (condKey === "sk") condKey = "e"
+                break;
+              default:
+                break;
+            }
+            layeredAssignment(newCondValues, [character, charKey, condKey], conditionalValue)
+          }
+        } else if (type === "weapon") {
+          let [weapon, weaponKey, condKey] = keys
+          if (!condKey) return
+          if (weaponKey === "Whiteblind" && condKey === "infusionBlade") condKey = "ib"
+          if (weaponKey === "PrototypeRancour" && condKey === "smashedStone") condKey = "ss"
+          layeredAssignment(newCondValues, [weapon, weaponKey, condKey], conditionalValue)
+        } else if (type === "artifact") {
+          let [artifact, setKey, condKey] = keys
+          if (!condKey) return
+          layeredAssignment(newCondValues, [artifact, setKey, condKey, condKey], conditionalValue)
+        }
+      })
+      character.conditionalValues = newCondValues
       character.team = ["", "", ""]
       storage.set(key, character)
     }

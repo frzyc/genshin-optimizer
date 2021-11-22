@@ -176,7 +176,7 @@ export default function WeaponDisplayCard({
             {charData && sections ? (() => {
               const { equippedBuild, newBuild } = charData
               const characterKey = (newBuild ? newBuild : equippedBuild)?.characterKey as CharacterKey | undefined
-              return !!characterKey && < DocumentDisplay  {...{ sections, equippedBuild, newBuild, characterKey }} />
+              return !!characterKey && < DocumentDisplay sections={sections} characterKey={characterKey} />
             })() : null}
           </Box>
         </Box>

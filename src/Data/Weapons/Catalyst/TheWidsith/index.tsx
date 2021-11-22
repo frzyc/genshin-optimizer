@@ -4,6 +4,8 @@ import { IWeaponSheet } from '../../../../Types/weapon'
 import data_gen from './data_gen.json'
 import icon from './Icon.png'
 import iconAwaken from './AwakenIcon.png'
+import { Translate } from '../../../../Components/Translate'
+const tr = (strKey: string) => <Translate ns="weapon_TheWidsith_gen" key18={strKey} />
 const refinementAtkVals = [60, 75, 90, 105, 120]
 const refinementEleDmgVals = [48, 60, 72, 84, 96]
 const refinementEleMasVals = [240, 300, 360, 420, 480]
@@ -14,7 +16,7 @@ const weapon: IWeaponSheet = {
   document: [{
     conditional: {
       key: "d",
-      name: "",
+      name: tr(`passiveName`),
       states: {
         r: {
           name: "Recitative",

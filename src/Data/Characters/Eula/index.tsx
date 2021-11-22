@@ -20,7 +20,7 @@ import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { ICharacterSheet } from '../../../Types/character'
 import { Translate, TransWrapper } from '../../../Components/Translate'
-import { claymoreChargedDocSection, plungeDocSection, sgt, st, talentTemplate } from '../SheetUtil'
+import { claymoreChargedDocSection, plungeDocSection, sgt, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
 const tr = (strKey: string) => <Translate ns="char_Eula_gen" key18={strKey} />
 const Eula = (strKey: string) => <TransWrapper ns="char_Eula" key18={strKey} />
