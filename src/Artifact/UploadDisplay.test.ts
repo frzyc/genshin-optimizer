@@ -2,7 +2,7 @@ import { IArtifact } from "../Types/artifact"
 import { allArtifactSets, allSlotKeys } from "../Types/consts"
 import Artifact from "./Artifact"
 import { ArtifactSheet } from "./ArtifactSheet"
-import { findBestArtifact } from "./UploadDisplay"
+import { findBestArtifact } from "./ScanningUtil"
 
 let sheets
 beforeAll(async () => {

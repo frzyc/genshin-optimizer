@@ -12,7 +12,7 @@ export default function finalStatProcess(stats): ICalculatedStats {
 }
 
 function addPreModValues(stats: ICalculatedStats, mod: Modifier) {
-  if (!mod || !stats) debugger
+  if (!mod || !stats) return
   Object.keys(mod).forEach(k => {
     if (!stats.premod) stats.premod = {}
     stats.premod[k] = stats?.premod?.[k] ?? stats[k]

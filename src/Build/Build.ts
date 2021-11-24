@@ -207,14 +207,16 @@ export function artifactPermutations(initialStats: ICalculatedStats, artifactsBy
 
       // Hand-pick costly copying
       if (newStats.modifiers) newStats.modifiers = deepClone(newStats.modifiers)
-      const teamStats = newStats.teamStats.map(t => {
-        if (!t) return t
-        const { teamStats, ...rest } = t
-        return deepClone(rest)
-      })
-      const team = [newStats, ...teamStats]
-      teamStats.forEach((t, i) => t && (t.teamStats = team.filter((_, index) => index !== i + 1)))
-      newStats.teamStats = teamStats as ICalculatedStats['teamStats']
+      if (stats.teamStats) {
+        const teamStats = stats.teamStats.map(t => {
+          if (!t) return t
+          const { teamStats, ...rest } = t
+          return deepClone(rest)
+        })
+        const team = [newStats, ...teamStats]
+        teamStats.forEach((t, i) => t && (t.teamStats = team.filter((_, index) => index !== i + 1)))
+        newStats.teamStats = teamStats as ICalculatedStats['teamStats']
+      }
       newStats.partyAllModifiers = deepClone(newStats.partyAllModifiers)
       newStats.partyOnlyModifiers = deepClone(newStats.partyOnlyModifiers)
       newStats.partyActiveModifiers = deepClone(newStats.partyActiveModifiers)

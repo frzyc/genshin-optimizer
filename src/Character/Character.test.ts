@@ -35,17 +35,13 @@ describe('Character.getDisplayStatKeys()', () => {
   })
   afterEach(() => localStorage.clear())
   test('should get statKeys for characters with finished talent page', async () => {
-    const artifactSheets = await ArtifactSheet.getAll()
+    const sheets = await Promise.all([CharacterSheet.getAll(), WeaponSheet.getAll(), ArtifactSheet.getAll()])
+      .then(([characterSheets, weaponSheets, artifactSheets]) => ({ characterSheets, weaponSheets, artifactSheets }))
     const character = database._getChar(characterKey)
-    const characterSheet = await CharacterSheet.get(characterKey)
     expect(character).toBeTruthy()
-    if (!character) return
-    const weaponSheet = await WeaponSheet.get("Whiteblind")
-    expect(characterSheet).toBeInstanceOf(CharacterSheet)
-    expect(weaponSheet).toBeInstanceOf(WeaponSheet)
-    if (!characterSheet || !weaponSheet || !artifactSheets) return
-    const initialStats = Character.createInitialStats(character, database, characterSheet, weaponSheet)
-    const keys = Character.getDisplayStatKeys(initialStats, { characterSheet, weaponSheet, artifactSheets })
+    if (!character || !sheets) return
+    const initialStats = Character.createInitialStats(character, database, sheets)
+    const keys = Character.getDisplayStatKeys(initialStats, sheets)
     expect(keys).toHaveProperty("talentKey_auto")
   })
 })

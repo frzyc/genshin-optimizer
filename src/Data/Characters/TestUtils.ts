@@ -5,12 +5,16 @@ import { StatData } from "../../StatData"
 import { GetDependencies } from "../../StatDependency"
 import { ICalculatedStats } from "../../Types/stats"
 
-export const createProxiedStats = (baseStats: Partial<ICalculatedStats>) => new Proxy({ ...baseStats }, {
-  get: (target, property: string) => {
-    if (!(property in StatData) && !(property in target)) throw property
-    return target[property] ?? StatData[property].default ?? 0
-  }
+export const defaultInitialStats = () => ({
+  teamStats: [null, null, null], partyAllModifiers: {}, partyOnlyModifiers: {}, partyActiveModifiers: {}
 })
+export const createProxiedStats = (baseStats: Partial<ICalculatedStats>) =>
+  new Proxy({ ...defaultInitialStats(), ...baseStats }, {
+    get: (target, property: string) => {
+      if (!(property in StatData) && !(property in target)) throw property
+      return target[property] ?? StatData[property].default ?? 0
+    }
+  })
 export function applyArtifacts(stats, artifacts) {
   artifacts.forEach(artifact =>
     Object.entries(artifact).forEach(([key, value]: any) =>

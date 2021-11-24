@@ -314,7 +314,6 @@ function migrateV13ToV14(storage: DBStorage) {
       const character = storage.get(key)
       const newCondValues = {}
       crawlObject(character.conditionalValues, [], c => Array.isArray(c), (conditionalValue, keys) => {
-        // debugger
         const [type, subkey] = keys
         if (type === "character") {
           if (subkey === "Traveler") {
