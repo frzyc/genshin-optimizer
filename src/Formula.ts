@@ -13,7 +13,7 @@ export default class Formula {
   static formulas: any = {}
   static get = (keys: string[]): Promise<((stats: ICalculatedStats) => any[]) | object | undefined> => formulaImport.then(formulas => objPathValue(formulas, keys))
   static computeModifier(stat: IBaseStat, modifier: Modifier | undefined): (s: ICalculatedStats) => BonusStats {
-    if (!modifier) return () => ({})
+    if (!modifier || !Object.keys(modifier).length) return () => ({})
 
     // Keep objs separate here, so that it won't need to be recomputed when the modifier is triggered
     const objs = Object.entries(modifier).map(([key, formulas]) =>

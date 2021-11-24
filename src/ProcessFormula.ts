@@ -1,7 +1,7 @@
 import Formula from "./Formula"
 import { Formulas, StatData } from "./StatData"
 import { GetDependencies } from "./StatDependency"
-import { ICalculatedStats } from "./Types/stats"
+import { ICalculatedStats, Modifier } from "./Types/stats"
 import { mergeStats } from "./Util/StatUtil"
 
 export default function finalStatProcess(stats): ICalculatedStats {
@@ -9,6 +9,26 @@ export default function finalStatProcess(stats): ICalculatedStats {
   const { initialStats: preprocessedStats, formula } = PreprocessFormulas(dependencies, stats)
   formula(preprocessedStats)
   return { ...stats, ...preprocessedStats }
+}
+
+function addPreModValues(stats: ICalculatedStats, mod: Modifier) {
+  if (!mod || !stats) debugger
+  Object.keys(mod).forEach(k => {
+    if (!stats.premod) stats.premod = {}
+    stats.premod[k] = stats?.premod?.[k] ?? stats[k]
+  })
+}
+
+function ModStatsFormula(stats: ICalculatedStats, mods: Modifier, targets: (s: ICalculatedStats) => Array<ICalculatedStats | null>) {
+  const modStatsFunc = Formula.computeModifier(stats, mods)
+  return (s: ICalculatedStats) => {
+    const modStats = modStatsFunc(s);
+    targets(s).forEach(b => {
+      if (!b) return
+      addPreModValues(b, mods)
+      mergeStats(b, modStats)
+    })
+  }
 }
 
 type KeyedFormula = [string, (s: ICalculatedStats) => number]
@@ -29,51 +49,39 @@ export function PreprocessFormulas(dependencyKeys: string[], stats: ICalculatedS
     }
   }
 
+  initialStats.activeCharacter = stats.activeCharacter
   initialStats.teamStats = stats.teamStats
-  initialStats.partyStats = stats.partyStats
-  initialStats.partyOnlyStats = stats.partyOnlyStats
-  initialStats.partyActiveStats = stats.partyActiveStats
 
   const modFormula = Formula.computeModifier(stats, Object.fromEntries(Object.entries(modifiers)
     .filter(([key]) => dependencyKeys.includes(key)) // Keep only relevant keys
   ))
+  const partyAllFormula = ModStatsFormula(stats, stats.partyAllModifiers, (s) => [s, ...s.teamStats])
+  const partyOnlyFormula = ModStatsFormula(stats, stats.partyOnlyModifiers, (s) => s.teamStats)
+  const partyActiveFormula = ModStatsFormula(stats, stats.partyActiveModifiers, (s) => [s])
 
   return {
     initialStats: initialStats as ICalculatedStats,
     formula: (s: ICalculatedStats) => {
-
-      // Calculate all the party-related Stats from different Teammembers.
-      const partyActiveStats = s // The "active" member is the char currently being calculated
-      const party = [s, ...s.teamStats]
-
-      party.forEach((partyMember, i) => {
-        if (!partyMember) return
-        const partyOnly = [...party].splice(i, 1)
-
-        // TODO: IMPLEMENT Apply the stats from each party member to each member, except modifiers, which are needed to be calculated in the context of each character.
-
-        // mergeStats(partyActiveStats, partyMember.partyActiveStats)
-        // party.forEach(other => {
-        //   if (!other) return
-        //   mergeStats(other, partyMember.partyStats)
-        // })
-        // partyOnly.forEach(other => {
-        //   if (!other) return
-        //   mergeStats(other, partyMember.partyOnlyStats)
-        // })
-      })
-      // Calculate all the stats of the teammates, this will include their modifiers.
-      s.teamStats.map(s => s && finalStatProcess(s))
-
-      //TODO: IMPLEMENT calculate the party modifiers from teammates after the finalStatProcess is done.
-
-
       premodFormulaList.forEach(([key, formula]) => s[key] = formula(s))
 
       const modStats = Formula.computeModifier(s, s.modifiers)(s) // late-binding modifiers (arts mod)
       mergeStats(modStats, modFormula(s))
-      s.premod = Object.fromEntries(Object.keys(modifiers).map(key => [key, s[key]]))
-      s.modStats = modStats
+      modifiers && addPreModValues(s, modifiers)
+      s.modifiers && addPreModValues(s, s.modifiers)
+
+      // Calculate & apply modStats. 
+      partyAllFormula(s)
+      partyOnlyFormula(s)
+      partyActiveFormula(s)
+      if (s.activeCharacter) {
+        s.teamStats = s.teamStats.map(t => {
+          if (!t) return null
+          const { initialStats: preprocessedStats, formula } = PreprocessFormulas(dependencyKeys, t)
+          formula(preprocessedStats)
+          return { ...t, ...preprocessedStats }
+        }) as ICalculatedStats["teamStats"]
+      }
+
       // Apply modifiers
       mergeStats(s, modStats)
       mergeStats(s, { modifiers })

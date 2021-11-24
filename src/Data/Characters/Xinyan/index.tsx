@@ -169,7 +169,7 @@ const char: ICharacterSheet = {
           conditional: { // NowThatsRockNRoll
             key: "a4s",
             canShow: stats => stats.ascension >= 4,
-            partyBuff: "party",
+            partyBuff: "partyAll",
             header: conditionalHeader("passive2", tr, passive2),
             description: tr("passive2.description"),
             name: <span>Shielded by <b>Sweeping Fervor</b></span>,
@@ -205,7 +205,7 @@ const char: ICharacterSheet = {
           conditional: { // WildfireRhythm
             key: "a4",
             canShow: stats => stats.constellation >= 4,
-            partyBuff: "party",
+            partyBuff: "partyAll",
             header: conditionalHeader("constellation4", tr, c4),
             description: tr("constellation4.description"),
             name: <span><b>Sweeping Fervor</b> DMG</span>,

@@ -72,7 +72,7 @@ const char: ICharacterSheet = {
           }],
           conditional: {
             key: "e",
-            partyBuff: "party",
+            partyBuff: "partyAll",
             header: conditionalHeader("skill", tr, skill),
             description: tr("skill.description"),
             name: "All Sword, Claymore and Polearm-wielding characters within Frost Field",

@@ -98,7 +98,7 @@ const char: ICharacterSheet = {
         }, {
           conditional: { // Glorious Season
             key: "a1",
-            partyBuff: "party",
+            partyBuff: "partyAll",
             header: conditionalHeader("passive1", tr, passive1),
             description: tr("passive1.description"),
             canShow: stats => stats.ascension >= 1,
@@ -108,7 +108,7 @@ const char: ICharacterSheet = {
         }, {
           conditional: { // VitalityBurst
             key: "c2",
-            partyBuff: "active",
+            partyBuff: "partyActive",
             header: conditionalHeader("constellation2", tr, c2),
             description: tr("constellation2.description"),
             canShow: stats => stats.constellation >= 2,

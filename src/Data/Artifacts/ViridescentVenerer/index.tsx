@@ -28,7 +28,7 @@ const artifact: IArtifactSheet = {
       document: [{
         conditional: {
           key: "4",
-          partyBuff: "party",
+          partyBuff: "partyAll",
           header: {
             title: tr("setName"),
             icon: <ImgIcon size={2} sx={{ m: -1 }} src={flower} />,

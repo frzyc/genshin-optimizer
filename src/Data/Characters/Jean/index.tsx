@@ -140,7 +140,7 @@ const char: ICharacterSheet = {
           conditional: { // People's Aegis
             key: "c2",
             canShow: stats => stats.constellation >= 2,
-            partyBuff: "party",
+            partyBuff: "partyAll",
             header: conditionalHeader("constellation2", tr, c2),
             description: tr("constellation2.description"),
             name: "Jean pick up Elemental Orb/Particle",

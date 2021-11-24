@@ -28,14 +28,14 @@ const artifact: IArtifactSheet = {
       document: allElements.map(ele => ({
         conditional: {
           key: ele,
-          partyBuff: "party",
+          partyBuff: "partyAll",
           header: {
             title: tr("setName"),
             icon: <ImgIcon size={2} sx={{ m: -1 }} src={flower} />,
             action: <SqBadge color="success">4-set</SqBadge>
           },
           description: tr(`setEffects.4`),
-          canShow: stats => [stats.characterEle, ...stats.teamElement].includes(ele),
+          canShow: stats => [stats.characterEle, ...stats.teamStats.map(t => t?.characterEle ?? "")].includes(ele),
           maxStack: 0,
           name: <span><ColorText color={ele}>{sgt(`element.${ele}`)}</ColorText> character in party</span>,
           stats: { [`${ele}_res_`]: 30 }

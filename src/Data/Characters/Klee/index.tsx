@@ -165,7 +165,7 @@ const char: ICharacterSheet = {
           text: tr("constellation6.description"),
           conditional: { // BlazingDelight
             key: "c6",
-            partyBuff: "party",
+            partyBuff: "partyAll",
             canShow: stats => stats.constellation >= 6,
             header: conditionalHeader("constellation6", tr, c6),
             description: tr("constellation6.description"),

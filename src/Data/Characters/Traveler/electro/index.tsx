@@ -61,7 +61,7 @@ const talentSheet: TalentSheet = {
         conditional: {
           key: "e",
           name: charTr("skill.absorb"),
-          partyBuff: "party",
+          partyBuff: "partyAll",
           header: conditionalHeader("skill", tr, skill),
           description: tr("skill.description"),
           stats: {

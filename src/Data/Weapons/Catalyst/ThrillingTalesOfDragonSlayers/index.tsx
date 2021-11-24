@@ -14,7 +14,8 @@ const weapon: IWeaponSheet = {
   document: [{
     conditional: {// Heritage
       key: "h",
-      partyBuff: "active",
+      partyBuff: "partyActive",
+      canShow: stats => !stats.activeCharacter, // When calculating in the context of the char equipped, the char cannot be active.
       header: {
         title: tr(`passiveName`),
         icon: stats => <ImgIcon size={2} sx={{ m: -1 }} src={stats.ascension < 2 ? icon : iconAwaken} />,

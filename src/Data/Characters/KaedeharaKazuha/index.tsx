@@ -187,7 +187,7 @@ const char: ICharacterSheet = {
           conditional: {
             key: "c2",
             canShow: stats => stats.constellation >= 2,
-            partyBuff: "party",
+            partyBuff: "partyAll",
             header: conditionalHeader("constellation2", tr, c2),
             description: tr("constellation2.description"),
             name: <Translate ns="char_KaedeharaKazuha" key18="c2" />,
@@ -229,7 +229,7 @@ const char: ICharacterSheet = {
           conditional: { // Poetics of Fuubutsu
             key: `a4${eleKey}`,
             canShow: stats => stats.ascension >= 4,
-            partyBuff: "party",
+            partyBuff: "partyAll",
             header: conditionalHeader("passive2", tr, passive2),
             description: tr("passive2.description"),
             name: <Translate ns="char_KaedeharaKazuha" key18={`a4.name_${eleKey}`} />,
@@ -256,7 +256,7 @@ const char: ICharacterSheet = {
           conditional: {
             key: "pas",
             maxStack: 0,
-            partyBuff: "party",
+            partyBuff: "partyAll",
             header: conditionalHeader("passive3", tr, passive3),
             description: tr("passive3.description"),
             stats: { staminaSprintDec_: 20 },

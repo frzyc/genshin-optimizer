@@ -4,7 +4,7 @@ import { TalentSheet } from "../Types/character";
 import { allElements } from "../Types/consts";
 import IConditional, { IConditionalValue, IConditionalValues } from "../Types/IConditional";
 import { IFieldDisplay } from "../Types/IFieldDisplay";
-import { ICalculatedStats } from "../Types/stats";
+import { BonusStats, ICalculatedStats } from "../Types/stats";
 import { fieldProcessing } from "../Util/FieldUtil";
 import { crawlObject, deepClone, layeredAssignment, objMultiplication, objPathValue } from "../Util/Util";
 import { weaponImport } from "../Weapon/WeaponSheet";
@@ -49,7 +49,7 @@ export default class Conditional {
     }
     return conditional?.canShow?.(stats) ?? false
   }
-  static resolve = (conditional, stats, conditionalValue, defVal = { stats: {} as ICalculatedStats, fields: [] as IFieldDisplay[], conditionalValue: [0] as IConditionalValue }) => {
+  static resolve = (conditional, stats, conditionalValue, defVal = { stats: {} as BonusStats, fields: [] as IFieldDisplay[], conditionalValue: [0] as IConditionalValue }) => {
     if (conditional.maxStack === 0) conditionalValue = [1]
     else if (!conditionalValue) conditionalValue = objPathValue(stats.conditionalValues, conditional.keys)
     const [stacks, stateKey] = (conditionalValue ?? [])
@@ -60,7 +60,13 @@ export default class Conditional {
     }
     let conditionalStats = conditional.stats
     if (typeof conditionalStats === "function") conditionalStats = conditionalStats(stats)
-    if (conditionalStats) defVal.stats = objMultiplication(deepClone(conditionalStats), stacks)
+    if (conditionalStats && Object.keys(conditionalStats).length) {
+      const stats = objMultiplication(deepClone(conditionalStats), stacks)
+      if (conditional.partyBuff) {
+        defVal.stats = { [conditional.partyBuff]: stats }
+      } else
+        defVal.stats = stats
+    }
     if (conditional.fields) defVal.fields = conditional.fields
     defVal.conditionalValue = conditionalValue
     return defVal

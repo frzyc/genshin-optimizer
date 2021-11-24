@@ -10,7 +10,7 @@ export interface IConditionalBase {
     action?: Displayable;
   }
   description?: Displayable | ((stats: BasicStats) => Displayable);
-  partyBuff?: "active" | "party" | "partyOnly"
+  partyBuff?: "partyActive" | "partyAll" | "partyOnly"
   key: string,
   keys?: string[]
 }

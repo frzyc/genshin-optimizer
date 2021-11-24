@@ -147,7 +147,7 @@ const char: ICharacterSheet = {
             key: "a4",
             canShow: stats => stats.ascension >= 4,
             name: <span>Using <strong>Rite of Progeniture: Tectonic Tide</strong></span>,
-            partyBuff: "party",
+            partyBuff: "partyAll",
             header: conditionalHeader("passive2", tr, passive2),
             description: tr("passive2.description"),
             stats: { eleMas: 125, }
@@ -167,7 +167,7 @@ const char: ICharacterSheet = {
             key: "c4",
             canShow: stats => stats.constellation >= 4,
             name: "Active party members within the Solar Isotoma field",
-            partyBuff: "active",
+            partyBuff: "partyActive",
             header: conditionalHeader("constellation4", tr, c4),
             description: tr("constellation4.description"),
             stats: { plunging_dmg_: 30, }
@@ -184,7 +184,7 @@ const char: ICharacterSheet = {
             key: "c6",
             canShow: stats => stats.constellation >= 6,
             name: "Active party members within the Solar Isotoma field who are protected by a shield created by Crystallize",
-            partyBuff: "active",
+            partyBuff: "partyActive",
             header: conditionalHeader("constellation6", tr, c6),
             description: tr("constellation6.description"),
             stats: {

@@ -8,6 +8,10 @@ import { IFieldDisplay } from "../Types/IFieldDisplay"
 export default function statsToFields(statVals, stats = {}): IFieldDisplay[] {
   return Object.entries(statVals).filter(([statKey]) => statKey !== "modifiers").map(([statKey, statVal]) => {
     switch (statKey) {
+      case "partyAll":
+      case "partyOnly":
+      case "partyActive":
+        return statsToFields(statVal)
       case "infusionSelf":
         return {
           text: <ColorText color={statVal as ElementKey}>{sgt(`element.${statVal}`)} Infusion</ColorText>,

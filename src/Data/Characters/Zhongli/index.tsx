@@ -180,7 +180,7 @@ const char: ICharacterSheet = {
           }],
           conditional: { // JadeShield (near)
             key: "e",
-            partyBuff: "party",
+            partyBuff: "partyAll",
             header: conditionalHeader("skill", tr, skill),
             description: tr("skill.description"),
             name: <span>Enemies near <b>Jade Shield</b></span>,

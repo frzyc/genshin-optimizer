@@ -3,7 +3,7 @@ import { ICachedArtifact, StatKey, SubstatKey } from "../Types/artifact"
 import { ArtifactsBySlot, ArtifactSetEffects, SetFilter } from "../Types/Build"
 import { allElementsWithPhy, ArtifactSetKey, ElementKey, SetNum, SlotKey } from "../Types/consts"
 import { BasicStats, BonusStats, ICalculatedStats } from "../Types/stats"
-import { mergeStats } from "../Util/StatUtil"
+import { mergeCalculatedStats, mergeStats } from "../Util/StatUtil"
 import { deepClone } from "../Util/Util"
 
 type buildContextObj = {
@@ -23,6 +23,7 @@ export const maxBuildsToShowList = [1, 2, 3, 4, 5, 8, 10] as const
 export const maxBuildsToShowDefault = 5
 
 /**
+ * FIXME: artifactSetEffects will have party/partyOnly/active :{statkey:stat}. need to account for these. in theory, only party/active should apply to current character(active char)
  * Remove artifacts that can never be used in optimized builds when trying to optimize for top `maxBuildsToShow` builds
  * @param {artifact[]} artifacts - List of artifacts of the same slot
  * @param {Object.<setKey, Object.<number, Object.<statKey, statValue>>>} artifactSetEffects - The list of the set effects
@@ -206,6 +207,18 @@ export function artifactPermutations(initialStats: ICalculatedStats, artifactsBy
 
       // Hand-pick costly copying
       if (newStats.modifiers) newStats.modifiers = deepClone(newStats.modifiers)
+      const teamStats = newStats.teamStats.map(t => {
+        if (!t) return t
+        const { teamStats, ...rest } = t
+        return deepClone(rest)
+      })
+      const team = [newStats, ...teamStats]
+      teamStats.forEach((t, i) => t && (t.teamStats = team.filter((_, index) => index !== i + 1)))
+      newStats.teamStats = teamStats as ICalculatedStats['teamStats']
+      newStats.partyAllModifiers = deepClone(newStats.partyAllModifiers)
+      newStats.partyOnlyModifiers = deepClone(newStats.partyOnlyModifiers)
+      newStats.partyActiveModifiers = deepClone(newStats.partyActiveModifiers)
+      newStats.tlvl = deepClone(newStats.tlvl)
 
       accumulate(slotKey, artifact, setCount, accu, newStats, artifactSetEffects)
       slotPerm(index + 1, newStats)
@@ -229,7 +242,7 @@ function accumulate(slotKey: SlotKey, art: ICachedArtifact, setCount: Dict<Artif
 
   // Add set effects
   const setEffect = artifactSetEffects[setKey]?.[setCount[setKey]!]
-  setEffect && mergeStats(stats, setEffect) // TODO: This may slow down the computation
+  setEffect && mergeCalculatedStats(stats, setEffect) // TODO: This may slow down the computation
 }
 
 /**

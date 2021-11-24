@@ -20,7 +20,7 @@ const weapon: IWeaponSheet = {
   document: [{
     conditional: {
       key: "r",
-      partyBuff: "party",
+      partyBuff: "partyAll",
       header: {
         title: tr(`passiveName`),
         icon: stats => <ImgIcon size={2} sx={{ m: -1 }} src={stats.ascension < 2 ? icon : iconAwaken} />,

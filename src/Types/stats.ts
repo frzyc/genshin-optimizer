@@ -30,8 +30,8 @@ export interface BasicStats {
   }
 
   conditionalValues: IConditionalValues<IConditionalValue>
+  activeCharacter: boolean,
   team: ICachedCharacter["team"]
-  teamElement: [teammate1: ElementKey | "", teammate2: ElementKey | "", teammate3: ElementKey | ""]
   teamStats: [teammate1: ICalculatedStats | null, teammate2: ICalculatedStats | null, teammate3: ICalculatedStats | null]
   mainStatAssumptionLevel: number
 }
@@ -45,9 +45,9 @@ export type ICalculatedStats = BasicStats & Required<BonusStats> & {
   premod: Partial<ICalculatedStats>
   modStats: Partial<ICalculatedStats>
   // Pass on stats to the party
-  partyStats: Partial<ICalculatedStats>
-  partyOnlyStats: Partial<ICalculatedStats>
-  partyActiveStats: Partial<ICalculatedStats>
+  partyAllModifiers: Modifier
+  partyOnlyModifiers: Modifier
+  partyActiveModifiers: Modifier
   equippedArtifacts?: StrictDict<SlotKey, string>
   setToSlots: Dict<ArtifactSetKey, SlotKey[]>
 } & {
@@ -60,7 +60,10 @@ export type BonusStats = {
 } & {
   infusionSelf?: ElementKey
   infusionAura?: ElementKey
-  modifiers?: Modifier
+  modifiers?: Modifier,
+  partyAll?: BonusStats
+  partyOnly?: BonusStats
+  partyActive?: BonusStats
 }
 
 export interface Modifier {

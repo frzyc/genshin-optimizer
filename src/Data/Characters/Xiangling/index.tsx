@@ -141,7 +141,7 @@ const char: ICharacterSheet = {
           conditional: { // BewareItsSuperHot
             key: "a4",
             canShow: stats => stats.ascension >= 4,
-            partyBuff: "party",
+            partyBuff: "partyAll",
             header: conditionalHeader("passive2", tr, passive2),
             description: tr("passive2.description"),
             name: "Pick up chili pepper",

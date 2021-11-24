@@ -102,7 +102,7 @@ const char: ICharacterSheet = {
           conditional: { // Fantastic Voyage
             key: "q",
             name: tr("burst.name"),
-            partyBuff: "party",
+            partyBuff: "partyAll",
             header: conditionalHeader("burst", tr, burst),
             description: tr("burst.description"),
             stats: {
@@ -143,7 +143,7 @@ const char: ICharacterSheet = {
           text: tr("constellation6.description"),
           conditional: { // Fire Ventures With Me
             key: "c6",
-            partyBuff: "party",
+            partyBuff: "partyAll",
             header: conditionalHeader("constellation6", tr, c6),
             description: tr("constellation6.description"),
             canShow: stats => stats.constellation >= 6,

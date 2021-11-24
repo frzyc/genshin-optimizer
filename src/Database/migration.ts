@@ -308,7 +308,6 @@ function migrateV12ToV13(storage: DBStorage) {
 
 // 7.5.0 - Present
 function migrateV13ToV14(storage: DBStorage) {
-  console.log("MIGRATE")
   // Migrate conditionalValues due to keys changes
   for (const key of storage.keys) {
     if (key.startsWith("char_")) {

@@ -7,22 +7,64 @@ export const overrideStatKeys = [...enemyEditorKeys, ...characterStatKeys]
 export function mergeStats(initialStats: BonusStats, stats: BonusStats | undefined) {
   if (!stats) return
   return Object.entries(stats).forEach(([key, val]: any) => {
-    if (key === "modifiers") {
-      initialStats.modifiers = initialStats.modifiers ?? {}
-      for (const [key, paths] of (Object.entries(val as Modifier))) {
-        initialStats.modifiers[key] = initialStats.modifiers[key] ?? []
-        initialStats.modifiers[key].push(...paths)
+    switch (key) {
+      case "partyAll":
+      case "partyOnly":
+      case "partyActive":
+        if (!initialStats[key]) initialStats[key] = {}
+        mergeStats(initialStats[key], val)
+        break;
+      case "modifiers":
+        initialStats.modifiers = initialStats.modifiers ?? {}
+        mergeModifiers(initialStats.modifiers, val as Modifier)
+        break;
+      case "infusionSelf":
+        // TODO: handle multiple aura priority
+        if (!initialStats.infusionAura)
+          initialStats.infusionAura = val
+        break;
+      default:
+        if (initialStats[key] === undefined) initialStats[key] = val
+        else if (typeof initialStats[key] === "number") initialStats[key] += val
+    }
+  })
+}
+function mergeModifiers(dest: Modifier, partial: Modifier) {
+  for (const [key, paths] of Object.entries(partial)) {
+    dest[key] = dest[key] ?? []
+    dest[key].push(...paths)
+  }
+}
+
+/**
+ * Merge stats, being aware of wher the stats are suppose to go.(partyAll, partyOnly, partyActive)
+ */
+export function mergeCalculatedStats(initialStats: ICalculatedStats, stats: BonusStats | undefined) {
+  if (!stats) return
+  return Object.entries(stats).forEach(([key, val]: any) => {
+    switch (key) {
+      case "partyAll": {
+        const { modifiers, ...rest } = val
+        mergeStats(initialStats, rest)
+        initialStats.teamStats.forEach(t => t && mergeStats(t, rest))
+        modifiers && mergeModifiers(initialStats[`${key}Modifiers`], modifiers)
+        break;
       }
-    } else if (key === "infusionSelf") {
-      if (!initialStats.infusionSelf)
-        initialStats.infusionSelf = val
-    } else if (key === "infusionAura") {
-      // TODO: handle multiple aura priority
-      if (!initialStats.infusionAura)
-        initialStats.infusionAura = val
-    } else {
-      if (initialStats[key] === undefined) initialStats[key] = val
-      else if (typeof initialStats[key] === "number") initialStats[key] += val
+      case "partyOnly": {
+        const { modifiers, ...rest } = val
+        initialStats.teamStats.forEach(t => t && mergeStats(t, rest))
+        modifiers && mergeModifiers(initialStats[`${key}Modifiers`], modifiers)
+        break;
+      }
+      case "partyActive": {
+        const { modifiers, ...rest } = val;
+        const active = [initialStats, ...initialStats.teamStats].find(t => t?.activeCharacter)
+        active && mergeStats(active, rest)
+        modifiers && mergeModifiers(initialStats[`${key}Modifiers`], modifiers)
+        break;
+      }
+      default:
+        mergeStats(initialStats, { [key]: val })
     }
   })
 }

@@ -122,7 +122,7 @@ const char: ICharacterSheet = {
           conditional: { // Wildfire
             key: "c6",
             canShow: stats => stats.constellation >= 6,
-            partyBuff: "party",
+            partyBuff: "partyAll",
             header: conditionalHeader("constellation6", tr, c6),
             description: tr("constellation6.description"),
             name: tr("constellation6.name"),

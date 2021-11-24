@@ -52,13 +52,13 @@ export default function CharacterTeamBuffsPane({ character, character: { key: ch
     </CardLight>
     <Grid container spacing={1}>
       {sheets && build.teamStats.map((tStats, i) => <Grid item xs={12} md={6} lg={4} key={i}>
-        <TeammateDisplay build={build} character={character} condCharStats={tStats} sheets={sheets} index={i} />
+        <TeammateDisplay character={character} condCharStats={tStats} sheets={sheets} index={i} />
       </Grid>)}
     </Grid>
   </Box>
 }
-function TeammateDisplay({ build: { characterEle, teamElement }, character, character: { key: characterKey, team }, condCharStats, sheets, index }:
-  { build: ICalculatedStats, character: ICachedCharacter, condCharStats: ICalculatedStats | null, sheets: Sheets, index: number }) {
+function TeammateDisplay({ character, character: { key: characterKey, team }, condCharStats, sheets, index }:
+  { character: ICachedCharacter, condCharStats: ICalculatedStats | null, sheets: Sheets, index: number }) {
   const onClickHandler = useCharSelectionCallback()
   const characterDispatch = useCharacterReducer(characterKey)
   return <CardLight>

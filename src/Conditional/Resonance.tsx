@@ -18,11 +18,11 @@ const resonanceSheets: resonanceDoc[] = [{// Protective Canopy
     action: <span>{StatIcon.anemo} {StatIcon.geo} {StatIcon.pyro} {StatIcon.hydro} {StatIcon.cryo} {StatIcon.electro} x4</span>
   },
   description: tr("ProtectiveCanopy.desc"),
-  canShow: stats => (new Set([...stats.teamElement, stats.characterEle])).size === 4,
+  canShow: stats => (new Set([...stats.teamStats.map(t => t?.characterEle ?? ""), stats.characterEle].filter(e => e))).size === 4,
   conditionals: [{
     key: "pc",
-    partyBuff: "party",
-    canShow: stats => (new Set([...stats.teamElement, stats.characterEle])).size === 4,
+    partyBuff: "partyAll",
+    canShow: stats => (new Set([...stats.teamStats.map(t => t?.characterEle ?? ""), stats.characterEle])).size === 4,
     maxStack: 0,
     stats: Object.fromEntries([...allElements, "physical"].map(ele => [`${ele}_res_`, 15]))
   }]
@@ -32,11 +32,11 @@ const resonanceSheets: resonanceDoc[] = [{// Protective Canopy
     action: <span>{StatIcon.pyro} {StatIcon.pyro}</span>,
   },
   description: tr("FerventFlames.desc"),
-  canShow: stats => [...stats.teamElement, stats.characterEle].filter(e => e === "pyro").length >= 2,
+  canShow: stats => [...stats.teamStats.map(t => t?.characterEle ?? ""), stats.characterEle].filter(e => e === "pyro").length >= 2,
   conditionals: [{
     key: "ff",
-    partyBuff: "party",
-    canShow: stats => [...stats.teamElement, stats.characterEle].filter(e => e === "pyro").length >= 2,
+    partyBuff: "partyAll",
+    canShow: stats => [...stats.teamStats.map(t => t?.characterEle ?? ""), stats.characterEle].filter(e => e === "pyro").length >= 2,
     maxStack: 0,
     stats: {
       atk_: 25,
@@ -52,13 +52,13 @@ const resonanceSheets: resonanceDoc[] = [{// Protective Canopy
     title: tr("SoothingWater.name"),
     action: <span>{StatIcon.hydro} {StatIcon.hydro}</span>,
   },
-  canShow: stats => [...stats.teamElement, stats.characterEle].filter(e => e === "hydro").length >= 2,
+  canShow: stats => [...stats.teamStats.map(t => t?.characterEle ?? ""), stats.characterEle].filter(e => e === "hydro").length >= 2,
   description: tr("SoothingWater.desc"),
   conditionals: [{
     key: "sw",
     maxStack: 0,
-    canShow: stats => [...stats.teamElement, stats.characterEle].filter(e => e === "hydro").length >= 2,
-    partyBuff: "party",
+    canShow: stats => [...stats.teamStats.map(t => t?.characterEle ?? ""), stats.characterEle].filter(e => e === "hydro").length >= 2,
+    partyBuff: "partyAll",
     stats: {
       incHeal_: 30,
     },
@@ -73,13 +73,13 @@ const resonanceSheets: resonanceDoc[] = [{// Protective Canopy
     title: tr("ShatteringIce.name"),
     action: <span>{StatIcon.cryo} {StatIcon.cryo}</span>,
   },
-  canShow: stats => [...stats.teamElement, stats.characterEle].filter(e => e === "cryo").length >= 2,
+  canShow: stats => [...stats.teamStats.map(t => t?.characterEle ?? ""), stats.characterEle].filter(e => e === "cryo").length >= 2,
   description: tr("ShatteringIce.desc"),
   conditionals: [{
     key: "si",// Shattering Ice
     name: "Against enemies that are Frozen or affected by Cryo",
-    canShow: stats => [...stats.teamElement, stats.characterEle].filter(e => e === "cryo").length >= 2,
-    partyBuff: "party",
+    canShow: stats => [...stats.teamStats.map(t => t?.characterEle ?? ""), stats.characterEle].filter(e => e === "cryo").length >= 2,
+    partyBuff: "partyAll",
     stats: {
       critRate_: 15,
     },
@@ -95,12 +95,12 @@ const resonanceSheets: resonanceDoc[] = [{// Protective Canopy
     action: <span>{StatIcon.electro} {StatIcon.electro}</span>,
   },
   description: tr("HighVoltage.desc"),
-  canShow: stats => [...stats.teamElement, stats.characterEle].filter(e => e === "electro").length >= 2,
+  canShow: stats => [...stats.teamStats.map(t => t?.characterEle ?? ""), stats.characterEle].filter(e => e === "electro").length >= 2,
   conditionals: [{
     key: "hv",
-    partyBuff: "party",
+    partyBuff: "partyAll",
     maxStack: 0,
-    canShow: stats => [...stats.teamElement, stats.characterEle].filter(e => e === "electro").length >= 2,
+    canShow: stats => [...stats.teamStats.map(t => t?.characterEle ?? ""), stats.characterEle].filter(e => e === "electro").length >= 2,
     fields: [{
       text: "Hydro affect Duration",
       value: -40,
@@ -113,11 +113,11 @@ const resonanceSheets: resonanceDoc[] = [{// Protective Canopy
     action: <span>{StatIcon.anemo} {StatIcon.anemo}</span>,
   },
   description: tr("ImpetuousWinds.desc"),
-  canShow: stats => [...stats.teamElement, stats.characterEle].filter(e => e === "anemo").length >= 2,
+  canShow: stats => [...stats.teamStats.map(t => t?.characterEle ?? ""), stats.characterEle].filter(e => e === "anemo").length >= 2,
   conditionals: [{
     key: "iw",
-    partyBuff: "party",
-    canShow: stats => [...stats.teamElement, stats.characterEle].filter(e => e === "anemo").length >= 2,
+    partyBuff: "partyAll",
+    canShow: stats => [...stats.teamStats.map(t => t?.characterEle ?? ""), stats.characterEle].filter(e => e === "anemo").length >= 2,
     maxStack: 0,
     stats: {
       staminaDec_: 15,
@@ -136,28 +136,28 @@ const resonanceSheets: resonanceDoc[] = [{// Protective Canopy
     action: <span>{StatIcon.geo} {StatIcon.geo}</span>,
   },
   description: tr("EnduringRock.desc"),
-  canShow: stats => [...stats.teamElement, stats.characterEle].filter(e => e === "geo").length >= 2,
+  canShow: stats => [...stats.teamStats.map(t => t?.characterEle ?? ""), stats.characterEle].filter(e => e === "geo").length >= 2,
   conditionals: [{
     key: "er", // Enduring Rock
     name: "Increases shield strength",
-    canShow: stats => [...stats.teamElement, stats.characterEle].filter(e => e === "geo").length >= 2,
-    partyBuff: "party",
+    canShow: stats => [...stats.teamStats.map(t => t?.characterEle ?? ""), stats.characterEle].filter(e => e === "geo").length >= 2,
+    partyBuff: "partyAll",
     stats: {
       shield_: 15,
     }
   }, {
     key: "ers", // Enduring Rock
     name: "characters protected by a shield",
-    canShow: stats => [...stats.teamElement, stats.characterEle].filter(e => e === "geo").length >= 2,
-    partyBuff: "party",
+    canShow: stats => [...stats.teamStats.map(t => t?.characterEle ?? ""), stats.characterEle].filter(e => e === "geo").length >= 2,
+    partyBuff: "partyAll",
     stats: {
       dmg_: 15,
     }
   }, {
     key: "erd", // Enduring Rock
     name: "characters protected by a shield: dealing DMG to enemies",
-    canShow: stats => [...stats.teamElement, stats.characterEle].filter(e => e === "geo").length >= 2,
-    partyBuff: "party",
+    canShow: stats => [...stats.teamStats.map(t => t?.characterEle ?? ""), stats.characterEle].filter(e => e === "geo").length >= 2,
+    partyBuff: "partyAll",
     stats: {
       geo_enemyRes_: -15,
     },

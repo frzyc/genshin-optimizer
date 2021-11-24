@@ -100,7 +100,7 @@ const char: ICharacterSheet = {
           }],
           conditional: {
             key: "q",
-            partyBuff: "party",
+            partyBuff: "partyAll",
             header: conditionalHeader("burst", tr, burst),
             description: tr("burst.description"),
             name: "Omen",
@@ -178,7 +178,7 @@ const char: ICharacterSheet = {
           conditional: { // 	Prophecy of Submersion
             key: "c1",
             canShow: stats => stats.constellation >= 1,
-            partyBuff: "party",
+            partyBuff: "partyAll",
             header: conditionalHeader("constellation1", tr, c1),
             description: tr("constellation1.description"),
             name: <span>Any characters in the party hit an opponent affected by an <strong>Omen</strong></span>,
@@ -207,7 +207,7 @@ const char: ICharacterSheet = {
           conditional: { // ProphecyOfOblivion
             key: "c4",
             canShow: stats => stats.constellation >= 4,
-            partyBuff: "party",
+            partyBuff: "partyAll",
             header: conditionalHeader("constellation4", tr, c4),
             description: tr("constellation4.description"),
             name: <span>Any characters in the party hit an opponent affected by an <strong>Omen</strong></span>,

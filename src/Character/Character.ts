@@ -11,7 +11,7 @@ import { ICachedCharacter } from "../Types/character";
 import { ArtifactSetKey, SlotKey } from "../Types/consts";
 import { IFieldDisplay } from "../Types/IFieldDisplay";
 import { ICalculatedStats } from "../Types/stats";
-import { characterBaseStats, mergeStats, overrideStatKeys } from "../Util/StatUtil";
+import { characterBaseStats, mergeCalculatedStats, mergeStats, overrideStatKeys } from "../Util/StatUtil";
 import { deepClone, evalIfFunc } from "../Util/Util";
 import { defaultInitialWeapon } from "../Weapon/WeaponUtil";
 
@@ -76,19 +76,12 @@ export default class Character {
     Conditional.parseConditionalValues({ artifact: stats?.conditionalValues?.artifact }, (conditional, conditionalValue, [, setKey, setNumKey]) => {
       if (!Conditional.canShow(conditional, stats)) return
       const { stats: condStats } = Conditional.resolve(conditional, stats, conditionalValue)
-      if (conditional.partyBuff === "party") {
-        mergeStats(stats.partyStats, condStats)
-      } else if (conditional.partyBuff === "partyOnly") {
-        mergeStats(stats.partyOnlyStats, condStats)
-      } else if (conditional.partyBuff === "active") {
-        mergeStats(stats.partyActiveStats, condStats)
-      } else
-        mergeStats(stats, condStats)
+      mergeCalculatedStats(stats, condStats)
     })
     return stats
   }
 
-  static createInitialStats = (character: ICachedCharacter, database: ArtCharDatabase, sheets: Sheets): ICalculatedStats => {
+  static createInitialStatsWithoutConds = (character: ICachedCharacter, database: ArtCharDatabase, sheets: Sheets, activeCharacter = true): ICalculatedStats => {
     const { characterSheets, weaponSheets } = sheets
     const { key: characterKey, bonusStats = {}, elementKey, level, ascension, hitMode, infusionAura, reactionMode, talent,
       constellation, equippedArtifacts, conditionalValues = {}, equippedWeapon, team } = character
@@ -119,6 +112,12 @@ export default class Character {
     initialStats.team = team
     initialStats = { ...initialStats, ...overrideStats }
     mergeStats(initialStats, additionalStats)
+
+    // This stores any party stats from this character.
+    initialStats.partyAllModifiers = {}
+    initialStats.partyOnlyModifiers = {}
+    initialStats.partyActiveModifiers = {}
+
     //add specialized stat
     const specialStatKey = characterSheet.getSpecializedStat(ascension)
     if (specialStatKey) {
@@ -133,57 +132,69 @@ export default class Character {
     if (weaponSubKey) mergeStats(initialStats, { [weaponSubKey]: weaponSheet.getSubStatValue(weapon.level, weapon.ascension) })
     mergeStats(initialStats, weaponSheet.stats(initialStats as ICalculatedStats))
 
+    initialStats.activeCharacter = activeCharacter
+
+    // Team stuff
+    if (activeCharacter) {
+      // initiate Team stats.
+      initialStats.teamStats = team.map(tCharKey => {
+        if (!tCharKey) return null
+        const tChar = database._getChar(tCharKey)
+        if (!tChar) return null
+        // Empty teammate's team in calculation to stop recursion
+        tChar.team = ["", "", ""]
+        const stats = Character.createInitialStatsWithoutConds(tChar, database, sheets, false)
+        return stats
+      }) as ICalculatedStats["teamStats"]
+
+      const allTeam = [characterKey, ...initialStats.team]
+      const allTeamStats = [initialStats, ...initialStats.teamStats]
+      initialStats.teamStats.forEach((tStats, tindex) => {
+        if (!tStats) return
+        tStats.team = allTeam.filter((_, i) => i !== (tindex + 1)) as ICalculatedStats["team"]
+        tStats.teamStats = allTeamStats.filter((_, i) => i !== (tindex + 1)) as ICalculatedStats["teamStats"]
+      });
+    }
+
+    return initialStats
+  }
+
+  static createInitialStats = (character: ICachedCharacter, database: ArtCharDatabase, sheets: Sheets): ICalculatedStats => {
+    //generate the initalStats obj with data from Character 
+    const initialStats = Character.createInitialStatsWithoutConds(character, database, sheets)
+    this.calculateBuildWithConditionalsWithoutArtifacts(initialStats, database, sheets)
+
+    return initialStats
+  }
+  static calculateBuildWithConditionalsWithoutArtifacts(initialStats: ICalculatedStats, database: ArtCharDatabase, sheets: Sheets) {
+    const { characterKey, characterEle: elementKey, conditionalValues = {} } = initialStats
     // Handle maxStack:0 conditionals. This is mainly skill boosts.
     Object.entries(Conditional.conditionals.character?.[characterKey === "Traveler" ? `Traveler_${elementKey}` : characterKey] ?? {}).map(([cKey, conditional]) =>
-      !("states" in conditional) && conditional.maxStack === 0 && mergeStats(initialStats, Conditional.resolve(conditional, initialStats, []).stats))
+      !("states" in conditional) && conditional.maxStack === 0 && mergeCalculatedStats(initialStats, Conditional.resolve(conditional, initialStats, []).stats))
     // Add levelBoosts, from Talent stats.
     for (const key in initialStats.tlvl)
       initialStats.tlvl[key] += initialStats[`${key}Boost`] ?? 0
 
-    // Handle Team Element to determine team resonance
-    initialStats.teamElement = team.map(t => {
-      const sheet = t && sheets.characterSheets[t]
-      if (sheet) return sheet.elementKey
-      return ""
-    }) as ICalculatedStats["teamElement"]
-
-    // Calculate Team stats.
-    initialStats.teamStats = team.map(tCharKey => {
-      if (!tCharKey) return null
-      const tChar = database._getChar(tCharKey)
-      if (!tChar) return null
-      // Empty teammate's team in calculation to stop recursion
-      tChar.team = ["", "", ""]
-      return Character.calculatePreBuild(tChar, database, sheets)
-    }) as ICalculatedStats["teamStats"]
-
-    const allTeam = [characterKey, ...team]
-    const allTeamElement = [initialStats.characterEle, ...initialStats.teamStats.map(t => t?.characterEle ?? "")]
-    initialStats.teamStats.forEach((tStats, tindex) => {
-      if (!tStats) return
-      tStats.team = allTeam.filter((_, i) => i !== (tindex + 1)) as ICalculatedStats["team"]
-      tStats.teamElement = allTeamElement.filter((_, i) => i !== (tindex + 1)) as ICalculatedStats["teamElement"]
-    });
-
-    // This stores any party stats from this character.
-    initialStats.partyStats = {}
-    initialStats.partyOnlyStats = {}
-    initialStats.partyActiveStats = {}
     // Handle conditionals. 
     Conditional.parseConditionalValues(conditionalValues, (conditional, conditionalValue, keys) => {
       // Ignore artifact conditionals.
       if (conditional.keys![0] === "artifact") return
       if (!Conditional.canShow(conditional, initialStats)) return
       const { stats: condStats } = Conditional.resolve(conditional, initialStats, conditionalValue)
-      if (conditional.partyBuff === "party") {
-        mergeStats(initialStats.partyStats, condStats)
-      } else if (conditional.partyBuff === "partyOnly") {
-        mergeStats(initialStats.partyOnlyStats, condStats)
-      } else if (conditional.partyBuff === "active") {
-        mergeStats(initialStats.partyActiveStats, condStats)
-      } else
-        mergeStats(initialStats, condStats)
+      mergeCalculatedStats(initialStats, condStats)
     })
+    // Handle Teammate's conditional
+    if (initialStats.activeCharacter) {
+      initialStats.teamStats.forEach(tstats => {
+        if (!tstats) return
+        // Calculate Teammate's build with artifacts, since the manual step of calculating artifacts is skipped in the builder path.
+        const tChar = database._getChar(tstats.characterKey)
+        if (!tChar) return
+        const artifacts = Object.fromEntries(Object.entries(tChar.equippedArtifacts).map(([key, artid]) => [key, database._getArt(artid)]))
+        this.calculateBuildWithConditionalsWithoutArtifacts(tstats, database, sheets)
+        Character.calculateBuildwithArtifact(tstats, artifacts, sheets.artifactSheets)
+      })
+    }
     return initialStats
   }
 
