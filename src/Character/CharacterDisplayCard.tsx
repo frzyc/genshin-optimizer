@@ -64,29 +64,28 @@ type CharacterDisplayCardProps = {
   tabName?: string,
   isFlex?: boolean
 }
-export default function CharacterDisplayCard({ characterKey, footer, newBuild: propNewBuild, onClose, tabName, isFlex }: CharacterDisplayCardProps) {
+export default function CharacterDisplayCard({ characterKey: propCharKey, footer, newBuild: propNewBuild, onClose, tabName, isFlex }: CharacterDisplayCardProps) {
   const database = useContext(DatabaseContext)
   const [compareBuild, setCompareBuild] = useState(false)
-  const character = useCharacter(characterKey)
+  const character = useCharacter(propCharKey)
   const [dbDirty, setDbDirty] = useForceUpdate()
 
+  const characterKey = character?.key
   const sheets = useSheets()
-
   //follow updates from team
-  const teammate1 = character?.team?.[0]
+  const [teammate1, teammate2, teammate3] = character?.team ?? []
   useEffect(() =>
     teammate1 ? database.followChar(teammate1, setDbDirty) : undefined,
     [teammate1, setDbDirty, database])
-  const teammate2 = character?.team?.[1]
   useEffect(() =>
     teammate2 ? database.followChar(teammate2, setDbDirty) : undefined,
     [teammate2, setDbDirty, database])
-  const teammate3 = character?.team?.[2]
   useEffect(() =>
     teammate3 ? database.followChar(teammate3, setDbDirty) : undefined,
     [teammate3, setDbDirty, database])
 
   useEffect(() => {
+    if (!characterKey) return
     if (database._getChar(characterKey)) return
     // Create a new character + weapon, with linking if char isnt in db.
     (async () => {
@@ -101,7 +100,7 @@ export default function CharacterDisplayCard({ characterKey, footer, newBuild: p
   }, [database, characterKey])
 
 
-  const characterSheet = sheets?.characterSheets?.[characterKey]
+  const characterSheet = sheets?.characterSheets?.[characterKey ?? ""]
 
   useEffect(() => character && database.followWeapon(character.equippedWeapon, setDbDirty),
     [character, character?.equippedWeapon, setDbDirty, database])

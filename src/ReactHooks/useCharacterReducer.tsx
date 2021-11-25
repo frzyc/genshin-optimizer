@@ -16,7 +16,12 @@ type characterReducerResetStatsAction = {
   type: "resetStats",
   statKey: string
 }
-export type characterReducerAction = characterEquipWeapon | characterReducerBonusStatsAction | characterReducerResetStatsAction | Partial<ICachedCharacter>
+type characterTeamAction = {
+  type: "team",
+  index: number,
+  charKey: CharacterKey | ""
+}
+export type characterReducerAction = characterEquipWeapon | characterReducerBonusStatsAction | characterReducerResetStatsAction | characterTeamAction | Partial<ICachedCharacter>
 
 export default function useCharacterReducer(characterKey: CharacterKey) {
   const database = useContext(DatabaseContext)
@@ -58,6 +63,24 @@ export default function useCharacterReducer(characterKey: CharacterKey) {
 
         database.updateChar({ ...character, bonusStats })
         break
+      }
+      case "team": {
+        const character = database._getChar(characterKey)!
+        const { team } = character
+
+        const { index, charKey: newCharKey } = action
+        const oldCharKey = team[index]
+        team[index] = newCharKey
+        database.updateChar({ ...character, team })
+
+        if (oldCharKey) {
+          const oldChar = database._getChar(oldCharKey)
+          if (oldChar) database.updateChar({ ...oldChar, team: ["", "", ""] })
+        }
+        if (newCharKey) {
+          const newChar = database._getChar(newCharKey)
+          if (newChar) database.updateChar({ ...newChar, team: [characterKey, ...team].filter((_, i) => i !== index + 1) as ICachedCharacter["team"] })
+        }
       }
     } else
       database.updateChar({ ...database._getChar(characterKey)!, ...action })

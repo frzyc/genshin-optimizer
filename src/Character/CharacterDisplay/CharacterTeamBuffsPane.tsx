@@ -91,10 +91,9 @@ function TeammateDisplay({ character, character: { key: characterKey, team }, co
   const characterDispatch = useCharacterReducer(characterKey)
   return <CardLight>
     <CardContent>
-      <CharacterDropdownButton fullWidth value={condCharStats?.characterKey ?? ""} onChange={c => {
-        team[index] = c
-        characterDispatch({ team })
-      }} filter={(_, ck) => ck !== characterKey && !team.includes(ck)} unSelectText={`Teammate ${index + 1}`} unSelectIcon={<PersonAdd />} />
+      <CharacterDropdownButton fullWidth value={condCharStats?.characterKey ?? ""}
+        onChange={charKey => characterDispatch({ type: "team", index, charKey })}
+        filter={(_, ck) => ck !== characterKey && !team.includes(ck)} unSelectText={`Teammate ${index + 1}`} unSelectIcon={<PersonAdd />} />
     </CardContent>
     {condCharStats && <CharacterCard characterKey={condCharStats.characterKey}
       onClickHeader={onClickHandler}
