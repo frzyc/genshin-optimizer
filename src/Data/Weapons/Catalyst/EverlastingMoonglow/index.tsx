@@ -27,7 +27,7 @@ const weapon: IWeaponSheet = {
         variant: stats => stats.characterEle
       },
       {
-        text: <ColorText color="warning">The normal damage increase is not currently being added to the character's normal damage as a singular damage number.</ColorText>
+        text: <ColorText color="warning">The normal damage increase is not currently being added to the character's normal damage as a singular damage number, pending future implemention.</ColorText>
       }
     ],
   }],

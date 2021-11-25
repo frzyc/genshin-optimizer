@@ -1,6 +1,7 @@
 import AmenomaKageuchi from './AmenomaKageuchi'
 import AquilaFavonia from './AquilaFavonia'
 import BlackcliffLongsword from './BlackcliffLongsword'
+import CinnabarSpindle from './CinnabarSpindle'
 import CoolSteel from './CoolSteel'
 import DarkIronSword from './DarkIronSword'
 import DullBlade from './DullBlade'
@@ -29,6 +30,7 @@ const sword = {
   AmenomaKageuchi,
   AquilaFavonia,
   BlackcliffLongsword,
+  CinnabarSpindle,
   CoolSteel,
   DarkIronSword,
   DullBlade,
