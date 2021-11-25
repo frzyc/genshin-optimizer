@@ -5,11 +5,20 @@ import { IArtifact } from "../../Types/artifact";
 import { CharacterKey } from "../../Types/consts";
 import { decode, encode } from "./stringSerialization";
 import { schemas } from "./flexSchema";
+import { Sheets } from "../../ReactHooks/useSheets";
+import Character from "../../Character/Character";
+import { deepClone } from "../../Util/Util";
 
-export function exportFlex(characterKey: CharacterKey, database: ArtCharDatabase): string | null {
-  const character = database._getChar(characterKey)
-  if (!character) return null;
-
+export function exportFlex(characterKey: CharacterKey, database: ArtCharDatabase, sheets: Sheets): string | null {
+  const char = database._getChar(characterKey)
+  if (!char) return null;
+  const character = deepClone(char)
+  const build = Character.calculateBuild(character, database, sheets)
+  Object.entries(build.partyBuff).forEach(([key, val]: any) => {
+    // Need to check for enemyRes because its an override instead of additive
+    if (character.bonusStats[key] === undefined) character.bonusStats[key] = (key.includes("_enemyRes_") ? 10 : 0) + val
+    else if (typeof character.bonusStats[key] === "number") character.bonusStats[key] += val
+  })
   const weapon = database._getWeapon(character.equippedWeapon)!
   const artifacts = Object.values(character.equippedArtifacts)
     .filter(art => art)

@@ -28,13 +28,14 @@ type CharacterCardProps = {
   artifactChildren?: Displayable,
   weaponChildren?: Displayable,
   footer?: Displayable,
+  build?: ICalculatedStats
 }
-export default function CharacterCard({ characterKey, artifactChildren, weaponChildren, onClick, onClickHeader, footer }: CharacterCardProps) {
+export default function CharacterCard({ build, characterKey, artifactChildren, weaponChildren, onClick, onClickHeader, footer }: CharacterCardProps) {
   const database = useContext(DatabaseContext)
   const character = useCharacter(characterKey)
   const sheets = useSheets()
   const characterSheet = sheets?.characterSheets[characterKey] as CharacterSheet | undefined
-  const stats = useMemo(() => character && sheets && Character.calculateBuild(character, database, sheets), [character, sheets, database])
+  const stats = useMemo(() => build ?? (character && sheets && Character.calculateBuild(character, database, sheets)), [build, character, sheets, database])
   const onClickHandler = useCallback(() => characterKey && onClick?.(characterKey), [characterKey, onClick])
   const actionWrapperFunc = useCallback(
     children => <CardActionArea onClick={onClickHandler} sx={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>{children}</CardActionArea>,

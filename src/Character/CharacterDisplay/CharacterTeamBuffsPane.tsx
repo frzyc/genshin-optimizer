@@ -98,6 +98,7 @@ function TeammateDisplay({ character, character: { key: characterKey, team }, co
     </CardContent>
     {condCharStats && <CharacterCard characterKey={condCharStats.characterKey}
       onClickHeader={onClickHandler}
+      build={condCharStats}
       artifactChildren={<CharArtifactCondDisplay condCharStats={condCharStats} />}
       weaponChildren={<CharWeaponCondDisplay condCharStats={condCharStats} />}
       footer={sheets && character && <CharTalentCondDisplay condCharStats={condCharStats} character={character} sheets={sheets} />} />}

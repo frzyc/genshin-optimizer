@@ -52,8 +52,31 @@ export function PreprocessFormulas(dependencyKeys: string[], stats: ICalculatedS
   }
 
   initialStats.activeCharacter = stats.activeCharacter
-  initialStats.teamStats = stats.teamStats
   initialStats.partyBuff = stats.partyBuff
+
+  let processTeam = (s: ICalculatedStats) => { }
+  if (stats.activeCharacter) {
+    const beforePreprocess = [...stats.teamStats]
+    const preprocessed: Array<[ICalculatedStats | null, undefined | ((s: ICalculatedStats) => void)]> = stats.teamStats.map(t => {
+      if (!t) return [null, undefined]
+      const { initialStats: tStats, formula: tFormula } = PreprocessFormulas(dependencyKeys, t)
+      return [tStats, tFormula]
+    })
+    initialStats.teamStats = preprocessed.map(([stats]) => stats) as ICalculatedStats['teamStats']
+    const team = [initialStats, ...initialStats.teamStats]
+    initialStats.teamStats.forEach((t, i) => {
+      if (!t) return
+      t.teamStats = team.filter((_, index) => index !== i + 1) as ICalculatedStats['teamStats']
+    })
+    const teamFormula = preprocessed.map(([_, formula]) => formula)
+    processTeam = (s: ICalculatedStats) => {
+      s.teamStats = s.teamStats.map((t, i) => {
+        if (!t) return t
+        teamFormula[i]!(t)
+        return { ...beforePreprocess[i]!, ...t }
+      }) as ICalculatedStats['teamStats']
+    }
+  }
 
   const modFormula = Formula.computeModifier(stats, Object.fromEntries(Object.entries(modifiers)
     .filter(([key]) => dependencyKeys.includes(key)) // Keep only relevant keys
@@ -76,14 +99,8 @@ export function PreprocessFormulas(dependencyKeys: string[], stats: ICalculatedS
       partyAllFormula(s)
       partyOnlyFormula(s)
       partyActiveFormula(s)
-      if (s.activeCharacter) {
-        s.teamStats = s.teamStats.map(t => {
-          if (!t) return null
-          const { initialStats: preprocessedStats, formula } = PreprocessFormulas(dependencyKeys, t)
-          formula(preprocessedStats)
-          return { ...t, ...preprocessedStats }
-        }) as ICalculatedStats["teamStats"]
-      }
+
+      processTeam(s)
 
       // Apply modifiers
       mergeCalculatedStats(s, modStats)

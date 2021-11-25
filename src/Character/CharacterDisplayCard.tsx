@@ -61,9 +61,10 @@ type CharacterDisplayCardProps = {
   footer?: JSX.Element
   newBuild?: ICalculatedStats,
   onClose?: (any) => void,
-  tabName?: string
+  tabName?: string,
+  isFlex?: boolean
 }
-export default function CharacterDisplayCard({ characterKey, footer, newBuild: propNewBuild, onClose, tabName }: CharacterDisplayCardProps) {
+export default function CharacterDisplayCard({ characterKey, footer, newBuild: propNewBuild, onClose, tabName, isFlex }: CharacterDisplayCardProps) {
   const database = useContext(DatabaseContext)
   const [compareBuild, setCompareBuild] = useState(false)
   const character = useCharacter(characterKey)
@@ -144,7 +145,7 @@ export default function CharacterDisplayCard({ characterKey, footer, newBuild: p
             <Tab value="character" label="Character" />
             {!!newBuild && <Tab value="newartifacts" label="New Artifacts" />}
             <Tab value="artifacts" label={newBuild ? "Current Artifacts" : "Artifacts"} />
-            <Tab value="buffs" label="Team Buffs" />
+            {!isFlex && <Tab value="buffs" label="Team Buffs" />}
             <Tab value="talent" label="Talents" />
           </Tabs>
         </CardLight>
@@ -167,7 +168,7 @@ export default function CharacterDisplayCard({ characterKey, footer, newBuild: p
           <CharacterArtifactPane character={character} sheets={sheets} />
         </TabPanel >}
         {/* Buffs panel */}
-        {process.env.NODE_ENV === "development" && characterSheet && <TabPanel value="buffs" current={tab}>
+        {characterSheet && <TabPanel value="buffs" current={tab}>
           <CharacterTeamBuffsPane characterSheet={characterSheet} character={character} />
         </TabPanel >}
         {/* talent panel */}
