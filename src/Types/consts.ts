@@ -20,6 +20,7 @@ export const allArtifactSets = [
   "PrayersToSpringtime", "ResolutionOfSojourner", "RetracingBolide", "Scholar", "TheExile",
   "ThunderingFury", "Thundersoother", "TinyMiracle", "TravelingDoctor", "ViridescentVenerer",
   "WanderersTroupe", "TenacityOfTheMillelith", "PaleFlame", "EmblemOfSeveredFate", "ShimenawasReminiscence",
+  "HuskOfOpulentDreams", "OceanHuedClam"
 ] as const
 export const allCharacterKeys = [
   "Albedo", "Amber", "Barbara", "Beidou", "Bennett", "Chongyun", "Diluc", "Diona", "Fischl", "Ganyu",

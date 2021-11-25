@@ -1,4 +1,6 @@
 import { DArtifactSlotKey } from "../.."
+import { nameToKey, TextMapEN } from "../../TextMapUtil"
+import { dumpFile } from "../../Util"
 
 type ReliquaryExcelConfigData = {
   "EquipType": DArtifactSlotKey//"EQUIP_BRACER",
@@ -39,5 +41,8 @@ type ReliquaryExcelConfigData = {
 const artifactPiecesDataSrc = require('../../GenshinData/ExcelBinOutput/ReliquaryExcelConfigData.json') as ReliquaryExcelConfigData[]
 
 const artifactPiecesData = Object.fromEntries(artifactPiecesDataSrc.map(data => [data.Id, data])) as Record<number, ReliquaryExcelConfigData>
+
+dumpFile(`${__dirname}/ReliquaryExcelConfigData_idmap_gen.json`,
+  Object.fromEntries(artifactPiecesDataSrc.map(data => [data.Id, [data.SetId, nameToKey(TextMapEN[data.NameTextMapHash])]])))
 
 export default artifactPiecesData //

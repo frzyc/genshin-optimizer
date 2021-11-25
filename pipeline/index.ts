@@ -286,7 +286,9 @@ export const artifactIdMap = {
   15017: "TenacityOfTheMillelith",
   15018: "PaleFlame",
   15019: "ShimenawasReminiscence",
-  15020: "EmblemOfSeveredFate"
+  15020: "EmblemOfSeveredFate",
+  15021: "HuskOfOpulentDreams",
+  15022: "OceanHuedClam",
 } as const
 
 export const artifactSlotMap = {

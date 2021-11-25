@@ -7,7 +7,7 @@ import finalStatProcess from "../ProcessFormula";
 import { Sheets } from "../ReactHooks/useSheets";
 import { ElementToReactionKeys } from "../StatData";
 import { ICachedArtifact } from "../Types/artifact";
-import { ICachedCharacter } from "../Types/character";
+import { DocumentSection, ICachedCharacter } from "../Types/character";
 import { ArtifactSetKey, SlotKey } from "../Types/consts";
 import { IFieldDisplay } from "../Types/IFieldDisplay";
 import { ICalculatedStats } from "../Types/stats";
@@ -213,12 +213,12 @@ export default class Character {
     if (!transReactions.includes("shattered_hit") && weaponTypeKey === "claymore") transReactions.push("shattered_hit")
     const charFormulas = {}
     const talentSheet = characterSheet.getTalent(eleKey)
-    const addFormula = (fields, key) => fields.forEach(field => {
+    const addFormula = (fields: IFieldDisplay[], key: string) => fields.forEach(field => {
       if (!field.formula || !field?.canShow?.(stats)) return
       if (!charFormulas[key]) charFormulas[key] = []
       charFormulas[key].push((field.formula as any).keys)
     })
-    const parseSection = (section, key) => {
+    const parseSection = (section: DocumentSection, key: string) => {
       //conditional
       if (section.conditional && Conditional.canShow(section.conditional, stats)) {
         const { fields } = Conditional.resolve(section.conditional, stats, null)

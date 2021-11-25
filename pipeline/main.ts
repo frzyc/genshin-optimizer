@@ -1,7 +1,7 @@
 import { artifactIdMap, artifactSlotMap, characterIdMap, CharacterKey, DWeaponTypeKey, Language, propTypeMap, QualityTypeMap, StatKey, weaponIdMap, WeaponKey, weaponMap, WeaponTypeKey } from '.'
 import { mapHashData } from './Data'
 import artifactMainstatData from './DataminedModules/artifact/artifactMainstat'
-import artifactPiecesData from './DataminedModules/artifact/artifactPiecesData'
+import artifactPiecesData from './DataminedModules/artifact/ReliquaryExcelConfigData'
 import reliquarySetExcelConfigData from './DataminedModules/artifact/ReliquarySetExcelConfigData'
 import artifactSubstatData from './DataminedModules/artifact/artifactSubstat'
 import { artifactSubstatRollCorrection, artifactSubstatRollData } from './DataminedModules/artifact/artifactSubstatRolls'
