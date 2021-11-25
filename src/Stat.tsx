@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import ColorText from "./Components/ColoredText";
-import ElementalData from "./Data/ElementalData";
+import elementalData from "./Data/ElementalData";
 import Formula from "./Formula";
 import usePromise from "./ReactHooks/usePromise";
 import { amplifyingReactions, hitMoves, hitTypes, transformativeReactions } from "./StatConstants";
@@ -95,7 +95,7 @@ Object.entries(hitMoves).forEach(([move, moveName]) => {
   FormulaText[`final_${move}_critRate_`] = (o) => <span>clamp( {f(o, "critRate_")} + {f(o, `${move}_critRate_`)}, 0%, 100% )</span>
 })
 
-Object.entries(ElementalData).forEach(([ele, { name: eleName }]) => {
+Object.entries(elementalData).forEach(([ele, { name: eleName }]) => {
   FormulaText[`${ele}_enemyRes_multi`] = (o) => {
     if (o.stats[`${ele}_enemyImmunity`])
       return <span>0 (immune)</span>
@@ -107,7 +107,7 @@ Object.entries(ElementalData).forEach(([ele, { name: eleName }]) => {
 })
 
 Object.entries(hitMoves).forEach(([move, moveName]) => {
-  Object.entries(ElementalData).forEach(([ele, { name: eleName }]) => {
+  Object.entries(elementalData).forEach(([ele, { name: eleName }]) => {
     Object.entries(hitTypes).forEach(([type, typeName]) => {
       FormulaText[`${ele}_${move}_${type}`] = (o) => <span>{f(o, `finalATK`)} * {f(o, `${ele}_${move}_${type}_multi`)}</span>
     })

@@ -7,12 +7,14 @@ import CardDark from "../../Components/Card/CardDark";
 import CardLight from "../../Components/Card/CardLight";
 import CharacterDropdownButton from "../../Components/Character/CharacterDropdownButton";
 import ConditionalDisplay from "../../Components/ConditionalDisplay";
+import StatDisplay from "../../Components/StatDisplay";
 import Conditional from "../../Conditional/Conditional";
 import resonanceSheets from "../../Conditional/Resonance";
 import useCharacterReducer from "../../ReactHooks/useCharacterReducer";
 import useCharSelectionCallback from "../../ReactHooks/useCharSelectionCallback";
 import useSheets, { Sheets } from "../../ReactHooks/useSheets";
 import { ICachedCharacter } from "../../Types/character";
+import { CharacterKey } from "../../Types/consts";
 import { ICalculatedStats } from "../../Types/stats";
 import CharacterCard from "../CharacterCard";
 import CharacterSheet from "../CharacterSheet";
@@ -22,40 +24,66 @@ type CharacterTalentPaneProps = {
 }
 export default function CharacterTeamBuffsPane({ character, character: { key: characterKey, team } }: CharacterTalentPaneProps) {
   const { newBuild, equippedBuild } = useContext(buildContext)
-  const characterDispatch = useCharacterReducer(characterKey)
+
   const build = (newBuild ? newBuild : equippedBuild) as ICalculatedStats
   const sheets = useSheets()
   return <Box display="flex" flexDirection="column" gap={1} alignItems="stretch">
-    <CardLight>
-      <CardContent>
-        Team Resonance
-      </CardContent>
-      <Divider />
-      <CardContent>
-        <Grid container spacing={1}>
-          {resonanceSheets.map((doc, i) =>
-            <Grid item key={i} xs={12} md={6} lg={4} >
-              <CardDark sx={{ opacity: doc.canShow(build) ? 1 : 0.5, height: "100%" }}>
-                <CardHeader avatar={doc?.header?.icon} title={doc?.header?.title} action={doc?.header?.action} titleTypographyProps={{ variant: "subtitle2" }} />
-                <Divider />
-                <CardContent>
-                  {doc.description}
-                </CardContent>
-                {doc.conditionals.map(cond =>
-                  <ConditionalDisplay key={cond.key} conditional={cond} stats={build} onChange={val => characterDispatch({ conditionalValues: val })} />
-                )}
-              </CardDark>
-            </Grid>
-          )}
-        </Grid>
-      </CardContent>
-    </CardLight>
+    <TeamBuffDisplay character={character} />
+    <ResonanceDisplay characterKey={characterKey} build={build} />
     <Grid container spacing={1}>
       {sheets && build.teamStats.map((tStats, i) => <Grid item xs={12} md={6} lg={4} key={i}>
         <TeammateDisplay character={character} condCharStats={tStats} sheets={sheets} index={i} />
       </Grid>)}
     </Grid>
   </Box>
+}
+const statBreakpoint = {
+  xs: 12, sm: 6, md: 6, lg: 4,
+} as const
+function TeamBuffDisplay({ character }: { character: ICachedCharacter }) {
+  const { newBuild, equippedBuild } = useContext(buildContext)
+  const build = (newBuild ? newBuild : equippedBuild) as ICalculatedStats
+  if (!Object.keys(build.partyBuff).length) return null
+  return <CardLight>
+    <CardContent>
+      Team Buffs
+    </CardContent>
+    <Divider />
+    <CardContent>
+      <Grid container columnSpacing={2} rowSpacing={1}>
+        {Object.entries(build.partyBuff).map(([statKey, value]) => <Grid item {...statBreakpoint} key={statKey} >
+          <StatDisplay character={character} newBuild={newBuild} equippedBuild={equippedBuild} statKey={statKey} partyBuff />
+        </Grid>)}
+      </Grid>
+    </CardContent>
+  </CardLight>
+}
+function ResonanceDisplay({ build, characterKey }: { build: ICalculatedStats, characterKey: CharacterKey }) {
+  const characterDispatch = useCharacterReducer(characterKey)
+  return <CardLight>
+    <CardContent>
+      Team Resonance
+    </CardContent>
+    <Divider />
+    <CardContent>
+      <Grid container spacing={1}>
+        {resonanceSheets.map((doc, i) =>
+          <Grid item key={i} xs={12} md={6} lg={4} >
+            <CardDark sx={{ opacity: doc.canShow(build) ? 1 : 0.5, height: "100%" }}>
+              <CardHeader avatar={doc?.header?.icon} title={doc?.header?.title} action={doc?.header?.action} titleTypographyProps={{ variant: "subtitle2" }} />
+              <Divider />
+              <CardContent>
+                {doc.description}
+              </CardContent>
+              {doc.conditionals.map(cond =>
+                <ConditionalDisplay key={cond.key} conditional={cond} stats={build} onChange={val => characterDispatch({ conditionalValues: val })} />
+              )}
+            </CardDark>
+          </Grid>
+        )}
+      </Grid>
+    </CardContent>
+  </CardLight>
 }
 function TeammateDisplay({ character, character: { key: characterKey, team }, condCharStats, sheets, index }:
   { character: ICachedCharacter, condCharStats: ICalculatedStats | null, sheets: Sheets, index: number }) {

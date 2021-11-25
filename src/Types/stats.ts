@@ -44,6 +44,8 @@ export interface BasicStats {
 export type ICalculatedStats = BasicStats & Required<BonusStats> & {
   premod: Partial<ICalculatedStats>
   modStats: Partial<ICalculatedStats>
+  // Save the stats from the party
+  partyBuff: Partial<ICalculatedStats>
   // Pass on stats to the party
   partyAllModifiers: Modifier
   partyOnlyModifiers: Modifier

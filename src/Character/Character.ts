@@ -113,6 +113,7 @@ export default class Character {
     initialStats = { ...initialStats, ...overrideStats }
     mergeStats(initialStats, additionalStats)
 
+    initialStats.partyBuff = {}
     // This stores any party stats from this character.
     initialStats.partyAllModifiers = {}
     initialStats.partyOnlyModifiers = {}

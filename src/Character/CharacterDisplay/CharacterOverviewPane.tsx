@@ -140,6 +140,7 @@ function MainStatsCards({ characterSheet, character, character: { key: character
   const displayNewBuildProps = { character, equippedBuild, newBuild }
 
   return <>
+    <TeamBuffDisplay character={character} />
     <StatDisplayCard
       title="Main Stats"
       content={<Grid container columnSpacing={{ xs: 2, lg: 3 }} rowSpacing={1}>
@@ -231,6 +232,24 @@ function StatDisplayCard({ title, content, editContent }) {
     <Divider />
     <CardContent>
       {edit ? editContent : content}
+    </CardContent>
+  </CardLight>
+}
+function TeamBuffDisplay({ character }: { character: ICachedCharacter }) {
+  const { newBuild, equippedBuild } = useContext(buildContext)
+  const build = (newBuild ? newBuild : equippedBuild) as ICalculatedStats
+  if (!Object.keys(build.partyBuff).length) return null
+  return <CardLight>
+    <CardContent>
+      Team Buffs
+    </CardContent>
+    <Divider />
+    <CardContent>
+      <Grid container columnSpacing={2} rowSpacing={1}>
+        {Object.entries(build.partyBuff).map(([statKey, value]) => <Grid item {...statBreakpoint} key={statKey} >
+          <StatDisplay character={character} newBuild={newBuild} equippedBuild={equippedBuild} statKey={statKey} partyBuff />
+        </Grid>)}
+      </Grid>
     </CardContent>
   </CardLight>
 }

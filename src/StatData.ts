@@ -1,4 +1,4 @@
-import ElementalData from "./Data/ElementalData";
+import elementalData from "./Data/ElementalData";
 import { amplifyingReactions, crystalizeLevelMultipliers, hitMoves, hitTypes, transformativeReactionLevelMultipliers, transformativeReactions } from "./StatConstants";
 import { ICalculatedStats } from "./Types/stats";
 import { clamp } from "./Util/Util";
@@ -112,7 +112,7 @@ const Formulas: Dict<string, (s: ICalculatedStats) => number> = {
 };
 
 ["pyro", "cryo", "electro", "hydro"].forEach(ele => {
-  StatData[`${ele}_crystalize_hit`] = { name: `Crystalize Shield ${ElementalData[ele].name} Effective HP`, variant: ele }
+  StatData[`${ele}_crystalize_hit`] = { name: `Crystalize Shield ${elementalData[ele].name} Effective HP`, variant: ele }
   Formulas[`${ele}_crystalize_hit`] = s => s.crystalize_hit * 2.5
 })
 
@@ -142,7 +142,7 @@ Object.entries(hitMoves).forEach(([move, moveName]) => {
   Formulas[`final_${move}_critRate_`] = (s) => clamp(s.critRate_ + s[`${move}_critRate_`], 0, 100)
 })
 
-Object.entries(ElementalData).forEach(([ele, { name: eleName }]) => {
+Object.entries(elementalData).forEach(([ele, { name: eleName }]) => {
   const opt = { variant: ele }
   // DONT CHANGE. needed for screenshot parsing
   StatData[`${ele}_dmg_`] = { name: `${eleName} DMG Bonus`, unit: "%", ...opt }
@@ -160,7 +160,7 @@ Object.entries(ElementalData).forEach(([ele, { name: eleName }]) => {
 Object.entries(hitMoves).forEach(([move, moveName]) => {
   StatData[`${move}_avgHit_base_multi`] = { name: `${moveName} Avg. Multiplier`, unit: "multi" }
   Formulas[`${move}_avgHit_base_multi`] = (s) => (1 + s.critDMG_ * s[`final_${move}_critRate_`] / 10000)
-  Object.entries(ElementalData).forEach(([ele, { name: eleName }]) => {
+  Object.entries(elementalData).forEach(([ele, { name: eleName }]) => {
     const opt = { variant: ele }
     StatData[`${ele}_${move}_hit_base_multi`] = { name: `${moveName} Base Multiplier`, unit: "multi", ...opt }
     Formulas[`${ele}_${move}_hit_base_multi`] = (s) => (100 + s.dmg_ + s[`${ele}_dmg_`] + s[`${move}_dmg_`]) / 100
@@ -189,7 +189,7 @@ Object.entries(transformativeReactions).forEach(([reaction, { name, multi, varia
     variants.forEach(ele => {
       const opt = { variant: ele }
 
-      StatData[`${ele}_${reaction}_hit`] = { name: `${ElementalData[ele].name} ${name} DMG`, ...opt }
+      StatData[`${ele}_${reaction}_hit`] = { name: `${elementalData[ele].name} ${name} DMG`, ...opt }
       Formulas[`${ele}_${reaction}_hit`] = (s) => (100 + s.transformative_dmg_ + s[`${reaction}_dmg_`]) / 100 * s[`${reaction}_multi`] * s[`${ele}_enemyRes_multi`]
     })
   }
@@ -212,7 +212,7 @@ Object.entries(amplifyingReactions).forEach(([reaction, { name, variants }]) => 
     })
   })
 })
-if (process.env.NODE_ENV === "development") console.log(StatData)
+// if (process.env.NODE_ENV === "development") console.log(StatData)
 
 export {
   Formulas,

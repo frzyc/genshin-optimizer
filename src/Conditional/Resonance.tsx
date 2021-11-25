@@ -159,7 +159,7 @@ const resonanceSheets: resonanceDoc[] = [{// Protective Canopy
     canShow: stats => [...stats.teamStats.map(t => t?.characterEle ?? ""), stats.characterEle].filter(e => e === "geo").length >= 2,
     partyBuff: "partyAll",
     stats: {
-      geo_enemyRes_: -15,
+      geo_enemyRes_: -20,
     },
     fields: [{
       text: sgt("duration"),

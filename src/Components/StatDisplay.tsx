@@ -34,9 +34,10 @@ type StatDisplayProps = {
   character: ICachedCharacter,
   equippedBuild?: ICalculatedStats,
   newBuild?: ICalculatedStats,
-  statKey: string
+  statKey: string,
+  partyBuff?: boolean
 }
-export default function StatDisplay({ character, equippedBuild, newBuild, statKey }: StatDisplayProps) {
+export default function StatDisplay({ character, equippedBuild, newBuild, statKey, partyBuff = false }: StatDisplayProps) {
   const formula = usePromise(Array.isArray(statKey) ? Formula.get(statKey) : undefined, [statKey])
 
   const { val, oldVal, fixed, unit, label, hasBonus } = useMemo(() => {
@@ -47,19 +48,28 @@ export default function StatDisplay({ character, equippedBuild, newBuild, statKe
         //equippedbuild ->old
         val = newBuild?.[statKey] ?? 0
         oldVal = equippedBuild?.[statKey] ?? 0
+        if (partyBuff) {
+          val = newBuild?.partyBuff?.[statKey] ?? 0
+          oldVal = equippedBuild?.partyBuff?.[statKey] ?? 0
+        }
       } else {
         const build = newBuild ? newBuild : equippedBuild
         //build ->val
         val = build?.[statKey] ?? 0
-        //statvaluewith override -> old
-        oldVal = characterBaseStats(character)[statKey] as number | undefined
-        if (build) {
-          if (statKey === "finalHP")
-            oldVal = build.characterHP
-          else if (statKey === "finalDEF")
-            oldVal = build.characterDEF
-          else if (statKey === "finalATK")
-            oldVal = build.characterATK + build.weaponATK
+        if (partyBuff) {
+          val = build?.partyBuff?.[statKey] ?? 0
+        }
+        if (!partyBuff) {
+          //statvaluewith override -> old
+          oldVal = characterBaseStats(character)[statKey] as number | undefined
+          if (build) {
+            if (statKey === "finalHP")
+              oldVal = build.characterHP
+            else if (statKey === "finalDEF")
+              oldVal = build.characterDEF
+            else if (statKey === "finalATK")
+              oldVal = build.characterATK + build.weaponATK
+          }
         }
       }
       unit = Stat.getStatUnit(statKey)
@@ -78,7 +88,7 @@ export default function StatDisplay({ character, equippedBuild, newBuild, statKe
       }
     }
     return { val, oldVal, fixed, unit, label, hasBonus: Character.hasBonusStats(character, statKey) }
-  }, [character, equippedBuild, newBuild, statKey, formula])
+  }, [character, equippedBuild, newBuild, statKey, partyBuff, formula])
 
   return <DisplayStatDiff {...{ val, oldVal, fixed, unit, label: label as any, hasBonus }} />
 }

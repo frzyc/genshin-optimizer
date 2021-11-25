@@ -24,13 +24,14 @@ import useSheets from '../ReactHooks/useSheets';
 import { ICachedCharacter } from '../Types/character';
 import { CharacterKey } from '../Types/consts';
 import { ICalculatedStats } from '../Types/stats';
-import { clamp, deepClone } from '../Util/Util';
+import { deepCloneStats } from '../Util/StatUtil';
+import { clamp } from '../Util/Util';
 import { defaultInitialWeapon } from '../Weapon/WeaponUtil';
 import Character from './Character';
 import CharacterArtifactPane from './CharacterDisplay/CharacterArtifactPane';
-import CharacterTeamBuffsPane from './CharacterDisplay/CharacterTeamBuffsPane';
 import CharacterOverviewPane from './CharacterDisplay/CharacterOverviewPane';
 import CharacterTalentPane from './CharacterDisplay/CharacterTalentPane';
+import CharacterTeamBuffsPane from './CharacterDisplay/CharacterTeamBuffsPane';
 import CharacterSheet from './CharacterSheet';
 import { initialCharacter } from './CharacterUtil';
 
@@ -106,7 +107,7 @@ export default function CharacterDisplayCard({ characterKey, footer, newBuild: p
 
   const newBuild = useMemo(() => {
     if (!propNewBuild) return undefined
-    return deepClone(propNewBuild)
+    return deepCloneStats(propNewBuild)
   }, [propNewBuild])
 
   // set initial state to false, because it fails to check validity of the tab values on 1st load

@@ -1,6 +1,7 @@
 import { ICachedCharacter } from "../Types/character";
 import { allElementsWithPhy } from "../Types/consts";
 import { BonusStats, ICalculatedStats, Modifier } from "../Types/stats";
+import { deepClone } from "./Util";
 export const characterStatKeys = ["characterATK", "characterHP", "characterDEF",] as const
 export const enemyEditorKeys = ["enemyLevel", ...allElementsWithPhy.map(eleKey => `${eleKey}_enemyImmunity`), ...allElementsWithPhy.map(eleKey => `${eleKey}_enemyRes_`), "enemyDEFRed_"]
 export const overrideStatKeys = [...enemyEditorKeys, ...characterStatKeys]
@@ -35,7 +36,10 @@ function mergeModifiers(dest: Modifier, partial: Modifier) {
     dest[key].push(...paths)
   }
 }
-
+function mergePartyStats(initialStats: ICalculatedStats, stats: BonusStats | undefined) {
+  mergeStats(initialStats, stats)
+  mergeStats(initialStats.partyBuff, stats)
+}
 /**
  * Merge stats, being aware of wher the stats are suppose to go.(partyAll, partyOnly, partyActive)
  */
@@ -45,21 +49,21 @@ export function mergeCalculatedStats(initialStats: ICalculatedStats, stats: Bonu
     switch (key) {
       case "partyAll": {
         const { modifiers, ...rest } = val
-        mergeStats(initialStats, rest)
-        initialStats.teamStats.forEach(t => t && mergeStats(t, rest))
+        mergePartyStats(initialStats, rest)
+        initialStats.teamStats.forEach(t => t && mergePartyStats(t, rest))
         modifiers && mergeModifiers(initialStats[`${key}Modifiers`], modifiers)
         break;
       }
       case "partyOnly": {
         const { modifiers, ...rest } = val
-        initialStats.teamStats.forEach(t => t && mergeStats(t, rest))
+        initialStats.teamStats.forEach(t => t && mergePartyStats(t, rest))
         modifiers && mergeModifiers(initialStats[`${key}Modifiers`], modifiers)
         break;
       }
       case "partyActive": {
         const { modifiers, ...rest } = val;
         const active = [initialStats, ...initialStats.teamStats].find(t => t?.activeCharacter)
-        active && mergeStats(active, rest)
+        active && mergePartyStats(active, rest)
         modifiers && mergeModifiers(initialStats[`${key}Modifiers`], modifiers)
         break;
       }
@@ -80,4 +84,27 @@ export function characterBaseStats(character: ICachedCharacter) {
     enerRech_: 100,
     stamina: 100
   } as any as ICalculatedStats
+}
+
+export function deepCloneStats(stats: ICalculatedStats): ICalculatedStats {
+  const newStats = { ...stats }
+
+  // Hand-pick costly copying
+  if (newStats.modifiers) newStats.modifiers = deepClone(newStats.modifiers)
+  if (stats.teamStats) {
+    const teamStats = stats.teamStats.map(t => {
+      if (!t) return t
+      const { teamStats, ...rest } = t
+      return deepClone(rest)
+    })
+    const team = [newStats, ...teamStats]
+    teamStats.forEach((t, i) => t && (t.teamStats = team.filter((_, index) => index !== i + 1)))
+    newStats.teamStats = teamStats as ICalculatedStats['teamStats']
+  }
+  newStats.partyAllModifiers = deepClone(newStats.partyAllModifiers)
+  newStats.partyOnlyModifiers = deepClone(newStats.partyOnlyModifiers)
+  newStats.partyActiveModifiers = deepClone(newStats.partyActiveModifiers)
+  newStats.partyBuff = deepClone(newStats.partyBuff)
+  newStats.tlvl = deepClone(newStats.tlvl)
+  return newStats
 }

@@ -29,6 +29,7 @@ import { ArtifactsBySlot, Build, BuildRequest, BuildSetting } from '../Types/Bui
 import { ICachedCharacter } from '../Types/character';
 import { allSlotKeys, CharacterKey } from '../Types/consts';
 import { ICalculatedStats } from '../Types/stats';
+import { deepCloneStats } from '../Util/StatUtil';
 import { deepClone, objectFromKeyMap } from '../Util/Util';
 import { buildContext, calculateTotalBuildNumber, maxBuildsToShowList } from './Build';
 import { initialBuildSettings } from './BuildSetting';
@@ -43,6 +44,7 @@ import HitModeCard from './Components/HitModeCard';
 import MainStatSelectionCard, { artifactsSlotsToSelectMainStats } from './Components/MainStatSelectionCard';
 import OptimizationTargetSelector from './Components/OptimizationTargetSelector';
 import StatFilterCard from './Components/StatFilterCard';
+import TeamBuffCard from './Components/TeamBuffCard';
 const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
 
 //lazy load the character display
@@ -120,7 +122,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     if (!initialStats || !artifactSheets) return []
     return builds.map(build => {
       const arts = Object.fromEntries(build.map(id => database._getArt(id)).map(art => [art?.slotKey, art]))
-      const stats = Character.calculateBuildwithArtifact(deepClone(initialStats), arts, artifactSheets)
+      const stats = Character.calculateBuildwithArtifact(deepCloneStats(initialStats), arts, artifactSheets)
       return finalStatProcess(stats)
     }).filter(build => build)
   }, [builds, database, initialStats, artifactSheets])
@@ -311,6 +313,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
               <Box><CharacterCard characterKey={characterKey} onClick={setCharacter} /></Box>
 
               {!!character && <BonusStatsCard character={character} />}
+              <TeamBuffCard />
               {/* Enemy Editor */}
               {!!character && <EnemyEditorCard character={character} />}
               {/*Minimum Final Stat Filter */}
