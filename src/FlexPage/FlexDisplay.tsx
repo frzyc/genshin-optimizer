@@ -21,7 +21,7 @@ export default function FlexDisplay() {
     const flexResult = importFlex(searchStr.substring(1))
     if (!flexResult) return <Redirect to={`/`} />
     const [database, charKey, version] = flexResult
-    if (version !== 3)
+    if (version !== 4)
       return <Redirect to={`/flex?${exportFlex(charKey, database, sheets)}`} />
     return <DatabaseContext.Provider value={database}><Display characterKey={charKey} /></DatabaseContext.Provider>
   } else {
