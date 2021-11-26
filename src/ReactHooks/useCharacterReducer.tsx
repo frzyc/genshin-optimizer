@@ -77,10 +77,11 @@ export default function useCharacterReducer(characterKey: CharacterKey) {
           const oldChar = database._getChar(oldCharKey)
           if (oldChar) database.updateChar({ ...oldChar, team: ["", "", ""] })
         }
-        if (newCharKey) {
-          const newChar = database._getChar(newCharKey)
-          if (newChar) database.updateChar({ ...newChar, team: [characterKey, ...team].filter((_, i) => i !== index + 1) as ICachedCharacter["team"] })
-        }
+        team.forEach((t, tind) => {
+          if (!t) return
+          const newChar = database._getChar(t)
+          if (newChar) database.updateChar({ ...newChar, team: [characterKey, ...team].filter((_, i) => i !== tind + 1) as ICachedCharacter["team"] })
+        })
       }
     } else
       database.updateChar({ ...database._getChar(characterKey)!, ...action })

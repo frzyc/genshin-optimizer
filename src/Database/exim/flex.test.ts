@@ -1,11 +1,9 @@
-import { character, artifacts, weapon, urlV2, urlV3 } from './flex.test.data'
-import { exportFlex, importFlex } from './flex'
+import { getSheets } from '../../ReactHooks/useSheets'
 import { ArtCharDatabase } from '../Database'
 import { SandboxStorage } from '../DBStorage'
 import { removeArtifactCache, removeCharacterCache, removeWeaponCache } from '../validation'
-import { ArtifactSheet } from '../../Artifact/ArtifactSheet'
-import CharacterSheet from '../../Character/CharacterSheet'
-import WeaponSheet from '../../Weapon/WeaponSheet'
+import { exportFlex, importFlex } from './flex'
+import { artifacts, character, urlV2, urlV3, weapon } from './flex.test.data'
 
 const storage = new SandboxStorage()
 storage.setString("db_ver", "14")
@@ -16,10 +14,8 @@ const database = new ArtCharDatabase(storage)
 
 describe('flex import export', () => {
   test('should support round tripping', async () => {
-    const artifactSheets = await ArtifactSheet.getAll()
-    const characterSheets = await CharacterSheet.getAll()
-    const weaponSheets = await WeaponSheet.getAll()
-    const [flexDatabase, flexCharacterKey] = importFlex(exportFlex(character.key, database, { artifactSheets, characterSheets, weaponSheets })!)!
+    const sheets = await getSheets()
+    const [flexDatabase, flexCharacterKey] = importFlex(exportFlex(character.key, database, sheets)!)!
     const flexCharacter = flexDatabase._getChar(flexCharacterKey)!
     const flexWeapon = flexDatabase._getWeapon(flexCharacter.equippedWeapon)!
     const flexArtifacts = Object.values(flexCharacter.equippedArtifacts)
