@@ -5,6 +5,6 @@ export const data = {
 } as const
 
 const formula: ISubFormula = {
-  conv: stats => [s => Math.min((s.enerRech_ - 100) * data.enerRechConv[stats.weapon.refineIndex] / 100, data.enerRechMax[stats.weapon.refineIndex]), ['enerRech_']],
+  conv: stats => [s => Math.min(((s.premod?.enerRech_ ?? s.enerRech_) - 100) * data.enerRechConv[stats.weapon.refineIndex] / 100, data.enerRechMax[stats.weapon.refineIndex]), ['enerRech_']],
 } as const
 export default formula

@@ -93,7 +93,7 @@ const formula: IFormulaSheet = {
   },
   a4: {
     eleDMG: stats => {
-      return [s => (s.enerRech_ - 100) * 0.4, ["enerRech_"]]
+      return [s => ((s.premod?.enerRech_ ?? s.enerRech_) - 100) * 0.4, ["enerRech_"]]
     }
   }
 } as const

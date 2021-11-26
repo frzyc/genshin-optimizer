@@ -45,10 +45,7 @@ const formula: IFormulaSheet = {
     dmg: stats => basicDMGFormula(data.skill.dmg[stats.tlvl.skill], stats, "skill"),
     enerRechInc: stats => {
       if (stats.ascension < 4) return [s => 20, []]
-      return [s => {
-        const enerRech_ = s.premod?.enerRech_ ?? s.enerRech_
-        return 20 + enerRech_ / 10
-      }, ["enerRech_"]]
+      return [s => 20 + (s.premod?.enerRech_ ?? s.enerRech_) / 10, ["enerRech_"]]
     }
   },
   burst: {

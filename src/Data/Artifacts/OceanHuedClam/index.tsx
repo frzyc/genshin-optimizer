@@ -4,12 +4,9 @@ import sands from './sands.png'
 import goblet from './goblet.png'
 import circlet from './circlet.png'
 import { IArtifactSheet } from '../../../Types/artifact'
-import { FormulaPathBase } from '../../formula'
 import formula from './data'
-import { KeyPath } from '../../../Util/KeyPathUtil'
 import Stat from '../../../Stat'
 
-const path = KeyPath<FormulaPathBase>().artifact.EmblemOfSeveredFate
 const artifact: IArtifactSheet = {
   name: "Ocean-Hued Clam", rarity: [4, 5],
   icons: {
@@ -24,9 +21,6 @@ const artifact: IArtifactSheet = {
       stats: { heal_: 15 }
     },
     4: {
-      stats: {
-        modifiers: { burst_dmg_: [path.s4()] },
-      },
       document: [{
         fields: [{
           text: "Max Sea-Dyed Foam DMG",

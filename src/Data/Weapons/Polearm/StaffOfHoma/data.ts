@@ -5,7 +5,7 @@ export const data = {
 }
 
 const formula: ISubFormula = {
-  esj: stats => [s => s.finalHP * data.hp_atk[stats.weapon.refineIndex] / 100, ['finalHP']],
-  esjadd: stats => [s => s.finalHP * data.hp_atk_add[stats.weapon.refineIndex] / 100, ['finalHP']],
+  esj: stats => [s => (s.modStats?.finalHP ?? s.finalHP) * data.hp_atk[stats.weapon.refineIndex] / 100, ['finalHP']],
+  esjadd: stats => [s => (s.modStats?.finalHP ?? s.finalHP) * data.hp_atk_add[stats.weapon.refineIndex] / 100, ['finalHP']],
 }
 export default formula

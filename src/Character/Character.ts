@@ -6,7 +6,7 @@ import { ArtCharDatabase } from "../Database/Database";
 import finalStatProcess from "../ProcessFormula";
 import { Sheets } from "../ReactHooks/useSheets";
 import { ElementToReactionKeys } from "../StatData";
-import { ICachedArtifact } from "../Types/artifact";
+import { ICachedArtifact, StatKey } from "../Types/artifact";
 import { DocumentSection, ICachedCharacter } from "../Types/character";
 import { ArtifactSetKey, SlotKey } from "../Types/consts";
 import { IFieldDisplay } from "../Types/IFieldDisplay";
@@ -209,7 +209,7 @@ export default class Character {
 
   static getDisplayStatKeys = (stats: ICalculatedStats, sheets: Sheets) => {
     const eleKey = stats.characterEle
-    const basicKeys = ["finalHP", "finalATK", "finalDEF", "eleMas", "critRate_", "critDMG_", "heal_", "enerRech_", `${eleKey}_dmg_`]
+    const basicKeys = ["finalHP", "finalATK", "finalDEF", "eleMas", "critRate_", "critDMG_", "heal_", "enerRech_", `${eleKey}_dmg_`] as StatKey[]
     const characterSheet = sheets.characterSheets[stats.characterKey]
     const weaponSheet = sheets.weaponSheets[stats.weapon.key]
     const isAutoElemental = characterSheet.isAutoElemental

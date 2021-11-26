@@ -23,7 +23,7 @@ type characterTeamAction = {
 }
 export type characterReducerAction = characterEquipWeapon | characterReducerBonusStatsAction | characterReducerResetStatsAction | characterTeamAction | Partial<ICachedCharacter>
 
-export default function useCharacterReducer(characterKey: CharacterKey) {
+export default function useCharacterReducer(characterKey: CharacterKey | "") {
   const database = useContext(DatabaseContext)
 
   return useCallback((action: characterReducerAction): void => {

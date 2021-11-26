@@ -32,7 +32,7 @@ export default function CharacterTeamBuffsPane({ character, character: { key: ch
     <ResonanceDisplay characterKey={characterKey} build={build} />
     <Grid container spacing={1}>
       {sheets && build.teamStats.map((tStats, i) => <Grid item xs={12} md={6} lg={4} key={i}>
-        <TeammateDisplay character={character} condCharStats={tStats} sheets={sheets} index={i} />
+        <TeammateDisplay character={character} sheets={sheets} index={i} />
       </Grid>)}
     </Grid>
   </Box>
@@ -85,23 +85,27 @@ function ResonanceDisplay({ build, characterKey }: { build: ICalculatedStats, ch
     </CardContent>
   </CardLight>
 }
-function TeammateDisplay({ character, character: { key: characterKey, team }, condCharStats, sheets, index }:
-  { character: ICachedCharacter, condCharStats: ICalculatedStats | null, sheets: Sheets, index: number }) {
+function TeammateDisplay({ character, character: { key: characterKey, team }, sheets, index }:
+  { character: ICachedCharacter, sheets: Sheets, index: number }) {
   const onClickHandler = useCharSelectionCallback()
   const characterDispatch = useCharacterReducer(characterKey)
-  return <CardLight>
-    <CardContent>
-      <CharacterDropdownButton fullWidth value={condCharStats?.characterKey ?? ""}
-        onChange={charKey => characterDispatch({ type: "team", index, charKey })}
-        filter={(_, ck) => ck !== characterKey && !team.includes(ck)} unSelectText={`Teammate ${index + 1}`} unSelectIcon={<PersonAdd />} />
-    </CardContent>
-    {condCharStats && <CharacterCard characterKey={condCharStats.characterKey}
-      onClickHeader={onClickHandler}
-      build={condCharStats}
-      artifactChildren={<CharArtifactCondDisplay condCharStats={condCharStats} />}
-      weaponChildren={<CharWeaponCondDisplay condCharStats={condCharStats} />}
-      footer={sheets && character && <CharTalentCondDisplay condCharStats={condCharStats} character={character} sheets={sheets} />} />}
-  </CardLight>
+  const { newBuild, equippedBuild } = useContext(buildContext)
+  const condCharStats = equippedBuild?.teamStats[index]
+  return <buildContext.Provider value={{ equippedBuild: equippedBuild?.teamStats[index] ?? undefined, newBuild: newBuild?.teamStats[index] ?? undefined }}>
+    <CardLight>
+      <CardContent>
+        <CharacterDropdownButton fullWidth value={condCharStats?.characterKey ?? ""}
+          onChange={charKey => characterDispatch({ type: "team", index, charKey })}
+          filter={(_, ck) => ck !== characterKey && !team.includes(ck)} unSelectText={`Teammate ${index + 1}`} unSelectIcon={<PersonAdd />} />
+      </CardContent>
+      {condCharStats && <CharacterCard characterKey={condCharStats.characterKey}
+        onClickHeader={onClickHandler}
+        build={condCharStats}
+        artifactChildren={<CharArtifactCondDisplay condCharStats={condCharStats} />}
+        weaponChildren={<CharWeaponCondDisplay condCharStats={condCharStats} />}
+        footer={sheets && character && <CharTalentCondDisplay condCharStats={condCharStats} character={character} sheets={sheets} />} />}
+    </CardLight>
+  </buildContext.Provider>
 }
 function CharArtifactCondDisplay({ condCharStats }: { condCharStats: ICalculatedStats }) {
   const characterDispatch = useCharacterReducer(condCharStats.characterKey)

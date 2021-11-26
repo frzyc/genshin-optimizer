@@ -10,7 +10,6 @@ import Worker from "worker-loader!./BuildWorker";
 import Artifact from '../Artifact/Artifact';
 import Character from '../Character/Character';
 import CharacterCard from '../Character/CharacterCard';
-import CharacterSheet from '../Character/CharacterSheet';
 import CardDark from '../Components/Card/CardDark';
 import CardLight from '../Components/Card/CardLight';
 import CharacterDropdownButton from '../Components/Character/CharacterDropdownButton';
@@ -22,13 +21,13 @@ import { DatabaseContext } from '../Database/Database';
 import { dbStorage } from '../Database/DBStorage';
 import { GlobalSettingsContext } from '../GlobalSettings';
 import finalStatProcess from '../ProcessFormula';
+import useCharacter from '../ReactHooks/useCharacter';
+import useCharacterReducer from '../ReactHooks/useCharacterReducer';
 import useCharSelectionCallback from '../ReactHooks/useCharSelectionCallback';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
 import useSheets from '../ReactHooks/useSheets';
 import { ArtifactsBySlot, Build, BuildRequest, BuildSetting } from '../Types/Build';
-import { ICachedCharacter } from '../Types/character';
 import { allSlotKeys, CharacterKey } from '../Types/consts';
-import { ICalculatedStats } from '../Types/stats';
 import { deepCloneStats } from '../Util/StatUtil';
 import { deepClone, objectFromKeyMap } from '../Util/Util';
 import { buildContext, calculateTotalBuildNumber, maxBuildsToShowList } from './Build';
@@ -87,9 +86,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     //NOTE that propCharacterKey can override the selected character.
     return (propCharacterKey ?? characterKey) as CharacterKey | ""
   })
-  const [modalBuild, setmodalBuild] = useState(-1) // the index of the newBuild that is being displayed in the character modal,
-
-  const [showCharacterModal, setshowCharacterModal] = useState(false)
+  const [modalBuildIndex, setmodalBuildIndex] = useState(-1) // the index of the newBuild that is being displayed in the character modal,
 
   const [generatingBuilds, setgeneratingBuilds] = useState(false)
   const [generationProgress, setgenerationProgress] = useState(0)
@@ -98,7 +95,6 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
 
   const [chartData, setchartData] = useState(undefined as any)
 
-  const [charDirty, setCharDirty] = useForceUpdate()
   const sheets = useSheets()
   const { artifactSheets } = sheets ?? {}
 
@@ -109,10 +105,15 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   const worker = useRef(null as Worker | null)
 
   const setCharacter = useCharSelectionCallback()
+  const characterDispatch = useCharacterReducer(characterKey)
 
-  type characterDataType = { character?: ICachedCharacter, characterSheet?: CharacterSheet, initialStats?: ICalculatedStats, statsDisplayKeys?: { basicKeys: any, [key: string]: any } }
-  const [{ character, characterSheet, initialStats, statsDisplayKeys }, setCharacterData] = useState({} as characterDataType)
-  const buildSettings = useMemo(() => character?.buildSettings ?? initialBuildSettings(), [character])
+  const character = useCharacter(characterKey)
+  const characterSheet = sheets?.characterSheets[characterKey]
+  const initialStats = useMemo(() => character && sheets && Character.createInitialStats(character, database, sheets), [character, database, sheets])
+  const equippedBuild = useMemo(() => character && database && sheets && Character.calculateBuild(character, database, sheets), [character, database, sheets])
+  const statsDisplayKeys = useMemo(() => initialStats && sheets && Character.getDisplayStatKeys(initialStats, sheets), [initialStats, sheets])
+
+  const buildSettings = character?.buildSettings ?? initialBuildSettings()
   const { plotBase, setFilters, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, builds, buildDate, maxBuildsToShow } = buildSettings
 
   if (initialStats)
@@ -130,11 +131,9 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   const noCharacter = useMemo(() => !database._getCharKeys().length, [database])
   const noArtifact = useMemo(() => !database._getArts().length, [database])
 
-  const buildSettingsDispatch = useCallback((action) => {
-    if (!character) return
-    character.buildSettings = buildSettingsReducer(buildSettings, action)
-    database.updateChar(character)
-  }, [character, buildSettings, database])
+  const buildSettingsDispatch = useCallback((action) =>
+    character && characterDispatch({ buildSettings: buildSettingsReducer(buildSettings, action) })
+    , [character, characterDispatch, buildSettings])
 
   useEffect(() => ReactGA.pageview('/build'), [])
 
@@ -142,37 +141,13 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   const selectCharacter = useCallback((cKey = "") => {
     if (characterKey === cKey) return
     setcharacterKey(cKey)
-    setCharDirty()
-    setCharacterData({})
     setchartData(undefined)
-  }, [setCharDirty, setcharacterKey, characterKey])
-
-  //load the character data as a whole
-  useEffect(() => {
-    (async () => {
-      if (!characterKey || !sheets) return
-      const character = database._getChar(characterKey)
-      if (!character) return selectCharacter("")// character is prob deleted.
-      const characterSheet = sheets.characterSheets[characterKey]
-      const weapon = database._getWeapon(character.equippedWeapon)
-      if (!weapon) return
-      if (!characterSheet) return
-      const initialStats = Character.createInitialStats(character, database, sheets)
-      //NOTE: since initialStats are used, there are no inclusion of artifact formulas here.
-      const statsDisplayKeys = Character.getDisplayStatKeys(initialStats, sheets)
-      setCharacterData({ character, characterSheet, initialStats, statsDisplayKeys })
-    })()
-  }, [charDirty, characterKey, sheets, database, selectCharacter])
+  }, [setcharacterKey, characterKey])
 
   //register changes in artifact database
   useEffect(() =>
     database.followAnyArt(setArtsDirty),
     [setArtsDirty, database])
-
-  //register changes in character in db
-  useEffect(() =>
-    characterKey ? database.followChar(characterKey, setCharDirty) : undefined,
-    [characterKey, setCharDirty, database])
 
   //terminate worker when component unmounts
   useEffect(() => () => worker.current?.terminate(), [])
@@ -271,18 +246,12 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
 
   const characterName = characterSheet?.name ?? "Character Name"
 
-  const closeBuildModal = useCallback(
-    () => {
-      setmodalBuild(-1)
-      setshowCharacterModal(false)
-    },
-    [setmodalBuild, setshowCharacterModal],
-  )
+  const closeBuildModal = useCallback(() => setmodalBuildIndex(-1), [setmodalBuildIndex])
   const setPlotBase = useCallback(plotBase => {
     buildSettingsDispatch({ plotBase })
     setchartData(undefined)
   }, [buildSettingsDispatch])
-  return <buildContext.Provider value={{ equippedBuild: initialStats }}>
+  return <buildContext.Provider value={{ equippedBuild: equippedBuild }}>
     <Box display="flex" flexDirection="column" gap={1} sx={{ my: 1 }}>
       <InfoComponent
         pageKey="buildPage"
@@ -291,7 +260,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
           "You can compare the difference between equipped artifacts and generated builds.",
           "The more complex the formula, the longer the generation time.",]}
       ><InfoDisplay /></InfoComponent>
-      <BuildModal {...{ build: buildStats[modalBuild], showCharacterModal, characterKey, onClose: closeBuildModal }} />
+      <BuildModal build={buildStats[modalBuildIndex]} characterKey={characterKey} onClose={closeBuildModal} />
       {noCharacter && <Alert severity="error" variant="filled"> Opps! It looks like you haven't added a character to GO yet! You should go to the <Link component={RouterLink} to="/character">Characters</Link> page and add some!</Alert>}
       {noArtifact && <Alert severity="warning" variant="filled"> Opps! It looks like you haven't added any artifacts to GO yet! You should go to the <Link component={RouterLink} to="/artifact">Artifacts</Link> page and add some!</Alert>}
       {/* Build Generator Editor */}
@@ -423,15 +392,15 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
       <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={600} />}>
         {/* Build List */}
         {buildStats?.map((build, index) =>
-          sheets && <ArtifactBuildDisplayItem sheets={sheets} build={build} characterKey={characterKey as CharacterKey} index={index} key={Object.values(build.equippedArtifacts ?? {}).join()} statsDisplayKeys={statsDisplayKeys} onClick={() => setmodalBuild(index)} />
+          sheets && <ArtifactBuildDisplayItem sheets={sheets} build={build} characterKey={characterKey as CharacterKey} index={index} key={Object.values(build.equippedArtifacts ?? {}).join()} statsDisplayKeys={statsDisplayKeys} onClick={() => setmodalBuildIndex(index)} />
         )}
       </Suspense>
     </Box>
   </buildContext.Provider>
 }
 
-function BuildModal({ build, showCharacterModal, characterKey, onClose }) {
-  return <ModalWrapper open={!!(showCharacterModal || build)} onClose={onClose} containerProps={{ maxWidth: "xl" }}>
+function BuildModal({ build, characterKey, onClose }) {
+  return <ModalWrapper open={!!build} onClose={onClose} containerProps={{ maxWidth: "xl" }}>
     <CharacterDisplayCard
       characterKey={characterKey}
       newBuild={build}
