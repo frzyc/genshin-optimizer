@@ -20,7 +20,7 @@ import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { ICharacterSheet } from '../../../Types/character'
 import { Translate } from '../../../Components/Translate'
-import { bowChargedDocSection, normalDocSection, plungeDocSection, st, talentTemplate } from '../SheetUtil'
+import { bowChargedDocSection, conditionalHeader, normalDocSection, plungeDocSection, st, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
 import { basicDMGFormulaText } from '../../../Util/FormulaTextUtil'
 import { KeyPath } from '../../../Util/KeyPathUtil'
@@ -78,6 +78,9 @@ const char: ICharacterSheet = {
             }],
           conditional: { //Gengu StormCall
             key: "e",
+            partyBuff: "partyActive",
+            header: conditionalHeader("skill", tr, skill),
+            description: tr("skill.description"),
             name: charTr("skill.ambush"),
             stats: {
               modifiers: { atk: [path.skill.atkBonus()] },

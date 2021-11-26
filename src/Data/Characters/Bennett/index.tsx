@@ -102,7 +102,7 @@ const char: ICharacterSheet = {
           conditional: { // Fantastic Voyage
             key: "q",
             name: tr("burst.name"),
-            partyBuff: "partyAll",
+            partyBuff: "partyActive",
             header: conditionalHeader("burst", tr, burst),
             description: tr("burst.description"),
             stats: {
