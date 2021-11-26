@@ -1,6 +1,7 @@
 import { Box, Typography } from "@mui/material"
 import { useMemo } from "react"
 import Character from "../Character/Character"
+import { sgt } from "../Data/Characters/SheetUtil"
 import Formula from "../Formula"
 import usePromise from "../ReactHooks/usePromise"
 import Stat from "../Stat"
@@ -89,6 +90,17 @@ export default function StatDisplay({ character, equippedBuild, newBuild, statKe
     }
     return { val, oldVal, fixed, unit, label, hasBonus: Character.hasBonusStats(character, statKey) }
   }, [character, equippedBuild, newBuild, statKey, partyBuff, formula])
-
+  if ((val && typeof val !== "number") || (oldVal && typeof oldVal !== "number")) {
+    let displayVal = val
+    if (statKey === "infusionAura") {
+      displayVal = <ColorText color={val}>{sgt(`element.${val}`)}</ColorText>
+    }
+    return <Box display="flex" justifyContent="space-between" >
+      <Typography>{label}</Typography>
+      <Typography>
+        <strong>{displayVal}</strong>
+      </Typography>
+    </Box>
+  }
   return <DisplayStatDiff {...{ val, oldVal, fixed, unit, label: label as any, hasBonus }} />
 }
