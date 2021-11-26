@@ -8,7 +8,7 @@
     "fields": {
       "normal": {
         "0": "<strong>Standardangriff</strong>",
-        "1": "Führt bis zu 6 Lanzenstiche aus."
+        "1": "Führt bis zu 6 Lanzenstiche hintereinander aus."
       },
       "charged": {
         "0": "<strong>Heftiger Schlag</strong>",
@@ -45,18 +45,20 @@
       "1": "Verbraucht einen Teil von Hu Taos LP, stößt Gegner in der Umgebung zurück und aktiviert den Zustandt Paramita-Schmetterlingstanz.",
       "2": "<br/>",
       "3": "<strong>Paramita-Schmetterlingstanz</strong>",
-      "4": "- Erhöht Hu Taos ANG gemäß ihrer max. LP bei Aktivierung des Zustands. Dieser Angriffsbonus erreicht bis zu 400 % von Hu Taos Basis-ANG.",
-      "5": "- Verleiht dem Schaden von Angriffen die <pyro>Pyro-Kraft</pyro>. Diese Elementarumwandlung kann nicht von anderen Elementen überdeckt werden.",
-      "6": "- Fügt mit heftigen Schlägen getroffenen Gegnern den Effekt der Blutblüten zu.",
-      "7": "- Erhöht Hu Taos Unterbrechungs-WDS.",
-      "8": "<br/>",
-      "9": "<strong>Blutblüten</strong>",
-      "10": "Vom Zustand Blutblüten betroffene Gegner erleiden alle 4 s <pyro>Pyro-Schaden</pyro>. Dieser Schaden gilt als Elementarfähigkeitsschaden.",
-      "11": "Der Zustand Blutblüten ist nicht stapelbar und kann nur von Hu Tao selbst aktualisiert werden.",
-      "12": "<br/>",
-      "13": "Die Wirkung von <strong>Paramita-Schmetterlingstanz</strong> endet, sobald die Dauer abläuft oder Hu Tao ausgewechselt oder besiegt wird.",
-      "14": "<br/>",
-      "15": "<i>Die Lanzentechnik, die Hu Tao übt, gründet auf einem Regelwerk, das mit folgenden Worten beginnt: „Die Lanze öffnet den Weg ins Jenseit, die Schmetterlinge bilden die Brücke dorthin.“</i>"
+      "4": [
+        " Erhöht Hu Taos ANG gemäß ihrer max. LP bei Aktivierung des Zustands. Dieser Angriffsbonus erreicht bis zu 400 % von Hu Taos Basis-ANG.",
+        " Verleiht dem Schaden von Angriffen die <pyro>Pyro-Kraft</pyro>. Diese Elementarumwandlung kann nicht von anderen Elementen überdeckt werden.",
+        " Fügt mit heftigen Schlägen getroffenen Gegnern den Effekt der Blutblüten zu.",
+        " Erhöht Hu Taos Unterbrechungs-WDS."
+      ],
+      "5": "<br/>",
+      "6": "<strong>Blutblüten</strong>",
+      "7": "Vom Zustand Blutblüten betroffene Gegner erleiden alle 4 s <pyro>Pyro-Schaden</pyro>. Dieser Schaden gilt als Elementarfähigkeitsschaden.",
+      "8": "Der Zustand Blutblüten ist nicht stapelbar und kann nur von Hu Tao selbst aktualisiert werden.",
+      "9": "<br/>",
+      "10": "Die Wirkung von <strong>Paramita-Schmetterlingstanz</strong> endet, sobald die Dauer abläuft oder Hu Tao ausgewechselt oder besiegt wird.",
+      "11": "<br/>",
+      "12": "<i>Die Lanzentechnik, die Hu Tao übt, gründet auf einem Regelwerk, das mit folgenden Worten beginnt: „Die Lanze öffnet den Weg ins Jenseit, die Schmetterlinge bilden die Brücke dorthin.“</i>"
     },
     "skillParams": {
       "0": "Kosten",
@@ -80,7 +82,7 @@
   "burst": {
     "name": "Geheime Kunst der Besänftigung",
     "description": {
-      "0": "Befiehlt Flammengeistern anzugreifen und verursacht <pyro>Pyro-Flächenschaden</pyro> in einem großen Bereich.",
+      "0": "Befiehlt einem Flammengeist anzugreifen und verursacht <pyro>Pyro-Flächenschaden</pyro> in einem großen Bereich.",
       "1": "Stellt Hu Tao beim Treffen von Gegnern LP basierend auf ihren max. LP wieder her. Dieser Effekt ist auf 5 getroffene Gegner beschränkt.",
       "2": "Verursacht bei weniger als 50 % LP beim Treffen von Gegnern mit dieser Fähigkeit mehr Schaden und stellt mehr LP wieder her.",
       "3": "<br/>",

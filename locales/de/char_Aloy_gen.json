@@ -47,13 +47,15 @@
       "2": "Erhält alle 0,1 s höchstens 1 Stapelung des Effekts Spule.",
       "3": "<br/>",
       "4": "<strong>Spule</strong>",
-      "5": "- Erhöht den mit Aloys Standardangriffen verursachten Schaden gemäß der Menge an Stapelungen.",
-      "6": "- Beseitigt bei 4 Stapelungen Spule den gesamten Effekt von Spule und verleiht Aloy „Eisige Eile“, die den mit Standardangriffen verursachten Schaden zusätzlich erhöht und den mit Standardangriffen verursachten Schaden in <cryo>Kryo-Schaden</cryo> umwandelt.",
-      "7": "<br/>",
-      "8": "Aloy kann während des Zustands Eisige Eile nicht den Effekt Spule erhalten.",
-      "9": "Der Effekt Spule wird 30 s nach dem Verlassen des Kampfs entfernt.",
-      "10": "<br/>",
-      "11": "<i>Glaub mir, am Schnitt ist es noch viel kälter.</i>"
+      "5": [
+        " Erhöht den mit Aloys Standardangriffen verursachten Schaden gemäß der Menge an Stapelungen.",
+        " Beseitigt bei 4 Stapelungen Spule den gesamten Effekt von Spule und verleiht Aloy „Eisige Eile“, die den mit Standardangriffen verursachten Schaden zusätzlich erhöht und den mit Standardangriffen verursachten Schaden in <cryo>Kryo-Schaden</cryo> umwandelt."
+      ],
+      "6": "<br/>",
+      "7": "Aloy kann während des Zustands Eisige Eile nicht den Effekt Spule erhalten.",
+      "8": "Der Effekt Spule wird 30 s nach dem Verlassen des Kampfs entfernt.",
+      "9": "<br/>",
+      "10": "<i>Glaub mir, am Schnitt ist es noch viel kälter.</i>"
     },
     "skillParams": {
       "0": "Eisbomben-SCH",

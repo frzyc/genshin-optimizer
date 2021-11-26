@@ -2,7 +2,7 @@
   "setName": "Ins Herz geschlossenes Mädchen",
   "setEffects": {
     "2": "Erhöht den aktiven Heileffekt der Figur um 15 %.",
-    "4": "Erhöht den passiven Heileffekt aller Truppenmitglieder nach Anwendung von Elementarfähigkeiten oder Spezialfähigkeiten 10 s lang um 20 %."
+    "4": "Erhöht den passiven Heilungseffekt aller Truppenmitglieder nach Anwendung von Elementarfähigkeiten oder Spezialfähigkeiten 10 s lang um 20 %."
   },
   "pieces": {
     "flower": {

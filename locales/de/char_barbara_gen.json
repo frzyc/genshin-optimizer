@@ -44,12 +44,14 @@
       "0": "Erschafft hüpfende Wassertropfen, die einen singenden Kreis bilden und Gegnern in der Umgebung <hydro>Hydro-Schaden</hydro> sowie den Zustand <hydro>Nass</hydro> zufügen.",
       "1": "<br/>",
       "2": "<strong>Singender Kreis</strong>",
-      "3": "- Stellt allen eigenen Truppenmitgliedern und befreundeten Figuren in der Nähe LP basierend auf Barbaras max. LP wieder her, wenn Barbaras Standardangriff trifft.",
-      "4": "- Stellt bei Treffern mit heftigen Schlägen die 4-fache Menge LP wieder her.",
-      "5": "- Stellt der aktuellen eigenen Figur in regelmäßigen Abständen LP wieder her.",
-      "6": "- Fügt Figuren und in Kontakt kommenden Gegnern den Zustand <hydro>Nass</hydro> zu.",
-      "7": "<br/>",
-      "8": "<i>Die Magie, mit der Barbara andere heilt, liegt in ihrer Musik.</i>"
+      "3": [
+        " Stellt allen eigenen Truppenmitgliedern und befreundeten Figuren in der Nähe LP basierend auf Barbaras max. LP wieder her, wenn Barbaras Standardangriff trifft.",
+        " Stellt bei Treffern mit heftigen Schlägen die 4-fache Menge LP wieder her.",
+        " Stellt der aktuellen eigenen Figur in regelmäßigen Abständen LP wieder her.",
+        " Fügt Figuren und in Kontakt kommenden Gegnern den Zustand <hydro>Nass</hydro> zu."
+      ],
+      "4": "<br/>",
+      "5": "<i>Die Magie, mit der Barbara andere heilt, liegt in ihrer Musik.</i>"
     },
     "skillParams": {
       "0": "Heilung bei Treffer",
@@ -153,9 +155,11 @@
     "name": "Nur das Beste für dich",
     "description": {
       "0": "Effekte, wenn Barbara inaktiv in der Truppe ist und die eigene Figur in der Truppe besiegt wird:",
-      "1": "- Belebt die aktuelle Figur wieder.",
-      "2": "- Stellt dieser Figur 100 % LP wieder her.",
-      "3": "15 min Abklingzeit."
+      "1": [
+        " Belebt die aktuelle Figur wieder.",
+        " Stellt dieser Figur 100 % LP wieder her."
+      ],
+      "2": "15 min Abklingzeit."
     }
   }
 }

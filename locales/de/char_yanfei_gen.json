@@ -75,11 +75,13 @@
       "1": "<br/>",
       "2": "<strong>Sengende Hitze</strong>",
       "3": "Löst folgende Effekte aus:",
-      "4": "- Gibt Yanfei in gleichen zeitlichen Abständen je ein flammendes Siegel.",
-      "5": "- Erhöht den Schaden heftiger Schläge.",
-      "6": "Endet, wenn Yanfei ausgewechselt wird.",
-      "7": "<br/>",
-      "8": "<i>„Der Pakt zwischen uns von Leben und Tod ist nun vollständig. Demgemäß wirst du sterben und ich werde weiterleben.“</i>"
+      "4": [
+        " Gibt Yanfei in gleichen zeitlichen Abständen je ein flammendes Siegel.",
+        " Erhöht den Schaden heftiger Schläge."
+      ],
+      "5": "Endet, wenn Yanfei ausgewechselt wird.",
+      "6": "<br/>",
+      "7": "<i>„Der Pakt zwischen uns von Leben und Tod ist nun vollständig. Demgemäß wirst du sterben und ich werde weiterleben.“</i>"
     },
     "skillParams": {
       "0": "Fähigkeits-SCH",

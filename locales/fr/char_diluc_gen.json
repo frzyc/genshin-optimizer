@@ -115,7 +115,7 @@
   "constellation1": {
     "name": "Conviction",
     "description": {
-      "0": "Diluc inflige 15 % de DGT supplémentaires aux ennemis ayant plus de 50 % de leurs PV."
+      "0": "Diluc inflige 15 % de DGT supplémentaires aux ennemis dont les PV sont supérieurs à 50 %."
     }
   },
   "constellation2": {

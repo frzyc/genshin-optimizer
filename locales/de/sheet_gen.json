@@ -39,5 +39,20 @@
   "hold": {
     "dmg": "SCH bei Gedrückthalten",
     "cd": "Abklingzeit für Gedrückthalten"
+  },
+  "element": {
+    "anemo": "Anemo",
+    "geo": "Geo",
+    "pyro": "Pyro",
+    "hydro": "Hydro",
+    "cryo": "Kryo",
+    "electro": "Elektro"
+  },
+  "reaction": {
+    "swirl": "Verwirbelung",
+    "crystallize": "Kristallisation",
+    "overloaded": "Überladen",
+    "electrocharged": "Unter Strom",
+    "Superconduct": "Supraleiter"
   }
 }

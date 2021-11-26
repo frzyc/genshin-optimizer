@@ -8,7 +8,7 @@
     "fields": {
       "normal": {
         "0": "<strong>Standardangriff</strong>",
-        "1": "Führt bis zu 5 Pfeilschüsse aus."
+        "1": "Führt bis zu 5 Pfeilschüsse hintereinander aus."
       },
       "charged": {
         "0": "<strong>Heftiger Schlag</strong>",
@@ -81,10 +81,12 @@
       "0": "Wirft besonders starken eisgekühlten Alkohol nach vorn und verursacht <cryo>Kryo-Flächenschaden</cryo> sowie ein Kältedunstfeld.",
       "1": "<br/>",
       "2": "<strong>Kältedunstfeld</strong>",
-      "3": "- Fügt Gegnern darin fortlaufend <cryo>Kryo-Schaden</cryo> zu.",
-      "4": "- Stellt Figuren darin fortlaufend LP wieder her.",
-      "5": "<br/>",
-      "6": "<i>Dieses Gebräu hält Diona selbst sogar für unmenschlich. Deswegen bleibt der erste Eindruck nur ihren Gegnern überlassen. Der Nachgeschmack ist eher erquickend, ist aber nur in der Nase und auf der Haut zu spüren.</i>"
+      "3": [
+        " Fügt Gegnern darin fortlaufend <cryo>Kryo-Schaden</cryo> zu.",
+        " Stellt Figuren darin fortlaufend LP wieder her."
+      ],
+      "4": "<br/>",
+      "5": "<i>Dieses Gebräu hält Diona selbst sogar für unmenschlich. Deswegen bleibt der erste Eindruck nur ihren Gegnern überlassen. Der Nachgeschmack ist eher erquickend, ist aber nur in der Nase und auf der Haut zu spüren.</i>"
     },
     "skillParams": {
       "0": "Fähigkeits-SCH",
@@ -160,8 +162,10 @@
     "name": "Vorzeitiger Feierabend",
     "description": {
       "0": "Verleiht Figuren im Feld von <strong>Eisgekühlter Branntwein</strong> je nach ihren LP folgende Effekte:",
-      "1": "- Erhöht den passiven Heilungsbonus bei bis zu 50 % LP um 30 %.",
-      "2": "- Erhöht die Elementarkunde bei mehr als 50 % LP um 200 Punkte."
+      "1": [
+        " Erhöht den passiven Heilungsbonus bei bis zu 50 % LP um 30 %.",
+        " Erhöht die Elementarkunde bei mehr als 50 % LP um 200 Punkte."
+      ]
     }
   }
 }

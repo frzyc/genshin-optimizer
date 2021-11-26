@@ -129,7 +129,7 @@
   "constellation2": {
     "name": "Verdict final",
     "description": {
-      "0": "Le taux CRIT des attaques chargées de Yanfei augmente de 20 % lorsqu'elles touchent des ennemis ayant moins de 50 % de PV."
+      "0": "Le taux CRIT des attaques chargées de Yanfei augmente de 20 % lorsqu'elles touchent des ennemis dont les PV sont inférieurs à 50 %."
     }
   },
   "constellation3": {

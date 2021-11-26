@@ -159,7 +159,7 @@
   "constellation6": {
     "name": "Conquistador do Mal - Guardião Yaksha",
     "description": {
-      "0": "Enquanto sob o efeito da <strong>Dança Nuo da Conquista do Mal</strong>, acertar pelo menos 2 inimigos com o ataque carregado de Xiao irá imediatamente conceder a ele 1 carga de <strong>Vento Lemniscático</strong>, e durante o próximo 1 segundo, ele poderá usar Vento Lemniscático ignorando seu tempo de recarga."
+      "0": "Enquanto sob o efeito da <strong>Dança Nuo da Conquista do Mal</strong>, acertar pelo menos 2 inimigos com o ataque imersivo de Xiao irá imediatamente conceder a ele 1 carga de <strong>Vento Lemniscático</strong>, e durante o próximo 1 segundo, ele poderá usar Vento Lemniscático ignorando seu tempo de recarga."
     }
   }
 }

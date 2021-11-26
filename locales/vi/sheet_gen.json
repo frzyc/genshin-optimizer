@@ -39,5 +39,20 @@
   "hold": {
     "dmg": "Sát Thương Nhấn Giữ",
     "cd": "CD Nhấn Giữ"
+  },
+  "element": {
+    "anemo": "Phong",
+    "geo": "Nham",
+    "pyro": "Hỏa",
+    "hydro": "Thủy",
+    "cryo": "Băng",
+    "electro": "Lôi"
+  },
+  "reaction": {
+    "swirl": "Khuếch tán",
+    "crystallize": "Kết tinh",
+    "overloaded": "Quá Tải",
+    "electrocharged": "Điện Cảm",
+    "Superconduct": "Siêu Dẫn"
   }
 }

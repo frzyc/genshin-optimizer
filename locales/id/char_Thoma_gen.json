@@ -41,7 +41,7 @@
   "skill": {
     "name": "Blazing Blessing",
     "description": {
-      "0": "Thoma menggunakan ujung tombaknya sebagai poros untuk menyalurkan apinya dan melakukan tendangan yang mengakibatkan <pyro>Pyro DMG Area</pyro>, kemudian menciptakan sebuah Blazing Barrier. Saat melancarkan Elemental Skill, Thoma akan terkena <pyro>efek elemen Pyro</pyro> selama sekejap.",
+      "0": "Thoma menggunakan ujung tombaknya sebagai poros untuk menyalurkan apinya dan melakukan tendangan yang mengakibatkan <pyro>Pyro DMG Area</pyro>, kemudian menciptakan sebuah pelindung Blazing Barrier. Saat melancarkan Elemental Skill, Thoma akan terkena <pyro>efek elemen Pyro</pyro> selama sekejap.",
       "1": "DMG yang dapat ditahan oleh Barrier berdasar pada Max HP Thoma.",
       "2": "Blazing Barrier mempunyai efek sebagai berikut:",
       "3": [
@@ -75,11 +75,11 @@
   "burst": {
     "name": "Crimson Ooyoroi",
     "description": {
-      "0": "Thoma memutar tombaknya untuk menebas musuh-musuhnya dengan api membara yang mengakibatkan <pyro>Pyro DMG Area</pyro>, kemudian menciptakan efek Scorching Ooyoroi.",
+      "0": "Thoma memutar tombaknya untuk menebas musuh-musuh di sekitar dengan api membara yang mengakibatkan <pyro>Pyro DMG Area</pyro>, kemudian menciptakan efek Scorching Ooyoroi.",
       "1": "<br/>",
       "2": "<strong>Scorching Ooyoroi</strong>",
       "3": "Normal Attack dari Karakter aktif yang memiliki efek Scorching Ooyoroi akan memicu Fiery Collapse yang mengakibatkan <pyro>Pyro DMG Area</pyro> dan menciptakan Blazing Barrier.",
-      "4": "Fiery Collapse dapat terpicu sekali setiap detik.",
+      "4": "Fiery Collapse dapat terpicu setiap 1 detik.",
       "5": "<br/>",
       "6": "Blazing Barrier yang diciptakan dengan cara ini mempunyai karakteristik yang sama dengan yang terbuat dari Elemental Skill Thoma \"Blazing Blessing\", kecuali pada jumlah DMG yang dapat ditahan:",
       "7": [

@@ -39,5 +39,20 @@
   "hold": {
     "dmg": "ความเสียหายกดค้าง",
     "cd": "เวลาคูลดาวน์เมื่อกดค้าง"
+  },
+  "element": {
+    "anemo": "ลม",
+    "geo": "หิน",
+    "pyro": "ไฟ",
+    "hydro": "น้ำ",
+    "cryo": "น้ำแข็ง",
+    "electro": "ไฟฟ้า"
+  },
+  "reaction": {
+    "swirl": "กระจาย",
+    "crystallize": "ตกผลึก",
+    "overloaded": "โอเวอร์โหลด",
+    "electrocharged": "ชาร์จไฟฟ้า",
+    "Superconduct": "นำไฟฟ้า"
   }
 }

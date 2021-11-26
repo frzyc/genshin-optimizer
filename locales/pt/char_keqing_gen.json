@@ -128,7 +128,7 @@
   "constellation2": {
     "name": "Extração Afiada",
     "description": {
-      "0": "Quando Ataques Normais e Carregados do Keqing acertam inimigos afetados por <electro>Electro</electro> eles têm 50% de chance de produzir uma Partícula Elemental.",
+      "0": "Quando Ataques Normais e Carregados da Keqing acertam inimigos afetados por <electro>Electro</electro> eles têm 50% de chance de produzir uma Partícula Elemental.",
       "1": "Esse efeito pode ocorrer apenas uma vez a cada 5 segundos."
     }
   },

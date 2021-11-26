@@ -81,16 +81,18 @@
       "1": "Der Blitzwolf kämpft gemeinsam mit Razor, solange er auf dem Feld ist.",
       "2": "<br/>",
       "3": "<strong>Blitzwolf</strong>",
-      "4": "- Greift an, sobald Razor einen Standardangriff ausführt, und verursacht <electro>Elektro-Schaden</electro>.",
-      "5": "- Erhöht Razors Angriffs-GSW und <electro>Elektro-WDS</electro>.",
-      "6": "- Macht Razor immun gegen Schaden durch die Reaktion <electro>Unter Strom</electro>.",
-      "7": "- Anwendung heftiger Schläge nicht möglich.",
-      "8": "- Erhöht Razors Unterbrechungs-WDS.",
-      "9": "<br/>",
-      "10": "Effekt wird aufgehoben, wenn Razor ausgewechselt wird.",
-      "11": "Gibt bis zu 10 Punkte Elementarenergie zurück, wenn Razor während der Dauer der Fähigkeit ausgewechselt wird.",
-      "12": "<br/>",
-      "13": "<i>Der Wolf ist erwacht. Die Zeit der Jagd ist gekommen.</i>"
+      "4": [
+        " Greift an, sobald Razor einen Standardangriff ausführt, und verursacht <electro>Elektro-Schaden</electro>.",
+        " Erhöht Razors Angriffs-GSW und <electro>Elektro-WDS</electro>.",
+        " Macht Razor immun gegen Schaden durch die Reaktion <electro>Unter Strom</electro>.",
+        " Anwendung heftiger Schläge nicht möglich.",
+        " Erhöht Razors Unterbrechungs-WDS."
+      ],
+      "5": "<br/>",
+      "6": "Effekt erlischt, wenn Razor ausgewechselt wird.",
+      "7": "Gibt bis zu 10 Punkte Elementarenergie zurück, wenn Razor während der Dauer der Fähigkeit ausgewechselt wird.",
+      "8": "<br/>",
+      "9": "<i>Der Wolf ist erwacht. Die Zeit der Jagd ist gekommen.</i>"
     },
     "skillParams": {
       "0": "Spezialfähigkeits-SCH",

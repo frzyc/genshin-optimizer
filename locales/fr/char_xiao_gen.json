@@ -147,7 +147,7 @@
   "constellation4": {
     "name": "Transcendance : Extinction de la souffrance",
     "description": {
-      "0": "Xiao bénéficie d'un bonus de DÉF de 100 % quand ses PV tombent en dessous de 50 %."
+      "0": "Xiao bénéficie d'un bonus de DÉF de 100 % quand ses PV sont inférieurs à 50 %."
     }
   },
   "constellation5": {

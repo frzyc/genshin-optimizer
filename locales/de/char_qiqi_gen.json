@@ -8,7 +8,7 @@
     "fields": {
       "normal": {
         "0": "<strong>Standardangriff</strong>",
-        "1": "Führt bis zu 5 Schwerthiebe aus."
+        "1": "Führt bis zu 5 Schwerthiebe hintereinander aus."
       },
       "charged": {
         "0": "<strong>Heftiger Schlag</strong>",
@@ -44,11 +44,13 @@
       "0": "Beschwört den Frostbringer mithilfe des Frostader-Talismans und fügt den Gegnern in der Umgebung <cryo>Kryo-Schaden</cryo> zu.",
       "1": "<br/>",
       "2": "<strong>Frostbringer</strong>",
-      "3": "- Qiqi stellt bei Treffern mit Standardangriffen und heftigen Schlägen allen eigenen Truppenmitgliedern und befreundeten Einheiten in der Nähe LP basierend auf Qiqis ANG wieder her.",
-      "4": "- Stellt der aktuellen eigenen Figur in regelmäßigen Abständen LP wieder her.",
-      "5": "- Fügt den Gegnern in der Bahn gemäß den Bewegungen der Figur <cryo>Kryo-Schaden</cryo> zu.",
-      "6": "<br/>",
-      "7": "<i>„Mein Freund hier dient größtenteils der Frischhaltung ... also für die kostbaren Wirkstoffe von Dr. Baizhu.“</i>"
+      "3": [
+        " Qiqi stellt bei Treffern mit Standardangriffen und heftigen Schlägen allen eigenen Truppenmitgliedern und befreundeten Einheiten in der Nähe LP basierend auf Qiqis ANG wieder her.",
+        " Stellt der aktuellen eigenen Figur in regelmäßigen Abständen LP wieder her.",
+        " Fügt den Gegnern in der Bahn gemäß den Bewegungen der Figur <cryo>Kryo-Schaden</cryo> zu."
+      ],
+      "4": "<br/>",
+      "5": "<i>„Mein Freund hier dient größtenteils der Frischhaltung ... also für die kostbaren Wirkstoffe von Dr. Baizhu.“</i>"
     },
     "skillParams": {
       "0": "Fähigkeits-SCH",

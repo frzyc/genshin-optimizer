@@ -8,7 +8,7 @@
     "fields": {
       "normal": {
         "0": "<strong>Standardangriff</strong>",
-        "1": "Führt bis zu 5 Lanzenstiche aus."
+        "1": "Führt bis zu 5 Lanzenstiche hintereinander aus."
       },
       "charged": {
         "0": "<strong>Heftiger Schlag</strong>",
@@ -123,8 +123,10 @@
     "name": "Wahre Erleuchtung",
     "description": {
       "0": "Gewährt Shougun Raiden für jeden Prozentpunkt über 100 % Aufladerate die folgenden Effekte:",
-      "1": "- Erhöht die Elementarenergie-Wiederherstellung von <strong>Musou Isshin</strong> um 0,6 %.",
-      "2": "- Erhöht den <electro>Elektro-SCH-Bonus</electro> um 0,4 %."
+      "1": [
+        " Erhöht die Elementarenergie-Wiederherstellung von <strong>Musou Isshin</strong> um 0,6 %.",
+        " Erhöht den <electro>Elektro-SCH-Bonus</electro> um 0,4 %."
+      ]
     }
   },
   "passive3": {

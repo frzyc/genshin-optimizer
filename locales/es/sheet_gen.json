@@ -39,5 +39,20 @@
   "hold": {
     "dmg": "Daño al mantener pulsado",
     "cd": "TdE de mantener pulsado"
+  },
+  "element": {
+    "anemo": "Anemo",
+    "geo": "Geo",
+    "pyro": "Pyro",
+    "hydro": "Hydro",
+    "cryo": "Cryo",
+    "electro": "Electro"
+  },
+  "reaction": {
+    "swirl": "Torbellino",
+    "crystallize": "Cristalizado",
+    "overloaded": "Sobrecargado",
+    "electrocharged": "Electrocargado",
+    "Superconduct": "Superconductor"
   }
 }

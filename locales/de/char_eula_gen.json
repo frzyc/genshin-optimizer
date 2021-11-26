@@ -14,8 +14,8 @@
       "7": "Erhöht Eulas Unterbrechungs-WDS und VTD.",
       "8": "<br/>",
       "9": "<strong>Gedrückt halten</strong>",
-      "10": "Entfernt komplett den Effekt Kaltes Herz und schwingt dabei das Schwert nach vorn, fügt den Gegnern vor ihr <cryo>Kryo-Flächenschaden</cryo> zu.",
-      "11": "Verringert beim Enfternen des Effekts Kaltes Herz den physischen WDS sowie den <cryo>Kryo-WDS</cryo> der Gegner in der Nähe von Eula.",
+      "10": "Verbraucht den Effekt Kaltes Herz vollständig, schwingt dabei das Schwert nach vorn und fügt den Gegnern vor ihr <cryo>Kryo-Flächenschaden</cryo> zu.",
+      "11": "Verringert beim Verbrauchen des Effekts Kaltes Herz den physischen WDS sowie den <cryo>Kryo-WDS</cryo> der Gegner in der Nähe von Eula.",
       "12": "Jede verbrauchte Stapelung von Kaltes Herz wandelt sich in ein Eisstrudelschwert um, das den Gegnern in der Umgebung <cryo>Kryo-Schaden</cryo> zufügt.",
       "13": "<br/>",
       "14": "<i>„So wird die Krone der Aristokraten in den Strudel hineingerissen. In jedem eiskalten Tröpfchen ist der Widerschein der goldenen Krone zu sehen. Der stiebende Schaum glänzt.“</i>"
@@ -48,7 +48,7 @@
     "fields": {
       "normal": {
         "0": "<strong>Standardangriff</strong>",
-        "1": "Führt bis zu 5 Schwünge mit dem Schwert aus."
+        "1": "Führt bis zu 5 Schwünge mit dem Schwert hintereinander aus."
       },
       "charged": {
         "0": "<strong>Heftiger Schlag</strong>",

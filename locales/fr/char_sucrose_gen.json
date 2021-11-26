@@ -12,7 +12,7 @@
       },
       "charged": {
         "0": "<strong>Attaque chargée</strong>",
-        "1": "Après un court délai, inflige des <anemo>DGT Anémo de zone</anemo> ; cette attaque consomme de l'endurance."
+        "1": "Consomme de l'endurance pour infliger des <anemo>DGT Anémo de zone</anemo> après un court délai."
       },
       "plunging": {
         "0": "<strong>Attaque plongeante</strong>",
@@ -135,7 +135,7 @@
   "constellation4": {
     "name": "Alchémania",
     "description": {
-      "0": "Sucrose diminue le TdR d'<strong>Esprit du vent : Sujet 6308</strong> de 1 à 7 s tous les 7 coups d'attaque normale ou chargée qu'elle inflige à un ennemi.",
+      "0": "Sucrose réduit le TdR d'<strong>Esprit du vent : Sujet 6308</strong> de 1 à 7 s tous les 7 coups d'attaque normale ou chargée qu'elle inflige à un ennemi.",
       "1": "Un coup peut être compté toutes les 0,1 s."
     }
   },

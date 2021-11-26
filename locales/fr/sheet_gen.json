@@ -39,5 +39,20 @@
   "hold": {
     "dmg": "DGT appui long",
     "cd": "TdR appui long"
+  },
+  "element": {
+    "anemo": "Anémo",
+    "geo": "Géo",
+    "pyro": "Pyro",
+    "hydro": "Hydro",
+    "cryo": "Cryo",
+    "electro": "Électro"
+  },
+  "reaction": {
+    "swirl": "Dispersion",
+    "crystallize": "Cristallisation",
+    "overloaded": "Surcharge",
+    "electrocharged": "Électrocution",
+    "Superconduct": "Supraconduction"
   }
 }

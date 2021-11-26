@@ -8,7 +8,7 @@
     "fields": {
       "normal": {
         "0": "<strong>Standardangriff</strong>",
-        "1": "Führt bis zu 5 Schwerthiebe aus."
+        "1": "Führt bis zu 5 Schwerthiebe hintereinander aus."
       },
       "charged": {
         "0": "<strong>Heftiger Schlag</strong>",
@@ -77,11 +77,13 @@
       "1": "Stellt gleichzeitig allen Truppenmitgliedern eine große Menge LP basierend auf Jeans ANG wieder her.",
       "2": "<br/>",
       "3": "<strong>Löwenzahnfeld</strong>",
-      "4": "- Stellt den Figuren im Wirkungsbereich fortlaufend LP wieder her.",
-      "5": "- Macht die Figuren im Wirkungsbereich anfällig für <anemo>Anemo-Einflüsse</anemo>.",
-      "6": "- Fügt Gegnern beim Betreten und Verlassen des Wirkungsbereichs <anemo>Anemo-Schaden</anemo> zu.",
-      "7": "<br/>",
-      "8": "<i>Die Huld des Windes ist wie ein weites Löwenzahnfeld, die Quelle der Jean schützenden Kraft.</i>"
+      "4": [
+        " Stellt den Figuren im Wirkungsbereich fortlaufend LP wieder her.",
+        " Macht die Figuren im Wirkungsbereich anfällig für <anemo>Anemo-Einflüsse</anemo>.",
+        " Fügt Gegnern beim Betreten und Verlassen des Wirkungsbereichs <anemo>Anemo-Schaden</anemo> zu."
+      ],
+      "5": "<br/>",
+      "6": "<i>Die Huld des Windes ist wie ein weites Löwenzahnfeld, die Quelle der Jean schützenden Kraft.</i>"
     },
     "skillParams": {
       "0": "Spezialfähigkeits-SCH",

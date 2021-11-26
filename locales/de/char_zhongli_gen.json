@@ -8,7 +8,7 @@
     "fields": {
       "normal": {
         "0": "<strong>Standardangriff</strong>",
-        "1": "Führt bis zu 6 Lanzenstiche aus."
+        "1": "Führt bis zu 6 Lanzenstiche hintereinander aus."
       },
       "charged": {
         "0": "<strong>Heftiger Schlag</strong>",
@@ -48,22 +48,24 @@
       "4": "<br/>",
       "5": "<strong>Gedrückt halten</strong>",
       "6": "Lässt Geo-Objekte in der Nähe explodieren und verursacht folgende Effekte:",
-      "7": "- Erstellt, solange die Höchstmenge nicht erreicht ist, einen Hügelkamm.",
-      "8": "- Erstellt einen Jadeblock, der Schaden basierend auf Zhonglis max. LP abhält.",
-      "9": "- Verursacht <geo>Geo-Flächenschaden</geo>.",
-      "10": "- Verbraucht bei Anwesenheit von Zielen mit <geo>Geo</geo>-Kraft die <geo>Geo</geo>-Kraft von bis zu zwei dieser Ziele. Dieser Effekt verursacht keinen Schaden.",
-      "11": "<br/>",
-      "12": "<strong>Hügelkamm</strong>",
-      "13": "Verursacht beim Entstehen <geo>Geo-Flächenschaden</geo>.",
-      "14": "Verursacht während der Wirkungsdauer eine Schwingung in Einklang mit anderen <geo>Geo-Objekten</geo> in der Umgebung, die Gegnern in der Umgebung <geo>Geo-Schaden</geo> zufügt.",
-      "15": "Der Hügelkamm gilt als <geo>Geo-Objekt</geo>, blockiert Angriffe und kann erklommen werden.",
-      "16": "Standardmäßig kann zu einem Zeitpunkt nur ein von Zhongli selbst erstellter Hügelkamm existieren.",
-      "17": "<br/>",
-      "18": "<strong>Jadeblock-Schild</strong>",
-      "19": "Hält bei elementarem sowie physischem Schaden 150 % ab.",
-      "20": "Verringert den WDS gegen alle Elemente sowie den physischen WDS von Gegnern in der Nähe von Jadeblöcken geschützer Figuren mit geringer Reichweite um 20 %, nicht stapelbar.",
-      "21": "<br/>",
-      "22": "<i>Der Fels ist hart und schleift rohe Jade zu wertvollen Edelsteinen.</i>"
+      "7": [
+        " Erstellt, solange die Höchstmenge nicht erreicht ist, einen Hügelkamm.",
+        " Erstellt einen Jadeblock, der Schaden basierend auf Zhonglis max. LP abhält.",
+        " Verursacht <geo>Geo-Flächenschaden</geo>.",
+        " Verbraucht bei Anwesenheit von Zielen mit <geo>Geo</geo>-Kraft die <geo>Geo</geo>-Kraft von bis zu zwei dieser Ziele. Dieser Effekt verursacht keinen Schaden."
+      ],
+      "8": "<br/>",
+      "9": "<strong>Hügelkamm</strong>",
+      "10": "Verursacht beim Entstehen <geo>Geo-Flächenschaden</geo>.",
+      "11": "Verursacht während der Wirkungsdauer eine Schwingung in Einklang mit anderen <geo>Geo-Objekten</geo> in der Umgebung, die Gegnern in der Umgebung <geo>Geo-Schaden</geo> zufügt.",
+      "12": "Der Hügelkamm gilt als <geo>Geo-Objekt</geo>, blockiert Angriffe und kann erklommen werden.",
+      "13": "Standardmäßig kann zu einem Zeitpunkt nur ein von Zhongli selbst erstellter Hügelkamm existieren.",
+      "14": "<br/>",
+      "15": "<strong>Jadeblock-Schild</strong>",
+      "16": "Hält bei elementarem sowie physischem Schaden 150 % ab.",
+      "17": "Verringert den WDS gegen alle Elemente sowie den physischen WDS von Gegnern in der Nähe von Jadeblöcken geschützer Figuren mit geringer Reichweite um 20 %, nicht stapelbar.",
+      "18": "<br/>",
+      "19": "<i>Der Fels ist hart und schleift rohe Jade zu wertvollen Edelsteinen.</i>"
     },
     "skillParams": {
       "0": "Hügelkamm-SCH/Resonanz-SCH",
@@ -117,17 +119,21 @@
     "name": "Wellenartige Ausbreitung",
     "description": {
       "0": "Löst den Effekt beständige Wand aus, wenn ein Jadeblock Schaden erleidet:",
-      "1": "- Erhöht die Schildeffizienz der Figuren im Schutz eines Jadeblocks um 5 %.",
-      "2": "- 5-fach stapelbar, hält bis zum Verschwinden des Jadeblocks."
+      "1": [
+        " Erhöht die Schildeffizienz der Figuren im Schutz eines Jadeblocks um 5 %.",
+        " 5-fach stapelbar, hält bis zum Verschwinden des Jadeblocks."
+      ]
     }
   },
   "passive2": {
     "name": "Hungrige Erde",
     "description": {
       "0": "Erhöht den mit den folgenden Angriffen von Zhongli verursachten Schaden basierend auf seinen max. LP:",
-      "1": "- Erhöht den Schaden von Standardangriffen, heftigen Schlägen und Angriffen aus dem Fall um 1,39 % der max. LP.",
-      "2": "- Erhöht den Schaden des Hügelkamms von <strong>Dominus Lapidis</strong>, den des Einklangs und den beim Gedrückthalten um 1,9 % der max. LP.",
-      "3": "- Erhöht den Schaden von <strong>Einstürzender Himmel</strong> um 33 % der max. LP."
+      "1": [
+        " Erhöht den Schaden von Standardangriffen, heftigen Schlägen und Angriffen aus dem Fall um 1,39 % der max. LP.",
+        " Erhöht den Schaden des Hügelkamms von <strong>Dominus Lapidis</strong>, den des Einklangs und den beim Gedrückthalten um 1,9 % der max. LP.",
+        " Erhöht den Schaden von <strong>Einstürzender Himmel</strong> um 33 % der max. LP."
+      ]
     }
   },
   "passive3": {

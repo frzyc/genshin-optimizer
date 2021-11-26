@@ -45,16 +45,18 @@
       "1": "<br/>",
       "2": "<strong>Trugbild</strong>",
       "3": "Merkmale:",
-      "4": "- Verspottet Gegner in der Umgebung fortlaufend und zieht ihre Angriffe auf sich.",
-      "5": "- Fügt Gegnern in der Nähe fortlaufend <hydro>Hydro-Schaden</hydro> zu.",
-      "6": "- Birst nach Ablauf der Wirkungsdauer und verursacht <hydro>Hydro-Flächenschaden</hydro>.",
-      "7": "<br/>",
-      "8": "<strong>Gedrückt halten</strong>",
-      "9": "Nutzt die Kraft des fließenden Wassers, um schnell zurückzuweichen und ein Trugbild zu erschaffen.",
+      "4": [
+        " Verspottet Gegner in der Umgebung fortlaufend und zieht ihre Angriffe auf sich.",
+        " Fügt Gegnern in der Nähe fortlaufend <hydro>Hydro-Schaden</hydro> zu.",
+        " Birst nach Ablauf der Wirkungsdauer und verursacht <hydro>Hydro-Flächenschaden</hydro>."
+      ],
+      "5": "<br/>",
+      "6": "<strong>Gedrückt halten</strong>",
+      "7": "Nutzt die Kraft des fließenden Wassers, um schnell zurückzuweichen und ein Trugbild zu erschaffen.",
+      "8": "<br/>",
+      "9": "Zu einem Zeitpunkt kann nur ein Trugbild existieren, das mit Trugbilder im Wasser erschaffen wurde.",
       "10": "<br/>",
-      "11": "Zu einem Zeitpunkt kann nur ein Trugbild existieren, das mit Trugbilder im Wasser erschaffen wurde.",
-      "12": "<br/>",
-      "13": "<i>Große Gelehrte der Astrologie versuchen seit jeher, ein Trugbild von sich zu schaffen, um Übel von sich selbst abzuwenden. Mona muss wohl die erste sein, die das Schicksal tatsächlich auf diese Weise austrickst.</i>"
+      "11": "<i>Große Gelehrte der Astrologie versuchen seit jeher, ein Trugbild von sich zu schaffen, um Übel von sich selbst abzuwenden. Mona muss wohl die erste sein, die das Schicksal tatsächlich auf diese Weise austrickst.</i>"
     },
     "skillParams": {
       "0": "Fortlaufender SCH",
@@ -83,13 +85,15 @@
       "2": "<strong>Blasenschatten</strong>",
       "3": "Umschließt Gegner in sternförmigen Blasen und fügt ihnen den Zustand <hydro>Nass</hydro> zu. Hält schwächere Gegner in den Blasenschatten gefangen, sodass sie sich nicht bewegen können.",
       "4": "Effekte, wenn Gegner in Blasenschatten Schaden erleiden:",
-      "5": "- Fügt Gegnern den Zustand Omen zu, der den diesmal erlittenen Schaden erhöht.",
-      "6": "- Entfernt den Effekt der Blasenschatten und verursacht zusätzlichen <hydro>Hydro-Schaden</hydro>.",
-      "7": "<br/>",
-      "8": "<strong>Omen</strong>",
-      "9": "Erhöht den während der Wirkungsdauer erlittenen Schaden.",
-      "10": "<br/>",
-      "11": "<i>Nachdem die Götter einen Blick auf das himmlische Licht erhascht hatten, war das Schicksal als solches geboren.</i>"
+      "5": [
+        " Fügt Gegnern den Zustand Omen zu, der den diesmal erlittenen Schaden erhöht.",
+        " Entfernt den Effekt der Blasenschatten und verursacht zusätzlichen <hydro>Hydro-Schaden</hydro>."
+      ],
+      "6": "<br/>",
+      "7": "<strong>Omen</strong>",
+      "8": "Erhöht den während der Wirkungsdauer erlittenen Schaden.",
+      "9": "<br/>",
+      "10": "<i>Nachdem die Götter einen Blick auf das himmlische Licht erhascht hatten, war das Schicksal als solches geboren.</i>"
     },
     "skillParams": {
       "0": "Dauer der Blasenschatten",
@@ -145,8 +149,10 @@
     "name": "Prophezeiung des Untergangs",
     "description": {
       "0": "Verstärkt den Effekt von <hydro>Hydro-Elementarreaktionen</hydro>, wenn eine eigene Figur in der Truppe Gegner im Zustand Omen trifft, 8 s lang:",
-      "1": "- Erhöht den mit der Reaktion Unter Strom verursachten Schaden um 15 %, den mit der Reaktion Verdampfen verursachten Schaden um 15 % und den mit der Reaktion Hydro-Verwirbelung verursachten Schaden um 15 %.",
-      "2": "- Verlängert die Wirkungsdauer von Gefroren um 15 %."
+      "1": [
+        " Erhöht den mit der Reaktion Unter Strom verursachten Schaden um 15 %, den mit der Reaktion Verdampfen verursachten Schaden um 15 % und den mit der Reaktion Hydro-Verwirbelung verursachten Schaden um 15 %.",
+        " Verlängert die Wirkungsdauer von Gefroren um 15 %."
+      ]
     }
   },
   "constellation2": {

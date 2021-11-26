@@ -12,7 +12,7 @@
       },
       "charged": {
         "0": "<strong>Attaque chargée</strong>",
-        "1": "Après un court délai, inflige des <hydro>DGT Hydro de zone</hydro> ; cette attaque consomme de l'endurance."
+        "1": "Consomme de l'endurance pour infliger des <hydro>DGT Hydro de zone</hydro> après un court délai."
       },
       "plunging": {
         "0": "<strong>Attaque plongeante</strong>",

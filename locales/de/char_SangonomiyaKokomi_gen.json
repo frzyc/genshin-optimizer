@@ -74,13 +74,15 @@
       "0": "Stellt die Macht der Watatsumi zur Schau und fügt Gegnern in der Umgebung <hydro>Hydro-Schaden</hydro> zu. Hüllt Kokomi daraufhin in ein „Rituelles Federkleid“ aus dem fließenden Wasser von Sangonomiya.",
       "1": "<br/>",
       "2": "<strong>Rituelles Federkleid</strong>",
-      "3": "- Erhöht den mit Sangonomiya Kokomis Standardangriffen, heftigen Schlägen und dem „Bakekurage“ ihrer Elementarfähigkeit verursachten Schaden basierend auf ihren max. LP.",
-      "4": "- Stellt allen Truppenmitgliedern in der Nähe beim Treffen von Gegnern mit Standardangriffen und heftigen Schlägen LP basierend auf Sangonomiya Kokomis max. LP wieder her.",
-      "5": "- Erhöht Sangonomiya Kokomis Unterbrechungs-WDS und ermöglicht es ihr, sich auf Wasseroberflächen zu bewegen.",
+      "3": [
+        " Erhöht den mit Sangonomiya Kokomis Standardangriffen, heftigen Schlägen und dem „Bakekurage“ ihrer Elementarfähigkeit verursachten Schaden basierend auf ihren max. LP.",
+        " Stellt allen Truppenmitgliedern in der Nähe beim Treffen von Gegnern mit Standardangriffen und heftigen Schlägen LP basierend auf Sangonomiya Kokomis max. LP wieder her.",
+        " Erhöht Sangonomiya Kokomis Unterbrechungs-WDS und ermöglicht es ihr, sich auf Wasseroberflächen zu bewegen."
+      ],
+      "4": "<br/>",
+      "5": "Effekt erlischt, wenn Sangonomiya Kokomi ausgewechselt wird.",
       "6": "<br/>",
-      "7": "Effekt endet, wenn Sangonomiya Kokomi ausgewechselt wird.",
-      "8": "<br/>",
-      "9": "<i>Ein Federkleid hellen Lichts legt sich auf den Körper Ihrer Exzellenz, Sangonomiya Kokomi, und reflektiert ihre glänzende Gestalt.</i>"
+      "7": "<i>Ein Federkleid hellen Lichts legt sich auf den Körper Ihrer Exzellenz, Sangonomiya Kokomi, und reflektiert ihre glänzende Gestalt.</i>"
     },
     "skillParams": {
       "0": "Fähigkeits-SCH",
@@ -137,8 +139,10 @@
     "name": "Wellen des Wolkenmeers",
     "description": {
       "0": "Gewährt Sangonomiya Kokomi Heilungsboni in Bezug auf Figuren mit 50 % oder weiniger LP basierend auf ihren max. LP auf folgende Art und Weise:",
-      "1": "- Durch „Bakekurage“ von <strong>Eid des Kurage</strong>: 4,5 % der max. LP",
-      "2": "- Durch Standardangriffe und heftige Schläge von <strong>Nereidenaufstieg</strong>: 0,6 % der max. LP."
+      "1": [
+        " Durch „Bakekurage“ von <strong>Eid des Kurage</strong>: 4,5 % der max. LP",
+        " Durch Standardangriffe und heftige Schläge von <strong>Nereidenaufstieg</strong>: 0,6 % der max. LP."
+      ]
     }
   },
   "constellation3": {

@@ -1,6 +1,6 @@
 {
   "name": "チ虎魚の刀",
-  "description": "魚を捌く鉄刀、刀身は狭く、非常に鋭い。",
+  "description": "魚を捌く鉄刀。刀身は細く、非常に鋭い。",
   "passiveName": "切り捨て",
   "passiveDescription": {
     "0": "攻撃が命中すると、50%の確率で1体の敵に攻撃力の<cryo>240%</cryo>のダメージを与える。<cryo>15</cryo>秒毎に1回のみ発動可能。",

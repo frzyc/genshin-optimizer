@@ -8,14 +8,16 @@
     "fields": {
       "normal": {
         "0": "<strong>Standardangriff</strong>",
-        "1": "Führt bis zu 6 Pfeilschüsse aus."
+        "1": "Führt bis zu 6 Pfeilschüsse hintereinander aus."
       },
       "charged": {
         "0": "<strong>Heftiger Schlag</strong>",
         "1": "Führt einen <strong>gezielten Schuss</strong> mit höherem Schaden und höherer Genauigkeit aus.",
         "2": "Konzentriert die Kälte während des Zielens an der Pfeilspitze und verursacht je nach Länge des Aufladens unterschiedliche Effekte:",
-        "3": "- Phase 1: Schießt einen Pfeil mit dem Zustand Kalt und verursacht <cryo>Kryo-Schaden</cryo>.",
-        "4": "- Phase 2: Schießt einen Frostblütenpfeil und verursacht <cryo>Kryo-Schaden</cryo>. Erblüht nach einem Treffer und verursacht erneut <cryo>Kryo-Flächenschaden</cryo>."
+        "3": [
+          " Phase 1: Schießt einen Pfeil mit dem Zustand Kalt und verursacht <cryo>Kryo-Schaden</cryo>.",
+          " Phase 2: Schießt einen Frostblütenpfeil und verursacht <cryo>Kryo-Schaden</cryo>. Erblüht nach einem Treffer und verursacht erneut <cryo>Kryo-Flächenschaden</cryo>."
+        ]
       },
       "plunging": {
         "0": "<strong>Angriff aus dem Fall</strong>",
@@ -47,11 +49,13 @@
       "0": "Ganyu hinterlässt einen Eislotos und geht in Deckung, um den bösen Geistern und Dämonen <cryo>Kryo-Flächenschaden</cryo> zuzufügen.",
       "1": "<br/>",
       "2": "<strong>Eislotos</strong>",
-      "3": "- Verspottet Gegner in der Umgebung fortlaufend und zieht ihre Angriffe auf sich.",
-      "4": "- Beständigkeit hängt von Ganyus max. LP ab.",
-      "5": "- Erblüht bei Zerstörung oder Ablauf der Dauer und verursacht <cryo>Kryo-Flächenschaden</cryo>.",
-      "6": "<br/>",
-      "7": "<i>„Du willst mich gesehen haben? Das musst du dir eingebildet haben. Ich war zu der Zeit noch auf Arbeit.“</i>"
+      "3": [
+        " Verspottet Gegner in der Umgebung fortlaufend und zieht ihre Angriffe auf sich.",
+        " Beständigkeit hängt von Ganyus max. LP ab.",
+        " Erblüht bei Zerstörung oder Ablauf der Dauer und verursacht <cryo>Kryo-Flächenschaden</cryo>."
+      ],
+      "4": "<br/>",
+      "5": "<i>„Du willst mich gesehen haben? Das musst du dir eingebildet haben. Ich war zu der Zeit noch auf Arbeit.“</i>"
     },
     "skillParams": {
       "0": "Erhaltene LP",

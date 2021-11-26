@@ -40,7 +40,7 @@
     "fields": {
       "normal": {
         "0": "<strong>Standardangriff</strong>",
-        "1": "Führt bis zu 5 Schwerthiebe aus."
+        "1": "Führt bis zu 5 Schwerthiebe hintereinander aus."
       },
       "charged": {
         "0": "<strong>Heftiger Schlag</strong>",
@@ -141,10 +141,12 @@
     "name": "Yamaarashi-Rückenwind",
     "description": {
       "0": "Das wirbelnde Herbstfeld von <strong>Kazuha-Schlag</strong> hat den folgenden Effekt:",
-      "1": "- Erhöht während der Wirkungsdauer die Elementarkunde von Kaedehara Kazuha um 200 Punkte.",
-      "2": "- Erhöht die Elementarkunde aktueller Figuren um 200 Punkte.",
-      "3": "<br/>",
-      "4": "Die Elementarkunde-Bonuseffekte dieses Sternbilds können nicht gestapelt werden."
+      "1": [
+        " Erhöht während der Wirkungsdauer die Elementarkunde von Kaedehara Kazuha um 200 Punkte.",
+        " Erhöht die Elementarkunde aktueller Figuren um 200 Punkte."
+      ],
+      "2": "<br/>",
+      "3": "Die Elementarkunde-Bonuseffekte dieses Sternbilds können nicht gestapelt werden."
     }
   },
   "constellation3": {
@@ -158,8 +160,10 @@
     "name": "Oozora Genpou",
     "description": {
       "0": "Löst für Kaedehara Kazuha bei weniger als 45 Punkten Elementarenergie folgende Effekte aus:",
-      "1": "- Drücke oder halte <strong>Chihayaburu</strong> gedrückt, um Kaedehara Kazuha 3 bzw. 4 Punkte Elementarenergie wiederherzustellen.",
-      "2": "- Stellt Kaedehara Kazuha beim Gleiten 2 Punkte Elementarenergie pro s wieder her."
+      "1": [
+        " Drücke oder halte <strong>Chihayaburu</strong> gedrückt, um Kaedehara Kazuha 3 bzw. 4 Punkte Elementarenergie wiederherzustellen.",
+        " Stellt Kaedehara Kazuha beim Gleiten 2 Punkte Elementarenergie pro s wieder her."
+      ]
     }
   },
   "constellation5": {

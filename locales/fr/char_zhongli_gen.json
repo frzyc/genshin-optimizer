@@ -12,7 +12,7 @@
       },
       "charged": {
         "0": "<strong>Attaque chargée</strong>",
-        "1": "Charge vers l'avant, faisant pleuvoir des lances de roche sur sa route."
+        "1": "Consomme de l'endurance pour charger vers l'avant, faisant pleuvoir des lances de roche sur la route."
       },
       "plunging": {
         "0": "<strong>Attaque plongeante</strong>",

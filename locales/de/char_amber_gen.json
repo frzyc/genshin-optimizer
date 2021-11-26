@@ -8,7 +8,7 @@
     "fields": {
       "normal": {
         "0": "<strong>Standardangriff</strong>",
-        "1": "Führt bis zu 5 Pfeilschüsse aus."
+        "1": "Führt bis zu 5 Pfeilschüsse hintereinander aus."
       },
       "charged": {
         "0": "<strong>Heftiger Schlag</strong>",
@@ -45,15 +45,17 @@
       "0": "Ruft den zuverlässigen Grafen von Hoppel aufs Feld.",
       "1": "<br/>",
       "2": "<strong>Graf von Hoppel</strong>",
-      "3": "- Verspottet Gegner in der Umgebung fortlaufend und zieht ihre Angriffe auf sich.",
-      "4": "- Beständigkeit hängt von Ambers max. LP ab.",
-      "5": "- Explodiert bei Zerstörung oder Ablauf der Dauer und verursacht <pyro>Pyro-Flächenschaden</pyro>.",
-      "6": "<br/>",
-      "7": "<strong>Gedrückt halten</strong>",
-      "8": "Anpassung der Wurfrichtung.",
-      "9": "Wurfweite erhöht sich mit der Dauer des Gedrückthaltens.",
-      "10": "<br/>",
-      "11": "<i>Graf von Hoppel ist der Abkömmling eines alten Adelsgeschlechts. Nach dem Tod des Grafen von Hoppel DCCCXCIII. hat Amber aber aufgehört zu zählen.</i>"
+      "3": [
+        " Verspottet Gegner in der Umgebung fortlaufend und zieht ihre Angriffe auf sich.",
+        " Beständigkeit hängt von Ambers max. LP ab.",
+        " Explodiert bei Zerstörung oder Ablauf der Dauer und verursacht <pyro>Pyro-Flächenschaden</pyro>."
+      ],
+      "4": "<br/>",
+      "5": "<strong>Gedrückt halten</strong>",
+      "6": "Anpassung der Wurfrichtung.",
+      "7": "Wurfweite erhöht sich mit der Dauer des Gedrückthaltens.",
+      "8": "<br/>",
+      "9": "<i>Graf von Hoppel ist der Abkömmling eines alten Adelsgeschlechts. Nach dem Tod des Grafen von Hoppel DCCCXCIII. hat Amber aber aufgehört zu zählen.</i>"
     },
     "skillParams": {
       "0": "Erhaltene LP",

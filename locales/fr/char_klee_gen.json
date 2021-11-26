@@ -1,7 +1,7 @@
 {
   "name": "Klee",
   "title": "Soleil fuyant",
-  "description": "Une invitée régulière des cellules de l'Ordre de Favonius, et également la maîtresse des explosions à Mondstadt, où on la surnomme « le soleil fuyant ».",
+  "description": "Une invitée régulière des cellules de l'Ordre de Favonius, et également la maîtresse des explosions à Mondstadt, où on la surnomme « le soleil fuyant{NON_BREAK_SPACE}».",
   "constellationName": "Trifolium",
   "auto": {
     "name": "Boum ! Boum !",
@@ -12,7 +12,7 @@
       },
       "charged": {
         "0": "<strong>Attaque chargée</strong>",
-        "1": "Après un court délai, bombarde les ennemis et leur inflige des <pyro>DGT Pyro de zone</pyro> ; cette attaque consomme de l'endurance."
+        "1": "Consomme de l'endurance pour bombarder les ennemis après un court délai et leur infliger des <pyro>DGT Pyro de zone</pyro>."
       },
       "plunging": {
         "0": "<strong>Attaque plongeante</strong>",

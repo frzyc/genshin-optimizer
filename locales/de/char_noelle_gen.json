@@ -5,12 +5,14 @@
     "description": {
       "0": "Erschafft einen Geo-Panzer, der Gegnern in der Umgebung <geo>Geo-Schaden</geo>zufügt, sowie einen Schutzschild, der Schaden basierend auf Noelles VTD abhält.",
       "1": "Effekte des Schutzschilds:",
-      "2": "- Noelle stellt allen Truppenmitgliedern bei Treffern mit Standardangriffen und heftigen Schlägen mit gewisser Wahrscheinlichkeit LP wieder her.",
-      "3": "- Hält bei elementarem sowie physischem Schaden 150 % ab.",
-      "4": "<br/>",
-      "5": "Heilkraft basiert auf Noelles VTD.",
-      "6": "<br/>",
-      "7": "<i>Noelle ist eine hingebungsvolle Magd, aber auch ein zielstrebiger Ritter.</i>"
+      "2": [
+        " Noelle stellt allen Truppenmitgliedern bei Treffern mit Standardangriffen und heftigen Schlägen mit gewisser Wahrscheinlichkeit LP wieder her.",
+        " Hält bei elementarem sowie physischem Schaden 150 % ab."
+      ],
+      "3": "<br/>",
+      "4": "Heilkraft basiert auf Noelles VTD.",
+      "5": "<br/>",
+      "6": "<i>Noelle ist eine hingebungsvolle Magd, aber auch ein zielstrebiger Ritter.</i>"
     },
     "skillParams": {
       "0": "Fähigkeits-SCH",
@@ -37,11 +39,13 @@
     "description": {
       "0": "Konzentriert die Kraft der Felsen auf ihrer Waffe, greift Gegner in der Umgebung mit hoher Reichweite an und verursacht <geo>Geo-Schaden</geo>.",
       "1": "Löst danach folgende Effekte aus:",
-      "2": "- Erhöht Noelles Angriffsreichweite.",
-      "3": "- Wandelt den verursachten Schaden in <geo>Geo-Schaden</geo> um. Diese Elementarumwandlung kann nicht von anderen Elementen überdeckt werden.",
-      "4": "- Erhöht Noelles ANG basierend auf Noelles VTD.",
-      "5": "<br/>",
-      "6": "<i>Was gesäubert werden muss, ist nicht immer nur einfacher Dreck ...</i>"
+      "2": [
+        " Erhöht Noelles Angriffsreichweite.",
+        " Wandelt den verursachten Schaden in <geo>Geo-Schaden</geo> um. Diese Elementarumwandlung kann nicht von anderen Elementen überdeckt werden.",
+        " Erhöht Noelles ANG basierend auf Noelles VTD."
+      ],
+      "3": "<br/>",
+      "4": "<i>Was gesäubert werden muss, ist nicht immer nur einfacher Dreck ...</i>"
     },
     "skillParams": {
       "0": "Spezialfähigkeits-SCH",
@@ -71,7 +75,7 @@
     "fields": {
       "normal": {
         "0": "<strong>Standardangriff</strong>",
-        "1": "Führt bis zu 4 Schwünge mit dem Schwert aus."
+        "1": "Führt bis zu 4 Schwünge mit dem Schwert hintereinander aus."
       },
       "charged": {
         "0": "<strong>Heftiger Schlag</strong>",

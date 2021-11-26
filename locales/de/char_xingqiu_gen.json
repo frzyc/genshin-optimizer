@@ -8,7 +8,7 @@
     "fields": {
       "normal": {
         "0": "<strong>Standardangriff</strong>",
-        "1": "Führt bis zu 5 Schwerthiebe aus."
+        "1": "Führt bis zu 5 Schwerthiebe hintereinander aus."
       },
       "charged": {
         "0": "<strong>Heftiger Schlag</strong>",
@@ -43,15 +43,17 @@
     "description": {
       "0": "Greift zweimal mit dem Schwert an und fügt gegenüberstehenden Gegnern <hydro>Hydro-Schaden</hydro> zu. Erstellt die Höchstzahl an Regenschwertern, die die aktuelle eigene Figur umkreisen.",
       "1": "Merkmale:",
-      "2": "- Wird bei Erleiden von Schaden zerstört und verringert den erlittenen Schaden.",
-      "3": "- Erhöht den Unterbrechungs-WDS der Figur.",
-      "4": "20 % von Xingqius <hydro>Hydro-SCH-Bonus</hydro> werden zusätzlich zu Schadensminderung der Regenschwerter umgewandelt.",
-      "5": "<br/>",
-      "6": "Bis zu 24 % zusätzliche Schadensminderung auf diese Weise möglich.",
-      "7": "Anfänglich bis zu 3 Regenschwerter möglich.",
-      "8": "Verleiht der Figur bei Anwendung den Zustand <hydro>Nass</hydro> .",
-      "9": "<br/>",
-      "10": "<i>„Drachen sind einfacher zu zerteilen als der Regen.“</i>"
+      "2": [
+        " Wird bei Erleiden von Schaden zerstört und verringert den erlittenen Schaden.",
+        " Erhöht den Unterbrechungs-WDS der Figur."
+      ],
+      "3": "20 % von Xingqius <hydro>Hydro-SCH-Bonus</hydro> werden zusätzlich zu Schadensminderung der Regenschwerter umgewandelt.",
+      "4": "<br/>",
+      "5": "Bis zu 24 % zusätzliche Schadensminderung auf diese Weise möglich.",
+      "6": "Anfänglich bis zu 3 Regenschwerter möglich.",
+      "7": "Verleiht der Figur bei Anwendung den Zustand <hydro>Nass</hydro> .",
+      "8": "<br/>",
+      "9": "<i>„Drachen sind einfacher zu zerteilen als der Regen.“</i>"
     },
     "skillParams": {
       "0": "Fähigkeits-SCH",
@@ -78,10 +80,12 @@
       "0": "Wendet „Regenbogentechnik“ an, um mit Illusionsschwertern zu kämpfen, und erstellt die Höchstzahl an Regenschwertern.",
       "1": "<br/>",
       "2": "<strong>Regenbogentechnik</strong>",
-      "3": "- Standardangriffe der aktuellen eigenen Figur lösen aufeinanderfolgende Schwertregenangriffe aus, die <hydro>Hydro-Schaden</hydro> verursachen.",
-      "4": "- Die Anzahl der Regenschwerter bleibt unverändert auf der höchsten Anzahl.",
-      "5": "<br/>",
-      "6": "<i>Die Regenschnittkunst ist eine geheime Technik der Guhua-Schule, die nicht an normale Schüler weitergegeben wird.</i>"
+      "3": [
+        " Standardangriffe der aktuellen eigenen Figur lösen aufeinanderfolgende Schwertregenangriffe aus, die <hydro>Hydro-Schaden</hydro> verursachen.",
+        " Die Anzahl der Regenschwerter bleibt unverändert auf der höchsten Anzahl."
+      ],
+      "4": "<br/>",
+      "5": "<i>Die Regenschnittkunst ist eine geheime Technik der Guhua-Schule, die nicht an normale Schüler weitergegeben wird.</i>"
     },
     "skillParams": {
       "0": "Schwertregen-SCH",

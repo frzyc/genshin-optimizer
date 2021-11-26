@@ -8,7 +8,7 @@
     "fields": {
       "normal": {
         "0": "<strong>Standardangriff</strong>",
-        "1": "Führt bis zu 5 Pfeilschüsse aus."
+        "1": "Führt bis zu 5 Pfeilschüsse hintereinander aus."
       },
       "charged": {
         "0": "<strong>Heftiger Schlag</strong>",
@@ -75,12 +75,14 @@
     "description": {
       "0": "Beschwört Oz, der seine tiefschwarzen Flügel ausbreitet, um Fischl zu beschützen.",
       "1": "Effekte während der Wirkungsdauer:",
-      "2": "- Bewegt sich in Form von Oz mit hoher Geschwindigkeit.",
-      "3": "- Trifft Gegner in der Nähe mit einem Blitz und verursacht <electro>Elektro-Schaden</electro>. Jeder Gegner kann nur einmal Schaden von einem Blitz erleiden.",
-      "4": "- Oz verbleibt nach dem Ende der Wirkungsdauer und greift die Gegner der Prinzessin an. Setzt die Aufenthaltsdauer von Oz zurück, wenn er schon auf dem Feld ist.",
-      "5": "<br/>",
-      "6": "<i>Unter den Horden der Bestien, die dem verfluchten Blut der Verurteilung folgten, befand sich nur einer, der ihre wahre Größe tatsächlich verstehen konnte, nämlich der Nachtrabenprinz, der Zeuge der Vernichtung tausender Welten war. So breitete er seine dunklen Flügel aus und schlang sie um die Prinzessin. Er schwor, sie auf ewig zu beschützen.</i>",
-      "7": "<i>- „Die Nacht der Prinzessin Fischl – Band 1: Zersetzung am Ende der Zeit“</i>"
+      "2": [
+        " Bewegt sich in Form von Oz mit hoher Geschwindigkeit.",
+        " Trifft Gegner in der Nähe mit einem Blitz und verursacht <electro>Elektro-Schaden</electro>. Jeder Gegner kann nur einmal Schaden von einem Blitz erleiden.",
+        " Oz verbleibt nach dem Ende der Wirkungsdauer und greift die Gegner der Prinzessin an. Setzt die Aufenthaltsdauer von Oz zurück, wenn er schon auf dem Feld ist."
+      ],
+      "3": "<br/>",
+      "4": "<i>Unter den Horden der Bestien, die dem verfluchten Blut der Verurteilung folgten, befand sich nur einer, der ihre wahre Größe tatsächlich verstehen konnte, nämlich der Nachtrabenprinz, der Zeuge der Vernichtung tausender Welten war. So breitete er seine dunklen Flügel aus und schlang sie um die Prinzessin. Er schwor, sie auf ewig zu beschützen.</i>",
+      "5": "<i>- „Die Nacht der Prinzessin Fischl – Band 1: Zersetzung am Ende der Zeit“</i>"
     },
     "skillParams": {
       "0": "Blitz-SCH",

@@ -1,8 +1,8 @@
 {
   "name": "Albedo",
   "title": "Kreideprinz",
-  "description": "Génie connu sous le surnom de « Kreideprinz », Albedo est l'alchimiste en chef et le capitaine des enquêteurs de l'Ordre de Favonius.",
-  "constellationName": "Princeps Cretaceous",
+  "description": "Génie connu sous le surnom de «{NON_BREAK_SPACE}Kreideprinz », Albedo est l'alchimiste en chef et le capitaine des enquêteurs de l'Ordre de Favonius.",
+  "constellationName": "Princeps Cretaceus",
   "auto": {
     "name": "Escrime de Favonius - Blanche",
     "fields": {
@@ -78,7 +78,7 @@
   "burst": {
     "name": "Transformation : Reflux Géo",
     "description": {
-      "0": "L'énergie Géo contenue dans le sol explose en émergeant sous les ordres d'Albedo, infligeant devant lui des <geo>DGT Géo de zone</geo>.",
+      "0": "L'énergie Géo contenue dans le sol explose en émergeant sous les ordres d'Albedo, infligeant des <geo>DGT Géo de zone</geo> devant lui.",
       "1": "Lorsqu'une Aura solaire générée par Albedo est présente sur le champ de bataille, 7 Germes fatals sont générés, qui fleurissent en explosant, infligeant des <geo>DGT Géo de zone</geo>.",
       "2": "<br/>",
       "3": "Les DGT d'explosion et les DGT des Germes fatals ne génèrent pas de Germes éphémères.",
@@ -125,7 +125,7 @@
   "constellation1": {
     "name": "Fleur d'Éden",
     "description": {
-      "0": "Albedo récupère 1,2 pts d'énergie élémentaire lorsqu'un Germe éphémère généré par <strong>Genèse : Aura solaire</strong> éclôt."
+      "0": "Albedo récupère 1,2 pts d'énergie élémentaire lorsqu'un Germe éphémère généré par <strong>Genèse : Aura solaire</strong> éclot."
     }
   },
   "constellation2": {
@@ -162,7 +162,7 @@
   "constellation6": {
     "name": "Pureté de la terre",
     "description": {
-      "0": "Les personnages déployés se trouvant dans la zone de l'Aura solaire infligent 17 % de DGT supplémentaires lorsqu'ils sont sous la protection d'un bouclier généré par Cristallisation."
+      "0": "Les personnages déployés se trouvant dans la zone de l'Aura solaire infligent 17 % de DGT supplémentaires lorsqu'ils sont sous la protection d'un bouclier généré par une Cristallisation."
     }
   }
 }

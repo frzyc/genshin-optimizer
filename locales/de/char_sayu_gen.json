@@ -8,7 +8,7 @@
     "fields": {
       "normal": {
         "0": "<strong>Standardangriff</strong>",
-        "1": "Führt bis zu 4 Schwünge mit dem Schwert aus."
+        "1": "Führt bis zu 4 Schwünge mit dem Schwert hintereinander aus."
       },
       "charged": {
         "0": "<strong>Heftiger Schlag</strong>",
@@ -88,10 +88,12 @@
       "2": "<br/>",
       "3": "<strong>Mujimuji-Daruma</strong>",
       "4": "Führt in bestimmten Zeitabständen je nach Situation in der Nähe verschiedenen Handlungen aus:",
-      "5": "- Greift bei Anwesenheit von Figuren ausschließlich mit mehr als 70 % LP einen Gegner in der Nähe an und verursacht <anemo>Anemo-Schaden</anemo>.",
-      "6": "- Stellt bei Anwesenheit von Figuren auf dem Feld mit bis zu 70 % LP der Figur mit den prozentual wenigsten LP ihre LP basierend auf Sayus ANG wieder her. Stellt einer Figur in der Nähe auch bei mehr als 70 % LP ihre LP wieder her, wenn in der Nähe kein Gegner ist.",
-      "7": "<br/>",
-      "8": "<i>Leute, die keine Ahnung von Ninja-Künsten haben, sehen Sayu häufig gern zu, wie sie diese demonstriert. Der ein oder andere will sich auch eine Technik abschauen. Am liebsten würde Sayu aber einfach nur schlafen und nicht gestört werden.</i>"
+      "5": [
+        " Greift bei Anwesenheit von Figuren ausschließlich mit mehr als 70 % LP einen Gegner in der Nähe an und verursacht <anemo>Anemo-Schaden</anemo>.",
+        " Stellt bei Anwesenheit von Figuren auf dem Feld mit bis zu 70 % LP der Figur mit den prozentual wenigsten LP ihre LP basierend auf Sayus ANG wieder her. Stellt einer Figur in der Nähe auch bei mehr als 70 % LP ihre LP wieder her, wenn in der Nähe kein Gegner ist."
+      ],
+      "6": "<br/>",
+      "7": "<i>Leute, die keine Ahnung von Ninja-Künsten haben, sehen Sayu häufig gern zu, wie sie diese demonstriert. Der ein oder andere will sich auch eine Technik abschauen. Am liebsten würde Sayu aber einfach nur schlafen und nicht gestört werden.</i>"
     },
     "skillParams": {
       "0": "SCH bei Anwendung der Fähigkeit",
@@ -123,8 +125,10 @@
     "name": "Feierabend",
     "description": {
       "0": "Verleiht dem Mujimuji-Daruma von <strong>Juhu-Stil – Mujina-Wirrsal</strong> folgende Effekte:",
-      "1": "- Stellt den anderen Figuren in der Nähe der von Mujimuji-Daruma geheilten Figuren während der Heilung LP in Höhe von 20 % der eigentlichen Heilung wieder her.",
-      "2": "- Erhöht beim Angreifen von Gegnern durch Mujimuji-Daruma den Wirkungsbereich, indem Schaden verursacht wird."
+      "1": [
+        " Stellt den anderen Figuren in der Nähe der von Mujimuji-Daruma geheilten Figuren während der Heilung LP in Höhe von 20 % der eigentlichen Heilung wieder her.",
+        " Erhöht beim Angreifen von Gegnern durch Mujimuji-Daruma den Wirkungsbereich, indem Schaden verursacht wird."
+      ]
     }
   },
   "passive3": {
@@ -144,8 +148,10 @@
     "name": "Fluchtweg",
     "description": {
       "0": "Gewährt <strong>Juhu-Stil – Fuuin-Stoß</strong> folgende Effekte:",
-      "1": "- Erhöht den mit dem Fuufuu-Windradtritt beim Drücken verursachten Schaden um 3,3 %.",
-      "2": "- Erhöht den mit dem Fuufuu-Windradtritt im Fuufuu-Windradmodus beim Gedrückthalten verursachten Schaden für dieses Mal alle 0,5 s um 3,3 %. Erhöhung des mit dem Fuufuu-Windraftritt verursachten Schadens um bis zu 66 % auf diese Weise möglich."
+      "1": [
+        " Erhöht den mit dem Fuufuu-Windradtritt beim Drücken verursachten Schaden um 3,3 %.",
+        " Erhöht den mit dem Fuufuu-Windradtritt im Fuufuu-Windradmodus beim Gedrückthalten verursachten Schaden für dieses Mal alle 0,5 s um 3,3 %. Erhöhung des mit dem Fuufuu-Windraftritt verursachten Schadens um bis zu 66 % auf diese Weise möglich."
+      ]
     }
   },
   "constellation3": {
@@ -173,8 +179,10 @@
     "name": "Schlafenszeit",
     "description": {
       "0": "Erhöht den ANG und die Heilung des von Sayu selbst mit <strong>Juhu-Stil – Mujina-Wirrsal</strong> beschworenen Mujimuji-Daruma basierend auf Sayus Elementarkunde. Löst für jeden einzelnen Punkt Elementarkunde folgende Boni aus:",
-      "1": "- Erhöht den mit Angriffen von Mujimuji-Daruma verursachten Schaden zusätzlich um 0,2 % ANG. Zusätzlicher Schaden in Höhe von bis zu 400 % ANG auf diese Weise möglich.",
-      "2": "- Erhöht die Heilung von Mujimuji-Daruma um 3 LP. Zusätzliche Heilung von bis zu 6.000 LP auf diese Weise möglich."
+      "1": [
+        " Erhöht den mit Angriffen von Mujimuji-Daruma verursachten Schaden zusätzlich um 0,2 % ANG. Zusätzlicher Schaden in Höhe von bis zu 400 % ANG auf diese Weise möglich.",
+        " Erhöht die Heilung von Mujimuji-Daruma um 3 LP. Zusätzliche Heilung von bis zu 6.000 LP auf diese Weise möglich."
+      ]
     }
   }
 }

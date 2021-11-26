@@ -8,14 +8,16 @@
     "fields": {
       "normal": {
         "0": "<strong>Standardangriff</strong>",
-        "1": "Führt bis zu 5 Pfeilschüsse aus."
+        "1": "Führt bis zu 5 Pfeilschüsse hintereinander aus."
       },
       "charged": {
         "0": "<strong>Heftiger Schlag</strong>",
         "1": "Führt einen <strong>gezielten Schuss</strong> mit höherem Schaden und höherer Genauigkeit aus.",
         "2": "Konzentriert die Flammen während des Zielens an der Pfeilspitze und verursacht je nach Länge des Aufladens unterschiedliche Effekte:",
-        "3": "- Phase 1: Schießt einen brennenden Pfeil ab und verursacht <pyro>Pyro-Schaden</pyro>.",
-        "4": "- Phase 2: Erschafft je nach Länge des Aufladens bis zu 3 Brandpfeile, die zusammen mit diesem gezielten Schuss abgefeuert werden. Brandpfeile suchen automatisch nach Gegnern in der Nähe und verursachen bei Treffern <pyro>Pyro-Schaden</pyro>."
+        "3": [
+          " Phase 1: Schießt einen brennenden Pfeil ab und verursacht <pyro>Pyro-Schaden</pyro>.",
+          " Phase 2: Erschafft je nach Länge des Aufladens bis zu 3 Brandpfeile, die zusammen mit diesem gezielten Schuss abgefeuert werden. Brandpfeile suchen automatisch nach Gegnern in der Nähe und verursachen bei Treffern <pyro>Pyro-Schaden</pyro>."
+        ]
       },
       "plunging": {
         "0": "<strong>Angriff aus dem Fall</strong>",
@@ -49,7 +51,7 @@
       "2": "<strong>Niwabi Enshou</strong>",
       "3": "Entzündet die während der Wirkungsdauer von Yoimiya mit ihrem Standardangriff abgeschossenen Pfeile, wandelt den damit verursachten Schaden in <pyro>Pyro-Schaden</pyro> um und erhöht den mit Standardangriffen verursachten Schaden. Verhindert, dass während der Wirkungsdauer bei Phase 2 von „Standardangriff: Aufbrausendes Feuerwerk“ Brandpfeile erschaffen werden.",
       "4": "<br/>",
-      "5": "Effekt endet, wenn Yoimiya ausgewechselt wird.",
+      "5": "Effekt erlischt, wenn Yoimiya ausgewechselt wird.",
       "6": "<br/>",
       "7": "<i>„Teika“ ist eine Form von Weihrauchfeuerwerk, das Yoimiya selbst entwickelt hat. Der Fakt, dass es ohne Übung oder Vorbereitung gezündet werden kann, hat es hochgradig beliebt gemacht. Nach vielen Bränden ordnete die Tenryou-Verwaltung an, die Verwendung von Teika zu verbieten. Nachts sind aber noch häufig kleine, helle Funken zu sehen, die von oben betrachtet fast wie kleine, funkelnde Sterne aussehen.</i>"
     },

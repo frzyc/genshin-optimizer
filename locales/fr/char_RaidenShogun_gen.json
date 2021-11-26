@@ -103,7 +103,7 @@
       "6": "DGT 4e coup",
       "7": "DGT 5e coup",
       "8": "Attaque chargée",
-      "9": "Coût d'endurance d'ATQ chargée",
+      "9": "Coût d'endurance attaque chargée",
       "10": "DGT durant la chute",
       "11": "DGT Chute basse/élevée",
       "12": "Restauration énergie d'Harmonie d'idéal",
@@ -132,7 +132,7 @@
   "passive3": {
     "name": "Préservation suprême",
     "description": {
-      "0": "Les moras utilisés lors de l'élévation d'épées à une main et d'armes d'hast sont réduits de 50 %."
+      "0": "Les moras utilisés lors de l'élévation d'épées à une main et d'armes d'hast sont réduits de 50{NON_BREAK_SPACE}%."
     }
   },
   "constellation1": {

@@ -8,7 +8,7 @@
     "fields": {
       "normal": {
         "0": "<strong>Standardangriff</strong>",
-        "1": "Führt bis zu 5 Schwerthiebe aus."
+        "1": "Führt bis zu 5 Schwerthiebe hintereinander aus."
       },
       "charged": {
         "0": "<strong>Heftiger Schlag</strong>",
@@ -50,10 +50,12 @@
       "6": "<br/>",
       "7": "<strong>Donnerkeil</strong>",
       "8": "Entfernt bei erneuter Anwendung von Rückkehr der Sterne oder heftigen Schlägen während der Wirkungsdauer von Donnerkeilen die Donnerkeilmarkierung und verursacht unterschiedliche Effekte:",
-      "9": "- Keqing bewegt sich bei erneuter Anwendung von Rückkehr der Sterne sofort zur Markierung, schlägt zu und verursacht <electro>Elektro-Flächenschaden</electro>. Überwindet dabei jegliche Hindernisse auf dem Weg.",
-      "10": "- Schlägt bei Anwendung von heftigen Schlägen mit einer Reihe von Elektro-Hieben auf die markierte Stelle und verursacht mehrfachen <electro>Elektro-Flächenschaden</electro>.",
-      "11": "<br/>",
-      "12": "<i>„Menschen sind wie Motten, die nach dem Licht suchen, das die Götter und Adepten ausstrahlen. Doch dieses Licht hier stammt ganz von mir.“</i>"
+      "9": [
+        " Keqing bewegt sich bei erneuter Anwendung von Rückkehr der Sterne sofort zur Markierung, schlägt zu und verursacht <electro>Elektro-Flächenschaden</electro>. Überwindet dabei jegliche Hindernisse auf dem Weg.",
+        " Schlägt bei Anwendung von heftigen Schlägen mit einer Reihe von Elektro-Hieben auf die markierte Stelle und verursacht mehrfachen <electro>Elektro-Flächenschaden</electro>."
+      ],
+      "10": "<br/>",
+      "11": "<i>„Menschen sind wie Motten, die nach dem Licht suchen, das die Götter und Adepten ausstrahlen. Doch dieses Licht hier stammt ganz von mir.“</i>"
     },
     "skillParams": {
       "0": "Donnerkeil-SCH",

@@ -8,7 +8,7 @@
     "fields": {
       "normal": {
         "0": "<strong>Standardangriff</strong>",
-        "1": "Führt bis zu 4 Lanzenstiche aus."
+        "1": "Führt bis zu 4 Lanzenstiche hintereinander aus."
       },
       "charged": {
         "0": "<strong>Heftiger Schlag</strong>",
@@ -75,7 +75,7 @@
   "burst": {
     "name": "Rote Ooyoroi",
     "description": {
-      "0": "Thoma wirbelt seinen Speer herum und durchschneidet die Gegner in der Umgebung mit prasselndem Feuer, womit er ihnen <pyro>Pyro-Flächenschaden</pyro> zufügt. Umhüllt sich dann in eine brennende Ooyoroi.",
+      "0": "Thoma wirbelt seinen Speer herum und durchschneidet die Gegner in der Umgebung mit prasselndem Feuer, womit er ihnen <pyro>Pyro-Flächenschaden</pyro> zufügt. Umhüllt sich dann mit einer brennenden Ooyoroi.",
       "1": "<br/>",
       "2": "<strong>Brennende Ooyoroi</strong>",
       "3": "Löst bei Angriffen aktueller Figuren unter dem Einfluss des Effekts „brennende Ooyoroi“ mit Standardangriffen „Brennender Zusammenbruch“ aus, verursacht damit <pyro>Pyro-Flächenschaden</pyro> und erschafft einen Schild des lodernden Segens.",
@@ -128,7 +128,7 @@
   "passive3": {
     "name": "Brassenjagd",
     "description": {
-      "0": "Bringt beim erfolgreichen <strong>Angeln</strong> in Inazuma mit einer Wahrscheinlichkeit von 20 % den 2-fachen Ertrag."
+      "0": "Bringt mit Thomas Hilfe beim erfolgreichen <strong>Angeln</strong> in Inazuma mit einer Wahrscheinlichkeit von 20 % den 2-fachen Ertrag."
     }
   },
   "constellation1": {

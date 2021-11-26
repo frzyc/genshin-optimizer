@@ -1,0 +1,30 @@
+{
+  "ProtectiveCanopy": {
+    "name": "Lianes protectrices",
+    "desc": "Augmente toutes les RÉS élémentaires et la RÉS physique de 15 %."
+  },
+  "FerventFlames": {
+    "name": "Flammes de la ferveur",
+    "desc": "Réduit la durée des effets Cryo de 40 % et augmente l'ATQ de 25 %."
+  },
+  "SoothingWater": {
+    "name": "Eau salvatrice",
+    "desc": "Réduit la durée des effets Pyro de 40 % et augmente les soins reçus de 30 %."
+  },
+  "ShatteringIce": {
+    "name": "Gel Pulvérisateur",
+    "desc": "Réduit la durée des effets Électro de 40 %. Augmente le taux CRIT de 15 % lorsque vous attaquez des ennemis gelés ou affectés par l'élément Cryo."
+  },
+  "HighVoltage": {
+    "name": "Tonnerre puissant",
+    "desc": "Réduit la durée des effets Hydro vous affectant de 40 %. 100 % de chances de récupérer 1 particule élémentaire lorsque Supraconduction, Surcharge et Électrocution sont déclenchées. TdR : 5 s."
+  },
+  "ImpetuousWinds": {
+    "name": "Vents de la célérité",
+    "desc": "Réduit la consommation d'endurance de 15 %, augmente la VIT de déplacement de 10 % et réduit le TdR des compétences élémentaires de 5 %."
+  },
+  "EnduringRock": {
+    "name": "Roc inamovible",
+    "desc": "Augmente la force du bouclier de 15 %. De plus, lorsqu'un personnage est sous la protection du bouclier, les effets suivants s'appliquent : les DGT infligés par le personnage augmentent de 15 % ; la RÉS Géo de l'ennemi diminue de 20 % pendant 15 s lorsqu'il subit des DGT de la part du personnage."
+  }
+}

@@ -46,8 +46,8 @@
       "1": "<br/>",
       "2": "<strong>Baron Bunny</strong>",
       "3": [
-        "Terus mengejek musuh untuk mengalihkan serangan mereka;",
-        "HP Baron Bunny meningkat seiring dengan Max HP Amber;",
+        "Terus mengejek musuh untuk mengalihkan serangan mereka.",
+        "HP Baron Bunny mewarisi Max HP Amber berdasarkan persentase tertentu.",
         "Saat meledak atau saat durasi skill habis, Baron Bunny meledak dan mengakibatkan <pyro>Pyro DMG area</pyro>."
       ],
       "4": "<br/>",

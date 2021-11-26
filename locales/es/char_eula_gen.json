@@ -82,9 +82,9 @@
   "burst": {
     "name": "Fulgor glacial",
     "description": {
-      "0": "Blande ferozmente su gran espada para infligir <cryo>Daño Cryo</cryo> a los enemigos alrededor y crear una espada luminosa que sigue a Eula durante un máximo de 7 s.",
+      "0": "Blande ferozmente su gran espada para infligir <cryo>Daño Cryo</cryo> a los enemigos cercanos y crear una espada luminosa que sigue a Eula durante un máximo de 7 s.",
       "1": "Mientras dure, la espada luminosa aumentará la RES a interrupción de Eula e irá acumulando energía cuando inflija daño a los enemigos con sus propios Ataques Normales, su Habilidad Elemental o su Habilidad Definitiva. Solo se puede acumular una carga de energía cada 0.1 s.",
-      "2": "Al terminar su duración, la espada descenderá y estallará violentamente, infligiendo Daño Físico a los enemigos alrededor.",
+      "2": "Al terminar su duración, la espada descenderá y estallará violentamente, infligiendo Daño Físico a los enemigos cercanos.",
       "3": "Este daño aumentará en función de las cargas de energía acumuladas en la espada.",
       "4": "Cuando Eula se retire del combate, la espada luminosa estallará inmediatamente.",
       "5": "<br/>",

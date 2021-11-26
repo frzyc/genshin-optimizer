@@ -8,14 +8,14 @@
       "1": "<br/>",
       "2": "<strong>Pressionar</strong>",
       "3": "Faz um golpe rápido que causa <cryo>Dano Cryo</cryo>.",
-      "4": "Quando acerta nos inimigos, Eula ganha 1 Coração Impassível que se acumula no máximo 2 vezes e só pode ser ativado 1 vez a cada 0.3s.",
+      "4": "Quando acerta nos inimigos, Eula ganha 1 Coração Impassível que se acumula no máximo 2 vezes e só pode ser acumulado 1 vez a cada 0.3s.",
       "5": "<br/>",
       "6": "<strong>Coração Impassível</strong>",
       "7": "Aumenta a Resistência contra Interrupção e DEF de Eula.",
       "8": "<br/>",
       "9": "<strong>Manter Pressionado</strong>",
-      "10": "Balança a espada para fazer um golpe para a frente, causando <cryo>Dano Cryo na AdE</cryo> aos inimigos em frente, e eliminando o efeito de Coração Impassível de Eula.",
-      "11": "Caso o efeito do Coração Impassível seja consumido, irá diminuir a RES Física  e <cryo>RES Cryo</cryo> dos inimigos acertados. Cada Coração Impassível se converterá em uma Espada do Vórtice de Gelo, causando <cryo>Dano Cryo</cryo> nos inimigos ao redor.",
+      "10": "Balança a espada para causar um golpe para a frente, causando <cryo>Dano Cryo em uma AdE</cryo> aos inimigos em frente, e consumindo todos os acúmulos de Coração Impassível de Eula.",
+      "11": "Caso o efeito do Coração Impassível seja consumido, irá diminuir a RES Física e <cryo>RES Cryo</cryo> dos inimigos acertados. Cada Coração Impassível se converterá em uma Espada do Vórtice de Gelo, causando <cryo>Dano Cryo</cryo> nos inimigos ao redor.",
       "12": "<br/>",
       "13": "<i>\"As ondas enrolam dessa forma e engolem as coroas nobres. Depois, cada gota de espuma que cai voando das ondas congelantes reflete uma coroa dourada, cada gota de espuma do mar brilha gloriosamente.\"</i>"
     },
@@ -81,11 +81,11 @@
   "burst": {
     "name": "Espada das Ondas Congeladas",
     "description": {
-      "0": "Eula brande seu Espadão, causando <cryo>Dano Cryo</cryo> e criando uma Espada Luminosa qu a segue por uma duração de até 7s.",
+      "0": "Eula brande seu Espadão, causando <cryo>Dano Cryo</cryo> a oponentes próximos e criando uma Espada Luminosa que a segue por uma duração de até 7s.",
       "1": "Enquanto estiver presente, a Espada Luminosa aumenta a Resistência Contra Interrupção de Eula. Quando os Ataques Normais, Habilidades Elementais e Supremos de Eula causam Dano aos inimigos, eles carregarão a Espada Luminosa, que pode ganhar uma carga de energia a cada 0.1s.",
-      "2": "Quando sua duração encerrar, a Espada Luminosa explodirá, causando Dano Físico para inimigos próximos.",
+      "2": "Quando sua duração encerrar, a Espada Luminosa cairá e explodirá, causando Dano Físico a inimigos próximos.",
       "3": "Esse Dano escala baseado no número de cargas de energia que a Espada Luminosa acumulou.",
-      "4": "Se Eula sair do campo, a Espada Luminosa explodirá imediatamente.",
+      "4": "Se Eula sair de campo, a Espada Luminosa explodirá imediatamente.",
       "5": "<br/>",
       "6": "<i>É fácil afundar. Mas ainda assim, ela deseja congelar essa maré que está vindo.</i>"
     },
@@ -117,7 +117,7 @@
   "passive2": {
     "name": "Desejo de Lutar",
     "description": {
-      "0": "Quando a <strong>Espada das Ondas Congeladas</strong> é lançada, a Recarga do <strong>Vórtice Gelado</strong> é redefinida e Eula ganha 1 stack de Coração Impassível."
+      "0": "Quando a <strong>Espada das Ondas Congeladas</strong> é lançada, a Recarga do <strong>Vórtice Gelado</strong> é redefinida e Eula ganha 1 acúmulo de Coração Impassível."
     }
   },
   "passive3": {

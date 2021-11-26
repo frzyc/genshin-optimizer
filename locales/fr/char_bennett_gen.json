@@ -84,7 +84,7 @@
       "2": "<strong>Champ vertueux</strong>",
       "3": [
         " Les personnages se trouvant dans le champ et ayant moins de 70 % de PV sont soignés d'une quantité de PV proportionnelle aux PV max de Bennett.",
-        " Les personnages se trouvant dans le champ et ayant plus de 70 % de PV obtiennent un bonus d'ATQ proportionnel à l'ATQ de base de Bennett.",
+        " Les personnages se trouvant dans le champ et dont les PV sont supérieurs à 70 % obtiennent un bonus d'ATQ proportionnel à l'ATQ de base de Bennett.",
         " Le champ vertueux applique l'<pyro>élément Pyro</pyro> à tous les personnages qui s'y trouvent."
       ],
       "4": "<br/>",
@@ -140,7 +140,7 @@
   "constellation2": {
     "name": "Brise-désespoir",
     "description": {
-      "0": "La recharge d'énergie de Bennett augmente de 30 % lorsque ses PV tombent en dessous de 70 %."
+      "0": "La recharge d'énergie de Bennett augmente de 30 % lorsque ses PV sont inférieurs à 70 %."
     }
   },
   "constellation3": {

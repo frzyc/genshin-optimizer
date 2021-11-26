@@ -39,5 +39,20 @@
   "hold": {
     "dmg": "長押しダメージ",
     "cd": "長押しクールタイム"
+  },
+  "element": {
+    "anemo": "風",
+    "geo": "岩元素",
+    "pyro": "炎",
+    "hydro": "水元素",
+    "cryo": "氷",
+    "electro": "雷"
+  },
+  "reaction": {
+    "swirl": "拡散",
+    "crystallize": "結晶",
+    "overloaded": "過負荷",
+    "electrocharged": "感電",
+    "Superconduct": "超電導"
   }
 }

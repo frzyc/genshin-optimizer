@@ -50,7 +50,7 @@
         " Le héraut suit le personnage déployé et inflige des <cryo>DGT Cryo</cryo> aux ennemis sur sa route."
       ],
       "4": "<br/>",
-      "5": "<i>« Je l'utilise pour empêcher le réchauffement et la pourriture... des précieux ingrédients de M. Baishu, bien sûr. »</i>"
+      "5": "<i>« Je l'utilise pour empêcher le réchauffement et la pourriture... des précieux ingrédients de M. Baizhu, bien sûr. »</i>"
     },
     "skillParams": {
       "0": "DGT compétence",
@@ -104,7 +104,7 @@
   "passive1": {
     "name": "Survie en milieu hostile",
     "description": {
-      "0": "Lorsqu'un personnage sous l'effet d'<strong>Arcane d'Adepte : Héraut de givre</strong> déclenche une réaction élémentaire, il gagne un bonus de soins de 20 % pendant 8 s."
+      "0": "Lorsqu'un personnage sous l'effet d'<strong>Arcane d'Adepte : Héraut de givre</strong> déclenche une réaction élémentaire, il gagne un bonus de soins reçus de 20 % pendant 8 s."
     }
   },
   "passive2": {

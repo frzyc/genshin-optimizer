@@ -10,10 +10,12 @@
         "2": "<br/>",
         "3": "<strong>Amulette des Überflusses</strong>",
         "4": "Nähert sich eine Figur den Amuletten des Überflusses, werden folgende Effekte ausgelöst:",
-        "5": "- Stellt Elementarenergie wieder her.",
-        "6": "- Erhöht die Aufladerate während der Wirkungsdauer.",
-        "7": "<br/>",
-        "8": "<i>Du hast mit Paimon darüber gesprochen, wie sich Elektrizität ausbreitet.</i>"
+        "5": [
+          " Stellt Elementarenergie wieder her.",
+          " Erhöht die Aufladerate während der Wirkungsdauer."
+        ],
+        "6": "<br/>",
+        "7": "<i>Du hast mit Paimon darüber gesprochen, wie sich Elektrizität ausbreitet.</i>"
       },
       "skillParams": {
         "0": "Fähigkeits-SCH",
@@ -71,7 +73,7 @@
       "fields": {
         "normal": {
           "0": "<strong>Standardangriff</strong>",
-          "1": "Führt bis zu 5 Schwerthiebe aus."
+          "1": "Führt bis zu 5 Schwerthiebe hintereinander aus."
         },
         "charged": {
           "0": "<strong>Heftiger Schlag</strong>",
@@ -155,14 +157,14 @@
   "name": "Reisende",
   "title": "",
   "description": "Eine Reisende weit entfernt von der Heimat auf der Suche nach den Sieben, um ihren Bruder wiederzufinden.",
-  "constellationName": "Viator",
+  "constellationName": "Viatrix",
   "anemo": {
     "auto": {
       "name": "Eiserner Wind aus der Fremde",
       "fields": {
         "normal": {
           "0": "<strong>Standardangriff</strong>",
-          "1": "Führt bis zu 5 Schwerthiebe aus."
+          "1": "Führt bis zu 5 Schwerthiebe hintereinander aus."
         },
         "charged": {
           "0": "<strong>Heftiger Schlag</strong>",
@@ -315,7 +317,7 @@
       "fields": {
         "normal": {
           "0": "<strong>Standardangriff</strong>",
-          "1": "Führt bis zu 5 Schwerthiebe aus."
+          "1": "Führt bis zu 5 Schwerthiebe hintereinander aus."
         },
         "charged": {
           "0": "<strong>Heftiger Schlag</strong>",

@@ -18,7 +18,7 @@
       "11": "Jika Eula mengonsumsi lapisan Grimheart, musuh di sekitar akan mengalami penurunan Physical RES dan <cryo>Cryo RES</cryo>.",
       "12": "Setiap lapis Grimheart akan berubah menjadi Icewhirl Brand yang mengakibatkan <cryo>Cryo DMG</cryo> pada musuh di sekitar.",
       "13": "<br/>",
-      "14": "<i>\"Ombak-ombak pun bergulung, menelan mahkota para bangsawan. Setelah itu, setiap tetesan di antara gulungan ombak es akan memantulkan mahkota emas, dan setiap tetesan busa ombak akan memancarkan cahayanya.</i>"
+      "14": "<i>\"Ombak-ombak pun bergulung, menelan mahkota para bangsawan. Setelah itu, setiap tetesan di antara gulungan ombak es akan memantulkan mahkota emas, dan setiap tetesan busa ombak akan memancarkan cahayanya.\"</i>"
     },
     "skillParams": {
       "0": "DMG Tekan",
@@ -41,19 +41,19 @@
   },
   "name": "Eula",
   "title": "Dance of the Shimmering Wave",
-  "description": "Sang Spindrift Knight, keturunan keluarga bangsawan dan Kapten dari Pasukan Gerilya Knights of Favonius. Alasan kenapa seorang keturunan bangsawan kuno ingin bergabung dengan para Knight masih menjadi misteri bagi Mondstadt sampai saat ini.",
+  "description": "Sang Spindrift Knight, keturunan keluarga bangsawan dan Kapten dari Pasukan Gerilya Knights of Favonius. Alasan kenapa seorang keturunan bangsawan kuno ingin bergabung dengan para Knight masih menjadi misteri di Mondstadt sampai saat ini.",
   "constellationName": "Aphros Delos",
   "auto": {
     "name": "Favonius Bladework - Edel",
     "fields": {
       "normal": {
         "0": "<strong>Normal Attack</strong>",
-        "1": "Melancarkan hingga 5 serangan berturut-turut."
+        "1": "Melancarkan hingga 5 tebasan berturut-turut."
       },
       "charged": {
         "0": "<strong>Charged Attack</strong>",
-        "1": "Terus menguras Stamina untuk melancarkan tebasan berkelanjutan.",
-        "2": "Diakhiri dengan sebuah tebasan yang kuat."
+        "1": "Terus menguras Stamina untuk melancarkan tebasan berkelanjutan secara cepat.",
+        "2": "Charged Attack akan diakhiri dengan sebuah tebasan yang lebih kuat."
       },
       "plunging": {
         "0": "<strong>Plunging Attack</strong>",
@@ -85,9 +85,10 @@
       "0": "Eula mengayunkan pedang besarnya dan mengakibatkan <cryo>Cryo DMG</cryo> terhadap musuh di sekitar, serta menciptakan Lightfall Sword yang mengikutinya selama hingga 7 detik.",
       "1": "Selama aktif, Lightfall Sword akan meningkatkan ketahanan Eula terhadap interupsi. Saat Normal Attack, Elemental Skill, dan Elemental Burst Eula mengakibatkan DMG terhadap musuh, energi Lightfall Sword akan terisi. 1 lapisan energi hanya dapat terisi setiap 0,1 detik.",
       "2": "Setelah durasinya berakhir, Lightfall Sword akan meledak hebat dan mengakibatkan Physical DMG terhadap musuh di sekitarnya.",
-      "3": "DMG ini akan meningkat sesuai dengan jumlah lapisan energi yang berhasil dikumpulkan Lightfall Sword. Lightfall Sword akan langsung meledak saat Eula meninggalkan medan pertempuran.",
-      "4": "<br/>",
-      "5": "<i>Mudah sekali bagi seseorang untuk tenggelam dalam arus ombak. Meski begitu, Eula lebih tertantang untuk membekukan arus yang datang.</i>"
+      "3": "DMG ini akan meningkat sesuai dengan jumlah lapisan energi yang berhasil dikumpulkan Lightfall Sword.",
+      "4": "Lightfall Sword akan langsung meledak saat Eula meninggalkan medan pertempuran.",
+      "5": "<br/>",
+      "6": "<i>Mudah sekali bagi seseorang untuk tenggelam dalam arus ombak. Meski begitu, Eula lebih tertantang untuk membekukan arus yang datang.</i>"
     },
     "skillParams": {
       "0": "DMG Skill",
@@ -123,7 +124,7 @@
   "passive3": {
     "name": "Aristocratic Introspection",
     "description": {
-      "0": "Saat Eula membuat Material Talenta Karakter, memiliki 10% kemungkinan untuk mendapatkan hasil 2 kali lipat."
+      "0": "Saat membuat Material Talenta Karakter, Eula memiliki 10% kemungkinan untuk mendapatkan hasil 2 kali lipat."
     }
   },
   "constellation1": {
@@ -162,7 +163,7 @@
   "constellation6": {
     "name": "Noble Obligation",
     "description": {
-      "0": "Lightfall Sword yang tercipta dari <strong>Glacial Illumination</strong> langsung memiliki 5 lapis energi. Normal Attack, Elemental Skill, dan Elemental Burst mempunyai 50% kemungkinan untuk memberikan lapisan energi tambahan pada Lightfall Sword."
+      "0": "Lightfall Sword yang tercipta dari <strong>Glacial Illumination</strong> langsung memperoleh 5 lapis energi. Saat DMG yang diakibatkan Normal Attack, Elemental Skill, dan Elemental Burst mengakumulasi lapisan energi, Lightfall Sword memiliki 50% kemungkinan untuk memperoleh 1 lapis energi tambahan."
     }
   }
 }

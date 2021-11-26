@@ -39,5 +39,20 @@
   "hold": {
     "dmg": "차지 피해",
     "cd": "차지 재사용 대기시간"
+  },
+  "element": {
+    "anemo": "바람",
+    "geo": "바위 원소",
+    "pyro": "불",
+    "hydro": "물 원소",
+    "cryo": "얼음",
+    "electro": "번개"
+  },
+  "reaction": {
+    "swirl": "확산",
+    "crystallize": "결정",
+    "overloaded": "과부하",
+    "electrocharged": "감전",
+    "Superconduct": "초전도"
   }
 }

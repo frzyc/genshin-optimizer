@@ -128,8 +128,10 @@
     "name": "Elektrisierter Raum",
     "description": {
       "0": "Effekte beim Gedrückthalten von <strong>Lila Lichtbogen</strong>:",
-      "1": "- Erhöht die VTD um 25 %.",
-      "2": "- Erhöht Lisas Unterbrechungs-WDS."
+      "1": [
+        " Erhöht die VTD um 25 %.",
+        " Erhöht Lisas Unterbrechungs-WDS."
+      ]
     }
   },
   "constellation3": {

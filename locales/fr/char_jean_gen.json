@@ -12,7 +12,7 @@
       },
       "charged": {
         "0": "<strong>Attaque chargée</strong>",
-        "1": "Libère une puissante attaque ascendante portée par les vents ; cette attaque consomme de l'endurance.",
+        "1": "Consomme de l'endurance pour libérer une puissante attaque ascendante portée par les vents.",
         "2": "Les ennemis projetés en l'air retombent lentement au sol."
       },
       "plunging": {
@@ -53,7 +53,7 @@
     },
     "skillParams": {
       "0": "DGT compétence",
-      "1": "Endurance",
+      "1": "Coût d'endurance",
       "2": "Durée max",
       "3": "Temps de recharge",
       "4": "",

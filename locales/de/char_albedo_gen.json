@@ -8,7 +8,7 @@
     "fields": {
       "normal": {
         "0": "<strong>Standardangriff</strong>",
-        "1": "Führt bis zu 5 Schwerthiebe aus."
+        "1": "Führt bis zu 5 Schwerthiebe hintereinander aus."
       },
       "charged": {
         "0": "<strong>Heftiger Schlag</strong>",
@@ -45,15 +45,17 @@
       "1": "<br/>",
       "2": "<strong>Sonnennachbildung</strong>",
       "3": "Merkmale:",
-      "4": "- Erschafft eine Blüte der Vergänglichkeit, wenn Gegner im Wirkungsbereich der Sonnennachbildung Schaden erleiden, die beim Erblühen <geo>Geo-Flächenschaden</geo> verursacht. Der Schaden basiert auf Albedos VTD.",
-      "5": "- 2 s Abklingzeit für Blüte der Vergänglichkeit.",
-      "6": "- Konzentriert die Geo-Kraft, wenn sich die Figur auf der Sonnennachbildung befindet, und erstellt eine Kristallplattform, die die Figur in die Höhe hebt. Zu einem Zeitpunkt kann es nur eine Kristallplattform geben.",
-      "7": "- Zu einem Zeitpunkt kann nur eine von Albedo selbst erschaffene Sonnennachbildung existieren. Sie gilt als <geo>Geo-Objekt</geo>.",
+      "4": [
+        " Erschafft eine Blüte der Vergänglichkeit, wenn Gegner im Wirkungsbereich der Sonnennachbildung Schaden erleiden, die beim Erblühen <geo>Geo-Flächenschaden</geo> verursacht. Der Schaden basiert auf Albedos VTD.",
+        " 2 s Abklingzeit für Blüte der Vergänglichkeit.",
+        " Konzentriert die Geo-Kraft, wenn sich die Figur auf der Sonnennachbildung befindet, und erstellt eine Kristallplattform, die die Figur in die Höhe hebt. Zu einem Zeitpunkt kann es nur eine Kristallplattform geben.",
+        " Zu einem Zeitpunkt kann nur eine von Albedo selbst erschaffene Sonnennachbildung existieren. Sie gilt als <geo>Geo-Objekt</geo>."
+      ],
+      "5": "<br/>",
+      "6": "<strong>Gedrückt halten</strong>",
+      "7": "Wirkungsbereich der Fähigkeit kann angepasst werden.",
       "8": "<br/>",
-      "9": "<strong>Gedrückt halten</strong>",
-      "10": "Wirkungsbereich der Fähigkeit kann angepasst werden.",
-      "11": "<br/>",
-      "12": "<i>Diese steinerne Blume hat ganz besondere Eigenschaften, die dem Zweck der Alchimie entsprechen. Sie entsteht in der Erde und strebt dennoch nach oben, um schließlich im Himmel zu einer Sonne zu werden.</i>"
+      "9": "<i>Diese steinerne Blume hat ganz besondere Eigenschaften, die dem Zweck der Alchimie entsprechen. Sie entsteht in der Erde und strebt dennoch nach oben, um schließlich im Himmel zu einer Sonne zu werden.</i>"
     },
     "skillParams": {
       "0": "Fähigkeits-SCH",
@@ -131,9 +133,11 @@
     "name": "Zeit des Lebens",
     "description": {
       "0": "Verleiht Albedo beim Erblühen der Blüte der Vergänglichkeit von <strong>Chemische Evolution – Sonnennachbildung</strong> 30 s lang den Effekt Tödliche Abrechnung:",
-      "1": "- Beendet den Effekt von Tödliche Abrechnung bei Anwendung von <strong>Fortpflanzung – Tektonische Welle</strong> und erhöht den Explosionsschaden von Fortpflanzung – Tektonische Welle sowie den von Blüten der Sterblichkeit gemäß den Stapelungen des beendeten Effekts.",
-      "2": "- Erhöht den Schaden in Höhe von 30 % von Albedos VTD pro Stapelung von Tödliche Abrechnung.",
-      "3": "- 4-fach stapelbar."
+      "1": [
+        " Beendet den Effekt von Tödliche Abrechnung bei Anwendung von <strong>Fortpflanzung – Tektonische Welle</strong> und erhöht den Explosionsschaden von Fortpflanzung – Tektonische Welle sowie den von Blüten der Sterblichkeit gemäß den Stapelungen des beendeten Effekts.",
+        " Erhöht den Schaden in Höhe von 30 % von Albedos VTD pro Stapelung von Tödliche Abrechnung.",
+        " 4-fach stapelbar."
+      ]
     }
   },
   "constellation3": {

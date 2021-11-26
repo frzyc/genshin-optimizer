@@ -39,5 +39,20 @@
   "hold": {
     "dmg": "Dano ao Manter Pressionado",
     "cd": "Recarga ao Manter Pressionado"
+  },
+  "element": {
+    "anemo": "Anemo",
+    "geo": "Geo",
+    "pyro": "Pyro",
+    "hydro": "Hydro",
+    "cryo": "Cryo",
+    "electro": "Electro"
+  },
+  "reaction": {
+    "swirl": "Redemoinho",
+    "crystallize": "Cristal",
+    "overloaded": "Sobrecarregado",
+    "electrocharged": "Carregado Eletricamente",
+    "Superconduct": "Supercondutor"
   }
 }

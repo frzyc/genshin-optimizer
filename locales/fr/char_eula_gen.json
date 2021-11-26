@@ -42,7 +42,7 @@
   "name": "Eula",
   "title": "Vague déferlante",
   "description": "Le « Chevalier aux Embruns », né de l'ancien Clan Lawrence, capitaine de l'unité de reconnaissance des chevaliers de l'Ordre de Favonius de Mondstadt. Que cette descendante de la noblesse d'antan ait rejoint les chevaliers de l'Ordre, l'ennemi jusqu'alors juré de la famille, demeure un mystère aux yeux de beaucoup.",
-  "constellationName": "Aspergine Maris",
+  "constellationName": "Aphros Delos",
   "auto": {
     "name": "Escrime de Favonius - Aristocratie",
     "fields": {
@@ -137,7 +137,7 @@
   "constellation2": {
     "name": "Fille d'écume de mer",
     "description": {
-      "0": "Diminue le TdR de l'appui long de <strong>Vortex des mers glacées</strong> pour correspondre à celui de l'appui simple."
+      "0": "Réduit le TdR de l'appui long de <strong>Vortex des mers glacées</strong> pour correspondre à celui de l'appui simple."
     }
   },
   "constellation3": {
@@ -150,7 +150,7 @@
   "constellation4": {
     "name": "Émergence de la plèbe",
     "description": {
-      "0": "Augmente de 25 % les DGT infligés par l'épée de lumière aux ennemis ayant moins de 50 % de PV."
+      "0": "Augmente de 25 % les DGT infligés par l'épée de lumière aux ennemis dont les PV sont inférieurs à 50 %."
     }
   },
   "constellation5": {

@@ -46,12 +46,14 @@
       "0": "Errichtet einen stabilen Jadeschirm aus Gold, Obsidian und dem Willen eines Kämpfers, der <geo>Geo-Flächenschaden</geo> verursacht.",
       "1": "<br/>",
       "2": "<strong>Jadeschirm</strong>",
-      "3": "- Hält gegnerische Geschosse ab.",
-      "4": "- Beständigkeit hängt von Ninguangs max. LP ab.",
-      "5": "<br/>",
-      "6": "Der Jadeschirm gilt als <geo>Geo-Objekt</geo>, hält einen Teil Angriffe ab und kann nicht erklommen werden. Zu einem Zeitpunkt kann nur ein Jadeschirm existieren.",
-      "7": "<br/>",
-      "8": "<i>Leuchtend wie die Sterne am Himmel, zusammengesetzt aus wertvoller Jade.</i>"
+      "3": [
+        " Hält gegnerische Geschosse ab.",
+        " Beständigkeit hängt von Ninguangs max. LP ab."
+      ],
+      "4": "<br/>",
+      "5": "Der Jadeschirm gilt als <geo>Geo-Objekt</geo>, hält einen Teil Angriffe ab und kann nicht erklommen werden. Zu einem Zeitpunkt kann nur ein Jadeschirm existieren.",
+      "6": "<br/>",
+      "7": "<i>Leuchtend wie die Sterne am Himmel, zusammengesetzt aus wertvoller Jade.</i>"
     },
     "skillParams": {
       "0": "Erhaltene LP",

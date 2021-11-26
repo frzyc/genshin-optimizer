@@ -8,7 +8,7 @@
     "fields": {
       "normal": {
         "0": "<strong>Standardangriff</strong>",
-        "1": "Führt bis zu 6 Lanzenstiche aus."
+        "1": "Führt bis zu 6 Lanzenstiche hintereinander aus."
       },
       "charged": {
         "0": "<strong>Heftiger Schlag</strong>",
@@ -73,14 +73,16 @@
       "0": "Setzt die Yaksha-Maske auf, die Götter und Monster schon vor Jahrtausenden gleichermaßen in Angst und Schrecken versetzt hat.",
       "1": "<br/>",
       "2": "<strong>Yaksha-Maske</strong>",
-      "3": "- Erhöht Xiaos Sprungkraft enorm.",
-      "4": "- Vergrößert den Angriffsradius und erhöht den verursachten Schaden.",
-      "5": "- Wandelt den verursachten Schaden in <anemo>Anemo-Schaden</anemo> um. Diese Elementarumwandlung kann nicht von anderen Elementen überdeckt werden.",
-      "6": "<br/>",
-      "7": "Xiao verbraucht in diesem Zustand fortlaufend LP.",
-      "8": "Effekt endet, wenn Xiao ausgewechselt wird.",
-      "9": "<br/>",
-      "10": "<i>Xiao setzt die Maske eines Dämons auf und nimmt die Gestalt des „Schützenden Yaksha“ an, der das Böse erstarren lässt und Geistwesen vertreibt. Er erhält damit große Kraft, aber auch große Schmerzen.</i>"
+      "3": [
+        " Erhöht Xiaos Sprungkraft enorm.",
+        " Vergrößert den Angriffsradius und erhöht den verursachten Schaden.",
+        " Wandelt den verursachten Schaden in <anemo>Anemo-Schaden</anemo> um. Diese Elementarumwandlung kann nicht von anderen Elementen überdeckt werden."
+      ],
+      "4": "<br/>",
+      "5": "Xiao verbraucht in diesem Zustand fortlaufend LP.",
+      "6": "Effekt erlischt, wenn Xiao ausgewechselt wird.",
+      "7": "<br/>",
+      "8": "<i>Xiao setzt die Maske eines Dämons auf und nimmt die Gestalt des „Schützenden Yaksha“ an, der das Böse erstarren lässt und Geistwesen vertreibt. Er erhält damit große Kraft, aber auch große Schmerzen.</i>"
     },
     "skillParams": {
       "0": "Bonus für Standardangriffe, heftige Schläge und Angriffe aus dem Fall",

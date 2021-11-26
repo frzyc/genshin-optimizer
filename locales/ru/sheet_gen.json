@@ -39,5 +39,20 @@
   "hold": {
     "dmg": "Урон долгого нажатия",
     "cd": "Откат долгого нажатия"
+  },
+  "element": {
+    "anemo": "Анемо",
+    "geo": "Гео",
+    "pyro": "Пиро",
+    "hydro": "Гидро",
+    "cryo": "Крио",
+    "electro": "Электро"
+  },
+  "reaction": {
+    "swirl": "Рассеивание",
+    "crystallize": "Кристалл",
+    "overloaded": "Перегрузка",
+    "electrocharged": "Заряжен",
+    "Superconduct": "Сверхпроводник"
   }
 }

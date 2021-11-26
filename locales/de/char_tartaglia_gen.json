@@ -8,7 +8,7 @@
     "fields": {
       "normal": {
         "0": "<strong>Standardangriff</strong>",
-        "1": "Führt bis zu 6 Pfeilschüsse aus."
+        "1": "Führt bis zu 6 Pfeilschüsse hintereinander aus."
       },
       "charged": {
         "0": "<strong>Heftiger Schlag</strong>",
@@ -18,8 +18,10 @@
       "riptide": {
         "0": "<strong>Versiegen</strong>",
         "1": "Fügt betroffenen Gegnern <hydro>Hydro-Flächenschaden</hydro> bei allen Arten von Angriffen von Tartaglia zu. Der durch diese Effekte verursachte Schaden gilt als Standardangriffsschaden.",
-        "2": "- Versiegen – Blitz: Verursacht beim Treffen von Versiegen betroffener Gegnern mit voll aufgeladenen gezielten Schüssen fortlaufenden Flächenschaden. 0,7 s Abklingzeit für Versiegen – Blitz.",
-        "3": "- Versiegen – Schwall: Verursacht beim Angreifen von Versiegen betroffener Gegner einen Wasserschwall und fügt Gegnern in der Nähe den Effekt Versiegen zu."
+        "2": [
+          " Versiegen – Blitz: Verursacht beim Treffen von Versiegen betroffener Gegner mit voll aufgeladenen gezielten Schüssen fortlaufenden Flächenschaden. 0,7 s Abklingzeit für Versiegen – Blitz.",
+          " Versiegen – Schwall: Verursacht beim Besiegen von Versiegen betroffener Gegner einen Wasserschwall und fügt Gegnern in der Nähe den Effekt Versiegen zu."
+        ]
       },
       "plunging": {
         "0": "<strong>Angriff aus dem Fall</strong>",
@@ -53,7 +55,7 @@
       "1": "Wandelt den Schaden von Tartaglias Standardangriffen und heftigen Schlägen in diesem Zustand in <hydro>Hydro-Schaden</hydro>, dessen Element anderweitig nicht verändert werden kann, und verändert die Angriffe folgendermaßen:",
       "2": "<br/>",
       "3": "<strong>Standardangriff</strong>",
-      "4": "Führt bis zu 6 <hydro>Hydro</hydro>-Hiebe aus.",
+      "4": "Führt bis zu 6 <hydro>Hydro</hydro>-Hiebe hintereinander aus.",
       "5": "<br/>",
       "6": "<strong>Heftiger Schlag</strong>",
       "7": "Verbraucht Ausdauer, schlägt mit beiden Schwertern schnell nach vorn und verursacht <hydro>Hydro-Schaden</hydro>.",

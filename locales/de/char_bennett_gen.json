@@ -48,10 +48,12 @@
       "4": "<br/>",
       "5": "<strong>Gedrückt halten</strong>",
       "6": "Verursacht je nach Dauer des Gedrückthaltens unterschiedliche Effekte.",
-      "7": "- Phase 1: Startet einen zweistufigen Angriff, der <pyro>Pyro-Schaden</pyro> verursacht und Gegner wegschleudert.",
-      "8": "- Phase 2: Startet einen dreistufigen Angriff, der beachtlichen <pyro>Pyro-Schaden</pyro> und am Ende eine Explosion verursacht, bei der Bennett und seine Gegner weggeschleudert werden. Dabei erleidet Bennett jedoch keinen Schaden.",
-      "9": "<br/>",
-      "10": "<i>Bennett steckt seine ganze Leidenschaft und Träume in diesen Pyro-Angriff. Manchmal übertreibt er es aber damit und verursacht eine Explosion.</i>"
+      "7": [
+        " Phase 1: Startet einen zweistufigen Angriff, der <pyro>Pyro-Schaden</pyro> verursacht und Gegner wegschleudert.",
+        " Phase 2: Startet einen dreistufigen Angriff, der beachtlichen <pyro>Pyro-Schaden</pyro> und am Ende eine Explosion verursacht, bei der Bennett und seine Gegner weggeschleudert werden. Dabei erleidet Bennett jedoch keinen Schaden."
+      ],
+      "8": "<br/>",
+      "9": "<i>Bennett steckt seine ganze Leidenschaft und Träume in diesen Pyro-Angriff. Manchmal übertreibt er es aber damit und verursacht eine Explosion.</i>"
     },
     "skillParams": {
       "0": "SCH bei Drücken",
@@ -78,11 +80,13 @@
       "0": "Bennett springt auf seine Gegner zu, greift sie aus der Luft an, verursacht dabei <pyro>Pyro-Schaden</pyro> und erstellt ein Feld der Aufmunterung.",
       "1": "<br/>",
       "2": "<strong>Feld der Aufmunterung</strong>",
-      "3": "- Heilt Figuren mit 70 % oder weniger LP auf diesem Feld fortlaufend basierend auf Bennetts max. LP.",
-      "4": "- Erhöht den ANG der Figuren mit mehr als 70 % LP auf diesem Feld basierend auf Bennetts Basis-ANG.",
-      "5": "- Verleiht den Figuren auf dem Feld das <pyro>Pyro-Attribut</pyro>.",
-      "6": "<br/>",
-      "7": "<i>Bennys Abenteurergruppe gerät jedes Mal aufs Neue in Gefahr. Als einziges Mitglied findet Bennett aber, dass die Abenteuer dadurch überhaupt erst an Spaß und Spannung gewinnen.</i>"
+      "3": [
+        " Heilt Figuren mit 70 % oder weniger LP auf diesem Feld fortlaufend basierend auf Bennetts max. LP.",
+        " Erhöht den ANG der Figuren mit mehr als 70 % LP auf diesem Feld basierend auf Bennetts Basis-ANG.",
+        " Verleiht den Figuren auf dem Feld das <pyro>Pyro-Attribut</pyro>."
+      ],
+      "4": "<br/>",
+      "5": "<i>Bennys Abenteurergruppe gerät jedes Mal aufs Neue in Gefahr. Als einziges Mitglied findet Bennett aber, dass die Abenteuer dadurch überhaupt erst an Spaß und Spannung gewinnen.</i>"
     },
     "skillParams": {
       "0": "Fähigkeits-SCH",
@@ -113,8 +117,10 @@
     "name": "Unerschrockenheit",
     "description": {
       "0": "Effekte von <strong>Überschwänglichkeit</strong> im Wirkungsbereich von <strong>Fantastische Reise</strong>:",
-      "1": "- Verringert die Abklingzeit um 50 %.",
-      "2": "- Schleudert Bennett beim Aufladen Phase 2 nicht mehr weg."
+      "1": [
+        " Verringert die Abklingzeit um 50 %.",
+        " Schleudert Bennett beim Aufladen Phase 2 nicht mehr weg."
+      ]
     }
   },
   "passive3": {

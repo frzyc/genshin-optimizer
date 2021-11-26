@@ -12,7 +12,7 @@
       },
       "charged": {
         "0": "<strong>Attaque chargée</strong>",
-        "1": "Après un court délai, inflige des <hydro>DGT Hydro de zone</hydro> ; cette attaque consomme de l'endurance."
+        "1": "Consomme de l'endurance pour infliger des <hydro>DGT Hydro de zone</hydro> après un court délai."
       },
       "plunging": {
         "0": "<strong>Attaque plongeante</strong>",
@@ -170,7 +170,7 @@
   "constellation6": {
     "name": "Sango Isshin",
     "description": {
-      "0": "Lorsque Kokomi revêt la parure cérémoniale créée par <strong>Ascension de la néréide</strong>, elle bénéficie d'un <hydro>bonus de DGT Hydro</hydro> de 40 % pendant 4 s après avoir effectué un soin sur un personnage ayant 80 % de PV ou plus grâce à son attaque normale ou chargée."
+      "0": "Lorsque Kokomi revêt la parure cérémoniale créée par <strong>Ascension de la néréide</strong>, elle bénéficie d'un <hydro>bonus de DGT Hydro</hydro> de 40 % pendant 4 s après avoir effectué un soin sur un personnage dont les PV sont supérieurs à 80 % grâce à son attaque normale ou chargée."
     }
   }
 }

@@ -1,8 +1,8 @@
 {
   "name": "Albedo",
   "title": "Kreideprinz",
-  "description": "Giả Kim Thuật Sĩ đứng đầu Đội Kỵ Sĩ Tây Phong kiêm đội trưởng tiểu đội điều tra được gọi là \"Kreideprinz\".",
-  "constellationName": "Kreideprinz",
+  "description": "Người đứng đầu trong các Giả Kim Thuật Sĩ kiêm đội trưởng tiểu đội điều tra của Đội Kỵ Sĩ Tây Phong, được gọi là thiên tài \"Kreideprinz\".",
+  "constellationName": "Cung Đứa Con Vôi Trắng",
   "auto": {
     "name": "Tây Phong Kiếm Thuật - Bạch",
     "fields": {
@@ -114,7 +114,7 @@
   "passive2": {
     "name": "Trí Tuệ Người Trong Bình",
     "description": {
-      "0": "Khi thi triển <strong>Chiêu Giáng Sinh - Sóng Vỗ Đại Lục</strong> sẽ tăng 125 điểm Tinh Thông Nguyên Tố cho thành viên ở gần trong đội, kéo dài 10s."
+      "0": "Khi thi triển <strong>Chiêu Giáng Sinh - Sóng Vỗ Đại Lục</strong> sẽ tăng 125 điểm Tinh Thông Nguyên Tố cho thành viên trong đội ở gần, kéo dài 10s."
     }
   },
   "passive3": {

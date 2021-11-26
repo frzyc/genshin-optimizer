@@ -142,7 +142,7 @@
   "constellation2": {
     "name": "Répression",
     "description": {
-      "0": "Le taux CRIT de Razor augmente de 10 % quand il attaque des ennemis ayant moins de 30 % de PV."
+      "0": "Le taux CRIT de Razor augmente de 10 % quand il attaque des ennemis dont les PV sont inférieurs à 30 %."
     }
   },
   "constellation3": {

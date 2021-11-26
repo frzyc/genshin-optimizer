@@ -39,5 +39,20 @@
   "hold": {
     "dmg": "DMG Menahan",
     "cd": "Cooldown Menahan"
+  },
+  "element": {
+    "anemo": "Anemo",
+    "geo": "Geo",
+    "pyro": "Pyro",
+    "hydro": "Hydro",
+    "cryo": "Cryo",
+    "electro": "Electro"
+  },
+  "reaction": {
+    "swirl": "Swirl",
+    "crystallize": "Crystallize",
+    "overloaded": "Overloaded",
+    "electrocharged": "Electro-Charged",
+    "Superconduct": "Superconduct"
   }
 }

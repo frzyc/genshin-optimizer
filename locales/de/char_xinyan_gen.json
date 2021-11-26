@@ -8,7 +8,7 @@
     "fields": {
       "normal": {
         "0": "<strong>Standardangriff</strong>",
-        "1": "Führt bis zu 4 Schwünge mit dem Schwert aus."
+        "1": "Führt bis zu 4 Schwünge mit dem Schwert hintereinander aus."
       },
       "charged": {
         "0": "<strong>Heftiger Schlag</strong>",
@@ -44,15 +44,19 @@
     "description": {
       "0": "Xinyan streicht ihr Instrument, fügt Gegnern in der Umgebung <pyro>Pyro-Schaden</pyro> zu und erschafft aus der Leidenschaft ihrer Zuschauer einen Schild.",
       "1": "Die Schildstärke hängt von Xinyans VTD und der Anzahl getroffener Gegner ab.",
-      "2": "- Kein bis ein getroffener Gegner: Schild Stufe 1 – Einstimmen.",
-      "3": "- Zwei getroffene Gegner: Schild Stufe 2 – Aufdrehen.",
-      "4": "- Drei oder mehr getroffene Gegner: Schild Stufe 3 – Abfeiern. Hält Schaden ab und fügt Gegnern in der Umgebung stoßweise <pyro>Pyro-Schaden</pyro> zu.",
-      "5": "<br/>",
-      "6": "Merkmale des Schildes:",
-      "7": "- Verleiht Xinyan beim Auslösen das <pyro>Pyro-Attribut</pyro>.",
-      "8": "- Hält bei <pyro>Pyro-Schaden</pyro> 250 % ab.",
-      "9": "<br/>",
-      "10": "<i>Xinyan besteht darauf, dass die Funken der Ausdruck ihrer Darbietungskunst, also natürlichen Ursprungs sind und nichts mit dem Göttlichen Auge zu tun haben.</i>"
+      "2": [
+        " Kein bis ein getroffener Gegner: Schild Stufe 1 – Einstimmen.",
+        " Zwei getroffene Gegner: Schild Stufe 2 – Aufdrehen.",
+        " Drei oder mehr getroffene Gegner: Schild Stufe 3 – Abfeiern. Hält Schaden ab und fügt Gegnern in der Umgebung stoßweise <pyro>Pyro-Schaden</pyro> zu."
+      ],
+      "3": "<br/>",
+      "4": "Merkmale des Schildes:",
+      "5": [
+        " Verleiht Xinyan beim Auslösen das <pyro>Pyro-Attribut</pyro>.",
+        " Hält bei <pyro>Pyro-Schaden</pyro> 250 % ab."
+      ],
+      "6": "<br/>",
+      "7": "<i>Xinyan besteht darauf, dass die Funken der Ausdruck ihrer Darbietungskunst, also natürlichen Ursprungs sind und nichts mit dem Göttlichen Auge zu tun haben.</i>"
     },
     "skillParams": {
       "0": "Schwung-SCH",
@@ -104,8 +108,10 @@
     "name": "„Es geht auch ohne Publikum ...“",
     "description": {
       "0": "Verringert die für den Schild von <strong>Schlag in die Saiten</strong> benötigte Trefferzahl:",
-      "1": "- Schild Stufe 2 – Aufdrehen: Ein getroffener Gegner.",
-      "2": "- Schild Stufe 3 – Abfeiern: Zwei oder mehr getroffene Gegner."
+      "1": [
+        " Schild Stufe 2 – Aufdrehen: Ein getroffener Gegner.",
+        " Schild Stufe 3 – Abfeiern: Zwei oder mehr getroffene Gegner."
+      ]
     }
   },
   "passive2": {

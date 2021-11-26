@@ -8,7 +8,7 @@
     "fields": {
       "normal": {
         "0": "<strong>Standardangriff</strong>",
-        "1": "Führt bis zu 5 Schwünge mit dem Schwert aus."
+        "1": "Führt bis zu 5 Schwünge mit dem Schwert hintereinander aus."
       },
       "charged": {
         "0": "<strong>Heftiger Schlag</strong>",
@@ -51,10 +51,12 @@
       "6": "Hebt die Waffe an, um sie als Schutzschild zu verwenden und Schaden basierend auf Beidous max. LP abzuhalten.",
       "7": "Wirbelt das Großschwert bei Loslassen oder Ablauf der Dauer mit der angestauten Kraft, schlägt zu und verursacht <electro>Elektro-Schaden</electro>. Erhöht den beim Zuschlagen verursachten Schaden je nach Anzahl erlittener Angriffe während der Wirkungsdauer. Erreicht nach 2 Anwendungen den höchsten SCH-Bonus.",
       "8": "Effekte des Schildes:",
-      "9": "- Hält bei <electro>Elektro-Schaden</electro> 250 % ab.",
-      "10": "- Verleiht Beidou beim Zuschlagen das <electro>Elektro-Attribut</electro>.",
-      "11": "<br/>",
-      "12": "<i>Reite auf den Wellen und ergreife die Blitze.</i>"
+      "9": [
+        " Hält bei <electro>Elektro-Schaden</electro> 250 % ab.",
+        " Verleiht Beidou beim Zuschlagen das <electro>Elektro-Attribut</electro>."
+      ],
+      "10": "<br/>",
+      "11": "<i>Reite auf den Wellen und ergreife die Blitze.</i>"
     },
     "skillParams": {
       "0": "Schildstärke ",
@@ -81,12 +83,14 @@
       "0": "Ruft die Erinnerung an den Kampf gegen das Ungeheuer, das Meere und Berge teilte, und somit die Kraft des Ungeheuers und des Donners hervor, um einen kreisenden Donnerschild zu erschaffen und Gegnern in der Umgebung <electro>Elektro-Schaden</electro> zuzufügen.",
       "1": "<br/>",
       "2": "<strong>Donnerschild</strong>",
-      "3": "- Erschafft bei Treffern mit Standardangriffen und heftigen Schlägen einen Kettenblitz, der zwischen den Gegnern umherspringt und <electro>Elektro-Schaden</electro> verursacht.",
-      "4": "- Erhöht den Unterbrechungs-WDS der Figur und verringert den erlittenen Schaden.",
-      "5": "<br/>",
-      "6": "Max. 1 Kettenblitz pro Sekunde möglich.",
-      "7": "<br/>",
-      "8": "<i>Trommelnder Donner bricht herein und teilt Meere und Berge.</i>"
+      "3": [
+        " Erschafft bei Treffern mit Standardangriffen und heftigen Schlägen einen Kettenblitz, der zwischen den Gegnern umherspringt und <electro>Elektro-Schaden</electro> verursacht.",
+        " Erhöht den Unterbrechungs-WDS der Figur und verringert den erlittenen Schaden."
+      ],
+      "4": "<br/>",
+      "5": "Max. 1 Kettenblitz pro Sekunde möglich.",
+      "6": "<br/>",
+      "7": "<i>Trommelnder Donner bricht herein und teilt Meere und Berge.</i>"
     },
     "skillParams": {
       "0": "Fähigkeits-SCH",
@@ -117,8 +121,10 @@
     "name": "Donnern am Firmament",
     "description": {
       "0": "Effekte bis 10 s nach Anwendung von <strong>Wellenfänger</strong> mit höchstem SCH-Bonus:",
-      "1": "- Erhöht den mit Standardangriffen und heftigen Schlägen verursachten Schaden um 15 % und die Angriffs-GSW um 15 %.",
-      "2": "- Verringert die Vorbereitungszeit für heftige Schläge enorm."
+      "1": [
+        " Erhöht den mit Standardangriffen und heftigen Schlägen verursachten Schaden um 15 % und die Angriffs-GSW um 15 %.",
+        " Verringert die Vorbereitungszeit für heftige Schläge enorm."
+      ]
     }
   },
   "passive3": {

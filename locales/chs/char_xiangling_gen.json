@@ -41,7 +41,7 @@
   "skill": {
     "name": "Guoba Attack",
     "description": {
-      "0": "Summons Guoba the Panda. Guoba continuously breathes fire at opponents, dealing <pyro>AoE Pyro DMG</pyro>.",
+      "0": "Summons Guoba, who will continuously breathe fire at opponents, dealing <pyro>AoE Pyro DMG</pyro>.",
       "1": "<br/>",
       "2": "<i>Guoba loves to eat spicy food. Problem is, his stomach can't handle something this spicy.</i>"
     },
