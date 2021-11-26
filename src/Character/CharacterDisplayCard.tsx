@@ -64,13 +64,12 @@ type CharacterDisplayCardProps = {
   tabName?: string,
   isFlex?: boolean
 }
-export default function CharacterDisplayCard({ characterKey: propCharKey, footer, newBuild: propNewBuild, onClose, tabName, isFlex }: CharacterDisplayCardProps) {
+export default function CharacterDisplayCard({ characterKey, footer, newBuild: propNewBuild, onClose, tabName, isFlex }: CharacterDisplayCardProps) {
   const database = useContext(DatabaseContext)
   const [compareBuild, setCompareBuild] = useState(false)
-  const character = useCharacter(propCharKey)
+  const character = useCharacter(characterKey)
   const [dbDirty, setDbDirty] = useForceUpdate()
 
-  const characterKey = character?.key
   const sheets = useSheets()
   //follow updates from team
   const [teammate1, teammate2, teammate3] = character?.team ?? []

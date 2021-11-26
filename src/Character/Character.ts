@@ -90,7 +90,7 @@ export default class Character {
     const weaponSheet = weaponSheets[weapon.key]
     const overrideStats = Object.fromEntries(Object.entries(bonusStats).filter(([s]) => overrideStatKeys.includes(s)))
     const additionalStats = Object.fromEntries(Object.entries(bonusStats).filter(([s]) => !overrideStatKeys.includes(s)))
-    //generate the initalStats obj with data from Character 
+    //generate the initalStats obj with data from Character
     let initialStats = characterBaseStats(character)
     initialStats.characterKey = characterKey
     initialStats.characterLevel = level
@@ -143,8 +143,10 @@ export default class Character {
         const tChar = database._getChar(tCharKey)
         if (!tChar) return null
         // Empty teammate's team in calculation to stop recursion
-        tChar.team = ["", "", ""]
+        const x = tChar.team
+        tChar.team = ["", "", ""] // Whatever this is, we're sooooooo not supposed to edit ICharacter objects in-place like this.
         const stats = Character.createInitialStatsWithoutConds(tChar, database, sheets, false)
+        tChar.team = x
         return stats
       }) as ICalculatedStats["teamStats"]
 
@@ -161,7 +163,7 @@ export default class Character {
   }
 
   static createInitialStats = (character: ICachedCharacter, database: ArtCharDatabase, sheets: Sheets): ICalculatedStats => {
-    //generate the initalStats obj with data from Character 
+    //generate the initalStats obj with data from Character
     const initialStats = Character.createInitialStatsWithoutConds(character, database, sheets)
     this.calculateBuildWithConditionalsWithoutArtifacts(initialStats, database, sheets)
 
@@ -176,7 +178,7 @@ export default class Character {
     for (const key in initialStats.tlvl)
       initialStats.tlvl[key] += initialStats[`${key}Boost`] ?? 0
 
-    // Handle conditionals. 
+    // Handle conditionals.
     Conditional.parseConditionalValues(conditionalValues, (conditional, conditionalValue, keys) => {
       // Ignore artifact conditionals.
       if (conditional.keys![0] === "artifact") return
