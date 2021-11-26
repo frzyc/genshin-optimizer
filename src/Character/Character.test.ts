@@ -1,15 +1,13 @@
 import Artifact from "../Artifact/Artifact"
-import { ArtifactSheet } from "../Artifact/ArtifactSheet"
 import { database } from "../Database/Database"
 import { dbStorage } from "../Database/DBStorage"
+import { getSheets } from "../ReactHooks/useSheets"
 import { ICachedArtifact } from "../Types/artifact"
 import { allSlotKeys, SlotKey } from "../Types/consts"
 import { mergeStats } from "../Util/StatUtil"
 import { objectFromKeyMap } from "../Util/Util"
-import WeaponSheet from "../Weapon/WeaponSheet"
 import { initialWeapon } from "../Weapon/WeaponUtil"
 import Character from "./Character"
-import CharacterSheet from "./CharacterSheet"
 import { initialCharacter } from "./CharacterUtil"
 
 describe('mergeStats()', () => {
@@ -35,8 +33,7 @@ describe('Character.getDisplayStatKeys()', () => {
   })
   afterEach(() => localStorage.clear())
   test('should get statKeys for characters with finished talent page', async () => {
-    const sheets = await Promise.all([CharacterSheet.getAll(), WeaponSheet.getAll(), ArtifactSheet.getAll()])
-      .then(([characterSheets, weaponSheets, artifactSheets]) => ({ characterSheets, weaponSheets, artifactSheets }))
+    const sheets = await getSheets()
     const character = database._getChar(characterKey)
     expect(character).toBeTruthy()
     if (!character || !sheets) return
