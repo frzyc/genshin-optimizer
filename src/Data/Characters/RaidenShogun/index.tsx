@@ -18,10 +18,9 @@ import Stat from '../../../Stat'
 import formula, { data, energyCosts, getResolve, resolveStacks } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-import { IConditionals } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
-import { Translate, TransWrapper } from '../../../Components/Translate'
-import { chargedDocSection, plungeDocSection, sgt, talentTemplate } from '../SheetUtil'
+import { Translate } from '../../../Components/Translate'
+import { chargedDocSection, conditionalHeader, plungeDocSection, sgt, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
 import { basicDMGFormulaText } from '../../../Util/FormulaTextUtil'
 import { FormulaPathBase } from '../../formula'
@@ -30,40 +29,6 @@ const path = KeyPath<FormulaPathBase, any>().character.RaidenShogun
 const tr = (strKey: string) => <Translate ns="char_RaidenShogun_gen" key18={strKey} />
 const charTr = (strKey: string) => <Translate ns="char_RaidenShogun" key18={strKey} />
 
-const conditionals: IConditionals = {
-  skp: {
-    name: charTr("skill.partyCost"),
-    states: Object.fromEntries(energyCosts.map(c => [c, {
-      name: `${c}`,
-      fields: [{
-        text: tr("skill.skillParams.3"),
-        formulaText: stats => <span>{data.skill.eleBurConv[stats.tlvl.skill] * 100}% * {c}</span>,
-        formula: formula.skill[c],
-        fixed: 1,
-        unit: "%"
-      }]
-    }]))
-  },
-  sk: {
-    name: charTr("skill.eye"),
-    stats: {
-      modifiers: { burst_dmg_: [path.skill.eleBurConv()] },
-    },
-    fields: [{
-      text: tr("skill.skillParams.3"),
-      formulaText: stats => <span>{data.skill.eleBurConv[stats.tlvl.skill] * 100}% * {data.burst.enerCost}</span>,
-      formula: formula.skill.eleBurConv,
-      fixed: 1,
-      unit: "%"
-    },]
-  },
-  res: {
-    name: charTr("burst.resolves"),
-    states: Object.fromEntries(resolveStacks.map(c => [c, {
-      name: `${c}`,
-    }]))
-  }
-}
 function burstDMGFormulaText(percent, stats, intial = false) {
   const resolveStack = getResolve(stats)
 
@@ -94,7 +59,7 @@ const char: ICharacterSheet = {
   thumbImg: thumb,
   thumbImgSide: thumbSide,
   bannerImg: banner,
-  star: data_gen.star,
+  rarity: data_gen.star,
   elementKey: "electro",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
   gender: "F",
@@ -105,7 +70,6 @@ const char: ICharacterSheet = {
   ascensions: data_gen.ascensions,
   talent: {
     formula,
-    conditionals,
     sheets: {
       auto: {
         name: tr("auto.name"),
@@ -115,7 +79,7 @@ const char: ICharacterSheet = {
             text: tr("auto.fields.normal"),
             fields: data.normal.hitArr.map((percentArr, i) =>
             ({
-              text: <span>{sgt(`normal.hit${i + 1}`)} {i === 2 ? <span>(<TransWrapper ns="sheet" key18="hits" values={{ count: 2 }} />)</span> : ""}</span>,
+              text: <span>{sgt(`normal.hit${i + 1}`)} {i === 2 ? <span>(<Translate ns="sheet" key18="hits" values={{ count: 2 }} />)</span> : ""}</span>,
               formulaText: stats => <span>{percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
               formula: formula.normal[i],
               variant: stats => getTalentStatKeyVariant("normal", stats),
@@ -147,9 +111,41 @@ const char: ICharacterSheet = {
             text: tr("skill.skillParams.4"),
             value: data.skill.cd
           }],
-          conditional: conditionals.sk,
+          conditional: {
+            key: "e",
+            name: charTr("skill.eye"),
+            stats: {
+              modifiers: { burst_dmg_: [path.skill.eleBurConv()] },
+            },
+            fields: [{
+              text: tr("skill.skillParams.3"),
+              formulaText: stats => <span>{data.skill.eleBurConv[stats.tlvl.skill] * 100}% * {data.burst.enerCost}</span>,
+              formula: formula.skill.eleBurConv,
+              fixed: 1,
+              unit: "%"
+            },]
+          },
         }, {
-          conditional: conditionals.skp,
+          conditional: {
+            key: "ep",
+            partyBuff: "partyOnly",
+            header: conditionalHeader("skill", tr, skill),
+            description: tr("skill.description"),
+            name: charTr("skill.partyCost"),
+            states: Object.fromEntries(energyCosts.map(c => [c, {
+              name: `${c}`,
+              fields: [{
+                text: tr("skill.skillParams.3"),
+                formulaText: stats => <span>{data.skill.eleBurConv[stats.tlvl.skill] * 100}% * {c}</span>,
+                formula: formula.skill[c],
+                fixed: 1,
+                unit: "%"
+              }],
+              stats: {
+                modifiers: { burst_dmg_: [[...path.skill(), `${c}`]] },
+              },
+            }]))
+          },
         }]
       },
       burst: {
@@ -237,7 +233,13 @@ const char: ICharacterSheet = {
             text: tr("burst.skillParams.15"),
             value: data.burst.enerCost,
           }],
-          conditional: conditionals.res
+          conditional: {
+            key: "q",
+            name: charTr("burst.resolves"),
+            states: Object.fromEntries(resolveStacks.map(c => [c, {
+              name: `${c}`,
+            }]))
+          }
         }],
       },
       passive1: talentTemplate("passive1", tr, passive1),
@@ -260,31 +262,37 @@ const char: ICharacterSheet = {
             fixed: 1,
             unit: "%"
           }],
+          conditional: {
+            key: "a4",
+            canShow: stats => stats.ascension >= 4,
+            maxStack: 0,
+            stats: {
+              modifiers: { electro_dmg_: [path.a4.eleDMG()] },
+            }
+          }
         }],
-        stats: stats => stats.ascension >= 4 && {
-          modifiers: { electro_dmg_: [path.a4.eleDMG()] },
-        }
       },
       passive3: talentTemplate("passive3", tr, passive3),
-      constellation1: {
-        name: tr("constellation1.name"),
-        img: c1,
+      constellation1: talentTemplate("constellation1", tr, c1),
+      constellation2: talentTemplate("constellation2", tr, c2),
+      constellation3: talentTemplate("constellation3", tr, c3, "burstBoost"),
+      constellation4: {
+        name: tr("constellation4.name"),
+        img: c4,
         sections: [{
-          text: tr("constellation1.description"),
-          conditional: conditionals.c1,
+          text: tr("constellation4.description"),
+          conditional: {
+            key: "c4",
+            canShow: stats => stats.constellation >= 4,
+            partyBuff: "partyOnly",
+            header: conditionalHeader("constellation4", tr, c4),
+            description: tr("constellation4.description"),
+            name: charTr("c4.expires"),
+            stats: { atk_: 30 }
+          }
         }],
       },
-      constellation2: {
-        name: tr("constellation2.name"),
-        img: c2,
-        sections: [{
-          text: tr("constellation2.description"),
-          conditional: conditionals.c2
-        }],
-      },
-      constellation3: talentTemplate("constellation3", tr, c3, { burstBoost: 3 }),
-      constellation4: talentTemplate("constellation4", tr, c4),//TODO: Party ATK% ubff
-      constellation5: talentTemplate("constellation5", tr, c5, { skillBoost: 3 }),
+      constellation5: talentTemplate("constellation5", tr, c5, "skillBoost"),
       constellation6: talentTemplate("constellation6", tr, c6),
     },
   },

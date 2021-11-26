@@ -16,6 +16,7 @@ import EmblemOfSeveredFate from './EmblemOfSeveredFate/data'
 // import MaidenBeloved from './MaidenBeloved/data'
 // import MartialArtist from './MartialArtist/data'
 // import NoblesseOblige from './NoblesseOblige/data'
+import OceanHuedClam from './OceanHuedClam/data'
 // import PaleFlame from './PaleFlame/data'
 // import PrayersForDestiny from './PrayersForDestiny/data'
 // import PrayersForIllumination from './PrayersForIllumination/data'
@@ -53,6 +54,7 @@ const artifacts = {
   // MaidenBeloved,
   // MartialArtist,
   // NoblesseOblige,
+  OceanHuedClam,
   // PaleFlame,
   // PrayersForDestiny,
   // PrayersForIllumination,

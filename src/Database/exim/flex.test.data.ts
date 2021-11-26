@@ -1,6 +1,6 @@
-import { IArtifact } from "../Types/artifact"
-import { ICharacter } from "../Types/character"
-import { IWeapon } from "../Types/weapon"
+import { IArtifact } from "../../Types/artifact"
+import { ICharacter } from "../../Types/character"
+import { IWeapon } from "../../Types/weapon"
 
 export const urlV2 = "https://frzyc.github.io/genshin-optimizer/#/flex?v=2&d=565k01043N09F18W04R165k03141Y79W0aa37G0p5g07242o21074W05l095k0j347E03z02c292195k09443j08111HbaV3a122003L9005551echaracterLevel289bStaffOfHoma3L900101000"
 export const urlV3 = "https://frzyc.github.io/genshin-optimizer/#/flex?v=3&d=1a120066601O056k0143N09F18W04R1b56k0341Y79W0aa37G0bdpg0742o21074W05l0bl9k0j47E03z02c2921bt9k0943j08111HbaV3bB1bStaffOfHomabN0"
@@ -19,8 +19,8 @@ export const character: ICharacter = {
     artifact: {},
     character: {
       HuTao: {
-        SanguineRouge: [1],
-        GuideToAfterlife: [1],
+        e: [1],
+        a4: [1],
       }
     },
     weapon: {
@@ -29,6 +29,7 @@ export const character: ICharacter = {
       }
     }
   },
+  team: ["", "", ""],
 };
 
 export const weapon: IWeapon = {

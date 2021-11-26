@@ -1,10 +1,12 @@
-import { PreprocessFormulas, Formulas, StatData } from "./StatData"
+import { Formulas, StatData } from "./StatData"
 import { FormulaText } from "./Stat"
+import { PreprocessFormulas } from "./ProcessFormula"
 
 describe(`Testing StatData`, () => {
   describe(`PreprocessFormulas()`, () => {
     test(`basic def`, () => {
       const stat = {
+        teamStats: [null, null, null],
         characterDEF: 10,
         def_: 100,
         def: 15

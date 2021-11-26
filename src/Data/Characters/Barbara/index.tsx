@@ -18,31 +18,19 @@ import Stat from '../../../Stat'
 import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-import { IConditionals } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
 import { Translate } from '../../../Components/Translate'
-import { plungeDocSection, talentTemplate } from '../SheetUtil'
+import { conditionalHeader, plungeDocSection, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
 const tr = (strKey: string) => <Translate ns="char_Barbara_gen" key18={strKey} />
-const conditionals: IConditionals = {
-  a1: { // Glorious Season
-    canShow: stats => stats.ascension >= 1,
-    name: <span>Within <b>Let the Show Begin</b>'s Melody Loop</span>,
-    stats: { staminaDec_: 12 }//TODO: Party buff
-  },
-  c2: { // VitalityBurst
-    canShow: stats => stats.constellation >= 2,
-    name: <span>During <b>Let the Show Begin</b></span>,
-    stats: { hydro_dmg_: 15 }//TODO: Party buff active character
-  }
-}
+
 const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   thumbImgSide: thumbSide,
   bannerImg: banner,
-  star: data_gen.star,
+  rarity: data_gen.star,
   elementKey: "hydro",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
   gender: "F",
@@ -53,7 +41,6 @@ const char: ICharacterSheet = {
   ascensions: data_gen.ascensions,
   talent: {
     formula,
-    conditionals,
     sheets: {
       auto: {
         name: tr("auto.name"),
@@ -109,11 +96,26 @@ const char: ICharacterSheet = {
             value: stats => "32s" + (stats.constellation >= 2 ? " -15%" : ""),
           }]
         }, {
-          conditional: conditionals.a1
+          conditional: { // Glorious Season
+            key: "a1",
+            partyBuff: "partyAll",
+            header: conditionalHeader("passive1", tr, passive1),
+            description: tr("passive1.description"),
+            canShow: stats => stats.ascension >= 1,
+            name: <span>Within <b>Let the Show Begin</b>'s Melody Loop</span>,
+            stats: { staminaDec_: 12 }
+          },
         }, {
-          conditional: conditionals.c2
+          conditional: { // VitalityBurst
+            key: "c2",
+            partyBuff: "partyActive",
+            header: conditionalHeader("constellation2", tr, c2),
+            description: tr("constellation2.description"),
+            canShow: stats => stats.constellation >= 2,
+            name: <span>During <b>Let the Show Begin</b></span>,
+            stats: { hydro_dmg_: 15 }
+          }
         }],
-
       },
       burst: {
         name: tr("burst.name"),
@@ -139,9 +141,9 @@ const char: ICharacterSheet = {
       passive3: talentTemplate("passive3", tr, passive3),
       constellation1: talentTemplate("constellation1", tr, c1),
       constellation2: talentTemplate("constellation2", tr, c2),
-      constellation3: talentTemplate("constellation3", tr, c3, { burstBoost: 3 }),
+      constellation3: talentTemplate("constellation3", tr, c3, "burstBoost"),
       constellation4: talentTemplate("constellation4", tr, c4),
-      constellation5: talentTemplate("constellation5", tr, c5, { skillBoost: 3 }),
+      constellation5: talentTemplate("constellation5", tr, c5, "skillBoost"),
       constellation6: talentTemplate("constellation6", tr, c6),
     },
   },

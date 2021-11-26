@@ -1,6 +1,6 @@
 import { artifactIdMap, artifactSlotMap, characterIdMap, weaponIdMap, weaponMap } from '.'
 import { AssetData } from './Data'
-import artifactPiecesData from './DataminedModules/artifact/artifactPiecesData'
+import artifactPiecesData from './DataminedModules/artifact/ReliquaryExcelConfigData'
 import reliquarySetExcelConfigData from './DataminedModules/artifact/ReliquarySetExcelConfigData'
 import avatarExcelConfigData from './DataminedModules/character/AvatarExcelConfigData'
 import fetterCharacterCardExcelConfigData from './DataminedModules/character/FetterCharacterCardExcelConfigData'

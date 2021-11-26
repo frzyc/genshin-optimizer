@@ -1,6 +1,6 @@
 import { Lock, LockOpen, SwapHoriz } from "@mui/icons-material"
 import { Box, Button, ButtonGroup, CardContent, Divider, Grid, MenuItem, Typography } from "@mui/material"
-import { useCallback, useContext, useEffect, useMemo, useState } from "react"
+import { useCallback, useContext, useState } from "react"
 import Assets from "../Assets/Assets"
 import { buildContext } from "../Build/Build"
 import CharacterSheet from "../Character/CharacterSheet"
@@ -19,8 +19,8 @@ import { Stars } from "../Components/StarDisplay"
 import WeaponSelectionModal from "../Components/Weapon/WeaponSelectionModal"
 import { ambiguousLevel, ascensionMaxLevel, milestoneLevels } from "../Data/LevelData"
 import { database as localDatabase, DatabaseContext } from "../Database/Database"
-import useForceUpdate from "../ReactHooks/useForceUpdate"
 import usePromise from "../ReactHooks/usePromise"
+import useWeapon from "../ReactHooks/useWeapon"
 import { ICachedCharacter } from "../Types/character"
 import { CharacterKey } from "../Types/consts"
 import { ICalculatedStats } from "../Types/stats"
@@ -50,22 +50,12 @@ export default function WeaponDisplayCard({
   onClose
 }: WeaponStatsEditorCardProps) {
   const database = useContext(DatabaseContext)
-  // Use databaseToken anywhere `database._get*` is used
-  // Use onDatabaseUpdate when `following` database entries
-  const [databaseToken, onDatabaseUpdate] = useForceUpdate()
 
   const buildContextObj = useContext(buildContext)
-  const weapon = useMemo(() =>
-    databaseToken && database._getWeapon(propWeaponId!)!,
-    [propWeaponId, databaseToken, database])
-  const { key, level, refinement, ascension, lock } = weapon
-  const { location = "", id } = weapon as Partial<ICachedWeapon>
-  const weaponSheet: WeaponSheet | undefined = usePromise(WeaponSheet.get(key), [key])
+  const weapon = useWeapon(propWeaponId)
+  const { key = "", level, refinement = 0, ascension = 0, lock, location = "", id } = weapon ?? {}
+  const weaponSheet = usePromise(WeaponSheet.get(key), [key])
   const weaponTypeKey = weaponSheet?.weaponType
-
-  useEffect(() =>
-    propWeaponId ? database.followWeapon(propWeaponId, onDatabaseUpdate) : undefined,
-    [propWeaponId, onDatabaseUpdate, database])
 
   const weaponDispatch = useCallback((newWeapon: Partial<ICachedWeapon>) => {
     database.updateWeapon(newWeapon, propWeaponId)
@@ -166,18 +156,20 @@ export default function WeaponDisplayCard({
             <Typography><small>{weaponSheet.description}</small></Typography>
           </Box>
           <Box sx={{ mb: -1 }} flexGrow={1} >
-            <Typography variant="h6" >{process.env.NODE_ENV === "development" && <ColorText color="warning">{id || `""`} </ColorText>}{weaponSheet.name} Lv. {WeaponSheet.getLevelString(weapon)} {weaponPassiveName && <SqBadge color="info">Refinement {refinement}</SqBadge>}</Typography>
+            <Typography variant="h6" >{process.env.NODE_ENV === "development" && <ColorText color="warning">{id || `""`} </ColorText>}{weaponSheet.name} Lv. {weapon && WeaponSheet.getLevelString(weapon)} {weaponPassiveName && <SqBadge color="info">Refinement {refinement}</SqBadge>}</Typography>
             <Typography><Stars stars={weaponSheet.rarity} /></Typography>
             <Typography variant="subtitle1">{weaponPassiveName}</Typography>
             <Typography gutterBottom>{weaponPassiveName && weaponSheet.passiveDescription(build)}</Typography>
             {build && <buildContext.Provider value={charData ? buildContextObj : { equippedBuild: build, newBuild: undefined, compareBuild: false, setCompareBuild: undefined }}>
-              <WeaponStatsCard title={"Main Stats"} statsVals={{ atk: weaponDisplayMainVal, [substatKey]: substatKey ? weaponDisplaySubVal : undefined }} stats={build} />
-              <WeaponStatsCard title={"Bonus Stats"} statsVals={weaponBonusStats} stats={build} />
+              <Box display="flex" flexDirection="column" gap={1}>
+                <WeaponStatsCard title={"Main Stats"} statsVals={{ atk: weaponDisplayMainVal, [substatKey]: substatKey ? weaponDisplaySubVal : undefined }} stats={build} />
+                <WeaponStatsCard title={"Bonus Stats"} statsVals={weaponBonusStats} stats={build} />
+              </Box>
             </buildContext.Provider>}
             {charData && sections ? (() => {
               const { equippedBuild, newBuild } = charData
               const characterKey = (newBuild ? newBuild : equippedBuild)?.characterKey as CharacterKey | undefined
-              return !!characterKey && < DocumentDisplay  {...{ sections, equippedBuild, newBuild, characterKey }} />
+              return !!characterKey && < DocumentDisplay sections={sections} characterKey={characterKey} />
             })() : null}
           </Box>
         </Box>

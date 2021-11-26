@@ -2,7 +2,7 @@ import { faBan, faChartLine, faEdit, faInfoCircle, faTrashAlt } from '@fortaweso
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Lock, LockOpen } from '@mui/icons-material';
 import { Box, Button, ButtonGroup, CardActions, CardContent, CardMedia, Chip, Grid, IconButton, Skeleton, Tooltip, Typography } from '@mui/material';
-import React, { Suspense, useContext, useEffect, useState } from 'react';
+import React, { Suspense, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import BootstrapTooltip from '../Components/BootstrapTooltip';
 import CardLight from '../Components/Card/CardLight';
@@ -12,6 +12,7 @@ import ColorText from '../Components/ColoredText';
 import SqBadge from '../Components/SqBadge';
 import { Stars } from '../Components/StarDisplay';
 import { database as localDatabase, DatabaseContext } from '../Database/Database';
+import useArtifact from '../ReactHooks/useArtifact';
 import usePromise from '../ReactHooks/usePromise';
 import Stat from '../Stat';
 import { allSubstats, ICachedArtifact, ICachedSubstat, SubstatKey } from '../Types/artifact';
@@ -22,7 +23,7 @@ import Artifact from './Artifact';
 import { ArtifactSheet } from './ArtifactSheet';
 import SlotNameWithIcon from './Component/SlotNameWIthIcon';
 import PercentBadge from './PercentBadge';
-import { probability } from './RollProbability'
+import { probability } from './RollProbability';
 
 type Data = {
   artifactId?: string,
@@ -30,18 +31,15 @@ type Data = {
   onEdit?: (string) => void,
   onDelete?: (string) => void, mainStatAssumptionLevel?: number,
   effFilter?: Set<SubstatKey>,
-  probabilityFilter?: Partial<Record<SubstatKey, number>>
+  probabilityFilter?: Dict<SubstatKey, number>
 }
 const allSubstatFilter = new Set(allSubstats)
 
 export default function ArtifactCard({ artifactId, artifactObj, onEdit, onDelete, mainStatAssumptionLevel = 0, effFilter = allSubstatFilter, probabilityFilter }: Data): JSX.Element | null {
   const { t } = useTranslation(["artifact"]);
   const database = useContext(DatabaseContext)
-  const [databaseArtifact, updateDatabaseArtifact] = useState(undefined as ICachedArtifact | undefined)
-  useEffect(() =>
-    artifactId ? database.followArt(artifactId, updateDatabaseArtifact) : undefined,
-    [artifactId, updateDatabaseArtifact, database])
-  const sheet = usePromise(ArtifactSheet.get((artifactObj ?? (artifactId ? database._getArt(artifactId) : undefined))?.setKey), [artifactObj, artifactId])
+  const databaseArtifact = useArtifact(artifactId)
+  const sheet = usePromise(ArtifactSheet.get((artifactObj ?? databaseArtifact)?.setKey), [artifactObj, databaseArtifact])
   const equipOnChar = (charKey: CharacterKey | "") => database.setArtLocation(artifactId!, charKey)
 
   const editable = !artifactObj && database === localDatabase // dont allow edit for flex artifacts

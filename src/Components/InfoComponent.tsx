@@ -7,7 +7,7 @@ import { getRandomElementFromArray } from "../Util/Util"
 import CardDark from "./Card/CardDark"
 import CloseButton from "./CloseButton"
 import ModalWrapper from "./ModalWrapper"
-import { TransWrapper } from "./Translate"
+import { Translate } from "./Translate"
 
 export default function InfoComponent({ pageKey = "", text = "", modalTitle = "", children }: { pageKey: string, text: Displayable | Displayable[], modalTitle: Displayable, children: JSX.Element }) {
   const [showInfoModal, setshowInfoModal] = useState(dbStorage.get("infoShown")?.[pageKey] ?? true)
@@ -27,7 +27,7 @@ export default function InfoComponent({ pageKey = "", text = "", modalTitle = ""
       </Grid>
       <Grid item xs="auto">
         <Button size="small" color="info" variant="contained" onClick={() => setshowInfoModal(true)} startIcon={<FontAwesomeIcon icon={faQuestionCircle} />}>
-          <TransWrapper ns="ui" key18="info" />
+          <Translate ns="ui" key18="info" />
         </Button>
       </Grid>
     </Grid>

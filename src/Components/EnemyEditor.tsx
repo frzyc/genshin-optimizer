@@ -8,7 +8,7 @@ import StatInput from "../Character/StatInput";
 import useCharacterReducer from "../ReactHooks/useCharacterReducer";
 import Stat from "../Stat";
 import { ICachedCharacter } from "../Types/character";
-import { allElements, ElementKey } from "../Types/consts";
+import { allElementsWithPhy } from "../Types/consts";
 import { characterBaseStats } from "../Util/StatUtil";
 import CardLight from "./Card/CardLight";
 import ColorText from "./ColoredText";
@@ -26,7 +26,7 @@ export function EnemyExpandCard({ character }) {
             <Grid item>
               <Chip size="small" color="success" label={<span>{Stat.getStatName("enemyLevel")} <strong>{Character.getStatValueWithBonus(character, "enemyLevel")}</strong></span>} />
             </Grid>
-            {["physical", ...allElements].map(element => <Grid item key={element}>
+            {allElementsWithPhy.map(element => <Grid item key={element}>
               <Typography key={element} ><EnemyResText element={element} character={character} /></Typography>
             </Grid>)}
             <Grid item>
@@ -84,7 +84,7 @@ export function EnemyEditor({ character, character: { key: characterKey, }, bsPr
         onValueChange={value => characterDispatch({ type: "editStats", statKey: "enemyLevel", value })}
       />
     </Grid>
-    {(["physical", ...allElements] as Array<ElementKey | "physical">).map(eleKey => {
+    {allElementsWithPhy.map(eleKey => {
       let statKey = `${eleKey}_enemyRes_`
       let immunityStatKey = `${eleKey}_enemyImmunity`
       let elementImmunity = Character.getStatValueWithBonus(character, immunityStatKey)

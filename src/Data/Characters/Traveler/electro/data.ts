@@ -43,9 +43,9 @@ const formula: IFormulaSheet = {
     [key, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "plunging")])),
   skill: {
     dmg: stats => basicDMGFormula(data.skill.dmg[stats.tlvl.skill], stats, "skill"),
-    enerRechInc: stats => { //TODO: new modifiers system formula
+    enerRechInc: stats => {
       if (stats.ascension < 4) return [s => 20, []]
-      return [s => 20 + s.enerRech_ / 10, ["enerRech_"]]
+      return [s => 20 + (s.premod?.enerRech_ ?? s.enerRech_) / 10, ["enerRech_"]]
     }
   },
   burst: {

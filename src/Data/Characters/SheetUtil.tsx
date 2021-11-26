@@ -1,9 +1,13 @@
 import { getTalentStatKey, getTalentStatKeyVariant } from "../../Build/Build";
-import { TransWrapper } from "../../Components/Translate";
+import ImgIcon from "../../Components/Image/ImgIcon";
+import SqBadge from "../../Components/SqBadge";
+import { Translate } from "../../Components/Translate";
 import Stat from "../../Stat";
+import { TalentSheetElementKey } from "../../Types/character";
 import { ElementKey } from "../../Types/consts";
-export const st = (strKey: string) => <TransWrapper ns="sheet" key18={strKey} />
-export const sgt = (strKey: string) => <TransWrapper ns="sheet_gen" key18={strKey} />
+import IConditional from "../../Types/IConditional";
+export const st = (strKey: string) => <Translate ns="sheet" key18={strKey} />
+export const sgt = (strKey: string) => <Translate ns="sheet_gen" key18={strKey} />
 
 //this template only works if there is no variation in normal attacks.(no multi hits)
 export const normalDocSection = (tr, formula, data) => ({
@@ -96,9 +100,45 @@ export const bowChargedDocSection = (tr, formula, data, elementKey: ElementKey) 
     variant: stats => getTalentStatKeyVariant("charged", stats, elementKey),
   }]
 })
-export const talentTemplate = (talentKey, tr, img, stats: undefined | object = undefined) => ({
+type BoostKey = "autoBoost" | "skillBoost" | "burstBoost"
+export const talentTemplate = (talentKey: TalentSheetElementKey, tr: (string) => Displayable, img: string, boostKey?: BoostKey, boostAmt: number = 3) => ({
   name: tr(`${talentKey}.name`),
   img,
-  sections: [{ text: tr(`${talentKey}.description`), }],
-  ...stats ? { stats } : {}
+  sections: [{
+    text: tr(`${talentKey}.description`),
+    ...(boostKey ? {
+      conditional: {
+        key: boostKey,
+        canShow: stats => stats.constellation >= parseInt(talentKey.split("constellation")[1] ?? 3),
+        maxStack: 0,
+        stats: {
+          [boostKey]: boostAmt
+        }
+      } as IConditional
+    } : {})
+  }],
 })
+
+const talentStrMap: Record<TalentSheetElementKey, string> = {
+  auto: "Auto",
+  skill: "Skill",
+  burst: "Burst",
+  passive: "Passive",
+  passive1: "Ascension 1",
+  passive2: "Ascension 4",
+  passive3: "Passive",
+  sprint: "Sprint",
+  constellation1: "C1",
+  constellation2: "C2",
+  constellation3: "C3",
+  constellation4: "C4",
+  constellation5: "C5",
+  constellation6: "C6"
+}
+export const conditionalHeader = (talentKey: TalentSheetElementKey, tr: (string) => Displayable, img: string): IConditional["header"] => {
+  return {
+    title: tr(`${talentKey}.name`),
+    icon: <ImgIcon size={2} sx={{ m: -1 }} src={img} />,
+    action: <SqBadge color="success">{talentStrMap[talentKey]}</SqBadge>,
+  }
+}

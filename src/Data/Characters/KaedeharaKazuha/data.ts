@@ -58,11 +58,9 @@ const formula: IFormulaSheet = {
     ...Object.fromEntries(absorbableEle.map(eleKey => [eleKey, stats => basicDMGFormula(data.burst.add[stats.tlvl.burst], stats, "burst", eleKey)]))
   },
   passive1: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, stats => basicDMGFormula(200, stats, "plunging", eleKey)])),
-  passive2: {
-    bonus: stats => [s => s.eleMas * 0.04, ['eleMas']]
-  },
+  passive2: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, stats => [s => (s.premod?.eleMas ?? s.eleMas) * 0.04, ['eleMas']]])),
   constellation6: {
-    bonus: stats => [s => s.eleMas * 0.2, ['eleMas']]
+    bonus: stats => [s => (s.premod?.eleMas ?? s.eleMas) * 0.2, ['eleMas']]
   }
 }
 

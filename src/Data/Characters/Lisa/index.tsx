@@ -18,36 +18,18 @@ import Stat from '../../../Stat'
 import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-import { IConditionals } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
 import { Translate } from '../../../Components/Translate'
 import { chargedDocSection, normalDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
 const tr = (strKey: string) => <Translate ns="char_Lisa_gen" key18={strKey} />
-const conditionals: IConditionals = {
-  a4: { // StaticElectricityFieldDestiny
-    canShow: stats => stats.ascension >= 4,
-    name: "Opponents hit by Lightning Rose",
-    stats: { enemyDEFRed_: 15 },
-    fields: [{
-      text: "Duration",
-      value: "10s",
-    }],
-  },
-  c2: { // ElectromagneticField
-    canShow: stats => stats.constellation >= 2,
-    name: "Holding Violent Arc",
-    stats: { def_: 25 },
-    fields: [{ text: "Increase resistance to interruption" }],
-  },
-}
 const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   thumbImgSide: thumbSide,
   bannerImg: banner,
-  star: data_gen.star,
+  rarity: data_gen.star,
   elementKey: "electro",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
   gender: "F",
@@ -58,7 +40,6 @@ const char: ICharacterSheet = {
   ascensions: data_gen.ascensions,
   talent: {
     formula,
-    conditionals,
     sheets: {
       auto: {
         name: tr("auto.name"),
@@ -136,7 +117,16 @@ const char: ICharacterSheet = {
             canShow: stats => stats.ascension >= 4,
             text: <span>The DEF debuff is applied <strong>after</strong> the first lightning bolt.</span>
           }],
-          conditional: conditionals.a4
+          conditional: { // StaticElectricityFieldDestiny
+            key: "a4",
+            canShow: stats => stats.ascension >= 4,
+            name: "Opponents hit by Lightning Rose",
+            stats: { enemyDEFRed_: 15 },
+            fields: [{
+              text: "Duration",
+              value: "10s",
+            }],
+          },
         }],
       },
       passive1: talentTemplate("passive1", tr, passive1),
@@ -148,12 +138,18 @@ const char: ICharacterSheet = {
         img: c2,
         sections: [{
           text: tr("constellation2.description"),
-          conditional: conditionals.c2
+          conditional: { // ElectromagneticField
+            key: "c2",
+            canShow: stats => stats.constellation >= 2,
+            name: "Holding Violet Arc",
+            stats: { def_: 25 },
+            fields: [{ text: "Increase resistance to interruption" }],
+          },
         }],
       },
-      constellation3: talentTemplate("constellation3", tr, c3, { burstBoost: 3 }),
+      constellation3: talentTemplate("constellation3", tr, c3, "burstBoost"),
       constellation4: talentTemplate("constellation4", tr, c4),
-      constellation5: talentTemplate("constellation5", tr, c5, { skillBoost: 3 }),
+      constellation5: talentTemplate("constellation5", tr, c5, "skillBoost"),
       constellation6: talentTemplate("constellation6", tr, c6),
     },
   },

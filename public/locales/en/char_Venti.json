@@ -9,7 +9,7 @@
   },
   "c6": "Targets who take DMG from <strong>Wind's Grand Ode</strong>",
   "c4": "Venti picks up an Elemental Orb or Particle",
-  "q": "Regen 15 Energy to all <1>{{elementKey}}</1> characters.",
+  "q": "Regen 15 Energy to all characters of that corresponding element in the party.",
   "c2": {
     "hit": "Opponent hit",
     "launched": "Opponent launched"

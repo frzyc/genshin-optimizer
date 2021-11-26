@@ -1,6 +1,7 @@
 import { initialBuildSettings } from "../Build/BuildSetting"
 import { ascensionMaxLevel } from "../Data/LevelData"
 import { allCharacterKeys } from "../Types/consts"
+import { crawlObject, layeredAssignment } from "../Util/Util"
 import { DBStorage } from "./DBStorage"
 import { getDBVersion, setDBVersion } from "./utils"
 
@@ -10,7 +11,7 @@ import { getDBVersion, setDBVersion } from "./utils"
 // 2. Call the added `migrateV<x>ToV<x+1>` from `migrate`
 // 3. Update `currentDBVersion`
 
-export const currentDBVersion = 13
+export const currentDBVersion = 14
 
 export function migrate(storage: DBStorage): { migrated: boolean } {
   const version = getDBVersion(storage)
@@ -28,6 +29,7 @@ export function migrate(storage: DBStorage): { migrated: boolean } {
   if (version < 11) { migrateV10ToV11(storage); setDBVersion(storage, 11) }
   if (version < 12) { migrateV11ToV12(storage); setDBVersion(storage, 12) }
   if (version < 13) { migrateV12ToV13(storage); setDBVersion(storage, 13) }
+  if (version < 14) { migrateV13ToV14(storage); setDBVersion(storage, 14) }
 
   if (version > currentDBVersion) throw new Error(`Database version ${version} is not supported`)
 
@@ -298,8 +300,83 @@ function migrateV11ToV12(storage: DBStorage) {
   }
 }
 
-// 7.3.0 - present
+// 7.3.0 - 7.4.2
 function migrateV12ToV13(storage: DBStorage) {
-  //UI was changed quite a lot, deleting state should be easiest for migration.
+  // UI was changed quite a lot, deleting state should be easiest for migration.
   storage.remove("ArtifactDisplay.state")
+}
+
+// 7.5.0 - Present
+function migrateV13ToV14(storage: DBStorage) {
+  // Migrate conditionalValues due to keys changes
+  for (const key of storage.keys) {
+    if (key.startsWith("char_")) {
+      const character = storage.get(key)
+      const newCondValues = {}
+      crawlObject(character.conditionalValues, [], c => Array.isArray(c), (conditionalValue, keys) => {
+        const [type, subkey] = keys
+        if (type === "character") {
+          if (subkey === "Traveler") {
+            // character, traveler, sheet, talents, element, condKey
+            let [character, traveler, , , element, condKey] = keys
+            if (!condKey || !element) return
+            if (element === "electro" && condKey === "sk") condKey = "e"
+            layeredAssignment(newCondValues, [character, `${traveler}_${element}`, condKey], conditionalValue)
+          } else {
+            // character, charKey, sheet, talent, condKey
+            let [character, charKey, , , condKey] = keys
+            if (!condKey) return
+            switch (charKey) {
+              case "Diona":
+                if (condKey === "c4") condKey = "a1"
+                break;
+              case "Diluc":
+                if (condKey === "b") condKey = "q"
+                break;
+              case "KamisatoAyaka":
+                if (condKey === "p1") condKey = "a1"
+                if (condKey === "p2") condKey = "a4"
+                break;
+              case "RaidenShogun":
+                if (condKey === "sk") condKey = "e"
+                if (condKey === "skp") condKey = "ep"
+                if (condKey === "res") condKey = "q"
+                break;
+              case "SangonomiyaKokomi":
+                if (condKey === "b") condKey = "q"
+                break;
+              case "Xiao":
+                if (condKey === "a1") condKey = "a4"
+                break;
+              case "Xinyan":
+                if (condKey === "a1") condKey = "c1"
+                break;
+              case "Yanfei":
+                if (condKey === "p1") condKey = "a1"
+                break;
+              case "Zhongli":
+                if (condKey === "sk") condKey = "e"
+                break;
+              default:
+                break;
+            }
+            layeredAssignment(newCondValues, [character, charKey, condKey], conditionalValue)
+          }
+        } else if (type === "weapon") {
+          let [weapon, weaponKey, condKey] = keys
+          if (!condKey) return
+          if (weaponKey === "Whiteblind" && condKey === "infusionBlade") condKey = "ib"
+          if (weaponKey === "PrototypeRancour" && condKey === "smashedStone") condKey = "ss"
+          layeredAssignment(newCondValues, [weapon, weaponKey, condKey], conditionalValue)
+        } else if (type === "artifact") {
+          let [artifact, setKey, condKey] = keys
+          if (!condKey) return
+          layeredAssignment(newCondValues, [artifact, setKey, condKey, condKey], conditionalValue)
+        }
+      })
+      character.conditionalValues = newCondValues
+      character.team = ["", "", ""]
+      storage.set(key, character)
+    }
+  }
 }

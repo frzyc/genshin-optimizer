@@ -1,30 +1,25 @@
 import { CardActionArea, CardContent, Grid, Skeleton, Typography } from '@mui/material';
 import React, { Suspense, useContext } from 'react';
-import { ArtifactSheet } from '../../Artifact/ArtifactSheet';
 import { artifactSlotIcon } from '../../Artifact/Component/SlotNameWIthIcon';
 import StatDisplayComponent from '../../Character/CharacterDisplay/StatDisplayComponent';
-import CharacterSheet from '../../Character/CharacterSheet';
 import CardLight from '../../Components/Card/CardLight';
 import SqBadge from '../../Components/SqBadge';
 import { DatabaseContext } from '../../Database/Database';
+import { Sheets } from '../../ReactHooks/useSheets';
 import { allSlotKeys, ArtifactSetKey, CharacterKey, SlotKey } from '../../Types/consts';
 import { ICalculatedStats } from '../../Types/stats';
-import WeaponSheet from '../../Weapon/WeaponSheet';
 
 type ArtifactBuildDisplayItemProps = {
-  sheets: {
-    characterSheet: CharacterSheet
-    weaponSheet: WeaponSheet,
-    artifactSheets: StrictDict<ArtifactSetKey, ArtifactSheet>
-  },
+  sheets: Sheets,
   index: number,
   characterKey: CharacterKey,
   build: ICalculatedStats,
   statsDisplayKeys: any,
-  onClick: () => void
+  onClick: () => void,
+  disabled?: boolean
 }
 //for displaying each artifact build
-export default function ArtifactBuildDisplayItem({ sheets, sheets: { artifactSheets }, index, characterKey, build, statsDisplayKeys, onClick }: ArtifactBuildDisplayItemProps) {
+export default function ArtifactBuildDisplayItem({ sheets, sheets: { artifactSheets }, index, characterKey, build, statsDisplayKeys, onClick, disabled }: ArtifactBuildDisplayItemProps) {
   const database = useContext(DatabaseContext)
   const character = database._getChar(characterKey)
   if (!character) return null
@@ -32,7 +27,7 @@ export default function ArtifactBuildDisplayItem({ sheets, sheets: { artifactShe
   const currentlyEquipped = allSlotKeys.every(slotKey => equippedArtifacts[slotKey] === build.equippedArtifacts?.[slotKey])
   return <CardLight>
     <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={600} />}>
-      <CardActionArea onClick={onClick}>
+      <CardActionArea onClick={onClick} disabled={disabled}>
         <CardContent>
           <Grid container spacing={1} sx={{ pb: 1 }}>
             <Grid item>

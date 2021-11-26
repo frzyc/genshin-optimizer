@@ -18,46 +18,18 @@ import Stat from "../../../Stat";
 import formula, { data } from "./data";
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from "../../../Build/Build";
-import { IConditionals } from "../../../Types/IConditional";
 import { ICharacterSheet } from "../../../Types/character";
 import { Translate } from '../../../Components/Translate'
 import { chargedDocSection, plungeDocSection, talentTemplate } from "../SheetUtil";
 import { WeaponTypeKey } from "../../../Types/consts";
 const tr = (strKey: string) => <Translate ns="char_Qiqi_gen" key18={strKey} />
-const conditionals: IConditionals = {
-  a1: { // LifeProlongingMethods
-    canShow: stats => stats.ascension >= 1,
-    name: <span>Character under the effects of <b>Adeptus Art: Herald of Frost</b> triggers an Elemental Reaction</span>,
-    stats: { incHeal_: 20, },
-    fields: [{
-      text: "Duration",
-      value: "8s",
-    }],
-  },
-  c2: { // FrozenToTheBone
-    canShow: stats => stats.constellation >= 2,
-    name: "Enemy Affected by Cryo",
-    stats: {
-      normal_dmg_: 15,
-      charged_dmg_: 15,
-    },
-  },
-  c4: { // DivineSuppression
-    canShow: stats => stats.constellation >= 4,
-    name: "Enemy marked by Talisman",
-    fields: [{//TODO: enemy atk decrease
-      text: "Enemy ATK Decrease",
-      value: "20%"
-    }],
-  },
-}
 const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   thumbImgSide: thumbSide,
   bannerImg: banner,
-  star: data_gen.star,
+  rarity: data_gen.star,
   elementKey: "cryo",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
   gender: "F",
@@ -68,7 +40,6 @@ const char: ICharacterSheet = {
   ascensions: data_gen.ascensions,
   talent: {
     formula,
-    conditionals,
     sheets: {
       auto: {
         name: tr("auto.name"),
@@ -155,7 +126,16 @@ const char: ICharacterSheet = {
         img: passive1,
         sections: [{
           text: tr("passive1.description"),
-          conditional: conditionals.a1
+          conditional: { // LifeProlongingMethods
+            key: "a1",
+            canShow: stats => stats.ascension >= 1,
+            name: <span>Character under the effects of <b>Adeptus Art: Herald of Frost</b> triggers an Elemental Reaction</span>,
+            stats: { incHeal_: 20, },
+            fields: [{
+              text: "Duration",
+              value: "8s",
+            }],
+          },
         }],
       },
       passive2: {
@@ -193,19 +173,35 @@ const char: ICharacterSheet = {
         img: c2,
         sections: [{
           text: tr("constellation2.description"),
-          conditional: conditionals.c2
+          conditional: { // FrozenToTheBone
+            key: "c2",
+            canShow: stats => stats.constellation >= 2,
+            name: "Enemy Affected by Cryo",
+            stats: {
+              normal_dmg_: 15,
+              charged_dmg_: 15,
+            },
+          },
         }],
       },
-      constellation3: talentTemplate("constellation3", tr, c3, { burstBoost: 3 }),
+      constellation3: talentTemplate("constellation3", tr, c3, "burstBoost"),
       constellation4: {
         name: tr("constellation4.name"),
         img: c4,
         sections: [{
           text: tr("constellation4.description"),
-          conditional: conditionals.c4
+          conditional: { // DivineSuppression
+            key: "c4",
+            canShow: stats => stats.constellation >= 4,
+            name: "Enemy marked by Talisman",
+            fields: [{//TODO: enemy atk decrease
+              text: "Enemy ATK Decrease",
+              value: "20%"
+            }],
+          },
         }],
       },
-      constellation5: talentTemplate("constellation5", tr, c5, { skillBoost: 3 }),
+      constellation5: talentTemplate("constellation5", tr, c5, "skillBoost"),
       constellation6: {
         name: tr("constellation6.name"),
         img: c6,

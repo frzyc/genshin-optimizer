@@ -1,25 +1,24 @@
-import { ArtifactSheet } from "../Artifact/ArtifactSheet"
 import { initialBuildSettings } from "../Build/BuildSetting"
 import SqBadge from "../Components/SqBadge"
-import { ICachedCharacter } from "../Types/character"
-import { allSlotKeys, ArtifactSetKey, CharacterKey, ElementKey } from "../Types/consts"
+import { Sheets } from "../ReactHooks/useSheets"
+import { ICachedCharacter, TalentSheetElementKey } from "../Types/character"
+import { allSlotKeys, CharacterKey } from "../Types/consts"
+import { ICalculatedStats } from "../Types/stats"
 import { objectFromKeyMap } from "../Util/Util"
-import WeaponSheet from "../Weapon/WeaponSheet"
-import CharacterSheet from "./CharacterSheet"
 
-export function getFormulaTargetsDisplayHeading(key: string, { characterSheet, weaponSheet, artifactSheets }: { characterSheet: CharacterSheet, weaponSheet: WeaponSheet, artifactSheets: StrictDict<ArtifactSetKey, ArtifactSheet> }, eleKey: ElementKey = "anemo") {
+export function getFormulaTargetsDisplayHeading(key: string, sheets: Sheets, build: ICalculatedStats) {
   if (key === "basicKeys") return "Basic Stats"
   else if (key === "genericAvgHit") return "Generic Optimization Values"
   else if (key === "transReactions") return "Transformation Reaction"
   else if (key.startsWith("talentKey_")) {
     const subkey = key.split("talentKey_")[1]
-    return (characterSheet?.getTalentOfKey(subkey, eleKey)?.name ?? subkey)
+    return (sheets.characterSheets[build.characterKey].getTalentOfKey(subkey as TalentSheetElementKey, build.characterEle)?.name ?? subkey)
   } else if (key.startsWith("weapon_")) {
     const subkey = key.split("weapon_")[1]
-    return (weaponSheet?.name ?? subkey)
+    return (sheets.weaponSheets[build.weapon.key].name ?? subkey)
   } else if (key.startsWith("artifact_")) {
     const [, setKey, num] = key.split('_')
-    return <span>{artifactSheets[setKey]?.name} <SqBadge color="success">{num}-Set</SqBadge></span>
+    return <span>{sheets.artifactSheets[setKey]?.name} <SqBadge color="success">{num}-Set</SqBadge></span>
   }
   return ""
 }
@@ -43,5 +42,6 @@ export function initialCharacter(key: CharacterKey): ICachedCharacter {
     },
     infusionAura: "",
     constellation: 0,
+    team: ["", "", ""]
   }
 }

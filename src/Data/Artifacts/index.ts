@@ -1,3 +1,5 @@
+import { IArtifactSheets } from '../../Types/artifact'
+import { documentSectionsProcessing } from '../../Util/DocumentUtil'
 import Adventurer from './Adventurer'
 import ArchaicPetra from './ArchaicPetra'
 import Berserker from './Berserker'
@@ -10,12 +12,14 @@ import EmblemOfSeveredFate from './EmblemOfSeveredFate'
 import Gambler from './Gambler'
 import GladiatorsFinale from './GladiatorsFinale'
 import HeartOfDepth from './HeartOfDepth'
+import HuskOfOpulentDreams from './HuskOfOpulentDreams'
 import Instructor from './Instructor'
 import Lavawalker from './Lavawalker'
 import LuckyDog from './LuckyDog'
 import MaidenBeloved from './MaidenBeloved'
 import MartialArtist from './MartialArtist'
 import NoblesseOblige from './NoblesseOblige'
+import OceanHuedClam from './OceanHuedClam'
 import PaleFlame from './PaleFlame'
 import PrayersForDestiny from './PrayersForDestiny'
 import PrayersForIllumination from './PrayersForIllumination'
@@ -33,8 +37,6 @@ import TinyMiracle from './TinyMiracle'
 import TravelingDoctor from './TravelingDoctor'
 import ViridescentVenerer from './ViridescentVenerer'
 import WanderersTroupe from './WanderersTroupe'
-import { IArtifactSheets } from '../../Types/artifact'
-import { documentSectionsProcessing } from '../../Util/DocumentUtil'
 const artifacts: IArtifactSheets = {
   Adventurer,
   ArchaicPetra,
@@ -48,12 +50,14 @@ const artifacts: IArtifactSheets = {
   Gambler,
   GladiatorsFinale,
   HeartOfDepth,
+  HuskOfOpulentDreams,
   Instructor,
   Lavawalker,
   LuckyDog,
   MaidenBeloved,
   MartialArtist,
   NoblesseOblige,
+  OceanHuedClam,
   PaleFlame,
   PrayersForDestiny,
   PrayersForIllumination,

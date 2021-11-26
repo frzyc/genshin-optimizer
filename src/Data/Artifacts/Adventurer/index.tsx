@@ -4,7 +4,7 @@ import sands from './sands.png'
 import goblet from './goblet.png'
 import circlet from './circlet.png'
 import { IArtifactSheet } from '../../../Types/artifact'
-import { TransWrapper } from '../../../Components/Translate'
+import { Translate } from '../../../Components/Translate'
 import formula from './data'
 import Stat from '../../../Stat'
 const artifact: IArtifactSheet = {
@@ -21,7 +21,7 @@ const artifact: IArtifactSheet = {
     4: {
       document: [{
         fields: [{
-          text: <TransWrapper ns="sheet_gen" key18="healing" />,
+          text: <Translate ns="sheet_gen" key18="healing" />,
           formulaText: stats => <span>30% {Stat.printStat("finalHP", stats)} * {Stat.printStat("heal_multi", stats)}</span>,
           formula: formula.regen,
           variant: "success"

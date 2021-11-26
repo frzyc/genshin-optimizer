@@ -14,14 +14,12 @@ import burst from './Talent_Wind\'s_Grand_Ode.png'
 import passive1 from './Talent_Embrace_of_Winds.png'
 import passive2 from './Talent_Stormeye.png'
 import passive3 from './Talent_Windrider.png'
-import ElementalData from '../../ElementalData'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from "../../../Build/Build"
-import { IConditionals, IConditionalValue } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
-import { bowChargedDocSection, plungeDocSection, sgt, st, talentTemplate } from '../SheetUtil'
+import { bowChargedDocSection, conditionalHeader, plungeDocSection, sgt, st, talentTemplate } from '../SheetUtil'
 import { Translate, TransWrapper } from '../../../Components/Translate'
 import { absorbableEle } from '../dataUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
@@ -29,74 +27,13 @@ import ColorText from '../../../Components/ColoredText'
 import { Typography } from '@mui/material'
 const tr = (strKey: string) => <Translate ns="char_Venti_gen" key18={strKey} />
 
-const conditionals: IConditionals = {
-  c2: { // BreezeOfReminiscence
-    name: tr("skill.name"),
-    canShow: stats => stats.constellation >= 2,
-    states: {
-      hit: {
-        name: <TransWrapper ns="char_Venti" key18="c2.hit" />,
-        stats: {
-          anemo_enemyRes_: -12,
-          physical_enemyRes_: -12
-        },
-      },
-      launch: {
-        name: <TransWrapper ns="char_Venti" key18="c2.launched" />,
-        stats: {
-          anemo_enemyRes_: -24,
-          physical_enemyRes_: -24
-        },
-      }
-    }
-  },
-  q: { // Absorption
-    name: st("eleAbsor"),
-    states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
-      name: <span className={`text-${eleKey}`}><b>{ElementalData[eleKey].name}</b></span>,
-      fields: [{
-        canShow: stats => {
-          const value = stats.conditionalValues?.character?.Venti?.sheet?.talent?.q as IConditionalValue | undefined
-          if (!value) return false
-          const [num, condEleKey] = value
-          if (!num || condEleKey !== eleKey) return false
-          return true
-        },
-        text: st("absorDot"),
-        formulaText: stats => <span>{(data.burst.hit[stats.tlvl.burst] / 2)?.toFixed(2)}% {Stat.printStat(getTalentStatKey("burst", stats, eleKey), stats)}</span>,
-        formula: formula.burst[eleKey],
-        variant: eleKey
-      }, {
-        canShow: stats => stats.ascension >= 4,
-        text: <TransWrapper ns="char_Venti" key18="q" values={{ elementKey: ElementalData[eleKey].name }}>Regen 15 Energy to all <span className={`text-${eleKey}`}>{{ elementKey: ElementalData[eleKey].name }}</span> characters.</TransWrapper>,
-      }],
-      stats: stats => ({
-        ...stats.constellation >= 6 && { [`${eleKey}_enemyRes_`]: -20 }
-      })
-    }]))
-  },
-  c4: { // HurricaneOfFreedom
-    canShow: stats => stats.constellation >= 4,
-    name: <TransWrapper ns="char_Venti" key18="c4" />,
-    stats: { anemo_dmg_: 25 },
-    fields: [{
-      text: sgt("duration"),
-      value: "10s",
-    }]
-  },
-  c6: {// Storm of defiance
-    canShow: stats => stats.constellation >= 6,
-    name: <TransWrapper ns="char_Venti" key18="c6" />,
-    stats: { anemo_enemyRes_: -20 }
-  }
-}
 const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   thumbImgSide: thumbSide,
   bannerImg: banner,
-  star: data_gen.star,
+  rarity: data_gen.star,
   elementKey: "anemo",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
   gender: "M",
@@ -107,7 +44,6 @@ const char: ICharacterSheet = {
   ascensions: data_gen.ascensions,
   talent: {
     formula,
-    conditionals,
     sheets: {
       auto: {
         name: tr("auto.name"),
@@ -116,7 +52,7 @@ const char: ICharacterSheet = {
           text: tr(`auto.fields.normal`),
           fields: data.normal.hitArr.map((percentArr, i) =>
           ({
-            text: <span>{sgt(`normal.hit${i + 1}`)} {i === 0 || i === 3 ? <span>(<TransWrapper ns="sheet" key18="hits" values={{ count: 2 }} />)</span> : null}</span>,
+            text: <span>{sgt(`normal.hit${i + 1}`)} {i === 0 || i === 3 ? <span>(<Translate ns="sheet" key18="hits" values={{ count: 2 }} />)</span> : null}</span>,
             formulaText: stats => <span>{percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
             formula: formula.normal[i],
             variant: stats => getTalentStatKeyVariant("normal", stats),
@@ -125,12 +61,12 @@ const char: ICharacterSheet = {
           canShow: stats => stats.constellation >= 1,
           text: <strong>{tr("constellation1.name")}</strong>,
           fields: [{
-            text: <TransWrapper ns="char_Venti" key18="addAimed" />,
+            text: <Translate ns="char_Venti" key18="addAimed" />,
             formulaText: stats => <span>{(data.charged.hit[stats.tlvl.auto] * 0.33)?.toFixed(2)}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
             formula: formula.charged.hit_bonus,
             variant: stats => getTalentStatKeyVariant("charged", stats),
           }, {
-            text: <TransWrapper ns="char_Venti" key18="addFullAimed" />,
+            text: <Translate ns="char_Venti" key18="addFullAimed" />,
             formulaText: stats => <span>{(data.charged.full[stats.tlvl.auto] * 0.33)?.toFixed(2)}% {Stat.printStat(getTalentStatKey("charged", stats, "anemo"), stats)}</span>,
             formula: formula.charged.full_bonus,
             variant: stats => getTalentStatKeyVariant("charged", stats, "anemo"),
@@ -160,10 +96,32 @@ const char: ICharacterSheet = {
             value: "15s",
           }, {
             canShow: stats => stats.ascension >= 1,
-            text: <TransWrapper ns="char_Venti" key18="upcurrentDuration" />,
+            text: <Translate ns="char_Venti" key18="upcurrentDuration" />,
             value: "20s",
           }],
-          conditional: conditionals.c2
+          conditional: { // BreezeOfReminiscence
+            key: "c2",
+            header: conditionalHeader("constellation2", tr, c2),
+            description: tr("constellation2.description"),
+            name: tr("skill.name"),
+            canShow: stats => stats.constellation >= 2,
+            states: {
+              hit: {
+                name: <Translate ns="char_Venti" key18="c2.hit" />,
+                stats: {
+                  anemo_enemyRes_: -12,
+                  physical_enemyRes_: -12
+                },
+              },
+              launch: {
+                name: <Translate ns="char_Venti" key18="c2.launched" />,
+                stats: {
+                  anemo_enemyRes_: -24,
+                  physical_enemyRes_: -24
+                },
+              }
+            }
+          },
         }],
       },
       burst: {
@@ -187,17 +145,42 @@ const char: ICharacterSheet = {
             value: 60,
           }, {
             canShow: stats => stats.ascension >= 4,
-            text: <TransWrapper ns="char_Venti" key18="regenEner" />,
+            text: <Translate ns="char_Venti" key18="regenEner" />,
           }],
-          conditional: conditionals.c6
+          conditional: {// Storm of defiance
+            key: "c6",
+            canShow: stats => stats.constellation >= 6,
+            name: <Translate ns="char_Venti" key18="c6" />,
+            stats: { anemo_enemyRes_: -20 }
+          }
         }, {
-          conditional: conditionals.q
+          conditional: { // Absorption
+            key: "q",
+            name: st("eleAbsor"),
+            states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
+              name: <ColorText color={eleKey}>{sgt(`element.${eleKey}`)}</ColorText>,
+              fields: [{
+                canShow: stats => {
+                  const [num, condEleKey] = stats.conditionalValues?.character?.Venti?.q ?? []
+                  return !!num && condEleKey === eleKey
+                },
+                text: st("absorDot"),
+                formulaText: stats => <span>{(data.burst.hit[stats.tlvl.burst] / 2)?.toFixed(2)}% {Stat.printStat(getTalentStatKey("burst", stats, eleKey), stats)}</span>,
+                formula: formula.burst[eleKey],
+                variant: eleKey
+              }, {
+                canShow: stats => stats.ascension >= 4,
+                text: <Translate ns="char_Venti" key18="q" />,
+              }],
+              stats: stats => ({
+                ...stats.constellation >= 6 && { [`${eleKey}_enemyRes_`]: -20 }
+              })
+            }]))
+          },
         }, {
-          canShow: stats => Boolean(stats.conditionalValues?.character?.Venti?.sheet?.talent?.q),
+          canShow: stats => Boolean(stats.conditionalValues?.character?.Venti?.q),
           text: stats => {
-            const value = stats.conditionalValues?.character?.Venti?.sheet?.talent?.q
-            if (!value) return ""
-            const [num, eleKey] = value
+            const [num, eleKey] = stats.conditionalValues?.character?.Venti?.q ?? []
             if (!num) return ""
             return <TransWrapper ns="char_Venti" key18="fullBurstDMG.text"><span>
               <Typography variant="h6">Full Elemental Burst DMG</Typography>
@@ -214,11 +197,8 @@ const char: ICharacterSheet = {
           },
           fields: absorbableEle.flatMap(eleKey => ([7, 14].map(swirlTicks => ({
             canShow: stats => {
-              const value = stats.conditionalValues?.character?.Venti?.sheet?.talent?.q
-              if (!value) return false
-              const [num, condEleKey] = value
-              if (!num || condEleKey !== eleKey) return false
-              return true
+              const [num, condEleKey] = stats.conditionalValues?.character?.Venti?.q ?? []
+              return !!num && condEleKey === eleKey
             },
             text: <TransWrapper ns="char_Venti" key18="fullBurstDMG.dmg" values={{ swirlTicks }}><span>Total DMG (<span className={`text-${eleKey}`}>{{ swirlTicks }} Swirl ticks</span>)</span></TransWrapper>,
             formula: formula.burst[`${eleKey}_tot_${swirlTicks}`],
@@ -233,23 +213,34 @@ const char: ICharacterSheet = {
         img: passive3,
         sections: [{
           text: tr("passive3.description"),
+          conditional: {
+            key: "pas",
+            maxStack: 0,
+            stats: { staminaGlidingDec_: 20 }
+          }
         }],
-        stats: {
-          staminaGlidingDec_: 20,
-        }
       },
       constellation1: talentTemplate("constellation1", tr, c1),
       constellation2: talentTemplate("constellation2", tr, c2),
-      constellation3: talentTemplate("constellation3", tr, c3, { burstBoost: 3 }),
+      constellation3: talentTemplate("constellation3", tr, c3, "burstBoost"),
       constellation4: {
         name: tr("constellation4.name"),
         img: c4,
         sections: [{
           text: tr("constellation4.description"),
-          conditional: conditionals.c4
+          conditional: { // HurricaneOfFreedom
+            key: "c4",
+            canShow: stats => stats.constellation >= 4,
+            name: <Translate ns="char_Venti" key18="c4" />,
+            stats: { anemo_dmg_: 25 },
+            fields: [{
+              text: sgt("duration"),
+              value: "10s",
+            }]
+          },
         }],
       },
-      constellation5: talentTemplate("constellation5", tr, c5, { skillBoost: 3 }),
+      constellation5: talentTemplate("constellation5", tr, c5, "skillBoost"),
       constellation6: talentTemplate("constellation6", tr, c6),
     },
   },

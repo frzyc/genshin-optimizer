@@ -18,7 +18,6 @@ import Stat from '../../../Stat'
 import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-import { IConditionals } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
 import { Translate } from '../../../Components/Translate'
 import { bowChargedDocSection, normalDocSection, plungeDocSection, st, talentTemplate } from '../SheetUtil'
@@ -30,26 +29,13 @@ import { Typography } from '@mui/material'
 const path = KeyPath<FormulaPathBase, any>().character.KujouSara
 const tr = (strKey: string) => <Translate ns="char_KujouSara_gen" key18={strKey} />
 const charTr = (strKey: string) => <Translate ns="char_KujouSara" key18={strKey} />
-const conditionals: IConditionals = {
-  e: { //Gengu StormCall
-    name: charTr("skill.ambush"),
-    stats: {
-      modifiers: { atk: [path.skill.atkBonus()] },
-    },
-    fields: [{
-      text: st("increase.atk"),
-      formulaText: stats => <span>{data.skill.atkRatio[stats.tlvl.skill]}% {Stat.printStat("baseATK", stats, true)}</span>,
-      formula: formula.skill.atkBonus
-    },]
-  }
-}
 const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   thumbImgSide: thumbSide,
   bannerImg: banner,
-  star: data_gen.star,
+  rarity: data_gen.star,
   elementKey: "electro",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
   gender: "F",
@@ -60,7 +46,6 @@ const char: ICharacterSheet = {
   ascensions: data_gen.ascensions,
   talent: {
     formula,
-    conditionals,
     sheets: {
       auto: {
         name: tr("auto.name"),
@@ -91,7 +76,18 @@ const char: ICharacterSheet = {
               value: data.skill.cd,
               unit: "s"
             }],
-          conditional: conditionals.e,
+          conditional: { //Gengu StormCall
+            key: "e",
+            name: charTr("skill.ambush"),
+            stats: {
+              modifiers: { atk: [path.skill.atkBonus()] },
+            },
+            fields: [{
+              text: st("increase.atk"),
+              formulaText: stats => <span>{data.skill.atkRatio[stats.tlvl.skill]}% {Stat.printStat("baseATK", stats, true)}</span>,
+              formula: formula.skill.atkBonus
+            },]
+          }
         }],
       },
       burst: {
@@ -137,9 +133,9 @@ const char: ICharacterSheet = {
           }]
         }],
       },
-      constellation3: talentTemplate("constellation3", tr, c3, { burstBoost: 3 }),
+      constellation3: talentTemplate("constellation3", tr, c3, "burstBoost"),
       constellation4: talentTemplate("constellation4", tr, c4),
-      constellation5: talentTemplate("constellation5", tr, c5, { skillBoost: 3 }),
+      constellation5: talentTemplate("constellation5", tr, c5, "skillBoost"),
       constellation6: {
         name: tr("constellation6.name"),
         img: c6,

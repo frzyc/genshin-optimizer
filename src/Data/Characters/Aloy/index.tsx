@@ -18,73 +18,21 @@ import Stat from '../../../Stat'
 import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-import { IConditionals, IConditionalValue } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
 import { Translate } from '../../../Components/Translate'
-import { bowChargedDocSection, plungeDocSection, sgt, talentTemplate } from '../SheetUtil'
+import { bowChargedDocSection, conditionalHeader, plungeDocSection, sgt, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
 import { basicDMGFormulaText } from '../../../Util/FormulaTextUtil'
 const tr = (strKey: string) => <Translate ns="char_Aloy_gen" key18={strKey} />
 const charTr = (strKey: string) => <Translate ns="char_Aloy" key18={strKey} />
-const conditionals: IConditionals = {
-  e: { //Gengu StormCall
-    name: charTr("skill.coil"),
-    states: {
-      c1: {
-        name: charTr("skill.coil1"),
-        stats: stats => ({
-          normal_dmg_: data.skill.coil1[stats.tlvl.skill]
-        }),
-      },
-      c2: {
-        name: charTr("skill.coil2"),
-        stats: stats => ({
-          normal_dmg_: data.skill.coil2[stats.tlvl.skill]
-        })
-      },
-      c3: {
-        name: charTr("skill.coil3"),
-        stats: stats => ({
-          normal_dmg_: data.skill.coil3[stats.tlvl.skill]
-        })
-      },
-      c4: {
-        name: charTr("skill.rush"),
-        stats: stats => ({
-          normal_dmg_: data.skill.coil4[stats.tlvl.skill],
-          infusionSelf: "cryo",
-        }),
-        fields: [{
-          text: tr("skill.skillParams.6"),
-          value: data.skill.rushDur,
-          unit: "s"
-        },]
-      }
-    },
-  },
-  a4: {
-    canShow: stats => {
-      if (stats.ascension < 4) return false
-      const value = stats.conditionalValues?.character?.Aloy?.sheet?.talent?.e as IConditionalValue | undefined
-      if (!value) return false
-      const [num, condEleKey] = value
-      if (!num || condEleKey !== "c4") return false
-      return true
-    },
-    name: charTr("skill.rushDur"),
-    maxStack: 10,
-    stats: {
-      cryo_dmg_: 3.5
-    }
-  }
-}
+
 const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   thumbImgSide: thumbSide,
   bannerImg: banner,
-  star: 5,//data_gen.star, TODO: not in datamine
+  rarity: 5,//data_gen.star, TODO: not in datamine
   elementKey: "cryo",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
   gender: "F",
@@ -95,7 +43,6 @@ const char: ICharacterSheet = {
   ascensions: data_gen.ascensions,
   talent: {
     formula,
-    conditionals,
     sheets: {
       auto: {
         name: tr("auto.name"),
@@ -144,7 +91,42 @@ const char: ICharacterSheet = {
             value: data.skill.cd,
             unit: "s"
           }],
-          conditional: conditionals.e,
+          conditional: { //Gengu StormCall
+            key: "e",
+            name: charTr("skill.coil"),
+            states: {
+              c1: {
+                name: charTr("skill.coil1"),
+                stats: stats => ({
+                  normal_dmg_: data.skill.coil1[stats.tlvl.skill]
+                }),
+              },
+              c2: {
+                name: charTr("skill.coil2"),
+                stats: stats => ({
+                  normal_dmg_: data.skill.coil2[stats.tlvl.skill]
+                })
+              },
+              c3: {
+                name: charTr("skill.coil3"),
+                stats: stats => ({
+                  normal_dmg_: data.skill.coil3[stats.tlvl.skill]
+                })
+              },
+              c4: {
+                name: charTr("skill.rush"),
+                stats: stats => ({
+                  normal_dmg_: data.skill.coil4[stats.tlvl.skill],
+                  infusionSelf: "cryo",
+                }),
+                fields: [{
+                  text: tr("skill.skillParams.6"),
+                  value: data.skill.rushDur,
+                  unit: "s"
+                },]
+              }
+            },
+          },
         }],
       },
       burst: {
@@ -170,31 +152,41 @@ const char: ICharacterSheet = {
       passive1: {
         name: tr("passive1.name"),
         img: passive1,
-        stats: stats => {
-          if (stats.ascension < 1) return null
-          const value = stats.conditionalValues?.character?.Aloy?.sheet?.talent?.e as IConditionalValue | undefined
-          if (!value) return null
-          const [num,] = value
-          if (!num) return null
-          return {
-            atk_: 16
-          }//TODO: party buff atk_
-        },
         sections: [{
           text: tr("passive1.description"),
-          fields: [{
+          conditional: {
+            key: "a1",
             canShow: stats => {
               if (stats.ascension < 1) return false
-              const value = stats.conditionalValues?.character?.Aloy?.sheet?.talent?.e as IConditionalValue | undefined
-              if (!value) return false
-              const [num,] = value
+              const [num,] = stats.conditionalValues?.character?.Aloy?.e ?? []
               if (!num) return false
               return true
             },
-            text: sgt("duration"),
-            value: data.a1.duration,
-            unit: "s"
-          }]
+            maxStack: 0,
+            stats: {
+              atk_: 16
+            },
+            fields: [{
+              text: sgt("duration"),
+              value: data.a1.duration,
+              unit: "s"
+            }],
+          },
+        }, {
+          conditional: {
+            key: "a1p",
+            partyBuff: "partyOnly",
+            header: conditionalHeader("passive1", tr, passive1),
+            description: tr("passive1.description"),
+            name: "When Aloy receives the Coil effect from Frozen Wilds",
+            canShow: stats => stats.ascension >= 1,
+            stats: { atk_: 8 },
+            fields: [{
+              text: sgt("duration"),
+              value: data.a1.duration,
+              unit: "s"
+            }],
+          }
         }],
       },
       passive2: {
@@ -202,15 +194,27 @@ const char: ICharacterSheet = {
         img: passive2,
         sections: [{
           text: tr("passive2.description"),
-          conditional: conditionals.a4
+          conditional: {
+            key: "a4",
+            canShow: stats => {
+              if (stats.ascension < 4) return false
+              const [num, condEleKey] = stats.conditionalValues?.character?.Aloy?.e ?? []
+              return !!num && condEleKey === "c4"
+            },
+            name: charTr("skill.rushDur"),
+            maxStack: 10,
+            stats: {
+              cryo_dmg_: 3.5
+            }
+          }
         }],
       },
       passive3: talentTemplate("passive3", tr, passive3),
       constellation1: talentTemplate("constellation1", tr, c1),
       constellation2: talentTemplate("constellation2", tr, c2),
-      constellation3: talentTemplate("constellation3", tr, c3, { burstBoost: 3 }),
+      constellation3: talentTemplate("constellation3", tr, c3, "burstBoost"),
       constellation4: talentTemplate("constellation4", tr, c4),
-      constellation5: talentTemplate("constellation5", tr, c5, { skillBoost: 3 }),
+      constellation5: talentTemplate("constellation5", tr, c5, "skillBoost"),
       constellation6: talentTemplate("constellation6", tr, c6),
     },
   },

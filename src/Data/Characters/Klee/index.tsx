@@ -3,8 +3,7 @@ import { Translate } from '../../../Components/Translate'
 import Stat from '../../../Stat'
 import { ICharacterSheet } from '../../../Types/character'
 import { WeaponTypeKey } from '../../../Types/consts'
-import { IConditionals } from '../../../Types/IConditional'
-import { chargedDocSection, normalDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
+import { chargedDocSection, conditionalHeader, normalDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
 import card from './Character_Klee_Card.jpg'
 import thumb from './Icon.png'
 import thumbSide from './IconSide.png'
@@ -24,35 +23,13 @@ import passive1 from './Talent_Pounding_Surprise.png'
 import passive2 from './Talent_Sparkling_Burst.png'
 import burst from './Talent_Sparks_\'n\'_Splash.png'
 const tr = (strKey: string) => <Translate ns="char_Klee_gen" key18={strKey} />
-const conditionals: IConditionals = {
-  a1: { // PoundingSurprise
-    canShow: stats => stats.ascension >= 1,
-    name: "has Explosive Spark",
-    stats: { charged_dmg_: 50 },
-    fields: [{ text: "Next Charged attack cost no stamina" }]
-  },
-  c2: { // ExplosiveFrags
-    canShow: stats => stats.constellation >= 2,
-    name: "Hit by Jumpy Dumpty's mines",
-    stats: { enemyDEFRed_: 23 },
-    fields: [{
-      text: "Duration",
-      value: "10s",
-    }]
-  },
-  c6: { // BlazingDelight
-    canShow: stats => stats.constellation >= 6,
-    name: "Sparks 'n' Splash is used",
-    stats: { pyro_dmg_: 10 }//TODO: party buff
-  }
-}
 const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   thumbImgSide: thumbSide,
   bannerImg: banner,
-  star: data_gen.star,
+  rarity: data_gen.star,
   elementKey: "pyro",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
   gender: "F",
@@ -63,7 +40,6 @@ const char: ICharacterSheet = {
   ascensions: data_gen.ascensions,
   talent: {
     formula,
-    conditionals,
     sheets: {
       auto: {
         name: tr("auto.name"),
@@ -125,7 +101,13 @@ const char: ICharacterSheet = {
         img: passive1,
         sections: [{
           text: tr("passive1.description"),
-          conditional: conditionals.a1
+          conditional: { // PoundingSurprise
+            key: "a1",
+            canShow: stats => stats.ascension >= 1,
+            name: "has Explosive Spark",
+            stats: { charged_dmg_: 50 },
+            fields: [{ text: "Next Charged attack cost no stamina" }]
+          },
         }],
       },
       passive2: talentTemplate("passive2", tr, passive2),
@@ -149,10 +131,19 @@ const char: ICharacterSheet = {
         img: c2,
         sections: [{
           text: tr("constellation2.description"),
-          conditional: conditionals.c2
+          conditional: { // ExplosiveFrags
+            key: "c2",
+            canShow: stats => stats.constellation >= 2,
+            name: "Hit by Jumpy Dumpty's mines",
+            stats: { enemyDEFRed_: 23 },
+            fields: [{
+              text: "Duration",
+              value: "10s",
+            }]
+          },
         }],
       },
-      constellation3: talentTemplate("constellation3", tr, c3, { skillBoost: 3 }),
+      constellation3: talentTemplate("constellation3", tr, c3, "skillBoost"),
       constellation4: {
         name: tr("constellation4.name"),
         img: c4,
@@ -166,13 +157,21 @@ const char: ICharacterSheet = {
           }]
         }],
       },
-      constellation5: talentTemplate("constellation5", tr, c5, { burstBoost: 3 }),
+      constellation5: talentTemplate("constellation5", tr, c5, "burstBoost"),
       constellation6: {
         name: tr("constellation6.name"),
         img: c6,
         sections: [{
           text: tr("constellation6.description"),
-          conditional: conditionals.c6
+          conditional: { // BlazingDelight
+            key: "c6",
+            partyBuff: "partyAll",
+            canShow: stats => stats.constellation >= 6,
+            header: conditionalHeader("constellation6", tr, c6),
+            description: tr("constellation6.description"),
+            name: <span><strong>Sparks 'n' Splash</strong> is used</span>,
+            stats: { pyro_dmg_: 10 }
+          }
         }],
       },
     },

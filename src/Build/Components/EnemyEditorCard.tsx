@@ -7,7 +7,7 @@ import { EnemyEditor, EnemyResText } from '../../Components/EnemyEditor';
 import ExpandButton from '../../Components/ExpandButton';
 import Stat from '../../Stat';
 import { ICachedCharacter } from '../../Types/character';
-import { allElements } from '../../Types/consts';
+import { allElementsWithPhy } from '../../Types/consts';
 
 export default function EnemyEditorCard({ character }: {
   character: ICachedCharacter
@@ -33,7 +33,7 @@ export default function EnemyEditorCard({ character }: {
     <Divider />
     <CardContent>
       <Grid container spacing={1}>
-        {["physical", ...allElements].map(element => <Grid item xs={3} key={element}><EnemyResText element={element} character={character} /></Grid>)}
+        {allElementsWithPhy.map(element => <Grid item xs={3} key={element}><EnemyResText element={element} character={character} /></Grid>)}
         <Grid item xs={4} ><Typography>DEF Reduction {Character.getStatValueWithBonus(character, "enemyDEFRed_")}%</Typography></Grid>
       </Grid>
     </CardContent>

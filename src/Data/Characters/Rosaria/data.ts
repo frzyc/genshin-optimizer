@@ -41,5 +41,8 @@ const formula: IFormulaSheet = {
     [name, stats => basicDMGFormula(arr[stats.tlvl.skill], stats, "skill")])),
   burst: Object.fromEntries(Object.entries(data.burst).map(([name, arr]) =>
     [name, stats => basicDMGFormula(arr[stats.tlvl.burst], stats, "burst")])),
-}
+  passive2: {
+    critConv: stats => [s => (s.premod?.critRate_ ?? s.critRate_) * 0.15, ["critRate_"]]
+  }
+} as const
 export default formula

@@ -53,7 +53,7 @@ const data = {
   dot: [1521507646, "skillParam"],
   //Additional Elemental DMG
   addEleDMG: [3006681174, "skillParam"],
-  
+
   press: {
     //Press DMG
     dmg: [3774314422, "skillParam"],
@@ -65,6 +65,21 @@ const data = {
     dmg: [1066722967, "skillParam"],
     //CD (Hold)
     cd: [824598127, "skillParam"],
+  },
+  element: {
+    anemo: 126875444,
+    geo: 1844983962,
+    pyro: 313529204,
+    hydro: 514679490,
+    cryo: 1695600284,
+    electro: 1821644548,
+  },
+  reaction: {
+    swirl: 3332129203,
+    crystallize: 4119674923,
+    overloaded: 3538822411,
+    electrocharged: 1625280307,
+    Superconduct: 3913817859,
   }
 } as const
 export default data

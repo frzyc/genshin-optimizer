@@ -8,23 +8,26 @@ import CardDark from "../Components/Card/CardDark";
 import { CustomNumberInputButtonGroupWrapper, StyledInputBase } from "../Components/CustomNumberInput";
 import { DatabaseContext } from "../Database/Database";
 import { exportFlex, importFlex } from "../Database/exim/flex";
+import useSheets from "../ReactHooks/useSheets";
 import '../StatDependency';
 
 export default function FlexDisplay() {
   const location = useLocation()
   const database = useContext(DatabaseContext)
+  const sheets = useSheets()
   const searchStr = location.search
+  if (!sheets) return null
   if (searchStr) {
     const flexResult = importFlex(searchStr.substring(1))
     if (!flexResult) return <Redirect to={`/`} />
     const [database, charKey, version] = flexResult
-    if (version !== 3)
-      return <Redirect to={`/flex?${exportFlex(charKey, database)}`} />
+    if (version !== 4)
+      return <Redirect to={`/flex?${exportFlex(charKey, database, sheets)}`} />
     return <DatabaseContext.Provider value={database}><Display characterKey={charKey} /></DatabaseContext.Provider>
   } else {
     const characterKey = (location as any).characterKey
     if (!characterKey) return <Redirect to={`/`} />
-    const flexObj = exportFlex(characterKey, database)
+    const flexObj = exportFlex(characterKey, database, sheets)
     if (!flexObj) return <Redirect to={`/`} />
     window.scrollTo(0, 0)//sometimes the window isnt scrolled to the top on redirect.
     return <Redirect to={`/flex?${flexObj}`} />
@@ -62,6 +65,6 @@ function Display({ characterKey }) {
       </ButtonGroup>
       {!!isUpToDate && <Alert variant="outlined" sx={{ m: 1, mt: 2 }} severity="warning" >This URL is generated on an older database version of Genshin Optimizer. The character data below might not be displayed as intended.</Alert>}
     </CardDark>
-    <CharacterDisplayCard characterKey={characterKey} />
+    <CharacterDisplayCard characterKey={characterKey} isFlex />
   </Box>
 }

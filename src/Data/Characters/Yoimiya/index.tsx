@@ -18,47 +18,20 @@ import Stat from '../../../Stat'
 import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-import { IConditionals, IConditionalValue } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
-import { Translate, TransWrapper } from '../../../Components/Translate'
-import { plungeDocSection, sgt, talentTemplate } from '../SheetUtil'
+import { Translate } from '../../../Components/Translate'
+import { conditionalHeader, plungeDocSection, sgt, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
 import { basicDMGFormulaText } from '../../../Util/FormulaTextUtil'
 const tr = (strKey: string) => <Translate ns="char_Yoimiya_gen" key18={strKey} />
 const charTr = (strKey: string) => <Translate ns="char_Yoimiya" key18={strKey} />
-const conditionals: IConditionals = {
-  a1: {
-    canShow: stats => stats.ascension >= 1,
-    name: tr("passive1.name"),
-    maxStack: 10,
-    stats: { pyro_dmg_: 2 },
-  },
-  c1: {
-    canShow: stats => stats.constellation >= 1,
-    name: charTr("c1"),
-    stats: { atk_: 20, },
-    fields: [{
-      text: sgt("duration"),
-      value: "20s"
-    }]
-  },
-  c2: {
-    canShow: stats => stats.constellation >= 2,
-    name: charTr("c2"),
-    stats: { pyro_dmg_: 25, },
-    fields: [{
-      text: sgt("duration"),
-      value: "6s"
-    }]
-  }
-}
 const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   thumbImgSide: thumbSide,
   bannerImg: banner,
-  star: data_gen.star,
+  rarity: data_gen.star,
   elementKey: "pyro",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
   gender: "F",
@@ -69,7 +42,6 @@ const char: ICharacterSheet = {
   ascensions: data_gen.ascensions,
   talent: {
     formula,
-    conditionals,
     sheets: {
       auto: {
         name: tr("auto.name"),
@@ -79,7 +51,7 @@ const char: ICharacterSheet = {
             text: tr("auto.fields.normal"),
             fields: data.normal.hitArr.map((percentArr, i) =>
             ({
-              text: <span>{sgt(`normal.hit${i + 1}`)} {(i === 0 || i === 3) ? <span>(<TransWrapper ns="sheet" key18="hits" values={{ count: 2 }} />)</span> : ""}</span>,
+              text: <span>{sgt(`normal.hit${i + 1}`)} {(i === 0 || i === 3) ? <span>(<Translate ns="sheet" key18="hits" values={{ count: 2 }} />)</span> : ""}</span>,
               formulaText: stats => <span>{percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
               formula: formula.normal[i],
               variant: stats => getTalentStatKeyVariant("normal", stats),
@@ -114,7 +86,7 @@ const char: ICharacterSheet = {
           fields: [
             ...data.normal.hitArr.map((percentArr, i) =>
             ({
-              text: <span>{sgt(`normal.hit${i + 1}`)} {(i === 0 || i === 3) ? <span>(<TransWrapper ns="sheet" key18="hits" values={{ count: 2 }} />)</span> : ""}</span>,
+              text: <span>{sgt(`normal.hit${i + 1}`)} {(i === 0 || i === 3) ? <span>(<Translate ns="sheet" key18="hits" values={{ count: 2 }} />)</span> : ""}</span>,
               formulaText: stats => <span>{data.skill.dmg_[stats.tlvl.skill]}% * {percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats, "pyro"), stats)}</span>,
               formula: formula.skill[i],
               variant: stats => getTalentStatKeyVariant("normal", stats, "pyro"),
@@ -125,7 +97,13 @@ const char: ICharacterSheet = {
               text: tr("skill.skillParams.2"),
               value: "18s",
             }],
-          conditional: conditionals.a1,
+          conditional: {
+            key: "a1",
+            canShow: stats => stats.ascension >= 1,
+            name: tr("passive1.name"),
+            maxStack: 10,
+            stats: { pyro_dmg_: 2 },
+          },
         }],
       },
       burst: {
@@ -166,16 +144,35 @@ const char: ICharacterSheet = {
             canShow: stats => stats.ascension >= 4,
             text: charTr("p2"),
             value: stats => {
-              const value = stats.conditionalValues?.character?.Yoimiya?.sheet?.talent?.a1 as IConditionalValue | undefined
-              const [num] = value ?? [0]
-              return 10 + num
+              const [num] = stats.conditionalValues?.character?.Yoimiya?.a1 ?? [0]
+              return data.passive2.fixed_atk_ + num * data.passive2.var_atk_
             },
             unit: "%"
           }, {
             canShow: stats => stats.ascension >= 4,
             text: sgt("duration"),
-            value: "15s",
-          }]
+            value: data.passive2.duration,
+            unit: "s"
+          }],
+          conditional: {
+            key: "p2p",
+            canShow: stats => stats.ascension >= 4,
+            partyBuff: "partyOnly",
+            header: conditionalHeader("passive2", tr, passive2),
+            description: tr("passive2.description"),
+            name: charTr("p2p"),
+            states: Object.fromEntries([...Array(11).keys()].map(t => [t, {
+              name: `${t}`,
+              stats: {
+                atk_: data.passive2.fixed_atk_ + data.passive2.var_atk_ * t
+              },
+              fields: [{
+                text: sgt("duration"),
+                value: data.passive2.duration,
+                unit: "s"
+              }]
+            }]))
+          }
         }],
       },
       passive3: talentTemplate("passive3", tr, passive3),
@@ -184,7 +181,16 @@ const char: ICharacterSheet = {
         img: c1,
         sections: [{
           text: tr("constellation1.description"),
-          conditional: conditionals.c1,
+          conditional: {
+            key: "c1",
+            canShow: stats => stats.constellation >= 1,
+            name: charTr("c1"),
+            stats: { atk_: 20, },
+            fields: [{
+              text: sgt("duration"),
+              value: "20s"
+            }]
+          },
         }],
       },
       constellation2: {
@@ -192,12 +198,21 @@ const char: ICharacterSheet = {
         img: c2,
         sections: [{
           text: tr("constellation2.description"),
-          conditional: conditionals.c2
+          conditional: {
+            key: "c2",
+            canShow: stats => stats.constellation >= 2,
+            name: charTr("c2"),
+            stats: { pyro_dmg_: 25, },
+            fields: [{
+              text: sgt("duration"),
+              value: "6s"
+            }]
+          }
         }],
       },
-      constellation3: talentTemplate("constellation3", tr, c3, { skillBoost: 3 }),
+      constellation3: talentTemplate("constellation3", tr, c3, "skillBoost"),
       constellation4: talentTemplate("constellation4", tr, c4),
-      constellation5: talentTemplate("constellation5", tr, c5, { burstBoost: 3 }),
+      constellation5: talentTemplate("constellation5", tr, c5, "burstBoost"),
       constellation6: {
         name: tr("constellation6.name"),
         img: c6,
@@ -207,7 +222,7 @@ const char: ICharacterSheet = {
             ...data.normal.hitArr.map((percentArr, i) =>
             ({
               canShow: stats => stats.constellation >= 6,
-              text: <span>{sgt(`normal.hit${i + 1}`)} {(i === 0 || i === 2) ? <span>(<TransWrapper ns="sheet" key18="hits" values={{ count: 2 }} />)</span> : ""}</span>,
+              text: <span>{sgt(`normal.hit${i + 1}`)} {(i === 0 || i === 2) ? <span>(<Translate ns="sheet" key18="hits" values={{ count: 2 }} />)</span> : ""}</span>,
               formulaText: stats => <span>60% * {data.skill.dmg_[stats.tlvl.skill]}% * {percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats, "pyro"), stats)}</span>,
               formula: formula.c6[i],
               variant: stats => getTalentStatKeyVariant("normal", stats, "pyro"),

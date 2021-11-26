@@ -18,40 +18,19 @@ import Stat from '../../../Stat'
 import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-import { IConditionals } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
 import { Translate } from '../../../Components/Translate'
-import { bowChargedDocSection, normalDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
+import { bowChargedDocSection, conditionalHeader, normalDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
 import ColorText from '../../../Components/ColoredText'
 const tr = (strKey: string) => <Translate ns="char_Diona_gen" key18={strKey} />
-const conditionals: IConditionals = {
-  c4: { // IcyPawsShield
-    canShow: stats => stats.constellation >= 4,
-    name: "Characters Shielded",
-    stats: {
-      moveSPD_: 10,
-      staminaDec_: 10
-    },
-  },
-  c6n: { // CatsTailClosingTimeBelow50 (near)
-    canShow: stats => stats.constellation >= 6,
-    name: "Characters within radius below or equal 50% HP",
-    stats: { incHeal_: 30 },
-  },
-  c6f: { // TailClosingTimeAbove50 (far)
-    canShow: stats => stats.constellation >= 6,
-    name: "Characters within radius above 50% HP",
-    stats: { eleMas: 200 },
-  }
-}
 const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   thumbImgSide: thumbSide,
   bannerImg: banner,
-  star: data_gen.star,
+  rarity: data_gen.star,
   elementKey: "cryo",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
   gender: "F",
@@ -62,7 +41,6 @@ const char: ICharacterSheet = {
   ascensions: data_gen.ascensions,
   talent: {
     formula,
-    conditionals,
     sheets: {
       auto: {
         name: tr("auto.name"),
@@ -111,7 +89,18 @@ const char: ICharacterSheet = {
             text: "Hold CD",
             value: "15s",
           }],
-          conditional: conditionals.c4
+          conditional: { // IcyPawsShield
+            key: "a1",
+            canShow: stats => stats.ascension >= 1,
+            name: "Characters Shielded",
+            partyBuff: "partyActive",
+            header: conditionalHeader("passive1", tr, passive1),
+            description: tr("passive1.description"),
+            stats: {
+              moveSPD_: 10,
+              staminaDec_: 10
+            },
+          },
         }]
       },
       burst: {
@@ -144,9 +133,25 @@ const char: ICharacterSheet = {
             text: "Energy Cost",
             value: 80,
           }],
-          conditional: conditionals.c6n
+          conditional: { // CatsTailClosingTimeBelow50 (near)
+            key: "c6n",
+            canShow: stats => stats.constellation >= 6,
+            name: "Characters within radius below or equal 50% HP",
+            partyBuff: "partyActive",
+            header: conditionalHeader("constellation6", tr, c6),
+            description: tr("constellation6.description"),
+            stats: { incHeal_: 30 },
+          },
         }, {
-          conditional: conditionals.c6f
+          conditional: { // TailClosingTimeAbove50 (far)
+            key: "c6f",
+            canShow: stats => stats.constellation >= 6,
+            name: "Characters within radius above 50% HP",
+            partyBuff: "partyActive",
+            header: conditionalHeader("constellation6", tr, c6),
+            description: tr("constellation6.description"),
+            stats: { eleMas: 200 },
+          }
         }],
       },
       passive1: talentTemplate("passive1", tr, passive1),
@@ -156,12 +161,19 @@ const char: ICharacterSheet = {
       constellation2: {
         name: tr("constellation2.name"),
         img: c2,
-        sections: [{ text: tr("constellation2.description"), }],
-        stats: stats => stats.constellation >= 2 && { skill_dmg_: 15 }
+        sections: [{
+          text: tr("constellation2.description"),
+          conditional: {
+            key: "c2",
+            canShow: stats => stats.constellation >= 2,
+            maxStack: 0,
+            stats: { skill_dmg_: 15 }
+          }
+        }],
       },
-      constellation3: talentTemplate("constellation3", tr, c3, { burstBoost: 3 }),
+      constellation3: talentTemplate("constellation3", tr, c3, "burstBoost"),
       constellation4: talentTemplate("constellation4", tr, c4),
-      constellation5: talentTemplate("constellation5", tr, c5, { skillBoost: 3 }),
+      constellation5: talentTemplate("constellation5", tr, c5, "skillBoost"),
       constellation6: talentTemplate("constellation6", tr, c6),
     },
   },

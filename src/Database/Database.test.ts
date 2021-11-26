@@ -154,9 +154,6 @@ describe("Database", () => {
     const artifact1Callback1 = jest.fn()
     const AlbedoCallback1Cleanup = database.followChar("Albedo", AlbedoCallback1)
     /* const artifact1Callback1Cleanup = */ database.followArt(art1.id, artifact1Callback1)
-    // Both should receive a callback for the current value
-    expect(getArrLastElement(AlbedoCallback1.mock.calls)[0]).toEqual(albedo)
-    expect(getArrLastElement(artifact1Callback1.mock.calls)[0]).toEqual(art1)
 
     // Set location
     database.setArtLocation(art1.id, "Albedo")

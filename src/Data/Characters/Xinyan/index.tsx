@@ -19,40 +19,18 @@ import formula, { data } from './data'
 import data_gen from './data_gen.json';
 import { getTalentStatKey, getTalentStatKeyVariant } from "../../../Build/Build";
 import { ICharacterSheet } from '../../../Types/character'
-import { IConditionals } from '../../../Types/IConditional'
 import { Translate } from '../../../Components/Translate'
-import { normalDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
+import { conditionalHeader, normalDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
 import ColorText from '../../../Components/ColoredText'
 const tr = (strKey: string) => <Translate ns="char_Xinyan_gen" key18={strKey} />
-const conditionals: IConditionals = {
-  a4s: { // NowThatsRockNRoll
-    canShow: stats => stats.ascension >= 4,
-    name: <span>Shielded by <b>Sweeping Fervor</b></span>,
-    stats: { physical_dmg_: 15 },//TODO: party buff
-  },
-  a1: { // FatalAcceleration
-    canShow: stats => stats.ascension >= 1,
-    name: "Scoring a CRIT hit",
-    stats: { atkSPD_: 12 },
-    fields: [{
-      text: "Duration",
-      value: "5s"
-    }]
-  },
-  a4: { // WildfireRhythm
-    canShow: stats => stats.ascension >= 4,
-    name: <span><b>Sweeping Fervor</b> DMG</span>,
-    stats: { physical_enemyRes_: -15, }//TODO: party buff
-  }
-}
 const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   thumbImgSide: thumbSide,
   bannerImg: banner,
-  star: data_gen.star,
+  rarity: data_gen.star,
   elementKey: "pyro",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
   gender: "F",
@@ -63,7 +41,6 @@ const char: ICharacterSheet = {
   ascensions: data_gen.ascensions,
   talent: {
     formula,
-    conditionals,
     sheets: {
       auto: {
         name: tr("auto.name"),
@@ -189,7 +166,15 @@ const char: ICharacterSheet = {
         img: passive2,
         sections: [{
           text: tr("passive2.description"),
-          conditional: conditionals.a4s
+          conditional: { // NowThatsRockNRoll
+            key: "a4s",
+            canShow: stats => stats.ascension >= 4,
+            partyBuff: "partyAll",
+            header: conditionalHeader("passive2", tr, passive2),
+            description: tr("passive2.description"),
+            name: <span>Shielded by <b>Sweeping Fervor</b></span>,
+            stats: { physical_dmg_: 15 },
+          },
         }],
       },
       passive3: talentTemplate("passive3", tr, passive3),
@@ -198,27 +183,55 @@ const char: ICharacterSheet = {
         img: c1,
         sections: [{
           text: tr("constellation1.description"),
-          conditional: conditionals.a1
+          conditional: { // FatalAcceleration
+            key: "c1",
+            canShow: stats => stats.constellation >= 1,
+            name: "Scoring a CRIT hit",
+            stats: { atkSPD_: 12 },
+            fields: [{
+              text: "Duration",
+              value: "5s"
+            }]
+          },
         }],
       },
       constellation2: talentTemplate("constellation2", tr, c2),
-      constellation3: talentTemplate("constellation3", tr, c3, { skillBoost: 3 }),
+      constellation3: talentTemplate("constellation3", tr, c3, "skillBoost"),
       constellation4: {
         name: tr("constellation4.name"),
         img: c4,
         sections: [{
           text: tr("constellation4.description"),
-          conditional: conditionals.a4
+          conditional: { // WildfireRhythm
+            key: "a4",
+            canShow: stats => stats.constellation >= 4,
+            partyBuff: "partyAll",
+            header: conditionalHeader("constellation4", tr, c4),
+            description: tr("constellation4.description"),
+            name: <span><b>Sweeping Fervor</b> DMG</span>,
+            stats: { physical_enemyRes_: -15, },
+            fields: [{
+              text: "Duration",
+              value: "12s"
+            }]
+          }
         }],
       },
-      constellation5: talentTemplate("constellation5", tr, c5, { burstBoost: 3 }),
+      constellation5: talentTemplate("constellation5", tr, c5, "burstBoost"),
       constellation6: {
         name: tr("constellation6.name"),
         img: c6,
-        sections: [{ text: tr("constellation6.description"), }],
-        stats: stats => stats.constellation >= 6 && {
-          staminaChargedDec_: 30
-        }
+        sections: [{
+          text: tr("constellation6.description"),
+          conditional: {
+            key: "c6",
+            canShow: stats => stats.constellation >= 6,
+            maxStack: 0,
+            stats: {
+              staminaChargedDec_: 30
+            }
+          }
+        }],
       },
     },
   },

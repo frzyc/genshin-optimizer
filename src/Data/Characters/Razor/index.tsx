@@ -18,65 +18,19 @@ import Stat from '../../../Stat'
 import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant, } from "../../../Build/Build"
-import { IConditionals } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
 import { Translate, TransWrapper } from '../../../Components/Translate'
 import { claymoreChargedDocSection, normalDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
 import { Typography } from '@mui/material'
 const tr = (strKey: string) => <Translate ns="char_Razor_gen" key18={strKey} />
-const conditionals: IConditionals = {
-  e: { // ElectroSigil
-    name: "Electro Sigil",
-    maxStack: 3,
-    stats: { enerRech_: 20 },
-  },
-  q: { // LightningFang
-    name: "Lightning Fang",
-    stats: stats => ({
-      electro_res_: 80,
-      atkSPD_: data.burst.atkspd[stats.tlvl.burst],
-    }),
-    fields: [{
-      text: "Increases resistance to interruption"
-    }]
-  },
-  a4: { // Hunger
-    canShow: stats => stats.ascension >= 4,
-    name: "Energy < 50%",
-    stats: { enerRech_: 30 },
-  },
-  c1: { // WolfsInstinct
-    canShow: stats => stats.constellation >= 1,
-    name: "Pickup Elemental Particle",
-    stats: { dmg_: 10 },
-    fields: [{
-      text: "Duration",
-      value: "8s",
-    }],
-  },
-  c2: { // Suppression
-    canShow: stats => stats.constellation >= 2,
-    name: "Enemy with <30% HP",
-    stats: { critRate_: 10 },
-  },
-  c4: { // Bite
-    canShow: stats => stats.constellation >= 4,
-    name: <span>Casting <b>Claw and Thunder</b> (Press)</span>,
-    stats: { enemyDEFRed_: 15 },
-    fields: [{
-      text: "Duration",
-      value: "7s",
-    }],
-  },
-}
 const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   thumbImgSide: thumbSide,
   bannerImg: banner,
-  star: data_gen.star,
+  rarity: data_gen.star,
   elementKey: "electro",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
   gender: "M",
@@ -87,7 +41,6 @@ const char: ICharacterSheet = {
   ascensions: data_gen.ascensions,
   talent: {
     formula,
-    conditionals,
     sheets: {
       auto: {
         name: tr("auto.name"),
@@ -129,7 +82,12 @@ const char: ICharacterSheet = {
             text: "Electro Sigil Duration",
             value: "18s",
           }],
-          conditional: conditionals.e
+          conditional: { // ElectroSigil
+            key: "e",
+            name: "Electro Sigil",
+            maxStack: 3,
+            stats: { enerRech_: 20 },
+          },
         }],
       },
       burst: {
@@ -159,6 +117,17 @@ const char: ICharacterSheet = {
             text: "Energy Cost",
             value: 80,
           }],
+          conditional: { // LightningFang
+            key: "q",
+            name: "Lightning Fang",
+            stats: stats => ({
+              electro_res_: 80,
+              atkSPD_: data.burst.atkspd[stats.tlvl.burst],
+            }),
+            fields: [{
+              text: "Increases resistance to interruption"
+            }]
+          },
         }, {
           text: (
             <TransWrapper ns="char_Razor" key18="fullBurstDMG.text">
@@ -168,7 +137,7 @@ const char: ICharacterSheet = {
             </TransWrapper>
           ),
           fields: data.normal.hitArr.map((percentArr, i) => ({
-            text: <TransWrapper ns="char_Razor" key18="fullBurstDMG.label" values={{ hitNum: i + 1 }} />,
+            text: <Translate ns="char_Razor" key18="fullBurstDMG.label" values={{ hitNum: i + 1 }} />,
             formulaText: stats => <span>
               {percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}
               + {data.burst.dmg[stats.tlvl.burst]}% * {percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("burst", stats), stats)}</span>,
@@ -182,7 +151,12 @@ const char: ICharacterSheet = {
         img: passive2,
         sections: [{
           text: tr("passive2.description"),
-          conditional: conditionals.a4
+          conditional: { // Hunger
+            key: "a4",
+            canShow: stats => stats.ascension >= 4,
+            name: "Energy < 50%",
+            stats: { enerRech_: 30 },
+          },
         }],
       },
       passive3: talentTemplate("passive3", tr, passive3),
@@ -191,7 +165,16 @@ const char: ICharacterSheet = {
         img: c1,
         sections: [{
           text: tr("constellation1.description"),
-          conditional: conditionals.c1
+          conditional: { // WolfsInstinct
+            key: "c1",
+            canShow: stats => stats.constellation >= 1,
+            name: "Pickup Elemental Particle",
+            stats: { dmg_: 10 },
+            fields: [{
+              text: "Duration",
+              value: "8s",
+            }],
+          },
         }],
       },
       constellation2: {
@@ -199,19 +182,33 @@ const char: ICharacterSheet = {
         img: c2,
         sections: [{
           text: tr("constellation2.description"),
-          conditional: conditionals.c2
+          conditional: { // Suppression
+            key: "c2",
+            canShow: stats => stats.constellation >= 2,
+            name: "Enemy with <30% HP",
+            stats: { critRate_: 10 },
+          },
         }],
       },
-      constellation3: talentTemplate("constellation3", tr, c3, { burstBoost: 3 }),
+      constellation3: talentTemplate("constellation3", tr, c3, "burstBoost"),
       constellation4: {
         name: tr("constellation4.name"),
         img: c4,
         sections: [{
           text: tr("constellation4.description"),
-          conditional: conditionals.c4
+          conditional: { // Bite
+            key: "c4",
+            canShow: stats => stats.constellation >= 4,
+            name: <span>Casting <b>Claw and Thunder</b> (Press)</span>,
+            stats: { enemyDEFRed_: 15 },
+            fields: [{
+              text: "Duration",
+              value: "7s",
+            }],
+          },
         }],
       },
-      constellation5: talentTemplate("constellation5", tr, c5, { skillBoost: 3 }),
+      constellation5: talentTemplate("constellation5", tr, c5, "skillBoost"),
       constellation6: {
         name: tr("constellation6.name"),
         img: c6,

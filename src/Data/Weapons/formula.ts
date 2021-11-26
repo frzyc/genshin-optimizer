@@ -1,5 +1,6 @@
 import AquilaFavonia from './Sword/AquilaFavonia/data'
 // import BlackcliffLongsword from './Sword/BlackcliffLongsword/data'
+import CinnabarSpindle from './Sword/CinnabarSpindle/data'
 // import CoolSteel from './Sword/CoolSteel/data'
 // import DarkIronSword from './Sword/DarkIronSword/data'
 // import DullBlade from './Sword/DullBlade/data'
@@ -120,6 +121,7 @@ import TheViridescentHunt from './Bow/TheViridescentHunt/data'
 const sword = {
   AquilaFavonia,
   // BlackcliffLongsword,
+  CinnabarSpindle,
   // CoolSteel,
   // DarkIronSword,
   // DullBlade,

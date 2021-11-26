@@ -18,35 +18,18 @@ import Stat from '../../../Stat'
 import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-import { IConditionals } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
 import { Translate } from '../../../Components/Translate'
-import { claymoreChargedDocSection, normalDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
+import { claymoreChargedDocSection, conditionalHeader, normalDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
 const tr = (strKey: string) => <Translate ns="char_Chongyun_gen" key18={strKey} />
-const conditionals: IConditionals = {
-  a4: { // Rimechaser Blade
-    canShow: stats => stats.ascension >= 4,
-    name: "Opponents hit by Rimechase Blade",
-    stats: { cryo_enemyRes_: -10 },
-    fields: [{
-      text: "Duration",
-      value: "8s",
-    }]
-  },
-  c6: { // Rally of Four Blades
-    canShow: stats => stats.constellation >= 6,
-    name: "Enemy with lower MaxHP% than Chongyun",
-    stats: { burst_dmg_: 15 }
-  }
-}
 const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   thumbImgSide: thumbSide,
   bannerImg: banner,
-  star: data_gen.star,
+  rarity: data_gen.star,
   elementKey: "cryo",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
   gender: "M",
@@ -57,7 +40,6 @@ const char: ICharacterSheet = {
   ascensions: data_gen.ascensions,
   talent: {
     formula,
-    conditionals,
     sheets: {
       auto: {
         name: tr("auto.name"),
@@ -88,7 +70,28 @@ const char: ICharacterSheet = {
             text: "CD",
             value: "15s",
           }],
-          conditional: conditionals.a4
+          conditional: {
+            key: "e",
+            partyBuff: "partyAll",
+            header: conditionalHeader("skill", tr, skill),
+            description: tr("skill.description"),
+            name: "All Sword, Claymore and Polearm-wielding characters within Frost Field",
+            stats: stats => ({
+              infusionAura: "cryo",
+              ...(stats.ascension >= 1 ? { atkSPD_: 8 } : {})
+            })
+          }
+        }, {
+          conditional: { // Rimechaser Blade
+            key: "a4",
+            canShow: stats => stats.ascension >= 4,
+            name: "Opponents hit by Rimechase Blade",
+            stats: { cryo_enemyRes_: -10 },
+            fields: [{
+              text: "Duration",
+              value: "8s",
+            }]
+          },
         }],
       },
       burst: {
@@ -111,7 +114,12 @@ const char: ICharacterSheet = {
             text: "Spirit Blades Summoned",
             value: stats => stats.constellation < 6 ? 3 : 4
           }],
-          conditional: conditionals.c6
+          conditional: { // Rally of Four Blades
+            key: "c6",
+            canShow: stats => stats.constellation >= 6,
+            name: "Enemy with lower MaxHP% than Chongyun",
+            stats: { burst_dmg_: 15 }
+          }
         }],
       },
       passive1: talentTemplate("passive1", tr, passive1),
@@ -145,9 +153,9 @@ const char: ICharacterSheet = {
         }]
       },
       constellation2: talentTemplate("constellation2", tr, c2),
-      constellation3: talentTemplate("constellation3", tr, c3, { burstBoost: 3 }),
+      constellation3: talentTemplate("constellation3", tr, c3, "burstBoost"),
       constellation4: talentTemplate("constellation4", tr, c4),
-      constellation5: talentTemplate("constellation5", tr, c5, { skillBoost: 3 }),
+      constellation5: talentTemplate("constellation5", tr, c5, "skillBoost"),
       constellation6: talentTemplate("constellation6", tr, c6),
     },
   },

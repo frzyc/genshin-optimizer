@@ -18,39 +18,19 @@ import Stat from '../../../Stat'
 import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-import { IConditionals } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
 import { Translate } from '../../../Components/Translate'
-import { plungeDocSection, talentTemplate } from '../SheetUtil'
+import { conditionalHeader, plungeDocSection, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
 import ColorText from '../../../Components/ColoredText'
 const tr = (strKey: string) => <Translate ns="char_Ningguang_gen" key18={strKey} />
-const conditionals: IConditionals = {
-  a4: { // StrategicReserve
-    canShow: stats => stats.ascension >= 4,
-    name: <span>Passing through <b>Jade Screen</b></span>,
-    stats: { geo_dmg_: 12 },//TODO: party buff
-    fields: [{
-      text: "Duration",
-      value: "10s",
-    }]
-  },
-  c4: { // ExquisiteBeTheJade
-    canShow: stats => stats.constellation >= 4,
-    name: <span>Allies within 10m of <b>Jade Screen</b></span>,
-    fields: [{
-      text: "Elemental DMG received",//TODO: elemental dmg reduction
-      value: "-10.0%"
-    }]
-  }
-}
 const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   thumbImgSide: thumbSide,
   bannerImg: banner,
-  star: data_gen.star,
+  rarity: data_gen.star,
   elementKey: "geo",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
   gender: "F",
@@ -61,7 +41,6 @@ const char: ICharacterSheet = {
   ascensions: data_gen.ascensions,
   talent: {
     formula,
-    conditionals,
     sheets: {
       auto: {
         name: tr("auto.name"),
@@ -150,22 +129,46 @@ const char: ICharacterSheet = {
         img: passive2,
         sections: [{
           text: tr("passive2.description"),
-          conditional: conditionals.a4
+          conditional: { // StrategicReserve
+            key: "a4",
+            canShow: stats => stats.ascension >= 4,
+            partyBuff: "partyAll",
+            header: conditionalHeader("passive2", tr, passive2),
+            description: tr("passive2.description"),
+            name: <span>Passing through <b>Jade Screen</b></span>,
+            stats: { geo_dmg_: 12 },
+            fields: [{
+              text: "Duration",
+              value: "10s",
+            }]
+          },
         }],
       },
-      ive3: talentTemplate("passive3", tr, passive3),
+      passive3: talentTemplate("passive3", tr, passive3),
       constellation1: talentTemplate("constellation1", tr, c1),
       constellation2: talentTemplate("constellation2", tr, c2),
-      constellation3: talentTemplate("constellation3", tr, c3, { burstBoost: 3 }),
+      constellation3: talentTemplate("constellation3", tr, c3, "burstBoost"),
       constellation4: {
         name: tr("constellation4.name"),
         img: c4,
         sections: [{
           text: tr("constellation4.description"),
-          conditional: conditionals.c4
+          conditional: { // ExquisiteBeTheJade
+            key: "c4",
+            canShow: stats => stats.constellation >= 4,
+            partyBuff: "partyAll",
+            header: conditionalHeader("constellation4", tr, c4),
+            description: tr("constellation4.description"),
+            name: <span>Allies within 10m of <b>Jade Screen</b></span>,
+            fields: [{
+              text: "Elemental DMG received",//TODO: elemental dmg reduction
+              value: -10,
+              unit: "%"
+            }]
+          }
         }],
       },
-      constellation5: talentTemplate("constellation5", tr, c5, { skillBoost: 3 }),
+      constellation5: talentTemplate("constellation5", tr, c5, "skillBoost"),
       constellation6: talentTemplate("constellation6", tr, c6),
     },
   },

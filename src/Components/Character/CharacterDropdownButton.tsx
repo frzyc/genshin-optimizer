@@ -12,22 +12,24 @@ import ThumbSide from "./ThumbSide";
 export type CharacterDropdownButtonProps = Omit<DropdownButtonProps, "title" | "onChange" | "children"> & {
   value: CharacterKey | ""
   onChange: (ck: CharacterKey | "") => void
-  filter?: (cs: CharacterSheet) => boolean
+  filter?: (cs: CharacterSheet, ck: CharacterKey) => boolean
   inventory?: boolean
-  noUnselect?: boolean
+  noUnselect?: boolean,
+  unSelectText?: Displayable,
+  unSelectIcon?: Displayable,
 }
 
-export default function CharacterDropdownButton({ value, onChange, inventory = false, noUnselect = false, filter = () => true, ...props }: CharacterDropdownButtonProps) {
+export default function CharacterDropdownButton({ value, onChange, unSelectText, unSelectIcon, inventory = false, noUnselect = false, filter = () => true, ...props }: CharacterDropdownButtonProps) {
   const { t } = useTranslation("ui");
   const database = useContext(DatabaseContext)
   const characterSheets = usePromise(CharacterSheet.getAll(), [])
   const characterSheet = usePromise(CharacterSheet.get(value), [value])
-  const characterKeys = database._getCharKeys().filter(ck => characterSheets?.[ck] && filter(characterSheets[ck])).sort()
+  const characterKeys = database._getCharKeys().filter(ck => characterSheets?.[ck] && filter(characterSheets[ck], ck)).sort()
   return <DropdownButton
     {...props}
-    title={characterSheet?.name ?? (inventory ? t`inventory` : t`unselect`)}
+    title={characterSheet?.name ?? (inventory ? t`inventory` : (unSelectText ?? t`unselect`))}
     color={value ? "success" : "primary"}
-    startIcon={characterSheet?.thumbImg ? <ThumbSide src={characterSheet.thumbImgSide} /> : (inventory ? <BusinessCenter /> : <Replay />)}>
+    startIcon={characterSheet?.thumbImg ? <ThumbSide src={characterSheet.thumbImgSide} /> : (inventory ? <BusinessCenter /> : (unSelectIcon ?? <Replay />))}>
     {!noUnselect && (inventory ? <MenuItem onClick={() => onChange("")} selected={value === ""} disabled={value === ""}>
       <ListItemIcon>
         <BusinessCenter />

@@ -10,6 +10,7 @@ export const allRarities = [5, 4, 3, 2, 1] as const
 export const allArtifactRarities = [5, 4, 3] as const
 export const allSlotKeys = ["flower", "plume", "sands", "goblet", "circlet"] as const
 export const allElements = ['anemo', 'geo', 'electro', 'hydro', 'pyro', 'cryo'] as const
+export const allElementsWithPhy = ["physical", ...allElements] as const
 export const allWeaponTypeKeys = ['sword', 'claymore', 'polearm', 'bow', 'catalyst'] as const
 export const allArtifactSets = [
   "Adventurer", "ArchaicPetra", "Berserker", "BlizzardStrayer", "BloodstainedChivalry",
@@ -19,6 +20,7 @@ export const allArtifactSets = [
   "PrayersToSpringtime", "ResolutionOfSojourner", "RetracingBolide", "Scholar", "TheExile",
   "ThunderingFury", "Thundersoother", "TinyMiracle", "TravelingDoctor", "ViridescentVenerer",
   "WanderersTroupe", "TenacityOfTheMillelith", "PaleFlame", "EmblemOfSeveredFate", "ShimenawasReminiscence",
+  "HuskOfOpulentDreams", "OceanHuedClam"
 ] as const
 export const allCharacterKeys = [
   "Albedo", "Amber", "Barbara", "Beidou", "Bennett", "Chongyun", "Diluc", "Diona", "Fischl", "Ganyu",
@@ -47,7 +49,7 @@ export const allWeaponKeys = [
   "WineAndSong", "EyeOfPerception", "Frostbearer", "LostPrayerToTheSacredWinds", "SkywardAtlas", "MemoryOfDust",
   "SongOfBrokenPines", "DodocoTales", "MitternachtsWaltz", "FreedomSworn", "AmenomaKageuchi", "MistsplitterReforged",
   "KatsuragikiriNagamasa", "KitainCrossSpear", "ThunderingPulse", "Hamayumi", "HakushinRing", "TheCatch",
-  "EverlastingMoonglow", "LuxuriousSeaLord", "Predator", "MouunsMoon", "WavebreakersFin"
+  "EverlastingMoonglow", "LuxuriousSeaLord", "Predator", "MouunsMoon", "WavebreakersFin", "CinnabarSpindle",
 ] as const
 export const characterSpecializedStatKeys = ["hp_", "atk_", "def_", "eleMas", "enerRech_", "heal_", "critRate_", "critDMG_", "physical_dmg_", "anemo_dmg_", "geo_dmg_", "electro_dmg_", "hydro_dmg_", "pyro_dmg_", "cryo_dmg_"] as const
 
@@ -58,6 +60,7 @@ export type Rarity = typeof allRarities[number]
 export type ArtifactRarity = typeof allArtifactRarities[number]
 export type SlotKey = typeof allSlotKeys[number]
 export type ElementKey = typeof allElements[number]
+export type ElementKeyWithPhy = typeof allElementsWithPhy[number]
 export type ArtifactSetKey = typeof allArtifactSets[number]
 export type CharacterKey = typeof allCharacterKeys[number]
 export type WeaponKey = typeof allWeaponKeys[number]

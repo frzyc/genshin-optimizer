@@ -1,12 +1,14 @@
 import { StatKey } from "./artifact";
-import { ArtifactSetKey, CharacterKey, ElementKey, HitModeKey, ReactionModeKey, SlotKey } from "./consts";
+import { ICachedCharacter } from "./character";
+import { ArtifactSetKey, CharacterKey, ElementKey, HitModeKey, ReactionModeKey, SlotKey, WeaponTypeKey } from "./consts";
+import { IConditionalValue, IConditionalValues } from "./IConditional";
 
 type Flat = number
 type Percent = number
 
 /** Stats that are not affected by artifacts */
 export interface BasicStats {
-  characterKey: CharacterKey, weaponType: string
+  characterKey: CharacterKey, weaponType: WeaponTypeKey
   hitMode: HitModeKey, reactionMode: ReactionModeKey | ""
   weapon: {
     key: string;
@@ -27,7 +29,10 @@ export interface BasicStats {
     burst: number;
   }
 
-  conditionalValues: ConditionalValues
+  conditionalValues: IConditionalValues<IConditionalValue>
+  activeCharacter: boolean,
+  team: ICachedCharacter["team"]
+  teamStats: [teammate1: ICalculatedStats | null, teammate2: ICalculatedStats | null, teammate3: ICalculatedStats | null]
   mainStatAssumptionLevel: number
 }
 
@@ -38,6 +43,13 @@ export interface BasicStats {
  */
 export type ICalculatedStats = BasicStats & Required<BonusStats> & {
   premod: Partial<ICalculatedStats>
+  modStats: Partial<ICalculatedStats>
+  // Save the stats from the party
+  partyBuff: Partial<ICalculatedStats>
+  // Pass on stats to the party
+  partyAllModifiers: Modifier
+  partyOnlyModifiers: Modifier
+  partyActiveModifiers: Modifier
   equippedArtifacts?: StrictDict<SlotKey, string>
   setToSlots: Dict<ArtifactSetKey, SlotKey[]>
 } & {
@@ -49,13 +61,11 @@ export type BonusStats = {
   [key in StatKey]?: number
 } & {
   infusionSelf?: ElementKey
-  modifiers?: Modifier
-}
-
-type ConditionalValues = {
-  artifact?: any
-  character?: any
-  weapon?: any
+  infusionAura?: ElementKey
+  modifiers?: Modifier,
+  partyAll?: BonusStats
+  partyOnly?: BonusStats
+  partyActive?: BonusStats
 }
 
 export interface Modifier {

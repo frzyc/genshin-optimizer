@@ -11,6 +11,36 @@ export const mapHashData = {
     bow: 4066070434,
     claymore: 2037297130,
     catalyst: 43479985
+  },
+  resonance: {
+    ProtectiveCanopy: {
+      name: 2109006394,
+      desc: 3556079627
+    },
+    FerventFlames: {
+      name: 2012776706,
+      desc: 3981421851
+    },
+    SoothingWater: {
+      name: 2733620714,
+      desc: 740980787
+    },
+    ShatteringIce: {
+      name: 1853529306,
+      desc: 2601161539
+    },
+    HighVoltage: {
+      name: 2331327954,
+      desc: 1982396323
+    },
+    ImpetuousWinds: {
+      name: 166087994,
+      desc: 170982675
+    },
+    EnduringRock: {
+      name: 3018382842,
+      desc: 1707021043
+    },
   }
 }
 type WeaponIcon = { Icon: string, AwakenIcon: string }

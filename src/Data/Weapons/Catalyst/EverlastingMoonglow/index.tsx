@@ -1,7 +1,7 @@
 import { WeaponData } from 'pipeline'
 import { getTalentStatKey } from '../../../../Build/Build'
 import ColorText from '../../../../Components/ColoredText'
-import { TransWrapper } from '../../../../Components/Translate'
+import { Translate } from '../../../../Components/Translate'
 import Stat from '../../../../Stat'
 import { IWeaponSheet } from '../../../../Types/weapon'
 import formula, { data } from './data'
@@ -21,13 +21,13 @@ const weapon: IWeaponSheet = {
   document: [{
     fields: [
       {
-        text: <TransWrapper ns="weapon_EverlastingMoonglow" key18="name" />,
+        text: <Translate ns="weapon_EverlastingMoonglow" key18="name" />,
         formulaText: stats => <span>{data.hp_conv[stats.weapon.refineIndex]}% {Stat.printStat("finalHP", stats, true)} * {Stat.printStat(getTalentStatKey("elemental", stats) + "_multi", stats)}</span>,
         formula: formula.norm,
         variant: stats => stats.characterEle
       },
       {
-        text: <ColorText color="warning">The normal damage increase is not currently being added to the character's normal damage as a singular damage number.</ColorText>
+        text: <ColorText color="warning">The normal damage increase is not currently being added to the character's normal damage as a singular damage number, pending future implemention.</ColorText>
       }
     ],
   }],

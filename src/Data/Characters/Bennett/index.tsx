@@ -19,50 +19,21 @@ import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { ICharacterSheet } from '../../../Types/character'
-import { IConditionals } from '../../../Types/IConditional'
 import { Translate } from '../../../Components/Translate'
-import { chargedHitsDocSection, normalDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
+import { chargedHitsDocSection, conditionalHeader, normalDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
 import { KeyPath } from '../../../Util/KeyPathUtil'
 import { FormulaPathBase } from '../../formula'
 import { WeaponTypeKey } from '../../../Types/consts'
-import ColorText from '../../../Components/ColoredText'
 
 const path = KeyPath<FormulaPathBase, any>().character.Bennett
 const tr = (strKey: string) => <Translate ns="char_Bennett_gen" key18={strKey} />
-const conditionals: IConditionals = {
-  q: { // Fantastic Voyage
-    name: tr("burst.name"),
-    stats: stats => ({
-      modifiers: { atk: [path.burst.atkBonus()] },
-      ...(stats.constellation >= 6 ? { infusionSelf: "pyro" } : {})
-    }),
-    fields: [{
-      text: "ATK Bonus Ratio",
-      formulaText: stats => <span>{stats.constellation < 1 ? data.burst.atkRatio[stats.tlvl.burst] : `(${data.burst.atkRatio[stats.tlvl.burst]} + 20)`}% {Stat.printStat("baseATK", stats, true)}</span>,
-      formula: formula.burst.atkBonus
-    },]
-  },
-  c2: { // Impasse Conqueror
-    canShow: stats => stats.constellation >= 2,
-    name: "When HP falls below 70%",
-    stats: { enerRech_: 30 }
-  },
-  c6: { // Fire Ventures With Me
-    canShow: stats => stats.constellation >= 6,
-    name: "Sword, Claymore, or Polearm-wielding characters inside Fantastic Voyage's radius",
-    stats: { pyro_dmg_: 15 },
-    fields: [{
-      text: <ColorText color="pyro">Pyro infusion</ColorText>,//TODO: infusion as a stat
-    }]
-  }
-}
 const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   thumbImgSide: thumbSide,
   bannerImg: banner,
-  star: data_gen.star,
+  rarity: data_gen.star,
   elementKey: "pyro",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
   gender: "M",
@@ -73,7 +44,6 @@ const char: ICharacterSheet = {
   ascensions: data_gen.ascensions,
   talent: {
     formula,
-    conditionals,
     sheets: {
       auto: {
         name: tr("auto.name"),
@@ -129,23 +99,57 @@ const char: ICharacterSheet = {
             text: "Energy Cost",
             value: 60,
           }],
-          conditional: conditionals.q
+          conditional: { // Fantastic Voyage
+            key: "q",
+            name: tr("burst.name"),
+            partyBuff: "partyAll",
+            header: conditionalHeader("burst", tr, burst),
+            description: tr("burst.description"),
+            stats: {
+              modifiers: { atk: [path.burst.atkBonus()] },
+            },
+            fields: [{
+              text: "ATK Bonus",
+              formulaText: stats => <span>{stats.constellation < 1 ? data.burst.atkRatio[stats.tlvl.burst] : `(${data.burst.atkRatio[stats.tlvl.burst]} + 20)`}% {Stat.printStat("baseATK", stats, true)}</span>,
+              formula: formula.burst.atkBonus
+            },]
+          },
         }],
       },
       passive1: talentTemplate("passive1", tr, passive1),
       passive2: talentTemplate("passive2", tr, passive2),
       passive3: talentTemplate("passive3", tr, passive3),
       constellation1: talentTemplate("constellation1", tr, c1),
-      constellation2: talentTemplate("constellation2", tr, c2),
-      constellation3: talentTemplate("constellation3", tr, c3, { skillBoost: 3 }),
+      constellation2: {
+        name: tr("constellation2.name"),
+        img: c2,
+        sections: [{
+          text: tr("constellation2.description"),
+          conditional: { // Impasse Conqueror
+            key: "c2",
+            canShow: stats => stats.constellation >= 2,
+            name: "When HP falls below 70%",
+            stats: { enerRech_: 30 }
+          },
+        }],
+      },
+      constellation3: talentTemplate("constellation3", tr, c3, "skillBoost"),
       constellation4: talentTemplate("constellation4", tr, c4),
-      constellation5: talentTemplate("constellation5", tr, c5, { burstBoost: 3 }),
+      constellation5: talentTemplate("constellation5", tr, c5, "burstBoost"),
       constellation6: {
         name: tr("constellation6.name"),
         img: c6,
         sections: [{
           text: tr("constellation6.description"),
-          conditional: conditionals.c6
+          conditional: { // Fire Ventures With Me
+            key: "c6",
+            partyBuff: "partyAll",
+            header: conditionalHeader("constellation6", tr, c6),
+            description: tr("constellation6.description"),
+            canShow: stats => stats.constellation >= 6,
+            name: "Sword, Claymore, or Polearm-wielding characters inside Fantastic Voyage's radius",
+            stats: { pyro_dmg_: 15, infusionAura: "pyro" }
+          }
         }],
       },
     },

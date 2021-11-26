@@ -43,11 +43,9 @@ type AvatarPromoteExcelConfigData = {
 }
 const ascensionSrc = require('../../GenshinData/ExcelBinOutput/AvatarPromoteExcelConfigData.json') as AvatarPromoteExcelConfigData[]
 export type AscensionData = {
-  [AvatarPromoteId: number]: Array<{
-    props: {
-      [key: string]: number
-    }
-  }>
+  [AvatarPromoteId: number]: {
+    props: { [key: string]: number }
+  }[]
 }
 const ascensionData = {} as AscensionData
 ascensionSrc.forEach(asc => {

@@ -19,51 +19,17 @@ import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from "../../../Build/Build"
 import { ICharacterSheet } from '../../../Types/character'
-import { IConditionals } from '../../../Types/IConditional'
 import { Translate } from '../../../Components/Translate'
 import { chargedDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
 const tr = (strKey: string) => <Translate ns="char_Xiao_gen" key18={strKey} />
-const conditionals: IConditionals = {
-  q: { // BaneOfAllEvil
-    name: "Bane of All Evil",
-    stats: stats => ({
-      infusionSelf: "anemo",
-      normal_dmg_: data.burst.atk_bonus[stats.tlvl.burst],
-      charged_dmg_: data.burst.atk_bonus[stats.tlvl.burst],
-      plunging_dmg_: data.burst.atk_bonus[stats.tlvl.burst],
-    })
-  },
-  a1q: { // TamerofDemons
-    canShow: stats => stats.ascension >= 1,
-    name: <span>While under the effects of <b>Bane of All Evil</b></span>,
-    maxStack: 5,
-    stats: { dmg_: 5 }
-  },
-  a1: { // HeavenFall
-    canShow: stats => stats.ascension >= 1,
-    name: <span>Using <b>Lemniscatic Wind Cycling</b></span>,
-    maxStack: 3,
-    stats: { skill_dmg_: 15 }
-  },
-  c2: { // BlossomofKaleidos
-    canShow: stats => stats.constellation >= 2,
-    name: "When in party but not on the field",
-    stats: { enerRech_: 25 }
-  },
-  c4: { // ExtinctionofSuffering
-    canShow: stats => stats.constellation >= 4,
-    name: "HP falls below 50%",
-    stats: { def_: 100 }
-  }
-}
 const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   thumbImgSide: thumbSide,
   bannerImg: banner,
-  star: data_gen.star,
+  rarity: data_gen.star,
   elementKey: "anemo",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
   gender: "M",
@@ -74,7 +40,6 @@ const char: ICharacterSheet = {
   ascensions: data_gen.ascensions,
   talent: {
     formula,
-    conditionals,
     sheets: {
       auto: {
         name: tr("auto.name"),
@@ -131,7 +96,16 @@ const char: ICharacterSheet = {
             text: "Energy Cost",
             value: 70,
           }],
-          conditional: conditionals.q
+          conditional: { // BaneOfAllEvil
+            key: "q",
+            name: "Bane of All Evil",
+            stats: stats => ({
+              infusionSelf: "anemo",
+              normal_dmg_: data.burst.atk_bonus[stats.tlvl.burst],
+              charged_dmg_: data.burst.atk_bonus[stats.tlvl.burst],
+              plunging_dmg_: data.burst.atk_bonus[stats.tlvl.burst],
+            })
+          },
         }],
       },
       passive1: {
@@ -139,7 +113,13 @@ const char: ICharacterSheet = {
         img: passive1,
         sections: [{
           text: tr("passive1.description"),
-          conditional: conditionals.a1q
+          conditional: { // TamerofDemons
+            key: "a1q",
+            canShow: stats => stats.ascension >= 1,
+            name: <span>While under the effects of <b>Bane of All Evil</b></span>,
+            maxStack: 5,
+            stats: { dmg_: 5 }
+          },
         }],
       },
       passive2: {
@@ -147,7 +127,13 @@ const char: ICharacterSheet = {
         img: passive2,
         sections: [{
           text: tr("passive2.description"),
-          conditional: conditionals.a1
+          conditional: { // HeavenFall
+            key: "a4",
+            canShow: stats => stats.ascension >= 4,
+            name: <span>Using <b>Lemniscatic Wind Cycling</b></span>,
+            maxStack: 3,
+            stats: { skill_dmg_: 15 }
+          },
         }],
       },
       passive3: talentTemplate("passive3", tr, passive3),
@@ -157,19 +143,29 @@ const char: ICharacterSheet = {
         img: c2,
         sections: [{
           text: tr("constellation2.description"),
-          conditional: conditionals.c2
+          conditional: { // BlossomofKaleidos
+            key: "c2",
+            canShow: stats => stats.constellation >= 2,
+            name: "When in party but not on the field",
+            stats: { enerRech_: 25 }
+          },
         }],
       },
-      constellation3: talentTemplate("constellation3", tr, c3, { skillBoost: 3 }),
+      constellation3: talentTemplate("constellation3", tr, c3, "skillBoost"),
       constellation4: {
         name: tr("constellation4.name"),
         img: c4,
         sections: [{
           text: tr("constellation4.description"),
-          conditional: conditionals.c4
+          conditional: { // ExtinctionofSuffering
+            key: "c4",
+            canShow: stats => stats.constellation >= 4,
+            name: "HP falls below 50%",
+            stats: { def_: 100 }
+          }
         }],
       },
-      constellation5: talentTemplate("constellation5", tr, c5, { burstBoost: 3 }),
+      constellation5: talentTemplate("constellation5", tr, c5, "burstBoost"),
       constellation6: talentTemplate("constellation6", tr, c6),
     },
   },

@@ -18,20 +18,18 @@ import Stat from '../../../Stat'
 import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-import { IConditionals } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
 import { Translate } from '../../../Components/Translate'
-import { bowChargedDocSection, normalDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
+import { bowChargedDocSection, conditionalHeader, normalDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
 const tr = (strKey: string) => <Translate ns="char_Tartaglia_gen" key18={strKey} />
-const conditionals: IConditionals = {}
 const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   thumbImgSide: thumbSide,
   bannerImg: banner,
-  star: data_gen.star,
+  rarity: data_gen.star,
   elementKey: "hydro",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
   gender: "M",
@@ -42,7 +40,6 @@ const char: ICharacterSheet = {
   ascensions: data_gen.ascensions,
   talent: {
     formula,
-    conditionals,
     sheets: {
       auto: {
         name: tr("auto.name"),
@@ -147,12 +144,26 @@ const char: ICharacterSheet = {
       },
       passive1: talentTemplate("passive1", tr, passive1),
       passive2: talentTemplate("passive2", tr, passive2),
-      passive3: talentTemplate("passive3", tr, passive3, { autoBoost: 1 }),
+      passive3: {
+        name: tr("passive3.name"),
+        img: passive3,
+        sections: [{
+          conditional: {
+            key: "pas",
+            partyBuff: "partyOnly",
+            maxStack: 0,
+            header: conditionalHeader("passive3", tr, passive3),
+            description: tr("passive3.description"),
+            name: tr("passive3.name"),
+            stats: { autoBoost: 1 }
+          }
+        }],
+      },
       constellation1: talentTemplate("constellation1", tr, c1),
       constellation2: talentTemplate("constellation2", tr, c2),
-      constellation3: talentTemplate("constellation3", tr, c3, { skillBoost: 3 }),
+      constellation3: talentTemplate("constellation3", tr, c3, "skillBoost"),
       constellation4: talentTemplate("constellation4", tr, c4),
-      constellation5: talentTemplate("constellation5", tr, c5, { burstBoost: 3 }),
+      constellation5: talentTemplate("constellation5", tr, c5, "burstBoost"),
       constellation6: talentTemplate("constellation6", tr, c6),
     },
   },

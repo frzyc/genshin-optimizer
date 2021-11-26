@@ -1,6 +1,9 @@
 import { ElementKey } from "../Types/consts"
 
-const ElementalData: StrictDict<ElementKey | "physical", { name: string }> = {
+/**
+ * @deprecated use the translated element keys
+ */
+const elementalData: StrictDict<ElementKey | "physical", { name: string }> = {
   physical: { name: "Physical" },
   anemo: { name: "Anemo" },
   geo: { name: "Geo" },
@@ -10,4 +13,4 @@ const ElementalData: StrictDict<ElementKey | "physical", { name: string }> = {
   cryo: { name: "Cryo" },
   // dendro: { name: "Dendro" }
 }
-export default ElementalData
+export default elementalData

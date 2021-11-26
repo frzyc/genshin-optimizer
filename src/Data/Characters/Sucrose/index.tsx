@@ -14,60 +14,24 @@ import burst from './Talent_Forbidden_Creation_-_Isomer_75_Type_II.png'
 import passive1 from './Talent_Catalyst_Conversion.png'
 import passive2 from './Talent_Mollis_Favonius.png'
 import passive3 from './Talent_Astable_Invention.png'
-import ElementalData from '../../ElementalData'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from "../../../Build/Build"
-import { IConditionals, IConditionalValue } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
 import { absorbableEle } from '../dataUtil'
 import { Translate } from '../../../Components/Translate'
-import { chargedDocSection, normalDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
+import { chargedDocSection, conditionalHeader, normalDocSection, plungeDocSection, sgt, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
 import ColorText from '../../../Components/ColoredText'
 const tr = (strKey: string) => <Translate ns="char_Sucrose_gen" key18={strKey} />
-const conditionals: IConditionals = {
-  q: { // Absorption
-    name: "Elemental Absorption",
-    states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
-      name: <ColorText color={eleKey}><b>{ElementalData[eleKey].name}</b></ColorText>,
-      fields: [{
-        canShow: stats => {
-          const value = stats.conditionalValues?.character?.Sucrose?.sheet?.talent?.q as IConditionalValue | undefined
-          if (!value) return false
-          const [num, condEleKey] = value
-          if (!num || condEleKey !== eleKey) return false
-          return true
-        },
-        text: "Absorption DoT",
-        formulaText: stats => <span>{data.burst.dmg_[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats, eleKey), stats)}</span>,
-        formula: formula.burst[eleKey],
-        variant: eleKey
-      }]
-    }]))
-  },
-  a4: {
-    name: "When Skill hits opponent",
-    fields: [{
-      text: "Elemental Mastery Bonus",
-      formulaText: stats => <span>20% {Stat.printStat("eleMas", stats, true)}</span>,
-      formula: formula.passive2.em
-    }, {
-      text: <ColorText color="warning">Does not apply to Sucrose</ColorText>
-    }, {
-      text: "Duration",
-      value: "8s"
-    }]
-  }
-}
 const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   thumbImgSide: thumbSide,
   bannerImg: banner,
-  star: data_gen.star,
+  rarity: data_gen.star,
   elementKey: "anemo",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
   gender: "F",
@@ -78,7 +42,6 @@ const char: ICharacterSheet = {
   ascensions: data_gen.ascensions,
   talent: {
     formula,
-    conditionals,
     sheets: {
       auto: {
         name: tr("auto.name"),
@@ -125,7 +88,23 @@ const char: ICharacterSheet = {
             text: "Energy Cost",
             value: "80"
           }],
-          conditional: conditionals.q
+          conditional: { // Absorption
+            key: "q",
+            name: "Elemental Absorption",
+            states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
+              name: <ColorText color={eleKey}>{sgt(`element.${eleKey}`)}</ColorText>,
+              fields: [{
+                canShow: stats => {
+                  const [num, condEleKey] = stats.conditionalValues?.character?.Sucrose?.q ?? []
+                  return !!num && condEleKey === eleKey
+                },
+                text: "Absorption DoT",
+                formulaText: stats => <span>{data.burst.dmg_[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats, eleKey), stats)}</span>,
+                formula: formula.burst[eleKey],
+                variant: eleKey
+              }]
+            }]))
+          },
         }]
       },
       passive1: talentTemplate("passive1", tr, passive1),
@@ -134,15 +113,31 @@ const char: ICharacterSheet = {
         img: passive2,
         sections: [{
           text: tr("passive2.description"),
-          conditional: conditionals.a4
+          conditional: {
+            key: "a4",
+            canShow: stats => stats.ascension >= 4,
+            partyBuff: "partyOnly",
+            header: conditionalHeader("passive2", tr, passive2),
+            description: tr("passive2.description"),
+            name: "When Skill hits opponent",
+            fields: [{
+              text: "Elemental Mastery Bonus",
+              formulaText: stats => <span>20% {Stat.printStat("eleMas", stats, true)}</span>,
+              formula: formula.passive2.em
+            }, {
+              text: sgt("duration"),
+              value: 8,
+              unit: "s"
+            }]
+          }
         }]
       },
       passive3: talentTemplate("passive3", tr, passive3),
       constellation1: talentTemplate("constellation1", tr, c1),
       constellation2: talentTemplate("constellation2", tr, c2),
-      constellation3: talentTemplate("constellation3", tr, c3, { skillBoost: 3 }),
+      constellation3: talentTemplate("constellation3", tr, c3, "skillBoost"),
       constellation4: talentTemplate("constellation4", tr, c4),
-      constellation5: talentTemplate("constellation5", tr, c5, { burstBoost: 3 }),
+      constellation5: talentTemplate("constellation5", tr, c5, "burstBoost"),
       constellation6: talentTemplate("constellation6", tr, c6),
     },
   },

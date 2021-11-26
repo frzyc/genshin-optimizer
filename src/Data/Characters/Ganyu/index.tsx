@@ -19,52 +19,18 @@ import Stat from '../../../Stat'
 import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-import { IConditionals } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
 import { Translate } from '../../../Components/Translate'
 import { normalDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
 const tr = (strKey: string) => <Translate ns="char_Ganyu_gen" key18={strKey} />
-const conditionals: IConditionals = {
-  a1: { // UndividedHeart
-    canShow: stats => stats.ascension >= 1,
-    name: <span>After firing a <b>Frostflake</b> Arrow</span>,
-    fields: [{
-      text: "Frostflake CRIT Rate",
-      value: "+20%",
-    }, {
-      text: "Duration",
-      value: "5s",
-    }]
-  },
-  c1: { // DewDrinker
-    canShow: stats => stats.constellation >= 1,
-    name: <span>Opponent taking DMG from a Charge Level 2 <b>Frostflake Arrow</b> or <b>Frostflake Arrow Bloom</b> decreases opponents</span>,
-    stats: { cryo_enemyRes_: -15 },
-  },
-  a4: { // Harmony
-    canShow: stats => stats.ascension >= 4,
-    name: <span>Active members in the AoE of <b>Celestial Shower</b></span>,
-    stats: { cryo_dmg_: 20 },
-  },
-  c4: { // WestwardSojourn
-    canShow: stats => stats.constellation >= 4,
-    name: <span>Opponents standing within the AoE of <b>Celestial Shower</b></span>,
-    maxStack: 5,
-    stats: { dmg_: 5 },
-    fields: [{
-      text: "Effect Linger Duration",
-      value: "3s"
-    }]
-  }
-}
 const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   thumbImgSide: thumbSide,
   bannerImg: banner,
-  star: data_gen.star,
+  rarity: data_gen.star,
   elementKey: "cryo",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
   gender: "F",
@@ -75,7 +41,6 @@ const char: ICharacterSheet = {
   ascensions: data_gen.ascensions,
   talent: {
     formula,
-    conditionals,
     sheets: {
       auto: {
         name: tr("auto.name"),
@@ -98,7 +63,7 @@ const char: ICharacterSheet = {
               text: `Frostflake Arrow DMG`,
               formulaText: stats => {
                 if (stats.hitMode === "avgHit") {
-                  const [conditionalNum] = stats.conditionalValues?.character?.Ganyu?.sheet?.talent?.a1 ?? []
+                  const [conditionalNum] = stats.conditionalValues?.character?.Ganyu?.a1 ?? []
                   if (conditionalNum) {
                     const statKey = `cryo${stats.reactionMode === "cryo_melt" ? "_melt" : ""}_charged_hit`
                     return <span>{data.charged.frostflake[stats.tlvl.auto]}% {Stat.printStat(statKey, stats)} * (1 + Min( 100% , 20% + {Stat.printStat("critRate_", stats)} + {Stat.printStat("charged_critRate_", stats)} ) * {Stat.printStat("critDMG_", stats)} )</span>
@@ -112,7 +77,7 @@ const char: ICharacterSheet = {
               text: `Frostflake Arrow Bloom DMG`,
               formulaText: stats => {
                 if (stats.hitMode === "avgHit") {
-                  const [conditionalNum] = stats.conditionalValues?.character?.Ganyu?.sheet?.talent?.a1 ?? []
+                  const [conditionalNum] = stats.conditionalValues?.character?.Ganyu?.a1 ?? []
                   if (conditionalNum) {
                     const statKey = `cryo${stats.reactionMode === "cryo_melt" ? "_melt" : ""}_charged_hit`
                     return <span>{data.charged.frostflakeBloom[stats.tlvl.auto]}% {Stat.printStat(statKey, stats)} * (1 + Min( 100% , 20% + {Stat.printStat("critRate_", stats)} + {Stat.printStat("charged_critRate_", stats)} ) * {Stat.printStat("critDMG_", stats)} )</span>
@@ -123,9 +88,25 @@ const char: ICharacterSheet = {
               formula: formula.charged.frostflakeBloom,
               variant: stats => getTalentStatKeyVariant("charged", stats, "cryo"),
             },],
-            conditional: conditionals.a1
+            conditional: { // UndividedHeart
+              key: "a1",
+              canShow: stats => stats.ascension >= 1,
+              name: <span>After firing a <b>Frostflake</b> Arrow</span>,
+              fields: [{
+                text: "Frostflake CRIT Rate",
+                value: "+20%",
+              }, {
+                text: "Duration",
+                value: "5s",
+              }]
+            },
           }, {
-            conditional: conditionals.c1
+            conditional: { // DewDrinker
+              key: "c1",
+              canShow: stats => stats.constellation >= 1,
+              name: <span>Opponent taking DMG from a Charge Level 2 <b>Frostflake Arrow</b> or <b>Frostflake Arrow Bloom</b> decreases opponents</span>,
+              stats: { cryo_enemyRes_: -15 },
+            },
           },
           plungeDocSection(tr, formula, data)
         ],
@@ -178,9 +159,24 @@ const char: ICharacterSheet = {
             text: "Energy Cost",
             value: 60,
           }],
-          conditional: conditionals.a4
+          conditional: { // Harmony
+            key: "a4",
+            canShow: stats => stats.ascension >= 4,
+            name: <span>Active members in the AoE of <b>Celestial Shower</b></span>,
+            stats: { cryo_dmg_: 20 },
+          },
         }, {
-          conditional: conditionals.c4
+          conditional: { // WestwardSojourn
+            key: "c4",
+            canShow: stats => stats.constellation >= 4,
+            name: <span>Opponents standing within the AoE of <b>Celestial Shower</b></span>,
+            maxStack: 5,
+            stats: { dmg_: 5 },
+            fields: [{
+              text: "Effect Linger Duration",
+              value: "3s"
+            }]
+          }
         }],
       },
       passive1: talentTemplate("passive1", tr, passive1),
@@ -188,9 +184,9 @@ const char: ICharacterSheet = {
       passive3: talentTemplate("passive3", tr, passive3),
       constellation1: talentTemplate("constellation1", tr, c1),
       constellation2: talentTemplate("constellation2", tr, c2),
-      constellation3: talentTemplate("constellation3", tr, c3, { burstBoost: 3 }),
+      constellation3: talentTemplate("constellation3", tr, c3, "burstBoost"),
       constellation4: talentTemplate("constellation4", tr, c4),
-      constellation5: talentTemplate("constellation5", tr, c5, { skillBoost: 3 }),
+      constellation5: talentTemplate("constellation5", tr, c5, "skillBoost"),
       constellation6: talentTemplate("constellation6", tr, c6),
     },
   },

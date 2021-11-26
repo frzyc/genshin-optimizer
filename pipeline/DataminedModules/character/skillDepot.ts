@@ -8,10 +8,10 @@ export type AvatarSkillDepotExcelConfigData = {
   "ExtraAbilities": string[]//["", "", ""],
   "Talents": number[]//[341, 342, 343, 344, 345, 346],
   "TalentStarName": string//"Talent_Noel",
-  "InherentProudSkillOpens": Array<{
+  "InherentProudSkillOpens": {
     "ProudSkillGroupId"?: number
     "NeedAvatarPromoteLevel"?: number
-  }>
+  }[]
   /*[
     {
       "ProudSkillGroupId": 3421, //devotion passive1

@@ -18,9 +18,8 @@ import Stat from '../../../Stat'
 import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-import { IConditionals } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
-import { Translate, TransWrapper } from '../../../Components/Translate'
+import { Translate } from '../../../Components/Translate'
 import { claymoreChargedDocSection, normalDocSection, plungeDocSection, sgt, talentTemplate } from '../SheetUtil'
 import { KeyPath } from '../../../Util/KeyPathUtil'
 import { FormulaPathBase } from '../../formula'
@@ -28,31 +27,14 @@ import { WeaponTypeKey } from '../../../Types/consts'
 
 const path = KeyPath<FormulaPathBase, any>().character.Noelle
 const tr = (strKey: string) => <Translate ns="char_Noelle_gen" key18={strKey} />
-const Noelle = (strKey: string) => <TransWrapper ns="char_Noelle" key18={strKey} />
-const conditionals: IConditionals = {
-  q: { // Sweeping Time
-    name: tr("burst.name"),
-    maxStack: 1,
-    stats: {
-      modifiers: { atk: [path.burst.bonus()] },
-      infusionSelf: "geo",
-    },
-    fields: [{
-      text: Noelle("qlarger")
-    }, {
-      text: tr("burst.atkBonus"),
-      formulaText: stats => <span>{data.burst.bonus[stats.tlvl.burst]}% {stats.constellation >= 6 ? "+50% " : ""}{Stat.printStat("finalDEF", stats, true)}</span>,
-      formula: formula.burst.bonus,
-    },]
-  }
-}
+const Noelle = (strKey: string) => <Translate ns="char_Noelle" key18={strKey} />
 const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   thumbImgSide: thumbSide,
   bannerImg: banner,
-  star: data_gen.star,
+  rarity: data_gen.star,
   elementKey: "geo",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
   gender: "F",
@@ -63,7 +45,6 @@ const char: ICharacterSheet = {
   ascensions: data_gen.ascensions,
   talent: {
     formula,
-    conditionals,
     sheets: {
       auto: {
         name: tr("auto.name"),
@@ -130,7 +111,22 @@ const char: ICharacterSheet = {
             text: sgt("energyCost"),
             value: 60,
           }],
-          conditional: conditionals.q
+          conditional: { // Sweeping Time
+            key: "q",
+            name: tr("burst.name"),
+            maxStack: 1,
+            stats: {
+              modifiers: { atk: [path.burst.bonus()] },
+              infusionSelf: "geo",
+            },
+            fields: [{
+              text: Noelle("qlarger")
+            }, {
+              text: tr("burst.atkBonus"),
+              formulaText: stats => <span>{data.burst.bonus[stats.tlvl.burst]}% {stats.constellation >= 6 ? "+50% " : ""}{Stat.printStat("finalDEF", stats, true)}</span>,
+              formula: formula.burst.bonus,
+            },]
+          }
         }],
       },
       passive1: {
@@ -156,13 +152,19 @@ const char: ICharacterSheet = {
       constellation2: {
         name: tr("constellation2.name"),
         img: c2,
-        sections: [{ text: tr("constellation2.description"), }],
-        stats: {
-          charged_dmg_: 15,
-          staminaChargedDec_: 20,
-        }
+        sections: [{
+          text: tr("constellation2.description"),
+          conditional: {
+            key: "c2",
+            maxStack: 0,
+            stats: {
+              charged_dmg_: 15,
+              staminaChargedDec_: 20,
+            }
+          }
+        }],
       },
-      constellation3: talentTemplate("constellation3", tr, c3, { skillBoost: 3 }),
+      constellation3: talentTemplate("constellation3", tr, c3, "skillBoost"),
       constellation4: {
         name: tr("constellation4.name"),
         img: c4,
@@ -177,7 +179,7 @@ const char: ICharacterSheet = {
           }]
         }]
       },
-      constellation5: talentTemplate("constellation5", tr, c5, { burstBoost: 3 }),
+      constellation5: talentTemplate("constellation5", tr, c5, "burstBoost"),
       constellation6: talentTemplate("constellation6", tr, c6),
     },
   },

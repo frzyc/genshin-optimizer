@@ -18,42 +18,19 @@ import Stat from '../../../Stat'
 import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-import { IConditionals } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
 import { Translate } from '../../../Components/Translate'
 import { claymoreChargedDocSection, normalDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
 import ColorText from '../../../Components/ColoredText'
 const tr = (strKey: string) => <Translate ns="char_Beidou_gen" key18={strKey} />
-const conditionals: IConditionals = {
-  a4: { // Lightning Storm
-    canShow: stats => stats.ascension >= 4,
-    name: <span>Unleashing <b>Tidecaller</b> with its maximum DMG Bonus</span>,
-    stats: {
-      normal_dmg_: 15,
-      charged_dmg_: 15,
-      atkSPD_: 15,
-    },
-    fields: [{
-      text: "Duration",
-      value: "10s",
-    }, {
-      text: "Reduced delay before Charged Attacks",
-    }]
-  },
-  c6: { // Bane Evil
-    canShow: stats => stats.constellation >= 6,
-    name: <span>During the duration of <b>Stormbreaker</b></span>,
-    stats: { electro_enemyRes_: -15, }
-  }
-}
 const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   thumbImgSide: thumbSide,
   bannerImg: banner,
-  star: data_gen.star,
+  rarity: data_gen.star,
   elementKey: "electro",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
   gender: "F",
@@ -64,7 +41,6 @@ const char: ICharacterSheet = {
   ascensions: data_gen.ascensions,
   talent: {
     formula,
-    conditionals,
     sheets: {
       auto: {
         name: tr("auto.name"),
@@ -108,7 +84,22 @@ const char: ICharacterSheet = {
             text: "CD",
             value: "7.5s",
           }],
-          conditional: conditionals.a4
+          conditional: { // Lightning Storm
+            key: "a4",
+            canShow: stats => stats.ascension >= 4,
+            name: <span>Unleashing <b>Tidecaller</b> with its maximum DMG Bonus</span>,
+            stats: {
+              normal_dmg_: 15,
+              charged_dmg_: 15,
+              atkSPD_: 15,
+            },
+            fields: [{
+              text: "Duration",
+              value: "10s",
+            }, {
+              text: "Reduced delay before Charged Attacks",
+            }]
+          },
         }],
       },
       burst: {
@@ -139,7 +130,12 @@ const char: ICharacterSheet = {
             text: "Energy Cost",
             value: 80,
           }],
-          conditional: conditionals.c6
+          conditional: { // Bane Evil
+            key: "c6",
+            canShow: stats => stats.constellation >= 6,
+            name: <span>During the duration of <b>Stormbreaker</b></span>,
+            stats: { electro_enemyRes_: -15, }
+          }
         }],
       },
       passive1: talentTemplate("passive1", tr, passive1),
@@ -165,7 +161,7 @@ const char: ICharacterSheet = {
         }],
       },
       constellation2: talentTemplate("constellation2", tr, c2),
-      constellation3: talentTemplate("constellation3", tr, c3, { skillBoost: 3 }),
+      constellation3: talentTemplate("constellation3", tr, c3, "skillBoost"),
       constellation4: {
         name: tr("constellation4.name"),
         img: c4,
@@ -179,7 +175,7 @@ const char: ICharacterSheet = {
           }]
         }],
       },
-      constellation5: talentTemplate("constellation5", tr, c5, { burstBoost: 3 }),
+      constellation5: talentTemplate("constellation5", tr, c5, "burstBoost"),
       constellation6: talentTemplate("constellation6", tr, c6),
     },
   },

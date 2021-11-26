@@ -18,32 +18,18 @@ import Stat from '../../../Stat'
 import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-import ElementalData from '../../ElementalData'
-import { IConditionals } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
 import { Translate } from '../../../Components/Translate'
-import { talentTemplate } from '../SheetUtil'
-import { WeaponTypeKey } from '../../../Types/consts'
+import { conditionalHeader, talentTemplate } from '../SheetUtil'
+import { allElementsWithPhy, WeaponTypeKey } from '../../../Types/consts'
 const tr = (strKey: string) => <Translate ns="char_Zhongli_gen" key18={strKey} />
-const conditionals: IConditionals = {
-  sk: { // JadeShield (near)
-    name: <span>Enemies near <b>Jade Shield</b></span>,
-    stats: Object.fromEntries(Object.keys(ElementalData).map(k => [`${k}_enemyRes_`, -20])),//TODO: party buff
-  },
-  p1: { // ResonantWaves (on dmg)
-    canShow: stats => stats.ascension >= 1,
-    name: <span>When the <b>Jade Shield</b> takes DMG</span>,
-    maxStack: 5,
-    stats: { shield_: 5 },
-  }
-}
 const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   thumbImgSide: thumbSide,
   bannerImg: banner,
-  star: data_gen.star,
+  rarity: data_gen.star,
   elementKey: "geo",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
   gender: "M",
@@ -54,7 +40,6 @@ const char: ICharacterSheet = {
   ascensions: data_gen.ascensions,
   talent: {
     formula,
-    conditionals,
     sheets: {
       auto: {
         name: tr("auto.name"),
@@ -193,7 +178,14 @@ const char: ICharacterSheet = {
             text: "Hold CD",
             value: "12s",
           }],
-          conditional: conditionals.sk
+          conditional: { // JadeShield (near)
+            key: "e",
+            partyBuff: "partyAll",
+            header: conditionalHeader("skill", tr, skill),
+            description: tr("skill.description"),
+            name: <span>Enemies near <b>Jade Shield</b></span>,
+            stats: Object.fromEntries(allElementsWithPhy.map(k => [`${k}_enemyRes_`, -20])),
+          },
         }],
       },
       burst: {
@@ -234,16 +226,22 @@ const char: ICharacterSheet = {
         img: passive1,
         sections: [{
           text: tr("passive1.description"),
-          conditional: conditionals.p1
+          conditional: { // ResonantWaves (on dmg)
+            key: "p1",
+            canShow: stats => stats.ascension >= 1,
+            name: <span>When the <b>Jade Shield</b> takes DMG</span>,
+            maxStack: 5,
+            stats: { shield_: 5 },
+          }
         }],
       },
       passive2: talentTemplate("passive2", tr, passive2),
       passive3: talentTemplate("passive3", tr, passive3),
       constellation1: talentTemplate("constellation1", tr, c1),
       constellation2: talentTemplate("constellation2", tr, c2),
-      constellation3: talentTemplate("constellation3", tr, c3, { skillBoost: 3 }),
+      constellation3: talentTemplate("constellation3", tr, c3, "skillBoost"),
       constellation4: talentTemplate("constellation4", tr, c4),
-      constellation5: talentTemplate("constellation5", tr, c5, { burstBoost: 3 }),
+      constellation5: talentTemplate("constellation5", tr, c5, "burstBoost"),
       constellation6: {
         name: tr("constellation6.name"),
         img: c6,

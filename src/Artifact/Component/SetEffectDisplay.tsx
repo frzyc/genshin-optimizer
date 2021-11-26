@@ -13,10 +13,11 @@ type Data = {
   setKey: ArtifactSetKey,
   setNumKey: SetNum,
   newBuild?: ICalculatedStats,
-  equippedBuild?: ICalculatedStats
+  equippedBuild?: ICalculatedStats,
+  skipConditionalEquipmentCheck?: boolean
 }
 
-export default function SetEffectDisplay({ setKey, setNumKey, equippedBuild, newBuild }: Data) {
+export default function SetEffectDisplay({ setKey, setNumKey, equippedBuild, newBuild, skipConditionalEquipmentCheck }: Data) {
   const sheet = usePromise(ArtifactSheet.get(setKey), [setKey])
   if (!sheet) return null
 
@@ -25,10 +26,7 @@ export default function SetEffectDisplay({ setKey, setNumKey, equippedBuild, new
   const setStats = sheet.setNumStats(setNumKey, stats)
   const setStatsFields = statsToFields(setStats, stats)
   const document = sheet.setEffectDocument(setNumKey)
-  return <Box sx={{
-    mt: 1,
-    "> div": { mb: 1 },
-  }}>
+  return <Box display="flex" flexDirection="column" gap={1}>
     <CardDark>
       <CardContent>
         <Typography><SqBadge color="success">{setNumKey}-Set</SqBadge> {setEffectText}</Typography>
@@ -37,6 +35,6 @@ export default function SetEffectDisplay({ setKey, setNumKey, equippedBuild, new
         {setStatsFields.map((field, i) => <FieldDisplay key={i} field={field} />)}
       </FieldDisplayList>
     </CardDark>
-    {document ? <DocumentDisplay sections={document} characterKey={stats.characterKey} /> : null}
+    {document ? <DocumentDisplay sections={document} characterKey={stats.characterKey} skipConditionalEquipmentCheck={skipConditionalEquipmentCheck} /> : null}
   </Box>
 }

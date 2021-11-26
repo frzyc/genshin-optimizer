@@ -1,4 +1,4 @@
-import { InputBase, InputProps, styled } from '@mui/material'
+import { Button, ButtonProps, InputBase, InputProps, styled } from '@mui/material'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 type props = Omit<InputProps, "onChange"> & {
   value?: number | undefined,
@@ -22,28 +22,20 @@ export const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }))
 
-// wrap the Input with this when using the input in a buttongroup
-export const CustomNumberInputButtonGroupWrapper = styled("button", {
-  shouldForwardProp: (prop) => !["fullWidth", "disableRipple", "disableFocusRipple", "disableElevation"].includes(prop as string)
-})(({ theme }) => ({
+const Wrapper = styled(Button)(({ theme }) => ({
   backgroundColor: theme.palette.primary.main,
   padding: 0,
   overflow: "hidden",
-  border: "none",
-  borderRadius: theme.shape.borderRadius,
-  "& div": {
+  "div": {
     width: "100%",
     height: "100%",
   },
-  "&.MuiButtonGroup-grouped:not(:last-of-type)": {
-    borderTopRightRadius: 0,
-    borderBottomRightRadius: 0,
-  },
-  "&.MuiButtonGroup-grouped:not(:first-of-type)": {
-    borderTopLeftRadius: 0,
-    borderBottomLeftRadius: 0,
-  },
 }))
+
+// wrap the Input with this when using the input in a buttongroup
+export function CustomNumberInputButtonGroupWrapper({ children, disableRipple, disableFocusRipple, disableTouchRipple, ...props }: ButtonProps) {
+  return <Wrapper disableRipple disableFocusRipple disableTouchRipple {...props}>{children}</Wrapper>
+}
 
 export default function CustomNumberInput({ value = 0, onChange, disabled = false, float = false, ...props }: props) {
   const [number, setNumber] = useState(value)

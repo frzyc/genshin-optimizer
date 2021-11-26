@@ -9,10 +9,10 @@ type EquipAffixExcelConfigData = {
   "NameTextMapHash": number//2433755451,
   "DescTextMapHash": number//3899169753,
   "OpenConfig": string//"Weapon_Claymore_Widsith",
-  "AddProps": Array<{
+  "AddProps": {
     "PropType"?: PropTypeKey//"FIGHT_PROP_ATTACK_PERCENT",
     "Value"?: number//0.3199999928474426
-  }>
+  }[]
   // [
   //   {
   //     "PropType": "FIGHT_PROP_ATTACK_PERCENT",
@@ -35,7 +35,7 @@ type EquipAffixExcelConfigData = {
 }
 const equipAffixExcelConfigDataSrc = require('../../GenshinData/ExcelBinOutput/EquipAffixExcelConfigData.json') as EquipAffixExcelConfigData[]
 
-const equipAffixExcelConfigData = {} as Record<number, Array<EquipAffixExcelConfigData>>
+const equipAffixExcelConfigData = {} as Record<number, EquipAffixExcelConfigData[]>
 equipAffixExcelConfigDataSrc.forEach(data => {
   const { Id, Level = 0 } = data
   if (!equipAffixExcelConfigData[Id]) equipAffixExcelConfigData[Id] = []

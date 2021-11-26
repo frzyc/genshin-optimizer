@@ -19,44 +19,17 @@ import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { ICharacterSheet } from '../../../Types/character'
-import { IConditionals } from '../../../Types/IConditional'
 import { Translate } from '../../../Components/Translate'
-import { chargedDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
+import { chargedDocSection, conditionalHeader, plungeDocSection, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
 const tr = (strKey: string) => <Translate ns="char_Xiangling_gen" key18={strKey} />
-const conditionals: IConditionals = {
-  c1: { // CrispyOutsideTenderInside
-    canShow: stats => stats.constellation >= 1,
-    name: "Opponents hit by Gouba",
-    stats: { pyro_enemyRes_: -15 },
-    fields: [{
-      text: "Duration",
-      value: "6s",
-    }]
-  },
-  //TODO: disabled because it only snapshots to the 3rd hit dmg, and not 1-2 or pyronado
-  // c6: { // CondensedPyronado
-  //   canShow: stats => stats.constellation >= 6,
-  //   name: <span>During <b>Pyronado</b></span>,
-  //   stats: { pyro_dmg_: 15 },//TODO: party buff
-  // },
-  a4: { // BewareItsSuperHot
-    canShow: stats => stats.ascension >= 4,
-    name: "Pick up chili pepper",
-    stats: { atk_: 10 },//TODO: party buff
-    fields: [{
-      text: "Duration",
-      value: "10s",
-    }]
-  }
-}
 const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   thumbImgSide: thumbSide,
   bannerImg: banner,
-  star: data_gen.star,
+  rarity: data_gen.star,
   elementKey: "pyro",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
   gender: "F",
@@ -67,7 +40,6 @@ const char: ICharacterSheet = {
   ascensions: data_gen.ascensions,
   talent: {
     formula,
-    conditionals,
     sheets: {
       auto: {
         name: tr("auto.name"),
@@ -101,7 +73,16 @@ const char: ICharacterSheet = {
             text: "CD",
             value: "12s",
           }],
-          conditional: conditionals.c1
+          conditional: { // CrispyOutsideTenderInside
+            key: "c1",
+            canShow: stats => stats.constellation >= 1,
+            name: "Opponents hit by Gouba",
+            stats: { pyro_enemyRes_: -15 },
+            fields: [{
+              text: "Duration",
+              value: "6s",
+            }]
+          },
         }],
       },
       burst: {
@@ -139,7 +120,16 @@ const char: ICharacterSheet = {
             text: "Energy Cost",
             value: 80,
           }],
-          // conditional: conditionals.c6 
+          conditional: { // CondensedPyronado
+            key: "c6",
+            // TODO: disabled for XL because it only snapshots to the 3rd hit dmg, and not 1-2 or pyronado
+            partyBuff: "partyOnly",
+            header: conditionalHeader("constellation6", tr, c6),
+            description: tr("constellation6.description"),
+            canShow: stats => stats.constellation >= 6,
+            name: <span>During <b>Pyronado</b></span>,
+            stats: { pyro_dmg_: 15 },
+          },
         }],
       },
       passive1: talentTemplate("passive1", tr, passive1),
@@ -148,7 +138,19 @@ const char: ICharacterSheet = {
         img: passive2,
         sections: [{
           text: tr("passive2.description"),
-          conditional: conditionals.a4
+          conditional: { // BewareItsSuperHot
+            key: "a4",
+            canShow: stats => stats.ascension >= 4,
+            partyBuff: "partyAll",
+            header: conditionalHeader("passive2", tr, passive2),
+            description: tr("passive2.description"),
+            name: "Pick up chili pepper",
+            stats: { atk_: 10 },
+            fields: [{
+              text: "Duration",
+              value: "10s",
+            }]
+          }
         }],
       },
       passive3: talentTemplate("passive3", tr, passive3),
@@ -167,9 +169,9 @@ const char: ICharacterSheet = {
           }]
         }],
       },
-      constellation3: talentTemplate("constellation3", tr, c3, { burstBoost: 3 }),
+      constellation3: talentTemplate("constellation3", tr, c3, "burstBoost"),
       constellation4: talentTemplate("constellation4", tr, c4),
-      constellation5: talentTemplate("constellation5", tr, c5, { skillBoost: 3 }),
+      constellation5: talentTemplate("constellation5", tr, c5, "skillBoost"),
       constellation6: talentTemplate("constellation6", tr, c6),
     },
   },

@@ -4,17 +4,7 @@ import sands from './sands.png'
 import goblet from './goblet.png'
 import circlet from './circlet.png'
 import { IArtifactSheet } from '../../../Types/artifact'
-import { IConditionals } from '../../../Types/IConditional'
 import { st } from '../../Characters/SheetUtil'
-const conditionals: IConditionals = {
-  4: {
-    name: st("afterUse.skill"),
-    stats: {
-      normal_dmg_: 25,
-      charged_dmg_: 25
-    }
-  }
-}
 const artifact: IArtifactSheet = {
   name: "Martial Artist", rarity: [3, 4],
   icons: {
@@ -24,7 +14,6 @@ const artifact: IArtifactSheet = {
     goblet,
     circlet
   },
-  conditionals,
   setEffects: {
     2: {
       stats: {
@@ -34,7 +23,14 @@ const artifact: IArtifactSheet = {
     },
     4: {
       document: [{
-        conditional: conditionals[4]
+        conditional: {
+          key: "4",
+          name: st("afterUse.skill"),
+          stats: {
+            normal_dmg_: 25,
+            charged_dmg_: 25
+          }
+        }
       }]
     }
   }

@@ -1,6 +1,5 @@
 import { getTalentStatKey } from "../../../Build/Build"
 import { FormulaItem, IFormulaSheet } from "../../../Types/character"
-import { IConditionalValue } from "../../../Types/IConditional"
 import { BasicStats } from "../../../Types/stats"
 import { toTalentPercent } from "../../../Util/DataminedUtil"
 import { basicDMGFormula } from "../../../Util/FormulaUtil"
@@ -94,7 +93,7 @@ const formula: IFormulaSheet = {
   },
   a4: {
     eleDMG: stats => {
-      return [s => (s.enerRech_ - 100) * 0.4, ["enerRech_"]]
+      return [s => ((s.premod?.enerRech_ ?? s.enerRech_) - 100) * 0.4, ["enerRech_"]]
     }
   }
 } as const
@@ -127,9 +126,7 @@ function skillDMG(percent: number, stats: BasicStats): FormulaItem {
     , ["finalATK", ...(hitModeMultiKey ? [hitModeMultiKey] : []), "electro_skill_hit_base_multi", "characterLevel", "enemyLevel", "enemyDEFRed_", "electro_enemyRes_multi"]]
 }
 export function getResolve(stats) {
-  const value = stats.conditionalValues?.character?.RaidenShogun?.sheet?.talent?.res as IConditionalValue | undefined
-  if (!value) return 0
-  const [num, condEleKey] = value
+  const [num, condEleKey] = stats.conditionalValues?.character?.RaidenShogun?.sheet?.talent?.res ?? []
   if (num && condEleKey) return parseInt(condEleKey)
   return 0
 }

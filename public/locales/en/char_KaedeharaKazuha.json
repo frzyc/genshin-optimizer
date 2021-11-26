@@ -1,8 +1,9 @@
 {
   "a4": {
-    "name": "Upon triggering a Swirl reaction",
-    "text": "Teammate Elemental DMG Bonus",
-    "bonus": "Elemental DMG Bonus"
+    "name_hydro": "Upon triggering a <hydro>Hydro</hydro> Swirl reaction",
+    "name_pyro": "Upon triggering a <pyro>Pyro</pyro> Swirl reaction",
+    "name_electro": "Upon triggering a <electro>Electro</electro> Swirl reaction",
+    "name_cryo": "Upon triggering a <cryo>Cryo</cryo> Swirl reaction"
   },
   "c1": "Using <strong>Kazuha Slash</strong> resets CD",
   "c2": "In Autumn Whilelwind field",

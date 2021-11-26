@@ -1,7 +1,6 @@
 import { Button, CardContent, Divider, Grid, MenuItem, MenuList, styled, Typography } from '@mui/material';
 import React, { useCallback, useMemo, useState } from 'react';
 import Character from '../../Character/Character';
-import CharacterSheet from '../../Character/CharacterSheet';
 import { getFormulaTargetsDisplayHeading } from '../../Character/CharacterUtil';
 import CardDark from '../../Components/Card/CardDark';
 import CardLight from '../../Components/Card/CardLight';
@@ -9,10 +8,11 @@ import ColorText from '../../Components/ColoredText';
 import ModalWrapper from '../../Components/ModalWrapper';
 import Formula from '../../Formula';
 import usePromise from '../../ReactHooks/usePromise';
+import { Sheets } from '../../ReactHooks/useSheets';
 import Stat from '../../Stat';
+import { TalentSheetElementKey } from '../../Types/character';
 import { IFieldDisplay } from '../../Types/IFieldDisplay';
 import { ICalculatedStats } from '../../Types/stats';
-import WeaponSheet from '../../Weapon/WeaponSheet';
 
 const WhiteButton = styled(Button)({
   color: "black",
@@ -21,8 +21,8 @@ const WhiteButton = styled(Button)({
     backgroundColor: "#e1e1e1",
   }
 })
-export default function OptimizationTargetSelector({ optimizationTarget, setTarget, initialStats, characterSheet, weaponSheet, artifactSheets, statsDisplayKeys, disabled = false }: {
-  optimizationTarget: string | string[], setTarget: (target: string | string[]) => void, initialStats: ICalculatedStats, characterSheet: CharacterSheet, weaponSheet: WeaponSheet, artifactSheets, statsDisplayKeys: { basicKeys: any, [key: string]: any }, disabled
+export default function OptimizationTargetSelector({ optimizationTarget, setTarget, initialStats, sheets, statsDisplayKeys, disabled = false }: {
+  optimizationTarget: string | string[], setTarget: (target: string | string[]) => void, initialStats: ICalculatedStats, sheets: Sheets, statsDisplayKeys: { basicKeys: any, [key: string]: any }, disabled
 }) {
   const [open, setOpen] = useState(false)
   const onOpen = useCallback(() => !disabled && setOpen(true), [setOpen, disabled])
@@ -45,12 +45,12 @@ export default function OptimizationTargetSelector({ optimizationTarget, setTarg
       const text = Character.getTalentFieldValue(field, "text", initialStats)
       if (type === "character") {
         if (talentKey === "normal" || talentKey === "charged" || talentKey === "plunging") talentKey = "auto"
-        return <b>{characterSheet?.getTalentOfKey(talentKey, initialStats?.characterEle)?.name}: <ColorText color={variant} >{text}</ColorText></b>
+        return <b>{sheets.characterSheets[initialStats.characterKey].getTalentOfKey(talentKey as TalentSheetElementKey, initialStats?.characterEle)?.name}: <ColorText color={variant} >{text}</ColorText></b>
       } else if (type === "weapon") {
-        return <b>{weaponSheet?.name}: <ColorText color={variant} >{text}</ColorText></b>
+        return <b>{sheets.weaponSheets[initialStats.weapon.key].name}: <ColorText color={variant} >{text}</ColorText></b>
       }
     } else return <b>Basic Stat: <span className={`text-${Stat.getStatVariant(optimizationTarget)}`}>{Stat.getStatNameWithPercent(optimizationTarget)}</span></b>
-  }, [optimizationTarget, formula, initialStats, characterSheet, weaponSheet])
+  }, [optimizationTarget, formula, initialStats, sheets])
 
   return <><WhiteButton onClick={onOpen} disabled={disabled} >
     <span>Optimization Target: {sortByText}</span>
@@ -60,7 +60,7 @@ export default function OptimizationTargetSelector({ optimizationTarget, setTarg
         <CardContent>
           <Grid container spacing={1}>
             {!!statsDisplayKeys && Object.entries(statsDisplayKeys).map(([sectionKey, fields]) => {
-              const header = (characterSheet && weaponSheet && artifactSheets) ? getFormulaTargetsDisplayHeading(sectionKey as string, { characterSheet, weaponSheet, artifactSheets }, initialStats?.characterEle) : sectionKey
+              const header = getFormulaTargetsDisplayHeading(sectionKey as string, sheets, initialStats)
               return <Grid item xs={6} md={4} key={sectionKey as string}>
                 <CardLight sx={{ height: "100%" }}>
                   <CardContent sx={{ py: 1 }}>

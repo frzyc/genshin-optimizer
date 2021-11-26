@@ -309,10 +309,17 @@ const flexV3 = object({
   weapons: array(weaponV3),
 })
 
+const flexV4 = object({
+  characters: array(characterV3),
+  artifacts: array(artifactV3),
+  weapons: array(weaponV3),
+  dbVer: uint(1),
+})
+
 // MIGRATION STEP: Update ONLY the latest flex (currently v3) to match the current format
 
 export const schemas = {
-  flexV2, flexV3
+  flexV2, flexV3, flexV4,
 }
 // For testing purpose only, no need to maintain strict ordering
 export const constants = {

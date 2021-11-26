@@ -19,43 +19,17 @@ import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { ICharacterSheet } from '../../../Types/character'
-import { IConditionals } from '../../../Types/IConditional'
 import { Translate } from '../../../Components/Translate'
-import { bowChargedDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
+import { bowChargedDocSection, conditionalHeader, plungeDocSection, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
 const tr = (strKey: string) => <Translate ns="char_Amber_gen" key18={strKey} />
-const conditionals: IConditionals = {
-  c6: { // Wildfire
-    canShow: stats => stats.constellation >= 6,
-    name: "Fiery Rain",
-    stats: {//TODO: party buff
-      atk_: 15,
-      moveSPD_: 15
-    },
-    fields: [{
-      text: "Duration",
-      value: "10s",
-    }]
-  },
-  a4: { // Precise Shot
-    canShow: stats => stats.ascension >= 4,
-    name: "Aim shot hit on weak spots",
-    stats: {
-      atk_: 15,
-    },
-    fields: [{
-      text: "Duration",
-      value: "10s",
-    }]
-  }
-}
 const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   thumbImgSide: thumbSide,
   bannerImg: banner,
-  star: data_gen.star,
+  rarity: data_gen.star,
   elementKey: "pyro",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
   gender: "F",
@@ -66,7 +40,6 @@ const char: ICharacterSheet = {
   ascensions: data_gen.ascensions,
   talent: {
     formula,
-    conditionals,
     sheets: {
       auto: {
         name: tr("auto.name"),
@@ -146,11 +119,30 @@ const char: ICharacterSheet = {
             text: "Energy Cost",
             value: 40,
           },],
-          conditional: conditionals.c6
+          conditional: { // Wildfire
+            key: "c6",
+            canShow: stats => stats.constellation >= 6,
+            partyBuff: "partyAll",
+            header: conditionalHeader("constellation6", tr, c6),
+            description: tr("constellation6.description"),
+            name: tr("constellation6.name"),
+            stats: {
+              atk_: 15,
+              moveSPD_: 15
+            },
+            fields: [{
+              text: "Duration",
+              value: "10s",
+            }]
+          },
+        }, {
+          conditional: {
+            key: "c6s",
+            canShow: stats => stats.ascension >= 1,
+            maxStack: 0,
+            stats: { burst_critRate_: 10 }
+          }
         }],
-        stats: stats => stats.ascension >= 1 ? ({
-          burst_critRate_: 10
-        }) : null,
       },
       passive1: talentTemplate("passive1", tr, passive1),
       passive2: {
@@ -158,24 +150,40 @@ const char: ICharacterSheet = {
         img: passive2,
         sections: [{
           text: tr("passive2.description"),
-          conditional: conditionals.a4
+          conditional: { // Precise Shot
+            key: "a4",
+            canShow: stats => stats.ascension >= 4,
+            name: "Aim shot hit on weak spots",
+            stats: {
+              atk_: 15,
+            },
+            fields: [{
+              text: "Duration",
+              value: "10s",
+            }]
+          }
         }],
       },
       passive3: {
         name: tr("passive3.name"),
         img: passive3,
         sections: [{
-          text: tr("passive3.description"),
+          conditional: {
+            key: "p3",
+            partyBuff: "partyOnly",
+            maxStack: 0,
+            header: conditionalHeader("passive3", tr, passive3),
+            description: tr("passive3.description"),
+            name: tr("passive3.name"),
+            stats: { staminaGlidingDec_: 10 }
+          }
         }],
-        stats: {
-          staminaGlidingDec_: 20,
-        }
       },
       constellation1: talentTemplate("constellation1", tr, c1),
       constellation2: talentTemplate("constellation2", tr, c2),
-      constellation3: talentTemplate("constellation3", tr, c3, { burstBoost: 3 }),
+      constellation3: talentTemplate("constellation3", tr, c3, "burstBoost"),
       constellation4: talentTemplate("constellation4", tr, c4),
-      constellation5: talentTemplate("constellation5", tr, c5, { skillBoost: 3 }),
+      constellation5: talentTemplate("constellation5", tr, c5, "skillBoost"),
       constellation6: talentTemplate("constellation6", tr, c6),
     },
   },

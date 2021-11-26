@@ -19,25 +19,17 @@ import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from "../../../Build/Build"
 import { ICharacterSheet } from '../../../Types/character'
-import { IConditionals } from '../../../Types/IConditional'
 import { Translate } from '../../../Components/Translate'
 import { talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
 const tr = (strKey: string) => <Translate ns="char_Xingqiu_gen" key18={strKey} />
-const conditionals: IConditionals = {
-  c2: { // RainbowUponTheAzureSky
-    canShow: stats => stats.constellation >= 2,
-    name: "Opponent hit by sword rain",
-    stats: { hydro_enemyRes_: -15 },
-  },
-}
 const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   thumbImgSide: thumbSide,
   bannerImg: banner,
-  star: data_gen.star,
+  rarity: data_gen.star,
   elementKey: "hydro",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
   gender: "M",
@@ -48,7 +40,6 @@ const char: ICharacterSheet = {
   ascensions: data_gen.ascensions,
   talent: {
     formula,
-    conditionals,
     sheets: {
       auto: {
         name: tr("auto.name"),
@@ -173,10 +164,15 @@ const char: ICharacterSheet = {
       passive2: {
         name: tr("passive2.name"),
         img: passive2,
-        sections: [{ text: tr("passive2.description"), }],
-        stats: stats => stats.ascension >= 4 && {
-          hydro_dmg_: 20,
-        }
+        sections: [{
+          text: tr("passive2.description"),
+          conditional: {
+            key: "a4",
+            canShow: stats => stats.ascension >= 4,
+            stats: { hydro_dmg_: 20, },
+            maxStack: 0
+          },
+        }],
       },
       passive3: talentTemplate("passive3", tr, passive3),
       constellation1: talentTemplate("constellation1", tr, c1),
@@ -185,12 +181,17 @@ const char: ICharacterSheet = {
         img: c2,
         sections: [{
           text: tr("constellation2.description"),
-          conditional: conditionals.c2
+          conditional: { // RainbowUponTheAzureSky
+            key: "c2",
+            canShow: stats => stats.constellation >= 2,
+            name: "Opponent hit by sword rain",
+            stats: { hydro_enemyRes_: -15 },
+          },
         }],
       },
-      constellation3: talentTemplate("constellation3", tr, c3, { burstBoost: 3 }),
+      constellation3: talentTemplate("constellation3", tr, c3, "burstBoost"),
       constellation4: talentTemplate("constellation4", tr, c4),
-      constellation5: talentTemplate("constellation5", tr, c5, { skillBoost: 3 }),
+      constellation5: talentTemplate("constellation5", tr, c5, "skillBoost"),
       constellation6: talentTemplate("constellation6", tr, c6),
     },
   },

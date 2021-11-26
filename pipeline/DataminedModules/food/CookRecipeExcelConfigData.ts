@@ -17,10 +17,10 @@ type CookRecipeExcelConfigData = {//Adeptus' Temptation
   "FoodType": "COOK_FOOD_ATTACK",
   "CookMethod": "COOK_METHOD_BOIL",
   "MaxProficiency": number//25,
-  "QualityOutputVec": Array<{
+  "QualityOutputVec": {
     "Id": number//108122,
     "Count": number//1
-  }>
+  }[]
   // [
   //   {
   //     "Id": 108122,
@@ -35,10 +35,10 @@ type CookRecipeExcelConfigData = {//Adeptus' Temptation
   //     "Count": 1
   //   }
   // ],
-  "InputVec": Array<{
+  "InputVec": {
     "Id": number//108122,
     "Count": number//1
-  }>
+  }[]
   // [
   //   {
   //     "Id": 110005,

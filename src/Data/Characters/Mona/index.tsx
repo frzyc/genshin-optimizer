@@ -19,10 +19,9 @@ import Stat from '../../../Stat'
 import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-import { IConditionals } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
 import { Translate } from '../../../Components/Translate'
-import { chargedDocSection, normalDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
+import { chargedDocSection, conditionalHeader, normalDocSection, plungeDocSection, sgt, talentTemplate } from '../SheetUtil'
 import { KeyPath } from '../../../Util/KeyPathUtil'
 import { FormulaPathBase } from '../../formula'
 import { WeaponTypeKey } from '../../../Types/consts'
@@ -30,50 +29,14 @@ import ColorText from '../../../Components/ColoredText'
 
 const path = KeyPath<FormulaPathBase, any>().character.Mona
 const tr = (strKey: string) => <Translate ns="char_Mona_gen" key18={strKey} />
-const conditionals: IConditionals = {
-  q: { // StellarisPhantasm
-    name: "Stellaris Phantasm",
-    stats: stats => ({
-      dmg_: data.burst.dmg_[stats.tlvl.burst],
-      ...(stats.constellation >= 1) && {
-        electrocharged_dmg_: 15,
-        vaporize_dmg_: 15,
-        swirl_dmg_: 15
-      },//TODO: frozen duration as a stat
-    }),
-    fields: [{
-      canShow: stats => stats.constellation >= 1,
-      text: <span><ColorText color="cryo">Frozen</ColorText> Duration Increase</span>,
-      value: "15.0%",
-      variant: "cryo",
-    }, {
-      text: "Omen Duration",
-      value: stats => `${data.burst.omen_duration[stats.tlvl.burst]}s`,
-    }]
-  },
-  c4: { // ProphecyOfOblivion
-    canShow: stats => stats.constellation >= 4,
-    name: <span>Any characters in the party hit an opponent affected by an <b>Omen</b></span>,
-    stats: { critRate_: 15 },//TODO: party conditional
-  },
-  c6: { // RhetoricsOfCalamitas
-    canShow: stats => stats.constellation >= 6,
-    name: <span>Upon entering <b>Illusory Torrent</b></span>,
-    maxStack: 3,
-    stats: { charged_dmg_: 60 },
-    fields: [{
-      text: "Duration",
-      value: "8s"
-    }]
-  },
-}
+
 const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   thumbImgSide: thumbSide,
   bannerImg: banner,
-  star: data_gen.star,
+  rarity: data_gen.star,
   elementKey: "hydro",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
   gender: "F",
@@ -84,7 +47,6 @@ const char: ICharacterSheet = {
   ascensions: data_gen.ascensions,
   talent: {
     formula,
-    conditionals,
     sheets: {
       auto: {
         name: tr("auto.name"),
@@ -136,7 +98,20 @@ const char: ICharacterSheet = {
             text: "Energy Cost",
             value: 60,
           }],
-          conditional: conditionals.q
+          conditional: {
+            key: "q",
+            partyBuff: "partyAll",
+            header: conditionalHeader("burst", tr, burst),
+            description: tr("burst.description"),
+            name: "Omen",
+            stats: stats => ({
+              dmg_: data.burst.dmg_[stats.tlvl.burst],
+            }),
+            fields: [{
+              text: "Omen Duration",
+              value: stats => `${data.burst.omen_duration[stats.tlvl.burst]}s`,
+            }]
+          },
         }],
       },
       sprint: {
@@ -174,9 +149,6 @@ const char: ICharacterSheet = {
       passive2: {
         name: tr("passive2.name"),
         img: passive2,
-        stats: stats => stats.ascension >= 4 && {
-          modifiers: { hydro_dmg_: [path.passive2.bonus()] },
-        },
         sections: [{
           text: tr("passive2.description"),
           fields: [{
@@ -186,28 +158,81 @@ const char: ICharacterSheet = {
             formula: formula.passive2.bonus,
             fixed: 1,
             unit: "%"
-          }]
+          }],
+          conditional: {
+            key: "a4",
+            canShow: stats => stats.ascension >= 4,
+            maxStack: 0,
+            stats: {
+              modifiers: { hydro_dmg_: [path.passive2.bonus()] },
+            },
+          }
         }],
       },
       passive3: talentTemplate("passive3", tr, passive3),
-      constellation1: talentTemplate("constellation1", tr, c1),
+      constellation1: {
+        name: tr("constellation1.name"),
+        img: c1,
+        sections: [{
+          text: tr("constellation1.description"),
+          conditional: { // 	Prophecy of Submersion
+            key: "c1",
+            canShow: stats => stats.constellation >= 1,
+            partyBuff: "partyAll",
+            header: conditionalHeader("constellation1", tr, c1),
+            description: tr("constellation1.description"),
+            name: <span>Any characters in the party hit an opponent affected by an <strong>Omen</strong></span>,
+            stats: {
+              electrocharged_dmg_: 15,
+              vaporize_dmg_: 15,
+              swirl_dmg_: 15
+            },
+            fields: [{
+              canShow: stats => stats.constellation >= 1,
+              text: <span><ColorText color="cryo">Frozen</ColorText> Duration Increase</span>,
+              value: 15,
+              unit: "%",
+              variant: "cryo",
+            },]
+          },
+        }],
+      },
       constellation2: talentTemplate("constellation2", tr, c2),
-      constellation3: talentTemplate("constellation3", tr, c3, { burstBoost: 3 }),
+      constellation3: talentTemplate("constellation3", tr, c3, "burstBoost"),
       constellation4: {
         name: tr("constellation4.name"),
         img: c4,
         sections: [{
           text: tr("constellation4.description"),
-          conditional: conditionals.c4
+          conditional: { // ProphecyOfOblivion
+            key: "c4",
+            canShow: stats => stats.constellation >= 4,
+            partyBuff: "partyAll",
+            header: conditionalHeader("constellation4", tr, c4),
+            description: tr("constellation4.description"),
+            name: <span>Any characters in the party hit an opponent affected by an <strong>Omen</strong></span>,
+            stats: { critRate_: 15 },
+          },
         }],
       },
-      constellation5: talentTemplate("constellation5", tr, c5, { skillBoost: 3 }),
+      constellation5: talentTemplate("constellation5", tr, c5, "skillBoost"),
       constellation6: {
         name: tr("constellation6.name"),
         img: c6,
         sections: [{
           text: tr("constellation6.description"),
-          conditional: conditionals.c6
+          conditional: { // RhetoricsOfCalamitas
+            key: "c6",
+            canShow: stats => stats.constellation >= 6,
+            name: <span>Upon entering <b>Illusory Torrent</b></span>,
+            maxStack: 3,
+            stats: { charged_dmg_: 60 },
+            fields: [{
+              text: sgt("duration"),
+              value: 8,
+              unit: "s"
+            }]
+          },
         }],
       }
     },

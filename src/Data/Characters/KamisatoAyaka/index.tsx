@@ -19,66 +19,19 @@ import Stat from '../../../Stat'
 import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-import { IConditionals } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
-import { Translate, TransWrapper } from '../../../Components/Translate'
+import { Translate } from '../../../Components/Translate'
 import { plungeDocSection, sgt, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
 const tr = (strKey: string) => <Translate ns="char_KamisatoAyaka_gen" key18={strKey} />
 const charTr = (strKey: string) => <Translate ns="char_KamisatoAyaka" key18={strKey} />
-const conditionals: IConditionals = {
-  s: { //sprint
-    name: charTr("afterSprint"),
-    stats: { infusionSelf: "cryo" },
-    fields: [{
-      text: sgt("duration"),
-      value: "5s"
-    }]
-  },
-  p1: {//After using Kamisato Art: Hyouka
-    canShow: stats => stats.ascension >= 1,
-    name: charTr("afterSkill"),
-    stats: {
-      normal_dmg_: 30,
-      charged_dmg_: 30,
-    },
-    fields: [{
-      text: sgt("duration"),
-      value: "6s"
-    }]
-  },
-  p2: { //sprint
-    canShow: stats => stats.ascension >= 4,
-    name: charTr("afterSprintCryo"),
-    stats: { cryo_dmg_: 18 },
-    fields: [{ text: charTr("staminaRestore") }]
-  },
-  c4: {
-    canShow: stats => stats.constellation >= 4,
-    name: charTr("afterBurst"),
-    stats: { enemyDEFRed_: 30 },
-    fields: [{
-      text: sgt("duration"),
-      value: "6s"
-    }]
-  },
-  c6: {
-    canShow: stats => stats.constellation >= 6,
-    name: charTr("afterSkill"),
-    stats: { charged_dmg_: 298 },
-    fields: [{
-      text: sgt("duration"),
-      value: "6s"
-    }]
-  }
-}
 const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   thumbImgSide: thumbSide,
   bannerImg: banner,
-  star: data_gen.star,
+  rarity: data_gen.star,
   elementKey: "cryo",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
   gender: "F",
@@ -89,7 +42,6 @@ const char: ICharacterSheet = {
   ascensions: data_gen.ascensions,
   talent: {
     formula,
-    conditionals,
     sheets: {
       auto: {
         name: tr("auto.name"),
@@ -98,7 +50,7 @@ const char: ICharacterSheet = {
           text: tr("auto.fields.normal"),
           fields: data.normal.hitArr.map((percentArr, i) =>
           ({
-            text: <span>{sgt(`normal.hit${i + 1}`)} {i === 3 ? <span>(<TransWrapper ns="sheet" key18="hits" values={{ count: 3 }} />)</span> : ""}</span>,
+            text: <span>{sgt(`normal.hit${i + 1}`)} {i === 3 ? <span>(<Translate ns="sheet" key18="hits" values={{ count: 3 }} />)</span> : ""}</span>,
             formulaText: stats => <span>{percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
             formula: formula.normal[i],
             variant: stats => getTalentStatKeyVariant("normal", stats),
@@ -106,7 +58,7 @@ const char: ICharacterSheet = {
         }, {
           text: tr("auto.fields.charged"),
           fields: [{
-            text: <span>{sgt("charged.dmg")} <span>(<TransWrapper ns="sheet" key18="hits" values={{ count: 3 }} />)</span></span>,
+            text: <span>{sgt("charged.dmg")} <span>(<Translate ns="sheet" key18="hits" values={{ count: 3 }} />)</span></span>,
             formulaText: stats => <span>{data.charged.hit[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("charged", stats), stats)}</span>,
             formula: formula.charged.hit,
             variant: stats => getTalentStatKeyVariant("charged", stats),
@@ -173,7 +125,15 @@ const char: ICharacterSheet = {
             text: "Stamina Drain",
             value: "15/s",
           }],
-          conditional: conditionals.s
+          conditional: { //sprint
+            key: "s",
+            name: charTr("afterSprint"),
+            stats: { infusionSelf: "cryo" },
+            fields: [{
+              text: sgt("duration"),
+              value: "5s"
+            }]
+          },
         }],
       },
       passive1: {
@@ -181,7 +141,19 @@ const char: ICharacterSheet = {
         img: passive1,
         sections: [{
           text: tr("passive1.description"),
-          conditional: conditionals.p1,
+          conditional: {//After using Kamisato Art: Hyouka
+            key: "a1",
+            canShow: stats => stats.ascension >= 1,
+            name: charTr("afterSkill"),
+            stats: {
+              normal_dmg_: 30,
+              charged_dmg_: 30,
+            },
+            fields: [{
+              text: sgt("duration"),
+              value: "6s"
+            }]
+          },
         }],
       },
       passive2: {
@@ -189,7 +161,13 @@ const char: ICharacterSheet = {
         img: passive2,
         sections: [{
           text: tr("passive2.description"),
-          conditional: conditionals.p2,
+          conditional: { //sprint
+            key: "a4",
+            canShow: stats => stats.ascension >= 4,
+            name: charTr("afterSprintCryo"),
+            stats: { cryo_dmg_: 18 },
+            fields: [{ text: charTr("staminaRestore") }]
+          },
         }],
       },
       passive3: talentTemplate("passive3", tr, passive3),
@@ -209,22 +187,40 @@ const char: ICharacterSheet = {
         }],
 
       },
-      constellation3: talentTemplate("constellation3", tr, c3, { burstBoost: 3 }),
+      constellation3: talentTemplate("constellation3", tr, c3, "burstBoost"),
       constellation4: {
         name: tr("constellation4.name"),
         img: c4,
         sections: [{
           text: tr("constellation4.description"),
-          conditional: conditionals.c4,
+          conditional: {
+            key: "c4",
+            canShow: stats => stats.constellation >= 4,
+            name: charTr("afterBurst"),
+            stats: { enemyDEFRed_: 30 },
+            fields: [{
+              text: sgt("duration"),
+              value: "6s"
+            }]
+          },
         }],
       },
-      constellation5: talentTemplate("constellation5", tr, c5, { skillBoost: 3 }),
+      constellation5: talentTemplate("constellation5", tr, c5, "skillBoost"),
       constellation6: {
         name: tr("constellation6.name"),
         img: c6,
         sections: [{
           text: tr("constellation6.description"),
-          conditional: conditionals.c6,
+          conditional: {
+            key: "c6",
+            canShow: stats => stats.constellation >= 6,
+            name: charTr("afterSkill"),
+            stats: { charged_dmg_: 298 },
+            fields: [{
+              text: sgt("duration"),
+              value: "6s"
+            }]
+          }
         }],
       },
     },

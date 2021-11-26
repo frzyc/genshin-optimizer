@@ -4,6 +4,6 @@ export const data = {
 }
 
 const formula: ISubFormula = {
-  bonus: stats => [s => s.finalHP * data.hp_atk[stats.weapon.refineIndex] / 100, ['finalHP']],
+  bonus: stats => [s => (s.modStats?.finalHP ?? s.finalHP) * data.hp_atk[stats.weapon.refineIndex] / 100, ['finalHP']],
 }
 export default formula

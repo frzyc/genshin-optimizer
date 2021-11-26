@@ -1,11 +1,9 @@
 import { createContext } from "react"
-import ElementalData from "../Data/ElementalData"
-import { StatKey, ICachedArtifact, SubstatKey } from "../Types/artifact"
-import { ArtifactSetEffects, ArtifactsBySlot, SetFilter } from "../Types/Build"
-import { ArtifactSetKey, ElementKey, SetNum, SlotKey } from "../Types/consts"
+import { ICachedArtifact, StatKey, SubstatKey } from "../Types/artifact"
+import { ArtifactsBySlot, ArtifactSetEffects, SetFilter } from "../Types/Build"
+import { allElementsWithPhy, ArtifactSetKey, ElementKey, SetNum, SlotKey } from "../Types/consts"
 import { BasicStats, BonusStats, ICalculatedStats } from "../Types/stats"
-import { mergeStats } from "../Util/StatUtil"
-import { deepClone } from "../Util/Util"
+import { deepCloneStats, mergeCalculatedStats, mergeStats } from "../Util/StatUtil"
 
 type buildContextObj = {
   newBuild?: ICalculatedStats,
@@ -203,10 +201,7 @@ export function artifactPermutations(initialStats: ICalculatedStats, artifactsBy
 
     const slotKey = slotKeys[index]
     for (const artifact of artifactsBySlot[slotKey] ?? []) {
-      const newStats = { ...stats }
-
-      // Hand-pick costly copying
-      if (newStats.modifiers) newStats.modifiers = deepClone(newStats.modifiers)
+      const newStats = deepCloneStats(stats)
 
       accumulate(slotKey, artifact, setCount, accu, newStats, artifactSetEffects)
       slotPerm(index + 1, newStats)
@@ -230,7 +225,7 @@ function accumulate(slotKey: SlotKey, art: ICachedArtifact, setCount: Dict<Artif
 
   // Add set effects
   const setEffect = artifactSetEffects[setKey]?.[setCount[setKey]!]
-  setEffect && mergeStats(stats, setEffect) // TODO: This may slow down the computation
+  setEffect && mergeCalculatedStats(stats, setEffect) // TODO: This may slow down the computation
 }
 
 /**
@@ -241,7 +236,7 @@ function accumulate(slotKey: SlotKey, art: ICachedArtifact, setCount: Dict<Artif
   */
 export function getTalentStatKey(skillKey: string, stats: BasicStats, overwriteElement?: ElementKey | "physical") {
   const { hitMode = "", infusionAura = "", infusionSelf = "", reactionMode = "", characterEle = "anemo", weaponType = "sword" } = stats
-  if ((Object.keys(ElementalData) as any).includes(skillKey)) return `${skillKey}_elemental_${hitMode}`//elemental DMG
+  if (allElementsWithPhy.includes(skillKey as any)) return `${skillKey}_elemental_${hitMode}`//elemental DMG
   if (!overwriteElement && weaponType === "catalyst") overwriteElement = characterEle
 
   if (skillKey === "elemental" || skillKey === "burst" || skillKey === "skill" || overwriteElement) {
@@ -258,7 +253,7 @@ export function getTalentStatKey(skillKey: string, stats: BasicStats, overwriteE
 }
 
 export function getTalentStatKeyVariant(skillKey: string, stats: BasicStats, overwriteElement: ElementKey | "physical" | undefined | "" = "") {
-  if ((Object.keys(ElementalData) as any).includes(skillKey)) return skillKey//elemental DMG
+  if (allElementsWithPhy.includes(skillKey as any)) return skillKey//elemental DMG
   const { infusionAura = "", infusionSelf = "", reactionMode = "", characterEle = "anemo", weaponType = "sword" } = stats
   if (!overwriteElement && weaponType === "catalyst") overwriteElement = characterEle
 

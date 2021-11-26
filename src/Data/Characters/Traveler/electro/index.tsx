@@ -13,51 +13,15 @@ import Stat from '../../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from "../../../../Build/Build"
 import { TalentSheet } from '../../../../Types/character';
-import { IConditionals } from '../../../../Types/IConditional'
-import { Translate, TransWrapper } from '../../../../Components/Translate'
-import { normalDocSection, plungeDocSection, sgt, talentTemplate } from '../../SheetUtil'
+import { Translate } from '../../../../Components/Translate'
+import { conditionalHeader, normalDocSection, plungeDocSection, sgt, talentTemplate } from '../../SheetUtil'
 import { KeyPath } from '../../../../Util/KeyPathUtil'
 import { FormulaPathBase } from '../../../formula'
 const path = KeyPath<FormulaPathBase, any>().character.Traveler.electro
 const tr = (strKey: string) => <Translate ns="char_Traveler_gen" key18={`electro.${strKey}`} />
-const charTr = (strKey: string) => <TransWrapper ns="char_Traveler" key18={`electro.${strKey}`} />
-const conditionals: IConditionals = {
-  sk: {
-    name: charTr("skill.absorb"),
-    stats: { //TODO: party buff 
-      modifiers: { enerRech_: [path.skill.enerRechInc()] },
-    },
-    fields: [{
-      text: tr("skill.enerRegen"),
-      value: stats => {
-        if (stats.constellation < 4) return data.skill.enerRegen[stats.tlvl.skill]
-        return <span>{data.skill.enerRegen[stats.tlvl.skill]} / {data.skill.enerRegen[stats.tlvl.skill] * 2}</span>
-      }
-    }, {
-      text: tr("skill.enerRechInc"),
-      formulaText: stats => {
-        if (stats.ascension < 4) return <span>20%</span>;
-        return <span>20% + ( 10% * {Stat.printStat("enerRech_", stats, true)} )</span>
-      },
-      formula: formula.skill.enerRechInc,
-      unit: "%",
-      fixed: 1
-    }, {
-      text: sgt("duration"),
-      value: "6s"
-    }]
-  },
-  c2: {
-    canShow: stats => stats.constellation >= 2,
-    name: charTr("c2.thunderHit"),
-    stats: {
-      electro_enemyRes_: -15
-    }
-  }
-}
+const charTr = (strKey: string) => <Translate ns="char_Traveler" key18={`electro.${strKey}`} />
 const talentSheet: TalentSheet = {
   formula,
-  conditionals,
   sheets: {
     auto: {
       name: tr("auto.name"),
@@ -94,7 +58,35 @@ const talentSheet: TalentSheet = {
           text: "CD",
           value: "13.5s",
         }],
-        conditional: conditionals.sk
+        conditional: {
+          key: "e",
+          name: charTr("skill.absorb"),
+          partyBuff: "partyAll",
+          header: conditionalHeader("skill", tr, skill),
+          description: tr("skill.description"),
+          stats: {
+            modifiers: { enerRech_: [path.skill.enerRechInc()] },
+          },
+          fields: [{
+            text: tr("skill.enerRegen"),
+            value: stats => {
+              if (stats.constellation < 4) return data.skill.enerRegen[stats.tlvl.skill]
+              return <span>{data.skill.enerRegen[stats.tlvl.skill]} / {data.skill.enerRegen[stats.tlvl.skill] * 2}</span>
+            }
+          }, {
+            text: tr("skill.enerRechInc"),
+            formulaText: stats => {
+              if (stats.ascension < 4) return <span>20%</span>;
+              return <span>20% + ( 10% * {Stat.printStat("enerRech_", stats, true)} )</span>
+            },
+            formula: formula.skill.enerRechInc,
+            unit: "%",
+            fixed: 1
+          }, {
+            text: sgt("duration"),
+            value: "6s"
+          }]
+        },
       }],
     },
     burst: {
@@ -134,7 +126,14 @@ const talentSheet: TalentSheet = {
           text: sgt("energyCost"),
           value: 80,
         }],
-        conditional: conditionals.c2
+        conditional: {
+          key: "c2",
+          canShow: stats => stats.constellation >= 2,
+          name: charTr("c2.thunderHit"),
+          stats: {
+            electro_enemyRes_: -15
+          }
+        }
       }],
     },
     passive1: talentTemplate("passive1", tr, passive1),
@@ -147,9 +146,9 @@ const talentSheet: TalentSheet = {
       }]
     },
     constellation2: talentTemplate("constellation2", tr, c2),
-    constellation3: talentTemplate("constellation3", tr, c3, { burstBoost: 3 }),
+    constellation3: talentTemplate("constellation3", tr, c3, "burstBoost"),
     constellation4: talentTemplate("constellation4", tr, c4),
-    constellation5: talentTemplate("constellation5", tr, c5, { skillBoost: 3 }),
+    constellation5: talentTemplate("constellation5", tr, c5, "skillBoost"),
     constellation6: talentTemplate("constellation6", tr, c6),
   },
 }

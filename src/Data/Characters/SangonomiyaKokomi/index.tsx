@@ -19,7 +19,6 @@ import Stat from '../../../Stat'
 import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-import { IConditionals, IConditionalValue } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
 import { Translate } from '../../../Components/Translate'
 import { plungeDocSection, sgt, st, talentTemplate } from '../SheetUtil'
@@ -28,52 +27,14 @@ import { basicDMGFormulaText } from '../../../Util/FormulaTextUtil'
 import { BasicStats } from '../../../Types/stats'
 const tr = (strKey: string) => <Translate ns="char_SangonomiyaKokomi_gen" key18={strKey} />
 const charTr = (strKey: string) => <Translate ns="char_SangonomiyaKokomi" key18={strKey} />
-const conditionals: IConditionals = {
-  b: { //burst
-    name: charTr("burst"),
-    fields: [{
-      text: tr("burst.skillParams.4"),
-      canShow: stats => !c2On(stats),
-      formulaText: stats => <span>( {data.burst.heal_[stats.tlvl.burst]}% {Stat.printStat("finalHP", stats)} + {data.burst.heal[stats.tlvl.burst]} ) * {Stat.printStat("heal_multi", stats)}</span>,
-      formula: formula.burst.regen,
-      variant: "success"
-    }, {
-      text: tr("burst.skillParams.4"),
-      canShow: stats => c2On(stats),
-      formulaText: stats => <span>( ( {data.burst.heal_[stats.tlvl.burst]}% + {data.c2.nc_heal_}% ) * {Stat.printStat("finalHP", stats)} + {data.burst.heal[stats.tlvl.burst]} ) * {Stat.printStat("heal_multi", stats)}</span>,
-      formula: formula.burst.regenC2,
-      variant: "success"
-    },]
-  },
-  c2: {
-    canShow: stats => stats.constellation >= 2,
-    name: charTr("c2"),
-  },
-  c6: {
-    canShow: stats => stats.constellation >= 6 && burstOn(stats),
-    name: charTr("c6"),
-    stats: {
-      hydro_dmg_: data.c6.hydro_
-    },
-    fields: [{
-      text: sgt("duration"),
-      value: data.c6.duration,
-      unit: "s"
-    }]
-  }
-}
 function burstOn(stats) {
-  const value = stats.conditionalValues?.character?.SangonomiyaKokomi?.sheet?.talent?.b as IConditionalValue | undefined
-  if (!value) return false
-  const [num,] = value
+  const [num,] = stats.conditionalValues?.character?.SangonomiyaKokomi?.b ?? []
   if (!num) return false
   return true
 }
 function c2On(stats) {
   if (stats.constellation < 2) return false
-  const value = stats.conditionalValues?.character?.SangonomiyaKokomi?.sheet?.talent?.c2 as IConditionalValue | undefined
-  if (!value) return false
-  const [num,] = value
+  const [num,] = stats.conditionalValues?.character?.SangonomiyaKokomi?.c2?? []
   if (!num) return false
   return true
 }
@@ -88,7 +49,7 @@ const char: ICharacterSheet = {
   thumbImg: thumb,
   thumbImgSide: thumbSide,
   bannerImg: banner,
-  star: data_gen.star,
+  rarity: data_gen.star,
   elementKey: "hydro",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
   gender: "F",
@@ -99,7 +60,6 @@ const char: ICharacterSheet = {
   ascensions: data_gen.ascensions,
   talent: {
     formula,
-    conditionals,
     sheets: {
       auto: {
         name: tr("auto.name"),
@@ -206,18 +166,38 @@ const char: ICharacterSheet = {
             text: tr("burst.skillParams.7"),
             value: data.burst.cost,
           }],
-          conditional: conditionals.b
+          conditional: { //burst
+            key: "q",
+            name: charTr("burst"),
+            fields: [{
+              text: tr("burst.skillParams.4"),
+              canShow: stats => !c2On(stats),
+              formulaText: stats => <span>( {data.burst.heal_[stats.tlvl.burst]}% {Stat.printStat("finalHP", stats)} + {data.burst.heal[stats.tlvl.burst]} ) * {Stat.printStat("heal_multi", stats)}</span>,
+              formula: formula.burst.regen,
+              variant: "success"
+            }, {
+              text: tr("burst.skillParams.4"),
+              canShow: stats => c2On(stats),
+              formulaText: stats => <span>( ( {data.burst.heal_[stats.tlvl.burst]}% + {data.c2.nc_heal_}% ) * {Stat.printStat("finalHP", stats)} + {data.burst.heal[stats.tlvl.burst]} ) * {Stat.printStat("heal_multi", stats)}</span>,
+              formula: formula.burst.regenC2,
+              variant: "success"
+            },]
+          },
         }],
       },
       passive: {
         name: tr("passive.name"),
         img: sprint,
-        stats: {
-          critRate_: -100,
-          heal_: 25,
-        },
         sections: [{
           text: tr("passive.description"),
+          conditional: {
+            key: "pas",
+            maxStack: 0,
+            stats: {
+              critRate_: -100,
+              heal_: 25,
+            },
+          }
         }],
       },
       passive1: talentTemplate("passive1", tr, passive1),
@@ -242,27 +222,48 @@ const char: ICharacterSheet = {
         img: c2,
         sections: [{
           text: tr("constellation2.description"),
-          conditional: conditionals.c2
+          conditional: {
+            key: "c2",
+            canShow: stats => stats.constellation >= 2,
+            name: charTr("c2"),
+          },
         }],
       },
-      constellation3: talentTemplate("constellation3", tr, c3, { burstBoost: 3 }),
+      constellation3: talentTemplate("constellation3", tr, c3, "burstBoost"),
       constellation4: {
         name: tr("constellation4.name"),
         img: c4,
-        stats: stats => stats.constellation >= 4 && burstOn(stats) && {
-          atkSPD_: 10
-        },
         sections: [{
           text: tr("constellation4.description"),
+          conditional: {
+            key: "c4",
+            maxStack: 0,
+            canShow: stats => stats.constellation >= 4 && burstOn(stats),
+            stats: {
+              atkSPD_: 10
+            },
+          }
         }],
       },
-      constellation5: talentTemplate("constellation5", tr, c5, { skillBoost: 3 }),
+      constellation5: talentTemplate("constellation5", tr, c5, "skillBoost"),
       constellation6: {
         name: tr("constellation6.name"),
         img: c6,
         sections: [{
           text: tr("constellation6.description"),
-          conditional: conditionals.c6
+          conditional: {
+            key: "c6",
+            canShow: stats => stats.constellation >= 6 && burstOn(stats),
+            name: charTr("c6"),
+            stats: {
+              hydro_dmg_: data.c6.hydro_
+            },
+            fields: [{
+              text: sgt("duration"),
+              value: data.c6.duration,
+              unit: "s"
+            }]
+          }
         }],
       },
     },

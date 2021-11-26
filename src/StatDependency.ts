@@ -1,5 +1,6 @@
 import Formula from "./Formula"
-import { Formulas, getStage, numStages, StatData } from "./StatData"
+import { getStage, numStages } from "./ProcessFormula"
+import { Formulas, StatData } from "./StatData"
 import { IBaseStat } from "./Types/character"
 import { Modifier } from "./Types/stats"
 

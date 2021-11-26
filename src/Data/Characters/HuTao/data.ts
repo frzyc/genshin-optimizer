@@ -44,7 +44,7 @@ const formula: IFormulaSheet = {
   skill: {
     atk_inc: stats => {
       const val = data.skill.atk_inc[stats.tlvl.skill] / 100
-      return [s => Math.min(val * s.finalHP, 4 * s.baseATK), ["finalHP", "baseATK"]]
+      return [s => Math.min(val * (s.premod?.finalHP ?? s.finalHP), 4 * s.baseATK), ["finalHP", "baseATK"]]
     },
     dmg: stats => basicDMGFormula(data.skill.dmg[stats.tlvl.skill], stats, "skill"),
     dmgC2: stats => {

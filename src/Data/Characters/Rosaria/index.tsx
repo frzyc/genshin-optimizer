@@ -18,60 +18,21 @@ import Stat from '../../../Stat'
 import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-import { IConditionals } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
-import { Translate, TransWrapper } from '../../../Components/Translate'
-import { plungeDocSection, sgt, talentTemplate } from '../SheetUtil'
+import { Translate } from '../../../Components/Translate'
+import { conditionalHeader, plungeDocSection, sgt, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
+import { KeyPath } from '../../../Util/KeyPathUtil'
+import { FormulaPathBase } from '../../formula'
+const path = KeyPath<FormulaPathBase, any>().character.Rosaria
 const tr = (strKey: string) => <Translate ns="char_Rosaria_gen" key18={strKey} />
-const conditionals: IConditionals = {
-  a1: { // ReginaProbationum
-    canShow: stats => stats.ascension >= 1,
-    name: <TransWrapper ns="char_Rosaria" key18="a1" />,
-    stats: { critRate_: 12 },
-    fields: [{
-      text: sgt("duration"),
-      value: "5s"
-    }]
-  },
-  a4: { // ShadowSamaritan
-    canShow: stats => stats.ascension >= 4,
-    name: <TransWrapper ns="char_Rosaria" key18="a4.name" />,
-    //stats: { critRate_: 15 },//TODO: party buff modifier
-    fields: [{
-      text: <TransWrapper ns="char_Rosaria" key18="a4.text" />,
-      value: <TransWrapper ns="char_Rosaria" key18="a4.value" />,
-    }, {
-      text: sgt("duration"),
-      value: "10s",
-    }]
-  },
-  c1: { // UnholyRevelation
-    canShow: stats => stats.constellation >= 1,
-    name: <TransWrapper ns="char_Rosaria" key18="c1" />,
-    stats: { normal_dmg_: 10, atkSPD_: 10 },
-    fields: [{
-      text: sgt("duration"),
-      value: "4s"
-    }]
-  },
-  c6: { // DivineRetribution
-    canShow: stats => stats.constellation >= 6,
-    name: <TransWrapper ns="char_Rosaria" key18="c6" />,
-    stats: { physical_enemyRes_: -20 },
-    fields: [{
-      text: sgt("duration"),
-      value: "10s",
-    }]
-  }
-}
 const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   thumbImgSide: thumbSide,
   bannerImg: banner,
-  star: data_gen.star,
+  rarity: data_gen.star,
   elementKey: "cryo",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
   gender: "F",
@@ -82,7 +43,6 @@ const char: ICharacterSheet = {
   ascensions: data_gen.ascensions,
   talent: {
     formula,
-    conditionals,
     sheets: {
       auto: {
         name: tr("auto.name"),
@@ -91,7 +51,7 @@ const char: ICharacterSheet = {
           text: tr("auto.fields.normal"),
           fields: data.normal.hitArr.map((percentArr, i) =>
           ({
-            text: <span>{sgt(`normal.hit${i + (i < 5 ? 1 : 0)}`)} {i === 4 ? "(1)" : i === 5 ? "(2)" : i === 2 ? <span>(<TransWrapper ns="sheet" key18="hits" values={{ count: 2 }} />)</span> : ""}</span>,
+            text: <span>{sgt(`normal.hit${i + (i < 5 ? 1 : 0)}`)} {i === 4 ? "(1)" : i === 5 ? "(2)" : i === 2 ? <span>(<Translate ns="sheet" key18="hits" values={{ count: 2 }} />)</span> : ""}</span>,
             formulaText: stats => <span>{percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
             formula: formula.normal[i],
             variant: stats => getTalentStatKeyVariant("normal", stats),
@@ -168,7 +128,16 @@ const char: ICharacterSheet = {
         img: passive1,
         sections: [{
           text: tr("passive1.description"),
-          conditional: conditionals.a1
+          conditional: { // ReginaProbationum
+            key: "a1",
+            canShow: stats => stats.ascension >= 1,
+            name: <Translate ns="char_Rosaria" key18="a1" />,
+            stats: { critRate_: 12 },
+            fields: [{
+              text: sgt("duration"),
+              value: "5s"
+            }]
+          },
         }],
       },
       passive2: {
@@ -176,7 +145,27 @@ const char: ICharacterSheet = {
         img: passive2,
         sections: [{
           text: tr("passive2.description"),
-          conditional: conditionals.a4
+          conditional: { // ShadowSamaritan
+            key: "a4",
+            canShow: stats => stats.ascension >= 4,
+            partyBuff: "partyOnly",
+            header: conditionalHeader("passive2", tr, passive2),
+            description: tr("passive2.description"),
+            name: <Translate ns="char_Rosaria" key18="a4.name" />,
+            stats: {
+              modifiers: { burst_dmg_: [path.passive2.critConv()] },
+            },
+            fields: [{
+              text: <Translate ns="char_Rosaria" key18="a4.text" />,
+              formulaText: stats => <span>15% * {Stat.printStat("critRate_", stats)}</span>,
+              formula: formula.passive2.critConv,
+              fixed: 1,
+              unit: "%"
+            }, {
+              text: sgt("duration"),
+              value: "10s",
+            }]
+          },
         }],
       },
       passive3: talentTemplate("passive3", tr, passive3),
@@ -185,19 +174,37 @@ const char: ICharacterSheet = {
         img: c1,
         sections: [{
           text: tr("constellation1.description"),
-          conditional: conditionals.c1
+          conditional: { // UnholyRevelation
+            key: "c1",
+            canShow: stats => stats.constellation >= 1,
+            name: <Translate ns="char_Rosaria" key18="c1" />,
+            stats: { normal_dmg_: 10, atkSPD_: 10 },
+            fields: [{
+              text: sgt("duration"),
+              value: "4s"
+            }]
+          },
         }],
       },
       constellation2: talentTemplate("constellation2", tr, c2),
-      constellation3: talentTemplate("constellation3", tr, c3, { skillBoost: 3 }),
+      constellation3: talentTemplate("constellation3", tr, c3, "skillBoost"),
       constellation4: talentTemplate("constellation4", tr, c4),
-      constellation5: talentTemplate("constellation5", tr, c5, { burstBoost: 3 }),
+      constellation5: talentTemplate("constellation5", tr, c5, "burstBoost"),
       constellation6: {
         name: tr("constellation6.name"),
         img: c6,
         sections: [{
           text: tr("constellation6.description"),
-          conditional: conditionals.c6
+          conditional: { // DivineRetribution
+            key: "c6",
+            canShow: stats => stats.constellation >= 6,
+            name: <Translate ns="char_Rosaria" key18="c6" />,
+            stats: { physical_enemyRes_: -20 },
+            fields: [{
+              text: sgt("duration"),
+              value: "10s",
+            }]
+          }
         }],
       }
     },

@@ -18,46 +18,18 @@ import Stat from '../../../Stat'
 import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-import { IConditionals } from '../../../Types/IConditional'
 import { ICharacterSheet } from '../../../Types/character'
 import { Translate } from '../../../Components/Translate'
-import { chargedDocSection, normalDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
+import { chargedDocSection, conditionalHeader, normalDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
 const tr = (strKey: string) => <Translate ns="char_Jean_gen" key18={strKey} />
-const conditionals: IConditionals = {
-  c2: { // People's Aegis
-    canShow: stats => stats.constellation >= 2,
-    name: "Jean pick up Elemental Orb/Particle",
-    stats: {//TODO: PARTY buff
-      moveSPD_: 15,
-      atkSPD_: 15
-    },
-    fields: [{
-      text: "Duration",
-      value: "15s"
-    }]
-  },
-  c4: { // Lands of Dandelion
-    canShow: stats => stats.constellation >= 4,
-    name: "Opponents within the field created by Dandelion Breeze",
-    stats: { anemo_enemyRes_: -40 },
-  },
-  c6: { // Lion's Fang, Fair Protector of Mondstandt
-    canShow: stats => stats.constellation >= 6,
-    name: "WIthin field created by Dandelion Breeze",
-    fields: [{
-      text: "Incoming DMG Decrease",
-      value: "35%" //TODO: incoming dmg stat,
-    }]
-  }
-}
 const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   thumbImgSide: thumbSide,
   bannerImg: banner,
-  star: data_gen.star,
+  rarity: data_gen.star,
   elementKey: "anemo",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
   gender: "F",
@@ -68,7 +40,6 @@ const char: ICharacterSheet = {
   ascensions: data_gen.ascensions,
   talent: {
     formula,
-    conditionals,
     sheets: {
       auto: {
         name: tr("auto.name"),
@@ -166,25 +137,53 @@ const char: ICharacterSheet = {
         img: c2,
         sections: [{
           text: tr("constellation2.description"),
-          conditional: conditionals.c2
+          conditional: { // People's Aegis
+            key: "c2",
+            canShow: stats => stats.constellation >= 2,
+            partyBuff: "partyAll",
+            header: conditionalHeader("constellation2", tr, c2),
+            description: tr("constellation2.description"),
+            name: "Jean pick up Elemental Orb/Particle",
+            stats: {
+              moveSPD_: 15,
+              atkSPD_: 15
+            },
+            fields: [{
+              text: "Duration",
+              value: "15s"
+            }]
+          },
         }],
       },
-      constellation3: talentTemplate("constellation3", tr, c3, { burstBoost: 3 }),
+      constellation3: talentTemplate("constellation3", tr, c3, "burstBoost"),
       constellation4: {
         name: tr("constellation4.name"),
         img: c4,
         sections: [{
           text: tr("constellation4.description"),
-          conditional: conditionals.c4
+          conditional: { // Lands of Dandelion
+            key: "c4",
+            canShow: stats => stats.constellation >= 4,
+            name: "Opponents within the field created by Dandelion Breeze",
+            stats: { anemo_enemyRes_: -40 },
+          },
         }],
       },
-      constellation5: talentTemplate("constellation5", tr, c5, { skillBoost: 3 }),
+      constellation5: talentTemplate("constellation5", tr, c5, "skillBoost"),
       constellation6: {
         name: tr("constellation6.name"),
         img: c6,
         sections: [{
           text: tr("constellation6.description"),
-          conditional: conditionals.c6
+          conditional: { // Lion's Fang, Fair Protector of Mondstandt
+            key: "c6",
+            canShow: stats => stats.constellation >= 6,
+            name: "WIthin field created by Dandelion Breeze",
+            fields: [{
+              text: "Incoming DMG Decrease",
+              value: "35%" //TODO: incoming dmg stat,
+            }]
+          }
         }],
       },
     },

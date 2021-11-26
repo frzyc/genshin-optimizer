@@ -2,10 +2,10 @@ import { IWeaponSheet } from '../../../../Types/weapon'
 import icon from './Icon.png'
 import iconAwaken from './AwakenIcon.png'
 import formula, { data } from './data'
-import { TransWrapper } from "../../../../Components/Translate"
 import data_gen from './data_gen.json'
 import { WeaponData } from 'pipeline'
 import Stat from '../../../../Stat'
+import { sgt } from '../../../Characters/SheetUtil'
 const weapon: IWeaponSheet = {
   ...data_gen as WeaponData,
   icon,
@@ -16,7 +16,7 @@ const weapon: IWeaponSheet = {
   }),
   document: [{
     fields: [{
-      text: <TransWrapper ns="sheet_gen" key18="healing" />,
+      text: sgt("healing"),
       formulaText: stats => <span>{data.heal[stats.weapon.refineIndex]}% {Stat.printStat("finalHP", stats)} * {Stat.printStat("heal_multi", stats)}</span>,
       formula: formula.regen,
       variant: "success"

@@ -10,13 +10,11 @@ import ColorText from "../../Components/ColoredText";
 import ConditionalWrapper from "../../Components/ConditionalWrapper";
 import DocumentDisplay from "../../Components/DocumentDisplay";
 import DropdownButton from "../../Components/DropdownMenu/DropdownButton";
-import FieldDisplay, { FieldDisplayList } from "../../Components/FieldDisplay";
 import StatIcon from "../../Components/StatIcon";
 import useCharacterReducer from "../../ReactHooks/useCharacterReducer";
 import Stat from "../../Stat";
 import { ElementToReactionKeys } from "../../StatData";
-import { ICachedCharacter } from "../../Types/character";
-import statsToFields from "../../Util/FieldUtil";
+import { ICachedCharacter, TalentSheetElementKey } from "../../Types/character";
 import CharacterSheet from "../CharacterSheet";
 type CharacterTalentPaneProps = {
   characterSheet: CharacterSheet,
@@ -25,8 +23,8 @@ type CharacterTalentPaneProps = {
 export default function CharacterTalentPane({ characterSheet, character, character: { ascension, constellation, key: characterKey } }: CharacterTalentPaneProps) {
   const { newBuild, equippedBuild } = useContext(buildContext)
   const characterDispatch = useCharacterReducer(characterKey)
-  const skillBurstList = [["auto", "Normal/Charged Attack"], ["skill", "Elemental Skill"], ["burst", "Elemental Burst"]]
-  const passivesList: Array<[tKey: string, tText: string, asc: number]> = [["passive1", "Unlocked at Ascension 1", 1], ["passive2", "Unlocked at Ascension 4", 4], ["passive3", "Unlocked by Default", 0]]
+  const skillBurstList = [["auto", "Normal/Charged Attack"], ["skill", "Elemental Skill"], ["burst", "Elemental Burst"]] as [TalentSheetElementKey, string][]
+  const passivesList: [tKey: TalentSheetElementKey, tText: string, asc: number][] = [["passive1", "Unlocked at Ascension 1", 1], ["passive2", "Unlocked at Ascension 4", 4], ["passive3", "Unlocked by Default", 0]]
   const build = newBuild ? newBuild : equippedBuild
   return <>
     <ReactionDisplay characterSheet={characterSheet} />
@@ -81,9 +79,9 @@ export default function CharacterTalentPane({ characterSheet, character, charact
     <Grid container spacing={1}>
       {/* constellations */}
       {[...Array(6).keys()].map(i => {
-        let tKey = `constellation${i + 1}`
+        let tKey = `constellation${i + 1}` as TalentSheetElementKey
         return <Grid item key={i} xs={12} md={4}
-          style={{ opacity: constellation > i ? 1 : 0.5 }}>
+          sx={{ opacity: constellation > i ? 1 : 0.5 }}>
           <SkillDisplayCard
             characterSheet={characterSheet}
             character={character}
@@ -102,6 +100,9 @@ const ReactionComponents = {
   electrocharged_hit: ElectroChargedCard,
   overloaded_hit: OverloadedCard,
   pyro_swirl_hit: SwirlCard,
+  cryo_swirl_hit: SwirlCard,
+  electro_swirl_hit: SwirlCard,
+  hydro_swirl_hit: SwirlCard,
   shattered_hit: ShatteredCard,
   crystalize_hit: CrystalizeCard,
 }
@@ -192,7 +193,7 @@ type SkillDisplayCardProps = {
   characterSheet: CharacterSheet
   character: ICachedCharacter,
   characterDispatch: (any) => void,
-  talentKey: string,
+  talentKey: TalentSheetElementKey,
   subtitle: string,
   onClickTitle?: (any) => any
 }
@@ -218,24 +219,14 @@ function SkillDisplayCard({ characterSheet, character: { talent, ascension, key:
     header = <>
       <CardContent sx={{ py: 1 }}>
         <DropdownButton fullWidth title={`Talent Lv. ${talentLvlKey}`} color={levelBoost ? "info" : "primary"}>
-          {[...Array(talentLimits[ascension] + (talentKey === "auto" && !levelBoost ? 1 : 0)).keys()].map(i => //spcial consideration for Tartaglia
+          {[...Array(talentLimits[ascension]).keys()].map(i =>
             <MenuItem key={i} selected={talent[talentKey] === (i + 1)} disabled={talent[talentKey] === (i + 1)} onClick={() => setTalentLevel(talentKey, i + 1)}>Talent Lv. {i + levelBoost + 1}</MenuItem>)}
         </DropdownButton>
       </CardContent>
       <Divider />
     </>
-
   }
-  const talentStats = characterSheet.getTalentStats(talentKey, build)
-  const talentStatsFields = talentStats && statsToFields(talentStats, build)
-  const statsEle = talentStatsFields && !!talentStatsFields.length &&
-    <FieldDisplayList >
-      {talentStatsFields.map((field, i) =>
-        <FieldDisplay key={i} field={field} />)}
-    </FieldDisplayList>
-
   const talentSheet = characterSheet.getTalentOfKey(talentKey, build.characterEle)
-  const sections = talentSheet?.sections
 
   return <CardLight sx={{ height: "100%" }}>
     {header}
@@ -252,8 +243,7 @@ function SkillDisplayCard({ characterSheet, character: { talent, ascension, key:
         </Grid>
       </ConditionalWrapper>
       {/* Display document sections */}
-      {sections ? <DocumentDisplay {...{ sections, characterKey, equippedBuild, newBuild }} /> : null}
-      {statsEle}
+      {talentSheet?.sections ? <DocumentDisplay sections={talentSheet.sections} characterKey={characterKey} /> : null}
     </CardContent>
   </CardLight>
 }

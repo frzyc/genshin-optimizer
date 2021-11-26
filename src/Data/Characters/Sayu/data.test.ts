@@ -20,7 +20,7 @@ describe("Testing Sayu's Formulas (Ahri#1337)", () => {
       enemyLevel: 88, physical_enemyRes_: 50, //Stonehide Lawachurl
       tlvl: Object.freeze({ auto: 6 - 1, skill: 10 - 1, burst: 11 - 1 }),
       constellation: 6,
-      conditionalValues: { character: { Sayu: { sheet: { talent: { c2: [20] } } } } }
+      conditionalValues: { character: { Sayu: { c2: [20] } } }
     });
   });
 

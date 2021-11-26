@@ -44,7 +44,7 @@ const formula: IFormulaSheet = {
     dmg: stats => basicDMGFormula(data.skill.dmg[stats.tlvl.skill] / 2, stats, "skill"),
   },
   passive2: {
-    bonus: stats => [s => s.enerRech_ * 0.2, ["enerRech_"]]
+    bonus: stats => [s => (s.premod?.enerRech_ ?? s.enerRech_) * 0.2, ["enerRech_"]]
   }
 }
 export default formula

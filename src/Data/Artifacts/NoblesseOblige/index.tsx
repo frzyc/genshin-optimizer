@@ -4,13 +4,11 @@ import sands from './sands.png'
 import goblet from './goblet.png'
 import circlet from './circlet.png'
 import { IArtifactSheet } from '../../../Types/artifact'
-import { IConditionals } from '../../../Types/IConditional'
-const conditionals: IConditionals = {
-  4: {
-    name: "Using an Elemental Burst",
-    stats: { atk_: 20 }//TODO: party buff
-  }
-}
+import { Translate } from '../../../Components/Translate'
+import ImgIcon from '../../../Components/Image/ImgIcon'
+import SqBadge from '../../../Components/SqBadge'
+import { sgt } from '../../Characters/SheetUtil'
+const tr = (strKey: string) => <Translate ns="artifact_NoblesseOblige_gen" key18={strKey} />
 const artifact: IArtifactSheet = {
   name: "Noblesse Oblige", rarity: [4, 5],
   icons: {
@@ -20,14 +18,29 @@ const artifact: IArtifactSheet = {
     goblet,
     circlet
   },
-  conditionals,
   setEffects: {
     2: {
       stats: { burst_dmg_: 20 }
     },
     4: {
       document: [{
-        conditional: conditionals[4]
+        conditional: {
+          key: "4",
+          partyBuff: "partyAll",
+          header: {
+            title: tr("setName"),
+            icon: <ImgIcon size={2} sx={{ m: -1 }} src={flower} />,
+            action: <SqBadge color="success">4-set</SqBadge>
+          },
+          description: tr(`setEffects.4`),
+          name: <Translate ns="artifact_NoblesseOblige" key18="condName" />,
+          stats: { atk_: 20 },
+          fields: [{
+            text: sgt("duration"),
+            value: 12,
+            unit: "s"
+          }]
+        }
       }]
     }
   }

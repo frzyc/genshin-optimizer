@@ -3,7 +3,6 @@ import plume from './plume.png'
 import sands from './sands.png'
 import goblet from './goblet.png'
 import circlet from './circlet.png'
-import { IConditionals } from '../../../Types/IConditional'
 import { IArtifactSheet } from '../../../Types/artifact'
 import { FormulaPathBase } from '../../formula'
 import formula from './data'
@@ -11,30 +10,6 @@ import { KeyPath } from '../../../Util/KeyPathUtil'
 import Stat from '../../../Stat'
 
 const path = KeyPath<FormulaPathBase>().artifact.EmblemOfSeveredFate
-
-const conditionals: IConditionals = {
-  4: {
-    name: "Elemental Skill hits an opponent",
-    states: {
-      s1: {
-        name: "1 Stack",
-        stats: { atk_: 9 },
-        fields: [{
-          text: "Duration",
-          value: "7s"
-        }]
-      },
-      s2: {
-        name: "2 Stacks",
-        stats: { atk_: 18, physical_dmg_: 25 },
-        fields: [{
-          text: "Duration",
-          value: "7s"
-        }]
-      }
-    },
-  }
-}
 const artifact: IArtifactSheet = {
   name: "Emblem of Severed Fate", rarity: [4, 5],
   icons: {
@@ -44,8 +19,7 @@ const artifact: IArtifactSheet = {
     goblet,
     circlet
   },
-  conditionals,
-  setEffects: {
+    setEffects: {
     2: {
       stats: { enerRech_: 20 }
     },

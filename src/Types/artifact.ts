@@ -1,6 +1,5 @@
 import { ArtifactRarity, ArtifactSetKey, CharacterKey, ElementKey, SetNum, SlotKey } from "./consts";
 import { BonusStats, BasicStats } from "./stats";
-import { IConditionals } from "./IConditional";
 import { DocumentSection } from "./character";
 
 export type IArtifactSheets = StrictDict<ArtifactSetKey, IArtifactSheet>
@@ -9,7 +8,6 @@ export interface IArtifactSheet {
   name: string, // only to stored the English name for OCR, otherwise, should come from localization pipeline
   rarity: readonly ArtifactRarity[],
   icons: Dict<SlotKey, string>,
-  conditionals?: IConditionals,
   setEffects: Dict<SetNum, SetEffectEntry>
 }
 export interface SetEffectEntry {
@@ -55,7 +53,8 @@ export const allMainStatKeys = ["hp", "hp_", "atk", "atk_", "def_", "eleMas", "e
 export const allSubstats = ["hp", "hp_", "atk", "atk_", "def_", "def", "eleMas", "enerRech_", "critRate_", "critDMG_",] as const
 
 // TODO: Check if these actually applies
-type SpecializedStatKey = "normal_critRate_" | "charged_critRate_" | "plunging_dmg_" | "shield_" | "enemyDEFRed_" | "skillCDRed_" | "incHeal_" | "weakspotDMG_" | "dmg_" | "moveSPD_" | "staminaDec_" | "atkSPD_" | "cdRed_" | "finalHP" | "finalATK" | "finalDEF"
+// TODO: do these belong here? 
+type SpecializedStatKey = "normal_critRate_" | "charged_critRate_" | "skill_critRate_" | "burst_critRate_" | "plunging_dmg_" | "shield_" | "enemyDEFRed_" | "skillCDRed_" | "incHeal_" | "weakspotDMG_" | "dmg_" | "moveSPD_" | "staminaDec_" | "atkSPD_" | "cdRed_" | "finalHP" | "finalATK" | "finalDEF" | "staminaGlidingDec_" | "staminaSprintDec_" | "staminaChargedDec_" | "autoBoost" | "skillBoost" | "burstBoost"
 
 export type MainStatKey = typeof allMainStatKeys[number]
 export type SubstatKey = typeof allSubstats[number]

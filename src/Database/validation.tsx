@@ -154,7 +154,7 @@ export function parseCharacter(obj: any): ICharacter | undefined {
 
   let {
     key: characterKey, level, ascension, hitMode, elementKey, reactionMode, conditionalValues,
-    bonusStats, talent, infusionAura, constellation, buildSettings,
+    bonusStats, talent, infusionAura, constellation, buildSettings, team
   } = obj
 
   if (!allCharacterKeys.includes(characterKey) ||
@@ -220,10 +220,14 @@ export function parseCharacter(obj: any): ICharacter | undefined {
     buildSettings = { setFilters, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, builds, buildDate, maxBuildsToShow, plotBase }
   }
 
-  // TODO: validate bonusStats, conditionalValues
+  if (!conditionalValues)
+    conditionalValues = {}
+  if (!team)
+    team = ["", "", ""]
+  // TODO: validate bonusStats
   const result: ICharacter = {
     key: characterKey, level, ascension, hitMode, reactionMode, conditionalValues,
-    bonusStats, talent, infusionAura, constellation,
+    bonusStats, talent, infusionAura, constellation, team,
   }
   if (buildSettings) result.buildSettings = buildSettings
   if (elementKey) result.elementKey = elementKey
@@ -233,11 +237,11 @@ export function parseCharacter(obj: any): ICharacter | undefined {
 export function removeCharacterCache(char: ICachedCharacter): ICharacter {
   const {
     key: characterKey, level, ascension, hitMode, elementKey, reactionMode, conditionalValues,
-    bonusStats, talent, infusionAura, constellation, buildSettings,
+    bonusStats, talent, infusionAura, constellation, buildSettings, team
   } = char
   const result: ICharacter = {
     key: characterKey, level, ascension, hitMode, reactionMode, conditionalValues,
-    bonusStats, talent, infusionAura, constellation, buildSettings,
+    bonusStats, talent, infusionAura, constellation, buildSettings, team
   }
   if (elementKey) result.elementKey = elementKey
   return result

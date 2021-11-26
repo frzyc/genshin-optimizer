@@ -9,6 +9,7 @@ import CloseButton from '../../Components/CloseButton';
 import ModalWrapper from '../../Components/ModalWrapper';
 import SqBadge from '../../Components/SqBadge';
 import { Stars } from '../../Components/StarDisplay';
+import Conditional from '../../Conditional/Conditional';
 import useCharacterReducer from '../../ReactHooks/useCharacterReducer';
 import usePromise from '../../ReactHooks/usePromise';
 import { SetNum } from '../../Types/consts';
@@ -26,7 +27,7 @@ export default function ArtifactConditionalCard({ disabled, initialStats }: { di
   }, [initialStats])
   return <CardLight><CardContent>
     <Button fullWidth onClick={onOpen} disabled={disabled}>
-      <span>Default Artifact Set Effects {!!artifactCondCount && <SqBadge color="success">{artifactCondCount} Selected</SqBadge>}</span>
+      <span>Default Artifact Set Effects Conditionals {!!artifactCondCount && <SqBadge color="success">{artifactCondCount} Selected</SqBadge>}</span>
     </Button>
     {!!initialStats && <ArtConditionalModal open={open} onClose={onClose} initialStats={initialStats} artifactCondCount={artifactCondCount} />}
   </CardContent></CardLight>
@@ -59,8 +60,15 @@ function ArtConditionalModal({ open, onClose, initialStats, artifactCondCount }:
     </CardContent>
     <Divider />
     <CardContent>
+      <CardLight sx={{ mb: 1 }}>
+        <CardContent>
+          <Typography>Some artifacts provide conditional stats. This windows allows you to select those stats, so they can take effect during build calculation, when artifact sets are not specified.</Typography>
+        </CardContent>
+      </CardLight>
+
       <Grid container spacing={1}>
         {artSetKeyList.map(setKey => {
+          if (!Conditional.conditionals?.artifact?.[setKey]) return null
           const sheet = artifactSheets[setKey]
           let icon = Object.values(sheet.slotIcons)[0]
           const rarities = sheet.rarity
@@ -76,7 +84,7 @@ function ArtConditionalModal({ open, onClose, initialStats, artifactCondCount }:
               </Box>
               <CardContent>
                 {!!setKey && Object.keys(sheet.setEffects).map(key => parseInt(key) as SetNum).map(setNumKey =>
-                  <SetEffectDisplay newBuild={undefined} key={setKey + setNumKey} {...{ setKey, setNumKey, equippedBuild: initialStats, editable: true, characterKey }} />)}
+                  <SetEffectDisplay newBuild={undefined} key={setKey + setNumKey} setKey={setKey} setNumKey={setNumKey} equippedBuild={initialStats} skipConditionalEquipmentCheck />)}
               </CardContent>
             </CardLight>
           </Grid>

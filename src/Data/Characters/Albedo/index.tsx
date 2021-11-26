@@ -19,41 +19,17 @@ import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant, } from "../../../Build/Build"
 import { ICharacterSheet } from '../../../Types/character'
-import { IConditionals } from '../../../Types/IConditional'
 import { Translate } from '../../../Components/Translate'
-import { plungeDocSection, talentTemplate } from '../SheetUtil'
+import { conditionalHeader, plungeDocSection, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
 const tr = (strKey: string) => <Translate ns="char_Albedo_gen" key18={strKey} />
-const conditionals: IConditionals = {
-  a4: { // Homuncular Nature
-    canShow: stats => stats.ascension >= 4,
-    name: "Using Tectonic Tide",
-    stats: {//TODO: team buff
-      eleMas: 125,
-    }
-  },
-  c4: { // Descent Of Divinity
-    canShow: stats => stats.constellation >= 4,
-    name: "Within the Solar Isotoma",
-    stats: {//TODO: team buff
-      plunging_dmg_: 30,
-    }
-  },
-  c6: { // Dust Of Purification
-    canShow: stats => stats.constellation >= 6,
-    name: "Protected by a shield created by Crystallize",
-    stats: {//TODO: team buff
-      dmg_: 17,
-    }
-  }
-}
 const char: ICharacterSheet = {
   name: tr("name"),
   cardImg: card,
   thumbImg: thumb,
   thumbImgSide: thumbSide,
   bannerImg: banner,
-  star: data_gen.star,
+  rarity: data_gen.star,
   elementKey: "geo",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
   gender: "M",
@@ -64,7 +40,6 @@ const char: ICharacterSheet = {
   ascensions: data_gen.ascensions,
   talent: {
     formula,
-    conditionals,
     sheets: {
       auto: {
         name: tr("auto.name"),
@@ -168,28 +143,54 @@ const char: ICharacterSheet = {
         img: passive2,
         sections: [{
           text: tr("passive2.description"),
-          conditional: conditionals.a4
+          conditional: { // Homuncular Nature
+            key: "a4",
+            canShow: stats => stats.ascension >= 4,
+            name: <span>Using <strong>Rite of Progeniture: Tectonic Tide</strong></span>,
+            partyBuff: "partyAll",
+            header: conditionalHeader("passive2", tr, passive2),
+            description: tr("passive2.description"),
+            stats: { eleMas: 125, }
+          },
         }],
       },
       passive3: talentTemplate("passive3", tr, passive3),
       constellation1: talentTemplate("constellation1", tr, c1),
       constellation2: talentTemplate("constellation2", tr, c2),
-      constellation3: talentTemplate("constellation3", tr, c3, { skillBoost: 3 }),
+      constellation3: talentTemplate("constellation3", tr, c3, "skillBoost"),
       constellation4: {
         name: tr("constellation4.name"),
         img: c4,
         sections: [{
           text: tr("constellation4.description"),
-          conditional: conditionals.c4
+          conditional: { // Descent Of Divinity
+            key: "c4",
+            canShow: stats => stats.constellation >= 4,
+            name: "Active party members within the Solar Isotoma field",
+            partyBuff: "partyActive",
+            header: conditionalHeader("constellation4", tr, c4),
+            description: tr("constellation4.description"),
+            stats: { plunging_dmg_: 30, }
+          },
         }],
       },
-      constellation5: talentTemplate("constellation5", tr, c5, { burstBoost: 3 }),
+      constellation5: talentTemplate("constellation5", tr, c5, "burstBoost"),
       constellation6: {
         name: tr("constellation6.name"),
         img: c6,
         sections: [{
           text: tr("constellation6.description"),
-          conditional: conditionals.c6
+          conditional: { // Dust Of Purification
+            key: "c6",
+            canShow: stats => stats.constellation >= 6,
+            name: "Active party members within the Solar Isotoma field who are protected by a shield created by Crystallize",
+            partyBuff: "partyActive",
+            header: conditionalHeader("constellation6", tr, c6),
+            description: tr("constellation6.description"),
+            stats: {
+              dmg_: 17,
+            }
+          }
         }],
       }
     },

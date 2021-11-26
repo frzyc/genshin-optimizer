@@ -1,16 +1,15 @@
 import { Box, CardActionArea, CardContent, Divider, Grid, Typography } from "@mui/material";
 import { useContext, useMemo, useState } from "react";
-import { ArtifactSheet } from "../../Artifact/ArtifactSheet";
 import Assets from "../../Assets/Assets";
 import Character from '../../Character/Character';
 import CharacterSheet from "../../Character/CharacterSheet";
 import { DatabaseContext } from "../../Database/Database";
 import usePromise from "../../ReactHooks/usePromise";
+import useSheets from "../../ReactHooks/useSheets";
 import { ICachedCharacter } from "../../Types/character";
 import { allCharacterKeys, CharacterKey, ElementKey, WeaponTypeKey } from "../../Types/consts";
 import { characterFilterConfigs, characterSortConfigs } from "../../Util/CharacterSort";
 import { filterFunction, sortFunction } from "../../Util/SortByFilters";
-import WeaponSheet from "../../Weapon/WeaponSheet";
 import CardDark from "../Card/CardDark";
 import CardLight from "../Card/CardLight";
 import CloseButton from "../CloseButton";
@@ -88,16 +87,14 @@ export function CharacterSelectionModal({ show, onHide, onSelect, filter = () =>
   </ModalWrapper>
 }
 
-function CharacterBtn({ onClick, characterKey }) {
+function CharacterBtn({ onClick, characterKey }: { onClick: () => void, characterKey: CharacterKey }) {
+  const sheets = useSheets()
   const database = useContext(DatabaseContext)
   const character = database._getChar(characterKey)
-  const characterSheet = usePromise(CharacterSheet.get(characterKey), [characterKey])
-  const weapon = character?.equippedWeapon ? database._getWeapon(character.equippedWeapon) : undefined
-  const weaponSheet = usePromise(weapon ? WeaponSheet.get(weapon.key) : undefined, [weapon?.key])
-  const artifactSheets = usePromise(ArtifactSheet.getAll(), [])
-  const stats = useMemo(() => character && characterSheet && weaponSheet && artifactSheets && Character.calculateBuild(character, database, characterSheet, weaponSheet, artifactSheets), [character, characterSheet, weaponSheet, artifactSheets, database])
+  const characterSheet = sheets?.characterSheets[characterKey]
+  const stats = useMemo(() => character && sheets && Character.calculateBuild(character, database, sheets), [character, sheets, database])
   if (!characterSheet) return null
-  const rarity = characterSheet.star
+  const rarity = characterSheet.rarity
   return <CardActionArea onClick={onClick} >
     <CardLight sx={{ display: "flex", alignItems: "center" }}  >
       <Box component="img" src={characterSheet.thumbImg} sx={{ width: 130, height: "auto" }} className={`grad-${rarity}star`} />
@@ -114,7 +111,7 @@ function CharacterBtn({ onClick, characterKey }) {
         </> : <>
           <Typography variant="h6"><SqBadge color="primary">NEW</SqBadge></Typography>
         </>}
-        <small><Stars stars={characterSheet.star} colored /></small>
+        <small><Stars stars={rarity} colored /></small>
       </Box>
     </CardLight>
   </CardActionArea >

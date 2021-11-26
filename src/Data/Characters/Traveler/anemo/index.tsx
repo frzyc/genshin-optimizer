@@ -9,50 +9,17 @@ import skill from './Talent_Palm_Vortex.png'
 import burst from './Talent_Gust_Surge.png'
 import passive1 from './Talent_Slitting_Wind.png'
 import passive2 from './Talent_Second_Wind.png'
-import ElementalData from '../../../ElementalData'
 import Stat from '../../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from "../../../../Build/Build"
 import { TalentSheet } from '../../../../Types/character';
-import { IConditionals, IConditionalValue } from '../../../../Types/IConditional'
 import { absorbableEle } from '../../dataUtil'
 import { Translate } from '../../../../Components/Translate'
-import { normalDocSection, plungeDocSection, talentTemplate } from '../../SheetUtil'
+import { normalDocSection, plungeDocSection, sgt, talentTemplate } from '../../SheetUtil'
+import ColorText from '../../../../Components/ColoredText'
 const tr = (strKey: string) => <Translate ns="char_Traveler_gen" key18={`anemo.${strKey}`} />
-const conditionals: IConditionals = {
-  q: { // Absorption
-    name: "Elemental Absorption",
-    states: {
-      ...Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
-        name: <span className={`text-${eleKey}`}><b>{ElementalData[eleKey].name}</b></span>,
-        fields: [{
-          canShow: stats => {
-            const value = stats.conditionalValues?.character?.Traveler?.sheet?.talents?.anemo?.q as IConditionalValue | undefined
-            if (!value) return false
-            const [num, condEleKey] = value
-            if (!num || condEleKey !== eleKey) return false
-            return true
-          },
-          text: "Absorption DoT",
-          formulaText: stats => <span>{data.burst.dmg_[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats, eleKey), stats)}</span>,
-          formula: formula.burst[eleKey],
-          variant: eleKey
-        },],
-        stats: stats => ({
-          ...stats.constellation >= 6 && { anemo_enemyRes_: - 20 },
-          ...stats.constellation >= 6 && { [`${eleKey}_enemyRes_`]: -20 }
-        })
-      }]))
-    }
-  },
-  c2: {
-    name: "Uprising Whirlwind",
-    stats: { enerRech_: 16 }
-  }
-}
 const talentSheet: TalentSheet = {
   formula,
-  conditionals,
   sheets: {
     auto: {
       name: tr("auto.name"),
@@ -130,7 +97,29 @@ const talentSheet: TalentSheet = {
           text: "Energy Cost",
           value: 60,
         }],
-        conditional: conditionals.q
+        conditional: { // Absorption
+          key: "q",
+          name: "Elemental Absorption",
+          states: {
+            ...Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
+              name: <ColorText color={eleKey}>{sgt(`element.${eleKey}`)}</ColorText>,
+              fields: [{
+                canShow: stats => {
+                  const [num, condEleKey] = stats.conditionalValues?.character?.Traveler_anemo?.q ?? []
+                  return !!num && condEleKey === eleKey
+                },
+                text: "Absorption DoT",
+                formulaText: stats => <span>{data.burst.dmg_[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats, eleKey), stats)}</span>,
+                formula: formula.burst[eleKey],
+                variant: eleKey
+              },],
+              stats: stats => ({
+                ...stats.constellation >= 6 && { anemo_enemyRes_: - 20 },
+                ...stats.constellation >= 6 && { [`${eleKey}_enemyRes_`]: -20 }
+              })
+            }]))
+          }
+        },
       }],
     },
     passive1: {
@@ -165,12 +154,18 @@ const talentSheet: TalentSheet = {
       img: c2,
       sections: [{
         text: tr("constellation2.description"),
-        conditional: conditionals.c2
+        conditional: {
+          key: "c2",
+          canShow: stats => stats.constellation >= 2,
+          maxStack: 0,
+          name: "Uprising Whirlwind",
+          stats: { enerRech_: 16 }
+        }
       }]
     },
-    constellation3: talentTemplate("constellation3", tr, c3, { burstBoost: 3 }),
+    constellation3: talentTemplate("constellation3", tr, c3, "burstBoost"),
     constellation4: talentTemplate("constellation4", tr, c4),
-    constellation5: talentTemplate("constellation5", tr, c5, { skillBoost: 3 }),
+    constellation5: talentTemplate("constellation5", tr, c5, "skillBoost"),
     constellation6: talentTemplate("constellation6", tr, c6),
   },
 }

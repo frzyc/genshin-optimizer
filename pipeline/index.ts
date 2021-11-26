@@ -101,6 +101,7 @@ export const weaponIdMap = {
   11412: "SwordOfDescension",
   11413: "FesteringDesire",
   11414: "AmenomaKageuchi",
+  11415: "CinnabarSpindle",
   11501: "AquilaFavonia",
   11502: "SkywardBlade",
   11503: "FreedomSworn",
@@ -286,7 +287,9 @@ export const artifactIdMap = {
   15017: "TenacityOfTheMillelith",
   15018: "PaleFlame",
   15019: "ShimenawasReminiscence",
-  15020: "EmblemOfSeveredFate"
+  15020: "EmblemOfSeveredFate",
+  15021: "HuskOfOpulentDreams",
+  15022: "OceanHuedClam",
 } as const
 
 export const artifactSlotMap = {

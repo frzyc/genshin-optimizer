@@ -18,104 +18,17 @@ import Stat from '../../../Stat'
 import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
-import { IConditionals, IConditionalValue } from '../../../Types/IConditional'
-import { ICharacterSheet } from '../../../Types/character'
-import { Translate, TransWrapper } from '../../../Components/Translate'
-import { sgt, st, talentTemplate } from '../SheetUtil'
-import ElementalData from '../../ElementalData'
+import { DocumentSection, ICharacterSheet } from '../../../Types/character'
+import { Translate } from '../../../Components/Translate'
+import { conditionalHeader, sgt, st, talentTemplate } from '../SheetUtil'
 import { absorbableEle } from '../dataUtil'
 import { KeyPath } from '../../../Util/KeyPathUtil'
 import { FormulaPathBase } from '../../formula'
 import { WeaponTypeKey } from '../../../Types/consts'
+import ColorText from '../../../Components/ColoredText'
 
 const path = KeyPath<FormulaPathBase, any>().character.KaedeharaKazuha
 const tr = (strKey: string) => <Translate ns="char_KaedeharaKazuha_gen" key18={strKey} />
-const conditionals: IConditionals = {
-  q: { // Absorption
-    name: st("eleAbsor"),
-    states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
-      name: <span className={`text-${eleKey}`}><b>{ElementalData[eleKey].name}</b></span>,
-      fields: [{
-        canShow: stats => {
-          const value = stats.conditionalValues?.character?.KaedeharaKazuha?.sheet?.talent?.q as IConditionalValue | undefined
-          if (!value) return false
-          const [num, condEleKey] = value
-          if (!num || condEleKey !== eleKey) return false
-          return true
-        },
-        text: st("absorDot"),
-        formulaText: stats => <span>{data.burst.add[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats, eleKey), stats)}</span>,
-        formula: formula.burst[eleKey],
-        variant: eleKey
-      }],
-    }]))
-  },
-  a1: {// Soumon Swordsmanship
-    canShow: stats => stats.ascension >= 1,
-    name: st("eleAbsor"),
-    states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
-      name: <span className={`text-${eleKey}`}><b>{ElementalData[eleKey].name}</b></span>,
-      fields: [{
-        canShow: stats => {
-          const value = stats.conditionalValues?.character?.KaedeharaKazuha?.sheet?.talent?.a1 as IConditionalValue | undefined
-          if (!value) return false
-          const [num, condEleKey] = value
-          if (!num || condEleKey !== eleKey) return false
-          return true
-        },
-        text: sgt("addEleDMG"),
-        formulaText: stats => <span>200% {Stat.printStat(getTalentStatKey("plunging", stats, eleKey), stats)}</span>,
-        formula: formula.passive1[eleKey],
-        variant: eleKey
-      }],
-    }]))
-  },
-  a4: { // Poetics of Fuubutsu
-    canShow: stats => stats.ascension >= 4,
-    name: <TransWrapper ns="char_KaedeharaKazuha" key18="a4.name" />,
-    states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
-      name: <span className={`text-${eleKey}`}><b>{ElementalData[eleKey].name}</b></span>,
-      stats: { modifiers: { [`${eleKey}_dmg_`]: [path.passive2.bonus()] } },//TODO: party buff modifier
-      fields: [{
-        text: <TransWrapper ns="char_KaedeharaKazuha" key18="a4.bonus" />,
-        formulaText: stats => <span>0.04% {Stat.printStat("eleMas", stats, true)}</span>,
-        formula: formula.passive2.bonus,
-        fixed: 1,
-        unit: "%"
-      }, {
-        text: sgt("duration"),
-        value: "8s",
-      }]
-    }]))
-  },
-  c2: {
-    canShow: stats => stats.constellation >= 2,
-    name: <TransWrapper ns="char_KaedeharaKazuha" key18="c2" />,
-    stats: { eleMas: 200 }//TODO: party buff
-  },
-  c6: {//Crimson Momiji
-    canShow: stats => stats.constellation >= 6,
-    name: <TransWrapper ns="char_KaedeharaKazuha" key18="c6.after" />,
-    stats: {
-      modifiers: {
-        normal_dmg_: [path.constellation6.bonus()],
-        charged_dmg_: [path.constellation6.bonus()],
-        plunging_dmg_: [path.constellation6.bonus()],
-      },
-      infusionSelf: "anemo",
-    },
-    fields: [{
-      text: <TransWrapper ns="char_KaedeharaKazuha" key18="c6.bonus" />,
-      formulaText: stats => <span>0.2% {Stat.printStat("eleMas", stats, true)}</span>,
-      formula: formula.constellation6.bonus,
-      fixed: 1,
-      unit: "%"
-    }, {
-      text: sgt("duration"),
-      value: "5s",
-    }]
-  }
-}
 
 const char: ICharacterSheet = {
   name: tr("name"),
@@ -123,7 +36,7 @@ const char: ICharacterSheet = {
   thumbImg: thumb,
   thumbImgSide: thumbSide,
   bannerImg: banner,
-  star: data_gen.star,
+  rarity: data_gen.star,
   elementKey: "anemo",
   weaponTypeKey: data_gen.weaponTypeKey as WeaponTypeKey,
   gender: "M",
@@ -134,7 +47,6 @@ const char: ICharacterSheet = {
   ascensions: data_gen.ascensions,
   talent: {
     formula,
-    conditionals,
     sheets: {
       auto: {
         name: tr("auto.name"),
@@ -143,7 +55,7 @@ const char: ICharacterSheet = {
           text: tr("auto.fields.normal"),
           fields: data.normal.hitArr.map((percentArr, i) =>
           ({
-            text: <span>{sgt(`normal.hit${i + (i < 5 ? 1 : 0)}`)} {i === 2 ? "(1)" : i === 3 ? "(2)" : i === 5 ? <span>(<TransWrapper ns="sheet" key18="hits" values={{ count: 3 }} />)</span> : ""}</span>,
+            text: <span>{sgt(`normal.hit${i + (i < 5 ? 1 : 0)}`)} {i === 2 ? "(1)" : i === 3 ? "(2)" : i === 5 ? <span>(<Translate ns="sheet" key18="hits" values={{ count: 3 }} />)</span> : ""}</span>,
             formulaText: stats => <span>{percentArr[stats.tlvl.auto]}% {Stat.printStat(getTalentStatKey("normal", stats), stats)}</span>,
             formula: formula.normal[i],
             variant: stats => getTalentStatKeyVariant("normal", stats),
@@ -207,7 +119,7 @@ const char: ICharacterSheet = {
             value: stat => stat.constellation >= 1 ? "9s - 10%" : "9s",
           }, {
             canShow: stat => stat.constellation >= 1,
-            text: <TransWrapper ns="char_KaedeharaKazuha" key18="c1" />,
+            text: <Translate ns="char_KaedeharaKazuha" key18="c1" />,
           }]
         }, {
           fields: [{
@@ -254,9 +166,33 @@ const char: ICharacterSheet = {
             value: 60,
           }]
         }, {
-          conditional: conditionals.q
+          conditional: { // Absorption
+            key: "q",
+            name: st("eleAbsor"),
+            states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
+              name: <ColorText color={eleKey}>{sgt(`element.${eleKey}`)}</ColorText>,
+              fields: [{
+                canShow: stats => {
+                  const [num, condEleKey] = stats.conditionalValues?.character?.KaedeharaKazuha?.q ?? []
+                  return !!num && condEleKey === eleKey
+                },
+                text: st("absorDot"),
+                formulaText: stats => <span>{data.burst.add[stats.tlvl.burst]}% {Stat.printStat(getTalentStatKey("burst", stats, eleKey), stats)}</span>,
+                formula: formula.burst[eleKey],
+                variant: eleKey
+              }],
+            }]))
+          },
         }, {
-          conditional: conditionals.c2
+          conditional: {
+            key: "c2",
+            canShow: stats => stats.constellation >= 2,
+            partyBuff: "partyAll",
+            header: conditionalHeader("constellation2", tr, c2),
+            description: tr("constellation2.description"),
+            name: <Translate ns="char_KaedeharaKazuha" key18="c2" />,
+            stats: { eleMas: 200 }
+          },
         }],
       },
       passive1: {
@@ -264,7 +200,24 @@ const char: ICharacterSheet = {
         img: passive1,
         sections: [{
           text: tr("passive1.description"),
-          conditional: conditionals.a1
+          conditional: {// Soumon Swordsmanship
+            key: "a1",
+            canShow: stats => stats.ascension >= 1,
+            name: st("eleAbsor"),
+            states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
+              name: <ColorText color={eleKey}>{sgt(`element.${eleKey}`)}</ColorText>,
+              fields: [{
+                canShow: stats => {
+                  const [num, condEleKey] = stats.conditionalValues?.character?.KaedeharaKazuha?.a1 ?? []
+                  return !!num && condEleKey === eleKey
+                },
+                text: sgt("addEleDMG"),
+                formulaText: stats => <span>200% {Stat.printStat(getTalentStatKey("plunging", stats, eleKey), stats)}</span>,
+                formula: formula.passive1[eleKey],
+                variant: eleKey
+              }],
+            }]))
+          },
         }],
       },
       passive2: {
@@ -272,26 +225,77 @@ const char: ICharacterSheet = {
         img: passive2,
         sections: [{
           text: tr("passive2.description"),
-          conditional: conditionals.a4
-        }],
+        }, ...absorbableEle.map(eleKey => ({
+          conditional: { // Poetics of Fuubutsu
+            key: `a4${eleKey}`,
+            canShow: stats => stats.ascension >= 4,
+            partyBuff: "partyAll",
+            header: conditionalHeader("passive2", tr, passive2),
+            description: tr("passive2.description"),
+            name: <Translate ns="char_KaedeharaKazuha" key18={`a4.name_${eleKey}`} />,
+            stats: { modifiers: { [`${eleKey}_dmg_`]: [[...path.passive2(), eleKey]] } },
+            fields: [{
+              text: Stat.getStatName(`${eleKey}_dmg_`),
+              formulaText: stats => <span>0.04% {Stat.printStat("eleMas", stats, true)}</span>,
+              formula: formula.passive2[eleKey],
+              variant: eleKey,
+              fixed: 1,
+              unit: "%"
+            }, {
+              text: sgt("duration"),
+              value: "8s",
+            }]
+          },
+        } as DocumentSection))],
       },
       passive3: {
         name: tr("passive3.name"),
         img: passive3,
-        sections: [{ text: tr("passive3.description"), }],
-        stats: { staminaSprintDec_: 20 }
+        sections: [{
+          text: tr("passive3.description"),
+          conditional: {
+            key: "pas",
+            maxStack: 0,
+            partyBuff: "partyAll",
+            header: conditionalHeader("passive3", tr, passive3),
+            description: tr("passive3.description"),
+            stats: { staminaSprintDec_: 20 },
+          }
+        }],
       },
       constellation1: talentTemplate("constellation1", tr, c1),
       constellation2: talentTemplate("constellation2", tr, c2),
-      constellation3: talentTemplate("constellation3", tr, c3, { skillBoost: 3 }),
+      constellation3: talentTemplate("constellation3", tr, c3, "skillBoost"),
       constellation4: talentTemplate("constellation4", tr, c4),
-      constellation5: talentTemplate("constellation5", tr, c5, { burstBoost: 3 }),
+      constellation5: talentTemplate("constellation5", tr, c5, "burstBoost"),
       constellation6: {
         name: tr("constellation6.name"),
         img: c6,
         sections: [{
           text: tr("constellation6.description"),
-          conditional: conditionals.c6
+          conditional: {//Crimson Momiji
+            key: "c6",
+            canShow: stats => stats.constellation >= 6,
+            name: <Translate ns="char_KaedeharaKazuha" key18="c6.after" />,
+            stats: {
+              modifiers: {
+                normal_dmg_: [path.constellation6.bonus()],
+                charged_dmg_: [path.constellation6.bonus()],
+                plunging_dmg_: [path.constellation6.bonus()],
+              },
+              infusionSelf: "anemo",
+            },
+            fields: [{
+              text: <Translate ns="char_KaedeharaKazuha" key18="c6.bonus" />,
+              formulaText: stats => <span>0.2% {Stat.printStat("eleMas", stats, true)}</span>,
+              formula: formula.constellation6.bonus,
+              fixed: 1,
+              unit: "%"
+            }, {
+              text: sgt("duration"),
+              value: "5s",
+            }]
+          }
         }]
       }
     }

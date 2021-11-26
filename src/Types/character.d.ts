@@ -1,19 +1,17 @@
-import { IArtifact } from "./artifact";
 import { BuildSetting } from "./Build";
 import { CharacterKey, ElementKey, HitModeKey, ReactionModeKey, SlotKey, WeaponTypeKey } from "./consts";
-import IConditional, { IConditionals } from "./IConditional";
+import IConditional, { IConditionalValues } from "./IConditional";
 import { IFieldDisplay } from "./IFieldDisplay";
 import { BasicStats, ICalculatedStats } from "./stats";
-import { ICachedWeapon } from "./weapon"
 
 interface ICharacterSheetBase {
   name: Displayable
   cardImg: string
   thumbImg: string
   thumbImgSide: string
-  barImg?:string
-  bannerImg?:string
-  star: Rarity
+  barImg?: string
+  bannerImg?: string
+  rarity: Rarity
   weaponTypeKey: WeaponTypeKey
   gender: string
   constellationName: Displayable
@@ -60,11 +58,12 @@ export interface ICharacter {
     burst: number
   }
 
+  team: [teammate1: CharacterKey | "", teammate2: CharacterKey | "", teammate3: CharacterKey | ""]
   // GO-specific
   hitMode: HitModeKey
   elementKey?: ElementKey
   reactionMode: ReactionModeKey | ""
-  conditionalValues: any
+  conditionalValues: IConditionalValues<IConditionalValue>
   bonusStats: object
   infusionAura: ElementKey | ""
   buildSettings?: BuildSetting
@@ -74,22 +73,21 @@ export interface ICachedCharacter extends ICharacter {
   equippedWeapon: string
 }
 
+export type TalentSheetElementKey = "auto" | "skill" | "burst" | "sprint" | "passive" | "passive1" | "passive2" | "passive3" | "constellation1" | "constellation2" | "constellation3" | "constellation4" | "constellation5" | "constellation6"
 export type TalentSheet = {
   formula: IFormulaSheet
-  conditionals: IConditionals
-  sheets: Dict<string, TalentSheetElement>
+  sheets: Dict<TalentSheetElementKey, TalentSheetElement>
 }
 
 export interface TalentSheetElement {
   name: Displayable //talentName
   img: string
-  sections: Array<DocumentSection>
-  stats?: object
+  sections: DocumentSection[]
 }
 export interface DocumentSection {
   canShow?: (stats: BasicStats) => boolean
   text?: Displayable | ((stats: BasicStats) => Displayable)
-  fields?: Array<IFieldDisplay>
+  fields?: IFieldDisplay[]
   conditional?: IConditional
 }
 
