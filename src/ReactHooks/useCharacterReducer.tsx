@@ -71,17 +71,34 @@ export default function useCharacterReducer(characterKey: CharacterKey | "") {
         const { index, charKey: newCharKey } = action
         const oldCharKey = team[index]
         team[index] = newCharKey
-        database.updateChar({ ...character, team })
 
+        // move the old char to "inventory"
         if (oldCharKey) {
           const oldChar = database._getChar(oldCharKey)
           if (oldChar) database.updateChar({ ...oldChar, team: ["", "", ""] })
         }
+
+        // unequip new char from its old teammates
+        if (newCharKey) {
+          const newChar = database._getChar(newCharKey)
+          if (newChar) {
+            newChar.team.forEach(t => {
+              if (!t) return
+              const tChar = database._getChar(t)
+              tChar && database.updateChar({ ...tChar, team: tChar.team.map(c => c === newCharKey ? "" : c) as ICachedCharacter["team"] })
+            })
+          }
+        }
+
+        // equip new char to new teammates
         team.forEach((t, tind) => {
           if (!t) return
           const newChar = database._getChar(t)
           if (newChar) database.updateChar({ ...newChar, team: [characterKey, ...team].filter((_, i) => i !== tind + 1) as ICachedCharacter["team"] })
         })
+
+        // update src character
+        database.updateChar({ ...character, team })
       }
     } else
       database.updateChar({ ...database._getChar(characterKey)!, ...action })

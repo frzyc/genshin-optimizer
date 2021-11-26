@@ -327,6 +327,9 @@ function migrateV13ToV14(storage: DBStorage) {
             let [character, charKey, , , condKey] = keys
             if (!condKey) return
             switch (charKey) {
+              case "Diona":
+                if (condKey === "c4") condKey = "a1"
+                break;
               case "Diluc":
                 if (condKey === "b") condKey = "q"
                 break;

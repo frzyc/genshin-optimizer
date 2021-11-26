@@ -20,7 +20,7 @@ import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { ICharacterSheet } from '../../../Types/character'
 import { Translate } from '../../../Components/Translate'
-import { bowChargedDocSection, normalDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
+import { bowChargedDocSection, conditionalHeader, normalDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
 import ColorText from '../../../Components/ColoredText'
 const tr = (strKey: string) => <Translate ns="char_Diona_gen" key18={strKey} />
@@ -90,9 +90,12 @@ const char: ICharacterSheet = {
             value: "15s",
           }],
           conditional: { // IcyPawsShield
-            key: "c4",
-            canShow: stats => stats.constellation >= 4,
+            key: "a1",
+            canShow: stats => stats.ascension >= 1,
             name: "Characters Shielded",
+            partyBuff: "partyActive",
+            header: conditionalHeader("passive1", tr, passive1),
+            description: tr("passive1.description"),
             stats: {
               moveSPD_: 10,
               staminaDec_: 10
@@ -134,6 +137,9 @@ const char: ICharacterSheet = {
             key: "c6n",
             canShow: stats => stats.constellation >= 6,
             name: "Characters within radius below or equal 50% HP",
+            partyBuff: "partyActive",
+            header: conditionalHeader("constellation6", tr, c6),
+            description: tr("constellation6.description"),
             stats: { incHeal_: 30 },
           },
         }, {
@@ -141,6 +147,9 @@ const char: ICharacterSheet = {
             key: "c6f",
             canShow: stats => stats.constellation >= 6,
             name: "Characters within radius above 50% HP",
+            partyBuff: "partyActive",
+            header: conditionalHeader("constellation6", tr, c6),
+            description: tr("constellation6.description"),
             stats: { eleMas: 200 },
           }
         }],
