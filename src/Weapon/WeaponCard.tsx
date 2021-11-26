@@ -2,7 +2,7 @@ import { faEdit, faTrashAlt } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Lock, LockOpen } from "@mui/icons-material"
 import { Box, Button, ButtonGroup, CardActionArea, CardContent, CardHeader, Grid, IconButton, Skeleton, Typography } from "@mui/material"
-import { Suspense, useCallback, useContext, useEffect, useState } from "react"
+import { Suspense, useCallback, useContext } from "react"
 import Assets from "../Assets/Assets"
 import CharacterSheet from "../Character/CharacterSheet"
 import CardLight from "../Components/Card/CardLight"
@@ -15,18 +15,15 @@ import StatIcon from "../Components/StatIcon"
 import { ascensionMaxLevel } from "../Data/LevelData"
 import { DatabaseContext } from "../Database/Database"
 import usePromise from "../ReactHooks/usePromise"
+import useWeapon from "../ReactHooks/useWeapon"
 import Stat from "../Stat"
 import { CharacterKey } from "../Types/consts"
-import { ICachedWeapon } from "../Types/weapon"
 import WeaponSheet from "./WeaponSheet"
 
 type WeaponCardProps = { weaponId: string, onClick?: (weaponId: string) => void, onEdit?: (weaponId: string) => void, onDelete?: (weaponId: string) => void, canEquip?: boolean }
 export default function WeaponCard({ weaponId, onClick, onEdit, onDelete, canEquip = false }: WeaponCardProps) {
   const database = useContext(DatabaseContext)
-  const [databaseWeapon, updateDatabaseWeapon] = useState(undefined as ICachedWeapon | undefined)
-  useEffect(() =>
-    weaponId ? database.followWeapon(weaponId, updateDatabaseWeapon) : undefined,
-    [weaponId, updateDatabaseWeapon, database])
+  const databaseWeapon = useWeapon(weaponId)
   const weapon = databaseWeapon
   const weaponSheet = usePromise(weapon?.key && WeaponSheet.get(weapon.key), [weapon?.key])
 

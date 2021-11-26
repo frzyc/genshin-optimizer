@@ -12,8 +12,6 @@ export class DataManager<Key extends string | number, Value> {
     }
   }
   follow(key: Key, callback: Callback<Value | undefined>) {
-    const value = this.get(key)
-    callback(value)
     if (this.listeners[key]) this.listeners[key]!.push(callback)
     else this.listeners[key] = [callback]
     return () => {
