@@ -25,7 +25,7 @@ export function exportFlex(characterKey: CharacterKey, database: ArtCharDatabase
     .map(id => database._getArt(id)!)
 
   try {
-    return "v=3&d=" + encode({ characters: [character], weapons: [weapon], artifacts }, schemas.flexV3)
+    return "v=4&d=" + encode({ characters: [character], weapons: [weapon], artifacts, dbVer: currentDBVersion }, schemas.flexV4)
   } catch (error) {
     if (process.env.NODE_ENV === "development")
       console.error(`Fail to encode data on path ${(error as any).path?.reverse() ?? []}: ${error}`)
@@ -37,14 +37,15 @@ export function importFlex(string: string): [ArtCharDatabase, CharacterKey, numb
   const parameters = Object.fromEntries(string.split('&').map(s => s.split('=')))
 
   try {
-    switch (parseInt(parameters.v)) {
-      case 2: return [...importFlexV2(parameters.d), 2]
-      case 3: return [...importFlexV3(parameters.d), 3]
+    switch (parameters.v) {
+      case "2": return [...importFlexV2(parameters.d), 2]
+      case "3": return [...importFlexV3(parameters.d), 3]
+      case "4": return [...importFlexV4(parameters.d), 4]
       default: return
     }
   } catch (error) {
-    if (process.env.NODE_ENV === "development")
-      console.error(`Fail to encode data on path ${(error as any).path?.reverse() ?? []}: ${error}`)
+    //if (process.env.NODE_ENV === "development")
+    console.error(`Fail to encode data on path ${(error as any).path?.reverse() ?? []}: ${error}`)
     return
   }
 }
@@ -82,12 +83,9 @@ function importFlexV3(string: string): [ArtCharDatabase, CharacterKey] {
   const charKey = characters[0].key
 
   const storage = new SandboxStorage()
-  // MIGRATION STEP: When a new flex
-  // version comes along, fix this db_ver
-  // to the last version that exports flexV3.
-  // That way, all migration from flexV3 will
-  // be handled by db's automatic migration.
-  storage.setString("db_ver", `${currentDBVersion}`)
+  // DON'T CHANGE THIS.
+  // The last supported db version for Flex v3 is dbv13.
+  storage.setString("db_ver", "13")
 
   characters.forEach(character => storage.set(`char_${character.key}`, character))
   artifacts.forEach((artifact, i) => storage.set(`artifact_${i}`, artifact))
@@ -97,5 +95,25 @@ function importFlexV3(string: string): [ArtCharDatabase, CharacterKey] {
 
   if (!database._getChar(charKey as any))
     throw new Error(`Invalid flex object`)
+  return [database, charKey]
+}
+
+function importFlexV4(string: string): [ArtCharDatabase, CharacterKey] {
+  const schema = schemas.flexV4
+  const { characters, artifacts, weapons, dbVer } = decode(string, schema) as { characters: { key: CharacterKey }[], artifacts: any[], weapons: any[], dbVer: number }
+  const charKey = characters[0].key
+
+  const storage = new SandboxStorage()
+  storage.setString("db_ver", `${dbVer}`)
+
+  characters.forEach(character => storage.set(`char_${character.key}`, character))
+  artifacts.forEach((artifact, i) => storage.set(`artifact_${i}`, artifact))
+  weapons.forEach((weapon, i) => storage.set(`weapon_${i}`, weapon))
+
+  const database = new ArtCharDatabase(storage) // Validate storage
+
+  if (!database._getChar(charKey as any))
+    throw new Error(`Invalid flex object`)
+
   return [database, charKey]
 }
