@@ -65,7 +65,7 @@ export default class Character {
     Object.values(artifacts).forEach(art => {
       if (!art) return
       //main stats
-      stats[art.mainStatKey] = (stats[art.mainStatKey] || 0) + Artifact.mainStatValue(art.mainStatKey, art.rarity, Math.max(Math.min(stats.mainStatAssumptionLevel, art.rarity * 4), art.level))
+      stats[art.mainStatKey] = (stats[art.mainStatKey] ?? 0) + Artifact.mainStatValue(art.mainStatKey, art.rarity, Math.max(Math.min(stats.mainStatAssumptionLevel ?? 20, art.rarity * 4), art.level))
       //substats
       art.substats.forEach((substat) =>
         substat && substat.key && (stats[substat.key] = (stats[substat.key] || 0) + substat.value))
@@ -159,6 +159,9 @@ export default class Character {
       });
     }
 
+    Object.entries(initialStats).forEach(([key, val]) => {
+      if (Number.isNaN(val)) debugger
+    })
     return initialStats
   }
 
@@ -198,6 +201,9 @@ export default class Character {
         Character.calculateBuildwithArtifact(tstats, artifacts, sheets.artifactSheets)
       })
     }
+    Object.entries(initialStats).forEach(([key, val]) => {
+      if (Number.isNaN(val)) debugger
+    })
     return initialStats
   }
 
