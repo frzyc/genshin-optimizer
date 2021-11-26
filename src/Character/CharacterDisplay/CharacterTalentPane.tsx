@@ -23,8 +23,8 @@ type CharacterTalentPaneProps = {
 export default function CharacterTalentPane({ characterSheet, character, character: { ascension, constellation, key: characterKey } }: CharacterTalentPaneProps) {
   const { newBuild, equippedBuild } = useContext(buildContext)
   const characterDispatch = useCharacterReducer(characterKey)
-  const skillBurstList = [["auto", "Normal/Charged Attack"], ["skill", "Elemental Skill"], ["burst", "Elemental Burst"]] as Array<[TalentSheetElementKey, string]>
-  const passivesList: Array<[tKey: TalentSheetElementKey, tText: string, asc: number]> = [["passive1", "Unlocked at Ascension 1", 1], ["passive2", "Unlocked at Ascension 4", 4], ["passive3", "Unlocked by Default", 0]]
+  const skillBurstList = [["auto", "Normal/Charged Attack"], ["skill", "Elemental Skill"], ["burst", "Elemental Burst"]] as [TalentSheetElementKey, string][]
+  const passivesList: [tKey: TalentSheetElementKey, tText: string, asc: number][] = [["passive1", "Unlocked at Ascension 1", 1], ["passive2", "Unlocked at Ascension 4", 4], ["passive3", "Unlocked by Default", 0]]
   const build = newBuild ? newBuild : equippedBuild
   return <>
     <ReactionDisplay characterSheet={characterSheet} />

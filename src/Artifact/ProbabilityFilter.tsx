@@ -8,8 +8,8 @@ import SqBadge from "../Components/SqBadge"
 import { allSubstats, SubstatKey } from "../Types/artifact"
 
 export default function ProbabilityFilter({ probabilityFilter: statFilters = {}, setProbabilityFilter: setStatFilters, disabled = false }: {
-  probabilityFilter: Partial<Record<SubstatKey, number>>,
-  setProbabilityFilter: (object: Partial<Record<SubstatKey, number>>) => void,
+  probabilityFilter: Dict<SubstatKey, number>,
+  setProbabilityFilter: (object: Dict<SubstatKey, number>) => void,
   disabled?: boolean
 }) {
   const remainingKeys = allSubstats.filter(key => !(Object.keys(statFilters) as any).some(k => k === key))

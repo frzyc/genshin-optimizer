@@ -4,10 +4,10 @@ import { layeredAssignment } from "../../Util"
 type WeaponPromoteExcelConfigData = {
   "WeaponPromoteId": number//12406,
   "PromoteLevel": number//6,
-  "CostItems": Array<{
+  "CostItems": {
     "Id": number,
     "Count": number
-  }>
+  }[]
   // [
   //   {
   //     "Id": 114024,
@@ -23,10 +23,10 @@ type WeaponPromoteExcelConfigData = {
   //   }
   // ],
   "CoinCost": number,
-  "AddProps": Array<{
+  "AddProps": {
     "PropType": PropTypeKey
     "Value": number
-  }>
+  }[]
   // [
   //   {
   //     "PropType": "FIGHT_PROP_BASE_ATTACK",
@@ -50,7 +50,7 @@ type WeaponPromoteExcelConfigData = {
 }
 const weaponPromoteExcelConfigDataSrc = require('../../GenshinData/ExcelBinOutput/WeaponPromoteExcelConfigData.json') as WeaponPromoteExcelConfigData[]
 
-const weaponPromoteExcelConfigData = {} as Record<number, Array<WeaponPromoteExcelConfigData>>
+const weaponPromoteExcelConfigData = {} as Record<number, WeaponPromoteExcelConfigData[]>
 
 weaponPromoteExcelConfigDataSrc.forEach(data => {
 

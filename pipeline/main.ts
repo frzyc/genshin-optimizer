@@ -45,11 +45,9 @@ export type CharacterData = {
     def: CharacterGrowCurveKey,
   },
   star: number,
-  ascensions: Array<{
-    props: {
-      [key: string]: number
-    }
-  }>,
+  ascensions: {
+    props: { [key: string]: number }
+  }[],
   birthday: {
     month: number,
     day: number
@@ -160,10 +158,8 @@ export type WeaponData = {
   rarity: 1 | 2 | 3 | 4 | 5
   mainStat: WeaponProp
   subStat?: WeaponProp
-  addProps: Array<Partial<Record<StatKey, number>>>
-  ascension: Array<{
-    addStats: Partial<Record<StatKey, number>>
-  }>
+  addProps: Partial<Record<StatKey, number>>[]
+  ascension: { addStats: Partial<Record<StatKey, number>> }[]
 }
 const weaponDataDump = Object.fromEntries(Object.entries(weaponExcelConfigData).filter(([weaponid, weaponData]) => weaponid in weaponIdMap).map(([weaponid, weaponData]) => {
   const { WeaponType, RankLevel, WeaponProp, SkillAffix, WeaponPromoteId } = weaponData

@@ -28,7 +28,7 @@ function intialState() {
     ...initialArtifactSortFilter(),
     maxNumArtifactsToDisplay: 50,
     effFilter: [...allSubstats] as SubstatKey[],
-    probabilityFilter: {} as Partial<Record<SubstatKey, number>>
+    probabilityFilter: {} as Dict<SubstatKey, number>,
   }
 }
 

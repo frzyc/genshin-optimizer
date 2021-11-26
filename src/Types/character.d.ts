@@ -76,18 +76,18 @@ export interface ICachedCharacter extends ICharacter {
 export type TalentSheetElementKey = "auto" | "skill" | "burst" | "sprint" | "passive" | "passive1" | "passive2" | "passive3" | "constellation1" | "constellation2" | "constellation3" | "constellation4" | "constellation5" | "constellation6"
 export type TalentSheet = {
   formula: IFormulaSheet
-  sheets: Partial<Record<TalentSheetElementKey, TalentSheetElement>>
+  sheets: Dict<TalentSheetElementKey, TalentSheetElement>
 }
 
 export interface TalentSheetElement {
   name: Displayable //talentName
   img: string
-  sections: Array<DocumentSection>
+  sections: DocumentSection[]
 }
 export interface DocumentSection {
   canShow?: (stats: BasicStats) => boolean
   text?: Displayable | ((stats: BasicStats) => Displayable)
-  fields?: Array<IFieldDisplay>
+  fields?: IFieldDisplay[]
   conditional?: IConditional
 }
 

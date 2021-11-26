@@ -6,10 +6,10 @@ type ReliquaryLevelExcelConfigData = {
   "Rank": number,
   "Level": number,
   "Exp": number//600,
-  "AddProps": Array<{
+  "AddProps": {
     "PropType": PropTypeKey// "FIGHT_PROP_HP",
     "Value": number//129.0
-  }>
+  }[]
 }
 const artifactMainstatDataSrc = require('../../GenshinData/ExcelBinOutput/ReliquaryLevelExcelConfigData.json') as ReliquaryLevelExcelConfigData[]
 
@@ -19,7 +19,7 @@ export type artifaceMainstatData = {
 
 const artifactMainstatData = {} as artifaceMainstatData
 
-//create the general shape of artifactMainstatData 
+//create the general shape of artifactMainstatData
 Array.from({ length: 5 }, (_, i) => i + 1).forEach(rank => {
   Object.values(MainPropMap).forEach(element => {
     layeredAssignment(artifactMainstatData, [rank, element], [])
@@ -29,7 +29,7 @@ Array.from({ length: 5 }, (_, i) => i + 1).forEach(rank => {
 //populate the arrays from the data.
 artifactMainstatDataSrc.forEach(({ Rank = 0, Level, AddProps }) => {
   if (!Rank) return //1st element is invalid
-  if ((Level - 1) > Rank * 4) return //prune extra values 
+  if ((Level - 1) > Rank * 4) return //prune extra values
   AddProps.forEach(({ PropType, Value }) => {
     // Main stat has these values, which we are not really using.
     //TODO: wtf is FIGHT_PROP_FIRE_SUB_HURT? burning reduction?

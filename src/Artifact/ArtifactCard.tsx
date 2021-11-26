@@ -30,7 +30,7 @@ type Data = {
   onEdit?: (string) => void,
   onDelete?: (string) => void, mainStatAssumptionLevel?: number,
   effFilter?: Set<SubstatKey>,
-  probabilityFilter?: Partial<Record<SubstatKey, number>>
+  probabilityFilter?: Dict<SubstatKey, number>
 }
 const allSubstatFilter = new Set(allSubstats)
 

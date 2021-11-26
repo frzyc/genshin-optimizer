@@ -161,7 +161,7 @@ function ArtifactDisplay({ stats }: { stats?: ICalculatedStats }) {
   if (!artifactSheets || !stats) return null
   const { equippedArtifacts } = stats
   return <Grid container spacing={1} >
-    {Object.entries(equippedArtifacts ?? {} as Partial<Record<SlotKey, string>>).map(([key, id]) => {
+    {Object.entries(equippedArtifacts ?? {} as Dict<SlotKey, string>).map(([key, id]) => {
       const art = database._getArt(id)
       if (!art) return null
       const { setKey, slotKey, mainStatKey } = art

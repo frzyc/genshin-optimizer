@@ -16,14 +16,14 @@ export interface IConditionalBase {
 }
 export interface IConditionalSimple extends IConditionalBase {
   stats?: BonusStats | ((stats: BasicStats) => BonusStats);
-  fields?: Array<IFieldDisplay>;
+  fields?: IFieldDisplay[];
   maxStack?: number | ((stats: BasicStats) => number);
 }
 export interface IConditionalConstant extends IConditionalBase {
-  stats?: BonusStats | ((stats: BasicStats) => BonusStats);
-  fields?: Array<IFieldDisplay>;
-  name?: Displayable,
-  maxStack: 0;
+  stats?: BonusStats | ((stats: BasicStats) => BonusStats)
+  fields?: IFieldDisplay[]
+  name?: Displayable
+  maxStack: 0
 }
 
 export interface IConditionalComplex extends IConditionalBase {
@@ -31,7 +31,7 @@ export interface IConditionalComplex extends IConditionalBase {
     [key: string]: {
       name: Displayable;
       stats?: BonusStats | ((stats: BasicStats) => BonusStats);
-      fields?: Array<IFieldDisplay>;
+      fields?: IFieldDisplay[];
       maxStack?: number | ((stats: BasicStats) => number);
     }
   }

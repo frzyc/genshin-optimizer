@@ -12,7 +12,7 @@ const CharacterDisplayCard = lazy(() => import('./CharacterDisplayCard'))
 export default function CharacterDisplay() {
   const history = useHistory()
   let { characterKey } = useParams<{ characterKey?: CharacterKey }>();
-  const invalidKey = !allCharacterKeys.includes((characterKey) as any ?? "")
+  const invalidKey = !allCharacterKeys.includes(characterKey as any ?? "")
   if (invalidKey)
     return <Redirect to="/character" />
   return <Box my={1} display="flex" flexDirection="column" gap={1}>

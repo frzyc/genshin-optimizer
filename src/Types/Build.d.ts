@@ -17,7 +17,7 @@ export interface BuildSetting {
   mainStatAssumptionLevel: number,
   useExcludedArts: boolean,
   useEquippedArts: boolean,
-  builds: Array<string[]>,
+  builds: string[][]
   buildDate: number,
   maxBuildsToShow: number,
   plotBase: StatKey | ""

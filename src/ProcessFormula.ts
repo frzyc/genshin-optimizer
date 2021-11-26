@@ -19,7 +19,7 @@ function addPreModValues(stats: ICalculatedStats, mod: Modifier) {
   })
 }
 
-function ModStatsFormula(stats: ICalculatedStats, mods: Modifier, targets: (s: ICalculatedStats) => Array<ICalculatedStats | null>, context: "partyAll" | "partyOnly" | "partyActive") {
+function ModStatsFormula(stats: ICalculatedStats, mods: Modifier, targets: (s: ICalculatedStats) => (ICalculatedStats | null)[], context: "partyAll" | "partyOnly" | "partyActive") {
   if (!mods || !Object.keys(mods).length) return () => null
   const modStatsFunc = Formula.computeModifier(stats, mods)
   return (s: ICalculatedStats) => {
@@ -57,7 +57,7 @@ export function PreprocessFormulas(dependencyKeys: string[], stats: ICalculatedS
   let processTeam = (s: ICalculatedStats) => { }
   if (stats.activeCharacter) {
     const beforePreprocess = [...stats.teamStats]
-    const preprocessed: Array<[ICalculatedStats | null, undefined | ((s: ICalculatedStats) => void)]> = stats.teamStats.map(t => {
+    const preprocessed: [ICalculatedStats | null, undefined | ((s: ICalculatedStats) => void)][] = stats.teamStats.map(t => {
       if (!t) return [null, undefined]
       const { initialStats: tStats, formula: tFormula } = PreprocessFormulas(dependencyKeys, t)
       return [tStats, tFormula]
@@ -95,7 +95,7 @@ export function PreprocessFormulas(dependencyKeys: string[], stats: ICalculatedS
       modifiers && addPreModValues(s, modifiers)
       s.modifiers && addPreModValues(s, s.modifiers)
 
-      // Calculate & apply modStats. 
+      // Calculate & apply modStats.
       partyAllFormula(s)
       partyOnlyFormula(s)
       partyActiveFormula(s)

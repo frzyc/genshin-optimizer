@@ -8,7 +8,7 @@ import DropdownButton from '../../Components/DropdownMenu/DropdownButton';
 import Stat from '../../Stat';
 import { StatKey } from '../../Types/artifact';
 export default function StatFilterCard({ statKeys = [], statFilters = {}, setStatFilters, disabled = false }:
-  { statKeys: StatKey[], statFilters: Partial<Record<StatKey, number>>, setStatFilters: (object: Partial<Record<StatKey, number>>) => void, disabled?: boolean }) {
+  { statKeys: StatKey[], statFilters: Dict<StatKey, number>, setStatFilters: (object: Dict<StatKey, number>) => void, disabled?: boolean }) {
   const remainingKeys = statKeys.filter(key => !(Object.keys(statFilters) as any).some(k => k === key))
   const setFilter = useCallback((sKey, min) => setStatFilters({ ...statFilters, [sKey]: min }), [statFilters, setStatFilters],)
   return <CardLight>

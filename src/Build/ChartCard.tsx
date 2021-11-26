@@ -8,7 +8,7 @@ import DropdownButton from '../Components/DropdownMenu/DropdownButton';
 import Stat from '../Stat';
 import { StatKey } from '../Types/artifact';
 type ChartCardProps = {
-  data: Array<{ plotBase: number, optimizationTarget: number }>
+  data: { plotBase: number, optimizationTarget: number }[]
   plotBase: StatKey | "",
   setPlotBase: (key: StatKey | "") => void
   statKeys: StatKey[]

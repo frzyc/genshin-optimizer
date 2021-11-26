@@ -14,12 +14,12 @@ type ReliquaryAffixExcelConfigData = {
 const artifactSubstatDataSrc = require('../../GenshinData/ExcelBinOutput/ReliquaryAffixExcelConfigData.json') as ReliquaryAffixExcelConfigData[]
 
 type artifaceSubstatData = {
-  [Rarity: number]: Record<SubstatKey, Array<number>>
+  [Rarity: number]: Record<SubstatKey, number[]>
 }
 
 const artifactSubstatData = {} as artifaceSubstatData
 
-//create the general shape of artifactSubstatData 
+//create the general shape of artifactSubstatData
 Array.from({ length: 5 }, (_, i) => i + 1).forEach(rank => {
   Object.values(SubStatPropTypeMap).forEach(element => {
     layeredAssignment(artifactSubstatData, [rank, element], [])

@@ -5,7 +5,7 @@ export interface IFieldDisplay {
   text: Displayable;
   value?: number | Displayable | ((stats: ICalculatedStats) => number | Displayable);
   fixed?: number;
-  formula?: (stats: BasicStats) => Array<any>;
+  formula?: (stats: BasicStats) => any[];
   formulaText?: JSX.Element | ((stats: BasicStats) => JSX.Element)
   variant?: string | ((stats: BasicStats) => string);
   unit?: Displayable

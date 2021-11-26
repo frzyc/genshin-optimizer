@@ -13,7 +13,7 @@ export type FilterOption = {
   levelHigh: number,
   slotKey: SlotKey | "",
   mainStatKey: MainStatKey | ""
-  substats: Array<SubstatKey | "">
+  substats: (SubstatKey | "")[]
   location: CharacterKey | "Inventory" | "Equipped" | ""
   excluded: "excluded" | "included" | "",
 }
