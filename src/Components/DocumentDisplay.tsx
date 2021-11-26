@@ -30,7 +30,7 @@ export default function DocumentDisplay({ sections, characterKey, skipConditiona
     const canShowConditional = section.conditional && section.conditional.partyBuff !== "partyOnly" && Conditional.canShow(section.conditional, build, skipConditionalEquipmentCheck)
     if (!talentText && !fields.length && !canShowConditional) return null
     return <Box key={"section" + i} display="flex" flexDirection="column" gap={1}>
-      <div>{talentText}</div>
+      {talentText && <div>{talentText}</div>}
       {fields.length > 0 && <FieldDisplayList>
         {fields?.map?.((field, i) => <FieldDisplay key={i} field={field} />)}
       </FieldDisplayList>}

@@ -84,7 +84,7 @@ const char: ICharacterSheet = {
             formula: formula.skill.shield,
           }, {
             text: <ColorText color="pyro">{tr("skill.skillParams.1")}</ColorText>,
-            formulaText: stats => <span>( {data.skill.shieldHp_[stats.tlvl.skill]}% {Stat.printStat("finalHP", stats)} + {data.skill.shieldHp[stats.tlvl.skill]} ) * (100% + {Stat.printStat("shield_", stats)}) * (250% <ColorText color="cryo">Cryo Absorption</ColorText>)</span>,
+            formulaText: stats => <span>( {data.skill.shieldHp_[stats.tlvl.skill]}% {Stat.printStat("finalHP", stats)} + {data.skill.shieldHp[stats.tlvl.skill]} ) * (100% + {Stat.printStat("shield_", stats)}) * (250% <ColorText color="pyro">Pyro Absorption</ColorText>)</span>,
             formula: formula.skill.shieldPyro,
             variant: "pyro"
           }, {
@@ -96,7 +96,7 @@ const char: ICharacterSheet = {
             formula: formula.skill.maxShield,
           }, {
             text: <ColorText color="pyro">{tr("skill.skillParams.3")}</ColorText>,
-            formulaText: stats => <span>( {data.skill.maxShieldHp_[stats.tlvl.skill]}% {Stat.printStat("finalHP", stats)} + {data.skill.maxShieldHp[stats.tlvl.skill]} ) * (100% + {Stat.printStat("shield_", stats)}) * (250% <ColorText color="cryo">Cryo Absorption</ColorText>)</span>,
+            formulaText: stats => <span>( {data.skill.maxShieldHp_[stats.tlvl.skill]}% {Stat.printStat("finalHP", stats)} + {data.skill.maxShieldHp[stats.tlvl.skill]} ) * (100% + {Stat.printStat("shield_", stats)}) * (250% <ColorText color="pyro">Pyro Absorption</ColorText>)</span>,
             formula: formula.skill.maxShieldPyro,
             variant: "pyro"
           }, {

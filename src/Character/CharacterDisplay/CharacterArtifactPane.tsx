@@ -80,10 +80,10 @@ function CharacterArtifactPane({ sheets, character, character: { key: characterK
     </CardLight>
     <Grid container spacing={1}>
       <Grid item xs={12} sm={6} md={4} >
-        <CardLight sx={{ height: "100%" }} ><CardContent sx={{ height: "100%" }}><Grid container spacing={2} flexDirection="column" height="100%" >
+        <CardLight sx={{ height: "100%" }} ><CardContent sx={{ height: "100%" }}><Grid container spacing={1} flexDirection="column" height="100%" >
           {artifactSheets && Object.entries(ArtifactSheet.setEffects(artifactSheets, stats.setToSlots)).map(([setKey, setNumKeyArr]) =>
-            <Grid item key={setKey}>
-              <Typography variant="subtitle1" gutterBottom>{artifactSheets?.[setKey].name ?? ""}</Typography>
+            <Grid item key={setKey} display="flex" flexDirection="column" gap={1}>
+              <Typography variant="subtitle1">{artifactSheets?.[setKey].name ?? ""}</Typography>
               {setNumKeyArr.map(setNumKey => <SetEffectDisplay key={setKey + setNumKey} {...{ setKey, setNumKey, equippedBuild, newBuild }} />)}
             </Grid>
           )}

@@ -279,7 +279,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
                 </CardContent>
               </CardLight>
               {/* character card */}
-              <Box><CharacterCard characterKey={characterKey} onClick={setCharacter} /></Box>
+              <Box><CharacterCard characterKey={characterKey} onClick={generatingBuilds ? undefined : setCharacter} /></Box>
 
               {!!character && <BonusStatsCard character={character} />}
               <TeamBuffCard />
@@ -342,14 +342,16 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
                   startIcon={<FontAwesomeIcon icon={faCalculator} />}
                 >Generate</Button>
                 {/* <Tooltip title={<Typography></Typography>} placement="top" arrow> */}
-                <DropdownButton disabled={generatingBuilds || !characterKey} title={<span><b>{maxBuildsToShow}</b> {maxBuildsToShow === 1 ? "Build" : "Builds"}</span>}>
+                <DropdownButton disabled={generatingBuilds || !characterKey}
+                  title={<span><b>{maxBuildsToShow}</b> {maxBuildsToShow === 1 ? "Build" : "Builds"}</span>}>
                   <MenuItem>
                     <Typography variant="caption" color="info.main">
                       Decreasing the number of generated build will decrease build calculation time for large number of builds.
                     </Typography>
                   </MenuItem>
                   <Divider />
-                  {maxBuildsToShowList.map(v => <MenuItem key={v} onClick={() => buildSettingsDispatch({ maxBuildsToShow: v })}>{v} {v === 1 ? "Build" : "Builds"}</MenuItem>)}
+                  {maxBuildsToShowList.map(v => <MenuItem key={v}
+                    onClick={() => buildSettingsDispatch({ maxBuildsToShow: v })}>{v} {v === 1 ? "Build" : "Builds"}</MenuItem>)}
                 </DropdownButton>
                 {/* </Tooltip> */}
                 <Button
@@ -369,7 +371,12 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
               </ButtonGroup>
             </Grid>
             <Grid item>
-              {statsDisplayKeys && sheets && initialStats && <OptimizationTargetSelector {...{ optimizationTarget, setTarget: target => buildSettingsDispatch({ optimizationTarget: target }), initialStats, sheets, statsDisplayKeys, disabled: !!generatingBuilds }} />}
+              {statsDisplayKeys && sheets && initialStats && <OptimizationTargetSelector
+                optimizationTarget={optimizationTarget}
+                setTarget={target => buildSettingsDispatch({ optimizationTarget: target })}
+                disabled={!!generatingBuilds}
+                sheets={sheets} initialStats={initialStats} statsDisplayKeys={statsDisplayKeys}
+              />}
             </Grid>
           </Grid>
 
@@ -392,7 +399,8 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
       <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={600} />}>
         {/* Build List */}
         {buildStats?.map((build, index) =>
-          sheets && <ArtifactBuildDisplayItem sheets={sheets} build={build} characterKey={characterKey as CharacterKey} index={index} key={Object.values(build.equippedArtifacts ?? {}).join()} statsDisplayKeys={statsDisplayKeys} onClick={() => setmodalBuildIndex(index)} />
+          sheets && <ArtifactBuildDisplayItem sheets={sheets} build={build} characterKey={characterKey as CharacterKey} index={index} key={Object.values(build.equippedArtifacts ?? {}).join()}
+            statsDisplayKeys={statsDisplayKeys} onClick={() => setmodalBuildIndex(index)} disabled={!!generatingBuilds} />
         )}
       </Suspense>
     </Box>

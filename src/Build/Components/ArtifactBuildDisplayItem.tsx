@@ -15,10 +15,11 @@ type ArtifactBuildDisplayItemProps = {
   characterKey: CharacterKey,
   build: ICalculatedStats,
   statsDisplayKeys: any,
-  onClick: () => void
+  onClick: () => void,
+  disabled?: boolean
 }
 //for displaying each artifact build
-export default function ArtifactBuildDisplayItem({ sheets, sheets: { artifactSheets }, index, characterKey, build, statsDisplayKeys, onClick }: ArtifactBuildDisplayItemProps) {
+export default function ArtifactBuildDisplayItem({ sheets, sheets: { artifactSheets }, index, characterKey, build, statsDisplayKeys, onClick, disabled }: ArtifactBuildDisplayItemProps) {
   const database = useContext(DatabaseContext)
   const character = database._getChar(characterKey)
   if (!character) return null
@@ -26,7 +27,7 @@ export default function ArtifactBuildDisplayItem({ sheets, sheets: { artifactShe
   const currentlyEquipped = allSlotKeys.every(slotKey => equippedArtifacts[slotKey] === build.equippedArtifacts?.[slotKey])
   return <CardLight>
     <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={600} />}>
-      <CardActionArea onClick={onClick}>
+      <CardActionArea onClick={onClick} disabled={disabled}>
         <CardContent>
           <Grid container spacing={1} sx={{ pb: 1 }}>
             <Grid item>
