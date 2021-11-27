@@ -28,7 +28,7 @@ import { BasicStats } from '../../../Types/stats'
 const tr = (strKey: string) => <Translate ns="char_SangonomiyaKokomi_gen" key18={strKey} />
 const charTr = (strKey: string) => <Translate ns="char_SangonomiyaKokomi" key18={strKey} />
 function burstOn(stats) {
-  const [num,] = stats.conditionalValues?.character?.SangonomiyaKokomi?.b ?? []
+  const [num,] = stats.conditionalValues?.character?.SangonomiyaKokomi?.q ?? []
   if (!num) return false
   return true
 }

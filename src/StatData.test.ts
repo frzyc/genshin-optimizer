@@ -9,7 +9,10 @@ describe(`Testing StatData`, () => {
         teamStats: [null, null, null],
         characterDEF: 10,
         def_: 100,
-        def: 15
+        def: 15,
+        partyAllModifiers: {},
+        partyOnlyModifiers: {},
+        partyActiveModifiers: {},
       }, dependencyKeys = ["characterDEF", "def_", "def", "finalDEF"]
       const { initialStats, formula } = PreprocessFormulas(dependencyKeys, stat as any)
       formula(initialStats)

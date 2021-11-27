@@ -2,7 +2,7 @@ import Formula from "./Formula"
 import { Formulas, StatData } from "./StatData"
 import { GetDependencies } from "./StatDependency"
 import { ICalculatedStats, Modifier } from "./Types/stats"
-import { mergeCalculatedStats, mergeStats } from "./Util/StatUtil"
+import { mergeCalculatedStats, mergeModifiers, mergeStats } from "./Util/StatUtil"
 
 export default function finalStatProcess(stats): ICalculatedStats {
   let dependencies = GetDependencies(stats, stats?.modifiers)
@@ -19,7 +19,7 @@ function addPreModValues(stats: ICalculatedStats, mod: Modifier) {
   })
 }
 
-function ModStatsFormula(stats: ICalculatedStats, mods: Modifier, targets: (s: ICalculatedStats) => (ICalculatedStats | null)[], context: "partyAll" | "partyOnly" | "partyActive") {
+function modStatsFormula(stats: ICalculatedStats, mods: Modifier, targets: (s: ICalculatedStats) => (ICalculatedStats | null)[], context: "partyAll" | "partyOnly" | "partyActive") {
   if (!mods || !Object.keys(mods).length) return () => null
   const modStatsFunc = Formula.computeModifier(stats, mods)
   return (s: ICalculatedStats) => {
@@ -32,7 +32,11 @@ function ModStatsFormula(stats: ICalculatedStats, mods: Modifier, targets: (s: I
     })
   }
 }
-
+function relevantMod(dependencyKeys: string[], modifiers: Modifier) {
+  return Object.fromEntries(Object.entries(modifiers)
+    .filter(([key]) => dependencyKeys.includes(key)) // Keep only relevant keys
+  )
+}
 type KeyedFormula = [string, (s: ICalculatedStats) => number]
 //assume all the dependency for the modifiers are part of the dependencyKeys as well
 export function PreprocessFormulas(dependencyKeys: string[], stats: ICalculatedStats) {
@@ -59,7 +63,12 @@ export function PreprocessFormulas(dependencyKeys: string[], stats: ICalculatedS
     const beforePreprocess = [...stats.teamStats]
     const preprocessed: [ICalculatedStats | null, undefined | ((s: ICalculatedStats) => void)][] = stats.teamStats.map(t => {
       if (!t) return [null, undefined]
-      const { initialStats: tStats, formula: tFormula } = PreprocessFormulas(dependencyKeys, t)
+      const tPartyModifiers = {} as Modifier
+      mergeModifiers(tPartyModifiers, t.partyAllModifiers)
+      mergeModifiers(tPartyModifiers, t.partyOnlyModifiers)
+      mergeModifiers(tPartyModifiers, t.partyActiveModifiers)
+      const tprocessKeys = GetDependencies(stats, tPartyModifiers, dependencyKeys)
+      const { initialStats: tStats, formula: tFormula } = PreprocessFormulas(tprocessKeys, t)
       return [tStats, tFormula]
     })
     initialStats.teamStats = preprocessed.map(([stats]) => stats) as ICalculatedStats['teamStats']
@@ -78,12 +87,10 @@ export function PreprocessFormulas(dependencyKeys: string[], stats: ICalculatedS
     }
   }
 
-  const modFormula = Formula.computeModifier(stats, Object.fromEntries(Object.entries(modifiers)
-    .filter(([key]) => dependencyKeys.includes(key)) // Keep only relevant keys
-  ))
-  const partyAllFormula = ModStatsFormula(stats, stats.partyAllModifiers, (s) => [s, ...s.teamStats], "partyAll")
-  const partyOnlyFormula = ModStatsFormula(stats, stats.partyOnlyModifiers, (s) => s.teamStats, "partyOnly")
-  const partyActiveFormula = ModStatsFormula(stats, stats.partyActiveModifiers, (s) => [s], "partyActive")
+  const modFormula = Formula.computeModifier(stats, relevantMod(dependencyKeys, modifiers))
+  const partyAllFormula = modStatsFormula(stats, relevantMod(dependencyKeys, stats.partyAllModifiers), (s) => [s, ...s.teamStats], "partyAll")
+  const partyOnlyFormula = modStatsFormula(stats, relevantMod(dependencyKeys, stats.partyOnlyModifiers), (s) => s.teamStats, "partyOnly")
+  const partyActiveFormula = modStatsFormula(stats, relevantMod(dependencyKeys, stats.partyActiveModifiers), (s) => [s], "partyActive")
 
   return {
     initialStats: initialStats as ICalculatedStats,
