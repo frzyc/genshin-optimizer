@@ -20,7 +20,7 @@ type ConditionalDisplayProps = {
 
 export default function ConditionalDisplay({ conditional, stats, hideHeader = false, hideDesc = false, onChange, skipConditionalEquipmentCheck = false }: ConditionalDisplayProps) {
   const canShow = useMemo(() => Conditional.canShow(conditional, stats, skipConditionalEquipmentCheck), [conditional, stats, skipConditionalEquipmentCheck])
-  const { stats: conditionalStats = {}, fields: conditionalFields = [], conditionalValue } = useMemo(() => canShow ? Conditional.resolve(conditional, stats, undefined) : { stats: {}, fields: [], conditionalValue: [0] as IConditionalValue }, [canShow, conditional, stats])
+  const { stats: conditionalStats = {}, fields: conditionalFields = [], conditionalValue } = useMemo(() => canShow ? Conditional.resolve(conditional, stats) : { stats: {}, fields: [], conditionalValue: [0] as IConditionalValue }, [canShow, conditional, stats])
   const displayFields = useMemo(() => canShow ? [...statsToFields(conditionalStats, stats), ...conditionalFields] : [], [canShow, conditionalStats, stats, conditionalFields])
   const setConditional = useCallback(condV => {
     const [conditionalNum = 0] = condV

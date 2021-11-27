@@ -176,7 +176,7 @@ export default class Character {
     const { characterKey, characterEle: elementKey, conditionalValues = {} } = initialStats
     // Handle maxStack:0 conditionals. This is mainly skill boosts.
     Object.entries(Conditional.conditionals.character?.[characterKey === "Traveler" ? `Traveler_${elementKey}` : characterKey] ?? {}).map(([cKey, conditional]) =>
-      !("states" in conditional) && conditional.maxStack === 0 && Conditional.canShow(conditional, initialStats) && mergeCalculatedStats(initialStats, Conditional.resolve(conditional, initialStats, []).stats))
+      !("states" in conditional) && conditional.maxStack === 0 && Conditional.canShow(conditional, initialStats) && mergeCalculatedStats(initialStats, Conditional.resolve(conditional, initialStats).stats))
     // Add levelBoosts, from Talent stats.
     for (const key in initialStats.tlvl)
       initialStats.tlvl[key] += initialStats[`${key}Boost`] ?? 0
@@ -229,7 +229,7 @@ export default class Character {
     const parseSection = (section: DocumentSection, key: string) => {
       //conditional
       if (section.conditional && Conditional.canShow(section.conditional, stats)) {
-        const { fields } = Conditional.resolve(section.conditional, stats, null)
+        const { fields } = Conditional.resolve(section.conditional, stats)
         fields && addFormula(fields, key)
       }
       //fields

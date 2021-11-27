@@ -14,7 +14,7 @@ import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from "../../../../Build/Build"
 import { TalentSheet } from '../../../../Types/character';
 import { Translate } from '../../../../Components/Translate'
-import { normalDocSection, plungeDocSection, talentTemplate } from '../../SheetUtil'
+import { conditionalHeader, normalDocSection, plungeDocSection, talentTemplate } from '../../SheetUtil'
 const tr = (strKey: string) => <Translate ns="char_Traveler_gen" key18={`geo.${strKey}`} />
 const talentSheet: TalentSheet = {
   formula,
@@ -106,6 +106,9 @@ const talentSheet: TalentSheet = {
         conditional: { // InvincibleStonewall
           key: "c1",
           canShow: stats => stats.constellation >= 1,
+          partyBuff: "partyActive",
+          header: conditionalHeader("constellation1", tr, c1),
+          description: tr("constellation1.description"),
           name: <span>Party members within the radius of <b>Wake of Earth</b>.</span>,
           stats: { critRate_: 10 },
           fields: [{

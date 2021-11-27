@@ -6,7 +6,7 @@ import IConditional, { IConditionalValue, IConditionalValues } from "../Types/IC
 import { IFieldDisplay } from "../Types/IFieldDisplay";
 import { BonusStats, ICalculatedStats } from "../Types/stats";
 import { fieldProcessing } from "../Util/FieldUtil";
-import { crawlObject, deepClone, layeredAssignment, objMultiplication, objPathValue } from "../Util/Util";
+import { crawlObject, deepClone, evalIfFunc, layeredAssignment, objMultiplication, objPathValue } from "../Util/Util";
 import { weaponImport } from "../Weapon/WeaponSheet";
 
 const processed = Promise.all([
@@ -49,27 +49,35 @@ export default class Conditional {
     }
     return conditional?.canShow?.(stats) ?? false
   }
-  static resolve = (conditional, stats, conditionalValue, defVal = { stats: {} as BonusStats, fields: [] as IFieldDisplay[], conditionalValue: [0] as IConditionalValue }) => {
-    if (conditional.maxStack === 0) conditionalValue = [1]
-    else if (!conditionalValue) conditionalValue = objPathValue(stats.conditionalValues, conditional.keys)
-    const [stacks, stateKey] = (conditionalValue ?? [])
-    if (!stacks) return defVal
-    if (stateKey) {//complex format
-      if (conditional.states?.[stateKey]) conditional = conditional.states?.[stateKey]
-      else return defVal
+  static resolve = (conditional: IConditional, stats: ICalculatedStats, conditionalValue?: IConditionalValue) => {
+    if ("maxStack" in conditional && conditional.maxStack === 0) conditionalValue = [1]
+    else if (!conditionalValue) conditionalValue = [...(objPathValue(stats.conditionalValues, conditional.keys!) ?? [0]) as IConditionalValue]
+    const retVal = { stats: {} as BonusStats, fields: [] as IFieldDisplay[], conditionalValue }
+    const [stacks, stateKey] = retVal.conditionalValue
+    if (!stacks) return retVal
+    if ("states" in conditional) {//complex format
+      if (!stateKey) return retVal
+      if (conditional.states?.[stateKey]) {
+        const condState = conditional.states[stateKey]
+        retVal.stats = evalIfFunc(condState.stats ?? {}, stats)
+        if (stacks > 1 && Object.keys(retVal.stats).length)
+          retVal.stats = objMultiplication(deepClone(retVal.stats), stacks)
+        if (conditional.partyBuff) {
+          retVal.stats = { [conditional.partyBuff]: retVal.stats }
+        }
+        if (condState.fields)
+          retVal.fields = condState.fields
+      } else return retVal
+    } else {//Simple format
+      retVal.stats = evalIfFunc(conditional?.stats ?? {}, stats)
+      if (stacks > 1 && Object.keys(retVal.stats).length)
+        retVal.stats = objMultiplication(deepClone(retVal.stats), stacks)
+      if (conditional.partyBuff)
+        retVal.stats = { [conditional.partyBuff]: retVal.stats }
+      if (conditional.fields)
+        retVal.fields = conditional.fields
     }
-    let conditionalStats = conditional.stats
-    if (typeof conditionalStats === "function") conditionalStats = conditionalStats(stats)
-    if (conditionalStats && Object.keys(conditionalStats).length) {
-      const stats = objMultiplication(deepClone(conditionalStats), stacks)
-      if (conditional.partyBuff) {
-        defVal.stats = { [conditional.partyBuff]: stats }
-      } else
-        defVal.stats = stats
-    }
-    if (conditional.fields) defVal.fields = conditional.fields
-    defVal.conditionalValue = conditionalValue
-    return defVal
+    return retVal
   }
   static get = (keys) => objPathValue(Conditional.conditionals, keys) as IConditional | undefined
 

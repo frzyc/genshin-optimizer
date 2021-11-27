@@ -27,31 +27,36 @@ const weapon: IWeaponSheet = {
         an: {
           name: <ColorText color="anemo">{sgt("reaction.swirl")}</ColorText>,
           stats: stats => ({
-            anemo_dmg_: refinementVals[stats.weapon.refineIndex]
+            anemo_dmg_: refinementVals[stats.weapon.refineIndex],
+            electro_dmg_: refinementVals[stats.weapon.refineIndex]
           })
         },
         ge: {
           name: <ColorText color="geo">{sgt("reaction.crystallize")}</ColorText>,
           stats: stats => ({
-            geo_dmg_: refinementVals[stats.weapon.refineIndex]
+            geo_dmg_: refinementVals[stats.weapon.refineIndex],
+            electro_dmg_: refinementVals[stats.weapon.refineIndex]
           })
         },
         py: {
           name: <ColorText color="pyro">{sgt("reaction.overloaded")}</ColorText>,
           stats: stats => ({
-            pyro_dmg_: refinementVals[stats.weapon.refineIndex]
+            pyro_dmg_: refinementVals[stats.weapon.refineIndex],
+            electro_dmg_: refinementVals[stats.weapon.refineIndex]
           })
         },
         hy: {
           name: <ColorText color="hydro">{sgt("reaction.electrocharged")}</ColorText>,
           stats: stats => ({
-            hydro_dmg_: refinementVals[stats.weapon.refineIndex]
+            hydro_dmg_: refinementVals[stats.weapon.refineIndex],
+            electro_dmg_: refinementVals[stats.weapon.refineIndex]
           })
         },
         cr: {
           name: <ColorText color="cryo">{sgt("reaction.Superconduct")}</ColorText>,
           stats: stats => ({
-            cryo_dmg_: refinementVals[stats.weapon.refineIndex]
+            cryo_dmg_: refinementVals[stats.weapon.refineIndex],
+            electro_dmg_: refinementVals[stats.weapon.refineIndex]
           })
         },
       }

@@ -125,8 +125,8 @@ function skillDMG(percent: number, stats: BasicStats): FormulaItem {
     multi * s.finalATK * (hitModeMultiKey ? s[hitModeMultiKey] : 1) * s.electro_skill_hit_base_multi * enemyLevelMultiC2(s) * s.electro_enemyRes_multi
     , ["finalATK", ...(hitModeMultiKey ? [hitModeMultiKey] : []), "electro_skill_hit_base_multi", "characterLevel", "enemyLevel", "enemyDEFRed_", "electro_enemyRes_multi"]]
 }
-export function getResolve(stats) {
-  const [num, condEleKey] = stats.conditionalValues?.character?.RaidenShogun?.sheet?.talent?.res ?? []
+export function getResolve(stats: BasicStats) {
+  const [num, condEleKey] = stats.conditionalValues?.character?.RaidenShogun?.q ?? []
   if (num && condEleKey) return parseInt(condEleKey)
   return 0
 }
