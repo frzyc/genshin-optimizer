@@ -174,17 +174,25 @@ export default class Character {
   }
   static calculateBuildWithConditionalsWithoutArtifacts(initialStats: ICalculatedStats, database: ArtCharDatabase, sheets: Sheets) {
     const { characterKey, characterEle: elementKey, conditionalValues = {} } = initialStats
-    // Handle maxStack:0 conditionals. This is mainly skill boosts.
+    // Handle maxStack:0 conditionals on the character. This is mainly skill boosts.
     Object.entries(Conditional.conditionals.character?.[characterKey === "Traveler" ? `Traveler_${elementKey}` : characterKey] ?? {}).map(([cKey, conditional]) =>
-      !("states" in conditional) && conditional.maxStack === 0 && Conditional.canShow(conditional, initialStats) && mergeCalculatedStats(initialStats, Conditional.resolve(conditional, initialStats).stats))
+      !("states" in conditional) && conditional.maxStack === 0 && Conditional.canShow(conditional, initialStats)
+      && mergeCalculatedStats(initialStats, Conditional.resolve(conditional, initialStats).stats))
     // Add levelBoosts, from Talent stats.
     for (const key in initialStats.tlvl)
       initialStats.tlvl[key] += initialStats[`${key}Boost`] ?? 0
+
+    // Handle resonance autoconditionals on the context of the character
+    initialStats.activeCharacter && Object.entries(Conditional.conditionals.resonance ?? {}).map(([cKey, conditional]) =>
+      !("states" in conditional) && conditional.maxStack === 0 && Conditional.canShow(conditional, initialStats)
+      && mergeCalculatedStats(initialStats, Conditional.resolve(conditional, initialStats).stats))
 
     // Handle conditionals.
     Conditional.parseConditionalValues(conditionalValues, (conditional, conditionalValue, keys) => {
       // Ignore artifact conditionals.
       if (conditional.keys![0] === "artifact") return
+      //Ignore resonance on non-active character
+      if (conditional.keys![0] === "resonance" && !initialStats.activeCharacter) return
       if (!Conditional.canShow(conditional, initialStats)) return
       const { stats: condStats } = Conditional.resolve(conditional, initialStats, conditionalValue)
       mergeCalculatedStats(initialStats, condStats)

@@ -153,7 +153,7 @@ const char: ICharacterSheet = {
             description: tr("passive2.description"),
             name: <Translate ns="char_Rosaria" key18="a4.name" />,
             stats: {
-              modifiers: { burst_dmg_: [path.passive2.critConv()] },
+              modifiers: { critRate_: [path.passive2.critConv()] },
             },
             fields: [{
               text: <Translate ns="char_Rosaria" key18="a4.text" />,
