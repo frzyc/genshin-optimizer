@@ -1,34 +1,34 @@
 {
-  "name": "Xingqiu",
-  "title": "Juvenile Galant",
-  "description": "A young man carrying a longsword who is frequently seen at book booths. He has a chivalrous heart and yearns for justice and fairness for all.",
-  "constellationName": "Fabulae Textile",
+  "name": "行秋",
+  "title": "少年春衫薄",
+  "description": "经常能在书摊看到的少年人。手执长剑，胸中常怀侠义之心。",
+  "constellationName": "锦织座",
   "auto": {
-    "name": "Guhua Style",
+    "name": "古华剑法",
     "fields": {
       "normal": {
-        "0": "<strong>Normal Attack</strong>",
-        "1": "Perform up to 5 rapid strikes."
+        "0": "<strong>普通攻击</strong>",
+        "1": "进行至多五段的连续剑击。"
       },
       "charged": {
-        "0": "<strong>Charged Attack</strong>",
-        "1": "Consumes a certain amount of Stamina to unleash 2 rapid sword strikes."
+        "0": "<strong>重击</strong>",
+        "1": "消耗一定体力，瞬间向前方挥出两剑。"
       },
       "plunging": {
-        "0": "<strong>Plunging Attack</strong>",
-        "1": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact."
+        "0": "<strong>下落攻击</strong>",
+        "1": "从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成范围伤害。"
       }
     },
     "skillParams": {
-      "0": "1-Hit DMG",
-      "1": "2-Hit DMG",
-      "2": "3-Hit DMG",
-      "3": "4-Hit DMG",
-      "4": "5-Hit DMG",
-      "5": "Charged Attack DMG",
-      "6": "Charged Attack Stamina Cost",
-      "7": "Plunge DMG",
-      "8": "Low/High Plunge DMG",
+      "0": "一段伤害",
+      "1": "二段伤害",
+      "2": "三段伤害",
+      "3": "四段伤害",
+      "4": "五段伤害",
+      "5": "重击伤害",
+      "6": "重击体力消耗",
+      "7": "下坠期间伤害",
+      "8": "低空/高空坠地冲击伤害",
       "9": "",
       "10": "",
       "11": "",
@@ -39,27 +39,27 @@
     }
   },
   "skill": {
-    "name": "Guhua Sword: Fatal Rainscreen",
+    "name": "古华剑·画雨笼山",
     "description": {
-      "0": "Xingqiu performs twin strikes with his sword, dealing <hydro>Hydro DMG</hydro>. At the same time, this ability creates the maximum number of Rain Swords, which will orbit your active character.",
-      "1": "The Rain Swords have the following properties:",
+      "0": "使出连续两段的剑技，对前方的敌人造成<hydro>水元素伤害</hydro>。同时，生成最大数量的雨帘剑围绕在当前场上自己的角色身边。",
+      "1": "具有如下特性：",
       "2": [
-        "When a character takes DMG, the Rain Sword will shatter, reducing the amount of DMG taken.",
-        "Increases the character's resistance to interruption."
+        "角色受到伤害时会破碎，降低受到的伤害；",
+        "提高角色的抗打断能力。"
       ],
-      "3": "20% of Xingqiu's <hydro>Hydro DMG Bonus</hydro> will be converted to additional DMG Reduction for the Rain Swords.",
+      "3": "行秋<hydro>水元素伤害加成</hydro>的20%将转换为雨帘剑的额外伤害减免。",
       "4": "<br/>",
-      "5": "The maximum amount of additional DMG Reduction that can be gained this way is 24%.",
-      "6": "The initial maximum number of Rain Swords is 3.",
-      "7": "Using this ability applies the <hydro>Wet</hydro> status onto the character.",
+      "5": "最多通过这种方式获得24%额外伤害减免。",
+      "6": "初始雨帘剑的最大数量为3柄。",
+      "7": "施放的瞬间，为角色施加<hydro>潮湿</hydro>状态。",
       "8": "<br/>",
-      "9": "<i>\"Easier to slay a rain dragon than to sever the rain.\"</i>"
+      "9": "<i>「蛟龙易斩，雨线难画」。</i>"
     },
     "skillParams": {
-      "0": "Skill DMG",
-      "1": "Damage Reduction Ratio",
-      "2": "Duration",
-      "3": "CD",
+      "0": "技能伤害",
+      "1": "减伤比例",
+      "2": "持续时间",
+      "3": "冷却时间",
       "4": "",
       "5": "",
       "6": "",
@@ -75,23 +75,23 @@
     }
   },
   "burst": {
-    "name": "Guhua Sword: Raincutter",
+    "name": "古华剑·裁雨留虹",
     "description": {
-      "0": "Initiate Rainbow Bladework and fight using an illusory sword rain, while creating the maximum number of Rain Swords.",
+      "0": "展开虹剑势，驾御幻影剑雨战斗，并生成最大数量的雨帘剑。",
       "1": "<br/>",
-      "2": "<strong>Rainbow Bladework</strong>",
+      "2": "<strong>虹剑势</strong>",
       "3": [
-        "Your active character's Normal Attacks will trigger consecutive sword rain attacks, dealing <hydro>Hydro DMG</hydro>.",
-        "Rain Swords will remain at the maximum number throughout the ability's duration."
+        "当前场上自己的角色进行普通攻击时，会产生剑雨连携攻击，造成<hydro>水元素伤害</hydro>；",
+        "雨帘剑的数量将始终维持在最大数量。"
       ],
       "4": "<br/>",
-      "5": "<i>The \"Way of the Rain Cutter\" is one of the esoteric secret techniques of the Guhua Sect.</i>"
+      "5": "<i>「裁雨法」不传绝学，古华镇派秘诀之一。</i>"
     },
     "skillParams": {
-      "0": "Sword Rain DMG",
-      "1": "Duration",
-      "2": "CD",
-      "3": "Energy Cost",
+      "0": "剑雨伤害",
+      "1": "持续时间",
+      "2": "冷却时间",
+      "3": "元素能量",
       "4": "",
       "5": "",
       "6": "",
@@ -107,60 +107,60 @@
     }
   },
   "passive1": {
-    "name": "Hydropathic",
+    "name": "生水要诀",
     "description": {
-      "0": "When a Rain Sword is shattered or when its duration expires, it regenerates the current character's HP based on 6% of Xingqiu's Max HP."
+      "0": "雨帘剑受击破碎时或持续时间结束时，基于行秋最大生命值的6%，恢复当前角色的生命值。"
     }
   },
   "passive2": {
-    "name": "Blades Amidst Raindrops",
+    "name": "虚实工笔",
     "description": {
-      "0": "Xingqiu gains a 20% <hydro>Hydro DMG Bonus</hydro>."
+      "0": "行秋获得20%<hydro>水元素伤害加成</hydro>。"
     }
   },
   "passive3": {
-    "name": "Flash of Genius",
+    "name": "灵光乍现",
     "description": {
-      "0": "When Xingqiu crafts Character Talent Materials, he has a 25% chance to refund a portion of the crafting materials used."
+      "0": "合成角色天赋素材时，有25%概率返还部分合成材料。"
     }
   },
   "constellation1": {
-    "name": "The Scent Remained",
+    "name": "重帘留香",
     "description": {
-      "0": "Increases the maximum number of Rain Swords by 1."
+      "0": "雨帘剑的最大数量增加1柄。"
     }
   },
   "constellation2": {
-    "name": "Rainbow Upon the Azure Sky",
+    "name": "天青现虹",
     "description": {
-      "0": "Extends the duration of <strong>Guhua Sword: Raincutter</strong> by 3s.",
-      "1": "Decreases the <hydro>Hydro RES</hydro> of opponents hit by sword rain attacks by 15% for 4s."
+      "0": "<strong>古华剑·裁雨留虹</strong>的持续时间延长3秒；",
+      "1": "此外，受到剑雨攻击的敌人，<hydro>水元素抗性</hydro>降低15%，持续4秒。"
     }
   },
   "constellation3": {
-    "name": "Weaver of Verses",
+    "name": "织诗成锦",
     "description": {
-      "0": "Increases the Level of <strong>Guhua Sword: Raincutter</strong> by 3.",
-      "1": "Maximum upgrade level is 15."
+      "0": "<strong>古华剑·裁雨留虹</strong>的技能等级提高3级。",
+      "1": "至多提升至15级。"
     }
   },
   "constellation4": {
-    "name": "Evilsoother",
+    "name": "孤舟斩蛟",
     "description": {
-      "0": "Throughout the duration of <strong>Guhua Sword: Raincutter</strong>, the DMG dealt by <strong>Guhua Sword: Fatal Rainscreen</strong> is increased by 50%."
+      "0": "在<strong>古华剑·裁雨留虹</strong>效果持续期间，<strong>古华剑·画雨笼山</strong>造成的伤害提升50%。"
     }
   },
   "constellation5": {
-    "name": "Embrace of Rain",
+    "name": "雨深闭门",
     "description": {
-      "0": "Increases the Level of <strong>Guhua Sword: Fatal Rainscreen</strong> by 3.",
-      "1": "Maximum upgrade level is 15."
+      "0": "<strong>古华剑·画雨笼山</strong>的技能等级提高3级。",
+      "1": "至多提升至15级。"
     }
   },
   "constellation6": {
-    "name": "Hence, Call Them My Own Verses",
+    "name": "万文集此",
     "description": {
-      "0": "Activating 2 of <strong>Guhua Sword: Raincutter</strong>'s sword rain attacks greatly enhances the third sword rain attack. On hit, the third sword rain attack also regenerates 3 Energy for Xingqiu."
+      "0": "<strong>古华剑·裁雨留虹</strong>每发动2次剑雨攻击，就大幅增强下一次剑雨攻击，并在命中敌人时为行秋恢复3点元素能量。"
     }
   }
 }

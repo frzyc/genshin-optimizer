@@ -1,29 +1,29 @@
 {
-  "setName": "Viridescent Venerer",
+  "setName": "翠绿之影",
   "setEffects": {
-    "2": "Anemo DMG Bonus +15%",
-    "4": "Increases Swirl DMG by 60%. Decreases opponent's Elemental RES to the element infused in the Swirl by 40% for 10s."
+    "2": "获得15%风元素伤害加成。",
+    "4": "扩散反应造成的伤害提升60%。根据扩散的元素类型，降低受到影响的敌人40%的对应元素抗性，持续10秒。"
   },
   "pieces": {
     "flower": {
-      "name": "In Remembrance of Viridescent Fields",
-      "desc": "A wild flower that was once a ubiquitous sight in its homeland. It was picked by a hunter who wore it on their chest."
+      "name": "野花记忆的绿野",
+      "desc": "曾经遍布某地的野花。离开了大地，被猎人佩在胸前。"
     },
     "plume": {
-      "name": "Viridescent Arrow Feather",
-      "desc": "The fletching of an arrow that once pierced right through its prey, but somehow still remains spotless."
+      "name": "猎人青翠的箭羽",
+      "desc": "曾经一瞬贯穿猎物的箭矢的尾羽。如今依旧平整光洁。"
     },
     "sands": {
-      "name": "Viridescent Venerer's Determination",
-      "desc": "A wondrous instrument that a hunter once wore. It forever points towards their prey."
+      "name": "翠绿猎人的笃定",
+      "desc": "猎人曾经随身携带的奇妙仪器，永远指向自己的猎物。"
     },
     "goblet": {
-      "name": "Viridescent Venerer's Vessel",
-      "desc": "A water pouch used by the Viridescent Venerer. Its capacity is much greater than one would expect."
+      "name": "翠绿猎人的容器",
+      "desc": "绿野猎人曾用过的水囊，里面的空间远比想象的更大。"
     },
     "circlet": {
-      "name": "Viridescent Venerer's Diadem",
-      "desc": "A proud crown that once belonged to the Viridescent Venerer. It is as lush and green as the breezes of the wild."
+      "name": "翠绿的猎人之冠",
+      "desc": "曾属于绿野猎人的骄傲头冠，如同原野之风一般青翠。"
     }
   }
 }

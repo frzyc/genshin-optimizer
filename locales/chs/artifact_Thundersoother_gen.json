@@ -1,29 +1,29 @@
 {
-  "setName": "Thundersoother",
+  "setName": "平息鸣雷的尊者",
   "setEffects": {
-    "2": "Electro RES increased by 40%.",
-    "4": "Increases DMG against opponents affected by Electro by 35%."
+    "2": "雷元素抗性提高40%。",
+    "4": "对处于雷元素影响下的敌人造成的伤害提升35%。"
   },
   "pieces": {
     "flower": {
-      "name": "Thundersoother's Heart",
-      "desc": "A flower that blooms even amidst ferocious thunder and lightning. To this day, it still grants courage to travelers in thunderstorms."
+      "name": "平雷之心",
+      "desc": "仅于雷霆之怒中傲然盛放的花朵，至今仍能赐予行走在雷雨中的游人勇气。"
     },
     "plume": {
-      "name": "Thundersoother's Plume",
-      "desc": "The feather of a predatory bird that soars through lightning storms. It was said to have been adopted as an insignia by the legendary hero who pacified thunder and lightning."
+      "name": "平雷之羽",
+      "desc": "在传说中，挺身平息了雷电的勇武英雄的徽章，是翱翔于狂雷的猛禽之羽。"
     },
     "sands": {
-      "name": "Hour of Soothing Thunder",
-      "desc": "A timepiece kept by the hero who conquered thunder and lightning. The tiny shards of Electro crystal within flow back and forth with the passing of time."
+      "name": "平雷之刻",
+      "desc": "镇服雷电的勇士持有的时计，其中的雷之碎晶随流逝如雷如电的时间泻落。"
     },
     "goblet": {
-      "name": "Thundersoother's Goblet",
-      "desc": "The wine goblet from which the Thundersoother, who defeated the Beast of Thunder, once drank violet lightning."
+      "name": "平雷之器",
+      "desc": "平雷勇士的酒盏，据说平息了雷之魔兽的英雄曾用这尊酒盏满盛紫电为饮。"
     },
     "circlet": {
-      "name": "Thundersoother's Diadem",
-      "desc": "The crown given to the Thundersoother for defeating the Beast of Thunder that had been wreaking havoc upon the land."
+      "name": "平雷之冠",
+      "desc": "平雷勇士的冠冕，是古老的英雄击败了危害大地的雷之魔兽而获得的华冠。"
     }
   }
 }

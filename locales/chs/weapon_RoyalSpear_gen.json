@@ -1,12 +1,12 @@
 {
-  "name": "Royal Spear",
-  "description": "This polearm was once cherished by a member of the old nobility that governed Mondstadt long ago. Although it has never seen the light of day, it is still incomparably sharp.",
-  "passiveName": "Focus",
+  "name": "宗室猎枪",
+  "description": "某位曾支配蒙德的旧日贵族，曾经珍爱的长枪。过去不曾见过天日，但如今依然尖锐无比。",
+  "passiveName": "专注",
   "passiveDescription": {
-    "0": "Upon damaging an opponent, increases CRIT Rate by <cryo>8%</cryo>. Max 5 stacks. A CRIT Hit removes all stacks.",
-    "1": "Upon damaging an opponent, increases CRIT Rate by <cryo>10%</cryo>. Max 5 stacks. A CRIT Hit removes all stacks.",
-    "2": "Upon damaging an opponent, increases CRIT Rate by <cryo>12%</cryo>. Max 5 stacks. A CRIT Hit removes all stacks.",
-    "3": "Upon damaging an opponent, increases CRIT Rate by <cryo>14%</cryo>. Max 5 stacks. A CRIT Hit removes all stacks.",
-    "4": "Upon damaging an opponent, increases CRIT Rate by <cryo>16%</cryo>. Max 5 stacks. A CRIT Hit removes all stacks."
+    "0": "攻击造成伤害时，暴击率提升<cryo>8%</cryo>，最多堆叠5次。攻击造成暴击后，移除已有的专注效果。",
+    "1": "攻击造成伤害时，暴击率提升<cryo>10%</cryo>，最多堆叠5次。攻击造成暴击后，移除已有的专注效果。",
+    "2": "攻击造成伤害时，暴击率提升<cryo>12%</cryo>，最多堆叠5次。攻击造成暴击后，移除已有的专注效果。",
+    "3": "攻击造成伤害时，暴击率提升<cryo>14%</cryo>，最多堆叠5次。攻击造成暴击后，移除已有的专注效果。",
+    "4": "攻击造成伤害时，暴击率提升<cryo>16%</cryo>，最多堆叠5次。攻击造成暴击后，移除已有的专注效果。"
   }
 }

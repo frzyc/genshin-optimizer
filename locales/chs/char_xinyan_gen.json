@@ -1,36 +1,36 @@
 {
-  "name": "Xinyan",
-  "title": "Blazing Riff",
-  "description": "Liyue's sole rock 'n' roll musician. She rebels against ossified prejudices using her music and passionate singing.",
-  "constellationName": "Fila Ignium",
+  "name": "辛焱",
+  "title": "燥热旋律",
+  "description": "璃月港唯一的摇滚乐手，以音乐和热情歌颂着对「成见」的反抗。",
+  "constellationName": "红檀四弦座",
   "auto": {
-    "name": "Dance on Fire",
+    "name": "炎舞",
     "fields": {
       "normal": {
-        "0": "<strong>Normal Attack</strong>",
-        "1": "Perform up to 4 consecutive strikes."
+        "0": "<strong>普通攻击</strong>",
+        "1": "进行至多四段的连续挥砍。"
       },
       "charged": {
-        "0": "<strong>Charged Attack</strong>",
-        "1": "Drains Stamina over time to perform continuous spinning attacks against all nearby opponents.",
-        "2": "At the end of the sequence, perform a more powerful slash. "
+        "0": "<strong>重击</strong>",
+        "1": "持续消耗体力，旋转大剑攻击周围的敌人。",
+        "2": "停止旋转时，会进行一次格外有力的挥砍。"
       },
       "plunging": {
-        "0": "<strong>Plunging Attack</strong>",
-        "1": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact."
+        "0": "<strong>下落攻击</strong>",
+        "1": "从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成范围伤害。"
       }
     },
     "skillParams": {
-      "0": "1-Hit DMG",
-      "1": "2-Hit DMG",
-      "2": "3-Hit DMG",
-      "3": "4-Hit DMG",
-      "4": "Charged Attack Spinning DMG",
-      "5": "Charged Attack Final DMG",
-      "6": "Charged Attack Stamina Cost",
-      "7": "Max Duration",
-      "8": "Plunge DMG",
-      "9": "Low/High Plunge DMG",
+      "0": "一段伤害",
+      "1": "二段伤害",
+      "2": "三段伤害",
+      "3": "四段伤害",
+      "4": "重击循环伤害",
+      "5": "重击终结伤害",
+      "6": "重击体力消耗",
+      "7": "最大持续时间",
+      "8": "下坠期间伤害",
+      "9": "低空/高空坠地冲击伤害",
       "10": "",
       "11": "",
       "12": "",
@@ -40,32 +40,32 @@
     }
   },
   "skill": {
-    "name": "Sweeping Fervor",
+    "name": "热情拂扫",
     "description": {
-      "0": "Xinyan brandishes her instrument, dealing <pyro>Pyro DMG</pyro> on nearby opponents, forming a shield made out of her audience's passion.",
-      "1": "The shield's DMG Absorption scales based on Xinyan's DEF and on the number of opponents hit.",
+      "0": "辛焱挥动乐器，对周围的敌人造成<pyro>火元素伤害</pyro>，并借由「观众」的「热情」，形成护盾。",
+      "1": "护盾的伤害吸收量受益于辛焱的防御力，并基于命中敌人的数目：",
       "2": [
-        "Hitting 0–1 opponents grants Shield Level 1: Ad Lib.",
-        "Hitting 2 opponents grants Shield Level 2: Lead-In.",
-        "Hitting 3 or more opponents grants Shield Level 3: Rave, which will also deal intermittent <pyro>Pyro DMG</pyro> to nearby opponents."
+        "未命中或命中一名敌人：一级护盾·散序节拍；",
+        "命中二名敌人：二级护盾·歌头节拍；",
+        "命中三名或更多敌人时，将产生三级护盾·舞遍节拍。除了吸收伤害，还会间歇性对周围的敌人造成<pyro>火元素伤害</pyro>。"
       ],
       "3": "<br/>",
-      "4": "The shield has the following special properties:",
+      "4": "护盾具有如下特性：",
       "5": [
-        "When unleashed, it infuses Xinyan with <pyro>Pyro</pyro>.",
-        "It has 250% DMG Absorption effectiveness against <pyro>Pyro DMG</pyro>."
+        "施放的瞬间，为辛焱施加<pyro>火元素附着</pyro>；",
+        "对<pyro>火元素伤害</pyro>有250%的吸收效果。"
       ],
       "6": "<br/>",
-      "7": "<i>Xinyan insists that these pyrotechnics are the apex of performative art, and that they are physical phenomena that have nothing to do with her Vision.</i>"
+      "7": "<i>辛焱坚称这些火花是演奏技术到极致时的表现，是物理现象，和神之眼无关。</i>"
     },
     "skillParams": {
-      "0": "Swing DMG",
-      "1": "Shield Level 1 DMG Absorption",
-      "2": "Shield Level 2 DMG Absorption",
-      "3": "Shield Level 3 DMG Absorption",
-      "4": "DoT",
-      "5": "Shield Duration",
-      "6": "CD",
+      "0": "挥舞伤害",
+      "1": "一级护盾吸收量",
+      "2": "二级护盾吸收量",
+      "3": "三级护盾吸收量",
+      "4": "持续伤害",
+      "5": "护盾持续时间",
+      "6": "冷却时间",
       "7": "",
       "8": "",
       "9": "",
@@ -78,19 +78,19 @@
     }
   },
   "burst": {
-    "name": "Riff Revolution",
+    "name": "叛逆刮弦",
     "description": {
-      "0": "Strumming rapidly, Xinyan launches nearby opponents and deals Physical DMG to them, hyping up the crowd.",
-      "1": "The sheer intensity of the atmosphere will cause explosions that deal <pyro>Pyro DMG</pyro> to nearby opponents.",
+      "0": "迅速扫弦引发音波，击退敌人，对周围的敌人造成物理伤害，激起「舞台」上的氛围。",
+      "1": "因为氛围实在太过炙烈，所以会引起烈焰，对周围的敌人持续造成<pyro>火元素伤害</pyro>。",
       "2": "<br/>",
-      "3": "<i>Xinyan used to end all her performances with this move. She didn't stop because it was dangerous, however, but because she didn't have a more epic finale in case someone shouted \"Encore!\"</i>"
+      "3": "<i>曾经辛焱每次演出结束都会来这么一出。后来不这么弄了倒不是因为危险。要是被喊了「安可」的话，她弄不出更炸裂的闭幕了。</i>"
     },
     "skillParams": {
-      "0": "Skill DMG",
-      "1": "Pyro DoT",
-      "2": "Duration",
-      "3": "CD",
-      "4": "Energy Cost",
+      "0": "技能伤害",
+      "1": "火元素持续伤害",
+      "2": "持续时间",
+      "3": "冷却时间",
+      "4": "元素能量",
       "5": "",
       "6": "",
       "7": "",
@@ -105,64 +105,64 @@
     }
   },
   "passive1": {
-    "name": "\"The Show Goes On, Even Without An Audience...\"",
+    "name": "「没听众也要演奏…」",
     "description": {
-      "0": "Decreases the number of opponents <strong>Sweeping Fervor</strong> must hit to trigger each level of shielding.",
+      "0": "减少<strong>热情拂扫</strong>的护盾所需的命中敌人数量：",
       "1": [
-        "Shield Level 2: Lead-In requirement reduced to 1 opponent hit.",
-        "Shield Level 3: Rave requirement reduced to 2 opponents hit or more."
+        "二级护盾·歌头节拍：命中一名敌人；",
+        "三级护盾·舞遍节拍：命中二名或更多敌人。"
       ]
     }
   },
   "passive2": {
-    "name": "\"...Now That's Rock 'N' Roll!\"",
+    "name": "「…这才是摇滚！」",
     "description": {
-      "0": "Characters shielded by <strong>Sweeping Fervor</strong> deal 15% increased Physical DMG."
+      "0": "处于<strong>热情拂扫</strong>的护盾保护下的角色造成的物理伤害提高15%。"
     }
   },
   "passive3": {
-    "name": "A Rad Recipe",
+    "name": "摇滚的食谱",
     "description": {
-      "0": "When a Perfect Cooking is achieved on a DEF-boosting dish, Xinyan has a 12% chance to obtain double the product."
+      "0": "完美烹饪防御类食物时，有12%概率获得2倍产出。"
     }
   },
   "constellation1": {
-    "name": "Fatal Acceleration",
+    "name": "绝命的加速",
     "description": {
-      "0": "Upon scoring a CRIT Hit, increases ATK SPD of Xinyan's Normal and Charged Attacks by 12% for 5s.",
-      "1": "Can only occur once every 5s."
+      "0": "辛焱造成暴击后的5秒内，普通攻击和重击的攻击速度提升12%。",
+      "1": "该效果每5秒只能触发一次。"
     }
   },
   "constellation2": {
-    "name": "Impromptu Opening",
+    "name": "开场即兴段",
     "description": {
-      "0": "<strong>Riff Revolution</strong>'s Physical DMG has its CRIT Rate increased by 100%, and will form a shield at Shield Level 3: Rave when cast."
+      "0": "<strong>叛逆刮弦</strong>造成的物理伤害暴击率提升100%，并会在施放时形成三级护盾·舞遍节拍。"
     }
   },
   "constellation3": {
-    "name": "Double-Stop",
+    "name": "摭分的指法",
     "description": {
-      "0": "Increases the Level of <strong>Sweeping Fervor</strong> by 3.",
-      "1": "Maximum upgrade level is 15."
+      "0": "<strong>热情拂扫</strong>的技能等级提高3级。",
+      "1": "至多提升至15级。"
     }
   },
   "constellation4": {
-    "name": "Wildfire Rhythm",
+    "name": "节奏的传染",
     "description": {
-      "0": "<strong>Sweeping Fervor</strong>'s swing DMG decreases opponent's Physical RES by 15% for 12s."
+      "0": "<strong>热情拂扫</strong>的挥舞伤害，会使敌人的物理抗性降低15%，持续12秒。"
     }
   },
   "constellation5": {
-    "name": "Screamin' for an Encore",
+    "name": "返场的高呼",
     "description": {
-      "0": "Increases the Level of <strong>Riff Revolution</strong> by 3.",
-      "1": "Maximum upgrade level is 15."
+      "0": "<strong>叛逆刮弦</strong>的技能等级提高3级。",
+      "1": "至多提升至15级。"
     }
   },
   "constellation6": {
-    "name": "Rockin' in a Flaming World",
+    "name": "地狱里摇摆",
     "description": {
-      "0": "Decreases the Stamina Consumption of Xinyan's Charged Attacks by 30%. Additionally, Xinyan's Charged Attacks gain an ATK Bonus equal to 50% of her DEF."
+      "0": "辛焱的重击的体力消耗降低30%；此外，进行重击时，将基于防御力的50%获得攻击力加成。"
     }
   }
 }

@@ -1,12 +1,12 @@
 {
-  "name": "Slingshot",
-  "description": "A bow, despite the name. After countless experiments and improvements to the design, the creator of the ultimate slingshot found himself to have made what was actually a bow.",
-  "passiveName": "Slingshot",
+  "name": "弹弓",
+  "description": "其实就是一把弓。在无数的改进和实验中，发明出究极弹弓的人发现自己做了一把弓。",
+  "passiveName": "弹弓",
   "passiveDescription": {
-    "0": "If a Normal or Charged Attack hits a target within 0.3s of being fired, increases DMG by <cryo>36%</cryo>. Otherwise, decreases DMG by 10%.",
-    "1": "If a Normal or Charged Attack hits a target within 0.3s of being fired, increases DMG by <cryo>42%</cryo>. Otherwise, decreases DMG by 10%.",
-    "2": "If a Normal or Charged Attack hits a target within 0.3s of being fired, increases DMG by <cryo>48%</cryo>. Otherwise, decreases DMG by 10%.",
-    "3": "If a Normal or Charged Attack hits a target within 0.3s of being fired, increases DMG by <cryo>54%</cryo>. Otherwise, decreases DMG by 10%.",
-    "4": "If a Normal or Charged Attack hits a target within 0.3s of being fired, increases DMG by <cryo>60%</cryo>. Otherwise, decreases DMG by 10%."
+    "0": "普通攻击与重击的箭矢若在发射后的0.3秒内击中敌人，则造成的伤害增加<cryo>36%</cryo>；否则，造成的伤害下降10%。",
+    "1": "普通攻击与重击的箭矢若在发射后的0.3秒内击中敌人，则造成的伤害增加<cryo>42%</cryo>；否则，造成的伤害下降10%。",
+    "2": "普通攻击与重击的箭矢若在发射后的0.3秒内击中敌人，则造成的伤害增加<cryo>48%</cryo>；否则，造成的伤害下降10%。",
+    "3": "普通攻击与重击的箭矢若在发射后的0.3秒内击中敌人，则造成的伤害增加<cryo>54%</cryo>；否则，造成的伤害下降10%。",
+    "4": "普通攻击与重击的箭矢若在发射后的0.3秒内击中敌人，则造成的伤害增加<cryo>60%</cryo>；否则，造成的伤害下降10%。"
   }
 }

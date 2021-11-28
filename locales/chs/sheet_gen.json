@@ -1,58 +1,58 @@
 {
   "normal": {
-    "hit1": "1-Hit DMG",
-    "hit2": "2-Hit DMG",
-    "hit3": "3-Hit DMG",
-    "hit4": "4-Hit DMG",
-    "hit5": "5-Hit DMG",
-    "hit6": "6-Hit DMG"
+    "hit1": "一段伤害",
+    "hit2": "二段伤害",
+    "hit3": "三段伤害",
+    "hit4": "四段伤害",
+    "hit5": "五段伤害",
+    "hit6": "六段伤害"
   },
   "charged": {
-    "dmg": "Charged Attack DMG",
-    "spinning": "Charged Attack Spinning DMG",
-    "final": "Charged Attack Final DMG",
-    "stamina": "Charged Attack Stamina Cost",
-    "aimed": "Aimed Shot",
-    "fullyAimed": "Fully-Charged Aimed Shot"
+    "dmg": "重击伤害",
+    "spinning": "重击循环伤害",
+    "final": "重击终结伤害",
+    "stamina": "重击体力消耗",
+    "aimed": "瞄准射击",
+    "fullyAimed": "满蓄力瞄准射击"
   },
   "plunging": {
-    "dmg": "Plunge DMG",
-    "low": "Lowgh Plunge DMG",
-    "high": "LHigh Plunge DMG"
+    "dmg": "下坠期间伤害",
+    "low": "低空坠地冲击伤害",
+    "high": "高空坠地冲击伤害"
   },
-  "maxDuration": "Max Duration",
-  "maxStacks": "Maximum Stacks",
-  "skillDMG": "Skill DMG",
-  "burstDMG": "Burst DMG",
-  "dmgAbsorption": "DMG Absorption",
-  "healing": "Healing",
-  "duration": "Duration",
-  "cd": "CD",
-  "energyCost": "Energy Cost",
-  "baseDMG": "Base DMG",
-  "dot": "DoT",
-  "addEleDMG": "Additional Elemental DMG",
+  "maxDuration": "最大持续时间",
+  "maxStacks": "能量层数上限",
+  "skillDMG": "技能伤害",
+  "burstDMG": "爆发伤害",
+  "dmgAbsorption": "吸收量",
+  "healing": "治疗量",
+  "duration": "持续时间",
+  "cd": "冷却时间",
+  "energyCost": "元素能量",
+  "baseDMG": "基础伤害",
+  "dot": "持续伤害",
+  "addEleDMG": "附加元素伤害",
   "press": {
-    "dmg": "Press DMG",
-    "cd": "Press CD"
+    "dmg": "点按伤害",
+    "cd": "点按冷却时间"
   },
   "hold": {
-    "dmg": "Hold DMG",
-    "cd": "CD (hold)"
+    "dmg": "长按伤害",
+    "cd": "长按冷却时间"
   },
   "element": {
-    "anemo": "Anemo",
-    "geo": "Geo",
-    "pyro": "Pyro",
-    "hydro": "Hydro",
-    "cryo": "Cryo",
-    "electro": "Electro"
+    "anemo": "风",
+    "geo": "岩元素",
+    "pyro": "火",
+    "hydro": "水元素",
+    "cryo": "冰",
+    "electro": "雷"
   },
   "reaction": {
-    "swirl": "Swirl",
-    "crystallize": "Crystallize",
-    "overloaded": "Overloaded",
-    "electrocharged": "Electro-Charged",
-    "Superconduct": "Superconduct"
+    "swirl": "扩散",
+    "crystallize": "结晶",
+    "overloaded": "超载",
+    "electrocharged": "感电",
+    "Superconduct": "超导"
   }
 }

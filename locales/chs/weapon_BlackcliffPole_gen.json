@@ -1,12 +1,12 @@
 {
-  "name": "Blackcliff Pole",
-  "description": "A weapon made of blackcliff and aerosiderite. There is a dark crimson glow on its cold black sheen.",
-  "passiveName": "Press the Advantage",
+  "name": "黑岩刺枪",
+  "description": "以黑岩与陨铁铸成的兵器，玄锋清凛的光泽中仿佛隐隐可见血色。",
+  "passiveName": "乘胜追击",
   "passiveDescription": {
-    "0": "After defeating an enemy, ATK is increased by <cryo>12%</cryo> for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others.",
-    "1": "After defeating an enemy, ATK is increased by <cryo>15%</cryo> for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others.",
-    "2": "After defeating an enemy, ATK is increased by <cryo>18%</cryo> for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others.",
-    "3": "After defeating an enemy, ATK is increased by <cryo>21%</cryo> for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others.",
-    "4": "After defeating an enemy, ATK is increased by <cryo>24%</cryo> for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others."
+    "0": "击败敌人后，攻击力提升<cryo>12%</cryo>，持续30秒。该效果至多叠加3层，每层持续时间独立。",
+    "1": "击败敌人后，攻击力提升<cryo>15%</cryo>，持续30秒。该效果至多叠加3层，每层持续时间独立。",
+    "2": "击败敌人后，攻击力提升<cryo>18%</cryo>，持续30秒。该效果至多叠加3层，每层持续时间独立。",
+    "3": "击败敌人后，攻击力提升<cryo>21%</cryo>，持续30秒。该效果至多叠加3层，每层持续时间独立。",
+    "4": "击败敌人后，攻击力提升<cryo>24%</cryo>，持续30秒。该效果至多叠加3层，每层持续时间独立。"
   }
 }

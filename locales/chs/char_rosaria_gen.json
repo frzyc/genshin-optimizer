@@ -1,34 +1,34 @@
 {
-  "name": "Rosaria",
-  "title": "Thorny Benevolence",
-  "description": "A sister of the church, though you wouldn't know it if it weren't for her attire. Known for her sharp, cold words and manner, she often works alone.",
-  "constellationName": "Spinea Corona",
+  "name": "罗莎莉亚",
+  "title": "棘冠恩典",
+  "description": "除了打扮哪里都不像神职人员的修女。冷淡的言行中透着锐利。总是单独行动。",
+  "constellationName": "荆冠座",
   "auto": {
-    "name": "Spear of the Church",
+    "name": "教会枪术",
     "fields": {
       "normal": {
-        "0": "<strong>Normal Attack</strong>",
-        "1": "Performs up to five consecutive spear strikes."
+        "0": "<strong>普通攻击</strong>",
+        "1": "进行至多五段的连续枪击。"
       },
       "charged": {
-        "0": "<strong>Charged Attack</strong>",
-        "1": "Consumes a certain amount of Stamina to lunge forward, dealing damage to opponents along the way."
+        "0": "<strong>重击</strong>",
+        "1": "消耗一定体力，向前方突进，对路径上的敌人造成伤害。"
       },
       "plunging": {
-        "0": "<strong>Plunging Attack</strong>",
-        "1": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact."
+        "0": "<strong>下落攻击</strong>",
+        "1": "从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成范围伤害。"
       }
     },
     "skillParams": {
-      "0": "1-Hit DMG",
-      "1": "2-Hit DMG",
-      "2": "3-Hit DMG",
-      "3": "4-Hit DMG",
-      "4": "5-Hit DMG",
-      "5": "Charged Attack DMG",
-      "6": "Charged Attack Stamina Cost",
-      "7": "Plunge DMG",
-      "8": "Low/High Plunge DMG",
+      "0": "一段伤害",
+      "1": "二段伤害",
+      "2": "三段伤害",
+      "3": "四段伤害",
+      "4": "五段伤害",
+      "5": "重击伤害",
+      "6": "重击体力消耗",
+      "7": "下坠期间伤害",
+      "8": "低空/高空坠地冲击伤害",
       "9": "",
       "10": "",
       "11": "",
@@ -39,16 +39,16 @@
     }
   },
   "skill": {
-    "name": "Ravaging Confession",
+    "name": "噬罪的告解",
     "description": {
-      "0": "Rosaria swiftly shifts her position to appear behind her opponent, then stabs and slashes them with her polearm, dealing <cryo>Cryo DMG</cryo>.",
-      "1": "This ability cannot be used to travel behind opponents of a larger build.",
+      "0": "罗莎莉亚快速移动至目标敌人身后，进行长枪穿刺与挥砍，造成<cryo>冰元素伤害</cryo>。",
+      "1": "无法通过施放时的快速移动，转移至体型较大的敌人身后。",
       "2": "<br/>",
-      "3": "<i>Those who confess to Sister Rosaria will be granted no absolution. All sinners shall be met with the piercing cold of punishment proportionate to the weight of their sins.</i>"
+      "3": "<i>对着修女罗莎莉亚的告解并不能获得赦罪。相反，罪孽越深，降罚的冰寒就越是刺骨。</i>"
     },
     "skillParams": {
-      "0": "Skill DMG",
-      "1": "CD",
+      "0": "技能伤害",
+      "1": "冷却时间",
       "2": "",
       "3": "",
       "4": "",
@@ -66,19 +66,19 @@
     }
   },
   "burst": {
-    "name": "Rites of Termination",
+    "name": "终命的圣礼",
     "description": {
-      "0": "Rosaria's unique take on this prayer ritual: First, she swings her weapon to slash surrounding opponents; then, she summons a frigid Ice Lance that strikes the ground. Both actions deal <cryo>Cryo DMG</cryo>.",
-      "1": "While active, the Ice Lance periodically releases a blast of cold air, dealing <cryo>Cryo DMG</cryo> to surrounding opponents.",
+      "0": "这是罗莎莉亚专属的领祷仪式。挥舞武器扫击身边的敌人后，凝聚极寒的冰枪击向地面，分别造成<cryo>冰元素伤害</cryo>。",
+      "1": "冰枪在存在期间内，会间歇性释放寒气，对附近的敌人造成<cryo>冰元素伤害</cryo>。",
       "2": "<br/>",
-      "3": "<i>Judgment is such a tedious ordeal — much easier to skip that phase and get straight to the last rites. Rosaria was never very devoted to the Anemo God anyway, which makes performing them all too easy.</i>"
+      "3": "<i>审判这件事很麻烦，所以越过审判直接执行临终祈礼吧。罗莎莉亚本就不信奉风神，这件事因此格外轻松。</i>"
     },
     "skillParams": {
-      "0": "Skill DMG",
-      "1": "Ice Lance DoT",
-      "2": "Duration",
-      "3": "CD",
-      "4": "Energy Cost",
+      "0": "技能伤害",
+      "1": "冰枪持续伤害",
+      "2": "持续时间",
+      "3": "冷却时间",
+      "4": "元素能量",
       "5": "",
       "6": "",
       "7": "",
@@ -93,62 +93,62 @@
     }
   },
   "passive1": {
-    "name": "Regina Probationum",
+    "name": "聆听忏悔的幽影",
     "description": {
-      "0": "When Rosaria strikes an opponent from behind using <strong>Ravaging Confession</strong>, Rosaria's CRIT Rate increases by 12% for 5s."
+      "0": "<strong>噬罪的告解</strong>从技能目标的背后攻击时，罗莎莉亚的暴击率提升12%，持续5秒。"
     }
   },
   "passive2": {
-    "name": "Shadow Samaritan",
+    "name": "暗中支援的黯色",
     "description": {
-      "0": "Casting <strong>Rites of Termination</strong> increases CRIT Rate of all nearby party members (except Rosaria herself) by 15% of Rosaria's CRIT Rate for 10s.",
-      "1": "CRIT Rate Bonus gained this way cannot exceed 15%."
+      "0": "施放<strong>终命的圣礼</strong>时，基于自身暴击率的15%，提高附近的队伍中所有角色（不包括罗莎莉亚自己）的暴击率，持续10秒。",
+      "1": "通过这种方式获得的暴击率提升，无法超过15%。"
     }
   },
   "passive3": {
-    "name": "Night Walk",
+    "name": "夜行",
     "description": {
-      "0": "At night (18:00–6:00), increases the Movement SPD of your own party members by 10%.",
-      "1": "Does not take effect in Domains, Trounce Domains, or Spiral Abyss. Not stackable with Passive Talents that provide the exact same effects."
+      "0": "在夜间（18时至6时），队伍中自己的角色移动速度提高10%。",
+      "1": "该效果在秘境、征讨领域、深境螺旋中无效，且无法与效果完全相同的固有天赋叠加。"
     }
   },
   "constellation1": {
-    "name": "Unholy Revelation",
+    "name": "罪之导引",
     "description": {
-      "0": "When Rosaria deals a CRIT Hit, her ATK SPD increases by 10% and her Normal Attack DMG increases by 10% for 4s."
+      "0": "罗莎莉亚的攻击造成暴击后，自身攻击速度提升10%，普通攻击造成的伤害提升10%，持续4秒。"
     }
   },
   "constellation2": {
-    "name": "Land Without Promise",
+    "name": "无福之地",
     "description": {
-      "0": "The duration of the Ice Lance created by <strong>Rites of Termination</strong> is increased by 4s."
+      "0": "<strong>终命的圣礼</strong>创造的冰枪持续时间延长4秒。"
     }
   },
   "constellation3": {
-    "name": "The Wages of Sin",
+    "name": "告解之仪",
     "description": {
-      "0": "Increases the Level of <strong>Ravaging Confession</strong> by 3.",
-      "1": "Maximum upgrade level is 15."
+      "0": "<strong>噬罪的告解</strong>的技能等级提高3级。",
+      "1": "至多提升至15级。"
     }
   },
   "constellation4": {
-    "name": "Painful Grace",
+    "name": "苦痛恩典",
     "description": {
-      "0": "<strong>Ravaging Confession</strong>'s CRIT Hits regenerate 5 Energy for Rosaria.",
-      "1": "Can only be triggered once each time Ravaging Confession is cast."
+      "0": "<strong>噬罪的告解</strong>造成暴击时，为罗莎莉亚自己恢复5点元素能量。",
+      "1": "每次噬罪的告解至多触发1次该效果。"
     }
   },
   "constellation5": {
-    "name": "Last Rites",
+    "name": "临终祈礼",
     "description": {
-      "0": "Increases the Level of <strong>Rites of Termination</strong> by 3.",
-      "1": "Maximum upgrade level is 15."
+      "0": "<strong>终命的圣礼</strong>的技能等级提高3级。",
+      "1": "至多提升至15级。"
     }
   },
   "constellation6": {
-    "name": "Divine Retribution",
+    "name": "代行裁判",
     "description": {
-      "0": "<strong>Rites of Termination</strong>'s attack decreases opponents' Physical RES by 20% for 10s."
+      "0": "<strong>终命的圣礼</strong>的攻击会使敌人的物理抗性降低20%，持续10秒。"
     }
   }
 }

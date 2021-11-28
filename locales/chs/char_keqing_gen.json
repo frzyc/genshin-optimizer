@@ -1,34 +1,34 @@
 {
-  "name": "Keqing",
-  "title": "Driving Thunder",
-  "description": "The Yuheng of the Liyue Qixing. Keqing has much to say about Rex Lapis's unilateral approach to policymaking in Liyue — but in truth, gods admire skeptics such as her quite a lot.",
-  "constellationName": "Trulla Cementarii",
+  "name": "刻晴",
+  "title": "霆霓快雨",
+  "description": "璃月七星之一，玉衡星。对「帝君一言而决的璃月」颇有微词——但实际上，神挺欣赏她这样的人。",
+  "constellationName": "金紫定垂座",
   "auto": {
-    "name": "Yunlai Swordsmanship",
+    "name": "云来剑法",
     "fields": {
       "normal": {
-        "0": "<strong>Normal Attack</strong>",
-        "1": "Perform up to 5 rapid strikes."
+        "0": "<strong>普通攻击</strong>",
+        "1": "进行至多五段的连续剑击。"
       },
       "charged": {
-        "0": "<strong>Charged Attack</strong>",
-        "1": "Consumes a certain amount of Stamina to unleash 2 rapid sword strikes."
+        "0": "<strong>重击</strong>",
+        "1": "消耗一定体力，瞬间向前方挥出两剑。"
       },
       "plunging": {
-        "0": "<strong>Plunging Attack</strong>",
-        "1": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact."
+        "0": "<strong>下落攻击</strong>",
+        "1": "从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成范围伤害。"
       }
     },
     "skillParams": {
-      "0": "1-Hit DMG",
-      "1": "2-Hit DMG",
-      "2": "3-Hit DMG",
-      "3": "4-Hit DMG",
-      "4": "5-Hit DMG",
-      "5": "Charged Attack DMG",
-      "6": "Charged Attack Stamina Cost",
-      "7": "Plunge DMG",
-      "8": "Low/High Plunge DMG",
+      "0": "一段伤害",
+      "1": "二段伤害",
+      "2": "三段伤害",
+      "3": "四段伤害",
+      "4": "五段伤害",
+      "5": "重击伤害",
+      "6": "重击体力消耗",
+      "7": "下坠期间伤害",
+      "8": "低空/高空坠地冲击伤害",
       "9": "",
       "10": "",
       "11": "",
@@ -39,29 +39,29 @@
     }
   },
   "skill": {
-    "name": "Stellar Restoration",
+    "name": "星斗归位",
     "description": {
-      "0": "Hurls a Lightning Stiletto that annihilates her opponents like the swift thunder.",
-      "1": "When the Stiletto hits its target, it deals <electro>Electro DMG</electro> to opponents in a small AoE, and places a Stiletto Mark on the spot hit.",
+      "0": "迅速投出雷楔，以疾雷之势歼敌。",
+      "1": "雷楔命中时会对小范围内的敌人造成<electro>雷元素伤害</electro>，并在命中的位置留下雷楔标记。",
       "2": "<br/>",
-      "3": "<strong>Hold</strong>",
-      "4": "Hold to adjust the direction in which the Stiletto shall be thrown.",
-      "5": "Stilettos thrown by the Hold attack mode can be suspended in mid-air, allowing Keqing to jump to them when using Stellar Restoration a second time.",
+      "3": "<strong>长按</strong>",
+      "4": "长按以调整雷楔标记投掷的方向。",
+      "5": "通过长按投出的雷楔，可以悬浮在空中，并使刻晴再次施放星斗归位时跨越地形。",
       "6": "<br/>",
-      "7": "<strong>Lightning Stiletto</strong>",
-      "8": " If Keqing uses Stellar Restoration again or uses a Charged Attack while its duration lasts, it will clear the Stiletto Mark and produce different effects:",
+      "7": "<strong>雷楔</strong>",
+      "8": "在雷楔的持续期间内，刻晴再次施放星斗归位或施展重击时，会清除雷楔标记并造成不同的效果：",
       "9": [
-        "If she uses Stellar Restoration again, she will blink to the location of the Mark and unleash one slashing attack that deals <electro>AoE Electro DMG</electro>. When blinking to a Stiletto that was thrown from a Holding attack, Keqing can leap across obstructing terrain.",
-        "If Keqing uses a Charged Attack, she will ignite a series of thundering cuts at the Mark's location, dealing <electro>AoE Electro DMG</electro>."
+        "再次施放星斗归位时，瞬移到标记处进行一次斩击，造成<electro>雷元素范围伤害</electro>。瞬移至长按投掷的雷楔处时，可以跨越地形障碍；",
+        "施展重击时，在标记处引发雷暴连斩，造成数次<electro>雷元素范围伤害</electro>。"
       ],
       "10": "<br/>",
-      "11": "<i>\"Humans are like moths, endlessly chasing the flame we call gods and adepti. But this light that I have here is my own.\"</i>"
+      "11": "<i>「人像是蛾子，总奔着名叫神仙的火光而去。但是我这光是自己点的。」</i>"
     },
     "skillParams": {
-      "0": "Lightning Stiletto DMG",
-      "1": "Slashing DMG",
-      "2": "Thunderclap Slash DMG",
-      "3": "CD",
+      "0": "雷楔伤害",
+      "1": "斩击伤害",
+      "2": "雷暴连斩伤害",
+      "3": "冷却时间",
       "4": "",
       "5": "",
       "6": "",
@@ -77,19 +77,19 @@
     }
   },
   "burst": {
-    "name": "Starward Sword",
+    "name": "天街巡游",
     "description": {
-      "0": "Keqing unleashes the power of lightning, dealing <electro>Electro DMG</electro> in an AOE.",
-      "1": "She then blends into the shadow of her blade, striking a series of thunderclap-blows to nearby opponents simultaneously that deal multiple instances of <electro>Electro DMG</electro>. The final attack deals massive <electro>AoE Electro DMG</electro>.",
+      "0": "爆发雷电的力量，造成范围<electro>雷元素伤害</electro>。",
+      "1": "随后隐入剑影中，对周围的敌人进行如同迅雷霆霓般疾速的连斩，造成多段<electro>雷元素伤害</electro>，并在最后一击时造成高额<electro>雷元素范围伤害</electro>。",
       "2": "<br/>",
-      "3": "<i>The swiftest technique in Keqing's personal arsenal is fast enough to bring stars crashing down.</i>"
+      "3": "<i>刻晴自己剑术中最为迅捷的一招，可将诸星斩落。</i>"
     },
     "skillParams": {
-      "0": "Skill DMG",
-      "1": "Consecutive Slash DMG",
-      "2": "Last Attack DMG",
-      "3": "CD",
-      "4": "Energy Cost",
+      "0": "技能伤害",
+      "1": "连斩伤害",
+      "2": "最后一击伤害",
+      "3": "冷却时间",
+      "4": "元素能量",
       "5": "",
       "6": "",
       "7": "",
@@ -104,61 +104,61 @@
     }
   },
   "passive1": {
-    "name": "Thundering Penance",
+    "name": "抵天雷罚",
     "description": {
-      "0": "After recasting <strong>Stellar Restoration</strong> while a Lightning Stiletto is present, Keqing's weapon gains an <electro>Electro Infusion</electro> for 5s."
+      "0": "雷楔存在期间再次施放<strong>星斗归位</strong>后的5秒内，刻晴获得<electro>雷元素附魔</electro>。"
     }
   },
   "passive2": {
-    "name": "Aristocratic Dignity",
+    "name": "玉衡之贵",
     "description": {
-      "0": "When casting <strong>Starward Sword</strong>, Keqing's CRIT Rate is increased by 15%, and her Energy Recharge is increased by 15%. This effect lasts for 8s."
+      "0": "施放<strong>天街巡游</strong>时，刻晴的暴击率提升15%，元素充能效率提升15%，持续8秒。"
     }
   },
   "passive3": {
-    "name": "Land's Overseer",
+    "name": "总务土地",
     "description": {
-      "0": "When dispatched on an expedition in Liyue, time consumed is reduced by 25%."
+      "0": "在璃月执行探索派遣任务时，消耗的时间缩短25%。"
     }
   },
   "constellation1": {
-    "name": "Thundering Might",
+    "name": "雷厉",
     "description": {
-      "0": "Recasting <strong>Stellar Restoration</strong> while a Lightning Stiletto is present causes Keqing to deal 50% of her ATK as <electro>AoE Electro DMG</electro> at the start point and terminus of her Blink."
+      "0": "雷楔存在期间再次施放<strong>星斗归位</strong>时，在刻晴消失与出现的位置造成50%攻击力的<electro>雷元素范围伤害</electro>。"
     }
   },
   "constellation2": {
-    "name": "Keen Extraction",
+    "name": "苛捐",
     "description": {
-      "0": "When Keqing's Normal and Charged Attacks hit opponents affected by <electro>Electro</electro>, they have a 50% chance of producing an Elemental Particle.",
-      "1": "This effect can only occur once every 5s."
+      "0": "刻晴普通攻击与重击命中受到<electro>雷元素</electro>影响的敌人时，有50%几率产生一个元素微粒。",
+      "1": "该效果每5秒只能触发一次。"
     }
   },
   "constellation3": {
-    "name": "Foreseen Reformation",
+    "name": "登楼",
     "description": {
-      "0": "Increases the Level of <strong>Starward Sword</strong> by 3.",
-      "1": "Maximum upgrade level is 15."
+      "0": "<strong>天街巡游</strong>的技能等级提高3级。",
+      "1": "至多提升至15级。"
     }
   },
   "constellation4": {
-    "name": "Attunement",
+    "name": "调律",
     "description": {
-      "0": "For 10s after Keqing triggers an <electro>Electro-related Elemental Reaction</electro>, her ATK is increased by 25%."
+      "0": "刻晴触发<electro>雷元素相关反应</electro>后的10秒内，攻击力提升25%。"
     }
   },
   "constellation5": {
-    "name": "Beckoning Stars",
+    "name": "移灯",
     "description": {
-      "0": "Increases the Level of <strong>Stellar Restoration</strong> by 3.",
-      "1": "Maximum upgrade level is 15."
+      "0": "<strong>星斗归位</strong>的技能等级提高3级。",
+      "1": "至多提升至15级。"
     }
   },
   "constellation6": {
-    "name": "Tenacious Star",
+    "name": "廉贞",
     "description": {
-      "0": "When initiating a Normal Attack, a Charged Attack, Elemental Skill or Elemental Burst, Keqing gains a 6% <electro>Electro DMG Bonus</electro> for 8s.",
-      "1": "Effects triggered by Normal Attacks, Charged Attacks, Elemental Skills and Elemental Bursts are considered independent entities."
+      "0": "进行普通攻击、重击、施放元素战技或元素爆发时，刻晴获得6%<electro>雷元素伤害加成</electro>，持续8秒。",
+      "1": "由普通攻击、重击、元素战技或元素爆发引起的效果分别独立存在。"
     }
   }
 }

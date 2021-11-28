@@ -1,35 +1,35 @@
 {
-  "name": "Jean",
-  "title": "Dandelion Knight",
-  "description": "The righteous and rigorous Dandelion Knight, and Acting Grand Master of Mondstadt's Knights of Favonius.",
-  "constellationName": "Leo Minor",
+  "name": "琴",
+  "title": "蒲公英骑士",
+  "description": "正直严谨的蒲公英骑士，蒙德西风骑士团的代理团长。",
+  "constellationName": "幼狮座",
   "auto": {
-    "name": "Favonius Bladework",
+    "name": "西风剑术",
     "fields": {
       "normal": {
-        "0": "<strong>Normal Attack</strong>",
-        "1": "Performs up to 5 consecutive strikes."
+        "0": "<strong>普通攻击</strong>",
+        "1": "进行至多五段的连续剑击。"
       },
       "charged": {
-        "0": "<strong>Charged Attack</strong>",
-        "1": "Consumes a certain amount of stamina to launch an opponent using the power of wind.",
-        "2": "Launched opponents will slowly fall to the ground."
+        "0": "<strong>重击</strong>",
+        "1": "消耗一定体力，进行饱含风之力的挑击。",
+        "2": "被挑飞的敌人，在短时间内会缓慢坠落。"
       },
       "plunging": {
-        "0": "<strong>Plunging Attack</strong>",
-        "1": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact."
+        "0": "<strong>下落攻击</strong>",
+        "1": "从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成范围伤害。"
       }
     },
     "skillParams": {
-      "0": "1-Hit DMG",
-      "1": "2-Hit DMG",
-      "2": "3-Hit DMG",
-      "3": "4-Hit DMG",
-      "4": "5-Hit DMG",
-      "5": "Charged Attack DMG",
-      "6": "Charged Attack Stamina Cost",
-      "7": "Plunge DMG",
-      "8": "Low/High Plunge DMG",
+      "0": "一段伤害",
+      "1": "二段伤害",
+      "2": "三段伤害",
+      "3": "四段伤害",
+      "4": "五段伤害",
+      "5": "重击伤害",
+      "6": "重击体力消耗",
+      "7": "下坠期间伤害",
+      "8": "低空/高空坠地冲击伤害",
       "9": "",
       "10": "",
       "11": "",
@@ -40,22 +40,22 @@
     }
   },
   "skill": {
-    "name": "Gale Blade",
+    "name": "风压剑",
     "description": {
-      "0": "Focusing the might of the formless wind around her blade, Jean releases a miniature storm, launching opponents in the direction she aims at, dealing massive <anemo>Anemo DMG</anemo>.",
+      "0": "将无形的风之力汇聚在剑上，释放微型的风暴，将敌人向瞄准的方向击飞，造成大量<anemo>风元素伤害</anemo>。",
       "1": "<br/>",
-      "2": "<strong>Hold</strong>",
-      "3": "At the cost of continued stamina consumption, Jean can command the whirlwind to pull surrounding opponents and objects towards her front.",
-      "4": "Direction can be adjusted.",
-      "5": "Character is immobile during skill duration.",
+      "2": "<strong>长按</strong>",
+      "3": "以持续消耗体力为代价，令旋风将周围的敌人与物体牵引至面前。",
+      "4": "可以调整方向。",
+      "5": "期间无法移动。",
       "6": "<br/>",
-      "7": "<i>That which follows Jean, the wholehearted defender, is a guardian wind that can banish danger from her comrades' presence.</i>"
+      "7": "<i>与一心守护的琴同行的，是能将危险驱离伙伴身边的守护之风。</i>"
     },
     "skillParams": {
-      "0": "Skill DMG",
-      "1": "Stamina Consumption",
-      "2": "Max Duration",
-      "3": "CD",
+      "0": "技能伤害",
+      "1": "体力消耗",
+      "2": "最大持续时间",
+      "3": "冷却时间",
       "4": "",
       "5": "",
       "6": "",
@@ -71,26 +71,27 @@
     }
   },
   "burst": {
-    "name": "Dandelion Breeze",
+    "name": "蒲公英之风",
     "description": {
-      "0": "Calling upon the wind's protection, Jean creates a swirling Dandelion Field, launching surrounding opponents and dealing <anemo>Anemo DMG</anemo>.",
-      "1": "At the same time, she instantly regenerates a large amount of HP for all party members. The amount of HP restored scales off Jean's ATK.",
+      "0": "呼唤风的护佑，创造千风涌动的蒲公英领域，击退周围的敌人并造成<anemo>风元素伤害</anemo>。",
+      "1": "同时，为队伍中的所有角色瞬间恢复大量生命值，回复量受益于琴的攻击力。",
       "2": "<br/>",
-      "3": "<strong>Dandelion Field</strong>",
+      "3": "<strong>蒲公英领域</strong>",
       "4": [
-        "Continuously regenerates HP of characters within the AoE and continuously imbues them with <anemo>Anemo</anemo>.",
-        "Deals <anemo>Anemo DMG</anemo> to opponents entering or exiting the Dandelion Field."
+        "为其中的角色持续恢复生命值；",
+        "令其中的角色持续受到<anemo>风元素影响</anemo>；",
+        "对出入领域的敌人造成<anemo>风元素伤害</anemo>。"
       ],
       "5": "<br/>",
-      "6": "<i>Jean's magnanimity is as vast as the dandelion fields, and it is the root of her wish to protect others.</i>"
+      "6": "<i>风的恩泽如同广布大地的蒲公英，这就是琴守护的根源与心意。</i>"
     },
     "skillParams": {
-      "0": "Elemental Burst DMG",
-      "1": "Field Entering/Exiting DMG",
-      "2": "Field Activation Healing",
-      "3": "Continuous Regeneration",
-      "4": "CD",
-      "5": "Energy Cost",
+      "0": "爆发伤害",
+      "1": "出入领域伤害",
+      "2": "领域发动治疗量",
+      "3": "持续治疗",
+      "4": "冷却时间",
+      "5": "元素能量",
       "6": "",
       "7": "",
       "8": "",
@@ -104,59 +105,60 @@
     }
   },
   "passive1": {
-    "name": "Wind Companion",
+    "name": "顺风而行",
     "description": {
-      "0": "On hit, Jean's Normal Attacks have a 50% chance to regenerate HP equal to 15% of Jean's ATK for all party members."
+      "0": "琴的普通攻击命中时，有50%的几率为队伍中所有角色恢复等同于琴攻击力15%的生命值。"
     }
   },
   "passive2": {
-    "name": "Let the Wind Lead",
+    "name": "听凭风引",
     "description": {
-      "0": "Using <strong>Dandelion Breeze</strong> will regenerate 20% of its Energy."
+      "0": "使用<strong>蒲公英之风</strong>后，恢复20%元素能量。"
     }
   },
   "passive3": {
-    "name": "Guiding Breeze",
+    "name": "引领之风",
     "description": {
-      "0": "When a Perfect Cooking is achieved on a dish with restorative effects, there is a 12% chance to obtain double the product."
+      "0": "完美烹饪恢复类食物时，有12%概率获得2倍产出。"
     }
   },
   "constellation1": {
-    "name": "Spiraling Tempest",
+    "name": "流转剑脊的暴风",
     "description": {
-      "0": "Increases the pulling speed of <strong>Gale Blade</strong> after holding for more than 1s, and increases the DMG dealt by 40%."
+      "0": "<strong>风压剑</strong>长按超过1秒后，提升牵引速度，并使造成的伤害提升40%。"
     }
   },
   "constellation2": {
-    "name": "People's Aegis",
+    "name": "守护众人的坚盾",
     "description": {
-      "0": "When Jean picks up an Elemental Orb/Particle, all party members have their Movement SPD and ATK SPD increased by 15% for 15s."
+      "0": "琴获得元素晶球或元素微粒时，队伍中所有角色获得15%攻击速度和15%移动速度提升，持续15秒。"
     }
   },
   "constellation3": {
-    "name": "When the West Wind Arises",
+    "name": "西风吹拂之时",
     "description": {
-      "0": "Increases the Level of <strong>Dandelion Breeze</strong> by 3.",
-      "1": "Maximum upgrade level is 15."
+      "0": "<strong>蒲公英之风</strong>的技能等级提高3级。",
+      "1": "至多提升至15级。"
     }
   },
   "constellation4": {
-    "name": "Lands of Dandelion",
+    "name": "蒲公英的国土",
     "description": {
-      "0": "Within the Field created by <strong>Dandelion Breeze</strong>, all opponents have their <anemo>Anemo RES</anemo> decreased by 40%."
+      "0": "在<strong>蒲公英之风</strong>的领域内，所有敌人的<anemo>风元素抗性</anemo>下降40%。"
     }
   },
   "constellation5": {
-    "name": "Outbursting Gust",
+    "name": "须臾一瞬的烈风",
     "description": {
-      "0": "Increases the Level of <strong>Gale Blade</strong> by 3.",
-      "1": "Maximum upgrade level is 15."
+      "0": "<strong>风压剑</strong>的技能等级提高3级。",
+      "1": "至多提升至15级。"
     }
   },
   "constellation6": {
-    "name": "Lion's Fang, Fair Protector of Mondstadt",
+    "name": "恩眷万民的狮牙",
     "description": {
-      "0": "Incoming DMG is decreased by 35% within the Field created by <strong>Dandelion Breeze</strong>. Upon leaving the Dandelion Field, this effect lasts for 3 attacks or 10s."
+      "0": "在<strong>蒲公英之风</strong>的领域内，角色受到的伤害降低35%。",
+      "1": "离开领域后，这个效果会在承受3次攻击或10秒后消失。"
     }
   }
 }

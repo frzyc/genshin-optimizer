@@ -1,12 +1,12 @@
 {
-  "name": "Skyrider Sword",
-  "description": "A reliable steel sword. The legendary Skyrider once tried to ride it as a flying sword...",
-  "passiveName": "Determination",
+  "name": "飞天御剑",
+  "description": "可靠的钢剑，传说著名的「御剑公子」曾试图借助它飞天。",
+  "passiveName": "决心",
   "passiveDescription": {
-    "0": "Using an Elemental Burst grants a <cryo>12%</cryo> increase in ATK and Movement SPD for 15s.",
-    "1": "Using an Elemental Burst grants a <cryo>15%</cryo> increase in ATK and Movement SPD for 15s.",
-    "2": "Using an Elemental Burst grants a <cryo>18%</cryo> increase in ATK and Movement SPD for 15s.",
-    "3": "Using an Elemental Burst grants a <cryo>21%</cryo> increase in ATK and Movement SPD for 15s.",
-    "4": "Using an Elemental Burst grants a <cryo>24%</cryo> increase in ATK and Movement SPD for 15s."
+    "0": "施放元素爆发后，提高<cryo>12%</cryo>攻击力和移动速度，持续15秒。",
+    "1": "施放元素爆发后，提高<cryo>15%</cryo>攻击力和移动速度，持续15秒。",
+    "2": "施放元素爆发后，提高<cryo>18%</cryo>攻击力和移动速度，持续15秒。",
+    "3": "施放元素爆发后，提高<cryo>21%</cryo>攻击力和移动速度，持续15秒。",
+    "4": "施放元素爆发后，提高<cryo>24%</cryo>攻击力和移动速度，持续15秒。"
   }
 }

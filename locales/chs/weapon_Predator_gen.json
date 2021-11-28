@@ -1,8 +1,8 @@
 {
-  "name": "Predator",
-  "description": "A uniquely-designed bow. This should not belong in this world.",
-  "passiveName": "Strong Strike",
+  "name": "掠食者",
+  "description": "设计风格相当独特的弓，应该不属于这个世界。",
+  "passiveName": "强力攻击",
   "passiveDescription": {
-    "0": "<cryo>Effective only on the following platform: </cryo>\\n<cryo>\"PlayStation Network\"</cryo>\\nDealing Cryo DMG to opponents increases this character's Normal and Charged Attack DMG by 10% for 6s. This effect can have a maximum of 2 stacks. Additionally, when Aloy equips Predator, ATK is increased by 66."
+    "0": "<cryo>仅在以下平台生效：</cryo>\\n<cryo>\"PlayStation Network\"</cryo>\\n对敌人造成冰元素伤害后，普通攻击与重击造成的伤害提高10%，该效果持续6秒，至多叠加2次；此外，埃洛伊装备掠食者时，攻击力提升66点。"
   }
 }

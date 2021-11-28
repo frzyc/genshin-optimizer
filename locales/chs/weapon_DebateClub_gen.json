@@ -1,12 +1,12 @@
 {
-  "name": "Debate Club",
-  "description": "A handy club made of fine steel. The most persuasive line of reasoning in any debater's arsenal.",
-  "passiveName": "Blunt Conclusion",
+  "name": "以理服人",
+  "description": "精钢打造的趁手大铁棒子。最好的理论依据。",
+  "passiveName": "有话直说",
   "passiveDescription": {
-    "0": "After using an Elemental Skill, on hit, Normal and Charged Attacks deal additional DMG equal to <cryo>60%</cryo> of ATK in a small AoE. Effect lasts 15s. DMG can only occur once every 3s.",
-    "1": "After using an Elemental Skill, on hit, Normal and Charged Attacks deal additional DMG equal to <cryo>75%</cryo> of ATK in a small AoE. Effect lasts 15s. DMG can only occur once every 3s.",
-    "2": "After using an Elemental Skill, on hit, Normal and Charged Attacks deal additional DMG equal to <cryo>90%</cryo> of ATK in a small AoE. Effect lasts 15s. DMG can only occur once every 3s.",
-    "3": "After using an Elemental Skill, on hit, Normal and Charged Attacks deal additional DMG equal to <cryo>105%</cryo> of ATK in a small AoE. Effect lasts 15s. DMG can only occur once every 3s.",
-    "4": "After using an Elemental Skill, on hit, Normal and Charged Attacks deal additional DMG equal to <cryo>120%</cryo> of ATK in a small AoE. Effect lasts 15s. DMG can only occur once every 3s."
+    "0": "施放元素战技后，普通攻击和重击命中时会在小范围内额外造成<cryo>60%</cryo>攻击力的伤害。该效果持续15秒，伤害每3秒只能触发一次。",
+    "1": "施放元素战技后，普通攻击和重击命中时会在小范围内额外造成<cryo>75%</cryo>攻击力的伤害。该效果持续15秒，伤害每3秒只能触发一次。",
+    "2": "施放元素战技后，普通攻击和重击命中时会在小范围内额外造成<cryo>90%</cryo>攻击力的伤害。该效果持续15秒，伤害每3秒只能触发一次。",
+    "3": "施放元素战技后，普通攻击和重击命中时会在小范围内额外造成<cryo>105%</cryo>攻击力的伤害。该效果持续15秒，伤害每3秒只能触发一次。",
+    "4": "施放元素战技后，普通攻击和重击命中时会在小范围内额外造成<cryo>120%</cryo>攻击力的伤害。该效果持续15秒，伤害每3秒只能触发一次。"
   }
 }

@@ -1,12 +1,12 @@
 {
-  "name": "Mitternachts Waltz",
-  "description": "A bow painted the color of transgression and nights of illusion.",
-  "passiveName": "Evernight Duet",
+  "name": "幽夜华尔兹",
+  "description": "有着如同罪与幻想之夜一般颜色的弓。",
+  "passiveName": "极夜二重奏",
   "passiveDescription": {
-    "0": "Normal Attack hits on opponents increase Elemental Skill DMG by <cryo>20%</cryo> for 5s. Elemental Skill hits on opponents increase Normal Attack DMG by <cryo>20%</cryo> for 5s.",
-    "1": "Normal Attack hits on opponents increase Elemental Skill DMG by <cryo>25%</cryo> for 5s. Elemental Skill hits on opponents increase Normal Attack DMG by <cryo>25%</cryo> for 5s.",
-    "2": "Normal Attack hits on opponents increase Elemental Skill DMG by <cryo>30%</cryo> for 5s. Elemental Skill hits on opponents increase Normal Attack DMG by <cryo>30%</cryo> for 5s.",
-    "3": "Normal Attack hits on opponents increase Elemental Skill DMG by <cryo>35%</cryo> for 5s. Elemental Skill hits on opponents increase Normal Attack DMG by <cryo>35%</cryo> for 5s.",
-    "4": "Normal Attack hits on opponents increase Elemental Skill DMG by <cryo>40%</cryo> for 5s. Elemental Skill hits on opponents increase Normal Attack DMG by <cryo>40%</cryo> for 5s."
+    "0": "普通攻击命中敌人后的5秒内，元素战技造成的伤害提升<cryo>20%</cryo>；元素战技命中敌人后的5秒内，普通攻击造成的伤害提升<cryo>20%</cryo>。",
+    "1": "普通攻击命中敌人后的5秒内，元素战技造成的伤害提升<cryo>25%</cryo>；元素战技命中敌人后的5秒内，普通攻击造成的伤害提升<cryo>25%</cryo>。",
+    "2": "普通攻击命中敌人后的5秒内，元素战技造成的伤害提升<cryo>30%</cryo>；元素战技命中敌人后的5秒内，普通攻击造成的伤害提升<cryo>30%</cryo>。",
+    "3": "普通攻击命中敌人后的5秒内，元素战技造成的伤害提升<cryo>35%</cryo>；元素战技命中敌人后的5秒内，普通攻击造成的伤害提升<cryo>35%</cryo>。",
+    "4": "普通攻击命中敌人后的5秒内，元素战技造成的伤害提升<cryo>40%</cryo>；元素战技命中敌人后的5秒内，普通攻击造成的伤害提升<cryo>40%</cryo>。"
   }
 }

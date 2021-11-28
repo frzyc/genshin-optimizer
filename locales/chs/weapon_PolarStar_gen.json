@@ -1,12 +1,12 @@
 {
-  "name": "Polar Star",
-  "description": "A pristine bow that is as sharp as the glaciers of the far north.",
-  "passiveName": "Daylight's Augury",
+  "name": "冬极白星",
+  "description": "如同深冬坚冰一样尖锐的无垢之弓。",
+  "passiveName": "极昼的先兆者",
   "passiveDescription": {
-    "0": "Elemental Skill and Elemental Burst DMG increased by <cryo>12%</cryo>. After a Normal Attack, Charged Attack, Elemental Skill or Elemental Burst hits an opponent, 1 stack of Ashen Nightstar will be gained for 12s. When 1/2/3/4 stacks of Ashen Nightstar are present, ATK is increased by <cryo>10/20/30/48%</cryo>. The stack of Ashen Nightstar created by the Normal Attack, Charged Attack, Elemental Skill or Elemental Burst will be counted independently of the others.",
-    "1": "Elemental Skill and Elemental Burst DMG increased by <cryo>15%</cryo>. After a Normal Attack, Charged Attack, Elemental Skill or Elemental Burst hits an opponent, 1 stack of Ashen Nightstar will be gained for 12s. When 1/2/3/4 stacks of Ashen Nightstar are present, ATK is increased by <cryo>12.5/25/37.5/60%</cryo>. The stack of Ashen Nightstar created by the Normal Attack, Charged Attack, Elemental Skill or Elemental Burst will be counted independently of the others.",
-    "2": "Elemental Skill and Elemental Burst DMG increased by <cryo>18%</cryo>. After a Normal Attack, Charged Attack, Elemental Skill or Elemental Burst hits an opponent, 1 stack of Ashen Nightstar will be gained for 12s. When 1/2/3/4 stacks of Ashen Nightstar are present, ATK is increased by <cryo>15/30/45/72%</cryo>. The stack of Ashen Nightstar created by the Normal Attack, Charged Attack, Elemental Skill or Elemental Burst will be counted independently of the others.",
-    "3": "Elemental Skill and Elemental Burst DMG increased by <cryo>21%</cryo>. After a Normal Attack, Charged Attack, Elemental Skill or Elemental Burst hits an opponent, 1 stack of Ashen Nightstar will be gained for 12s. When 1/2/3/4 stacks of Ashen Nightstar are present, ATK is increased by <cryo>17.5/35/52.5/84%</cryo>. The stack of Ashen Nightstar created by the Normal Attack, Charged Attack, Elemental Skill or Elemental Burst will be counted independently of the others.",
-    "4": "Elemental Skill and Elemental Burst DMG increased by <cryo>24%</cryo>. After a Normal Attack, Charged Attack, Elemental Skill or Elemental Burst hits an opponent, 1 stack of Ashen Nightstar will be gained for 12s. When 1/2/3/4 stacks of Ashen Nightstar are present, ATK is increased by <cryo>20/40/60/96%</cryo>. The stack of Ashen Nightstar created by the Normal Attack, Charged Attack, Elemental Skill or Elemental Burst will be counted independently of the others."
+    "0": "元素战技和元素爆发造成的伤害提高<cryo>12%</cryo>；普通攻击、重击、元素战技或元素爆发命中敌人后，将产生1层持续12秒的「白夜极星」效果。处于1/2/3/4层「白夜极星」效果下时，攻击力将提高<cryo>10/20/30/48%</cryo>。由普通攻击、重击、元素战技或元素爆发产生的「白夜极星」将分别独立存在。",
+    "1": "元素战技和元素爆发造成的伤害提高<cryo>15%</cryo>；普通攻击、重击、元素战技或元素爆发命中敌人后，将产生1层持续12秒的「白夜极星」效果。处于1/2/3/4层「白夜极星」效果下时，攻击力将提高<cryo>12.5/25/37.5/60%</cryo>。由普通攻击、重击、元素战技或元素爆发产生的「白夜极星」将分别独立存在。",
+    "2": "元素战技和元素爆发造成的伤害提高<cryo>18%</cryo>；普通攻击、重击、元素战技或元素爆发命中敌人后，将产生1层持续12秒的「白夜极星」效果。处于1/2/3/4层「白夜极星」效果下时，攻击力将提高<cryo>15/30/45/72%</cryo>。由普通攻击、重击、元素战技或元素爆发产生的「白夜极星」将分别独立存在。",
+    "3": "元素战技和元素爆发造成的伤害提高<cryo>21%</cryo>；普通攻击、重击、元素战技或元素爆发命中敌人后，将产生1层持续12秒的「白夜极星」效果。处于1/2/3/4层「白夜极星」效果下时，攻击力将提高<cryo>17.5/35/52.5/84%</cryo>。由普通攻击、重击、元素战技或元素爆发产生的「白夜极星」将分别独立存在。",
+    "4": "元素战技和元素爆发造成的伤害提高<cryo>24%</cryo>；普通攻击、重击、元素战技或元素爆发命中敌人后，将产生1层持续12秒的「白夜极星」效果。处于1/2/3/4层「白夜极星」效果下时，攻击力将提高<cryo>20/40/60/96%</cryo>。由普通攻击、重击、元素战技或元素爆发产生的「白夜极星」将分别独立存在。"
   }
 }

@@ -1,29 +1,29 @@
 {
-  "setName": "Husk of Opulent Dreams",
+  "setName": "华馆梦醒形骸记",
   "setEffects": {
-    "2": "DEF +30%",
-    "4": "A character equipped with this Artifact set will obtain the Curiosity effect in the following conditions: When on the field, the character gains 1 stack after hitting an opponent with a Geo attack, triggering a maximum of once every 0.3s. When off the field, the character gains 1 stack every 3s. Curiosity can stack up to 4 times, each providing 6% DEF and a 6% Geo DMG Bonus. When 6 seconds pass without gaining a Curiosity stack, 1 stack is lost."
+    "2": "防御力提高30%。",
+    "4": "装备此圣遗物套装的角色在以下情况下，将获得「问答」效果：在场上用岩元素攻击命中敌人后获得一层，每0.3秒至多触发一次；在队伍后台中，每3秒获得一层。问答至多叠加4层，每层能提供6%防御力与6%岩元素伤害加成。每6秒，若未获得问答效果，将损失一层。"
   },
   "pieces": {
     "flower": {
-      "name": "Bloom Times",
-      "desc": "A small golden ornament with six petals that shall never wilt. It symbolizes the transience of mortal glories."
+      "name": "荣花之期",
+      "desc": "六瓣花形状的小型金饰，以永不凋零之姿，阅遍俗世易逝的荣华。"
     },
     "plume": {
-      "name": "Plume of Luxury",
-      "desc": "A feather-shaped token that was brought forth from a secluded hall. The compassion of its creator led to it being left within that mansion along with a certain slumbering form."
+      "name": "华馆之羽",
+      "desc": "于避世之幽馆中一同带出的箭羽状的凭证，因创造者的怜悯之情，而与某具沉睡之躯一同置于馆中。"
     },
     "sands": {
-      "name": "Song of Life",
-      "desc": "As far as Inazuma is concerned, this is some small object from overseas. The heart of this mechanism has been removed, and its hands no longer turn."
+      "name": "众生之谣",
+      "desc": "于稻妻而言乃是舶来品的小物件。名为机芯的零件已被卸下，指针也不再转动。"
     },
     "goblet": {
-      "name": "Calabash of Awakening",
-      "desc": "A gourd that has been adorned with powdered gold and black paint. Its original color can no longer be discerned, but its main use seems to be as a performance prop."
+      "name": "梦醒之瓢",
+      "desc": "以黑漆与金粉装饰过的葫芦，已看不出本来的颜色，好像主要作用是演出的道具。"
     },
     "circlet": {
-      "name": "Skeletal Hat",
-      "desc": "A hat that once shielded a wanderer from sun and rain. It eventually became a convenient tool with which faces might be hidden and expressions obscured."
+      "name": "形骸之笠",
+      "desc": "流浪者在旅途中遮光避雨的斗笠，但后来却成为了遮挡面目、隐藏表情的便利道具。"
     }
   }
 }

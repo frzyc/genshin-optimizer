@@ -1,26 +1,26 @@
 {
   "skill": {
-    "triggerChance": "Healing Triggering Chance",
-    "name": "Breastplate",
+    "triggerChance": "治疗触发几率",
+    "name": "护心铠",
     "description": {
-      "0": "Summons protective stone armor, dealing <geo>Geo DMG</geo> to surrounding opponents and creating a shield. The shield's DMG Absorption scales based on Noelle's DEF.",
-      "1": "The shield has the following properties:",
+      "0": "唤出护体的岩铠，对周围的敌人造成<geo>岩元素伤害</geo>，并形成护盾，伤害吸收量基于诺艾尔的防御力。",
+      "1": "护盾具有如下效果：",
       "2": [
-        "When Noelle's Normal and Charged Attacks hit a target, they have a certain chance to regenerate HP for all characters.",
-        "Possesses 150% DMG Absorption efficiency against all Elemental and Physical DMG."
+        "诺艾尔的普通攻击与重击命中时，都有几率为队伍中所有角色恢复生命值；",
+        "对所有元素伤害与物理伤害有150%的吸收效果。"
       ],
       "3": "<br/>",
-      "4": "The amount of HP healed when regeneration is triggered scales based on Noelle's DEF.",
+      "4": "触发治疗时的治疗量受益于诺艾尔的防御力。",
       "5": "<br/>",
-      "6": "<i>Noelle is both a dutiful maid and a valiant knight.</i>"
+      "6": "<i>诺艾尔既是侍奉的女仆，也是坚毅的骑士。</i>"
     },
     "skillParams": {
-      "0": "Skill DMG",
-      "1": "DMG Absorption",
-      "2": "Healing",
-      "3": "Healing Triggering Chance",
-      "4": "Duration",
-      "5": "CD",
+      "0": "技能伤害",
+      "1": "吸收量",
+      "2": "治疗量",
+      "3": "治疗触发几率",
+      "4": "持续时间",
+      "5": "冷却时间",
       "6": "",
       "7": "",
       "8": "",
@@ -34,26 +34,26 @@
     }
   },
   "burst": {
-    "atkBonus": "ATK Bonus",
-    "name": "Sweeping Time",
+    "atkBonus": "攻击力提高",
+    "name": "大扫除",
     "description": {
-      "0": "Gathering the strength of stone around her weapon, Noelle strikes the opponents surrounding her within a large AoE, dealing <geo>Geo DMG</geo>.",
-      "1": "Afterwards, Noelle gains the following effects:",
+      "0": "将磐石的力量凝聚在武器上，冲击周围的敌人并进行一次大范围扫击，造成<geo>岩元素伤害</geo>。",
+      "1": "此后，获得如下效果：",
       "2": [
-        "Larger attack AoE.",
-        "Converts attack DMG to <geo>Geo DMG</geo> that cannot be overridden by any other elemental infusion.",
-        "Increased ATK that scales based on her DEF."
+        "提高诺艾尔的攻击范围；",
+        "将攻击伤害转为<geo>岩元素伤害</geo>，该元素转化无法被附魔覆盖；",
+        "基于诺艾尔的防御力，提高攻击力。"
       ],
       "3": "<br/>",
-      "4": "<i>Sometimes, it's not just dust that needs sweeping...</i>"
+      "4": "<i>需要扫除的，有时不仅仅是灰尘…</i>"
     },
     "skillParams": {
-      "0": "Burst DMG",
-      "1": "Skill DMG",
-      "2": "ATK Bonus",
-      "3": "Duration",
-      "4": "CD",
-      "5": "Energy Cost",
+      "0": "爆发伤害",
+      "1": "技能伤害",
+      "2": "攻击力提高",
+      "3": "持续时间",
+      "4": "冷却时间",
+      "5": "元素能量",
       "6": "",
       "7": "",
       "8": "",
@@ -66,38 +66,38 @@
       "15": ""
     }
   },
-  "name": "Noelle",
-  "title": "Chivalric Blossom",
-  "description": "A maid who faithfully serves the Knights of Favonius. She dreams of joining their ranks someday.",
-  "constellationName": "Parma Cordis",
+  "name": "诺艾尔",
+  "title": "未授勋之花",
+  "description": "「西风骑士团」的可靠女仆，梦想有一天能成为正式的骑士。",
+  "constellationName": "心护座",
   "auto": {
-    "name": "Favonius Bladework - Maid",
+    "name": "西风剑术·女仆",
     "fields": {
       "normal": {
-        "0": "<strong>Normal Attack</strong>",
-        "1": "Perform up to 4 consecutive strikes."
+        "0": "<strong>普通攻击</strong>",
+        "1": "进行至多四段的连续挥砍。"
       },
       "charged": {
-        "0": "<strong>Charged Attack</strong>",
-        "1": "Drains Stamina over time to perform continuous spinning attacks against all nearby opponents.",
-        "2": "At the end of the sequence, perform a more powerful slash. "
+        "0": "<strong>重击</strong>",
+        "1": "持续消耗体力，旋转大剑攻击周围的敌人。",
+        "2": "停止旋转时，会进行一次格外有力的挥砍。"
       },
       "plunging": {
-        "0": "<strong>Plunging Attack</strong>",
-        "1": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact."
+        "0": "<strong>下落攻击</strong>",
+        "1": "从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成范围伤害。"
       }
     },
     "skillParams": {
-      "0": "1-Hit DMG",
-      "1": "2-Hit DMG",
-      "2": "3-Hit DMG",
-      "3": "4-Hit DMG",
-      "4": "Charged Attack Spinning DMG",
-      "5": "Charged Attack Final DMG",
-      "6": "Charged Attack Stamina Cost",
-      "7": "Max Duration",
-      "8": "Plunge DMG",
-      "9": "Low/High Plunge DMG",
+      "0": "一段伤害",
+      "1": "二段伤害",
+      "2": "三段伤害",
+      "3": "四段伤害",
+      "4": "重击循环伤害",
+      "5": "重击终结伤害",
+      "6": "重击体力消耗",
+      "7": "最大持续时间",
+      "8": "下坠期间伤害",
+      "9": "低空/高空坠地冲击伤害",
       "10": "",
       "11": "",
       "12": "",
@@ -107,64 +107,66 @@
     }
   },
   "passive1": {
-    "name": "Devotion",
+    "name": "全心全意",
     "description": {
-      "0": "When Noelle is in the party but not on the field, this ability triggers automatically when your active character's HP falls below 30%:",
-      "1": "Creates a shield for your active character that lasts for 20s and absorbs DMG equal to 400% of Noelle's DEF.",
-      "2": "The shield has a 150% DMG Absorption effectiveness against all Elemental and Physical DMG.",
-      "3": "This effect can only occur once every 60s."
+      "0": "诺艾尔处于队伍后台，且当前场上自己的角色的生命值低于30%时自动触发：",
+      "1": "为当前场上自己的角色生成一个伤害吸收量等同于诺艾尔防御力400%的护盾，持续20秒。",
+      "2": [
+        "对所有元素伤害与物理伤害有150%的吸收效果。"
+      ],
+      "3": "该效果60秒内只能触发一次。"
     }
   },
   "passive2": {
-    "name": "Nice and Clean",
+    "name": "干净利落",
     "description": {
-      "0": "Noelle will decrease the CD of <strong>Breastplate</strong> by 1s for every 4 Normal or Charged Attack hits she scores on opponents.",
-      "1": "One hit may be counted every 0.1s."
+      "0": "诺艾尔的普通攻击或重击累计命中敌人4次，会减少<strong>护心铠</strong>1秒的冷却。",
+      "1": "每0.1秒至多计数一次。"
     }
   },
   "passive3": {
-    "name": "Maid's Knighthood",
+    "name": "女仆的态度",
     "description": {
-      "0": "When a Perfect Cooking is achieved on a DEF-boosting dish, Noelle has a 12% chance to obtain double the product."
+      "0": "完美烹饪防御类食物时，有12%概率获得2倍产出。"
     }
   },
   "constellation1": {
-    "name": "I Got Your Back",
+    "name": "支援就交给我吧",
     "description": {
-      "0": "While <strong>Sweeping Time</strong> and <strong>Breastplate</strong> are both in effect, the chance of Breastplate's healing effects activating is increased to 100%."
+      "0": "同时处于<strong>大扫除</strong>与<strong>护心铠</strong>状态时，护心铠的生命值回复效果触发几率提升至100%。"
     }
   },
   "constellation2": {
-    "name": "Combat Maid",
+    "name": "旋风女仆",
     "description": {
-      "0": "Decreases the Stamina Consumption of Noelle's Charged Attacks by 20% and increases her Charged Attack DMG by 15%."
+      "0": "诺艾尔的重击的体力消耗降低20%，伤害提升15%。"
     }
   },
   "constellation3": {
-    "name": "Invulnerable Maid",
+    "name": "女仆不会受伤",
     "description": {
-      "0": "Increases the Level of <strong>Breastplate</strong> by 3.",
-      "1": "Maximum upgrade level is 15."
+      "0": "<strong>护心铠</strong>的技能等级提高3级。",
+      "1": "至多提升至15级。"
     }
   },
   "constellation4": {
-    "name": "To Be Cleaned",
+    "name": "之后会扫干净的",
     "description": {
-      "0": "When <strong>Breastplate</strong>'s duration expires or it is destroyed by DMG, it will deal 400% ATK of <geo>Geo DMG</geo> to surrounding opponents."
+      "0": "<strong>护心铠</strong>在效果结束时，或因伤害破碎时，会对周围的敌人造成400%攻击力的<geo>岩元素伤害</geo>。"
     }
   },
   "constellation5": {
-    "name": "Favonius Sweeper Master",
+    "name": "骑士团扫除专家",
     "description": {
-      "0": "Increases the Level of <strong>Sweeping Time</strong> by 3.",
-      "1": "Maximum upgrade level is 15."
+      "0": "<strong>大扫除</strong>的技能等级提高3级。",
+      "1": "至多提升至15级。"
     }
   },
   "constellation6": {
-    "name": "Must Be Spotless",
+    "name": "要一尘不染才行",
     "description": {
-      "0": "<strong>Sweeping Time</strong> increases Noelle's ATK by an additional 50% of her DEF.",
-      "1": "Additionally, every opponent defeated during the skill's duration adds 1s to the duration, up to 10s."
+      "0": "<strong>大扫除</strong>额外提高诺艾尔防御力50%的攻击力；",
+      "1": "此外，在技能持续时间内，每打倒1个敌人，其持续时间将延长1秒，最多不会超过10秒。"
     }
   }
 }

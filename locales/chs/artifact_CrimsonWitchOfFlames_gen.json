@@ -1,29 +1,29 @@
 {
-  "setName": "Crimson Witch of Flames",
+  "setName": "炽烈的炎之魔女",
   "setEffects": {
-    "2": "Pyro DMG Bonus +15%",
-    "4": "Increases Overloaded and Burning DMG by 40%. Increases Vaporize and Melt DMG by 15%. Using Elemental Skill increases the 2-Piece Set Bonus by 50% of its starting value for 10s. Max 3 stacks."
+    "2": "获得15%火元素伤害加成。",
+    "4": "超载、燃烧反应造成的伤害提升40%，蒸发、融化反应的加成系数提高15%。施放元素战技后的10秒内，2件套的效果提高50%，该效果最多叠加3次。"
   },
   "pieces": {
     "flower": {
-      "name": "Witch's Flower of Blaze",
-      "desc": "A flower touched by the witch who once dreamt of burning away all the demons in the world. The anonymous flames affectionately caress the hands of those who touch it."
+      "name": "魔女的炎之花",
+      "desc": "曾经梦想烧尽世间魔物的魔女触碰过的花朵。无名的火舌温暖地舔舐触碰它的人。"
     },
     "plume": {
-      "name": "Witch's Ever-Burning Plume",
-      "desc": "A bird feather touched by the witch who once dreamt of burning away all the demons in the world. Its eternal flame burns hot."
+      "name": "魔女常燃之羽",
+      "desc": "曾经梦想烧尽世间魔物的魔女触碰过的鸟羽，在恒常的燃烧中挥发着烈焰的温度。"
     },
     "sands": {
-      "name": "Witch's End Time",
-      "desc": "A timepiece worn by the witch who dreamt of burning away all the demons in the world. The years the witch dedicated to the flames flow within."
+      "name": "魔女破灭之时",
+      "desc": "曾经梦想烧尽世间魔物的魔女佩戴的时计。其中流淌着的是魔女献给火焰的岁月。"
     },
     "goblet": {
-      "name": "Witch's Heart Flames",
-      "desc": "A flame-spitting urn left behind by the Crimson Witch of Flames, who once dreamt of burning away all the demons in the world. The fire in the urn burns eternally, as did its former master."
+      "name": "魔女的心之火",
+      "desc": "曾经梦想烧尽世间魔物的炎之魔女留下的流火之甕。瓶中火永不熄灭，一如其人。"
     },
     "circlet": {
-      "name": "Witch's Scorching Hat",
-      "desc": "A hat once worn by the witch who dreamt of burning away all of the demons in the world. The large brim blocked her sight."
+      "name": "焦灼的魔女帽",
+      "desc": "曾经梦想烧尽世间魔物的炎之魔女曾经戴过的帽子。宽大的帽檐能遮挡她的视线。"
     }
   }
 }

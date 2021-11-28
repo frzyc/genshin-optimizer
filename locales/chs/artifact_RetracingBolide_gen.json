@@ -1,29 +1,29 @@
 {
-  "setName": "Retracing Bolide",
+  "setName": "逆飞的流星",
   "setEffects": {
-    "2": "Increases Shield Strength by 35%.",
-    "4": "While protected by a shield, gain an additional 40% Normal and Charged Attack DMG."
+    "2": "护盾强效提高35%。",
+    "4": "处于护盾庇护下时，额外获得40%普通攻击和重击伤害加成。"
   },
   "pieces": {
     "flower": {
-      "name": "Summer Night's Bloom",
-      "desc": "A man-made flower in eternal bloom. Who knows if there truly is life in there?"
+      "name": "夏祭之花",
+      "desc": "永远盛放的人造之花，其中是否具有生命呢。"
     },
     "plume": {
-      "name": "Summer Night's Finale",
-      "desc": "A well-crafted wooden dart. It will only stop once it has reached its destination."
+      "name": "夏祭终末",
+      "desc": "精致的木造飞镖。抵达终点时才会停滞之物。"
     },
     "sands": {
-      "name": "Summer Night's Moment",
-      "desc": "A pocketwatch that has stopped at a certain point in time."
+      "name": "夏祭之刻",
+      "desc": "停滞在某一时刻的精致怀钟。"
     },
     "goblet": {
-      "name": "Summer Night's Waterballoon",
-      "desc": "Water balloons can be seen everywhere during the summer festival, but none are as finely-wrought as this one."
+      "name": "夏祭水玉",
+      "desc": "夏祭时，盛水气球并不罕见。但如此精致的仅此一个。"
     },
     "circlet": {
-      "name": "Summer Night's Mask",
-      "desc": "A popular mask cast in the image of a deity, as described in the legends."
+      "name": "夏祭之面",
+      "desc": "依据传说中的神明形象制作的，十分流行的面具。"
     }
   }
 }

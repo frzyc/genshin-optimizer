@@ -1,36 +1,36 @@
 {
-  "name": "Venti",
-  "title": "Windborne Bard",
-  "description": "One of the many bards of Mondstadt, who freely wanders the city's streets and alleys.",
-  "constellationName": "Carmen Dei",
+  "name": "温迪",
+  "title": "风色诗人",
+  "description": "蒙德城诸多吟游诗人中的一位，自由自在地穿行在街头巷尾。",
+  "constellationName": "歌仙座",
   "auto": {
-    "name": "Divine Marksmanship",
+    "name": "神代射术",
     "fields": {
       "normal": {
-        "0": "<strong>Normal Attack</strong>",
-        "1": "Perform up to 6 consecutive shots with a bow."
+        "0": "<strong>普通攻击</strong>",
+        "1": "进行至多六段的连续弓箭射击。"
       },
       "charged": {
-        "0": "<strong>Charged Attack</strong>",
-        "1": "Perform a more precise <strong>Aimed Shot</strong> with increased DMG.",
-        "2": "While aiming, favorable winds will accumulate on the arrowhead. A fully charged wind arrow will deal <anemo>Anemo DMG</anemo>."
+        "0": "<strong>重击</strong>",
+        "1": "进行伤害更高、更为精准的<strong>瞄准射击</strong>。",
+        "2": "瞄准时，眷顾天地的风会在箭矢上持续积聚。聚满了风之力的箭矢会造成<anemo>风元素伤害</anemo>。"
       },
       "plunging": {
-        "0": "<strong>Plunging Attack</strong>",
-        "1": "Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact."
+        "0": "<strong>下落攻击</strong>",
+        "1": "从空中射出箭雨，并迅速下坠冲击地面，在落地时造成范围伤害。"
       }
     },
     "skillParams": {
-      "0": "1-Hit DMG",
-      "1": "2-Hit DMG",
-      "2": "3-Hit DMG",
-      "3": "4-Hit DMG",
-      "4": "5-Hit DMG",
-      "5": "6-Hit DMG",
-      "6": "Aimed Shot",
-      "7": "Fully-Charged Aimed Shot",
-      "8": "Plunge DMG",
-      "9": "Low/High Plunge DMG",
+      "0": "一段伤害",
+      "1": "二段伤害",
+      "2": "三段伤害",
+      "3": "四段伤害",
+      "4": "五段伤害",
+      "5": "六段伤害",
+      "6": "瞄准射击",
+      "7": "满蓄力瞄准射击",
+      "8": "下坠期间伤害",
+      "9": "低空/高空坠地冲击伤害",
       "10": "",
       "11": "",
       "12": "",
@@ -40,26 +40,26 @@
     }
   },
   "skill": {
-    "name": "Skyward Sonnet",
+    "name": "高天之歌",
     "description": {
-      "0": "O wind upon which all hymns and songs fly, bear these earth-walkers up into the sky!",
+      "0": "呼唤与诗和乐协鸣的风，将在尘泥中行走的事物送上高空吧。",
       "1": "<br/>",
-      "2": "<strong>Press</strong>",
-      "3": "Summons a Wind Domain at the opponent's location, dealing <anemo>AoE Anemo DMG</anemo> and launching opponents into the air.",
+      "2": "<strong>点按</strong>",
+      "3": "在敌人所在的位置唤出风域，造成<anemo>风元素范围伤害</anemo>，并击飞其中的敌人。",
       "4": "<br/>",
-      "5": "<strong>Hold</strong>",
-      "6": "Summons an even larger Wind Domain with Venti as the epicenter, dealing <anemo>AoE Anemo DMG</anemo> and launching affected opponents into the air.",
-      "7": "After unleashing the Hold version of this ability, Venti rides the wind into the air.",
+      "5": "<strong>长按</strong>",
+      "6": "以自身为中心，唤出更大的风域，造成<anemo>风元素范围伤害</anemo>，并击飞其中的敌人。",
+      "7": "长按施放后，温迪会乘风飞到空中。",
       "8": "<br/>",
-      "9": "Opponents hit by Skyward Sonnet will fall to the ground slowly.",
+      "9": "被高天之歌击飞的敌人，在短时间内会缓慢坠落。",
       "10": "<br/>",
-      "11": "<i>In the days when gods and men walked the earth together, the heavens were filled with countless songs. This melody has long since been forgotten.</i>"
+      "11": "<i>在人与神还同行于大地的时代，无数的歌曲传遍四方的天空。这是早已被遗忘的曲调。</i>"
     },
     "skillParams": {
-      "0": "Press DMG",
-      "1": "Press CD",
-      "2": "Hold DMG",
-      "3": "CD (hold)",
+      "0": "点按伤害",
+      "1": "点按冷却时间",
+      "2": "长按伤害",
+      "3": "长按冷却时间",
       "4": "",
       "5": "",
       "6": "",
@@ -75,22 +75,22 @@
     }
   },
   "burst": {
-    "name": "Wind's Grand Ode",
+    "name": "风神之诗",
     "description": {
-      "0": "Fires off an arrow made of countless coalesced winds, creating a huge Stormeye that sucks in opponents and deals continuous <anemo>Anemo DMG</anemo>.",
+      "0": "射出千风汇聚而成的箭矢，在前方造出巨大的暴风之眼，将敌人卷入，持续造成<anemo>风元素伤害</anemo>。",
       "1": "<br/>",
-      "2": "<strong>Elemental Absorption</strong>",
-      "3": "If the Stormeye comes into contact with <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, it will deal additional elemental DMG of that type.",
-      "4": "Elemental Absorption may only occur once per use.",
+      "2": "<strong>元素转化</strong>",
+      "3": "若暴风之眼在技能持续期间接触了<hydro>水元素</hydro>/<pyro>火元素</pyro>/<cryo>冰元素</cryo>/<electro>雷元素</electro>，则会获得对应元素属性，额外造成该元素的附加伤害。",
+      "4": "元素转化在技能持续期间仅会发生一次。",
       "5": "<br/>",
-      "6": "<i>Many hymns written in praise of the Anemo Archon have been lost to time. This one sings of his mastery over the wind.</i>"
+      "6": "<i>称颂风之神的诗篇有许多已经佚失。其中这一首描述的是他与风的力量。</i>"
     },
     "skillParams": {
-      "0": "DoT",
-      "1": "Additional Elemental DMG",
-      "2": "Duration",
-      "3": "CD",
-      "4": "Energy Cost",
+      "0": "持续伤害",
+      "1": "附加元素伤害",
+      "2": "持续时间",
+      "3": "冷却时间",
+      "4": "元素能量",
       "5": "",
       "6": "",
       "7": "",
@@ -105,63 +105,63 @@
     }
   },
   "passive1": {
-    "name": "Embrace of Winds",
+    "name": "绪风之拥",
     "description": {
-      "0": "Holding <strong>Skyward Sonnet</strong> creates an upcurrent that lasts for 20s."
+      "0": "长按<strong>高天之歌</strong>后，会产生上升气流，持续20秒。"
     }
   },
   "passive2": {
-    "name": "Stormeye",
+    "name": "暴风之眼",
     "description": {
-      "0": "Regenerates 15 Energy for Venti after the effects of <strong>Wind's Grand Ode</strong> end.",
-      "1": "If an Elemental Absorption occurred, this also restores 15 Energy to all characters of that corresponding element in the party."
+      "0": "<strong>风神之诗</strong>效果结束后，会为温迪恢复15点元素能量；",
+      "1": "若产生了元素转化，则同样为队伍中所有对应元素的角色恢复15点元素能量。"
     }
   },
   "passive3": {
-    "name": "Windrider",
+    "name": "恒风随行",
     "description": {
-      "0": "Decreases gliding Stamina consumption for your own party members by 20%.",
-      "1": "Not stackable with Passive Talents that provide the exact same effects."
+      "0": "队伍中自己的角色滑翔消耗的体力降低20%。",
+      "1": "无法与效果完全相同的固有天赋叠加。"
     }
   },
   "constellation1": {
-    "name": "Splitting Gales",
+    "name": "弦发的苍风",
     "description": {
-      "0": "Fires 2 additional arrows per <strong>Aimed Shot</strong>, each dealing 33% of the original arrow's DMG."
+      "0": "<strong>瞄准射击</strong>会额外发射两枚分裂箭，分别造成原本33%的伤害。"
     }
   },
   "constellation2": {
-    "name": "Breeze of Reminiscence",
+    "name": "眷恋的泠风",
     "description": {
-      "0": "<strong>Skyward Sonnet</strong> decreases opponents' <anemo>Anemo RES</anemo> and Physical RES by 12% for 10s.",
-      "1": "Opponents launched by <strong>Skyward Sonnet</strong> suffer an additional 12% <anemo>Anemo RES</anemo> and Physical RES decrease while airborne."
+      "0": "<strong>高天之歌</strong>会使敌人的<anemo>风元素抗性</anemo>与物理抗性降低12%，持续10秒。",
+      "1": "被<strong>高天之歌</strong>击飞的敌人在落地前，<anemo>风元素抗性</anemo>与物理抗性额外降低12%。"
     }
   },
   "constellation3": {
-    "name": "Ode to Thousand Winds",
+    "name": "千风的诗篇",
     "description": {
-      "0": "Increases the Level of <strong>Wind's Grand Ode</strong> by 3.",
-      "1": "Maximum upgrade level is 15."
+      "0": "<strong>风神之诗</strong>的技能等级提高3级。",
+      "1": "至多提升至15级。"
     }
   },
   "constellation4": {
-    "name": "Hurricane of Freedom",
+    "name": "自由的凛风",
     "description": {
-      "0": "When Venti picks up an Elemental Orb or Particle, he receives a 25% <anemo>Anemo DMG Bonus</anemo> for 10s."
+      "0": "温迪获取元素晶球或元素微粒后，获得25%<anemo>风元素伤害加成</anemo>，持续10秒。"
     }
   },
   "constellation5": {
-    "name": "Concerto dal Cielo",
+    "name": "高天的协奏",
     "description": {
-      "0": "Increases the Level of <strong>Skyward Sonnet</strong> by 3.",
-      "1": "Maximum upgrade level is 15."
+      "0": "<strong>高天之歌</strong>的技能等级提高3级。",
+      "1": "至多提升至15级。"
     }
   },
   "constellation6": {
-    "name": "Storm of Defiance",
+    "name": "抗争的暴风",
     "description": {
-      "0": "Targets who take DMG from <strong>Wind's Grand Ode</strong> have their <anemo>Anemo RES</anemo> decreased by 20%.",
-      "1": "If an Elemental Absorption occurred, then their RES towards the corresponding Element is also decreased by 20%."
+      "0": "受<strong>风神之诗</strong>伤害的敌人，<anemo>风元素抗性</anemo>降低20%；",
+      "1": "若产生了元素转化，则使转换的元素抗性也降低20%。"
     }
   }
 }

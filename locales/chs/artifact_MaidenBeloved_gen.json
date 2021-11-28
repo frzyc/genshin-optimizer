@@ -1,29 +1,29 @@
 {
-  "setName": "Maiden Beloved",
+  "setName": "被怜爱的少女",
   "setEffects": {
-    "2": "Character Healing Effectiveness +15%",
-    "4": "Using an Elemental Skill or Burst increases healing received by all party members by 20% for 10s."
+    "2": "角色造成的治疗效果提升15%。",
+    "4": "施放元素战技或元素爆发后的10秒内，队伍中所有角色受治疗效果加成提高20%。"
   },
   "pieces": {
     "flower": {
-      "name": "Maiden's Distant Love",
-      "desc": "A fragrant flower that will bloom for all eternity and never wither."
+      "name": "远方的少女之心",
+      "desc": "永远娇嫩的鲜花，历经长久时光仍不枯萎地散发着芬芳。"
     },
     "plume": {
-      "name": "Maiden's Heart-stricken Infatuation",
-      "desc": "A feathered accessory that carries the longing for a certain someone, like a migratory bird on the wind."
+      "name": "少女飘摇的思念",
+      "desc": "寄托谁人的思念的羽饰，就如与风一同去往远方的候鸟。"
     },
     "sands": {
-      "name": "Maiden's Passing Youth",
-      "desc": "The hands of time will never come to an end, but the same cannot not be said for those cherished years of the young maiden's life when she was doted upon."
+      "name": "少女苦短的良辰",
+      "desc": "指针的旋转不会有尽头，但少女受人宠爱的岁月则相反。"
     },
     "goblet": {
-      "name": "Maiden's Fleeting Leisure",
-      "desc": "A vessel made with sweet black tea in mind rather than bitter liquor."
+      "name": "少女片刻的闲暇",
+      "desc": "属于红茶而不属于烈酒，属于芳甜而不属于苦涩的杯皿。"
     },
     "circlet": {
-      "name": "Maiden's Fading Beauty",
-      "desc": "A meticulously well-maintained woman's hat that keeps wrinkles safely out of sight."
+      "name": "少女易逝的芳颜",
+      "desc": "精心保养的女士帽，即使是眼角的皱纹也可以完美遮盖。"
     }
   }
 }

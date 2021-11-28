@@ -1,34 +1,34 @@
 {
-  "name": "Xiangling",
-  "title": "Exquisite Delicacy",
-  "description": "A renowned chef from Liyue. She's extremely passionate about cooking and excels at making her signature hot and spicy dishes.",
-  "constellationName": "Trulla",
+  "name": "香菱",
+  "title": "万民百味",
+  "description": "来自璃月，名声在外的少女厨师，对料理之道极具热情，拿手麻辣菜肴堪称一绝。",
+  "constellationName": "长杓座",
   "auto": {
-    "name": "Dough-Fu",
+    "name": "白案功夫",
     "fields": {
       "normal": {
-        "0": "<strong>Normal Attack</strong>",
-        "1": "Performs up to five consecutive spear strikes."
+        "0": "<strong>普通攻击</strong>",
+        "1": "进行至多五段的连续枪击。"
       },
       "charged": {
-        "0": "<strong>Charged Attack</strong>",
-        "1": "Consumes a certain amount of Stamina to lunge forward, dealing damage to opponents along the way."
+        "0": "<strong>重击</strong>",
+        "1": "消耗一定体力，向前方突进，对路径上的敌人造成伤害。"
       },
       "plunging": {
-        "0": "<strong>Plunging Attack</strong>",
-        "1": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact."
+        "0": "<strong>下落攻击</strong>",
+        "1": "从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成范围伤害。"
       }
     },
     "skillParams": {
-      "0": "1-Hit DMG",
-      "1": "2-Hit DMG",
-      "2": "3-Hit DMG",
-      "3": "4-Hit DMG",
-      "4": "5-Hit DMG",
-      "5": "Charged Attack DMG",
-      "6": "Charged Attack Stamina Cost",
-      "7": "Plunge DMG",
-      "8": "Low/High Plunge DMG",
+      "0": "一段伤害",
+      "1": "二段伤害",
+      "2": "三段伤害",
+      "3": "四段伤害",
+      "4": "五段伤害",
+      "5": "重击伤害",
+      "6": "重击体力消耗",
+      "7": "下坠期间伤害",
+      "8": "低空/高空坠地冲击伤害",
       "9": "",
       "10": "",
       "11": "",
@@ -39,15 +39,15 @@
     }
   },
   "skill": {
-    "name": "Guoba Attack",
+    "name": "锅巴出击",
     "description": {
-      "0": "Summons Guoba, who will continuously breathe fire at opponents, dealing <pyro>AoE Pyro DMG</pyro>.",
+      "0": "唤出喷火的锅巴，存在期间内，不断对敌人喷火，造成<pyro>火元素范围伤害</pyro>。",
       "1": "<br/>",
-      "2": "<i>Guoba loves to eat spicy food. Problem is, his stomach can't handle something this spicy.</i>"
+      "2": "<i>锅巴喜欢吃火辣的食物。但锅巴承受不了如此火辣的食物。</i>"
     },
     "skillParams": {
-      "0": "Flame DMG",
-      "1": "CD",
+      "0": "喷火伤害",
+      "1": "冷却时间",
       "2": "",
       "3": "",
       "4": "",
@@ -65,21 +65,21 @@
     }
   },
   "burst": {
-    "name": "Pyronado",
+    "name": "旋火轮",
     "description": {
-      "0": "Displaying her mastery over both fire and polearms, Xiangling sends a Pyronado whirling around her.",
-      "1": "The Pyronado will move with your character for the ability's duration, dealing <pyro>Pyro DMG</pyro> to all opponents in its path.",
+      "0": "以控制火候与枪术的精湛技巧，甩出围绕自己快速旋转的旋火轮。",
+      "1": "存在期间内，旋火轮会跟随角色运动，对路径上的敌人造成<pyro>火元素伤害</pyro>。",
       "2": "<br/>",
-      "3": "<i>There will never be enough heat. Never.</i>"
+      "3": "<i>火力永远不够。远远不够。</i>"
     },
     "skillParams": {
-      "0": "1-Hit Swing DMG",
-      "1": "2-Hit Swing DMG",
-      "2": "3-Hit Swing DMG",
-      "3": "Pyronado DMG",
-      "4": "Duration",
-      "5": "CD",
-      "6": "Energy Cost",
+      "0": "一段挥舞伤害",
+      "1": "二段挥舞伤害",
+      "2": "三段挥舞伤害",
+      "3": "旋火轮伤害",
+      "4": "持续时间",
+      "5": "冷却时间",
+      "6": "元素能量",
       "7": "",
       "8": "",
       "9": "",
@@ -92,59 +92,59 @@
     }
   },
   "passive1": {
-    "name": "Crossfire",
+    "name": "交叉火力",
     "description": {
-      "0": "Increases the flame range of Guoba by 20%."
+      "0": "锅巴的喷火距离提高20%。"
     }
   },
   "passive2": {
-    "name": "Beware, It's Super Hot!",
+    "name": "绝云朝天椒",
     "description": {
-      "0": "When <strong>Guoba Attack</strong>'s effect ends, Guoba leaves a chili pepper on the spot where it disappeared. Picking up a chili pepper increases ATK by 10% for 10s."
+      "0": "<strong>锅巴出击</strong>效果结束时，锅巴会在消失的位置留下辣椒。拾取辣椒会提高10%攻击力，持续10秒。"
     }
   },
   "passive3": {
-    "name": "Chef de Cuisine",
+    "name": "万民堂大厨",
     "description": {
-      "0": "When Xiangling cooks an ATK-boosting dish perfectly, she has a 12% chance to receive double the product."
+      "0": "完美烹饪攻击类食物时，有12%概率获得2倍产出。"
     }
   },
   "constellation1": {
-    "name": "Crispy Outside, Tender Inside",
+    "name": "外酥里嫩",
     "description": {
-      "0": "Opponents hit by Guoba's attacks have their <pyro>Pyro RES</pyro> reduced by 15% for 6s."
+      "0": "受到锅巴攻击的敌人，<pyro>火元素抗性</pyro>降低15%，持续6秒。"
     }
   },
   "constellation2": {
-    "name": "Oil Meets Fire",
+    "name": "大火宽油",
     "description": {
-      "0": "The last attack in a Normal Attack sequence applies the Implode status onto the opponent for 2s. An explosion will occur once this duration ends, dealing 75% of Xiangling's ATK as <pyro>AoE Pyro DMG</pyro>."
+      "0": "普通攻击的最后一击会对敌人施加持续2秒的内爆效果，持续时间结束时会发生爆炸，造成75%攻击力的<pyro>火元素范围伤害</pyro>。"
     }
   },
   "constellation3": {
-    "name": "Deepfry",
+    "name": "武火急烹",
     "description": {
-      "0": "Increases the Level of <strong>Pyronado</strong> by 3.",
-      "1": "Maximum upgrade level is 15."
+      "0": "<strong>旋火轮</strong>的技能等级提高3级。",
+      "1": "至多提升至15级。"
     }
   },
   "constellation4": {
-    "name": "Slowbake",
+    "name": "文火慢煨",
     "description": {
-      "0": "<strong>Pyronado</strong>'s duration is increased by 40%."
+      "0": "<strong>旋火轮</strong>的持续时间延长40%。"
     }
   },
   "constellation5": {
-    "name": "Guoba Mad",
+    "name": "锅巴凶猛",
     "description": {
-      "0": "Increases the Level of <strong>Guoba Attack</strong> by 3.",
-      "1": "Maximum upgrade level is 15."
+      "0": "<strong>锅巴出击</strong>的技能等级提高3级。",
+      "1": "至多提升至15级。"
     }
   },
   "constellation6": {
-    "name": "Condensed Pyronado",
+    "name": "大龙卷旋火轮",
     "description": {
-      "0": "For the duration of <strong>Pyronado</strong>, all party members receive a 15% <pyro>Pyro DMG Bonus</pyro>."
+      "0": "<strong>旋火轮</strong>持续期间，队伍中所有角色获得15%<pyro>火元素伤害加成</pyro>。"
     }
   }
 }

@@ -1,12 +1,12 @@
 {
-  "name": "Iron Sting",
-  "description": "An exotic long-bladed rapier that somehow found its way into Liyue via foreign traders. It is light, agile, and sharp.",
-  "passiveName": "Infusion Stinger",
+  "name": "铁蜂刺",
+  "description": "外形流利的细长刺剑，是从异国经由商路流落到璃月的奇异兵器。轻快无比，剑芒极其锐利。",
+  "passiveName": "注能之刺",
   "passiveDescription": {
-    "0": "Dealing Elemental DMG increases all DMG by <cryo>6%</cryo> for 6s. Max 2 stacks. Can occur once every 1s.",
-    "1": "Dealing Elemental DMG increases all DMG by <cryo>7.5%</cryo> for 6s. Max 2 stacks. Can occur once every 1s.",
-    "2": "Dealing Elemental DMG increases all DMG by <cryo>9%</cryo> for 6s. Max 2 stacks. Can occur once every 1s.",
-    "3": "Dealing Elemental DMG increases all DMG by <cryo>10.5%</cryo> for 6s. Max 2 stacks. Can occur once every 1s.",
-    "4": "Dealing Elemental DMG increases all DMG by <cryo>12%</cryo> for 6s. Max 2 stacks. Can occur once every 1s."
+    "0": "造成元素伤害后的6秒内，角色造成的伤害提高<cryo>6%</cryo>，该效果最多叠加2层。该效果每1秒可以触发一次。",
+    "1": "造成元素伤害后的6秒内，角色造成的伤害提高<cryo>7.5%</cryo>，该效果最多叠加2层。该效果每1秒可以触发一次。",
+    "2": "造成元素伤害后的6秒内，角色造成的伤害提高<cryo>9%</cryo>，该效果最多叠加2层。该效果每1秒可以触发一次。",
+    "3": "造成元素伤害后的6秒内，角色造成的伤害提高<cryo>10.5%</cryo>，该效果最多叠加2层。该效果每1秒可以触发一次。",
+    "4": "造成元素伤害后的6秒内，角色造成的伤害提高<cryo>12%</cryo>，该效果最多叠加2层。该效果每1秒可以触发一次。"
   }
 }

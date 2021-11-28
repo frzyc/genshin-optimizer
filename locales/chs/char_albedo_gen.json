@@ -1,34 +1,34 @@
 {
-  "name": "Albedo",
-  "title": "Kreideprinz",
-  "description": "A genius known as the Kreideprinz, he is the Chief Alchemist and Captain of the Investigation Team of the Knights of Favonius.",
-  "constellationName": "Princeps Cretaceus",
+  "name": "阿贝多",
+  "title": "白垩之子",
+  "description": "西风骑士团首席炼金术士兼调查小队队长，被称做「白垩之子」的天才。",
+  "constellationName": "白垩之子座",
   "auto": {
-    "name": "Favonius Bladework - Weiss",
+    "name": "西风剑术·白",
     "fields": {
       "normal": {
-        "0": "<strong>Normal Attack</strong>",
-        "1": "Perform up to 5 rapid strikes."
+        "0": "<strong>普通攻击</strong>",
+        "1": "进行至多五段的连续剑击。"
       },
       "charged": {
-        "0": "<strong>Charged Attack</strong>",
-        "1": "Consumes a certain amount of Stamina to unleash 2 rapid sword strikes."
+        "0": "<strong>重击</strong>",
+        "1": "消耗一定体力，瞬间向前方挥出两剑。"
       },
       "plunging": {
-        "0": "<strong>Plunging Attack</strong>",
-        "1": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact."
+        "0": "<strong>下落攻击</strong>",
+        "1": "从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成范围伤害。"
       }
     },
     "skillParams": {
-      "0": "1-Hit DMG",
-      "1": "2-Hit DMG",
-      "2": "3-Hit DMG",
-      "3": "4-Hit DMG",
-      "4": "5-Hit DMG",
-      "5": "Charged Attack DMG",
-      "6": "Charged Attack Stamina Cost",
-      "7": "Plunge DMG",
-      "8": "Low/High Plunge DMG",
+      "0": "一段伤害",
+      "1": "二段伤害",
+      "2": "三段伤害",
+      "3": "四段伤害",
+      "4": "五段伤害",
+      "5": "重击伤害",
+      "6": "重击体力消耗",
+      "7": "下坠期间伤害",
+      "8": "低空/高空坠地冲击伤害",
       "9": "",
       "10": "",
       "11": "",
@@ -39,28 +39,29 @@
     }
   },
   "skill": {
-    "name": "Abiogenesis: Solar Isotoma",
+    "name": "创生法·拟造阳华",
     "description": {
-      "0": "Albedo creates a Solar Isotoma using alchemy, which deals <geo>AoE Geo DMG</geo> on appearance.",
+      "0": "炼成阳华，造成<geo>岩元素范围伤害</geo>。",
       "1": "<br/>",
-      "2": "<strong>Solar Isotoma</strong>",
-      "3": "has the following properties:",
+      "2": "<strong>阳华</strong>",
+      "3": "具有如下特性：",
       "4": [
-        "When opponents within the Solar Isotoma field take DMG, the Solar Isotoma will generate Transient Blossoms which deal <geo>AoE Geo DMG</geo>. DMG dealt scales off Albedo's DEF. ",
-        "Transient Blossoms can only be generated once every 2s.",
-        "When a character is located at the locus of the Solar Isotoma, the Solar Isotoma will accumulate Geo power to form a crystallized platform that lifts the character up to a certain height. Only one crystallized platform can exist at a time.",
-        "Solar Isotoma is considered a <geo>Geo construct</geo>. Only one Solar Isotoma created by Albedo himself can exist at a time. "
+        "以阳华为中心的领域中的敌人受到伤害时，阳华将会生成刹那之花，绽放造成<geo>岩元素范围伤害</geo>，伤害基于阿贝多的防御力。",
+        "每2秒只能生成一次刹那之花。",
+        "角色处在阳华上时，阳华将会凝聚岩元素的力量，形成将角色托起至一定高度的晶台。同时只能存在一个晶台。",
+        "同时只能存在一个由阿贝多自己创造的阳华，视为<geo>岩元素创造物</geo>。"
       ],
       "5": "<br/>",
-      "6": "<strong>Hold</strong> to designate the location of the skill.",
-      "7": "<br/>",
-      "8": "<i>This Geo bloom has an unusual property mirrored in the aim of alchemy. To rise from the earth, soar into the sky, and become the sun.</i>"
+      "6": "<strong>长按</strong>",
+      "7": "可以调整技能生效位置。",
+      "8": "<br/>",
+      "9": "<i>这种岩花有着奇异的特性，和炼金术的目的一致。诞生自大地，却一直希望上升至高天，化作太阳。</i>"
     },
     "skillParams": {
-      "0": "Skill DMG",
-      "1": "Transient Blossom DMG",
-      "2": "Duration",
-      "3": "Skill CD",
+      "0": "技能伤害",
+      "1": "刹那之花伤害",
+      "2": "持续时间",
+      "3": "技能冷却",
       "4": "",
       "5": "",
       "6": "",
@@ -76,20 +77,20 @@
     }
   },
   "burst": {
-    "name": "Rite of Progeniture: Tectonic Tide",
+    "name": "诞生式·大地之潮",
     "description": {
-      "0": "Under Albedo's command, Geo crystals surge and burst forth, dealing <geo>AoE Geo DMG</geo> in front of him.",
-      "1": "If a Solar Isotoma created by Albedo himself is on the field, 7 Fatal Blossoms will be generated in the Solar Isotoma field, bursting violently into bloom and dealing <geo>AoE Geo DMG</geo>.",
+      "0": "岩晶在阿贝多的指示下涌动爆发，在阿贝多前方造成<geo>岩元素范围伤害</geo>。",
+      "1": "场上存在阿贝多自己创造的阳华时，会在阳华的领域内生成7朵生灭之花，猛烈绽放并造成<geo>岩元素范围伤害</geo>。",
       "2": "<br/>",
-      "3": "Tectonic Tide DMG and Fatal Blossom DMG will not generate Transient Blossoms.",
+      "3": "爆发伤害与生灭之花的伤害不会生成刹那之花。",
       "4": "<br/>",
-      "5": "<i>Under the Kreideprinz's command, the tectonic tide of creation seethes into life.</i>"
+      "5": "<i>在白垩色王子的命令之下，大地的造物之潮翻涌了起来。</i>"
     },
     "skillParams": {
-      "0": "Elemental Burst DMG",
-      "1": "Fatal Blossom DMG",
-      "2": "CD",
-      "3": "Energy Cost",
+      "0": "爆发伤害",
+      "1": "生灭之花伤害",
+      "2": "冷却时间",
+      "3": "元素能量",
       "4": "",
       "5": "",
       "6": "",
@@ -105,63 +106,64 @@
     }
   },
   "passive1": {
-    "name": "Calcite Might",
+    "name": "白垩色的威压",
     "description": {
-      "0": "Transient Blossoms generated by <strong>Abiogenesis: Solar Isotoma</strong> deal 25% more DMG to opponents whose HP is below 50%."
+      "0": "<strong>创生法·拟造阳华</strong>的刹那之花对生命值低于50%的敌人造成的伤害提高25%。"
     }
   },
   "passive2": {
-    "name": "Homuncular Nature",
+    "name": "瓶中人的天慧",
     "description": {
-      "0": "Using <strong>Rite of Progeniture: Tectonic Tide</strong> increases the Elemental Mastery of nearby party members by 125 for 10s."
+      "0": "施放<strong>诞生式·大地之潮</strong>时，使附近的队伍中角色的元素精通提高125点，持续10秒。"
     }
   },
   "passive3": {
-    "name": "Flash of Genius",
+    "name": "天才的发现",
     "description": {
-      "0": "When Albedo crafts Weapon Ascension Materials, he has a 10% chance to receive double the product."
+      "0": "合成武器突破素材时，有10%概率获得2倍产出。"
     }
   },
   "constellation1": {
-    "name": "Flower of Eden",
+    "name": "伊甸之花",
     "description": {
-      "0": "Transient Blossoms generated by Albedo's <strong>Abiogenesis: Solar Isotoma</strong> regenerate 1.2 Energy for Albedo."
+      "0": "阿贝多的<strong>创生法·拟造阳华</strong>生成的刹那之花绽放时，为阿贝多自己回复1.2点元素能量。"
     }
   },
   "constellation2": {
-    "name": "Opening of Phanerozoic",
+    "name": "显生之宙",
     "description": {
-      "0": "Transient Blossoms generated by <strong>Abiogenesis: Solar Isotoma</strong> grant Albedo Fatal Reckoning for 30s:",
+      "0": "<strong>创生法·拟造阳华</strong>的刹那之花绽放时，会为阿贝多赋予生灭计数效果，持续30秒：",
       "1": [
-        "Unleashing <strong>Rite of Progeniture: Tectonic Tide</strong> consumes all stacks of Fatal Reckoning. Each stack of Fatal Reckoning consumed increases the DMG dealt by Fatal Blossoms and Rite of Progeniture: Tectonic Tide's burst DMG by 30% of Albedo's DEF.",
-        "This effect stacks up to 4 times."
+        "施放<strong>诞生式·大地之潮</strong>时，清除所有生灭计数效果，并根据清除的层数，提高诞生式·大地之潮的爆发伤害与生灭之花造成的伤害；",
+        "每层生灭计数，会提高等同于阿贝多防御力的30%的伤害；",
+        "该效果至多叠加4次。"
       ]
     }
   },
   "constellation3": {
-    "name": "Grace of Helios",
+    "name": "太阳之华",
     "description": {
-      "0": "Increases the Level of <strong>Abiogenesis: Solar Isotoma</strong> by 3.",
-      "1": "Maximum upgrade level is 15."
+      "0": "<strong>创生法·拟造阳华</strong>的技能等级提高3级。",
+      "1": "至多提升至15级。"
     }
   },
   "constellation4": {
-    "name": "Descent of Divinity",
+    "name": "神性之陨",
     "description": {
-      "0": "Active party members within the Solar Isotoma field have their Plunging Attack DMG increased by 30%."
+      "0": "处于阳华的领域中的队伍中当前场上角色，造成的下落攻击伤害提高30%。"
     }
   },
   "constellation5": {
-    "name": "Tide of Hadean",
+    "name": "冥古之潮",
     "description": {
-      "0": "Increases the Level of <strong>Rite of Progeniture: Tectonic Tide</strong> by 3.",
-      "1": "Maximum upgrade level is 15."
+      "0": "<strong>诞生式·大地之潮</strong>的技能等级提高3级。",
+      "1": "至多提升至15级。"
     }
   },
   "constellation6": {
-    "name": "Dust of Purification",
+    "name": "无垢之土",
     "description": {
-      "0": "Active party members within the Solar Isotoma field who are protected by a shield created by Crystallize have their DMG increased by 17%."
+      "0": "处在阳华的领域中的队伍中当前场上角色，若处于结晶反应产生的护盾庇护下，造成的伤害提高17%。"
     }
   }
 }

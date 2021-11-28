@@ -1,12 +1,12 @@
 {
-  "name": "Ferrous Shadow",
-  "description": "A replica of the famed sword of Arundolyn, the Lion of Light. Feel the power of a legendary hero as you hold this sword in your hand! Imagine yourself as the great warrior himself! Note: Daydreaming not recommended in live combat.",
-  "passiveName": "Unbending",
+  "name": "铁影阔剑",
+  "description": "这把剑是著名的光之狮艾伦德林的佩剑的仿品。握紧它，感受传说中大英雄的力量吧！注意：幻想请适度。",
+  "passiveName": "不屈",
   "passiveDescription": {
-    "0": "When HP falls below <cryo>70%</cryo>, increases Charged Attack DMG by <cryo>30%</cryo> and Charged Attacks become harder to interrupt.",
-    "1": "When HP falls below <cryo>75%</cryo>, increases Charged Attack DMG by <cryo>35%</cryo> and Charged Attacks become harder to interrupt.",
-    "2": "When HP falls below <cryo>80%</cryo>, increases Charged Attack DMG by <cryo>40%</cryo> and Charged Attacks become harder to interrupt.",
-    "3": "When HP falls below <cryo>85%</cryo>, increases Charged Attack DMG by <cryo>45%</cryo> and Charged Attacks become harder to interrupt.",
-    "4": "When HP falls below <cryo>90%</cryo>, increases Charged Attack DMG by <cryo>50%</cryo> and Charged Attacks become harder to interrupt."
+    "0": "生命值低于<cryo>70%</cryo>时，重击不会轻易被打断，并提高<cryo>30%</cryo>重击伤害。",
+    "1": "生命值低于<cryo>75%</cryo>时，重击不会轻易被打断，并提高<cryo>35%</cryo>重击伤害。",
+    "2": "生命值低于<cryo>80%</cryo>时，重击不会轻易被打断，并提高<cryo>40%</cryo>重击伤害。",
+    "3": "生命值低于<cryo>85%</cryo>时，重击不会轻易被打断，并提高<cryo>45%</cryo>重击伤害。",
+    "4": "生命值低于<cryo>90%</cryo>时，重击不会轻易被打断，并提高<cryo>50%</cryo>重击伤害。"
   }
 }

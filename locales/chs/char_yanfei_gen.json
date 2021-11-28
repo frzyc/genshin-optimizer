@@ -1,37 +1,37 @@
 {
-  "name": "Yanfei",
-  "title": "Wise Innocence",
-  "description": "A well-known legal adviser active in Liyue Harbor. A brilliant young lady in whose veins runs the blood of an illuminated beast.",
-  "constellationName": "Bestia Iustitia",
+  "name": "烟绯",
+  "title": "智明无邪",
+  "description": "活跃在璃月港的知名律法咨询师，混有仙兽血脉的精明少女。",
+  "constellationName": "法兽座",
   "auto": {
-    "name": "Seal of Approval",
+    "name": "火漆制印",
     "fields": {
       "normal": {
-        "0": "<strong>Normal Attack</strong>",
-        "1": "Shoots fireballs that deal up to three counts of <pyro>Pyro DMG</pyro>.",
-        "2": "When Yanfei's Normal Attacks hit enemies, they will grant her a single Scarlet Seal. Yanfei may possess a maximum of 3 Scarlet Seals, and each time this effect is triggered, the duration of currently possessed Scarlet Seals will refresh.",
-        "3": "Each Scarlet Seal will decrease Yanfei's Stamina consumption and will disappear when she leaves the field."
+        "0": "<strong>普通攻击</strong>",
+        "1": "连续发射火球，造成最多三段的<pyro>火元素伤害</pyro>。",
+        "2": "普通攻击命中敌人时，会赋予烟绯一枚丹火印。初始最多持有三枚丹火印，每次触发都会刷新已有的丹火印持续时间。",
+        "3": "每枚丹火印都会降低烟绯的体力消耗，并会在烟绯退场时消失。"
       },
       "charged": {
-        "0": "<strong>Charged Attack</strong>",
-        "1": "Consumes Stamina and all Scarlet Seals before dealing <pyro>AoE Pyro DMG</pyro> to opponents after a short casting time.",
-        "2": "This Charged Attack's AoE and DMG will increase according to the amount of Scarlet Seals consumed."
+        "0": "<strong>重击</strong>",
+        "1": "消耗体力，短暂咏唱后，消耗所有的丹火印，在前方造成<pyro>火元素范围伤害</pyro>。",
+        "2": "根据被消耗的丹火印数量，强化这次重击的范围与伤害。"
       },
       "plunging": {
-        "0": "<strong>Plunging Attack</strong>",
-        "1": "Gathering the power of Pyro, Yanfei plunges towards the ground from mid-air, damaging all opponents in her path. Deals <pyro>AoE Pyro DMG</pyro> upon impact with the ground."
+        "0": "<strong>下落攻击</strong>",
+        "1": "凝聚火元素的力量，从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成<pyro>火元素范围伤害</pyro>。"
       }
     },
     "skillParams": {
-      "0": "1-Hit DMG",
-      "1": "2-Hit DMG",
-      "2": "3-Hit DMG",
-      "3": "Charged Attack",
-      "4": "Charged Attack Stamina Cost",
-      "5": "Scarlet Seal Stamina Consumption Decrease",
-      "6": "Scarlet Seal Duration",
-      "7": "Plunge DMG",
-      "8": "Low/High Plunge DMG",
+      "0": "一段伤害",
+      "1": "二段伤害",
+      "2": "三段伤害",
+      "3": "重击伤害",
+      "4": "重击体力消耗",
+      "5": "丹火印降低体力消耗",
+      "6": "丹火印持续时间",
+      "7": "下坠期间伤害",
+      "8": "低空/高空坠地冲击伤害",
       "9": "",
       "10": "",
       "11": "",
@@ -42,16 +42,16 @@
     }
   },
   "skill": {
-    "name": "Signed Edict",
+    "name": "丹书立约",
     "description": {
-      "0": "Summons blistering flames that deal <pyro>AoE Pyro DMG</pyro>.",
-      "1": "Opponents hit by the flames will grant Yanfei the maximum number of Scarlet Seals.",
+      "0": "唤出烈焰，造成<pyro>火元素范围伤害</pyro>。",
+      "1": "命中敌人后，会为烟绯赋予最大数量的丹火印。",
       "2": "<br/>",
-      "3": "<i>Apart from their legal uses, Yanfei's seals also come with her customized additional terms and conditions. Well, it's not as if the Ministry of Civil Affairs can change the laws of nature.</i>"
+      "3": "<i>以火烧制的印除了法律效应之外，还带着烟绯自己的附加条款。毕竟自然法则只靠总务司是改不掉的。</i>"
     },
     "skillParams": {
-      "0": "Skill DMG",
-      "1": "CD",
+      "0": "技能伤害",
+      "1": "冷却时间",
       "2": "",
       "3": "",
       "4": "",
@@ -69,28 +69,28 @@
     }
   },
   "burst": {
-    "name": "Done Deal",
+    "name": "凭此结契",
     "description": {
-      "0": "Triggers a spray of intense flames that rush at nearby opponents, dealing <pyro>AoE Pyro DMG</pyro>, granting Yanfei the maximum number of Scarlet Seals, and applying Brilliance to her.",
+      "0": "引发喷薄爆发的烈火，冲击周围的敌人，造成<pyro>火元素范围伤害</pyro>，并为烟绯自己赋予最大数量的丹火印与灼灼效果。",
       "1": "<br/>",
-      "2": "<strong>Brilliance</strong>",
-      "3": "Has the following effects:",
+      "2": "<strong>灼灼</strong>",
+      "3": "具有如下效果：",
       "4": [
-        "Grants Yanfei a Scarlet Seal at fixed intervals.",
-        "Increases the DMG dealt by her Charged Attacks."
+        "每间隔一段时间，为烟绯赋予一枚丹火印；",
+        "提高重击造成的伤害。"
       ],
-      "5": "The effects of Brilliance will end if Yanfei leaves the field or falls in battle.",
+      "5": "灼灼效果会在烟绯退场与倒下时移除。",
       "6": "<br/>",
-      "7": "<i>\"Here are the full terms for this matter of life and death — by which I mean my life and your death!\"</i>"
+      "7": "<i>「条款齐备，依此立下生死之契。当然，是你死我生啦！」</i>"
     },
     "skillParams": {
-      "0": "Skill DMG",
+      "0": "技能伤害",
       "1": "",
-      "2": "Scarlet Seal Grant Interval",
-      "3": "Charged Attack DMG Bonus",
-      "4": "Duration",
-      "5": "CD",
-      "6": "Energy Cost",
+      "2": "丹火印赋予间隔",
+      "3": "重击伤害提升",
+      "4": "持续时间",
+      "5": "冷却时间",
+      "6": "元素能量",
       "7": "",
       "8": "",
       "9": "",
@@ -103,61 +103,61 @@
     }
   },
   "passive1": {
-    "name": "Proviso",
+    "name": "关联条款",
     "description": {
-      "0": "When Yanfei consumes Scarlet Seals by using a Charged Attack, each Scarlet Seal will increase Yanfei's <pyro>Pyro DMG Bonus</pyro> by 5%. This effects lasts for 6s. When a Charged Attack is used again during the effect's duration, it will dispel the previous effect."
+      "0": "烟绯通过重击消耗丹火印时，每枚丹火印会提升烟绯5%的<pyro>火元素伤害加成</pyro>，持续6秒。在该效果的持续时间内再次施放重击时，会先移除原有的效果。"
     }
   },
   "passive2": {
-    "name": "Blazing Eye",
+    "name": "法兽灼眼",
     "description": {
-      "0": "When Yanfei's Charged Attack deals a CRIT Hit to opponents, she will deal an additional instance of <pyro>AoE Pyro DMG</pyro> equal to 80% of her ATK. This DMG counts as Charged Attack DMG."
+      "0": "烟绯主动施放的重击对敌人造成暴击时，会额外造成一次80%攻击力的<pyro>火元素范围伤害</pyro>。该伤害视为重击伤害。"
     }
   },
   "passive3": {
-    "name": "Encyclopedic Expertise",
+    "name": "博闻强记",
     "description": {
-      "0": "Displays the location of nearby <strong>resources unique to Liyue</strong> on the mini-map."
+      "0": "在小地图上显示周围的<strong>璃月区域特产</strong>的位置。"
     }
   },
   "constellation1": {
-    "name": "The Law Knows No Kindness",
+    "name": "占理不饶人",
     "description": {
-      "0": "When Yanfei uses her Charged Attack, each existing Scarlet Seal additionally reduces the stamina cost of this Charged Attack by 10% and increases resistance against interruption during its release."
+      "0": "烟绯进行重击时，每持有一枚丹火印，都会提高烟绯在咏唱期间的抗打断能力，并额外降低本次重击10%的体力消耗。"
     }
   },
   "constellation2": {
-    "name": "Right of Final Interpretation",
+    "name": "最终解释权",
     "description": {
-      "0": "Increases Yanfei's Charged Attack CRIT Rate by 20% against enemies below 50% HP."
+      "0": "烟绯的重击对于生命值低于50%的敌人，暴击率提高20%。"
     }
   },
   "constellation3": {
-    "name": "Samadhi Fire-Forged",
+    "name": "真火炼宝印",
     "description": {
-      "0": "Increases the Level of <strong>Signed Edict</strong> by 3.",
-      "1": "Maximum upgrade level is 15."
+      "0": "<strong>丹书立约</strong>的技能等级提高3级。",
+      "1": "至多提升至15级。"
     }
   },
   "constellation4": {
-    "name": "Supreme Amnesty",
+    "name": "丹书金铁券",
     "description": {
-      "0": "When <strong>Done Deal</strong> is used:",
-      "1": "Creates a shield that absorbs up to 45% of Yanfei's Max HP for 15s.",
-      "2": "This shield absorbs <pyro>Pyro DMG</pyro> 250% more effectively."
+      "0": "施放<strong>凭此结契</strong>时：",
+      "1": "生成一个伤害吸收量等于生命值上限45%的护盾，持续15秒。",
+      "2": "该护盾对<pyro>火元素伤害</pyro>有250%的吸收效果。"
     }
   },
   "constellation5": {
-    "name": "Abiding Affidavit",
+    "name": "遵法切结书",
     "description": {
-      "0": "Increases the Level of <strong>Done Deal</strong> by 3.",
-      "1": "Maximum upgrade level is 15."
+      "0": "<strong>凭此结契</strong>的技能等级提高3级。",
+      "1": "至多提升至15级。"
     }
   },
   "constellation6": {
-    "name": "Extra Clause",
+    "name": "是额外条款",
     "description": {
-      "0": "Increases the maximum number of Scarlet Seals by 1."
+      "0": "烟绯持有的丹火印最大数量增加一枚。"
     }
   }
 }

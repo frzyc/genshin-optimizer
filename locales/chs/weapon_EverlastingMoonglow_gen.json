@@ -1,12 +1,12 @@
 {
-  "name": "Everlasting Moonglow",
-  "description": "A string of lovely jasper from the deep sea. It shines with a pure radiance like that of the moon, and just as ever-distant.",
-  "passiveName": "Byakuya Kougetsu",
+  "name": "不灭月华",
+  "description": "出自深海的美玉之环，闪烁着清澈如月的光泽，一如遥远往昔。",
+  "passiveName": "白夜皓月",
   "passiveDescription": {
-    "0": "Healing Bonus increased by <cryo>10%</cryo>, Normal Attack DMG is increased by <cryo>1%</cryo> of the Max HP of the character equipping this weapon. For 12s after using an Elemental Burst, Normal Attacks that hit opponents will restore 0.6 Energy. Energy can be restored this way once every 0.1s.",
-    "1": "Healing Bonus increased by <cryo>12.5%</cryo>, Normal Attack DMG is increased by <cryo>1.5%</cryo> of the Max HP of the character equipping this weapon. For 12s after using an Elemental Burst, Normal Attacks that hit opponents will restore 0.6 Energy. Energy can be restored this way once every 0.1s.",
-    "2": "Healing Bonus increased by <cryo>15%</cryo>, Normal Attack DMG is increased by <cryo>2%</cryo> of the Max HP of the character equipping this weapon. For 12s after using an Elemental Burst, Normal Attacks that hit opponents will restore 0.6 Energy. Energy can be restored this way once every 0.1s.",
-    "3": "Healing Bonus increased by <cryo>17.5%</cryo>, Normal Attack DMG is increased by <cryo>2.5%</cryo> of the Max HP of the character equipping this weapon. For 12s after using an Elemental Burst, Normal Attacks that hit opponents will restore 0.6 Energy. Energy can be restored this way once every 0.1s.",
-    "4": "Healing Bonus increased by <cryo>20%</cryo>, Normal Attack DMG is increased by <cryo>3%</cryo> of the Max HP of the character equipping this weapon. For 12s after using an Elemental Burst, Normal Attacks that hit opponents will restore 0.6 Energy. Energy can be restored this way once every 0.1s."
+    "0": "治疗加成提升<cryo>10%</cryo>；普通攻击造成的伤害增加，增加值为装备该武器的角色生命值上限的<cryo>1%</cryo>。在施放元素爆发后的12秒内，普通攻击命中敌人时恢复0.6点元素能量，每0.1秒至多通过这种方式恢复一次元素能量。",
+    "1": "治疗加成提升<cryo>12.5%</cryo>；普通攻击造成的伤害增加，增加值为装备该武器的角色生命值上限的<cryo>1.5%</cryo>。在施放元素爆发后的12秒内，普通攻击命中敌人时恢复0.6点元素能量，每0.1秒至多通过这种方式恢复一次元素能量。",
+    "2": "治疗加成提升<cryo>15%</cryo>；普通攻击造成的伤害增加，增加值为装备该武器的角色生命值上限的<cryo>2%</cryo>。在施放元素爆发后的12秒内，普通攻击命中敌人时恢复0.6点元素能量，每0.1秒至多通过这种方式恢复一次元素能量。",
+    "3": "治疗加成提升<cryo>17.5%</cryo>；普通攻击造成的伤害增加，增加值为装备该武器的角色生命值上限的<cryo>2.5%</cryo>。在施放元素爆发后的12秒内，普通攻击命中敌人时恢复0.6点元素能量，每0.1秒至多通过这种方式恢复一次元素能量。",
+    "4": "治疗加成提升<cryo>20%</cryo>；普通攻击造成的伤害增加，增加值为装备该武器的角色生命值上限的<cryo>3%</cryo>。在施放元素爆发后的12秒内，普通攻击命中敌人时恢复0.6点元素能量，每0.1秒至多通过这种方式恢复一次元素能量。"
   }
 }

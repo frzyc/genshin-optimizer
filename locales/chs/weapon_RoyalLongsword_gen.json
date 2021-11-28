@@ -1,12 +1,12 @@
 {
-  "name": "Royal Longsword",
-  "description": "An old longsword that belonged to the erstwhile rulers of Mondstadt. Exquisitely crafted, the carvings and embellishments testify to the stature of its owner.",
-  "passiveName": "Focus",
+  "name": "宗室长剑",
+  "description": "曾支配蒙德的旧日贵族的佩剑。做工精良，装饰与雕花彰显着挥舞者的身份。",
+  "passiveName": "专注",
   "passiveDescription": {
-    "0": "Upon damaging an opponent, increases CRIT Rate by <cryo>8%</cryo>. Max 5 stacks. A CRIT Hit removes all stacks.",
-    "1": "Upon damaging an opponent, increases CRIT Rate by <cryo>10%</cryo>. Max 5 stacks. A CRIT Hit removes all stacks.",
-    "2": "Upon damaging an opponent, increases CRIT Rate by <cryo>12%</cryo>. Max 5 stacks. A CRIT Hit removes all stacks.",
-    "3": "Upon damaging an opponent, increases CRIT Rate by <cryo>14%</cryo>. Max 5 stacks. A CRIT Hit removes all stacks.",
-    "4": "Upon damaging an opponent, increases CRIT Rate by <cryo>16%</cryo>. Max 5 stacks. A CRIT Hit removes all stacks."
+    "0": "攻击造成伤害时，暴击率提升<cryo>8%</cryo>，最多堆叠5次。攻击造成暴击后，移除已有的专注效果。",
+    "1": "攻击造成伤害时，暴击率提升<cryo>10%</cryo>，最多堆叠5次。攻击造成暴击后，移除已有的专注效果。",
+    "2": "攻击造成伤害时，暴击率提升<cryo>12%</cryo>，最多堆叠5次。攻击造成暴击后，移除已有的专注效果。",
+    "3": "攻击造成伤害时，暴击率提升<cryo>14%</cryo>，最多堆叠5次。攻击造成暴击后，移除已有的专注效果。",
+    "4": "攻击造成伤害时，暴击率提升<cryo>16%</cryo>，最多堆叠5次。攻击造成暴击后，移除已有的专注效果。"
   }
 }

@@ -1,12 +1,12 @@
 {
-  "name": "Cinnabar Spindle",
-  "description": "A sword made from materials that do not belong in this world. The power within might even be able to withstand the corruption of a venom that could corrode a mighty dragon.",
-  "passiveName": "Spotless Heart",
+  "name": "辰砂之纺锤",
+  "description": "由不似这个世界的物质制成的剑，其中的力量就连侵蚀龙的腐殖之毒也能抵御住吧。",
+  "passiveName": "无垢之心",
   "passiveDescription": {
-    "0": "Elemental Skill DMG is increased by <cryo>40%</cryo> of DEF. The effect will be triggered no more than once every 1.5s and will be cleared 0.1s after the Elemental Skill deals DMG.",
-    "1": "Elemental Skill DMG is increased by <cryo>50%</cryo> of DEF. The effect will be triggered no more than once every 1.5s and will be cleared 0.1s after the Elemental Skill deals DMG.",
-    "2": "Elemental Skill DMG is increased by <cryo>60%</cryo> of DEF. The effect will be triggered no more than once every 1.5s and will be cleared 0.1s after the Elemental Skill deals DMG.",
-    "3": "Elemental Skill DMG is increased by <cryo>70%</cryo> of DEF. The effect will be triggered no more than once every 1.5s and will be cleared 0.1s after the Elemental Skill deals DMG.",
-    "4": "Elemental Skill DMG is increased by <cryo>80%</cryo> of DEF. The effect will be triggered no more than once every 1.5s and will be cleared 0.1s after the Elemental Skill deals DMG."
+    "0": "元素战技造成的伤害值提高，提高数值相当于防御力的<cryo>40%</cryo>。该效果每1.5秒最多触发一次，并将在元素战技造成伤害后的0.1秒后清除效果。",
+    "1": "元素战技造成的伤害值提高，提高数值相当于防御力的<cryo>50%</cryo>。该效果每1.5秒最多触发一次，并将在元素战技造成伤害后的0.1秒后清除效果。",
+    "2": "元素战技造成的伤害值提高，提高数值相当于防御力的<cryo>60%</cryo>。该效果每1.5秒最多触发一次，并将在元素战技造成伤害后的0.1秒后清除效果。",
+    "3": "元素战技造成的伤害值提高，提高数值相当于防御力的<cryo>70%</cryo>。该效果每1.5秒最多触发一次，并将在元素战技造成伤害后的0.1秒后清除效果。",
+    "4": "元素战技造成的伤害值提高，提高数值相当于防御力的<cryo>80%</cryo>。该效果每1.5秒最多触发一次，并将在元素战技造成伤害后的0.1秒后清除效果。"
   }
 }
