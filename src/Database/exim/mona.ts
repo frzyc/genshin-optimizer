@@ -115,6 +115,8 @@ const ArtifactSetKeyMap: Dict<string, ArtifactSetKey> = {
   "paleFlame": "PaleFlame",
   "emblemOfSeveredFate": "EmblemOfSeveredFate",
   "shimenawaReminiscence": "ShimenawasReminiscence",
+  "huskOfOpulentDreams": "HuskOfOpulentDreams",
+  "oceanHuedClam": "OceanHuedClam",
 }
 const ArtifactMainStatKeyMap: Dict<string, MainStatKey> = {
   "cureEffect": "heal_",

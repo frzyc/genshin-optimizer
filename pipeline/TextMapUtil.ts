@@ -1,4 +1,4 @@
-export const TextMapCHS = require('./GenshinData/TextMap/TextMapEN.json')
+export const TextMapCHS = require('./GenshinData/TextMap/TextMapCHS.json')
 export const TextMapCHT = require('./GenshinData/TextMap/TextMapCHT.json')
 export const TextMapDE = require('./GenshinData/TextMap/TextMapDE.json')
 export const TextMapEN = require('./GenshinData/TextMap/TextMapEN.json')

@@ -88,7 +88,7 @@ export default function StatDisplay({ character, equippedBuild, newBuild, statKe
         oldVal = Character.getTalentFieldValue(field, "formula", equippedBuild)?.[0]?.(equippedBuild)
       }
     }
-    return { val, oldVal, fixed, unit, label, hasBonus: Character.hasBonusStats(character, statKey) }
+    return { val, oldVal, fixed, unit, label, hasBonus: !partyBuff && Character.hasBonusStats(character, statKey) }
   }, [character, equippedBuild, newBuild, statKey, partyBuff, formula])
   if ((val && typeof val !== "number") || (oldVal && typeof oldVal !== "number")) {
     let displayVal = val
