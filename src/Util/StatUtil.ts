@@ -87,20 +87,25 @@ export function characterBaseStats(character: ICachedCharacter) {
 }
 
 export function deepCloneStats(stats: ICalculatedStats): ICalculatedStats {
-  const newStats = { ...stats }
+  const newStats = deepCloneSingleStats(stats)
 
-  // Hand-pick costly copying
-  if (newStats.modifiers) newStats.modifiers = deepClone(newStats.modifiers)
   if (stats.teamStats) {
     const teamStats = stats.teamStats.map(t => {
       if (!t) return t
       const { teamStats, ...rest } = t
-      return deepClone(rest)
+      return deepCloneSingleStats(rest as ICalculatedStats)
     })
     const team = [newStats, ...teamStats]
-    teamStats.forEach((t, i) => t && (t.teamStats = team.filter((_, index) => index !== i + 1)))
+    teamStats.forEach((t, i) => t && (t.teamStats = team.filter((_, index) => index !== i + 1) as ICalculatedStats["teamStats"]))
     newStats.teamStats = teamStats as ICalculatedStats['teamStats']
   }
+  return newStats
+}
+// Just carry over team/teamstats
+function deepCloneSingleStats(stats: ICalculatedStats) {
+  const newStats = { ...stats }
+  // Hand-pick costly copying
+  if (newStats.modifiers) newStats.modifiers = deepClone(newStats.modifiers)
   newStats.partyAllModifiers = deepClone(newStats.partyAllModifiers)
   newStats.partyOnlyModifiers = deepClone(newStats.partyOnlyModifiers)
   newStats.partyActiveModifiers = deepClone(newStats.partyActiveModifiers)

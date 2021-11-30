@@ -202,7 +202,6 @@ export function artifactPermutations(initialStats: ICalculatedStats, artifactsBy
     const slotKey = slotKeys[index]
     for (const artifact of artifactsBySlot[slotKey] ?? []) {
       const newStats = deepCloneStats(stats)
-
       accumulate(slotKey, artifact, setCount, accu, newStats, artifactSetEffects)
       slotPerm(index + 1, newStats)
       setCount[artifact.setKey]! -= 1

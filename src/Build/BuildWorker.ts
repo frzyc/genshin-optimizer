@@ -61,7 +61,7 @@ onmessage = async (e: { data: BuildRequest & { plotBase?: StatKey } }) => {
     newCount = calculateTotalBuildNumber(prunedArtifacts, setFilters)
   }
 
-  let { initialStats, formula } = PreprocessFormulas(dependencies, stats)
+  let { initialStats, formula } = PreprocessFormulas(dependencies, stats, false)
   let buildCount = 0, skipped = oldCount - newCount
   let builds: Build[] = [], threshold = -Infinity
   const plotDataMap: Dict<string, number> = {}

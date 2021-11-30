@@ -12,7 +12,7 @@ import { ArtifactSetKey, SlotKey } from "../Types/consts";
 import { IFieldDisplay } from "../Types/IFieldDisplay";
 import { ICalculatedStats } from "../Types/stats";
 import { characterBaseStats, mergeCalculatedStats, mergeStats, overrideStatKeys } from "../Util/StatUtil";
-import { deepClone, evalIfFunc } from "../Util/Util";
+import { evalIfFunc } from "../Util/Util";
 import { defaultInitialWeapon } from "../Weapon/WeaponUtil";
 
 export default class Character {
@@ -224,7 +224,7 @@ export default class Character {
     if (!isAutoElemental) basicKeys.push("physical_dmg_")
 
     //show elemental interactions
-    const transReactions = deepClone(ElementToReactionKeys[eleKey])
+    const transReactions = [...ElementToReactionKeys[eleKey]]
     const weaponTypeKey = characterSheet.weaponTypeKey
     if (!transReactions.includes("shattered_hit") && weaponTypeKey === "claymore") transReactions.push("shattered_hit")
     const charFormulas = {}

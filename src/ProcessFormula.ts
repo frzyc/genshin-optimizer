@@ -39,7 +39,7 @@ function relevantMod(dependencyKeys: string[], modifiers: Modifier) {
 }
 type KeyedFormula = [string, (s: ICalculatedStats) => number]
 //assume all the dependency for the modifiers are part of the dependencyKeys as well
-export function PreprocessFormulas(dependencyKeys: string[], stats: ICalculatedStats) {
+export function PreprocessFormulas(dependencyKeys: string[], stats: ICalculatedStats, ui = true) {
   const { modifiers = {} } = stats, initialStats = {} as ICalculatedStats
   const premodFormulaList: KeyedFormula[] = [], postmodFormulaList: KeyedFormula[] = []
   for (const key of dependencyKeys) {
@@ -63,12 +63,17 @@ export function PreprocessFormulas(dependencyKeys: string[], stats: ICalculatedS
     const beforePreprocess = [...stats.teamStats]
     const preprocessed: [ICalculatedStats | null, undefined | ((s: ICalculatedStats) => void)][] = stats.teamStats.map(t => {
       if (!t) return [null, undefined]
+      if (!ui) { // if in builder, prune irrelevant mods to depdencies
+        t.partyAllModifiers = relevantMod(dependencyKeys, t.partyAllModifiers)
+        t.partyOnlyModifiers = relevantMod(dependencyKeys, t.partyOnlyModifiers)
+        t.partyActiveModifiers = relevantMod(dependencyKeys, t.partyActiveModifiers)
+      }
       const tPartyModifiers = {} as Modifier
       mergeModifiers(tPartyModifiers, t.partyAllModifiers)
       mergeModifiers(tPartyModifiers, t.partyOnlyModifiers)
       mergeModifiers(tPartyModifiers, t.partyActiveModifiers)
-      const tprocessKeys = GetDependencies(stats, tPartyModifiers, dependencyKeys)
-      const { initialStats: tStats, formula: tFormula } = PreprocessFormulas(tprocessKeys, t)
+      const tprocessKeys = GetDependencies(stats, tPartyModifiers, ui ? undefined : Object.keys(tPartyModifiers))
+      const { initialStats: tStats, formula: tFormula } = PreprocessFormulas(tprocessKeys, t, ui)
       return [tStats, tFormula]
     })
     initialStats.teamStats = preprocessed.map(([stats]) => stats) as ICalculatedStats['teamStats']
@@ -113,7 +118,8 @@ export function PreprocessFormulas(dependencyKeys: string[], stats: ICalculatedS
       mergeCalculatedStats(s, modStats)
       mergeStats(s, { modifiers })
 
-      postmodFormulaList.forEach(([key, formula]) => s[key] = formula(s))
+      if (s.activeCharacter || ui)
+        postmodFormulaList.forEach(([key, formula]) => s[key] = formula(s))
     }
   }
 }
