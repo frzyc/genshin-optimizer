@@ -213,18 +213,13 @@
         "name": "Concert du Millénaire - Ode à la Révolte"
     },
     "char_KaedeharaKazuha": {
-        "a4": {
-            "name": "Lors du déclenchement d'une Dispersion",
-            "text": "Bonus DGTs Élémentaires Teammate"
-        },
         "c2": "Dans Vent d'automne"
     },
     "char_Rosaria": {
         "a1": "Après le coup dans le dos",
         "a4": {
             "name": "Après avoir utilisé <strong>Sacrement mortel<strong/>",
-            "text": "Tx CRIT de l'équipe augmente",
-            "value": "15% du Tx CRIT de Rosalia"
+            "text": "Tx CRIT de l'équipe augmente"
         },
         "c1": "Après coup CRIT",
         "c6": "<strong>Sacrement mortel<strong/> sur un ennemi"

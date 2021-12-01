@@ -55,7 +55,7 @@
         "buttonHint": "Hinweis: Die oberen roten Buttons gelten nur für <1>gefilterte Artefakte</1>",
         "tipsOfTheDay": [
             "Die maximale Effizienz eines 4-Stern Artefakts liegt bei rund 60%.",
-            "Die maximale Effizienz eines Artefakts singt meist durch das Verstärken von diesem. Dies ist absolut normal.",
+            "Die maximale Effizienz eines Artefakts sinkt meist durch das Verstärken von diesem. Dies ist absolut normal.",
             "Bonusattribute mit 1-en sind für den Scanner am schwersten zu erkennen.",
             "Wird durch alle zufälligen Aufwertungen das selbe Bonusattribut aufgewertet, so wird dieses in Lila angezeigt.",
             "Klicke beim Verstärken der Artefakte auf \"Details\", um diese während des Verstärkens zu scannen.",
@@ -229,10 +229,6 @@
         "name": "Bewegung des Jahrtausends – Lied der Revolution"
     },
     "char_KaedeharaKazuha": {
-        "a4": {
-            "name": "Nach dem Auslösen einer Verwirbelung",
-            "text": "Erhöhung des Elementarschadens aller Truppenmitglieder"
-        },
         "c1": "Überspringt die Abklingzeit bei Anwendung von <strong>Kazuha-Schlag</strong>",
         "c2": "Innerhalb des wirbelnden Herbstfeldes"
     },
@@ -240,8 +236,7 @@
         "a1": "Bei Angriffen von hinten",
         "a4": {
             "name": "Bei Anwendung von <strong>Letzte Salbung<strong/>",
-            "text": "Erhöhung der KT aller Truppenmitglieder",
-            "value": "15% vom Rosaria's KT"
+            "text": "Erhöhung der KT aller Truppenmitglieder"
         },
         "c1": "Nach Auslösen eines KT",
         "c6": "Mit Angriffen von <strong>Letze Salbung<strong/>"

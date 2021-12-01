@@ -44,7 +44,7 @@ export class ArtifactSheet {
       case "PrayersForIllumination":
       case "PrayersForWisdom":
       case "PrayersToSpringtime": return ["circlet"]
-      default: return deepClone(allSlotKeys) as any
+      default: return [...allSlotKeys]
     }
   }
   get slotIcons(): Dict<SlotKey, string> { return this.data.icons }

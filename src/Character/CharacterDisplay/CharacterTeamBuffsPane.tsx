@@ -112,7 +112,7 @@ function CharArtifactCondDisplay({ condCharStats }: { condCharStats: ICalculated
   return <Box >
     {Object.entries(condCharStats.setToSlots).map(([artSetKey, slotkeys]) =>
       Object.entries(Conditional.partyConditionals?.artifact?.[artSetKey] ?? {})
-        .filter(([setNum, conds]) => parseInt(setNum) >= slotkeys.length)
+        .filter(([setNum, conds]) => parseInt(setNum) <= slotkeys.length)
         .flatMap(([setNum, conds]) => Object.entries(conds).map(([condKey, c]) =>
           <ConditionalDisplay key={c.key} conditional={c} stats={condCharStats} onChange={val => characterDispatch({ conditionalValues: val })} />
         )))}

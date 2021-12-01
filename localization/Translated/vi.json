@@ -43,16 +43,18 @@
         "filterLocation": {
             "inventory": "Kho đồ",
             "currentlyEquipped": "Đang trang bị",
-            "any": "Bất kỳ"
+            "any": "Vị trí: Bất kỳ"
         },
         "button": {
             "unequipArtifacts": "Gỡ Thánh Di Vật",
             "deleteArtifacts": "Xóa Thánh Di Vật",
             "excludeArtifacts": "Khóa Thánh Di Vật",
-            "includeArtifacts": "Mở khóa Thánh Di Vật"
+            "includeArtifacts": "Mở khóa Thánh Di Vật",
+            "lockArtifacts": "Khoá Thánh di vật",
+            "unlockrtifacts": "Mở khoá Thánh di vật"
         },
         "filterLevelFormat": "Cấp <1>từ</1>/<3>đến</3>",
-        "buttonHint": "Ghi chú: Những nút trên chỉ ảnh hưởng đến <1>bộ lọc thánh di vật</1>",
+        "buttonHint": "Ghi chú: Các nút màu đỏ ở trên chỉ áp dụng cho <1>bộ lọc thánh di vật</1>",
         "tipsOfTheDay": [
             "Hiệu suất tối đa của thánh di vật 4 sao ở khoảng 60%.",
             "Hiệu suất tối đa của thánh di vật có thể bị giảm khi bạn cường hóa thánh di vật. Đó là bình thường!",
@@ -85,11 +87,13 @@
         "sortMap": {
             "quality": "Chất lượng",
             "level": "Cấp độ",
-            "efficiency": "Hiệu suất hiện tại ",
-            "mefficiency": "Hiệu suất tối đa"
+            "efficiency": "Hiệu suất hiện tại.",
+            "mefficiency": "Hiệu suất tối đa."
         },
         "showingNum": "Hiển thị <1>{{count}}</1> trong {{value}} thánh di vật",
-        "showingNum_plural": "Hiển thị <1>{{count}}</1> trong {{value}} thánh di vật"
+        "showingNum_plural": "Hiển thị <1>{{count}}</1> trong {{value}} thánh di vật",
+        "resetFilters": "Cài lại bộ lọc",
+        "setEffectNum": "Bộ {{setNum}} món"
     },
     "languages": {
         "chs": "Tiếng Trung (giản thể)",
@@ -124,8 +128,27 @@
         "uploadCard": {
             "title": "Tải dữ liệu",
             "replaceDatabase": "Thay thế dữ liệu",
-            "hint": "Tải lên tệp JSON ở đây",
-            "hintPaste": "...hoặc dán thông tin của bạn bên dưới"
+            "hint": "Tải lên tệp JSON ở đây...",
+            "hintPaste": "...hoặc dán thông tin của bạn bên dưới.",
+            "goUpload": {
+                "migrate": "Cơ sở dữ liệu sẽ được chuyển sang phiên bản mới hơn. Vui lòng xem xét tải xuống lại cơ sở dữ liệu sau khi nhập.",
+                "deleteDatabasePrompt": "Bạn có chắc chắn muốn thay thế cơ sở dữ liệu của bạn không? Tất cả các nhân vật và thánh di vật sẽ bị xóa."
+            },
+            "error": {
+                "jsonParse": "Không thể phân tích tập tin JSON.",
+                "unknown": "Định dạng tập tin không xác định."
+            },
+            "dbSource": "Nguồn dữ liệu:"
+        },
+        "count": {
+            "chars": "Nhân vật:",
+            "arts": "Thánh di vật:",
+            "weapons": "Vũ khí:",
+            "new": "Mới:",
+            "updated": "Đã cập nhật:",
+            "removed": "Đã loại bỏ:",
+            "unchanged": "Không thay đổi:",
+            "invalid": "Không hợp lệ:"
         }
     },
     "ui": {
@@ -134,7 +157,8 @@
             "artifacts": "Thánh di vật",
             "characters": "Nhân vật",
             "builds": "Builds",
-            "tools": "Công cụ"
+            "tools": "Công cụ",
+            "weapons": "Vũ khí"
         },
         "social": {
             "paypal": "Paypal",
@@ -153,8 +177,58 @@
         "sortByFormat": "Xếp theo: {{value}}",
         "loading": "Đang tải...",
         "rightsDisclaimer": "Genshin Optimizer không được liên kết hoặc xác nhận bởi miHoyo",
-        "appVersion": "$t(pageTitle) Version: {{version}}",
+        "appVersion": "$t(pageTitle) Phiên bản: {{version}}",
         "underConstruction": "Đang hoàn thiện",
-        "error": "Lỗi"
+        "error": "Lỗi",
+        "reset": "Cài lại",
+        "info": "THÔNG TIN",
+        "inventory": "Túi",
+        "close": "Đóng",
+        "sortMap": {
+            "new": "Mới",
+            "name": "Tên",
+            "level": "Cấp độ",
+            "rarity": "Độ hiếm"
+        }
+    },
+    "sheet": {
+        "dmg": "Sát thương",
+        "lessPercentHP": "< {{percent}}% HP",
+        "afterUse": {
+            "skill": "Sau khi sử dụng Kỹ năng Nguyên tố",
+            "burst": "Sau khi sử dụng Kỹ năng Nộ"
+        },
+        "increase": {
+            "atk": "Tăng tấn công"
+        }
+    },
+    "char_KamisatoAyaka": {
+        "staminaRestore": "Phục hồi 10 Thể lực"
+    },
+    "weapon_Hamayumi": {
+        "ener": "100% năng lượng"
+    },
+    "weapon_ThunderingPulse": {
+        "emblem": "Biểu tượng Lôi"
+    },
+    "page_scanner": {
+        "backHome": "Quay lại trang chủ"
+    },
+    "page_home": {
+        "quickLinks": {
+            "goGithubBtn": "Genshin Optimizer Github"
+        },
+        "features": {
+            "title": "Tính năng",
+            "artifact": {
+                "title": "Trình chỉnh sửa Thánh di vật & Túi"
+            },
+            "characterEditor": {
+                "title": "Trình chỉnh sửa nhân vật & vũ khí"
+            },
+            "characterCalc": {
+                "title": "Tính toán sát thương của nhân vật"
+            }
+        }
     }
 }
