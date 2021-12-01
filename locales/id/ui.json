@@ -5,7 +5,9 @@
     "characters": "Karakter",
     "builds": "Build",
     "tools": "Alat",
-    "database": "Database"
+    "database": "Database",
+    "weapons": "Senjata",
+    "doc": "Docs"
   },
   "social": {
     "paypal": "Paypal",
@@ -14,7 +16,7 @@
   },
   "game": {
     "minLevel": "Level Min",
-    "maxLevel": "Level Max",
+    "maxLevel": "Level Maks",
     "rarity": "Kualitas",
     "level": "Level"
   },
@@ -24,9 +26,19 @@
   "sortByFormat": "Urut Berdasarkan: {{value}}",
   "loading": "Memuat...",
   "rightsDisclaimer": "Genshin Optimizer tidak berafiliasi dengan miHoYo.",
-  "appVersion": "$t(halamanJudul) Versi: {{version}}",
+  "appVersion": "$t(halamanJudul) Versi: <1>{{version}}</1>",
   "underConstruction": "Sedang Dibangun",
   "error": "Error",
   "reset": "Reset",
-  "info": "INFO"
+  "info": "INFO",
+  "inventory": "Tas",
+  "close": "Tutup",
+  "sortMap": {
+    "new": "Baru",
+    "name": "Nama",
+    "level": "Level",
+    "rarity": "Kualitas",
+    "efficiency": "Substart Eff. Saat Ini",
+    "mefficiency": "Substat Eff. Maksimum"
+  }
 }

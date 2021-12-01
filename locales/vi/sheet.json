@@ -1,0 +1,11 @@
+{
+  "dmg": "Sát thương",
+  "lessPercentHP": "< {{percent}}% HP",
+  "afterUse": {
+    "skill": "Sau khi sử dụng Kỹ năng Nguyên tố",
+    "burst": "Sau khi sử dụng Kỹ năng Nộ"
+  },
+  "increase": {
+    "atk": "Tăng tấn công"
+  }
+}

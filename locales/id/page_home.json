@@ -1,0 +1,36 @@
+{
+  "intro": "<0>Apa itu Genshin Optimizer?</0><1>Genshin Optimizer (GO) merupakan website fan-made open source untuk game gacha RPG <1><strong>Genshin Impact</strong></1>. Alat ini bertujuan untuk mempermudah pemain untuk mengoptimisasi artefak yang ada dalam game tersebut. Dikarenakan artefak mampu menentukan seberapa efektif karaktermu di dalam game, GO akan mencoba mencari artefak yang terbaik dari semua artefak yang kamu miliki untuk karaktermu.</1><2>GO bisa menyimpan informasi artefak yang kamu miliki serta bisa membandingkan dan memfilter artefak agar mempermudah pencarian artefak yang bagus di dalam tas untuk ditingkatkan levelnya atau artefak yang bisa dijadikan tumbal.</2><3>Karena GO sanggup menyalin stat untuk semua karakter, serta sanggup mengkalkulasi semua jumlah damage hingga akurasi 1%, alat ini bisa dijadikan sebagai kalkulator damage dan alat untuk theory crafting.</3>",
+  "helpDev": "<0>Ingin membantu si developer?</0><1>Jika kalian ingin membantu si developer secara finansial, kalian bisa melakukannya dengan cara donasi via <1>Paypal</1> atau <3>Patreon</3>. GO tidak akan memasang iklan dan tidak akan mengunci fitur mana pun di balik paywall. </1><2>Jika kalian ingin membantu proses penerjemahan GO ke dalam bahasamu, meminta fitur atau melaporkan bug, silakan bergabung ke dalam <1>discord</1> kami. Di sana, kalian akan menemukan semua informasi yang berkaitan dengan GO dan fitur apa saja yang masih dalam tahap pengerjaan. </2><3>Kalian juga bisa bergabung di <1>Genshin Dev discord</1> jika kalian tertarik membuat aplikasi Genshin.",
+  "credits": "<0>Ucapan terima kasih atas jasa yang tak terlupakan</0><1>GO merupakan hasil kerja keras selama berjam-jam yang dilakukan oleh dua maintainer, <1><strong>frzyc</strong></1> dan <3><strong>lantua</strong></3>. Berbagai sumber lain juga turut membantu dalam kontribusi pengembangan website ini. Ucapan terima kasih ini diberikan untuk mereka atas jasanya. </1><2><0><0>Terima kasih untuk kalian semua yang ada di komunitas, terutama bagi kalian yang ada di <1>discord</1> kami karena sudah menyediakan umpan balik dan membantu kami menyempurnakan alat ini. </0><1>Terima kasih untuk <1>Dimbreath</1>, karena sudah memberikan sumber yang konsisten untuk data genshin dan jumlah. Semua kalkulasi kami tidak akan sempurna tanpanya. </1><2>Beberapa gambar genshin yang kami miliki diambil langsung dari <1>The Genshin Impact Wiki</1>, jadi terima kasih juga untuk mereka. </2><3>Ucapan terima kasih yang istimewa bagi kalian di dalam komunitas yang sudah membantu kami menerjemahkan GO ke dalam bahasa lain, membantu kami menguji formula dengan merekam data in-game dan para programmer yang membantu kami dalam kontribusi sumber kode. </3><4>Terima kasih juga untuk kalian yang sudah membagikan alat ini dan mengundang lebih banyak orang untuk menggunakan alat ini. </4><5>Terkahir dan yang paling penting, terima kasih karena <strong>KAMU</strong> karena telah menggunakan GO. </5></0></2>",
+  "quickLinks": {
+    "title": "Quick Links",
+    "scannerTitle": "Apa kamu ingin mengimput proses artefak secara otomatis?",
+    "scannerText": "Berikut merupakan daftar pemindai otomatis kompatibel yang dapat menyajikan data ke GO. Program berikut bisa memindai artefak secara otomatis dari dalam game, lalu mengekspor data tersebut menjadi file. File tersebut lalu bisa diimpor ke dalam GO.",
+    "scannerBtn": "Daftar pemindai",
+    "goGithubText": "GO merupakan open-source, ditulis dalam TypeScript, dengan <1></1>React Framework.",
+    "goGithubBtn": "Genshin Optimizer Github"
+  },
+  "features": {
+    "title": "Fitur",
+    "artifact": {
+      "title": "Editor Artefak & Tas",
+      "content": "<0><0>Editor Artefak dengan fitur lengkap. </0><1>Tambahkan artefak dengan memindai screenshot. </1><2>Secara otomatis, mengkalkulasi nilai roll dari setiap artefak. </2><3>Mengkalkulasi efisiensi substat menggunakan kalkulasi roll. Menggunakan hasil efisiensi untuk menentukan apakah artefak tersebut layak disimpan atau ditumbal. </3><4>Artefak yang tersimpan bisa diurut dan difilter. </4><5>Mengimpor database artefak dari <1>pemindai otomatis pihak ketiga</1>.</5></0>"
+    },
+    "characterEditor": {
+      "title": "Editor karakter & Senjata",
+      "content": "<><>Editor karakter dengan fitur lengkap. </0><1>Mengisi secara otomatis stat karakter untuk setiap milestone level/ascension. </1><2>Stat yang bisa diedit untuk kostumisasi. </2><3>Mengkalkulasi stat saat ini berdasarkan senjata/artefak. </3><4>Editor senjata dengan fitur lengkap, dengan milestone stat level/ascension. </4><5>Menerapkan pasif kondisional, dari talent, senjata, dan artefak untuk meniru kondisi in-game secara akurat. </5></0>"
+    },
+    "characterCalc": {
+      "title": "Kalkulasi Damage Karakter",
+      "content": "<0><0>Semua rincian untuk semua talent karakter. </0><1>Semua jumlah harusnya sesuai dengan damage di dalam in-game (dengan perbedaan 1% error). </1><2>stat kondisional dan modifikasi dari semua konstelasi juga dihitung. </2><3>Menunjukkan kalkulasi dari semua jumlah, lengkap dengan formulanya. </3><4>Editor musuh dengan level/resistance yang dapat diisi untuk kostumisasi damage. </4><5>Elemental infusion untuk normal/charged/plunging attack juga ikut dihitung. </5><6>Kalkulasi damag secara real-time. </6></0>"
+    },
+    "build": {
+      "title": "Build Generator",
+      "content": "<0><0>Menghasilkan build untuk karakter tertentu yang menggunakan tas artefak. </0><1>Menghasilkan build karakter yang maksimal berdasarkan target optimisasi yang sesuai. </1><2>Membatasi build dengan set artefak, main stat... </2><3>Setting build dengan fitur lengkap dengan hasil yang disesuaikan. </3><4>Membandingkan build artefak yang dihasilkan dari generator dengan artefak yang saat ini dikenakan oleh karakter. </4><5>Menggunakan stat kondisional dari set artefak, mis. Bonus Elemental DMG dari Embled of Severed Fate 4-set sebagai bagian dari kalkulasi build. </5></0>"
+    },
+    "tools": {
+      "title": "Alat dan Gadget",
+      "content": "<0><0>Server time, dengan hitungan mundur hingga waktu reset. </0><1>Resin Counter. </1><2>Kalkulator Experience, untuk mengoptimisasi penggunaan EXP Book.</2></0>"
+    }
+  }
+}

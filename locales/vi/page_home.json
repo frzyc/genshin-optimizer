@@ -1,0 +1,17 @@
+{
+  "quickLinks": {
+    "goGithubBtn": "Genshin Optimizer Github"
+  },
+  "features": {
+    "title": "Tính năng",
+    "artifact": {
+      "title": "Trình chỉnh sửa Thánh di vật & Túi"
+    },
+    "characterEditor": {
+      "title": "Trình chỉnh sửa nhân vật & vũ khí"
+    },
+    "characterCalc": {
+      "title": "Tính toán sát thương của nhân vật"
+    }
+  }
+}

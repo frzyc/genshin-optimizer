@@ -37,6 +37,12 @@
   "count": {
     "chars": "Karakter:",
     "arts": "Artefak:",
-    "weapons": "Senjata:"
+    "weapons": "Senjata:",
+    "total": "Total:",
+    "new": "Baru:",
+    "updated": "Terupdate:",
+    "removed": "Dihilangkan:",
+    "unchanged": "Tidak berubah:",
+    "invalid": "Invalid:"
   }
 }

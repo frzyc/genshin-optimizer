@@ -5,7 +5,9 @@
     "characters": "Персонажи",
     "builds": "Билды",
     "tools": "Инструменты",
-    "database": "База данных"
+    "database": "База данных",
+    "weapons": "Оружия",
+    "doc": "Документация"
   },
   "social": {
     "paypal": "Paypal",

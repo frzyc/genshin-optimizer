@@ -42,16 +42,18 @@
   "filterLocation": {
     "inventory": "Kho đồ",
     "currentlyEquipped": "Đang trang bị",
-    "any": "Bất kỳ"
+    "any": "Vị trí: Bất kỳ"
   },
   "button": {
     "unequipArtifacts": "Gỡ Thánh Di Vật",
     "deleteArtifacts": "Xóa Thánh Di Vật",
     "excludeArtifacts": "Khóa Thánh Di Vật",
-    "includeArtifacts": "Mở khóa Thánh Di Vật"
+    "includeArtifacts": "Mở khóa Thánh Di Vật",
+    "lockArtifacts": "Khoá Thánh di vật",
+    "unlockrtifacts": "Mở khoá Thánh di vật"
   },
   "filterLevelFormat": "Cấp <1>từ</1>/<3>đến</3>",
-  "buttonHint": "Ghi chú: Những nút trên chỉ ảnh hưởng đến <1>bộ lọc thánh di vật</1>",
+  "buttonHint": "Ghi chú: Các nút màu đỏ ở trên chỉ áp dụng cho <1>bộ lọc thánh di vật</1>",
   "tipsOfTheDay": [
     "Hiệu suất tối đa của thánh di vật 4 sao ở khoảng 60%.",
     "Hiệu suất tối đa của thánh di vật có thể bị giảm khi bạn cường hóa thánh di vật. Đó là bình thường!",
@@ -84,9 +86,11 @@
   "sortMap": {
     "quality": "Chất lượng",
     "level": "Cấp độ",
-    "efficiency": "Hiệu suất hiện tại ",
-    "mefficiency": "Hiệu suất tối đa"
+    "efficiency": "Hiệu suất hiện tại.",
+    "mefficiency": "Hiệu suất tối đa."
   },
   "showingNum": "Hiển thị <1>{{count}}</1> trong {{value}} thánh di vật",
-  "showingNum_plural": "Hiển thị <1>{{count}}</1> trong {{value}} thánh di vật"
+  "showingNum_plural": "Hiển thị <1>{{count}}</1> trong {{value}} thánh di vật",
+  "resetFilters": "Cài lại bộ lọc",
+  "setEffectNum": "Bộ {{setNum}} món"
 }

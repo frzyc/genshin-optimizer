@@ -16,7 +16,26 @@
   "uploadCard": {
     "title": "Tải dữ liệu",
     "replaceDatabase": "Thay thế dữ liệu",
-    "hint": "Tải lên tệp JSON ở đây",
-    "hintPaste": "...hoặc dán thông tin của bạn bên dưới"
+    "hint": "Tải lên tệp JSON ở đây...",
+    "hintPaste": "...hoặc dán thông tin của bạn bên dưới.",
+    "goUpload": {
+      "migrate": "Cơ sở dữ liệu sẽ được chuyển sang phiên bản mới hơn. Vui lòng xem xét tải xuống lại cơ sở dữ liệu sau khi nhập.",
+      "deleteDatabasePrompt": "Bạn có chắc chắn muốn thay thế cơ sở dữ liệu của bạn không? Tất cả các nhân vật và thánh di vật sẽ bị xóa."
+    },
+    "error": {
+      "jsonParse": "Không thể phân tích tập tin JSON.",
+      "unknown": "Định dạng tập tin không xác định."
+    },
+    "dbSource": "Nguồn dữ liệu:"
+  },
+  "count": {
+    "chars": "Nhân vật:",
+    "arts": "Thánh di vật:",
+    "weapons": "Vũ khí:",
+    "new": "Mới:",
+    "updated": "Đã cập nhật:",
+    "removed": "Đã loại bỏ:",
+    "unchanged": "Không thay đổi:",
+    "invalid": "Không hợp lệ:"
   }
 }

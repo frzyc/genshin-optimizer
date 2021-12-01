@@ -4,7 +4,8 @@
     "artifacts": "Thánh di vật",
     "characters": "Nhân vật",
     "builds": "Builds",
-    "tools": "Công cụ"
+    "tools": "Công cụ",
+    "weapons": "Vũ khí"
   },
   "social": {
     "paypal": "Paypal",
@@ -23,7 +24,17 @@
   "sortByFormat": "Xếp theo: {{value}}",
   "loading": "Đang tải...",
   "rightsDisclaimer": "Genshin Optimizer không được liên kết hoặc xác nhận bởi miHoyo",
-  "appVersion": "$t(pageTitle) Version: {{version}}",
+  "appVersion": "$t(pageTitle) Phiên bản: {{version}}",
   "underConstruction": "Đang hoàn thiện",
-  "error": "Lỗi"
+  "error": "Lỗi",
+  "reset": "Cài lại",
+  "info": "THÔNG TIN",
+  "inventory": "Túi",
+  "close": "Đóng",
+  "sortMap": {
+    "new": "Mới",
+    "name": "Tên",
+    "level": "Cấp độ",
+    "rarity": "Độ hiếm"
+  }
 }
