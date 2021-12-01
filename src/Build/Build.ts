@@ -29,7 +29,7 @@ export const maxBuildsToShowDefault = 5
  * @param {bool} ascending - Whether the sorting is ascending or descending
  * @param {Set.<setKey>} alwaysAccepted - The list of artifact sets that are always included
  */
-export function pruneArtifacts(artifacts: ICachedArtifact[], artifactSetEffects: ArtifactSetEffects, significantStats: Set<StatKey>, maxBuildsToShow: number = 1, alwaysAccepted: Set<ArtifactSetKey> = new Set()): ICachedArtifact[] {
+export function pruneArtifacts(artifacts: ICachedArtifact[], artifactSetEffects: ArtifactSetEffects, significantStats: Set<StatKey>, initialStats: ICalculatedStats, maxBuildsToShow: number = 1, alwaysAccepted: Set<ArtifactSetKey> = new Set()): ICachedArtifact[] {
   function shouldKeepFirst(first: Dict<StatKey, number>, second: Dict<StatKey, number>, preferFirst: boolean) {
     let firstBetter = Object.entries(first).some(([k, v]) => !isFinite(v) || v > (second[k] ?? 0))
     let secondBetter = Object.entries(second).some(([k, v]) => !isFinite(v) || v > (first[k] ?? 0))
@@ -73,6 +73,18 @@ export function pruneArtifacts(artifacts: ICachedArtifact[], artifactSetEffects:
     for (const key in stats)
       if (key.endsWith("enemyRes_"))
         stats[key as StatKey] = -stats[key as StatKey]!
+    if (stats.atk_) {
+      stats.atk = (stats.atk ?? 0) + (initialStats.characterATK + initialStats.weaponATK) * stats.atk_
+      delete stats.atk_
+    }
+    if (stats.def_) {
+      stats.def = (stats.def ?? 0) + initialStats.characterDEF * stats.def_
+      delete stats.def_
+    }
+    if (stats.hp_) {
+      stats.hp = (stats.hp ?? 0) + initialStats.characterHP * stats.hp_
+      delete stats.hp_
+    }
     return { artifact, numberOfBetterSameSetArtifacts: 0, stats, set }
   })
 

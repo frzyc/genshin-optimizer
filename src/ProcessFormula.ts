@@ -64,6 +64,8 @@ export function PreprocessFormulas(dependencyKeys: string[], stats: ICalculatedS
     const preprocessed: [ICalculatedStats | null, undefined | ((s: ICalculatedStats) => void)][] = stats.teamStats.map(t => {
       if (!t) return [null, undefined]
       if (!ui) { // if in builder, prune irrelevant mods to depdencies
+        // Teammates do not need to calculate modifier that only applies to themselves in builder
+        t.modifiers = {}
         t.partyAllModifiers = relevantMod(dependencyKeys, t.partyAllModifiers)
         t.partyOnlyModifiers = relevantMod(dependencyKeys, t.partyOnlyModifiers)
         t.partyActiveModifiers = relevantMod(dependencyKeys, t.partyActiveModifiers)
@@ -72,6 +74,9 @@ export function PreprocessFormulas(dependencyKeys: string[], stats: ICalculatedS
       mergeModifiers(tPartyModifiers, t.partyAllModifiers)
       mergeModifiers(tPartyModifiers, t.partyOnlyModifiers)
       mergeModifiers(tPartyModifiers, t.partyActiveModifiers)
+
+      // If teammate does not have a party modifier, then don't bother calculating its stats at all in builder
+      if (!ui && !Object.keys(tPartyModifiers)) return [null, undefined]
       const tprocessKeys = GetDependencies(stats, tPartyModifiers, ui ? undefined : Object.keys(tPartyModifiers))
       const { initialStats: tStats, formula: tFormula } = PreprocessFormulas(tprocessKeys, t, ui)
       return [tStats, tFormula]
@@ -85,7 +90,7 @@ export function PreprocessFormulas(dependencyKeys: string[], stats: ICalculatedS
     const teamFormula = preprocessed.map(([_, formula]) => formula)
     processTeam = (s: ICalculatedStats) => {
       s.teamStats = s.teamStats.map((t, i) => {
-        if (!t) return t
+        if (!t || !teamFormula[i]) return t
         teamFormula[i]!(t)
         return { ...beforePreprocess[i]!, ...t }
       }) as ICalculatedStats['teamStats']

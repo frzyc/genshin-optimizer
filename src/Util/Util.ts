@@ -16,9 +16,9 @@ export function getRandomArbitrary(min, max) {
 /**
  * Assumes that the object entries are all primitives + objects
  * shallow copy the object,
- * deep copy the 
- * @param obj 
- * @returns 
+ * deep copy the
+ * @param obj
+ * @returns
  */
 export function deepClone<T>(obj: T): T {
   if (!obj) return obj

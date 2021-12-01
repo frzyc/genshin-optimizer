@@ -163,7 +163,7 @@ describe('pruneArtifacts', () => {
       substats: [{ key: "stat2", value: 15 },]
     }]
     const stats = new Set(["stat1", "stat2"])
-    expect(pruneArtifacts([...goodArtifact, ...badArtifact], {}, stats)).toEqual(goodArtifact)
+    expect(pruneArtifacts([...goodArtifact, ...badArtifact], {}, stats, {})).toEqual(goodArtifact)
   })
   test('should only keep the "similar" artifact with the lowest id', () => {
     const goodArtifact = [{
@@ -180,7 +180,7 @@ describe('pruneArtifacts', () => {
       substats: [{ key: "stat2", value: 20 },]
     }]
     const stats = new Set(["stat1", "stat2"])
-    expect(pruneArtifacts(goodArtifact, {}, stats)).toEqual([goodArtifact[0]])
+    expect(pruneArtifacts(goodArtifact, {}, stats, {})).toEqual([goodArtifact[0]])
   })
   test('should include set bonus', () => {
     const good = {
@@ -197,8 +197,8 @@ describe('pruneArtifacts', () => {
 
     const artifactSetEffects = { y: { 4: { "stat2": 21 } } }
     const stats = new Set(["stat1", "stat2"])
-    expect(pruneArtifacts([good, goodFromSetEffect], {}, stats)).toEqual([good])
-    expect(pruneArtifacts([good, goodFromSetEffect], artifactSetEffects, stats)).toEqual([good, goodFromSetEffect])
+    expect(pruneArtifacts([good, goodFromSetEffect], {}, stats, {})).toEqual([good])
+    expect(pruneArtifacts([good, goodFromSetEffect], artifactSetEffects, stats, {})).toEqual([good, goodFromSetEffect])
   })
   test('should ignore irrelevant stats', () => {
     const good = {
@@ -214,7 +214,7 @@ describe('pruneArtifacts', () => {
     }
 
     const stats = new Set(["stat1", "stat2"])
-    expect(pruneArtifacts([good, bad], {}, stats)).toEqual([good])
+    expect(pruneArtifacts([good, bad], {}, stats, {})).toEqual([good])
   })
   test('should support ascending pruning', () => {
     const goodArtifact = [{
@@ -237,7 +237,7 @@ describe('pruneArtifacts', () => {
       substats: [{ key: "stat2", value: 21 },]
     }]
     const stats = new Set(["stat1", "stat2"])
-    expect(pruneArtifacts([...goodArtifact, ...badArtifact], {}, stats)).toEqual(goodArtifact)
+    expect(pruneArtifacts([...goodArtifact, ...badArtifact], {}, stats, {})).toEqual(goodArtifact)
   })
   test('should reverse the order with enemy resistance', () => {
     const goodArtifact = [{
@@ -251,7 +251,7 @@ describe('pruneArtifacts', () => {
       substats: []
     }]
     const stats = new Set(['cryo_enemyRes_'])
-    expect(pruneArtifacts([...goodArtifact, ...badArtifact], {}, stats)).toEqual(goodArtifact)
+    expect(pruneArtifacts([...goodArtifact, ...badArtifact], {}, stats, {})).toEqual(goodArtifact)
   })
   test('should not cross prune artifacts with significant modifiers', () => {
     const modArtifact = [{
@@ -269,13 +269,13 @@ describe('pruneArtifacts', () => {
     const setEffects1: ArtifactSetEffects = {
       EmblemOfSeveredFate: { 4: { modifiers: { atk: { b: 0 } } } }
     }
-    expect(pruneArtifacts([...modArtifact, ...nonModArtifact], setEffects1, stats)).toEqual([...modArtifact, ...nonModArtifact])
+    expect(pruneArtifacts([...modArtifact, ...nonModArtifact], setEffects1, stats, {})).toEqual([...modArtifact, ...nonModArtifact])
 
     // non-significant modifiers
     const setEffects2: ArtifactSetEffects = {
       EmblemOfSeveredFate: { 4: { modifiers: { dmg_: { b: 0 } } } }
     }
-    expect(pruneArtifacts([...modArtifact, ...nonModArtifact], setEffects2, stats)).toEqual(nonModArtifact)
+    expect(pruneArtifacts([...modArtifact, ...nonModArtifact], setEffects2, stats, {})).toEqual(nonModArtifact)
 
   })
   test('should prune artifacts with modifiers in the same set', () => {
@@ -293,7 +293,7 @@ describe('pruneArtifacts', () => {
       EmblemOfSeveredFate: { 4: { modifiers: { atk: { b: 0 } } } }
     }
     const stats = new Set(["atk"])
-    expect(pruneArtifacts([...modArtifact, ...betterArtifact], setEffects1, stats)).toEqual(betterArtifact)
+    expect(pruneArtifacts([...modArtifact, ...betterArtifact], setEffects1, stats, {})).toEqual(betterArtifact)
   })
   test('should not prune artifacts with different modifiers', () => {
     const modArtifact1 = [{
@@ -312,7 +312,7 @@ describe('pruneArtifacts', () => {
     }
     const stats = new Set(["atk"])
     // We can't prune either artifact here. The set effects could go in any direction.
-    expect(pruneArtifacts([...modArtifact1, ...modArtifact2], setEffects1, stats)).toEqual([...modArtifact1, ...modArtifact2])
+    expect(pruneArtifacts([...modArtifact1, ...modArtifact2], setEffects1, stats, {})).toEqual([...modArtifact1, ...modArtifact2])
   })
   test('should not prune artifact with non-numerical set effects', () => {
     const modArtifact = [{
@@ -330,7 +330,7 @@ describe('pruneArtifacts', () => {
     const setEffects1: ArtifactSetEffects = {
       EmblemOfSeveredFate: { 4: { infusionSelf: "pyro" } }
     }
-    expect(pruneArtifacts([...modArtifact, ...nonModArtifact], setEffects1, stats)).toEqual([...modArtifact, ...nonModArtifact])
+    expect(pruneArtifacts([...modArtifact, ...nonModArtifact], setEffects1, stats, {})).toEqual([...modArtifact, ...nonModArtifact])
   })
 })
 

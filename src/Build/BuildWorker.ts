@@ -57,7 +57,7 @@ onmessage = async (e: { data: BuildRequest & { plotBase?: StatKey } }) => {
     const alwaysAccepted = setFilters.map(set => set.key) as any
 
     prunedArtifacts = Object.fromEntries(Object.entries(splitArtifacts).map(([key, values]) =>
-      [key, pruneArtifacts(values, artifactSetEffects, new Set(dependencies), maxBuildsToShow, new Set(alwaysAccepted))]))
+      [key, pruneArtifacts(values, artifactSetEffects, new Set(dependencies), stats, maxBuildsToShow, new Set(alwaysAccepted))]))
     newCount = calculateTotalBuildNumber(prunedArtifacts, setFilters)
   }
 
