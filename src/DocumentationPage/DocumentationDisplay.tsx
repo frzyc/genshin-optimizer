@@ -205,9 +205,11 @@ function WeaponKeyPane() {
   </>
 }
 
-
-const LineNumber = styled("textarea")(({ theme }) => ({
-  width: "2em", overflow: "hidden", userSelect: "none", color: theme.palette.text.secondary, resize: "none", border: "none",
+type LineNumberProps = {
+  digits?: number;
+}
+const LineNumber = styled("textarea")<LineNumberProps>(({ theme, digits = 2 }) => ({
+  width: `${digits}em`, overflow: "hidden", userSelect: "none", color: theme.palette.text.secondary, resize: "none", border: "none",
   "&:disabled": {
     backgroundColor: "transparent"
   }
@@ -233,7 +235,7 @@ function CodeBlock({ text }) {
   const lineNums = Array.from(Array(lines).keys()).map(i => i + 1).join('\n')
 
   return <Box display="flex" flexDirection="row">
-    <LineNumber disabled={true} spellCheck="false" aria-label='Code Sample' rows={lines} value={lineNums} unselectable="on" />
+    <LineNumber disabled={true} spellCheck="false" aria-label='Code Sample' rows={lines} value={lineNums} unselectable="on" digits={lines.toString().length} />
     <CodeArea sx={{ flexGrow: 1 }} disabled={true} spellCheck="false" aria-label='Code Sample' rows={lines} value={text} />
   </Box>
 }

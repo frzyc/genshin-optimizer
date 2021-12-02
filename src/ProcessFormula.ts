@@ -89,11 +89,14 @@ export function PreprocessFormulas(dependencyKeys: string[], stats: ICalculatedS
     })
     const teamFormula = preprocessed.map(([_, formula]) => formula)
     processTeam = (s: ICalculatedStats) => {
-      s.teamStats = s.teamStats.map((t, i) => {
-        if (!t || !teamFormula[i]) return t
+      s.teamStats.forEach((t, i) => {
+        if (!t || !teamFormula[i]) return
         teamFormula[i]!(t)
-        return { ...beforePreprocess[i]!, ...t }
-      }) as ICalculatedStats['teamStats']
+      })
+      if (ui)
+        s.teamStats = s.teamStats.map((t, i) =>
+          (!t || !beforePreprocess[i]) ? t : { ...beforePreprocess[i], ...t }
+        ) as ICalculatedStats['teamStats']
     }
   }
 

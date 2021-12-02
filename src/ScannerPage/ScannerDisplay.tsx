@@ -14,10 +14,7 @@ import GIScanner from './GIScanner.png'
 export default function ScannerDisplay(props: any) {
   const { t } = useTranslation('page_scanner')
   ReactGA.pageview('/scanner')
-  return <Box sx={{
-    mt: 1,
-    "> div": { mb: 1 },
-  }}>
+  return <Box display="flex" flexDirection="column" gap={1} my={1}>
     <CardDark><CardContent>
       <Trans t={t} i18nKey="intro">
         <Typography variant="h5">Automatic Scanners</Typography>

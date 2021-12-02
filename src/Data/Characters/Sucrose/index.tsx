@@ -24,6 +24,9 @@ import { Translate } from '../../../Components/Translate'
 import { chargedDocSection, conditionalHeader, normalDocSection, plungeDocSection, sgt, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
 import ColorText from '../../../Components/ColoredText'
+import { KeyPath } from '../../../Util/KeyPathUtil'
+import { FormulaPathBase } from '../../formula'
+const path = KeyPath<FormulaPathBase, any>().character.Sucrose
 const tr = (strKey: string) => <Translate ns="char_Sucrose_gen" key18={strKey} />
 const char: ICharacterSheet = {
   name: tr("name"),
@@ -107,7 +110,24 @@ const char: ICharacterSheet = {
           },
         }]
       },
-      passive1: talentTemplate("passive1", tr, passive1),
+      passive1: {
+        name: tr("passive1.name"),
+        img: passive1,
+        sections: [{
+          text: tr("passive1.description"),
+          conditional: {
+            key: "a1",
+            canShow: stats => stats.ascension >= 4,
+            partyBuff: "partyOnly",
+            header: conditionalHeader("passive1", tr, passive1),
+            description: tr("passive1.description"),
+            name: "When Sucrose triggers a Swirl reaction",
+            fields: [{
+              text: <ColorText color="warning">This Team buff currently does not work. please add the EM manually to the characer.</ColorText>
+            }]
+          }
+        }]
+      },
       passive2: {
         name: tr("passive2.name"),
         img: passive2,
@@ -120,6 +140,9 @@ const char: ICharacterSheet = {
             header: conditionalHeader("passive2", tr, passive2),
             description: tr("passive2.description"),
             name: "When Skill hits opponent",
+            stats: {
+              modifiers: { eleMas: [path.passive2.em()] },
+            },
             fields: [{
               text: "Elemental Mastery Bonus",
               formulaText: stats => <span>20% {Stat.printStat("eleMas", stats, true)}</span>,

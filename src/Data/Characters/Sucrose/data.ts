@@ -42,7 +42,7 @@ const formula: IFormulaSheet = {
       [eleKey, stats => basicDMGFormula(data.burst.dmg_[stats.tlvl.burst], stats, "burst", eleKey)]))
   },
   passive2: {
-    em: stats => [s => s.eleMas * 0.2, ['eleMas']]
+    em: stats => [s => (s.premod?.eleMas ?? s.eleMas) * 0.2, ['eleMas']]
   }
 }
 export default formula

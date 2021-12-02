@@ -49,21 +49,21 @@ export function mergeCalculatedStats(initialStats: ICalculatedStats, stats: Bonu
     switch (key) {
       case "partyAll": {
         const { modifiers, ...rest } = val
-        mergePartyStats(initialStats, rest)
+        Object.keys(rest).length && mergePartyStats(initialStats, rest)
         initialStats.teamStats.forEach(t => t && mergePartyStats(t, rest))
         modifiers && mergeModifiers(initialStats[`${key}Modifiers`], modifiers)
         break;
       }
       case "partyOnly": {
         const { modifiers, ...rest } = val
-        initialStats.teamStats.forEach(t => t && mergePartyStats(t, rest))
+        Object.keys(rest).length && initialStats.teamStats.forEach(t => t && mergePartyStats(t, rest))
         modifiers && mergeModifiers(initialStats[`${key}Modifiers`], modifiers)
         break;
       }
       case "partyActive": {
         const { modifiers, ...rest } = val;
         const active = [initialStats, ...initialStats.teamStats].find(t => t?.activeCharacter)
-        active && mergePartyStats(active, rest)
+        active && Object.keys(rest).length && mergePartyStats(active, rest)
         modifiers && mergeModifiers(initialStats[`${key}Modifiers`], modifiers)
         break;
       }

@@ -3,7 +3,7 @@ import ImgIcon from "../../Components/Image/ImgIcon";
 import SqBadge from "../../Components/SqBadge";
 import { Translate } from "../../Components/Translate";
 import Stat from "../../Stat";
-import { TalentSheetElementKey } from "../../Types/character";
+import { DocumentSection, TalentSheetElement, TalentSheetElementKey } from "../../Types/character";
 import { ElementKey } from "../../Types/consts";
 import IConditional from "../../Types/IConditional";
 export const st = (strKey: string) => <Translate ns="sheet" key18={strKey} />
@@ -20,7 +20,7 @@ export const normalDocSection = (tr, formula, data) => ({
     variant: stats => getTalentStatKeyVariant("normal", stats),
   }))
 })
-export const chargedDocSection = (tr, formula, data, stamina = 25) => ({
+export const chargedDocSection = (tr, formula, data, stamina = 25): DocumentSection => ({
   text: tr(`auto.fields.charged`),
   fields: [{
     text: sgt(`charged.dmg`),
@@ -32,7 +32,7 @@ export const chargedDocSection = (tr, formula, data, stamina = 25) => ({
     value: stamina,
   }]
 })
-export const chargedHitsDocSection = (tr, formula, data, stamina = 20) => ({
+export const chargedHitsDocSection = (tr, formula, data, stamina = 20): DocumentSection => ({
   text: tr(`auto.fields.charged`),
   fields: [...data.charged.hitArr.map((percentArr, i) =>
   ({
@@ -41,11 +41,11 @@ export const chargedHitsDocSection = (tr, formula, data, stamina = 20) => ({
     formula: formula.charged[i],
     variant: stats => getTalentStatKeyVariant("charged", stats),
   })), {
-    test: sgt("charged.stamina"),
+    text: sgt("charged.stamina"),
     value: stamina
   }]
 })
-export const plungeDocSection = (tr, formula, data) => ({
+export const plungeDocSection = (tr, formula, data): DocumentSection => ({
   text: tr`auto.fields.plunging`,
   fields: [{
     text: sgt(`plunging.dmg`),
@@ -65,7 +65,7 @@ export const plungeDocSection = (tr, formula, data) => ({
   }]
 })
 
-export const claymoreChargedDocSection = (tr, formula, data) => ({
+export const claymoreChargedDocSection = (tr, formula, data): DocumentSection => ({
   text: tr("auto.fields.charged"),
   fields: [{
     text: sgt("charged.spinning"),
@@ -86,7 +86,7 @@ export const claymoreChargedDocSection = (tr, formula, data) => ({
   }]
 })
 
-export const bowChargedDocSection = (tr, formula, data, elementKey: ElementKey) => ({
+export const bowChargedDocSection = (tr, formula, data, elementKey: ElementKey): DocumentSection => ({
   text: tr("auto.fields.charged"),
   fields: [{
     text: sgt("charged.aimed"),
@@ -101,7 +101,7 @@ export const bowChargedDocSection = (tr, formula, data, elementKey: ElementKey) 
   }]
 })
 type BoostKey = "autoBoost" | "skillBoost" | "burstBoost"
-export const talentTemplate = (talentKey: TalentSheetElementKey, tr: (string) => Displayable, img: string, boostKey?: BoostKey, boostAmt: number = 3) => ({
+export const talentTemplate = (talentKey: TalentSheetElementKey, tr: (string) => Displayable, img: string, boostKey?: BoostKey, boostAmt: number = 3): TalentSheetElement => ({
   name: tr(`${talentKey}.name`),
   img,
   sections: [{
