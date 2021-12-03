@@ -1,0 +1,13 @@
+{
+  "electro": {
+    "skill": {
+      "absorb": "Hấp thụ Khuyết ngọc dậy sóng"
+    },
+    "c2": {
+      "thunderHit": "<strong>Sấm set uy vũ</strong> đánh trúng kẻ địch"
+    },
+    "burst": {
+      "3rd": "Sát thương Sấm sét uy vũ lần 3"
+    }
+  }
+}

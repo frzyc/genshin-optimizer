@@ -39,6 +39,8 @@
     "level": "Level",
     "rarity": "Kualitas",
     "efficiency": "Substart Eff. Saat Ini",
-    "mefficiency": "Substat Eff. Maksimum"
+    "mefficiency": "Substat Eff. Maksimum",
+    "artsetkey": "Set Artefak",
+    "probability": "Probabilitas Roll"
   }
 }

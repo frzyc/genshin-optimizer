@@ -14,6 +14,10 @@
     "patreon": "Patreon",
     "discord": "Discord"
   },
+  "link": {
+    "download": "Download Link",
+    "discord": "Discord Invite Link"
+  },
   "game": {
     "minLevel": "Min Level",
     "maxLevel": "Max Level",
