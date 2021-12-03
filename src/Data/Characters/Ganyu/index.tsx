@@ -21,7 +21,7 @@ import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { ICharacterSheet } from '../../../Types/character'
 import { Translate } from '../../../Components/Translate'
-import { normalDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
+import { conditionalHeader, normalDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
 const tr = (strKey: string) => <Translate ns="char_Ganyu_gen" key18={strKey} />
 const char: ICharacterSheet = {
@@ -162,6 +162,9 @@ const char: ICharacterSheet = {
           conditional: { // Harmony
             key: "a4",
             canShow: stats => stats.ascension >= 4,
+            partyBuff: "partyActive",
+            header: conditionalHeader("passive2", tr, passive2),
+            description: tr("passive2.description"),
             name: <span>Active members in the AoE of <b>Celestial Shower</b></span>,
             stats: { cryo_dmg_: 20 },
           },
@@ -169,6 +172,9 @@ const char: ICharacterSheet = {
           conditional: { // WestwardSojourn
             key: "c4",
             canShow: stats => stats.constellation >= 4,
+            partyBuff: "partyAll",
+            header: conditionalHeader("constellation4", tr, c4),
+            description: tr("constellation4.description"),
             name: <span>Opponents standing within the AoE of <b>Celestial Shower</b></span>,
             maxStack: 5,
             stats: { dmg_: 5 },

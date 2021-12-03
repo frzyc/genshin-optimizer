@@ -1,7 +1,17 @@
 {
   "intro": "<0>Automatic Scanners</0><1>Automatic Scanners are Genshin tools that can automatically scan in-game data by manipulating your mouse movements, taking screenshots of the game, and then scanning information from those screenshots. These are low-risk tools that can help you automate a lot of manual process with scanning artifacts for GO. As any tools that indirectly interact with the game, althought their usage is virtually undetectable, <1>there could still be risk with using them.</1> Users discretion is advised.</1><2>The most important aspect of using these Scanners with GO is the output format:</2><3><0><0>As of <1>v5.21.0</1>, GO can import artifact data in the <3>mona-uranai</3> format. </0><1>As of <1>v6.0.0</1>, GO can import data in the <3>Genshin Open Object Description (GOOD)</3> format.</1></0></3><4>Below are several scanners that have been tested with GO.</4><5>To upload the exported file, go to <1>Database</1> page, and upload your file in the <strong>Database Upload</strong> section.</5>",
-  "gis": "<0>Genshin Impact Scanner</0><1>This light-weight app will scan all your characters + weapons + artifacts in your inventory. Follow the instrutions in the app to set it up. This scanner only scans in english. </1><2>The app exports to GOOD format by default.</2><3>Download link</3>",
-  "amenoma": "<0>「天目」-- Amenoma</0><1>Scans all you artifacts in your inventory. Follow the instruction to capture the window and scan.</1><2>Has both Chinese and English version. (Download the <1>_EN.exe</1> version to scan in english)</2><3>Both the <1>mona-uranai</1> and <3>GOOD</3> format is accepted in GO. the <5>GOOD</5> format is recommended.</3><4>Download link</4><5>Please feel free to join their discord if you find any bugs. They are in need of more english testers.</5><6>Discord Invite</6>",
+  "ik": {
+    "title": "Inventory Kamera",
+    "p1": "This light-weight app will scan all your characters + weapons + artifacts in your inventory. Follow the instrutions in the app to set it up. This scanner only scans in english.",
+    "p2": "This scanner can also scan materials for <1>Seelie.me</1>",
+    "p3": "The app exports to GOOD format by default."
+  },
+  "am": {
+    "title": "「天目」-- Amenoma",
+    "p1": "Scans all you artifacts in your inventory. Follow the instruction to capture the window and scan. Has both Chinese and English version. (Download the <1>_EN.exe</1> version to scan in english). Both the <3>mona-uranai</3> and <5>GOOD</5> format is accepted in GO. the <7>GOOD</7> format is recommended.",
+    "p2": "Beta version of this scanner can also scan materials for <1>Seelie.me</1>",
+    "p3": "Please feel free to join their discord if you find any bugs. They are in need of more english testers."
+  },
   "cocogoat": "<0>cocogoat</0><1>Originally Chinese scanner that was ported to English. Has an overlay to scan individual artifacts. </1><2>Cocogoat also retains your scanned artifacts, where you can edit them individually, and you can use them in its built-in mona-uranai optimizer.(Currently a Chinese-only optimizer)</2><3>It is recommended to export in its \"Mona's Divination Shop\" format.</3><4>Download link</4><5>WARNING: Do not use the \"Genshin Optimizer\" export format. importing it will delete your character & weapon data.</5>",
   "backHome": "Go back to home page"
 }

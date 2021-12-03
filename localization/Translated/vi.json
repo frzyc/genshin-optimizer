@@ -3,7 +3,7 @@
         "editor": {
             "title": "Trình chỉnh sửa Thánh Di Vật",
             "set": {
-                "artifactSet": "Bộ thánh di vật",
+                "artifactSet": "Bộ Thánh Di Vật",
                 "maxRarity": "Độ hiếm cao nhất <1></1>"
             },
             "substat": {
@@ -11,14 +11,15 @@
                 "noSubstat": "Không có chỉ số phụ",
                 "selectSub": "Chọn chỉ số phụ",
                 "error": {
-                    "noCalc": "Lỗi rồi không tính được chỉ số được rolls.",
+                    "noCalc": "Không thể tính được chỉ số roll.",
                     "noOverRoll": "Chỉ số phụ không thể roll nhiều hơn {{value}} lần"
                 },
                 "noRoll": "Không có roll",
                 "RollCount": "{{count}} Roll",
                 "RollCount_plural": "{{count}} Rolls",
                 "noStat": "Không có giá trị",
-                "eff": "Hiệu suất <1></1>"
+                "eff": "Hiệu suất: <1></1>",
+                "nextRolls": "Rolls kế tiếp:"
             },
             "rarity": "Độ hiếm",
             "level": "Cấp độ",
@@ -28,20 +29,20 @@
             "curSubEffDesc": "Mỗi 4 cấp thánh di vật sẽ có thêm 1 chỉ số phụ. <strong>Hiệu suất chỉ số phụ</strong> thể hiện chỉ số phụ đã rolls cao thấp bao nhiêu theo tỉ lệ phần trăm.",
             "maxSubEff": "Hiệu suất chỉ số phụ tối đa",
             "maxSubEffDesc": "<strong>Hiệu suất chỉ số phụ tối đa</strong> của một thánh di vật được tính theo giá trị tối đa của những lần nâng cấp còn lại.",
-            "preview": "Xem trước thánh di vật",
+            "preview": "Xem trước Thánh Di Vật",
             "dupArt": "Thánh di vật trùng lặp",
             "upArt": "Thánh di vật đã được nâng cấp",
             "beforeEdit": "Trước khi sửa",
-            "btnSave": "Lưu thánh di vật",
-            "btnAdd": "Thêm thánh di vật",
-            "btnClear": "Xóa hết",
-            "btnRandom": "Random",
+            "btnSave": "Lưu Thánh Di Vật",
+            "btnAdd": "Thêm Thánh Di Vật",
+            "btnClear": "Xóa",
+            "btnRandom": "Ngẫu nhiên",
             "btnUpdate": "Nâng cấp thánh di vật",
-            "clearPrompt": "Đang có thánh di vật trong trình chỉnh sửa. Bạn có chắc muốn làm xóa hết?"
+            "clearPrompt": "Đang có thánh di vật trong trình chỉnh sửa. Bạn có chắc chắn muốn xóa không?"
         },
         "artifactFilter": "Bộ lọc Thánh Di Vật",
         "filterLocation": {
-            "inventory": "Kho đồ",
+            "inventory": "Túi",
             "currentlyEquipped": "Đang trang bị",
             "any": "Vị trí: Bất kỳ"
         },
@@ -53,7 +54,7 @@
             "lockArtifacts": "Khoá Thánh di vật",
             "unlockrtifacts": "Mở khoá Thánh di vật"
         },
-        "filterLevelFormat": "Cấp <1>từ</1>/<3>đến</3>",
+        "filterLevelFormat": "Cấp độ <1>Thấp</1>/<3>Cao</3>",
         "buttonHint": "Ghi chú: Các nút màu đỏ ở trên chỉ áp dụng cho <1>bộ lọc thánh di vật</1>",
         "tipsOfTheDay": [
             "Hiệu suất tối đa của thánh di vật 4 sao ở khoảng 60%.",
@@ -73,27 +74,31 @@
             "circlet": "Nón lý trí"
         },
         "info": {
-            "title": "Hướng dẫn chỉnh sửa/ quản lý thánh di vật",
+            "title": "Hướng dẫn Chỉnh sửa/Quản lý Thánh Di Vật",
             "section1": "<0>Rolls của chỉ số phụ</0><1><1>Số rolls</1> của chỉ số phụ được hiển thị phía bên trái của chỉ số phụ đó. Càng nhiều rolls thì càng màu mè:<3></3>.</1><2>Hiệu suất chỉ số phụ</2><3>Hiệu suất của một chỉ số phụ là tỉ lệ phần trăm của giá trị hiện tại với giá trị tiềm năng cao nhất của thánh di vật 5 <1></1>. Từ trong hình, giá trị roll cao nhất của Sát thương bạo kích là 7.8%. Hiệu suất: <3>5.8/7.8 = 69.2%.</3></3><4>Hiệu suất hiên tại đối với Hiệu suất tiềm năng cao nhất</4><5>Khi một thánh di vật 5<1></1> có tất cả 9(4+5) rolls, và tất cả các rolls đều có giá trị cao nhất, thì nó là thánh di vật có hiệu suất 100%. Tuy nhiên, đa số là chuyện đó khó mà xảy ra. <3>Hiệu suất hiện tại</3> của một thánh di vật là tỉ lệ phần trăm hiệu suất đối với thánh di vật có 100% hiệu suất. <5>Hiệu suất tối đa</5> là hiệu suất cao nhất mà thánh di vật có thể đạt được, nếu tất cả rolls còn lại đạt giá trị tối đa.</5><6>Khóa thánh di vật</6><7>Bằng việc khóa thánh di vật <1></1> sẽ làm cho thánh di vật đó không được chọn khi tạo build. Thánh di vật đã được trang bị sẽ mặc định bị khóa.</7>",
             "section2": "<0>Trình chỉnh sửa thánh di vật</0><1>Trình chỉnh sửa có đầy đủ chức năng, có thể chấp nhận thánh di vật từ 3<1></1> tới 5<3></3>. Khi một chỉ số phụ được nhập, nó có thể tính toán chính xác giá trị của rolls và hiệu suất. Nó cũng có thể đưa ra con số chính xác về mỗi roll của thánh di vật đó, cùng với các số liệu xác thực khác.</1><2>Quét hình ảnh</2><3>Bạn lười phải nhập chỉ số bằng tay? Bạn có thể quét thánh di vật bằng hình ảnh! Ở trang Trình chỉnh sửa thánh di vật, bấm vào <1>Cách chụp hình chính xác!</1> để có thể biết thêm chi tiết.</3><4>Phát hiện thánh di vật bị trùng lặp/ đã được nâng cấp</4><5>Bạn có biết GO có thể phát hiện ra thánh di vật bị <1>trùng lặp</1> cái mà đã có trong hệ thống? Nó cũng có thể phát hiện nếu thánh di vật trong trình chỉnh sửa là phiên bản <3>nâng cấp</3> của thánh di vật có sẵn. Một khi phát hiện trùng lặp hoặc đã nâng cấp bạn có thể xem trước để so sánh hai thánh di vật này(Xem hình).</5>",
-            "section3": "<0>Túi thánh di vật</0><p>Tất cả những thánh di vật đã thêm vào của bạn được hiển thị ở đây. Bộ lọc ở đây cho phép bạn tìm kiếm thánh di vật dễ hơn. </p><2>Ví dụ: Tìm thánh di vật làm food</2><p>Bằng bộ lọc bạn có thể tìm kiếm thánh di vật làm food nhanh hơn.</p><4>Ở ví dụ này, bộ được thiết lập như này: </4><5><0>Thánh di vật không khóa trong túi.</0><1>Với chỉ số phụ: Tấn công và phòng ngự.</1><2>Xếp theo thứ tự hiệu suất tối đa tăng dần</2></5><6>Một khi thánh di vật đã được đem làm food, bấm vào <1>Xóa thánh di vật</1> để xóa thánh di vật vừa được lọc.</6>"
+            "section3": "<0>Túi thánh di vật</0><1>Tất cả những thánh di vật đã thêm vào của bạn được hiển thị ở đây. Bộ lọc ở đây cho phép bạn tìm kiếm thánh di vật dễ hơn. </1><2>Ví dụ: Tìm Thánh Di vật làm nguyên liệu cường hoá</2><3>Bằng bộ lọc bạn có thể tìm kiếm thánh di vật làm nguyên liệu cường hoá nhanh hơn.</3><4>Ở ví dụ này, bộ được thiết lập như này: </4><5><0>Thánh Di Vật không khóa trong túi.</0><1>Với chỉ số phụ: Tấn công và phòng ngự.</1><2>Xếp theo thứ tự hiệu suất tối đa tăng dần</2></5><6>Một khi thánh di vật đã được đem làm nguyên liệu cường hoá, bấm vào <1>Xóa thánh di vật</1> để xóa thánh di vật vừa được lọc.</6>"
         },
-        "exclusionDisplay": "Khóa: {{value}}",
+        "exclusionDisplay": "Loại trừ: {{value}}",
         "exclusion": {
             "any": "Bất kỳ",
-            "excluded": "Đã khóa",
-            "included": "Chưa khóa"
+            "excluded": "Đã loại trừ",
+            "included": "Bao gồm"
         },
         "sortMap": {
-            "quality": "Chất lượng",
-            "level": "Cấp độ",
+            "quality": "Phẩm chất",
+            "level": "Cấp",
             "efficiency": "Hiệu suất hiện tại.",
             "mefficiency": "Hiệu suất tối đa."
         },
         "showingNum": "Hiển thị <1>{{count}}</1> trong {{value}} thánh di vật",
         "showingNum_plural": "Hiển thị <1>{{count}}</1> trong {{value}} thánh di vật",
+        "efficiencyFilter": {
+            "title": "Chỉ số phụ để dùng ở công thức tính hiệu suất"
+        },
         "resetFilters": "Cài lại bộ lọc",
-        "setEffectNum": "Bộ {{setNum}} món"
+        "setEffectNum": "Bộ {{setNum}} món",
+        "excludeArtifactTip": "Loại trừ thánh di vật sẽ ngăn trình tạo builds chọn nó và builds."
     },
     "languages": {
         "chs": "Tiếng Trung (giản thể)",
@@ -131,19 +136,26 @@
             "hint": "Tải lên tệp JSON ở đây...",
             "hintPaste": "...hoặc dán thông tin của bạn bên dưới.",
             "goUpload": {
+                "title": "Định dạng <strong>Genshin Optimizer</strong>",
                 "migrate": "Cơ sở dữ liệu sẽ được chuyển sang phiên bản mới hơn. Vui lòng xem xét tải xuống lại cơ sở dữ liệu sau khi nhập.",
                 "deleteDatabasePrompt": "Bạn có chắc chắn muốn thay thế cơ sở dữ liệu của bạn không? Tất cả các nhân vật và thánh di vật sẽ bị xóa."
             },
             "error": {
                 "jsonParse": "Không thể phân tích tập tin JSON.",
-                "unknown": "Định dạng tập tin không xác định."
+                "unknown": "Định dạng tập tin không xác định.",
+                "monaInvalid": "Định dạng file Mona-Uranai không hợp lệ",
+                "goInvalid": "Định dạng file backup GO không hợp lệ"
             },
-            "dbSource": "Nguồn dữ liệu:"
+            "dbSource": "Nguồn dữ liệu:",
+            "goodUpload": {
+                "title": "Định dạng <strong>Genshin Open Object Description</strong> (Tốt)"
+            }
         },
         "count": {
             "chars": "Nhân vật:",
             "arts": "Thánh di vật:",
             "weapons": "Vũ khí:",
+            "total": "Tổng cộng:",
             "new": "Mới:",
             "updated": "Đã cập nhật:",
             "removed": "Đã loại bỏ:",
@@ -158,7 +170,9 @@
             "characters": "Nhân vật",
             "builds": "Builds",
             "tools": "Công cụ",
-            "weapons": "Vũ khí"
+            "database": "Cơ sở dữ liệu",
+            "weapons": "Vũ khí",
+            "doc": "Docs"
         },
         "social": {
             "paypal": "Paypal",
@@ -169,7 +183,7 @@
             "minLevel": "Cấp thấp nhất",
             "maxLevel": "Cấp cao nhất",
             "rarity": "Độ hiếm",
-            "level": "Cấp độ"
+            "level": "Cấp"
         },
         "unselect": "Bỏ chọn",
         "ascending": "Tăng dần",
@@ -181,19 +195,85 @@
         "underConstruction": "Đang hoàn thiện",
         "error": "Lỗi",
         "reset": "Cài lại",
-        "info": "THÔNG TIN",
+        "info": "Thông tin",
         "inventory": "Túi",
         "close": "Đóng",
         "sortMap": {
             "new": "Mới",
             "name": "Tên",
             "level": "Cấp độ",
-            "rarity": "Độ hiếm"
+            "rarity": "Độ hiếm",
+            "efficiency": "Hiệu suất chỉ số phụ hiện tại",
+            "mefficiency": "Hiệu suất chỉ số phụ tối đa",
+            "artsetkey": "Bộ Thánh Di Vật",
+            "probability": "Xác xuất Roll"
+        }
+    },
+    "char_Eula": {
+        "skillC": {
+            "name": "Trái Tim Băng Giá",
+            "consumed": "Tiêu hao Trái Tim Băng Giá",
+            "grimheart": {
+                "name": "Mỗi tầng Trái Tim Băng Giá",
+                "int": "Tăng khả năng kháng gián đoạn"
+            }
+        },
+        "burstC": {
+            "name": "Kiếm Ánh Sáng",
+            "start5": "Bắt đầu ở 5 tầng",
+            "addStacks": "50% cơ hội nhận thêm mỗi tầng"
+        },
+        "c1C": {
+            "name": "Sau khi hiệu quả <strong>Trái Tim Băng Giá</strong> bị tiêu hao",
+            "durationStack": "6s + 6s mỗi tầng, tối đa 18s"
+        },
+        "passive1": "Sát thương Kiếm Ánh Sáng"
+    },
+    "char_Noelle": {
+        "p4cd": "24s, -1s Cứ 4 lần đánh trúng",
+        "c1chance": "(Khi cùng ở trạng thái <strong>Quét sạch</strong> và <strong>Giáp hộ tâm</strong> tỉ lệ tăng lên 100%)",
+        "c6duration": "15s, +1s mỗi lần đánh bại kẻ địch, tối đa 10s",
+        "qlarger": "Tăng phạm vi tấn công"
+    },
+    "char_Venti": {
+        "addAimed": "Sát thương mũi tên tăng thêm",
+        "addFullAimed": "Sát thương tụ lực của mũi tên tăng thêm",
+        "upcurrentDuration": "Thời gian luồng gió duy trì",
+        "regenEner": "Hồi phục 15 điểm Năng lượng nguyên tố cho Venti sau khi kết thúc hiệu ứng",
+        "fullBurstDMG": {
+            "text": "<0><0>Tổng sát thương kỹ năng nộ</0><1>Công thức này là tổng tất cả sát thương nộ, bao gồm cả Khuếch tán.Giả định:</1><2><0><0>20 ticks của <1>sát thương nộ</1></0><1>15 ticks của <1>sát thương hấp thụ</1></1><2>7 ticks của <1>Khuếch tán</1>, với một kẻ địch, Hoặc,</2><3>14 ticks của <1>Khuếch tán</1>, với nhiều kẻ địch khuếch tán lẫn nhau.</3></0></2></0>",
+            "dmg": "<0>Tổng sát thương (<1>{{swirlTicks}} ticks Khuếch tán</1>)</0>"
+        },
+        "c6": "Mục tiệu nhận sát thương từ <strong>Bài thơ thần gió</strong>",
+        "c4": "Venti nhận nguyên tố Tinh cầu hoặc nguyên tố Hạt nhân",
+        "q": "Hồi phục 15 năng lượng nguyên tố cho tất cả nhân vật trong đội có nguyên tố tương ứng.",
+        "c2": {
+            "hit": "Địch bị đánh trúng",
+            "launched": "Địch bị đánh bay"
         }
     },
     "sheet": {
         "dmg": "Sát thương",
+        "hits": "{{count}} Hit",
         "lessPercentHP": "< {{percent}}% HP",
+        "stack": "{{count}} Tầng",
+        "stack_plural": "{{count}} Tầng",
+        "hitOp": {
+            "normal": "Tấn công thường đánh trúng kẻ địch",
+            "charged": "Trọng kích đánh trúng kẻ địch",
+            "plunging": "Tấn công đáp đánh trúng kẻ địch",
+            "skill": "Kỹ năng nguyên tố đánh trúng kẻ địch",
+            "burst": "Kỹ năng nộ đánh trúng kẻ địch",
+            "geo": "Sát thương nguyên tố Nham khi đánh trúng đối thủ",
+            "anemo": "Sát thương nguyên tố Phong khi đánh trúng đối thủ",
+            "hydro": "Sát thương nguyên tố Thuỷ khi đánh trúng đối thủ",
+            "cryo": "Sát thương nguyên tố Băng khi đánh trúng đối thủ",
+            "pyro": "Sát thương nguyên tố Hoả khi đánh trúng đối thủ",
+            "electro": "Sát thương nguyên tố Lôi khi đánh trúng đối thủ"
+        },
+        "hits_plural": "{{count}} Hits",
+        "eleAbsor": "Chuyển hóa nguyên tố",
+        "absorDot": "Sát thương chuyển hóa theo thời gian",
         "afterUse": {
             "skill": "Sau khi sử dụng Kỹ năng Nguyên tố",
             "burst": "Sau khi sử dụng Kỹ năng Nộ"
@@ -202,33 +282,192 @@
             "atk": "Tăng tấn công"
         }
     },
+    "weapon_SongOfBrokenPines": {
+        "name": "Ca Khúc Thời Đại Nghìn Năm: Khúc ca vén cờ"
+    },
+    "weapon_FreedomSworn": {
+        "name": "Ca khúc thời đại nghìn năm: Bài ca kháng chiến"
+    },
+    "char_KaedeharaKazuha": {
+        "c1": "Thi triển <strong>Kazuha nhất đao trảm</strong> làm mới thời gian CD",
+        "c2": "Trong Một khắc gió thu",
+        "c6": {
+            "after": "Sau khi thi truyển <strong>Chihayaburu</strong> hoặc <strong>Kazuha Nhất đao trảm</strong>",
+            "bonus": "Đánh thường, trọng kích, tấn công khi đáp"
+        },
+        "a4": {
+            "name_hydro": "Khi kích hoạt phản ứng khuếch tán <hydro>Nguyên tố Thủy</hydro>",
+            "name_pyro": "Khi kích hoạt phản ứng khuếch tán<pyro>Nguyên tố Hỏa</pyro>",
+            "name_electro": "Khi kích hoạt phản ứng khuếch tán<electro>Nguyên tố Lôi</electro>",
+            "name_cryo": "Khi kích hoạt phản ứng khuếch tán<cyro>Nguyên tố Băng</cyro>"
+        }
+    },
+    "char_Rosaria": {
+        "a1": "Sau khi tấn công từ phía sau",
+        "a4": {
+            "name": "Khi thi triển <strong>Thánh lễ cuối cùng</strong>",
+            "text": "Tăng tỉ lệ bạo kích của các nhân vật trong đội"
+        },
+        "c1": "Sau khi tạo thành bao kích",
+        "c6": "<strong>Thánh lễ cuối cùng</strong>đòn tấn công lên kẻ địch"
+    },
     "char_KamisatoAyaka": {
-        "staminaRestore": "Phục hồi 10 Thể lực"
+        "afterSprint": "Sau khi lướt",
+        "afterSkill": "Sau khi thi truyển <strong>Trường phái Kamisato-Hyouka</strong>",
+        "afterSprintCryo": "Nhận <cryo>Nguyên tố băng</cyro> sau khi lướt",
+        "staminaRestore": "Phục hồi 10 Thể lực",
+        "snowflakeDMG": "Sát thương Cổng băng tuyết",
+        "dmgBySnowflake": "Kẻ địch chịu sát thương do Cổng băng tuyết của <strong>Trường phái Kamisato-Soumetsu</strong> gây ra",
+        "UsurashiButou": "Usurahi Butou",
+        "afterBurst": "Sau khi thi truyển <strong>Trường phát Kamisato-Soumetsu</strong>"
+    },
+    "char_Traveler": {
+        "electro": {
+            "skill": {
+                "absorb": "Hấp thụ Khuyết ngọc dậy sóng"
+            },
+            "c2": {
+                "thunderHit": "<strong>Sấm set uy vũ</strong> đánh trúng kẻ địch"
+            },
+            "burst": {
+                "3rd": "Sát thương Sấm sét uy vũ lần 3"
+            }
+        }
     },
     "weapon_Hamayumi": {
         "ener": "100% năng lượng"
     },
+    "weapon_MistsplitterReforged": {
+        "emblem": "Vết cắt sương mù"
+    },
     "weapon_ThunderingPulse": {
-        "emblem": "Biểu tượng Lôi"
+        "emblem": "Vết cắt sấm sét"
+    },
+    "char_Razor": {
+        "fullBurstDMG": {
+            "text": "<0><strong>Tổng sát thương kỹ năng nộ</strong></0><1>Công thức này bao gồm sát thương từ đòn đánh thường của Razor khi trong trạng thái nộ. Nó đơn giản là tổng X-hit của Sói và X-hit đánh thường của Razor kích hoạt nó.</1>",
+            "label": "Sát thương đánh thường + sói {{hitNum}}"
+        }
+    },
+    "char_Yoimiya": {
+        "c1": "Đánh bại kẻ địch ảnh hưởng bởi <strong>Lưu kim quang hỏa</strong>",
+        "c2": "Bạo kịch từ <pyro> Sát thương nguyên tố Hỏa</pyro>",
+        "p2": "Tăng tấn công tất cả nhân vật trong đội",
+        "p2p": "Sử dụng <strong>Cỏ Ryukin</strong>"
+    },
+    "char_RaidenShogun": {
+        "skill": {
+            "eye": "Con mắt lôi phạt",
+            "partyCost": "Năng lượng nguyên tố của kỹ năng nộ"
+        },
+        "burst": {
+            "resolves": "Ý lực"
+        },
+        "a4": {
+            "enerRest": "Năng lượng nguyên tố hồi phục bởi <strong>Mộng tưởng nhất tâm</strong>",
+            "eleDMG": "Sát thương nguyên tố lôi tăng thêm"
+        },
+        "c4": {
+            "expires": "Trạng thái <strong>Mộng tưởng nhất tâm</strong> của <strong>Bí kỹ: Mộng tưởng chân quyết</strong> kết thúc"
+        }
+    },
+    "char_Aloy": {
+        "skill": {
+            "coil": "Dây Móc",
+            "coil1": "1 Tầng Dây Móc",
+            "coil2": "2 Tầng Dây Móc",
+            "coil3": "3 Tầng Dây Móc",
+            "rush": "Hồ Băng",
+            "rushDur": "Thời gian kéo dài Hồ Băng"
+        }
+    },
+    "char_KujouSara": {
+        "skill": {
+            "ambush": "Tengu Juurai: Phục kích"
+        }
+    },
+    "char_SangonomiyaKokomi": {
+        "burst": "Lễ phục nghi thức",
+        "c2": "Nhân vật có lượng HP bằng hoặc thấp hơn 50%",
+        "c6": "Lúc đòn tấn công thường và trọng kích trị liệu cho nhân vật có HP từ 80% trở lên"
+    },
+    "page_home": {
+        "intro": "<0>Giới thiệu về Genshin Optimizer</0><1>Genshin Optimizer (GO) là một trang web mã nguồn mở do người hâm mộ tạo ra cho trò chơi gacha hành động nhập vai <1><strong>Genshin Impact</strong></1>. Nó chủ yếu nhằm mục đích giúp đỡ người chơi về khía cạnh phức tạp của trò chơi: Tối ưu hoá Thánh Di Vật. Vì Thánh Di Vật là các yếu tố dựa trên RNG (Random Number Generator) góp phần trực tiếp vào mức độ hiệu quả của các nhân vật của bạn trong trò chơi, GO sẽ cố gắng tìm các Thánh Di Vật tốt nhất cho các nhân vật dựa trên Túi chứa Thánh Di Vật hiện tại của bạn.</1><2>GO có thể theo dõi các Thánh Di Vật và cho phép dễ dàng hơn trong việc lọc/so sánh các Thánh Di Vật, nó đóng vai trò như một công cụ giúp người dùng tìm Thánh Di Vật tốt trong túi để tăng cấp và Thánh Di Vật xấu để sử dụng làm nguyên liệu cường hoá.</2><3>Vì GO có thể sao chép các chỉ số chính xác của bất kỳ nhân vật nào, cùng với việc tính toán tất cả các con số sát thương với độ chính xác lên đến 1%, GO cũng có thể tính sát thương và là công cụ tính toán lý thuyết.</3>",
+        "helpDev": "<0>Bạn muốn giúp đỡ Genshin Optimizer?</0><1>Nếu bạn muốn hỗ trợ tài chính cho GO, vui lòng quyên góp qua <1>Paypal</1> hoặc <3>Patreon</3>. GO không lưu trữ quảng cáo và không thu phí bất kỳ tính năng nào.</1><2>Nếu bạn muốn giúp đỡ dịch thuật GO, hãy yêu cầu tính năng hoặc báo cáo lỗi, tham gia <1>Discord</1> của chúng tôi. Đây là nơi bạn sẽ tìm thấy thêm thông tin liên quan đến GO và thông tin các công việc đang thực hiện.</2><3>Bạn cũng có thể tham gia <1>Genshin Dev Discord</1> nếu bạn muốn tạo ứng dụng về Genshin.</3>",
+        "quickLinks": {
+            "title": "Quick Links",
+            "scannerTitle": "Bạn có muốn tự động hóa một số quy trình nhập Thánh Di Vật không?",
+            "scannerText": "Dưới đây là danh sách các phần mềm tự động quét tương thích có thể cung cấp dữ liệu vào GO. Các chương trình này sẽ tự động quét các Thánh Di Vật từ trò chơi của bạn và xuất dữ liệu đó thành một tập tin. Sau đó, tập tin này có thể nhập vào GO.",
+            "scannerBtn": "Danh Sách Phần Mềm",
+            "goGithubText": "GO hoàn toàn là mã nguồn mở, được viết bằng TypeScript, với <1></1>React framework.",
+            "goGithubBtn": "Genshin Optimizer Github"
+        },
+        "features": {
+            "title": "Tính Năng",
+            "artifact": {
+                "title": "Trình chỉnh sửa Thánh Di Vật & Túi"
+            },
+            "characterEditor": {
+                "title": "Trình chỉnh sửa Nhân Vật & Vũ Khí"
+            },
+            "characterCalc": {
+                "title": "Tính toán sát thương của Nhân Vật"
+            },
+            "tools": {
+                "title": "Công cụ & Tiện ích"
+            }
+        }
     },
     "page_scanner": {
         "backHome": "Quay lại trang chủ"
     },
-    "page_home": {
-        "quickLinks": {
-            "goGithubBtn": "Genshin Optimizer Github"
-        },
-        "features": {
-            "title": "Tính năng",
-            "artifact": {
-                "title": "Trình chỉnh sửa Thánh di vật & Túi"
-            },
-            "characterEditor": {
-                "title": "Trình chỉnh sửa nhân vật & vũ khí"
-            },
-            "characterCalc": {
-                "title": "Tính toán sát thương của nhân vật"
-            }
-        }
+    "weapon_EverlastingMoonglow": {
+        "name": "Tăng sát thương tấn công thường"
+    },
+    "weapon_Akuoumaru": {
+        "party": "Tổng giới hạn năng lượng nguyên tố"
+    },
+    "weapon_PolarStar": {
+        "ashen": "Ngôi sao đêm trắng"
+    },
+    "artifact_ArchaicPetra": {
+        "condName": "Nhận hạt kết tinh"
+    },
+    "artifact_Instructor": {
+        "condName": "Kích hoạt phản ứng nguyên tố"
+    },
+    "artifact_MaidenBeloved": {
+        "condName": "Thi truyển kỹ năng nguyên tố và kỹ năng nộ"
+    },
+    "artifact_NoblesseOblige": {
+        "condName": "Thi truyển kỹ năng nộ"
+    },
+    "artifact_TenacityOfTheMillelith": {
+        "condName": "Kỹ năng nguyên tố trúng kẻ địch"
+    },
+    "artifact_ViridescentVenerer": {
+        "condName": "Khuếch tán nguyên tố"
+    },
+    "char_Thoma": {
+        "a1": "Nhận/Làm mới <strong>Khiên Lửa Hộ Mệnh</strong>",
+        "c6": "Khi nhận hoặc làm mới <strong>Khiên Lửa Hộ Mệnh</strong>"
+    },
+    "weapon_CinnabarSpindle": {
+        "name": "Tăng sát thương tấn công thường"
+    },
+    "weapon_ElegyForTheEnd": {
+        "condName": "Ca khúc thời đại nghìn năm:Bài ca ly biệt"
+    },
+    "weapon_MouunsMoon": {
+        "party": "Tổng giới hạn năng lượng nguyên tố"
+    },
+    "weapon_ThrillingTalesOfDragonSlayers": {
+        "condName": "Đổi nhân vật"
+    },
+    "weapon_WavebreakersFin": {
+        "party": "Tổng giới hạn năng lượng nguyên tố"
+    },
+    "weapon_WolfsGravestone": {
+        "condName": "Tấn công kẻ địch có HP dưới 30%"
     }
 }

@@ -204,7 +204,9 @@
             "level": "Level",
             "rarity": "Kualitas",
             "efficiency": "Substart Eff. Saat Ini",
-            "mefficiency": "Substat Eff. Maksimum"
+            "mefficiency": "Substat Eff. Maksimum",
+            "artsetkey": "Set Artefak",
+            "probability": "Probabilitas Roll"
         }
     },
     "char_Eula": {
@@ -244,7 +246,7 @@
         },
         "c6": "Target yang menerima DMG dari <strong>Wind's Grand Ode</strong>",
         "c4": "Venti mengambil sebuah Elemental Orb atau Partikel",
-        "q": "Memulihkan 15 Energy ke semua <1>{{elementKey}}</1> karakter.",
+        "q": "Memulihkan 15 Energy ke pada anggota party yang memiliki elemen tersebut.",
         "c2": {
             "hit": "Musuh di-Hit",
             "launched": "Musuh terhempas"
@@ -292,6 +294,12 @@
         "c6": {
             "after": "Setelah menggunakan <strong>Chihayaburu</strong> atau <strong>Kazuha Slash</strong>",
             "bonus": "DMG Normal, Charged dan Plunging"
+        },
+        "a4": {
+            "name_hydro": "Ketika memicu reaksi Swirl <hydro>Hydro</hydro>.",
+            "name_pyro": "Ketika memicu reaksi Swirl <pyro>Pyro</pyro>.",
+            "name_electro": "Ketika memicu reaksi Swirl <electro>Electro</electro>.",
+            "name_cryo": "Ketika memicu reaksi Swirl <cryo>Cryo</cryo>."
         }
     },
     "char_Rosaria": {
@@ -344,7 +352,8 @@
     "char_Yoimiya": {
         "c1": "Musuh terkena efek <strong>Aurous Blaze</strong> dikalahkan",
         "c2": "Crit dari <pyro>Pyro DMG</pyro>",
-        "p2": "Peningkatan ATK party"
+        "p2": "Peningkatan ATK party",
+        "p2p": "Melancarkan <strong>Ryuukin Saxifrage</strong>"
     },
     "char_RaidenShogun": {
         "skill": {
@@ -357,6 +366,9 @@
         "a4": {
             "enerRest": "Pemulihan energi dari <strong>Musou Isshin</strong>",
             "eleDMG": "Electro DMG Bonus"
+        },
+        "c4": {
+            "expires": "Status <strong>Musou Isshin</strong> yang diperoleh dari <strong>Secret Art: Musou Shinsetsu</strong> menghilang"
         }
     },
     "char_Aloy": {
@@ -416,10 +428,8 @@
         }
     },
     "page_scanner": {
-        "intro": "<0>Pemindai Otomatis<0><1>Pemindai otomatis merupakan alat yang bisa memindai data in-game secara otomatis dengan cara memanipulasi pergerakan mouse, mengambil screenshot dalam game, dan memindai informasi dari screenshot tersebut. alat ini memiliki risiko rendah dan dapat membantu pemindaian artefak ke dalam GO secara otomatis. Seperti alat lainnya yang secara tidak langsung berinteraksi dengan game, meskipun alat ini tidak terdeteksi secara virtual, risiko dalam menggunakannya mungkin masih ada.</1> Jadi, kebijaksanaan penggunaan disarankan.</1><p> Aspek yang paling penting dalam dalam menggunakan pemindai dengan GO sebagai format outputnya:</p><3><0>sejak <1>v5.21.0</1>, GO bisa mengimpor data artefak ke dalam format <3>mona-uranai</3>. </0><1>Sejak <1></1>, GO bisa mengimpor ata ke dalam format <3>Genshin Open Object Description (GOOD)</3>. </1></3><p>Berikut merupakan beberapa pemindai yang telah diuji coba dengan GO. </p><5>Untuk mengupload file yang sudah diekspor, pergi ke halaman <1>Database</1> dan unggah filemu ke dalam \"Database Upload\".</5>",
-        "gis": "<0>Pemindai Genshin Impact</0><p>Aplikasi ringan ini bisa memindai semua karaktermu + senjata + artefak di dalam tasmu. Ikuti instruksi di dalam aplikasi untuk mengaturnya. Pemindai ini hanya akan memindai jika gamenya menggunakan bahasa Ingris. </p><p>Aplikasi mengekspor ke format GOOD secara default. </p><3><0></0>Unduh link</3>",
-        "amenoma": "<0>「天目」-- Amenoma</0><p>Memindai semua artefakmu di dalam. Ikuti instruksi untuk menangkap jendela lalu pindai.</p><2>Memiliki versi Cina dan Inggris. (Unduh versi <1>_EN.exe</1> untuk memindai dalam bahasa Inggris)</2><3> <1>mona-uranai</1> dan format <3>GOOD</3> diterima di dalam GO. format <5>GOOD</5> direkomendasikan.</3><4><0><0></0> Unduh link</0></4><p>Silakan bergabung ke dalam discord mereka jika kalian menemukan bug. Mereka membutuhkan tester yang lebih yang berbahasa Inggris.</p><6><0></0> Undang Discord</6>",
-        "cocogoat": "<0>cocogoat</0><p>Pemindai yang berasal dari cina dan diporting ke dalam bahasa Inggris. Memiliki overlay untuk memindai artefak secara individual. </p><p>Cocogoat juga menyimpan artefak yang sudah dipindai hingga kamu bisa mengeditnya secara individual, lalu menggunakannya ke dalam fitur bawaan optimisasi mona-uranai. (Optimisasi yang hanya tersedia dalam bahasa Cina untuk saat ini) </p><p>Disarankan mengekspor ke dalam format \"Mona's Divination Shop\". </p><4><0><0></0> Unduh link</0> </4><5>PERINGATAN: Jangan menggunakan format \"Genshin Optimizer\" export. Mengimpornya akan menghapus data karakter dan senjatamu.",
+        "intro": "<0>Pemindai Otomatis</0><1>Pemindai otomatis merupakan alat yang bisa memindai data in-game secara otomatis dengan cara memanipulasi pergerakan mouse, mengambil screenshot dalam game, dan memindai informasi dari screenshot tersebut. alat ini memiliki risiko rendah dan dapat membantu pemindaian artefak ke dalam GO secara otomatis. Seperti alat lainnya yang secara tidak langsung berinteraksi dengan game, meskipun alat ini tidak terdeteksi secara virtual,<1> risiko dalam menggunakannya mungkin masih ada.</1> Jadi, kebijaksanaan penggunaan disarankan.</1><2> Aspek yang paling penting dalam menggunakan pemindai dengan GO adalah format outputnya:</2><3><0><0>sejak <1>v5.21.0</1>, GO bisa mengimpor data artefak ke dalam format <3>mona-uranai</3>. </0><1>Sejak <1>v6.0.0</1>, GO bisa mengimpor data ke dalam format <3>Genshin Open Object Description (GOOD)</3>. </1></0></3><4>Berikut merupakan beberapa pemindai yang telah diuji coba dengan GO. </4><5>Untuk mengupload file yang sudah diekspor, pergi ke halaman <1>Database</1> dan unggah filemu ke dalam <strong>\"Database Upload\"</strong>.</5>",
+        "cocogoat": "<0>cocogoat</0><1>Pemindai yang berasal dari cina dan diporting ke dalam bahasa Inggris. Memiliki overlay untuk memindai artefak secara individual. </1><2>Cocogoat juga menyimpan artefak yang sudah dipindai hingga kamu bisa mengeditnya secara individual, lalu menggunakannya ke dalam fitur bawaan optimisasi mona-uranai. (Optimisasi yang hanya tersedia dalam bahasa Cina untuk saat ini) </2><3>Disarankan mengekspor ke dalam format \"Mona's Divination Shop\". </3><4> Unduh link</4><5>PERINGATAN: Jangan menggunakan format \"Genshin Optimizer\" export. Mengimpornya akan menghapus data karakter dan senjatamu.</5>",
         "backHome": "Kembali ke halaman utama"
     },
     "weapon_EverlastingMoonglow": {
@@ -430,5 +440,45 @@
     },
     "weapon_PolarStar": {
         "ashen": "Ashen Nightstar"
+    },
+    "artifact_ArchaicPetra": {
+        "condName": "Memperoleh Elemental Shard"
+    },
+    "artifact_Instructor": {
+        "condName": "Memicu Reaksi Elemental"
+    },
+    "artifact_MaidenBeloved": {
+        "condName": "Menggunakan Elemental Skill atau Elemental Burst"
+    },
+    "artifact_NoblesseOblige": {
+        "condName": "Melancarkan Elemental Burst"
+    },
+    "artifact_TenacityOfTheMillelith": {
+        "condName": "Elemental Skill mengenai musuh"
+    },
+    "artifact_ViridescentVenerer": {
+        "condName": "Elemen terkena Swirl"
+    },
+    "char_Thoma": {
+        "a1": "Menciptakan/Memperbarui <strong>Blazing Barrier</strong>",
+        "c6": "Saat menciptakan atau memperbarui <strong>Blazing Barrier</strong>"
+    },
+    "weapon_CinnabarSpindle": {
+        "name": "Normal Attack DMG meningkat"
+    },
+    "weapon_ElegyForTheEnd": {
+        "condName": "Millennial Movement: Farewell Song"
+    },
+    "weapon_MouunsMoon": {
+        "party": "Kapasitas energy party"
+    },
+    "weapon_ThrillingTalesOfDragonSlayers": {
+        "condName": "Berganti karakter"
+    },
+    "weapon_WavebreakersFin": {
+        "party": "Kapasitas energy party"
+    },
+    "weapon_WolfsGravestone": {
+        "condName": "Mengenai musuh dengan HP kurang dari 30%"
     }
 }

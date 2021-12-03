@@ -108,6 +108,19 @@ const char: ICharacterSheet = {
               }]
             }]))
           },
+        }, {
+          conditional: { // Absorption
+            key: "c6",
+            partyBuff: "partyAll",
+            header: conditionalHeader("constellation6", tr, c6),
+            description: tr("constellation6.description"),
+            name: "Elemental Absorption",
+            canShow: stats => stats.constellation >= 6,
+            states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
+              name: <ColorText color={eleKey}>{sgt(`element.${eleKey}`)}</ColorText>,
+              stats: { [`${eleKey}_dmg_`]: 20 }
+            }]))
+          },
         }]
       },
       passive1: {

@@ -12,6 +12,7 @@ import cocogoat from './cocogoat.png'
 import GIScanner from './GIScanner.png'
 
 export default function ScannerDisplay(props: any) {
+  const { t: ui } = useTranslation('ui')
   const { t } = useTranslation('page_scanner')
   ReactGA.pageview('/scanner')
   return <Box display="flex" flexDirection="column" gap={1} my={1}>
@@ -35,26 +36,22 @@ export default function ScannerDisplay(props: any) {
     <CardDark><CardContent><Grid container spacing={2} >
       <Grid item xs={12} md={4}><ImgFullwidth src={GIScanner} /></Grid>
       <Grid item xs={12} md={8}>
-        <Trans t={t} i18nKey="gis">
-          <Typography variant="h5">Genshin Impact Scanner</Typography>
-          <Typography gutterBottom>This light-weight app will scan all your characters + weapons + artifacts in your inventory. Follow the instrutions in the app to set it up. This scanner only scans in english. </Typography>
-          <Typography gutterBottom>The app exports to GOOD format by default.</Typography>
-          <Button href="https://github.com/Andrewthe13th/Genshin_Scanner/releases" target="_blank" startIcon={<FontAwesomeIcon icon={faDownload} />} >Download link</Button>
-        </Trans>
+        <Typography variant="h5"><Trans t={t} i18nKey="ik.title">Inventory Kamera</Trans></Typography>
+        <Typography gutterBottom><Trans t={t} i18nKey="ik.p1">This light-weight app will scan all your characters + weapons + artifacts in your inventory. Follow the instrutions in the app to set it up. This scanner only scans in english.</Trans></Typography>
+        <Typography gutterBottom><Trans t={t} i18nKey="ik.p2">This scanner can also scan materials for <Link href="https://seelie.me/" target="_blank" rel="noreferrer">Seelie.me</Link></Trans></Typography>
+        <Typography gutterBottom><Trans t={t} i18nKey="ik.p3">The app exports to GOOD format by default.</Trans></Typography>
+        <Button href="https://github.com/Andrewthe13th/Inventory_Kamera" target="_blank" startIcon={<FontAwesomeIcon icon={faDownload} />} ><Trans t={ui} i18nKey="link.download" /></Button>
       </Grid>
     </Grid></CardContent></CardDark>
 
     <CardDark><CardContent><Grid container spacing={2} >
       <Grid item xs={12} md={8}>
-        <Trans t={t} i18nKey="amenoma">
-          <Typography variant="h5">「天目」-- Amenoma</Typography>
-          <Typography gutterBottom>Scans all you artifacts in your inventory. Follow the instruction to capture the window and scan.</Typography>
-          <Typography gutterBottom>Has both Chinese and English version. (Download the <code>_EN.exe</code> version to scan in english)</Typography>
-          <Typography gutterBottom>Both the <code>mona-uranai</code> and <code>GOOD</code> format is accepted in GO. the <code>GOOD</code> format is recommended.</Typography>
-          <Button sx={{ mb: 2 }} href="https://github.com/daydreaming666/Amenoma/releases/" target="_blank" startIcon={<FontAwesomeIcon icon={faDownload} />} >Download link</Button>
-          <Typography gutterBottom>Please feel free to join their discord if you find any bugs. They are in need of more english testers.</Typography>
-          <Button href="https://discord.gg/S3B9NB7Bk2" target="_blank" startIcon={<FontAwesomeIcon icon={faDiscord} />} >Discord Invite</Button>
-        </Trans>
+        <Typography variant="h5"><Trans t={t} i18nKey="am.title">「天目」-- Amenoma</Trans></Typography>
+        <Typography gutterBottom><Trans t={t} i18nKey="am.p1">Scans all you artifacts in your inventory. Follow the instruction to capture the window and scan. Has both Chinese and English version. (Download the <code>_EN.exe</code> version to scan in english). Both the <code>mona-uranai</code> and <code>GOOD</code> format is accepted in GO. the <code>GOOD</code> format is recommended.</Trans></Typography>
+        <Typography gutterBottom><Trans t={t} i18nKey="am.p2">Beta version of this scanner can also scan materials for <Link href="https://seelie.me/" target="_blank" rel="noreferrer">Seelie.me</Link></Trans></Typography>
+        <Button sx={{ mb: 2 }} href="https://github.com/daydreaming666/Amenoma/releases/" target="_blank" startIcon={<FontAwesomeIcon icon={faDownload} />} ><Trans t={ui} i18nKey="link.download" /></Button>
+        <Typography gutterBottom><Trans t={t} i18nKey="am.p3">Please feel free to join their discord if you find any bugs. They are in need of more english testers.</Trans></Typography>
+        <Button href="https://discord.gg/BTrCYgVGFP" target="_blank" startIcon={<FontAwesomeIcon icon={faDiscord} />} ><Trans t={ui} i18nKey="link.discord" /></Button>
       </Grid>
       <Grid item xs={12} md={4}><ImgFullwidth src={Amenoma} /></Grid>
     </Grid></CardContent></CardDark>
