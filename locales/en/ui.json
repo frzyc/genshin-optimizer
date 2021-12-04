@@ -46,5 +46,6 @@
     "efficiency": "Current Substat Eff.",
     "mefficiency": "Maximum Substat Eff.",
     "probability": "Roll Probability"
-  }
+  },
+  "updatedfor": "Updated for {{version}}"
 }
