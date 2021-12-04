@@ -4,7 +4,12 @@
     "title": "Inventory Kamera",
     "p1": "This light-weight app will scan all your characters + weapons + artifacts in your inventory. Follow the instrutions in the app to set it up. This scanner only scans in english.",
     "p2": "This scanner can also scan materials for <1>Seelie.me</1>",
-    "p3": "The app exports to GOOD format by default."
+    "p3": "This scanner only scans in english, and exports to GOOD format by default."
+  },
+  "as": {
+    "title": "AdeptiScanner",
+    "p1": "Scans all your artifacts in inventory. Has a manual scanning mode.",
+    "p2": "This scanner can also be configured for new artifacts in new game versions without needing an update."
   },
   "am": {
     "title": "「天目」-- Amenoma",
@@ -12,6 +17,13 @@
     "p2": "Beta version of this scanner can also scan materials for <1>Seelie.me</1>",
     "p3": "Please feel free to join their discord if you find any bugs. They are in need of more english testers."
   },
-  "cocogoat": "<0>cocogoat</0><1>Originally Chinese scanner that was ported to English. Has an overlay to scan individual artifacts. </1><2>Cocogoat also retains your scanned artifacts, where you can edit them individually, and you can use them in its built-in mona-uranai optimizer.(Currently a Chinese-only optimizer)</2><3>It is recommended to export in its \"Mona's Divination Shop\" format.</3><4>Download link</4><5>WARNING: Do not use the \"Genshin Optimizer\" export format. importing it will delete your character & weapon data.</5>",
+  "co": {
+    "title": "椰羊cocogoat",
+    "p1": "Cocogoat was originally a Chinese scanner that was ported to English. Has an overlay to scan individual artifacts.",
+    "p2": "Cocogoat also retains your scanned artifacts, where you can edit them individually, and you can use them in its built-in mona-uranai optimizer.(Currently a Chinese-only optimizer)",
+    "p3": "It is recommended to export in its \"Mona's Divination Shop\" format.",
+    "warn": "WARNING: Do not use the \"Genshin Optimizer\" export format. importing it will delete your character & weapon data."
+  },
+  "goodeng": "This scanner only scans in english, and exports to GOOD format.",
   "backHome": "Go back to home page"
 }

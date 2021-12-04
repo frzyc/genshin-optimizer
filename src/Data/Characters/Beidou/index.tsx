@@ -20,7 +20,7 @@ import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { ICharacterSheet } from '../../../Types/character'
 import { Translate } from '../../../Components/Translate'
-import { claymoreChargedDocSection, normalDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
+import { claymoreChargedDocSection, conditionalHeader, normalDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
 import ColorText from '../../../Components/ColoredText'
 const tr = (strKey: string) => <Translate ns="char_Beidou_gen" key18={strKey} />
@@ -132,6 +132,9 @@ const char: ICharacterSheet = {
           }],
           conditional: { // Bane Evil
             key: "c6",
+            partyBuff: "partyAll",
+            header: conditionalHeader("constellation6", tr, c6),
+            description: tr("constellation6.description"),
             canShow: stats => stats.constellation >= 6,
             name: <span>During the duration of <b>Stormbreaker</b></span>,
             stats: { electro_enemyRes_: -15, }

@@ -20,7 +20,7 @@ import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from "../../../Build/Build"
 import { ICharacterSheet } from '../../../Types/character'
 import { Translate } from '../../../Components/Translate'
-import { talentTemplate } from '../SheetUtil'
+import { conditionalHeader, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
 const tr = (strKey: string) => <Translate ns="char_Xingqiu_gen" key18={strKey} />
 const char: ICharacterSheet = {
@@ -184,6 +184,9 @@ const char: ICharacterSheet = {
           conditional: { // RainbowUponTheAzureSky
             key: "c2",
             canShow: stats => stats.constellation >= 2,
+            partyBuff: "partyAll",
+            header: conditionalHeader("constellation2", tr, c2),
+            description: tr("constellation2.description"),
             name: "Opponent hit by sword rain",
             stats: { hydro_enemyRes_: -15 },
           },
