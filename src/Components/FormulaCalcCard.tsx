@@ -1,5 +1,5 @@
 import { ExpandMore } from "@mui/icons-material"
-import { Accordion, AccordionDetails, AccordionSummary, Box, CardContent, Collapse, Divider, Grid, Skeleton, Typography } from "@mui/material"
+import { Accordion, AccordionDetails, AccordionSummary, Box, CardContent, CardHeader, Collapse, Divider, Grid, Skeleton, Typography } from "@mui/material"
 import { Suspense, useCallback, useContext, useMemo, useState } from "react"
 import { buildContext } from "../Build/Build"
 import Character from "../Character/Character"
@@ -15,6 +15,7 @@ import CardDark from "./Card/CardDark"
 import CardLight from "./Card/CardLight"
 import ColorText from "./ColoredText"
 import ExpandButton from "./ExpandButton"
+import ImgIcon from "./Image/ImgIcon"
 
 export default function FormulaCalcCard({ sheets }: { sheets: Sheets }) {
   const [expanded, setexpanded] = useState(false)
@@ -56,9 +57,7 @@ function CalculationDisplay({ sheets }: { sheets: Sheets }) {
     {Object.entries(displayStatKeys).map(([sectionKey, fields]: [string, any]) => {
       const header = getFormulaTargetsDisplayHeading(sectionKey, sheets, build)
       return <CardDark key={sectionKey} sx={{ mb: 1 }}>
-        <CardContent sx={{ pb: 1 }}>
-          <Typography variant="h6">{header}</Typography>
-        </CardContent>
+        <CardHeader avatar={header.icon && <ImgIcon size={2} sx={{ m: -1 }} src={header.icon} />} title={header.title} titleTypographyProps={{ variant: "subtitle1" }} />
         <Divider />
         <CardContent>
           {fields.map((field, fieldIndex) => {

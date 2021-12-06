@@ -11,5 +11,8 @@ export const initialBuildSettings = (): BuildSetting => ({
   builds: [],
   buildDate: 0,
   maxBuildsToShow: 5,
-  plotBase: ""
+  plotBase: "",
+  compareBuild: true,
+  levelLow: 0,
+  levelHigh: 20,
 })

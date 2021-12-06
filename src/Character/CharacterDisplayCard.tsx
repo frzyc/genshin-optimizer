@@ -62,13 +62,18 @@ type CharacterDisplayCardProps = {
   newBuild?: ICalculatedStats,
   onClose?: (any) => void,
   tabName?: string,
-  isFlex?: boolean
+  isFlex?: boolean,
+  compareBuild?: boolean
 }
-export default function CharacterDisplayCard({ characterKey, footer, newBuild: propNewBuild, onClose, tabName, isFlex }: CharacterDisplayCardProps) {
+export default function CharacterDisplayCard({ characterKey, footer, newBuild: propNewBuild, onClose, tabName, isFlex, compareBuild: propCompareBuild }: CharacterDisplayCardProps) {
   const database = useContext(DatabaseContext)
-  const [compareBuild, setCompareBuild] = useState(false)
+  const [compareBuild, setCompareBuild] = useState(propCompareBuild ?? false)
   const character = useCharacter(characterKey)
   const [dbDirty, setDbDirty] = useForceUpdate()
+
+  useEffect(() => {
+    typeof propCompareBuild === "boolean" && setCompareBuild(propCompareBuild)
+  }, [propCompareBuild, setCompareBuild])
 
   const sheets = useSheets()
   //follow updates from team

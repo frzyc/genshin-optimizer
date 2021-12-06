@@ -20,7 +20,10 @@ export interface BuildSetting {
   builds: string[][]
   buildDate: number,
   maxBuildsToShow: number,
-  plotBase: StatKey | ""
+  plotBase: StatKey | "",
+  compareBuild: boolean,
+  levelLow: number,
+  levelHigh: number,
 }
 export type ArtifactsBySlot = Dict<SlotKey, ICachedArtifact[]>
 

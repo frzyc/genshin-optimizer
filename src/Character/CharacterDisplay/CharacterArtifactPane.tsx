@@ -65,10 +65,10 @@ function CharacterArtifactPane({ sheets, character, character: { key: characterK
           <Grid item>
             {/* Compare against new build toggle */}
             {!!newBuild && <SolidToggleButtonGroup exclusive value={compareBuild} onChange={(e, v) => setCompareBuild?.(v)} size="small">
-              <ToggleButton value={false} >
+              <ToggleButton value={false} disabled={!compareBuild}>
                 <small>Show New artifact Stats</small>
               </ToggleButton>
-              <ToggleButton value={true} >
+              <ToggleButton value={true} disabled={compareBuild}>
                 <small>Compare against equipped artifacts</small>
               </ToggleButton>
             </SolidToggleButtonGroup>}

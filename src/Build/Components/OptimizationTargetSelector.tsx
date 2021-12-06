@@ -1,10 +1,11 @@
-import { Button, CardContent, Divider, Grid, MenuItem, MenuList, styled, Typography } from '@mui/material';
+import { Button, CardContent, CardHeader, Divider, Grid, MenuItem, MenuList, styled } from '@mui/material';
 import React, { useCallback, useMemo, useState } from 'react';
 import Character from '../../Character/Character';
 import { getFormulaTargetsDisplayHeading } from '../../Character/CharacterUtil';
 import CardDark from '../../Components/Card/CardDark';
 import CardLight from '../../Components/Card/CardLight';
 import ColorText from '../../Components/ColoredText';
+import ImgIcon from '../../Components/Image/ImgIcon';
 import ModalWrapper from '../../Components/ModalWrapper';
 import Formula from '../../Formula';
 import usePromise from '../../ReactHooks/usePromise';
@@ -63,12 +64,7 @@ export default function OptimizationTargetSelector({ optimizationTarget, setTarg
               const header = getFormulaTargetsDisplayHeading(sectionKey as string, sheets, initialStats)
               return <Grid item xs={6} md={4} key={sectionKey as string}>
                 <CardLight sx={{ height: "100%" }}>
-                  <CardContent sx={{ py: 1 }}>
-                    <Typography>
-                      <b>{header as string}</b>
-                    </Typography>
-
-                  </CardContent>
+                  <CardHeader avatar={header.icon && <ImgIcon size={2} sx={{ m: -1 }} src={header.icon} />} title={header.title} titleTypographyProps={{ variant: "subtitle1" }} />
                   <Divider />
                   <MenuList>
                     {fields.map((target, i) => {

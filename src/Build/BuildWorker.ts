@@ -11,7 +11,7 @@ import { PreprocessFormulas } from '../ProcessFormula';
 
 const plotMaxPoints = 1500
 
-onmessage = async (e: { data: BuildRequest & { plotBase?: StatKey } }) => {
+onmessage = async (e: { data: BuildRequest }) => {
   const t1 = performance.now()
   const { splitArtifacts, setFilters, minFilters = {}, initialStats: stats, artifactSetEffects, maxBuildsToShow, optimizationTarget, plotBase } = e.data
 

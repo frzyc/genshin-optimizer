@@ -37,7 +37,7 @@ function Display({ characterKey }) {
   const [open, setOpen] = useState(false);
   const handleClick = useCallback(() => setOpen(true), [setOpen],)
   const handleClose = useCallback(
-    (event?: React.SyntheticEvent, reason?: string) => {
+    (event, reason) => {
       if (reason === 'clickaway') return;
       setOpen(false);
     }, [setOpen])
@@ -48,7 +48,7 @@ function Display({ characterKey }) {
   const isUpToDate = false
   return <Box display="flex" flexDirection="column" gap={theme => theme.spacing(1)} mt={1} mb={1}>
     <Snackbar open={open} autoHideDuration={5000} onClose={handleClose}>
-      <Alert variant="filled" onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+      <Alert variant="filled" severity="success" sx={{ width: '100%' }}>
         URL copied to clipboard.
       </Alert>
     </Snackbar>

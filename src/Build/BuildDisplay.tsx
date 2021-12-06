@@ -1,7 +1,7 @@
 import { faCalculator } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { CheckBox, CheckBoxOutlineBlank, Close } from '@mui/icons-material';
-import { Alert, Box, Button, ButtonGroup, CardContent, Divider, Grid, Link, MenuItem, Skeleton, Typography } from '@mui/material';
+import { Alert, Box, Button, ButtonGroup, CardContent, Divider, Grid, Link, MenuItem, Skeleton, ToggleButton, Typography } from '@mui/material';
 import React, { lazy, Suspense, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import ReactGA from 'react-ga';
 import { Link as RouterLink } from 'react-router-dom';
@@ -10,6 +10,7 @@ import Worker from "worker-loader!./BuildWorker";
 import Artifact from '../Artifact/Artifact';
 import Character from '../Character/Character';
 import CharacterCard from '../Character/CharacterCard';
+import ArtifactLevelSlider from '../Components/Artifact/ArtifactLevelSlider';
 import CardDark from '../Components/Card/CardDark';
 import CardLight from '../Components/Card/CardLight';
 import CharacterDropdownButton from '../Components/Character/CharacterDropdownButton';
@@ -17,6 +18,7 @@ import CloseButton from '../Components/CloseButton';
 import DropdownButton from '../Components/DropdownMenu/DropdownButton';
 import InfoComponent from '../Components/InfoComponent';
 import ModalWrapper from '../Components/ModalWrapper';
+import SolidToggleButtonGroup from '../Components/SolidToggleButtonGroup';
 import { DatabaseContext } from '../Database/Database';
 import { dbStorage } from '../Database/DBStorage';
 import { GlobalSettingsContext } from '../GlobalSettings';
@@ -114,7 +116,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   const statsDisplayKeys = useMemo(() => initialStats && sheets && Character.getDisplayStatKeys(initialStats, sheets), [initialStats, sheets])
 
   const buildSettings = character?.buildSettings ?? initialBuildSettings()
-  const { plotBase, setFilters, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, builds, buildDate, maxBuildsToShow } = buildSettings
+  const { plotBase, setFilters, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, builds, buildDate, maxBuildsToShow, compareBuild, levelLow, levelHigh } = buildSettings
 
   if (initialStats)
     initialStats.mainStatAssumptionLevel = mainStatAssumptionLevel
@@ -174,7 +176,9 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     if (!characterKey) // Make sure we have all slotKeys
       return { split: objectFromKeyMap(allSlotKeys, () => []) as ArtifactsBySlot, totBuildNumber: 0 }
     const artifactDatabase = database._getArts().filter(art => {
-      //if its equipped on the selected character, bypass the check
+      if (art.level < levelLow) return false
+      if (art.level > levelHigh) return false
+      // If its equipped on the selected character, bypass the check
       if (art.location === characterKey) return true
 
       if (art.exclude && !useExcludedArts) return false
@@ -182,14 +186,14 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
       return true
     })
     const split = Artifact.splitArtifactsBySlot(artifactDatabase);
-    //filter the split slots on the mainstats selected.
+    // Filter the split slots on the mainstats selected.
     artifactsSlotsToSelectMainStats.forEach(slotKey =>
       mainStatKeys[slotKey].length && (split[slotKey] = split[slotKey]?.filter((art) => mainStatKeys[slotKey].includes(art.mainStatKey))))
     const totBuildNumber = calculateTotalBuildNumber(split, setFilters)
     return artsDirty && { split, totBuildNumber }
-  }, [characterKey, useExcludedArts, useEquippedArts, mainStatKeys, setFilters, artsDirty, database])
+  }, [characterKey, useExcludedArts, useEquippedArts, mainStatKeys, setFilters, levelLow, levelHigh, artsDirty, database])
 
-  //reset the Alert by setting progress to zero.
+  // Reset the Alert by setting progress to zero.
   useEffect(() => {
     setgenerationProgress(0)
   }, [totBuildNumber])
@@ -260,7 +264,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
           "You can compare the difference between equipped artifacts and generated builds.",
           "The more complex the formula, the longer the generation time.",]}
       ><InfoDisplay /></InfoComponent>
-      <BuildModal build={buildStats[modalBuildIndex]} characterKey={characterKey} onClose={closeBuildModal} />
+      <BuildModal build={buildStats[modalBuildIndex]} characterKey={characterKey} onClose={closeBuildModal} compareBuild={compareBuild} />
       {noCharacter && <Alert severity="error" variant="filled"> Opps! It looks like you haven't added a character to GO yet! You should go to the <Link component={RouterLink} to="/character">Characters</Link> page and add some!</Alert>}
       {noArtifact && <Alert severity="warning" variant="filled"> Opps! It looks like you haven't added any artifacts to GO yet! You should go to the <Link component={RouterLink} to="/artifact">Artifacts</Link> page and add some!</Alert>}
       {/* Build Generator Editor */}
@@ -316,6 +320,19 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
                 </Grid>
               </CardContent></CardLight>}
 
+              { /* Level Filter */}
+              <CardLight>
+                <CardContent sx={{ py: 1 }}>
+                  Artifact Level Filter
+                </CardContent>
+                <Divider />
+                <CardContent>
+                  <ArtifactLevelSlider levelLow={levelLow} levelHigh={levelHigh} dark
+                    setLow={levelLow => buildSettingsDispatch({ levelLow })}
+                    setHigh={levelHigh => buildSettingsDispatch({ levelHigh })}
+                    setBoth={(levelLow, levelHigh) => buildSettingsDispatch({ levelLow, levelHigh })} />
+                </CardContent>
+              </CardLight>
               {/* main stat selector */}
               {characterKey && <MainStatSelectionCard
                 mainStatAssumptionLevel={mainStatAssumptionLevel}
@@ -390,29 +407,40 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
       </CardDark>
       <CardDark>
         <CardContent>
-          <Typography>
-            {buildStats ? <span>Showing <strong>{buildStats.length}</strong> Builds generated for {characterName}. {!!buildDate && <span>Build generated on: <strong>{(new Date(buildDate)).toLocaleString()}</strong></span>}</span>
-              : <span>Select a character to generate builds.</span>}
-          </Typography>
+          <Box display="flex" justifyContent="space-between" alignItems="center" >
+            <Typography>
+              {buildStats ? <span>Showing <strong>{buildStats.length}</strong> Builds generated for {characterName}. {!!buildDate && <span>Build generated on: <strong>{(new Date(buildDate)).toLocaleString()}</strong></span>}</span>
+                : <span>Select a character to generate builds.</span>}
+            </Typography>
+            <SolidToggleButtonGroup exclusive value={compareBuild} onChange={(e, v) => buildSettingsDispatch({ compareBuild: v })} size="small">
+              <ToggleButton value={false} disabled={!compareBuild}>
+                <small>Show New artifact Stats</small>
+              </ToggleButton>
+              <ToggleButton value={true} disabled={compareBuild}>
+                <small>Compare against equipped artifacts</small>
+              </ToggleButton>
+            </SolidToggleButtonGroup>
+          </Box>
         </CardContent>
       </CardDark>
       <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={600} />}>
         {/* Build List */}
         {buildStats?.map((build, index) =>
-          sheets && <ArtifactBuildDisplayItem sheets={sheets} build={build} characterKey={characterKey as CharacterKey} index={index} key={Object.values(build.equippedArtifacts ?? {}).join()}
-            statsDisplayKeys={statsDisplayKeys} onClick={() => setmodalBuildIndex(index)} disabled={!!generatingBuilds} />
+          sheets && equippedBuild && <ArtifactBuildDisplayItem sheets={sheets} equippedBuild={equippedBuild} newBuild={build} characterKey={characterKey as CharacterKey} index={index} key={Object.values(build.equippedArtifacts ?? {}).join()}
+            statsDisplayKeys={statsDisplayKeys} onClick={() => setmodalBuildIndex(index)} compareBuild={compareBuild} disabled={!!generatingBuilds} />
         )}
       </Suspense>
     </Box>
   </buildContext.Provider>
 }
 
-function BuildModal({ build, characterKey, onClose }) {
+function BuildModal({ build, characterKey, onClose, compareBuild }) {
   return <ModalWrapper open={!!build} onClose={onClose} containerProps={{ maxWidth: "xl" }}>
     <CharacterDisplayCard
       characterKey={characterKey}
       newBuild={build}
       onClose={onClose}
+      compareBuild={compareBuild}
       footer={<CloseButton large onClick={onClose} />} />
   </ModalWrapper>
 }

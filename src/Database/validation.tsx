@@ -181,7 +181,7 @@ export function parseCharacter(obj: any): ICharacter | undefined {
     talent = { auto, skill, burst }
   }
   if (buildSettings && typeof buildSettings === "object") {//buildSettings
-    let { setFilters, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, builds, buildDate, maxBuildsToShow, plotBase } = buildSettings ?? {}
+    let { setFilters, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, builds, buildDate, maxBuildsToShow, plotBase, compareBuild, levelLow, levelHigh } = buildSettings ?? {}
     if (!Array.isArray(setFilters)) setFilters = initialBuildSettings().setFilters
 
     //make sure set effects are all numbers
@@ -217,7 +217,10 @@ export function parseCharacter(obj: any): ICharacter | undefined {
     if (!Number.isInteger(buildDate)) buildDate = 0
     if (!maxBuildsToShowList.includes(maxBuildsToShow)) maxBuildsToShow = maxBuildsToShowDefault
     if (typeof plotBase !== "string") plotBase = ""
-    buildSettings = { setFilters, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, builds, buildDate, maxBuildsToShow, plotBase }
+    if (compareBuild === undefined) compareBuild = false
+    if (levelLow === undefined) levelLow = 0
+    if (levelHigh === undefined) levelHigh = 20
+    buildSettings = { setFilters, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, builds, buildDate, maxBuildsToShow, plotBase, compareBuild, levelLow, levelHigh }
   }
 
   if (!conditionalValues)

@@ -1,29 +1,27 @@
 import { faBan, faChartLine, faTrash, faUserShield, faUserSlash } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { BusinessCenter, Lock, LockOpen, Replay } from "@mui/icons-material"
-import { Button, CardContent, Divider, Grid, ListItemIcon, ListItemText, MenuItem, Skeleton, Slider, ToggleButton, Typography } from "@mui/material"
-import { Suspense, useCallback, useContext, useEffect, useMemo, useState } from "react"
+import { Button, CardContent, Divider, Grid, ListItemIcon, ListItemText, MenuItem, Skeleton, ToggleButton, Typography } from "@mui/material"
+import { Suspense, useContext, useMemo } from "react"
 import { Trans, useTranslation } from "react-i18next"
 import CharacterSheet from "../Character/CharacterSheet"
+import ArtifactLevelSlider from "../Components/Artifact/ArtifactLevelSlider"
 import ArtifactSetDropdown from "../Components/Artifact/ArtifactSetDropdown"
 import ArtifactSlotDropdown from "../Components/Artifact/ArtifactSlotDropdown"
 import CardDark from "../Components/Card/CardDark"
-import CardLight from "../Components/Card/CardLight"
 import { CharacterMenuItemArray } from "../Components/Character/CharacterDropdownButton"
-import CustomNumberInput from "../Components/CustomNumberInput"
 import DropdownButton from "../Components/DropdownMenu/DropdownButton"
 import SolidToggleButtonGroup from "../Components/SolidToggleButtonGroup"
 import SortByButton from "../Components/SortByButton"
 import SqBadge from "../Components/SqBadge"
 import { Stars } from "../Components/StarDisplay"
 import { DatabaseContext } from "../Database/Database"
+import { GlobalSettingsContext } from "../GlobalSettings"
 import usePromise from "../ReactHooks/usePromise"
 import Stat from "../Stat"
 import { allMainStatKeys, allSubstats, ICachedArtifact } from "../Types/artifact"
 import { allArtifactRarities, CharacterKey } from "../Types/consts"
-import { ArtifactSortKey, FilterOption, artifactSortKeys, artifactSortKeysTC } from "./ArtifactSort"
-import { clamp } from "../Util/Util"
-import { GlobalSettingsContext } from "../GlobalSettings"
+import { ArtifactSortKey, artifactSortKeys, artifactSortKeysTC, FilterOption } from "./ArtifactSort"
 
 export default function ArtifactFilter({ artifactIds, filterOption, sortType, ascending, filterOptionDispatch, filterDispatch }:
   { artifactIds: string[], filterOption: FilterOption, sortType: ArtifactSortKey, ascending: boolean, filterOptionDispatch: (any) => void, filterDispatch: (any) => void }) {
@@ -81,17 +79,6 @@ export default function ArtifactFilter({ artifactIds, filterOption, sortType, as
     window.confirm(`Are you sure you want to unlock ${numLock} artifacts?`) &&
     artifactIds.map(id => database.updateArt({ lock: false }, id))
 
-  const [sliderLow, setsliderLow] = useState(levelLow)
-  const [sliderHigh, setsliderHigh] = useState(levelHigh)
-  const setSlider = useCallback(
-    (e, [l, h]) => {
-      setsliderLow(l)
-      setsliderHigh(h)
-    },
-    [setsliderLow, setsliderHigh])
-  useEffect(() => setsliderLow(levelLow), [levelLow, setsliderLow])
-
-  useEffect(() => setsliderHigh(levelHigh), [setsliderHigh, levelHigh])
   return <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={300} />}>
     <CardDark  >
       <CardContent>
@@ -118,29 +105,10 @@ export default function ArtifactFilter({ artifactIds, filterOption, sortType, as
               {allArtifactRarities.map(star => <ToggleButton key={star} value={star}><Stars stars={star} /></ToggleButton>)}
             </SolidToggleButtonGroup>
             {/* Artiface level filter */}
-            <CardLight sx={{ width: "100%", display: "flex", alignItems: "center" }}>
-              <CustomNumberInput
-                value={sliderLow || levelLow}
-                onChange={val => filterOptionDispatch({ levelLow: clamp(val, 0, levelHigh) })}
-                sx={{ pl: 2, width: 100, }}
-                inputProps={{ sx: { textAlign: "center" } }}
-                startAdornment={"Level: "}
-              />
-              <Slider sx={{ width: 100, flexGrow: 1, mx: 2 }}
-                getAriaLabel={() => 'Arifact Level Range'}
-                value={[sliderLow, sliderHigh]}
-                onChange={setSlider}
-                onChangeCommitted={(e, value) => filterOptionDispatch({ levelLow: value[0] ?? value, levelHigh: value[1] ?? value })}
-                valueLabelDisplay="auto"
-                min={0} max={20} step={1} marks
-              />
-              <CustomNumberInput
-                value={sliderHigh || levelHigh}
-                onChange={val => filterOptionDispatch({ levelHigh: clamp(val, levelLow, 20) })}
-                sx={{ px: 1, width: 50, }}
-                inputProps={{ sx: { textAlign: "center" } }}
-              />
-            </CardLight>
+            <ArtifactLevelSlider levelLow={levelLow} levelHigh={levelHigh}
+              setLow={levelLow => filterOptionDispatch({ levelLow })}
+              setHigh={levelHigh => filterOptionDispatch({ levelHigh })}
+              setBoth={(levelLow, levelHigh) => filterOptionDispatch({ levelLow, levelHigh })} />
             {/* Sort */}
             <SortByButton fullWidth sortKeys={[...artifactSortKeys.filter(key => (artifactSortKeysTC as unknown as string[]).includes(key) ? tcMode : true)]}
               value={sortType} onChange={sortType => filterDispatch({ sortType })}
