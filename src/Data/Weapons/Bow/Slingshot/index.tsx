@@ -9,7 +9,8 @@ const weapon: IWeaponSheet = {
   icon,
   iconAwaken,
   stats: () => ({
-    dmg_: -10
+    normal_dmg_: -10,
+    charged_dmg_: -10
   }),
   document: [{
     conditional: {
@@ -17,8 +18,9 @@ const weapon: IWeaponSheet = {
       name: "Normal/Charged Attack Hits within 0.3s",
       maxStack: 1,
       stats: stats => ({
-        // TODO: Shouldn't we exclude elemental skill/burst?
-        dmg_: refinementVals[stats.weapon.refineIndex] + 10//+10 to neutralize the -10
+        // +10 to neutralize the -10
+        normal_dmg_: refinementVals[stats.weapon.refineIndex] + 10,
+        charged_dmg_: refinementVals[stats.weapon.refineIndex] + 10
       })
     }
   }],

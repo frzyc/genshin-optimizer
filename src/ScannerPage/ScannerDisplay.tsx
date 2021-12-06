@@ -60,7 +60,7 @@ export default function ScannerDisplay(props: any) {
     <CardDark><CardContent><Grid container spacing={2} >
       <Grid item xs={12} md={4}><ImgFullwidth src={Amenoma} /></Grid>
       <Grid item xs={12} md={8}>
-        <Typography variant="h5"><Trans t={t} i18nKey="am.title">「天目」-- Amenoma</Trans><SqBadge color="warning" sx={{ ml: 1 }}><Trans t={ui} i18nKey="updatedfor" values={{ version: "2.2" }} /></SqBadge></Typography>
+        <Typography variant="h5"><Trans t={t} i18nKey="am.title">「天目」-- Amenoma</Trans><SqBadge color="success" sx={{ ml: 1 }}><Trans t={ui} i18nKey="updatedfor" values={{ version: "2.3" }} /></SqBadge></Typography>
         <Typography gutterBottom><Trans t={t} i18nKey="am.p1">Scans all you artifacts in your inventory. Follow the instruction to capture the window and scan. Has both Chinese and English version. (Download the <code>_EN.exe</code> version to scan in english). Both the <code>mona-uranai</code> and <code>GOOD</code> format is accepted in GO. the <code>GOOD</code> format is recommended.</Trans></Typography>
         <Typography gutterBottom><Trans t={t} i18nKey="am.p2">Beta version of this scanner can also scan materials for <Link href="https://seelie.me/" target="_blank" rel="noreferrer">Seelie.me</Link></Trans></Typography>
         <Button sx={{ mb: 2 }} href="https://github.com/daydreaming666/Amenoma" target="_blank" startIcon={<FontAwesomeIcon icon={faDownload} />} ><Trans t={ui} i18nKey="link.download" /></Button>

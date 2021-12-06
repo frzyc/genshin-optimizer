@@ -20,11 +20,11 @@ import weaponCurveExcelConfigData, { WeaponGrowCurveKey } from './DataminedModul
 import { extrapolateFloat } from './extrapolateFloat'
 import loadImages from './loadImages'
 import { parsingFunctions, preprocess } from './parseUtil'
-import { languageMap } from './TextMapUtil'
+import { languageMap, nameToKey, TextMapEN } from './TextMapUtil'
 import { crawlObject, dumpFile, layeredAssignment } from './Util'
 
 // import './DataminedModules/food/CookRecipeExcelConfigData'
-// import './DataminedModules/material/MaterialExcelConfigData'
+import materialExcelConfigData from './DataminedModules/character/MaterialExcelConfigData'
 const fs = require('fs')
 
 loadImages();
@@ -74,9 +74,9 @@ const characterDataDump = Object.fromEntries(Object.entries(avatarExcelConfigDat
 Object.entries(characterDataDump).forEach(([characterKey, data]) => {
   if (characterKey.includes('_')) {//Traveler, for multi element support
     const [charKey, eleKey] = characterKey.split("_")
-    dumpFile(`../src/Data/Characters/${charKey}/data_${eleKey}_gen.json`, data)
+    dumpFile(`${__dirname}/../src/Data/Characters/${charKey}/data_${eleKey}_gen.json`, data)
   } else
-    dumpFile(`../src/Data/Characters/${characterKey}/data_gen.json`, data)
+    dumpFile(`${__dirname}/../src/Data/Characters/${characterKey}/data_gen.json`, data)
 })
 
 
@@ -143,9 +143,9 @@ const characterSkillParamDump = Object.fromEntries(Object.entries(avatarExcelCon
 Object.entries(characterSkillParamDump).forEach(([characterKey, data]) => {
   if (characterKey.includes('_')) {//Traveler, for multi element support
     const [charKey, eleKey] = characterKey.split("_")
-    dumpFile(`../src/Data/Characters/${charKey}/${eleKey}/skillParam_gen.json`, data)
+    dumpFile(`${__dirname}/../src/Data/Characters/${charKey}/${eleKey}/skillParam_gen.json`, data)
   } else
-    dumpFile(`../src/Data/Characters/${characterKey}/skillParam_gen.json`, data)
+    dumpFile(`${__dirname}/../src/Data/Characters/${characterKey}/skillParam_gen.json`, data)
 })
 
 type WeaponProp = {
@@ -200,17 +200,17 @@ const weaponDataDump = Object.fromEntries(Object.entries(weaponExcelConfigData).
 
 //dump data file to respective weapon directory.
 Object.entries(weaponDataDump).forEach(([weaponKey, data]) =>
-  dumpFile(`../src/Data/Weapons/${data.weaponType[0].toUpperCase() + data.weaponType.slice(1)}/${weaponKey}/data_gen.json`, data))
+  dumpFile(`${__dirname}/../src/Data/Weapons/${data.weaponType[0].toUpperCase() + data.weaponType.slice(1)}/${weaponKey}/data_gen.json`, data))
 
 //exp curve to generate  stats at every level
-dumpFile(`../src/Weapon/expCurve_gen.json`, weaponCurveExcelConfigData)
-dumpFile(`../src/Character/expCurve_gen.json`, characterExpCurve)
+dumpFile(`${__dirname}/../src/Weapon/expCurve_gen.json`, weaponCurveExcelConfigData)
+dumpFile(`${__dirname}/../src/Character/expCurve_gen.json`, characterExpCurve)
 
 //dump artifact data
-dumpFile('../src/Artifact/artifact_sub_gen.json', artifactSubstatData)
-dumpFile('../src/Artifact/artifact_main_gen.json', artifactMainstatData)
-dumpFile('../src/Artifact/artifact_sub_rolls_gen.json', artifactSubstatRollData)
-dumpFile('../src/Artifact/artifact_sub_rolls_correction_gen.json', artifactSubstatRollCorrection)
+dumpFile(`${__dirname}/../src/Artifact/artifact_sub_gen.json`, artifactSubstatData)
+dumpFile(`${__dirname}/../src/Artifact/artifact_main_gen.json`, artifactMainstatData)
+dumpFile(`${__dirname}/../src/Artifact/artifact_sub_rolls_gen.json`, artifactSubstatRollData)
+dumpFile(`${__dirname}/../src/Artifact/artifact_sub_rolls_correction_gen.json`, artifactSubstatRollCorrection)
 
 //generate the MapHashes for localization for artifacts
 Object.entries(reliquarySetExcelConfigData).filter(([SetId, data]) => SetId in artifactIdMap).forEach(([SetId, data]) => {
@@ -320,6 +320,22 @@ Object.entries(avatarExcelConfigData).filter(([charid,]) => charid in characterI
   }
 })
 
+//generate the MapHashes for localization for materials
+const materialData = {}
+Object.entries(materialExcelConfigData).forEach(([id, material]) => {
+  const { NameTextMapHash, DescTextMapHash, MaterialType } = material
+  const key = nameToKey(TextMapEN[NameTextMapHash])
+  if (!key || mapHashData.material[key]) return
+  mapHashData.material[key] = {
+    name: NameTextMapHash,
+    description: DescTextMapHash,
+  }
+  materialData[key] = {
+    type: MaterialType
+  }
+})
+dumpFile(`${__dirname}/../src/Data/Materials/material_gen.json`, materialData)
+
 //Main localization dumping
 const languageData = {}
 Object.entries(languageMap).forEach(([lang, langStrings]) => {
@@ -343,12 +359,12 @@ Object.entries(languageMap).forEach(([lang, langStrings]) => {
 
 //dump the language data to files
 Object.entries(languageData).forEach(([lang, data]) => {
-  const fileDir = `../public/locales/${lang}`
+  const fileDir = `${__dirname}/../public/locales/${lang}`
   if (!fs.existsSync(fileDir)) fs.mkdirSync(fileDir)
 
   Object.entries(data).forEach(([type, typeData]) => {
     //general manual localiation namespaces
-    if (["sheet", "weaponKey", "resonance"].includes(type))
+    if (["sheet", "weaponKey", "resonance", "material"].includes(type))
       return dumpFile(`${fileDir}/${type}_gen.json`, typeData)
 
     //weapons/characters/artifacts

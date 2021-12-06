@@ -2,8 +2,9 @@ import char from './Characters'
 import sheet from './sheet'
 export const mapHashData = {
   char,
-  weapon: {},//will be populated from datamine parsing pipeline
-  artifact: {},
+  weapon: {},// will be populated from datamine parsing pipeline
+  artifact: {},// will be populated from datamine parsing pipeline
+  material: {},// will be populated from datamine parsing pipeline
   sheet,
   weaponKey: {
     sword: 1338971918,

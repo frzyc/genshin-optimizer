@@ -121,6 +121,20 @@ const char: ICharacterSheet = {
             text: sgt("energyCost"),
             value: 60,
           }],
+          conditional: { // DivineRetribution
+            key: "c6",
+            canShow: stats => stats.constellation >= 6,
+            partyBuff: "partyAll",
+            header: conditionalHeader("constellation6", tr, c6),
+            description: tr("constellation6.description"),
+            name: <Translate ns="char_Rosaria" key18="c6" />,
+            stats: { physical_enemyRes_: -20 },
+            fields: [{
+              text: sgt("duration"),
+              value: 10,
+              unit: "s"
+            }]
+          }
         }],
       },
       passive1: {
@@ -190,23 +204,7 @@ const char: ICharacterSheet = {
       constellation3: talentTemplate("constellation3", tr, c3, "skillBoost"),
       constellation4: talentTemplate("constellation4", tr, c4),
       constellation5: talentTemplate("constellation5", tr, c5, "burstBoost"),
-      constellation6: {
-        name: tr("constellation6.name"),
-        img: c6,
-        sections: [{
-          text: tr("constellation6.description"),
-          conditional: { // DivineRetribution
-            key: "c6",
-            canShow: stats => stats.constellation >= 6,
-            name: <Translate ns="char_Rosaria" key18="c6" />,
-            stats: { physical_enemyRes_: -20 },
-            fields: [{
-              text: sgt("duration"),
-              value: "10s",
-            }]
-          }
-        }],
-      }
+      constellation6: talentTemplate("constellation6", tr, c6),
     },
   },
 };

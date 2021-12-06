@@ -1,4 +1,4 @@
-import { Box, CardContent, Divider, Grid, Skeleton, styled, Tab, Tabs, Typography } from "@mui/material";
+import { Box, CardContent, Divider, Grid, Skeleton, styled, Tab, Tabs, Typography, Link as MuiLink } from "@mui/material";
 import React, { Suspense } from "react";
 import ReactGA from 'react-ga';
 import { useTranslation } from 'react-i18next';
@@ -6,8 +6,10 @@ import { HashRouter, Link, Route, Switch, useRouteMatch } from "react-router-dom
 import CardDark from "../Components/Card/CardDark";
 import CardLight from "../Components/Card/CardLight";
 import SqBadge from "../Components/SqBadge";
+import material from "../Data/Materials/Material";
 import { StatData } from "../StatData";
 import { allArtifactSets, allCharacterKeys, allWeaponKeys } from "../Types/consts";
+import { ArrowRightAlt } from "@mui/icons-material";
 
 export default function HomeDisplay(props: any) {
   // const { t } = useTranslation("documentation")
@@ -30,7 +32,7 @@ export default function HomeDisplay(props: any) {
         </Grid>
         <Grid item>
           <Typography variant="h6">
-            <SqBadge color="info">Version. 1</SqBadge>
+            <SqBadge color="info">Version. 2</SqBadge>
           </Typography>
         </Grid>
       </Grid>
@@ -46,10 +48,13 @@ export default function HomeDisplay(props: any) {
                 sx={{ borderRight: 1, borderColor: 'divider' }}
               >
                 <Tab label="Overview" value="" component={Link} to="/" />
+                <Tab label={"Key naming convention"} value="KeyNaming" component={Link} to="/KeyNaming" />
                 <Tab label={<code>StatKey</code>} value="StatKey" component={Link} to="/StatKey" />
                 <Tab label={<code>ArtifactSetKey</code>} value="ArtifactSetKey" component={Link} to="/ArtifactSetKey" />
                 <Tab label={<code>CharacterKey</code>} value="CharacterKey" component={Link} to="/CharacterKey" />
                 <Tab label={<code>WeaponKey</code>} value="WeaponKey" component={Link} to="/WeaponKey" />
+                <Tab label={<code>MaterialKey</code>} value="MaterialKey" component={Link} to="/MaterialKey" />
+                <Tab label={"Version History"} value="VersionHistory" component={Link} to="/VersionHistory" />
               </Tabs>
             </CardLight>
           </Grid>
@@ -58,10 +63,13 @@ export default function HomeDisplay(props: any) {
               <CardContent>
                 <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={600} />}>
                   <Switch>
+                    <Route path="/VersionHistory" component={VersionHistoryPane} />
+                    <Route path="/MaterialKey" component={MaterialKeyPane} />
                     <Route path="/ArtifactSetKey" component={ArtifactSetKeyPane} />
                     <Route path="/WeaponKey" component={WeaponKeyPane} />
                     <Route path="/CharacterKey" component={CharacterKeyPane} />
                     <Route path="/StatKey" component={StatKeyPane} />
+                    <Route path="/KeyNaming" component={KeyNamingPane} />
                     <Route path="/" component={Overview} />
                   </Switch>
                 </Suspense>
@@ -75,12 +83,15 @@ export default function HomeDisplay(props: any) {
 }
 
 const goodCode = `interface IGOOD {
-  format: "GOOD" //A way for people to recognize this format.
-  version: number //API version.
-  source: string //the app that generates this data.
+  format: "GOOD" // A way for people to recognize this format.
+  version: number // GOOD API version.
+  source: string // The app that generates this data.
   characters?: ICharacter[]
   artifacts?: IArtifact[]
   weapons?: IWeapon[]
+  materials?: { // Added in version 2
+    [key:MaterialKey]: number
+  }
 }`
 
 const artifactCode = `interface IArtifact {
@@ -154,6 +165,23 @@ function Overview() {
     </CardDark>
   </>
 }
+function KeyNamingPane() {
+  return <>
+    <CardDark>
+      <CardContent>
+        <Typography>Key Naming Convention</Typography>
+      </CardContent>
+      <Divider />
+      <CardContent>
+        <Typography gutterBottom>The keys in the GOOD format, like Artifact sets, weapon keys, character keys, are all in <strong>PascalCase</strong>. This makes the name easy to derive from the in-game text, assuming no renames occur. If a rename is needed, then the standard will have to increment versions. (Last change was in 1.2 when the Prototype weapons were renamed)</Typography>
+        <Typography gutterBottom> To derive the PascalKey from a specific name, remove all symbols from the name, and Capitalize each word:</Typography>
+        <Typography><code>Gladiator's Finale</code> <ArrowRightAlt sx={{ verticalAlign: "bottom" }} /> <code>GladiatorsFinale</code></Typography>
+        <Typography><code>Spirit Locket of Boreas</code> <ArrowRightAlt sx={{ verticalAlign: "bottom" }} /> <code>SpiritLocketOfBoreas</code></Typography>
+        <Typography><code>"The Catch"</code> <ArrowRightAlt sx={{ verticalAlign: "bottom" }} /> <code>TheCatch</code></Typography>
+      </CardContent>
+    </CardDark>
+  </>
+}
 
 function StatKeyPane() {
   // const { t } = useTranslation()
@@ -204,12 +232,53 @@ function WeaponKeyPane() {
     </CardDark>
   </>
 }
+function MaterialKeyPane() {
+  const { t } = useTranslation("material_gen")
+  const weaponKeysCode = `type MaterialKey\n  = ${Object.keys(material as any).sort().map(k => `"${k}" //${t(`${k}.name`)}`).join(`\n  | `)}`
+  return <>
+    <Typography gutterBottom variant="h4">MaterialKey</Typography>
+    <CardDark>
+      <CardContent>
+        <Typography gutterBottom>The material keys here are generated using the <MuiLink href="https://github.com/Dimbreath/GenshinData/blob/master/ExcelBinOutput/MaterialExcelConfigData.json" target="_blank" rel="noreferrer"><code>MaterialExcelConfigData.json</code></MuiLink> of the datamine. The item names are taken from the english translation, and then converted into <MuiLink component={Link} to="KeyNaming"><code>PascalCase</code></MuiLink>.</Typography>
+        <CodeBlock text={weaponKeysCode} />
+      </CardContent>
+    </CardDark>
+  </>
+}
+
+function VersionHistoryPane() {
+  return <Box display="flex" flexDirection="column" gap={2}>
+    <Typography gutterBottom variant="h4">Version History</Typography>
+    <CardDark>
+      <CardContent>
+        <Typography>
+          Version 1
+        </Typography>
+      </CardContent>
+      <Divider />
+      <CardContent>
+        <Typography>Created general <code>IGOOD</code> format with character, weapon, artifact fields.</Typography>
+      </CardContent>
+    </CardDark>
+    <CardDark>
+      <CardContent>
+        <Typography>
+          Version 2
+        </Typography>
+      </CardContent>
+      <Divider />
+      <CardContent>
+        <Typography>Adds <code>materials</code> field to <code>IGOOD</code>. All other fields remain the same. V2 is backwards compatible with V1.</Typography>
+      </CardContent>
+    </CardDark>
+  </Box>
+}
 
 type LineNumberProps = {
   digits?: number;
 }
 const LineNumber = styled("textarea")<LineNumberProps>(({ theme, digits = 2 }) => ({
-  width: `${digits}em`, overflow: "hidden", userSelect: "none", color: theme.palette.text.secondary, resize: "none", border: "none",
+  width: `${digits}em`, overflow: "hidden", userSelect: "none", color: theme.palette.text.secondary, resize: "none", border: "none", whiteSpace: "pre", fontFamily: "monospace", lineHeight: 1,
   "&:disabled": {
     backgroundColor: "transparent"
   }
@@ -219,6 +288,7 @@ const CodeArea = styled("textarea")(({ theme }) => ({
   "&:disabled": {
     backgroundColor: "transparent"
   },
+  lineHeight: 1,
   width: "100%",
   overflowY: "auto",
   overflowX: "auto",
@@ -233,9 +303,10 @@ const CodeArea = styled("textarea")(({ theme }) => ({
 function CodeBlock({ text }) {
   const lines = text.split(/\r\n|\r|\n/).length + 1
   const lineNums = Array.from(Array(lines).keys()).map(i => i + 1).join('\n')
+  console.log(lines)
 
   return <Box display="flex" flexDirection="row">
-    <LineNumber disabled={true} spellCheck="false" aria-label='Code Sample' rows={lines} value={lineNums} unselectable="on" digits={lines.toString().length} />
-    <CodeArea sx={{ flexGrow: 1 }} disabled={true} spellCheck="false" aria-label='Code Sample' rows={lines} value={text} />
+    <LineNumber disabled={true} spellCheck="false" aria-label='Code Sample' sx={{ height: `${lines + 1}em` }} value={lineNums} unselectable="on" digits={lines.toString().length} />
+    <CodeArea sx={{ flexGrow: 1, height: `${lines + 1}em` }} disabled={true} spellCheck="false" aria-label='Code Sample' value={text} />
   </Box>
 }

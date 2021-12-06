@@ -83,7 +83,7 @@ export default function CharacterInfoDisplay() {
       <Typography gutterBottom>Some weapons have passives that provide additional stats. You can enable them to provide more real-time stats to the character, as well as provide more base stats to the Build Generator. In the image, the <i>Whiteblind</i> passive is fully stacked.</Typography>
 
       <Typography variant="h5">7. Stats Editor</Typography>
-      <Typography gutterBottom>These sections shows the calculated stats, from weapons/artifacts/talents. To change the base value of a stat or to add a external buff/debuff to a stat, click on the <SqBadge color="info"><FontAwesomeIcon icon={faEdit} /> EDIT Stats</SqBadge> Button, and overwrite the stat in question. A overwritten stat will show up in yellow.</Typography>
+      <Typography gutterBottom>These sections shows the calculated stats, from weapons/artifacts/talents. To change the base value of a stat or to add a external buff/debuff to a stat, click on the <SqBadge color="info"><FontAwesomeIcon icon={faEdit} /> EDIT Stats</SqBadge> Button, and overwrite the stat in question. An overwritten stat will show up in yellow.</Typography>
 
       <Typography variant="h5">8. Share character</Typography>
       <Typography gutterBottom>Do you want to share your character build with friends? Click on the <SqBadge color="info"><FontAwesomeIcon icon={faLink} /> Share Character</SqBadge> button, which will generate a URL that you can share.</Typography>
