@@ -2,25 +2,24 @@ import card from "./Character_Qiqi_Card.jpg";
 import thumb from './Icon.png'
 import thumbSide from './IconSide.png'
 import banner from './Banner.png'
-import c1 from "./Constellation_Ascetics_of_Frost.png";
-import c2 from "./Constellation_Frozen_to_the_Bone.png";
-import c3 from "./Constellation_Ascendant_Praise.png";
-import c4 from "./Constellation_Divine_Suppression.png";
-import c5 from "./Constellation_Crimson_Lotus_Bloom.png";
-import c6 from "./Constellation_Rite_of_Resurrection.png";
-import normal from "./Talent_Ancient_Sword_Art.png";
-import skill from "./Talent_Adeptus_Art_-_Herald_of_Frost.png";
-import burst from "./Talent_Adeptus_Art_-_Preserver_of_Fortune.png";
-import passive1 from "./Talent_Life-Prolonging_Methods.png";
-import passive2 from "./Talent_A_Glimpse_into_Arcanum.png";
-import passive3 from "./Talent_Former_Life_Memories.png";
+import c1 from "./constellation1.png";
+import c2 from "./constellation2.png";
+import c3 from "./constellation3.png";
+import c4 from "./constellation4.png";
+import c5 from "./constellation5.png";
+import c6 from "./constellation6.png";
+import skill from "./skill.png";
+import burst from "./burst.png";
+import passive1 from './passive1.png'
+import passive2 from './passive2.png'
+import passive3 from './passive3.png'
 import Stat from "../../../Stat";
 import formula, { data } from "./data";
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from "../../../Build/Build";
 import { ICharacterSheet } from "../../../Types/character";
 import { Translate } from '../../../Components/Translate'
-import { chargedDocSection, plungeDocSection, talentTemplate } from "../SheetUtil";
+import { chargedDocSection, normalSrc, plungeDocSection, talentTemplate } from "../SheetUtil";
 import { WeaponTypeKey } from "../../../Types/consts";
 const tr = (strKey: string) => <Translate ns="char_Qiqi_gen" key18={strKey} />
 const char: ICharacterSheet = {
@@ -43,7 +42,7 @@ const char: ICharacterSheet = {
     sheets: {
       auto: {
         name: tr("auto.name"),
-        img: normal,
+        img: normalSrc(data_gen.weaponTypeKey as WeaponTypeKey),
         sections: [
           {
             text: <span>{tr(`auto.fields.normal`)} <small><i>Note: the 3rd and 4th attacks hit twice.</i></small></span>,

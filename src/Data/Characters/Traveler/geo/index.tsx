@@ -1,27 +1,26 @@
-import c1 from './Constellation_Invincible_Stonewall.png'
-import c2 from './Constellation_Rockcore_Meltdown.png'
-import c3 from './Constellation_Will_of_the_Rock.png'
-import c4 from './Constellation_Reaction_Force.png'
-import c5 from './Constellation_Meteorite_Impact.png'
-import c6 from './Constellation_Everlasting_Boulder.png'
-import normal from './Talent_Foreign_Rockblade.png'
-import skill from './Talent_Starfell_Sword.png'
-import burst from './Talent_Wake_of_Earth.png'
-import passive1 from './Talent_Shattered_Darkrock.png'
-import passive2 from './Talent_Frenzied_Rockslide.png'
+import c1 from './constellation1.png'
+import c2 from './constellation2.png'
+import c3 from './constellation3.png'
+import c4 from './constellation4.png'
+import c5 from './constellation5.png'
+import c6 from './constellation6.png'
+import skill from './skill.png'
+import burst from './burst.png'
+import passive1 from './passive1.png'
+import passive2 from './passive2.png'
 import Stat from '../../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from "../../../../Build/Build"
 import { TalentSheet } from '../../../../Types/character';
 import { Translate } from '../../../../Components/Translate'
-import { conditionalHeader, normalDocSection, plungeDocSection, talentTemplate } from '../../SheetUtil'
+import { conditionalHeader, normalDocSection, normalSrc, plungeDocSection, talentTemplate } from '../../SheetUtil'
 const tr = (strKey: string) => <Translate ns="char_Traveler_gen" key18={`geo.${strKey}`} />
 const talentSheet: TalentSheet = {
   formula,
   sheets: {
     auto: {
       name: tr("auto.name"),
-      img: normal,
+      img: normalSrc("sword"),
       sections: [
         normalDocSection(tr, formula, data),
         {

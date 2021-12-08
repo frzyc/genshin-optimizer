@@ -2,25 +2,24 @@ import card from './Character_Fischl_Card.jpg'
 import thumb from './Icon.png'
 import thumbSide from './IconSide.png'
 import banner from './Banner.png'
-import c1 from './Constellation_Gaze_of_the_Deep.png'
-import c2 from './Constellation_Devourer_of_All_Sins.png'
-import c3 from './Constellation_Wings_of_Nightmare.png'
-import c4 from './Constellation_Her_Pilgrimage_of_Bleak.png'
-import c5 from './Constellation_Against_the_Fleeing_Light.png'
-import c6 from './Constellation_Evernight_Raven.png'
-import normal from './Talent_Bolts_of_Downfall.png'
-import skill from './Talent_Nightrider.png'
-import burst from './Talent_Midnight_Phantasmagoria.png'
-import passive1 from './Talent_Stellar_Predator.png'
-import passive2 from './Talent_Lightning_Smite.png'
-import passive3 from './Talent_Mein_Hausgarten.png'
+import c1 from './constellation1.png'
+import c2 from './constellation2.png'
+import c3 from './constellation3.png'
+import c4 from './constellation4.png'
+import c5 from './constellation5.png'
+import c6 from './constellation6.png'
+import skill from './skill.png'
+import burst from './burst.png'
+import passive1 from './passive1.png'
+import passive2 from './passive2.png'
+import passive3 from './passive3.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { ICharacterSheet } from '../../../Types/character'
 import { Translate } from '../../../Components/Translate'
-import { normalDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
+import { normalDocSection, normalSrc, plungeDocSection, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
 import ColorText from '../../../Components/ColoredText'
 const tr = (strKey: string) => <Translate ns="char_Fischl_gen" key18={strKey} />
@@ -45,7 +44,7 @@ const char: ICharacterSheet = {
     sheets: {
       auto: {
         name: tr("auto.name"),
-        img: normal,
+        img: normalSrc(data_gen.weaponTypeKey as WeaponTypeKey),
         sections: [
           normalDocSection(tr, formula, data),
           {

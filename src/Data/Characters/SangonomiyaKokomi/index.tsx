@@ -2,26 +2,25 @@ import card from './Character_Sangonomiya_Kokomi_Card.jpg'
 import thumb from './Icon.png'
 import thumbSide from './IconSide.png'
 import banner from './Banner.png'
-import c1 from './Constellation_At_Water\'s_Edge.png'
-import c2 from './Constellation_The_Clouds_Like_Waves_Rippling.png'
-import c3 from './Constellation_The_Moon,_A_Ship_O\'er_the_Seas.png'
-import c4 from './Constellation_The_Moon_Overlooks_the_Waters.png'
-import c5 from './Constellation_All_Streams_Flow_to_the_Sea.png'
-import c6 from './Constellation_Sango_Isshin.png'
-import normal from './Talent_The_Shape_of_Water.png'
-import skill from './Talent_Kurage\'s_Oath.png'
-import burst from './Talent_Nereid\'s_Ascension.png'
-import sprint from './Talent_Flawless_Strategy.png'
-import passive1 from './Talent_Tamanooya\'s_Casket.png'
-import passive2 from './Talent_Song_of_Pearls.png'
-import passive3 from './Talent_Princess_of_Watatsumi.png'
+import c1 from './constellation1.png'
+import c2 from './constellation2.png'
+import c3 from './constellation3.png'
+import c4 from './constellation4.png'
+import c5 from './constellation5.png'
+import c6 from './constellation6.png'
+import skill from './skill.png'
+import burst from './burst.png'
+import passive from './passive.png'
+import passive1 from './passive1.png'
+import passive2 from './passive2.png'
+import passive3 from './passive3.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { ICharacterSheet } from '../../../Types/character'
 import { Translate } from '../../../Components/Translate'
-import { plungeDocSection, sgt, st, talentTemplate } from '../SheetUtil'
+import { normalSrc, plungeDocSection, sgt, st, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
 import { basicDMGFormulaText } from '../../../Util/FormulaTextUtil'
 import { BasicStats } from '../../../Types/stats'
@@ -34,7 +33,7 @@ function burstOn(stats) {
 }
 function c2On(stats) {
   if (stats.constellation < 2) return false
-  const [num,] = stats.conditionalValues?.character?.SangonomiyaKokomi?.c2?? []
+  const [num,] = stats.conditionalValues?.character?.SangonomiyaKokomi?.c2 ?? []
   if (!num) return false
   return true
 }
@@ -63,7 +62,7 @@ const char: ICharacterSheet = {
     sheets: {
       auto: {
         name: tr("auto.name"),
-        img: normal,
+        img: normalSrc(data_gen.weaponTypeKey as WeaponTypeKey),
         sections: [
           {
             text: tr(`auto.fields.normal`),
@@ -187,7 +186,7 @@ const char: ICharacterSheet = {
       },
       passive: {
         name: tr("passive.name"),
-        img: sprint,
+        img: passive,
         sections: [{
           text: tr("passive.description"),
           conditional: {

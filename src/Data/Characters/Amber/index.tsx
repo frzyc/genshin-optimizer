@@ -2,25 +2,24 @@ import card from './Character_Amber_Card.jpg'
 import thumb from './Icon.png'
 import thumbSide from './IconSide.png'
 import banner from './Banner.png'
-import c1 from './Constellation_One_Arrow_to_Rule_Them_All.png'
-import c2 from './Constellation_Bunny_Triggered.png'
-import c3 from './Constellation_It_Burns.png'
-import c4 from './Constellation_It\'s_Not_Just_Any_Doll....png'
-import c5 from './Constellation_It\'s_Baron_Bunny.png'
-import c6 from './Constellation_Wildfire.png'
-import normal from './Talent_Sharpshooter.png'
-import skill from './Talent_Explosive_Puppet.png'
-import burst from './Talent_Fiery_Rain.png'
-import passive1 from './Talent_Every_Arrow_Finds_Its_Target.png'
-import passive2 from './Talent_Precise_Shot.png'
-import passive3 from './Talent_Gliding_Champion.png'
+import c1 from './constellation1.png'
+import c2 from './constellation2.png'
+import c3 from './constellation3.png'
+import c4 from './constellation4.png'
+import c5 from './constellation5.png'
+import c6 from './constellation6.png'
+import skill from './skill.png'
+import burst from './burst.png'
+import passive1 from './passive1.png'
+import passive2 from './passive2.png'
+import passive3 from './passive3.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { ICharacterSheet } from '../../../Types/character'
 import { Translate } from '../../../Components/Translate'
-import { bowChargedDocSection, conditionalHeader, plungeDocSection, talentTemplate } from '../SheetUtil'
+import { bowChargedDocSection, conditionalHeader, normalSrc, plungeDocSection, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
 const tr = (strKey: string) => <Translate ns="char_Amber_gen" key18={strKey} />
 const char: ICharacterSheet = {
@@ -43,7 +42,7 @@ const char: ICharacterSheet = {
     sheets: {
       auto: {
         name: tr("auto.name"),
-        img: normal,
+        img: normalSrc(data_gen.weaponTypeKey as WeaponTypeKey),
         sections: [{
           text: <span><strong>Normal Attack</strong> Perform up to 5 consecutive shots with a bow.</span>,
           fields: data.normal.hitArr.map((percentArr, i) =>

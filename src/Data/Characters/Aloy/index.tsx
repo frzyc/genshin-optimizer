@@ -2,25 +2,24 @@ import card from './Character_Aloy_Card.png'
 import thumb from './Icon.png'
 import thumbSide from './IconSide.png'
 import banner from './Banner.png'
-import c1 from './Constellation_Star_of_Another_World.png'
-import c2 from './Constellation_Star_of_Another_World.png'
-import c3 from './Constellation_Star_of_Another_World.png'
-import c4 from './Constellation_Star_of_Another_World.png'
-import c5 from './Constellation_Star_of_Another_World.png'
-import c6 from './Constellation_Star_of_Another_World.png'
-import normal from './Talent_Rapid_Fire.png'
-import skill from './Talent_Frozen_Wilds.png'
-import burst from './Talent_Prophecies_of_Dawn.png'
-import passive1 from './Talent_Combat_Override.png'
-import passive2 from './Talent_Strong_Strike.png'
-import passive3 from './Talent_Easy_Does_It.png'
+import c1 from './constellation1.png'
+import c2 from './constellation2.png'
+import c3 from './constellation3.png'
+import c4 from './constellation4.png'
+import c5 from './constellation5.png'
+import c6 from './constellation6.png'
+import skill from './skill.png'
+import burst from './burst.png'
+import passive1 from './passive1.png'
+import passive2 from './passive2.png'
+import passive3 from './passive3.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { ICharacterSheet } from '../../../Types/character'
 import { Translate } from '../../../Components/Translate'
-import { bowChargedDocSection, conditionalHeader, plungeDocSection, sgt, talentTemplate } from '../SheetUtil'
+import { bowChargedDocSection, conditionalHeader, normalSrc, plungeDocSection, sgt, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
 import { basicDMGFormulaText } from '../../../Util/FormulaTextUtil'
 const tr = (strKey: string) => <Translate ns="char_Aloy_gen" key18={strKey} />
@@ -46,7 +45,7 @@ const char: ICharacterSheet = {
     sheets: {
       auto: {
         name: tr("auto.name"),
-        img: normal,
+        img: normalSrc(data_gen.weaponTypeKey as WeaponTypeKey),
         sections: [
           {
             text: tr("auto.fields.normal"),

@@ -2,25 +2,24 @@ import card from './Character_Albedo_Card.png'
 import thumb from './Icon.png'
 import thumbSide from './IconSide.png'
 import banner from './Banner.png'
-import c1 from './Constellation_Flower_of_Eden.png'
-import c2 from './Constellation_Opening_of_Phanerozoic.png'
-import c3 from './Constellation_Grace_of_Helios.png'
-import c4 from './Constellation_Descent_of_Divinity.png'
-import c5 from './Constellation_Tide_of_Hadaen.png'
-import c6 from './Constellation_Dust_of_Purification.png'
-import normal from './Talent_Favonius_Bladework_-_Weiss.png'
-import skill from './Talent_Abiogenesis_-_Solar_Isotoma.png'
-import burst from './Talent_Rite_of_Progeniture_-_Tectonic_Tide.png'
-import passive1 from './Talent_Calcite_Might.png'
-import passive2 from './Talent_Homuncular_Nature.png'
-import passive3 from './Talent_Flash_of_Genius_(Albedo).png'
+import c1 from './constellation1.png'
+import c2 from './constellation2.png'
+import c3 from './constellation3.png'
+import c4 from './constellation4.png'
+import c5 from './constellation5.png'
+import c6 from './constellation6.png'
+import skill from './skill.png'
+import burst from './burst.png'
+import passive1 from './passive1.png'
+import passive2 from './passive2.png'
+import passive3 from './passive3.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant, } from "../../../Build/Build"
 import { ICharacterSheet } from '../../../Types/character'
 import { Translate } from '../../../Components/Translate'
-import { conditionalHeader, plungeDocSection, talentTemplate } from '../SheetUtil'
+import { conditionalHeader, normalSrc, plungeDocSection, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
 const tr = (strKey: string) => <Translate ns="char_Albedo_gen" key18={strKey} />
 const char: ICharacterSheet = {
@@ -43,7 +42,7 @@ const char: ICharacterSheet = {
     sheets: {
       auto: {
         name: tr("auto.name"),
-        img: normal,
+        img: normalSrc(data_gen.weaponTypeKey as WeaponTypeKey),
         sections: [{
           text: tr(`auto.fields.normal`),
           fields: data.normal.hitArr.map((percentArr, i) =>

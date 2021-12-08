@@ -50,6 +50,8 @@ export default function CharacterOverviewPane({ characterSheet, character, chara
                     horizontal: 'right',
                   }}
                   sx={{
+                    width: "100%",
+                    height: "100%",
                     "& > .MuiBadge-badge": {
                       fontSize: "1.25em",
                       padding: ".25em .4em",

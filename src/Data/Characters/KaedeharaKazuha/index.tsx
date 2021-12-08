@@ -2,25 +2,24 @@ import card from './Character_Kazuha_Card.png'
 import thumb from './Icon.png'
 import thumbSide from './IconSide.png'
 import banner from './Banner.png'
-import c1 from './Constellation_Scarlet_Hills.png'
-import c2 from './Constellation_Yamaarashi_Tailwind.png'
-import c3 from './Constellation_Maple_Monogatari.png'
-import c4 from './Constellation_Oozora_Genpou.png'
-import c5 from './Constellation_Wisdom_of_Bansei.png'
-import c6 from './Constellation_Crimson_Momiji.png'
-import normal from './Talent_Garyuu_Bladework.png'
-import skill from './Talent_Chihayaburu.png'
-import burst from './Talent_Kazuha_Slash.png'
-import passive1 from './Talent_Poetics_of_Fuubutsu.png'
-import passive2 from './Talent_Soumon_Swordsmanship.png'
-import passive3 from './Talent_Cloud_Strider.png'
+import c1 from './constellation1.png'
+import c2 from './constellation2.png'
+import c3 from './constellation3.png'
+import c4 from './constellation4.png'
+import c5 from './constellation5.png'
+import c6 from './constellation6.png'
+import skill from './skill.png'
+import burst from './burst.png'
+import passive1 from './passive1.png'
+import passive2 from './passive2.png'
+import passive3 from './passive3.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { DocumentSection, ICharacterSheet } from '../../../Types/character'
 import { Translate } from '../../../Components/Translate'
-import { conditionalHeader, sgt, st, talentTemplate } from '../SheetUtil'
+import { conditionalHeader, normalSrc, sgt, st, talentTemplate } from '../SheetUtil'
 import { absorbableEle } from '../dataUtil'
 import { KeyPath } from '../../../Util/KeyPathUtil'
 import { FormulaPathBase } from '../../formula'
@@ -50,7 +49,7 @@ const char: ICharacterSheet = {
     sheets: {
       auto: {
         name: tr("auto.name"),
-        img: normal,
+        img: normalSrc(data_gen.weaponTypeKey as WeaponTypeKey),
         sections: [{
           text: tr("auto.fields.normal"),
           fields: data.normal.hitArr.map((percentArr, i) =>

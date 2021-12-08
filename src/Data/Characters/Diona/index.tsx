@@ -2,25 +2,24 @@ import card from './Character_Diona_Card.png'
 import thumb from './Icon.png'
 import thumbSide from './IconSide.png'
 import banner from './Banner.png'
-import c1 from './Constellation_A_Lingering_Flavor.png'
-import c2 from './Constellation_Shaken,_Not_Purred.png'
-import c3 from './Constellation_A-Another_Round_.png'
-import c4 from './Constellation_Wine_Industry_Slayer.png'
-import c5 from './Constellation_Double_Shot,_On_The_Rocks.png'
-import c6 from './Constellation_Cat\'s_Tail_Closing_Time.png'
-import normal from './Talent_Kätzlein_Style.png'
-import skill from './Talent_Icy_Paws.png'
-import burst from './Talent_Signature_Mix.png'
-import passive1 from './Talent_Cat\'s_Tail_Secret_Menu.png'
-import passive2 from './Talent_Drunkards\'_Farce.png'
-import passive3 from './Talent_Complimentary_Bar_Food.png'
+import c1 from './constellation1.png'
+import c2 from './constellation2.png'
+import c3 from './constellation3.png'
+import c4 from './constellation4.png'
+import c5 from './constellation5.png'
+import c6 from './constellation6.png'
+import skill from './skill.png'
+import burst from './burst.png'
+import passive1 from './passive1.png'
+import passive2 from './passive2.png'
+import passive3 from './passive3.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { ICharacterSheet } from '../../../Types/character'
 import { Translate } from '../../../Components/Translate'
-import { bowChargedDocSection, conditionalHeader, normalDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
+import { bowChargedDocSection, conditionalHeader, normalDocSection, normalSrc, plungeDocSection, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
 import ColorText from '../../../Components/ColoredText'
 const tr = (strKey: string) => <Translate ns="char_Diona_gen" key18={strKey} />
@@ -44,7 +43,7 @@ const char: ICharacterSheet = {
     sheets: {
       auto: {
         name: tr("auto.name"),
-        img: normal,
+        img: normalSrc(data_gen.weaponTypeKey as WeaponTypeKey),
         sections: [
           normalDocSection(tr, formula, data),
           bowChargedDocSection(tr, formula, data, "cryo"),

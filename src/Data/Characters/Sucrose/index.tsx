@@ -2,18 +2,17 @@ import card from './Character_Sucrose_Card.jpg'
 import thumb from './Icon.png'
 import thumbSide from './IconSide.png'
 import banner from './Banner.png'
-import c1 from './Constellation_Clustered_Vacuum_Field.png'
-import c2 from './Constellation_Beth_Unbound_Form.png'
-import c3 from './Constellation_Flawless_Alchemistress.png'
-import c4 from './Constellation_Alchemania.png'
-import c5 from './Constellation_Caution_Standard_Flask.png'
-import c6 from './Constellation_Chaotic_Entropy.png'
-import normal from './Talent_Wind_Spirit_Creation.png'
-import skill from './Talent_Astable_Anemohypostasis_Creation_-_6308.png'
-import burst from './Talent_Forbidden_Creation_-_Isomer_75_Type_II.png'
-import passive1 from './Talent_Catalyst_Conversion.png'
-import passive2 from './Talent_Mollis_Favonius.png'
-import passive3 from './Talent_Astable_Invention.png'
+import c1 from './constellation1.png'
+import c2 from './constellation2.png'
+import c3 from './constellation3.png'
+import c4 from './constellation4.png'
+import c5 from './constellation5.png'
+import c6 from './constellation6.png'
+import skill from './skill.png'
+import burst from './burst.png'
+import passive1 from './passive1.png'
+import passive2 from './passive2.png'
+import passive3 from './passive3.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import data_gen from './data_gen.json'
@@ -21,7 +20,7 @@ import { getTalentStatKey, getTalentStatKeyVariant } from "../../../Build/Build"
 import { ICharacterSheet } from '../../../Types/character'
 import { absorbableEle } from '../dataUtil'
 import { Translate } from '../../../Components/Translate'
-import { chargedDocSection, conditionalHeader, normalDocSection, plungeDocSection, sgt, talentTemplate } from '../SheetUtil'
+import { chargedDocSection, conditionalHeader, normalDocSection, normalSrc, plungeDocSection, sgt, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
 import ColorText from '../../../Components/ColoredText'
 import { KeyPath } from '../../../Util/KeyPathUtil'
@@ -48,7 +47,7 @@ const char: ICharacterSheet = {
     sheets: {
       auto: {
         name: tr("auto.name"),
-        img: normal,
+        img: normalSrc(data_gen.weaponTypeKey as WeaponTypeKey),
         sections: [
           normalDocSection(tr, formula, data),
           chargedDocSection(tr, formula, data, 50),

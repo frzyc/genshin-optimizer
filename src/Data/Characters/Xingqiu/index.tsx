@@ -2,25 +2,24 @@ import card from './Character_Xingqiu_Card.jpg'
 import thumb from './Icon.png'
 import thumbSide from './IconSide.png'
 import banner from './Banner.png'
-import c1 from './Constellation_The_Scent_Remained.png'
-import c2 from './Constellation_Rainbow_Upon_the_Azure_Sky.png'
-import c3 from './Constellation_Weaver_of_Verses.png'
-import c4 from './Constellation_Evilsoother.png'
-import c5 from './Constellation_Embrace_of_Rain.png'
-import c6 from './Constellation_Hence,_Call_Them_My_Own_Verses.png'
-import normal from './Talent_Guhua_Style.png'
-import skill from './Talent_Guhua_Sword_-_Fatal_Rainscreen.png'
-import burst from './Talent_Guhua_Sword_-_Raincutter.png'
-import passive1 from './Talent_Hydropathic.png'
-import passive2 from './Talent_Blades_Amidst_Raindrops.png'
-import passive3 from './Talent_Flash_of_Genius.png'
+import c1 from './constellation1.png'
+import c2 from './constellation2.png'
+import c3 from './constellation3.png'
+import c4 from './constellation4.png'
+import c5 from './constellation5.png'
+import c6 from './constellation6.png'
+import skill from './skill.png'
+import burst from './burst.png'
+import passive1 from './passive1.png'
+import passive2 from './passive2.png'
+import passive3 from './passive3.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from "../../../Build/Build"
 import { ICharacterSheet } from '../../../Types/character'
 import { Translate } from '../../../Components/Translate'
-import { conditionalHeader, talentTemplate } from '../SheetUtil'
+import { conditionalHeader, normalSrc, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
 const tr = (strKey: string) => <Translate ns="char_Xingqiu_gen" key18={strKey} />
 const char: ICharacterSheet = {
@@ -43,7 +42,7 @@ const char: ICharacterSheet = {
     sheets: {
       auto: {
         name: tr("auto.name"),
-        img: normal,
+        img: normalSrc(data_gen.weaponTypeKey as WeaponTypeKey),
         sections: [{
           text: <span><strong>Normal Attack</strong> Perform up to 5 rapid strikes. <small><i>Note: the 3rd attack hits twice.</i></small></span>,
           fields: data.normal.hitArr.map((percentArr, i) =>

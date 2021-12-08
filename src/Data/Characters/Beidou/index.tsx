@@ -2,25 +2,24 @@ import card from './Character_Beidou_Card.jpg'
 import thumb from './Icon.png'
 import thumbSide from './IconSide.png'
 import banner from './Banner.png'
-import c1 from './Constellation_Sea_Beast\'s_Scourge.png'
-import c2 from './Constellation_Upon_the_Turbulent_Sea,_the_Thunder_Arises.png'
-import c3 from './Constellation_Summoner_of_Storm.png'
-import c4 from './Constellation_Stunning_Revenge.png'
-import c5 from './Constellation_Crimson_Tidewalker.png'
-import c6 from './Constellation_Bane_of_the_Evil.png'
-import normal from './Talent_Oceanborne.png'
-import skill from './Talent_Tidecaller.png'
-import burst from './Talent_Stormbreaker.png'
-import passive1 from './Talent_Retribution.png'
-import passive2 from './Talent_Lightning_Storm.png'
-import passive3 from './Talent_Conqueror_of_Tides.png'
+import c1 from './constellation1.png'
+import c2 from './constellation2.png'
+import c3 from './constellation3.png'
+import c4 from './constellation4.png'
+import c5 from './constellation5.png'
+import c6 from './constellation6.png'
+import skill from './skill.png'
+import burst from './burst.png'
+import passive1 from './passive1.png'
+import passive2 from './passive2.png'
+import passive3 from './passive3.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { ICharacterSheet } from '../../../Types/character'
 import { Translate } from '../../../Components/Translate'
-import { claymoreChargedDocSection, conditionalHeader, normalDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
+import { claymoreChargedDocSection, conditionalHeader, normalDocSection, normalSrc, plungeDocSection, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
 import ColorText from '../../../Components/ColoredText'
 const tr = (strKey: string) => <Translate ns="char_Beidou_gen" key18={strKey} />
@@ -44,7 +43,7 @@ const char: ICharacterSheet = {
     sheets: {
       auto: {
         name: tr("auto.name"),
-        img: normal,
+        img: normalSrc(data_gen.weaponTypeKey as WeaponTypeKey),
         sections: [
           normalDocSection(tr, formula, data),
           claymoreChargedDocSection(tr, formula, data),

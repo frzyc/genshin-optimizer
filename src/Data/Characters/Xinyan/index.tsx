@@ -2,25 +2,24 @@ import card from './Character_Xinyan_Card.jpg'
 import thumb from './Icon.png'
 import thumbSide from './IconSide.png'
 import banner from './Banner.png'
-import c1 from './Constellation_Fatal_Acceleration.png'
-import c2 from './Constellation_Impromptu_Opening.png'
-import c3 from './Constellation_Double-Stop.png'
-import c4 from './Constellation_Wildfire_Rhythm.png'
-import c5 from './Constellation_Screamin\'_for_an_Encore.png'
-import c6 from './Constellation_Rockin\'_in_a_Flaming_World.png'
-import normal from './Talent_Dance_on_Fire.png'
-import skill from './Talent_Sweeping_Fervor.png'
-import burst from './Talent_Riff_Revolution.png'
-import passive1 from './Talent__The_Show_Goes_On,_Even_Without_an_Audience..._.png'
-import passive2 from './Talent__...Now_That\'s_Rock_\'N\'_Roll_.png'
-import passive3 from './Talent_A_Rad_Recipe.png'
+import c1 from './constellation1.png'
+import c2 from './constellation2.png'
+import c3 from './constellation3.png'
+import c4 from './constellation4.png'
+import c5 from './constellation5.png'
+import c6 from './constellation6.png'
+import skill from './skill.png'
+import burst from './burst.png'
+import passive1 from './passive1.png'
+import passive2 from './passive2.png'
+import passive3 from './passive3.png'
 import Stat from '../../../Stat';
 import formula, { data } from './data'
 import data_gen from './data_gen.json';
 import { getTalentStatKey, getTalentStatKeyVariant } from "../../../Build/Build";
 import { ICharacterSheet } from '../../../Types/character'
 import { Translate } from '../../../Components/Translate'
-import { conditionalHeader, normalDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
+import { conditionalHeader, normalDocSection, normalSrc, plungeDocSection, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
 import ColorText from '../../../Components/ColoredText'
 const tr = (strKey: string) => <Translate ns="char_Xinyan_gen" key18={strKey} />
@@ -44,7 +43,7 @@ const char: ICharacterSheet = {
     sheets: {
       auto: {
         name: tr("auto.name"),
-        img: normal,
+        img: normalSrc(data_gen.weaponTypeKey as WeaponTypeKey),
         sections: [
           normalDocSection(tr, formula, data),
           {

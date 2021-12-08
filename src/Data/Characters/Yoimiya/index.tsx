@@ -2,25 +2,24 @@ import card from './Character_Yoimiya_Card.png'
 import thumb from './Icon.png'
 import thumbSide from './IconSide.png'
 import banner from './Banner.png'
-import c1 from './Constellation_Agate_Ryuukin.png'
-import c2 from './Constellation_A_Procession_of_Bonfires.png'
-import c3 from './Constellation_Trickster\'s_Flare.png'
-import c4 from './Constellation_Pyrotechnic_Professional.png'
-import c5 from './Constellation_A_Summer_Festival\'s_Eve.png'
-import c6 from './Constellation_Naganohara_Meteor_Swarm.png'
-import normal from './Talent_Firework_Flare-Up.png'
-import skill from './Talent_Niwabi_Fire-Dance.png'
-import burst from './Talent_Ryuukin_Saxifrage.png'
-import passive1 from './Talent_Tricks_of_the_Trouble-Maker.png'
-import passive2 from './Talent_Summer_Night\'s_Dawn.png'
-import passive3 from './Talent_Blazing_Match.png'
+import c1 from './constellation1.png'
+import c2 from './constellation2.png'
+import c3 from './constellation3.png'
+import c4 from './constellation4.png'
+import c5 from './constellation5.png'
+import c6 from './constellation6.png'
+import skill from './skill.png'
+import burst from './burst.png'
+import passive1 from './passive1.png'
+import passive2 from './passive2.png'
+import passive3 from './passive3.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { ICharacterSheet } from '../../../Types/character'
 import { Translate } from '../../../Components/Translate'
-import { conditionalHeader, plungeDocSection, sgt, talentTemplate } from '../SheetUtil'
+import { conditionalHeader, normalSrc, plungeDocSection, sgt, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
 import { basicDMGFormulaText } from '../../../Util/FormulaTextUtil'
 const tr = (strKey: string) => <Translate ns="char_Yoimiya_gen" key18={strKey} />
@@ -45,7 +44,7 @@ const char: ICharacterSheet = {
     sheets: {
       auto: {
         name: tr("auto.name"),
-        img: normal,
+        img: normalSrc(data_gen.weaponTypeKey as WeaponTypeKey),
         sections: [
           {
             text: tr("auto.fields.normal"),

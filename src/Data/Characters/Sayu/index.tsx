@@ -2,25 +2,24 @@ import card from './Character_Sayu_Card.png'
 import thumb from './Icon.png'
 import thumbSide from './IconSide.png'
 import banner from './Banner.png'
-import c1 from './Constellation_Multi-Task_no_Jutsu.png'
-import c2 from './Constellation_Egress_Prep.png'
-import c3 from './Constellation_Eh,_the_Bunshin_Can_Handle_It.png'
-import c4 from './Constellation_Skiving_New_and_Improved.png'
-import c5 from './Constellation_Speed_Comes_First.png'
-import c6 from './Constellation_Sleep_O\'Clock.png'
-import normal from './Talent_Shuumatsuban_Ninja_Blade.png'
-import skill from './Talent_Yoohoo_Art_Fuuin_Dash.png'
-import burst from './Talent_Yoohoo_Art_Mujina_Flurry.png'
-import passive1 from './Talent_Someone_More_Capable.png'
-import passive2 from './Talent_No_Work_Today.png'
-import passive3 from './Talent_Yoohoo_Art_Silencer\'s_Secret.png'
+import c1 from './constellation1.png'
+import c2 from './constellation2.png'
+import c3 from './constellation3.png'
+import c4 from './constellation4.png'
+import c5 from './constellation5.png'
+import c6 from './constellation6.png'
+import skill from './skill.png'
+import burst from './burst.png'
+import passive1 from './passive1.png'
+import passive2 from './passive2.png'
+import passive3 from './passive3.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { ICharacterSheet } from '../../../Types/character'
 import { Translate } from '../../../Components/Translate'
-import { claymoreChargedDocSection, plungeDocSection, sgt, st, talentTemplate } from '../SheetUtil'
+import { claymoreChargedDocSection, normalSrc, plungeDocSection, sgt, st, talentTemplate } from '../SheetUtil'
 import { basicDMGFormulaText } from '../../../Util/FormulaTextUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
 import { absorbableEle } from '../dataUtil'
@@ -46,7 +45,7 @@ const char: ICharacterSheet = {
     sheets: {
       auto: {
         name: tr("auto.name"),
-        img: normal,
+        img: normalSrc(data_gen.weaponTypeKey as WeaponTypeKey),
         sections: [
           {
             text: tr("auto.fields.normal"),

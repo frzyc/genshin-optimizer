@@ -2,26 +2,25 @@ import card from './Character_Mona_Card.jpg'
 import thumb from './Icon.png'
 import thumbSide from './IconSide.png'
 import banner from './Banner.png'
-import c1 from './Constellation_Prophecy_of_Submersion.png'
-import c2 from './Constellation_Lunar_Chain.png'
-import c3 from './Constellation_Restless_Revolution.png'
-import c4 from './Constellation_Prophecy_of_Oblivion.png'
-import c5 from './Constellation_Mockery_of_Fortuna.png'
-import c6 from './Constellation_Rhetorics_of_Calamitas.png'
-import normal from './Talent_Ripple_of_Fate.png'
-import skill from './Talent_Mirror_Reflection_of_Doom.png'
-import burst from './Talent_Stellaris_Phantasm.png'
-import sprint from './Talent_Illusory_Torrent.png'
-import passive1 from './Talent_Come_\'n\'_Get_Me,_Hag.png'
-import passive2 from './Talent_Waterborne_Destiny.png'
-import passive3 from './Talent_Principium_of_Astrology.png'
+import c1 from './constellation1.png'
+import c2 from './constellation2.png'
+import c3 from './constellation3.png'
+import c4 from './constellation4.png'
+import c5 from './constellation5.png'
+import c6 from './constellation6.png'
+import skill from './skill.png'
+import burst from './burst.png'
+import sprint from './sprint.png'
+import passive1 from './passive1.png'
+import passive2 from './passive2.png'
+import passive3 from './passive3.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { ICharacterSheet } from '../../../Types/character'
 import { Translate } from '../../../Components/Translate'
-import { chargedDocSection, conditionalHeader, normalDocSection, plungeDocSection, sgt, talentTemplate } from '../SheetUtil'
+import { chargedDocSection, conditionalHeader, normalDocSection, normalSrc, plungeDocSection, sgt, talentTemplate } from '../SheetUtil'
 import { KeyPath } from '../../../Util/KeyPathUtil'
 import { FormulaPathBase } from '../../formula'
 import { WeaponTypeKey } from '../../../Types/consts'
@@ -50,7 +49,7 @@ const char: ICharacterSheet = {
     sheets: {
       auto: {
         name: tr("auto.name"),
-        img: normal,
+        img: normalSrc(data_gen.weaponTypeKey as WeaponTypeKey),
         sections: [
           normalDocSection(tr, formula, data),
           chargedDocSection(tr, formula, data, 50),

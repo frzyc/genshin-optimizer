@@ -2,25 +2,24 @@ import card from './Character_Kujou_Sara_Card.jpg'
 import thumb from './Icon.png'
 import thumbSide from './IconSide.png'
 import banner from './Banner.png'
-import c1 from './Constellation_Crow\'s_Eye.png'
-import c2 from './Constellation_Dark_Wings.png'
-import c3 from './Constellation_The_War_Within.png'
-import c4 from './Constellation_Conclusive_Proof.png'
-import c5 from './Constellation_Spellsinger.png'
-import c6 from './Constellation_Sin_of_Pride.png'
-import normal from './Talent_Tengu_Bowmanship.png'
-import skill from './Talent_Tengu_Stormcall.png'
-import burst from './Talent_Subjugation_Koukou_Sendou.png'
-import passive1 from './Talent_Immovable_Will.png'
-import passive2 from './Talent_Decorum.png'
-import passive3 from './Talent_Land_Survey.png'
+import c1 from './constellation1.png'
+import c2 from './constellation2.png'
+import c3 from './constellation3.png'
+import c4 from './constellation4.png'
+import c5 from './constellation5.png'
+import c6 from './constellation6.png'
+import skill from './skill.png'
+import burst from './burst.png'
+import passive1 from './passive1.png'
+import passive2 from './passive2.png'
+import passive3 from './passive3.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { ICharacterSheet } from '../../../Types/character'
 import { Translate } from '../../../Components/Translate'
-import { bowChargedDocSection, conditionalHeader, normalDocSection, plungeDocSection, st, talentTemplate } from '../SheetUtil'
+import { bowChargedDocSection, conditionalHeader, normalDocSection, normalSrc, plungeDocSection, st, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
 import { basicDMGFormulaText } from '../../../Util/FormulaTextUtil'
 import { KeyPath } from '../../../Util/KeyPathUtil'
@@ -49,7 +48,7 @@ const char: ICharacterSheet = {
     sheets: {
       auto: {
         name: tr("auto.name"),
-        img: normal,
+        img: normalSrc(data_gen.weaponTypeKey as WeaponTypeKey),
         sections: [
           normalDocSection(tr, formula, data),
           bowChargedDocSection(tr, formula, data, "electro"),

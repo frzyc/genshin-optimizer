@@ -3,25 +3,24 @@ import { Translate } from '../../../Components/Translate'
 import Stat from '../../../Stat'
 import { ICharacterSheet } from '../../../Types/character'
 import { WeaponTypeKey } from '../../../Types/consts'
-import { chargedDocSection, conditionalHeader, normalDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
+import { chargedDocSection, conditionalHeader, normalDocSection, normalSrc, plungeDocSection, talentTemplate } from '../SheetUtil'
 import card from './Character_Klee_Card.jpg'
 import thumb from './Icon.png'
 import thumbSide from './IconSide.png'
 import banner from './Banner.png'
-import c6 from './Constellation_Blazing_Delight.png'
-import c1 from './Constellation_Chained_Reactions.png'
-import c2 from './Constellation_Explosive_Frags.png'
-import c3 from './Constellation_Exquisite_Compound.png'
-import c5 from './Constellation_Nova_Burst.png'
-import c4 from './Constellation_Sparkly_Explosion.png'
+import c6 from './constellation6.png'
+import c1 from './constellation1.png'
+import c2 from './constellation2.png'
+import c3 from './constellation3.png'
+import c5 from './constellation5.png'
+import c4 from './constellation4.png'
 import formula, { data } from './data'
 import data_gen from './data_gen.json'
-import passive3 from './Talent_All_Of_My_Treasures.png'
-import skill from './Talent_Jumpy_Dumpty.png'
-import normal from './Talent_Kaboom.png'
-import passive1 from './Talent_Pounding_Surprise.png'
-import passive2 from './Talent_Sparkling_Burst.png'
-import burst from './Talent_Sparks_\'n\'_Splash.png'
+import passive3 from './passive3.png'
+import skill from './skill.png'
+import passive1 from './passive1.png'
+import passive2 from './passive2.png'
+import burst from './burst.png'
 const tr = (strKey: string) => <Translate ns="char_Klee_gen" key18={strKey} />
 const char: ICharacterSheet = {
   name: tr("name"),
@@ -43,7 +42,7 @@ const char: ICharacterSheet = {
     sheets: {
       auto: {
         name: tr("auto.name"),
-        img: normal,
+        img: normalSrc(data_gen.weaponTypeKey as WeaponTypeKey),
         sections: [
           normalDocSection(tr, formula, data),
           chargedDocSection(tr, formula, data, 50),

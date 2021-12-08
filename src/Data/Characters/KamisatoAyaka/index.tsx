@@ -2,26 +2,25 @@ import card from './Character_Kamisato_Ayaka_Card.png'
 import thumb from './Icon.png'
 import thumbSide from './IconSide.png'
 import banner from './Banner.png'
-import c1 from './Constellation_Snowswept_Sakura.png'
-import c2 from './Constellation_Blizzard_Blade_Seki_no_To.png'
-import c3 from './Constellation_Frostbloom_Kamifubuki.png'
-import c4 from './Constellation_Ebb_and_Flow.png'
-import c5 from './Constellation_Blossom_Cloud_Irutsuki.png'
-import c6 from './Constellation_Dance_of_Suigetsu.png'
-import normal from './Talent_Kamisato_Art_Kabuki.png'
-import skill from './Talent_Kamisato_Art_Hyouka.png'
-import burst from './Talent_Kamisato_Art_Soumetsu.png'
-import sprint from './Talent_Kamisato_Art_Senho.png'
-import passive1 from './Talent_Kanten_Senmyou_Blessing.png'
-import passive2 from './Talent_Amatsumi_Kunitsumi_Sanctification.png'
-import passive3 from './Talent_Fruits_of_Shinsa.png'
+import c1 from './constellation1.png'
+import c2 from './constellation2.png'
+import c3 from './constellation3.png'
+import c4 from './constellation4.png'
+import c5 from './constellation5.png'
+import c6 from './constellation6.png'
+import skill from './skill.png'
+import burst from './burst.png'
+import sprint from './sprint.png'
+import passive1 from './passive1.png'
+import passive2 from './passive2.png'
+import passive3 from './passive3.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { ICharacterSheet } from '../../../Types/character'
 import { Translate } from '../../../Components/Translate'
-import { plungeDocSection, sgt, talentTemplate } from '../SheetUtil'
+import { normalSrc, plungeDocSection, sgt, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
 const tr = (strKey: string) => <Translate ns="char_KamisatoAyaka_gen" key18={strKey} />
 const charTr = (strKey: string) => <Translate ns="char_KamisatoAyaka" key18={strKey} />
@@ -45,7 +44,7 @@ const char: ICharacterSheet = {
     sheets: {
       auto: {
         name: tr("auto.name"),
-        img: normal,
+        img: normalSrc(data_gen.weaponTypeKey as WeaponTypeKey),
         sections: [{
           text: tr("auto.fields.normal"),
           fields: data.normal.hitArr.map((percentArr, i) =>

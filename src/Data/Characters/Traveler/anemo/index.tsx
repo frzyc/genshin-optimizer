@@ -1,21 +1,20 @@
-import c1 from './Constellation_Raging_Vortex.png'
-import c2 from './Constellation_Uprising_Whirlwind.png'
-import c3 from './Constellation_Sweeping_Gust.png'
-import c4 from './Constellation_Cherishing_Breezes.png'
-import c5 from './Constellation_Vortex_Stellaris.png'
-import c6 from './Constellation_Interwinded_Winds.png'
-import normal from './Talent_Foreign_Ironwind.png'
-import skill from './Talent_Palm_Vortex.png'
-import burst from './Talent_Gust_Surge.png'
-import passive1 from './Talent_Slitting_Wind.png'
-import passive2 from './Talent_Second_Wind.png'
+import c1 from './constellation1.png'
+import c2 from './constellation2.png'
+import c3 from './constellation3.png'
+import c4 from './constellation4.png'
+import c5 from './constellation5.png'
+import c6 from './constellation6.png'
+import skill from './skill.png'
+import burst from './burst.png'
+import passive1 from './passive1.png'
+import passive2 from './passive2.png'
 import Stat from '../../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from "../../../../Build/Build"
 import { TalentSheet } from '../../../../Types/character';
 import { absorbableEle } from '../../dataUtil'
 import { Translate } from '../../../../Components/Translate'
-import { normalDocSection, plungeDocSection, sgt, talentTemplate } from '../../SheetUtil'
+import { normalDocSection, normalSrc, plungeDocSection, sgt, talentTemplate } from '../../SheetUtil'
 import ColorText from '../../../../Components/ColoredText'
 const tr = (strKey: string) => <Translate ns="char_Traveler_gen" key18={`anemo.${strKey}`} />
 const talentSheet: TalentSheet = {
@@ -23,7 +22,7 @@ const talentSheet: TalentSheet = {
   sheets: {
     auto: {
       name: tr("auto.name"),
-      img: normal,
+      img: normalSrc("sword"),
       sections: [
         normalDocSection(tr, formula, data),
         {

@@ -1,20 +1,19 @@
-import c1 from './Constellation_Spring_Thunder_of_Fertility.png'
-import c2 from './Constellation_Violet_Vehemence.png'
-import c3 from './Constellation_Distant_Crackling.png'
-import c4 from './Constellation_Fickle_Cloudstrike.png'
-import c5 from './Constellation_Clamor_in_the_Wilds.png'
-import c6 from './Constellation_World-Shaker.png'
-import normal from './Talent_Foreign_Thundershock.png'
-import skill from './Talent_Lightning_Blade.png'
-import burst from './Talent_Bellowing_Thunder.png'
-import passive1 from './Talent_Thunderflash.png'
-import passive2 from './Talent_Resounding_Roar.png'
+import c1 from './constellation1.png'
+import c2 from './constellation2.png'
+import c3 from './constellation3.png'
+import c4 from './constellation4.png'
+import c5 from './constellation5.png'
+import c6 from './constellation6.png'
+import skill from './skill.png'
+import burst from './burst.png'
+import passive1 from './passive1.png'
+import passive2 from './passive2.png'
 import Stat from '../../../../Stat'
 import formula, { data } from './data'
 import { getTalentStatKey, getTalentStatKeyVariant } from "../../../../Build/Build"
 import { TalentSheet } from '../../../../Types/character';
 import { Translate } from '../../../../Components/Translate'
-import { conditionalHeader, normalDocSection, plungeDocSection, sgt, talentTemplate } from '../../SheetUtil'
+import { conditionalHeader, normalDocSection, normalSrc, plungeDocSection, sgt, talentTemplate } from '../../SheetUtil'
 import { KeyPath } from '../../../../Util/KeyPathUtil'
 import { FormulaPathBase } from '../../../formula'
 const path = KeyPath<FormulaPathBase, any>().character.Traveler.electro
@@ -25,7 +24,7 @@ const talentSheet: TalentSheet = {
   sheets: {
     auto: {
       name: tr("auto.name"),
-      img: normal,
+      img: normalSrc("sword"),
       sections: [
         normalDocSection(tr, formula, data),
         {

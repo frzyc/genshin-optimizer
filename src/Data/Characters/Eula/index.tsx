@@ -2,25 +2,24 @@ import card from './Character_Eula_Card.png'
 import thumb from './Icon.png'
 import thumbSide from './IconSide.png'
 import banner from './Banner.png'
-import c1 from './Constellation_Tidal_Illusion.png'
-import c2 from './Constellation_Lady_of_Seafoam.png'
-import c3 from './Constellation_Lawrence_Pedigree.png'
-import c4 from './Constellation_The_Obstinacy_of_One\'s_Inferiors.png'
-import c5 from './Constellation_Chivalric_Quality.png'
-import c6 from './Constellation_Noble_Obligation.png'
-import normal from './Talent_Favonius_Bladework_-_Edel.png'
-import skill from './Talent_Icetide_Vortex.png'
-import burst from './Talent_Glacial_Illumination.png'
-import passive1 from './Talent_Roiling_Rime.png'
-import passive2 from './Talent_Wellspring_of_War-Lust.png'
-import passive3 from './Talent_Aristocratic_Introspection.png'
+import c1 from './constellation1.png'
+import c2 from './constellation2.png'
+import c3 from './constellation3.png'
+import c4 from './constellation4.png'
+import c5 from './constellation5.png'
+import c6 from './constellation6.png'
+import skill from './skill.png'
+import burst from './burst.png'
+import passive1 from './passive1.png'
+import passive2 from './passive2.png'
+import passive3 from './passive3.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { ICharacterSheet } from '../../../Types/character'
 import { Translate } from '../../../Components/Translate'
-import { claymoreChargedDocSection, plungeDocSection, sgt, talentTemplate } from '../SheetUtil'
+import { claymoreChargedDocSection, normalSrc, plungeDocSection, sgt, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
 const tr = (strKey: string) => <Translate ns="char_Eula_gen" key18={strKey} />
 const Eula = (strKey: string) => <Translate ns="char_Eula" key18={strKey} />
@@ -44,7 +43,7 @@ const char: ICharacterSheet = {
     sheets: {
       auto: {
         name: tr("auto.name"),
-        img: normal,
+        img: normalSrc(data_gen.weaponTypeKey as WeaponTypeKey),
         sections: [{
           text: tr("auto.fields.normal"),
           fields: data.normal.hitArr.map((percentArr, i) =>

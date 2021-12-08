@@ -1,10 +1,11 @@
+import Assets from "../../Assets/Assets";
 import { getTalentStatKey, getTalentStatKeyVariant } from "../../Build/Build";
 import ImgIcon from "../../Components/Image/ImgIcon";
 import SqBadge from "../../Components/SqBadge";
 import { Translate } from "../../Components/Translate";
 import Stat from "../../Stat";
 import { DocumentSection, TalentSheetElement, TalentSheetElementKey } from "../../Types/character";
-import { ElementKey } from "../../Types/consts";
+import { ElementKey, WeaponTypeKey } from "../../Types/consts";
 import IConditional from "../../Types/IConditional";
 export const st = (strKey: string) => <Translate ns="sheet" key18={strKey} />
 export const sgt = (strKey: string) => <Translate ns="sheet_gen" key18={strKey} />
@@ -142,3 +143,5 @@ export const conditionalHeader = (talentKey: TalentSheetElementKey, tr: (string)
     action: <SqBadge color="success">{talentStrMap[talentKey]}</SqBadge>,
   }
 }
+
+export const normalSrc = (weaponKey: WeaponTypeKey) => Assets.weaponTypes[weaponKey]

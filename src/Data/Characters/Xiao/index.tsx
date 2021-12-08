@@ -2,25 +2,24 @@ import card from './Character_Xiao_Card.jpg'
 import thumb from './Icon.png'
 import thumbSide from './IconSide.png'
 import banner from './Banner.png'
-import c1 from './Constellation_Dissolution_Eon_-_Destroyer_of_Worlds.png'
-import c2 from './Constellation_Annihilation_Eon_-_Blossom_of_Kaleidos.png'
-import c3 from './Constellation_Conqueror_of_Evil_-_Wrath_Deity.png'
-import c4 from './Constellation_Transcension_-_Extinction_of_Suffering.png'
-import c5 from './Constellation_Evolution_Eon_-_Origin_of_Ignorance.png'
-import c6 from './Constellation_Conqueror_of_Evil_-_Guardian_Yaksha.png'
-import normal from './Talent_Whirlwind_Thrust.png'
-import skill from './Talent_Lemniscatic_Wind_Cycling.png'
-import burst from './Talent_Bane_of_All_Evil.png'
-import passive1 from './Talent_Evil_Conqueror_-_Tamer_of_Demons.png'
-import passive2 from './Talent_Dissolution_Eon_-_Heaven_Fall.png'
-import passive3 from './Talent_Transcension_-_Gravity_Defier.png'
+import c1 from './constellation1.png'
+import c2 from './constellation2.png'
+import c3 from './constellation3.png'
+import c4 from './constellation4.png'
+import c5 from './constellation5.png'
+import c6 from './constellation6.png'
+import skill from './skill.png'
+import burst from './burst.png'
+import passive1 from './passive1.png'
+import passive2 from './passive2.png'
+import passive3 from './passive3.png'
 import Stat from '../../../Stat'
 import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from "../../../Build/Build"
 import { ICharacterSheet } from '../../../Types/character'
 import { Translate } from '../../../Components/Translate'
-import { chargedDocSection, plungeDocSection, talentTemplate } from '../SheetUtil'
+import { chargedDocSection, normalSrc, plungeDocSection, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
 const tr = (strKey: string) => <Translate ns="char_Xiao_gen" key18={strKey} />
 const char: ICharacterSheet = {
@@ -43,7 +42,7 @@ const char: ICharacterSheet = {
     sheets: {
       auto: {
         name: tr("auto.name"),
-        img: normal,
+        img: normalSrc(data_gen.weaponTypeKey as WeaponTypeKey),
         sections: [
           {
             text: tr("auto.fields.normal"),
