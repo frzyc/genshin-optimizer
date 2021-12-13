@@ -28,11 +28,11 @@ export default function BuildAlert({ totBuildNumber, generatingBuilds, generatio
   if (generatingBuilds) {
     progress = generationProgress * 100 / (totalUnskipped)
     title = <Typography>Generating and testing <Monospace>{generationProgressString}/{totalUnskippedString}</Monospace> build configurations against the criteria for <b>{characterName}</b>. {generationSkippedText}</Typography>
-    subtitle = <Typography>Time elapsed: <Monospace>{timeStringMs(generationDuration)}</Monospace></Typography>
+    subtitle = <Typography>Time elapsed: <Monospace>{timeStringMs(Math.round(generationDuration))}</Monospace></Typography>
   } else if (!generatingBuilds && generationProgress) {//done
     progress = 100
     title = <Typography>Generated and tested <Monospace>{totalUnskippedString}</Monospace> Build configurations against the criteria for <b>{characterName}</b>. {generationSkippedText}</Typography>
-    subtitle = <Typography>Total duration: <Monospace>{timeStringMs(generationDuration)}</Monospace></Typography>
+    subtitle = <Typography>Total duration: <Monospace>{timeStringMs(Math.round(generationDuration))}</Monospace></Typography>
   } else {
     if (totBuildNumber === 0) {
       title = <Typography>Current configuration will not generate any builds for <b>{characterName}</b>. Please change your Artifact configurations, or add/include more Artifacts.</Typography>

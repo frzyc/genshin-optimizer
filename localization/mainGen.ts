@@ -11,7 +11,7 @@ fs.readdir(enDir, (err, files) => {
     main[filename] = json
   });
   const data = JSON.stringify(main, null, 2)
-  fs.writeFileSync('./main_gen.json', data);
-  console.log("Generated MAIN JSON at ", enDir + 'main_gen.json');
+  fs.writeFileSync(`${__dirname}/main_gen.json`, data);
+  console.log("Generated MAIN JSON at ", `${__dirname}/main_gen.json`);
 });
 export { }

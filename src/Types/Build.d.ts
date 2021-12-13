@@ -13,7 +13,7 @@ export interface BuildSetting {
     goblet: MainStatKey[],
     circlet: MainStatKey[]
   },
-  optimizationTarget: string[] | string,
+  optimizationTarget: string[] | string | "",
   mainStatAssumptionLevel: number,
   useExcludedArts: boolean,
   useEquippedArts: boolean,
@@ -36,6 +36,18 @@ export interface BuildRequest {
   maxBuildsToShow: number,
   optimizationTarget: string | string[],
   plotBase: StatKey | ""
+}
+
+export interface BuildWorkerWorkerRequest {
+  dependencies: StatKey[]
+  initialStats: ICalculatedStats,
+  maxBuildsToShow: number,
+  minFilters: Dict<StatKey, Number>,
+  optimizationTarget: string | string[],
+  plotBase: StatKey | "",
+  prunedArtifacts: ArtifactsBySlot,
+  setFilters: SetFilter,
+  artifactSetEffects: ArtifactSetEffects,
 }
 export interface Build {
   buildFilterVal: number,

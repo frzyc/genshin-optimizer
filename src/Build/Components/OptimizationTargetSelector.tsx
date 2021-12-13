@@ -23,7 +23,7 @@ const WhiteButton = styled(Button)({
   }
 })
 export default function OptimizationTargetSelector({ optimizationTarget, setTarget, initialStats, sheets, statsDisplayKeys, disabled = false }: {
-  optimizationTarget: string | string[], setTarget: (target: string | string[]) => void, initialStats: ICalculatedStats, sheets: Sheets, statsDisplayKeys: { basicKeys: any, [key: string]: any }, disabled
+  optimizationTarget: string | string[] | "", setTarget: (target: string | string[]) => void, initialStats: ICalculatedStats, sheets: Sheets, statsDisplayKeys: { basicKeys: any, [key: string]: any }, disabled
 }) {
   const [open, setOpen] = useState(false)
   const onOpen = useCallback(() => !disabled && setOpen(true), [setOpen, disabled])
@@ -38,7 +38,9 @@ export default function OptimizationTargetSelector({ optimizationTarget, setTarg
     [onClose, setTarget],
   )
   const sortByText = useMemo(() => {
-    if (Array.isArray(optimizationTarget)) {
+    if (!optimizationTarget) {
+      return <b>Please select an Optimization Target</b>
+    } else if (Array.isArray(optimizationTarget)) {
       if (!formula) return null
       let [type, , talentKey] = (formula as any).keys as string[]
       const field = (formula as any).field as IFieldDisplay

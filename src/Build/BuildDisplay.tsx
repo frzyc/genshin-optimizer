@@ -84,9 +84,12 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   const { globalSettings: { tcMode } } = useContext(GlobalSettingsContext)
   const database = useContext(DatabaseContext)
   const [characterKey, setcharacterKey] = useState(() => {
-    const { characterKey = "" } = dbStorage.get("BuildsDisplay.state") ?? {}
+    let { characterKey = "" } = dbStorage.get("BuildsDisplay.state") ?? {}
     //NOTE that propCharacterKey can override the selected character.
-    return (propCharacterKey ?? characterKey) as CharacterKey | ""
+    characterKey = propCharacterKey ?? characterKey
+    if (characterKey && !database._getChar(characterKey))
+      characterKey = ""
+    return characterKey
   })
   const [modalBuildIndex, setmodalBuildIndex] = useState(-1) // the index of the newBuild that is being displayed in the character modal,
 
@@ -101,8 +104,6 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   const { artifactSheets } = sheets ?? {}
 
   const [artsDirty, setArtsDirty] = useForceUpdate()
-
-  const isMounted = useRef(false)
 
   const worker = useRef(null as Worker | null)
 
@@ -156,12 +157,12 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
 
   //save to BuildsDisplay.state on change
   useEffect(() => {
-    if (isMounted.current) dbStorage.set("BuildsDisplay.state", { characterKey })
-    else isMounted.current = true
+    dbStorage.set("BuildsDisplay.state", { characterKey })
   }, [characterKey])
 
   //validate optimizationTarget 
   useEffect(() => {
+    if (!optimizationTarget) return
     if (!statsDisplayKeys) return
     if (!Array.isArray(optimizationTarget)) return
     for (const sectionKey in statsDisplayKeys) {
@@ -223,27 +224,28 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     };
     worker.current?.terminate()
     worker.current = new Worker()
-    worker.current.onmessage = (e) => {
-      if (typeof e.data.progress === "number") {
-        const { progress, timing = 0, skipped = 0 } = e.data
-        setgenerationProgress(progress)
-        setgenerationDuration(timing)
-        setgenerationSkipped(skipped)
-        return
-      }
-      ReactGA.timing({
-        category: "Build Generation",
-        variable: "timing",
-        value: e.data.timing,
-        label: totBuildNumber.toString()
-      })
-      const builds = (e.data.builds as Build[]).map(b => Object.values(b.artifacts).map(a => a.id))
-      buildSettingsDispatch({ builds, buildDate: Date.now() })
-      setchartData(e.data.plotData)
+    worker.current.onmessage = ({ data }) => {
+      if (data.buildCount)
+        setgenerationProgress(data.buildCount)
+      if (data.skipped)
+        setgenerationSkipped(data.skipped)
+      if (data.timing)
+        setgenerationDuration(data.timing)
+      if (data.finish) {
+        ReactGA.timing({
+          category: "Build Generation",
+          variable: "timing",
+          value: data.timing,
+          label: totBuildNumber.toString()
+        })
+        const builds = (data.builds as Build[]).map(b => Object.values(b.artifacts).map(a => a.id))
+        buildSettingsDispatch({ builds, buildDate: Date.now() })
+        setchartData(data.plotData)
 
-      setgeneratingBuilds(false)
-      worker.current?.terminate()
-      worker.current = null
+        setgeneratingBuilds(false)
+        worker.current?.terminate()
+        worker.current = null
+      }
     };
     worker.current.postMessage(data)
   }, [artifactSheets, split, totBuildNumber, mainStatAssumptionLevel, initialStats, maxBuildsToShow, optimizationTarget, setFilters, statFilters, plotBase, tcMode, buildSettingsDispatch])
@@ -262,6 +264,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
         modalTitle="Character Management Page Guide"
         text={["For self-infused attacks, like Noelle's Sweeping Time, enable the skill in the character talent page.",
           "You can compare the difference between equipped artifacts and generated builds.",
+          "Rainbow builds can sometimes be \"optimal\". Good substat combinations can sometimes surpass set effects.",
           "The more complex the formula, the longer the generation time.",]}
       ><InfoDisplay /></InfoComponent>
       <BuildModal build={buildStats[modalBuildIndex]} characterKey={characterKey} onClose={closeBuildModal} compareBuild={compareBuild} />
@@ -321,7 +324,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
               </CardContent></CardLight>}
 
               { /* Level Filter */}
-              <CardLight>
+              {characterKey && <CardLight>
                 <CardContent sx={{ py: 1 }}>
                   Artifact Level Filter
                 </CardContent>
@@ -332,7 +335,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
                     setHigh={levelHigh => buildSettingsDispatch({ levelHigh })}
                     setBoth={(levelLow, levelHigh) => buildSettingsDispatch({ levelLow, levelHigh })} />
                 </CardContent>
-              </CardLight>
+              </CardLight>}
               {/* main stat selector */}
               {characterKey && <MainStatSelectionCard
                 mainStatAssumptionLevel={mainStatAssumptionLevel}

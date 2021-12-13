@@ -146,10 +146,7 @@ function ABtn({ href, icon, children }) {
 export default function HomeDisplay() {
   const { t } = useTranslation("page_home")
   ReactGA.pageview('/home')
-  return <Box sx={{
-    mt: 1,
-    "> div": { mb: 1 },
-  }}>
+  return <Box my={1} display="flex" flexDirection="column" gap={1}>
     <CardDark>
       <CardContent>
         <Trans i18nKey="intro" t={t}>
@@ -166,6 +163,24 @@ export default function HomeDisplay() {
           </Typography>
           <Typography variant="body1" color="text.secondary">
             Since GO can replicate the exact stats of any character, along with calculate all their damage numbers to up 1% accuracy, it can also serve as a Damage calculator, and a tool for theory crafting.
+          </Typography>
+        </Trans>
+      </CardContent>
+    </CardDark>
+    <CardDark>
+      <CardContent>
+        <Trans i18nKey="notGO" t={t}>
+          <Typography variant="h5" gutterBottom >
+            What Genshin Optimizer is NOT:
+          </Typography>
+          <Typography variant="body1" color="text.secondary" gutterBottom >
+            GO does NOT tell you how to play the game. The information/calculations are intended to be un-opinionated as possible.
+          </Typography>
+          <Typography variant="body1" color="text.secondary" gutterBottom>
+            GO does NOT supplement your lack of in-game knowledge, inappriate configuration of the builder can provide misleading results. Please research your characters, and figure out how you want to use them before configuring them on GO. Think of GO as more of a calculator.
+          </Typography>
+          <Typography variant="body1" color="text.secondary">
+            GO does NOT generally take consideration of Energy Recharge, or team rotations. Please keep those mechanics in mind when you use this tool.
           </Typography>
         </Trans>
       </CardContent>
@@ -210,7 +225,6 @@ export default function HomeDisplay() {
             </Button>
           </CardContent>
         </CardLight>
-
       </CardContent>
     </CardDark>
     <CardDark>

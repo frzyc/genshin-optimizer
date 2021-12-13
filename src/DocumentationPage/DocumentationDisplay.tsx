@@ -303,7 +303,6 @@ const CodeArea = styled("textarea")(({ theme }) => ({
 function CodeBlock({ text }) {
   const lines = text.split(/\r\n|\r|\n/).length + 1
   const lineNums = Array.from(Array(lines).keys()).map(i => i + 1).join('\n')
-  console.log(lines)
 
   return <Box display="flex" flexDirection="row">
     <LineNumber disabled={true} spellCheck="false" aria-label='Code Sample' sx={{ height: `${lines + 1}em` }} value={lineNums} unselectable="on" digits={lines.toString().length} />
