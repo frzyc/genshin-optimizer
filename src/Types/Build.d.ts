@@ -28,17 +28,6 @@ export interface BuildSetting {
 export type ArtifactsBySlot = Dict<SlotKey, ICachedArtifact[]>
 
 export interface BuildRequest {
-  splitArtifacts: ArtifactsBySlot,
-  setFilters: SetFilter,
-  minFilters: Dict<StatKey, Number>,
-  initialStats: ICalculatedStats,
-  artifactSetEffects: ArtifactSetEffects,
-  maxBuildsToShow: number,
-  optimizationTarget: string | string[],
-  plotBase: StatKey | ""
-}
-
-export interface BuildWorkerWorkerRequest {
   dependencies: StatKey[]
   initialStats: ICalculatedStats,
   maxBuildsToShow: number,

@@ -21,6 +21,7 @@ import ModalWrapper from '../Components/ModalWrapper';
 import SolidToggleButtonGroup from '../Components/SolidToggleButtonGroup';
 import { DatabaseContext } from '../Database/Database';
 import { dbStorage } from '../Database/DBStorage';
+import Formula from '../Formula';
 import { GlobalSettingsContext } from '../GlobalSettings';
 import finalStatProcess from '../ProcessFormula';
 import useCharacter from '../ReactHooks/useCharacter';
@@ -28,11 +29,14 @@ import useCharacterReducer from '../ReactHooks/useCharacterReducer';
 import useCharSelectionCallback from '../ReactHooks/useCharSelectionCallback';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
 import useSheets from '../ReactHooks/useSheets';
-import { ArtifactsBySlot, Build, BuildRequest, BuildSetting } from '../Types/Build';
-import { allSlotKeys, CharacterKey } from '../Types/consts';
-import { deepCloneStats } from '../Util/StatUtil';
+import { GetDependencies } from '../StatDependency';
+import { StatKey } from '../Types/artifact';
+import { ArtifactsBySlot, Build, BuildSetting, BuildRequest, SetFilter } from '../Types/Build';
+import { allSlotKeys, ArtifactSetKey, CharacterKey, SetNum, SlotKey } from '../Types/consts';
+import { BonusStats } from '../Types/stats';
+import { deepCloneStats, mergeStats } from '../Util/StatUtil';
 import { deepClone, objectFromKeyMap } from '../Util/Util';
-import { buildContext, calculateTotalBuildNumber, maxBuildsToShowList } from './Build';
+import { buildContext, calculateTotalBuildNumber, maxBuildsToShowList, pruneArtifacts } from './Build';
 import { initialBuildSettings } from './BuildSetting';
 import ChartCard from './ChartCard';
 import ArtifactBuildDisplayItem from './Components/ArtifactBuildDisplayItem';
@@ -80,6 +84,8 @@ function buildSettingsReducer(state: BuildSetting, action): BuildSetting {
   return { ...state, ...action }
 }
 
+const plotMaxPoints = 1500
+
 export default function BuildDisplay({ location: { characterKey: propCharacterKey } }) {
   const { globalSettings: { tcMode } } = useContext(GlobalSettingsContext)
   const database = useContext(DatabaseContext)
@@ -104,8 +110,6 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   const { artifactSheets } = sheets ?? {}
 
   const [artsDirty, setArtsDirty] = useForceUpdate()
-
-  const worker = useRef(null as Worker | null)
 
   const setCharacter = useCharSelectionCallback()
   const characterDispatch = useCharacterReducer(characterKey)
@@ -152,9 +156,6 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     database.followAnyArt(setArtsDirty),
     [setArtsDirty, database])
 
-  //terminate worker when component unmounts
-  useEffect(() => () => worker.current?.terminate(), [])
-
   //save to BuildsDisplay.state on change
   useEffect(() => {
     dbStorage.set("BuildsDisplay.state", { characterKey })
@@ -199,8 +200,19 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     setgenerationProgress(0)
   }, [totBuildNumber])
 
-  const generateBuilds = useCallback(() => {
+  // Provides a function to cancel the work
+  const cancelToken = useRef(() => { })
+  //terminate worker when component unmounts
+  useEffect(() => () => cancelToken.current(), [])
+  const generateBuilds = useCallback(async () => {
+    const t1 = performance.now()
     if (!initialStats || !artifactSheets) return
+    let canceled = false
+    const workerkillers = [] as Array<() => void>
+    cancelToken.current = () => {
+      canceled = true
+      workerkillers.forEach(w => w())
+    }
     setgeneratingBuilds(true)
     setchartData(undefined)
     setgenerationDuration(0)
@@ -216,38 +228,161 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
         art.mainStatVal = Artifact.mainStatValue(art.mainStatKey, art.rarity, Math.max(Math.min(mainStatAssumptionLevel, art.rarity * 4), art.level)) ?? 0;
       })
     })
-    //create an obj with app the artifact set effects to pass to buildworker.
-    const data: BuildRequest = {
-      splitArtifacts, initialStats, artifactSetEffects,
-      setFilters, minFilters: statFilters, maxBuildsToShow, optimizationTarget,
-      plotBase: tcMode ? plotBase : ""
-    };
-    worker.current?.terminate()
-    worker.current = new Worker()
-    worker.current.onmessage = ({ data }) => {
-      if (data.buildCount)
-        setgenerationProgress(data.buildCount)
-      if (data.skipped)
-        setgenerationSkipped(data.skipped)
-      if (data.timing)
-        setgenerationDuration(data.timing)
-      if (data.finish) {
-        ReactGA.timing({
-          category: "Build Generation",
-          variable: "timing",
-          value: data.timing,
-          label: totBuildNumber.toString()
-        })
-        const builds = (data.builds as Build[]).map(b => Object.values(b.artifacts).map(a => a.id))
-        buildSettingsDispatch({ builds, buildDate: Date.now() })
-        setchartData(data.plotData)
 
-        setgeneratingBuilds(false)
-        worker.current?.terminate()
-        worker.current = null
+    let targetKeys: string[]
+    if (typeof optimizationTarget === "string") {
+      targetKeys = [optimizationTarget]
+    } else {
+      const targetFormula = await Formula.get(optimizationTarget)
+      if (typeof targetFormula === "function")
+        [, targetKeys] = targetFormula(initialStats)
+      else
+        return setgeneratingBuilds(false)
+    }
+
+    const artifactSetBySlot = Object.fromEntries(Object.entries(splitArtifacts).map(([key, artifacts]) =>
+      [key, new Set(artifacts.map(artifact => artifact.setKey))]
+    ))
+    function canApply(set: ArtifactSetKey, num: SetNum, setBySlot: Dict<SlotKey, Set<ArtifactSetKey>>, filters: SetFilter): boolean {
+      const otherNum = filters.reduce((accu, { key, num }) => key === set ? accu : accu + num, 0)
+      const artNum = Object.values(setBySlot).filter(sets => sets.has(set)).length
+      return otherNum + num <= 5 && num <= artNum
+    }
+    // modifierStats contains all modifiers that are applicable to the current build
+    const modifierStats: BonusStats = {}
+    Object.entries(artifactSetEffects).forEach(([set, effects]) =>
+      Object.entries(effects).filter(([setNum, stats]) =>
+        ("modifiers" in stats) && canApply(set, parseInt(setNum) as SetNum, artifactSetBySlot, setFilters)
+      ).forEach(bonus => mergeStats(modifierStats, bonus[1]))
+    )
+    mergeStats(modifierStats, { modifiers: initialStats.modifiers ?? {} })
+    const dependencies = GetDependencies(initialStats, modifierStats.modifiers, [...targetKeys, ...Object.keys(statFilters), ...(tcMode && plotBase ? [plotBase] : [])]) as StatKey[]
+    const oldCount = calculateTotalBuildNumber(splitArtifacts, setFilters)
+
+    let prunedArtifacts = splitArtifacts, newCount = oldCount
+
+    { // Prune artifact with strictly inferior (relevant) stats.
+      // Don't prune artifact sets that are filtered
+      const alwaysAccepted = setFilters.map(set => set.key) as any
+
+      prunedArtifacts = Object.fromEntries(Object.entries(splitArtifacts).map(([key, values]) =>
+        [key, pruneArtifacts(values, artifactSetEffects, new Set(dependencies), initialStats, maxBuildsToShow, new Set(alwaysAccepted))]))
+      newCount = calculateTotalBuildNumber(prunedArtifacts, setFilters)
+    }
+    setgenerationSkipped(oldCount - newCount)
+    let buildCount = 0, workersTime = 0
+    let builds: Build[] = []
+    const plotDataMap: Dict<string, number> = {}
+    let bucketSize = 0.01
+
+    const cleanupBuilds = () => {
+      builds.sort((a, b) => (b.buildFilterVal - a.buildFilterVal))
+      builds.splice(maxBuildsToShow)
+    }
+
+    const cleanupPlots = () => {
+      const entries = Object.entries(plotDataMap)
+      if (entries.length > plotMaxPoints) {
+        const multiplier = Math.pow(2, Math.ceil(Math.log2(entries.length / plotMaxPoints)))
+        bucketSize *= multiplier
+        for (const [x, y] of entries) {
+          delete plotDataMap[x]
+          const index = Math.round(parseInt(x) / multiplier)
+          plotDataMap[index] = Math.max(plotDataMap[index] ?? -Infinity, y)
+        }
       }
-    };
-    worker.current.postMessage(data)
+    }
+
+    const maxWorkers = navigator.hardwareConcurrency || 4
+    /**
+     * Find the slot in the pruned artifacts with the lowest number of artifacts that are >= maxWorkers.
+     * This makes sure that it wont have a case where there is only one artifact of a slot, that ultimately makes this single-threaded.
+     */
+    const leastSlot = Object.entries(prunedArtifacts).reduce((lowestKey, [key, arr]) =>
+      (arr.length >= maxWorkers && arr.length < prunedArtifacts[lowestKey].length) ? key : lowestKey
+      , "flower") as unknown as SlotKey
+
+    let workIndex = 0
+
+    /**
+     * Rudimentary thread pool implementation.
+     * Only create the worker is there is actual work to do.
+     * Once a worker finished one "workerIndex", it tries to move onto another one.
+     */
+    function WorkerWorker(worker: Worker | null, workerIndex: number) {
+      return new Promise<Worker | null>((resolve) => {
+        const localWorkIndex = workIndex
+        if (canceled || localWorkIndex >= prunedArtifacts[leastSlot]!.length) {
+          // console.log(workerIndex, "completed", performance.now() - t1);
+          return resolve(worker)
+        }
+        const workInSlot = prunedArtifacts[leastSlot]![localWorkIndex]!
+        const workPrunedArtifacts = { ...prunedArtifacts, [leastSlot]: [workInSlot] }
+        const data = { dependencies, initialStats, maxBuildsToShow, minFilters: statFilters, optimizationTarget, plotBase, prunedArtifacts: workPrunedArtifacts, setFilters, artifactSetEffects } as BuildRequest
+        if (!worker) {
+          worker = new Worker()
+          workerkillers.push(() => resolve(worker))
+        }
+        worker.onmessage = async ({ data }) => {
+          if (data.buildCount) {
+            const { buildCount: workerCount, builds: workerbuilds } = data
+            buildCount += workerCount
+            if (workerbuilds.length) builds = builds.concat(workerbuilds)
+          }
+          if (data.plotDataMap) {
+            const { plotDataMap: workerPlotDataMap } = data
+            Object.entries(workerPlotDataMap as object).forEach(([index, value]) =>
+              plotDataMap[index] = Math.max(value, plotDataMap[index] ?? -Infinity))
+          }
+          if (data.timing)
+            workersTime += data.timing
+          if (data.finished) {
+            // console.log("WORKER", workerIndex, "finished", localWorkIndex)
+            resolve(await WorkerWorker(worker, workerIndex))
+          }
+        }
+        // console.log("WORKER", workerIndex, "starting on", localWorkIndex)
+        worker.postMessage(data)
+        workIndex++
+      })
+    }
+
+    const workersPromises = [...Array(maxWorkers).keys()].map(i => WorkerWorker(null, i))
+    const buildTimer = setInterval(() => {
+      setgenerationProgress(buildCount)
+      setgenerationDuration(performance.now() - t1)
+    }, 100)
+    const finWorkers = await Promise.all(workersPromises)
+    finWorkers.forEach(w => w?.terminate())
+    clearInterval(buildTimer)
+    cancelToken.current = () => { }
+    if (canceled) {
+      setgenerationDuration(0)
+      setgenerationProgress(0)
+      setgenerationSkipped(0)
+    } else {
+      cleanupBuilds()
+      cleanupPlots()
+
+      const plotData = plotBase
+        ? Object.entries(plotDataMap)
+          .map(([plotBase, optimizationTarget]) => ({ plotBase: parseInt(plotBase) * bucketSize, optimizationTarget }))
+          .sort((a, b) => a.plotBase - b.plotBase)
+        : undefined
+      setchartData(plotData)
+      const totalDuration = performance.now() - t1
+      setgenerationProgress(buildCount)
+      setgenerationDuration(totalDuration)
+      ReactGA.timing({
+        category: "Build Generation",
+        variable: "timing",
+        value: workersTime,
+        label: totBuildNumber.toString()
+      })
+      const finalBuilds = (builds as Build[]).map(b => Object.values(b.artifacts).map(a => a.id))
+      buildSettingsDispatch({ builds: finalBuilds, buildDate: Date.now() })
+    }
+    setgeneratingBuilds(false)
   }, [artifactSheets, split, totBuildNumber, mainStatAssumptionLevel, initialStats, maxBuildsToShow, optimizationTarget, setFilters, statFilters, plotBase, tcMode, buildSettingsDispatch])
 
   const characterName = characterSheet?.name ?? "Character Name"
@@ -377,15 +512,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
                 <Button
                   disabled={!generatingBuilds}
                   color="error"
-                  onClick={() => {
-                    if (!worker.current) return;
-                    worker.current.terminate();
-                    worker.current = null
-                    setgeneratingBuilds(false)
-                    setgenerationDuration(0)
-                    setgenerationProgress(0)
-                    setgenerationSkipped(0)
-                  }}
+                  onClick={() => cancelToken.current()}
                   startIcon={<Close />}
                 >Cancel</Button>
               </ButtonGroup>
