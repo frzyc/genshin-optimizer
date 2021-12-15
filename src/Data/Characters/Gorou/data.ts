@@ -77,13 +77,13 @@ const formula: IFormulaSheet = {
   },
   burst: {
     dmg: stats => {
-      const percent = (data.burst.dmg[stats.tlvl.burst] + stats.ascension >= 4 ? data.passive2.burst_def_ : 0) / 100
-      const key = getTalentStatKey("skill", stats) + "_multi"
+      const percent = (data.burst.dmg[stats.tlvl.burst] + (stats.ascension >= 4 ? data.passive2.burst_def_ : 0)) / 100
+      const key = getTalentStatKey("burst", stats) + "_multi"
       return [s => percent * s.finalDEF * s[key], [key, "finalDEF"]]
     },
     dmgCollapse: stats => {
-      const percent = (data.burst.dmgCollapse[stats.tlvl.burst] + stats.ascension >= 4 ? data.passive2.burst_def_ : 0) / 100
-      const key = getTalentStatKey("skill", stats) + "_multi"
+      const percent = (data.burst.dmgCollapse[stats.tlvl.burst] + (stats.ascension >= 4 ? data.passive2.burst_def_ : 0)) / 100
+      const key = getTalentStatKey("burst", stats) + "_multi"
       return [s => percent * s.finalDEF * s[key], [key, "finalDEF"]]
     },
   },

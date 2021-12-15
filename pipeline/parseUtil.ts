@@ -65,7 +65,7 @@ const paragraph = string => {
   return { ...parseBulletPoints(parsed) }
 }
 const autoFields = string => {
-  const strings = string.split("\\n\\n")
+  const strings = string.split("\\n\\n<strong>").filter(s => s).map(s => "<strong>" + s)
   return strings.map(s => ({ ...paragraph(s) }))
 }
 

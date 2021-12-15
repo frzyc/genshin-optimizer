@@ -8,11 +8,14 @@ import iconAwaken from './AwakenIcon.png'
 import formula, { data } from './data'
 import data_gen from './data_gen.json'
 import icon from './Icon.png'
-
+const def_ = [28, 35, 42, 49, 56]
 const weapon: IWeaponSheet = {
   ...data_gen as WeaponData,
   icon,
   iconAwaken,
+  stats: stats => ({
+    def_: def_[stats.weapon.refineIndex]
+  }),
   document: [{
     conditional: {
       key: "e",
