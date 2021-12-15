@@ -1,0 +1,187 @@
+{
+  "name": "Gorou",
+  "title": "Hundekrieger",
+  "description": "Der große General der Streitkräfte von Watatsumi, dessen Untergebene ihm voll und ganz vertrauen.",
+  "constellationName": "Canis Bellatoris",
+  "auto": {
+    "name": "Gefletschte Zähne",
+    "fields": {
+      "normal": {
+        "0": "<strong>Standardangriff</strong>",
+        "1": "Führt bis zu 4 Pfeilschüsse hintereinander aus."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Führt einen <strong>gezielten Schuss</strong> mit höherem Schaden und höherer Genauigkeit aus.",
+        "2": "Konzentriert die Steinkristalle während des Zielens an der Pfeilspitze, die voll aufgeladen <geo>Geo-Schaden</geo> verursacht."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schießt in der Luft einen Pfeilregen ab, trifft schnell auf dem Boden auf und verursacht dort Flächenschaden."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH Phase 4",
+      "4": "Gezielte Schüsse",
+      "5": "Voll aufgeladene gezielte Schüsse",
+      "6": "SCH beim Fallen",
+      "7": "SCH beim Fallen aus niedriger/großer Höhe",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Inuzuka-Allzweckaufstellung",
+    "description": {
+      "0": "Verursacht <geo>Geo-Flächenschaden</geo> und stellt ein Generalbanner auf.",
+      "1": "<br/>",
+      "2": "<strong>Generalbanner</strong>",
+      "3": "Verleiht den aktuellen Figuren im Wirkungsbereich gemäß der Anzahl an Figuren in der Truppe mit dem <geo>Geo-Element</geo> zum Zeitpunkt der Anwendung folgende Effekte:",
+      "4": [
+        " 1 Figur: „Zähigkeit“, erhöht die VTD.",
+        " 2 Figuren: „Unbeirrbarkeit“, verleiht den obigen Effekt und erhöht den Unterbrechungs-WDS.",
+        " 3 Figuren: „Trümmer“, verleiht die obigen Effekte und erhöht den <geo>Geo-Schaden</geo>."
+      ],
+      "5": "<br/>",
+      "6": "Zu einem Zeitpunkt kann nur ein von Gorou selbst erschaffenes Generalbanner existieren. Figuren können nur die Boni eines einzigen Generalbanners erhalten. Der Effekt innerhalb des Wirkungsbereichs bleibt für Figuren bis 2 s nach dem Verlassen des Wirkungsbereichs bestehen.",
+      "7": "<br/>",
+      "8": "<strong>Gedrückt halten</strong>",
+      "9": "Wirkungsbereich der Fähigkeit kann angepasst werden.",
+      "10": "<br/>",
+      "11": "<i>„Wir müssen nur diese Formation einnehmen und wir werden in Sicherheit sein!“ Als General und Truppenführer ist das Letzte, was Gorou will, dass diejenigen verletzt werden, die ihm folgen.</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "VTD-Bonus",
+      "2": "Geo-SCH-Bonus",
+      "3": "Dauer",
+      "4": "Abklingzeit",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Juuga – Vorwärts zum Sieg",
+    "description": {
+      "0": "Gorou zeigt seine Macht als General, verursacht <geo>Geo-Flächenschaden</geo> und erstellt ein Feld der „Würde des Generals“, um seine Kameraden zu ermuntern.",
+      "1": "<br/>",
+      "2": "<strong>Würde des Generals</strong>",
+      "3": "Merkmale:",
+      "4": [
+        " Das Feld verleiht aktuellen Figuren im Wirkungsbereich gemäß der Anzahl an Figuren in der Truppe mit dem <geo>Geo-Element</geo> die gleichen Effekte wie das Generalbanner der Elementarfähigkeit „Inuzuka-Allzweckaufstellung“ und folgt den Bewegungen der aktuellen Figur.",
+        " Erschafft alle 1,5 s einen Kristallzusammenbruch, der einem Gegner im Wirkungsbereich <geo>Geo-Flächenschaden</geo> zufügt.",
+        " Zieht alle 1,5 s 1 durch Kristallisationsreaktionen entstehenden Splitter im Wirkungsbereich zur Position der aktuellen Figur."
+      ],
+      "5": "<br/>",
+      "6": "Zerstört, wenn ein von Gorou selbst erschaffenes Generalbanner bei der Anwendung dieser Fähigkeit vorhanden ist, dieses Generalbanner. Erschafft kein Generalbanner, wenn Gorou selbst während der Wirkungsdauer von Würde des Generals seine Elementarfähigkeit „Inuzuka-Allzweckaufstellung“ anwendet.",
+      "7": "Der Effekt von Würde des Generals, den Gorou selbst geschaffen hat, erlischt, wenn Gorou ohnmächtig wird.",
+      "8": "<br/>",
+      "9": "<i>„Das Terrain ist uns zum Vorteil!“ Gorou kann das Terrain des Schlachtfelds ein wenig verändern, um den Sieg zu erlangen. Diese einzigartige Technik hat ihn schon durch viele Kämpfe gegen mächtige Feinde gebracht.</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Kristallzusammenbruch-SCH",
+      "2": "Dauer",
+      "3": "Abklingzeit",
+      "4": "Elementarenergie",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Bei Wind und Regen",
+    "description": {
+      "0": "Erhöht bei Anwendung von <strong>Juuga – Vorwärts zum Sieg</strong> die VTD aller Truppenmitglieder in der Nähe 12 s lang um 25 %."
+    }
+  },
+  "passive2": {
+    "name": "Unvergessene Dankbarkeit",
+    "description": {
+      "0": "Erhöht den mit folgenden Angriffen von Gorou verursachten Schaden basierend auf seiner VTD:",
+      "1": [
+        " Erhöht den Schaden der Fähigkeit <strong>Inuzuka-Allzweckaufstellung</strong> um 156 % der VTD.",
+        " Erhöht den Schaden der Fähigkeit <strong>Juuga – Vorwärts zum Sieg</strong> sowie den Schaden von Kristallzusammenbruch um 15,6 % der VTD."
+      ]
+    }
+  },
+  "passive3": {
+    "name": "Gespür für Geglitzer",
+    "description": {
+      "0": "Zeigt alle <strong>Besonderheiten Inazumas</strong> in der Nähe auf der Minikarte an."
+    }
+  },
+  "constellation1": {
+    "name": "Laufender Hund – Schnell wie der Wind",
+    "description": {
+      "0": "Verkürzt, wenn aktuelle Figuren (außer Gorou selbst) im Wirkungsbereich von Gorous <strong>Generalbanner</strong> oder <strong>Würde des Generals</strong> Gegnern Geo-Schaden zufügen, die Abklingzeit von Gorous <strong>Inuzuka-Allzweckaufstellung</strong> um 2 s.",
+      "1": "10 s Abklingzeit."
+    }
+  },
+  "constellation2": {
+    "name": "Sitzender Hund – Verlässlich wie eine Uhr",
+    "description": {
+      "0": "Verlängert die Wirkungsdauer von Gorous <strong>Würde des Generals</strong> beim Erhalten von durch Kristallisationsreaktionen entstehenden Splittern durch aktuelle Figuren in der Nähe während der Wirkungsdauer von Würde des Generals um 1 s.",
+      "1": "0,1 s Abklingzeit, verlängert die Wirkungsdauer auf diese Weise um bis zu 3 s."
+    }
+  },
+  "constellation3": {
+    "name": "Bellender Hund – Fauchend wie Feuer",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Inuzuka-Allzweckaufstellung</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Schleckender Hund – Warm wie Wasser",
+    "description": {
+      "0": "Stellt, wenn die Effekte „Unbeirrbarkeit“ oder „Trümmer“ für <strong>Würde des Generals</strong> aktiv sind, allen aktuellen Figuren im Wirkungsbereich alle 1,5 s LP in Höhe von 50 % von Gorous VTD wieder her."
+    }
+  },
+  "constellation5": {
+    "name": "Aufspringender Hund – Aufgebracht wie Donner",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Juuga – Vorwärts zum Sieg</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Mutiger Hund – Treu wie Berg",
+    "description": {
+      "0": "Erhöht bei Anwendung von <strong>Inuzuka-Allzweckaufstellung</strong> oder <strong>Juuga – Vorwärts zum Sieg</strong> den KSCH des <geo>Geo-Schadens</geo> aller Truppenmitglieder in der Nähe gemäß der Stufe des Wirkungsbereichs zur Zeit der Anwendung 12 s lang:",
+      "1": [
+        " „Zähigkeit“: 10 % Bonus",
+        " „Unbeirrbarkeit“: 20 % Bonus",
+        " „Trümmer“: 40 % Bonus"
+      ],
+      "2": "<br/>",
+      "3": "Dieser Effekt ist nicht stapelbar und richtet sich nach dem zuletzt in Kraft getretenen Effekt."
+    }
+  }
+}
