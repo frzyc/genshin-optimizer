@@ -72,7 +72,7 @@
       "name": "Gewitter aus der Fremde",
       "fields": {
         "normal": {
-          "0": "<strong>Standardangriff</strong>",
+          "0": "<strong><strong>Standardangriff</strong>",
           "1": "Führt bis zu 5 Schwerthiebe hintereinander aus."
         },
         "charged": {
@@ -163,7 +163,7 @@
       "name": "Eiserner Wind aus der Fremde",
       "fields": {
         "normal": {
-          "0": "<strong>Standardangriff</strong>",
+          "0": "<strong><strong>Standardangriff</strong>",
           "1": "Führt bis zu 5 Schwerthiebe hintereinander aus."
         },
         "charged": {
@@ -316,7 +316,7 @@
       "name": "Steinerne Klinge aus der Fremde",
       "fields": {
         "normal": {
-          "0": "<strong>Standardangriff</strong>",
+          "0": "<strong><strong>Standardangriff</strong>",
           "1": "Führt bis zu 5 Schwerthiebe hintereinander aus."
         },
         "charged": {

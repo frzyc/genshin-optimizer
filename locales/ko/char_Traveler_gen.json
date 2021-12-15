@@ -72,7 +72,7 @@
       "name": "이국의 번개",
       "fields": {
         "normal": {
-          "0": "<strong>일반 공격</strong>",
+          "0": "<strong><strong>일반 공격</strong>",
           "1": "검으로 최대 5번 공격한다."
         },
         "charged": {
@@ -163,7 +163,7 @@
       "name": "이국의 강철바람",
       "fields": {
         "normal": {
-          "0": "<strong>일반 공격</strong>",
+          "0": "<strong><strong>일반 공격</strong>",
           "1": "검으로 최대 5번 공격한다."
         },
         "charged": {
@@ -316,7 +316,7 @@
       "name": "이국의 암봉",
       "fields": {
         "normal": {
-          "0": "<strong>일반 공격</strong>",
+          "0": "<strong><strong>일반 공격</strong>",
           "1": "검으로 최대 5번 공격한다."
         },
         "charged": {

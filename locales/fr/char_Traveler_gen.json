@@ -70,7 +70,7 @@
       "name": "Tonnerre venu d'ailleurs",
       "fields": {
         "normal": {
-          "0": "<strong>Attaque normale</strong>",
+          "0": "<strong><strong>Attaque normale</strong>",
           "1": "Enchaîne jusqu'à 5 coups d'épée."
         },
         "charged": {
@@ -161,7 +161,7 @@
       "name": "Vents de la discorde",
       "fields": {
         "normal": {
-          "0": "<strong>Attaque normale</strong>",
+          "0": "<strong><strong>Attaque normale</strong>",
           "1": "Enchaîne jusqu'à 5 coups d'épée."
         },
         "charged": {
@@ -314,7 +314,7 @@
       "name": "Lame de roche",
       "fields": {
         "normal": {
-          "0": "<strong>Attaque normale</strong>",
+          "0": "<strong><strong>Attaque normale</strong>",
           "1": "Enchaîne jusqu'à 5 coups d'épée."
         },
         "charged": {

@@ -72,7 +72,7 @@
       "name": "Tiếng Sấm Dị Bang",
       "fields": {
         "normal": {
-          "0": "<strong>Tấn Công Thường</strong>",
+          "0": "<strong><strong>Tấn Công Thường</strong>",
           "1": "Thực hiện tối đa 5 lần đánh kiếm liên tiếp."
         },
         "charged": {
@@ -163,7 +163,7 @@
       "name": "Gió Sắt Nơi Xa",
       "fields": {
         "normal": {
-          "0": "<strong>Tấn Công Thường</strong>",
+          "0": "<strong><strong>Tấn Công Thường</strong>",
           "1": "Thực hiện tối đa 5 lần đánh kiếm liên tiếp."
         },
         "charged": {
@@ -316,7 +316,7 @@
       "name": "Đỉnh Núi Đá",
       "fields": {
         "normal": {
-          "0": "<strong>Tấn Công Thường</strong>",
+          "0": "<strong><strong>Tấn Công Thường</strong>",
           "1": "Thực hiện tối đa 5 lần đánh kiếm liên tiếp."
         },
         "charged": {
