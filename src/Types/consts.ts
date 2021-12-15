@@ -27,7 +27,7 @@ export const allCharacterKeys = [
   "HuTao", "Jean", "Kaeya", "Keqing", "Klee", "Lisa", "Mona", "Ningguang", "Noelle", "Qiqi",
   "Razor", "Sucrose", "Tartaglia", "Traveler", "RaidenShogun", "Venti", "Xiao", "Xiangling", "Xingqiu", "Xinyan",
   "Zhongli", "Rosaria", "Yanfei", "Eula", "KaedeharaKazuha", "KamisatoAyaka", "Sayu", "Yoimiya", "KujouSara", "Aloy",
-  "SangonomiyaKokomi", "Thoma"
+  "SangonomiyaKokomi", "Thoma", "Gorou"
 ] as const
 export const allWeaponKeys = [
   "DullBlade", "SilverSword", "CoolSteel", "DarkIronSword", "FilletBlade", "HarbingerOfDawn", "SkyriderSword",
@@ -50,6 +50,7 @@ export const allWeaponKeys = [
   "SongOfBrokenPines", "DodocoTales", "MitternachtsWaltz", "FreedomSworn", "AmenomaKageuchi", "MistsplitterReforged",
   "KatsuragikiriNagamasa", "KitainCrossSpear", "ThunderingPulse", "Hamayumi", "HakushinRing", "TheCatch",
   "EverlastingMoonglow", "LuxuriousSeaLord", "Predator", "MouunsMoon", "WavebreakersFin", "CinnabarSpindle",
+  "RedhornStonethresher",
 ] as const
 export const characterSpecializedStatKeys = ["hp_", "atk_", "def_", "eleMas", "enerRech_", "heal_", "critRate_", "critDMG_", "physical_dmg_", "anemo_dmg_", "geo_dmg_", "electro_dmg_", "hydro_dmg_", "pyro_dmg_", "cryo_dmg_"] as const
 

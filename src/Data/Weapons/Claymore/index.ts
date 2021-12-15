@@ -10,6 +10,7 @@ import LuxuriousSeaLord from './LuxuriousSeaLord'
 import OldMercsPal from './OldMercsPal'
 import PrototypeArchaic from './PrototypeArchaic'
 import Rainslasher from './Rainslasher'
+import RedhornStonethresher from './RedhornStonethresher'
 import RoyalGreatsword from './RoyalGreatsword'
 import SacrificialGreatsword from './SacrificialGreatsword'
 import SerpentSpine from './SerpentSpine'
@@ -36,6 +37,7 @@ const claymore = {
   OldMercsPal,
   PrototypeArchaic,
   Rainslasher,
+  RedhornStonethresher,
   RoyalGreatsword,
   SacrificialGreatsword,
   SerpentSpine,

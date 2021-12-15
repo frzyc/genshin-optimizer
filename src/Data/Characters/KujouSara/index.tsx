@@ -145,7 +145,7 @@ const char: ICharacterSheet = {
           text: stats => stats.constellation < 6 ? tr("constellation6.description") :
             <span>
               {tr("constellation6.description")}
-              <Typography color="warning.main">This skill needs more theory-crafting before it can be implemented.</Typography>
+              <Typography color="warning.main">This skill needs more system changes before it can be implemented.</Typography>
             </span>,
         }],
       },

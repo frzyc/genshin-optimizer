@@ -61,6 +61,7 @@ export const characterIdMap = {
   10000052: "RaidenShogun",
   10000053: "Sayu",
   10000054: "SangonomiyaKokomi",
+  10000055: "Gorou",
   10000056: "KujouSara",
   10000062: "Aloy",
   // 11000008: "TEMPLATE",
@@ -142,6 +143,7 @@ export const weaponIdMap = {
   // 12505: "Primordial Jade Greatsword",
   // 12506: "The Other Side",
   // 12508: "",
+  12510: "RedhornStonethresher",
 
   //polearm
   13101: "BeginnersProtector",

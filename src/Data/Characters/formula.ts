@@ -10,6 +10,7 @@ import Diona from './Diona/data'
 import Eula from './Eula/data'
 import Fischl from './Fischl/data'
 import Ganyu from './Ganyu/data'
+import Gorou from './Gorou/data'
 import HuTao from './HuTao/data'
 import Jean from './Jean/data'
 import KaedeharaKazuha from './KaedeharaKazuha/data'
@@ -56,6 +57,7 @@ const formula: IFormulaSheets = {
   Eula,
   Fischl,
   Ganyu,
+  Gorou,
   HuTao,
   Jean,
   KaedeharaKazuha,

@@ -10,6 +10,7 @@ import Diona from './Diona'
 import Eula from './Eula'
 import Fischl from './Fischl'
 import Ganyu from './Ganyu'
+import Gorou from './Gorou'
 import HuTao from './HuTao'
 import Jean from './Jean'
 import KaedeharaKazuha from './KaedeharaKazuha'
@@ -56,6 +57,7 @@ const characters: StrictDict<CharacterKey, ICharacterSheet> = {
   Eula,
   Fischl,
   Ganyu,
+  Gorou,
   HuTao,
   Jean,
   KaedeharaKazuha,

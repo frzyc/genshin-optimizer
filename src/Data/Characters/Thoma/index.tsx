@@ -101,6 +101,7 @@ const char: ICharacterSheet = {
           }, {
             text: tr("skill.skillParams.4"),
             value: data.skill.cd,
+            unit: "s"
           },],
         }],
       },
@@ -141,9 +142,11 @@ const char: ICharacterSheet = {
           }, {
             text: tr("burst.skillParams.4"),
             value: data.burst.duration,
+            unit: "s"
           }, {
             text: tr("burst.skillParams.5"),
             value: data.burst.cd,
+            unit: "s"
           }, {
             text: tr("burst.skillParams.6"),
             value: data.burst.cost,

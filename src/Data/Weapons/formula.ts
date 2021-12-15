@@ -56,6 +56,7 @@ import LuxuriousSeaLord from './Claymore/LuxuriousSeaLord/data'
 import PrototypeArchaic from './Claymore/PrototypeArchaic/data'
 // import Quartz from './Claymore/Quartz/data'
 // import Rainslasher from './Claymore/Rainslasher/data'
+import RedhornStonethresher from './Claymore/RedhornStonethresher/data'
 // import RoyalGreatsword from './Claymore/RoyalGreatsword/data'
 // import SacrificialGreatsword from './Claymore/SacrificialGreatsword/data'
 // import SerpentSpine from './Claymore/SerpentSpine/data'
@@ -207,6 +208,7 @@ const claymore = {
   PrototypeArchaic,
   // Quartz,
   // Rainslasher,
+  RedhornStonethresher,
   // RoyalGreatsword,
   // SacrificialGreatsword,
   // SerpentSpine,

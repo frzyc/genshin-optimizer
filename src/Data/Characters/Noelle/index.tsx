@@ -66,22 +66,23 @@ const char: ICharacterSheet = {
             variant: stats => getTalentStatKeyVariant("skill", stats),
           }, {
             text: sgt("dmgAbsorption"),
-            formulaText: stats => <span>( {data.skill.shield_def[stats.tlvl.skill]}% {Stat.printStat("finalDEF", stats)} + {data.skill.shield_flat[stats.tlvl.skill]} ) * (100% + {Stat.printStat("shield_", stats)}) * 150% All DMG Absorption</span>,
+            formulaText: stats => <span>( {data.skill.shield_def_[stats.tlvl.skill]}% {Stat.printStat("finalDEF", stats)} + {data.skill.shield_flat[stats.tlvl.skill]} ) * (100% + {Stat.printStat("shield_", stats)}) * 150% All DMG Absorption</span>,
             formula: formula.skill.shield,
           }, {
             text: sgt("healing"),
-            formulaText: stats => <span>( {data.skill.heal_def[stats.tlvl.skill]}% {Stat.printStat("finalDEF", stats)} + {data.skill.heal_flat[stats.tlvl.skill]} ) * {Stat.printStat("heal_multi", stats)}</span>,
+            formulaText: stats => <span>( {data.skill.heal_def_[stats.tlvl.skill]}% {Stat.printStat("finalDEF", stats)} + {data.skill.heal_flat[stats.tlvl.skill]} ) * {Stat.printStat("heal_multi", stats)}</span>,
             formula: formula.skill.heal,
             variant: "success"
           }, {
             text: tr("skill.triggerChance"),
             value: stats => <span>{data.skill.heal_trigger[stats.tlvl.skill]}% {stats.constellation >= 1 ? Noelle("c1chance") : ""}</span>,
           }, {
-            text: sgt("healing"),
-            value: "12s",
+            text: sgt("duration"),
+            value: data.skill.duration,
+            unit: "s"
           }, {
             text: sgt("cd"),
-            value: stats => stats.ascension > 4 ? Noelle("p4cd") : "24s",
+            value: stats => stats.ascension > 4 ? Noelle("p4cd") : `${data.skill.cd}s`,
           }],
         }],
       },
@@ -105,10 +106,12 @@ const char: ICharacterSheet = {
             value: stats => stats.constellation >= 6 ? Noelle("c6duration") : "15s",
           }, {
             text: sgt("cd"),
-            value: "15s",
+            value: data.burst.cd,
+            unit: "s"
           }, {
             text: sgt("energyCost"),
-            value: 60,
+            value: data.burst.cost,
+            unit: "s"
           }],
           conditional: { // Sweeping Time
             key: "q",
