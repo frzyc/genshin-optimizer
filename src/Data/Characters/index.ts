@@ -1,6 +1,7 @@
 import Albedo from './Albedo'
 import Aloy from './Aloy'
 import Amber from './Amber'
+import AratakiItto from './AratakiItto'
 import Barbara from './Barbara'
 import Beidou from './Beidou'
 import Bennett from './Bennett'
@@ -48,6 +49,7 @@ const characters: StrictDict<CharacterKey, ICharacterSheet> = {
   Albedo,
   Aloy,
   Amber,
+  AratakiItto,
   Barbara,
   Beidou,
   Bennett,

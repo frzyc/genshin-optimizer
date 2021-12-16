@@ -53,8 +53,10 @@ export const data = {
 const formula: IFormulaSheet = {
   normal: Object.fromEntries(data.normal.hitArr.map((arr, i) =>
     [i, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "normal")])),
-  charged: Object.fromEntries(Object.entries(data.charged).map(([name, arr]) =>
-    [name, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "charged")])),
+  charged: {
+    spinning: stats => basicDMGFormula(data.charged.spinning[stats.tlvl.auto], stats, "charged"),
+    final: stats => basicDMGFormula(data.charged.final[stats.tlvl.auto], stats, "charged"),
+  },
   plunging: Object.fromEntries(Object.entries(data.plunging).map(([name, arr]) =>
     [name, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "plunging")])),
   skill: {

@@ -1,6 +1,7 @@
 import Albedo from './Albedo/data'
 import Aloy from './Aloy/data'
 import Amber from './Amber/data'
+import AratakiItto from './AratakiItto/data'
 import Barbara from './Barbara/data'
 import Beidou from './Beidou/data'
 import Bennett from './Bennett/data'
@@ -48,6 +49,7 @@ const formula: IFormulaSheets = {
   Albedo,
   Aloy,
   Amber,
+  AratakiItto,
   Barbara,
   Beidou,
   Bennett,

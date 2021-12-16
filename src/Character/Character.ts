@@ -209,9 +209,10 @@ export default class Character {
         Character.calculateBuildwithArtifact(tstats, artifacts, sheets.artifactSheets)
       })
     }
-    Object.entries(initialStats).forEach(([key, val]) => {
-      if (Number.isNaN(val)) debugger
-    })
+    if (process.env.NODE_ENV === "development")
+      Object.entries(initialStats).forEach(([key, val]) => {
+        if (Number.isNaN(val)) debugger
+      })
     return initialStats
   }
 

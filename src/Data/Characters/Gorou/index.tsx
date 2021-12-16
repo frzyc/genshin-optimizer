@@ -91,13 +91,13 @@ const char: ICharacterSheet = {
             name: charTr("e.name"),
             states: {
               g1: {
-                name: charTr("g1"),
+                name: charTr("e.g1"),
                 stats: stats => ({
                   def: data.skill.def_[stats.tlvl.skill]
                 })
               },
               g2: {
-                name: charTr("g2"),
+                name: charTr("e.g2"),
                 stats: stats => ({
                   def: data.skill.def_[stats.tlvl.skill]
                 }),
@@ -106,7 +106,7 @@ const char: ICharacterSheet = {
                 }],
               },
               g3: {
-                name: charTr("g3"),
+                name: charTr("e.g3"),
                 stats: stats => ({
                   def: data.skill.def_[stats.tlvl.skill],
                   geo_dmg_: data.skill.geo_dmg_[stats.tlvl.skill],
