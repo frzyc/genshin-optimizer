@@ -35,7 +35,7 @@ export default function CharacterInfoDisplay() {
     </Grid>
     <Grid item xs={12} lg={5} >
       <Typography variant="h4">Character Inventory</Typography>
-      <Typography gutterBottom>All the characers that you've added to Genshin Optimizer is in this screen. This inventory screen allow you to Add/edit/delete characters, as well as see an overview of each character from each card.</Typography>
+      <Typography gutterBottom>All the characters that you've added to Genshin Optimizer are in this screen. This inventory screen allow you to Add/edit/delete characters, as well as see an overview of each character from each card.</Typography>
       <Typography gutterBottom>To Edit specific details of a character, click on its corresponding card, or click on the <SqBadge color="info"><FontAwesomeIcon icon={faEdit} /> Edit Stats</SqBadge> Button</Typography>
       <Typography variant="h5">Filtering and sorting</Typography>
       <Typography gutterBottom>You can also filter the characters by Elemental or Weapons, and sort the characters by Level/Rarity/Name.</Typography>
