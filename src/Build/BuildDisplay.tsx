@@ -281,8 +281,8 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     }
 
     const cleanupPlots = () => {
-      const entries = Object.entries(plotDataMap)
-      if (entries.length > plotMaxPoints) {
+      let entries = Object.entries(plotDataMap)
+      while (entries.length > plotMaxPoints) {
         const multiplier = Math.pow(2, Math.ceil(Math.log2(entries.length / plotMaxPoints)))
         bucketSize *= multiplier
         for (const [x, y] of entries) {
@@ -290,6 +290,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
           const index = Math.round(parseInt(x) / multiplier)
           plotDataMap[index] = Math.max(plotDataMap[index] ?? -Infinity, y)
         }
+        entries = Object.entries(plotDataMap)
       }
     }
 
