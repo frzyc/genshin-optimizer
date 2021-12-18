@@ -74,7 +74,7 @@ const formula: IFormulaSheet = {
   plunging: Object.fromEntries(Object.entries(data.plunging).map(([name, arr]) =>
     [name, stats => basicDMGFormula(arr[stats.tlvl.auto], stats, "plunging")])),
   skill: {
-    dmg: stats => basicDMGFormula(data.skill.dmg[stats.tlvl.auto], stats, "plunging"),
+    dmg: stats => basicDMGFormula(data.skill.dmg[stats.tlvl.skill], stats, "skill"),
     hp: stats => {
       const percent = data.skill.hp[stats.tlvl.skill] / 100
       return [s => percent * s.finalHP, ["finalHP"]]
