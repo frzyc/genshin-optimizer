@@ -123,3 +123,7 @@ const rangeGen = function* (from, to) {
 export function range(from, to) {
   return [...rangeGen(from, to)]
 }
+
+export function assertUnreachable(value: never): never {
+  throw new Error("Should not reach this")
+}
