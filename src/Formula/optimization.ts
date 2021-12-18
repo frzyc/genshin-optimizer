@@ -266,7 +266,7 @@ export function constantFold(formulas: Node[]): Node[] {
         const numericValue = f(numericOperands)
 
         if (operation === "mul" && numericValue === 0)
-          // The only (practical) degenerate cases is
+          // The only (practical) degenerate case is
           //
           //  -  0 * ... = 0
           //
