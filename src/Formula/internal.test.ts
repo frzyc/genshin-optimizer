@@ -1,6 +1,6 @@
 import { mapContextualFormulas as mapFormulas } from "./internal"
 import { Node } from "./type"
-import { sum, todo, prod, makeReaders } from "./utils"
+import { makeReaders, prod, sum, todo } from "./utils"
 
 const cInner = { a: "unique", b: "unique", c: "unique" } as const
 const context = { a: cInner, b: cInner, c: cInner } as const

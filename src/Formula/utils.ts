@@ -1,6 +1,6 @@
 
 import { objectFromKeyMap } from "../Util/Util"
-import type { ComputeNode, Data, DataNode, Node, Info, ReadNode, SubscriptNode, ConstantNode, StringNode, StringSubscriptNode, CommutativeMonoidOperation } from "./type"
+import type { CommutativeMonoidOperation, ComputeNode, ConstantNode, Data, DataNode, Info, Node, ReadNode, StringNode, StringSubscriptNode, SubscriptNode } from "./type"
 
 export const todo: Node = { operation: "const", value: NaN, operands: [] }
 

@@ -1,7 +1,7 @@
-import { resolve, assign } from "../Util/KeyPathUtil"
+import { assign, resolve } from "../Util/KeyPathUtil"
 import { assertUnreachable } from "../Util/Util"
 import { constant, mapContextualFormulas, mapFormulas } from "./internal"
-import { Operation, ComputeNode, ConstantNode, FormulaData, Node, Data } from "./type"
+import { ComputeNode, ConstantNode, Data, FormulaData, Node, Operation } from "./type"
 
 const allCommutativeMonoidOperations = {
   min: (x: number[]): number => Math.min(...x),
