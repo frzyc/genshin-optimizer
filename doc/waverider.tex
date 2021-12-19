@@ -139,7 +139,7 @@ The data node has one operand, which is simply forwarded when evaluating, i.e.,~
 We denote the data node with data objects~$X_1, X_2, \dots, X_n$ as~$\dataNode_{X_1, X_2,\dots, X_n}$.
 
 Read operations update the read nodes by replacing it with the (aggregated) nodes given by data nodes.
-During a read operation, each read node finds the closest data node.
+During a read operation, each read node finds the nearest data node among its ancestors.
 Then, for each data object in the data node, it maps its key to a node.
 The mapped nodes are then aggregated using the aggregation method of the read node.
 The read node is then replaced with the resulting aggregated node.
@@ -227,9 +227,9 @@ Since the formula~$1 + 2 * 3 * 4 + 3$ uses only constants in its computation, it
 	\begin{tikzpicture}[
 			baseline=(current bounding box.east)
 		]
-		\node {$22$};
+		\node {$28$};
 	\end{tikzpicture}
-	\caption{Constant folding of~$1 + 2 * 3 * 4 + 3$  into~$22$}
+	\caption{Constant folding of~$1 + 2 * 3 * 4 + 3$  into~$28$}
 	\label{fig:optimization:folding-example}
 \end{figure}
 
