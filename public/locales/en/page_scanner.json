@@ -2,9 +2,10 @@
   "intro": "<0>Automatic Scanners</0><1>Automatic Scanners are Genshin tools that can automatically scan in-game data by manipulating your mouse movements, taking screenshots of the game, and then scanning information from those screenshots. These are low-risk tools that can help you automate a lot of manual process with scanning artifacts for GO. As any tools that indirectly interact with the game, althought their usage is virtually undetectable, <1>there could still be risk with using them.</1> Users discretion is advised.</1><2>The most important aspect of using these Scanners with GO is the output format:</2><3><0><0>As of <1>v5.21.0</1>, GO can import artifact data in the <3>mona-uranai</3> format. </0><1>As of <1>v6.0.0</1>, GO can import data in the <3>Genshin Open Object Description (GOOD)</3> format.</1></0></3><4>Below are several scanners that have been tested with GO.</4><5>To upload the exported file, go to <1>Database</1> page, and upload your file in the <strong>Database Upload</strong> section.</5>",
   "ik": {
     "title": "Inventory Kamera",
-    "p1": "This light-weight app will scan all your characters + weapons + artifacts in your inventory. Follow the instrutions in the app to set it up. This scanner only scans in english.",
+    "p1": "This light-weight app will scan all your characters + weapons + artifacts in your inventory. Follow the instrutions in the app to set it up.",
     "p2": "This scanner can also scan materials for <1>Seelie.me</1>",
-    "p3": "This scanner only scans in english, and exports to GOOD format by default."
+    "p3": "This scanner only scans in english, and exports to GOOD format by default.",
+    "p4": "This scanner can also be configured for new artifacts, characters and materials in new game versions without needing an update."
   },
   "as": {
     "title": "AdeptiScanner",
