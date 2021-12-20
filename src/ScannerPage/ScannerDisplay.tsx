@@ -38,9 +38,10 @@ export default function ScannerDisplay(props: any) {
     <CardDark><CardContent><Grid container spacing={2} >
       <Grid item xs={12} md={4}><ImgFullwidth src={GIScanner} /></Grid>
       <Grid item xs={12} md={8}>
-        <Typography variant="h5"><Trans t={t} i18nKey="ik.title">Inventory Kamera</Trans><SqBadge color="success" sx={{ ml: 1 }}><Trans t={ui} i18nKey="updatedfor" values={{ version: "2.3" }} /></SqBadge></Typography>
+        <Typography variant="h5"><Trans t={t} i18nKey="ik.title">Inventory Kamera</Trans><SqBadge color="success" sx={{ ml: 1 }}><Trans t={ui} i18nKey="updatedfor" values={{ version: "2.3+" }} /></SqBadge></Typography>
         <Typography gutterBottom><Trans t={t} i18nKey="ik.p1">This light-weight app will scan all your characters + weapons + artifacts in your inventory. Follow the instrutions in the app to set it up.</Trans></Typography>
         <Typography gutterBottom><Trans t={t} i18nKey="ik.p2">This scanner can also scan materials for <Link href="https://seelie.me/" target="_blank" rel="noreferrer">Seelie.me</Link></Trans></Typography>
+        <Typography gutterBottom><Trans t={t} i18nKey="ik.p3">This scanner can also be configured for new artifacts, characters and materials in new game versions without needing an update.</Trans></Typography>
         <Typography gutterBottom><Trans t={t} i18nKey="goodeng">This scanner only scans in english, and exports to GOOD format.</Trans></Typography>
         <Button href="https://github.com/Andrewthe13th/Inventory_Kamera" target="_blank" startIcon={<FontAwesomeIcon icon={faDownload} />} ><Trans t={ui} i18nKey="link.download" /></Button>
       </Grid>
