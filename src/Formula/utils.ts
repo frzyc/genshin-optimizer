@@ -1,12 +1,8 @@
 
 import { objectFromKeyMap } from "../Util/Util"
-import type { CommutativeMonoidOperation, ComputeNode, ConstantNode, Data, DataNode, Info, Node, ReadNode, StringNode, StringSubscriptNode, SubscriptNode } from "./type"
+import type { ComputeNode, Data, DataNode, Info, InputNode, Node, ReadNode, StringNode, SubscriptNode } from "./type"
 
 export const todo: Node = { operation: "const", value: NaN, operands: [] }
-
-export function stringConstant(value: string): StringNode {
-  return { operation: "string", value, operands: [] }
-}
 
 /** min( x1, x2, ... ) */
 export function min(...values: (number | Node)[]): ComputeNode {
@@ -39,32 +35,39 @@ export function subscript(index: Node, list: number[], info?: Info): SubscriptNo
     throw new Error("Formula Construction Failure: subscription list must be sorted in ascending order")
   return { operation: "subscript", operands: [index], list, info }
 }
-/** list[index] */
-export function stringSubscript(index: Node, list: Dict<string, Node>): StringSubscriptNode {
-  return { operation: "stringSubscript", list, operands: [index] }
-}
 
 export function res(base: number | Node): ComputeNode {
   return { operation: "res", operands: intoOperands([base]) }
 }
 
-export function makeReaders<T extends ReaderSpecNode>(context: T, prefix: string[] = []): ReaderSpec<T, ReadNode> {
-  return typeof context === "string"
-    ? { operation: "read", accumulation: context, key: prefix, operands: [] }
-    : objectFromKeyMap(Object.keys(context) as string[], key => makeReaders(context[key], [...prefix, key])) as any
+export function setReadNodeKeys<T extends NodeList>(nodeList: T, prefix: string[] = []): T {
+  if (nodeList.operation) {
+    if (nodeList.operation !== "read")
+      throw new Error(`Found ${nodeList.operation} node while making reader`)
+    return { ...nodeList, key: prefix }
+  } else {
+    return objectFromKeyMap(Object.keys(nodeList), key =>
+      setReadNodeKeys(nodeList[key], [...prefix, key])) as any
+  }
+}
+export function read(accumulation: ReadNode["accumulation"], info?: Info, suffix?: StringNode): ReadNode {
+  return { operation: "read", operands: [], key: [], accumulation, info, suffix }
 }
 export function data(baseFormula: Node, contexts: Data[]): DataNode {
   return { operation: "data", operands: [baseFormula], data: contexts }
+}
+
+export function input(key: InputNode["key"], info?: Info): InputNode {
+  return { operation: "input", operands: [], key, info }
 }
 
 function intoOperands(values: (number | Node)[]): Node[] {
   return values.map(value => typeof value === "number" ? { operation: "const", value, operands: [] } : value)
 }
 
-interface ReaderSpecInternal {
-  [key: string]: typeof key extends "operation" ? undefined : ReaderSpecNode | CommutativeMonoidOperation | "unique"
+type _NodeList = {
+  [key: string]: NodeList
+} & {
+  operation?: never
 }
-export type ReaderSpecNode = ReaderSpecInternal | CommutativeMonoidOperation | "unique"
-export type ReaderSpec<T extends ReaderSpecNode, X> = T extends ReaderSpecInternal ? {
-  [Key in keyof T]: ReaderSpec<T[Key], X>
-} : X
+type NodeList = _NodeList | Node

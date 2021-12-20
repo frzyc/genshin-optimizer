@@ -2,10 +2,13 @@ import { ElementKey, ReactionModeKey } from "../Types/consts"
 import type { Path } from "../Util/KeyPathUtil"
 
 export type Node =
-  ConstantNode | StringNode |
-  ComputeNode |
-  SubscriptNode | StringSubscriptNode |
+  ConstantNode | ComputeNode |
+  SubscriptNode | InputNode |
   ReadNode | DataNode
+
+export type StringNode =
+  StringConstantNode | StringPriorityNode |
+  StringReadNode
 
 interface NodeBase {
   operands: Node[]
@@ -21,38 +24,54 @@ export interface ConstantNode extends NodeBase {
   operation: "const"
   value: number
 }
-export interface StringNode extends NodeBase {
-  operation: "string"
-  value: string
+export interface ComputeNode extends NodeBase {
+  operation: Operation
 }
-
 export interface SubscriptNode extends NodeBase {
   operation: "subscript"
   list: number[]
 }
-export interface StringSubscriptNode extends NodeBase {
-  operation: "stringSubscript"
-  list: Dict<string, Node>
+export interface InputNode extends NodeBase {
+  operation: "input"
+  key: string
 }
 
 export interface ReadNode extends NodeBase {
   operation: "read"
-  key: Path<FormulaData, Node | undefined>
+  key: Path<NodeData, Node | undefined>
+  suffix?: StringNode
   accumulation: CommutativeMonoidOperation | "unique"
 }
 export interface DataNode extends NodeBase {
   operation: "data"
   data: Data[]
 }
-export interface Data {
-  formula: FormulaData
+
+interface StringNodeBase {
+  operands: StringNode[]
 }
-export interface FormulaData {
-  [key: string]: typeof key extends "operation" ? undefined : FormulaData | Node
+export interface StringConstantNode extends StringNodeBase {
+  operation: "const"
+  value: string
+}
+export interface StringPriorityNode extends StringNodeBase {
+  operation: "prio"
+}
+export interface StringReadNode extends StringNodeBase {
+  operation: "read"
+  key: Path<StringNodeData, string | undefined>
+  suffix?: StringNode
 }
 
-export interface ComputeNode extends NodeBase {
-  operation: Operation
+export interface Data {
+  formula: NodeData
+  string: StringNodeData
+}
+export interface NodeData {
+  [key: string]: typeof key extends "operation" ? undefined : NodeData | Node
+}
+export interface StringNodeData {
+  [key: string]: typeof key extends "operation" ? undefined : StringNodeData | StringNode
 }
 
 export type CommutativeMonoidOperation = "min" | "max" | "add" | "mul"

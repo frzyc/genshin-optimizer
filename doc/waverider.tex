@@ -15,6 +15,7 @@
 \DeclareMathOperator{\subscriptNode}{lookup}
 \DeclareMathOperator{\readNode}{read}
 \DeclareMathOperator{\dataNode}{data}
+\DeclareMathOperator{\inputNode}{input}
 
 \newcommand{\code}[1]{\texttt{#1}}
 \newcommand{\todo}[1]{{\textcolor{red}{#1}}}
@@ -70,24 +71,30 @@ The~$*$ node represents the product of its operands, i.e., the formula~$8 * 7 * 
 	\label{fig:design:graph-example}
 \end{figure}
 
-We now discuss available types of supported nodes in more details.
+We now discuss different types of available nodes in more details.
 
 \section{Node Types}
-\label{sec:nodeTypes}
+
+We distinguish nodes into numerical nodes and string nodes, based on the type of values they return.
+That is, numerical nodes represent formulas returning some numerical values, while formulas in string nodes return string values.
+Numerical nodes are primary nodes in the computational graph as this structure is designed to perform numerical computation.
+The string nodes are used primarily to maintain the states of the graph, such as the element type of the dmg, the type of the weapon that the character uses, etc.
 
 Throughout this section, we use~$y$ for the value of the current node and~$x_1, x_2, \dots, x_n$ for the values of its operands.
 
 \subsection{Constant Node}
 
-Constant nodes are nodes that represent constant values of any kind.
+Constant nodes are nodes that represent constant values of any kind, both numerical and string.
 They have no children, and therefore are leaf nodes.
-The current design supports two variants, numerical constants and string constants.
 Nodes~$3, 8$, and~$7$ in Figure~\ref{fig:design:graph-example} are examples of constant nodes.
+
+For numerical constant nodes, we use the constant values to represent those nodes.
+For string nodes, we also use double quotes to distinguish them from variable names, e.g., ``sword", ``electro", and ``avg''.
 
 \subsection{Compute Node}
 
 Most of internal nodes are \emph{compute nodes}.
-They are nodes that compute their values using only the values of their operands.
+They are numerical nodes that compute their values using only the values of their numerical operands.
 Supported formulas includes
 %
 \begin{itemize}
@@ -117,26 +124,64 @@ Note that some formulas have a fixed number of operands, such as Enemy Resistanc
 
 \subsubsection{Subscript Node}
 
-Subscript nodes are special nodes that is accompanied by a dictionary.
-These nodes lookup the dictionary using the \emph{index}, which is the first operand~$x_1$.
-Indices can be either integers or strings.
-A subscript node with an accompanied dictionary~$X$ is denoted by~$\subscriptNode_X$.
+Subscript nodes are special compute nodes.
+Each subscript node is accompanied by a dictionary.
+It uses the only numerical operand~$x_1$ as an index to lookup the dictionary.
+A subscript node with a dictionary~$X$ is denoted by~$\subscriptNode_X$.
 
 \subsection{Read Nodes and Data Nodes}
 
-For graphs to \emph{take input} and for general modification, we use \emph{read nodes} and \emph{data nodes}.
+For general graph modification, we use \emph{read nodes} and \emph{data nodes}.
 Read nodes act as placeholders for portions of the graph that are not yet available during graph construction.
 Data nodes then provide appropriate replacement for each read node during an operation called \emph{read operation}.
+For more information on read operation, see Section~\ref{sec:operation:read}.
 
-Each read node contains a \emph{key} used to identify nodes that it represents and an \emph{aggregation method} for combining multiple nodes that match its key into a single node.
-The supported aggregation method includes summation, production, minimum, and maximum.
+Each read node contains a string array \emph{key} used to identify nodes that it represents and an \emph{aggregation method} for combining all nodes that match the key into a single node.
+The supported aggregation methods includes summation, production, minimum, and maximum.
 Read nodes have no operands, and therefore are leaf nodes.
 We denote each read node with key~$k$ and aggregation method~$a$ by~$\readNode_k^a$.
+
+For some read nodes, the keys are combinations of an array string \emph{prefix} followed by a string computed using a string node called \emph{suffix}.
+We denote such read nodes with prefix~$p$, suffix node~$s$, and an aggregated method~$a$ by~$\readNode_{p+s}^a$.
+Note that the string node~$s$ in this case is not treated as an operand, and the read node~$\readNode_{p+s}^a$ remains a leaf node of the graph.
+
 
 Data nodes specify the mapping that read nodes use to map their keys to appropriate nodes.
 Each data node contains one or more \emph{data objects}, each of which is a dictionary mapping each key into a single node.
 The data node has one operand, which is simply forwarded when evaluating, i.e.,~$y = x_1$.
 We denote the data node with data objects~$X_1, X_2, \dots, X_n$ as~$\dataNode_{X_1, X_2,\dots, X_n}$.
+
+\subsection{Input Nodes}
+
+Input nodes identify the formula where the actual value of the node is fetched from outside the graph.
+Each input node is associated with a single string \emph{key}.
+We denote an input node with key~$k$ by~$\inputNode_k$.
+
+Note that the main difference between read nodes and input nodes is the read node fetch values from the associated data node, which is within the graph, while input nodes fetch data from other sources entirely outside of the graph.
+Another difference is that read nodes may compute portion of the keys using string nodes, while the keys of input nodes are known at construction time.
+
+\subsection{Priority Nodes}
+
+Priority nodes are string nodes that uses the value of the first (string) operands that returns a non-empty string.
+That is,
+
+\begin{itemize}
+	\item If~$x_1 \neq \emptyset, y = x_1$,
+	\item If~$x_1 = \emptyset, x_2\neq\emptyset, y = x_2$,
+	\item If~$x_1 = x_2 = \emptyset, x_3\neq\emptyset, y = x_3$,
+	\item etc.
+\end{itemize}
+
+\section{Operations on Graph}
+
+There are multiple optimizations one can do to a graph to reduce computation time and precompute portions of the graph.
+This section list a few operations available on a graph.
+Note that the graph is designed to be immutable (to avoid \emph{spooky action at a distance}\footnote{
+	\url{https://en.wikipedia.org/wiki/Action_at_a_distance_(computer_programming)}
+}), so most of the \emph{modifications} actually create a new graph that represents the modified formulas.
+
+\subsection{Read Operation}
+\label{sec:operation:read}
 
 Read operations update the read nodes by replacing it with the (aggregated) nodes given by data nodes.
 During a read operation, each read node finds the nearest data node among its ancestors.
@@ -144,7 +189,15 @@ Then, for each data object in the data node, it maps its key to a node.
 The mapped nodes are then aggregated using the aggregation method of the read node.
 The read node is then replaced with the resulting aggregated node.
 If the data object does not contain a key~$k$ for a read node~$\readNode_k$, the data object is ignored.
-If no data object contains key~$k$, the read node remains unchanged.
+If no data object contains key~$k$, the read node is replaced with the vacuous sum of its operation. In particular, the replacement value for each operation is shown in the following table.
+%
+\begin{center}
+	\begin{tabular}{c|c|c|c|c}
+		operation   & $+$ & $*$ & $\min$   & $\max$    \\
+		\hline
+		replacement & 0   & 1   & $\infty$ & $-\infty$
+	\end{tabular}
+\end{center}
 
 Figure~\ref{fig:modification:reading} illustrates the reading operation at a single read node.
 In this setup, the operand of a data node~$\dataNode_{X,Y,Z}$ has one read node~$\readNode_k^+$.
@@ -180,21 +233,8 @@ Since~$Y[k]$ does not exist, it is not included in the aggregated node.
 	\label{fig:modification:reading}
 \end{figure}
 
-The reason for this design is two-folded.
-On the one hand, we can use a read node as an \emph{input} and replace it with a constant node when computing the final value(s).
-However, on the other hand, we can also use read nodes to describe modifications as the formula for~$\readNode_k$ can be changed by changing the list of data object within the corresponding data node.
-We will discuss the process of formula modification in more details in Section~\ref{architecture}.
-
-\section{Optimization}
-
-There are multiple optimizations one can do to a graph to reduce computation time.
-The metric used when optimizing the graph is the number of nodes~$|V|$, as well as the number of edges~$|E|$ in the graph.
-A proper optimization would reduce either~$|V|$ or~$|E|$ while not increasing the other.
-
-This section list a few candidates for optimizations.
-Note that the graph is designed to be immutable (to avoid \emph{spooky action at a distance}\footnote{
-	\url{https://en.wikipedia.org/wiki/Action_at_a_distance_(computer_programming)}
-}), so most of the \emph{modifications} actually create a new graph that represents the modified formulas.
+Note that during a read operation, all string nodes are evaluated and replaced with the appropriate values.
+The rationale is that some read nodes require the values of the string node to be available as part of the key.
 
 \subsection{Constant Folding}
 
@@ -328,11 +368,15 @@ In this figure, the the node~$1 + a + b$ and~$1 + a$ share the same part of the 
 	\label{fig:optimization:deduplicate}
 \end{figure}
 
-\subsection{Rules for Applying Optimization}
+\section{Optimization}
 
-Not all optimizations are beneficial everywhere.
-This section list the rules where the optimizations described in this section can be applied to reduce the metric~($|V|$ and~$|E|$).
-
-\todo{Describe the optimization application rules here.}
+After constructing the graphs, we can optimize the graph to reduce its size by performing the following operations in this particular order.
+%
+\begin{itemize}
+	\item Perform a read operation on the graph,
+	\item Perform all possible constant folding,
+	\item Flatten all formulas, and
+	\item Deduplicating all formulas that are used more than once.
+\end{itemize}
 
 \end{document}

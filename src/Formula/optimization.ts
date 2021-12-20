@@ -1,15 +1,15 @@
 import { assign, resolve } from "../Util/KeyPathUtil"
 import { assertUnreachable } from "../Util/Util"
 import { constant, mapContextualFormulas, mapFormulas } from "./internal"
-import { ComputeNode, ConstantNode, Data, FormulaData, Node, Operation } from "./type"
+import { CommutativeMonoidOperation, ComputeNode, ConstantNode, Data, NodeData, InputNode, Node, Operation, ReadNode, StringNode } from "./type"
 
-const allCommutativeMonoidOperations = {
+const allCommutativeMonoidOperations: StrictDict<CommutativeMonoidOperation, (_: number[]) => number> = {
   min: (x: number[]): number => Math.min(...x),
   max: (x: number[]): number => Math.max(...x),
   add: (x: number[]): number => x.reduce((a, b) => a + b, 0),
   mul: (x: number[]): number => x.reduce((a, b) => a * b, 1),
-} as const
-export const allOperations = {
+}
+export const allOperations: StrictDict<Exclude<Node["operation"], "const" | "read" | "input" | "subscript">, (_: number[]) => number> = {
   ...allCommutativeMonoidOperations,
   res: ([res]: number[]): number => {
     if (res < 0) return 1 - res / 2
@@ -18,7 +18,8 @@ export const allOperations = {
   },
   sum_frac: ([x, c]: number[]): number => x / (x + c),
   threshold_add: ([value, threshold, addition]: number[]): number => value >= threshold ? addition : 0,
-} as const
+  data: ([x]: number[]) => x
+}
 
 const commutativeMonoidOperationSet = new Set(Object.keys(allCommutativeMonoidOperations) as (Node["operation"])[])
 
@@ -154,83 +155,69 @@ export function deduplicate(formulas: Node[]): Node[] {
 }
 
 /**
- * - Replace `ReadNode` with `Node` associated with its key (if applicable)
- * - Remove all `DataNode`
- * - Combine all remaining `ReadNode` with the same key
+ * - Apply all `ReadNode`s
+ * - Remove all `DataNode`s
+ * - Merge all `InputNode`s
  */
-export function applyRead(formulas: Node[]): Node[] {
-  const contextsFromId = new Map<number, Data[]>()
-  const contextsById = new Map<Data[], number>()
+function applyRead(formulas: Node[], bottomUpMap = (formula: Node, _orig: Node) => formula): Node[] {
+  const dataFromId = new Map<number, Data[]>(), idFromData = new Map<Data[], number>()
+  let currentMaxId = 1
 
-  const readNodes: FormulaData = {}
-
-  let currentMaxContextId = 1
+  const inputNodes = new Map<InputNode["key"], InputNode>()
 
   return mapContextualFormulas(formulas, (formula, contextId) => {
     switch (formula.operation) {
       case "data": {
-        const { data: contexts, operands: [baseFormula] } = formula
+        const { data, operands: [baseFormula] } = formula
 
-        let nextContextId = contextsById.get(contexts)
+        let nextContextId = idFromData.get(data)
         if (nextContextId) return [baseFormula, nextContextId]
 
-        nextContextId = currentMaxContextId++
-        contextsFromId.set(nextContextId, contexts)
-        contextsById.set(contexts, nextContextId)
+        nextContextId = currentMaxId++
+        dataFromId.set(nextContextId, data)
+        idFromData.set(data, nextContextId)
 
         return [baseFormula, nextContextId]
       }
       case "read": {
-        const path = formula.key
-        const contexts = contextsFromId.get(contextId)
-        const operands = contexts?.flatMap(context => {
-          const formula = resolve(context.formula, path)
+        const data = dataFromId.get(contextId)
+        if (!data)
+          throw new Error("Found read node with no accompanied data node")
+
+        const { accumulation, suffix } = formula
+        const key = suffix ? [...formula.key, resolveStringNode(suffix, data)!] : formula.key
+        const operands = data?.flatMap(context => {
+          const formula = resolve(context.formula, key)
           return formula ? [formula] : []
         })
 
-        if (!operands || operands.length === 0) {
-          const prev = resolve(readNodes, formula.key)
-          if (prev) return [prev, contextId] // Combine read nodes with the same key
-          assign(readNodes, formula.key, formula)
-          break
-        }
-        if (formula.accumulation === "unique") {
-          if (operands.length > 1)
+        if (accumulation === "unique") {
+          if (operands.length !== 1)
             throw new Error("Duplicate entries in unique read")
           return [{ ...formula, ...operands[0] }, contextId]
         }
-
-        return [{ ...formula, operation: formula.accumulation, operands }, contextId]
+        return [{ ...formula, operation: accumulation, operands }, contextId]
       }
+      case "input":
+        return [inputNodes.get(formula.key) ??
+          (inputNodes.set(formula.key, formula), formula), contextId]
     }
     return [formula, contextId]
-  }, f => f)
+  }, bottomUpMap)
 }
 
-/** Replace all known values with a constant */
+/**
+ * Replace nodes with known values with appropriate constants,
+ * avoiding removal of any nodes that pass `isFixed` predicate
+ */
 export function constantFold(formulas: Node[], isFixed = (_formula: Node, _orig: Node) => false): Node[] {
   const fixedNodes = new Set<Node>()
 
-  return mapFormulas(formulas, f => f, (formula, orig) => {
+  return applyRead(formulas, (formula, orig) => {
     const { operation, operands } = formula
     let result = formula
 
     switch (operation) {
-      case "subscript": {
-        const [baseFormula] = operands
-        if (baseFormula.operation === "const" && !fixedNodes.has(baseFormula))
-          result = constant(formula.list[baseFormula.value])
-        break
-      }
-      case "stringSubscript": {
-        const [baseFormula] = operands
-        if (baseFormula.operation === "string" && !fixedNodes.has(baseFormula)) {
-          result = formula.list[baseFormula.value]!
-          if (!result)
-            throw new Error(`Unknown string ${baseFormula.value} when folding \`StringSubscriptNode\``)
-        }
-        break
-      }
       case "threshold_add":
         const [value, threshold, addition] = operands
         if (value.operation === "const" && threshold.operation === "const" &&
@@ -238,7 +225,7 @@ export function constantFold(formulas: Node[], isFixed = (_formula: Node, _orig:
           result = value.value >= threshold.value ? addition : constant(0)
         break
       case "min": case "max": case "add": case "mul":
-        const f: (_: number[]) => number = allOperations[operation]
+        const f = allOperations[operation]
         const numericOperands: number[] = []
         const formulaOperands: Node[] = operands.filter(formula =>
           (formula.operation !== "const" || fixedNodes.has(formula))
@@ -267,19 +254,51 @@ export function constantFold(formulas: Node[], isFixed = (_formula: Node, _orig:
           formulaOperands.push(constant(numericValue))
         if (formulaOperands.length <= 1) result = formulaOperands[0] ?? constant(f([]))
         else result = { operation: formula.operation, operands: formulaOperands }
-
         break
-      case "const": case "string": case "read": break
-      case "sum_frac": case "res": case "data":
+      case "subscript": case "sum_frac": case "res":
         if (formula.operands.every(f => f.operation === "const" && !fixedNodes.has(f))) {
           const operands = (formula.operands as ConstantNode[]).map(({ value }) => value)
-          result = constant(allOperations[operation](operands))
+          const f = operation === "subscript"
+            ? ([index]: number[]) => formula.list[index]
+            : allOperations[operation]
+          result = constant(f(operands))
         }
         break
+      case "const": case "input": break
+      case "read": case "data": throw new Error("Unreachable")
       default: assertUnreachable(operation) // Exhaustive switch
     }
     if (result !== formula) result = { ...formula, ...result }
     if (isFixed(result, orig)) fixedNodes.add(result)
     return result
   })
+}
+
+function resolveStringNode(node: StringNode, data: Data[]): string | undefined {
+  const { operation } = node
+  switch (operation) {
+    case "const": return node.value
+    case "read": {
+      const { key, suffix } = node
+      const operands = data.flatMap(context => {
+        const formula = resolve(context.formula, key) as StringNode | undefined
+        return formula ? [formula] : []
+      })
+
+      if (operands.length > 1)
+        throw new Error(`Found multiple entries while looking up unique path ${key}`)
+      if (operands.length)
+        return resolveStringNode(operands[0], data)
+      return undefined
+    }
+    case "prio": {
+      const { operands } = node
+      for (const operand of operands) {
+        const node = resolveStringNode(operand, data)
+        if (node) return node
+      }
+      return undefined
+    }
+    default: assertUnreachable(operation)
+  }
 }
