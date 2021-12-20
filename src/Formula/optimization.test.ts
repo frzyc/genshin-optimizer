@@ -1,5 +1,5 @@
 import { constant } from "./internal"
-import { constantFold, deduplicate, flatten, optimize } from "./optimization"
+import { constantFold, deduplicate, flatten } from "./optimization"
 import { max, min, prod, sum, input } from "./utils"
 
 const inputs = [...Array(6).keys()].map(i => input(`${i}`));

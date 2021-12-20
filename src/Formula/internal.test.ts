@@ -1,17 +1,15 @@
 import { mapContextualFormulas as mapFormulas } from "./internal"
 import { Node } from "./type"
-import { makeReaders, prod, sum, todo } from "./utils"
+import { input, prod, sum } from "./utils"
 
-const cInner = { a: "unique", b: "unique", c: "unique" } as const
-const context = { a: cInner, b: cInner, c: cInner } as const
-const cReaders = makeReaders(context)
+const inputs = [...Array(6).keys()].map(i => input(`${i}`));
 
 describe("internal `mapFormulas`", () => {
   test("Access order", () => {
-    const r1 = Object.freeze(cReaders.a.a)
-    const r2 = Object.freeze(cReaders.b.a)
-    const r3 = Object.freeze(cReaders.b.b)
-    const r4 = Object.freeze(cReaders.c.a)
+    const r1 = Object.freeze(inputs[0])
+    const r2 = Object.freeze(inputs[1])
+    const r3 = Object.freeze(inputs[2])
+    const r4 = Object.freeze(inputs[3])
 
     const f1 = Object.freeze(sum(r1, r2, r1))
     const f2 = Object.freeze(prod(r3, r4))
@@ -37,10 +35,10 @@ describe("internal `mapFormulas`", () => {
       [[r1, r1], [r3, r3], [r4, r4], [f2, r2], [sum(r1, f2, r1), f1]])
   })
   test("Deduplicate accesses", () => {
-    const r1 = Object.freeze(cReaders.a.a)
-    const r2 = Object.freeze(cReaders.b.a)
-    const r3 = Object.freeze(cReaders.b.b)
-    const r4 = Object.freeze(cReaders.c.a)
+    const r1 = Object.freeze(inputs[0])
+    const r2 = Object.freeze(inputs[1])
+    const r3 = Object.freeze(inputs[2])
+    const r4 = Object.freeze(inputs[3])
 
     const f1 = Object.freeze(sum(r1, r2, r3))
     const f2 = Object.freeze(sum(r4))

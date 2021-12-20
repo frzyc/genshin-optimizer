@@ -1,7 +1,7 @@
-import { assign, resolve } from "../Util/KeyPathUtil"
+import { resolve } from "../Util/KeyPathUtil"
 import { assertUnreachable } from "../Util/Util"
 import { constant, mapContextualFormulas, mapFormulas } from "./internal"
-import { CommutativeMonoidOperation, ComputeNode, ConstantNode, Data, NodeData, InputNode, Node, Operation, ReadNode, StringNode } from "./type"
+import { CommutativeMonoidOperation, ComputeNode, ConstantNode, Data, InputNode, Node, Operation, StringNode } from "./type"
 
 const allCommutativeMonoidOperations: StrictDict<CommutativeMonoidOperation, (_: number[]) => number> = {
   min: (x: number[]): number => Math.min(...x),
