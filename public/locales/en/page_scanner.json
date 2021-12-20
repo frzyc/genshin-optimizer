@@ -6,7 +6,6 @@
     "p2": "This scanner can also scan materials for <1>Seelie.me</1>",
     "p3": "This scanner can also be configured for new artifacts, characters and materials in new game versions without needing an update.",
     "p4": "This scanner only scans in english, and exports to GOOD format by default."
-
   },
   "as": {
     "title": "AdeptiScanner",
