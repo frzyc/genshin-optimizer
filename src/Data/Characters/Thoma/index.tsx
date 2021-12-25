@@ -19,7 +19,7 @@ import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { ICharacterSheet } from '../../../Types/character'
 import { Translate } from '../../../Components/Translate'
-import { normalSrc, plungeDocSection, sgt, talentTemplate } from '../SheetUtil'
+import { conditionalHeader, normalSrc, plungeDocSection, sgt, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
 import ColorText from '../../../Components/ColoredText'
 const tr = (strKey: string) => <Translate ns="char_Thoma_gen" key18={strKey} />
@@ -186,6 +186,9 @@ const char: ICharacterSheet = {
           conditional: { // Burning Heart
             key: "c6",
             canShow: stats => stats.constellation >= 6,
+            partyBuff: "partyAll",
+            header: conditionalHeader("constellation6", tr, c6),
+            description: tr("constellation6.description"),
             name: <span><Translate ns="char_Thoma" key18="c6" /></span>,
             stats: {
               normal_dmg_: data.constellation6.auto_,
