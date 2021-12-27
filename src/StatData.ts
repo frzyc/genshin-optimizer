@@ -119,7 +119,7 @@ const Formulas: Dict<string, (s: ICalculatedStats) => number> = {
 
 const ElementToReactionKeys = {
   physical: [],
-  anemo: ["electro_swirl_hit", "pyro_swirl_hit", "cryo_swirl_hit", "hydro_swirl_hit"],
+  anemo: ["swirl_hit"],
   geo: ["shattered_hit", "crystalize_hit", "electro_crystalize_hit", "pyro_crystalize_hit", "cryo_crystalize_hit", "hydro_crystalize_hit"],
   electro: ["overloaded_hit", "electrocharged_hit", "superconduct_hit"],
   hydro: ["electrocharged_hit", "shattered_hit"],//"hydro_vaporize_multi",

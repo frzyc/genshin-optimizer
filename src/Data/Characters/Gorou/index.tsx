@@ -19,7 +19,7 @@ import data_gen from './data_gen.json'
 import { getTalentStatKey, getTalentStatKeyVariant } from '../../../Build/Build'
 import { ICharacterSheet } from '../../../Types/character'
 import { Translate } from '../../../Components/Translate'
-import { bowChargedDocSection, conditionalHeader, normalSrc, plungeDocSection, sgt, talentTemplate } from '../SheetUtil'
+import { bowChargedDocSection, conditionalHeader, normalSrc, plungeDocSection, sgt, st, talentTemplate } from '../SheetUtil'
 import { WeaponTypeKey } from '../../../Types/consts'
 import { Typography } from '@mui/material'
 const tr = (strKey: string) => <Translate ns="char_Gorou_gen" key18={strKey} />
@@ -102,7 +102,7 @@ const char: ICharacterSheet = {
                   def: data.skill.def_[stats.tlvl.skill]
                 }),
                 fields: [{
-                  text: sgt("incInterRes"),
+                  text: st("incInterRes"),
                 }],
               },
               g3: {
@@ -112,7 +112,7 @@ const char: ICharacterSheet = {
                   geo_dmg_: data.skill.geo_dmg_[stats.tlvl.skill],
                 }),
                 fields: [{
-                  text: sgt("incInterRes"),
+                  text: st("incInterRes"),
                 }],
               },
             }

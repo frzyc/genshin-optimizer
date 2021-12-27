@@ -95,12 +95,12 @@ const char: ICharacterSheet = {
           text: tr("skill.description"),
           fields: [{
             text: tr("skill.skillParams.0"),
-            formulaText: stats => skillDMGFormulaText(data.skill.skillDMG[stats.tlvl.burst], stats),
+            formulaText: stats => skillDMGFormulaText(data.skill.skillDMG[stats.tlvl.skill], stats),
             formula: formula.skill.skillDMG,
             variant: stats => getTalentStatKeyVariant("skill", stats),
           }, {
             text: tr("skill.skillParams.1"),
-            formulaText: stats => skillDMGFormulaText(data.skill.coorDMG[stats.tlvl.burst], stats),
+            formulaText: stats => skillDMGFormulaText(data.skill.coorDMG[stats.tlvl.skill], stats),
             formula: formula.skill.coorDMG,
             variant: stats => getTalentStatKeyVariant("skill", stats),
           }, {

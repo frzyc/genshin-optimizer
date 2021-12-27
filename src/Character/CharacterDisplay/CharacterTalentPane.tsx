@@ -99,10 +99,7 @@ const ReactionComponents = {
   superconduct_hit: SuperConductCard,
   electrocharged_hit: ElectroChargedCard,
   overloaded_hit: OverloadedCard,
-  pyro_swirl_hit: SwirlCard,
-  cryo_swirl_hit: SwirlCard,
-  electro_swirl_hit: SwirlCard,
-  hydro_swirl_hit: SwirlCard,
+  swirl_hit: SwirlCard,
   shattered_hit: ShatteredCard,
   crystalize_hit: CrystalizeCard,
 }
