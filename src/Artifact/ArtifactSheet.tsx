@@ -58,7 +58,7 @@ export class ArtifactSheet {
   setEffectDocument = (setNum: SetNum) => this.data.setEffects[setNum]?.document
 
   static getAll() { return artifactImport }
-  static get(set: ArtifactSetKey | undefined): Promise<ArtifactSheet> | undefined { return set && promiseSheets[set] }
+  static get(set: ArtifactSetKey | undefined): Promise<ArtifactSheet> | undefined { return set ? promiseSheets[set] : undefined }
 
   static setKeysByRarities(sheets: StrictDict<ArtifactSetKey, ArtifactSheet>): Dict<ArtifactRarity, ArtifactSetKey[]> {
     const grouped: Dict<ArtifactRarity, ArtifactSetKey[]> = {}

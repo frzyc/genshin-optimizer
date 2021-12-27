@@ -25,7 +25,7 @@ export default function WeaponCard({ weaponId, onClick, onEdit, onDelete, canEqu
   const database = useContext(DatabaseContext)
   const databaseWeapon = useWeapon(weaponId)
   const weapon = databaseWeapon
-  const weaponSheet = usePromise(weapon?.key && WeaponSheet.get(weapon.key), [weapon?.key])
+  const weaponSheet = usePromise(weapon?.key ? WeaponSheet.get(weapon.key) : undefined, [weapon?.key])
 
   const filter = useCallback(
     (cs: CharacterSheet) => cs.weaponTypeKey === weaponSheet?.weaponType,

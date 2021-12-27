@@ -39,8 +39,8 @@ export default class Artifact {
     Conditional.parseConditionalValues({ artifact: stats.conditionalValues?.artifact }, (conditional, conditionalValue, [, setKey, setNumKey]) => {
       const { stats: condStats } = Conditional.resolve(conditional, stats, conditionalValue)
       result[setKey] ?? (result[setKey] = {})
-      result[setKey][setNumKey] ?? (result[setKey][setNumKey] = {})
-      mergeStats(result[setKey][setNumKey], condStats)
+      result[setKey]![setNumKey] ?? (result[setKey]![setNumKey] = {})
+      mergeStats(result[setKey]![setNumKey], condStats)
     })
     return result
   }
