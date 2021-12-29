@@ -1,6 +1,6 @@
 
 import { objectFromKeyMap } from "../Util/Util"
-import type { ComputeNode, Data, DataNode, Info, InputNode, Node, ReadNode, StringNode, SubscriptNode } from "./type"
+import type { ComputeNode, Data, DataNode, Info, InputNode, Node, ReadNode, StringNode, StringPriorityNode, StringReadNode, SubscriptNode } from "./type"
 
 export const todo: Node = { operation: "const", value: NaN, operands: [] }
 
@@ -43,7 +43,7 @@ export function res(base: number | Node): ComputeNode {
 export function setReadNodeKeys<T extends NodeList>(nodeList: T, prefix: string[] = []): T {
   if (nodeList.operation) {
     if (nodeList.operation !== "read")
-      throw new Error(`Found ${nodeList.operation} node while making reader`)
+      throw new Error(`Found ${(nodeList as any).operation} node while making reader`)
     return { ...nodeList, key: prefix }
   } else {
     return objectFromKeyMap(Object.keys(nodeList), key =>
@@ -55,6 +55,13 @@ export function read(accumulation: ReadNode["accumulation"], info?: Info, suffix
 }
 export function data(baseFormula: Node, contexts: Data[]): DataNode {
   return { operation: "data", operands: [baseFormula], data: contexts }
+}
+
+export function stringRead(suffix?: StringNode): StringReadNode {
+  return { operation: "read", operands: [], key: [], suffix }
+}
+export function stringPrio(operands: StringReadNode[]): StringPriorityNode {
+  return { operation: "prio", operands }
 }
 
 export function input(key: InputNode["key"], info?: Info): InputNode {
@@ -70,4 +77,4 @@ type _NodeList = {
 } & {
   operation?: never
 }
-type NodeList = _NodeList | Node
+type NodeList = _NodeList | ReadNode | StringReadNode
