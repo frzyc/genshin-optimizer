@@ -4,10 +4,10 @@ import { Node } from "./type"
 export function formulaString(formula: Node): string {
   const { operation } = formula
   switch (operation) {
-    case "const": return `${formula.value}` // TODO: case "string":
+    case "const": return `${formula.value}`
     case "read": return `Read[${formula.key}]`
     case "data": return `Context${formulaString(formula.operands[0])}`
-    case "subscript": return `Lookup${formulaString(formula.operands[0])}` // TODO: case "stringSubscript":
+    case "subscript": return `Lookup${formulaString(formula.operands[0])}`
     case "min": case "max":
       return `${operation}( ${formula.operands.map(formulaString).join(", ")} )`
     case "add":
@@ -22,7 +22,8 @@ export function formulaString(formula: Node): string {
       return `( ${value} >= ${threshold} ? ${addition} : 0 )`
     case "res":
       return `Res${formulaString(formula.operands[0])}`
-    case "input": return "INPUT" // TODO: input case
+    case "input":
+      return `Input(${formula.key})`
     default: assertUnreachable(operation)
   }
 }

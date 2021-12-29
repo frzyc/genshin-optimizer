@@ -194,7 +194,7 @@ function applyRead(formulas: Node[], bottomUpMap = (formula: Node, _orig: Node) 
         if (accumulation === "unique") {
           if (operands.length !== 1)
             throw new Error("Duplicate entries in unique read")
-          return [{ ...formula, ...operands[0] }, contextId]
+          return [{ ...formula, ...(operands[0] as any) }, contextId]
         }
         return [{ ...formula, operation: accumulation, operands }, contextId]
       }
