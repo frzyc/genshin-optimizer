@@ -99,7 +99,7 @@ const ReactionComponents = {
   superconduct_hit: SuperConductCard,
   electrocharged_hit: ElectroChargedCard,
   overloaded_hit: OverloadedCard,
-  swirl_hit: SwirlCard,
+  pyro_swirl_hit: SwirlCard,// TODO: Assumes if character can pyro swirl, it can swirl every element. This behaviour will need to be changed for characters that can only swirl specific elements.
   shattered_hit: ShatteredCard,
   crystalize_hit: CrystalizeCard,
 }
