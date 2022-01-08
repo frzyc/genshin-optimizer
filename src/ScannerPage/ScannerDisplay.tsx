@@ -10,7 +10,7 @@ import ImgFullwidth from "../Components/Image/ImgFullwidth"
 import SqBadge from "../Components/SqBadge"
 import Amenoma from './Amenoma.png'
 import cocogoat from './cocogoat.png'
-import GIScanner from './GIScanner.png'
+// import GIScanner from './GIScanner.png'
 import AdScanner from './AdeptiScanner.png'
 
 export default function ScannerDisplay(props: any) {
@@ -35,7 +35,7 @@ export default function ScannerDisplay(props: any) {
       </Trans>
     </CardContent></CardDark>
 
-    <CardDark><CardContent><Grid container spacing={2} >
+    {/* <CardDark><CardContent><Grid container spacing={2} >
       <Grid item xs={12} md={4}><ImgFullwidth src={GIScanner} /></Grid>
       <Grid item xs={12} md={8}>
         <Typography variant="h5"><Trans t={t} i18nKey="ik.title">Inventory Kamera</Trans><SqBadge color="success" sx={{ ml: 1 }}><Trans t={ui} i18nKey="updatedfor" values={{ version: "2.3" }} /></SqBadge></Typography>
@@ -44,7 +44,7 @@ export default function ScannerDisplay(props: any) {
         <Typography gutterBottom><Trans t={t} i18nKey="goodeng">This scanner only scans in english, and exports to GOOD format.</Trans></Typography>
         <Button href="https://github.com/Andrewthe13th/Inventory_Kamera" target="_blank" startIcon={<FontAwesomeIcon icon={faDownload} />} ><Trans t={ui} i18nKey="link.download" /></Button>
       </Grid>
-    </Grid></CardContent></CardDark>
+    </Grid></CardContent></CardDark> */}
 
     <CardDark><CardContent><Grid container spacing={2} >
       <Grid item xs={12} md={8}>

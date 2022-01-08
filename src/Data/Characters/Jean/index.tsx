@@ -163,6 +163,9 @@ const char: ICharacterSheet = {
           conditional: { // Lands of Dandelion
             key: "c4",
             canShow: stats => stats.constellation >= 4,
+            partyBuff: "partyAll",
+            header: conditionalHeader("constellation4", tr, c4),
+            description: tr("constellation4.description"),
             name: "Opponents within the field created by Dandelion Breeze",
             stats: { anemo_enemyRes_: -40 },
           },
