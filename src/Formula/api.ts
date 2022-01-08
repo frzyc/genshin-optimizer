@@ -3,7 +3,7 @@ import { ICachedCharacter } from "../Types/character";
 import { ICachedWeapon } from "../Types/weapon";
 import { Data } from "./type";
 
-function dataObjForArtifactSheet(/** ARG negotiable */): Data {
+function dataObjForArtifactSheets(/** ARG negotiable */): Data {
   return { formula: {}, string: {} }
 }
 function dataObjForCharacterSheet(/** ARG negotiable */): Data {
