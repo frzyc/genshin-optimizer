@@ -3,7 +3,7 @@ import type { Path } from "../Util/KeyPathUtil"
 
 export type Node =
   ConstantNode | ComputeNode |
-  SubscriptNode | InputNode |
+  SubscriptNode |
   ReadNode | DataNode
 
 export type StringNode =
@@ -30,10 +30,6 @@ export interface ComputeNode extends NodeBase {
 export interface SubscriptNode extends NodeBase {
   operation: "subscript"
   list: number[]
-}
-export interface InputNode extends NodeBase {
-  operation: "input"
-  key: string
 }
 
 export interface ReadNode extends NodeBase {

@@ -151,15 +151,6 @@ Each data node contains one or more \emph{data objects}, each of which is a dict
 The data node has one operand, which is simply forwarded when evaluating, i.e.,~$y = x_1$.
 We denote the data node with data objects~$X_1, X_2, \dots, X_n$ as~$\dataNode_{X_1, X_2,\dots, X_n}$.
 
-\subsection{Input Nodes}
-
-Input nodes identify the formula where the actual value of the node is fetched from outside the graph.
-Each input node is associated with a single string \emph{key}.
-We denote an input node with key~$k$ by~$\inputNode_k$.
-
-Note that the main difference between read nodes and input nodes is the read node fetch values from the associated data node, which is within the graph, while input nodes fetch data from other sources entirely outside of the graph.
-Another difference is that read nodes may compute portion of the keys using string nodes, while the keys of input nodes are known at construction time.
-
 \subsection{Priority Nodes}
 
 Priority nodes are string nodes that uses the value of the first (string) operands that returns a non-empty string.
@@ -183,21 +174,24 @@ Note that the graph is designed to be immutable (to avoid \emph{spooky action at
 \subsection{Read Operation}
 \label{sec:operation:read}
 
-Read operations update the read nodes by replacing it with the (aggregated) nodes given by data nodes.
-During a read operation, each read node finds the nearest data node among its ancestors.
-Then, for each data object in the data node, it maps its key to a node.
-The mapped nodes are then aggregated using the aggregation method of the read node.
-The read node is then replaced with the resulting aggregated node.
-If the data object does not contain a key~$k$ for a read node~$\readNode_k$, the data object is ignored.
-If no data object contains key~$k$, the read node is replaced with the vacuous sum of its operation. In particular, the replacement value for each operation is shown in the following table.
+Read operations update the read nodes by replacing them with the (aggregated) nodes given by data nodes.
+The operation is as followed,
+\begin{enumerate}
+	\item\label{enum:operation:read:step:iterate} For each read node~$\readNode_k^a$,
+	\begin{enumerate}
+		\item Finds all data nodes~$\{\dataNode_i\}_i$ among its ancestors,
+		\item Map each data object~$D$ in each data node~$\dataNode_i$ using the key~$k$ to a node~$D[k]$, ignoring any data objects that do not contain the key~$k$,
+		\item Check if there are at least one mapped nodes,
+		      \begin{enumerate}
+			      \item\label{enum:operation:read:step:replace} If there are mapped nodes, aggregate the mapped nodes using the aggregation method~$a$, and replace the read node with the aggregated method,
+			      \item Otherwise, the read node remains unchanged, and the operation proceeds to the next read node,
+		      \end{enumerate}
+		\item If there are unconsidered read nodes, go back to Step~\ref{enum:operation:read:step:iterate},
+	\end{enumerate}
+	\item After all read nodes are considered, replace the data nodes with their operands.
+\end{enumerate}
 %
-\begin{center}
-	\begin{tabular}{c|c|c|c|c}
-		operation   & $+$ & $*$ & $\min$   & $\max$    \\
-		\hline
-		replacement & 0   & 1   & $\infty$ & $-\infty$
-	\end{tabular}
-\end{center}
+In Step~\ref{enum:operation:read:step:replace}, if the replaced node contains read nodes, they are also included in later iterations of Step~\ref{enum:operation:read:step:iterate}.
 
 Figure~\ref{fig:modification:reading} illustrates the reading operation at a single read node.
 In this setup, the operand of a data node~$\dataNode_{X,Y,Z}$ has one read node~$\readNode_k^+$.
@@ -210,26 +204,26 @@ Since~$Y[k]$ does not exist, it is not included in the aggregated node.
 	\begin{tikzpicture}[
 			baseline=(current bounding box.east)
 		]
-		\node{$\dataNode_{X,Y,Z}$}
-		child { node {$*$}
-				child { node {$1$} }
-				child { node {$\readNode_k^+$} }
+		\node{$\dataNode_{X,Y}$}
+		child { node {$\dataNode_{Z}$}
+				child { node {$*$}
+						child { node {$1$} }
+						child { node {$\readNode_k^+$} }
+					}
 			};
 	\end{tikzpicture}
 	\quad$\Rightarrow$\quad
 	\begin{tikzpicture}[
 			baseline=(current bounding box.east)
 		]
-		\node{$\dataNode_{X,Y,Z}$}
-		child { node {$*$}
-				child { node {$1$} }
-				child { node {$+$}
-						child { node {$X[k]$} }
-						child { node {$Z[k]$} }
-					}
+		\node{$*$}
+		child { node {$1$} }
+		child { node {$+$}
+				child { node {$X[k]$} }
+				child { node {$Z[k]$} }
 			};
 	\end{tikzpicture}
-	\caption{Process of \emph{reading} $\readNode_k$ using~$\dataNode_{X, Y, Z}$ assuming~$X[k]$ and~$Z[k]$ exist}
+	\caption{Process of \emph{reading} $\readNode_k$ using~$\dataNode_{X, Y, Z}$ assuming~$X[k]$ and~$Z[k]$ exist and~$Y[k]$ does not}
 	\label{fig:modification:reading}
 \end{figure}
 

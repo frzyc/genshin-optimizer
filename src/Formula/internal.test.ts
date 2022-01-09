@@ -1,8 +1,8 @@
 import { mapContextualFormulas as mapFormulas } from "./internal"
 import { Node } from "./type"
-import { input, prod, sum } from "./utils"
+import { prod, read, setReadNodeKeys, sum } from "./utils"
 
-const inputs = [...Array(6).keys()].map(i => input(`${i}`));
+const inputs = setReadNodeKeys(Object.fromEntries([...Array(6).keys()].map(i => [i, read("unique")])))
 
 describe("internal `mapFormulas`", () => {
   test("Access order", () => {

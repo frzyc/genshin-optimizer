@@ -1,8 +1,8 @@
 import { constant } from "./internal"
 import { constantFold, deduplicate, flatten } from "./optimization"
-import { max, min, prod, sum, input } from "./utils"
+import { max, min, prod, read, setReadNodeKeys, sum } from "./utils"
 
-const inputs = [...Array(6).keys()].map(i => input(`${i}`));
+const inputs = setReadNodeKeys(Object.fromEntries([...Array(6).keys()].map(i => [i, read("unique")])))
 
 describe("optimization", () => {
   describe("flatten", () => {

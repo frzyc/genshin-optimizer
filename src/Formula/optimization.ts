@@ -1,7 +1,7 @@
 import { resolve } from "../Util/KeyPathUtil"
 import { assertUnreachable } from "../Util/Util"
 import { constant, mapContextualFormulas, mapFormulas } from "./internal"
-import { CommutativeMonoidOperation, ComputeNode, ConstantNode, Data, InputNode, Node, Operation, StringNode } from "./type"
+import { CommutativeMonoidOperation, ComputeNode, ConstantNode, Data, Node, Operation, StringNode } from "./type"
 
 const allCommutativeMonoidOperations: StrictDict<CommutativeMonoidOperation, (_: number[]) => number> = {
   min: (x: number[]): number => Math.min(...x),
@@ -157,32 +157,30 @@ export function deduplicate(formulas: Node[]): Node[] {
 /**
  * - Apply all `ReadNode`s
  * - Remove all `DataNode`s
- * - Merge all `InputNode`s
  */
 function applyRead(formulas: Node[], bottomUpMap = (formula: Node, _orig: Node) => formula): Node[] {
-  const dataFromId = new Map<number, Data[]>(), idFromData = new Map<Data[], number>()
-  let currentMaxId = 1
+  const dataFromId = new Map<number, Data[]>(), nextIdsFromCurrentIds = new Map<number, Map<Data[], number>>()
 
-  const inputNodes = new Map<InputNode["key"], InputNode>()
+  let currentMaxId = 1
+  dataFromId.set(0, [])
 
   return mapContextualFormulas(formulas, (formula, contextId) => {
     switch (formula.operation) {
       case "data": {
         const { data, operands: [baseFormula] } = formula
 
-        let nextContextId = idFromData.get(data)
-        if (nextContextId) return [baseFormula, nextContextId]
+        if (!nextIdsFromCurrentIds.has(contextId)) nextIdsFromCurrentIds.set(contextId, new Map())
+        const nextIds = nextIdsFromCurrentIds.get(contextId)!
+        if (nextIds.has(data)) return [baseFormula, nextIds.get(data)!]
 
-        nextContextId = currentMaxId++
-        dataFromId.set(nextContextId, data)
-        idFromData.set(data, nextContextId)
+        const nextId = currentMaxId++
+        nextIds.set(data, nextId)
+        dataFromId.set(nextId, [...dataFromId.get(contextId)!, ...data])
 
-        return [baseFormula, nextContextId]
+        return [baseFormula, nextId]
       }
       case "read": {
-        const data = dataFromId.get(contextId)
-        if (!data)
-          throw new Error("Found read node with no accompanied data node")
+        const data = dataFromId.get(contextId)!
 
         const { accumulation, suffix } = formula
         const key = suffix ? [...formula.key, resolveStringNode(suffix, data)!] : formula.key
@@ -191,6 +189,9 @@ function applyRead(formulas: Node[], bottomUpMap = (formula: Node, _orig: Node) 
           return formula ? [formula] : []
         })
 
+        if (operands.length === 0)
+          return [formula, contextId]
+
         if (accumulation === "unique") {
           if (operands.length !== 1)
             throw new Error("Duplicate entries in unique read")
@@ -198,9 +199,6 @@ function applyRead(formulas: Node[], bottomUpMap = (formula: Node, _orig: Node) 
         }
         return [{ ...formula, operation: accumulation, operands }, contextId]
       }
-      case "input":
-        return [inputNodes.get(formula.key) ??
-          (inputNodes.set(formula.key, formula), formula), contextId]
     }
     return [formula, contextId]
   }, bottomUpMap)
@@ -264,8 +262,8 @@ export function constantFold(formulas: Node[], isFixed = (_formula: Node, _orig:
           result = constant(f(operands))
         }
         break
-      case "const": case "input": break
-      case "read": case "data": throw new Error("Unreachable")
+      case "const": case "read": break
+      case "data": throw new Error("Unreachable")
       default: assertUnreachable(operation) // Exhaustive switch
     }
     if (result !== formula) result = { ...formula, ...result }

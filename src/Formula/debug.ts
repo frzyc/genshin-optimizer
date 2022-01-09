@@ -22,8 +22,6 @@ export function formulaString(formula: Node): string {
       return `( ${value} >= ${threshold} ? ${addition} : 0 )`
     case "res":
       return `Res${formulaString(formula.operands[0])}`
-    case "input":
-      return `Input(${formula.key})`
     default: assertUnreachable(operation)
   }
 }

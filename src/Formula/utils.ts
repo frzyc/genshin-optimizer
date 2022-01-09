@@ -1,6 +1,6 @@
 
 import { objectFromKeyMap } from "../Util/Util"
-import type { ComputeNode, Data, DataNode, Info, InputNode, Node, ReadNode, StringConstantNode, StringNode, StringPriorityNode, StringReadNode, SubscriptNode } from "./type"
+import type { ComputeNode, Data, DataNode, Info, Node, ReadNode, StringConstantNode, StringNode, StringPriorityNode, StringReadNode, SubscriptNode } from "./type"
 
 export const todo: Node = { operation: "const", value: NaN, operands: [] }
 
@@ -65,10 +65,6 @@ export function stringRead(suffix?: StringNode): StringReadNode {
 }
 export function stringPrio(operands: StringReadNode[]): StringPriorityNode {
   return { operation: "prio", operands }
-}
-
-export function input(key: InputNode["key"], info?: Info): InputNode {
-  return { operation: "input", operands: [], key, info }
 }
 
 function intoOperands(values: (number | Node)[]): Node[] {
