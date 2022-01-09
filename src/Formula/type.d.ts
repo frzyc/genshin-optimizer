@@ -64,7 +64,7 @@ export interface StringReadNode extends StringNodeBase {
 }
 
 export interface Data {
-  formula: NodeData
+  number: NodeData
   string: StringNodeData
 }
 export interface NodeData {

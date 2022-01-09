@@ -1,6 +1,6 @@
 
 import { objectFromKeyMap } from "../Util/Util"
-import type { ComputeNode, Data, DataNode, Info, InputNode, Node, ReadNode, StringNode, StringPriorityNode, StringReadNode, SubscriptNode } from "./type"
+import type { ComputeNode, Data, DataNode, Info, InputNode, Node, ReadNode, StringConstantNode, StringNode, StringPriorityNode, StringReadNode, SubscriptNode } from "./type"
 
 export const todo: Node = { operation: "const", value: NaN, operands: [] }
 
@@ -57,6 +57,9 @@ export function data(baseFormula: Node, contexts: Data[]): DataNode {
   return { operation: "data", operands: [baseFormula], data: contexts }
 }
 
+export function stringConst(value: string): StringConstantNode {
+  return { operation: "const", operands: [], value }
+}
 export function stringRead(suffix?: StringNode): StringReadNode {
   return { operation: "read", operands: [], key: [], suffix }
 }

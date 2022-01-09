@@ -187,7 +187,7 @@ function applyRead(formulas: Node[], bottomUpMap = (formula: Node, _orig: Node) 
         const { accumulation, suffix } = formula
         const key = suffix ? [...formula.key, resolveStringNode(suffix, data)!] : formula.key
         const operands = data?.flatMap(context => {
-          const formula = resolve(context.formula, key)
+          const formula = resolve(context.number, key)
           return formula ? [formula] : []
         })
 
@@ -281,7 +281,7 @@ function resolveStringNode(node: StringNode, data: Data[]): string | undefined {
     case "read": {
       const { key, suffix } = node
       const operands = data.flatMap(context => {
-        const formula = resolve(context.formula, key) as StringNode | undefined
+        const formula = resolve(context.number, key) as StringNode | undefined
         return formula ? [formula] : []
       })
 
