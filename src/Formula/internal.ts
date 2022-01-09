@@ -1,4 +1,4 @@
-import { Info, Node } from "./type"
+import { ConstantNode, Info, Node } from "./type"
 
 export function forEachNodes(formulas: Node[], topDown: (formula: Node) => void, bottomUp: (formula: Node) => void) {
   const visiting = new Set<Node>(), visited = new Set<Node>()
@@ -111,7 +111,7 @@ export function mapContextualFormulas(formulas: Node[], topDownMap: (formula: No
 
 type ContextID = number
 
-export function constant(value: number, info?: Info): Node {
+export function constant(value: number, info?: Info): ConstantNode {
   return { operation: "const", value, info, operands: [] }
 }
 
