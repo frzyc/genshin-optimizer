@@ -5,7 +5,7 @@ import { ICachedWeapon } from "../Types/weapon";
 import { constant } from "./internal";
 import { Data, Node } from "./type";
 import { stringConst, subscript, sum } from "./utils";
-import { CharacterKey, ElementKey, ElementKeyWithPhy } from "../Types/consts";
+import { CharacterKey, ElementKey, ElementKeyWithPhy, WeaponKey, WeaponTypeKey } from "../Types/consts";
 
 function dataObjForArtifactSheets(): Data {
   const result = {
@@ -53,8 +53,39 @@ function dataObjForCharacterSheet(
     }
   }
 }
-function dataObjForWeaponSheet(/** ARG negotiable */): Data {
-  return { number: {}, string: {} }
+function dataObjForWeaponSheet(
+  key: WeaponKey, type: WeaponTypeKey,
+  lvlStats: [offset: number, curve: number[], stat: MainStatKey | SubstatKey][],
+  rankStats: [offset: number, curve: number[], stat: MainStatKey | SubstatKey][],
+  additional: Data): Data {
+  const result = {
+    number: {}, string: {
+      weapon: {
+        key: stringConst(key),
+        type: stringConst(type),
+      }
+    }
+  }
+
+  function addStat(value: Node, stat: MainStatKey | SubstatKey) {
+    if (result.number[stat]) {
+      if (result.number[stat].operation === "add")
+        result.number[stat].operands.push(value)
+      else
+        result.number[stat] = sum(result.number[stat], value)
+    } else {
+      result.number[stat] = value
+    }
+  }
+
+  for (const [offset, curve, stat] of lvlStats)
+    addStat(sum(offset, subscript(input.weapon.level, curve)), stat)
+  for (const [offset, curve, stat] of rankStats)
+    addStat(sum(offset, subscript(input.weapon.rank, curve)), stat)
+
+  // TODO: Add `additional`
+
+  return result
 }
 function dataObjForArtifact(art: ICachedArtifact): Data {
   return {
@@ -91,7 +122,7 @@ function dataObjForCharacter(char: ICachedCharacter): Data {
     },
   }
 }
-function dataObjForWeapon(weapon: ICachedWeapon, type: "bow" | "catalyst" | "claymore" | "polearm" | "sword"): Data {
+function dataObjForWeapon(weapon: ICachedWeapon): Data {
   return {
     number: {
       weapon: {
@@ -99,12 +130,7 @@ function dataObjForWeapon(weapon: ICachedWeapon, type: "bow" | "catalyst" | "cla
         ascension: constant(weapon.ascension),
         refinement: constant(weapon.refinement),
       },
-    }, string: {
-      weapon: {
-        key: stringConst(weapon.key),
-        type: stringConst(type),
-      },
-    },
+    }, string: {}
   }
 }
 
