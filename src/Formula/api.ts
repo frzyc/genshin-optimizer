@@ -1,15 +1,57 @@
-import { ICachedArtifact } from "../Types/artifact";
+import { input } from "./index";
+import { allMainStatKeys, allSubstats, ICachedArtifact, MainStatKey, SubstatKey } from "../Types/artifact";
 import { ICachedCharacter } from "../Types/character";
 import { ICachedWeapon } from "../Types/weapon";
 import { constant } from "./internal";
 import { Data, Node } from "./type";
-import { stringConst } from "./utils";
+import { stringConst, subscript, sum } from "./utils";
+import { CharacterKey, ElementKey, ElementKeyWithPhy } from "../Types/consts";
 
-function dataObjForArtifactSheets(/** ARG negotiable */): Data {
-  return { number: {}, string: {} }
+function dataObjForArtifactSheets(): Data {
+  const result = {
+    number: {
+      premod: {
+        ...Object.fromEntries([...allSubstats, ...allMainStatKeys]
+          .filter(key => key !== "hp_" && key !== "atk_" && key != "def_")
+          .map(key =>
+            [key, input.art[key]]))
+      },
+      // TODO: Add Artifact set effects
+    }, string: {}
+  }
+
+  return result
 }
-function dataObjForCharacterSheet(/** ARG negotiable */): Data {
-  return { number: {}, string: {} }
+function dataObjForCharacterSheet(
+  key: CharacterKey,
+  element: ElementKeyWithPhy | undefined,
+  hp: [offset: number, curve: number[]],
+  atk: [offset: number, curve: number[]],
+  def: [offset: number, curve: number[]],
+  special: [offset: number, curve: number[], stat: MainStatKey | SubstatKey],
+  additional: Data["number"] = {},
+): Data {
+  return {
+    number: {
+      base: {
+        hp: sum(hp[0], subscript(input.char.level, hp[1])),
+        atk: sum(atk[0], subscript(input.char.level, atk[1])),
+        def: sum(def[0], subscript(input.char.level, def[1])),
+        [special[2]]: sum(special[0], subscript(input.char.level, special[1])),
+      },
+      preMod: {
+        critRate_: constant(0.05),
+        critDMG_: constant(0.5),
+        enerRech_: constant(1),
+      }
+      // TODO: include `additional`
+    }, string: {
+      char: {
+        key: stringConst(key),
+        ...(element ? { element: stringConst(element) } : {}),
+      }
+    }
+  }
 }
 function dataObjForWeaponSheet(/** ARG negotiable */): Data {
   return { number: {}, string: {} }

@@ -3,7 +3,7 @@ import { allMainStatKeys, allSubstats } from "../Types/artifact"
 import { allArtifactSets, allElementsWithPhy } from "../Types/consts"
 import { objectFromKeyMap } from "../Util/Util"
 import type { ConstantNode, Data, ReadNode } from "./type"
-import { frac, prod, res, subscript, sum, min, max, read, input as i, setReadNodeKeys, stringRead } from "./utils"
+import { frac, prod, res, subscript, sum, min, max, read, setReadNodeKeys, stringRead } from "./utils"
 
 const allStats = [...allMainStatKeys, ...allSubstats] as const
 const unit: ConstantNode = { operation: "const", value: 1, info: { unit: "%" }, operands: [] }
@@ -24,12 +24,16 @@ const str = setReadNodeKeys({
 const rd = setReadNodeKeys({
   base: objectFromKeyMap(["atk", "def", "hp"] as const, _ => read("add")),
   premod: objectFromKeyMap(allStats, _ => read("add")),
-  postmod: {
+  postmod: { ...objectFromKeyMap(allStats, _ => read("add")), },
+  total: {
     ...objectFromKeyMap(allStats, _ => read("add")),
     cappedCritRate: read("unique"),
   },
 
-  art: objectFromKeyMap(allArtifactSets, _ => read("add")),
+  art: {
+    ...objectFromKeyMap(allStats, _ => read("add")),
+    ...objectFromKeyMap(allArtifactSets, _ => read("add")),
+  },
   char: {
     auto: read("add"), skill: read("add"), burst: read("add"),
     level: read("unique"), constellation: read("unique"), ascension: read("unique"),
@@ -59,19 +63,19 @@ const rd = setReadNodeKeys({
   },
 })
 
-const { base, premod, postmod, char, hit, trans, enemy, } = rd
+const { base, premod, total, char, hit, trans, enemy, } = rd
 
 const common = {
   premod: objectFromKeyMap(["atk", "def", "hp"] as const,
     key => prod(base[key], premod[`${key}_` as const])),
   postmod: {
     ...objectFromKeyMap(allStats, key => premod[key]),
-    cappedCritRate: max(min(postmod.critRate_, unit), 0),
+    cappedCritRate: max(min(total.critRate_, unit), 0),
   },
 
   trans: {
     dmg: prod(trans.reactionMulti, trans.base, trans.lvlMulti, enemy.res.byElement),
-    base: sum(unit, prod(16, frac(postmod.eleMas, 2000))),
+    base: sum(unit, prod(16, frac(total.eleMas, 2000))),
     lvlMulti: subscript(char.level, transformativeReactionLevelMultipliers),
   },
 
@@ -85,12 +89,12 @@ const common = {
       hit.amp.multi),
     critValue: {
       base: unit,
-      dmg: sum(unit, postmod.critDMG_),
-      avg: sum(unit, prod(postmod.cappedCritRate, postmod.critDMG_)),
+      dmg: sum(unit, total.critDMG_),
+      avg: sum(unit, prod(total.cappedCritRate, total.critDMG_)),
     },
     amp: {
       multi: prod(hit.amp.reactionMulti, hit.amp.base),
-      base: sum(unit, prod(25 / 9, frac(postmod.eleMas, 1400))),
+      base: sum(unit, prod(25 / 9, frac(total.eleMas, 1400))),
     },
   },
 
@@ -99,13 +103,6 @@ const common = {
   }
 } as const
 
-const generationInput = {
-  generation: {
-    ...objectFromKeyMap(allStats, stat => i(stat)),
-    ...objectFromKeyMap(allArtifactSets, set => i(set))
-  }
-}
-
 export {
-  rd as input, common, generationInput
+  rd as input, common
 }
