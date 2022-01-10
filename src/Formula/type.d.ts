@@ -83,7 +83,7 @@ interface NumFormulaTemplate<T extends Node = Node> {
   }
 
   display?: {
-    [key in "normal" | "charge" | "plunge" | "skill" | "burst"]?: { [key in string]?: T }
+    [key in "normal" | "charged" | "plunging" | "skill" | "burst"]?: { [key in string]?: T }
   }
 
   hit?: {

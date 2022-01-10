@@ -41,10 +41,10 @@ const charSheetData = dataObjForCharacterSheet("Sucrose", "anemo",
   {
     normal: Object.fromEntries(data.normal.hitArr.map((arr, i) =>
       [i, dmgNode("atk", arr, "normal")])),
-    charge: Object.fromEntries(Object.entries(data.charged).map(([key, value]) =>
-      [key, dmgNode("atk", value, "charge")])),
-    plunge: Object.fromEntries(Object.entries(data.plunging).map(([key, value]) =>
-      [key, dmgNode("atk", value, "plunge")])),
+    charged: Object.fromEntries(Object.entries(data.charged).map(([key, value]) =>
+      [key, dmgNode("atk", value, "charged")])),
+    plunging: Object.fromEntries(Object.entries(data.plunging).map(([key, value]) =>
+      [key, dmgNode("atk", value, "plunging")])),
     skill: Object.fromEntries(Object.entries(data.skill).map(([key, value]) =>
       [key, dmgNode("atk", value, "skill")])),
     burst: {

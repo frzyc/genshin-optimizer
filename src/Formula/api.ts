@@ -38,7 +38,7 @@ export function dataObjForArtifactSheets(): Data {
     }, string: {}
   }
 }
-export function dmgNode(base: MainStatKey, lvlMultiplier: number[], move: "normal" | "charge" | "plunge" | "skill" | "burst", additional: Data["number"] = {}): Node {
+export function dmgNode(base: MainStatKey, lvlMultiplier: number[], move: "normal" | "charged" | "plunging" | "skill" | "burst", additional: Data["number"] = {}): Node {
   // TODO: Add `move`
   return data(common.hit.dmg, [{
     number: {
