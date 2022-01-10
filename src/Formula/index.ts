@@ -1,35 +1,25 @@
 import { allMainStatKeys, allSubstats } from "../Types/artifact"
-import { allArtifactSets } from "../Types/consts"
+import { allArtifactSets, allElementsWithPhy } from "../Types/consts"
 import { objectFromKeyMap } from "../Util/Util"
-import { ConstantNode, Node, NumFormulaTemplate, ReadNode, StringFormulaTemplate, StringReadNode } from "./type"
+import { ConstantNode, Node, ReadNode, StringNode, StringReadNode } from "./type"
 import { frac, prod, sum, min, max, read, setReadNodeKeys, stringRead } from "./utils"
 
 const allStats = [...allMainStatKeys, ...allSubstats] as const
+const allMoves = ["normal", "charged", "plunging", "skill", "burst"] as const
 const unit: ConstantNode = { operation: "const", value: 1, info: { unit: "%" }, operands: [] }
 
 // All string read nodes
 const str = setReadNodeKeys({
-  char: {
-    key: stringRead(),
-    element: stringRead(),
-  },
-  weapon: {
-    key: stringRead(),
-    type: stringRead(),
-  },
-  dmg: {
-    element: stringRead(),
-    reaction: stringRead(),
-    move: stringRead(),
-    critType: stringRead(),
-  }
+  char: objectFromKeyMap(["key", "ele"] as const, _ => stringRead()),
+  weapon: objectFromKeyMap(["key", "type"] as const, _ => stringRead()),
+  dmg: objectFromKeyMap(["ele", "reaction", "move", "critType"] as const, _ => stringRead()),
 })
 
 // All read nodes
 const rd = setReadNodeKeys({
   base: objectFromKeyMap(["atk", "def", "hp"] as const, _ => read("add")),
   premod: objectFromKeyMap(allStats, _ => read("add")),
-  postmod: { ...objectFromKeyMap(allStats, _ => read("add")), },
+  postmod: objectFromKeyMap(allStats, _ => read("add")),
   total: {
     ...objectFromKeyMap(allStats, _ => read("add")),
     cappedCritRate: read("unique"),
@@ -41,32 +31,48 @@ const rd = setReadNodeKeys({
   },
   char: {
     auto: read("add"), skill: read("add"), burst: read("add"),
-    level: read("unique"), constellation: read("unique"), ascension: read("unique"),
+    lvl: read("unique"), constellation: read("unique"), asc: read("unique"),
   },
-  weapon: { level: read("unique"), refinement: read("unique"), ascension: read("unique") },
+  weapon: { lvl: read("unique"), asc: read("unique"), refineIndex: read("unique") },
+
+  dmgBonus: {
+    total: read("unique"), common: read("add"),
+    byMove: read("unique", undefined, str.dmg.move),
+    byElement: read("unique", undefined, str.dmg.ele),
+    ...objectFromKeyMap(allMoves, _ => read("add")),
+    ...objectFromKeyMap(allElementsWithPhy, _ => read("add")),
+  },
 
   hit: {
-    base: read("add"),
-    dmgBonus: read("add"),
+    dmg: read("unique"), base: read("add"),
     amp: { reactionMulti: read("add"), multi: read("add"), base: read("add"), },
     critValue: {
       byType: read("unique", undefined, str.dmg.critType),
+      ...objectFromKeyMap(["base", "crit", "avg"] as const, _ => read("unique"))
     },
   },
 
   enemy: {
-    res: { byElement: read("unique", undefined, str.dmg.element), },
+    res: {
+      byElement: read("unique", undefined, str.dmg.ele),
+      ...objectFromKeyMap(allElementsWithPhy, _ => read("add")),
+    },
     level: read("unique"),
     def: read("add"),
     defRed: read("add"),
   },
 })
 
-const { base, premod, postmod, total, char, hit, enemy, } = rd
+const { base, premod, postmod, total, char, hit, dmgBonus, enemy, weapon } = rd
 
 const common = {
-  premod: objectFromKeyMap(["atk", "def", "hp"] as const,
-    key => prod(base[key], premod[`${key}_` as const])),
+  premod: {
+    ...objectFromKeyMap(["atk", "def", "hp"] as const,
+      key => prod(base[key], premod[`${key}_` as const])),
+    critRate_: { operation: "const", value: 0.05, info: { unit: "%" }, operands: [] } as Node,
+    critDMG_: { operation: "const", value: 0.5, info: { unit: "%" }, operands: [] } as Node,
+    enerRech_: { operation: "const", value: 1, info: { unit: "%" }, operands: [] } as Node,
+  },
   postmod: {
     ...objectFromKeyMap(allStats, key => premod[key] as Node),
   },
@@ -75,10 +81,14 @@ const common = {
     cappedCritRate: max(min(postmod.critRate_, unit), 0),
   },
 
+  dmgBonus: {
+    total: sum(dmgBonus.common, dmgBonus.byMove, dmgBonus.byElement),
+  },
+
   hit: {
     dmg: prod(
       hit.base,
-      sum(unit, hit.dmgBonus),
+      sum(unit, dmgBonus.total),
       hit.critValue.byType,
       enemy.def,
       enemy.res.byElement,
@@ -95,17 +105,14 @@ const common = {
   },
 
   enemy: {
-    def: frac(sum(char.level, 100), prod(sum(enemy.level, 100), sum(1, prod(-1, enemy.defRed))))
+    def: frac(sum(char.lvl, 100), prod(sum(enemy.level, 100), sum(1, prod(-1, enemy.defRed))))
   }
 } as const
 
-function typecheck<K, T extends K>() { }
+type DeepPartial<T, Element, NewElement> = T extends Element ? NewElement : { [key in keyof T]?: DeepPartial<T[key], Element, NewElement> }
 
-// Make sure we don't add anything outside of `Data` while maintaining precise typing
-type DeepRequired<T, Element> = T extends Element ? Element : { [key in keyof T]-?: DeepRequired<T[key], Element> }
-typecheck<typeof str, DeepRequired<StringFormulaTemplate<StringReadNode>, StringReadNode>>()
-typecheck<typeof rd, DeepRequired<NumFormulaTemplate<ReadNode>, ReadNode>>()
-typecheck<typeof common, DeepRequired<NumFormulaTemplate<Node>, Node>>()
+export type NumInput<T = Node> = DeepPartial<typeof rd, ReadNode, T>
+export type StringInput<T = StringNode> = DeepPartial<typeof str, StringReadNode, T>
 
 export {
   rd as input, common, str

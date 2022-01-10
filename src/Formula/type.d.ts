@@ -1,6 +1,10 @@
-import { MainStatKey, SubstatKey } from "../Types/artifact"
-import { ArtifactSetKey, ElementKey, ElementKeyWithPhy, ReactionModeKey } from "../Types/consts"
+import type { MainStatKey, SubstatKey } from "../Types/artifact"
+import type { ArtifactSetKey, ElementKey, ElementKeyWithPhy, ReactionModeKey } from "../Types/consts"
 import type { Path } from "../Util/KeyPathUtil"
+import type { NumInput, StringInput } from "./index"
+
+type Move = "normal" | "charged" | "plunging" | "skill" | "burst"
+type Stat = MainStatKey | SubstatKey
 
 export type Node =
   ConstantNode | ComputeNode |
@@ -56,53 +60,23 @@ export interface StringPriorityNode extends StringNodeBase {
 }
 export interface StringReadNode extends StringNodeBase {
   operation: "read"
-  key: Path<StringNodeData, string | undefined>
+  key: Path<StringFormulaTemplate, StringNode>
   suffix?: StringNode
 
   accumulation?: never
 }
 
+
 export interface Data {
-  number: NumFormulaTemplate
-  string: StringFormulaTemplate
+  number: NumInput & DynamicNumInput
+  string: StringInput
 }
-type Stat = MainStatKey | SubstatKey
-type DMGBonus = "normal" | "charge" | "plunge" | "skill" | "burst"
-export interface NumFormulaTemplate<T = Node> {
-  base?: { atk?: T, hp?: T, def?: T, }
-  premod?: { [key in Stat | DMGBonus]?: T }
-  postmod?: { [key in Stat | DMGBonus]?: T }
-  total?: { [key in Stat | "cappedCritRate" | DMGBonus]?: T }
-
-  art?: { [key in Stat | "" /** TODO: Replace this with ArtifactSetKey once we add them back */]?: T }
-  char?: { [key in "level" | "constellation" | "ascension" | "auto" | "skill" | "burst"]?: T }
-  weapon?: { [key in "level" | "ascension" | "refinement"]?: T }
-  enemy?: {
-    res?: { [key in "byElement" | ElementKeyWithPhy]?: T }
-    level?: T, def?: T, defRed?: T
-  }
-
-  display?: {
-    [key in "normal" | "charged" | "plunging" | "skill" | "burst"]?: { [key in string]?: T }
-  }
-
-  hit?: {
-    dmg?: T, base?: T, dmgBonus?: T
-    amp?: { reactionMulti?: T, multi?: T, base?: T, }
-    critValue?: { [key in "byType" | "base" | "crit" | "avg"]?: T }
-  }
+interface DynamicNumInput {
+  display?: { [key in Move]?: { [key in string]?: Node } }
   conditional?: NodeData
-}
-export interface StringFormulaTemplate<T = StringNode> {
-  char?: { key?: T, element?: T }
-  weapon?: { key?: T, type?: T }
-  dmg?: { element?: T, reaction?: T, move?: T, critType?: T }
 }
 interface NodeData {
   [key: string]: typeof key extends "operation" ? undefined : NodeData | Node
-}
-interface StringNodeData {
-  [key: string]: typeof key extends "operation" ? undefined : StringNodeData | StringNode
 }
 
 export type CommutativeMonoidOperation = "min" | "max" | "add" | "mul"

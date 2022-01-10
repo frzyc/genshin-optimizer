@@ -1,5 +1,5 @@
 import moonglow_data from "../Data/Weapons/Catalyst/EverlastingMoonglow/data_gen.json";
-import { dataObjForArtifactSheets, dataObjForWeaponSheet } from "./api";
+import { dataObjForArtifactSheets, dataObjForCharacter, dataObjForWeapon, dataObjForWeaponSheet } from "./api";
 import { constant } from "./internal";
 
 const artSheetData = dataObjForArtifactSheets()
@@ -11,17 +11,42 @@ const weaponSheetData = dataObjForWeaponSheet("EverlastingMoonglow", "catalyst",
     { stat: "atk", asc: moonglow_data.ascension.map(x => x.addStats.atk ?? 0) },
   ],
   {
-    premod: {
+    dmgBonus: {
       normal: constant(NaN) // TODO: Formula for normal atk bonus
     }
   }
 )
 
-/*
-const artData = dataObjForArtifact({} as any)
-const charData = dataObjForCharacter({} as any)
-const weaponData = dataObjForWeapon({} as any)
+const charData = dataObjForCharacter({
+  equippedArtifacts: { "circlet": "", "flower": "", "goblet": "", "plume": "", "sands": "" },
+  equippedWeapon: "",
+  key: "Sucrose",
+  level: 90,
+  constellation: 6,
+  ascension: 6,
+  talent: {
+    auto: 10,
+    skill: 10,
+    burst: 10,
+  },
+  team: ["", "", ""],
+  hitMode: "hit",
+  reactionMode: "",
+  conditionalValues: {},
+  bonusStats: {},
+  infusionAura: "",
+})
+const weaponData = dataObjForWeapon({
+  id: "",
+  key: "EverlastingMoonglow",
+  level: 90,
+  ascension: 6,
+  refinement: 5,
+  location: "",
+  lock: false,
+})
 
+/*
 const merged1 = mergeData({ number: common, string: {} }, artSheetData, charSheetData, charData, weaponSheetData)
 const merged2 = mergeData(merged1, artData, weaponData)
 */

@@ -50,6 +50,9 @@ export function setReadNodeKeys<T extends NodeList>(nodeList: T, prefix: string[
       setReadNodeKeys(nodeList[key], [...prefix, key])) as any
   }
 }
+export function customRead(key: string[], info?: Info, suffix?: StringNode): ReadNode {
+  return { operation: "read", operands: [], key, accumulation: "unique", info, suffix }
+}
 export function read(accumulation: ReadNode["accumulation"], info?: Info, suffix?: StringNode): ReadNode {
   return { operation: "read", operands: [], key: [], accumulation, info, suffix }
 }
@@ -59,6 +62,9 @@ export function data(baseFormula: Node, contexts: Data[]): DataNode {
 
 export function stringConst(value: string): StringConstantNode {
   return { operation: "const", operands: [], value }
+}
+export function customStringRead(key: string[], suffix?: StringNode): StringReadNode {
+  return { operation: "read", operands: [], key, suffix }
 }
 export function stringRead(suffix?: StringNode): StringReadNode {
   return { operation: "read", operands: [], key: [], suffix }

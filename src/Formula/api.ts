@@ -1,19 +1,19 @@
 import _charCurves from "../Character/expCurve_gen.json";
-import { allMainStatKeys, allSubstats, ICachedArtifact, MainStatKey, SubstatKey } from "../Types/artifact";
+import { ICachedArtifact, MainStatKey, SubstatKey } from "../Types/artifact";
 import { ICachedCharacter } from "../Types/character";
 import { CharacterKey, ElementKeyWithPhy, WeaponKey, WeaponTypeKey } from "../Types/consts";
 import { ICachedWeapon } from "../Types/weapon";
 import _weaponCurves from "../Weapon/expCurve_gen.json";
-import { common, input, str } from "./index";
+import { common, input, NumInput, str, StringInput } from "./index";
 import { constant } from "./internal";
-import { Data, Node, NumFormulaTemplate, ReadNode, StringFormulaTemplate, StringReadNode } from "./type";
+import { Data, Node, ReadNode, StringReadNode } from "./type";
 import { data, prod, stringConst, subscript, sum } from "./utils";
 
 // TODO: Remove this conversion
 const charCurves = Object.fromEntries(Object.entries(_charCurves).map(([key, value]) => [key, [0, ...Object.values(value)]]))
 const weaponCurves = Object.fromEntries(Object.entries(_weaponCurves).map(([key, value]) => [key, [0, ...Object.values(value)]]))
 
-export function dataObjForArtifactSheets(): Data {
+function dataObjForArtifactSheets(): Data {
   // TODO: Add Artifact set effects
   return {
     number: {
@@ -38,17 +38,20 @@ export function dataObjForArtifactSheets(): Data {
     }, string: {}
   }
 }
-export function dmgNode(base: MainStatKey, lvlMultiplier: number[], move: "normal" | "charged" | "plunging" | "skill" | "burst", additional: Data["number"] = {}): Node {
-  // TODO: Add `move`
+function dmgNode(base: MainStatKey, lvlMultiplier: number[], move: "normal" | "charged" | "plunging" | "skill" | "burst", additional: Data["number"] = {}): Node {
   return data(common.hit.dmg, [{
     number: {
       hit: {
-        base: prod(input.total[base], subscript(input.char.level, lvlMultiplier)),
+        base: prod(input.total[base], subscript(input.char.lvl, lvlMultiplier)),
       },
-    }, string: {}
+    }, string: {
+      dmg: {
+        move: stringConst(move), // TODO: element ?: T, reaction ?: T, critType ?: T
+      },
+    }
   }, ...(Object.keys(additional).length ? [{ number: additional, string: {} }] : [])])
 }
-export function dataObjForCharacterSheet(
+function dataObjForCharacterSheet(
   key: CharacterKey,
   element: ElementKeyWithPhy | undefined,
   hp: { offset: number, lvlCurve: string, asc: number[] },
@@ -59,19 +62,14 @@ export function dataObjForCharacterSheet(
   additional: Data["number"] = {},
 ): Data {
   function curve(array: { offset: number, lvlCurve: string, asc: number[] }): Node {
-    return sum(array.offset, subscript(input.char.level, charCurves[array.lvlCurve]), subscript(input.char.ascension, array.asc))
+    return sum(array.offset, subscript(input.char.lvl, charCurves[array.lvlCurve]), subscript(input.char.asc, array.asc))
   }
 
   return {
     number: mergeDataComponents([{
       base: {
         hp: curve(hp), atk: curve(atk), def: curve(def),
-        [special.stat]: subscript(input.char.ascension, special.asc),
-      },
-      premod: {
-        critRate_: constant(0.05),
-        critDMG_: constant(0.5),
-        enerRech_: constant(1),
+        [special.stat]: subscript(input.char.asc, special.asc),
       },
       display,
     }, additional], input), string: {
@@ -82,7 +80,7 @@ export function dataObjForCharacterSheet(
     }
   }
 }
-export function dataObjForWeaponSheet(
+function dataObjForWeaponSheet(
   key: WeaponKey, type: WeaponTypeKey,
   stats: { stat: MainStatKey | SubstatKey, offset?: number, lvlCurve?: string, refinement?: number[], asc?: number[] }[],
   additional: Data["number"] = {},
@@ -96,22 +94,12 @@ export function dataObjForWeaponSheet(
     }
   }
 
-  function addStat(value: Node, stat: MainStatKey | SubstatKey) {
-    if (result.number[stat]) {
-      if (result.number[stat].operation === "add")
-        result.number[stat].operands.push(value)
-      else
-        result.number[stat] = sum(result.number[stat], value)
-    } else
-      result.number[stat] = value
-  }
-
   for (const { stat, offset, lvlCurve, refinement, asc } of stats) {
     const nodes: Node[] = []
     if (offset) nodes.push(constant(offset))
-    if (lvlCurve) nodes.push(subscript(input.weapon.level, weaponCurves[lvlCurve]))
-    if (refinement) nodes.push(subscript(input.weapon.refinement, refinement))
-    if (asc) nodes.push(subscript(input.weapon.ascension, asc))
+    if (lvlCurve) nodes.push(subscript(input.weapon.lvl, weaponCurves[lvlCurve]))
+    if (refinement) nodes.push(subscript(input.weapon.refineIndex, refinement))
+    if (asc) nodes.push(subscript(input.weapon.asc, asc))
 
     if (nodes.length === 0) continue
     if (nodes.length === 1) result.number[stat] = nodes[0]
@@ -121,7 +109,7 @@ export function dataObjForWeaponSheet(
   result.number = mergeDataComponents([result.number, additional], input)
   return result
 }
-export function dataObjForArtifact(art: ICachedArtifact): Data {
+function dataObjForArtifact(art: ICachedArtifact): Data {
   return {
     number: {
       art: {
@@ -134,13 +122,13 @@ export function dataObjForArtifact(art: ICachedArtifact): Data {
     }, string: {}
   }
 }
-export function dataObjForCharacter(char: ICachedCharacter): Data {
+function dataObjForCharacter(char: ICachedCharacter): Data {
   return {
     number: {
       char: {
-        level: constant(char.level),
+        lvl: constant(char.level),
         constellation: constant(char.constellation),
-        ascension: constant(char.ascension),
+        asc: constant(char.ascension),
 
         auto: constant(char.talent.auto),
         skill: constant(char.talent.skill),
@@ -159,13 +147,13 @@ export function dataObjForCharacter(char: ICachedCharacter): Data {
     },
   }
 }
-export function dataObjForWeapon(weapon: ICachedWeapon): Data {
+function dataObjForWeapon(weapon: ICachedWeapon): Data {
   return {
     number: {
       weapon: {
-        level: constant(weapon.level),
-        ascension: constant(weapon.ascension),
-        refinement: constant(weapon.refinement),
+        lvl: constant(weapon.level),
+        asc: constant(weapon.ascension),
+        refineIndex: constant(weapon.refinement - 1),
       },
     }, string: {}
   }
@@ -196,13 +184,13 @@ function mergeDataComponents<T extends Data["number" | "string"]>(data: T[], rea
 
   return internal(data, readNodes)
 }
-export function mergeData(...data: Data[]): Data {
+function mergeData(...data: Data[]): Data {
   return {
     number: mergeDataComponents(data.map(x => x.number), input),
     string: mergeDataComponents(data.map(x => x.string), str),
   }
 }
-export function computeData(data: Data[]): ComputedValues {
+function computeData(data: Data[]): ComputedValues {
   return {
     number: {
       total: {
@@ -214,7 +202,7 @@ export function computeData(data: Data[]): ComputedValues {
     }
   }
 }
-export function displaysFromNodes(nodes: Data, values: ComputedValues): NumFormulaTemplate<NodeDisplay> {
+function displaysFromNodes(nodes: Data, values: ComputedValues): NumInput<NodeDisplay> {
   return {
     total: {
       atk: {
@@ -230,13 +218,21 @@ export function displaysFromNodes(nodes: Data, values: ComputedValues): NumFormu
 }
 
 export interface ComputedValues {
-  number: NumFormulaTemplate<number>
-  string: StringFormulaTemplate<string>
+  number: NumInput<number>
+  string: StringInput<string>
 }
 
-interface NodeDisplay {
+export interface NodeDisplay {
   /** structure negotiable */
   operation: Node["operation"]
   name: Displayable
   formulas: Displayable[]
+}
+
+export {
+  dataObjForArtifact, dataObjForCharacter, dataObjForWeapon,
+  dataObjForArtifactSheets, dataObjForCharacterSheet, dataObjForWeaponSheet,
+  dmgNode,
+
+  mergeData, computeData, displaysFromNodes,
 }

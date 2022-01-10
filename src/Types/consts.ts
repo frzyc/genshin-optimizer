@@ -21,14 +21,14 @@ export const allArtifactSets = [
   "ThunderingFury", "Thundersoother", "TinyMiracle", "TravelingDoctor", "ViridescentVenerer",
   "WanderersTroupe", "TenacityOfTheMillelith", "PaleFlame", "EmblemOfSeveredFate", "ShimenawasReminiscence",
   "HuskOfOpulentDreams", "OceanHuedClam"
-] as string[] // as const
+] as const
 export const allCharacterKeys = [
   "Albedo", "Amber", "Barbara", "Beidou", "Bennett", "Chongyun", "Diluc", "Diona", "Fischl", "Ganyu",
   "HuTao", "Jean", "Kaeya", "Keqing", "Klee", "Lisa", "Mona", "Ningguang", "Noelle", "Qiqi",
   "Razor", "Sucrose", "Tartaglia", "Traveler", "RaidenShogun", "Venti", "Xiao", "Xiangling", "Xingqiu", "Xinyan",
   "Zhongli", "Rosaria", "Yanfei", "Eula", "KaedeharaKazuha", "KamisatoAyaka", "Sayu", "Yoimiya", "KujouSara", "Aloy",
   "SangonomiyaKokomi", "Thoma", "Gorou", "AratakiItto"
-] as string[] // as const
+] as const
 export const allWeaponKeys = [
   "DullBlade", "SilverSword", "CoolSteel", "DarkIronSword", "FilletBlade", "HarbingerOfDawn", "SkyriderSword",
   "TravelersHandySword", "BlackcliffLongsword", "FavoniusSword", "IronSting", "LionsRoar", "PrimordialJadeCutter",
@@ -51,7 +51,7 @@ export const allWeaponKeys = [
   "KatsuragikiriNagamasa", "KitainCrossSpear", "ThunderingPulse", "Hamayumi", "HakushinRing", "TheCatch",
   "EverlastingMoonglow", "LuxuriousSeaLord", "Predator", "MouunsMoon", "WavebreakersFin", "CinnabarSpindle",
   "RedhornStonethresher",
-] as string[] // as const
+] as const
 export const characterSpecializedStatKeys = ["hp_", "atk_", "def_", "eleMas", "enerRech_", "heal_", "critRate_", "critDMG_", "physical_dmg_", "anemo_dmg_", "geo_dmg_", "electro_dmg_", "hydro_dmg_", "pyro_dmg_", "cryo_dmg_"] as const
 
 export type HitModeKey = typeof allHitModes[number]

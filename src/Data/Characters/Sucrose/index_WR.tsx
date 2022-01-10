@@ -77,8 +77,8 @@ export const data = dataObjForCharacterSheet("Sucrose", "anemo",
     // Teambuff: A1, A4,
     // Misc: C1, C2, C4, C6
     char: {
-      skill: threshold_add(input.char.ascension, 3, 3),
-      burst: threshold_add(input.char.ascension, 5, 3),
+      skill: threshold_add(input.char.asc, 3, 3),
+      burst: threshold_add(input.char.asc, 5, 3),
     },
     postmod: {
       // TODO: Add conditional
