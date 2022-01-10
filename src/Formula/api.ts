@@ -106,12 +106,12 @@ export function dataObjForWeaponSheet(
       result.number[stat] = value
   }
 
-  for (const { stat, offset, lvlCurve, refinement: refinementCurve, asc: ascCurve } of stats) {
+  for (const { stat, offset, lvlCurve, refinement, asc } of stats) {
     const nodes: Node[] = []
     if (offset) nodes.push(constant(offset))
     if (lvlCurve) nodes.push(subscript(input.weapon.level, weaponCurves[lvlCurve]))
-    if (refinementCurve) nodes.push(subscript(input.weapon.refinement, refinementCurve))
-    if (ascCurve) nodes.push(subscript(input.weapon.ascension, ascCurve))
+    if (refinement) nodes.push(subscript(input.weapon.refinement, refinement))
+    if (asc) nodes.push(subscript(input.weapon.ascension, asc))
 
     if (nodes.length === 0) continue
     if (nodes.length === 1) result.number[stat] = nodes[0]
