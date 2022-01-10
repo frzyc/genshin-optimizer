@@ -61,4 +61,4 @@ weaponPromoteExcelConfigDataSrc.forEach(data => {
   layeredAssignment(weaponPromoteExcelConfigData, [WeaponPromoteId, PromoteLevel], data)
 })
 
-export default weaponPromoteExcelConfigData //
+export default weaponPromoteExcelConfigData
