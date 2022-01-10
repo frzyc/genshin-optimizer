@@ -1,16 +1,10 @@
 import { common, input } from "./index";
 import { computeData, dataObjForArtifact, dataObjForArtifactSheets, dataObjForCharacter, dataObjForCharacterSheet, dataObjForWeapon, dataObjForWeaponSheet, dmgNode, mergeData } from "./api";
-import _charCurves from "../Character/expCurve_gen.json"
-import _weaponCurves from "../Weapon/expCurve_gen.json"
 import data_gen from "../Data/Characters/Sucrose/data_gen.json"
 import moonglow_data from "../Data/Weapons/Catalyst/EverlastingMoonglow/data_gen.json"
 import { absorbableEle } from "../Data/Characters/dataUtil";
 import { prod, threshold_add } from "./utils";
 import { constant } from "./internal";
-
-// TODO: Remove this conversion
-const charCurves = Object.fromEntries(Object.entries(_charCurves).map(([key, value]) => [key, [0, ...Object.values(value)]]))
-const weaponCurves = Object.fromEntries(Object.entries(_weaponCurves).map(([key, value]) => [key, [0, ...Object.values(value)]]))
 
 export const data = {
   normal: {
@@ -40,10 +34,10 @@ export const data = {
 
 const artSheetData = dataObjForArtifactSheets()
 const charSheetData = dataObjForCharacterSheet("Sucrose", "anemo",
-  { offset: data_gen.base.hp, lvlCurve: charCurves[data_gen.curves.hp], ascCurve: data_gen.ascensions.map(x => x.props.hp) },
-  { offset: data_gen.base.atk, lvlCurve: charCurves[data_gen.curves.atk], ascCurve: data_gen.ascensions.map(x => x.props.atk) },
-  { offset: data_gen.base.def, lvlCurve: charCurves[data_gen.curves.def], ascCurve: data_gen.ascensions.map(x => x.props.def) },
-  { ascCurve: data_gen.ascensions.map(x => x.props.anemo_dmg_), stat: "atk" },
+  { offset: data_gen.base.hp, lvlCurve: data_gen.curves.hp, asc: data_gen.ascensions.map(x => x.props.hp) },
+  { offset: data_gen.base.atk, lvlCurve: data_gen.curves.atk, asc: data_gen.ascensions.map(x => x.props.atk) },
+  { offset: data_gen.base.def, lvlCurve: data_gen.curves.def, asc: data_gen.ascensions.map(x => x.props.def) },
+  { asc: data_gen.ascensions.map(x => x.props.anemo_dmg_), stat: "atk" },
   {
     normal: Object.fromEntries(data.normal.hitArr.map((arr, i) =>
       [i, dmgNode("atk", arr, "normal")])),
@@ -75,10 +69,10 @@ const charSheetData = dataObjForCharacterSheet("Sucrose", "anemo",
 )
 const weaponSheetData = dataObjForWeaponSheet("EverlastingMoonglow", "catalyst",
   [
-    { stat: moonglow_data.mainStat.type as any, offset: moonglow_data.mainStat.base, lvlCurve: weaponCurves[moonglow_data.mainStat.curve] },
-    { stat: moonglow_data.subStat.type as any, offset: moonglow_data.subStat.base, lvlCurve: weaponCurves[moonglow_data.subStat.curve], },
-    { stat: "heal_", refinementCurve: moonglow_data.addProps.map(x => x.heal_) },
-    { stat: "atk", ascCurve: moonglow_data.ascension.map(x => x.addStats.atk ?? 0) },
+    { stat: moonglow_data.mainStat.type as any, offset: moonglow_data.mainStat.base, lvlCurve: moonglow_data.mainStat.curve },
+    { stat: moonglow_data.subStat.type as any, offset: moonglow_data.subStat.base, lvlCurve: moonglow_data.subStat.curve, },
+    { stat: "heal_", refinement: moonglow_data.addProps.map(x => x.heal_) },
+    { stat: "atk", asc: moonglow_data.ascension.map(x => x.addStats.atk ?? 0) },
   ],
   {
     premod: {

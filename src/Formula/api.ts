@@ -1,11 +1,17 @@
-import { common, input, str } from "./index";
+import _charCurves from "../Character/expCurve_gen.json";
 import { allMainStatKeys, allSubstats, ICachedArtifact, MainStatKey, SubstatKey } from "../Types/artifact";
 import { ICachedCharacter } from "../Types/character";
+import { CharacterKey, ElementKeyWithPhy, WeaponKey, WeaponTypeKey } from "../Types/consts";
 import { ICachedWeapon } from "../Types/weapon";
+import _weaponCurves from "../Weapon/expCurve_gen.json";
+import { common, input, str } from "./index";
 import { constant } from "./internal";
 import { Data, Node, ReadNode, StringReadNode } from "./type";
 import { data, prod, stringConst, subscript, sum } from "./utils";
-import { CharacterKey, ElementKeyWithPhy, WeaponKey, WeaponTypeKey } from "../Types/consts";
+
+// TODO: Remove this conversion
+const charCurves = Object.fromEntries(Object.entries(_charCurves).map(([key, value]) => [key, [0, ...Object.values(value)]]))
+const weaponCurves = Object.fromEntries(Object.entries(_weaponCurves).map(([key, value]) => [key, [0, ...Object.values(value)]]))
 
 export function dataObjForArtifactSheets(): Data {
   // TODO: Add Artifact set effects
@@ -45,22 +51,22 @@ export function dmgNode(base: MainStatKey, lvlMultiplier: number[], move: "norma
 export function dataObjForCharacterSheet(
   key: CharacterKey,
   element: ElementKeyWithPhy | undefined,
-  hp: { offset: number, lvlCurve: number[], ascCurve: number[] },
-  atk: { offset: number, lvlCurve: number[], ascCurve: number[] },
-  def: { offset: number, lvlCurve: number[], ascCurve: number[] },
-  special: { ascCurve: number[], stat: MainStatKey | SubstatKey },
+  hp: { offset: number, lvlCurve: string, asc: number[] },
+  atk: { offset: number, lvlCurve: string, asc: number[] },
+  def: { offset: number, lvlCurve: string, asc: number[] },
+  special: { asc: number[], stat: MainStatKey | SubstatKey },
   display: Data["number"]["display"],
   additional: Data["number"] = {},
 ): Data {
-  function curve(array: { offset: number, lvlCurve: number[], ascCurve: number[] }): Node {
-    return sum(array.offset, subscript(input.char.level, array.lvlCurve), subscript(input.char.ascension, array.ascCurve))
+  function curve(array: { offset: number, lvlCurve: string, asc: number[] }): Node {
+    return sum(array.offset, subscript(input.char.level, charCurves[array.lvlCurve]), subscript(input.char.ascension, array.asc))
   }
 
   return {
     number: mergeDataComponents([{
       base: {
         hp: curve(hp), atk: curve(atk), def: curve(def),
-        [special.stat]: subscript(input.char.ascension, special.ascCurve),
+        [special.stat]: subscript(input.char.ascension, special.asc),
       },
       premod: {
         critRate_: constant(0.05),
@@ -78,7 +84,7 @@ export function dataObjForCharacterSheet(
 }
 export function dataObjForWeaponSheet(
   key: WeaponKey, type: WeaponTypeKey,
-  stats: { stat: MainStatKey | SubstatKey, offset?: number, lvlCurve?: number[], refinementCurve?: number[], ascCurve?: number[] }[],
+  stats: { stat: MainStatKey | SubstatKey, offset?: number, lvlCurve?: string, refinement?: number[], asc?: number[] }[],
   additional: Data["number"] = {},
 ): Data {
   const result: Data = {
@@ -100,10 +106,10 @@ export function dataObjForWeaponSheet(
       result.number[stat] = value
   }
 
-  for (const { stat, offset, lvlCurve, refinementCurve, ascCurve } of stats) {
+  for (const { stat, offset, lvlCurve, refinement: refinementCurve, asc: ascCurve } of stats) {
     const nodes: Node[] = []
     if (offset) nodes.push(constant(offset))
-    if (lvlCurve) nodes.push(subscript(input.weapon.level, lvlCurve))
+    if (lvlCurve) nodes.push(subscript(input.weapon.level, weaponCurves[lvlCurve]))
     if (refinementCurve) nodes.push(subscript(input.weapon.refinement, refinementCurve))
     if (ascCurve) nodes.push(subscript(input.weapon.ascension, ascCurve))
 
