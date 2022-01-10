@@ -6,7 +6,7 @@ import { ICachedWeapon } from "../Types/weapon";
 import _weaponCurves from "../Weapon/expCurve_gen.json";
 import { common, input, str } from "./index";
 import { constant } from "./internal";
-import { Data, Node, ReadNode, StringReadNode } from "./type";
+import { Data, Node, NumFormulaTemplate, ReadNode, StringFormulaTemplate, StringReadNode } from "./type";
 import { data, prod, stringConst, subscript, sum } from "./utils";
 
 // TODO: Remove this conversion
@@ -214,7 +214,7 @@ export function computeData(data: Data[]): ComputedValues {
     }
   }
 }
-export function displaysFromNodes(nodes: Data, values: ComputedValues): NodeDisplays {
+export function displaysFromNodes(nodes: Data, values: ComputedValues): NumFormulaTemplate<NodeDisplay> {
   return {
     total: {
       atk: {
@@ -230,17 +230,8 @@ export function displaysFromNodes(nodes: Data, values: ComputedValues): NodeDisp
 }
 
 export interface ComputedValues {
-  number: ComputedNumValues
-  string: ComputedStringValues
-}
-export interface ComputedNumValues {
-  [key: string]: typeof key extends "operation" ? undefined : ComputedNumValues | number
-}
-export interface ComputedStringValues {
-  [key: string]: typeof key extends "operation" ? undefined : ComputedStringValues | number
-}
-export interface NodeDisplays {
-  [key: string]: typeof key extends "operation" ? undefined : NodeDisplays | NodeDisplay
+  number: NumFormulaTemplate<number>
+  string: StringFormulaTemplate<string>
 }
 
 interface NodeDisplay {

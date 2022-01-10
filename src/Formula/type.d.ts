@@ -68,7 +68,7 @@ export interface Data {
 }
 type Stat = MainStatKey | SubstatKey
 type DMGBonus = "normal" | "charge" | "plunge" | "skill" | "burst"
-interface NumFormulaTemplate<T extends Node = Node> {
+export interface NumFormulaTemplate<T = Node> {
   base?: { atk?: T, hp?: T, def?: T, }
   premod?: { [key in Stat | DMGBonus]?: T }
   postmod?: { [key in Stat | DMGBonus]?: T }
@@ -93,7 +93,7 @@ interface NumFormulaTemplate<T extends Node = Node> {
   }
   conditional?: NodeData
 }
-interface StringFormulaTemplate<T extends StringNode = StringNode> {
+export interface StringFormulaTemplate<T = StringNode> {
   char?: { key?: T, element?: T }
   weapon?: { key?: T, type?: T }
   dmg?: { element?: T, reaction?: T, move?: T, critType?: T }
