@@ -1,9 +1,8 @@
-import { transformativeReactionLevelMultipliers } from "../StatConstants"
-import { allMainStatKeys, allSubstats, MainStatKey, SubstatKey } from "../Types/artifact"
-import { allArtifactSets, allElementsWithPhy, ArtifactSetKey } from "../Types/consts"
+import { allMainStatKeys, allSubstats } from "../Types/artifact"
+import { allArtifactSets } from "../Types/consts"
 import { objectFromKeyMap } from "../Util/Util"
-import { ConstantNode, Data, Node, NumFormulaTemplate, ReadNode, StringFormulaTemplate, StringNode, StringReadNode } from "./type"
-import { frac, prod, res, subscript, sum, min, max, read, setReadNodeKeys, stringRead } from "./utils"
+import { ConstantNode, Node, NumFormulaTemplate, ReadNode, StringFormulaTemplate, StringReadNode } from "./type"
+import { frac, prod, sum, min, max, read, setReadNodeKeys, stringRead } from "./utils"
 
 const allStats = [...allMainStatKeys, ...allSubstats] as const
 const unit: ConstantNode = { operation: "const", value: 1, info: { unit: "%" }, operands: [] }
@@ -44,7 +43,7 @@ const rd = setReadNodeKeys({
     auto: read("add"), skill: read("add"), burst: read("add"),
     level: read("unique"), constellation: read("unique"), ascension: read("unique"),
   },
-  weapon: { level: read("unique"), refinement: read("unique"), },
+  weapon: { level: read("unique"), refinement: read("unique"), ascension: read("unique") },
 
   hit: {
     base: read("add"),
@@ -104,11 +103,10 @@ function typecheck<K, T extends K>() { }
 
 // Make sure we don't add anything outside of `Data` while maintaining precise typing
 type DeepRequired<T, Element> = T extends Element ? Element : { [key in keyof T]-?: DeepRequired<T[key], Element> }
-type ReplaceLeaves<T, Element, NewElement> = Element extends T ? NewElement : { [key in keyof T]: ReplaceLeaves<T[key], Element, NewElement> }
 typecheck<typeof str, DeepRequired<StringFormulaTemplate<StringReadNode>, StringReadNode>>()
 typecheck<typeof rd, DeepRequired<NumFormulaTemplate<ReadNode>, ReadNode>>()
 typecheck<typeof common, DeepRequired<NumFormulaTemplate<Node>, Node>>()
 
 export {
-  rd as input, common
+  rd as input, common, str
 }

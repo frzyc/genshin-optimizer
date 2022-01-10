@@ -58,19 +58,23 @@ export interface StringReadNode extends StringNodeBase {
   operation: "read"
   key: Path<StringNodeData, string | undefined>
   suffix?: StringNode
+
+  accumulation?: never
 }
 
 export interface Data {
   number: NumFormulaTemplate
   string: StringFormulaTemplate
 }
+type Stat = MainStatKey | SubstatKey
+type DMGBonus = "normal" | "charge" | "plunge" | "skill" | "burst"
 interface NumFormulaTemplate<T extends Node = Node> {
   base?: { atk?: T, hp?: T, def?: T, }
-  premod?: { [key in MainStatKey | SubstatKey]?: T }
-  postmod?: { [key in MainStatKey | SubstatKey]?: T }
-  total?: { [key in MainStatKey | SubstatKey | "cappedCritRate"]?: T }
+  premod?: { [key in Stat | DMGBonus]?: T }
+  postmod?: { [key in Stat | DMGBonus]?: T }
+  total?: { [key in Stat | "cappedCritRate" | DMGBonus]?: T }
 
-  art?: { [key in MainStatKey | SubstatKey | "" /** TODO: Replace this with ArtifactSetKey once we add them back */]?: T }
+  art?: { [key in Stat | "" /** TODO: Replace this with ArtifactSetKey once we add them back */]?: T }
   char?: { [key in "level" | "constellation" | "ascension" | "auto" | "skill" | "burst"]?: T }
   weapon?: { [key in "level" | "ascension" | "refinement"]?: T }
   enemy?: {
@@ -78,11 +82,15 @@ interface NumFormulaTemplate<T extends Node = Node> {
     level?: T, def?: T, defRed?: T
   }
 
+  display?: {
+    [key in "normal" | "charge" | "plunge" | "skill" | "burst"]?: { [key in string]?: T }
+  }
+
   hit?: {
     dmg?: T, base?: T, dmgBonus?: T
     amp?: { reactionMulti?: T, multi?: T, base?: T, }
     critValue?: { [key in "byType" | "base" | "crit" | "avg"]?: T }
-  },
+  }
   conditional?: NodeData
 }
 interface StringFormulaTemplate<T extends StringNode = StringNode> {
