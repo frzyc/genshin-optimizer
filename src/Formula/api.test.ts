@@ -1,12 +1,16 @@
 import { common, input } from "./index";
 import { computeData, dataObjForArtifact, dataObjForArtifactSheets, dataObjForCharacter, dataObjForCharacterSheet, dataObjForWeapon, dataObjForWeaponSheet, dmgNode, mergeData } from "./api";
-import charCurves from "../Character/expCurve_gen.json"
-import weaponCurves from "../Weapon/expCurve_gen.json"
+import _charCurves from "../Character/expCurve_gen.json"
+import _weaponCurves from "../Weapon/expCurve_gen.json"
 import data_gen from "../Data/Characters/Sucrose/data_gen.json"
 import moonglow_data from "../Data/Weapons/Catalyst/EverlastingMoonglow/data_gen.json"
 import { absorbableEle } from "../Data/Characters/dataUtil";
 import { prod, threshold_add } from "./utils";
 import { constant } from "./internal";
+
+// TODO: Remove this conversion
+const charCurves = Object.fromEntries(Object.entries(_charCurves).map(([key, value]) => [key, [0, ...Object.values(value)]]))
+const weaponCurves = Object.fromEntries(Object.entries(_weaponCurves).map(([key, value]) => [key, [0, ...Object.values(value)]]))
 
 export const data = {
   normal: {
@@ -56,8 +60,16 @@ const charSheetData = dataObjForCharacterSheet("Sucrose", "anemo",
     },
   },
   {
+    // TODO: include
+    // Teambuff: A1, A4,
+    // Misc: C1, C2, C4, C6
+    char: {
+      skill: threshold_add(input.char.ascension, 3, 3),
+      burst: threshold_add(input.char.ascension, 5, 3),
+    },
     postmod: {
-      eleMas: threshold_add(input.char.ascension, 2, prod(0.2, input.premod.eleMas))
+      // TODO: Add conditional
+      eleMas: threshold_add(input.char.constellation, 6, prod(0.2, input.premod.eleMas)),
     }
   }
 )
