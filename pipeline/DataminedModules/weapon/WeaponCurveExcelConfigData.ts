@@ -108,7 +108,7 @@ export type WeaponExpCurveData = Record<WeaponGrowCurveKey, { [level: number]: n
 const weaponCurveExcelConfigData = {} as WeaponExpCurveData
 weaponCurveExcelConfigDataSrc.forEach(({ Level, CurveInfos }) =>
   CurveInfos.forEach(({ Type, Value }) => {
-    if (!weaponCurveExcelConfigData[Type]) weaponCurveExcelConfigData[Type] = [0]
+    if (!weaponCurveExcelConfigData[Type]) weaponCurveExcelConfigData[Type] = {} // TODO: [0]
     weaponCurveExcelConfigData[Type][Level] = extrapolateFloat(Value)
   }))
 
