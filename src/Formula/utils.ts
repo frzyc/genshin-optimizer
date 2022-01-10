@@ -5,38 +5,38 @@ import type { ComputeNode, Data, DataNode, Info, Node, ReadNode, StringConstantN
 export const todo: Node = { operation: "const", value: NaN, operands: [] }
 
 /** min( x1, x2, ... ) */
-export function min(...values: (number | Node)[]): ComputeNode {
+export function min(...values: (number | Node)[]): Node {
   return { operation: "min", operands: intoOperands(values) }
 }
 /** max( x1, x2, ... ) */
-export function max(...values: (number | Node)[]): ComputeNode {
+export function max(...values: (number | Node)[]): Node {
   return { operation: "max", operands: intoOperands(values) }
 }
 /** x1 + x2 + ... */
-export function sum(...values: (number | Node)[]): ComputeNode {
+export function sum(...values: (number | Node)[]): Node {
   return { operation: "add", operands: intoOperands(values) }
 }
 /** x1 * x2 * ... */
-export function prod(...values: (number | Node)[]): ComputeNode {
+export function prod(...values: (number | Node)[]): Node {
   return { operation: "mul", operands: intoOperands(values) }
 }
 /** x / (x + c) */
-export function frac(x: number | Node, c: number | Node): ComputeNode {
+export function frac(x: number | Node, c: number | Node): Node {
   return { operation: "sum_frac", operands: intoOperands([x, c]) }
 }
 /** value >= threshold ? addition : 0 */
-export function threshold_add(value: number | Node, threshold: number | Node, addition: number | Node): ComputeNode {
+export function threshold_add(value: number | Node, threshold: number | Node, addition: number | Node): Node {
   return { operation: "threshold_add", operands: intoOperands([value, threshold, addition]) }
 }
 /** list[index] */
-export function subscript(index: Node, list: number[], info?: Info): SubscriptNode {
+export function subscript(index: Node, list: number[], info?: Info): Node {
   if (list.some((value, i, array) => i !== 0 && array[i - 1] > value))
     // We use this fact primarily for *diffing*
     throw new Error("Formula Construction Failure: subscription list must be sorted in ascending order")
   return { operation: "subscript", operands: [index], list, info }
 }
 
-export function res(base: number | Node): ComputeNode {
+export function res(base: number | Node): Node {
   return { operation: "res", operands: intoOperands([base]) }
 }
 

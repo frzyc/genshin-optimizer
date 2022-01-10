@@ -1,11 +1,11 @@
-import { input } from "./index";
+import { common, input } from "./index";
 import { allMainStatKeys, allSubstats, ICachedArtifact, MainStatKey, SubstatKey } from "../Types/artifact";
 import { ICachedCharacter } from "../Types/character";
 import { ICachedWeapon } from "../Types/weapon";
 import { constant } from "./internal";
 import { Data, Node } from "./type";
-import { stringConst, subscript, sum } from "./utils";
-import { CharacterKey, ElementKey, ElementKeyWithPhy, WeaponKey, WeaponTypeKey } from "../Types/consts";
+import { data, prod, stringConst, subscript, sum } from "./utils";
+import { CharacterKey, ElementKeyWithPhy, WeaponKey, WeaponTypeKey } from "../Types/consts";
 
 function dataObjForArtifactSheets(): Data {
   const result = {
@@ -21,6 +21,15 @@ function dataObjForArtifactSheets(): Data {
   }
 
   return result
+}
+function dmgNode(base: MainStatKey, lvlMultiplier: number[]): Node {
+  return data(common.hit.dmg, [{
+    number: {
+      hit: {
+        base: prod(input.total[base], subscript(input.char.level, lvlMultiplier)),
+      },
+    }, string: {}
+  }])
 }
 function dataObjForCharacterSheet(
   key: CharacterKey,
@@ -39,7 +48,7 @@ function dataObjForCharacterSheet(
         def: sum(def[0], subscript(input.char.level, def[1])),
         [special[2]]: sum(special[0], subscript(input.char.level, special[1])),
       },
-      preMod: {
+      premod: {
         critRate_: constant(0.05),
         critDMG_: constant(0.5),
         enerRech_: constant(1),
@@ -57,7 +66,8 @@ function dataObjForWeaponSheet(
   key: WeaponKey, type: WeaponTypeKey,
   lvlStats: [offset: number, curve: number[], stat: MainStatKey | SubstatKey][],
   rankStats: [offset: number, curve: number[], stat: MainStatKey | SubstatKey][],
-  additional: Data): Data {
+  additional: Data["number"] = {},
+): Data {
   const result = {
     number: {}, string: {
       weapon: {
@@ -81,7 +91,7 @@ function dataObjForWeaponSheet(
   for (const [offset, curve, stat] of lvlStats)
     addStat(sum(offset, subscript(input.weapon.level, curve)), stat)
   for (const [offset, curve, stat] of rankStats)
-    addStat(sum(offset, subscript(input.weapon.rank, curve)), stat)
+    addStat(sum(offset, subscript(input.weapon.refinement, curve)), stat)
 
   // TODO: Add `additional`
 
@@ -112,7 +122,9 @@ function dataObjForCharacter(char: ICachedCharacter): Data {
         skill: constant(char.talent.skill),
         burst: constant(char.talent.burst),
       },
-      // TODO: Add conditional values
+      conditional: {
+        // TODO: Add conditional values
+      }
     },
     string: {
       char: {

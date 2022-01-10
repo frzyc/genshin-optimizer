@@ -1,4 +1,5 @@
-import { ElementKey, ReactionModeKey } from "../Types/consts"
+import { MainStatKey, SubstatKey } from "../Types/artifact"
+import { ArtifactSetKey, ElementKey, ElementKeyWithPhy, ReactionModeKey } from "../Types/consts"
 import type { Path } from "../Util/KeyPathUtil"
 
 export type Node =
@@ -60,13 +61,39 @@ export interface StringReadNode extends StringNodeBase {
 }
 
 export interface Data {
-  number: NodeData
-  string: StringNodeData
+  number: NumFormulaTemplate
+  string: StringFormulaTemplate
 }
-export interface NodeData {
+interface NumFormulaTemplate<T extends Node = Node> {
+  base?: { atk?: T, hp?: T, def?: T, }
+  premod?: { [key in MainStatKey | SubstatKey]?: T }
+  postmod?: { [key in MainStatKey | SubstatKey]?: T }
+  total?: { [key in MainStatKey | SubstatKey | "cappedCritRate"]?: T }
+
+  art?: { [key in MainStatKey | SubstatKey | "" /** TODO: Replace this with ArtifactSetKey once we add them back */]?: T }
+  char?: { [key in "level" | "constellation" | "ascension" | "auto" | "skill" | "burst"]?: T }
+  weapon?: { [key in "level" | "ascension" | "refinement"]?: T }
+  enemy?: {
+    res?: { [key in "byElement" | ElementKeyWithPhy]?: T }
+    level?: T, def?: T, defRed?: T
+  }
+
+  hit?: {
+    dmg?: T, base?: T, dmgBonus?: T
+    amp?: { reactionMulti?: T, multi?: T, base?: T, }
+    critValue?: { [key in "byType" | "base" | "crit" | "avg"]?: T }
+  },
+  conditional?: NodeData
+}
+interface StringFormulaTemplate<T extends StringNode = StringNode> {
+  char?: { key?: T, element?: T }
+  weapon?: { key?: T, type?: T }
+  dmg?: { element?: T, reaction?: T, move?: T, critType?: T }
+}
+interface NodeData {
   [key: string]: typeof key extends "operation" ? undefined : NodeData | Node
 }
-export interface StringNodeData {
+interface StringNodeData {
   [key: string]: typeof key extends "operation" ? undefined : StringNodeData | StringNode
 }
 

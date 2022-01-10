@@ -1,8 +1,8 @@
 import { transformativeReactionLevelMultipliers } from "../StatConstants"
-import { allMainStatKeys, allSubstats } from "../Types/artifact"
-import { allArtifactSets, allElementsWithPhy } from "../Types/consts"
+import { allMainStatKeys, allSubstats, MainStatKey, SubstatKey } from "../Types/artifact"
+import { allArtifactSets, allElementsWithPhy, ArtifactSetKey } from "../Types/consts"
 import { objectFromKeyMap } from "../Util/Util"
-import type { ConstantNode, Data, ReadNode } from "./type"
+import { ConstantNode, Data, Node, NumFormulaTemplate, ReadNode, StringFormulaTemplate, StringNode, StringReadNode } from "./type"
 import { frac, prod, res, subscript, sum, min, max, read, setReadNodeKeys, stringRead } from "./utils"
 
 const allStats = [...allMainStatKeys, ...allSubstats] as const
@@ -10,8 +10,14 @@ const unit: ConstantNode = { operation: "const", value: 1, info: { unit: "%" }, 
 
 // All string read nodes
 const str = setReadNodeKeys({
-  character: stringRead(),
-  weaponType: stringRead(),
+  char: {
+    key: stringRead(),
+    element: stringRead(),
+  },
+  weapon: {
+    key: stringRead(),
+    type: stringRead(),
+  },
   dmg: {
     element: stringRead(),
     reaction: stringRead(),
@@ -38,7 +44,7 @@ const rd = setReadNodeKeys({
     auto: read("add"), skill: read("add"), burst: read("add"),
     level: read("unique"), constellation: read("unique"), ascension: read("unique"),
   },
-  weapon: { level: read("unique"), rank: read("unique"), },
+  weapon: { level: read("unique"), refinement: read("unique"), },
 
   hit: {
     base: read("add"),
@@ -49,12 +55,6 @@ const rd = setReadNodeKeys({
     },
   },
 
-  trans: {
-    dmg: read("add"),
-    reactionMulti: read("unique"),
-    base: read("add"),
-    lvlMulti: read("unique"),
-  },
   enemy: {
     res: { byElement: read("unique", undefined, str.dmg.element), },
     level: read("unique"),
@@ -63,20 +63,17 @@ const rd = setReadNodeKeys({
   },
 })
 
-const { base, premod, total, char, hit, trans, enemy, } = rd
+const { base, premod, postmod, total, char, hit, enemy, } = rd
 
 const common = {
   premod: objectFromKeyMap(["atk", "def", "hp"] as const,
     key => prod(base[key], premod[`${key}_` as const])),
   postmod: {
-    ...objectFromKeyMap(allStats, key => premod[key]),
-    cappedCritRate: max(min(total.critRate_, unit), 0),
+    ...objectFromKeyMap(allStats, key => premod[key] as Node),
   },
-
-  trans: {
-    dmg: prod(trans.reactionMulti, trans.base, trans.lvlMulti, enemy.res.byElement),
-    base: sum(unit, prod(16, frac(total.eleMas, 2000))),
-    lvlMulti: subscript(char.level, transformativeReactionLevelMultipliers),
+  total: {
+    ...objectFromKeyMap(allStats, key => postmod[key] as Node),
+    cappedCritRate: max(min(postmod.critRate_, unit), 0),
   },
 
   hit: {
@@ -88,8 +85,8 @@ const common = {
       enemy.res.byElement,
       hit.amp.multi),
     critValue: {
-      base: unit,
-      dmg: sum(unit, total.critDMG_),
+      base: unit as Node,
+      crit: sum(unit, total.critDMG_),
       avg: sum(unit, prod(total.cappedCritRate, total.critDMG_)),
     },
     amp: {
@@ -102,6 +99,15 @@ const common = {
     def: frac(sum(char.level, 100), prod(sum(enemy.level, 100), sum(1, prod(-1, enemy.defRed))))
   }
 } as const
+
+function typecheck<K, T extends K>() { }
+
+// Make sure we don't add anything outside of `Data` while maintaining precise typing
+type DeepRequired<T, Element> = T extends Element ? Element : { [key in keyof T]-?: DeepRequired<T[key], Element> }
+type ReplaceLeaves<T, Element, NewElement> = Element extends T ? NewElement : { [key in keyof T]: ReplaceLeaves<T[key], Element, NewElement> }
+typecheck<typeof str, DeepRequired<StringFormulaTemplate<StringReadNode>, StringReadNode>>()
+typecheck<typeof rd, DeepRequired<NumFormulaTemplate<ReadNode>, ReadNode>>()
+typecheck<typeof common, DeepRequired<NumFormulaTemplate<Node>, Node>>()
 
 export {
   rd as input, common
