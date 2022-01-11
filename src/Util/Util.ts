@@ -116,6 +116,11 @@ export function objectFromKeyMap<K extends string | number, V>(keys: readonly K[
   return Object.fromEntries(keys.map(k => [k, map(k)])) as any
 }
 
+export const objectMap = <K extends string, V, T>(obj: Record<K, V>, fn: (value: V, key: K extends number ? string : K, index: number) => T) =>
+  Object.fromEntries(Object.entries(obj).map(
+    ([k, v], i) => [k, fn(v, k, i)]
+  ))
+
 const rangeGen = function* (from, to) {
   for (let i = from; i <= to; i++) yield i;
 };

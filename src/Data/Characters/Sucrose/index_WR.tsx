@@ -206,26 +206,22 @@ const sheet: ICharacterSheet = {
         img: passive2,
         sections: [{
           text: tr("passive2.description"),
-          // conditional: { // TODO: conditional with modifiers
-          //   key: "a4",
-          //   canShow: stats => stats.ascension >= 4,
-          //   partyBuff: "partyOnly",
-          //   header: conditionalHeader("passive2", tr, passive2),
-          //   description: tr("passive2.description"),
-          //   name: "When Skill hits opponent",
-          //   stats: {
-          //     modifiers: { eleMas: [path.passive2.em()] },
-          //   },
-          //   fields: [{
-          //     text: "Elemental Mastery Bonus",
-          //     formulaText: stats => <span>20% {Stat.printStat("eleMas", stats, true)}</span>,
-          //     formula: formula.passive2.em
-          //   }, {
-          //     text: sgt("duration"),
-          //     value: 8,
-          //     unit: "s"
-          //   }]
-          // }
+          conditional: {
+            key: "a4",
+            canShow: stats => stats.ascension >= 4,
+            partyBuff: "partyOnly",
+            header: conditionalHeader("passive2", tr, passive2),
+            description: tr("passive2.description"),
+            name: "When Skill hits opponent",
+            fields: [{
+              text: "Elemental Mastery Bonus",
+              formula: ["number", "postmod", "eleMas"]
+            }, {
+              text: sgt("duration"),
+              value: 8,
+              unit: "s"
+            }]
+          }
         }]
       },
       passive3: talentTemplate("passive3", tr, passive3),
