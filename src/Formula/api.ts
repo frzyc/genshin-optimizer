@@ -213,11 +213,6 @@ function computeData(dataList: Data[]): ComputedValues {
       }))
 
   const results = optimize(nodeArray, dataList, _ => true).map(x => formulaString(x))
-  const exclude = new Set(["premod", "postmod", "art"])
-  console.log(results.flatMap((value, i) => {
-    if (exclude.has(nodeArray[i].key[0])) return []
-    return [`${nodeArray[i].key}, ${value}`]
-  }))
 
   return {
     number: {
