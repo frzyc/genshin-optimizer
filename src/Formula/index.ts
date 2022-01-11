@@ -1,3 +1,4 @@
+import { hitMoves } from "../StatConstants"
 import { allMainStatKeys, allSubstats } from "../Types/artifact"
 import { allArtifactSets, allElementsWithPhy, allHitModes } from "../Types/consts"
 import { objectFromKeyMap } from "../Util/Util"
@@ -74,7 +75,7 @@ const common = {
     premod: {
       ...objectFromKeyMap(allStats, key => {
         if (key === "atk" || key === "def" || key === "hp")
-          return sum(prod(base[key], premod[`${key}_` as const]), art[key])
+          return sum(prod(base[key], sum(unit, premod[`${key}_` as const])), art[key])
         if (key === "critRate_") return sum(0.05, art[key])
         if (key === "critDMG_") return sum(0.5, art[key])
         if (key === "enerRech_") return sum(1, art[key])

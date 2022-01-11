@@ -1,13 +1,20 @@
 import _charCurves from "../Character/expCurve_gen.json";
 import { ICachedArtifact, MainStatKey, SubstatKey } from "../Types/artifact";
 import { ICachedCharacter } from "../Types/character";
-import { CharacterKey, ElementKeyWithPhy, WeaponKey, WeaponTypeKey } from "../Types/consts";
+import { allElementsWithPhy, CharacterKey, ElementKeyWithPhy, WeaponKey, WeaponTypeKey } from "../Types/consts";
 import { ICachedWeapon } from "../Types/weapon";
+import { crawlObject, layeredAssignment, objectFromKeyMap } from "../Util/Util";
 import _weaponCurves from "../Weapon/expCurve_gen.json";
-import { common, input, NumInput, str, StringInput } from "./index";
+import { formulaString } from "./debug";
+import { input, NumInput, str, StringInput } from "./index";
 import { constant } from "./internal";
+import { optimize } from "./optimization";
 import { Data, Node, ReadNode, StringReadNode } from "./type";
-import { data, prod, stringConst, subscript, sum } from "./utils";
+import { customRead, data, prod, stringConst, subscript, sum } from "./utils";
+
+const readNodeArrays: ReadNode[] = []
+crawlObject(input, [], (x: any) => x.operation, (x: any) => readNodeArrays.push(x))
+
 
 // TODO: Remove this conversion
 const charCurves = Object.fromEntries(Object.entries(_charCurves).map(([key, value]) => [key, [0, ...Object.values(value)]]))
@@ -16,26 +23,7 @@ const weaponCurves = Object.fromEntries(Object.entries(_weaponCurves).map(([key,
 function dataObjForArtifactSheets(): Data {
   // TODO: Add Artifact set effects
   return {
-    number: {
-      premod: {
-        hp: input.art.hp,
-        atk: input.art.atk,
-        def: input.art.def,
-        eleMas: input.art.eleMas,
-        enerRech_: input.art.enerRech_,
-        critRate_: input.art.critRate_,
-        critDMG_: input.art.critDMG_,
-        heal_: input.art.heal_,
-
-        physical_dmg_: input.art.physical_dmg_,
-        anemo_dmg_: input.art.anemo_dmg_,
-        geo_dmg_: input.art.geo_dmg_,
-        electro_dmg_: input.art.electro_dmg_,
-        hydro_dmg_: input.art.hydro_dmg_,
-        pyro_dmg_: input.art.pyro_dmg_,
-        cryo_dmg_: input.art.cryo_dmg_,
-      },
-    }, string: {}
+    number: {}, string: {}
   }
 }
 function dmgNode(base: MainStatKey, lvlMultiplier: number[], move: "normal" | "charged" | "plunging" | "skill" | "burst", additional: Data["number"] = {}): Node {
@@ -54,15 +42,15 @@ function dmgNode(base: MainStatKey, lvlMultiplier: number[], move: "normal" | "c
 function dataObjForCharacterSheet(
   key: CharacterKey,
   element: ElementKeyWithPhy | undefined,
-  hp: { offset: number, lvlCurve: string, asc: number[] },
-  atk: { offset: number, lvlCurve: string, asc: number[] },
-  def: { offset: number, lvlCurve: string, asc: number[] },
-  special: { asc: number[], stat: MainStatKey | SubstatKey },
+  hp: { base: number, lvlCurve: string, asc: number[] },
+  atk: { base: number, lvlCurve: string, asc: number[] },
+  def: { base: number, lvlCurve: string, asc: number[] },
+  special: { stat: MainStatKey | SubstatKey, asc: number[] },
   display: Data["number"]["display"],
   additional: Data["number"] = {},
 ): Data {
-  function curve(array: { offset: number, lvlCurve: string, asc: number[] }): Node {
-    return sum(array.offset, subscript(input.char.lvl, charCurves[array.lvlCurve]), subscript(input.char.asc, array.asc))
+  function curve(array: { base: number, lvlCurve: string, asc: number[] }): Node {
+    return sum(prod(array.base, subscript(input.char.lvl, charCurves[array.lvlCurve])), subscript(input.char.asc, array.asc))
   }
 
   return {
@@ -82,11 +70,14 @@ function dataObjForCharacterSheet(
 }
 function dataObjForWeaponSheet(
   key: WeaponKey, type: WeaponTypeKey,
-  stats: { stat: MainStatKey | SubstatKey, offset?: number, lvlCurve?: string, refinement?: number[], asc?: number[] }[],
+  baseAtkStat: { base?: number, lvlCurve?: string, refinement?: number[], asc?: number[] },
+  stats: { stat: MainStatKey | SubstatKey, base?: number, lvlCurve?: string, refinement?: number[], asc?: number[] }[],
   additional: Data["number"] = {},
 ): Data {
   const result: Data = {
-    number: {}, string: {
+    number: {
+      premod: {},
+    }, string: {
       weapon: {
         key: stringConst(key),
         type: stringConst(type),
@@ -94,16 +85,24 @@ function dataObjForWeaponSheet(
     }
   }
 
-  for (const { stat, offset, lvlCurve, refinement, asc } of stats) {
+  function getNode(value: { base?: number, lvlCurve?: string, refinement?: number[], asc?: number[] }): Node | undefined {
+    const { base, lvlCurve, refinement, asc } = value
     const nodes: Node[] = []
-    if (offset) nodes.push(constant(offset))
-    if (lvlCurve) nodes.push(subscript(input.weapon.lvl, weaponCurves[lvlCurve]))
+    if (base && lvlCurve)
+      nodes.push(prod(constant(base), subscript(input.weapon.lvl, weaponCurves[lvlCurve])))
     if (refinement) nodes.push(subscript(input.weapon.refineIndex, refinement))
     if (asc) nodes.push(subscript(input.weapon.asc, asc))
 
-    if (nodes.length === 0) continue
-    if (nodes.length === 1) result.number[stat] = nodes[0]
-    else result.number[stat] = sum(...nodes)
+    if (nodes.length === 0) return undefined
+    return nodes.length === 1 ? nodes[0] : sum(...nodes)
+  }
+
+  const baseAtkNode = getNode(baseAtkStat)
+  if (baseAtkNode) result.number.base = { atk: baseAtkNode }
+
+  for (const stat of stats) {
+    const node = getNode(stat)
+    if (node) result.number.premod![stat.stat] = node
   }
 
   result.number = mergeDataComponents([result.number, additional], input)
@@ -134,16 +133,27 @@ function dataObjForCharacter(char: ICachedCharacter): Data {
         skill: constant(char.talent.skill),
         burst: constant(char.talent.burst),
       },
+      // TODO: override enemy stats
+      enemy: {
+        res: {
+          ...objectFromKeyMap(allElementsWithPhy, _ => {
+            return constant(0.1)
+          }),
+        },
+        level: constant(char.level),
+      },
       conditional: {
         // TODO: Add conditional values
       }
     },
     string: {
       char: {
-        key: stringConst(char.key),
         // TODO: Check when char.elementKey can be null
-        ...(char.elementKey ? { element: stringConst(char.elementKey) } : {})
+        ...(char.elementKey ? { ele: stringConst(char.elementKey) } : {})
       },
+      dmg: {
+        hitMode: stringConst(char.hitMode)
+      }
     },
   }
 }
@@ -172,10 +182,10 @@ function mergeDataComponents<T extends Data["number" | "string"]>(data: T[], rea
       const accumulation = readNode.accumulation ?? "unique"
 
       if (accumulation === "unique")
-        if (data.length > 1) throw "Found multiple entries for unique read node"
+        if (data.length > 1) throw `Found multiple entries for unique read node ${readNode.key}`
         else return data[0]
 
-      return { ...readNode, accumulation, operands: data }
+      return { ...readNode, operation: accumulation, operands: data }
     }
 
     return Object.fromEntries([...new Set(data.flatMap(x => Object.keys(x)) as string[])]
@@ -190,7 +200,25 @@ function mergeData(...data: Data[]): Data {
     string: mergeDataComponents(data.map(x => x.string), str),
   }
 }
-function computeData(data: Data[]): ComputedValues {
+function computeData(dataList: Data[]): ComputedValues {
+  const nodes = { ...input, conditional: {}, display: {} }
+  const nodeArray: ReadNode[] = [...readNodeArrays]
+
+  for (const prefix of ["conditional", "display"])
+    dataList.map(x => x.number[prefix]).forEach(data =>
+      crawlObject(data ?? {}, [prefix], (x: any) => x.operation, (_: any, keys: string[]) => {
+        const readNode = customRead(keys)
+        layeredAssignment(nodes, keys, readNode)
+        nodeArray.push(readNode)
+      }))
+
+  const results = optimize(nodeArray, dataList, _ => true).map(x => formulaString(x))
+  const exclude = new Set(["premod", "postmod", "art"])
+  console.log(results.flatMap((value, i) => {
+    if (exclude.has(nodeArray[i].key[0])) return []
+    return [`${nodeArray[i].key}, ${value}`]
+  }))
+
   return {
     number: {
       total: {

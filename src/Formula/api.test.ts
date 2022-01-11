@@ -1,7 +1,9 @@
-import { dataObjForArtifactSheets, dataObjForCharacter, dataObjForWeapon } from "./api";
+import { dataObjForArtifactSheets, dataObjForCharacter, dataObjForWeapon, computeData, dataObjForWeaponSheet, mergeData } from "./api";
+import { data as sucroseSheetData } from "../Data/Characters/Sucrose/index_WR"
+import { data as moonGlowData } from "../Data/Weapons/Catalyst/EverlastingMoonglow/index_WR"
+import { common } from "./index";
 
 const artSheetData = dataObjForArtifactSheets()
-
 const charData = dataObjForCharacter({
   equippedArtifacts: { "circlet": "", "flower": "", "goblet": "", "plume": "", "sands": "" },
   equippedWeapon: "",
@@ -37,6 +39,6 @@ const merged2 = mergeData(merged1, artData, weaponData)
 */
 describe("API", () => {
   test("Sucrose", () => {
-    console.log(artSheetData)
+    console.log(computeData([common, sucroseSheetData, moonGlowData, weaponData, charData]))
   })
 })
