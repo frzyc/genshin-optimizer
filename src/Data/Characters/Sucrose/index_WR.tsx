@@ -56,7 +56,7 @@ export const data = dataObjForCharacterSheet("Sucrose", "anemo",
   { offset: data_gen.base.hp, lvlCurve: data_gen.curves.hp, asc: data_gen.ascensions.map(x => x.props.hp) },
   { offset: data_gen.base.atk, lvlCurve: data_gen.curves.atk, asc: data_gen.ascensions.map(x => x.props.atk) },
   { offset: data_gen.base.def, lvlCurve: data_gen.curves.def, asc: data_gen.ascensions.map(x => x.props.def) },
-  { asc: data_gen.ascensions.map(x => x.props.anemo_dmg_), stat: "atk" },
+  { stat: "anemo_dmg_", asc: data_gen.ascensions.map(x => x.props.anemo_dmg_) },
   {
     normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
       [i, dmgNode("atk", arr, "normal")])),
