@@ -1,8 +1,8 @@
 import { allMainStatKeys, allSubstats } from "../Types/artifact"
-import { allArtifactSets, allElementsWithPhy } from "../Types/consts"
+import { allArtifactSets, allElementsWithPhy, allHitModes } from "../Types/consts"
 import { objectFromKeyMap } from "../Util/Util"
 import { ConstantNode, Node, ReadNode, StringNode, StringReadNode } from "./type"
-import { frac, prod, sum, min, max, read, setReadNodeKeys, stringRead } from "./utils"
+import { frac, prod, sum, min, max, read, setReadNodeKeys, stringRead, stringPrio } from "./utils"
 
 const allStats = [...allMainStatKeys, ...allSubstats] as const
 const allMoves = ["normal", "charged", "plunging", "skill", "burst"] as const
@@ -10,14 +10,17 @@ const unit: ConstantNode = { operation: "const", value: 1, info: { unit: "%" }, 
 
 // All string read nodes
 const str = setReadNodeKeys({
-  char: objectFromKeyMap(["key", "ele"] as const, _ => stringRead()),
-  weapon: objectFromKeyMap(["key", "type"] as const, _ => stringRead()),
-  dmg: objectFromKeyMap(["ele", "reaction", "move", "critType"] as const, _ => stringRead()),
+  char: { key: stringRead(), ele: stringRead(), infusion: stringRead() },
+  weapon: { key: stringRead(), type: stringRead() },
+  team: { infusion: stringRead() },
+  dmg: {
+    ele: stringRead(), reaction: stringRead(), move: stringRead(), hitMode: stringRead(),
+  },
 })
 
 // All read nodes
 const rd = setReadNodeKeys({
-  base: objectFromKeyMap(["atk", "def", "hp"] as const, _ => read("add")),
+  base: { atk: read("add"), def: read("add"), hp: read("add") },
   premod: objectFromKeyMap(allStats, _ => read("add")),
   postmod: objectFromKeyMap(allStats, _ => read("add")),
   total: {
@@ -39,6 +42,7 @@ const rd = setReadNodeKeys({
     total: read("unique"), common: read("add"),
     byMove: read("unique", undefined, str.dmg.move),
     byElement: read("unique", undefined, str.dmg.ele),
+
     ...objectFromKeyMap(allMoves, _ => read("add")),
     ...objectFromKeyMap(allElementsWithPhy, _ => read("add")),
   },
@@ -46,9 +50,9 @@ const rd = setReadNodeKeys({
   hit: {
     dmg: read("unique"), base: read("add"),
     amp: { reactionMulti: read("add"), multi: read("add"), base: read("add"), },
-    critValue: {
-      byType: read("unique", undefined, str.dmg.critType),
-      ...objectFromKeyMap(["base", "crit", "avg"] as const, _ => read("unique"))
+    critMulti: {
+      byHitMode: read("unique", undefined, str.dmg.hitMode),
+      ...objectFromKeyMap(allHitModes, _ => read("unique"))
     },
   },
 
@@ -63,49 +67,56 @@ const rd = setReadNodeKeys({
   },
 })
 
-const { base, premod, postmod, total, char, hit, dmgBonus, enemy, weapon } = rd
+const { base, art, premod, postmod, total, char, hit, dmgBonus, enemy } = rd
 
 const common = {
-  premod: {
-    ...objectFromKeyMap(["atk", "def", "hp"] as const,
-      key => prod(base[key], premod[`${key}_` as const])),
-    critRate_: { operation: "const", value: 0.05, info: { unit: "%" }, operands: [] } as Node,
-    critDMG_: { operation: "const", value: 0.5, info: { unit: "%" }, operands: [] } as Node,
-    enerRech_: { operation: "const", value: 1, info: { unit: "%" }, operands: [] } as Node,
-  },
-  postmod: {
-    ...objectFromKeyMap(allStats, key => premod[key] as Node),
-  },
-  total: {
-    ...objectFromKeyMap(allStats, key => postmod[key] as Node),
-    cappedCritRate: max(min(postmod.critRate_, unit), 0),
-  },
-
-  dmgBonus: {
-    total: sum(dmgBonus.common, dmgBonus.byMove, dmgBonus.byElement),
-  },
-
-  hit: {
-    dmg: prod(
-      hit.base,
-      sum(unit, dmgBonus.total),
-      hit.critValue.byType,
-      enemy.def,
-      enemy.res.byElement,
-      hit.amp.multi),
-    critValue: {
-      base: unit as Node,
-      crit: sum(unit, total.critDMG_),
-      avg: sum(unit, prod(total.cappedCritRate, total.critDMG_)),
+  number: {
+    premod: {
+      ...objectFromKeyMap(allStats, key => {
+        if (key === "atk" || key === "def" || key === "hp")
+          return sum(prod(base[key], premod[`${key}_` as const]), art[key])
+        if (key === "critRate_") return sum(0.05, art[key])
+        if (key === "critDMG_") return sum(0.5, art[key])
+        if (key === "enerRech_") return sum(1, art[key])
+        else return art[key]
+      }),
     },
-    amp: {
-      multi: prod(hit.amp.reactionMulti, hit.amp.base),
-      base: sum(unit, prod(25 / 9, frac(total.eleMas, 1400))),
+    postmod: objectFromKeyMap(allStats, key => premod[key] as Node),
+    total: {
+      ...objectFromKeyMap(allStats, key => postmod[key] as Node),
+      cappedCritRate: max(min(postmod.critRate_, unit), 0),
     },
-  },
 
-  enemy: {
-    def: frac(sum(char.lvl, 100), prod(sum(enemy.level, 100), sum(1, prod(-1, enemy.defRed))))
+    dmgBonus: {
+      total: sum(dmgBonus.common, dmgBonus.byMove, dmgBonus.byElement),
+    },
+
+    hit: {
+      dmg: prod(
+        hit.base,
+        sum(unit, dmgBonus.total),
+        hit.critMulti.byHitMode,
+        enemy.def,
+        enemy.res.byElement,
+        hit.amp.multi),
+      critMulti: {
+        hit: unit as Node,
+        critHit: sum(unit, total.critDMG_),
+        avgHit: sum(unit, prod(total.cappedCritRate, total.critDMG_)),
+      },
+      amp: {
+        multi: prod(hit.amp.reactionMulti, hit.amp.base),
+        base: sum(unit, prod(25 / 9, frac(total.eleMas, 1400))),
+      },
+    },
+
+    enemy: {
+      def: frac(sum(char.lvl, 100), prod(sum(enemy.level, 100), sum(1, prod(-1, enemy.defRed))))
+    },
+  }, string: {
+    dmg: {
+      ele: stringPrio(str.char.infusion, str.team.infusion)
+    }
   }
 } as const
 
@@ -117,3 +128,10 @@ export type StringInput<T = StringNode> = DeepPartial<typeof str, StringReadNode
 export {
   rd as input, common, str
 }
+
+type DeepReplace<T, Element, NewElement> = T extends Element ? NewElement : { [key in keyof T]: DeepReplace<T[key], Element, NewElement> }
+function typecheck<A, B extends A>() { }
+
+// Make sure that `common` contains only entries matching `rd`.
+typecheck<typeof common["number"], DeepReplace<typeof rd, ReadNode, Node>>()
+typecheck<typeof common["string"], DeepReplace<typeof str, StringReadNode, StringNode>>()

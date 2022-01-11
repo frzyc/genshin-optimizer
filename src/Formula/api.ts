@@ -39,7 +39,7 @@ function dataObjForArtifactSheets(): Data {
   }
 }
 function dmgNode(base: MainStatKey, lvlMultiplier: number[], move: "normal" | "charged" | "plunging" | "skill" | "burst", additional: Data["number"] = {}): Node {
-  return data(common.hit.dmg, [{
+  return data(input.hit.dmg, [{
     number: {
       hit: {
         base: prod(input.total[base], subscript(input.char.lvl, lvlMultiplier)),
