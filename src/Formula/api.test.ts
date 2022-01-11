@@ -1,9 +1,11 @@
-import { dataObjForArtifactSheets, dataObjForCharacter, dataObjForWeapon, computeData, dataObjForWeaponSheet, mergeData } from "./api";
+import { dataObjForArtifactSheets, dataObjForCharacter, dataObjForWeapon, computeData, dataObjForWeaponSheet, mergeData, nodesByArtifactSet } from "./api";
 import { data as sucroseSheetData } from "../Data/Characters/Sucrose/index_WR"
 import { data as moonGlowData } from "../Data/Weapons/Catalyst/EverlastingMoonglow/index_WR"
-import { common } from "./index";
+import { common, input } from "./index";
+import { Data } from "./type";
+import { constant } from "./internal";
 
-const artSheetData = dataObjForArtifactSheets()
+const artSheetData = dataObjForArtifactSheets
 const charData = dataObjForCharacter({
   equippedArtifacts: { "circlet": "", "flower": "", "goblet": "", "plume": "", "sands": "" },
   equippedWeapon: "",
@@ -39,6 +41,14 @@ const merged2 = mergeData(merged1, artData, weaponData)
 */
 describe("API", () => {
   test("Sucrose", () => {
-    console.log(computeData([common, sucroseSheetData, moonGlowData, weaponData, charData]))
+    const setOverride: Data = {
+      number: {
+        art: {
+          EmblemOfSeveredFate: constant(5)
+        }
+      }, string: {}
+    }
+    const computed = computeData(nodesByArtifactSet, [common, sucroseSheetData, moonGlowData, weaponData, charData, setOverride])
+    console.log(computed.EmblemOfSeveredFate)
   })
 })

@@ -66,7 +66,6 @@ export interface StringReadNode extends StringNodeBase {
   accumulation?: never
 }
 
-
 export interface Data {
   number: NumInput & DynamicNumInput
   string: StringInput

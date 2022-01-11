@@ -1,7 +1,7 @@
 import _charCurves from "../Character/expCurve_gen.json";
 import { ICachedArtifact, MainStatKey, SubstatKey } from "../Types/artifact";
 import { ICachedCharacter } from "../Types/character";
-import { allElementsWithPhy, CharacterKey, ElementKeyWithPhy, WeaponKey, WeaponTypeKey } from "../Types/consts";
+import { allArtifactSets, allElementsWithPhy, ArtifactSetKey, CharacterKey, ElementKeyWithPhy, WeaponKey, WeaponTypeKey } from "../Types/consts";
 import { ICachedWeapon } from "../Types/weapon";
 import { crawlObject, layeredAssignment, objectFromKeyMap } from "../Util/Util";
 import _weaponCurves from "../Weapon/expCurve_gen.json";
@@ -9,8 +9,8 @@ import { formulaString } from "./debug";
 import { input, NumInput, str, StringInput } from "./index";
 import { constant } from "./internal";
 import { optimize } from "./optimization";
-import { Data, Node, ReadNode, StringReadNode } from "./type";
-import { customRead, data, prod, stringConst, subscript, sum } from "./utils";
+import { ComputeNode, ConstantNode, Data, Node, NodeData, ReadNode, StringReadNode } from "./type";
+import { customRead, data, max, min, prod, stringConst, subscript, sum, threshold_add } from "./utils";
 
 const readNodeArrays: ReadNode[] = []
 crawlObject(input, [], (x: any) => x.operation, (x: any) => readNodeArrays.push(x))
@@ -20,12 +20,31 @@ crawlObject(input, [], (x: any) => x.operation, (x: any) => readNodeArrays.push(
 const charCurves = Object.fromEntries(Object.entries(_charCurves).map(([key, value]) => [key, [0, ...Object.values(value)]]))
 const weaponCurves = Object.fromEntries(Object.entries(_weaponCurves).map(([key, value]) => [key, [0, ...Object.values(value)]]))
 
-function dataObjForArtifactSheets(): Data {
-  // TODO: Add Artifact set effects
-  return {
-    number: {}, string: {}
-  }
+// TODO: Add Artifact set effects
+const dataObjForArtifactSheets: Data = {
+  number: {
+    premod: {
+      enerRech_: threshold_add(input.art.EmblemOfSeveredFate, 2, 0.2)
+    },
+    dmgBonus: {
+      burst: threshold_add(input.art.EmblemOfSeveredFate, 4,
+        min(0.75, prod(0.25, input.total.enerRech_ /** TODO: Check if total or premod */)))
+    }
+  }, string: {}
 }
+
+const nodesByArtifactSet: StrictDict<ArtifactSetKey, Dict<1 | 2 | 4, { premod: Dict<keyof Data["number"]["premod"], Node>, dmgBonus: Dict<keyof Data["number"]["dmgBonus"], Node> }>> = objectFromKeyMap(allArtifactSets, _ => ({}))
+crawlObject(dataObjForArtifactSheets.number, [], x => x.operation === "threshold_add", (node: ComputeNode, key: string[]) => {
+  const { operands: [inputNode, thresholdNode, bonus] } = node;
+  const inputNodeKey = (inputNode as ReadNode).key
+  const set = inputNodeKey[inputNodeKey.length - 1] as ArtifactSetKey
+  const threshold = (thresholdNode as ConstantNode).value.toString()
+  const root = nodesByArtifactSet[set]
+
+  if (!root || !threshold) return
+  layeredAssignment(root, [threshold, key[0], key[1]], node)
+})
+
 function dmgNode(base: MainStatKey, lvlMultiplier: number[], move: "normal" | "charged" | "plunging" | "skill" | "burst", additional: Data["number"] = {}): Node {
   return data(input.hit.dmg, [{
     number: {
@@ -108,7 +127,8 @@ function dataObjForWeaponSheet(
   result.number = mergeDataComponents([result.number, additional], input)
   return result
 }
-function dataObjForArtifact(art: ICachedArtifact): Data {
+function dataObjForArtifact(art: ICachedArtifact, assumingMinimumMainStatLevel: number): Data {
+  // TODO: assume main stat level
   return {
     number: {
       art: {
@@ -200,30 +220,21 @@ function mergeData(...data: Data[]): Data {
     string: mergeDataComponents(data.map(x => x.string), str),
   }
 }
-function computeData(dataList: Data[]): ComputedValues {
-  const nodes = { ...input, conditional: {}, display: {} }
-  const nodeArray: ReadNode[] = [...readNodeArrays]
+type ReplaceNode<Root, NewNode> = Root extends Node ? NewNode : { [key in keyof Root]: ReplaceNode<Root[key], NewNode> }
+function computeData<T extends NodeData>(nodes: T, dataList: Data[]): ReplaceNode<T, number> {
+  const nodeArray: Node[] = []
+  crawlObject(nodes, [], (x: any) => x.operation, (node: Node, keys: string[]) => {
+    nodeArray.push(node)
+  })
 
-  for (const prefix of ["conditional", "display"])
-    dataList.map(x => x.number[prefix]).forEach(data =>
-      crawlObject(data ?? {}, [prefix], (x: any) => x.operation, (_: any, keys: string[]) => {
-        const readNode = customRead(keys)
-        layeredAssignment(nodes, keys, readNode)
-        nodeArray.push(readNode)
-      }))
+  const resultArray = optimize(nodeArray, dataList, _ => true).map(x => formulaString(x))
+  const result = {} as any
+  let i = 0
+  crawlObject(nodes, [], (x: any) => x.operation, (node: Node, key: string[]) => {
+    layeredAssignment(result, key, resultArray[i++])
+  })
 
-  const results = optimize(nodeArray, dataList, _ => true).map(x => formulaString(x))
-
-  return {
-    number: {
-      total: {
-        atk: 100,
-      }
-    },
-    string: {
-
-    }
-  }
+  return result
 }
 function displaysFromNodes(nodes: Data, values: ComputedValues): NumInput<NodeDisplay> {
   return {
@@ -254,8 +265,10 @@ export interface NodeDisplay {
 
 export {
   dataObjForArtifact, dataObjForCharacter, dataObjForWeapon,
-  dataObjForArtifactSheets, dataObjForCharacterSheet, dataObjForWeaponSheet,
+  dataObjForCharacterSheet, dataObjForWeaponSheet,
   dmgNode,
 
   mergeData, computeData, displaysFromNodes,
+
+  dataObjForArtifactSheets, nodesByArtifactSet,
 }
