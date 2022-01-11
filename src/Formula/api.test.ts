@@ -1,21 +1,6 @@
-import moonglow_data from "../Data/Weapons/Catalyst/EverlastingMoonglow/data_gen.json";
-import { dataObjForArtifactSheets, dataObjForCharacter, dataObjForWeapon, dataObjForWeaponSheet } from "./api";
-import { constant } from "./internal";
+import { dataObjForArtifactSheets, dataObjForCharacter, dataObjForWeapon } from "./api";
 
 const artSheetData = dataObjForArtifactSheets()
-const weaponSheetData = dataObjForWeaponSheet("EverlastingMoonglow", "catalyst",
-  [
-    { stat: moonglow_data.mainStat.type as any, offset: moonglow_data.mainStat.base, lvlCurve: moonglow_data.mainStat.curve },
-    { stat: moonglow_data.subStat.type as any, offset: moonglow_data.subStat.base, lvlCurve: moonglow_data.subStat.curve, },
-    { stat: "heal_", refinement: moonglow_data.addProps.map(x => x.heal_) },
-    { stat: "atk", asc: moonglow_data.ascension.map(x => x.addStats.atk ?? 0) },
-  ],
-  {
-    dmgBonus: {
-      normal: constant(NaN) // TODO: Formula for normal atk bonus
-    }
-  }
-)
 
 const charData = dataObjForCharacter({
   equippedArtifacts: { "circlet": "", "flower": "", "goblet": "", "plume": "", "sands": "" },
