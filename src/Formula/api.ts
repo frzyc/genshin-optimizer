@@ -77,39 +77,39 @@ function dataObjForCharacterSheet(
 }
 function dataObjForWeaponSheet(
   key: WeaponKey, type: WeaponTypeKey,
-  baseAtkStat: { base?: number, lvlCurve?: string, refinement?: number[], asc?: number[] },
-  stats: { stat: MainStatKey | SubstatKey, base?: number, lvlCurve?: string, refinement?: number[], asc?: number[] }[],
+  mainStat: { stat: "atk" | "def" | "hp", base: number, lvlCurve: string, asc: number[] },
+  substat: { stat: MainStatKey | SubstatKey, base: number, lvlCurve: string },
+  substat2: { stat: MainStatKey | SubstatKey, refinement: number[] } | undefined,
   additional: Data["number"] = {},
 ): Data {
+  const mainStatNode = sum(prod(mainStat.base, subscript(input.weapon.lvl, weaponCurves[mainStat.lvlCurve])), subscript(input.weapon.asc, mainStat.asc))
+  const substatNode = prod(substat.base, subscript(input.weapon.lvl, weaponCurves[substat.lvlCurve]))
+  const substat2Node = substat2 && subscript(input.weapon.refineIndex, substat2.refinement)
+
   const result: Data = {
     number: {
-      premod: {},
+      base: { [mainStat.stat]: mainStatNode },
+      premod: {
+        [substat.stat]: substatNode,
+      },
+      weapon: {
+        main: mainStatNode, sub: substatNode,
+      }
     }, string: {
       weapon: {
         key: stringConst(key),
         type: stringConst(type),
+        main: stringConst(mainStat.stat),
+        sub: stringConst(substat.stat),
       }
     }
   }
 
-  function getNode(value: { base?: number, lvlCurve?: string, refinement?: number[], asc?: number[] }): Node | undefined {
-    const { base, lvlCurve, refinement, asc } = value
-    const nodes: Node[] = []
-    if (base && lvlCurve)
-      nodes.push(prod(constant(base), subscript(input.weapon.lvl, weaponCurves[lvlCurve])))
-    if (refinement) nodes.push(subscript(input.weapon.refineIndex, refinement))
-    if (asc) nodes.push(subscript(input.weapon.asc, asc))
-
-    if (nodes.length === 0) return undefined
-    return nodes.length === 1 ? nodes[0] : sum(...nodes)
-  }
-
-  const baseAtkNode = getNode(baseAtkStat)
-  if (baseAtkNode) result.number.base = { atk: baseAtkNode }
-
-  for (const stat of stats) {
-    const node = getNode(stat)
-    if (node) result.number.premod![stat.stat] = node
+  if (substat2) {
+    result.string.weapon!.sub2 = stringConst(substat2.stat)
+    result.number.weapon!.sub2 = substat2Node
+    result.number.premod![substat2.stat] = substat2.stat !== substat.stat
+      ? substat2Node : sum(substatNode, substat2Node!)
   }
 
   result.number = mergeDataComponents([result.number, additional], input)

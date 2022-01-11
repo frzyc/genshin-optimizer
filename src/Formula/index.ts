@@ -12,7 +12,10 @@ const unit: ConstantNode = { operation: "const", value: 1, info: { unit: "%" }, 
 // All string read nodes
 const str = setReadNodeKeys({
   char: { key: stringRead(), ele: stringRead(), infusion: stringRead() },
-  weapon: { key: stringRead(), type: stringRead() },
+  weapon: {
+    key: stringRead(), type: stringRead(),
+    main: stringRead(), sub: stringRead(), sub2: stringRead(),
+  },
   team: { infusion: stringRead() },
   dmg: {
     ele: stringRead(), reaction: stringRead(), move: stringRead(), hitMode: stringRead(),
@@ -37,7 +40,10 @@ const rd = setReadNodeKeys({
     auto: read("add"), skill: read("add"), burst: read("add"),
     lvl: read("unique"), constellation: read("unique"), asc: read("unique"),
   },
-  weapon: { lvl: read("unique"), asc: read("unique"), refineIndex: read("unique") },
+  weapon: {
+    lvl: read("unique"), asc: read("unique"), refineIndex: read("unique"),
+    main: read("unique"), sub: read("unique"), sub2: read("unique"),
+  },
 
   dmgBonus: {
     total: read("unique"), common: read("add"),

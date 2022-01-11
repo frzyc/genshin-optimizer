@@ -39,7 +39,7 @@ const merged1 = mergeData({ number: common, string: {} }, artSheetData, charShee
 const merged2 = mergeData(merged1, artData, weaponData)
 */
 describe("API", () => {
-  test("Sucrose", () => {
+  test("set effect", () => {
     const setOverride: Data = {
       number: {
         art: {
@@ -49,5 +49,9 @@ describe("API", () => {
     }
     const computed = computeData(nodesByArtifactSet, [common, sucroseSheetData, moonGlowData, weaponData, charData, setOverride])
     console.log(computed.EmblemOfSeveredFate)
+  })
+  test.only("weapon", () => {
+    const computed = computeData(input.weapon, [weaponData, moonGlowData])
+    console.log(computed)
   })
 })
