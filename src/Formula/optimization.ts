@@ -183,7 +183,7 @@ function applyRead(formulas: Node[], topLevelData: Data[], bottomUpMap = (formul
         const { accumulation, suffix } = formula
         const key = suffix ? [...formula.key, resolveStringNode(suffix, data)!] : formula.key
         const operands = data?.flatMap(context => {
-          const formula = resolve(context.number, key)
+          const formula = resolve(context.number, key) as Node
           return formula ? [formula] : []
         })
 
