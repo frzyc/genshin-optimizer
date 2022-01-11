@@ -63,7 +63,7 @@ export function hammingDistance(str1, str2) {
   return dist;
 }
 
-//multiplies every numberical value in the obj by a multiplier.
+//multiplies every numerical value in the obj by a multiplier.
 export function objMultiplication(obj, multi) {
   if (multi === 1) return obj
   Object.keys(obj).forEach((prop: any) => {
