@@ -27,6 +27,10 @@ interface ICharacterSheetTalent extends ICharacterSheetBase {
 interface ICharacterSheetTalents extends ICharacterSheetBase {
   talents: Dict<ElementKey, TalentSheet>
 }
+
+/**
+ * @deprecated
+ */
 export type ICharacterSheet = ICharacterSheetTalent | ICharacterSheetTalents
 interface IBaseStat {
   hp: number

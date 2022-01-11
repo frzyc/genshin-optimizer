@@ -1,30 +1,25 @@
 import ImgIcon from "../Components/Image/ImgIcon";
 import { Translate } from "../Components/Translate";
-import { IArtifactSheet, SetEffectEntry } from "../Types/artifact";
-import { allArtifactSets, allSlotKeys, ArtifactRarity, ArtifactSetKey, SetNum, SlotKey } from "../Types/consts";
+import { Data } from "../Formula/type";
+import { IArtifactSheet, SetEffectEntry } from "../Types/artifact_WR";
+import { allSlotKeys, ArtifactRarity, ArtifactSetKey, SetNum, SlotKey } from "../Types/consts";
 import { BonusStats, ICalculatedStats } from "../Types/stats";
 import { mergeStats } from "../Util/StatUtil";
-import { deepClone, evalIfFunc, objectFromKeyMap } from "../Util/Util";
+import { deepClone, evalIfFunc, objectMap } from "../Util/Util";
 
-/**
- * @deprecated
- */
-export const artifactImport = import("../Data/Artifacts").then(imp =>
-  Object.fromEntries(Object.entries(imp.default).map(([set, value]) =>
-    [set, new ArtifactSheet(value, set)])) as StrictDict<ArtifactSetKey, ArtifactSheet>)
-const promiseSheets = objectFromKeyMap(allArtifactSets, set => artifactImport.then(sheets => sheets[set]))
+export const artifactImport = import("../Data/Artifacts/index_WR")
+const artifactSheets = artifactImport.then(imp => objectMap(imp.default, (artifact, key) => new ArtifactSheet(key, artifact.default, artifact.data))) as Promise<Record<ArtifactSetKey, ArtifactSheet>>
 
 const tr = (setKey: string, strKey: string) => <Translate ns={`artifact_${setKey}_gen`} key18={strKey} />
 
-/**
- * @deprecated
- */
 export class ArtifactSheet {
-  readonly data: IArtifactSheet
+  readonly sheet: IArtifactSheet
   readonly key: ArtifactSetKey
-  constructor(data: IArtifactSheet, setKey: ArtifactSetKey) {
-    this.data = data
+  readonly data: Data
+  constructor(setKey: ArtifactSetKey, sheet: IArtifactSheet, data: Data) {
+    this.sheet = sheet
     this.key = setKey
+    this.data = data
   }
 
   get name() { return tr(this.key, "setName") }
@@ -42,8 +37,8 @@ export class ArtifactSheet {
   }
 
   //This is only for OCR, because we only scan in english right now.
-  get nameRaw(): string { return this.data.name }
-  get rarity(): readonly ArtifactRarity[] { return this.data.rarity }
+  get nameRaw(): string { return this.sheet.name }
+  get rarity(): readonly ArtifactRarity[] { return this.sheet.rarity }
   get slots(): SlotKey[] {
     switch (this.key) {
       case "PrayersForDestiny":
@@ -53,19 +48,18 @@ export class ArtifactSheet {
       default: return [...allSlotKeys]
     }
   }
-  get slotIcons(): Dict<SlotKey, string> { return this.data.icons }
-  get setEffects(): Dict<SetNum, SetEffectEntry> { return this.data.setEffects }
+  get slotIcons(): Dict<SlotKey, string> { return this.sheet.icons }
+  get setEffects(): Dict<SetNum, SetEffectEntry> { return this.sheet.setEffects }
   getSlotName = (slotKey: SlotKey) => tr(this.key, `pieces.${slotKey}.name`)
   getSlotDesc = (slotKey: SlotKey) => tr(this.key, `pieces.${slotKey}.desc`)
-  setNumStats(num: SetNum, stats: ICalculatedStats): BonusStats {
-    return deepClone(evalIfFunc(this.setEffects[num]?.stats, stats) || {})
-  }
+  // setNumStats(num: SetNum, stats: ICalculatedStats): BonusStats {
+  //   return deepClone(evalIfFunc(this.setEffects[num]?.stats, stats) || {})
+  // }
   setEffectDesc = (setNum: SetNum): Displayable => tr(this.key, `setEffects.${setNum}`)
-  setEffectDocument = (setNum: SetNum) => this.data.setEffects[setNum]?.document
+  setEffectDocument = (setNum: SetNum) => this.sheet.setEffects[setNum]?.document
 
-  static getAll() { return artifactImport }
-  static get(set: ArtifactSetKey | undefined): Promise<ArtifactSheet> | undefined { return set ? promiseSheets[set] : undefined }
-
+  static get(set: ArtifactSetKey | undefined): Promise<ArtifactSheet> | undefined { return set ? artifactSheets.then(a => a[set]) : undefined }
+  static get getAll() { return artifactSheets }
   static setKeysByRarities(sheets: StrictDict<ArtifactSetKey, ArtifactSheet>): Dict<ArtifactRarity, ArtifactSetKey[]> {
     const grouped: Dict<ArtifactRarity, ArtifactSetKey[]> = {}
     Object.entries(sheets).forEach(([key, sheet]) => {
@@ -76,13 +70,13 @@ export class ArtifactSheet {
     return grouped
   }
 
-  static setEffectsStats(sheets: StrictDict<ArtifactSetKey, ArtifactSheet>, charStats: ICalculatedStats, setToSlots: Dict<ArtifactSetKey, SlotKey[]>): BonusStats {
-    const artifactSetEffect: BonusStats = {}
-    Object.entries(setToSlots).forEach(([set, slots]) =>
-      Object.entries(sheets[set]?.setEffects ?? {}).forEach(([num, value]) =>
-        parseInt(num) <= slots.length && mergeStats(artifactSetEffect, evalIfFunc(value.stats, charStats))))
-    return artifactSetEffect
-  }
+  // static setEffectsStats(sheets: StrictDict<ArtifactSetKey, ArtifactSheet>, charStats: ICalculatedStats, setToSlots: Dict<ArtifactSetKey, SlotKey[]>): BonusStats {
+  //   const artifactSetEffect: BonusStats = {}
+  //   Object.entries(setToSlots).forEach(([set, slots]) =>
+  //     Object.entries(sheets[set]?.setEffects ?? {}).forEach(([num, value]) =>
+  //       parseInt(num) <= slots.length && mergeStats(artifactSetEffect, evalIfFunc(value.stats, charStats))))
+  //   return artifactSetEffect
+  // }
   static setEffects(sheets: StrictDict<ArtifactSetKey, ArtifactSheet>, setToSlots: Dict<ArtifactSetKey, SlotKey[]>) {
     let artifactSetEffect: Dict<ArtifactSetKey, SetNum[]> = {}
     Object.entries(setToSlots).forEach(([set, slots]) => {

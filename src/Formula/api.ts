@@ -11,7 +11,7 @@ import { constant } from "./internal";
 import { optimize } from "./optimization";
 import { ComputeNode, ConstantNode, Data, Node, NodeData, ReadNode, StringReadNode } from "./type";
 import { customRead, data, max, min, prod, stringConst, subscript, sum, threshold_add } from "./utils";
-
+import { data as EmblemOfSeveredFateData } from '../Data/Artifacts/EmblemOfSeveredFate/index_WR'
 const readNodeArrays: ReadNode[] = []
 crawlObject(input, [], (x: any) => x.operation, (x: any) => readNodeArrays.push(x))
 
@@ -20,21 +20,9 @@ crawlObject(input, [], (x: any) => x.operation, (x: any) => readNodeArrays.push(
 const charCurves = Object.fromEntries(Object.entries(_charCurves).map(([key, value]) => [key, [0, ...Object.values(value)]]))
 const weaponCurves = Object.fromEntries(Object.entries(_weaponCurves).map(([key, value]) => [key, [0, ...Object.values(value)]]))
 
-// TODO: Add Artifact set effects
-const dataObjForArtifactSheets: Data = {
-  number: {
-    premod: {
-      enerRech_: threshold_add(input.art.EmblemOfSeveredFate, 2, 0.2)
-    },
-    dmgBonus: {
-      burst: threshold_add(input.art.EmblemOfSeveredFate, 4,
-        min(0.75, prod(0.25, input.total.enerRech_ /** TODO: Check if total or premod */)))
-    }
-  }, string: {}
-}
 
 const nodesByArtifactSet: StrictDict<ArtifactSetKey, Dict<1 | 2 | 4, { premod: Dict<keyof Data["number"]["premod"], Node>, dmgBonus: Dict<keyof Data["number"]["dmgBonus"], Node> }>> = objectFromKeyMap(allArtifactSets, _ => ({}))
-crawlObject(dataObjForArtifactSheets.number, [], x => x.operation === "threshold_add", (node: ComputeNode, key: string[]) => {
+crawlObject(EmblemOfSeveredFateData.number, [], x => x.operation === "threshold_add", (node: ComputeNode, key: string[]) => {
   const { operands: [inputNode, thresholdNode, bonus] } = node;
   const inputNodeKey = (inputNode as ReadNode).key
   const set = inputNodeKey[inputNodeKey.length - 1] as ArtifactSetKey
@@ -270,5 +258,5 @@ export {
 
   mergeData, computeData, displaysFromNodes,
 
-  dataObjForArtifactSheets, nodesByArtifactSet,
+  nodesByArtifactSet,
 }

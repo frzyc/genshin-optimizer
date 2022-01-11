@@ -14,9 +14,9 @@ export const weaponImport = import('../Data/Weapons/index_WR')
 const weaponSheets = weaponImport.then(imp => objectMap(imp.default, (weapon, key) => new WeaponSheet(key, weapon.default, weapon.data))) as Promise<Record<WeaponKey, WeaponSheet>>
 
 export default class WeaponSheet {
-  key: WeaponKey;
-  sheet: IWeaponSheet;
-  data: Data;
+  readonly key: WeaponKey;
+  readonly sheet: IWeaponSheet;
+  readonly data: Data;
   constructor(key: string, weaponSheet: IWeaponSheet, data: Data) {
     this.key = key as WeaponKey
     this.sheet = weaponSheet

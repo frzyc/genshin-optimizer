@@ -1,11 +1,10 @@
-import { dataObjForArtifactSheets, dataObjForCharacter, dataObjForWeapon, computeData, dataObjForWeaponSheet, mergeData, nodesByArtifactSet } from "./api";
+import { dataObjForCharacter, dataObjForWeapon, computeData, dataObjForWeaponSheet, mergeData, nodesByArtifactSet } from "./api";
 import { data as sucroseSheetData } from "../Data/Characters/Sucrose/index_WR"
 import { data as moonGlowData } from "../Data/Weapons/Catalyst/EverlastingMoonglow/index_WR"
 import { common, input } from "./index";
 import { Data } from "./type";
 import { constant } from "./internal";
 
-const artSheetData = dataObjForArtifactSheets
 const charData = dataObjForCharacter({
   equippedArtifacts: { "circlet": "", "flower": "", "goblet": "", "plume": "", "sands": "" },
   equippedWeapon: "",

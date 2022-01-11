@@ -9,6 +9,9 @@ import { evalIfFunc, objectFromKeyMap } from '../Util/Util';
 import expCurveJSON from './expCurve_gen.json';
 const expCurve = expCurveJSON as WeaponExpCurveData
 
+/**
+ * @deprecated
+ */
 export const weaponImport = import('../Data/Weapons').then(async imp => {
   await import('../Data/formula') // TODO: remove this once we can ensure that formula is properly initiated everytime the weapon sheets are loaded
   return Object.fromEntries(Object.entries(imp.default).map(([weaponKey, value]) =>
@@ -17,6 +20,9 @@ export const weaponImport = import('../Data/Weapons').then(async imp => {
 
 const loadWeaponSheet = objectFromKeyMap(allWeaponKeys, set => weaponImport.then(sheets => sheets[set]))
 
+/**
+ * @deprecated
+ */
 export default class WeaponSheet {
   sheet: IWeaponSheet;
   key: WeaponKey;

@@ -8,6 +8,9 @@ import expCurveJSON from './expCurve_gen.json';
 
 const expCurve = expCurveJSON as CharacterExpCurveData
 
+/**
+ * @deprecated
+ */
 export const charImport = import('../Data/Characters').then(async imp => {
   await import('../Data/formula') // TODO: remove this once we can ensure that formula is properly initiated everytime the weapon sheets are loaded
   return objectFromKeyMap(Object.keys(imp.default), charKey => new CharacterSheet(imp.default[charKey]))
@@ -15,6 +18,9 @@ export const charImport = import('../Data/Characters').then(async imp => {
 
 const loadCharacterSheet = objectFromKeyMap(allCharacterKeys, set => charImport.then(sheets => sheets[set]))
 
+/**
+ * @deprecated
+ */
 export default class CharacterSheet {
   sheet: ICharacterSheet;
   constructor(charSheet: ICharacterSheet) { this.sheet = charSheet }
