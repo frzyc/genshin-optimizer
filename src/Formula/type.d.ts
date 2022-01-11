@@ -75,8 +75,8 @@ interface DynamicNumInput {
   display?: { [key in Move]?: { [key in string]?: Node } }
   conditional?: NodeData
 }
-interface NodeData {
-  [key: string]: typeof key extends "operation" ? undefined : NodeData | Node
+export interface NodeData {
+  [key: string]: typeof key extends "operation" ? never : (NodeData | Node)
 }
 
 export type CommutativeMonoidOperation = "min" | "max" | "add" | "mul"

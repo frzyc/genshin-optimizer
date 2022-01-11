@@ -60,7 +60,7 @@ export function data(baseFormula: Node, contexts: Data[]): DataNode {
   return { operation: "data", operands: [baseFormula], data: contexts }
 }
 
-export function stringConst(value: string): StringConstantNode {
+export function stringConst(value: string): StringNode {
   return { operation: "const", operands: [], value }
 }
 export function customStringRead(key: string[], suffix?: StringNode): StringReadNode {
@@ -69,7 +69,7 @@ export function customStringRead(key: string[], suffix?: StringNode): StringRead
 export function stringRead(suffix?: StringNode): StringReadNode {
   return { operation: "read", operands: [], key: [], suffix }
 }
-export function stringPrio(operands: StringReadNode[]): StringPriorityNode {
+export function stringPrio(...operands: StringReadNode[]): StringNode {
   return { operation: "prio", operands }
 }
 
