@@ -1,3 +1,6 @@
+import { writeFile } from 'fs/promises';
+import { tmpdir } from 'os';
+import { resolve } from 'path';
 import React from 'react';
 import { createScheduler, createWorker, RecognizeResult, Scheduler } from 'tesseract.js';
 import ColorText from '../Components/ColoredText';
@@ -17,8 +20,9 @@ const schedulers = new BorrowManager(async (language): Promise<Scheduler> => {
   const scheduler = createScheduler()
   const promises = Array(workerCount).fill(0).map(async _ => {
     const worker = createWorker({
-      errorHandler: console.error
-    })
+      errorHandler: console.error,
+      // logger: console.log
+    }) 
 
     await worker.load()
     await worker.loadLanguage(language)
@@ -66,7 +70,8 @@ export function processEntry(entry: OutstandingEntry) {
   entry.imageURL = fileToURL(file)
   entry.result = entry.imageURL.then(async imageURL => {
     const sheets = await ArtifactSheet.getAll()
-    const ocrResult = await ocr(imageURL)
+    const imageData = await urlToImageData(imageURL)
+    const ocrResult = await ocr(imageData)
 
     const [artifact, texts] = findBestArtifact(
       sheets, ocrResult.rarities,
@@ -111,9 +116,7 @@ function imageDataToCanvas(imageData: ImageData) {
   return canvas // produces a PNG file
 }
 
-async function ocr(imageURL: string): Promise<{ artifactSetTexts: string[], substatTexts: string[], whiteTexts: string[], rarities: Set<Rarity> }> {
-  const imageData = await urlToImageData(imageURL)
-
+export async function ocr(imageData: ImageData): Promise<{ artifactSetTexts: string[], substatTexts: string[], whiteTexts: string[], rarities: Set<Rarity> }> {
   const width = imageData.width, halfHeight = Math.floor(imageData.height / 2)
   const bottomOpts = { rectangle: { top: halfHeight, left: 0, width, height: halfHeight } }
 
@@ -129,8 +132,10 @@ async function ocr(imageURL: string): Promise<{ artifactSetTexts: string[], subs
 }
 async function textsFromImage(imageData: ImageData, options: object | undefined = undefined): Promise<string[]> {
   const canvas = imageDataToCanvas(imageData)
+
   const rec = await schedulers.borrow("eng", async (scheduler) =>
-    await (await scheduler).addJob("recognize", canvas, options) as RecognizeResult)
+    await (await scheduler).addJob("recognize", canvas.toDataURL(), options) as RecognizeResult)
+    
   return rec.data.lines.map(line => line.text)
 }
 
@@ -276,7 +281,7 @@ export function findBestArtifact(sheets: StrictDict<ArtifactSetKey, ArtifactShee
   return [result, texts]
 }
 
-function parseSetKeys(texts: string[], sheets): Set<ArtifactSetKey> {
+export function parseSetKeys(texts: string[], sheets): Set<ArtifactSetKey> {
   const results = new Set<ArtifactSetKey>([])
   for (const text of texts)
     for (const key of allArtifactSets)
@@ -284,7 +289,7 @@ function parseSetKeys(texts: string[], sheets): Set<ArtifactSetKey> {
         results.add(key)
   return results
 }
-function parseRarities(pixels: Uint8ClampedArray, width: number, height: number): Set<Rarity> {
+export function parseRarities(pixels: Uint8ClampedArray, width: number, height: number): Set<Rarity> {
   let d = pixels, lastRowNum = 0, rowsWithNumber = 0;
   const results = new Set<Rarity>([])
   for (let y = 0; y < height; y++) {
@@ -318,7 +323,7 @@ function colorCloseEnough(color1, color2, threshold = 5) {
     intCloseEnough(color1.g, color2.g) &&
     intCloseEnough(color1.b, color2.b)
 }
-function parseSlotKeys(texts: string[]): Set<SlotKey> {
+export function parseSlotKeys(texts: string[]): Set<SlotKey> {
   const results = new Set<SlotKey>()
   for (const text of texts)
     for (const key of allSlotKeys)
@@ -326,7 +331,7 @@ function parseSlotKeys(texts: string[]): Set<SlotKey> {
         results.add(key)
   return results
 }
-function parseMainStatKeys(texts: string[]): Set<MainStatKey> {
+export function parseMainStatKeys(texts: string[]): Set<MainStatKey> {
   const results = new Set<MainStatKey>([])
   for (const text of texts)
     for (const key of allMainStatKeys) {
@@ -338,7 +343,7 @@ function parseMainStatKeys(texts: string[]): Set<MainStatKey> {
     }
   return results
 }
-function parseMainStatValues(texts: string[]): { mainStatValue: number, unit?: string }[] {
+export function parseMainStatValues(texts: string[]): { mainStatValue: number, unit?: string }[] {
   const results: { mainStatValue: number, unit?: string }[] = []
   for (const text of texts) {
     let regex = /(\d+[,|\\.]+\d)%/
@@ -350,7 +355,7 @@ function parseMainStatValues(texts: string[]): { mainStatValue: number, unit?: s
   }
   return results
 }
-function parseSubstats(texts: string[]): ISubstat[] {
+export function parseSubstats(texts: string[]): ISubstat[] {
   const matches: ISubstat[] = []
   for (let text of texts) {
     text = text.replace(/^[\W]+/, "").replace(/\n/, "")
