@@ -1,4 +1,4 @@
-import { dataObjForCharacter, dataObjForWeapon, computeData, dataObjForWeaponSheet, mergeData, nodesByArtifactSet } from "./api";
+import { dataObjForCharacter, dataObjForWeapon, computeData, nodesByArtifactSet } from "./api";
 import { data as sucroseSheetData } from "../Data/Characters/Sucrose/index_WR"
 import { data as moonGlowData } from "../Data/Weapons/Catalyst/EverlastingMoonglow/index_WR"
 import { common, input } from "./index";

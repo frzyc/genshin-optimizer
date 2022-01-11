@@ -12,7 +12,7 @@ const data_gen = data_gen_json as WeaponData
 const hp_conv = [1, 1.5, 2, 2.5, 3]
 
 export const data = dataObjForWeaponSheet("EverlastingMoonglow", "catalyst",
-  { stat: "atk", base: data_gen.mainStat.base, lvlCurve: data_gen.mainStat.curve, asc: data_gen.ascension.map(x => x.addStats.atk ?? 0) },
+  { base: data_gen.mainStat.base, lvlCurve: data_gen.mainStat.curve, asc: data_gen.ascension.map(x => x.addStats.atk ?? 0) },
   { stat: data_gen.subStat!.type as any, base: data_gen.subStat!.base, lvlCurve: data_gen.subStat!.curve, },
   { stat: "heal_", refinement: data_gen.addProps.map(x => x.heal_) as any },
   {

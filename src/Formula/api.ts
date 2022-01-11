@@ -77,7 +77,7 @@ function dataObjForCharacterSheet(
 }
 function dataObjForWeaponSheet(
   key: WeaponKey, type: WeaponTypeKey,
-  mainStat: { stat: "atk" | "def" | "hp", base: number, lvlCurve: string, asc: number[] },
+  mainStat: { stat?: "atk", base: number, lvlCurve: string, asc: number[] },
   substat: { stat: MainStatKey | SubstatKey, base: number, lvlCurve: string },
   substat2: { stat: MainStatKey | SubstatKey, refinement: number[] } | undefined,
   additional: Data["number"] = {},
@@ -88,7 +88,7 @@ function dataObjForWeaponSheet(
 
   const result: Data = {
     number: {
-      base: { [mainStat.stat]: mainStatNode },
+      base: { [mainStat.stat ?? "atk"]: mainStatNode },
       premod: {
         [substat.stat]: substatNode,
       },
@@ -99,7 +99,7 @@ function dataObjForWeaponSheet(
       weapon: {
         key: stringConst(key),
         type: stringConst(type),
-        main: stringConst(mainStat.stat),
+        main: stringConst(mainStat.stat ?? "atk"),
         sub: stringConst(substat.stat),
       }
     }
