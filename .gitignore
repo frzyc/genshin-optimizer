@@ -41,3 +41,5 @@ _TEMPLATE
 # template files
 TEMPLATE*
 *_ignore.png
+# tesseract language file
+*.traineddata
