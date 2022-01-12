@@ -1,22 +1,20 @@
-import {
-  ocr, findBestArtifact, parseSetKeys,
-  parseSlotKeys,
-  parseSubstats,
-  parseMainStatKeys,
-  parseMainStatValues,
-} from "./ScanningUtil"
-import { createCanvas, loadImage, createImageData, ImageData, registerFont } from 'canvas'
-import { ArtifactSheet } from "./ArtifactSheet"
-import { allMainStatKeys, IArtifact } from "../Types/artifact";
-import { writeFile } from 'fs/promises'
+import { createCanvas, createImageData, ImageData, loadImage, registerFont } from 'canvas';
+import { writeFile } from 'fs/promises';
 import { tmpdir } from "os";
 import { resolve } from "path";
-import { StatData } from "../StatData";
-import Artifact from "./Artifact";
-import { allArtifactSets, allSlotKeys } from "../Types/consts";
 import { ArtifactSlotsData } from "../Data/ArtifactData";
 import Stat from "../Stat";
+import { IArtifact } from "../Types/artifact";
+import { allSlotKeys } from "../Types/consts";
 import { valueStringWithUnit } from "../Util/UIUtil";
+import Artifact from "./Artifact";
+import { ArtifactSheet } from "./ArtifactSheet";
+import {
+  findBestArtifact, ocr, parseMainStatKeys,
+  parseMainStatValues, parseSetKeys,
+  parseSlotKeys,
+  parseSubstats
+} from "./ScanningUtil";
 
 
 class MockImageData extends ImageData {
