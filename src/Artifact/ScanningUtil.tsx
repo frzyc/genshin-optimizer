@@ -1,6 +1,3 @@
-import { writeFile } from 'fs/promises';
-import { tmpdir } from 'os';
-import { resolve } from 'path';
 import React from 'react';
 import { createScheduler, createWorker, RecognizeResult, Scheduler } from 'tesseract.js';
 import ColorText from '../Components/ColoredText';
@@ -20,8 +17,7 @@ const schedulers = new BorrowManager(async (language): Promise<Scheduler> => {
   const scheduler = createScheduler()
   const promises = Array(workerCount).fill(0).map(async _ => {
     const worker = createWorker({
-      errorHandler: console.error,
-      // logger: console.log
+      errorHandler: console.error
     }) 
 
     await worker.load()
