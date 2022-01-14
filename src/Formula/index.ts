@@ -127,17 +127,19 @@ const common = {
 } as const
 
 type DeepPartial<T, Element, NewElement> = T extends Element ? NewElement : { [key in keyof T]?: DeepPartial<T[key], Element, NewElement> }
+type DeepReplace<T, Element, NewElement> = T extends Element ? NewElement : { [key in keyof T]: DeepReplace<T[key], Element, NewElement> }
+function typecheck<A, B extends A>() { }
+
+// Make sure that `common` contains only entries matching `rd` and `str`.
+typecheck<typeof common["number"], DeepReplace<typeof rd, ReadNode, Node>>()
+typecheck<typeof common["string"], DeepReplace<typeof str, StringReadNode, StringNode>>()
 
 export type NumInput<T = Node> = DeepPartial<typeof rd, ReadNode, T>
 export type StringInput<T = StringNode> = DeepPartial<typeof str, StringReadNode, T>
 
+export type StrictNumInput<T = Node> = DeepReplace<typeof rd, ReadNode, T>
+export type StrictStringInput<T = Node> = DeepReplace<typeof rd, StringReadNode, T>
+
 export {
   rd as input, common, str
 }
-
-type DeepReplace<T, Element, NewElement> = T extends Element ? NewElement : { [key in keyof T]: DeepReplace<T[key], Element, NewElement> }
-function typecheck<A, B extends A>() { }
-
-// Make sure that `common` contains only entries matching `rd`.
-typecheck<typeof common["number"], DeepReplace<typeof rd, ReadNode, Node>>()
-typecheck<typeof common["string"], DeepReplace<typeof str, StringReadNode, StringNode>>()

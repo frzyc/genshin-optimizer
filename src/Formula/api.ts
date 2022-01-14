@@ -3,9 +3,9 @@ import { ICachedArtifact, MainStatKey, SubstatKey } from "../Types/artifact";
 import { ICachedCharacter } from "../Types/character";
 import { allElementsWithPhy, ArtifactSetKey, CharacterKey, ElementKeyWithPhy, WeaponKey, WeaponTypeKey } from "../Types/consts";
 import { ICachedWeapon } from "../Types/weapon";
-import { crawlObject, objectFromKeyMap } from "../Util/Util";
+import { crawlObject, layeredAssignment, objectFromKeyMap } from "../Util/Util";
 import _weaponCurves from "../Weapon/expCurve_gen.json";
-import { input, NumInput, str, StringInput } from "./index";
+import { input, NumInput, str, StrictNumInput, StrictStringInput, StringInput } from "./index";
 import { constant } from "./internal";
 import { Data, DynamicNumInput, Node, ReadNode, StringNode, StringReadNode } from "./type";
 import { data, prod, stringConst, subscript, sum } from "./utils";
@@ -200,23 +200,53 @@ function computeUIData(data: Data[]): UIData {
   const number = {}
   const string = {}
 
-  return {
-    number, string, thresholds
+  const niceDisplay: NodeDisplay = {
+    operation: "read",
+    name: "Nice property 69",
+    variant: "physical",
+    value: 69,
+    formulas: [
+      "Nice = nice + nice2",
+      "nice1 = nice2 + nice3",
+    ]
   }
+  const niceResult: UIData = {
+    number: {} as any,
+    string: {} as any,
+    threshold: {
+      art: {
+        EmblemOfSeveredFate: {
+          premod: {
+            enerRech_: 0.2 // 20%
+          },
+          dmgBonus: {
+            burst: 69 // nice
+          }
+        }
+      }
+    }
+  }
+  crawlObject(input, [], (x: any) => x.operation, (x: any, key: string[]) => layeredAssignment(niceResult.number, key, x))
+  crawlObject(str, [], (x: any) => x.operation, (x: any, key: string[]) => layeredAssignment(niceResult.string, key, x))
+  for (const entry of data) {
+    if (entry.number.conditional) {
+      crawlObject(entry.number.conditional, ["conditional"], (x: any) => x.operation, (x: any, key: string[]) => layeredAssignment(niceResult.number, key, x))
+    }
+  }
+
+  return niceResult
 }
 
-interface PreprocessedUIData {
-  data: Data[]
-}
 interface UIData {
-  number: NumInput<NodeDisplay> & DynamicNumInput<NodeDisplay>
-  string: StringInput<string>
-  thresholds: Dict<string, Dict<number, { path: string[], value: NodeDisplay }>>
+  number: StrictNumInput<NodeDisplay> & DynamicNumInput<NodeDisplay>
+  string: StrictStringInput<string>
+  threshold: NumInput<NumInput<number>> // How this type works, we might never know
 }
 export interface NodeDisplay {
   /** structure negotiable */
   operation: Node["operation"]
   name: Displayable
+  value: number
   variant: ElementKeyWithPhy | "healing"
   formulas: Displayable[]
 }
