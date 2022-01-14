@@ -25,10 +25,9 @@ const str = setReadNodeKeys({
 const rd = setReadNodeKeys({
   base: { atk: read("add"), def: read("add"), hp: read("add") },
   premod: objectFromKeyMap(allStats, _ => read("add")),
-  postmod: objectFromKeyMap(allStats, _ => read("add")),
   total: {
     ...objectFromKeyMap(allStats, _ => read("add")),
-    cappedCritRate: read("unique"),
+    cappedCritRate: read("unique"), // Total Crit Rate capped to [0, 100%]
   },
 
   art: {
@@ -73,7 +72,7 @@ const rd = setReadNodeKeys({
   },
 })
 
-const { base, art, premod, postmod, total, char, hit, dmgBonus, enemy } = rd
+const { base, art, premod, total, char, hit, dmgBonus, enemy } = rd
 
 const common = {
   number: {
@@ -87,10 +86,9 @@ const common = {
         else return art[key]
       }),
     },
-    postmod: objectFromKeyMap(allStats, key => premod[key] as Node),
     total: {
-      ...objectFromKeyMap(allStats, key => postmod[key] as Node),
-      cappedCritRate: max(min(postmod.critRate_, unit), 0),
+      ...objectFromKeyMap(allStats, key => premod[key] as Node),
+      cappedCritRate: max(min(total.critRate_, unit), 0),
     },
 
     dmgBonus: {

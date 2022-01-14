@@ -80,7 +80,7 @@ export const data = dataObjForCharacterSheet("Sucrose", "anemo",
       skill: threshold_add(input.char.asc, 3, 3),
       burst: threshold_add(input.char.asc, 5, 3),
     },
-    postmod: {
+    total: {
       // TODO: Add conditional
       eleMas: threshold_add(input.char.constellation, 6, prod(0.2, input.premod.eleMas)),
     }
