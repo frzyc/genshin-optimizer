@@ -195,10 +195,7 @@ function mergeData(...data: Data[]): Data {
     string: mergeDataComponents(data.map(x => x.string), str),
   }
 }
-function preprocessUIDataWithoutArtifactData(data: Data[]): PreprocessedUIData {
-  return {}
-}
-function computeUIData(preprocessed: PreprocessedUIData, artifactData: Data[]): UIData {
+function computeUIData(data: Data[]): UIData {
   const thresholds: Dict<string, Dict<number, { path: string[], value: NodeDisplay }>> = {}
   const number = {}
   const string = {}
@@ -209,6 +206,7 @@ function computeUIData(preprocessed: PreprocessedUIData, artifactData: Data[]): 
 }
 
 interface PreprocessedUIData {
+  data: Data[]
 }
 interface UIData {
   number: NumInput<NodeDisplay> & DynamicNumInput<NodeDisplay>
@@ -228,5 +226,5 @@ export {
   dataObjForCharacterSheet, dataObjForWeaponSheet,
   dmgNode,
 
-  mergeData, preprocessUIDataWithoutArtifactData, computeUIData,
+  mergeData, computeUIData,
 }
