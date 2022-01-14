@@ -216,11 +216,15 @@ function computeUIData(data: Data[]): UIData {
     threshold: {
       art: {
         EmblemOfSeveredFate: {
-          premod: {
-            enerRech_: 0.2 // 20%
+          2: {
+            premod: {
+              enerRech_: 0.2 // 20%
+            },
           },
-          dmgBonus: {
-            burst: 69 // nice
+          4: {
+            dmgBonus: {
+              burst: 69 // nice
+            }
           }
         }
       }
@@ -240,7 +244,7 @@ function computeUIData(data: Data[]): UIData {
 interface UIData {
   number: StrictNumInput<NodeDisplay> & DynamicNumInput<NodeDisplay>
   string: StrictStringInput<string>
-  threshold: NumInput<NumInput<number>> // How this type works, we might never know
+  threshold: NumInput<Dict<1 | 2 | 4, NumInput<number>>> // How this type works, we might never know
 }
 export interface NodeDisplay {
   /** structure negotiable */
