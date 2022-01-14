@@ -1,37 +1,24 @@
 import _charCurves from "../Character/expCurve_gen.json";
 import { ICachedArtifact, MainStatKey, SubstatKey } from "../Types/artifact";
 import { ICachedCharacter } from "../Types/character";
-import { allArtifactSets, allElementsWithPhy, ArtifactSetKey, CharacterKey, ElementKeyWithPhy, WeaponKey, WeaponTypeKey } from "../Types/consts";
+import { allElementsWithPhy, ArtifactSetKey, CharacterKey, ElementKeyWithPhy, WeaponKey, WeaponTypeKey } from "../Types/consts";
 import { ICachedWeapon } from "../Types/weapon";
-import { crawlObject, layeredAssignment, objectFromKeyMap } from "../Util/Util";
+import { crawlObject, objectFromKeyMap } from "../Util/Util";
 import _weaponCurves from "../Weapon/expCurve_gen.json";
-import { formulaString } from "./debug";
 import { input, NumInput, str, StringInput } from "./index";
 import { constant } from "./internal";
-import { optimize } from "./optimization";
-import { ComputeNode, ConstantNode, Data, Node, NodeData, ReadNode, StringReadNode } from "./type";
-import { customRead, data, max, min, prod, stringConst, subscript, sum, threshold_add } from "./utils";
-import { data as EmblemOfSeveredFateData } from '../Data/Artifacts/EmblemOfSeveredFate/index_WR'
+import { Data, DynamicNumInput, Node, ReadNode, StringNode, StringReadNode } from "./type";
+import { data, prod, stringConst, subscript, sum } from "./utils";
 const readNodeArrays: ReadNode[] = []
 crawlObject(input, [], (x: any) => x.operation, (x: any) => readNodeArrays.push(x))
-
 
 // TODO: Remove this conversion
 const charCurves = Object.fromEntries(Object.entries(_charCurves).map(([key, value]) => [key, [0, ...Object.values(value)]]))
 const weaponCurves = Object.fromEntries(Object.entries(_weaponCurves).map(([key, value]) => [key, [0, ...Object.values(value)]]))
 
-
-const nodesByArtifactSet: StrictDict<ArtifactSetKey, Dict<1 | 2 | 4, { premod: Dict<keyof Data["number"]["premod"], Node>, dmgBonus: Dict<keyof Data["number"]["dmgBonus"], Node> }>> = objectFromKeyMap(allArtifactSets, _ => ({}))
-crawlObject(EmblemOfSeveredFateData.number, [], x => x.operation === "threshold_add", (node: ComputeNode, key: string[]) => {
-  const { operands: [inputNode, thresholdNode, bonus] } = node;
-  const inputNodeKey = (inputNode as ReadNode).key
-  const set = inputNodeKey[inputNodeKey.length - 1] as ArtifactSetKey
-  const threshold = (thresholdNode as ConstantNode).value.toString()
-  const root = nodesByArtifactSet[set]
-
-  if (!root || !threshold) return
-  layeredAssignment(root, [threshold, key[0], key[1]], node)
-})
+const readInputArray: Node[] = [], stringInputArray: StringNode[] = []
+crawlObject(input, [], (x: any) => x.operation, (x: any) => readInputArray.push(x))
+crawlObject(str, [], (x: any) => x.operation, (x: any) => stringInputArray.push(x))
 
 function dmgNode(base: MainStatKey, lvlMultiplier: number[], move: "normal" | "charged" | "plunging" | "skill" | "burst", additional: Data["number"] = {}): Node {
   return data(input.hit.dmg, [{
@@ -208,46 +195,31 @@ function mergeData(...data: Data[]): Data {
     string: mergeDataComponents(data.map(x => x.string), str),
   }
 }
-type ReplaceNode<Root, NewNode> = Root extends Node ? NewNode : { [key in keyof Root]: ReplaceNode<Root[key], NewNode> }
-function computeData<T extends NodeData>(nodes: T, dataList: Data[]): ReplaceNode<T, number> {
-  const nodeArray: Node[] = []
-  crawlObject(nodes, [], (x: any) => x.operation, (node: Node, keys: string[]) => {
-    nodeArray.push(node)
-  })
-
-  const resultArray = optimize(nodeArray, dataList, _ => true).map(x => formulaString(x))
-  const result = {} as any
-  let i = 0
-  crawlObject(nodes, [], (x: any) => x.operation, (node: Node, key: string[]) => {
-    layeredAssignment(result, key, resultArray[i++])
-  })
-
-  return result
+function preprocessUIDataWithoutArtifactData(data: Data[]): PreprocessedUIData {
+  return {}
 }
-function displaysFromNodes(nodes: Data, values: ComputedValues): NumInput<NodeDisplay> {
+function computeUIData(preprocessed: PreprocessedUIData, artifactData: Data[]): UIData {
+  const thresholds: Dict<string, Dict<number, { path: string[], value: NodeDisplay }>> = {}
+  const number = {}
+  const string = {}
+
   return {
-    total: {
-      atk: {
-        operation: "add",
-        name: "Total ATK",
-        formulas: [
-          "TotalATK = baseATK + ...",
-          "BaseATK = char atk + ...",
-        ]
-      }
-    }
+    number, string, thresholds
   }
 }
 
-export interface ComputedValues {
-  number: NumInput<number>
-  string: StringInput<string>
+interface PreprocessedUIData {
 }
-
+interface UIData {
+  number: NumInput<NodeDisplay> & DynamicNumInput<NodeDisplay>
+  string: StringInput<string>
+  thresholds: Dict<string, Dict<number, { path: string[], value: NodeDisplay }>>
+}
 export interface NodeDisplay {
   /** structure negotiable */
   operation: Node["operation"]
   name: Displayable
+  variant: ElementKeyWithPhy | "healing"
   formulas: Displayable[]
 }
 
@@ -256,7 +228,5 @@ export {
   dataObjForCharacterSheet, dataObjForWeaponSheet,
   dmgNode,
 
-  mergeData, computeData, displaysFromNodes,
-
-  nodesByArtifactSet,
+  mergeData, preprocessUIDataWithoutArtifactData, computeUIData,
 }

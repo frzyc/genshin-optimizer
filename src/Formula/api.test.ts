@@ -1,4 +1,4 @@
-import { dataObjForCharacter, dataObjForWeapon, computeData, nodesByArtifactSet } from "./api";
+import { dataObjForCharacter, dataObjForWeapon } from "./api";
 import { data as sucroseSheetData } from "../Data/Characters/Sucrose/index_WR"
 import { data as moonGlowData } from "../Data/Weapons/Catalyst/EverlastingMoonglow/index_WR"
 import { common, input } from "./index";
@@ -39,19 +39,7 @@ const merged1 = mergeData({ number: common, string: {} }, artSheetData, charShee
 const merged2 = mergeData(merged1, artData, weaponData)
 */
 describe("API", () => {
-  test("set effect", () => {
-    const setOverride: Data = {
-      number: {
-        art: {
-          EmblemOfSeveredFate: constant(5)
-        }
-      }, string: {}
-    }
-    const computed = computeData(nodesByArtifactSet, [common, sucroseSheetData, moonGlowData, weaponData, charData, setOverride])
-    console.log(computed.EmblemOfSeveredFate)
-  })
-  test.only("weapon", () => {
-    const computed = computeData(input.weapon, [weaponData, moonGlowData])
-    console.log(computed)
+  test("none", () => {
+
   })
 })
