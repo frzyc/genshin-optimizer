@@ -1,4 +1,3 @@
-import { hitMoves } from "../StatConstants"
 import { allMainStatKeys, allSubstats } from "../Types/artifact"
 import { allArtifactSets, allElementsWithPhy, allHitModes } from "../Types/consts"
 import { objectFromKeyMap } from "../Util/Util"
