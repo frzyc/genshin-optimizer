@@ -183,7 +183,7 @@ function applyRead(formulas: Node[], topLevelData: Data[], bottomUpMap = (formul
         const { accumulation, suffix } = formula
         const key = suffix ? [...formula.key, resolveStringNode(suffix, data)!] : formula.key
         const operands = data?.flatMap(context => {
-          const formula = resolve(context.number, key) as Node
+          const formula = resolve(context, key) as Node
           return formula ? [formula] : []
         })
 
@@ -280,11 +280,11 @@ export function constantFold(formulas: Node[], topLevelData: Data[] = [], should
 function resolveStringNode(node: StringNode, data: Data[]): string | undefined {
   const { operation } = node
   switch (operation) {
-    case "const": return node.value
-    case "read": {
+    case "sconst": return node.value
+    case "sread": {
       const { key, suffix } = node
       const operands = data.flatMap(context => {
-        const formula = resolve(context.number, key) as StringNode | undefined
+        const formula = resolve(context, key) as StringNode | undefined
         return formula ? [formula] : []
       })
 

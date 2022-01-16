@@ -42,7 +42,7 @@ export function res(base: number | Node): Node {
 
 export function setReadNodeKeys<T extends NodeList>(nodeList: T, prefix: string[] = []): T {
   if (nodeList.operation) {
-    if (nodeList.operation !== "read")
+    if (nodeList.operation !== "read" && nodeList.operation !== "sread")
       throw new Error(`Found ${(nodeList as any).operation} node while making reader`)
     return { ...nodeList, key: prefix }
   } else {
@@ -61,13 +61,13 @@ export function data(baseFormula: Node, contexts: Data[]): DataNode {
 }
 
 export function stringConst(value: string): StringNode {
-  return { operation: "const", operands: [], value }
+  return { operation: "sconst", operands: [], value }
 }
 export function customStringRead(key: string[], suffix?: StringNode): StringReadNode {
-  return { operation: "read", operands: [], key, suffix }
+  return { operation: "sread", operands: [], key, suffix }
 }
 export function stringRead(suffix?: StringNode): StringReadNode {
-  return { operation: "read", operands: [], key: [], suffix }
+  return { operation: "sread", operands: [], key: [], suffix }
 }
 export function stringPrio(...operands: StringNode[]): StringNode {
   return { operation: "prio", operands }

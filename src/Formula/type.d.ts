@@ -1,7 +1,7 @@
 import type { MainStatKey, SubstatKey } from "../Types/artifact"
 import type { ArtifactSetKey, ElementKey, ElementKeyWithPhy, ReactionModeKey } from "../Types/consts"
 import type { Path } from "../Util/KeyPathUtil"
-import type { NumInput, StringInput } from "./index"
+import type { Input } from "./index"
 
 type Move = "normal" | "charged" | "plunging" | "skill" | "burst"
 type Stat = MainStatKey | SubstatKey
@@ -53,24 +53,21 @@ interface StringNodeBase {
   operands: StringNode[]
 }
 export interface StringConstantNode extends StringNodeBase {
-  operation: "const"
+  operation: "sconst"
   value: string
 }
 export interface StringPriorityNode extends StringNodeBase {
   operation: "prio"
 }
 export interface StringReadNode extends StringNodeBase {
-  operation: "read"
+  operation: "sread"
   key: Path<StringFormulaTemplate, StringNode>
   suffix?: StringNode
 
   accumulation?: never
 }
 
-export interface Data {
-  number: NumInput & DynamicNumInput
-  string: StringInput
-}
+export type Data = Input & DynamicNumInput
 interface DynamicNumInput<T = Node> {
   display?: { [key in Move]?: { [key in string]?: T } }
   conditional?: NodeData<T>

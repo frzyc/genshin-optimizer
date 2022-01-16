@@ -10,15 +10,13 @@ import { input } from '../../../Formula/index'
 
 
 export const data: Data = {
-  number: {
-    premod: {
-      enerRech_: threshold_add(input.art.EmblemOfSeveredFate, 2, 0.2)
-    },
-    dmgBonus: {
-      burst: threshold_add(input.art.EmblemOfSeveredFate, 4,
-        min(0.75, prod(0.25, input.premod.enerRech_)))
-    }
-  }, string: {}
+  premod: {
+    enerRech_: threshold_add(input.art.EmblemOfSeveredFate, 2, 0.2)
+  },
+  dmgBonus: {
+    burst: threshold_add(input.art.EmblemOfSeveredFate, 4,
+      min(0.75, prod(0.25, input.premod.enerRech_)))
+  }
 }
 
 const artifact: IArtifactSheet = {
