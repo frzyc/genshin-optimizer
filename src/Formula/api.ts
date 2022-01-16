@@ -3,16 +3,17 @@ import { ICachedArtifact, MainStatKey, SubstatKey } from "../Types/artifact";
 import { ICachedCharacter } from "../Types/character";
 import { allElementsWithPhy, ArtifactSetKey, CharacterKey, ElementKeyWithPhy, WeaponKey, WeaponTypeKey } from "../Types/consts";
 import { ICachedWeapon } from "../Types/weapon";
-import { crawlObject, layeredAssignment, objectFromKeyMap } from "../Util/Util";
+import { assertUnreachable, crawlObject, layeredAssignment, objectFromKeyMap, objPathValue } from "../Util/Util";
 import _weaponCurves from "../Weapon/expCurve_gen.json";
 import { input, NumInput, str, StrictNumInput, StrictStringInput, StringInput } from "./index";
 import { constant } from "./internal";
-import { Data, DynamicNumInput, Node, ReadNode, StringNode, StringReadNode } from "./type";
+import { allOperations } from "./optimization";
+import { ComputeNode, ConstantNode, Data, DataNode, DynamicNumInput, Node, ReadNode, StringNode, StringPriorityNode, StringReadNode, SubscriptNode } from "./type";
 import { data, prod, stringConst, subscript, sum } from "./utils";
 const readNodeArrays: ReadNode[] = []
 crawlObject(input, [], (x: any) => x.operation, (x: any) => readNodeArrays.push(x))
 
-// TODO: Remove this conversion
+// TODO: Remove this conversion after changing the file format
 const charCurves = Object.fromEntries(Object.entries(_charCurves).map(([key, value]) => [key, [0, ...Object.values(value)]]))
 const weaponCurves = Object.fromEntries(Object.entries(_weaponCurves).map(([key, value]) => [key, [0, ...Object.values(value)]]))
 
@@ -195,50 +196,213 @@ function mergeData(...data: Data[]): Data {
     string: mergeDataComponents(data.map(x => x.string), str),
   }
 }
+
+class Context {
+  id: number
+  allContexts: Context[]
+
+  parent?: Context
+  children = new Map<Data[], Context>()
+
+  data: Data[]
+  nodes = new Map<Node, NodeDisplay & { operation: Node["operation"], origin: number }>()
+  string = new Map<StringNode, { value?: string, origin: number }>()
+
+  constructor(allContexts: Context[], data: Data[], parent?: Context) {
+    this.allContexts = allContexts
+    this.id = allContexts.length
+    this.parent = parent
+    this.data = data
+    allContexts.push(this)
+  }
+
+  compute(node: Node): NodeDisplay & { operation: Node["operation"], origin: number } {
+    const old = this.nodes.get(node)
+    if (old) return old
+
+    const { operation } = node
+    let result: NodeDisplay & { operation: Node["operation"], origin: number }
+    switch (operation) {
+      case "add": case "mul": case "min": case "max":
+      case "res": case "sum_frac": case "threshold_add":
+        result = this._compute(node); break
+      case "const": result = this._constant(node); break
+      case "subscript": result = this._subscript(node); break
+      case "read": result = this._read(node); break
+      case "data": result = this._data(node); break
+      default: assertUnreachable(operation)
+    }
+
+    this.nodes.set(node, result)
+    return result
+  }
+  computeString(node: StringNode): { value?: string, origin: number } {
+    const old = this.string.get(node)
+    if (old) return old
+
+    const { operation } = node
+    let result: { value?: string, origin: number }
+    switch (operation) {
+      case "const": result = { value: node.value, origin: 0 }; break
+      case "prio": result = this._strPrio(node); break
+      case "read": result = this._strRead(node); break
+      default: assertUnreachable(operation)
+    }
+
+    this.string.set(node, result)
+    return result
+  }
+
+  readAll(path: string[]): (NodeDisplay & { operation: Node["operation"], origin: number })[] {
+    const nodes = this.data.map(x => objPathValue(x.number, path) as Node).filter(x => x)
+    return !nodes.length
+      ? this.parent?.readAll(path) ?? []
+      : [...nodes.map(x => this.compute(x)), ...this.parent?.readAll(path) ?? []]
+  }
+  readFirstString(path: string[]): { value?: string, origin: number } | undefined {
+    const nodes = this.data.map(x => objPathValue(x.string, path) as StringNode).filter(x => x)
+    return nodes.length ? this.computeString(nodes[0]) : this.parent?.readFirstString(path)
+  }
+
+  _strPrio(node: StringPriorityNode): { value?: string, origin: number } {
+    const operands = node.operands
+      .map(x => this.computeString(x))
+      .filter(x => x.value)
+    if (!operands.length) return { origin: this.id }
+
+    const origin = operands.reduce((prev, current) => Math.max(prev, current.origin), 0)
+    if (origin !== this.id) return this.computeString(node)
+
+    return { value: operands[0].value, origin: this.id }
+  }
+  _strRead(node: StringReadNode): { value?: string, origin: number } {
+    let key = node.key, origin = 0
+    if (node.suffix) {
+      const suffix = this.computeString(node.suffix)
+      origin = Math.max(origin, suffix.origin)
+      key = [...key as string[], suffix.value ?? ""]
+    }
+
+    return this.readFirstString(key) ?? { origin: this.id }
+  }
+
+  _read(node: ReadNode): NodeDisplay & { operation: Node["operation"], origin: number } {
+    let key = node.key, origin = 0
+    if (node.suffix) {
+      const suffix = this.computeString(node.suffix)
+      origin = Math.max(origin, suffix.origin)
+      key = [...key as string[], suffix.value ?? ""]
+    }
+
+    const nodes = this.readAll(key)
+    origin = nodes.reduce((best, current) => Math.max(best, current.origin), origin)
+
+    if (origin !== this.id) return this.allContexts[origin].compute(node)
+
+    if (nodes.length <= 1 || node.accumulation === "unique")
+      return nodes[0] ?? {
+        operation: "const", origin: 0,
+        name: "", value: "NaN", variant: undefined,
+        formulas: [],
+      }
+
+    const f = allOperations[node.accumulation]
+    const value = f(nodes.map(x => x.value))
+
+    // TODO: Compute these
+    const variant = node.info?.variant
+    const formulas = []
+
+    return {
+      operation: node.accumulation,
+      name: node.info?.name ?? "",
+      value, variant, formulas,
+      origin: this.id,
+    }
+  }
+  _data(node: DataNode): NodeDisplay & { operation: Node["operation"], origin: number } {
+    let child = this.children.get(node.data)
+    if (!child) {
+      child = new Context(this.allContexts, node.data, this)
+      this.children.set(node.data, child)
+    }
+
+    // TODO: Incorporate `info` if needed
+    return child.compute(node.operands[0])
+  }
+  _constant(node: ConstantNode): NodeDisplay & { operation: Node["operation"], origin: number } {
+    // All constants belong to the main context
+    if (this.id !== 0) return this.allContexts[0].compute(node)
+    return {
+      operation: "const",
+      name: node.info?.name ?? "",
+      value: node.value,
+      variant: node.info?.variant,
+      formulas: [],
+      origin: this.id,
+    }
+  }
+  _compute(node: ComputeNode): NodeDisplay & { operation: Node["operation"], origin: number } {
+    const operands = node.operands.map(x => this.compute(x))
+    const origin = operands.reduce((best, current) => Math.max(current.origin, best), 0)
+
+    if (origin !== this.id) return this.allContexts[origin].compute(node)
+
+    // TODO: Compute these
+    const variant = node.info?.variant
+    const formulas = []
+
+    const value = allOperations[node.operation](operands.map(x => x.value))
+    return {
+      operation: node.operation,
+      name: node.info?.name ?? "",
+      value, variant, formulas,
+      origin: this.id,
+    }
+  }
+  _subscript(node: SubscriptNode): NodeDisplay & { operation: Node["operation"], origin: number } {
+    const operand = this.compute(node.operands[0])
+    const origin = operand.origin
+
+    if (origin !== this.id) this.allContexts[origin].compute(node)
+
+    // TODO: Compute these
+    const variant = node.info?.variant
+    const formulas = []
+
+    const value = node.list[operand.value]
+    return {
+      operation: node.operation,
+      name: node.info?.name ?? "",
+      value, variant, formulas,
+      origin: this.id
+    }
+  }
+}
 function computeUIData(data: Data[]): UIData {
   const thresholds: Dict<string, Dict<number, { path: string[], value: NodeDisplay }>> = {}
-  const number = {}
-  const string = {}
-
-  const niceDisplay: NodeDisplay = {
-    operation: "read",
-    name: "Nice property 69",
-    variant: "physical",
-    value: 69,
-    formulas: [
-      "Nice = nice + nice2",
-      "nice1 = nice2 + nice3",
-    ]
-  }
-  const niceResult: UIData = {
+  const result: UIData = {
     number: {} as any,
     string: {} as any,
-    threshold: {
-      art: {
-        EmblemOfSeveredFate: {
-          2: {
-            premod: {
-              enerRech_: 0.2 // 20%
-            },
-          },
-          4: {
-            dmgBonus: {
-              burst: 69 // nice
-            }
-          }
-        }
-      }
-    }
+    threshold: {}
   }
-  crawlObject(input, [], (x: any) => x.operation, (x: any, key: string[]) => layeredAssignment(niceResult.number, key, x))
-  crawlObject(str, [], (x: any) => x.operation, (x: any, key: string[]) => layeredAssignment(niceResult.string, key, x))
+
+  const contexts: Context[] = []
+  const mainContext = new Context(contexts, data)
+
+  crawlObject(input, [], (x: any) => x.operation, (node: any, key: any) => {
+    layeredAssignment(result.number, key, mainContext.compute(node))
+  })
+  crawlObject(str, [], (x: any) => x.operation, (node: any, key: any) => {
+    layeredAssignment(result.string, key, mainContext.compute(node))
+  })
   for (const entry of data) {
     if (entry.number.conditional) {
-      crawlObject(entry.number.conditional, ["conditional"], (x: any) => x.operation, (x: any, key: string[]) => layeredAssignment(niceResult.number, key, x))
+      crawlObject(entry.number.conditional, ["conditional"], (x: any) => x.operation, (x: any, key: string[]) => layeredAssignment(result.number, key, x))
     }
   }
 
-  return niceResult
+  return result
 }
 
 interface UIData {
@@ -248,10 +412,9 @@ interface UIData {
 }
 export interface NodeDisplay {
   /** structure negotiable */
-  operation: Node["operation"]
   name: Displayable
   value: number
-  variant: ElementKeyWithPhy | "healing"
+  variant: ElementKeyWithPhy | "healing" | undefined
   formulas: Displayable[]
 }
 

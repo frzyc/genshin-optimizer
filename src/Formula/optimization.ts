@@ -9,7 +9,7 @@ const allCommutativeMonoidOperations: StrictDict<CommutativeMonoidOperation, (_:
   add: (x: number[]): number => x.reduce((a, b) => a + b, 0),
   mul: (x: number[]): number => x.reduce((a, b) => a * b, 1),
 }
-export const allOperations: StrictDict<Exclude<Node["operation"], "const" | "read" | "input" | "subscript">, (_: number[]) => number> = {
+export const allOperations: StrictDict<Exclude<Node["operation"], "const" | "read" | "subscript">, (_: number[]) => number> = {
   ...allCommutativeMonoidOperations,
   res: ([res]: number[]): number => {
     if (res < 0) return 1 - res / 2

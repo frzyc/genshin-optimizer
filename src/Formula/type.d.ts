@@ -21,7 +21,7 @@ interface NodeBase {
 }
 interface Info {
   name?: string
-  variant?: "physical" | ElementKey | ReactionModeKey
+  variant?: ElementKeyWithPhy | "healing"
   unit?: "%" | "flat"
 }
 

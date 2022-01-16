@@ -69,7 +69,7 @@ export function customStringRead(key: string[], suffix?: StringNode): StringRead
 export function stringRead(suffix?: StringNode): StringReadNode {
   return { operation: "read", operands: [], key: [], suffix }
 }
-export function stringPrio(...operands: StringReadNode[]): StringNode {
+export function stringPrio(...operands: StringNode[]): StringNode {
   return { operation: "prio", operands }
 }
 

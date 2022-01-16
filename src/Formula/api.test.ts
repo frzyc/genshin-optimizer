@@ -1,4 +1,7 @@
-import { dataObjForCharacter, dataObjForWeapon } from "./api";
+import { computeUIData, dataObjForCharacter, dataObjForWeapon } from "./api";
+import { data as sucroseData } from "../Data/Characters/Sucrose/index_WR"
+import { data as moonglowData } from "../Data/Weapons/Catalyst/EverlastingMoonglow/index_WR"
+import { common } from "./index";
 
 const charData = dataObjForCharacter({
   equippedArtifacts: { "circlet": "", "flower": "", "goblet": "", "plume": "", "sands": "" },
@@ -35,5 +38,6 @@ const merged2 = mergeData(merged1, artData, weaponData)
 */
 describe("API", () => {
   test("none", () => {
+    console.log(computeUIData([charData, sucroseData, weaponData, moonglowData, common]).number)
   })
 })
