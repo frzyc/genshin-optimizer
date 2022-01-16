@@ -413,7 +413,7 @@ function computeUIData(data: Data[]): UIData {
     layeredAssignment(result.number, key, mainContext.compute(node, key))
   })
   crawlObject(str, [], (x: any) => x.operation, (node: any, key: any) => {
-    layeredAssignment(result.string, key, mainContext.computeString(node).value)
+    layeredAssignment(result.string, key, mainContext.computeString(node))
   })
   for (const entry of data) {
     if (entry.number.conditional) {
@@ -431,7 +431,7 @@ function computeUIData(data: Data[]): UIData {
 
 interface UIData {
   number: StrictNumInput<NodeDisplay> & DynamicNumInput<NodeDisplay>
-  string: StrictStringInput<string>
+  string: StrictStringInput<{ value: string }>
   threshold: NumInput<Dict<number, NumInput<number>>> // How this type works, we might never know
 }
 export interface NodeDisplay {
