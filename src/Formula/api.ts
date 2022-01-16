@@ -52,15 +52,15 @@ function dataObjForCharacterSheet(
     number: mergeDataComponents([{
       char: {
         hp: curve(hp), atk: curve(atk), def: curve(def),
-        special: subscript(input.char.asc, special.asc),
+        special: subscript(input.char.asc, special.asc, { key: special.stat }),
       },
       base: {
-        [special.stat]: input.char.special
+        [special.stat]: input.char.special,
       },
       display,
     }, additional], input), string: {
       char: {
-        key: stringConst(key), special: stringConst(special.stat),
+        key: stringConst(key),
         ...(element ? { element: stringConst(element) } : {}),
       }
     }
@@ -75,29 +75,24 @@ function dataObjForWeaponSheet(
 ): Data {
   const mainStatNode = sum(prod(mainStat.base, subscript(input.weapon.lvl, weaponCurves[mainStat.lvlCurve])), subscript(input.weapon.asc, mainStat.asc))
   const substatNode = prod(substat.base, subscript(input.weapon.lvl, weaponCurves[substat.lvlCurve]))
-  const substat2Node = substat2 && subscript(input.weapon.refineIndex, substat2.refinement)
+  const substat2Node = substat2 && subscript(input.weapon.refineIndex, substat2.refinement, { key: substat2.stat })
+
+  mainStatNode.info = { key: mainStat.stat ?? "atk" }
+  substatNode.info = { key: substat.stat }
+  if (substat2Node)
+    substat2Node.info = {}
 
   const result: Data = {
     number: {
-      base: { [mainStat.stat ?? "atk"]: mainStatNode },
-      premod: {
-        [substat.stat]: substatNode,
-      },
-      weapon: {
-        main: mainStatNode, sub: substatNode,
-      }
+      base: { [mainStat.stat ?? "atk"]: mainStatNode, },
+      premod: { [substat.stat]: substatNode, },
+      weapon: { main: mainStatNode, sub: substatNode, },
     }, string: {
-      weapon: {
-        key: stringConst(key),
-        type: stringConst(type),
-        main: stringConst(mainStat.stat ?? "atk"),
-        sub: stringConst(substat.stat),
-      }
-    }
+      weapon: { key: stringConst(key), type: stringConst(type), },
+    },
   }
 
   if (substat2) {
-    result.string.weapon!.sub2 = stringConst(substat2.stat)
     result.number.weapon!.sub2 = substat2Node
     result.number.premod![substat2.stat] = substat2.stat !== substat.stat
       ? substat2Node : sum(substatNode, substat2Node!)
@@ -312,7 +307,7 @@ class Context {
     if (origin !== this.id) return this.allContexts[origin].compute(node, key)
 
     if (nodes.length == 1 || node.accumulation === "unique")
-      return nodes[0] ?? this._constant({ operation: "const", operands: [], value: NaN }, key)
+      return nodes[0] ?? (console.log("Rogue", this.id, key), this._constant({ operation: "const", operands: [], value: NaN }, key))
 
     const f = allOperations[node.accumulation]
     const value = f(nodes.map(x => x.value))
@@ -325,6 +320,7 @@ class Context {
     return {
       operation: node.accumulation,
       name: node.info?.name ?? "",
+      key: node.info?.key,
       value, unit, variant, formulas,
       origin: this.id,
     }
@@ -364,6 +360,7 @@ class Context {
     return {
       operation: node.operation,
       name: node.info?.name ?? "",
+      key: node.info?.key,
       value, unit, variant, formulas,
       origin: this.id,
     }
@@ -378,6 +375,7 @@ class Context {
     return {
       operation: node.operation,
       name: node.info?.name ?? "",
+      key: node.info?.key,
       value, unit: node.info?.unit, variant: node.info?.variant, formulas: [],
       origin: this.id
     }
@@ -388,6 +386,7 @@ class Context {
     return {
       operation: "const",
       name: node.info?.name ?? "",
+      key: node.info?.key,
       value: node.value,
       unit: node.info?.unit, variant: node.info?.variant,
       formulas: [],
@@ -397,8 +396,7 @@ class Context {
 }
 function computeUIData(data: Data[]): UIData {
   const result: UIData = {
-    number: {} as any,
-    string: {} as any,
+    values: {} as any,
     threshold: {}
   }
 
@@ -406,34 +404,30 @@ function computeUIData(data: Data[]): UIData {
   const mainContext = new Context(contexts, data)
   mainContext.thresholds = result.threshold
 
-  crawlObject(input, [], (x: any) => x.operation, (node: any, key: any) => {
-    layeredAssignment(result.number, key, mainContext.compute(node, key))
-  })
-  crawlObject(str, [], (x: any) => x.operation, (node: any, key: any) => {
-    layeredAssignment(result.string, key, mainContext.computeString(node))
-  })
+  crawlObject(input, [], (x: any) => x.operation, (node: any, key: any) =>
+    layeredAssignment(result.values, key, mainContext.compute(node, key)))
+  crawlObject(str, [], (x: any) => x.operation, (node: any, key: any) =>
+    layeredAssignment(result.values, key, mainContext.computeString(node)))
   for (const entry of data) {
-    if (entry.number.conditional) {
+    if (entry.number.conditional)
       crawlObject(entry.number.conditional, ["conditional"], (x: any) => x.operation, (x: any, key: string[]) =>
-        layeredAssignment(result.number, key, mainContext.compute(x, key)))
-    }
-    if (entry.number.display) {
+        layeredAssignment(result.values, key, mainContext.compute(x, key)))
+    if (entry.number.display)
       crawlObject(entry.number.display, ["display"], (x: any) => x.operation, (x: any, key: string[]) =>
-        layeredAssignment(result.number, key, mainContext.compute(x, key)))
-    }
+        layeredAssignment(result.values, key, mainContext.compute(x, key)))
   }
 
   return result
 }
 
 interface UIData {
-  number: StrictNumInput<NodeDisplay> & DynamicNumInput<NodeDisplay>
-  string: StrictStringInput<{ value: string }>
+  values: StrictNumInput<NodeDisplay> & DynamicNumInput<NodeDisplay> & StrictStringInput<{ value: string }>
   threshold: NumInput<Dict<number, NumInput<number>>> // How this type works, we might never know
 }
 export interface NodeDisplay {
   /** structure negotiable */
   name: Displayable
+  key: string | undefined
   value: number
   variant: ElementKeyWithPhy | "success" | undefined
   formulas: Displayable[]

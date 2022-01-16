@@ -12,11 +12,9 @@ const unit: ConstantNode = { operation: "const", value: 1, info: { unit: "%" }, 
 const str = setReadNodeKeys({
   char: {
     key: stringRead(), ele: stringRead(), infusion: stringRead(),
-    special: stringRead(),
   },
   weapon: {
     key: stringRead(), type: stringRead(),
-    main: stringRead(), sub: stringRead(), sub2: stringRead(),
   },
   team: { infusion: stringRead() },
   dmg: {
