@@ -197,7 +197,11 @@ function mergeData(...data: Data[]): Data {
   }
 }
 
+type ContextNodeDisplay = NodeDisplay & { operation: Node["operation"], origin: number }
+type ContextString = { value?: string, origin: number }
+
 class Context {
+
   id: number
   allContexts: Context[]
 
@@ -205,8 +209,8 @@ class Context {
   children = new Map<Data[], Context>()
 
   data: Data[]
-  nodes = new Map<Node, NodeDisplay & { operation: Node["operation"], origin: number }>()
-  string = new Map<StringNode, { value?: string, origin: number }>()
+  nodes = new Map<Node, ContextNodeDisplay>()
+  string = new Map<StringNode, ContextString>()
 
   constructor(allContexts: Context[], data: Data[], parent?: Context) {
     this.allContexts = allContexts
@@ -216,12 +220,12 @@ class Context {
     allContexts.push(this)
   }
 
-  compute(node: Node): NodeDisplay & { operation: Node["operation"], origin: number } {
+  compute(node: Node): ContextNodeDisplay {
     const old = this.nodes.get(node)
     if (old) return old
 
     const { operation } = node
-    let result: NodeDisplay & { operation: Node["operation"], origin: number }
+    let result: ContextNodeDisplay
     switch (operation) {
       case "add": case "mul": case "min": case "max":
       case "res": case "sum_frac": case "threshold_add":
@@ -236,12 +240,12 @@ class Context {
     this.nodes.set(node, result)
     return result
   }
-  computeString(node: StringNode): { value?: string, origin: number } {
+  computeString(node: StringNode): ContextString {
     const old = this.string.get(node)
     if (old) return old
 
     const { operation } = node
-    let result: { value?: string, origin: number }
+    let result: ContextString
     switch (operation) {
       case "const": result = { value: node.value, origin: 0 }; break
       case "prio": result = this._strPrio(node); break
@@ -253,18 +257,18 @@ class Context {
     return result
   }
 
-  readAll(path: string[]): (NodeDisplay & { operation: Node["operation"], origin: number })[] {
+  readAll(path: string[]): ContextNodeDisplay[] {
     const nodes = this.data.map(x => objPathValue(x.number, path) as Node).filter(x => x)
     return !nodes.length
       ? this.parent?.readAll(path) ?? []
       : [...nodes.map(x => this.compute(x)), ...this.parent?.readAll(path) ?? []]
   }
-  readFirstString(path: string[]): { value?: string, origin: number } | undefined {
+  readFirstString(path: string[]): ContextString | undefined {
     const nodes = this.data.map(x => objPathValue(x.string, path) as StringNode).filter(x => x)
     return nodes.length ? this.computeString(nodes[0]) : this.parent?.readFirstString(path)
   }
 
-  _strPrio(node: StringPriorityNode): { value?: string, origin: number } {
+  _strPrio(node: StringPriorityNode): ContextString {
     const operands = node.operands
       .map(x => this.computeString(x))
       .filter(x => x.value)
@@ -275,7 +279,7 @@ class Context {
 
     return { value: operands[0].value, origin: this.id }
   }
-  _strRead(node: StringReadNode): { value?: string, origin: number } {
+  _strRead(node: StringReadNode): ContextString {
     let key = node.key, origin = 0
     if (node.suffix) {
       const suffix = this.computeString(node.suffix)
@@ -286,7 +290,7 @@ class Context {
     return this.readFirstString(key) ?? { origin: this.id }
   }
 
-  _read(node: ReadNode): NodeDisplay & { operation: Node["operation"], origin: number } {
+  _read(node: ReadNode): ContextNodeDisplay {
     let key = node.key, origin = 0
     if (node.suffix) {
       const suffix = this.computeString(node.suffix)
@@ -299,10 +303,10 @@ class Context {
 
     if (origin !== this.id) return this.allContexts[origin].compute(node)
 
-    if (nodes.length <= 1 || node.accumulation === "unique")
+    if (nodes.length == 1 || node.accumulation === "unique")
       return nodes[0] ?? {
         operation: "const", origin: 0,
-        name: "", value: "NaN", variant: undefined,
+        name: "", value: NaN, variant: undefined,
         formulas: [],
       }
 
@@ -320,7 +324,7 @@ class Context {
       origin: this.id,
     }
   }
-  _data(node: DataNode): NodeDisplay & { operation: Node["operation"], origin: number } {
+  _data(node: DataNode): ContextNodeDisplay {
     let child = this.children.get(node.data)
     if (!child) {
       child = new Context(this.allContexts, node.data, this)
@@ -330,7 +334,7 @@ class Context {
     // TODO: Incorporate `info` if needed
     return child.compute(node.operands[0])
   }
-  _constant(node: ConstantNode): NodeDisplay & { operation: Node["operation"], origin: number } {
+  _constant(node: ConstantNode): ContextNodeDisplay {
     // All constants belong to the main context
     if (this.id !== 0) return this.allContexts[0].compute(node)
     return {
@@ -342,7 +346,7 @@ class Context {
       origin: this.id,
     }
   }
-  _compute(node: ComputeNode): NodeDisplay & { operation: Node["operation"], origin: number } {
+  _compute(node: ComputeNode): ContextNodeDisplay {
     const operands = node.operands.map(x => this.compute(x))
     const origin = operands.reduce((best, current) => Math.max(current.origin, best), 0)
 
@@ -360,7 +364,7 @@ class Context {
       origin: this.id,
     }
   }
-  _subscript(node: SubscriptNode): NodeDisplay & { operation: Node["operation"], origin: number } {
+  _subscript(node: SubscriptNode): ContextNodeDisplay {
     const operand = this.compute(node.operands[0])
     const origin = operand.origin
 
@@ -394,7 +398,7 @@ function computeUIData(data: Data[]): UIData {
     layeredAssignment(result.number, key, mainContext.compute(node))
   })
   crawlObject(str, [], (x: any) => x.operation, (node: any, key: any) => {
-    layeredAssignment(result.string, key, mainContext.compute(node))
+    layeredAssignment(result.string, key, mainContext.computeString(node))
   })
   for (const entry of data) {
     if (entry.number.conditional) {

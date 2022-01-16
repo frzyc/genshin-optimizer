@@ -38,6 +38,6 @@ const merged2 = mergeData(merged1, artData, weaponData)
 */
 describe("API", () => {
   test("none", () => {
-    console.log(computeUIData([charData, sucroseData, weaponData, moonglowData, common]).number)
+    console.log(computeUIData([charData, sucroseData, weaponData, moonglowData, common]).number.total)
   })
 })
