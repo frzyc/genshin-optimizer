@@ -413,11 +413,16 @@ function computeUIData(data: Data[]): UIData {
     layeredAssignment(result.number, key, mainContext.compute(node, key))
   })
   crawlObject(str, [], (x: any) => x.operation, (node: any, key: any) => {
-    layeredAssignment(result.string, key, mainContext.computeString(node))
+    layeredAssignment(result.string, key, mainContext.computeString(node).value)
   })
   for (const entry of data) {
     if (entry.number.conditional) {
-      crawlObject(entry.number.conditional, ["conditional"], (x: any) => x.operation, (x: any, key: string[]) => layeredAssignment(result.number, key, x))
+      crawlObject(entry.number.conditional, ["conditional"], (x: any) => x.operation, (x: any, key: string[]) =>
+        layeredAssignment(result.number, key, x))
+    }
+    if (entry.number.display) {
+      crawlObject(entry.number.display, ["display"], (x: any) => x.operation, (x: any, key: string[]) =>
+        layeredAssignment(result.number, key, x))
     }
   }
 

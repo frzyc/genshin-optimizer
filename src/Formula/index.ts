@@ -136,7 +136,7 @@ export type NumInput<T = Node> = DeepPartial<typeof rd, ReadNode, T>
 export type StringInput<T = StringNode> = DeepPartial<typeof str, StringReadNode, T>
 
 export type StrictNumInput<T = Node> = DeepReplace<typeof rd, ReadNode, T>
-export type StrictStringInput<T = Node> = DeepReplace<typeof rd, StringReadNode, T>
+export type StrictStringInput<T = Node> = DeepReplace<typeof str, StringReadNode, T>
 
 export {
   rd as input, common, str
