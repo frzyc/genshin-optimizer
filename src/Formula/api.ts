@@ -50,14 +50,17 @@ function dataObjForCharacterSheet(
 
   return {
     number: mergeDataComponents([{
-      base: {
+      char: {
         hp: curve(hp), atk: curve(atk), def: curve(def),
-        [special.stat]: subscript(input.char.asc, special.asc),
+        special: subscript(input.char.asc, special.asc),
+      },
+      base: {
+        [special.stat]: input.char.special
       },
       display,
     }, additional], input), string: {
       char: {
-        key: stringConst(key),
+        key: stringConst(key), special: stringConst(special.stat),
         ...(element ? { element: stringConst(element) } : {}),
       }
     }
@@ -197,7 +200,7 @@ function mergeData(...data: Data[]): Data {
   }
 }
 
-type ContextNodeDisplay = NodeDisplay & { operation: Node["operation"], origin: number }
+type ContextNodeDisplay = NodeDisplay & { operation: Node["operation"], unit: "%" | "flat" | undefined, origin: number }
 type ContextString = { value?: string, origin: number }
 
 class Context {
@@ -319,13 +322,14 @@ class Context {
     const value = f(nodes.map(x => x.value))
 
     // TODO: Compute these
+    const unit = "flat"
     const variant = node.info?.variant
     const formulas = []
 
     return {
       operation: node.accumulation,
       name: node.info?.name ?? "",
-      value, variant, formulas,
+      value, unit, variant, formulas,
       origin: this.id,
     }
   }
@@ -346,7 +350,7 @@ class Context {
       operation: "const",
       name: node.info?.name ?? "",
       value: node.value,
-      variant: node.info?.variant,
+      unit: node.info?.unit, variant: node.info?.variant,
       formulas: [],
       origin: this.id,
     }
@@ -368,6 +372,7 @@ class Context {
     }
 
     // TODO: Compute these
+    const unit = "flat"
     const variant = node.info?.variant
     const formulas = []
 
@@ -375,7 +380,7 @@ class Context {
     return {
       operation: node.operation,
       name: node.info?.name ?? "",
-      value, variant, formulas,
+      value, unit, variant, formulas,
       origin: this.id,
     }
   }
@@ -385,15 +390,11 @@ class Context {
 
     if (origin !== this.id) this.allContexts[origin].compute(node, path)
 
-    // TODO: Compute these
-    const variant = node.info?.variant
-    const formulas = []
-
     const value = node.list[operand.value]
     return {
       operation: node.operation,
       name: node.info?.name ?? "",
-      value, variant, formulas,
+      value, unit: node.info?.unit, variant: node.info?.variant, formulas: [],
       origin: this.id
     }
   }

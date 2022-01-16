@@ -10,7 +10,10 @@ const unit: ConstantNode = { operation: "const", value: 1, info: { unit: "%" }, 
 
 // All string read nodes
 const str = setReadNodeKeys({
-  char: { key: stringRead(), ele: stringRead(), infusion: stringRead() },
+  char: {
+    key: stringRead(), ele: stringRead(), infusion: stringRead(),
+    special: stringRead(),
+  },
   weapon: {
     key: stringRead(), type: stringRead(),
     main: stringRead(), sub: stringRead(), sub2: stringRead(),
@@ -31,12 +34,14 @@ const rd = setReadNodeKeys({
   },
 
   art: {
-    ...objectFromKeyMap(allStats, _ => read("add")),
+    ...objectFromKeyMap(allStats, key => key.endsWith("_") ? read("add", { unit: "%" }) : read("add", { unit: "flat" })),
     ...objectFromKeyMap(allArtifactSets, _ => read("add")),
   },
   char: {
     auto: read("add"), skill: read("add"), burst: read("add"),
     lvl: read("unique"), constellation: read("unique"), asc: read("unique"),
+
+    hp: read("unique"), atk: read("unique"), def: read("unique"), special: read("unique"),
   },
   weapon: {
     lvl: read("unique"), asc: read("unique"), refineIndex: read("unique"),
@@ -48,8 +53,8 @@ const rd = setReadNodeKeys({
     byMove: read("unique", undefined, str.dmg.move),
     byElement: read("unique", undefined, str.dmg.ele),
 
-    ...objectFromKeyMap(allMoves, _ => read("add")),
-    ...objectFromKeyMap(allElementsWithPhy, _ => read("add")),
+    ...objectFromKeyMap(allMoves, _ => read("add", { unit: "%" })),
+    ...objectFromKeyMap(allElementsWithPhy, _ => read("add", { unit: "%" })),
   },
 
   hit: {
@@ -57,7 +62,7 @@ const rd = setReadNodeKeys({
     amp: { reactionMulti: read("add"), multi: read("add"), base: read("add"), },
     critMulti: {
       byHitMode: read("unique", undefined, str.dmg.hitMode),
-      ...objectFromKeyMap(allHitModes, _ => read("unique"))
+      ...objectFromKeyMap(allHitModes, _ => read("unique", { unit: "%" }))
     },
   },
 
