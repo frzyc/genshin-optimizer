@@ -18,7 +18,7 @@ import { getTalentStatKeyVariant } from "../../../Build/Build"
 import { absorbableEle } from '../dataUtil'
 import { Translate } from '../../../Components/Translate'
 import { chargedDocSection, conditionalHeader, normalSrc, plungeDocSection, sgt, talentTemplate } from '../SheetUtil_WR'
-import { WeaponTypeKey } from '../../../Types/consts'
+import { allElements, WeaponTypeKey } from '../../../Types/consts'
 import ColorText from '../../../Components/ColoredText'
 import { input } from "../../../Formula/index";
 import { dataObjForCharacterSheet, dmgNode } from "../../../Formula/api";
@@ -75,14 +75,14 @@ export const data = dataObjForCharacterSheet("Sucrose", "anemo",
   {
     // TODO: include
     // Teambuff: A1, A4,
-    // Misc: C1, C2, C4, C6
+    // Misc: C1, C2, C4
     char: {
       skill: threshold_add(input.char.asc, 3, 3),
       burst: threshold_add(input.char.asc, 5, 3),
     },
-    total: {
+    dmgBonus: {
       // TODO: Add conditional
-      eleMas: threshold_add(input.char.constellation, 6, prod(0.2, input.premod.eleMas)),
+      ...Object.fromEntries(allElements.map(ele => [ele, threshold_add(input.char.constellation, 6, 0.2)])),
     }
   }
 )

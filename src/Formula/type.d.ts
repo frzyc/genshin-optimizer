@@ -21,7 +21,7 @@ interface NodeBase {
 }
 interface Info {
   name?: string
-  variant?: ElementKeyWithPhy | "healing"
+  variant?: ElementKeyWithPhy | "success"
   unit?: "%" | "flat"
 }
 
