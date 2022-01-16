@@ -312,11 +312,7 @@ class Context {
     if (origin !== this.id) return this.allContexts[origin].compute(node, key)
 
     if (nodes.length == 1 || node.accumulation === "unique")
-      return nodes[0] ?? {
-        operation: "const", origin: 0,
-        name: "", value: NaN, variant: undefined,
-        formulas: [],
-      }
+      return nodes[0] ?? this._constant({ operation: "const", operands: [], value: NaN }, key)
 
     const f = allOperations[node.accumulation]
     const value = f(nodes.map(x => x.value))
@@ -342,18 +338,6 @@ class Context {
 
     // TODO: Incorporate `info` if needed
     return child.compute(node.operands[0], path)
-  }
-  _constant(node: ConstantNode, path: string[]): ContextNodeDisplay {
-    // All constants belong to the main context
-    if (this.id !== 0) return this.allContexts[0].compute(node, path)
-    return {
-      operation: "const",
-      name: node.info?.name ?? "",
-      value: node.value,
-      unit: node.info?.unit, variant: node.info?.variant,
-      formulas: [],
-      origin: this.id,
-    }
   }
   _compute(node: ComputeNode, path: string[]): ContextNodeDisplay {
     const operands = node.operands.map(x => this.compute(x, path))
@@ -398,6 +382,18 @@ class Context {
       origin: this.id
     }
   }
+  _constant(node: ConstantNode, path: string[]): ContextNodeDisplay {
+    // All constants belong to the main context
+    if (this.id !== 0) return this.allContexts[0].compute(node, path)
+    return {
+      operation: "const",
+      name: node.info?.name ?? "",
+      value: node.value,
+      unit: node.info?.unit, variant: node.info?.variant,
+      formulas: [],
+      origin: this.id,
+    }
+  }
 }
 function computeUIData(data: Data[]): UIData {
   const result: UIData = {
@@ -419,11 +415,11 @@ function computeUIData(data: Data[]): UIData {
   for (const entry of data) {
     if (entry.number.conditional) {
       crawlObject(entry.number.conditional, ["conditional"], (x: any) => x.operation, (x: any, key: string[]) =>
-        layeredAssignment(result.number, key, x))
+        layeredAssignment(result.number, key, mainContext.compute(x, key)))
     }
     if (entry.number.display) {
       crawlObject(entry.number.display, ["display"], (x: any) => x.operation, (x: any, key: string[]) =>
-        layeredAssignment(result.number, key, x))
+        layeredAssignment(result.number, key, mainContext.compute(x, key)))
     }
   }
 
