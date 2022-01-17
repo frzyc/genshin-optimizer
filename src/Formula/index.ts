@@ -8,7 +8,7 @@ const allStats = [...allMainStatKeys, ...allSubstats] as const
 const allMoves = ["normal", "charged", "plunging", "skill", "burst"] as const
 const unit: ConstantNode = { operation: "const", value: 1, info: { unit: "%" }, operands: [] }
 
-const substatMapping: StrictDict<typeof allStats[number], string> = {
+export const statMapping: StrictDict<typeof allStats[number], string> = {
   hp: "HP", hp_: "HP%", atk: "ATK", atk_: "ATK%", def: "DEF", def_: "DEF%",
   eleMas: "Elemental Mastery", enerRech_: "Energy Recharge",
   critRate_: "Crit Rate", critDMG_: "Crit DMG",
@@ -24,17 +24,16 @@ const substatMapping: StrictDict<typeof allStats[number], string> = {
 
 // All read nodes
 const rd = setReadNodeKeys({
-  base: objectFromKeyMap(["atk", "hp", "def"] as const, key => read("add", { name: `Base ${substatMapping[key]}` })),
+  base: objectFromKeyMap(["atk", "hp", "def"] as const, key => read(key === "atk" ? "add" : "unique", { name: statMapping[key], namePrefix: "Base" })),
   premod: objectFromKeyMap(allStats, _ => read("add")),
   total: {
-    ...objectFromKeyMap(allStats, key => read("add", { name: `${substatMapping[key]}` })),
-    cappedCritRate: read("unique"), // Total Crit Rate capped to [0, 100%]
+    ...objectFromKeyMap(allStats, key => read("add", { name: statMapping[key], namePrefix: "Total" })),
+    cappedCritRate: read("unique", { name: "Capped Crit Rate" }), // Total Crit Rate capped to [0, 100%]
   },
 
   art: {
-    ...objectFromKeyMap(allStats, key => key.endsWith("_")
-      ? read("add", { unit: "%", name: `Artifact ${substatMapping[key]}` })
-      : read("add", { name: `Artifact ${substatMapping[key]}` })),
+    ...objectFromKeyMap(allStats, key =>
+      read("add", { unit: key.endsWith("_") ? "%" : "flat", name: statMapping[key], namePrefix: "Art." })),
     ...objectFromKeyMap(allArtifactSets, _ => read("add")),
   },
   char: {
@@ -43,14 +42,16 @@ const rd = setReadNodeKeys({
     auto: read("add"), skill: read("add"), burst: read("add"),
     lvl: read("unique"), constellation: read("unique"), asc: read("unique"),
 
-    ...objectFromKeyMap(["hp", "atk", "def"] as const, key => read("unique", { name: `Character ${substatMapping[key]}` })),
-    special: read("unique", { name: `Character Bonus` }),
+    ...objectFromKeyMap(["hp", "atk", "def"] as const, key => read("unique", { name: statMapping[key], namePrefix: "Char." })),
+    special: read("unique", { name: `Char. Bonus` }),
   },
   weapon: {
     key: stringRead(), type: stringRead(),
 
     lvl: read("unique"), asc: read("unique"), refineIndex: read("unique"),
-    main: read("unique"), sub: read("unique"), sub2: read("unique"),
+    main: read("unique", { namePrefix: "Weapon" }),
+    sub: read("unique", { namePrefix: "Weapon" }),
+    sub2: read("unique", { namePrefix: "Weapon" }),
   },
   team: { infusion: stringRead() },
 
@@ -94,7 +95,7 @@ for (const element of allElementsWithPhy) {
   rd.art[`${element}_dmg_` as const].info!.variant = element
 }
 
-const { base, art, premod, total, char, hit, dmgBonus, enemy } = rd
+const { base, art, premod, total, weapon, char, hit, dmgBonus, enemy } = rd
 
 // Mark read nodes whose aggregation we want to hide
 for (const node of Object.values(art))
@@ -102,6 +103,9 @@ for (const node of Object.values(art))
 for (const key of ["hp", "atk", "def"] as const)
   char[key].asConst = true
 char.special.asConst = true
+weapon.main.asConst = true
+weapon.sub.asConst = true
+weapon.sub2.asConst = true
 
 const common = {
   base: objectFromKeyMap(["hp", "atk", "def"], key => char[key] as Node),

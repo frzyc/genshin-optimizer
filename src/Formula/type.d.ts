@@ -22,6 +22,7 @@ interface NodeBase {
 interface Info {
   key?: string
   name?: string
+  namePrefix?: string
   variant?: ElementKeyWithPhy | "success"
   unit?: "%" | "flat"
 }

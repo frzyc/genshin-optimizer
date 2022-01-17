@@ -6,10 +6,10 @@ import { allElementsWithPhy, ArtifactSetKey, CharacterKey, ElementKeyWithPhy, We
 import { ICachedWeapon } from "../Types/weapon";
 import { assertUnreachable, crawlObject, layeredAssignment, objectFromKeyMap, objPathValue } from "../Util/Util";
 import _weaponCurves from "../Weapon/expCurve_gen.json";
-import { Input, input, StrictInput } from "./index";
+import { Input, input, statMapping, StrictInput } from "./index";
 import { constant } from "./internal";
 import { allOperations } from "./optimization";
-import { ComputeNode, ConstantNode, Data, DataNode, DynamicNumInput, Node, ReadNode, StringNode, StringPriorityNode, StringReadNode, SubscriptNode } from "./type";
+import { ComputeNode, ConstantNode, Data, DataNode, DynamicNumInput, Info, Node, ReadNode, StringNode, StringPriorityNode, StringReadNode, SubscriptNode } from "./type";
 import { data, prod, stringConst, subscript, sum } from "./utils";
 const readNodeArrays: ReadNode[] = []
 crawlObject(input, [], (x: any) => x.operation, (x: any) => readNodeArrays.push(x))
@@ -68,18 +68,18 @@ function dataObjForWeaponSheet(
   const substatNode = prod(substat.base, subscript(input.weapon.lvl, weaponCurves[substat.lvlCurve]))
   const substat2Node = substat2 && subscript(input.weapon.refineIndex, substat2.refinement, { key: substat2.stat })
 
-  mainStatNode.info = { key: mainStat.stat ?? "atk" }
-  substatNode.info = { key: substat.stat }
+  mainStatNode.info = { key: mainStat.stat ?? "atk", name: statMapping[mainStat.stat ?? "atk"] }
+  substatNode.info = { key: substat.stat, name: statMapping[substat.stat] }
   if (substat2Node)
-    substat2Node.info = { key: substat2.stat }
+    substat2Node.info = { key: substat2.stat, name: statMapping[substat2.stat] }
 
   if (mainStat.stat?.endsWith("_")) mainStatNode.info.unit = "%"
   if (substat.stat?.endsWith("_")) substatNode.info.unit = "%"
   if (substat2?.stat?.endsWith("_")) substat2Node!.info!.unit = "%"
 
   const result: Data = {
-    base: { [mainStat.stat ?? "atk"]: mainStatNode, },
-    premod: { [substat.stat]: substatNode, },
+    base: { [mainStat.stat ?? "atk"]: input.weapon.main },
+    premod: { [substat.stat]: input.weapon.sub },
     weapon: {
       key: stringConst(key), type: stringConst(type),
       main: mainStatNode, sub: substatNode,
@@ -89,7 +89,7 @@ function dataObjForWeaponSheet(
   if (substat2) {
     result.weapon!.sub2 = substat2Node
     result.premod![substat2.stat] = substat2.stat !== substat.stat
-      ? substat2Node : sum(substatNode, substat2Node!)
+      ? input.weapon.sub2 : sum(input.weapon.sub, input.weapon.sub2)
   }
 
   return mergeData(result, additional)
@@ -170,7 +170,7 @@ interface UnitGroup {
   parent: UnitGroup
 }
 interface ContextNodeDisplay {
-  name?: string, key?: string
+  name?: string, namePrefix?: string, key?: string
   formula?: (ContextNodeDisplay | string)[]
 
   value: number
@@ -178,7 +178,10 @@ interface ContextNodeDisplay {
   unitGroup: UnitGroup
 
   formulaCache?: {
-    formula: Displayable,
+    nameNoUnit?: string
+    name?: string
+    fullNameNoUnit?: string
+    formula: Displayable
     dependencies: ContextNodeDisplay[]
     assignmentFormula?: Displayable
   }
@@ -295,20 +298,18 @@ class Context {
 
     const nodes = this.readAll(key)
     let result: ContextNodeDisplay
-    if (nodes.length == 1 || node.accumulation === "unique") {
-      result = nodes.length ? { ...nodes[0] } : this._constant({ operation: "const", operands: [], info: node.info, value: NaN })
-      const info = node.info
-      if (info) {
-        if (info.key) result.key = info.key
-        if (info.name) result.name = info.name
-        if (info.unit === "%") mergeUnitGroup(result.unitGroup, percentGroup)
-        if (info.variant) result.variant = info.variant
-      }
-    } else {
+    if (node.accumulation === "unique")
+      result = mergeInfo(nodes.length
+        ? { ...nodes[0] }
+        : this._constant({ operation: "const", operands: [], info: node.info, value: NaN }), node.info)
+    else
       result = this._accumulate(node.accumulation, nodes, node.info)
-    }
-    if (node.asConst)
+
+    if (node.asConst) {
       delete result.formula
+      result.operandCount = 0
+    }
+
     return result
   }
   _data(node: DataNode, path: string[]): ContextNodeDisplay {
@@ -346,15 +347,13 @@ class Context {
     return result
   }
   _constant(node: ConstantNode): ContextNodeDisplay {
-    const result: ContextNodeDisplay = {
+    return mergeInfo({
       operation: "const",
-      key: node.info?.key,
       value: node.value,
-      unitGroup: node.info?.unit === "%" ? percentGroup : newUnitGroup(), variant: node.info?.variant,
+      unitGroup: newUnitGroup(),
+      variant: undefined,
       operandCount: 0
-    }
-    if (node.info?.name) result.name = node.info.name
-    return result
+    }, node.info)
   }
 
   _accumulate(operation: ComputeNode["operation"], operands: ContextNodeDisplay[], info: Node["info"]): ContextNodeDisplay {
@@ -425,16 +424,21 @@ class Context {
     }
 
     const value = allOperations[operation](operands.map(x => x.value))
-    const result: ContextNodeDisplay = {
+    return mergeInfo({
       operation,
       formula,
       value, unitGroup, variant,
       operandCount: operands.length
-    }
-    if (info?.name) result.name = info.name
-    if (info?.key) result.key = info.key
-    return result
+    }, info)
   }
+}
+function mergeInfo(node: ContextNodeDisplay, info: Info | undefined): ContextNodeDisplay {
+  if (info?.name) node.name = info.name
+  if (info?.namePrefix) node.namePrefix = info.namePrefix
+  if (info?.key) node.key = info.key
+  if (info?.variant) node.variant = info.variant
+  if (info?.unit === "%") mergeUnitGroup(node.unitGroup, percentGroup)
+  return node
 }
 type ContextNodeDisplayList = { list: ContextNodeDisplay[], separator?: string, shouldWrap?: (_: ContextNodeDisplay) => boolean }
 function fStr(strings: TemplateStringsArray, ...keys: (ContextNodeDisplay | ContextNodeDisplayList)[]): (ContextNodeDisplay | string)[] {
@@ -465,7 +469,7 @@ function mergeVariants(operands: ContextNodeDisplay[]): ContextNodeDisplay["vari
   return unique.values().next().value
 }
 function shouldWrap(component: ContextNodeDisplay): boolean {
-  return component.operation === "add" && component.operandCount > 1
+  return component.operation === "add" && component.operandCount > 1 && !component.name
 }
 function valueString(value: number, unit: "%" | "flat", fixed = -1): string {
   if (fixed === -1) {
@@ -474,36 +478,41 @@ function valueString(value: number, unit: "%" | "flat", fixed = -1): string {
   }
   return unit === "%" ? `${(value * 100).toFixed(fixed)}%` : value.toFixed(fixed)
 }
-function computeFormulaString(node: ContextNodeDisplay): { formula: Displayable, dependencies: ContextNodeDisplay[] } {
+function computeFormulaString(node: ContextNodeDisplay): Required<ContextNodeDisplay>["formulaCache"] {
   if (node.formulaCache) return node.formulaCache
 
   node.formulaCache = { formula: "", dependencies: [] }
-  const result = node.formulaCache
-  if (!node.formula) return result
+  const cache = node.formulaCache
+  if (node.name) {
+    cache.name = node.name
+    cache.nameNoUnit = cache.name.endsWith("%") ? cache.name.slice(0, -1) : cache.name
+    cache.fullNameNoUnit = node.namePrefix ? node.namePrefix + " " + cache.nameNoUnit : cache.nameNoUnit
+  }
+  if (!node.formula) return cache
 
-  const dependencies = new Set<ContextNodeDisplay>()
+  const deps = new Set<ContextNodeDisplay>()
 
   // TODO: Add JSX Version
-  result.formula = node.formula.map(item => {
+  cache.formula = node.formula.map(item => {
     if (typeof item === "string") return item
 
-    const { formula, dependencies: subDependencies } = computeFormulaString(item)
-    if (item.name) {
-      dependencies.add(item)
-      subDependencies.forEach(x => dependencies.add(x))
-      return `${item.name} ${valueString(item.value, sameGroup(item.unitGroup, percentGroup) ? "%" : "flat")}`
+    const { formula, fullNameNoUnit, dependencies } = computeFormulaString(item)
+    if (fullNameNoUnit) {
+      deps.add(item)
+      dependencies.forEach(x => deps.add(x))
+      return `${fullNameNoUnit} ${valueString(item.value, sameGroup(item.unitGroup, percentGroup) ? "%" : "flat")}`
     }
     if (item.formula) {
-      subDependencies.forEach(x => dependencies.add(x))
+      dependencies.forEach(x => deps.add(x))
       return formula
     }
     return `${valueString(item.value, sameGroup(item.unitGroup, percentGroup) ? "%" : "flat")}`
   }).join("")
 
-  if (node.name)
-    result.assignmentFormula = `${node.name} = ${result.formula}`
-  result.dependencies = [...dependencies]
-  return result
+  if (cache.fullNameNoUnit)
+    cache.assignmentFormula = `${cache.fullNameNoUnit} ${valueString(node.value, sameGroup(node.unitGroup, percentGroup) ? "%" : "flat")} = ${cache.formula}`
+  cache.dependencies = [...deps]
+  return cache
 }
 function computeUIData(data: Data[]): UIData {
   const result: UIData = {
@@ -514,38 +523,42 @@ function computeUIData(data: Data[]): UIData {
   const mainContext = new Context(data)
   mainContext.thresholds = result.threshold
 
-  function process(node: ContextNodeDisplay): NodeDisplay {
-    const { name, key, value, variant } = node
+  function process(node: ContextNodeDisplay, path: string[] = []): NodeDisplay {
+    const { namePrefix, key, value, variant } = node
     const newValue: NodeDisplay = {
-      name: name ?? "", value,
+      name: "", nameWithUnit: "", value,
       unit: "flat",
       formulas: [],
     }
     if (key) newValue.key = key
     if (variant) newValue.variant = variant
+    if (namePrefix) newValue.namePrefix = namePrefix
     if (sameGroup(node.unitGroup, percentGroup)) newValue.unit = "%"
 
-    if (newValue.name) {
-      const { dependencies } = computeFormulaString(node)
-      newValue.formulas = [node, ...dependencies.filter(x => x.formula)]
-        .map(x => x.formulaCache!.assignmentFormula!)
-        .filter(x => x)
+    const { name, nameNoUnit, dependencies } = computeFormulaString(node)
+    if (name) {
+      newValue.name = nameNoUnit!
+      newValue.namePrefix = node.namePrefix
+      newValue.nameWithUnit = name
     }
+    newValue.formulas = [node, ...dependencies.filter(x => x.formula)]
+      .map(x => x.formulaCache!.assignmentFormula!)
+      .filter(x => x)
     return newValue
   }
 
   crawlObject(input, [], (x: any) => x.operation, (node: any, key: any) =>
     layeredAssignment(result.values, key,
       node.operation === "read"
-        ? process(mainContext.compute(node, key))
+        ? process(mainContext.compute(node, key), key)
         : mainContext.computeString(node)))
   for (const entry of data) {
     if (entry.conditional)
       crawlObject(entry.conditional, ["conditional"], (x: any) => x.operation, (x: any, key: string[]) =>
-        layeredAssignment(result.values, key, process(mainContext.compute(x, key))))
+        layeredAssignment(result.values, key, process(mainContext.compute(x, key), key)))
     if (entry.display)
       crawlObject(entry.display, ["display"], (x: any) => x.operation, (x: any, key: string[]) =>
-        layeredAssignment(result.values, key, process(mainContext.compute(x, key))))
+        layeredAssignment(result.values, key, process(mainContext.compute(x, key), key)))
   }
 
   return result
@@ -557,6 +570,8 @@ interface UIData {
 }
 export interface NodeDisplay {
   name: string
+  nameWithUnit: string
+  namePrefix?: string
   key?: string
   value: number
   unit: "%" | "flat"
