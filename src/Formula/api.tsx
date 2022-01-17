@@ -198,7 +198,7 @@ interface ContextNodeDisplay {
   }
 
   operation: Node["operation"]
-  operandCount: number
+  mayNeedWrapping: boolean
 }
 interface ContextString { value?: string }
 
@@ -318,7 +318,7 @@ class Context {
 
     if (node.asConst) {
       delete result.formula
-      result.operandCount = 0
+      result.mayNeedWrapping = false
     }
 
     return result
@@ -363,7 +363,7 @@ class Context {
       value: node.value,
       unitGroup: newUnitGroup(),
       variant: undefined,
-      operandCount: 0
+      mayNeedWrapping: false
     }, node.info)
   }
 
@@ -413,18 +413,34 @@ class Context {
     if (info?.variant) variant = info.variant
 
     let formula: (ContextNodeDisplay | string)[]
+    let mayNeedWrapping = false
     switch (operation) {
       case "max": formula = fStr`Max(${{ list: operands, separator: ', ' }})`; break
       case "min": formula = fStr`Min(${{ list: operands, separator: ', ' }})`; break
-      case "add": formula = fStr`${{ list: operands, separator: ' + ' }}`; break
-      case "mul": formula = fStr`${{ list: operands, separator: ' * ', shouldWrap }}`; break
+      case "add":
+        formula = fStr`${{ list: operands, separator: ' + ' }}`;
+
+        if (operands.length <= 1) mayNeedWrapping = operands[0]?.mayNeedWrapping ?? true
+        else mayNeedWrapping = true
+        break
+      case "mul":
+        formula = fStr`${{ list: operands, separator: ' * ', shouldWrap }}`;
+
+        if (operands.length <= 1) mayNeedWrapping = operands[0]?.mayNeedWrapping ?? true
+        break
       case "sum_frac": formula = fStr`${{ list: [operands[0]], shouldWrap }} / ${{ list: operands }}`; break
       case "res":
         {
           const base = operands[0].value
-          if (base < 0) formula = fStr`100% - ${{ list: operands, shouldWrap }} / 2`
+          if (base < 0) {
+            formula = fStr`100% - ${{ list: operands, shouldWrap }} / 2`
+            mayNeedWrapping = true
+          }
           else if (base >= 0.75) formula = fStr`100% / (${{ list: operands, shouldWrap }} * 4 + 100%)`
-          else formula = fStr`100% - ${{ list: operands, shouldWrap }}`
+          else {
+            formula = fStr`100% - ${{ list: operands, shouldWrap }}`
+            mayNeedWrapping = true
+          }
           break
         }
       case "threshold_add":
@@ -439,7 +455,7 @@ class Context {
       operation,
       formula,
       value, unitGroup, variant,
-      operandCount: operands.length
+      mayNeedWrapping
     }, info)
   }
 }
@@ -479,7 +495,7 @@ function mergeVariants(operands: ContextNodeDisplay[]): ContextNodeDisplay["vari
   return unique.values().next().value
 }
 function shouldWrap(component: ContextNodeDisplay): boolean {
-  return component.operation === "add" && component.operandCount > 1 && !component.key
+  return component.mayNeedWrapping
 }
 function valueString(value: number, unit: "%" | "flat", fixed = -1): string {
   if (fixed === -1) {
