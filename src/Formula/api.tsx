@@ -199,6 +199,10 @@ function identifyGroup(v: UnitGroup): UnitGroup {
   v.parent = identity
   return identity
 }
+function sameGroup(l: UnitGroup, r: UnitGroup): boolean {
+  const iL = identifyGroup(l), iR = identifyGroup(r)
+  return iL.parent === iR.parent
+}
 function mergeUnitGroup(l: UnitGroup, r: UnitGroup) {
   const iL = identifyGroup(l), iR = identifyGroup(r)
   iL.parent.parent = iR.parent
@@ -378,7 +382,7 @@ class Context {
           // TODO
           let found = false
           unitGroup = operands.find(x => {
-            if (identifyGroup(x.unitGroup) === identifyGroup(percentGroup)) {
+            if (sameGroup(x.unitGroup, percentGroup)) {
               if (!found) found = true
               else return true
               return false
@@ -463,9 +467,9 @@ function mergeVariants(operands: ContextNodeDisplay[]): ContextNodeDisplay["vari
 function shouldWrap(component: ContextNodeDisplay): boolean {
   return component.operation === "add" && component.operandCount > 1
 }
-function valueString(node: ContextNodeDisplay): string {
-  return (identifyGroup(node.unitGroup) === identifyGroup(percentGroup))
-    ? `${(node.value * 100).toFixed(1)}%` : `${Math.abs(node.value) < 10 ? node.value.toFixed(3) : node.value.toPrecision(5)}`
+function valueString(value: number, unit: "%" | "flat"): string {
+  return unit === "%"
+    ? `${(value * 100).toFixed(1)}%` : `${Math.abs(value) < 10 ? value.toFixed(3) : value.toPrecision(5)}`
 }
 function computeFormulaString(node: ContextNodeDisplay): { formula: Displayable, dependencies: ContextNodeDisplay[] } {
   if (node.formulaCache) return node.formulaCache
@@ -484,13 +488,13 @@ function computeFormulaString(node: ContextNodeDisplay): { formula: Displayable,
     if (item.name) {
       dependencies.add(item)
       subDependencies.forEach(x => dependencies.add(x))
-      return `${item.name} ${valueString(item)}`
+      return `${item.name} ${valueString(item.value, sameGroup(item.unitGroup, percentGroup) ? "%" : "flat")}`
     }
     if (item.formula) {
       subDependencies.forEach(x => dependencies.add(x))
       return formula
     }
-    return `${valueString(item)}`
+    return `${valueString(item.value, sameGroup(item.unitGroup, percentGroup) ? "%" : "flat")}`
   }).join("")
 
   if (node.name)
@@ -516,7 +520,7 @@ function computeUIData(data: Data[]): UIData {
     }
     if (key) newValue.key = key
     if (variant) newValue.variant = variant
-    if (identifyGroup(node.unitGroup) === identifyGroup(percentGroup)) newValue.unit = "%"
+    if (sameGroup(node.unitGroup, percentGroup)) newValue.unit = "%"
 
     if (newValue.name) {
       const { dependencies } = computeFormulaString(node)
@@ -562,5 +566,5 @@ export {
   dataObjForCharacterSheet, dataObjForWeaponSheet,
   dmgNode,
 
-  mergeData, computeUIData,
+  mergeData, computeUIData, valueString
 }
