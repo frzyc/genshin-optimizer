@@ -166,19 +166,44 @@ function mergeData(...data: Data[]): Data {
   return data.length ? internal(data, input, []) : {}
 }
 
-type ContextNodeDisplay = {
-  name?: string
-  formula?: Displayable
-  formulas: Map<ContextNodeDisplay, Displayable>
+interface UnitGroup {
+  parent: UnitGroup
+}
+interface ContextNodeDisplay {
+  name?: string, key?: string
+  formula?: (ContextNodeDisplay | string)[]
 
-  key: string | undefined
   value: number
   variant: ElementKeyWithPhy | "success" | undefined
-  unit: "%" | "flat"
+  unitGroup: UnitGroup
+
+  formulaCache?: {
+    formula: Displayable,
+    dependencies: ContextNodeDisplay[]
+    assignmentFormula?: Displayable
+  }
 
   operation: Node["operation"]
+  operandCount: number
 }
-type ContextString = { value?: string }
+interface ContextString { value?: string }
+
+function newUnitGroup(): UnitGroup {
+  const result: UnitGroup = {} as any
+  result.parent = result
+  return result
+}
+function identifyGroup(v: UnitGroup): UnitGroup {
+  if (v.parent === v) return v
+  const identity = identifyGroup(v.parent)
+  v.parent = identity
+  return identity
+}
+function mergeUnitGroup(l: UnitGroup, r: UnitGroup) {
+  const iL = identifyGroup(l), iR = identifyGroup(r)
+  iL.parent.parent = iR.parent
+}
+const percentGroup = newUnitGroup()
 
 class Context {
   thresholds: Dict<string, Dict<number, { path: string[], value: NodeDisplay }>> | undefined
@@ -223,8 +248,18 @@ class Context {
     let result: ContextString
     switch (operation) {
       case "sconst": result = { value: node.value }; break
-      case "prio": result = this._strPrio(node); break
-      case "sread": result = this._strRead(node); break
+      case "prio":
+        const operands = node.operands.map(x => this.computeString(x)).filter(x => x.value)
+        result = { value: operands[0]?.value, }
+        break
+      case "sread":
+        let key = node.key
+        if (node.suffix) {
+          const suffix = this.computeString(node.suffix)
+          key = [...key as string[], suffix.value ?? ""]
+        }
+        result = this.readFirstString(key) ?? {}
+        break
       default: assertUnreachable(operation)
     }
 
@@ -245,47 +280,32 @@ class Context {
     return nodes.length ? this.computeString(nodes[0]) : this.parent?.readFirstString(path)
   }
 
-  _strPrio(node: StringPriorityNode): ContextString {
-    const operands = node.operands
-      .map(x => this.computeString(x))
-      .filter(x => x.value)
-    return { value: operands[0]?.value, }
-  }
-  _strRead(node: StringReadNode): ContextString {
-    let key = node.key
-    if (node.suffix) {
-      const suffix = this.computeString(node.suffix)
-      key = [...key as string[], suffix.value ?? ""]
-    }
-
-    return this.readFirstString(key) ?? {}
-  }
-
   _read(node: ReadNode): ContextNodeDisplay {
     let key = node.key
     if (node.suffix) {
       const suffix = this.computeString(node.suffix)
       key = [...key as string[], suffix.value ?? ""]
     }
-
     if (!this.hasRead(key) && this.parent)
       return this.parent.compute(node, key)
 
     const nodes = this.readAll(key)
-
+    let result: ContextNodeDisplay
     if (nodes.length == 1 || node.accumulation === "unique") {
-      const result = nodes.length ? { ...nodes[0] } : this._constant({ operation: "const", operands: [], value: NaN })
+      result = nodes.length ? { ...nodes[0] } : this._constant({ operation: "const", operands: [], info: node.info, value: NaN })
       const info = node.info
       if (info) {
         if (info.key) result.key = info.key
         if (info.name) result.name = info.name
-        if (info.unit) result.unit = info.unit
+        if (info.unit === "%") mergeUnitGroup(result.unitGroup, percentGroup)
         if (info.variant) result.variant = info.variant
       }
-      return result
+    } else {
+      result = this._accumulate(node.accumulation, nodes, node.info)
     }
-
-    return this._accumulate(node.accumulation, nodes, node.info)
+    if (node.asConst)
+      delete result.formula
+    return result
   }
   _data(node: DataNode, path: string[]): ContextNodeDisplay {
     let child = this.children.get(node.data)
@@ -317,131 +337,166 @@ class Context {
     const operand = this.compute(node.operands[0], path)
 
     const value = node.list[operand.value]
-    return {
-      operation: node.operation,
-      name: node.info?.name,
-      key: node.info?.key,
-      value, unit: node.info?.unit ?? "flat", variant: node.info?.variant, formulas: new Map(),
-    }
+    const result = this._constant({ operation: "const", operands: [], info: node.info, value, })
+    result.operation = "subscript"
+    return result
   }
   _constant(node: ConstantNode): ContextNodeDisplay {
-    return {
+    const result: ContextNodeDisplay = {
       operation: "const",
-      name: node.info?.name,
       key: node.info?.key,
       value: node.value,
-      unit: node.info?.unit ?? "flat", variant: node.info?.variant,
-      formulas: new Map(),
+      unitGroup: node.info?.unit === "%" ? percentGroup : newUnitGroup(), variant: node.info?.variant,
+      operandCount: 0
     }
+    if (node.info?.name) result.name = node.info.name
+    return result
   }
 
   _accumulate(operation: ComputeNode["operation"], operands: ContextNodeDisplay[], info: Node["info"]): ContextNodeDisplay {
-    let unit: ContextNodeDisplay["unit"] = "flat"
-    let variant: ContextNodeDisplay["variant"]
+    let unitGroup = newUnitGroup(), variant: ContextNodeDisplay["variant"]
 
     switch (operation) {
-      case "add": case "min": case "max": case "threshold_add": {
-        const lastOperands = operands[operands.length - 1]
-        if (lastOperands) {
-          unit = lastOperands.unit
-          variant = lastOperands.variant
-        }
+      case "add": case "min": case "max": {
+        operands.forEach(x => mergeUnitGroup(unitGroup, x.unitGroup))
+        variant = mergeVariants(operands)
+        break
+      }
+      case "threshold_add": {
+        const operand = operands[2]
+        unitGroup = operand.unitGroup
+        variant = operand.variant
         break
       }
       case "mul": {
-        if (!info?.variant) {
-          const variants = new Set(operands.map(x => x.variant))
-          if (variants.size > 1) variants.delete(undefined)
-          if (variants.size > 1) variants.delete("physical")
-          variant = variants.values().next().value
-        }
+        if (!info?.variant)
+          variant = mergeVariants(operands)
+        if (!info?.unit) {
+          if (operands.length === 1)
+            unitGroup = operands[0].unitGroup
 
-        if (!info?.unit &&
-          !operands.find(x => x.unit === "flat") &&
-          operands.find(x => x.unit === "%"))
-          unit = "%"
+          // TODO
+          let found = false
+          unitGroup = operands.find(x => {
+            if (identifyGroup(x.unitGroup) === identifyGroup(percentGroup)) {
+              if (!found) found = true
+              else return true
+              return false
+            }
+          })?.unitGroup ?? unitGroup
+        }
         break
       }
       case "res":
       case "sum_frac":
-        unit = "%"
-        variant = operands[0].variant
+        unitGroup = percentGroup
+        variant = mergeVariants(operands)
         break
       default: assertUnreachable(operation)
     }
 
-    if (info?.unit) unit = info.unit
+    if (info?.unit === "%") mergeUnitGroup(unitGroup, percentGroup)
     if (info?.variant) variant = info.variant
 
-    let formulas = new Map<ContextNodeDisplay, Displayable>()
-    const operandFormulas: Displayable[] = []
-    for (const operand of operands) {
-      if (operand.name) {
-        operandFormulas.push(<>{addVariant(operand.name, operand.variant)} {valueWithUnit(operand.value, operand.unit)}</>)
-        if (operand.formula)
-          formulas.set(operand, operand.formula)
-      } else {
-        operandFormulas.push(operand.formula ?? addVariant(`${operand.value}`, operand.variant))
-      }
-      if (operand.formulas.size)
-        formulas = new Map([...formulas.entries(), ...operand.formulas])
-    }
-    let formula: Displayable | undefined = undefined
+    let formula: (ContextNodeDisplay | string)[]
     switch (operation) {
-      case "add":
-        formula = joinComponents(operandFormulas, " + ")
-        break
-      case "mul":
-        operands.forEach((x, i) => {
-          if (x.operation === "add") operandFormulas[i] = <>({operandFormulas[i]})</>
-        })
-        formula = joinComponents(operandFormulas, " * ")
-        break
-      case "max": case "min":
-        formula = <>{operation === "min" ? "Min" : "Max"}({joinComponents(operandFormulas, ", ")})</>
-        break
-      case "res": {
-        const base = operands[0].value
-        if (operands[0].operation === "add")
-          operandFormulas[0] = <>({operandFormulas[0]})</>
-        if (base < 0) formula = <>100% - {operandFormulas[0]} / 2</>
-        else if (base >= 0.75) formula = <>100% / ({operandFormulas[0]} * 4 + 100%)</>
-        else formula = <>100% - {operandFormulas[0]}</>
-        break
-      }
-      case "sum_frac": {
-        const wrapped = operands[0].operation === "add" ? <>{operandFormulas[0]}</> : operandFormulas[0]
-        formula = <>{wrapped} / ({joinComponents(operandFormulas, "+")})</>
-        break
-      }
+      case "max": formula = fStr`Max(${{ list: operands, separator: ', ' }})`; break
+      case "min": formula = fStr`Min(${{ list: operands, separator: ', ' }})`; break
+      case "add": formula = fStr`${{ list: operands, separator: ' + ' }}`; break
+      case "mul": formula = fStr`${{ list: operands, separator: ' * ', shouldWrap }}`; break
+      case "sum_frac": formula = fStr`${{ list: [operands[0]], shouldWrap }} / ${{ list: operands }}`; break
+      case "res":
+        {
+          const base = operands[0].value
+          if (base < 0) formula = fStr`100% - ${{ list: operands, shouldWrap }} / 2`
+          else if (base >= 0.75) formula = fStr`100% / (${{ list: operands, shouldWrap }} * 4 + 100%)`
+          else formula = fStr`100% - ${{ list: operands, shouldWrap }}`
+          break
+        }
       case "threshold_add":
-        if (operands[0].value >= operands[1].value)
-          formula = operandFormulas[2]
+        const value = operands[0].value, threshold = operands[1].value
+        formula = (value >= threshold) ? operands[2].formula ?? [] : []
         break
       default: assertUnreachable(operation)
     }
 
     const value = allOperations[operation](operands.map(x => x.value))
-    return {
+    const result: ContextNodeDisplay = {
       operation,
-      name: info?.name, formula,
-      key: info?.key,
-      value, unit: unit ?? "flat", variant, formulas
+      formula,
+      value, unitGroup, variant,
+      operandCount: operands.length
     }
+    if (info?.name) result.name = info.name
+    if (info?.key) result.key = info.key
+    return result
   }
 }
-function addVariant(string: string, variant: ContextNodeDisplay["variant"]): Displayable {
-  if (!string) return string
+type ContextNodeDisplayList = { list: ContextNodeDisplay[], separator?: string, shouldWrap?: (_: ContextNodeDisplay) => boolean }
+function fStr(strings: TemplateStringsArray, ...keys: (ContextNodeDisplay | ContextNodeDisplayList)[]): (ContextNodeDisplay | string)[] {
+  const result: (ContextNodeDisplay | string)[] = []
+  strings.forEach((string, i) => {
+    result.push(string)
+    if (i < keys.length) {
+      if ((keys[i] as any).list) {
+        const { list, separator = "", shouldWrap } = keys[i] as ContextNodeDisplayList
+        list.forEach((item, i, array) => {
+          if (shouldWrap?.(item)) {
+            result.push("(")
+            result.push(item)
+            result.push(")")
+          } else result.push(item)
+          if (i < array.length - 1)
+            result.push(separator)
+        })
+      } else result.push(keys[i] as ContextNodeDisplay)
+    }
+  })
+  return result
+}
+function mergeVariants(operands: ContextNodeDisplay[]): ContextNodeDisplay["variant"] {
+  const unique = new Set(operands.map(x => x.variant))
+  if (unique.size > 1) unique.delete(undefined)
+  if (unique.size > 1) unique.delete("physical")
+  return unique.values().next().value
+}
+function shouldWrap(component: ContextNodeDisplay): boolean {
+  return component.operation === "add" && component.operandCount > 1
+}
+function valueString(node: ContextNodeDisplay): string {
+  return (identifyGroup(node.unitGroup) === identifyGroup(percentGroup))
+    ? `${node.value * 100}%` : `${node.value}`
+}
+function computeFormulaString(node: ContextNodeDisplay): { formula: Displayable, dependencies: ContextNodeDisplay[] } {
+  if (node.formulaCache) return node.formulaCache
 
-  // TODO
-  return string
-}
-function valueWithUnit(value: number, unit: ContextNodeDisplay["unit"]): Displayable {
-  // TODO
-  return `${value}`
-}
-function joinComponents(components: Displayable[], joiner: string) {
-  return <>{components.reduce((acc, x) => acc === null ? x : <>{acc}{joiner}</>, null as unknown as Displayable)}</>
+  node.formulaCache = { formula: "", dependencies: [] }
+  const result = node.formulaCache
+  if (!node.formula) return result
+
+  const dependencies = new Set<ContextNodeDisplay>()
+
+  // TODO: Add JSX Version
+  result.formula = node.formula.map(item => {
+    if (typeof item === "string") return item
+
+    const { formula, dependencies: subDependencies } = computeFormulaString(item)
+    if (item.name) {
+      dependencies.add(item)
+      subDependencies.forEach(x => dependencies.add(x))
+      return `${item.name} ${valueString(item)}`
+    }
+    if (item.formula) {
+      subDependencies.forEach(x => dependencies.add(x))
+      return formula
+    }
+    return `${valueString(item)}`
+  }).join("")
+
+  if (node.name)
+    result.assignmentFormula = `${node.name} = ${result.formula}`
+  result.dependencies = [...dependencies]
+  return result
 }
 function computeUIData(data: Data[]): UIData {
   const result: UIData = {
@@ -453,14 +508,22 @@ function computeUIData(data: Data[]): UIData {
   mainContext.thresholds = result.threshold
 
   function process(node: ContextNodeDisplay): NodeDisplay {
-    const { name, key, value, variant, formula, formulas } = node
+    const { name, key, value, variant } = node
     const newValue: NodeDisplay = {
-      name: name ?? "", value, variant,
-      formulas: [] // TODO
+      name: name ?? "", value,
+      unit: "flat",
+      formulas: [],
     }
     if (key) newValue.key = key
-    if (formula) newValue.formulas.push(<>{name} = {formula}</>)
-    newValue.formulas = [...newValue.formulas, ...[...formulas].map(([node, formula]) => <>{node.name} = {formula}</>)]
+    if (variant) newValue.variant = variant
+    if (identifyGroup(node.unitGroup) === identifyGroup(percentGroup)) newValue.unit = "%"
+
+    if (newValue.name) {
+      const { dependencies } = computeFormulaString(node)
+      newValue.formulas = [node, ...dependencies.filter(x => x.formula)]
+        .map(x => x.formulaCache!.assignmentFormula!)
+        .filter(x => x)
+    }
     return newValue
   }
 
@@ -489,7 +552,8 @@ export interface NodeDisplay {
   name: string
   key?: string
   value: number
-  variant: ElementKeyWithPhy | "success" | undefined
+  unit: "%" | "flat"
+  variant?: ElementKeyWithPhy | "success"
   formulas: Displayable[]
 }
 

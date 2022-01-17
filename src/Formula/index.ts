@@ -9,7 +9,7 @@ const allMoves = ["normal", "charged", "plunging", "skill", "burst"] as const
 const unit: ConstantNode = { operation: "const", value: 1, info: { unit: "%" }, operands: [] }
 
 const substatMapping: StrictDict<typeof allStats[number], string> = {
-  hp: "HP", hp_: "HP%", atk: "ATK", atk_: "ATK%", def: "DEF%", def_: "DEF",
+  hp: "HP", hp_: "HP%", atk: "ATK", atk_: "ATK%", def: "DEF", def_: "DEF%",
   eleMas: "Elemental Mastery", enerRech_: "Energy Recharge",
   critRate_: "Crit Rate", critDMG_: "Crit DMG",
   physical_dmg_: "Physical DMG Bonus",
@@ -96,7 +96,15 @@ for (const element of allElementsWithPhy) {
 
 const { base, art, premod, total, char, hit, dmgBonus, enemy } = rd
 
+// Mark read nodes whose aggregation we want to hide
+for (const node of Object.values(art))
+  node.asConst = true
+for (const key of ["hp", "atk", "def"] as const)
+  char[key].asConst = true
+char.special.asConst = true
+
 const common = {
+  base: objectFromKeyMap(["hp", "atk", "def"], key => char[key] as Node),
   premod: {
     ...objectFromKeyMap(allStats, key => {
       if (key === "atk" || key === "def" || key === "hp")

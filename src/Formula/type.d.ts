@@ -42,6 +42,7 @@ export interface ReadNode extends NodeBase {
   operation: "read"
   key: Path<NodeData, Node | undefined>
   suffix?: StringNode
+  asConst?: boolean
   accumulation: CommutativeMonoidOperation | "unique"
 }
 export interface DataNode extends NodeBase {
