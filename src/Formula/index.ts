@@ -8,17 +8,33 @@ const allStats = [...allMainStatKeys, ...allSubstats] as const
 const allMoves = ["normal", "charged", "plunging", "skill", "burst"] as const
 const unit: ConstantNode = { operation: "const", value: 1, info: { unit: "%" }, operands: [] }
 
+const substatMapping: StrictDict<typeof allStats[number], string> = {
+  hp: "HP", hp_: "HP%", atk: "ATK", atk_: "ATK%", def: "DEF%", def_: "DEF",
+  eleMas: "Elemental Mastery", enerRech_: "Energy Recharge",
+  critRate_: "Crit Rate", critDMG_: "Crit DMG",
+  physical_dmg_: "Physical DMG Bonus",
+  anemo_dmg_: "Anemo DMG Bonus",
+  geo_dmg_: "Geo DMG Bonus",
+  electro_dmg_: "Electro DMG Bonus",
+  hydro_dmg_: "Hydro DMG Bonus",
+  pyro_dmg_: "Pyro DMG Bonus",
+  cryo_dmg_: "Cryp DMG Bonus",
+  heal_: "Healing Bonus",
+}
+
 // All read nodes
 const rd = setReadNodeKeys({
-  base: { atk: read("add"), def: read("add"), hp: read("add") },
+  base: objectFromKeyMap(["atk", "hp", "def"] as const, key => read("add", { name: `Base ${substatMapping[key]}` })),
   premod: objectFromKeyMap(allStats, _ => read("add")),
   total: {
-    ...objectFromKeyMap(allStats, _ => read("add")),
+    ...objectFromKeyMap(allStats, key => read("add", { name: `${substatMapping[key]}` })),
     cappedCritRate: read("unique"), // Total Crit Rate capped to [0, 100%]
   },
 
   art: {
-    ...objectFromKeyMap(allStats, key => key.endsWith("_") ? read("add", { unit: "%" }) : read("add")),
+    ...objectFromKeyMap(allStats, key => key.endsWith("_")
+      ? read("add", { unit: "%", name: `Artifact ${substatMapping[key]}` })
+      : read("add", { name: `Artifact ${substatMapping[key]}` })),
     ...objectFromKeyMap(allArtifactSets, _ => read("add")),
   },
   char: {
@@ -27,7 +43,8 @@ const rd = setReadNodeKeys({
     auto: read("add"), skill: read("add"), burst: read("add"),
     lvl: read("unique"), constellation: read("unique"), asc: read("unique"),
 
-    hp: read("unique"), atk: read("unique"), def: read("unique"), special: read("unique"),
+    ...objectFromKeyMap(["hp", "atk", "def"] as const, key => read("unique", { name: `Character ${substatMapping[key]}` })),
+    special: read("unique", { name: `Character Bonus` }),
   },
   weapon: {
     key: stringRead(), type: stringRead(),
@@ -42,7 +59,7 @@ const rd = setReadNodeKeys({
     byMove: read("unique"), byElement: read("unique"),
 
     ...objectFromKeyMap(allMoves, _ => read("add", { unit: "%" })),
-    ...objectFromKeyMap(allElementsWithPhy, _ => read("add", { unit: "%" })),
+    ...objectFromKeyMap(allElementsWithPhy, _ => read("unique")),
   },
 
   hit: {
@@ -73,7 +90,6 @@ rd.dmgBonus.byElement.suffix = rd.hit.ele
 rd.hit.critMulti.byHitMode.suffix = rd.hit.hitMode
 rd.enemy.res.byElement.suffix = rd.hit.ele
 for (const element of allElementsWithPhy) {
-  rd.dmgBonus[element].info!.variant = element
   rd.enemy.res[element].info!.variant = element
   rd.art[`${element}_dmg_` as const].info!.variant = element
 }
@@ -98,6 +114,7 @@ const common = {
 
   dmgBonus: {
     total: sum(dmgBonus.common, dmgBonus.byMove, dmgBonus.byElement),
+    ...objectFromKeyMap(allElementsWithPhy, ele => total[`${ele}_dmg_`] as Node)
   },
 
   hit: {

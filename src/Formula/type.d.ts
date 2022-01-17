@@ -69,7 +69,7 @@ export interface StringReadNode extends StringNodeBase {
 
 export type Data = Input & DynamicNumInput
 interface DynamicNumInput<T = Node> {
-  display?: { [key in Move]?: { [key in string]?: T } }
+  display?: { [key in Move | "misc"]?: { [key in string]?: T } }
   conditional?: NodeData<T>
 }
 export interface NodeData<T = Node> {
