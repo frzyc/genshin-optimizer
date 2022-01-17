@@ -465,7 +465,7 @@ function shouldWrap(component: ContextNodeDisplay): boolean {
 }
 function valueString(node: ContextNodeDisplay): string {
   return (identifyGroup(node.unitGroup) === identifyGroup(percentGroup))
-    ? `${node.value * 100}%` : `${node.value}`
+    ? `${(node.value * 100).toFixed(1)}%` : `${Math.abs(node.value) < 10 ? node.value.toFixed(3) : node.value.toPrecision(5)}`
 }
 function computeFormulaString(node: ContextNodeDisplay): { formula: Displayable, dependencies: ContextNodeDisplay[] } {
   if (node.formulaCache) return node.formulaCache
