@@ -467,9 +467,12 @@ function mergeVariants(operands: ContextNodeDisplay[]): ContextNodeDisplay["vari
 function shouldWrap(component: ContextNodeDisplay): boolean {
   return component.operation === "add" && component.operandCount > 1
 }
-function valueString(value: number, unit: "%" | "flat"): string {
-  return unit === "%"
-    ? `${(value * 100).toFixed(1)}%` : `${Math.abs(value) < 10 ? value.toFixed(3) : value.toPrecision(5)}`
+function valueString(value: number, unit: "%" | "flat", fixed = -1): string {
+  if (fixed === -1) {
+    if (unit === "%") fixed = 1
+    else fixed = Math.abs(value) < 10 ? 3 : Math.abs(value) < 1000 ? 2 : Math.abs(value) < 10000 ? 1 : 0
+  }
+  return unit === "%" ? `${(value * 100).toFixed(fixed)}%` : value.toFixed(fixed)
 }
 function computeFormulaString(node: ContextNodeDisplay): { formula: Displayable, dependencies: ContextNodeDisplay[] } {
   if (node.formulaCache) return node.formulaCache
