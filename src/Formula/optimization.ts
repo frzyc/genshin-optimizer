@@ -155,22 +155,19 @@ export function deduplicate(formulas: Node[]): Node[] {
  * - Remove all `DataNode`s
  */
 function applyRead(formulas: Node[], topLevelData: Data[], bottomUpMap = (formula: Node, _orig: Node) => formula): Node[] {
-  const dataFromId = new Map<number, Data[]>([[0, topLevelData]]), nextIdsFromCurrentIds = new Map<number, Map<Data[], number>>()
-
-  let currentMaxId = 1
+  const dataFromId = [topLevelData], nextIdsFromCurrentIds = [new Map<Data[], number>()]
 
   function extractData(formula: Node, contextId: number): [Node, number] {
     if (formula.operation !== "data") return [formula, contextId]
 
     const { data, operands: [baseFormula] } = formula
-
-    if (!nextIdsFromCurrentIds.has(contextId)) nextIdsFromCurrentIds.set(contextId, new Map())
-    const nextIds = nextIdsFromCurrentIds.get(contextId)!
+    const nextIds = nextIdsFromCurrentIds[contextId]
     if (nextIds.has(data)) return extractData(baseFormula, nextIds.get(data)!)
 
-    const nextId = currentMaxId++
+    const nextId = dataFromId.length
     nextIds.set(data, nextId)
-    dataFromId.set(nextId, [...dataFromId.get(contextId)!, ...data])
+    dataFromId.push([...data, ...dataFromId[contextId]])
+    nextIdsFromCurrentIds.push(new Map())
 
     return extractData(baseFormula, nextId)
   }
@@ -178,8 +175,7 @@ function applyRead(formulas: Node[], topLevelData: Data[], bottomUpMap = (formul
   return mapContextualFormulas(formulas, (formula, contextId) => {
     switch (formula.operation) {
       case "read": {
-        const data = dataFromId.get(contextId)!
-
+        const data = dataFromId[contextId]
         const { accumulation, suffix } = formula
         const key = suffix ? [...formula.key, resolveStringNode(suffix, data)!] : formula.key
         const operands = data?.flatMap(context => {
@@ -189,12 +185,8 @@ function applyRead(formulas: Node[], topLevelData: Data[], bottomUpMap = (formul
 
         if (operands.length === 0)
           return extractData(formula, contextId)
-
-        if (accumulation === "unique") {
-          if (operands.length !== 1)
-            throw new Error("Duplicate entries in unique read")
+        if (accumulation === "unique")
           return extractData({ ...formula, ...(operands[0] as any) }, contextId)
-        }
         return extractData({ ...formula, operation: accumulation, operands }, contextId)
       }
     }
@@ -282,17 +274,15 @@ function resolveStringNode(node: StringNode, data: Data[]): string | undefined {
   switch (operation) {
     case "sconst": return node.value
     case "sread": {
-      const { key, suffix } = node
+      const { suffix } = node, key = [...node.key]
+      if (suffix)
+        key.push(resolveStringNode(suffix, data) ?? "")
       const operands = data.flatMap(context => {
         const formula = resolve(context, key) as StringNode | undefined
         return formula ? [formula] : []
       })
 
-      if (operands.length > 1)
-        throw new Error(`Found multiple entries while looking up unique path ${key}`)
-      if (operands.length)
-        return resolveStringNode(operands[0], data)
-      return undefined
+      return operands.length ? resolveStringNode(operands[0], data) : undefined
     }
     case "prio": {
       const { operands } = node
