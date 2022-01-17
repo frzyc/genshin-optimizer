@@ -3,9 +3,7 @@ import { Translate } from "../Components/Translate";
 import { Data } from "../Formula/type";
 import { IArtifactSheet, SetEffectEntry } from "../Types/artifact_WR";
 import { allSlotKeys, ArtifactRarity, ArtifactSetKey, SetNum, SlotKey } from "../Types/consts";
-import { BonusStats, ICalculatedStats } from "../Types/stats";
-import { mergeStats } from "../Util/StatUtil";
-import { deepClone, evalIfFunc, objectMap } from "../Util/Util";
+import { objectMap } from "../Util/Util";
 
 export const artifactImport = import("../Data/Artifacts/index_WR")
 const artifactSheets = artifactImport.then(imp => objectMap(imp.default, (artifact, key) => new ArtifactSheet(key, artifact.default, artifact.data))) as Promise<Record<ArtifactSetKey, ArtifactSheet>>
@@ -52,6 +50,7 @@ export class ArtifactSheet {
   get setEffects(): Dict<SetNum, SetEffectEntry> { return this.sheet.setEffects }
   getSlotName = (slotKey: SlotKey) => tr(this.key, `pieces.${slotKey}.name`)
   getSlotDesc = (slotKey: SlotKey) => tr(this.key, `pieces.${slotKey}.desc`)
+  // TODO: REMOVE?
   // setNumStats(num: SetNum, stats: ICalculatedStats): BonusStats {
   //   return deepClone(evalIfFunc(this.setEffects[num]?.stats, stats) || {})
   // }
@@ -70,6 +69,7 @@ export class ArtifactSheet {
     return grouped
   }
 
+  // TODO: REMOVE?
   // static setEffectsStats(sheets: StrictDict<ArtifactSetKey, ArtifactSheet>, charStats: ICalculatedStats, setToSlots: Dict<ArtifactSetKey, SlotKey[]>): BonusStats {
   //   const artifactSetEffect: BonusStats = {}
   //   Object.entries(setToSlots).forEach(([set, slots]) =>

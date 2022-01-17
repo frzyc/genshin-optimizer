@@ -1,6 +1,6 @@
 import { Box, CardActionArea, CardContent, Chip, Grid, Skeleton, Typography } from '@mui/material';
 import { Suspense, useCallback, useContext, useMemo } from 'react';
-import { ArtifactSheet } from '../Artifact/ArtifactSheet';
+import { ArtifactSheet } from '../Artifact/ArtifactSheet_WR';
 import CardDark from '../Components/Card/CardDark';
 import CardLight from '../Components/Card/CardLight';
 import ConditionalWrapper from '../Components/ConditionalWrapper';
@@ -10,14 +10,16 @@ import { Stars } from '../Components/StarDisplay';
 import StatIcon from '../Components/StatIcon';
 import { ascensionMaxLevel } from '../Data/LevelData';
 import { DatabaseContext } from '../Database/Database';
+import { computeUIData, dataObjForWeapon, valueString } from '../Formula/api';
 import useCharacter from '../ReactHooks/useCharacter';
 import usePromise from '../ReactHooks/usePromise';
-import useSheets, { Sheets } from '../ReactHooks/useSheets';
+import useSheets from '../ReactHooks/useSheets';
 import Stat from '../Stat';
+import StatMap from '../StatMap';
 import { CharacterKey, SlotKey } from '../Types/consts';
 import { ICalculatedStats } from '../Types/stats';
 import { ICachedWeapon } from '../Types/weapon';
-import WeaponSheet from '../Weapon/WeaponSheet';
+import WeaponSheet from '../Weapon/WeaponSheet_WR';
 import Character from './Character';
 import CharacterSheet from './CharacterSheet';
 
@@ -48,7 +50,7 @@ export default function CharacterCard({ build, characterKey, artifactChildren, w
       <ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc} >
         <Header characterSheet={characterSheet} stats={stats} onClick={!onClick ? onClickHeader : undefined} />
         <CardContent sx={{ width: "100%", display: "flex", flexDirection: "column", gap: 1, flexGrow: 1 }}>
-          {sheets && <Weapon weaponId={character.equippedWeapon} sheets={sheets.weaponSheets} />}
+          <Weapon weaponId={character.equippedWeapon} />
           {weaponChildren}
           {/* will grow to fill the 100% height */}
           <Box flexGrow={1} display="flex" flexDirection="column" gap={1}>
@@ -120,18 +122,17 @@ function Header({ onClick, characterSheet, stats: { characterKey, tlvl, characte
     </Box>
   </ConditionalWrapper>
 }
-function Weapon({ weaponId, sheets }: { weaponId: string, sheets: Sheets["weaponSheets"] }) {
+function Weapon({ weaponId }: { weaponId: string }) {
   const database = useContext(DatabaseContext)
   const weapon = database._getWeapon(weaponId)
-  if (!weapon) return null;
-  const weaponSheet = sheets[weapon.key]
-  const { level, ascension } = weapon
+  const weaponSheet = usePromise(weapon?.key && WeaponSheet.get(weapon.key), [weapon?.key])
+  const UIData = useMemo(() => weaponSheet && weapon && computeUIData([weaponSheet.data, dataObjForWeapon(weapon)]), [weaponSheet, weapon])
+  if (!weapon || !weaponSheet || !UIData) return null;
   const name = weaponSheet?.name
-  const mainVal = weaponSheet.getMainStatValue(level, ascension).toFixed(Stat.fixedUnit("atk"))
-  const subKey = weaponSheet.getSubStatKey()
-  const subVal = weaponSheet.getSubStatValue(level, ascension).toFixed(Stat.fixedUnit(subKey))
+  const mainVal = valueString(UIData.values.weapon.main.value, UIData.values.weapon.main.unit, 0)
+  const subKey = UIData.values.weapon.sub.key
+  const subVal = valueString(UIData.values.weapon.sub.value, UIData.values.weapon.sub.unit, UIData.values.weapon.sub.unit === "flat" ? 0 : undefined)
   const levelName = WeaponSheet.getLevelString(weapon as ICachedWeapon)
-  const passiveName = weaponSheet?.passiveName
   return <CardDark>
     <Box display="flex" >
       <Box flexShrink={1} maxWidth="35%" display="flex" flexDirection="column" alignContent="flex-end" className={`grad-${weaponSheet.rarity}star`} >
@@ -147,16 +148,16 @@ function Weapon({ weaponId, sheets }: { weaponId: string, sheets: Sheets["weapon
         <Typography variant="body2"><strong>{name}</strong></Typography>
         <Typography whiteSpace="nowrap" lineHeight={1}>
           <SqBadge color="primary" sx={{ mr: 1 }}>Lv. {levelName}</SqBadge>
-          {passiveName && <SqBadge color="info"> Refinement {weapon.refinement}</SqBadge>}
+          {subKey && <SqBadge color="info"> Refinement {weapon.refinement}</SqBadge>}
         </Typography>
         <Typography variant="subtitle1">ATK: {mainVal}</Typography>
-        {passiveName && <Typography variant="subtitle2" lineHeight={1}>{Stat.getStatName(subKey)}: {subVal}{Stat.getStatUnit(subKey)}</Typography>}
+        {subKey && <Typography variant="subtitle2" lineHeight={1}>{StatMap[subKey]}: {subVal}</Typography>}
       </Box>
     </Box>
   </CardDark>
 }
 function ArtifactDisplay({ stats }: { stats?: ICalculatedStats }) {
-  const artifactSheets = usePromise(ArtifactSheet.getAll(), [])
+  const artifactSheets = usePromise(ArtifactSheet.getAll, [])
   const database = useContext(DatabaseContext)
   if (!artifactSheets || !stats) return null
   const { equippedArtifacts } = stats

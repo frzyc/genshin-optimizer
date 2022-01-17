@@ -20,7 +20,7 @@ import { CharacterKey } from '../Types/consts';
 import { valueStringWithUnit } from '../Util/UIUtil';
 import { clamp } from '../Util/Util';
 import Artifact from './Artifact';
-import { ArtifactSheet } from './ArtifactSheet';
+import { ArtifactSheet } from './ArtifactSheet_WR';
 import SlotNameWithIcon from './Component/SlotNameWIthIcon';
 import PercentBadge from './PercentBadge';
 import { probability } from './RollProbability';
