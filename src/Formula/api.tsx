@@ -6,7 +6,7 @@ import { allElementsWithPhy, ArtifactSetKey, CharacterKey, ElementKeyWithPhy, We
 import { ICachedWeapon } from "../Types/weapon";
 import { assertUnreachable, crawlObject, layeredAssignment, objectFromKeyMap, objPathValue } from "../Util/Util";
 import _weaponCurves from "../Weapon/expCurve_gen.json";
-import { Input, input, statMapping, StrictInput } from "./index";
+import { Input, input, StrictInput } from "./index";
 import { constant } from "./internal";
 import { allOperations } from "./optimization";
 import { ComputeNode, ConstantNode, Data, DataNode, DynamicNumInput, Info, Node, ReadNode, StringNode, StringPriorityNode, StringReadNode, SubscriptNode } from "./type";
@@ -17,6 +17,20 @@ crawlObject(input, [], (x: any) => x.operation, (x: any) => readNodeArrays.push(
 // TODO: Remove this conversion after changing the file format
 const charCurves = Object.fromEntries(Object.entries(_charCurves).map(([key, value]) => [key, [0, ...Object.values(value)]]))
 const weaponCurves = Object.fromEntries(Object.entries(_weaponCurves).map(([key, value]) => [key, [0, ...Object.values(value)]]))
+
+const statMapping: StrictDict<MainStatKey | SubstatKey, string> = {
+  hp: "HP", hp_: "HP%", atk: "ATK", atk_: "ATK%", def: "DEF", def_: "DEF%",
+  eleMas: "Elemental Mastery", enerRech_: "Energy Recharge",
+  critRate_: "Crit Rate", critDMG_: "Crit DMG",
+  physical_dmg_: "Physical DMG Bonus",
+  anemo_dmg_: "Anemo DMG Bonus",
+  geo_dmg_: "Geo DMG Bonus",
+  electro_dmg_: "Electro DMG Bonus",
+  hydro_dmg_: "Hydro DMG Bonus",
+  pyro_dmg_: "Pyro DMG Bonus",
+  cryo_dmg_: "Cryp DMG Bonus",
+  heal_: "Healing Bonus",
+}
 
 function dmgNode(base: MainStatKey, lvlMultiplier: number[], move: "normal" | "charged" | "plunging" | "skill" | "burst", additional: Data = {}): Node {
   return data(input.hit.dmg, [{
@@ -68,10 +82,10 @@ function dataObjForWeaponSheet(
   const substatNode = prod(substat.base, subscript(input.weapon.lvl, weaponCurves[substat.lvlCurve]))
   const substat2Node = substat2 && subscript(input.weapon.refineIndex, substat2.refinement, { key: substat2.stat })
 
-  mainStatNode.info = { key: mainStat.stat ?? "atk", name: statMapping[mainStat.stat ?? "atk"] }
-  substatNode.info = { key: substat.stat, name: statMapping[substat.stat] }
+  mainStatNode.info = { key: mainStat.stat ?? "atk" }
+  substatNode.info = { key: substat.stat }
   if (substat2Node)
-    substat2Node.info = { key: substat2.stat, name: statMapping[substat2.stat] }
+    substat2Node.info = { key: substat2.stat }
 
   if (mainStat.stat?.endsWith("_")) mainStatNode.info.unit = "%"
   if (substat.stat?.endsWith("_")) substatNode.info.unit = "%"
@@ -170,7 +184,7 @@ interface UnitGroup {
   parent: UnitGroup
 }
 interface ContextNodeDisplay {
-  name?: string, namePrefix?: string, key?: string
+  namePrefix?: string, key?: string
   formula?: (ContextNodeDisplay | string)[]
 
   value: number
@@ -178,8 +192,6 @@ interface ContextNodeDisplay {
   unitGroup: UnitGroup
 
   formulaCache?: {
-    nameNoUnit?: string
-    name?: string
     fullNameNoUnit?: string
     formula: Displayable
     dependencies: ContextNodeDisplay[]
@@ -433,7 +445,6 @@ class Context {
   }
 }
 function mergeInfo(node: ContextNodeDisplay, info: Info | undefined): ContextNodeDisplay {
-  if (info?.name) node.name = info.name
   if (info?.namePrefix) node.namePrefix = info.namePrefix
   if (info?.key) node.key = info.key
   if (info?.variant) node.variant = info.variant
@@ -469,7 +480,7 @@ function mergeVariants(operands: ContextNodeDisplay[]): ContextNodeDisplay["vari
   return unique.values().next().value
 }
 function shouldWrap(component: ContextNodeDisplay): boolean {
-  return component.operation === "add" && component.operandCount > 1 && !component.name
+  return component.operation === "add" && component.operandCount > 1 && !component.key
 }
 function valueString(value: number, unit: "%" | "flat", fixed = -1): string {
   if (fixed === -1) {
@@ -483,10 +494,10 @@ function computeFormulaString(node: ContextNodeDisplay): Required<ContextNodeDis
 
   node.formulaCache = { formula: "", dependencies: [] }
   const cache = node.formulaCache
-  if (node.name) {
-    cache.name = node.name
-    cache.nameNoUnit = cache.name.endsWith("%") ? cache.name.slice(0, -1) : cache.name
-    cache.fullNameNoUnit = node.namePrefix ? node.namePrefix + " " + cache.nameNoUnit : cache.nameNoUnit
+  if (node.key) {
+    const name = statMapping[node.key]
+    const nameNoUnit = name.endsWith("%") ? name.slice(0, -1) : name
+    cache.fullNameNoUnit = node.namePrefix ? node.namePrefix + " " + nameNoUnit : nameNoUnit
   }
   if (!node.formula) return cache
 
@@ -526,21 +537,14 @@ function computeUIData(data: Data[]): UIData {
   function process(node: ContextNodeDisplay, path: string[] = []): NodeDisplay {
     const { namePrefix, key, value, variant } = node
     const newValue: NodeDisplay = {
-      name: "", nameWithUnit: "", value,
-      unit: "flat",
-      formulas: [],
+      value, unit: "flat", formulas: [],
     }
     if (key) newValue.key = key
     if (variant) newValue.variant = variant
     if (namePrefix) newValue.namePrefix = namePrefix
     if (sameGroup(node.unitGroup, percentGroup)) newValue.unit = "%"
 
-    const { name, nameNoUnit, dependencies } = computeFormulaString(node)
-    if (name) {
-      newValue.name = nameNoUnit!
-      newValue.namePrefix = node.namePrefix
-      newValue.nameWithUnit = name
-    }
+    const { dependencies } = computeFormulaString(node)
     newValue.formulas = [node, ...dependencies.filter(x => x.formula)]
       .map(x => x.formulaCache!.assignmentFormula!)
       .filter(x => x)
@@ -569,8 +573,6 @@ interface UIData {
   threshold: Input<Dict<number, Input<number, never>>, never>
 }
 export interface NodeDisplay {
-  name: string
-  nameWithUnit: string
   namePrefix?: string
   key?: string
   value: number
