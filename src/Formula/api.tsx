@@ -1,3 +1,4 @@
+import { renderIntoDocument } from "react-dom/test-utils";
 import _charCurves from "../Character/expCurve_gen.json";
 import { ICachedArtifact, MainStatKey, SubstatKey } from "../Types/artifact";
 import { ICachedCharacter } from "../Types/character";
@@ -165,7 +166,18 @@ function mergeData(...data: Data[]): Data {
   return data.length ? internal(data, input, []) : {}
 }
 
-type ContextNodeDisplay = NodeDisplay & { operation: Node["operation"], unit: "%" | "flat" }
+type ContextNodeDisplay = {
+  name?: string
+  formula?: Displayable
+  formulas: Map<ContextNodeDisplay, Displayable>
+
+  key: string | undefined
+  value: number
+  variant: ElementKeyWithPhy | "success" | undefined
+  unit: "%" | "flat"
+
+  operation: Node["operation"]
+}
 type ContextString = { value?: string }
 
 class Context {
@@ -261,8 +273,18 @@ class Context {
 
     const nodes = this.readAll(key)
 
-    if (nodes.length == 1 || node.accumulation === "unique")
-      return nodes[0] ?? this._constant({ operation: "const", operands: [], value: NaN })
+    if (nodes.length == 1 || node.accumulation === "unique") {
+      const result = nodes.length ? { ...nodes[0] } : this._constant({ operation: "const", operands: [], value: NaN })
+      const info = node.info
+      if (info) {
+        if (info.key) result.key = info.key
+        if (info.name) result.name = info.name
+        if (info.unit) result.unit = info.unit
+        if (info.variant) result.variant = info.variant
+      }
+      return result
+    }
+
     return this._accumulate(node.accumulation, nodes, node.info)
   }
   _data(node: DataNode, path: string[]): ContextNodeDisplay {
@@ -297,26 +319,25 @@ class Context {
     const value = node.list[operand.value]
     return {
       operation: node.operation,
-      name: node.info?.name ?? "",
+      name: node.info?.name,
       key: node.info?.key,
-      value, unit: node.info?.unit ?? "flat", variant: node.info?.variant, formulas: [],
+      value, unit: node.info?.unit ?? "flat", variant: node.info?.variant, formulas: new Map(),
     }
   }
   _constant(node: ConstantNode): ContextNodeDisplay {
     return {
       operation: "const",
-      name: node.info?.name ?? "",
+      name: node.info?.name,
       key: node.info?.key,
       value: node.value,
       unit: node.info?.unit ?? "flat", variant: node.info?.variant,
-      formulas: [],
+      formulas: new Map(),
     }
   }
 
   _accumulate(operation: ComputeNode["operation"], operands: ContextNodeDisplay[], info: Node["info"]): ContextNodeDisplay {
     let unit: ContextNodeDisplay["unit"] = "flat"
     let variant: ContextNodeDisplay["variant"]
-    const formulas = []
 
     switch (operation) {
       case "add": case "min": case "max": case "threshold_add": {
@@ -352,14 +373,75 @@ class Context {
     if (info?.unit) unit = info.unit
     if (info?.variant) variant = info.variant
 
+    let formulas = new Map<ContextNodeDisplay, Displayable>()
+    const operandFormulas: Displayable[] = []
+    for (const operand of operands) {
+      if (operand.name) {
+        operandFormulas.push(<>{addVariant(operand.name, operand.variant)} {valueWithUnit(operand.value, operand.unit)}</>)
+        if (operand.formula)
+          formulas.set(operand, operand.formula)
+      } else {
+        operandFormulas.push(operand.formula ?? addVariant(`${operand.value}`, operand.variant))
+      }
+      if (operand.formulas.size)
+        formulas = new Map([...formulas.entries(), ...operand.formulas])
+    }
+    let formula: Displayable | undefined = undefined
+    switch (operation) {
+      case "add":
+        formula = joinComponents(operandFormulas, " + ")
+        break
+      case "mul":
+        operands.forEach((x, i) => {
+          if (x.operation === "add") operandFormulas[i] = <>({operandFormulas[i]})</>
+        })
+        formula = joinComponents(operandFormulas, " * ")
+        break
+      case "max": case "min":
+        formula = <>{operation === "min" ? "Min" : "Max"}({joinComponents(operandFormulas, ", ")})</>
+        break
+      case "res": {
+        const base = operands[0].value
+        if (operands[0].operation === "add")
+          operandFormulas[0] = <>({operandFormulas[0]})</>
+        if (base < 0) formula = <>100% - {operandFormulas[0]} / 2</>
+        else if (base >= 0.75) formula = <>100% / ({operandFormulas[0]} * 4 + 100%)</>
+        else formula = <>100% - {operandFormulas[0]}</>
+        break
+      }
+      case "sum_frac": {
+        const wrapped = operands[0].operation === "add" ? <>{operandFormulas[0]}</> : operandFormulas[0]
+        formula = <>{wrapped} / ({joinComponents(operandFormulas, "+")})</>
+        break
+      }
+      case "threshold_add":
+        if (operands[0].value >= operands[1].value)
+          formula = operandFormulas[2]
+        break
+      default: assertUnreachable(operation)
+    }
+
     const value = allOperations[operation](operands.map(x => x.value))
     return {
       operation,
-      name: info?.name ?? "",
+      name: info?.name, formula,
       key: info?.key,
-      value, unit: unit ?? "flat", variant, formulas,
+      value, unit: unit ?? "flat", variant, formulas
     }
   }
+}
+function addVariant(string: string, variant: ContextNodeDisplay["variant"]): Displayable {
+  if (!string) return string
+
+  // TODO
+  return string
+}
+function valueWithUnit(value: number, unit: ContextNodeDisplay["unit"]): Displayable {
+  // TODO
+  return `${value}`
+}
+function joinComponents(components: Displayable[], joiner: string) {
+  return <>{components.reduce((acc, x) => acc === null ? x : <>{acc}{joiner}</>, null as unknown as Displayable)}</>
 }
 function computeUIData(data: Data[]): UIData {
   const result: UIData = {
@@ -370,18 +452,30 @@ function computeUIData(data: Data[]): UIData {
   const mainContext = new Context(data)
   mainContext.thresholds = result.threshold
 
+  function process(node: ContextNodeDisplay): NodeDisplay {
+    const { name, key, value, variant, formula, formulas } = node
+    const newValue: NodeDisplay = {
+      name: name ?? "", value, variant,
+      formulas: [] // TODO
+    }
+    if (key) newValue.key = key
+    if (formula) newValue.formulas.push(<>{name} = {formula}</>)
+    newValue.formulas = [...newValue.formulas, ...[...formulas].map(([node, formula]) => <>{node.name} = {formula}</>)]
+    return newValue
+  }
+
   crawlObject(input, [], (x: any) => x.operation, (node: any, key: any) =>
     layeredAssignment(result.values, key,
       node.operation === "read"
-        ? mainContext.compute(node, key)
+        ? process(mainContext.compute(node, key))
         : mainContext.computeString(node)))
   for (const entry of data) {
     if (entry.conditional)
       crawlObject(entry.conditional, ["conditional"], (x: any) => x.operation, (x: any, key: string[]) =>
-        layeredAssignment(result.values, key, mainContext.compute(x, key)))
+        layeredAssignment(result.values, key, process(mainContext.compute(x, key))))
     if (entry.display)
       crawlObject(entry.display, ["display"], (x: any) => x.operation, (x: any, key: string[]) =>
-        layeredAssignment(result.values, key, mainContext.compute(x, key)))
+        layeredAssignment(result.values, key, process(mainContext.compute(x, key))))
   }
 
   return result
@@ -389,12 +483,11 @@ function computeUIData(data: Data[]): UIData {
 
 interface UIData {
   values: StrictInput<NodeDisplay, { value: string }> & DynamicNumInput<NodeDisplay>
-  threshold: Input<Dict<number, Input<number, never>>, never> // How this type works, we might never know
+  threshold: Input<Dict<number, Input<number, never>>, never>
 }
 export interface NodeDisplay {
-  /** structure negotiable */
-  name: Displayable
-  key: string | undefined
+  name: string
+  key?: string
   value: number
   variant: ElementKeyWithPhy | "success" | undefined
   formulas: Displayable[]
