@@ -40,6 +40,7 @@ const merged2 = mergeData(merged1, artData, weaponData)
 */
 describe("API", () => {
   test("none", () => {
-    console.log(computeUIData([charData, sucroseData, weaponData, moonglowData, common, artifact.EmblemOfSeveredFate.data, { art: { EmblemOfSeveredFate: constant(4) } }]))
+    const computed = computeUIData([charData, sucroseData, weaponData, moonglowData, common, artifact.EmblemOfSeveredFate.data, { art: { EmblemOfSeveredFate: constant(4) } }])
+    console.log(computed.values.premod)
   })
 })

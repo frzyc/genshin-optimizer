@@ -18,7 +18,7 @@ const rd = setReadNodeKeys({
   },
 
   art: {
-    ...objectFromKeyMap(allStats, key => key.endsWith("_") ? read("add", { unit: "%" }) : read("add", { unit: "flat" })),
+    ...objectFromKeyMap(allStats, key => key.endsWith("_") ? read("add", { unit: "%" }) : read("add")),
     ...objectFromKeyMap(allArtifactSets, _ => read("add")),
   },
   char: {
@@ -59,7 +59,7 @@ const rd = setReadNodeKeys({
   enemy: {
     res: {
       byElement: read("unique"),
-      ...objectFromKeyMap(allElementsWithPhy, _ => read("add")),
+      ...objectFromKeyMap(allElementsWithPhy, _ => read("add", { unit: "%" })),
     },
     level: read("unique"),
     def: read("add"),
@@ -72,6 +72,11 @@ rd.dmgBonus.byMove.suffix = rd.hit.move
 rd.dmgBonus.byElement.suffix = rd.hit.ele
 rd.hit.critMulti.byHitMode.suffix = rd.hit.hitMode
 rd.enemy.res.byElement.suffix = rd.hit.ele
+for (const element of allElementsWithPhy) {
+  rd.dmgBonus[element].info!.variant = element
+  rd.enemy.res[element].info!.variant = element
+  rd.art[`${element}_dmg_` as const].info!.variant = element
+}
 
 const { base, art, premod, total, char, hit, dmgBonus, enemy } = rd
 

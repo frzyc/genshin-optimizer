@@ -53,6 +53,7 @@ function dataObjForCharacterSheet(
   }, additional)
 
   if (element) result.char!.ele = stringConst(element)
+  if (special.stat.endsWith("_")) result.char!.special!.info!.unit = "%"
   return result
 }
 function dataObjForWeaponSheet(
@@ -69,7 +70,11 @@ function dataObjForWeaponSheet(
   mainStatNode.info = { key: mainStat.stat ?? "atk" }
   substatNode.info = { key: substat.stat }
   if (substat2Node)
-    substat2Node.info = {}
+    substat2Node.info = { key: substat2.stat }
+
+  if (mainStat.stat?.endsWith("_")) mainStatNode.info.unit = "%"
+  if (substat.stat?.endsWith("_")) substatNode.info.unit = "%"
+  if (substat2?.stat?.endsWith("_")) substat2Node!.info!.unit = "%"
 
   const result: Data = {
     base: { [mainStat.stat ?? "atk"]: mainStatNode, },
@@ -160,7 +165,7 @@ function mergeData(...data: Data[]): Data {
   return data.length ? internal(data, input, []) : {}
 }
 
-type ContextNodeDisplay = NodeDisplay & { operation: Node["operation"], unit: "%" | "flat" | undefined, origin: number }
+type ContextNodeDisplay = NodeDisplay & { operation: Node["operation"], unit: "%" | "flat", origin: number }
 type ContextString = { value?: string, origin: number }
 
 class Context {
@@ -278,17 +283,7 @@ class Context {
     const value = f(nodes.map(x => x.value))
 
     // TODO: Compute these
-    const unit = "flat"
-    const variant = node.info?.variant
-    const formulas = []
-
-    return {
-      operation: node.accumulation,
-      name: node.info?.name ?? "",
-      key: node.info?.key,
-      value, unit, variant, formulas,
-      origin: this.id,
-    }
+    return this._accumulate(node.accumulation, nodes, node.info)
   }
   _data(node: DataNode, path: string[]): ContextNodeDisplay {
     let child = this.children.get(node.data)
@@ -301,12 +296,13 @@ class Context {
     return child.compute(node.operands[0], path)
   }
   _compute(node: ComputeNode, path: string[]): ContextNodeDisplay {
+    const operation = node.operation
     const operands = node.operands.map(x => this.compute(x, path))
     const origin = operands.reduce((best, current) => Math.max(current.origin, best), 0)
 
     if (origin !== this.id) return this.allContexts[origin].compute(node, path)
 
-    if (this.thresholds && node.operation === "threshold_add") {
+    if (this.thresholds && operation === "threshold_add") {
       const value = node.operands[0], threshold = node.operands[1]
       if (value.operation === "read" && threshold.operation === "const" && operands[0].value >= operands[1].value) {
         const key = [...value.key]
@@ -317,18 +313,11 @@ class Context {
     }
 
     // TODO: Compute these
-    const unit = "flat"
-    const variant = node.info?.variant
+    let unit: ContextNodeDisplay["unit"] = "flat"
+    let variant: ContextNodeDisplay["variant"]
     const formulas = []
 
-    const value = allOperations[node.operation](operands.map(x => x.value))
-    return {
-      operation: node.operation,
-      name: node.info?.name ?? "",
-      key: node.info?.key,
-      value, unit, variant, formulas,
-      origin: this.id,
-    }
+    return this._accumulate(operation, operands, node.info)
   }
   _subscript(node: SubscriptNode, path: string[]): ContextNodeDisplay {
     const operand = this.compute(node.operands[0], path)
@@ -341,7 +330,7 @@ class Context {
       operation: node.operation,
       name: node.info?.name ?? "",
       key: node.info?.key,
-      value, unit: node.info?.unit, variant: node.info?.variant, formulas: [],
+      value, unit: node.info?.unit ?? "flat", variant: node.info?.variant, formulas: [],
       origin: this.id
     }
   }
@@ -353,8 +342,57 @@ class Context {
       name: node.info?.name ?? "",
       key: node.info?.key,
       value: node.value,
-      unit: node.info?.unit, variant: node.info?.variant,
+      unit: node.info?.unit ?? "flat", variant: node.info?.variant,
       formulas: [],
+      origin: this.id,
+    }
+  }
+
+  _accumulate(operation: ComputeNode["operation"], operands: ContextNodeDisplay[], info: Node["info"]): ContextNodeDisplay {
+    let unit: ContextNodeDisplay["unit"] = "flat"
+    let variant: ContextNodeDisplay["variant"]
+    const formulas = []
+
+    switch (operation) {
+      case "add": case "min": case "max": case "threshold_add": {
+        const lastOperands = operands[operands.length - 1]
+        if (lastOperands) {
+          unit = lastOperands.unit
+          variant = lastOperands.variant
+        }
+        break
+      }
+      case "mul": {
+        if (!info?.variant) {
+          const variants = new Set(operands.map(x => x.variant))
+          if (variants.size > 1) variants.delete(undefined)
+          if (variants.size > 1) variants.delete("physical")
+          variant = variants.values().next().value
+        }
+
+        if (!info?.unit &&
+          !operands.find(x => x.unit === "flat") &&
+          operands.find(x => x.unit === "%"))
+          unit = "%"
+        break
+      }
+      case "res":
+      case "sum_frac":
+        unit = "%"
+        variant = operands[0].variant
+        break
+      default: assertUnreachable(operation)
+    }
+
+    if (info?.unit) unit = info.unit
+    if (info?.variant) variant = info.variant
+
+    const value = allOperations[operation](operands.map(x => x.value))
+    return {
+      operation,
+      name: info?.name ?? "",
+      key: info?.key,
+      value, unit: unit ?? "flat", variant, formulas,
       origin: this.id,
     }
   }
