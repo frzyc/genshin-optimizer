@@ -1,5 +1,8 @@
 import { BasicStats, ICalculatedStats } from "./stats";
 
+/**
+ * @deprecated
+ */
 export interface IFieldDisplay {
   canShow?: (stats: BasicStats) => boolean;
   text: Displayable;

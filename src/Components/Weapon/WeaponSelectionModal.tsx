@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 import Assets from "../../Assets/Assets"
 import usePromise from "../../ReactHooks/usePromise"
 import { allWeaponKeys, WeaponKey, WeaponTypeKey } from "../../Types/consts"
-import WeaponSheet from "../../Weapon/WeaponSheet"
+import WeaponSheet from "../../Weapon/WeaponSheet_WR"
 import CardDark from "../Card/CardDark"
 import CardLight from "../Card/CardLight"
 import CloseButton from "../CloseButton"
@@ -21,7 +21,7 @@ type WeaponSelectionModalProps = {
 }
 
 export default function WeaponSelectionModal({ show, onHide, onSelect, filter = () => true, weaponFilter: propWeaponFilter }: WeaponSelectionModalProps) {
-  const weaponSheets = usePromise(WeaponSheet.getAll(), [])
+  const weaponSheets = usePromise(WeaponSheet.getAll, [])
   const [weaponFilter, setWeaponfilter] = useState<WeaponTypeKey | "">(propWeaponFilter ?? "")
 
   useEffect(() => propWeaponFilter && setWeaponfilter(propWeaponFilter), [propWeaponFilter])

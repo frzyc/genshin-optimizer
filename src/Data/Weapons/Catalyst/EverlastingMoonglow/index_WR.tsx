@@ -12,6 +12,7 @@ const data_gen = data_gen_json as WeaponData
 const hp_conv = [0.01, 0.015, 0.02, 0.025, 0.03]
 
 const normalDmgBonus = prod(subscript(input.weapon.refineIndex, hp_conv), input.premod.hp)
+normalDmgBonus.info = { key: "normal_dmg_inc" }
 export const data = dataObjForWeaponSheet("EverlastingMoonglow", "catalyst",
   { base: data_gen.mainStat.base, lvlCurve: data_gen.mainStat.curve, asc: data_gen.ascension.map(x => x.addStats.atk ?? 0) },
   { stat: data_gen.subStat!.type as any, base: data_gen.subStat!.base, lvlCurve: data_gen.subStat!.curve, },
@@ -22,12 +23,11 @@ export const data = dataObjForWeaponSheet("EverlastingMoonglow", "catalyst",
     },
     misc: {
       weapon: {
-        buff1: normalDmgBonus,
+        normDmgInc: normalDmgBonus,
       },
     },
   }
 )
-
 const weapon: IWeaponSheet = {
   weaponType: data_gen.weaponType,
   rarity: data_gen.rarity,
@@ -37,8 +37,7 @@ const weapon: IWeaponSheet = {
     fields: [
       {
         text: <Translate ns="weapon_EverlastingMoonglow" key18="name" />,
-        formula: ["number", "dmgBonus", "normal"], // TODO: is this right?
-        variant: stats => stats.characterEle // TODO: should be handled by WR?
+        formula: ["values", "misc", "weapon", "normDmgInc"],
       }
     ],
   }],

@@ -78,6 +78,9 @@ export interface ICachedCharacter extends ICharacter {
 }
 
 export type TalentSheetElementKey = "auto" | "skill" | "burst" | "sprint" | "passive" | "passive1" | "passive2" | "passive3" | "constellation1" | "constellation2" | "constellation3" | "constellation4" | "constellation5" | "constellation6"
+/**
+ * @deprecated
+ */
 export type TalentSheet = {
   formula: IFormulaSheet
   sheets: Dict<TalentSheetElementKey, TalentSheetElement>

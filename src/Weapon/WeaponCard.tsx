@@ -2,11 +2,11 @@ import { faEdit, faTrashAlt } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Lock, LockOpen } from "@mui/icons-material"
 import { Box, Button, ButtonGroup, CardActionArea, CardContent, CardHeader, Grid, IconButton, Skeleton, Typography } from "@mui/material"
-import { Suspense, useCallback, useContext } from "react"
+import { Suspense, useCallback, useContext, useMemo } from "react"
 import Assets from "../Assets/Assets"
-import CharacterSheet from "../Character/CharacterSheet"
+import CharacterSheet from "../Character/CharacterSheet_WR"
 import CardLight from "../Components/Card/CardLight"
-import CharacterDropdownButton from '../Components/Character/CharacterDropdownButton'
+import CharacterDropdownButton from '../Components/Character/CharacterDropdownButton_WR'
 import LocationName from "../Components/Character/LocationName"
 import ConditionalWrapper from "../Components/ConditionalWrapper"
 import ImgIcon from "../Components/Image/ImgIcon"
@@ -14,11 +14,13 @@ import { Stars } from "../Components/StarDisplay"
 import StatIcon from "../Components/StatIcon"
 import { ascensionMaxLevel } from "../Data/LevelData"
 import { DatabaseContext } from "../Database/Database"
+import { valueString } from "../Formula/api"
+import { computeUIData, dataObjForWeapon, NodeDisplay } from "../Formula/api"
 import usePromise from "../ReactHooks/usePromise"
 import useWeapon from "../ReactHooks/useWeapon"
-import Stat from "../Stat"
+import StatMap from "../StatMap"
 import { CharacterKey } from "../Types/consts"
-import WeaponSheet from "./WeaponSheet"
+import WeaponSheet from "./WeaponSheet_WR"
 
 type WeaponCardProps = { weaponId: string, onClick?: (weaponId: string) => void, onEdit?: (weaponId: string) => void, onDelete?: (weaponId: string) => void, canEquip?: boolean }
 export default function WeaponCard({ weaponId, onClick, onEdit, onDelete, canEquip = false }: WeaponCardProps) {
@@ -38,17 +40,13 @@ export default function WeaponCard({ weaponId, onClick, onEdit, onDelete, canEqu
   )
 
   const equipOnChar = useCallback((charKey: CharacterKey | "") => database.setWeaponLocation(weaponId, charKey), [database, weaponId],)
-  if (!weapon || !weaponSheet) return null;
+
+  const UIData = useMemo(() => weaponSheet && weapon && computeUIData([weaponSheet.data, dataObjForWeapon(weapon)]), [weaponSheet, weapon])
+
+  if (!weapon || !weaponSheet || !UIData) return null;
   const { level, ascension, refinement, id, location = "", lock } = weapon
-
-
-  const weaponTypeKey = weaponSheet.weaponType
-  const weaponMainVal = weaponSheet.getMainStatValue(level, ascension).toFixed(Stat.fixedUnit("atk"))
-  const weaponSubKey = weaponSheet.getSubStatKey()
-  const weaponSubVal = weaponSheet.getSubStatValue(level, ascension).toFixed(Stat.fixedUnit(weaponSubKey))
-  const weaponPassiveName = weaponSheet?.passiveName
-  const statMap = [["weaponATK", weaponMainVal]]
-  weaponPassiveName && statMap.push([weaponSubKey, weaponSubVal])
+  const weaponTypeKey = UIData.values.weapon.type.value
+  const stats = [UIData.values.weapon.main, UIData.values.weapon.sub, UIData.values.weapon.sub2] as NodeDisplay[]
   const img = ascension < 2 ? weaponSheet?.img : weaponSheet?.imgAwaken
 
   return <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 300 }} />}>
@@ -73,11 +71,12 @@ export default function WeaponCard({ weaponId, onClick, onEdit, onDelete, canEqu
           </Grid>
         </div>
         <CardContent>
-          {statMap.map(([statKey, statVal]) => {
-            let unit = Stat.getStatUnit(statKey)
-            return <Box key={statKey} sx={{ display: "flex" }}>
-              <Typography flexGrow={1}>{StatIcon[statKey]} {Stat.getStatName(statKey)}</Typography>
-              <Typography>{statVal + unit}</Typography>
+          {stats.map(node => {
+            if (!node.key) return null
+            const displayVal = valueString(node.value, node.unit, node.unit === "flat" ? 0 : undefined)
+            return <Box key={node.key} sx={{ display: "flex" }}>
+              <Typography flexGrow={1}>{StatIcon[node.key]} {StatMap[node.key]}</Typography>
+              <Typography>{displayVal}</Typography>
             </Box>
           })}
         </CardContent>

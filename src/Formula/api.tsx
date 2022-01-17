@@ -1,4 +1,5 @@
 import _charCurves from "../Character/expCurve_gen.json";
+import StatMap from "../StatMap";
 import { ICachedArtifact, MainStatKey, SubstatKey } from "../Types/artifact";
 import { ICachedCharacter } from "../Types/character";
 import { allElementsWithPhy, CharacterKey, ElementKeyWithPhy, WeaponKey, WeaponTypeKey } from "../Types/consts";
@@ -16,20 +17,6 @@ crawlObject(input, [], (x: any) => x.operation, (x: any) => readNodeArrays.push(
 // TODO: Remove this conversion after changing the file format
 const charCurves = Object.fromEntries(Object.entries(_charCurves).map(([key, value]) => [key, [0, ...Object.values(value)]]))
 const weaponCurves = Object.fromEntries(Object.entries(_weaponCurves).map(([key, value]) => [key, [0, ...Object.values(value)]]))
-
-const statMapping: StrictDict<MainStatKey | SubstatKey, string> = {
-  hp: "HP", hp_: "HP%", atk: "ATK", atk_: "ATK%", def: "DEF", def_: "DEF%",
-  eleMas: "Elemental Mastery", enerRech_: "Energy Recharge",
-  critRate_: "Crit Rate", critDMG_: "Crit DMG",
-  physical_dmg_: "Physical DMG Bonus",
-  anemo_dmg_: "Anemo DMG Bonus",
-  geo_dmg_: "Geo DMG Bonus",
-  electro_dmg_: "Electro DMG Bonus",
-  hydro_dmg_: "Hydro DMG Bonus",
-  pyro_dmg_: "Pyro DMG Bonus",
-  cryo_dmg_: "Cryp DMG Bonus",
-  heal_: "Healing Bonus",
-}
 
 function dmgNode(base: MainStatKey, lvlMultiplier: number[], move: "normal" | "charged" | "plunging" | "skill" | "burst", additional: Data = {}): Node {
   return data(input.hit.dmg, [{
@@ -165,7 +152,7 @@ function mergeData(...data: Data[]): Data {
     if (input.operation) {
       const accumulation = (input as ReadNode).accumulation ?? "unique"
       if (accumulation === "unique") {
-        if (data.length !== 1) throw "Multiple entries when merging `unique`"
+        if (data.length !== 1) throw new Error("Multiple entries when merging `unique`")
         return data[0]
       }
       const result: Node = { operation: accumulation, operands: data, }
@@ -493,7 +480,7 @@ function computeFormulaString(node: ContextNodeDisplay): Required<ContextNodeDis
   node.formulaCache = { formula: "", dependencies: [] }
   const cache = node.formulaCache
   if (node.key) {
-    const name = statMapping[node.key]
+    const name = StatMap[node.key]
     const nameNoUnit = name.endsWith("%") ? name.slice(0, -1) : name
     cache.fullNameNoUnit = node.namePrefix ? node.namePrefix + " " + nameNoUnit : nameNoUnit
   }

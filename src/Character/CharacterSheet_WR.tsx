@@ -1,12 +1,8 @@
-
-import { CharacterExpCurveData } from "pipeline";
 import ImgIcon from "../Components/Image/ImgIcon";
 import { Data } from "../Formula/type";
 import { ICharacterSheet, TalentSheet, TalentSheetElementKey } from "../Types/character_WR";
 import { CharacterKey, ElementKey } from "../Types/consts";
 import { objectMap } from "../Util/Util";
-import expCurveJSON from './expCurve_gen.json';
-const expCurve = expCurveJSON as CharacterExpCurveData
 
 export const charImport = import('../Data/Characters/index_WR')
 

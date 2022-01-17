@@ -1,6 +1,6 @@
 import { Lock, LockOpen, SwapHoriz } from "@mui/icons-material"
 import { Box, Button, ButtonGroup, CardContent, Divider, Grid, MenuItem, Typography } from "@mui/material"
-import { useCallback, useContext, useState } from "react"
+import { useCallback, useContext, useMemo, useState } from "react"
 import Assets from "../Assets/Assets"
 import { buildContext } from "../Build/Build"
 import CharacterSheet from "../Character/CharacterSheet"
@@ -14,11 +14,13 @@ import DocumentDisplay from "../Components/DocumentDisplay"
 import DropdownButton from "../Components/DropdownMenu/DropdownButton"
 import ImgIcon from "../Components/Image/ImgIcon"
 import ModalWrapper from "../Components/ModalWrapper"
+import NodeDisplayComponent, { NodeDisplayList } from "../Components/NodeDisplayComponent"
 import SqBadge from "../Components/SqBadge"
 import { Stars } from "../Components/StarDisplay"
 import WeaponSelectionModal from "../Components/Weapon/WeaponSelectionModal"
 import { ambiguousLevel, ascensionMaxLevel, milestoneLevels } from "../Data/LevelData"
 import { database as localDatabase, DatabaseContext } from "../Database/Database"
+import { computeUIData, dataObjForWeapon } from "../Formula/api"
 import usePromise from "../ReactHooks/usePromise"
 import useWeapon from "../ReactHooks/useWeapon"
 import { ICachedCharacter } from "../Types/character"
@@ -27,9 +29,7 @@ import { ICalculatedStats } from "../Types/stats"
 import { ICachedWeapon } from "../Types/weapon"
 import { clamp } from "../Util/Util"
 import WeaponCard from "./WeaponCard"
-import WeaponSheet from "./WeaponSheet"
-import WeaponStatsCard from "./WeaponStatsCard"
-
+import WeaponSheet from "./WeaponSheet_WR"
 
 type WeaponStatsEditorCardProps = {
   weaponId: string
@@ -86,6 +86,9 @@ export default function WeaponDisplayCard({
   )
   const [showModal, setshowModal] = useState(false)
   const img = ascension < 2 ? weaponSheet?.img : weaponSheet?.imgAwaken
+
+  const weaponUIData = useMemo(() => weaponSheet && weapon && computeUIData([weaponSheet.data, dataObjForWeapon(weapon)]), [weaponSheet, weapon])
+
   return <CardLight>
     <CardContent sx={{ py: 1 }}>
       <Grid container spacing={1}>
@@ -142,38 +145,37 @@ export default function WeaponDisplayCard({
     </CardContent>
     <Divider />
     <CardContent >
-      {(() => {
-        if (!weaponSheet) return null
-        const substatKey = weaponSheet.getSubStatKey()
-        const weaponDisplayMainVal = weaponSheet.getMainStatValue(level, ascension)
-        const weaponDisplaySubVal = weaponSheet.getSubStatValue(level, ascension)
-        const weaponPassiveName = weaponSheet.passiveName
-        const weaponBonusStats = weaponSheet.stats(build)
-        const sections = weaponSheet.document
-        return <Box display="flex" gap={{ xs: 1, md: 1.5, lg: 2 }} >
-          <Box sx={{ maxWidth: 256 }} flexShrink={1} minWidth="25%">
-            <Box component="img" src={img} className={`grad-${weaponSheet.rarity}star`} sx={{ maxWidth: 256, width: "100%", height: "auto", borderRadius: 1 }} />
-            <Typography><small>{weaponSheet.description}</small></Typography>
-          </Box>
-          <Box sx={{ mb: -1 }} flexGrow={1} >
-            <Typography variant="h6" >{process.env.NODE_ENV === "development" && <ColorText color="warning">{id || `""`} </ColorText>}{weaponSheet.name} Lv. {weapon && WeaponSheet.getLevelString(weapon)} {weaponPassiveName && <SqBadge color="info">Refinement {refinement}</SqBadge>}</Typography>
-            <Typography><Stars stars={weaponSheet.rarity} /></Typography>
-            <Typography variant="subtitle1">{weaponPassiveName}</Typography>
-            <Typography gutterBottom>{weaponPassiveName && weaponSheet.passiveDescription(build)}</Typography>
-            {build && <buildContext.Provider value={charData ? buildContextObj : { equippedBuild: build, newBuild: undefined, compareBuild: false, setCompareBuild: undefined }}>
-              <Box display="flex" flexDirection="column" gap={1}>
-                <WeaponStatsCard title={"Main Stats"} statsVals={{ atk: weaponDisplayMainVal, [substatKey]: substatKey ? weaponDisplaySubVal : undefined }} stats={build} />
-                <WeaponStatsCard title={"Bonus Stats"} statsVals={weaponBonusStats} stats={build} />
-              </Box>
-            </buildContext.Provider>}
-            {charData && sections ? (() => {
-              const { equippedBuild, newBuild } = charData
-              const characterKey = (newBuild ? newBuild : equippedBuild)?.characterKey as CharacterKey | undefined
-              return !!characterKey && < DocumentDisplay sections={sections} characterKey={characterKey} />
-            })() : null}
-          </Box>
+      {weaponSheet && weaponUIData && <Box display="flex" gap={{ xs: 1, md: 1.5, lg: 2 }} >
+        <Box sx={{ maxWidth: 256 }} flexShrink={1} minWidth="25%">
+          <Box component="img" src={img} className={`grad-${weaponSheet.rarity}star`} sx={{ maxWidth: 256, width: "100%", height: "auto", borderRadius: 1 }} />
+          <Typography><small>{weaponSheet.description}</small></Typography>
         </Box>
-      })()}
+        <Box sx={{ mb: -1 }} flexGrow={1} >
+          <Typography variant="h6" >{process.env.NODE_ENV === "development" && <ColorText color="warning">{id || `""`} </ColorText>}{weaponSheet.name} Lv. {weapon && WeaponSheet.getLevelString(weapon)} {weaponSheet.rarity > 2 && <SqBadge color="info">Refinement {refinement}</SqBadge>}</Typography>
+          <Typography><Stars stars={weaponSheet.rarity} /></Typography>
+          <Typography variant="subtitle1">{weaponSheet.passiveName}</Typography>
+          <Typography gutterBottom>{weaponSheet.passiveName && weaponSheet.passiveDescription(weaponUIData.values.weapon.refineIndex.value)}</Typography>
+          {build && <buildContext.Provider value={charData ? buildContextObj : { equippedBuild: build, newBuild: undefined, compareBuild: false, setCompareBuild: undefined }}>
+            <Box display="flex" flexDirection="column" gap={1}>
+              <CardDark >
+                <CardContent>
+                  <Typography>Main Stats</Typography>
+                </CardContent>
+                <NodeDisplayList>
+                  {[weaponUIData.values.weapon.main, weaponUIData.values.weapon.sub, weaponUIData.values.weapon.sub2]
+                    .map((node, i) => <NodeDisplayComponent key={i} node={node} />)}
+                </NodeDisplayList>
+              </CardDark>
+            </Box>
+          </buildContext.Provider>}
+          {/* TODO: Character data */}
+          {/* {charData && weaponSheet.document ? (() => {
+            const { equippedBuild, newBuild } = charData
+            const characterKey = (newBuild ? newBuild : equippedBuild)?.characterKey as CharacterKey | undefined
+            return !!characterKey && < DocumentDisplay sections={weaponSheet.document} characterKey={characterKey} />
+          })() : null} */}
+        </Box>
+      </Box>}
     </CardContent>
     {footer && id && <CardContent sx={{ py: 1 }}>
       <Grid container>
@@ -196,7 +198,7 @@ function SwapBtn({ onChangeId, weaponTypeKey }) {
     close()
   }
 
-  const weaponSheets = usePromise(WeaponSheet.getAll(), [])
+  const weaponSheets = usePromise(WeaponSheet.getAll, [])
 
   const weaponIdList = database.weapons.keys.filter(wKey => {
     const dbWeapon = database._getWeapon(wKey)

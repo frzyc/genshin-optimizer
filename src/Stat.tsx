@@ -6,7 +6,9 @@ import usePromise from "./ReactHooks/usePromise";
 import { amplifyingReactions, hitMoves, hitTypes, transformativeReactions } from "./StatConstants";
 import { StatData } from "./StatData";
 import { evalIfFunc } from "./Util/Util";
-
+/**
+ * @deprecated
+ */
 export default class Stat {
   //do not instantiate.
   constructor() {

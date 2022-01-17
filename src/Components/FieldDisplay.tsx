@@ -8,6 +8,9 @@ import { IFieldDisplay } from "../Types/IFieldDisplay";
 import BootstrapTooltip from "./BootstrapTooltip";
 import ColorText from "./ColoredText";
 
+/**
+ * @deprecated
+ */
 export default function FieldDisplay({ field }: { field: IFieldDisplay }) {
   const { newBuild, equippedBuild, compareBuild } = useContext(buildContext)
   const build = (newBuild ? newBuild : equippedBuild)

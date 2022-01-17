@@ -19,7 +19,7 @@ import { filterFunction, sortFunction } from '../Util/SortByFilters';
 import { clamp } from '../Util/Util';
 import { weaponFilterConfigs, weaponSortConfigs, weaponSortKeys } from '../Util/WeaponSort';
 import WeaponCard from './WeaponCard';
-import WeaponSheet from './WeaponSheet';
+import WeaponSheet from './WeaponSheet_WR';
 import { initialWeapon } from './WeaponUtil';
 
 //lazy load the weapon display
@@ -61,7 +61,7 @@ export default function WeaponDisplay(props) {
     dbStorage.set("WeaponDisplay.state", state)
   }, [state])
 
-  const weaponSheets = usePromise(WeaponSheet.getAll(), [])
+  const weaponSheets = usePromise(WeaponSheet.getAll, [])
 
   const deleteWeapon = useCallback(async (key) => {
     const weapon = database._getWeapon(key)
