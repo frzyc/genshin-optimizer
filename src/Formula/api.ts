@@ -165,13 +165,11 @@ function mergeData(...data: Data[]): Data {
   return data.length ? internal(data, input, []) : {}
 }
 
-type ContextNodeDisplay = NodeDisplay & { operation: Node["operation"], unit: "%" | "flat", origin: number }
-type ContextString = { value?: string, origin: number }
+type ContextNodeDisplay = NodeDisplay & { operation: Node["operation"], unit: "%" | "flat" }
+type ContextString = { value?: string }
 
 class Context {
   thresholds: Dict<string, Dict<number, { path: string[], value: NodeDisplay }>> | undefined
-  id: number
-  allContexts: Context[]
 
   parent?: Context
   children = new Map<Data[], Context>()
@@ -180,12 +178,9 @@ class Context {
   nodes = new Map<Node, ContextNodeDisplay>()
   string = new Map<StringNode, ContextString>()
 
-  constructor(allContexts: Context[], data: Data[], parent?: Context) {
-    this.allContexts = allContexts
-    this.id = allContexts.length
+  constructor(data: Data[], parent?: Context) {
     this.parent = parent
     this.data = data
-    allContexts.push(this)
   }
 
   compute(node: Node, path: string[]): ContextNodeDisplay {
@@ -198,7 +193,7 @@ class Context {
       case "add": case "mul": case "min": case "max":
       case "res": case "sum_frac": case "threshold_add":
         result = this._compute(node, path); break
-      case "const": result = this._constant(node, path); break
+      case "const": result = this._constant(node); break
       case "subscript": result = this._subscript(node, path); break
       case "read": result = this._read(node); break
       case "data": result = this._data(node, path); break
@@ -215,7 +210,7 @@ class Context {
     const { operation } = node
     let result: ContextString
     switch (operation) {
-      case "sconst": result = { value: node.value, origin: 0 }; break
+      case "sconst": result = { value: node.value }; break
       case "prio": result = this._strPrio(node); break
       case "sread": result = this._strRead(node); break
       default: assertUnreachable(operation)
@@ -242,29 +237,22 @@ class Context {
     const operands = node.operands
       .map(x => this.computeString(x))
       .filter(x => x.value)
-    if (!operands.length) return { origin: this.id }
-
-    const origin = operands.reduce((prev, current) => Math.max(prev, current.origin), 0)
-    if (origin !== this.id) return this.computeString(node)
-
-    return { value: operands[0].value, origin: this.id }
+    return { value: operands[0]?.value, }
   }
   _strRead(node: StringReadNode): ContextString {
-    let key = node.key, origin = 0
+    let key = node.key
     if (node.suffix) {
       const suffix = this.computeString(node.suffix)
-      origin = Math.max(origin, suffix.origin)
       key = [...key as string[], suffix.value ?? ""]
     }
 
-    return this.readFirstString(key) ?? { origin: this.id }
+    return this.readFirstString(key) ?? {}
   }
 
   _read(node: ReadNode): ContextNodeDisplay {
-    let key = node.key, origin = 0
+    let key = node.key
     if (node.suffix) {
       const suffix = this.computeString(node.suffix)
-      origin = Math.max(origin, suffix.origin)
       key = [...key as string[], suffix.value ?? ""]
     }
 
@@ -272,23 +260,15 @@ class Context {
       return this.parent.compute(node, key)
 
     const nodes = this.readAll(key)
-    origin = nodes.reduce((best, current) => Math.max(best, current.origin), origin)
-
-    if (origin !== this.id) return this.allContexts[origin].compute(node, key)
 
     if (nodes.length == 1 || node.accumulation === "unique")
-      return nodes[0] ?? this._constant({ operation: "const", operands: [], value: NaN }, key)
-
-    const f = allOperations[node.accumulation]
-    const value = f(nodes.map(x => x.value))
-
-    // TODO: Compute these
+      return nodes[0] ?? this._constant({ operation: "const", operands: [], value: NaN })
     return this._accumulate(node.accumulation, nodes, node.info)
   }
   _data(node: DataNode, path: string[]): ContextNodeDisplay {
     let child = this.children.get(node.data)
     if (!child) {
-      child = new Context(this.allContexts, node.data, this)
+      child = new Context(node.data, this)
       this.children.set(node.data, child)
     }
 
@@ -298,9 +278,6 @@ class Context {
   _compute(node: ComputeNode, path: string[]): ContextNodeDisplay {
     const operation = node.operation
     const operands = node.operands.map(x => this.compute(x, path))
-    const origin = operands.reduce((best, current) => Math.max(current.origin, best), 0)
-
-    if (origin !== this.id) return this.allContexts[origin].compute(node, path)
 
     if (this.thresholds && operation === "threshold_add") {
       const value = node.operands[0], threshold = node.operands[1]
@@ -312,18 +289,10 @@ class Context {
       }
     }
 
-    // TODO: Compute these
-    let unit: ContextNodeDisplay["unit"] = "flat"
-    let variant: ContextNodeDisplay["variant"]
-    const formulas = []
-
     return this._accumulate(operation, operands, node.info)
   }
   _subscript(node: SubscriptNode, path: string[]): ContextNodeDisplay {
     const operand = this.compute(node.operands[0], path)
-    const origin = operand.origin
-
-    if (origin !== this.id) this.allContexts[origin].compute(node, path)
 
     const value = node.list[operand.value]
     return {
@@ -331,12 +300,9 @@ class Context {
       name: node.info?.name ?? "",
       key: node.info?.key,
       value, unit: node.info?.unit ?? "flat", variant: node.info?.variant, formulas: [],
-      origin: this.id
     }
   }
-  _constant(node: ConstantNode, path: string[]): ContextNodeDisplay {
-    // All constants belong to the main context
-    if (this.id !== 0) return this.allContexts[0].compute(node, path)
+  _constant(node: ConstantNode): ContextNodeDisplay {
     return {
       operation: "const",
       name: node.info?.name ?? "",
@@ -344,7 +310,6 @@ class Context {
       value: node.value,
       unit: node.info?.unit ?? "flat", variant: node.info?.variant,
       formulas: [],
-      origin: this.id,
     }
   }
 
@@ -393,7 +358,6 @@ class Context {
       name: info?.name ?? "",
       key: info?.key,
       value, unit: unit ?? "flat", variant, formulas,
-      origin: this.id,
     }
   }
 }
@@ -403,8 +367,7 @@ function computeUIData(data: Data[]): UIData {
     threshold: {}
   }
 
-  const contexts: Context[] = []
-  const mainContext = new Context(contexts, data)
+  const mainContext = new Context(data)
   mainContext.thresholds = result.threshold
 
   crawlObject(input, [], (x: any) => x.operation, (node: any, key: any) =>
