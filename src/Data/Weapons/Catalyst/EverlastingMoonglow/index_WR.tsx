@@ -9,16 +9,22 @@ import { input } from '../../../../Formula/index'
 import data_gen_json from './data_gen.json'
 const data_gen = data_gen_json as WeaponData
 
-const hp_conv = [1, 1.5, 2, 2.5, 3]
+const hp_conv = [0.01, 0.015, 0.02, 0.025, 0.03]
 
+const normalDmgBonus = prod(subscript(input.weapon.refineIndex, hp_conv), input.premod.hp)
 export const data = dataObjForWeaponSheet("EverlastingMoonglow", "catalyst",
   { base: data_gen.mainStat.base, lvlCurve: data_gen.mainStat.curve, asc: data_gen.ascension.map(x => x.addStats.atk ?? 0) },
   { stat: data_gen.subStat!.type as any, base: data_gen.subStat!.base, lvlCurve: data_gen.subStat!.curve, },
   { stat: "heal_", refinement: data_gen.addProps.map(x => x.heal_) as any },
   {
     dmgBonus: {
-      normal: prod(subscript(input.weapon.refineIndex, hp_conv))
-    }
+      normal: normalDmgBonus
+    },
+    misc: {
+      weapon: {
+        buff1: normalDmgBonus,
+      },
+    },
   }
 )
 

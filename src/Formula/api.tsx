@@ -1,15 +1,14 @@
-import { renderIntoDocument } from "react-dom/test-utils";
 import _charCurves from "../Character/expCurve_gen.json";
 import { ICachedArtifact, MainStatKey, SubstatKey } from "../Types/artifact";
 import { ICachedCharacter } from "../Types/character";
-import { allElementsWithPhy, ArtifactSetKey, CharacterKey, ElementKeyWithPhy, WeaponKey, WeaponTypeKey } from "../Types/consts";
+import { allElementsWithPhy, CharacterKey, ElementKeyWithPhy, WeaponKey, WeaponTypeKey } from "../Types/consts";
 import { ICachedWeapon } from "../Types/weapon";
 import { assertUnreachable, crawlObject, layeredAssignment, objectFromKeyMap, objPathValue } from "../Util/Util";
 import _weaponCurves from "../Weapon/expCurve_gen.json";
 import { Input, input, StrictInput } from "./index";
 import { constant } from "./internal";
 import { allOperations } from "./optimization";
-import { ComputeNode, ConstantNode, Data, DataNode, DynamicNumInput, Info, Node, ReadNode, StringNode, StringPriorityNode, StringReadNode, SubscriptNode } from "./type";
+import { ComputeNode, ConstantNode, Data, DataNode, DynamicNumInput, Info, Node, ReadNode, StringNode, SubscriptNode } from "./type";
 import { data, prod, stringConst, subscript, sum } from "./utils";
 const readNodeArrays: ReadNode[] = []
 crawlObject(input, [], (x: any) => x.operation, (x: any) => readNodeArrays.push(x))
@@ -537,14 +536,15 @@ function computeUIData(data: Data[]): UIData {
   function process(node: ContextNodeDisplay, path: string[] = []): NodeDisplay {
     const { namePrefix, key, value, variant } = node
     const newValue: NodeDisplay = {
-      value, unit: "flat", formulas: [],
+      value, unit: "flat", formula: "", formulas: [],
     }
     if (key) newValue.key = key
     if (variant) newValue.variant = variant
     if (namePrefix) newValue.namePrefix = namePrefix
     if (sameGroup(node.unitGroup, percentGroup)) newValue.unit = "%"
 
-    const { dependencies } = computeFormulaString(node)
+    const { formula, dependencies } = computeFormulaString(node)
+    newValue.formula = formula
     newValue.formulas = [node, ...dependencies.filter(x => x.formula)]
       .map(x => x.formulaCache!.assignmentFormula!)
       .filter(x => x)
@@ -563,6 +563,9 @@ function computeUIData(data: Data[]): UIData {
     if (entry.display)
       crawlObject(entry.display, ["display"], (x: any) => x.operation, (x: any, key: string[]) =>
         layeredAssignment(result.values, key, process(mainContext.compute(x, key), key)))
+    if (entry.misc)
+      crawlObject(entry.misc, ["misc"], (x: any) => x.operation, (x: any, key: string[]) =>
+        layeredAssignment(result.values, key, process(mainContext.compute(x, key), key)))
   }
 
   return result
@@ -578,6 +581,7 @@ export interface NodeDisplay {
   value: number
   unit: "%" | "flat"
   variant?: ElementKeyWithPhy | "success"
+  formula: Displayable
   formulas: Displayable[]
 }
 

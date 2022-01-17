@@ -72,9 +72,10 @@ export type Data = Input & DynamicNumInput
 interface DynamicNumInput<T = Node> {
   display?: { [key in Move | "misc"]?: { [key in string]?: T } }
   conditional?: NodeData<T>
+  misc?: any
 }
 export interface NodeData<T = Node> {
-  [key: string]: typeof key extends "operation" ? never : (NodeData | T)
+  [key: string]: typeof key extends "operation" ? never : (NodeData<T> | T)
 }
 
 export type CommutativeMonoidOperation = "min" | "max" | "add" | "mul"
