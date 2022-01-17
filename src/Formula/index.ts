@@ -1,4 +1,4 @@
-import { allMainStatKeys, allSubstats } from "../Types/artifact"
+import { allMainStatKeys, allSubstats, MainStatKey, SubstatKey } from "../Types/artifact"
 import { allArtifactSets, allElementsWithPhy, allHitModes } from "../Types/consts"
 import { objectFromKeyMap } from "../Util/Util"
 import { ConstantNode, Node, ReadNode, StringNode, StringReadNode } from "./type"
@@ -8,9 +8,13 @@ const allStats = [...allMainStatKeys, ...allSubstats] as const
 const allMoves = ["normal", "charged", "plunging", "skill", "burst"] as const
 const unit: ConstantNode = { operation: "const", value: 1, info: { unit: "%" }, operands: [] }
 
+function unitForKey(key: MainStatKey | SubstatKey): "flat" | "%" {
+  return key.endsWith("_") ? "%" : "flat"
+}
+
 // All read nodes
 const rd = setReadNodeKeys({
-  base: objectFromKeyMap(["atk", "hp", "def"] as const, key => read(key === "atk" ? "add" : "unique", { key, namePrefix: "Base" })),
+  base: objectFromKeyMap(["atk", "hp", "def"] as const, key => read(key === "atk" ? "add" : "unique", { key, namePrefix: "Base", unit: unitForKey(key) })),
   premod: objectFromKeyMap(allStats, _ => read("add")),
   total: {
     ...objectFromKeyMap(allStats, key => read("add", { key, namePrefix: "Total" })),
@@ -19,7 +23,7 @@ const rd = setReadNodeKeys({
 
   art: {
     ...objectFromKeyMap(allStats, key =>
-      read("add", { unit: key.endsWith("_") ? "%" : "flat", key, namePrefix: "Art." })),
+      read("add", { key, namePrefix: "Art.", unit: unitForKey(key) })),
     ...objectFromKeyMap(allArtifactSets, _ => read("add")),
   },
   char: {

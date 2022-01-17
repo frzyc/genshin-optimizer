@@ -383,22 +383,8 @@ class Context {
         break
       }
       case "mul": {
-        if (!info?.variant)
-          variant = mergeVariants(operands)
-        if (!info?.unit) {
-          if (operands.length === 1)
-            unitGroup = operands[0].unitGroup
-
-          // TODO
-          let found = false
-          unitGroup = operands.find(x => {
-            if (sameGroup(x.unitGroup, percentGroup)) {
-              if (!found) found = true
-              else return true
-              return false
-            }
-          })?.unitGroup ?? unitGroup
-        }
+        if (!info?.variant) variant = mergeVariants(operands)
+        if (!info?.unit) unitGroup = (operands.length === 1) ? operands[0].unitGroup : newUnitGroup()
         break
       }
       case "res":
@@ -408,9 +394,6 @@ class Context {
         break
       default: assertUnreachable(operation)
     }
-
-    if (info?.unit === "%") mergeUnitGroup(unitGroup, percentGroup)
-    if (info?.variant) variant = info.variant
 
     let formula: (ContextNodeDisplay | string)[]
     let mayNeedWrapping = false
