@@ -40,7 +40,7 @@ function dataObjForCharacterSheet(
     return sum(prod(array.base, subscript(input.char.lvl, charCurves[array.lvlCurve])), subscript(input.char.asc, array.asc))
   }
 
-  const result = mergeData({
+  const result = mergeData([{
     char: {
       key: stringConst(key),
 
@@ -51,7 +51,7 @@ function dataObjForCharacterSheet(
       [special.stat]: input.char.special,
     },
     display,
-  }, additional)
+  }, additional])
 
   if (element) result.char!.ele = stringConst(element)
   return result
@@ -87,7 +87,7 @@ function dataObjForWeaponSheet(
       ? input.weapon.sub2 : sum(input.weapon.sub, input.weapon.sub2)
   }
 
-  return mergeData(result, additional)
+  return mergeData([result, additional])
 }
 function dataObjForArtifact(art: ICachedArtifact, assumingMinimumMainStatLevel: number): Data {
   // TODO: assume main stat level
@@ -141,7 +141,7 @@ function dataObjForWeapon(weapon: ICachedWeapon): Data {
     },
   }
 }
-function mergeData(...data: Data[]): Data {
+function mergeData(data: Data[]): Data {
   function internal(data: any[], input: any, path: string[]): any {
     if (data.length === 1) return data[0]
     if (input.operation) {
