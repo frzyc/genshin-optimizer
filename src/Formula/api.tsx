@@ -12,6 +12,7 @@ import { allOperations } from "./optimization";
 import { ComputeNode, ConstantNode, Data, DataNode, DynamicNumInput, Info, Node, ReadNode, StringNode, SubscriptNode } from "./type";
 import { data, percent, prod, stringConst, subscript, sum } from "./utils";
 const readNodeArrays: ReadNode[] = []
+const shouldWrap = true
 crawlObject(input, [], (x: any) => x.operation, (x: any) => readNodeArrays.push(x))
 
 // TODO: Remove this conversion after changing the file format
@@ -329,23 +330,23 @@ class Context {
       default: assertUnreachable(operation)
     }
 
-    let formula: (ContextNodeDisplay | string)[]
+    let formula: (ContextNodeDisplay | string)[] | undefined
     let mayNeedWrapping = false
     switch (operation) {
-      case "max": formula = fStr`Max(${{ list: operands, separator: ', ' }})`; break
-      case "min": formula = fStr`Min(${{ list: operands, separator: ', ' }})`; break
-      case "add": formula = fStr`${{ list: operands, separator: ' + ' }}`;; break
-      case "mul": formula = fStr`${{ list: operands, separator: ' * ', shouldWrap }}`; break
-      case "sum_frac": formula = fStr`${{ list: [operands[0]], shouldWrap }} / ${{ list: operands }}`; break
+      case "max": formula = fStr`Max(${{ operands }})`; break
+      case "min": formula = fStr`Min(${{ operands }})`; break
+      case "add": formula = fStr`${{ operands, separator: ' + ' }}`; break
+      case "mul": formula = fStr`${{ operands, separator: ' * ', shouldWrap }}`; break
+      case "sum_frac": formula = fStr`${{ operands: [operands[0]], shouldWrap }} / (${{ operands }})`; break
       case "res": {
         const base = operands[0].value
         if (base < 0) {
-          formula = fStr`100% - ${{ list: operands, shouldWrap }} / 2`
+          formula = fStr`100% - ${{ operands, shouldWrap }} / 2`
           mayNeedWrapping = true
         }
-        else if (base >= 0.75) formula = fStr`100% / (${{ list: operands, shouldWrap }} * 4 + 100%)`
+        else if (base >= 0.75) formula = fStr`100% / (${{ operands, shouldWrap }} * 4 + 100%)`
         else {
-          formula = fStr`100% - ${{ list: operands, shouldWrap }}`
+          formula = fStr`100% - ${{ operands, shouldWrap }}`
           mayNeedWrapping = true
         }
         break
@@ -353,7 +354,7 @@ class Context {
       case "threshold_add":
         const value = operands[0].value, threshold = operands[1].value
         if (value >= threshold) return operands[2]
-        else formula = []
+        else formula = undefined
         break
       default: assertUnreachable(operation)
     }
@@ -390,16 +391,18 @@ function mergeInfo(node: ContextNodeDisplay, info: Info | undefined): ContextNod
   }
   return node
 }
-type ContextNodeDisplayList = { list: ContextNodeDisplay[], separator?: string, shouldWrap?: (_: ContextNodeDisplay) => boolean }
+type ContextNodeDisplayList = { operands: ContextNodeDisplay[], separator?: string, shouldWrap?: boolean }
 function fStr(strings: TemplateStringsArray, ...keys: (ContextNodeDisplay | ContextNodeDisplayList)[]): (ContextNodeDisplay | string)[] {
   const result: (ContextNodeDisplay | string)[] = []
   strings.forEach((string, i) => {
     result.push(string)
     if (i < keys.length) {
-      if ((keys[i] as any).list) {
-        const { list, separator = "", shouldWrap } = keys[i] as ContextNodeDisplayList
-        list.forEach((item, i, array) => {
-          if (shouldWrap?.(item)) {
+      if ((keys[i] as any).operation) {
+        result.push(keys[i] as ContextNodeDisplay)
+      } else {
+        const { operands, separator = ", ", shouldWrap } = keys[i] as ContextNodeDisplayList
+        operands.forEach((item, i, array) => {
+          if (shouldWrap && item.mayNeedWrapping) {
             result.push("(")
             result.push(item)
             result.push(")")
@@ -407,7 +410,7 @@ function fStr(strings: TemplateStringsArray, ...keys: (ContextNodeDisplay | Cont
           if (i < array.length - 1)
             result.push(separator)
         })
-      } else result.push(keys[i] as ContextNodeDisplay)
+      }
     }
   })
   return result.filter(x => x)
@@ -417,9 +420,6 @@ function mergeVariants(operands: ContextNodeDisplay[]): ContextNodeDisplay["vari
   if (unique.size > 1) unique.delete(undefined)
   if (unique.size > 1) unique.delete("physical")
   return unique.values().next().value
-}
-function shouldWrap(component: ContextNodeDisplay): boolean {
-  return component.mayNeedWrapping
 }
 function valueString(value: number, unit: "%" | "flat", fixed = -1): string {
   if (fixed === -1) {
