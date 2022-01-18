@@ -5,17 +5,16 @@ import goblet from './goblet.png'
 import circlet from './circlet.png'
 import { IArtifactSheet } from '../../../Types/artifact_WR'
 import { Data } from '../../../Formula/type'
-import { min, prod, threshold_add } from '../../../Formula/utils'
+import { min, percent, prod, threshold_add } from '../../../Formula/utils'
 import { input } from '../../../Formula/index'
-
 
 export const data: Data = {
   premod: {
-    enerRech_: threshold_add(input.art.EmblemOfSeveredFate, 2, 0.2)
+    enerRech_: threshold_add(input.art.EmblemOfSeveredFate, 2, percent(0.2))
   },
   dmgBonus: {
     burst: threshold_add(input.art.EmblemOfSeveredFate, 4,
-      min(0.75, prod(0.25, input.premod.enerRech_)))
+      min(percent(0.75), prod(percent(0.25), input.premod.enerRech_)))
   }
 }
 

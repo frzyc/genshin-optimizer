@@ -15,11 +15,11 @@ const normalDmgBonus = prod(subscript(input.weapon.refineIndex, hp_conv), input.
 normalDmgBonus.info = { key: "normal_dmg_inc" }
 export const data = dataObjForWeaponSheet("EverlastingMoonglow", "catalyst",
   { base: data_gen.mainStat.base, lvlCurve: data_gen.mainStat.curve, asc: data_gen.ascension.map(x => x.addStats.atk ?? 0) },
-  { stat: data_gen.subStat!.type as any, base: data_gen.subStat!.base, lvlCurve: data_gen.subStat!.curve, },
+  { stat: data_gen.subStat!.type, base: data_gen.subStat!.base, lvlCurve: data_gen.subStat!.curve, },
   { stat: "heal_", refinement: data_gen.addProps.map(x => x.heal_) as any },
   {
-    dmgBonus: {
-      normal: normalDmgBonus
+    hit: {
+      base: normalDmgBonus
     },
     misc: {
       weapon: {

@@ -1,9 +1,13 @@
 
 import { objectFromKeyMap } from "../Util/Util"
-import type { Data, DataNode, Info, Node, ReadNode, StringConstantNode, StringNode, StringPriorityNode, StringReadNode } from "./type"
+import type { Data, DataNode, Info, Node, ReadNode, StringNode, StringReadNode } from "./type"
 
 export const todo: Node = { operation: "const", value: NaN, operands: [] }
 
+/** `value` in percentage. The value is written as non-percentage, e.g., use `percent(1)` for 100% */
+export function percent(value: number, info?: Info): Node {
+  return { operation: "const", operands: [], value, info: { key: "_", ...info } }
+}
 /** min( x1, x2, ... ) */
 export function min(...values: (number | Node)[]): Node {
   return { operation: "min", operands: intoOperands(values) }
@@ -25,8 +29,8 @@ export function frac(x: number | Node, c: number | Node): Node {
   return { operation: "sum_frac", operands: intoOperands([x, c]) }
 }
 /** value >= threshold ? addition : 0 */
-export function threshold_add(value: number | Node, threshold: number | Node, addition: number | Node): Node {
-  return { operation: "threshold_add", operands: intoOperands([value, threshold, addition]) }
+export function threshold_add(value: number | Node, threshold: number | Node, addition: number | Node, info?: Info): Node {
+  return { operation: "threshold_add", operands: intoOperands([value, threshold, addition]), info }
 }
 /** list[index] */
 export function subscript(index: Node, list: number[], info?: Info): Node {

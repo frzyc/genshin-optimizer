@@ -23,7 +23,7 @@ interface Info {
   key?: string
   namePrefix?: string
   variant?: ElementKeyWithPhy | "success"
-  unit?: "%" | "flat"
+  asConst?: boolean
 }
 
 export interface ConstantNode extends NodeBase {
@@ -42,7 +42,6 @@ export interface ReadNode extends NodeBase {
   operation: "read"
   key: Path<NodeData, Node | undefined>
   suffix?: StringNode
-  asConst?: boolean
   accumulation: CommutativeMonoidOperation | "unique"
 }
 export interface DataNode extends NodeBase {

@@ -13,4 +13,8 @@ const StatMap = {
   normal_dmg_inc: "Normal DMG Increase"
 }
 
+export function unitOfKey(key: string): "%" | "flat" {
+  if (key.endsWith("_")) return "%"
+  return "flat"
+}
 export default StatMap

@@ -1,5 +1,5 @@
 import _charCurves from "../Character/expCurve_gen.json";
-import StatMap from "../StatMap";
+import StatMap, { unitOfKey } from "../StatMap";
 import { ICachedArtifact, MainStatKey, SubstatKey } from "../Types/artifact";
 import { ICachedCharacter } from "../Types/character";
 import { allElementsWithPhy, CharacterKey, ElementKeyWithPhy, WeaponKey, WeaponTypeKey } from "../Types/consts";
@@ -54,7 +54,6 @@ function dataObjForCharacterSheet(
   }, additional)
 
   if (element) result.char!.ele = stringConst(element)
-  if (special.stat.endsWith("_")) result.char!.special!.info!.unit = "%"
   return result
 }
 function dataObjForWeaponSheet(
@@ -72,10 +71,6 @@ function dataObjForWeaponSheet(
   substatNode.info = { key: substat.stat }
   if (substat2Node)
     substat2Node.info = { key: substat2.stat }
-
-  if (mainStat.stat?.endsWith("_")) mainStatNode.info.unit = "%"
-  if (substat.stat?.endsWith("_")) substatNode.info.unit = "%"
-  if (substat2?.stat?.endsWith("_")) substat2Node!.info!.unit = "%"
 
   const result: Data = {
     base: { [mainStat.stat ?? "atk"]: input.weapon.main },
@@ -166,16 +161,12 @@ function mergeData(...data: Data[]): Data {
   return data.length ? internal(data, input, []) : {}
 }
 
-interface UnitGroup {
-  parent: UnitGroup
-}
 interface ContextNodeDisplay {
   namePrefix?: string, key?: string
   formula?: (ContextNodeDisplay | string)[]
 
   value: number
   variant: ElementKeyWithPhy | "success" | undefined
-  unitGroup: UnitGroup
 
   formulaCache?: {
     fullNameNoUnit?: string
@@ -189,29 +180,8 @@ interface ContextNodeDisplay {
 }
 interface ContextString { value?: string }
 
-function newUnitGroup(): UnitGroup {
-  const result: UnitGroup = {} as any
-  result.parent = result
-  return result
-}
-function identifyGroup(v: UnitGroup): UnitGroup {
-  if (v.parent === v) return v
-  const identity = identifyGroup(v.parent)
-  v.parent = identity
-  return identity
-}
-function sameGroup(l: UnitGroup, r: UnitGroup): boolean {
-  const iL = identifyGroup(l), iR = identifyGroup(r)
-  return iL.parent === iR.parent
-}
-function mergeUnitGroup(l: UnitGroup, r: UnitGroup) {
-  const iL = identifyGroup(l), iR = identifyGroup(r)
-  iL.parent.parent = iR.parent
-}
-const percentGroup = newUnitGroup()
-
 class Context {
-  thresholds: Dict<string, Dict<number, { path: string[], value: NodeDisplay }>> | undefined
+  thresholds: Input<Dict<number, Input<ContextNodeDisplay, never>>, never> | undefined
 
   parent?: Context
   children = new Map<Data[], Context>()
@@ -296,19 +266,14 @@ class Context {
 
     const nodes = this.readAll(key)
     let result: ContextNodeDisplay
+
     if (node.accumulation === "unique")
-      result = mergeInfo(nodes.length
+      result = nodes.length
         ? { ...nodes[0] }
-        : this._constant({ operation: "const", operands: [], info: node.info, value: NaN }), node.info)
+        : this._constant({ operation: "const", operands: [], info: node.info, value: NaN })
     else
-      result = this._accumulate(node.accumulation, nodes, node.info)
-
-    if (node.asConst) {
-      delete result.formula
-      result.mayNeedWrapping = false
-    }
-
-    return result
+      result = this._accumulate(node.accumulation, nodes)
+    return mergeInfo(result, node.info)
   }
   _data(node: DataNode, path: string[]): ContextNodeDisplay {
     let child = this.children.get(node.data)
@@ -330,11 +295,11 @@ class Context {
         const key = [...value.key]
         if (value.suffix) key.push(this.computeString(value.suffix).value!)
         key.push(threshold.value.toString())
-        layeredAssignment(this.thresholds, key.concat(...path), operands[2])
+        layeredAssignment(this.thresholds, key.concat(...path), node.operands[2])
       }
     }
 
-    return this._accumulate(operation, operands, node.info)
+    return mergeInfo(this._accumulate(operation, operands), node.info)
   }
   _subscript(node: SubscriptNode, path: string[]): ContextNodeDisplay {
     const operand = this.compute(node.operands[0], path)
@@ -348,37 +313,20 @@ class Context {
     return mergeInfo({
       operation: "const",
       value: node.value,
-      unitGroup: newUnitGroup(),
       variant: undefined,
       mayNeedWrapping: false
     }, node.info)
   }
 
-  _accumulate(operation: ComputeNode["operation"], operands: ContextNodeDisplay[], info: Node["info"]): ContextNodeDisplay {
-    let unitGroup = newUnitGroup(), variant: ContextNodeDisplay["variant"]
+  _accumulate(operation: ComputeNode["operation"], operands: ContextNodeDisplay[]): ContextNodeDisplay {
+    let variant: ContextNodeDisplay["variant"]
 
     switch (operation) {
-      case "add": case "min": case "max": {
-        operands.forEach(x => mergeUnitGroup(unitGroup, x.unitGroup))
-        variant = mergeVariants(operands)
-        break
-      }
-      case "threshold_add": {
-        const operand = operands[2]
-        unitGroup = operand.unitGroup
-        variant = operand.variant
-        break
-      }
-      case "mul": {
-        if (!info?.variant) variant = mergeVariants(operands)
-        if (!info?.unit) unitGroup = (operands.length === 1) ? operands[0].unitGroup : newUnitGroup()
-        break
-      }
+      case "add": case "min": case "max": variant = mergeVariants(operands); break
+      case "threshold_add": variant = operands[2].variant; break
+      case "mul": variant = mergeVariants(operands); break
       case "res":
-      case "sum_frac":
-        unitGroup = percentGroup
-        variant = mergeVariants(operands)
-        break
+      case "sum_frac": variant = mergeVariants(operands); break
       default: assertUnreachable(operation)
     }
 
@@ -387,53 +335,60 @@ class Context {
     switch (operation) {
       case "max": formula = fStr`Max(${{ list: operands, separator: ', ' }})`; break
       case "min": formula = fStr`Min(${{ list: operands, separator: ', ' }})`; break
-      case "add":
-        formula = fStr`${{ list: operands, separator: ' + ' }}`;
-
-        if (operands.length <= 1) mayNeedWrapping = operands[0]?.mayNeedWrapping ?? true
-        else mayNeedWrapping = true
-        break
-      case "mul":
-        formula = fStr`${{ list: operands, separator: ' * ', shouldWrap }}`;
-
-        if (operands.length <= 1) mayNeedWrapping = operands[0]?.mayNeedWrapping ?? true
-        break
+      case "add": formula = fStr`${{ list: operands, separator: ' + ' }}`;; break
+      case "mul": formula = fStr`${{ list: operands, separator: ' * ', shouldWrap }}`; break
       case "sum_frac": formula = fStr`${{ list: [operands[0]], shouldWrap }} / ${{ list: operands }}`; break
-      case "res":
-        {
-          const base = operands[0].value
-          if (base < 0) {
-            formula = fStr`100% - ${{ list: operands, shouldWrap }} / 2`
-            mayNeedWrapping = true
-          }
-          else if (base >= 0.75) formula = fStr`100% / (${{ list: operands, shouldWrap }} * 4 + 100%)`
-          else {
-            formula = fStr`100% - ${{ list: operands, shouldWrap }}`
-            mayNeedWrapping = true
-          }
-          break
+      case "res": {
+        const base = operands[0].value
+        if (base < 0) {
+          formula = fStr`100% - ${{ list: operands, shouldWrap }} / 2`
+          mayNeedWrapping = true
         }
+        else if (base >= 0.75) formula = fStr`100% / (${{ list: operands, shouldWrap }} * 4 + 100%)`
+        else {
+          formula = fStr`100% - ${{ list: operands, shouldWrap }}`
+          mayNeedWrapping = true
+        }
+        break
+      }
       case "threshold_add":
         const value = operands[0].value, threshold = operands[1].value
-        formula = (value >= threshold) ? operands[2].formula ?? [] : []
+        if (value >= threshold) return operands[2]
+        else formula = []
         break
       default: assertUnreachable(operation)
     }
 
+    switch (operation) {
+      case "add": case "mul":
+        if (operands.length <= 1) mayNeedWrapping = operands[0]?.mayNeedWrapping ?? true
+        else if (operation === "add") mayNeedWrapping = true
+    }
+
     const value = allOperations[operation](operands.map(x => x.value))
-    return mergeInfo({
+    return {
       operation,
       formula,
-      value, unitGroup, variant,
+      value, variant,
       mayNeedWrapping
-    }, info)
+    }
   }
 }
 function mergeInfo(node: ContextNodeDisplay, info: Info | undefined): ContextNodeDisplay {
-  if (info?.namePrefix) node.namePrefix = info.namePrefix
-  if (info?.key) node.key = info.key
-  if (info?.variant) node.variant = info.variant
-  if (info?.unit === "%") mergeUnitGroup(node.unitGroup, percentGroup)
+  if (!info) return node
+  const { namePrefix, variant, key, asConst } = info
+
+  if (namePrefix) node.namePrefix = namePrefix
+  if (variant) node.variant = variant
+  if (key) {
+    node.key = key
+    node.mayNeedWrapping = false
+  }
+  if (asConst) {
+    delete node.formula
+    node.operation = "const"
+    node.mayNeedWrapping = false
+  }
   return node
 }
 type ContextNodeDisplayList = { list: ContextNodeDisplay[], separator?: string, shouldWrap?: (_: ContextNodeDisplay) => boolean }
@@ -456,7 +411,7 @@ function fStr(strings: TemplateStringsArray, ...keys: (ContextNodeDisplay | Cont
       } else result.push(keys[i] as ContextNodeDisplay)
     }
   })
-  return result
+  return result.filter(x => x)
 }
 function mergeVariants(operands: ContextNodeDisplay[]): ContextNodeDisplay["variant"] {
   const unique = new Set(operands.map(x => x.variant))
@@ -480,7 +435,7 @@ function computeFormulaString(node: ContextNodeDisplay): Required<ContextNodeDis
   node.formulaCache = { formula: "", dependencies: [] }
   const cache = node.formulaCache
   if (node.key) {
-    const name = StatMap[node.key]
+    const name = StatMap[node.key] ?? ""
     const nameNoUnit = name.endsWith("%") ? name.slice(0, -1) : name
     cache.fullNameNoUnit = node.namePrefix ? node.namePrefix + " " + nameNoUnit : nameNoUnit
   }
@@ -496,17 +451,17 @@ function computeFormulaString(node: ContextNodeDisplay): Required<ContextNodeDis
     if (fullNameNoUnit) {
       deps.add(item)
       dependencies.forEach(x => deps.add(x))
-      return `${fullNameNoUnit} ${valueString(item.value, sameGroup(item.unitGroup, percentGroup) ? "%" : "flat")}`
+      return `${fullNameNoUnit} ${valueString(item.value, unitOfKey(item.key ?? ""))}`
     }
-    if (item.formula) {
+    if (item.formula?.length) {
       dependencies.forEach(x => deps.add(x))
       return formula
     }
-    return `${valueString(item.value, sameGroup(item.unitGroup, percentGroup) ? "%" : "flat")}`
+    return `${valueString(item.value, unitOfKey(item.key ?? ""))}`
   }).join("")
 
   if (cache.fullNameNoUnit)
-    cache.assignmentFormula = `${cache.fullNameNoUnit} ${valueString(node.value, sameGroup(node.unitGroup, percentGroup) ? "%" : "flat")} = ${cache.formula}`
+    cache.assignmentFormula = `${cache.fullNameNoUnit} ${valueString(node.value, unitOfKey(node.key ?? ""))} = ${cache.formula}`
   cache.dependencies = [...deps]
   return cache
 }
@@ -519,15 +474,17 @@ function computeUIData(data: Data[]): UIData {
   const mainContext = new Context(data)
   mainContext.thresholds = result.threshold
 
-  function process(node: ContextNodeDisplay, path: string[] = []): NodeDisplay {
+  function process(node: ContextNodeDisplay): NodeDisplay {
     const { namePrefix, key, value, variant } = node
     const newValue: NodeDisplay = {
       value, unit: "flat", formula: "", formulas: [],
     }
-    if (key) newValue.key = key
+    if (key) {
+      newValue.key = key
+      newValue.unit = unitOfKey(key)
+    }
     if (variant) newValue.variant = variant
     if (namePrefix) newValue.namePrefix = namePrefix
-    if (sameGroup(node.unitGroup, percentGroup)) newValue.unit = "%"
 
     const { formula, dependencies } = computeFormulaString(node)
     newValue.formula = formula
@@ -540,26 +497,29 @@ function computeUIData(data: Data[]): UIData {
   crawlObject(input, [], (x: any) => x.operation, (node: any, key: any) =>
     layeredAssignment(result.values, key,
       node.operation === "read"
-        ? process(mainContext.compute(node, key), key)
+        ? process(mainContext.compute(node, key))
         : mainContext.computeString(node)))
   for (const entry of data) {
     if (entry.conditional)
       crawlObject(entry.conditional, ["conditional"], (x: any) => x.operation, (x: any, key: string[]) =>
-        layeredAssignment(result.values, key, process(mainContext.compute(x, key), key)))
+        layeredAssignment(result.values, key, process(mainContext.compute(x, key))))
     if (entry.display)
       crawlObject(entry.display, ["display"], (x: any) => x.operation, (x: any, key: string[]) =>
-        layeredAssignment(result.values, key, process(mainContext.compute(x, key), key)))
+        layeredAssignment(result.values, key, process(mainContext.compute(x, key))))
     if (entry.misc)
       crawlObject(entry.misc, ["misc"], (x: any) => x.operation, (x: any, key: string[]) =>
-        layeredAssignment(result.values, key, process(mainContext.compute(x, key), key)))
+        layeredAssignment(result.values, key, process(mainContext.compute(x, key))))
   }
+  crawlObject(result.threshold, [], (x: any) => x.operation, (x: ContextNodeDisplay, key: string[]) => {
+    layeredAssignment(result.threshold, key, process(x))
+  })
 
   return result
 }
 
 interface UIData {
   values: StrictInput<NodeDisplay, { value: string }> & DynamicNumInput<NodeDisplay>
-  threshold: Input<Dict<number, Input<number, never>>, never>
+  threshold: Input<Dict<number, Input<NodeDisplay, never>>, never>
 }
 export interface NodeDisplay {
   namePrefix?: string
