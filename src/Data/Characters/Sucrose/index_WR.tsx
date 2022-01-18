@@ -22,7 +22,7 @@ import { allElements, WeaponTypeKey } from '../../../Types/consts'
 import ColorText from '../../../Components/ColoredText'
 import { input } from "../../../Formula/index";
 import { dataObjForCharacterSheet, dmgNode } from "../../../Formula/api";
-import { prod, threshold_add } from "../../../Formula/utils";
+import { percent, threshold_add } from "../../../Formula/utils";
 import { ICharacterSheet } from '../../../Types/character_WR'
 
 const tr = (strKey: string) => <Translate ns="char_Sucrose_gen" key18={strKey} />
@@ -76,13 +76,15 @@ export const data = dataObjForCharacterSheet("Sucrose", "anemo",
     // TODO: include
     // Teambuff: A1, A4,
     // Misc: C1, C2, C4
-    char: {
-      skill: threshold_add(input.char.asc, 3, 3),
-      burst: threshold_add(input.char.asc, 5, 3),
+    talent: {
+      boost: {
+        skill: threshold_add(input.constellation, 3, 3),
+        burst: threshold_add(input.constellation, 5, 3),
+      }
     },
     dmgBonus: {
       // TODO: Add conditional
-      ...Object.fromEntries(allElements.map(ele => [ele, threshold_add(input.char.constellation, 6, 0.2)])),
+      ...Object.fromEntries(allElements.map(ele => [ele, threshold_add(input.constellation, 6, percent(0.2), { key: `${ele}_dmg_` })])),
     }
   }
 )

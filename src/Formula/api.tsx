@@ -21,7 +21,7 @@ const weaponCurves = Object.fromEntries(Object.entries(_weaponCurves).map(([key,
 function dmgNode(base: MainStatKey, lvlMultiplier: number[], move: "normal" | "charged" | "plunging" | "skill" | "burst", additional: Data = {}): Node {
   return data(input.hit.dmg, [{
     hit: {
-      base: prod(input.total[base], subscript(input.char.lvl, lvlMultiplier)),
+      base: prod(input.total[base], subscript(input.lvl, lvlMultiplier)),
       move: stringConst(move), // TODO: element ?: T, reaction ?: T, critType ?: T
     },
   }, additional])
@@ -37,23 +37,20 @@ function dataObjForCharacterSheet(
   additional: Data = {},
 ): Data {
   function curve(array: { base: number, lvlCurve: string, asc: number[] }): Node {
-    return sum(prod(array.base, subscript(input.char.lvl, charCurves[array.lvlCurve])), subscript(input.char.asc, array.asc))
+    return sum(prod(array.base, subscript(input.lvl, charCurves[array.lvlCurve])), subscript(input.asc, array.asc))
   }
 
   const result = mergeData([{
-    char: {
-      key: stringConst(key),
-
-      hp: curve(hp), atk: curve(atk), def: curve(def),
-      special: subscript(input.char.asc, special.asc, { key: special.stat }),
-    },
+    charKey: stringConst(key),
+    hp: curve(hp), atk: curve(atk), def: curve(def),
+    special: subscript(input.asc, special.asc, { key: special.stat }),
     premod: {
-      [special.stat]: input.char.special,
+      [special.stat]: input.special,
     },
     display,
   }, additional])
 
-  if (element) result.char!.ele = stringConst(element)
+  if (element) result.charEle = stringConst(element)
   return result
 }
 function dataObjForWeaponSheet(
@@ -101,18 +98,21 @@ function dataObjForArtifact(art: ICachedArtifact, assumingMinimumMainStatLevel: 
 }
 function dataObjForCharacter(char: ICachedCharacter): Data {
   return {
-    char: {
-      lvl: constant(char.level),
-      constellation: constant(char.constellation),
-      asc: constant(char.ascension),
+    lvl: constant(char.level),
+    constellation: constant(char.constellation),
+    asc: constant(char.ascension),
 
-      // TODO: Check when char.elementKey can be null
-      ...(char.elementKey ? { ele: stringConst(char.elementKey) } : {}),
+    // TODO: Check when char.elementKey can be null
+    charEle: char.elementKey ? stringConst(char.elementKey) : undefined,
 
-      auto: constant(char.talent.auto),
-      skill: constant(char.talent.skill),
-      burst: constant(char.talent.burst),
+    talent: {
+      base: {
+        auto: constant(char.talent.auto),
+        skill: constant(char.talent.skill),
+        burst: constant(char.talent.burst),
+      }
     },
+
     // TODO: override enemy stats
     enemy: {
       res: {
@@ -472,7 +472,8 @@ function computeUIData(data: Data[]): UIData {
   }
 
   const mainContext = new Context(data)
-  mainContext.thresholds = result.threshold
+  mainContext.thresholds = {}
+  const threshold = mainContext.thresholds
 
   function process(node: ContextNodeDisplay): NodeDisplay {
     const { namePrefix, key, value, variant } = node
@@ -510,7 +511,7 @@ function computeUIData(data: Data[]): UIData {
       crawlObject(entry.misc, ["misc"], (x: any) => x.operation, (x: any, key: string[]) =>
         layeredAssignment(result.values, key, process(mainContext.compute(x, key))))
   }
-  crawlObject(result.threshold, [], (x: any) => x.operation, (x: ContextNodeDisplay, key: string[]) => {
+  crawlObject(threshold, [], (x: any) => x.operation, (x: ContextNodeDisplay, key: string[]) => {
     layeredAssignment(result.threshold, key, process(x))
   })
 

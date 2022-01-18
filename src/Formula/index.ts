@@ -11,6 +11,15 @@ const asConst = true
 
 // All read nodes
 const rd = setReadNodeKeys({
+  charKey: stringRead(), charEle: stringRead(), infusion: stringRead(),
+  lvl: read("unique"), constellation: read("unique"), asc: read("unique"),
+
+  talent: objectFromKeyMap(["base", "boost", "total"] as const, _ =>
+    objectFromKeyMap(["auto", "skill", "burst"] as const, _ => read("add"))),
+
+  ...objectFromKeyMap(["hp", "atk", "def"] as const, key => read("unique", { key, namePrefix: "Char.", asConst })),
+  special: read("unique", { namePrefix: "Char.", asConst }),
+
   base: objectFromKeyMap(["atk", "hp", "def"] as const, key =>
     read(key === "atk" ? "add" : "unique", { key, namePrefix: "Base" })),
   premod: objectFromKeyMap(allStats, _ => read("add")),
@@ -23,15 +32,7 @@ const rd = setReadNodeKeys({
       read("add", { key, namePrefix: "Art.", asConst })),
     ...objectFromKeyMap(allArtifactSets, _ => read("add", { asConst })),
   },
-  char: {
-    key: stringRead(), ele: stringRead(), infusion: stringRead(),
 
-    auto: read("add"), skill: read("add"), burst: read("add"),
-    lvl: read("unique"), constellation: read("unique"), asc: read("unique"),
-
-    ...objectFromKeyMap(["hp", "atk", "def"] as const, key => read("unique", { key, namePrefix: "Char.", asConst })),
-    special: read("unique", { namePrefix: "Char.", asConst }),
-  },
   weapon: {
     key: stringRead(), type: stringRead(),
 
@@ -72,7 +73,7 @@ const rd = setReadNodeKeys({
   },
 })
 
-const { base, art, premod, total, char, hit, dmgBonus, enemy } = rd
+const { base, art, premod, total, hit, dmgBonus, enemy } = rd
 
 // Read nodes with suffixes. Can't add them in the declaration because it's self-referential
 dmgBonus.byMove.suffix = rd.hit.move
@@ -83,7 +84,7 @@ for (const element of allElementsWithPhy)
   art[`${element}_dmg_` as const].info!.variant = element
 
 const common = {
-  base: objectFromKeyMap(["hp", "atk", "def"], key => char[key] as Node),
+  base: objectFromKeyMap(["hp", "atk", "def"], key => rd[key] as Node),
   premod: {
     ...objectFromKeyMap(allStats, key => {
       if (key === "atk" || key === "def" || key === "hp")
@@ -122,11 +123,11 @@ const common = {
       base: sum(unit, prod(25 / 9, frac(total.eleMas, 1400))),
     },
 
-    ele: stringPrio(rd.char.infusion, rd.team.infusion),
+    ele: stringPrio(rd.infusion, rd.team.infusion),
   },
 
   enemy: {
-    def: frac(sum(char.lvl, 100), prod(sum(enemy.level, 100), sum(1, prod(-1, enemy.defRed))))
+    def: frac(sum(rd.lvl, 100), prod(sum(enemy.level, 100), sum(1, prod(-1, enemy.defRed))))
   },
 } as const
 
