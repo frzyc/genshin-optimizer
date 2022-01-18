@@ -10,7 +10,7 @@ import { Input, input, StrictInput } from "./index";
 import { constant } from "./internal";
 import { allOperations } from "./optimization";
 import { ComputeNode, ConstantNode, Data, DataNode, DynamicNumInput, Info, Node, ReadNode, StringNode, SubscriptNode } from "./type";
-import { data, prod, stringConst, subscript, sum } from "./utils";
+import { data, percent, prod, stringConst, subscript, sum } from "./utils";
 const readNodeArrays: ReadNode[] = []
 crawlObject(input, [], (x: any) => x.operation, (x: any) => readNodeArrays.push(x))
 
@@ -93,7 +93,7 @@ function dataObjForArtifact(art: ICachedArtifact, assumingMinimumMainStatLevel: 
   art.substats.forEach(({ key, value }) => key && stats.push([key, value]))
   return {
     art: Object.fromEntries(stats.map(([key, value]) =>
-      key.endsWith("_") ? [key, value / 100] : [key, value]))
+      key.endsWith("_") ? [key, percent(value / 100)] : [key, constant(value)]))
   }
 }
 function dataObjForCharacter(char: ICachedCharacter): Data {
