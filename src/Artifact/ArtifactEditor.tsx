@@ -29,7 +29,7 @@ import ArtifactCard from './ArtifactCard';
 import SubstatEfficiencyDisplayCard from './ArtifactEditor/Components/SubstatEfficiencyDisplayCard';
 import SubstatInput from './ArtifactEditor/Components/SubstatInput';
 import UploadExplainationModal from './ArtifactEditor/Components/UploadExplainationModal';
-import { ArtifactSheet } from './ArtifactSheet';
+import { ArtifactSheet } from './ArtifactSheet_WR';
 import { OutstandingEntry, ProcessedEntry, processEntry, queueReducer } from './ScanningUtil';
 
 const maxProcessingCount = 3, maxProcessedCount = 16
@@ -74,7 +74,7 @@ const InputInvis = styled('input')({
 export default function ArtifactEditor({ artifactIdToEdit, cancelEdit }: ArtifactEditorArgument) {
   const { t } = useTranslation("artifact")
 
-  const artifactSheets = usePromise(ArtifactSheet.getAll(), [])
+  const artifactSheets = usePromise(ArtifactSheet.getAll, [])
 
   const database = useContext(DatabaseContext)
 

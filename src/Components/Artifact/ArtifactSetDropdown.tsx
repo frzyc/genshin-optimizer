@@ -2,7 +2,7 @@ import { Replay } from "@mui/icons-material";
 import { ButtonProps, Divider, ListItemIcon, ListItemText, MenuItem, Typography } from "@mui/material";
 import React, { useMemo } from "react";
 import { Trans, useTranslation } from "react-i18next";
-import { ArtifactSheet } from "../../Artifact/ArtifactSheet";
+import { ArtifactSheet } from "../../Artifact/ArtifactSheet_WR";
 import usePromise from "../../ReactHooks/usePromise";
 import { ArtifactRarity, ArtifactSetKey, Rarity } from "../../Types/consts";
 import DropdownButton from "../DropdownMenu/DropdownButton";
@@ -17,7 +17,7 @@ type props = Omit<ButtonProps, "onChange"> & {
 }
 export default function ArtifactSetDropdown({ selectedSetKey = "", onChange, artifactSetsByRarity, hasUnselect = false, ...props }: props) {
   const { t } = useTranslation("artifact")
-  const artifactSheets = usePromise(ArtifactSheet.getAll(), [])
+  const artifactSheets = usePromise(ArtifactSheet.getAll, [])
   const sheet = artifactSheets?.[selectedSetKey]
   const displaySets = useMemo(() => {
     if (artifactSetsByRarity) return artifactSetsByRarity

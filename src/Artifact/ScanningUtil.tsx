@@ -8,7 +8,7 @@ import { BorrowManager } from '../Util/BorrowManager';
 import { valueStringWithUnit } from '../Util/UIUtil';
 import { clamp, hammingDistance, objectFromKeyMap } from '../Util/Util';
 import Artifact from './Artifact';
-import { ArtifactSheet } from './ArtifactSheet';
+import { ArtifactSheet } from './ArtifactSheet_WR';
 
 const starColor = { r: 255, g: 204, b: 50 } //#FFCC32
 const workerCount = 2
@@ -65,7 +65,7 @@ export function processEntry(entry: OutstandingEntry) {
   const { file, fileName } = entry
   entry.imageURL = fileToURL(file)
   entry.result = entry.imageURL.then(async imageURL => {
-    const sheets = await ArtifactSheet.getAll()
+    const sheets = await ArtifactSheet.getAll
     const ocrResult = await ocr(imageURL)
 
     const [artifact, texts] = findBestArtifact(
