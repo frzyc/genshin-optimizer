@@ -2,7 +2,7 @@ import _charCurves from "../Character/expCurve_gen.json";
 import StatMap, { unitOfKey } from "../StatMap";
 import { ICachedArtifact, MainStatKey, SubstatKey } from "../Types/artifact";
 import { ICachedCharacter } from "../Types/character";
-import { allElementsWithPhy, CharacterKey, ElementKeyWithPhy, WeaponKey, WeaponTypeKey } from "../Types/consts";
+import { allElementsWithPhy, ArtifactSetKey, CharacterKey, ElementKeyWithPhy, WeaponKey, WeaponTypeKey } from "../Types/consts";
 import { ICachedWeapon } from "../Types/weapon";
 import { assertUnreachable, crawlObject, layeredAssignment, objectFromKeyMap, objPathValue } from "../Util/Util";
 import _weaponCurves from "../Weapon/expCurve_gen.json";
@@ -91,14 +91,12 @@ function dataObjForWeaponSheet(
 }
 function dataObjForArtifact(art: ICachedArtifact, assumingMinimumMainStatLevel: number): Data {
   // TODO: assume main stat level
+  const stats: [ArtifactSetKey | MainStatKey | SubstatKey, number][] = []
+  stats.push([art.mainStatKey, art.mainStatVal])
+  art.substats.forEach(({ key, value }) => key && stats.push([key, value]))
   return {
-    art: {
-      [art.mainStatKey]: constant(art.mainStatVal),
-      ...Object.fromEntries(art.substats
-        .filter((x) => x.key)
-        .map(({ key, value }) => [key, constant(value)])),
-      [art.setKey]: constant(1),
-    },
+    art: Object.fromEntries(stats.map(([key, value]) =>
+      key.endsWith("_") ? [key, value / 100] : [key, value]))
   }
 }
 function dataObjForCharacter(char: ICachedCharacter): Data {
@@ -436,8 +434,10 @@ function computeFormulaString(node: ContextNodeDisplay): Required<ContextNodeDis
   const cache = node.formulaCache
   if (node.key) {
     const name = StatMap[node.key] ?? ""
-    const nameNoUnit = name.endsWith("%") ? name.slice(0, -1) : name
-    cache.fullNameNoUnit = node.namePrefix ? node.namePrefix + " " + nameNoUnit : nameNoUnit
+    if (name) {
+      const nameNoUnit = name.endsWith("%") ? name.slice(0, -1) : name
+      cache.fullNameNoUnit = node.namePrefix ? node.namePrefix + " " + nameNoUnit : nameNoUnit
+    }
   }
   if (!node.formula) return cache
 

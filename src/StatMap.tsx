@@ -10,7 +10,7 @@ const StatMap = {
   pyro_dmg_: "Pyro DMG Bonus",
   cryo_dmg_: "Cryp DMG Bonus",
   heal_: "Healing Bonus",
-  normal_dmg_inc: "Normal DMG Increase"
+  normal_dmg_inc: "Normal DMG Increase",
 }
 
 export function unitOfKey(key: string): "%" | "flat" {
