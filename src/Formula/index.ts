@@ -12,6 +12,7 @@ const asConst = true
 // All read nodes
 const rd = setReadNodeKeys({
   charKey: stringRead(), charEle: stringRead(), infusion: stringRead(),
+  weaponType: stringRead(),
   lvl: read("unique"), constellation: read("unique"), asc: read("unique"),
 
   talent: objectFromKeyMap(["base", "boost", "total"] as const, type =>

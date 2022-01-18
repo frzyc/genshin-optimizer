@@ -7,7 +7,9 @@ export const formulaImport = import('./Data/formula').then(imp => {
   Formula.formulas = imp.default
   return imp.default
 })
-
+/**
+ * @deprecated
+ */
 export default class Formula {
   constructor() { if (this instanceof Formula) throw Error('A static class cannot be instantiated.'); }
   static formulas: any = {}

@@ -1,5 +1,6 @@
 import ImgIcon from "../Components/Image/ImgIcon";
 import { Translate } from "../Components/Translate";
+import { mergeData } from "../Formula/api";
 import { Data } from "../Formula/type";
 import { IArtifactSheet, SetEffectEntry } from "../Types/artifact_WR";
 import { allSlotKeys, ArtifactRarity, ArtifactSetKey, SetNum, SlotKey } from "../Types/consts";
@@ -9,7 +10,7 @@ export const artifactImport = import("../Data/Artifacts/index_WR")
 const artifactSheets = artifactImport.then(imp => objectMap(imp.default, (artifact, key) => new ArtifactSheet(key, artifact.default, artifact.data))) as Promise<Record<ArtifactSetKey, ArtifactSheet>>
 
 const tr = (setKey: string, strKey: string) => <Translate ns={`artifact_${setKey}_gen`} key18={strKey} />
-
+const allData = artifactSheets.then(as => mergeData(Object.values(as).map(s => s.data)))
 export class ArtifactSheet {
   readonly sheet: IArtifactSheet
   readonly key: ArtifactSetKey
@@ -59,6 +60,7 @@ export class ArtifactSheet {
 
   static get(set: ArtifactSetKey | undefined): Promise<ArtifactSheet> | undefined { return set ? artifactSheets.then(a => a[set]) : undefined }
   static get getAll() { return artifactSheets }
+  static get getAllData() { return allData }
   static setKeysByRarities(sheets: StrictDict<ArtifactSetKey, ArtifactSheet>): Dict<ArtifactRarity, ArtifactSetKey[]> {
     const grouped: Dict<ArtifactRarity, ArtifactSetKey[]> = {}
     Object.entries(sheets).forEach(([key, sheet]) => {

@@ -6,8 +6,6 @@ import { objectMap } from "../Util/Util";
 
 export const charImport = import('../Data/Characters/index_WR')
 
-charImport.then(console.log)
-
 // TODO: remove typecasting
 const characterSheets = charImport.then(imp => objectMap(imp.default, char => new CharacterSheet(char.default, char.data))) as Promise<Record<CharacterKey, CharacterSheet>>
 

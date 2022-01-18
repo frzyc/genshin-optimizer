@@ -2,7 +2,7 @@ import _charCurves from "../Character/expCurve_gen.json";
 import StatMap, { unitOfKey } from "../StatMap";
 import { ICachedArtifact, MainStatKey, SubstatKey } from "../Types/artifact";
 import { ICachedCharacter } from "../Types/character";
-import { allElementsWithPhy, ArtifactSetKey, CharacterKey, ElementKeyWithPhy, WeaponKey, WeaponTypeKey } from "../Types/consts";
+import { allElementsWithPhy, ArtifactSetKey, CharacterKey, ElementKey, ElementKeyWithPhy, WeaponKey, WeaponTypeKey } from "../Types/consts";
 import { ICachedWeapon } from "../Types/weapon";
 import { assertUnreachable, crawlObject, layeredAssignment, objectFromKeyMap, objPathValue } from "../Util/Util";
 import _weaponCurves from "../Weapon/expCurve_gen.json";
@@ -28,7 +28,8 @@ function dmgNode(base: MainStatKey, lvlMultiplier: number[], move: "normal" | "c
 }
 function dataObjForCharacterSheet(
   key: CharacterKey,
-  element: ElementKeyWithPhy | undefined,
+  element: ElementKey,
+  weaponType: WeaponTypeKey,
   hp: { base: number, lvlCurve: string, asc: number[] },
   atk: { base: number, lvlCurve: string, asc: number[] },
   def: { base: number, lvlCurve: string, asc: number[] },
@@ -42,6 +43,8 @@ function dataObjForCharacterSheet(
 
   const result = mergeData([{
     charKey: stringConst(key),
+    charEle: stringConst(element),
+    weaponType: stringConst(weaponType),
     hp: curve(hp), atk: curve(atk), def: curve(def),
     special: subscript(input.asc, special.asc, { key: special.stat }),
     premod: {
@@ -49,8 +52,6 @@ function dataObjForCharacterSheet(
     },
     display,
   }, additional])
-
-  if (element) result.charEle = stringConst(element)
   return result
 }
 function dataObjForWeaponSheet(
@@ -86,7 +87,7 @@ function dataObjForWeaponSheet(
 
   return mergeData([result, additional])
 }
-function dataObjForArtifact(art: ICachedArtifact, assumingMinimumMainStatLevel: number): Data {
+function dataObjForArtifact(art: ICachedArtifact, assumingMinimumMainStatLevel: number = 0): Data {
   // TODO: assume main stat level
   const stats: [ArtifactSetKey | MainStatKey | SubstatKey, number][] = []
   stats.push([art.mainStatKey, art.mainStatVal])
@@ -518,7 +519,7 @@ function computeUIData(data: Data[]): UIData {
   return result
 }
 
-interface UIData {
+export interface UIData {
   values: StrictInput<NodeDisplay, { value: string }> & DynamicNumInput<NodeDisplay>
   threshold: Input<Dict<number, Input<NodeDisplay, never>>, never>
 }

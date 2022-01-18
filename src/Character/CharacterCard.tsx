@@ -10,18 +10,17 @@ import { Stars } from '../Components/StarDisplay';
 import StatIcon from '../Components/StatIcon';
 import { ascensionMaxLevel } from '../Data/LevelData';
 import { DatabaseContext } from '../Database/Database';
-import { computeUIData, dataObjForWeapon, valueString } from '../Formula/api';
-import useCharacter from '../ReactHooks/useCharacter';
+import { computeUIData, dataObjForWeapon, UIData, valueString } from '../Formula/api';
 import usePromise from '../ReactHooks/usePromise';
-import useSheets from '../ReactHooks/useSheets';
 import Stat from '../Stat';
 import StatMap from '../StatMap';
-import { CharacterKey, SlotKey } from '../Types/consts';
+import { CharacterKey, ElementKey, SlotKey } from '../Types/consts';
 import { ICalculatedStats } from '../Types/stats';
 import { ICachedWeapon } from '../Types/weapon';
 import WeaponSheet from '../Weapon/WeaponSheet_WR';
-import Character from './Character';
-import CharacterSheet from './CharacterSheet';
+import CharacterSheet from './CharacterSheet_WR';
+import { ICachedArtifact } from '../Types/artifact_WR';
+import useCharUIData from '../ReactHooks/useCharUIData';
 
 type CharacterCardProps = {
   characterKey: CharacterKey | "",
@@ -33,39 +32,49 @@ type CharacterCardProps = {
   build?: ICalculatedStats
 }
 export default function CharacterCard({ build, characterKey, artifactChildren, weaponChildren, onClick, onClickHeader, footer }: CharacterCardProps) {
-  const database = useContext(DatabaseContext)
-  const character = useCharacter(characterKey)
-  const sheets = useSheets()
-  const characterSheet = sheets?.characterSheets[characterKey] as CharacterSheet | undefined
-  const stats = useMemo(() => build ?? (character && sheets && Character.calculateBuild(character, database, sheets)), [build, character, sheets, database])
+  const { data: charUIData, character, characterSheet, artifacts } = useCharUIData(characterKey)
   const onClickHandler = useCallback(() => characterKey && onClick?.(characterKey), [characterKey, onClick])
   const actionWrapperFunc = useCallback(
     children => <CardActionArea onClick={onClickHandler} sx={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>{children}</CardActionArea>,
     [onClickHandler],
   )
-  if (!character || !characterSheet || !stats) return null;
+  if (!character || !characterSheet || !charUIData) return null;
 
   return <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 350 }} />}>
     <CardLight sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
       <ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc} >
-        <Header characterSheet={characterSheet} stats={stats} onClick={!onClick ? onClickHeader : undefined} />
+        <Header characterSheet={characterSheet} data={charUIData} onClick={!onClick ? onClickHeader : undefined} />
         <CardContent sx={{ width: "100%", display: "flex", flexDirection: "column", gap: 1, flexGrow: 1 }}>
           <Weapon weaponId={character.equippedWeapon} />
           {weaponChildren}
           {/* will grow to fill the 100% height */}
           <Box flexGrow={1} display="flex" flexDirection="column" gap={1}>
-            <ArtifactDisplay stats={stats} />
+            {artifacts && <ArtifactDisplay artifacts={artifacts} />}
             {artifactChildren}
           </Box>
-          <Stats stats={stats} />
+          <Stats data={charUIData} />
         </CardContent>
       </ConditionalWrapper>
       {footer}
     </CardLight>
   </Suspense>
 }
-function Header({ onClick, characterSheet, stats: { characterKey, tlvl, characterLevel, ascension, constellation, characterEle, autoBoost, skillBoost, burstBoost } }:
-  { onClick?: (characterKey: CharacterKey) => void, characterSheet: CharacterSheet, stats: ICalculatedStats }) {
+function Header({ onClick, characterSheet, data }:
+  { onClick?: (characterKey: CharacterKey) => void, characterSheet: CharacterSheet, data: UIData }) {
+  const dv = data.values
+  const characterKey = dv.charKey.value as CharacterKey
+  const characterEle = dv.charEle.value as ElementKey
+  const characterLevel = dv.lvl.value
+  const constellation = dv.constellation.value
+  const ascension = dv.asc.value
+  const autoBoost = dv.talent.boost.auto.value
+  const skillBoost = dv.talent.boost.skill.value
+  const burstBoost = dv.talent.boost.burst.value
+
+  const tAuto = dv.talent.total.auto.value
+  const tSkill = dv.talent.total.skill.value
+  const tBurst = dv.talent.total.burst.value
+
   const actionWrapperFunc = useCallback(
     children => <CardActionArea onClick={() => characterKey && onClick?.(characterKey)} sx={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>{children}</CardActionArea>,
     [onClick, characterKey],
@@ -95,7 +104,7 @@ function Header({ onClick, characterSheet, stats: { characterKey, tlvl, characte
           sx={{ mt: "auto" }}
         />
       </Box>
-      <Box flexGrow={1} sx={{ p: 1 }} display="flex" flexDirection="column" zIndex={1}>
+      <Box flexGrow={1} sx={{ py: 1, pr: 1 }} display="flex" flexDirection="column" zIndex={1}>
         <Chip label={<Typography variant="subtitle1">{characterSheet.name}</Typography>} size="small" color={characterEle} />
         <Grid container spacing={1} flexWrap="nowrap">
           <Grid item sx={{ textShadow: "0 0 5px gray" }}>
@@ -108,13 +117,13 @@ function Header({ onClick, characterSheet, stats: { characterKey, tlvl, characte
         </Grid>
         <Grid container spacing={1} flexWrap="nowrap">
           <Grid item>
-            <Chip color={autoBoost ? "info" : "secondary"} label={<strong >{tlvl.auto + 1}</strong>} />
+            <Chip color={autoBoost ? "info" : "secondary"} label={<strong >{tAuto + 1}</strong>} />
           </Grid>
           <Grid item>
-            <Chip color={skillBoost ? "info" : "secondary"} label={<strong >{tlvl.skill + 1}</strong>} />
+            <Chip color={skillBoost ? "info" : "secondary"} label={<strong >{tSkill + 1}</strong>} />
           </Grid>
           <Grid item>
-            <Chip color={burstBoost ? "info" : "secondary"} label={<strong >{tlvl.burst + 1}</strong>} />
+            <Chip color={burstBoost ? "info" : "secondary"} label={<strong >{tBurst + 1}</strong>} />
           </Grid>
         </Grid>
         <Typography mt={1} ><Stars stars={characterSheet.rarity} colored /></Typography>
@@ -156,14 +165,11 @@ function Weapon({ weaponId }: { weaponId: string }) {
     </Box>
   </CardDark>
 }
-function ArtifactDisplay({ stats }: { stats?: ICalculatedStats }) {
+function ArtifactDisplay({ artifacts }: { artifacts: Record<SlotKey, ICachedArtifact | undefined> }) {
   const artifactSheets = usePromise(ArtifactSheet.getAll, [])
-  const database = useContext(DatabaseContext)
-  if (!artifactSheets || !stats) return null
-  const { equippedArtifacts } = stats
+  if (!artifactSheets || !artifacts) return null
   return <Grid container spacing={1} >
-    {Object.entries(equippedArtifacts ?? {} as Dict<SlotKey, string>).map(([key, id]) => {
-      const art = database._getArt(id)
+    {Object.entries(artifacts).map(([key, art]) => {
       if (!art) return null
       const { setKey, slotKey, mainStatKey } = art
       return <Grid item key={key} flexGrow={1}>
@@ -173,18 +179,25 @@ function ArtifactDisplay({ stats }: { stats?: ICalculatedStats }) {
     })}
   </Grid>
 }
-function Stats({ stats }: { stats: ICalculatedStats }) {
-  const statkeys = ["finalHP", "finalATK", "finalDEF", "eleMas", "critRate_", "critDMG_", "enerRech_",]
+function Stats({ data }: { data: UIData }) {
+  const statkeys = ["hp", "atk", "def", "eleMas", "critRate_", "critDMG_", "enerRech_",]
+  statkeys.push(`${data.values.charEle.value}_dmg_`)
+  if (data.values.weaponType.value !== "catalyst")
+    statkeys.push("physical_dmg_")
+
+  const total = data.values.total
   return <Box sx={{ width: "100%" }} >
     {statkeys.map(statKey => {
-      let unit = Stat.getStatUnit(statKey)
-      let statVal = stats[statKey]
+      const stat = total[statKey]
+      const val = valueString(stat.value, stat.unit, stat.unit === "flat" ? 0 : undefined)
       return <Box sx={{ display: "flex" }} key={statKey}>
-        <Typography flexGrow={1}><strong>{StatIcon[statKey]} {Stat.getStatName(statKey)}</strong></Typography>
-        <Typography>
-          {statVal?.toFixed(Stat.fixedUnit(statKey)) + unit}
-        </Typography>
+        <Typography flexGrow={1} color={`${stat.variant}.main`}><strong>{StatIcon[statKey]} {StatMap[stat.key]}</strong></Typography>
+        <Typography>{val}</Typography>
       </Box>
     })}
+    {data.values.special.key && <Box sx={{ display: "flex" }} >
+      <Typography flexGrow={1}><strong>Specialized:</strong></Typography>
+      <Typography>{StatMap[data.values.special.key]}</Typography>
+    </Box>}
   </Box>
 }

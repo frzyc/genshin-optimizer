@@ -52,7 +52,7 @@ const datamine = {
     dmg_: [44, 47.3, 50.6, 55, 58.3, 61.6, 66, 70.4, 74.8, 79.2, 83.6, 88, 93.5, 99, 104.5],
   }
 }
-export const data = dataObjForCharacterSheet("Sucrose", "anemo",
+export const data = dataObjForCharacterSheet("Sucrose", "anemo", data_gen.weaponTypeKey as WeaponTypeKey,
   { base: data_gen.base.hp, lvlCurve: data_gen.curves.hp, asc: data_gen.ascensions.map(x => x.props.hp) },
   { base: data_gen.base.atk, lvlCurve: data_gen.curves.atk, asc: data_gen.ascensions.map(x => x.props.atk) },
   { base: data_gen.base.def, lvlCurve: data_gen.curves.def, asc: data_gen.ascensions.map(x => x.props.def) },

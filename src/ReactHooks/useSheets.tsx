@@ -5,6 +5,9 @@ import WeaponSheet from "../Weapon/WeaponSheet";
 import usePromise from "./usePromise";
 
 export type Sheets = { characterSheets: Record<CharacterKey, CharacterSheet>, weaponSheets: Record<WeaponKey, WeaponSheet>, artifactSheets: Record<ArtifactSetKey, ArtifactSheet> }
+/**
+ * @deprecated
+ */
 export default function useSheets() {
   return usePromise(getSheets(), [])
 }
