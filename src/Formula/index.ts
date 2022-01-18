@@ -14,8 +14,8 @@ const rd = setReadNodeKeys({
   charKey: stringRead(), charEle: stringRead(), infusion: stringRead(),
   lvl: read("unique"), constellation: read("unique"), asc: read("unique"),
 
-  talent: objectFromKeyMap(["base", "boost", "total"] as const, _ =>
-    objectFromKeyMap(["auto", "skill", "burst"] as const, _ => read("add"))),
+  talent: objectFromKeyMap(["base", "boost", "total"] as const, type =>
+    objectFromKeyMap(["auto", "skill", "burst"] as const, _ => read(type === "boost" ? "add" : "unique"))),
 
   ...objectFromKeyMap(["hp", "atk", "def"] as const, key => read("unique", { key, namePrefix: "Char.", asConst })),
   special: read("unique", { namePrefix: "Char.", asConst }),
@@ -85,6 +85,10 @@ for (const element of allElementsWithPhy)
 
 const common = {
   base: objectFromKeyMap(["hp", "atk", "def"], key => rd[key] as Node),
+  talent: {
+    total: objectFromKeyMap(["auto", "skill", "burst"] as const, talent =>
+      sum(rd.talent.base[talent], rd.talent.boost[talent]))
+  },
   premod: {
     ...objectFromKeyMap(allStats, key => {
       if (key === "atk" || key === "def" || key === "hp")
