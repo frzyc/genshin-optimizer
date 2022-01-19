@@ -84,9 +84,8 @@ const condSkillHitOpponent = customRead(["conditional", "Sucrose", "skillHit"])
 const asc1 = match(input.charEle, condSwirlReaction, threshold_add(input.asc, 1, 80), { key: "eleMas" })
 // TODO: Use on-field char key
 // TODO: Add to team buff
-// TODO: Check if Sucrose EM is total or premod
 const asc4 = threshold_add(condSkillHitOpponent, 1, unmatch(input.charKey, "Sucrose",
-  threshold_add(input.asc, 4, prod(percent(0.2), input.total.eleMas))), { key: "eleMas" })
+  threshold_add(input.asc, 4, prod(percent(0.2), input.premod.eleMas))), { key: "eleMas" })
 const c6Base = threshold_add(input.constellation, 6, percent(0.2))
 // TODO: Add to team buff
 const c6Bonus = Object.fromEntries(allElements.map(ele => [ele,

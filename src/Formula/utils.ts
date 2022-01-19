@@ -92,9 +92,6 @@ export function stringPrio(...operands: StringNode[]): StringNode {
 function intoOperands(values: (number | Node)[]): Node[] {
   return values.map(value => typeof value === "number" ? { operation: "const", value, operands: [] } : value)
 }
-function intoStringNode(value: string | StringNode): StringNode {
-  return typeof value === "string" ? stringConst(value) : value
-}
 
 type _NodeList = {
   [key: string]: NodeList
