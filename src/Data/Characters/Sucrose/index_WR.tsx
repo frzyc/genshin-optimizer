@@ -52,26 +52,27 @@ const datamine = {
     dmg_: [44, 47.3, 50.6, 55, 58.3, 61.6, 66, 70.4, 74.8, 79.2, 83.6, 88, 93.5, 99, 104.5],
   }
 }
+export const dmgFormulas = {
+  normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
+    [i, dmgNode("atk", arr, "normal")])),
+  charged: Object.fromEntries(Object.entries(datamine.charged).map(([key, value]) =>
+    [key, dmgNode("atk", value, "charged")])),
+  plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
+    [key, dmgNode("atk", value, "plunging")])),
+  skill: Object.fromEntries(Object.entries(datamine.skill).map(([key, value]) =>
+    [key, dmgNode("atk", value, "skill")])),
+  burst: {
+    dot: dmgNode("atk", datamine.burst.dot, "burst"),
+    ...Object.fromEntries(absorbableEle.map(key =>
+      [key, dmgNode("atk", datamine.burst.dmg_, "burst", { /** Set absorption element */ })]))
+  },
+}
 export const data = dataObjForCharacterSheet("Sucrose", "anemo", data_gen.weaponTypeKey as WeaponTypeKey,
   { base: data_gen.base.hp, lvlCurve: data_gen.curves.hp, asc: data_gen.ascensions.map(x => x.props.hp) },
   { base: data_gen.base.atk, lvlCurve: data_gen.curves.atk, asc: data_gen.ascensions.map(x => x.props.atk) },
   { base: data_gen.base.def, lvlCurve: data_gen.curves.def, asc: data_gen.ascensions.map(x => x.props.def) },
   { stat: "anemo_dmg_", asc: data_gen.ascensions.map(x => x.props.anemo_dmg_) },
-  {
-    normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
-      [i, dmgNode("atk", arr, "normal")])),
-    charged: Object.fromEntries(Object.entries(datamine.charged).map(([key, value]) =>
-      [key, dmgNode("atk", value, "charged")])),
-    plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
-      [key, dmgNode("atk", value, "plunging")])),
-    skill: Object.fromEntries(Object.entries(datamine.skill).map(([key, value]) =>
-      [key, dmgNode("atk", value, "skill")])),
-    burst: {
-      dot: dmgNode("atk", datamine.burst.dot, "burst"),
-      ...Object.fromEntries(absorbableEle.map(key =>
-        [key, dmgNode("atk", datamine.burst.dmg_, "burst", { /** Set absorption element */ })]))
-    },
-  },
+  dmgFormulas,
   {
     // TODO: include
     // Teambuff: A1, A4,
@@ -112,7 +113,7 @@ const sheet: ICharacterSheet = {
             fields: datamine.normal.hitArr.map((percentArr, i) =>
             ({
               text: sgt(`normal.hit${i + 1}`),
-              formula: ["number", "display", "normal", i.toString()],
+              formula: dmgFormulas.normal[i],
               variant: stats => getTalentStatKeyVariant("normal", stats),
             }))
           },
@@ -127,7 +128,7 @@ const sheet: ICharacterSheet = {
           text: tr("skill.description"),
           fields: [{
             text: "Skill DMG",
-            formula: ["number", "display", "skill", "press"],
+            formula: dmgFormulas.skill.press,
             variant: stats => getTalentStatKeyVariant("skill", stats),
           }, {
             text: "CD",
@@ -142,7 +143,7 @@ const sheet: ICharacterSheet = {
           text: tr("burst.description"),
           fields: [{
             text: "DoT",
-            formula: ["number", "display", "burst", "dot"],
+            formula: dmgFormulas.burst.dot,
             variant: stats => getTalentStatKeyVariant("burst", stats),
           }, {
             text: "Duration",
@@ -165,7 +166,7 @@ const sheet: ICharacterSheet = {
                   return !!num && condEleKey === eleKey
                 },
                 text: "Absorption DoT",
-                formula: ["number", "display", "burst", eleKey],
+                formula: dmgFormulas.burst[eleKey],
                 variant: eleKey
               }]
             }]))
@@ -217,7 +218,7 @@ const sheet: ICharacterSheet = {
             name: "When Skill hits opponent",
             fields: [{
               text: "Elemental Mastery Bonus",
-              formula: ["number", "postmod", "eleMas"]
+              formula: input.total.eleMas // TODO: Find the node for this one
             }, {
               text: sgt("duration"),
               value: 8,

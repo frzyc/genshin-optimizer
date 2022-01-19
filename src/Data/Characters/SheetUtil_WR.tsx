@@ -3,6 +3,7 @@ import { getTalentStatKeyVariant } from "../../Build/Build";
 import ImgIcon from "../../Components/Image/ImgIcon";
 import SqBadge from "../../Components/SqBadge";
 import { Translate } from "../../Components/Translate";
+import { input } from "../../Formula/index";
 import { DocumentSection, TalentSheetElement, TalentSheetElementKey } from "../../Types/character_WR";
 import { ElementKey, WeaponTypeKey } from "../../Types/consts";
 import IConditional from "../../Types/IConditional_WR";
@@ -13,7 +14,7 @@ export const chargedDocSection = (tr, stamina = 25): DocumentSection => ({
   text: tr(`auto.fields.charged`),
   fields: [{
     text: sgt(`charged.dmg`),
-    formula: ["number", "display", "charged", "dmg"],
+    formula: input.display.charged.dmg,
     variant: stats => getTalentStatKeyVariant("charged", stats),
   }, {
     text: sgt("charged.stamina"),
@@ -24,15 +25,15 @@ export const plungeDocSection = (tr): DocumentSection => ({
   text: tr`auto.fields.plunging`,
   fields: [{
     text: sgt(`plunging.dmg`),
-    formula: ["number", "display", "plunging", "dmg"],
+    formula: input.display.plunging.dmg,
     variant: stats => getTalentStatKeyVariant("plunging", stats),
   }, {
     text: sgt("plunging.low"),
-    formula: ["number", "display", "plunging", "low"],
+    formula: input.display.plunging.low,
     variant: stats => getTalentStatKeyVariant("plunging", stats),
   }, {
     text: sgt("plunging.high"),
-    formula: ["number", "display", "plunging", "high"],
+    formula: input.display.plunging.high,
     variant: stats => getTalentStatKeyVariant("plunging", stats),
   }]
 })
@@ -41,11 +42,11 @@ export const claymoreChargedDocSection = (tr, data): DocumentSection => ({
   text: tr("auto.fields.charged"),
   fields: [{
     text: sgt("charged.spinning"),
-    formula: ["number", "display", "charged", "spinning"],
+    formula: input.display.charged.spinning,
     variant: stats => getTalentStatKeyVariant("charged", stats),
   }, {
     text: sgt("charged.final"),
-    formula: ["number", "display", "charged", "final"],
+    formula: input.display.charged.final,
     variant: stats => getTalentStatKeyVariant("charged", stats),
   }, {
     text: sgt("charged.stamina"),
@@ -62,11 +63,11 @@ export const bowChargedDocSection = (tr, elementKey: ElementKey): DocumentSectio
   text: tr("auto.fields.charged"),
   fields: [{
     text: sgt("charged.aimed"),
-    formula: ["number", "display", "charged", "hit"],
+    formula: input.display.charged.hit,
     variant: stats => getTalentStatKeyVariant("charged", stats),
   }, {
     text: sgt("charged.fullyAimed"),
-    formula: ["number", "display", "charged", "full"],
+    formula: input.display.charged.full,
     variant: stats => getTalentStatKeyVariant("charged", stats, elementKey),
   }]
 })

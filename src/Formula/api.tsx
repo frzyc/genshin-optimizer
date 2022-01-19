@@ -181,21 +181,28 @@ interface ContextNodeDisplay {
 interface ContextString { value?: string }
 
 class Context {
-  thresholds: Input<Dict<number, Input<ContextNodeDisplay, never>>, never> | undefined
-
   parent?: Context
   children = new Map<Data[], Context>()
 
   data: Data[]
   nodes = new Map<Node, ContextNodeDisplay>()
   string = new Map<StringNode, ContextString>()
+  processed = new Map<Node, NodeDisplay>()
 
-  constructor(data: Data[], parent?: Context) {
+  constructor(data: Data[], parent: Context | undefined) {
     this.parent = parent
     this.data = data
   }
 
-  compute(node: Node, path: string[]): ContextNodeDisplay {
+  get(node: Node): NodeDisplay {
+    const old = this.processed.get(node)
+    if (old) return old
+
+    const result = process(this._computeNode(node))
+    this.processed.set(node, result)
+    return result
+  }
+  private _computeNode(node: Node): ContextNodeDisplay {
     const old = this.nodes.get(node)
     if (old) return old
 
@@ -204,18 +211,18 @@ class Context {
     switch (operation) {
       case "add": case "mul": case "min": case "max":
       case "res": case "sum_frac": case "threshold_add":
-        result = this._compute(node, path); break
+        result = this._compute(node); break
       case "const": result = this._constant(node); break
-      case "subscript": result = this._subscript(node, path); break
+      case "subscript": result = this._subscript(node); break
       case "read": result = this._read(node); break
-      case "data": result = this._data(node, path); break
+      case "data": result = this._data(node); break
       default: assertUnreachable(operation)
     }
 
     this.nodes.set(node, result)
     return result
   }
-  computeString(node: StringNode): ContextString {
+  getStr(node: StringNode): ContextString {
     const old = this.string.get(node)
     if (old) return old
 
@@ -224,13 +231,13 @@ class Context {
     switch (operation) {
       case "sconst": result = { value: node.value }; break
       case "prio":
-        const operands = node.operands.map(x => this.computeString(x)).filter(x => x.value)
+        const operands = node.operands.map(x => this.getStr(x)).filter(x => x.value)
         result = { value: operands[0]?.value, }
         break
       case "sread":
         let key = node.key
         if (node.suffix) {
-          const suffix = this.computeString(node.suffix)
+          const suffix = this.getStr(node.suffix)
           key = [...key as string[], suffix.value ?? ""]
         }
         result = this.readFirstString(key) ?? {}
@@ -242,27 +249,27 @@ class Context {
     return result
   }
 
-  hasRead(path: string[]): boolean {
+  private hasRead(path: string[]): boolean {
     return this.data.some(data => objPathValue(data, path))
   }
-  readAll(path: string[]): ContextNodeDisplay[] {
+  private readAll(path: string[]): ContextNodeDisplay[] {
     return [
-      ...this.data.map(x => objPathValue(x, path) as Node).filter(x => x).map(x => this.compute(x, path)),
+      ...this.data.map(x => objPathValue(x, path) as Node).filter(x => x).map(x => this._computeNode(x)),
       ...this.parent?.readAll(path) ?? []]
   }
-  readFirstString(path: string[]): ContextString | undefined {
+  private readFirstString(path: string[]): ContextString | undefined {
     const nodes = this.data.map(x => objPathValue(x, path) as StringNode).filter(x => x)
-    return nodes.length ? this.computeString(nodes[0]) : this.parent?.readFirstString(path)
+    return nodes.length ? this.getStr(nodes[0]) : this.parent?.readFirstString(path)
   }
 
-  _read(node: ReadNode): ContextNodeDisplay {
+  private _read(node: ReadNode): ContextNodeDisplay {
     let key = node.key
     if (node.suffix) {
-      const suffix = this.computeString(node.suffix)
+      const suffix = this.getStr(node.suffix)
       key = [...key as string[], suffix.value ?? ""]
     }
     if (!this.hasRead(key) && this.parent)
-      return this.parent.compute(node, key)
+      return this.parent._computeNode(node)
 
     const nodes = this.readAll(key)
     let result: ContextNodeDisplay
@@ -275,7 +282,7 @@ class Context {
       result = this._accumulate(node.accumulation, nodes)
     return mergeInfo(result, node.info)
   }
-  _data(node: DataNode, path: string[]): ContextNodeDisplay {
+  private _data(node: DataNode): ContextNodeDisplay {
     let child = this.children.get(node.data)
     if (!child) {
       child = new Context(node.data, this)
@@ -283,33 +290,22 @@ class Context {
     }
 
     // TODO: Incorporate `info` if needed
-    return child.compute(node.operands[0], path)
+    return child._computeNode(node.operands[0])
   }
-  _compute(node: ComputeNode, path: string[]): ContextNodeDisplay {
+  private _compute(node: ComputeNode): ContextNodeDisplay {
     const operation = node.operation
-    const operands = node.operands.map(x => this.compute(x, path))
-
-    if (this.thresholds && operation === "threshold_add") {
-      const value = node.operands[0], threshold = node.operands[1]
-      if (value.operation === "read" && threshold.operation === "const" && operands[0].value >= operands[1].value) {
-        const key = [...value.key]
-        if (value.suffix) key.push(this.computeString(value.suffix).value!)
-        key.push(threshold.value.toString())
-        layeredAssignment(this.thresholds, key.concat(...path), node.operands[2])
-      }
-    }
-
+    const operands = node.operands.map(x => this._computeNode(x))
     return mergeInfo(this._accumulate(operation, operands), node.info)
   }
-  _subscript(node: SubscriptNode, path: string[]): ContextNodeDisplay {
-    const operand = this.compute(node.operands[0], path)
+  private _subscript(node: SubscriptNode): ContextNodeDisplay {
+    const operand = this._computeNode(node.operands[0])
 
     const value = node.list[operand.value]
     const result = this._constant({ operation: "const", operands: [], info: node.info, value, })
     result.operation = "subscript"
     return result
   }
-  _constant(node: ConstantNode): ContextNodeDisplay {
+  private _constant(node: ConstantNode): ContextNodeDisplay {
     return mergeInfo({
       operation: "const",
       value: node.value,
@@ -318,7 +314,7 @@ class Context {
     }, node.info)
   }
 
-  _accumulate(operation: ComputeNode["operation"], operands: ContextNodeDisplay[]): ContextNodeDisplay {
+  private _accumulate(operation: ComputeNode["operation"], operands: ContextNodeDisplay[]): ContextNodeDisplay {
     let variant: ContextNodeDisplay["variant"]
 
     switch (operation) {
@@ -428,6 +424,25 @@ function valueString(value: number, unit: "%" | "flat", fixed = -1): string {
   }
   return unit === "%" ? `${(value * 100).toFixed(fixed)}%` : value.toFixed(fixed)
 }
+function process(node: ContextNodeDisplay): NodeDisplay {
+  const { namePrefix, key, value, variant } = node
+  const newValue: NodeDisplay = {
+    value, unit: "flat", formula: "", formulas: [],
+  }
+  if (key) {
+    newValue.key = key
+    newValue.unit = unitOfKey(key)
+  }
+  if (variant) newValue.variant = variant
+  if (namePrefix) newValue.namePrefix = namePrefix
+
+  const { formula, dependencies } = computeFormulaString(node)
+  newValue.formula = formula
+  newValue.formulas = [node, ...dependencies.filter(x => x.formula)]
+    .map(x => x.formulaCache!.assignmentFormula!)
+    .filter(x => x)
+  return newValue
+}
 function computeFormulaString(node: ContextNodeDisplay): Required<ContextNodeDisplay>["formulaCache"] {
   if (node.formulaCache) return node.formulaCache
 
@@ -467,62 +482,10 @@ function computeFormulaString(node: ContextNodeDisplay): Required<ContextNodeDis
   return cache
 }
 function computeUIData(data: Data[]): UIData {
-  const result: UIData = {
-    values: {} as any,
-    threshold: {}
-  }
-
-  const mainContext = new Context(data)
-  mainContext.thresholds = {}
-  const threshold = mainContext.thresholds
-
-  function process(node: ContextNodeDisplay): NodeDisplay {
-    const { namePrefix, key, value, variant } = node
-    const newValue: NodeDisplay = {
-      value, unit: "flat", formula: "", formulas: [],
-    }
-    if (key) {
-      newValue.key = key
-      newValue.unit = unitOfKey(key)
-    }
-    if (variant) newValue.variant = variant
-    if (namePrefix) newValue.namePrefix = namePrefix
-
-    const { formula, dependencies } = computeFormulaString(node)
-    newValue.formula = formula
-    newValue.formulas = [node, ...dependencies.filter(x => x.formula)]
-      .map(x => x.formulaCache!.assignmentFormula!)
-      .filter(x => x)
-    return newValue
-  }
-
-  crawlObject(input, [], (x: any) => x.operation, (node: any, key: any) =>
-    layeredAssignment(result.values, key,
-      node.operation === "read"
-        ? process(mainContext.compute(node, key))
-        : mainContext.computeString(node)))
-  for (const entry of data) {
-    if (entry.conditional)
-      crawlObject(entry.conditional, ["conditional"], (x: any) => x.operation, (x: any, key: string[]) =>
-        layeredAssignment(result.values, key, process(mainContext.compute(x, key))))
-    if (entry.display)
-      crawlObject(entry.display, ["display"], (x: any) => x.operation, (x: any, key: string[]) =>
-        layeredAssignment(result.values, key, process(mainContext.compute(x, key))))
-    if (entry.misc)
-      crawlObject(entry.misc, ["misc"], (x: any) => x.operation, (x: any, key: string[]) =>
-        layeredAssignment(result.values, key, process(mainContext.compute(x, key))))
-  }
-  crawlObject(threshold, [], (x: any) => x.operation, (x: ContextNodeDisplay, key: string[]) => {
-    layeredAssignment(result.threshold, key, process(x))
-  })
-
-  return result
+  return new Context(data, undefined)
 }
 
-export interface UIData {
-  values: StrictInput<NodeDisplay, { value: string }> & DynamicNumInput<NodeDisplay>
-  threshold: Input<Dict<number, Input<NodeDisplay, never>>, never>
-}
+export type UIData = Context
 export interface NodeDisplay {
   namePrefix?: string
   key?: string

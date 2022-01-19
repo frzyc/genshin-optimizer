@@ -72,6 +72,12 @@ const rd = setReadNodeKeys({
     def: read("add"),
     defRed: read("add"),
   },
+
+  display: {
+    normal: {},
+    charged: objectFromKeyMap(["dmg", "spinning", "final", "hit", "full"] as const, _ => read("unique")),
+    plunging: objectFromKeyMap(["dmg", "low", "high"] as const, _ => read("unique"))
+  }
 })
 
 const { base, art, premod, total, hit, dmgBonus, enemy } = rd

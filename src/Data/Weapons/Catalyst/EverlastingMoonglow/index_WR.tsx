@@ -21,11 +21,6 @@ export const data = dataObjForWeaponSheet("EverlastingMoonglow", "catalyst",
     hit: {
       base: normalDmgBonus
     },
-    misc: {
-      weapon: {
-        normDmgInc: normalDmgBonus,
-      },
-    },
   }
 )
 const weapon: IWeaponSheet = {
@@ -37,7 +32,7 @@ const weapon: IWeaponSheet = {
     fields: [
       {
         text: <Translate ns="weapon_EverlastingMoonglow" key18="name" />,
-        formula: ["values", "misc", "weapon", "normDmgInc"],
+        formula: normalDmgBonus,
       }
     ],
   }],

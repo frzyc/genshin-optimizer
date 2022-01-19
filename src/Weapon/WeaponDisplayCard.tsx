@@ -20,6 +20,7 @@ import { Stars } from "../Components/StarDisplay"
 import WeaponSelectionModal from "../Components/Weapon/WeaponSelectionModal"
 import { ambiguousLevel, ascensionMaxLevel, milestoneLevels } from "../Data/LevelData"
 import { database as localDatabase, DatabaseContext } from "../Database/Database"
+import { input } from "../Formula/index"
 import { computeUIData, dataObjForWeapon } from "../Formula/api"
 import usePromise from "../ReactHooks/usePromise"
 import useWeapon from "../ReactHooks/useWeapon"
@@ -154,7 +155,7 @@ export default function WeaponDisplayCard({
           <Typography variant="h6" >{process.env.NODE_ENV === "development" && <ColorText color="warning">{id || `""`} </ColorText>}{weaponSheet.name} Lv. {weapon && WeaponSheet.getLevelString(weapon)} {weaponSheet.rarity > 2 && <SqBadge color="info">Refinement {refinement}</SqBadge>}</Typography>
           <Typography><Stars stars={weaponSheet.rarity} /></Typography>
           <Typography variant="subtitle1">{weaponSheet.passiveName}</Typography>
-          <Typography gutterBottom>{weaponSheet.passiveName && weaponSheet.passiveDescription(weaponUIData.values.weapon.refineIndex.value)}</Typography>
+          <Typography gutterBottom>{weaponSheet.passiveName && weaponSheet.passiveDescription(weaponUIData.get(input.weapon.refineIndex).value)}</Typography>
           {build && <buildContext.Provider value={charData ? buildContextObj : { equippedBuild: build, newBuild: undefined, compareBuild: false, setCompareBuild: undefined }}>
             <Box display="flex" flexDirection="column" gap={1}>
               <CardDark >
@@ -162,8 +163,8 @@ export default function WeaponDisplayCard({
                   <Typography>Main Stats</Typography>
                 </CardContent>
                 <NodeDisplayList>
-                  {[weaponUIData.values.weapon.main, weaponUIData.values.weapon.sub, weaponUIData.values.weapon.sub2]
-                    .map((node, i) => <NodeDisplayComponent key={i} node={node} />)}
+                  {[input.weapon.main, input.weapon.sub, input.weapon.sub2]
+                    .map((node, i) => <NodeDisplayComponent key={i} node={weaponUIData.get(node)} />)}
                 </NodeDisplayList>
               </CardDark>
             </Box>

@@ -10,6 +10,7 @@ import { Stars } from '../Components/StarDisplay';
 import StatIcon from '../Components/StatIcon';
 import { ascensionMaxLevel } from '../Data/LevelData';
 import { DatabaseContext } from '../Database/Database';
+import { input } from '../Formula/index'
 import { computeUIData, dataObjForWeapon, UIData, valueString } from '../Formula/api';
 import usePromise from '../ReactHooks/usePromise';
 import Stat from '../Stat';
@@ -61,19 +62,18 @@ export default function CharacterCard({ build, characterKey, artifactChildren, w
 }
 function Header({ onClick, characterSheet, data }:
   { onClick?: (characterKey: CharacterKey) => void, characterSheet: CharacterSheet, data: UIData }) {
-  const dv = data.values
-  const characterKey = dv.charKey.value as CharacterKey
-  const characterEle = dv.charEle.value as ElementKey
-  const characterLevel = dv.lvl.value
-  const constellation = dv.constellation.value
-  const ascension = dv.asc.value
-  const autoBoost = dv.talent.boost.auto.value
-  const skillBoost = dv.talent.boost.skill.value
-  const burstBoost = dv.talent.boost.burst.value
+  const characterKey = data.getStr(input.charKey).value as CharacterKey
+  const characterEle = data.getStr(input.charEle).value as ElementKey
+  const characterLevel = data.get(input.lvl).value
+  const constellation = data.get(input.constellation).value
+  const ascension = data.get(input.asc).value
+  const autoBoost = data.get(input.talent.boost.auto).value
+  const skillBoost = data.get(input.talent.boost.skill).value
+  const burstBoost = data.get(input.talent.boost.burst).value
 
-  const tAuto = dv.talent.total.auto.value
-  const tSkill = dv.talent.total.skill.value
-  const tBurst = dv.talent.total.burst.value
+  const tAuto = data.get(input.talent.total.auto).value
+  const tSkill = data.get(input.talent.total.skill).value
+  const tBurst = data.get(input.talent.total.burst).value
 
   const actionWrapperFunc = useCallback(
     children => <CardActionArea onClick={() => characterKey && onClick?.(characterKey)} sx={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>{children}</CardActionArea>,
@@ -138,9 +138,9 @@ function Weapon({ weaponId }: { weaponId: string }) {
   const UIData = useMemo(() => weaponSheet && weapon && computeUIData([weaponSheet.data, dataObjForWeapon(weapon)]), [weaponSheet, weapon])
   if (!weapon || !weaponSheet || !UIData) return null;
   const name = weaponSheet?.name
-  const mainVal = valueString(UIData.values.weapon.main.value, UIData.values.weapon.main.unit, 0)
-  const subKey = UIData.values.weapon.sub.key
-  const subVal = valueString(UIData.values.weapon.sub.value, UIData.values.weapon.sub.unit, UIData.values.weapon.sub.unit === "flat" ? 0 : undefined)
+  const mainVal = valueString(UIData.get(input.weapon.main).value, UIData.get(input.weapon.main).unit, 0)
+  const subKey = UIData.get(input.weapon.sub).key
+  const subVal = valueString(UIData.get(input.weapon.sub).value, UIData.get(input.weapon.sub).unit, UIData.get(input.weapon.sub).unit === "flat" ? 0 : undefined)
   const levelName = WeaponSheet.getLevelString(weapon as ICachedWeapon)
   return <CardDark>
     <Box display="flex" >
@@ -181,23 +181,22 @@ function ArtifactDisplay({ artifacts }: { artifacts: Record<SlotKey, ICachedArti
 }
 function Stats({ data }: { data: UIData }) {
   const statkeys = ["hp", "atk", "def", "eleMas", "critRate_", "critDMG_", "enerRech_",]
-  statkeys.push(`${data.values.charEle.value}_dmg_`)
-  if (data.values.weaponType.value !== "catalyst")
+  statkeys.push(`${data.getStr(input.charEle).value}_dmg_`)
+  if (data.getStr(input.weaponType).value !== "catalyst")
     statkeys.push("physical_dmg_")
 
-  const total = data.values.total
   return <Box sx={{ width: "100%" }} >
     {statkeys.map(statKey => {
-      const stat = total[statKey]
+      const stat = data.get(input.total[statKey])
       const val = valueString(stat.value, stat.unit, stat.unit === "flat" ? 0 : undefined)
       return <Box sx={{ display: "flex" }} key={statKey}>
-        <Typography flexGrow={1} color={`${stat.variant}.main`}><strong>{StatIcon[statKey]} {StatMap[stat.key]}</strong></Typography>
+        <Typography flexGrow={1} color={`${stat.variant}.main`}><strong>{StatIcon[statKey]} {StatMap[stat.key!]}</strong></Typography>
         <Typography>{val}</Typography>
       </Box>
     })}
-    {data.values.special.key && <Box sx={{ display: "flex" }} >
+    {data.get(input.special).key && <Box sx={{ display: "flex" }} >
       <Typography flexGrow={1}><strong>Specialized:</strong></Typography>
-      <Typography>{StatMap[data.values.special.key]}</Typography>
+      <Typography>{StatMap[data.get(input.special).key!]}</Typography>
     </Box>}
   </Box>
 }

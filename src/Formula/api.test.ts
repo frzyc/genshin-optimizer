@@ -44,6 +44,5 @@ describe("API", () => {
   test("none", async () => {
     const art = validateArtifact(await randomizeArtifact(), "asdf").artifact
     const computed = computeUIData([charData, sucroseData, weaponData, moonglowData, common, artifact.EmblemOfSeveredFate.data, { art: { EmblemOfSeveredFate: constant(4) } }, dataObjForArtifact(art, 0)])
-    console.log(computed.values.total)
   })
 })

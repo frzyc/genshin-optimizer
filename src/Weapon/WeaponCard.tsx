@@ -14,8 +14,8 @@ import { Stars } from "../Components/StarDisplay"
 import StatIcon from "../Components/StatIcon"
 import { ascensionMaxLevel } from "../Data/LevelData"
 import { DatabaseContext } from "../Database/Database"
-import { valueString } from "../Formula/api"
-import { computeUIData, dataObjForWeapon, NodeDisplay } from "../Formula/api"
+import { input } from "../Formula/index"
+import { computeUIData, valueString, dataObjForWeapon, NodeDisplay } from "../Formula/api"
 import usePromise from "../ReactHooks/usePromise"
 import useWeapon from "../ReactHooks/useWeapon"
 import StatMap from "../StatMap"
@@ -45,8 +45,8 @@ export default function WeaponCard({ weaponId, onClick, onEdit, onDelete, canEqu
 
   if (!weapon || !weaponSheet || !UIData) return null;
   const { level, ascension, refinement, id, location = "", lock } = weapon
-  const weaponTypeKey = UIData.values.weapon.type.value
-  const stats = [UIData.values.weapon.main, UIData.values.weapon.sub, UIData.values.weapon.sub2] as NodeDisplay[]
+  const weaponTypeKey = UIData.getStr(input.weapon.type).value!
+  const stats = [input.weapon.main, input.weapon.sub, input.weapon.sub2].map(x => UIData.get(x))
   const img = ascension < 2 ? weaponSheet?.img : weaponSheet?.imgAwaken
 
   return <Suspense fallback={<Skeleton variant="rectangular" sx={{ width: "100%", height: "100%", minHeight: 300 }} />}>
