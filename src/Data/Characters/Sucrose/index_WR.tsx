@@ -75,7 +75,7 @@ const condAbsorption = customStringRead(["conditional", "Sucrose", "absorption"]
 // A1 Swirl Reaction Element
 const condSwirlReaction = customStringRead(["conditional", "Sucrose", "swirl"])
 // Set to 1 if skill hit opponents
-const condskillHitOpponent = customRead(["conditional", "Sucrose", "skillHit"])
+const condSkillHitOpponent = customRead(["conditional", "Sucrose", "skillHit"])
 
 // Conditional Output
 // TODO: Check if total or premod
@@ -85,7 +85,7 @@ const asc1 = match(input.charEle, condSwirlReaction, threshold_add(input.asc, 1,
 // TODO: Use on-field char key
 // TODO: Add to team buff
 // TODO: Check if Sucrose EM is total or premod
-const asc4 = threshold_add(condskillHitOpponent, 1, unmatch(input.charKey, "Sucrose",
+const asc4 = threshold_add(condSkillHitOpponent, 1, unmatch(input.charKey, "Sucrose",
   threshold_add(input.asc, 4, prod(percent(0.2), input.total.eleMas))), { key: "eleMas" })
 const c6Base = threshold_add(input.constellation, 6, percent(0.2))
 // TODO: Add to team buff

@@ -127,16 +127,12 @@ export class UIData {
     return mergeInfo(result, node.info)
   }
   private _match(node: StringMatchNode): ContextNodeDisplay {
-    const string1 = this.getStr(node.string1)
-    const string2 = typeof node.string2 === "string" ? node.string2 : this.getStr(node.string2)
-    const base = this._computeNode(node.operands[0])
+    const string1 = this.getStr(node.string1).value
+    const string2 = typeof node.string2 === "string" ? node.string2 : this.getStr(node.string2).value
 
-    const { variant, mayNeedWrapping } = base
-
-    if ((string1 === string2) === (node.operation === "match")) {
-      return base
-    } else
-      return { value: 0, operation: "match", variant, mayNeedWrapping }
+    if ((string1 === string2) === (node.operation === "match"))
+      return this._computeNode(node.operands[0])
+    else return this._constant({ operation: "const", operands: [], value: 0 })
   }
   private _data(node: DataNode): ContextNodeDisplay {
     let child = this.children.get(node.data)
