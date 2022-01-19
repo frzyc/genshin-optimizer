@@ -37,11 +37,13 @@ export class UIData {
     this.data = data
   }
 
-  get(node: Node, checkLoop = false): NodeDisplay {
+  get(node: Node): NodeDisplay {
     const old = this.processed.get(node)
     if (old) return old
 
-    const result = process(this._computeNode(node, checkLoop ? new Set() : undefined))
+    // Detect loops in dev build
+    const visited = (process.env.NODE_ENV === "development") ? new Set<Node>() : undefined
+    const result = computeNodeDisplay(this._computeNode(node, visited))
     this.processed.set(node, result)
     return result
   }
@@ -274,7 +276,7 @@ function mergeVariants(operands: ContextNodeDisplay[]): ContextNodeDisplay["vari
   if (unique.size > 1) unique.delete("physical")
   return unique.values().next().value
 }
-function process(node: ContextNodeDisplay): NodeDisplay {
+function computeNodeDisplay(node: ContextNodeDisplay): NodeDisplay {
   const { namePrefix, key, value, variant } = node
   const newValue: NodeDisplay = {
     value, unit: "flat", formula: "", formulas: [],
