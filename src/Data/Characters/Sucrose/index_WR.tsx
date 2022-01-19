@@ -87,7 +87,6 @@ const asc1 = match(input.charEle, condSwirlReaction, threshold_add(input.asc, 1,
 // TODO: Check if Sucrose EM is total or premod
 const asc4 = threshold_add(condskillHitOpponent, 1, unmatch(input.charKey, "Sucrose",
   threshold_add(input.asc, 4, prod(percent(0.2), input.total.eleMas))), { key: "eleMas" })
-
 const c6Base = threshold_add(input.constellation, 6, percent(0.2))
 // TODO: Add to team buff
 const c6Bonus = Object.fromEntries(allElements.map(ele => [ele,
