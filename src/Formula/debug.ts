@@ -22,6 +22,10 @@ export function formulaString(formula: Node): string {
       return `( ${value} >= ${threshold} ? ${addition} : 0 )`
     case "res":
       return `Res${formulaString(formula.operands[0])}`
+    case "match":
+      return `Match${formulaString(formula.operands[0])}`
+    case "unmatch":
+      return `Unmatch${formulaString(formula.operands[0])}`
     default: assertUnreachable(operation)
   }
 }

@@ -9,7 +9,7 @@ import _weaponCurves from "../Weapon/expCurve_gen.json";
 import { Input, input, StrictInput } from "./index";
 import { constant } from "./internal";
 import { allOperations } from "./optimization";
-import { ComputeNode, ConstantNode, Data, DataNode, DynamicNumInput, Info, Node, ReadNode, StringNode, SubscriptNode } from "./type";
+import { ComputeNode, ConstantNode, Data, DataNode, DynamicNumInput, Info, Node, ReadNode, StringMatchNode, StringNode, SubscriptNode } from "./type";
 import { data, percent, prod, stringConst, subscript, sum } from "./utils";
 const readNodeArrays: ReadNode[] = []
 const shouldWrap = true
@@ -216,6 +216,7 @@ class UIData {
       case "subscript": result = this._subscript(node); break
       case "read": result = this._read(node); break
       case "data": result = this._data(node); break
+      case "match": case "unmatch": result = this._match(node); break
       default: assertUnreachable(operation)
     }
 
@@ -281,6 +282,18 @@ class UIData {
     else
       result = this._accumulate(node.accumulation, nodes)
     return mergeInfo(result, node.info)
+  }
+  private _match(node: StringMatchNode): ContextNodeDisplay {
+    const string1 = this.getStr(node.string1)
+    const string2 = typeof node.string2 === "string" ? node.string2 : this.getStr(node.string2)
+    const base = this._computeNode(node.operands[0])
+
+    const { variant, mayNeedWrapping } = base
+
+    if ((string1 === string2) === (node.operation === "match")) {
+      return base
+    } else
+      return { value: 0, operation: "match", variant, mayNeedWrapping }
   }
   private _data(node: DataNode): ContextNodeDisplay {
     let child = this.children.get(node.data)

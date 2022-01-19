@@ -13,6 +13,13 @@ export function info(node: Node, info: Info): Node {
   node.info = { ...node.info, ...info }
   return node
 }
+export function match(string1: StringNode, string2: string | StringNode, node: Node | number, info?: Info): Node {
+  return { operation: "match", operands: intoOperands([node]), string1, string2, info }
+}
+export function unmatch(string1: StringNode, string2: string | StringNode, node: Node | number, info?: Info): Node {
+  return { operation: "unmatch", operands: intoOperands([node]), string1, string2, info }
+}
+
 /** min( x1, x2, ... ) */
 export function min(...values: (number | Node)[]): Node {
   return { operation: "min", operands: intoOperands(values) }
@@ -84,6 +91,9 @@ export function stringPrio(...operands: StringNode[]): StringNode {
 
 function intoOperands(values: (number | Node)[]): Node[] {
   return values.map(value => typeof value === "number" ? { operation: "const", value, operands: [] } : value)
+}
+function intoStringNode(value: string | StringNode): StringNode {
+  return typeof value === "string" ? stringConst(value) : value
 }
 
 type _NodeList = {

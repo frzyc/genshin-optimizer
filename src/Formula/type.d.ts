@@ -7,7 +7,7 @@ type Move = "normal" | "charged" | "plunging" | "skill" | "burst"
 type Stat = MainStatKey | SubstatKey
 
 export type Node =
-  ConstantNode | ComputeNode |
+  ConstantNode | ComputeNode | StringMatchNode |
   SubscriptNode |
   ReadNode | DataNode
 
@@ -36,6 +36,11 @@ export interface ComputeNode extends NodeBase {
 export interface SubscriptNode extends NodeBase {
   operation: "subscript"
   list: number[]
+}
+export interface StringMatchNode extends NodeBase {
+  operation: "match" | "unmatch"
+  string1: StringNode
+  string2: string | StringNode
 }
 
 export interface ReadNode extends NodeBase {

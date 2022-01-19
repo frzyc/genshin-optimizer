@@ -9,7 +9,7 @@ const allCommutativeMonoidOperations: StrictDict<CommutativeMonoidOperation, (_:
   add: (x: number[]): number => x.reduce((a, b) => a + b, 0),
   mul: (x: number[]): number => x.reduce((a, b) => a * b, 1),
 }
-export const allOperations: StrictDict<Exclude<Node["operation"], "const" | "read" | "subscript">, (_: number[]) => number> = {
+export const allOperations: StrictDict<Operation | "data", (_: number[]) => number> = {
   ...allCommutativeMonoidOperations,
   res: ([res]: number[]): number => {
     if (res < 0) return 1 - res / 2
@@ -189,6 +189,16 @@ function applyRead(formulas: Node[], topLevelData: Data[], bottomUpMap = (formul
           return extractData({ ...formula, ...(operands[0] as any) }, contextId)
         return extractData({ ...formula, operation: accumulation, operands }, contextId)
       }
+      case "match": case "unmatch": {
+        const string1 = resolveStringNode(formula.string1, dataFromId[contextId])
+        const string2 = typeof formula.string2 === "string" ? formula.string2 : resolveStringNode(formula.string2, dataFromId[contextId])
+
+        if ((string1 === string2) === (formula.operation === "match")) {
+          return [formula.operands[0], contextId]
+        } else {
+          return [constant(0), contextId]
+        }
+      }
     }
     return extractData(formula, contextId)
   }, bottomUpMap)
@@ -261,6 +271,7 @@ export function constantFold(formulas: Node[], topLevelData: Data[] = [], should
         }
         break
       case "const": break
+      case "match": case "unmatch":
       case "data": throw new Error("Unreachable")
       default: assertUnreachable(operation) // Exhaustive switch
     }

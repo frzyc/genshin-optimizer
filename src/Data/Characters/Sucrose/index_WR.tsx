@@ -22,7 +22,7 @@ import { allElements, WeaponTypeKey } from '../../../Types/consts'
 import ColorText from '../../../Components/ColoredText'
 import { input } from "../../../Formula/index";
 import { dataObjForCharacterSheet, dmgNode } from "../../../Formula/api";
-import { percent, threshold_add } from "../../../Formula/utils";
+import { customRead, customStringRead, match, percent, prod, sum, threshold_add, unmatch } from "../../../Formula/utils";
 import { ICharacterSheet } from '../../../Types/character_WR'
 
 const tr = (strKey: string) => <Translate ns="char_Sucrose_gen" key18={strKey} />
@@ -67,6 +67,32 @@ export const dmgFormulas = {
       [key, dmgNode("atk", datamine.burst.dmg_, "burst", { /** Set absorption element */ })]))
   },
 }
+// TODO: Hook these to the Sheet/UI
+
+// Conditional Input
+// C6 Absorption Element
+const condAbsorption = customStringRead(["conditional", "Sucrose", "absorption"])
+// A1 Swirl Reaction Element
+const condSwirlReaction = customStringRead(["conditional", "Sucrose", "swirl"])
+// Set to 1 if skill hit opponents
+const condskillHitOpponent = customRead(["conditional", "Sucrose", "skillHit"])
+
+// Conditional Output
+// TODO: Check if total or premod
+// TODO: Use on-field char element
+// TODO: Add to team buff
+const asc1 = match(input.charEle, condSwirlReaction, threshold_add(input.asc, 1, 80), { key: "eleMas" })
+// TODO: Use on-field char key
+// TODO: Add to team buff
+// TODO: Check if Sucrose EM is total or premod
+const asc4 = threshold_add(condskillHitOpponent, 1, unmatch(input.charKey, "Sucrose",
+  threshold_add(input.asc, 4, prod(percent(0.2), input.total.eleMas))), { key: "eleMas" })
+
+const c6Base = threshold_add(input.constellation, 6, percent(0.2))
+// TODO: Add to team buff
+const c6Bonus = Object.fromEntries(allElements.map(ele => [ele,
+  match(condAbsorption, ele, c6Base, { key: `${ele}_dmg_` })]))
+
 export const data = dataObjForCharacterSheet("Sucrose", "anemo", data_gen.weaponTypeKey as WeaponTypeKey,
   { base: data_gen.base.hp, lvlCurve: data_gen.curves.hp, asc: data_gen.ascensions.map(x => x.props.hp) },
   { base: data_gen.base.atk, lvlCurve: data_gen.curves.atk, asc: data_gen.ascensions.map(x => x.props.atk) },
@@ -83,10 +109,8 @@ export const data = dataObjForCharacterSheet("Sucrose", "anemo", data_gen.weapon
         burst: threshold_add(input.constellation, 5, 3),
       }
     },
-    dmgBonus: {
-      // TODO: Add conditional
-      ...Object.fromEntries(allElements.map(ele => [ele, threshold_add(input.constellation, 6, percent(0.2), { key: `${ele}_dmg_` })])),
-    }
+    total: { eleMas: sum(asc1, asc4) },
+    dmgBonus: c6Bonus
   }
 )
 
