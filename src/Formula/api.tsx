@@ -180,16 +180,16 @@ interface ContextNodeDisplay {
 }
 interface ContextString { value?: string }
 
-class Context {
-  parent?: Context
-  children = new Map<Data[], Context>()
+class UIData {
+  parent?: UIData
+  children = new Map<Data[], UIData>()
 
   data: Data[]
   nodes = new Map<Node, ContextNodeDisplay>()
   string = new Map<StringNode, ContextString>()
   processed = new Map<Node, NodeDisplay>()
 
-  constructor(data: Data[], parent: Context | undefined) {
+  constructor(data: Data[], parent: UIData | undefined) {
     this.parent = parent
     this.data = data
   }
@@ -285,7 +285,7 @@ class Context {
   private _data(node: DataNode): ContextNodeDisplay {
     let child = this.children.get(node.data)
     if (!child) {
-      child = new Context(node.data, this)
+      child = new UIData(node.data, this)
       this.children.set(node.data, child)
     }
 
@@ -482,10 +482,9 @@ function computeFormulaString(node: ContextNodeDisplay): Required<ContextNodeDis
   return cache
 }
 function computeUIData(data: Data[]): UIData {
-  return new Context(data, undefined)
+  return new UIData(data, undefined)
 }
 
-export type UIData = Context
 export interface NodeDisplay {
   namePrefix?: string
   key?: string
@@ -501,5 +500,6 @@ export {
   dataObjForCharacterSheet, dataObjForWeaponSheet,
   dmgNode,
 
-  mergeData, computeUIData, valueString
+  mergeData, computeUIData, valueString,
+  UIData,
 }
