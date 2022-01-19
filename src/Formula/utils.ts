@@ -8,6 +8,11 @@ export const todo: Node = { operation: "const", value: NaN, operands: [] }
 export function percent(value: number, info?: Info): Node {
   return { operation: "const", operands: [], value, info: { key: "_", ...info } }
 }
+/** Add `info` to the node */
+export function info(node: Node, info: Info): Node {
+  node.info = { ...node.info, ...info }
+  return node
+}
 /** min( x1, x2, ... ) */
 export function min(...values: (number | Node)[]): Node {
   return { operation: "min", operands: intoOperands(values) }
