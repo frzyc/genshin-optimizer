@@ -1,6 +1,7 @@
+import { allAmplifyingReactionsDmgKey } from "../KeyMap"
 import { amplifyingReactions, transformativeReactions } from "../StatConstants"
 import { allMainStatKeys, allSubstats } from "../Types/artifact_WR"
-import { allArtifactSets, allElementsWithPhy, allHitModes, allSlotKeys } from "../Types/consts"
+import { allArtifactSets, allElementsWithPhy, allHitModes, allReactionModes, allSlotKeys } from "../Types/consts"
 import { objectFromKeyMap } from "../Util/Util"
 import { Node, ReadNode, StringNode, StringReadNode } from "./type"
 import { frac, prod, sum, min, max, read, setReadNodeKeys, stringRead, stringPrio, percent, stringMatch, stringConst, lookup } from "./utils"
@@ -51,9 +52,14 @@ const rd = setReadNodeKeys({
   dmgBonus: {
     total: read("unique", { key: "dmg_", namePrefix: "Total" }), common: read("add", { key: "dmg_", pivot }),
     ...objectFromKeyMap(allMoves, move => read("add", { key: `${move}_dmg_`, pivot })),
-    ...objectFromKeyMap(allElementsWithPhy, ele => read("add", { key: `${ele}_dmg_`, pivot })),
+
+    // TODO: Add to DMG Bonus
     ...objectFromKeyMap(Object.keys(transformativeReactions), reaction => read("add", { key: `${reaction}_dmg_`, pivot })),
+    // TODO: Add to DMG Bonus
     ...objectFromKeyMap(Object.keys(amplifyingReactions), reaction => read("add", { key: `${reaction}_dmg_`, pivot })),
+
+    // TODO: This should be part of `total`, remove this thin wrapper
+    ...objectFromKeyMap(allElementsWithPhy, ele => read("unique", { key: `${ele}_dmg_`, pivot })),
   },
   critBonus: {
     // TODO: Add to total or premod
