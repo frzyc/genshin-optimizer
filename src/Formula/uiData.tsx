@@ -1,6 +1,6 @@
 import KeyMap from "../KeyMap"
 import { ElementKeyWithPhy } from "../Types/consts"
-import { assertUnreachable, objPathValue } from "../Util/Util"
+import { assertUnreachable, crawlObject, layeredAssignment, objPathValue } from "../Util/Util"
 import { allOperations } from "./optimization"
 import { ComputeNode, ConstantNode, Data, DataNode, Info, LookupNode, Node, ReadNode, StringMatchNode, StringNode, SubscriptNode } from "./type"
 
@@ -33,9 +33,25 @@ export class UIData {
   string = new Map<StringNode, ContextString>()
   processed = new Map<Node, NodeDisplay>()
 
+  display: any = undefined
+
   constructor(data: Data[], parent: UIData | undefined) {
     this.parent = parent
     this.data = data
+  }
+
+  getDisplay(): any {
+    if (this.display) return this.display
+    this.display = {}
+    for (const data of this.data) {
+      if (!data.display) continue
+      crawlObject(data.display, [], (x: any) => x.operation, (x: Node, key: string[]) => {
+        const result = this.get(x)
+        if (!result.isEmpty)
+          layeredAssignment(this.display, key, result)
+      })
+    }
+    return this.display
   }
 
   get(node: Node): NodeDisplay {
