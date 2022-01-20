@@ -5,7 +5,7 @@ export function formulaString(formula: Node): string {
   const { operation } = formula
   switch (operation) {
     case "const": return `${formula.value}`
-    case "read": return `Read[${formula.key}]`
+    case "read": return `Read[${formula.path}]`
     case "data": return `Context${formulaString(formula.operands[0])}`
     case "subscript": return `Lookup${formulaString(formula.operands[0])}`
     case "min": case "max":

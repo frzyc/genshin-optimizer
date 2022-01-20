@@ -66,17 +66,17 @@ export function setReadNodeKeys<T extends NodeList>(nodeList: T, prefix: string[
   if (nodeList.operation) {
     if (nodeList.operation !== "read" && nodeList.operation !== "sread")
       throw new Error(`Found ${(nodeList as any).operation} node while making reader`)
-    return { ...nodeList, key: prefix }
+    return { ...nodeList, path: prefix }
   } else {
     return objectFromKeyMap(Object.keys(nodeList), key =>
       setReadNodeKeys(nodeList[key], [...prefix, key])) as any
   }
 }
-export function customRead(key: string[], info?: Info): ReadNode {
-  return { operation: "read", operands: [], key, accumulation: "unique", info }
+export function customRead(path: string[], info?: Info): ReadNode {
+  return { operation: "read", operands: [], path, accumulation: "unique", info }
 }
 export function read(accumulation: ReadNode["accumulation"], info?: Info): ReadNode {
-  return { operation: "read", operands: [], key: [], accumulation, info }
+  return { operation: "read", operands: [], path: [], accumulation, info }
 }
 export function data(baseFormula: Node, contexts: Data[]): DataNode {
   return { operation: "data", operands: [baseFormula], data: contexts }
@@ -85,11 +85,11 @@ export function data(baseFormula: Node, contexts: Data[]): DataNode {
 export function stringConst(value: string | undefined): StringNode {
   return intoString(value)
 }
-export function customStringRead(key: string[]): StringReadNode {
-  return { operation: "sread", operands: [], key }
+export function customStringRead(path: string[]): StringReadNode {
+  return { operation: "sread", operands: [], path }
 }
 export function stringRead(): StringReadNode {
-  return { operation: "sread", operands: [], key: [] }
+  return { operation: "sread", operands: [], path: [] }
 }
 export function stringPrio(...operands: (string | StringNode)[]): StringNode {
   return { operation: "prio", operands: operands.map(intoString) }

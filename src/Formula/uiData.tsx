@@ -72,7 +72,7 @@ export class UIData {
     let result: ContextString
     switch (operation) {
       case "sconst": result = { value: node.value }; break
-      case "sread": result = this.readFirstString(node.key) ?? {}; break
+      case "sread": result = this.readFirstString(node.path) ?? {}; break
       case "prio": {
         const operands = node.operands.map(x => this.getStr(x)).filter(x => x.value)
         result = { value: operands[0]?.value, }
@@ -153,7 +153,7 @@ export class UIData {
   }
 
   private _read(node: ReadNode, visited: Set<Node> | undefined): ContextNodeDisplay {
-    const { key } = node, nodes = this.readAll(key, visited)
+    const { path } = node, nodes = this.readAll(path, visited)
 
     const result = (node.accumulation === "unique")
       ? (nodes[0] ?? illformed)

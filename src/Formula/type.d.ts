@@ -51,7 +51,7 @@ export interface LookupNode extends NodeBase {
 
 export interface ReadNode extends NodeBase {
   operation: "read"
-  key: Path<NodeData, Node | undefined>
+  path: Path<NodeData, Node | undefined>
   accumulation: CommutativeMonoidOperation | "unique"
 }
 export interface DataNode extends NodeBase {
@@ -74,7 +74,7 @@ export interface StringMatchStringNode extends StringNodeBase {
 }
 export interface StringReadNode extends StringNodeBase {
   operation: "sread"
-  key: Path<StringFormulaTemplate, StringNode>
+  path: Path<StringFormulaTemplate, StringNode>
 
   accumulation?: never
 }

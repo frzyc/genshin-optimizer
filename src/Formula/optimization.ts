@@ -172,8 +172,8 @@ function applyRead(formulas: Node[], topLevelData: Data[], bottomUpMap = (formul
         return extract(baseFormula, nextId)
       }
       case "read": {
-        const data = dataFromId[contextId], { key, accumulation } = formula
-        const operands = data?.map(context => resolve(context, key)!).filter(x => x)
+        const data = dataFromId[contextId], { path, accumulation } = formula
+        const operands = data?.map(context => resolve(context, path)!).filter(x => x)
 
         if (operands.length === 0)
           return [formula, contextId]
@@ -282,8 +282,8 @@ function resolveStringNode(node: StringNode, data: Data[]): string | undefined {
   switch (operation) {
     case "sconst": return node.value
     case "sread": {
-      const key = node.key, operands = data.flatMap(context => {
-        const formula = resolve(context, key) as StringNode | undefined
+      const path = node.path, operands = data.flatMap(context => {
+        const formula = resolve(context, path) as StringNode | undefined
         return formula ? [formula] : []
       })
 
