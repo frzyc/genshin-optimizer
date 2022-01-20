@@ -14,16 +14,16 @@ export function info(node: Node, info: Info): Node {
   return node
 }
 /** `string1` === `string2` ? `match` : 0 */
-export function match(string1: StringNode, string2: string | undefined | StringNode, node: Node | number, info?: Info): Node {
+export function match(string1: StringNode, string2: string | undefined | StringNode, node: number | Node, info?: Info): Node {
   return { operation: "match", operands: intoOperands([node]), string1, string2: intoString(string2), info }
 }
 /** `string1` !== `string2` ? `match` : 0 */
-export function unmatch(string1: StringNode, string2: string | undefined | StringNode, node: Node | number, info?: Info): Node {
+export function unmatch(string1: StringNode, string2: string | undefined | StringNode, node: number | Node, info?: Info): Node {
   return { operation: "unmatch", operands: intoOperands([node]), string1, string2: intoString(string2), info }
 }
 /** `table[string] ?? defaultNode` */
-export function lookup(string: StringNode, table: Dict<string, Node>, defaultNode?: Node, info?: Info): Node {
-  return { operation: "lookup", operands: defaultNode ? [defaultNode] : [], string, table, info }
+export function lookup(string: StringNode, table: Dict<string, Node>, defaultNode?: number | Node, info?: Info): Node {
+  return { operation: "lookup", operands: defaultNode ? intoOperands([defaultNode]) : [], string, table, info }
 }
 
 /** min( x1, x2, ... ) */

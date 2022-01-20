@@ -36,6 +36,7 @@ const statMap = {
   // Enemy
   enemyLevel: "Enemy Level",
   enemyLevel_multi: "Enemy Level RES Multiplier",
+  enemyDEF_multi: "Enemy DEF Multiplier",
   enemyDEFRed_: "Enemy DEF Reduction",
 
   //infusion
@@ -121,4 +122,3 @@ export default class KeyMap {
     return "flat"
   }
 }
-
