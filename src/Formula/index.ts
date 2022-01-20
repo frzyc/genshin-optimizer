@@ -7,7 +7,7 @@ import { frac, prod, sum, min, max, read, setReadNodeKeys, stringRead, stringPri
 
 const allMoves = ["normal", "charged", "plunging", "skill", "burst"] as const
 const unit = percent(1), naught = percent(0)
-const asConst = true
+const asConst = true, pivot = true
 
 // All read nodes
 const rd = setReadNodeKeys({
@@ -22,10 +22,10 @@ const rd = setReadNodeKeys({
   special: read("unique", { namePrefix: "Char.", asConst }),
 
   base: objectFromKeyMap(["atk", "hp", "def"] as const, key =>
-    read(key === "atk" ? "add" : "unique", { key, namePrefix: "Base" })),
+    read(key === "atk" ? "add" : "unique", { key, namePrefix: "Base", pivot })),
   premod: objectFromKeyMap(allStatKeys, _ => read("add")),
   total: {
-    ...objectFromKeyMap(allStatKeys, key => read("add", { key, namePrefix: "Total" })),
+    ...objectFromKeyMap(allStatKeys, key => read("add", { key, namePrefix: "Total", pivot })),
     cappedCritRate: read("unique", { key: "critRate_", namePrefix: "Capped" }), // Total Crit Rate capped to [0, 100%]
   },
   art: {
@@ -45,15 +45,15 @@ const rd = setReadNodeKeys({
   team: { infusion: stringRead() },
 
   dmgBonus: {
-    total: read("unique", { key: "dmg_", namePrefix: "Total" }), common: read("add", { key: "dmg_" }),
-    ...objectFromKeyMap(allMoves, move => read("add", { key: `${move}_dmg_` })),
-    ...objectFromKeyMap(allElementsWithPhy, ele => read("unique", { key: `${ele}_dmg_` })),
+    total: read("unique", { key: "dmg_", namePrefix: "Total" }), common: read("add", { key: "dmg_", pivot }),
+    ...objectFromKeyMap(allMoves, move => read("add", { key: `${move}_dmg_`, pivot })),
+    ...objectFromKeyMap(allElementsWithPhy, ele => read("unique", { key: `${ele}_dmg_`, pivot })),
   },
 
   hit: {
     ele: stringRead(), reaction: stringRead(), move: stringRead(), hitMode: stringRead(),
 
-    dmg: read("unique"), base: read("add", { key: "base_" }),
+    dmg: read("unique"), base: read("add", { key: "base_", pivot }),
     amp: { multi: read("unique"), base: read("add"), },
     critMulti: {
       byHitMode: read("unique"),
@@ -64,7 +64,7 @@ const rd = setReadNodeKeys({
   enemy: {
     res: objectFromKeyMap(allElementsWithPhy, ele => read("add", { key: `${ele}_enemyRes_` })),
     level: read("unique", { key: "enemyLevel" }),
-    def: read("add", { key: "enemyDEF_multi" }),
+    def: read("add", { key: "enemyDEF_multi", pivot }),
     defRed: read("add", { key: "enemyDEFRed_" }),
   },
 

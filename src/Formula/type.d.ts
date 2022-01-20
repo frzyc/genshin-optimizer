@@ -23,7 +23,8 @@ interface Info {
   key?: string
   namePrefix?: string
   variant?: ElementKeyWithPhy | "success"
-  asConst?: boolean
+  asConst?: true
+  pivot?: true
 }
 
 export interface ConstantNode extends NodeBase {

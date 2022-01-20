@@ -19,7 +19,7 @@ export interface NodeDisplay {
   value: number
   unit: "%" | "flat"
   variant?: ElementKeyWithPhy | "success"
-  formula: Displayable
+  formula?: Displayable
   formulas: Displayable[]
 }
 
@@ -43,7 +43,7 @@ export class UIData {
 
     // Detect loops in dev build
     const visited = (process.env.NODE_ENV === "development") ? new Set<Node>() : undefined
-    const result = computeNodeDisplay(this.computeNode(node, visited))
+    const result = computeNodeDisplay(this.computeNode(node, visited), node.info)
 
     this.processed.set(node, result)
     return result
@@ -84,19 +84,49 @@ export class UIData {
       visited.add(node)
     }
 
-    const { operation } = node
+    const { operation, info } = node
     let result: ContextNodeDisplay
     switch (operation) {
       case "add": case "mul": case "min": case "max":
       case "res": case "sum_frac": case "threshold_add":
         result = this._compute(node, visited); break
-      case "const": result = this._constant(node); break
+      case "const": result = this._constant(node.value); break
       case "subscript": result = this._subscript(node, visited); break
       case "read": result = this._read(node, visited); break
       case "data": result = this._data(node, visited); break
       case "match": case "unmatch": result = this._match(node, visited); break
       case "lookup": result = this._lookup(node, visited); break
       default: assertUnreachable(operation)
+    }
+
+    if (info) {
+      const { namePrefix, variant, key, asConst } = info
+      let { pivot } = info
+      result = { ...result }
+
+      if (asConst) {
+        delete result.formula
+        result.dependencies = new Set()
+
+        pivot = true
+      }
+      if (pivot) {
+        result.mayNeedWrapping = false
+        result.pivot = pivot
+      }
+      if (variant)
+        result.variant = variant
+      if (key)
+        result.key = key
+      if (key && result.formula) {
+        result.name = `${namePrefix ? namePrefix + ' ' : ''}${KeyMap.getNoUnit(key)} ${valueString(result.value, KeyMap.unit(key))}`
+        result.assignment = `${result.name} = ${result.formula}`
+      }
+    }
+
+    if (isNaN(result.value)) {
+      console.log(result, node)
+      throw "Here"
     }
 
     this.nodes.set(node, result)
@@ -107,37 +137,33 @@ export class UIData {
     return this.data.map(x => objPathValue(x, path) as Node).filter(x => x).map(x => this.computeNode(x, visited))
   }
   private readFirstString(path: string[]): ContextString | undefined {
-    const nodes = this.data.map(x => objPathValue(x, path) as StringNode).filter(x => x)
-    return nodes.length ? this.getStr(nodes[0]) : this.parent?.readFirstString(path)
+    const data = this.data.map(x => objPathValue(x, path) as StringNode).find(x => x)
+    return data && this.getStr(data)
   }
 
   private _read(node: ReadNode, visited: Set<Node> | undefined): ContextNodeDisplay {
-    const key = node.key, nodes = this.readAll(key, visited)
-    let result: ContextNodeDisplay
+    const { key } = node, nodes = this.readAll(key, visited)
 
-    if (node.accumulation === "unique")
-      result = nodes.length
-        ? { ...nodes[0] }
-        : this._constant({ operation: "const", operands: [], info: node.info, value: NaN })
-    else
-      result = this._accumulate(node.accumulation, nodes)
-    return mergeInfo(result, node.info)
+    const result = (node.accumulation === "unique")
+      ? (nodes[0] ?? illformed)
+      : this._accumulate(node.accumulation, nodes)
+    return result
   }
   private _lookup(node: LookupNode, visited: Set<Node> | undefined): ContextNodeDisplay {
     const key = this.getStr(node.string).value
     const selected = node.table[key!] ?? node.operands[0]
-    if (!selected) throw { error: "Lookup fail", node }
+    if (!selected) throw { error: "Lookup fail", node: node, x: node.string, key }
 
     // TODO: Wrap info here instead
-    return mergeInfo(this.computeNode(selected, visited), node.info)
+    return this.computeNode(selected, visited)
   }
   private _match(node: StringMatchNode, visited: Set<Node> | undefined): ContextNodeDisplay {
     const string1 = this.getStr(node.string1).value
-    const string2 = typeof node.string2 === "string" ? node.string2 : this.getStr(node.string2).value
+    const string2 = this.getStr(node.string2).value
 
-    if ((string1 === string2) === (node.operation === "match"))
-      return this.computeNode(node.operands[0], visited)
-    else return this._constant({ operation: "const", operands: [], value: 0 })
+    return ((string1 === string2) === (node.operation === "match"))
+      ? this.computeNode(node.operands[0], visited)
+      : zero
   }
   private _data(node: DataNode, visited: Set<Node> | undefined): ContextNodeDisplay {
     let child = this.children.get(node.data)
@@ -145,45 +171,45 @@ export class UIData {
       child = new UIData([...node.data, ...this.data], this)
       this.children.set(node.data, child)
     }
-
-    // TODO: Incorporate `info` if needed
     return child.computeNode(node.operands[0], visited && new Set())
   }
   private _compute(node: ComputeNode, visited: Set<Node> | undefined): ContextNodeDisplay {
-    const operation = node.operation
-    const operands = node.operands.map(x => this.computeNode(x, visited))
-    return mergeInfo(this._accumulate(operation, operands), node.info)
+    const { operation, operands } = node
+    return this._accumulate(operation, operands.map(x => this.computeNode(x, visited)))
   }
   private _subscript(node: SubscriptNode, visited: Set<Node> | undefined): ContextNodeDisplay {
     const operand = this.computeNode(node.operands[0], visited)
-
     const value = node.list[operand.value] ?? NaN
-    const result = this._constant({ operation: "const", operands: [], info: node.info, value, })
-    result.operation = "subscript"
-    return result
+    return this._constant(value)
   }
-  private _constant(node: ConstantNode): ContextNodeDisplay {
-    return mergeInfo({
-      operation: "const",
-      value: node.value,
-      variant: undefined,
-      mayNeedWrapping: false
-    }, node.info)
+  private _constant(value: number): ContextNodeDisplay {
+    return {
+      value, variant: undefined,
+      pivot: false,
+      mayNeedWrapping: false,
+      dependencies: new Set(),
+    }
   }
 
   private _accumulate(operation: ComputeNode["operation"], operands: ContextNodeDisplay[]): ContextNodeDisplay {
     let variant: ContextNodeDisplay["variant"]
 
     switch (operation) {
-      case "add": case "min": case "max": variant = mergeVariants(operands); break
+      case "add": case "mul": case "min": case "max":
+      case "res": case "sum_frac":
+        variant = mergeVariants(operands); break
       case "threshold_add": variant = operands[2].variant; break
-      case "mul": variant = mergeVariants(operands); break
-      case "res":
-      case "sum_frac": variant = mergeVariants(operands); break
       default: assertUnreachable(operation)
     }
+    switch (operation) {
+      case "add": case "mul": case "min": case "max":
+        const identity = allOperations[operation]([])
+        operands = operands.filter(operand => operand.pivot || operand.value !== identity)
+        if (!operands.length)
+          operands = [this._constant(identity)]
+    }
 
-    let formula: (ContextNodeDisplay | string)[] | undefined
+    let formula: { display: Displayable, dependencies: Displayable[] }
     let mayNeedWrapping = false
     switch (operation) {
       case "max": formula = fStr`Max(${{ operands }})`; break
@@ -207,7 +233,7 @@ export class UIData {
       case "threshold_add":
         const value = operands[0].value, threshold = operands[1].value
         if (value >= threshold) return operands[2]
-        else formula = undefined
+        else formula = fStr``
         break
       default: assertUnreachable(operation)
     }
@@ -219,53 +245,47 @@ export class UIData {
     }
 
     const value = allOperations[operation](operands.map(x => x.value))
+    const dependencies = new Set([...operands.flatMap(x =>
+      x.pivot && x.assignment
+        ? [x.assignment, ...x.dependencies]
+        : [...x.dependencies])])
     return {
-      operation,
-      formula,
-      value, variant,
-      mayNeedWrapping
+      formula: formula.display,
+      value, variant, mayNeedWrapping,
+      pivot: false, dependencies,
     }
   }
-}
-function mergeInfo(node: ContextNodeDisplay, info: Info | undefined): ContextNodeDisplay {
-  if (!info) return node
-  const { namePrefix, variant, key, asConst } = info
-
-  if (namePrefix) node.namePrefix = namePrefix
-  if (variant) node.variant = variant
-  if (key) {
-    node.key = key
-    node.mayNeedWrapping = false
-  }
-  if (asConst) {
-    delete node.formula
-    node.operation = "const"
-    node.mayNeedWrapping = false
-  }
-  return node
 }
 type ContextNodeDisplayList = { operands: ContextNodeDisplay[], separator?: string, shouldWrap?: boolean }
-function fStr(strings: TemplateStringsArray, ...keys: (ContextNodeDisplay | ContextNodeDisplayList)[]): (ContextNodeDisplay | string)[] {
-  return strings.flatMap((string, i) => {
-    const result: (ContextNodeDisplay | string)[] = [string], key = keys[i]
+function fStr(strings: TemplateStringsArray, ...list: ContextNodeDisplayList[]): { display: Displayable, dependencies: Displayable[] } {
+  const dependencies = new Set<Displayable>()
+  const predisplay: Displayable[] = []
+
+  strings.forEach((string, i) => {
+    predisplay.push(string)
+
+    const key = list[i]
     if (key) {
-      if ((key as any).operation) {
-        result.push(keys[i] as ContextNodeDisplay)
-      } else {
-        const { operands, separator = ", ", shouldWrap } = key as ContextNodeDisplayList
-        operands.forEach((item, i, array) => {
-          if (shouldWrap && item.mayNeedWrapping) {
-            result.push("(")
-            result.push(item)
-            result.push(")")
-          } else result.push(item)
-          if (i < array.length - 1)
-            result.push(separator)
-        })
-      }
+      const { operands, shouldWrap, separator = ", " } = key
+      operands.forEach((item, i, array) => {
+        let itemFormula: Displayable = valueString(item.value, item.key ? KeyMap.unit(item.key) : "flat")
+        if (item.pivot && item.name) itemFormula = item.name
+        else if (item.formula) itemFormula = item.formula
+
+        if (shouldWrap && item.mayNeedWrapping) {
+          predisplay.push("(")
+          predisplay.push(itemFormula)
+          predisplay.push(")")
+        } else {
+          predisplay.push(itemFormula)
+        }
+        if (i + 1 < array.length) predisplay.push(separator)
+        item.dependencies.forEach(x => dependencies.add(x))
+      })
     }
-    return result
-  }).filter(x => x)
+  })
+  // TODO: Update to JSX
+  return { display: (predisplay as string[]).join(""), dependencies: [...dependencies] }
 }
 function mergeVariants(operands: ContextNodeDisplay[]): ContextNodeDisplay["variant"] {
   const unique = new Set(operands.map(x => x.variant))
@@ -273,80 +293,45 @@ function mergeVariants(operands: ContextNodeDisplay[]): ContextNodeDisplay["vari
   if (unique.size > 1) unique.delete("physical")
   return unique.values().next().value
 }
-function computeNodeDisplay(node: ContextNodeDisplay): NodeDisplay {
-  const { namePrefix, key, value, variant } = node
-  const newValue: NodeDisplay = {
-    value, unit: "flat", formula: "", formulas: [],
+function computeNodeDisplay(node: ContextNodeDisplay, info: Info | undefined): NodeDisplay {
+  const { dependencies, value, variant, formula, pivot, assignment } = node
+  const { key, namePrefix } = info ?? {}
+  return {
+    key, value, variant, namePrefix,
+    unit: (key && KeyMap.unit(key)) || "flat",
+    formula, formulas: [...((pivot && assignment) ? [assignment] : []), ...dependencies]
   }
-  if (key) {
-    newValue.key = key
-    newValue.unit = KeyMap.unit(key)
-  }
-  if (variant) newValue.variant = variant
-  if (namePrefix) newValue.namePrefix = namePrefix
-
-  const { formula, dependencies } = computeFormulaString(node)
-  newValue.formula = formula
-  newValue.formulas = [node, ...dependencies.filter(x => x.formula)]
-    .map(x => x.formulaCache!.assignmentFormula!)
-    .filter(x => x)
-  return newValue
-}
-function computeFormulaString(node: ContextNodeDisplay): Required<ContextNodeDisplay>["formulaCache"] {
-  if (node.formulaCache) return node.formulaCache
-
-  node.formulaCache = { formula: "", dependencies: [] }
-  const cache = node.formulaCache
-  if (node.key) {
-    const name = KeyMap.get(node.key) ?? ""
-    if (name) {
-      const nameNoUnit = name.endsWith("%") ? name.slice(0, -1) : name
-      cache.fullNameNoUnit = node.namePrefix ? node.namePrefix + " " + nameNoUnit : nameNoUnit
-    }
-  }
-  if (!node.formula) return cache
-
-  const deps = new Set<ContextNodeDisplay>()
-
-  // TODO: Add JSX Version
-  cache.formula = node.formula.map(item => {
-    if (typeof item === "string") return item
-
-    const { formula, fullNameNoUnit, dependencies } = computeFormulaString(item)
-    if (fullNameNoUnit) {
-      deps.add(item)
-      dependencies.forEach(x => deps.add(x))
-      return `${fullNameNoUnit} ${valueString(item.value, KeyMap.unit(item.key ?? ""))}`
-    }
-    if (item.formula?.length) {
-      dependencies.forEach(x => deps.add(x))
-      return formula
-    }
-    return `${valueString(item.value, KeyMap.unit(item.key ?? ""))}`
-  }).join("")
-
-  if (cache.fullNameNoUnit)
-    cache.assignmentFormula = `${cache.fullNameNoUnit} ${valueString(node.value, KeyMap.unit(node.key ?? ""))} = ${cache.formula}`
-  cache.dependencies = [...deps]
-  return cache
 }
 
 interface ContextString { value?: string }
 
 interface ContextNodeDisplay {
-  namePrefix?: string, key?: string
-  formula?: (ContextNodeDisplay | string)[]
+  key?: string
+  name?: Displayable
+  formula?: Displayable
+  assignment?: Displayable
+
+  pivot: boolean
 
   value: number
   variant: ElementKeyWithPhy | "success" | undefined
 
-  formulaCache?: {
-    fullNameNoUnit?: string
-    formula: Displayable
-    dependencies: ContextNodeDisplay[]
-    assignmentFormula?: Displayable
-  }
+  dependencies: Set<Displayable>
 
-  operation: Node["operation"]
   mayNeedWrapping: boolean
+}
+
+const illformed: ContextNodeDisplay = {
+  value: NaN,
+  pivot: false,
+  variant: undefined,
+  dependencies: new Set,
+  mayNeedWrapping: false
+}
+const zero: ContextNodeDisplay = {
+  value: 0,
+  pivot: false,
+  variant: undefined,
+  dependencies: new Set,
+  mayNeedWrapping: false
 }
