@@ -129,7 +129,7 @@ export class UIData {
     if (!selected) throw { error: "Lookup fail", node }
 
     // TODO: Wrap info here instead
-    return mergeInfo(this.computeNode(node, visited), node.info)
+    return mergeInfo(this.computeNode(selected, visited), node.info)
   }
   private _match(node: StringMatchNode, visited: Set<Node> | undefined): ContextNodeDisplay {
     const string1 = this.getStr(node.string1).value

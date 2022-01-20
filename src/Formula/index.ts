@@ -3,7 +3,7 @@ import { amplifyingReactions, transformativeReactions } from "../StatConstants"
 import { allArtifactSets, allElementsWithPhy, allHitModes } from "../Types/consts"
 import { objectFromKeyMap } from "../Util/Util"
 import { Node, ReadNode, StringNode, StringReadNode } from "./type"
-import { frac, prod, sum, min, max, read, setReadNodeKeys, stringRead, stringPrio, percent, stringMatch, stringConst, todo } from "./utils"
+import { frac, prod, sum, min, max, read, setReadNodeKeys, stringRead, stringPrio, percent, stringMatch, stringConst, todo, lookup } from "./utils"
 
 const allMoves = ["normal", "charged", "plunging", "skill", "burst"] as const
 const unit = percent(1), naught = percent(0)
@@ -118,8 +118,8 @@ const common = {
   dmgBonus: {
     total: sum(dmgBonus.common, dmgBonus.byMove, dmgBonus.byElement),
     ...objectFromKeyMap(allElementsWithPhy, ele => total[`${ele}_dmg_`] as Node),
-    byMove: todo,
-    byElement: todo,
+    byMove: lookup(hit.move, objectFromKeyMap(allMoves, move => dmgBonus[move])),
+    byElement: lookup(hit.ele, objectFromKeyMap(allElementsWithPhy, ele => dmgBonus[ele])),
   },
 
   hit: {
@@ -134,7 +134,7 @@ const common = {
       hit: unit as Node,
       critHit: sum(unit, total.critDMG_),
       avgHit: sum(unit, prod(total.cappedCritRate, total.critDMG_)),
-      byHitMode: todo,
+      byHitMode: lookup(hit.hitMode, objectFromKeyMap(allHitModes, mode => hit.critMulti[mode])),
     },
     amp: {
       multi: prod(hit.amp.reactionMulti, hit.amp.base),
@@ -151,7 +151,7 @@ const common = {
 
   enemy: {
     res: {
-      byElement: todo,
+      byElement: lookup(hit.ele, objectFromKeyMap(allElementsWithPhy, ele => enemy.res[ele])),
     },
     def: frac(sum(rd.lvl, 100), prod(sum(enemy.level, 100), sum(1, prod(-1, enemy.defRed))))
   },
