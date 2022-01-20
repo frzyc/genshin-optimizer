@@ -96,8 +96,13 @@ function dataObjForArtifact(art: ICachedArtifact, assumingMinimumMainStatLevel: 
   stats.push([art.mainStatKey, art.mainStatVal])
   art.substats.forEach(({ key, value }) => key && stats.push([key, value]))
   return {
-    art: Object.fromEntries(stats.map(([key, value]) =>
-      key.endsWith("_") ? [key, percent(value / 100)] : [key, constant(value)]))
+    art: {
+      ...Object.fromEntries(stats.map(([key, value]) =>
+        key.endsWith("_") ? [key, percent(value / 100)] : [key, constant(value)])),
+      [art.slotKey]: {
+        id: stringConst(art.id)
+      },
+    }
   }
 }
 function dataObjForCharacter(char: ICachedCharacter): Data {

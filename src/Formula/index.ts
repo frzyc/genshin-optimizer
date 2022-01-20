@@ -1,5 +1,5 @@
 import { allMainStatKeys, allSubstats } from "../Types/artifact_WR"
-import { allArtifactSets, allElementsWithPhy, allHitModes } from "../Types/consts"
+import { allArtifactSets, allElementsWithPhy, allHitModes, allSlotKeys } from "../Types/consts"
 import { objectFromKeyMap } from "../Util/Util"
 import { Node, ReadNode, StringNode, StringReadNode } from "./type"
 import { frac, prod, sum, min, max, read, setReadNodeKeys, stringRead, stringPrio, percent, stringMatch, stringConst, lookup } from "./utils"
@@ -34,6 +34,7 @@ const rd = setReadNodeKeys({
     ...objectFromKeyMap(allMainSubStats, key =>
       read("add", { key, namePrefix: "Art.", asConst })),
     ...objectFromKeyMap(allArtifactSets, _ => read("add", { asConst })),
+    ...objectFromKeyMap(allSlotKeys, _ => ({ id: stringRead() })),
   },
 
   weapon: {
