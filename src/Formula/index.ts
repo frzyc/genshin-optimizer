@@ -79,6 +79,15 @@ const rd = setReadNodeKeys({
 
 const { base, art, premod, total, hit, dmgBonus, enemy } = rd
 
+for (const ele of allElementsWithPhy) {
+  // Note:
+  // We may need to annotate variants on other values as well
+  // However, since the variants propagate to parent nodes
+  // We only need to annotate values at the very leafs of the
+  // computation.
+  art[`${ele}_dmg_` as const].info!.variant = ele
+}
+
 const common = {
   base: objectFromKeyMap(["hp", "atk", "def"], key => rd[key] as Node),
   talent: {

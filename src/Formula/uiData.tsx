@@ -169,10 +169,9 @@ export class UIData {
   private _match(node: StringMatchNode, visited: Set<Node> | undefined): ContextNodeDisplay {
     const string1 = this.getStr(node.string1).value
     const string2 = this.getStr(node.string2).value
+    const base = this.computeNode(node.operands[0], visited)
 
-    return ((string1 === string2) === (node.operation === "match"))
-      ? this.computeNode(node.operands[0], visited)
-      : empty
+    return makeEmpty(base, ((string1 === string2) !== (node.operation === "match")))
   }
   private _data(node: DataNode, visited: Set<Node> | undefined): ContextNodeDisplay {
     let child = this.children.get(node.data)
@@ -214,7 +213,8 @@ export class UIData {
       case "add": case "mul": case "min": case "max":
         const identity = allOperations[operation]([])
         operands = operands.filter(operand => operand.pivot || operand.value !== identity)
-        if (!operands.length) return this._constant(identity)
+        if (!operands.length)
+          return variant ? { ...this._constant(identity), variant } : this._constant(identity)
     }
 
     let formula: { display: Displayable, dependencies: Displayable[] }
@@ -240,8 +240,7 @@ export class UIData {
       }
       case "threshold_add":
         const value = operands[0].value, threshold = operands[1].value
-        if (value >= threshold) return operands[2]
-        else return empty
+        return makeEmpty(operands[2], value < threshold)
       default: assertUnreachable(operation)
     }
     switch (operation) {
@@ -322,9 +321,6 @@ interface ContextString { value?: string }
 
 interface ContextNodeDisplay {
   key?: string
-  name?: Displayable
-  formula?: Displayable
-  assignment?: Displayable
 
   pivot: boolean
   empty: boolean
@@ -335,17 +331,26 @@ interface ContextNodeDisplay {
   dependencies: Set<Displayable>
 
   mayNeedWrapping: boolean
+
+  // Don't set these manually outside of `UIData.computeNode`
+  name?: Displayable
+  formula?: Displayable
+  assignment?: Displayable
 }
 
 const illformed: ContextNodeDisplay = {
-  value: NaN, pivot: false,
+  value: NaN, pivot: true,
   empty: false,
   dependencies: new Set,
   mayNeedWrapping: false
 }
-const empty: ContextNodeDisplay = {
-  value: 0, pivot: false,
-  empty: true,
-  dependencies: new Set,
-  mayNeedWrapping: false
+function makeEmpty(node: ContextNodeDisplay, shouldMakeEmpty: boolean): ContextNodeDisplay {
+  if (!shouldMakeEmpty) return node
+
+  const result: ContextNodeDisplay = {
+    value: 0, pivot: true, empty: true, dependencies: new Set(), mayNeedWrapping: false
+  }
+  if (node.key) result.key = node.key
+  if (node.variant) result.variant = node.variant
+  return result
 }

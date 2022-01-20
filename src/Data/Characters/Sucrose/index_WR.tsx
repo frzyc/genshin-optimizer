@@ -22,7 +22,7 @@ import { allElements, WeaponTypeKey } from '../../../Types/consts'
 import ColorText from '../../../Components/ColoredText'
 import { input } from "../../../Formula/index";
 import { dataObjForCharacterSheet, dmgNode } from "../../../Formula/api";
-import { customRead, customStringRead, match, percent, prod, sum, threshold_add, unmatch } from "../../../Formula/utils";
+import { customRead, customStringRead, match, percent, prod, stringConst, sum, threshold_add, unmatch } from "../../../Formula/utils";
 import { ICharacterSheet } from '../../../Types/character_WR'
 
 const tr = (strKey: string) => <Translate ns="char_Sucrose_gen" key18={strKey} />
@@ -88,7 +88,7 @@ export const dmgFormulas = {
   burst: {
     dot: dmgNode("atk", datamine.burst.dot, "burst"),
     ...Object.fromEntries(absorbableEle.map(key =>
-      [key, match(condAbsorption, key, dmgNode("atk", datamine.burst.dmg_, "burst"), { /** Set absorption element */ })]))
+      [key, match(condAbsorption, key, dmgNode("atk", datamine.burst.dmg_, "burst", { hit: { ele: stringConst(key) } }))]))
   },
 }
 export const data = dataObjForCharacterSheet("Sucrose", "anemo", data_gen.weaponTypeKey as WeaponTypeKey,

@@ -36,10 +36,6 @@ const weaponData = dataObjForWeapon({
   lock: false,
 })
 
-/*
-const merged1 = mergeData({ number: common, string: {} }, artSheetData, charSheetData, charData, weaponSheetData)
-const merged2 = mergeData(merged1, artData, weaponData)
-*/
 describe("API", () => {
   test("none", async () => {
     const art = validateArtifact(await randomizeArtifact(), "asdf").artifact
@@ -49,6 +45,6 @@ describe("API", () => {
       artifact.EmblemOfSeveredFate.data,
       { art: { EmblemOfSeveredFate: constant(4) } }, dataObjForArtifact(art, 0)
     ])
-    console.log(computed.get(dmgFormulas.normal[0]))
+    console.log(computed.getDisplay().burst)
   })
 })
