@@ -9,6 +9,7 @@ const statMap = {
   heal_: "Healing Bonus",
 
   // Misc. Stats
+  base: "Base DMG",
   dmg_: "All DMG Bonus",
   weakspotDMG_: "Weakspot DMG",
   incHeal_: "Incoming Healing Bonus",

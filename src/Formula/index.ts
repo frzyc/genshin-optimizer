@@ -1,10 +1,10 @@
-import { allStatKeys } from "../KeyMap"
-import { amplifyingReactions, transformativeReactions } from "../StatConstants"
+import { allMainStatKeys, allSubstats } from "../Types/artifact_WR"
 import { allArtifactSets, allElementsWithPhy, allHitModes } from "../Types/consts"
 import { objectFromKeyMap } from "../Util/Util"
 import { Node, ReadNode, StringNode, StringReadNode } from "./type"
-import { frac, prod, sum, min, max, read, setReadNodeKeys, stringRead, stringPrio, percent, stringMatch, stringConst, todo, lookup } from "./utils"
+import { frac, prod, sum, min, max, read, setReadNodeKeys, stringRead, stringPrio, percent, stringMatch, stringConst, lookup } from "./utils"
 
+const allMainSubStats = [...new Set([...allMainStatKeys, ...allSubstats] as const)]
 const allMoves = ["normal", "charged", "plunging", "skill", "burst"] as const
 const unit = percent(1), naught = percent(0)
 const asConst = true, pivot = true
@@ -13,7 +13,9 @@ const asConst = true, pivot = true
 const rd = setReadNodeKeys({
   charKey: stringRead(), charEle: stringRead(), infusion: stringRead(),
   weaponType: stringRead(),
-  lvl: read("unique"), constellation: read("unique"), asc: read("unique"),
+  lvl: read("unique", { key: "level", namePrefix: "Char." }),
+  constellation: read("unique"),
+  asc: read("unique"),
 
   talent: objectFromKeyMap(["base", "boost", "total"] as const, type =>
     objectFromKeyMap(["auto", "skill", "burst"] as const, _ => read(type === "boost" ? "add" : "unique"))),
@@ -23,13 +25,13 @@ const rd = setReadNodeKeys({
 
   base: objectFromKeyMap(["atk", "hp", "def"] as const, key =>
     read(key === "atk" ? "add" : "unique", { key, namePrefix: "Base", pivot })),
-  premod: objectFromKeyMap(allStatKeys, _ => read("add")),
+  premod: objectFromKeyMap(allMainSubStats, _ => read("add")),
   total: {
-    ...objectFromKeyMap(allStatKeys, key => read("add", { key, namePrefix: "Total", pivot })),
+    ...objectFromKeyMap(allMainSubStats, key => read("add", { key, namePrefix: "Total", pivot })),
     cappedCritRate: read("unique", { key: "critRate_", namePrefix: "Capped" }), // Total Crit Rate capped to [0, 100%]
   },
   art: {
-    ...objectFromKeyMap(allStatKeys, key =>
+    ...objectFromKeyMap(allMainSubStats, key =>
       read("add", { key, namePrefix: "Art.", asConst })),
     ...objectFromKeyMap(allArtifactSets, _ => read("add", { asConst })),
   },
@@ -53,11 +55,11 @@ const rd = setReadNodeKeys({
   hit: {
     ele: stringRead(), reaction: stringRead(), move: stringRead(), hitMode: stringRead(),
 
-    dmg: read("unique"), base: read("add", { key: "base_", pivot }),
+    dmg: read("unique"), base: read("add", { key: "base", pivot }),
     amp: { multi: read("unique"), base: read("add"), },
     critMulti: {
       byHitMode: read("unique"),
-      ...objectFromKeyMap(allHitModes, _ => read("unique"))
+      ...objectFromKeyMap(allHitModes, _ => read("unique")),
     },
   },
 
@@ -65,29 +67,17 @@ const rd = setReadNodeKeys({
     res: objectFromKeyMap(allElementsWithPhy, ele => read("add", { key: `${ele}_enemyRes_` })),
     level: read("unique", { key: "enemyLevel" }),
     def: read("add", { key: "enemyDEF_multi", pivot }),
-    defRed: read("add", { key: "enemyDEFRed_" }),
+    defRed: read("add", { key: "enemyDEFRed_", pivot }),
   },
 
   display: {
     normal: {},
     charged: objectFromKeyMap(["dmg", "spinning", "final", "hit", "full"] as const, _ => read("unique")),
-    plunging: objectFromKeyMap(["dmg", "low", "high"] as const, _ => read("unique"))
-  }
+    plunging: objectFromKeyMap(["dmg", "low", "high"] as const, _ => read("unique")),
+  },
 })
 
 const { base, art, premod, total, hit, dmgBonus, enemy } = rd
-
-for (const element of allElementsWithPhy) {
-  art[`${element}_dmg_` as const].info!.variant = element
-  art[`${element}_res_` as const].info!.variant = element
-  art[`${element}_enemyRes_` as const].info!.variant = element
-}
-Object.keys(transformativeReactions).map(t => {
-  art[`${t}_dmg_` as const].info!.variant = t
-})
-Object.keys(amplifyingReactions).map(t => {
-  art[`${t}_dmg_` as const].info!.variant = t
-})
 
 const common = {
   base: objectFromKeyMap(["hp", "atk", "def"], key => rd[key] as Node),
@@ -96,7 +86,7 @@ const common = {
       sum(rd.talent.base[talent], rd.talent.boost[talent]))
   },
   premod: {
-    ...objectFromKeyMap(allStatKeys, key => {
+    ...objectFromKeyMap(allMainSubStats, key => {
       if (key === "atk" || key === "def" || key === "hp")
         return sum(prod(base[key], sum(unit, premod[`${key}_` as const])), art[key])
       if (key === "critRate_") return sum(percent(0.05), art[key])
@@ -106,7 +96,7 @@ const common = {
     }),
   },
   total: {
-    ...objectFromKeyMap(allStatKeys, key => premod[key] as Node),
+    ...objectFromKeyMap(allMainSubStats, key => premod[key] as Node),
     cappedCritRate: max(min(total.critRate_, unit), naught),
   },
 

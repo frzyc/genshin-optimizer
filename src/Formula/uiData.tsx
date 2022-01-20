@@ -104,29 +104,24 @@ export class UIData {
       let { pivot } = info
       result = { ...result }
 
+      // Pivot all keyed nodes for debugging
+      // if (key) pivot = true
+
       if (asConst) {
         delete result.formula
         result.dependencies = new Set()
-
-        pivot = true
       }
       if (pivot) {
         result.mayNeedWrapping = false
         result.pivot = pivot
       }
-      if (variant)
-        result.variant = variant
-      if (key)
+      if (variant) result.variant = variant
+      if (key) {
         result.key = key
-      if (key && result.formula) {
         result.name = `${namePrefix ? namePrefix + ' ' : ''}${KeyMap.getNoUnit(key)} ${valueString(result.value, KeyMap.unit(key))}`
-        result.assignment = `${result.name} = ${result.formula}`
       }
-    }
-
-    if (isNaN(result.value)) {
-      console.log(result, node)
-      throw "Here"
+      if (result.name && result.formula)
+        result.assignment = `${result.name} = ${result.formula}`
     }
 
     this.nodes.set(node, result)
@@ -184,8 +179,7 @@ export class UIData {
   }
   private _constant(value: number): ContextNodeDisplay {
     return {
-      value, variant: undefined,
-      pivot: false,
+      value, pivot: false,
       mayNeedWrapping: false,
       dependencies: new Set(),
     }
@@ -205,8 +199,7 @@ export class UIData {
       case "add": case "mul": case "min": case "max":
         const identity = allOperations[operation]([])
         operands = operands.filter(operand => operand.pivot || operand.value !== identity)
-        if (!operands.length)
-          operands = [this._constant(identity)]
+        if (!operands.length) return this._constant(identity)
     }
 
     let formula: { display: Displayable, dependencies: Displayable[] }
@@ -237,7 +230,6 @@ export class UIData {
         break
       default: assertUnreachable(operation)
     }
-
     switch (operation) {
       case "add": case "mul":
         if (operands.length <= 1) mayNeedWrapping = operands[0]?.mayNeedWrapping ?? true
@@ -249,11 +241,13 @@ export class UIData {
       x.pivot && x.assignment
         ? [x.assignment, ...x.dependencies]
         : [...x.dependencies])])
-    return {
+    const result: ContextNodeDisplay = {
       formula: formula.display,
-      value, variant, mayNeedWrapping,
+      value, mayNeedWrapping,
       pivot: false, dependencies,
     }
+    if (variant) result.variant = variant
+    return result
   }
 }
 type ContextNodeDisplayList = { operands: ContextNodeDisplay[], separator?: string, shouldWrap?: boolean }
@@ -314,7 +308,7 @@ interface ContextNodeDisplay {
   pivot: boolean
 
   value: number
-  variant: ElementKeyWithPhy | "success" | undefined
+  variant?: ElementKeyWithPhy | "success"
 
   dependencies: Set<Displayable>
 
@@ -322,16 +316,12 @@ interface ContextNodeDisplay {
 }
 
 const illformed: ContextNodeDisplay = {
-  value: NaN,
-  pivot: false,
-  variant: undefined,
+  value: NaN, pivot: false,
   dependencies: new Set,
   mayNeedWrapping: false
 }
 const zero: ContextNodeDisplay = {
-  value: 0,
-  pivot: false,
-  variant: undefined,
+  value: 0, pivot: false,
   dependencies: new Set,
   mayNeedWrapping: false
 }
