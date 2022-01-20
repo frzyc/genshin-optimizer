@@ -3,7 +3,7 @@ import { amplifyingReactions, transformativeReactions } from "../StatConstants"
 import { allArtifactSets, allElementsWithPhy, allHitModes } from "../Types/consts"
 import { objectFromKeyMap } from "../Util/Util"
 import { Node, ReadNode, StringNode, StringReadNode } from "./type"
-import { frac, max, min, percent, prod, read, setReadNodeKeys, stringPrio, stringRead, sum } from "./utils"
+import { frac, prod, sum, min, max, read, setReadNodeKeys, stringRead, stringPrio, percent, stringMatch, stringConst } from "./utils"
 
 const allMoves = ["normal", "charged", "plunging", "skill", "burst"] as const
 const unit = percent(1), naught = percent(0)
@@ -142,8 +142,13 @@ const common = {
       multi: prod(hit.amp.reactionMulti, hit.amp.base),
       base: sum(unit, prod(25 / 9, frac(total.eleMas, 1400))),
     },
-
-    ele: stringPrio(rd.infusion, rd.team.infusion),
+    ele: stringPrio(
+      rd.infusion,
+      rd.team.infusion,
+      stringMatch(hit.move, stringConst("charged"), rd.charEle,
+        stringMatch(rd.weaponType, stringConst("catalyst"), rd.charEle, stringConst(undefined))
+      )
+    ),
   },
 
   enemy: {
@@ -164,4 +169,3 @@ typecheck<typeof common, StrictInput<Node, StringNode>>()
 export {
   rd as input, common
 }
-

@@ -13,11 +13,11 @@ export function info(node: Node, info: Info): Node {
   node.info = { ...node.info, ...info }
   return node
 }
-export function match(string1: StringNode, string2: string | StringNode, node: Node | number, info?: Info): Node {
-  return { operation: "match", operands: intoOperands([node]), string1, string2, info }
+export function match(string1: StringNode, string2: string | undefined | StringNode, node: Node | number, info?: Info): Node {
+  return { operation: "match", operands: intoOperands([node]), string1, string2: intoString(string2), info }
 }
-export function unmatch(string1: StringNode, string2: string | StringNode, node: Node | number, info?: Info): Node {
-  return { operation: "unmatch", operands: intoOperands([node]), string1, string2, info }
+export function unmatch(string1: StringNode, string2: string | undefined | StringNode, node: Node | number, info?: Info): Node {
+  return { operation: "unmatch", operands: intoOperands([node]), string1, string2: intoString(string2), info }
 }
 
 /** min( x1, x2, ... ) */
@@ -76,8 +76,8 @@ export function data(baseFormula: Node, contexts: Data[]): DataNode {
   return { operation: "data", operands: [baseFormula], data: contexts }
 }
 
-export function stringConst(value: string): StringNode {
-  return { operation: "sconst", operands: [], value }
+export function stringConst(value: string | undefined): StringNode {
+  return intoString(value)
 }
 export function customStringRead(key: string[], suffix?: StringNode): StringReadNode {
   return { operation: "sread", operands: [], key, suffix }
@@ -85,12 +85,18 @@ export function customStringRead(key: string[], suffix?: StringNode): StringRead
 export function stringRead(suffix?: StringNode): StringReadNode {
   return { operation: "sread", operands: [], key: [], suffix }
 }
-export function stringPrio(...operands: StringNode[]): StringNode {
-  return { operation: "prio", operands }
+export function stringPrio(...operands: (string | StringNode)[]): StringNode {
+  return { operation: "prio", operands: operands.map(intoString) }
+}
+export function stringMatch(string1: StringNode, string2: string | undefined | StringNode, match: string | undefined | StringNode, unmatch: string | undefined | StringNode): StringNode {
+  return { operation: "smatch", operands: [string1, string2, match, unmatch].map(intoString) }
 }
 
 function intoOperands(values: (number | Node)[]): Node[] {
   return values.map(value => typeof value === "number" ? { operation: "const", value, operands: [] } : value)
+}
+function intoString(value: string | StringNode | undefined): StringNode {
+  return (!value || typeof value === "string") ? { operation: "sconst", operands: [], value } : value
 }
 
 type _NodeList = {

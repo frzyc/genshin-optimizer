@@ -43,11 +43,46 @@ export class UIData {
 
     // Detect loops in dev build
     const visited = (process.env.NODE_ENV === "development") ? new Set<Node>() : undefined
-    const result = computeNodeDisplay(this._computeNode(node, visited))
+    const result = computeNodeDisplay(this.computeNode(node, visited))
+
     this.processed.set(node, result)
     return result
   }
-  private _computeNode(node: Node, visited: Set<Node> | undefined): ContextNodeDisplay {
+  getStr(node: StringNode): ContextString {
+    const old = this.string.get(node)
+    if (old) return old
+
+    const { operation } = node
+    let result: ContextString
+    switch (operation) {
+      case "sconst": result = { value: node.value }; break
+      case "prio": {
+        const operands = node.operands.map(x => this.getStr(x)).filter(x => x.value)
+        result = { value: operands[0]?.value, }
+        break
+      }
+      case "sread": {
+        let key = node.key
+        if (node.suffix) {
+          const suffix = this.getStr(node.suffix)
+          key = [...key as string[], suffix.value ?? ""]
+        }
+        result = this.readFirstString(key) ?? {}
+        break
+      }
+      case "smatch": {
+        const [str1, str2] = node.operands.slice(0, 2).map(x => this.getStr(x).value)
+        result = this.getStr(str1 === str2 ? node.operands[2] : node.operands[3])
+        break
+      }
+      default: assertUnreachable(operation)
+    }
+
+    this.string.set(node, result)
+    return result
+  }
+
+  private computeNode(node: Node, visited: Set<Node> | undefined): ContextNodeDisplay {
     const old = this.nodes.get(node)
     if (old) return old
 
@@ -74,40 +109,9 @@ export class UIData {
     this.nodes.set(node, result)
     return result
   }
-  getStr(node: StringNode): ContextString {
-    const old = this.string.get(node)
-    if (old) return old
 
-    const { operation } = node
-    let result: ContextString
-    switch (operation) {
-      case "sconst": result = { value: node.value }; break
-      case "prio":
-        const operands = node.operands.map(x => this.getStr(x)).filter(x => x.value)
-        result = { value: operands[0]?.value, }
-        break
-      case "sread":
-        let key = node.key
-        if (node.suffix) {
-          const suffix = this.getStr(node.suffix)
-          key = [...key as string[], suffix.value ?? ""]
-        }
-        result = this.readFirstString(key) ?? {}
-        break
-      default: assertUnreachable(operation)
-    }
-
-    this.string.set(node, result)
-    return result
-  }
-
-  private hasRead(path: string[]): boolean {
-    return this.data.some(data => objPathValue(data, path))
-  }
   private readAll(path: string[], visited: Set<Node> | undefined): ContextNodeDisplay[] {
-    return [
-      ...this.data.map(x => objPathValue(x, path) as Node).filter(x => x).map(x => this._computeNode(x, visited)),
-      ...this.parent?.readAll(path, visited) ?? []]
+    return this.data.map(x => objPathValue(x, path) as Node).filter(x => x).map(x => this.computeNode(x, visited))
   }
   private readFirstString(path: string[]): ContextString | undefined {
     const nodes = this.data.map(x => objPathValue(x, path) as StringNode).filter(x => x)
@@ -120,8 +124,6 @@ export class UIData {
       const suffix = this.getStr(node.suffix)
       key = [...key as string[], suffix.value ?? ""]
     }
-    if (!this.hasRead(key) && this.parent)
-      return this.parent._computeNode(node, visited)
 
     const nodes = this.readAll(key, visited)
     let result: ContextNodeDisplay
@@ -139,28 +141,28 @@ export class UIData {
     const string2 = typeof node.string2 === "string" ? node.string2 : this.getStr(node.string2).value
 
     if ((string1 === string2) === (node.operation === "match"))
-      return this._computeNode(node.operands[0], visited)
+      return this.computeNode(node.operands[0], visited)
     else return this._constant({ operation: "const", operands: [], value: 0 })
   }
   private _data(node: DataNode, visited: Set<Node> | undefined): ContextNodeDisplay {
     let child = this.children.get(node.data)
     if (!child) {
-      child = new UIData(node.data, this)
+      child = new UIData([...node.data, ...this.data], this)
       this.children.set(node.data, child)
     }
 
     // TODO: Incorporate `info` if needed
-    return child._computeNode(node.operands[0], visited && new Set())
+    return child.computeNode(node.operands[0], visited && new Set())
   }
   private _compute(node: ComputeNode, visited: Set<Node> | undefined): ContextNodeDisplay {
     const operation = node.operation
-    const operands = node.operands.map(x => this._computeNode(x, visited))
+    const operands = node.operands.map(x => this.computeNode(x, visited))
     return mergeInfo(this._accumulate(operation, operands), node.info)
   }
   private _subscript(node: SubscriptNode, visited: Set<Node> | undefined): ContextNodeDisplay {
-    const operand = this._computeNode(node.operands[0], visited)
+    const operand = this.computeNode(node.operands[0], visited)
 
-    const value = node.list[operand.value]
+    const value = node.list[operand.value] ?? NaN
     const result = this._constant({ operation: "const", operands: [], info: node.info, value, })
     result.operation = "subscript"
     return result
@@ -193,7 +195,7 @@ export class UIData {
       case "min": formula = fStr`Min(${{ operands }})`; break
       case "add": formula = fStr`${{ operands, separator: ' + ' }}`; break
       case "mul": formula = fStr`${{ operands, separator: ' * ', shouldWrap }}`; break
-      case "sum_frac": formula = fStr`${{ operands: [operands[0]], shouldWrap }} / (${{ operands }})`; break
+      case "sum_frac": formula = fStr`${{ operands: [operands[0]], shouldWrap }} / (${{ operands, separator: ' + ' }})`; break
       case "res": {
         const base = operands[0].value
         if (base < 0) {

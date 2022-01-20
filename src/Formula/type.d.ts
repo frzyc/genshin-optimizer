@@ -13,7 +13,7 @@ export type Node =
 
 export type StringNode =
   StringConstantNode | StringPriorityNode |
-  StringReadNode
+  StringReadNode | StringMatchStringNode
 
 interface NodeBase {
   operands: Node[]
@@ -40,7 +40,7 @@ export interface SubscriptNode extends NodeBase {
 export interface StringMatchNode extends NodeBase {
   operation: "match" | "unmatch"
   string1: StringNode
-  string2: string | StringNode
+  string2: StringNode
 }
 
 export interface ReadNode extends NodeBase {
@@ -59,10 +59,13 @@ interface StringNodeBase {
 }
 export interface StringConstantNode extends StringNodeBase {
   operation: "sconst"
-  value: string
+  value: string | undefined
 }
 export interface StringPriorityNode extends StringNodeBase {
   operation: "prio"
+}
+export interface StringMatchStringNode extends StringNodeBase {
+  operation: "smatch"
 }
 export interface StringReadNode extends StringNodeBase {
   operation: "sread"

@@ -1,8 +1,8 @@
 import { computeUIData, dataObjForArtifact, dataObjForCharacter, dataObjForWeapon } from "./api";
-import { data as sucroseData } from "../Data/Characters/Sucrose/index_WR"
+import { data as sucroseData, dmgFormulas } from "../Data/Characters/Sucrose/index_WR"
 import { data as moonglowData } from "../Data/Weapons/Catalyst/EverlastingMoonglow/index_WR"
 import artifact from "../Data/Artifacts/index_WR"
-import { common } from "./index";
+import { common, input } from "./index";
 import { constant } from "./internal";
 import { randomizeArtifact } from "../Util/ArtifactUtil";
 import { validateArtifact } from "../Database/validation";
@@ -43,6 +43,11 @@ const merged2 = mergeData(merged1, artData, weaponData)
 describe("API", () => {
   test("none", async () => {
     const art = validateArtifact(await randomizeArtifact(), "asdf").artifact
-    const computed = computeUIData([charData, sucroseData, weaponData, moonglowData, common, artifact.EmblemOfSeveredFate.data, { art: { EmblemOfSeveredFate: constant(4) } }, dataObjForArtifact(art, 0)])
+    const computed = computeUIData([
+      common, charData, sucroseData, weaponData, moonglowData,
+      artifact.EmblemOfSeveredFate.data,
+      { art: { EmblemOfSeveredFate: constant(4) } }, dataObjForArtifact(art, 0)
+    ])
+    console.log(computed.get(dmgFormulas.normal[0]))
   })
 })

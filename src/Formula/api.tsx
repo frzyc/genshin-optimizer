@@ -20,9 +20,15 @@ const charCurves = Object.fromEntries(Object.entries(_charCurves).map(([key, val
 const weaponCurves = Object.fromEntries(Object.entries(_weaponCurves).map(([key, value]) => [key, [0, ...Object.values(value)]]))
 
 function dmgNode(base: MainStatKey, lvlMultiplier: number[], move: "normal" | "charged" | "plunging" | "skill" | "burst", additional: Data = {}): Node {
+  let talentType: "auto" | "skill" | "burst"
+  switch (move) {
+    case "normal": case "charged": case "plunging": talentType = "auto"; break
+    case "skill": talentType = "skill"; break
+    case "burst": talentType = "burst"; break
+  }
   return data(input.hit.dmg, [{
     hit: {
-      base: prod(input.total[base], subscript(input.lvl, lvlMultiplier)),
+      base: prod(input.total[base], subscript(input.talent.total[talentType], lvlMultiplier, { key: '_' })),
       move: stringConst(move), // TODO: element ?: T, reaction ?: T, critType ?: T
     },
   }, additional])
