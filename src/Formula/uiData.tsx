@@ -17,6 +17,7 @@ export interface NodeDisplay {
   namePrefix?: string
   key?: string
   value: number
+  isEmpty: boolean
   unit: "%" | "flat"
   variant?: ElementKeyWithPhy | "success"
   formula?: Displayable
@@ -292,6 +293,7 @@ function computeNodeDisplay(node: ContextNodeDisplay, info: Info | undefined): N
   const { key, namePrefix } = info ?? {}
   return {
     key, value, variant, namePrefix,
+    isEmpty: false,
     unit: (key && KeyMap.unit(key)) || "flat",
     formula, formulas: [...((pivot && assignment) ? [assignment] : []), ...dependencies]
   }

@@ -3,17 +3,13 @@ import { ICachedArtifact, MainStatKey, SubstatKey } from "../Types/artifact";
 import { ICachedCharacter } from "../Types/character";
 import { allElementsWithPhy, ArtifactSetKey, CharacterKey, ElementKey, WeaponKey, WeaponTypeKey } from "../Types/consts";
 import { ICachedWeapon } from "../Types/weapon";
-import { crawlObject, objectFromKeyMap } from "../Util/Util";
+import { objectFromKeyMap } from "../Util/Util";
 import _weaponCurves from "../Weapon/expCurve_gen.json";
 import { input } from "./index";
 import { constant } from "./internal";
 import { Data, Node, ReadNode } from "./type";
 import { NodeDisplay, UIData, valueString } from "./uiData";
 import { data, percent, prod, stringConst, subscript, sum } from "./utils";
-
-const readNodeArrays: ReadNode[] = []
-
-crawlObject(input, [], (x: any) => x.operation, (x: any) => readNodeArrays.push(x))
 
 // TODO: Remove this conversion after changing the file format
 const charCurves = Object.fromEntries(Object.entries(_charCurves).map(([key, value]) => [key, [0, ...Object.values(value)]]))
