@@ -2,7 +2,7 @@ import KeyMap from "../KeyMap"
 import { ElementKeyWithPhy } from "../Types/consts"
 import { assertUnreachable, crawlObject, layeredAssignment, objPathValue } from "../Util/Util"
 import { allOperations } from "./optimization"
-import { ComputeNode, ConstantNode, Data, DataNode, Info, LookupNode, Node, ReadNode, StringMatchNode, StringNode, SubscriptNode } from "./type"
+import { ComputeNode, Data, DataNode, Info, LookupNode, Node, ReadNode, StringMatchNode, StringNode, SubscriptNode } from "./type"
 
 const shouldWrap = true
 
@@ -14,6 +14,8 @@ export function valueString(value: number, unit: "%" | "flat", fixed = -1): stri
   return unit === "%" ? `${(value * 100).toFixed(fixed)}%` : value.toFixed(fixed)
 }
 export interface NodeDisplay {
+  /** Leave this here to make sure one can use `crawlObject` on hierarchy of `NodeDisplay` */
+  operation: true
   namePrefix?: string
   key?: string
   value: number
@@ -310,6 +312,7 @@ function computeNodeDisplay(node: ContextNodeDisplay, info: Info | undefined): N
   const { dependencies, value, variant, formula, pivot, assignment, empty } = node
   const { key, namePrefix } = info ?? {}
   return {
+    operation: true,
     key, value, variant, namePrefix,
     isEmpty: empty,
     unit: (key && KeyMap.unit(key)) || "flat",
