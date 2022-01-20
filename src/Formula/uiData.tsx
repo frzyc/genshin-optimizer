@@ -40,6 +40,10 @@ export class UIData {
     this.data = data
   }
 
+  /**
+   * Get display objects of all nodes in `display` namespace,
+   * removing entries where `UIData.get(node).isEmpty` is `true`
+   */
   getDisplay(): any {
     if (this.display) return this.display
     this.display = {}
@@ -54,6 +58,12 @@ export class UIData {
     return this.display
   }
 
+  /**
+   * Get a display objet for a particular `node`.
+   *
+   * **Caution**
+   * If `result.isEmpty` is true, the result won't appear in `getDisplay`
+   */
   get(node: Node): NodeDisplay {
     const old = this.processed.get(node)
     if (old) return old
