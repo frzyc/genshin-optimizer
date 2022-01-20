@@ -44,6 +44,7 @@ describe("API", () => {
   test("none", async () => {
     const art = validateArtifact(await randomizeArtifact(), "asdf").artifact
     const computed = computeUIData([
+      // ...(dmgFormulas.normal[0] as DataNode).data,
       common, charData, sucroseData, weaponData, moonglowData,
       artifact.EmblemOfSeveredFate.data,
       { art: { EmblemOfSeveredFate: constant(4) } }, dataObjForArtifact(art, 0)

@@ -157,51 +157,48 @@ export function deduplicate(formulas: Node[]): Node[] {
 function applyRead(formulas: Node[], topLevelData: Data[], bottomUpMap = (formula: Node, _orig: Node) => formula): Node[] {
   const dataFromId = [topLevelData], nextIdsFromCurrentIds = [new Map<Data[], number>()]
 
-  function extractData(formula: Node, contextId: number): [Node, number] {
-    if (formula.operation !== "data") return [formula, contextId]
-
-    const { data, operands: [baseFormula] } = formula
-    const nextIds = nextIdsFromCurrentIds[contextId]
-    if (nextIds.has(data)) return extractData(baseFormula, nextIds.get(data)!)
-
-    const nextId = dataFromId.length
-    nextIds.set(data, nextId)
-    dataFromId.push([...data, ...dataFromId[contextId]])
-    nextIdsFromCurrentIds.push(new Map())
-
-    return extractData(baseFormula, nextId)
-  }
-
-  return mapContextualFormulas(formulas, (formula, contextId) => {
+  function extract(formula: Node, contextId: number): [Node, number] {
     switch (formula.operation) {
+      case "data": {
+        const { data, operands: [baseFormula] } = formula
+        const nextIds = nextIdsFromCurrentIds[contextId]
+        if (nextIds.has(data)) return extract(baseFormula, nextIds.get(data)!)
+
+        const nextId = dataFromId.length
+        nextIds.set(data, nextId)
+        dataFromId.push([...data, ...dataFromId[contextId]])
+        nextIdsFromCurrentIds.push(new Map())
+
+        return extract(baseFormula, nextId)
+      }
       case "read": {
-        const data = dataFromId[contextId]
-        const { accumulation, suffix } = formula
-        const key = suffix ? [...formula.key, resolveStringNode(suffix, data)!] : formula.key
-        const operands = data?.flatMap(context => {
-          const formula = resolve(context, key) as Node
-          return formula ? [formula] : []
-        })
+        const data = dataFromId[contextId], { key, accumulation } = formula
+        const operands = data?.map(context => resolve(context, key)!).filter(x => x)
 
         if (operands.length === 0)
-          return extractData(formula, contextId)
+          return [formula, contextId]
         if (accumulation === "unique")
-          return extractData({ ...formula, ...(operands[0] as any) }, contextId)
-        return extractData({ ...formula, operation: accumulation, operands }, contextId)
+          return extract({ ...formula, ...(operands[0] as any) }, contextId)
+        return [{ ...formula, operation: accumulation, operands }, contextId]
       }
       case "match": case "unmatch": {
         const string1 = resolveStringNode(formula.string1, dataFromId[contextId])
         const string2 = typeof formula.string2 === "string" ? formula.string2 : resolveStringNode(formula.string2, dataFromId[contextId])
 
-        if ((string1 === string2) === (formula.operation === "match")) {
-          return [formula.operands[0], contextId]
-        } else {
-          return [constant(0), contextId]
-        }
+        if ((string1 === string2) === (formula.operation === "match"))
+          return extract(formula.operands[0], contextId)
+        else return [constant(0), contextId]
+      }
+      case "lookup": {
+        const string = resolveStringNode(formula.string, dataFromId[contextId]);
+        const selected = formula.table[string!] ?? formula.operands[0] ?? constant(NaN)
+        return extract(selected, contextId)
       }
     }
-    return extractData(formula, contextId)
-  }, bottomUpMap)
+    return [formula, contextId]
+  }
+
+  return mapContextualFormulas(formulas, extract, bottomUpMap)
 }
 
 /**
@@ -272,7 +269,7 @@ export function constantFold(formulas: Node[], topLevelData: Data[] = [], should
         break
       case "const": break
       case "match": case "unmatch":
-      case "data": throw new Error("Unreachable")
+      case "data": case "lookup": throw new Error("Unreachable")
       default: assertUnreachable(operation) // Exhaustive switch
     }
     if (result !== formula) result = { ...formula, ...result }
@@ -285,10 +282,7 @@ function resolveStringNode(node: StringNode, data: Data[]): string | undefined {
   switch (operation) {
     case "sconst": return node.value
     case "sread": {
-      const { suffix } = node, key = [...node.key]
-      if (suffix)
-        key.push(resolveStringNode(suffix, data) ?? "")
-      const operands = data.flatMap(context => {
+      const key = node.key, operands = data.flatMap(context => {
         const formula = resolve(context, key) as StringNode | undefined
         return formula ? [formula] : []
       })
@@ -302,6 +296,10 @@ function resolveStringNode(node: StringNode, data: Data[]): string | undefined {
         if (node) return node
       }
       return undefined
+    }
+    case "smatch": {
+      const [string1, string2] = node.operands.map(x => resolveStringNode(x, data))
+      return resolveStringNode(string1 === string2 ? node.operands[2] : node.operands[3], data)
     }
     default: assertUnreachable(operation)
   }

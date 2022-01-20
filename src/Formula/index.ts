@@ -3,7 +3,7 @@ import { amplifyingReactions, transformativeReactions } from "../StatConstants"
 import { allArtifactSets, allElementsWithPhy, allHitModes } from "../Types/consts"
 import { objectFromKeyMap } from "../Util/Util"
 import { Node, ReadNode, StringNode, StringReadNode } from "./type"
-import { frac, prod, sum, min, max, read, setReadNodeKeys, stringRead, stringPrio, percent, stringMatch, stringConst } from "./utils"
+import { frac, prod, sum, min, max, read, setReadNodeKeys, stringRead, stringPrio, percent, stringMatch, stringConst, todo } from "./utils"
 
 const allMoves = ["normal", "charged", "plunging", "skill", "burst"] as const
 const unit = percent(1), naught = percent(0)
@@ -82,11 +82,6 @@ const rd = setReadNodeKeys({
 
 const { base, art, premod, total, hit, dmgBonus, enemy } = rd
 
-// Read nodes with suffixes. Can't add them in the declaration because it's self-referential
-dmgBonus.byMove.suffix = rd.hit.move
-dmgBonus.byElement.suffix = rd.hit.ele
-hit.critMulti.byHitMode.suffix = rd.hit.hitMode
-enemy.res.byElement.suffix = rd.hit.ele
 for (const element of allElementsWithPhy) {
   art[`${element}_dmg_` as const].info!.variant = element
   art[`${element}_res_` as const].info!.variant = element
@@ -122,7 +117,9 @@ const common = {
 
   dmgBonus: {
     total: sum(dmgBonus.common, dmgBonus.byMove, dmgBonus.byElement),
-    ...objectFromKeyMap(allElementsWithPhy, ele => total[`${ele}_dmg_`] as Node)
+    ...objectFromKeyMap(allElementsWithPhy, ele => total[`${ele}_dmg_`] as Node),
+    byMove: todo,
+    byElement: todo,
   },
 
   hit: {
@@ -137,6 +134,7 @@ const common = {
       hit: unit as Node,
       critHit: sum(unit, total.critDMG_),
       avgHit: sum(unit, prod(total.cappedCritRate, total.critDMG_)),
+      byHitMode: todo,
     },
     amp: {
       multi: prod(hit.amp.reactionMulti, hit.amp.base),
@@ -152,6 +150,9 @@ const common = {
   },
 
   enemy: {
+    res: {
+      byElement: todo,
+    },
     def: frac(sum(rd.lvl, 100), prod(sum(enemy.level, 100), sum(1, prod(-1, enemy.defRed))))
   },
 } as const

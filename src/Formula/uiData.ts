@@ -2,7 +2,7 @@ import KeyMap from "../KeyMap"
 import { ElementKeyWithPhy } from "../Types/consts"
 import { assertUnreachable, objPathValue } from "../Util/Util"
 import { allOperations } from "./optimization"
-import { ComputeNode, ConstantNode, Data, DataNode, Info, Node, ReadNode, StringMatchNode, StringNode, SubscriptNode } from "./type"
+import { ComputeNode, ConstantNode, Data, DataNode, Info, LookupNode, Node, ReadNode, StringMatchNode, StringNode, SubscriptNode } from "./type"
 
 const shouldWrap = true
 
@@ -56,18 +56,10 @@ export class UIData {
     let result: ContextString
     switch (operation) {
       case "sconst": result = { value: node.value }; break
+      case "sread": result = this.readFirstString(node.key) ?? {}; break
       case "prio": {
         const operands = node.operands.map(x => this.getStr(x)).filter(x => x.value)
         result = { value: operands[0]?.value, }
-        break
-      }
-      case "sread": {
-        let key = node.key
-        if (node.suffix) {
-          const suffix = this.getStr(node.suffix)
-          key = [...key as string[], suffix.value ?? ""]
-        }
-        result = this.readFirstString(key) ?? {}
         break
       }
       case "smatch": {
@@ -103,6 +95,7 @@ export class UIData {
       case "read": result = this._read(node, visited); break
       case "data": result = this._data(node, visited); break
       case "match": case "unmatch": result = this._match(node, visited); break
+      case "lookup": result = this._lookup(node, visited); break
       default: assertUnreachable(operation)
     }
 
@@ -119,13 +112,7 @@ export class UIData {
   }
 
   private _read(node: ReadNode, visited: Set<Node> | undefined): ContextNodeDisplay {
-    let key = node.key
-    if (node.suffix) {
-      const suffix = this.getStr(node.suffix)
-      key = [...key as string[], suffix.value ?? ""]
-    }
-
-    const nodes = this.readAll(key, visited)
+    const key = node.key, nodes = this.readAll(key, visited)
     let result: ContextNodeDisplay
 
     if (node.accumulation === "unique")
@@ -135,6 +122,14 @@ export class UIData {
     else
       result = this._accumulate(node.accumulation, nodes)
     return mergeInfo(result, node.info)
+  }
+  private _lookup(node: LookupNode, visited: Set<Node> | undefined): ContextNodeDisplay {
+    const key = this.getStr(node.string).value
+    const selected = node.table[key!] ?? node.operands[0]
+    if (!selected) throw { error: "Lookup fail", node }
+
+    // TODO: Wrap info here instead
+    return mergeInfo(this.computeNode(node, visited), node.info)
   }
   private _match(node: StringMatchNode, visited: Set<Node> | undefined): ContextNodeDisplay {
     const string1 = this.getStr(node.string1).value

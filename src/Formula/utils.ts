@@ -2,7 +2,7 @@
 import { objectFromKeyMap } from "../Util/Util"
 import type { Data, DataNode, Info, Node, ReadNode, StringNode, StringReadNode } from "./type"
 
-export const todo: Node = { operation: "const", value: NaN, operands: [] }
+export const todo: Node = { operation: "const", value: NaN, operands: [], info: { key: "TODO" } }
 
 /** `value` in percentage. The value is written as non-percentage, e.g., use `percent(1)` for 100% */
 export function percent(value: number, info?: Info): Node {
@@ -13,11 +13,17 @@ export function info(node: Node, info: Info): Node {
   node.info = { ...node.info, ...info }
   return node
 }
+/** `string1` === `string2` ? `match` : 0 */
 export function match(string1: StringNode, string2: string | undefined | StringNode, node: Node | number, info?: Info): Node {
   return { operation: "match", operands: intoOperands([node]), string1, string2: intoString(string2), info }
 }
+/** `string1` !== `string2` ? `match` : 0 */
 export function unmatch(string1: StringNode, string2: string | undefined | StringNode, node: Node | number, info?: Info): Node {
   return { operation: "unmatch", operands: intoOperands([node]), string1, string2: intoString(string2), info }
+}
+/** `table[string] ?? defaultNode` */
+export function lookup(string: StringNode, table: Dict<string, Node>, defaultNode?: Node, info?: Info): Node {
+  return { operation: "lookup", operands: defaultNode ? [defaultNode] : [], string, table, info }
 }
 
 /** min( x1, x2, ... ) */
@@ -66,11 +72,11 @@ export function setReadNodeKeys<T extends NodeList>(nodeList: T, prefix: string[
       setReadNodeKeys(nodeList[key], [...prefix, key])) as any
   }
 }
-export function customRead(key: string[], info?: Info, suffix?: StringNode): ReadNode {
-  return { operation: "read", operands: [], key, accumulation: "unique", info, suffix }
+export function customRead(key: string[], info?: Info): ReadNode {
+  return { operation: "read", operands: [], key, accumulation: "unique", info }
 }
-export function read(accumulation: ReadNode["accumulation"], info?: Info, suffix?: StringNode): ReadNode {
-  return { operation: "read", operands: [], key: [], accumulation, info, suffix }
+export function read(accumulation: ReadNode["accumulation"], info?: Info): ReadNode {
+  return { operation: "read", operands: [], key: [], accumulation, info }
 }
 export function data(baseFormula: Node, contexts: Data[]): DataNode {
   return { operation: "data", operands: [baseFormula], data: contexts }
@@ -79,11 +85,11 @@ export function data(baseFormula: Node, contexts: Data[]): DataNode {
 export function stringConst(value: string | undefined): StringNode {
   return intoString(value)
 }
-export function customStringRead(key: string[], suffix?: StringNode): StringReadNode {
-  return { operation: "sread", operands: [], key, suffix }
+export function customStringRead(key: string[]): StringReadNode {
+  return { operation: "sread", operands: [], key }
 }
-export function stringRead(suffix?: StringNode): StringReadNode {
-  return { operation: "sread", operands: [], key: [], suffix }
+export function stringRead(): StringReadNode {
+  return { operation: "sread", operands: [], key: [] }
 }
 export function stringPrio(...operands: (string | StringNode)[]): StringNode {
   return { operation: "prio", operands: operands.map(intoString) }

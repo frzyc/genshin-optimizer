@@ -9,7 +9,7 @@ type Stat = MainStatKey | SubstatKey
 export type Node =
   ConstantNode | ComputeNode | StringMatchNode |
   SubscriptNode |
-  ReadNode | DataNode
+  ReadNode | DataNode | LookupNode
 
 export type StringNode =
   StringConstantNode | StringPriorityNode |
@@ -42,11 +42,15 @@ export interface StringMatchNode extends NodeBase {
   string1: StringNode
   string2: StringNode
 }
+export interface LookupNode extends NodeBase {
+  operation: "lookup"
+  string: StringNode
+  table: Dict<string | undefined, Node>
+}
 
 export interface ReadNode extends NodeBase {
   operation: "read"
   key: Path<NodeData, Node | undefined>
-  suffix?: StringNode
   accumulation: CommutativeMonoidOperation | "unique"
 }
 export interface DataNode extends NodeBase {
@@ -70,7 +74,6 @@ export interface StringMatchStringNode extends StringNodeBase {
 export interface StringReadNode extends StringNodeBase {
   operation: "sread"
   key: Path<StringFormulaTemplate, StringNode>
-  suffix?: StringNode
 
   accumulation?: never
 }
