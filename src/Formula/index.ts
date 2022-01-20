@@ -1,3 +1,4 @@
+import { amplifyingReactions, transformativeReactions } from "../StatConstants"
 import { allMainStatKeys, allSubstats } from "../Types/artifact_WR"
 import { allArtifactSets, allElementsWithPhy, allHitModes, allSlotKeys } from "../Types/consts"
 import { objectFromKeyMap } from "../Util/Util"
@@ -50,7 +51,16 @@ const rd = setReadNodeKeys({
   dmgBonus: {
     total: read("unique", { key: "dmg_", namePrefix: "Total" }), common: read("add", { key: "dmg_", pivot }),
     ...objectFromKeyMap(allMoves, move => read("add", { key: `${move}_dmg_`, pivot })),
-    ...objectFromKeyMap(allElementsWithPhy, ele => read("unique", { key: `${ele}_dmg_`, pivot })),
+    ...objectFromKeyMap(allElementsWithPhy, ele => read("add", { key: `${ele}_dmg_`, pivot })),
+    ...objectFromKeyMap(Object.keys(transformativeReactions), reaction => read("add", { key: `${reaction}_dmg_`, pivot })),
+    ...objectFromKeyMap(Object.keys(amplifyingReactions), reaction => read("add", { key: `${reaction}_dmg_`, pivot })),
+  },
+  critBonus: {
+    // TODO: Add to total or premod
+    ...objectFromKeyMap(allMoves, move => read("add", { key: `${move}_critRate_`, pivot }))
+  },
+  res: {
+    ...objectFromKeyMap(allElementsWithPhy, ele => read("add", { key: `${ele}_res_` })),
   },
 
   hit: {
@@ -76,16 +86,20 @@ const rd = setReadNodeKeys({
     charged: objectFromKeyMap(["dmg", "spinning", "final", "hit", "full"] as const, _ => read("unique")),
     plunging: objectFromKeyMap(["dmg", "low", "high"] as const, _ => read("unique")),
   },
+
+  misc: objectFromKeyMap([
+    "stamina", "incHeal_", "shield_", "cdRed_", "moveSPD_", "atkSPD_", "weakspotDMG_"
+  ] as const, key => read("add", { key }))
 })
 
 const { base, art, premod, total, hit, dmgBonus, enemy } = rd
 
+// Note:
+// We may need to annotate variants on other values as well
+// However, since the variants propagate to parent nodes
+// We only need to annotate values at the very leafs of the
+// computation.
 for (const ele of allElementsWithPhy) {
-  // Note:
-  // We may need to annotate variants on other values as well
-  // However, since the variants propagate to parent nodes
-  // We only need to annotate values at the very leafs of the
-  // computation.
   art[`${ele}_dmg_` as const].info!.variant = ele
 }
 
@@ -115,7 +129,7 @@ const common = {
       lookup(hit.move, objectFromKeyMap(allMoves, move => dmgBonus[move])),
       lookup(hit.ele, objectFromKeyMap(allElementsWithPhy, ele => dmgBonus[ele])),
     ),
-    ...objectFromKeyMap(allElementsWithPhy, ele => total[`${ele}_dmg_`] as Node)
+    ...objectFromKeyMap(allElementsWithPhy, ele => total[`${ele}_dmg_`] as Node),
   },
 
   hit: {

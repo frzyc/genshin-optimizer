@@ -16,8 +16,9 @@ import { input } from "../../Formula/index";
 import { ReadNode } from "../../Formula/type";
 import KeyMap, { allAmplifyingReactionsDmgKey, allEleDmgKeys, allEleEnemyResKeys, allEleResKeys, allTransformativeReactionsDmgKeys } from "../../KeyMap";
 import useCharacterReducer from "../../ReactHooks/useCharacterReducer";
+import { amplifyingReactions, transformativeReactions } from "../../StatConstants";
 import { ICachedCharacter, TalentSheetElementKey } from "../../Types/character";
-import { ElementKey } from "../../Types/consts";
+import { allElementsWithPhy, ElementKey } from "../../Types/consts";
 import WeaponDisplayCard from "../../Weapon/WeaponDisplayCard";
 import CharacterSheet from "../CharacterSheet_WR";
 import StatInput from "../StatInput";
@@ -111,24 +112,26 @@ const mainSubKeys = ["eleMas", "critRate_", "critDMG_", "enerRech_", "heal_"] as
 const mainReadNodes = [...mainBaseKeys, ...mainSubKeys].map(k => input.total[k])
 const mainEditKeys = ["atk_", "atk", "hp_", "hp", "def_", "def", ...mainSubKeys] as const
 
-const otherStatKeys = [...allEleDmgKeys, ...allEleResKeys, "stamina", "incHeal_", "shield_", "cdRed_"] as const;
-
-const otherStatReadNodes = otherStatKeys.map(k => input.total[k])
-const miscStatkeys = [
-  "dmg_",
-  ...allEleEnemyResKeys,
-  "normal_dmg_", "normal_critRate_",
-  "charged_dmg_", "charged_critRate_",
-  "plunging_dmg_", "plunging_critRate_",
-  "skill_dmg_", "skill_critRate_",
-  "burst_dmg_", "burst_critRate_",
-  ...allTransformativeReactionsDmgKeys,
-  ...allAmplifyingReactionsDmgKey,
-  "moveSPD_", "atkSPD_",
-  "weakspotDMG_",
+const otherStatReadNodes = [
+  ...allElementsWithPhy.map(x => input.dmgBonus[x]),
+  ...allElementsWithPhy.map(x => input.res[x]),
+  ...["stamina", "incHeal_", "shield_", "cdRed_"].map(x => input.misc[x])
 ]
+const otherStatKeys = otherStatReadNodes.map(x => x.info.key)
 
-const miscStatReadNodes = miscStatkeys.map(k => input.total[k])
+const miscStatReadNodes = [
+  input.dmgBonus.common,
+  ...allElementsWithPhy.map(x => input.enemy.res[x]),
+  input.dmgBonus.normal, input.critBonus.normal,
+  input.dmgBonus.charged, input.critBonus.charged,
+  input.dmgBonus.plunging, input.critBonus.plunging,
+  input.dmgBonus.skill, input.critBonus.skill,
+  input.dmgBonus.burst, input.critBonus.burst,
+  ...Object.keys(transformativeReactions).map(x => input.dmgBonus[x]),
+  ...Object.keys(amplifyingReactions).map(x => input.dmgBonus[x]),
+  ...["moveSPD_", "atkSPD_", "weakspotDMG_"].map(x => input.misc[x])
+]
+const miscStatkeys = miscStatReadNodes.map(x => x.info.key)
 
 const statBreakpoint = {
   xs: 12, sm: 6, md: 6, lg: 4,
