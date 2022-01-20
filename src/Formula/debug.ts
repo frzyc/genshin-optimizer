@@ -26,6 +26,8 @@ export function formulaString(formula: Node): string {
       return `Match${formulaString(formula.operands[0])}`
     case "unmatch":
       return `Unmatch${formulaString(formula.operands[0])}`
+    case "lookup":
+      return `Lookup${formulaString(formula.operands[0])}`
     default: assertUnreachable(operation)
   }
 }
