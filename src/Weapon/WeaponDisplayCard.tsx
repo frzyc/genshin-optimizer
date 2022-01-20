@@ -1,9 +1,8 @@
 import { Lock, LockOpen, SwapHoriz } from "@mui/icons-material"
-import { Box, Button, ButtonGroup, CardContent, Divider, Grid, MenuItem, Typography } from "@mui/material"
+import { Box, Button, ButtonGroup, CardContent, Divider, Grid, ListItem, MenuItem, Typography } from "@mui/material"
 import { useCallback, useContext, useMemo, useState } from "react"
 import Assets from "../Assets/Assets"
-import { buildContext } from "../Build/Build"
-import CharacterSheet from "../Character/CharacterSheet"
+import CharacterSheet from "../Character/CharacterSheet_WR"
 import CardDark from "../Components/Card/CardDark"
 import CardLight from "../Components/Card/CardLight"
 import CharacterDropdownButton from "../Components/Character/CharacterDropdownButton"
@@ -12,9 +11,9 @@ import ColorText from "../Components/ColoredText"
 import CustomNumberInput, { CustomNumberInputButtonGroupWrapper } from "../Components/CustomNumberInput"
 import DocumentDisplay from "../Components/DocumentDisplay"
 import DropdownButton from "../Components/DropdownMenu/DropdownButton"
+import { FieldDisplayList, NodeFieldDisplay } from "../Components/FieldDisplay"
 import ImgIcon from "../Components/Image/ImgIcon"
 import ModalWrapper from "../Components/ModalWrapper"
-import NodeDisplayComponent, { NodeDisplayList } from "../Components/NodeDisplayComponent"
 import SqBadge from "../Components/SqBadge"
 import { Stars } from "../Components/StarDisplay"
 import WeaponSelectionModal from "../Components/Weapon/WeaponSelectionModal"
@@ -24,35 +23,26 @@ import { input } from "../Formula/index"
 import { computeUIData, dataObjForWeapon } from "../Formula/api"
 import usePromise from "../ReactHooks/usePromise"
 import useWeapon from "../ReactHooks/useWeapon"
-import { ICachedCharacter } from "../Types/character"
 import { CharacterKey } from "../Types/consts"
-import { ICalculatedStats } from "../Types/stats"
 import { ICachedWeapon } from "../Types/weapon"
 import { clamp } from "../Util/Util"
 import WeaponCard from "./WeaponCard"
 import WeaponSheet from "./WeaponSheet_WR"
+import { DataContext } from "../DataContext"
 
 type WeaponStatsEditorCardProps = {
   weaponId: string
-  charData?: {
-    character: ICachedCharacter,
-    characterSheet: CharacterSheet,
-    equippedBuild?: ICalculatedStats
-    newBuild?: ICalculatedStats
-    characterDispatch: (any) => void
-  }
   footer?: boolean
   onClose?: () => void
 }
 export default function WeaponDisplayCard({
   weaponId: propWeaponId,
-  charData,
   footer = false,
   onClose
 }: WeaponStatsEditorCardProps) {
-  const database = useContext(DatabaseContext)
+  const { data } = useContext(DataContext)
 
-  const buildContextObj = useContext(buildContext)
+  const database = useContext(DatabaseContext)
   const weapon = useWeapon(propWeaponId)
   const { key = "", level, refinement = 0, ascension = 0, lock, location = "", id } = weapon ?? {}
   const weaponSheet = usePromise(WeaponSheet.get(key), [key])
@@ -74,8 +64,6 @@ export default function WeaponDisplayCard({
     else weaponDispatch({ ascension: lowerAscension })
   }, [weaponDispatch, ascension, level])
 
-  const build = { ...(charData ? (charData.newBuild ?? charData.equippedBuild) : { weapon: { refineIndex: refinement - 1, level, ascension } }) } as any
-
   const characterSheet = usePromise(location ? CharacterSheet.get(location) : undefined, [location])
   const weaponFilter = characterSheet ? (ws) => ws.weaponType === characterSheet.weaponTypeKey : undefined
   const initialWeaponFilter = characterSheet && characterSheet.weaponTypeKey
@@ -89,7 +77,6 @@ export default function WeaponDisplayCard({
   const img = ascension < 2 ? weaponSheet?.img : weaponSheet?.imgAwaken
 
   const weaponUIData = useMemo(() => weaponSheet && weapon && computeUIData([weaponSheet.data, dataObjForWeapon(weapon)]), [weaponSheet, weapon])
-
   return <CardLight>
     <CardContent sx={{ py: 1 }}>
       <Grid container spacing={1}>
@@ -139,8 +126,8 @@ export default function WeaponDisplayCard({
         {!!onClose && <Grid item  >
           <CloseButton onClick={onClose} />
         </Grid>}
-        {!!charData && database === localDatabase && <Grid item >
-          <SwapBtn weaponTypeKey={weaponTypeKey} onChangeId={id => database.setWeaponLocation(id, charData.character.key)} />
+        {!!data && database === localDatabase && <Grid item >
+          <SwapBtn weaponTypeKey={weaponTypeKey} onChangeId={id => database.setWeaponLocation(id, data.getStr(input.charKey).value as CharacterKey)} />
         </Grid>}
       </Grid>
     </CardContent>
@@ -156,25 +143,18 @@ export default function WeaponDisplayCard({
           <Typography><Stars stars={weaponSheet.rarity} /></Typography>
           <Typography variant="subtitle1">{weaponSheet.passiveName}</Typography>
           <Typography gutterBottom>{weaponSheet.passiveName && weaponSheet.passiveDescription(weaponUIData.get(input.weapon.refineIndex).value)}</Typography>
-          {build && <buildContext.Provider value={charData ? buildContextObj : { equippedBuild: build, newBuild: undefined, compareBuild: false, setCompareBuild: undefined }}>
-            <Box display="flex" flexDirection="column" gap={1}>
-              <CardDark >
-                <CardContent>
-                  <Typography>Main Stats</Typography>
-                </CardContent>
-                <NodeDisplayList>
-                  {[input.weapon.main, input.weapon.sub, input.weapon.sub2]
-                    .map((node, i) => <NodeDisplayComponent key={i} node={weaponUIData.get(node)} />)}
-                </NodeDisplayList>
-              </CardDark>
-            </Box>
-          </buildContext.Provider>}
-          {/* TODO: Character data */}
-          {/* {charData && weaponSheet.document ? (() => {
-            const { equippedBuild, newBuild } = charData
-            const characterKey = (newBuild ? newBuild : equippedBuild)?.characterKey as CharacterKey | undefined
-            return !!characterKey && < DocumentDisplay sections={weaponSheet.document} characterKey={characterKey} />
-          })() : null} */}
+          <Box display="flex" flexDirection="column" gap={1}>
+            <CardDark >
+              <CardContent>
+                <Typography>Main Stats</Typography>
+              </CardContent>
+              <FieldDisplayList>
+                {[input.weapon.main, input.weapon.sub, input.weapon.sub2]
+                  .map((node, i) => <ListItem key={i}><NodeFieldDisplay node={weaponUIData.get(node)} /></ListItem>)}
+              </FieldDisplayList>
+            </CardDark>
+            {data && weaponSheet.document && < DocumentDisplay sections={weaponSheet.document} characterKey={data.getStr(input.charKey).value as CharacterKey} />}
+          </Box>
         </Box>
       </Box>}
     </CardContent>

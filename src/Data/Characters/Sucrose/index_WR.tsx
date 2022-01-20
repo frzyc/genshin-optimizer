@@ -150,7 +150,7 @@ const sheet: ICharacterSheet = {
           text: tr("skill.description"),
           fields: [{
             text: "Skill DMG",
-            formula: dmgFormulas.skill.press,
+            node: dmgFormulas.skill.press,
             variant: stats => getTalentStatKeyVariant("skill", stats),
           }, {
             text: "CD",
@@ -165,7 +165,7 @@ const sheet: ICharacterSheet = {
           text: tr("burst.description"),
           fields: [{
             text: "DoT",
-            formula: dmgFormulas.burst.dot,
+            node: dmgFormulas.burst.dot,
             variant: stats => getTalentStatKeyVariant("burst", stats),
           }, {
             text: "Duration",
@@ -240,7 +240,7 @@ const sheet: ICharacterSheet = {
             name: "When Skill hits opponent",
             fields: [{
               text: "Elemental Mastery Bonus",
-              formula: input.total.eleMas // TODO: Find the node for this one
+              node: input.total.eleMas // TODO: Find the node for this one
             }, {
               text: sgt("duration"),
               value: 8,

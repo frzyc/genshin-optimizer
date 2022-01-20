@@ -1,13 +1,11 @@
 import ImgIcon from "../Components/Image/ImgIcon";
+import { ascensionMaxLevel } from "../Data/LevelData";
 import { Data } from "../Formula/type";
 import { ICharacterSheet, TalentSheet, TalentSheetElementKey } from "../Types/character_WR";
 import { CharacterKey, ElementKey } from "../Types/consts";
 import { objectMap } from "../Util/Util";
-
-export const charImport = import('../Data/Characters/index_WR')
-
-// TODO: remove typecasting
-const characterSheets = charImport.then(imp => objectMap(imp.default, char => new CharacterSheet(char.default, char.data))) as Promise<Record<CharacterKey, CharacterSheet>>
+// TODO: remove typecasting once all sheets populated
+const characterSheets = import('../Data/Characters/index_WR').then(imp => objectMap(imp.default, char => new CharacterSheet(char.default, char.data))) as Promise<Record<CharacterKey, CharacterSheet>>
 
 export default class CharacterSheet {
   sheet: ICharacterSheet;
@@ -54,4 +52,7 @@ export default class CharacterSheet {
     else return this.sheet.talents[eleKey]
   }
   getTalentOfKey = (talentKey: TalentSheetElementKey, eleKey: ElementKey = "anemo") => this.getTalent(eleKey)?.sheets[talentKey]
+
+  static getLevelString = (level: number, ascension: number): string =>
+    `${level}/${ascensionMaxLevel[ascension]}`
 }

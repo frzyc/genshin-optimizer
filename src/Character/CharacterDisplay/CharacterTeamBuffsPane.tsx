@@ -75,9 +75,9 @@ function ResonanceDisplay({ build, characterKey }: { build: ICalculatedStats, ch
               <CardContent>
                 {doc.description}
               </CardContent>
-              {doc.conditionals.map(cond =>
+              {/* {doc.conditionals.map(cond =>
                 <ConditionalDisplay key={cond.key} conditional={cond} stats={build} onChange={val => characterDispatch({ conditionalValues: val })} />
-              )}
+              )} */}
             </CardDark>
           </Grid>
         )}
@@ -110,19 +110,21 @@ function TeammateDisplay({ character, character: { key: characterKey, team }, sh
 function CharArtifactCondDisplay({ condCharStats }: { condCharStats: ICalculatedStats }) {
   const characterDispatch = useCharacterReducer(condCharStats.characterKey)
   return <Box >
-    {Object.entries(condCharStats.setToSlots).map(([artSetKey, slotkeys]) =>
+    {/* {Object.entries(condCharStats.setToSlots).map(([artSetKey, slotkeys]) =>
       Object.entries(Conditional.partyConditionals?.artifact?.[artSetKey] ?? {})
         .filter(([setNum, conds]) => parseInt(setNum) <= slotkeys.length)
         .flatMap(([setNum, conds]) => Object.entries(conds).map(([condKey, c]) =>
           <ConditionalDisplay key={c.key} conditional={c} stats={condCharStats} onChange={val => characterDispatch({ conditionalValues: val })} />
-        )))}
+        )))} */}
   </Box>
 }
 function CharWeaponCondDisplay({ condCharStats }: { condCharStats: ICalculatedStats }) {
   const characterDispatch = useCharacterReducer(condCharStats.characterKey)
-  return <Box >{Object.entries(Conditional.partyConditionals?.weapon?.[condCharStats.weapon.key] ?? {}).map(([condKey, cond]) =>
-    <ConditionalDisplay key={cond.key} conditional={cond} stats={condCharStats} onChange={val => characterDispatch({ conditionalValues: val })} />
-  )}</Box>
+  return <Box >
+    {/* {Object.entries(Conditional.partyConditionals?.weapon?.[condCharStats.weapon.key] ?? {}).map(([condKey, cond]) =>
+      <ConditionalDisplay key={cond.key} conditional={cond} stats={condCharStats} onChange={val => characterDispatch({ conditionalValues: val })} />
+    )} */}
+  </Box>
 }
 function CharTalentCondDisplay({ character, condCharStats, sheets }:
   { character: ICachedCharacter, condCharStats: ICalculatedStats, sheets: Sheets }) {
@@ -134,8 +136,8 @@ function CharTalentCondDisplay({ character, condCharStats, sheets }:
   const charConds = Object.entries(Conditional.partyConditionals?.character?.[condCharKeyHashed] ?? {}).filter(([cKey, conditional]) =>
     Conditional.canShow(conditional, condCharStats))
   return <CardContent sx={{ display: "flex", flexDirection: "column", gap: 1, pt: 0 }} >
-    {charConds.map(([condKey, cond]) =>
+    {/* {charConds.map(([condKey, cond]) =>
       <ConditionalDisplay key={condKey} conditional={cond} stats={condCharStats} onChange={val => characterDispatch({ conditionalValues: val })} />
-    )}
+    )} */}
   </CardContent>
 }

@@ -11,15 +11,15 @@ const data_gen = data_gen_json as WeaponData
 
 const hp_conv = [0.01, 0.015, 0.02, 0.025, 0.03]
 
-const normalDmgBonus = prod(subscript(input.weapon.refineIndex, hp_conv), input.premod.hp)
-normalDmgBonus.info = { key: "normal_dmg_inc" }
+const normalDmgInc = prod(subscript(input.weapon.refineIndex, hp_conv), input.premod.hp)
+normalDmgInc.info = { key: "normal_dmg_inc" }
 export const data = dataObjForWeaponSheet("EverlastingMoonglow", "catalyst",
   { base: data_gen.mainStat.base, lvlCurve: data_gen.mainStat.curve, asc: data_gen.ascension.map(x => x.addStats.atk ?? 0) },
   { stat: data_gen.subStat!.type, base: data_gen.subStat!.base, lvlCurve: data_gen.subStat!.curve, },
   { stat: "heal_", refinement: data_gen.addProps.map(x => x.heal_) as any },
   {
     hit: {
-      base: normalDmgBonus
+      base: normalDmgInc
     },
   }
 )
@@ -32,7 +32,7 @@ const weapon: IWeaponSheet = {
     fields: [
       {
         text: <Translate ns="weapon_EverlastingMoonglow" key18="name" />,
-        formula: normalDmgBonus,
+        node: normalDmgInc,
       }
     ],
   }],

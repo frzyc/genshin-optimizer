@@ -33,7 +33,7 @@ const artifact: IArtifactSheet = {
       document: [{
         fields: [{
           text: "Elemental Burst DMG",
-          formula: data.dmgBonus!.burst!,
+          node: data.dmgBonus!.burst!,
           fixed: 1,
           unit: "%"
         }]

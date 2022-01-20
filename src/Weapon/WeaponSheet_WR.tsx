@@ -4,10 +4,8 @@ import { Data } from '../Formula/type';
 import { WeaponKey } from '../Types/consts';
 import { ICachedWeapon, IWeaponSheet } from '../Types/weapon_WR';
 import { objectMap } from '../Util/Util';
-
-export const weaponImport = import('../Data/Weapons/index_WR')
-
-const weaponSheets = weaponImport.then(imp => objectMap(imp.default, (weapon, key) => new WeaponSheet(key, weapon.default, weapon.data))) as Promise<Record<WeaponKey, WeaponSheet>>
+// TODO: remove typecasting once all sheets populated
+const weaponSheets = import('../Data/Weapons/index_WR').then(imp => objectMap(imp.default, (weapon, key) => new WeaponSheet(key, weapon.default, weapon.data))) as Promise<Record<WeaponKey, WeaponSheet>>
 
 export default class WeaponSheet {
   readonly key: WeaponKey;

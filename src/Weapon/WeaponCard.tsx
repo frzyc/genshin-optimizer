@@ -18,7 +18,7 @@ import { input } from "../Formula/index"
 import { computeUIData, valueString, dataObjForWeapon, NodeDisplay } from "../Formula/api"
 import usePromise from "../ReactHooks/usePromise"
 import useWeapon from "../ReactHooks/useWeapon"
-import StatMap from "../StatMap"
+import KeyMap from "../KeyMap"
 import { CharacterKey } from "../Types/consts"
 import WeaponSheet from "./WeaponSheet_WR"
 
@@ -75,7 +75,7 @@ export default function WeaponCard({ weaponId, onClick, onEdit, onDelete, canEqu
             if (!node.key) return null
             const displayVal = valueString(node.value, node.unit, node.unit === "flat" ? 0 : undefined)
             return <Box key={node.key} sx={{ display: "flex" }}>
-              <Typography flexGrow={1}>{StatIcon[node.key]} {StatMap[node.key]}</Typography>
+              <Typography flexGrow={1}>{StatIcon[node.key]} {KeyMap.get(node.key)}</Typography>
               <Typography>{displayVal}</Typography>
             </Box>
           })}

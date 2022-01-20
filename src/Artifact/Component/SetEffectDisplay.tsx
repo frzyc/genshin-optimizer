@@ -1,4 +1,4 @@
-import { Box, CardContent, Typography } from "@mui/material"
+import { Box, CardContent, ListItem, Typography } from "@mui/material"
 import CardDark from "../../Components/Card/CardDark"
 import DocumentDisplay from "../../Components/DocumentDisplay"
 import FieldDisplay, { FieldDisplayList } from "../../Components/FieldDisplay"
@@ -32,9 +32,9 @@ export default function SetEffectDisplay({ setKey, setNumKey, equippedBuild, new
         <Typography><SqBadge color="success">{setNumKey}-Set</SqBadge> {setEffectText}</Typography>
       </CardContent>
       <FieldDisplayList sx={{ m: 0 }}>
-        {setStatsFields.map((field, i) => <FieldDisplay key={i} field={field} />)}
+        {setStatsFields.map((field, i) => <ListItem key={i}><FieldDisplay field={field} /></ListItem>)}
       </FieldDisplayList>
     </CardDark>
-    {document ? <DocumentDisplay sections={document} characterKey={stats.characterKey} skipConditionalEquipmentCheck={skipConditionalEquipmentCheck} /> : null}
+    {/* {document ? <DocumentDisplay sections={document} characterKey={stats.characterKey} skipConditionalEquipmentCheck={skipConditionalEquipmentCheck} /> : null} */}
   </Box>
 }

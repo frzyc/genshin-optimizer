@@ -48,6 +48,9 @@ export interface ICachedSubstat extends ISubstat {
   rolls: number[],
   efficiency: number,
 }
+/**
+ * @deprecated use values in KeyMap
+ */
 export type StatKey = MainStatKey | SubstatKey | ReactionDMGStatKey | MoveDMGStatKey | ElementalRESStatKey | ElementalEnemyRESStatKey | SpecializedStatKey
 
 type ElementalRESStatKey = `${ElementKey | "physical"}_res_`

@@ -16,10 +16,14 @@ import ImgIcon from '../Components/Image/ImgIcon';
 import { sgt } from '../Data/Characters/SheetUtil';
 import { ambiguousLevel, ascensionMaxLevel, milestoneLevels } from '../Data/LevelData';
 import { DatabaseContext } from '../Database/Database';
+import { DataContext } from '../DataContext';
+import { UIData } from '../Formula/api';
 import useCharacter from '../ReactHooks/useCharacter';
 import useCharacterReducer from '../ReactHooks/useCharacterReducer';
 import useCharSelectionCallback from '../ReactHooks/useCharSelectionCallback';
+import useCharUIData from '../ReactHooks/useCharUIData';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
+import usePromise from '../ReactHooks/usePromise';
 import useSheets from '../ReactHooks/useSheets';
 import { ICachedCharacter } from '../Types/character';
 import { CharacterKey } from '../Types/consts';
@@ -32,7 +36,7 @@ import CharacterArtifactPane from './CharacterDisplay/CharacterArtifactPane';
 import CharacterOverviewPane from './CharacterDisplay/CharacterOverviewPane';
 import CharacterTalentPane from './CharacterDisplay/CharacterTalentPane';
 import CharacterTeamBuffsPane from './CharacterDisplay/CharacterTeamBuffsPane';
-import CharacterSheet from './CharacterSheet';
+import CharacterSheet from './CharacterSheet_WR';
 import { initialCharacter } from './CharacterUtil';
 
 interface TabPanelProps {
@@ -66,27 +70,14 @@ type CharacterDisplayCardProps = {
   compareBuild?: boolean
 }
 export default function CharacterDisplayCard({ characterKey, footer, newBuild: propNewBuild, onClose, tabName, isFlex, compareBuild: propCompareBuild }: CharacterDisplayCardProps) {
-  const database = useContext(DatabaseContext)
   const [compareBuild, setCompareBuild] = useState(propCompareBuild ?? false)
-  const character = useCharacter(characterKey)
-  const [dbDirty, setDbDirty] = useForceUpdate()
+
+  const { data: charUIData, character, characterSheet, weapon, weaponSheet, artifacts, artifactSheetsData, database } = useCharUIData(characterKey)
 
   useEffect(() => {
     typeof propCompareBuild === "boolean" && setCompareBuild(propCompareBuild)
   }, [propCompareBuild, setCompareBuild])
 
-  const sheets = useSheets()
-  //follow updates from team
-  const [teammate1, teammate2, teammate3] = character?.team ?? []
-  useEffect(() =>
-    teammate1 ? database.followChar(teammate1, setDbDirty) : undefined,
-    [teammate1, setDbDirty, database])
-  useEffect(() =>
-    teammate2 ? database.followChar(teammate2, setDbDirty) : undefined,
-    [teammate2, setDbDirty, database])
-  useEffect(() =>
-    teammate3 ? database.followChar(teammate3, setDbDirty) : undefined,
-    [teammate3, setDbDirty, database])
 
   useEffect(() => {
     if (!characterKey) return
@@ -103,12 +94,6 @@ export default function CharacterDisplayCard({ characterKey, footer, newBuild: p
     })()
   }, [database, characterKey])
 
-
-  const characterSheet = sheets?.characterSheets?.[characterKey ?? ""]
-
-  useEffect(() => character && database.followWeapon(character.equippedWeapon, setDbDirty),
-    [character, character?.equippedWeapon, setDbDirty, database])
-
   const newBuild = useMemo(() => {
     if (!propNewBuild) return undefined
     return deepCloneStats(propNewBuild)
@@ -120,19 +105,25 @@ export default function CharacterDisplayCard({ characterKey, footer, newBuild: p
   const onTab = useCallback((e, v) => settab(v), [settab])
 
   const mainStatAssumptionLevel = newBuild?.mainStatAssumptionLevel ?? 0
-  const equippedBuild = useMemo(() => character && dbDirty && sheets &&
-    Character.calculateBuild(character, database, sheets, mainStatAssumptionLevel),
-    [dbDirty, character, sheets, mainStatAssumptionLevel, database])
+
   if (!character) return <></>
   // main CharacterDisplayCard
+  const newData = undefined as UIData | undefined
+  // TODO: oldData from comapreBuild
   return <CardDark >
-    <buildContext.Provider value={{ newBuild, equippedBuild, compareBuild, setCompareBuild }}>
+    <DataContext.Provider value={{
+      character,
+      characterSheet,
+      data: newData ? newData : charUIData,
+      oldData: (compareBuild && newData) ? charUIData : undefined,
+      setCompareData: setCompareBuild
+    }}>
       <CardContent sx={{
         "> div:not(:last-child)": { mb: 1 },
       }}>
         <Grid container spacing={1}>
           <Grid item flexGrow={1}>
-            <CharSelectDropdown characterSheet={characterSheet} character={character} />
+            <CharSelectDropdown />
           </Grid>
           {!!mainStatAssumptionLevel && <Grid item><Card sx={{ p: 1, bgcolor: t => t.palette.warning.dark }}><Typography><strong>Assume Main Stats are Level {mainStatAssumptionLevel}</strong></Typography></Card></Grid>}
           {!!onClose && <Grid item>
@@ -153,49 +144,48 @@ export default function CharacterDisplayCard({ characterKey, footer, newBuild: p
           </Tabs>
         </CardLight>
         <DamageOptionsCard character={character} />
-        {sheets && <FormulaCalcCard sheets={sheets} />}
+        {/* {sheets && <FormulaCalcCard sheets={sheets} />} */}
         <EnemyExpandCard character={character} />
 
         {/* Character Panel */}
         {characterSheet && <TabPanel value="character" current={tab}>
-          <CharacterOverviewPane characterSheet={characterSheet} character={character} />
+          <CharacterOverviewPane character={character} characterSheet={characterSheet} weaponId={character.equippedWeapon} />
         </TabPanel >}
         {/* Artifacts Panel */}
-        {sheets && <buildContext.Provider value={{ newBuild: undefined, equippedBuild, compareBuild, setCompareBuild }}>
+        {/* {sheets && <buildContext.Provider value={{ newBuild: undefined, equippedBuild, compareBuild, setCompareBuild }}>
           <TabPanel value="artifacts" current={tab} >
             <CharacterArtifactPane character={character} sheets={sheets} />
           </TabPanel >
-        </buildContext.Provider>}
+        </buildContext.Provider>} */}
         {/* new build panel */}
-        {newBuild && sheets && <TabPanel value="newartifacts" current={tab} >
+        {/* {newBuild && sheets && <TabPanel value="newartifacts" current={tab} >
           <CharacterArtifactPane character={character} sheets={sheets} />
-        </TabPanel >}
+        </TabPanel >} */}
         {/* Buffs panel */}
-        {characterSheet && <TabPanel value="buffs" current={tab}>
+        {/* {characterSheet && <TabPanel value="buffs" current={tab}>
           <CharacterTeamBuffsPane characterSheet={characterSheet} character={character} />
-        </TabPanel >}
+        </TabPanel >} */}
         {/* talent panel */}
-        {characterSheet && <TabPanel value="talent" current={tab}>
+        {/* {characterSheet && <TabPanel value="talent" current={tab}>
           <CharacterTalentPane characterSheet={characterSheet} character={character} />
-        </TabPanel >}
+        </TabPanel >} */}
       </CardContent>
       {!!footer && <Divider />}
       {footer && <CardContent >
         {footer}
       </CardContent>}
-    </buildContext.Provider>
+    </DataContext.Provider>
   </CardDark>
 }
 
 type CharSelectDropdownProps = {
-  characterSheet?: CharacterSheet,
-  character: ICachedCharacter
   disabled?: boolean
 }
-function CharSelectDropdown({ characterSheet, character, character: { key: characterKey, elementKey = "anemo", level = 1, ascension = 0 }, disabled }: CharSelectDropdownProps) {
+function CharSelectDropdown({ disabled }: CharSelectDropdownProps) {
+  const { character, characterSheet } = useContext(DataContext)
   const [showModal, setshowModal] = useState(false)
   const setCharacter = useCharSelectionCallback()
-  const characterDispatch = useCharacterReducer(characterKey)
+  const characterDispatch = useCharacterReducer(character?.key ?? "")
   const HeaderIconDisplay = characterSheet ? <span >
     <ImgIcon src={characterSheet.thumbImg} sx={{ mr: 1 }} />
     {characterSheet.name}
@@ -206,10 +196,14 @@ function CharSelectDropdown({ characterSheet, character, character: { key: chara
     characterDispatch({ level, ascension })
   }, [characterDispatch])
   const setAscension = useCallback(() => {
+    if (!character) return
+    const { level = 1, ascension = 0 } = character
     const lowerAscension = ascensionMaxLevel.findIndex(ascenML => level !== 90 && level === ascenML)
     if (ascension === lowerAscension) characterDispatch({ ascension: ascension + 1 })
     else characterDispatch({ ascension: lowerAscension })
-  }, [characterDispatch, ascension, level])
+  }, [characterDispatch, character])
+  if (!character) return null
+  const { elementKey = "anemo", level = 1, ascension = 0 } = character
   return <>{!disabled ? <>
     <CharacterSelectionModal show={showModal} onHide={() => setshowModal(false)} onSelect={setCharacter} />
     <Grid container spacing={1}>

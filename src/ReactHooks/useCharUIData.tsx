@@ -1,4 +1,4 @@
-import { useContext, useMemo } from "react";
+import { useContext, useEffect, useMemo } from "react";
 import { ArtifactSheet } from "../Artifact/ArtifactSheet_WR";
 import CharacterSheet from "../Character/CharacterSheet_WR";
 import { DatabaseContext } from "../Database/Database";
@@ -11,6 +11,7 @@ import useCharacter from "./useCharacter";
 import usePromise from "./usePromise";
 import useWeapon from "./useWeapon";
 import { ICachedArtifact } from "../Types/artifact_WR";
+import useForceUpdate from "./useForceUpdate";
 
 export default function useCharUIData(characterKey: CharacterKey | "" | undefined = "") {
   const database = useContext(DatabaseContext)
@@ -23,7 +24,20 @@ export default function useCharUIData(characterKey: CharacterKey | "" | undefine
   const weaponSheet = usePromise(weapon && WeaponSheet.get(weapon.key), [weapon])
   const artifacts = useMemo(() => character && database && objectMap(character.equippedArtifacts, a => database._getArt(a)), [character, database]) as Record<SlotKey, ICachedArtifact | undefined>
 
-  const data = useMemo(() => character && characterSheet && weapon && weaponSheet && artifacts && artifactSheetsData && computeUIData([
+  const [dbDirty, setDbDirty] = useForceUpdate()
+  //follow updates from team
+  const [teammate1, teammate2, teammate3] = character?.team ?? []
+  useEffect(() =>
+    teammate1 ? database.followChar(teammate1, setDbDirty) : undefined,
+    [teammate1, setDbDirty, database])
+  useEffect(() =>
+    teammate2 ? database.followChar(teammate2, setDbDirty) : undefined,
+    [teammate2, setDbDirty, database])
+  useEffect(() =>
+    teammate3 ? database.followChar(teammate3, setDbDirty) : undefined,
+    [teammate3, setDbDirty, database])
+
+  const data = useMemo(() => dbDirty && character && characterSheet && weapon && weaponSheet && artifacts && artifactSheetsData && computeUIData([
     common,
     dataObjForCharacter(character),
     characterSheet.data,
@@ -32,6 +46,6 @@ export default function useCharUIData(characterKey: CharacterKey | "" | undefine
     ...Object.values(artifacts).filter(a => a).map(a => dataObjForArtifact(a)),
     artifactSheetsData,
   ]),
-    [character, characterSheet, weapon, weaponSheet, artifacts, artifactSheetsData])
+    [dbDirty, character, characterSheet, weapon, weaponSheet, artifacts, artifactSheetsData])
   return { data, character, characterSheet, weapon, weaponSheet, artifacts, artifactSheetsData, database }
 }

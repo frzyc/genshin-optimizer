@@ -14,7 +14,7 @@ import { input } from '../Formula/index'
 import { computeUIData, dataObjForWeapon, UIData, valueString } from '../Formula/api';
 import usePromise from '../ReactHooks/usePromise';
 import Stat from '../Stat';
-import StatMap from '../StatMap';
+import KeyMap from '../KeyMap';
 import { CharacterKey, ElementKey, SlotKey } from '../Types/consts';
 import { ICalculatedStats } from '../Types/stats';
 import { ICachedWeapon } from '../Types/weapon';
@@ -160,7 +160,7 @@ function Weapon({ weaponId }: { weaponId: string }) {
           {subKey && <SqBadge color="info"> Refinement {weapon.refinement}</SqBadge>}
         </Typography>
         <Typography variant="subtitle1">ATK: {mainVal}</Typography>
-        {subKey && <Typography variant="subtitle2" lineHeight={1}>{StatMap[subKey]}: {subVal}</Typography>}
+        {subKey && <Typography variant="subtitle2" lineHeight={1}>{KeyMap.get(subKey)}: {subVal}</Typography>}
       </Box>
     </Box>
   </CardDark>
@@ -190,13 +190,13 @@ function Stats({ data }: { data: UIData }) {
       const stat = data.get(input.total[statKey])
       const val = valueString(stat.value, stat.unit, stat.unit === "flat" ? 0 : undefined)
       return <Box sx={{ display: "flex" }} key={statKey}>
-        <Typography flexGrow={1} color={`${stat.variant}.main`}><strong>{StatIcon[statKey]} {StatMap[stat.key!]}</strong></Typography>
+        <Typography flexGrow={1} color={`${stat.variant}.main`}><strong>{StatIcon[statKey]} {KeyMap.get(stat.key!)}</strong></Typography>
         <Typography>{val}</Typography>
       </Box>
     })}
     {data.get(input.special).key && <Box sx={{ display: "flex" }} >
       <Typography flexGrow={1}><strong>Specialized:</strong></Typography>
-      <Typography>{StatMap[data.get(input.special).key!]}</Typography>
+      <Typography>{KeyMap.get(data.get(input.special).key!)}</Typography>
     </Box>}
   </Box>
 }

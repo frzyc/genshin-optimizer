@@ -4,7 +4,7 @@ import { BusinessCenter, Lock, LockOpen, Replay } from "@mui/icons-material"
 import { Button, CardContent, Divider, Grid, ListItemIcon, ListItemText, MenuItem, Skeleton, ToggleButton, Typography } from "@mui/material"
 import { Suspense, useContext, useMemo } from "react"
 import { Trans, useTranslation } from "react-i18next"
-import CharacterSheet from "../Character/CharacterSheet"
+import CharacterSheet from "../Character/CharacterSheet_WR"
 import ArtifactLevelSlider from "../Components/Artifact/ArtifactLevelSlider"
 import ArtifactSetDropdown from "../Components/Artifact/ArtifactSetDropdown"
 import ArtifactSlotDropdown from "../Components/Artifact/ArtifactSlotDropdown"
@@ -246,7 +246,7 @@ export default function ArtifactFilter({ artifactIds, filterOption, sortType, as
 
 function LocationDropdown({ title, onChange, selectedCharacterKey, dropdownProps }) {
   const database = useContext(DatabaseContext)
-  const characterSheets = usePromise(CharacterSheet.getAll(), [])
+  const characterSheets = usePromise(CharacterSheet.getAll, [])
   const { t } = useTranslation(["artifact", "ui"]);
 
   return <DropdownButton fullWidth {...dropdownProps} title={title}>

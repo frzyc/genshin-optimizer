@@ -1,4 +1,4 @@
-import { CardContent, Box, CardHeader, Divider } from "@mui/material"
+import { CardContent, Box, CardHeader, Divider, ListItem } from "@mui/material"
 import { useCallback, useMemo } from "react"
 import Conditional from "../Conditional/Conditional"
 import ConditionalSelector from "../Conditional/ConditionalSelector"
@@ -48,7 +48,7 @@ export default function ConditionalDisplay({ conditional, stats, hideHeader = fa
         stats={stats} />
     </CardContent>}
     <FieldDisplayList sx={{ m: 0 }}>
-      {displayFields.map((field, i) => <FieldDisplay key={i} field={field} />)}
+      {displayFields.map((field, i) => <ListItem key={i}><FieldDisplay field={field} /></ListItem>)}
     </FieldDisplayList>
   </CardDark>
 }

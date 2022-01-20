@@ -6,8 +6,8 @@ import { IArtifactSheet, SetEffectEntry } from "../Types/artifact_WR";
 import { allSlotKeys, ArtifactRarity, ArtifactSetKey, SetNum, SlotKey } from "../Types/consts";
 import { objectMap } from "../Util/Util";
 
-export const artifactImport = import("../Data/Artifacts/index_WR")
-const artifactSheets = artifactImport.then(imp => objectMap(imp.default, (artifact, key) => new ArtifactSheet(key, artifact.default, artifact.data))) as Promise<Record<ArtifactSetKey, ArtifactSheet>>
+// TODO: remove typecasting once all sheets populated
+const artifactSheets = import("../Data/Artifacts/index_WR").then(imp => objectMap(imp.default, (artifact, key) => new ArtifactSheet(key, artifact.default, artifact.data))) as Promise<Record<ArtifactSetKey, ArtifactSheet>>
 
 const tr = (setKey: string, strKey: string) => <Translate ns={`artifact_${setKey}_gen`} key18={strKey} />
 const allData = artifactSheets.then(as => mergeData(Object.values(as).map(s => s.data)))

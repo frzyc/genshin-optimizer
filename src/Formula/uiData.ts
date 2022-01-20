@@ -1,4 +1,4 @@
-import StatMap, { unitOfKey } from "../StatMap"
+import KeyMap from "../KeyMap"
 import { ElementKeyWithPhy } from "../Types/consts"
 import { assertUnreachable, objPathValue } from "../Util/Util"
 import { allOperations } from "./optimization"
@@ -283,7 +283,7 @@ function computeNodeDisplay(node: ContextNodeDisplay): NodeDisplay {
   }
   if (key) {
     newValue.key = key
-    newValue.unit = unitOfKey(key)
+    newValue.unit = KeyMap.unit(key)
   }
   if (variant) newValue.variant = variant
   if (namePrefix) newValue.namePrefix = namePrefix
@@ -301,7 +301,7 @@ function computeFormulaString(node: ContextNodeDisplay): Required<ContextNodeDis
   node.formulaCache = { formula: "", dependencies: [] }
   const cache = node.formulaCache
   if (node.key) {
-    const name = StatMap[node.key] ?? ""
+    const name = KeyMap.get(node.key) ?? ""
     if (name) {
       const nameNoUnit = name.endsWith("%") ? name.slice(0, -1) : name
       cache.fullNameNoUnit = node.namePrefix ? node.namePrefix + " " + nameNoUnit : nameNoUnit
@@ -319,17 +319,17 @@ function computeFormulaString(node: ContextNodeDisplay): Required<ContextNodeDis
     if (fullNameNoUnit) {
       deps.add(item)
       dependencies.forEach(x => deps.add(x))
-      return `${fullNameNoUnit} ${valueString(item.value, unitOfKey(item.key ?? ""))}`
+      return `${fullNameNoUnit} ${valueString(item.value, KeyMap.unit(item.key ?? ""))}`
     }
     if (item.formula?.length) {
       dependencies.forEach(x => deps.add(x))
       return formula
     }
-    return `${valueString(item.value, unitOfKey(item.key ?? ""))}`
+    return `${valueString(item.value, KeyMap.unit(item.key ?? ""))}`
   }).join("")
 
   if (cache.fullNameNoUnit)
-    cache.assignmentFormula = `${cache.fullNameNoUnit} ${valueString(node.value, unitOfKey(node.key ?? ""))} = ${cache.formula}`
+    cache.assignmentFormula = `${cache.fullNameNoUnit} ${valueString(node.value, KeyMap.unit(node.key ?? ""))} = ${cache.formula}`
   cache.dependencies = [...deps]
   return cache
 }

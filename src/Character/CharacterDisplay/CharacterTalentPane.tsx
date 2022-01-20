@@ -240,7 +240,7 @@ function SkillDisplayCard({ characterSheet, character: { talent, ascension, key:
         </Grid>
       </ConditionalWrapper>
       {/* Display document sections */}
-      {talentSheet?.sections ? <DocumentDisplay sections={talentSheet.sections} characterKey={characterKey} /> : null}
+      {/* {talentSheet?.sections ? <DocumentDisplay sections={talentSheet.sections} characterKey={characterKey} /> : null} */}
     </CardContent>
   </CardLight>
 }

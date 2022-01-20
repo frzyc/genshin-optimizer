@@ -1,3 +1,4 @@
+import { UIData } from "../Formula/api";
 import { BuildSetting } from "./Build";
 import { CharacterKey, ElementKey, HitModeKey, ReactionModeKey, SlotKey, WeaponTypeKey } from "./consts";
 import IConditional, { IConditionalValues } from "./IConditional_WR";
@@ -81,8 +82,8 @@ export interface TalentSheetElement {
   sections: DocumentSection[]
 }
 export interface DocumentSection {
-  canShow?: (stats: BasicStats) => boolean
-  text?: Displayable | ((stats: BasicStats) => Displayable)
+  canShow?: (data: UIData) => boolean
+  text?: Displayable | ((data: UIData) => Displayable)
   fields?: IFieldDisplay[]
   conditional?: IConditional
 }

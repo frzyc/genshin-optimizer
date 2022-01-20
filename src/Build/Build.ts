@@ -11,6 +11,9 @@ type buildContextObj = {
   compareBuild?: boolean,
   setCompareBuild?: ((boolean) => void),
 }
+/**
+ * @deprecated
+ */
 export const buildContext = createContext({
   newBuild: undefined,
   equippedBuild: undefined,

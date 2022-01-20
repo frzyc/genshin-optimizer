@@ -1,49 +1,64 @@
 import { faEdit, faSave } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Badge, Box, Button, CardContent, CardMedia, Divider, Grid, Typography } from "@mui/material";
+import { CharacterKey } from "pipeline";
 import React, { useContext, useState } from "react";
 import Assets from "../../Assets/Assets";
-import { buildContext } from "../../Build/Build";
 import CardLight from "../../Components/Card/CardLight";
+import ColorText from "../../Components/ColoredText";
+import { NodeFieldDisplay } from "../../Components/FieldDisplay";
 import ImgIcon from "../../Components/Image/ImgIcon";
 import { Stars } from "../../Components/StarDisplay";
-import StatDisplay from "../../Components/StatDisplay";
 import StatIcon from "../../Components/StatIcon";
+import { DataContext } from "../../DataContext";
+import { valueString } from "../../Formula/api";
+import { input } from "../../Formula/index";
+import { ReadNode } from "../../Formula/type";
+import KeyMap, { allAmplifyingReactionsDmgKey, allEleDmgKeys, allEleEnemyResKeys, allEleResKeys, allTransformativeReactionsDmgKeys } from "../../KeyMap";
 import useCharacterReducer from "../../ReactHooks/useCharacterReducer";
-import Stat from "../../Stat";
 import { ICachedCharacter, TalentSheetElementKey } from "../../Types/character";
-import { allElementsWithPhy } from "../../Types/consts";
-import { ICalculatedStats } from "../../Types/stats";
-import { characterStatKeys } from "../../Util/StatUtil";
+import { ElementKey } from "../../Types/consts";
 import WeaponDisplayCard from "../../Weapon/WeaponDisplayCard";
-import Character from "../Character";
-import CharacterSheet from "../CharacterSheet";
+import CharacterSheet from "../CharacterSheet_WR";
 import StatInput from "../StatInput";
 type CharacterOverviewPaneProps = {
+  character: ICachedCharacter;
   characterSheet: CharacterSheet;
-  character: ICachedCharacter
+  weaponId: string
 }
-export default function CharacterOverviewPane({ characterSheet, character, character: { constellation, key: characterKey } }: CharacterOverviewPaneProps) {
-  const { newBuild, equippedBuild } = useContext(buildContext)
+export default function CharacterOverviewPane({ character, characterSheet, weaponId }: CharacterOverviewPaneProps) {
+  const { data } = useContext(DataContext)
+  const characterKey = (data?.getStr(input.charKey)?.value ?? "") as CharacterKey | ""
   const characterDispatch = useCharacterReducer(characterKey)
-  const build = newBuild ? newBuild : equippedBuild
-  if (!build) return null
-  const { tlvl } = build
-  const elementKey = build.characterEle
+  if (!data) return null
+  const charEle = data.getStr(input.charEle).value as ElementKey
   const weaponTypeKey = characterSheet.weaponTypeKey
+  const level = data.get(input.lvl).value
+  const ascension = data.get(input.asc).value
+  const constellation = data.get(input.constellation).value
+  const tlvl = {
+    auto: data.get(input.talent.total.auto).value,
+    skill: data.get(input.talent.total.skill).value,
+    burst: data.get(input.talent.total.burst).value,
+  }
+  const tBoost = {
+    auto: data.get(input.talent.boost.auto).value,
+    skill: data.get(input.talent.boost.skill).value,
+    burst: data.get(input.talent.boost.burst).value,
+  }
   return <Grid container spacing={1}>
     <Grid item xs={12} md={3}  >
       {/* Image card with star and name and level */}
       <CardLight >
         <CardMedia src={characterSheet.cardImg} component="img" width="100%" height="auto" />
         <CardContent>
-          <Typography variant="h4" >{characterSheet.name} <ImgIcon src={Assets.weaponTypes?.[weaponTypeKey]} /> {StatIcon[elementKey]} </Typography>
+          <Typography variant="h4" >{characterSheet.name} <ImgIcon src={Assets.weaponTypes?.[weaponTypeKey]} /> {StatIcon[charEle]} </Typography>
           <Typography variant="h6"><Stars stars={characterSheet.rarity} colored /></Typography>
-          <Typography variant="h5">Lvl. {Character.getLevelString(character)}</Typography>
+          <Typography variant="h5">Lvl. {CharacterSheet.getLevelString(level, ascension)}</Typography>
           <Grid container spacing={1} mt={1}>
             {(["auto", "skill", "burst"] as TalentSheetElementKey[]).map(tKey =>
               <Grid item xs={4} key={tKey}>
-                <Badge badgeContent={tlvl[tKey] + 1} color={((tKey === "skill" && build.skillBoost) || (tKey === "burst" && build.burstBoost)) ? "info" : "secondary"}
+                <Badge badgeContent={tlvl[tKey]} color={tBoost[tKey] ? "info" : "secondary"}
                   overlap="circular"
                   anchorOrigin={{
                     vertical: 'bottom',
@@ -60,7 +75,7 @@ export default function CharacterOverviewPane({ characterSheet, character, chara
                       height: "1.25em"
                     }
                   }}>
-                  <Box component="img" src={characterSheet.getTalentOfKey(tKey, build.characterEle)?.img} width="100%" height="auto" />
+                  <Box component="img" src={characterSheet.getTalentOfKey(tKey, charEle)?.img} width="100%" height="auto" />
                 </Badge>
               </Grid>)}
           </Grid>
@@ -68,7 +83,7 @@ export default function CharacterOverviewPane({ characterSheet, character, chara
           <Grid container spacing={1}>
             {[...Array(6).keys()].map(i =>
               <Grid item xs={4} key={i}>
-                <Box component="img" src={characterSheet.getTalentOfKey(`constellation${i + 1}` as TalentSheetElementKey, build.characterEle)?.img}
+                <Box component="img" src={characterSheet.getTalentOfKey(`constellation${i + 1}` as TalentSheetElementKey, charEle)?.img}
                   sx={{
                     cursor: "pointer",
                     ...(constellation > i ? {} : { filter: "brightness(50%)" })
@@ -83,99 +98,80 @@ export default function CharacterOverviewPane({ characterSheet, character, chara
     <Grid item xs={12} md={9} sx={{
       "> div:not(:last-child)": { mb: 1 }
     }} >
-      <WeaponDisplayCard {...{ charData: { character, characterSheet, equippedBuild, newBuild, characterDispatch }, weaponId: character.equippedWeapon }} />
-      <MainStatsCards {...{ characterSheet, character, equippedBuild, newBuild }} />
+      <WeaponDisplayCard weaponId={weaponId} />
+      <MainStatsCards />
     </Grid>
   </Grid >
 }
 const EDIT = "Edit Stats"
 const EXIT = "EXIT"
 
-const additionalKeys = ["eleMas", "critRate_", "critDMG_", "enerRech_", "heal_"]
-const displayStatKeys = ["characterATK", "finalATK", "finalHP", "finalDEF"]
-displayStatKeys.push(...additionalKeys)
-const editStatKeys = ["hp", "hp_", "def", "def_", "atk", "atk_"]
-editStatKeys.push(...additionalKeys)
-const otherStatKeys: any[] = [];
+const mainBaseKeys = ["atk", "hp", "def"] as const
+const mainSubKeys = ["eleMas", "critRate_", "critDMG_", "enerRech_", "heal_"] as const
+const mainReadNodes = [...mainBaseKeys, ...mainSubKeys].map(k => input.total[k])
+const mainEditKeys = ["atk_", "atk", "hp_", "hp", "def_", "def", ...mainSubKeys] as const
 
-allElementsWithPhy.forEach(ele => {
-  otherStatKeys.push(`${ele}_dmg_`)
-  otherStatKeys.push(`${ele}_res_`)
-})
-otherStatKeys.push("stamina", "incHeal_", "shield_", "cdRed_")
+const otherStatKeys = [...allEleDmgKeys, ...allEleResKeys, "stamina", "incHeal_", "shield_", "cdRed_"] as const;
 
+const otherStatReadNodes = otherStatKeys.map(k => input.total[k])
 const miscStatkeys = [
+  "dmg_",
+  ...allEleEnemyResKeys,
   "normal_dmg_", "normal_critRate_",
   "charged_dmg_", "charged_critRate_",
   "plunging_dmg_", "plunging_critRate_",
   "skill_dmg_", "skill_critRate_",
   "burst_dmg_", "burst_critRate_",
-  "dmg_", "electrocharged_dmg_",
-  "vaporize_dmg_", "swirl_dmg_",
+  ...allTransformativeReactionsDmgKeys,
+  ...allAmplifyingReactionsDmgKey,
   "moveSPD_", "atkSPD_",
   "weakspotDMG_",
 ]
 
-const resetString = {
-  "characterATK": "Override Base ATK",
-  "characterHP": "Override Base HP",
-  "characterDEF": "Override Base DEF"
-}
-type MainStatsCardsProps = {
-  characterSheet: CharacterSheet,
-  character: ICachedCharacter,
-  equippedBuild?: ICalculatedStats,
-  newBuild?: ICalculatedStats
-}
+const miscStatReadNodes = miscStatkeys.map(k => input.total[k])
+
 const statBreakpoint = {
   xs: 12, sm: 6, md: 6, lg: 4,
 } as const
 
+function StatDisplayContent({ nodes, statBreakpoint, extra }: { nodes: ReadNode[], statBreakpoint: object, extra?: Displayable }) {
+  const { data, oldData } = useContext(DataContext)
+  if (!data) return null
+  return <Grid container columnSpacing={{ xs: 2, lg: 3 }} rowSpacing={1}>
+    {nodes.map((rn, i) => <Grid item key={i} {...statBreakpoint} >
+      {<NodeFieldDisplay node={data.get(rn)} oldValue={oldData?.get(rn)?.value} />}
+    </Grid>)}
+    {extra}
+  </Grid>
+}
 
-function MainStatsCards({ characterSheet, character, character: { key: characterKey, level, ascension }, equippedBuild, newBuild }: MainStatsCardsProps) {
+function MainStatsCards() {
+
+  const { data, character } = useContext(DataContext)
+  const characterKey = (character?.key ?? "") as CharacterKey | ""
   const characterDispatch = useCharacterReducer(characterKey)
-
-  const specializedStatKey = characterSheet.getSpecializedStat(character.ascension)
-  const specializedStatVal = characterSheet.getSpecializedStatVal(character.ascension)
-  const specializedStatUnit = Stat.getStatUnit(specializedStatKey)
-
-  const displayNewBuildProps = { character, equippedBuild, newBuild }
+  if (!data || !character) return null
+  const specialNode = data.get(input.special)
 
   return <>
-    <TeamBuffDisplay character={character} />
+    {/* TODO: Team buff stuff */}
+    {/* <TeamBuffDisplay character={character} /> */}
     <StatDisplayCard
       title="Main Stats"
-      content={<Grid container columnSpacing={{ xs: 2, lg: 3 }} rowSpacing={1}>
-        {displayStatKeys.map(statKey => <Grid item key={statKey} {...statBreakpoint} >
-          <StatDisplay statKey={statKey} {...displayNewBuildProps} />
-        </Grid>)}
-        <Grid item {...statBreakpoint} display="flex" flexDirection="row" justifyContent="space-between">
-          <span><b>Specialized:</b> <span>{specializedStatKey && StatIcon[specializedStatKey]} {Stat.getStatName(specializedStatKey)}</span></span>
-          <span >{`${specializedStatVal.toFixed(Stat.fixedUnit(specializedStatKey))}${specializedStatUnit}`}</span>
-        </Grid>
-      </Grid>}
+      content={<StatDisplayContent statBreakpoint={statBreakpoint} nodes={mainReadNodes}
+        extra={specialNode && <Grid item {...statBreakpoint} display="flex" flexDirection="row" justifyContent="space-between">
+          <span><b>Special:</b> <ColorText color={specialNode.variant}>{specialNode.key && StatIcon[specialNode.key]} {specialNode.key && KeyMap.get(specialNode.key)}</ColorText></span>
+          <span >{valueString(specialNode.value, specialNode.unit)}</span>
+        </Grid>}
+      />}
       editContent={<Grid container columnSpacing={2} rowSpacing={1}>
-        {characterStatKeys.map(statKey => {
-          const defVal = Math.round(characterSheet.getBase(statKey, level, ascension))
-          return <Grid item xs={12} lg={6} key={statKey}>
-            <StatInput
-              name={<span>{StatIcon[statKey]} {resetString[statKey]}</span>}
-              placeholder={Stat.getStatNameRaw(statKey)}
-              value={character.bonusStats[statKey] ?? defVal}
-              defaultValue={defVal}
-              percent={Stat.getStatUnit(statKey) === "%"}
-              onValueChange={value => characterDispatch({ type: "editStats", statKey, value })}
-              onReset={() => characterDispatch({ type: "resetStats", statKey })}
-            />
-          </Grid>
-        })}
-        {editStatKeys.map(statKey =>
+        {mainEditKeys.map(statKey =>
           <Grid item xs={12} lg={6} key={statKey}>
             <StatInput
-              name={<span>{StatIcon[statKey]} {Stat.getStatNameWithPercent(statKey)}</span>}
-              placeholder={Stat.getStatNameRaw(statKey)}
+              name={<span>{StatIcon[statKey]} {KeyMap.get(statKey)}</span>}
+              placeholder={KeyMap.get(statKey)}
               value={character.bonusStats[statKey] ?? 0}
-              percent={Stat.getStatUnit(statKey) === "%"}
+              percent={KeyMap.unit(statKey) === "%"}
               onValueChange={value => characterDispatch({ type: "editStats", statKey, value })}
             />
           </Grid>)}
@@ -183,17 +179,15 @@ function MainStatsCards({ characterSheet, character, character: { key: character
     />
     <StatDisplayCard
       title="Other Stats"
-      content={<Grid container columnSpacing={2} rowSpacing={1}>
-        {otherStatKeys.map(statKey => <Grid item {...statBreakpoint} key={statKey} ><StatDisplay statKey={statKey} {...displayNewBuildProps} /></Grid>)}
-      </Grid>}
+      content={<StatDisplayContent statBreakpoint={statBreakpoint} nodes={otherStatReadNodes} />}
       editContent={<Grid container columnSpacing={2} rowSpacing={1}>
         {otherStatKeys.map(statKey =>
           <Grid item xs={12} lg={6} key={statKey}>
             <StatInput
-              name={<span>{StatIcon[statKey]} {Stat.getStatName(statKey)}</span>}
-              placeholder={Stat.getStatNameRaw(statKey)}
+              name={<span>{StatIcon[statKey]} {KeyMap.get(statKey)}</span>}
+              placeholder={KeyMap.get(statKey)}
               value={character.bonusStats[statKey] ?? (statKey === "stamina" ? 100 : 0)}
-              percent={Stat.getStatUnit(statKey) === "%"}
+              percent={KeyMap.unit(statKey) === "%"}
               defaultValue={statKey === "stamina" ? 100 : undefined}
               onValueChange={value => characterDispatch({ type: "editStats", statKey, value })}
             />
@@ -202,17 +196,17 @@ function MainStatsCards({ characterSheet, character, character: { key: character
     />
     <StatDisplayCard
       title="Misc Stats"
-      content={<Grid container columnSpacing={2} rowSpacing={1}>
-        {miscStatkeys.map(statKey => <Grid item {...statBreakpoint} key={statKey} ><StatDisplay statKey={statKey} {...displayNewBuildProps} /></Grid>)}
-      </Grid>}
+      content={<StatDisplayContent statBreakpoint={{
+        xs: 12, sm: 6, md: 6,
+      }} nodes={miscStatReadNodes} />}
       editContent={<Grid container columnSpacing={2} rowSpacing={1}>
         {miscStatkeys.map(statKey =>
           <Grid item xs={12} lg={6} key={statKey}>
             <StatInput
-              name={<span>{StatIcon[statKey]} {Stat.getStatName(statKey)}</span>}
-              placeholder={Stat.getStatNameRaw(statKey)}
+              name={<span>{StatIcon[statKey]} {KeyMap.get(statKey)}</span>}
+              placeholder={KeyMap.get(statKey)}
               value={character.bonusStats[statKey] ?? 0}
-              percent={Stat.getStatUnit(statKey) === "%"}
+              percent={KeyMap.unit(statKey) === "%"}
               onValueChange={value => characterDispatch({ type: "editStats", statKey, value })}
             />
           </Grid>)}
@@ -238,20 +232,20 @@ function StatDisplayCard({ title, content, editContent }) {
   </CardLight>
 }
 function TeamBuffDisplay({ character }: { character: ICachedCharacter }) {
-  const { newBuild, equippedBuild } = useContext(buildContext)
-  const build = (newBuild ? newBuild : equippedBuild) as ICalculatedStats
-  if (!Object.keys(build.partyBuff).length) return null
+  // const { newBuild, equippedBuild } = useContext(buildContext)
+  // const build = (newBuild ? newBuild : equippedBuild) as ICalculatedStats
+  // if (!Object.keys(build.partyBuff).length) return null
   return <CardLight>
     <CardContent>
       Team Buffs
     </CardContent>
     <Divider />
     <CardContent>
-      <Grid container columnSpacing={2} rowSpacing={1}>
+      {/* <Grid container columnSpacing={2} rowSpacing={1}>
         {Object.entries(build.partyBuff).map(([statKey, value]) => <Grid item {...statBreakpoint} key={statKey} >
           <StatDisplay character={character} newBuild={newBuild} equippedBuild={equippedBuild} statKey={statKey} partyBuff />
         </Grid>)}
-      </Grid>
+      </Grid> */}
     </CardContent>
   </CardLight>
 }

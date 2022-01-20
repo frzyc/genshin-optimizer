@@ -15,8 +15,8 @@ export default function BonusStatsCard({ character }: { character: ICachedCharac
       <Typography>Bonus Stats</Typography>
     </CardContent>
     <Divider />
-    <CardContent><FieldDisplayList sx={{ my: 0 }} >
-      {setStatsFields.map((field, i) => <FieldDisplay key={i} field={field} />)}
-    </FieldDisplayList></CardContent>
+    {/* <CardContent><FieldDisplayList sx={{ my: 0 }} >
+      {setStatsFields.map((field, i) => <ListItem key={i}><FieldDisplay field={field} /></ListItem>)}
+    </FieldDisplayList></CardContent> */}
   </CardLight>
 }

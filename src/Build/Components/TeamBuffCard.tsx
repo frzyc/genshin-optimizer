@@ -14,8 +14,8 @@ export default function TeamBuffCard() {
       <Typography>Team buff Stats</Typography>
     </CardContent>
     <Divider />
-    <CardContent><FieldDisplayList sx={{ my: 0 }} >
-      {setStatsFields.map((field, i) => <FieldDisplay key={i} field={field} />)}
-    </FieldDisplayList></CardContent>
+    {/* <CardContent><FieldDisplayList sx={{ my: 0 }} >
+      {setStatsFields.map((field, i) => <ListItem key={i}><FieldDisplay field={field} /></ListItem>)}
+    </FieldDisplayList></CardContent> */}
   </CardLight>
 }

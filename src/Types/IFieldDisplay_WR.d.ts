@@ -1,13 +1,18 @@
 import { Node } from "../Formula/type";
 import { BasicStats, ICalculatedStats } from "./stats";
 
-export interface IFieldDisplay {
-  canShow?: (stats: BasicStats) => boolean;
+export interface IBasicFieldDisplay {
+  canShow?: (data: UIData) => boolean;
   text: Displayable;
-  value?: number | Displayable | ((stats: ICalculatedStats) => number | Displayable);
+  value?: number | Displayable | ((data: UIData) => number | Displayable);
   fixed?: number;
-  formula?: Node;
-  // TODO: should be from WR
-  variant?: string | ((stats: BasicStats) => string);
+  variant?: string | ((data: UIData) => string);
   unit?: Displayable
 }
+
+export interface INodeFieldDisplay {
+  canShow?: (data: UIData) => boolean;
+  node: Node;
+}
+
+export type IFieldDisplay = INodeFieldDisplay | IBasicFieldDisplay

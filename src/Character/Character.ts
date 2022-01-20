@@ -15,6 +15,9 @@ import { characterBaseStats, mergeCalculatedStats, mergeStats, overrideStatKeys 
 import { evalIfFunc } from "../Util/Util";
 import { defaultInitialWeapon } from "../Weapon/WeaponUtil";
 
+/**
+ * @deprecated
+ */
 export default class Character {
   //do not instantiate.
   constructor() { if (this instanceof Character) throw Error('A static class cannot be instantiated.'); }

@@ -14,7 +14,7 @@ export const chargedDocSection = (tr, stamina = 25): DocumentSection => ({
   text: tr(`auto.fields.charged`),
   fields: [{
     text: sgt(`charged.dmg`),
-    formula: input.display.charged.dmg,
+    node: input.display.charged.dmg,
     variant: stats => getTalentStatKeyVariant("charged", stats),
   }, {
     text: sgt("charged.stamina"),
@@ -25,15 +25,15 @@ export const plungeDocSection = (tr): DocumentSection => ({
   text: tr`auto.fields.plunging`,
   fields: [{
     text: sgt(`plunging.dmg`),
-    formula: input.display.plunging.dmg,
+    node: input.display.plunging.dmg,
     variant: stats => getTalentStatKeyVariant("plunging", stats),
   }, {
     text: sgt("plunging.low"),
-    formula: input.display.plunging.low,
+    node: input.display.plunging.low,
     variant: stats => getTalentStatKeyVariant("plunging", stats),
   }, {
     text: sgt("plunging.high"),
-    formula: input.display.plunging.high,
+    node: input.display.plunging.high,
     variant: stats => getTalentStatKeyVariant("plunging", stats),
   }]
 })
@@ -42,11 +42,11 @@ export const claymoreChargedDocSection = (tr, data): DocumentSection => ({
   text: tr("auto.fields.charged"),
   fields: [{
     text: sgt("charged.spinning"),
-    formula: input.display.charged.spinning,
+    node: input.display.charged.spinning,
     variant: stats => getTalentStatKeyVariant("charged", stats),
   }, {
     text: sgt("charged.final"),
-    formula: input.display.charged.final,
+    node: input.display.charged.final,
     variant: stats => getTalentStatKeyVariant("charged", stats),
   }, {
     text: sgt("charged.stamina"),
@@ -63,11 +63,11 @@ export const bowChargedDocSection = (tr, elementKey: ElementKey): DocumentSectio
   text: tr("auto.fields.charged"),
   fields: [{
     text: sgt("charged.aimed"),
-    formula: input.display.charged.hit,
+    node: input.display.charged.hit,
     variant: stats => getTalentStatKeyVariant("charged", stats),
   }, {
     text: sgt("charged.fullyAimed"),
-    formula: input.display.charged.full,
+    node: input.display.charged.full,
     variant: stats => getTalentStatKeyVariant("charged", stats, elementKey),
   }]
 })
