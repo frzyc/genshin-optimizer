@@ -17,6 +17,7 @@ export interface NodeDisplay {
   namePrefix?: string
   key?: string
   value: number
+  /** Whether the node fails the conditional test (`threshold_add`, `match`, etc.) or consists solely of empty nodes */
   isEmpty: boolean
   unit: "%" | "flat"
   variant?: ElementKeyWithPhy | "success"
@@ -40,30 +41,16 @@ export class UIData {
     this.data = data
   }
 
-  /**
-   * Get display objects of all nodes in `display` namespace,
-   * removing entries where `UIData.get(node).isEmpty` is `true`
-   */
   getDisplay(): any {
     if (this.display) return this.display
     this.display = {}
     for (const data of this.data) {
       if (!data.display) continue
-      crawlObject(data.display, [], (x: any) => x.operation, (x: Node, key: string[]) => {
-        const result = this.get(x)
-        if (!result.isEmpty)
-          layeredAssignment(this.display, key, result)
-      })
+      crawlObject(data.display, [], (x: any) => x.operation, (x: Node, key: string[]) =>
+        layeredAssignment(this.display, key, this.get(x)))
     }
     return this.display
   }
-
-  /**
-   * Get a display objet for a particular `node`.
-   *
-   * **Caution**
-   * If `result.isEmpty` is true, the result won't appear in `getDisplay`
-   */
   get(node: Node): NodeDisplay {
     const old = this.processed.get(node)
     if (old) return old
@@ -185,7 +172,7 @@ export class UIData {
 
     return ((string1 === string2) === (node.operation === "match"))
       ? this.computeNode(node.operands[0], visited)
-      : zero
+      : empty
   }
   private _data(node: DataNode, visited: Set<Node> | undefined): ContextNodeDisplay {
     let child = this.children.get(node.data)
@@ -207,6 +194,7 @@ export class UIData {
   private _constant(value: number): ContextNodeDisplay {
     return {
       value, pivot: false,
+      empty: false,
       mayNeedWrapping: false,
       dependencies: new Set(),
     }
@@ -253,8 +241,7 @@ export class UIData {
       case "threshold_add":
         const value = operands[0].value, threshold = operands[1].value
         if (value >= threshold) return operands[2]
-        else formula = fStr``
-        break
+        else return empty
       default: assertUnreachable(operation)
     }
     switch (operation) {
@@ -270,6 +257,12 @@ export class UIData {
         : [...x.dependencies])])
     const result: ContextNodeDisplay = {
       formula: formula.display,
+      // Note:
+      // We technically should use `operands.every(x => x.empty)` to
+      // check for emptiness. However, we don't have any instance where
+      // this could return `true`. So we're simply setting it to `false`
+      // to save some computations.
+      empty: false,
       value, mayNeedWrapping,
       pivot: false, dependencies,
     }
@@ -315,11 +308,11 @@ function mergeVariants(operands: ContextNodeDisplay[]): ContextNodeDisplay["vari
   return unique.values().next().value
 }
 function computeNodeDisplay(node: ContextNodeDisplay, info: Info | undefined): NodeDisplay {
-  const { dependencies, value, variant, formula, pivot, assignment } = node
+  const { dependencies, value, variant, formula, pivot, assignment, empty } = node
   const { key, namePrefix } = info ?? {}
   return {
     key, value, variant, namePrefix,
-    isEmpty: false,
+    isEmpty: empty,
     unit: (key && KeyMap.unit(key)) || "flat",
     formula, formulas: [...((pivot && assignment) ? [assignment] : []), ...dependencies]
   }
@@ -334,6 +327,7 @@ interface ContextNodeDisplay {
   assignment?: Displayable
 
   pivot: boolean
+  empty: boolean
 
   value: number
   variant?: ElementKeyWithPhy | "success"
@@ -345,11 +339,13 @@ interface ContextNodeDisplay {
 
 const illformed: ContextNodeDisplay = {
   value: NaN, pivot: false,
+  empty: false,
   dependencies: new Set,
   mayNeedWrapping: false
 }
-const zero: ContextNodeDisplay = {
+const empty: ContextNodeDisplay = {
   value: 0, pivot: false,
+  empty: true,
   dependencies: new Set,
   mayNeedWrapping: false
 }

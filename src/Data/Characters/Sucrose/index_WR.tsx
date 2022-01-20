@@ -52,25 +52,10 @@ const datamine = {
     dmg_: [44, 47.3, 50.6, 55, 58.3, 61.6, 66, 70.4, 74.8, 79.2, 83.6, 88, 93.5, 99, 104.5],
   }
 }
-export const dmgFormulas = {
-  normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
-    [i, dmgNode("atk", arr, "normal")])),
-  charged: Object.fromEntries(Object.entries(datamine.charged).map(([key, value]) =>
-    [key, dmgNode("atk", value, "charged")])),
-  plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
-    [key, dmgNode("atk", value, "plunging")])),
-  skill: Object.fromEntries(Object.entries(datamine.skill).map(([key, value]) =>
-    [key, dmgNode("atk", value, "skill")])),
-  burst: {
-    dot: dmgNode("atk", datamine.burst.dot, "burst"),
-    ...Object.fromEntries(absorbableEle.map(key =>
-      [key, dmgNode("atk", datamine.burst.dmg_, "burst", { /** Set absorption element */ })]))
-  },
-}
 // TODO: Hook these to the Sheet/UI
 
 // Conditional Input
-// C6 Absorption Element
+// Absorption Element
 const condAbsorption = customStringRead(["conditional", "Sucrose", "absorption"])
 // A1 Swirl Reaction Element
 const condSwirlReaction = customStringRead(["conditional", "Sucrose", "swirl"])
@@ -91,6 +76,21 @@ const c6Base = threshold_add(input.constellation, 6, percent(0.2))
 const c6Bonus = Object.fromEntries(allElements.map(ele => [ele,
   match(condAbsorption, ele, c6Base, { key: `${ele}_dmg_` })]))
 
+export const dmgFormulas = {
+  normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
+    [i, dmgNode("atk", arr, "normal")])),
+  charged: Object.fromEntries(Object.entries(datamine.charged).map(([key, value]) =>
+    [key, dmgNode("atk", value, "charged")])),
+  plunging: Object.fromEntries(Object.entries(datamine.plunging).map(([key, value]) =>
+    [key, dmgNode("atk", value, "plunging")])),
+  skill: Object.fromEntries(Object.entries(datamine.skill).map(([key, value]) =>
+    [key, dmgNode("atk", value, "skill")])),
+  burst: {
+    dot: dmgNode("atk", datamine.burst.dot, "burst"),
+    ...Object.fromEntries(absorbableEle.map(key =>
+      [key, match(condAbsorption, key, dmgNode("atk", datamine.burst.dmg_, "burst"), { /** Set absorption element */ })]))
+  },
+}
 export const data = dataObjForCharacterSheet("Sucrose", "anemo", data_gen.weaponTypeKey as WeaponTypeKey,
   { base: data_gen.base.hp, lvlCurve: data_gen.curves.hp, asc: data_gen.ascensions.map(x => x.props.hp) },
   { base: data_gen.base.atk, lvlCurve: data_gen.curves.atk, asc: data_gen.ascensions.map(x => x.props.atk) },
