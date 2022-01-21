@@ -102,15 +102,16 @@ export default function CharacterDisplayCard({ characterKey, footer, newBuild: p
   if (!character) return <></>
   // main CharacterDisplayCard
   const newData = undefined as UIData | undefined
-  // TODO: oldData from comapreBuild
+
+  const dataContextValue = {
+    character,
+    characterSheet,
+    data: newData ? newData : charUIData,
+    oldData: (compareBuild && newData) ? charUIData : undefined,
+    setCompareData: setCompareBuild
+  }
   return <CardDark >
-    <DataContext.Provider value={{
-      character,
-      characterSheet,
-      data: newData ? newData : charUIData,
-      oldData: (compareBuild && newData) ? charUIData : undefined,
-      setCompareData: setCompareBuild
-    }}>
+    <DataContext.Provider value={dataContextValue}>
       <CardContent sx={{
         "> div:not(:last-child)": { mb: 1 },
       }}>
@@ -143,7 +144,7 @@ export default function CharacterDisplayCard({ characterKey, footer, newBuild: p
         {/* Character Panel */}
         <TabPanel value="character" current={tab}><CharacterOverviewPane /></TabPanel >
         {/* Artifacts Panel */}
-        <DataContext.Provider value={{ data: charUIData, oldData: undefined, setCompareData: setCompareBuild }}>
+        <DataContext.Provider value={{ ...dataContextValue, data: charUIData, oldData: undefined, setCompareData: setCompareBuild }}>
           <TabPanel value="artifacts" current={tab} ><CharacterArtifactPane /></TabPanel >
         </DataContext.Provider>
         {/* new build panel */}

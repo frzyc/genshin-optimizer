@@ -83,8 +83,8 @@ function ArtConditionalModal({ open, onClose, initialStats, artifactCondCount }:
                 </Box>
               </Box>
               <CardContent>
-                {!!setKey && Object.keys(sheet.setEffects).map(key => parseInt(key) as SetNum).map(setNumKey =>
-                  <SetEffectDisplay newBuild={undefined} key={setKey + setNumKey} setKey={setKey} setNumKey={setNumKey} equippedBuild={initialStats} skipConditionalEquipmentCheck />)}
+                {/* {!!setKey && Object.keys(sheet.setEffects).map(key => parseInt(key) as SetNum).map(setNumKey =>
+                  <SetEffectDisplay newBuild={undefined} key={setKey + setNumKey} setKey={setKey} setNumKey={setNumKey} equippedBuild={initialStats} skipConditionalEquipmentCheck />)} */}
               </CardContent>
             </CardLight>
           </Grid>

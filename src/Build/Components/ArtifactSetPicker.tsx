@@ -57,8 +57,8 @@ export default function ArtifactSetPicker({ index, setFilters, onChange, initial
     </CardContent>
     {!!setKey && <Divider />}
     {!!setKey && <CardContent sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
-      {!!initialStats && Object.keys(artifactSheets?.[setKey].setEffects ?? {}).map(setNKey => parseInt(setNKey as string) as SetNum).filter(setNkey => setNkey <= setNum).map(setNumKey =>
-        <SetEffectDisplay newBuild={undefined} key={setKey + setNumKey} setKey={setKey} setNumKey={setNumKey} equippedBuild={ initialStats} skipConditionalEquipmentCheck />)}
+      {/* {!!initialStats && Object.keys(artifactSheets?.[setKey].setEffects ?? {}).map(setNKey => parseInt(setNKey as string) as SetNum).filter(setNkey => setNkey <= setNum).map(setNumKey =>
+        <SetEffectDisplay newBuild={undefined} key={setKey + setNumKey} setKey={setKey} setNumKey={setNumKey} equippedBuild={ initialStats} skipConditionalEquipmentCheck />)} */}
     </CardContent>}
   </CardLight>
 }
