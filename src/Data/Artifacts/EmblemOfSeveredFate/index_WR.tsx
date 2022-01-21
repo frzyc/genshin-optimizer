@@ -11,9 +11,9 @@ import { dataObjForArtifactSheet } from '../../../Formula/api'
 import { ArtifactSetKey } from '../../../Types/consts'
 const setKey: ArtifactSetKey = "EmblemOfSeveredFate"
 
-const set2 = threshold_add(input.art.EmblemOfSeveredFate, 2, percent(0.2))
+const set2 = threshold_add(input.artSet.EmblemOfSeveredFate, 2, percent(0.2))
 
-const burstBonus = threshold_add(input.art.EmblemOfSeveredFate, 4,
+const burstBonus = threshold_add(input.artSet.EmblemOfSeveredFate, 4,
   min(percent(0.75), prod(percent(0.25), input.premod.enerRech_)))
 
 export const data: Data = dataObjForArtifactSheet(setKey, {

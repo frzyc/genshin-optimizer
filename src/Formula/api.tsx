@@ -129,6 +129,9 @@ function dataObjForArtifact(art: ICachedArtifact, mainStatAssumptionLevel: numbe
       [art.slotKey]: {
         id: stringConst(art.id)
       },
+    },
+    artSet: {
+      [art.setKey]: constant(1)
     }
   }
 }
