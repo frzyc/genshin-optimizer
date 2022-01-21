@@ -2,6 +2,7 @@ import { Masonry } from "@mui/lab"
 import { CardContent, CardHeader, Divider, Typography } from "@mui/material"
 import { Box } from "@mui/system"
 import { useContext } from "react"
+import { ArtifactSheet } from "../../Artifact/ArtifactSheet_WR"
 import CardDark from "../../Components/Card/CardDark"
 import { NodeFieldDisplay } from "../../Components/FieldDisplay"
 import ImgIcon from "../../Components/Image/ImgIcon"
@@ -32,7 +33,8 @@ export default function StatDisplayComponent() {
         displayCharacter && <CharacterStats key={charKey} characterKey={charKey} displayCharacter={displayCharacter} path={["character", charKey]} />)}
       {display.weapon && Object.entries(display.weapon).map(([weaponKey, displayWeapon]) =>
         displayWeapon && <WeaponStats key={weaponKey} weaponKey={weaponKey} displayWeapon={displayWeapon as any} path={["weapon", weaponKey]} />)}
-      {/* TODO: artifacts */}
+      {display.artifact && Object.entries(display.artifact).map(([artifactSetKey, displayArtifact]) =>
+        displayArtifact && <ArtifactStats key={artifactSetKey} artifactSetKey={artifactSetKey} displayArtifact={displayArtifact as any} path={["artifact", artifactSetKey]} />)}
       {/* TODO: trans Reactions */}
     </Masonry >
   </Box>
@@ -90,6 +92,20 @@ function WeaponStats({ weaponKey, displayWeapon: displayWeapon, path }: { weapon
     <Divider />
     <CardContent>
       {Object.entries(displayWeapon).map(([nodeKey, n]) => <NodeFieldDisplay key={nodeKey} node={n} oldValue={oldData ? oldData.get(customRead([...path, nodeKey])).value : undefined} />)}
+    </CardContent>
+  </CardDark>
+}
+
+function ArtifactStats({ artifactSetKey, displayArtifact, path }: { artifactSetKey: ArtifactSetKey, displayArtifact: { [key: string]: NodeDisplay }, path: string[] }) {
+  const { data, oldData } = useContext(DataContext)
+  const artifactSheet = usePromise(ArtifactSheet.get(artifactSetKey), [artifactSetKey])
+  if (!artifactSheet || !data) return null
+  const img = artifactSheet.defIconSrc
+  return <CardDark >
+    <CardHeader avatar={artifactSheet && <ImgIcon size={2} sx={{ m: -1 }} src={img} />} title={artifactSheet.name} titleTypographyProps={{ variant: "subtitle1" }} />
+    <Divider />
+    <CardContent>
+      {Object.entries(displayArtifact).map(([nodeKey, n]) => <NodeFieldDisplay key={nodeKey} node={n} oldValue={oldData ? oldData.get(customRead([...path, nodeKey])).value : undefined} />)}
     </CardContent>
   </CardDark>
 }

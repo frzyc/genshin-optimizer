@@ -5,20 +5,29 @@ import goblet from './goblet.png'
 import circlet from './circlet.png'
 import { IArtifactSheet } from '../../../Types/artifact_WR'
 import { Data } from '../../../Formula/type'
-import { min, percent, prod, threshold_add } from '../../../Formula/utils'
+import { infoMut, min, percent, prod, threshold_add } from '../../../Formula/utils'
 import { input } from '../../../Formula/index'
+import { dataObjForArtifactSheet } from '../../../Formula/api'
+import { ArtifactSetKey } from '../../../Types/consts'
+const setKey: ArtifactSetKey = "EmblemOfSeveredFate"
 
-export const data: Data = {
+const set2 = threshold_add(input.art.EmblemOfSeveredFate, 2, percent(0.2))
+
+const burstBonus = threshold_add(input.art.EmblemOfSeveredFate, 4,
+  min(percent(0.75), prod(percent(0.25), input.premod.enerRech_)))
+
+export const data: Data = dataObjForArtifactSheet(setKey, {
   premod: {
-    enerRech_: threshold_add(input.art.EmblemOfSeveredFate, 2, percent(0.2))
+    enerRech_: set2
   },
   bonus: {
     dmg: {
-      burst: threshold_add(input.art.EmblemOfSeveredFate, 4,
-        min(percent(0.75), prod(percent(0.25), input.premod.enerRech_)))
+      burst: burstBonus
     }
   }
-}
+}, {
+  burstBonus
+})
 
 const artifact: IArtifactSheet = {
   name: "Emblem of Severed Fate", rarity: [4, 5],
@@ -30,14 +39,17 @@ const artifact: IArtifactSheet = {
     circlet
   },
   setEffects: {
-    2: {},
+    2: {
+      document: [{
+        fields: [{
+          node: infoMut(set2, { key: "enerRech_" }),
+        }]
+      }]
+    },
     4: {
       document: [{
         fields: [{
-          text: "Elemental Burst DMG",
-          node: data.bonus!.dmg!.burst,
-          fixed: 1,
-          unit: "%"
+          node: infoMut(burstBonus, { key: "burst_dmg_" }),
         }]
       }]
     }

@@ -8,7 +8,7 @@ import { objectFromKeyMap } from "../Util/Util";
 import _weaponCurves from "../Weapon/expCurve_gen.json";
 import { input } from "./index";
 import { constant } from "./internal";
-import { DisplayCharacter, Data, Node, ReadNode, DisplayWeapon } from "./type";
+import { Data, DisplayArtifact, DisplayCharacter, DisplayWeapon, Node, ReadNode } from "./type";
 import { NodeDisplay, UIData, valueString } from "./uiData";
 import { data, percent, prod, stringConst, subscript, sum } from "./utils";
 
@@ -69,7 +69,7 @@ function dataObjForWeaponSheet(
   mainStat: { stat?: "atk", base: number, lvlCurve: string, asc: number[] },
   substat: { stat: MainStatKey | SubstatKey, base: number, lvlCurve: string },
   substat2: { stat: MainStatKey | SubstatKey, refinement: number[] } | undefined,
-  additional: DisplayWeapon = {},
+  displayWeapon: DisplayWeapon = {},
 ): Data {
   const mainStatNode = sum(prod(mainStat.base, subscript(input.weapon.lvl, weaponCurves[mainStat.lvlCurve])), subscript(input.weapon.asc, mainStat.asc))
   const substatNode = prod(substat.base, subscript(input.weapon.lvl, weaponCurves[substat.lvlCurve]))
@@ -98,7 +98,21 @@ function dataObjForWeaponSheet(
   return mergeData([result, {
     display: {
       weapon: {
-        [key]: additional
+        [key]: displayWeapon
+      }
+    },
+  }])
+}
+function dataObjForArtifactSheet(
+  key: ArtifactSetKey,
+  data: Data = {},
+  displayArtifact: DisplayArtifact = {},
+): Data {
+
+  return mergeData([data, {
+    display: {
+      artifact: {
+        [key]: displayArtifact
       }
     },
   }])
@@ -188,7 +202,7 @@ function computeUIData(data: Data[]): UIData {
 export type { NodeDisplay, UIData };
 export {
   dataObjForArtifact, dataObjForCharacter, dataObjForWeapon,
-  dataObjForCharacterSheet, dataObjForWeaponSheet,
+  dataObjForCharacterSheet, dataObjForWeaponSheet, dataObjForArtifactSheet,
   dmgNode,
 
   mergeData, computeUIData, valueString,
