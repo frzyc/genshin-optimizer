@@ -1,3 +1,4 @@
+import ColorText from "../Components/ColoredText"
 import KeyMap from "../KeyMap"
 import { assertUnreachable, crawlObject, layeredAssignment, objPathValue } from "../Util/Util"
 import { allOperations } from "./optimization"
@@ -101,7 +102,7 @@ export class UIData {
 
     if (visited) {
       if (visited.has(node))
-        throw { error: "Found loop", visited }
+        throw new Error("Found Loop")
       visited.add(node)
     }
 
@@ -169,7 +170,7 @@ export class UIData {
   private _lookup(node: LookupNode, visited: Set<Node> | undefined): ContextNodeDisplay {
     const key = this.getStr(node.string).value
     const selected = node.table[key!] ?? node.operands[0]
-    if (!selected) throw { error: "Lookup fail", key, table: node.table, default: node.operands[0] }
+    if (!selected) throw new Error(`Lookup Fail with key ${key}`)
 
     return this.computeNode(selected, visited)
   }
@@ -320,8 +321,7 @@ function computeNodeDisplay(node: ContextNodeDisplay): NodeDisplay {
 //* Comment/uncomment this line to toggle between string formulas and JSX formulas
 function createName({ key, value, namePrefix, variant }: ContextNodeDisplay): Displayable {
   const prefix = namePrefix ? namePrefix + ' ' : ''
-  // TODO: FIXME: Add color variant
-  return <><span color={variant}>{prefix + KeyMap.getNoUnit(key!)}</span> {valueString(value, KeyMap.unit(key!))}</>
+  return <><ColorText color={variant}>{prefix + KeyMap.getNoUnit(key!)}</ColorText> {valueString(value, KeyMap.unit(key!))}</>
 }
 function mergeFormulaComponents(components: Displayable[]): Displayable {
   return <>{components.map((x, i) => (<span key={i}>{x}</span>))}</>
@@ -367,7 +367,7 @@ interface ContextNodeDisplay {
 const illformed: ContextNodeDisplay = {
   value: NaN, pivot: true,
   empty: false,
-  dependencies: new Set,
+  dependencies: new Set(),
   mayNeedWrapping: false
 }
 function makeEmpty(node: ContextNodeDisplay, shouldMakeEmpty: boolean): ContextNodeDisplay {

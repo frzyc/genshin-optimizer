@@ -38,7 +38,7 @@ function BasicFieldDisplay({ field }: { field: IBasicFieldDisplay }) {
   </Box>
 }
 
-// TODO: "dim" field when the node.isEmpty
+// TODO: "dim" field and use `N/A` for value when the node.isEmpty
 export function NodeFieldDisplay({ node, oldValue }: { node: NodeDisplay, oldValue?: number }) {
   const fieldText = node.key ? KeyMap.get(node.key) : ""
   const fieldFormulaText = node.formula
