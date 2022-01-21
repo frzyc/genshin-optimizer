@@ -23,10 +23,11 @@ interface NodeBase {
 interface Info {
   key?: string
   namePrefix?: string
-  variant?: ElementKeyWithPhy | TransformativeReactionsKey | AmplifyingReactionsKey | "success"
+  variant?: Variant
   asConst?: true
   pivot?: true
 }
+export type Variant = ElementKeyWithPhy | TransformativeReactionsKey | AmplifyingReactionsKey | "success"
 
 export interface ConstantNode extends NodeBase {
   operation: "const"

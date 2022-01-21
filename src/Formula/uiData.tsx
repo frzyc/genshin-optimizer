@@ -3,7 +3,7 @@ import { AmplifyingReactionsKey, TransformativeReactionsKey } from "../StatConst
 import { ElementKeyWithPhy } from "../Types/consts"
 import { assertUnreachable, crawlObject, layeredAssignment, objPathValue } from "../Util/Util"
 import { allOperations } from "./optimization"
-import { ComputeNode, Data, DataNode, Info, LookupNode, Node, ReadNode, StringMatchNode, StringNode, SubscriptNode } from "./type"
+import { ComputeNode, Data, DataNode, Info, LookupNode, Node, ReadNode, StringMatchNode, StringNode, SubscriptNode, Variant } from "./type"
 
 const shouldWrap = true
 
@@ -23,7 +23,7 @@ export interface NodeDisplay {
   /** Whether the node fails the conditional test (`threshold_add`, `match`, etc.) or consists solely of empty nodes */
   isEmpty: boolean
   unit: "%" | "flat"
-  variant?: ElementKeyWithPhy | TransformativeReactionsKey | AmplifyingReactionsKey | "success"
+  variant?: Variant
   formula?: Displayable
   formulas: Displayable[]
 }
@@ -60,7 +60,7 @@ export class UIData {
 
     // Detect loops in dev build
     const visited = (process.env.NODE_ENV === "development") ? new Set<Node>() : undefined
-    const result = computeNodeDisplay(this.computeNode(node, visited), node.info)
+    const result = computeNodeDisplay(this.computeNode(node, visited))
 
     this.processed.set(node, result)
     return result
@@ -130,22 +130,22 @@ export class UIData {
       // Pivot all keyed nodes for debugging
       // if (key) pivot = true
 
+      if (variant) result.variant = variant
+      if (namePrefix) result.namePrefix = namePrefix
+      if (key) result.key = key
+      if (pivot) result.pivot = pivot
+
       if (asConst) {
         delete result.formula
+        delete result.assignment
         result.dependencies = new Set()
       }
-      if (pivot) {
-        result.mayNeedWrapping = false
-        result.pivot = pivot
-      }
-      if (variant) result.variant = variant
-      if (key) {
-        result.key = key
-        result.name = createName(result.value, result.variant, result.key, namePrefix)
-
-      }
+      if (result.key)
+        result.name = createName(result)
       if (result.name && result.formula)
-        result.assignment = <>{result.name} = {result.formula}</>
+        result.assignment = createAssignFormula(result.name, result.formula)
+      if (result.name && (result.pivot || !result.dependencies.size))
+        result.mayNeedWrapping = false
     }
 
     this.nodes.set(node, result)
@@ -173,7 +173,6 @@ export class UIData {
     const selected = node.table[key!] ?? node.operands[0]
     if (!selected) throw { error: "Lookup fail", key, table: node.table, default: node.operands[0] }
 
-    // TODO: Wrap info here instead
     return this.computeNode(selected, visited)
   }
   private _match(node: StringMatchNode, visited: Set<Node> | undefined): ContextNodeDisplay {
@@ -292,7 +291,7 @@ function fStr(strings: TemplateStringsArray, ...list: ContextNodeDisplayList[]):
       const { operands, shouldWrap, separator = ", " } = key
       operands.forEach((item, i, array) => {
         let itemFormula: Displayable = valueString(item.value, item.key ? KeyMap.unit(item.key) : "flat")
-        if (item.pivot && item.name) itemFormula = item.name
+        if (item.name && (item.pivot || !item.dependencies.size)) itemFormula = item.name
         else if (item.formula) itemFormula = item.formula
 
         if (shouldWrap && item.mayNeedWrapping) {
@@ -315,9 +314,8 @@ function mergeVariants(operands: ContextNodeDisplay[]): ContextNodeDisplay["vari
   if (unique.size > 1) unique.delete("physical")
   return unique.values().next().value
 }
-function computeNodeDisplay(node: ContextNodeDisplay, info: Info | undefined): NodeDisplay {
-  const { dependencies, value, variant, formula, pivot, assignment, empty } = node
-  const { key, namePrefix } = info ?? {}
+function computeNodeDisplay(node: ContextNodeDisplay): NodeDisplay {
+  const { key, namePrefix, dependencies, value, variant, formula, pivot, assignment, empty } = node
   return {
     operation: true,
     key, value, variant, namePrefix,
@@ -327,32 +325,41 @@ function computeNodeDisplay(node: ContextNodeDisplay, info: Info | undefined): N
   }
 }
 
-function createName(value: number, variant: ElementKeyWithPhy | TransformativeReactionsKey | AmplifyingReactionsKey | "success" | undefined, key: string, _prefix: string | undefined): Displayable {
-  const prefix = _prefix ? _prefix + ' ' : ''
-  /*
-  return <><span color={variant}>{prefix + KeyMap.getNoUnit(key)}</span> {valueString(value, KeyMap.unit(key))}</>
-  /*/
-  return `${prefix + KeyMap.getNoUnit(key)} ${valueString(value, KeyMap.unit(key))}`
-  //*/
+/* Comment/uncomment this line to toggle between string formulas and JSX formulas
+function createName({ key, value, namePrefix, variant }: ContextNodeDisplay): Displayable {
+  const prefix = namePrefix ? namePrefix + ' ' : ''
+  return <><span color={variant}>{prefix + KeyMap.getNoUnit(key!)}</span> {valueString(value, KeyMap.unit(key!))}</>
 }
 function mergeFormulaComponents(components: Displayable[]): Displayable {
-  /*
   return <>{components.map((x, i) => (<span key={i}>{x}</span>))}</>
-  /*/
-  return (components as string[]).join("")
-  //*/
 }
+function createAssignFormula(name: Displayable, formula: Displayable) {
+  return <>{name} = {formula}`</>
+}
+/*/
+function createName({ key, value, namePrefix }: ContextNodeDisplay): Displayable {
+  const prefix = namePrefix ? namePrefix + ' ' : ''
+  return `${prefix + KeyMap.getNoUnit(key!)} ${valueString(value, KeyMap.unit(key!))}`
+}
+function mergeFormulaComponents(components: Displayable[]): Displayable {
+  return (components as string[]).join("")
+}
+function createAssignFormula(name: Displayable, formula: Displayable) {
+  return `${name} = ${formula}`
+}
+//*/
 
 interface ContextString { value?: string }
 
 interface ContextNodeDisplay {
   key?: string
+  namePrefix?: string
 
   pivot: boolean
   empty: boolean
 
   value: number
-  variant?: ElementKeyWithPhy | TransformativeReactionsKey | AmplifyingReactionsKey | "success"
+  variant?: Variant
 
   dependencies: Set<Displayable>
 
