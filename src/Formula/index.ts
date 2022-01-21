@@ -49,7 +49,6 @@ const rd = setReadNodeKeys({
   team: { infusion: stringRead() },
 
   bonus: {
-    // TODO: Add to total or premod
     crit: objectFromKeyMap(allMoves, move => read("add", { key: `${move}_critRate_`, pivot })),
     dmg: {
       common: read("add", { key: "dmg_", pivot }),

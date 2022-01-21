@@ -265,12 +265,7 @@ export class UIData {
         : [...x.dependencies])])
     const result: ContextNodeDisplay = {
       formula: formula.display,
-      // Note:
-      // We technically should use `operands.every(x => x.empty)` to
-      // check for emptiness. However, we don't have any instance where
-      // this could return `true`. So we're simply setting it to `false`
-      // to save some computations.
-      empty: false,
+      empty: operands.every(x => x.empty),
       value, mayNeedWrapping,
       pivot: false, dependencies,
     }
