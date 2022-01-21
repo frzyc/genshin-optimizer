@@ -4,8 +4,6 @@ import { data as moonglowData } from "../Data/Weapons/Catalyst/EverlastingMoongl
 import artifact from "../Data/Artifacts/index_WR"
 import { common, input } from "./index";
 import { constant } from "./internal";
-import { randomizeArtifact } from "../Util/ArtifactUtil";
-import { validateArtifact } from "../Database/validation";
 
 const charData = dataObjForCharacter({
   equippedArtifacts: { "circlet": "", "flower": "", "goblet": "", "plume": "", "sands": "" },

@@ -53,21 +53,25 @@ const rd = setReadNodeKeys({
     crit: objectFromKeyMap(allMoves, move => read("add", { key: `${move}_critRate_`, pivot })),
     dmg: {
       common: read("add", { key: "dmg_", pivot }),
-      ...objectFromKeyMap(Object.keys(transformativeReactions), reaction => read("add", { key: `${reaction}_dmg_`, pivot })),
-      ...objectFromKeyMap(Object.keys(amplifyingReactions), reaction => read("add", { key: `${reaction}_dmg_`, pivot })),
-      ...objectFromKeyMap(allMoves, move => read("add", { key: `${move}_dmg_`, pivot })),
-      ...objectFromKeyMap(allElementsWithPhy, ele => read("add", { key: `${ele}_dmg_`, pivot })),
+      ...objectFromKeyMap(Object.keys(transformativeReactions), reaction =>
+        read("add", { key: `${reaction}_dmg_`, variant: reaction, pivot })),
+      ...objectFromKeyMap(Object.keys(amplifyingReactions), reaction =>
+        read("add", { key: `${reaction}_dmg_`, variant: reaction, pivot })),
+      ...objectFromKeyMap(allMoves, move =>
+        read("add", { key: `${move}_dmg_`, pivot })),
+      ...objectFromKeyMap(allElementsWithPhy, ele =>
+        read("add", { key: `${ele}_dmg_`, variant: ele, pivot })),
     },
-    res: objectFromKeyMap(allElementsWithPhy, ele => read("add", { key: `${ele}_res_` })),
+    res: objectFromKeyMap(allElementsWithPhy, ele => read("add", { key: `${ele}_res_`, variant: ele })),
   },
   override: {
     enemy: {
-      res: objectFromKeyMap(allElementsWithPhy, ele => read("add", { key: `${ele}_enemyRes_` })),
+      res: objectFromKeyMap(allElementsWithPhy, ele => read("add", { key: `${ele}_enemyRes_`, variant: ele })),
     }
   },
 
   enemy: {
-    res: objectFromKeyMap(allElementsWithPhy, ele => read("add", { key: `${ele}_enemyRes_` })),
+    res: objectFromKeyMap(allElementsWithPhy, ele => read("add", { key: `${ele}_enemyRes_`, variant: ele })),
     level: read("unique", { key: "enemyLevel" }),
     def: read("add", { key: "enemyDEF_multi", pivot }),
     defRed: read("add", { key: "enemyDEFRed_", pivot }),

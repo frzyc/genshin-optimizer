@@ -1,3 +1,4 @@
+import { AmplifyingReactionsKey, TransformativeReactionsKey } from "../StatConstants"
 import type { MainStatKey, SubstatKey } from "../Types/artifact"
 import type { ArtifactSetKey, ElementKey, ElementKeyWithPhy, ReactionModeKey } from "../Types/consts"
 import type { Path } from "../Util/KeyPathUtil"
@@ -22,7 +23,7 @@ interface NodeBase {
 interface Info {
   key?: string
   namePrefix?: string
-  variant?: ElementKeyWithPhy | "success"
+  variant?: ElementKeyWithPhy | TransformativeReactionsKey | AmplifyingReactionsKey | "success"
   asConst?: true
   pivot?: true
 }

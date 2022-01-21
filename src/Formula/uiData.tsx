@@ -1,4 +1,5 @@
 import KeyMap from "../KeyMap"
+import { AmplifyingReactionsKey, TransformativeReactionsKey } from "../StatConstants"
 import { ElementKeyWithPhy } from "../Types/consts"
 import { assertUnreachable, crawlObject, layeredAssignment, objPathValue } from "../Util/Util"
 import { allOperations } from "./optimization"
@@ -22,7 +23,7 @@ export interface NodeDisplay {
   /** Whether the node fails the conditional test (`threshold_add`, `match`, etc.) or consists solely of empty nodes */
   isEmpty: boolean
   unit: "%" | "flat"
-  variant?: ElementKeyWithPhy | "success"
+  variant?: ElementKeyWithPhy | TransformativeReactionsKey | AmplifyingReactionsKey | "success"
   formula?: Displayable
   formulas: Displayable[]
 }
@@ -140,10 +141,12 @@ export class UIData {
       if (variant) result.variant = variant
       if (key) {
         result.key = key
-        result.name = `${namePrefix ? namePrefix + ' ' : ''}${KeyMap.getNoUnit(key)} ${valueString(result.value, KeyMap.unit(key))}`
+        const prefix = namePrefix ? namePrefix + ' ' : ''
+        result.name = <><span color={result.variant}>{prefix + KeyMap.getNoUnit(key)}</span> {valueString(result.value, KeyMap.unit(key))}</>
+
       }
       if (result.name && result.formula)
-        result.assignment = `${result.name} = ${result.formula}`
+        result.assignment = <>{result.name} = {result.formula}</>
     }
 
     this.nodes.set(node, result)
@@ -305,8 +308,7 @@ function fStr(strings: TemplateStringsArray, ...list: ContextNodeDisplayList[]):
       })
     }
   })
-  // TODO: Update to JSX
-  return { display: (predisplay as string[]).join(""), dependencies: [...dependencies] }
+  return { display: <>{predisplay.map((x, i) => (<span key={i}>{x}</span>))}</>, dependencies: [...dependencies] }
 }
 function mergeVariants(operands: ContextNodeDisplay[]): ContextNodeDisplay["variant"] {
   const unique = new Set(operands.map(x => x.variant))
@@ -335,7 +337,7 @@ interface ContextNodeDisplay {
   empty: boolean
 
   value: number
-  variant?: ElementKeyWithPhy | "success"
+  variant?: ElementKeyWithPhy | TransformativeReactionsKey | AmplifyingReactionsKey | "success"
 
   dependencies: Set<Displayable>
 
