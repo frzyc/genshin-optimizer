@@ -8,9 +8,10 @@ export const todo: Node = { operation: "const", value: NaN, operands: [], info: 
 export function percent(value: number, info?: Info): Node {
   return { operation: "const", operands: [], value, info: { key: "_", ...info } }
 }
-/** Add `info` to the node */
-export function info(node: Node, info: Info): Node {
-  return { ...node, info: { ...node.info, ...info } }
+/** Inject `info` to the node in-place */
+export function infoMut(node: Node, info: Info): Node {
+  if (info) node.info = { ...node.info, ...info }
+  return node
 }
 /** `string1` === `string2` ? `match` : 0 */
 export function match(string1: StringNode, string2: string | undefined | StringNode, node: number | Node, info?: Info): Node {

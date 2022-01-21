@@ -138,7 +138,7 @@ export class UIData {
         delete result.assignment
         result.dependencies = new Set()
       }
-      if (result.key)
+      if (result.key && result.key !== '_')
         result.name = createName(result)
       if (result.name && result.formula)
         result.assignment = createAssignFormula(result.name, result.formula)
@@ -317,9 +317,10 @@ function computeNodeDisplay(node: ContextNodeDisplay): NodeDisplay {
   }
 }
 
-/* Comment/uncomment this line to toggle between string formulas and JSX formulas
+//* Comment/uncomment this line to toggle between string formulas and JSX formulas
 function createName({ key, value, namePrefix, variant }: ContextNodeDisplay): Displayable {
   const prefix = namePrefix ? namePrefix + ' ' : ''
+  // TODO: FIXME: Add color variant
   return <><span color={variant}>{prefix + KeyMap.getNoUnit(key!)}</span> {valueString(value, KeyMap.unit(key!))}</>
 }
 function mergeFormulaComponents(components: Displayable[]): Displayable {

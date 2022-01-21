@@ -21,7 +21,7 @@ import { allElements, CharacterKey, WeaponTypeKey } from '../../../Types/consts'
 import ColorText from '../../../Components/ColoredText'
 import { input } from "../../../Formula/index";
 import { dataObjForCharacterSheet, dmgNode } from "../../../Formula/api";
-import { customRead, customStringRead, info, match, percent, prod, stringConst, sum, threshold_add, unmatch } from "../../../Formula/utils";
+import { customRead, customStringRead, infoMut, match, percent, prod, stringConst, sum, threshold_add, unmatch } from "../../../Formula/utils";
 import { ICharacterSheet } from '../../../Types/character_WR'
 import { objectFromKeyMap } from '../../../Util/Util'
 const characterKey: CharacterKey = "Sucrose"
@@ -135,13 +135,13 @@ const sheet: ICharacterSheet = {
           {
             text: tr(`auto.fields.normal`),
             fields: datamine.normal.hitArr.map((percentArr, i) => ({
-              node: info(dmgFormulas.normal[i], { key: `char_${characterKey}_gen:auto.skillParams.${i}` }),
+              node: infoMut(dmgFormulas.normal[i], { key: `char_${characterKey}_gen:auto.skillParams.${i}` }),
             }))
           },
           {
             text: tr(`auto.fields.charged`),
             fields: [{
-              node: info(dmgFormulas.charged.dmg, { key: `char_${characterKey}_gen:auto.skillParams.4` }),
+              node: infoMut(dmgFormulas.charged.dmg, { key: `char_${characterKey}_gen:auto.skillParams.4` }),
             }, {
               text: tr("auto.skillParams.5"),
               value: 50, // TODO: stamina
@@ -149,11 +149,11 @@ const sheet: ICharacterSheet = {
           }, {
             text: tr(`auto.fields.plunging`),
             fields: [{
-              node: info(dmgFormulas.plunging.dmg, { key: "sheet_gen:plunging.dmg" }),
+              node: infoMut(dmgFormulas.plunging.dmg, { key: "sheet_gen:plunging.dmg" }),
             }, {
-              node: info(dmgFormulas.plunging.low, { key: "sheet_gen:plunging.low" }),
+              node: infoMut(dmgFormulas.plunging.low, { key: "sheet_gen:plunging.low" }),
             }, {
-              node: info(dmgFormulas.plunging.high, { key: "sheet_gen:plunging.high" }),
+              node: infoMut(dmgFormulas.plunging.high, { key: "sheet_gen:plunging.high" }),
             }]
           },
         ],
@@ -164,7 +164,7 @@ const sheet: ICharacterSheet = {
         sections: [{
           text: tr("skill.description"),
           fields: [{
-            node: info(dmgFormulas.skill.press, { key: `char_${characterKey}_gen:skill.skillParams.0` }),
+            node: infoMut(dmgFormulas.skill.press, { key: `char_${characterKey}_gen:skill.skillParams.0` }),
           }, {
             text: tr("skill.skillParams.1"),
             value: "15s"
@@ -177,7 +177,7 @@ const sheet: ICharacterSheet = {
         sections: [{
           text: tr("burst.description"),
           fields: [{
-            node: info(dmgFormulas.burst.dot, { key: `char_${characterKey}_gen:burst.skillParams.0` }),
+            node: infoMut(dmgFormulas.burst.dot, { key: `char_${characterKey}_gen:burst.skillParams.0` }),
           }, {
             text: tr("burst.skillParams.2"),
             value: "6s"
@@ -198,7 +198,7 @@ const sheet: ICharacterSheet = {
                   const [num, condEleKey] = stats.conditionalValues?.character?.Sucrose?.q ?? []
                   return !!num && condEleKey === eleKey
                 },
-                node: info(dmgFormulas.burst[eleKey], { key: `char_${characterKey}_gen:burst.skillParams.1` }),
+                node: infoMut(dmgFormulas.burst[eleKey], { key: `char_${characterKey}_gen:burst.skillParams.1` }),
               }]
             }]))
           },
