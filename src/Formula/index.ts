@@ -18,7 +18,7 @@ const rd = setReadNodeKeys({
   constellation: read("unique"),
   asc: read("unique"),
 
-  talent: objectFromKeyMap(["base", "boost", "total"] as const, type =>
+  talent: objectFromKeyMap(["base", "boost", "total", "index"] as const, type =>
     objectFromKeyMap(["auto", "skill", "burst"] as const, _ => read(type === "boost" ? "add" : "unique"))),
 
   ...objectFromKeyMap(["hp", "atk", "def"] as const, key => read("unique", { key, namePrefix: "Char.", asConst })),
@@ -43,7 +43,8 @@ const rd = setReadNodeKeys({
   weapon: {
     key: stringRead(), type: stringRead(),
 
-    lvl: read("unique"), asc: read("unique"), refineIndex: read("unique"),
+    lvl: read("unique"), asc: read("unique"),
+    refineIndex: read("unique"), refinement: read("unique"),
     main: read("unique", { namePrefix: "Weapon", asConst }),
     sub: read("unique", { namePrefix: "Weapon", asConst }),
     sub2: read("unique", { namePrefix: "Weapon", asConst }),
@@ -116,7 +117,9 @@ const common = {
   base: objectFromKeyMap(["hp", "atk", "def"], key => rd[key] as Node),
   talent: {
     total: objectFromKeyMap(["auto", "skill", "burst"] as const, talent =>
-      sum(rd.talent.base[talent], rd.talent.boost[talent]))
+      sum(rd.talent.base[talent], rd.talent.boost[talent])),
+    index: objectFromKeyMap(["auto", "skill", "burst"] as const, talent =>
+      sum(rd.talent.total[talent], -1)),
   },
   premod: {
     ...objectFromKeyMap(allMainSubStats, key => {
@@ -143,6 +146,10 @@ const common = {
     ),
     ...objectFromKeyMap(allMainSubStats, key => premod[key] as Node),
     cappedCritRate: max(min(total.critRate_, unit), naught),
+  },
+
+  weapon: {
+    refineIndex: sum(rd.weapon.refinement, -1),
   },
 
   hit: {

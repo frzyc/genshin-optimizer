@@ -25,7 +25,7 @@ function dmgNode(base: MainStatKey, lvlMultiplier: number[], move: "normal" | "c
   }
   return data(input.hit.dmg, [{
     hit: {
-      base: prod(input.total[base], subscript(input.talent.total[talentType], lvlMultiplier, { key: '_' })),
+      base: prod(input.total[base], subscript(input.talent.index[talentType], lvlMultiplier, { key: '_' })),
       move: stringConst(move), // TODO: element ?: T, reaction ?: T, critType ?: T
     },
   }, additional])
@@ -174,7 +174,7 @@ function dataObjForWeapon(weapon: ICachedWeapon): Data {
     weapon: {
       lvl: constant(weapon.level),
       asc: constant(weapon.ascension),
-      refineIndex: constant(weapon.refinement - 1),
+      refinement: constant(weapon.refinement),
     },
   }
 }
