@@ -12,9 +12,11 @@ export const data: Data = {
   premod: {
     enerRech_: threshold_add(input.art.EmblemOfSeveredFate, 2, percent(0.2))
   },
-  dmgBonus: {
-    burst: threshold_add(input.art.EmblemOfSeveredFate, 4,
-      min(percent(0.75), prod(percent(0.25), input.premod.enerRech_)))
+  bonus: {
+    dmg: {
+      burst: threshold_add(input.art.EmblemOfSeveredFate, 4,
+        min(percent(0.75), prod(percent(0.25), input.premod.enerRech_)))
+    }
   }
 }
 
@@ -33,7 +35,7 @@ const artifact: IArtifactSheet = {
       document: [{
         fields: [{
           text: "Elemental Burst DMG",
-          node: data.dmgBonus!.burst!,
+          node: data.bonus!.dmg!.burst,
           fixed: 1,
           unit: "%"
         }]

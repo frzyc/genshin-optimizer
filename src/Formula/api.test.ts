@@ -38,13 +38,12 @@ const weaponData = dataObjForWeapon({
 
 describe("API", () => {
   test("none", async () => {
-    const art = validateArtifact(await randomizeArtifact(), "asdf").artifact
     const computed = computeUIData([
       // ...(dmgFormulas.normal[0] as DataNode).data,
       common, charData, sucroseData, weaponData, moonglowData,
       artifact.EmblemOfSeveredFate.data,
-      { art: { EmblemOfSeveredFate: constant(4) } }, dataObjForArtifact(art, 0)
+      { art: { EmblemOfSeveredFate: constant(4) } }
     ])
-    console.log(computed.getDisplay().burst)
+    console.log(Object.fromEntries(Object.entries(input.total).map(([key, value]) => [key, computed.get(value)])))
   })
 })

@@ -13,7 +13,7 @@ export type Node =
 
 export type StringNode =
   StringConstantNode | StringPriorityNode |
-  StringReadNode | StringMatchStringNode
+  StringReadNode | StringMatchStringNode | StringLookupNode
 
 interface NodeBase {
   operands: Node[]
@@ -77,6 +77,10 @@ export interface StringReadNode extends StringNodeBase {
   path: Path<StringFormulaTemplate, StringNode>
 
   accumulation?: never
+}
+export interface StringLookupNode extends StringNodeBase {
+  operation: "slookup"
+  table: Dict<string | undefined, StringNode>
 }
 
 export type Data = Input & DynamicNumInput

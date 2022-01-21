@@ -83,6 +83,12 @@ export class UIData {
         result = this.getStr(str1 === str2 ? node.operands[2] : node.operands[3])
         break
       }
+      case "slookup": {
+        const str = this.getStr(node.operands[0])
+        const tmp = node.table[str.value!] ?? node.operands[1]
+        result = tmp ? this.getStr(tmp) : {}
+        break
+      }
       default: assertUnreachable(operation)
     }
 
@@ -163,7 +169,7 @@ export class UIData {
   private _lookup(node: LookupNode, visited: Set<Node> | undefined): ContextNodeDisplay {
     const key = this.getStr(node.string).value
     const selected = node.table[key!] ?? node.operands[0]
-    if (!selected) throw { error: "Lookup fail", node: node, x: node.string, key }
+    if (!selected) throw { error: "Lookup fail", key, table: node.table, default: node.operands[0] }
 
     // TODO: Wrap info here instead
     return this.computeNode(selected, visited)
@@ -222,18 +228,18 @@ export class UIData {
     let formula: { display: Displayable, dependencies: Displayable[] }
     let mayNeedWrapping = false
     switch (operation) {
-      case "max": formula = fStr`Max(${{ operands }})`; break
-      case "min": formula = fStr`Min(${{ operands }})`; break
+      case "max": formula = fStr`Max( ${{ operands }} )`; break
+      case "min": formula = fStr`Min( ${{ operands }} )`; break
       case "add": formula = fStr`${{ operands, separator: ' + ' }}`; break
       case "mul": formula = fStr`${{ operands, separator: ' * ', shouldWrap }}`; break
-      case "sum_frac": formula = fStr`${{ operands: [operands[0]], shouldWrap }} / (${{ operands, separator: ' + ' }})`; break
+      case "sum_frac": formula = fStr`${{ operands: [operands[0]], shouldWrap }} / ( ${{ operands, separator: ' + ' }} )`; break
       case "res": {
         const base = operands[0].value
         if (base < 0) {
           formula = fStr`100% - ${{ operands, shouldWrap }} / 2`
           mayNeedWrapping = true
         }
-        else if (base >= 0.75) formula = fStr`100% / (${{ operands, shouldWrap }} * 4 + 100%)`
+        else if (base >= 0.75) formula = fStr`100% / ( ${{ operands, shouldWrap }} * 4 + 100% )`
         else {
           formula = fStr`100% - ${{ operands, shouldWrap }}`
           mayNeedWrapping = true
@@ -288,9 +294,9 @@ function fStr(strings: TemplateStringsArray, ...list: ContextNodeDisplayList[]):
         else if (item.formula) itemFormula = item.formula
 
         if (shouldWrap && item.mayNeedWrapping) {
-          predisplay.push("(")
+          predisplay.push("( ")
           predisplay.push(itemFormula)
-          predisplay.push(")")
+          predisplay.push(" )")
         } else {
           predisplay.push(itemFormula)
         }

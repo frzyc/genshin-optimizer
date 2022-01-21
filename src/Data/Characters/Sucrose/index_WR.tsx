@@ -24,6 +24,7 @@ import { input } from "../../../Formula/index";
 import { dataObjForCharacterSheet, dmgNode } from "../../../Formula/api";
 import { customRead, customStringRead, match, percent, prod, stringConst, sum, threshold_add, unmatch } from "../../../Formula/utils";
 import { ICharacterSheet } from '../../../Types/character_WR'
+import { objectFromKeyMap } from '../../../Util/Util'
 
 const tr = (strKey: string) => <Translate ns="char_Sucrose_gen" key18={strKey} />
 
@@ -73,8 +74,8 @@ const asc4 = threshold_add(condSkillHitOpponent, 1, unmatch(input.charKey, "Sucr
   threshold_add(input.asc, 4, prod(percent(0.2), input.premod.eleMas))), { key: "eleMas" })
 const c6Base = threshold_add(input.constellation, 6, percent(0.2))
 // TODO: Add to team buff
-const c6Bonus = Object.fromEntries(allElements.map(ele => [ele,
-  match(condAbsorption, ele, c6Base, { key: `${ele}_dmg_` })]))
+const c6Bonus = objectFromKeyMap(absorbableEle, ele =>
+  match(condAbsorption, ele, c6Base, { key: `${ele}_dmg_` }))
 
 export const dmgFormulas = {
   normal: Object.fromEntries(datamine.normal.hitArr.map((arr, i) =>
@@ -108,7 +109,9 @@ export const data = dataObjForCharacterSheet("Sucrose", "anemo", data_gen.weapon
       }
     },
     total: { eleMas: sum(asc1, asc4) },
-    dmgBonus: c6Bonus
+    bonus: {
+      dmg: c6Bonus
+    }
   }
 )
 

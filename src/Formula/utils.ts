@@ -10,8 +10,7 @@ export function percent(value: number, info?: Info): Node {
 }
 /** Add `info` to the node */
 export function info(node: Node, info: Info): Node {
-  node.info = { ...node.info, ...info }
-  return node
+  return { ...node, info: { ...node.info, ...info } }
 }
 /** `string1` === `string2` ? `match` : 0 */
 export function match(string1: StringNode, string2: string | undefined | StringNode, node: number | Node, info?: Info): Node {
@@ -22,8 +21,8 @@ export function unmatch(string1: StringNode, string2: string | undefined | Strin
   return { operation: "unmatch", operands: intoOperands([node]), string1, string2: intoString(string2), info }
 }
 /** `table[string] ?? defaultNode` */
-export function lookup(string: StringNode, table: Dict<string, Node>, defaultNode?: number | Node, info?: Info): Node {
-  return { operation: "lookup", operands: defaultNode ? intoOperands([defaultNode]) : [], string, table, info }
+export function lookup(string: StringNode, table: Dict<string, Node>, defaultNode: number | Node | undefined, info?: Info): Node {
+  return { operation: "lookup", operands: defaultNode !== undefined ? intoOperands([defaultNode]) : [], string, table, info }
 }
 
 /** min( x1, x2, ... ) */
@@ -97,6 +96,11 @@ export function stringPrio(...operands: (string | StringNode)[]): StringNode {
 export function stringMatch(string1: StringNode, string2: string | undefined | StringNode, match: string | undefined | StringNode, unmatch: string | undefined | StringNode): StringNode {
   return { operation: "smatch", operands: [string1, string2, match, unmatch].map(intoString) }
 }
+/** `table[string] ?? defaultNode` */
+export function stringLookup(string: StringNode, table: Dict<string, StringNode>, defaultNode?: string | StringNode): StringNode {
+  return { operation: "slookup", operands: [string, intoString(defaultNode)], table }
+}
+
 
 function intoOperands(values: (number | Node)[]): Node[] {
   return values.map(value => typeof value === "number" ? { operation: "const", value, operands: [] } : value)

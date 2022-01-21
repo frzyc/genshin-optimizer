@@ -301,6 +301,11 @@ function resolveStringNode(node: StringNode, data: Data[]): string | undefined {
       const [string1, string2] = node.operands.map(x => resolveStringNode(x, data))
       return resolveStringNode(string1 === string2 ? node.operands[2] : node.operands[3], data)
     }
+    case "slookup": {
+      const string = resolveStringNode(node.operands[0], data)
+      const tmp = node.table[string!] ?? node.operands[1]
+      return tmp && resolveStringNode(tmp, data)
+    }
     default: assertUnreachable(operation)
   }
 }

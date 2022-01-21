@@ -14,7 +14,7 @@ import { DataContext } from "../../DataContext";
 import { valueString } from "../../Formula/api";
 import { input } from "../../Formula/index";
 import { ReadNode } from "../../Formula/type";
-import KeyMap, { allAmplifyingReactionsDmgKey, allEleDmgKeys, allEleEnemyResKeys, allEleResKeys, allTransformativeReactionsDmgKeys } from "../../KeyMap";
+import KeyMap from "../../KeyMap";
 import useCharacterReducer from "../../ReactHooks/useCharacterReducer";
 import { amplifyingReactions, transformativeReactions } from "../../StatConstants";
 import { ICachedCharacter, TalentSheetElementKey } from "../../Types/character";
@@ -113,22 +113,22 @@ const mainReadNodes = [...mainBaseKeys, ...mainSubKeys].map(k => input.total[k])
 const mainEditKeys = ["atk_", "atk", "hp_", "hp", "def_", "def", ...mainSubKeys] as const
 
 const otherStatReadNodes = [
-  ...allElementsWithPhy.map(x => input.dmgBonus[x]),
-  ...allElementsWithPhy.map(x => input.res[x]),
+  ...allElementsWithPhy.map(ele => input.bonus.dmg[ele]),
+  ...allElementsWithPhy.map(ele => input.bonus.res[ele]),
   ...["stamina", "incHeal_", "shield_", "cdRed_"].map(x => input.misc[x])
 ]
 const otherStatKeys = otherStatReadNodes.map(x => x.info.key)
 
 const miscStatReadNodes = [
-  input.dmgBonus.common,
+  input.bonus.dmg.common,
   ...allElementsWithPhy.map(x => input.enemy.res[x]),
-  input.dmgBonus.normal, input.critBonus.normal,
-  input.dmgBonus.charged, input.critBonus.charged,
-  input.dmgBonus.plunging, input.critBonus.plunging,
-  input.dmgBonus.skill, input.critBonus.skill,
-  input.dmgBonus.burst, input.critBonus.burst,
-  ...Object.keys(transformativeReactions).map(x => input.dmgBonus[x]),
-  ...Object.keys(amplifyingReactions).map(x => input.dmgBonus[x]),
+  input.bonus.dmg.normal, input.bonus.crit.normal,
+  input.bonus.dmg.charged, input.bonus.crit.charged,
+  input.bonus.dmg.plunging, input.bonus.crit.plunging,
+  input.bonus.dmg.skill, input.bonus.crit.skill,
+  input.bonus.dmg.burst, input.bonus.crit.burst,
+  ...Object.keys(transformativeReactions).map(x => input.bonus.dmg[x]),
+  ...Object.keys(amplifyingReactions).map(x => input.bonus.dmg[x]),
   ...["moveSPD_", "atkSPD_", "weakspotDMG_"].map(x => input.misc[x])
 ]
 const miscStatkeys = miscStatReadNodes.map(x => x.info.key)
