@@ -1,9 +1,7 @@
 import KeyMap from "../KeyMap"
-import { AmplifyingReactionsKey, TransformativeReactionsKey } from "../StatConstants"
-import { ElementKeyWithPhy } from "../Types/consts"
 import { assertUnreachable, crawlObject, layeredAssignment, objPathValue } from "../Util/Util"
 import { allOperations } from "./optimization"
-import { ComputeNode, Data, DataNode, Info, LookupNode, Node, ReadNode, StringMatchNode, StringNode, SubscriptNode, Variant } from "./type"
+import { ComputeNode, Data, DataNode, LookupNode, Node, ReadNode, StringMatchNode, StringNode, SubscriptNode, Variant } from "./type"
 
 const shouldWrap = true
 
@@ -209,8 +207,7 @@ export class UIData {
   }
 
   private _accumulate(operation: ComputeNode["operation"], operands: ContextNodeDisplay[]): ContextNodeDisplay {
-    let variant: ContextNodeDisplay["variant"]
-
+    let variant: Variant | undefined
     switch (operation) {
       case "add": case "mul": case "min": case "max":
       case "res": case "sum_frac":
@@ -376,7 +373,7 @@ function makeEmpty(node: ContextNodeDisplay, shouldMakeEmpty: boolean): ContextN
   if (!shouldMakeEmpty) return node
 
   const result: ContextNodeDisplay = {
-    value: 0, pivot: true, empty: true, dependencies: new Set(), mayNeedWrapping: false
+    value: 0, pivot: false, empty: true, dependencies: new Set(), mayNeedWrapping: false
   }
   if (node.key) result.key = node.key
   if (node.variant) result.variant = node.variant

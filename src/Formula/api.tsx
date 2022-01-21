@@ -126,7 +126,7 @@ function dataObjForCharacter(char: ICachedCharacter): Data {
     enemy: {
       res: {
         ...objectFromKeyMap(allElementsWithPhy, _ => {
-          return constant(0.1)
+          return percent(0.1)
         }),
       },
       level: constant(char.level),

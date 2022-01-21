@@ -25,7 +25,7 @@ const rd = setReadNodeKeys({
   special: read("unique", { namePrefix: "Char.", asConst }),
 
   base: objectFromKeyMap(["atk", "hp", "def"] as const, key =>
-    read(key === "atk" ? "add" : "unique", { key, namePrefix: "Base", pivot })),
+    read(key === "atk" ? "add" : "unique", { key, namePrefix: "Base" })),
   premod: objectFromKeyMap(allMainSubStats, _ => read("add")),
   total: {
     dmg_: read("add"), // Total DMG Bonus
@@ -51,15 +51,15 @@ const rd = setReadNodeKeys({
   bonus: {
     crit: objectFromKeyMap(allMoves, move => read("add", { key: `${move}_critRate_`, pivot })),
     dmg: {
-      common: read("add", { key: "dmg_", pivot }),
+      common: read("add", { key: "dmg_", namePrefix: "Custom" }),
       ...objectFromKeyMap(Object.keys(transformativeReactions), reaction =>
-        read("add", { key: `${reaction}_dmg_`, variant: reaction, pivot })),
+        read("add", { key: `${reaction}_dmg_`, variant: reaction, namePrefix: "Custom" })),
       ...objectFromKeyMap(Object.keys(amplifyingReactions), reaction =>
-        read("add", { key: `${reaction}_dmg_`, variant: reaction, pivot })),
+        read("add", { key: `${reaction}_dmg_`, variant: reaction, namePrefix: "Custom" })),
       ...objectFromKeyMap(allMoves, move =>
-        read("add", { key: `${move}_dmg_`, pivot })),
+        read("add", { key: `${move}_dmg_`, namePrefix: "Custom" })),
       ...objectFromKeyMap(allElementsWithPhy, ele =>
-        read("add", { key: `${ele}_dmg_`, variant: ele, pivot })),
+        read("add", { key: `${ele}_dmg_`, variant: ele, namePrefix: "Custom" })),
     },
     res: objectFromKeyMap(allElementsWithPhy, ele => read("add", { key: `${ele}_res_`, variant: ele })),
   },
