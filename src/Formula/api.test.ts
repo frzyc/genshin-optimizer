@@ -40,7 +40,7 @@ describe("API", () => {
       // ...(dmgFormulas.normal[0] as DataNode).data,
       common, charData, sucroseData, weaponData, moonglowData,
       artifact.EmblemOfSeveredFate.data,
-      { art: { EmblemOfSeveredFate: constant(4) } }
+      { artSet: { EmblemOfSeveredFate: constant(4) } }
     ])
     console.log(Object.fromEntries(Object.entries(input.total).map(([key, value]) => [key, computed.get(value)])))
   })

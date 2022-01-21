@@ -85,11 +85,6 @@ const rd = setReadNodeKeys({
     dmg: read("unique"), trans: read("unique"),
   },
 
-  display: {
-    normal: {},
-    charged: objectFromKeyMap(["dmg", "spinning", "final", "hit", "full"] as const, _ => read("unique")),
-    plunging: objectFromKeyMap(["dmg", "low", "high"] as const, _ => read("unique")),
-  },
   misc: objectFromKeyMap([
     "stamina", "incHeal_", "shield_", "cdRed_", "moveSPD_", "atkSPD_", "weakspotDMG_"
   ] as const, key => read("add", { key }))
