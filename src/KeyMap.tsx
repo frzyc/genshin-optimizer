@@ -1,3 +1,4 @@
+import { Translate } from "./Components/Translate";
 import elementalData from "./Data/ElementalData";
 import { amplifyingReactions, AmplifyingReactionsKey, HitMoveKey, hitMoves, transformativeReactions, TransformativeReactionsKey } from "./StatConstants";
 import { allElementsWithPhy, ElementKeyWithPhy } from "./Types/consts";
@@ -109,14 +110,20 @@ export default class KeyMap {
     if (this instanceof KeyMap)
       throw Error('A static class cannot be instantiated.');
   }
-  static get(key: string): string | undefined {
-    const name = statMap[key]
+  static get(key: string): Displayable | undefined {
+    const name = statMap[key] as string | undefined
     if (name) return name
-    return undefined
+    if (key.includes(":")) {
+      const [ns, key18] = key.split(":")
+      return <Translate ns={ns} key18={key18} />
+    }
+    return key
   }
-  static getNoUnit(key: string): string {
+  static getNoUnit(key: string): Displayable {
     const name = KeyMap.get(key) ?? ""
-    return name.endsWith("%") ? name.slice(0, -1) : name
+    if (typeof name === "string")
+      return name.endsWith("%") ? name.slice(0, -1) : name
+    return name
   }
   static unit(key: string): "%" | "flat" {
     if (key.endsWith("_")) return "%"

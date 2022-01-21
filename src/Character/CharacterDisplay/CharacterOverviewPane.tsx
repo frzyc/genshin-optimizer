@@ -22,16 +22,11 @@ import { allElementsWithPhy, ElementKey } from "../../Types/consts";
 import WeaponDisplayCard from "../../Weapon/WeaponDisplayCard";
 import CharacterSheet from "../CharacterSheet_WR";
 import StatInput from "../StatInput";
-type CharacterOverviewPaneProps = {
-  character: ICachedCharacter;
-  characterSheet: CharacterSheet;
-  weaponId: string
-}
-export default function CharacterOverviewPane({ character, characterSheet, weaponId }: CharacterOverviewPaneProps) {
-  const { data } = useContext(DataContext)
+export default function CharacterOverviewPane() {
+  const { data, characterSheet, character } = useContext(DataContext)
   const characterKey = (data?.getStr(input.charKey)?.value ?? "") as CharacterKey | ""
   const characterDispatch = useCharacterReducer(characterKey)
-  if (!data) return null
+  if (!data || !characterSheet || !character) return null
   const charEle = data.getStr(input.charEle).value as ElementKey
   const weaponTypeKey = characterSheet.weaponTypeKey
   const level = data.get(input.lvl).value
@@ -99,7 +94,7 @@ export default function CharacterOverviewPane({ character, characterSheet, weapo
     <Grid item xs={12} md={9} sx={{
       "> div:not(:last-child)": { mb: 1 }
     }} >
-      <WeaponDisplayCard weaponId={weaponId} />
+      <WeaponDisplayCard weaponId={character.equippedWeapon} />
       <MainStatsCards />
     </Grid>
   </Grid >
@@ -168,33 +163,37 @@ function MainStatsCards() {
         </Grid>}
       />}
       editContent={<Grid container columnSpacing={2} rowSpacing={1}>
-        {mainEditKeys.map(statKey =>
-          <Grid item xs={12} lg={6} key={statKey}>
+        {mainEditKeys.map(statKey => {
+          const statName = KeyMap.get(statKey)
+          return <Grid item xs={12} lg={6} key={statKey}>
             <StatInput
-              name={<span>{StatIcon[statKey]} {KeyMap.get(statKey)}</span>}
-              placeholder={KeyMap.get(statKey)}
+              name={<span>{StatIcon[statKey]} {statName}</span>}
+              placeholder={typeof statName === "string" ? statName : undefined}
               value={character.bonusStats[statKey] ?? 0}
               percent={KeyMap.unit(statKey) === "%"}
               onValueChange={value => characterDispatch({ type: "editStats", statKey, value })}
             />
-          </Grid>)}
+          </Grid>
+        })}
       </Grid>}
     />
     <StatDisplayCard
       title="Other Stats"
       content={<StatDisplayContent statBreakpoint={statBreakpoint} nodes={otherStatReadNodes} />}
       editContent={<Grid container columnSpacing={2} rowSpacing={1}>
-        {otherStatKeys.map(statKey =>
-          <Grid item xs={12} lg={6} key={statKey}>
+        {otherStatKeys.map(statKey => {
+          const statName = KeyMap.get(statKey)
+          return <Grid item xs={12} lg={6} key={statKey}>
             <StatInput
-              name={<span>{StatIcon[statKey]} {KeyMap.get(statKey)}</span>}
-              placeholder={KeyMap.get(statKey)}
+              name={<span>{StatIcon[statKey]} {statName}</span>}
+              placeholder={typeof statName === "string" ? statName : undefined}
               value={character.bonusStats[statKey] ?? (statKey === "stamina" ? 100 : 0)}
               percent={KeyMap.unit(statKey) === "%"}
               defaultValue={statKey === "stamina" ? 100 : undefined}
               onValueChange={value => characterDispatch({ type: "editStats", statKey, value })}
             />
-          </Grid>)}
+          </Grid>
+        })}
       </Grid>}
     />
     <StatDisplayCard
@@ -203,16 +202,18 @@ function MainStatsCards() {
         xs: 12, sm: 6, md: 6,
       }} nodes={miscStatReadNodes} />}
       editContent={<Grid container columnSpacing={2} rowSpacing={1}>
-        {miscStatkeys.map(statKey =>
-          <Grid item xs={12} lg={6} key={statKey}>
+        {miscStatkeys.map(statKey => {
+          const statName = KeyMap.get(statKey)
+          return <Grid item xs={12} lg={6} key={statKey}>
             <StatInput
-              name={<span>{StatIcon[statKey]} {KeyMap.get(statKey)}</span>}
-              placeholder={KeyMap.get(statKey)}
+              name={<span>{StatIcon[statKey]} {statName}</span>}
+              placeholder={typeof statName === "string" ? statName : undefined}
               value={character.bonusStats[statKey] ?? 0}
               percent={KeyMap.unit(statKey) === "%"}
               onValueChange={value => characterDispatch({ type: "editStats", statKey, value })}
             />
-          </Grid>)}
+          </Grid>
+        })}
       </Grid>}
     />
   </>

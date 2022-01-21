@@ -18,9 +18,7 @@ export const data = dataObjForWeaponSheet("EverlastingMoonglow", "catalyst",
   { stat: data_gen.subStat!.type, base: data_gen.subStat!.base, lvlCurve: data_gen.subStat!.curve, },
   { stat: "heal_", refinement: data_gen.addProps.map(x => x.heal_) as any },
   {
-    hit: {
-      base: normalDmgInc
-    },
+    normalDmgInc
   }
 )
 const weapon: IWeaponSheet = {

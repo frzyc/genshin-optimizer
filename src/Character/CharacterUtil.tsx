@@ -5,7 +5,9 @@ import { ICachedCharacter, TalentSheetElementKey } from "../Types/character"
 import { allSlotKeys, CharacterKey } from "../Types/consts"
 import { ICalculatedStats } from "../Types/stats"
 import { objectFromKeyMap } from "../Util/Util"
-
+/**
+ * @deprecated
+ */
 export function getFormulaTargetsDisplayHeading(key: string, sheets: Sheets, build: ICalculatedStats): {
   title: Displayable,
   icon?: string

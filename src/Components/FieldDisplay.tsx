@@ -1,9 +1,9 @@
 import { faQuestionCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Box, List, ListItem, styled, Typography } from "@mui/material";
+import { Box, List, styled, Typography } from "@mui/material";
 import React, { useContext, useMemo } from 'react';
 import { DataContext } from "../DataContext";
-import { NodeDisplay, UIData, valueString } from "../Formula/api";
+import { NodeDisplay, valueString } from "../Formula/api";
 import KeyMap from "../KeyMap";
 import { IBasicFieldDisplay, IFieldDisplay } from "../Types/IFieldDisplay_WR";
 import { evalIfFunc } from "../Util/Util";
@@ -17,7 +17,12 @@ export default function FieldDisplay({ field }: { field: IFieldDisplay }) {
   if (!canShow || !data) return null
   if ("node" in field) {
     const node = data.get(field.node)
-    if (oldData) return <NodeFieldDisplay node={node} oldValue={oldData.get(field.node).value} />
+    if (node.isEmpty) return null
+    if (oldData) {
+      const oldNode = oldData.get(field.node)
+      const oldValue = oldNode.isEmpty ? 0 : oldNode.value
+      return <NodeFieldDisplay node={node} oldValue={oldValue} />
+    }
     else return <NodeFieldDisplay node={node} />
   }
   return <BasicFieldDisplay field={field} />
@@ -33,6 +38,7 @@ function BasicFieldDisplay({ field }: { field: IBasicFieldDisplay }) {
   </Box>
 }
 
+// TODO: "dim" field when the node.isEmpty
 export function NodeFieldDisplay({ node, oldValue }: { node: NodeDisplay, oldValue?: number }) {
   const fieldText = node.key ? KeyMap.get(node.key) : ""
   const fieldFormulaText = node.formula

@@ -1,6 +1,5 @@
 import { Button, ButtonGroup, Card, CardContent, Divider, Grid, MenuItem, Skeleton, Tab, Tabs, Typography } from '@mui/material';
 import { Suspense, useCallback, useContext, useEffect, useMemo, useState } from 'react';
-import { buildContext } from '../Build/Build';
 import CardDark from '../Components/Card/CardDark';
 import CardLight from '../Components/Card/CardLight';
 import { CharacterSelectionModal } from '../Components/Character/CharacterSelectionModal';
@@ -15,17 +14,11 @@ import { DamageOptionsCard } from '../Components/HitModeEditor';
 import ImgIcon from '../Components/Image/ImgIcon';
 import { sgt } from '../Data/Characters/SheetUtil';
 import { ambiguousLevel, ascensionMaxLevel, milestoneLevels } from '../Data/LevelData';
-import { DatabaseContext } from '../Database/Database';
 import { DataContext } from '../DataContext';
 import { UIData } from '../Formula/api';
-import useCharacter from '../ReactHooks/useCharacter';
 import useCharacterReducer from '../ReactHooks/useCharacterReducer';
 import useCharSelectionCallback from '../ReactHooks/useCharSelectionCallback';
 import useCharUIData from '../ReactHooks/useCharUIData';
-import useForceUpdate from '../ReactHooks/useForceUpdate';
-import usePromise from '../ReactHooks/usePromise';
-import useSheets from '../ReactHooks/useSheets';
-import { ICachedCharacter } from '../Types/character';
 import { CharacterKey } from '../Types/consts';
 import { ICalculatedStats } from '../Types/stats';
 import { deepCloneStats } from '../Util/StatUtil';
@@ -148,15 +141,11 @@ export default function CharacterDisplayCard({ characterKey, footer, newBuild: p
         <EnemyExpandCard character={character} />
 
         {/* Character Panel */}
-        {characterSheet && <TabPanel value="character" current={tab}>
-          <CharacterOverviewPane character={character} characterSheet={characterSheet} weaponId={character.equippedWeapon} />
-        </TabPanel >}
+        <TabPanel value="character" current={tab}><CharacterOverviewPane /></TabPanel >
         {/* Artifacts Panel */}
-        {/* {sheets && <buildContext.Provider value={{ newBuild: undefined, equippedBuild, compareBuild, setCompareBuild }}>
-          <TabPanel value="artifacts" current={tab} >
-            <CharacterArtifactPane character={character} sheets={sheets} />
-          </TabPanel >
-        </buildContext.Provider>} */}
+        <DataContext.Provider value={{ data: charUIData, oldData: undefined, setCompareData: setCompareBuild }}>
+          <TabPanel value="artifacts" current={tab} ><CharacterArtifactPane /></TabPanel >
+        </DataContext.Provider>
         {/* new build panel */}
         {/* {newBuild && sheets && <TabPanel value="newartifacts" current={tab} >
           <CharacterArtifactPane character={character} sheets={sheets} />

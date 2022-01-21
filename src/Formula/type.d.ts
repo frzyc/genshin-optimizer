@@ -1,6 +1,6 @@
 import { AmplifyingReactionsKey, TransformativeReactionsKey } from "../StatConstants"
 import type { MainStatKey, SubstatKey } from "../Types/artifact"
-import type { ArtifactSetKey, ElementKey, ElementKeyWithPhy, ReactionModeKey } from "../Types/consts"
+import type { ArtifactSetKey, CharacterKey, ElementKey, ElementKeyWithPhy, ReactionModeKey, WeaponKey } from "../Types/consts"
 import type { Path } from "../Util/KeyPathUtil"
 import type { Input } from "./index"
 
@@ -86,8 +86,20 @@ export interface StringLookupNode extends StringNodeBase {
 }
 
 export type Data = Input & DynamicNumInput
+export type DisplayCharacter<T = Node> = { [key in Move | "misc"]?: { [key in string]?: T } }
+export type DisplayWeapon<T = Node> = { [key in string]?: T }
 interface DynamicNumInput<T = Node> {
-  display?: { [key in Move | "misc"]?: { [key in string]?: T } }
+  display?: {
+    character?: {
+      [key in CharacterKey]?: DisplayCharacter<T>
+    }
+    weapon?: {
+      [key in WeaponKey]?: DisplayWeapon<T>
+    }
+    artifact?: {
+      [key in ArtifactSetKey]?: { [key in string]?: T }
+    }
+  }
   conditional?: NodeData<T>
 }
 export interface NodeData<T = Node> {

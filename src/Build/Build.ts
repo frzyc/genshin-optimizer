@@ -243,11 +243,12 @@ function accumulate(slotKey: SlotKey, art: ICachedArtifact, setCount: Dict<Artif
 }
 
 /**
-  * Create statKey in the form of ${ele}_elemental_${type} for elemental DMG, ${ele}_${src}_${type} for talent DMG.
-  * @param {string} skillKey - The DMG src. Can be "norm","skill". Use an elemental to specify a elemental hit "physical" -> physical_elemental_{type}. Use "elemental" here to specify a elemental hit of character's element/reactionMode
-  * @param {*} stats - The calculated stats
-  * @param {*} overwriteElement - Override the hit to be the character's elemental, that is not part of infusion.
-  */
+ * @deprecated
+* Create statKey in the form of ${ele}_elemental_${type} for elemental DMG, ${ele}_${src}_${type} for talent DMG.
+* @param {string} skillKey - The DMG src. Can be "norm","skill". Use an elemental to specify a elemental hit "physical" -> physical_elemental_{type}. Use "elemental" here to specify a elemental hit of character's element/reactionMode
+* @param {*} stats - The calculated stats
+* @param {*} overwriteElement - Override the hit to be the character's elemental, that is not part of infusion.
+*/
 export function getTalentStatKey(skillKey: string, stats: BasicStats, overwriteElement?: ElementKey | "physical") {
   const { hitMode = "", infusionAura = "", infusionSelf = "", reactionMode = "", characterEle = "anemo", weaponType = "sword" } = stats
   if (allElementsWithPhy.includes(skillKey as any)) return `${skillKey}_elemental_${hitMode}`//elemental DMG
@@ -266,6 +267,9 @@ export function getTalentStatKey(skillKey: string, stats: BasicStats, overwriteE
   return `${eleKey}_${skillKey}_${hitMode}`
 }
 
+/**
+ * @deprecated
+ */
 export function getTalentStatKeyVariant(skillKey: string, stats: BasicStats, overwriteElement: ElementKey | "physical" | undefined | "" = "") {
   if (allElementsWithPhy.includes(skillKey as any)) return skillKey//elemental DMG
   const { infusionAura = "", infusionSelf = "", reactionMode = "", characterEle = "anemo", weaponType = "sword" } = stats

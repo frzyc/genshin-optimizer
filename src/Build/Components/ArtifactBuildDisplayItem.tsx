@@ -41,9 +41,9 @@ export default function ArtifactBuildDisplayItem({ sheets, sheets: { artifactShe
               </SqBadge></Typography></Grid>
             )}
           </Grid>
-          {compareBuild ?
+          {/* {compareBuild ?
             <StatDisplayComponent sheets={sheets} character={character} equippedBuild={equippedBuild} newBuild={newBuild} statsDisplayKeys={statsDisplayKeys} /> :
-            <StatDisplayComponent sheets={sheets} character={character} equippedBuild={newBuild} statsDisplayKeys={statsDisplayKeys} />}
+            <StatDisplayComponent sheets={sheets} character={character} equippedBuild={newBuild} statsDisplayKeys={statsDisplayKeys} />} */}
         </CardContent>
       </CardActionArea>
     </Suspense>

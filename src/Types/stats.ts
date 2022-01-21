@@ -6,7 +6,10 @@ import { IConditionalValue, IConditionalValues } from "./IConditional";
 type Flat = number
 type Percent = number
 
-/** Stats that are not affected by artifacts */
+/** 
+ * Stats that are not affected by artifacts 
+ * @deprecated
+ */
 export interface BasicStats {
   characterKey: CharacterKey, weaponType: WeaponTypeKey
   hitMode: HitModeKey, reactionMode: ReactionModeKey | ""
@@ -40,6 +43,7 @@ export interface BasicStats {
  * Technically, `ICalculatedStats` still wouldn't have all fields from BonusStats.
  * Though, all required stats would already be included during dependency calculation
  * and preprocessing.
+ * @deprecated
  */
 export type ICalculatedStats = BasicStats & Required<BonusStats> & {
   premod: Partial<ICalculatedStats>
@@ -56,7 +60,10 @@ export type ICalculatedStats = BasicStats & Required<BonusStats> & {
   [key: string]: any
 }
 
-/** Stats that can be increased from artifacts */
+/** 
+ * Stats that can be increased from artifacts
+ * @deprecated
+ */
 export type BonusStats = {
   [key in StatKey]?: number
 } & {
@@ -68,6 +75,9 @@ export type BonusStats = {
   partyActive?: BonusStats
 }
 
+/** 
+ * @deprecated
+ */
 export interface Modifier {
   [key: string]: string[][]
 }

@@ -14,19 +14,18 @@ import passive1 from './passive1.png'
 import passive2 from './passive2.png'
 import passive3 from './passive3.png'
 import data_gen from './data_gen.json'
-import { getTalentStatKeyVariant } from "../../../Build/Build"
 import { absorbableEle } from '../dataUtil'
 import { Translate } from '../../../Components/Translate'
-import { chargedDocSection, conditionalHeader, normalSrc, plungeDocSection, sgt, talentTemplate } from '../SheetUtil_WR'
-import { allElements, WeaponTypeKey } from '../../../Types/consts'
+import { conditionalHeader, normalSrc, sgt, talentTemplate } from '../SheetUtil_WR'
+import { allElements, CharacterKey, WeaponTypeKey } from '../../../Types/consts'
 import ColorText from '../../../Components/ColoredText'
 import { input } from "../../../Formula/index";
 import { dataObjForCharacterSheet, dmgNode } from "../../../Formula/api";
-import { customRead, customStringRead, match, percent, prod, stringConst, sum, threshold_add, unmatch } from "../../../Formula/utils";
+import { customRead, customStringRead, info, match, percent, prod, stringConst, sum, threshold_add, unmatch } from "../../../Formula/utils";
 import { ICharacterSheet } from '../../../Types/character_WR'
 import { objectFromKeyMap } from '../../../Util/Util'
-
-const tr = (strKey: string) => <Translate ns="char_Sucrose_gen" key18={strKey} />
+const characterKey: CharacterKey = "Sucrose"
+const tr = (strKey: string) => <Translate ns={`char_${characterKey}_gen`} key18={strKey} />
 
 const datamine = {
   normal: {
@@ -57,11 +56,11 @@ const datamine = {
 
 // Conditional Input
 // Absorption Element
-const condAbsorption = customStringRead(["conditional", "Sucrose", "absorption"])
+const condAbsorption = customStringRead(["conditional", characterKey, "absorption"])
 // A1 Swirl Reaction Element
-const condSwirlReaction = customStringRead(["conditional", "Sucrose", "swirl"])
+const condSwirlReaction = customStringRead(["conditional", characterKey, "swirl"])
 // Set to 1 if skill hit opponents
-const condSkillHitOpponent = customRead(["conditional", "Sucrose", "skillHit"])
+const condSkillHitOpponent = customRead(["conditional", characterKey, "skillHit"])
 
 // Conditional Output
 // TODO: Check if total or premod
@@ -70,7 +69,7 @@ const condSkillHitOpponent = customRead(["conditional", "Sucrose", "skillHit"])
 const asc1 = match(input.charEle, condSwirlReaction, threshold_add(input.asc, 1, 80), { key: "eleMas" })
 // TODO: Use on-field char key
 // TODO: Add to team buff
-const asc4 = threshold_add(condSkillHitOpponent, 1, unmatch(input.charKey, "Sucrose",
+const asc4 = threshold_add(condSkillHitOpponent, 1, unmatch(input.charKey, characterKey,
   threshold_add(input.asc, 4, prod(percent(0.2), input.premod.eleMas))), { key: "eleMas" })
 const c6Base = threshold_add(input.constellation, 6, percent(0.2))
 // TODO: Add to team buff
@@ -92,7 +91,7 @@ export const dmgFormulas = {
       [key, match(condAbsorption, key, dmgNode("atk", datamine.burst.dmg_, "burst", { hit: { ele: stringConst(key) } }))]))
   },
 }
-export const data = dataObjForCharacterSheet("Sucrose", "anemo", data_gen.weaponTypeKey as WeaponTypeKey,
+export const data = dataObjForCharacterSheet(characterKey, "anemo", data_gen.weaponTypeKey as WeaponTypeKey,
   { base: data_gen.base.hp, lvlCurve: data_gen.curves.hp, asc: data_gen.ascensions.map(x => x.props.hp) },
   { base: data_gen.base.atk, lvlCurve: data_gen.curves.atk, asc: data_gen.ascensions.map(x => x.props.atk) },
   { base: data_gen.base.def, lvlCurve: data_gen.curves.def, asc: data_gen.ascensions.map(x => x.props.def) },
@@ -135,15 +134,28 @@ const sheet: ICharacterSheet = {
         sections: [
           {
             text: tr(`auto.fields.normal`),
-            fields: datamine.normal.hitArr.map((percentArr, i) =>
-            ({
-              text: sgt(`normal.hit${i + 1}`),
-              formula: dmgFormulas.normal[i],
-              variant: stats => getTalentStatKeyVariant("normal", stats),
+            fields: datamine.normal.hitArr.map((percentArr, i) => ({
+              node: info(dmgFormulas.normal[i], { key: `char_${characterKey}_gen:auto.skillParams.${i}` }),
             }))
           },
-          chargedDocSection(tr, 50),
-          plungeDocSection(tr),
+          {
+            text: tr(`auto.fields.charged`),
+            fields: [{
+              node: info(dmgFormulas.charged.dmg, { key: `char_${characterKey}_gen:auto.skillParams.4` }),
+            }, {
+              text: tr("auto.skillParams.5"),
+              value: 50, // TODO: stamina
+            }]
+          }, {
+            text: tr(`auto.fields.plunging`),
+            fields: [{
+              node: info(dmgFormulas.plunging.dmg, { key: "sheet_gen:plunging.dmg" }),
+            }, {
+              node: info(dmgFormulas.plunging.low, { key: "sheet_gen:plunging.low" }),
+            }, {
+              node: info(dmgFormulas.plunging.high, { key: "sheet_gen:plunging.high" }),
+            }]
+          },
         ],
       },
       skill: {
@@ -152,11 +164,9 @@ const sheet: ICharacterSheet = {
         sections: [{
           text: tr("skill.description"),
           fields: [{
-            text: "Skill DMG",
-            node: dmgFormulas.skill.press,
-            variant: stats => getTalentStatKeyVariant("skill", stats),
+            node: info(dmgFormulas.skill.press, { key: `char_${characterKey}_gen:skill.skillParams.0` }),
           }, {
-            text: "CD",
+            text: tr("skill.skillParams.1"),
             value: "15s"
           }]
         }]
@@ -167,17 +177,15 @@ const sheet: ICharacterSheet = {
         sections: [{
           text: tr("burst.description"),
           fields: [{
-            text: "DoT",
-            node: dmgFormulas.burst.dot,
-            variant: stats => getTalentStatKeyVariant("burst", stats),
+            node: info(dmgFormulas.burst.dot, { key: `char_${characterKey}_gen:burst.skillParams.0` }),
           }, {
-            text: "Duration",
+            text: tr("burst.skillParams.2"),
             value: "6s"
           }, {
-            text: "CD",
+            text: tr("burst.skillParams.3"),
             value: "20s"
           }, {
-            text: "Energy Cost",
+            text: tr("burst.skillParams.4"),
             value: "80"
           }],
           conditional: { // Absorption
@@ -190,9 +198,7 @@ const sheet: ICharacterSheet = {
                   const [num, condEleKey] = stats.conditionalValues?.character?.Sucrose?.q ?? []
                   return !!num && condEleKey === eleKey
                 },
-                text: "Absorption DoT",
-                formula: dmgFormulas.burst[eleKey],
-                variant: eleKey
+                node: info(dmgFormulas.burst[eleKey], { key: `char_${characterKey}_gen:burst.skillParams.1` }),
               }]
             }]))
           },
@@ -206,7 +212,7 @@ const sheet: ICharacterSheet = {
             canShow: stats => stats.constellation >= 6,
             states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
               name: <ColorText color={eleKey}>{sgt(`element.${eleKey}`)}</ColorText>,
-              stats: { [`${eleKey}_dmg_`]: 20 }
+              stats: { [`${eleKey}_dmg_`]: 20 } //TODO: remove?
             }]))
           },
         }]

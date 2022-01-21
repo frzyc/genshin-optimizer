@@ -8,7 +8,7 @@ import { objectFromKeyMap } from "../Util/Util";
 import _weaponCurves from "../Weapon/expCurve_gen.json";
 import { input } from "./index";
 import { constant } from "./internal";
-import { Data, Node, ReadNode } from "./type";
+import { DisplayCharacter, Data, Node, ReadNode, DisplayWeapon } from "./type";
 import { NodeDisplay, UIData, valueString } from "./uiData";
 import { data, percent, prod, stringConst, subscript, sum } from "./utils";
 
@@ -38,7 +38,7 @@ function dataObjForCharacterSheet(
   atk: { base: number, lvlCurve: string, asc: number[] },
   def: { base: number, lvlCurve: string, asc: number[] },
   special: { stat: MainStatKey | SubstatKey, asc: number[] },
-  display: Data["display"],
+  displayChar: DisplayCharacter,
   additional: Data = {},
 ): Data {
   function curve(array: { base: number, lvlCurve: string, asc: number[] }): Node {
@@ -54,7 +54,11 @@ function dataObjForCharacterSheet(
     premod: {
       [special.stat]: input.special,
     },
-    display,
+    display: {
+      character: {
+        [key]: displayChar
+      }
+    },
   }, additional])
   return result
 }
@@ -63,7 +67,7 @@ function dataObjForWeaponSheet(
   mainStat: { stat?: "atk", base: number, lvlCurve: string, asc: number[] },
   substat: { stat: MainStatKey | SubstatKey, base: number, lvlCurve: string },
   substat2: { stat: MainStatKey | SubstatKey, refinement: number[] } | undefined,
-  additional: Data = {},
+  additional: DisplayWeapon = {},
 ): Data {
   const mainStatNode = sum(prod(mainStat.base, subscript(input.weapon.lvl, weaponCurves[mainStat.lvlCurve])), subscript(input.weapon.asc, mainStat.asc))
   const substatNode = prod(substat.base, subscript(input.weapon.lvl, weaponCurves[substat.lvlCurve]))
@@ -89,7 +93,13 @@ function dataObjForWeaponSheet(
       ? input.weapon.sub2 : sum(input.weapon.sub, input.weapon.sub2)
   }
 
-  return mergeData([result, additional])
+  return mergeData([result, {
+    display: {
+      weapon: {
+        [key]: additional
+      }
+    },
+  }])
 }
 function dataObjForArtifact(art: ICachedArtifact, mainStatAssumptionLevel: number = 0): Data {
   const mainStatVal = Artifact.mainStatValue(art.mainStatKey, art.rarity, Math.max(Math.min(mainStatAssumptionLevel, art.rarity * 4), art.level))
