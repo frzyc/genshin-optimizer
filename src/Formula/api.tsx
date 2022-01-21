@@ -1,3 +1,4 @@
+import Artifact from "../Artifact/Artifact";
 import _charCurves from "../Character/expCurve_gen.json";
 import { ICachedArtifact, MainStatKey, SubstatKey } from "../Types/artifact";
 import { ICachedCharacter } from "../Types/character";
@@ -90,10 +91,10 @@ function dataObjForWeaponSheet(
 
   return mergeData([result, additional])
 }
-function dataObjForArtifact(art: ICachedArtifact, assumingMinimumMainStatLevel: number = 0): Data {
-  // TODO: assume main stat level
+function dataObjForArtifact(art: ICachedArtifact, mainStatAssumptionLevel: number = 0): Data {
+  const mainStatVal = Artifact.mainStatValue(art.mainStatKey, art.rarity, Math.max(Math.min(mainStatAssumptionLevel, art.rarity * 4), art.level))
   const stats: [ArtifactSetKey | MainStatKey | SubstatKey, number][] = []
-  stats.push([art.mainStatKey, art.mainStatVal])
+  stats.push([art.mainStatKey, mainStatVal])
   art.substats.forEach(({ key, value }) => key && stats.push([key, value]))
   return {
     art: {
