@@ -11,7 +11,7 @@ const data_gen = data_gen_json as WeaponData
 
 const hp_conv = [0.01, 0.015, 0.02, 0.025, 0.03]
 
-const normalDmgInc = prod(subscript(input.weapon.refineIndex, hp_conv), input.premod.hp)
+const normalDmgInc = prod(subscript(input.weapon.refineIndex, hp_conv, { key: '_' }), input.premod.hp)
 normalDmgInc.info = { key: "normal_dmg_inc" }
 export const data = dataObjForWeaponSheet("EverlastingMoonglow", "catalyst",
   { base: data_gen.mainStat.base, lvlCurve: data_gen.mainStat.curve, asc: data_gen.ascension.map(x => x.addStats.atk ?? 0) },

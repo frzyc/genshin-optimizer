@@ -42,7 +42,9 @@ function dataObjForCharacterSheet(
   additional: Data = {},
 ): Data {
   function curve(array: { base: number, lvlCurve: string, asc: number[] }): Node {
-    return sum(prod(array.base, subscript(input.lvl, charCurves[array.lvlCurve])), subscript(input.asc, array.asc))
+    return sum(
+      subscript(input.asc, array.asc, { key: '_' }),
+      prod(array.base, subscript(input.lvl, charCurves[array.lvlCurve], { key: '_' })))
   }
 
   const result = mergeData([{

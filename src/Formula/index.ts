@@ -78,7 +78,7 @@ const rd = setReadNodeKeys({
 
   hit: {
     ele: stringRead(), reaction: stringRead(), move: stringRead(), hitMode: stringRead(),
-    base: read("add", { key: "base", pivot }),
+    base: read("add", { key: "base" }),
 
     dmg: read("unique"), trans: read("unique"),
   },
