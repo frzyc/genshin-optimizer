@@ -141,8 +141,7 @@ export class UIData {
       if (variant) result.variant = variant
       if (key) {
         result.key = key
-        const prefix = namePrefix ? namePrefix + ' ' : ''
-        result.name = <><span color={result.variant}>{prefix + KeyMap.getNoUnit(key)}</span> {valueString(result.value, KeyMap.unit(key))}</>
+        result.name = createName(result.value, result.variant, result.key, namePrefix)
 
       }
       if (result.name && result.formula)
@@ -308,7 +307,7 @@ function fStr(strings: TemplateStringsArray, ...list: ContextNodeDisplayList[]):
       })
     }
   })
-  return { display: <>{predisplay.map((x, i) => (<span key={i}>{x}</span>))}</>, dependencies: [...dependencies] }
+  return { display: mergeFormulaComponents(predisplay), dependencies: [...dependencies] }
 }
 function mergeVariants(operands: ContextNodeDisplay[]): ContextNodeDisplay["variant"] {
   const unique = new Set(operands.map(x => x.variant))
@@ -326,6 +325,22 @@ function computeNodeDisplay(node: ContextNodeDisplay, info: Info | undefined): N
     unit: (key && KeyMap.unit(key)) || "flat",
     formula, formulas: [...((pivot && assignment) ? [assignment] : []), ...dependencies]
   }
+}
+
+function createName(value: number, variant: ElementKeyWithPhy | TransformativeReactionsKey | AmplifyingReactionsKey | "success" | undefined, key: string, _prefix: string | undefined): Displayable {
+  const prefix = _prefix ? _prefix + ' ' : ''
+  /*
+  return <><span color={variant}>{prefix + KeyMap.getNoUnit(key)}</span> {valueString(value, KeyMap.unit(key))}</>
+  /*/
+  return `${prefix + KeyMap.getNoUnit(key)} ${valueString(value, KeyMap.unit(key))}`
+  //*/
+}
+function mergeFormulaComponents(components: Displayable[]): Displayable {
+  /*
+  return <>{components.map((x, i) => (<span key={i}>{x}</span>))}</>
+  /*/
+  return (components as string[]).join("")
+  //*/
 }
 
 interface ContextString { value?: string }
