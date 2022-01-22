@@ -126,7 +126,7 @@ export default function WeaponDisplayCard({
         {!!onClose && <Grid item  >
           <CloseButton onClick={onClose} />
         </Grid>}
-        {!!data && database === localDatabase && <Grid item >
+        {database === localDatabase && <Grid item >
           <SwapBtn weaponTypeKey={weaponTypeKey} onChangeId={id => database.setWeaponLocation(id, data.getStr(input.charKey).value as CharacterKey)} />
         </Grid>}
       </Grid>
@@ -153,7 +153,7 @@ export default function WeaponDisplayCard({
                   .map((node, i) => <ListItem key={i}><NodeFieldDisplay node={weaponUIData.get(node)} /></ListItem>)}
               </FieldDisplayList>
             </CardDark>
-            {data && weaponSheet.document && < DocumentDisplay sections={weaponSheet.document} characterKey={data.getStr(input.charKey).value as CharacterKey} />}
+            {data && weaponSheet.document && <DocumentDisplay sections={weaponSheet.document} />}
           </Box>
         </Box>
       </Box>}

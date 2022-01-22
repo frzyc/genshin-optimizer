@@ -2,8 +2,6 @@ import { Box, ListItem } from "@mui/material"
 import { useCallback, useContext } from "react"
 import Conditional from "../Conditional/Conditional"
 import { DataContext } from "../DataContext"
-import { UIData } from "../Formula/api"
-import useCharacterReducer from "../ReactHooks/useCharacterReducer"
 import { DocumentSection } from "../Types/character_WR"
 import { CharacterKey } from "../Types/consts"
 import { evalIfFunc } from "../Util/Util"
@@ -12,15 +10,12 @@ import FieldDisplay, { FieldDisplayList } from "./FieldDisplay"
 
 type SkillDisplayCardProps = {
   sections: DocumentSection[],
-  characterKey: CharacterKey,
   skipConditionalEquipmentCheck?: boolean
 }
-export default function DocumentDisplay({ sections, characterKey, skipConditionalEquipmentCheck }: SkillDisplayCardProps) {
-  const { data } = useContext(DataContext)
-  const characterDispatch = useCharacterReducer(characterKey)
+export default function DocumentDisplay({ sections, skipConditionalEquipmentCheck }: SkillDisplayCardProps) {
+  const { data, characterDispatch } = useContext(DataContext)
   const onCVChange = useCallback(
     v => characterDispatch({ conditionalValues: v }), [characterDispatch])
-  if (!data) return null
 
   const sectionsDisplay = sections?.map((section, i) => {
     if (section.canShow && !section.canShow(data)) return null

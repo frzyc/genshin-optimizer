@@ -1,7 +1,6 @@
 import _charCurves from "../../Character/expCurve_gen.json";
 import { allMainStatKeys, MainStatKey } from "../../Types/artifact";
 import { CharacterKey, ElementKey } from "../../Types/consts";
-import _weaponCurves from "../../Weapon/expCurve_gen.json";
 import { input } from "../../Formula/index";
 import { Data, DisplayCharacter, Node } from "../../Formula/type";
 import { data, frac, infoMut, prod, stringConst, subscript, sum, unit } from "../../Formula/utils";
@@ -93,14 +92,14 @@ const trans = {
       infoMut(prod(multi, transMulti1), { asConst: true }),
       sum(unit, prod(transMulti2, input.total.dmgBonus[reaction])),
       input.enemy.res[ele]),
-      { /* TODO: Add reaction key */ })
+      { key: `${reaction}_hit`, variant: reaction })
   }),
   swirl: objectFromKeyMap(transformativeReactions.swirl.variants, ele => infoMut(
     prod(
       infoMut(prod(transformativeReactions.swirl.multi, transMulti1), { asConst: true }),
       sum(unit, prod(transMulti2, input.total.dmgBonus.swirl)),
       input.enemy.res[ele]),
-    { /* TODO: Add swirl key */ }))
+    { key: `${ele}_swirl_hit`, variant: ele }))
 }
 const reactions = {
   anemo: {
@@ -111,7 +110,7 @@ const reactions = {
     shattered: trans.shattered,
   },
   geo: {
-    // TODO:
+    // TODO: crystallize
     shattered: trans.shattered,
   },
   electro: {

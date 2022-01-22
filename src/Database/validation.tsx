@@ -154,7 +154,7 @@ export function parseCharacter(obj: any): ICharacter | undefined {
 
   let {
     key: characterKey, level, ascension, hitMode, elementKey, reactionMode, conditionalValues,
-    bonusStats, talent, infusionAura, constellation, buildSettings, team
+    bonusStats, talent, infusionAura, constellation, buildSettings, team, compareData
   } = obj
 
   if (!allCharacterKeys.includes(characterKey) ||
@@ -227,10 +227,13 @@ export function parseCharacter(obj: any): ICharacter | undefined {
     conditionalValues = {}
   if (!team)
     team = ["", "", ""]
+
+  if (typeof compareData !== "boolean") compareData = false
+
   // TODO: validate bonusStats
   const result: ICharacter = {
     key: characterKey, level, ascension, hitMode, reactionMode, conditionalValues,
-    bonusStats, talent, infusionAura, constellation, team,
+    bonusStats, talent, infusionAura, constellation, team, compareData
   }
   if (buildSettings) result.buildSettings = buildSettings
   if (elementKey) result.elementKey = elementKey
@@ -240,11 +243,11 @@ export function parseCharacter(obj: any): ICharacter | undefined {
 export function removeCharacterCache(char: ICachedCharacter): ICharacter {
   const {
     key: characterKey, level, ascension, hitMode, elementKey, reactionMode, conditionalValues,
-    bonusStats, talent, infusionAura, constellation, buildSettings, team
+    bonusStats, talent, infusionAura, constellation, buildSettings, team, compareData
   } = char
   const result: ICharacter = {
     key: characterKey, level, ascension, hitMode, reactionMode, conditionalValues,
-    bonusStats, talent, infusionAura, constellation, buildSettings, team
+    bonusStats, talent, infusionAura, constellation, buildSettings, team, compareData
   }
   if (elementKey) result.elementKey = elementKey
   return result

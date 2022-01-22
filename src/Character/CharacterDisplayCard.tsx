@@ -62,15 +62,8 @@ type CharacterDisplayCardProps = {
   isFlex?: boolean,
   compareBuild?: boolean
 }
-export default function CharacterDisplayCard({ characterKey, footer, newBuild: propNewBuild, onClose, tabName, isFlex, compareBuild: propCompareBuild }: CharacterDisplayCardProps) {
-  const [compareBuild, setCompareBuild] = useState(propCompareBuild ?? false)
-
+export default function CharacterDisplayCard({ characterKey, footer, newBuild: propNewBuild, onClose, tabName, isFlex }: CharacterDisplayCardProps) {
   const { data: charUIData, character, characterSheet, weapon, weaponSheet, artifacts, artifactSheetsData, database } = useCharUIData(characterKey)
-
-  useEffect(() => {
-    typeof propCompareBuild === "boolean" && setCompareBuild(propCompareBuild)
-  }, [propCompareBuild, setCompareBuild])
-
 
   useEffect(() => {
     if (!characterKey) return
@@ -98,17 +91,17 @@ export default function CharacterDisplayCard({ characterKey, footer, newBuild: p
   const onTab = useCallback((e, v) => settab(v), [settab])
 
   const mainStatAssumptionLevel = newBuild?.mainStatAssumptionLevel ?? 0
-
-  if (!character) return <></>
+  const characterDispatch = useCharacterReducer(character?.key ?? "")
+  if (!character || !characterSheet || !charUIData) return <></>
+  const { compareData } = character
   // main CharacterDisplayCard
   const newData = undefined as UIData | undefined
-
   const dataContextValue = {
     character,
     characterSheet,
-    data: newData ? newData : charUIData,
-    oldData: (compareBuild && newData) ? charUIData : undefined,
-    setCompareData: setCompareBuild
+    data: (newData ? newData : charUIData) as UIData,
+    oldData: (compareData && newData) ? charUIData : undefined,
+    characterDispatch
   }
   return <CardDark >
     <DataContext.Provider value={dataContextValue}>
@@ -144,7 +137,7 @@ export default function CharacterDisplayCard({ characterKey, footer, newBuild: p
         {/* Character Panel */}
         <TabPanel value="character" current={tab}><CharacterOverviewPane /></TabPanel >
         {/* Artifacts Panel */}
-        <DataContext.Provider value={{ ...dataContextValue, data: charUIData, oldData: undefined, setCompareData: setCompareBuild }}>
+        <DataContext.Provider value={{ ...dataContextValue, data: charUIData, oldData: undefined }}>
           <TabPanel value="artifacts" current={tab} ><CharacterArtifactPane /></TabPanel >
         </DataContext.Provider>
         {/* new build panel */}
@@ -156,9 +149,9 @@ export default function CharacterDisplayCard({ characterKey, footer, newBuild: p
           <CharacterTeamBuffsPane characterSheet={characterSheet} character={character} />
         </TabPanel >} */}
         {/* talent panel */}
-        {/* {characterSheet && <TabPanel value="talent" current={tab}>
-          <CharacterTalentPane characterSheet={characterSheet} character={character} />
-        </TabPanel >} */}
+        <TabPanel value="talent" current={tab}>
+          <CharacterTalentPane />
+        </TabPanel >
       </CardContent>
       {!!footer && <Divider />}
       {footer && <CardContent >
@@ -168,14 +161,11 @@ export default function CharacterDisplayCard({ characterKey, footer, newBuild: p
   </CardDark>
 }
 
-type CharSelectDropdownProps = {
-  disabled?: boolean
-}
-function CharSelectDropdown({ disabled }: CharSelectDropdownProps) {
-  const { character, characterSheet } = useContext(DataContext)
+
+function CharSelectDropdown() {
+  const { character, characterSheet, characterDispatch } = useContext(DataContext)
   const [showModal, setshowModal] = useState(false)
   const setCharacter = useCharSelectionCallback()
-  const characterDispatch = useCharacterReducer(character?.key ?? "")
   const HeaderIconDisplay = characterSheet ? <span >
     <ImgIcon src={characterSheet.thumbImg} sx={{ mr: 1 }} />
     {characterSheet.name}
@@ -192,9 +182,8 @@ function CharSelectDropdown({ disabled }: CharSelectDropdownProps) {
     if (ascension === lowerAscension) characterDispatch({ ascension: ascension + 1 })
     else characterDispatch({ ascension: lowerAscension })
   }, [characterDispatch, character])
-  if (!character) return null
   const { elementKey = "anemo", level = 1, ascension = 0 } = character
-  return <>{!disabled ? <>
+  return <>
     <CharacterSelectionModal show={showModal} onHide={() => setshowModal(false)} onSelect={setCharacter} />
     <Grid container spacing={1}>
       <Grid item>
@@ -226,5 +215,5 @@ function CharSelectDropdown({ disabled }: CharSelectDropdownProps) {
         </ButtonGroup>
       </Grid>
     </Grid>
-  </> : <Typography variant="h6">{HeaderIconDisplay} {characterSheet && Character.getLevelString(character)}</Typography>}</>
+  </>
 }

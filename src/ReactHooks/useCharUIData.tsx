@@ -13,7 +13,7 @@ import useWeapon from "./useWeapon";
 import { ICachedArtifact } from "../Types/artifact_WR";
 import useForceUpdate from "./useForceUpdate";
 
-export default function useCharUIData(characterKey: CharacterKey | "" | undefined = "") {
+export default function useCharUIData(characterKey: CharacterKey | "") {
   const database = useContext(DatabaseContext)
   const character = useCharacter(characterKey)
   const weapon = useWeapon(character?.equippedWeapon)
@@ -37,15 +37,19 @@ export default function useCharUIData(characterKey: CharacterKey | "" | undefine
     teammate3 ? database.followChar(teammate3, setDbDirty) : undefined,
     [teammate3, setDbDirty, database])
 
-  const data = useMemo(() => dbDirty && character && characterSheet && weapon && weaponSheet && artifacts && artifactSheetsData && computeUIData([
+  const dataWoArt = useMemo(() => dbDirty && character && characterSheet && weapon && weaponSheet && artifacts && artifactSheetsData && [
     common,
     dataObjForCharacter(character),
     characterSheet.data,
     dataObjForWeapon(weapon),
     weaponSheet.data,
-    ...Object.values(artifacts).filter(a => a).map(a => dataObjForArtifact(a)),
     artifactSheetsData,
+  ], [dbDirty, character, characterSheet, weapon, weaponSheet, artifacts, artifactSheetsData])
+
+  const data = useMemo(() => dataWoArt && artifacts && computeUIData([
+    ...dataWoArt,
+    ...Object.values(artifacts).filter(a => a).map(a => dataObjForArtifact(a)),
   ]),
-    [dbDirty, character, characterSheet, weapon, weaponSheet, artifacts, artifactSheetsData])
-  return { data, character, characterSheet, weapon, weaponSheet, artifacts, artifactSheetsData, database }
+    [dataWoArt, artifacts])
+  return { data, character, characterSheet, weapon, weaponSheet, artifacts, artifactSheetsData, database, dataWoArt }
 }

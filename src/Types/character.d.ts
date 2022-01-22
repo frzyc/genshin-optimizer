@@ -71,6 +71,7 @@ export interface ICharacter {
   bonusStats: object
   infusionAura: ElementKey | ""
   buildSettings?: BuildSetting
+  compareData: boolean
 }
 export interface ICachedCharacter extends ICharacter {
   equippedArtifacts: StrictDict<SlotKey, string>

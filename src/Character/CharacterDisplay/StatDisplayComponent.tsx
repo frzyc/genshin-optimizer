@@ -20,11 +20,11 @@ import CharacterSheet from "../CharacterSheet_WR"
 
 export default function StatDisplayComponent() {
   const { data } = useContext(DataContext)
-  if (!data) return null
   const display = data.getDisplay() as {
     character?: Partial<Record<CharacterKey, { [key: string]: { [key: string]: NodeDisplay } }>>
     weapon?: Partial<Record<WeaponKey, { [key: string]: NodeDisplay }>>
     artifact?: Partial<Record<ArtifactSetKey, { [key: string]: NodeDisplay }>>
+    reaction?: { [key: string]: NodeDisplay }
   }
   return <Box sx={{ mr: -1, mb: -1 }}>
     <Masonry columns={{ xs: 1, sm: 2, md: 3 }} spacing={1}>
@@ -32,10 +32,10 @@ export default function StatDisplayComponent() {
       {display.character && Object.entries(display.character).map(([charKey, displayCharacter]) =>
         displayCharacter && <CharacterStats key={charKey} characterKey={charKey} displayCharacter={displayCharacter} path={["character", charKey]} />)}
       {display.weapon && Object.entries(display.weapon).map(([weaponKey, displayWeapon]) =>
-        displayWeapon && <WeaponStats key={weaponKey} weaponKey={weaponKey} displayWeapon={displayWeapon as any} path={["weapon", weaponKey]} />)}
+        displayWeapon && <WeaponStats key={weaponKey} weaponKey={weaponKey} displayWeapon={displayWeapon} path={["weapon", weaponKey]} />)}
       {display.artifact && Object.entries(display.artifact).map(([artifactSetKey, displayArtifact]) =>
-        displayArtifact && <ArtifactStats key={artifactSetKey} artifactSetKey={artifactSetKey} displayArtifact={displayArtifact as any} path={["artifact", artifactSetKey]} />)}
-      {/* TODO: trans Reactions */}
+        displayArtifact && <ArtifactStats key={artifactSetKey} artifactSetKey={artifactSetKey} displayArtifact={displayArtifact} path={["artifact", artifactSetKey]} />)}
+      {display.reaction && <ReactionStats displayReaction={display.reaction} path={["reaction"]} />}
     </Masonry >
   </Box>
 }
@@ -43,7 +43,6 @@ function BasicStats() {
   const { data, oldData } = useContext(DataContext)
   const it = input.total
   const nodes = [it.atk, it.hp, it.def, it.eleMas, it.critRate_, it.critDMG_, it.heal_, it.enerRech_]
-  if (!data) return null
   if (data.getStr(input.weaponType).value !== "catalyst") nodes.push(it.physical_dmg_)
   nodes.push(it[`${data.getStr(input.charEle).value}_dmg_`])
   return <CardDark >
@@ -63,7 +62,6 @@ function CharacterStats({ characterKey, displayCharacter, path }: { characterKey
 }
 function TalentStats({ characterSheet, talentKey, displayTalent, path }: { characterSheet: CharacterSheet, talentKey: string, displayTalent: { [key: string]: NodeDisplay }, path: string[] }) {
   const { data, oldData } = useContext(DataContext)
-  if (!data) return null
   let sub = ""
   if (talentKey === "normal" || talentKey === "charged" || talentKey === "plunging") {
     sub = talentKey.charAt(0).toUpperCase() + talentKey.slice(1).toLowerCase();
@@ -85,7 +83,7 @@ function TalentStats({ characterSheet, talentKey, displayTalent, path }: { chara
 function WeaponStats({ weaponKey, displayWeapon: displayWeapon, path }: { weaponKey: WeaponKey, displayWeapon: { [key: string]: NodeDisplay }, path: string[] }) {
   const { data, oldData } = useContext(DataContext)
   const weaponSheet = usePromise(WeaponSheet.get(weaponKey), [weaponKey])
-  if (!weaponSheet || !data) return null
+  if (!weaponSheet) return null
   const img = data.get(input.weapon.asc).value < 2 ? weaponSheet?.img : weaponSheet?.imgAwaken
   return <CardDark >
     <CardHeader avatar={weaponSheet && <ImgIcon size={2} sx={{ m: -1 }} src={img} />} title={weaponSheet.name} titleTypographyProps={{ variant: "subtitle1" }} />
@@ -97,15 +95,27 @@ function WeaponStats({ weaponKey, displayWeapon: displayWeapon, path }: { weapon
 }
 
 function ArtifactStats({ artifactSetKey, displayArtifact, path }: { artifactSetKey: ArtifactSetKey, displayArtifact: { [key: string]: NodeDisplay }, path: string[] }) {
-  const { data, oldData } = useContext(DataContext)
+  const { oldData } = useContext(DataContext)
   const artifactSheet = usePromise(ArtifactSheet.get(artifactSetKey), [artifactSetKey])
-  if (!artifactSheet || !data) return null
+  if (!artifactSheet) return null
   const img = artifactSheet.defIconSrc
   return <CardDark >
     <CardHeader avatar={artifactSheet && <ImgIcon size={2} sx={{ m: -1 }} src={img} />} title={artifactSheet.name} titleTypographyProps={{ variant: "subtitle1" }} />
     <Divider />
     <CardContent>
       {Object.entries(displayArtifact).map(([nodeKey, n]) => <NodeFieldDisplay key={nodeKey} node={n} oldValue={oldData ? oldData.get(customRead([...path, nodeKey])).value : undefined} />)}
+    </CardContent>
+  </CardDark>
+}
+
+function ReactionStats({ displayReaction, path }: { displayReaction: { [key: string]: NodeDisplay }, path: string[] }) {
+  const { oldData } = useContext(DataContext)
+  console.log(displayReaction)
+  return <CardDark >
+    <CardHeader title={"Transformative Reactions"} titleTypographyProps={{ variant: "subtitle1" }} />
+    <Divider />
+    <CardContent>
+      {Object.entries(displayReaction).map(([nodeKey, n]) => <NodeFieldDisplay key={nodeKey} node={n} oldValue={oldData ? oldData.get(customRead([...path, nodeKey])).value : undefined} />)}
     </CardContent>
   </CardDark>
 }

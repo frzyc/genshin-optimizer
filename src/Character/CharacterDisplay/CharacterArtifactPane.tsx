@@ -17,8 +17,8 @@ import { objectFromKeyMap } from '../../Util/Util';
 import StatDisplayComponent from './StatDisplayComponent';
 
 function CharacterArtifactPane() {
-  const { data, oldData, character, setCompareData } = useContext(DataContext)
-  const compareBuild = !!oldData
+  const { data, oldData, character, characterDispatch } = useContext(DataContext)
+  const compareData = !!oldData
 
   const database = useContext(DatabaseContext)
   const history = useHistory()
@@ -37,7 +37,7 @@ function CharacterArtifactPane() {
 
   const equipArts = useCallback(() => {
     if (!window.confirm("Do you want to equip this artifact build to this character?")) return
-    if (!data || !oldData || !character) return
+    if (!oldData) return
     const newBuild = Object.fromEntries(allSlotKeys.map(s => [s, data.getStr(input.art[s].id).value])) as Record<SlotKey, string>
     database.equipArtifacts(character.key, newBuild)
   }, [character, data, oldData, database])
@@ -47,7 +47,6 @@ function CharacterArtifactPane() {
     if (!window.confirm("Do you want to move all currently equipped artifacts to inventory?")) return
     database.equipArtifacts(character.key, objectFromKeyMap(allSlotKeys, () => ""))
   }, [character, database])
-  if (!data) return null
   const artIds = allSlotKeys.map(slotKey => data.getStr(input.art[slotKey].id).value)
   const artSetNums = Object.entries(input.artSet).map(([key, value]) => [key, data.get(value).value]) as [ArtifactSetKey, number][]
   return <>
@@ -63,11 +62,11 @@ function CharacterArtifactPane() {
           </Grid>
           <Grid item>
             {/* Compare against new build toggle */}
-            {!!oldData && <SolidToggleButtonGroup exclusive value={compareBuild} onChange={(e, v) => setCompareData?.(v)} size="small">
-              <ToggleButton value={false} disabled={!compareBuild}>
+            {!!oldData && <SolidToggleButtonGroup exclusive value={compareData} onChange={(e, v) => characterDispatch({ compareData: v })} size="small">
+              <ToggleButton value={false} disabled={!compareData}>
                 <small>Show New artifact Stats</small>
               </ToggleButton>
-              <ToggleButton value={true} disabled={compareBuild}>
+              <ToggleButton value={true} disabled={compareData}>
                 <small>Compare against equipped artifacts</small>
               </ToggleButton>
             </SolidToggleButtonGroup>}

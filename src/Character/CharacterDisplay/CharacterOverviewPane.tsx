@@ -1,7 +1,6 @@
 import { faEdit, faSave } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Badge, Box, Button, CardContent, CardMedia, Divider, Grid, Typography } from "@mui/material";
-import { CharacterKey } from "pipeline";
 import React, { useContext, useState } from "react";
 import Assets from "../../Assets/Assets";
 import CardLight from "../../Components/Card/CardLight";
@@ -23,10 +22,8 @@ import WeaponDisplayCard from "../../Weapon/WeaponDisplayCard";
 import CharacterSheet from "../CharacterSheet_WR";
 import StatInput from "../StatInput";
 export default function CharacterOverviewPane() {
-  const { data, characterSheet, character } = useContext(DataContext)
-  const characterKey = (data?.getStr(input.charKey)?.value ?? "") as CharacterKey | ""
+  const { data, characterSheet, character, character: { key: characterKey } } = useContext(DataContext)
   const characterDispatch = useCharacterReducer(characterKey)
-  if (!data || !characterSheet || !character) return null
   const charEle = data.getStr(input.charEle).value as ElementKey
   const weaponTypeKey = characterSheet.weaponTypeKey
   const level = data.get(input.lvl).value
@@ -134,7 +131,6 @@ const statBreakpoint = {
 
 function StatDisplayContent({ nodes, statBreakpoint, extra }: { nodes: ReadNode[], statBreakpoint: object, extra?: Displayable }) {
   const { data, oldData } = useContext(DataContext)
-  if (!data) return null
   return <Grid container columnSpacing={{ xs: 2, lg: 3 }} rowSpacing={1}>
     {nodes.map((rn, i) => <Grid item key={i} {...statBreakpoint} >
       {<NodeFieldDisplay node={data.get(rn)} oldValue={oldData?.get(rn)?.value} />}
@@ -144,11 +140,8 @@ function StatDisplayContent({ nodes, statBreakpoint, extra }: { nodes: ReadNode[
 }
 
 function MainStatsCards() {
-
-  const { data, character } = useContext(DataContext)
-  const characterKey = (character?.key ?? "") as CharacterKey | ""
+  const { data, character, character: { key: characterKey } } = useContext(DataContext)
   const characterDispatch = useCharacterReducer(characterKey)
-  if (!data || !character) return null
   const specialNode = data.get(input.special)
 
   return <>

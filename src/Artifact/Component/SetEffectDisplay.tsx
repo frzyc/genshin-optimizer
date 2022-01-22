@@ -1,9 +1,7 @@
 import { Box, CardContent, Typography } from "@mui/material"
-import { useContext } from "react"
 import CardDark from "../../Components/Card/CardDark"
 import DocumentDisplay from "../../Components/DocumentDisplay"
 import SqBadge from "../../Components/SqBadge"
-import { DataContext } from "../../DataContext"
 import usePromise from "../../ReactHooks/usePromise"
 import { ArtifactSetKey, SetNum } from "../../Types/consts"
 import { ArtifactSheet } from "../ArtifactSheet_WR"
@@ -15,9 +13,8 @@ type Data = {
 }
 
 export default function SetEffectDisplay({ setKey, setNumKey, skipConditionalEquipmentCheck }: Data) {
-  const { character } = useContext(DataContext)
   const sheet = usePromise(ArtifactSheet.get(setKey), [setKey])
-  if (!sheet || !character) return null
+  if (!sheet) return null
 
   const setEffectText = sheet.setEffectDesc(setNumKey)
   const document = sheet.setEffectDocument(setNumKey)
@@ -27,6 +24,6 @@ export default function SetEffectDisplay({ setKey, setNumKey, skipConditionalEqu
         <Typography><SqBadge color="success">{setNumKey}-Set</SqBadge> {setEffectText}</Typography>
       </CardContent>
     </CardDark>
-    {document ? <DocumentDisplay sections={document} characterKey={character.key} skipConditionalEquipmentCheck={skipConditionalEquipmentCheck} /> : null}
+    {document ? <DocumentDisplay sections={document} skipConditionalEquipmentCheck={skipConditionalEquipmentCheck} /> : null}
   </Box>
 }

@@ -93,6 +93,13 @@ Object.entries(transformativeReactions).forEach(([reaction, { name }]) => {
   statMap[`${reaction}_dmg_`] = `${name} DMG Bonus`
 })
 
+Object.entries(transformativeReactions).forEach(([reaction, { name, variants }]) => {
+  if (reaction === "swirl") variants.forEach(v => {
+    statMap[`${v}_${reaction}_hit`] = `${elementalData[v].name} ${name} DMG`
+  })
+  else statMap[`${reaction}_hit`] = `${name} DMG`
+})
+
 export type AmplifyingReactionsDmgKey = `${AmplifyingReactionsKey}_dmg_`
 export const allAmplifyingReactionsDmgKey = Object.keys(amplifyingReactions).map(e => `${e}_dmg_`) as AmplifyingReactionsDmgKey[]
 

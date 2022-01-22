@@ -14,7 +14,7 @@ import StatIcon from "./StatIcon";
 export default function FieldDisplay({ field }: { field: IFieldDisplay }) {
   const { data, oldData } = useContext(DataContext)
   const canShow = useMemo(() => data ? (!field?.canShow || field?.canShow?.(data)) : false, [field, data])
-  if (!canShow || !data) return null
+  if (!canShow) return null
   if ("node" in field) {
     const node = data.get(field.node)
     if (node.isEmpty) return null
