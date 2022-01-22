@@ -100,7 +100,9 @@ interface DynamicNumInput<T = Node> {
     artifact?: {
       [key in ArtifactSetKey]?: DisplayArtifact<T>
     }
-    reaction?: any
+    reaction?: {
+      [key in Exclude<TransformativeReactionsKey, "swirl"> | `${"electro" | "hydro" | "pyro" | "cryo"}Swirl`]?: Node
+    }
   }
   conditional?: NodeData<T>
 }
