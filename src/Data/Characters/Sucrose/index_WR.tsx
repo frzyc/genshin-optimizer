@@ -14,13 +14,12 @@ import passive1 from './passive1.png'
 import passive2 from './passive2.png'
 import passive3 from './passive3.png'
 import data_gen from './data_gen.json'
-import { absorbableEle } from '../dataUtil'
+import { absorbableEle, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import { Translate } from '../../../Components/Translate'
 import { conditionalHeader, normalSrc, sgt, talentTemplate } from '../SheetUtil_WR'
 import { CharacterKey, WeaponTypeKey } from '../../../Types/consts'
 import ColorText from '../../../Components/ColoredText'
 import { input } from "../../../Formula/index";
-import { dataObjForCharacterSheet, dmgNode } from "../../../Formula/api";
 import { customRead, customStringRead, infoMut, match, percent, prod, stringConst, sum, threshold_add, unmatch } from "../../../Formula/utils";
 import { ICharacterSheet } from '../../../Types/character_WR'
 import { objectFromKeyMap } from '../../../Util/Util'

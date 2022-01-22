@@ -1,13 +1,12 @@
-import { amplifyingReactions, transformativeReactionLevelMultipliers, transformativeReactions } from "../StatConstants"
+import { amplifyingReactions, transformativeReactions } from "../StatConstants"
 import { allMainStatKeys, allSubstats } from "../Types/artifact_WR"
 import { allArtifactSets, allElements, allElementsWithPhy, allSlotKeys } from "../Types/consts"
 import { objectFromKeyMap } from "../Util/Util"
 import { Node, ReadNode, StringNode, StringReadNode } from "./type"
-import { frac, prod, sum, min, max, read, setReadNodeKeys, stringRead, stringPrio, percent, stringMatch, stringConst, lookup, stringLookup, subscript } from "./utils"
+import { frac, lookup, max, min, naught, percent, prod, read, setReadNodeKeys, stringConst, stringLookup, stringMatch, stringPrio, stringRead, sum, unit } from "./utils"
 
 const allMainSubStats = [...new Set([...allMainStatKeys, ...allSubstats] as const)]
 const allMoves = ["normal", "charged", "plunging", "skill", "burst"] as const
-const unit = percent(1), naught = percent(0)
 const asConst = true, pivot = true
 
 // All read nodes
@@ -28,7 +27,11 @@ const rd = setReadNodeKeys({
     read(key === "atk" ? "add" : "unique", { key, namePrefix: "Base" })),
   premod: objectFromKeyMap(allMainSubStats, _ => read("add")),
   total: {
-    dmg_: read("add"), // Total DMG Bonus
+    dmgBonus: {
+      hit: read("add"), // Total DMG Bonus
+      ...objectFromKeyMap(Object.keys(transformativeReactions), reaction =>
+        read("add")),
+    },
     ...objectFromKeyMap(allMainSubStats, key => read("add", { key, namePrefix: "Total", pivot })),
     cappedCritRate: read("unique", { key: "critRate_", namePrefix: "Capped" }), // Total Crit Rate capped to [0, 100%]
   },
@@ -134,16 +137,19 @@ const common = {
     }),
   },
   total: {
-    dmg_: sum(
-      bonus.dmg.common,
-      lookup(effectiveReaction, objectFromKeyMap([
-        ...Object.keys(transformativeReactions),
-        ...Object.keys(amplifyingReactions)],
-        reaction => bonus.dmg[reaction]), 0),
-      lookup(hit.move, objectFromKeyMap(allMoves, move => bonus.dmg[move]), 0),
-      lookup(hit.ele, objectFromKeyMap(allElements, ele =>
-        sum(bonus.dmg[ele], art[`${ele}_dmg_`])), 0)
-    ),
+    dmgBonus: {
+      hit: sum(
+        bonus.dmg.common,
+        lookup(effectiveReaction, objectFromKeyMap([
+          ...Object.keys(amplifyingReactions)],
+          reaction => bonus.dmg[reaction]), 0),
+        lookup(hit.move, objectFromKeyMap(allMoves, move => bonus.dmg[move]), 0),
+        lookup(hit.ele, objectFromKeyMap(allElements, ele =>
+          sum(bonus.dmg[ele], art[`${ele}_dmg_`])), 0)
+      ),
+      ...objectFromKeyMap(Object.keys(transformativeReactions), reaction =>
+        bonus.dmg[reaction] as Node)
+    },
     ...objectFromKeyMap(allMainSubStats, key => premod[key] as Node),
     cappedCritRate: max(min(total.critRate_, unit), naught),
   },
@@ -162,7 +168,7 @@ const common = {
     ),
     dmg: prod(
       hit.base,
-      sum(unit, total.dmg_),
+      sum(unit, total.dmgBonus.hit),
       lookup(hit.hitMode, {
         hit: unit,
         critHit: sum(unit, total.critDMG_),
@@ -181,17 +187,6 @@ const common = {
           pyro: prod(1.5, baseAmpBonus),
         }, 1, { key: "vaporize_dmg_" }),
       }, 1),
-    ),
-    trans: prod(
-      lookup(hit.reaction, Object.fromEntries(Object.entries(transformativeReactions).map(([key, value]) =>
-        [key, { operation: "const", operands: [], value: value.multi }])), undefined),
-      sum(unit, prod(16, frac(total.eleMas, 2000), /* Reaction Bonus */)),
-      subscript(rd.lvl, transformativeReactionLevelMultipliers),
-      lookup(hit.reaction, {
-        ...Object.fromEntries(Object.entries(transformativeReactions).map(([key, value]) =>
-          [key, enemy.res[value.variants[0]]])),
-        swirl: lookup(hit.ele, objectFromKeyMap(["hydro", "pyro", "cryo", "electro"] as const, ele => enemy.res[ele]), undefined),
-      }, undefined),
     ),
   },
 

@@ -3,6 +3,7 @@ import { objectFromKeyMap } from "../Util/Util"
 import type { Data, DataNode, Info, Node, ReadNode, StringNode, StringReadNode } from "./type"
 
 export const todo: Node = { operation: "const", value: NaN, operands: [], info: { key: "TODO" } }
+export const unit = percent(1), naught = percent(0)
 
 /** `value` in percentage. The value is written as non-percentage, e.g., use `percent(1)` for 100% */
 export function percent(value: number, info?: Info): Node {

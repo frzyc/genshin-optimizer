@@ -1,90 +1,21 @@
 import type { WeaponData } from "pipeline";
 import Artifact from "../Artifact/Artifact";
 import _charCurves from "../Character/expCurve_gen.json";
-import { allMainStatKeys, ICachedArtifact, MainStatKey, SubstatKey } from "../Types/artifact";
+import { ICachedArtifact, MainStatKey, SubstatKey } from "../Types/artifact";
 import { ICachedCharacter } from "../Types/character";
-import { allElementsWithPhy, ArtifactSetKey, CharacterKey, ElementKey, WeaponKey, WeaponTypeKey } from "../Types/consts";
+import { allElementsWithPhy, ArtifactSetKey, WeaponKey, WeaponTypeKey } from "../Types/consts";
 import { ICachedWeapon } from "../Types/weapon";
 import { objectFromKeyMap } from "../Util/Util";
 import _weaponCurves from "../Weapon/expCurve_gen.json";
 import { input } from "./index";
 import { constant } from "./internal";
-import { Data, DisplayArtifact, DisplayCharacter, DisplayWeapon, Node, ReadNode } from "./type";
+import { Data, DisplayArtifact, DisplayWeapon, Node, ReadNode } from "./type";
 import { NodeDisplay, UIData, valueString } from "./uiData";
-import { data, infoMut, percent, prod, stringConst, subscript, sum } from "./utils";
+import { infoMut, percent, prod, stringConst, subscript, sum } from "./utils";
 
 // TODO: Remove this conversion after changing the file format
-const charCurves = Object.fromEntries(Object.entries(_charCurves).map(([key, value]) => [key, [0, ...Object.values(value)]]))
 const weaponCurves = Object.fromEntries(Object.entries(_weaponCurves).map(([key, value]) => [key, [0, ...Object.values(value)]]))
 
-function dmgNode(base: MainStatKey, lvlMultiplier: number[], move: "normal" | "charged" | "plunging" | "skill" | "burst", additional: Data = {}): Node {
-  let talentType: "auto" | "skill" | "burst"
-  switch (move) {
-    case "normal": case "charged": case "plunging": talentType = "auto"; break
-    case "skill": talentType = "skill"; break
-    case "burst": talentType = "burst"; break
-  }
-  return data(input.hit.dmg, [{
-    hit: {
-      base: prod(input.total[base], subscript(input.talent.index[talentType], lvlMultiplier, { key: '_' })),
-      move: stringConst(move), // TODO: element ?: T, reaction ?: T, critType ?: T
-    },
-  }, additional])
-}
-function dataObjForCharacterSheet(
-  key: CharacterKey,
-  element: ElementKey,
-  gen: {
-    weaponTypeKey: string,
-    base: { hp: number, atk: number, def: number },
-    curves: { [key in string]?: string },
-    ascensions: { props: { [key in string]?: number } }[]
-  },
-  displayChar: DisplayCharacter,
-  additional: Data = {},
-): Data {
-  function curve(base: number, lvlCurve: string): Node {
-    return prod(base, subscript(input.lvl, charCurves[lvlCurve]))
-  }
-
-  const data: Data = {
-    charKey: stringConst(key),
-    charEle: stringConst(element),
-    weaponType: stringConst(gen.weaponTypeKey),
-    premod: {},
-    display: {
-      character: {
-        [key]: displayChar
-      }
-    },
-  }
-
-  let foundSpecial: boolean | undefined
-  for (const stat of [...allMainStatKeys, "def" as const]) {
-    const list: Node[] = []
-    if (gen.curves[stat])
-      list.push(curve(gen.base[stat], gen.curves[stat]!))
-    const asc = gen.ascensions.some(x => x.props[stat])
-    if (asc)
-      list.push(subscript(input.asc, gen.ascensions.map(x => x.props[stat] ?? NaN)))
-
-    if (!list.length) continue
-
-    const result = infoMut(list.length === 1 ? list[0] : sum(...list), { key: stat, asConst: true })
-    if (stat.endsWith("_dmg_")) result.info!.variant = stat.slice(0, -5) as any
-    if (stat === "atk" || stat === "def" || stat === "hp")
-      data[stat] = result
-    else {
-      if (foundSpecial) throw new Error("Duplicated Char Special")
-      foundSpecial = true
-      data.special = result
-      data.premod![stat] = input.special
-    }
-  }
-
-  console.log(data)
-  return mergeData([data, additional])
-}
 function dataObjForWeaponSheet(
   key: WeaponKey, type: WeaponTypeKey,
   gen: WeaponData,
@@ -226,8 +157,7 @@ function computeUIData(data: Data[]): UIData {
 export type { NodeDisplay, UIData };
 export {
   dataObjForArtifact, dataObjForCharacter, dataObjForWeapon,
-  dataObjForCharacterSheet, dataObjForWeaponSheet, dataObjForArtifactSheet,
-  dmgNode,
+  dataObjForWeaponSheet, dataObjForArtifactSheet,
 
   mergeData, computeUIData, valueString,
 };

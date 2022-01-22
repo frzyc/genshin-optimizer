@@ -100,6 +100,7 @@ interface DynamicNumInput<T = Node> {
     artifact?: {
       [key in ArtifactSetKey]?: DisplayArtifact<T>
     }
+    reaction?: any
   }
   conditional?: NodeData<T>
 }
