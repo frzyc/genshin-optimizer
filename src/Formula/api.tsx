@@ -1,6 +1,7 @@
+import type { WeaponData } from "pipeline";
 import Artifact from "../Artifact/Artifact";
 import _charCurves from "../Character/expCurve_gen.json";
-import { ICachedArtifact, MainStatKey, SubstatKey } from "../Types/artifact";
+import { allMainStatKeys, ICachedArtifact, MainStatKey, SubstatKey } from "../Types/artifact";
 import { ICachedCharacter } from "../Types/character";
 import { allElementsWithPhy, ArtifactSetKey, CharacterKey, ElementKey, WeaponKey, WeaponTypeKey } from "../Types/consts";
 import { ICachedWeapon } from "../Types/weapon";
@@ -10,7 +11,7 @@ import { input } from "./index";
 import { constant } from "./internal";
 import { Data, DisplayArtifact, DisplayCharacter, DisplayWeapon, Node, ReadNode } from "./type";
 import { NodeDisplay, UIData, valueString } from "./uiData";
-import { data, percent, prod, stringConst, subscript, sum } from "./utils";
+import { data, infoMut, percent, prod, stringConst, subscript, sum } from "./utils";
 
 // TODO: Remove this conversion after changing the file format
 const charCurves = Object.fromEntries(Object.entries(_charCurves).map(([key, value]) => [key, [0, ...Object.values(value)]]))
@@ -33,75 +34,95 @@ function dmgNode(base: MainStatKey, lvlMultiplier: number[], move: "normal" | "c
 function dataObjForCharacterSheet(
   key: CharacterKey,
   element: ElementKey,
-  weaponType: WeaponTypeKey,
-  hp: { base: number, lvlCurve: string, asc: number[] },
-  atk: { base: number, lvlCurve: string, asc: number[] },
-  def: { base: number, lvlCurve: string, asc: number[] },
-  special: { stat: MainStatKey | SubstatKey, asc: number[] },
+  gen: {
+    weaponTypeKey: string,
+    base: { hp: number, atk: number, def: number },
+    curves: { [key in string]?: string },
+    ascensions: { props: { [key in string]?: number } }[]
+  },
   displayChar: DisplayCharacter,
   additional: Data = {},
 ): Data {
-  function curve(array: { base: number, lvlCurve: string, asc: number[] }): Node {
-    return sum(
-      subscript(input.asc, array.asc, { key: '_' }),
-      prod(array.base, subscript(input.lvl, charCurves[array.lvlCurve], { key: '_' })))
+  function curve(base: number, lvlCurve: string): Node {
+    return prod(base, subscript(input.lvl, charCurves[lvlCurve]))
   }
 
-  const result = mergeData([{
+  const data: Data = {
     charKey: stringConst(key),
     charEle: stringConst(element),
-    weaponType: stringConst(weaponType),
-    hp: curve(hp), atk: curve(atk), def: curve(def),
-    special: subscript(input.asc, special.asc, { key: special.stat }),
-    premod: {
-      [special.stat]: input.special,
-    },
+    weaponType: stringConst(gen.weaponTypeKey),
+    premod: {},
     display: {
       character: {
         [key]: displayChar
       }
     },
-  }, additional])
-  return result
+  }
+
+  let foundSpecial: boolean | undefined
+  for (const stat of [...allMainStatKeys, "def" as const]) {
+    const list: Node[] = []
+    if (gen.curves[stat])
+      list.push(curve(gen.base[stat], gen.curves[stat]!))
+    const asc = gen.ascensions.some(x => x.props[stat])
+    if (asc)
+      list.push(subscript(input.asc, gen.ascensions.map(x => x.props[stat] ?? NaN)))
+
+    if (!list.length) continue
+
+    const result = infoMut(list.length === 1 ? list[0] : sum(...list), { key: stat, asConst: true })
+    if (stat.endsWith("_dmg_")) result.info!.variant = stat.slice(0, -5) as any
+    if (stat === "atk" || stat === "def" || stat === "hp")
+      data[stat] = result
+    else {
+      if (foundSpecial) throw new Error("Duplicated Char Special")
+      foundSpecial = true
+      data.special = result
+      data.premod![stat] = input.special
+    }
+  }
+
+  console.log(data)
+  return mergeData([data, additional])
 }
 function dataObjForWeaponSheet(
   key: WeaponKey, type: WeaponTypeKey,
-  mainStat: { stat?: "atk", base: number, lvlCurve: string, asc: number[] },
-  substat: { stat: MainStatKey | SubstatKey, base: number, lvlCurve: string },
-  substat2: { stat: MainStatKey | SubstatKey, refinement: number[] } | undefined,
+  gen: WeaponData,
+  substat2: MainStatKey | SubstatKey | undefined,
   displayWeapon: DisplayWeapon = {},
 ): Data {
-  const mainStatNode = sum(prod(mainStat.base, subscript(input.weapon.lvl, weaponCurves[mainStat.lvlCurve])), subscript(input.weapon.asc, mainStat.asc))
-  const substatNode = prod(substat.base, subscript(input.weapon.lvl, weaponCurves[substat.lvlCurve]))
-  const substat2Node = substat2 && subscript(input.weapon.refineIndex, substat2.refinement, { key: substat2.stat })
-
-  mainStatNode.info = { key: mainStat.stat ?? "atk" }
-  substatNode.info = { key: substat.stat }
-  if (substat2Node)
-    substat2Node.info = { key: substat2.stat }
-
   const result: Data = {
-    base: { [mainStat.stat ?? "atk"]: input.weapon.main },
-    premod: { [substat.stat]: input.weapon.sub },
+    base: {},
+    premod: {},
     weapon: {
       key: stringConst(key), type: stringConst(type),
-      main: mainStatNode, sub: substatNode,
     },
-  }
-
-  if (substat2) {
-    result.weapon!.sub2 = substat2Node
-    result.premod![substat2.stat] = substat2.stat !== substat.stat
-      ? input.weapon.sub2 : sum(input.weapon.sub, input.weapon.sub2)
-  }
-
-  return mergeData([result, {
     display: {
       weapon: {
         [key]: displayWeapon
       }
     },
-  }])
+  }
+
+  const { mainStat, subStat } = gen
+
+  const mainStatNode = infoMut(sum(prod(mainStat.base, subscript(input.weapon.lvl, weaponCurves[mainStat.curve])), subscript(input.weapon.asc, gen.ascension.map(x => x.addStats[mainStat.type] ?? 0))), { key: mainStat.type })
+  result.base![mainStat.type] = mainStatNode
+  result.weapon!.main = mainStatNode
+
+  if (subStat) {
+    const substatNode = subStat && infoMut(prod(subStat.base, subscript(input.weapon.lvl, weaponCurves[subStat.curve])), { key: subStat.type })
+    result.premod![subStat.type] = substatNode
+    result.weapon!.sub = substatNode
+  }
+  if (substat2) {
+    const substat2Node = subscript(input.weapon.refineIndex, gen.addProps.map(x => x[substat2] ?? NaN), { key: substat2 })
+    result.weapon!.sub2 = substat2Node
+    result.premod![substat2] = substat2 !== subStat?.type
+      ? input.weapon.sub2 : sum(input.weapon.sub, input.weapon.sub2)
+  }
+
+  return result
 }
 function dataObjForArtifactSheet(
   key: ArtifactSetKey,

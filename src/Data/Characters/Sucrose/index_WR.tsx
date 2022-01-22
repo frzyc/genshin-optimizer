@@ -91,28 +91,19 @@ export const dmgFormulas = {
       [key, match(condAbsorption, key, dmgNode("atk", datamine.burst.dmg_, "burst", { hit: { ele: stringConst(key) } }))]))
   },
 }
-export const data = dataObjForCharacterSheet(characterKey, "anemo", data_gen.weaponTypeKey as WeaponTypeKey,
-  { base: data_gen.base.hp, lvlCurve: data_gen.curves.hp, asc: data_gen.ascensions.map(x => x.props.hp) },
-  { base: data_gen.base.atk, lvlCurve: data_gen.curves.atk, asc: data_gen.ascensions.map(x => x.props.atk) },
-  { base: data_gen.base.def, lvlCurve: data_gen.curves.def, asc: data_gen.ascensions.map(x => x.props.def) },
-  { stat: "anemo_dmg_", asc: data_gen.ascensions.map(x => x.props.anemo_dmg_) },
-  dmgFormulas,
-  {
-    // TODO: include
-    // Teambuff: A1, A4,
-    // Misc: C1, C2, C4
-    talent: {
-      boost: {
-        skill: threshold_add(input.constellation, 3, 3),
-        burst: threshold_add(input.constellation, 5, 3),
-      }
-    },
-    total: { eleMas: sum(asc1, asc4) },
-    bonus: {
-      dmg: c6Bonus
+export const data = dataObjForCharacterSheet(characterKey, "anemo", data_gen, dmgFormulas, {
+  // TODO: include
+  // Teambuff: A1, A4,
+  // Misc: C1, C2, C4
+  talent: {
+    boost: {
+      skill: threshold_add(input.constellation, 3, 3),
+      burst: threshold_add(input.constellation, 5, 3),
     }
-  }
-)
+  },
+  total: { eleMas: sum(asc1, asc4) },
+  bonus: { dmg: c6Bonus }
+})
 
 const sheet: ICharacterSheet = {
   name: tr("name"),
