@@ -219,7 +219,7 @@ const char: ICharacterSheet = {
         img: c6,
         sections: [{
           text: tr("constellation6.description"),
-          conditional: { // Initating
+          conditional: { // Initating TODO: can stack up to 4 times
             key: "c6",
             canShow: stats => stats.constellation >= 6,
             name: "Initiating Normal/Charged Attack, Skill or Burst",
