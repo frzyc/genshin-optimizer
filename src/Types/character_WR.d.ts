@@ -1,5 +1,7 @@
 import { UIData } from "../Formula/api";
+import { EleEnemyResKey } from "../KeyMap";
 import { BuildSetting } from "./Build";
+import { ICachedCharacter } from "./character";
 import { CharacterKey, ElementKey, HitModeKey, ReactionModeKey, SlotKey, WeaponTypeKey } from "./consts";
 import IConditional, { IConditionalValues } from "./IConditional_WR";
 import { IFieldDisplay } from "./IFieldDisplay_WR";
@@ -62,9 +64,11 @@ export interface ICharacter {
   elementKey?: ElementKey
   reactionMode: ReactionModeKey | ""
   conditionalValues: IConditionalValues<IConditionalValue>
-  bonusStats: object
+  bonusStats: Partial<Record<Statkey, number>>
+  enemyOverride: Partial<Record<EleEnemyResKey | "enemyLevel" | "enemyDefRed_" | "enemyDefIgn_", number>>
   infusionAura: ElementKey | ""
   buildSettings?: BuildSetting
+  compareData: boolean
 }
 export interface ICachedCharacter extends ICharacter {
   equippedArtifacts: StrictDict<SlotKey, string>

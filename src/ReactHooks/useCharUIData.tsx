@@ -38,17 +38,17 @@ export default function useCharUIData(characterKey: CharacterKey | "") {
     [teammate3, setDbDirty, database])
 
   const dataWoArt = useMemo(() => dbDirty && character && characterSheet && weapon && weaponSheet && artifacts && artifactSheetsData && [
-    common,
     dataObjForCharacter(character),
     characterSheet.data,
     dataObjForWeapon(weapon),
     weaponSheet.data,
     artifactSheetsData,
+    common, // NEED TO PUT THIS AT THE END
   ], [dbDirty, character, characterSheet, weapon, weaponSheet, artifacts, artifactSheetsData])
 
   const data = useMemo(() => dataWoArt && artifacts && computeUIData([
-    ...dataWoArt,
     ...Object.values(artifacts).filter(a => a).map(a => dataObjForArtifact(a)),
+    ...dataWoArt,
   ]),
     [dataWoArt, artifacts])
   return { data, character, characterSheet, weapon, weaponSheet, artifacts, artifactSheetsData, database, dataWoArt }

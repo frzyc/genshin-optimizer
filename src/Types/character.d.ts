@@ -1,3 +1,4 @@
+import { EleEnemyResKey, Statkey } from "../KeyMap";
 import { BuildSetting } from "./Build";
 import { CharacterKey, ElementKey, HitModeKey, ReactionModeKey, SlotKey, WeaponTypeKey } from "./consts";
 import IConditional, { IConditionalValues } from "./IConditional";
@@ -68,7 +69,8 @@ export interface ICharacter {
   elementKey?: ElementKey
   reactionMode: ReactionModeKey | ""
   conditionalValues: IConditionalValues<IConditionalValue>
-  bonusStats: object
+  bonusStats: Partial<Record<Statkey, number>>
+  enemyOverride: Partial<Record<EleEnemyResKey | "enemyLevel" | "enemyDefRed_" | "enemyDefIgn_", number>>
   infusionAura: ElementKey | ""
   buildSettings?: BuildSetting
   compareData: boolean

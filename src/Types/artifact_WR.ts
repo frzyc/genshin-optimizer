@@ -51,8 +51,8 @@ export const allMainStatKeys = ["hp", "hp_", "atk", "atk_", "def_", "eleMas", "e
 export const allSubstats = ["hp", "hp_", "atk", "atk_", "def_", "def", "eleMas", "enerRech_", "critRate_", "critDMG_",] as const
 
 // TODO: Check if these actually applies
-// TODO: do these belong here? 
-type SpecializedStatKey = "normal_critRate_" | "charged_critRate_" | "skill_critRate_" | "burst_critRate_" | "plunging_dmg_" | "shield_" | "enemyDEFRed_" | "skillCDRed_" | "incHeal_" | "weakspotDMG_" | "dmg_" | "moveSPD_" | "staminaDec_" | "atkSPD_" | "cdRed_" | "finalHP" | "finalATK" | "finalDEF" | "staminaGlidingDec_" | "staminaSprintDec_" | "staminaChargedDec_" | "autoBoost" | "skillBoost" | "burstBoost"
+// TODO: do these belong here?
+type SpecializedStatKey = "normal_critRate_" | "charged_critRate_" | "skill_critRate_" | "burst_critRate_" | "plunging_dmg_" | "shield_" | "enemyDefRed_" | "skillCDRed_" | "incHeal_" | "weakspotDMG_" | "dmg_" | "moveSPD_" | "staminaDec_" | "atkSPD_" | "cdRed_" | "finalHP" | "finalATK" | "finalDEF" | "staminaGlidingDec_" | "staminaSprintDec_" | "staminaChargedDec_" | "autoBoost" | "skillBoost" | "burstBoost"
 
 export type MainStatKey = typeof allMainStatKeys[number]
 export type SubstatKey = typeof allSubstats[number]

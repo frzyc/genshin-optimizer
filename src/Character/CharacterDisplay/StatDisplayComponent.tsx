@@ -67,7 +67,7 @@ function TalentStats({ characterSheet, talentKey, displayTalent, path }: { chara
   return <Section icon={talent.img} title={talent.name} displayNs={displayTalent} path={path} action={sub ? <SqBadge ><Typography>{sub}</Typography></SqBadge> : undefined} />
 }
 
-function WeaponStats({ weaponKey, displayWeapon: displayWeapon, path }: { weaponKey: WeaponKey, displayWeapon: { [key: string]: NodeDisplay }, path: string[] }) {
+function WeaponStats({ weaponKey, displayWeapon, path }: { weaponKey: WeaponKey, displayWeapon: { [key: string]: NodeDisplay }, path: string[] }) {
   const { data } = useContext(DataContext)
   const weaponSheet = usePromise(WeaponSheet.get(weaponKey), [weaponKey])
   if (!weaponSheet) return null

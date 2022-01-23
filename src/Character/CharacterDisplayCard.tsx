@@ -11,7 +11,6 @@ import DropdownButton from '../Components/DropdownMenu/DropdownButton';
 import { EnemyExpandCard } from '../Components/EnemyEditor';
 import FormulaCalcCard from '../Components/FormulaCalcCard';
 import { DamageOptionsCard } from '../Components/HitModeEditor';
-import ImgIcon from '../Components/Image/ImgIcon';
 import { sgt } from '../Data/Characters/SheetUtil';
 import { ambiguousLevel, ascensionMaxLevel, milestoneLevels } from '../Data/LevelData';
 import { DataContext } from '../DataContext';
@@ -24,7 +23,6 @@ import { ICalculatedStats } from '../Types/stats';
 import { deepCloneStats } from '../Util/StatUtil';
 import { clamp } from '../Util/Util';
 import { defaultInitialWeapon } from '../Weapon/WeaponUtil';
-import Character from './Character';
 import CharacterArtifactPane from './CharacterDisplay/CharacterArtifactPane';
 import CharacterOverviewPane from './CharacterDisplay/CharacterOverviewPane';
 import CharacterTalentPane from './CharacterDisplay/CharacterTalentPane';
@@ -63,7 +61,7 @@ type CharacterDisplayCardProps = {
   compareBuild?: boolean
 }
 export default function CharacterDisplayCard({ characterKey, footer, newBuild: propNewBuild, onClose, tabName, isFlex }: CharacterDisplayCardProps) {
-  const { data: charUIData, character, characterSheet, weapon, weaponSheet, artifacts, artifactSheetsData, database } = useCharUIData(characterKey)
+  const { data: charUIData, character, characterSheet, database } = useCharUIData(characterKey)
 
   useEffect(() => {
     if (!characterKey) return
@@ -132,7 +130,7 @@ export default function CharacterDisplayCard({ characterKey, footer, newBuild: p
         </CardLight>
         <DamageOptionsCard />
         <FormulaCalcCard />
-        <EnemyExpandCard character={character} />
+        <EnemyExpandCard />
 
         {/* Character Panel */}
         <TabPanel value="character" current={tab}><CharacterOverviewPane /></TabPanel >

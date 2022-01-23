@@ -38,8 +38,9 @@ const statMap = {
   // Enemy
   enemyLevel: "Enemy Level",
   enemyLevel_multi: "Enemy Level RES Multiplier",
-  enemyDEF_multi: "Enemy DEF Multiplier",
-  enemyDEFRed_: "Enemy DEF Reduction",
+  enemyDef_multi: "Enemy DEF Multiplier",
+  enemyDefRed_: "Enemy DEF Reduction",
+  enemyDefIgn_: "Enemy DEF Ignore",
 
   //infusion
   infusionSelf: "Elemental Infusion",
@@ -117,8 +118,11 @@ export default class KeyMap {
     if (this instanceof KeyMap)
       throw Error('A static class cannot be instantiated.');
   }
-  static get(key: string): Displayable | undefined {
-    const name = statMap[key] as string | undefined
+  static getStr(key: string = ""): string | undefined {
+    return statMap[key]
+  }
+  static get(key: string = ""): Displayable | undefined {
+    const name = KeyMap.getStr(key)
     if (name) return name
     if (key.includes(":")) {
       const [ns, key18] = key.split(":")
