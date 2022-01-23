@@ -20,8 +20,8 @@ export const data: Data = dataObjForArtifactSheet(setKey, {
   premod: {
     enerRech_: set2
   },
-  bonus: {
-    dmg: {
+  total: {
+    dmgBonus: {
       burst: burstBonus
     }
   }

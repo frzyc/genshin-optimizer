@@ -126,8 +126,7 @@ export const data = dataObjForCharacterSheet(characterKey, "anemo", data_gen, dm
       burst: threshold_add(input.constellation, 5, 3),
     }
   },
-  total: { eleMas: sum(asc1, asc4) },
-  bonus: { dmg: c6Bonus }
+  total: { eleMas: sum(asc1, asc4), dmgBonus: c6Bonus },
 })
 
 const sheet: ICharacterSheet = {

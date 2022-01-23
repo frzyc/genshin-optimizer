@@ -1,83 +1,95 @@
 import { amplifyingReactions, transformativeReactions } from "../StatConstants"
 import { allMainStatKeys, allSubstats } from "../Types/artifact_WR"
-import { allArtifactSets, allElements, allElementsWithPhy, allSlotKeys } from "../Types/consts"
+import { allArtifactSets, allElementsWithPhy, allSlotKeys } from "../Types/consts"
 import { objectFromKeyMap } from "../Util/Util"
-import { Node, ReadNode, StringNode, StringReadNode } from "./type"
+import { Info, Node, ReadNode, StringNode, StringReadNode } from "./type"
 import { frac, lookup, max, min, naught, percent, prod, read, res, setReadNodeKeys, stringConst, stringLookup, stringMatch, stringPrio, stringRead, sum, unit } from "./utils"
 
 const allMainSubStats = [...new Set([...allMainStatKeys, ...allSubstats] as const)]
+const allElements = allElementsWithPhy
 const allMoves = ["normal", "charged", "plunging", "skill", "burst"] as const
-const asConst = true, pivot = true
+const asConst = true as const, pivot = true as const
 
-// All read nodes
+const customInfo: Info = { namePrefix: "Custom", asConst, pivot }
+const charInfo: Info = { namePrefix: "Char.", asConst, pivot }
+const artInfo: Info = { namePrefix: "Art.", asConst, pivot }
+const weaponInfo: Info = { namePrefix: "Weapon", asConst, pivot }
+const totalInfo: Info = { namePrefix: "Tot.", pivot }
+
+/** All custom bonus/override nodes */
+const custom = setReadNodeKeys({
+  bonus: {
+    crit: objectFromKeyMap(allMoves, move => read("add", { ...customInfo, key: `${move}_critRate_` })),
+    dmg: {
+      common: read("add", { ...customInfo, key: "dmg_" }),
+      ...objectFromKeyMap(Object.keys(transformativeReactions), reaction =>
+        read("add", { ...customInfo, key: `${reaction}_dmg_`, variant: reaction })),
+      ...objectFromKeyMap(Object.keys(amplifyingReactions), reaction =>
+        read("add", { ...customInfo, key: `${reaction}_dmg_`, variant: reaction })),
+      ...objectFromKeyMap(allMoves, move =>
+        read("add", { ...customInfo, key: `${move}_dmg_` })),
+      ...objectFromKeyMap(allElements, ele =>
+        read("add", { ...customInfo, key: `${ele}_dmg_`, variant: ele })),
+    },
+    res: objectFromKeyMap(allElements, ele =>
+      read("add", { ...customInfo, key: `${ele}_res_`, variant: ele })),
+  },
+  override: {
+    enemy: {
+      res: objectFromKeyMap(allElements, ele =>
+        read("unique", { ...customInfo, key: `${ele}_enemyRes_`, variant: ele })),
+    },
+  },
+}, ["custom"])
+
+/** All read nodes */
 const rd = setReadNodeKeys({
   charKey: stringRead(), charEle: stringRead(), infusion: stringRead(), weaponType: stringRead(),
 
-  lvl: read("unique", { key: "level", namePrefix: "Char." }),
-  constellation: read("unique"),
-  asc: read("unique"),
+  lvl: read("unique", { key: "level" }), constellation: read("unique"), asc: read("unique"),
 
   talent: objectFromKeyMap(["base", "boost", "total", "index"] as const, type =>
     objectFromKeyMap(["auto", "skill", "burst"] as const, _ => read(type === "boost" ? "add" : "unique"))),
 
-  ...objectFromKeyMap(["hp", "atk", "def"] as const, key => read("unique", { key, namePrefix: "Char.", asConst })),
-  special: read("unique", { namePrefix: "Char.", asConst }),
+  ...objectFromKeyMap(["hp", "atk", "def"] as const, key => read("unique", { ...charInfo, key, asConst })),
+  special: read("unique", { ...charInfo, asConst }),
 
   base: objectFromKeyMap(["atk", "hp", "def"] as const, key =>
-    read(key === "atk" ? "add" : "unique", { key, namePrefix: "Base" })),
+    read(key === "atk" ? "add" : "unique", { key, namePrefix: "Base", pivot })),
   premod: objectFromKeyMap(allMainSubStats, _ => read("add")),
   total: {
     dmgBonus: {
-      hit: read("add"), // Total DMG Bonus
-      ...objectFromKeyMap(Object.keys(transformativeReactions), reaction =>
-        read("add")),
+      hit: read("add", { ...totalInfo, key: "dmg_" }), // Total DMG Bonus
+      ...objectFromKeyMap(Object.keys(custom.bonus.dmg), key =>
+        read("add", { ...custom.bonus.dmg[key].info, ...totalInfo, })),
     },
-    ...objectFromKeyMap(allMainSubStats, key => read("add", { key, namePrefix: "Total", pivot })),
-    cappedCritRate: read("unique", { key: "critRate_", namePrefix: "Capped" }), // Total Crit Rate capped to [0, 100%]
+    ...objectFromKeyMap(allMainSubStats, key => read("add", { ...totalInfo, key })),
+    cappedCritRate: read("unique", { ...totalInfo, key: "critRate_", namePrefix: "Capped", pivot }), // Total Crit Rate capped to [0%, 100%]
   },
+
   art: {
-    ...objectFromKeyMap(allMainSubStats, key => read("add", { key, namePrefix: "Art.", asConst })),
+    ...objectFromKeyMap(allMainSubStats, key => read("add", { ...artInfo, key })),
     ...objectFromKeyMap(allSlotKeys, _ => ({ id: stringRead(), set: stringRead() })),
   },
   artSet: {
-    ...objectFromKeyMap(allArtifactSets, set => read("add", { key: set })),
+    ...objectFromKeyMap(allArtifactSets, set => read("add", { ...artInfo, key: set })),
   },
 
   weapon: {
     key: stringRead(), type: stringRead(),
 
-    lvl: read("unique"), asc: read("unique"),
-    refineIndex: read("unique"), refinement: read("unique"),
-    main: read("unique", { namePrefix: "Weapon", asConst }),
-    sub: read("unique", { namePrefix: "Weapon", asConst }),
-    sub2: read("unique", { namePrefix: "Weapon", asConst }),
+    lvl: read("unique", { ...weaponInfo }), asc: read("unique", { ...weaponInfo }),
+    refineIndex: read("unique", { ...weaponInfo }), refinement: read("unique", { ...weaponInfo }),
+    main: read("unique", { ...weaponInfo }),
+    sub: read("unique", { ...weaponInfo }),
+    sub2: read("unique", { ...weaponInfo }),
   },
+
   team: { infusion: stringRead() },
 
-  bonus: {
-    crit: objectFromKeyMap(allMoves, move => read("add", { key: `${move}_critRate_`, pivot })),
-    dmg: {
-      common: read("add", { key: "dmg_", namePrefix: "Custom" }),
-      ...objectFromKeyMap(Object.keys(transformativeReactions), reaction =>
-        read("add", { key: `${reaction}_dmg_`, variant: reaction, namePrefix: "Custom" })),
-      ...objectFromKeyMap(Object.keys(amplifyingReactions), reaction =>
-        read("add", { key: `${reaction}_dmg_`, variant: reaction, namePrefix: "Custom" })),
-      ...objectFromKeyMap(allMoves, move =>
-        read("add", { key: `${move}_dmg_`, namePrefix: "Custom" })),
-      ...objectFromKeyMap(allElementsWithPhy, ele =>
-        read("add", { key: `${ele}_dmg_`, variant: ele, namePrefix: "Custom" })),
-    },
-    res: objectFromKeyMap(allElementsWithPhy, ele => read("add", { key: `${ele}_res_`, variant: ele })),
-  },
-  override: {
-    enemy: {
-      res: objectFromKeyMap(allElementsWithPhy, ele => read("add", { key: `${ele}_enemyRes_`, variant: ele })),
-    }
-  },
-
   enemy: {
-    res: objectFromKeyMap(allElementsWithPhy, ele => read("add", { key: `${ele}_enemyRes_`, variant: ele })),
-    resMulti: objectFromKeyMap(allElementsWithPhy, ele => read("add", { variant: ele })),
+    res: objectFromKeyMap(allElements, ele => read("add", { key: `${ele}_enemyRes_`, variant: ele })),
+    resMulti: objectFromKeyMap(allElements, ele => read("unique")),
     level: read("unique", { key: "enemyLevel" }),
     def: read("add", { key: "enemyDEF_multi", pivot }),
     defRed: read("add", { key: "enemyDEFRed_", pivot }),
@@ -95,14 +107,14 @@ const rd = setReadNodeKeys({
   ] as const, key => read("add", { key }))
 })
 
-const { base, art, premod, total, hit, enemy, bonus } = rd
+const { base, art, premod, total, hit, enemy } = rd
 
 // Note:
 // We may need to annotate variants on other values as well
 // However, since the variants propagate to parent nodes
 // We only need to annotate values at the very leafs of the
 // computation.
-for (const ele of allElementsWithPhy) {
+for (const ele of allElements) {
   art[`${ele}_dmg_` as const].info!.variant = ele
 }
 
@@ -131,7 +143,7 @@ const common = {
         return sum(prod(base[key], sum(unit, premod[`${key}_` as const])), art[key])
       if (key === "critRate_")
         return sum(percent(0.05), art[key],
-          lookup(hit.move, objectFromKeyMap(allMoves, move => bonus.crit[move]), 0))
+          lookup(hit.move, objectFromKeyMap(allMoves, move => custom.bonus.crit[move]), 0))
       if (key === "critDMG_") return sum(percent(0.5), art[key])
       if (key === "enerRech_") return sum(unit, art[key])
       else return art[key]
@@ -140,16 +152,16 @@ const common = {
   total: {
     dmgBonus: {
       hit: sum(
-        bonus.dmg.common,
+        total.dmgBonus.common,
         lookup(effectiveReaction, objectFromKeyMap([
           ...Object.keys(amplifyingReactions)],
-          reaction => bonus.dmg[reaction]), 0),
-        lookup(hit.move, objectFromKeyMap(allMoves, move => bonus.dmg[move]), 0),
+          reaction => total.dmgBonus[reaction]), naught),
+        lookup(hit.move, objectFromKeyMap(allMoves, move => total.dmgBonus[move]), 0),
         lookup(hit.ele, objectFromKeyMap(allElements, ele =>
-          sum(bonus.dmg[ele], art[`${ele}_dmg_`])), 0)
+          sum(total.dmgBonus[ele], art[`${ele}_dmg_`])), 0)
       ),
-      ...objectFromKeyMap(Object.keys(transformativeReactions), reaction =>
-        bonus.dmg[reaction] as Node)
+      ...objectFromKeyMap(Object.keys(custom.bonus.dmg), key =>
+        custom.bonus.dmg[key] as Node),
     },
     ...objectFromKeyMap(allMainSubStats, key => premod[key] as Node),
     cappedCritRate: max(min(total.critRate_, unit), naught),
@@ -173,11 +185,11 @@ const common = {
       lookup(hit.hitMode, {
         hit: unit,
         critHit: sum(unit, total.critDMG_),
-        avgHit: sum(unit, prod(total.critRate_, total.critDMG_)),
+        avgHit: sum(unit, prod(total.cappedCritRate, total.critDMG_)),
       }, undefined),
       enemy.def,
       lookup(hit.ele,
-        objectFromKeyMap(allElementsWithPhy, ele => enemy.resMulti[ele]), undefined),
+        objectFromKeyMap(allElements, ele => enemy.resMulti[ele]), undefined),
       lookup(effectiveReaction, {
         melt: lookup(hit.ele, {
           pyro: prod(2, baseAmpBonus),
@@ -193,7 +205,7 @@ const common = {
 
   enemy: {
     def: frac(sum(rd.lvl, 100), prod(sum(enemy.level, 100), sum(unit, prod(-1, enemy.defRed)))),
-    resMulti: objectFromKeyMap(allElementsWithPhy, ele => res(enemy.res[ele])),
+    resMulti: objectFromKeyMap(allElements, ele => res(enemy.res[ele])),
   },
 
   misc: {
@@ -212,5 +224,5 @@ export type Input<Num = Node, Str = StringNode> = _Input<typeof rd, Num, Str>
 typecheck<typeof common, StrictInput<Node, StringNode>>()
 
 export {
-  rd as input, common
+  rd as input, common, custom
 }

@@ -11,7 +11,7 @@ const statMap = {
 
   // Misc. Stats
   base: "Base DMG",
-  dmg_: "All DMG Bonus",
+  dmg_: "DMG Bonus",
   weakspotDMG_: "Weakspot DMG",
   incHeal_: "Incoming Healing Bonus",
   shield_: "Shield Strength",
