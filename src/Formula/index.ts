@@ -192,7 +192,7 @@ const common = {
   },
 
   enemy: {
-    def: frac(sum(rd.lvl, 100), prod(sum(enemy.level, 100), sum(1, prod(-1, enemy.defRed)))),
+    def: frac(sum(rd.lvl, 100), prod(sum(enemy.level, 100), sum(unit, prod(-1, enemy.defRed)))),
     resMulti: objectFromKeyMap(allElementsWithPhy, ele => res(enemy.res[ele])),
   },
 

@@ -122,7 +122,7 @@ function dataObjForCharacter(char: ICachedCharacter): Data {
     }
   }
 
-  crawlObject(char.conditionalValues, ["conditional"], (x: any) => typeof x === "string" || typeof x === "number", (x: number | string, key: string[]) =>
+  crawlObject(char.conditionalValues, [], (x: any) => typeof x === "string" || typeof x === "number", (x: number | string, key: string[]) =>
     layeredAssignment(result, key, typeof x === "string" ? stringConst(x) : constant(x)))
   return result
 }
