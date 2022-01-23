@@ -4,6 +4,7 @@ import { data as moonglowData } from "../Data/Weapons/Catalyst/EverlastingMoongl
 import artifact from "../Data/Artifacts/index_WR"
 import { common, input } from "./index";
 import { constant } from "./internal";
+import { customRead } from "./utils";
 
 const charData = dataObjForCharacter({
   equippedArtifacts: { "circlet": "", "flower": "", "goblet": "", "plume": "", "sands": "" },
@@ -23,6 +24,7 @@ const charData = dataObjForCharacter({
   conditionalValues: {},
   bonusStats: {},
   infusionAura: "",
+  compareData: false,
 })
 const weaponData = dataObjForWeapon({
   id: "",
@@ -42,6 +44,6 @@ describe("API", () => {
       artifact.EmblemOfSeveredFate.data,
       { artSet: { EmblemOfSeveredFate: constant(4) } }
     ])
-    console.log(Object.fromEntries(Object.entries(input.total).map(([key, value]) => [key, computed.get(value)])))
+    console.log(computed.get(customRead(["display", "reaction", "electroSwirl"])))
   })
 })

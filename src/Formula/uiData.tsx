@@ -320,7 +320,7 @@ function computeNodeDisplay(node: ContextNodeDisplay): NodeDisplay {
     key, value, variant, namePrefix,
     isEmpty: empty,
     unit: (key && KeyMap.unit(key)) || "flat",
-    formula, formulas: [...((pivot && assignment) ? [assignment] : []), ...dependencies]
+    formula, formulas: [...(assignment ? [assignment] : []), ...dependencies]
   }
 }
 
