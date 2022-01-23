@@ -332,12 +332,13 @@ function constantFold(formulas: Node[], topLevelData: Data[] = [], shouldFold = 
         //   - (-infinity) + ... = -infinity
         // - NaN
         //   - operation(NaN, ...) = NaN
-        degen: if (!isFinite(numericValue)) {
-          if (operation === "mul") break degen
-          if (operation === "max" && numericValue < 0) break degen
-          if (operation === "min" && numericValue > 0) break degen
-          result = constant(numericValue)
-          break
+        if (!isFinite(numericValue)) {
+          if ((operation !== "mul") &&
+            (operation !== "max" || numericValue > 0) &&
+            (operation !== "min" || numericValue < 0)) {
+            result = constant(numericValue)
+            break
+          }
         } else if (operation === "mul" && numericValue === 0) {
           result = constant(numericValue)
           break
