@@ -8,11 +8,10 @@ import { ArtifactSheet } from "../ArtifactSheet_WR"
 
 type Data = {
   setKey: ArtifactSetKey,
-  setNumKey: SetNum,
-  skipConditionalEquipmentCheck?: boolean
+  setNumKey: SetNum
 }
 
-export default function SetEffectDisplay({ setKey, setNumKey, skipConditionalEquipmentCheck }: Data) {
+export default function SetEffectDisplay({ setKey, setNumKey }: Data) {
   const sheet = usePromise(ArtifactSheet.get(setKey), [setKey])
   if (!sheet) return null
 
@@ -24,6 +23,6 @@ export default function SetEffectDisplay({ setKey, setNumKey, skipConditionalEqu
         <Typography><SqBadge color="success">{setNumKey}-Set</SqBadge> {setEffectText}</Typography>
       </CardContent>
     </CardDark>
-    {document ? <DocumentDisplay sections={document} skipConditionalEquipmentCheck={skipConditionalEquipmentCheck} /> : null}
+    {document ? <DocumentDisplay sections={document} /> : null}
   </Box>
 }

@@ -7,7 +7,9 @@ export interface StatItem {
   name: string, const?: boolean, default?: any, variant?: string,
   unit?: "%" | "multi"
 }
-
+/**
+ * @deprecated
+ */
 const StatData: { [stat: string]: StatItem } = {
   flat: { name: "", default: 1 },
 
@@ -116,7 +118,9 @@ const Formulas: Dict<string, (s: ICalculatedStats) => number> = {
   Formulas[`${ele}_crystalize_hit`] = s => s.crystalize_hit * 2.5
 })
 
-
+/**
+ * @deprecated
+ */
 const ElementToReactionKeys = {
   physical: [],
   anemo: ["electro_swirl_hit", "pyro_swirl_hit", "cryo_swirl_hit", "hydro_swirl_hit"],
@@ -219,4 +223,3 @@ export {
   StatData,
   ElementToReactionKeys,
 };
-

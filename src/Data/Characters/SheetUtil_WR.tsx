@@ -8,22 +8,11 @@ import IConditional from "../../Types/IConditional_WR";
 export const st = (strKey: string) => <Translate ns="sheet" key18={strKey} />
 export const sgt = (strKey: string) => <Translate ns="sheet_gen" key18={strKey} />
 
-type BoostKey = "autoBoost" | "skillBoost" | "burstBoost"
-export const talentTemplate = (talentKey: TalentSheetElementKey, tr: (string) => Displayable, img: string, boostKey?: BoostKey, boostAmt: number = 3): TalentSheetElement => ({
+export const talentTemplate = (talentKey: TalentSheetElementKey, tr: (string) => Displayable, img: string): TalentSheetElement => ({
   name: tr(`${talentKey}.name`),
   img,
   sections: [{
     text: tr(`${talentKey}.description`),
-    ...(boostKey ? {
-      conditional: {
-        key: boostKey,
-        canShow: stats => stats.constellation >= parseInt(talentKey.split("constellation")[1] ?? 3),
-        maxStack: 0,
-        stats: {
-          [boostKey]: boostAmt
-        }
-      } as IConditional
-    } : {})
   }],
 })
 

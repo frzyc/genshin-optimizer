@@ -78,7 +78,8 @@ const datamine = {
 
 // Conditional Input
 // Absorption Element
-const condAbsorption = customStringRead(["conditional", characterKey, "absorption"])
+const condAbsorptionPath = ["conditional", characterKey, "absorption"]
+const condAbsorption = customStringRead(condAbsorptionPath)
 // A1 Swirl Reaction Element
 const condSwirlReaction = customStringRead(["conditional", characterKey, "swirl"])
 // Set to 1 if skill hit opponents
@@ -207,32 +208,33 @@ const sheet: ICharacterSheet = {
             value: datamine.burst.enerCost,
           }],
           conditional: { // Absorption
-            key: "q",
+            value: condAbsorption,
+            path: condAbsorptionPath,
             name: "Elemental Absorption",
             states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
               name: <ColorText color={eleKey}>{sgt(`element.${eleKey}`)}</ColorText>,
               fields: [{
-                canShow: stats => {
-                  const [num, condEleKey] = stats.conditionalValues?.character?.Sucrose?.q ?? []
-                  return !!num && condEleKey === eleKey
-                },
+                // canShow: stats => {
+                //   const [num, condEleKey] = stats.conditionalValues?.character?.Sucrose?.q ?? []
+                //   return !!num && condEleKey === eleKey
+                // },
                 node: infoMut(dmgFormulas.burst[eleKey], { key: `char_${characterKey}_gen:burst.skillParams.1` }),
               }]
             }]))
           },
         }, {
-          conditional: { // Absorption
-            key: "c6",
-            partyBuff: "partyAll",
-            header: conditionalHeader("constellation6", tr, c6),
-            description: tr("constellation6.description"),
-            name: "Elemental Absorption",
-            canShow: stats => stats.constellation >= 6,
-            states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
-              name: <ColorText color={eleKey}>{sgt(`element.${eleKey}`)}</ColorText>,
-              stats: { [`${eleKey}_dmg_`]: 20 } //TODO: remove?
-            }]))
-          },
+          // conditional: { // Absorption
+          //   key: "c6",
+          //   partyBuff: "partyAll",
+          //   header: conditionalHeader("constellation6", tr, c6),
+          //   description: tr("constellation6.description"),
+          //   name: "Elemental Absorption",
+          //   canShow: stats => stats.constellation >= 6,
+          //   states: Object.fromEntries(absorbableEle.map(eleKey => [eleKey, {
+          //     name: <ColorText color={eleKey}>{sgt(`element.${eleKey}`)}</ColorText>,
+          //     stats: { [`${eleKey}_dmg_`]: 20 } //TODO: remove?
+          //   }]))
+          // },
         }]
       },
       passive1: {
@@ -240,17 +242,17 @@ const sheet: ICharacterSheet = {
         img: passive1,
         sections: [{
           text: tr("passive1.description"),
-          conditional: {
-            key: "a1",
-            canShow: stats => stats.ascension >= 4,
-            partyBuff: "partyOnly",
-            header: conditionalHeader("passive1", tr, passive1),
-            description: tr("passive1.description"),
-            name: "When Sucrose triggers a Swirl reaction",
-            fields: [{
-              text: <ColorText color="warning">This Team buff currently does not work. please add the EM manually to the characer.</ColorText>
-            }]
-          }
+          // conditional: {
+          //   key: "a1",
+          //   canShow: stats => stats.ascension >= 4,
+          //   partyBuff: "partyOnly",
+          //   header: conditionalHeader("passive1", tr, passive1),
+          //   description: tr("passive1.description"),
+          //   name: "When Sucrose triggers a Swirl reaction",
+          //   fields: [{
+          //     text: <ColorText color="warning">This Team buff currently does not work. please add the EM manually to the characer.</ColorText>
+          //   }]
+          // }
         }]
       },
       passive2: {
@@ -258,30 +260,30 @@ const sheet: ICharacterSheet = {
         img: passive2,
         sections: [{
           text: tr("passive2.description"),
-          conditional: {
-            key: "a4",
-            canShow: stats => stats.ascension >= 4,
-            partyBuff: "partyOnly",
-            header: conditionalHeader("passive2", tr, passive2),
-            description: tr("passive2.description"),
-            name: "When Skill hits opponent",
-            fields: [{
-              text: "Elemental Mastery Bonus",
-              node: input.total.eleMas // TODO: Find the node for this one
-            }, {
-              text: sgt("duration"),
-              value: 8,
-              unit: "s"
-            }]
-          }
+          // conditional: {
+          //   key: "a4",
+          //   canShow: stats => stats.ascension >= 4,
+          //   partyBuff: "partyOnly",
+          //   header: conditionalHeader("passive2", tr, passive2),
+          //   description: tr("passive2.description"),
+          //   name: "When Skill hits opponent",
+          //   fields: [{
+          //     text: "Elemental Mastery Bonus",
+          //     node: input.total.eleMas // TODO: Find the node for this one
+          //   }, {
+          //     text: sgt("duration"),
+          //     value: 8,
+          //     unit: "s"
+          //   }]
+          // }
         }]
       },
       passive3: talentTemplate("passive3", tr, passive3),
       constellation1: talentTemplate("constellation1", tr, c1),
       constellation2: talentTemplate("constellation2", tr, c2),
-      constellation3: talentTemplate("constellation3", tr, c3, "skillBoost"),
+      constellation3: talentTemplate("constellation3", tr, c3),
       constellation4: talentTemplate("constellation4", tr, c4),
-      constellation5: talentTemplate("constellation5", tr, c5, "burstBoost"),
+      constellation5: talentTemplate("constellation5", tr, c5),
       constellation6: talentTemplate("constellation6", tr, c6),
     },
   },
