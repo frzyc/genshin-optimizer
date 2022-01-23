@@ -167,10 +167,6 @@ const common = {
     cappedCritRate: max(min(total.critRate_, unit), naught),
   },
 
-  weapon: {
-    refineIndex: sum(rd.weapon.refinement, -1),
-  },
-
   hit: {
     ele: stringPrio(
       rd.infusion,
