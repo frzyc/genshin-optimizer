@@ -1,18 +1,18 @@
 import type { WeaponData } from "pipeline";
-import { crawlObject } from "pipeline/Util";
 import Artifact from "../Artifact/Artifact";
 import _charCurves from "../Character/expCurve_gen.json";
+import { transformativeReactionLevelMultipliers, transformativeReactions } from "../StatConstants";
 import { ICachedArtifact, MainStatKey, SubstatKey } from "../Types/artifact";
 import { ICachedCharacter } from "../Types/character";
 import { allElementsWithPhy, ArtifactSetKey, WeaponKey, WeaponTypeKey } from "../Types/consts";
 import { ICachedWeapon } from "../Types/weapon";
-import { layeredAssignment, objectFromKeyMap } from "../Util/Util";
+import { crawlObject, layeredAssignment, objectFromKeyMap } from "../Util/Util";
 import _weaponCurves from "../Weapon/expCurve_gen.json";
 import { input } from "./index";
 import { constant } from "./internal";
 import { Data, DisplayArtifact, DisplayWeapon, Node, ReadNode } from "./type";
 import { NodeDisplay, UIData, valueString } from "./uiData";
-import { infoMut, percent, prod, stringConst, subscript, sum } from "./utils";
+import { frac, infoMut, percent, prod, stringConst, subscript, sum, unit } from "./utils";
 
 // TODO: Remove this conversion after changing the file format
 const weaponCurves = Object.fromEntries(Object.entries(_weaponCurves).map(([key, value]) => [key, [0, ...Object.values(value)]]))
@@ -94,9 +94,6 @@ function dataObjForCharacter(char: ICachedCharacter): Data {
     constellation: constant(char.constellation),
     asc: constant(char.ascension),
 
-    // TODO: Check when char.elementKey can be null
-    charEle: char.elementKey ? stringConst(char.elementKey) : undefined,
-
     talent: {
       base: {
         auto: constant(char.talent.auto),
@@ -116,6 +113,12 @@ function dataObjForCharacter(char: ICachedCharacter): Data {
     },
     hit: {
       hitMode: stringConst(char.hitMode)
+    }
+  }
+  if (char.elementKey) {
+    result.charEle = stringConst(char.elementKey)
+    result.display = {
+      reaction: reactions[char.elementKey]
     }
   }
 
@@ -154,6 +157,56 @@ function mergeData(data: Data[]): Data {
 
 function computeUIData(data: Data[]): UIData {
   return new UIData(data, undefined)
+}
+
+const transMulti1 = subscript(input.lvl, transformativeReactionLevelMultipliers)
+const transMulti2 = prod(16, frac(input.total.eleMas, 2000))
+const trans = {
+  ...objectFromKeyMap(["overloaded", "electrocharged", "superconduct", "shattered"] as const, reaction => {
+    const { multi, variants: [ele] } = transformativeReactions[reaction]
+    return infoMut(prod(
+      infoMut(prod(multi, transMulti1), { asConst: true }),
+      sum(unit, prod(transMulti2, input.total.dmgBonus[reaction])),
+      input.enemy.res[ele]),
+      { key: `${reaction}_hit`, variant: reaction })
+  }),
+  swirl: objectFromKeyMap(transformativeReactions.swirl.variants, ele => infoMut(
+    prod(
+      infoMut(prod(transformativeReactions.swirl.multi, transMulti1), { asConst: true }),
+      sum(unit, prod(transMulti2, input.total.dmgBonus.swirl)),
+      input.enemy.res[ele]),
+    { key: `${ele}_swirl_hit`, variant: ele }))
+}
+export const reactions = {
+  anemo: {
+    electroSwirl: trans.swirl.electro,
+    pyroSwirl: trans.swirl.pyro,
+    cryoSwirl: trans.swirl.cryo,
+    hydroSwirl: trans.swirl.hydro,
+    shattered: trans.shattered,
+  },
+  geo: {
+    // TODO: crystallize
+    shattered: trans.shattered,
+  },
+  electro: {
+    overloaded: trans.overloaded,
+    electrocharged: trans.electrocharged,
+    superconduct: trans.superconduct,
+    shattered: trans.shattered,
+  },
+  hydro: {
+    electrocharged: trans.electrocharged,
+    shattered: trans.shattered,
+  },
+  pyro: {
+    overloaded: trans.overloaded,
+    shattered: trans.shattered,
+  },
+  cryo: {
+    superconduct: trans.superconduct,
+    shattered: trans.shattered,
+  },
 }
 
 export type { NodeDisplay, UIData };

@@ -3,10 +3,8 @@ import { allMainStatKeys, MainStatKey } from "../../Types/artifact";
 import { CharacterKey, ElementKey } from "../../Types/consts";
 import { input } from "../../Formula/index";
 import { Data, DisplayCharacter, Node } from "../../Formula/type";
-import { data, frac, infoMut, prod, stringConst, subscript, sum, unit } from "../../Formula/utils";
-import { mergeData } from "../../Formula/api";
-import { objectFromKeyMap } from "../../Util/Util";
-import { transformativeReactionLevelMultipliers, transformativeReactions } from "../../StatConstants";
+import { data, infoMut, prod, stringConst, subscript, sum } from "../../Formula/utils";
+import { mergeData, reactions } from "../../Formula/api";
 
 export const absorbableEle = ["hydro", "pyro", "cryo", "electro"] as ElementKey[]
 
@@ -29,7 +27,7 @@ export function dmgNode(base: MainStatKey, lvlMultiplier: number[], move: "norma
 }
 export function dataObjForCharacterSheet(
   key: CharacterKey,
-  element: ElementKey,
+  element: ElementKey | undefined,
   gen: {
     weaponTypeKey: string,
     base: { hp: number, atk: number, def: number },
@@ -45,16 +43,17 @@ export function dataObjForCharacterSheet(
 
   const data: Data = {
     charKey: stringConst(key),
-    charEle: stringConst(element),
     weaponType: stringConst(gen.weaponTypeKey),
     premod: {},
     display: {
       character: {
         [key]: displayChar
       },
-      // TODO: Organize this display
-      reaction: reactions[element],
     },
+  }
+  if (element) {
+    data.charEle = stringConst(element)
+    data.display!.reaction = reactions[element]
   }
 
   let foundSpecial: boolean | undefined
@@ -81,54 +80,4 @@ export function dataObjForCharacterSheet(
   }
 
   return mergeData([data, additional])
-}
-
-const transMulti1 = subscript(input.lvl, transformativeReactionLevelMultipliers)
-const transMulti2 = prod(16, frac(input.total.eleMas, 2000))
-const trans = {
-  ...objectFromKeyMap(["overloaded", "electrocharged", "superconduct", "shattered"] as const, reaction => {
-    const { multi, variants: [ele] } = transformativeReactions[reaction]
-    return infoMut(prod(
-      infoMut(prod(multi, transMulti1), { asConst: true }),
-      sum(unit, prod(transMulti2, input.total.dmgBonus[reaction])),
-      input.enemy.res[ele]),
-      { key: `${reaction}_hit`, variant: reaction })
-  }),
-  swirl: objectFromKeyMap(transformativeReactions.swirl.variants, ele => infoMut(
-    prod(
-      infoMut(prod(transformativeReactions.swirl.multi, transMulti1), { asConst: true }),
-      sum(unit, prod(transMulti2, input.total.dmgBonus.swirl)),
-      input.enemy.res[ele]),
-    { key: `${ele}_swirl_hit`, variant: ele }))
-}
-const reactions = {
-  anemo: {
-    electroSwirl: trans.swirl.electro,
-    pyroSwirl: trans.swirl.pyro,
-    cryoSwirl: trans.swirl.cryo,
-    hydroSwirl: trans.swirl.hydro,
-    shattered: trans.shattered,
-  },
-  geo: {
-    // TODO: crystallize
-    shattered: trans.shattered,
-  },
-  electro: {
-    overloaded: trans.overloaded,
-    electrocharged: trans.electrocharged,
-    superconduct: trans.superconduct,
-    shattered: trans.shattered,
-  },
-  hydro: {
-    electrocharged: trans.electrocharged,
-    shattered: trans.shattered,
-  },
-  pyro: {
-    overloaded: trans.overloaded,
-    shattered: trans.shattered,
-  },
-  cryo: {
-    superconduct: trans.superconduct,
-    shattered: trans.shattered,
-  },
 }
