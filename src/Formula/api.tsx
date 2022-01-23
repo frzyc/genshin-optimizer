@@ -1,11 +1,12 @@
 import type { WeaponData } from "pipeline";
+import { crawlObject } from "pipeline/Util";
 import Artifact from "../Artifact/Artifact";
 import _charCurves from "../Character/expCurve_gen.json";
 import { ICachedArtifact, MainStatKey, SubstatKey } from "../Types/artifact";
 import { ICachedCharacter } from "../Types/character";
 import { allElementsWithPhy, ArtifactSetKey, WeaponKey, WeaponTypeKey } from "../Types/consts";
 import { ICachedWeapon } from "../Types/weapon";
-import { objectFromKeyMap } from "../Util/Util";
+import { layeredAssignment, objectFromKeyMap } from "../Util/Util";
 import _weaponCurves from "../Weapon/expCurve_gen.json";
 import { input } from "./index";
 import { constant } from "./internal";
@@ -88,7 +89,7 @@ function dataObjForArtifact(art: ICachedArtifact, mainStatAssumptionLevel: numbe
   }
 }
 function dataObjForCharacter(char: ICachedCharacter): Data {
-  return {
+  const result: Data = {
     lvl: constant(char.level),
     constellation: constant(char.constellation),
     asc: constant(char.ascension),
@@ -113,13 +114,14 @@ function dataObjForCharacter(char: ICachedCharacter): Data {
       },
       level: constant(char.level),
     },
-    conditional: {
-      // TODO: Add conditional values
-    },
     hit: {
       hitMode: stringConst(char.hitMode)
     }
   }
+
+  crawlObject(char.conditionalValues, ["conditional"], (x: any) => typeof x === "string" || typeof x === "number", (x: number | string, key: string[]) =>
+    layeredAssignment(result, key, typeof x === "string" ? stringConst(x) : constant(x)))
+  return result
 }
 function dataObjForWeapon(weapon: ICachedWeapon): Data {
   return {
