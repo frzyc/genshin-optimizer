@@ -79,7 +79,7 @@ function dataObjForArtifact(art: ICachedArtifact, mainStatAssumptionLevel: numbe
       ...Object.fromEntries(stats.map(([key, value]) =>
         key.endsWith("_") ? [key, percent(value / 100)] : [key, constant(value)])),
       [art.slotKey]: {
-        id: stringConst(art.id)
+        id: stringConst(art.id), set: stringConst(art.setKey)
       },
     },
     artSet: {

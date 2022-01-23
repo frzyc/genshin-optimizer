@@ -37,7 +37,7 @@ const rd = setReadNodeKeys({
   },
   art: {
     ...objectFromKeyMap(allMainSubStats, key => read("add", { key, namePrefix: "Art.", asConst })),
-    ...objectFromKeyMap(allSlotKeys, _ => ({ id: stringRead() })),
+    ...objectFromKeyMap(allSlotKeys, _ => ({ id: stringRead(), set: stringRead() })),
   },
   artSet: {
     ...objectFromKeyMap(allArtifactSets, set => read("add", { key: set })),
