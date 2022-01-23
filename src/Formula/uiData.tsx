@@ -8,7 +8,8 @@ import { ComputeNode, Data, DataNode, LookupNode, Node, ReadNode, StringMatchNod
 const shouldWrap = true
 
 export function valueString(value: number, unit: "%" | "flat", fixed = -1): string {
-  if (fixed === -1) {
+  if (Number.isInteger(value)) fixed = 0
+  else if (fixed === -1) {
     if (unit === "%") fixed = 1
     else fixed = Math.abs(value) < 10 ? 3 : Math.abs(value) < 1000 ? 2 : Math.abs(value) < 10000 ? 1 : 0
   }
