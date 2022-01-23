@@ -1,6 +1,6 @@
 import { resolve } from "../Util/KeyPathUtil"
 import { assertUnreachable } from "../Util/Util"
-import { constant, mapContextualFormulas, mapFormulas } from "./internal"
+import { constant, forEachNodes, mapContextualFormulas, mapFormulas } from "./internal"
 import { CommutativeMonoidOperation, ComputeNode, ConstantNode, Data, Node, Operation, ReadNode, StringNode } from "./type"
 
 const allCommutativeMonoidOperations: StrictDict<CommutativeMonoidOperation, (_: number[]) => number> = {
@@ -9,16 +9,15 @@ const allCommutativeMonoidOperations: StrictDict<CommutativeMonoidOperation, (_:
   add: (x: number[]): number => x.reduce((a, b) => a + b, 0),
   mul: (x: number[]): number => x.reduce((a, b) => a * b, 1),
 }
-export const allOperations: StrictDict<Operation | "data", (_: number[]) => number> = {
+export const allOperations: StrictDict<Operation, (_: number[]) => number> = {
   ...allCommutativeMonoidOperations,
   res: ([res]: number[]): number => {
     if (res < 0) return 1 - res / 2
     else if (res >= 0.75) return 1 / (res * 4 + 1)
     return 1 - res
   },
-  sum_frac: ([x, c]: number[]): number => x / (x + c),
+  sum_frac: (x: number[]): number => x[0] / x.reduce((a, b) => a + b),
   threshold_add: ([value, threshold, addition]: number[]): number => value >= threshold ? addition : 0,
-  data: ([x]: number[]) => x
 }
 
 const commutativeMonoidOperationSet = new Set(Object.keys(allCommutativeMonoidOperations) as (Node["operation"])[])
@@ -29,8 +28,104 @@ export function optimize(formulas: Node[], topLevelData: Data[], shouldFold = (_
   formulas = deduplicate(formulas)
   return formulas
 }
+export function precompute(formulas: Node[], binding: (readNode: ReadNode) => string): (values: Dict<string, number>) => Float32Array {
+  // TODO: Use min-cut to minimize the size of interim array
+  type Reference = string | number | { ins: Reference[] }
 
-export function flatten(formulas: Node[]): Node[] {
+  const uniqueReadStrings = new Set<string>()
+  const uniqueNumbers = new Set<number>()
+  const mapping = new Map<Node, Reference>()
+
+  forEachNodes(formulas, _ => { }, f => {
+    const { operation } = f
+    switch (operation) {
+      case "read":
+        if (f.accumulation !== "add")
+          throw new Error(`Unsupported ${operation} node in precompute`)
+        const name = binding(f)
+        uniqueReadStrings.add(name)
+        mapping.set(f, name)
+        break
+      case "add": case "min": case "max": case "mul":
+      case "threshold_add": case "res": case "sum_frac":
+        mapping.set(f, { ins: f.operands.map(op => mapping.get(op)!) })
+        break
+      case "const":
+        const value = f.value
+        uniqueNumbers.add(value)
+        mapping.set(f, value)
+        break
+      case "match": case "unmatch": case "lookup": case "subscript":
+      case "data": throw new Error(`Unsupported ${operation} node in precompute`)
+      default: assertUnreachable(operation)
+    }
+  })
+
+
+  /**
+   * [ Outputs , Input , Constants, Deduplicated Compute ]
+   *
+   * Note that only Compute nodes are deduplicated. Outputs are arranged
+   * in the same order as formulas even when they are duplicated. Inputs
+   * are arranged in the same order as the read strings, even when they
+   * overlap with outputs. If an output is a constant or a compute node,
+   * only put the data in the output region.
+   */
+  const locations = new Map<Node | number | string, number>()
+
+  const readStrings = [...uniqueReadStrings], readOffset = formulas.length
+  const constValues = [...uniqueNumbers]
+  const computations: { out: number, ins: number[], op: (_: number[]) => number }[] = []
+
+  formulas.forEach((f, i) => {
+    locations.set(f, i)
+    if (f.operation === "const") locations.set(f.value, i)
+  })
+  // After this line, if some outputs are also read node, `locations`
+  // will point to the one in the read node portion instead.
+  readStrings.forEach((str, i) => locations.set(str, i + formulas.length))
+  let offset = formulas.length + readStrings.length
+  constValues.forEach(value => locations.has(value) || locations.set(value, offset++))
+
+  // `locations` is stable from this point on. We now only append new values.
+  // There is no change to existing values.
+  //
+  // DO NOT read from `location` prior to this line.
+  mapping.forEach((ref, node) => {
+    if (typeof ref !== "object") {
+      locations.set(node, locations.get(ref)!)
+      return
+    }
+    if (!locations.has(node)) locations.set(node, offset++)
+    computations.push({
+      out: locations.get(node)!,
+      ins: node.operands.map(op => locations.get(op)!),
+      op: allOperations[node.operation]
+    })
+  })
+
+  const buffer = new Float32Array(offset)
+  buffer.forEach((_, i, array) => array[i] = NaN)
+  uniqueNumbers.forEach(number => buffer[locations.get(number)!] = number)
+
+  // Copy target for when some outputs are duplicated
+  const copyList = formulas.map((node, i) => {
+    const src = locations.get(node)!
+    return src !== i ? [src, i] : undefined!
+  }).filter(x => x)
+  const copyFormula = copyList.length ? () => {
+    copyList.forEach(([src, dst]) => buffer[dst] = buffer[src])
+  } : undefined
+
+  return values => {
+    readStrings.forEach((id, i) => buffer[readOffset + i] = values[id] ?? 0)
+    computations.forEach(({ out, ins, op }) => buffer[out] = op(ins.map(i => buffer[i])))
+    copyFormula?.()
+    return buffer
+  }
+}
+
+function flatten(formulas: Node[]): Node[] {
   return mapFormulas(formulas, f => f, (_formula, orig) => {
     let result = _formula
     if (commutativeMonoidOperationSet.has(_formula.operation)) {
@@ -46,7 +141,7 @@ export function flatten(formulas: Node[]): Node[] {
     return result
   })
 }
-export function deduplicate(formulas: Node[]): Node[] {
+function deduplicate(formulas: Node[]): Node[] {
   function elementCounts<T>(array: T[]): Map<T, number> {
     const result = new Map<T, number>()
     for (const value of array) result.set(value, (result.get(value) ?? 0) + 1)
@@ -205,7 +300,7 @@ function applyRead(formulas: Node[], topLevelData: Data[], bottomUpMap = (formul
  * Replace nodes with known values with appropriate constants,
  * avoiding removal of any nodes that pass `isFixed` predicate
  */
-export function constantFold(formulas: Node[], topLevelData: Data[] = [], shouldFold = (_formula: ReadNode) => false): Node[] {
+function constantFold(formulas: Node[], topLevelData: Data[] = [], shouldFold = (_formula: ReadNode) => false): Node[] {
   return applyRead(formulas, topLevelData, (formula, orig) => {
     const { operation, operands } = formula
     let result = formula
@@ -225,24 +320,30 @@ export function constantFold(formulas: Node[], topLevelData: Data[] = [], should
             : (numericOperands.push(formula.value), false))
         const numericValue = f(numericOperands)
 
-        if (operation === "mul" && numericValue === 0) {
-          // The only (practical) degenerate case is
-          //
-          //  -  0 * ... = 0
-          //
-          // There are also
-          //
-          //  - max( infinity, ... ) = infinity
-          //  - min( -infinity, ... ) = -infinity
-          //  - infinity + ... = infinity
-          //  - infinity * ... = infinity
-          //
-          // However, they will not appear under expected usage.
-          result = constant(0)
+        // Fold degenerate cases. This may incorrectly compute NaN
+        // results, which shouldn't appear under expected usage.
+        // - zero
+        //   - 0 * ... = 0
+        // - infinity
+        //   - max(infinity, ...) = infinity
+        //   - infinity + ... = infinity
+        // - (-infinity)
+        //   - min(-infinity, ...) - infinity
+        //   - (-infinity) + ... = -infinity
+        // - NaN
+        //   - operation(NaN, ...) = NaN
+        degen: if (!isFinite(numericValue)) {
+          if (operation === "mul") break degen
+          if (operation === "max" && numericValue < 0) break degen
+          if (operation === "min" && numericValue > 0) break degen
+          result = constant(numericValue)
+          break
+        } else if (operation === "mul" && numericValue === 0) {
+          result = constant(numericValue)
           break
         }
 
-        if (numericValue !== f([])) // Skip vacuous numeric
+        if (numericValue !== f([])) // Skip vacuous values
           formulaOperands.push(constant(numericValue))
         if (formulaOperands.length <= 1) result = formulaOperands[0] ?? constant(f([]))
         else result = { operation: formula.operation, operands: formulaOperands }
@@ -308,4 +409,8 @@ function resolveStringNode(node: StringNode, data: Data[]): string | undefined {
     }
     default: assertUnreachable(operation)
   }
+}
+
+export const testing = {
+  constantFold, flatten, deduplicate
 }

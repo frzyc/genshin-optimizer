@@ -1,8 +1,10 @@
 import { constant } from "./internal"
-import { constantFold, deduplicate, flatten } from "./optimization"
+import { precompute, testing } from "./optimization"
 import { max, min, prod, read, setReadNodeKeys, sum } from "./utils"
 
-const inputs = setReadNodeKeys(Object.fromEntries([...Array(6).keys()].map(i => [i, read("unique")])))
+const { constantFold, deduplicate, flatten } = testing
+
+const inputs = setReadNodeKeys(Object.fromEntries([...Array(6).keys()].map(i => [i, read("add")])))
 
 describe("optimization", () => {
   describe("flatten", () => {
@@ -42,5 +44,35 @@ describe("optimization", () => {
 
     // Remove wrapper for single-value formula
     expect(constantFold([sum(1, -1, r1)])).toEqual([r1])
+  })
+  describe("precomputing", () => {
+    test("Base", () => {
+      const r1 = inputs[0], r2 = inputs[1], r3 = inputs[2]
+      const output1 = sum(1, r1, r2), output2 = prod(r2, r3), output3 = sum(output1, output2)
+
+      const precomputed = precompute([output1], x => x.path[0])
+      expect([...precomputed({ 0: 32, 1: 77 }).slice(0, 1)]).toEqual([1 + 32 + 77])
+    })
+    test("Output is read node", () => {
+      const r1 = inputs[0], r2 = inputs[1], r3 = inputs[2]
+      const output1 = sum(1, r1, r2), output2 = prod(r2, r3), output3 = sum(output1, output2)
+
+      const precomputed = precompute([r1], x => x.path[0])
+      expect([...precomputed({ 0: 32 }).slice(0, 1)]).toEqual([32])
+    })
+    test("Output is constant node", () => {
+      const r1 = inputs[0], r2 = inputs[1], r3 = inputs[2]
+      const output1 = sum(1, r1, r2), output2 = prod(r2, r3), output3 = sum(output1, output2)
+
+      const precomputed = precompute([constant(35)], x => x.path[0])
+      expect([...precomputed({}).slice(0, 1)]).toEqual([35])
+    })
+    test("Output is duplicated", () => {
+      const r1 = inputs[0], r2 = inputs[1], r3 = inputs[2]
+      const output1 = sum(1, r1, r2), output2 = prod(r2, r3), output3 = sum(output1, output2)
+
+      const precomputed = precompute([output3, output3], x => x.path[0])
+      expect([...precomputed({ 0: 2, 1: 44, 2: 7 }).slice(0, 2)]).toEqual([(1 + 2 + 44) + (44 * 7), (1 + 2 + 44) + (44 * 7)])
+    })
   })
 })
