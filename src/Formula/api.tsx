@@ -21,6 +21,7 @@ function dataObjForWeaponSheet(
   gen: WeaponData,
   substat2: MainStatKey | SubstatKey | undefined,
   displayWeapon: DisplayWeapon = {},
+  additional: Data = {}
 ): Data {
   const result: Data = {
     base: {},
@@ -53,7 +54,7 @@ function dataObjForWeaponSheet(
       ? input.weapon.sub2 : sum(input.weapon.sub, input.weapon.sub2)
   }
 
-  return result
+  return mergeData([result, additional])
 }
 function dataObjForArtifactSheet(
   key: ArtifactSetKey,

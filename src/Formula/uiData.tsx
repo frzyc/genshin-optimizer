@@ -8,12 +8,14 @@ import { ComputeNode, Data, DataNode, LookupNode, Node, ReadNode, StringMatchNod
 const shouldWrap = true
 
 export function valueString(value: number, unit: "%" | "flat", fixed = -1): string {
+  if (unit === "%") value *= 100
+  else unit = '' as any
   if (Number.isInteger(value)) fixed = 0
   else if (fixed === -1) {
     if (unit === "%") fixed = 1
     else fixed = Math.abs(value) < 10 ? 3 : Math.abs(value) < 1000 ? 2 : Math.abs(value) < 10000 ? 1 : 0
   }
-  return unit === "%" ? `${(value * 100).toFixed(fixed)}%` : value.toFixed(fixed)
+  return `${value.toFixed(fixed)}${unit}`
 }
 export interface NodeDisplay {
   /** Leave this here to make sure one can use `crawlObject` on hierarchy of `NodeDisplay` */
