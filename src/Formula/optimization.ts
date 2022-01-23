@@ -300,7 +300,7 @@ function applyRead(formulas: Node[], topLevelData: Data[], bottomUpMap = (formul
  * Replace nodes with known values with appropriate constants,
  * avoiding removal of any nodes that pass `isFixed` predicate
  */
-function constantFold(formulas: Node[], topLevelData: Data[] = [], shouldFold = (_formula: ReadNode) => false): Node[] {
+export function constantFold(formulas: Node[], topLevelData: Data[] = [], shouldFold = (_formula: ReadNode) => false): Node[] {
   return applyRead(formulas, topLevelData, (formula, orig) => {
     const { operation, operands } = formula
     let result = formula

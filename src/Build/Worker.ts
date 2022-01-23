@@ -2,10 +2,9 @@ import { allSlotKeys, ArtifactSetKey, SlotKey } from '../Types/consts';
 import { optimize, precompute } from '../Formula/optimization';
 import type { Data, Node } from '../Formula/type'
 import type { MainStatKey, SubstatKey } from '../Types/artifact';
-import { formulaString } from '../Formula/debug';
 
 let id: string
-let artifactsBySlot: StrictDict<SlotKey, Artifact[]>
+let artifactsBySlot: StrictDict<SlotKey, ArtifactBuildData[]>
 let nodes: Node[]
 
 let maxNumBuilds: number
@@ -35,10 +34,10 @@ export function setup({ id: _id, data, optimizationTarget, filters, plotBase, ma
     arts.forEach(art => art.values[art.set] = 1))
 }
 
-export function request({ threshold: newThreshold, artSets }: Request): RequestResult {
+export function request({ threshold: newThreshold, artFilters }: Request): RequestResult {
   if (threshold > newThreshold) threshold = newThreshold
   const arts = allSlotKeys.map(slot => {
-    const filter = artSets[slot]
+    const filter = artFilters[slot]
     switch (filter.kind) {
       case "required": return artifactsBySlot[slot].filter(art => filter.sets.has(art.set))
       case "exclude": return artifactsBySlot[slot].filter(art => !filter.sets.has(art.set))
@@ -101,15 +100,15 @@ export let interimReport = (count: { build: number, failed: number }): void => {
   count.failed = 0
 }
 
-type Artifact = {
+type Stats = { [key in MainStatKey | SubstatKey]?: number }
+export type ArtifactBuildData = {
   id: string
   set: ArtifactSetKey
-  values: { [key in MainStatKey | SubstatKey]?: number }
+  values: number[]
 }
-type Stats = { [key in MainStatKey | SubstatKey]?: number }
 
 export type Command = Setup | Request | Finalize
-export type ArtifactsBySlot = StrictDict<SlotKey, Artifact[]>
+export type ArtifactsBySlot = StrictDict<SlotKey, ArtifactBuildData[]>
 export interface Setup {
   command: "setup"
   id: string
@@ -124,12 +123,11 @@ export interface Request {
   command: "request"
   threshold: number
 
-  artSets: StrictDict<SlotKey,
+  artFilters: StrictDict<SlotKey,
     { kind: "required", sets: Set<ArtifactSetKey> } |
     { kind: "exclude", sets: Set<ArtifactSetKey> } |
     { kind: "id", ids: Set<string> }
   >
-  effectiveSetCount: Data
 }
 export interface Finalize {
   command: "finalize"
@@ -142,7 +140,7 @@ export interface InterimResult {
   threshold: number
   /** The number of builds since last report, including failed builds */
   buildCount: number
-  /** The number of builds that does not meet the min-filter requirement */
+  /** The number of builds that does not meet the min-filter requirement since last report */
   failedCount: number
 }
 export interface FinalizeResult {
