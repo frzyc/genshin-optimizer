@@ -327,7 +327,7 @@ function mergeFormulaComponents(components: Displayable[]): Displayable {
   return <>{components.map((x, i) => (<span key={i}>{x}</span>))}</>
 }
 function createAssignFormula(name: Displayable, formula: Displayable) {
-  return <>{name} = {formula}`</>
+  return <>{name} = {formula}</>
 }
 /*/
 function createName({ key, value, namePrefix }: ContextNodeDisplay): Displayable {
