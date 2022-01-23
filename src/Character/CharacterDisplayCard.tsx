@@ -130,8 +130,8 @@ export default function CharacterDisplayCard({ characterKey, footer, newBuild: p
             <Tab value="talent" label="Talents" />
           </Tabs>
         </CardLight>
-        <DamageOptionsCard character={character} />
-        {/* {sheets && <FormulaCalcCard sheets={sheets} />} */}
+        <DamageOptionsCard />
+        <FormulaCalcCard />
         <EnemyExpandCard character={character} />
 
         {/* Character Panel */}
@@ -141,9 +141,9 @@ export default function CharacterDisplayCard({ characterKey, footer, newBuild: p
           <TabPanel value="artifacts" current={tab} ><CharacterArtifactPane /></TabPanel >
         </DataContext.Provider>
         {/* new build panel */}
-        {/* {newBuild && sheets && <TabPanel value="newartifacts" current={tab} >
-          <CharacterArtifactPane character={character} sheets={sheets} />
-        </TabPanel >} */}
+        <TabPanel value="newartifacts" current={tab} >
+          <CharacterArtifactPane />
+        </TabPanel >
         {/* Buffs panel */}
         {/* {characterSheet && <TabPanel value="buffs" current={tab}>
           <CharacterTeamBuffsPane characterSheet={characterSheet} character={character} />
@@ -166,10 +166,6 @@ function CharSelectDropdown() {
   const { character, characterSheet, characterDispatch } = useContext(DataContext)
   const [showModal, setshowModal] = useState(false)
   const setCharacter = useCharSelectionCallback()
-  const HeaderIconDisplay = characterSheet ? <span >
-    <ImgIcon src={characterSheet.thumbImg} sx={{ mr: 1 }} />
-    {characterSheet.name}
-  </span> : <span>Select a Character</span>
   const setLevel = useCallback((level) => {
     level = clamp(level, 1, 90)
     const ascension = ascensionMaxLevel.findIndex(ascenML => level <= ascenML)

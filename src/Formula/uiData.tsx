@@ -1,5 +1,6 @@
 import ColorText from "../Components/ColoredText"
 import KeyMap from "../KeyMap"
+import { ArtifactSetKey, CharacterKey, WeaponKey } from "../Types/consts"
 import { assertUnreachable, crawlObject, layeredAssignment, objPathValue } from "../Util/Util"
 import { allOperations } from "./optimization"
 import { ComputeNode, Data, DataNode, LookupNode, Node, ReadNode, StringMatchNode, StringNode, SubscriptNode, Variant } from "./type"
@@ -43,7 +44,12 @@ export class UIData {
     this.data = data
   }
 
-  getDisplay(): any {
+  getDisplay(): {
+    character?: Partial<Record<CharacterKey, { [key: string]: { [key: string]: NodeDisplay } }>>
+    weapon?: Partial<Record<WeaponKey, { [key: string]: NodeDisplay }>>
+    artifact?: Partial<Record<ArtifactSetKey, { [key: string]: NodeDisplay }>>
+    reaction?: { [key: string]: NodeDisplay }
+  } {
     if (this.display) return this.display
     this.display = {}
     for (const data of this.data) {

@@ -128,7 +128,7 @@ const swirlEleToDisplay = {
 function SwirlCard() {
   const [ele, setele] = useState(Object.keys(swirlEleToDisplay)[0])
   const { data } = useContext(DataContext)
-  const node = data.getDisplay().reaction[`${ele}Swirl`]
+  const node = data.getDisplay().reaction![`${ele}Swirl`]!
   return <CardDark sx={{ display: "flex" }}>
     <DropdownButton size="small" title={swirlEleToDisplay[ele]} color="success">
       {Object.entries(swirlEleToDisplay).map(([key, element]) => <MenuItem key={key} selected={ele === key} disabled={ele === key} onClick={() => setele(key)}>{element}</MenuItem>)}

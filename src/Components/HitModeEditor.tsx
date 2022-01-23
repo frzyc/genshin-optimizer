@@ -1,11 +1,8 @@
 import { CardContent, Grid, MenuItem, ToggleButton, ToggleButtonGroupProps } from "@mui/material";
 import { useContext } from 'react';
-import { buildContext } from "../Build/Build";
-import CharacterSheet from "../Character/CharacterSheet";
-import useCharacterReducer from "../ReactHooks/useCharacterReducer";
-import usePromise from "../ReactHooks/usePromise";
-import { ICachedCharacter } from "../Types/character";
-import { ICalculatedStats } from "../Types/stats";
+import { DataContext } from "../DataContext";
+import { input } from "../Formula/index";
+import { ElementKey } from "../Types/consts";
 import CardLight from "./Card/CardLight";
 import ColorText from "./ColoredText";
 import DropdownButton, { DropdownButtonProps } from "./DropdownMenu/DropdownButton";
@@ -16,12 +13,9 @@ const infusionVals = {
   "pyro": <span >{uncoloredEleIcons.pyro} Pyro Infusion</span>,
   "cryo": <span >{uncoloredEleIcons.cryo} Cryo Infusion</span>,
 }
-type InfusionAuraDropdownProps = Omit<DropdownButtonProps, "title" | "onChange" | "children"> & {
-  character: ICachedCharacter,
-}
-export function InfusionAuraDropdown({ character: { infusionAura = "", key: characterKey }, ...props }: InfusionAuraDropdownProps) {
-  const characterSheet = usePromise(CharacterSheet.get(characterKey), [characterKey])
-  const characterDispatch = useCharacterReducer(characterKey)
+type InfusionAuraDropdownProps = Omit<DropdownButtonProps, "title" | "onChange" | "children">
+export function InfusionAuraDropdown(props: InfusionAuraDropdownProps) {
+  const { characterSheet, character: { infusionAura }, characterDispatch } = useContext(DataContext)
   if (!characterSheet?.isMelee()) return null
   return <DropdownButton title={infusionVals[infusionAura]} color={infusionAura || "secondary"} {...props}>
     {Object.entries(infusionVals).map(([key, text]) =>
@@ -31,14 +25,10 @@ export function InfusionAuraDropdown({ character: { infusionAura = "", key: char
   </DropdownButton>
 }
 
-type ReactionToggleProps = Omit<ToggleButtonGroupProps, "color"> & {
-  character: ICachedCharacter,
-  build: ICalculatedStats,
-}
-export function ReactionToggle({ character: { reactionMode = "", infusionAura, key: characterKey }, build, ...props }: ReactionToggleProps) {
-  const characterDispatch = useCharacterReducer(characterKey)
-  if (!build) return null
-  const charEleKey = build.characterEle
+type ReactionToggleProps = Omit<ToggleButtonGroupProps, "color">
+export function ReactionToggle(props: ReactionToggleProps) {
+  const { data, character: { reactionMode, infusionAura }, characterDispatch } = useContext(DataContext)
+  const charEleKey = data.getStr(input.charEle).value as ElementKey
   if (!["pyro", "hydro", "cryo"].includes(charEleKey) && !["pyro", "hydro", "cryo"].includes(infusionAura)) return null
   return <SolidToggleButtonGroup exclusive baseColor="secondary"
     value={reactionMode} onChange={(e, reactionMode) => characterDispatch({ reactionMode })} {...props}>
@@ -57,11 +47,9 @@ export function ReactionToggle({ character: { reactionMode = "", infusionAura, k
     </ToggleButton >}
   </SolidToggleButtonGroup>
 }
-type HitModeToggleProps = Omit<ToggleButtonGroupProps, "color"> & {
-  character: ICachedCharacter
-}
-export function HitModeToggle({ character: { hitMode = "avgHit", key: characterKey }, ...props }: HitModeToggleProps) {
-  const characterDispatch = useCharacterReducer(characterKey)
+type HitModeToggleProps = Omit<ToggleButtonGroupProps, "color">
+export function HitModeToggle(props: HitModeToggleProps) {
+  const { character: { hitMode }, characterDispatch } = useContext(DataContext)
   return <SolidToggleButtonGroup exclusive baseColor="secondary"
     value={hitMode} onChange={(e, hitMode) => characterDispatch({ hitMode })} {...props} >
     <ToggleButton value="avgHit">Avg. DMG</ToggleButton>
@@ -71,18 +59,14 @@ export function HitModeToggle({ character: { hitMode = "avgHit", key: characterK
 }
 
 
-export function DamageOptionsCard({ character }: { character: ICachedCharacter }) {
-  const { newBuild, equippedBuild } = useContext(buildContext)
-  //choose which one to display stats for
-  const build = newBuild ? newBuild : equippedBuild!
+export function DamageOptionsCard() {
   return <CardLight>
     <CardContent>
       <Grid container spacing={1}>
-        <Grid item><HitModeToggle character={character} size="small" /></Grid>
-        <Grid item><InfusionAuraDropdown character={character} /></Grid>
-        <Grid item><ReactionToggle character={character} build={build} size="small" /></Grid>
+        <Grid item><HitModeToggle size="small" /></Grid>
+        <Grid item><InfusionAuraDropdown /></Grid>
+        <Grid item><ReactionToggle size="small" /></Grid>
       </Grid>
     </CardContent>
   </CardLight>
 }
-

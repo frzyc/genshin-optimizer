@@ -20,12 +20,7 @@ import CharacterSheet from "../CharacterSheet_WR"
 
 export default function StatDisplayComponent() {
   const { data } = useContext(DataContext)
-  const display = data.getDisplay() as {
-    character?: Partial<Record<CharacterKey, { [key: string]: { [key: string]: NodeDisplay } }>>
-    weapon?: Partial<Record<WeaponKey, { [key: string]: NodeDisplay }>>
-    artifact?: Partial<Record<ArtifactSetKey, { [key: string]: NodeDisplay }>>
-    reaction?: { [key: string]: NodeDisplay }
-  }
+  const display = data.getDisplay()
   return <Box sx={{ mr: -1, mb: -1 }}>
     <Masonry columns={{ xs: 1, sm: 2, md: 3 }} spacing={1}>
       <BasicStats />
@@ -61,7 +56,7 @@ function CharacterStats({ characterKey, displayCharacter, path }: { characterKey
   </>
 }
 function TalentStats({ characterSheet, talentKey, displayTalent, path }: { characterSheet: CharacterSheet, talentKey: string, displayTalent: { [key: string]: NodeDisplay }, path: string[] }) {
-  const { data, oldData } = useContext(DataContext)
+  const { data } = useContext(DataContext)
   let sub = ""
   if (talentKey === "normal" || talentKey === "charged" || talentKey === "plunging") {
     sub = talentKey.charAt(0).toUpperCase() + talentKey.slice(1).toLowerCase();
@@ -69,53 +64,33 @@ function TalentStats({ characterSheet, talentKey, displayTalent, path }: { chara
   }
   const talent = characterSheet.getTalentOfKey(talentKey as TalentSheetElementKey, data.getStr(input.charEle).value as ElementKey)
   if (!talent) return null
-  return <CardDark >
-    <CardHeader avatar={characterSheet && <ImgIcon size={2} sx={{ m: -1 }} src={talent.img} />} title={talent.name} titleTypographyProps={{ variant: "subtitle1" }}
-      action={sub ? <SqBadge ><Typography>{sub}</Typography></SqBadge> : undefined}
-    />
-    <Divider />
-    <CardContent>
-      {Object.entries(displayTalent).map(([nodeKey, n]) => <NodeFieldDisplay key={nodeKey} node={n} oldValue={oldData ? oldData.get(customRead([...path, nodeKey])).value : undefined} />)}
-    </CardContent>
-  </CardDark>
+  return <Section icon={talent.img} title={talent.name} displayNs={displayTalent} path={path} action={sub ? <SqBadge ><Typography>{sub}</Typography></SqBadge> : undefined} />
 }
 
 function WeaponStats({ weaponKey, displayWeapon: displayWeapon, path }: { weaponKey: WeaponKey, displayWeapon: { [key: string]: NodeDisplay }, path: string[] }) {
-  const { data, oldData } = useContext(DataContext)
+  const { data } = useContext(DataContext)
   const weaponSheet = usePromise(WeaponSheet.get(weaponKey), [weaponKey])
   if (!weaponSheet) return null
   const img = data.get(input.weapon.asc).value < 2 ? weaponSheet?.img : weaponSheet?.imgAwaken
-  return <CardDark >
-    <CardHeader avatar={weaponSheet && <ImgIcon size={2} sx={{ m: -1 }} src={img} />} title={weaponSheet.name} titleTypographyProps={{ variant: "subtitle1" }} />
-    <Divider />
-    <CardContent>
-      {Object.entries(displayWeapon).map(([nodeKey, n]) => <NodeFieldDisplay key={nodeKey} node={n} oldValue={oldData ? oldData.get(customRead([...path, nodeKey])).value : undefined} />)}
-    </CardContent>
-  </CardDark>
+  return <Section icon={img} title={weaponSheet.name} displayNs={displayWeapon} path={path} />
 }
 
 function ArtifactStats({ artifactSetKey, displayArtifact, path }: { artifactSetKey: ArtifactSetKey, displayArtifact: { [key: string]: NodeDisplay }, path: string[] }) {
-  const { oldData } = useContext(DataContext)
   const artifactSheet = usePromise(ArtifactSheet.get(artifactSetKey), [artifactSetKey])
   if (!artifactSheet) return null
-  const img = artifactSheet.defIconSrc
-  return <CardDark >
-    <CardHeader avatar={artifactSheet && <ImgIcon size={2} sx={{ m: -1 }} src={img} />} title={artifactSheet.name} titleTypographyProps={{ variant: "subtitle1" }} />
-    <Divider />
-    <CardContent>
-      {Object.entries(displayArtifact).map(([nodeKey, n]) => <NodeFieldDisplay key={nodeKey} node={n} oldValue={oldData ? oldData.get(customRead([...path, nodeKey])).value : undefined} />)}
-    </CardContent>
-  </CardDark>
+  return <Section icon={artifactSheet.defIconSrc} title={artifactSheet.name} displayNs={displayArtifact} path={path} />
 }
 
 function ReactionStats({ displayReaction, path }: { displayReaction: { [key: string]: NodeDisplay }, path: string[] }) {
+  return <Section title={"Transformative Reactions"} displayNs={displayReaction} path={path} />
+}
+function Section({ icon, title, action, displayNs, path }: { icon?: string, title: Displayable, action?: Displayable, displayNs: { [key: string]: NodeDisplay }, path: string[] }) {
   const { oldData } = useContext(DataContext)
-  console.log(displayReaction)
   return <CardDark >
-    <CardHeader title={"Transformative Reactions"} titleTypographyProps={{ variant: "subtitle1" }} />
+    <CardHeader avatar={icon && <ImgIcon size={2} sx={{ m: -1 }} src={icon} />} title={title} action={action} titleTypographyProps={{ variant: "subtitle1" }} />
     <Divider />
     <CardContent>
-      {Object.entries(displayReaction).map(([nodeKey, n]) => <NodeFieldDisplay key={nodeKey} node={n} oldValue={oldData ? oldData.get(customRead([...path, nodeKey])).value : undefined} />)}
+      {Object.entries(displayNs).map(([nodeKey, n]) => <NodeFieldDisplay key={nodeKey} node={n} oldValue={oldData ? oldData.get(customRead([...path, nodeKey])).value : undefined} />)}
     </CardContent>
   </CardDark>
 }
