@@ -314,7 +314,7 @@ function mergeVariants(operands: ContextNodeDisplay[]): ContextNodeDisplay["vari
   return unique.values().next().value
 }
 function computeNodeDisplay(node: ContextNodeDisplay): NodeDisplay {
-  const { key, namePrefix, dependencies, value, variant, formula, pivot, assignment, empty } = node
+  const { key, namePrefix, dependencies, value, variant, formula, assignment, empty } = node
   return {
     operation: true,
     key, value, variant, namePrefix,
@@ -326,11 +326,10 @@ function computeNodeDisplay(node: ContextNodeDisplay): NodeDisplay {
 
 //* Comment/uncomment this line to toggle between string formulas and JSX formulas
 function createName({ key, value, namePrefix, variant }: ContextNodeDisplay): Displayable {
-  const prefix = namePrefix ? namePrefix + ' ' : ''
-  return <><ColorText color={variant}>{prefix + KeyMap.getNoUnit(key!)}</ColorText> {valueString(value, KeyMap.unit(key!))}</>
+  return <><ColorText color={variant}>{namePrefix}{namePrefix ? ' ' : ''}{KeyMap.getNoUnit(key!)}</ColorText> {valueString(value, KeyMap.unit(key!))}</>
 }
 function mergeFormulaComponents(components: Displayable[]): Displayable {
-  return <>{components.map((x, i) => (<span key={i}>{x}</span>))}</>
+  return <>{components.map((x, i) => <span key={i}>{x}</span>)}</>
 }
 function createAssignFormula(name: Displayable, formula: Displayable) {
   return <>{name} = {formula}</>

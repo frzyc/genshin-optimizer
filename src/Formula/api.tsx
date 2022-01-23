@@ -1,6 +1,5 @@
 import type { WeaponData } from "pipeline";
 import Artifact from "../Artifact/Artifact";
-import _charCurves from "../Character/expCurve_gen.json";
 import { transformativeReactionLevelMultipliers, transformativeReactions } from "../StatConstants";
 import { ICachedArtifact, MainStatKey, SubstatKey } from "../Types/artifact";
 import { ICachedCharacter } from "../Types/character";
@@ -167,14 +166,14 @@ const trans = {
     return infoMut(prod(
       infoMut(prod(multi, transMulti1), { asConst: true }),
       sum(unit, prod(transMulti2, input.total.dmgBonus[reaction])),
-      input.enemy.res[ele]),
+      input.enemy.resMulti[ele]),
       { key: `${reaction}_hit`, variant: reaction })
   }),
   swirl: objectFromKeyMap(transformativeReactions.swirl.variants, ele => infoMut(
     prod(
       infoMut(prod(transformativeReactions.swirl.multi, transMulti1), { asConst: true }),
       sum(unit, prod(transMulti2, input.total.dmgBonus.swirl)),
-      input.enemy.res[ele]),
+      input.enemy.resMulti[ele]),
     { key: `${ele}_swirl_hit`, variant: ele }))
 }
 export const reactions = {

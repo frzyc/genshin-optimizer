@@ -16,7 +16,7 @@ import passive3 from './passive3.png'
 import data_gen from './data_gen.json'
 import { absorbableEle, dataObjForCharacterSheet, dmgNode } from '../dataUtil'
 import { Translate } from '../../../Components/Translate'
-import { conditionalHeader, normalSrc, sgt, talentTemplate } from '../SheetUtil_WR'
+import { normalSrc, sgt, talentTemplate } from '../SheetUtil_WR'
 import { CharacterKey, WeaponTypeKey } from '../../../Types/consts'
 import ColorText from '../../../Components/ColoredText'
 import { input } from "../../../Formula/index";

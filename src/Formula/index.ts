@@ -3,7 +3,7 @@ import { allMainStatKeys, allSubstats } from "../Types/artifact_WR"
 import { allArtifactSets, allElements, allElementsWithPhy, allSlotKeys } from "../Types/consts"
 import { objectFromKeyMap } from "../Util/Util"
 import { Node, ReadNode, StringNode, StringReadNode } from "./type"
-import { frac, lookup, max, min, naught, percent, prod, read, setReadNodeKeys, stringConst, stringLookup, stringMatch, stringPrio, stringRead, sum, unit } from "./utils"
+import { frac, lookup, max, min, naught, percent, prod, read, res, setReadNodeKeys, stringConst, stringLookup, stringMatch, stringPrio, stringRead, sum, unit } from "./utils"
 
 const allMainSubStats = [...new Set([...allMainStatKeys, ...allSubstats] as const)]
 const allMoves = ["normal", "charged", "plunging", "skill", "burst"] as const
@@ -77,6 +77,7 @@ const rd = setReadNodeKeys({
 
   enemy: {
     res: objectFromKeyMap(allElementsWithPhy, ele => read("add", { key: `${ele}_enemyRes_`, variant: ele })),
+    resMulti: objectFromKeyMap(allElementsWithPhy, ele => read("add", { variant: ele })),
     level: read("unique", { key: "enemyLevel" }),
     def: read("add", { key: "enemyDEF_multi", pivot }),
     defRed: read("add", { key: "enemyDEFRed_", pivot }),
@@ -176,7 +177,7 @@ const common = {
       }, undefined),
       enemy.def,
       lookup(hit.ele,
-        objectFromKeyMap(allElementsWithPhy, ele => enemy.res[ele]), undefined),
+        objectFromKeyMap(allElementsWithPhy, ele => enemy.resMulti[ele]), undefined),
       lookup(effectiveReaction, {
         melt: lookup(hit.ele, {
           pyro: prod(2, baseAmpBonus),
@@ -191,7 +192,8 @@ const common = {
   },
 
   enemy: {
-    def: frac(sum(rd.lvl, 100), prod(sum(enemy.level, 100), sum(1, prod(-1, enemy.defRed))))
+    def: frac(sum(rd.lvl, 100), prod(sum(enemy.level, 100), sum(1, prod(-1, enemy.defRed)))),
+    resMulti: objectFromKeyMap(allElementsWithPhy, ele => res(enemy.res[ele])),
   },
 
   misc: {
