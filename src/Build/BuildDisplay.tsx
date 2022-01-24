@@ -34,6 +34,7 @@ import { objectFromKeyMap } from '../Util/Util';
 import { calculateTotalBuildNumber, maxBuildsToShowList } from './Build';
 import { initialBuildSettings } from './BuildSetting';
 import ArtifactConditionalCard from './Components/ArtifactConditionalCard';
+import ArtifactSetPicker from './Components/ArtifactSetPicker';
 import BonusStatsCard from './Components/BonusStatsCard';
 import BuildAlert, { warningBuildNumber } from './Components/BuildAlert';
 import EnemyEditorCard from './Components/EnemyEditorCard';
@@ -440,11 +441,11 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
 
             {/* Right half */}
             <Grid item xs={12} md={6} lg={7} display="flex" flexDirection="column" gap={1}>
-              {/* {!!initialStats && <ArtifactConditionalCard disabled={generatingBuilds} initialStats={initialStats} />} */}
+              <ArtifactConditionalCard disabled={generatingBuilds} />
 
               {/* Artifact set pickers */}
-              {/* {!!initialStats && setFilters.map((setFilter, index) => (index <= setFilters.filter(s => s.key).length) && <ArtifactSetPicker key={index} index={index} setFilters={setFilters}
-              disabled={generatingBuilds} initialStats={initialStats} onChange={(index, key, num) => buildSettingsDispatch({ type: 'setFilter', index, key, num })} />)} */}
+              {setFilters.map((setFilter, index) => (index <= setFilters.filter(s => s.key).length) && <ArtifactSetPicker key={index} index={index} setFilters={setFilters}
+                disabled={generatingBuilds} onChange={(index, key, num) => buildSettingsDispatch({ type: 'setFilter', index, key, num })} />)}
 
               {/* use equipped/excluded */}
               {characterKey && <CardLight><CardContent>

@@ -30,7 +30,9 @@ const processed = Promise.all([
   })),
 
 ])
-
+/**
+ * @deprecated
+ */
 export default class Conditional {
   constructor() { if (this instanceof Conditional) throw Error('A static class cannot be instantiated.'); }
   static processed = processed
@@ -107,4 +109,3 @@ function addConditional(conditional: IConditional, keys: string[]) {
   if (conditional.partyBuff)
     layeredAssignment(Conditional.partyConditionals, keys, conditional)
 }
-

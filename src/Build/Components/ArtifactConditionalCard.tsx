@@ -1,7 +1,7 @@
 import { Replay } from '@mui/icons-material';
 import { Box, Button, CardContent, Divider, Grid, Typography } from '@mui/material';
-import React, { useCallback, useMemo, useState } from 'react';
-import { ArtifactSheet } from '../../Artifact/ArtifactSheet';
+import React, { useCallback, useContext, useMemo, useState } from 'react';
+import { ArtifactSheet } from '../../Artifact/ArtifactSheet_WR';
 import SetEffectDisplay from '../../Artifact/Component/SetEffectDisplay';
 import CardDark from '../../Components/Card/CardDark';
 import CardLight from '../../Components/Card/CardLight';
@@ -9,36 +9,36 @@ import CloseButton from '../../Components/CloseButton';
 import ModalWrapper from '../../Components/ModalWrapper';
 import SqBadge from '../../Components/SqBadge';
 import { Stars } from '../../Components/StarDisplay';
-import Conditional from '../../Conditional/Conditional';
-import useCharacterReducer from '../../ReactHooks/useCharacterReducer';
+import { DataContext } from '../../DataContext';
 import usePromise from '../../ReactHooks/usePromise';
-import { SetNum } from '../../Types/consts';
-import { ICalculatedStats } from '../../Types/stats';
-import { crawlObject } from '../../Util/Util';
+import { allArtifactSets, SetNum } from '../../Types/consts';
 
-export default function ArtifactConditionalCard({ disabled, initialStats }: { disabled?: boolean, initialStats: ICalculatedStats }) {
+export default function ArtifactConditionalCard({ disabled }: { disabled?: boolean }) {
+  const { character } = useContext(DataContext)
   const [open, setOpen] = useState(false)
   const onOpen = useCallback(() => setOpen(true), [setOpen])
   const onClose = useCallback(() => setOpen(false), [setOpen])
-  const artifactCondCount = useMemo(() => {
-    let count = 0;
-    crawlObject(initialStats?.conditionalValues?.artifact, [], v => Array.isArray(v), () => count++)
-    return count
-  }, [initialStats])
+  const artifactCondCount = useMemo(() =>
+    (Object.keys(character.conditional) as any).filter(k => allArtifactSets.includes(k)).length
+    , [character])
   return <CardLight><CardContent>
     <Button fullWidth onClick={onOpen} disabled={disabled}>
       <span>Default Artifact Set Effects Conditionals {!!artifactCondCount && <SqBadge color="success">{artifactCondCount} Selected</SqBadge>}</span>
     </Button>
-    {!!initialStats && <ArtConditionalModal open={open} onClose={onClose} initialStats={initialStats} artifactCondCount={artifactCondCount} />}
+    <ArtConditionalModal open={open} onClose={onClose} artifactCondCount={artifactCondCount} />
   </CardContent></CardLight>
 }
 
-function ArtConditionalModal({ open, onClose, initialStats, artifactCondCount }: {
-  open: boolean, onClose: () => void, initialStats: ICalculatedStats, artifactCondCount: number
+function ArtConditionalModal({ open, onClose, artifactCondCount }: {
+  open: boolean, onClose: () => void, artifactCondCount: number
 }) {
-  const { characterKey } = initialStats
-  const artifactSheets = usePromise(ArtifactSheet.getAll(), [])
-  const characterDispatch = useCharacterReducer(characterKey)
+  const { character, characterDispatch } = useContext(DataContext)
+  const artifactSheets = usePromise(ArtifactSheet.getAll, [])
+  const resetArtConds = useCallback(() => {
+    const conditional = Object.fromEntries(Object.entries(character.conditional).filter(([k, v]) => !allArtifactSets.includes(k as any)))
+    characterDispatch({ conditional })
+  }, [character]);
+
   if (!artifactSheets) return null
   const artSetKeyList = Object.entries(ArtifactSheet.setKeysByRarities(artifactSheets)).reverse().flatMap(([, sets]) => sets)
   return <ModalWrapper open={open} onClose={onClose} ><CardDark>
@@ -48,10 +48,7 @@ function ArtConditionalModal({ open, onClose, initialStats, artifactCondCount }:
           <Typography variant="h6">Default Artifact Set Effects {!!artifactCondCount && <SqBadge color="success">{artifactCondCount} Selected</SqBadge>}</Typography>
         </Grid>
         <Grid item>
-          <Button onClick={() => {
-            if (initialStats.conditionalValues.artifact) initialStats.conditionalValues.artifact = {}
-            characterDispatch({ conditionalValues: initialStats.conditionalValues })
-          }} startIcon={<Replay />}>Reset All</Button>
+          <Button onClick={resetArtConds} startIcon={<Replay />}>Reset All</Button>
         </Grid>
         <Grid item>
           <CloseButton onClick={onClose} />
@@ -65,27 +62,23 @@ function ArtConditionalModal({ open, onClose, initialStats, artifactCondCount }:
           <Typography>Some artifacts provide conditional stats. This windows allows you to select those stats, so they can take effect during build calculation, when artifact sets are not specified.</Typography>
         </CardContent>
       </CardLight>
-
       <Grid container spacing={1}>
         {artSetKeyList.map(setKey => {
-          if (!Conditional.conditionals?.artifact?.[setKey]) return null
           const sheet = artifactSheets[setKey]
-          let icon = Object.values(sheet.slotIcons)[0]
-          const rarities = sheet.rarity
-          const rarity = rarities[0]
+          // Don't display if no conditional in artifact
+          if (!Object.values(sheet.setEffects).some(entry => entry.document && entry.document.some(d => d.conditional))) return null
           return <Grid item key={setKey} xs={6} lg={4}>
             <CardLight sx={{ height: "100%" }}>
-              <Box className={`grad-${rarity}star`} width="100%" sx={{ display: "flex" }} >
-                <Box component="img" src={icon} sx={{ height: 100, width: "auto" }} />
+              <Box className={`grad-${sheet.rarity[0]}star`} width="100%" sx={{ display: "flex" }} >
+                <Box component="img" src={sheet.defIconSrc} sx={{ height: 100, width: "auto" }} />
                 <Box sx={{ flexGrow: 1, px: 1, display: "flex", flexDirection: "column", justifyContent: "center" }}>
                   <Typography variant="h6">{artifactSheets?.[setKey].name ?? ""}</Typography>
-                  <Typography variant="subtitle1">{rarities.map((ns, i) => <span key={ns}>{ns}<Stars stars={1} /> {i < (rarities.length - 1) ? "/ " : null}</span>)}</Typography>
+                  <Typography variant="subtitle1">{sheet.rarity.map((ns, i) => <span key={ns}>{ns}<Stars stars={1} /> {i < (sheet.rarity.length - 1) ? "/ " : null}</span>)}</Typography>
                 </Box>
               </Box>
-              <CardContent>
-                {/* {!!setKey && Object.keys(sheet.setEffects).map(key => parseInt(key) as SetNum).map(setNumKey =>
-                  <SetEffectDisplay newBuild={undefined} key={setKey + setNumKey} setKey={setKey} setNumKey={setNumKey} equippedBuild={initialStats} skipConditionalEquipmentCheck />)} */}
-              </CardContent>
+              <CardContent><Grid item display="flex" flexDirection="column" gap={1}>
+                {Object.keys(sheet.setEffects).map(setNumKey => <SetEffectDisplay key={setNumKey} setKey={setKey} setNumKey={parseInt(setNumKey) as SetNum} />)}
+              </Grid></CardContent>
             </CardLight>
           </Grid>
         })}

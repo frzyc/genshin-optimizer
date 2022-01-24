@@ -21,9 +21,5 @@ export default interface IConditional {
     }
   }
 }
-
-export interface IConditionalValues {
-  [key: CharacterKey | ArtifactSetKey | WeaponKey]: {
-    [key: string]: string
-  }
-}
+type Keys = CharacterKey | ArtifactSetKey | WeaponKey
+export type IConditionalValues = Partial<Record<Keys, { [key: string]: string }>>
