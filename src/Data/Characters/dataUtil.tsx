@@ -18,12 +18,12 @@ export function dmgNode(base: MainStatKey, lvlMultiplier: number[], move: "norma
     case "skill": talentType = "skill"; break
     case "burst": talentType = "burst"; break
   }
-  return data(input.hit.dmg, [{
+  return data(input.hit.dmg, mergeData([{
     hit: {
       base: prod(input.total[base], subscript(input.talent.index[talentType], lvlMultiplier, { key: '_' })),
       move: stringConst(move), // TODO: element ?: T, reaction ?: T, critType ?: T
     },
-  }, additional])
+  }, additional]))
 }
 export function dataObjForCharacterSheet(
   key: CharacterKey,

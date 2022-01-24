@@ -34,7 +34,7 @@ export interface NodeDisplay {
 
 export class UIData {
   parent?: UIData
-  children = new Map<Data[], UIData>()
+  children = new Map<Data, UIData>()
 
   data: Data[]
   nodes = new Map<Node, ContextNodeDisplay>()
@@ -194,7 +194,7 @@ export class UIData {
   private _data(node: DataNode, visited: Set<Node> | undefined): ContextNodeDisplay {
     let child = this.children.get(node.data)
     if (!child) {
-      child = new UIData([...node.data, ...this.data], this)
+      child = new UIData([node.data, ...this.data], this)
       this.children.set(node.data, child)
     }
     return child.computeNode(node.operands[0], visited && new Set())

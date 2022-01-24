@@ -5,7 +5,6 @@ import { ICachedCharacter } from "../Types/character";
 import { allElementsWithPhy, ArtifactSetKey } from "../Types/consts";
 import { ICachedWeapon } from "../Types/weapon";
 import { crawlObject, layeredAssignment, objectFromKeyMap } from "../Util/Util";
-import _weaponCurves from "../Weapon/expCurve_gen.json";
 import { input } from "./index";
 import { constant } from "./internal";
 import { Data, DisplayArtifact, Node, ReadNode } from "./type";
@@ -94,9 +93,9 @@ function dataObjForWeapon(weapon: ICachedWeapon): Data {
 }
 function mergeData(data: Data[]): Data {
   function internal(data: any[], input: any, path: string[]): any {
-    if (data.length === 1) return data[0]
-    if (input.operation) {
-      const accumulation = (input as ReadNode).accumulation ?? "unique"
+    if (data.length <= 1) return data[0]
+    if (data[0].operation) {
+      const accumulation = (input as ReadNode | undefined)?.accumulation ?? "unique"
       if (accumulation === "unique") {
         if (data.length !== 1) throw new Error("Multiple entries when merging `unique`")
         return data[0]
@@ -105,7 +104,7 @@ function mergeData(data: Data[]): Data {
       return result
     } else {
       return Object.fromEntries([...new Set(data.flatMap(x => Object.keys(x) as string[]))]
-        .map(key => [key, internal(data.map(x => x[key]).filter(x => x), input[key], [...path, key])]))
+        .map(key => [key, internal(data.map(x => x[key]).filter(x => x), input?.[key], [...path, key])]))
     }
   }
 
@@ -113,7 +112,7 @@ function mergeData(data: Data[]): Data {
 }
 
 function computeUIData(data: Data[]): UIData {
-  return new UIData(data, undefined)
+  return new UIData([mergeData(data)], undefined)
 }
 
 const transMulti1 = subscript(input.lvl, transformativeReactionLevelMultipliers)

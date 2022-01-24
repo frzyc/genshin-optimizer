@@ -79,8 +79,8 @@ export function customRead(path: string[], info?: Info): ReadNode {
 export function read(accumulation: ReadNode["accumulation"], info?: Info): ReadNode {
   return { operation: "read", operands: [], path: [], accumulation, info }
 }
-export function data(baseFormula: Node, contexts: Data[]): DataNode {
-  return { operation: "data", operands: [baseFormula], data: contexts }
+export function data(baseFormula: Node, data: Data): DataNode {
+  return { operation: "data", operands: [baseFormula], data }
 }
 
 export function stringConst(value: string | undefined): StringNode {

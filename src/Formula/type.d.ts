@@ -58,7 +58,7 @@ export interface ReadNode extends NodeBase {
 }
 export interface DataNode extends NodeBase {
   operation: "data"
-  data: Data[]
+  data: Data
 }
 
 interface StringNodeBase {

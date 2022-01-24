@@ -250,7 +250,7 @@ function deduplicate(formulas: Node[]): Node[] {
  * - Remove all `DataNode`s
  */
 function applyRead(formulas: Node[], topLevelData: Data[], bottomUpMap = (formula: Node, _orig: Node) => formula): Node[] {
-  const dataFromId = [topLevelData], nextIdsFromCurrentIds = [new Map<Data[], number>()]
+  const dataFromId = [topLevelData], nextIdsFromCurrentIds = [new Map<Data, number>()]
 
   function extract(formula: Node, contextId: number): [Node, number] {
     switch (formula.operation) {
@@ -261,7 +261,7 @@ function applyRead(formulas: Node[], topLevelData: Data[], bottomUpMap = (formul
 
         const nextId = dataFromId.length
         nextIds.set(data, nextId)
-        dataFromId.push([...data, ...dataFromId[contextId]])
+        dataFromId.push([data, ...dataFromId[contextId]])
         nextIdsFromCurrentIds.push(new Map())
 
         return extract(baseFormula, nextId)
