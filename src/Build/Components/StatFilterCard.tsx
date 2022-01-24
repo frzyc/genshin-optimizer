@@ -1,14 +1,22 @@
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Button, ButtonGroup, CardContent, Divider, Grid, MenuItem, Typography } from '@mui/material';
-import React, { useCallback } from 'react';
+import React, { useCallback, useContext } from 'react';
 import CardLight from '../../Components/Card/CardLight';
 import CustomNumberInput, { CustomNumberInputButtonGroupWrapper } from '../../Components/CustomNumberInput';
 import DropdownButton from '../../Components/DropdownMenu/DropdownButton';
-import Stat from '../../Stat';
-import { StatKey } from '../../Types/artifact';
-export default function StatFilterCard({ statKeys = [], statFilters = {}, setStatFilters, disabled = false }:
-  { statKeys: StatKey[], statFilters: Dict<StatKey, number>, setStatFilters: (object: Dict<StatKey, number>) => void, disabled?: boolean }) {
+import { DataContext } from '../../DataContext';
+import { input } from '../../Formula/index';
+import KeyMap, { StatKey } from '../../KeyMap';
+import { ElementKey } from '../../Types/consts';
+export default function StatFilterCard({ statFilters = {}, setStatFilters, disabled = false }:
+  { statFilters: Dict<StatKey, number>, setStatFilters: (object: Dict<StatKey, number>) => void, disabled?: boolean }) {
+  const { data } = useContext(DataContext)
+  const statKeys: StatKey[] = ["atk", "hp", "def", "eleMas", "critRate_", "critDMG_", "heal_", "enerRech_"]
+  if (data.getStr(input.weaponType).value !== "catalyst") statKeys.push("physical_dmg_")
+  const charEle = data.getStr(input.charEle).value as ElementKey
+  statKeys.push(`${charEle}_dmg_`)
+
   const remainingKeys = statKeys.filter(key => !(Object.keys(statFilters) as any).some(k => k === key))
   const setFilter = useCallback((sKey, min) => setStatFilters({ ...statFilters, [sKey]: min }), [statFilters, setStatFilters],)
   return <CardLight>
@@ -35,14 +43,14 @@ export default function StatFilterCard({ statKeys = [], statFilters = {}, setSta
 export function StatFilterItem({ statKey, statKeys = [], value = 0, close, setFilter, disabled = false }: {
   statKey?: string, statKeys: string[], value?: number, close?: () => void, setFilter: (statKey: string, value?: number) => void, disabled?: boolean
 }) {
-  const isFloat = Stat.getStatUnit(statKey) === "%"
+  const isFloat = KeyMap.unit(statKey) === "%"
   const onChange = useCallback(s => statKey && setFilter(statKey, s), [setFilter, statKey])
   return <ButtonGroup sx={{ width: "100%" }}>
     <DropdownButton
-      title={Stat.getStatNameWithPercent(statKey, "New Stat")}
+      title={statKey ? KeyMap.get(statKey) : "New Stat"}
       disabled={disabled}
     >
-      {statKeys.map(sKey => <MenuItem key={sKey} onClick={() => { close?.(); setFilter(sKey, value) }}>{Stat.getStatNameWithPercent(sKey)}</MenuItem>)}
+      {statKeys.map(sKey => <MenuItem key={sKey} onClick={() => { close?.(); setFilter(sKey, value) }}>{KeyMap.get(sKey)}</MenuItem>)}
     </DropdownButton>
     <CustomNumberInputButtonGroupWrapper sx={{ flexBasis: 30, flexGrow: 1 }}>
       <CustomNumberInput
@@ -51,9 +59,7 @@ export function StatFilterItem({ statKey, statKeys = [], value = 0, close, setFi
         value={value}
         placeholder="Min Value"
         onChange={onChange}
-        sx={{
-          px: 2,
-        }}
+        sx={{ px: 2 }}
       />
     </CustomNumberInputButtonGroupWrapper>
     {!!close && <Button color="error" onClick={close} disabled={disabled}><FontAwesomeIcon icon={faTrashAlt} /></Button>}

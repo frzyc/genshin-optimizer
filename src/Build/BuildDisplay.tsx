@@ -37,6 +37,7 @@ import BonusStatsCard from './Components/BonusStatsCard';
 import BuildAlert, { warningBuildNumber } from './Components/BuildAlert';
 import EnemyEditorCard from './Components/EnemyEditorCard';
 import MainStatSelectionCard, { artifactsSlotsToSelectMainStats } from './Components/MainStatSelectionCard';
+import StatFilterCard from './Components/StatFilterCard';
 import TeamBuffCard from './Components/TeamBuffCard';
 const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
 
@@ -430,8 +431,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
               {/* Enemy Editor */}
               {!!character && <EnemyEditorCard />}
               {/*Minimum Final Stat Filter */}
-              {/* {!!statsDisplayKeys && <StatFilterCard statFilters={statFilters} statKeys={statsDisplayKeys?.basicKeys as any}
-              setStatFilters={sFs => buildSettingsDispatch({ statFilters: sFs })} disabled={generatingBuilds} />} */}
+              <StatFilterCard statFilters={statFilters} setStatFilters={sFs => buildSettingsDispatch({ statFilters: sFs })} disabled={generatingBuilds} />
               {/* Hit mode options */}
               {/* {characterSheet && character && initialStats && <HitModeCard build={initialStats} character={character} disabled={generatingBuilds} />} */}
             </Grid>

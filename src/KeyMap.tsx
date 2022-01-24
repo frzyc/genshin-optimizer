@@ -108,9 +108,9 @@ Object.entries(amplifyingReactions).forEach(([reaction, { name }]) => {
   statMap[`${reaction}_dmg_`] = `${name} DMG Bonus`
 })
 
-export type Statkey = BaseKeys | EleDmgKey | EleResKey | EleEnemyResKey | HitMoveDmgKey | HitMoveIncKey | HitMoveCritRateKey | TransformativeReactionsDmgKey | AmplifyingReactionsDmgKey
+export type StatKey = BaseKeys | EleDmgKey | EleResKey | EleEnemyResKey | HitMoveDmgKey | HitMoveIncKey | HitMoveCritRateKey | TransformativeReactionsDmgKey | AmplifyingReactionsDmgKey
 
-export const allStatKeys = Object.keys(statMap) as Statkey[]
+export const allStatKeys = Object.keys(statMap) as StatKey[]
 
 export default class KeyMap {
   //do not instantiate.
@@ -136,7 +136,7 @@ export default class KeyMap {
       return name.endsWith("%") ? name.slice(0, -1) : name
     return name
   }
-  static unit(key: string): "%" | "flat" {
+  static unit(key: string = ""): "%" | "flat" {
     if (key.endsWith("_")) return "%"
     return "flat"
   }
