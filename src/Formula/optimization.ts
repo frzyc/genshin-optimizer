@@ -253,7 +253,6 @@ function applyRead(formulas: Node[], topLevelData?: Data, bottomUpMap = (formula
   const dataFromId = [[], topLevelData ? [topLevelData] : []], nextIdsFromCurrentIds = [new Map<Data, number>(), new Map()]
   nextIdsFromCurrentIds[0].set(topLevelData, nextIdsFromCurrentIds[1])
 
-
   function extract(formula: Node, contextId: number): [Node, number] {
     switch (formula.operation) {
       case "reset": {

@@ -1,6 +1,6 @@
 
 import { objectFromKeyMap } from "../Util/Util"
-import type { Data, DataNode, Info, Node, ReadNode, StringNode, StringReadNode } from "./type"
+import type { Data, DataNode, DataResetNode, Info, Node, ReadNode, StringNode, StringReadNode } from "./type"
 
 export const todo: Node = { operation: "const", value: NaN, operands: [], info: { key: "TODO" } }
 export const unit = percent(1), naught = percent(0)
@@ -81,6 +81,9 @@ export function read(accumulation: ReadNode["accumulation"], info?: Info): ReadN
 }
 export function data(baseFormula: Node, data: Data): DataNode {
   return { operation: "data", operands: [baseFormula], data }
+}
+export function resetData(baseFormula: Node): DataResetNode {
+  return { operation: "reset", operands: [baseFormula] }
 }
 
 export function stringConst(value: string | undefined): StringNode {

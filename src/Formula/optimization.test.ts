@@ -1,6 +1,7 @@
 import { constant } from "./internal"
 import { precompute, testing } from "./optimization"
-import { max, min, prod, read, setReadNodeKeys, sum } from "./utils"
+import { ConstantNode, Data } from "./type"
+import { customRead, data, max, min, prod, read, resetData, setReadNodeKeys, sum } from "./utils"
 
 const { constantFold, deduplicate, flatten } = testing
 
@@ -44,6 +45,15 @@ describe("optimization", () => {
 
     // Remove wrapper for single-value formula
     expect(constantFold([sum(1, -1, r1)])).toEqual([r1])
+  })
+  test("data unpacking", () => {
+    const r1 = customRead(["aa"])
+    r1.accumulation = "add"
+    const data0 = { aa: constant(66) } as any as Data
+    const data1 = { aa: constant(77) } as any as Data
+    const t1 = data(r1, data1)
+
+    expect(constantFold([resetData(t1), t1], data0).map(x => (x as ConstantNode).value)).toEqual([77, 66 + 77])
   })
   describe("precomputing", () => {
     test("Base", () => {
