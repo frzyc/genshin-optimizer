@@ -154,7 +154,7 @@ export function parseCharacter(obj: any): ICharacter | undefined {
 
   let {
     key: characterKey, level, ascension, hitMode, elementKey, reactionMode, conditionalValues,
-    bonusStats, talent, infusionAura, constellation, buildSettings, team, compareData
+    bonusStats, enemyOverride, talent, infusionAura, constellation, buildSettings, team, compareData
   } = obj
 
   if (!allCharacterKeys.includes(characterKey) ||
@@ -231,9 +231,11 @@ export function parseCharacter(obj: any): ICharacter | undefined {
   if (typeof compareData !== "boolean") compareData = false
 
   // TODO: validate bonusStats
+  if (typeof bonusStats !== "object" || !Object.entries(bonusStats).map(([_, num]) => typeof num === "number")) bonusStats = {}
+  if (typeof enemyOverride !== "object" || !Object.entries(enemyOverride).map(([_, num]) => typeof num === "number")) enemyOverride = {}
   const result: ICharacter = {
     key: characterKey, level, ascension, hitMode, reactionMode, conditionalValues,
-    bonusStats, talent, infusionAura, constellation, team, compareData
+    bonusStats, enemyOverride, talent, infusionAura, constellation, team, compareData
   }
   if (buildSettings) result.buildSettings = buildSettings
   if (elementKey) result.elementKey = elementKey
@@ -243,11 +245,11 @@ export function parseCharacter(obj: any): ICharacter | undefined {
 export function removeCharacterCache(char: ICachedCharacter): ICharacter {
   const {
     key: characterKey, level, ascension, hitMode, elementKey, reactionMode, conditionalValues,
-    bonusStats, talent, infusionAura, constellation, buildSettings, team, compareData
+    bonusStats, enemyOverride, talent, infusionAura, constellation, buildSettings, team, compareData
   } = char
   const result: ICharacter = {
     key: characterKey, level, ascension, hitMode, reactionMode, conditionalValues,
-    bonusStats, talent, infusionAura, constellation, buildSettings, team, compareData
+    bonusStats, enemyOverride, talent, infusionAura, constellation, buildSettings, team, compareData
   }
   if (elementKey) result.elementKey = elementKey
   return result

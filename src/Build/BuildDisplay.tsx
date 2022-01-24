@@ -9,7 +9,6 @@ import { Link as RouterLink } from 'react-router-dom';
 import Worker from "worker-loader!./BuildWorker";
 import Artifact from '../Artifact/Artifact';
 import { ArtifactSheet } from '../Artifact/ArtifactSheet_WR';
-import Character from '../Character/Character';
 import CharacterCard from '../Character/CharacterCard';
 import ArtifactLevelSlider from '../Components/Artifact/ArtifactLevelSlider';
 import CardDark from '../Components/Card/CardDark';
@@ -22,37 +21,22 @@ import ModalWrapper from '../Components/ModalWrapper';
 import SolidToggleButtonGroup from '../Components/SolidToggleButtonGroup';
 import { DatabaseContext } from '../Database/Database';
 import { dbStorage } from '../Database/DBStorage';
-import { dataContextObj } from '../DataContext';
-import Formula from '../Formula';
+import { DataContext, dataContextObj } from '../DataContext';
 import { GlobalSettingsContext } from '../GlobalSettings';
-import finalStatProcess from '../ProcessFormula';
-import useCharacter from '../ReactHooks/useCharacter';
 import useCharacterReducer from '../ReactHooks/useCharacterReducer';
 import useCharSelectionCallback from '../ReactHooks/useCharSelectionCallback';
 import useCharUIData from '../ReactHooks/useCharUIData';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
 import usePromise from '../ReactHooks/usePromise';
-import useSheets from '../ReactHooks/useSheets';
-import { GetDependencies } from '../StatDependency';
-import { StatKey } from '../Types/artifact';
-import { ArtifactsBySlot, Build, BuildSetting, BuildRequest, SetFilter } from '../Types/Build';
-import { allSlotKeys, ArtifactSetKey, CharacterKey, SetNum, SlotKey } from '../Types/consts';
-import { BonusStats } from '../Types/stats';
-import { deepCloneStats, mergeStats } from '../Util/StatUtil';
-import { deepClone, objectFromKeyMap } from '../Util/Util';
-import { buildContext, calculateTotalBuildNumber, maxBuildsToShowList, pruneArtifacts } from './Build';
+import { ArtifactsBySlot, BuildSetting } from '../Types/Build';
+import { allSlotKeys } from '../Types/consts';
+import { objectFromKeyMap } from '../Util/Util';
+import { calculateTotalBuildNumber, maxBuildsToShowList } from './Build';
 import { initialBuildSettings } from './BuildSetting';
-import ChartCard from './ChartCard';
-import ArtifactBuildDisplayItem from './Components/ArtifactBuildDisplayItem';
-import ArtifactConditionalCard from './Components/ArtifactConditionalCard';
-import ArtifactSetPicker from './Components/ArtifactSetPicker';
 import BonusStatsCard from './Components/BonusStatsCard';
 import BuildAlert, { warningBuildNumber } from './Components/BuildAlert';
 import EnemyEditorCard from './Components/EnemyEditorCard';
-import HitModeCard from './Components/HitModeCard';
 import MainStatSelectionCard, { artifactsSlotsToSelectMainStats } from './Components/MainStatSelectionCard';
-import OptimizationTargetSelector from './Components/OptimizationTargetSelector';
-import StatFilterCard from './Components/StatFilterCard';
 import TeamBuffCard from './Components/TeamBuffCard';
 const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
 
@@ -410,160 +394,175 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     {noCharacter && <Alert severity="error" variant="filled"> Opps! It looks like you haven't added a character to GO yet! You should go to the <Link component={RouterLink} to="/character">Characters</Link> page and add some!</Alert>}
     {noArtifact && <Alert severity="warning" variant="filled"> Opps! It looks like you haven't added any artifacts to GO yet! You should go to the <Link component={RouterLink} to="/artifact">Artifacts</Link> page and add some!</Alert>}
     {/* Build Generator Editor */}
-    <CardDark>
+    {!dataContext && <CardDark>
       <CardContent sx={{ py: 1 }}>
         <Typography variant="h6">Build Generator</Typography>
       </CardContent>
       <Divider />
       <CardContent sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
-        <Grid container spacing={1} >
-          {/* Left half */}
-          <Grid item xs={12} md={6} lg={5} display="flex" flexDirection="column" gap={1}>
-            <CardLight>
-              <CardContent>
-                <CharacterDropdownButton fullWidth value={characterKey} onChange={selectCharacter} disabled={generatingBuilds} />
-              </CardContent>
-            </CardLight>
-            {/* character card */}
-            <Box><CharacterCard characterKey={characterKey} onClick={generatingBuilds ? undefined : setCharacter} /></Box>
+        <CardLight>
+          <CardContent>
+            <CharacterDropdownButton fullWidth value={characterKey} onChange={selectCharacter} disabled={generatingBuilds} />
+          </CardContent>
+        </CardLight>
+      </CardContent>
+    </CardDark>}
+    {dataContext && <DataContext.Provider value={dataContext}>
+      <CardDark>
+        <CardContent sx={{ py: 1 }}>
+          <Typography variant="h6">Build Generator</Typography>
+        </CardContent>
+        <Divider />
+        <CardContent sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+          <Grid container spacing={1} >
+            {/* Left half */}
+            <Grid item xs={12} md={6} lg={5} display="flex" flexDirection="column" gap={1}>
+              <CardLight>
+                <CardContent>
+                  <CharacterDropdownButton fullWidth value={characterKey} onChange={selectCharacter} disabled={generatingBuilds} />
+                </CardContent>
+              </CardLight>
+              {/* character card */}
+              <Box><CharacterCard characterKey={characterKey} onClick={generatingBuilds ? undefined : setCharacter} /></Box>
 
-            {!!character && <BonusStatsCard character={character} />}
-            <TeamBuffCard />
-            {/* Enemy Editor */}
-            {!!character && <EnemyEditorCard character={character} />}
-            {/*Minimum Final Stat Filter */}
-            {/* {!!statsDisplayKeys && <StatFilterCard statFilters={statFilters} statKeys={statsDisplayKeys?.basicKeys as any}
+              {!!character && <BonusStatsCard character={character} />}
+              <TeamBuffCard />
+              {/* Enemy Editor */}
+              {!!character && <EnemyEditorCard />}
+              {/*Minimum Final Stat Filter */}
+              {/* {!!statsDisplayKeys && <StatFilterCard statFilters={statFilters} statKeys={statsDisplayKeys?.basicKeys as any}
               setStatFilters={sFs => buildSettingsDispatch({ statFilters: sFs })} disabled={generatingBuilds} />} */}
-            {/* Hit mode options */}
-            {/* {characterSheet && character && initialStats && <HitModeCard build={initialStats} character={character} disabled={generatingBuilds} />} */}
-          </Grid>
+              {/* Hit mode options */}
+              {/* {characterSheet && character && initialStats && <HitModeCard build={initialStats} character={character} disabled={generatingBuilds} />} */}
+            </Grid>
 
-          {/* Right half */}
-          <Grid item xs={12} md={6} lg={7} display="flex" flexDirection="column" gap={1}>
-            {/* {!!initialStats && <ArtifactConditionalCard disabled={generatingBuilds} initialStats={initialStats} />} */}
+            {/* Right half */}
+            <Grid item xs={12} md={6} lg={7} display="flex" flexDirection="column" gap={1}>
+              {/* {!!initialStats && <ArtifactConditionalCard disabled={generatingBuilds} initialStats={initialStats} />} */}
 
-            {/* Artifact set pickers */}
-            {/* {!!initialStats && setFilters.map((setFilter, index) => (index <= setFilters.filter(s => s.key).length) && <ArtifactSetPicker key={index} index={index} setFilters={setFilters}
+              {/* Artifact set pickers */}
+              {/* {!!initialStats && setFilters.map((setFilter, index) => (index <= setFilters.filter(s => s.key).length) && <ArtifactSetPicker key={index} index={index} setFilters={setFilters}
               disabled={generatingBuilds} initialStats={initialStats} onChange={(index, key, num) => buildSettingsDispatch({ type: 'setFilter', index, key, num })} />)} */}
 
-            {/* use equipped/excluded */}
-            {characterKey && <CardLight><CardContent>
-              <Grid container spacing={1}>
-                <Grid item flexGrow={1}>
-                  <Button fullWidth onClick={() => buildSettingsDispatch({ useEquippedArts: !useEquippedArts })} disabled={generatingBuilds} startIcon={useEquippedArts ? <CheckBox /> : <CheckBoxOutlineBlank />}>
-                    Use Equipped Artifacts
-                  </Button>
+              {/* use equipped/excluded */}
+              {characterKey && <CardLight><CardContent>
+                <Grid container spacing={1}>
+                  <Grid item flexGrow={1}>
+                    <Button fullWidth onClick={() => buildSettingsDispatch({ useEquippedArts: !useEquippedArts })} disabled={generatingBuilds} startIcon={useEquippedArts ? <CheckBox /> : <CheckBoxOutlineBlank />}>
+                      Use Equipped Artifacts
+                    </Button>
+                  </Grid>
+                  <Grid item flexGrow={1}>
+                    <Button fullWidth onClick={() => buildSettingsDispatch({ useExcludedArts: !useExcludedArts })} disabled={generatingBuilds} startIcon={useExcludedArts ? <CheckBox /> : <CheckBoxOutlineBlank />}>
+                      Use Excluded Artifacts
+                    </Button>
+                  </Grid>
                 </Grid>
-                <Grid item flexGrow={1}>
-                  <Button fullWidth onClick={() => buildSettingsDispatch({ useExcludedArts: !useExcludedArts })} disabled={generatingBuilds} startIcon={useExcludedArts ? <CheckBox /> : <CheckBoxOutlineBlank />}>
-                    Use Excluded Artifacts
-                  </Button>
-                </Grid>
-              </Grid>
-            </CardContent></CardLight>}
+              </CardContent></CardLight>}
 
-            { /* Level Filter */}
-            {characterKey && <CardLight>
-              <CardContent sx={{ py: 1 }}>
-                Artifact Level Filter
-              </CardContent>
-              <Divider />
-              <CardContent>
-                <ArtifactLevelSlider levelLow={levelLow} levelHigh={levelHigh} dark
-                  setLow={levelLow => buildSettingsDispatch({ levelLow })}
-                  setHigh={levelHigh => buildSettingsDispatch({ levelHigh })}
-                  setBoth={(levelLow, levelHigh) => buildSettingsDispatch({ levelLow, levelHigh })} />
-              </CardContent>
-            </CardLight>}
-            {/* main stat selector */}
-            {characterKey && <MainStatSelectionCard
-              mainStatAssumptionLevel={mainStatAssumptionLevel}
-              mainStatKeys={mainStatKeys}
-              onChangeMainStatKey={(slotKey, mainStatKey = undefined) => {
-                if (mainStatKey === undefined)
-                  buildSettingsDispatch({ type: "mainStatKeyReset", slotKey })
-                else
-                  buildSettingsDispatch({ type: "mainStatKey", slotKey, mainStatKey })
-              }}
-              onChangeAssLevel={mainStatAssumptionLevel => buildSettingsDispatch({ mainStatAssumptionLevel })}
-              disabled={generatingBuilds}
-            />}
-          </Grid>
-        </Grid>
-        {/* Footer */}
-        <Grid container spacing={1}>
-          <Grid item flexGrow={1} >
-            <ButtonGroup>
-              <Button
-                disabled={!characterKey || generatingBuilds}
-                color={(characterKey && totBuildNumber <= warningBuildNumber) ? "success" : "warning"}
-                onClick={generateBuilds}
-                startIcon={<FontAwesomeIcon icon={faCalculator} />}
-              >Generate</Button>
-              {/* <Tooltip title={<Typography></Typography>} placement="top" arrow> */}
-              <DropdownButton disabled={generatingBuilds || !characterKey}
-                title={<span><b>{maxBuildsToShow}</b> {maxBuildsToShow === 1 ? "Build" : "Builds"}</span>}>
-                <MenuItem>
-                  <Typography variant="caption" color="info.main">
-                    Decreasing the number of generated build will decrease build calculation time for large number of builds.
-                  </Typography>
-                </MenuItem>
+              { /* Level Filter */}
+              {characterKey && <CardLight>
+                <CardContent sx={{ py: 1 }}>
+                  Artifact Level Filter
+                </CardContent>
                 <Divider />
-                {maxBuildsToShowList.map(v => <MenuItem key={v}
-                  onClick={() => buildSettingsDispatch({ maxBuildsToShow: v })}>{v} {v === 1 ? "Build" : "Builds"}</MenuItem>)}
-              </DropdownButton>
-              {/* </Tooltip> */}
-              <Button
-                disabled={!generatingBuilds}
-                color="error"
-                onClick={() => cancelToken.current()}
-                startIcon={<Close />}
-              >Cancel</Button>
-            </ButtonGroup>
+                <CardContent>
+                  <ArtifactLevelSlider levelLow={levelLow} levelHigh={levelHigh} dark
+                    setLow={levelLow => buildSettingsDispatch({ levelLow })}
+                    setHigh={levelHigh => buildSettingsDispatch({ levelHigh })}
+                    setBoth={(levelLow, levelHigh) => buildSettingsDispatch({ levelLow, levelHigh })} />
+                </CardContent>
+              </CardLight>}
+              {/* main stat selector */}
+              {characterKey && <MainStatSelectionCard
+                mainStatAssumptionLevel={mainStatAssumptionLevel}
+                mainStatKeys={mainStatKeys}
+                onChangeMainStatKey={(slotKey, mainStatKey = undefined) => {
+                  if (mainStatKey === undefined)
+                    buildSettingsDispatch({ type: "mainStatKeyReset", slotKey })
+                  else
+                    buildSettingsDispatch({ type: "mainStatKey", slotKey, mainStatKey })
+                }}
+                onChangeAssLevel={mainStatAssumptionLevel => buildSettingsDispatch({ mainStatAssumptionLevel })}
+                disabled={generatingBuilds}
+              />}
+            </Grid>
           </Grid>
-          <Grid item>
-            {/* {statsDisplayKeys && sheets && initialStats && <OptimizationTargetSelector
+          {/* Footer */}
+          <Grid container spacing={1}>
+            <Grid item flexGrow={1} >
+              <ButtonGroup>
+                <Button
+                  disabled={!characterKey || generatingBuilds}
+                  color={(characterKey && totBuildNumber <= warningBuildNumber) ? "success" : "warning"}
+                  onClick={generateBuilds}
+                  startIcon={<FontAwesomeIcon icon={faCalculator} />}
+                >Generate</Button>
+                {/* <Tooltip title={<Typography></Typography>} placement="top" arrow> */}
+                <DropdownButton disabled={generatingBuilds || !characterKey}
+                  title={<span><b>{maxBuildsToShow}</b> {maxBuildsToShow === 1 ? "Build" : "Builds"}</span>}>
+                  <MenuItem>
+                    <Typography variant="caption" color="info.main">
+                      Decreasing the number of generated build will decrease build calculation time for large number of builds.
+                    </Typography>
+                  </MenuItem>
+                  <Divider />
+                  {maxBuildsToShowList.map(v => <MenuItem key={v}
+                    onClick={() => buildSettingsDispatch({ maxBuildsToShow: v })}>{v} {v === 1 ? "Build" : "Builds"}</MenuItem>)}
+                </DropdownButton>
+                {/* </Tooltip> */}
+                <Button
+                  disabled={!generatingBuilds}
+                  color="error"
+                  onClick={() => cancelToken.current()}
+                  startIcon={<Close />}
+                >Cancel</Button>
+              </ButtonGroup>
+            </Grid>
+            <Grid item>
+              {/* {statsDisplayKeys && sheets && initialStats && <OptimizationTargetSelector
               optimizationTarget={optimizationTarget}
               setTarget={target => buildSettingsDispatch({ optimizationTarget: target })}
               disabled={!!generatingBuilds}
               sheets={sheets} initialStats={initialStats} statsDisplayKeys={statsDisplayKeys}
             />} */}
+            </Grid>
           </Grid>
-        </Grid>
 
-        {!!characterKey && <Box >
-          <BuildAlert {...{ totBuildNumber, generatingBuilds, generationSkipped, generationProgress, generationDuration, characterName, maxBuildsToShow }} />
-        </Box>}
-        {/* {tcMode && statsDisplayKeys && <Box >
+          {!!characterKey && <Box >
+            <BuildAlert {...{ totBuildNumber, generatingBuilds, generationSkipped, generationProgress, generationDuration, characterName, maxBuildsToShow }} />
+          </Box>}
+          {/* {tcMode && statsDisplayKeys && <Box >
           <ChartCard disabled={generatingBuilds} data={chartData} plotBase={plotBase} setPlotBase={setPlotBase} statKeys={statsDisplayKeys?.basicKeys} />
         </Box>} */}
-      </CardContent>
-    </CardDark>
-    <CardDark>
-      <CardContent>
-        <Box display="flex" justifyContent="space-between" alignItems="center" >
-          <Typography>
-            {/* {buildStats ? <span>Showing <strong>{buildStats.length}</strong> Builds generated for {characterName}. {!!buildDate && <span>Build generated on: <strong>{(new Date(buildDate)).toLocaleString()}</strong></span>}</span>
+        </CardContent>
+      </CardDark>
+      <CardDark>
+        <CardContent>
+          <Box display="flex" justifyContent="space-between" alignItems="center" >
+            <Typography>
+              {/* {buildStats ? <span>Showing <strong>{buildStats.length}</strong> Builds generated for {characterName}. {!!buildDate && <span>Build generated on: <strong>{(new Date(buildDate)).toLocaleString()}</strong></span>}</span>
               : <span>Select a character to generate builds.</span>} */}
-          </Typography>
-          <SolidToggleButtonGroup exclusive value={compareData} onChange={(e, v) => buildSettingsDispatch({ compareData: v })} size="small">
-            <ToggleButton value={false} disabled={!compareData}>
-              <small>Show New artifact Stats</small>
-            </ToggleButton>
-            <ToggleButton value={true} disabled={compareData}>
-              <small>Compare against equipped artifacts</small>
-            </ToggleButton>
-          </SolidToggleButtonGroup>
-        </Box>
-      </CardContent>
-    </CardDark>
-    <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={600} />}>
-      {/* Build List */}
-      {/* {buildStats?.map((build, index) =>
+            </Typography>
+            <SolidToggleButtonGroup exclusive value={compareData} onChange={(e, v) => buildSettingsDispatch({ compareData: v })} size="small">
+              <ToggleButton value={false} disabled={!compareData}>
+                <small>Show New artifact Stats</small>
+              </ToggleButton>
+              <ToggleButton value={true} disabled={compareData}>
+                <small>Compare against equipped artifacts</small>
+              </ToggleButton>
+            </SolidToggleButtonGroup>
+          </Box>
+        </CardContent>
+      </CardDark>
+      <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={600} />}>
+        {/* Build List */}
+        {/* {buildStats?.map((build, index) =>
         sheets && equippedBuild && <ArtifactBuildDisplayItem sheets={sheets} equippedBuild={equippedBuild} newBuild={build} characterKey={characterKey as CharacterKey} index={index} key={Object.values(build.equippedArtifacts ?? {}).join()}
           statsDisplayKeys={statsDisplayKeys} onClick={() => setmodalBuildIndex(index)} compareBuild={compareData} disabled={!!generatingBuilds} />
       )} */}
-    </Suspense>
+      </Suspense>
+    </DataContext.Provider>}
   </Box>
 }
 

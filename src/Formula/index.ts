@@ -36,8 +36,11 @@ const custom = setReadNodeKeys({
   },
   override: {
     enemy: {
+      level: read("add", { ...customInfo, key: "enemyLevel" }),
       res: objectFromKeyMap(allElements, ele =>
         read("unique", { ...customInfo, key: `${ele}_enemyRes_`, variant: ele })),
+      defRed: read("add", { ...customInfo, key: "enemyDefRed_" }),
+      defIgn: read("add", { ...customInfo, key: "enemyDefIgn_" }),
     },
   },
 }, ["custom"])
@@ -91,8 +94,9 @@ const rd = setReadNodeKeys({
     res: objectFromKeyMap(allElements, ele => read("add", { key: `${ele}_enemyRes_`, variant: ele })),
     resMulti: objectFromKeyMap(allElements, ele => read("unique")),
     level: read("unique", { key: "enemyLevel" }),
-    def: read("add", { key: "enemyDEF_multi", pivot }),
-    defRed: read("add", { key: "enemyDEFRed_", pivot }),
+    def: read("add", { key: "enemyDef_multi", pivot }),
+    defRed: read("add", { key: "enemyDefRed_", pivot }),
+    defIgn: read("add", { key: "enemyDefIgn_", pivot }),
   },
 
   hit: {
@@ -200,7 +204,8 @@ const common = {
   },
 
   enemy: {
-    def: frac(sum(rd.lvl, 100), prod(sum(enemy.level, 100), sum(unit, prod(-1, enemy.defRed)))),
+    // TODO: shred cap of 90%
+    def: frac(sum(rd.lvl, 100), prod(sum(enemy.level, 100), sum(1, prod(-1, enemy.defRed)), sum(1, prod(-1, enemy.defIgn)))),
     resMulti: objectFromKeyMap(allElements, ele => res(enemy.res[ele])),
   },
 

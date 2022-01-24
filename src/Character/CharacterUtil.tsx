@@ -59,6 +59,7 @@ export function initialCharacter(key: CharacterKey): ICachedCharacter {
     equippedWeapon: "",
     conditionalValues: {},
     bonusStats: {},
+    enemyOverride: {},
     buildSettings: initialBuildSettings(),
     talent: {
       auto: 1,

@@ -8,6 +8,7 @@ import { ComputeNode, Data, DataNode, LookupNode, Node, ReadNode, StringMatchNod
 const shouldWrap = true
 
 export function valueString(value: number, unit: "%" | "flat", fixed = -1): string {
+  if (value === Number.MAX_VALUE) value = Infinity
   if (unit === "%") value *= 100
   else unit = '' as any
   if (Number.isInteger(value)) fixed = 0
