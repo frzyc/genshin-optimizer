@@ -30,7 +30,7 @@ export function compactNodes(nodes: Node[]): CompactNodes {
       case "const": visit(f, true); break
       case "res": case "threshold_add": case "sum_frac":
       case "max": case "min": visit(f, false); break
-      case "data":
+      case "data": case "reset":
       case "subscript": case "lookup":
       case "match": case "unmatch":
         throw new Error(`Found unsupported ${operation} node when computing affine nodes`)
@@ -45,7 +45,7 @@ export function compactNodes(nodes: Node[]): CompactNodes {
 }
 export function compactArtifacts(db: ArtCharDatabase, nodes: CompactNodes, mainStatAssumptionLevel: number): ArtifactsBySlot {
   const result: ArtifactsBySlot = { flower: [], plume: [], goblet: [], circlet: [], sands: [] }
-  const base = (constantFold(nodes.affine, [], _ => true) as ConstantNode[])
+  const base = (constantFold(nodes.affine, undefined, _ => true) as ConstantNode[])
     .map(x => x.value)
 
   for (const art of db._getArts()) {
@@ -58,7 +58,7 @@ function compactArtifact(nodes: CompactNodes, id: string, setKey: ArtifactSetKey
   return {
     id: id,
     set: setKey,
-    values: (constantFold(nodes.affine, [art], _ => true) as ConstantNode[])
+    values: (constantFold(nodes.affine, art, _ => true) as ConstantNode[])
       .map((x, i) => x.value - base[i])
   }
 }

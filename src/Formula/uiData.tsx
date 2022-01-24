@@ -3,7 +3,7 @@ import KeyMap from "../KeyMap"
 import { ArtifactSetKey, CharacterKey, WeaponKey } from "../Types/consts"
 import { assertUnreachable, crawlObject, layeredAssignment, objPathValue } from "../Util/Util"
 import { allOperations } from "./optimization"
-import { ComputeNode, Data, DataNode, LookupNode, Node, ReadNode, StringMatchNode, StringNode, SubscriptNode, Variant } from "./type"
+import { ComputeNode, Data, DataNode, DataResetNode, LookupNode, Node, ReadNode, StringMatchNode, StringNode, SubscriptNode, Variant } from "./type"
 
 const shouldWrap = true
 
@@ -33,7 +33,7 @@ export interface NodeDisplay {
 }
 
 export class UIData {
-  parent?: UIData
+  origin: UIData
   children = new Map<Data, UIData>()
 
   data: Data[]
@@ -43,9 +43,18 @@ export class UIData {
 
   display: any = undefined
 
-  constructor(data: Data[], parent: UIData | undefined) {
-    this.parent = parent
-    this.data = data
+  constructor(data: Data, parent: UIData | undefined) {
+    if (data === undefined) {
+      // Secret *origin* initializer
+      this.data = []
+      this.origin = this
+    } else {
+      if (!parent)
+        parent = new UIData(undefined as any, undefined)
+
+      this.data = [data, ...parent.data]
+      this.origin = parent.origin
+    }
   }
 
   getDisplay(): {
@@ -128,6 +137,7 @@ export class UIData {
       case "data": result = this._data(node, visited); break
       case "match": case "unmatch": result = this._match(node, visited); break
       case "lookup": result = this._lookup(node, visited); break
+      case "reset": result = this._reset(node, visited); break
       default: assertUnreachable(operation)
     }
 
@@ -194,10 +204,13 @@ export class UIData {
   private _data(node: DataNode, visited: Set<Node> | undefined): ContextNodeDisplay {
     let child = this.children.get(node.data)
     if (!child) {
-      child = new UIData([node.data, ...this.data], this)
+      child = new UIData(node.data, this)
       this.children.set(node.data, child)
     }
     return child.computeNode(node.operands[0], visited && new Set())
+  }
+  private _reset(node: DataResetNode, visited: Set<Node> | undefined): ContextNodeDisplay {
+    return this.origin.computeNode(node.operands[0], visited && new Set())
   }
   private _compute(node: ComputeNode, visited: Set<Node> | undefined): ContextNodeDisplay {
     const { operation, operands } = node

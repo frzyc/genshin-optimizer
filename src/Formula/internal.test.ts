@@ -26,7 +26,7 @@ describe("internal `mapFormulas`", () => {
     const mockTopDown = jest.fn((x: Node, contextId: number) => [x === r2 ? f2 : x, contextId] as [Node, number])
     const mockBottomUp = jest.fn((x: Node, _: Node) => x)
 
-    const result = mapFormulas([f1], mockTopDown, mockBottomUp)
+    const result = mapFormulas([f1], 0, mockTopDown, mockBottomUp)
     expect(result).toEqual([sum(r1, prod(r3, r4), r1)])
 
     expect(mockTopDown.mock.calls.map(x => x[0])).toEqual(
@@ -45,7 +45,7 @@ describe("internal `mapFormulas`", () => {
     const mockTopDown = jest.fn((x: Node, contextId: number) => [(x === r1 || x === r3) ? f2 : x, contextId] as [Node, number])
     const mockBottomUp = jest.fn((x: Node, _: Node) => x)
 
-    const result = mapFormulas([f1], mockTopDown, mockBottomUp)
+    const result = mapFormulas([f1], 0, mockTopDown, mockBottomUp)
     expect(result).toEqual([sum(sum(r4), r2, sum(r4))])
 
     /**

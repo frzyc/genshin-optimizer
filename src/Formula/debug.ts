@@ -7,6 +7,7 @@ export function formulaString(formula: Node): string {
     case "const": return `${formula.value}`
     case "read": return `Read[${formula.path}]`
     case "data": return `Context${formulaString(formula.operands[0])}`
+    case "reset": return `Reset${formulaString(formula.operands[0])}`
     case "subscript": return `Lookup${formulaString(formula.operands[0])}`
     case "min": case "max":
       return `${operation}( ${formula.operands.map(formulaString).join(", ")} )`

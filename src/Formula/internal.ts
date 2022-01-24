@@ -61,7 +61,7 @@ export function mapFormulas(formulas: Node[], topDownMap: (formula: Node) => Nod
   return formulas.map(check)
 }
 
-export function mapContextualFormulas(formulas: Node[], topDownMap: (formula: Node, contextId: ContextID) => [Node, ContextID], bottomUpMap: (formula: Node, orig: Node, contextId: ContextID, origContextId: ContextID) => Node): Node[] {
+export function mapContextualFormulas(formulas: Node[], baseContextId: number, topDownMap: (formula: Node, contextId: ContextID) => [Node, ContextID], bottomUpMap: (formula: Node, orig: Node, contextId: ContextID, origContextId: ContextID) => Node): Node[] {
   const visiting = new Set<Node>()
   const topDownByContext = new Map<ContextID, Map<Node, Node>>()
   const bottomUpByContext = new Map<ContextID, Map<Node, Node>>()
@@ -106,7 +106,7 @@ export function mapContextualFormulas(formulas: Node[], topDownMap: (formula: No
     return arrayEqual(operands, formula.operands) ? formula : { ...formula, operands }
   }
 
-  return formulas.map(f => check(f, 0))
+  return formulas.map(f => check(f, baseContextId))
 }
 
 type ContextID = number

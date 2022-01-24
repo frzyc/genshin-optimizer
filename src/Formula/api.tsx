@@ -112,7 +112,7 @@ function mergeData(data: Data[]): Data {
 }
 
 function computeUIData(data: Data[]): UIData {
-  return new UIData([mergeData(data)], undefined)
+  return new UIData(mergeData(data), undefined)
 }
 
 const transMulti1 = subscript(input.lvl, transformativeReactionLevelMultipliers)

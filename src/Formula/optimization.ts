@@ -22,7 +22,7 @@ export const allOperations: StrictDict<Operation, (_: number[]) => number> = {
 
 const commutativeMonoidOperationSet = new Set(Object.keys(allCommutativeMonoidOperations) as (Node["operation"])[])
 
-export function optimize(formulas: Node[], topLevelData: Data[], shouldFold = (_formula: ReadNode) => false): Node[] {
+export function optimize(formulas: Node[], topLevelData?: Data, shouldFold = (_formula: ReadNode) => false): Node[] {
   formulas = constantFold(formulas, topLevelData, shouldFold)
   formulas = flatten(formulas)
   formulas = deduplicate(formulas)
@@ -56,7 +56,7 @@ export function precompute(formulas: Node[], binding: (readNode: ReadNode) => st
         mapping.set(f, value)
         break
       case "match": case "unmatch": case "lookup": case "subscript":
-      case "data": throw new Error(`Unsupported ${operation} node in precompute`)
+      case "data": case "reset": throw new Error(`Unsupported ${operation} node in precompute`)
       default: assertUnreachable(operation)
     }
   })
@@ -249,11 +249,17 @@ function deduplicate(formulas: Node[]): Node[] {
  * - Apply all `ReadNode`s
  * - Remove all `DataNode`s
  */
-function applyRead(formulas: Node[], topLevelData: Data[], bottomUpMap = (formula: Node, _orig: Node) => formula): Node[] {
-  const dataFromId = [topLevelData], nextIdsFromCurrentIds = [new Map<Data, number>()]
+function applyRead(formulas: Node[], topLevelData?: Data, bottomUpMap = (formula: Node, _orig: Node) => formula): Node[] {
+  const dataFromId = [[], topLevelData ? [topLevelData] : []], nextIdsFromCurrentIds = [new Map<Data, number>(), new Map()]
+  nextIdsFromCurrentIds[0].set(topLevelData, nextIdsFromCurrentIds[1])
+
 
   function extract(formula: Node, contextId: number): [Node, number] {
     switch (formula.operation) {
+      case "reset": {
+        const { operands: [baseFormula] } = formula
+        return extract(baseFormula, 0)
+      }
       case "data": {
         const { data, operands: [baseFormula] } = formula
         const nextIds = nextIdsFromCurrentIds[contextId]
@@ -293,15 +299,15 @@ function applyRead(formulas: Node[], topLevelData: Data[], bottomUpMap = (formul
     return [formula, contextId]
   }
 
-  return mapContextualFormulas(formulas, extract, bottomUpMap)
+  return mapContextualFormulas(formulas, 1, extract, bottomUpMap)
 }
 
 /**
  * Replace nodes with known values with appropriate constants,
  * avoiding removal of any nodes that pass `isFixed` predicate
  */
-export function constantFold(formulas: Node[], topLevelData: Data[] = [], shouldFold = (_formula: ReadNode) => false): Node[] {
-  return applyRead(formulas, topLevelData, (formula, orig) => {
+export function constantFold(formulas: Node[], topLevelData?: Data, shouldFold = (_formula: ReadNode) => false): Node[] {
+  return applyRead(formulas, topLevelData, formula => {
     const { operation, operands } = formula
     let result = formula
 
@@ -371,7 +377,7 @@ export function constantFold(formulas: Node[], topLevelData: Data[] = [], should
         break
       case "const": break
       case "match": case "unmatch":
-      case "data": case "lookup": throw new Error("Unreachable")
+      case "data": case "reset": case "lookup": throw new Error("Unreachable")
       default: assertUnreachable(operation) // Exhaustive switch
     }
     if (result !== formula) result = { ...formula, ...result }
