@@ -25,6 +25,7 @@ const charData = dataObjForCharacter({
   bonusStats: {},
   infusionAura: "",
   compareData: false,
+  enemyOverride: {}
 })
 const weaponData = dataObjForWeapon({
   id: "",
