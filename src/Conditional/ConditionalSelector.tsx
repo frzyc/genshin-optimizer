@@ -11,9 +11,9 @@ export default function ConditionalSelector({ conditional, conditionalValue, dis
   { conditional: IConditional, conditionalValue?: string, disabled?: boolean }) {
   const { character, characterDispatch } = useContext(DataContext)
   const setConditional = useCallback((v?: string) => {
-    const conditionalValues = deepClone(character.conditionalValues)
+    const conditionalValues = deepClone(character.conditional)
     layeredAssignment(conditionalValues, conditional.path, v)
-    characterDispatch({ conditionalValues })
+    characterDispatch({ conditional: conditionalValues })
   }, [conditional, character, characterDispatch])
 
   if (Object.keys(conditional.states).length === 1) {

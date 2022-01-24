@@ -2,7 +2,7 @@ import { Box, Typography } from "@mui/material"
 import { useMemo } from "react"
 import Character from "../Character/Character"
 import { sgt } from "../Data/Characters/SheetUtil"
-import Formula from "../Formula"
+import Formula_DEP from "../Formula_DEP"
 import usePromise from "../ReactHooks/usePromise"
 import Stat from "../Stat"
 import { ICachedCharacter } from "../Types/character"
@@ -39,7 +39,7 @@ type StatDisplayProps = {
   partyBuff?: boolean
 }
 export default function StatDisplay({ character, equippedBuild, newBuild, statKey, partyBuff = false }: StatDisplayProps) {
-  const formula = usePromise(Array.isArray(statKey) ? Formula.get(statKey) : undefined, [statKey])
+  const formula = usePromise(Array.isArray(statKey) ? Formula_DEP.get(statKey) : undefined, [statKey])
 
   const { val, oldVal, fixed, unit, label, hasBonus } = useMemo(() => {
     let val, oldVal, fixed, unit, label: Displayable = ""

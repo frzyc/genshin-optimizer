@@ -1,5 +1,5 @@
 import characters from './index'
-import Formula from '../../Formula'//load the formula processing
+import Formula_DEP from '../../Formula_DEP'//load the formula processing
 import { ICharacterSheet } from '../../Types/character'
 import { CharacterKey } from '../../Types/consts'
 expect.extend({
@@ -23,7 +23,7 @@ expect.extend({
   },
   async toBeValidCharacterSheet(charSheet: ICharacterSheet, characterKey: CharacterKey) {
     if ("talent" in charSheet) {
-      const charformula = await Formula.get(["character", characterKey])
+      const charformula = await Formula_DEP.get(["character", characterKey])
       if (charSheet.talent.formula !== charformula) return {
         message: () => `Character sheet: ${characterKey}.formula is not being brought into Formula properly.`,
         pass: false
@@ -32,7 +32,7 @@ expect.extend({
       for (const eleKey of Object.keys(charSheet.talents)) {
         const talentSheet = charSheet.talents[eleKey]
         if (!talentSheet) continue
-        const charformula = await Formula.get(["character", characterKey, eleKey])
+        const charformula = await Formula_DEP.get(["character", characterKey, eleKey])
         if (talentSheet.formula !== charformula) return {
           message: () => `Character sheet: ${characterKey}.${eleKey}.formula is not being brought into Formula properly.`,
           pass: false

@@ -4,7 +4,7 @@ import { initialBuildSettings } from "../Build/BuildSetting";
 import { ascensionMaxLevel } from "../Data/LevelData";
 import Stat from "../Stat";
 import { allMainStatKeys, allSubstats, ICachedArtifact, IArtifact, ICachedSubstat, ISubstat, SubstatKey } from "../Types/artifact";
-import { ICachedCharacter, ICharacter } from "../Types/character";
+import { ICachedCharacter, ICharacter } from "../Types/character_WR";
 import { allArtifactRarities, allArtifactSets, allCharacterKeys, allElements, allHitModes, allReactionModes, allSlotKeys, allWeaponKeys } from "../Types/consts";
 import { IWeapon, ICachedWeapon } from "../Types/weapon";
 import { objectFromKeyMap } from "../Util/Util";
@@ -153,7 +153,7 @@ export function parseCharacter(obj: any): ICharacter | undefined {
   if (typeof obj !== "object") return
 
   let {
-    key: characterKey, level, ascension, hitMode, elementKey, reactionMode, conditionalValues,
+    key: characterKey, level, ascension, hitMode, elementKey, reactionMode, conditional,
     bonusStats, enemyOverride, talent, infusionAura, constellation, buildSettings, team, compareData
   } = obj
 
@@ -223,8 +223,8 @@ export function parseCharacter(obj: any): ICharacter | undefined {
     buildSettings = { setFilters, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, builds, buildDate, maxBuildsToShow, plotBase, compareBuild, levelLow, levelHigh }
   }
 
-  if (!conditionalValues)
-    conditionalValues = {}
+  if (!conditional)
+  conditional = {}
   if (!team)
     team = ["", "", ""]
 
@@ -234,7 +234,7 @@ export function parseCharacter(obj: any): ICharacter | undefined {
   if (typeof bonusStats !== "object" || !Object.entries(bonusStats).map(([_, num]) => typeof num === "number")) bonusStats = {}
   if (typeof enemyOverride !== "object" || !Object.entries(enemyOverride).map(([_, num]) => typeof num === "number")) enemyOverride = {}
   const result: ICharacter = {
-    key: characterKey, level, ascension, hitMode, reactionMode, conditionalValues,
+    key: characterKey, level, ascension, hitMode, reactionMode, conditional,
     bonusStats, enemyOverride, talent, infusionAura, constellation, team, compareData
   }
   if (buildSettings) result.buildSettings = buildSettings
@@ -244,11 +244,11 @@ export function parseCharacter(obj: any): ICharacter | undefined {
 /// Return a new flex character from given character. All extra keys are removed
 export function removeCharacterCache(char: ICachedCharacter): ICharacter {
   const {
-    key: characterKey, level, ascension, hitMode, elementKey, reactionMode, conditionalValues,
+    key: characterKey, level, ascension, hitMode, elementKey, reactionMode, conditional,
     bonusStats, enemyOverride, talent, infusionAura, constellation, buildSettings, team, compareData
   } = char
   const result: ICharacter = {
-    key: characterKey, level, ascension, hitMode, reactionMode, conditionalValues,
+    key: characterKey, level, ascension, hitMode, reactionMode, conditional,
     bonusStats, enemyOverride, talent, infusionAura, constellation, buildSettings, team, compareData
   }
   if (elementKey) result.elementKey = elementKey

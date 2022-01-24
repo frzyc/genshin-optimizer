@@ -1,5 +1,5 @@
 import '../WorkerHack';
-import Formula from '../Formula';
+import Formula_DEP from '../Formula_DEP';
 import { PreprocessFormulas } from '../ProcessFormula';
 import { ICachedArtifact } from '../Types/artifact';
 import { Build, BuildRequest } from '../Types/Build';
@@ -17,7 +17,7 @@ onmessage = async (e: { data: BuildRequest }) => {
     target = (stats) => stats[optimizationTarget]
     targetKeys = [optimizationTarget]
   } else {
-    const targetFormula = await Formula.get(optimizationTarget)
+    const targetFormula = await Formula_DEP.get(optimizationTarget)
     if (typeof targetFormula === "function")
       [target, targetKeys] = targetFormula(stats)
     else {

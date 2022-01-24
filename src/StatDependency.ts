@@ -1,4 +1,4 @@
-import Formula from "./Formula"
+import Formula_DEP from "./Formula_DEP"
 import { getStage, numStages } from "./ProcessFormula"
 import { Formulas, StatData } from "./StatData"
 import { IBaseStat } from "./Types/character"
@@ -40,7 +40,7 @@ function InsertDependencies(baseStat: IBaseStat, key: string, modifiers: Modifie
   found.add(key)
 
   formulaKeyDependency[key]?.forEach(k => InsertDependencies(baseStat, k, modifiers, dependencies, found));
-  (modifiers[key] ?? []).forEach(path => Formula.getCurrent(path, baseStat)[1].forEach(k =>
+  (modifiers[key] ?? []).forEach(path => Formula_DEP.getCurrent(path, baseStat)[1].forEach(k =>
     InsertDependencies(baseStat, k, modifiers, dependencies, found)))
   dependencies[getStage(key)].add(key)
 }

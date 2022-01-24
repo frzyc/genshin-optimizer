@@ -6,7 +6,7 @@ import circlet from './circlet.png'
 import { IArtifactSheet } from '../../../Types/artifact_WR'
 import { Data } from '../../../Formula/type'
 import { infoMut, min, percent, prod, threshold_add } from '../../../Formula/utils'
-import { input } from '../../../Formula/index'
+import { input } from '../../../Formula'
 import { dataObjForArtifactSheet } from '../../../Formula/api'
 import { ArtifactSetKey } from '../../../Types/consts'
 const setKey: ArtifactSetKey = "EmblemOfSeveredFate"

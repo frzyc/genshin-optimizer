@@ -1,6 +1,6 @@
 import './Conditional/Conditional' //attach field to formulas.
 import './Data/Characters/index' //attaches field to formulas.
-import Formula, { formulaImport } from "./Formula"
+import Formula_DEP, { formulaImport } from "./Formula_DEP"
 import { StatData } from "./StatData"
 import { crawlObject } from "./Util/Util"
 
@@ -34,7 +34,7 @@ expect.extend({
 describe('test Formula', () => {
   beforeAll(() => formulaImport)
   test('validate formulas', () => {
-    crawlObject(Formula.formulas, [], f => typeof f === "function", (formula, keys) => {
+    crawlObject(Formula_DEP.formulas, [], f => typeof f === "function", (formula, keys) => {
       expect(formula).toBeValidFormula(keys)
     })
   })

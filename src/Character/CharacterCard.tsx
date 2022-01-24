@@ -10,7 +10,7 @@ import { Stars } from '../Components/StarDisplay';
 import StatIcon from '../Components/StatIcon';
 import { ascensionMaxLevel } from '../Data/LevelData';
 import { DatabaseContext } from '../Database/Database';
-import { input } from '../Formula/index'
+import { input } from '../Formula'
 import { computeUIData, dataObjForWeapon, UIData, valueString } from '../Formula/api';
 import usePromise from '../ReactHooks/usePromise';
 import Stat from '../Stat';
@@ -33,7 +33,7 @@ type CharacterCardProps = {
   build?: ICalculatedStats
 }
 export default function CharacterCard({ build, characterKey, artifactChildren, weaponChildren, onClick, onClickHeader, footer }: CharacterCardProps) {
-  const { data: charUIData, character, characterSheet, artifacts } = useCharUIData(characterKey)
+  const { data: charUIData, character, characterSheet, artifacts } = useCharUIData(characterKey) ?? {}
   const onClickHandler = useCallback(() => characterKey && onClick?.(characterKey), [characterKey, onClick])
   const actionWrapperFunc = useCallback(
     children => <CardActionArea onClick={onClickHandler} sx={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>{children}</CardActionArea>,

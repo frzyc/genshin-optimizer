@@ -63,7 +63,7 @@ export interface ICharacter {
   hitMode: HitModeKey
   elementKey?: ElementKey
   reactionMode: ReactionModeKey | ""
-  conditionalValues: IConditionalValues<IConditionalValue>
+  conditional: IConditionalValues
   bonusStats: Partial<Record<Statkey, number>>
   enemyOverride: Partial<Record<EleEnemyResKey | "enemyLevel" | "enemyDefRed_" | "enemyDefIgn_", number>>
   infusionAura: ElementKey | ""

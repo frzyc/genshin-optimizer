@@ -7,7 +7,7 @@ import CardLight from '../../Components/Card/CardLight';
 import ColorText from '../../Components/ColoredText';
 import ImgIcon from '../../Components/Image/ImgIcon';
 import ModalWrapper from '../../Components/ModalWrapper';
-import Formula from '../../Formula';
+import Formula_DEP from '../../Formula_DEP';
 import usePromise from '../../ReactHooks/usePromise';
 import { Sheets } from '../../ReactHooks/useSheets';
 import Stat from '../../Stat';
@@ -28,7 +28,7 @@ export default function OptimizationTargetSelector({ optimizationTarget, setTarg
   const [open, setOpen] = useState(false)
   const onOpen = useCallback(() => !disabled && setOpen(true), [setOpen, disabled])
   const onClose = useCallback(() => setOpen(false), [setOpen])
-  const formula = usePromise(Array.isArray(optimizationTarget) ? Formula.get(optimizationTarget) : undefined, [optimizationTarget])
+  const formula = usePromise(Array.isArray(optimizationTarget) ? Formula_DEP.get(optimizationTarget) : undefined, [optimizationTarget])
 
   const setTargetHandler = useCallback(
     (target) => {
@@ -87,7 +87,7 @@ export default function OptimizationTargetSelector({ optimizationTarget, setTarg
   </>
 }
 function TargetSelectorMenuItem({ target, setTarget, initialStats }) {
-  const formula = usePromise(Formula.get(target), [target])
+  const formula = usePromise(Formula_DEP.get(target), [target])
   if (!formula) return null
   const talentField = (formula as any).field as IFieldDisplay
   return <MenuItem onClick={() => setTarget(target)} style={{ overflow: "hidden", textOverflow: "ellipsis" }}>

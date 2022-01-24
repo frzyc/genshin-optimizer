@@ -2,16 +2,16 @@ import { useContext, useEffect, useMemo } from "react";
 import { ArtifactSheet } from "../Artifact/ArtifactSheet_WR";
 import CharacterSheet from "../Character/CharacterSheet_WR";
 import { DatabaseContext } from "../Database/Database";
-import { common } from "../Formula/index";
+import { common } from "../Formula";
 import { computeUIData, dataObjForArtifact, dataObjForCharacter, dataObjForWeapon } from "../Formula/api";
+import { ICachedArtifact } from "../Types/artifact_WR";
 import { CharacterKey, SlotKey } from "../Types/consts";
 import { objectMap } from "../Util/Util";
 import WeaponSheet from "../Weapon/WeaponSheet_WR";
 import useCharacter from "./useCharacter";
+import useForceUpdate from "./useForceUpdate";
 import usePromise from "./usePromise";
 import useWeapon from "./useWeapon";
-import { ICachedArtifact } from "../Types/artifact_WR";
-import useForceUpdate from "./useForceUpdate";
 
 export default function useCharUIData(characterKey: CharacterKey | "") {
   const database = useContext(DatabaseContext)
@@ -51,5 +51,7 @@ export default function useCharUIData(characterKey: CharacterKey | "") {
     ...dataWoArt,
   ]),
     [dataWoArt, artifacts])
+  if (!data || !character || !characterSheet || !weapon || !weaponSheet || !artifacts || !artifactSheetsData || !database || !dataWoArt)
+    return undefined
   return { data, character, characterSheet, weapon, weaponSheet, artifacts, artifactSheetsData, database, dataWoArt }
 }

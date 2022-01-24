@@ -11,7 +11,7 @@ import { Stars } from "../../Components/StarDisplay";
 import StatIcon from "../../Components/StatIcon";
 import { DataContext } from "../../DataContext";
 import { valueString } from "../../Formula/api";
-import { input, custom } from "../../Formula/index";
+import { input, custom } from "../../Formula";
 import { ReadNode } from "../../Formula/type";
 import KeyMap from "../../KeyMap";
 import useCharacterReducer from "../../ReactHooks/useCharacterReducer";

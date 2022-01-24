@@ -5,7 +5,7 @@ import { Button, CardContent, Chip, Collapse, Grid, Typography } from "@mui/mate
 import { useCallback, useContext, useState } from 'react';
 import StatInput from "../Character/StatInput";
 import { DataContext } from "../DataContext";
-import { custom, input } from "../Formula/index";
+import { custom, input } from "../Formula";
 import { valueString } from "../Formula/uiData";
 import KeyMap from '../KeyMap';
 import { allElementsWithPhy } from "../Types/consts";

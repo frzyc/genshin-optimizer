@@ -19,7 +19,7 @@ import { Translate } from '../../../Components/Translate'
 import { normalSrc, sgt, talentTemplate } from '../SheetUtil_WR'
 import { CharacterKey, WeaponTypeKey } from '../../../Types/consts'
 import ColorText from '../../../Components/ColoredText'
-import { input } from "../../../Formula/index";
+import { input } from "../../../Formula";
 import { customRead, customStringRead, infoMut, match, percent, prod, stringConst, sum, threshold_add, unmatch } from "../../../Formula/utils";
 import { ICharacterSheet } from '../../../Types/character_WR'
 import { objectFromKeyMap } from '../../../Util/Util'
@@ -78,8 +78,8 @@ const datamine = {
 
 // Conditional Input
 // Absorption Element
-const condAbsorptionPath = ["conditional", characterKey, "absorption"]
-const condAbsorption = customStringRead(condAbsorptionPath)
+const condAbsorptionPath = [characterKey, "absorption"]
+const condAbsorption = customStringRead(["conditional", ...condAbsorptionPath])
 // A1 Swirl Reaction Element
 const condSwirlReaction = customStringRead(["conditional", characterKey, "swirl"])
 // Set to 1 if skill hit opponents

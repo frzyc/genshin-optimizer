@@ -61,10 +61,10 @@ type CharacterDisplayCardProps = {
   compareBuild?: boolean
 }
 export default function CharacterDisplayCard({ characterKey, footer, newBuild: propNewBuild, onClose, tabName, isFlex }: CharacterDisplayCardProps) {
-  const { data: charUIData, character, characterSheet, database } = useCharUIData(characterKey)
+  const { data: charUIData, character, characterSheet, database } = useCharUIData(characterKey) ?? {}
 
   useEffect(() => {
-    if (!characterKey) return
+    if (!characterKey || !database) return
     if (database._getChar(characterKey)) return
     // Create a new character + weapon, with linking if char isnt in db.
     (async () => {

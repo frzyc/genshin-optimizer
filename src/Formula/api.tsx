@@ -1,7 +1,7 @@
 import Artifact from "../Artifact/Artifact";
 import { transformativeReactionLevelMultipliers, transformativeReactions } from "../StatConstants";
 import { ICachedArtifact, MainStatKey, SubstatKey } from "../Types/artifact";
-import { ICachedCharacter } from "../Types/character";
+import { ICachedCharacter } from "../Types/character_WR";
 import { allElementsWithPhy, ArtifactSetKey } from "../Types/consts";
 import { ICachedWeapon } from "../Types/weapon";
 import { crawlObject, layeredAssignment, objectFromKeyMap } from "../Util/Util";
@@ -77,8 +77,8 @@ function dataObjForCharacter(char: ICachedCharacter): Data {
     }
   }
 
-  crawlObject(char.conditionalValues, [], (x: any) => typeof x === "string" || typeof x === "number", (x: number | string, key: string[]) =>
-    layeredAssignment(result, key, typeof x === "string" ? stringConst(x) : constant(x)))
+  crawlObject(char.conditional, ["conditional"], (x: any) => typeof x === "string", (x: string, keys: string[]) =>
+    layeredAssignment(result, keys, stringConst(x)))
   return result
 }
 function dataObjForWeapon(weapon: ICachedWeapon): Data {

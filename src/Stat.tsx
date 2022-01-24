@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import ColorText from "./Components/ColoredText";
 import elementalData from "./Data/ElementalData";
-import Formula from "./Formula";
+import Formula_DEP from "./Formula_DEP";
 import usePromise from "./ReactHooks/usePromise";
 import { amplifyingReactions, hitMoves, hitTypes, transformativeReactions } from "./StatConstants";
 import { StatData } from "./StatData";
@@ -41,7 +41,7 @@ export default class Stat {
 }
 
 const ModFormula = ({ path, stats }) => {
-  const formula = usePromise(Formula.get(path), [path]) as any
+  const formula = usePromise(Formula_DEP.get(path), [path]) as any
   if (!formula?.field?.formulaText) return null
   const ret = evalIfFunc(formula.field.formulaText, stats) as JSX.Element
   return ret

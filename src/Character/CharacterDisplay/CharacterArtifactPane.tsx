@@ -9,7 +9,7 @@ import ImgIcon from '../../Components/Image/ImgIcon';
 import SolidToggleButtonGroup from '../../Components/SolidToggleButtonGroup';
 import { database as localDatabase, DatabaseContext } from '../../Database/Database';
 import { DataContext } from '../../DataContext';
-import { input } from '../../Formula/index';
+import { input } from '../../Formula';
 import useForceUpdate from '../../ReactHooks/useForceUpdate';
 import usePromise from '../../ReactHooks/usePromise';
 import { allSlotKeys, ArtifactSetKey, SlotKey } from '../../Types/consts';

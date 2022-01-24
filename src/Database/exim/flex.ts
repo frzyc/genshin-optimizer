@@ -13,7 +13,7 @@ export function exportFlex(characterKey: CharacterKey, database: ArtCharDatabase
   const char = database._getChar(characterKey)
   if (!char) return null;
   const character = deepClone(char)
-  const build = Character.calculateBuild(character, database, sheets)
+  const build = Character.calculateBuild(character as any, database, sheets)
   Object.entries(build.partyBuff).forEach(([key, val]: any) => {
     // Need to check for enemyRes because its an override instead of additive
     if (character.bonusStats[key] === undefined) character.bonusStats[key] = (key.includes("_enemyRes_") ? 10 : 0) + val

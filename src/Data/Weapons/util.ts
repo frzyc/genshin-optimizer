@@ -3,7 +3,7 @@ import { mergeData } from "../../Formula/api";
 import { MainStatKey, SubstatKey } from "../../Types/artifact";
 import { WeaponKey, WeaponTypeKey } from "../../Types/consts";
 import _weaponCurves from "../../Weapon/expCurve_gen.json";
-import { input } from "../../Formula/index";
+import { input } from "../../Formula";
 import { Data, DisplayWeapon } from "../../Formula/type";
 import { infoMut, prod, stringConst, subscript, sum } from "../../Formula/utils";
 

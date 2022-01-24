@@ -1,4 +1,4 @@
-import Formula from "./Formula"
+import Formula_DEP from "./Formula_DEP"
 import { Formulas, StatData } from "./StatData"
 import { GetDependencies } from "./StatDependency"
 import { ICalculatedStats, Modifier } from "./Types/stats"
@@ -21,7 +21,7 @@ function addPreModValues(stats: ICalculatedStats, mod: Modifier) {
 
 function modStatsFormula(stats: ICalculatedStats, mods: Modifier, targets: (s: ICalculatedStats) => (ICalculatedStats | null)[], context: "partyAll" | "partyOnly" | "partyActive") {
   if (!mods || !Object.keys(mods).length) return () => null
-  const modStatsFunc = Formula.computeModifier(stats, mods)
+  const modStatsFunc = Formula_DEP.computeModifier(stats, mods)
   return (s: ICalculatedStats) => {
     const modStats = modStatsFunc(s);
     // Use mergeCalculatedStats here to allow the application to s.partyBuff
@@ -100,7 +100,7 @@ export function PreprocessFormulas(dependencyKeys: string[], stats: ICalculatedS
     }
   }
 
-  const modFormula = Formula.computeModifier(stats, relevantMod(dependencyKeys, modifiers))
+  const modFormula = Formula_DEP.computeModifier(stats, relevantMod(dependencyKeys, modifiers))
   const partyAllFormula = modStatsFormula(stats, relevantMod(dependencyKeys, stats.partyAllModifiers), (s) => [s, ...s.teamStats], "partyAll")
   const partyOnlyFormula = modStatsFormula(stats, relevantMod(dependencyKeys, stats.partyOnlyModifiers), (s) => s.teamStats, "partyOnly")
   const partyActiveFormula = modStatsFormula(stats, relevantMod(dependencyKeys, stats.partyActiveModifiers), (s) => [s], "partyActive")
@@ -110,7 +110,7 @@ export function PreprocessFormulas(dependencyKeys: string[], stats: ICalculatedS
     formula: (s: ICalculatedStats) => {
       premodFormulaList.forEach(([key, formula]) => s[key] = formula(s))
 
-      const modStats = Formula.computeModifier(s, s.modifiers)(s) // late-binding modifiers (arts mod)
+      const modStats = Formula_DEP.computeModifier(s, s.modifiers)(s) // late-binding modifiers (arts mod)
       mergeStats(modStats, modFormula(s))
       modifiers && addPreModValues(s, modifiers)
       s.modifiers && addPreModValues(s, s.modifiers)

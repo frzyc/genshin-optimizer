@@ -1,7 +1,7 @@
 import _charCurves from "../../Character/expCurve_gen.json";
 import { allMainStatKeys, MainStatKey } from "../../Types/artifact";
 import { CharacterKey, ElementKey } from "../../Types/consts";
-import { input } from "../../Formula/index";
+import { input } from "../../Formula";
 import { Data, DisplayCharacter, Node } from "../../Formula/type";
 import { data, infoMut, prod, stringConst, subscript, sum } from "../../Formula/utils";
 import { mergeData, reactions } from "../../Formula/api";

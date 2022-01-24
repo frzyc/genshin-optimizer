@@ -1,12 +1,12 @@
 import { Box, CardActionArea, CardContent, Divider, Grid, Typography } from "@mui/material";
 import { useContext, useMemo, useState } from "react";
 import Assets from "../../Assets/Assets";
-import Character from '../../Character/Character';
-import CharacterSheet from "../../Character/CharacterSheet";
+import CharacterSheet from "../../Character/CharacterSheet_WR";
 import { DatabaseContext } from "../../Database/Database";
+import { input } from "../../Formula";
+import useCharUIData from "../../ReactHooks/useCharUIData";
 import usePromise from "../../ReactHooks/usePromise";
-import useSheets from "../../ReactHooks/useSheets";
-import { ICachedCharacter } from "../../Types/character";
+import { ICachedCharacter } from "../../Types/character_WR";
 import { allCharacterKeys, CharacterKey, ElementKey, WeaponTypeKey } from "../../Types/consts";
 import { characterFilterConfigs, characterSortConfigs } from "../../Util/CharacterSort";
 import { filterFunction, sortFunction } from "../../Util/SortByFilters";
@@ -43,7 +43,7 @@ export function CharacterSelectionModal({ show, onHide, onSelect, filter = () =>
   const [elementalFilter, setelementalFilter] = useState<ElementKey | "">("")
   const [weaponFilter, setweaponFilter] = useState<WeaponTypeKey | "">("")
 
-  const characterSheets = usePromise(CharacterSheet.getAll(), [])
+  const characterSheets = usePromise(CharacterSheet.getAll, [])
 
   const sortConfigs = useMemo(() => characterSheets && characterSortConfigs(database, characterSheets), [database, characterSheets])
   const filterConfigs = useMemo(() => characterSheets && characterFilterConfigs(characterSheets), [characterSheets])
@@ -88,11 +88,8 @@ export function CharacterSelectionModal({ show, onHide, onSelect, filter = () =>
 }
 
 function CharacterBtn({ onClick, characterKey }: { onClick: () => void, characterKey: CharacterKey }) {
-  const sheets = useSheets()
-  const database = useContext(DatabaseContext)
-  const character = database._getChar(characterKey)
-  const characterSheet = sheets?.characterSheets[characterKey]
-  const stats = useMemo(() => character && sheets && Character.calculateBuild(character, database, sheets), [character, sheets, database])
+  const characterSheet = usePromise(CharacterSheet.get(characterKey), [characterKey])
+  const UIDataBundle = useCharUIData(characterKey)
   if (!characterSheet) return null
   const rarity = characterSheet.rarity
   return <CardActionArea onClick={onClick} >
@@ -100,13 +97,13 @@ function CharacterBtn({ onClick, characterKey }: { onClick: () => void, characte
       <Box component="img" src={characterSheet.thumbImg} sx={{ width: 130, height: "auto" }} className={`grad-${rarity}star`} />
       <Box sx={{ pl: 1 }}>
         <Typography><strong>{characterSheet.name}</strong></Typography>
-        {stats && character ? <>
-          <Typography variant="h6"> {characterSheet.elementKey && StatIcon[characterSheet.elementKey]} <ImgIcon src={Assets.weaponTypes?.[characterSheet.weaponTypeKey]} />{` `}{Character.getLevelString(character)}</Typography>
+        {UIDataBundle ? <>
+          <Typography variant="h6"> {characterSheet.elementKey && StatIcon[characterSheet.elementKey]} <ImgIcon src={Assets.weaponTypes?.[characterSheet.weaponTypeKey]} />{` `}{CharacterSheet.getLevelString(UIDataBundle.data.get(input.lvl).value, UIDataBundle.data.get(input.asc).value)}</Typography>
           <Typography >
-            <SqBadge color="success">{`C${character.constellation}`}</SqBadge>{` `}
-            <SqBadge color="secondary"><strong >{stats.tlvl.auto + 1}</strong></SqBadge>{` `}
-            <SqBadge color={stats.skillBoost ? "info" : "secondary"}><strong >{stats.tlvl.skill + 1}</strong></SqBadge>{` `}
-            <SqBadge color={stats.burstBoost ? "info" : "secondary"}><strong >{stats.tlvl.burst + 1}</strong></SqBadge>
+            <SqBadge color="success">{`C${UIDataBundle.data.get(input.constellation).value}`}</SqBadge>{` `}
+            <SqBadge color={UIDataBundle.data.get(input.talent.boost.auto).value ? "info" : "secondary"}><strong >{UIDataBundle.data.get(input.talent.total.auto).value}</strong></SqBadge>{` `}
+            <SqBadge color={UIDataBundle.data.get(input.talent.boost.skill).value ? "info" : "secondary"}><strong >{UIDataBundle.data.get(input.talent.total.skill).value}</strong></SqBadge>{` `}
+            <SqBadge color={UIDataBundle.data.get(input.talent.boost.burst).value ? "info" : "secondary"}><strong >{UIDataBundle.data.get(input.talent.total.burst).value}</strong></SqBadge>
           </Typography>
         </> : <>
           <Typography variant="h6"><SqBadge color="primary">NEW</SqBadge></Typography>

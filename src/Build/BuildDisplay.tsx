@@ -33,9 +33,11 @@ import { allSlotKeys } from '../Types/consts';
 import { objectFromKeyMap } from '../Util/Util';
 import { calculateTotalBuildNumber, maxBuildsToShowList } from './Build';
 import { initialBuildSettings } from './BuildSetting';
+import ArtifactConditionalCard from './Components/ArtifactConditionalCard';
 import BonusStatsCard from './Components/BonusStatsCard';
 import BuildAlert, { warningBuildNumber } from './Components/BuildAlert';
 import EnemyEditorCard from './Components/EnemyEditorCard';
+import HitModeCard from './Components/HitModeCard';
 import MainStatSelectionCard, { artifactsSlotsToSelectMainStats } from './Components/MainStatSelectionCard';
 import StatFilterCard from './Components/StatFilterCard';
 import TeamBuffCard from './Components/TeamBuffCard';
@@ -87,7 +89,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     return characterKey
   })
 
-  const { data, character, characterSheet, weapon, weaponSheet, dataWoArt } = useCharUIData(characterKey)
+  const { data, character, characterSheet, weapon, weaponSheet, dataWoArt } = useCharUIData(characterKey) ?? {}
   const compareData = character?.compareData ?? false
   const [modalBuildIndex, setmodalBuildIndex] = useState(-1) // the index of the newBuild that is being displayed in the character modal,
 
@@ -433,7 +435,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
               {/*Minimum Final Stat Filter */}
               <StatFilterCard statFilters={statFilters} setStatFilters={sFs => buildSettingsDispatch({ statFilters: sFs })} disabled={generatingBuilds} />
               {/* Hit mode options */}
-              {/* {characterSheet && character && initialStats && <HitModeCard build={initialStats} character={character} disabled={generatingBuilds} />} */}
+              <HitModeCard disabled={generatingBuilds} />
             </Grid>
 
             {/* Right half */}

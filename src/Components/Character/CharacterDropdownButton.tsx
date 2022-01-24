@@ -55,7 +55,7 @@ export function CharacterMenuItemArray(characterSheets: StrictDict<CharacterKey,
   return characterKeys.map(characterKey =>
     <MenuItem onClick={() => onChange(characterKey)} key={characterKey} selected={selectedCharacterKey === characterKey} disabled={selectedCharacterKey === characterKey} >
       <ListItemIcon>
-        <ThumbSide src={characterSheets[characterKey].thumbImgSide} />
+        <ThumbSide src={characterSheets[characterKey]?.thumbImgSide} />
       </ListItemIcon>
       <Typography variant="inherit" noWrap>
         {characterSheets?.[characterKey]?.name}

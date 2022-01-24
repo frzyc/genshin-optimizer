@@ -2,7 +2,7 @@ import { CardContent, Divider, Typography } from '@mui/material';
 import React from 'react';
 import CardLight from '../../Components/Card/CardLight';
 import FieldDisplay, { FieldDisplayList } from '../../Components/FieldDisplay';
-import { ICachedCharacter } from '../../Types/character';
+import { ICachedCharacter } from '../../Types/character_WR';
 import statsToFields from '../../Util/FieldUtil';
 import { enemyEditorKeys } from '../../Util/StatUtil';
 export default function BonusStatsCard({ character }: { character: ICachedCharacter }) {

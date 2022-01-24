@@ -1,6 +1,7 @@
 import { BonusStats, BasicStats } from "./stats";
 import { IFieldDisplay } from "./IFieldDisplay_WR";
 import { Node } from "../Formula/type";
+import { ArtifactSetKey, CharacterKey, WeaponKey } from "./consts";
 
 export default interface IConditional {
   path: string[],
@@ -18,5 +19,11 @@ export default interface IConditional {
       name?: Displayable,
       fields: IFieldDisplay[]
     }
+  }
+}
+
+export interface IConditionalValues {
+  [key: CharacterKey | ArtifactSetKey | WeaponKey]: {
+    [key: string]: string
   }
 }

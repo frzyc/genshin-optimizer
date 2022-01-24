@@ -19,7 +19,7 @@ import { CharacterKey, ElementKey, WeaponTypeKey } from '../Types/consts';
 import { characterFilterConfigs, characterSortConfigs, characterSortKeys } from '../Util/CharacterSort';
 import { filterFunction, sortFunction } from '../Util/SortByFilters';
 import CharacterCard from './CharacterCard';
-import CharacterSheet from './CharacterSheet';
+import CharacterSheet from './CharacterSheet_WR';
 
 const initialState = () => ({
   sortType: characterSortKeys[0],
@@ -47,7 +47,7 @@ export default function CharacterInventory(props) {
     return database.followAnyChar(forceUpdate)
   }, [forceUpdate, database])
 
-  const characterSheets = usePromise(CharacterSheet.getAll(), [])
+  const characterSheets = usePromise(CharacterSheet.getAll, [])
   //save to db
   useEffect(() => {
     dbStorage.set("CharacterDisplay.state", state)

@@ -14,7 +14,7 @@ import useCharacterReducer from "../../ReactHooks/useCharacterReducer";
 import Stat from "../../Stat";
 import { TalentSheetElementKey } from "../../Types/character";
 import { DataContext } from '../../DataContext';
-import { input } from "../../Formula/index";
+import { input } from "../../Formula";
 import { ElementKey } from "../../Types/consts";
 import KeyMap from '../../KeyMap'
 import { NodeDisplay, valueString } from '../../Formula/uiData'

@@ -143,7 +143,7 @@ export default class Character {
       // initiate Team stats.
       initialStats.teamStats = team.map(tCharKey => {
         if (!tCharKey) return null
-        const tChar = database._getChar(tCharKey)
+        const tChar = database._getChar(tCharKey) as any
         if (!tChar) return null
         // Empty teammate's team in calculation to stop recursion
         const x = tChar.team

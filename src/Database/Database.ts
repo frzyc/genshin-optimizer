@@ -1,5 +1,5 @@
-import { ICachedArtifact, IArtifact } from "../Types/artifact";
-import { ICachedCharacter, ICharacter } from "../Types/character";
+import { ICachedArtifact, IArtifact } from "../Types/artifact_WR";
+import { ICachedCharacter, ICharacter } from "../Types/character_WR";
 import { allSlotKeys, CharacterKey, SlotKey } from "../Types/consts";
 import { getRandomInt, objectFromKeyMap } from "../Util/Util";
 import { DataManager } from "./DataManager";
