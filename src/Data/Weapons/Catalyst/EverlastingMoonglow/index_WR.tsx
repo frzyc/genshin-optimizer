@@ -4,7 +4,7 @@ import { IWeaponSheet } from '../../../../Types/weapon_WR'
 import icon from './Icon.png'
 import iconAwaken from './AwakenIcon.png'
 import { infoMut, match, prod, subscript } from "../../../../Formula/utils"
-import { dataObjForWeaponSheet } from '../../../../Formula/api'
+import { dataObjForWeaponSheet } from '../../util'
 import { input } from '../../../../Formula/index'
 import data_gen_json from './data_gen.json'
 const data_gen = data_gen_json as WeaponData

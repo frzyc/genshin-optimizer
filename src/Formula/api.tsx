@@ -1,61 +1,17 @@
-import type { WeaponData } from "pipeline";
 import Artifact from "../Artifact/Artifact";
 import { transformativeReactionLevelMultipliers, transformativeReactions } from "../StatConstants";
 import { ICachedArtifact, MainStatKey, SubstatKey } from "../Types/artifact";
 import { ICachedCharacter } from "../Types/character";
-import { allElementsWithPhy, ArtifactSetKey, WeaponKey, WeaponTypeKey } from "../Types/consts";
+import { allElementsWithPhy, ArtifactSetKey } from "../Types/consts";
 import { ICachedWeapon } from "../Types/weapon";
 import { crawlObject, layeredAssignment, objectFromKeyMap } from "../Util/Util";
 import _weaponCurves from "../Weapon/expCurve_gen.json";
 import { input } from "./index";
 import { constant } from "./internal";
-import { Data, DisplayArtifact, DisplayWeapon, Node, ReadNode } from "./type";
+import { Data, DisplayArtifact, Node, ReadNode } from "./type";
 import { NodeDisplay, UIData, valueString } from "./uiData";
 import { frac, infoMut, percent, prod, stringConst, subscript, sum, unit } from "./utils";
 
-// TODO: Remove this conversion after changing the file format
-const weaponCurves = Object.fromEntries(Object.entries(_weaponCurves).map(([key, value]) => [key, [0, ...Object.values(value)]]))
-
-function dataObjForWeaponSheet(
-  key: WeaponKey, type: WeaponTypeKey,
-  gen: WeaponData,
-  substat2: MainStatKey | SubstatKey | undefined,
-  displayWeapon: DisplayWeapon = {},
-  additional: Data = {}
-): Data {
-  const result: Data = {
-    base: {},
-    premod: {},
-    weapon: {
-      key: stringConst(key), type: stringConst(type),
-    },
-    display: {
-      weapon: {
-        [key]: displayWeapon
-      }
-    },
-  }
-
-  const { mainStat, subStat } = gen
-
-  const mainStatNode = infoMut(sum(prod(mainStat.base, subscript(input.weapon.lvl, weaponCurves[mainStat.curve])), subscript(input.weapon.asc, gen.ascension.map(x => x.addStats[mainStat.type] ?? 0))), { key: mainStat.type })
-  result.base![mainStat.type] = mainStatNode
-  result.weapon!.main = mainStatNode
-
-  if (subStat) {
-    const substatNode = subStat && infoMut(prod(subStat.base, subscript(input.weapon.lvl, weaponCurves[subStat.curve])), { key: subStat.type })
-    result.premod![subStat.type] = substatNode
-    result.weapon!.sub = substatNode
-  }
-  if (substat2) {
-    const substat2Node = subscript(input.weapon.refineIndex, gen.addProps.map(x => x[substat2] ?? NaN), { key: substat2 })
-    result.weapon!.sub2 = substat2Node
-    result.premod![substat2] = substat2 !== subStat?.type
-      ? input.weapon.sub2 : sum(input.weapon.sub, input.weapon.sub2)
-  }
-
-  return mergeData([result, additional])
-}
 function dataObjForArtifactSheet(
   key: ArtifactSetKey,
   data: Data = {},
@@ -213,7 +169,7 @@ export const reactions = {
 export type { NodeDisplay, UIData };
 export {
   dataObjForArtifact, dataObjForCharacter, dataObjForWeapon,
-  dataObjForWeaponSheet, dataObjForArtifactSheet,
+  dataObjForArtifactSheet,
 
   mergeData, computeUIData, valueString,
 };
