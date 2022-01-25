@@ -123,12 +123,7 @@ const resonanceSheets: resonanceDoc[] = [{// Protective Canopy
       staminaDec_: 15,
       moveSPD_: 10,
       skillCDRed_: 5,
-    },
-    fields: [{
-      text: "Pyro affect Duration",
-      value: -40,
-      unit: "%"
-    }]
+    }
   }]
 }, {
   header: {

@@ -10,7 +10,7 @@ import ImgFullwidth from "../Components/Image/ImgFullwidth"
 import SqBadge from "../Components/SqBadge"
 import Amenoma from './Amenoma.png'
 import cocogoat from './cocogoat.png'
-// import GIScanner from './GIScanner.png'
+import GIScanner from './GIScanner.png'
 import AdScanner from './AdeptiScanner.png'
 
 export default function ScannerDisplay(props: any) {
@@ -35,20 +35,20 @@ export default function ScannerDisplay(props: any) {
       </Trans>
     </CardContent></CardDark>
 
-    {/* <CardDark><CardContent><Grid container spacing={2} >
+    <CardDark><CardContent><Grid container spacing={2} >
       <Grid item xs={12} md={4}><ImgFullwidth src={GIScanner} /></Grid>
       <Grid item xs={12} md={8}>
-        <Typography variant="h5"><Trans t={t} i18nKey="ik.title">Inventory Kamera</Trans><SqBadge color="success" sx={{ ml: 1 }}><Trans t={ui} i18nKey="updatedfor" values={{ version: "2.3" }} /></SqBadge></Typography>
+        <Typography variant="h5"><Trans t={t} i18nKey="ik.title">Inventory Kamera</Trans><SqBadge color="success" sx={{ ml: 1 }}><Trans t={ui} i18nKey="updatedfor" values={{ version: "2.4" }} /></SqBadge></Typography>
         <Typography gutterBottom><Trans t={t} i18nKey="ik.p1">This light-weight app will scan all your characters + weapons + artifacts in your inventory. Follow the instrutions in the app to set it up.</Trans></Typography>
         <Typography gutterBottom><Trans t={t} i18nKey="ik.p2">This scanner can also scan materials for <Link href="https://seelie.me/" target="_blank" rel="noreferrer">Seelie.me</Link></Trans></Typography>
         <Typography gutterBottom><Trans t={t} i18nKey="goodeng">This scanner only scans in english, and exports to GOOD format.</Trans></Typography>
         <Button href="https://github.com/Andrewthe13th/Inventory_Kamera" target="_blank" startIcon={<FontAwesomeIcon icon={faDownload} />} ><Trans t={ui} i18nKey="link.download" /></Button>
       </Grid>
-    </Grid></CardContent></CardDark> */}
+    </Grid></CardContent></CardDark>
 
     <CardDark><CardContent><Grid container spacing={2} >
       <Grid item xs={12} md={8}>
-        <Typography variant="h5"><Trans t={t} i18nKey="as.title">AdeptiScanner</Trans><SqBadge color="success" sx={{ ml: 1 }}><Trans t={ui} i18nKey="updatedfor" values={{ version: "2.3+" }} /></SqBadge></Typography>
+        <Typography variant="h5"><Trans t={t} i18nKey="as.title">AdeptiScanner</Trans><SqBadge color="success" sx={{ ml: 1 }}><Trans t={ui} i18nKey="updatedfor" values={{ version: "2.4+" }} /></SqBadge></Typography>
         <Typography gutterBottom><Trans t={t} i18nKey="as.p1">Scans all your artifacts in inventory. Has a manual scanning mode.</Trans></Typography>
         <Typography gutterBottom><Trans t={t} i18nKey="as.p2">This scanner can also be configured for new artifacts in new game versions without needing an update.</Trans></Typography>
         <Typography gutterBottom><Trans t={t} i18nKey="goodeng">This scanner only scans in english, and exports to GOOD format.</Trans></Typography>
