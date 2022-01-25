@@ -34,15 +34,6 @@ const custom = setReadNodeKeys({
     res: objectFromKeyMap(allElements, ele =>
       read("add", { ...customInfo, key: `${ele}_res_`, variant: ele })),
   },
-  override: {
-    enemy: {
-      level: read("add", { ...customInfo, key: "enemyLevel" }),
-      res: objectFromKeyMap(allElements, ele =>
-        read("unique", { ...customInfo, key: `${ele}_enemyRes_`, variant: ele })),
-      defRed: read("add", { ...customInfo, key: "enemyDefRed_" }),
-      defIgn: read("add", { ...customInfo, key: "enemyDefIgn_" }),
-    },
-  },
 }, ["custom"])
 
 /** All read nodes */
@@ -91,10 +82,11 @@ const rd = setReadNodeKeys({
   team: { infusion: stringRead() },
 
   enemy: {
-    res: objectFromKeyMap(allElements, ele => read("add", { key: `${ele}_enemyRes_`, variant: ele })),
-    resMulti: objectFromKeyMap(allElements, ele => read("unique")),
-    level: read("unique", { key: "enemyLevel" }),
     def: read("add", { key: "enemyDef_multi", pivot }),
+    resMulti: objectFromKeyMap(allElements, _ => read("unique")),
+
+    level: read("unique", { key: "enemyLevel" }),
+    res: objectFromKeyMap(allElements, ele => read("add", { key: `${ele}_enemyRes_`, variant: ele })),
     defRed: read("add", { key: "enemyDefRed_", pivot }),
     defIgn: read("add", { key: "enemyDefIgn_", pivot }),
   },
@@ -220,6 +212,7 @@ function typecheck<A, B extends A>(): B | void { }
 
 export type StrictInput<Num = Node, Str = StringNode> = _StrictInput<typeof rd, Num, Str>
 export type Input<Num = Node, Str = StringNode> = _Input<typeof rd, Num, Str>
+export type Custom<Num = Node, Str = StringNode> = _Input<typeof custom, Num, Str>
 
 // Make sure that `common` contains only entries matching `rd` and `str`.
 typecheck<typeof common, StrictInput<Node, StringNode>>()

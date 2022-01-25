@@ -18,9 +18,9 @@ export function EnemyExpandCard() {
   const { data } = useContext(DataContext)
   const [expanded, setexpanded] = useState(false)
   const toggle = useCallback(() => setexpanded(!expanded), [setexpanded, expanded])
-  const eLvlNode = data.get(custom.override.enemy.level)
-  const eDefRed = data.get(custom.override.enemy.defRed)
-  const eDefIgn = data.get(custom.override.enemy.defIgn)
+  const eLvlNode = data.get(input.enemy.level)
+  const eDefRed = data.get(input.enemy.defRed)
+  const eDefIgn = data.get(input.enemy.defIgn)
   return <CardLight>
     <CardContent>
       <Grid container>
@@ -64,7 +64,7 @@ export function EnemyExpandCard() {
 
 export function EnemyResText({ element }: { element: string }) {
   const { data } = useContext(DataContext)
-  const node = data.get(custom.override.enemy.res[element])
+  const node = data.get(input.enemy.res[element])
   const immune = node.value === Number.MAX_VALUE
   const content = immune ? <span >{uncoloredEleIcons[element]} IMMUNE</span> :
     <span >{uncoloredEleIcons[element]}RES <strong>{valueString(node.value, node.unit)}</strong></span>
@@ -75,9 +75,9 @@ export function EnemyEditor({ bsProps = { xs: 12, md: 6 } }: { bsProps?: object 
   const { data, characterDispatch } = useContext(DataContext)
   const defaultVal = 0.1
 
-  const eLvlNode = data.get(custom.override.enemy.level)
-  const eDefRed = data.get(custom.override.enemy.defRed)
-  const eDefIgn = data.get(custom.override.enemy.defIgn)
+  const eLvlNode = data.get(input.enemy.level)
+  const eDefRed = data.get(input.enemy.defRed)
+  const eDefIgn = data.get(input.enemy.defIgn)
   return <Grid container spacing={1}>
     <Grid item {...bsProps}>
       <Button fullWidth sx={{ height: "100%" }} size="small" component="a" color="warning" href="https://genshin-impact.fandom.com/wiki/Resistance#Base_Enemy_Resistances" target="_blank" rel="noreferrer">
@@ -97,7 +97,7 @@ export function EnemyEditor({ bsProps = { xs: 12, md: 6 } }: { bsProps?: object 
     </Grid>
     {allElementsWithPhy.map(eleKey => {
       const statKey = `${eleKey}_enemyRes_`
-      const node = data.get(custom.override.enemy.res[eleKey])
+      const node = data.get(input.enemy.res[eleKey])
       const elementImmunity = node.value === Number.MAX_VALUE
       return <Grid item key={eleKey} {...bsProps}>
         <StatInput

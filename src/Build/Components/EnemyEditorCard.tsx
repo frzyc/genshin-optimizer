@@ -5,7 +5,7 @@ import CardLight from '../../Components/Card/CardLight';
 import { EnemyEditor, EnemyResText } from '../../Components/EnemyEditor';
 import ExpandButton from '../../Components/ExpandButton';
 import { DataContext } from '../../DataContext';
-import { custom } from '../../Formula';
+import { input } from '../../Formula/index';
 import { valueString } from '../../Formula/uiData';
 import KeyMap from '../../KeyMap';
 import { allElementsWithPhy } from '../../Types/consts';
@@ -13,9 +13,9 @@ import { allElementsWithPhy } from '../../Types/consts';
 export default function EnemyEditorCard() {
   const [expanded, setExpanded] = useState(false);
   const { data } = useContext(DataContext)
-  const eLvlNode = data.get(custom.override.enemy.level)
-  const eDefRed = data.get(custom.override.enemy.defRed)
-  const eDefIgn = data.get(custom.override.enemy.defIgn)
+  const eLvlNode = data.get(input.enemy.level)
+  const eDefRed = data.get(input.enemy.defRed)
+  const eDefIgn = data.get(input.enemy.defIgn)
   return <CardLight>
     <CardHeader
       action={

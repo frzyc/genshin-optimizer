@@ -56,20 +56,22 @@ function dataObjForCharacter(char: ICachedCharacter): Data {
         burst: constant(char.talent.burst),
       }
     },
-
-    // TODO: override enemy stats
     enemy: {
       res: {
-        ...objectFromKeyMap(allElementsWithPhy, _ => {
-          return percent(0.1)
+        ...objectFromKeyMap(allElementsWithPhy, ele => {
+          return percent(char.enemyOverride[`${ele}_enemyRes_`] ?? 0.1)
         }),
       },
-      level: constant(char.level),
+      level: constant(char.enemyOverride.enemyLevel ?? char.level),
     },
     hit: {
       hitMode: stringConst(char.hitMode)
     }
   }
+  if (char.enemyOverride.enemyDefRed_)
+    result.enemy!.defRed = percent(char.enemyOverride.enemyDefRed_)
+  if (char.enemyOverride.enemyDefIgn_)
+    result.enemy!.defIgn = percent(char.enemyOverride.enemyDefIgn_)
   if (char.elementKey) {
     result.charEle = stringConst(char.elementKey)
     result.display = {
@@ -97,7 +99,7 @@ function mergeData(data: Data[]): Data {
     if (data[0].operation) {
       const accumulation = (input as ReadNode | undefined)?.accumulation ?? "unique"
       if (accumulation === "unique") {
-        if (data.length !== 1) throw new Error("Multiple entries when merging `unique`")
+        if (data.length !== 1) throw new Error(`Multiple entries when merging \`unique\` for key ${path}`)
         return data[0]
       }
       const result: Node = { operation: accumulation, operands: data, }
