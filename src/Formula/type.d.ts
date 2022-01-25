@@ -10,7 +10,7 @@ type Stat = MainStatKey | SubstatKey
 export type Node =
   ConstantNode | ComputeNode | StringMatchNode |
   SubscriptNode | LookupNode |
-  ReadNode | DataNode | DataResetNode
+  ReadNode | DataNode
 
 export type StringNode =
   StringConstantNode | StringPriorityNode |
@@ -59,9 +59,8 @@ export interface ReadNode extends NodeBase {
 export interface DataNode extends NodeBase {
   operation: "data"
   data: Data
-}
-export interface DataResetNode extends NodeBase {
-  operation: "reset"
+
+  reset?: true
 }
 
 interface StringNodeBase {

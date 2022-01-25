@@ -45,7 +45,7 @@ export function request({ threshold: newThreshold, artFilters }: Request): Reque
     }
   }).sort((a, b) => a.length - b.length)
 
-  const compute = precompute(optimize(nodes, undefined, ({ path: [p] }) => p !== "art" && p !== "artSet"),
+  const compute = precompute(optimize(nodes, {}, ({ path: [p] }) => p !== "art" && p !== "artSet"),
     f => f.path[1])
 
   const ids: string[] = Array(arts.length).fill("")

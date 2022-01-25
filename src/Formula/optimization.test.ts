@@ -35,16 +35,16 @@ describe("optimization", () => {
   test("constant folding", () => {
     const r1 = inputs[0], r2 = inputs[1], r3 = inputs[2]
 
-    expect(constantFold([sum(1, -1, r1, r2, r3)])).toEqual([sum(r1, r2, r3)])
-    expect(constantFold([prod(1, r1, r2, r3)])).toEqual([prod(r1, r2, r3)])
-    expect(constantFold([min(Infinity, r1, r2, r3)])).toEqual([min(r1, r2, r3)])
-    expect(constantFold([max(-Infinity, r1, r2, r3)])).toEqual([max(r1, r2, r3)])
+    expect(constantFold([sum(1, -1, r1, r2, r3)], {})).toEqual([sum(r1, r2, r3)])
+    expect(constantFold([prod(1, r1, r2, r3)], {})).toEqual([prod(r1, r2, r3)])
+    expect(constantFold([min(Infinity, r1, r2, r3)], {})).toEqual([min(r1, r2, r3)])
+    expect(constantFold([max(-Infinity, r1, r2, r3)], {})).toEqual([max(r1, r2, r3)])
 
     // Degenerate case
-    expect(constantFold([prod(0, r1, r2, r3)])).toEqual([constant(0)])
+    expect(constantFold([prod(0, r1, r2, r3)], {})).toEqual([constant(0)])
 
     // Remove wrapper for single-value formula
-    expect(constantFold([sum(1, -1, r1)])).toEqual([r1])
+    expect(constantFold([sum(1, -1, r1)], {})).toEqual([r1])
   })
   test("data unpacking", () => {
     const r1 = customRead(["aa"])
@@ -53,7 +53,7 @@ describe("optimization", () => {
     const data1 = { aa: constant(77) } as any as Data
     const t1 = data(r1, data1)
 
-    expect(constantFold([resetData(t1), t1], data0).map(x => (x as ConstantNode).value)).toEqual([77, 66 + 77])
+    expect(constantFold([resetData(t1, {}), t1], data0).map(x => (x as ConstantNode).value)).toEqual([77, 66 + 77])
   })
   describe("precomputing", () => {
     test("Base", () => {

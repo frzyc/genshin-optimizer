@@ -21,7 +21,7 @@ const charData = dataObjForCharacter({
   team: ["", "", ""],
   hitMode: "hit",
   reactionMode: "",
-  conditionalValues: {},
+  conditional: {},
   bonusStats: {},
   infusionAura: "",
   compareData: false,
