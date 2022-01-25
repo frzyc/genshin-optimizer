@@ -1,11 +1,11 @@
 import { ArtCharDatabase } from "../Database/Database";
 import { dataObjForArtifact } from "../Formula/api";
 import { forEachNodes, mapFormulas } from "../Formula/internal";
-import { constantFold } from "../Formula/optimization";
+import { allOperations, constantFold } from "../Formula/optimization";
 import { ConstantNode, Data, Node } from "../Formula/type";
 import { customRead } from "../Formula/utils";
-import { ArtifactSetKey } from "../Types/consts";
-import { assertUnreachable } from "../Util/Util";
+import { allSlotKeys, ArtifactSetKey } from "../Types/consts";
+import { assertUnreachable, objectFromKeyMap } from "../Util/Util";
 import { ArtifactBuildData, ArtifactsBySlot } from "./Worker";
 
 export function compactNodes(nodes: Node[]): CompactNodes {
@@ -54,6 +54,51 @@ export function compactArtifacts(db: ArtCharDatabase, nodes: CompactNodes, mainS
   }
   return result
 }
+/** Remove artifacts that cannot be in top `numTop` builds */
+export function pruneOrder(arts: ArtifactsBySlot, numTop: number): ArtifactsBySlot {
+  let progress = false
+  const newArts = objectFromKeyMap(allSlotKeys, slot => {
+    const list = arts[slot]
+    const newList = list.filter(art => {
+      let count = 0
+      return list.some(other => {
+        const greaterEqual = other.values.every((o, i) => o >= art[i])
+        const greater = other.values.some((o, i) => o > art[i])
+        if (greaterEqual && (greater || other.id > art.id)) count++
+        return count >= numTop
+      })
+    })
+    if (newList.length !== list.length) progress = true
+    return newList
+  })
+  return progress ? newArts : arts
+}
+/** Remove artifacts that cannot reach `minimum` in any build */
+export function pruneRange(nodes: Node[], arts: ArtifactsBySlot, minimum: number[]): ArtifactsBySlot {
+  while (true) {
+    const artRanges = objectFromKeyMap(allSlotKeys, slot => arts[slot].reduce((prev, cur) =>
+      prev.map((value, i) => computeMinMax([value.min, value.max, cur.values[i]]), { min: Infinity, max: -Infinity }),
+      Array(arts[0].values.length).fill({ min: Infinity, max: -Infinity }) as MinMax[]))
+    const otherArtRanges = objectFromKeyMap(allSlotKeys, key => allSlotKeys
+      .map(other => key === other ? [...artRanges[other]].fill({ min: 0, max: 0 }) : artRanges[other])
+      .reduce((accu, other) => accu.map((x, i) => ({ min: x.min + other[i].min, max: x.max + other[i].max }))))
+
+    let progress = false
+    const newArts = objectFromKeyMap(allSlotKeys, slot => {
+      const result = arts[slot].filter(art => {
+        const read = otherArtRanges[slot].map((x, i) => ({ min: art.values[i] + x.min, max: art.values[i] + x.max }))
+        const newRange = computeRange(nodes, read)
+        return newRange.every((x, i) => x.min >= minimum[i])
+      })
+      if (result.length !== arts[slot].length)
+        progress = true
+      return result
+    })
+    if (!progress) return arts // Make sure we return the original `arts` if there is no progress
+    arts = newArts
+  }
+}
+
 function compactArtifact(nodes: CompactNodes, id: string, setKey: ArtifactSetKey, art: Data, base: number[]): ArtifactBuildData {
   return {
     id: id,
@@ -62,5 +107,62 @@ function compactArtifact(nodes: CompactNodes, id: string, setKey: ArtifactSetKey
       .map((x, i) => x.value - base[i])
   }
 }
+function computeRange(nodes: Node[], reads: MinMax[]): MinMax[] {
+  const range = new Map<Node, MinMax>()
+
+  forEachNodes(nodes, _ => { }, f => {
+    const { operation } = f
+    const operands = f.operands.map(op => range.get(op)!)
+    let current: MinMax
+    switch (operation) {
+      case "read": current = reads[f.path[0] as any as number]; break
+      case "const": current = computeMinMax([f.value]); break
+      case "subscript": current = computeMinMax(f.list); break
+      case "add": case "min": case "max":
+        current = {
+          min: allOperations[operation](operands.map(x => x.min)),
+          max: allOperations[operation](operands.map(x => x.max)),
+        }; break
+      case "res": current = {
+        min: allOperations[operation]([operands[0].max]),
+        max: allOperations[operation]([operands[0].min]),
+      }; break
+      case "mul": current = operands.reduce((accu, current) => computeMinMax([
+        accu.min * current.min, accu.min * current.max,
+        accu.max * current.min, accu.max * current.max,
+      ])); break
+      case "threshold_add":
+        if (operands[0].min >= operands[1].max) current = operands[2]
+        else if (operands[0].max < operands[1].min) current = computeMinMax([0])
+        else current = computeMinMax([0], [operands[2]])
+        break
+      case "sum_frac": {
+        const [x, c] = operands, sum = { min: x.min + c.min, max: x.max + c.max }
+        if (sum.min <= 0 && sum.max >= 0)
+          current = (x.min <= 0 && x.max >= 0) ? { min: NaN, max: NaN } : { min: -Infinity, max: Infinity }
+        else
+          // TODO: Check this
+          current = computeMinMax([
+            x.min / sum.min, x.min / sum.max,
+            x.max / sum.min, x.max / sum.max
+          ])
+        break
+      }
+      case "lookup": case "data": case "reset":
+      case "match": case "unmatch":
+        throw new Error(`Unsupported ${operation} node`)
+      default: assertUnreachable(operation)
+    }
+    range.set(f, current)
+  })
+  return nodes.map(node => range.get(node)!)
+}
+function computeMinMax(values: number[], minMaxes: MinMax[] = []): MinMax {
+  const max = Math.max(values.reduce((a, b) => a > b ? a : b, -Infinity), ...minMaxes.map(x => x.max))
+  const min = Math.min(values.reduce((a, b) => a > b ? b : a, Infinity), ...minMaxes.map(x => x.min))
+  return { min, max }
+}
+
+type MinMax = { min: number, max: number }
 
 type CompactNodes = { nodes: Node[], affine: Node[] }
