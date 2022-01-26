@@ -112,8 +112,8 @@ export function evalIfFunc<T, X>(value: T | ((arg: X) => T), arg: X): T {
   return typeof value === "function" ? (value as any)(arg) : value
 }
 //fromEntries doesn't result in StrictDict, this is just a utility wrapper.
-export function objectFromKeyMap<K extends string | number, V>(keys: readonly K[], map: (key: K) => V): StrictDict<K, V> {
-  return Object.fromEntries(keys.map(k => [k, map(k)])) as any
+export function objectFromKeyMap<K extends string | number, V>(keys: readonly K[], map: (key: K, i: number) => V): StrictDict<K, V> {
+  return Object.fromEntries(keys.map((k, i) => [k, map(k, i)])) as any
 }
 
 export const objectMap = <K extends string, V, T>(obj: Record<K, V>, fn: (value: V, key: K extends number ? string : K, index: number) => T) =>

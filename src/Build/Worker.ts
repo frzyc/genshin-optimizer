@@ -34,10 +34,10 @@ export function setup({ id: _id, data, optimizationTarget, filters, plotBase, ma
     arts.forEach(art => art.values[art.set] = 1))
 }
 
-export function request({ threshold: newThreshold, artFilters }: Request): RequestResult {
+export function request({ threshold: newThreshold, filter: filters }: Request): RequestResult {
   if (threshold > newThreshold) threshold = newThreshold
   const arts = allSlotKeys.map(slot => {
-    const filter = artFilters[slot]
+    const filter = filters[slot]
     switch (filter.kind) {
       case "required": return artifactsBySlot[slot].filter(art => filter.sets.has(art.set))
       case "exclude": return artifactsBySlot[slot].filter(art => !filter.sets.has(art.set))
@@ -122,13 +122,13 @@ export interface Setup {
 export interface Request {
   command: "request"
   threshold: number
-
-  artFilters: StrictDict<SlotKey,
-    { kind: "required", sets: Set<ArtifactSetKey> } |
-    { kind: "exclude", sets: Set<ArtifactSetKey> } |
-    { kind: "id", ids: Set<string> }
-  >
+  filter: RequestFilter
 }
+export type RequestFilter = StrictDict<SlotKey,
+  { kind: "required", sets: Set<ArtifactSetKey> } |
+  { kind: "exclude", sets: Set<ArtifactSetKey> } |
+  { kind: "id", ids: Set<string> }
+>
 export interface Finalize {
   command: "finalize"
 }

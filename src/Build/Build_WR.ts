@@ -6,11 +6,10 @@ import { ConstantNode, Data, Node } from "../Formula/type";
 import { customRead } from "../Formula/utils";
 import { allSlotKeys, ArtifactSetKey } from "../Types/consts";
 import { assertUnreachable, objectFromKeyMap } from "../Util/Util";
-import { ArtifactBuildData, ArtifactsBySlot } from "./Worker";
+import { ArtifactBuildData, ArtifactsBySlot, RequestFilter } from "./Worker";
 
 export function compactNodes(nodes: Node[]): CompactNodes {
-  const affineNodes = new Set<Node>()
-  const topLevelAffine = new Set<Node>()
+  const affineNodes = new Set<Node>(), topLevelAffine = new Set<Node>()
 
   function visit(node: Node, isAffine: boolean) {
     if (isAffine) affineNodes.add(node)
@@ -30,9 +29,7 @@ export function compactNodes(nodes: Node[]): CompactNodes {
       case "const": visit(f, true); break
       case "res": case "threshold_add": case "sum_frac":
       case "max": case "min": visit(f, false); break
-      case "data":
-      case "subscript": case "lookup":
-      case "match": case "unmatch":
+      case "data": case "subscript": case "lookup": case "match": case "unmatch":
         throw new Error(`Found unsupported ${operation} node when computing affine nodes`)
       default: assertUnreachable(operation)
     }
@@ -101,8 +98,7 @@ export function pruneRange(nodes: Node[], arts: ArtifactsBySlot, minimum: number
 
 function compactArtifact(nodes: CompactNodes, id: string, setKey: ArtifactSetKey, art: Data, base: number[]): ArtifactBuildData {
   return {
-    id: id,
-    set: setKey,
+    id: id, set: setKey,
     values: (constantFold(nodes.affine, art, _ => true) as ConstantNode[])
       .map((x, i) => x.value - base[i])
   }
@@ -148,8 +144,7 @@ function computeRange(nodes: Node[], reads: MinMax[]): MinMax[] {
           ])
         break
       }
-      case "lookup": case "data":
-      case "match": case "unmatch":
+      case "data": case "lookup": case "match": case "unmatch":
         throw new Error(`Unsupported ${operation} node`)
       default: assertUnreachable(operation)
     }
@@ -162,7 +157,38 @@ function computeMinMax(values: number[], minMaxes: MinMax[] = []): MinMax {
   const min = Math.min(values.reduce((a, b) => a > b ? b : a, Infinity), ...minMaxes.map(x => x.min))
   return { min, max }
 }
+export function* setPermutations(setFilters: Dict<ArtifactSetKey, number>): Iterable<RequestFilter> {
+  const list = [{
+    value: [] as (ArtifactSetKey | "other")[],
+    remaining: setFilters,
+    otherRemaining: Object.values(setFilters).reduce((a, b) => a - b, 5)
+  }]
+  const otherCommand = { kind: "exclude", sets: new Set(Object.keys(setFilters)) } as const
+
+  while (list.length) {
+    const { value, remaining, otherRemaining } = list.pop()!
+    if (!Object.keys(remaining).length) {
+      yield objectFromKeyMap(allSlotKeys, (_, i) => {
+        const set = value[i]
+        if (set === "other") return otherCommand
+        if (!set) return { kind: "exclude", sets: new Set() }
+        return { kind: "required", sets: new Set([set]) }
+      })
+      continue
+    }
+    for (const set of ["other" as const, ...Object.keys(remaining)]) {
+      if (set === "other" && !otherRemaining) continue
+
+      const newValue = [...value, set], newRemaining = { ...remaining }
+      let newOtherRemaining = otherRemaining
+      if (set !== "other") {
+        newRemaining[set]! -= 1
+        if (newRemaining[set]! <= 0) delete newRemaining[set]
+      } else newOtherRemaining -= 1
+      list.push({ value: newValue, remaining: newRemaining, otherRemaining: newOtherRemaining })
+    }
+  }
+}
 
 type MinMax = { min: number, max: number }
-
 type CompactNodes = { nodes: Node[], affine: Node[] }

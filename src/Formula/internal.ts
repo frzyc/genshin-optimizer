@@ -1,6 +1,6 @@
 import { ConstantNode, Info, Node } from "./type"
 
-export function forEachNodes(formulas: Node[], topDown: (formula: Node) => void, bottomUp: (formula: Node) => void) {
+export function forEachNodes(formulas: Node[], topDown: (formula: Node) => void, bottomUp: (formula: Node) => void): void {
   const visiting = new Set<Node>(), visited = new Set<Node>()
 
   function traverse(formula: Node) {
