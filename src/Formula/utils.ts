@@ -2,12 +2,17 @@
 import { objectFromKeyMap } from "../Util/Util"
 import type { Data, DataNode, Info, Node, ReadNode, StringNode, StringReadNode } from "./type"
 
-export const todo: Node = { operation: "const", value: NaN, operands: [], info: { key: "TODO" } }
+export const todo: Node = constant(NaN, { key: "TODO" })
 export const unit = percent(1), naught = percent(0)
 
+export function constant(value: number, info?: Info): Node {
+  if (value === Number.MAX_VALUE) value = Infinity
+  if (value === Number.MIN_VALUE) value = -Infinity
+  return { operation: "const", operands: [], value, info }
+}
 /** `value` in percentage. The value is written as non-percentage, e.g., use `percent(1)` for 100% */
 export function percent(value: number, info?: Info): Node {
-  return { operation: "const", operands: [], value, info: { key: "_", ...info } }
+  return constant(value, { key: "_", ...info })
 }
 /** Inject `info` to the node in-place */
 export function infoMut(node: Node, info: Info): Node {
@@ -108,7 +113,7 @@ export function stringLookup(string: StringNode, table: Dict<string, StringNode>
 
 
 function intoOperands(values: (number | Node)[]): Node[] {
-  return values.map(value => typeof value === "number" ? { operation: "const", value, operands: [] } : value)
+  return values.map(value => typeof value === "number" ? constant(value) : value)
 }
 function intoString(value: string | StringNode | undefined): StringNode {
   return (!value || typeof value === "string") ? { operation: "sconst", operands: [], value } : value

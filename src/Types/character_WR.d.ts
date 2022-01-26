@@ -1,5 +1,5 @@
 import { UIData } from "../Formula/api";
-import { EleEnemyResKey } from "../KeyMap";
+import { EleEnemyResKey, StatKey } from "../KeyMap";
 import { BuildSetting } from "./Build";
 import { ICachedCharacter } from "./character";
 import { CharacterKey, ElementKey, HitModeKey, ReactionModeKey, SlotKey, WeaponTypeKey } from "./consts";
@@ -64,7 +64,7 @@ export interface ICharacter {
   elementKey?: ElementKey
   reactionMode: ReactionModeKey | ""
   conditional: IConditionalValues
-  bonusStats: Partial<Record<Statkey, number>>
+  bonusStats: Partial<Record<StatKey, number>>
   enemyOverride: Partial<Record<EleEnemyResKey | "enemyLevel" | "enemyDefRed_" | "enemyDefIgn_", number>>
   infusionAura: ElementKey | ""
   buildSettings?: BuildSetting

@@ -8,7 +8,11 @@ import { ComputeNode, Data, DataNode, DisplaySub, LookupNode, Node, ReadNode, St
 const shouldWrap = true
 
 export function valueString(value: number, unit: "%" | "flat", fixed = -1): string {
-  if (value === Number.MAX_VALUE) value = Infinity
+  if (!isFinite(value)) {
+    if (value > 0) return `\u221E`
+    if (value < 0) return `-\u221E`
+    return 'NaN'
+  }
   if (unit === "%") value *= 100
   else unit = '' as any
   if (Number.isInteger(value)) fixed = 0
@@ -241,7 +245,8 @@ export class UIData {
     switch (operation) {
       case "add": case "mul": case "min": case "max":
         const identity = allOperations[operation]([])
-        operands = operands.filter(operand => operand.pivot || operand.value !== identity)
+        if (process.env.NODE_ENV !== "development")
+          operands = operands.filter(operand => operand.pivot || operand.value !== identity)
         if (!operands.length)
           return variant ? { ...this._constant(identity), variant } : this._constant(identity)
     }

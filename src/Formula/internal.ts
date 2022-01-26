@@ -1,4 +1,5 @@
 import { ConstantNode, Info, Node } from "./type"
+import { constant } from "./utils"
 
 export function forEachNodes(formulas: Node[], topDown: (formula: Node) => void, bottomUp: (formula: Node) => void): void {
   const visiting = new Set<Node>(), visited = new Set<Node>()
@@ -110,10 +111,6 @@ export function mapContextualFormulas(formulas: Node[], baseContextId: number, t
 }
 
 type ContextID = number
-
-export function constant(value: number, info?: Info): ConstantNode {
-  return { operation: "const", value, info, operands: [] }
-}
 
 function arrayEqual<T>(a: T[] | undefined, b: T[] | undefined): boolean {
   if (a === undefined) return b === undefined

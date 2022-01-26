@@ -1,6 +1,7 @@
 import { resolve } from "../Util/KeyPathUtil"
 import { assertUnreachable } from "../Util/Util"
-import { constant, forEachNodes, mapContextualFormulas, mapFormulas } from "./internal"
+import { forEachNodes, mapContextualFormulas, mapFormulas } from "./internal"
+import { constant } from "./utils"
 import { CommutativeMonoidOperation, ComputeNode, ConstantNode, Data, Node, Operation, ReadNode, StringNode } from "./type"
 
 const allCommutativeMonoidOperations: StrictDict<CommutativeMonoidOperation, (_: number[]) => number> = {

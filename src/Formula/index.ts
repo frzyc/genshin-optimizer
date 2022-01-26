@@ -3,7 +3,7 @@ import { allMainStatKeys, allSubstats } from "../Types/artifact_WR"
 import { allArtifactSets, allElementsWithPhy, allSlotKeys } from "../Types/consts"
 import { objectFromKeyMap } from "../Util/Util"
 import { Info, Node, ReadNode, StringNode, StringReadNode } from "./type"
-import { frac, lookup, max, min, naught, percent, prod, read, res, setReadNodeKeys, stringConst, stringLookup, stringMatch, stringPrio, stringRead, sum, unit } from "./utils"
+import { frac, lookup, max, min, naught, percent, prod, read, res, setReadNodeKeys, stringConst, stringLookup, stringMatch, stringPrio, stringRead, sum, constant, unit } from "./utils"
 
 const allMainSubStats = [...new Set([...allMainStatKeys, ...allSubstats] as const)]
 const allElements = allElementsWithPhy
@@ -202,7 +202,7 @@ const common = {
   },
 
   misc: {
-    stamina: { operation: "const", operands: [], value: 100 } as Node
+    stamina: constant(100)
   }
 } as const
 

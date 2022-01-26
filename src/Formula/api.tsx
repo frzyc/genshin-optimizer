@@ -6,10 +6,9 @@ import { allElementsWithPhy, ArtifactSetKey } from "../Types/consts";
 import { ICachedWeapon } from "../Types/weapon";
 import { crawlObject, layeredAssignment, objectFromKeyMap } from "../Util/Util";
 import { input } from "./index";
-import { constant } from "./internal";
 import { Data, DisplaySub, Node, ReadNode } from "./type";
 import { NodeDisplay, UIData, valueString } from "./uiData";
-import { frac, infoMut, percent, prod, stringConst, subscript, sum, unit } from "./utils";
+import { frac, constant, infoMut, percent, prod, stringConst, subscript, sum, unit } from "./utils";
 
 function dataObjForArtifactSheet(
   key: ArtifactSetKey,
