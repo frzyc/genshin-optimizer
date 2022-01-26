@@ -10,7 +10,6 @@ import { DataContext } from '../../DataContext';
 import { getDisplayHeader, getDisplaySections } from '../../Formula/DisplayUtil';
 import { DisplaySub } from '../../Formula/type';
 import { NodeDisplay } from '../../Formula/uiData';
-import Formula_DEP from '../../Formula_DEP';
 import KeyMap from '../../KeyMap';
 import usePromise from '../../ReactHooks/usePromise';
 import { objPathValue } from '../../Util/Util';
@@ -28,7 +27,6 @@ export default function OptimizationTargetSelector({ optimizationTarget, setTarg
   const [open, setOpen] = useState(false)
   const onOpen = useCallback(() => !disabled && setOpen(true), [setOpen, disabled])
   const onClose = useCallback(() => setOpen(false), [setOpen])
-  const formula = usePromise(Array.isArray(optimizationTarget) ? Formula_DEP.get(optimizationTarget) : undefined, [optimizationTarget])
 
   const setTargetHandler = useCallback(
     (target: string[]) => {
@@ -56,7 +54,7 @@ export default function OptimizationTargetSelector({ optimizationTarget, setTarg
   </>
 }
 function SelectorSection({ displayNs, sectionKey, setTarget }: { displayNs: DisplaySub<NodeDisplay>, sectionKey: string, setTarget: (target: string[]) => void }) {
-  const { data, oldData } = useContext(DataContext)
+  const { data } = useContext(DataContext)
   const header = usePromise(getDisplayHeader(data, sectionKey), [data, sectionKey])
   if (!header) return null
   return <CardLight key={sectionKey as string}>

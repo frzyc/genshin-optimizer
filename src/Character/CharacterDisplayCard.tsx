@@ -1,5 +1,5 @@
 import { Button, ButtonGroup, Card, CardContent, Divider, Grid, MenuItem, Skeleton, Tab, Tabs, Typography } from '@mui/material';
-import { Suspense, useCallback, useContext, useEffect, useMemo, useState } from 'react';
+import { Suspense, useCallback, useContext, useEffect, useState } from 'react';
 import CardDark from '../Components/Card/CardDark';
 import CardLight from '../Components/Card/CardLight';
 import { CharacterSelectionModal } from '../Components/Character/CharacterSelectionModal';
@@ -19,8 +19,6 @@ import useCharacterReducer from '../ReactHooks/useCharacterReducer';
 import useCharSelectionCallback from '../ReactHooks/useCharSelectionCallback';
 import useCharUIData from '../ReactHooks/useCharUIData';
 import { CharacterKey } from '../Types/consts';
-import { ICalculatedStats } from '../Types/stats';
-import { deepCloneStats } from '../Util/StatUtil';
 import { clamp } from '../Util/Util';
 import { defaultInitialWeapon } from '../Weapon/WeaponUtil';
 import CharacterArtifactPane from './CharacterDisplay/CharacterArtifactPane';
@@ -54,14 +52,14 @@ function TabPanel({ children, current, value, ...other }: TabPanelProps) {
 type CharacterDisplayCardProps = {
   characterKey: CharacterKey,
   footer?: JSX.Element
-  newBuild?: ICalculatedStats,
+  newBuild?: UIData,
+  mainStatAssumptionLevel?: number,
   onClose?: (any) => void,
   tabName?: string,
   isFlex?: boolean,
-  compareBuild?: boolean
 }
-export default function CharacterDisplayCard({ characterKey, footer, newBuild: propNewBuild, onClose, tabName, isFlex }: CharacterDisplayCardProps) {
-  const { data: charUIData, character, characterSheet, database } = useCharUIData(characterKey) ?? {}
+export default function CharacterDisplayCard({ characterKey, footer, newBuild, mainStatAssumptionLevel = 0, onClose, tabName, isFlex }: CharacterDisplayCardProps) {
+  const { data: charUIData, character, characterSheet, database } = useCharUIData(characterKey, mainStatAssumptionLevel) ?? {}
 
   useEffect(() => {
     if (!characterKey || !database) return
@@ -78,17 +76,11 @@ export default function CharacterDisplayCard({ characterKey, footer, newBuild: p
     })()
   }, [database, characterKey])
 
-  const newBuild = useMemo(() => {
-    if (!propNewBuild) return undefined
-    return deepCloneStats(propNewBuild)
-  }, [propNewBuild])
-
   // set initial state to false, because it fails to check validity of the tab values on 1st load
   const [tab, settab] = useState<string | boolean>(tabName ? tabName : (newBuild ? "newartifacts" : "character"))
 
   const onTab = useCallback((e, v) => settab(v), [settab])
 
-  const mainStatAssumptionLevel = newBuild?.mainStatAssumptionLevel ?? 0
   const characterDispatch = useCharacterReducer(character?.key ?? "")
   if (!character || !characterSheet || !charUIData) return <></>
   const { compareData } = character
@@ -97,6 +89,7 @@ export default function CharacterDisplayCard({ characterKey, footer, newBuild: p
   const dataContextValue = {
     character,
     characterSheet,
+    mainStatAssumptionLevel,
     data: (newData ? newData : charUIData) as UIData,
     oldData: (compareData && newData) ? charUIData : undefined,
     characterDispatch

@@ -8,6 +8,7 @@ export type dataContextObj = {
   characterSheet: CharacterSheet
   data: UIData,
   oldData?: UIData,
+  mainStatAssumptionLevel: number,
   characterDispatch: (any) => void
 }
 

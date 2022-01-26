@@ -24,6 +24,8 @@ import { dbStorage } from '../Database/DBStorage';
 import { DataContext, dataContextObj } from '../DataContext';
 import { input } from '../Formula';
 import { Data, Node } from '../Formula/type';
+import { computeUIData, dataObjForArtifact } from '../Formula/api';
+import { UIData } from '../Formula/uiData'
 import { GlobalSettingsContext } from '../GlobalSettings';
 import useCharacterReducer from '../ReactHooks/useCharacterReducer';
 import useCharSelectionCallback from '../ReactHooks/useCharSelectionCallback';
@@ -31,7 +33,7 @@ import useCharUIData from '../ReactHooks/useCharUIData';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
 import usePromise from '../ReactHooks/usePromise';
 import { ArtifactsBySlot, BuildSetting } from '../Types/Build';
-import { allSlotKeys, ArtifactSetKey } from '../Types/consts';
+import { allSlotKeys, ArtifactSetKey, CharacterKey } from '../Types/consts';
 import { objectFromKeyMap } from '../Util/Util';
 import { calculateTotalBuildNumber, maxBuildsToShowList } from './Build';
 import { initialBuildSettings } from './BuildSetting';
@@ -47,6 +49,9 @@ import OptimizationTargetSelector from './Components/OptimizationTargetSelector'
 import StatFilterCard from './Components/StatFilterCard';
 import TeamBuffCard from './Components/TeamBuffCard';
 import { Finalize, FinalizeResult, Request, Setup, WorkerResult } from './Worker';
+import useCharacter from '../ReactHooks/useCharacter';
+import ArtifactBuildDisplayItem from './Components/ArtifactBuildDisplayItem';
+import ChartCard from './ChartCard';
 const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
 
 //lazy load the character display
@@ -95,8 +100,6 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     return characterKey
   })
 
-  const { data, character, characterSheet, weapon, weaponSheet, dataWoArt } = useCharUIData(characterKey) ?? {}
-  const compareData = character?.compareData ?? false
   const [modalBuildIndex, setmodalBuildIndex] = useState(-1) // the index of the newBuild that is being displayed in the character modal,
 
   const [generatingBuilds, setgeneratingBuilds] = useState(false)
@@ -112,19 +115,23 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
 
   const setCharacter = useCharSelectionCallback()
   const characterDispatch = useCharacterReducer(characterKey)
-
+  const character = useCharacter(characterKey)
   const buildSettings = character?.buildSettings ?? initialBuildSettings()
   const { plotBase, setFilters, statFilters, mainStatKeys, optimizationTarget, mainStatAssumptionLevel, useExcludedArts, useEquippedArts, builds, buildDate, maxBuildsToShow, levelLow, levelHigh } = buildSettings
+  const { data, characterSheet, weapon, weaponSheet, dataWoArt } = useCharUIData(characterKey, mainStatAssumptionLevel) ?? {}
 
+  const compareData = character?.compareData ?? false
 
-  // const buildStats = useMemo(() => {
-  //   if (!initialStats || !artifactSheets) return []
-  //   return builds.map(build => {
-  //     const arts = Object.fromEntries(build.map(id => database._getArt(id)).map(art => [art?.slotKey, art]))
-  //     const stats = Character.calculateBuildwithArtifact(deepCloneStats(initialStats), arts, artifactSheets)
-  //     return finalStatProcess(stats)
-  //   }).filter(build => build)
-  // }, [builds, database, initialStats, artifactSheets])
+  const buildDatas = useMemo(() => {
+    if (!dataWoArt) return []
+    return builds.map(build => {
+      const arts = build.map(id => database._getArt(id))
+      return computeUIData([
+        ...arts.filter(a => a).map(a => dataObjForArtifact(a!)),
+        ...dataWoArt,
+      ])
+    }).filter(build => build)
+  }, [builds, database, dataWoArt])
 
   const noCharacter = useMemo(() => !database._getCharKeys().length, [database])
   const noArtifact = useMemo(() => !database._getArts().length, [database])
@@ -151,19 +158,6 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   useEffect(() => {
     dbStorage.set("BuildsDisplay.state", { characterKey })
   }, [characterKey])
-
-  //validate optimizationTarget
-  // useEffect(() => {
-  //   if (!optimizationTarget) return
-  //   if (!statsDisplayKeys) return
-  //   if (!Array.isArray(optimizationTarget)) return
-  //   for (const sectionKey in statsDisplayKeys) {
-  //     const section = statsDisplayKeys[sectionKey]
-  //     for (const keys of section)
-  //       if (JSON.stringify(keys) === JSON.stringify(optimizationTarget)) return
-  //   }
-  //   buildSettingsDispatch({ optimizationTarget: initialBuildSettings().optimizationTarget })
-  // }, [optimizationTarget, statsDisplayKeys, buildSettingsDispatch])
 
   const { split, totBuildNumber } = useMemo(() => {
     if (!characterKey) // Make sure we have all slotKeys
@@ -347,6 +341,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     data,
     characterSheet,
     character,
+    mainStatAssumptionLevel,
     characterDispatch
   }
   return <Box display="flex" flexDirection="column" gap={1} sx={{ my: 1 }}>
@@ -358,7 +353,7 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
         "Rainbow builds can sometimes be \"optimal\". Good substat combinations can sometimes surpass set effects.",
         "The more complex the formula, the longer the generation time.",]}
     ><InfoDisplay /></InfoComponent>
-    {/* <BuildModal build={buildStats[modalBuildIndex]} characterKey={characterKey} onClose={closeBuildModal} compareBuild={compareBuild} /> */}
+    <BuildModal build={buildDatas[modalBuildIndex]} characterKey={characterKey} onClose={closeBuildModal} />
     {noCharacter && <Alert severity="error" variant="filled"> Opps! It looks like you haven't added a character to GO yet! You should go to the <Link component={RouterLink} to="/character">Characters</Link> page and add some!</Alert>}
     {noArtifact && <Alert severity="warning" variant="filled"> Opps! It looks like you haven't added any artifacts to GO yet! You should go to the <Link component={RouterLink} to="/artifact">Artifacts</Link> page and add some!</Alert>}
     {/* Build Generator Editor */}
@@ -393,10 +388,10 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
               {/* character card */}
               <Box><CharacterCard characterKey={characterKey} onClick={generatingBuilds ? undefined : setCharacter} /></Box>
 
-              {!!character && <BonusStatsCard character={character} />}
+              <BonusStatsCard />
               <TeamBuffCard />
               {/* Enemy Editor */}
-              {!!character && <EnemyEditorCard />}
+              <EnemyEditorCard />
               {/*Minimum Final Stat Filter */}
               <StatFilterCard statFilters={statFilters} setStatFilters={sFs => buildSettingsDispatch({ statFilters: sFs })} disabled={generatingBuilds} />
               {/* Hit mode options */}
@@ -499,17 +494,17 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
           {!!characterKey && <Box >
             <BuildAlert {...{ totBuildNumber, generatingBuilds, generationSkipped, generationProgress, generationDuration, characterName, maxBuildsToShow }} />
           </Box>}
-          {/* {tcMode && statsDisplayKeys && <Box >
-          <ChartCard disabled={generatingBuilds} data={chartData} plotBase={plotBase} setPlotBase={setPlotBase} statKeys={statsDisplayKeys?.basicKeys} />
-        </Box>} */}
+          {tcMode && <Box >
+            <ChartCard disabled={generatingBuilds} plotData={chartData} plotBase={plotBase} setPlotBase={setPlotBase} />
+          </Box>}
         </CardContent>
       </CardDark>
       <CardDark>
         <CardContent>
           <Box display="flex" justifyContent="space-between" alignItems="center" >
             <Typography>
-              {/* {buildStats ? <span>Showing <strong>{buildStats.length}</strong> Builds generated for {characterName}. {!!buildDate && <span>Build generated on: <strong>{(new Date(buildDate)).toLocaleString()}</strong></span>}</span>
-              : <span>Select a character to generate builds.</span>} */}
+              {buildDatas ? <span>Showing <strong>{buildDatas.length}</strong> Builds generated for {characterName}. {!!buildDate && <span>Build generated on: <strong>{(new Date(buildDate)).toLocaleString()}</strong></span>}</span>
+                : <span>Select a character to generate builds.</span>}
             </Typography>
             <SolidToggleButtonGroup exclusive value={compareData} onChange={(e, v) => buildSettingsDispatch({ compareData: v })} size="small">
               <ToggleButton value={false} disabled={!compareData}>
@@ -524,16 +519,16 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
       </CardDark>
       <Suspense fallback={<Skeleton variant="rectangular" width="100%" height={600} />}>
         {/* Build List */}
-        {/* {buildStats?.map((build, index) =>
-        sheets && equippedBuild && <ArtifactBuildDisplayItem sheets={sheets} equippedBuild={equippedBuild} newBuild={build} characterKey={characterKey as CharacterKey} index={index} key={Object.values(build.equippedArtifacts ?? {}).join()}
-          statsDisplayKeys={statsDisplayKeys} onClick={() => setmodalBuildIndex(index)} compareBuild={compareData} disabled={!!generatingBuilds} />
-      )} */}
+        {buildDatas?.map((build, index) => <DataContext.Provider value={{ ...dataContext, data: build, oldData: data }}>
+          <ArtifactBuildDisplayItem index={index} key={index} onClick={() => setmodalBuildIndex(index)} compareBuild={compareData} disabled={!!generatingBuilds} />
+        </DataContext.Provider>
+        )}
       </Suspense>
     </DataContext.Provider>}
   </Box>
 }
 
-function BuildModal({ build, characterKey, onClose }) {
+function BuildModal({ build, characterKey, onClose }: { build: UIData, characterKey: CharacterKey, onClose: () => void }) {
   return <ModalWrapper open={!!build} onClose={onClose} containerProps={{ maxWidth: "xl" }}>
     <CharacterDisplayCard
       characterKey={characterKey}

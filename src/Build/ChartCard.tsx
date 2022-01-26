@@ -1,29 +1,36 @@
 import { CheckBox, CheckBoxOutlineBlank, Download, Info } from '@mui/icons-material';
 import { Button, CardContent, Collapse, Divider, Grid, MenuItem, styled, Tooltip, Typography } from '@mui/material';
-import { useMemo, useState } from 'react';
+import { useContext, useMemo, useState } from 'react';
 import { CartesianGrid, ComposedChart, Legend, Line, ResponsiveContainer, Scatter, XAxis, YAxis, ZAxis } from 'recharts';
 import CardDark from '../Components/Card/CardDark';
 import CardLight from '../Components/Card/CardLight';
 import DropdownButton from '../Components/DropdownMenu/DropdownButton';
+import { DataContext } from '../DataContext';
+import { input } from '../Formula';
+import KeyMap from '../KeyMap';
 import Stat from '../Stat';
-import { StatKey } from '../Types/artifact';
+import { MainStatKey, SubstatKey } from '../Types/artifact_WR';
 type ChartCardProps = {
-  data: { plotBase: number, optimizationTarget: number }[]
-  plotBase: StatKey | "",
-  setPlotBase: (key: StatKey | "") => void
-  statKeys: StatKey[]
+  plotData: { plotBase: number, optimizationTarget: number }[]
+  plotBase: MainStatKey | SubstatKey | "",
+  setPlotBase: (key: MainStatKey | SubstatKey | "") => void
   disabled?: boolean
 }
-export default function ChartCard({ data, plotBase, setPlotBase, statKeys, disabled = false }: ChartCardProps) {
+export default function ChartCard({ plotData, plotBase, setPlotBase, disabled = false }: ChartCardProps) {
   const [showDownload, setshowDownload] = useState(false)
   const [showMin, setshowMin] = useState(true)
+  const { data } = useContext(DataContext)
+
+  const statKeys = ["atk", "hp", "def", "eleMas", "critRate_", "critDMG_", "heal_", "enerRech_"]
+  if (data.getStr(input.weaponType).value !== "catalyst") statKeys.push("physical_dmg_")
+  statKeys.push(`${data.getStr(input.charEle).value}_dmg_`)
 
   const { displayData, downloadData } = useMemo(() => {
     type Point = { x: number, y: number, min?: number }
 
-    if (!data?.length) return { displayData: null, downloadData: null }
+    if (!plotData?.length) return { displayData: null, downloadData: null }
 
-    const increasingX: Point[] = data.map(x => ({ x: x.plotBase, y: x.optimizationTarget })).sort((a, b) => a.x - b.x)
+    const increasingX: Point[] = plotData.map(x => ({ x: x.plotBase, y: x.optimizationTarget })).sort((a, b) => a.x - b.x)
     const minimumData: Point[] = []
     for (const point of increasingX) {
       let last: Point | undefined
@@ -48,7 +55,7 @@ export default function ChartCard({ data, plotBase, setPlotBase, statKeys, disab
       allData: increasingX.map(({ x, y }) => [x, y]),
     }
     return { displayData: increasingX, downloadData }
-  }, [data])
+  }, [plotData])
 
   return <CardLight>
     <CardContent>
@@ -63,7 +70,7 @@ export default function ChartCard({ data, plotBase, setPlotBase, statKeys, disab
           >
             <MenuItem onClick={() => { setPlotBase("") }}>Unselect</MenuItem>
             <Divider />
-            {statKeys.map(sKey => <MenuItem key={sKey} onClick={() => { setPlotBase(sKey) }}>{Stat.getStatNameWithPercent(sKey)}</MenuItem>)}
+            {statKeys.map(sKey => <MenuItem key={sKey} onClick={() => { setPlotBase(sKey as any) }}>{KeyMap.get(sKey)}</MenuItem>)}
           </DropdownButton>
         </Grid>
         <Grid item flexGrow={1}>

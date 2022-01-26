@@ -17,13 +17,11 @@ import { objectFromKeyMap } from '../../Util/Util';
 import StatDisplayComponent from './StatDisplayComponent';
 
 function CharacterArtifactPane() {
-  const { data, oldData, character, characterDispatch } = useContext(DataContext)
+  const { data, oldData, character, mainStatAssumptionLevel, characterDispatch } = useContext(DataContext)
   const compareData = !!oldData
 
   const database = useContext(DatabaseContext)
   const history = useHistory()
-  //choose which one to display stats for
-  const mainStatAssumptionLevel = 0// TODO: stats?.mainStatAssumptionLevel ?? 0
   const edit = useCallback(
     artid => history.push({
       pathname: "/artifact",

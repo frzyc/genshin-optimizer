@@ -1,4 +1,4 @@
-import { ICachedArtifact, MainStatKey, StatKey } from "./artifact"
+import { ICachedArtifact, MainStatKey, StatKey, SubstatKey } from "./artifact_WR"
 import { ArtifactSetKey, SetNum, SlotKey } from "./consts"
 import { BonusStats, ICalculatedStats } from "./stats"
 
@@ -20,7 +20,7 @@ export interface BuildSetting {
   builds: string[][]
   buildDate: number,
   maxBuildsToShow: number,
-  plotBase: StatKey | "",
+  plotBase: MainStatKey | SubstatKey | "",
   compareBuild: boolean,
   levelLow: number,
   levelHigh: number,

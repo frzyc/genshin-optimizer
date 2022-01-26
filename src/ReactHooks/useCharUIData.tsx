@@ -13,7 +13,7 @@ import useForceUpdate from "./useForceUpdate";
 import usePromise from "./usePromise";
 import useWeapon from "./useWeapon";
 
-export default function useCharUIData(characterKey: CharacterKey | "") {
+export default function useCharUIData(characterKey: CharacterKey | "", mainStatAssumptionLevel: number = 0) {
   const database = useContext(DatabaseContext)
   const character = useCharacter(characterKey)
   const weapon = useWeapon(character?.equippedWeapon)
@@ -47,10 +47,10 @@ export default function useCharUIData(characterKey: CharacterKey | "") {
   ], [dbDirty, character, characterSheet, weapon, weaponSheet, artifacts, artifactSheetsData])
 
   const data = useMemo(() => dataWoArt && artifacts && computeUIData([
-    ...Object.values(artifacts).filter(a => a).map(a => dataObjForArtifact(a)),
+    ...Object.values(artifacts).filter(a => a).map(a => dataObjForArtifact(a, mainStatAssumptionLevel)),
     ...dataWoArt,
   ]),
-    [dataWoArt, artifacts])
+    [dataWoArt, artifacts, mainStatAssumptionLevel])
   if (!data || !character || !characterSheet || !weapon || !weaponSheet || !artifacts || !artifactSheetsData || !database || !dataWoArt)
     return undefined
   return { data, character, characterSheet, weapon, weaponSheet, artifacts, artifactSheetsData, database, dataWoArt }

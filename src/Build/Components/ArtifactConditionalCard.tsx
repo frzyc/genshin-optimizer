@@ -37,7 +37,7 @@ function ArtConditionalModal({ open, onClose, artifactCondCount }: {
   const resetArtConds = useCallback(() => {
     const conditional = Object.fromEntries(Object.entries(character.conditional).filter(([k, v]) => !allArtifactSets.includes(k as any)))
     characterDispatch({ conditional })
-  }, [character]);
+  }, [character, characterDispatch]);
 
   if (!artifactSheets) return null
   const artSetKeyList = Object.entries(ArtifactSheet.setKeysByRarities(artifactSheets)).reverse().flatMap(([, sets]) => sets)
