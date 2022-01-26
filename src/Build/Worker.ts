@@ -1,6 +1,6 @@
 import { allSlotKeys, ArtifactSetKey, SlotKey } from '../Types/consts';
 import { optimize, precompute } from '../Formula/optimization';
-import type { Data, Node } from '../Formula/type'
+import type { Node } from '../Formula/type'
 import type { MainStatKey, SubstatKey } from '../Types/artifact';
 
 let id: string
@@ -12,10 +12,10 @@ let threshold = -Infinity
 let minThresholds: number[]
 let builds: Build[] = []
 
-let plotData: { scale: number, values: Dict<number, Build[]> } | undefined
+let plotData: PlotData | undefined
 let callback: (interim: InterimResult) => void
 
-export function setup({ id: _id, data, optimizationTarget, filters, plotBase, maxBuildsToShow, artifactsBySlot: _artifactsBySlot }: Setup, _callback: (interim: InterimResult) => void) {
+export function setup({ id: _id, optimizationTarget, filters, plotBase, maxBuildsToShow, artifactsBySlot: _artifactsBySlot }: Setup, _callback: (interim: InterimResult) => void) {
   id = _id
   callback = _callback
   builds = []
@@ -24,10 +24,10 @@ export function setup({ id: _id, data, optimizationTarget, filters, plotBase, ma
   nodes = filters.map(x => x.value)
   nodes.push(optimizationTarget)
   if (plotBase) {
-    plotData = { scale: 0.01, values: {} }
+    plotData = {}
     nodes.push(plotBase)
   }
-  nodes = optimize(nodes, data, ({ path: [p] }) => p !== "art" && p !== "artSet")
+  nodes = optimize(nodes, {}, ({ path: [p] }) => p !== "art" && p !== "artSet")
   maxNumBuilds = maxBuildsToShow
   artifactsBySlot = _artifactsBySlot
   Object.values(artifactsBySlot).forEach(arts =>
@@ -80,7 +80,7 @@ export function request({ threshold: newThreshold, filter: filters }: Request): 
   }
 
   permute(arts.length - 1, {})
-  return {}
+  return { command: "request" }
 }
 export function finalize(): FinalizeResult {
   return { command: "finalize", id, builds, plotData }
@@ -95,7 +95,7 @@ export let interimReport = (count: { build: number, failed: number }): void => {
 
   const newThreshold = newBuilds[newBuilds.length - 1]?.value ?? -Infinity
   threshold = newThreshold
-  callback({ command: "interim", id, threshold, buildCount: count.build, failedCount: count.failed })
+  callback({ command: "interim", id, threshold, buildCount: count.build, failedCount: count.failed, skippedCount: 0 })
   count.build = 0
   count.failed = 0
 }
@@ -112,7 +112,6 @@ export type ArtifactsBySlot = StrictDict<SlotKey, ArtifactBuildData[]>
 export interface Setup {
   command: "setup"
   id: string
-  data: Data
   artifactsBySlot: ArtifactsBySlot
   optimizationTarget: Node
   filters: { value: Node, min: number }[]
@@ -129,11 +128,12 @@ export type RequestFilter = StrictDict<SlotKey,
   { kind: "exclude", sets: Set<ArtifactSetKey> } |
   { kind: "id", ids: Set<string> }
 >
+export type PlotData = Dict<number, Build>
 export interface Finalize {
   command: "finalize"
 }
 
-export type Result = InterimResult | RequestResult | FinalizeResult
+export type WorkerResult = InterimResult | RequestResult | FinalizeResult
 export interface InterimResult {
   command: "interim"
   id: string
@@ -142,15 +142,16 @@ export interface InterimResult {
   buildCount: number
   /** The number of builds that does not meet the min-filter requirement since last report */
   failedCount: number
+  skippedCount: number
 }
 export interface FinalizeResult {
   command: "finalize"
   id: string
   builds: Build[]
-  plotData: typeof plotData
+  plotData?: PlotData
 }
 export interface RequestResult {
-
+  command: "request"
 }
 export interface Build {
   value: number

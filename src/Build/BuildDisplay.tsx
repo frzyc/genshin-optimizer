@@ -22,6 +22,8 @@ import SolidToggleButtonGroup from '../Components/SolidToggleButtonGroup';
 import { DatabaseContext } from '../Database/Database';
 import { dbStorage } from '../Database/DBStorage';
 import { DataContext, dataContextObj } from '../DataContext';
+import { input } from '../Formula';
+import { Data, Node } from '../Formula/type';
 import { GlobalSettingsContext } from '../GlobalSettings';
 import useCharacterReducer from '../ReactHooks/useCharacterReducer';
 import useCharSelectionCallback from '../ReactHooks/useCharSelectionCallback';
@@ -29,10 +31,11 @@ import useCharUIData from '../ReactHooks/useCharUIData';
 import useForceUpdate from '../ReactHooks/useForceUpdate';
 import usePromise from '../ReactHooks/usePromise';
 import { ArtifactsBySlot, BuildSetting } from '../Types/Build';
-import { allSlotKeys } from '../Types/consts';
+import { allSlotKeys, ArtifactSetKey } from '../Types/consts';
 import { objectFromKeyMap } from '../Util/Util';
 import { calculateTotalBuildNumber, maxBuildsToShowList } from './Build';
 import { initialBuildSettings } from './BuildSetting';
+import { compactArtifacts, compactNodes, countBuilds, filterArts, mergeBuilds, mergePlot, pruneOrder, pruneRange, setPermutations } from './Build_WR';
 import ArtifactConditionalCard from './Components/ArtifactConditionalCard';
 import ArtifactSetPicker from './Components/ArtifactSetPicker';
 import BonusStatsCard from './Components/BonusStatsCard';
@@ -43,6 +46,7 @@ import MainStatSelectionCard, { artifactsSlotsToSelectMainStats } from './Compon
 import OptimizationTargetSelector from './Components/OptimizationTargetSelector';
 import StatFilterCard from './Components/StatFilterCard';
 import TeamBuffCard from './Components/TeamBuffCard';
+import { Finalize, FinalizeResult, Request, Setup, WorkerResult } from './Worker';
 const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
 
 //lazy load the character display
@@ -192,185 +196,143 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
   //terminate worker when component unmounts
   useEffect(() => () => cancelToken.current(), [])
   const generateBuilds = useCallback(async () => {
-    // const t1 = performance.now()
-    // if (!initialStats || !artifactSheets) return
-    // let canceled = false
-    // const workerkillers = [] as Array<() => void>
-    // cancelToken.current = () => {
-    //   canceled = true
-    //   workerkillers.forEach(w => w())
-    // }
-    // setgeneratingBuilds(true)
-    // setchartData(undefined)
-    // setgenerationDuration(0)
-    // setgenerationProgress(0)
-    // setgenerationSkipped(0)
-    // //get the formula for this target
+    // TODO: Connect this to the UI
+    const data: Data = {}
+    const optimizationTarget: Node = input.total.atk
+    const valueFilter: { value: Node, minimum: number }[] = []
+    const setFilters: Dict<ArtifactSetKey, number> = {}
 
-    // const artifactSetEffects = undefined Artifact.setEffectsObjs(artifactSheets, initialStats)
-    // const splitArtifacts = deepClone(split) as ArtifactsBySlot
-    // //add mainStatVal to each artifact
-    // Object.values(splitArtifacts).forEach(artArr => {
-    //   artArr!.forEach(art => {
-    //     art.mainStatVal = Artifact.mainStatValue(art.mainStatKey, art.rarity, Math.max(Math.min(mainStatAssumptionLevel, art.rarity * 4), art.level)) ?? 0;
-    //   })
-    // })
+    const t1 = performance.now()
+    setgeneratingBuilds(true)
+    setchartData(undefined)
+    setgenerationDuration(0)
+    setgenerationProgress(0)
+    setgenerationSkipped(0)
 
-    // let targetKeys: string[]
-    // if (typeof optimizationTarget === "string") {
-    //   targetKeys = [optimizationTarget]
-    // } else {
-    //   const targetFormula = await Formula.get(optimizationTarget)
-    //   if (typeof targetFormula === "function")
-    //     [, targetKeys] = targetFormula(initialStats)
-    //   else
-    //     return setgeneratingBuilds(false)
-    // }
+    let cancelled = false
+    const workerkillers = [] as (() => void)[]
+    cancelToken.current = () => {
+      cancelled = true
+      workerkillers.forEach(w => w())
+    }
 
-    // const artifactSetBySlot = Object.fromEntries(Object.entries(splitArtifacts).map(([key, artifacts]) =>
-    //   [key, new Set(artifacts.map(artifact => artifact.setKey))]
-    // ))
-    // function canApply(set: ArtifactSetKey, num: SetNum, setBySlot: Dict<SlotKey, Set<ArtifactSetKey>>, filters: SetFilter): boolean {
-    //   const otherNum = filters.reduce((accu, { key, num }) => key === set ? accu : accu + num, 0)
-    //   const artNum = Object.values(setBySlot).filter(sets => sets.has(set)).length
-    //   return otherNum + num <= 5 && num <= artNum
-    // }
-    // // modifierStats contains all modifiers that are applicable to the current build
-    // const modifierStats: BonusStats = {}
-    // Object.entries(artifactSetEffects).forEach(([set, effects]) =>
-    //   Object.entries(effects).filter(([setNum, stats]) =>
-    //     ("modifiers" in stats) && canApply(set, parseInt(setNum) as SetNum, artifactSetBySlot, setFilters)
-    //   ).forEach(bonus => mergeStats(modifierStats, bonus[1]))
-    // )
-    // mergeStats(modifierStats, { modifiers: initialStats.modifiers ?? {} })
-    // const dependencies = GetDependencies(initialStats, modifierStats.modifiers, [...targetKeys, ...Object.keys(statFilters), ...(tcMode && plotBase ? [plotBase] : [])]) as StatKey[]
-    // const oldCount = calculateTotalBuildNumber(splitArtifacts, setFilters)
+    let nodes = [optimizationTarget, ...valueFilter.map(x => x.value)]
+    let affine: Node[]
+    const minimum = [-Infinity, ...valueFilter.map(x => x.minimum)]
+    {
+      const compact = compactNodes([optimizationTarget, ...valueFilter.map(x => x.value)])
+      nodes = compact.nodes, affine = compact.affine
+    }
+    let artifactsBySlot = compactArtifacts(database, affine, data, mainStatAssumptionLevel)
+    const origCount = countBuilds(artifactsBySlot)
 
-    // let prunedArtifacts = splitArtifacts, newCount = oldCount
+    while (true) {
+      const newArts = pruneRange(nodes, artifactsBySlot, minimum)
+      if (newArts === artifactsBySlot)
+        break
+      artifactsBySlot = newArts
+    }
+    artifactsBySlot = pruneOrder(artifactsBySlot, maxBuildsToShow)
 
-    // { // Prune artifact with strictly inferior (relevant) stats.
-    //   // Don't prune artifact sets that are filtered
-    //   const alwaysAccepted = setFilters.map(set => set.key) as any
+    let buildCount = 0, failedCount = 0, skippedCount = origCount - countBuilds(artifactsBySlot)
+    let threshold = -Infinity
 
-    //   prunedArtifacts = Object.fromEntries(Object.entries(splitArtifacts).map(([key, values]) =>
-    //     [key, pruneArtifacts(values, artifactSetEffects, new Set(dependencies), initialStats, maxBuildsToShow, new Set(alwaysAccepted))]))
-    //   newCount = calculateTotalBuildNumber(prunedArtifacts, setFilters)
-    // }
-    // setgenerationSkipped(oldCount - newCount)
-    // let buildCount = 0, workersTime = 0
-    // let builds: Build[] = []
-    // const plotDataMap: Dict<string, number> = {}
-    // let bucketSize = 0.01
+    const setPerm = setPermutations(setFilters)[Symbol.iterator]()
 
-    // const cleanupBuilds = () => {
-    //   builds.sort((a, b) => (b.buildFilterVal - a.buildFilterVal))
-    //   builds.splice(maxBuildsToShow)
-    // }
+    function fetchWork(): Request | undefined {
+      const next = setPerm.next()
+      if (next.done) return
+      const filter = next.value
 
-    // const cleanupPlots = () => {
-    //   let entries = Object.entries(plotDataMap)
-    //   while (entries.length > plotMaxPoints) {
-    //     const multiplier = Math.pow(2, Math.ceil(Math.log2(entries.length / plotMaxPoints)))
-    //     bucketSize *= multiplier
-    //     for (const [x, y] of entries) {
-    //       delete plotDataMap[x]
-    //       const index = Math.round(parseInt(x) / multiplier)
-    //       plotDataMap[index] = Math.max(plotDataMap[index] ?? -Infinity, y)
-    //     }
-    //     entries = Object.entries(plotDataMap)
-    //   }
-    // }
+      const filtered = filterArts(artifactsBySlot, filter)
+      const count = countBuilds(filtered)
 
-    // const maxWorkers = navigator.hardwareConcurrency || 4
-    // /**
-    //  * Find the slot in the pruned artifacts with the lowest number of artifacts that are >= maxWorkers.
-    //  * This makes sure that it wont have a case where there is only one artifact of a slot, that ultimately makes this single-threaded.
-    //  */
-    // const leastSlot = Object.entries(prunedArtifacts).reduce((lowestKey, [key, arr]) =>
-    //   (arr.length >= maxWorkers && arr.length < prunedArtifacts[lowestKey].length) ? key : lowestKey
-    //   , "flower") as unknown as SlotKey
+      // TODO: Break down filter when `count` is too high
+      return {
+        command: "request",
+        threshold, filter,
+      }
+    }
 
-    // let workIndex = 0
+    const maxWorkers = navigator.hardwareConcurrency || 4
+    const workers: Worker[] = [], finalized: Promise<FinalizeResult>[] = []
+    for (let i = 0; i < maxWorkers; i++) {
+      const worker = new Worker()
 
-    // /**
-    //  * Rudimentary thread pool implementation.
-    //  * Only create the worker is there is actual work to do.
-    //  * Once a worker finished one "workerIndex", it tries to move onto another one.
-    //  */
-    // function WorkerWorker(worker: Worker | null, workerIndex: number) {
-    //   return new Promise<Worker | null>((resolve) => {
-    //     const localWorkIndex = workIndex
-    //     if (canceled || localWorkIndex >= prunedArtifacts[leastSlot]!.length) {
-    //       // console.log(workerIndex, "completed", performance.now() - t1);
-    //       return resolve(worker)
-    //     }
-    //     const workInSlot = prunedArtifacts[leastSlot]![localWorkIndex]!
-    //     const workPrunedArtifacts = { ...prunedArtifacts, [leastSlot]: [workInSlot] }
-    //     const data = { dependencies, initialStats, maxBuildsToShow, minFilters: statFilters, optimizationTarget, plotBase, prunedArtifacts: workPrunedArtifacts, setFilters, artifactSetEffects } as BuildRequest
-    //     if (!worker) {
-    //       worker = new Worker()
-    //       workerkillers.push(() => resolve(worker))
-    //     }
-    //     worker.onmessage = async ({ data }) => {
-    //       if (data.buildCount) {
-    //         const { buildCount: workerCount, builds: workerbuilds } = data
-    //         buildCount += workerCount
-    //         if (workerbuilds.length) builds = builds.concat(workerbuilds)
-    //       }
-    //       if (data.plotDataMap) {
-    //         const { plotDataMap: workerPlotDataMap } = data
-    //         Object.entries(workerPlotDataMap as object).forEach(([index, value]) =>
-    //           plotDataMap[index] = Math.max(value, plotDataMap[index] ?? -Infinity))
-    //       }
-    //       if (data.timing)
-    //         workersTime += data.timing
-    //       if (data.finished) {
-    //         // console.log("WORKER", workerIndex, "finished", localWorkIndex)
-    //         resolve(await WorkerWorker(worker, workerIndex))
-    //       }
-    //     }
-    //     // console.log("WORKER", workerIndex, "starting on", localWorkIndex)
-    //     worker.postMessage(data)
-    //     workIndex++
-    //   })
-    // }
+      const setup: Setup = {
+        command: "setup",
+        id: `${i}`,
+        artifactsBySlot,
+        optimizationTarget: nodes[0],
+        plotBase: undefined, // TODO
+        maxBuildsToShow,
+        filters: nodes
+          .map((value, i) => ({ value, min: minimum[i] }))
+          .filter(x => x.min > -Infinity)
+      }
+      worker.postMessage(setup, undefined)
 
-    // const workersPromises = [...Array(maxWorkers).keys()].map(i => WorkerWorker(null, i))
-    // const buildTimer = setInterval(() => {
-    //   setgenerationProgress(buildCount)
-    //   setgenerationDuration(performance.now() - t1)
-    // }, 100)
-    // const finWorkers = await Promise.all(workersPromises)
-    // finWorkers.forEach(w => w?.terminate())
-    // clearInterval(buildTimer)
-    // cancelToken.current = () => { }
-    // if (canceled) {
-    //   setgenerationDuration(0)
-    //   setgenerationProgress(0)
-    //   setgenerationSkipped(0)
-    // } else {
-    //   cleanupBuilds()
-    //   cleanupPlots()
+      let finalize: (_: FinalizeResult) => void
+      const finalizePromise = new Promise<FinalizeResult>(r => finalize = r)
+      worker.onmessage = async ({ data }: { data: WorkerResult }) => {
+        switch (data.command) {
+          case "interim":
+            buildCount += data.buildCount
+            failedCount += data.failedCount
+            skippedCount += data.skippedCount
+            if (threshold < data.threshold) threshold = data.threshold
+            break
+          case "request":
+            const work = fetchWork()
+            if (work) {
+              worker.postMessage(work)
+            } else {
+              const finalize: Finalize = { command: "finalize" }
+              worker.postMessage(finalize)
+            }
+            break
+          case "finalize": finalize(data)
+        }
+      }
 
-    //   const plotData = plotBase
-    //     ? Object.entries(plotDataMap)
-    //       .map(([plotBase, optimizationTarget]) => ({ plotBase: parseInt(plotBase) * bucketSize, optimizationTarget }))
-    //       .sort((a, b) => a.plotBase - b.plotBase)
-    //     : undefined
-    //   setchartData(plotData)
-    //   const totalDuration = performance.now() - t1
-    //   setgenerationProgress(buildCount)
-    //   setgenerationDuration(totalDuration)
-    //   ReactGA.timing({
-    //     category: "Build Generation",
-    //     variable: "timing",
-    //     value: workersTime,
-    //     label: totBuildNumber.toString()
-    //   })
-    //   const finalBuilds = (builds as Build[]).map(b => Object.values(b.artifacts).map(a => a.id))
-    //   buildSettingsDispatch({ builds: finalBuilds, buildDate: Date.now() })
-    // }
-    // setgeneratingBuilds(false)
+      workers.push(worker)
+      workerkillers.push(() => worker.terminate())
+      finalized.push(finalizePromise)
+    }
+
+    const buildTimer = setInterval(() => {
+      setgenerationProgress(buildCount)
+      setgenerationDuration(performance.now() - t1)
+    }, 100)
+    const results = await Promise.all(finalized)
+    workerkillers.forEach(x => x())
+    clearInterval(buildTimer)
+    cancelToken.current = () => { }
+
+    if (cancelled) {
+      setgenerationDuration(0)
+      setgenerationProgress(0)
+      setgenerationSkipped(0)
+    } else {
+      if (plotBase) {
+        const plotData = mergePlot(results.map(x => x.plotData!))
+        setchartData(plotData)
+      }
+      const builds = mergeBuilds(results.map(x => x.builds), maxBuildsToShow)
+      buildSettingsDispatch({ builds: builds.map(build => build.artifactIds), buildDate: Date.now() })
+      const totalDuration = performance.now() - t1
+
+      setgenerationProgress(buildCount)
+      setgenerationDuration(totalDuration)
+
+      ReactGA.timing({
+        category: "Build Generation",
+        variable: "timing",
+        value: 0, // TODO
+        label: totBuildNumber.toString()
+      })
+    }
+    setgeneratingBuilds(false)
   }, [artifactSheets, split, totBuildNumber, mainStatAssumptionLevel, maxBuildsToShow, optimizationTarget, setFilters, statFilters, plotBase, tcMode, buildSettingsDispatch])
 
   const characterName = characterSheet?.name ?? "Character Name"

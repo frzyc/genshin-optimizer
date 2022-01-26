@@ -1,12 +1,12 @@
 import { ArtCharDatabase } from "../Database/Database";
-import { dataObjForArtifact } from "../Formula/api";
+import { dataObjForArtifact, mergeData } from "../Formula/api";
 import { forEachNodes, mapFormulas } from "../Formula/internal";
 import { allOperations, constantFold } from "../Formula/optimization";
 import { ConstantNode, Data, Node } from "../Formula/type";
 import { customRead } from "../Formula/utils";
 import { allSlotKeys, ArtifactSetKey } from "../Types/consts";
 import { assertUnreachable, objectFromKeyMap } from "../Util/Util";
-import { ArtifactBuildData, ArtifactsBySlot, RequestFilter } from "./Worker";
+import { ArtifactsBySlot, Build, PlotData, RequestFilter } from "./Worker";
 
 export function compactNodes(nodes: Node[]): CompactNodes {
   const affineNodes = new Set<Node>(), topLevelAffine = new Set<Node>()
@@ -40,14 +40,18 @@ export function compactNodes(nodes: Node[]): CompactNodes {
   nodes = mapFormulas(nodes, f => affineMap.get(f) ?? f, f => f)
   return { nodes, affine }
 }
-export function compactArtifacts(db: ArtCharDatabase, nodes: CompactNodes, mainStatAssumptionLevel: number): ArtifactsBySlot {
+export function compactArtifacts(db: ArtCharDatabase, affine: Node[], data: Data, mainStatAssumptionLevel: number): ArtifactsBySlot {
   const result: ArtifactsBySlot = { flower: [], plume: [], goblet: [], circlet: [], sands: [] }
-  const base = (constantFold(nodes.affine, {}, _ => true) as ConstantNode[])
+  const base = (constantFold(affine, data, _ => true) as ConstantNode[])
     .map(x => x.value)
 
   for (const art of db._getArts()) {
-    const data = dataObjForArtifact(art, mainStatAssumptionLevel)
-    result[art.slotKey].push(compactArtifact(nodes, art.id, art.setKey, data, base))
+    const artData = dataObjForArtifact(art, mainStatAssumptionLevel)
+    result[art.slotKey].push({
+      id: art.id, set: art.setKey,
+      values: (constantFold(affine, mergeData([data, artData]), _ => true) as ConstantNode[])
+        .map((x, i) => x.value - base[i])
+    })
   }
   return result
 }
@@ -85,7 +89,7 @@ export function pruneRange(nodes: Node[], arts: ArtifactsBySlot, minimum: number
       const result = arts[slot].filter(art => {
         const read = otherArtRanges[slot].map((x, i) => ({ min: art.values[i] + x.min, max: art.values[i] + x.max }))
         const newRange = computeRange(nodes, read)
-        return newRange.every((x, i) => x.min >= minimum[i])
+        return nodes.every((node, i) => newRange.get(node)!.min >= minimum[i])
       })
       if (result.length !== arts[slot].length)
         progress = true
@@ -95,15 +99,7 @@ export function pruneRange(nodes: Node[], arts: ArtifactsBySlot, minimum: number
     arts = newArts
   }
 }
-
-function compactArtifact(nodes: CompactNodes, id: string, setKey: ArtifactSetKey, art: Data, base: number[]): ArtifactBuildData {
-  return {
-    id: id, set: setKey,
-    values: (constantFold(nodes.affine, art, _ => true) as ConstantNode[])
-      .map((x, i) => x.value - base[i])
-  }
-}
-function computeRange(nodes: Node[], reads: MinMax[]): MinMax[] {
+export function computeRange(nodes: Node[], reads: MinMax[]): Map<Node, MinMax> {
   const range = new Map<Node, MinMax>()
 
   forEachNodes(nodes, _ => { }, f => {
@@ -150,7 +146,7 @@ function computeRange(nodes: Node[], reads: MinMax[]): MinMax[] {
     }
     range.set(f, current)
   })
-  return nodes.map(node => range.get(node)!)
+  return range
 }
 function computeMinMax(values: number[], minMaxes: MinMax[] = []): MinMax {
   const max = Math.max(values.reduce((a, b) => a > b ? a : b, -Infinity), ...minMaxes.map(x => x.max))
@@ -188,6 +184,39 @@ export function* setPermutations(setFilters: Dict<ArtifactSetKey, number>): Iter
       list.push({ value: newValue, remaining: newRemaining, otherRemaining: newOtherRemaining })
     }
   }
+}
+export function filterArts(arts: ArtifactsBySlot, filters: RequestFilter): ArtifactsBySlot {
+  return objectFromKeyMap(allSlotKeys, slot => {
+    const filter = filters[slot]
+    switch (filter.kind) {
+      case "id": return arts[slot].filter(art => filter.ids.has(art.id))
+      case "exclude": return arts[slot].filter(art => !filter.sets.has(art.set))
+      case "required": return arts[slot].filter(art => filter.sets.has(art.set))
+    }
+  })
+}
+export function countBuilds(arts: ArtifactsBySlot): number {
+  return allSlotKeys.reduce((_count, slot) => arts[slot].length, 1)
+}
+export function mergeBuilds(builds: Build[][], maxNum: number): Build[] {
+  return builds.flatMap(x => x).sort((a, b) => b.value - a.value).slice(0, maxNum)
+}
+export function mergePlot(plots: PlotData[]): PlotData {
+  let scale = 0.01, reductionScaling = 2, maxCount = 1500
+  let keys = new Set(plots.flatMap(x => Object.keys(x).map(k => Math.round(parseFloat(k) / scale))))
+  while (keys.size > maxCount) {
+    scale *= reductionScaling
+    keys = new Set([...keys].map(key => Math.round(key / scale)))
+  }
+  const result: PlotData = {}
+  for (const plot of plots)
+    for (const [_x, y] of Object.entries(plot)) {
+      const x = Math.round(parseFloat(_x) / scale) * scale
+      if (!result[x] || result[x]!.value < y.value)
+        result[x] = y
+    }
+
+  return result
 }
 
 type MinMax = { min: number, max: number }
