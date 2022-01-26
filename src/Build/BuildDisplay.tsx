@@ -221,7 +221,8 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
     const minimum = [-Infinity, ...valueFilter.map(x => x.minimum)]
     {
       const compact = compactNodes([optimizationTarget, ...valueFilter.map(x => x.value)])
-      nodes = compact.nodes, affine = compact.affine
+      nodes = compact.nodes
+      affine = compact.affine
     }
     let artifactsBySlot = compactArtifacts(database, affine, data, mainStatAssumptionLevel)
     const origCount = countBuilds(artifactsBySlot)
