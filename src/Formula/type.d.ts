@@ -88,23 +88,11 @@ export interface StringLookupNode extends StringNodeBase {
 }
 
 export type Data = Input & DynamicNumInput
-export type DisplayCharacter<T = Node> = { [key in Move | "misc"]?: { [key in string]?: T } }
-export type DisplayWeapon<T = Node> = { [key in string]?: T }
-export type DisplayArtifact<T = Node> = { [key in string]?: T }
+
+export type DisplaySub<T = Node> = { [key in string]?: T }
 interface DynamicNumInput<T = Node> {
   display?: {
-    character?: {
-      [key in CharacterKey]?: DisplayCharacter<T>
-    }
-    weapon?: {
-      [key in WeaponKey]?: DisplayWeapon<T>
-    }
-    artifact?: {
-      [key in ArtifactSetKey]?: DisplayArtifact<T>
-    }
-    reaction?: {
-      [key in Exclude<TransformativeReactionsKey, "swirl"> | `${"electro" | "hydro" | "pyro" | "cryo"}Swirl`]?: Node
-    }
+    [key: string]: DisplaySub
   }
   conditional?: NodeData<T>
 }

@@ -40,6 +40,7 @@ import BuildAlert, { warningBuildNumber } from './Components/BuildAlert';
 import EnemyEditorCard from './Components/EnemyEditorCard';
 import HitModeCard from './Components/HitModeCard';
 import MainStatSelectionCard, { artifactsSlotsToSelectMainStats } from './Components/MainStatSelectionCard';
+import OptimizationTargetSelector from './Components/OptimizationTargetSelector';
 import StatFilterCard from './Components/StatFilterCard';
 import TeamBuffCard from './Components/TeamBuffCard';
 const InfoDisplay = React.lazy(() => import('./InfoDisplay'));
@@ -523,12 +524,12 @@ export default function BuildDisplay({ location: { characterKey: propCharacterKe
               </ButtonGroup>
             </Grid>
             <Grid item>
-              {/* {statsDisplayKeys && sheets && initialStats && <OptimizationTargetSelector
-              optimizationTarget={optimizationTarget}
-              setTarget={target => buildSettingsDispatch({ optimizationTarget: target })}
-              disabled={!!generatingBuilds}
-              sheets={sheets} initialStats={initialStats} statsDisplayKeys={statsDisplayKeys}
-            />} */}
+              <span>Optimization Target: </span>
+              {<OptimizationTargetSelector
+                optimizationTarget={optimizationTarget}
+                setTarget={target => buildSettingsDispatch({ optimizationTarget: target })}
+                disabled={!!generatingBuilds}
+              />}
             </Grid>
           </Grid>
 

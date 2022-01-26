@@ -4,7 +4,7 @@ import { MainStatKey, SubstatKey } from "../../Types/artifact";
 import { WeaponKey, WeaponTypeKey } from "../../Types/consts";
 import _weaponCurves from "../../Weapon/expCurve_gen.json";
 import { input } from "../../Formula";
-import { Data, DisplayWeapon } from "../../Formula/type";
+import { Data, DisplaySub } from "../../Formula/type";
 import { infoMut, prod, stringConst, subscript, sum } from "../../Formula/utils";
 
 // TODO: Remove this conversion after changing the file format
@@ -14,7 +14,7 @@ export function dataObjForWeaponSheet(
   key: WeaponKey, type: WeaponTypeKey,
   gen: WeaponData,
   substat2: MainStatKey | SubstatKey | undefined,
-  displayWeapon: DisplayWeapon = {},
+  displayWeapon: DisplaySub = {},
   additional: Data = {}
 ): Data {
   const result: Data = {
@@ -24,9 +24,7 @@ export function dataObjForWeaponSheet(
       key: stringConst(key), type: stringConst(type),
     },
     display: {
-      weapon: {
-        [key]: displayWeapon
-      }
+      [`weapon:${key}`]: displayWeapon
     },
   }
 

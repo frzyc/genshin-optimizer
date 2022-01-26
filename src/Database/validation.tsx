@@ -205,7 +205,7 @@ export function parseCharacter(obj: any): ICharacter | undefined {
       mainStatKeys = tempmainStatKeys
     }
 
-    if (!optimizationTarget) optimizationTarget = ""
+    if (!optimizationTarget) optimizationTarget = undefined
     if (typeof mainStatAssumptionLevel !== "number" || mainStatAssumptionLevel < 0 || mainStatAssumptionLevel > 20)
       mainStatAssumptionLevel = 0
     useExcludedArts = !!useExcludedArts
@@ -224,7 +224,7 @@ export function parseCharacter(obj: any): ICharacter | undefined {
   }
 
   if (!conditional)
-  conditional = {}
+    conditional = {}
   if (!team)
     team = ["", "", ""]
 

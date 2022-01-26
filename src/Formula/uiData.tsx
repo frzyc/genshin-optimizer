@@ -1,9 +1,9 @@
+import { input } from "."
 import ColorText from "../Components/ColoredText"
 import KeyMap from "../KeyMap"
-import { ArtifactSetKey, CharacterKey, WeaponKey } from "../Types/consts"
 import { assertUnreachable, crawlObject, layeredAssignment, objPathValue } from "../Util/Util"
 import { allOperations } from "./optimization"
-import { ComputeNode, Data, DataNode, LookupNode, Node, ReadNode, StringMatchNode, StringNode, SubscriptNode, Variant } from "./type"
+import { ComputeNode, Data, DataNode, DisplaySub, LookupNode, Node, ReadNode, StringMatchNode, StringNode, SubscriptNode, Variant } from "./type"
 
 const shouldWrap = true
 
@@ -58,10 +58,7 @@ export class UIData {
   }
 
   getDisplay(): {
-    character?: Partial<Record<CharacterKey, { [key: string]: { [key: string]: NodeDisplay } }>>
-    weapon?: Partial<Record<WeaponKey, { [key: string]: NodeDisplay }>>
-    artifact?: Partial<Record<ArtifactSetKey, { [key: string]: NodeDisplay }>>
-    reaction?: { [key: string]: NodeDisplay }
+    [key: string]: DisplaySub<NodeDisplay>
   } {
     if (this.display) return this.display
     this.display = {}
@@ -70,6 +67,12 @@ export class UIData {
       crawlObject(data.display, [], (x: any) => x.operation, (x: Node, key: string[]) =>
         layeredAssignment(this.display, key, this.get(x)))
     }
+    const it = input.total
+    const basicNodes = [it.atk, it.hp, it.def, it.eleMas, it.critRate_, it.critDMG_, it.heal_, it.enerRech_]
+    if (this.getStr(input.weaponType).value !== "catalyst") basicNodes.push(it.physical_dmg_)
+    basicNodes.push(it[`${this.getStr(input.charEle).value}_dmg_`])
+    const dns = basicNodes.map(n => this.get(n))
+    this.display.basic = Object.fromEntries(dns.map(n => [n.key, n]))
     return this.display
   }
   get(node: Node): NodeDisplay {

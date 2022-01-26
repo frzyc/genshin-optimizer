@@ -1,96 +1,38 @@
 import { Masonry } from "@mui/lab"
-import { CardContent, CardHeader, Divider, Typography } from "@mui/material"
+import { CardContent, CardHeader, Divider } from "@mui/material"
 import { Box } from "@mui/system"
 import { useContext } from "react"
-import { ArtifactSheet } from "../../Artifact/ArtifactSheet_WR"
 import CardDark from "../../Components/Card/CardDark"
 import { NodeFieldDisplay } from "../../Components/FieldDisplay"
 import ImgIcon from "../../Components/Image/ImgIcon"
-import SqBadge from "../../Components/SqBadge"
 import { DataContext } from "../../DataContext"
-import { input } from "../../Formula"
+import { getDisplayHeader, getDisplaySections } from "../../Formula/DisplayUtil"
+import { DisplaySub } from "../../Formula/type"
 import { NodeDisplay } from "../../Formula/uiData"
 import { customRead } from "../../Formula/utils"
 import usePromise from "../../ReactHooks/usePromise"
-import { TalentSheetElementKey } from "../../Types/character_WR"
-import { ArtifactSetKey, CharacterKey, ElementKey, WeaponKey } from "../../Types/consts"
-import WeaponSheet from "../../Weapon/WeaponSheet_WR"
-import CharacterSheet from "../CharacterSheet_WR"
-
 
 export default function StatDisplayComponent() {
   const { data } = useContext(DataContext)
-  const display = data.getDisplay()
+  const sections = getDisplaySections(data)
   return <Box sx={{ mr: -1, mb: -1 }}>
     <Masonry columns={{ xs: 1, sm: 2, md: 3 }} spacing={1}>
-      <BasicStats />
-      {display.character && Object.entries(display.character).map(([charKey, displayCharacter]) =>
-        displayCharacter && <CharacterStats key={charKey} characterKey={charKey} displayCharacter={displayCharacter} path={["character", charKey]} />)}
-      {display.weapon && Object.entries(display.weapon).map(([weaponKey, displayWeapon]) =>
-        displayWeapon && <WeaponStats key={weaponKey} weaponKey={weaponKey} displayWeapon={displayWeapon} path={["weapon", weaponKey]} />)}
-      {display.artifact && Object.entries(display.artifact).map(([artifactSetKey, displayArtifact]) =>
-        displayArtifact && <ArtifactStats key={artifactSetKey} artifactSetKey={artifactSetKey} displayArtifact={displayArtifact} path={["artifact", artifactSetKey]} />)}
-      {display.reaction && <ReactionStats displayReaction={display.reaction} path={["reaction"]} />}
+      {sections.map(([key, Nodes]) =>
+        <Section key={key} displayNs={Nodes} sectionKey={key} />)}
     </Masonry >
   </Box>
 }
-function BasicStats() {
+
+function Section({ displayNs, sectionKey }: { displayNs: DisplaySub<NodeDisplay>, sectionKey: string }) {
   const { data, oldData } = useContext(DataContext)
-  const it = input.total
-  const nodes = [it.atk, it.hp, it.def, it.eleMas, it.critRate_, it.critDMG_, it.heal_, it.enerRech_]
-  if (data.getStr(input.weaponType).value !== "catalyst") nodes.push(it.physical_dmg_)
-  nodes.push(it[`${data.getStr(input.charEle).value}_dmg_`])
-  return <CardDark >
-    <CardHeader title={"Basic Stats"} titleTypographyProps={{ variant: "subtitle1" }} />
-    <Divider />
-    <CardContent>
-      {nodes.map((n, i) => <NodeFieldDisplay key={i} node={data.get(n)} oldValue={oldData ? oldData.get(n).value : undefined} />)}
-    </CardContent>
-  </CardDark>
-}
-function CharacterStats({ characterKey, displayCharacter, path }: { characterKey: CharacterKey, displayCharacter: { [key: string]: { [key: string]: NodeDisplay } }, path: string[] }) {
-  const characterSheet = usePromise(CharacterSheet.get(characterKey), [characterKey])
-  if (!characterSheet) return null
-  return <>
-    {Object.entries(displayCharacter).map(([talentKey, displayTalent]) => <TalentStats key={talentKey} characterSheet={characterSheet} talentKey={talentKey as string} displayTalent={displayTalent as any} path={[...path, talentKey]} />)}
-  </>
-}
-function TalentStats({ characterSheet, talentKey, displayTalent, path }: { characterSheet: CharacterSheet, talentKey: string, displayTalent: { [key: string]: NodeDisplay }, path: string[] }) {
-  const { data } = useContext(DataContext)
-  let sub = ""
-  if (talentKey === "normal" || talentKey === "charged" || talentKey === "plunging") {
-    sub = talentKey.charAt(0).toUpperCase() + talentKey.slice(1).toLowerCase();
-    talentKey = "auto"
-  }
-  const talent = characterSheet.getTalentOfKey(talentKey as TalentSheetElementKey, data.getStr(input.charEle).value as ElementKey)
-  if (!talent) return null
-  return <Section icon={talent.img} title={talent.name} displayNs={displayTalent} path={path} action={sub ? <SqBadge ><Typography>{sub}</Typography></SqBadge> : undefined} />
-}
-
-function WeaponStats({ weaponKey, displayWeapon, path }: { weaponKey: WeaponKey, displayWeapon: { [key: string]: NodeDisplay }, path: string[] }) {
-  const { data } = useContext(DataContext)
-  const weaponSheet = usePromise(WeaponSheet.get(weaponKey), [weaponKey])
-  if (!weaponSheet) return null
-  const img = data.get(input.weapon.asc).value < 2 ? weaponSheet?.img : weaponSheet?.imgAwaken
-  return <Section icon={img} title={weaponSheet.name} displayNs={displayWeapon} path={path} />
-}
-
-function ArtifactStats({ artifactSetKey, displayArtifact, path }: { artifactSetKey: ArtifactSetKey, displayArtifact: { [key: string]: NodeDisplay }, path: string[] }) {
-  const artifactSheet = usePromise(ArtifactSheet.get(artifactSetKey), [artifactSetKey])
-  if (!artifactSheet) return null
-  return <Section icon={artifactSheet.defIconSrc} title={artifactSheet.name} displayNs={displayArtifact} path={path} />
-}
-
-function ReactionStats({ displayReaction, path }: { displayReaction: { [key: string]: NodeDisplay }, path: string[] }) {
-  return <Section title={"Transformative Reactions"} displayNs={displayReaction} path={path} />
-}
-function Section({ icon, title, action, displayNs, path }: { icon?: string, title: Displayable, action?: Displayable, displayNs: { [key: string]: NodeDisplay }, path: string[] }) {
-  const { oldData } = useContext(DataContext)
+  const header = usePromise(getDisplayHeader(data, sectionKey), [data, sectionKey])
+  if (!header) return null
+  const { title, icon, action } = header
   return <CardDark >
     <CardHeader avatar={icon && <ImgIcon size={2} sx={{ m: -1 }} src={icon} />} title={title} action={action} titleTypographyProps={{ variant: "subtitle1" }} />
     <Divider />
     <CardContent>
-      {Object.entries(displayNs).map(([nodeKey, n]) => <NodeFieldDisplay key={nodeKey} node={n} oldValue={oldData ? oldData.get(customRead([...path, nodeKey])).value : undefined} />)}
+      {Object.entries(displayNs).map(([nodeKey, n]) => <NodeFieldDisplay key={nodeKey} node={n} oldValue={oldData ? oldData.get(customRead([sectionKey, nodeKey])).value : undefined} />)}
     </CardContent>
   </CardDark>
 }

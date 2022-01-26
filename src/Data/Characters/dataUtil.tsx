@@ -2,7 +2,7 @@ import _charCurves from "../../Character/expCurve_gen.json";
 import { allMainStatKeys, MainStatKey } from "../../Types/artifact";
 import { CharacterKey, ElementKey } from "../../Types/consts";
 import { input } from "../../Formula";
-import { Data, DisplayCharacter, Node } from "../../Formula/type";
+import { Data, DisplaySub, Node } from "../../Formula/type";
 import { data, infoMut, prod, stringConst, subscript, sum } from "../../Formula/utils";
 import { mergeData, reactions } from "../../Formula/api";
 
@@ -34,7 +34,7 @@ export function dataObjForCharacterSheet(
     curves: { [key in string]?: string },
     ascensions: { props: { [key in string]?: number } }[]
   },
-  displayChar: DisplayCharacter,
+  display: { [key: string]: DisplaySub },
   additional: Data = {},
 ): Data {
   function curve(base: number, lvlCurve: string): Node {
@@ -45,11 +45,7 @@ export function dataObjForCharacterSheet(
     charKey: stringConst(key),
     weaponType: stringConst(gen.weaponTypeKey),
     premod: {},
-    display: {
-      character: {
-        [key]: displayChar
-      },
-    },
+    display,
   }
   if (element) {
     data.charEle = stringConst(element)
